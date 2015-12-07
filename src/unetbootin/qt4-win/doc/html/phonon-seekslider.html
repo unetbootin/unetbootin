@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: SeekSlider Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">SeekSlider Class Reference<br /><span class="small-subtitle">(Phonon::SeekSlider)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The SeekSlider class provides a slider for seeking to positions in media streams. <a href="#details">More...</a></p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-seekslider-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#iconSize-prop">iconSize</a></b> : QSize</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#iconVisible-prop">iconVisible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#orientation-prop">orientation</a></b> : Qt::Orientation</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#pageStep-prop">pageStep</a></b> : int</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#singleStep-prop">singleStep</a></b> : int</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#tracking-prop">tracking</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#SeekSlider">SeekSlider</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#SeekSlider-2">SeekSlider</a></b> ( MediaObject * <i>media</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="phonon-seekslider.html#dtor.SeekSlider">~SeekSlider</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="phonon-seekslider.html#tracking-prop">hasTracking</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="phonon-seekslider.html#iconSize-prop">iconSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="phonon-seekslider.html#iconVisible-prop">isIconVisible</a></b> () const</li>
+<li><div class="fn"/>MediaObject * <b><a href="phonon-seekslider.html#mediaObject">mediaObject</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="phonon-seekslider.html#orientation-prop">orientation</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="phonon-seekslider.html#pageStep-prop">pageStep</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#pageStep-prop">setPageStep</a></b> ( int <i>milliseconds</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#singleStep-prop">setSingleStep</a></b> ( int <i>milliseconds</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#tracking-prop">setTracking</a></b> ( bool <i>tracking</i> )</li>
+<li><div class="fn"/>int <b><a href="phonon-seekslider.html#singleStep-prop">singleStep</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#iconSize-prop">setIconSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#iconVisible-prop">setIconVisible</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#setMediaObject">setMediaObject</a></b> ( MediaObject * <i>media</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-seekslider.html#orientation-prop">setOrientation</a></b> ( Qt::Orientation )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>The SeekSlider class provides a slider for seeking to positions in media streams.</p>
+<p>The SeekSlider connects to a <a href="phonon-mediaobject.html">MediaObject</a>, and controls the seek position in the object's media stream.</p>
+<p>The slider will connect to the necessary signals to keep track of the sliders maximum, minimum, and current values. It will also disable itself for non-seekable streams, and update the media object when the current value of the slider changes.</p>
+<p>Here follows a typical example of SeekSlider usage:</p>
+<pre>     Phonon::MediaObject *moo = new Phonon::MediaObject;;
+     Phonon::AudioOutput *device = new Phonon::AudioOutput;
+     Phonon::createPath(moo, device);
+     moo-&gt;setCurrentSource(QString(&quot;/home/gvatteka/Music/Lumme-Badloop.ogg&quot;));
+
+     Phonon::SeekSlider *slider = new Phonon::SeekSlider;
+     slider-&gt;setMediaObject(moo);
+
+     slider-&gt;show();
+     moo-&gt;play();</pre>
+<p>See also <a href="phonon-volumeslider.html">Phonon::VolumeSlider</a>, <a href="phonon-videowidget.html">Phonon::VideoWidget</a>, and <a href="phonon-musicplayer.html">Music Player Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="iconSize-prop"></a>iconSize : <a href="qsize.html">QSize</a></h3>
+<p>This property holds the icon size used for the mute button/icon.</p>
+<p>The default size is defined by the GUI style.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize iconSize () const</b></li>
+<li><div class="fn"/><b>void setIconSize ( const QSize &amp; <i>size</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="iconVisible-prop"></a>iconVisible : bool</h3>
+<p>This property holds whether the icon next to the slider is visible.</p>
+<p>By default the icon is visible if the platform provides an icon; else it's hidden.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isIconVisible () const</b></li>
+<li><div class="fn"/><b>void setIconVisible ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="orientation-prop"></a>orientation : <a href="qt.html#Orientation-enum">Qt::Orientation</a></h3>
+<p>This property holds the orientation of the slider.</p>
+<p>The orientation must be <a href="qt.html#Orientation-enum">Qt::Vertical</a> or <a href="qt.html#Orientation-enum">Qt::Horizontal</a> (the default).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Orientation orientation () const</b></li>
+<li><div class="fn"/><b>void setOrientation ( Qt::Orientation )</b></li>
+</ul>
+<h3 class="fn"><a name="pageStep-prop"></a>pageStep : int</h3>
+<p>This property holds the page step interval.</p>
+<p>The larger of two natural steps that a slider provides and typically corresponds to the user pressing PageUp or PageDown.</p>
+<p>Defaults to 5 seconds.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int pageStep () const</b></li>
+<li><div class="fn"/><b>void setPageStep ( int <i>milliseconds</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="singleStep-prop"></a>singleStep : int</h3>
+<p>This property holds the single step interval.</p>
+<p>The smaller of two natural steps that a slider provides and typically corresponds to the user pressing an arrow key.</p>
+<p>Defaults to 0.5 seconds.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int singleStep () const</b></li>
+<li><div class="fn"/><b>void setSingleStep ( int <i>milliseconds</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="tracking-prop"></a>tracking : bool</h3>
+<p>This property holds whether slider tracking is enabled.</p>
+<p>If tracking is enabled (the default), the media seeks while the slider is being dragged. If tracking is disabled, the media seeks only when the user releases the slider.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool hasTracking () const</b></li>
+<li><div class="fn"/><b>void setTracking ( bool <i>tracking</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="SeekSlider"></a>SeekSlider::SeekSlider ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a seek slider widget with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="SeekSlider-2"></a>SeekSlider::SeekSlider ( <a href="phonon-mediaobject.html">MediaObject</a> * <i>media</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a seek slider widget for the specified <i>media</i> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.SeekSlider"></a>SeekSlider::~SeekSlider ()</h3>
+<p>Destroys the seek slider.</p>
+<h3 class="fn"><a name="mediaObject"></a><a href="phonon-mediaobject.html">MediaObject</a> * SeekSlider::mediaObject () const</h3>
+<p>See also <a href="phonon-seekslider.html#setMediaObject">setMediaObject</a>().</p>
+<h3 class="fn"><a name="setMediaObject"></a>void SeekSlider::setMediaObject ( <a href="phonon-mediaobject.html">MediaObject</a> * <i>media</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the media object to be controlled by this slider to the <i>media</i> specified.</p>
+<p>See also <a href="phonon-seekslider.html#mediaObject">mediaObject</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

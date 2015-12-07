@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/xmlstreamlint.qdoc -->
+<head>
+  <title>Qt 4.4: XML Stream Lint Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">XML Stream Lint Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="xml-xmlstreamlint-main-cpp.html">xml/xmlstreamlint/main.cpp</a></li>
+<li><a href="xml-xmlstreamlint-xmlstreamlint-pro.html">xml/xmlstreamlint/xmlstreamlint.pro</a></li>
+</ul>
+<p>The XML Stream Lint example provides a simple command line utility that accepts a file name as its single argument and writes it to the standard output file.</p>
+<p>The specified file is parsed using an <a href="qxmlstreamreader.html">QXmlStreamReader</a> object and written to the standard output file using an <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> object. If the file does not contain a well-formed XML document or the use of namespaces in the document is incorrect, a description of the error is printed to the standard error file and will appear in the console.</p>
+<a name="basic-operation"></a>
+<h2>Basic Operation</h2>
+<p>The main function of the example opens the file specified by the user for input (<tt>inputFile</tt>), and it uses <a href="qfile.html">QFile</a> to access the standard output file.</p>
+<p>Reading XML is handled by an instance of the <a href="qxmlstreamreader.html">QXmlStreamReader</a> class, which operates on the input file object; writing is handled by an instance of <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> operating on the output file object:</p>
+<pre>     QXmlStreamReader reader(&amp;inputFile);
+     QXmlStreamWriter writer(&amp;outputFile);</pre>
+<p>The work of parsing and rewriting the XML is done in a while loop, and is driven by input from the reader:</p>
+<pre>     while (!reader.atEnd())
+     {
+         reader.readNext();
+
+         if (reader.error())
+         {
+             errorStream &lt;&lt; XmlStreamLint::tr(
+                            &quot;Error: %1 in file %2 at line %3, column %4.\n&quot;).arg(
+                                reader.errorString(), inputFilePath,
+                                QString::number(reader.lineNumber()),
+                                QString::number(reader.columnNumber()));
+             return ParseFailure;</pre>
+<p>If more input is available, the next token from the input file is read and parsed. If an error occurred, information is written to the standard error file via a stream, and the example exits by returning a non-zero value from the main function.</p>
+<pre>         } else
+             writer.writeCurrentToken(reader);
+     }</pre>
+<p>For valid input, the writer is fed the current token from the reader, and this is written to the output file that was specified when it was constructed.</p>
+<p>When there is no more input, the loop terminates, and the example can exit successfully.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

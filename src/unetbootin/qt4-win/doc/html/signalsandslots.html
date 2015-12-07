@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/signalsandslots.qdoc -->
+<head>
+  <title>Qt 4.4: Signals and Slots</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Signals and Slots<br /><span class="subtitle"></span>
+</h1>
+<p>Signals and slots are used for communication between objects. The signals and slots mechanism is a central feature of Qt and probably the part that differs most from the features provided by other frameworks.</p>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#signals-and-slots">Signals and Slots</a></li>
+<li><a href="#a-small-example">A Small Example</a></li>
+<li><a href="#building-the-example">Building the Example</a></li>
+<li><a href="#signals">Signals</a></li>
+<li><a href="#slots">Slots</a></li>
+<li><a href="#meta-object-information">Meta-Object Information</a></li>
+<li><a href="#a-real-example">A Real Example</a></li>
+<li><a href="#advanced-signals-and-slots-usage">Advanced Signals and Slots Usage</a></li>
+<ul><li><a href="#using-qt-with-3rd-party-signals-and-slots">Using Qt with 3rd Party Signals and Slots</a></li>
+</ul>
+</ul>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+<p>In GUI programming, when we change one widget, we often want another widget to be notified. More generally, we want objects of any kind to be able to communicate with one another. For example, if a user clicks a <b>Close</b> button, we probably want the window's <a href="qwidget.html#close">close()</a> function to be called.</p>
+<p>Older toolkits achieve this kind of communication using callbacks. A callback is a pointer to a function, so if you want a processing function to notify you about some event you pass a pointer to another function (the callback) to the processing function. The processing function then calls the callback when appropriate. Callbacks have two fundamental flaws: Firstly, they are not type-safe. We can never be certain that the processing function will call the callback with the correct arguments. Secondly, the callback is strongly coupled to the processing function since the processing function must know which callback to call.</p>
+<a name="signals-and-slots"></a>
+<h3>Signals and Slots</h3>
+<p>In Qt, we have an alternative to the callback technique: We use signals and slots. A signal is emitted when a particular event occurs. Qt's widgets have many predefined signals, but we can always subclass widgets to add our own signals to them. A slot is a function that is called in response to a particular signal. Qt's widgets have many pre-defined slots, but it is common practice to subclass widgets and add your own slots so that you can handle the signals that you are interested in.</p>
+<p align="center"><img src="images/abstract-connections.png" /></p><p>The signals and slots mechanism is type safe: The signature of a signal must match the signature of the receiving slot. (In fact a slot may have a shorter signature than the signal it receives because it can ignore extra arguments.) Since the signatures are compatible, the compiler can help us detect type mismatches. Signals and slots are loosely coupled: A class which emits a signal neither knows nor cares which slots receive the signal. Qt's signals and slots mechanism ensures that if you connect a signal to a slot, the slot will be called with the signal's parameters at the right time. Signals and slots can take any number of arguments of any type. They are completely type safe.</p>
+<p>All classes that inherit from <a href="qobject.html">QObject</a> or one of its subclasses (e.g&#x2e;, <a href="qwidget.html">QWidget</a>) can contain signals and slots. Signals are emitted by objects when they change their state in a way that may be interesting to other objects. This is all the object does to communicate. It does not know or care whether anything is receiving the signals it emits. This is true information encapsulation, and ensures that the object can be used as a software component.</p>
+<p>Slots can be used for receiving signals, but they are also normal member functions. Just as an object does not know if anything receives its signals, a slot does not know if it has any signals connected to it. This ensures that truly independent components can be created with Qt.</p>
+<p>You can connect as many signals as you want to a single slot, and a signal can be connected to as many slots as you need. It is even possible to connect a signal directly to another signal. (This will emit the second signal immediately whenever the first is emitted.)</p>
+<p>Together, signals and slots make up a powerful component programming mechanism.</p>
+<a name="a-small-example"></a>
+<h3>A Small Example</h3>
+<p>A minimal C++ class declaration might read:</p>
+<pre> class Counter
+ {
+ public:
+     Counter() { m_value = 0; }
+
+     int value() const { return m_value; }
+     void setValue(int value);
+
+ private:
+     int m_value;
+ };</pre>
+<p>A small <a href="qobject.html">QObject</a>-based class might read:</p>
+<pre> #include &lt;QObject&gt;
+
+ class Counter : public QObject
+ {
+     Q_OBJECT
+
+ public:
+     Counter() { m_value = 0; }
+
+     int value() const { return m_value; }
+
+ public slots:
+     void setValue(int value);
+
+ signals:
+     void valueChanged(int newValue);
+
+ private:
+     int m_value;
+ };</pre>
+<p>The <a href="qobject.html">QObject</a>-based version has the same internal state, and provides public methods to access the state, but in addition it has support for component programming using signals and slots. This class can tell the outside world that its state has changed by emitting a signal, <tt>valueChanged()</tt>, and it has a slot which other objects can send signals to.</p>
+<p>All classes that contain signals or slots must mention <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> at the top of their declaration. They must also derive (directly or indirectly) from <a href="qobject.html">QObject</a>.</p>
+<p>Slots are implemented by the application programmer. Here is a possible implementation of the <tt>Counter::setValue()</tt> slot:</p>
+<pre> void Counter::setValue(int value)
+ {
+     if (value != m_value) {
+         m_value = value;
+         emit valueChanged(value);
+     }
+ }</pre>
+<p>The <tt>emit</tt> line emits the signal <tt>valueChanged()</tt> from the object, with the new value as argument.</p>
+<p>In the following code snippet, we create two <tt>Counter</tt> objects and connect the first object's <tt>valueChanged()</tt> signal to the second object's <tt>setValue()</tt> slot using <a href="qobject.html#connect">QObject::connect</a>():</p>
+<pre>     Counter a, b;
+     QObject::connect(&amp;a, SIGNAL(valueChanged(int)),
+                      &amp;b, SLOT(setValue(int)));
+
+     a.setValue(12);     <span class="comment">//</span> a.value() == 12, b.value() == 12
+     b.setValue(48);     <span class="comment">//</span> a.value() == 12, b.value() == 48</pre>
+<p>Calling <tt>a.setValue(12)</tt> makes <tt>a</tt> emit a <tt>valueChanged(12)</tt> signal, which <tt>b</tt> will receive in its <tt>setValue()</tt> slot, i.e&#x2e; <tt>b.setValue(12)</tt> is called. Then <tt>b</tt> emits the same <tt>valueChanged()</tt> signal, but since no slot has been connected to <tt>b</tt>'s <tt>valueChanged()</tt> signal, the signal is ignored.</p>
+<p>Note that the <tt>setValue()</tt> function sets the value and emits the signal only if <tt>value != m_value</tt>. This prevents infinite looping in the case of cyclic connections (e.g&#x2e;, if <tt>b.valueChanged()</tt> were connected to <tt>a.setValue()</tt>).</p>
+<p>A signal is emitted for every connection you make; if you duplicate a connection, two signals will be emitted. You can always break a connection using <a href="qobject.html#disconnect">QObject::disconnect</a>().</p>
+<p>This example illustrates that objects can work together without needing to know any information about each other. To enable this, the objects only need to be connected together, and this can be achieved with some simple <a href="qobject.html#connect">QObject::connect</a>() function calls, or with <tt>uic</tt>'s <a href="designer-using-a-component.html#automatic-connections">automatic connections</a> feature.</p>
+<a name="building-the-example"></a>
+<h3>Building the Example</h3>
+<p>The C++ preprocessor changes or removes the <tt>signals</tt>, <tt>slots</tt>, and <tt>emit</tt> keywords so that the compiler is presented with standard C++.</p>
+<p>By running the <a href="moc.html#moc">moc</a> on class definitions that contain signals or slots, a C++ source file is produced which should be compiled and linked with the other object files for the application. If you use <a href="qmake-manual.html#qmake">qmake</a>, the makefile rules to automatically invoke <tt>moc</tt> will be added to your project's makefile.</p>
+<a name="signals"></a>
+<h3>Signals</h3>
+<p>Signals are emitted by an object when its internal state has changed in some way that might be interesting to the object's client or owner. Only the class that defines a signal and its subclasses can emit the signal.</p>
+<p>When a signal is emitted, the slots connected to it are usually executed immediately, just like a normal function call. When this happens, the signals and slots mechanism is totally independent of any GUI event loop. Execution of the code following the <tt>emit</tt> statement will occur once all slots have returned. The situation is slightly different when using <a href="qt.html#ConnectionType-enum">queued connections</a>; in such a case, the code following the <tt>emit</tt> keyword will continue immediately, and the slots will be executed later.</p>
+<p>If several slots are connected to one signal, the slots will be executed one after the other, in an arbitrary order, when the signal is emitted.</p>
+<p>Signals are automatically generated by the <a href="moc.html#moc">moc</a> and must not be implemented in the <tt>.cpp</tt> file. They can never have return types (i.e&#x2e; use <tt>void</tt>).</p>
+<p>A note about arguments: Our experience shows that signals and slots are more reusable if they do not use special types. If <a href="qabstractslider.html#valueChanged">QScrollBar::valueChanged</a>() were to use a special type such as the hypothetical QScrollBar::Range, it could only be connected to slots designed specifically for <a href="qscrollbar.html">QScrollBar</a>. Something as simple as the program in <a href="tutorials-tutorial-t5.html">Tutorial 5</a> would be impossible.</p>
+<a name="slots"></a>
+<h3>Slots</h3>
+<p>A slot is called when a signal connected to it is emitted. Slots are normal C++ functions and can be called normally; their only special feature is that signals can be connected to them.</p>
+<p>Since slots are normal member functions, they follow the normal C++ rules when called directly. However, as slots, they can be invoked by any component, regardless of its access level, via a signal-slot connection. This means that a signal emitted from an instance of an arbitrary class can cause a private slot to be invoked in an instance of an unrelated class.</p>
+<p>You can also define slots to be virtual, which we have found quite useful in practice.</p>
+<p>Compared to callbacks, signals and slots are slightly slower because of the increased flexibility they provide, although the difference for real applications is insignificant. In general, emitting a signal that is connected to some slots, is approximately ten times slower than calling the receivers directly, with non-virtual function calls. This is the overhead required to locate the connection object, to safely iterate over all connections (i.e&#x2e; checking that subsequent receivers have not been destroyed during the emission), and to marshall any parameters in a generic fashion. While ten non-virtual function calls may sound like a lot, it's much less overhead than any <tt>new</tt> or <tt>delete</tt> operation, for example. As soon as you perform a string, vector or list operation that behind the scene requires <tt>new</tt> or <tt>delete</tt>, the signals and slots overhead is only responsible for a very small proportion of the complete function call costs.</p>
+<p>The same is true whenever you do a system call in a slot; or indirectly call more than ten functions. On an i586-500, you can emit around 2,000,000 signals per second connected to one receiver, or around 1,200,000 per second connected to two receivers. The simplicity and flexibility of the signals and slots mechanism is well worth the overhead, which your users won't even notice.</p>
+<p>Note that other libraries that define variables called <tt>signals</tt> or <tt>slots</tt> may cause compiler warnings and errors when compiled alongside a Qt-based application. To solve this problem, <tt>#undef</tt> the offending preprocessor symbol.</p>
+<a name="meta-object-information"></a>
+<h3>Meta-Object Information</h3>
+<p>The meta-object compiler (<a href="moc.html#moc">moc</a>) parses the class declaration in a C++ file and generates C++ code that initializes the meta-object. The meta-object contains the names of all the signal and slot members, as well as pointers to these functions.</p>
+<p>The meta-object contains additional information such as the object's <a href="qobject-qt3.html#className">class name</a>. You can also check if an object <a href="qobject.html#inherits">inherits</a> a specific class, for example:</p>
+<pre>     if (widget-&gt;inherits(&quot;QAbstractButton&quot;)) {
+         QAbstractButton *button = static_cast&lt;QAbstractButton *&gt;(widget);
+         button-&gt;toggle();
+     }</pre>
+<p>The meta-object information is also used by qobject_cast&lt;T&gt;(), which is similar to <a href="qobject.html#inherits">QObject::inherits</a>() but is less error-prone:</p>
+<pre>     if (QAbstractButton *button = qobject_cast&lt;QAbstractButton *&gt;(widget))
+         button-&gt;toggle();</pre>
+<p>See <a href="metaobjects.html">Meta-Object System</a> for more information.</p>
+<a name="a-real-example"></a>
+<h3>A Real Example</h3>
+<p>Here is a simple commented example of a widget.</p>
+<pre> #ifndef LCDNUMBER_H
+ #define LCDNUMBER_H
+
+ #include &lt;QFrame&gt;
+
+ class LcdNumber : public QFrame
+ {
+     Q_OBJECT</pre>
+<p><tt>LcdNumber</tt> inherits <a href="qobject.html">QObject</a>, which has most of the signal-slot knowledge, via <a href="qframe.html">QFrame</a> and <a href="qwidget.html">QWidget</a>. It is somewhat similar to the built-in <a href="qlcdnumber.html">QLCDNumber</a> widget.</p>
+<p>The <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro is expanded by the preprocessor to declare several member functions that are implemented by the <tt>moc</tt>; if you get compiler errors along the lines of &quot;undefined reference to vtable for <tt>LcdNumber</tt>&quot;, you have probably forgotten to <a href="moc.html#moc">run the moc</a> or to include the moc output in the link command.</p>
+<pre> public:
+     LcdNumber(QWidget *parent = 0);</pre>
+<p>It's not obviously relevant to the moc, but if you inherit <a href="qwidget.html">QWidget</a> you almost certainly want to have the <tt>parent</tt> argument in your constructor and pass it to the base class's constructor.</p>
+<p>Some destructors and member functions are omitted here; the <tt>moc</tt> ignores member functions.</p>
+<pre> signals:
+     void overflow();</pre>
+<p><tt>LcdNumber</tt> emits a signal when it is asked to show an impossible value.</p>
+<p>If you don't care about overflow, or you know that overflow cannot occur, you can ignore the <tt>overflow()</tt> signal, i.e&#x2e; don't connect it to any slot.</p>
+<p>If on the other hand you want to call two different error functions when the number overflows, simply connect the signal to two different slots. Qt will call both (in arbitrary order).</p>
+<pre> public slots:
+     void display(int num);
+     void display(double num);
+     void display(const QString &amp;str);
+     void setHexMode();
+     void setDecMode();
+     void setOctMode();
+     void setBinMode();
+     void setSmallDecimalPoint(bool point);
+ };
+
+ #endif</pre>
+<p>A slot is a receiving function used to get information about state changes in other widgets. <tt>LcdNumber</tt> uses it, as the code above indicates, to set the displayed number. Since <tt>display()</tt> is part of the class's interface with the rest of the program, the slot is public.</p>
+<p>Several of the example programs connect the <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal of a <a href="qscrollbar.html">QScrollBar</a> to the <tt>display()</tt> slot, so the LCD number continuously shows the value of the scroll bar.</p>
+<p>Note that <tt>display()</tt> is overloaded; Qt will select the appropriate version when you connect a signal to the slot. With callbacks, you'd have to find five different names and keep track of the types yourself.</p>
+<p>Some irrelevant member functions have been omitted from this example.</p>
+<a name="advanced-signals-and-slots-usage"></a>
+<h3>Advanced Signals and Slots Usage</h3>
+<p>For cases where you may require information on the sender of the signal, Qt provides the <a href="qobject.html#sender">QObject::sender</a>() function, which returns a pointer to the object that sent the signal.</p>
+<p>The <a href="qsignalmapper.html">QSignalMapper</a> class is also provided for situations where many signals are connected to the same slot and the slot needs to handle each signal differently. Suppose you have three <a href="qpushbutton.html">QPushButton</a> objects that determine which file you will open, and you connect their <a href="qabstractbutton.html#clicked">QPushButton::clicked</a>() signal to <tt>mySlot()</tt>, you can use <a href="qsignalmapper.html">QSignalMapper</a>'s <a href="qsignalmapper.html#setMapping">setMapping()</a> to map all the <a href="qabstractbutton.html#clicked">clicked()</a> signals to a <a href="qsignalmapper.html">QSignalMapper</a> object.</p>
+<pre> int main(int argc, char * argv[])
+ {
+     QPushButton *button1 = new QPushButton;
+     QPushButton *button2 = new QPushButton;
+     QPushButton *button3 = new QPushButton;
+
+     QSignalMapper *signalMapper = new QSignalMapper(this);
+     signalMapper-&gt;setMapping(button1, QString(&quot;File1&quot;));
+     signalMapper-&gt;setMapping(button2, QString(&quot;File2&quot;));
+     signalMapper-&gt;setMapping(button3, QString(&quot;File3&quot;));
+
+     connect(signalMapper, SIGNAL(mapped(const QString &amp;)),
+         this, SLOT(mySlot(const QString&amp;)));
+ }</pre>
+<p>Then, you connect the <a href="qsignalmapper.html#mapped">mapped()</a> signal to <tt>mySlot()</tt> where a different file will be opened, depending on which push button is pressed.</p>
+<pre> void mySlot(const QString &amp;fileName)
+ {
+     QFile file(fileName);
+     file.open(QIODevice::ReadOnly);
+ }</pre>
+<a name="3rd-party-signals-and-slots"></a><a name="using-qt-with-3rd-party-signals-and-slots"></a>
+<h4>Using Qt with 3rd Party Signals and Slots</h4>
+<p>It is possible to use Qt with a 3rd party signal/slot mechanism. You can even use both mechanisms in the same project. Just add the following line to your qmake project (.pro) file.</p>
+<pre>         CONFIG += no_keywords</pre>
+<p>It tells Qt not to define the moc keywords <tt>signals</tt>, <tt>slots</tt>, and <tt>emit</tt>, because these names will be used by a 3rd party library, e.g&#x2e; Boost. Then to continue using Qt signals and slots with the <tt>no_keywords</tt> flag, simply replace all uses of the Qt moc keywords in your sources with the corresponding Qt macros Q_SIGNALS, Q_SLOTS, and Q_EMIT.</p>
+<p>See also <a href="metaobjects.html">Meta-Object System</a> and <a href="properties.html">Qt's Property System</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

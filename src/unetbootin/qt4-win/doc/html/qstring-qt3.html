@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qstring.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QString</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QString</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qstring.html">QString class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>const char * <b><a href="qstring-qt3.html#ascii">ascii</a></b> () const</li>
+<li><div class="fn"/>QChar <b><a href="qstring-qt3.html#constref">constref</a></b> ( uint <i>i</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qstring-qt3.html#contains-2">contains</a></b> ( QChar <i>c</i>, bool <i>cs</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qstring-qt3.html#contains-3">contains</a></b> ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#copy">copy</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstring-qt3.html#endsWith-2">endsWith</a></b> ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#find">find</a></b> ( QChar <i>c</i>, int <i>i</i> = 0, bool <i>cs</i> = true ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#find-2">find</a></b> ( const QString &amp; <i>s</i>, int <i>i</i> = 0, bool <i>cs</i> = true ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#find-3">find</a></b> ( const QRegExp &amp; <i>rx</i>, int <i>i</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#findRev">findRev</a></b> ( QChar <i>c</i>, int <i>i</i> = -1, bool <i>cs</i> = true ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#findRev-2">findRev</a></b> ( const QString &amp; <i>s</i>, int <i>i</i> = -1, bool <i>cs</i> = true ) const</li>
+<li><div class="fn"/>int <b><a href="qstring-qt3.html#findRev-3">findRev</a></b> ( const QRegExp &amp; <i>rx</i>, int <i>i</i> = -1 ) const</li>
+<li><div class="fn"/>const char * <b><a href="qstring-qt3.html#latin1">latin1</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#leftJustify">leftJustify</a></b> ( int <i>width</i>, QChar <i>fill</i> = QLatin1Char( ' ' ), bool <i>trunc</i> = false ) const</li>
+<li><div class="fn"/>QByteArray <b><a href="qstring-qt3.html#local8Bit">local8Bit</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#lower">lower</a></b> () const</li>
+<li><div class="fn"/>QChar &amp; <b><a href="qstring-qt3.html#ref">ref</a></b> ( uint <i>i</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#remove-2">remove</a></b> ( QChar <i>c</i>, bool <i>cs</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#remove-3">remove</a></b> ( const QString &amp; <i>s</i>, bool <i>cs</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#replace-2">replace</a></b> ( QChar <i>c</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#replace-3">replace</a></b> ( const QString &amp; <i>before</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#replace-4">replace</a></b> ( char <i>c</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#replace-5">replace</a></b> ( char <i>c</i>, const QString &amp; <i>after</i>, Qt::CaseSensitivity <i>cs</i> )</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#rightJustify">rightJustify</a></b> ( int <i>width</i>, QChar <i>fill</i> = QLatin1Char( ' ' ), bool <i>trunc</i> = false ) const</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#setAscii">setAscii</a></b> ( const char * <i>str</i>, int <i>len</i> = -1 )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#setLatin1">setLatin1</a></b> ( const char * <i>str</i>, int <i>len</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qstring-qt3.html#setLength">setLength</a></b> ( int <i>nl</i> )</li>
+<li><div class="fn"/>QString &amp; <b><a href="qstring-qt3.html#setUnicodeCodes">setUnicodeCodes</a></b> ( const ushort * <i>unicode_as_ushorts</i>, int <i>size</i> )</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#simplifyWhiteSpace">simplifyWhiteSpace</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstring-qt3.html#startsWith-2">startsWith</a></b> ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#stripWhiteSpace">stripWhiteSpace</a></b> () const</li>
+<li><div class="fn"/>const ushort * <b><a href="qstring-qt3.html#ucs2">ucs2</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#upper">upper</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qstring-qt3.html#utf8">utf8</a></b> () const</li>
+<li><div class="fn"/><b><a href="qstring-qt3.html#operator-const-char--2a">operator const char *</a></b> () const</li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qstring-qt3.html#fromUcs2">fromUcs2</a></b> ( const ushort * <i>unicode</i>, int <i>size</i> = -1 )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="ascii"></a>const char * QString::ascii () const</h3>
+<p>Use <a href="qstring.html#toAscii">toAscii</a>() instead.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>See also <a href="qstring-qt3.html#setAscii">setAscii</a>().</p>
+<h3 class="fn"><a name="constref"></a><a href="qchar.html">QChar</a> QString::constref ( <a href="qtglobal.html#uint-typedef">uint</a> <i>i</i> ) const</h3>
+<p>Use <a href="qstring.html#at">at</a>() instead.</p>
+<h3 class="fn"><a name="contains-2"></a>bool QString::contains ( <a href="qchar.html">QChar</a> <i>c</i>, bool <i>cs</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the contains(<a href="qchar.html">QChar</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="contains-3"></a>bool QString::contains ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the contains(<a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="copy"></a>QString QString::copy () const</h3>
+<p>Use simple assignment instead. <a href="qstring.html">QString</a> is implicitly shared so if a copy is modified only the copy is changed.</p>
+<h3 class="fn"><a name="endsWith-2"></a>bool QString::endsWith ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the endsWith(<a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="find"></a>int QString::find ( <a href="qchar.html">QChar</a> <i>c</i>, int <i>i</i> = 0, bool <i>cs</i> = true ) const</h3>
+<p>Use <a href="qstring.html#indexOf">indexOf</a>() instead.</p>
+<h3 class="fn"><a name="find-2"></a>int QString::find ( const QString &amp; <i>s</i>, int <i>i</i> = 0, bool <i>cs</i> = true ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstring.html#indexOf">indexOf</a>() instead.</p>
+<h3 class="fn"><a name="find-3"></a>int QString::find ( const <a href="qregexp.html">QRegExp</a> &amp; <i>rx</i>, int <i>i</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstring.html#indexOf">indexOf</a>() instead.</p>
+<h3 class="fn"><a name="findRev"></a>int QString::findRev ( <a href="qchar.html">QChar</a> <i>c</i>, int <i>i</i> = -1, bool <i>cs</i> = true ) const</h3>
+<p>Use <a href="qstring.html#lastIndexOf">lastIndexOf</a>() instead.</p>
+<h3 class="fn"><a name="findRev-2"></a>int QString::findRev ( const QString &amp; <i>s</i>, int <i>i</i> = -1, bool <i>cs</i> = true ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstring.html#lastIndexOf">lastIndexOf</a>() instead.</p>
+<h3 class="fn"><a name="findRev-3"></a>int QString::findRev ( const <a href="qregexp.html">QRegExp</a> &amp; <i>rx</i>, int <i>i</i> = -1 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstring.html#lastIndexOf">lastIndexOf</a>() instead.</p>
+<h3 class="fn"><a name="fromUcs2"></a>QString QString::fromUcs2 ( const <a href="qtglobal.html#ushort-typedef">ushort</a> * <i>unicode</i>, int <i>size</i> = -1 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Use <a href="qstring.html#fromUtf16">fromUtf16</a>() instead.</p>
+<h3 class="fn"><a name="latin1"></a>const char * QString::latin1 () const</h3>
+<p>Use <a href="qstring.html#toLatin1">toLatin1</a>() instead.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>See also <a href="qstring-qt3.html#setLatin1">setLatin1</a>().</p>
+<h3 class="fn"><a name="leftJustify"></a>QString QString::leftJustify ( int <i>width</i>, <a href="qchar.html">QChar</a> <i>fill</i> = QLatin1Char( ' ' ), bool <i>trunc</i> = false ) const</h3>
+<p>Use <a href="qstring.html#leftJustified">leftJustified</a>() instead.</p>
+<h3 class="fn"><a name="local8Bit"></a><a href="qbytearray.html">QByteArray</a> QString::local8Bit () const</h3>
+<p>Use <a href="qstring.html#toLocal8Bit">toLocal8Bit</a>() instead.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<h3 class="fn"><a name="lower"></a>QString QString::lower () const</h3>
+<p>Use <a href="qstring.html#toLower">toLower</a>() instead.</p>
+<h3 class="fn"><a name="ref"></a><a href="qchar.html">QChar</a> &amp; QString::ref ( <a href="qtglobal.html#uint-typedef">uint</a> <i>i</i> )</h3>
+<p>Use operator[]() instead.</p>
+<h3 class="fn"><a name="remove-2"></a>QString &amp; QString::remove ( <a href="qchar.html">QChar</a> <i>c</i>, bool <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the remove(<a href="qchar.html">QChar</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="remove-3"></a>QString &amp; QString::remove ( const QString &amp; <i>s</i>, bool <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the remove(<a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="replace-2"></a>QString &amp; QString::replace ( <a href="qchar.html">QChar</a> <i>c</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the replace(<a href="qchar.html">QChar</a>, <a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="replace-3"></a>QString &amp; QString::replace ( const QString &amp; <i>before</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the replace(<a href="qstring.html">QString</a>, <a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="replace-4"></a>QString &amp; QString::replace ( char <i>c</i>, const QString &amp; <i>after</i>, bool <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the replace(<a href="qchar.html">QChar</a>, <a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="replace-5"></a>QString &amp; QString::replace ( char <i>c</i>, const QString &amp; <i>after</i>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a> <i>cs</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the replace(<a href="qchar.html">QChar</a>, <a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="rightJustify"></a>QString QString::rightJustify ( int <i>width</i>, <a href="qchar.html">QChar</a> <i>fill</i> = QLatin1Char( ' ' ), bool <i>trunc</i> = false ) const</h3>
+<p>Use <a href="qstring.html#rightJustified">rightJustified</a>() instead.</p>
+<h3 class="fn"><a name="setAscii"></a>QString &amp; QString::setAscii ( const char * <i>str</i>, int <i>len</i> = -1 )</h3>
+<p>Use <a href="qstring.html#fromAscii">fromAscii</a>() instead.</p>
+<p>See also <a href="qstring-qt3.html#ascii">ascii</a>().</p>
+<h3 class="fn"><a name="setLatin1"></a>QString &amp; QString::setLatin1 ( const char * <i>str</i>, int <i>len</i> = -1 )</h3>
+<p>Use <a href="qstring.html#fromLatin1">fromLatin1</a>() instead.</p>
+<p>See also <a href="qstring-qt3.html#latin1">latin1</a>().</p>
+<h3 class="fn"><a name="setLength"></a>void QString::setLength ( int <i>nl</i> )</h3>
+<p>Use <a href="qstring.html#resize">resize</a>() instead.</p>
+<p>See also <a href="qstring.html#length">length</a>().</p>
+<h3 class="fn"><a name="setUnicodeCodes"></a>QString &amp; QString::setUnicodeCodes ( const <a href="qtglobal.html#ushort-typedef">ushort</a> * <i>unicode_as_ushorts</i>, int <i>size</i> )</h3>
+<p>Use <a href="qstring.html#setUtf16">setUtf16</a>() instead.</p>
+<h3 class="fn"><a name="simplifyWhiteSpace"></a>QString QString::simplifyWhiteSpace () const</h3>
+<p>Use <a href="qstring.html#simplified">simplified</a>() instead.</p>
+<h3 class="fn"><a name="startsWith-2"></a>bool QString::startsWith ( const QString &amp; <i>s</i>, bool <i>cs</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the startsWith(<a href="qstring.html">QString</a>, <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>) overload instead.</p>
+<h3 class="fn"><a name="stripWhiteSpace"></a>QString QString::stripWhiteSpace () const</h3>
+<p>Use <a href="qstring.html#trimmed">trimmed</a>() instead.</p>
+<h3 class="fn"><a name="ucs2"></a>const <a href="qtglobal.html#ushort-typedef">ushort</a> * QString::ucs2 () const</h3>
+<p>Use <a href="qstring.html#utf16">utf16</a>() instead.</p>
+<h3 class="fn"><a name="upper"></a>QString QString::upper () const</h3>
+<p>Use <a href="qstring.html#toUpper">toUpper</a>() instead.</p>
+<h3 class="fn"><a name="utf8"></a><a href="qbytearray.html">QByteArray</a> QString::utf8 () const</h3>
+<p>Use <a href="qstring.html#toUtf8">toUtf8</a>() instead.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<h3 class="fn"><a name="operator-const-char--2a"></a>QString::operator const char * () const</h3>
+<p>Use <a href="qstring.html#toAscii">toAscii</a>().<a href="qstring.html#constData">constData</a>() instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

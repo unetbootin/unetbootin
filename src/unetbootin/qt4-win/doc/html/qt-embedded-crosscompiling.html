@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-crosscompiling.qdoc -->
+<head>
+  <title>Qt 4.4: Cross-Compiling Qt for Embedded Linux Applications</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Cross-Compiling Qt for Embedded Linux Applications<br /><span class="subtitle"></span>
+</h1>
+<p>Cross-compiling is the process of compiling an application on one machine, producing executable code for a different machine or device. To cross-compile a <a href="qt-embedded.html">Qt for Embedded Linux</a> application, use the following approach:</p>
+<ul><li><a href="#step-1-set-the-cross-compiler-s-path">Step 1: Set the Cross-Compiler's Path</a></li>
+<li><a href="#step-2-create-a-target-specific-qmake-specification">Step 2: Create a Target Specific qmake Specification</a></li>
+<li><a href="#step-3-provide-architecture-specific-files">Step 3: Provide Architecture Specific Files</a></li>
+<li><a href="#step-4-provide-hardware-drivers">Step 4: Provide Hardware Drivers</a></li>
+<li><a href="#step-5-build-the-target-specific-executable">Step 5: Build the Target Specific Executable</a></li>
+</ul>
+<p>Note that the cross-compiling procedure has the configuration process in common with the installation procedure, i.e&#x2e;, you might not necessarily have to perform all the mentioned actions depending on your current configuration.</p>
+<a name="step-1-set-the-cross-compiler-s-path"></a>
+<h2>Step 1: Set the Cross-Compiler's Path</h2>
+<p>Specify which cross-compiler to use by setting the <tt>PATH</tt> environment variable. For example, if the current shell is bash, ksh, zsh or sh:</p>
+<pre>         export PATH=path/to/cross/compiler:$PATH</pre>
+<a name="step-2-create-a-target-specific-qmake-specification"></a>
+<h2>Step 2: Create a Target Specific qmake Specification</h2>
+<p>The qmake tool requires a platform and compiler specific <tt>qmake.conf</tt> file describing the various default values, to generate the appropriate Makefiles. The standard <a href="qt-embedded.html">Qt for Embedded Linux</a> distribution provides such files for several combinations of platforms and compilers. These files are located in the distribution's <tt>mkspecs/qws</tt> subdirectory.</p>
+<p>Each platform has a default specification. <a href="qt-embedded.html">Qt for Embedded Linux</a> will use the default specification for the current platform unless told otherwise. To override this behavior, you can use the <tt>configure</tt> script's <tt>-platform</tt> option to change the specification for the host platform (where compilation will take place).</p>
+<p>The <tt>configure</tt> script's <tt>-xplatform</tt> option is used to provide a specification for the target architecture (where the library will be deployed).</p>
+<p>For example, to cross-compile an application to run on a device with an ARM architecture, using the GCC toolchain, run the configure script at the command line in the following way:</p>
+<pre>         ./configure -embedded arm -xplatform qws/linux-arm-g++ &lt;other options&gt;</pre>
+<p>If neither of the provided specifications fits your target device, you can create your own. To create a custom <tt>qmake.conf</tt> file, just copy and customize an already existing file. For example:</p>
+<pre>         cp path/to/QtEmbedded/mkspecs/qws/linux-mips-g++/...
+            path/to/QtEmbedded/mkspecs/qws/linux-myarchitecture-g++/...</pre>
+<p>Note that it is recommended to copy the entire directory.</p>
+<p>Note also that when providing you own qmake specifcation, you must use the <tt>configure</tt> script's <tt>-xplatform</tt> option to make <a href="qt-embedded.html">Qt for Embedded Linux</a> aware of the custom <tt>qmake.conf</tt> file.</p>
+<a name="step-3-provide-architecture-specific-files"></a>
+<h2>Step 3: Provide Architecture Specific Files</h2>
+<p>Starting with Qt 4, all of Qt's implicitly shared classes can safely be copied across threads like any other value classes, i.e&#x2e;, they are fully reentrant. This is accomplished by implementing reference counting operations using atomic hardware instructions on all the different platforms supported by Qt.</p>
+<p>To support a new architecture, it is important to ensure that these platform-specific atomic operations are implemented in a corresponding header file (<tt>qatomic_ARCH.h</tt>), and that this file is located in Qt's <tt>src/corelib/arch</tt> directory. For example, the Intel 80386 implementation is located in <tt>src/corelib/arch/qatomic_i386.h</tt>.</p>
+<p>See the <a href="atomic-operations.html">Implementing Atomic Operations</a> documentation for details.</p>
+<a name="step-4-provide-hardware-drivers"></a>
+<h2>Step 4: Provide Hardware Drivers</h2>
+<p>Without the proper mouse and keyboard drivers, you will not be able to give any input to your application when it is installed on the target device. You must also ensure that the appropriate screen driver is present to make the server process able to put the application's widgets on screen.</p>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> provides several ready-made mouse, keyboard and screen drivers, see the <a href="qt-embedded-pointer.html">pointer handling</a>, <a href="qt-embedded-charinput.html">character input</a> and <a href="qt-embedded-displaymanagement.html">display management</a> documentation for details.</p>
+<p>In addition, custom drivers can be added by deriving from the QWSMouseHandler, QWSKeyboardHandler and QScreen classes respectively, and by creating corresponding plugins to make use of Qt's plugin mechanism (dynamically loading the drivers into the server application at runtime). Note that the plugins must be located in a location where Qt will look for plugins, e.g&#x2e;, the standard <tt>plugin</tt> directory.</p>
+<p>See the <a href="plugins-howto.html">How to Create Qt Plugins</a> documentation and the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example for details.</p>
+<a name="step-5-build-the-target-specific-executable"></a>
+<h2>Step 5: Build the Target Specific Executable</h2>
+<p>Before building the executable, you must specify the target architecture as well as the target specific hardware drivers by running the <tt>configure</tt> script:</p>
+<pre>         cd path/to/QtEmbedded
+         ./configure -embedded &lt;architecture&gt; -qt-kbd-&lt;keyboarddriver&gt;
+                     -qt-mouse-&lt;mousedriver&gt; -qt-gfx-&lt;screendriver&gt;</pre>
+<p>It is also important to make sure that all the third party libraries that the application and the Qt libraries require, are present in the tool chain. In particular, if the zlib and jpeg libraries are not available, they must be included by running the <tt>configure</tt> script with the <tt>-L</tt> and <tt>-I</tt> options. For example:</p>
+<pre>         cd path/to/QtEmbedded
+         ./configure  &lt;other options&gt;
+                      -L /path/to/libjpeg/libraries -I /path/to/libjpeg/headers</pre>
+<p>The JPEG source can be downloaded from <a href="http://www.ijg.org/">http://www.ijg.org/</a>. The <a href="qt-embedded.html">Qt for Embedded Linux</a> distribution includes a version of the zlib source that can be compiled into the Qt for Embedded Linux library. If integrators wish to use a later version of the zlib library, it can be downloaded from the <a href="http://www.gzip.org/zlib/">http://www.gzip.org/zlib/</a> website.</p>
+<p>Then build the executable:</p>
+<pre>         cd path/to/myApplication
+         qmake -project
+         qmake
+         make</pre>
+<p>That's all. Your target specific executable is ready for deployment.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>See also:</b><p><a href="qt-embedded-architecture.html">Qt for Embedded Linux Architecture</a> and <a href="qt-embedded-deployment.html">Deploying Qt for Embedded Linux Applications</a>.</p>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

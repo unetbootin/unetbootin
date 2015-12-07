@@ -1,0 +1,6 @@
+include(qt.qdocconf)
+headerdirs = 
+sourcedirs =
+sources = $QTDIR/doc/src/qt4-arthur.qdoc
+outputdir = $QTDIR/demos/arthur/html
+HTML.{postheader,address} = ""

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/svg/qgraphicssvgitem.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsSvgItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsSvgItem Class Reference<br /><span class="small-subtitle">[<a href="qtsvg.html">QtSvg</a> module]</span>
+</h1>
+<p>The QGraphicsSvgItem class is a <a href="qgraphicsitem.html">QGraphicsItem</a> that can be used to render the contents of SVG files. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsSvgItem&gt;</pre><p>Inherits <a href="qobject.html">QObject</a> and <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicssvgitem-members.html">List of all members, including inherited members</a></li>
+<li><a href="qgraphicssvgitem-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicssvgitem.html#QGraphicsSvgItem">QGraphicsSvgItem</a></b> ( QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicssvgitem.html#QGraphicsSvgItem-2">QGraphicsSvgItem</a></b> ( const QString &amp; <i>fileName</i>, QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual QRectF <b><a href="qgraphicssvgitem.html#boundingRect">boundingRect</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qgraphicssvgitem.html#elementId">elementId</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="qgraphicssvgitem.html#maximumCacheSize">maximumCacheSize</a></b> () const</li>
+<li><div class="fn"/>QSvgRenderer * <b><a href="qgraphicssvgitem.html#renderer">renderer</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicssvgitem.html#setElementId">setElementId</a></b> ( const QString &amp; <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicssvgitem.html#setMaximumCacheSize">setMaximumCacheSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicssvgitem.html#setSharedRenderer">setSharedRenderer</a></b> ( QSvgRenderer * <i>renderer</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsSvgItem class is a <a href="qgraphicsitem.html">QGraphicsItem</a> that can be used to render the contents of SVG files.</p>
+<p>QGraphicsSvgItem provides a way of rendering SVG files onto <a href="qgraphicsview.html">QGraphicsView</a>. QGraphicsSvgItem can be created by passing the SVG file to be rendered to its constructor or by explicit setting a shared <a href="qsvgrenderer.html">QSvgRenderer</a> on it.</p>
+<p>Note that setting <a href="qsvgrenderer.html">QSvgRenderer</a> on a QGraphicsSvgItem doesn't make the item take ownership of the renderer, therefore if using <a href="qgraphicssvgitem.html#setSharedRenderer">setSharedRenderer</a>() method one has to make sure that the lifetime of the <a href="qsvgrenderer.html">QSvgRenderer</a> object will be at least as long as that of the QGraphicsSvgItem.</p>
+<p>QGraphicsSvgItem provides a way of rendering only parts of the SVG files via the setElementId. If <a href="qgraphicssvgitem.html#setElementId">setElementId</a>() method is called, only the SVG element (and its children) with the passed id will be renderer. This provides a convenient way of selectively rendering large SVG files that contain a number of discrete elements. For example the following code renders only jokers from a SVG file containing a whole card deck:</p>
+<pre>     QSvgRenderer *renderer = new QSvgRenderer(QLatin1String(&quot;SvgCardDeck.svg&quot;));
+     QGraphicsSvgItem *black = new QGraphicsSvgItem();
+     QGraphicsSvgItem *red   = new QGraphicsSvgItem();
+
+     black-&gt;setSharedRenderer(renderer);
+     black-&gt;setElementId(QLatin1String(&quot;black_joker&quot;));
+
+     red-&gt;setSharedRenderer(renderer);
+     red-&gt;setElementId(QLatin1String(&quot;red_joker&quot;));</pre>
+<p>Size of the item can be set via the setSize() method or via direct manipulation of the items transformation matrix.</p>
+<p>By default the SVG rendering is cached using <a href="qgraphicsitem.html#CacheMode-enum">QGraphicsItem::DeviceCoordinateCache</a> mode to speedup the display of items. Caching can be disabled by passing <a href="qgraphicsitem.html#CacheMode-enum">QGraphicsItem::NoCache</a> to the <a href="qgraphicsitem.html#setCacheMode">QGraphicsItem::setCacheMode</a>() method.</p>
+<p>See also <a href="qsvgwidget.html">QSvgWidget</a>, <a href="qtsvg.html">QtSvg Module</a>, <a href="qgraphicsitem.html">QGraphicsItem</a>, and <a href="qgraphicsview.html">QGraphicsView</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsSvgItem"></a>QGraphicsSvgItem::QGraphicsSvgItem ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new SVG item with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QGraphicsSvgItem-2"></a>QGraphicsSvgItem::QGraphicsSvgItem ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new item with the given <i>parent</i> and loads the contents of the SVG file with the specified <i>fileName</i>.</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrectf.html">QRectF</a> QGraphicsSvgItem::boundingRect () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the bounding rectangle of this item.</p>
+<p>Reimplemented from <a href="qgraphicsitem.html#boundingRect">QGraphicsItem</a>.</p>
+<h3 class="fn"><a name="elementId"></a><a href="qstring.html">QString</a> QGraphicsSvgItem::elementId () const</h3>
+<p>Returns the XML ID the element that is currently being renderer. Returns an empty string if the whole file is being rendered.</p>
+<p>See also <a href="qgraphicssvgitem.html#setElementId">setElementId</a>().</p>
+<h3 class="fn"><a name="maximumCacheSize"></a><a href="qsize.html">QSize</a> QGraphicsSvgItem::maximumCacheSize () const</h3>
+<p>Returns the current maximum size of the device coordinate cache for this item. If the item is cached using <a href="qgraphicsitem.html#CacheMode-enum">QGraphicsItem::DeviceCoordinateCache</a> mode, caching is bypassed if the extension of the item in device coordinates is larger than the maximum size.</p>
+<p>The default maximum cache size is 1024x768. <a href="qpixmapcache.html#cacheLimit">QPixmapCache::cacheLimit</a>() gives the cumulative bounds of the whole cache, whereas maximumCacheSize() refers to a maximum cache size for this particular item.</p>
+<p>See also <a href="qgraphicssvgitem.html#setMaximumCacheSize">setMaximumCacheSize</a>() and <a href="qgraphicsitem.html#cacheMode">QGraphicsItem::cacheMode</a>().</p>
+<h3 class="fn"><a name="renderer"></a><a href="qsvgrenderer.html">QSvgRenderer</a> * QGraphicsSvgItem::renderer () const</h3>
+<p>Returns the currently use <a href="qsvgrenderer.html">QSvgRenderer</a>.</p>
+<h3 class="fn"><a name="setElementId"></a>void QGraphicsSvgItem::setElementId ( const <a href="qstring.html">QString</a> &amp; <i>id</i> )</h3>
+<p>Sets the XML ID of the element that this item should render to <i>id</i>.</p>
+<p>See also <a href="qgraphicssvgitem.html#elementId">elementId</a>().</p>
+<h3 class="fn"><a name="setMaximumCacheSize"></a>void QGraphicsSvgItem::setMaximumCacheSize ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the maximum device coordinate cache size of the item to <i>size</i>. If the item is cached using <a href="qgraphicsitem.html#CacheMode-enum">QGraphicsItem::DeviceCoordinateCache</a> mode, caching is bypassed if the extension of the item in device coordinates is larger than <i>size</i>.</p>
+<p>The cache corresponds to the <a href="qpixmap.html">QPixmap</a> which is used to cache the results of the rendering. Use <a href="qpixmapcache.html#setCacheLimit">QPixmapCache::setCacheLimit</a>() to set limitations on the whole cache and use setMaximumCacheSize() when setting cache size for individual items.</p>
+<p>See also <a href="qgraphicssvgitem.html#maximumCacheSize">maximumCacheSize</a>() and <a href="qgraphicsitem.html#cacheMode">QGraphicsItem::cacheMode</a>().</p>
+<h3 class="fn"><a name="setSharedRenderer"></a>void QGraphicsSvgItem::setSharedRenderer ( <a href="qsvgrenderer.html">QSvgRenderer</a> * <i>renderer</i> )</h3>
+<p>Sets <i>renderer</i> to be a shared <a href="qsvgrenderer.html">QSvgRenderer</a> on the item. By using this method one can share the same <a href="qsvgrenderer.html">QSvgRenderer</a> on a number of items. This means that the SVG file will be parsed only once. <a href="qsvgrenderer.html">QSvgRenderer</a> passed to this method has to exist for as long as this item is used.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+    <qresource prefix="/trolltech/designer">
+        <file>images/designer.png</file>
+    </qresource>
+</RCC>

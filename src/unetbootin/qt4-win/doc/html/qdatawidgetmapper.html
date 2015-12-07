@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qdatawidgetmapper.cpp -->
+<head>
+  <title>Qt 4.4: QDataWidgetMapper Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDataWidgetMapper Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QDataWidgetMapper class provides mapping between a section of a data model to widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QDataWidgetMapper&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdatawidgetmapper-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdatawidgetmapper.html#SubmitPolicy-enum">SubmitPolicy</a></b> { AutoSubmit, ManualSubmit }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a></b> : int</li>
+<li><div class="fn"/><b><a href="qdatawidgetmapper.html#orientation-prop">orientation</a></b> : Qt::Orientation</li>
+<li><div class="fn"/><b><a href="qdatawidgetmapper.html#submitPolicy-prop">submitPolicy</a></b> : SubmitPolicy</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdatawidgetmapper.html#QDataWidgetMapper">QDataWidgetMapper</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qdatawidgetmapper.html#dtor.QDataWidgetMapper">~QDataWidgetMapper</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#addMapping">addMapping</a></b> ( QWidget * <i>widget</i>, int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#addMapping-2">addMapping</a></b> ( QWidget * <i>widget</i>, int <i>section</i>, const QByteArray &amp; <i>propertyName</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#clearMapping">clearMapping</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a></b> () const</li>
+<li><div class="fn"/>QAbstractItemDelegate * <b><a href="qdatawidgetmapper.html#itemDelegate">itemDelegate</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qdatawidgetmapper.html#mappedPropertyName">mappedPropertyName</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qdatawidgetmapper.html#mappedSection">mappedSection</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>QWidget * <b><a href="qdatawidgetmapper.html#mappedWidgetAt">mappedWidgetAt</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>QAbstractItemModel * <b><a href="qdatawidgetmapper.html#model">model</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qdatawidgetmapper.html#orientation-prop">orientation</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#removeMapping">removeMapping</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>QModelIndex <b><a href="qdatawidgetmapper.html#rootIndex">rootIndex</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#setItemDelegate">setItemDelegate</a></b> ( QAbstractItemDelegate * <i>delegate</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#setModel">setModel</a></b> ( QAbstractItemModel * <i>model</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#orientation-prop">setOrientation</a></b> ( Qt::Orientation <i>aOrientation</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#setRootIndex">setRootIndex</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#submitPolicy-prop">setSubmitPolicy</a></b> ( SubmitPolicy <i>policy</i> )</li>
+<li><div class="fn"/>SubmitPolicy <b><a href="qdatawidgetmapper.html#submitPolicy-prop">submitPolicy</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#revert">revert</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#setCurrentModelIndex">setCurrentModelIndex</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdatawidgetmapper.html#submit">submit</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#toFirst">toFirst</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#toLast">toLast</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#toNext">toNext</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#toPrevious">toPrevious</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdatawidgetmapper.html#currentIndexChanged">currentIndexChanged</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDataWidgetMapper class provides mapping between a section of a data model to widgets.</p>
+<p>QDataWidgetMapper can be used to create data-aware widgets by mapping them to sections of an item model. A section is a column of a model if the orientation is horizontal (the default), otherwise a row.</p>
+<p>Every time the current index changes, each widget is updated with data from the model via the property specified when its mapping was made. If the user edits the contents of a widget, the changes are read using the same property and written back to the model. By default, each widget's <a href="qobject.html#Q_PROPERTY">user property</a> is used to transfer data between the model and the widget. Since Qt 4.3, an additional <a href="qdatawidgetmapper.html#addMapping">addMapping</a>() function enables a named property to be used instead of the default user property.</p>
+<p>It is possible to set an item delegate to support custom widgets. By default, a <a href="qitemdelegate.html">QItemDelegate</a> is used to synchronize the model with the widgets.</p>
+<p>Let us assume that we have an item model named <tt>model</tt> with the following contents:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>1</td><td>Trolltech ASA</td><td>Oslo</td></tr>
+<tr valign="top" class="even"><td>2</td><td>Trolltech Pty</td><td>Brisbane</td></tr>
+<tr valign="top" class="odd"><td>3</td><td>Trolltech Inc</td><td>Palo Alto</td></tr>
+<tr valign="top" class="even"><td>4</td><td>Trolltech China</td><td>Beijing</td></tr>
+<tr valign="top" class="odd"><td>5</td><td>Trolltech GmbH</td><td>Berlin</td></tr>
+</table></p>
+<p>The following code will map the columns of the model to widgets called <tt>mySpinBox</tt>, <tt>myLineEdit</tt> and <tt>myCountryChooser</tt>:</p>
+<pre>     QDataWidgetMapper *mapper = new QDataWidgetMapper;
+     mapper-&gt;setModel(model);
+     mapper-&gt;addMapping(mySpinBox, 0);
+     mapper-&gt;addMapping(myLineEdit, 1);
+     mapper-&gt;addMapping(myCountryChooser, 2);
+     mapper-&gt;toFirst();</pre>
+<p>After the call to <a href="qdatawidgetmapper.html#toFirst">toFirst</a>(), <tt>mySpinBox</tt> displays the value <tt>1</tt>, <tt>myLineEdit</tt> displays <tt>Trolltech ASA</tt> and <tt>myCountryChooser</tt> displays <tt>Oslo</tt>. The navigational functions <a href="qdatawidgetmapper.html#toFirst">toFirst</a>(), <a href="qdatawidgetmapper.html#toNext">toNext</a>(), <a href="qdatawidgetmapper.html#toPrevious">toPrevious</a>(), <a href="qdatawidgetmapper.html#toLast">toLast</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() can be used to navigate in the model and update the widgets with contents from the model.</p>
+<p>The <a href="qdatawidgetmapper.html#setRootIndex">setRootIndex</a>() function enables a particular item in a model to be specified as the root index - children of this item will be mapped to the relevant widgets in the user interface.</p>
+<p>QDataWidgetMapper supports two submit policies, <tt>AutoSubmit</tt> and <tt>ManualSubmit</tt>. <tt>AutoSubmit</tt> will update the model as soon as the current widget loses focus, <tt>ManualSubmit</tt> will not update the model unless <a href="qdatawidgetmapper.html#submit">submit</a>() is called. <tt>ManualSubmit</tt> is useful when displaying a dialog that lets the user cancel all modifications. Also, other views that display the model won't update until the user finishes all their modifications and submits.</p>
+<p>Note that QDataWidgetMapper keeps track of external modifications. If the contents of the model are updated in another module of the application, the widgets are updated as well.</p>
+<p>See also <a href="qabstractitemmodel.html">QAbstractItemModel</a> and <a href="qabstractitemdelegate.html">QAbstractItemDelegate</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="SubmitPolicy-enum"></a>enum QDataWidgetMapper::SubmitPolicy</h3>
+<p>This enum describes the possible submit policies a <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> supports.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDataWidgetMapper::AutoSubmit</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Whenever a widget loses focus, the widget's current value is set to the item model.</td></tr>
+<tr><td valign="top"><tt>QDataWidgetMapper::ManualSubmit</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The model is not updated until <a href="qdatawidgetmapper.html#submit">submit</a>() is called.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="currentIndex-prop"></a>currentIndex : int</h3>
+<p>This property holds the current row or column.</p>
+<p>The widgets are populated with with data from the row at <i>index</i> if the orientation is horizontal (the default), otherwise with data from the column at <i>index</i>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentIndex () const</b></li>
+<li><div class="fn"/><b>virtual void setCurrentIndex ( int <i>index</i> )</b></li>
+</ul>
+<p>See also <a href="qdatawidgetmapper.html#setCurrentModelIndex">setCurrentModelIndex</a>(), <a href="qdatawidgetmapper.html#toFirst">toFirst</a>(), <a href="qdatawidgetmapper.html#toNext">toNext</a>(), <a href="qdatawidgetmapper.html#toPrevious">toPrevious</a>(), and <a href="qdatawidgetmapper.html#toLast">toLast</a>().</p>
+<h3 class="fn"><a name="orientation-prop"></a>orientation : <a href="qt.html#Orientation-enum">Qt::Orientation</a></h3>
+<p>This property holds the orientation of the model.</p>
+<p>If the orientation is <a href="qt.html#Orientation-enum">Qt::Horizontal</a> (the default), a widget is mapped to a column of a data model. The widget will be populated with the model's data from its mapped column and the row that <a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a>() points at.</p>
+<p>Use <a href="qt.html#Orientation-enum">Qt::Horizontal</a> for tabular data that looks like this:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>1</td><td>Trolltech ASA</td><td>Oslo</td></tr>
+<tr valign="top" class="even"><td>2</td><td>Trolltech Pty</td><td>Brisbane</td></tr>
+<tr valign="top" class="odd"><td>3</td><td>Trolltech Inc</td><td>Silicon Valley</td></tr>
+<tr valign="top" class="even"><td>4</td><td>Trolltech China</td><td>Beijing</td></tr>
+<tr valign="top" class="odd"><td>5</td><td>Trolltech GmbH</td><td>Berlin</td></tr>
+</table></p>
+<p>If the orientation is set to <a href="qt.html#Orientation-enum">Qt::Vertical</a>, a widget is mapped to a row. Calling <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() will change the current column. The widget will be populates with the model's data from its mapped row and the column that <a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a>() points at.</p>
+<p>Use <a href="qt.html#Orientation-enum">Qt::Vertical</a> for tabular data that looks like this:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td></tr>
+<tr valign="top" class="even"><td>Trolltech ASA</td><td>Trolltech Pty</td><td>Trolltech Inc</td><td>Trolltech China</td><td>Trolltech GmbH</td></tr>
+<tr valign="top" class="odd"><td>Oslo</td><td>Brisbane</td><td>Silicon Valley</td><td>Beijing</td><td>Berlin</td></tr>
+</table></p>
+<p>Changing the orientation clears all existing mappings.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Orientation orientation () const</b></li>
+<li><div class="fn"/><b>void setOrientation ( Qt::Orientation <i>aOrientation</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="submitPolicy-prop"></a>submitPolicy : <a href="qdatawidgetmapper.html#SubmitPolicy-enum">SubmitPolicy</a></h3>
+<p>This property holds the current submit policy.</p>
+<p>Changing the current submit policy will revert all widgets to the current data from the model.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>SubmitPolicy submitPolicy () const</b></li>
+<li><div class="fn"/><b>void setSubmitPolicy ( SubmitPolicy <i>policy</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDataWidgetMapper"></a>QDataWidgetMapper::QDataWidgetMapper ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> with parent object <i>parent</i>. By default, the orientation is horizontal and the submit policy is <tt>AutoSubmit</tt>.</p>
+<p>See also <a href="qdatawidgetmapper.html#orientation-prop">setOrientation</a>() and <a href="qdatawidgetmapper.html#submitPolicy-prop">setSubmitPolicy</a>().</p>
+<h3 class="fn"><a name="dtor.QDataWidgetMapper"></a>QDataWidgetMapper::~QDataWidgetMapper ()</h3>
+<p>Destroys the object.</p>
+<h3 class="fn"><a name="addMapping"></a>void QDataWidgetMapper::addMapping ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, int <i>section</i> )</h3>
+<p>Adds a mapping between a <i>widget</i> and a <i>section</i> from the model. The <i>section</i> is a column in the model if the orientation is horizontal (the default), otherwise a row.</p>
+<p>For the following example, we assume a model <tt>myModel</tt> that has two columns: the first one contains the names of people in a group, and the second column contains their ages. The first column is mapped to the <a href="qlineedit.html">QLineEdit</a> <tt>nameLineEdit</tt>, and the second is mapped to the <a href="qspinbox.html">QSpinBox</a> <tt>ageSpinBox</tt>:</p>
+<pre>     QDataWidgetMapper *mapper = new QDataWidgetMapper();
+     mapper-&gt;setModel(myModel);
+     mapper-&gt;addMapping(nameLineEdit, 0);
+     mapper-&gt;addMapping(ageSpinBox, 1);</pre>
+<p><b>Notes:</b></p>
+<ul>
+<li>If the <i>widget</i> is already mapped to a section, the old mapping will be replaced by the new one.</li>
+<li>Only one-to-one mappings between sections and widgets are allowed. It is not possible to map a single section to multiple widgets, or to map a single widget to multiple sections.</li>
+</ul>
+<p>See also <a href="qdatawidgetmapper.html#removeMapping">removeMapping</a>(), <a href="qdatawidgetmapper.html#mappedSection">mappedSection</a>(), and <a href="qdatawidgetmapper.html#clearMapping">clearMapping</a>().</p>
+<h3 class="fn"><a name="addMapping-2"></a>void QDataWidgetMapper::addMapping ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, int <i>section</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>propertyName</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Essentially the same as <a href="qdatawidgetmapper.html#addMapping">addMapping</a>(), but adds the possibility to specify the property to use specifying <i>propertyName</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qdatawidgetmapper.html#addMapping">addMapping</a>().</p>
+<h3 class="fn"><a name="clearMapping"></a>void QDataWidgetMapper::clearMapping ()</h3>
+<p>Clears all mappings.</p>
+<p>See also <a href="qdatawidgetmapper.html#addMapping">addMapping</a>() and <a href="qdatawidgetmapper.html#removeMapping">removeMapping</a>().</p>
+<h3 class="fn"><a name="currentIndexChanged"></a>void QDataWidgetMapper::currentIndexChanged ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after the current index has changed and all widgets were populated with new data. <i>index</i> is the new current index.</p>
+<p>See also <a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="itemDelegate"></a><a href="qabstractitemdelegate.html">QAbstractItemDelegate</a> * QDataWidgetMapper::itemDelegate () const</h3>
+<p>Returns the current item delegate.</p>
+<p>See also <a href="qdatawidgetmapper.html#setItemDelegate">setItemDelegate</a>().</p>
+<h3 class="fn"><a name="mappedPropertyName"></a><a href="qbytearray.html">QByteArray</a> QDataWidgetMapper::mappedPropertyName ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the name of the property that is used when mapping data to the given <i>widget</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qdatawidgetmapper.html#mappedSection">mappedSection</a>(), <a href="qdatawidgetmapper.html#addMapping">addMapping</a>(), and <a href="qdatawidgetmapper.html#removeMapping">removeMapping</a>().</p>
+<h3 class="fn"><a name="mappedSection"></a>int QDataWidgetMapper::mappedSection ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the section the <i>widget</i> is mapped to or -1 if the widget is not mapped.</p>
+<p>See also <a href="qdatawidgetmapper.html#addMapping">addMapping</a>() and <a href="qdatawidgetmapper.html#removeMapping">removeMapping</a>().</p>
+<h3 class="fn"><a name="mappedWidgetAt"></a><a href="qwidget.html">QWidget</a> * QDataWidgetMapper::mappedWidgetAt ( int <i>section</i> ) const</h3>
+<p>Returns the widget that is mapped at <i>section</i>, or 0 if no widget is mapped at that section.</p>
+<p>See also <a href="qdatawidgetmapper.html#addMapping">addMapping</a>() and <a href="qdatawidgetmapper.html#removeMapping">removeMapping</a>().</p>
+<h3 class="fn"><a name="model"></a><a href="qabstractitemmodel.html">QAbstractItemModel</a> * QDataWidgetMapper::model () const</h3>
+<p>Returns the current model.</p>
+<p>See also <a href="qdatawidgetmapper.html#setModel">setModel</a>().</p>
+<h3 class="fn"><a name="removeMapping"></a>void QDataWidgetMapper::removeMapping ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Removes the mapping for the given <i>widget</i>.</p>
+<p>See also <a href="qdatawidgetmapper.html#addMapping">addMapping</a>() and <a href="qdatawidgetmapper.html#clearMapping">clearMapping</a>().</p>
+<h3 class="fn"><a name="revert"></a>void QDataWidgetMapper::revert ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Repopulates all widgets with the current data of the model. All unsubmitted changes will be lost.</p>
+<p>See also <a href="qdatawidgetmapper.html#submit">submit</a>() and <a href="qdatawidgetmapper.html#submitPolicy-prop">setSubmitPolicy</a>().</p>
+<h3 class="fn"><a name="rootIndex"></a><a href="qmodelindex.html">QModelIndex</a> QDataWidgetMapper::rootIndex () const</h3>
+<p>Returns the current root index.</p>
+<p>See also <a href="qdatawidgetmapper.html#setRootIndex">setRootIndex</a>().</p>
+<h3 class="fn"><a name="setCurrentModelIndex"></a>void QDataWidgetMapper::setCurrentModelIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the current index to the row of the <i>index</i> if the orientation is horizontal (the default), otherwise to the column of the <i>index</i>.</p>
+<p>Calls <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() internally. This convenience slot can be connected to the signal <a href="qitemselectionmodel.html#currentRowChanged">currentRowChanged()</a> or <a href="qitemselectionmodel.html#currentColumnChanged">currentColumnChanged()</a> of another view's <a href="qitemselectionmodel.html">selection model</a>.</p>
+<p>The following example illustrates how to update all widgets with new data whenever the selection of a <a href="qtableview.html">QTableView</a> named <tt>myTableView</tt> changes:</p>
+<pre>     QDataWidgetMapper *mapper = new QDataWidgetMapper();
+     connect(myTableView-&gt;selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+             mapper, SLOT(setCurrentModelIndex(QModelIndex)));</pre>
+<p>See also <a href="qdatawidgetmapper.html#currentIndex-prop">currentIndex</a>().</p>
+<h3 class="fn"><a name="setItemDelegate"></a>void QDataWidgetMapper::setItemDelegate ( <a href="qabstractitemdelegate.html">QAbstractItemDelegate</a> * <i>delegate</i> )</h3>
+<p>Sets the item delegate to <i>delegate</i>. The delegate will be used to write data from the model into the widget and from the widget to the model, using <a href="qabstractitemdelegate.html#setEditorData">QAbstractItemDelegate::setEditorData</a>() and <a href="qabstractitemdelegate.html#setModelData">QAbstractItemDelegate::setModelData</a>().</p>
+<p>The delegate also decides when to apply data and when to change the editor, using <a href="qabstractitemdelegate.html#commitData">QAbstractItemDelegate::commitData</a>() and <a href="qabstractitemdelegate.html#closeEditor">QAbstractItemDelegate::closeEditor</a>().</p>
+<p><b>Warning:</b> You should not share the same instance of a delegate between widget mappers or views. Doing so can cause incorrect or unintuitive editing behavior since each view connected to a given delegate may receive the <a href="qabstractitemdelegate.html#closeEditor">closeEditor()</a> signal, and attempt to access, modify or close an editor that has already been closed.</p>
+<p>See also <a href="qdatawidgetmapper.html#itemDelegate">itemDelegate</a>().</p>
+<h3 class="fn"><a name="setModel"></a>void QDataWidgetMapper::setModel ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i> )</h3>
+<p>Sets the current model to <i>model</i>. If another model was set, all mappings to that old model are cleared.</p>
+<p>See also <a href="qdatawidgetmapper.html#model">model</a>().</p>
+<h3 class="fn"><a name="setRootIndex"></a>void QDataWidgetMapper::setRootIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )</h3>
+<p>Sets the root item to <i>index</i>. This can be used to display a branch of a tree. Pass an invalid model index to display the top-most branch.</p>
+<p>See also <a href="qdatawidgetmapper.html#rootIndex">rootIndex</a>().</p>
+<h3 class="fn"><a name="submit"></a>bool QDataWidgetMapper::submit ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Submits all changes from the mapped widgets to the model.</p>
+<p>For every mapped section, the item delegate reads the current value from the widget and sets it in the model. Finally, the model's <a href="qabstractitemmodel.html#submit">submit()</a> method is invoked.</p>
+<p>Returns true if all the values were submitted, otherwise false.</p>
+<p>Note: For database models, <a href="qsqlquerymodel.html#lastError">QSqlQueryModel::lastError</a>() can be used to retrieve the last error.</p>
+<p>See also <a href="qdatawidgetmapper.html#revert">revert</a>() and <a href="qdatawidgetmapper.html#submitPolicy-prop">setSubmitPolicy</a>().</p>
+<h3 class="fn"><a name="toFirst"></a>void QDataWidgetMapper::toFirst ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Populates the widgets with data from the first row of the model if the orientation is horizontal (the default), otherwise with data from the first column.</p>
+<p>This is equivalent to calling <tt>setCurrentIndex(0)</tt>.</p>
+<p>See also <a href="qdatawidgetmapper.html#toLast">toLast</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="toLast"></a>void QDataWidgetMapper::toLast ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Populates the widgets with data from the last row of the model if the orientation is horizontal (the default), otherwise with data from the last column.</p>
+<p>Calls <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() internally.</p>
+<p>See also <a href="qdatawidgetmapper.html#toFirst">toFirst</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="toNext"></a>void QDataWidgetMapper::toNext ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Populates the widgets with data from the next row of the model if the orientation is horizontal (the default), otherwise with data from the next column.</p>
+<p>Calls <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() internally. Does nothing if there is no next row in the model.</p>
+<p>See also <a href="qdatawidgetmapper.html#toPrevious">toPrevious</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="toPrevious"></a>void QDataWidgetMapper::toPrevious ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Populates the widgets with data from the previous row of the model if the orientation is horizontal (the default), otherwise with data from the previous column.</p>
+<p>Calls <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>() internally. Does nothing if there is no previous row in the model.</p>
+<p>See also <a href="qdatawidgetmapper.html#toNext">toNext</a>() and <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

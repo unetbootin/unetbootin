@@ -1,0 +1,161 @@
+//! [0]
+        namespace Ui {
+
+        class HelloWorld
+        {
+        public:
+            QVBoxLayout *vboxLayout;
+            QPushButton *pushButton;
+
+            void setupUi(QWidget *HelloWorld)
+            {
+                HelloWorld->setObjectName(QString::fromUtf8("HelloWorld"));
+
+                vboxLayout = new QVBoxLayout(HelloWorld);
+                vboxLayout->setObjectName(QString::fromUtf8("vboxLayout"));
+
+                pushButton = new QPushButton(HelloWorld);
+                pushButton->setObjectName(QString::fromUtf8("pushButton"));
+
+                vboxLayout->addWidget(pushButton);
+
+                retranslateUi(HelloWorld);
+            }
+        };
+
+        }
+//! [0]
+
+
+//! [1]
+        #include <QApplication>
+        #include <QWidget>
+
+        #include "ui_helloworld.h"   // defines Ui::HelloWorld
+
+        int main(int argc, char *argv[])
+        {
+            QApplication app(argc, argv);
+
+            QWidget w;
+            Ui::HelloWorld ui;
+            ui.setupUi(&w);
+
+            w.show();
+            return app.exec();
+        }
+//! [1]
+
+
+//! [2]
+        #include <QApplication>
+        #include <QWidget>
+
+        #include "ui_helloworld.h"   // defines Ui::HelloWorld
+
+        class HelloWorldWidget : public QWidget, public Ui::HelloWorld
+        {
+            Q_OBJECT
+
+        public:
+            HelloWorldWidget(QWidget *parent = 0)
+                : QWidget(parent)
+            { setupUi(this); }
+        };
+
+        int main(int argc, char *argv[])
+        {
+            QApplication app(argc, argv);
+            HelloWorldWidget w;
+            w.show();
+            return app.exec();
+        }
+//! [2]
+
+
+//! [3]
+        uic3 myform.ui > myform.h
+        uic3 -impl myform.h myform.ui > myform.cpp
+//! [3]
+
+
+//! [4]
+        uic3 -convert myform3.ui > myform4.ui
+//! [4]
+
+
+//! [5]
+        class HelloWorldWidget : public QWidget, public Ui::HelloWorld
+        {
+            Q_OBJECT
+
+        public:
+            HelloWorldWidget(QWidget *parent = 0);
+
+        public slots:
+            void mySlot();
+        };
+
+        HelloWorldWidget::HelloWorldWidget(QWidget *parent)
+            : QWidget(parent)
+        {
+            setupUi(this);
+
+            QObject::connect(pushButton, SIGNAL(clicked()),
+                             this, SLOT(mySlot()));
+        }
+
+        void HelloWorldWidget::mySlot()
+        {
+            ...
+        }
+//! [5]
+
+
+//! [6]
+        class HelloWorldWidget : public QWidget, public Ui::HelloWorld
+        {
+            Q_OBJECT
+
+        public:
+            HelloWorldWidget(QWidget *parent = 0);
+
+        public slots:
+            void on_pushButton_clicked();
+        };
+
+        HelloWorldWidget::HelloWorldWidget(QWidget *parent)
+            : QWidget(parent)
+        {
+            setupUi(this);
+        }
+
+        void HelloWorldWidget::on_pushButton_clicked()
+        {
+            ...
+        }
+//! [6]
+
+
+//! [7]
+        <RCC version="1.0">
+            <qresource prefix="/icons">
+                <file>yes.png</file>
+                <file>no.png</file>
+            </qresource>
+        </RCC>
+//! [7]
+
+
+//! [8]
+        RESOURCES += icons.qrc
+//! [8]
+
+
+//! [9]
+        QFile file(":/icons/yes.png");
+        QIcon icon(":/icons/no.png");
+        QPixmap pixmap(":/icons/no.png");
+//! [9]
+
+

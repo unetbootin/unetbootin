@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/kernel/qsqldriverplugin.cpp -->
+<head>
+  <title>Qt 4.4: QSqlDriverPlugin Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSqlDriverPlugin Class Reference<br /><span class="small-subtitle">[<a href="qtsql.html">QtSql</a> module]</span>
+</h1>
+<p>The QSqlDriverPlugin class provides an abstract base for custom <a href="qsqldriver.html">QSqlDriver</a> plugins. <a href="#details">More...</a></p>
+<pre> #include &lt;QSqlDriverPlugin&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qsqldriverplugin-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsqldriverplugin.html#QSqlDriverPlugin">QSqlDriverPlugin</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsqldriverplugin.html#dtor.QSqlDriverPlugin">~QSqlDriverPlugin</a></b> ()</li>
+<li><div class="fn"/>virtual QSqlDriver * <b><a href="qsqldriverplugin.html#create">create</a></b> ( const QString &amp; <i>key</i> ) = 0</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qsqldriverplugin.html#keys">keys</a></b> () const = 0</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSqlDriverPlugin class provides an abstract base for custom <a href="qsqldriver.html">QSqlDriver</a> plugins.</p>
+<p>The SQL driver plugin is a simple plugin interface that makes it easy to create your own SQL driver plugins that can be loaded dynamically by Qt.</p>
+<p>Writing a SQL plugin is achieved by subclassing this base class, reimplementing the pure virtual functions <a href="qsqldriverplugin.html#keys">keys</a>() and <a href="qsqldriverplugin.html#create">create</a>(), and exporting the class with the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro. See the SQL plugins that come with Qt for example implementations (in the <tt>plugins/src/sqldrivers</tt> subdirectory of the source distribution).</p>
+<p>See also <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSqlDriverPlugin"></a>QSqlDriverPlugin::QSqlDriverPlugin ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a SQL driver plugin and sets the parent to <i>parent</i>. This is invoked automatically by the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro.</p>
+<h3 class="fn"><a name="dtor.QSqlDriverPlugin"></a>QSqlDriverPlugin::~QSqlDriverPlugin ()</h3>
+<p>Destroys the SQL driver plugin.</p>
+<p>You never have to call this explicitly. Qt destroys a plugin automatically when it is no longer used.</p>
+<h3 class="fn"><a name="create"></a><a href="qsqldriver.html">QSqlDriver</a> * QSqlDriverPlugin::create ( const <a href="qstring.html">QString</a> &amp; <i>key</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Creates and returns a <a href="qsqldriver.html">QSqlDriver</a> object for the driver called <i>key</i>. The driver key is usually the class name of the required driver. Keys are case sensitive.</p>
+<p>See also <a href="qsqldriverplugin.html#keys">keys</a>().</p>
+<h3 class="fn"><a name="keys"></a><a href="qstringlist.html">QStringList</a> QSqlDriverPlugin::keys () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the list of drivers (keys) this plugin supports.</p>
+<p>These keys are usually the class names of the custom drivers that are implemented in the plugin.</p>
+<p>See also <a href="qsqldriverplugin.html#create">create</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

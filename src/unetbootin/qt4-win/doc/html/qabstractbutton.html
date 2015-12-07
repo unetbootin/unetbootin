@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qabstractbutton.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractButton Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractButton Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAbstractButton class is the abstract base class of button widgets, providing functionality common to buttons. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractButton&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>Inherited by <a href="q3button.html" class="compat">Q3Button</a>, <a href="qcheckbox.html">QCheckBox</a>, <a href="qpushbutton.html">QPushButton</a>, <a href="qradiobutton.html">QRadioButton</a>, and <a href="qtoolbutton.html">QToolButton</a>.</p>
+<ul>
+<li><a href="qabstractbutton-members.html">List of all members, including inherited members</a></li>
+<li><a href="qabstractbutton-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qabstractbutton.html#autoExclusive-prop">autoExclusive</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#autoRepeatDelay-prop">autoRepeatDelay</a></b> : int</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#autoRepeatInterval-prop">autoRepeatInterval</a></b> : int</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#checkable-prop">checkable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#checked-prop">checked</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qabstractbutton.html#down-prop">down</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#icon-prop">icon</a></b> : QIcon</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#iconSize-prop">iconSize</a></b> : QSize</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#shortcut-prop">shortcut</a></b> : QKeySequence</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#text-prop">text</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractbutton.html#QAbstractButton">QAbstractButton</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qabstractbutton.html#dtor.QAbstractButton">~QAbstractButton</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qabstractbutton.html#autoExclusive-prop">autoExclusive</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qabstractbutton.html#autoRepeatDelay-prop">autoRepeatDelay</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qabstractbutton.html#autoRepeatInterval-prop">autoRepeatInterval</a></b> () const</li>
+<li><div class="fn"/>QButtonGroup * <b><a href="qabstractbutton.html#group">group</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qabstractbutton.html#icon-prop">icon</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="qabstractbutton.html#iconSize-prop">iconSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qabstractbutton.html#checkable-prop">isCheckable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qabstractbutton.html#checked-prop">isChecked</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qabstractbutton.html#down-prop">isDown</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#autoExclusive-prop">setAutoExclusive</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#autoRepeat-prop">setAutoRepeat</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#autoRepeatDelay-prop">setAutoRepeatDelay</a></b> ( int )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#autoRepeatInterval-prop">setAutoRepeatInterval</a></b> ( int )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#checkable-prop">setCheckable</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#down-prop">setDown</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#icon-prop">setIcon</a></b> ( const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#shortcut-prop">setShortcut</a></b> ( const QKeySequence &amp; <i>key</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#text-prop">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QKeySequence <b><a href="qabstractbutton.html#shortcut-prop">shortcut</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qabstractbutton.html#text-prop">text</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#animateClick">animateClick</a></b> ( int <i>msec</i> = 100 )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#click">click</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#checked-prop">setChecked</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#iconSize-prop">setIconSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#toggle">toggle</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#clicked">clicked</a></b> ( bool <i>checked</i> = false )</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#pressed">pressed</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#released">released</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qabstractbutton.html#toggled">toggled</a></b> ( bool <i>checked</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qabstractbutton.html#checkStateSet">checkStateSet</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractbutton.html#hitButton">hitButton</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractbutton.html#nextCheckState">nextCheckState</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractButton class is the abstract base class of button widgets, providing functionality common to buttons.</p>
+<p>This class implements an <i>abstract</i> button. Subclasses of this class handle user actions, and specify how the button is drawn.</p>
+<p>QAbstractButton provides support for both push buttons and checkable (toggle) buttons. Checkable buttons are implemented in the <a href="qradiobutton.html">QRadioButton</a> and <a href="qcheckbox.html">QCheckBox</a> classes. Push buttons are implemented in the <a href="qpushbutton.html">QPushButton</a> and <a href="qtoolbutton.html">QToolButton</a> classes; these also provide toggle behavior if required.</p>
+<p>Any button can display a label containing text and an icon. <a href="qabstractbutton.html#text-prop">setText</a>() sets the text; <a href="qabstractbutton.html#icon-prop">setIcon</a>() sets the icon. If a button is disabled, its label is changed to give the button a &quot;disabled&quot; appearance.</p>
+<p>If the button is a text button with a string containing an ampersand ('&amp;'), QAbstractButton automatically creates a shortcut key. For example:</p>
+<pre>         QPushButton *button = new QPushButton(tr(&quot;Ro&amp;ck &amp;&amp; Roll&quot;), this);</pre>
+<p>The <b>Alt+C</b> shortcut is assigned to the button, i.e&#x2e;, when the user presses <b>Alt+C</b> the button will call <a href="qabstractbutton.html#animateClick">animateClick</a>(). See the <a href="qshortcut.html#mnemonic">QShortcut</a> documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>You can also set a custom shortcut key using the <a href="qabstractbutton.html#shortcut-prop">setShortcut</a>() function. This is useful mostly for buttons that do not have any text, because they have no automatic shortcut.</p>
+<pre>         button-&gt;setIcon(QIcon(&quot;:/images/print.png&quot;));
+         button-&gt;setShortcut(tr(&quot;Alt+F7&quot;));</pre>
+<p>All of the buttons provided by Qt (<a href="qpushbutton.html">QPushButton</a>, <a href="qtoolbutton.html">QToolButton</a>, <a href="qcheckbox.html">QCheckBox</a>, and <a href="qradiobutton.html">QRadioButton</a>) can display both <a href="qabstractbutton.html#text-prop">text</a> and <a href="qabstractbutton.html#icon-prop">icons</a>.</p>
+<p>A button can be made the default button in a dialog are provided by <a href="qpushbutton.html#default-prop">QPushButton::setDefault</a>() and <a href="qpushbutton.html#autoDefault-prop">QPushButton::setAutoDefault</a>().</p>
+<p>QAbstractButton provides most of the states used for buttons:</p>
+<ul>
+<li><a href="qabstractbutton.html#down-prop">isDown</a>() indicates whether the button is <i>pressed</i> down.</li>
+<li><a href="qabstractbutton.html#checked-prop">isChecked</a>() indicates whether the button is <i>checked</i>. Only checkable buttons can be checked and unchecked (see below).</li>
+<li><a href="qwidget.html#enabled-prop">isEnabled</a>() indicates whether the button can be pressed by the user.</li>
+<li><a href="qabstractbutton.html#autoRepeat-prop">setAutoRepeat</a>() sets whether the button will auto-repeat if the user holds it down. <a href="qabstractbutton.html#autoRepeatDelay-prop">autoRepeatDelay</a> and <a href="qabstractbutton.html#autoRepeatInterval-prop">autoRepeatInterval</a> define how auto-repetition is done.</li>
+<li><a href="qabstractbutton.html#checkable-prop">setCheckable</a>() sets whether the button is a toggle button or not.</li>
+</ul>
+<p>The difference between <a href="qabstractbutton.html#down-prop">isDown</a>() and <a href="qabstractbutton.html#checked-prop">isChecked</a>() is as follows. When the user clicks a toggle button to check it, the button is first <i>pressed</i> then released into the <i>checked</i> state. When the user clicks it again (to uncheck it), the button moves first to the <i>pressed</i> state, then to the <i>unchecked</i> state (<a href="qabstractbutton.html#checked-prop">isChecked</a>() and <a href="qabstractbutton.html#down-prop">isDown</a>() are both false).</p>
+<p>QAbstractButton provides four signals:</p>
+<ol type="1">
+<li><a href="qabstractbutton.html#pressed">pressed</a>() is emitted when the left mouse button is pressed while the mouse cursor is inside the button.</li>
+<li><a href="qabstractbutton.html#released">released</a>() is emitted when the left mouse button is released.</li>
+<li><a href="qabstractbutton.html#clicked">clicked</a>() is emitted when the button is first pressed and then released, when the shortcut key is typed, or when <a href="qabstractbutton.html#click">click</a>() or <a href="qabstractbutton.html#animateClick">animateClick</a>() is called.</li>
+<li><a href="qabstractbutton.html#toggled">toggled</a>() is emitted when the state of a toggle button changes.</li>
+</ol>
+<p>To subclass QAbstractButton, you must reimplement at least <a href="qwidget.html#paintEvent">paintEvent</a>() to draw the button's outline and its text or pixmap. It is generally advisable to reimplement <a href="qwidget.html#sizeHint-prop">sizeHint</a>() as well, and sometimes <a href="qabstractbutton.html#hitButton">hitButton</a>() (to determine whether a button press is within the button). For buttons with more than two states (like tri-state buttons), you will also have to reimplement <a href="qabstractbutton.html#checkStateSet">checkStateSet</a>() and <a href="qabstractbutton.html#nextCheckState">nextCheckState</a>().</p>
+<p>See also <a href="qbuttongroup.html">QButtonGroup</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoExclusive-prop"></a>autoExclusive : bool</h3>
+<p>This property holds whether auto-exclusivity is enabled.</p>
+<p>If auto-exclusivity is enabled, checkable buttons that belong to the same parent widget behave as if they were part of the same exclusive button group. In an exclusive button group, only one button can be checked at any time; checking another button automatically unchecks the previously checked one.</p>
+<p>The property has no effect on buttons that belong to a button group.</p>
+<p>autoExclusive is off by default, except for radio buttons.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoExclusive () const</b></li>
+<li><div class="fn"/><b>void setAutoExclusive ( bool )</b></li>
+</ul>
+<p>See also <a href="qradiobutton.html">QRadioButton</a>.</p>
+<h3 class="fn"><a name="autoRepeat-prop"></a>autoRepeat : bool</h3>
+<p>This property holds whether autoRepeat is enabled.</p>
+<p>If autoRepeat is enabled, then the <a href="qabstractbutton.html#pressed">pressed</a>(), <a href="qabstractbutton.html#released">released</a>(), and <a href="qabstractbutton.html#clicked">clicked</a>() signals are emitted at regular intervals when the button is down. autoRepeat is off by default. The initial delay and the repetition interval are defined in milliseconds by <a href="qabstractbutton.html#autoRepeatDelay-prop">autoRepeatDelay</a> and <a href="qabstractbutton.html#autoRepeatInterval-prop">autoRepeatInterval</a>.</p>
+<p>Note: If a button is pressed down by a shortcut key, then auto-repeat is enabled and timed by the system and not by this class. The <a href="qabstractbutton.html#pressed">pressed</a>(), <a href="qabstractbutton.html#released">released</a>(), and <a href="qabstractbutton.html#clicked">clicked</a>() signals will be emitted like in the normal case.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoRepeat () const</b></li>
+<li><div class="fn"/><b>void setAutoRepeat ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="autoRepeatDelay-prop"></a>autoRepeatDelay : int</h3>
+<p>This property holds the initial delay of auto-repetition.</p>
+<p>If <a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a> is enabled, then autoRepeatDelay defines the initial delay in milliseconds before auto-repetition kicks in.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int autoRepeatDelay () const</b></li>
+<li><div class="fn"/><b>void setAutoRepeatDelay ( int )</b></li>
+</ul>
+<p>See also <a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a> and <a href="qabstractbutton.html#autoRepeatInterval-prop">autoRepeatInterval</a>.</p>
+<h3 class="fn"><a name="autoRepeatInterval-prop"></a>autoRepeatInterval : int</h3>
+<p>This property holds the interval of auto-repetition.</p>
+<p>If <a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a> is enabled, then autoRepeatInterval defines the length of the auto-repetition interval in millisecons.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int autoRepeatInterval () const</b></li>
+<li><div class="fn"/><b>void setAutoRepeatInterval ( int )</b></li>
+</ul>
+<p>See also <a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a> and <a href="qabstractbutton.html#autoRepeatDelay-prop">autoRepeatDelay</a>.</p>
+<h3 class="fn"><a name="checkable-prop"></a>checkable : bool</h3>
+<p>This property holds whether the button is checkable.</p>
+<p>By default, the button is not checkable.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isCheckable () const</b></li>
+<li><div class="fn"/><b>void setCheckable ( bool )</b></li>
+</ul>
+<p>See also <a href="qabstractbutton.html#checked-prop">checked</a>.</p>
+<h3 class="fn"><a name="checked-prop"></a>checked : bool</h3>
+<p>This property holds whether the button is checked.</p>
+<p>Only checkable buttons can be checked. By default, the button is unchecked.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isChecked () const</b></li>
+<li><div class="fn"/><b>void setChecked ( bool )</b></li>
+</ul>
+<p>See also <a href="qabstractbutton.html#checkable-prop">checkable</a>.</p>
+<h3 class="fn"><a name="down-prop"></a>down : bool</h3>
+<p>This property holds whether the button is pressed down.</p>
+<p>If this property is true, the button is pressed down. The signals <a href="qabstractbutton.html#pressed">pressed</a>() and <a href="qabstractbutton.html#clicked">clicked</a>() are not emitted if you set this property to true. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isDown () const</b></li>
+<li><div class="fn"/><b>void setDown ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="icon-prop"></a>icon : <a href="qicon.html">QIcon</a></h3>
+<p>This property holds the icon shown on the button.</p>
+<p>The icon's default size is defined by the GUI style, but can be adjusted by setting the <a href="qabstractbutton.html#iconSize-prop">iconSize</a> property.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QIcon icon () const</b></li>
+<li><div class="fn"/><b>void setIcon ( const QIcon &amp; <i>icon</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="iconSize-prop"></a>iconSize : <a href="qsize.html">QSize</a></h3>
+<p>This property holds the icon size used for this button.</p>
+<p>The default size is defined by the GUI style. This is a maximum size for the icons. Smaller icons will not be scaled up.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize iconSize () const</b></li>
+<li><div class="fn"/><b>void setIconSize ( const QSize &amp; <i>size</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="shortcut-prop"></a>shortcut : <a href="qkeysequence.html">QKeySequence</a></h3>
+<p>This property holds the mnemonic associated with the button.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QKeySequence shortcut () const</b></li>
+<li><div class="fn"/><b>void setShortcut ( const QKeySequence &amp; <i>key</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="text-prop"></a>text : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text shown on the button.</p>
+<p>If the button has no text, the text() function will return a an empty string.</p>
+<p>If the text contains an ampersand character ('&amp;'), a shortcut is automatically created for it. The character that follows the '&amp;' will be used as the shortcut key. Any previous shortcut will be overwritten, or cleared if no shortcut is defined by the text. See the <a href="qshortcut.html#mnemonic">QShortcut</a> documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>There is no default text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString text () const</b></li>
+<li><div class="fn"/><b>void setText ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractButton"></a>QAbstractButton::QAbstractButton ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an abstract button with a <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QAbstractButton"></a>QAbstractButton::~QAbstractButton ()</h3>
+<p>Destroys the button.</p>
+<h3 class="fn"><a name="animateClick"></a>void QAbstractButton::animateClick ( int <i>msec</i> = 100 )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Performs an animated click: the button is pressed immediately, and released <i>msec</i> milliseconds later (the default is 100 ms).</p>
+<p>Calling this function again before the button was released will reset the release timer.</p>
+<p>All signals associated with a click are emitted as appropriate.</p>
+<p>This function does nothing if the button is <a href="qwidget.html#enabled-prop">disabled.</a></p>
+<p>See also <a href="qabstractbutton.html#click">click</a>().</p>
+<h3 class="fn"><a name="checkStateSet"></a>void QAbstractButton::checkStateSet ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called when <a href="qabstractbutton.html#checked-prop">setChecked</a>() was called, unless it was called from within <a href="qabstractbutton.html#nextCheckState">nextCheckState</a>(). It allows subclasses to reset their intermediate button states.</p>
+<p>See also <a href="qabstractbutton.html#nextCheckState">nextCheckState</a>().</p>
+<h3 class="fn"><a name="click"></a>void QAbstractButton::click ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Performs a click.</p>
+<p>All the usual signals associated with a click are emitted as appropriate. If the button is checkable, the state of the button is toggled.</p>
+<p>This function does nothing if the button is <a href="qwidget.html#enabled-prop">disabled.</a></p>
+<p>See also <a href="qabstractbutton.html#animateClick">animateClick</a>().</p>
+<h3 class="fn"><a name="clicked"></a>void QAbstractButton::clicked ( bool <i>checked</i> = false )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the button is activated (i.e&#x2e; pressed down then released while the mouse cursor is inside the button), when the shortcut key is typed, or when <a href="qabstractbutton.html#click">click</a>() or <a href="qabstractbutton.html#animateClick">animateClick</a>() is called. Notably, this signal is <i>not</i> emitted if you call <a href="qabstractbutton.html#down-prop">setDown</a>(), <a href="qabstractbutton.html#checked-prop">setChecked</a>() or <a href="qabstractbutton.html#toggle">toggle</a>().</p>
+<p>If the button is checkable, <i>checked</i> is true if the button is checked, or false if the button is unchecked.</p>
+<p>See also <a href="qabstractbutton.html#pressed">pressed</a>(), <a href="qabstractbutton.html#released">released</a>(), and <a href="qabstractbutton.html#toggled">toggled</a>().</p>
+<h3 class="fn"><a name="group"></a><a href="qbuttongroup.html">QButtonGroup</a> * QAbstractButton::group () const</h3>
+<p>Returns the group that this button belongs to.</p>
+<p>If the button is not a member of any <a href="qbuttongroup.html">QButtonGroup</a>, this function returns 0.</p>
+<p>See also <a href="qbuttongroup.html">QButtonGroup</a>.</p>
+<h3 class="fn"><a name="hitButton"></a>bool QAbstractButton::hitButton ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns true if <i>pos</i> is inside the clickable button rectangle; otherwise returns false.</p>
+<p>By default, the clickable area is the entire widget. Subclasses may reimplement this function to provide support for clickable areas of different shapes and sizes.</p>
+<h3 class="fn"><a name="nextCheckState"></a>void QAbstractButton::nextCheckState ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called when a button is clicked. The default implementation calls setChecked(!<a href="qabstractbutton.html#checked-prop">isChecked</a>()) if the button <a href="qabstractbutton.html#checkable-prop">isCheckable</a>(). It allows subclasses to implement intermediate button states.</p>
+<p>See also <a href="qabstractbutton.html#checkStateSet">checkStateSet</a>().</p>
+<h3 class="fn"><a name="pressed"></a>void QAbstractButton::pressed ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the button is pressed down.</p>
+<p>See also <a href="qabstractbutton.html#released">released</a>() and <a href="qabstractbutton.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="released"></a>void QAbstractButton::released ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the button is released.</p>
+<p>See also <a href="qabstractbutton.html#pressed">pressed</a>(), <a href="qabstractbutton.html#clicked">clicked</a>(), and <a href="qabstractbutton.html#toggled">toggled</a>().</p>
+<h3 class="fn"><a name="toggle"></a>void QAbstractButton::toggle ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Toggles the state of a checkable button.</p>
+<p>See also <a href="qabstractbutton.html#checked-prop">checked</a>.</p>
+<h3 class="fn"><a name="toggled"></a>void QAbstractButton::toggled ( bool <i>checked</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a checkable button changes its state. <i>checked</i> is true if the button is checked, or false if the button is unchecked.</p>
+<p>This may be the result of a user action, <a href="qabstractbutton.html#click">click</a>() slot activation, or because <a href="qabstractbutton.html#checked-prop">setChecked</a>() was called.</p>
+<p>The states of buttons in exclusive button groups are updated before this signal is emitted. This means that slots can act on either the &quot;off&quot; signal or the &quot;on&quot; signal emitted by the buttons in the group whose states have changed.</p>
+<p>For example, a slot that reacts to signals emitted by newly checked buttons but which ignores signals from buttons that have been unchecked can be implemented using the following pattern:</p>
+<pre> void MyWidget::reactToToggle(bool checked)
+ {
+    if (checked) {
+       // Examine the new button states.
+       ...
+    }
+ }</pre>
+<p>Button groups can be created using the <a href="qbuttongroup.html">QButtonGroup</a> class, and updates to the button states monitored with the <a href="qbuttongroup.html#buttonClicked">QButtonGroup::buttonClicked</a>() signal.</p>
+<p>See also <a href="qabstractbutton.html#checked-prop">checked</a> and <a href="qabstractbutton.html#clicked">clicked</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

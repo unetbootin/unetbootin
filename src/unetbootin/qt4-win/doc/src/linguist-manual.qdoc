@@ -1,0 +1,1316 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page linguist-manual.html
+    \title Qt Linguist Manual
+    \ingroup qttools
+
+    \startpage {index.html}{Qt Reference Documentation}
+    \nextpage Qt Linguist Manual: Release Manager
+
+    \keyword Qt Linguist
+
+    Qt provides excellent support for translating applications into local
+    languages. This Guide explains how to use Qt's translation tools for
+    each of the roles involved in translating an application. The Guide
+    begins with a brief overview of the issues that must be considered,
+    followed by chapters devoted to each role and the supporting tools
+    provided.
+
+    The \l{linguist-manager.html}{Release Manager} chapter is aimed
+    at the person with overall responsibility for the release of the
+    application. They will typically coordinate the work of the
+    software engineers and the translator. The chapter describes the
+    use of two tools. The \l lupdate tool is used to synchronize
+    source code and translations. The \l lrelease tool is used to
+    create runtime translation files for use by the released
+    application.
+
+    The \l{linguist-translators.html}{Translators} chapter is for
+    translators. It describes the use of the \QL tool.
+    No computer knowledge beyond the ability to start a program and
+    use a text editor or word processor is required.
+
+    The \l{linguist-programmers.html}{Programmers} chapter is for Qt
+    programmers. It explains how to create Qt applications that are
+    able to use translated text. It also provides guidance on how to
+    help the translator identify the context in which phrases appear.
+    This chapter's three short tutorials cover everything the
+    programmer needs to do.
+
+    \section1 Overview of the Translation Process
+
+    Most of the text that must be translated in an application program
+    consists of either single words or short phrases. These typically
+    appear as window titles, menu items, pop-up help text (balloon help),
+    and labels to buttons, check boxes and radio buttons.
+
+    The phrases are entered into the source code by the programmer in
+    their native language using a simple but special syntax to identify
+    that the phrases require translation. The Qt tools provide context
+    information for each of the phrases to help the translator, and the
+    programmer is able to add additional context information to phrases
+    when necessary. The release manager generates a set of translation
+    files that are produced from the source files and passes these to the
+    translator. The translator opens the translation files using \QL, 
+    enters their translations and saves the results back into
+    the translation files, which they pass back to the release manager.
+    The release manager then generates fast compact versions of these
+    translation files ready for use by the application. The tools are
+    designed to be used in repeated cycles as applications change and
+    evolve, preserving existing translations and making it easy to
+    identify which new translations are required. \QL also
+    provides a phrase book facility to help ensure consistent
+    translations across multiple applications and projects.
+
+    Translators and programmers must address a number of issues because
+    of the subtleties and complexities of human language:
+
+    \list
+    \o A single phrase may need to be translated into several different
+    forms depending on context, e.g. \e open in English might become
+    \e{\ouml\c{}ffnen}, "open file", or \e aufbauen, "open internet connection", in
+    German.
+    \o Keyboard accelerators may need to be changed but without
+    introducing conflicts, e.g. "\&Quit" in English becomes "Avslutt" in
+    Norwegian which doesn't contain a "Q". We cannot use a letter that is
+    already in use - unless we change several accelerators.
+    \o Phrases that contain variables, for example, "The 25 files selected will
+    take 63 seconds to process", where the two numbers are inserted
+    programmatically at runtime may need to be reworded because in a
+    different language the word order and therefore the placement of the
+    variables may have to change.
+    \endlist
+
+    The Qt translation tools provide clear and simple solutions to these
+    issues.
+
+    Chapters:
+
+    \list
+    \o \l{Qt Linguist Manual: Release Manager}{Release Manager}
+    \o \l{Qt Linguist Manual: Translators}{Translators}
+    \o \l{Qt Linguist Manual: Programmers}{Programmers}
+    \o \l{Qt Linguist Manual: TS File Format}{TS File Format}
+    \endlist
+
+    \QL and \c lupdate are able to import and export XML Localization Interchange File Format
+    (XLIFF) files, making it possible to take advantage of tools and translation
+    services that work with this format. See the
+    \l{Qt Linguist Manual: Translators}{Translators} section for more information
+    on working with these files.
+
+    \table
+    \row \o{1,2} \inlineimage wVista-Cert-border-small.png
+    \o \e{Qt Linguist 4.3 is Certified for Windows Vista}
+    \row \o
+    Windows Vista and the Windows Vista Start button are trademarks or
+    registered trademarks of Microsoft Corporation in the United States
+    and/or other countries.
+    \endtable
+*/
+
+/*!
+    \page linguist-manager.html
+    \title Qt Linguist Manual: Release Manager
+
+    \contentspage {Qt Linguist Manual}{Contents}
+    \previouspage Qt Linguist Manual
+    \nextpage Qt Linguist Manual: Translators
+
+    \keyword lupdate
+    \keyword lrelease
+
+    Two tools are provided for the release manager, \l lupdate and \l
+    lrelease. These tools can process \l qmake project files, or operate
+    directly on the file system.
+
+    \section1 Qt Project Files
+
+    The easiest method to use \l{#lupdate}{lupdate} and \l{#lrelease}{lrelease}
+    is by specifing a \c .pro Qt project file. There must be an entry in the
+    \c TRANSLATIONS section of the project file for each language that is
+    additional to the native language. A typical entry looks like this:
+
+    \snippet examples/linguist/arrowpad/arrowpad.pro 1
+
+    Using a locale within the translation file name is useful for
+    determining which language to load at runtime. This is explained in
+    the \l{linguist-programmers.html}{Programmers} chapter.
+
+    An example of a complete \c .pro file with four translation source files:
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 0
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 1
+
+     QTextCodec::setCodecForTr() makes it possible to choose a
+    8-bit encoding for literal strings that appear within \c tr() calls.
+    This is useful for applications whose source language is, for example,
+    Chinese or Japanese. If no encoding is set, \c tr() uses Latin1.
+
+    If you do use the QTextCodec::codecForTr() mechanism in your
+    application, \QL needs you to set the \c CODECFORTR
+    entry in the \c .pro file as well. For example:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 1
+
+    Also, if your compiler uses a different encoding for its runtime
+    system as for its source code and you want to use  non-ASCII
+    characters in string literals, you will need to set the \c
+    CODECFORSRC. For example:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 2
+
+    Microsoft Visual Studio 2005 .NET appears to be the only compiler
+    for which this is necessary. However, if you want to write
+    portable code, we recommend that you avoid non-ASCII characters
+    in your source files. You can still specify non-ASCII characters
+    portably using escape sequences, for example:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 3
+
+    \section1 lupdate
+
+    Usage: \c {lupdate myproject.pro}
+
+    \l lupdate is a command line tool that finds the translatable strings 
+    in the specified source,  header and \e {Qt Designer} interface files, 
+    and produces or updates \c .ts translation files. The files to process
+    and the files to update can be set at the command line, or provided
+    in a \c .pro file specified as an command line argument. The
+    produced translation files are given to the translator who uses 
+    \QL to read the files and insert the translations.
+
+    Companies that have their own translators in-house may find it useful
+    to run \l lupdate regularly, perhaps monthly, as the application
+    develops. This will lead to a fairly low volume of translation work
+    spread evenly over the life of the project and will allow the
+    translators to support a number of projects simultaneously.
+
+    Companies that hire in translators as required may prefer to run \l
+    lupdate only a few times in the application's life cycle, the first
+    time might be just before the first test phase. This will provide the
+    translator with a substantial single block of work and any bugs that
+    the translator detects may easily be included with those found during
+    the initial test phase. The second and any subsequent \l lupdate runs
+    would probably take place during the final beta phase.
+
+    The \c .ts file format is a simple human-readable XML format that can
+    be used with version control systems if required. \c lupdate can also
+    process Localization Interchange File Format (XLIFF) format files;
+    file in this format typically have file names that end with the
+    \c .xlf suffix.
+
+    Pass the \c -help option to \c lupdate to obtain the list of
+    supported options:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 4
+
+    \QL is also able to import and export XLIFF files. See the
+    \l{Qt Linguist Manual: Translators}{Translators} section for more
+    information.
+
+    \section1 lrelease
+
+    Usage: \c {lrelease myproject.pro}
+
+    \l lrelease is a command line tool that produces \c .qm files
+    out of \c .ts files. The \c .qm file format is a compact binary format 
+    that is used by the localized application. It provides extremely fast 
+    lookups for translations. The \c .ts files \l lrelease processes can 
+    be specified at the command line, or given indirectly by a Qt \c .pro
+    project file.
+
+    This tool is run whenever a release of the application is to be made,
+    from initial test version through to final release version. If the \c
+    .qm files are not created, e.g. because an alpha release is required
+    before any translation has been undertaken, the application will run
+    perfectly well using the text the programmers placed in the source
+    files. Once the \c .qm files are available the application will
+    detect them and use them automatically.
+
+    Note that lrelease will only incorporate translations that are
+    marked as "finished". Otherwise the original text will be used instead.
+
+    Pass the \c -help option to \c lrelease to obtain the list of
+    supported options:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 5
+
+    \section1 Missing Translations
+
+    Both \l lupdate and \l lrelease may be used with \c .ts translation
+    source files which are incomplete. Missing translations will be replaced
+    with the native language phrases at runtime.
+*/
+
+/*!
+    \page linguist-translators.html
+    \title Qt Linguist Manual: Translators
+
+    \contentspage {Qt Linguist Manual}{Contents}
+    \previouspage Qt Linguist Manual: Release Manager
+    \nextpage Qt Linguist Manual: Programmers
+
+    Contents
+
+    \tableofcontents
+
+    \section1 The One Minute Guide to Using Qt Linguist
+
+    \QL is a tool for adding translations to Qt
+    applications. To start, run \QL, either from the taskbar menu, 
+    or by double clicking the desktop icon, or type \c {linguist} (followed by
+    \key{Enter}) at the command line. Once \QL has started
+    choose \menu{File|Open} from the menu bar and select a \c .ts
+    translation source file to work on. If you do not have a \c .ts file
+    to work on, see \l {Qt Linguist Manual: Release Manager} {the release
+    manager manual} on how to generate one.
+
+    By default, \QL's main window is divided into four main 
+    areas. The left hand side contains the Context List, the top right shows 
+    the String List, the middle right is the Translation Area and the 
+    bottom right shows either the Phrases and Guesses Window, the Source Code 
+    Window or the Warnings Window. We will describe them all in detail
+    later.
+
+    First open a translation file choosing \menu{File|Open...} in the menu bar.
+    Click on one of the contexts in the Context List (left hand side) and
+    then click on one of the phrases that appears in the String List
+    (top right). The phrase will be copied into the Translation Area
+    (middle right). Click under the word 'translation' and type in the
+    translation. Press \key{Ctrl+Enter} (Done \& Next) to confirm that you
+    have completed the translation and to move on to the next phrase that
+    requires translation. The cycle of entering a translation and pressing 
+    \key{Ctrl+Enter} can be repeated until all the translations are done or 
+    until you finish the session.
+
+    Additional help for the translation is provided in the area at the 
+    bottom right: If you activate the Phrases and Guesses Window (e.g.
+    by clicking on its tab), \QL will show possible translations from 
+    open phrase books and  previous translations. Each has a keyboard shortcut, 
+    e.g. \key{Ctrl+1}, \key{Ctrl+2}, etc., which you can use to copy the
+    guess into the Translation Area. (Mouse users can double click a
+    phrase or guess to move it into the Translation Area.) \QL can
+    also check for you if the source and the translation obey certain 
+    consistency rules: The results are shown in the Warnings Window.
+    Finally, if you have the source code of the program to translate 
+    available, the Source Code Window can help you to get to know the
+    context where a translation is used.
+
+    At the end of the session choose \menu{File|Save} from the menu bar and then
+    \menu{File|Exit} to quit.
+
+
+    \section1 Qt Linguist's Main Window
+
+    \image linguist-linguist.png
+
+    The main window of \QL is divided into different sub windows:
+    The \l{Context List}, \l{String List}, \l{Translation Area}, 
+    \l {Phrases and Guesses Window}, \l{Source Code Window} and \l{Warnings Window}.
+    On first startup the sub windows are arranged as shown in 
+    the image above. Activate/deactivate the individual windows through 
+    the \menu{View|Views} menu and arrange them by dragging their title bar.
+
+    \section2 Context List
+
+    This appears at the left hand side of the main window by default. The
+    first column identifies whether or not the translations for the
+    context have been done. A tick indicates that all the translations have
+    been done. Otherwise a question mark is shown. Note that a greyed 
+    out tick indicates an obsolete translation context, i.e. a context that was 
+    translated in a previous version of the application but which does not 
+    occur in the new version. See also \l {Context States}.
+
+    The second column, 'Context' is the name of the context in which the 
+    translation phrases appear. The third column, 'Items' shows two numbers, 
+    the first is the number of translations that have been done, and the 
+    second is the number of phrases that are in the context; if the numbers 
+    are equal then all the translations have been done.  Click on the 
+    appropriate header to sort the Context List either by the status, the 
+    name or the number of items in  a context.
+
+    The Context List is a dockable window so it can be dragged to another
+    position in the main window, or dragged out of the main window to be a
+    window in its own right. If you move the Context List, \QL
+    will remember its position and restore it whenever you
+    start the program. If the dock has been closed or is hidden it can be
+    made visible by pressing \key{F6}.
+
+    \section2 String List
+
+    This appears at the top right of the main window by default. The first
+    column signifies the status of the translation. A tick
+    indicates that the phrase has been translated and is finished: If it
+    is grey, the translation is obsolete. A yellow tick marks a finished 
+    translation which does not pass the automatic validation tests 
+    (see \l Validation). Other finished translations have a green tick. 
+    A question mark indicates that the translation has not been done. 
+    An exclamation mark indicates that the translation is unfinished and 
+    has failed validation. See also \l {Message States}. The second column 
+    'Source text' shows the text that must be translated. The third column shows 
+    the translation.
+
+    The String List is a dockable window. If it has been closed or is hidden
+    it can be made visible by pressing \key{F7}.
+
+    \section2 Translation Area
+
+    This area appears at the middle right of the main window by default.
+    At the top is the text to translate under the label "Source text", at the
+    bottom the input field or (in the case of plural forms) multiple input fields 
+    for editing the translations. The number of fields, as well as their 
+    description, depend on the language to translate to. See also \l
+    {Changing the Target Locale}.
+
+    The programmer can provide additional information about a certain translation.
+    If available, this information will appear right beneath the source text
+    on a light blue background. Furthermore, you can display auxiliary 
+    translations: These are translations of the same source text in other
+    languages, and are displayed above the translation input fields. The
+    fields are only visible in case you explicitly loaded an auxiliary translation
+    file, and the file actually contains a translation for the source text 
+    (see \l{Showing Auxiliary Translations}{Auxiliary Translations}).
+
+    \section2 Phrases and Guesses Window
+
+    This window appears at the bottom right of the main window by default.
+    If the text to translate is in one of the phrase books that has been loaded,
+    the phrase will appear in this window with its
+    translation. If the phrase is the same or similar to another phrase that
+    has already been translated the phrase and translation will be shown in
+    this window. To copy a translation from the Phrases and Guesses Window press
+    \key{F10} to move to the Phrases and Guesses Window, use the up and down arrow
+    keys to move to the phrase you want to use and press Enter to copy it.
+    If you decide that you don't want to copy a phrase after all, press \e Esc.
+    In both cases the focus will return to the \l{Translation Area}.
+    Alternatively, double click the translation you want to use and it will
+    be copied into the \l{Translation Area}.
+
+    The Phrases and Guesses Window is a dockable window. If it has been closed or is
+    hidden it can be made visible by pressing \key{F10}.
+
+    \section2 Source Code Window
+
+    This window appears at the bottom right of the main window by default. If the
+    appropriate files are available locally, the window shows the context of the
+    source code the source text was extracted from. The corresponding line is
+    centered vertically, and highlighted. If the file containing the source code
+    is not available, or not at the expected folder, an error message containing
+    the expected absolute file path is shown.
+
+    The Source Code Window is a dockable window. If it has been closed or is hidden
+    it can be made visible by pressing \key{F9}.
+
+    \section2 Warnings Window
+
+    This window appears at the bottom right of the main window by default. It shows
+    the active validation checks that the current translation fails. The first
+    warning is also shown in the main window's status bar.
+
+    The Warnings Window is a dockable window. If it has been closed or is hidden
+    it can be made visible by pressing \key{F8}.
+
+    \section1 Common Tasks
+
+    \section2 Leaving a Translation for Later
+
+    If you wish to leave a translation press \key{Ctrl+L} (Next Unfinished) to
+    move to the next unfinished translation. To move to the next translation 
+    (whether finished or unfinished) press \key{Shift+Ctrl+L}. You can also
+    navigate using the Translation menu. If you want to go to a different
+    context entirely, click the context you want to work on in the Context
+    list, then click the source text in the \l{String List}.
+
+    \section2 Phrases That Require Multiple Translations Depending on Context
+
+    The same phrase may occur in two or more contexts without conflict. Once
+    a phrase has been translated in one context, \QL notes
+    that the translation has been made and when the translator reaches a
+    later occurrence of the same phrase \QL will provide
+    the previous translation as a possible translation candidate in the
+    \l{Phrases and Guesses Window}.
+
+    If a phrase occurs more than once in a particular context it will only
+    be shown once in \QL's \l{Context List} and
+    the translation will be applied to every occurrence within the context.
+    If the same phrase needs to be translated differently within the same
+    context the programmer must provide a distinguishing comment for each of
+    the phrases concerned. If such comments are used the duplicate phrases
+    will appear in the \l{Context List}. The programmers comments will appear in
+    the \l{Translation Area} on a light blue background.
+
+    \section2 Changing Keyboard Accelerators
+
+    A keyboard accelerator is a key combination that when pressed will
+    cause an application to perform an action. Keyboard accelerators
+    normally come in two forms: Alt key and Ctrl key accelerators.
+
+    Alt key accelerators are used for menus and buttons.  The underlining
+    signifies that pressing the Alt key with the underlined letter is the
+    same as clicking the menu item with the mouse.  For example, most
+    applications have a \e File menu with the "F" in the word "file"
+    underlined. In these applications the file menu can be invoked either by
+    clicking the word "File" on the menu bar or by pressing Alt+F. The
+    accelerator key which is underlined is signified by preceding it with
+    an ampersand, e.g. \e \&File. If a source phrase appears with an
+    ampersand in it then the translation should also contain an ampersand,
+    preferably in front of the same letter. The meaning of Alt key
+    accelerators can be determined from the phrase in which the ampersand is
+    embedded. The translator may need to change the letter used with the Alt
+    key, e.g. if the translated phrase does not contain the original
+    accelerator letter. Conflicts with other keys, i.e. having two Alt key
+    accelerators using the same letter in the same context, must be avoided.
+    Note that some Alt key accelerators, usually those on the menu bar, may
+    apply in other contexts.
+
+    Ctrl key accelerators can exist independently of any visual
+    control. They are often used to invoke actions in menus that would
+    otherwise take several keystrokes or mouse clicks. They may also
+    be used to perform actions that do not appear in any menu or on
+    any button. For example, most applications that have a \e File
+    menu have a submenu item called \e New. In many applications this
+    will appear as "\underline{N}ew Ctrl+N". This menu option could be
+    invoked by clicking \e File then clicking \e New with the
+    mouse. Or you could press Alt+F then press N since these letters
+    are underlined. But the same thing can be achieved simply by
+    pressing \key{Ctrl+N}. Accelerators that use the Ctrl key are
+    shown literally in the source text, e.g. \key{Ctrl+Enter}. Ctrl
+    key accelerators have no phrase so the translator must rely on the
+    programmer to add a "comment" which appears in the top right hand
+    pane. This comment should explain what action the Ctrl key
+    accelerator performs. Ideally Ctrl key accelerators are translated
+    simply by copying them by choosing the \e {Begin from Source}
+    entry in the \menu Translation menu. However in some cases the
+    letter will not make sense in the target language and must be
+    changed. Whatever letter (or digit) is chosen, the translation
+    should always be in the form "Ctrl+" followed by the letter or
+    digit in upper case: \e {Qt} will automatically display the correct
+    name at runtime. As with Alt key accelerators, if the
+    translator changes the key it must not conflict with any other
+    Ctrl key accelerator.
+
+    \warning Do not translate the "Alt", "Ctrl" or "Shift" parts of the
+    accelerators, since \e {Qt} internally relies on these identifiers. For the
+    supported languages, \e {Qt} will automatically translate these strings.
+
+    \section2 Dealing with Phrases That Contain Variables
+
+    Some phrases contain variables. Variables are placeholders for items of
+    text that are filled in at runtime. They are signified in the source
+    text with a percent sign followed by a digit, e.g. \e {After processing
+    file %1, file %2 is next in line}. In this example, \c %1 will be
+    replaced at runtime with the name of the first file to be processed and
+    \c %2 with the name of the next file to be processed. In the translated
+    version the variables must still appear. For example a German
+    translation might reverse the phrases, e.g. \e {Datei %2 wird
+    bearbeitet, wenn Datei %1 fertig ist}. Note that both variables
+    are still used but their order has changed. The order in which variables
+    appear does not matter; \c %1 will always be replaced by the same text
+    at runtime no matter where it appears in the source text or translation
+    and similarly \c %2, etc.
+
+    \section2 Reusing Translations
+
+    If the translated text is similar to the source text, choose the
+    \e {Begin from Source} entry in the \menu Translation menu (press
+    \key{Ctrl+B}) which will copy the source text into the 
+    \l{Translation Area}.
+
+    \QL automatically lists phrases from the open phrase
+    books and similar or identical phrases that have already been translated
+    in the \l{Phrases and Guesses Window}.
+
+    \section2 Showing Auxiliary Translations
+
+    \image linguist-auxlanguages.png
+
+    \QL currently only allows one translation file to be worked on at any
+    given time. However, if the program has already been translated to
+    other languages, you can display these auxiliary translations in addition
+    to the source text.
+
+    This feature enables translators who are not familiar with the language used
+    for the source text to create new translations based on existing ones.
+    This "translation chain" approach enables a wider range of translation
+    services to be used, since translators only need to know one of the
+    of the languages for which an existing translation is available.
+
+    The list of auxiliary files to display is managed in
+    the \e {Auxiliary Languages} dialog, which can be activated by selecting
+    \e {Other Languages...} in the \menu Phrases menu.
+
+    By default the list of auxiliary files is empty. Click on the folder button
+    (the fourth from the left) to select files containing other translations of 
+    the same source. If you select multiple files you can sort them in the dialog 
+    by the up- and down buttons. Auxiliary translations for the selected locales 
+    will show up in the \l{Translation Area} if an auxiliary translation is 
+    available.
+
+    \section2 Changing the Target Locale
+
+    \image linguist-translationfilesettings.png
+
+    \QL displays the language to translate to in the 
+    \l{Translation Area}, and adapts the number of input fields for plural 
+    forms accordingly. If not explicitly set, \QL guesses
+    the target language and country by evaluating the translation source file
+    name:  E.g. \c app_de.ts sets the target language to German,
+    and \c app_de_ch.ts sets the target language to German and the target country
+    to Switzerland (this also helps loading translations for the current locale 
+    automatically; see \l{linguist-programmers.html}{Programmers Manual} for details).  
+    If your files do not follow this convention, you can also set the locale 
+    information explicitly by activating \e {Translation File Settings...} in the 
+    \menu Edit menu.
+
+    \section1 Phrase Books
+
+    A \QL phrase book is a set of source phrases, target
+    (translated) phrases, and optional definitions. Typically one phrase book
+    will be created per language and family of applications. Phrase books 
+    are used to provide a common set of translations to help ensure consistency. 
+    They can also be used to avoid duplication of effort since the translations 
+    for a family of applications can be produced once in the phrase book.
+    If the translator reaches an untranslated phrase that is the same as a
+    source phrase in a phrase book, \QL will show the
+    phrase book entry in the \l {Phrases and Guesses Window}.
+
+    \section2 Creating and Editing Phrase Books
+
+    \image linguist-phrasebookdialog.png
+
+    Before a phrase book can be edited it must be created or, if it already
+    exists, opened. Create a new phrase book by selecting
+    \menu{Phrase|New Phrase Book} from the menu bar. You must enter a
+    filename and may change the location of the file if you wish. A newly
+    created phrase book is automatically opened. Open an existing phrase
+    book by choosing \menu{Phrase|Open Phrase Book} from the menu bar.
+
+    The phrase book contents can be displayed and changed by selecting
+    \menu{Phrase|Edit Phrase Book}, and then activating the phrase book you
+    want to work on. This will pop up the Phrase Book Dialog as shown
+    in the image above. To add a new phrase click the \gui{New Phrase} 
+    button (or press Alt+N) and type in a new source phrase. Press Tab and 
+    type in the translation. Optionally press Tab and enter a definition -- 
+    this is useful to distinguish different translations of the same source 
+    phrase. This process may be repeated as often as necessary. You can delete 
+    a phrase by selecting it in the phrases list and clicking
+    Remove Phrase. Click the \gui Close button (press Esc) once you've finished 
+    adding (and removing) phrases.
+
+    \section2 Shortcuts for Editing Phrase Books
+
+    You can also create a new phrase book entry directly out of the translation you
+    are working on: Clicking \menu{Phrases|Add to Phrase Book} or pressing
+    \key{Ctrl+T} will add the source text and the content of the first translation 
+    field to the current phrase book. If multiple phrase books are loaded,
+    you have to specify the phrase book to add the entry to in a dialogue.
+    If you detect an error in a phrase book entry that is shown in the 
+    \l{Phrases and Guesses Window}, you can also edit it in place by right 
+    clicking on the entry, and selecting \menu{Edit}. After fixing the error 
+    press \key{Return} to leave the editing mode.
+
+    \section2 Batch Translation
+
+    \image linguist-batchtranslation.png
+
+    Use the batch translation feature of \QL to automatically
+    translate source texts that are also in a phrase book. Selecting
+    \menu{Tools|Batch Translation} will show you the batch translation dialog,
+    which let you configure which phrase books to use in what order during the
+    batch translation process. Furthermore you can set whether only entries 
+    with no present translation should be considered, and whether batch translated
+    entries should be set to finished (see also \l {Message States}).
+
+    \section1 Validation
+
+    \QL provides four kinds of validation on translated
+    phrases.
+
+    \list 1
+    \o \e {Accelerator validation} detects translated phrases
+    that do not have an ampersand when the source phrase does and vice
+    versa.
+    \o \e {Punctuation validation} detects differences in the
+    terminating punctuation between source and translated phrases when this
+    may be significant, e.g. warns if the source phrase ends with an
+    ellipsis, exclamation mark or question mark, and the translated phrase
+    doesn't and vice versa.
+    \o \e {Phrases validation} detects source phrases that are
+    also in the phrase book but whose translation differs from that given in
+    the phrase book.
+    \o \e {Place marker validation} detects whether the same variables
+    (like \c %1, \c %2) are used both in the source text and in the translation.
+    \endlist
+
+    Validation may be switched on or off from the menu bar's Validation item
+    or using the toolbar buttons. Unfinished phrases that fail validation 
+    are marked with an exclamation mark in the source text pane. Finished phrases
+    will get a yellow tick instead. If you switch validation off and then switch 
+    it on later, \QL will recheck all phrases and mark any that 
+    fail validation. See also \l{Message States}.
+
+    \section1 Form Preview
+
+    \image linguist-previewtool.png
+
+    Forms created by \e{Qt Designer} are stored in special \c .ui files. 
+    \QL can make use of these \c .ui files to show the translations
+    done so far on the form itself. This of course requires access to the \c .ui
+    files during the translation process. Activate 
+    \menu{Tools|Open/Refresh Form Preview} to open the window shown above.
+    The list of \c .ui files \QL has detected are displayed in the Forms
+    List on the left hand. If the path to the files has changed, you can load
+    the files manually via \menu{File|Open Form...}. Double-click on an entry
+    in the Forms List to display the Form File. Select \e{<No Translation>} from
+    the toolbar to display the untranslated form.
+
+    \section1 Qt Linguist Reference
+
+    \section2 Message States
+
+    A message in \QL can be in a variety of states, depending on
+    whether the translation has been marked as finished, the source text
+    is obsolete, a translation has been provided or the translation fails a
+    validity check. \QL summarizes these properties in six overall states 
+    that are shown as individual icons in the first row of the \l{String List}:
+
+    \list
+    \o \inlineimage linguist-check-on.png
+    \BR
+    The message is marked as finished, and there are no warnings. Clicking on the icon 
+    or editing a translation will mark the message as unfinished. Also, if the 
+    source text is changed by lupdate, the message is automatically set to unfinished.
+
+    \o \inlineimage linguist-check-warning.png
+    \BR
+    The message is marked as finished while there are warnings. Clicking on the icon 
+    or editing a translation will mark it as unfinished. Also, if the 
+    source text is changed by lupdate, the message is automatically set to unfinished.
+
+    \o \inlineimage linguist-check-obsolete.png
+    \BR
+    The message is obsolete. See the 
+    \l{Qt Linguist Manual: Release Manager}{Release Manager manual} on how to remove 
+    such messages from the file.
+
+    \o \inlineimage linguist-check-empty.png
+    \BR
+    The message is unfinished, and no translation has been provided. This is default
+    state for messages that were not changed before. You should insert a translation.
+
+    \o \inlineimage linguist-check-off.png
+    \BR
+    The message is unfinished, but not empty. Furthermore, there are no warnings
+    generated by validity checks. Clicking on the icon or pressing \key{Ctrl+Enter}
+    (Done \& Next) will mark it as finished.
+
+    \o \inlineimage linguist-danger.png
+    \BR
+    The message is unfinished, and there are warnings about the translation. It is
+    recommended to fix these first, but if the warnings are wrong you can just click
+    on the icon or press \key{Ctrl+Return} (Done \& Next) to mark the message as 
+    finished.
+
+    \endlist
+
+    \section2 Context States
+
+    The states of the individual messages in a context are also summarized in a context
+    state:
+
+    \list
+    \o \inlineimage linguist-check-on.png
+    \BR
+    All messages in the context are marked as finished.
+
+    \o \inlineimage linguist-check-obsolete.png
+    \BR
+    All the messages in the context are obsolete.
+
+    \o \inlineimage linguist-check-off.png
+    \BR
+    At least one message in the context is not marked as finished.
+
+    \endlist
+
+    \section2 File Types
+
+    \QL makes use of four kinds of files:
+
+    \list
+    \o \c .ts \e {translation source files} \BR are human-readable XML
+    files containing source phrases and their translations. These files are
+    usually created and updated by \l lupdate and are specific to an
+    application.
+    \o \c .xlf \e {XLIFF files} \BR are human-readable XML files that adhere
+    to the international XML Localization Interchange File Format. \QL
+    can be used to edit XLIFF files generated by other programs. For standard
+    Qt projects, however, only the \c .ts file format is used.
+    \o \c .qm \e {Qt message files} \BR are binary files that contain
+    translations used by an application at runtime. These files are
+    generated by \l lrelease, but can also be generated by \QL.
+    \o \c .qph \e {Qt phrase book files} \BR are human-readable XML
+    files containing standard phrases and their translations. These files
+    are created and updated by \QL and may be used by any
+    number of projects and applications.
+    \endlist
+
+    \section2 The Menu Bar
+
+    \image linguist-menubar.png
+
+    \list
+    \o \e {File}
+        \list
+        \o \e {Open... Ctrl+O} \BR pops up an open file dialog from which a
+        translation source \c .ts or \c .xlf file can be chosen.
+        \o \e {Recently opened files} \BR shows the \c .ts files that
+        have been opened recently, click one to open it.
+        \o \e {Save Ctrl+S} \BR saves the current translation source file.
+        \o \e {Save As...} \BR pops up a save as file dialog so that the
+        current translation source file may be saved with a different
+        name, format and/or put in a different location.
+        \o \e {Release} \BR create a Qt message \c .qm file with the same base 
+        name as the current translation source file. The release manager's
+        command line tool \l lrelease performs the same function on
+        \e all of an application's translation source files.
+        \o \e {Release As...} \BR pops up a save as file dialog. The
+        filename entered will be a Qt message \c .qm file of the translation
+        based on the current translation source file. The release manager's
+        command line tool \l lrelease performs the same function on
+        \e all of an application's translation source files.
+        \o \e {Print... Ctrl+P} \BR pops up a print dialog. If you click
+        OK the translation source and the translations will be printed.
+        \o \e {Exit Ctrl+Q} \BR closes \QL.
+        \endlist
+
+    \o \e {Edit}
+        \list
+        \o \e {Undo Ctrl+Z} \BR undoes the last editing action in the
+        translation pane.
+        \o \e {Redo Ctrl+Y} \BR redoes the last editing action in the
+        translation pane.
+        \o \e {Cut Ctrl+X} \BR deletes any highlighted text in the
+        translation pane and saves a copy to the clipboard.
+        \o \e {Copy Ctrl+C} \BR copies the highlighted text in the
+        translation pane to the clipboard.
+        \o \e {Paste Ctrl+V} \BR pastes the clipboard text into the
+        translation pane.
+    \omit
+        \o \e {Delete} \BR deletes the highlighted text in the
+        translation pane.
+    \endomit
+        \o \e {Select All Ctrl+A} \BR selects all the text in the
+        translation pane ready for copying or deleting.
+        \o \e {Find... Ctrl+F} \BR pops up the
+        Find dialog. When the dialog pops up
+        enter the text to be found and click the \gui {Find Next} button.
+        Source phrases, translations and comments may be searched.
+        \o \e {Find Next F3} \BR finds the next occurrence of the text that
+        was last entered in the Find dialog.
+        \o \e {Search and Translate...} \BR pops up the Search and 
+        Replace Dialog. Use this dialog to translate the same text in multiple items.
+        \o \e {Translation File Settings...} \BR let you configure the target
+        language and the country/region of a translation source file. 
+        \endlist
+
+    \o \e {Translation}
+        \list
+        \o \e {Prev Unfinished Ctrl+K} \BR moves to the nearest previous
+        unfinished source phrase (unfinished means untranslated or
+        translated but failed validation).
+        \o \e {Next Unfinished Ctrl+L} \BR moves to the next unfinished source
+        phrase.
+        \o \e {Prev Shift+Ctrl+K} \BR moves to the previous source phrase.
+        \o \e {Next Shift+Ctrl+L} \BR moves to the next source phrase.
+        \o \e {Done \& Next Ctrl+Enter} \BR mark this phrase as 'done'
+        (translated) and move to the next unfinished source phrase.
+        \o \e {Begin from Source Ctrl+B} \BR copies the source text into
+        the translation.
+        \endlist
+
+    \o \e {Validation} (See the \l Validation section)
+        \list
+        \o \e {Accelerators} \BR toggles validation on or off for Alt
+        accelerators.
+        \o \e {Ending Punctuation} \BR switches validation on or off
+        for phrase ending punctuation, e.g. ellipsis, exclamation mark,
+        question mark, etc.
+        \o \e {Phrase Matches} \BR sets validation on or off for
+        matching against translations that are in the current phrase book.
+        \o \e {Place Marker Matches} \BR sets validation on or off for
+        the use of the same place markers in the source and translation.
+        \endlist
+
+    \o \e {Phrases} (See the section \l {Phrase Books} for details.)
+        \list
+        \o \e {New Phrase Book... Ctrl+N} \BR pops up a save as file dialog.
+        You must enter a filename to be used for the phrase book and save
+        the file. Once saved you should open the phrase book to begin using
+        it.
+        \o \e {Open Phrase Book... Ctrl+H} \BR pops up an open file dialog.
+        Find and choose a phrase book to open.
+        \o \e {Close Phrase Book} \BR displays the list of phrase books 
+        currently opened. Clicking on one of the items will close the phrase 
+        book. If the phrase book has been modified, a dialog box asks whether 
+        \QL should save the changes.
+        \o \e {Edit Phrase Book...} \BR displays the list of phrase books 
+        currently opened. Clicking on one of the items will open the
+        \l{Creating and Editing Phrase Books}{Phrase Book Dialog} where you 
+        can add, edit or delete phrases.
+        \o \e {Print Phrase Book...} \BR displays the list of phrase books
+        currently opened. Clicking on one of the items pops up a print dialog. 
+        If you click OK the phrase book will be printed.
+        \o \e {Add to Phrase Book Ctrl+T} \BR Adds the source text and
+        translation currently shown in the \l{Translation Area} to a phrase book.
+        If multiple phrase books are loaded, a dialog box let you specify 
+        select one.
+        \o \e {Other Languages...} \BR Open the 
+        \l{Showing Auxiliary Translations}{Auxiliary Languages Dialog}. 
+        This dialog let you specify which other auxiliary translations
+        should be shown in the \l{Translation Area}.
+        \endlist
+
+  \o \e {Tools}
+        \list
+        \o \e {Batch Translation...} \BR Opens a \l{Batch Translation}{dialog} 
+        which let you automatically insert translations for source texts which 
+        are in a phrase book.
+        \o \e {Open/Refresh Form Preview F3} \BR Opens the \l{Form Preview}.
+        This window let you instantly see translations for forms created with
+        \e designer.
+        \endlist
+
+  \o \e {View}
+        \list
+        \o \e {Revert Sorting} \BR puts the items in the \l{Context List}
+        and in the \l{String List} into their original order.
+        \o \e {Display Guesses} \BR turns the display of phrases and
+        guesses on or off.
+        \o \e {Statistics} \BR toggles the visibility of the Statistics dialog.
+        \o \e {Views} \BR toggles the visibility of the \l{Context List}, 
+        \l{String List}, \l{Phrases and Guesses Window}, \l{Warnings Window},
+        or \l{Source Code Window}.
+        \o \e {Toolbars} \BR toggles the visibility of the different toolbars.
+        \endlist
+
+  \o \e {Help}
+        \list
+        \o \e {Manual F1} \BR opens this manual.
+        \o \e {About Qt Linguist} \BR Shows information about \QL.
+        \o \e {About Qt} \BR Shows information about \e{Qt}.
+        \o \e {What's This? Shift+F1} \BR Click on one item in the main window 
+        to get additional information about it.
+        \endlist
+
+    \endlist
+
+    \section2 The Toolbar
+
+    \image linguist-toolbar.png
+
+    \list
+    \o \inlineimage linguist-fileopen.png
+    \BR
+    Pops up the open file dialog to open a new translation source \c .ts
+    file.
+
+    \o \inlineimage linguist-filesave.png
+    \BR
+    Saves the current translation source \c .ts file.
+
+    \o \inlineimage linguist-fileprint.png
+    \BR
+    Prints the current translation source \c .ts file.
+
+    \o \inlineimage linguist-phrasebookopen.png
+    \BR
+    Pops up the file open dialog to open a new phrase book \c .qph file.
+
+    \o \inlineimage linguist-editundo.png
+    \BR
+    Undoes the last editing action in the translation pane.
+
+    \o \inlineimage linguist-editredo.png
+    \BR
+    Redoes the last editing action in the translation pane.
+
+    \o \inlineimage linguist-editcut.png
+    \BR
+    Deletes any highlighted text in the translation pane and save a copy to
+    the clipboard.
+
+    \o \inlineimage linguist-editcopy.png
+    \BR
+    Copies the highlighted text in the translation pane to the clipboard.
+
+    \o \inlineimage linguist-editpaste.png
+    \BR
+    Pastes the clipboard text into the translation pane.
+
+    \o \inlineimage linguist-editfind.png
+    \BR
+    Pops up the Find dialog .
+
+    \o \inlineimage linguist-prev.png
+    \BR
+    Moves to the previous source phrase.
+
+    \o \inlineimage linguist-next.png
+    \BR
+    Moves to the next source phrase.
+
+    \o \inlineimage linguist-prevunfinished.png
+    \BR
+    Moves to the previous unfinished source phrase.
+
+    \o \inlineimage linguist-nextunfinished.png
+    \BR
+    Moves to the next unfinished source phrase.
+
+    \o \inlineimage linguist-doneandnext.png
+    \BR
+    Marks the phrase as 'done' (translated) and move to the next
+    unfinished source phrase.
+
+    \o \inlineimage linguist-validateaccelerators.png
+    \BR
+    Toggles accelerator validation on and off.
+
+    \o \inlineimage linguist-validatepunctuation.png
+    \BR
+    Toggles phrase ending punctuation validation on and off.
+
+    \o \inlineimage linguist-validatephrases.png
+    \BR
+    Toggles phrase book validation on or off.
+
+    \o \inlineimage linguist-validateplacemarkers.png
+    \BR
+    Toggles place marker validation on or off.
+
+    \endlist
+
+*/
+
+/*!
+    \page linguist-programmers.html
+    \title Qt Linguist Manual: Programmers
+
+    \contentspage {Qt Linguist Manual}{Contents}
+    \previouspage Qt Linguist Manual: Translators
+    \nextpage Qt Linguist Manual: TS File Format
+
+    Support for multiple languages is extremely simple in Qt
+    applications, and adds little overhead to the programmer's workload.
+
+    Qt minimizes the performance cost of using translations by
+    translating the phrases for each window as they are created. In most
+    applications the main window is created just once. Dialogs are often
+    created once and then shown and hidden as required. Once the initial
+    translation has taken place there is no further runtime overhead for
+    the translated windows. Only those windows that are created,
+    destroyed and subsequently created will have a translation
+    performance cost.
+
+    Creating applications that can switch language at runtime is possible
+    with Qt, but requires a certain amount of programmer intervention and
+    will of course incur some runtime performance cost.
+
+    \section1 Making the Application Translation-Aware
+
+    Programmers should make their application look for and load the
+    appropriate translation file and mark user-visible text and Ctrl
+    keyboard accelerators as targets for translation.
+
+    Each piece of text that requires translating requires context to help
+    the translator identify where in the program the text occurs. In the
+    case of multiple identical texts that require different translations,
+    the translator also requires some information to disambiguate the
+    source texts. Marking text for translation will automatically cause
+    the class name to be used as basic context information. In some cases
+    the programmer may be required to add additional information to help
+    the translator.
+
+    \section2 Creating Translation Files
+
+    Translation files consist of all the user-visible text and Ctrl key
+    accelerators in an application and translations of that text.
+    Translation files are created as follows:
+
+    \list 1
+    \o Run \l lupdate initially to generate the first set of \c .ts
+    translation source files with all the user-visible text but no
+    translations.
+    \o The \c .ts files are given to the translator who adds translations
+    using \QL. \QL takes care of any changed
+    or deleted source text.
+    \o Run \l lupdate to incorporate any new text added to the
+    application. \l lupdate synchronizes the user-visible text from the
+    application with the translations; it does not destroy any data.
+    \o Steps 2 and 3 are repeated as often as necessary.
+    \o When a release of the application is needed \l lrelease is run to
+    read the \c .ts files and produce the \c .qm files used by the
+    application at runtime.
+    \endlist
+
+    For \l lupdate to work successfully, it must know which translation
+    files to produce. The files are simply listed in the application's \c
+    .pro Qt project file, for example:
+
+    \snippet examples/linguist/arrowpad/arrowpad.pro 1
+
+    See the \l lupdate and \l lrelease sections.
+
+    \section2 Loading Translations
+
+    \snippet examples/linguist/hellotr/main.cpp 1
+    \snippet examples/linguist/hellotr/main.cpp 3
+
+    This is how a simple \c main() function of a Qt application begins.
+
+    \snippet examples/linguist/hellotr/main.cpp 1
+    \snippet examples/linguist/hellotr/main.cpp 4
+
+    For a translation-aware application a translator object is created, a
+    translation is loaded and the translator object installed into the
+    application.
+
+    \snippet examples/linguist/arrowpad/main.cpp 0
+    \snippet examples/linguist/arrowpad/main.cpp 1
+
+    In production applications a more flexible approach, for example,
+    loading translations according to locale, might be more appropriate. If
+    the \c .ts files are all named according to a convention such as
+    \e appname_locale, e.g. \c tt2_fr, \c tt2_de etc, then the
+    code above will load the current locale's translation at runtime.
+
+    If there is no translation file for the current locale the application
+    will fall back to using the original source text.
+
+    Note that if you need to programmatically add translations at
+    runtime, you can reimplement QTranslator::translate().
+
+    \section2 Making the Application Translate User-Visible Strings
+
+    User-visible strings are marked as translation targets by wrapping them
+    in a \c tr() call, for example:
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 6
+
+    would become
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 7
+
+    All QObject subclasses that use the \c Q_OBJECT macro implement
+    the \c tr() function.
+
+    Although the \c tr() call is normally made directly since it is
+    usually called as a member function of a QObject subclass, in
+    other cases an explicit class name can be supplied, for example:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 8
+
+    or
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 9
+
+    \section2 Distinguishing Identical Strings That Require Different Translations
+
+    The \l lupdate program automatically provides a \e context for every
+    source text. This context is the class name of the class that contains
+    the \c tr() call. This is sufficient in the vast majority of cases.
+    Sometimes however, the translator will need further information to
+    uniquely identify a source text; for example, a dialog that contained
+    two separate frames, each of which contained an "Enabled" option would
+    need each identified because in some languages the translation would
+    differ between the two. This is easily achieved using the
+    two argument form of the \c tr() call, e.g.
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 10
+
+    and
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 11
+
+    Ctrl key accelerators are also translatable:
+
+    \snippet examples/linguist/trollprint/mainwindow.cpp 2
+
+    It is strongly recommended that the two argument form of \c tr() is used
+    for Ctrl key accelerators. The second argument is the only clue the
+    translator has as to the function performed by the accelerator.
+
+    \section2 Helping the Translator with Navigation Information
+
+    In large complex applications it may be difficult for the translator to
+    see where a particular source text comes from. This problem can be
+    solved by adding a comment using the keyword \e TRANSLATOR which
+    describes the navigation steps to reach the text in question; e.g.
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 12
+
+    These comments are particularly useful for widget classes.
+
+    \section2 Handling Plural Forms
+
+    Qt includes a \c tr() overload that will make it very easy to 
+    write "plural-aware" internationalized applications. This overload 
+    has the following signature:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 17
+
+    Depending on the value of \c n, the \c tr() function will return a different 
+    translation, with the correct grammatical number for the target language. 
+    Also, any occurrence of \c %n is replaced with \c{n}'s value. For example:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 18
+
+    If a French translation is loaded, this will expand to "0 item 
+    remplac\unicode{233}", "1 item remplac\unicode{233}", "2 items 
+    remplac\unicode{233}s", etc., depending on \c{n}'s value. 
+    And if no translation is loaded, the orignal string is used, with \c %n 
+    replaced with count's value (e.g., "6 item(s) replaced").
+
+    To handle plural forms in the native language, you need to load a 
+    translation file for this language, too. \l lupdate has the 
+    \c -pluralonly command line option, which allows the creation of
+    \c .ts files containing only entries with plural forms.
+
+    See the \l{http://doc.trolltech.com/qq/}{Qt Quarterly} Article 
+    \l{http://doc.trolltech.com/qq/qq19-plurals.html}{Plural Forms in Translations}
+    for further details on this issue.
+
+    \section2 Coping With C++ Namespaces
+
+    C++ namespaces and the \c {using namespace} statement can confuse
+    \l lupdate. It will interpret \c MyClass::tr() as meaning just
+    that, not as \c MyNamespace::MyClass::tr(), even if \c MyClass is
+    defined in the \c MyNamespace namespace. Runtime translation of
+    these strings will fail because of that.
+
+    You can work around this limitation by putting a \e TRANSLATOR
+    comment at the beginning of the source files that use \c
+    MyClass::tr():
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 13
+
+    After the comment, all references to \c MyClass::tr() will be
+    understood as meaning \c MyNamespace::MyClass::tr().
+
+    \section2 Translating Text That is Outside of a QObject Subclass
+
+    \section3 Using QCoreApplication::translate()
+
+    If the quoted text is not in a member function of a QObject subclass,
+    use either the tr() function of an appropriate class, or the
+    QCoreApplication::translate() function directly:
+
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 14
+
+    \section3 Using QT_TR_NOOP() and QT_TRANSLATE_NOOP()
+
+    If you need to have translatable text completely outside a function,
+    there are two macros to help: QT_TR_NOOP() and QT_TRANSLATE_NOOP().
+    These macros merely mark the text for extraction by \l{lupdate}.
+    The macros expand to just the text (without the context).
+
+    Example of QT_TR_NOOP():
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 15
+
+    Example of QT_TRANSLATE_NOOP():
+    \snippet doc/src/snippets/code/doc.src.linguist-manual.qdoc 16
+
+    \section1 Tutorials
+
+    Three tutorials are presented:
+
+    \list 1
+    \o \l{linguist/hellotr}{Hello tr()} demonstrates the creation of
+        a \l QTranslator object. It also shows the simplest use of
+        the \c tr() function to mark user-visible source text for
+        translation.
+
+    \o \l{linguist/arrowpad}{Arrow Pad} explains how to make the application load the
+       translation file applicable to the current locale. It also shows the
+       use of the two-argument form of \c tr() which provides additional
+       information to the translator.
+
+    \o \l{linguist/trollprint}{Troll Print} explains how
+        identical source texts can be distinguished even when they occur in
+        the same context. This tutorial also discusses how the translation
+        tools help minimize the translator's work when an application is
+        upgraded.
+    \endlist
+
+    These tutorials cover all that you need to know to prepare your Qt
+    applications for translation.
+
+    At the beginning of a project add the translation source files to be
+    used to the project file and add calls to \l lupdate and \l lrelease to
+    the makefile.
+
+    During the project all the programmer must do is wrap any user-visible
+    text in \c tr() calls. They should also use the two argument form for
+    Ctrl key accelerators, or when asked by the translator for the cases
+    where the same text translates into two different forms in the same
+    context. The programmer should also include \c TRANSLATION comments to
+    help the translator navigate the application.
+*/
+
+/*!
+    \page linguist-ts-file-format.html
+    \title Qt Linguist Manual: TS File Format
+
+    \contentspage {Qt Linguist Manual}{Contents}
+    \previouspage Qt Linguist Manual: Programmers
+
+    The \c .ts file format used by \QL is described by the
+    \l{http://www.w3.org/TR/1998/REC-xml-19980210}{DTD} presented below,
+    which we include for your convenience. Be aware that the format
+    may change in future Qt releases.
+
+    \quotefile tools/linguist/shared/ts.dtd
+    
+*/

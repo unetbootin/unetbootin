@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Using a Component in Your Application</title>
+  <link rel="prev" href="designer-using-custom-widgets.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-creating-custom-widgets.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-using-custom-widgets.html">Using Custom Widgets with Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a>]
+</p>
+<h1 class="title">Using a Component in Your Application<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#compile-time-form-processing">Compile Time Form Processing</a></li>
+<ul><li><a href="#the-direct-approach">The Direct Approach</a></li>
+<li><a href="#the-single-inheritance-approach">The Single Inheritance Approach</a></li>
+<li><a href="#the-multiple-inheritance-approach">The Multiple Inheritance Approach</a></li>
+</ul>
+<li><a href="#run-time-form-processing">Run Time Form Processing</a></li>
+<ul><li><a href="#the-uitools-approach">The UiTools Approach</a></li>
+</ul>
+<li><a href="#automatic-connections">Automatic Connections</a></li>
+<ul><li><a href="#a-dialog-without-auto-connect">A Dialog Without Auto-Connect</a></li>
+<li><a href="#widgets-and-dialogs-with-auto-connect">Widgets and Dialogs with Auto-Connect</a></li>
+</ul>
+</ul>
+<p>With Qt's integrated build tools, <a href="qmake-manual.html">qmake</a> and <a href="uic.html#uic">uic</a>, the code for user interface components created with <i>Qt Designer</i> is automatically generated when the rest of your application is built. Forms can be included and used directly from your application, or you can use them to extend subclasses of standard widgets. These forms can be processed at compile time or at run time, depending on the approach used.</p>
+<a name="compiletimeformprocessing"></a><a name="compile-time-form-processing"></a>
+<h2>Compile Time Form Processing</h2>
+<p>A compile time processed form can be used in your application with any of the following approaches:</p>
+<ul>
+<li>In the direct approach, you simply construct a widget to use as a placeholder for the component, and set up the user interface inside it.</li>
+<li>In the single inheritance approach, you subclass the form's base class (<a href="qwidget.html">QWidget</a> or <a href="qdialog.html">QDialog</a>, for example), and include a private instance of the form's user interface object.</li>
+<li>In the multiple inheritance approach, you subclass from both the form's base class and the form's user interface object. This allows the widgets defined in the form to be used directly from within the scope of the subclass.</li>
+</ul>
+<a name="thedirectapproach"></a><a name="the-direct-approach"></a>
+<h3>The Direct Approach</h3>
+<p>To demonstrate how user interface components can be used straight from <i>Qt Designer</i>, we create a simple Calculator Form application, based on the original <a href="designer-calculatorform.html">Calculator Form</a> example.</p>
+<p>The application consists of one source file, <tt>main.cpp</tt>, and a <tt>.ui</tt> file.</p>
+<p>The <tt>calculatorform.ui</tt> file designed with <i>Qt Designer</i> is shown below:</p>
+<p align="center"><img src="images/directapproach-calculatorform.png" /></p><p>We will use <tt>qmake</tt> to build the executable, so we need to write a <tt>.pro</tt> file:</p>
+<pre> TEMPLATE    = app
+ FORMS       = calculatorform.ui
+ SOURCES     = main.cpp</pre>
+<p>The special feature of this file is the <tt>FORMS</tt> declaration that tells <tt>qmake</tt> which files it needs to process with <tt>uic</tt>. In this case, the <tt>calculatorform.ui</tt> file is used to create a <tt>ui_calculatorform.h</tt> file that can be used by any files listed in the <tt>SOURCES</tt> declaration. To ensure that <tt>qmake</tt> generates the <tt>ui_calculatorform.h</tt> file, we need to include it in a file listed in <tt>SOURCES</tt>. Since we only have <tt>main.cpp</tt>, we include it there:</p>
+<pre> #include &quot;ui_calculatorform.h&quot;</pre>
+<p>This additional check ensures that we do not generate code for <i>.ui</i> files that are not used.</p>
+<p>The <tt>main</tt> function creates the calculator widget by constructing a standard <a href="qwidget.html">QWidget</a> that we use to host the user interface described by the <tt>calculatorform.ui</tt> file.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     QWidget *widget = new QWidget;
+     Ui::CalculatorForm ui;
+     ui.setupUi(widget);
+
+     widget-&gt;show();
+     return app.exec();
+ }</pre>
+<p>In this case, the <tt>Ui::CalculatorForm</tt> is an interface description object from the <tt>ui_calculatorform.h</tt> file that sets up all the dialog's widgets and the connections between its signals and slots.</p>
+<p>This approach provides a quick and easy way to use simple, self-contained components in your applications, but many components created with <i>Qt Designer</i> will need to be integrated more closely with the rest of the application code. For instance, the <tt>CalculatorForm</tt> code provided above will compile and run, but the <a href="qspinbox.html">QSpinBox</a> objects will not interact with the <a href="qlabel.html">QLabel</a> as we require a custom slot to carry out the add operation and display the result in the <a href="qlabel.html">QLabel</a>. To achieve this, we need to subclass a standard Qt widget.</p>
+<a name="thesingleinheritanceapproach"></a><a name="the-single-inheritance-approach"></a>
+<h3>The Single Inheritance Approach</h3>
+<p>In this approach, we subclass a Qt widget and set up the user interface from within the constructor. Components used in this way expose the widgets and layouts used in the form to the Qt widget subclass, and provide a standard system for making signal and slot connections between the user interface and other objects in your application.</p>
+<p>This approach is used in the <a href="designer-calculatorform.html">Calculator Form</a> example.</p>
+<p>To ensure that we can use the user interface, we need to include the header file that <tt>uic</tt> generates before referring to <tt>Ui::CalculatorForm</tt>:</p>
+<pre> #include &quot;ui_calculatorform.h&quot;</pre>
+<p>This means that the <tt>.pro</tt> file must be updated to include <tt>calculatorform.h</tt>:</p>
+<pre> HEADERS     = calculatorform.h</pre>
+<p>The subclass is defined in the following way:</p>
+<pre> class CalculatorForm : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     CalculatorForm(QWidget *parent = 0);
+
+ private slots:
+     void on_inputSpinBox1_valueChanged(int value);
+     void on_inputSpinBox2_valueChanged(int value);
+
+ private:
+     Ui::CalculatorForm ui;
+ };</pre>
+<p>The important feature of the class is the private <tt>ui</tt> object which provides the code for setting up and managing the user interface.</p>
+<p>The constructor for the subclass constructs and configures all the widgets and layouts for the dialog just by calling the <tt>ui</tt> object's <tt>setupUi()</tt> function. Once this has been done, it is possible to modify the user interface as needed.</p>
+<pre> CalculatorForm::CalculatorForm(QWidget *parent)
+     : QWidget(parent)
+ {
+     ui.setupUi(this);
+ }</pre>
+<p>We can connect signals from the user interface widgets to slots in the widget in the usual way, taking care to prefix the <tt>ui</tt> object to each widget used.</p>
+<p>The main advantages of this approach are its simple use of inheritance to provide a <a href="qwidget.html">QWidget</a>-based interface, and its encapsulation of the user interface widget variables within the <tt>ui</tt> data member. We can use this method to define a number of user interfaces within the same widget, each of which is contained within its own namespace, and overlay (or &quot;compose&quot;) them. This approach can be used to create individual tabs from existing forms, for example.</p>
+<a name="themultipleinheritanceapproach"></a><a name="the-multiple-inheritance-approach"></a>
+<h3>The Multiple Inheritance Approach</h3>
+<p>Forms created with <i>Qt Designer</i> can be subclassed along with a standard <a href="qwidget.html">QWidget</a>-based class. This approach makes all the user interface components defined in the form directly accessible within the scope of the subclass, and enables signal and slot connections to be made in the usual way with the <a href="qobject.html#connect">connect()</a> function.</p>
+<p>This approach is used in the <a href="uitools-multipleinheritance.html">Multiple Inheritance</a> example.</p>
+<p>We need to include the header file that <tt>uic</tt> generates from the <tt>calculatorform.ui</tt> file:</p>
+<pre> #include &quot;ui_calculatorform.h&quot;</pre>
+<p>The class is defined in a similar way to the one used in the private interface approach, except that this time we inherit from both <a href="qwidget.html">QWidget</a> and <tt>Ui::CalculatorForm</tt>:</p>
+<pre> class CalculatorForm : public QWidget, private Ui::CalculatorForm
+ {
+     Q_OBJECT
+
+ public:
+     CalculatorForm(QWidget *parent = 0);
+
+ private slots:
+     void on_inputSpinBox1_valueChanged(int value);
+     void on_inputSpinBox2_valueChanged(int value);
+ };</pre>
+<p>We inherit <tt>Ui::CalculatorForm</tt> privately to ensure that the user interface objects are private in our subclass. We can also inherit it with the <tt>public</tt> or <tt>protected</tt> keywords in the same way that we could have made <tt>ui</tt> public or protected in the previous case.</p>
+<p>The constructor for the subclass performs many of the same tasks as the constructor used in the private interface example:</p>
+<pre> CalculatorForm::CalculatorForm(QWidget *parent)
+     : QWidget(parent)
+ {
+     setupUi(this);
+ }</pre>
+<p>In this case, the widgets used in the user interface can be accessed in the same way as a widget created in code by hand. We no longer require the <tt>ui</tt> prefix to access them.</p>
+<p>Subclassing using multiple inheritance gives us more direct access to the contents of the form, is slightly cleaner than the single inheritance approach, but does not conveniently support composition of multiple user interfaces.</p>
+<a name="runtimeformprocessing"></a><a name="run-time-form-processing"></a>
+<h2>Run Time Form Processing</h2>
+<p>Alternatively, forms can be processed at run time, producing dynamically-generated user interfaces. This can be done using the <a href="qtuitools.html">QtUiTools</a> module, which provides the <a href="quiloader.html">QUiLoader</a> class to handle forms created with <i>Qt Designer</i>.</p>
+<a name="the-uitools-approach"></a>
+<h3>The UiTools Approach</h3>
+<p>A resource file containing a <tt>.ui</tt> file is required to process forms at run time. Also, the application needs to be configured to use the <a href="qtuitools.html">QtUiTools</a> module. This is done by including the following declaration in a qmake project file, ensuring that the application is compiled and linked appropriately.</p>
+<pre> CONFIG += uitools</pre>
+<p>The <a href="quiloader.html">QUiLoader</a> class provides a form loader object to construct the user interface. This user interface can be retrieved from any <a href="qiodevice.html">QIODevice</a> (a <a href="qfile.html">QFile</a> object for example) to obtain a form stored in a project's resources. The <a href="quiloader.html#load">QUiLoader::load</a>() function constructs the form widget using the user interface description contained in the file.</p>
+<p>The <a href="qtuitools.html">QtUiTools</a> module classes can be included using the following directive:</p>
+<pre> #include &lt;QtUiTools&gt;</pre>
+<p>The <a href="quiloader.html#load">QUiLoader::load</a>() function is invoked as shown in this code from the <a href="uitools-textfinder.html">Text Finder</a> example:</p>
+<pre> QWidget* TextFinder::loadUiFile()
+ {
+     QUiLoader loader;
+
+     QFile file(&quot;:/forms/textfinder.ui&quot;);
+     file.open(QFile::ReadOnly);
+
+     QWidget *formWidget = loader.load(&amp;file, this);
+     file.close();
+
+     return formWidget;
+ }</pre>
+<p>In a class that uses <a href="qtuitools.html">QtUiTools</a> to build its user interface at run time, we can locate objects in the form using <a href="qobject.html#qFindChild">qFindChild</a>(). For example, in the following code, we locate some components based on their object names and widget types:</p>
+<pre>     ui_findButton = qFindChild&lt;QPushButton*&gt;(this, &quot;findButton&quot;);
+     ui_textEdit = qFindChild&lt;QTextEdit*&gt;(this, &quot;textEdit&quot;);
+     ui_lineEdit = qFindChild&lt;QLineEdit*&gt;(this, &quot;lineEdit&quot;);</pre>
+<p>Processing forms at run-time gives the user the freedom to change a program's user interface, just by changing the <tt>.ui</tt> file. This is useful when customizing programs to suit various user needs.</p>
+<a name="automaticconnections"></a><a name="automatic-connections"></a>
+<h2>Automatic Connections</h2>
+<p>The signals and slots connections defined for compile time or run time forms can either be set up manually or automatically, using <a href="qmetaobject.html">QMetaObject</a>'s ability to make connections between signals and suitably-named slots.</p>
+<p>Generally, in a <a href="qdialog.html">QDialog</a>, if we want to process the information entered by the user before accepting it, we need to connect the clicked() signal from the <b>OK</b> button to a custom slot in our dialog. We will first show an example of the dialog in which the slot is connected by hand then compare it with a dialog that uses automatic connection.</p>
+<a name="adialogwithoutautoconnect"></a><a name="a-dialog-without-auto-connect"></a>
+<h3>A Dialog Without Auto-Connect</h3>
+<p>We define the dialog in the same way as before, but now include a slot in addition to the constructor:</p>
+<pre> class ImageDialog : public QDialog, private Ui::ImageDialog
+ {
+     Q_OBJECT
+
+ public:
+     ImageDialog(QWidget *parent = 0);
+
+ private slots:
+     void checkValues();
+ };</pre>
+<p>The <tt>checkValues()</tt> slot will be used to validate the values provided by the user.</p>
+<p>In the dialog's constructor we set up the widgets as before, and connect the <b>Cancel</b> button's <a href="qabstractbutton.html#clicked">clicked()</a> signal to the dialog's reject() slot. We also disable the <a href="qpushbutton.html#autoDefault-prop">autoDefault</a> property in both buttons to ensure that the dialog does not interfere with the way that the line edit handles return key events:</p>
+<pre> ImageDialog::ImageDialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     setupUi(this);
+     okButton-&gt;setAutoDefault(false);
+     cancelButton-&gt;setAutoDefault(false);
+     ...
+     connect(okButton, SIGNAL(clicked()), this, SLOT(checkValues()));
+ }</pre>
+<p>We connect the <b>OK</b> button's <a href="qabstractbutton.html#clicked">clicked()</a> signal to the dialog's checkValues() slot which we implement as follows:</p>
+<pre> void ImageDialog::checkValues()
+ {
+     if (nameLineEdit-&gt;text().isEmpty())
+         (void) QMessageBox::information(this, tr(&quot;No Image Name&quot;),
+             tr(&quot;Please supply a name for the image.&quot;), QMessageBox::Cancel);
+     else
+         accept();
+ }</pre>
+<p>This custom slot does the minimum necessary to ensure that the data entered by the user is valid - it only accepts the input if a name was given for the image.</p>
+<a name="widgetsanddialogswithautoconnect"></a><a name="widgets-and-dialogs-with-auto-connect"></a>
+<h3>Widgets and Dialogs with Auto-Connect</h3>
+<p>Although it is easy to implement a custom slot in the dialog and connect it in the constructor, we could instead use <a href="qmetaobject.html">QMetaObject</a>'s auto-connection facilities to connect the <b>OK</b> button's clicked() signal to a slot in our subclass. <tt>uic</tt> automatically generates code in the dialog's <tt>setupUi()</tt> function to do this, so we only need to declare and implement a slot with a name that follows a standard convention:</p>
+<pre>     void on_&lt;widget name&gt;_&lt;signal name&gt;(&lt;signal parameters&gt;);</pre>
+<p>Using this convention, we can define and implement a slot that responds to mouse clicks on the <b>OK</b> button:</p>
+<pre> class ImageDialog : public QDialog, private Ui::ImageDialog
+ {
+     Q_OBJECT
+
+ public:
+     ImageDialog(QWidget *parent = 0);
+
+ private slots:
+     void on_okButton_clicked();
+ };</pre>
+<p>Another example of automatic signal and slot connection would be the <a href="uitools-textfinder.html">Text Finder</a> with its <tt>on_findButton_clicked()</tt> slot.</p>
+<p>We use <a href="qmetaobject.html">QMetaObject</a>'s system to enable signal and slot connections:</p>
+<pre>     QMetaObject::connectSlotsByName(this);</pre>
+<p>This enables us to implement the slot, as shown below:</p>
+<pre> void TextFinder::on_findButton_clicked()
+ {
+     QString searchString = ui_lineEdit-&gt;text();
+     QTextDocument *document = ui_textEdit-&gt;document();
+
+     bool found = false;
+
+     if (isFirstTime == false)
+         document-&gt;undo();
+
+     if (searchString == &quot;&quot;) {
+         QMessageBox::information(this, tr(&quot;Empty Search Field&quot;),
+                 &quot;The search field is empty. Please enter a word and click Find.&quot;);
+     } else {
+
+         QTextCursor highlightCursor(document);
+         QTextCursor cursor(document);
+
+         cursor.beginEditBlock();
+     ...
+         cursor.endEditBlock();
+         isFirstTime = false;
+
+         if (found == false) {
+             QMessageBox::information(this, tr(&quot;Word Not Found&quot;),
+                 &quot;Sorry, the word cannot be found.&quot;);
+         }
+     }
+ }</pre>
+<p>Automatic connection of signals and slots provides both a standard naming convention and an explicit interface for widget designers to work to. By providing source code that implements a given interface, user interface designers can check that their designs actually work without having to write code themselves.</p>
+<p>
+[Previous: <a href="designer-using-custom-widgets.html">Using Custom Widgets with Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

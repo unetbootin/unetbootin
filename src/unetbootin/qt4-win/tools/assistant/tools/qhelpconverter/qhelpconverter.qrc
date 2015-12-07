@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/trolltech/qhelpconverter" >
+        <file>assistant-128.png</file>
+        <file>assistant.png</file>
+        <file>doc/inputpage.html</file>
+        <file>doc/generalpage.html</file>
+        <file>doc/filterpage.html</file>
+        <file>doc/identifierpage.html</file>
+        <file>doc/pathpage.html</file>
+        <file>doc/filespage.html</file>
+        <file>doc/outputpage.html</file>
+    </qresource>
+</RCC>

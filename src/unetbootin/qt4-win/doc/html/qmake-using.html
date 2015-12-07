@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Using qmake</title>
+  <link rel="prev" href="qmake-manual.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-project-files.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-manual.html">qmake Manual</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-project-files.html">qmake Project Files</a>]
+</p>
+<h1 class="title">Using qmake<br /><span class="subtitle"></span>
+</h1>
+<p><tt>qmake</tt> provides a project-oriented system for managing the build process for applications, libraries, and other components. This approach gives developers control over the source files used, and allows each of the steps in the process to be described concisely, typically within a single file. <tt>qmake</tt> expands the information in each project file to a Makefile that executes the necessary commands for compiling and linking.</p>
+<p>In this document, we provide a basic introduction to project files, describe some of the main features of <tt>qmake</tt>, and show how to use <tt>qmake</tt> on the command line.</p>
+<a name="describing-a-project"></a>
+<h2>Describing a Project</h2>
+<p>Projects are described by the contents of project (<tt>.pro</tt>) files. The information within these is used by <tt>qmake</tt> to generate a Makefile containing all the commands that are needed to build each project. Project files typically contain a list of source and header files, general configuration information, and any application-specific details, such as a list of extra libraries to link against, or a list of extra include paths to use.</p>
+<p>Project files can contain a number of different elements, including comments, variable declarations, built-in functions, and some simple control structures. In most simple projects, it is only necessary to declare the source and header files that are used to build the project with some basic configuration options.</p>
+<p>Complete examples of project files can be found in the <a href="qmake-tutorial.html">qmake Tutorial</a>. An introduction to project files can be found in the <a href="qmake-project-files.html">qmake Project Files</a> chapter, and a more detailed description is available in the <a href="qmake-reference.html">qmake Reference</a>.</p>
+<a name="building-a-project"></a>
+<h2>Building a Project</h2>
+<p>For simple projects, you only need to run <tt>qmake</tt> in the top level directory of your project. By default, <tt>qmake</tt> generates a Makefile that you then use to build the project, and you can then run your platform's <tt>make</tt> tool to build the project.</p>
+<p><tt>qmake</tt> can also be used to generate project files. A full description of <tt>qmake</tt>'s command line options can be found in the <a href="qmake-running.html">Running qmake</a> chapter of this manual.</p>
+<a name="using-precompiled-headers"></a>
+<h2>Using Precompiled Headers</h2>
+<p>In large projects, it is possible to take advantage of precompiled header files to speed up the build process. This feature is described in detail in the <a href="qmake-precompiledheaders.html">Using Precompiled Headers</a> chapter.</p>
+<p>
+[Previous: <a href="qmake-manual.html">qmake Manual</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-project-files.html">qmake Project Files</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

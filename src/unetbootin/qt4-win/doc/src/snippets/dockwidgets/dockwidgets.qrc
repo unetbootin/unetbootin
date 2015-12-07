@@ -1,0 +1,12 @@
+<RCC>
+    <qresource>
+        <file>Resources/titles.txt</file>
+        <file>Resources/modules.html</file>
+        <file>Resources/qtcore.html</file>
+        <file>Resources/qtgui.html</file>
+        <file>Resources/qtnetwork.html</file>
+        <file>Resources/qtopengl.html</file>
+        <file>Resources/qtsql.html</file>
+        <file>Resources/qtxml.html</file>
+    </qresource>
+</RCC>

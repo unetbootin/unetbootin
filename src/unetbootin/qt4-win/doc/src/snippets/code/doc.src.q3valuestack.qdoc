@@ -1,0 +1,15 @@
+//! [0]
+	Q3ValueStack<int> stack;
+	stack.push( 1 );
+	stack.push( 2 );
+	stack.push( 3 );
+	while ( ! stack.isEmpty() )
+	    cout << "Item: " << stack.pop() << endl;
+
+	// Output:
+	//	Item: 3
+	//	Item: 2
+	//	Item: 1
+//! [0]
+
+

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/script/qscriptextensionplugin.cpp -->
+<head>
+  <title>Qt 4.4: QScriptExtensionPlugin Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QScriptExtensionPlugin Class Reference<br /><span class="small-subtitle">[<a href="qtscript.html">QtScript</a> module]</span>
+</h1>
+<p>The QScriptExtensionPlugin class provides an abstract base for custom QScript extension plugins. <a href="#details">More...</a></p>
+<pre> #include &lt;QScriptExtensionPlugin&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qscriptextensionplugin-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qscriptextensionplugin.html#QScriptExtensionPlugin">QScriptExtensionPlugin</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qscriptextensionplugin.html#dtor.QScriptExtensionPlugin">~QScriptExtensionPlugin</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qscriptextensionplugin.html#initialize">initialize</a></b> ( const QString &amp; <i>key</i>, QScriptEngine * <i>engine</i> ) = 0</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qscriptextensionplugin.html#keys">keys</a></b> () const = 0</li>
+<li><div class="fn"/>QScriptValue <b><a href="qscriptextensionplugin.html#setupPackage">setupPackage</a></b> ( const QString &amp; <i>key</i>, QScriptEngine * <i>engine</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QScriptExtensionPlugin class provides an abstract base for custom QScript extension plugins.</p>
+<p>QScriptExtensionPlugin is a plugin interface that makes it possible to offer extensions that can be loaded dynamically into applications using the <a href="qscriptengine.html">QScriptEngine</a> class.</p>
+<p>Writing a script extension plugin is achieved by subclassing this base class, reimplementing the pure virtual <a href="qscriptextensionplugin.html#keys">keys</a>() and <a href="qscriptextensionplugin.html#initialize">initialize</a>() functions, and exporting the class using the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro. See <a href="plugins-howto.html">How to Create Qt Plugins</a> for details.</p>
+<p>See also <a href="qscriptengine.html#importExtension">QScriptEngine::importExtension</a>() and <a href="qtscriptextensions.html">Creating QtScript Extensions</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QScriptExtensionPlugin"></a>QScriptExtensionPlugin::QScriptExtensionPlugin ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a script extension plugin with the given <i>parent</i>.</p>
+<p>Note that this constructor is invoked automatically by the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro, so there is no need for calling it explicitly.</p>
+<h3 class="fn"><a name="dtor.QScriptExtensionPlugin"></a>QScriptExtensionPlugin::~QScriptExtensionPlugin ()</h3>
+<p>Destroys the script extension plugin.</p>
+<p>Note that Qt destroys a plugin automatically when it is no longer used, so there is no need for calling the destructor explicitly.</p>
+<h3 class="fn"><a name="initialize"></a>void QScriptExtensionPlugin::initialize ( const <a href="qstring.html">QString</a> &amp; <i>key</i>, <a href="qscriptengine.html">QScriptEngine</a> * <i>engine</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Initializes the extension specified by <i>key</i> in the given <i>engine</i>. The key must come from the set of <a href="qscriptextensionplugin.html#keys">keys</a>().</p>
+<p>See also <a href="qscriptextensionplugin.html#keys">keys</a>().</p>
+<h3 class="fn"><a name="keys"></a><a href="qstringlist.html">QStringList</a> QScriptExtensionPlugin::keys () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the list of keys this plugin supports.</p>
+<p>These keys are usually the names of the &quot;modules&quot; or &quot;packages&quot; that are implemented in the plugin (e.g&#x2e; <tt>com.mycompany.MyProduct</tt>).</p>
+<p>See also <a href="qscriptextensionplugin.html#initialize">initialize</a>().</p>
+<h3 class="fn"><a name="setupPackage"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptExtensionPlugin::setupPackage ( const <a href="qstring.html">QString</a> &amp; <i>key</i>, <a href="qscriptengine.html">QScriptEngine</a> * <i>engine</i> ) const</h3>
+<p>This function is provided for convenience when reimplementing <a href="qscriptextensionplugin.html#initialize">initialize</a>(). It splits the given <i>key</i> on <tt>'.'</tt> (dot), and ensures that there's a corresponding path of objects in the environment of the given <i>engine</i>, creating new objects to complete the path if necessary. E.g&#x2e; if the key is &quot;com.trolltech&quot;, after the call to setupPackage() the script expression <tt>com.trolltech</tt> will evaluate to an object. More specifically, the engine's Global Object will have a property called &quot;com&quot;, which in turn has a property called &quot;trolltech&quot;.</p>
+<p>Use this function to avoid global namespace pollution when installing your extensions in the engine.</p>
+<p>See also <a href="qscriptextensionplugin.html#initialize">initialize</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

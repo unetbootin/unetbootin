@@ -1,0 +1,202 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-tulip.html
+    \title The Tulip Container Classes
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage What's New in Qt 4
+    \nextpage The Interview Framework
+
+    Qt 4 introduces a new set of containers that supersede both the old
+    QCollection pointer-based containers and the newer QTL value-based
+    containers.
+
+    \tableofcontents
+
+    \section1 General Overview
+
+    The Tulip containers are similar to Qt 3's QTL containers
+    (QValueList, QValueVector, QMap), but have the following
+    advantages:
+
+    \list
+    \o The containers provide new iterators with a nicer, less
+       error-prone syntax than STL, inspired by Java's iterators. (The
+       STL-style iterators are still available as a lightweight,
+       STL-compatible alternative.)
+
+    \o The containers have been optimized for minimal code expansion.
+
+    \o An empty container performs no memory allocation, and only
+       requires the same space as a pointer.
+
+    \o Even though they are implicitly shared, they can safely be copied
+       across different threads without formality. There's no need to use
+       \c QDeepCopy.
+    \endlist
+
+    Tulip provides the following sequential containers: QList,
+    QLinkedList, QVector, QStack, and QQueue. For most
+    applications, QList is the best type to use. Although it is
+    implemented as an array-list, it provides very fast prepends and
+    appends. If you really need a linked-list, use QLinkedList; if you
+    want your items to occupy consecutive memory locations, use QVector.
+    QStack and QQueue are convenience classes that provide LIFO and
+    FIFO semantics.
+
+    Tulip also provides these associative containers: QMap,
+    QMultiMap, QHash, QMultiHash, and QSet. The "Multi" containers
+    conveniently support multiple values associated with a single
+    key. The "Hash" containers provide faster lookup by using a hash
+    function instead of a binary search on a sorted set.
+
+    The Tulip containers support the \l foreach keyword, a Qt-specific
+    addition to the C++ language that is implemented using the standard
+    C++ preprocessor. The syntax is:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 0
+
+    Example:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 1
+
+    The iterator variable can also be defined outside the loop. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 2
+
+    Just like standard \c for loops, foreach supports braces, \c
+    break, \c continue, and nested loops. Qt makes a copy of the
+    container when it enters the loop. If you modify the container as
+    you are iterating, that won't affect the loop.
+
+    For details about the new containers, see the
+    \l{Generic Containers} and \l{Generic Algorithms} overview documents.
+
+    In addition to the new containers, considerable work has also gone into
+    QByteArray and QString. The Qt 3 QCString class has been
+    merged with QByteArray. The new QByteArray automatically provides
+    a '\0' terminator after the last character. For example, the byte array
+    of size 5 containing "abcde" has a null byte at position 5 (one past
+    the end). This solves all the typical problems that occurred in Qt 3
+    with conversions between QByteArray and QCString.
+
+    To avoid crashes, QByteArray::data() never returns a null
+    pointer. Furthermore, the distinction between null and empty
+    strings has been watered down so that \c{QByteArray() ==
+    QByteArray("")} and \c{QString() == QString("")}.
+
+    \section1 Examples
+
+    The first group of examples show how to use the new Java-style
+    iterators. The main difference between the Java-style iterators and the
+    STL-style iterators is that the Java-style ones point between items (or
+    before the first item, or after the last item), whereas the STL ones
+    point at an item (or past the last item). One advantage of the
+    Java-style iterators is that iterating forward and backward are
+    symmetric operations.
+
+    Traversing a container using a Java-style iterator:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 3
+
+    Modifying items using a Java-style iterator:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 4
+
+    Removing items using a Java-style iterator:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 5
+
+    Iterating over items with a particular value using STL-style vs.
+    Java-style iterators:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 6
+
+    Modifying and removing items using STL-style vs. Java-style
+    iterators:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 7
+
+    The next group of examples show the API of the container classes
+    themselves. The API is similar to the QTL classes of Qt 3, but is nicer
+    in many respects.
+
+    Iterating over a QList using an index (which is fast even for large
+    lists, because QList is implemented as an array-list):
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 8
+
+    Retrieving a value from a map, using a default value if the key
+    doesn't exist:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 9
+
+    Getting all the values for a particular key in a QMultiMap or QMultiHash:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-tulip.qdoc 10
+
+    \section1 Comparison with Qt 3
+
+    Tulip containers are value based. If you want to store a list where
+    each item is a QWidget *, use QList<QWidget *>.
+
+    The new containers do not support auto-delete. In practice, we
+    discovered that the only case where auto-delete proved worthwhile was
+    when the data really should be stored as a value rather than as a
+    pointer (e.g., QList<int> rather than QList<int *>). If you need
+    to delete all the items in a container, use qDeleteAll().
+
+    If you use QValueList in Qt 3, you can replace it with either
+    QList or QLinkedList in Qt 4. In most cases, QList is the best
+    choice: It is typically faster, results in less code in your
+    executable, and requires less memory. However, QLinkedList's
+    iterators provide stronger guarantees, and only QLinkedList provides
+    constant-time insertions in the middle, which can make a difference for
+    lists with thousands of items.
+
+    If you use QValueVector or QMap in Qt 3, the corresponding Qt 4
+    classes (QVector, QMap) are very similar to use.
+*/

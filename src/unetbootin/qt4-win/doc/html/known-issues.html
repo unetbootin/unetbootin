@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/known-issues.qdoc -->
+<head>
+  <title>Qt 4.4: Known Issues in 4.4&#x2e;0</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Known Issues in 4.4&#x2e;0<br /><span class="subtitle"></span>
+</h1>
+<p>An up-to-date list of known issues with Qt 4.4&#x2e;0 can be found via the <a href="http://www.trolltech.com/developer/task-tracker">Task Tracker</a> on the Trolltech website which provides additional information about known issues and tasks related to Qt.</p>
+<a name="issues-with-third-party-software"></a>
+<h2>Issues with Third Party Software</h2>
+<a name="x11-hardware-support"></a>
+<h3>X11 Hardware Support</h3>
+<ul>
+<li>There is a bug in the 169.xx NVIDIA drivers on certain GeForce 8 series cards that is triggered by the OpenGL paint engine when using <a href="qpainter.html">QPainter</a> on a <a href="qglwidget.html">QGLWidget</a> to draw paths and polygons. Some other painting operations that end up in the path fallback are affected as well. The bug causes the whole X server to repeatedly hang for several seconds at a time.</li>
+<li>There is an issue with NVIDIA's 9xxx driver series on X11 that causes a crash in cases where there are several <a href="qglcontext.html">QGLContext</a>s and the extended composition modes are used (the composition modes between and including <a href="qpainter.html#CompositionMode-enum">QPainter::CompositionMode_Multiply</a> and <a href="qpainter.html#CompositionMode-enum">QPainter::CompositionMode_Exclusion</a>). This affects the composition mode demo in Qt 4.4, for example. The crash does not occur in newer versions of the drivers.</li>
+</ul>
+<a name="mac-os-x"></a>
+<h3>Mac OS X</h3>
+<ul>
+<li>If a sheet is opened for a given window, clicking the title bar of that window will cause it to flash. This behavior has been reported to Apple (bug number 5827676).</li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

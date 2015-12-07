@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qpainterpath.cpp -->
+<head>
+  <title>Qt 4.4: Element Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Element Class Reference<br /><span class="small-subtitle">(QPainterPath::Element)<br />[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPainterPath::Element class specifies the position and type of a subpath. <a href="#details">More...</a></p>
+<pre> #include &lt;<a href="qpainterpath.html">QPainterPath</a>&gt;</pre><ul>
+<li><a href="qpainterpath-element-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qpainterpath-element.html#isCurveTo">isCurveTo</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpainterpath-element.html#isLineTo">isLineTo</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpainterpath-element.html#isMoveTo">isMoveTo</a></b> () const</li>
+<li><div class="fn"/><b><a href="qpainterpath-element.html#operator-QPointF">operator QPointF</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpainterpath-element.html#operator-not-eq">operator!=</a></b> ( const Element &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qpainterpath-element.html#operator-eq-eq">operator==</a></b> ( const Element &amp; <i>other</i> ) const</li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>ElementType <b><a href="qpainterpath-element.html#type-var">type</a></b></li>
+<li><div class="fn"/>qreal <b><a href="qpainterpath-element.html#x-var">x</a></b></li>
+<li><div class="fn"/>qreal <b><a href="qpainterpath-element.html#y-var">y</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPainterPath::Element class specifies the position and type of a subpath.</p>
+<p>Once a <a href="qpainterpath.html">QPainterPath</a> object is constructed, subpaths like lines and curves can be added to the path (creating <a href="qpainterpath.html#ElementType-enum">QPainterPath::LineToElement</a> and <a href="qpainterpath.html#ElementType-enum">QPainterPath::CurveToElement</a> components).</p>
+<p>The lines and curves stretch from the <a href="qpainterpath.html#currentPosition">currentPosition</a>() to the position passed as argument. The <a href="qpainterpath.html#currentPosition">currentPosition</a>() of the <a href="qpainterpath.html">QPainterPath</a> object is always the end position of the last subpath that was added (or the initial start point). The <a href="qpainterpath.html#moveTo">moveTo</a>() function can be used to move the <a href="qpainterpath.html#currentPosition">currentPosition</a>() without adding a line or curve, creating a <a href="qpainterpath.html#ElementType-enum">QPainterPath::MoveToElement</a> component.</p>
+<p>See also <a href="qpainterpath.html">QPainterPath</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="isCurveTo"></a>bool Element::isCurveTo () const</h3>
+<p>Returns true if the element is a curve, otherwise returns false.</p>
+<p>See also <a href="qpainterpath-element.html#type-var">type</a> and <a href="qpainterpath.html#ElementType-enum">QPainterPath::CurveToElement</a>.</p>
+<h3 class="fn"><a name="isLineTo"></a>bool Element::isLineTo () const</h3>
+<p>Returns true if the element is a line, otherwise returns false.</p>
+<p>See also <a href="qpainterpath-element.html#type-var">type</a> and <a href="qpainterpath.html#ElementType-enum">QPainterPath::LineToElement</a>.</p>
+<h3 class="fn"><a name="isMoveTo"></a>bool Element::isMoveTo () const</h3>
+<p>Returns true if the element is moving the current position, otherwise returns false.</p>
+<p>See also <a href="qpainterpath-element.html#type-var">type</a> and <a href="qpainterpath.html#ElementType-enum">QPainterPath::MoveToElement</a>.</p>
+<h3 class="fn"><a name="operator-QPointF"></a>Element::operator QPointF () const</h3>
+<p>Returns the element's position.</p>
+<p>See also <a href="qpainterpath-element.html#x-var">x</a> and <a href="qpainterpath-element.html#y-var">y</a>.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool Element::operator!= ( const Element &amp; <i>other</i> ) const</h3>
+<p>Returns true if this element is not equal to <i>other</i>; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qpainterpath-element.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool Element::operator== ( const Element &amp; <i>other</i> ) const</h3>
+<p>Returns true if this element is equal to <i>other</i>; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qpainterpath-element.html#operator-not-eq">operator!=</a>().</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="type-var"></a><a href="qpainterpath.html#ElementType-enum">ElementType</a> Element::type</h3>
+<p>This variable holds the type of element.</p>
+<p>See also <a href="qpainterpath-element.html#isCurveTo">isCurveTo</a>(), <a href="qpainterpath-element.html#isLineTo">isLineTo</a>(), and <a href="qpainterpath-element.html#isMoveTo">isMoveTo</a>().</p>
+<h3 class="fn"><a name="x-var"></a><a href="qtglobal.html#qreal-typedef">qreal</a> Element::x</h3>
+<p>This variable holds the x coordinate of the element's position.</p>
+<p>See also <a href="qpainterpath-element.html#operator-QPointF">operator QPointF</a>().</p>
+<h3 class="fn"><a name="y-var"></a><a href="qtglobal.html#qreal-typedef">qreal</a> Element::y</h3>
+<p>This variable holds the y coordinate of the element's position.</p>
+<p>See also <a href="qpainterpath-element.html#operator-QPointF">operator QPointF</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

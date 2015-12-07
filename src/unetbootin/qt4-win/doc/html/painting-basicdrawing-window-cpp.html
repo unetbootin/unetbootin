@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (painting/basicdrawing/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">painting/basicdrawing/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;renderarea.h&quot;
+ #include &quot;window.h&quot;
+
+ const int IdRole = Qt::UserRole;
+
+ Window::Window()
+ {
+     renderArea = new RenderArea;
+
+     shapeComboBox = new QComboBox;
+     shapeComboBox-&gt;addItem(tr(&quot;Polygon&quot;), RenderArea::Polygon);
+     shapeComboBox-&gt;addItem(tr(&quot;Rectangle&quot;), RenderArea::Rect);
+     shapeComboBox-&gt;addItem(tr(&quot;Rounded Rectangle&quot;), RenderArea::RoundedRect);
+     shapeComboBox-&gt;addItem(tr(&quot;Ellipse&quot;), RenderArea::Ellipse);
+     shapeComboBox-&gt;addItem(tr(&quot;Pie&quot;), RenderArea::Pie);
+     shapeComboBox-&gt;addItem(tr(&quot;Chord&quot;), RenderArea::Chord);
+     shapeComboBox-&gt;addItem(tr(&quot;Path&quot;), RenderArea::Path);
+     shapeComboBox-&gt;addItem(tr(&quot;Line&quot;), RenderArea::Line);
+     shapeComboBox-&gt;addItem(tr(&quot;Polyline&quot;), RenderArea::Polyline);
+     shapeComboBox-&gt;addItem(tr(&quot;Arc&quot;), RenderArea::Arc);
+     shapeComboBox-&gt;addItem(tr(&quot;Points&quot;), RenderArea::Points);
+     shapeComboBox-&gt;addItem(tr(&quot;Text&quot;), RenderArea::Text);
+     shapeComboBox-&gt;addItem(tr(&quot;Pixmap&quot;), RenderArea::Pixmap);
+
+     shapeLabel = new QLabel(tr(&quot;&amp;Shape:&quot;));
+     shapeLabel-&gt;setBuddy(shapeComboBox);
+
+     penWidthSpinBox = new QSpinBox;
+     penWidthSpinBox-&gt;setRange(0, 20);
+     penWidthSpinBox-&gt;setSpecialValueText(tr(&quot;0 (cosmetic pen)&quot;));
+
+     penWidthLabel = new QLabel(tr(&quot;Pen &amp;Width:&quot;));
+     penWidthLabel-&gt;setBuddy(penWidthSpinBox);
+
+     penStyleComboBox = new QComboBox;
+     penStyleComboBox-&gt;addItem(tr(&quot;Solid&quot;), Qt::SolidLine);
+     penStyleComboBox-&gt;addItem(tr(&quot;Dash&quot;), Qt::DashLine);
+     penStyleComboBox-&gt;addItem(tr(&quot;Dot&quot;), Qt::DotLine);
+     penStyleComboBox-&gt;addItem(tr(&quot;Dash Dot&quot;), Qt::DashDotLine);
+     penStyleComboBox-&gt;addItem(tr(&quot;Dash Dot Dot&quot;), Qt::DashDotDotLine);
+     penStyleComboBox-&gt;addItem(tr(&quot;None&quot;), Qt::NoPen);
+
+     penStyleLabel = new QLabel(tr(&quot;&amp;Pen Style:&quot;));
+     penStyleLabel-&gt;setBuddy(penStyleComboBox);
+
+     penCapComboBox = new QComboBox;
+     penCapComboBox-&gt;addItem(tr(&quot;Flat&quot;), Qt::FlatCap);
+     penCapComboBox-&gt;addItem(tr(&quot;Square&quot;), Qt::SquareCap);
+     penCapComboBox-&gt;addItem(tr(&quot;Round&quot;), Qt::RoundCap);
+
+     penCapLabel = new QLabel(tr(&quot;Pen &amp;Cap:&quot;));
+     penCapLabel-&gt;setBuddy(penCapComboBox);
+
+     penJoinComboBox = new QComboBox;
+     penJoinComboBox-&gt;addItem(tr(&quot;Miter&quot;), Qt::MiterJoin);
+     penJoinComboBox-&gt;addItem(tr(&quot;Bevel&quot;), Qt::BevelJoin);
+     penJoinComboBox-&gt;addItem(tr(&quot;Round&quot;), Qt::RoundJoin);
+
+     penJoinLabel = new QLabel(tr(&quot;Pen &amp;Join:&quot;));
+     penJoinLabel-&gt;setBuddy(penJoinComboBox);
+
+     brushStyleComboBox = new QComboBox;
+     brushStyleComboBox-&gt;addItem(tr(&quot;Linear Gradient&quot;),
+             Qt::LinearGradientPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Radial Gradient&quot;),
+             Qt::RadialGradientPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Conical Gradient&quot;),
+             Qt::ConicalGradientPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Texture&quot;), Qt::TexturePattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Solid&quot;), Qt::SolidPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Horizontal&quot;), Qt::HorPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Vertical&quot;), Qt::VerPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Cross&quot;), Qt::CrossPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Backward Diagonal&quot;), Qt::BDiagPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Forward Diagonal&quot;), Qt::FDiagPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Diagonal Cross&quot;), Qt::DiagCrossPattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 1&quot;), Qt::Dense1Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 2&quot;), Qt::Dense2Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 3&quot;), Qt::Dense3Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 4&quot;), Qt::Dense4Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 5&quot;), Qt::Dense5Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 6&quot;), Qt::Dense6Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;Dense 7&quot;), Qt::Dense7Pattern);
+     brushStyleComboBox-&gt;addItem(tr(&quot;None&quot;), Qt::NoBrush);
+
+     brushStyleLabel = new QLabel(tr(&quot;&amp;Brush Style:&quot;));
+     brushStyleLabel-&gt;setBuddy(brushStyleComboBox);
+
+     otherOptionsLabel = new QLabel(tr(&quot;Other Options:&quot;));
+     antialiasingCheckBox = new QCheckBox(tr(&quot;&amp;Antialiasing&quot;));
+     transformationsCheckBox = new QCheckBox(tr(&quot;&amp;Transformations&quot;));
+
+     connect(shapeComboBox, SIGNAL(activated(int)),
+             this, SLOT(shapeChanged()));
+     connect(penWidthSpinBox, SIGNAL(valueChanged(int)),
+             this, SLOT(penChanged()));
+     connect(penStyleComboBox, SIGNAL(activated(int)),
+             this, SLOT(penChanged()));
+     connect(penCapComboBox, SIGNAL(activated(int)),
+             this, SLOT(penChanged()));
+     connect(penJoinComboBox, SIGNAL(activated(int)),
+             this, SLOT(penChanged()));
+     connect(brushStyleComboBox, SIGNAL(activated(int)),
+             this, SLOT(brushChanged()));
+     connect(antialiasingCheckBox, SIGNAL(toggled(bool)),
+             renderArea, SLOT(setAntialiased(bool)));
+     connect(transformationsCheckBox, SIGNAL(toggled(bool)),
+             renderArea, SLOT(setTransformed(bool)));
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;setColumnStretch(0, 1);
+     mainLayout-&gt;setColumnStretch(3, 1);
+     mainLayout-&gt;addWidget(renderArea, 0, 0, 1, 4);
+     mainLayout-&gt;setRowMinimumHeight(1, 6);
+     mainLayout-&gt;addWidget(shapeLabel, 2, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(shapeComboBox, 2, 2);
+     mainLayout-&gt;addWidget(penWidthLabel, 3, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(penWidthSpinBox, 3, 2);
+     mainLayout-&gt;addWidget(penStyleLabel, 4, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(penStyleComboBox, 4, 2);
+     mainLayout-&gt;addWidget(penCapLabel, 5, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(penCapComboBox, 5, 2);
+     mainLayout-&gt;addWidget(penJoinLabel, 6, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(penJoinComboBox, 6, 2);
+     mainLayout-&gt;addWidget(brushStyleLabel, 7, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(brushStyleComboBox, 7, 2);
+     mainLayout-&gt;setRowMinimumHeight(8, 6);
+     mainLayout-&gt;addWidget(otherOptionsLabel, 9, 1, Qt::AlignRight);
+     mainLayout-&gt;addWidget(antialiasingCheckBox, 9, 2);
+     mainLayout-&gt;addWidget(transformationsCheckBox, 10, 2);
+     setLayout(mainLayout);
+
+     shapeChanged();
+     penChanged();
+     brushChanged();
+     antialiasingCheckBox-&gt;setChecked(true);
+
+     setWindowTitle(tr(&quot;Basic Drawing&quot;));
+ }
+
+ void Window::shapeChanged()
+ {
+     RenderArea::Shape shape = RenderArea::Shape(shapeComboBox-&gt;itemData(
+             shapeComboBox-&gt;currentIndex(), IdRole).toInt());
+     renderArea-&gt;setShape(shape);
+ }
+
+ void Window::penChanged()
+ {
+     int width = penWidthSpinBox-&gt;value();
+     Qt::PenStyle style = Qt::PenStyle(penStyleComboBox-&gt;itemData(
+             penStyleComboBox-&gt;currentIndex(), IdRole).toInt());
+     Qt::PenCapStyle cap = Qt::PenCapStyle(penCapComboBox-&gt;itemData(
+             penCapComboBox-&gt;currentIndex(), IdRole).toInt());
+     Qt::PenJoinStyle join = Qt::PenJoinStyle(penJoinComboBox-&gt;itemData(
+             penJoinComboBox-&gt;currentIndex(), IdRole).toInt());
+
+     renderArea-&gt;setPen(QPen(Qt::blue, width, style, cap, join));
+ }
+
+ void Window::brushChanged()
+ {
+     Qt::BrushStyle style = Qt::BrushStyle(brushStyleComboBox-&gt;itemData(
+             brushStyleComboBox-&gt;currentIndex(), IdRole).toInt());
+
+     if (style == Qt::LinearGradientPattern) {
+         QLinearGradient linearGradient(0, 0, 100, 100);
+         linearGradient.setColorAt(0.0, Qt::white);
+         linearGradient.setColorAt(0.2, Qt::green);
+         linearGradient.setColorAt(1.0, Qt::black);
+         renderArea-&gt;setBrush(linearGradient);
+     } else if (style == Qt::RadialGradientPattern) {
+         QRadialGradient radialGradient(50, 50, 50, 70, 70);
+         radialGradient.setColorAt(0.0, Qt::white);
+         radialGradient.setColorAt(0.2, Qt::green);
+         radialGradient.setColorAt(1.0, Qt::black);
+         renderArea-&gt;setBrush(radialGradient);
+     } else if (style == Qt::ConicalGradientPattern) {
+         QConicalGradient conicalGradient(50, 50, 150);
+         conicalGradient.setColorAt(0.0, Qt::white);
+         conicalGradient.setColorAt(0.2, Qt::green);
+         conicalGradient.setColorAt(1.0, Qt::black);
+         renderArea-&gt;setBrush(conicalGradient);
+     } else if (style == Qt::TexturePattern) {
+         renderArea-&gt;setBrush(QBrush(QPixmap(&quot;:/images/brick.png&quot;)));
+     } else {
+         renderArea-&gt;setBrush(QBrush(Qt::green, style));
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

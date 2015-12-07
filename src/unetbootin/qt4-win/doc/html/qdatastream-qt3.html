@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qdatastream.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QDataStream</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QDataStream</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qdatastream.html">QDataStream class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdatastream-qt3.html#QDataStream-3">QDataStream</a></b> ( QByteArray * <i>array</i>, int <i>mode</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdatastream-qt3.html#eof">eof</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdatastream-qt3.html#isPrintableData">isPrintableData</a></b> () const</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream-qt3.html#readRawBytes">readRawBytes</a></b> ( char * <i>str</i>, uint <i>len</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatastream-qt3.html#setPrintableData">setPrintableData</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream-qt3.html#writeRawBytes">writeRawBytes</a></b> ( const char * <i>str</i>, uint <i>len</i> )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDataStream-3"></a>QDataStream::QDataStream ( <a href="qbytearray.html">QByteArray</a> * <i>array</i>, int <i>mode</i> )</h3>
+<p>Constructs a data stream that operates on the given <i>array</i>. The <i>mode</i> specifies how the byte array is to be used, and is usually either <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::ReadOnly</a> or <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::WriteOnly</a>.</p>
+<h3 class="fn"><a name="eof"></a>bool QDataStream::eof () const</h3>
+<p>Use <a href="qdatastream.html#atEnd">atEnd</a>() instead.</p>
+<h3 class="fn"><a name="isPrintableData"></a>bool QDataStream::isPrintableData () const</h3>
+<p>In Qt 4, this function always returns false.</p>
+<p>See also <a href="qdatastream-qt3.html#setPrintableData">setPrintableData</a>().</p>
+<h3 class="fn"><a name="readRawBytes"></a>QDataStream &amp; QDataStream::readRawBytes ( char * <i>str</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>len</i> )</h3>
+<p>Use <a href="qdatastream.html#readRawData">readRawData</a>() instead.</p>
+<h3 class="fn"><a name="setPrintableData"></a>void QDataStream::setPrintableData ( bool <i>enable</i> )</h3>
+<p>In Qt 3, this function enabled output in a human-readable format if <i>enable</i> was false.</p>
+<p>In Qt 4, <a href="qdatastream.html">QDataStream</a> no longer provides a human-readable output. This function does nothing.</p>
+<p>See also <a href="qdatastream-qt3.html#isPrintableData">isPrintableData</a>().</p>
+<h3 class="fn"><a name="writeRawBytes"></a>QDataStream &amp; QDataStream::writeRawBytes ( const char * <i>str</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>len</i> )</h3>
+<p>Use <a href="qdatastream.html#writeRawData">writeRawData</a>() instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

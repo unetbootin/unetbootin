@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: reportGlobals.xq Example File (xmlpatterns/xquery/globalVariables/reportGlobals.xq)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">reportGlobals.xq Example File<br /><span class="small-subtitle">xmlpatterns/xquery/globalVariables/reportGlobals.xq</span>
+</h1>
+<pre> (:
+     This query opens a C++ GCC-XML output file, and outputs a report describing the use
+     of globals variables.
+
+     Run it, by invoking:
+
+     xmlpatterns reportGlobals.xq -param fileToOpen=globals.gccxml -output globals.html
+
+     &quot;fileToOpen=globals.gccxml&quot; binds the string &quot;globals.gccxml&quot; to the variable
+     &quot;fileToOpen.&quot; It identifies the GCC-XML file to open.
+
+ :)
+ declare variable $fileToOpen as xs:anyURI external;
+ declare variable $inDoc as document-node() := doc($fileToOpen);
+
+ (: Determines whether the type by ID @p typeId is a complex type such as QString. :)
+ declare function local:isComplexType($typeID as xs:string) as xs:boolean
+ {
+     (: We're being a bit crude here and only checks whether it's a class. We
+        actually should check whether it has non-synthesized,
+         constructors, I believe. :)
+
+     exists($inDoc/GCC_XML/Class[@id = $typeID])
+     or
+     (: We also want const-qualified variables. :)
+     exists($inDoc/GCC_XML/Class[@id = $inDoc/GCC_XML/CvQualifiedType[@id = $typeID]/@type])
+ };
+
+ declare function local:isPrimitive($typeId as xs:string) as xs:boolean
+ {
+     exists($inDoc/GCC_XML/FundamentalType[@id = $typeId])
+ };
+
+ (: Returns a string for human consumption that describes
+    the location of @p block. :)
+ declare function local:location($block as element()) as xs:string
+ {
+     concat($inDoc/GCC_XML/File[@id = $block/@file]/@name, &quot; at line &quot;, $block/@line)
+ };
+
+ declare function local:report() as element()+
+ {
+             let $complexVariables as element(Variable)* := $inDoc/GCC_XML/Variable[local:isComplexType(@type)]
+             return if(exists($complexVariables)) (: Is the length larger than zero? :)
+
+                    then (&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;The following global, complex variables were found:&lt;/p&gt;,
+                          &lt;ol xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;
+                             {
+                                 (: For each Variable in $complexVariables... :)
+                                 $complexVariables/&lt;li&gt;&lt;span class=&quot;variableName&quot;&gt;{string(@name)}&lt;/span&gt; in {local:location(.)}&lt;/li&gt;
+                             }
+                          &lt;/ol&gt;)
+
+                    else &lt;p xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;No global variables that are of complex types were found.&lt;/p&gt;
+
+             ,
+
+             (: List primitive, mutable types. :)
+             let $primitiveVariables as element(Variable)+ := $inDoc/GCC_XML/Variable[local:isPrimitive(@type)]
+             return if(exists($primitiveVariables))
+
+                    then (&lt;p xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;The following mutable primitives were found:&lt;/p&gt;,
+                          &lt;ol xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;
+                             {
+                                 (: For each Variable in $complexVariables... :)
+                                 $primitiveVariables/&lt;li&gt;&lt;span class=&quot;variableName&quot;&gt;{string(@name)}&lt;/span&gt; in {local:location(.)}&lt;/li&gt;
+                             }
+                          &lt;/ol&gt;)
+
+                    else &lt;p xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;&gt;No global variables that are mutable primitives were found.&lt;/p&gt;
+ };
+
+ &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml/&quot; xml:lang=&quot;en&quot; lang=&quot;en&quot;&gt;
+     &lt;head&gt;
+         &lt;title&gt;Global variables report for {$fileToOpen}&lt;/title&gt;
+     &lt;/head&gt;
+     &lt;style type=&quot;text/css&quot;&gt;
+         .details
+         {{
+             text-align: center;
+             font-size: 80%;
+             color: gray
+         }}
+         .variableName
+         {{
+             font-family: courier
+         }}
+     &lt;/style&gt;
+
+     &lt;body&gt;
+         {
+             (: We don't want simple types that are const, but all other types.
+                One could frown upon const integers and say enums should be used instead, but
+                let's be gentle. :)
+
+             local:report()
+         }
+
+         &lt;p class=&quot;details&quot;&gt;This report was generated on {current-dateTime()}&lt;/p&gt;
+     &lt;/body&gt;
+
+ &lt;/html&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

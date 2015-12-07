@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/analogclock.qdoc -->
+<head>
+  <title>Qt 4.4: Analog Clock Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Analog Clock Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-analogclock-analogclock-cpp.html">widgets/analogclock/analogclock.cpp</a></li>
+<li><a href="widgets-analogclock-analogclock-h.html">widgets/analogclock/analogclock.h</a></li>
+<li><a href="widgets-analogclock-main-cpp.html">widgets/analogclock/main.cpp</a></li>
+<li><a href="widgets-analogclock-analogclock-pro.html">widgets/analogclock/analogclock.pro</a></li>
+</ul>
+<p>The Analog Clock example shows how to draw the contents of a custom widget.</p>
+<p align="center"><img src="images/analogclock-example.png" alt="Screenshot of the Analog Clock example" /></p><p>This example also demonstrates how the transformation and scaling features of <a href="qpainter.html">QPainter</a> can be used to make drawing custom widgets easier.</p>
+<a name="analogclock-class-definition"></a>
+<h2>AnalogClock Class Definition</h2>
+<p>The <tt>AnalogClock</tt> class provides a clock widget with hour and minute hands that is automatically updated every few seconds. We subclass <a href="qwidget.html">QWidget</a> and reimplement the standard <a href="qwidget.html#paintEvent">paintEvent()</a> function to draw the clock face:</p>
+<pre> class AnalogClock : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     AnalogClock(QWidget *parent = 0);
+
+ protected:
+     void paintEvent(QPaintEvent *event);
+ };</pre>
+<a name="analogclock-class-implementation"></a>
+<h2>AnalogClock Class Implementation</h2>
+<pre> AnalogClock::AnalogClock(QWidget *parent)
+     : QWidget(parent)
+ {
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+     timer-&gt;start(1000);
+
+     setWindowTitle(tr(&quot;Analog Clock&quot;));
+     resize(200, 200);
+ }</pre>
+<p>When the widget is constructed, we set up a one-second timer to keep track of the current time, and we connect it to the standard <a href="qwidget.html#update">update()</a> slot so that the clock face is updated when the timer emits the <a href="qtimer.html#timeout">timeout()</a> signal.</p>
+<p>Finally, we resize the widget so that it is displayed at a reasonable size.</p>
+<pre> void AnalogClock::paintEvent(QPaintEvent *)
+ {
+     static const QPoint hourHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -40)
+     };
+     static const QPoint minuteHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -70)
+     };
+
+     QColor hourColor(127, 0, 127);
+     QColor minuteColor(0, 127, 127, 191);
+
+     int side = qMin(width(), height());
+     QTime time = QTime::currentTime();</pre>
+<p>The <tt>paintEvent()</tt> function is called whenever the widget's contents need to be updated. This happens when the widget is first shown, and when it is covered then exposed, but it is also executed when the widget's <a href="qwidget.html#update">update()</a> slot is called. Since we connected the timer's <a href="qtimer.html#timeout">timeout()</a> signal to this slot, it will be called at least once every five seconds.</p>
+<p>Before we set up the painter and draw the clock, we first define two lists of <a href="qpoint.html">QPoint</a>s and two <a href="qcolor.html">QColor</a>s that will be used for the hour and minute hands. The minute hand's color has an alpha component of 191, meaning that it's 75% opaque.</p>
+<p>We also determine the length of the widget's shortest side so that we can fit the clock face inside the widget. It is also useful to determine the current time before we start drawing.</p>
+<pre>     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.translate(width() / 2, height() / 2);
+     painter.scale(side / 200.0, side / 200.0);</pre>
+<p>The contents of custom widgets are drawn with a <a href="qpainter.html">QPainter</a>. Painters can be used to draw on any QPaintDevice, but they are usually used with widgets, so we pass the widget instance to the painter's constructor.</p>
+<p>We call <a href="qpainter.html#setRenderHint">QPainter::setRenderHint</a>() with <a href="qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> to turn on antialiasing. This makes drawing of diagonal lines much smoother.</p>
+<p>The translation moves the origin to the center of the widget, and the scale operation ensures that the following drawing operations are scaled to fit within the widget. We use a scale factor that let's us use x and y coordinates between -100 and 100, and that ensures that these lie within the length of the widget's shortest side.</p>
+<p>To make our code simpler, we will draw a fixed size clock face that will be positioned and scaled so that it lies in the center of the widget.</p>
+<p>The painter takes care of all the transformations made during the paint event, and ensures that everything is drawn correctly. Letting the painter handle transformations is often easier than performing manual calculations just to draw the contents of a custom widget.</p>
+<p align="center"><img src="images/analogclock-viewport.png" /></p><p>We draw the hour hand first, using a formula that rotates the coordinate system counterclockwise by a number of degrees determined by the current hour and minute. This means that the hand will be shown rotated clockwise by the required amount.</p>
+<pre>     painter.setPen(Qt::NoPen);
+     painter.setBrush(hourColor);</pre>
+<p>We set the pen to be <a href="qt.html#PenStyle-enum">Qt::NoPen</a> because we don't want any outline, and we use a solid brush with the color appropriate for displaying hours. Brushes are used when filling in polygons and other geometric shapes.</p>
+<pre>     painter.save();
+     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
+     painter.drawConvexPolygon(hourHand, 3);
+     painter.restore();</pre>
+<p>We save and restore the transformation matrix before and after the rotation because we want to place the minute hand without having to take into account any previous rotations.</p>
+<pre>     painter.setPen(hourColor);
+
+     for (int i = 0; i &lt; 12; ++i) {
+         painter.drawLine(88, 0, 96, 0);
+         painter.rotate(30.0);
+     }</pre>
+<p>We draw markers around the edge of the clock for each hour. We draw each marker then rotate the coordinate system so that the painter is ready for the next one.</p>
+<pre>     painter.setPen(Qt::NoPen);
+     painter.setBrush(minuteColor);
+
+     painter.save();
+     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
+     painter.drawConvexPolygon(minuteHand, 3);
+     painter.restore();</pre>
+<p>The minute hand is rotated in a similar way to the hour hand.</p>
+<pre>     painter.setPen(minuteColor);
+
+     for (int j = 0; j &lt; 60; ++j) {
+         if ((j % 5) != 0)
+             painter.drawLine(92, 0, 96, 0);
+         painter.rotate(6.0);
+     }
+ }</pre>
+<p>Again, we draw markers around the edge of the clock, but this time to indicate minutes. We skip multiples of 5 to avoid drawing minute markers on top of hour markers.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

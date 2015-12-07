@@ -1,0 +1,327 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'main.cpp'
+**
+** Created: Thu Mar 5 20:35:50 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'main.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_HelpWindowAdaptor[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       1,   12, // classinfo
+       7,   14, // methods
+       1,   49, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // classinfo: key, value
+      53,   18,
+
+ // slots: signature, parameters, type, tag, flags
+      78,   69,   70,   69, 0x0a,
+      91,   87,   69,   69, 0x0a,
+     110,   69,   69,   69, 0x0a,
+     125,   69,   69,   69, 0x0a,
+     136,   69,   69,   69, 0x0a,
+     146,   69,   69,   69, 0x0a,
+     155,   69,   69,   69, 0x0a,
+
+ // properties: name, type, flags
+     162,   70, 0x0a095103,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_HelpWindowAdaptor[] = {
+    "HelpWindowAdaptor\0com.trolltech.Assistant.HelpWindow\0"
+    "D-Bus Interface\0\0QString\0source()\0src\0"
+    "setSource(QString)\0clearHistory()\0"
+    "backward()\0forward()\0reload()\0home()\0"
+    "source\0"
+};
+
+const QMetaObject HelpWindowAdaptor::staticMetaObject = {
+    { &QDBusAbstractAdaptor::staticMetaObject, qt_meta_stringdata_HelpWindowAdaptor,
+      qt_meta_data_HelpWindowAdaptor, 0 }
+};
+
+const QMetaObject *HelpWindowAdaptor::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *HelpWindowAdaptor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_HelpWindowAdaptor))
+        return static_cast<void*>(const_cast< HelpWindowAdaptor*>(this));
+    return QDBusAbstractAdaptor::qt_metacast(_clname);
+}
+
+int HelpWindowAdaptor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QDBusAbstractAdaptor::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: { QString _r = source();
+            if (_a[0]) *reinterpret_cast< QString*>(_a[0]) = _r; }  break;
+        case 1: setSource((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: clearHistory(); break;
+        case 3: backward(); break;
+        case 4: forward(); break;
+        case 5: reload(); break;
+        case 6: home(); break;
+        default: ;
+        }
+        _id -= 7;
+    }
+#ifndef QT_NO_PROPERTIES
+      else if (_c == QMetaObject::ReadProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: *reinterpret_cast< QString*>(_v) = source(); break;
+        }
+        _id -= 1;
+    } else if (_c == QMetaObject::WriteProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: setSource(*reinterpret_cast< QString*>(_v)); break;
+        }
+        _id -= 1;
+    } else if (_c == QMetaObject::ResetProperty) {
+        _id -= 1;
+    } else if (_c == QMetaObject::QueryPropertyDesignable) {
+        _id -= 1;
+    } else if (_c == QMetaObject::QueryPropertyScriptable) {
+        _id -= 1;
+    } else if (_c == QMetaObject::QueryPropertyStored) {
+        _id -= 1;
+    } else if (_c == QMetaObject::QueryPropertyEditable) {
+        _id -= 1;
+    } else if (_c == QMetaObject::QueryPropertyUser) {
+        _id -= 1;
+    }
+#endif // QT_NO_PROPERTIES
+    return _id;
+}
+static const uint qt_meta_data_AssistantAdaptor[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       1,   12, // classinfo
+       3,   14, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // classinfo: key, value
+      52,   17,
+
+ // slots: signature, parameters, type, tag, flags
+      74,   69,   68,   68, 0x0a,
+     108,   68,   92,   68, 0x0a,
+     123,   68,   92,   68, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_AssistantAdaptor[] = {
+    "AssistantAdaptor\0com.trolltech.Assistant.HelpViewer\0"
+    "D-Bus Interface\0\0link\0showLink(QString)\0"
+    "QDBusObjectPath\0createNewTab()\0"
+    "currentTab()\0"
+};
+
+const QMetaObject AssistantAdaptor::staticMetaObject = {
+    { &QDBusAbstractAdaptor::staticMetaObject, qt_meta_stringdata_AssistantAdaptor,
+      qt_meta_data_AssistantAdaptor, 0 }
+};
+
+const QMetaObject *AssistantAdaptor::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *AssistantAdaptor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_AssistantAdaptor))
+        return static_cast<void*>(const_cast< AssistantAdaptor*>(this));
+    return QDBusAbstractAdaptor::qt_metacast(_clname);
+}
+
+int AssistantAdaptor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QDBusAbstractAdaptor::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: showLink((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: { QDBusObjectPath _r = createNewTab();
+            if (_a[0]) *reinterpret_cast< QDBusObjectPath*>(_a[0]) = _r; }  break;
+        case 2: { QDBusObjectPath _r = currentTab();
+            if (_a[0]) *reinterpret_cast< QDBusObjectPath*>(_a[0]) = _r; }  break;
+        default: ;
+        }
+        _id -= 3;
+    }
+    return _id;
+}
+static const uint qt_meta_data_AssistantSocket[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       3,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      17,   16,   16,   16, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      42,   16,   16,   16, 0x08,
+      55,   16,   16,   16, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_AssistantSocket[] = {
+    "AssistantSocket\0\0showLinkRequest(QString)\0"
+    "readClient()\0connectionClosed()\0"
+};
+
+const QMetaObject AssistantSocket::staticMetaObject = {
+    { &QTcpSocket::staticMetaObject, qt_meta_stringdata_AssistantSocket,
+      qt_meta_data_AssistantSocket, 0 }
+};
+
+const QMetaObject *AssistantSocket::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *AssistantSocket::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_AssistantSocket))
+        return static_cast<void*>(const_cast< AssistantSocket*>(this));
+    return QTcpSocket::qt_metacast(_clname);
+}
+
+int AssistantSocket::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QTcpSocket::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: showLinkRequest((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: readClient(); break;
+        case 2: connectionClosed(); break;
+        default: ;
+        }
+        _id -= 3;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void AssistantSocket::showLinkRequest(const QString & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+static const uint qt_meta_data_AssistantServer[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       3,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      17,   16,   16,   16, 0x05,
+      42,   16,   16,   16, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      62,   55,   16,   16, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_AssistantServer[] = {
+    "AssistantServer\0\0showLinkRequest(QString)\0"
+    "newConnect()\0socket\0incomingConnection(int)\0"
+};
+
+const QMetaObject AssistantServer::staticMetaObject = {
+    { &QTcpServer::staticMetaObject, qt_meta_stringdata_AssistantServer,
+      qt_meta_data_AssistantServer, 0 }
+};
+
+const QMetaObject *AssistantServer::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *AssistantServer::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_AssistantServer))
+        return static_cast<void*>(const_cast< AssistantServer*>(this));
+    return QTcpServer::qt_metacast(_clname);
+}
+
+int AssistantServer::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QTcpServer::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: showLinkRequest((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: newConnect(); break;
+        case 2: incomingConnection((*reinterpret_cast< int(*)>(_a[1]))); break;
+        default: ;
+        }
+        _id -= 3;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void AssistantServer::showLinkRequest(const QString & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void AssistantServer::newConnect()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+QT_END_MOC_NAMESPACE

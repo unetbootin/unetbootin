@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/draggableicons.qdoc -->
+<head>
+  <title>Qt 4.4: Draggable Icons Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Draggable Icons Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="draganddrop-draggableicons-dragwidget-cpp.html">draganddrop/draggableicons/dragwidget.cpp</a></li>
+<li><a href="draganddrop-draggableicons-dragwidget-h.html">draganddrop/draggableicons/dragwidget.h</a></li>
+<li><a href="draganddrop-draggableicons-main-cpp.html">draganddrop/draggableicons/main.cpp</a></li>
+<li><a href="draganddrop-draggableicons-draggableicons-pro.html">draganddrop/draggableicons/draggableicons.pro</a></li>
+<li><a href="draganddrop-draggableicons-draggableicons-qrc.html">draganddrop/draggableicons/draggableicons.qrc</a></li>
+</ul>
+<p>The Draggable Icons example shows how to drag and drop image data between widgets in the same application, and between different applications.</p>
+<p align="center"><img src="images/draggableicons-example.png" /></p><p>In many situations where drag and drop is used, the user starts dragging from a particular widget and drops the payload onto another widget. In this example, we subclass <a href="qlabel.html">QLabel</a> to create labels that we use as drag sources, and place them inside <a href="qwidget.html">QWidget</a>s that serve as both containers and drop sites.</p>
+<p>In addition, when a drag and drop operation occurs, we want to send more than just an image. We also want to send information about where the user clicked in the image so that the user can place it precisely on the drop target. This level of detail means that we must create a custom MIME type for our data.</p>
+<a name="dragwidget-class-definition"></a>
+<h2>DragWidget Class Definition</h2>
+<p>The icon widgets that we use to display icons are subclassed from <a href="qlabel.html">QLabel</a>:</p>
+<pre> class DragWidget : public QFrame
+ {
+ public:
+     DragWidget(QWidget *parent=0);
+
+ protected:
+     void dragEnterEvent(QDragEnterEvent *event);
+     void dragMoveEvent(QDragMoveEvent *event);
+     void dropEvent(QDropEvent *event);
+     void mousePressEvent(QMouseEvent *event);
+ };</pre>
+<p>Since the <a href="qlabel.html">QLabel</a> class provides most of what we require for the icon, we only need to reimplement the <a href="qwidget.html#mousePressEvent">QWidget::mousePressEvent</a>() to provide drag and drop facilities.</p>
+<a name="dragwidget-class-implementation"></a>
+<h2>DragWidget Class Implementation</h2>
+<p>The <tt>DragWidget</tt> constructor sets an attribute on the widget that ensures that it will be deleted when it is closed:</p>
+<pre> DragWidget::DragWidget(QWidget *parent)
+     : QFrame(parent)
+ {
+     setMinimumSize(200, 200);
+     setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);
+     setAcceptDrops(true);
+
+     QLabel *boatIcon = new QLabel(this);
+     boatIcon-&gt;setPixmap(QPixmap(&quot;:/images/boat.png&quot;));
+     boatIcon-&gt;move(20, 20);
+     boatIcon-&gt;show();
+     boatIcon-&gt;setAttribute(Qt::WA_DeleteOnClose);
+
+     QLabel *carIcon = new QLabel(this);
+     carIcon-&gt;setPixmap(QPixmap(&quot;:/images/car.png&quot;));
+     carIcon-&gt;move(120, 20);
+     carIcon-&gt;show();
+     carIcon-&gt;setAttribute(Qt::WA_DeleteOnClose);
+
+     QLabel *houseIcon = new QLabel(this);
+     houseIcon-&gt;setPixmap(QPixmap(&quot;:/images/house.png&quot;));
+     houseIcon-&gt;move(20, 120);
+     houseIcon-&gt;show();
+     houseIcon-&gt;setAttribute(Qt::WA_DeleteOnClose);
+ }</pre>
+<p>To enable dragging from the icon, we need to act on a mouse press event. We do this by reimplementing <a href="qwidget.html#mousePressEvent">QWidget::mousePressEvent</a>() and setting up a <a href="qdrag.html">QDrag</a> object.</p>
+<pre> void DragWidget::mousePressEvent(QMouseEvent *event)
+ {
+     QLabel *child = static_cast&lt;QLabel*&gt;(childAt(event-&gt;pos()));
+     if (!child)
+         return;
+
+     QPixmap pixmap = *child-&gt;pixmap();
+
+     QByteArray itemData;
+     QDataStream dataStream(&amp;itemData, QIODevice::WriteOnly);
+     dataStream &lt;&lt; pixmap &lt;&lt; QPoint(event-&gt;pos() - child-&gt;pos());</pre>
+<p>Since we will be sending pixmap data for the icon and information about the user's click in the icon widget, we construct a <a href="qbytearray.html">QByteArray</a> and package up the details using a <a href="qdatastream.html">QDataStream</a>.</p>
+<p>For interoperability, drag and drop operations describe the data they contain using MIME types. In Qt, we describe this data using a <a href="qmimedata.html">QMimeData</a> object:</p>
+<pre>     QMimeData *mimeData = new QMimeData;
+     mimeData-&gt;setData(&quot;application/x-dnditemdata&quot;, itemData);</pre>
+<p>We choose an unofficial MIME type for this purpose, and supply the <a href="qbytearray.html">QByteArray</a> to the MIME data object.</p>
+<p>The drag and drop operation itself is handled by a <a href="qdrag.html">QDrag</a> object:</p>
+<pre>     QDrag *drag = new QDrag(this);
+     drag-&gt;setMimeData(mimeData);
+     drag-&gt;setPixmap(pixmap);
+     drag-&gt;setHotSpot(event-&gt;pos() - child-&gt;pos());</pre>
+<p>Here, we pass the data to the drag object, set a pixmap that will be shown alongside the cursor during the operation, and define the position of a hot spot that places the position of this pixmap under the cursor.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

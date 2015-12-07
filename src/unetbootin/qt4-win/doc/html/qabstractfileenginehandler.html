@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qabstractfileengine.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractFileEngineHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractFileEngineHandler Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAbstractFileEngineHandler class provides a way to register custom file engines with your application. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractFileEngineHandler&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qabstractfileenginehandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractfileenginehandler.html#QAbstractFileEngineHandler">QAbstractFileEngineHandler</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qabstractfileenginehandler.html#dtor.QAbstractFileEngineHandler">~QAbstractFileEngineHandler</a></b> ()</li>
+<li><div class="fn"/>virtual QAbstractFileEngine * <b><a href="qabstractfileenginehandler.html#create">create</a></b> ( const QString &amp; <i>fileName</i> ) const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractFileEngineHandler class provides a way to register custom file engines with your application.</p>
+<p>QAbstractFileEngineHandler is a factory for creating <a href="qabstractfileengine.html">QAbstractFileEngine</a> objects (file engines), which are used internally by <a href="qfile.html">QFile</a>, <a href="qfileinfo.html">QFileInfo</a>, and <a href="qdir.html">QDir</a> when working with files and directories.</p>
+<p>When you open a file, Qt chooses a suitable file engine by passing the file name from <a href="qfile.html">QFile</a> or <a href="qdir.html">QDir</a> through an internal list of registered file engine handlers. The first handler to recognize the file name is used to create the engine. Qt provides internal file engines for working with regular files and resources, but you can also register your own <a href="qabstractfileengine.html">QAbstractFileEngine</a> subclasses.</p>
+<p>To install an application-specific file engine, you subclass QAbstractFileEngineHandler and reimplement <a href="qabstractfileenginehandler.html#create">create</a>(). When you instantiate the handler (e.g&#x2e; by creating an instance on the stack or on the heap), it will automatically register with Qt. (The latest registered handler takes precedence over existing handlers.)</p>
+<p>For example:</p>
+<pre>         class ZipEngineHandler : public QAbstractFileEngineHandler
+         {
+         public:
+             QAbstractFileEngine *create(const QString &amp;fileName) const;
+         };
+
+         QAbstractFileEngine *ZipEngineHandler::create(const QString &amp;fileName) const
+         {
+             // ZipEngineHandler returns a ZipEngine for all .zip files
+             return fileName.toLower().endsWith(&quot;.zip&quot;) ? new ZipEngine(fileName) : 0;
+         }
+
+         int main(int argc, char **argv)
+         {
+             QApplication app(argc, argv);
+
+             ZipEngineHandler engine;
+
+             MainWindow window;
+             window.show();
+
+             return app.exec();
+         }</pre>
+<p>When the handler is destroyed, it is automatically removed from Qt.</p>
+<p>The most common approach to registering a handler is to create an instance as part of the start-up phase of your application. It is also possible to limit the scope of the file engine handler to a particular area of interest (e.g&#x2e; a special file dialog that needs a custom file engine). By creating the handler inside a local scope, you can precisely control the area in which your engine will be applied without disturbing file operations in other parts of your application.</p>
+<p>See also <a href="qabstractfileengine.html">QAbstractFileEngine</a> and <a href="qabstractfileengine.html#create">QAbstractFileEngine::create</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractFileEngineHandler"></a>QAbstractFileEngineHandler::QAbstractFileEngineHandler ()</h3>
+<p>Constructs a file handler and registers it with Qt. Once created this handler's <a href="qabstractfileenginehandler.html#create">create</a>() function will be called (along with all the other handlers) for any paths used. The most recently created handler that recognizes the given path (i.e&#x2e; that returns a <a href="qabstractfileengine.html">QAbstractFileEngine</a>) is used for the new path.</p>
+<p>See also <a href="qabstractfileenginehandler.html#create">create</a>().</p>
+<h3 class="fn"><a name="dtor.QAbstractFileEngineHandler"></a>QAbstractFileEngineHandler::~QAbstractFileEngineHandler ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the file handler. This will automatically unregister the handler from Qt.</p>
+<h3 class="fn"><a name="create"></a><a href="qabstractfileengine.html">QAbstractFileEngine</a> * QAbstractFileEngineHandler::create ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Creates a file engine for file <i>fileName</i>. Returns 0 if this file handler cannot handle <i>fileName</i>.</p>
+<p>Example:</p>
+<pre>         QAbstractSocketEngine *ZipEngineHandler::create(const QString &amp;fileName) const
+         {
+             // ZipEngineHandler returns a ZipEngine for all .zip files
+             return fileName.toLower().endsWith(&quot;.zip&quot;) ? new ZipEngine(fileName) : 0;
+         }</pre>
+<p>See also <a href="qabstractfileengine.html#create">QAbstractFileEngine::create</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/assistant/compat/lib/qassistantclient.cpp -->
+<head>
+  <title>Qt 4.4: QAssistantClient Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAssistantClient Class Reference<br /><span class="small-subtitle">[<a href="qtassistant.html">QtAssistant</a> module]</span>
+</h1>
+<p>The QAssistantClient class provides a means of using Qt Assistant as an application's help tool. <a href="#details">More...</a></p>
+<pre> #include &lt;QAssistantClient&gt;</pre><p><b>This class is obsolete.</b> It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qassistantclient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qassistantclient.html#open-prop">open</a></b> : const bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qassistantclient.html#QAssistantClient">QAssistantClient</a></b> ( const QString &amp; <i>path</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qassistantclient.html#dtor.QAssistantClient">~QAssistantClient</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qassistantclient.html#open-prop">isOpen</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qassistantclient.html#setArguments">setArguments</a></b> ( const QStringList &amp; <i>arguments</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qassistantclient.html#closeAssistant">closeAssistant</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qassistantclient.html#openAssistant">openAssistant</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qassistantclient.html#showPage">showPage</a></b> ( const QString &amp; <i>page</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qassistantclient.html#assistantClosed">assistantClosed</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qassistantclient.html#assistantOpened">assistantOpened</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qassistantclient.html#error">error</a></b> ( const QString &amp; <i>message</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAssistantClient class provides a means of using Qt Assistant as an application's help tool.</p>
+<p><b>Note:</b> <i>This class is obsolete and only required when using the old Qt Assistant, now called assistant_adp. If you want to use the new Qt Assistant as a remote help viewer, simple create a <a href="qprocess.html">QProcess</a> instance and specify <tt>assistant</tt> as its executable. The following code shows how to start Qt Assistant and request a certain page to be shown:</i></p>
+<pre>         QProcess *process = new QProcess(this);
+         QString app = QLibraryInfo::location(QLibraryInfo::BinariesPath)
+             + QLatin1String(&quot;/assistant&quot;);
+
+         process-&gt;start(app, QStringList() &lt;&lt; QLatin1String(&quot;-enableRemoteControl&quot;));
+         if (!process-&gt;waitForStarted()) {
+             QMessageBox::critical(this, tr(&quot;Remote Control&quot;),
+                 tr(&quot;Could not start Qt Assistant from %1.&quot;).arg(app));
+             return;
+         }
+
+         // show index page
+         QTextStream str(process);
+         str &lt;&lt; QLatin1String(&quot;SetSource qthelp://mycompany.com/doc/index.html&quot;)
+             &lt;&lt; QLatin1Char('\0') &lt;&lt; endl;
+     }</pre>
+<p><i>For a complete example using the Qt Assistant remotely, see the <a href="help-remotecontrol.html">Remote Control</a> example.</i></p>
+<p>In order to make Qt Assistant act as a customized help tool for your application, you must provide your application with a QAssistantClient object in addition to a Qt Assistant Document Profile (<tt>.adp</tt> file) and the associated documentation.</p>
+<p>Note that the QAssistantClient class is not included in the Qt library. To use it you must add the following line to your pro file:</p>
+<pre>         CONFIG += assistant</pre>
+<p>A QAssistantClient instance can open or close Qt Assistant whenever it is required.</p>
+<p>Once you have created a QAssistantClient instance, specifying the path to the Qt Assistant executable, using Qt Assistant is simple: You can either call the <a href="qassistantclient.html#openAssistant">openAssistant</a>() slot to show the defined start page of the documentation, or you can call the <a href="qassistantclient.html#showPage">showPage</a>() slot to show a particular help page. When you call <a href="qassistantclient.html#openAssistant">openAssistant</a>() and <a href="qassistantclient.html#showPage">showPage</a>(), Qt Assistant will be launched if it isn't already running. When Qt Assistant is running, the <a href="qassistantclient.html#open-prop">isOpen</a>() function returns true.</p>
+<p>When calling <a href="qassistantclient.html#showPage">showPage</a>() the Qt Assistant instance will also be brought to the foreground if its hidden. The <a href="qassistantclient.html#showPage">showPage</a>() slot can be called multiple times, while calling <a href="qassistantclient.html#openAssistant">openAssistant</a>() several times without closing the application in between, will have no effect.</p>
+<p>You can close Qt Assistant at any time using the <a href="qassistantclient.html#closeAssistant">closeAssistant</a>() slot. When you call <a href="qassistantclient.html#openAssistant">openAssistant</a>(), or you call <a href="qassistantclient.html#showPage">showPage</a>() without a previous call to <a href="qassistantclient.html#openAssistant">openAssistant</a>(), the <a href="qassistantclient.html#assistantOpened">assistantOpened</a>() signal is emitted. Similarly when <a href="qassistantclient.html#closeAssistant">closeAssistant</a>() is called, <a href="qassistantclient.html#assistantClosed">assistantClosed</a>() is emitted. In either case, if an error occurs, <a href="qassistantclient.html#error">error</a>() is emitted.</p>
+<p>One QAssistantClient instance interacts with one Qt Assistant instance, so every time you call <a href="qassistantclient.html#openAssistant">openAssistant</a>(), <a href="qassistantclient.html#showPage">showPage</a>() or <a href="qassistantclient.html#closeAssistant">closeAssistant</a>() they are applied to the particular Qt Assistant instance associated with the QAssistantClient.</p>
+<p>Qt Assistant's documentation set can be altered using the command line arguments that are passed to the application when it is launched. When started without any options, Qt Assistant displays a default set of documentation. When Qt is installed, the default documentation set in Qt Assistant contains the Qt reference documentation as well as the tools that come with Qt, such as <i>Qt Designer</i> and <tt>qmake</tt>.</p>
+<p>Use the <a href="qassistantclient.html#setArguments">setArguments</a>() function to specify the command line arguments. You can add or remove documentation from Qt Assistant by adding and removing the relevant content files: The command line arguments are <tt>-addContentFile file.dcf</tt> and <tt>-removeContentFile file.dcf</tt> respectively. You can make Qt Assistant run customized documentation sets that are separate from the Qt documentation, by specifying a profile: <tt>-profile myapplication.adp</tt>. The profile format can also be used to alter several of Qt Assistant's properties such as its title and startpage.</p>
+<p>The Documentation Content File (<tt>.dcf</tt>) and Qt Assistant Documentation Profile (<tt>.adp</tt>) formats are documented in the <a href="assistant-manual.html">Qt Assistant Manual</a>.</p>
+<p>For a complete example using the QAssistantClient class, see the <a href="assistant-simpletextviewer.html">Simple Text Viewer</a> example. The example shows how you can make Qt Assistant act as a customized help tool for your application using the QAssistantClient class combined with a Qt Assistant Document Profile.</p>
+<p>See also <a href="assistant-manual.html">Qt Assistant Manual</a> and <a href="assistant-simpletextviewer.html">Simple Text Viewer Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="open-prop"></a>open : const bool</h3>
+<p>This property holds whether Qt Assistant is open.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isOpen () const</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAssistantClient"></a>QAssistantClient::QAssistantClient ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an assistant client with the given <i>parent</i>. The <i>path</i> specifies the path to the Qt Assistant executable. If <i>path</i> is an empty string the system path (<tt>%PATH%</tt> or <tt>$PATH</tt>) is used.</p>
+<h3 class="fn"><a name="dtor.QAssistantClient"></a>QAssistantClient::~QAssistantClient ()</h3>
+<p>Destroys the assistant client object.</p>
+<h3 class="fn"><a name="assistantClosed"></a>void QAssistantClient::assistantClosed ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the connection to Qt Assistant is closed. This happens when the user exits Qt Assistant, if an error in the server or client occurs, or if <a href="qassistantclient.html#closeAssistant">closeAssistant</a>() is called.</p>
+<p>See also <a href="qassistantclient.html#closeAssistant">closeAssistant</a>().</p>
+<h3 class="fn"><a name="assistantOpened"></a>void QAssistantClient::assistantOpened ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when Qt Assistant is opened and the client-server communication is set up.</p>
+<p>See also <a href="qassistantclient.html#openAssistant">openAssistant</a>() and <a href="qassistantclient.html#showPage">showPage</a>().</p>
+<h3 class="fn"><a name="closeAssistant"></a>void QAssistantClient::closeAssistant ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Closes the Qt Assistant instance.</p>
+<p>See also <a href="qassistantclient.html#openAssistant">openAssistant</a>() and <a href="qassistantclient.html#assistantClosed">assistantClosed</a>().</p>
+<h3 class="fn"><a name="error"></a>void QAssistantClient::error ( const <a href="qstring.html">QString</a> &amp; <i>message</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if Qt Assistant cannot be started, or if an error occurs during the initialization of the connection between Qt Assistant and the calling application. The <i>message</i> provides an explanation of the error.</p>
+<h3 class="fn"><a name="openAssistant"></a>void QAssistantClient::openAssistant ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Opens Qt Assistant, i.e&#x2e; sets up the client-server communication between the application and Qt Assistant, and shows the start page specified by the current Qt Assistant Document Profile. If there is no specfied profile, and Qt is installed, the default start page is the Qt Reference Documentation's index page.</p>
+<p>If the connection is already established, this function does nothing. Use the <a href="qassistantclient.html#showPage">showPage</a>() function to show another page. If an error occurs, the <a href="qassistantclient.html#error">error</a>() signal is emitted.</p>
+<p>See also <a href="qassistantclient.html#showPage">showPage</a>() and <a href="qassistantclient.html#assistantOpened">assistantOpened</a>().</p>
+<h3 class="fn"><a name="setArguments"></a>void QAssistantClient::setArguments ( const <a href="qstringlist.html">QStringList</a> &amp; <i>arguments</i> )</h3>
+<p>Sets the command line <i>arguments</i> that are passed to Qt Assistant when it is launched.</p>
+<p>The command line arguments can be used to alter Qt Assistant's documentation set. When started without any options, Qt Assistant displays a default set of documentation. When Qt is installed, the default documentation set in Qt Assistant contains the Qt reference documentation as well as the tools that come with Qt, such as Qt Designer and qmake.</p>
+<p>See also <a href="assistant-manual.html#customizing-qt-assistant">Customizing Qt Assistant</a>.</p>
+<h3 class="fn"><a name="showPage"></a>void QAssistantClient::showPage ( const <a href="qstring.html">QString</a> &amp; <i>page</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Brings Qt Assistant to the foreground showing the given <i>page</i>. The <i>page</i> parameter is a path to an HTML file (e.g&#x2e;, <a href="qlatin1string.html">QLatin1String</a>(&quot;/home/pasquale/superproduct/docs/html/intro.html&quot;)).</p>
+<p>If Qt Assistant hasn't been opened yet, this function will call the <a href="qassistantclient.html#openAssistant">openAssistant</a>() slot with the specified page as the start page.</p>
+<p>See also <a href="qassistantclient.html#openAssistant">openAssistant</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

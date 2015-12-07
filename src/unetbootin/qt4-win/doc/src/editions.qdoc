@@ -1,0 +1,91 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Documentation of Qt editions.
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page editions.html
+    \title Qt Editions
+    \ingroup licensing
+    \brief Information about the different editions of Qt.
+
+    Qt can be used to create both commercial and non-commercial
+    software for a wide range of different deployment environments,
+    and is supplied in a number of different forms to suit the needs
+    of different kinds of developers.
+
+    In terms of license conditions, there are two main forms of Qt:
+
+    \list
+    \o The \l{Qt Commercial Editions} are the commercial
+       versions of \l{About Qt}{Qt}.
+    \o The \l{Qt Open Source Edition} is the non-commercial version
+       of Qt. It is freely available for download.
+    \endlist
+
+    You may write commercial, proprietary, or otherwise non-free
+    software only if you have purchased one of the \l{Qt Commercial
+    Editions}{commercial editions}. If you purchase a commercial
+    edition, you are entitled to technical support and upgrades on
+    any supported platform.
+
+    The Desktop Edition also contains three database drivers (Oracle,
+    IBM DB2, and Sybase), which are not included in the Open Source Edition
+    because of license restrictions in the closed-source client
+    libraries used to implement the drivers.
+
+    Users of commercial editions can also take advantage of \QD's support for
+    commercial IDEs.
+*/

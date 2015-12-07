@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qobjectcleanuphandler.cpp -->
+<head>
+  <title>Qt 4.4: QObjectCleanupHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QObjectCleanupHandler Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QObjectCleanupHandler class watches the lifetime of multiple QObjects. <a href="#details">More...</a></p>
+<pre> #include &lt;QObjectCleanupHandler&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qobjectcleanuphandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qobjectcleanuphandler.html#QObjectCleanupHandler">QObjectCleanupHandler</a></b> ()</li>
+<li><div class="fn"/><b><a href="qobjectcleanuphandler.html#dtor.QObjectCleanupHandler">~QObjectCleanupHandler</a></b> ()</li>
+<li><div class="fn"/>QObject * <b><a href="qobjectcleanuphandler.html#add">add</a></b> ( QObject * <i>object</i> )</li>
+<li><div class="fn"/>void <b><a href="qobjectcleanuphandler.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qobjectcleanuphandler.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qobjectcleanuphandler.html#remove">remove</a></b> ( QObject * <i>object</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QObjectCleanupHandler class watches the lifetime of multiple QObjects.</p>
+<p>A QObjectCleanupHandler is useful whenever you need to know when a number of <a href="qobject.html">QObject</a>s that are owned by someone else have been deleted. This is important, for example, when referencing memory in an application that has been allocated in a shared library.</p>
+<p>To keep track of some <a href="qobject.html">QObject</a>s, create a QObjectCleanupHandler, and <a href="qobjectcleanuphandler.html#add">add</a>() the objects you are interested in. If you are no longer interested in tracking a particular object, use <a href="qobjectcleanuphandler.html#remove">remove</a>() to remove it from the cleanup handler. If an object being tracked by the cleanup handler gets deleted by someone else it will automatically be removed from the cleanup handler. You can delete all the objects in the cleanup handler with <a href="qobjectcleanuphandler.html#clear">clear</a>(), or by destroying the cleanup handler. <a href="qobjectcleanuphandler.html#isEmpty">isEmpty</a>() returns true if the QObjectCleanupHandler has no objects to keep track of.</p>
+<p>See also <a href="qpointer.html">QPointer</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QObjectCleanupHandler"></a>QObjectCleanupHandler::QObjectCleanupHandler ()</h3>
+<p>Constructs an empty <a href="qobjectcleanuphandler.html">QObjectCleanupHandler</a>.</p>
+<h3 class="fn"><a name="dtor.QObjectCleanupHandler"></a>QObjectCleanupHandler::~QObjectCleanupHandler ()</h3>
+<p>Destroys the cleanup handler. All objects in this cleanup handler will be deleted.</p>
+<p>See also <a href="qobjectcleanuphandler.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="add"></a><a href="qobject.html">QObject</a> * QObjectCleanupHandler::add ( <a href="qobject.html">QObject</a> * <i>object</i> )</h3>
+<p>Adds <i>object</i> to this cleanup handler and returns the pointer to the object.</p>
+<p>See also <a href="qobjectcleanuphandler.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QObjectCleanupHandler::clear ()</h3>
+<p>Deletes all objects in this cleanup handler. The cleanup handler becomes empty.</p>
+<p>See also <a href="qobjectcleanuphandler.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QObjectCleanupHandler::isEmpty () const</h3>
+<p>Returns true if this cleanup handler is empty or if all objects in this cleanup handler have been destroyed; otherwise return false.</p>
+<p>See also <a href="qobjectcleanuphandler.html#add">add</a>(), <a href="qobjectcleanuphandler.html#remove">remove</a>(), and <a href="qobjectcleanuphandler.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="remove"></a>void QObjectCleanupHandler::remove ( <a href="qobject.html">QObject</a> * <i>object</i> )</h3>
+<p>Removes the <i>object</i> from this cleanup handler. The object will not be destroyed.</p>
+<p>See also <a href="qobjectcleanuphandler.html#add">add</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

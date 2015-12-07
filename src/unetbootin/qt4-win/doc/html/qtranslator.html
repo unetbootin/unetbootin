@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qtranslator.cpp -->
+<head>
+  <title>Qt 4.4: QTranslator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTranslator Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTranslator class provides internationalization support for text output. <a href="#details">More...</a></p>
+<pre> #include &lt;QTranslator&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qtranslator-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtranslator-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtranslator.html#QTranslator">QTranslator</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtranslator.html#dtor.QTranslator">~QTranslator</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qtranslator.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtranslator.html#load">load</a></b> ( const QString &amp; <i>filename</i>, const QString &amp; <i>directory</i> = QString(), const QString &amp; <i>search_delimiters</i> = QString(), const QString &amp; <i>suffix</i> = QString() )</li>
+<li><div class="fn"/>bool <b><a href="qtranslator.html#load-2">load</a></b> ( const uchar * <i>data</i>, int <i>len</i> )</li>
+<li><div class="fn"/>virtual QString <b><a href="qtranslator.html#translate">translate</a></b> ( const char * <i>context</i>, const char * <i>sourceText</i>, const char * <i>comment</i> = 0 ) const</li>
+<li><div class="fn"/>QString <b><a href="qtranslator.html#translate-2">translate</a></b> ( const char * <i>context</i>, const char * <i>sourceText</i>, const char * <i>comment</i>, int <i>n</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTranslator class provides internationalization support for text output.</p>
+<p>An object of this class contains a set of translations from a source language to a target language. QTranslator provides functions to look up translations in a translation file. Translation files are created using <a href="linguist-manual.html#qt-linguist">Qt Linguist</a>.</p>
+<p>The most common use of QTranslator is to: load a translation file, install it using <a href="qcoreapplication.html#installTranslator">QApplication::installTranslator</a>(), and use it via <a href="qobject.html#tr">QObject::tr</a>(). Here's the <tt>main()</tt> function from the <a href="linguist-hellotr.html">Hello tr()</a> example:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QTranslator translator;
+     translator.load(&quot;hellotr_la&quot;);
+     app.installTranslator(&amp;translator);
+
+     QPushButton hello(QPushButton::tr(&quot;Hello world!&quot;));
+     hello.resize(100, 30);
+
+     hello.show();
+     return app.exec();
+ }</pre>
+<p>Note that the translator must be created <i>before</i> the application's widgets.</p>
+<p>Most applications will never need to do anything else with this class. The other functions provided by this class are useful for applications that work on translator files.</p>
+<p>It is possible to lookup a translation using <a href="qtranslator.html#translate">translate</a>() (as <a href="qobject.html#tr">tr</a>() and <a href="qcoreapplication.html#translate">QApplication::translate</a>() do). The <a href="qtranslator.html#translate">translate</a>() function takes up to three parameters:</p>
+<ul>
+<li>The <i>context</i> - usually the class name for the <a href="qobject.html#tr">tr</a>() caller.</li>
+<li>The <i>source text</i> - usually the argument to <a href="qobject.html#tr">tr</a>().</li>
+<li>The <i>comment</i> - an optional comment that helps disambiguate different uses of the same text in the same context.</li>
+</ul>
+<p>For example, the &quot;Cancel&quot; in a dialog might have &quot;Anuluj&quot; when the program runs in Polish (in this case the source text would be &quot;Cancel&quot;). The context would (normally) be the dialog's class name; there would normally be no comment, and the translated text would be &quot;Anuluj&quot;.</p>
+<p>But it's not always so simple. The Spanish version of a printer dialog with settings for two-sided printing and binding would probably require both &quot;Activado&quot; and &quot;Activada&quot; as translations for &quot;Enabled&quot;. In this case the source text would be &quot;Enabled&quot; in both cases, and the context would be the dialog's class name, but the two items would have disambiguating comments such as &quot;two-sided printing&quot; for one and &quot;binding&quot; for the other. The comment enables the translator to choose the appropriate gender for the Spanish version, and enables Qt to distinguish between translations.</p>
+<p>See also <a href="qcoreapplication.html#installTranslator">QApplication::installTranslator</a>(), <a href="qcoreapplication.html#removeTranslator">QApplication::removeTranslator</a>(), <a href="qobject.html#tr">QObject::tr</a>(), <a href="qcoreapplication.html#translate">QApplication::translate</a>(), <a href="tools-i18n.html">I18N Example</a>, <a href="linguist-hellotr.html">Hello tr</a>() Example, <a href="linguist-arrowpad.html">Arrow Pad Example</a>, and <a href="linguist-trollprint.html">Troll Print Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTranslator"></a>QTranslator::QTranslator ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty message file object with parent <i>parent</i> that is not connected to any file.</p>
+<h3 class="fn"><a name="dtor.QTranslator"></a>QTranslator::~QTranslator ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QTranslator::isEmpty () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this translator is empty, otherwise returns false. This function works with stripped and unstripped translation files.</p>
+<h3 class="fn"><a name="load"></a>bool QTranslator::load ( const <a href="qstring.html">QString</a> &amp; <i>filename</i>, const <a href="qstring.html">QString</a> &amp; <i>directory</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>search_delimiters</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>suffix</i> = QString() )</h3>
+<p>Loads <i>filename</i> + <i>suffix</i> (&quot;.qm&quot; if the <i>suffix</i> is not specified), which may be an absolute file name or relative to <i>directory</i>. Returns true if the translation is successfully loaded; otherwise returns false.</p>
+<p>The previous contents of this translator object are discarded.</p>
+<p>If the file name does not exist, other file names are tried in the following order:</p>
+<ol type="1">
+<li>File name without <i>suffix</i> appended.</li>
+<li>File name with text after a character in <i>search_delimiters</i> stripped (&quot;_.&quot; is the default for <i>search_delimiters</i> if it is an empty string) and <i>suffix</i>.</li>
+<li>File name stripped without <i>suffix</i> appended.</li>
+<li>File name stripped further, etc.</li>
+</ol>
+<p>For example, an application running in the fr_CA locale (French-speaking Canada) might call load(&quot;foo.fr_ca&quot;, &quot;/opt/foolib&quot;). load() would then try to open the first existing readable file from this list:</p>
+<ol type="1">
+<li><tt>/opt/foolib/foo.fr_ca.qm</tt></li>
+<li><tt>/opt/foolib/foo.fr_ca</tt></li>
+<li><tt>/opt/foolib/foo.fr.qm</tt></li>
+<li><tt>/opt/foolib/foo.fr</tt></li>
+<li><tt>/opt/foolib/foo.qm</tt></li>
+<li><tt>/opt/foolib/foo</tt></li>
+</ol>
+<h3 class="fn"><a name="load-2"></a>bool QTranslator::load ( const <a href="qtglobal.html#uchar-typedef">uchar</a> * <i>data</i>, int <i>len</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Loads the .qm file data <i>data</i> of length <i>len</i> into the translator.</p>
+<p>The data is not copied. The caller must be able to guarantee that <i>data</i> will not be deleted or modified.</p>
+<h3 class="fn"><a name="translate"></a><a href="qstring.html">QString</a> QTranslator::translate ( const char * <i>context</i>, const char * <i>sourceText</i>, const char * <i>comment</i> = 0 ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the translation for the key (<i>context</i>, <i>sourceText</i>, <i>comment</i>). If none is found, also tries (<i>context</i>, <i>sourceText</i>, &quot;&quot;). If that still fails, returns an empty string.</p>
+<p>If you need to programatically insert translations in to a <a href="qtranslator.html">QTranslator</a>, this function can be reimplemented.</p>
+<p>See also <a href="qtranslator.html#load">load</a>().</p>
+<h3 class="fn"><a name="translate-2"></a><a href="qstring.html">QString</a> QTranslator::translate ( const char * <i>context</i>, const char * <i>sourceText</i>, const char * <i>comment</i>, int <i>n</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the translation for the key (<i>context</i>, <i>sourceText</i>, <i>comment</i>). If none is found, also tries (<i>context</i>, <i>sourceText</i>, &quot;&quot;). If that still fails, returns an empty string.</p>
+<p>If <i>n</i> is not -1, it is used to choose an appropriate form for the translation (e.g&#x2e; &quot;%n file found&quot; vs. &quot;%n files found&quot;).</p>
+<p>See also <a href="qtranslator.html#load">load</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

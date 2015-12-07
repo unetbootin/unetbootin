@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextoption.cpp -->
+<head>
+  <title>Qt 4.4: QTextOption Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextOption Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextOption class provides a description of general rich text properties. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextOption&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextoption-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qtextoption-tab.html">Tab</a></b></li>
+<li><div class="fn"/>enum <b><a href="qtextoption.html#Flag-enum">Flag</a></b> { IncludeTrailingSpaces }</li>
+<li><div class="fn"/>flags <b><a href="qtextoption.html#Flag-enum">Flags</a></b></li>
+<li><div class="fn"/>enum <b><a href="qtextoption.html#TabType-enum">TabType</a></b> { LeftTab, RightTab, CenterTab, DelimiterTab }</li>
+<li><div class="fn"/>enum <b><a href="qtextoption.html#WrapMode-enum">WrapMode</a></b> { NoWrap, WordWrap, ManualWrap, WrapAnywhere, WrapAtWordBoundaryOrAnywhere }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextoption.html#QTextOption">QTextOption</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtextoption.html#QTextOption-2">QTextOption</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/><b><a href="qtextoption.html#QTextOption-3">QTextOption</a></b> ( const QTextOption &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qtextoption.html#dtor.QTextOption">~QTextOption</a></b> ()</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qtextoption.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>Flags <b><a href="qtextoption.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setAlignment">setAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setFlags">setFlags</a></b> ( Flags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setTabArray">setTabArray</a></b> ( QList&lt;qreal&gt; <i>tabStops</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setTabStop">setTabStop</a></b> ( qreal <i>tabStop</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setTabs">setTabs</a></b> ( QList&lt;Tab&gt; <i>tabStops</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setTextDirection">setTextDirection</a></b> ( Qt::LayoutDirection <i>direction</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setUseDesignMetrics">setUseDesignMetrics</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextoption.html#setWrapMode">setWrapMode</a></b> ( WrapMode <i>mode</i> )</li>
+<li><div class="fn"/>QList&lt;qreal&gt; <b><a href="qtextoption.html#tabArray">tabArray</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextoption.html#tabStop">tabStop</a></b> () const</li>
+<li><div class="fn"/>QList&lt;Tab&gt; <b><a href="qtextoption.html#tabs">tabs</a></b> () const</li>
+<li><div class="fn"/>Qt::LayoutDirection <b><a href="qtextoption.html#textDirection">textDirection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextoption.html#useDesignMetrics">useDesignMetrics</a></b> () const</li>
+<li><div class="fn"/>WrapMode <b><a href="qtextoption.html#wrapMode">wrapMode</a></b> () const</li>
+<li><div class="fn"/>QTextOption &amp; <b><a href="qtextoption.html#operator-eq">operator=</a></b> ( const QTextOption &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextOption class provides a description of general rich text properties.</p>
+<p>QTextOption is used to encapsulate common rich text properties in a single object. It contains information about text alignment, layout direction, word wrapping, and other standard properties associated with text rendering and layout.</p>
+<p>See also <a href="qtextedit.html">QTextEdit</a>, <a href="qtextdocument.html">QTextDocument</a>, and <a href="qtextcursor.html">QTextCursor</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="Flag-enum"></a>enum QTextOption::Flag<br />flags QTextOption::Flags</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextOption::IncludeTrailingSpaces</tt></td><td align="center" valign="top"><tt>0x80000000</tt></td></tr>
+</table></p>
+<p>The Flags type is a typedef for <a href="qflags.html">QFlags</a>&lt;Flag&gt;. It stores an OR combination of Flag values.</p>
+<h3 class="fn"><a name="TabType-enum"></a>enum QTextOption::TabType</h3>
+<p>This enum holds the different types of tabulator</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextOption::LeftTab</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">, A left-tab</td></tr>
+<tr><td valign="top"><tt>QTextOption::RightTab</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">, A right-tab</td></tr>
+<tr><td valign="top"><tt>QTextOption::CenterTab</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">, A centered-tab</td></tr>
+<tr><td valign="top"><tt>QTextOption::DelimiterTab</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">A tab stopping at a certain delimiter-character</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="WrapMode-enum"></a>enum QTextOption::WrapMode</h3>
+<p>This enum describes how text is wrapped in a document.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextOption::NoWrap</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Text is not wrapped at all.</td></tr>
+<tr><td valign="top"><tt>QTextOption::WordWrap</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Text is wrapped at word boundaries.</td></tr>
+<tr><td valign="top"><tt>QTextOption::ManualWrap</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Wrapping occurs at a manually specified length from the start of the line.</td></tr>
+<tr><td valign="top"><tt>QTextOption::WrapAnywhere</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Text can be wrapped at any point on a line, even if it occurs in the middle of a word.</td></tr>
+<tr><td valign="top"><tt>QTextOption::WrapAtWordBoundaryOrAnywhere</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">If possible, wrapping occurs at a word boundary; otherwise it will occur at the appropriate point on the line, even in the middle of a word.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextOption"></a>QTextOption::QTextOption ()</h3>
+<p>Constructs a text option with default properties for text.</p>
+<h3 class="fn"><a name="QTextOption-2"></a>QTextOption::QTextOption ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Constructs a text option with the given <i>alignment</i> for text.</p>
+<h3 class="fn"><a name="QTextOption-3"></a>QTextOption::QTextOption ( const QTextOption &amp; <i>other</i> )</h3>
+<p>Construct a copy of the <i>other</i> text option.</p>
+<h3 class="fn"><a name="dtor.QTextOption"></a>QTextOption::~QTextOption ()</h3>
+<p>Destroys the text option.</p>
+<h3 class="fn"><a name="alignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QTextOption::alignment () const</h3>
+<p>Returns the text alignment defined by the option.</p>
+<p>See also <a href="qtextoption.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="flags"></a><a href="qtextoption.html#Flag-enum">Flags</a> QTextOption::flags () const</h3>
+<p>Returns the flags associated with the option.</p>
+<p>See also <a href="qtextoption.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setAlignment"></a>void QTextOption::setAlignment ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the option's text alignment to the specified <i>alignment</i>.</p>
+<p>See also <a href="qtextoption.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setFlags"></a>void QTextOption::setFlags ( <a href="qtextoption.html#Flag-enum">Flags</a> <i>flags</i> )</h3>
+<p>Sets the flags associated with the option to the given <i>flags</i>.</p>
+<p>See also <a href="qtextoption.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="setTabArray"></a>void QTextOption::setTabArray ( <a href="qlist.html">QList</a>&lt;<a href="qtglobal.html#qreal-typedef">qreal</a>&gt; <i>tabStops</i> )</h3>
+<p>Sets the tab positions for the text layout to those specified by <i>tabStops</i>.</p>
+<p>See also <a href="qtextoption.html#tabArray">tabArray</a>(), <a href="qtextoption.html#setTabStop">setTabStop</a>(), and <a href="qtextoption.html#setTabs">setTabs</a>().</p>
+<h3 class="fn"><a name="setTabStop"></a>void QTextOption::setTabStop ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>tabStop</i> )</h3>
+<p>Sets the default distance in device units between tab stops to the value specified by <i>tabStop</i>.</p>
+<p>See also <a href="qtextoption.html#tabStop">tabStop</a>(), <a href="qtextoption.html#setTabArray">setTabArray</a>(), <a href="qtextoption.html#setTabs">setTabs</a>(), and <a href="qtextoption.html#tabs">tabs</a>().</p>
+<h3 class="fn"><a name="setTabs"></a>void QTextOption::setTabs ( <a href="qlist.html">QList</a>&lt;<a href="qtextoption-tab.html">Tab</a>&gt; <i>tabStops</i> )</h3>
+<p>Set the Tab properties to <i>tabStops</i>.</p>
+<p>See also <a href="qtextoption.html#tabStop">tabStop</a>() and <a href="qtextoption.html#tabs">tabs</a>().</p>
+<h3 class="fn"><a name="setTextDirection"></a>void QTextOption::setTextDirection ( <a href="qt.html#LayoutDirection-enum">Qt::LayoutDirection</a> <i>direction</i> )</h3>
+<p>Sets the direction of the text layout defined by the option to the given <i>direction</i>.</p>
+<p>See also <a href="qtextoption.html#textDirection">textDirection</a>().</p>
+<h3 class="fn"><a name="setUseDesignMetrics"></a>void QTextOption::setUseDesignMetrics ( bool <i>enable</i> )</h3>
+<p>If <i>enable</i> is true then the layout will use design metrics; otherwise it will use the metrics of the paint device (which is the default behavior).</p>
+<p>See also <a href="qtextoption.html#useDesignMetrics">useDesignMetrics</a>().</p>
+<h3 class="fn"><a name="setWrapMode"></a>void QTextOption::setWrapMode ( <a href="qtextoption.html#WrapMode-enum">WrapMode</a> <i>mode</i> )</h3>
+<p>Sets the option's text wrap mode to the given <i>mode</i>.</p>
+<p>See also <a href="qtextoption.html#wrapMode">wrapMode</a>().</p>
+<h3 class="fn"><a name="tabArray"></a><a href="qlist.html">QList</a>&lt;<a href="qtglobal.html#qreal-typedef">qreal</a>&gt; QTextOption::tabArray () const</h3>
+<p>Returns a list of tab positions defined for the text layout.</p>
+<p>See also <a href="qtextoption.html#setTabArray">setTabArray</a>() and <a href="qtextoption.html#tabStop">tabStop</a>().</p>
+<h3 class="fn"><a name="tabStop"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextOption::tabStop () const</h3>
+<p>Returns the distance in device units between tab stops. Convenient function for the above method</p>
+<p>See also <a href="qtextoption.html#setTabStop">setTabStop</a>(), <a href="qtextoption.html#tabArray">tabArray</a>(), <a href="qtextoption.html#setTabs">setTabs</a>(), and <a href="qtextoption.html#tabs">tabs</a>().</p>
+<h3 class="fn"><a name="tabs"></a><a href="qlist.html">QList</a>&lt;<a href="qtextoption-tab.html">Tab</a>&gt; QTextOption::tabs () const</h3>
+<p>Returns a list of tab positions defined for the text layout.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextoption.html#tabStop">tabStop</a>(), <a href="qtextoption.html#setTabs">setTabs</a>(), and <a href="qtextoption.html#setTabStop">setTabStop</a>().</p>
+<h3 class="fn"><a name="textDirection"></a><a href="qt.html#LayoutDirection-enum">Qt::LayoutDirection</a> QTextOption::textDirection () const</h3>
+<p>Returns the direction of the text layout defined by the option.</p>
+<p>See also <a href="qtextoption.html#setTextDirection">setTextDirection</a>().</p>
+<h3 class="fn"><a name="useDesignMetrics"></a>bool QTextOption::useDesignMetrics () const</h3>
+<p>Returns true if the layout uses design rather than device metrics; otherwise returns false.</p>
+<p>See also <a href="qtextoption.html#setUseDesignMetrics">setUseDesignMetrics</a>().</p>
+<h3 class="fn"><a name="wrapMode"></a><a href="qtextoption.html#WrapMode-enum">WrapMode</a> QTextOption::wrapMode () const</h3>
+<p>Returns the text wrap mode defined by the option.</p>
+<p>See also <a href="qtextoption.html#setWrapMode">setWrapMode</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QTextOption &amp; QTextOption::operator= ( const QTextOption &amp; <i>other</i> )</h3>
+<p>Returns true if the text option is the same as the <i>other</i> text option; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

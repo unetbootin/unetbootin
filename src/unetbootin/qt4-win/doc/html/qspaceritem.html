@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qlayoutitem.cpp -->
+<head>
+  <title>Qt 4.4: QSpacerItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSpacerItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QSpacerItem class provides blank space in a layout. <a href="#details">More...</a></p>
+<pre> #include &lt;QSpacerItem&gt;</pre><p>Inherits <a href="qlayoutitem.html">QLayoutItem</a>.</p>
+<ul>
+<li><a href="qspaceritem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qspaceritem.html#QSpacerItem">QSpacerItem</a></b> ( int <i>w</i>, int <i>h</i>, QSizePolicy::Policy <i>hPolicy</i> = QSizePolicy::Minimum, QSizePolicy::Policy <i>vPolicy</i> = QSizePolicy::Minimum )</li>
+<li><div class="fn"/>void <b><a href="qspaceritem.html#changeSize">changeSize</a></b> ( int <i>w</i>, int <i>h</i>, QSizePolicy::Policy <i>hPolicy</i> = QSizePolicy::Minimum, QSizePolicy::Policy <i>vPolicy</i> = QSizePolicy::Minimum )</li>
+<li><div class="fn"/>virtual bool <b><a href="qspaceritem.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>virtual QSpacerItem * <b><a href="qspaceritem.html#spacerItem">spacerItem</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 public functions inherited from <a href="qlayoutitem.html#public-functions">QLayoutItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSpacerItem class provides blank space in a layout.</p>
+<p>Normally, you don't need to use this class directly. Qt's built-in layout managers provide the following functions for manipulating empty space in layouts:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Class</th><th>Functions</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qhboxlayout.html">QHBoxLayout</a></td><td><a href="qboxlayout.html#addSpacing">addSpacing()</a>, <a href="qboxlayout.html#addStretch">addStretch()</a>, <a href="qboxlayout.html#insertSpacing">insertSpacing()</a>, <a href="qboxlayout.html#insertStretch">insertStretch()</a></td></tr>
+<tr valign="top" class="even"><td><a href="qgridlayout.html">QGridLayout</a></td><td><a href="qgridlayout.html#setRowMinimumHeight">setRowMinimumHeight()</a>, <a href="qgridlayout.html#setRowStretch">setRowStretch()</a>, <a href="qgridlayout.html#setColumnMinimumWidth">setColumnMinimumWidth()</a>, <a href="qgridlayout.html#setColumnStretch">setColumnStretch()</a></td></tr>
+</table></p>
+<p>See also <a href="qlayout.html">QLayout</a>, <a href="qwidgetitem.html">QWidgetItem</a>, and <a href="qlayoutitem.html#spacerItem">QLayoutItem::spacerItem</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSpacerItem"></a>QSpacerItem::QSpacerItem ( int <i>w</i>, int <i>h</i>, <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>hPolicy</i> = QSizePolicy::Minimum, <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>vPolicy</i> = QSizePolicy::Minimum )</h3>
+<p>Constructs a spacer item with preferred width <i>w</i>, preferred height <i>h</i>, horizontal size policy <i>hPolicy</i> and vertical size policy <i>vPolicy</i>.</p>
+<p>The default values provide a gap that is able to stretch if nothing else wants the space.</p>
+<h3 class="fn"><a name="changeSize"></a>void QSpacerItem::changeSize ( int <i>w</i>, int <i>h</i>, <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>hPolicy</i> = QSizePolicy::Minimum, <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>vPolicy</i> = QSizePolicy::Minimum )</h3>
+<p>Changes this spacer item to have preferred width <i>w</i>, preferred height <i>h</i>, horizontal size policy <i>hPolicy</i> and vertical size policy <i>vPolicy</i>.</p>
+<p>The default values provide a gap that is able to stretch if nothing else wants the space.</p>
+<p>Note that if changeSize() is called after the spacer item has been added to a layout, it is necessary to invalidate the layout in order for the spacer item's new size to take effect.</p>
+<p>See also <a href="qlayoutitem.html#invalidate">QSpacerItem::invalidate</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QSpacerItem::isEmpty () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true.</p>
+<p>Reimplemented from <a href="qlayoutitem.html#isEmpty">QLayoutItem</a>.</p>
+<h3 class="fn"><a name="spacerItem"></a>QSpacerItem * QSpacerItem::spacerItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a pointer to this object.</p>
+<p>Reimplemented from <a href="qlayoutitem.html#spacerItem">QLayoutItem</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

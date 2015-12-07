@@ -1,0 +1,19 @@
+This is a list of known issues for this release. If you
+hit any of these issues or discover a new issue, please use the following form
+to report the problem:
+
+http://www.qtsoftware.com/developer/bugreport-form/
+
+Some of these issues happen very infrequently, therefore we need your
+help in sending us information about how you managed to reproduce the
+issue. If you come across a crash, please send us a stack trace in
+your email.
+
+211986 - Webkit include paths have to be first in the list when building WebKit.
+
+238305 - Fonts broken in GraphicsView on HP-UX.
+
+244789 - The Acrobat PDF plugin does not work under Linux.
+Acrobat PDF plugin uses the Xt toolkit and expects that the Xt environment is
+correctly initialized before it is loaded. Initializing Xt inside Qt will
+introduce unnecessary dependencies, therefore we cannot fix this problem.

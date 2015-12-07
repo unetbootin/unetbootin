@@ -1,0 +1,91 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page atomic-operations.html
+    \title Implementing Atomic Operations
+    \ingroup architecture
+    \ingroup qt-embedded
+    \brief A guide to implementing atomic operations on new architectures.
+
+    Qt uses an optimization called \l {Implicitly Shared
+    Classes}{implicit sharing} for many of its value classes.
+
+    Starting with Qt 4, all of Qt's implicitly shared classes can
+    safely be copied across threads like any other value classes,
+    i.e., they are fully \l {Thread Support in Qt#Reentrancy and
+    Thread-Safety}{reentrant}. This is accomplished by implementing
+    reference counting operations using atomic hardware instructions
+    on all the different platforms supported by Qt.
+
+    To support a new architecture, it is important to ensure that
+    these platform-specific atomic operations are implemented in a
+    corresponding header file (\c qatomic_ARCH.h), and that this file
+    is located in Qt's \c src/corelib/arch directory. For example, the
+    Intel 80386 implementation is located in \c
+    src/corelib/arch/qatomic_i386.h.
+
+    Currently, Qt provides two classes providing several atomic
+    operations, QAtomicInt and QAtomicPointer. These classes inherit
+    from QBasicAtomicInt and QBasicAtomicPointer, respectively.
+
+    When porting Qt to a new architecture, the QBasicAtomicInt and
+    QBasicAtomicPointer classes must be implemented, \e not QAtomicInt
+    and QAtomicPointer. The former classes do not have constructors,
+    which makes them POD (plain-old-data). Both classes only have a
+    single member variable called \c _q_value, which stores the
+    value. This is the value that all of the atomic operations read
+    and modify.
+
+    All of the member functions mentioned in the QAtomicInt and
+    QAtomicPointer API documentation must be implemented. Note that
+    these the implementations of the atomic operations in these
+    classes must be atomic with respect to both interrupts and
+    multiple processors.
+
+    \warning The QBasicAtomicInt and QBasicAtomicPointer classes
+    mentioned in this document are used internally by Qt and are not
+    part of the public API. They may change in future versions of
+    Qt. The purpose of this document is to aid people interested in
+    porting Qt to a new architecture.
+*/

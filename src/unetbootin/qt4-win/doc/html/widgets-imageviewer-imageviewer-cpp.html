@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: imageviewer.cpp Example File (widgets/imageviewer/imageviewer.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">imageviewer.cpp Example File<br /><span class="small-subtitle">widgets/imageviewer/imageviewer.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;imageviewer.h&quot;
+
+ ImageViewer::ImageViewer()
+ {
+     imageLabel = new QLabel;
+     imageLabel-&gt;setBackgroundRole(QPalette::Base);
+     imageLabel-&gt;setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+     imageLabel-&gt;setScaledContents(true);
+
+     scrollArea = new QScrollArea;
+     scrollArea-&gt;setBackgroundRole(QPalette::Dark);
+     scrollArea-&gt;setWidget(imageLabel);
+     setCentralWidget(scrollArea);
+
+     createActions();
+     createMenus();
+
+     setWindowTitle(tr(&quot;Image Viewer&quot;));
+     resize(500, 400);
+ }
+
+ void ImageViewer::open()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this,
+                                     tr(&quot;Open File&quot;), QDir::currentPath());
+     if (!fileName.isEmpty()) {
+         QImage image(fileName);
+         if (image.isNull()) {
+             QMessageBox::information(this, tr(&quot;Image Viewer&quot;),
+                                      tr(&quot;Cannot load %1.&quot;).arg(fileName));
+             return;
+         }
+         imageLabel-&gt;setPixmap(QPixmap::fromImage(image));
+         scaleFactor = 1.0;
+
+         printAct-&gt;setEnabled(true);
+         fitToWindowAct-&gt;setEnabled(true);
+         updateActions();
+
+         if (!fitToWindowAct-&gt;isChecked())
+             imageLabel-&gt;adjustSize();
+     }
+ }
+
+ void ImageViewer::print()
+ {
+     Q_ASSERT(imageLabel-&gt;pixmap());
+ #ifndef QT_NO_PRINTER
+     QPrintDialog dialog(&amp;printer, this);
+     if (dialog.exec()) {
+         QPainter painter(&amp;printer);
+         QRect rect = painter.viewport();
+         QSize size = imageLabel-&gt;pixmap()-&gt;size();
+         size.scale(rect.size(), Qt::KeepAspectRatio);
+         painter.setViewport(rect.x(), rect.y(), size.width(), size.height());
+         painter.setWindow(imageLabel-&gt;pixmap()-&gt;rect());
+         painter.drawPixmap(0, 0, *imageLabel-&gt;pixmap());
+     }
+ #endif
+ }
+
+ void ImageViewer::zoomIn()
+ {
+     scaleImage(1.25);
+ }
+
+ void ImageViewer::zoomOut()
+ {
+     scaleImage(0.8);
+ }
+
+ void ImageViewer::normalSize()
+ {
+     imageLabel-&gt;adjustSize();
+     scaleFactor = 1.0;
+ }
+
+ void ImageViewer::fitToWindow()
+ {
+     bool fitToWindow = fitToWindowAct-&gt;isChecked();
+     scrollArea-&gt;setWidgetResizable(fitToWindow);
+     if (!fitToWindow) {
+         normalSize();
+     }
+     updateActions();
+ }
+
+ void ImageViewer::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Image Viewer&quot;),
+             tr(&quot;&lt;p&gt;The &lt;b&gt;Image Viewer&lt;/b&gt; example shows how to combine QLabel &quot;
+                &quot;and QScrollArea to display an image. QLabel is typically used &quot;
+                &quot;for displaying a text, but it can also display an image. &quot;
+                &quot;QScrollArea provides a scrolling view around another widget. &quot;
+                &quot;If the child widget exceeds the size of the frame, QScrollArea &quot;
+                &quot;automatically provides scroll bars. &lt;/p&gt;&lt;p&gt;The example &quot;
+                &quot;demonstrates how QLabel's ability to scale its contents &quot;
+                &quot;(QLabel::scaledContents), and QScrollArea's ability to &quot;
+                &quot;automatically resize its contents &quot;
+                &quot;(QScrollArea::widgetResizable), can be used to implement &quot;
+                &quot;zooming and scaling features. &lt;/p&gt;&lt;p&gt;In addition the example &quot;
+                &quot;shows how to use QPainter to print an image.&lt;/p&gt;&quot;));
+ }
+
+ void ImageViewer::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     printAct = new QAction(tr(&quot;&amp;Print...&quot;), this);
+     printAct-&gt;setShortcut(tr(&quot;Ctrl+P&quot;));
+     printAct-&gt;setEnabled(false);
+     connect(printAct, SIGNAL(triggered()), this, SLOT(print()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     zoomInAct = new QAction(tr(&quot;Zoom &amp;In (25%)&quot;), this);
+     zoomInAct-&gt;setShortcut(tr(&quot;Ctrl++&quot;));
+     zoomInAct-&gt;setEnabled(false);
+     connect(zoomInAct, SIGNAL(triggered()), this, SLOT(zoomIn()));
+
+     zoomOutAct = new QAction(tr(&quot;Zoom &amp;Out (25%)&quot;), this);
+     zoomOutAct-&gt;setShortcut(tr(&quot;Ctrl+-&quot;));
+     zoomOutAct-&gt;setEnabled(false);
+     connect(zoomOutAct, SIGNAL(triggered()), this, SLOT(zoomOut()));
+
+     normalSizeAct = new QAction(tr(&quot;&amp;Normal Size&quot;), this);
+     normalSizeAct-&gt;setShortcut(tr(&quot;Ctrl+S&quot;));
+     normalSizeAct-&gt;setEnabled(false);
+     connect(normalSizeAct, SIGNAL(triggered()), this, SLOT(normalSize()));
+
+     fitToWindowAct = new QAction(tr(&quot;&amp;Fit to Window&quot;), this);
+     fitToWindowAct-&gt;setEnabled(false);
+     fitToWindowAct-&gt;setCheckable(true);
+     fitToWindowAct-&gt;setShortcut(tr(&quot;Ctrl+F&quot;));
+     connect(fitToWindowAct, SIGNAL(triggered()), this, SLOT(fitToWindow()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }
+
+ void ImageViewer::createMenus()
+ {
+     fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(printAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     viewMenu = new QMenu(tr(&quot;&amp;View&quot;), this);
+     viewMenu-&gt;addAction(zoomInAct);
+     viewMenu-&gt;addAction(zoomOutAct);
+     viewMenu-&gt;addAction(normalSizeAct);
+     viewMenu-&gt;addSeparator();
+     viewMenu-&gt;addAction(fitToWindowAct);
+
+     helpMenu = new QMenu(tr(&quot;&amp;Help&quot;), this);
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+
+     menuBar()-&gt;addMenu(fileMenu);
+     menuBar()-&gt;addMenu(viewMenu);
+     menuBar()-&gt;addMenu(helpMenu);
+ }
+
+ void ImageViewer::updateActions()
+ {
+     zoomInAct-&gt;setEnabled(!fitToWindowAct-&gt;isChecked());
+     zoomOutAct-&gt;setEnabled(!fitToWindowAct-&gt;isChecked());
+     normalSizeAct-&gt;setEnabled(!fitToWindowAct-&gt;isChecked());
+ }
+
+ void ImageViewer::scaleImage(double factor)
+ {
+     Q_ASSERT(imageLabel-&gt;pixmap());
+     scaleFactor *= factor;
+     imageLabel-&gt;resize(scaleFactor * imageLabel-&gt;pixmap()-&gt;size());
+
+     adjustScrollBar(scrollArea-&gt;horizontalScrollBar(), factor);
+     adjustScrollBar(scrollArea-&gt;verticalScrollBar(), factor);
+
+     zoomInAct-&gt;setEnabled(scaleFactor &lt; 3.0);
+     zoomOutAct-&gt;setEnabled(scaleFactor &gt; 0.333);
+ }
+
+ void ImageViewer::adjustScrollBar(QScrollBar *scrollBar, double factor)
+ {
+     scrollBar-&gt;setValue(int(factor * scrollBar-&gt;value()
+                             + ((factor - 1) * scrollBar-&gt;pageStep()/2)));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

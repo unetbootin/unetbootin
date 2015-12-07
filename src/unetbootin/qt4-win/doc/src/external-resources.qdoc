@@ -1,0 +1,194 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \externalpage http://www.freedesktop.org/
+    \title freedesktop.org
+*/
+
+/*!
+    \externalpage http://www.freedesktop.org/Standards/xembed-spec
+    \title XEmbed Specification
+*/
+
+/*!
+    \externalpage http://www.freedesktop.org/Standards/icon-theme-spec
+    \title Icon Themes Specification
+*/
+
+/*!
+    \externalpage http://www.cups.org/
+    \title Common Unix Printing System (CUPS)
+    \keyword CUPS
+*/
+
+/*!
+    \externalpage http://www.freedesktop.org/wiki/Standards_2fdesktop_2dentry_2dspec
+    \title Desktop Entry Specification
+*/
+
+/*!
+    \externalpage http://www.kde.org/
+    \title The K Desktop Environment
+    \keyword KDE
+*/
+
+/*!
+    \externalpage http://www.gnome.org/
+    \title GNOME
+*/
+
+/*!
+    \externalpage http://www.gnu.org/software/emacs/
+    \title GNU Emacs
+*/
+
+/*!
+    \externalpage http://www.amnesty.org/
+    \title Amnesty International
+*/
+
+/*!
+    \externalpage http://www.w3.org/Graphics/SVG/About.html
+    \title About SVG
+    \keyword Scalable Vector Graphics
+*/
+
+/*!
+    \externalpage http://www.w3.org/TR/SVG/types.html#ColorKeywords
+    \title SVG color keyword names
+*/
+
+/*!
+    \externalpage http://www.w3.org/Graphics/SVG/
+    \title SVG Working Group
+*/
+
+/*!
+    \externalpage http://www.w3.org/TR/SVGMobile/
+    \title Mobile SVG Profiles
+    \omit
+    Mobile SVG Profiles: SVG Tiny and SVG Basic
+    \endomit
+*/
+
+/*!
+    \externalpage http://www.w3.org/TR/SVGMobile12/
+    \title SVG 1.2 Tiny
+*/
+
+/*!
+    \externalpage http://www.w3.org/Graphics/SVG/feature/1.2/#SVG-static
+    \title SVG 1.2 Tiny Static Features
+*/
+
+/*!
+    \externalpage http://www.ietf.org/rfc/rfc1179.txt
+    \title RFC 1179
+    \keyword lpr
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc1738.txt
+    \title RFC 1738
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc1928.txt
+    \title RFC 1928
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc1929.txt
+    \title RFC 1929
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc2045.txt
+    \title RFC 2045
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc3174.txt
+    \title RFC 3174
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc3491.txt
+    \title RFC 3491
+*/
+
+/*!
+    \externalpage http://www.rfc-editor.org/rfc/rfc3986.txt
+    \title RFC 3986
+*/
+
+/*!
+    \externalpage http://www.dependencywalker.com/
+    \title Dependency Walker
+*/
+
+/*!
+    \externalpage http://www.ecma-international.org/publications/standards/Ecma-262.htm
+    \title ECMA-262
+*/
+
+/*!
+    \externalpage http://www.davidflanagan.com/javascript5/
+    \title JavaScript: The Definitive Guide
+*/
+
+/*!
+    \externalpage http://trolltech.com/products/qt/addon/solutions/catalog/4/Utilities/qtsharedmemory/
+    \title QtSharedMemory
+*/
+
+/*!
+    \externalpage http://webkit.org/
+    \title WebKit Open Source Project
+*/
+
+/*!
+    \externalpage http://www.informit.com/store/product.aspx?isbn=0132354160
+    \title C++ GUI Programming with Qt 4, 2nd Edition
+*/

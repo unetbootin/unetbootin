@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qqueue.cpp -->
+<head>
+  <title>Qt 4.4: QQueue Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QQueue Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QQueue class is a generic container that provides a queue. <a href="#details">More...</a></p>
+<pre> #include &lt;QQueue&gt;</pre><p>Inherits <a href="qlist.html">QList&lt;T&gt;</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qqueue-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qqueue.html#QQueue">QQueue</a></b> ()</li>
+<li><div class="fn"/><b><a href="qqueue.html#dtor.QQueue">~QQueue</a></b> ()</li>
+<li><div class="fn"/>T <b><a href="qqueue.html#dequeue">dequeue</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qqueue.html#enqueue">enqueue</a></b> ( const T &amp; <i>t</i> )</li>
+<li><div class="fn"/>T &amp; <b><a href="qqueue.html#head">head</a></b> ()</li>
+<li><div class="fn"/>const T &amp; <b><a href="qqueue.html#head-2">head</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>61 public functions inherited from <a href="qlist.html#public-functions">QList</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>3 static public members inherited from <a href="qlist.html#static-public-members">QList</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QQueue class is a generic container that provides a queue.</p>
+<p>QQueue&lt;T&gt; is one of Qt's generic <a href="containers.html#container-classes">container classes</a>. It implements a queue data structure for items of a same type.</p>
+<p>A queue is a first in, first out (FIFO) structure. Items are added to the tail of the queue using <a href="qqueue.html#enqueue">enqueue</a>() and retrieved from the head using <a href="qqueue.html#dequeue">dequeue</a>(). The <a href="qqueue.html#head">head</a>() function provides access to the head item without removing it.</p>
+<p>Example:</p>
+<pre>         QQueue&lt;int&gt; queue;
+         queue.enqueue(1);
+         queue.enqueue(2);
+         queue.enqueue(3);
+         while (!queue.isEmpty())
+             cout &lt;&lt; queue.dequeue() &lt;&lt; endl;</pre>
+<p>The example will output 1, 2, 3 in that order.</p>
+<p>QQueue inherits from <a href="qlist.html">QList</a>. All of <a href="qlist.html">QList</a>'s functionality also applies to QQueue. For example, you can use <a href="qlist.html#isEmpty">isEmpty</a>() to test whether the queue is empty, and you can traverse a QQueue using <a href="qlist.html">QList</a>'s iterator classes (for example, <a href="qlistiterator.html">QListIterator</a>). But in addition, QQueue provides three convenience functions that make it easy to implement FIFO semantics: <a href="qqueue.html#enqueue">enqueue</a>(), <a href="qqueue.html#dequeue">dequeue</a>(), and <a href="qqueue.html#head">head</a>().</p>
+<p>QQueue's value type must be an <a href="containers.html#assignable-data-types">assignable data type</a>. This covers most data types that are commonly used, but the compiler won't let you, for example, store a <a href="qwidget.html">QWidget</a> as a value; instead, store a <a href="qwidget.html">QWidget</a> *.</p>
+<p>See also <a href="qlist.html">QList</a> and <a href="qstack.html">QStack</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QQueue"></a>QQueue::QQueue ()</h3>
+<p>Constructs an empty queue.</p>
+<h3 class="fn"><a name="dtor.QQueue"></a>QQueue::~QQueue ()</h3>
+<p>Destroys the queue. References to the values in the queue, and all iterators over this queue, become invalid.</p>
+<h3 class="fn"><a name="dequeue"></a>T QQueue::dequeue ()</h3>
+<p>Removes the head item in the queue and returns it. This function assumes that the queue isn't empty.</p>
+<p>This is the same as <a href="qlist.html#takeFirst">QList::takeFirst</a>().</p>
+<p>See also <a href="qqueue.html#head">head</a>(), <a href="qqueue.html#enqueue">enqueue</a>(), and <a href="qlist.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="enqueue"></a>void QQueue::enqueue ( const T &amp; <i>t</i> )</h3>
+<p>Adds value <i>t</i> to the tail of the queue.</p>
+<p>This is the same as <a href="qlist.html#append">QList::append</a>().</p>
+<p>See also <a href="qqueue.html#dequeue">dequeue</a>() and <a href="qqueue.html#head">head</a>().</p>
+<h3 class="fn"><a name="head"></a>T &amp; QQueue::head ()</h3>
+<p>Returns a reference to the queue's head item. This function assumes that the queue isn't empty.</p>
+<p>This is the same as <a href="qlist.html#first">QList::first</a>().</p>
+<p>See also <a href="qqueue.html#dequeue">dequeue</a>(), <a href="qqueue.html#enqueue">enqueue</a>(), and <a href="qlist.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="head-2"></a>const T &amp; QQueue::head () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

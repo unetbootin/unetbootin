@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3listbox.cpp -->
+<head>
+  <title>Qt 4.4: Q3ListBoxItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ListBoxItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ListBoxItem class is the base class of all list box items. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ListBoxItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherited by <a href="q3listboxpixmap.html">Q3ListBoxPixmap</a> and <a href="q3listboxtext.html">Q3ListBoxText</a>.</p>
+<ul>
+<li><a href="q3listboxitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3listboxitem.html#Q3ListBoxItem">Q3ListBoxItem</a></b> ( Q3ListBox * <i>listbox</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3listboxitem.html#Q3ListBoxItem-2">Q3ListBoxItem</a></b> ( Q3ListBox * <i>listbox</i>, Q3ListBoxItem * <i>after</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3listboxitem.html#dtor.Q3ListBoxItem">~Q3ListBoxItem</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3listboxitem.html#current">current</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listboxitem.html#height">height</a></b> ( const Q3ListBox * <i>lb</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3listboxitem.html#isCurrent">isCurrent</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listboxitem.html#isSelectable">isSelectable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listboxitem.html#isSelected">isSelected</a></b> () const</li>
+<li><div class="fn"/>Q3ListBox * <b><a href="q3listboxitem.html#listBox">listBox</a></b> () const</li>
+<li><div class="fn"/>Q3ListBoxItem * <b><a href="q3listboxitem.html#next">next</a></b> () const</li>
+<li><div class="fn"/>virtual const QPixmap * <b><a href="q3listboxitem.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>Q3ListBoxItem * <b><a href="q3listboxitem.html#prev">prev</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listboxitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listboxitem.html#selected">selected</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3listboxitem.html#setSelectable">setSelectable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual QString <b><a href="q3listboxitem.html#text">text</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listboxitem.html#width">width</a></b> ( const Q3ListBox * <i>lb</i> ) const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3listboxitem.html#paint">paint</a></b> ( QPainter * <i>p</i> ) = 0</li>
+<li><div class="fn"/>void <b><a href="q3listboxitem.html#setCustomHighlighting">setCustomHighlighting</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listboxitem.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ListBoxItem class is the base class of all list box items.</p>
+<p>This class is an abstract base class used for all list box items. If you need to insert customized items into a <a href="q3listbox.html">Q3ListBox</a> you must inherit this class and reimplement <a href="q3listboxitem.html#paint">paint</a>(), <a href="q3listboxitem.html#height">height</a>() and <a href="q3listboxitem.html#width">width</a>().</p>
+<p>See also <a href="q3listbox.html">Q3ListBox</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ListBoxItem"></a>Q3ListBoxItem::Q3ListBoxItem ( <a href="q3listbox.html">Q3ListBox</a> * <i>listbox</i> = 0 )</h3>
+<p>Constructs an empty list box item in the list box <i>listbox</i>.</p>
+<h3 class="fn"><a name="Q3ListBoxItem-2"></a>Q3ListBoxItem::Q3ListBoxItem ( <a href="q3listbox.html">Q3ListBox</a> * <i>listbox</i>, Q3ListBoxItem * <i>after</i> )</h3>
+<p>Constructs an empty list box item in the list box <i>listbox</i> and inserts it after the item <i>after</i> or at the beginning if <i>after</i> is 0.</p>
+<h3 class="fn"><a name="dtor.Q3ListBoxItem"></a>Q3ListBoxItem::~Q3ListBoxItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the list box item.</p>
+<h3 class="fn"><a name="current"></a>bool Q3ListBoxItem::current () const</h3>
+<p>Use <a href="q3listboxitem.html#isCurrent">isCurrent</a>() instead. Returns true if <a href="q3listboxitem.html#isCurrent">isCurrent</a>() returns true.</p>
+<h3 class="fn"><a name="height"></a>int Q3ListBoxItem::height ( const <a href="q3listbox.html">Q3ListBox</a> * <i>lb</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Implement this function to return the height of your item. The <i>lb</i> parameter is the same as <a href="q3listboxitem.html#listBox">listBox</a>() and is provided for convenience and compatibility.</p>
+<p>The default implementation returns <a href="qapplication.html#globalStrut-prop">QApplication::globalStrut</a>()'s height.</p>
+<p>See also <a href="q3listboxitem.html#paint">paint</a>() and <a href="q3listboxitem.html#width">width</a>().</p>
+<h3 class="fn"><a name="isCurrent"></a>bool Q3ListBoxItem::isCurrent () const</h3>
+<p>Returns true if the item is the current item; otherwise returns false.</p>
+<p>See also <a href="q3listbox.html#currentItem-prop">Q3ListBox::currentItem</a>(), <a href="q3listbox.html#item">Q3ListBox::item</a>(), and <a href="q3listboxitem.html#isSelected">isSelected</a>().</p>
+<h3 class="fn"><a name="isSelectable"></a>bool Q3ListBoxItem::isSelectable () const</h3>
+<p>Returns true if this item is selectable (the default); otherwise returns false.</p>
+<p>See also <a href="q3listboxitem.html#setSelectable">setSelectable</a>().</p>
+<h3 class="fn"><a name="isSelected"></a>bool Q3ListBoxItem::isSelected () const</h3>
+<p>Returns true if the item is selected; otherwise returns false.</p>
+<p>See also <a href="q3listbox.html#isSelected">Q3ListBox::isSelected</a>() and <a href="q3listboxitem.html#isCurrent">isCurrent</a>().</p>
+<h3 class="fn"><a name="listBox"></a><a href="q3listbox.html">Q3ListBox</a> * Q3ListBoxItem::listBox () const</h3>
+<p>Returns a pointer to the list box containing this item.</p>
+<h3 class="fn"><a name="next"></a>Q3ListBoxItem * Q3ListBoxItem::next () const</h3>
+<p>Returns the item that comes after this in the list box. If this is the last item, 0 is returned.</p>
+<p>See also <a href="q3listboxitem.html#prev">prev</a>().</p>
+<h3 class="fn"><a name="paint"></a>void Q3ListBoxItem::paint ( <a href="qpainter.html">QPainter</a> * <i>p</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Implement this function to draw your item. The painter, <i>p</i>, is already open for painting.</p>
+<p>See also <a href="q3listboxitem.html#height">height</a>() and <a href="q3listboxitem.html#width">width</a>().</p>
+<h3 class="fn"><a name="pixmap"></a>const <a href="qpixmap.html">QPixmap</a> * Q3ListBoxItem::pixmap () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the pixmap associated with the item, or 0 if there isn't one.</p>
+<p>The default implementation returns 0.</p>
+<h3 class="fn"><a name="prev"></a>Q3ListBoxItem * Q3ListBoxItem::prev () const</h3>
+<p>Returns the item which comes before this in the list box. If this is the first item, 0 is returned.</p>
+<p>See also <a href="q3listboxitem.html#next">next</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3ListBoxItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 0.</p>
+<p>Make your derived classes return their own values for rtti(), and you can distinguish between listbox items. You should use values greater than 1000 preferably a large random number, to allow for extensions to this class.</p>
+<h3 class="fn"><a name="selected"></a>bool Q3ListBoxItem::selected () const</h3>
+<p>Use <a href="q3listboxitem.html#isSelected">isSelected</a>() instead. Returns true if <a href="q3listboxitem.html#isSelected">isSelected</a>() returns true.</p>
+<h3 class="fn"><a name="setCustomHighlighting"></a>void Q3ListBoxItem::setCustomHighlighting ( bool <i>b</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Defines whether the list box item is responsible for drawing itself in a highlighted state when being selected.</p>
+<p>If <i>b</i> is false (the default), the list box will draw some default highlight indicator before calling <a href="q3listboxitem.html#paint">paint</a>().</p>
+<p>See also <a href="q3listboxitem.html#isSelected">isSelected</a>() and <a href="q3listboxitem.html#paint">paint</a>().</p>
+<h3 class="fn"><a name="setSelectable"></a>void Q3ListBoxItem::setSelectable ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true (the default) then this item can be selected by the user; otherwise this item cannot be selected by the user.</p>
+<p>See also <a href="q3listboxitem.html#isSelectable">isSelectable</a>().</p>
+<h3 class="fn"><a name="setText"></a>void Q3ListBoxItem::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the text of the <a href="q3listboxitem.html">Q3ListBoxItem</a> to <i>text</i>. This <i>text</i> is also used for sorting. The text is not shown unless explicitly drawn in <a href="q3listboxitem.html#paint">paint</a>().</p>
+<p>See also <a href="q3listboxitem.html#text">text</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3ListBoxItem::text () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the text of the item. This text is also used for sorting.</p>
+<p>See also <a href="q3listboxitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3ListBoxItem::width ( const <a href="q3listbox.html">Q3ListBox</a> * <i>lb</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reimplement this function to return the width of your item. The <i>lb</i> parameter is the same as <a href="q3listboxitem.html#listBox">listBox</a>() and is provided for convenience and compatibility.</p>
+<p>The default implementation returns <a href="qapplication.html#globalStrut-prop">QApplication::globalStrut</a>()'s width.</p>
+<p>See also <a href="q3listboxitem.html#paint">paint</a>() and <a href="q3listboxitem.html#height">height</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

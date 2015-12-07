@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3networkprotocol.cpp -->
+<head>
+  <title>Qt 4.4: Q3NetworkProtocol Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3NetworkProtocol Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3NetworkProtocol class provides a common API for network protocols. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3NetworkProtocol&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qnetworkprotocol">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="q3ftp.html">Q3Ftp</a>, <a href="q3http.html">Q3Http</a>, and <a href="q3localfs.html">Q3LocalFs</a>.</p>
+<ul>
+<li><a href="q3networkprotocol-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3networkprotocol.html#ConnectionState-enum">ConnectionState</a></b> { ConHostFound, ConConnected, ConClosed }</li>
+<li><div class="fn"/>enum <b><a href="q3networkprotocol.html#Error-enum">Error</a></b> { NoError, ErrValid, ErrUnknownProtocol, ErrUnsupported, ..., ErrPermissionDenied }</li>
+<li><div class="fn"/>enum <b><a href="q3networkprotocol.html#Operation-enum">Operation</a></b> { OpListChildren, OpMkDir, OpRemove, OpRename, OpGet, OpPut }</li>
+<li><div class="fn"/>enum <b><a href="q3networkprotocol.html#State-enum">State</a></b> { StWaiting, StInProgress, StDone, StFailed, StStopped }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3networkprotocol.html#Q3NetworkProtocol">Q3NetworkProtocol</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="q3networkprotocol.html#dtor.Q3NetworkProtocol">~Q3NetworkProtocol</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#addOperation">addOperation</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3networkprotocol.html#autoDelete">autoDelete</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#clearOperationQueue">clearOperationQueue</a></b> ()</li>
+<li><div class="fn"/>Q3NetworkOperation * <b><a href="q3networkprotocol.html#operationInProgress">operationInProgress</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#setAutoDelete">setAutoDelete</a></b> ( bool <i>b</i>, int <i>i</i> = 10000 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#setUrl">setUrl</a></b> ( Q3UrlOperator * <i>u</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#stop">stop</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3networkprotocol.html#supportedOperations">supportedOperations</a></b> () const</li>
+<li><div class="fn"/>Q3UrlOperator * <b><a href="q3networkprotocol.html#url">url</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#connectionStateChanged">connectionStateChanged</a></b> ( int <i>state</i>, const QString &amp; <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#createdDirectory">createdDirectory</a></b> ( const QUrlInfo &amp; <i>i</i>, Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#data">data</a></b> ( const QByteArray &amp; <i>data</i>, Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#dataTransferProgress">dataTransferProgress</a></b> ( int <i>bytesDone</i>, int <i>bytesTotal</i>, Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#finished">finished</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#itemChanged">itemChanged</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#newChild">newChild</a></b> ( const QUrlInfo &amp; <i>i</i>, Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#newChildren">newChildren</a></b> ( const Q3ValueList&lt;QUrlInfo&gt; &amp; <i>i</i>, Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#removed">removed</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#start">start</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>Q3NetworkProtocol * <b><a href="q3networkprotocol.html#getNetworkProtocol">getNetworkProtocol</a></b> ( const QString &amp; <i>protocol</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3networkprotocol.html#hasOnlyLocalFileSystem">hasOnlyLocalFileSystem</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3networkprotocol.html#registerNetworkProtocol">registerNetworkProtocol</a></b> ( const QString &amp; <i>protocol</i>, Q3NetworkProtocolFactoryBase * <i>protocolFactory</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="q3networkprotocol.html#checkConnection">checkConnection</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationGet">operationGet</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationListChildren">operationListChildren</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationMkDir">operationMkDir</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationPut">operationPut</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationRemove">operationRemove</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3networkprotocol.html#operationRename">operationRename</a></b> ( Q3NetworkOperation * <i>op</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3NetworkProtocol class provides a common API for network protocols.</p>
+<p>This is a base class which should be used for network protocols implementations that can then be used in Qt (e.g&#x2e; in the file dialog) together with the <a href="q3urloperator.html">Q3UrlOperator</a>.</p>
+<p>The easiest way to implement a new network protocol is to reimplement the operation*() methods, e.g&#x2e; <a href="q3networkprotocol.html#operationGet">operationGet</a>(), etc. Only the supported operations should be reimplemented. To specify which operations are supported, also reimplement <a href="q3networkprotocol.html#supportedOperations">supportedOperations</a>() and return an int that is OR'd together using the supported operations from the <a href="q3networkprotocol.html#Operation-enum">Q3NetworkProtocol::Operation</a> enum.</p>
+<p>When you implement a network protocol this way, it is important to emit the correct signals. Also, always emit the <a href="q3networkprotocol.html#finished">finished</a>() signal when an operation is done (on success <i>and</i> on failure). Qt relies on correctly emitted <a href="q3networkprotocol.html#finished">finished</a>() signals.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ConnectionState-enum"></a>enum Q3NetworkProtocol::ConnectionState</h3>
+<p>When the connection state of a network protocol changes it emits the signal <a href="q3networkprotocol.html#connectionStateChanged">connectionStateChanged</a>(). The first argument is one of the following values:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ConHostFound</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Host has been found.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ConConnected</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Connection to the host has been established.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ConClosed</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Connection has been closed.</td></tr>
+</table></p>
+<h3 class="fn"><a name="Error-enum"></a>enum Q3NetworkProtocol::Error</h3>
+<p>When an operation fails (finishes unsuccessfully), the <a href="q3networkoperation.html">Q3NetworkOperation</a> of the operation returns an error code which has one of the following values:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error occurred.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrValid</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The URL you are operating on is not valid.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrUnknownProtocol</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">There is no protocol implementation available for the protocol of the URL you are operating on (e.g&#x2e; if the protocol is http and no http implementation has been registered).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrUnsupported</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The operation is not supported by the protocol.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrParse</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The URL could not be parsed correctly.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrLoginIncorrect</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">You needed to login but the username or password is wrong.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrHostNotFound</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The specified host (in the URL) couldn't be found.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrListChildren</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">An error occurred while listing the children (files).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrMkDir</tt></td><td align="center" valign="top">?</td><td valign="top">An error occurred when creating a directory.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrRemove</tt></td><td align="center" valign="top">?</td><td valign="top">An error occurred when removing a child (file).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrRename</tt></td><td align="center" valign="top">?</td><td valign="top">An error occurred when renaming a child (file).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrGet</tt></td><td align="center" valign="top">?</td><td valign="top">An error occurred while getting (retrieving) data.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrPut</tt></td><td align="center" valign="top">?</td><td valign="top">An error occurred while putting (uploading) data.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrFileNotExisting</tt></td><td align="center" valign="top">?</td><td valign="top">A file which is needed by the operation doesn't exist.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::ErrPermissionDenied</tt></td><td align="center" valign="top">?</td><td valign="top">Permission for doing the operation has been denied.</td></tr>
+</table></p>
+<p>You should also use these error codes when implementing custom network protocols. If this is not possible, you can define your own error codes by using integer values that don't conflict with any of these values.</p>
+<h3 class="fn"><a name="Operation-enum"></a>enum Q3NetworkProtocol::Operation</h3>
+<p>This enum lists the possible operations that a network protocol can support. <a href="q3networkprotocol.html#supportedOperations">supportedOperations</a>() returns an int of these that is OR'd together. Also, the type() of a <a href="q3networkoperation.html">Q3NetworkOperation</a> is always one of these values.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpListChildren</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">List the children of a URL, e.g&#x2e; of a directory.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpMkDir</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Create a directory.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpRemove</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Remove a child (e.g&#x2e; a file).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpRename</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Rename a child (e.g&#x2e; a file).</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpGet</tt></td><td align="center" valign="top"><tt>32</tt></td><td valign="top">Get data from a location.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::OpPut</tt></td><td align="center" valign="top"><tt>64</tt></td><td valign="top">Put data to a location.</td></tr>
+</table></p>
+<h3 class="fn"><a name="State-enum"></a>enum Q3NetworkProtocol::State</h3>
+<p>This enum contains the state that a <a href="q3networkoperation.html">Q3NetworkOperation</a> can have.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::StWaiting</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The operation is in the <a href="q3networkprotocol.html">Q3NetworkProtocol</a>'s queue waiting to be prcessed.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::StInProgress</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The operation is being processed.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::StDone</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The operation has been processed successfully.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::StFailed</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The operation has been processed but an error occurred.</td></tr>
+<tr><td valign="top"><tt>Q3NetworkProtocol::StStopped</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The operation has been processed but has been stopped before it finished, and is waiting to be processed.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3NetworkProtocol"></a>Q3NetworkProtocol::Q3NetworkProtocol ()</h3>
+<p>Constructor of the network protocol base class. Does some initialization and connecting of signals and slots.</p>
+<h3 class="fn"><a name="dtor.Q3NetworkProtocol"></a>Q3NetworkProtocol::~Q3NetworkProtocol ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="addOperation"></a>void Q3NetworkProtocol::addOperation ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds the operation <i>op</i> to the operation queue. The operation will be processed as soon as possible. This method returns immediately.</p>
+<h3 class="fn"><a name="autoDelete"></a>bool Q3NetworkProtocol::autoDelete () const</h3>
+<p>Returns true if auto-deleting is enabled; otherwise returns false.</p>
+<p>See also <a href="q3networkprotocol.html#setAutoDelete">Q3NetworkProtocol::setAutoDelete</a>().</p>
+<h3 class="fn"><a name="checkConnection"></a>bool Q3NetworkProtocol::checkConnection ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>For processing operations the network protocol base class calls this method quite often. This should be reimplemented by new network protocols. It should return true if the connection is OK (open); otherwise it should return false. If the connection is not open the protocol should open it.</p>
+<p>If the connection can't be opened (e.g&#x2e; because you already tried but the host couldn't be found), set the state of <i>op</i> to <a href="q3networkprotocol.html#State-enum">Q3NetworkProtocol::StFailed</a> and emit the <a href="q3networkprotocol.html#finished">finished</a>() signal with this <a href="q3networkoperation.html">Q3NetworkOperation</a> as argument.</p>
+<p><i>op</i> is the operation that needs an open connection.</p>
+<h3 class="fn"><a name="clearOperationQueue"></a>void Q3NetworkProtocol::clearOperationQueue ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Clears the operation queue.</p>
+<h3 class="fn"><a name="connectionStateChanged"></a>void Q3NetworkProtocol::connectionStateChanged ( int <i>state</i>, const <a href="qstring.html">QString</a> &amp; <i>data</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the state of the connection of the network protocol is changed. <i>state</i> describes the new state, which is one of, <tt>ConHostFound</tt>, <tt>ConConnected</tt> or <tt>ConClosed</tt>. <i>data</i> is a message text.</p>
+<h3 class="fn"><a name="createdDirectory"></a>void Q3NetworkProtocol::createdDirectory ( const <a href="qurlinfo.html">QUrlInfo</a> &amp; <i>i</i>, <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when mkdir() has been successful and the directory has been created. <i>i</i> holds the information about the new directory. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc. Using op-&gt;arg( 0 ), you can get the file name of the new directory.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="data"></a>void Q3NetworkProtocol::data ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when new <i>data</i> has been received after calling get() or put(). <i>op</i> holds the name of the file from which data is retrieved or uploaded in its first argument, and the (raw) data in its second argument. You can get them with op-&gt;arg( 0 ) and op-&gt;rawArg( 1 ). <i>op</i> is the pointer to the operation object, which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a> (which is used by the network protocol) emit its corresponding signal.</p>
+<h3 class="fn"><a name="dataTransferProgress"></a>void Q3NetworkProtocol::dataTransferProgress ( int <i>bytesDone</i>, int <i>bytesTotal</i>, <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted during the transfer of data (using put() or get()). <i>bytesDone</i> is how many bytes of <i>bytesTotal</i> have been transferred. <i>bytesTotal</i> may be -1, which means that the total number of bytes is not known. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="finished"></a>void Q3NetworkProtocol::finished ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an operation finishes. This signal is always emitted, for both success and failure. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc. Check the state and error code of the operation object to determine whether or not the operation was successful.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="getNetworkProtocol"></a>Q3NetworkProtocol * Q3NetworkProtocol::getNetworkProtocol ( const <a href="qstring.html">QString</a> &amp; <i>protocol</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static method to get a new instance of the network protocol <i>protocol</i>. For example, if you need to do some FTP operations, do the following:</p>
+<pre>     Q3Ftp *ftp = Q3NetworkProtocol::getNetworkProtocol( &quot;ftp&quot; );</pre>
+<p>This returns a pointer to a new instance of an ftp implementation or null if no protocol for ftp was registered. The ownership of the pointer is transferred to you, so you must delete it if you don't need it anymore.</p>
+<p>Normally you should not work directly with network protocols, so you will not need to call this method yourself. Instead, use <a href="q3urloperator.html">Q3UrlOperator</a>, which makes working with network protocols much more convenient.</p>
+<p>See also <a href="q3urloperator.html">Q3UrlOperator</a>.</p>
+<h3 class="fn"><a name="hasOnlyLocalFileSystem"></a>bool Q3NetworkProtocol::hasOnlyLocalFileSystem ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the only protocol registered is for working on the local filesystem; returns false if other network protocols are also registered.</p>
+<h3 class="fn"><a name="itemChanged"></a>void Q3NetworkProtocol::itemChanged ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a file which is a child of this URL has been changed, e.g&#x2e; by successfully calling rename(). <i>op</i> holds the original and the new file names in the first and second arguments, accessible with op-&gt;arg( 0 ) and op-&gt;arg( 1 ) respectively. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="newChild"></a>void Q3NetworkProtocol::newChild ( const <a href="qurlinfo.html">QUrlInfo</a> &amp; <i>i</i>, <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if a new child (file) has been read. <a href="q3networkprotocol.html">Q3NetworkProtocol</a> automatically connects it to a slot which creates a list of <a href="qurlinfo.html">QUrlInfo</a> objects (with just one <a href="qurlinfo.html">QUrlInfo</a> <i>i</i>) and emits the <a href="q3networkprotocol.html#newChildren">newChildren</a>() signal with this list. <i>op</i> is the pointer to the operation object which contains all the information about the operation that has finished, including the state, etc.</p>
+<p>This is just a convenience signal useful for implementing your own network protocol. In all other cases connect to the <a href="q3networkprotocol.html#newChildren">newChildren</a>() signal with its list of <a href="qurlinfo.html">QUrlInfo</a> objects.</p>
+<h3 class="fn"><a name="newChildren"></a>void Q3NetworkProtocol::newChildren ( const <a href="q3valuelist.html">Q3ValueList</a>&lt;<a href="qurlinfo.html">QUrlInfo</a>&gt; &amp; <i>i</i>, <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after listChildren() was called and new children (files) have been read from the list of files. <i>i</i> holds the information about the new children. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<p>When implementing your own network protocol and reading children, you usually don't read one child at once, but rather a list of them. That's why this signal takes a list of <a href="qurlinfo.html">QUrlInfo</a> objects. If you prefer to read just one child at a time you can use the convenience signal <a href="q3networkprotocol.html#newChild">newChild</a>(), which takes a single <a href="qurlinfo.html">QUrlInfo</a> object.</p>
+<h3 class="fn"><a name="operationGet"></a>void Q3NetworkProtocol::operationGet ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports getting data; this method should then process the <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="operationInProgress"></a><a href="q3networkoperation.html">Q3NetworkOperation</a> * Q3NetworkProtocol::operationInProgress () const</h3>
+<p>Returns the operation, which is being processed, or 0 of no operation is being processed at the moment.</p>
+<h3 class="fn"><a name="operationListChildren"></a>void Q3NetworkProtocol::operationListChildren ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports listing children (files); this method should then process this <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="operationMkDir"></a>void Q3NetworkProtocol::operationMkDir ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports making directories; this method should then process this <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="operationPut"></a>void Q3NetworkProtocol::operationPut ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports putting (uploading) data; this method should then process the <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="operationRemove"></a>void Q3NetworkProtocol::operationRemove ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports removing children (files); this method should then process this <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="operationRename"></a>void Q3NetworkProtocol::operationRename ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>When implementing a new network protocol, this method should be reimplemented if the protocol supports renaming children (files); this method should then process this <a href="q3networkoperation.html">Q3NetworkOperation</a>.</p>
+<p><i>op</i> is the pointer to the operation object which contains all the information on the operation that has finished, including the state, etc.</p>
+<h3 class="fn"><a name="registerNetworkProtocol"></a>void Q3NetworkProtocol::registerNetworkProtocol ( const <a href="qstring.html">QString</a> &amp; <i>protocol</i>, Q3NetworkProtocolFactoryBase * <i>protocolFactory</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static method to register a network protocol for Qt. For example, if you have an implementation of NNTP (called Nntp) which is derived from <a href="q3networkprotocol.html">Q3NetworkProtocol</a>, call:</p>
+<pre>     Q3NetworkProtocol::registerNetworkProtocol( &quot;nntp&quot;, new Q3NetworkProtocolFactory&lt;Nntp&gt; );</pre>
+<p>after which your implementation is registered for future nntp operations.</p>
+<p>The name of the protocol is given in <i>protocol</i> and a pointer to the protocol factory is given in <i>protocolFactory</i>.</p>
+<h3 class="fn"><a name="removed"></a>void Q3NetworkProtocol::removed ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when remove() has been succesiisful and the file has been removed. <i>op</i> holds the file name of the removed file in the first argument, accessible with op-&gt;arg( 0 ). <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="setAutoDelete"></a>void Q3NetworkProtocol::setAutoDelete ( bool <i>b</i>, int <i>i</i> = 10000 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Because it's sometimes hard to take care of removing network protocol instances, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> provides an auto-delete mechanism. If you set <i>b</i> to true, the network protocol instance is removed after it has been inactive for <i>i</i> milliseconds (i.e&#x2e; <i>i</i> milliseconds after the last operation has been processed). If you set <i>b</i> to false the auto-delete mechanism is switched off.</p>
+<p>If you switch on auto-delete, the <a href="q3networkprotocol.html">Q3NetworkProtocol</a> also deletes its <a href="q3urloperator.html">Q3UrlOperator</a>.</p>
+<p>See also <a href="q3networkprotocol.html#autoDelete">autoDelete</a>().</p>
+<h3 class="fn"><a name="setUrl"></a>void Q3NetworkProtocol::setUrl ( <a href="q3urloperator.html">Q3UrlOperator</a> * <i>u</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the <a href="q3urloperator.html">Q3UrlOperator</a>, on which the protocol works, to <i>u</i>.</p>
+<p>See also <a href="q3networkprotocol.html#url">url</a>() and <a href="q3urloperator.html">Q3UrlOperator</a>.</p>
+<h3 class="fn"><a name="start"></a>void Q3NetworkProtocol::start ( <a href="q3networkoperation.html">Q3NetworkOperation</a> * <i>op</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>Some operations (such as listChildren()) emit this signal when they start processing the operation. <i>op</i> is the pointer to the operation object which contains all the information about the operation, including the state, etc.</p>
+<p>When a protocol emits this signal, <a href="q3networkprotocol.html">Q3NetworkProtocol</a> is smart enough to let the <a href="q3urloperator.html">Q3UrlOperator</a>, which is used by the network protocol, emit its corresponding signal.</p>
+<h3 class="fn"><a name="stop"></a>void Q3NetworkProtocol::stop ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Stops the current operation that is being processed and clears all waiting operations.</p>
+<h3 class="fn"><a name="supportedOperations"></a>int Q3NetworkProtocol::supportedOperations () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns an int that is OR'd together using the enum values of <a href="q3networkprotocol.html#Operation-enum">Q3NetworkProtocol::Operation</a>, which describes which operations are supported by the network protocol. Should be reimplemented by new network protocols.</p>
+<h3 class="fn"><a name="url"></a><a href="q3urloperator.html">Q3UrlOperator</a> * Q3NetworkProtocol::url () const</h3>
+<p>Returns the <a href="q3urloperator.html">Q3UrlOperator</a> on which the protocol works.</p>
+<p>See also <a href="q3networkprotocol.html#setUrl">setUrl</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

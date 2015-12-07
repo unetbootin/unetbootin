@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/dbus/qdbusabstractadaptor.cpp -->
+<head>
+  <title>Qt 4.4: QDBusAbstractAdaptor Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDBusAbstractAdaptor Class Reference<br /><span class="small-subtitle">[<a href="qtdbus.html">QtDBus</a> module]</span>
+</h1>
+<p>The QDBusAbstractAdaptor class is the base class of D-Bus adaptor classes. <a href="#details">More...</a></p>
+<pre> #include &lt;QDBusAbstractAdaptor&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdbusabstractadaptor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusabstractadaptor.html#dtor.QDBusAbstractAdaptor">~QDBusAbstractAdaptor</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusabstractadaptor.html#QDBusAbstractAdaptor">QDBusAbstractAdaptor</a></b> ( QObject * <i>obj</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdbusabstractadaptor.html#autoRelaySignals">autoRelaySignals</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdbusabstractadaptor.html#setAutoRelaySignals">setAutoRelaySignals</a></b> ( bool <i>enable</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="macros"></a>
+<h3>Macros</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusabstractadaptor.html#Q_NOREPLY">Q_NOREPLY</a></b></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDBusAbstractAdaptor class is the base class of D-Bus adaptor classes.</p>
+<p>The QDBusAbstractAdaptor class is the starting point for all objects intending to provide interfaces to the external world using D-Bus. This is accomplished by attaching a one or more classes derived from QDBusAbstractAdaptor to a normal <a href="qobject.html">QObject</a> and then registering that <a href="qobject.html">QObject</a> with QDBusConnection::registerObject. QDBusAbstractAdaptor objects are intended to be light-weight wrappers, mostly just relaying calls into the real object (its parent) and the signals from it.</p>
+<p>Each QDBusAbstractAdaptor-derived class should define the D-Bus interface it is implementing using the Q_CLASSINFO macro in the class definition.</p>
+<p>QDBusAbstractAdaptor uses the standard <a href="qobject.html">QObject</a> mechanism of signals, slots and properties to determine what signals, methods and properties to export to the bus. Any signal emitted by QDBusAbstractAdaptor-derived classes will be automatically be relayed through any D-Bus connections the object is registered on.</p>
+<p>Classes derived from QDBusAbstractAdaptor must be created on the heap using the <i>new</i> operator and must not be deleted by the user (they will be deleted automatically when the object they are connected to is also deleted).</p>
+<p>See also <a href="usingadaptors.html">Using adaptors</a> and <a href="qdbusconnection.html">QDBusConnection</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDBusAbstractAdaptor"></a>QDBusAbstractAdaptor::QDBusAbstractAdaptor ( <a href="qobject.html">QObject</a> * <i>obj</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs a <a href="qdbusabstractadaptor.html">QDBusAbstractAdaptor</a> with <i>obj</i> as the parent object.</p>
+<h3 class="fn"><a name="dtor.QDBusAbstractAdaptor"></a>QDBusAbstractAdaptor::~QDBusAbstractAdaptor ()</h3>
+<p>Destroys the adaptor.</p>
+<p><b>Warning:</b> Adaptors are destroyed automatically when the real object they refer to is destroyed. Do not delete the adaptors yourself.</p>
+<h3 class="fn"><a name="autoRelaySignals"></a>bool QDBusAbstractAdaptor::autoRelaySignals () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if automatic signal relaying from the real object (see object()) is enabled, otherwiser returns false.</p>
+<p>See also <a href="qdbusabstractadaptor.html#setAutoRelaySignals">setAutoRelaySignals</a>().</p>
+<h3 class="fn"><a name="setAutoRelaySignals"></a>void QDBusAbstractAdaptor::setAutoRelaySignals ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Toggles automatic signal relaying from the real object (see object()).</p>
+<p>Automatic signal relaying consists of signal-to-signal connection of the signals on the parent that have the exact same method signatue in both classes.</p>
+<p>If <i>enable</i> is set to true, connect the signals; if set to false, disconnect all signals.</p>
+<p>See also <a href="qdbusabstractadaptor.html#autoRelaySignals">autoRelaySignals</a>().</p>
+<hr />
+<h2>Macro Documentation</h2>
+<h3 class="fn"><a name="Q_NOREPLY"></a>Q_NOREPLY</h3>
+<p>The Q_NOREPLY macro can be used to mark a method to be called and not wait for it to finish processing before returning from <a href="qdbusabstractinterface.html#call">QDBusInterface::call</a>(). The called method cannot return any output arguments and, if it does, any such arguments will be discarded.</p>
+<p>You can use this macro in your own adaptors by placing it before your method's return value (which must be &quot;void&quot;) in the class declaration, as shown in the example:</p>
+<pre>         Q_NOREPLY void myMethod();</pre>
+<p>Its presence in the method implementation (outside the class declaration) is optional.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="usingadaptors.html">Using QtDBus Adaptors</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

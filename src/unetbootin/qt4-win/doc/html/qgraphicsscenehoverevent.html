@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicssceneevent.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsSceneHoverEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsSceneHoverEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsSceneHoverEvent class provides hover events in the graphics view framework. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsSceneHoverEvent&gt;</pre><p>Inherits <a href="qgraphicssceneevent.html">QGraphicsSceneEvent</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicsscenehoverevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicsscenehoverevent.html#dtor.QGraphicsSceneHoverEvent">~QGraphicsSceneHoverEvent</a></b> ()</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenehoverevent.html#lastPos">lastPos</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenehoverevent.html#lastScenePos">lastScenePos</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qgraphicsscenehoverevent.html#lastScreenPos">lastScreenPos</a></b> () const</li>
+<li><div class="fn"/>Qt::KeyboardModifiers <b><a href="qgraphicsscenehoverevent.html#modifiers">modifiers</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenehoverevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenehoverevent.html#scenePos">scenePos</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qgraphicsscenehoverevent.html#screenPos">screenPos</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qgraphicssceneevent.html#public-functions">QGraphicsSceneEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsSceneHoverEvent class provides hover events in the graphics view framework.</p>
+<p>When a <a href="qgraphicsview.html">QGraphicsView</a> receives a <a href="qhoverevent.html">QHoverEvent</a> event, it translates it into QGraphicsSceneHoverEvent. The event is then forwarded to the <a href="qgraphicsscene.html">QGraphicsScene</a> associated with the view.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>, <a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a>, <a href="qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a>, and <a href="qhoverevent.html">QHoverEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QGraphicsSceneHoverEvent"></a>QGraphicsSceneHoverEvent::~QGraphicsSceneHoverEvent ()</h3>
+<p>Destroys the event.</p>
+<h3 class="fn"><a name="lastPos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneHoverEvent::lastPos () const</h3>
+<p>Returns the last recorded mouse cursor position in item coordinates.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#lastScenePos">lastScenePos</a>(), <a href="qgraphicsscenehoverevent.html#lastScreenPos">lastScreenPos</a>(), and <a href="qgraphicsscenehoverevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="lastScenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneHoverEvent::lastScenePos () const</h3>
+<p>Returns the last recorded, the scene coordinates of the previous mouse or hover event received by the view, that created the event mouse cursor position in scene coordinates.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#lastPos">lastPos</a>(), <a href="qgraphicsscenehoverevent.html#lastScreenPos">lastScreenPos</a>(), and <a href="qgraphicsscenehoverevent.html#scenePos">scenePos</a>().</p>
+<h3 class="fn"><a name="lastScreenPos"></a><a href="qpoint.html">QPoint</a> QGraphicsSceneHoverEvent::lastScreenPos () const</h3>
+<p>Returns the last recorded mouse cursor position in screen coordinates. The last recorded position is the position of the previous mouse or hover event received by the view that created the event.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#lastPos">lastPos</a>(), <a href="qgraphicsscenehoverevent.html#lastScenePos">lastScenePos</a>(), and <a href="qgraphicsscenehoverevent.html#screenPos">screenPos</a>().</p>
+<h3 class="fn"><a name="modifiers"></a><a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> QGraphicsSceneHoverEvent::modifiers () const</h3>
+<p>Returns the keyboard modifiers at the moment the the hover event was sent.</p>
+<h3 class="fn"><a name="pos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneHoverEvent::pos () const</h3>
+<p>Returns the position of the mouse cursor in item coordinates at the moment the the hover event was sent.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#scenePos">scenePos</a>() and <a href="qgraphicsscenehoverevent.html#screenPos">screenPos</a>().</p>
+<h3 class="fn"><a name="scenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneHoverEvent::scenePos () const</h3>
+<p>Returns the position of the mouse cursor in scene coordinates at the moment the the hover event was sent.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#pos">pos</a>() and <a href="qgraphicsscenehoverevent.html#screenPos">screenPos</a>().</p>
+<h3 class="fn"><a name="screenPos"></a><a href="qpoint.html">QPoint</a> QGraphicsSceneHoverEvent::screenPos () const</h3>
+<p>Returns the position of the mouse cursor in screen coordinates at the moment the the hover event was sent.</p>
+<p>See also <a href="qgraphicsscenehoverevent.html#pos">pos</a>() and <a href="qgraphicsscenehoverevent.html#scenePos">scenePos</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

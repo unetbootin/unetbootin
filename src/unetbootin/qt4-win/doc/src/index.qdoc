@@ -1,0 +1,255 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page index.html
+
+    \keyword Qt Reference Documentation
+
+    \if defined(qtopiacore)
+        \if defined(opensourceedition)
+        \title Qt for Embedded Linux Reference Documentation (Open Source Edition)
+        \endif
+
+        \if defined(coreedition)
+        \title Qt for Embedded Linux Reference Documentation (Core Edition)
+        \endif
+
+        \if defined(desktoplightedition)
+        \title Qt for Embedded Linux Reference Documentation (Desktop Light Edition)
+        \endif
+
+        \if defined(desktopedition)
+        \title Qt for Embedded Linux Reference Documentation (Desktop Edition)
+        \endif
+
+        \if !defined(opensourceedition) \
+            && !defined(coreedition) \
+            && !defined(desktoplightedition) \
+            && !defined(desktopedition)
+        \title Qt for Embedded Linux Reference Documentation
+        \endif
+
+        \subtitle Qt for Embedded Linux
+    \endif
+    \if !defined(qtopiacore)
+        \if defined(opensourceedition)
+        \title Qt Reference Documentation (Open Source Edition)
+        \endif
+
+        \if defined(coreedition)
+        \title Qt Reference Documentation (Core Edition)
+        \endif
+
+        \if defined(desktoplightedition)
+        \title Qt Reference Documentation (Desktop Light Edition)
+        \endif
+
+        \if defined(desktopedition)
+        \title Qt Reference Documentation (Desktop Edition)
+        \endif
+
+        \if !defined(opensourceedition) \
+            && !defined(coreedition) \
+            && !defined(desktoplightedition) \
+            && !defined(desktopedition)
+        \title Qt Reference Documentation
+        \endif
+    \endif
+
+    \if defined(opensourceedition)
+    \bold{Note:} This edition is for the development of \l{Qt
+    Open Source Edition}{Free and Open Source} software only; see
+    \l{Qt Commercial Editions}.
+    \endif
+
+    \raw HTML
+        <table cellpadding="2" cellspacing="1" border="0" width="100%" bgcolor="#e5e5e5">
+        <tr>
+        <th bgcolor="#a2c511" width="33%">
+        Getting Started
+        </th>
+        <th bgcolor="#a2c511" width="33%">
+        General
+        </th>
+        <th bgcolor="#a2c511" width="33%">
+        Developer Resources
+        </th>
+        </tr>
+        <tr>
+        <td valign="top">
+        <ul>
+        <li><strong><a href="qt4-4-intro.html">What's New in Qt 4.4</a></strong></li>
+        <li><a href="how-to-learn-qt.html">How to Learn Qt</a></li>
+        <li><a href="installation.html">Installation</a></li>
+        <li><a href="tutorials.html">Tutorials</a> and <a href="examples.html">Examples</a></li>
+        <li><a href="porting4.html">Porting from Qt 3 to Qt 4</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="aboutqt.html">About Qt</a></li>
+        <li><a href="trolltech.html">About Trolltech</a></li>
+        <li><a href="commercialeditions.html">Commercial Edition</a></li>
+        <li><a href="opensourceedition.html">Open Source Edition</a></li>
+        <li><a href="http://www.trolltech.com/developer/faqs/">Frequently Asked Questions</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="http://lists.trolltech.com">Mailing Lists</a></li>
+        <li><a href="http://www.trolltech.com/developer/community/">Qt Community Web Sites</a></li>
+        <li><a href="http://doc.trolltech.com/qq/">Qt Quarterly</a></li>
+        <li><a href="bughowto.html">How to Report a Bug</a></li>
+        <li><a href="http://www.trolltech.com/developer/">Other Online Resources</a></li>
+        </ul>
+        </td>
+        </tr>
+        <tr>
+        <th bgcolor="#a2c511">
+        API Reference
+        </th>
+        <th bgcolor="#a2c511">
+        Core Features
+        </th>
+        <th bgcolor="#a2c511">
+        Key Technologies
+        </th>
+        </tr>
+        <tr>
+        <td valign="top">
+        <ul>
+        <li><a href="classes.html">All Classes</a></li>
+        <li><a href="mainclasses.html">Main Classes</a></li>
+        <li><a href="groups.html">Grouped Classes</a></li>
+        <li><a href="annotated.html">Annotated Classes</a></li>
+        <li><a href="modules.html">Qt Classes by Module</a></li>
+        <li><a href="namespaces.html">All Namespaces</a></li>
+        <li><a href="hierarchy.html">Inheritance Hierarchy</a></li>
+        <li><a href="functions.html">All Functions</a></li>
+        <li><a href="qt-embedded.html">Qt for Embedded Linux</a></li>
+        <li><a href="overviews.html">All Overviews and HOWTOs</a></li>
+        <li><a href="gallery.html">Qt Widget Gallery</a></li>
+        <li><a href="http://doc.trolltech.com/extras/qt43-class-chart.pdf">Class Chart</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="signalsandslots.html">Signals and Slots</a></li>
+        <li><a href="object.html">Object Model</a></li>
+        <li><a href="layout.html">Layout Management</a></li>
+        <li><a href="qt4-mainwindow.html">Main Window Architecture</a></li>
+        <li><a href="paintsystem.html">Paint System</a></li>
+        <li><a href="graphicsview.html">Graphics View</a></li>
+        <li><a href="accessible.html">Accessibility</a></li>
+        <li><a href="containers.html">Tool and Container Classes</a></li>
+        <li><a href="richtext.html">Rich Text Processing</a></li>
+        <li><a href="i18n.html">Internationalization</a></li>
+        <li><a href="plugins-howto.html">Plugin System</a></li>
+        <li><a href="threads.html">Multithreaded Programming</a></li>
+        <li><a href="intro-to-dbus.html">Inter-process Communication</a></li>
+        <li><a href="qtestlib-manual.html">Unit Testing Framework</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="model-view-programming.html">Model/View Programming</a></li>
+        <li><a href="stylesheet.html">Style Sheets</a></li>
+        <li><a href="qthelp.html">Help Module</a></li>
+        <li><a href="qtnetwork.html">Network Module</a></li>
+        <li><a href="qtopengl.html">OpenGL Module</a></li>
+        <li><a href="qtscript.html">Script Module</a></li>
+        <li><a href="qtsql.html">SQL Module</a></li>
+        <li><a href="qtsvg.html">SVG Module</a></li>
+        <li><a href="qtwebkit.html">WebKit Integration</a></li>
+        <li><a href="qtxml.html">XML Module</a></li>
+        <li><a href="qtxmlpatterns.html">XML Patterns: XQuery &amp; XPath</a></li>
+        <li><a href="phonon-module.html">Phonon Multimedia Framework</a></li>
+        <li><a href="activeqt.html">ActiveQt Framework</a></li>
+        </ul>
+        </td>
+        </tr>
+        <tr>
+        <th bgcolor="#a2c511">
+        Add-ons &amp; Services
+        </th>
+        <th bgcolor="#a2c511">
+        Tools
+        </th>
+        <th bgcolor="#a2c511">
+        Licenses &amp; Credits
+        </th>
+        </tr>
+        <tr>
+        <td valign="top">
+        <ul>
+        <li><a href="http://www.trolltech.com/products/qt/addon/solutions/">Qt Solutions</a></li>
+        <li><a href="http://www.trolltech.com/products/qt/3rdparty/">Partner Add-ons</a></li>
+        <li><a href="http://qt-apps.org">Third-Party Qt Components (qt-apps.org)</a></li>
+        <li><a href="http://www.trolltech.com/support/">Support</a></li>
+        <li><a href="http://www.trolltech.com/support/training/">Training</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="designer-manual.html">Qt Designer</a></li>
+        <li><a href="assistant-manual.html">Qt Assistant</a></li>
+        <li><a href="linguist-manual.html">Qt Linguist</a></li>
+        <li><a href="qmake-manual.html">qmake</a></li>
+        <li><a href="qttools.html">All Tools</a></li>
+        </ul>
+        </td>
+        <td valign="top">
+        <ul>
+        <li><a href="gpl.html">GNU General Public License</a></li>
+        <li><a href="3rdparty.html">Third-Party Licenses Used in Qt</a></li>
+        <li><a href="licenses.html">Other Licenses Used in Qt</a></li>
+        <li><a href="trademarks.html">Trademark Information</a></li>
+        <li><a href="credits.html">Credits</a></li>
+        </ul>
+        </td>
+        </tr>
+        </table>
+    \endraw
+
+*/

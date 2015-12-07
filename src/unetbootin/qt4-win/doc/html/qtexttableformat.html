@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextformat.cpp -->
+<head>
+  <title>Qt 4.4: QTextTableFormat Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextTableFormat Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextTableFormat class provides formatting information for tables in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextTableFormat&gt;</pre><p>Inherits <a href="qtextframeformat.html">QTextFrameFormat</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtexttableformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtexttableformat.html#QTextTableFormat">QTextTableFormat</a></b> ()</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qtexttableformat.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtexttableformat.html#cellPadding">cellPadding</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtexttableformat.html#cellSpacing">cellSpacing</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#clearColumnWidthConstraints">clearColumnWidthConstraints</a></b> ()</li>
+<li><div class="fn"/>QVector&lt;QTextLength&gt; <b><a href="qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttableformat.html#columns">columns</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttableformat.html#headerRowCount">headerRowCount</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtexttableformat.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#setAlignment">setAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#setCellPadding">setCellPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#setCellSpacing">setCellSpacing</a></b> ( qreal <i>spacing</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a></b> ( const QVector&lt;QTextLength&gt; &amp; <i>constraints</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttableformat.html#setHeaderRowCount">setHeaderRowCount</a></b> ( int <i>count</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qtextframeformat.html#public-functions">QTextFrameFormat</a></li>
+<li><div class="fn"/>49 public functions inherited from <a href="qtextformat.html#public-functions">QTextFormat</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextTableFormat class provides formatting information for tables in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A table is a group of cells ordered into rows and columns. Each table contains at least one row and one column. Each cell contains a block. Tables in rich text documents are formatted using the properties defined in this class.</p>
+<p>Tables are horizontally justified within their parent frame according to the table's alignment. This can be read with the <a href="qtexttableformat.html#alignment">alignment</a>() function and set with <a href="qtexttableformat.html#setAlignment">setAlignment</a>().</p>
+<p>Cells within the table are separated by cell spacing. The number of pixels between cells is set with <a href="qtexttableformat.html#setCellSpacing">setCellSpacing</a>() and read with <a href="qtexttableformat.html#cellSpacing">cellSpacing</a>(). The contents of each cell is surrounded by cell padding. The number of pixels between each cell edge and its contents is set with <a href="qtexttableformat.html#setCellPadding">setCellPadding</a>() and read with <a href="qtexttableformat.html#cellPadding">cellPadding</a>().</p>
+<p align="center"><img src="images/qtexttableformat-cell.png" /></p><p>The table's background color can be read with the <a href="qtextformat.html#background">background</a>() function, and can be specified with <a href="qtextformat.html#setBackground">setBackground</a>(). The background color of each cell can be set independently, and will control the color of the cell within the padded area.</p>
+<p>The table format also provides a way to constrain the widths of the columns in the table. Columns can be assigned a fixed width, a variable width, or a percentage of the available width (see <a href="qtextlength.html">QTextLength</a>). The <a href="qtexttableformat.html#columns">columns</a>() function returns the number of columns with constraints, and the <a href="qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() function returns the constraints defined for the table. These quantities can also be set by calling <a href="qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>() with a vector containing new constraints. If no constraints are required, <a href="qtexttableformat.html#clearColumnWidthConstraints">clearColumnWidthConstraints</a>() can be used to remove them.</p>
+<p>See also <a href="qtexttable.html">QTextTable</a>, <a href="qtexttablecell.html">QTextTableCell</a>, and <a href="qtextlength.html">QTextLength</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextTableFormat"></a>QTextTableFormat::QTextTableFormat ()</h3>
+<p>Constructs a new table format object.</p>
+<h3 class="fn"><a name="alignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QTextTableFormat::alignment () const</h3>
+<p>Returns the table's alignment.</p>
+<p>See also <a href="qtexttableformat.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="cellPadding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableFormat::cellPadding () const</h3>
+<p>Returns the table's cell padding. This describes the distance between the border of a cell and its contents.</p>
+<p>See also <a href="qtexttableformat.html#setCellPadding">setCellPadding</a>().</p>
+<h3 class="fn"><a name="cellSpacing"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableFormat::cellSpacing () const</h3>
+<p>Returns the table's cell spacing. This describes the distance between adjacent cells.</p>
+<p>See also <a href="qtexttableformat.html#setCellSpacing">setCellSpacing</a>().</p>
+<h3 class="fn"><a name="clearColumnWidthConstraints"></a>void QTextTableFormat::clearColumnWidthConstraints ()</h3>
+<p>Clears the column width constraints for the table.</p>
+<p>See also <a href="qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() and <a href="qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>().</p>
+<h3 class="fn"><a name="columnWidthConstraints"></a><a href="qvector.html">QVector</a>&lt;<a href="qtextlength.html">QTextLength</a>&gt; QTextTableFormat::columnWidthConstraints () const</h3>
+<p>Returns a list of constraints used by this table format to control the appearance of columns in a table.</p>
+<p>See also <a href="qtexttableformat.html#setColumnWidthConstraints">setColumnWidthConstraints</a>().</p>
+<h3 class="fn"><a name="columns"></a>int QTextTableFormat::columns () const</h3>
+<p>Returns the number of columns specified by the table format.</p>
+<h3 class="fn"><a name="headerRowCount"></a>int QTextTableFormat::headerRowCount () const</h3>
+<p>Returns the number of rows in the table that define the header.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtexttableformat.html#setHeaderRowCount">setHeaderRowCount</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextTableFormat::isValid () const</h3>
+<p>Returns true if this table format is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="setAlignment"></a>void QTextTableFormat::setAlignment ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the table's <i>alignment</i>.</p>
+<p>See also <a href="qtexttableformat.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setCellPadding"></a>void QTextTableFormat::setCellPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the cell <i>padding</i> for the table. This determines the distance between the border of a cell and its contents.</p>
+<p>See also <a href="qtexttableformat.html#cellPadding">cellPadding</a>().</p>
+<h3 class="fn"><a name="setCellSpacing"></a>void QTextTableFormat::setCellSpacing ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the cell <i>spacing</i> for the table. This determines the distance between adjacent cells.</p>
+<p>See also <a href="qtexttableformat.html#cellSpacing">cellSpacing</a>().</p>
+<h3 class="fn"><a name="setColumnWidthConstraints"></a>void QTextTableFormat::setColumnWidthConstraints ( const <a href="qvector.html">QVector</a>&lt;<a href="qtextlength.html">QTextLength</a>&gt; &amp; <i>constraints</i> )</h3>
+<p>Sets the column width <i>constraints</i> for the table.</p>
+<p>See also <a href="qtexttableformat.html#columnWidthConstraints">columnWidthConstraints</a>() and <a href="qtexttableformat.html#clearColumnWidthConstraints">clearColumnWidthConstraints</a>().</p>
+<h3 class="fn"><a name="setHeaderRowCount"></a>void QTextTableFormat::setHeaderRowCount ( int <i>count</i> )</h3>
+<p>Declares the first <i>count</i> rows of the table as table header. The table header rows get repeated when a table is broken across a page boundary.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtexttableformat.html#headerRowCount">headerRowCount</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

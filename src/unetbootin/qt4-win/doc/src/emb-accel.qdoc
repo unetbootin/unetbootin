@@ -1,0 +1,145 @@
+/****************************************************************************
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-accel.html
+
+    \target add your graphics driver to Qt for Embedded Linux
+
+    \title Adding an Accelerated Graphics Driver to Qt for Embedded Linux
+    \ingroup qt-embedded
+
+    In \l{Qt for Embedded Linux}, painting is a pure software implementation
+    normally performed in two steps. First, each window is rendered
+    onto a QWSWindowSurface using QPaintEngine. Second, the server
+    composes the surface images and copies the composition to the
+    screen (see \l{Qt for Embedded Linux Architecture} for details).
+    \l{Qt for Embedded Linux} uses QRasterPaintEngine (a raster-based implementation of
+    QPaintEngine) to implement painting operations, and uses QScreen
+    to implement window composition.
+
+    It is possible to add an accelerated graphics driver to take
+    advantage of available hardware resources. This is described in
+    detail in the \l {Accelerated Graphics Driver Example} which uses
+    the following approach:
+
+    \tableofcontents
+
+    \warning This feature is under development and is subject to
+    change.
+
+    \section1 Step 1: Create a Custom Screen
+
+    Create a custom screen by deriving from the QScreen class.
+
+    The \l {QScreen::}{connect()}, \l {QScreen::}{disconnect()}, \l
+    {QScreen::}{initDevice()} and \l {QScreen::}{shutdownDevice()}
+    functions are declared as pure virtual functions in QScreen and
+    must be implemented. These functions are used to configure the
+    hardware, or query its configuration. The \l
+    {QScreen::}{connect()} and \l {QScreen::}{disconnect()} are called
+    by both the server and client processes, while the \l
+    {QScreen::}{initDevice()} and \l {QScreen::}{shutdownDevice()}
+    functions are only called by the server process.
+
+    You might want to accelerate the final copying to the screen by
+    reimplementing the \l {QScreen::}{blit()} and \l
+    {QScreen::}{solidFill()} functions.
+
+    \section1 Step 2: Implement a Custom Raster Paint Engine
+
+    Implement the painting operations by subclassing the
+    QRasterPaintEngine class.
+
+    To accelerate a graphics primitive, simply reimplement the
+    corresponding function in your custom paint engine. If there is
+    functionality you do not want to reimplement (such as certain
+    pens, brushes, modes, etc.), you can just call the corresponding
+    base class implementation.
+
+    \section1 Step 3: Make the Paint Device Aware of Your Paint Engine
+
+    To activate your paint engine you must create a subclass of the
+    QCustomRasterPaintDevice class and reimplement its \l
+    {QCustomRasterPaintDevice::}{paintEngine()} function. Let this
+    function return a pointer to your paint engine. In addition, the
+    QCustomRasterPaintDevice::memory() function must be reimplemented
+    to return a pointer to the buffer where the painting should be
+    done.
+
+    \table
+    \header \o Acceleration Without a Memory Buffer
+    \row
+    \o
+
+    By default the QRasterPaintEngine draws into a memory buffer (this can
+    be local memory, shared memory or graphics memory mapped into
+    application memory).
+    In some cases you might want to avoid using a memory buffer directly,
+    e.g if you want to use an accelerated graphic controller to handle all
+    the buffer manipulation. This can be implemented by  reimplementing
+    the QCustomRasterPaintDevice::memory() function to return 0 (meaning
+    no buffer available). Then, whenever a color or image buffer normally
+    would be written into paint engine buffer, the paint engine will call the
+    QRasterPaintEngine::drawColorSpans() and
+    QRasterPaintEngine::drawBufferSpan() functions instead.
+
+    Note that the default implementations of these functions only
+    calls qFatal() with an error message; reimplement the functions
+    and let them do the appropriate communication with the accelerated
+    graphics controller.
+
+    \endtable
+
+    \section1 Step 4: Make the Window Surface Aware of Your Paint Device
+
+    Derive from the QWSWindowSurface class and reimplement its \l
+    {QWSWindowSurface::}{paintDevice()} function. Make this function
+    return a pointer to your custom raster paint device.
+
+    \section1 Step 5: Enable Creation of an Instance of Your Window Surface
+
+    Finally, reimplement QScreen's \l {QScreen::}{createSurface()}
+    function and make this function able to create an instance of your
+    QWSWindowSurface subclass.
+*/

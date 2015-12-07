@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3combobox.cpp -->
+<head>
+  <title>Qt 4.4: Q3ComboBox Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ComboBox Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ComboBox widget is a combined button and popup list. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ComboBox&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qcombobox">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="q3combobox-members.html">List of all members, including inherited members</a></li>
+<li><a href="q3combobox-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3combobox.html#Policy-enum">Policy</a></b> { NoInsertion, AtTop, AtCurrent, AtBottom, AfterCurrent, BeforeCurrent }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3combobox.html#autoCompletion-prop">autoCompletion</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3combobox.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="q3combobox.html#currentItem-prop">currentItem</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3combobox.html#currentText-prop">currentText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3combobox.html#duplicatesEnabled-prop">duplicatesEnabled</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3combobox.html#editable-prop">editable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3combobox.html#insertionPolicy-prop">insertionPolicy</a></b> : Policy</li>
+<li><div class="fn"/><b><a href="q3combobox.html#maxCount-prop">maxCount</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3combobox.html#sizeLimit-prop">sizeLimit</a></b> : int</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3combobox.html#Q3ComboBox">Q3ComboBox</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3combobox.html#Q3ComboBox-2">Q3ComboBox</a></b> ( bool <i>rw</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3combobox.html#dtor.Q3ComboBox">~Q3ComboBox</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3combobox.html#autoCompletion-prop">autoCompletion</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3combobox.html#autoResize">autoResize</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#changeItem">changeItem</a></b> ( const QString &amp; <i>t</i>, int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#changeItem-2">changeItem</a></b> ( const QPixmap &amp; <i>im</i>, int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#changeItem-3">changeItem</a></b> ( const QPixmap &amp; <i>im</i>, const QString &amp; <i>t</i>, int <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="q3combobox.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3combobox.html#currentItem-prop">currentItem</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3combobox.html#currentText-prop">currentText</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3combobox.html#duplicatesEnabled-prop">duplicatesEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3combobox.html#editable-prop">editable</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#hide">hide</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertItem">insertItem</a></b> ( const QString &amp; <i>t</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertItem-2">insertItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertItem-3">insertItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, const QString &amp; <i>text</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertStrList">insertStrList</a></b> ( const char ** <i>strings</i>, int <i>numStrings</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertStrList-2">insertStrList</a></b> ( const Q3StrList &amp; <i>list</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertStrList-3">insertStrList</a></b> ( const Q3StrList * <i>list</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#insertStringList">insertStringList</a></b> ( const QStringList &amp; <i>list</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>Policy <b><a href="q3combobox.html#insertionPolicy-prop">insertionPolicy</a></b> () const</li>
+<li><div class="fn"/>QLineEdit * <b><a href="q3combobox.html#lineEdit">lineEdit</a></b> () const</li>
+<li><div class="fn"/>Q3ListBox * <b><a href="q3combobox.html#listBox">listBox</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3combobox.html#maxCount-prop">maxCount</a></b> () const</li>
+<li><div class="fn"/>const QPixmap * <b><a href="q3combobox.html#pixmap">pixmap</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#popup">popup</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#removeItem">removeItem</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#autoCompletion-prop">setAutoCompletion</a></b> ( bool )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#setAutoResize">setAutoResize</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#currentItem-prop">setCurrentItem</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#currentText-prop">setCurrentText</a></b> ( const QString &amp; )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#duplicatesEnabled-prop">setDuplicatesEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#editable-prop">setEditable</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#setEnabled">setEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#setFont">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#insertionPolicy-prop">setInsertionPolicy</a></b> ( Policy <i>policy</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#setLineEdit">setLineEdit</a></b> ( QLineEdit * <i>edit</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#setListBox">setListBox</a></b> ( Q3ListBox * <i>newListBox</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#maxCount-prop">setMaxCount</a></b> ( int )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#setPalette">setPalette</a></b> ( const QPalette &amp; <i>palette</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#sizeLimit-prop">setSizeLimit</a></b> ( int )</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#setValidator">setValidator</a></b> ( const QValidator * <i>v</i> )</li>
+<li><div class="fn"/>int <b><a href="q3combobox.html#sizeLimit-prop">sizeLimit</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3combobox.html#text">text</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>const QValidator * <b><a href="q3combobox.html#validator">validator</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3combobox.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#clearEdit">clearEdit</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#clearValidator">clearValidator</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3combobox.html#setEditText">setEditText</a></b> ( const QString &amp; <i>newText</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3combobox.html#activated">activated</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#activated-2">activated</a></b> ( const QString &amp; <i>string</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#highlighted">highlighted</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#highlighted-2">highlighted</a></b> ( const QString &amp; <i>string</i> )</li>
+<li><div class="fn"/>void <b><a href="q3combobox.html#textChanged">textChanged</a></b> ( const QString &amp; <i>string</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3combobox.html#updateMask">updateMask</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ComboBox widget is a combined button and popup list.</p>
+<p>A combobox is a selection widget which displays the current item and can pop up a list of items. A combobox may be editable in which case the user can enter arbitrary strings.</p>
+<p>Comboboxes provide a means of showing the user's current choice out of a list of options in a way that takes up the minimum amount of screen space.</p>
+<p>Q3ComboBox supports three different display styles: Aqua/Motif 1.x, Motif 2.0 and Windows. In Motif 1.x, a combobox was called XmOptionMenu. In Motif 2.0, OSF introduced an improved combobox and named that XmComboBox. Q3ComboBox provides both.</p>
+<p>Q3ComboBox provides two different constructors. The simplest constructor creates an &quot;old-style&quot; combobox in Motif (or Aqua) style:</p>
+<pre>         Q3ComboBox *c = new Q3ComboBox(this, tr(&quot;read-only combobox&quot;));</pre>
+<p>The other constructor creates a new-style combobox in Motif style, and can create both read-only and editable comboboxes:</p>
+<pre>         Q3ComboBox *c1 = new Q3ComboBox(false, this, tr(&quot;read-only combobox&quot;));
+         Q3ComboBox *c2 = new Q3ComboBox(true, this, tr(&quot;editable combobox&quot;));</pre>
+<p>New-style comboboxes use a list box in both Motif and Windows styles, and both the content size and the on-screen size of the list box can be limited with <a href="q3combobox.html#sizeLimit-prop">sizeLimit</a>() and <a href="q3combobox.html#maxCount-prop">setMaxCount</a>() respectively. Old-style comboboxes use a popup in Aqua and Motif style, and that popup will happily grow larger than the desktop if you put enough data into it.</p>
+<p>The two constructors create identical-looking comboboxes in Windows style.</p>
+<p>Comboboxes can contain pixmaps as well as strings; the <a href="q3combobox.html#insertItem">insertItem</a>() and <a href="q3combobox.html#changeItem">changeItem</a>() functions are suitably overloaded. For editable comboboxes, the function <a href="q3combobox.html#clearEdit">clearEdit</a>() is provided, to clear the displayed string without changing the combobox's contents.</p>
+<p>A combobox emits two signals, <a href="q3combobox.html#activated">activated</a>() and <a href="q3combobox.html#highlighted">highlighted</a>(), when a new item has been activated (selected) or highlighted (made current). Both signals exist in two versions, one with a <tt>QString</tt> argument and one with an <tt>int</tt> argument. If the user highlights or activates a pixmap, only the <tt>int</tt> signals are emitted. Whenever the text of an editable combobox is changed the <a href="q3combobox.html#textChanged">textChanged</a>() signal is emitted.</p>
+<p>When the user enters a new string in an editable combobox, the widget may or may not insert it, and it can insert it in several locations. The default policy is is <tt>AtBottom</tt> but you can change this using <a href="q3combobox.html#insertionPolicy-prop">setInsertionPolicy</a>().</p>
+<p>It is possible to constrain the input to an editable combobox using <a href="qvalidator.html">QValidator</a>; see <a href="q3combobox.html#setValidator">setValidator</a>(). By default, any input is accepted.</p>
+<p>If the combobox is not editable then it has a default <a href="qwidget.html#focusPolicy-prop">focusPolicy</a>() of <tt>TabFocus</tt>, i.e&#x2e; it will not grab focus if clicked. This differs from both Windows and Motif. If the combobox is editable then it has a default <a href="qwidget.html#focusPolicy-prop">focusPolicy</a>() of <tt>StrongFocus</tt>, i.e&#x2e; it will grab focus if clicked.</p>
+<p>A combobox can be populated using the insert functions, <a href="q3combobox.html#insertStringList">insertStringList</a>() and <a href="q3combobox.html#insertItem">insertItem</a>() for example. Items can be changed with <a href="q3combobox.html#changeItem">changeItem</a>(). An item can be removed with <a href="q3combobox.html#removeItem">removeItem</a>() and all items can be removed with <a href="q3combobox.html#clear">clear</a>(). The text of the current item is returned by <a href="q3combobox.html#currentText-prop">currentText</a>(), and the text of a numbered item is returned with <a href="q3combobox.html#text">text</a>(). The current item can be set with <a href="q3combobox.html#currentItem-prop">setCurrentItem</a>() or <a href="q3combobox.html#currentText-prop">setCurrentText</a>(). The number of items in the combobox is returned by <a href="q3combobox.html#count-prop">count</a>(); the maximum number of items can be set with <a href="q3combobox.html#maxCount-prop">setMaxCount</a>(). You can allow editing using <a href="q3combobox.html#editable-prop">setEditable</a>(). For editable comboboxes you can set auto-completion using <a href="q3combobox.html#autoCompletion-prop">setAutoCompletion</a>() and whether or not the user can add duplicates is set with <a href="q3combobox.html#duplicatesEnabled-prop">setDuplicatesEnabled</a>().</p>
+<p>Depending on the style, Q3ComboBox will use a list box or a popup menu to display the list of items. See <a href="q3combobox.html#setListBox">setListBox</a>() for more information.</p>
+<p>{GUI Design Handbook}{GUI Design Handbook: Combo Box, Drop-Down List Box}</p>
+<p>See also <a href="qcombobox.html">QComboBox</a>, <a href="qlineedit.html">QLineEdit</a>, and <a href="qspinbox.html">QSpinBox</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Policy-enum"></a>enum Q3ComboBox::Policy</h3>
+<p>This enum specifies what the <a href="q3combobox.html">Q3ComboBox</a> should do when a new string is entered by the user.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3ComboBox::NoInsertion</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">the string will not be inserted into the combobox.</td></tr>
+<tr><td valign="top"><tt>Q3ComboBox::AtTop</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">insert the string as the first item in the combobox.</td></tr>
+<tr><td valign="top"><tt>Q3ComboBox::AtCurrent</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">replace the previously selected item with the string the user has entered.</td></tr>
+<tr><td valign="top"><tt>Q3ComboBox::AtBottom</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">insert the string as the last item in the combobox.</td></tr>
+<tr><td valign="top"><tt>Q3ComboBox::AfterCurrent</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">insert the string after the previously selected item.</td></tr>
+<tr><td valign="top"><tt>Q3ComboBox::BeforeCurrent</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">insert the string before the previously selected item.</td></tr>
+</table></p>
+<p><a href="q3combobox.html#activated">activated</a>() is always emitted when the string is entered.</p>
+<p>If inserting the new string would cause the combobox to breach its content size limit, the item at the other end of the list is deleted. The definition of &quot;other end&quot; is implementation-dependent.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoCompletion-prop"></a>autoCompletion : bool</h3>
+<p>This property holds whether auto-completion is enabled.</p>
+<p>This property can only be set for editable comboboxes, for non-editable comboboxes it has no effect. It is false by default.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoCompletion () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoCompletion ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of items in the combobox.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="currentItem-prop"></a>currentItem : int</h3>
+<p>This property holds the index of the current item in the combobox.</p>
+<p>Note that the <a href="q3combobox.html#activated">activated</a>() and <a href="q3combobox.html#highlighted">highlighted</a>() signals are only emitted when the user changes the current item, not when it is changed programmatically.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentItem () const</b></li>
+<li><div class="fn"/><b>virtual void setCurrentItem ( int <i>index</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="currentText-prop"></a>currentText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text of the combobox's current item.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString currentText () const</b></li>
+<li><div class="fn"/><b>virtual void setCurrentText ( const QString &amp; )</b></li>
+</ul>
+<h3 class="fn"><a name="duplicatesEnabled-prop"></a>duplicatesEnabled : bool</h3>
+<p>This property holds whether duplicates are allowed.</p>
+<p>If the combobox is editable and the user enters some text in the combobox's lineedit and presses Enter (and the <a href="q3combobox.html#insertionPolicy-prop">insertionPolicy</a>() is not <tt>NoInsertion</tt>), then what happens is this:</p>
+<ul>
+<li>If the text is not already in the list, the text is inserted.</li>
+<li>If the text is in the list and this property is true (the default), the text is inserted.</li>
+<li>If the text is in the list and this property is false, the text is <i>not</i> inserted; instead the item which has matching text becomes the current item.</li>
+</ul>
+<p>This property only affects user-interaction. You can use <a href="q3combobox.html#insertItem">insertItem</a>() to insert duplicates if you wish regardless of this setting.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool duplicatesEnabled () const</b></li>
+<li><div class="fn"/><b>void setDuplicatesEnabled ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="editable-prop"></a>editable : bool</h3>
+<p>This property holds whether the combobox is editable.</p>
+<p>This property's default is false. Note that the combobox will be cleared if this property is set to true for a 1.x Motif style combobox. To avoid this, use setEditable() before inserting any items. Also note that the 1.x version of Motif didn't have any editable comboboxes, so the combobox will change its appearance to a 2.0 style Motif combobox is it is set to be editable.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool editable () const</b></li>
+<li><div class="fn"/><b>void setEditable ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="insertionPolicy-prop"></a>insertionPolicy : <a href="q3combobox.html#Policy-enum">Policy</a></h3>
+<p>This property holds the position of the items inserted by the user.</p>
+<p>The default insertion policy is <tt>AtBottom</tt>. See <a href="q3combobox.html#Policy-enum">Policy</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Policy insertionPolicy () const</b></li>
+<li><div class="fn"/><b>virtual void setInsertionPolicy ( Policy <i>policy</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maxCount-prop"></a>maxCount : int</h3>
+<p>This property holds the maximum number of items allowed in the combobox.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int maxCount () const</b></li>
+<li><div class="fn"/><b>virtual void setMaxCount ( int )</b></li>
+</ul>
+<h3 class="fn"><a name="sizeLimit-prop"></a>sizeLimit : int</h3>
+<p>This property holds the maximum on-screen size of the combobox.</p>
+<p>This property is ignored for both Motif 1.x style and non-editable comboboxes in Mac style. The default limit is ten lines. If the number of items in the combobox is or grows larger than lines, a scroll bar is added.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int sizeLimit () const</b></li>
+<li><div class="fn"/><b>virtual void setSizeLimit ( int )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ComboBox"></a>Q3ComboBox::Q3ComboBox ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a combobox widget with parent <i>parent</i> called <i>name</i>.</p>
+<p>This constructor creates a popup list if the program uses Motif (or Aqua) look and feel; this is compatible with Motif 1.x and Aqua.</p>
+<p>Note: If you use this constructor to create your <a href="q3combobox.html">Q3ComboBox</a>, then the <a href="q3combobox.html#pixmap">pixmap</a>() function will always return 0. To workaround this, use the other constructor.</p>
+<h3 class="fn"><a name="Q3ComboBox-2"></a>Q3ComboBox::Q3ComboBox ( bool <i>rw</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a combobox with a maximum size and either Motif 2.0 or Windows look and feel.</p>
+<p>The input field can be edited if <i>rw</i> is true, otherwise the user may only choose one of the items in the combobox.</p>
+<p>The <i>parent</i> and <i>name</i> arguments are passed on to the <a href="qwidget.html">QWidget</a> constructor.</p>
+<h3 class="fn"><a name="dtor.Q3ComboBox"></a>Q3ComboBox::~Q3ComboBox ()</h3>
+<p>Destroys the combobox.</p>
+<h3 class="fn"><a name="activated"></a>void Q3ComboBox::activated ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new item has been activated (selected). The <i>index</i> is the position of the item in the combobox.</p>
+<p>This signal is not emitted if the item is changed programmatically, e.g&#x2e; using <a href="q3combobox.html#currentItem-prop">setCurrentItem</a>().</p>
+<h3 class="fn"><a name="activated-2"></a>void Q3ComboBox::activated ( const <a href="qstring.html">QString</a> &amp; <i>string</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when a new item has been activated (selected). <i>string</i> is the selected string.</p>
+<p>You can also use the activated(int) signal, but be aware that its argument is meaningful only for selected strings, not for user entered strings.</p>
+<h3 class="fn"><a name="autoResize"></a>bool Q3ComboBox::autoResize () const</h3>
+<p>Returns true if auto-resize is enabled; otherwise returns false.</p>
+<p>See also <a href="q3combobox.html#setAutoResize">setAutoResize</a>() and <a href="q3combobox-obsolete.html#autoResize-prop">autoResize</a>.</p>
+<h3 class="fn"><a name="changeItem"></a>void Q3ComboBox::changeItem ( const <a href="qstring.html">QString</a> &amp; <i>t</i>, int <i>index</i> )</h3>
+<p>Replaces the item at position <i>index</i> with the text <i>t</i>.</p>
+<h3 class="fn"><a name="changeItem-2"></a>void Q3ComboBox::changeItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>im</i>, int <i>index</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Replaces the item at position <i>index</i> with the pixmap <i>im</i>, unless the combobox is editable.</p>
+<p>See also <a href="q3combobox.html#insertItem">insertItem</a>().</p>
+<h3 class="fn"><a name="changeItem-3"></a>void Q3ComboBox::changeItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>im</i>, const <a href="qstring.html">QString</a> &amp; <i>t</i>, int <i>index</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Replaces the item at position <i>index</i> with the pixmap <i>im</i> and the text <i>t</i>.</p>
+<p>See also <a href="q3combobox.html#insertItem">insertItem</a>().</p>
+<h3 class="fn"><a name="clear"></a>void Q3ComboBox::clear ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Removes all combobox items.</p>
+<h3 class="fn"><a name="clearEdit"></a>void Q3ComboBox::clearEdit ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Clears the line edit without changing the combobox's contents. Does nothing if the combobox isn't editable.</p>
+<p>This is particularly useful when using a combobox as a line edit with history. For example you can connect the combobox's <a href="q3combobox.html#activated">activated</a>() signal to clearEdit() in order to present the user with a new, empty line as soon as Enter is pressed.</p>
+<p>See also <a href="q3combobox.html#setEditText">setEditText</a>().</p>
+<h3 class="fn"><a name="clearValidator"></a>void Q3ComboBox::clearValidator ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This slot is equivalent to setValidator( 0 ).</p>
+<h3 class="fn"><a name="hide"></a>void Q3ComboBox::hide ()</h3>
+<p>Hides the combobox.</p>
+<p>See also <a href="qwidget.html#hide">QWidget::hide</a>().</p>
+<h3 class="fn"><a name="highlighted"></a>void Q3ComboBox::highlighted ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new item has been set to be the current item. The <i>index</i> is the position of the item in the combobox.</p>
+<p>This signal is not emitted if the item is changed programmatically, e.g&#x2e; using <a href="q3combobox.html#currentItem-prop">setCurrentItem</a>().</p>
+<h3 class="fn"><a name="highlighted-2"></a>void Q3ComboBox::highlighted ( const <a href="qstring.html">QString</a> &amp; <i>string</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when a new item has been set to be the current item. <i>string</i> is the item's text.</p>
+<p>You can also use the highlighted(int) signal.</p>
+<h3 class="fn"><a name="insertItem"></a>void Q3ComboBox::insertItem ( const <a href="qstring.html">QString</a> &amp; <i>t</i>, int <i>index</i> = -1 )</h3>
+<p>Inserts a text item with text <i>t</i>, at position <i>index</i>. The item will be appended if <i>index</i> is negative.</p>
+<h3 class="fn"><a name="insertItem-2"></a>void Q3ComboBox::insertItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a <i>pixmap</i> item at position <i>index</i>. The item will be appended if <i>index</i> is negative.</p>
+<h3 class="fn"><a name="insertItem-3"></a>void Q3ComboBox::insertItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a <i>pixmap</i> item with additional text <i>text</i> at position <i>index</i>. The item will be appended if <i>index</i> is negative.</p>
+<h3 class="fn"><a name="insertStrList"></a>void Q3ComboBox::insertStrList ( const char ** <i>strings</i>, int <i>numStrings</i> = -1, int <i>index</i> = -1 )</h3>
+<p>Inserts the array of char * <i>strings</i> at position <i>index</i> in the combobox.</p>
+<p>The <i>numStrings</i> argument is the number of strings. If <i>numStrings</i> is -1 (default), the <i>strings</i> array must be terminated with 0.</p>
+<p>Example:</p>
+<pre>         static const char* items[] = { &quot;red&quot;, &quot;green&quot;, &quot;blue&quot;, 0 };
+         combo-&gt;insertStrList( items );</pre>
+<p>See also <a href="q3combobox.html#insertStringList">insertStringList</a>().</p>
+<h3 class="fn"><a name="insertStrList-2"></a>void Q3ComboBox::insertStrList ( const <a href="q3strlist.html">Q3StrList</a> &amp; <i>list</i>, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the <i>list</i> of strings at position <i>index</i> in the combobox.</p>
+<p>This is only for compatibility since it does not support Unicode strings. See <a href="q3combobox.html#insertStringList">insertStringList</a>().</p>
+<h3 class="fn"><a name="insertStrList-3"></a>void Q3ComboBox::insertStrList ( const <a href="q3strlist.html">Q3StrList</a> * <i>list</i>, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the <i>list</i> of strings at position <i>index</i> in the combobox.</p>
+<p>This is only for compatibility since it does not support Unicode strings. See <a href="q3combobox.html#insertStringList">insertStringList</a>().</p>
+<h3 class="fn"><a name="insertStringList"></a>void Q3ComboBox::insertStringList ( const <a href="qstringlist.html">QStringList</a> &amp; <i>list</i>, int <i>index</i> = -1 )</h3>
+<p>Inserts the <i>list</i> of strings at position <i>index</i> in the combobox.</p>
+<h3 class="fn"><a name="lineEdit"></a><a href="qlineedit.html">QLineEdit</a> * Q3ComboBox::lineEdit () const</h3>
+<p>Returns the line edit, or 0 if there is no line edit.</p>
+<p>Only editable listboxes have a line editor.</p>
+<p>See also <a href="q3combobox.html#setLineEdit">setLineEdit</a>().</p>
+<h3 class="fn"><a name="listBox"></a><a href="q3listbox.html">Q3ListBox</a> * Q3ComboBox::listBox () const</h3>
+<p>Returns the current list box, or 0 if there is no list box. (<a href="q3combobox.html">Q3ComboBox</a> can use <a href="porting4.html#qpopupmenu">QPopupMenu</a> instead of <a href="porting4.html#qlistbox">QListBox</a>.) Provided to match <a href="q3combobox.html#setListBox">setListBox</a>().</p>
+<p>See also <a href="q3combobox.html#setListBox">setListBox</a>().</p>
+<h3 class="fn"><a name="pixmap"></a>const <a href="qpixmap.html">QPixmap</a> * Q3ComboBox::pixmap ( int <i>index</i> ) const</h3>
+<p>Returns the pixmap item at position <i>index</i>, or 0 if the item is not a pixmap.</p>
+<h3 class="fn"><a name="popup"></a>void Q3ComboBox::popup ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Pops up the combobox popup list.</p>
+<p>If the list is empty, no items appear.</p>
+<h3 class="fn"><a name="removeItem"></a>void Q3ComboBox::removeItem ( int <i>index</i> )</h3>
+<p>Removes the item at position <i>index</i>.</p>
+<h3 class="fn"><a name="setAutoResize"></a>void Q3ComboBox::setAutoResize ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>enable</i> is true, enable auto-resize; disable it otherwise.</p>
+<p>See also <a href="q3combobox-obsolete.html#autoResize-prop">autoResize</a>.</p>
+<h3 class="fn"><a name="setEditText"></a>void Q3ComboBox::setEditText ( const <a href="qstring.html">QString</a> &amp; <i>newText</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the text in the line edit to <i>newText</i> without changing the combobox's contents. Does nothing if the combobox isn't editable.</p>
+<p>This is useful e.g&#x2e; for providing a good starting point for the user's editing and entering the change in the combobox only when the user presses Enter.</p>
+<p>See also <a href="q3combobox.html#clearEdit">clearEdit</a>() and <a href="q3combobox.html#insertItem">insertItem</a>().</p>
+<h3 class="fn"><a name="setEnabled"></a>void Q3ComboBox::setEnabled ( bool <i>enable</i> )</h3>
+<p>Enables the combobox if <i>enable</i> is true; otherwise disables it.</p>
+<p>See also <a href="qwidget.html#enabled-prop">QWidget::enabled</a>.</p>
+<h3 class="fn"><a name="setFont"></a>void Q3ComboBox::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Sets the font for both the combobox button and the combobox popup list to <i>font</i>.</p>
+<h3 class="fn"><a name="setLineEdit"></a>void Q3ComboBox::setLineEdit ( <a href="qlineedit.html">QLineEdit</a> * <i>edit</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the line edit to use <i>edit</i> instead of the current line edit.</p>
+<p>See also <a href="q3combobox.html#lineEdit">lineEdit</a>().</p>
+<h3 class="fn"><a name="setListBox"></a>void Q3ComboBox::setListBox ( <a href="q3listbox.html">Q3ListBox</a> * <i>newListBox</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the combobox to use <i>newListBox</i> instead of the current list box or popup. As a side effect, it clears the combobox of its current contents.</p>
+<p><b>Warning:</b> <a href="q3combobox.html">Q3ComboBox</a> assumes that newListBox-&gt;text(n) returns non-null for 0 &lt;= n &lt; newListbox-&gt;<a href="q3combobox.html#count-prop">count</a>(). This assumption is necessary because of the line edit in <a href="q3combobox.html">Q3ComboBox</a>.</p>
+<p>See also <a href="q3combobox.html#listBox">listBox</a>().</p>
+<h3 class="fn"><a name="setPalette"></a>void Q3ComboBox::setPalette ( const <a href="qpalette.html">QPalette</a> &amp; <i>palette</i> )</h3>
+<p>Sets the palette for both the combobox button and the combobox popup list to <i>palette</i>.</p>
+<h3 class="fn"><a name="setValidator"></a>void Q3ComboBox::setValidator ( const <a href="qvalidator.html">QValidator</a> * <i>v</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Applies the validator <i>v</i> to the combobox so that only text which is valid according to <i>v</i> is accepted.</p>
+<p>This function does nothing if the combobox is not editable.</p>
+<p>See also <a href="q3combobox.html#validator">validator</a>(), <a href="q3combobox.html#clearValidator">clearValidator</a>(), and <a href="qvalidator.html">QValidator</a>.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3ComboBox::text ( int <i>index</i> ) const</h3>
+<p>Returns the text item at position <i>index</i>, or <a href="qstring.html#null-var">QString::null</a> if the item is not a string.</p>
+<p>See also <a href="q3combobox.html#currentText-prop">currentText</a>().</p>
+<h3 class="fn"><a name="textChanged"></a>void Q3ComboBox::textChanged ( const <a href="qstring.html">QString</a> &amp; <i>string</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is used for editable comboboxes. It is emitted whenever the contents of the text entry field changes. <i>string</i> contains the new text.</p>
+<h3 class="fn"><a name="updateMask"></a>void Q3ComboBox::updateMask ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Updates the widget mask.</p>
+<p>See also <a href="qwidget.html#setMask">QWidget::setMask</a>().</p>
+<h3 class="fn"><a name="validator"></a>const <a href="qvalidator.html">QValidator</a> * Q3ComboBox::validator () const</h3>
+<p>Returns the validator which constrains editing for this combobox if there is one; otherwise returns 0.</p>
+<p>See also <a href="q3combobox.html#setValidator">setValidator</a>(), <a href="q3combobox.html#clearValidator">clearValidator</a>(), and <a href="qvalidator.html">QValidator</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

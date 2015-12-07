@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/3rdparty.qdoc -->
+<head>
+  <title>Qt 4.4: Third-Party Licenses Used in Qt</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Third-Party Licenses Used in Qt<br /><span class="subtitle"></span>
+</h1>
+<p>Qt includes a number of third-party libraries that are used to provide certain features. Unlike other <a href="licenses.html">third-party code used in Qt</a>, these libraries are supplied alongside the Qt modules.</p>
+<p>Run <tt>configure -help</tt> to see any options that may be available for controlling the use of these libraries.</p>
+<ul><li><a href="#freetype-2-version-2-3-5">FreeType 2 (<tt>freetype</tt>) version 2.3&#x2e;5</a></li>
+<li><a href="#harfbuzz">HarfBuzz (<tt>harfbuzz</tt>)</a></li>
+<li><a href="#md5-and">MD5 (<tt>md5.cpp</tt> and <tt>md5.h</tt>)</a></li>
+<li><a href="#the-independent-jpeg-group-s-jpeg-software-version-6b">The Independent JPEG Group's JPEG Software (<tt>libjpeg</tt>) version 6b</a></li>
+<li><a href="#mng-library-version-1-0-10">MNG Library (<tt>libmng</tt>) version 1.0&#x2e;10</a></li>
+<li><a href="#png-reference-library-version-1-2-25">PNG Reference Library (<tt>libpng</tt>) version 1.2&#x2e;25</a></li>
+<li><a href="#tiff-software-distribution-version-3-8-2">TIFF Software Distribution (<tt>libtiff</tt>) version 3.8&#x2e;2</a></li>
+<li><a href="#sqlite-version-3-5-4">SQLite (<tt>sqlite</tt>) version 3.5&#x2e;4</a></li>
+<li><a href="#wintab-api">Wintab API (<tt>wintab</tt>)</a></li>
+<li><a href="#data-compression-library-version-1-2-3">Data Compression Library (<tt>zlib</tt>) version 1.2&#x2e;3</a></li>
+</ul>
+<a name="freetype-2-version-2-3-5"></a>
+<h3>FreeType 2 (<tt>freetype</tt>) version 2.3&#x2e;5</h3>
+<p><i>The <a href="qt-embedded-fonts.html#freetype">FreeType</a> project is a team of volunteers who develop free, portable and high-quality software solutions for digital typography. We specifically target embedded systems and focus on bringing small, efficient and ubiquitous products.</i> -- quoted from <tt>3rdparty/freetype/docs/freetype2.html</tt>.</p>
+<p>See <tt>src/3rdparty/freetype/docs/FTL.txt</tt> and <tt>src/3rdparty/freetype/docs/GPL.txt</tt> for license details.</p>
+<p>See also the files in <tt>src/3rdparty/opentype</tt>, which are used by <a href="qt-embedded-fonts.html#freetype">FreeType</a>.</p>
+<p>Parts of the <a href="qt-embedded-fonts.html#freetype">FreeType</a> projects have been modified and put into Qt for use in the painting subsystem. These files are ftraster.h, ftraster.c, ftgrays.h and ftgrays.c&#x2e; The following modifications has been made to these files:</p>
+<ul>
+<li>Renamed FT_ and ft_ symbols to QT_FT_ and qt_ft_ to avoid name conflicts.</li>
+<li>Removed parts of code not relevant when compiled with _STANDALONE_ defined.</li>
+<li>Changed behavior in ftraster.c to follow X polygon filling rules.</li>
+<li>Implemented support in ftraster.c for winding / odd even polygon fill rules.</li>
+<li>Replaced bitmap generation with span generation in ftraster.c</li>
+<li>Renamed: ftraster.h to qblackraster_p.h</li>
+<li>Renamed: ftraster.c to qblackraster.c</li>
+<li>Renamed: ftgrays.h to qgrayraster_p.h</li>
+<li>Renamed: ftgrays.c to qgrayraster.c</li>
+</ul>
+<a name="harfbuzz"></a>
+<h3>HarfBuzz (<tt>harfbuzz</tt>)</h3>
+<p><i>This is <a href="#harfbuzz">HarfBuzz</a>, an OpenType Layout engine.</i></p>
+<p><i>It was derived originally from the OpenType code in <a href="qt-embedded-fonts.html#freetype">FreeType</a>-1.x, ported to FreeType2. (This code has been abandoned for FreeType2, but until something better comes along, should serve our purposes.) In addition to porting to <a href="qt-embedded-fonts.html#freetype">FreeType</a>-2, it has been modified in various other ways.</i> -- quoted from <tt>src/3rdparty/harfbuzz/README</tt>.</p>
+<p>See <tt>src/3rdparty/harfbuzz/COPYING.FTL</tt> and src/3rdparty/harfbuzz/COPYING.GPL for license details.</p>
+<a name="md5-and"></a>
+<h3>MD5 (<tt>md5.cpp</tt> and <tt>md5.h</tt>)</h3>
+<p><i>This code implements the MD5 message-digest algorithm. The algorithm is due to Ron Rivest. This code was written by Colin Plumb in 1993, no copyright is claimed. This code is in the public domain; do with it what you wish.</i> -- quoted from <tt>src/3rdparty/md5/md5.h</tt></p>
+<p>See <tt>src/3rdparty/md5/md5.cpp</tt> and <tt>src/3rdparty/md5/md5.h</tt> for more information about the terms and conditions under which the code is supplied.</p>
+<a name="the-independent-jpeg-group-s-jpeg-software-version-6b"></a>
+<h3>The Independent JPEG Group's JPEG Software (<tt>libjpeg</tt>) version 6b</h3>
+<p><i>This package contains C software to implement JPEG image compression and decompression. JPEG (pronounced &quot;jay-peg&quot;) is a standardized compression method for full-color and gray-scale images. JPEG is intended for compressing &quot;real-world&quot; scenes; line drawings, cartoons and other non-realistic images are not its strong suit. JPEG is lossy, meaning that the output image is not exactly identical to the input image.</i> -- quoted from <tt>src/3rdparty/libjpeg/README</tt>.</p>
+<p>See <tt>src/3rdparty/libjpeg/README</tt> for license details.</p>
+<a name="mng-library-version-1-0-10"></a>
+<h3>MNG Library (<tt>libmng</tt>) version 1.0&#x2e;10</h3>
+<p><i>The libmng library supports decoding, displaying, encoding, and various other manipulations of the Multiple-image Network Graphics (MNG) format image files. It uses the zlib compression library, and optionally the JPEG library by the Independant JPEG Group (IJG) and/or lcms (little cms), a color-management library by Marti Maria Saguer.</i> -- quoted from <tt>src/3rdparty/libmng/doc/libmng.txt</tt></p>
+<p>See <tt>src/3rdparty/libmng/LICENSE</tt> for license details.</p>
+<a name="png-reference-library-version-1-2-25"></a>
+<h3>PNG Reference Library (<tt>libpng</tt>) version 1.2&#x2e;25</h3>
+<p><i>Libpng was written as a companion to the PNG specification, as a way of reducing the amount of time and effort it takes to support the PNG file format in application programs.</i> -- quoted from <tt>src/3rdparty/libpng/libpng.txt</tt>.</p>
+<p>See <tt>src/3rdparty/libpng/LICENSE</tt> for license details.</p>
+<a name="tiff-software-distribution-version-3-8-2"></a>
+<h3>TIFF Software Distribution (<tt>libtiff</tt>) version 3.8&#x2e;2</h3>
+<p><i>libtiff is a set of C functions (a library) that support the manipulation of TIFF image files.</i> -- quoted from <tt>src/libtiff/html/libtiff.html</tt></p>
+<p>See <tt>src/3rdparty/libtiff/COPYRIGHT</tt> for license details.</p>
+<a name="sqlite-version-3-5-4"></a>
+<h3>SQLite (<tt>sqlite</tt>) version 3.5&#x2e;4</h3>
+<p><i>SQLite is a small C library that implements a self-contained, embeddable, zero-configuration SQL database engine.</i> -- quoted from <a href="http://www.sqlite.org/">www.sqlite.org</a>.</p>
+<p>According to the comments in the source files, the code is in the public domain. See the <a href="http://www.sqlite.org/copyright.html">SQLite Copyright</a> page on the SQLite web site for further information.</p>
+<a name="wintab-api"></a>
+<h3>Wintab API (<tt>wintab</tt>)</h3>
+<p>Wintab is a de facto API for pointing devices on Windows. The wintab code is from <a href="http://www.pointing.com/WINTAB.HTM">http://www.pointing.com/WINTAB.HTM</a>.</p>
+<p>See <tt>src/3rdparty/wintab/wintab.h</tt> for license details.</p>
+<a name="data-compression-library-version-1-2-3"></a>
+<h3>Data Compression Library (<tt>zlib</tt>) version 1.2&#x2e;3</h3>
+<p><i>zlib is a general purpose data compression library. All the code is thread safe. The data format used by the zlib library is described by RFCs (Request for Comments) 1950 to 1952</i> -- quoted from <tt>src/3rdparty/zlib/README</tt>.</p>
+<p>See <tt>src/3rdparty/zlib/README</tt> for license details.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/other/q3dragobject.cpp -->
+<head>
+  <title>Qt 4.4: Q3ColorDrag Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ColorDrag Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ColorDrag class provides a drag and drop object for transferring colors between widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ColorDrag&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qcolordrag">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3storeddrag.html">Q3StoredDrag</a>.</p>
+<ul>
+<li><a href="q3colordrag-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3colordrag.html#Q3ColorDrag">Q3ColorDrag</a></b> ( const QColor &amp; <i>col</i>, QWidget * <i>dragsource</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3colordrag.html#Q3ColorDrag-2">Q3ColorDrag</a></b> ( QWidget * <i>dragsource</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="q3colordrag.html#setColor">setColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="q3storeddrag.html#public-functions">Q3StoredDrag</a></li>
+<li><div class="fn"/>9 public functions inherited from <a href="q3dragobject.html#public-functions">Q3DragObject</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qmimesource.html#public-functions">QMimeSource</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="q3colordrag.html#canDecode">canDecode</a></b> ( QMimeSource * <i>source</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3colordrag.html#decode">decode</a></b> ( QMimeSource * <i>source</i>, QColor &amp; <i>color</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="q3dragobject.html#static-public-members">Q3DragObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3dragobject.html#protected-functions">Q3DragObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ColorDrag class provides a drag and drop object for transferring colors between widgets.</p>
+<p>This class provides a drag object which can be used to transfer data about colors for drag and drop and in the clipboard. For example, it is used in <a href="qcolordialog.html">QColorDialog</a>.</p>
+<p>The color is set in the constructor but can be changed with <a href="q3colordrag.html#setColor">setColor</a>().</p>
+<p>For more information about drag and drop, see the <a href="q3dragobject.html">Q3DragObject</a> class and the <a href="dnd.html">drag and drop documentation</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ColorDrag"></a>Q3ColorDrag::Q3ColorDrag ( const <a href="qcolor.html">QColor</a> &amp; <i>col</i>, <a href="qwidget.html">QWidget</a> * <i>dragsource</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a color drag object with the given <i>col</i>. Passes <i>dragsource</i> and <i>name</i> to the <a href="q3storeddrag.html">Q3StoredDrag</a> constructor.</p>
+<h3 class="fn"><a name="Q3ColorDrag-2"></a>Q3ColorDrag::Q3ColorDrag ( <a href="qwidget.html">QWidget</a> * <i>dragsource</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a color drag object with a white color. Passes <i>dragsource</i> and <i>name</i> to the <a href="q3storeddrag.html">Q3StoredDrag</a> constructor.</p>
+<h3 class="fn"><a name="canDecode"></a>bool Q3ColorDrag::canDecode ( <a href="qmimesource.html">QMimeSource</a> * <i>source</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the color drag object can decode the MIME <i>source</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="decode"></a>bool Q3ColorDrag::decode ( <a href="qmimesource.html">QMimeSource</a> * <i>source</i>, <a href="qcolor.html">QColor</a> &amp; <i>color</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Decodes the MIME <i>source</i>, and sets the decoded values to the given <i>color</i>. Returns true if the decoding is successful. Returns false if the size of the encoded data is not the expected size.</p>
+<h3 class="fn"><a name="setColor"></a>void Q3ColorDrag::setColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Sets the <i>color</i> of the color drag.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

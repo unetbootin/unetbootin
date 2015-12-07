@@ -1,0 +1,276 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3ValueVector
+    \brief The Q3ValueVector class is a value-based template class that provides a dynamic array.
+    \compat
+
+    Q3ValueVector is a Qt implementation of an STL-like vector
+    container. It can be used in your application if the standard \c
+    vector is not available for your target platforms.
+
+    Q3ValueVector\<T\> defines a template instance to create a vector
+    of values that all have the class T. Q3ValueVector does not store
+    pointers to the members of the vector; it holds a copy of every
+    member. Q3ValueVector is said to be value based; in contrast,
+    Q3PtrList and Q3Dict are pointer based.
+
+    Q3ValueVector contains and manages a collection of objects of type
+    T and provides random access iterators that allow the contained
+    objects to be addressed. Q3ValueVector owns the contained
+    elements. For more relaxed ownership semantics, see Q3PtrCollection
+    and friends, which are pointer-based containers.
+
+    Q3ValueVector provides good performance if you append or remove
+    elements from the end of the vector. If you insert or remove
+    elements from anywhere but the end, performance is very bad. The
+    reason for this is that elements must to be copied into new
+    positions.
+
+    Some classes cannot be used within a Q3ValueVector: for example,
+    all classes derived from QObject and thus all classes that
+    implement widgets. Only values can be used in a Q3ValueVector. To
+    qualify as a value the class must provide:
+    \list
+    \i a copy constructor;
+    \i an assignment operator;
+    \i a default constructor, i.e., a constructor that does not take any arguments.
+    \endlist
+
+    Note that C++ defaults to field-by-field assignment operators and
+    copy constructors if no explicit version is supplied. In many
+    cases this is sufficient.
+
+    Q3ValueVector uses an STL-like syntax to manipulate and address the
+    objects it contains.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3valuevector.qdoc 0
+
+    Program output:
+    \snippet doc/src/snippets/code/doc.src.q3valuevector.qdoc 1
+
+    As you can see, the most recent change to Joe's salary did not
+    affect the value in the vector because the vector created a copy
+    of Joe's entry.
+
+    Many Qt functions return const value vectors; to iterate over
+    these you should make a copy and iterate over the copy.
+
+    There are several ways to find items in the vector. The begin()
+    and end() functions return iterators to the beginning and end of
+    the vector. The advantage of getting an iterator is that you can
+    move forward or backward from this position by
+    incrementing/decrementing the iterator. The iterator returned by
+    end() points to the element which is one past the last element in
+    the container. The past-the-end iterator is still associated with
+    the vector it belongs to, however it is \e not dereferenceable;
+    operator*() will not return a well-defined value. If the vector is
+    empty(), the iterator returned by begin() will equal the iterator
+    returned by end().
+
+    The fastest way to access an element of a vector is by using
+    operator[]. This function provides random access and will return
+    a reference to the element located at the specified index. Thus,
+    you can access every element directly, in constant time, providing
+    you know the location of the element. It is undefined to access
+    an element that does not exist (your application will probably
+    crash). For example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuevector.qdoc 2
+
+    Whenever inserting, removing or referencing elements in a vector,
+    always make sure you are referring to valid positions. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuevector.qdoc 3
+
+    The iterators provided by vector are random access iterators,
+    therefore you can use them with many generic algorithms, for
+    example, algorithms provided by the STL.
+
+    It is safe to have multiple iterators on the vector at the same
+    time. Since Q3ValueVector manages memory dynamically, all iterators
+    can become invalid if a memory reallocation occurs. For example,
+    if some member of the vector is removed, iterators that point to
+    the removed element and to all following elements become
+    invalidated. Inserting into the middle of the vector will
+    invalidate all iterators. For convenience, the function back()
+    returns a reference to the last element in the vector, and front()
+    returns a reference to the first element. If the vector is
+    empty(), both back() and front() have undefined behavior (your
+    application will crash or do unpredictable things). Use back() and
+    front() with caution, for example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuevector.qdoc 4
+
+    Because Q3ValueVector manages memory dynamically, it is recommended
+    that you contruct a vector with an initial size. Inserting and
+    removing elements happens fastest when:
+    \list
+    \i Inserting or removing elements happens at the end() of the
+    vector;
+    \i The vector does not need to allocate additional memory.
+    \endlist
+
+    By creating a Q3ValueVector with a sufficiently large initial size,
+    there will be less memory allocations. Do not use an initial size
+    that is too big, since it will still take time to construct all
+    the empty entries, and the extra space will be wasted if it is
+    never used.
+
+    Because Q3ValueVector is value-based there is no need to be careful
+    about deleting elements in the vector. The vector holds its own
+    copies and will free them if the corresponding member or the
+    vector itself is deleted. You can force the vector to free all of
+    its items with clear().
+
+    Q3ValueVector is shared implicitly, which means it can be copied in
+    constant time. If multiple Q3ValueVector instances share the same
+    data and one needs to modify its contents, this modifying instance
+    makes a copy and modifies its private copy; it thus does not
+    affect the other instances. This is often called "copy on write".
+    If a Q3ValueVector is being used in a multi-threaded program, you
+    must protect all access to the vector. See QMutex.
+
+    There are several ways to insert elements into the vector. The
+    push_back() function insert elements into the end of the vector,
+    and is usually fastest. The insert() function can be used to add
+    elements at specific positions within the vector.
+
+    Items can be also be removed from the vector in several ways.
+    There are several variants of the erase() function which removes a
+    specific element, or range of elements, from the vector.
+
+    Q3ValueVector stores its elements in contiguous memory. This means
+    that you can use a Q3ValueVector in any situation that requires an
+    array. 
+*/
+
+/*!
+    \fn Q3ValueVector::Q3ValueVector()
+
+    Constructs an empty vector without any elements. To create a
+    vector which reserves an initial amount of space for elements, use
+    \c Q3ValueVector(size_type n). 
+*/
+
+/*!
+    \fn Q3ValueVector::Q3ValueVector( const Q3ValueVector<T>& v )
+
+    Constructs a copy of \a v.
+
+    This operation costs O(1) time because Q3ValueVector is implicitly
+    shared.
+
+    The first modification to the vector does takes O(n) time, because
+    the elements must be copied.
+*/
+
+/*!
+    \fn Q3ValueVector::Q3ValueVector( const std::vector<T>& v )
+
+    This operation costs O(n) time because \a v is copied.
+*/
+
+/*!
+    \fn Q3ValueVector::Q3ValueVector( QVector<T>::size_type n, const T& val )
+
+    Constructs a vector with an initial size of \a n elements. Each
+    element is initialized with the value of \a val.
+*/
+
+/*!
+    \fn Q3ValueVector<T>& Q3ValueVector::operator=( const Q3ValueVector<T>& v )
+
+    Assigns \a v to this vector and returns a reference to this vector.
+
+    All iterators of the current vector become invalidated by this
+    operation. The cost of such an assignment is O(1) since
+    Q3ValueVector is implicitly shared.
+*/
+
+/*!
+    \fn Q3ValueVector<T>& Q3ValueVector::operator=( const std::vector<T>& v )
+
+    \overload
+
+    Assigns \a v to this vector and returns a reference to this vector.
+
+    All iterators of the current vector become invalidated by this
+    operation. The cost of this assignment is O(n) since \a v is
+    copied.
+*/
+
+/*!
+    \fn T &Q3ValueVector::at( int i , bool* ok )
+
+    Returns a reference to the element with index \a i. If \a ok is
+    non-null, and the index \a i is out of range, *\a ok is set to
+    FALSE and the returned reference is undefined. If the index \a i
+    is within the range of the vector, and \a ok is non-null, *\a ok
+    is set to TRUE and the returned reference is well defined.
+*/
+
+/*!
+    \fn const T &Q3ValueVector::at( int i , bool* ok ) const
+
+    \overload
+
+    Returns a const reference to the element with index \a i. If \a ok
+    is non-null, and the index \a i is out of range, *\a ok is set to
+    FALSE and the returned reference is undefined. If the index \a i
+    is within the range of the vector, and \a ok is non-null, *\a ok
+    is set to TRUE and the returned reference is well defined.
+*/
+
+/*!
+    \fn void Q3ValueVector::resize( int n, const T& val = T() )
+
+    Changes the size of the vector to \a n. If \a n is greater than
+    the current size(), elements are added to the end and initialized
+    with the value of \a val. If \a n is less than size(), elements
+    are removed from the end. If \a n is equal to size() nothing
+    happens.
+*/

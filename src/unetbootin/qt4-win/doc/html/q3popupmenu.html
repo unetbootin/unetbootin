@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3popupmenu.qdoc -->
+<head>
+  <title>Qt 4.4: Q3PopupMenu Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3PopupMenu Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3PopupMenu class is a thin compatibility wrapper around <a href="qmenu.html">QMenu</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3PopupMenu&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qpopupmenu">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qmenu.html">QMenu</a>.</p>
+<ul>
+<li><a href="q3popupmenu-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3popupmenu.html#Q3PopupMenu">Q3PopupMenu</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>int <b><a href="q3popupmenu.html#exec">exec</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3popupmenu.html#exec-2">exec</a></b> ( const QPoint &amp; <i>pos</i>, int <i>indexAtPoint</i> = 0 )</li>
+<li><div class="fn"/>int <b><a href="q3popupmenu.html#margin">margin</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3popupmenu.html#setMargin">setMargin</a></b> ( int <i>margin</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>35 public functions inherited from <a href="qmenu.html#public-functions">QMenu</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 properties inherited from <a href="qmenu.html#properties">QMenu</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qmenu.html#signals">QMenu</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qmenu.html#static-public-members">QMenu</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>3 protected functions inherited from <a href="qmenu.html#protected-functions">QMenu</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3PopupMenu class is a thin compatibility wrapper around <a href="qmenu.html">QMenu</a>.</p>
+<p>Use <a href="qmenu.html">QMenu</a> in new applications. Note that the menu's actions must be <a href="q3action.html">Q3Action</a>s.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3PopupMenu"></a>Q3PopupMenu::Q3PopupMenu ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a menu with the given <i>parent</i> and <i>name</i>.</p>
+<h3 class="fn"><a name="exec"></a>int Q3PopupMenu::exec ()</h3>
+<p>Pops up the menu and returns the ID of the action that was selected.</p>
+<p>See also <a href="qmenu.html#exec">QMenu::exec</a>().</p>
+<h3 class="fn"><a name="exec-2"></a>int Q3PopupMenu::exec ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, int <i>indexAtPoint</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Pops up the menu at coordinate <i>pos</i> and returns the ID of the action that was selected.</p>
+<p>If <i>indexAtPoint</i> is specified, the menu will pop up with the item at index <i>indexAtPoint</i> under the mouse cursor.</p>
+<p>See also <a href="qmenu.html#exec">QMenu::exec</a>().</p>
+<h3 class="fn"><a name="margin"></a>int Q3PopupMenu::margin () const</h3>
+<p>Returns the with of the the margin around the contents of the widget.</p>
+<p>This function uses <a href="qwidget.html#getContentsMargins">QWidget::getContentsMargins</a>() to get the margin.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3popupmenu.html#setMargin">setMargin</a>() and <a href="qwidget.html#getContentsMargins">QWidget::getContentsMargins</a>().</p>
+<h3 class="fn"><a name="setMargin"></a>void Q3PopupMenu::setMargin ( int <i>margin</i> )</h3>
+<p>Sets the width of the margin around the contents of the widget to <i>margin</i>.</p>
+<p>This function uses <a href="qwidget.html#setContentsMargins">QWidget::setContentsMargins</a>() to set the margin.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3popupmenu.html#margin">margin</a>() and <a href="qwidget.html#setContentsMargins">QWidget::setContentsMargins</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

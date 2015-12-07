@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3iconview.cpp -->
+<head>
+  <title>Qt 4.4: Q3IconDragItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3IconDragItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3IconDragItem class encapsulates a drag item. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3IconDragItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3icondragitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3icondragitem.html#Q3IconDragItem">Q3IconDragItem</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="q3icondragitem.html#dtor.Q3IconDragItem">~Q3IconDragItem</a></b> ()</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="q3icondragitem.html#data">data</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3icondragitem.html#setData">setData</a></b> ( const QByteArray &amp; <i>d</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3IconDragItem class encapsulates a drag item.</p>
+<p>The <a href="q3icondrag.html">Q3IconDrag</a> class uses a list of Q3IconDragItems to support drag and drop operations.</p>
+<p>In practice a Q3IconDragItem object (or an object of a class derived from Q3IconDragItem) is created for each icon view item which is dragged. Each of these Q3IconDragItems is stored in a <a href="q3icondrag.html">Q3IconDrag</a> object.</p>
+<p>See <a href="q3iconview.html#dragObject">Q3IconView::dragObject</a>() for more information.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3IconDragItem"></a>Q3IconDragItem::Q3IconDragItem ()</h3>
+<p>Constructs a <a href="q3icondragitem.html">Q3IconDragItem</a> with no data.</p>
+<h3 class="fn"><a name="dtor.Q3IconDragItem"></a>Q3IconDragItem::~Q3IconDragItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="data"></a><a href="qbytearray.html">QByteArray</a> Q3IconDragItem::data () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the data contained in the <a href="q3icondragitem.html">Q3IconDragItem</a>.</p>
+<p>See also <a href="q3icondragitem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="setData"></a>void Q3IconDragItem::setData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>d</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the data for the <a href="q3icondragitem.html">Q3IconDragItem</a> to the data stored in the <a href="qbytearray.html">QByteArray</a> <i>d</i>.</p>
+<p>See also <a href="q3icondragitem.html#data">data</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

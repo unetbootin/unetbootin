@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: context2d.cpp Example File (script/context2d/context2d.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">context2d.cpp Example File<br /><span class="small-subtitle">script/context2d/context2d.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+ #include &quot;context2d.h&quot;
+
+ #include &quot;qcontext2dcanvas.h&quot;
+
+ #include &lt;QVariant&gt;
+
+ #include &lt;math.h&gt;
+ static const double Q_PI   = 3.14159265358979323846;   <span class="comment">//</span> pi
+
+ #define DEGREES(t) ((t) * 180.0 / Q_PI)
+
+ #define qClamp(val, min, max) qMin(qMax(val, min), max)
+ static QList&lt;qreal&gt; parseNumbersList(QString::const_iterator &amp;itr)
+ {
+     QList&lt;qreal&gt; points;
+     QString temp;
+     while ((*itr).isSpace())
+         ++itr;
+     while ((*itr).isNumber() ||
+            (*itr) == '-' || (*itr) == '+' || (*itr) == '.') {
+         temp = QString();
+
+         if ((*itr) == '-')
+             temp += *itr++;
+         else if ((*itr) == '+')
+             temp += *itr++;
+         while ((*itr).isDigit())
+             temp += *itr++;
+         if ((*itr) == '.')
+             temp += *itr++;
+         while ((*itr).isDigit())
+             temp += *itr++;
+         while ((*itr).isSpace())
+             ++itr;
+         if ((*itr) == ',')
+             ++itr;
+         points.append(temp.toDouble());
+         <span class="comment">//</span>eat spaces
+         while ((*itr).isSpace())
+             ++itr;
+     }
+
+     return points;
+ }
+
+ static QColor colorFromString(const QString &amp;name)
+ {
+     QString::const_iterator itr = name.constBegin();
+     QList&lt;qreal&gt; compo;
+     if (name.startsWith(&quot;rgba(&quot;)) {
+         ++itr; ++itr; ++itr; ++itr; ++itr;
+         compo = parseNumbersList(itr);
+         if (compo.size() != 4) {
+             return QColor();
+         }
+         <span class="comment">//</span>alpha seems to be always between 0-1
+         compo[3] *= 255;
+         return QColor((int)compo[0], (int)compo[1],
+                       (int)compo[2], (int)compo[3]);
+     } else if (name.startsWith(&quot;rgb(&quot;)) {
+         ++itr; ++itr; ++itr; ++itr;
+         compo = parseNumbersList(itr);
+         if (compo.size() != 3) {
+             return QColor();
+         }
+         return QColor((int)qClamp(compo[0], qreal(0), qreal(255)),
+                       (int)qClamp(compo[1], qreal(0), qreal(255)),
+                       (int)qClamp(compo[2], qreal(0), qreal(255)));
+     } else {
+         <span class="comment">//</span>QRgb color;
+         <span class="comment">//</span>CSSParser::parseColor(name, color);
+         return QColor(name);
+     }
+ }
+
+ static QPainter::CompositionMode compositeOperatorFromString(const QString &amp;compositeOperator)
+ {
+     if ( compositeOperator == &quot;source-over&quot; ) {
+         return QPainter::CompositionMode_SourceOver;
+     } else if ( compositeOperator == &quot;source-out&quot; ) {
+         return QPainter::CompositionMode_SourceOut;
+     } else if ( compositeOperator == &quot;source-in&quot; ) {
+         return QPainter::CompositionMode_SourceIn;
+     } else if ( compositeOperator == &quot;source-atop&quot; ) {
+         return QPainter::CompositionMode_SourceAtop;
+     } else if ( compositeOperator == &quot;destination-atop&quot; ) {
+         return QPainter::CompositionMode_DestinationAtop;
+     } else if ( compositeOperator == &quot;destination-in&quot; ) {
+         return QPainter::CompositionMode_DestinationIn;
+     } else if ( compositeOperator == &quot;destination-out&quot; ) {
+         return QPainter::CompositionMode_DestinationOut;
+     } else if ( compositeOperator == &quot;destination-over&quot; ) {
+         return QPainter::CompositionMode_DestinationOver;
+     } else if ( compositeOperator == &quot;darker&quot; ) {
+         return QPainter::CompositionMode_SourceOver;
+     } else if ( compositeOperator == &quot;lighter&quot; ) {
+         return QPainter::CompositionMode_SourceOver;
+     } else if ( compositeOperator == &quot;copy&quot; ) {
+         return QPainter::CompositionMode_Source;
+     } else if ( compositeOperator == &quot;xor&quot; ) {
+         return QPainter::CompositionMode_Xor;
+     }
+
+     return QPainter::CompositionMode_SourceOver;
+ }
+
+ void CanvasGradientData::setup(QScriptEngine *e)
+ {
+     QScriptValue proto = e-&gt;newObject();
+     proto.setProperty(&quot;addColorStop&quot;, e-&gt;newFunction(&amp;CanvasGradientData::addColorStop, <span class="comment">/*length=*/</span> 2));
+     e-&gt;setDefaultPrototype(qRegisterMetaType&lt;CanvasGradient&gt;(), proto);
+ }
+
+ QScriptValue CanvasGradientData::addColorStop(QScriptContext *ctx, QScriptEngine *e)
+ {
+     QVariant self = ctx-&gt;thisObject().toVariant();
+
+     if (qVariantCanConvert&lt;CanvasGradient&gt;(self)) {
+         CanvasGradient g = qvariant_cast&lt;CanvasGradient&gt;(self);
+         qsreal pos = ctx-&gt;argument(0).toNumber();
+         QColor color = colorFromString(ctx-&gt;argument(1).toString());
+         g-&gt;gradient.setColorAt(pos, color);
+     }
+     return e-&gt;undefinedValue();
+ }
+
+ void Context2D::save()
+ {
+     m_stateStack.push(m_state);
+     m_painter.save();
+ }
+
+ void Context2D::restore()
+ {
+     if (!m_stateStack.isEmpty())
+         m_state = m_stateStack.pop();
+     m_painter.restore();
+ }
+
+ void Context2D::scale(qreal x, qreal y)
+ {
+     if (m_state.creatingShape)
+         m_state.matrix.scale(x, y);
+     m_painter.scale(x, y);
+ }
+
+ void Context2D::rotate(qreal angle)
+ {
+     if (m_state.creatingShape)
+         m_state.matrix.rotate(DEGREES(angle));
+     m_painter.rotate(DEGREES(angle));
+ }
+
+ void Context2D::translate(qreal x, qreal y)
+ {
+     if (m_state.creatingShape)
+         m_state.matrix.translate(x, y);
+     m_painter.translate(x, y);
+ }
+
+ void Context2D::transform(qreal m11, qreal m12, qreal m21, qreal m22,
+                           qreal dx, qreal dy)
+ {
+     QMatrix mat(m11, m12,
+                 m21, m22,
+                 dx, dy);
+     if (m_state.creatingShape)
+         m_state.matrix *= mat;
+     m_painter.setMatrix(mat, true);
+ }
+
+ void Context2D::setTransform(qreal m11, qreal m12, qreal m21, qreal m22,
+                              qreal dx, qreal dy)
+ {
+     QMatrix mat(m11, m12,
+                 m21, m22,
+                 dx, dy);
+     if (m_state.creatingShape)
+         m_state.matrix = mat;
+     m_painter.setMatrix(mat, false);
+ }
+
+ void Context2D::setGlobalAlpha(qreal alpha)
+ {
+     m_painter.setOpacity(alpha);
+ }
+
+ void Context2D::setGlobalCompositeOperation(const QString &amp;op)
+ {
+     QPainter::CompositionMode mode =
+         compositeOperatorFromString(op);
+
+     m_painter.setCompositionMode(mode);
+ }
+
+ void Context2D::setStrokeStyle(const QVariant &amp;style)
+ {
+     QPen pen = m_painter.pen();
+     if (qVariantCanConvert&lt;CanvasGradient&gt;(style)) {
+         CanvasGradient cg = qvariant_cast&lt;CanvasGradient&gt;(style);
+         pen.setBrush(cg-&gt;qgradient());
+     } else {
+         QColor clr = colorFromString(style.toString());
+         pen.setColor(clr);
+     }
+     if (pen.style() == Qt::NoPen)
+         pen.setStyle(Qt::SolidLine);
+     m_painter.setPen(pen);
+ }
+
+ void Context2D::setFillStyle(const QVariant &amp;style)
+ {
+     if (qVariantCanConvert&lt;CanvasGradient&gt;(style)) {
+         CanvasGradient cg = qvariant_cast&lt;CanvasGradient&gt;(style);
+         m_painter.setBrush(cg-&gt;qgradient());
+     } else {
+         QColor clr = colorFromString(style.toString());
+         m_painter.setBrush(clr);
+     }
+ }
+
+ qreal Context2D::globalAlpha() const
+ {
+     return m_painter.opacity();
+ }
+
+ QString Context2D::globalCompositeOperation() const
+ {
+     return 0;
+ }
+
+ QVariant Context2D::strokeStyle() const
+ {
+     return m_painter.pen().color().name();
+ }
+
+ QVariant Context2D::fillStyle() const
+ {
+     return m_painter.brush().color().name();
+ }
+
+ CanvasGradient Context2D::createLinearGradient(qreal x0, qreal y0,
+                                                qreal x1, qreal y1)
+ {
+     QLinearGradient g(x0, y0, x1, y1);
+     return CanvasGradient(new CanvasGradientData(g));
+ }
+
+ CanvasGradient Context2D::createRadialGradient(qreal x0, qreal y0,
+                                                qreal r0, qreal x1,
+                                                qreal y1, qreal r1)
+ {
+     QRadialGradient g(QPointF(x1, y1), r0+r1, QPointF(x0, y0));
+     return CanvasGradient(new CanvasGradientData(g));
+ }
+
+ void Context2D::setLineWidth(qreal w)
+ {
+     QPen p = m_painter.pen();
+     p.setWidthF(w);
+     m_painter.setPen(p);
+ }
+
+ void Context2D::setLineCap(const QString &amp;capString)
+ {
+     QPen pen = m_painter.pen();
+     if (capString == &quot;round&quot;)
+         pen.setCapStyle(Qt::RoundCap);
+     else if (capString == &quot;square&quot;)
+         pen.setCapStyle(Qt::SquareCap);
+     else
+         pen.setCapStyle(Qt::FlatCap);
+     m_painter.setPen(pen);
+ }
+
+ void Context2D::setLineJoin(const QString &amp;joinString)
+ {
+     QPen pen = m_painter.pen();
+     if (joinString == &quot;round&quot;)
+         pen.setJoinStyle(Qt::RoundJoin);
+     else if (joinString == &quot;bevel&quot;)
+         pen.setJoinStyle(Qt::BevelJoin);
+     else
+         pen.setJoinStyle(Qt::MiterJoin);
+     m_painter.setPen(pen);
+ }
+
+ void Context2D::setMiterLimit(qreal m)
+ {
+     QPen pen = m_painter.pen();
+     pen.setMiterLimit(m);
+     m_painter.setPen(pen);
+ }
+
+ qreal Context2D::lineWidth() const
+ {
+     return m_painter.pen().widthF();
+ }
+
+ QString Context2D::lineCap() const
+ {
+     return QString();
+ }
+
+ QString Context2D::lineJoin() const
+ {
+     return QString();
+ }
+
+ qreal Context2D::miterLimit() const
+ {
+     return 0;
+ }
+
+ void Context2D::setShadowOffsetX(qreal x)
+ {
+     Q_UNUSED(x);
+ }
+
+ void Context2D::setShadowOffsetY(qreal y)
+ {
+     Q_UNUSED(y);
+ }
+
+ void Context2D::setShadowBlur(qreal b)
+ {
+     Q_UNUSED(b);
+ }
+
+ void Context2D::setShadowColor(const QColor &amp;c)
+ {
+     Q_UNUSED(c);
+ }
+
+ qreal Context2D::shadowOffsetX() const
+ {
+     return 0;
+ }
+
+ qreal Context2D::shadowOffsetY() const
+ {
+     return 0;
+ }
+
+ qreal Context2D::shadowBlur() const
+ {
+     return 0;
+ }
+
+ QColor Context2D::shadowColor() const
+ {
+     return QColor();
+ }
+
+ void Context2D::clearRect(qreal x, qreal y, qreal w, qreal h)
+ {
+     m_painter.save();
+     m_painter.setCompositionMode(QPainter::CompositionMode_Source);
+     m_painter.fillRect(QRectF(x, y, w, h), QColor(0, 0, 0, 0));
+     m_painter.restore();
+ }
+
+ void Context2D::fillRect(qreal x, qreal y, qreal w, qreal h)
+ {
+     m_painter.fillRect(QRectF(x, y, w, h), m_painter.brush());
+ }
+
+ void Context2D::strokeRect(qreal x, qreal y, qreal w, qreal h)
+ {
+     QPainterPath path; path.addRect(x, y, w, h);
+     m_painter.strokePath(path, m_painter.pen());
+ }
+
+ void Context2D::beginPath()
+ {
+     m_path = QPainterPath();
+     m_state.creatingShape = true;
+ }
+
+ void Context2D::closePath()
+ {
+     m_path.closeSubpath();
+     m_state.creatingShape = false;
+ }
+
+ void Context2D::moveTo(qreal x, qreal y)
+ {
+     QPointF pt = m_state.matrix.map(QPointF(x, y));
+     m_path.moveTo(pt);
+ }
+
+ void Context2D::lineTo(qreal x, qreal y)
+ {
+     QPointF pt = m_state.matrix.map(QPointF(x, y));
+     m_path.lineTo(pt);
+ }
+
+ void Context2D::quadraticCurveTo(qreal cpx, qreal cpy, qreal x, qreal y)
+ {
+     QPointF cp = m_state.matrix.map(QPointF(cpx, cpy));
+     QPointF xy = m_state.matrix.map(QPointF(x, y));
+     m_path.quadTo(cp, xy);
+ }
+
+ void Context2D::bezierCurveTo(qreal cp1x, qreal cp1y,
+                               qreal cp2x, qreal cp2y, qreal x, qreal y)
+ {
+     QPointF cp1 = m_state.matrix.map(QPointF(cp1x, cp1y));
+     QPointF cp2 = m_state.matrix.map(QPointF(cp2x, cp2y));
+     QPointF end = m_state.matrix.map(QPointF(x, y));
+     m_path.cubicTo(cp1, cp2, end);
+ }
+
+ void Context2D::arcTo(qreal x1, qreal y1, qreal x2, qreal y2, qreal radius)
+ {
+     <span class="comment">//</span>FIXME: this is surely busted
+     QPointF st  = m_state.matrix.map(QPointF(x1, y1));
+     QPointF end = m_state.matrix.map(QPointF(x2, y2));
+     m_path.arcTo(st.x(), st.y(),
+                  end.x()-st.x(), end.y()-st.y(),
+                  radius, 90);
+ }
+
+ void Context2D::rect(qreal x, qreal y, qreal w, qreal h)
+ {
+     QPainterPath path; path.addRect(x, y, w, h);
+     path = m_state.matrix.map(path);
+     m_path.addPath(path);
+ }
+
+ void Context2D::arc(qreal xc, qreal yc, qreal radius,
+                     qreal sar, qreal ear,
+                     bool anticlockwise)
+ {
+     <span class="comment">//</span>### HACK
+     <span class="comment">//</span> In Qt we don't switch the coordinate system for degrees
+     <span class="comment">//</span> and still use the 0,0 as bottom left for degrees so we need
+     <span class="comment">//</span> to switch
+     sar = -sar;
+     ear = -ear;
+     anticlockwise = !anticlockwise;
+     <span class="comment">//</span>end hack
+
+     float sa = DEGREES(sar);
+     float ea = DEGREES(ear);
+
+     double span = 0;
+
+     double xs     = xc - radius;
+     double ys     = yc - radius;
+     double width  = radius*2;
+     double height = radius*2;
+
+     if (!anticlockwise &amp;&amp; (ea &lt; sa)) {
+         span += 360;
+     } else if (anticlockwise &amp;&amp; (sa &lt; ea)) {
+         span -= 360;
+     }
+
+     <span class="comment">//</span>### this is also due to switched coordinate system
+     <span class="comment">//</span> we would end up with a 0 span instead of 360
+     if (!(qFuzzyCompare(span + (ea - sa) + 1, 1) &amp;&amp;
+           qFuzzyCompare(qAbs(span), 360))) {
+         span   += ea - sa;
+     }
+
+     QPainterPath path;
+     path.moveTo(QPointF(xc + radius  * cos(sar),
+                                 yc - radius  * sin(sar)));
+
+     path.arcTo(xs, ys, width, height, sa, span);
+     path = m_state.matrix.map(path);
+     m_path.addPath(path);
+ }
+
+ void Context2D::fill()
+ {
+     m_painter.fillPath(m_path, m_painter.brush());
+     m_state.creatingShape = false;
+ }
+
+ void Context2D::stroke()
+ {
+     m_painter.strokePath(m_path, m_painter.pen());
+     m_state.creatingShape = false;
+ }
+
+ void Context2D::clip()
+ {
+     m_painter.setClipPath(m_path);
+ }
+
+ bool Context2D::isPointInPath(qreal x, qreal y) const
+ {
+     return m_path.contains(QPointF(x, y));
+ }
+
+ ImageData Context2D::getImageData(qreal sx, qreal sy, qreal sw, qreal sh)
+ {
+     Q_UNUSED(sx);
+     Q_UNUSED(sy);
+     Q_UNUSED(sw);
+     Q_UNUSED(sh);
+     return ImageData();
+ }
+
+ void Context2D::putImageData(ImageData image, qreal dx, qreal dy)
+ {
+     Q_UNUSED(image);
+     Q_UNUSED(dx);
+     Q_UNUSED(dy);
+ }
+
+ Context2D::Context2D(QContext2DCanvas *parent)
+     : QObject(parent),
+       m_cache(parent-&gt;size(), QImage::Format_ARGB32_Premultiplied)
+ {
+     m_cache.fill(qRgba(0,0,0,0));
+     CanvasGradientData::setup(parent-&gt;engine());
+
+     begin();
+ }
+
+ const QImage &amp;Context2D::end()
+ {
+     if (m_painter.isActive())
+         m_painter.end();
+     m_state.creatingShape = false;
+     return m_cache;
+ }
+
+ void Context2D::begin()
+ {
+     if (!m_painter.isActive()) {
+         m_painter.begin(&amp;m_cache);
+         m_painter.setRenderHint(QPainter::Antialiasing);
+         m_painter.setBrush(Qt::black);
+     }
+ }
+
+ void Context2D::clear()
+ {
+     m_cache.fill(qRgba(0,0,0,0));
+ }
+
+ void Context2D::setSize(int w, int h)
+ {
+     if (m_painter.isActive())
+         end();
+     QImage newi(w, h, QImage::Format_ARGB32_Premultiplied);
+     newi.fill(qRgba(0,0,0,0));
+     QPainter p(&amp;newi);
+     p.drawImage(0, 0, m_cache);
+     p.end();
+     m_cache = newi;
+     begin();
+ }
+
+ void Context2D::drawImage(DomImage *image, qreal dx, qreal dy)
+ {
+     if (!image)
+         return;
+     if (dx &lt; 0) {
+         qreal sx = qAbs(dx);
+         qreal sy = qAbs(dy);
+         qreal sw = image-&gt;width() - sx;
+         qreal sh = image-&gt;height() - sy;
+
+         drawImage(image, sx, sy, sw, sh, 0, 0, sw, sh);
+     } else {
+         m_painter.drawImage(QPointF(dx, dy), image-&gt;image());
+     }
+ }
+
+ void Context2D::drawImage(DomImage *image, qreal dx, qreal dy,
+                           qreal dw, qreal dh)
+ {
+     if (!image)
+         return;
+     m_painter.drawImage(QRectF(dx, dy, dw, dh).toRect(), image-&gt;image());
+ }
+
+ void Context2D::drawImage(DomImage *image, qreal sx, qreal sy,
+                           qreal sw, qreal sh, qreal dx, qreal dy,
+                           qreal dw, qreal dh)
+ {
+     if (!image)
+         return;
+     m_painter.drawImage(QRectF(dx, dy, dw, dh), image-&gt;image(),
+                         QRectF(sx, sy, sw, sh));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

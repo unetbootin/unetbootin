@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: qmake Function Reference</title>
+  <link rel="prev" href="qmake-variable-reference.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-environment-reference.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-variable-reference.html">qmake Variable Reference</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-environment-reference.html">Configuring qmake's Environment</a>]
+</p>
+<h1 class="title">qmake Function Reference<br /><span class="subtitle"></span>
+</h1>
+<p><tt>qmake</tt> provides built-in functions to allow the contents of variables to be processed, and to enable tests to be performed during the configuration process. Functions that process the contents of variables typically return values that can be assigned to other variables, and these values are obtained by prefixing function with the <tt>$$</tt> operator. Functions that perform tests are usually used as the conditional parts of scopes; these are indicated in the function descriptions below.</p>
+<p><table width="100%">
+<tr valign="top"><td width="50%">
+<ul><li><a href="#basename-variablename">basename(variablename)</a></li>
+<li><a href="#config-config">CONFIG(config)</a></li>
+<li><a href="#contains-variablename-value">contains(variablename, value)</a></li>
+<li><a href="#count-variablename-number">count(variablename, number)</a></li>
+<li><a href="#dirname-file">dirname(file)</a></li>
+<li><a href="#error-string">error(string)</a></li>
+<li><a href="#eval-string">eval(string)</a></li>
+<li><a href="#exists-filename">exists(filename)</a></li>
+<li><a href="#find-variablename-substr">find(variablename, substr)</a></li>
+<li><a href="#for-iterate-list">for(iterate, list)</a></li>
+<li><a href="#include-filename">include(filename)</a></li>
+<li><a href="#infile-filename-var-val">infile(filename, var, val)</a></li>
+</ul></td><td width="50%"><ul>
+<li><a href="#isempty-variablename">isEmpty(variablename)</a></li>
+<li><a href="#join-variablename-glue-before-after">join(variablename, glue, before, after)</a></li>
+<li><a href="#member-variablename-position">member(variablename, position)</a></li>
+<li><a href="#message-string">message(string)</a></li>
+<li><a href="#prompt-question">prompt(question)</a></li>
+<li><a href="#quote-string">quote(string)</a></li>
+<li><a href="#replace-string-old-string-new-string">replace(string, old_string, new_string)</a></li>
+<li><a href="#sprintf-string-arguments">sprintf(string, arguments..&#x2e;)</a></li>
+<li><a href="#system-command">system(command)</a></li>
+<li><a href="#unique-variablename">unique(variablename)</a></li>
+<li><a href="#warning-string">warning(string)</a></li>
+</ul>
+</td></tr></table></p>
+<a name="basename-variablename"></a>
+<h2>basename(variablename)</h2>
+<p>Returns the basename of the file specified. For example:</p>
+<pre>        FILE = /etc/passwd
+        FILENAME = $$basename(FILE) #passwd</pre>
+<a name="config-config"></a>
+<h2>CONFIG(config)</h2>
+<p>[Conditional]</p>
+<p>This function can be used to test for variables placed into the <tt>CONFIG</tt> variable. This is the same as regular old style (tmake) scopes, but has the added advantage a second parameter can be passed to test for the active config. As the order of values is important in <tt>CONFIG</tt> variables (i.e&#x2e; the last one set will be considered the active config for mutually exclusive values) a second parameter can be used to specify a set of values to consider. For example:</p>
+<pre>         CONFIG = debug
+         CONFIG += release
+         CONFIG(release, debug|release):message(Release build!) #will print
+         CONFIG(debug, debug|release):message(Debug build!) #no print</pre>
+<p>Because release is considered the active setting (for feature parsing) it will be the CONFIG used to generate the build file. In the common case a second parameter is not needed, but for specific mutual exclusive tests it is invaluable.</p>
+<a name="contains-variablename-value"></a>
+<h2>contains(variablename, value)</h2>
+<p>[Conditional]</p>
+<p>Succeeds if the variable <i>variablename</i> contains the value <i>value</i>; otherwise fails. You can check the return value of this function using a scope.</p>
+<p>For example:</p>
+<pre>         contains( drivers, network ) {
+             # drivers contains 'network'
+             message( &quot;Configuring for network build...&quot; )
+             HEADERS += network.h
+             SOURCES += network.cpp
+         }</pre>
+<p>The contents of the scope are only processed if the <tt>drivers</tt> variable contains the value, <tt>network</tt>. If this is the case, the appropriate files are added to the <tt>SOURCES</tt> and <tt>HEADERS</tt> variables.</p>
+<a name="count-variablename-number"></a>
+<h2>count(variablename, number)</h2>
+<p>[Conditional]</p>
+<p>Succeeds if the variable <i>variablename</i> contains a list with the specified <i>number</i> of value; otherwise fails.</p>
+<p>This function is used to ensure that declarations inside a scope are only processed if the variable contains the correct number of values; for example:</p>
+<pre> options = $$find(CONFIG, &quot;debug&quot;) $$find(CONFIG, &quot;release&quot;)
+ count(options, 2) {
+     message(Both release and debug specified.)
+ }</pre>
+<a name="dirname-file"></a>
+<h2>dirname(file)</h2>
+<p>Returns the directory name part of the specified file. For example:</p>
+<pre> FILE = /etc/X11R6/XF86Config
+ DIRNAME = $$dirname(FILE) #/etc/X11R6</pre>
+<a name="error-string"></a>
+<h2>error(string)</h2>
+<p>This function never returns a value. <tt>qmake</tt> displays the given <i>string</i> to the user, and exits. This function should only be used for unrecoverable errors.</p>
+<p>For example:</p>
+<pre>         error(An error has occurred in the configuration process.)</pre>
+<a name="eval-string"></a>
+<h2>eval(string)</h2>
+<p>[Conditional]</p>
+<p>Evaluates the contents of the string using <tt>qmake</tt>'s syntax rules and returns true. Definitions and assignments can be used in the string to modify the values of existing variables or create new definitions.</p>
+<p>For example:</p>
+<pre> eval(TARGET = myapp) {
+     message($$TARGET)
+ }</pre>
+<p>Note that quotation marks can be used to delimit the string, and that the return value can be discarded if it is not needed.</p>
+<a name="exists-filename"></a>
+<h2>exists(filename)</h2>
+<p>[Conditional]</p>
+<p>Tests whether a file with the given <i>filename</i> exists. If the file exists, the function succeeds; otherwise it fails. If a regular expression is specified for the filename, this function succeeds if any file matches the regular expression specified.</p>
+<p>For example:</p>
+<pre>         exists( $(QTDIR)/lib/libqt-mt* ) {
+               message( &quot;Configuring for multi-threaded Qt...&quot; )
+               CONFIG += thread
+         }</pre>
+<p>Note that &quot;/&quot; can be used as a directory separator, regardless of the platform in use.</p>
+<a name="find-variablename-substr"></a>
+<h2>find(variablename, substr)</h2>
+<p>Places all the values in <i>variablename</i> that match <i>substr</i>. <i>substr</i> may be a regular expression, and will be matched accordingly.</p>
+<pre>         MY_VAR = one two three four
+         MY_VAR2 = $$join(MY_VAR, &quot; -L&quot;, -L) -Lfive
+         MY_VAR3 = $$member(MY_VAR, 2) $$find(MY_VAR, t.*)</pre>
+<p>MY_VAR2 will contain '-Lone -Ltwo -Lthree -Lfour -Lfive', and MYVAR3 will contains 'three two three'.</p>
+<a name="for-iterate-list"></a>
+<h2>for(iterate, list)</h2>
+<p>This special test function will cause a loop to be started that iterates over all values in <i>list</i>, setting <i>iterate</i> to each value in turn. As a convenience, if <i>list</i> is 1..10 then iterate will iterate over the values 1 through 10.</p>
+<p>The use of an else scope afer a condition line with a for() loop is disallowed.</p>
+<p>For example:</p>
+<pre>         LIST = 1 2 3
+         for(a, LIST):exists(file.$${a}):message(I see a file.$${a}!)</pre>
+<a name="include-filename"></a>
+<h2>include(filename)</h2>
+<p>[Conditional]</p>
+<p>Includes the contents of the file specified by <i>filename</i> into the current project at the point where it is included. This function succeeds if <i>filename</i> is included; otherwise it fails. The included file is processed immediately.</p>
+<p>You can check whether the file was included by using this function as the condition for a scope; for example:</p>
+<pre>         include( shared.pri )
+         OPTIONS = standard custom
+         !include( options.pri ) {
+             message( &quot;No custom build options specified&quot; )
+         OPTIONS -= custom
+         }</pre>
+<a name="infile-filename-var-val"></a>
+<h2>infile(filename, var, val)</h2>
+<p>[Conditional]</p>
+<p>Succeeds if the file <i>filename</i> (when parsed by <tt>qmake</tt> itself) contains the variable <i>var</i> with a value of <i>val</i>; otherwise fails. If you do not specify a third argument (<i>val</i>), the function will only test whether <i>var</i> has been declared in the file.</p>
+<a name="isempty-variablename"></a>
+<h2>isEmpty(variablename)</h2>
+<p>[Conditional]</p>
+<p>Succeeds if the variable <i>variablename</i> is empty; otherwise fails. This is the equivalent of <tt>count( variablename, 0 )</tt>.</p>
+<p>For example:</p>
+<pre>         isEmpty( CONFIG ) {
+         CONFIG += qt warn_on debug
+         }</pre>
+<a name="join-variablename-glue-before-after"></a>
+<h2>join(variablename, glue, before, after)</h2>
+<p>Joins the value of <i>variablename</i> with <tt>glue</tt>. If this value is non-empty it prefixes the value with <i>before</i> and suffix it with <i>after</i>. <i>variablename</i> is the only required field, the others default to empty strings. If you need to encode spaces in <i>glue</i>, <i>before</i>, or <i>after</i> you must quote them.</p>
+<a name="member-variablename-position"></a>
+<h2>member(variablename, position)</h2>
+<p>Returns the value at the given <i>position</i> in the list of items in <i>variablename</i>. If an item cannot be found at the position specified, an empty string is returned. <i>variablename</i> is the only required field. If not specified, <tt>position</tt> defaults to 0, causing the first value in the list to be returned.</p>
+<a name="message-string"></a>
+<h2>message(string)</h2>
+<p>This function simply writes a message to the console. Unlike the <tt>error()</tt> function, this function allows processing to continue.</p>
+<pre>         message( &quot;This is a message&quot; )</pre>
+<p>The above line causes &quot;This is a message&quot; to be written to the console. The use of quotation marks is optional.</p>
+<p><b>Note:</b> By default, messages are written out for each Makefile generated by qmake for a given project. If you want to ensure that messages only appear once for each project, test the <tt>build_pass</tt> variable <a href="qmake-advanced-usage.html">in conjunction with a scope</a> to filter out messages during builds; for example:</p>
+<pre>         !build_pass:message( &quot;This is a message&quot; )</pre>
+<a name="prompt-question"></a>
+<h2>prompt(question)</h2>
+<p>Displays the specified <i>question</i>, and returns a value read from stdin.</p>
+<a name="quote-string"></a>
+<h2>quote(string)</h2>
+<p>Converts a whole <i>string</i> into a single entity and returns the result. Newlines, carriage returns, and tabs can be specified in the string with \n \r and \t. The return value does not contain either single or double quotation marks unless you explicitly include them yourself, but will be placed into a single entry (for literal expansion).</p>
+<a name="replace-string-old-string-new-string"></a>
+<h2>replace(string, old_string, new_string)</h2>
+<p>Replaces each instance of <tt>old_string</tt> with <tt>new_string</tt> in the contents of the variable supplied as <tt>string</tt>. For example, the code</p>
+<pre> MESSAGE = This is a tent.
+ message($$replace(MESSAGE, tent, test))</pre>
+<p>prints the message:</p>
+<pre>     This is a test.</pre>
+<a name="sprintf-string-arguments"></a>
+<h2>sprintf(string, arguments..&#x2e;)</h2>
+<p>Replaces %1-%9 with the arguments passed in the comma-separated list of function <i>arguments</i> and returns the processed string.</p>
+<a name="system-command"></a>
+<h2>system(command)</h2>
+<p>[Conditional]</p>
+<p>Executes the given <tt>command</tt> in a secondary shell, and succeeds if the command returns with a zero exit status; otherwise fails. You can check the return value of this function using a scope:</p>
+<p>For example:</p>
+<pre>         system(ls /bin):HAS_BIN=FALSE</pre>
+<p>Alternatively, you can use this function to obtain stdout and stderr from the command, and assign it to a variable. For example, you can use this to interrogate information about the platform:</p>
+<pre>         UNAME = $$system(uname -s)
+         contains( UNAME, [lL]inux ):message( This looks like Linux ($$UNAME) to me )</pre>
+<a name="unique"></a><a name="unique-variablename"></a>
+<h2>unique(variablename)</h2>
+<p>This will return a list of values in variable that are unique (that is with repetitive entries removed). For example:</p>
+<pre>        ARGS = 1 2 3 2 5 1
+        ARGS = $$unique(ARGS) #1 2 3 5</pre>
+<a name="warning-string"></a>
+<h2>warning(string)</h2>
+<p>This function will always succeed, and will display the given <i>string</i> to the user. message() is a synonym for warning().</p>
+<p>
+[Previous: <a href="qmake-variable-reference.html">qmake Variable Reference</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-environment-reference.html">Configuring qmake's Environment</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

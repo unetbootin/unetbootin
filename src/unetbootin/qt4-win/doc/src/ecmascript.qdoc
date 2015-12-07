@@ -1,0 +1,315 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page ecmascript.html
+    \title ECMAScript Reference
+    \ingroup scripting
+    \brief A list of objects, functions and properties supported by QtScript.
+
+    This reference contains a list of objects, functions and
+    properties supported by QtScript.
+
+    \tableofcontents
+
+    \section1 The Global Object
+
+    \section2 Value Properties
+
+    \list
+    \o NaN
+    \o Infinity
+    \o undefined
+    \o Math
+    \endlist
+
+    \section2 Function Properties
+
+    \list
+    \o eval(x)
+    \o parseInt(string, radix)
+    \o parseFloat(string)
+    \o isNaN(number)
+    \o isFinite(number)
+    \o decodeURI(encodedURI)
+    \o decodeURIComponent(encodedURIComponent)
+    \o encodeURI(uri)
+    \o encodeURIComponent(uriComponent)
+    \endlist
+
+    \section2 Constructor Properties
+
+    \list
+    \o Object
+    \o Function
+    \o Array
+    \o String
+    \o Boolean
+    \o Number
+    \o Date
+    \o RegExp
+    \o Error
+    \o EvalError
+    \o RangeError
+    \o ReferenceError
+    \o SyntaxError
+    \o TypeError
+    \o URIError
+    \endlist
+
+    \section1 Object Objects
+
+    \section2 Object Prototype Object
+
+    \list
+    \o toString()
+    \o toLocaleString()
+    \o valueOf()
+    \o hasOwnProperty(V)
+    \o isPrototypeOf(V)
+    \o propertyIsEnumerable(V)
+    \endlist
+
+    \section1 Function Objects
+
+    \section2 Function Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \o apply(thisArg, argArray)
+    \o call(thisArg [, arg1 [, arg2, ...]])
+    \endlist
+
+    \section1 Array Objects
+
+    \section2 Array Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \o toLocaleString()
+    \o concat([item1 [, item2 [, ...]]])
+    \o join(separator)
+    \o pop()
+    \o push([item1 [, item2 [, ...]]])
+    \o reverse()
+    \o shift()
+    \o slice(start, end)
+    \o sort(comparefn)
+    \o splice(start, deleteCount[, item1 [, item2 [, ...]]])
+    \o unshift([item1 [, item2 [, ...]]])
+    \endlist
+
+    \section1 String Objects
+
+    \section2 String Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \o valueOf()
+    \o charAt(pos)
+    \o charCodeAt(pos)
+    \o concat([string1 [, string2 [, ...]]])
+    \o indexOf(searchString ,position)
+    \o lastIndexOf(searchString, position)
+    \o localeCompare(that)
+    \o match(regexp)
+    \o replace(searchValue, replaceValue)
+    \o search(regexp)
+    \o slice(start, end)
+    \o split(separator, limit)
+    \o substring(start, end)
+    \o toLowerCase()
+    \o toLocaleLowerCase()
+    \o toUpperCase()
+    \o toLocaleUpperCase()
+    \endlist
+
+    \section1 Boolean Objects
+
+    \section2 Boolean Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \o valueOf()
+    \endlist
+
+    \section1 Number Objects
+
+    \section2 Number Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString(radix)
+    \o toLocaleString()
+    \o toFixed(fractionDigits)
+    \o toExponential(fractionDigits)
+    \o toPrecision(precision)
+    \endlist
+
+    \section1 The Math Object
+
+    \section2 Value Properties
+
+    \list
+    \o E
+    \o LN10
+    \o LN2
+    \o LOG2E
+    \o LOG10E
+    \o PI
+    \o SQRT1_2
+    \o SQRT2
+    \endlist
+
+    \section2 Function Properties
+
+    \list
+    \o abs(x)
+    \o acos(x)
+    \o asin(x)
+    \o atan(x)
+    \o atan2(y, x)
+    \o ceil(x)
+    \o cos(x)
+    \o exp(x)
+    \o floor(x)
+    \o log(x)
+    \o max([value1 [, value2 [, ...]]])
+    \o min([value1 [, value2 [, ...]]])
+    \o pow(x, y)
+    \o random()
+    \o round(x)
+    \o sin(x)
+    \o sqrt(x)
+    \o tan(x)
+    \endlist
+
+    \section1 Date Objects
+
+    \section2 Date Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \o toDateString()
+    \o toTimeString()
+    \o toLocaleString()
+    \o toLocaleDateString()
+    \o toLocaleTimeString()
+    \o valueOf()
+    \o getTime()
+    \o getFullYear()
+    \o getUTCFullYear()
+    \o getMonth()
+    \o getUTCMonth()
+    \o getDate()
+    \o getUTCDate()
+    \o getDay()
+    \o getUTCDay()
+    \o getHours()
+    \o getUTCHours()
+    \o getMinutes()
+    \o getUTCMinutes()
+    \o getSeconds()
+    \o getUTCSeconds()
+    \o getMilliseconds()
+    \o getUTCMilliseconds()
+    \o getTimeZoneOffset()
+    \o setTime(time)
+    \o setMilliseconds(ms)
+    \o setUTCMilliseconds(ms)
+    \o setSeconds(sec [, ms])
+    \o setUTCSeconds(sec [, ms])
+    \o setMinutes(min [, sec [, ms]])
+    \o setUTCMinutes(min [, sec [, ms]])
+    \o setHours(hour [, min [, sec [, ms]]])
+    \o setUTCHours(hour [, min [, sec [, ms]]])
+    \o setDate(date)
+    \o setUTCDate(date)
+    \o setMonth(month [, date])
+    \o setUTCMonth(month [, date])
+    \o setFullYear(year [, month [, date]])
+    \o setUTCFullYear(year [, month [, date]])
+    \o toUTCString()
+    \endlist
+
+    \section1 RegExp Objects
+
+    \section2 RegExp Prototype Object
+
+    \section3 Function Properties
+
+    \list
+    \o exec(string)
+    \o test(string)
+    \o toString()
+    \endlist
+
+    \section1 Error Objects
+
+    \section2 Error Prototype Object
+
+    \section3 Value Properties
+
+    \list
+    \o name
+    \o message
+    \endlist
+
+    \section3 Function Properties
+
+    \list
+    \o toString()
+    \endlist
+
+*/

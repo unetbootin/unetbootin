@@ -1,0 +1,631 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3iconview.cpp -->
+<head>
+  <title>Qt 4.4: Q3IconView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3IconView Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3IconView class provides an area with movable labelled icons. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3IconView&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qiconview">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3scrollview.html">Q3ScrollView</a>.</p>
+<ul>
+<li><a href="q3iconview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3iconview.html#Arrangement-enum">Arrangement</a></b> { LeftToRight, TopToBottom }</li>
+<li><div class="fn"/>typedef <b><a href="q3iconview.html#ComparisonFlags-typedef">ComparisonFlags</a></b></li>
+<li><div class="fn"/>enum <b><a href="q3iconview.html#ItemTextPos-enum">ItemTextPos</a></b> { Bottom, Right }</li>
+<li><div class="fn"/>enum <b><a href="q3iconview.html#ResizeMode-enum">ResizeMode</a></b> { Fixed, Adjust }</li>
+<li><div class="fn"/>enum <b><a href="q3iconview.html#SelectionMode-enum">SelectionMode</a></b> { Single, Multi, Extended, NoSelection }</li>
+<li><div class="fn"/>enum <b><a href="q3iconview.html#StringComparisonMode-enum">StringComparisonMode</a></b> { CaseSensitive, ExactMatch, BeginsWith, EndsWith, Contains }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3iconview.html#arrangement-prop">arrangement</a></b> : Arrangement</li>
+<li><div class="fn"/><b><a href="q3iconview.html#autoArrange-prop">autoArrange</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3iconview.html#count-prop">count</a></b> : const uint</li>
+<li><div class="fn"/><b><a href="q3iconview.html#gridX-prop">gridX</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3iconview.html#gridY-prop">gridY</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3iconview.html#itemTextBackground-prop">itemTextBackground</a></b> : QBrush</li>
+<li><div class="fn"/><b><a href="q3iconview.html#itemTextPos-prop">itemTextPos</a></b> : ItemTextPos</li>
+<li><div class="fn"/><b><a href="q3iconview.html#itemsMovable-prop">itemsMovable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3iconview.html#maxItemTextLength-prop">maxItemTextLength</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3iconview.html#maxItemWidth-prop">maxItemWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3iconview.html#resizeMode-prop">resizeMode</a></b> : ResizeMode</li>
+<li><div class="fn"/><b><a href="q3iconview.html#selectionMode-prop">selectionMode</a></b> : SelectionMode</li>
+<li><div class="fn"/><b><a href="q3iconview.html#showToolTips-prop">showToolTips</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3iconview.html#sortDirection-prop">sortDirection</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3iconview.html#sorting-prop">sorting</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3iconview.html#spacing-prop">spacing</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3iconview.html#wordWrapIconText-prop">wordWrapIconText</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3iconview.html#Q3IconView">Q3IconView</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3iconview.html#dtor.Q3IconView">~Q3IconView</a></b> ()</li>
+<li><div class="fn"/>Arrangement <b><a href="q3iconview.html#arrangement-prop">arrangement</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#autoArrange-prop">autoArrange</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#clearSelection">clearSelection</a></b> ()</li>
+<li><div class="fn"/>uint <b><a href="q3iconview.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#currentItem">currentItem</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#ensureItemVisible">ensureItemVisible</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#findFirstVisibleItem">findFirstVisibleItem</a></b> ( const QRect &amp; <i>r</i> ) const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#findItem">findItem</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#findItem-3">findItem</a></b> ( const QString &amp; <i>text</i>, ComparisonFlags <i>compare</i> = BeginsWith | Qt::CaseSensitive ) const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#findLastVisibleItem">findLastVisibleItem</a></b> ( const QRect &amp; <i>r</i> ) const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#firstItem">firstItem</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#gridX-prop">gridX</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#gridY-prop">gridY</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#index">index</a></b> ( const Q3IconViewItem * <i>item</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#insertItem">insertItem</a></b> ( Q3IconViewItem * <i>item</i>, Q3IconViewItem * <i>after</i> = 0L )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#invertSelection">invertSelection</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#isRenaming">isRenaming</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="q3iconview.html#itemTextBackground-prop">itemTextBackground</a></b> () const</li>
+<li><div class="fn"/>ItemTextPos <b><a href="q3iconview.html#itemTextPos-prop">itemTextPos</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#itemsMovable-prop">itemsMovable</a></b> () const</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#lastItem">lastItem</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#maxItemTextLength-prop">maxItemTextLength</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#maxItemWidth-prop">maxItemWidth</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#repaintItem">repaintItem</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#repaintSelectedItems">repaintSelectedItems</a></b> ()</li>
+<li><div class="fn"/>ResizeMode <b><a href="q3iconview.html#resizeMode-prop">resizeMode</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#selectAll">selectAll</a></b> ( bool <i>select</i> )</li>
+<li><div class="fn"/>SelectionMode <b><a href="q3iconview.html#selectionMode-prop">selectionMode</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#arrangement-prop">setArrangement</a></b> ( Arrangement <i>am</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#autoArrange-prop">setAutoArrange</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#setCurrentItem">setCurrentItem</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#gridX-prop">setGridX</a></b> ( int <i>rx</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#gridY-prop">setGridY</a></b> ( int <i>ry</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#itemTextBackground-prop">setItemTextBackground</a></b> ( const QBrush &amp; <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#itemTextPos-prop">setItemTextPos</a></b> ( ItemTextPos <i>pos</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#itemsMovable-prop">setItemsMovable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#maxItemTextLength-prop">setMaxItemTextLength</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#maxItemWidth-prop">setMaxItemWidth</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#resizeMode-prop">setResizeMode</a></b> ( ResizeMode <i>am</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#setSelected">setSelected</a></b> ( Q3IconViewItem * <i>item</i>, bool <i>s</i>, bool <i>cb</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#selectionMode-prop">setSelectionMode</a></b> ( SelectionMode <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#showToolTips-prop">setShowToolTips</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#setSorting">setSorting</a></b> ( bool <i>sort</i>, bool <i>ascending</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#spacing-prop">setSpacing</a></b> ( int <i>sp</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#wordWrapIconText-prop">setWordWrapIconText</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#showToolTips-prop">showToolTips</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#sort">sort</a></b> ( bool <i>ascending</i> = true )</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#sortDirection-prop">sortDirection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#sorting-prop">sorting</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3iconview.html#spacing-prop">spacing</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#takeItem">takeItem</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3iconview.html#wordWrapIconText-prop">wordWrapIconText</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#arrangeItemsInGrid">arrangeItemsInGrid</a></b> ( const QSize &amp; <i>grid</i>, bool <i>update</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#arrangeItemsInGrid-2">arrangeItemsInGrid</a></b> ( bool <i>update</i> = true )</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3iconview.html#clicked">clicked</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#clicked-2">clicked</a></b> ( Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#contextMenuRequested">contextMenuRequested</a></b> ( Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#currentChanged">currentChanged</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#doubleClicked">doubleClicked</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#dropped">dropped</a></b> ( QDropEvent * <i>e</i>, const Q3ValueList&lt;Q3IconDragItem&gt; &amp; <i>lst</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#itemRenamed">itemRenamed</a></b> ( Q3IconViewItem * <i>item</i>, const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#itemRenamed-2">itemRenamed</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#mouseButtonClicked">mouseButtonClicked</a></b> ( int <i>button</i>, Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#mouseButtonPressed">mouseButtonPressed</a></b> ( int <i>button</i>, Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#moved">moved</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#onItem">onItem</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#onViewport">onViewport</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#pressed">pressed</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#pressed-2">pressed</a></b> ( Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#returnPressed">returnPressed</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#rightButtonClicked">rightButtonClicked</a></b> ( Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#rightButtonPressed">rightButtonPressed</a></b> ( Q3IconViewItem * <i>item</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#selectionChanged">selectionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#selectionChanged-2">selectionChanged</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual Q3DragObject * <b><a href="q3iconview.html#dragObject">dragObject</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#drawBackground">drawBackground</a></b> ( QPainter * <i>p</i>, const QRect &amp; <i>r</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#drawRubber">drawRubber</a></b> ( QPainter * <i>p</i> )</li>
+<li><div class="fn"/>void <b><a href="q3iconview.html#emitSelectionChanged">emitSelectionChanged</a></b> ( Q3IconViewItem * <i>i</i> = 0 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#insertInGrid">insertInGrid</a></b> ( Q3IconViewItem * <i>item</i> )</li>
+<li><div class="fn"/>Q3IconViewItem * <b><a href="q3iconview.html#makeRowLayout">makeRowLayout</a></b> ( Q3IconViewItem * <i>begin</i>, int &amp; <i>y</i>, bool &amp; <i>changed</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#startDrag">startDrag</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="protected-slots"></a>
+<h3>Protected Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#adjustItems">adjustItems</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#doAutoScroll">doAutoScroll</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3iconview.html#slotUpdate">slotUpdate</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3IconView class provides an area with movable labelled icons.</p>
+<p>A Q3IconView can display and manage a grid or other 2D layout of labelled icons. Each labelled icon is a <a href="q3iconviewitem.html">Q3IconViewItem</a>. Items (Q3IconViewItems) can be added or deleted at any time; items can be moved within the Q3IconView. Single or multiple items can be selected. Items can be renamed in-place. Q3IconView also supports <a href="#draganddrop">drag and drop</a>.</p>
+<p>Each item contains a label string, a pixmap or picture (the icon itself) and optionally a sort key. The sort key is used for sorting the items and defaults to the label string. The label string can be displayed below or to the right of the icon (see <a href="q3iconview.html#ItemTextPos-enum">ItemTextPos</a>).</p>
+<p>The simplest way to create a Q3IconView is to create a Q3IconView object and create some Q3IconViewItems with the Q3IconView as their parent, set the icon view's geometry and show it. For example:</p>
+<pre>     Q3IconView *iv = new Q3IconView(this);
+     QDir dir(path, &quot;*.xpm&quot;);
+     for (uint i = 0; i &lt; dir.count(); i++) {
+         (void) new Q3IconViewItem(iv, dir[i], QPixmap(path + dir[i]));
+     }
+     iv-&gt;resize(600, 400);
+     iv-&gt;show();</pre>
+<p>The <a href="q3iconviewitem.html">Q3IconViewItem</a> call passes a pointer to the Q3IconView we wish to populate, along with the label text and a <a href="qpixmap.html">QPixmap</a>.</p>
+<p>When an item is inserted the Q3IconView allocates a position for it. Existing items are rearranged if <a href="q3iconview.html#autoArrange-prop">autoArrange</a>() is true. The default arrangement is <a href="q3iconview.html#Arrangement-enum">LeftToRight</a> -- the Q3IconView fills up the <i>left-most</i> column from top to bottom, then moves one column <i>right</i> and fills that from top to bottom and so on. The arrangement can be modified with any of the following approaches:</p>
+<ul>
+<li>Call <a href="q3iconview.html#arrangement-prop">setArrangement</a>(), e.g&#x2e; with <a href="q3iconview.html#Arrangement-enum">TopToBottom</a> which will fill the <i>top-most</i> row from left to right, then moves one row <i>down</i> and fills that row from left to right and so on.</li>
+<li>Construct each <a href="q3iconviewitem.html">Q3IconViewItem</a> using a constructor which allows you to specify which item the new one is to follow.</li>
+<li>Call <a href="q3iconview.html#setSorting">setSorting</a>() or <a href="q3iconview.html#sort">sort</a>() to sort the items.</li>
+</ul>
+<p>The spacing between items is set with <a href="q3iconview.html#spacing-prop">setSpacing</a>(). Items can be laid out using a fixed grid using <a href="q3iconview.html#gridX-prop">setGridX</a>() and <a href="q3iconview.html#gridY-prop">setGridY</a>(); by default the Q3IconView calculates a grid dynamically. The position of items' label text is set with <a href="q3iconview.html#itemTextPos-prop">setItemTextPos</a>(). The text's background can be set with <a href="q3iconview.html#itemTextBackground-prop">setItemTextBackground</a>(). The maximum width of an item and of its text are set with <a href="q3iconview.html#maxItemWidth-prop">setMaxItemWidth</a>() and <a href="q3iconview.html#maxItemTextLength-prop">setMaxItemTextLength</a>(). The label text will be word-wrapped if it is too long; this is controlled by <a href="q3iconview.html#wordWrapIconText-prop">setWordWrapIconText</a>(). If the label text is truncated, the user can still see the entire text in a tool tip if they hover the mouse over the item. This is controlled with <a href="q3iconview.html#showToolTips-prop">setShowToolTips</a>().</p>
+<p>Items which are <a href="q3iconviewitem.html#isSelectable">selectable</a> may be selected depending on the <a href="q3iconview.html#SelectionMode-enum">SelectionMode</a>; the default is <a href="q3iconview.html#SelectionMode-enum">Single</a>. Because Q3IconView offers multiple selection it must display keyboard focus and selection state separately. Therefore there are functions to set the selection state of an item (<a href="q3iconview.html#setSelected">setSelected</a>()) and to select which item displays keyboard focus (<a href="q3iconview.html#setCurrentItem">setCurrentItem</a>()). When multiple items may be selected the icon view provides a rubberband, too.</p>
+<p>When in-place renaming is enabled (it is disabled by default), the user may change the item's label. They do this by selecting the item (single clicking it or navigating to it with the arrow keys), then single clicking it (or pressing F2), and entering their text. If no key has been set with <a href="q3iconviewitem.html#setKey">Q3IconViewItem::setKey</a>() the new text will also serve as the key. (See <a href="q3iconviewitem.html#setRenameEnabled">Q3IconViewItem::setRenameEnabled</a>().)</p>
+<p>You can control whether users can move items themselves with <a href="q3iconview.html#itemsMovable-prop">setItemsMovable</a>().</p>
+<p>Because the internal structure used to store the icon view items is linear, no iterator class is needed to iterate over all the items. Instead we iterate by getting the first item from the <i>icon view</i> and then each subsequent (<a href="q3iconviewitem.html#nextItem">Q3IconViewItem::nextItem</a>()) from each <i>item</i> in turn:</p>
+<pre>         for (Q3IconViewItem *item = iv-&gt;firstItem(); item; item = item-&gt;nextItem())
+             do_something(item);</pre>
+<p>Q3IconView also provides <a href="q3iconview.html#currentItem">currentItem</a>(). You can search for an item using <a href="q3iconview.html#findItem">findItem</a>() (searching by position or for label text) and with <a href="q3iconview.html#findFirstVisibleItem">findFirstVisibleItem</a>() and <a href="q3iconview.html#findLastVisibleItem">findLastVisibleItem</a>(). The number of items is returned by <a href="q3iconview.html#count-prop">count</a>(). An item can be removed from an icon view using <a href="q3iconview.html#takeItem">takeItem</a>(); to delete an item use <tt>delete</tt>. All the items can be deleted with <a href="q3iconview.html#clear">clear</a>().</p>
+<p>The Q3IconView emits a wide range of useful signals, including <a href="q3iconview.html#selectionChanged">selectionChanged</a>(), <a href="q3iconview.html#currentChanged">currentChanged</a>(), <a href="q3iconview.html#clicked">clicked</a>(), <a href="q3iconview.html#moved">moved</a>() and <a href="q3iconview.html#itemRenamed">itemRenamed</a>().</p>
+<a name="draganddrop"></a><a name="drag-and-drop"></a>
+<h3>Drag and Drop</h3>
+<p>Q3IconView supports the drag and drop of items within the Q3IconView itself. It also supports the drag and drop of items out of or into the Q3IconView and drag and drop onto items themselves. The drag and drop of items outside the Q3IconView can be achieved in a simple way with basic functionality, or in a more sophisticated way which provides more power and control.</p>
+<p>The simple approach to dragging items out of the icon view is to subclass Q3IconView and reimplement <a href="q3iconview.html#dragObject">Q3IconView::dragObject</a>().</p>
+<pre>     Q3DragObject *MyIconView::dragObject()
+     {
+         return new Q3TextDrag(currentItem()-&gt;text(), this);
+     }</pre>
+<p>In this example we create a <a href="q3textdrag.html">Q3TextDrag</a> object, (derived from <a href="q3dragobject.html">Q3DragObject</a>), containing the item's label and return it as the drag object. We could just as easily have created a <a href="q3imagedrag.html">Q3ImageDrag</a> from the item's pixmap and returned that instead.</p>
+<p>Q3IconViews and their Q3IconViewItems can also be the targets of drag and drops. To make the Q3IconView itself able to accept drops connect to the <a href="q3iconview.html#dropped">dropped</a>() signal. When a drop occurs this signal will be emitted with a QDragEvent and a <a href="qlinkedlist.html">QLinkedList</a> of Q3IconDragItems. To make a <a href="q3iconviewitem.html">Q3IconViewItem</a> into a drop target subclass <a href="q3iconviewitem.html">Q3IconViewItem</a> and reimplement <a href="q3iconviewitem.html#acceptDrop">Q3IconViewItem::acceptDrop</a>() and <a href="q3iconviewitem.html#dropped">Q3IconViewItem::dropped</a>().</p>
+<pre>     bool MyIconViewItem::acceptDrop(const QMimeSource *mime) const
+     {
+         if (mime-&gt;provides(&quot;text/plain&quot;))
+             return true;
+         return false;
+     }
+
+     void MyIconViewItem::dropped(QDropEvent *evt, const Q3ValueList&lt;Q3IconDragItem&gt;&amp;)
+     {
+         QString label;
+         if (Q3TextDrag::decode(evt, label))
+             setText(label);
+     }</pre>
+<p>If you want to use extended drag-and-drop or have drag shapes drawn you must take a more sophisticated approach.</p>
+<p>The first part is starting drags -- you should use a <a href="q3icondrag.html">Q3IconDrag</a> (or a class derived from it) for the drag object. In <a href="q3iconview.html#dragObject">dragObject</a>() create the drag object, populate it with Q3IconDragItems and return it. Normally such a drag should offer each selected item's data. So in <a href="q3iconview.html#dragObject">dragObject</a>() you should iterate over all the items, and create a <a href="q3icondragitem.html">Q3IconDragItem</a> for each selected item, and append these items with <a href="q3icondrag.html#append">Q3IconDrag::append</a>() to the <a href="q3icondrag.html">Q3IconDrag</a> object. You can use <a href="q3icondragitem.html#setData">Q3IconDragItem::setData</a>() to set the data of each item that should be dragged. If you want to offer the data in additional mime-types, it's best to use a class derived from <a href="q3icondrag.html">Q3IconDrag</a>, which implements additional encoding and decoding functions.</p>
+<p>When a drag enters the icon view, there is little to do. Simply connect to the <a href="q3iconview.html#dropped">dropped</a>() signal and reimplement <a href="q3iconviewitem.html#acceptDrop">Q3IconViewItem::acceptDrop</a>() and <a href="q3iconviewitem.html#dropped">Q3IconViewItem::dropped</a>(). If you've used a <a href="q3icondrag.html">Q3IconDrag</a> (or a subclass of it) the second argument to the dropped signal contains a <a href="qlinkedlist.html">QLinkedList</a> of Q3IconDragItems -- you can access their data by calling <a href="q3icondragitem.html#data">Q3IconDragItem::data</a>() on each one.</p>
+<p>For an example implementation of complex drag-and-drop look at the fileiconview example (qt/examples/fileiconview).</p>
+<p>See also <a href="q3iconviewitem.html#setDragEnabled">Q3IconViewItem::setDragEnabled</a>(), <a href="q3iconviewitem.html#setDropEnabled">Q3IconViewItem::setDropEnabled</a>(), <a href="q3iconviewitem.html#acceptDrop">Q3IconViewItem::acceptDrop</a>(), and <a href="q3iconviewitem.html#dropped">Q3IconViewItem::dropped</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Arrangement-enum"></a>enum Q3IconView::Arrangement</h3>
+<p>This enum type determines in which direction the items flow when the view runs out of space.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3IconView::LeftToRight</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Items which don't fit into the view go further down (you get a vertical scroll bar)</td></tr>
+<tr><td valign="top"><tt>Q3IconView::TopToBottom</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Items which don't fit into the view go further right (you get a horizontal scroll bar)</td></tr>
+</table></p>
+<h3 class="fn"><a name="ComparisonFlags-typedef"></a>typedef Q3IconView::ComparisonFlags</h3>
+<p>This typedef is used in <a href="q3iconview.html">Q3IconView</a>'s API for values that are OR'd combinations of <a href="q3iconview.html#StringComparisonMode-enum">StringComparisonMode</a> values.</p>
+<p>See also <a href="q3iconview.html#StringComparisonMode-enum">StringComparisonMode</a>.</p>
+<h3 class="fn"><a name="ItemTextPos-enum"></a>enum Q3IconView::ItemTextPos</h3>
+<p>This enum type specifies the position of the item text in relation to the icon.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3IconView::Bottom</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The text is drawn below the icon.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::Right</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The text is drawn to the right of the icon.</td></tr>
+</table></p>
+<h3 class="fn"><a name="ResizeMode-enum"></a>enum Q3IconView::ResizeMode</h3>
+<p>This enum type is used to tell <a href="q3iconview.html">Q3IconView</a> how it should treat the positions of its icons when the widget is resized. The modes are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3IconView::Fixed</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The icons' positions are not changed.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::Adjust</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The icons' positions are adjusted to be within the new geometry, if possible.</td></tr>
+</table></p>
+<h3 class="fn"><a name="SelectionMode-enum"></a>enum Q3IconView::SelectionMode</h3>
+<p>This enumerated type is used by <a href="q3iconview.html">Q3IconView</a> to indicate how it reacts to selection by the user. It has four values:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3IconView::Single</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">When the user selects an item, any already-selected item becomes unselected and the user cannot unselect the selected item. This means that the user can never clear the selection. (The application programmer can, using <a href="q3iconview.html#clearSelection">Q3IconView::clearSelection</a>().)</td></tr>
+<tr><td valign="top"><tt>Q3IconView::Multi</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">When the user selects an item, e.g&#x2e; by navigating to it with the keyboard arrow keys or by clicking it, the selection status of that item is toggled and the other items are left alone.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::Extended</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">When the user selects an item the selection is cleared and the new item selected. However, if the user presses the Ctrl key when clicking on an item, the clicked item gets toggled and all other items are left untouched. If the user presses the Shift key while clicking on an item, all items between the current item and the clicked item get selected or unselected, depending on the state of the clicked item. Also, multiple items can be selected by dragging the mouse while the left mouse button stays pressed.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::NoSelection</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Items cannot be selected.</td></tr>
+</table></p>
+<p>To summarize: <tt>Single</tt> is a real single-selection icon view; <tt>Multi</tt> a real multi-selection icon view; <tt>Extended</tt> is an icon view in which users can select multiple items but usually want to select either just one or a range of contiguous items; and <tt>NoSelection</tt> mode is for an icon view where the user can look but not touch.</p>
+<h3 class="fn"><a name="StringComparisonMode-enum"></a>enum Q3IconView::StringComparisonMode</h3>
+<p>This enum type is used to set the string comparison mode when searching for an item. We'll refer to the string being searched as the 'target' string.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3IconView::CaseSensitive</tt></td><td align="center" valign="top"><tt>0x00001</tt></td><td valign="top">The strings must match case sensitively.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::ExactMatch</tt></td><td align="center" valign="top"><tt>0x00010</tt></td><td valign="top">The target and search strings must match exactly.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::BeginsWith</tt></td><td align="center" valign="top"><tt>0x00002</tt></td><td valign="top">The target string begins with the search string.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::EndsWith</tt></td><td align="center" valign="top"><tt>0x00004</tt></td><td valign="top">The target string ends with the search string.</td></tr>
+<tr><td valign="top"><tt>Q3IconView::Contains</tt></td><td align="center" valign="top"><tt>0x00008</tt></td><td valign="top">The target string contains the search string.</td></tr>
+</table></p>
+<p>If you OR these flags together (excluding <tt>CaseSensitive</tt>), the search criteria be applied in the following order: <tt>ExactMatch</tt>, <tt>BeginsWith</tt>, <tt>EndsWith</tt>, <tt>Contains</tt>.</p>
+<p>Matching is case-insensitive unless <tt>CaseSensitive</tt> is set. <tt>CaseSensitive</tt> can be OR-ed with any combination of the other flags.</p>
+<p>See also <a href="q3iconview.html#ComparisonFlags-typedef">ComparisonFlags</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="arrangement-prop"></a>arrangement : <a href="q3iconview.html#Arrangement-enum">Arrangement</a></h3>
+<p>This property holds the arrangement mode of the icon view.</p>
+<p>This can be <a href="q3iconview.html#Arrangement-enum">LeftToRight</a> or <a href="q3iconview.html#Arrangement-enum">TopToBottom</a>. The default is <a href="q3iconview.html#Arrangement-enum">LeftToRight</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Arrangement arrangement () const</b></li>
+<li><div class="fn"/><b>virtual void setArrangement ( Arrangement <i>am</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="autoArrange-prop"></a>autoArrange : bool</h3>
+<p>This property holds whether the icon view rearranges its items when a new item is inserted.</p>
+<p>The default is true.</p>
+<p>Note that if the icon view is not visible at the time of insertion, <a href="q3iconview.html">Q3IconView</a> defers all position-related work until it is shown and then calls <a href="q3iconview.html#arrangeItemsInGrid">arrangeItemsInGrid</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoArrange () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoArrange ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="count-prop"></a>count : const <a href="qtglobal.html#uint-typedef">uint</a></h3>
+<p>This property holds the number of items in the icon view.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>uint count () const</b></li>
+</ul>
+<h3 class="fn"><a name="gridX-prop"></a>gridX : int</h3>
+<p>This property holds the horizontal grid of the icon view.</p>
+<p>If the value is -1, (the default), <a href="q3iconview.html">Q3IconView</a> computes suitable column widths based on the icon view's contents.</p>
+<p>Note that setting a grid width overrides <a href="q3iconview.html#maxItemWidth-prop">setMaxItemWidth</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int gridX () const</b></li>
+<li><div class="fn"/><b>virtual void setGridX ( int <i>rx</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="gridY-prop"></a>gridY : int</h3>
+<p>This property holds the vertical grid of the icon view.</p>
+<p>If the value is -1, (the default), <a href="q3iconview.html">Q3IconView</a> computes suitable column heights based on the icon view's contents.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int gridY () const</b></li>
+<li><div class="fn"/><b>virtual void setGridY ( int <i>ry</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="itemTextBackground-prop"></a>itemTextBackground : <a href="qbrush.html">QBrush</a></h3>
+<p>This property holds the brush to use when drawing the background of an item's text.</p>
+<p>By default this brush is set to <a href="qt.html#BrushStyle-enum">Qt::NoBrush</a>, meaning that only the normal icon view background is used.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QBrush itemTextBackground () const</b></li>
+<li><div class="fn"/><b>virtual void setItemTextBackground ( const QBrush &amp; <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="itemTextPos-prop"></a>itemTextPos : <a href="q3iconview.html#ItemTextPos-enum">ItemTextPos</a></h3>
+<p>This property holds the position where the text of each item is drawn.</p>
+<p>Valid values are <a href="q3iconview.html#ItemTextPos-enum">Bottom</a> or <a href="q3iconview.html#ItemTextPos-enum">Right</a>. The default is <a href="q3iconview.html#ItemTextPos-enum">Bottom</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ItemTextPos itemTextPos () const</b></li>
+<li><div class="fn"/><b>virtual void setItemTextPos ( ItemTextPos <i>pos</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="itemsMovable-prop"></a>itemsMovable : bool</h3>
+<p>This property holds whether the user is allowed to move items around in the icon view.</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool itemsMovable () const</b></li>
+<li><div class="fn"/><b>virtual void setItemsMovable ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maxItemTextLength-prop"></a>maxItemTextLength : int</h3>
+<p>This property holds the maximum length (in characters) that an item's text may have.</p>
+<p>The default is 255 characters.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int maxItemTextLength () const</b></li>
+<li><div class="fn"/><b>virtual void setMaxItemTextLength ( int <i>w</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maxItemWidth-prop"></a>maxItemWidth : int</h3>
+<p>This property holds the maximum width that an item may have.</p>
+<p>The default is 100 pixels.</p>
+<p>Note that if the <a href="q3iconview.html#gridX-prop">gridX</a>() value is set <a href="q3iconview.html">Q3IconView</a> will ignore this property.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int maxItemWidth () const</b></li>
+<li><div class="fn"/><b>virtual void setMaxItemWidth ( int <i>w</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="resizeMode-prop"></a>resizeMode : <a href="q3iconview.html#ResizeMode-enum">ResizeMode</a></h3>
+<p>This property holds the resize mode of the icon view.</p>
+<p>This can be <a href="q3iconview.html#ResizeMode-enum">Fixed</a> or <a href="q3iconview.html#ResizeMode-enum">Adjust</a>. The default is <a href="q3iconview.html#ResizeMode-enum">Fixed</a>. See <a href="q3iconview.html#ResizeMode-enum">ResizeMode</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ResizeMode resizeMode () const</b></li>
+<li><div class="fn"/><b>virtual void setResizeMode ( ResizeMode <i>am</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="selectionMode-prop"></a>selectionMode : <a href="q3iconview.html#SelectionMode-enum">SelectionMode</a></h3>
+<p>This property holds the selection mode of the icon view.</p>
+<p>This can be <a href="q3iconview.html#SelectionMode-enum">Single</a> (the default), <a href="q3iconview.html#SelectionMode-enum">Extended</a>, <a href="q3iconview.html#SelectionMode-enum">Multi</a> or <a href="q3iconview.html#SelectionMode-enum">NoSelection</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>SelectionMode selectionMode () const</b></li>
+<li><div class="fn"/><b>virtual void setSelectionMode ( SelectionMode <i>m</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="showToolTips-prop"></a>showToolTips : bool</h3>
+<p>This property holds whether the icon view will display a tool tip with the complete text for any truncated item text.</p>
+<p>The default is true. Note that this has no effect if <a href="q3iconview.html#wordWrapIconText-prop">setWordWrapIconText</a>() is true, as it is by default.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool showToolTips () const</b></li>
+<li><div class="fn"/><b>virtual void setShowToolTips ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="sortDirection-prop"></a>sortDirection : const bool</h3>
+<p>This property holds whether the sort direction for inserting new items is ascending;.</p>
+<p>The default is true (i.e&#x2e; ascending). This sort direction is only meaningful if both <a href="q3iconview.html#sorting-prop">sorting</a>() and <a href="q3iconview.html#autoArrange-prop">autoArrange</a>() are true.</p>
+<p>To set the sort direction, use <a href="q3iconview.html#setSorting">setSorting</a>()</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool sortDirection () const</b></li>
+</ul>
+<h3 class="fn"><a name="sorting-prop"></a>sorting : const bool</h3>
+<p>This property holds whether the icon view sorts on insertion.</p>
+<p>The default is false, i.e&#x2e; no sorting on insertion.</p>
+<p>To set the sorting, use <a href="q3iconview.html#setSorting">setSorting</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool sorting () const</b></li>
+</ul>
+<h3 class="fn"><a name="spacing-prop"></a>spacing : int</h3>
+<p>This property holds the space in pixels between icon view items.</p>
+<p>The default is 5 pixels.</p>
+<p>Negative values for spacing are illegal.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int spacing () const</b></li>
+<li><div class="fn"/><b>virtual void setSpacing ( int <i>sp</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="wordWrapIconText-prop"></a>wordWrapIconText : bool</h3>
+<p>This property holds whether the item text will be word-wrapped if it is too long.</p>
+<p>The default is true.</p>
+<p>If this property is false, icon text that is too long is truncated, and an ellipsis (..&#x2e;) appended to indicate that truncation has occurred. The full text can still be seen by the user if they hover the mouse because the full text is shown in a tooltip; see <a href="q3iconview.html#showToolTips-prop">setShowToolTips</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool wordWrapIconText () const</b></li>
+<li><div class="fn"/><b>virtual void setWordWrapIconText ( bool <i>b</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3IconView"></a>Q3IconView::Q3IconView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs an empty icon view called <i>name</i>, with parent <i>parent</i> and using the widget flags <i>f</i>.</p>
+<h3 class="fn"><a name="dtor.Q3IconView"></a>Q3IconView::~Q3IconView ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the icon view and deletes all items.</p>
+<h3 class="fn"><a name="adjustItems"></a>void Q3IconView::adjustItems ()&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>Adjusts the positions of the items to the geometry of the icon view.</p>
+<h3 class="fn"><a name="arrangeItemsInGrid"></a>void Q3IconView::arrangeItemsInGrid ( const <a href="qsize.html">QSize</a> &amp; <i>grid</i>, bool <i>update</i> = true )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This variant uses <i>grid</i> instead of (<a href="q3iconview.html#gridX-prop">gridX</a>(), <a href="q3iconview.html#gridY-prop">gridY</a>()). If <i>grid</i> is invalid (see <a href="qsize.html#isValid">QSize::isValid</a>()), arrangeItemsInGrid() calculates a valid grid itself and uses that.</p>
+<p>If <i>update</i> is true (the default) the viewport is repainted.</p>
+<h3 class="fn"><a name="arrangeItemsInGrid-2"></a>void Q3IconView::arrangeItemsInGrid ( bool <i>update</i> = true )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Arranges all the items in the grid specified by <a href="q3iconview.html#gridX-prop">gridX</a>() and <a href="q3iconview.html#gridY-prop">gridY</a>().</p>
+<p>Even if <a href="q3iconview.html#sorting-prop">sorting</a>() is enabled, the items are not sorted by this function. If you want to sort or rearrange the items, use iconview-&gt;sort(iconview-&gt;<a href="q3iconview.html#sortDirection-prop">sortDirection</a>()).</p>
+<p>If <i>update</i> is true (the default), the viewport is repainted as well.</p>
+<p>See also <a href="q3iconview.html#gridX-prop">Q3IconView::setGridX</a>(), <a href="q3iconview.html#gridY-prop">Q3IconView::setGridY</a>(), and <a href="q3iconview.html#sort">Q3IconView::sort</a>().</p>
+<h3 class="fn"><a name="clear"></a>void Q3IconView::clear ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Clears the icon view. All items are deleted.</p>
+<h3 class="fn"><a name="clearSelection"></a>void Q3IconView::clearSelection ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Unselects all the items.</p>
+<h3 class="fn"><a name="clicked"></a>void Q3IconView::clicked ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user clicks any mouse button. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p>See also <a href="q3iconview.html#mouseButtonClicked">mouseButtonClicked</a>(), <a href="q3iconview.html#rightButtonClicked">rightButtonClicked</a>(), and <a href="q3iconview.html#pressed">pressed</a>().</p>
+<h3 class="fn"><a name="clicked-2"></a>void Q3IconView::clicked ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when the user clicks any mouse button on an icon view item. <i>item</i> is a pointer to the item that has been clicked.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()). (If the click's press and release differ by a pixel or two, <i>pos</i> is the position at release time.)</p>
+<p>See also <a href="q3iconview.html#mouseButtonClicked">mouseButtonClicked</a>(), <a href="q3iconview.html#rightButtonClicked">rightButtonClicked</a>(), and <a href="q3iconview.html#pressed">pressed</a>().</p>
+<h3 class="fn"><a name="contextMenuRequested"></a>void Q3IconView::contextMenuRequested ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user invokes a context menu with the right mouse button or with special system keys, with <i>item</i> being the item under the mouse cursor or the current item, respectively.</p>
+<p><i>pos</i> is the position for the context menu in the global coordinate system.</p>
+<h3 class="fn"><a name="currentChanged"></a>void Q3IconView::currentChanged ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new item becomes current. <i>item</i> is the new current item (or 0 if no item is now current).</p>
+<p>See also <a href="q3iconview.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="currentItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::currentItem () const</h3>
+<p>Returns a pointer to the current item of the icon view, or 0 if no item is current.</p>
+<p>See also <a href="q3iconview.html#setCurrentItem">setCurrentItem</a>(), <a href="q3iconview.html#firstItem">firstItem</a>(), and <a href="q3iconview.html#lastItem">lastItem</a>().</p>
+<h3 class="fn"><a name="doAutoScroll"></a>void Q3IconView::doAutoScroll ()&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>Performs autoscrolling when selecting multiple icons with the rubber band.</p>
+<h3 class="fn"><a name="doubleClicked"></a>void Q3IconView::doubleClicked ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user double-clicks on <i>item</i>.</p>
+<h3 class="fn"><a name="dragObject"></a><a href="q3dragobject.html">Q3DragObject</a> * Q3IconView::dragObject ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the <a href="q3dragobject.html">Q3DragObject</a> that should be used for drag-and-drop. This function is called by the icon view when starting a drag to get the dragobject that should be used for the drag. Subclasses may reimplement this.</p>
+<p>See also <a href="q3icondrag.html">Q3IconDrag</a>.</p>
+<h3 class="fn"><a name="drawBackground"></a>void Q3IconView::drawBackground ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qrect.html">QRect</a> &amp; <i>r</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called to draw the rectangle <i>r</i> of the background using the painter <i>p</i>.</p>
+<p>The default implementation fills <i>r</i> with the viewport's backgroundBrush(). Subclasses can reimplement this to draw custom backgrounds.</p>
+<p>See also <a href="q3scrollview.html#drawContents">drawContents</a>().</p>
+<h3 class="fn"><a name="drawRubber"></a>void Q3IconView::drawRubber ( <a href="qpainter.html">QPainter</a> * <i>p</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draws the rubber band using the painter <i>p</i>.</p>
+<h3 class="fn"><a name="dropped"></a>void Q3IconView::dropped ( <a href="qdropevent.html">QDropEvent</a> * <i>e</i>, const <a href="q3valuelist.html">Q3ValueList</a>&lt;<a href="q3icondragitem.html">Q3IconDragItem</a>&gt; &amp; <i>lst</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a drop event occurs in the viewport (but not on any icon) which the icon view itself can't handle.</p>
+<p><i>e</i> provides all the information about the drop. If the drag object of the drop was a <a href="q3icondrag.html">Q3IconDrag</a>, <i>lst</i> contains the list of the dropped items. You can get the data using <a href="q3icondragitem.html#data">Q3IconDragItem::data</a>() on each item. If the <i>lst</i> is empty, i.e&#x2e; the drag was not a <a href="q3icondrag.html">Q3IconDrag</a>, you have to decode the data in <i>e</i> and work with that.</p>
+<p>Note Q3IconViewItems may be drop targets; if a drop event occurs on an item the item handles the drop.</p>
+<h3 class="fn"><a name="emitSelectionChanged"></a>void Q3IconView::emitSelectionChanged ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>i</i> = 0 )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Emits a signal to indicate selection changes. <i>i</i> is the <a href="q3iconviewitem.html">Q3IconViewItem</a> that was selected or de-selected.</p>
+<p><i>You should never need to call this function.</i></p>
+<h3 class="fn"><a name="ensureItemVisible"></a>void Q3IconView::ensureItemVisible ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )</h3>
+<p>Makes sure that <i>item</i> is entirely visible. If necessary, ensureItemVisible() scrolls the icon view.</p>
+<p>See also <a href="q3scrollview.html#ensureVisible">ensureVisible</a>().</p>
+<h3 class="fn"><a name="findFirstVisibleItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::findFirstVisibleItem ( const <a href="qrect.html">QRect</a> &amp; <i>r</i> ) const</h3>
+<p>Finds the first item whose bounding rectangle overlaps <i>r</i> and returns a pointer to that item. <i>r</i> is given in content coordinates. Returns 0 if no item overlaps <i>r</i>.</p>
+<p>If you want to find all items that touch <i>r</i>, you will need to use this function and nextItem() in a loop ending at <a href="q3iconview.html#findLastVisibleItem">findLastVisibleItem</a>() and test <a href="q3iconviewitem.html#rect">Q3IconViewItem::rect</a>() for each of these items.</p>
+<p>See also <a href="q3iconview.html#findLastVisibleItem">findLastVisibleItem</a>() and <a href="q3iconviewitem.html#rect">Q3IconViewItem::rect</a>().</p>
+<h3 class="fn"><a name="findItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::findItem ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Returns a pointer to the item that contains point <i>pos</i>, which is given in contents coordinates, or 0 if no item contains point <i>pos</i>.</p>
+<h3 class="fn"><a name="findItem-3"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::findItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3iconview.html#ComparisonFlags-typedef">ComparisonFlags</a> <i>compare</i> = BeginsWith | Qt::CaseSensitive ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a pointer to the first item whose text begins with <i>text</i>, or 0 if no such item could be found. Use the <i>compare</i> flag to control the comparison behavior.</p>
+<h3 class="fn"><a name="findLastVisibleItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::findLastVisibleItem ( const <a href="qrect.html">QRect</a> &amp; <i>r</i> ) const</h3>
+<p>Finds the last item whose bounding rectangle overlaps <i>r</i> and returns a pointer to that item. <i>r</i> is given in content coordinates. Returns 0 if no item overlaps <i>r</i>.</p>
+<p>See also <a href="q3iconview.html#findFirstVisibleItem">findFirstVisibleItem</a>().</p>
+<h3 class="fn"><a name="firstItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::firstItem () const</h3>
+<p>Returns a pointer to the first item of the icon view, or 0 if there are no items in the icon view.</p>
+<p>See also <a href="q3iconview.html#lastItem">lastItem</a>() and <a href="q3iconview.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="index"></a>int Q3IconView::index ( const <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> ) const</h3>
+<p>Returns the index of <i>item</i>, or -1 if <i>item</i> doesn't exist in this icon view.</p>
+<h3 class="fn"><a name="insertInGrid"></a>void Q3IconView::insertInGrid ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Inserts the <a href="q3iconviewitem.html">Q3IconViewItem</a> <i>item</i> in the icon view's grid. <i>You should never need to call this function.</i> Instead, insert Q3IconViewItems by creating them with a pointer to the <a href="q3iconview.html">Q3IconView</a> that they are to be inserted into.</p>
+<h3 class="fn"><a name="insertItem"></a>void Q3IconView::insertItem ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>after</i> = 0L )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts the icon view item <i>item</i> after <i>after</i>. If <i>after</i> is 0, <i>item</i> is appended after the last item.</p>
+<p><i>You should never need to call this function.</i> Instead create <a href="q3iconviewitem.html">Q3IconViewItem</a>'s and associate them with your icon view like this:</p>
+<pre>         (void) new Q3IconViewItem(myIconview, &quot;The text of the item&quot;, aPixmap);</pre>
+<h3 class="fn"><a name="invertSelection"></a>void Q3IconView::invertSelection ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inverts the selection. Works only in Multi and Extended selection mode.</p>
+<h3 class="fn"><a name="isRenaming"></a>bool Q3IconView::isRenaming () const</h3>
+<p>Returns true if an iconview item is being renamed; otherwise returns false.</p>
+<h3 class="fn"><a name="itemRenamed"></a>void Q3IconView::itemRenamed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when <i>item</i> has been renamed to <i>name</i>, usually by in-place renaming.</p>
+<p>See also <a href="q3iconviewitem.html#setRenameEnabled">Q3IconViewItem::setRenameEnabled</a>() and <a href="q3iconviewitem.html#rename">Q3IconViewItem::rename</a>().</p>
+<h3 class="fn"><a name="itemRenamed-2"></a>void Q3IconView::itemRenamed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when <i>item</i> has been renamed, usually by in-place renaming.</p>
+<p>See also <a href="q3iconviewitem.html#setRenameEnabled">Q3IconViewItem::setRenameEnabled</a>() and <a href="q3iconviewitem.html#rename">Q3IconViewItem::rename</a>().</p>
+<h3 class="fn"><a name="lastItem"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::lastItem () const</h3>
+<p>Returns a pointer to the last item of the icon view, or 0 if there are no items in the icon view.</p>
+<p>See also <a href="q3iconview.html#firstItem">firstItem</a>() and <a href="q3iconview.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="makeRowLayout"></a><a href="q3iconviewitem.html">Q3IconViewItem</a> * Q3IconView::makeRowLayout ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>begin</i>, int &amp; <i>y</i>, bool &amp; <i>changed</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Lays out a row of icons (if Arrangement == <a href="q3iconview.html#Arrangement-enum">TopToBottom</a> this is a column). Starts laying out with the item <i>begin</i>. <i>y</i> is the starting coordinate. Returns the last item of the row (column) and sets the new starting coordinate to <i>y</i>. The <i>changed</i> parameter is used internally.</p>
+<p><b>Warning:</b> This function may be made private in a future version of Qt. We do not recommend calling it.</p>
+<h3 class="fn"><a name="mouseButtonClicked"></a>void Q3IconView::mouseButtonClicked ( int <i>button</i>, <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user clicks mouse button <i>button</i>. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()). (If the click's press and release differ by a pixel or two, <i>pos</i> is the position at release time.)</p>
+<p>See also <a href="q3iconview.html#mouseButtonPressed">mouseButtonPressed</a>(), <a href="q3iconview.html#rightButtonClicked">rightButtonClicked</a>(), and <a href="q3iconview.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="mouseButtonPressed"></a>void Q3IconView::mouseButtonPressed ( int <i>button</i>, <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user presses mouse button <i>button</i>. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()).</p>
+<p>See also <a href="q3iconview.html#rightButtonClicked">rightButtonClicked</a>(), <a href="q3iconview.html#mouseButtonClicked">mouseButtonClicked</a>(), and <a href="q3iconview.html#pressed">pressed</a>().</p>
+<h3 class="fn"><a name="moved"></a>void Q3IconView::moved ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after successfully dropping one (or more) items of the icon view. If the items should be removed, it's best to do so in a slot connected to this signal.</p>
+<h3 class="fn"><a name="onItem"></a>void Q3IconView::onItem ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user moves the mouse cursor onto an <i>item</i>, similar to the <a href="qwidget.html#enterEvent">QWidget::enterEvent</a>() function.</p>
+<h3 class="fn"><a name="onViewport"></a>void Q3IconView::onViewport ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user moves the mouse cursor from an item to an empty part of the icon view.</p>
+<p>See also <a href="q3iconview.html#onItem">onItem</a>().</p>
+<h3 class="fn"><a name="pressed"></a>void Q3IconView::pressed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user presses any mouse button. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p>See also <a href="q3iconview.html#mouseButtonPressed">mouseButtonPressed</a>(), <a href="q3iconview.html#rightButtonPressed">rightButtonPressed</a>(), and <a href="q3iconview.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="pressed-2"></a>void Q3IconView::pressed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when the user presses any mouse button. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()). (If the click's press and release differ by a pixel or two, <i>pos</i> is the position at release time.)</p>
+<p>See also <a href="q3iconview.html#mouseButtonPressed">mouseButtonPressed</a>(), <a href="q3iconview.html#rightButtonPressed">rightButtonPressed</a>(), and <a href="q3iconview.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="repaintItem"></a>void Q3IconView::repaintItem ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Repaints the <i>item</i>.</p>
+<h3 class="fn"><a name="repaintSelectedItems"></a>void Q3IconView::repaintSelectedItems ()</h3>
+<p>Repaints the selected items.</p>
+<h3 class="fn"><a name="returnPressed"></a>void Q3IconView::returnPressed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the user presses the Return or Enter key. <i>item</i> is the <a href="q3iconview.html#currentItem">currentItem</a>() at the time of the keypress.</p>
+<h3 class="fn"><a name="rightButtonClicked"></a>void Q3IconView::rightButtonClicked ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user clicks the right mouse button. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()). (If the click's press and release differ by a pixel or two, <i>pos</i> is the position at release time.)</p>
+<p>See also <a href="q3iconview.html#rightButtonPressed">rightButtonPressed</a>(), <a href="q3iconview.html#mouseButtonClicked">mouseButtonClicked</a>(), and <a href="q3iconview.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="rightButtonPressed"></a>void Q3IconView::rightButtonPressed ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user presses the right mouse button. If <i>item</i> is non-null, the cursor is on <i>item</i>. If <i>item</i> is null, the mouse cursor isn't on any item.</p>
+<p><i>pos</i> is the position of the mouse cursor in the global coordinate system (<a href="qmouseevent.html#globalPos">QMouseEvent::globalPos</a>()).</p>
+<h3 class="fn"><a name="selectAll"></a>void Q3IconView::selectAll ( bool <i>select</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>In Multi and Extended modes, this function sets all items to be selected if <i>select</i> is true, and to be unselected if <i>select</i> is false.</p>
+<p>In Single and <a href="q3iconview.html#SelectionMode-enum">NoSelection</a> modes, this function only changes the selection status of <a href="q3iconview.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="selectionChanged"></a>void Q3IconView::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the selection has been changed. It's emitted in each selection mode.</p>
+<h3 class="fn"><a name="selectionChanged-2"></a>void Q3IconView::selectionChanged ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when the selection changes. <i>item</i> is the newly selected item. This signal is emitted only in single selection mode.</p>
+<h3 class="fn"><a name="setCurrentItem"></a>void Q3IconView::setCurrentItem ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Makes <i>item</i> the new current item of the icon view.</p>
+<p>See also <a href="q3iconview.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="setSelected"></a>void Q3IconView::setSelected ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i>, bool <i>s</i>, bool <i>cb</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Selects or unselects <i>item</i> depending on <i>s</i>, and may also unselect other items, depending on <a href="q3iconview.html#selectionMode-prop">Q3IconView::selectionMode</a>() and <i>cb</i>.</p>
+<p>If <i>s</i> is false, <i>item</i> is unselected.</p>
+<p>If <i>s</i> is true and <a href="q3iconview.html#selectionMode-prop">Q3IconView::selectionMode</a>() is <a href="q3iconview.html#SelectionMode-enum">Single</a>, <i>item</i> is selected, and the item which was selected is unselected.</p>
+<p>If <i>s</i> is true and <a href="q3iconview.html#selectionMode-prop">Q3IconView::selectionMode</a>() is <a href="q3iconview.html#SelectionMode-enum">Extended</a>, <i>item</i> is selected. If <i>cb</i> is true, the selection state of the icon view's other items is left unchanged. If <i>cb</i> is false (the default) all other items are unselected.</p>
+<p>If <i>s</i> is true and <a href="q3iconview.html#selectionMode-prop">Q3IconView::selectionMode</a>() is <a href="q3iconview.html#SelectionMode-enum">Multi</a> <i>item</i> is selected.</p>
+<p>Note that <i>cb</i> is used only if <a href="q3iconview.html#selectionMode-prop">Q3IconView::selectionMode</a>() is <a href="q3iconview.html#SelectionMode-enum">Extended</a>. <i>cb</i> defaults to false.</p>
+<p>All items whose selection status is changed repaint themselves.</p>
+<h3 class="fn"><a name="setSorting"></a>void Q3IconView::setSorting ( bool <i>sort</i>, bool <i>ascending</i> = true )</h3>
+<p>If <i>sort</i> is true, this function sets the icon view to sort items when a new item is inserted. If <i>sort</i> is false, the icon view will not be sorted.</p>
+<p>Note that <a href="q3iconview.html#autoArrange-prop">autoArrange</a>() must be true for sorting to take place.</p>
+<p>If <i>ascending</i> is true (the default), items are sorted in ascending order. If <i>ascending</i> is false, items are sorted in descending order.</p>
+<p><a href="q3iconviewitem.html#compare">Q3IconViewItem::compare</a>() is used to compare pairs of items. The sorting is based on the items' keys; these default to the items' text unless specifically set to something else.</p>
+<p>See also <a href="q3iconview.html#sorting-prop">sorting</a>(), <a href="q3iconview.html#autoArrange-prop">Q3IconView::setAutoArrange</a>(), <a href="q3iconview.html#autoArrange-prop">Q3IconView::autoArrange</a>(), <a href="q3iconview.html#sortDirection-prop">sortDirection</a>(), <a href="q3iconview.html#sort">sort</a>(), and <a href="q3iconviewitem.html#setKey">Q3IconViewItem::setKey</a>().</p>
+<h3 class="fn"><a name="slotUpdate"></a>void Q3IconView::slotUpdate ()&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This slot is used for a slightly-delayed update.</p>
+<p>The icon view is not redrawn immediately after inserting a new item but after a very small delay using a <a href="qtimer.html">QTimer</a>. This means that when many items are inserted in a loop the icon view is probably redrawn only once at the end of the loop. This makes the insertions both flicker-free and faster.</p>
+<h3 class="fn"><a name="sort"></a>void Q3IconView::sort ( bool <i>ascending</i> = true )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sorts and rearranges all the items in the icon view. If <i>ascending</i> is true, the items are sorted in increasing order, otherwise they are sorted in decreasing order.</p>
+<p><a href="q3iconviewitem.html#compare">Q3IconViewItem::compare</a>() is used to compare pairs of items. The sorting is based on the items' keys; these default to the items' text unless specifically set to something else.</p>
+<p>Note that this function sets the sort order to <i>ascending</i>.</p>
+<p>See also <a href="q3iconviewitem.html#key">Q3IconViewItem::key</a>(), <a href="q3iconviewitem.html#setKey">Q3IconViewItem::setKey</a>(), <a href="q3iconviewitem.html#compare">Q3IconViewItem::compare</a>(), <a href="q3iconview.html#setSorting">Q3IconView::setSorting</a>(), and <a href="q3iconview.html#sortDirection-prop">Q3IconView::sortDirection</a>().</p>
+<h3 class="fn"><a name="startDrag"></a>void Q3IconView::startDrag ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Starts a drag.</p>
+<h3 class="fn"><a name="takeItem"></a>void Q3IconView::takeItem ( <a href="q3iconviewitem.html">Q3IconViewItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Takes the icon view item <i>item</i> out of the icon view and causes an update of the screen display. The item is not deleted. You should normally not need to call this function because Q3IconViewItem::~Q3IconViewItem() calls it. The normal way to delete an item is to delete it.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

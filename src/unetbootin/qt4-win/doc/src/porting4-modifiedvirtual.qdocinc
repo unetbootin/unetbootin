@@ -1,0 +1,64 @@
+\row \o int QAccessibleInterface::navigate(NavDirection, int) const \o int QAccessibleInterface::navigate(RelationFlag, int, QAccessibleInterface **) const
+\row \o bool QApplication::winEventFilter(MSG *) \o bool QApplication::winEventFilter(MSG *, long *)
+\row \o Function: Offset QIODevice::at() const \o Function: Q_LONGLONG QIODevice::pos() const
+\row \o bool QIODevice::at(Offset) \o bool QIODevice::seek(Q_LONGLONG)
+\row \o bool QIODevice::open(int) \o bool QIODevice::open(OpenMode)
+\row \o Q_LONG QIODevice::readBlock(char *, Q_ULONG) \o Q_LONGLONG QIODevice::readData(char *, Q_LONGLONG)
+\row \o Q_LONG QIODevice::writeBlock(const char *, Q_ULONG) \o Q_LONGLONG QIODevice::writeData(const char *, Q_LONGLONG)
+\row \o const char * QImageFormatType::formatName() const \o QByteArray QImageFormatType::formatName() const
+\row \o QPopupMenu * QLineEdit::createPopupMenu() \o QMenu * QLineEdit::createPopupMenu()
+\row \o bool QMacMime::canConvert(const char *, int) \o bool QMacMime::canConvert(const QString &, int)
+\row \o QValueList<QByteArray> QMacMime::convertFromMime(QByteArray, const char *, int) \o QList<QByteArray> QMacMime::convertFromMime(QByteArray, const QString &, int)
+\row \o QByteArray QMacMime::convertToMime(QValueList<QByteArray> data, const char *, int) \o QByteArray QMacMime::convertToMime(QList<QByteArray> data, const QString &, int)
+\row \o const char * QMacMime::convertorName() \o QString QMacMime::convertorName()
+\row \o int QMacMime::flavorFor(const char *) \o int QMacMime::flavorFor(const QString &)
+\row \o const char * QMacMime::mimeFor(int) \o QString QMacMime::mimeFor(int)
+\row \o QMetaObject * QObject::metaObject() const \o const QMetaObject * QObject::metaObject() const
+\row \o bool QScreen::onCard(unsigned char *) const \o bool QScreen::onCard(const unsigned char *) const
+\row \o bool QScreen::onCard(unsigned char *, ulong &) const \o bool QScreen::onCard(const unsigned char *, ulong &) const
+\row \o int QSpinBox::mapTextToValue(bool *) \o int QSpinBox::mapTextToValue(QString *, QValidator::State *) const
+\row \o QString QSpinBox::mapValueToText(int) \o QString QSpinBox::mapValueToText(int) const
+\row \o bool QSqlDriver::open(const QString &, const QString &, const QString &, const QString &, int) \o bool QSqlDriver::open(const QString &, const QString &, const QString &, const QString &, int, const QString &)
+\row \o QStringList QSqlDriver::tables(const QString &) const \o QStringList QSqlDriver::tables(QSql::TableType) const
+\row \o bool QSqlQuery::prev() \o bool QSqlQuery::previous()
+\row \o QVariant QSqlResult::data(int) \o QVariant QSqlResult::data(int)
+\row \o bool QSqlResult::fetchPrev() \o bool QSqlResult::fetchPrevious()
+\row \o void QStyle::drawComplexControl(ComplexControl, QPainter *, const QWidget *, const QRect &, const QColorGroup &, SFlags, SCFlags, SCFlags, const QStyleOption &) const \o void QStyle::drawComplexControl(ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *) const
+\row \o void QStyle::drawComplexControlMask(ComplexControl, QPainter *, const QWidget *, const QRect &, const QStyleOption &) const \o void QStyle::drawComplexControlMask(ComplexControl, const QStyleOptionComplex *, QPainter *, const QWidget *) const
+\row \o void QStyle::drawControl(ControlElement, QPainter *, const QWidget *, const QRect &, const QColorGroup &, SFlags, const QStyleOption &) const \o void QStyle::drawControl(ControlElement, const QStyleOption *, QPainter *, const QWidget *) const
+\row \o void QStyle::drawControlMask(ControlElement, QPainter *, const QWidget *, const QRect &, const QStyleOption &) const \o void QStyle::drawControlMask(ControlElement, const QStyleOption *, QPainter *, const QWidget *) const
+\row \o void QStyle::drawItem(QPainter *, const QRect &, int, const QColorGroup &, bool, const QPixmap *, const QString &, int, const QColor *) const \o void QStyle::drawItem(QPainter *, const QRect &, int, const QPalette &, bool, const QString &, int, const QColor *) const
+\row \o void QStyle::drawPrimitive(PrimitiveElement, QPainter *, const QRect &, const QColorGroup &, SFlags, const QStyleOption &) const \o void QStyle::drawPrimitive(PrimitiveElement, const QStyleOption *, QPainter *, const QWidget *) const
+\row \o QRect QStyle::itemRect(QPainter *, const QRect &, int, bool, const QPixmap *, const QString &, int) const \o QRect QStyle::itemRect(const QFontMetrics &, const QRect &, int, bool, const QString &, int) const
+\row \o int QStyle::pixelMetric(PixelMetric, const QWidget *) const \o int QStyle::pixelMetric(PixelMetric, const QStyleOption *, const QWidget *) const
+\row \o SubControl QStyle::querySubControl(ComplexControl, const QWidget *, const QPoint &, const QStyleOption &) const \o SubControl QStyle::hitTestComplexControl(ComplexControl, const QStyleOptionComplex *, const QPoint &, const QWidget *) const
+\row \o QRect QStyle::querySubControlMetrics(ComplexControl, const QWidget *, SubControl, const QStyleOption &) const \o QRect QStyle::subControlRect(ComplexControl, const QStyleOptionComplex *, SubControl, const QWidget *) const
+\row \o QSize QStyle::sizeFromContents(ContentsType, const QWidget *, const QSize &, const QStyleOption &) const \o QSize QStyle::sizeFromContents(ContentsType, const QStyleOption *, const QSize &, const QFontMetrics &, const QWidget *) const
+\row \o int QStyle::styleHint(StyleHint, const QWidget *, const QStyleOption &, QStyleHintReturn *) const \o int QStyle::styleHint(StyleHint, const QStyleOption *, const QWidget *, QStyleHintReturn *) const
+\row \o QPixmap QStyle::stylePixmap(StylePixmap, const QWidget *, const QStyleOption &) const \o QPixmap QStyle::standardPixmap(StandardPixmap, const QStyleOption *, const QWidget *) const
+\row \o QRect QStyle::subRect(SubRect, const QWidget *) const \o QRect QStyle::subRect(SubRect, const QStyleOption *, const QFontMetrics &, const QWidget *) const
+\row \o void QStyle::unPolish(QApplication *) \o void QStyle::unpolish(QApplication *)
+\row \o void QStyle::unPolish(QWidget *) \o void QStyle::unpolish(QWidget *)
+\row \o QCString QTextCodec::fromUnicode(const QString &, int &) const \o QByteArray QTextCodec::fromUnicode(const QString &, int &) const
+\row \o QValueList<int> QTextCodecPlugin::mibEnums() const \o QList<int> QTextCodecPlugin::mibEnums() const
+\row \o void QTextDrag::setSubtype(const QCString &) \o void QTextDrag::setSubtype(const QString &)
+\row \o QCString QTextEncoder::fromUnicode(const QString &, int &) \o QByteArray QTextEncoder::fromUnicode(const QString &, int &)
+\row \o void QUriDrag::setUris(QStrList) \o void QUriDrag::setUris(const QList<QByteArray> & list)
+\row \o void QUrlInfo::setSize(uint) \o void QUrlInfo::setSize(Q_LONGLONG)
+\row \o bool QWindowsMime::canConvert(const char *, int) \o bool QWindowsMime::canConvert(const QString &, int)
+\row \o int QWindowsMime::cfFor(const char *) \o int QWindowsMime::cfFor(const QString &)
+\row \o QByteArray QWindowsMime::convertFromMime(QByteArray, const char *, int) \o QByteArray QWindowsMime::convertFromMime(const QByteArray &, const QString &, int)
+\row \o QByteArray QWindowsMime::convertToMime(QByteArray, const char *, int) \o QByteArray QWindowsMime::convertToMime(const QByteArray &, const QString &, int)
+\row \o const char * QWindowsMime::convertorName() \o QString QWindowsMime::convertorName()
+\row \o void QWSMouseHandler::calibrate(QWSPointerCalibrationData *) \o void QWSMouseHandler::calibrate(const QWSPointerCalibrationData *)
+\row \o bool QWidget::macEvent(MSG *) \o bool QWidget::macEvent(EventHandlerCallRef, EventRef)
+\row \o bool QWidget::winEvent(MSG *) \o bool QWidget::winEvent(MSG *, long *)
+\row \o QString QXmlContentHandler::errorString() \o QString QXmlContentHandler::errorString() const
+\row \o QString QXmlDTDHandler::errorString() \o QString QXmlDTDHandler::errorString() const
+\row \o QString QXmlDeclHandler::errorString() \o QString QXmlDeclHandler::errorString() const
+\row \o QString QXmlEntityResolver::errorString() \o QString QXmlEntityResolver::errorString() const
+\row \o QString QXmlErrorHandler::errorString() \o QString QXmlErrorHandler::errorString() const
+\row \o QString QXmlInputSource::data() \o QString QXmlInputSource::data() const
+\row \o QString QXmlLexicalHandler::errorString() \o QString QXmlLexicalHandler::errorString() const
+\row \o int QXmlLocator::columnNumber() \o int QXmlLocator::columnNumber() const
+\row \o int QXmlLocator::lineNumber() \o int QXmlLocator::lineNumber() const

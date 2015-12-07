@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: toplevel.cpp Example File (graphicsview/portedasteroids/toplevel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">toplevel.cpp Example File<br /><span class="small-subtitle">graphicsview/portedasteroids/toplevel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  * KAsteroids - Copyright (c) Martin R. Jones 1997
+  *
+  * Part of the KDE project
+  */</span>
+<span class="comment"> //</span>      --- toplevel.cpp ---
+ #include &lt;q3accel.h&gt;
+ #include &lt;qlabel.h&gt;
+ #include &lt;qlayout.h&gt;
+ #include &lt;qlcdnumber.h&gt;
+ #include &lt;qpushbutton.h&gt;
+
+ #include &lt;qapplication.h&gt;
+<span class="comment"> //</span>Added by qt3to4:
+ #include &lt;Q3HBoxLayout&gt;
+ #include &lt;QShowEvent&gt;
+ #include &lt;Q3Frame&gt;
+ #include &lt;QPixmap&gt;
+ #include &lt;QHideEvent&gt;
+ #include &lt;QKeyEvent&gt;
+ #include &lt;Q3VBoxLayout&gt;
+
+ #include &quot;toplevel.h&quot;
+ #include &quot;ledmeter.h&quot;
+
+ #define SB_SCORE        1
+ #define SB_LEVEL        2
+ #define SB_SHIPS        3
+
+ struct SLevel
+ {
+     int    nrocks;
+     double rockSpeed;
+ };
+
+ #define MAX_LEVELS      16
+
+ SLevel levels[MAX_LEVELS] =
+ {
+     { 1, 0.4 },
+     { 1, 0.6 },
+     { 2, 0.5 },
+     { 2, 0.7 },
+     { 2, 0.8 },
+     { 3, 0.6 },
+     { 3, 0.7 },
+     { 3, 0.8 },
+     { 4, 0.6 },
+     { 4, 0.7 },
+     { 4, 0.8 },
+     { 5, 0.7 },
+     { 5, 0.8 },
+     { 5, 0.9 },
+     { 5, 1.0 }
+ };
+
+ const char *soundEvents[] =
+ {
+     &quot;ShipDestroyed&quot;,
+     &quot;RockDestroyed&quot;,
+     0
+ };
+
+ const char *soundDefaults[] =
+ {
+     &quot;Explosion.wav&quot;,
+     &quot;ploop.wav&quot;,
+     0
+ };
+
+ KAstTopLevel::KAstTopLevel( QWidget *parent, const char *name )
+     : Q3MainWindow( parent, name, 0 )
+ {
+     QWidget *border = new QWidget( this );
+     border-&gt;setBackgroundColor( Qt::black );
+     setCentralWidget( border );
+
+     Q3VBoxLayout *borderLayout = new Q3VBoxLayout( border );
+     borderLayout-&gt;addStretch( 1 );
+
+     QWidget *mainWin = new QWidget( border );
+     mainWin-&gt;setFixedSize(640, 480);
+     borderLayout-&gt;addWidget( mainWin, 0, Qt::AlignHCenter );
+
+     borderLayout-&gt;addStretch( 1 );
+
+     view = new KAsteroidsView( mainWin );
+     view-&gt;setFocusPolicy( Qt::StrongFocus );
+     connect( view, SIGNAL( shipKilled() ), SLOT( slotShipKilled() ) );
+     connect( view, SIGNAL( rockHit(int) ), SLOT( slotRockHit(int) ) );
+     connect( view, SIGNAL( rocksRemoved() ), SLOT( slotRocksRemoved() ) );
+     connect( view, SIGNAL( updateVitals() ), SLOT( slotUpdateVitals() ) );
+
+     Q3VBoxLayout *vb = new Q3VBoxLayout( mainWin );
+     Q3HBoxLayout *hb = new Q3HBoxLayout;
+     Q3HBoxLayout *hbd = new Q3HBoxLayout;
+     vb-&gt;addLayout( hb );
+
+     QFont labelFont( &quot;helvetica&quot;, 24 );
+     QColorGroup grp( Qt::darkGreen, Qt::black, QColor( 128, 128, 128 ),
+             QColor( 64, 64, 64 ), Qt::black, Qt::darkGreen, Qt::black );
+     QPalette pal( grp, grp, grp );
+
+     mainWin-&gt;setPalette( pal );
+
+     hb-&gt;addSpacing( 10 );
+
+     QLabel *label;
+     label = new QLabel( tr(&quot;Score&quot;), mainWin );
+     label-&gt;setFont( labelFont );
+     label-&gt;setPalette( pal );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     hb-&gt;addWidget( label );
+
+     scoreLCD = new QLCDNumber( 6, mainWin );
+     scoreLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     scoreLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     scoreLCD-&gt;setFixedWidth( 150 );
+     scoreLCD-&gt;setPalette( pal );
+     hb-&gt;addWidget( scoreLCD );
+     hb-&gt;addStretch( 10 );
+
+     label = new QLabel( tr(&quot;Level&quot;), mainWin );
+     label-&gt;setFont( labelFont );
+     label-&gt;setPalette( pal );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     hb-&gt;addWidget( label );
+
+     levelLCD = new QLCDNumber( 2, mainWin );
+     levelLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     levelLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     levelLCD-&gt;setFixedWidth( 70 );
+     levelLCD-&gt;setPalette( pal );
+     hb-&gt;addWidget( levelLCD );
+     hb-&gt;addStretch( 10 );
+
+     label = new QLabel( tr(&quot;Ships&quot;), mainWin );
+     label-&gt;setFont( labelFont );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     label-&gt;setPalette( pal );
+     hb-&gt;addWidget( label );
+
+     shipsLCD = new QLCDNumber( 1, mainWin );
+     shipsLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     shipsLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     shipsLCD-&gt;setFixedWidth( 40 );
+     shipsLCD-&gt;setPalette( pal );
+     hb-&gt;addWidget( shipsLCD );
+
+     hb-&gt;addStrut( 30 );
+
+     vb-&gt;addWidget( view, 10 );
+
+<span class="comment"> //</span> -- bottom layout:
+     vb-&gt;addLayout( hbd );
+
+     QFont smallFont( &quot;helvetica&quot;, 14 );
+     hbd-&gt;addSpacing( 10 );
+
+     QString sprites_prefix = &quot;:/trolltech/examples/graphicsview/portedasteroids/sprites/&quot;;
+<span class="comment"> /*
+     label = new QLabel( tr( &quot;T&quot; ), mainWin );
+     label-&gt;setFont( smallFont );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     label-&gt;setPalette( pal );
+     hbd-&gt;addWidget( label );
+
+     teleportsLCD = new QLCDNumber( 1, mainWin );
+     teleportsLCD-&gt;setFrameStyle( QFrame::NoFrame );
+     teleportsLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     teleportsLCD-&gt;setPalette( pal );
+     teleportsLCD-&gt;setFixedHeight( 20 );
+     hbd-&gt;addWidget( teleportsLCD );
+
+     hbd-&gt;addSpacing( 10 );
+ */</span>
+     QPixmap pm( sprites_prefix + &quot;powerups/brake.png&quot; );
+     label = new QLabel( mainWin );
+     label-&gt;setPixmap( pm );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     label-&gt;setPalette( pal );
+     hbd-&gt;addWidget( label );
+
+     brakesLCD = new QLCDNumber( 1, mainWin );
+     brakesLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     brakesLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     brakesLCD-&gt;setPalette( pal );
+     brakesLCD-&gt;setFixedHeight( 20 );
+     hbd-&gt;addWidget( brakesLCD );
+
+     hbd-&gt;addSpacing( 10 );
+
+     pm.load( sprites_prefix + &quot;powerups/shield.png&quot; );
+     label = new QLabel( mainWin );
+     label-&gt;setPixmap( pm );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     label-&gt;setPalette( pal );
+     hbd-&gt;addWidget( label );
+
+     shieldLCD = new QLCDNumber( 1, mainWin );
+     shieldLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     shieldLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     shieldLCD-&gt;setPalette( pal );
+     shieldLCD-&gt;setFixedHeight( 20 );
+     hbd-&gt;addWidget( shieldLCD );
+
+     hbd-&gt;addSpacing( 10 );
+
+     pm.load( sprites_prefix + &quot;powerups/shoot.png&quot; );
+     label = new QLabel( mainWin );
+     label-&gt;setPixmap( pm );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() );
+     label-&gt;setPalette( pal );
+     hbd-&gt;addWidget( label );
+
+     shootLCD = new QLCDNumber( 1, mainWin );
+     shootLCD-&gt;setFrameStyle( Q3Frame::NoFrame );
+     shootLCD-&gt;setSegmentStyle( QLCDNumber::Flat );
+     shootLCD-&gt;setPalette( pal );
+     shootLCD-&gt;setFixedHeight( 20 );
+     hbd-&gt;addWidget( shootLCD );
+
+     hbd-&gt;addStretch( 1 );
+
+     label = new QLabel( tr( &quot;Fuel&quot; ), mainWin );
+     label-&gt;setFont( smallFont );
+     label-&gt;setFixedWidth( label-&gt;sizeHint().width() + 10 );
+     label-&gt;setPalette( pal );
+     hbd-&gt;addWidget( label );
+
+     powerMeter = new KALedMeter( mainWin );
+     powerMeter-&gt;setFrameStyle( Q3Frame::Box | Q3Frame::Plain );
+     powerMeter-&gt;setRange( MAX_POWER_LEVEL );
+     powerMeter-&gt;addColorRange( 10, Qt::darkRed );
+     powerMeter-&gt;addColorRange( 20, QColor(160, 96, 0) );
+     powerMeter-&gt;addColorRange( 70, Qt::darkGreen );
+     powerMeter-&gt;setCount( 40 );
+     powerMeter-&gt;setPalette( pal );
+     powerMeter-&gt;setFixedSize( 200, 12 );
+     hbd-&gt;addWidget( powerMeter );
+
+     shipsRemain = 3;
+     showHiscores = FALSE;
+
+     actions.insert( Qt::Key_Up, Thrust );
+     actions.insert( Qt::Key_Left, RotateLeft );
+     actions.insert( Qt::Key_Right, RotateRight );
+     actions.insert( Qt::Key_Space, Shoot );
+     actions.insert( Qt::Key_Z, Teleport );
+     actions.insert( Qt::Key_X, Brake );
+     actions.insert( Qt::Key_S, Shield );
+     actions.insert( Qt::Key_P, Pause );
+     actions.insert( Qt::Key_L, Launch );
+     actions.insert( Qt::Key_N, NewGame );
+
+     view-&gt;showText( tr( &quot;Press N to start playing&quot; ), Qt::yellow );
+ }
+
+ KAstTopLevel::~KAstTopLevel()
+ {
+ }
+
+ void KAstTopLevel::playSound( const char * )
+ {
+ }
+
+ void KAstTopLevel::keyPressEvent( QKeyEvent *event )
+ {
+     if ( event-&gt;isAutoRepeat() || !actions.contains( event-&gt;key() ) )
+     {
+         event-&gt;ignore();
+         return;
+     }
+
+     Action a = actions[ event-&gt;key() ];
+
+     switch ( a )
+     {
+         case RotateLeft:
+             view-&gt;rotateLeft( TRUE );
+             break;
+
+         case RotateRight:
+             view-&gt;rotateRight( TRUE );
+             break;
+
+         case Thrust:
+             view-&gt;thrust( TRUE );
+             break;
+
+         case Shoot:
+             view-&gt;shoot( TRUE );
+             break;
+
+         case Shield:
+             view-&gt;setShield( TRUE );
+             break;
+
+         case Teleport:
+             view-&gt;teleport( TRUE );
+             break;
+
+         case Brake:
+             view-&gt;brake( TRUE );
+             break;
+
+         default:
+             event-&gt;ignore();
+             return;
+     }
+     event-&gt;accept();
+ }
+
+ void KAstTopLevel::keyReleaseEvent( QKeyEvent *event )
+ {
+     if ( event-&gt;isAutoRepeat() || !actions.contains( event-&gt;key() ) )
+     {
+         event-&gt;ignore();
+         return;
+     }
+
+     Action a = actions[ event-&gt;key() ];
+
+     switch ( a )
+     {
+         case RotateLeft:
+             view-&gt;rotateLeft( FALSE );
+             break;
+
+         case RotateRight:
+             view-&gt;rotateRight( FALSE );
+             break;
+
+         case Thrust:
+             view-&gt;thrust( FALSE );
+             break;
+
+         case Shoot:
+             view-&gt;shoot( FALSE );
+             break;
+
+         case Brake:
+             view-&gt;brake( FALSE );
+             break;
+
+         case Shield:
+             view-&gt;setShield( FALSE );
+             break;
+
+         case Teleport:
+             view-&gt;teleport( FALSE );
+             break;
+
+         case Launch:
+             if ( waitShip )
+             {
+                 view-&gt;newShip();
+                 waitShip = FALSE;
+                 view-&gt;hideText();
+             }
+             else
+             {
+                 event-&gt;ignore();
+                 return;
+             }
+             break;
+
+         case NewGame:
+             slotNewGame();
+             break;
+<span class="comment"> /*
+         case Pause:
+             {
+                 view-&gt;pause( TRUE );
+                 QMessageBox::information( this,
+                                           tr(&quot;KAsteroids is paused&quot;),
+                                           tr(&quot;Paused&quot;) );
+                 view-&gt;pause( FALSE );
+             }
+             break;
+ */</span>
+         default:
+             event-&gt;ignore();
+             return;
+     }
+
+     event-&gt;accept();
+ }
+
+ void KAstTopLevel::showEvent( QShowEvent *e )
+ {
+     Q3MainWindow::showEvent( e );
+     view-&gt;pause( FALSE );
+     view-&gt;setFocus();
+ }
+
+ void KAstTopLevel::hideEvent( QHideEvent *e )
+ {
+     Q3MainWindow::hideEvent( e );
+     view-&gt;pause( TRUE );
+ }
+
+ void KAstTopLevel::slotNewGame()
+ {
+     score = 0;
+     shipsRemain = SB_SHIPS;
+     scoreLCD-&gt;display( 0 );
+     level = 0;
+     levelLCD-&gt;display( level+1 );
+     shipsLCD-&gt;display( shipsRemain-1 );
+     view-&gt;newGame();
+     view-&gt;setRockSpeed( levels[0].rockSpeed );
+     view-&gt;addRocks( levels[0].nrocks );
+<span class="comment"> //</span>    view-&gt;showText( tr( &quot;Press L to launch.&quot; ), yellow );
+     view-&gt;newShip();
+     waitShip = FALSE;
+     view-&gt;hideText();
+     isPaused = FALSE;
+ }
+
+ void KAstTopLevel::slotShipKilled()
+ {
+     shipsRemain--;
+     shipsLCD-&gt;display( shipsRemain-1 );
+
+     playSound( &quot;ShipDestroyed&quot; );
+
+     if ( shipsRemain )
+     {
+         waitShip = TRUE;
+         view-&gt;showText( tr( &quot;Ship Destroyed. Press L to launch.&quot;), Qt::yellow );
+     }
+     else
+     {
+         view-&gt;showText( tr(&quot;Game Over!&quot;), Qt::red );
+         view-&gt;endGame();
+         doStats();
+<span class="comment"> //</span>        highscore-&gt;addEntry( score, level, showHiscores );
+     }
+ }
+
+ void KAstTopLevel::slotRockHit( int size )
+ {
+     switch ( size )
+     {
+         case 0:
+             score += 10;
+              break;
+
+         case 1:
+             score += 20;
+             break;
+
+         default:
+             score += 40;
+       }
+
+     playSound( &quot;RockDestroyed&quot; );
+
+     scoreLCD-&gt;display( score );
+ }
+
+ void KAstTopLevel::slotRocksRemoved()
+ {
+     level++;
+
+     if ( level &gt;= MAX_LEVELS )
+         level = MAX_LEVELS - 1;
+
+     view-&gt;setRockSpeed( levels[level-1].rockSpeed );
+     view-&gt;addRocks( levels[level-1].nrocks );
+
+     levelLCD-&gt;display( level+1 );
+ }
+
+ void KAstTopLevel::doStats()
+ {
+     QString r( &quot;0.00&quot; );
+     if ( view-&gt;shots() )
+          r = QString::number( (double)view-&gt;hits() / view-&gt;shots() * 100.0,
+                              'g', 2 );
+
+<span class="comment"> /* multi-line text broken in Qt 3
+     QString s = tr( &quot;Game Over\n\nShots fired:\t%1\n  Hit:\t%2\n  Missed:\t%3\nHit ratio:\t%4 %\n\nPress N for a new game&quot; )
+       .arg(view-&gt;shots()).arg(view-&gt;hits())
+       .arg(view-&gt;shots() - view-&gt;hits())
+       .arg(r);
+ */</span>
+
+     view-&gt;showText( &quot;Game Over.   Press N for a new game.&quot;, Qt::yellow, FALSE );
+ }
+
+ void KAstTopLevel::slotUpdateVitals()
+ {
+     brakesLCD-&gt;display( view-&gt;brakeCount() );
+     shieldLCD-&gt;display( view-&gt;shieldCount() );
+     shootLCD-&gt;display( view-&gt;shootCount() );
+<span class="comment"> //</span>    teleportsLCD-&gt;display( view-&gt;teleportCount() );
+     powerMeter-&gt;setValue( view-&gt;power() );
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/calendarwidget.qdoc -->
+<head>
+  <title>Qt 4.4: Calendar Widget Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Calendar Widget Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-calendarwidget-window-cpp.html">widgets/calendarwidget/window.cpp</a></li>
+<li><a href="widgets-calendarwidget-window-h.html">widgets/calendarwidget/window.h</a></li>
+<li><a href="widgets-calendarwidget-main-cpp.html">widgets/calendarwidget/main.cpp</a></li>
+<li><a href="widgets-calendarwidget-calendarwidget-pro.html">widgets/calendarwidget/calendarwidget.pro</a></li>
+</ul>
+<p>The Calendar Widget example shows use of <tt>QCalendarWidget</tt>.</p>
+<p align="center"><img src="images/calendarwidgetexample.png" /></p><p><a href="qcalendarwidget.html">QCalendarWidget</a> displays one calendar month at a time and lets the user select a date. The calendar consists of four components: a navigation bar that lets the user change the month that is displayed, a grid where each cell represents one day in the month, and two headers that display weekday names and week numbers.</p>
+<p>The Calendar Widget example displays a <a href="qcalendarwidget.html">QCalendarWidget</a> and lets the user configure its appearance and behavior using <a href="qcombobox.html">QComboBox</a>es, <a href="qcheckbox.html">QCheckBox</a>es, and <a href="qdateedit.html">QDateEdit</a>s. In addition, the user can influence the formatting of individual dates and headers.</p>
+<p>The properties of the <a href="qcalendarwidget.html">QCalendarWidget</a> are summarized in the table below.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Property</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a></td><td>The currently selected date.</td></tr>
+<tr valign="top" class="even"><td><a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a></td><td>The earliest date that can be selected.</td></tr>
+<tr valign="top" class="odd"><td><a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a></td><td>The latest date that can be selected.</td></tr>
+<tr valign="top" class="even"><td><a href="qcalendarwidget.html#firstDayOfWeek-prop">firstDayOfWeek</a></td><td>The day that is displayed as the first day of the week (usually Sunday or Monday).</td></tr>
+<tr valign="top" class="odd"><td><a href="qcalendarwidget.html#gridVisible-prop">gridVisible</a></td><td>Whether the grid should be shown.</td></tr>
+<tr valign="top" class="even"><td><a href="qcalendarwidget.html#selectionMode-prop">selectionMode</a></td><td>Whether the user can select a date or not.</td></tr>
+<tr valign="top" class="odd"><td><a href="qcalendarwidget.html#horizontalHeaderFormat-prop">horizontalHeaderFormat</a></td><td>The format of the day names in the horizontal header (e.g&#x2e;, &quot;M&quot;, &quot;Mon&quot;, or &quot;Monday&quot;).</td></tr>
+<tr valign="top" class="even"><td><a href="qcalendarwidget.html#verticalHeaderFormat-prop">verticalHeaderFormat</a></td><td>The format of the vertical header.</td></tr>
+<tr valign="top" class="odd"><td><a href="qcalendarwidget.html#navigationBarVisible-prop">navigationBarVisible</a></td><td>Whether the navigation bar at the top of the calendar widget is shown.</td></tr>
+</table></p>
+<p>The example consists of one class, <tt>Window</tt>, which creates and lays out the <a href="qcalendarwidget.html">QCalendarWidget</a> and the other widgets that let the user configure the <a href="qcalendarwidget.html">QCalendarWidget</a>.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>Here is the definition of the <tt>Window</tt> class:</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ private slots:
+     void localeChanged(int index);
+     void firstDayChanged(int index);
+     void selectionModeChanged(int index);
+     void horizontalHeaderChanged(int index);
+     void verticalHeaderChanged(int index);
+     void selectedDateChanged();
+     void minimumDateChanged(const QDate &amp;date);
+     void maximumDateChanged(const QDate &amp;date);
+     void weekdayFormatChanged();
+     void weekendFormatChanged();
+     void reformatHeaders();
+     void reformatCalendarPage();
+
+ private:
+     void createPreviewGroupBox();
+     void createGeneralOptionsGroupBox();
+     void createDatesGroupBox();
+     void createTextFormatsGroupBox();
+     QComboBox *createColorComboBox();
+
+     QGroupBox *previewGroupBox;
+     QGridLayout *previewLayout;
+     QCalendarWidget *calendar;
+
+     QGroupBox *generalOptionsGroupBox;
+     QLabel *localeLabel;
+     QLabel *firstDayLabel;
+     ...
+     QCheckBox *mayFirstCheckBox;
+ };</pre>
+<p>As is often the case with classes that represent self-contained windows, most of the API is private. We will review the private members as we stumble upon them in the implementation.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>Let's now review the class implementation, starting with the constructor:</p>
+<pre> Window::Window()
+ {
+     createPreviewGroupBox();
+     createGeneralOptionsGroupBox();
+     createDatesGroupBox();
+     createTextFormatsGroupBox();
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(previewGroupBox, 0, 0);
+     layout-&gt;addWidget(generalOptionsGroupBox, 0, 1);
+     layout-&gt;addWidget(datesGroupBox, 1, 0);
+     layout-&gt;addWidget(textFormatsGroupBox, 1, 1);
+     layout-&gt;setSizeConstraint(QLayout::SetFixedSize);
+     setLayout(layout);
+
+     previewLayout-&gt;setRowMinimumHeight(0, calendar-&gt;sizeHint().height());
+     previewLayout-&gt;setColumnMinimumWidth(0, calendar-&gt;sizeHint().width());
+
+     setWindowTitle(tr(&quot;Calendar Widget&quot;));
+ }</pre>
+<p>We start by creating the four <a href="qgroupbox.html">QGroupBox</a>es and their child widgets (including the <a href="qcalendarwidget.html">QCalendarWidget</a>) using four private <tt>create...GroupBox()</tt> functions, described below. Then we arrange the group boxes in a <a href="qgridlayout.html">QGridLayout</a>.</p>
+<p>We set the grid layout's resize policy to <a href="qlayout.html#SizeConstraint-enum">QLayout::SetFixedSize</a> to prevent the user from resizing the window. In that mode, the window's size is set automatically by <a href="qgridlayout.html">QGridLayout</a> based on the size hints of its contents widgets.</p>
+<p>To ensure that the window isn't automatically resized every time we change a property of the <a href="qcalendarwidget.html">QCalendarWidget</a> (e.g&#x2e;, hiding the navigation bar, trhe vertical header, or the grid), we set the minimum height of row 0 and the minimum width of column 0 to the initial size of the <a href="qcalendarwidget.html">QCalendarWidget</a>.</p>
+<p>Let's move on to the <tt>createPreviewGroupBox()</tt> function:</p>
+<pre> void Window::createPreviewGroupBox()
+ {
+     previewGroupBox = new QGroupBox(tr(&quot;Preview&quot;));
+
+     calendar = new QCalendarWidget;
+     calendar-&gt;setMinimumDate(QDate(1900, 1, 1));
+     calendar-&gt;setMaximumDate(QDate(3000, 1, 1));
+     calendar-&gt;setGridVisible(true);
+
+     connect(calendar, SIGNAL(currentPageChanged(int, int)),
+             this, SLOT(reformatCalendarPage()));
+
+     previewLayout = new QGridLayout;
+     previewLayout-&gt;addWidget(calendar, 0, 0, Qt::AlignCenter);
+     previewGroupBox-&gt;setLayout(previewLayout);
+ }</pre>
+<p>The <b>Preview</b> group box contains only one widget: the <a href="qcalendarwidget.html">QCalendarWidget</a>. We set it up, connect its <a href="qcalendarwidget.html#currentPageChanged">currentPageChanged()</a> signal to our <tt>reformatCalendarPage()</tt> slot to make sure that every new page gets the formatting specified by the user.</p>
+<p>The <tt>createGeneralOptionsGroupBox()</tt> function is somewhat large and several widgets are set up the same way; we look at parts of its implementation here and skip the rest:</p>
+<pre> void Window::createGeneralOptionsGroupBox()
+ {
+     generalOptionsGroupBox = new QGroupBox(tr(&quot;General Options&quot;));
+
+     localeCombo = new QComboBox;
+     int curLocaleIndex = -1;
+     int index = 0;
+     for (int _lang = QLocale::C; _lang &lt;= QLocale::LastLanguage; ++_lang) {
+         QLocale::Language lang = static_cast&lt;QLocale::Language&gt;(_lang);
+         QList&lt;QLocale::Country&gt; countries = QLocale::countriesForLanguage(lang);
+         for (int i = 0; i &lt; countries.count(); ++i) {
+             QLocale::Country country = countries.at(i);
+             QString label = QLocale::languageToString(lang);
+             label += QLatin1Char('/');
+             label += QLocale::countryToString(country);
+             QLocale locale(lang, country);
+             if (this-&gt;locale().language() == lang &amp;&amp; this-&gt;locale().country() == country)
+                 curLocaleIndex = index;
+             localeCombo-&gt;addItem(label, locale);
+             ++index;
+         }
+     }
+     if (curLocaleIndex != -1)
+         localeCombo-&gt;setCurrentIndex(curLocaleIndex);
+     localeLabel = new QLabel(tr(&quot;&amp;Locale&quot;));
+     localeLabel-&gt;setBuddy(localeCombo);
+
+     firstDayCombo = new QComboBox;
+     firstDayCombo-&gt;addItem(tr(&quot;Sunday&quot;), Qt::Sunday);
+     firstDayCombo-&gt;addItem(tr(&quot;Monday&quot;), Qt::Monday);
+     firstDayCombo-&gt;addItem(tr(&quot;Tuesday&quot;), Qt::Tuesday);
+     firstDayCombo-&gt;addItem(tr(&quot;Wednesday&quot;), Qt::Wednesday);
+     firstDayCombo-&gt;addItem(tr(&quot;Thursday&quot;), Qt::Thursday);
+     firstDayCombo-&gt;addItem(tr(&quot;Friday&quot;), Qt::Friday);
+     firstDayCombo-&gt;addItem(tr(&quot;Saturday&quot;), Qt::Saturday);
+
+     firstDayLabel = new QLabel(tr(&quot;Wee&amp;k starts on:&quot;));
+     firstDayLabel-&gt;setBuddy(firstDayCombo);
+     ...</pre>
+<p>We start with the setup of the <b>Week starts on</b> combobox. This combobox controls which day should be displayed as the first day of the week.</p>
+<p>The <a href="qcombobox.html">QComboBox</a> class lets us attach user data as a <a href="qvariant.html">QVariant</a> to each item. The data can later be retrieved with <a href="qcombobox.html">QComboBox</a>'s <a href="qcombobox.html#itemData">itemData()</a> function. <a href="qvariant.html">QVariant</a> doesn't directly support the <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a> data type, but it supports <tt>int</tt>, and C++ will happily convert any enum value to <tt>int</tt>.</p>
+<pre>     ...
+     connect(localeCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(localeChanged(int)));
+     connect(firstDayCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(firstDayChanged(int)));
+     connect(selectionModeCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(selectionModeChanged(int)));
+     connect(gridCheckBox, SIGNAL(toggled(bool)),
+             calendar, SLOT(setGridVisible(bool)));
+     connect(navigationCheckBox, SIGNAL(toggled(bool)),
+             calendar, SLOT(setNavigationBarVisible(bool)));
+     connect(horizontalHeaderCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(horizontalHeaderChanged(int)));
+     connect(verticalHeaderCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(verticalHeaderChanged(int)));
+     ...</pre>
+<p>After creating the widgets, we connect the signals and slots. We connect the comboboxes to private slots of <tt>Window</tt> or to public slots provided by <a href="qcombobox.html">QComboBox</a>.</p>
+<pre>     ...
+     firstDayChanged(firstDayCombo-&gt;currentIndex());
+     selectionModeChanged(selectionModeCombo-&gt;currentIndex());
+     horizontalHeaderChanged(horizontalHeaderCombo-&gt;currentIndex());
+     verticalHeaderChanged(verticalHeaderCombo-&gt;currentIndex());
+ }</pre>
+<p>At the end of the function, we call the slots that update the calendar to ensure that the <a href="qcalendarwidget.html">QCalendarWidget</a> is synchronized with the other widgets on startup.</p>
+<p>Let's now take a look at the <tt>createDatesGroupBox()</tt> private function:</p>
+<pre> void Window::createDatesGroupBox()
+ {
+     datesGroupBox = new QGroupBox(tr(&quot;Dates&quot;));
+
+     minimumDateEdit = new QDateEdit;
+     minimumDateEdit-&gt;setDisplayFormat(&quot;MMM d yyyy&quot;);
+     minimumDateEdit-&gt;setDateRange(calendar-&gt;minimumDate(),
+                                   calendar-&gt;maximumDate());
+     minimumDateEdit-&gt;setDate(calendar-&gt;minimumDate());
+
+     minimumDateLabel = new QLabel(tr(&quot;&amp;Minimum Date:&quot;));
+     minimumDateLabel-&gt;setBuddy(minimumDateEdit);
+
+     currentDateEdit = new QDateEdit;
+     currentDateEdit-&gt;setDisplayFormat(&quot;MMM d yyyy&quot;);
+     currentDateEdit-&gt;setDate(calendar-&gt;selectedDate());
+     currentDateEdit-&gt;setDateRange(calendar-&gt;minimumDate(),
+                                   calendar-&gt;maximumDate());
+
+     currentDateLabel = new QLabel(tr(&quot;&amp;Current Date:&quot;));
+     currentDateLabel-&gt;setBuddy(currentDateEdit);
+
+     maximumDateEdit = new QDateEdit;
+     maximumDateEdit-&gt;setDisplayFormat(&quot;MMM d yyyy&quot;);
+     maximumDateEdit-&gt;setDateRange(calendar-&gt;minimumDate(),
+                                   calendar-&gt;maximumDate());
+     maximumDateEdit-&gt;setDate(calendar-&gt;maximumDate());
+
+     maximumDateLabel = new QLabel(tr(&quot;Ma&amp;ximum Date:&quot;));
+     maximumDateLabel-&gt;setBuddy(maximumDateEdit);</pre>
+<p>In this function, we create the <b>Minimum Date</b>, <b>Maximum Date</b>, and <b>Current Date</b> editor widgets, which control the calendar's minimum, maximum, and selected dates. The calendar's minimum and maximum dates have already been set in <tt>createPrivewGroupBox()</tt>; we can then set the widgets default values to the calendars values.</p>
+<pre>     connect(currentDateEdit, SIGNAL(dateChanged(const QDate &amp;)),
+             calendar, SLOT(setSelectedDate(const QDate &amp;)));
+     connect(calendar, SIGNAL(selectionChanged()),
+             this, SLOT(selectedDateChanged()));
+     connect(minimumDateEdit, SIGNAL(dateChanged(const QDate &amp;)),
+             this, SLOT(minimumDateChanged(const QDate &amp;)));
+     connect(maximumDateEdit, SIGNAL(dateChanged(const QDate &amp;)),
+             this, SLOT(maximumDateChanged(const QDate &amp;)));
+     ...
+ }</pre>
+<p>We connect the <tt>currentDateEdit</tt>'s <a href="qdatetimeedit.html#dateChanged">dateChanged()</a> signal directly to the calendar's <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate()</a> slot. When the calendar's selected date changes, either as a result of a user action or programmatically, our <tt>selectedDateChanged()</tt> slot updates the <b>Current Date</b> editor. We also need to react when the user changes the <b>Minimum Date</b> and <b>Maximum Date</b> editors.</p>
+<p>Here is the <tt>createTextFormatsGroup()</tt> function:</p>
+<pre> void Window::createTextFormatsGroupBox()
+ {
+     textFormatsGroupBox = new QGroupBox(tr(&quot;Text Formats&quot;));
+
+     weekdayColorCombo = createColorComboBox();
+     weekdayColorCombo-&gt;setCurrentIndex(
+             weekdayColorCombo-&gt;findText(tr(&quot;Black&quot;)));
+
+     weekdayColorLabel = new QLabel(tr(&quot;&amp;Weekday color:&quot;));
+     weekdayColorLabel-&gt;setBuddy(weekdayColorCombo);
+
+     weekendColorCombo = createColorComboBox();
+     weekendColorCombo-&gt;setCurrentIndex(
+             weekendColorCombo-&gt;findText(tr(&quot;Red&quot;)));
+
+     weekendColorLabel = new QLabel(tr(&quot;Week&amp;end color:&quot;));
+     weekendColorLabel-&gt;setBuddy(weekendColorCombo);</pre>
+<p>We set up the <b>Weekday Color</b> and <b>Weekend Color</b> comboboxes using <tt>createColorCombo()</tt>, which instantiates a <a href="qcombobox.html">QComboBox</a> and populates it with colors (&quot;Red&quot;, &quot;Blue&quot;, etc.)&#x2e;</p>
+<pre>     headerTextFormatCombo = new QComboBox;
+     headerTextFormatCombo-&gt;addItem(tr(&quot;Bold&quot;));
+     headerTextFormatCombo-&gt;addItem(tr(&quot;Italic&quot;));
+     headerTextFormatCombo-&gt;addItem(tr(&quot;Plain&quot;));
+
+     headerTextFormatLabel = new QLabel(tr(&quot;&amp;Header text:&quot;));
+     headerTextFormatLabel-&gt;setBuddy(headerTextFormatCombo);
+
+     firstFridayCheckBox = new QCheckBox(tr(&quot;&amp;First Friday in blue&quot;));
+
+     mayFirstCheckBox = new QCheckBox(tr(&quot;May &amp;1 in red&quot;));</pre>
+<p>The <b>Header Text Format</b> combobox lets the user change the text format (bold, italic, or plain) used for horizontal and vertical headers. The <b>First Friday in blue</b> and <b>May 1 in red</b> check box affect the rendering of specific dates.</p>
+<pre>     connect(weekdayColorCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(weekdayFormatChanged()));
+     connect(weekendColorCombo, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(weekendFormatChanged()));
+     connect(headerTextFormatCombo, SIGNAL(currentIndexChanged(const QString &amp;)),
+             this, SLOT(reformatHeaders()));
+     connect(firstFridayCheckBox, SIGNAL(toggled(bool)),
+             this, SLOT(reformatCalendarPage()));
+     connect(mayFirstCheckBox, SIGNAL(toggled(bool)),
+             this, SLOT(reformatCalendarPage()));</pre>
+<p>We connect the check boxes and comboboxes to various private slots. The <b>First Friday in blue</b> and <b>May 1 in red</b> check boxes are both connected to <tt>reformatCalendarPage()</tt>, which is also called when the calendar switches month.</p>
+<pre>     ...
+     reformatHeaders();
+     reformatCalendarPage();
+ }</pre>
+<p>At the end of <tt>createTextFormatsGroupBox()</tt>, we call private slots to synchronize the <a href="qcalendarwidget.html">QCalendarWidget</a> with the other widgets.</p>
+<p>We're now done reviewing the four <tt>create...GroupBox()</tt> functions. Let's now take a look at the other private functions and slots.</p>
+<pre> QComboBox *Window::createColorComboBox()
+ {
+     QComboBox *comboBox = new QComboBox;
+     comboBox-&gt;addItem(tr(&quot;Red&quot;), Qt::red);
+     comboBox-&gt;addItem(tr(&quot;Blue&quot;), Qt::blue);
+     comboBox-&gt;addItem(tr(&quot;Black&quot;), Qt::black);
+     comboBox-&gt;addItem(tr(&quot;Magenta&quot;), Qt::magenta);
+     return comboBox;
+ }</pre>
+<p>In <tt>createColorCombo()</tt>, we create a combobox and populate it with standard colors. The second argument to <a href="qcombobox.html#addItem">QComboBox::addItem</a>() is a <a href="qvariant.html">QVariant</a> storing user data (in this case, <a href="qcolor.html">QColor</a> objects).</p>
+<p>This function was used to set up the <b>Weekday Color</b> and <b>Weekend Color</b> comboboxes.</p>
+<pre> void Window::firstDayChanged(int index)
+ {
+     calendar-&gt;setFirstDayOfWeek(Qt::DayOfWeek(
+                                 firstDayCombo-&gt;itemData(index).toInt()));
+ }</pre>
+<p>When the user changes the <b>Week starts on</b> combobox's value, <tt>firstDayChanged()</tt> is invoked with the index of the combobox's new value. We retrieve the custom data item associated with the new current item using <a href="qcombobox.html#itemData">itemData()</a> and cast it to a <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a>.</p>
+<p><tt>selectionModeChanged()</tt>, <tt>horizontalHeaderChanged()</tt>, and <tt>verticalHeaderChanged()</tt> are very similar to <tt>firstDayChanged()</tt>, so they are omitted.</p>
+<pre> void Window::selectedDateChanged()
+ {
+     currentDateEdit-&gt;setDate(calendar-&gt;selectedDate());
+ }</pre>
+<p>The <tt>selectedDateChanged()</tt> updates the <b>Current Date</b> editor to reflect the current state of the <a href="qcalendarwidget.html">QCalendarWidget</a>.</p>
+<pre> void Window::minimumDateChanged(const QDate &amp;date)
+ {
+     calendar-&gt;setMinimumDate(date);
+     maximumDateEdit-&gt;setDate(calendar-&gt;maximumDate());
+ }</pre>
+<p>When the user changes the minimum date, we tell the QCalenderWidget. We also update the <b>Maximum Date</b> editor, because if the new minimum date is later than the current maximum date, <a href="qcalendarwidget.html">QCalendarWidget</a> will automatically adapt its maximum date to avoid a contradicting state.</p>
+<pre> void Window::maximumDateChanged(const QDate &amp;date)
+ {
+     calendar-&gt;setMaximumDate(date);
+     minimumDateEdit-&gt;setDate(calendar-&gt;minimumDate());
+ }</pre>
+<p><tt>maximumDateChanged()</tt> is implemented similarly to <tt>minimumDateChanged()</tt>.</p>
+<pre> void Window::weekdayFormatChanged()
+ {
+     QTextCharFormat format;
+
+     format.setForeground(qvariant_cast&lt;QColor&gt;(
+         weekdayColorCombo-&gt;itemData(weekdayColorCombo-&gt;currentIndex())));
+     calendar-&gt;setWeekdayTextFormat(Qt::Monday, format);
+     calendar-&gt;setWeekdayTextFormat(Qt::Tuesday, format);
+     calendar-&gt;setWeekdayTextFormat(Qt::Wednesday, format);
+     calendar-&gt;setWeekdayTextFormat(Qt::Thursday, format);
+     calendar-&gt;setWeekdayTextFormat(Qt::Friday, format);
+ }</pre>
+<p>Each combobox item has a <a href="qcolor.html">QColor</a> object as user data corresponding to the item's text. After fetching the colors from the comboboxes, we set the text format of each day of the week.</p>
+<p>The text format of a column in the calendar is given as a <a href="qtextcharformat.html">QTextCharFormat</a>, which besides the foreground color lets us specify various character formatting information. In this example, we only show a subset of the possibilities.</p>
+<pre> void Window::weekendFormatChanged()
+ {
+     QTextCharFormat format;
+
+     format.setForeground(qvariant_cast&lt;QColor&gt;(
+         weekendColorCombo-&gt;itemData(weekendColorCombo-&gt;currentIndex())));
+     calendar-&gt;setWeekdayTextFormat(Qt::Saturday, format);
+     calendar-&gt;setWeekdayTextFormat(Qt::Sunday, format);
+ }</pre>
+<p><tt>weekendFormatChanged()</tt> is the same as <tt>weekdayFormatChanged()</tt>, except that it affects Saturday and Sunday instead of Monday to Friday.</p>
+<pre> void Window::reformatHeaders()
+ {
+     QString text = headerTextFormatCombo-&gt;currentText();
+     QTextCharFormat format;
+
+     if (text == tr(&quot;Bold&quot;)) {
+         format.setFontWeight(QFont::Bold);
+     } else if (text == tr(&quot;Italic&quot;)) {
+         format.setFontItalic(true);
+     } else if (text == tr(&quot;Green&quot;)) {
+         format.setForeground(Qt::green);
+     }
+     calendar-&gt;setHeaderTextFormat(format);
+ }</pre>
+<p>The <tt>reformatHeaders()</tt> slot is called when the user changes the text format of the headers. We compare the current text of the <b>Header Text Format</b> combobox to determine which format to apply. (An alternative would have been to store <a href="qtextcharformat.html">QTextCharFormat</a> values alongside the combobox items.)</p>
+<pre> void Window::reformatCalendarPage()
+ {
+     QTextCharFormat mayFirstFormat;
+     if (mayFirstCheckBox-&gt;isChecked())
+         mayFirstFormat.setForeground(Qt::red);
+
+     QTextCharFormat firstFridayFormat;
+     if (firstFridayCheckBox-&gt;isChecked())
+         firstFridayFormat.setForeground(Qt::blue);
+
+     QDate date(calendar-&gt;yearShown(), calendar-&gt;monthShown(), 1);
+
+     calendar-&gt;setDateTextFormat(QDate(date.year(), 5, 1), mayFirstFormat);
+
+     date.setDate(date.year(), date.month(), 1);
+     while (date.dayOfWeek() != Qt::Friday)
+         date = date.addDays(1);
+     calendar-&gt;setDateTextFormat(date, firstFridayFormat);
+ }</pre>
+<p>In <tt>reformatCalendarPage()</tt>, we set the text format of the first Friday in the month and May 1 in the current year. The text formats that are actually used depend on which check boxes are checked.</p>
+<p><a href="qcalendarwidget.html">QCalendarWidget</a> lets us set the text format of individual dates with the setDateTextFormat(). We chose to set the dates when the calendar page changes, i.e&#x2e;, a new month is displayed. We check which of the <tt>mayFirstCheckBox</tt> and <tt>firstDayCheckBox</tt>, if any, are checked and set the text formats accordingly.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

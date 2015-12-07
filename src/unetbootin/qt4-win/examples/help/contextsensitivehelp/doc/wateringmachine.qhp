@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?> 
+<QtHelpProject version="1.0">
+	<virtualFolder>wateringmachine</virtualFolder>
+	<namespace>wateringcompany.com.1_0_0.premium</namespace>
+	<filterSection>
+		<keywords>
+			<keyword name="plants" id="plants" ref="plants.html"/>
+			<keyword name="temperature" id="temperature" ref="temperature.html"/>
+			<keyword name="rain" id="rain" ref="rain.html"/>
+			<keyword name="time" id="time" ref="time.html"/>
+			<keyword name="amount" id="amount" ref="amount.html"/>
+			<keyword name="source" id="source" ref="source.html"/>
+			<keyword name="filtering" id="filtering" ref="filter.html"/>
+		</keywords>	
+		<files>
+			<file>plants.html</file>
+			<file>temperature.html</file>
+			<file>rain.html</file>
+			<file>time.html</file>
+			<file>amount.html</file>
+			<file>source.html</file>
+			<file>filter.html</file>
+		</files>
+	</filterSection>	
+</QtHelpProject>

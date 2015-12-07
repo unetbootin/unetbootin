@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/platform-notes.qdoc -->
+<head>
+  <title>Qt 4.4: Platform Notes - Windows</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Platform Notes - Windows<br /><span class="subtitle"></span>
+</h1>
+<p>This page contains information about the Windows platforms Qt is currently known to run on, with links to platform-specific notes.</p>
+<ul><li><a href="#windows-vista">Windows Vista</a></li>
+<li><a href="#windows-xp-windows-2000-and-windows-nt">Windows XP, Windows 2000 and Windows NT</a></li>
+<ul><li><a href="#installation-location">Installation location</a></li>
+<li><a href="#accelgalaxy-graphic-card">AccelGALAXY graphic card</a></li>
+<li><a href="#possible-gl-conflict">Possible GL conflict</a></li>
+</ul>
+<li><a href="#windows-98-and-me">Windows 98 and Me</a></li>
+<ul><li><a href="#unicode-support">Unicode support</a></li>
+<li><a href="#comctl32-problems">COMCTL32 problems</a></li>
+</ul>
+</ul>
+<a name="windows-vista"></a>
+<h2>Windows Vista</h2>
+<p>Known issues for Qt on Vista will be listed here.</p>
+<p>As of Qt 4.2&#x2e;0 no Vista-specific issues are known.</p>
+<a name="windows-nt"></a><a name="windows-xp-windows-2000-and-windows-nt"></a>
+<h2>Windows XP, Windows 2000 and Windows NT</h2>
+<a name="installation-location"></a>
+<h3>Installation location</h3>
+<p>Installing Qt into a directory with spaces, e.g&#x2e; C:\Program Files, may cause linker errors like the following:</p>
+<pre>     c:\program.obj not found</pre>
+<p>Install Qt into a subdirectory without spaces to avoid this problem.</p>
+<a name="accelgalaxy-graphic-card"></a>
+<h3>AccelGALAXY graphic card</h3>
+<p>When you use a NT 4.0 machine with the driver number 4,00,1381,1000,021,4.0&#x2e;0 there is a problem with drag an drop and icons. The computer freezes, and you have to reset. The problem disappears with the newest version of the driver, available at <a href="http://www.es.com/">www.es.com</a>.</p>
+<a name="possible-gl-conflict"></a>
+<h3>Possible GL conflict</h3>
+<p>There is a known issue with running Microsoft NetMeeting, Lotus SameTime and other applications that require screen grabbing while direct rendering is enabled. Other GL-applications may not work as expected, unless direct rendering is disabled.</p>
+<a name="windows-98-and-me"></a>
+<h2>Windows 98 and Me</h2>
+<p>As for <a href="#windows-nt">Windows NT</a>, with the following exceptions:</p>
+<a name="unicode-support"></a>
+<h3>Unicode support</h3>
+<p>Since Windows 98 does not implement much Unicode, Qt's Unicode support on Windows 98 is lacking. Note that Qt attempts to hide these differences - application programs can see that the fonts available are rather incomplete, but there is generally no need for programs to care. With other toolkits such as MFC, you often need to recompile. With Qt, your programs simply detect and use the capabilities of the Windows version they run on.</p>
+<a name="comctl32-problems"></a>
+<h3>COMCTL32 problems</h3>
+<p>If you are experiencing a crash in comctl32.dll after debugging your Qt application then this is not a problem with Qt, see MSDN Knowledge Base article <a href="http://support.microsoft.com/support/kb/articles/Q255/6/07.ASP">Q255607</a> for more information.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

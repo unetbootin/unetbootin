@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsitem.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsPolygonItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsPolygonItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsPolygonItem class provides a polygon item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsPolygonItem&gt;</pre><p>Inherits <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicspolygonitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicspolygonitem.html#QGraphicsPolygonItem">QGraphicsPolygonItem</a></b> ( QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicspolygonitem.html#QGraphicsPolygonItem-2">QGraphicsPolygonItem</a></b> ( const QPolygonF &amp; <i>polygon</i>, QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicspolygonitem.html#dtor.QGraphicsPolygonItem">~QGraphicsPolygonItem</a></b> ()</li>
+<li><div class="fn"/>Qt::FillRule <b><a href="qgraphicspolygonitem.html#fillRule">fillRule</a></b> () const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicspolygonitem.html#polygon">polygon</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicspolygonitem.html#setFillRule">setFillRule</a></b> ( Qt::FillRule <i>rule</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicspolygonitem.html#setPolygon">setPolygon</a></b> ( const QPolygonF &amp; <i>polygon</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="qabstractgraphicsshapeitem.html#public-functions">QAbstractGraphicsShapeItem</a></li>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsPolygonItem class provides a polygon item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>To set the item's polygon, pass a <a href="qpolygonf.html">QPolygonF</a> to QGraphicsPolygonItem's constructor, or call the <a href="qgraphicspolygonitem.html#setPolygon">setPolygon</a>() function. The <a href="qgraphicspolygonitem.html#polygon">polygon</a>() function returns the current polygon.</p>
+<p align="center"><img src="images/graphicsview-polygonitem.png" /></p><p>QGraphicsPolygonItem uses the polygon and the pen width to provide a reasonable implementation of <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), <a href="qgraphicsitem.html#shape">shape</a>(), and <a href="qgraphicsitem.html#contains">contains</a>(). The <a href="qgraphicsitem.html#paint">paint</a>() function draws the polygon using the item's associated pen and brush, which you can set by calling the <a href="qabstractgraphicsshapeitem.html#setPen">setPen</a>() and <a href="qabstractgraphicsshapeitem.html#setBrush">setBrush</a>() functions.</p>
+<p>See also <a href="qgraphicspathitem.html">QGraphicsPathItem</a>, <a href="qgraphicsrectitem.html">QGraphicsRectItem</a>, <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a>, <a href="qgraphicstextitem.html">QGraphicsTextItem</a>, <a href="qgraphicslineitem.html">QGraphicsLineItem</a>, <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>, and <a href="graphicsview.html">The Graphics View Framework</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsPolygonItem"></a>QGraphicsPolygonItem::QGraphicsPolygonItem ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a>. <i>parent</i> is passed to <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="QGraphicsPolygonItem-2"></a>QGraphicsPolygonItem::QGraphicsPolygonItem ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i>, <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a> with <i>polygon</i> as the default polygon. <i>parent</i> is passed to <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="dtor.QGraphicsPolygonItem"></a>QGraphicsPolygonItem::~QGraphicsPolygonItem ()</h3>
+<p>Destroys the <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a>.</p>
+<h3 class="fn"><a name="fillRule"></a><a href="qt.html#FillRule-enum">Qt::FillRule</a> QGraphicsPolygonItem::fillRule () const</h3>
+<p>Returns the fill rule of the polygon. The default fill rule is <a href="qt.html#FillRule-enum">Qt::OddEvenFill</a>.</p>
+<p>See also <a href="qgraphicspolygonitem.html#setFillRule">setFillRule</a>(), <a href="qpainterpath.html#fillRule">QPainterPath::fillRule</a>(), and <a href="qpainter.html#drawPolygon">QPainter::drawPolygon</a>().</p>
+<h3 class="fn"><a name="polygon"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsPolygonItem::polygon () const</h3>
+<p>Returns the item's polygon, or an empty polygon if no polygon has been set.</p>
+<p>See also <a href="qgraphicspolygonitem.html#setPolygon">setPolygon</a>().</p>
+<h3 class="fn"><a name="setFillRule"></a>void QGraphicsPolygonItem::setFillRule ( <a href="qt.html#FillRule-enum">Qt::FillRule</a> <i>rule</i> )</h3>
+<p>Sets the fill rule of the polygon to <i>rule</i>. The default fill rule is <a href="qt.html#FillRule-enum">Qt::OddEvenFill</a>.</p>
+<p>See also <a href="qgraphicspolygonitem.html#fillRule">fillRule</a>(), <a href="qpainterpath.html#fillRule">QPainterPath::fillRule</a>(), and <a href="qpainter.html#drawPolygon">QPainter::drawPolygon</a>().</p>
+<h3 class="fn"><a name="setPolygon"></a>void QGraphicsPolygonItem::setPolygon ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> )</h3>
+<p>Sets the item's polygon to be the given <i>polygon</i>.</p>
+<p>See also <a href="qgraphicspolygonitem.html#polygon">polygon</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

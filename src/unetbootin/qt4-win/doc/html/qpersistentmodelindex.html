@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qabstractitemmodel.cpp -->
+<head>
+  <title>Qt 4.4: QPersistentModelIndex Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPersistentModelIndex Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QPersistentModelIndex class is used to locate data in a data model. <a href="#details">More...</a></p>
+<pre> #include &lt;QPersistentModelIndex&gt;</pre><ul>
+<li><a href="qpersistentmodelindex-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpersistentmodelindex.html#QPersistentModelIndex">QPersistentModelIndex</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/><b><a href="qpersistentmodelindex.html#QPersistentModelIndex-3">QPersistentModelIndex</a></b> ( const QPersistentModelIndex &amp; <i>other</i> )</li>
+<li><div class="fn"/>QModelIndex <b><a href="qpersistentmodelindex.html#child">child</a></b> ( int <i>row</i>, int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qpersistentmodelindex.html#column">column</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="qpersistentmodelindex.html#data">data</a></b> ( int <i>role</i> = Qt::DisplayRole ) const</li>
+<li><div class="fn"/>Qt::ItemFlags <b><a href="qpersistentmodelindex.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>const QAbstractItemModel * <b><a href="qpersistentmodelindex.html#model">model</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qpersistentmodelindex.html#parent">parent</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qpersistentmodelindex.html#row">row</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qpersistentmodelindex.html#sibling">sibling</a></b> ( int <i>row</i>, int <i>column</i> ) const</li>
+<li><div class="fn"/><b><a href="qpersistentmodelindex.html#operator-const-QModelIndex--and">operator const QModelIndex &amp;</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#operator-not-eq">operator!=</a></b> ( const QPersistentModelIndex &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#operator-not-eq-2">operator!=</a></b> ( const QModelIndex &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#operator-lt">operator&lt;</a></b> ( const QPersistentModelIndex &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QPersistentModelIndex &amp; <b><a href="qpersistentmodelindex.html#operator-eq">operator=</a></b> ( const QPersistentModelIndex &amp; <i>other</i> )</li>
+<li><div class="fn"/>QPersistentModelIndex &amp; <b><a href="qpersistentmodelindex.html#operator-eq-2">operator=</a></b> ( const QModelIndex &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#operator-eq-eq">operator==</a></b> ( const QPersistentModelIndex &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qpersistentmodelindex.html#operator-eq-eq-2">operator==</a></b> ( const QModelIndex &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPersistentModelIndex class is used to locate data in a data model.</p>
+<p>A QPersistentModelIndex is a model index that can be stored by an application, and later used to access information in a model. Unlike the <a href="qmodelindex.html">QModelIndex</a> class, it is safe to store a QPersistentModelIndex since the model will ensure that references to items will continue to be valid as long as they can be accessed by the model.</p>
+<p>It is good practice to check that persistent model indexes are valid before using them.</p>
+<p>See also <a href="model-view-programming.html">Model/View Programming</a>, <a href="qmodelindex.html">QModelIndex</a>, and <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPersistentModelIndex"></a>QPersistentModelIndex::QPersistentModelIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )</h3>
+<p>Creates a new <a href="qpersistentmodelindex.html">QPersistentModelIndex</a> that is a copy of the model <i>index</i>.</p>
+<h3 class="fn"><a name="QPersistentModelIndex-3"></a>QPersistentModelIndex::QPersistentModelIndex ( const QPersistentModelIndex &amp; <i>other</i> )</h3>
+<p>Creates a new <a href="qpersistentmodelindex.html">QPersistentModelIndex</a> that is a copy of the <i>other</i> persistent model index.</p>
+<h3 class="fn"><a name="child"></a><a href="qmodelindex.html">QModelIndex</a> QPersistentModelIndex::child ( int <i>row</i>, int <i>column</i> ) const</h3>
+<p>Returns the child of the model index that is stored in the given <i>row</i> and <i>column</i>.</p>
+<p>See also <a href="qpersistentmodelindex.html#parent">parent</a>() and <a href="qpersistentmodelindex.html#sibling">sibling</a>().</p>
+<h3 class="fn"><a name="column"></a>int QPersistentModelIndex::column () const</h3>
+<p>Returns the column this persistent model index refers to.</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QPersistentModelIndex::data ( int <i>role</i> = Qt::DisplayRole ) const</h3>
+<p>Returns the data for the given <i>role</i> for the item referred to by the index.</p>
+<p>See also <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> and <a href="qabstractitemmodel.html#setData">QAbstractItemModel::setData</a>().</p>
+<h3 class="fn"><a name="flags"></a><a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> QPersistentModelIndex::flags () const</h3>
+<p>Returns the flags for the item referred to by the index.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="isValid"></a>bool QPersistentModelIndex::isValid () const</h3>
+<p>Returns true if this persistent model index is valid; otherwise returns false. A valid index belongs to a model, and has non-negative row and column numbers.</p>
+<p>See also <a href="qpersistentmodelindex.html#model">model</a>(), <a href="qpersistentmodelindex.html#row">row</a>(), and <a href="qpersistentmodelindex.html#column">column</a>().</p>
+<h3 class="fn"><a name="model"></a>const <a href="qabstractitemmodel.html">QAbstractItemModel</a> * QPersistentModelIndex::model () const</h3>
+<p>Returns the model that the index belongs to.</p>
+<h3 class="fn"><a name="parent"></a><a href="qmodelindex.html">QModelIndex</a> QPersistentModelIndex::parent () const</h3>
+<p>Returns the parent <a href="qmodelindex.html">QModelIndex</a> for this persistent index, or QModelIndex() if it has no parent.</p>
+<p>See also <a href="qpersistentmodelindex.html#child">child</a>(), <a href="qpersistentmodelindex.html#sibling">sibling</a>(), and <a href="qpersistentmodelindex.html#model">model</a>().</p>
+<h3 class="fn"><a name="row"></a>int QPersistentModelIndex::row () const</h3>
+<p>Returns the row this persistent model index refers to.</p>
+<h3 class="fn"><a name="sibling"></a><a href="qmodelindex.html">QModelIndex</a> QPersistentModelIndex::sibling ( int <i>row</i>, int <i>column</i> ) const</h3>
+<p>Returns the sibling at <i>row</i> and <i>column</i> or an invalid <a href="qmodelindex.html">QModelIndex</a> if there is no sibling at this position.</p>
+<p>See also <a href="qpersistentmodelindex.html#parent">parent</a>() and <a href="qpersistentmodelindex.html#child">child</a>().</p>
+<h3 class="fn"><a name="operator-const-QModelIndex--and"></a>QPersistentModelIndex::operator const QModelIndex &amp; () const</h3>
+<p>Cast operator that returns a const <a href="qmodelindex.html">QModelIndex</a>&amp;.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QPersistentModelIndex::operator!= ( const QPersistentModelIndex &amp; <i>other</i> ) const</h3>
+<p>Returns true if this persistent model index is not equal to the <i>other</i> persistent model index; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool QPersistentModelIndex::operator!= ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this persistent model index does not refer to the same location as the <i>other</i> model index; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QPersistentModelIndex::operator&lt; ( const QPersistentModelIndex &amp; <i>other</i> ) const</h3>
+<p>Returns true if this persistent model index is smaller than the <i>other</i> persistent model index; otherwise returns false.</p>
+<p>All values in the persistent model index are used when comparing with another persistent model index.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="operator-eq"></a>QPersistentModelIndex &amp; QPersistentModelIndex::operator= ( const QPersistentModelIndex &amp; <i>other</i> )</h3>
+<p>Sets the persistent model index to refer to the same item in a model as the <i>other</i> persistent model index.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QPersistentModelIndex &amp; QPersistentModelIndex::operator= ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>other</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the persistent model index to refer to the same item in a model as the <i>other</i> model index.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QPersistentModelIndex::operator== ( const QPersistentModelIndex &amp; <i>other</i> ) const</h3>
+<p>Returns true if this persistent model index is equal to the <i>other</i> persistent model index; otherwise returns false.</p>
+<p>All values in the persistent model index are used when comparing with another persistent model index.</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool QPersistentModelIndex::operator== ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this persistent model index refers to the same location as the <i>other</i> model index; otherwise returns false. Note that all values in the persistent model index are used when comparing with another model index.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

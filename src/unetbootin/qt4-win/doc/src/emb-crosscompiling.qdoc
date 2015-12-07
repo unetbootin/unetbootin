@@ -1,0 +1,186 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-crosscompiling.html
+
+    \title Cross-Compiling Qt for Embedded Linux Applications
+    \ingroup qt-embedded
+
+    Cross-compiling is the process of compiling an application on one
+    machine, producing executable code for a different machine or
+    device. To cross-compile a \l{Qt for Embedded Linux} application,
+    use the following approach:
+
+    \tableofcontents
+
+    Note that the cross-compiling procedure has the configuration
+    process in common with the installation procedure, i.e., you might
+    not necessarily have to perform all the mentioned actions
+    depending on your current configuration.
+
+    \section1 Step 1: Set the Cross-Compiler's Path
+
+    Specify which cross-compiler to use by setting the \c PATH
+    environment variable. For example, if the current shell is bash,
+    ksh, zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 0
+
+    \section1 Step 2: Create a Target Specific qmake Specification
+
+    The qmake tool requires a platform and compiler specific \c
+    qmake.conf file describing the various default values, to generate
+    the appropriate Makefiles. The standard \l{Qt for Embedded Linux}
+    distribution provides such files for several combinations of
+    platforms and compilers. These files are located in the
+    distribution's \c mkspecs/qws subdirectory.
+
+    Each platform has a default specification. \l{Qt for Embedded Linux} will
+    use the default specification for the current platform unless told
+    otherwise. To override this behavior, you can use the \c configure
+    script's \c -platform option to change the specification for the host
+    platform (where compilation will take place).
+
+    The \c configure script's \c -xplatform option is used to provide a
+    specification for the target architecture (where the library will be
+    deployed).
+
+    For example, to cross-compile an application to run on a device with
+    an ARM architecture, using the GCC toolchain, run the configure
+    script at the command line in the following way:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 1
+
+    If neither of the provided specifications fits your target device,
+    you can create your own.  To create a custom \c qmake.conf file,
+    just copy and customize an already existing file. For example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 2
+
+    Note that it is recommended to copy the entire directory.
+
+    Note also that when providing you own qmake specifcation, you must
+    use the \c configure script's \c -xplatform option to make
+    \l{Qt for Embedded Linux} aware of the custom \c qmake.conf file.
+
+    \section1 Step 3: Provide Architecture Specific Files
+
+    Starting with Qt 4, all of Qt's implicitly shared classes can
+    safely be copied across threads like any other value classes,
+    i.e., they are fully reentrant. This is accomplished by
+    implementing reference counting operations using atomic hardware
+    instructions on all the different platforms supported by Qt.
+
+    To support a new architecture, it is important to ensure that
+    these platform-specific atomic operations are implemented in a
+    corresponding header file (\c qatomic_ARCH.h), and that this file
+    is located in Qt's \c src/corelib/arch directory. For example, the
+    Intel 80386 implementation is located in \c
+    src/corelib/arch/qatomic_i386.h.
+
+    See the \l {Implementing Atomic Operations} documentation for
+    details.
+
+    \section1 Step 4: Provide Hardware Drivers
+
+    Without the proper mouse and keyboard drivers, you will not be
+    able to give any input to your application when it is installed on
+    the target device. You must also ensure that the appropriate
+    screen driver is present to make the server process able to put
+    the application's widgets on screen.
+
+    \l{Qt for Embedded Linux} provides several ready-made mouse, keyboard and
+    screen drivers, see the \l{Qt for Embedded Linux Pointer Handling}{pointer
+    handling}, \l{Qt for Embedded Linux Character Input}{character input} and
+    \l{Qt for Embedded Linux Display Management}{display management}
+    documentation for details.
+
+    In addition, custom drivers can be added by deriving from the
+    QWSMouseHandler, QWSKeyboardHandler and QScreen classes
+    respectively, and by creating corresponding plugins to make use of
+    Qt's plugin mechanism (dynamically loading the drivers into the
+    server application at runtime). Note that the plugins must be
+    located in a location where Qt will look for plugins, e.g., the
+    standard \c plugin directory.
+
+    See the \l {How to Create Qt Plugins} documentation and the \l
+    {tools/plugandpaint}{Plug & Paint} example for details.
+
+    \section1 Step 5: Build the Target Specific Executable
+
+    Before building the executable, you must specify the target
+    architecture as well as the target specific hardware drivers by
+    running the \c configure script:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 3
+
+    It is also important to make sure that all the third party
+    libraries that the application and the Qt libraries require, are
+    present in the tool chain. In particular, if the zlib and jpeg
+    libraries are not available, they must be included by running the
+    \c configure script with the \c -L and \c -I options. For example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 4
+
+    The JPEG source can be downloaded from \l http://www.ijg.org/. The
+    \l{Qt for Embedded Linux} distribution includes a version of the zlib source
+    that can be compiled into the Qt for Embedded Linux library. If integrators
+    wish to use a later version of the zlib library, it can be
+    downloaded from the \l http://www.gzip.org/zlib/ website.
+
+    Then build the executable:
+
+    \snippet doc/src/snippets/code/doc.src.emb-crosscompiling.qdoc 5
+
+    That's all. Your target specific executable is ready for deployment.
+
+    \table 100%
+    \row
+    \o \bold {See also:}
+
+    \l{Qt for Embedded Linux Architecture} and \l{Deploying Qt for Embedded Linux
+    Applications}.
+
+    \endtable
+*/

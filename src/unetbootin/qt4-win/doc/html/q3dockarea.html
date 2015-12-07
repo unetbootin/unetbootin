@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3dockarea.cpp -->
+<head>
+  <title>Qt 4.4: Q3DockArea Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DockArea Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DockArea class manages and lays out Q3DockWindows. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DockArea&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdockarea">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="q3dockarea-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3dockarea.html#HandlePosition-enum">HandlePosition</a></b> { Normal, Reverse }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dockarea.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="q3dockarea.html#empty-prop">empty</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3dockarea.html#handlePosition-prop">handlePosition</a></b> : const HandlePosition</li>
+<li><div class="fn"/><b><a href="q3dockarea.html#orientation-prop">orientation</a></b> : const Qt::Orientation</li>
+</ul>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dockarea.html#Q3DockArea">Q3DockArea</a></b> ( Qt::Orientation <i>o</i>, HandlePosition <i>h</i> = Normal, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dockarea.html#dtor.Q3DockArea">~Q3DockArea</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3dockarea.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>QList&lt;Q3DockWindow *&gt; <b><a href="q3dockarea.html#dockWindowList">dockWindowList</a></b> () const</li>
+<li><div class="fn"/>HandlePosition <b><a href="q3dockarea.html#handlePosition-prop">handlePosition</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockarea.html#hasDockWindow">hasDockWindow</a></b> ( Q3DockWindow * <i>w</i>, int * <i>index</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3dockarea.html#isDockWindowAccepted">isDockWindowAccepted</a></b> ( Q3DockWindow * <i>dw</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3dockarea.html#empty-prop">isEmpty</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3dockarea.html#moveDockWindow">moveDockWindow</a></b> ( Q3DockWindow * <i>w</i>, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3dockarea.html#moveDockWindow-2">moveDockWindow</a></b> ( Q3DockWindow * <i>w</i>, const QPoint &amp; <i>p</i>, const QRect &amp; <i>r</i>, bool <i>swap</i> )</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="q3dockarea.html#orientation-prop">orientation</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3dockarea.html#removeDockWindow">removeDockWindow</a></b> ( Q3DockWindow * <i>w</i>, bool <i>makeFloating</i>, bool <i>swap</i>, bool <i>fixNewLines</i> = true )</li>
+<li><div class="fn"/>void <b><a href="q3dockarea.html#setAcceptDockWindow">setAcceptDockWindow</a></b> ( Q3DockWindow * <i>dw</i>, bool <i>accept</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3dockarea.html#lineUp">lineUp</a></b> ( bool <i>keepNewLines</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QTextStream &amp; <b><a href="q3dockarea.html#operator-lt-lt-128">operator&lt;&lt;</a></b> ( QTextStream &amp; <i>ts</i>, const Q3DockArea &amp; <i>dockArea</i> )</li>
+<li><div class="fn"/>QTextStream &amp; <b><a href="q3dockarea.html#operator-gt-gt-76">operator&gt;&gt;</a></b> ( QTextStream &amp; <i>ts</i>, Q3DockArea &amp; <i>dockArea</i> )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DockArea class manages and lays out Q3DockWindows.</p>
+<p>A Q3DockArea is a container which manages a list of <a href="q3dockwindow.html">Q3DockWindow</a>s which it lays out within its area. In cooperation with the <a href="q3dockwindow.html">Q3DockWindow</a>s it is responsible for the docking and undocking of <a href="q3dockwindow.html">Q3DockWindow</a>s and moving them inside the dock area. Q3DockAreas also handle the wrapping of <a href="q3dockwindow.html">Q3DockWindow</a>s to fill the available space as compactly as possible. Q3DockAreas can contain Q3ToolBars since <a href="q3toolbar.html">Q3ToolBar</a> is a <a href="q3dockwindow.html">Q3DockWindow</a> subclass.</p>
+<p><a href="qmainwindow.html">QMainWindow</a> contains four Q3DockAreas which you can use for your Q3ToolBars and Q3DockWindows, so in most situations you do not need to use the Q3DockArea class directly. Although <a href="qmainwindow.html">QMainWindow</a> contains support for its own dock areas it isn't convenient for adding new Q3DockAreas. If you need to create your own dock areas we suggest that you create a subclass of <a href="qwidget.html">QWidget</a> and add your Q3DockAreas to your subclass.</p>
+<p align="center"><img src="images/qmainwindow-qdockareas.png" alt="QMainWindow's Q3DockAreas" /></p><a name="lines"></a><p><i>Lines</i>. Q3DockArea uses the concept of lines. A line is a horizontal region which may contain dock windows side-by-side. A dock area may have room for more than one line. When dock windows are docked into a dock area they are usually added at the right hand side of the top-most line that has room (unless manually placed by the user). When users move dock windows they may leave empty lines or gaps in non-empty lines. <a href="qt-qt3.html#Dock-enum">Qt::Dock</a> windows can be lined up to minimize wasted space using the <a href="q3dockarea.html#lineUp">lineUp</a>() function.</p>
+<p>The Q3DockArea class maintains a position list of all its child dock windows. <a href="qt-qt3.html#Dock-enum">Qt::Dock</a> windows are added to a dock area from position 0 onwards. <a href="qt-qt3.html#Dock-enum">Qt::Dock</a> windows are laid out sequentially in position order from left to right, and in the case of multiple lines of dock windows, from top to bottom. If a dock window is floated it still retains its position since this is where the window will return if the user double clicks its caption. A dock window's position can be determined with <a href="q3dockarea.html#hasDockWindow">hasDockWindow</a>(). The position can be changed with <a href="q3dockarea.html#moveDockWindow">moveDockWindow</a>().</p>
+<p>To dock or undock a dock window use <a href="q3dockwindow.html#dock">Q3DockWindow::dock</a>() and <a href="q3dockwindow.html#undock">Q3DockWindow::undock</a>() respectively. If you want to control which dock windows can dock in a dock area use <a href="q3dockarea.html#setAcceptDockWindow">setAcceptDockWindow</a>(). To see if a dock area contains a particular dock window use <a href="q3dockarea.html#hasDockWindow">hasDockWindow</a>(); to see how many dock windows a dock area contains use <a href="q3dockarea.html#count-prop">count</a>().</p>
+<p>The streaming operators can write the positions of the dock windows in the dock area to a <a href="qtextstream.html">QTextStream</a>. The positions can be read back later to restore the saved positions.</p>
+<p>Save the positions to a <a href="qtextstream.html">QTextStream</a>:</p>
+<pre>     ts &lt;&lt; *myDockArea;</pre>
+<p>Restore the positions from a <a href="qtextstream.html">QTextStream</a>:</p>
+<pre>     ts &gt;&gt; *myDockArea;</pre>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="HandlePosition-enum"></a>enum Q3DockArea::HandlePosition</h3>
+<p>A dock window has two kinds of handles, the dock window handle used for dragging the dock window, and the splitter handle used to resize the dock window in relation to other dock windows using a splitter. (The splitter handle is only visible for docked windows.)</p>
+<p>This enum specifies where the dock window splitter handle is placed in the dock area.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DockArea::Normal</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The splitter handles of dock windows are placed at the right or bottom.</td></tr>
+<tr><td valign="top"><tt>Q3DockArea::Reverse</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The splitter handles of dock windows are placed at the left or top.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of dock windows in the dock area.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="empty-prop"></a>empty : const bool</h3>
+<p>This property holds whether the dock area is empty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isEmpty () const</b></li>
+</ul>
+<h3 class="fn"><a name="handlePosition-prop"></a>handlePosition : const <a href="q3dockarea.html#HandlePosition-enum">HandlePosition</a></h3>
+<p>This property holds where the dock window splitter handle is placed in the dock area.</p>
+<p>The default position is <tt>Normal</tt>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>HandlePosition handlePosition () const</b></li>
+</ul>
+<h3 class="fn"><a name="orientation-prop"></a>orientation : const <a href="qt.html#Orientation-enum">Qt::Orientation</a></h3>
+<p>This property holds the dock area's orientation.</p>
+<p>There is no default value; the orientation is specified in the constructor.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Orientation orientation () const</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DockArea"></a>Q3DockArea::Q3DockArea ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>o</i>, <a href="q3dockarea.html#HandlePosition-enum">HandlePosition</a> <i>h</i> = Normal, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3dockarea.html">Q3DockArea</a> with orientation <i>o</i>, <a href="q3dockarea.html#HandlePosition-enum">HandlePosition</a> <i>h</i>, parent <i>parent</i> and called <i>name</i>.</p>
+<h3 class="fn"><a name="dtor.Q3DockArea"></a>Q3DockArea::~Q3DockArea ()</h3>
+<p>Destroys the dock area and all the dock windows docked in the dock area.</p>
+<p>Does not affect any floating dock windows or dock windows in other dock areas, even if they first appeared in this dock area. Floating dock windows are effectively top level windows and are not child windows of the dock area. When a floating dock window is docked (dragged into a dock area) its parent becomes the dock area.</p>
+<h3 class="fn"><a name="dockWindowList"></a><a href="qlist.html">QList</a>&lt;<a href="q3dockwindow.html">Q3DockWindow</a> *&gt; Q3DockArea::dockWindowList () const</h3>
+<p>Returns a list of the dock windows in the dock area.</p>
+<h3 class="fn"><a name="hasDockWindow"></a>bool Q3DockArea::hasDockWindow ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>w</i>, int * <i>index</i> = 0 )</h3>
+<p>Returns true if the dock area contains the dock window <i>w</i>; otherwise returns false. If <i>index</i> is not 0 it will be set as follows: if the dock area contains the dock window *<i>index</i> is set to <i>w</i>'s index position; otherwise *<i>index</i> is set to -1.</p>
+<h3 class="fn"><a name="isDockWindowAccepted"></a>bool Q3DockArea::isDockWindowAccepted ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>dw</i> )</h3>
+<p>Returns true if dock window <i>dw</i> could be docked into the dock area; otherwise returns false.</p>
+<p>See also <a href="q3dockarea.html#setAcceptDockWindow">setAcceptDockWindow</a>().</p>
+<h3 class="fn"><a name="lineUp"></a>void Q3DockArea::lineUp ( bool <i>keepNewLines</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Lines up the dock windows in this dock area to minimize wasted space. If <i>keepNewLines</i> is true, only space within lines is cleaned up. If <i>keepNewLines</i> is false the number of lines might be changed.</p>
+<h3 class="fn"><a name="moveDockWindow"></a>void Q3DockArea::moveDockWindow ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>w</i>, int <i>index</i> = -1 )</h3>
+<p>Moves the <a href="q3dockwindow.html">Q3DockWindow</a> <i>w</i> within the dock area. If <i>w</i> is not already docked in this area, <i>w</i> is docked first. If <i>index</i> is -1 or larger than the number of docked widgets, <i>w</i> is appended at the end, otherwise it is inserted at the position <i>index</i>.</p>
+<h3 class="fn"><a name="moveDockWindow-2"></a>void Q3DockArea::moveDockWindow ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>w</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, const <a href="qrect.html">QRect</a> &amp; <i>r</i>, bool <i>swap</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Moves the dock window <i>w</i> inside the dock area where <i>p</i> is the new position (in global screen coordinates), <i>r</i> is the suggested rectangle of the dock window and <i>swap</i> specifies whether or not the orientation of the docked widget needs to be changed.</p>
+<p>This function is used internally by <a href="q3dockwindow.html">Q3DockWindow</a>. You shouldn't need to call it yourself.</p>
+<h3 class="fn"><a name="removeDockWindow"></a>void Q3DockArea::removeDockWindow ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>w</i>, bool <i>makeFloating</i>, bool <i>swap</i>, bool <i>fixNewLines</i> = true )</h3>
+<p>Removes the dock window <i>w</i> from the dock area. If <i>makeFloating</i> is true, <i>w</i> gets floated, and if <i>swap</i> is true, the orientation of <i>w</i> gets swapped. If <i>fixNewLines</i> is true (the default) newlines in the area will be fixed.</p>
+<p>You should never need to call this function yourself. Use <a href="q3dockwindow.html#dock">Q3DockWindow::dock</a>() and <a href="q3dockwindow.html#undock">Q3DockWindow::undock</a>() instead.</p>
+<h3 class="fn"><a name="setAcceptDockWindow"></a>void Q3DockArea::setAcceptDockWindow ( <a href="q3dockwindow.html">Q3DockWindow</a> * <i>dw</i>, bool <i>accept</i> )</h3>
+<p>If <i>accept</i> is true, dock window <i>dw</i> can be docked in the dock area. If <i>accept</i> is false, dock window <i>dw</i> cannot be docked in the dock area.</p>
+<p>See also <a href="q3dockarea.html#isDockWindowAccepted">isDockWindowAccepted</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-128"></a><a href="qtextstream.html">QTextStream</a> &amp; operator&lt;&lt; ( <a href="qtextstream.html">QTextStream</a> &amp; <i>ts</i>, const Q3DockArea &amp; <i>dockArea</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the layout of the dock windows in dock area <i>dockArea</i> to the text stream <i>ts</i>.</p>
+<h3 class="fn"><a name="operator-gt-gt-76"></a><a href="qtextstream.html">QTextStream</a> &amp; operator&gt;&gt; ( <a href="qtextstream.html">QTextStream</a> &amp; <i>ts</i>, Q3DockArea &amp; <i>dockArea</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the layout description of the dock windows in dock area <i>dockArea</i> from the text stream <i>ts</i> and restores it. The layout description must have been previously written by the operator&lt;&lt;() function.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

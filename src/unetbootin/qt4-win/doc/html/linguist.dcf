@@ -1,0 +1,15 @@
+<!DOCTYPE DCF>
+<DCF ref="linguist-manual.html" icon="linguist.png" imagedir="../../gif" title="Qt Linguist Manual">
+<section ref="linguist-manager.html" title="Qt Linguist Manual: Release Manager">
+    <keyword ref="linguist-manager.html">Qt Linguist Manual: Release Manager</keyword>
+</section>
+<section ref="linguist-translators.html" title="Qt Linguist Manual: Translators">
+    <keyword ref="linguist-translators.html">Qt Linguist Manual: Translators</keyword>
+</section>
+<section ref="linguist-programmers.html" title="Qt Linguist Manual: Programmers">
+    <keyword ref="linguist-programmers.html">Qt Linguist Manual: Programmers</keyword>
+</section>
+<section ref="linguist-ts-file-format.html" title="Qt Linguist Manual: TS File Format">
+    <keyword ref="linguist-ts-file-format.html">Qt Linguist Manual: TS File Format</keyword>
+</section>
+</DCF>

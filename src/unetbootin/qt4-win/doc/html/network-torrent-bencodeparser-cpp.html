@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: bencodeparser.cpp Example File (network/torrent/bencodeparser.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">bencodeparser.cpp Example File<br /><span class="small-subtitle">network/torrent/bencodeparser.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;bencodeparser.h&quot;
+
+ #include &lt;QList&gt;
+ #include &lt;QMetaType&gt;
+
+ BencodeParser::BencodeParser()
+ {
+ }
+
+ bool BencodeParser::parse(const QByteArray &amp;content)
+ {
+     if (content.isEmpty()) {
+         errString = QString(&quot;No content&quot;);
+         return false;
+     }
+
+     this-&gt;content = content;
+     index = 0;
+     infoStart = 0;
+     infoLength = 0;
+     return getDictionary(&amp;dictionaryValue);
+ }
+
+ QString BencodeParser::errorString() const
+ {
+     return errString;
+ }
+
+ QMap&lt;QByteArray, QVariant&gt; BencodeParser::dictionary() const
+ {
+     return dictionaryValue;
+ }
+
+ QByteArray BencodeParser::infoSection() const
+ {
+     return content.mid(infoStart, infoLength);
+ }
+
+ bool BencodeParser::getByteString(QByteArray *byteString)
+ {
+     const int contentSize = content.size();
+     int size = -1;
+     do {
+         char c = content.at(index);
+         if (c &lt; '0' || c &gt; '9') {
+             if (size == -1)
+                 return false;
+             if (c != ':') {
+                 errString = QString(&quot;Unexpected character at pos %1: %2&quot;)
+                     .arg(index).arg(c);
+                 return false;
+             }
+             ++index;
+             break;
+         }
+         if (size == -1)
+             size = 0;
+         size *= 10;
+         size += c - '0';
+     } while (++index &lt; contentSize);
+
+     if (byteString)
+         *byteString = content.mid(index, size);
+     index += size;
+     return true;
+ }
+
+ bool BencodeParser::getInteger(qint64 *integer)
+ {
+     const int contentSize = content.size();
+     if (content.at(index) != 'i')
+         return false;
+
+     ++index;
+     qint64 num = -1;
+     bool negative = false;
+
+     do {
+         char c = content.at(index);
+         if (c &lt; '0' || c &gt; '9') {
+             if (num == -1) {
+                 if (c != '-' || negative)
+                     return false;
+                 negative = true;
+                 continue;
+             } else {
+                 if (c != 'e') {
+                     errString = QString(&quot;Unexpected character at pos %1: %2&quot;)
+                         .arg(index).arg(c);
+                     return false;
+                 }
+                 ++index;
+                 break;
+             }
+         }
+         if (num == -1)
+             num = 0;
+         num *= 10;
+         num += c - '0';
+     } while (++index &lt; contentSize);
+
+     if (integer)
+         *integer = negative ? -num : num;
+     return true;
+ }
+
+ bool BencodeParser::getList(QList&lt;QVariant&gt; *list)
+ {
+     const int contentSize = content.size();
+     if (content.at(index) != 'l')
+         return false;
+
+     QList&lt;QVariant&gt; tmp;
+     ++index;
+
+     do {
+         if (content.at(index) == 'e') {
+             ++index;
+             break;
+         }
+
+         qint64 number;
+         QByteArray byteString;
+         QList&lt;QVariant&gt; tmpList;
+         QMap&lt;QByteArray, QVariant&gt; dictionary;
+
+         if (getInteger(&amp;number))
+             tmp &lt;&lt; number;
+         else if (getByteString(&amp;byteString))
+             tmp &lt;&lt; byteString;
+         else if (getList(&amp;tmpList))
+             tmp &lt;&lt; tmpList;
+         else if (getDictionary(&amp;dictionary))
+             tmp &lt;&lt; qVariantFromValue&lt;QMap&lt;QByteArray, QVariant&gt; &gt;(dictionary);
+         else {
+             errString = QString(&quot;error at index %1&quot;).arg(index);
+             return false;
+         }
+     } while (index &lt; contentSize);
+
+     if (list)
+         *list = tmp;
+     return true;
+ }
+
+ bool BencodeParser::getDictionary(QMap&lt;QByteArray, QVariant&gt; *dictionary)
+ {
+     const int contentSize = content.size();
+     if (content.at(index) != 'd')
+         return false;
+
+     QMap&lt;QByteArray, QVariant&gt; tmp;
+     ++index;
+
+     do {
+         if (content.at(index) == 'e') {
+             ++index;
+             break;
+         }
+
+         QByteArray key;
+         if (!getByteString(&amp;key))
+             break;
+
+         if (key == &quot;info&quot;)
+           infoStart = index;
+
+         qint64 number;
+         QByteArray byteString;
+         QList&lt;QVariant&gt; tmpList;
+         QMap&lt;QByteArray, QVariant&gt; dictionary;
+
+         if (getInteger(&amp;number))
+             tmp.insert(key, number);
+         else if (getByteString(&amp;byteString))
+             tmp.insert(key, byteString);
+         else if (getList(&amp;tmpList))
+             tmp.insert(key, tmpList);
+         else if (getDictionary(&amp;dictionary))
+             tmp.insert(key, qVariantFromValue&lt;QMap&lt;QByteArray, QVariant&gt; &gt;(dictionary));
+         else {
+             errString = QString(&quot;error at index %1&quot;).arg(index);
+             return false;
+         }
+
+         if (key == &quot;info&quot;)
+           infoLength = index - infoStart;
+
+     } while (index &lt; contentSize);
+
+     if (dictionary)
+         *dictionary = tmp;
+     return true;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

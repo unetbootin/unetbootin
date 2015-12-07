@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/linguist-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Linguist Manual</title>
+  <link rel="next" href="linguist-manager.html" />
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Next: <a href="linguist-manager.html">Qt Linguist Manual: Release Manager</a>]
+</p>
+<h1 class="title">Qt Linguist Manual<br /><span class="subtitle"></span>
+</h1>
+<a name="qt-linguist"></a><p>Qt provides excellent support for translating applications into local languages. This Guide explains how to use Qt's translation tools for each of the roles involved in translating an application. The Guide begins with a brief overview of the issues that must be considered, followed by chapters devoted to each role and the supporting tools provided.</p>
+<p>The <a href="linguist-manager.html">Release Manager</a> chapter is aimed at the person with overall responsibility for the release of the application. They will typically coordinate the work of the software engineers and the translator. The chapter describes the use of two tools. The <a href="linguist-manager.html#lupdate">lupdate</a> tool is used to synchronize source code and translations. The <a href="linguist-manager.html#lrelease">lrelease</a> tool is used to create runtime translation files for use by the released application.</p>
+<p>The <a href="linguist-translators.html">Translators</a> chapter is for translators. It describes the use of the <i>Qt Linguist</i> tool. No computer knowledge beyond the ability to start a program and use a text editor or word processor is required.</p>
+<p>The <a href="linguist-programmers.html">Programmers</a> chapter is for Qt programmers. It explains how to create Qt applications that are able to use translated text. It also provides guidance on how to help the translator identify the context in which phrases appear. This chapter's three short tutorials cover everything the programmer needs to do.</p>
+<a name="overview-of-the-translation-process"></a>
+<h2>Overview of the Translation Process</h2>
+<p>Most of the text that must be translated in an application program consists of either single words or short phrases. These typically appear as window titles, menu items, pop-up help text (balloon help), and labels to buttons, check boxes and radio buttons.</p>
+<p>The phrases are entered into the source code by the programmer in their native language using a simple but special syntax to identify that the phrases require translation. The Qt tools provide context information for each of the phrases to help the translator, and the programmer is able to add additional context information to phrases when necessary. The release manager generates a set of translation files that are produced from the source files and passes these to the translator. The translator opens the translation files using <i>Qt Linguist</i>, enters their translations and saves the results back into the translation files, which they pass back to the release manager. The release manager then generates fast compact versions of these translation files ready for use by the application. The tools are designed to be used in repeated cycles as applications change and evolve, preserving existing translations and making it easy to identify which new translations are required. <i>Qt Linguist</i> also provides a phrase book facility to help ensure consistent translations across multiple applications and projects.</p>
+<p>Translators and programmers must address a number of issues because of the subtleties and complexities of human language:</p>
+<ul>
+<li>A single phrase may need to be translated into several different forms depending on context, e.g&#x2e; <i>open</i> in English might become <i>&ouml;<tt></tt>ffnen</i>, &quot;open file&quot;, or <i>aufbauen</i>, &quot;open internet connection&quot;, in German.</li>
+<li>Keyboard accelerators may need to be changed but without introducing conflicts, e.g&#x2e; &quot;&amp;Quit&quot; in English becomes &quot;Avslutt&quot; in Norwegian which doesn't contain a &quot;Q&quot;. We cannot use a letter that is already in use - unless we change several accelerators.</li>
+<li>Phrases that contain variables, for example, &quot;The 25 files selected will take 63 seconds to process&quot;, where the two numbers are inserted programmatically at runtime may need to be reworded because in a different language the word order and therefore the placement of the variables may have to change.</li>
+</ul>
+<p>The Qt translation tools provide clear and simple solutions to these issues.</p>
+<p>Chapters:</p>
+<ul>
+<li><a href="linguist-manager.html">Release Manager</a></li>
+<li><a href="linguist-translators.html">Translators</a></li>
+<li><a href="linguist-programmers.html">Programmers</a></li>
+<li><a href="linguist-ts-file-format.html">TS File Format</a></li>
+</ul>
+<p><i>Qt Linguist</i> and <tt>lupdate</tt> are able to import and export XML Localization Interchange File Format (XLIFF) files, making it possible to take advantage of tools and translation services that work with this format. See the <a href="linguist-translators.html">Translators</a> section for more information on working with these files.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td rowspan="2"><img src="images/wVista-Cert-border-small.png" /></td><td><i>Qt Linguist 4.3 is Certified for Windows Vista</i></td></tr>
+<tr valign="top" class="even"><td>Windows Vista and the Windows Vista Start button are trademarks or registered trademarks of Microsoft Corporation in the United States and/or other countries.</td></tr>
+</table></p>
+<p>
+[Next: <a href="linguist-manager.html">Qt Linguist Manual: Release Manager</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

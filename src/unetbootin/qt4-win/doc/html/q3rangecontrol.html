@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3rangecontrol.cpp -->
+<head>
+  <title>Qt 4.4: Q3RangeControl Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3RangeControl Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3RangeControl class provides an integer value within a range. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3RangeControl&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qrangecontrol">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3rangecontrol-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3rangecontrol.html#Q3RangeControl">Q3RangeControl</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3rangecontrol.html#Q3RangeControl-2">Q3RangeControl</a></b> ( int <i>minValue</i>, int <i>maxValue</i>, int <i>lineStep</i>, int <i>pageStep</i>, int <i>value</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3rangecontrol.html#dtor.Q3RangeControl">~Q3RangeControl</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#addLine">addLine</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#addPage">addPage</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#bound">bound</a></b> ( int <i>v</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#lineStep">lineStep</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#maxValue">maxValue</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#minValue">minValue</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#pageStep">pageStep</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#setMaxValue">setMaxValue</a></b> ( int <i>maxVal</i> )</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#setMinValue">setMinValue</a></b> ( int <i>minVal</i> )</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#setRange">setRange</a></b> ( int <i>minValue</i>, int <i>maxValue</i> )</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#setSteps">setSteps</a></b> ( int <i>lineStep</i>, int <i>pageStep</i> )</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#setValue">setValue</a></b> ( int <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#subtractLine">subtractLine</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#subtractPage">subtractPage</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#value">value</a></b> () const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3rangecontrol.html#directSetValue">directSetValue</a></b> ( int <i>value</i> )</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#positionFromValue">positionFromValue</a></b> ( int <i>logical_val</i>, int <i>span</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#prevValue">prevValue</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3rangecontrol.html#rangeChange">rangeChange</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3rangecontrol.html#stepChange">stepChange</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3rangecontrol.html#valueChange">valueChange</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3rangecontrol.html#valueFromPosition">valueFromPosition</a></b> ( int <i>pos</i>, int <i>span</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3RangeControl class provides an integer value within a range.</p>
+<p>Although originally designed for the <a href="qscrollbar.html">QScrollBar</a> widget, the Q3RangeControl can also be used in conjunction with other widgets such as <a href="qslider.html">QSlider</a> and <a href="qspinbox.html">QSpinBox</a>. Here are the five main concepts in the class:</p>
+<ol type="1">
+<li><i>Current value</i> The bounded integer that Q3RangeControl maintains. <a href="q3rangecontrol.html#value">value</a>() returns it, and several functions, including <a href="q3rangecontrol.html#setValue">setValue</a>(), set it.</li>
+<li><i>Minimum</i> The lowest value that <a href="q3rangecontrol.html#value">value</a>() can ever return. Returned by <a href="q3rangecontrol.html#minValue">minValue</a>() and set by <a href="q3rangecontrol.html#setRange">setRange</a>() or one of the constructors.</li>
+<li><i>Maximum</i> The highest value that <a href="q3rangecontrol.html#value">value</a>() can ever return. Returned by <a href="q3rangecontrol.html#maxValue">maxValue</a>() and set by <a href="q3rangecontrol.html#setRange">setRange</a>() or one of the constructors.</li>
+<li><i>Line step</i> The smaller of two natural steps that Q3RangeControl provides and typically corresponds to the user pressing an arrow key. The line step is returned by <a href="q3rangecontrol.html#lineStep">lineStep</a>() and set using <a href="q3rangecontrol.html#setSteps">setSteps</a>(). The functions <a href="q3rangecontrol.html#addLine">addLine</a>() and <a href="q3rangecontrol.html#subtractLine">subtractLine</a>() respectively increment and decrement the current value by <a href="q3rangecontrol.html#lineStep">lineStep</a>().</li>
+<li><i>Page step</i> The larger of two natural steps that Q3RangeControl provides and typically corresponds to the user pressing PageUp or PageDown. The page step is returned by <a href="q3rangecontrol.html#pageStep">pageStep</a>() and set using <a href="q3rangecontrol.html#setSteps">setSteps</a>(). The functions <a href="q3rangecontrol.html#addPage">addPage</a>() and substractPage() respectively increment and decrement the current value by <a href="q3rangecontrol.html#pageStep">pageStep</a>().</li>
+</ol>
+<p>Unity (1) may be viewed as a third step size. <a href="q3rangecontrol.html#setValue">setValue</a>() lets you set the current value to any integer in the allowed range, not just <a href="q3rangecontrol.html#minValue">minValue</a>() + <i>n</i> * <a href="q3rangecontrol.html#lineStep">lineStep</a>() for integer values of <i>n</i>. Some widgets may allow the user to set any value at all; others may just provide multiples of <a href="q3rangecontrol.html#lineStep">lineStep</a>() or <a href="q3rangecontrol.html#pageStep">pageStep</a>().</p>
+<p>Q3RangeControl provides three virtual functions that are well suited for updating the on-screen representation of range controls and emitting signals: <a href="q3rangecontrol.html#valueChange">valueChange</a>(), <a href="q3rangecontrol.html#rangeChange">rangeChange</a>() and <a href="q3rangecontrol.html#stepChange">stepChange</a>().</p>
+<p>Q3RangeControl also provides a function called <a href="q3rangecontrol.html#bound">bound</a>() which lets you force arbitrary integers to be within the allowed range of the range control.</p>
+<p>We recommend that all widgets that inherit Q3RangeControl provide at least a signal called valueChanged(); many widgets will want to provide addStep(), <a href="q3rangecontrol.html#addPage">addPage</a>(), substractStep() and substractPage() as slots.</p>
+<p>Note that you must use multiple inheritance if you plan to implement a widget using Q3RangeControl because Q3RangeControl is not derived from <a href="qwidget.html">QWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3RangeControl"></a>Q3RangeControl::Q3RangeControl ()</h3>
+<p>Constructs a range control with a minimum value of 0, maximum value of 99, line step of 1, page step of 10 and initial value 0.</p>
+<h3 class="fn"><a name="Q3RangeControl-2"></a>Q3RangeControl::Q3RangeControl ( int <i>minValue</i>, int <i>maxValue</i>, int <i>lineStep</i>, int <i>pageStep</i>, int <i>value</i> )</h3>
+<p>Constructs a range control whose value can never be smaller than <i>minValue</i> or greater than <i>maxValue</i>, whose line step size is <i>lineStep</i> and page step size is <i>pageStep</i> and whose value is initially <i>value</i> (which is guaranteed to be in range using <a href="q3rangecontrol.html#bound">bound</a>()).</p>
+<h3 class="fn"><a name="dtor.Q3RangeControl"></a>Q3RangeControl::~Q3RangeControl ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the range control</p>
+<h3 class="fn"><a name="addLine"></a>void Q3RangeControl::addLine ()</h3>
+<p>Equivalent to <tt>setValue(value() + lineStep())</tt>.</p>
+<p>If the value is changed, then <a href="q3rangecontrol.html#valueChange">valueChange</a>() is called.</p>
+<p>See also <a href="q3rangecontrol.html#subtractLine">subtractLine</a>(), <a href="q3rangecontrol.html#addPage">addPage</a>(), and <a href="q3rangecontrol.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="addPage"></a>void Q3RangeControl::addPage ()</h3>
+<p>Equivalent to <tt>setValue(value() + pageStep())</tt>.</p>
+<p>If the value is changed, then <a href="q3rangecontrol.html#valueChange">valueChange</a>() is called.</p>
+<p>See also <a href="q3rangecontrol.html#subtractPage">subtractPage</a>(), <a href="q3rangecontrol.html#addLine">addLine</a>(), and <a href="q3rangecontrol.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="bound"></a>int Q3RangeControl::bound ( int <i>v</i> ) const</h3>
+<p>Forces the value <i>v</i> to be within the range from <a href="q3rangecontrol.html#minValue">minValue</a>() to <a href="q3rangecontrol.html#maxValue">maxValue</a>() inclusive, and returns the result.</p>
+<p>This function is provided so that you can easily force other numbers than <a href="q3rangecontrol.html#value">value</a>() into the allowed range. You do not need to call it in order to use <a href="q3rangecontrol.html">Q3RangeControl</a> itself.</p>
+<p>See also <a href="q3rangecontrol.html#setValue">setValue</a>(), <a href="q3rangecontrol.html#value">value</a>(), <a href="q3rangecontrol.html#minValue">minValue</a>(), and <a href="q3rangecontrol.html#maxValue">maxValue</a>().</p>
+<h3 class="fn"><a name="directSetValue"></a>void Q3RangeControl::directSetValue ( int <i>value</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the range control <i>value</i> directly without calling <a href="q3rangecontrol.html#valueChange">valueChange</a>().</p>
+<p>Forces the new <i>value</i> to be within the legal range.</p>
+<p>You will rarely have to call this function. However, if you want to change the range control's value inside the overloaded method <a href="q3rangecontrol.html#valueChange">valueChange</a>(), <a href="q3rangecontrol.html#setValue">setValue</a>() would call the function <a href="q3rangecontrol.html#valueChange">valueChange</a>() again. To avoid this recursion you must use directSetValue() instead.</p>
+<p>See also <a href="q3rangecontrol.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="lineStep"></a>int Q3RangeControl::lineStep () const</h3>
+<p>Returns the line step.</p>
+<p>See also <a href="q3rangecontrol.html#setSteps">setSteps</a>() and <a href="q3rangecontrol.html#pageStep">pageStep</a>().</p>
+<h3 class="fn"><a name="maxValue"></a>int Q3RangeControl::maxValue () const</h3>
+<p>Returns the maximum value of the range.</p>
+<p>See also <a href="q3rangecontrol.html#setMaxValue">setMaxValue</a>(), <a href="q3rangecontrol.html#setRange">setRange</a>(), and <a href="q3rangecontrol.html#minValue">minValue</a>().</p>
+<h3 class="fn"><a name="minValue"></a>int Q3RangeControl::minValue () const</h3>
+<p>Returns the minimum value of the range.</p>
+<p>See also <a href="q3rangecontrol.html#setMinValue">setMinValue</a>(), <a href="q3rangecontrol.html#setRange">setRange</a>(), and <a href="q3rangecontrol.html#maxValue">maxValue</a>().</p>
+<h3 class="fn"><a name="pageStep"></a>int Q3RangeControl::pageStep () const</h3>
+<p>Returns the page step.</p>
+<p>See also <a href="q3rangecontrol.html#setSteps">setSteps</a>() and <a href="q3rangecontrol.html#lineStep">lineStep</a>().</p>
+<h3 class="fn"><a name="positionFromValue"></a>int Q3RangeControl::positionFromValue ( int <i>logical_val</i>, int <i>span</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Converts <i>logical_val</i> to a pixel position. <a href="q3rangecontrol.html#minValue">minValue</a>() maps to 0, <a href="q3rangecontrol.html#maxValue">maxValue</a>() maps to <i>span</i> and other values are distributed evenly in-between.</p>
+<p>This function can handle the entire integer range without overflow, providing <i>span</i> is &lt;= 4096.</p>
+<p>Calling this method is useful when actually drawing a range control such as a <a href="qscrollbar.html">QScrollBar</a> on-screen.</p>
+<p>See also <a href="q3rangecontrol.html#valueFromPosition">valueFromPosition</a>().</p>
+<h3 class="fn"><a name="prevValue"></a>int Q3RangeControl::prevValue () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the previous value of the range control. &quot;Previous value&quot; means the value before the last change occurred. Setting a new range may affect the value, too, because the value is forced to be inside the specified range. When the range control is initially created, this is the same as <a href="q3rangecontrol.html#value">value</a>().</p>
+<p>prevValue() can be outside the current legal range if a call to <a href="q3rangecontrol.html#setRange">setRange</a>() causes the current value to change. For example, if the range was [0, 1000] and the current value is 500, setRange(0, 400) makes <a href="q3rangecontrol.html#value">value</a>() return 400 and prevValue() return 500.</p>
+<p>See also <a href="q3rangecontrol.html#value">value</a>() and <a href="q3rangecontrol.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="rangeChange"></a>void Q3RangeControl::rangeChange ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called whenever the range control's range changes. You can reimplement it if you want to be notified when the range changes. The default implementation does nothing.</p>
+<p>Note that this method is called after the range has changed.</p>
+<p>See also <a href="q3rangecontrol.html#setRange">setRange</a>(), <a href="q3rangecontrol.html#valueChange">valueChange</a>(), and <a href="q3rangecontrol.html#stepChange">stepChange</a>().</p>
+<h3 class="fn"><a name="setMaxValue"></a>void Q3RangeControl::setMaxValue ( int <i>maxVal</i> )</h3>
+<p>Sets the minimum value of the range to <i>maxVal</i>.</p>
+<p>If necessary, the <a href="q3rangecontrol.html#minValue">minValue</a>() is adjusted so that the range remains valid.</p>
+<p>See also <a href="q3rangecontrol.html#maxValue">maxValue</a>() and <a href="q3rangecontrol.html#setMinValue">setMinValue</a>().</p>
+<h3 class="fn"><a name="setMinValue"></a>void Q3RangeControl::setMinValue ( int <i>minVal</i> )</h3>
+<p>Sets the minimum value of the range to <i>minVal</i>.</p>
+<p>If necessary, the <a href="q3rangecontrol.html#maxValue">maxValue</a>() is adjusted so that the range remains valid.</p>
+<p>See also <a href="q3rangecontrol.html#minValue">minValue</a>() and <a href="q3rangecontrol.html#setMaxValue">setMaxValue</a>().</p>
+<h3 class="fn"><a name="setRange"></a>void Q3RangeControl::setRange ( int <i>minValue</i>, int <i>maxValue</i> )</h3>
+<p>Sets the range control's minimum value to <i>minValue</i> and its maximum value to <i>maxValue</i>.</p>
+<p>Calls the virtual <a href="q3rangecontrol.html#rangeChange">rangeChange</a>() function if one or both of the new minimum and maximum values are different from the previous setting. Calls the virtual <a href="q3rangecontrol.html#valueChange">valueChange</a>() function if the current value is adjusted because it was outside the new range.</p>
+<p>If <i>maxValue</i> is smaller than <i>minValue</i>, <i>minValue</i> becomes the only legal value.</p>
+<p>See also <a href="q3rangecontrol.html#minValue">minValue</a>() and <a href="q3rangecontrol.html#maxValue">maxValue</a>().</p>
+<h3 class="fn"><a name="setSteps"></a>void Q3RangeControl::setSteps ( int <i>lineStep</i>, int <i>pageStep</i> )</h3>
+<p>Sets the range's line step to <i>lineStep</i> and page step to <i>pageStep</i>.</p>
+<p>Calls the virtual <a href="q3rangecontrol.html#stepChange">stepChange</a>() function if the new line step or page step are different from the previous settings.</p>
+<p>See also <a href="q3rangecontrol.html#lineStep">lineStep</a>(), <a href="q3rangecontrol.html#pageStep">pageStep</a>(), and <a href="q3rangecontrol.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="setValue"></a>void Q3RangeControl::setValue ( int <i>value</i> )</h3>
+<p>Sets the range control's value to <i>value</i> and forces it to be within the legal range.</p>
+<p>Calls the virtual <a href="q3rangecontrol.html#valueChange">valueChange</a>() function if the new value is different from the previous value. The old value can still be retrieved using <a href="q3rangecontrol.html#prevValue">prevValue</a>().</p>
+<p>See also <a href="q3rangecontrol.html#value">value</a>().</p>
+<h3 class="fn"><a name="stepChange"></a>void Q3RangeControl::stepChange ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called whenever the range control's line or page step settings change. You can reimplement it if you want to be notified when the step changes. The default implementation does nothing.</p>
+<p>Note that this method is called after a step setting has changed.</p>
+<p>See also <a href="q3rangecontrol.html#setSteps">setSteps</a>(), <a href="q3rangecontrol.html#rangeChange">rangeChange</a>(), and <a href="q3rangecontrol.html#valueChange">valueChange</a>().</p>
+<h3 class="fn"><a name="subtractLine"></a>void Q3RangeControl::subtractLine ()</h3>
+<p>Equivalent to <tt>setValue(value() - lineStep())</tt>.</p>
+<p>If the value is changed, then <a href="q3rangecontrol.html#valueChange">valueChange</a>() is called.</p>
+<p>See also <a href="q3rangecontrol.html#addLine">addLine</a>(), <a href="q3rangecontrol.html#subtractPage">subtractPage</a>(), and <a href="q3rangecontrol.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="subtractPage"></a>void Q3RangeControl::subtractPage ()</h3>
+<p>Equivalent to <tt>setValue(value() - pageStep())</tt>.</p>
+<p>If the value is changed, then <a href="q3rangecontrol.html#valueChange">valueChange</a>() is called.</p>
+<p>See also <a href="q3rangecontrol.html#addPage">addPage</a>(), <a href="q3rangecontrol.html#subtractLine">subtractLine</a>(), and <a href="q3rangecontrol.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="value"></a>int Q3RangeControl::value () const</h3>
+<p>Returns the current range control value. This is guaranteed to be within the range [<a href="q3rangecontrol.html#minValue">minValue</a>(), <a href="q3rangecontrol.html#maxValue">maxValue</a>()].</p>
+<p>See also <a href="q3rangecontrol.html#setValue">setValue</a>() and <a href="q3rangecontrol.html#prevValue">prevValue</a>().</p>
+<h3 class="fn"><a name="valueChange"></a>void Q3RangeControl::valueChange ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called whenever the range control value changes. You can reimplement it if you want to be notified when the value changes. The default implementation does nothing.</p>
+<p>Note that this method is called after the value has changed. The previous value can be retrieved using <a href="q3rangecontrol.html#prevValue">prevValue</a>().</p>
+<p>See also <a href="q3rangecontrol.html#setValue">setValue</a>(), <a href="q3rangecontrol.html#addPage">addPage</a>(), <a href="q3rangecontrol.html#subtractPage">subtractPage</a>(), <a href="q3rangecontrol.html#addLine">addLine</a>(), <a href="q3rangecontrol.html#subtractLine">subtractLine</a>(), <a href="q3rangecontrol.html#rangeChange">rangeChange</a>(), and <a href="q3rangecontrol.html#stepChange">stepChange</a>().</p>
+<h3 class="fn"><a name="valueFromPosition"></a>int Q3RangeControl::valueFromPosition ( int <i>pos</i>, int <i>span</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Converts the pixel position <i>pos</i> to a value. 0 maps to <a href="q3rangecontrol.html#minValue">minValue</a>(), <i>span</i> maps to <a href="q3rangecontrol.html#maxValue">maxValue</a>() and other values are distributed evenly in-between.</p>
+<p>This function can handle the entire integer range without overflow.</p>
+<p>Calling this method is useful if you actually implemented a range control widget such as <a href="qscrollbar.html">QScrollBar</a> and want to handle mouse press events. This function then maps screen coordinates to the logical values.</p>
+<p>See also <a href="q3rangecontrol.html#positionFromValue">positionFromValue</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

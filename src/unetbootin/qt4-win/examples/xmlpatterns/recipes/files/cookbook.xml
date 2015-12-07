@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cookbook>
+    <recipe xml:id="MushroomSoup">
+        <title>Quick and Easy Mushroom Soup</title>
+        <ingredient name="Fresh mushrooms"
+                    quantity="7"
+                    unit="pieces"/>
+        <ingredient name="Garlic"
+                    quantity="1"
+                    unit="cloves"/>
+        <ingredient name="Olive oil"
+                    quantity="2"
+                    unit="tablespoons"/>
+        <ingredient name="Milk"
+                    quantity="200"
+                    unit="milliliters"/>
+        <ingredient name="Water"
+                    quantity="200"
+                    unit="milliliters"/>
+        <ingredient name="Cream"
+                    quantity="100"
+                    unit="milliliters"/>
+        <ingredient name="Vegetable soup cube"
+                    quantity="1/2"
+                    unit="cubes"/>
+        <ingredient name="Ground black pepper"
+                    quantity="1/2"
+                    unit="teaspoons"/>
+        <ingredient name="Dried parsley"
+                    quantity="1"
+                    unit="teaspoons"/>
+        <time quantity="20"
+              unit="minutes"/>
+        <method>
+            <step>1. Slice mushrooms and garlic.</step>
+            <step>2. Fry mushroom slices and garlic with olive oil.</step>
+            <step>3. Once mushrooms are cooked, add milk, cream water. Stir.</step>
+            <step>4. Add vegetable soup cube.</step>
+            <step>5. Reduce heat, add pepper and parsley.</step>
+            <step>6. Turn off the stove before the mixture boils.</step>
+            <step>7. Blend the mixture.</step>
+        </method>
+    </recipe>
+    <recipe xml:id="CheeseOnToast">
+        <title>Cheese on Toast</title>
+        <ingredient name="Bread"
+                    quantity="2"
+                    unit="slices"/>
+        <ingredient name="Cheese"
+                    quantity="2"
+                    unit="slices"/>
+        <time quantity="3"
+              unit="minutes"/>
+        <method>
+            <step>1. Slice the bread and cheese.</step>
+            <step>2. Grill one side of each slice of bread.</step>
+            <step>3. Turn over the bread and place a slice of cheese on each piece.</step>
+            <step>4. Grill until the cheese has started to melt.</step>
+            <step>5. Serve and enjoy!</step>
+        </method>
+    </recipe>
+</cookbook>

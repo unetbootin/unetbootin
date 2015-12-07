@@ -1,0 +1,1048 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+\page richtext.html
+\nextpage Rich Text Document Structure
+
+\title Rich Text Processing
+\ingroup architecture
+\ingroup text-processing
+\brief An overview of Qt's rich text processing, editing and display features.
+
+The Scribe framework provides a set of classes for reading and manipulating
+structured rich text documents. Unlike previous rich text support in Qt, the
+new classes are centered around the QTextDocument class rather than raw
+textual information. This enables the developer to create and modify
+structured rich text documents without having to prepare content in an
+intermediate markup format.
+
+The information within a document can be accessed via two complementary
+interfaces: A cursor-based interface is used for editing, and a read-only
+hierarchical interface provides a high level overview of the document
+structure. The main advantage of the cursor-based interface is that the
+text can be edited using operations that mimic a user's interaction with
+an editor, without losing the underlying structure of the document. The
+read-only hierarchical interface is most useful when performing operations
+such as searching and document export.
+
+This document is divided up into chapters for convenient reference:
+
+\list
+\i \l{Rich Text Document Structure} outlines
+   the different kinds of elements in a QTextDocument, and describes how
+   they are arranged in a document structure.
+\i \l{The QTextCursor Interface} explains how rich
+   text documents can be edited using the cursor-based interface.
+\i \l{Common Rich Text Editing Tasks} examines some
+   common tasks that involve reading or manipulating rich text documents.
+\i \l{Advanced Rich Text Processing} examines advanced rich text editing tasks.
+\i \l{Supported HTML Subset} lists the HTML tags supported by QTextDocument.
+\endlist
+
+See also the list of \l{Text Processing Classes}.
+
+*/
+
+/*!
+\page richtext-structure.html
+\contentspage richtext.html Contents
+\previouspage Rich Text Processing
+\nextpage The QTextCursor Interface
+
+\title Rich Text Document Structure
+
+\tableofcontents
+
+The structured representation of a text document presents its contents as
+a hierarchy of text blocks, frames, tables, and other objects. These provide
+a logical structure to the document and describe how their contents will be
+displayed. Generally, frames and tables are used to group other
+structures while text blocks contain the actual textual information.
+
+New elements are created and inserted into the document programmatically
+\l{richtext-cursor.html}{with a QTextCursor} or by using an editor
+widget, such as QTextEdit. Elements can be given a particular format when
+they are created; otherwise they take the cursor's current format for the
+element.
+
+\table
+\row
+\i \inlineimage richtext-document.png
+\i \bold{Basic structure}
+
+The "top level" of a document might be populated in the way shown.
+Each document always contains a root frame, and this always contains
+at least one text block.
+
+For documents with some textual content, the root
+frame usually contains a sequence of blocks and other elements.
+
+Sequences of frames and tables are always separated by text blocks in a
+document, even if the text blocks contain no information. This ensures that
+new elements can always be inserted between existing structures.
+\endtable
+
+In this chapter, we look at each of the structural elements
+used in a rich text document, outline their features and uses, and show
+how to examine their contents. Document editing is described in
+\l{richtext-cursor.html}{The QTextCursor Interface}.
+
+\section1 Rich Text Documents
+
+QTextDocument objects contain all the information required to construct
+rich text documents for use with a QTextEdit widget or in a custom editor.
+Although QTextEdit makes it easy to display and edit rich text, documents
+can also be used independently of any editor widget, for example:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 0
+
+Alternatively, they can be extracted from an existing editor:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 1
+
+This flexibility enables applications to handle multiple rich text
+documents without the overhead of multiple editor widgets, or requiring
+documents to be stored in some intermediate format.
+
+An empty document contains a root frame which itself contains a single
+empty text block. The \l{richtext-cursor.html}{text cursor interface}
+automatically inserts new document elements into the root frame, and
+ensures that it is padded with empty blocks where necessary.
+
+We obtain the root frame in the following manner:
+
+\snippet doc/src/snippets/textdocument-frames/xmlwriter.h 0
+\snippet doc/src/snippets/textdocument-frames/xmlwriter.cpp 0
+
+When navigating the document structure, it is useful to begin at the
+root frame because it provides access to the entire document structure.
+
+\section1 Document Elements
+
+Rich text documents usually consist of common elements such as paragraphs,
+frames, tables, and lists. These are represented in a QTextDocument
+by the QTextBlock, QTextFrame, QTextTable, and QTextList classes.
+Unlike the other elements in a document, images are represented by
+specially formatted text fragments. This enables them to be placed
+formatted inline with the surrounding text.
+
+The basic structural building blocks in documents are QTextBlock and
+QTextFrame. Blocks themselves contain fragments of rich text
+(QTextFragment), but these do not directly influence the high level
+structure of a document.
+
+Elements which can group together other document elements are typically
+subclasses of QTextObject, and fall into two categories: Elements that
+group together text blocks are subclasses of QTextBlockGroup, and those
+that group together frames and other elements are subclasses of QTextFrame.
+
+\section2 Text Blocks
+
+Text blocks are provided by the QTextBlock class.
+
+Text blocks group together fragments of text with different character formats,
+and are used to represent paragraphs in the document. Each block
+typically contains a number of text fragments with different styles.
+Fragments are created when text is inserted into the document, and more
+of them are added when the document is edited. The document splits, merges,
+and removes fragments to efficiently represent the different styles
+of text in the block.
+
+The fragments within a given block can be examined by using a
+QTextBlock::iterator to traverse the block's internal structure:
+
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 3
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 5
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 6
+
+Blocks are also used to represent list items. As a result, blocks can
+define their own character formats which contain information about
+block-level decoration, such as the type of bullet points used for
+list items. The formatting for the block itself is described by the
+QTextBlockFormat class, and describes properties such as text alignment,
+indentation, and background color.
+
+Although a given document may contain complex structures, once we have a
+reference to a valid block in the document, we can navigate between each
+of the text blocks in the order in which they were written:
+
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 0
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 1
+\snippet doc/src/snippets/textblock-fragments/xmlwriter.cpp 2
+
+This method is useful for when you want to extract just the rich text from a
+document because it ignores frames, tables, and other types of structure.
+
+QTextBlock provides comparison operators that make it easier to manipulate
+blocks: \l{QTextBlock::operator==()}{operator==()} and
+\l{QTextBlock::operator!=()}{operator!=()} are used to test whether two
+blocks are the same, and \l{QTextBlock::operator<()}{operator<()} is used
+to determine which one occurs first in a document.
+
+\section2 Frames
+
+Frames are provided by the QTextFrame class.
+
+Text frames group together blocks of text and child frames, creating
+document structures that are larger than paragraphs. The format of a frame
+specifies how it is rendered and positioned on the page. Frames are
+either inserted into the text flow, or they float on the left or right
+hand side of the page.
+Each document contains a root frame that contains all the other document
+elements. As a result, all frames except the root frame have a parent
+frame.
+
+Since text blocks are used to separate other document elements, each
+frame will always contain at least one text block, and zero or more
+child frames. We can inspect the contents of a frame by using a
+QTextFrame::iterator to traverse the frame's child elements:
+
+\snippet doc/src/snippets/textdocument-frames/xmlwriter.cpp 1
+\snippet doc/src/snippets/textdocument-frames/xmlwriter.cpp 2
+
+Note that the iterator selects both frames and blocks, so it is necessary
+to check which it is referring to. This allows us to navigate the document
+structure on a frame-by-frame basis yet still access text blocks if
+required. Both the QTextBlock::iterator and QTextFrame::iterator classes
+can be used in complementary ways to extract the required structure from
+a document.
+
+\section2 Tables
+
+Tables are provided by the QTextTable class.
+
+Tables are collections of cells that are arranged in rows and columns.
+Each table cell is a document element with its own character format, but it
+can also contain other elements, such as frames and text blocks. Table cells
+are automatically created when the table is constructed, or when extra rows
+or columns are added. They can also be moved between tables.
+
+QTextTable is a subclass of QTextFrame, so tables are treated like frames
+in the document structure. For each frame that we encounter in the
+document, we can test whether it represents a table, and deal with it in a
+different way:
+
+\snippet doc/src/snippets/textdocument-tables/xmlwriter.cpp 0
+\snippet doc/src/snippets/textdocument-tables/xmlwriter.cpp 1
+
+The cells within an existing table can be examined by iterating through
+the rows and columns.
+
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 9
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 10
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 11
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 12
+
+
+\section2 Lists
+
+Lists are provided by the QTextList class.
+
+Lists are sequences of text blocks that are formatted in the usual way, but
+which also provide the standard list decorations such as bullet points and
+enumerated items. Lists can be nested, and will be indented if the list's
+format specifies a non-zero indentation.
+
+We can refer to each list item by its index in the list:
+
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 0
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 1
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 2
+
+Since QTextList is a subclass of QTextBlockGroup, it does not group the
+list items as child elements, but instead provides various functions for
+managing them. This means that any text block we find when traversing a
+document may actually be a list item. We can ensure that list items are
+correctly identified by using the following code:
+
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 3
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 4
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 5
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 6
+\snippet doc/src/snippets/textdocument-listitems/mainwindow.cpp 7
+
+
+\section2 Images
+
+Images in QTextDocument are represented by text fragments that reference
+external images via the resource mechanism. Images are created using the
+cursor interface, and can be modified later by changing the character
+format of the image's text fragment:
+
+\snippet doc/src/snippets/textdocument-imageformat/main.cpp 0
+\snippet doc/src/snippets/textdocument-imageformat/main.cpp 1
+\snippet doc/src/snippets/textdocument-imageformat/main.cpp 2
+
+The fragment that represents the image can be found by iterating over
+the fragments in the text block that contains the image.
+*/
+
+/*!
+\page richtext-cursor.html
+\contentspage richtext.html Contents
+\previouspage Rich Text Document Structure
+\nextpage Common Rich Text Editing Tasks
+
+\title The QTextCursor Interface
+
+\tableofcontents
+
+The QTextCursor interface allows documents and their structure to be
+edited in a way that should be familiar to most users of text editors and
+document editing software. Rich text documents can have multiple cursors
+associated with them, and each of these contains information about their
+position in the document and any selections that they may hold. This
+cursor-based paradigm makes common operations, such as cutting and pasting
+text, simple to implement programmatically, yet it also allows more complex
+editing operations to be performed on the document.
+
+This chapter describes most of the common editing operations that you
+will need to perform using a cursor, from basic insertion of text and
+document elements to more complex manipulation of document structures.
+
+\section1 Cursor-Based Editing
+
+At the simplest level, text documents are made up of a string of characters,
+marked up in some way to represent the block structure of the text within the
+document. QTextCursor provides a cursor-based interface that allows the
+contents of a QTextDocument to be manipulated at the character level. Since
+the elements (blocks, frames, tables, etc.) are also encoded in the character
+stream, the document structure can itself be changed by the cursor.
+
+The cursor keeps track of its location within its parent document, and can
+report information about the surrounding structure, such as the enclosing
+text block, frame, table, or list. The formats of the enclosing structures
+can also be directly obtained through the cursor.
+
+\section2 Using a Cursor
+
+The main use of a cursor is to insert or modify text within a block.
+We can use a text editor's cursor to do this:
+
+\snippet doc/src/snippets/textblock-formats/main.cpp 0
+
+Alternatively, we can obtain a cursor directly from a document:
+
+\snippet doc/src/snippets/textdocument-images/main.cpp 0
+
+The cursor is positioned at the start of the document so that we can write
+into the first (empty) block in the document.
+
+\section2 Grouping Cursor Operations
+
+A series of editing operations can be packaged together so that they can
+be replayed, or undone together in a single action. This is achieved by
+using the \c beginEditBlock() and \c endEditBlock() functions in the
+following way, as in the following example where we select the word that
+contains the cursor:
+
+\snippet doc/src/snippets/textdocument-selections/mainwindow.cpp 0
+
+If editing operations are not grouped, the document automatically records
+the individual operations so that they can be undone later. Grouping
+operations into larger packages can make editing more efficient both for
+the user and for the application, but care has to be taken not to group too
+many operations together as the user may want find-grained control over the
+undo process.
+
+\section2 Multiple Cursors
+
+Multiple cursors can be used to simultaneously edit the same document,
+although only one will be visible to the user in a QTextEdit widget.
+The QTextDocument ensures that each cursor writes text correctly and
+does not interfere with any of the others.
+
+\omit
+\snippet doc/src/snippets/textdocument-cursors/main.cpp 0
+\snippet doc/src/snippets/textdocument-cursors/main.cpp 1
+\endomit
+
+\section1 Inserting Document Elements
+
+QTextCursor provides several functions that can be used to change the
+structure of a rich text document. Generally, these functions allow
+document elements to be created with relevant formatting information,
+and they are inserted into the document at the cursor's position.
+
+The first group of functions insert block-level elements, and update the
+cursor position, but they do not return the element that was inserted:
+
+\list
+\i \l{QTextCursor::insertBlock()}{insertBlock()} inserts a new text block
+   (paragraph) into a document at the cursor's position, and moves the
+   cursor to the start of the new block.
+\i \l{QTextCursor::insertFragment()}{insertFragment()} inserts an existing
+   text fragment into a document at the cursor's position.
+\i \l{QTextCursor::insertImage()}{insertImage()} inserts an image into a
+   document at the cursor's position.
+\i \l{QTextCursor::insertText()}{insertText()} inserts text into the
+   document at the cursor's position.
+\endlist
+
+You can examine the contents of the element that was inserted through the
+cursor interface.
+
+The second group of functions insert elements that provide structure to
+the document, and return the structure that was inserted:
+
+\list
+\i \l{QTextCursor::insertFrame()}{insertFrame()} inserts a frame into the
+   document \e after the cursor's current block, and moves the cursor to
+   the start of the empty block in the new frame.
+\i \l{QTextCursor::insertList()}{insertList()} inserts a list into the
+   document at the cursor's position, and moves the cursor to the start
+   of the first item in the list.
+\i \l{QTextCursor::insertTable()}{insertTable()} inserts a table into
+   the document \e after the cursor's current block, and moves the cursor
+   to the start of the block following the table.
+\endlist
+
+These elements either contain or group together other elements in the
+document.
+
+\section2 Text and Text Fragments
+
+Text can be inserted into the current block in the current character
+format, or in a custom format that is specified with the text:
+
+\snippet doc/src/snippets/textdocument-charformats/main.cpp 0
+
+Once the character format has been used with a cursor, that format becomes
+the default format for any text inserted with that cursor until another
+character format is specified.
+
+If a cursor is used to insert text without specifying a character format,
+the text will be given the character format used at that position in the
+document.
+
+\section2 Blocks
+
+Text blocks are inserted into the document with the
+\l{QTextCursor::insertBlock()}{insertBlock()} function.
+
+\snippet doc/src/snippets/textblock-formats/main.cpp 1
+
+The cursor is positioned at the start of the new block.
+
+\section2 Frames
+
+Frames are inserted into a document using the cursor, and will be placed
+within the cursor's current frame \e after the current block.
+The following code shows how a frame can be inserted between two text
+blocks in a document's root frame. We begin by finding the cursor's
+current frame:
+
+\snippet doc/src/snippets/textdocument-frames/mainwindow.cpp 0
+
+We insert some text in this frame then set up a frame format for the
+child frame:
+
+\snippet doc/src/snippets/textdocument-frames/mainwindow.cpp 1
+
+The frame format will give the frame an external margin of 32 pixels,
+internal padding of 8 pixels, and a border that is 4 pixels wide.
+See the QTextFrameFormat documentation for more information about
+frame formats.
+
+The frame is inserted into the document after the preceding text:
+
+\snippet doc/src/snippets/textdocument-frames/mainwindow.cpp 2
+
+We add some text to the document immediately after we insert the frame.
+Since the text cursor is positioned \e{inside the frame} when it is inserted
+into the document, this text will also be inserted inside the frame.
+
+Finally, we position the cursor outside the frame by taking the last
+available cursor position inside the frame we recorded earlier:
+
+\snippet doc/src/snippets/textdocument-frames/mainwindow.cpp 3
+
+The text that we add last is inserted after the child frame in the
+document. Since each frame is padded with text blocks, this ensures that
+more elements can always be inserted with a cursor.
+
+\section2 Tables
+
+Tables are inserted into the document using the cursor, and will be
+placed within the cursor's current frame \e after the current block:
+
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 0
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 3
+
+Tables can be created with a specific format that defines the overall
+properties of the table, such as its alignment, background color, and
+the cell spacing used. It can also determine the constraints on each
+column, allowing each of them to have a fixed width, or resize according
+to the available space.
+
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 2
+
+The columns in the table created above will each take up a certain
+percentage of the available width. Note that the table format is
+optional; if you insert a table without a format, some sensible
+default values will be used for the table's properties.
+
+Since cells can contain other document elements, they too can be
+formatted and styled as necessary.
+
+Text can be added to the table by navigating to each cell with the cursor
+and inserting text.
+
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 4
+
+We can create a simple timetable by following this approach:
+
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 5
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 6
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 7
+\snippet doc/src/snippets/textdocument-tables/mainwindow.cpp 8
+
+\section2 Lists
+
+Lists of block elements can be automatically created and inserted into the
+document at the current cursor position. Each list that is created in this
+way requires a list format to be specified:
+
+\snippet doc/src/snippets/textdocument-lists/mainwindow.cpp 0
+
+The above code first checks whether the cursor is within an existing list
+and, if so, gives the list format for the new list a suitable level of
+indentation. This allows nested lists to be created with increasing
+levels of indentation. A more sophisticated implementation would also use
+different kinds of symbol for the bullet points in each level of the list.
+
+\section2 Images
+
+Inline images are added to documents through the cursor in the usual manner.
+Unlike many other elements, all of the image properties are specified by the
+image's format. This means that a QTextImageFormat object has to be
+created before an image can be inserted:
+
+\snippet doc/src/snippets/textdocument-images/main.cpp 1
+
+The image name refers to an entry in the application's resource file.
+The method used to derive this name is described in
+\l{resources.html}{The Qt Resource System}.
+
+*/
+
+/*!
+\page richtext-common-tasks.html
+\contentspage richtext.html Contents
+\previouspage The QTextCursor Interface
+\nextpage Advanced Rich Text Processing
+
+\title Common Rich Text Editing Tasks
+
+\tableofcontents
+
+There are a number of tasks that are often performed by developers
+when editing and processing text documents using Qt. These include the use
+of display widgets such as QTextBrowser and QTextEdit, creation of
+documents with QTextDocument, editing using a QTextCursor, and
+exporting the document structure.
+This document outlines some of the more common ways of using the rich
+text classes to perform these tasks, showing convenient patterns that can
+be reused in your own applications.
+
+\section1 Using QTextEdit
+
+A text editor widget can be constructed and used to display HTML in the
+following way:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 2
+
+By default, the text editor contains a document with a root frame, inside
+which is an empty text block. This document can be obtained so that it can
+be modified directly by the application:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 3
+
+The text editor's cursor may also be used to edit a document:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 4
+
+Although a document can be edited using many cursors at once, a QTextEdit
+only displays a single cursor at a time. Therefore, if we want to update the
+editor to display a particular cursor or its selection, we need to set the
+editor's cursor after we have modified the document:
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 5
+
+\section1 Selecting Text
+
+Text is selected by moving the cursor using operations that are similar to
+those performed by a user in a text editor. To select text between two
+points in the document, we need to position the cursor at the first point
+then move it using a special mode (\l{QTextCursor::MoveMode}) with a
+move operation (\l{QTextCursor::MoveOperation}).
+When we select the text, we leave the selection anchor at the old cursor
+position just as the user might do by holding down the Shift key when
+selecting text:
+
+\snippet doc/src/snippets/textdocument-selections/mainwindow.cpp 1
+
+In the above code, a whole word is selected using this method. QTextCursor
+provides a number of common move operations for selecting individual
+characters, words, lines, and whole blocks.
+
+\section1 Finding Text
+
+QTextDocument provides a cursor-based interface for searching, making
+it easy to find and modify text in the style of a text editor. The following
+code finds all the instances of a particular word in a document, and changes
+the color of each:
+
+\snippet doc/src/snippets/textdocument-find/main.cpp 0
+\snippet doc/src/snippets/textdocument-find/main.cpp 1
+
+Note that the cursor does not have to be moved after each search and replace
+operation; it is always positioned at the end of the word that was just
+replaced.
+
+\section1 Printing Documents
+
+QTextEdit is designed for the display of large rich text documents that are
+read on screen, rendering them in the same way as a web browser. As a result,
+it does not automatically break the contents of the document into page-sized
+pieces that are suitable for printing.
+
+QTextDocument provides a \l{QTextDocument::print()}{print()} function to
+allow documents to be printed using the QPrinter class. The following code
+shows how to prepare a document in a QTextEdit for printing with a QPrinter:
+
+\snippet doc/src/snippets/textdocument-printing/mainwindow.cpp 0
+
+The document is obtained from the text editor, and a QPrinter is constructed
+then configured using a QPrintDialog. If the user accepts the printer's
+configuration then the document is formatted and printed using the
+\l{QTextDocument::print()}{print()} function.
+
+*/
+
+/*!
+\page richtext-advanced-processing.html
+\contentspage richtext.html Contents
+\previouspage Common Rich Text Editing Tasks
+\nextpage Supported HTML Subset
+
+\title Advanced Rich Text Processing
+
+\section1 Handling Large Files
+
+Qt does not limit the size of files that are used for text
+processing.  In most cases, this will not present a problem. For
+especially large files, however, you might experience that your
+application will become unresponsive or that you will run out of
+memory. The size of the files you can load depends on your
+hardware and on Qt's and your own application's implementation.
+
+If you are faced with this problem, we recommend that you address the
+following issues:
+
+\list
+    \o You should consider breaking up large paragraphs into smaller 
+       ones as Qt handles small paragraphs better. You could also 
+       insert line breaks at regular intervals, which will look the
+       same as one large paragraph in a QTextEdit.
+    \o You can reduce the amount of blocks in a QTextDocument with 
+       \l{QTextDocument::}{maximumBlockCount()}. The document is only
+       as large as the number of blocks as far as QTextEdit is concerned.
+    \o When adding text to a text edit, it is an advantage to add it 
+       in an edit block (see example below). The result is that the
+       text edit does not need to build the entire document structure at once.
+\endlist
+
+We give an example of the latter technique in the list. We assume that
+the text edit is visible.
+
+\snippet doc/src/snippets/code/doc.src.richtext.qdoc 6
+
+\omit
+Ideas for other sections:
+
+ * Hiding QTextBlock elements.
+ * Changing the word wrapping mode in QTextEdit. Custom word wrapping?
+\endomit
+*/
+
+/*!
+    \page richtext-html-subset.html
+    \title Supported HTML Subset
+
+    \contentspage richtext.html Contents
+    \previouspage Common Rich Text Editing Tasks
+
+    The following table lists the HTML tags supported by Qt's
+    \l{Rich Text Processing}{rich text} engine:
+
+    \table
+    \header \o Tag
+            \o Description
+            \o Comment
+    \row    \o \c a
+            \o Anchor or link
+            \o Supports the \c href and \c name attributes.
+    \row    \o \c address
+            \o Address
+            \o
+    \row    \o \c b
+            \o Bold
+            \o
+    \row    \o \c big
+            \o Larger font
+            \o
+    \row    \o \c blockquote
+            \o Indented paragraph
+            \o
+    \row    \o \c body
+            \o Document body
+            \o Supports the \c bgcolor attribute, which
+               can be a Qt \l{QColor::setNamedColor()}{color name}
+               or a \c #RRGGBB color specification.
+    \row    \o \c br
+            \o Line break
+            \o
+    \row    \o \c center
+            \o Centered paragraph
+            \o
+    \row    \o \c cite
+            \o Inline citation
+            \o Same as \c i.
+    \row    \o \c code
+            \o Code
+            \o Same as \c tt.
+    \row    \o \c dd
+            \o Definition data
+            \o
+    \row    \o \c dfn
+            \o Definition
+            \o Same as \c i.
+    \row    \o \c div
+            \o Document division
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c dl
+            \o Definition list
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c dt
+            \o Definition term
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c em
+            \o Emphasized
+            \o Same as \c i.
+    \row    \o \c font
+            \o Font size, family, and/or color
+            \o Supports the following attributes:
+               \c size, \c face, and \c color (Qt
+               \l{QColor::setNamedColor()}{color names} or
+               \c #RRGGBB).
+    \row    \o \c h1
+            \o Level 1 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c h2
+            \o Level 2 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c h3
+            \o Level 3 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c h4
+            \o Level 4 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c h5
+            \o Level 5 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c h6
+            \o Level 6 heading
+            \o Supports the standard \l{block attributes}.
+    \row    \o \c head
+            \o Document header
+            \o
+    \row    \o \c hr
+            \o Horizontal line
+            \o Supports the \c width attribute, which can
+               be specified as an absolute or relative (\c %) value.
+    \row    \o \c html
+            \o HTML document
+            \o
+    \row    \o \c i
+            \o Italic
+            \o
+    \row    \o \c img
+            \o Image
+            \o Supports the \c src, \c source
+               (for Qt 3 compatibility), \c width, and \c height
+               attributes.
+    \row    \o \c kbd
+            \o User-entered text
+            \o
+    \row    \o \c meta
+            \o Meta-information
+            \o If a text encoding is specified using the \c{meta} tag,
+               it is picked up by Qt::codecForHtml().
+               Likewise, if an encoding is specified to
+               QTextDocument::toHtml(), the encoding is stored using
+               a \c meta tag, for example:
+
+    \snippet doc/src/snippets/code/doc.src.richtext.qdoc 7
+
+    \row    \o \c li
+            \o List item
+            \o
+    \row    \o \c nobr
+            \o Non-breakable text
+            \o
+    \row    \o \c ol
+            \o Ordered list
+            \o Supports the standard \l{list attributes}.
+    \row    \o \c p
+            \o Paragraph
+            \o Left-aligned by default. Supports the standard
+               \l{block attributes}.
+    \row    \o \c pre
+            \o Preformated text
+            \o
+    \row    \o \c qt
+            \o Qt rich-text document
+            \o Synonym for \c html. Provided for compatibility with
+               earlier versions of Qt.
+    \row    \o \c s
+            \o Strikethrough
+            \o
+    \row    \o \c samp
+            \o Sample code
+            \o Same as \c tt.
+    \row    \o \c small
+            \o Small font
+            \o
+    \row    \o \c span
+            \o Grouped elements
+            \o
+    \row    \o \c strong
+            \o Strong
+            \o Same as \c b.
+    \row    \o \c sub
+            \o Subscript
+            \o
+    \row    \o \c sup
+            \o Superscript
+            \o
+    \row    \o \c table
+            \o Table
+            \o Supports the following attributes: \c border,
+               \c bgcolor (Qt \l{QColor::setNamedColor()}{color names}
+               or \c #RRGGBB), \c cellspacing, \c cellpadding,
+               \c width (absolute or relative), and \c height.
+    \row    \o \c tbody
+            \o Table body
+            \o Does nothing.
+    \row    \o \c td
+            \o Table data cell
+            \o Supports the standard \l{table cell attributes}.
+    \row    \o \c tfoot
+            \o Table footer
+            \o Does nothing.
+    \row    \o \c th
+            \o Table header cell
+            \o Supports the standard \l{table cell attributes}.
+    \row    \o \c thead
+            \o Table header
+            \o If the \c thead tag is specified, it is used when printing tables
+               that span multiple pages.
+    \row    \o \c title
+            \o Document title
+            \o The value specified using the \c
+               title tag is available through
+               QTextDocument::metaInformation().
+    \row    \o \c tr
+            \o Table row
+            \o Supports the \c bgcolor attribute, which
+               can be a Qt \l{QColor::setNamedColor()}{color name}
+               or a \c #RRGGBB color specification.
+    \row    \o \c tt
+            \o Typewrite font
+            \o
+    \row    \o \c u
+            \o Underlined
+            \o
+    \row    \o \c ul
+            \o Unordered list
+            \o Supports the standard \l{list attributes}.
+    \row    \o \c var
+            \o Variable
+            \o Same as \c i.
+    \endtable
+
+    \section1 Block Attributes
+
+    The following attributes are supported by the \c div, \c dl, \c
+    dt, \c h1, \c h2, \c h3, \c h4, \c h5, \c h6, \c p tags:
+
+    \list
+    \o \c align (\c left, \c right, \c center, \c justify)
+    \o \c dir (\c ltr, \c rtl)
+    \endlist
+
+    \section1 List Attributes
+
+    The following attribute is supported by the \c ol and \c ul tags:
+
+    \list
+    \o \c type (\c 1, \c a, \c A, \c square, \c disc, \c circle)
+    \endlist
+
+    \section1 Table Cell Attributes
+
+    The following attributes are supported by the \c td and \c th
+    tags:
+
+    \list
+    \o \c width (absolute, relative, or no-value)
+    \o \c bgcolor (Qt \l{QColor::setNamedColor()}{color names} or \c #RRGGBB)
+    \o \c colspan
+    \o \c rowspan
+    \o \c align (\c left, \c right, \c center, \c justify)
+    \o \c valign (\c top, \c middle, \c bottom)
+    \endlist
+
+    \section1 CSS Properties
+    The following table lists the CSS properties supported by Qt's
+    \l{Rich Text Processing}{rich text} engine:
+
+    \table
+    \header \o Property
+            \o Values
+            \o Description
+    \row
+            \o \c background-color
+            \o <color>
+            \o Background color for elements
+    \row
+            \o \c background-image
+            \o <uri>
+            \o Background image for elements
+    \row    \o \c color
+            \o <color>
+            \o Text foreground color
+    \row    \o \c font-family
+            \o <family name>
+            \o Font family name
+    \row    \o \c font-size
+            \o [ small | medium | large | x-large | xx-large ] | <size>pt | <size>px
+            \o Font size relative to the document font, or specified in points or pixels
+    \row    \o \c font-style
+            \o [ normal | italic | oblique ]
+            \o
+    \row    \o \c font-weight
+            \o [ normal | bold | 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900 ]
+            \o Specifies the font weight used for text, where \c normal and \c bold
+               are mapped to the corresponding QFont weights. Numeric values are
+               8 times the equivalent QFont weight values.
+    \row    \o \c text-decoration
+            \o none | [ underline || overline || line-through ]
+            \o Additional text effects
+    \row    \o \c font
+            \o [ [ <'font-style'> || <'font-weight'> ]? <'font-size'> <'font-family'> ]
+            \o Font shorthand property
+    \row    \o \c text-indent
+            \o <length>px
+            \o First line text indentation in pixels
+    \row    \o \c white-space
+            \o normal | pre | nowrap | pre-wrap
+            \o Declares how whitespace in HTML is handled.
+    \row    \o \c margin-top
+            \o <length>px
+            \o Top paragraph margin in pixels
+    \row    \o \c margin-bottom
+            \o <length>px
+            \o Bottom paragraph margin in pixels
+    \row    \o \c margin-left
+            \o <length>px
+            \o Left paragraph margin in pixels
+    \row    \o \c margin-right
+            \o <length>px
+            \o Right paragraph margin in pixels
+    \row    \o \c padding-top
+            \o <length>px
+            \o Top table cell padding in pixels
+    \row    \o \c padding-bottom
+            \o <length>px
+            \o Bottom table cell padding in pixels
+    \row    \o \c padding-left
+            \o <length>px
+            \o Left table cell padding in pixels
+    \row    \o \c padding-right
+            \o <length>px
+            \o Right table cell padding in pixels
+    \row    \o \c padding
+            \o <length>px
+            \o Shorthand for setting all the padding properties at once.
+    \row    \o \c vertical-align
+            \o baseline | sub | super | middle | top | bottom
+            \o Vertical text alignment. For vertical alignment in text table cells only middle, top, and bottom apply.
+    \row    \o \c border-color
+            \o <color>
+            \o Border color for text tables.
+    \row    \o \c border-style
+            \o none | dotted | dashed | dot-dash | dot-dot-dash | solid | double | groove | ridge | inset | outset
+            \o Border style for text tables.
+    \row    \o \c background
+            \o [ <'background-color'> || <'background-image'> ]
+            \o Background shorthand property
+    \row    \o \c page-break-before
+            \o [ auto | always ]
+            \o Make it possible to enforce a page break before the paragraph/table
+    \row    \o \c page-break-after
+            \o [ auto | always ]
+            \o Make it possible to enforce a page break after the paragraph/table
+    \row    \o float
+            \o [ left | right | none ]
+            \o Specifies where an image or a text will be placed in another element.
+    \endtable
+
+    \section1 Supported CSS Selectors
+
+    All CSS 2.1 selector classes are supported except pseudo-class selectors such
+    as \c{:first-child}, \c{:visited} and \c{:hover}.
+
+*/

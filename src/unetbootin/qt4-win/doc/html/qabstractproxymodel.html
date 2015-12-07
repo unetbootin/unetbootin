@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qabstractproxymodel.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractProxyModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractProxyModel Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAbstractProxyModel class provides a base class for proxy item models that can do sorting, filtering or other data processing tasks. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractProxyModel&gt;</pre><p>Inherits <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>Inherited by <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qabstractproxymodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractproxymodel.html#QAbstractProxyModel">QAbstractProxyModel</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qabstractproxymodel.html#dtor.QAbstractProxyModel">~QAbstractProxyModel</a></b> ()</li>
+<li><div class="fn"/>virtual QModelIndex <b><a href="qabstractproxymodel.html#mapFromSource">mapFromSource</a></b> ( const QModelIndex &amp; <i>sourceIndex</i> ) const = 0</li>
+<li><div class="fn"/>virtual QItemSelection <b><a href="qabstractproxymodel.html#mapSelectionFromSource">mapSelectionFromSource</a></b> ( const QItemSelection &amp; <i>sourceSelection</i> ) const</li>
+<li><div class="fn"/>virtual QItemSelection <b><a href="qabstractproxymodel.html#mapSelectionToSource">mapSelectionToSource</a></b> ( const QItemSelection &amp; <i>proxySelection</i> ) const</li>
+<li><div class="fn"/>virtual QModelIndex <b><a href="qabstractproxymodel.html#mapToSource">mapToSource</a></b> ( const QModelIndex &amp; <i>proxyIndex</i> ) const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractproxymodel.html#setSourceModel">setSourceModel</a></b> ( QAbstractItemModel * <i>sourceModel</i> )</li>
+<li><div class="fn"/>QAbstractItemModel * <b><a href="qabstractproxymodel.html#sourceModel">sourceModel</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractProxyModel class provides a base class for proxy item models that can do sorting, filtering or other data processing tasks.</p>
+<p>This class defines the standard interface that proxy models must use to be able to interoperate correctly with other model/view components. It is not supposed to be instantiated directly.</p>
+<p>All standard proxy models are derived from the QAbstractProxyModel class. If you need to create a new proxy model class, it is usually better to subclass an existing class that provides the closest behavior to the one you want to provide. Proxy models that filter or sort items of data from a source model should be created by using or subclassing <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a>.</p>
+<p>See also <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a>, <a href="qabstractitemmodel.html">QAbstractItemModel</a>, and <a href="model-view-programming.html">Model/View Programming</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractProxyModel"></a>QAbstractProxyModel::QAbstractProxyModel ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a proxy model with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QAbstractProxyModel"></a>QAbstractProxyModel::~QAbstractProxyModel ()</h3>
+<p>Destroys the proxy model.</p>
+<h3 class="fn"><a name="mapFromSource"></a><a href="qmodelindex.html">QModelIndex</a> QAbstractProxyModel::mapFromSource ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>sourceIndex</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to return the model index in the proxy model that corresponds to the <i>sourceIndex</i> from the source model.</p>
+<p>See also <a href="qabstractproxymodel.html#mapToSource">mapToSource</a>().</p>
+<h3 class="fn"><a name="mapSelectionFromSource"></a><a href="qitemselection.html">QItemSelection</a> QAbstractProxyModel::mapSelectionFromSource ( const <a href="qitemselection.html">QItemSelection</a> &amp; <i>sourceSelection</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a proxy selection mapped from the specified <i>sourceSelection</i>.</p>
+<p>Reimplement this method to map source selections to proxy selections.</p>
+<h3 class="fn"><a name="mapSelectionToSource"></a><a href="qitemselection.html">QItemSelection</a> QAbstractProxyModel::mapSelectionToSource ( const <a href="qitemselection.html">QItemSelection</a> &amp; <i>proxySelection</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a source selection mapped from the specified <i>proxySelection</i>.</p>
+<p>Reimplement this method to map proxy selections to source selections.</p>
+<h3 class="fn"><a name="mapToSource"></a><a href="qmodelindex.html">QModelIndex</a> QAbstractProxyModel::mapToSource ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>proxyIndex</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to return the model index in the source model that corresponds to the <i>proxyIndex</i> in the proxy model.</p>
+<p>See also <a href="qabstractproxymodel.html#mapFromSource">mapFromSource</a>().</p>
+<h3 class="fn"><a name="setSourceModel"></a>void QAbstractProxyModel::setSourceModel ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>sourceModel</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the given <i>sourceModel</i> to be processed by the proxy model.</p>
+<p>See also <a href="qabstractproxymodel.html#sourceModel">sourceModel</a>().</p>
+<h3 class="fn"><a name="sourceModel"></a><a href="qabstractitemmodel.html">QAbstractItemModel</a> * QAbstractProxyModel::sourceModel () const</h3>
+<p>Returns the model that contains the data that is available through the proxy model.</p>
+<p>See also <a href="qabstractproxymodel.html#setSourceModel">setSourceModel</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

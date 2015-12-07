@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 2 - Calling it Quits</title>
+  <link rel="prev" href="tutorials-tutorial-t1.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t3.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t1.html">Chapter 1</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t3.html">Chapter 3</a>]
+</p>
+<h1 class="title">Qt Tutorial 2 - Calling it Quits<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t2-main-cpp.html">tutorials/tutorial/t2/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t2-t2-pro.html">tutorials/tutorial/t2/t2.pro</a></li>
+</ul>
+<p>This example is an extension to the window created in <a href="tutorials-tutorial-t1.html">Chapter 1</a>. We now go on to make the application quit properly when the user tells it to.</p>
+<p align="center"><img src="images/t2.png" alt="Screenshot of Chapter 2" /></p><p>We will also use a font that is more exciting than the default one.</p>
+<pre> #include &lt;QApplication&gt;
+ #include &lt;QFont&gt;
+ #include &lt;QPushButton&gt;
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QPushButton quit(&quot;Quit&quot;);
+     quit.resize(75, 30);
+     quit.setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     QObject::connect(&amp;quit, SIGNAL(clicked()), &amp;app, SLOT(quit()));
+
+     quit.show();
+     return app.exec();
+ }</pre>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> #include &lt;QFont&gt;</pre>
+<p>Since this program uses <a href="qfont.html">QFont</a>, it needs to include <tt>&lt;QFont&gt;</tt>.</p>
+<pre>     QPushButton quit(&quot;Quit&quot;);</pre>
+<p>This time, the button says <b>Quit</b> and that's exactly what the program will do when the user clicks the button.</p>
+<pre>     quit.resize(75, 30);</pre>
+<p>We've chosen another size for the button since the text is a bit shorter than &quot;Hello world!&quot;. We could also have used <a href="qfontmetrics.html">QFontMetrics</a> to set right size, or let <a href="qpushbutton.html">QPushButton</a> choose a reasonable default.</p>
+<pre>     quit.setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));</pre>
+<p>Here we choose a new font for the button, an 18-point bold font from the Times family. It is also possible to change the default font for the entire application, using <a href="qapplication.html#setFont">QApplication::setFont</a>().</p>
+<pre>     QObject::connect(&amp;quit, SIGNAL(clicked()), &amp;app, SLOT(quit()));</pre>
+<p><a href="qobject.html#connect">QObject::connect</a>() is perhaps <i>the</i> most central feature of Qt. Note that <a href="qobject.html#connect">connect()</a> is a static function in <a href="qobject.html">QObject</a>. Do not confuse it with the <tt>connect()</tt> function in the Berkeley socket library.</p>
+<p>This <a href="qobject.html#connect">connect()</a> call establishes a one-way connection between two Qt objects (objects that inherit <a href="qobject.html">QObject</a>, directly or indirectly). Every Qt object can have both <tt>signals</tt> (to send messages) and <tt>slots</tt> (to receive messages). All widgets are Qt objects, since they inherit <a href="qwidget.html">QWidget</a>, which in turn inherits <a href="qobject.html">QObject</a>.</p>
+<p>Here, the <a href="qabstractbutton.html#clicked">clicked()</a> signal of <tt>quit</tt> is connected to the <a href="qcoreapplication.html#quit">quit()</a> slot of <tt>app</tt>, so that when the button is clicked, the application quits.</p>
+<p>The <a href="signalsandslots.html">Signals and Slots</a> documentation describes this topic in detail.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>When you run this program, you will see an even smaller window than in Chapter 1, filled with an even smaller button.</p>
+<p>See <a href="tutorials-tutorial-t1.html">Chapter 1</a> for how to create a makefile and build the application.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try to resize the window. Press the button to close the application.</p>
+<p>Are there any other signals in <a href="qpushbutton.html">QPushButton</a> you can connect to quit? [Hint: The <a href="qpushbutton.html">QPushButton</a> inherits most of its functionality from <a href="qabstractbutton.html">QAbstractButton</a>.]</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t1.html">Chapter 1</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t3.html">Chapter 3</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

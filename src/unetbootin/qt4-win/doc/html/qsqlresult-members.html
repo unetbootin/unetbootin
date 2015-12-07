@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/kernel/qsqlresult.cpp -->
+<head>
+  <title>Qt 4.4: List of All Members for QSqlResult</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">List of All Members for QSqlResult</h1>
+<p>This is the complete list of members for <a href="qsqlresult.html">QSqlResult</a>, including inherited members.</p>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/>enum <a href="qsqlresult.html#BindingSyntax-enum">BindingSyntax</a></li>
+<li><div class="fn"/><a href="qsqlresult.html#QSqlResult">QSqlResult</a> ( const QSqlDriver * )</li>
+<li><div class="fn"/><a href="qsqlresult.html#dtor.QSqlResult">~QSqlResult</a> ()</li>
+<li><div class="fn"/><a href="qsqlresult.html#addBindValue">addBindValue</a> ( const QVariant &amp;, QSql::ParamType )</li>
+<li><div class="fn"/><a href="qsqlresult.html#at">at</a> () const : int</li>
+<li><div class="fn"/><a href="qsqlresult.html#bindValue">bindValue</a> ( int, const QVariant &amp;, QSql::ParamType )</li>
+<li><div class="fn"/><a href="qsqlresult.html#bindValue-2">bindValue</a> ( const QString &amp;, const QVariant &amp;, QSql::ParamType )</li>
+<li><div class="fn"/><a href="qsqlresult.html#bindValueType">bindValueType</a> ( int ) const : QSql::ParamType</li>
+<li><div class="fn"/><a href="qsqlresult.html#bindValueType-2">bindValueType</a> ( const QString &amp; ) const : QSql::ParamType</li>
+<li><div class="fn"/><a href="qsqlresult.html#bindingSyntax">bindingSyntax</a> () const : BindingSyntax</li>
+<li><div class="fn"/><a href="qsqlresult.html#boundValue">boundValue</a> ( int ) const : QVariant</li>
+<li><div class="fn"/><a href="qsqlresult.html#boundValue-2">boundValue</a> ( const QString &amp; ) const : QVariant</li>
+<li><div class="fn"/><a href="qsqlresult.html#boundValueCount">boundValueCount</a> () const : int</li>
+<li><div class="fn"/><a href="qsqlresult.html#boundValueName">boundValueName</a> ( int ) const : QString</li>
+<li><div class="fn"/><a href="qsqlresult.html#boundValues">boundValues</a> () const : QVector&lt;QVariant&gt; &amp;</li>
+<li><div class="fn"/><a href="qsqlresult.html#clear">clear</a> ()</li>
+<li><div class="fn"/><a href="qsqlresult.html#data">data</a> ( int ) : QVariant</li>
+<li><div class="fn"/><a href="qsqlresult.html#driver">driver</a> () const : const QSqlDriver *</li>
+<li><div class="fn"/><a href="qsqlresult.html#exec">exec</a> () : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#executedQuery">executedQuery</a> () const : QString</li>
+<li><div class="fn"/><a href="qsqlresult.html#fetch">fetch</a> ( int ) : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#fetchFirst">fetchFirst</a> () : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#fetchLast">fetchLast</a> () : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#fetchNext">fetchNext</a> () : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><a href="qsqlresult.html#fetchPrevious">fetchPrevious</a> () : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#handle">handle</a> () const : QVariant</li>
+<li><div class="fn"/><a href="qsqlresult.html#hasOutValues">hasOutValues</a> () const : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#isActive">isActive</a> () const : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#isForwardOnly">isForwardOnly</a> () const : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#isNull">isNull</a> ( int ) : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#isSelect">isSelect</a> () const : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#isValid">isValid</a> () const : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#lastError">lastError</a> () const : QSqlError</li>
+<li><div class="fn"/><a href="qsqlresult.html#lastInsertId">lastInsertId</a> () const : QVariant</li>
+<li><div class="fn"/><a href="qsqlresult.html#lastQuery">lastQuery</a> () const : QString</li>
+<li><div class="fn"/><a href="qsqlresult.html#numRowsAffected">numRowsAffected</a> () : int</li>
+<li><div class="fn"/><a href="qsqlresult.html#prepare">prepare</a> ( const QString &amp; ) : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#record">record</a> () const : QSqlRecord</li>
+<li><div class="fn"/><a href="qsqlresult.html#reset">reset</a> ( const QString &amp; ) : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#savePrepare">savePrepare</a> ( const QString &amp; ) : bool</li>
+<li><div class="fn"/><a href="qsqlresult.html#setActive">setActive</a> ( bool )</li>
+<li><div class="fn"/><a href="qsqlresult.html#setAt">setAt</a> ( int )</li>
+<li><div class="fn"/><a href="qsqlresult.html#setForwardOnly">setForwardOnly</a> ( bool )</li>
+<li><div class="fn"/><a href="qsqlresult.html#setLastError">setLastError</a> ( const QSqlError &amp; )</li>
+<li><div class="fn"/><a href="qsqlresult.html#setQuery">setQuery</a> ( const QString &amp; )</li>
+<li><div class="fn"/><a href="qsqlresult.html#setSelect">setSelect</a> ( bool )</li>
+<li><div class="fn"/><a href="qsqlresult.html#size">size</a> () : int</li>
+</ul>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 3 - Family Values</title>
+  <link rel="prev" href="tutorials-tutorial-t2.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t4.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t2.html">Chapter 2</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t4.html">Chapter 4</a>]
+</p>
+<h1 class="title">Qt Tutorial 3 - Family Values<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t3-main-cpp.html">tutorials/tutorial/t3/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t3-t3-pro.html">tutorials/tutorial/t3/t3.pro</a></li>
+</ul>
+<p align="center"><img src="images/t3.png" alt="Screenshot of Chapter 3" /></p><p>This example shows how to create parent and child widgets.</p>
+<p>We'll keep it simple and use just a single parent and a lone child.</p>
+<pre> #include &lt;QApplication&gt;
+ #include &lt;QFont&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QWidget&gt;
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QWidget window;
+     window.resize(200, 120);
+
+     QPushButton quit(&quot;Quit&quot;, &amp;window);
+     quit.setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+     quit.setGeometry(10, 40, 180, 40);
+     QObject::connect(&amp;quit, SIGNAL(clicked()), &amp;app, SLOT(quit()));
+
+     window.show();
+     return app.exec();
+ }</pre>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> #include &lt;QWidget&gt;</pre>
+<p>We add an include of &lt;<a href="qwidget.html">QWidget</a>&gt; to get the base widget class we'll use.</p>
+<pre>     QWidget window;</pre>
+<p>Here we simply create a plain widget object. The <a href="qwidget.html">QWidget</a> class is the base class of all user interface objects. The widget is the atom of the user interface: It receives mouse, keyboard and other events from the window system, and paints a representation of itself on the screen. A widget is clipped by its parent and by the widgets in front of it.</p>
+<p>A widget that isn't embedded in a parent widget, like this particular widget, is called a window. Usually, windows have their own window frame and taskbar entry, provided by the window system. A widget without a parent widget is always an independent window. Its initial position on the screen is controlled by the window system.</p>
+<pre>     window.resize(200, 120);</pre>
+<p>We set the window's width to 200 pixels and its height to 120 pixels.</p>
+<pre>     QPushButton quit(&quot;Quit&quot;, &amp;window);</pre>
+<p>A child is born. This <a href="qpushbutton.html">QPushButton</a> is created with a parent widget (<tt>window</tt>). A child widget is always displayed within its parent's area. When displayed, it is clipped by its parent's bounds. By default, it is rooted at the top-left corner of its parent, at position (0, 0).</p>
+<pre>     quit.setGeometry(10, 40, 180, 40);</pre>
+<p>The <a href="qwidget.html#geometry-prop">QWidget::setGeometry</a>() function takes four arguments: The first two arguments are the x and y coordinates of the button's top-left corner. The coordinates are relative to the parent widget. The last two arguments are the button's width and height. The result is a button that extends from position (10, 40) to position (190, 80).</p>
+<pre>     window.show();</pre>
+<p>When a parent widget is shown, it will call show for all its children (except those that were explicitly hidden using <a href="qwidget.html#hide">QWidget::hide</a>()).</p>
+<a name="on-being-mindful-of-the-order-of-things"></a>
+<h3>On being mindful of the order of things</h3>
+<p>Tutorial readers who have already studied <a href="qobject.html">QObject</a>, will recall that when the destructor of a <a href="qobject.html">QObject</a> is called, if the <a href="qobject.html">QObject</a> has children, its destructor automatically calls the destructor of each child. Thus it might appear that the destructor of <a href="qpushbutton.html">QPushButton</a> <tt>quit</tt> will be called twice at the end of main(), once when its parent, <tt>window</tt>, goes out of scope and the destructor deletes <tt>quit</tt> because it is a child, and a second time when <tt>quit</tt> itself goes out of scope. But there is no need to worry in this case; the code is correct. However, there <i>is</i> a case where one must be mindful of the order of destruction of objects on the stack. For an explanation, see this <a href="objecttrees.html#note-on-the-order-of-construction-destruction-of-qobjects">note on the order of construction/destruction of QObjects</a>.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>The button no longer fills the entire window. Instead, it stays at position (10, 40) within the window and with a size of (180, 40), because of the <a href="qwidget.html#geometry-prop">QWidget::setGeometry</a>() call.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try resizing the window. How does the button change? What happens to the button's height if you run the program with a bigger font? What happens if you try to make the window really small?</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t2.html">Chapter 2</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t4.html">Chapter 4</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

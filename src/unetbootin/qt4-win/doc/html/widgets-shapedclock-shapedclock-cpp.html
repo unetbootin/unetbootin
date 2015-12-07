@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: shapedclock.cpp Example File (widgets/shapedclock/shapedclock.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">shapedclock.cpp Example File<br /><span class="small-subtitle">widgets/shapedclock/shapedclock.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;shapedclock.h&quot;
+
+ ShapedClock::ShapedClock(QWidget *parent)
+     : QWidget(parent, Qt::FramelessWindowHint)
+ {
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+     timer-&gt;start(1000);
+
+     QAction *quitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     quitAction-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     addAction(quitAction);
+
+     setContextMenuPolicy(Qt::ActionsContextMenu);
+     setToolTip(tr(&quot;Drag the clock with the left mouse button.\n&quot;
+                   &quot;Use the right mouse button to open a context menu.&quot;));
+     setWindowTitle(tr(&quot;Shaped Analog Clock&quot;));
+ }
+
+ void ShapedClock::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         dragPosition = event-&gt;globalPos() - frameGeometry().topLeft();
+         event-&gt;accept();
+     }
+ }
+
+ void ShapedClock::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (event-&gt;buttons() &amp; Qt::LeftButton) {
+         move(event-&gt;globalPos() - dragPosition);
+         event-&gt;accept();
+     }
+ }
+
+ void ShapedClock::paintEvent(QPaintEvent *)
+ {
+     static const QPoint hourHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -40)
+     };
+     static const QPoint minuteHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -70)
+     };
+
+     QColor hourColor(127, 0, 127);
+     QColor minuteColor(0, 127, 127, 191);
+
+     int side = qMin(width(), height());
+     QTime time = QTime::currentTime();
+
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.translate(width() / 2, height() / 2);
+     painter.scale(side / 200.0, side / 200.0);
+
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(hourColor);
+
+     painter.save();
+     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
+     painter.drawConvexPolygon(hourHand, 3);
+     painter.restore();
+
+     painter.setPen(hourColor);
+
+     for (int i = 0; i &lt; 12; ++i) {
+         painter.drawLine(88, 0, 96, 0);
+         painter.rotate(30.0);
+     }
+
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(minuteColor);
+
+     painter.save();
+     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
+     painter.drawConvexPolygon(minuteHand, 3);
+     painter.restore();
+
+     painter.setPen(minuteColor);
+
+     for (int j = 0; j &lt; 60; ++j) {
+         if ((j % 5) != 0)
+             painter.drawLine(92, 0, 96, 0);
+         painter.rotate(6.0);
+     }
+ }
+
+ void ShapedClock::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     int side = qMin(width(), height());
+     QRegion maskedRegion(width() / 2 - side / 2, height() / 2 - side / 2, side,
+                          side, QRegion::Ellipse);
+     setMask(maskedRegion);
+ }
+
+ QSize ShapedClock::sizeHint() const
+ {
+     return QSize(100, 100);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

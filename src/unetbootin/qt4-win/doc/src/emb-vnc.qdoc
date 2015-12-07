@@ -1,0 +1,100 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-vnc.html
+
+    \title The VNC Protocol and Qt for Embedded Linux
+    \ingroup qt-embedded
+
+    VNC (Virtual Network Computing) software makes it possible to view
+    and interact with one computer (the "server") from any other
+    computer or mobile device (the "viewer") anywhere on a network.
+
+    To run a \l{Qt for Embedded Linux} application using the VNC protocol, the
+    \l{Qt for Embedded Linux} library must be configured and compiled with the
+    \c -qt-gfx-vnc option:
+
+    \snippet doc/src/snippets/code/doc.src.emb-vnc.qdoc 0
+
+    Then start a server application (i.e. construct a QApplication
+    object with the QApplication::GuiServer flag or use the -qws
+    command line parameter. See the \l {Running Qt for Embedded Linux
+    Applications}{running applications} documentation for
+    details). When runnng the application, use the \c -display option
+    to specify the VNC server's driver. For example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-vnc.qdoc 1
+
+    To interact with the application over the network, run a VNC
+    client pointing to the machine that is running the server
+    application. VNC clients are available for a vast array of display
+    systems: X11, Windows, Amiga, DOS, VMS, and dozens of others.  For
+    example, using the X11 VNC client to view the application from the
+    same machine:
+
+    \snippet doc/src/snippets/code/doc.src.emb-vnc.qdoc 2
+
+    \l{Qt for Embedded Linux} will create a 640 by 480 pixel display by
+    default. Alternatively, the QWS_SIZE environment variable can be
+    used to set another size, e.g. \c QWS_SIZE=240x320.
+
+    \table
+    \row
+    \o \bold {The Virtual Framebuffer}
+
+    The \l{The Virtual Framebuffer}{virtual framebuffer} is
+    an alternative technique recommended for development and debugging
+    purposes.
+
+    The virtual framebuffer emulates a framebuffer using a shared
+    memory region and the \c qvfb tool to display the framebuffer in a
+    window.
+
+    Its use of shared memory makes the virtual framebuffer much faster
+    and smoother than using the VNC protocol, but it does not operate
+    over a network.
+
+    \o \inlineimage qt-embedded-virtualframebuffer.png
+    \endtable
+*/

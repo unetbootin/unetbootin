@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qline.cpp -->
+<head>
+  <title>Qt 4.4: QLine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QLine Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QLine class provides a two-dimensional vector using integer precision. <a href="#details">More...</a></p>
+<pre> #include &lt;QLine&gt;</pre><ul>
+<li><a href="qline-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qline.html#QLine">QLine</a></b> ()</li>
+<li><div class="fn"/><b><a href="qline.html#QLine-2">QLine</a></b> ( const QPoint &amp; <i>p1</i>, const QPoint &amp; <i>p2</i> )</li>
+<li><div class="fn"/><b><a href="qline.html#QLine-3">QLine</a></b> ( int <i>x1</i>, int <i>y1</i>, int <i>x2</i>, int <i>y2</i> )</li>
+<li><div class="fn"/>QPoint <b><a href="qline.html#p1">p1</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qline.html#p2">p2</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#x1">x1</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#x2">x2</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#y1">y1</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#y2">y2</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#dx">dx</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qline.html#dy">dy</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qline.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qline.html#setP1">setP1</a></b> ( const QPoint &amp; <i>p1</i> )</li>
+<li><div class="fn"/>void <b><a href="qline.html#setP2">setP2</a></b> ( const QPoint &amp; <i>p2</i> )</li>
+<li><div class="fn"/>void <b><a href="qline.html#setLine">setLine</a></b> ( int <i>x1</i>, int <i>y1</i>, int <i>x2</i>, int <i>y2</i> )</li>
+<li><div class="fn"/>void <b><a href="qline.html#setPoints">setPoints</a></b> ( const QPoint &amp; <i>p1</i>, const QPoint &amp; <i>p2</i> )</li>
+<li><div class="fn"/>void <b><a href="qline.html#translate">translate</a></b> ( const QPoint &amp; <i>offset</i> )</li>
+<li><div class="fn"/>void <b><a href="qline.html#translate-2">translate</a></b> ( int <i>dx</i>, int <i>dy</i> )</li>
+<li><div class="fn"/>QLine <b><a href="qline.html#translated">translated</a></b> ( const QPoint &amp; <i>offset</i> ) const</li>
+<li><div class="fn"/>QLine <b><a href="qline.html#translated-2">translated</a></b> ( int <i>dx</i>, int <i>dy</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qline.html#operator-not-eq">operator!=</a></b> ( const QLine &amp; <i>line</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qline.html#operator-eq-eq">operator==</a></b> ( const QLine &amp; <i>line</i> ) const</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qline.html#operator-lt-lt-98">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QLine &amp; <i>line</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qline.html#operator-gt-gt-60">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QLine &amp; <i>line</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLine class provides a two-dimensional vector using integer precision.</p>
+<p>A QLine describes a finite length line (or a line segment) on a two-dimensional surface. The start and end points of the line are specified using integer point accuracy for coordinates. Use the <a href="qlinef.html">QLineF</a> constructor to retrieve a floating point copy.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qline-point.png" /></td><td><img src="images/qline-coordinates.png" /></td></tr>
+</table></p>
+<p>The positions of the line's start and end points can be retrieved using the <a href="qline.html#p1">p1</a>(), <a href="qline.html#x1">x1</a>(), <a href="qline.html#y1">y1</a>(), <a href="qline.html#p2">p2</a>(), <a href="qline.html#x2">x2</a>(), and <a href="qline.html#y2">y2</a>() functions. The <a href="qline.html#dx">dx</a>() and <a href="qline.html#dy">dy</a>() functions return the horizontal and vertical components of the line. Use <a href="qline.html#isNull">isNull</a>() to determine whether the QLine represents a valid line or a null line.</p>
+<p>Finally, the line can be translated a given offset using the <a href="qline.html#translate">translate</a>() function.</p>
+<p>See also <a href="qlinef.html">QLineF</a>, <a href="qpolygon.html">QPolygon</a>, and <a href="qrect.html">QRect</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLine"></a>QLine::QLine ()</h3>
+<p>Constructs a null line.</p>
+<h3 class="fn"><a name="QLine-2"></a>QLine::QLine ( const <a href="qpoint.html">QPoint</a> &amp; <i>p1</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p2</i> )</h3>
+<p>Constructs a line object that represents the line between <i>p1</i> and <i>p2</i>.</p>
+<h3 class="fn"><a name="QLine-3"></a>QLine::QLine ( int <i>x1</i>, int <i>y1</i>, int <i>x2</i>, int <i>y2</i> )</h3>
+<p>Constructs a line object that represents the line between (<i>x1</i>, <i>y1</i>) and (<i>x2</i>, <i>y2</i>).</p>
+<h3 class="fn"><a name="p1"></a><a href="qpoint.html">QPoint</a> QLine::p1 () const</h3>
+<p>Returns the line's start point.</p>
+<p>See also <a href="qline.html#setP1">setP1</a>(), <a href="qline.html#x1">x1</a>(), <a href="qline.html#y1">y1</a>(), and <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="p2"></a><a href="qpoint.html">QPoint</a> QLine::p2 () const</h3>
+<p>Returns the line's end point.</p>
+<p>See also <a href="qline.html#setP2">setP2</a>(), <a href="qline.html#x2">x2</a>(), <a href="qline.html#y2">y2</a>(), and <a href="qline.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="x1"></a>int QLine::x1 () const</h3>
+<p>Returns the x-coordinate of the line's start point.</p>
+<p>See also <a href="qline.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="x2"></a>int QLine::x2 () const</h3>
+<p>Returns the x-coordinate of the line's end point.</p>
+<p>See also <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="y1"></a>int QLine::y1 () const</h3>
+<p>Returns the y-coordinate of the line's start point.</p>
+<p>See also <a href="qline.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="y2"></a>int QLine::y2 () const</h3>
+<p>Returns the y-coordinate of the line's end point.</p>
+<p>See also <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="dx"></a>int QLine::dx () const</h3>
+<p>Returns the horizontal component of the line's vector.</p>
+<p>See also <a href="qline.html#dy">dy</a>().</p>
+<h3 class="fn"><a name="dy"></a>int QLine::dy () const</h3>
+<p>Returns the vertical component of the line's vector.</p>
+<p>See also <a href="qline.html#dx">dx</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QLine::isNull () const</h3>
+<p>Returns true if the line is not set up with valid start and end point; otherwise returns false.</p>
+<h3 class="fn"><a name="setP1"></a>void QLine::setP1 ( const <a href="qpoint.html">QPoint</a> &amp; <i>p1</i> )</h3>
+<p>Sets the starting point of this line to <i>p1</i>.</p>
+<p>See also <a href="qline.html#setP2">setP2</a>() and <a href="qline.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="setP2"></a>void QLine::setP2 ( const <a href="qpoint.html">QPoint</a> &amp; <i>p2</i> )</h3>
+<p>Sets the end point of this line to <i>p2</i>.</p>
+<p>See also <a href="qline.html#setP1">setP1</a>() and <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="setLine"></a>void QLine::setLine ( int <i>x1</i>, int <i>y1</i>, int <i>x2</i>, int <i>y2</i> )</h3>
+<p>Sets this line to the start in <i>x1</i>, <i>y1</i> and end in <i>x2</i>, <i>y2</i>.</p>
+<p>See also <a href="qline.html#setP1">setP1</a>(), <a href="qline.html#setP2">setP2</a>(), <a href="qline.html#p1">p1</a>(), and <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="setPoints"></a>void QLine::setPoints ( const <a href="qpoint.html">QPoint</a> &amp; <i>p1</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p2</i> )</h3>
+<p>Sets the start point of this line to <i>p1</i> and the end point of this line to <i>p2</i>.</p>
+<p>See also <a href="qline.html#setP1">setP1</a>(), <a href="qline.html#setP2">setP2</a>(), <a href="qline.html#p1">p1</a>(), and <a href="qline.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="translate"></a>void QLine::translate ( const <a href="qpoint.html">QPoint</a> &amp; <i>offset</i> )</h3>
+<p>Translates this line by the given <i>offset</i>.</p>
+<h3 class="fn"><a name="translate-2"></a>void QLine::translate ( int <i>dx</i>, int <i>dy</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Translates this line the distance specified by <i>dx</i> and <i>dy</i>.</p>
+<h3 class="fn"><a name="translated"></a>QLine QLine::translated ( const <a href="qpoint.html">QPoint</a> &amp; <i>offset</i> ) const</h3>
+<p>Returns this line translated by the given <i>offset</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="translated-2"></a>QLine QLine::translated ( int <i>dx</i>, int <i>dy</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns this line translated the distance specified by <i>dx</i> and <i>dy</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QLine::operator!= ( const QLine &amp; <i>line</i> ) const</h3>
+<p>Returns true if the given <i>line</i> is not the same as <i>this</i> line.</p>
+<p>A line is different from another line if any of their start or end points differ, or the internal order of the points is different.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QLine::operator== ( const QLine &amp; <i>line</i> ) const</h3>
+<p>Returns true if the given <i>line</i> is the same as <i>this</i> line.</p>
+<p>A line is identical to another line if the start and end points are identical, and the internal order of the points is the same.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-98"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QLine &amp; <i>line</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>line</i> to the given <i>stream</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-60"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QLine &amp; <i>line</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a line from the given <i>stream</i> into the given <i>line</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

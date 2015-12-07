@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon.qdoc -->
+<head>
+  <title>Qt 4.4: Phonon Overview</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Phonon Overview<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<ul><li><a href="#media-objects">Media Objects</a></li>
+<li><a href="#sinks">Sinks</a></li>
+<li><a href="#processors">Processors</a></li>
+</ul>
+<li><a href="#playback">Playback</a></li>
+<li><a href="#building-graphs">Building Graphs</a></li>
+<ul><li><a href="#audio">Audio</a></li>
+<ul><li><a href="#audio-effects">Audio Effects</a></li>
+</ul>
+<li><a href="#video">Video</a></li>
+</ul>
+<li><a href="#backends">Backends</a></li>
+<ul><li><a href="#querying-backends-for-support">Querying Backends for Support</a></li>
+</ul>
+<li><a href="#installing-phonon">Installing Phonon</a></li>
+<ul><li><a href="#windows">Windows</a></li>
+<ul><li><a href="#windows-xp-and-later-windows-versions">Windows XP and later Windows versions</a></li>
+<li><a href="#earlier-windows-versions-than-windows-xp">Earlier Windows versions than Windows XP</a></li>
+<li><a href="#setting-up-the-environment">Setting up the environment</a></li>
+</ul>
+<li><a href="#linux">Linux</a></li>
+<li><a href="#mac-os-x">Mac OS X</a></li>
+</ul>
+<li><a href="#work-in-progress">Work in Progress</a></li>
+</ul>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>Qt uses the Phonon multimedia framework to provide functionality for playback of the most common multimedia formats.The media can be read from files or streamed over a network, using a QURL to a file.</p>
+<p>In this overview, we take a look at the main concepts of Phonon. We also explain the architecture, examine the core API classes, and show examples on how to use the classes provided.</p>
+<a name="architecture"></a>
+<h2>Architecture</h2>
+<p>Phonon has tree basic concepts: media objects, sinks, and paths. A media object manages a media source, for instance, a music file; it provides simple playback control, such as starting, stopping, and pausing the playback. A sink outputs the media from Phonon, e.g&#x2e;, by rendering video on a widget, or by sending audio to a sound card. Paths are used to connect Phonon objects, i.e&#x2e;, a media object and a sink, in a graph - called a media graph in Phonon.</p>
+<p>As an example, we show a media graph for an audio stream:</p>
+<p align="center"><img src="images/conceptaudio.png" /></p><p>The playback is started and managed by the media object, which send the media stream to any sinks connected to it by a path. The sink then plays the stream back, usually though a sound card.</p>
+<a name="media-objects"></a>
+<h3>Media Objects</h3>
+<p>The media object, an instance of the <a href="phonon-mediaobject.html">MediaObject</a> class, lets you start, pause, and stop the playback of a media stream, i.e&#x2e;, it provided basic control over the playback. You may think of the object as a simple media player.</p>
+<p>The media data is provided by a media source, which is kept by the media object. The media source is a separate object - an instance of <a href="phonon-mediasource.html">MediaSource</a> - in Phonon, and not part of the graph itself. The source will supply the media object with raw data. The data can be read from files and streamed over a network. The contents of the source will be interpreted by the media object.</p>
+<p>A media object is always instantiated with the default constructor and then supplied with a media source. Concrete code examples are given later in this overview.</p>
+<p>As a complement to the media object, Phonon also provides MediaController, which provides control over features that are optional for a given media. For instance, for chapters, menus, and titles of a VOB (DVD) file will be features managed by a MediaController.</p>
+<a name="sinks"></a>
+<h3>Sinks</h3>
+<p>A sink is a node that can output media from the graph, i.e&#x2e;, it does not send its output to other nodes. A sink is usually a rendering device.</p>
+<p>The input of sinks in a Phonon media graph comes from a <a href="phonon-mediaobject.html">MediaObject</a>, though it might have been processed through other nodes on the way.</p>
+<p>While the <a href="phonon-mediaobject.html">MediaObject</a> controls the playback, the sink has basic controls for manipulation of the media. With an audio sink, for instance, you can control the volume and mute the sound, i.e&#x2e;, it represents a virtual audio device. Another example is the <a href="phonon-videowidget.html">VideoWidget</a>, which can render video on a <a href="qwidget.html">QWidget</a> and alter the brightness, hue, and scaling of the video.</p>
+<p>As an example we give an image of a graph used for playing back a video file with sound.</p>
+<p align="center"><img src="images/conceptvideo.png" /></p><a name="processors"></a>
+<h3>Processors</h3>
+<p>Phonon does not allow manipulation of media streams directly, i.e&#x2e;, one cannot alter a media stream's bytes programmatically after they have been given to a media object. We have other nodes to help with this: processors, which are placed in the graph on the path somewhere between the media object and its sinks. In Phonon, processors are of the <a href="phonon-effect.html">Effect</a> class.</p>
+<p>When inserted into the rendering process, the processor will alter the media stream, and will be active as long as it is part of the graph. To stop, it needs to be removed.</p>
+<p>The <tt>Effect</tt>s may also have controls that affect how the media stream is manipulated. A processor applying a depth effect to audio, for instance, can have a value controlling the amount of depth. An <tt>Effect</tt> can be configured at any point in time.</p>
+<a name="playback"></a>
+<h2>Playback</h2>
+<p>In some common cases, it is not necessary to build a graph yourself.</p>
+<p>Phonon has convenience functions for building common graphs. For playing an audio file, you can use the <a href="phonon.html#createPlayer">createPlayer()</a> function. This will set up the necessary graph and return the media object node; the sound can then be started by calling its <a href="phonon-mediaobject.html#play">play()</a> function.</p>
+<pre>     Phonon::MediaObject *music =
+         Phonon::createPlayer(Phonon::MusicCategory,
+                              Phonon::MediaSource(&quot;/path/mysong.wav&quot;));
+     music-&gt;play();</pre>
+<p>We have a similar solution for playing video files, the <a href="phonon-videoplayer.html">VideoPlayer</a>.</p>
+<pre>     Phonon::VideoPlayer *player =
+         new Phonon::VideoPlayer(Phonon::VideoCategory, parentWidget);
+     player-&gt;play(url);</pre>
+<p>The VideoPlayer is a widget onto which the video will be drawn.</p>
+<p>The <tt>.pro</tt> file for a project needs the following line to be added:</p>
+<pre>         QT += phonon</pre>
+<p>Phonon comes with several widgets that provide functionality commonly associated with multimedia players - notably SeekSlider for controlling the position of the stream, VolumeSlider for controlling sound volume, and EffectWidget for controlling the parameters of an effect. You can learn about them in the API documentation.</p>
+<a name="building-graphs"></a>
+<h2>Building Graphs</h2>
+<p>If you need more freedom than the convenience functions described in the previous section offers you, you can build the graphs yourself. We will now take a look at how some common graphs are built. Starting a graph up is a matter of calling the <a href="phonon-mediaobject.html#play">play()</a> function of the media object.</p>
+<p>If the media source contains several types of media, for instance, a stream with both video and audio, the graph will contain two output nodes: one for the video and one for the audio.</p>
+<p>We will now look at the code required to build the graphs discussed previously in the <a href="architecture.html">Architecture</a> section.</p>
+<a name="audio"></a>
+<h3>Audio</h3>
+<p>When playing back audio, you create the media object and connect it to an audio output node - a node that inherits from AbstractAudioOutput. Currently, AudioOutput, which outputs audio to the sound card, is provided.</p>
+<p>The code to create the graph is straight forward:</p>
+<pre>     Phonon::MediaObject *mediaObject = new Phonon::MediaObject(this);
+     mediaObject-&gt;setCurrentSource(Phonon::MediaSource(&quot;/mymusic/barbiegirl.wav&quot;));
+     Phonon::AudioOutput *audioOutput =
+         new Phonon::AudioOutput(Phonon::MusicCategory, this);
+     Phonon::Path path = Phonon::createPath(mediaObject, audioOutput);</pre>
+<p>Notice that the type of media an input source has is resolved by Phonon, so you need not be concerned with this. If a source contains multiple media formats, this is also handled automatically.</p>
+<p>The media object is always created using the default constructor since it handles all multimedia formats.</p>
+<p>The setting of a Category, <a href="phonon.html#Category-enum">Phonon::MusicCategory</a> in this case, does not affect the actual playback; the category can be used by KDE to control the playback through, for instance, the control panel.</p>
+<p>The AudioOutput class outputs the audio media to a sound card, that is, one of the audio devices of the operating system. An audio device can be a sound card or a intermediate technology, such as <tt>DirectShow</tt> on windows. A default device will be chosen if one is not set with <a href="phonon-audiooutput.html#outputDevice-prop">setOutputDevice()</a>.</p>
+<p>The AudioOutput node will work with all audio formats supported by the back end, so you don't need to know what format a specific media source has.</p>
+<p>For a an extensive example of audio playback, see the <a href="phonon-musicplayer.html">Phonon Music Player</a>.</p>
+<a name="audio-effects"></a>
+<h4>Audio Effects</h4>
+<p>Since a media stream cannot be manipulated directly, the backend can produce nodes that can process the media streams. These nodes are inserted into the graph between a media object and an output node.</p>
+<p>Nodes that process media streams inherit from the Effect class. The effects available depends on the underlying system. Most of these effects will be supported by Phonon. See the <a href="#querying-backends-for-support">Querying Backends for Support</a> section for information on how to resolve the available effects on a particular system.</p>
+<p>We will now continue the example from above using the Path variable <tt>path</tt> to add an effect. The code is again trivial:</p>
+<pre>     Phonon::Effect *effect =
+         new Phonon::Effect(
+             Phonon::BackendCapabilities::availableAudioEffects()[0], this);
+     path.insertEffect(effect);</pre>
+<p>Here we simply take the first available effect on the system.</p>
+<p>The effect will start immediately after being inserted into the graph if the media object is playing. To stop it, you have to detach it again using <a href="phonon-path.html#removeEffect">removeEffect()</a> of the Path.</p>
+<a name="video"></a>
+<h3>Video</h3>
+<p>For playing video, VideoWidget is provided. This class functions both as a node in the graph and as a widget upon which it draws the video stream. The widget will automatically chose an available device for playing the video, which is usually a technology between the Qt application and the graphics card, such as <tt>DirectShow</tt> on Windows.</p>
+<p>The video widget does not play the audio (if any) in the media stream. If you want to play the audio as well, you will need an AudioOutput node. You create and connect it to the graph as shown in the previous section.</p>
+<p>The code for creating this graph is given below, after which one can play the video with <a href="phonon-mediaobject.html#play">play()</a>.</p>
+<pre>     Phonon::MediaObject *mediaObject = new Phonon::MediaObject(this);
+
+     Phonon::VideoWidget *videoWidget = new Phonon::VideoWidget(this);
+     Phonon::createPath(mediaObject, videoWidget);
+
+     Phonon::AudioOutput *audioOutput =
+         new Phonon::AudioOutput(Phonon::VideoCategory, this);
+     Phonon::createPath(mediaObject, audioOutput);</pre>
+<p>The VideoWidget does not need to be set to a Category, it is automatically classified to <a href="phonon.html#Category-enum">VideoCategory</a>, we only need to assure that the audio is also classified in the same category.</p>
+<p>The media object will split files with different media content into separate streams before sending them off to other nodes in the graph. It is the media object that determines the type of content appropriate for nodes that connect to it.</p>
+<a name="backends"></a>
+<h2>Backends</h2>
+<p>The multimedia functionality is not implemented by Phonon itself, but by a back end - often also referred to as an engine. This includes connecting to, managing, and driving the underlying hardware or intermediate technology. For the programmer, this implies that the media nodes, e.g&#x2e;, media objects, processors, and sinks, are produced by the back end. Also, it is responsible for building the graph, i.e&#x2e;, connecting the nodes.</p>
+<p>The backends of Qt use the media systems DirectShow (which requires DirectX) on Windows, QuickTime on Mac, and GStreamer on Linux. The functionality provided on the different platforms are dependent on these underlying systems and may vary somewhat, e.g&#x2e;, in the media formats supported.</p>
+<p>Backends expose information about the underlying system. It can tell which media formats are supported, e.g&#x2e;, <tt>AVI</tt>, <tt>mp3</tt>, or <tt>OGG</tt>.</p>
+<p>A user can often add support for new formats and filters to the underlying system, by, for instance, installing the DivX codex. We can therefore not give an exact overview of which formats are available with the Qt backends.</p>
+<a name="querying-backends-for-support"></a>
+<h3>Querying Backends for Support</h3>
+<p>As mentioned, Phonon depends on the backend to provide its functionality. Depending on the individual backend, full support of the API may not be in place. Applications therefore need to check with the backend if functionality they require is implemented. In this section, we take look at how this is done.</p>
+<p>The backend provides the <a href="phonon-backendcapabilities.html#availableMimeTypes">availableMimeTypes()</a> and <a href="phonon-backendcapabilities.html#isMimeTypeAvailable">isMimeTypeAvailable()</a> functions to query which MIME types the backend can produce nodes for. The types are listed as strings, which for any type is equal for any backend or platform.</p>
+<p>The backend will emit a signal - <a href="phonon-backendcapabilities-notifier.html#capabilitiesChanged">Notifier::capabilitiesChanged()</a> - if it's abilities have changed. If the available audio devices have changed, the <a href="phonon-backendcapabilities-notifier.html#availableAudioOutputDevicesChanged">Notifier::availableAudioOutputDevicesChanged()</a> signal is emitted instead.</p>
+<p>To query the actual audio devices possible, we have the <a href="phonon-backendcapabilities.html#availableAudioOutputDevices">availableAudioOutputDevices()</a> as mentioned in the <a href="#sinks">Sinks</a> section. To query information about the individual devices, you can examine its <tt>name()</tt>; this string is dependent on the operating system, and the Qt backends does not analyze the devices further.</p>
+<p>The sink for playback of video does not have a selection of devices. For convenience, the <a href="phonon-videowidget.html">VideoWidget</a> is both a node in the graph and a widget on which the video output is rendered. To query the various video formats available, use <a href="phonon-backendcapabilities.html#isMimeTypeAvailable">isMimeTypeAvailable()</a>. To add it to a path, you can use the <a href="phonon-path.html#createPath">Phonon::createPath</a>() as usual. After creating a media object, it is also possible to call its <a href="phonon-mediaobject.html#hasVideo">hasVideo()</a> function.</p>
+<p>See also the <a href="phonon-capabilities.html">Capabilities Example</a>.</p>
+<a name="installing-phonon"></a>
+<h2>Installing Phonon</h2>
+<p>When running the Qt configure script, you will be notified whether Phonon support is available on your system. As mentioned previously, to use develop and run Phonon applications, you also need to link to a backend, which provides the multimedia functionality.</p>
+<p>Note that Phonon applications will compile and run without a working backend, but will, of course, not work as expected.</p>
+<p>The following sections explains requirements for each backend.</p>
+<a name="windows"></a>
+<h3>Windows</h3>
+<p>On Windows, building Phonon requires DirectX and DirectShow version 9 or higher. You'll need additional SDKs you can download from Microsoft.</p>
+<a name="windows-xp-and-later-windows-versions"></a>
+<h4>Windows XP and later Windows versions</h4>
+<p>If you develop for Windows XP and up, you should download the Windows SDK from <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=e6e1c3df-a74f-4207-8586-711ebe331cdc&DisplayLang=en">http://www.microsoft.com/downloads/details.aspx?FamilyID=e6e1c3df-a74f-4207-8586-711ebe331cdc&amp;DisplayLang=en</a> Before building Qt, just call the script: <tt>C:\Program Files\Microsoft SDKs\Windows\v6.1\Bin\setenv.cmd</tt></p>
+<p><b>Note:</b> Visual C++ 2008 already contains the Windows SDK and doesn't need that package and has already the environment set up for a smooth compilation of phonon.</p>
+<a name="earlier-windows-versions-than-windows-xp"></a>
+<h4>Earlier Windows versions than Windows XP</h4>
+<p>If you want to support previous Windows versions, you should download and install the Platform SDK from <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=0BAF2B35-C656-4969-ACE8-E4C0C0716ADB&displaylang=en">http://www.microsoft.com/downloads/details.aspx?FamilyId=0BAF2B35-C656-4969-ACE8-E4C0C0716ADB&amp;displaylang=en</a></p>
+<p><b>Note:</b> The platform SDK provided with Visual C++ is not complete and you'll need this one to have DirectShow 9.0 support. You can download the DirectX SDK from <a href="http://www.microsoft.com/downloads/details.aspx?familyid=09F7578C-24AA-4E0A-BF91-5FEC24C8C7BF&displaylang=en">http://www.microsoft.com/downloads/details.aspx?familyid=09F7578C-24AA-4E0A-BF91-5FEC24C8C7BF&amp;displaylang=en</a></p>
+<a name="setting-up-the-environment"></a>
+<h4>Setting up the environment</h4>
+<p>Once the SDKs are installed, please make sure to set your environment variables LIB and INCLUDE correctly. The paths to the include and lib directory of the SDKs should appear first. Typically, to setup your environment, you would execute the following script:</p>
+<pre> Set DXSDK_DIR=C:\Program Files\Microsoft DirectX SDK (February 2007)
+ %DXSDK_DIR%\utilities\bin\dx_setenv.cmd
+ C:\program files\Microsoft Platform SDK\setenv.cmd</pre>
+<p>If your environment is setup correctly, executing configure.exe on your Qt installation should automatically activate Phonon.</p>
+<p><b>Warning:</b> The MinGW version of Qt does not support building the Qt backend.</p>
+<a name="linux"></a>
+<h3>Linux</h3>
+<p>The Qt backend on Linux uses GStreamer (minimum version is 0.10), which must be installed on the system. It is a good idea to install every package available for GStreamer to get support for as many MIME types, and audio effects as possible. At a minimum, you need the GStreamer library and base plugins, which provides support for <tt>.ogg</tt> files. The package names may vary between Linux distributions; on Mandriva, they have the following names:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Package</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td>libgstreamer0.10_0.10</td><td>The GStreamer base library.</td></tr>
+<tr valign="top" class="even"><td>libgstreamer0.10_0.10-devel</td><td>Contains files for developing applications with GStreamer.</td></tr>
+<tr valign="top" class="odd"><td>libgstreamer-plugins-base0.10</td><td>Contains the basic plugins for audio and video playback, and will enable support for <tt>ogg</tt> files.</td></tr>
+<tr valign="top" class="even"><td>libgstreamer-plugins-base0.10-devel</td><td>Makes it possible to develop applications using the base plugins.</td></tr>
+</table></p>
+<a name="mac-os-x"></a>
+<h3>Mac OS X</h3>
+<p>On Mac OS X, Qt uses QuickTime for its backend. The minimum supported version is 7.0&#x2e;</p>
+<a name="work-in-progress"></a>
+<h2>Work in Progress</h2>
+<p>Phonon and its Qt backends, though fully functional for multimedia playback, are still under development. Functionality to come is the possibility to capture media and more processors for both music and video files.</p>
+<p>Another important consideration is to implement support for storing media to files; i.e&#x2e;, not playing back media directly.</p>
+<p>We also hope in the future to be able to support direct manipulation of media streams. This will give the programmer more freedom to manipulate streams than just through processors.</p>
+<p>Currently, the multimedia framework supports one input source. It will be possible to include several sources. This is useful in, for example, audio mixer applications where several audio sources can be sent, processed and output as a single audio stream.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

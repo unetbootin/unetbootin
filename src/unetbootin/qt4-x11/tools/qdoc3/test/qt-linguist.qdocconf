@@ -1,0 +1,4 @@
+include(qt.qdocconf)
+
+outputdir               = $QTDIR/doc/linguist
+outputformats           = Linguist

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<directory name="home">
+
+    <file name="myNote.txt" mimetype="text/plain" size="8" extension="txt" uri="file:///home/frans/myNote.txt">
+        <content asBase64Binary="TXkgTm90ZSE=" asStringFromUTF-8="My Note!"/>
+    </file>
+
+    <directory name="src">
+        ...
+    </directory>
+
+    ...
+
+</directory>

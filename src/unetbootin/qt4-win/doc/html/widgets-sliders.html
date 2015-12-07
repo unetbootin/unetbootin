@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/sliders.qdoc -->
+<head>
+  <title>Qt 4.4: Sliders Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Sliders Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-sliders-slidersgroup-cpp.html">widgets/sliders/slidersgroup.cpp</a></li>
+<li><a href="widgets-sliders-slidersgroup-h.html">widgets/sliders/slidersgroup.h</a></li>
+<li><a href="widgets-sliders-window-cpp.html">widgets/sliders/window.cpp</a></li>
+<li><a href="widgets-sliders-window-h.html">widgets/sliders/window.h</a></li>
+<li><a href="widgets-sliders-main-cpp.html">widgets/sliders/main.cpp</a></li>
+<li><a href="widgets-sliders-sliders-pro.html">widgets/sliders/sliders.pro</a></li>
+</ul>
+<p>Qt provides three types of slider-like widgets: <a href="qslider.html">QSlider</a>, <a href="qscrollbar.html">QScrollBar</a> and <a href="qdial.html">QDial</a>. They all inherit most of their functionality from <a href="qabstractslider.html">QAbstractSlider</a>, and can in theory replace each other in an application since the differences only concern their look and feel. This example shows what they look like, how they work and how their behavior and appearance can be manipulated through their properties.</p>
+<p>The example also demonstrates how signals and slots can be used to synchronize the behavior of two or more widgets.</p>
+<p align="center"><img src="images/sliders-example.png" alt="Screenshot of the Sliders example" /></p><p>The Sliders example consists of two classes:</p>
+<ul>
+<li><tt>SlidersGroup</tt> is a custom widget. It combines a <a href="qslider.html">QSlider</a>, a <a href="qscrollbar.html">QScrollBar</a> and a <a href="qdial.html">QDial</a>.</li>
+<li><tt>Window</tt> is the main widget combining a <a href="qgroupbox.html">QGroupBox</a> and a <a href="qstackedwidget.html">QStackedWidget</a>. In this example, the <a href="qstackedwidget.html">QStackedWidget</a> provides a stack of two <tt>SlidersGroup</tt> widgets. The <a href="qgroupbox.html">QGroupBox</a> contain several widgets that control the behavior of the slider-like widgets.</li>
+</ul>
+<p>First we will review the <tt>Window</tt> class, then we will take a look at the <tt>SlidersGroup</tt> class.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ private:
+     void createControls(const QString &amp;title);
+
+     SlidersGroup *horizontalSliders;
+     SlidersGroup *verticalSliders;
+     QStackedWidget *stackedWidget;
+
+     QGroupBox *controlsGroup;
+     QLabel *minimumLabel;
+     QLabel *maximumLabel;
+     QLabel *valueLabel;
+     QCheckBox *invertedAppearance;
+     QCheckBox *invertedKeyBindings;
+     QSpinBox *minimumSpinBox;
+     QSpinBox *maximumSpinBox;
+     QSpinBox *valueSpinBox;
+     QComboBox *orientationCombo;
+ };</pre>
+<p>The <tt>Window</tt> class inherits from <a href="qwidget.html">QWidget</a>. It displays the slider widgets and allows the user to set their minimum, maximum and current values and to customize their appearance, key bindings and orientation. We use a private <tt>createControls()</tt> function to create the widgets that provide these controlling mechanisms and to connect them to the slider widgets.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<pre> Window::Window()
+ {
+     horizontalSliders = new SlidersGroup(Qt::Horizontal, tr(&quot;Horizontal&quot;));
+     verticalSliders = new SlidersGroup(Qt::Vertical, tr(&quot;Vertical&quot;));
+
+     stackedWidget = new QStackedWidget;
+     stackedWidget-&gt;addWidget(horizontalSliders);
+     stackedWidget-&gt;addWidget(verticalSliders);
+
+     createControls(tr(&quot;Controls&quot;));</pre>
+<p>In the constructor we first create the two <tt>SlidersGroup</tt> widgets that display the slider widgets horizontally and vertically, and add them to the <a href="qstackedwidget.html">QStackedWidget</a>. <a href="qstackedwidget.html">QStackedWidget</a> provides a stack of widgets where only the top widget is visible. With <tt>createControls()</tt> we create a connection from a controlling widget to the <a href="qstackedwidget.html">QStackedWidget</a>, making the user able to choose between horizontal and vertical orientation of the slider widgets. The rest of the controlling mechanisms is implemented by the same function call.</p>
+<pre>     connect(horizontalSliders, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setValue(int)));
+     connect(verticalSliders, SIGNAL(valueChanged(int)),
+             valueSpinBox, SLOT(setValue(int)));
+     connect(valueSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setValue(int)));
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(controlsGroup);
+     layout-&gt;addWidget(stackedWidget);
+     setLayout(layout);
+
+     minimumSpinBox-&gt;setValue(0);
+     maximumSpinBox-&gt;setValue(20);
+     valueSpinBox-&gt;setValue(5);
+
+     setWindowTitle(tr(&quot;Sliders&quot;));
+ }</pre>
+<p>Then we connect the <tt>horizontalSliders</tt>, <tt>verticalSliders</tt> and <tt>valueSpinBox</tt> to each other, so that the slider widgets and the control widget will behave synchronized when the current value of one of them changes. The <tt>valueChanged()</tt> signal is emitted with the new value as argument. The <tt>setValue()</tt> slot sets the current value of the widget to the new value, and emits <tt>valueChanged()</tt> if the new value is different from the old one.</p>
+<p>We put the group of control widgets and the stacked widget in a horizontal layout before we initialize the minimum, maximum and current values. The initialization of the current value will propagate to the slider widgets through the connection we made between <tt>valueSpinBox</tt> and the <tt>SlidersGroup</tt> widgets. The minimum and maximum values propagate through the connections we created with <tt>createControls()</tt>.</p>
+<pre> void Window::createControls(const QString &amp;title)
+ {
+     controlsGroup = new QGroupBox(title);
+
+     minimumLabel = new QLabel(tr(&quot;Minimum value:&quot;));
+     maximumLabel = new QLabel(tr(&quot;Maximum value:&quot;));
+     valueLabel = new QLabel(tr(&quot;Current value:&quot;));
+
+     invertedAppearance = new QCheckBox(tr(&quot;Inverted appearance&quot;));
+     invertedKeyBindings = new QCheckBox(tr(&quot;Inverted key bindings&quot;));</pre>
+<p>In the private <tt>createControls()</tt> function, we let a <a href="qgroupbox.html">QGroupBox</a> (<tt>controlsGroup</tt>) display the control widgets. A group box can provide a frame, a title and a keyboard shortcut, and displays various other widgets inside itself. The group of control widgets is composed by two checkboxes, three spin boxes (with labels) and one combobox.</p>
+<p>After creating the labels, we create the two checkboxes. Checkboxes are typically used to represent features in an application that can be enabled or disabled. When <tt>invertedAppearance</tt> is enabled, the slider values are inverted. The table below shows the appearance for the different slider-like widgets:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th></th><th colspan="2"><a href="qslider.html">QSlider</a></th><th colspan="2"><a href="qscrollbar.html">QScrollBar</a></th><th colspan="2"><a href="qdial.html">QDial</a></th></tr>
+<tr valign="top" class="qt-style"><th></th><th>Normal</th><th>Inverted</th><th>Normal</th><th>Inverted</th><th>Normal</th><th>Inverted</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qt.html#Orientation-enum">Qt::Horizontal</a></td><td>Left to right</td><td>Right to left</td><td>Left to right</td><td>Right to left</td><td>Clockwise</td><td>Counterclockwise</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#Orientation-enum">Qt::Vertical</a></td><td>Bottom to top</td><td>Top to bottom</td><td>Top to bottom</td><td>Bottom to top</td><td>Clockwise</td><td>Counterclockwise</td></tr>
+</table></p>
+<p>It is common to invert the appearance of a vertical <a href="qslider.html">QSlider</a>. A vertical slider that controls volume, for example, will typically go from bottom to top (the non-inverted appearance), whereas a vertical slider that controls the position of an object on screen might go from top to bottom, because screen coordinates go from top to bottom.</p>
+<p>When the <tt>invertedKeyBindings</tt> option is enabled (corresponding to the <a href="qabstractslider.html#invertedControls-prop">QAbstractSlider::invertedControls</a> property), the slider's wheel and key events are inverted. The normal key bindings mean that scrolling the mouse wheel &quot;up&quot; or using keys like page up will increase the slider's current value towards its maximum. Inverted, the same wheel and key events will move the value toward the slider's minimum. This can be useful if the <i>appearance</i> of a slider is inverted: Some users might expect the keys to still work the same way on the value, whereas others might expect <b>PageUp</b> to mean &quot;up&quot; on the screen.</p>
+<p>Note that for horizontal and vertical scroll bars, the key bindings are inverted by default: <b>PageDown</b> increases the current value, and <b>PageUp</b> decreases it.</p>
+<pre>     minimumSpinBox = new QSpinBox;
+     minimumSpinBox-&gt;setRange(-100, 100);
+     minimumSpinBox-&gt;setSingleStep(1);
+
+     maximumSpinBox = new QSpinBox;
+     maximumSpinBox-&gt;setRange(-100, 100);
+     maximumSpinBox-&gt;setSingleStep(1);
+
+     valueSpinBox = new QSpinBox;
+     valueSpinBox-&gt;setRange(-100, 100);
+     valueSpinBox-&gt;setSingleStep(1);
+
+     orientationCombo = new QComboBox;
+     orientationCombo-&gt;addItem(tr(&quot;Horizontal slider-like widgets&quot;));
+     orientationCombo-&gt;addItem(tr(&quot;Vertical slider-like widgets&quot;));</pre>
+<p>Then we create the spin boxes. <a href="qspinbox.html">QSpinBox</a> allows the user to choose a value by clicking the up and down buttons or pressing the <b>Up</b> and <b>Down</b> keys on the keyboard to modify the value currently displayed. The user can also type in the value manually. The spin boxes control the minimum, maximum and current values for the <a href="qslider.html">QSlider</a>, <a href="qscrollbar.html">QScrollBar</a>, and <a href="qdial.html">QDial</a> widgets.</p>
+<p>We create a <a href="qcombobox.html">QComboBox</a> that allows the user to choose the orientation of the slider widgets. The <a href="qcombobox.html">QComboBox</a> widget is a combined button and popup list. It provides a means of presenting a list of options to the user in a way that takes up the minimum amount of screen space.</p>
+<pre>     connect(orientationCombo, SIGNAL(activated(int)),
+             stackedWidget, SLOT(setCurrentIndex(int)));
+     connect(minimumSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setMinimum(int)));
+     connect(minimumSpinBox, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setMinimum(int)));
+     connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setMaximum(int)));
+     connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setMaximum(int)));
+     connect(invertedAppearance, SIGNAL(toggled(bool)),
+             horizontalSliders, SLOT(invertAppearance(bool)));
+     connect(invertedAppearance, SIGNAL(toggled(bool)),
+             verticalSliders, SLOT(invertAppearance(bool)));
+     connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+             horizontalSliders, SLOT(invertKeyBindings(bool)));
+     connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+             verticalSliders, SLOT(invertKeyBindings(bool)));
+
+     QGridLayout *controlsLayout = new QGridLayout;
+     controlsLayout-&gt;addWidget(minimumLabel, 0, 0);
+     controlsLayout-&gt;addWidget(maximumLabel, 1, 0);
+     controlsLayout-&gt;addWidget(valueLabel, 2, 0);
+     controlsLayout-&gt;addWidget(minimumSpinBox, 0, 1);
+     controlsLayout-&gt;addWidget(maximumSpinBox, 1, 1);
+     controlsLayout-&gt;addWidget(valueSpinBox, 2, 1);
+     controlsLayout-&gt;addWidget(invertedAppearance, 0, 2);
+     controlsLayout-&gt;addWidget(invertedKeyBindings, 1, 2);
+     controlsLayout-&gt;addWidget(orientationCombo, 3, 0, 1, 3);
+     controlsGroup-&gt;setLayout(controlsLayout);
+ }</pre>
+<p>We synchronize the behavior of the control widgets and the slider widgets through their signals and slots. We connect each control widget to both the horizontal and vertical group of slider widgets. We also connect <tt>orientationCombo</tt> to the <a href="qstackedwidget.html">QStackedWidget</a>, so that the correct &quot;page&quot; is shown. Finally, we lay out the control widgets in a <a href="qgridlayout.html">QGridLayout</a> within the <tt>controlsGroup</tt> group box.</p>
+<a name="slidersgroup-class-definition"></a>
+<h2>SlidersGroup Class Definition</h2>
+<pre> class SlidersGroup : public QGroupBox
+ {
+     Q_OBJECT
+
+ public:
+     SlidersGroup(Qt::Orientation orientation, const QString &amp;title,
+                  QWidget *parent = 0);
+
+ signals:
+     void valueChanged(int value);
+
+ public slots:
+     void setValue(int value);
+     void setMinimum(int value);
+     void setMaximum(int value);
+     void invertAppearance(bool invert);
+     void invertKeyBindings(bool invert);
+
+ private:
+     QSlider *slider;
+     QScrollBar *scrollBar;
+     QDial *dial;
+ };</pre>
+<p>The <tt>SlidersGroup</tt> class inherits from <a href="qgroupbox.html">QGroupBox</a>. It provides a frame and a title, and contains a <a href="qslider.html">QSlider</a>, a <a href="qscrollbar.html">QScrollBar</a> and a <a href="qdial.html">QDial</a>.</p>
+<p>We provide a <tt>valueChanged()</tt> signal and a public <tt>setValue()</tt> slot with equivalent functionality to the ones in <a href="qabstractslider.html">QAbstractSlider</a> and <a href="qspinbox.html">QSpinBox</a>. In addition, we implement several other public slots to set the minimum and maximum value, and invert the slider widgets' appearance as well as key bindings.</p>
+<a name="slidersgroup-class-implementation"></a>
+<h2>SlidersGroup Class Implementation</h2>
+<pre> SlidersGroup::SlidersGroup(Qt::Orientation orientation, const QString &amp;title,
+                            QWidget *parent)
+     : QGroupBox(title, parent)
+ {
+     slider = new QSlider(orientation);
+     slider-&gt;setFocusPolicy(Qt::StrongFocus);
+     slider-&gt;setTickPosition(QSlider::TicksBothSides);
+     slider-&gt;setTickInterval(10);
+     slider-&gt;setSingleStep(1);
+
+     scrollBar = new QScrollBar(orientation);
+     scrollBar-&gt;setFocusPolicy(Qt::StrongFocus);
+
+     dial = new QDial;
+     dial-&gt;setFocusPolicy(Qt::StrongFocus);
+
+     connect(slider, SIGNAL(valueChanged(int)), scrollBar, SLOT(setValue(int)));
+     connect(scrollBar, SIGNAL(valueChanged(int)), dial, SLOT(setValue(int)));
+     connect(dial, SIGNAL(valueChanged(int)), slider, SLOT(setValue(int)));</pre>
+<p>First we create the slider-like widgets with the appropiate properties. In particular we set the focus policy for each widget. <a href="qt.html#FocusPolicy-enum">Qt::FocusPolicy</a> is an enum type that defines the various policies a widget can have with respect to acquiring keyboard focus. The <a href="qt.html#FocusPolicy-enum">Qt::StrongFocus</a> policy means that the widget accepts focus by both tabbing and clicking.</p>
+<p>Then we connect the widgets with each other, so that they will stay synchronized when the current value of one of them changes.</p>
+<pre>     connect(dial, SIGNAL(valueChanged(int)), this, SIGNAL(valueChanged(int)));</pre>
+<p>We connect <tt>dial</tt>'s <tt>valueChanged()</tt> signal to the <tt>SlidersGroup</tt>'s <tt>valueChanged()</tt> signal, to notify the other widgets in the application (i.e&#x2e;, the control widgets) of the changed value.</p>
+<pre>     QBoxLayout::Direction direction;
+
+     if (orientation == Qt::Horizontal)
+         direction = QBoxLayout::TopToBottom;
+     else
+         direction = QBoxLayout::LeftToRight;
+
+     QBoxLayout *slidersLayout = new QBoxLayout(direction);
+     slidersLayout-&gt;addWidget(slider);
+     slidersLayout-&gt;addWidget(scrollBar);
+     slidersLayout-&gt;addWidget(dial);
+     setLayout(slidersLayout);
+ }</pre>
+<p>Finally, depending on the <a href="qt.html#Orientation-enum">orientation</a> given at the time of construction, we choose and create the layout for the slider widgets within the group box.</p>
+<pre> void SlidersGroup::setValue(int value)
+ {
+     slider-&gt;setValue(value);
+ }</pre>
+<p>The <tt>setValue()</tt> slot sets the value of the <a href="qslider.html">QSlider</a>. We don't need to explicitly call <a href="qabstractslider.html#value-prop">setValue()</a> on the <a href="qscrollbar.html">QScrollBar</a> and <a href="qdial.html">QDial</a> widgets, since <a href="qslider.html">QSlider</a> will emit the <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal when its value changes, triggering a domino effect.</p>
+<pre> void SlidersGroup::setMinimum(int value)
+ {
+     slider-&gt;setMinimum(value);
+     scrollBar-&gt;setMinimum(value);
+     dial-&gt;setMinimum(value);
+ }
+
+ void SlidersGroup::setMaximum(int value)
+ {
+     slider-&gt;setMaximum(value);
+     scrollBar-&gt;setMaximum(value);
+     dial-&gt;setMaximum(value);
+ }</pre>
+<p>The <tt>setMinimum()</tt> and <tt>setMaximum()</tt> slots are used by the <tt>Window</tt> class to set the range of the <a href="qslider.html">QSlider</a>, <a href="qscrollbar.html">QScrollBar</a>, and <a href="qdial.html">QDial</a> widgets.</p>
+<pre> void SlidersGroup::invertAppearance(bool invert)
+ {
+     slider-&gt;setInvertedAppearance(invert);
+     scrollBar-&gt;setInvertedAppearance(invert);
+     dial-&gt;setInvertedAppearance(invert);
+ }
+
+ void SlidersGroup::invertKeyBindings(bool invert)
+ {
+     slider-&gt;setInvertedControls(invert);
+     scrollBar-&gt;setInvertedControls(invert);
+     dial-&gt;setInvertedControls(invert);
+ }</pre>
+<p>The <tt>invertAppearance()</tt> and <tt>invertKeyBindings()</tt> slots control the child widgets' <a href="qabstractslider.html#invertedAppearance-prop">invertedAppearance</a> and <a href="qabstractslider.html#invertedControls-prop">invertedControls</a> properties.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

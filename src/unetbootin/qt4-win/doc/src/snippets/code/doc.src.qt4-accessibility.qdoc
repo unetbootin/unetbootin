@@ -1,0 +1,57 @@
+//! [0]
+        class MyWidgetInterface : public QAccessibleWidget
+        {
+        public:
+            MyWidgetInterface(QWidget *widget, Role role);
+
+            QString text(Text text, int child) const;
+            State state(int child) const;
+            QString actionText(int action, Text text, int child) const;
+            bool doAction(int action, int child, const QVariantList &params);
+            ...
+        };
+//! [0]
+
+
+//! [1]
+        bool MyWidgetInterface::doAction(int action, int child,
+                                         const QVariantList &params)
+        {
+            if (child || !widget()->isEnabled())
+                return false;
+
+            switch (action) {
+            case DefaultAction:
+            case Press:
+                {
+                    MyWidget *widget = qobject_cast<MyWidget *>(object());
+                    if (widget)
+                        widget->click();
+                }
+                return true;
+            }
+            return QAccessibleWidget::doAction(action, child, params);
+        }
+//! [1]
+
+
+//! [2]
+        QStringList MyFactory::keys() const
+        {
+            return QStringList() << "MyWidget" << "MyOtherWidget";
+        }
+
+        QAccessibleInterface *MyFactory::create(const QString &className,
+                                                QObject *object)
+        {
+            if (classname == "MyWidget")
+                return new MyWidgetInterface(object);
+            if (classname == "MyOtherWidget")
+                return new MyOtherWidgetInterface(object);
+            return 0;
+        }
+
+        Q_EXPORT_PLUGIN2(myfactory, MyFactory)
+//! [2]
+
+

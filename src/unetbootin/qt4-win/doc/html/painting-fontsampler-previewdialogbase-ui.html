@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: previewdialogbase.ui Example File (painting/fontsampler/previewdialogbase.ui)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">previewdialogbase.ui Example File<br /><span class="small-subtitle">painting/fontsampler/previewdialogbase.ui</span>
+</h1>
+<pre> &lt;ui version=&quot;4.0&quot; &gt;
+  &lt;class&gt;PreviewDialogBase&lt;/class&gt;
+  &lt;widget class=&quot;QDialog&quot; name=&quot;PreviewDialogBase&quot; &gt;
+   &lt;property name=&quot;geometry&quot; &gt;
+    &lt;rect&gt;
+     &lt;x&gt;0&lt;/x&gt;
+     &lt;y&gt;0&lt;/y&gt;
+     &lt;width&gt;733&lt;/width&gt;
+     &lt;height&gt;479&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;windowTitle&quot; &gt;
+    &lt;string&gt;Print Preview&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;layout class=&quot;QVBoxLayout&quot; &gt;
+    &lt;property name=&quot;margin&quot; &gt;
+     &lt;number&gt;9&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;spacing&quot; &gt;
+     &lt;number&gt;6&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;item&gt;
+     &lt;layout class=&quot;QHBoxLayout&quot; &gt;
+      &lt;property name=&quot;margin&quot; &gt;
+       &lt;number&gt;0&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;spacing&quot; &gt;
+       &lt;number&gt;6&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;label&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Paper Size:&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;buddy&quot; &gt;
+         &lt;cstring&gt;paperSizeCombo&lt;/cstring&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QComboBox&quot; name=&quot;paperSizeCombo&quot; &gt;
+        &lt;property name=&quot;sizePolicy&quot; &gt;
+         &lt;sizepolicy&gt;
+          &lt;hsizetype&gt;1&lt;/hsizetype&gt;
+          &lt;vsizetype&gt;0&lt;/vsizetype&gt;
+          &lt;horstretch&gt;0&lt;/horstretch&gt;
+          &lt;verstretch&gt;0&lt;/verstretch&gt;
+         &lt;/sizepolicy&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;label_2&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Orientation:&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;buddy&quot; &gt;
+         &lt;cstring&gt;paperOrientationCombo&lt;/cstring&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QComboBox&quot; name=&quot;paperOrientationCombo&quot; &gt;
+        &lt;property name=&quot;sizePolicy&quot; &gt;
+         &lt;sizepolicy&gt;
+          &lt;hsizetype&gt;1&lt;/hsizetype&gt;
+          &lt;vsizetype&gt;0&lt;/vsizetype&gt;
+          &lt;horstretch&gt;0&lt;/horstretch&gt;
+          &lt;verstretch&gt;0&lt;/verstretch&gt;
+         &lt;/sizepolicy&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;spacer&gt;
+        &lt;property name=&quot;orientation&quot; &gt;
+         &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;sizeHint&quot; &gt;
+         &lt;size&gt;
+          &lt;width&gt;40&lt;/width&gt;
+          &lt;height&gt;20&lt;/height&gt;
+         &lt;/size&gt;
+        &lt;/property&gt;
+       &lt;/spacer&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+     &lt;layout class=&quot;QHBoxLayout&quot; &gt;
+      &lt;property name=&quot;margin&quot; &gt;
+       &lt;number&gt;0&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;spacing&quot; &gt;
+       &lt;number&gt;6&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QTreeWidget&quot; name=&quot;pageList&quot; &gt;
+        &lt;property name=&quot;indentation&quot; &gt;
+         &lt;number&gt;0&lt;/number&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;rootIsDecorated&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;uniformRowHeights&quot; &gt;
+         &lt;bool&gt;true&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;itemsExpandable&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;columnCount&quot; &gt;
+         &lt;number&gt;1&lt;/number&gt;
+        &lt;/property&gt;
+        &lt;column&gt;
+         &lt;property name=&quot;text&quot; &gt;
+          &lt;string&gt;1&lt;/string&gt;
+         &lt;/property&gt;
+        &lt;/column&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QScrollArea&quot; native=&quot;1&quot; name=&quot;previewArea&quot; &gt;
+        &lt;property name=&quot;sizePolicy&quot; &gt;
+         &lt;sizepolicy&gt;
+          &lt;hsizetype&gt;5&lt;/hsizetype&gt;
+          &lt;vsizetype&gt;5&lt;/vsizetype&gt;
+          &lt;horstretch&gt;1&lt;/horstretch&gt;
+          &lt;verstretch&gt;0&lt;/verstretch&gt;
+         &lt;/sizepolicy&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+     &lt;layout class=&quot;QHBoxLayout&quot; &gt;
+      &lt;property name=&quot;margin&quot; &gt;
+       &lt;number&gt;0&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;spacing&quot; &gt;
+       &lt;number&gt;6&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QProgressBar&quot; name=&quot;progressBar&quot; &gt;
+        &lt;property name=&quot;enabled&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;sizePolicy&quot; &gt;
+         &lt;sizepolicy&gt;
+          &lt;hsizetype&gt;7&lt;/hsizetype&gt;
+          &lt;vsizetype&gt;0&lt;/vsizetype&gt;
+          &lt;horstretch&gt;1&lt;/horstretch&gt;
+          &lt;verstretch&gt;0&lt;/verstretch&gt;
+         &lt;/sizepolicy&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;value&quot; &gt;
+         &lt;number&gt;0&lt;/number&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;textVisible&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;orientation&quot; &gt;
+         &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QDialogButtonBox&quot; name=&quot;buttonBox&quot; &gt;
+        &lt;property name=&quot;orientation&quot; &gt;
+         &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;standardButtons&quot; &gt;
+         &lt;set&gt;QDialogButtonBox::Cancel|QDialogButtonBox::NoButton|QDialogButtonBox::Ok&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+   &lt;/layout&gt;
+  &lt;/widget&gt;
+  &lt;customwidgets&gt;
+   &lt;customwidget&gt;
+    &lt;class&gt;QScrollArea&lt;/class&gt;
+    &lt;extends&gt;QWidget&lt;/extends&gt;
+    &lt;header&gt;qscrollarea.h&lt;/header&gt;
+    &lt;container&gt;1&lt;/container&gt;
+   &lt;/customwidget&gt;
+  &lt;/customwidgets&gt;
+  &lt;resources/&gt;
+  &lt;connections&gt;
+   &lt;connection&gt;
+    &lt;sender&gt;buttonBox&lt;/sender&gt;
+    &lt;signal&gt;accepted()&lt;/signal&gt;
+    &lt;receiver&gt;PreviewDialogBase&lt;/receiver&gt;
+    &lt;slot&gt;accept()&lt;/slot&gt;
+    &lt;hints&gt;
+     &lt;hint type=&quot;sourcelabel&quot; &gt;
+      &lt;x&gt;696&lt;/x&gt;
+      &lt;y&gt;526&lt;/y&gt;
+     &lt;/hint&gt;
+     &lt;hint type=&quot;destinationlabel&quot; &gt;
+      &lt;x&gt;677&lt;/x&gt;
+      &lt;y&gt;446&lt;/y&gt;
+     &lt;/hint&gt;
+    &lt;/hints&gt;
+   &lt;/connection&gt;
+   &lt;connection&gt;
+    &lt;sender&gt;buttonBox&lt;/sender&gt;
+    &lt;signal&gt;rejected()&lt;/signal&gt;
+    &lt;receiver&gt;PreviewDialogBase&lt;/receiver&gt;
+    &lt;slot&gt;reject()&lt;/slot&gt;
+    &lt;hints&gt;
+     &lt;hint type=&quot;sourcelabel&quot; &gt;
+      &lt;x&gt;587&lt;/x&gt;
+      &lt;y&gt;529&lt;/y&gt;
+     &lt;/hint&gt;
+     &lt;hint type=&quot;destinationlabel&quot; &gt;
+      &lt;x&gt;547&lt;/x&gt;
+      &lt;y&gt;448&lt;/y&gt;
+     &lt;/hint&gt;
+    &lt;/hints&gt;
+   &lt;/connection&gt;
+  &lt;/connections&gt;
+ &lt;/ui&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

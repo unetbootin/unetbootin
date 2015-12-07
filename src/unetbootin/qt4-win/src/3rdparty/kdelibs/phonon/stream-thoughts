@@ -1,0 +1,72 @@
+there are two different kind of streams: 1. media files 2. live radio/television
+
+The difference cannot reliably be determined by the backend so the application has to tell the
+frontend.
+
+This is the expected behaviour:
+1. media files
+==============
+function | prev. state | action                                                         | new state
+---------+-------------+----------------------------------------------------------------+----------
+ctor     |             |                                                                | Loading
+---------+-------------+----------------------------------------------------------------+----------
+setUrl   | Loading     | refill buffers                                                 | Loading
+         | Stopped     | refill buffers                                                 | Loading
+---------+-------------+----------------------------------------------------------------+----------
+play     | Loading     | continue buffering                                             | Buffering
+         | Stopped     | start playing                                                  | Playing
+         | Buffering   | continue buffering                                             | Buffering
+         | Playing     |                                                                | Playing
+         | Paused      | continue playback                                              | Playing
+---------+-------------+----------------------------------------------------------------+----------
+pause    | Loading     |                                                                | Loading
+         | Stopped     |                                                                | Stopped
+         | Buffering   | continue buffering                                             | Paused
+         | Playing     | pause output and fill buffers to the max                       | Paused
+         | Paused      |                                                                | Paused
+---------+-------------+----------------------------------------------------------------+----------
+stop     | Loading     |                                                                | Loading
+         | Stopped     |                                                                | Stopped
+         | Buffering   | restart buffering from the beginning of the file               | Loading
+         | Playing     | stop output and refill buffers from the beginning of the file  | Loading
+         | Paused      | restart buffering from the beginning of the file               | Loading
+
+events
+function | prev. state | event                                                          | new state
+---------+-------------+----------------------------------------------------------------+----------
+         | Buffering   | when the buffers are filled start playing                      | Playing
+         | Loading     | when buffers are filled                                        | Stopped
+
+
+
+2. live stream
+==============
+function | prev. state | action                                                         | new state
+---------+-------------+----------------------------------------------------------------+----------
+ctor     |             |                                                                | Loading
+---------+-------------+----------------------------------------------------------------+----------
+setUrl   | Loading     |                                                                | Stopped
+         | Stopped     |                                                                | Stopped
+---------+-------------+----------------------------------------------------------------+----------
+play     | Loading     |                                                                | Error
+         | Stopped     | start buffering                                                | Buffering
+         | Buffering   | continue buffering                                             | Buffering
+         | Playing     |                                                                | Playing
+         | Paused      | continue playback                                              | Playing
+---------+-------------+----------------------------------------------------------------+----------
+pause    | Loading     |                                                                | Error
+         | Stopped     |                                                                | Stopped
+         | Buffering   | continue buffering                                             | Paused
+         | Playing     | pause output and fill (ring-)buffers to the max                | Paused
+         | Paused      |                                                                | Paused
+---------+-------------+----------------------------------------------------------------+----------
+stop     | Loading     |                                                                | Error
+         | Stopped     |                                                                | Stopped
+         | Buffering   | clear buffers                                                  | Stopped
+         | Playing     | stop output and clear buffers                                  | Stopped
+         | Paused      | clear buffers                                                  | Stopped
+
+events
+function | prev. state | event                                                          | new state
+---------+-------------+----------------------------------------------------------------+----------
+         | Buffering   | when the buffers are filled start playing                      | Playing

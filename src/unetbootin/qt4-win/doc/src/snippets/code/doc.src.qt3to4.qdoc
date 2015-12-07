@@ -1,0 +1,28 @@
+//! [0]
+        qt3to4 myfile.cpp
+        qt3to4 myapp.pro
+//! [0]
+
+
+//! [1]
+    <Rules>
+      <Include>/path/to/q3porting.xml</Include>
+
+      <item Type="RenamedHeader" Disable="True" >
+        <Qt4>q3sqlselectcursor.h</Qt4>
+        <Qt3>qsqlselectcursor.h</Qt3>
+      </item>
+
+      <item Type="RenamedHeader" >
+        <Qt4>newclass.h</Qt4>
+        <Qt3>oldclass.h</Qt3>
+      </item>
+    </Rules>
+//! [1]
+
+
+//! [2]
+        using namespace Qt;
+//! [2]
+
+

@@ -1,0 +1,159 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-styles.html
+    \title The Qt 4 Style API
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage The Network Module in Qt 4
+    \nextpage Thread Support in Qt 4
+
+    Qt's style API is responsible for performing the widget drawing
+    for built-in widgets. The Qt 4 style API has been revised to make
+    it possible for a style to draw widgets without calling any
+    functions on the widget.
+
+    Because Qt 4 is split across multiple libraries, Qt needed this
+    update to be able to draw widgets from other libraries than
+    QtGui. For application developers, this has other benefits, such
+    as more managable parameter lists and the possibility of drawing
+    any graphical element without having a widget of a specific
+    type.
+
+    \section1 General Overview
+
+    The QStyle class is an abstract base class that encapsulates
+    the look and feel of a GUI. Qt's built-in widgets use it to
+    perform nearly all of their drawing, ensuring that they look
+    exactly like the equivalent native widgets.  
+
+    Most draw functions now take four arguments:
+
+    \list
+    \o an enum value specifying which graphical element to draw
+    \o a QStyleOption specifying how and where to render that element
+    \o a QPainter that should be used to draw the element
+    \o a QWidget on which the drawing is performed (optional)
+    \endlist
+
+    The style gets all the information it needs to render the
+    graphical element from QStyleOption. The widget is passed as the
+    last argument in case the style needs it to perform special
+    effects (such as animated default buttons on Mac OS X), but it
+    isn't mandatory. In fact, QStyle can be used to draw on any
+    paint device, not just widgets, by setting the QPainter properly.
+
+    Thanks to QStyleOption, it is now possible to make QStyle draw
+    widgets without linking in any code for the widget. This is how
+    Qt's built-in styles can draw Qt 3 widgets such as
+    Q3ListView without necessarily linking against the Qt3Support
+    library. Another significant benefit of the new approach is that
+    it's now possible to use \l{QStyle}'s draw functions on other
+    widgets than the built-in widgets; for example, you can draw a
+    combobox on any widget, not just on a QComboBox.
+
+    QStyleOption has various subclasses for the various types of
+    graphical elements that can be drawn, and it's possible to create
+    custom subclasses. For example, the QStyle::PE_FrameFocusRect
+    element expects a QStyleOptionFocusRect argument. This is
+    documented for each enum value.
+
+    When reimplementing QStyle functions that take a
+    QStyleOption parameter, you often need to cast the
+    QStyleOption to a subclass (e.g., QStyleOptionFocusRect). For
+    safety, you can use qstyleoption_cast() to ensure that the
+    pointer type is correct. If the object isn't of the right type,
+    qstyleoption_cast() returns 0. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-styles.qdoc 0
+
+    For performance reasons, there are few member functions and the
+    access to the variables is direct. This "low-level" feel makes
+    the structures use straightforward and emphasizes that these are
+    simply parameters used by the style functions. In addition, the
+    caller of a QStyle function usually creates QStyleOption
+    objects on the stack. This combined with Qt's extensive use of
+    \l{implicit sharing} for types such as QString, QPalette, and
+    QColor ensures that no memory allocation needlessly takes place.
+    (Dynamic memory allocation can be an expensive operation,
+    especially when drawing very often in a short time.)
+
+    \section1 Example Code
+
+    The following code snippet illustrates how to use QStyle to
+    draw the focus rectangle from a custom widget's paintEvent():
+
+    \snippet doc/src/snippets/code/doc.src.qt4-styles.qdoc 1
+
+    The next example shows how to derive from an existing style to
+    customize the look of a graphical element:
+
+    \snippet doc/src/snippets/customstyle/customstyle.h 0
+    \codeline
+    \snippet doc/src/snippets/customstyle/customstyle.cpp 2
+    \snippet doc/src/snippets/customstyle/customstyle.cpp 3
+    \snippet doc/src/snippets/customstyle/customstyle.cpp 4
+
+    See also the \l{Styles Example} for a more detailed description of
+    how custom styles can be created.
+
+    \section1 Comparison with Qt 3
+
+    The QStyle class has a similar API in Qt 4 as in Qt 3, with
+    more or less the same functions. What has changed is the
+    signature of the functions and the role played by QStyleOption.
+    For example, here's the signature of the QStyle::drawControl()
+    function in Qt 3:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-styles.qdoc 2
+
+    Here's the signature of the same function in Qt 4:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-styles.qdoc 3
+
+    In Qt 3, some of the information required to draw a graphical
+    element was stored in a QStyleOption parameter, while the rest
+    was deduced by querying the widget. In Qt 4, everything is stored
+    in the QStyleOption parameter.
+*/

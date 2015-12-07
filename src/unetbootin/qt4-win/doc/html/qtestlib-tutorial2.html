@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtestlib.qdoc -->
+<head>
+  <title>Qt 4.4: Chapter 2: Data Driven Testing</title>
+  <link rel="prev" href="qtestlib-tutorial1.html" />
+  <link rel="contents" href="qtestlib-tutorial.html" />
+  <link rel="next" href="qtestlib-tutorial3.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtestlib-tutorial1.html">Chapter 1</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+[Next: <a href="qtestlib-tutorial3.html">Chapter 3</a>]
+</p>
+<h1 class="title">Chapter 2: Data Driven Testing<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="qtestlib-tutorial2-testqstring-cpp.html">qtestlib/tutorial2/testqstring.cpp</a></li>
+<li><a href="qtestlib-tutorial2-tutorial2-pro.html">qtestlib/tutorial2/tutorial2.pro</a></li>
+</ul>
+<p>In this chapter we will demonstrate how to execute a test multiple times with different test data.</p>
+<p>So far, we have hard coded the data we wanted to test into our test function. If we add more test data, the function might look like this:</p>
+<pre>     QCOMPARE(QString(&quot;hello&quot;).toUpper(), QString(&quot;HELLO&quot;));
+     QCOMPARE(QString(&quot;Hello&quot;).toUpper(), QString(&quot;HELLO&quot;));
+     QCOMPARE(QString(&quot;HellO&quot;).toUpper(), QString(&quot;HELLO&quot;));
+     QCOMPARE(QString(&quot;HELLO&quot;).toUpper(), QString(&quot;HELLO&quot;));</pre>
+<p>To prevent that the function ends up being cluttered by repetitive code, <a href="qtestlib-manual.html#qtestlib">QTestLib</a> supports adding test data to a test function. All we need is to add another private slot to our test class:</p>
+<pre> class TestQString: public QObject
+ {
+     Q_OBJECT
+
+ private slots:
+     void toUpper_data();
+     void toUpper();
+ };</pre>
+<a name="writing-the-data-function"></a>
+<h2>Writing the Data Function</h2>
+<p>A test function's associated data function carries the same name, appended by <tt>_data</tt>. Our data function looks like this:</p>
+<pre> void TestQString::toUpper_data()
+ {
+     QTest::addColumn&lt;QString&gt;(&quot;string&quot;);
+     QTest::addColumn&lt;QString&gt;(&quot;result&quot;);
+
+     QTest::newRow(&quot;all lower&quot;) &lt;&lt; &quot;hello&quot; &lt;&lt; &quot;HELLO&quot;;
+     QTest::newRow(&quot;mixed&quot;)     &lt;&lt; &quot;Hello&quot; &lt;&lt; &quot;HELLO&quot;;
+     QTest::newRow(&quot;all upper&quot;) &lt;&lt; &quot;HELLO&quot; &lt;&lt; &quot;HELLO&quot;;
+ }</pre>
+<p>First, we define the two elements of our test table using the <a href="qtest.html#addColumn">QTest::addColumn</a>() function: A test string, and the expected result of applying the <a href="qstring.html#toUpper">QString::toUpper</a>() function to that string.</p>
+<p>Then we add some data to the table using the <a href="qtest.html#newRow">QTest::newRow</a>() function. Each set of data will become a separate row in the test table.</p>
+<p><a href="qtest.html#newRow">QTest::newRow</a>() takes one argument: A name that will be associated with the data set. If the test fails, the name will be used in the test log, referencing the failed data. Then we stream the data set into the new table row: First an arbitrary string, and then the expected result of applying the <a href="qstring.html#toUpper">QString::toUpper</a>() function to that string.</p>
+<p>You can think of the test data as a two-dimensional table. In our case, it has two columns called <tt>string</tt> and <tt>result</tt> and three rows. In addition a name as well as an index is associated with each row:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>index</th><th>name</th><th>string</th><th>result</th></tr></thead>
+<tr valign="top" class="odd"><td>0</td><td>all lower</td><td>&quot;hello&quot;</td><td>HELLO</td></tr>
+<tr valign="top" class="even"><td>1</td><td>mixed</td><td>&quot;Hello&quot;</td><td>HELLO</td></tr>
+<tr valign="top" class="odd"><td>2</td><td>all upper</td><td>&quot;HELLO&quot;</td><td>HELLO</td></tr>
+</table></p>
+<a name="rewriting-the-test-function"></a>
+<h2>Rewriting the Test Function</h2>
+<p>Our test function can now be rewritten:</p>
+<pre> void TestQString::toUpper()
+ {
+     QFETCH(QString, string);
+     QFETCH(QString, result);
+
+     QCOMPARE(string.toUpper(), result);
+ }</pre>
+<p>The TestQString::toUpper() function will be executed three times, once for each entry in the test table that we created in the associated TestQString::toUpper_data() function.</p>
+<p>First, we fetch the two elements of the data set using the <a href="qtest.html#QFETCH">QFETCH</a>() macro. <a href="qtest.html#QFETCH">QFETCH</a>() takes two arguments: The data type of the element and the element name. Then we perform the test using the <a href="qtest.html#QCOMPARE">QCOMPARE</a>() macro.</p>
+<p>This approach makes it very easy to add new data to the test without modifying the test itself.</p>
+<p>And again, to make our test case a stand-alone executable, the following two lines are needed:</p>
+<pre> QTEST_MAIN(TestQString)
+ #include &quot;testqstring.moc&quot;</pre>
+<p>As before, the <a href="qtest.html#QTEST_MAIN">QTEST_MAIN</a>() macro expands to a simple main() method that runs all the test functions, and since both the declaration and the implementation of our test class are in a .cpp file, we also need to include the generated moc file to make Qt's introspection work.</p>
+<p>
+[Previous: <a href="qtestlib-tutorial1.html">Chapter 1</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+[Next: <a href="qtestlib-tutorial3.html">Chapter 3</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

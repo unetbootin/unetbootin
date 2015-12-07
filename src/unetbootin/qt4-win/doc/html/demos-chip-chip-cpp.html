@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: chip.cpp Example File (demos/chip/chip.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">chip.cpp Example File<br /><span class="small-subtitle">demos/chip/chip.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;chip.h&quot;
+
+ #include &lt;QtGui&gt;
+
+ Chip::Chip(const QColor &amp;color, int x, int y)
+ {
+     this-&gt;x = x;
+     this-&gt;y = y;
+     this-&gt;color = color;
+     setZValue((x + y) % 2);
+
+     setFlags(ItemIsSelectable | ItemIsMovable);
+     setAcceptsHoverEvents(true);
+ }
+
+ QRectF Chip::boundingRect() const
+ {
+     return QRectF(0, 0, 110, 70);
+ }
+
+ QPainterPath Chip::shape() const
+ {
+     QPainterPath path;
+     path.addRect(14, 14, 82, 42);
+     return path;
+ }
+
+ void Chip::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *widget)
+ {
+     Q_UNUSED(widget);
+
+     QColor fillColor = (option-&gt;state &amp; QStyle::State_Selected) ? color.dark(150) : color;
+     if (option-&gt;state &amp; QStyle::State_MouseOver)
+         fillColor = fillColor.light(125);
+
+     if (option-&gt;levelOfDetail &lt; 0.2) {
+         if (option-&gt;levelOfDetail &lt; 0.125) {
+             painter-&gt;fillRect(QRectF(0, 0, 110, 70), fillColor);
+             return;
+         }
+
+         painter-&gt;setPen(QPen(Qt::black, 0));
+         painter-&gt;setBrush(fillColor);
+         painter-&gt;drawRect(13, 13, 97, 57);
+         return;
+     }
+
+     QPen oldPen = painter-&gt;pen();
+     QPen pen = oldPen;
+     int width = 0;
+     if (option-&gt;state &amp; QStyle::State_Selected)
+         width += 2;
+
+     pen.setWidth(width);
+     painter-&gt;setBrush(QBrush(fillColor.dark(option-&gt;state &amp; QStyle::State_Sunken ? 120 : 100)));
+
+     painter-&gt;drawRect(QRect(14, 14, 79, 39));
+     if (option-&gt;levelOfDetail &gt;= 1) {
+         painter-&gt;setPen(QPen(Qt::gray, 1));
+         painter-&gt;drawLine(15, 54, 94, 54);
+         painter-&gt;drawLine(94, 53, 94, 15);
+         painter-&gt;setPen(QPen(Qt::black, 0));
+     }
+
+     <span class="comment">//</span> Draw text
+     if (option-&gt;levelOfDetail &gt;= 2) {
+         QFont font(&quot;Times&quot;, 10);
+         font.setStyleStrategy(QFont::ForceOutline);
+         painter-&gt;setFont(font);
+         painter-&gt;save();
+         painter-&gt;scale(0.1, 0.1);
+         painter-&gt;drawText(170, 180, QString(&quot;Model: VSC-2000 (Very Small Chip) at %1x%2&quot;).arg(x).arg(y));
+         painter-&gt;drawText(170, 200, QString(&quot;Serial number: DLWR-WEER-123L-ZZ33-SDSJ&quot;));
+         painter-&gt;drawText(170, 220, QString(&quot;Manufacturer: Chip Manufacturer&quot;));
+         painter-&gt;restore();
+     }
+
+     <span class="comment">//</span> Draw lines
+     QVarLengthArray&lt;QLineF, 36&gt; lines;
+     if (option-&gt;levelOfDetail &gt;= 0.5) {
+         for (int i = 0; i &lt;= 10; i += (option-&gt;levelOfDetail &gt; 0.5 ? 1 : 2)) {
+             lines.append(QLineF(18 + 7 * i, 13, 18 + 7 * i, 5));
+             lines.append(QLineF(18 + 7 * i, 54, 18 + 7 * i, 62));
+         }
+         for (int i = 0; i &lt;= 6; i += (option-&gt;levelOfDetail &gt; 0.5 ? 1 : 2)) {
+             lines.append(QLineF(5, 18 + i * 5, 13, 18 + i * 5));
+             lines.append(QLineF(94, 18 + i * 5, 102, 18 + i * 5));
+         }
+     }
+     if (option-&gt;levelOfDetail &gt;= 0.4) {
+         const QLineF lineData[] = {
+             QLineF(25, 35, 35, 35),
+             QLineF(35, 30, 35, 40),
+             QLineF(35, 30, 45, 35),
+             QLineF(35, 40, 45, 35),
+             QLineF(45, 30, 45, 40),
+             QLineF(45, 35, 55, 35)
+         };
+         lines.append(lineData, 6);
+     }
+     painter-&gt;drawLines(lines.data(), lines.size());
+
+     <span class="comment">//</span> Draw red ink
+     if (stuff.size() &gt; 1) {
+         painter-&gt;setPen(QPen(Qt::red, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+         painter-&gt;setBrush(Qt::NoBrush);
+         QPainterPath path;
+         path.moveTo(stuff.first());
+         for (int i = 1; i &lt; stuff.size(); ++i)
+             path.lineTo(stuff.at(i));
+         painter-&gt;drawPath(path);
+     }
+ }
+
+ void Chip::mousePressEvent(QGraphicsSceneMouseEvent *event)
+ {
+     QGraphicsItem::mousePressEvent(event);
+     update();
+ }
+
+ void Chip::mouseMoveEvent(QGraphicsSceneMouseEvent *event)
+ {
+     if (event-&gt;modifiers() &amp; Qt::ShiftModifier) {
+         stuff &lt;&lt; event-&gt;pos();
+         update();
+         return;
+     }
+     QGraphicsItem::mouseMoveEvent(event);
+ }
+
+ void Chip::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+ {
+     QGraphicsItem::mouseReleaseEvent(event);
+     update();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

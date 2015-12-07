@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/plugandpaint.qdoc -->
+<head>
+  <title>Qt 4.4: Plug &amp; Paint Extra Filters Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Plug &amp; Paint Extra Filters Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-plugandpaintplugins-extrafilters-extrafiltersplugin-cpp.html">tools/plugandpaintplugins/extrafilters/extrafiltersplugin.cpp</a></li>
+<li><a href="tools-plugandpaintplugins-extrafilters-extrafiltersplugin-h.html">tools/plugandpaintplugins/extrafilters/extrafiltersplugin.h</a></li>
+<li><a href="tools-plugandpaintplugins-extrafilters-extrafilters-pro.html">tools/plugandpaintplugins/extrafilters/extrafilters.pro</a></li>
+</ul>
+<p>The Extra Filters example is a plugin for the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example. It provides a set of filters in addition to those provided by the <a href="tools-plugandpaintplugins-basictools.html">Basic Tools</a> plugin.</p>
+<p>Since the approach is identical to <a href="tools-plugandpaintplugins-basictools.html">Basic Tools</a>, we won't review the code here. The only part of interes is the <tt>.pro</tt> file, since Extra Filters is a dynamic plugin (<a href="tools-plugandpaintplugins-basictools.html">Basic Tools</a> is linked statically into the Plug &amp; Paint executable).</p>
+<p>Here's the project file for building the Extra Filters plugin:</p>
+<pre> TEMPLATE      = lib
+ CONFIG       += plugin
+ INCLUDEPATH  += ../..
+ HEADERS       = extrafiltersplugin.h
+ SOURCES       = extrafiltersplugin.cpp
+ TARGET        = $$qtLibraryTarget(pnp_extrafilters)
+ DESTDIR       = ../../plugandpaint/plugins</pre>
+<p>The <tt>.pro</tt> file differs from typical <tt>.pro</tt> files in many respects. First, it starts with a <tt>TEMPLATE</tt> entry specifying <tt>lib</tt>. (The default template is <tt>app</tt>.) It also adds <tt>plugin</tt> to the <tt>CONFIG</tt> variable. This is necessary on some platforms to avoid generating symbolic links with version numbers in the file name, which is appropriate for most dynamic libraries but not for plugins.</p>
+<p>The <tt>INCLUDEPATH</tt> variable sets the search paths for global headers (i.e&#x2e;, header files included using <tt>#include &lt;...&gt;</tt>). We add Qt's <tt>examples/tools</tt> directory (strictly speaking, <tt>examples/tools/plugandpaintplugins/basictools/../..</tt>) to the list, so that we can include <tt>&lt;plugandpaint/interfaces.h&gt;</tt>.</p>
+<p>The <tt>TARGET</tt> variable specifies which name we want to give the target library. We use <tt>pnp_</tt> as the prefix to show that the plugin is designed to work with Plug &amp; Paint. On Unix, <tt>lib</tt> is also prepended to that name. On all platforms, a platform-specific suffix is appended (e.g&#x2e;, <tt>.dll</tt> on Windows, <tt>.so</tt> on Linux).</p>
+<p>The <tt>DESTDIR</tt> variable specifies where we want to install the plugin. We put it in Plug &amp; Paint's <tt>plugins</tt> subdirectory, since that's where the application looks for dynamic plugins.</p>
+<p>The <tt>CONFIG()</tt> code at the end is necessary for this example because the example is part of the Qt distribution and Qt can be configured to be built simultaneously in debug and in release modes. You don't need to for your own plugins.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE QPH>
+<QPH language="en_AU">
+<phrase>
+    <source>folder</source>
+    <target>katalog</target>
+</phrase>
+<phrase>
+    <source>open</source>
+    <target>otwórz</target>
+</phrase>
+<phrase>
+    <source>save</source>
+    <target>zachowaj</target>
+</phrase>
+<phrase>
+    <source>load</source>
+    <target>załaduj</target>
+</phrase>
+<phrase>
+    <source>copy</source>
+    <target>skopiuj</target>
+</phrase>
+<phrase>
+    <source>paste</source>
+    <target>wklej</target>
+</phrase>
+<phrase>
+    <source>supported</source>
+    <target>obsługiwany</target>
+</phrase>
+<phrase>
+    <source>insert</source>
+    <target>wstaw</target>
+</phrase>
+<phrase>
+    <source>layout</source>
+    <target>rozmieszczenie</target>
+</phrase>
+<phrase>
+    <source>lay out</source>
+    <target>rozmieść</target>
+</phrase>
+<phrase>
+    <source>&amp;Open...</source>
+    <target>&amp;Otwórz...</target>
+</phrase>
+<phrase>
+    <source>C&amp;reate</source>
+    <target>&amp;Utwórz</target>
+</phrase>
+<phrase>
+    <source>&amp;Close</source>
+    <target>Za&amp;mknij</target>
+</phrase>
+<phrase>
+    <source>&amp;Save</source>
+    <target>&amp;Zachowaj</target>
+</phrase>
+<phrase>
+    <source>&amp;New...</source>
+    <target>&amp;Nowy...</target>
+</phrase>
+<phrase>
+    <source>Save &amp;As...</source>
+    <target>Zachowaj j&amp;ako...</target>
+</phrase>
+<phrase>
+    <source>Save A&amp;ll</source>
+    <target>Zachowaj &amp;wszystko</target>
+</phrase>
+<phrase>
+    <source>&amp;Print...</source>
+    <target>Wy&amp;drukuj...</target>
+</phrase>
+<phrase>
+    <source>&amp;Copy</source>
+    <target>S&amp;kopiuj</target>
+</phrase>
+<phrase>
+    <source>update</source>
+    <target>uaktualnij</target>
+</phrase>
+<phrase>
+    <source>minimize</source>
+    <target>zminimalizuj</target>
+</phrase>
+<phrase>
+    <source>maximize</source>
+    <target>zmaksymalizuj</target>
+</phrase>
+<phrase>
+    <source>&amp;Back</source>
+    <target>&amp;Wstecz</target>
+</phrase>
+<phrase>
+    <source>&amp;Forward</source>
+    <target>&amp;Dalej</target>
+</phrase>
+<phrase>
+    <source>spacer</source>
+    <target>dystans</target>
+</phrase>
+<phrase>
+    <source>zoom in</source>
+    <target>powiększ</target>
+</phrase>
+<phrase>
+    <source>zoom out</source>
+    <target>pomniejsz</target>
+</phrase>
+<phrase>
+    <source>preferences</source>
+    <target>ustawienia</target>
+</phrase>
+<phrase>
+    <source>release</source>
+    <target>wydaj</target>
+</phrase>
+<phrase>
+    <source>inherited</source>
+    <target>odziedziczony</target>
+</phrase>
+<phrase>
+    <source>socket</source>
+    <target>gniazdo</target>
+</phrase>
+<phrase>
+    <source>host</source>
+    <target>host</target>
+</phrase>
+<phrase>
+    <source>receive</source>
+    <target>odebrać</target>
+</phrase>
+<phrase>
+    <source>required</source>
+    <target>wymagany</target>
+</phrase>
+<phrase>
+    <source>bind</source>
+    <target>powiązać</target>
+</phrase>
+</QPH>

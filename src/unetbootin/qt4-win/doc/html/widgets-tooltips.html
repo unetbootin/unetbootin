@@ -1,0 +1,377 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/tooltips.qdoc -->
+<head>
+  <title>Qt 4.4: Tool Tips Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Tool Tips Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-tooltips-shapeitem-cpp.html">widgets/tooltips/shapeitem.cpp</a></li>
+<li><a href="widgets-tooltips-shapeitem-h.html">widgets/tooltips/shapeitem.h</a></li>
+<li><a href="widgets-tooltips-sortingbox-cpp.html">widgets/tooltips/sortingbox.cpp</a></li>
+<li><a href="widgets-tooltips-sortingbox-h.html">widgets/tooltips/sortingbox.h</a></li>
+<li><a href="widgets-tooltips-main-cpp.html">widgets/tooltips/main.cpp</a></li>
+<li><a href="widgets-tooltips-tooltips-pro.html">widgets/tooltips/tooltips.pro</a></li>
+<li><a href="widgets-tooltips-tooltips-qrc.html">widgets/tooltips/tooltips.qrc</a></li>
+</ul>
+<p>The Tool Tips example shows how to provide static and dynamic tool tips for an application's widgets.</p>
+<p>The simplest and most common way to set a widget's tool tip is by calling its <a href="qwidget.html#toolTip-prop">QWidget::setToolTip</a>() function (static tool tips). Then the tool tip is shown whenever the cursor points at the widget. We show how to do this with our application's tool buttons. But it is also possible to show different tool tips depending on the cursor's position (dynamic tooltips). This approach uses mouse tracking and event handling to determine what widgets are located under the cursor at any point in time, and displays their tool tips. The tool tips for the shape items in our application are implemented using the latter approach.</p>
+<p align="center"><img src="images/tooltips-example.png" /></p><p>With the <tt>Tooltips</tt> application the user can create new shape items with the provided tool buttons, and move the items around using the mouse. Tooltips are provided whenever the cursor is pointing to a shape item or one of the buttons.</p>
+<p>The Tooltips example consists of two classes:</p>
+<ul>
+<li><tt>ShapeItem</tt> is a custom widget representing one single shape item.</li>
+<li><tt>SortingBox</tt> inherits from <a href="qwidget.html">QWidget</a> and is the application's main widget.</li>
+</ul>
+<p>First we will review the <tt>SortingBox</tt> class, then we will take a look at the <tt>ShapeItem</tt> class.</p>
+<a name="sortingbox-class-definition"></a>
+<h2>SortingBox Class Definition</h2>
+<pre> class SortingBox : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     SortingBox();
+
+ protected:
+     bool event(QEvent *event);
+     void resizeEvent(QResizeEvent *event);
+     void paintEvent(QPaintEvent *event);
+     void mousePressEvent(QMouseEvent *event);
+     void mouseMoveEvent(QMouseEvent *event);
+     void mouseReleaseEvent(QMouseEvent *event);
+
+ private slots:
+     void createNewCircle();
+     void createNewSquare();
+     void createNewTriangle();</pre>
+<p>The <tt>SortingBox</tt> class inherits <a href="qwidget.html">QWidget</a>, and it is the Tooltips application's main widget. We reimplement several of the event handlers.</p>
+<p>The <tt>event()</tt> function provides tooltips, the <tt>resize()</tt> function makes sure the application appears consistently when the user resizes the main widget, and the <tt>paintEvent()</tt> function displays the shape items within the <tt>SortingBox</tt> widget. The mouse event handlers are reimplemented to make the user able to move the items around.</p>
+<p>In addition we need three private slots to make the user able to create new shape items.</p>
+<pre> private:
+     int updateButtonGeometry(QToolButton *button, int x, int y);
+     void createShapeItem(const QPainterPath &amp;path, const QString &amp;toolTip,
+                          const QPoint &amp;pos, const QColor &amp;color);
+     int itemAt(const QPoint &amp;pos);
+     void moveItemTo(const QPoint &amp;pos);
+     QPoint initialItemPosition(const QPainterPath &amp;path);
+     QPoint randomItemPosition();
+     QColor initialItemColor();
+     QColor randomItemColor();
+     QToolButton *createToolButton(const QString &amp;toolTip, const QIcon &amp;icon,</pre>
+<p>We also create several private functions: We use the <tt>initialItemPosition()</tt>, <tt>initialItemColor()</tt> and <tt>createToolButton()</tt> functions when we are constructing the widget, and we use the <tt>updateButtonGeometry()</tt> function whenever the user is resizing the application's main widget.</p>
+<p>The <tt>itemAt()</tt> function determines if there is a shape item at a particular position, and the <tt>moveItemTo()</tt> function moves an item to a new position. We use the <tt>createShapeItem()</tt>, <tt>randomItemPosition()</tt> and <tt>randomItemColor()</tt> functions to create new shape items.</p>
+<pre>     QList&lt;ShapeItem&gt; shapeItems;
+     QPainterPath circlePath;
+     QPainterPath squarePath;
+     QPainterPath trianglePath;
+
+     QPoint previousPosition;
+     ShapeItem *itemInMotion;
+
+     QToolButton *newCircleButton;
+     QToolButton *newSquareButton;
+     QToolButton *newTriangleButton;
+ };</pre>
+<p>We keep all the shape items in a <a href="qlist.html">QList</a>, and we keep three <a href="qpainterpath.html">QPainterPath</a> objects holding the shapes of a circle, a square and a triangle. We also need to have a pointer to an item when it is moving, and we need to know its previous position.</p>
+<a name="sortingbox-class-implementation"></a>
+<h2>SortingBox Class Implementation</h2>
+<pre> SortingBox::SortingBox()
+ {
+     setAttribute(Qt::WA_StaticContents);</pre>
+<p>In the constructor, we first set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_StaticContents</a> attribute on the widget. This attribute indicates that the widget contents are north-west aligned and static. On resize, such a widget will receive paint events only for the newly visible part of itself.</p>
+<pre>     setMouseTracking(true);</pre>
+<p>To be able to show the appropiate tooltips while the user is moving the cursor around, we need to enable mouse tracking for the widget.</p>
+<p>If mouse tracking is disabled (the default), the widget only receives mouse move events when at least one mouse button is pressed while the mouse is being moved. If mouse tracking is enabled, the widget receives mouse move events even if no buttons are pressed.</p>
+<pre>     setBackgroundRole(QPalette::Base);</pre>
+<p>A widget's background role defines the brush from the widget's palette that is used to render the background, and <a href="qpalette.html#ColorRole-enum">QPalette::Base</a> is typically white.</p>
+<pre>     newCircleButton = createToolButton(tr(&quot;New Circle&quot;),
+                                        QIcon(&quot;:/images/circle.png&quot;),
+                                        SLOT(createNewCircle()));
+
+     newSquareButton = createToolButton(tr(&quot;New Square&quot;),
+                                        QIcon(&quot;:/images/square.png&quot;),
+                                        SLOT(createNewSquare()));
+
+     newTriangleButton = createToolButton(tr(&quot;New Triangle&quot;),
+                                          QIcon(&quot;:/images/triangle.png&quot;),
+                                          SLOT(createNewTriangle()));
+
+     circlePath.addEllipse(QRect(0, 0, 100, 100));
+     squarePath.addRect(QRect(0, 0, 100, 100));
+
+     qreal x = trianglePath.currentPosition().x();
+     qreal y = trianglePath.currentPosition().y();
+     trianglePath.moveTo(x + 120 / 2, y);
+     trianglePath.lineTo(0, 100);
+     trianglePath.lineTo(120, 100);
+     trianglePath.lineTo(x + 120 / 2, y);</pre>
+<p>After creating the application's tool buttons using the private <tt>createToolButton()</tt> function, we construct the shapes of a circle, a square and a triangle using <a href="qpainterpath.html">QPainterPath</a>.</p>
+<p>The <a href="qpainterpath.html">QPainterPath</a> class provides a container for painting operations, enabling graphical shapes to be constructed and reused. The main advantage of painter paths over normal drawing operations is that complex shapes only need to be created once, but they can be drawn many times using only calls to <a href="qpainter.html#drawPath">QPainter::drawPath</a>().</p>
+<pre>     setWindowTitle(tr(&quot;Tool Tips&quot;));
+     resize(500, 300);
+
+     createShapeItem(circlePath, tr(&quot;Circle&quot;), initialItemPosition(circlePath),
+                     initialItemColor());
+     createShapeItem(squarePath, tr(&quot;Square&quot;), initialItemPosition(squarePath),
+                     initialItemColor());
+     createShapeItem(trianglePath, tr(&quot;Triangle&quot;),
+                     initialItemPosition(trianglePath), initialItemColor());
+ }</pre>
+<p>Then we set the window title, resize the widget to a suitable size, and finally create three initial shape items using the private <tt>createShapeItem()</tt>, <tt>initialItemPosition()</tt> and <tt>initialItemColor()</tt> functions.</p>
+<pre> bool SortingBox::event(QEvent *event)
+ {</pre>
+<p><a href="qwidget.html#event">QWidget::event</a>() is the main event handler and receives all the widget's events. Normally, we recommend reimplementing one of the specialized event handlers instead of this function. But here we want to catch the <a href="qevent.html#Type-enum">QEvent::ToolTip</a> events, and since these are rather rare, there exists no specific event handler. For that reason we reimplement the main event handler, and the first thing we need to do is to determine the event's type:</p>
+<pre>     if (event-&gt;type() == QEvent::ToolTip) {
+         QHelpEvent *helpEvent = static_cast&lt;QHelpEvent *&gt;(event);
+         int index = itemAt(helpEvent-&gt;pos());
+         if (index != -1)
+             QToolTip::showText(helpEvent-&gt;globalPos(), shapeItems[index].toolTip());
+         else
+             QToolTip::hideText();
+     }
+     return QWidget::event(event);
+ }</pre>
+<p>If the type is <a href="qevent.html#Type-enum">QEvent::ToolTip</a>, we cast the event to a <a href="qhelpevent.html">QHelpEvent</a>, otherwise we propagate the event using the <a href="qwidget.html#event">QWidget::event</a>() function.</p>
+<p>The <a href="qhelpevent.html">QHelpEvent</a> class provides an event that is used to request helpful information about a particular point in a widget.</p>
+<p>For example, the <a href="qhelpevent.html#pos">QHelpEvent::pos</a>() function returns the event's position relative to the widget to which the event is dispatched. Here we use this information to determine if the position of the event is contained within the area of any of the shape items. If it is, we display the shape item's tooltip at the position of the event. Note that the <a href="qtooltip.html#showText">QToolTip::showText</a>() function needs the event's position in global coordinates provided by <a href="qhelpevent.html#globalPos">QHelpEvent::globalPos</a>().</p>
+<pre> void SortingBox::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     int margin = style()-&gt;pixelMetric(QStyle::PM_DefaultTopLevelMargin);
+     int x = width() - margin;
+     int y = height() - margin;
+
+     y = updateButtonGeometry(newCircleButton, x, y);
+     y = updateButtonGeometry(newSquareButton, x, y);
+     updateButtonGeometry(newTriangleButton, x, y);
+ }</pre>
+<p>The <tt>resizeEvent()</tt> function is reimplemented to receive the resize events dispatched to the widget. It makes sure that the tool buttons keep their position relative to the main widget when the widget is resized. We want the buttons to always be vertically aligned in the application's bottom right corner, so each time the main widget is resized we update the buttons geometry.</p>
+<pre> void SortingBox::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     foreach (ShapeItem shapeItem, shapeItems) {</pre>
+<p>The <tt>paintEvent()</tt> function is reimplemented to receive paint events for the widget. We create a <a href="qpainter.html">QPainter</a> for the <tt>SortingBox</tt> widget, and run through the list of created shape items, drawing each item at its defined position.</p>
+<pre>         painter.translate(shapeItem.position());</pre>
+<p>The painter will by default draw all the shape items at position (0,0) in the <tt>SortingBox</tt> widget. The <a href="qpainter.html#translate">QPainter::translate</a>() function translates the coordinate system by the given offset, making each shape item appear at its defined position. But remember to translate the coordinate system back when the item is drawn, otherwise the next shape item will appear at a position relative to the item we drawed last.</p>
+<pre>         painter.setBrush(shapeItem.color());
+         painter.drawPath(shapeItem.path());
+         painter.translate(-shapeItem.position());
+     }
+ }</pre>
+<p>The <a href="qpainter.html#setBrush">QPainter::setBrush</a>() function sets the current brush used by the painter. When the provided argument is a <a href="qcolor.html">QColor</a>, the function calls the appropiate <a href="qbrush.html">QBrush</a> constructor which creates a brush with the specified color and <a href="qt.html#BrushStyle-enum">Qt::SolidPattern</a> style. The <a href="qpainter.html#drawPath">QPainter::drawPath</a>() function draws the given path using the current pen for outline and the current brush for filling.</p>
+<pre> void SortingBox::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         int index = itemAt(event-&gt;pos());
+         if (index != -1) {
+             itemInMotion = &amp;shapeItems[index];
+             previousPosition = event-&gt;pos();
+             shapeItems.move(index, shapeItems.size() - 1);
+             update();
+         }
+     }
+ }</pre>
+<p>The <tt>mousePressEvent()</tt> function is reimplemented to receive the mouse press events dispatched to the widget. It determines if an event's position is contained within the area of any of the shape items, using the private <tt>itemAt()</tt> function.</p>
+<p>If an item covers the position, we store a pointer to that item and the event's position. If several of the shape items cover the position, we store the pointer to the uppermost item. Finally, we move the shape item to the end of the list, and make a call to the <a href="qwidget.html#update">QWidget::update</a>() function to make the item appear on top.</p>
+<p>The <a href="qwidget.html#update">QWidget::update</a>() function does not cause an immediate repaint; instead it schedules a paint event for processing when Qt returns to the main event loop.</p>
+<pre> void SortingBox::mouseMoveEvent(QMouseEvent *event)
+ {
+     if ((event-&gt;buttons() &amp; Qt::LeftButton) &amp;&amp; itemInMotion)
+         moveItemTo(event-&gt;pos());
+ }</pre>
+<p>The <tt>mouseMoveEvent()</tt> function is reimplemented to receive mouse move events for the widget. If the left mouse button is pressed and there exists a shape item in motion, we use the private <tt>moveItemTo()</tt> function to move the item with an offset corresponding to the offset between the positions of the current mouse event and the previous one.</p>
+<pre> void SortingBox::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton &amp;&amp; itemInMotion) {
+         moveItemTo(event-&gt;pos());
+         itemInMotion = 0;
+     }
+ }</pre>
+<p>The <tt>mouseReleaseEvent()</tt> function is reimplemented to receive the mouse release events dispatched to the widget. If the left mouse button is pressed and there exists a shape item in motion, we use the private <tt>moveItemTo()</tt> function to move the item like we did in <tt>mouseMoveEvent()</tt>. But then we remove the pointer to the item in motion, making the shape item's position final for now. To move the item further, the user will need to press the left mouse button again.</p>
+<pre> void SortingBox::createNewCircle()
+ {
+     static int count = 1;
+     createShapeItem(circlePath, tr(&quot;Circle &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }
+
+ void SortingBox::createNewSquare()
+ {
+     static int count = 1;
+     createShapeItem(squarePath, tr(&quot;Square &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }
+
+ void SortingBox::createNewTriangle()
+ {
+     static int count = 1;
+     createShapeItem(trianglePath, tr(&quot;Triangle &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }</pre>
+<p>The <tt>createNewCircle()</tt>, <tt>createNewSquare()</tt> and <tt>createNewTriangle()</tt> slots simply create new shape items, using the private <tt>createShapeItem()</tt>, <tt>randomItemPosition()</tt> and <tt>randomItemColor()</tt> functions.</p>
+<pre> int SortingBox::itemAt(const QPoint &amp;pos)
+ {
+     for (int i = shapeItems.size() - 1; i &gt;= 0; --i) {
+         const ShapeItem &amp;item = shapeItems[i];
+         if (item.path().contains(pos - item.position()))
+             return i;
+     }
+     return -1;
+ }</pre>
+<p>In the <tt>itemAt()</tt> function, we run through the list of created shape items to check if the given position is contained within the area of any of the shape items.</p>
+<p>For each shape item we use the <a href="qpainterpath.html#contains">QPainterPath::contains</a>() function to find out if the item's painter path contains the position. If it does we return the index of the item, otherwise we return -1. We run through the list backwards to get the index of the uppermost shape item in case several items cover the position.</p>
+<pre> void SortingBox::moveItemTo(const QPoint &amp;pos)
+ {
+     QPoint offset = pos - previousPosition;
+     itemInMotion-&gt;setPosition(itemInMotion-&gt;position() + offset);</pre>
+<p>The <tt>moveItemTo()</tt> function moves the shape item in motion, and the parameter <tt>pos</tt> is the position of a mouse event. First we calculate the offset between the parameter <tt>pos</tt> and the previous mouse event position. Then we add the offset to the current position of the item in motion.</p>
+<p>It is tempting to simply set the position of the item to be the parameter <tt>pos</tt>. But an item's position defines the top left corner of the item's bounding rectangle, and the parameter <tt>pos</tt> can be any point; The suggested shortcut would cause the item to jump to a position where the cursor is pointing to the bounding rectangle's top left corner, regardless of the item's previous position.</p>
+<pre>     previousPosition = pos;
+     update();
+ }</pre>
+<p>Finally, we update the previous mouse event position, and make a call to the <a href="qwidget.html#update">QWidget::update</a>() function to make the item appear at its new position.</p>
+<pre> int SortingBox::updateButtonGeometry(QToolButton *button, int x, int y)
+ {
+     QSize size = button-&gt;sizeHint();
+     button-&gt;setGeometry(x - size.rwidth(), y - size.rheight(),
+                         size.rwidth(), size.rheight());
+
+     return y - size.rheight()
+            - style()-&gt;pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+ }</pre>
+<p>In the <tt>updateButtonGeometry()</tt> function we set the geometry for the given button. The parameter coordinates define the bottom right corner of the button. We use these coordinates and the button's size hint to determine the position of the upper left corner. This position, and the button's width and height, are the arguments required by the <a href="qwidget.html#geometry-prop">QWidget::setGeometry</a>() function.</p>
+<p>In the end, we calculate and return the y-coordinate of the bottom right corner of the next button. We use the <a href="qwidget.html#style">QWidget::style</a>() function to retrieve the widget's GUI style, and then <a href="qstyle.html#pixelMetric">QStyle::pixelMetric</a>() to determine the widget's preferred default spacing between its child widgets.</p>
+<pre> void SortingBox::createShapeItem(const QPainterPath &amp;path,
+                                  const QString &amp;toolTip, const QPoint &amp;pos,
+                                  const QColor &amp;color)
+ {
+     ShapeItem shapeItem;
+     shapeItem.setPath(path);
+     shapeItem.setToolTip(toolTip);
+     shapeItem.setPosition(pos);
+     shapeItem.setColor(color);
+     shapeItems.append(shapeItem);
+     update();
+ }</pre>
+<p>The <tt>createShapeItem()</tt> function creates a single shape item. It sets the path, tooltip, position and color, using the item's own functions. In the end, the function appends the new item to the list of shape items, and calls the <a href="qwidget.html#update">QWidget::update</a>() function to make it appear with the other items within the <tt>SortingBox</tt> widget.</p>
+<pre> QToolButton *SortingBox::createToolButton(const QString &amp;toolTip,
+                                           const QIcon &amp;icon, const char *member)
+ {
+     QToolButton *button = new QToolButton(this);
+     button-&gt;setToolTip(toolTip);
+     button-&gt;setIcon(icon);
+     button-&gt;setIconSize(QSize(32, 32));
+     connect(button, SIGNAL(clicked()), this, member);
+
+     return button;
+ }</pre>
+<p>The <tt>createToolButton()</tt> function is called from the <tt>SortingBox</tt> constructor. We create a tool button with the given tooltip and icon. The button's parent is the <tt>SortingBox</tt> widget, and its size is 32 x 32 pixels. Before we return the button, we connect it to the given slot.</p>
+<pre> QPoint SortingBox::initialItemPosition(const QPainterPath &amp;path)
+ {
+     int x;
+     int y = (height() - (int)path.controlPointRect().height()) / 2;
+     if (shapeItems.size() == 0)
+         x = ((3 * width()) / 2 - (int)path.controlPointRect().width()) / 2;
+     else
+         x = (width() / shapeItems.size()
+              - (int)path.controlPointRect().width()) / 2;
+
+     return QPoint(x, y);
+ }</pre>
+<p>The <tt>initialItemPosition()</tt> function is also called from the constructor. We want the three first items to initially be centered in the middle of the <tt>SortingBox</tt> widget, and we use this function to calculate their positions.</p>
+<pre> QPoint SortingBox::randomItemPosition()
+ {
+     return QPoint(qrand() % (width() - 120), qrand() % (height() - 120));
+ }</pre>
+<p>Whenever the user creates a new shape item, we want the new item to appear at a random position, and we use the <tt>randomItemPosition()</tt> function to calculate such a position. We make sure that the item appears within the the visible area of the <tt>SortingBox</tt> widget, using the widget's current width and heigth when calculating the random coordinates.</p>
+<pre> QColor SortingBox::initialItemColor()
+ {
+     return QColor::fromHsv(((shapeItems.size() + 1) * 85) % 256, 255, 190);
+ }</pre>
+<p>As with <tt>initialItemPosition()</tt>, the <tt>initialItemColor()</tt> function is called from the constructor. The purposes of both functions are purely cosmetic: We want to control the inital position and color of the three first items.</p>
+<pre> QColor SortingBox::randomItemColor()
+ {
+     return QColor::fromHsv(qrand() % 256, 255, 190);
+ }</pre>
+<p>Finally the <tt>randomItemColor()</tt> function is implemented to give the shape items the user creates, a random color.</p>
+<a name="shapeitem-class-definition"></a>
+<h2>ShapeItem Class Definition</h2>
+<pre> class ShapeItem
+ {
+ public:
+     void setPath(const QPainterPath &amp;path);
+     void setToolTip(const QString &amp;toolTip);
+     void setPosition(const QPoint &amp;position);
+     void setColor(const QColor &amp;color);
+
+     QPainterPath path() const;
+     QPoint position() const;
+     QColor color() const;
+     QString toolTip() const;
+
+ private:
+     QPainterPath myPath;
+     QPoint myPosition;
+     QColor myColor;
+     QString myToolTip;
+ };</pre>
+<p>The <tt>ShapeItem</tt> class is a custom widget representing one single shape item. The widget has a path, a position, a color and a tooltip. We need functions to set or modify these objects, as well as functions that return them. We make the latter functions <tt>const</tt> to prohibit any modifications of the objects, i.e&#x2e; prohibiting unauthorized manipulation of the shape items appearance.</p>
+<a name="shapeitem-class-implementation"></a>
+<h2>ShapeItem Class Implementation</h2>
+<pre> QPainterPath ShapeItem::path() const
+ {
+     return myPath;
+ }
+
+ QPoint ShapeItem::position() const
+ {
+     return myPosition;
+ }
+
+ QColor ShapeItem::color() const
+ {
+     return myColor;
+ }
+
+ QString ShapeItem::toolTip() const
+ {
+     return myToolTip;
+ }</pre>
+<p>This first group of functions simply return the objects that are requested. The objects are returned as constants, i.e&#x2e; they cannot be modified.</p>
+<pre> void ShapeItem::setPath(const QPainterPath &amp;path)
+ {
+     myPath = path;
+ }
+
+ void ShapeItem::setToolTip(const QString &amp;toolTip)
+ {
+     myToolTip = toolTip;
+ }
+
+ void ShapeItem::setPosition(const QPoint &amp;position)
+ {
+     myPosition = position;
+ }
+
+ void ShapeItem::setColor(const QColor &amp;color)
+ {
+     myColor = color;
+ }</pre>
+<p>The last group of functions set or modify the shape item's path, position, color and tooltip, respectively.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

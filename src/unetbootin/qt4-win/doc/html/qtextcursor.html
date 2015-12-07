@@ -1,0 +1,434 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextcursor.cpp -->
+<head>
+  <title>Qt 4.4: QTextCursor Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextCursor Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextCursor class offers an API to access and modify QTextDocuments. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextCursor&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextcursor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtextcursor.html#MoveMode-enum">MoveMode</a></b> { MoveAnchor, KeepAnchor }</li>
+<li><div class="fn"/>enum <b><a href="qtextcursor.html#MoveOperation-enum">MoveOperation</a></b> { NoMove, Start, StartOfLine, StartOfBlock, ..., WordRight }</li>
+<li><div class="fn"/>enum <b><a href="qtextcursor.html#SelectionType-enum">SelectionType</a></b> { Document, BlockUnderCursor, LineUnderCursor, WordUnderCursor }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextcursor.html#QTextCursor">QTextCursor</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtextcursor.html#QTextCursor-2">QTextCursor</a></b> ( QTextDocument * <i>document</i> )</li>
+<li><div class="fn"/><b><a href="qtextcursor.html#QTextCursor-4">QTextCursor</a></b> ( QTextFrame * <i>frame</i> )</li>
+<li><div class="fn"/><b><a href="qtextcursor.html#QTextCursor-5">QTextCursor</a></b> ( const QTextBlock &amp; <i>block</i> )</li>
+<li><div class="fn"/><b><a href="qtextcursor.html#QTextCursor-7">QTextCursor</a></b> ( const QTextCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/><b><a href="qtextcursor.html#dtor.QTextCursor">~QTextCursor</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#anchor">anchor</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#atBlockEnd">atBlockEnd</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#atBlockStart">atBlockStart</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#atStart">atStart</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#beginEditBlock">beginEditBlock</a></b> ()</li>
+<li><div class="fn"/>QTextBlock <b><a href="qtextcursor.html#block">block</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtextcursor.html#blockCharFormat">blockCharFormat</a></b> () const</li>
+<li><div class="fn"/>QTextBlockFormat <b><a href="qtextcursor.html#blockFormat">blockFormat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#blockNumber">blockNumber</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtextcursor.html#charFormat">charFormat</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#clearSelection">clearSelection</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#columnNumber">columnNumber</a></b> () const</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextcursor.html#createList">createList</a></b> ( const QTextListFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextcursor.html#createList-2">createList</a></b> ( QTextListFormat::Style <i>style</i> )</li>
+<li><div class="fn"/>QTextFrame * <b><a href="qtextcursor.html#currentFrame">currentFrame</a></b> () const</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextcursor.html#currentList">currentList</a></b> () const</li>
+<li><div class="fn"/>QTextTable * <b><a href="qtextcursor.html#currentTable">currentTable</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#deleteChar">deleteChar</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#deletePreviousChar">deletePreviousChar</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#endEditBlock">endEditBlock</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#hasComplexSelection">hasComplexSelection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#hasSelection">hasSelection</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertBlock">insertBlock</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertBlock-2">insertBlock</a></b> ( const QTextBlockFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertBlock-3">insertBlock</a></b> ( const QTextBlockFormat &amp; <i>format</i>, const QTextCharFormat &amp; <i>charFormat</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertFragment">insertFragment</a></b> ( const QTextDocumentFragment &amp; <i>fragment</i> )</li>
+<li><div class="fn"/>QTextFrame * <b><a href="qtextcursor.html#insertFrame">insertFrame</a></b> ( const QTextFrameFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertHtml">insertHtml</a></b> ( const QString &amp; <i>html</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertImage">insertImage</a></b> ( const QTextImageFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertImage-2">insertImage</a></b> ( const QTextImageFormat &amp; <i>format</i>, QTextFrameFormat::Position <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertImage-3">insertImage</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextcursor.html#insertList">insertList</a></b> ( const QTextListFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextcursor.html#insertList-2">insertList</a></b> ( QTextListFormat::Style <i>style</i> )</li>
+<li><div class="fn"/>QTextTable * <b><a href="qtextcursor.html#insertTable">insertTable</a></b> ( int <i>rows</i>, int <i>columns</i>, const QTextTableFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>QTextTable * <b><a href="qtextcursor.html#insertTable-2">insertTable</a></b> ( int <i>rows</i>, int <i>columns</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertText">insertText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#insertText-2">insertText</a></b> ( const QString &amp; <i>text</i>, const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#isCopyOf">isCopyOf</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#joinPreviousEditBlock">joinPreviousEditBlock</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#mergeBlockCharFormat">mergeBlockCharFormat</a></b> ( const QTextCharFormat &amp; <i>modifier</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#mergeBlockFormat">mergeBlockFormat</a></b> ( const QTextBlockFormat &amp; <i>modifier</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#mergeCharFormat">mergeCharFormat</a></b> ( const QTextCharFormat &amp; <i>modifier</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#movePosition">movePosition</a></b> ( MoveOperation <i>operation</i>, MoveMode <i>mode</i> = MoveAnchor, int <i>n</i> = 1 )</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#position">position</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#removeSelectedText">removeSelectedText</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#select">select</a></b> ( SelectionType <i>selection</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#selectedTableCells">selectedTableCells</a></b> ( int * <i>firstRow</i>, int * <i>numRows</i>, int * <i>firstColumn</i>, int * <i>numColumns</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtextcursor.html#selectedText">selectedText</a></b> () const</li>
+<li><div class="fn"/>QTextDocumentFragment <b><a href="qtextcursor.html#selection">selection</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#selectionEnd">selectionEnd</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextcursor.html#selectionStart">selectionStart</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#setBlockCharFormat">setBlockCharFormat</a></b> ( const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#setBlockFormat">setBlockFormat</a></b> ( const QTextBlockFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#setCharFormat">setCharFormat</a></b> ( const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#setPosition">setPosition</a></b> ( int <i>pos</i>, MoveMode <i>m</i> = MoveAnchor )</li>
+<li><div class="fn"/>void <b><a href="qtextcursor.html#setVisualNavigation">setVisualNavigation</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#visualNavigation">visualNavigation</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-not-eq">operator!=</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-lt">operator&lt;</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-lt-eq">operator&lt;=</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTextCursor &amp; <b><a href="qtextcursor.html#operator-eq">operator=</a></b> ( const QTextCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-eq-eq">operator==</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-gt">operator&gt;</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcursor.html#operator-gt-eq">operator&gt;=</a></b> ( const QTextCursor &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextCursor class offers an API to access and modify QTextDocuments.</p>
+<p>Text cursors are objects that are used to access and modify the contents and underlying structure of text documents via a programming interface that mimics the behavior of a cursor in a text editor. QTextCursor contains information about both the cursor's position within a <a href="qtextdocument.html">QTextDocument</a> and any selection that it has made.</p>
+<p>QTextCursor is modeled on the way a text cursor behaves in a text editor, providing a programmatic means of performing standard actions through the user interface. A document can be thought of as a single string of characters with the cursor's <a href="qtextcursor.html#position">position</a>() being <i>between</i> any two characters (or at the very beginning or very end of the document). Documents can also contain tables, lists, images, and other objects in addition to text but, from the developer's point of view, the document can be treated as one long string. Some portions of that string can be considered to lie within particular blocks (e.g&#x2e; paragraphs), or within a table's cell, or a list's item, or other structural elements. When we refer to &quot;current character&quot; we mean the character immediately after the cursor <a href="qtextcursor.html#position">position</a>() in the document; similarly the &quot;current block&quot; is the block that contains the cursor <a href="qtextcursor.html#position">position</a>().</p>
+<p>A QTextCursor also has an <a href="qtextcursor.html#anchor">anchor</a>() position. The text that is between the <a href="qtextcursor.html#anchor">anchor</a>() and the <a href="qtextcursor.html#position">position</a>() is the selection. If <a href="qtextcursor.html#anchor">anchor</a>() == <a href="qtextcursor.html#position">position</a>() there is no selection.</p>
+<p>The cursor position can be changed programmatically using <a href="qtextcursor.html#setPosition">setPosition</a>() and <a href="qtextcursor.html#movePosition">movePosition</a>(); the latter can also be used to select text. For selections see <a href="qtextcursor.html#selectionStart">selectionStart</a>(), <a href="qtextcursor.html#selectionEnd">selectionEnd</a>(), <a href="qtextcursor.html#hasSelection">hasSelection</a>(), <a href="qtextcursor.html#clearSelection">clearSelection</a>(), and <a href="qtextcursor.html#removeSelectedText">removeSelectedText</a>().</p>
+<p>If the <a href="qtextcursor.html#position">position</a>() is at the start of a block <a href="qtextcursor.html#atBlockStart">atBlockStart</a>() returns true; and if it is at the end of a block <a href="qtextcursor.html#atBlockEnd">atBlockEnd</a>() returns true. The format of the current character is returned by <a href="qtextcursor.html#charFormat">charFormat</a>(), and the format of the current block is returned by <a href="qtextcursor.html#blockFormat">blockFormat</a>().</p>
+<p>Formatting can be applied to the current text document using the <a href="qtextcursor.html#setCharFormat">setCharFormat</a>(), <a href="qtextcursor.html#mergeCharFormat">mergeCharFormat</a>(), <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>() and <a href="qtextcursor.html#mergeBlockFormat">mergeBlockFormat</a>() functions. The 'set' functions will replace the cursor's current character or block format, while the 'merge' functions add the given format properties to the cursor's current format. If the cursor has a selection the given format is applied to the current selection. Note that when only parts of a block is selected the block format is applied to the entire block. The text at the current character position can be turned into a list using <a href="qtextcursor.html#createList">createList</a>().</p>
+<p>Deletions can be achieved using <a href="qtextcursor.html#deleteChar">deleteChar</a>(), <a href="qtextcursor.html#deletePreviousChar">deletePreviousChar</a>(), and <a href="qtextcursor.html#removeSelectedText">removeSelectedText</a>().</p>
+<p>Text strings can be inserted into the document with the <a href="qtextcursor.html#insertText">insertText</a>() function, blocks (representing new paragraphs) can be inserted with <a href="qtextcursor.html#insertBlock">insertBlock</a>().</p>
+<p>Existing fragments of text can be inserted with <a href="qtextcursor.html#insertFragment">insertFragment</a>() but, if you want to insert pieces of text in various formats, it is usually still easier to use <a href="qtextcursor.html#insertText">insertText</a>() and supply a character format.</p>
+<p>Various types of higher-level structure can also be inserted into the document with the cursor:</p>
+<ul>
+<li>Lists are ordered sequences of block elements that are decorated with bullet points or symbols. These are inserted in a specified format with <a href="qtextcursor.html#insertList">insertList</a>().</li>
+<li>Tables are inserted with the <a href="qtextcursor.html#insertTable">insertTable</a>() function, and can be given an optional format. These contain an array of cells that can be traversed using the cursor.</li>
+<li>Inline images are inserted with <a href="qtextcursor.html#insertImage">insertImage</a>(). The image to be used can be specified in an image format, or by name.</li>
+<li>Frames are inserted by calling <a href="qtextcursor.html#insertFrame">insertFrame</a>() with a specified format.</li>
+</ul>
+<p>Actions can be grouped (i.e&#x2e; treated as a single action for undo/redo) using <a href="qtextcursor.html#beginEditBlock">beginEditBlock</a>() and <a href="qtextcursor.html#endEditBlock">endEditBlock</a>().</p>
+<p>Cursor movements are limited to valid cursor positions. In Latin writing this is usually after every character in the text. In some other writing systems cursor movements are limited to &quot;clusters&quot; (e.g&#x2e; a syllable in Devanagari, or a base letter plus diacritics). Functions such as <a href="qtextcursor.html#movePosition">movePosition</a>() and <a href="qtextcursor.html#deleteChar">deleteChar</a>() limit cursor movement to these valid positions.</p>
+<p>See also <a href="richtext.html">Rich Text Processing</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="MoveMode-enum"></a>enum QTextCursor::MoveMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextCursor::MoveAnchor</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Moves the anchor to the same position as the cursor itself.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::KeepAnchor</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Keeps the anchor where it is.</td></tr>
+</table></p>
+<p>If the <a href="qtextcursor.html#anchor">anchor</a>() is kept where it is and the <a href="qtextcursor.html#position">position</a>() is moved, the text in between will be selected.</p>
+<h3 class="fn"><a name="MoveOperation-enum"></a>enum QTextCursor::MoveOperation</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextCursor::NoMove</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Keep the cursor where it is</td></tr>
+<tr><td valign="top"><tt>QTextCursor::Start</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Move to the start of the document.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::StartOfLine</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Move to the start of the current line.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::StartOfBlock</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Move to the start of the current block.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::StartOfWord</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Move to the start of the current word.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::PreviousBlock</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Move to the start of the previous block.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::PreviousCharacter</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Move to the previous character.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::PreviousWord</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Move to the beginning of the previous word.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::Up</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Move up one line.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::Left</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Move left one character.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::WordLeft</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">Move left one word.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::End</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">Move to the end of the document.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::EndOfLine</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">Move to the end of the current line.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::EndOfWord</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">Move to the end of the current word.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::EndOfBlock</tt></td><td align="center" valign="top"><tt>15</tt></td><td valign="top">Move to the end of the current block.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::NextBlock</tt></td><td align="center" valign="top"><tt>16</tt></td><td valign="top">Move to the beginning of the next block.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::NextCharacter</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">Move to the next character.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::NextWord</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">Move to the next word.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::Down</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">Move down one line.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::Right</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">Move right one character.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::WordRight</tt></td><td align="center" valign="top"><tt>20</tt></td><td valign="top">Move right one word.</td></tr>
+</table></p>
+<p>See also <a href="qtextcursor.html#movePosition">movePosition</a>().</p>
+<h3 class="fn"><a name="SelectionType-enum"></a>enum QTextCursor::SelectionType</h3>
+<p>This enum describes the types of selection that can be applied with the <a href="qtextcursor.html#select">select</a>() function.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextCursor::Document</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Selects the entire document.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::BlockUnderCursor</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Selects the block of text under the cursor.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::LineUnderCursor</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Selects the line of text under the cursor.</td></tr>
+<tr><td valign="top"><tt>QTextCursor::WordUnderCursor</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Selects the word under the cursor. If the cursor is not positioned within a string of selectable characters, no text is selected.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextCursor"></a>QTextCursor::QTextCursor ()</h3>
+<p>Constructs a null cursor.</p>
+<h3 class="fn"><a name="QTextCursor-2"></a>QTextCursor::QTextCursor ( <a href="qtextdocument.html">QTextDocument</a> * <i>document</i> )</h3>
+<p>Constructs a cursor pointing to the beginning of the <i>document</i>.</p>
+<h3 class="fn"><a name="QTextCursor-4"></a>QTextCursor::QTextCursor ( <a href="qtextframe.html">QTextFrame</a> * <i>frame</i> )</h3>
+<p>Constructs a cursor pointing to the beginning of the <i>frame</i>.</p>
+<h3 class="fn"><a name="QTextCursor-5"></a>QTextCursor::QTextCursor ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> )</h3>
+<p>Constructs a cursor pointing to the beginning of the <i>block</i>.</p>
+<h3 class="fn"><a name="QTextCursor-7"></a>QTextCursor::QTextCursor ( const QTextCursor &amp; <i>cursor</i> )</h3>
+<p>Constructs a new cursor that is a copy of <i>cursor</i>.</p>
+<h3 class="fn"><a name="dtor.QTextCursor"></a>QTextCursor::~QTextCursor ()</h3>
+<p>Destroys the <a href="qtextcursor.html">QTextCursor</a>.</p>
+<h3 class="fn"><a name="anchor"></a>int QTextCursor::anchor () const</h3>
+<p>Returns the anchor position; this is the same as <a href="qtextcursor.html#position">position</a>() unless there is a selection in which case <a href="qtextcursor.html#position">position</a>() marks one end of the selection and anchor() marks the other end. Just like the cursor position, the anchor position is between characters.</p>
+<p>See also <a href="qtextcursor.html#position">position</a>(), <a href="qtextcursor.html#setPosition">setPosition</a>(), <a href="qtextcursor.html#movePosition">movePosition</a>(), <a href="qtextcursor.html#selectionStart">selectionStart</a>(), and <a href="qtextcursor.html#selectionEnd">selectionEnd</a>().</p>
+<h3 class="fn"><a name="atBlockEnd"></a>bool QTextCursor::atBlockEnd () const</h3>
+<p>Returns true if the cursor is at the end of a block; otherwise returns false.</p>
+<p>See also <a href="qtextcursor.html#atBlockStart">atBlockStart</a>() and <a href="qtextcursor.html#atEnd">atEnd</a>().</p>
+<h3 class="fn"><a name="atBlockStart"></a>bool QTextCursor::atBlockStart () const</h3>
+<p>Returns true if the cursor is at the start of a block; otherwise returns false.</p>
+<p>See also <a href="qtextcursor.html#atBlockEnd">atBlockEnd</a>() and <a href="qtextcursor.html#atStart">atStart</a>().</p>
+<h3 class="fn"><a name="atEnd"></a>bool QTextCursor::atEnd () const</h3>
+<p>Returns true if the cursor is at the end of the document; otherwise returns false.</p>
+<p>See also <a href="qtextcursor.html#atStart">atStart</a>() and <a href="qtextcursor.html#atBlockEnd">atBlockEnd</a>().</p>
+<h3 class="fn"><a name="atStart"></a>bool QTextCursor::atStart () const</h3>
+<p>Returns true if the cursor is at the start of the document; otherwise returns false.</p>
+<p>See also <a href="qtextcursor.html#atBlockStart">atBlockStart</a>() and <a href="qtextcursor.html#atEnd">atEnd</a>().</p>
+<h3 class="fn"><a name="beginEditBlock"></a>void QTextCursor::beginEditBlock ()</h3>
+<p>Indicates the start of a block of editing operations on the document that should appear as a single operation from an undo/redo point of view.</p>
+<p>For example:</p>
+<pre>     QTextCursor cursor(textDocument);
+     cursor.beginEditBlock();
+     cursor.insertText(&quot;Hello&quot;);
+     cursor.insertText(&quot;World&quot;);
+     cursor.endEditBlock();
+
+     textDocument-&gt;undo();</pre>
+<p>The call to undo() will cause both insertions to be undone, causing both &quot;World&quot; and &quot;Hello&quot; to be removed.</p>
+<p>It is possible to nest calls to beginEditBlock and endEditBlock. The top-most pair will determine the scope of the undo/redo operation.</p>
+<p>See also <a href="qtextcursor.html#endEditBlock">endEditBlock</a>().</p>
+<h3 class="fn"><a name="block"></a><a href="qtextblock.html">QTextBlock</a> QTextCursor::block () const</h3>
+<p>Returns the block that contains the cursor.</p>
+<h3 class="fn"><a name="blockCharFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextCursor::blockCharFormat () const</h3>
+<p>Returns the block character format of the block the cursor is in.</p>
+<p>The block char format is the format used when inserting text at the beginning of an empty block.</p>
+<p>See also <a href="qtextcursor.html#setBlockCharFormat">setBlockCharFormat</a>().</p>
+<h3 class="fn"><a name="blockFormat"></a><a href="qtextblockformat.html">QTextBlockFormat</a> QTextCursor::blockFormat () const</h3>
+<p>Returns the block format of the block the cursor is in.</p>
+<p>See also <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>() and <a href="qtextcursor.html#charFormat">charFormat</a>().</p>
+<h3 class="fn"><a name="blockNumber"></a>int QTextCursor::blockNumber () const</h3>
+<p>Returns the number of the block the cursor is in, or 0 if the cursor is invalid.</p>
+<p>Note that this function only makes sense in documents without complex objects such as tables or frames.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="charFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextCursor::charFormat () const</h3>
+<p>Returns the format of the character immediately before the cursor <a href="qtextcursor.html#position">position</a>(). If the cursor is positioned at the beginning of a text block that is not empty then the format of the character immediately after the cursor is returned.</p>
+<p>See also <a href="qtextcursor.html#setCharFormat">setCharFormat</a>(), <a href="qtextcursor.html#insertText">insertText</a>(), and <a href="qtextcursor.html#blockFormat">blockFormat</a>().</p>
+<h3 class="fn"><a name="clearSelection"></a>void QTextCursor::clearSelection ()</h3>
+<p>Clears the current selection by setting the anchor to the cursor position.</p>
+<p>Note that it does <b>not</b> delete the text of the selection.</p>
+<p>See also <a href="qtextcursor.html#removeSelectedText">removeSelectedText</a>() and <a href="qtextcursor.html#hasSelection">hasSelection</a>().</p>
+<h3 class="fn"><a name="columnNumber"></a>int QTextCursor::columnNumber () const</h3>
+<p>Returns the position of the cursor within its containing line.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="createList"></a><a href="qtextlist.html">QTextList</a> * QTextCursor::createList ( const <a href="qtextlistformat.html">QTextListFormat</a> &amp; <i>format</i> )</h3>
+<p>Creates and returns a new list with the given <i>format</i>, and makes the current paragraph the cursor is in the first list item.</p>
+<p>See also <a href="qtextcursor.html#insertList">insertList</a>() and <a href="qtextcursor.html#currentList">currentList</a>().</p>
+<h3 class="fn"><a name="createList-2"></a><a href="qtextlist.html">QTextList</a> * QTextCursor::createList ( <a href="qtextlistformat.html#Style-enum">QTextListFormat::Style</a> <i>style</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a new list with the given <i>style</i>, making the cursor's current paragraph the first list item.</p>
+<p>The style to be used is defined by the <a href="qtextlistformat.html#Style-enum">QTextListFormat::Style</a> enum.</p>
+<p>See also <a href="qtextcursor.html#insertList">insertList</a>() and <a href="qtextcursor.html#currentList">currentList</a>().</p>
+<h3 class="fn"><a name="currentFrame"></a><a href="qtextframe.html">QTextFrame</a> * QTextCursor::currentFrame () const</h3>
+<p>Returns a pointer to the current frame. Returns 0 if the cursor is invalid.</p>
+<p>See also <a href="qtextcursor.html#insertFrame">insertFrame</a>().</p>
+<h3 class="fn"><a name="currentList"></a><a href="qtextlist.html">QTextList</a> * QTextCursor::currentList () const</h3>
+<p>Returns the current list if the cursor <a href="qtextcursor.html#position">position</a>() is inside a block that is part of a list; otherwise returns 0.</p>
+<p>See also <a href="qtextcursor.html#insertList">insertList</a>() and <a href="qtextcursor.html#createList">createList</a>().</p>
+<h3 class="fn"><a name="currentTable"></a><a href="qtexttable.html">QTextTable</a> * QTextCursor::currentTable () const</h3>
+<p>Returns a pointer to the current table if the cursor <a href="qtextcursor.html#position">position</a>() is inside a block that is part of a table; otherwise returns 0.</p>
+<p>See also <a href="qtextcursor.html#insertTable">insertTable</a>().</p>
+<h3 class="fn"><a name="deleteChar"></a>void QTextCursor::deleteChar ()</h3>
+<p>If there is no selected text, deletes the character <i>at</i> the current cursor position; otherwise deletes the selected text.</p>
+<p>See also <a href="qtextcursor.html#deletePreviousChar">deletePreviousChar</a>(), <a href="qtextcursor.html#hasSelection">hasSelection</a>(), and <a href="qtextcursor.html#clearSelection">clearSelection</a>().</p>
+<h3 class="fn"><a name="deletePreviousChar"></a>void QTextCursor::deletePreviousChar ()</h3>
+<p>If there is no selected text, deletes the character <i>before</i> the current cursor position; otherwise deletes the selected text.</p>
+<p>See also <a href="qtextcursor.html#deleteChar">deleteChar</a>(), <a href="qtextcursor.html#hasSelection">hasSelection</a>(), and <a href="qtextcursor.html#clearSelection">clearSelection</a>().</p>
+<h3 class="fn"><a name="endEditBlock"></a>void QTextCursor::endEditBlock ()</h3>
+<p>Indicates the end of a block of editing operations on the document that should appear as a single operation from an undo/redo point of view.</p>
+<p>See also <a href="qtextcursor.html#beginEditBlock">beginEditBlock</a>().</p>
+<h3 class="fn"><a name="hasComplexSelection"></a>bool QTextCursor::hasComplexSelection () const</h3>
+<p>Returns true if the cursor contains a selection that is not simply a range from <a href="qtextcursor.html#selectionStart">selectionStart</a>() to <a href="qtextcursor.html#selectionEnd">selectionEnd</a>(); otherwise returns false.</p>
+<p>Complex selections are ones that span at least two cells in a table; their extent is specified by <a href="qtextcursor.html#selectedTableCells">selectedTableCells</a>().</p>
+<h3 class="fn"><a name="hasSelection"></a>bool QTextCursor::hasSelection () const</h3>
+<p>Returns true if the cursor contains a selection; otherwise returns false.</p>
+<h3 class="fn"><a name="insertBlock"></a>void QTextCursor::insertBlock ()</h3>
+<p>Inserts a new empty block at the cursor <a href="qtextcursor.html#position">position</a>() with the current <a href="qtextcursor.html#blockFormat">blockFormat</a>() and <a href="qtextcursor.html#charFormat">charFormat</a>().</p>
+<p>See also <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>().</p>
+<h3 class="fn"><a name="insertBlock-2"></a>void QTextCursor::insertBlock ( const <a href="qtextblockformat.html">QTextBlockFormat</a> &amp; <i>format</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a new empty block at the cursor <a href="qtextcursor.html#position">position</a>() with block format <i>format</i> and the current <a href="qtextcursor.html#charFormat">charFormat</a>() as block char format.</p>
+<p>See also <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>().</p>
+<h3 class="fn"><a name="insertBlock-3"></a>void QTextCursor::insertBlock ( const <a href="qtextblockformat.html">QTextBlockFormat</a> &amp; <i>format</i>, const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>charFormat</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a new empty block at the cursor <a href="qtextcursor.html#position">position</a>() with block format <i>format</i> and <i>charFormat</i> as block char format.</p>
+<p>See also <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>().</p>
+<h3 class="fn"><a name="insertFragment"></a>void QTextCursor::insertFragment ( const <a href="qtextdocumentfragment.html">QTextDocumentFragment</a> &amp; <i>fragment</i> )</h3>
+<p>Inserts the text <i>fragment</i> at the current <a href="qtextcursor.html#position">position</a>().</p>
+<h3 class="fn"><a name="insertFrame"></a><a href="qtextframe.html">QTextFrame</a> * QTextCursor::insertFrame ( const <a href="qtextframeformat.html">QTextFrameFormat</a> &amp; <i>format</i> )</h3>
+<p>Inserts a frame with the given <i>format</i> at the current cursor <a href="qtextcursor.html#position">position</a>(), moves the cursor <a href="qtextcursor.html#position">position</a>() inside the frame, and returns the frame.</p>
+<p>If the cursor holds a selection, the whole selection is moved inside the frame.</p>
+<p>See also <a href="qtextcursor.html#hasSelection">hasSelection</a>().</p>
+<h3 class="fn"><a name="insertHtml"></a>void QTextCursor::insertHtml ( const <a href="qstring.html">QString</a> &amp; <i>html</i> )</h3>
+<p>Inserts the text <i>html</i> at the current <a href="qtextcursor.html#position">position</a>(). The text is interpreted as HTML.</p>
+<p><b>Note:</b> When using this function with a style sheet, the style sheet will only apply to the current block in the document. In order to apply a style sheet throughout a document, use <a href="qtextdocument.html#defaultStyleSheet-prop">QTextDocument::setDefaultStyleSheet</a>() instead.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="insertImage"></a>void QTextCursor::insertImage ( const <a href="qtextimageformat.html">QTextImageFormat</a> &amp; <i>format</i> )</h3>
+<p>Inserts the image defined by <i>format</i> at the current <a href="qtextcursor.html#position">position</a>().</p>
+<h3 class="fn"><a name="insertImage-2"></a>void QTextCursor::insertImage ( const <a href="qtextimageformat.html">QTextImageFormat</a> &amp; <i>format</i>, <a href="qtextframeformat.html#Position-enum">QTextFrameFormat::Position</a> <i>alignment</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the image defined by the given <i>format</i> at the cursor's current position with the specified <i>alignment</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextcursor.html#position">position</a>().</p>
+<h3 class="fn"><a name="insertImage-3"></a>void QTextCursor::insertImage ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Convenience method for inserting the image with the given <i>name</i> at the current <a href="qtextcursor.html#position">position</a>().</p>
+<pre>     QImage img = ...
+     textDocument-&gt;addResource(QTextDocument::ImageResource, QUrl(&quot;myimage&quot;), img);
+     cursor.insertImage(&quot;myimage&quot;);</pre>
+<h3 class="fn"><a name="insertList"></a><a href="qtextlist.html">QTextList</a> * QTextCursor::insertList ( const <a href="qtextlistformat.html">QTextListFormat</a> &amp; <i>format</i> )</h3>
+<p>Inserts a new block at the current position and makes it the first list item of a newly created list with the given <i>format</i>. Returns the created list.</p>
+<p>See also <a href="qtextcursor.html#currentList">currentList</a>(), <a href="qtextcursor.html#createList">createList</a>(), and <a href="qtextcursor.html#insertBlock">insertBlock</a>().</p>
+<h3 class="fn"><a name="insertList-2"></a><a href="qtextlist.html">QTextList</a> * QTextCursor::insertList ( <a href="qtextlistformat.html#Style-enum">QTextListFormat::Style</a> <i>style</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a new block at the current position and makes it the first list item of a newly created list with the given <i>style</i>. Returns the created list.</p>
+<p>See also <a href="qtextcursor.html#currentList">currentList</a>(), <a href="qtextcursor.html#createList">createList</a>(), and <a href="qtextcursor.html#insertBlock">insertBlock</a>().</p>
+<h3 class="fn"><a name="insertTable"></a><a href="qtexttable.html">QTextTable</a> * QTextCursor::insertTable ( int <i>rows</i>, int <i>columns</i>, const <a href="qtexttableformat.html">QTextTableFormat</a> &amp; <i>format</i> )</h3>
+<p>Creates a new table with the given number of <i>rows</i> and <i>columns</i> in the specified <i>format</i>, inserts it at the current cursor <a href="qtextcursor.html#position">position</a>() in the document, and returns the table object. The cursor is moved to the beginning of the first cell.</p>
+<p>There must be at least one row and one column in the table.</p>
+<p>See also <a href="qtextcursor.html#currentTable">currentTable</a>().</p>
+<h3 class="fn"><a name="insertTable-2"></a><a href="qtexttable.html">QTextTable</a> * QTextCursor::insertTable ( int <i>rows</i>, int <i>columns</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates a new table with the given number of <i>rows</i> and <i>columns</i>, inserts it at the current cursor <a href="qtextcursor.html#position">position</a>() in the document, and returns the table object. The cursor is moved to the beginning of the first cell.</p>
+<p>There must be at least one row and one column in the table.</p>
+<p>See also <a href="qtextcursor.html#currentTable">currentTable</a>().</p>
+<h3 class="fn"><a name="insertText"></a>void QTextCursor::insertText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Inserts <i>text</i> at the current position, using the current character format.</p>
+<p>If there is a selection, the selection is deleted and replaced by <i>text</i>, for example:</p>
+<pre>     cursor.clearSelection();
+     cursor.movePosition(QTextCursor::NextWord, QTextCursor::KeepAnchor);
+     cursor.insertText(&quot;Hello World&quot;);</pre>
+<p>This clears any existing selection, selects the word at the cursor (i.e&#x2e; from <a href="qtextcursor.html#position">position</a>() forward), and replaces the selection with the phrase &quot;Hello World&quot;.</p>
+<p>Any ASCII linefeed characters (\n) in the inserted text are transformed into unicode block separators, corresponding to <a href="qtextcursor.html#insertBlock">insertBlock</a>() calls.</p>
+<p>See also <a href="qtextcursor.html#charFormat">charFormat</a>() and <a href="qtextcursor.html#hasSelection">hasSelection</a>().</p>
+<h3 class="fn"><a name="insertText-2"></a>void QTextCursor::insertText ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts <i>text</i> at the current position with the given <i>format</i>.</p>
+<h3 class="fn"><a name="isCopyOf"></a>bool QTextCursor::isCopyOf ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if this cursor and <i>other</i> are copies of each other, i.e&#x2e; one of them was created as a copy of the other and neither has moved since. This is much stricter than equality.</p>
+<p>See also <a href="qtextcursor.html#operator-eq">operator=</a>() and <a href="qtextcursor.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QTextCursor::isNull () const</h3>
+<p>Returns true if the cursor is null; otherwise returns false. A null cursor is created by the default constructor.</p>
+<h3 class="fn"><a name="joinPreviousEditBlock"></a>void QTextCursor::joinPreviousEditBlock ()</h3>
+<p>Like <a href="qtextcursor.html#beginEditBlock">beginEditBlock</a>() indicates the start of a block of editing operations that should appear as a single operation for undo/redo. However unlike <a href="qtextcursor.html#beginEditBlock">beginEditBlock</a>() it does not start a new block but reverses the previous call to <a href="qtextcursor.html#endEditBlock">endEditBlock</a>() and therefore makes following operations part of the previous edit block created.</p>
+<p>For example:</p>
+<pre>     QTextCursor cursor(textDocument);
+     cursor.beginEditBlock();
+     cursor.insertText(&quot;Hello&quot;);
+     cursor.insertText(&quot;World&quot;);
+     cursor.endEditBlock();
+
+     ...
+
+     cursor.joinPreviousEditBlock();
+     cursor.insertText(&quot;Hey&quot;);
+     cursor.endEditBlock();
+
+     textDocument-&gt;undo();</pre>
+<p>The call to undo() will cause all three insertions to be undone.</p>
+<p>See also <a href="qtextcursor.html#beginEditBlock">beginEditBlock</a>() and <a href="qtextcursor.html#endEditBlock">endEditBlock</a>().</p>
+<h3 class="fn"><a name="mergeBlockCharFormat"></a>void QTextCursor::mergeBlockCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>modifier</i> )</h3>
+<p>Modifies the block char format of the current block (or all blocks that are contained in the selection) with the block format specified by <i>modifier</i>.</p>
+<p>See also <a href="qtextcursor.html#setBlockCharFormat">setBlockCharFormat</a>().</p>
+<h3 class="fn"><a name="mergeBlockFormat"></a>void QTextCursor::mergeBlockFormat ( const <a href="qtextblockformat.html">QTextBlockFormat</a> &amp; <i>modifier</i> )</h3>
+<p>Modifies the block format of the current block (or all blocks that are contained in the selection) with the block format specified by <i>modifier</i>.</p>
+<p>See also <a href="qtextcursor.html#setBlockFormat">setBlockFormat</a>() and <a href="qtextcursor.html#blockFormat">blockFormat</a>().</p>
+<h3 class="fn"><a name="mergeCharFormat"></a>void QTextCursor::mergeCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>modifier</i> )</h3>
+<p>Merges the cursor's current character format with the properties described by format <i>modifier</i>. If the cursor has a selection, this function applies all the properties set in <i>modifier</i> to all the character formats that are part of the selection.</p>
+<p>See also <a href="qtextcursor.html#hasSelection">hasSelection</a>() and <a href="qtextcursor.html#setCharFormat">setCharFormat</a>().</p>
+<h3 class="fn"><a name="movePosition"></a>bool QTextCursor::movePosition ( <a href="qtextcursor.html#MoveOperation-enum">MoveOperation</a> <i>operation</i>, <a href="qtextcursor.html#MoveMode-enum">MoveMode</a> <i>mode</i> = MoveAnchor, int <i>n</i> = 1 )</h3>
+<p>Moves the cursor by performing the given <i>operation</i> <i>n</i> times, using the specified <i>mode</i>, and returns true if all operations were completed successfully; otherwise returns false.</p>
+<p>For example, if this function is repeatedly used to seek to the end of the next word, it will eventually fail when the end of the document is reached.</p>
+<p>By default, the move operation is performed once (<i>n</i> = 1).</p>
+<p>If <i>mode</i> is <tt>KeepAnchor</tt>, the cursor selects the text it moves over. This is the same effect that the user achieves when they hold down the Shift key and move the cursor with the cursor keys.</p>
+<p>See also <a href="qtextcursor.html#setVisualNavigation">setVisualNavigation</a>().</p>
+<h3 class="fn"><a name="position"></a>int QTextCursor::position () const</h3>
+<p>Returns the absolute position of the cursor within the document. The cursor is positioned between characters.</p>
+<p>See also <a href="qtextcursor.html#setPosition">setPosition</a>(), <a href="qtextcursor.html#movePosition">movePosition</a>(), and <a href="qtextcursor.html#anchor">anchor</a>().</p>
+<h3 class="fn"><a name="removeSelectedText"></a>void QTextCursor::removeSelectedText ()</h3>
+<p>If there is a selection, its content is deleted; otherwise does nothing.</p>
+<p>See also <a href="qtextcursor.html#hasSelection">hasSelection</a>().</p>
+<h3 class="fn"><a name="select"></a>void QTextCursor::select ( <a href="qtextcursor.html#SelectionType-enum">SelectionType</a> <i>selection</i> )</h3>
+<p>Selects text in the document according to the given <i>selection</i>.</p>
+<h3 class="fn"><a name="selectedTableCells"></a>void QTextCursor::selectedTableCells ( int * <i>firstRow</i>, int * <i>numRows</i>, int * <i>firstColumn</i>, int * <i>numColumns</i> ) const</h3>
+<p>If the selection spans over table cells, <i>firstRow</i> is populated with the number of the first row in the selection, <i>firstColumn</i> with the number of the first column in the selection, and <i>numRows</i> and <i>numColumns</i> with the number of rows and columns in the selection. If the selection does not span any table cells the results are harmless but undefined.</p>
+<h3 class="fn"><a name="selectedText"></a><a href="qstring.html">QString</a> QTextCursor::selectedText () const</h3>
+<p>Returns the current selection's text (which may be empty). This only returns the text, with no rich text formatting information. If you want a document fragment (i.e&#x2e; formatted rich text) use <a href="qtextcursor.html#selection">selection</a>() instead.</p>
+<p><b>Note:</b> If the selection obtained from an editor spans a line break, the text will contain a Unicode U+2029 paragraph separator character instead of a newline <tt>\n</tt> character. Use <a href="qstring.html#replace">QString::replace</a>() to replace these characters with newlines.</p>
+<h3 class="fn"><a name="selection"></a><a href="qtextdocumentfragment.html">QTextDocumentFragment</a> QTextCursor::selection () const</h3>
+<p>Returns the current selection (which may be empty) with all its formatting information. If you just want the selected text (i.e&#x2e; plain text) use <a href="qtextcursor.html#selectedText">selectedText</a>() instead.</p>
+<p><b>Note:</b> Unlike <a href="qtextdocumentfragment.html#toPlainText">QTextDocumentFragment::toPlainText</a>(), <a href="qtextcursor.html#selectedText">selectedText</a>() may include special unicode characters such as <a href="qchar.html#SpecialCharacter-enum">QChar::ParagraphSeparator</a>.</p>
+<p>See also <a href="qtextdocumentfragment.html#toPlainText">QTextDocumentFragment::toPlainText</a>().</p>
+<h3 class="fn"><a name="selectionEnd"></a>int QTextCursor::selectionEnd () const</h3>
+<p>Returns the end of the selection or <a href="qtextcursor.html#position">position</a>() if the cursor doesn't have a selection.</p>
+<p>See also <a href="qtextcursor.html#selectionStart">selectionStart</a>(), <a href="qtextcursor.html#position">position</a>(), and <a href="qtextcursor.html#anchor">anchor</a>().</p>
+<h3 class="fn"><a name="selectionStart"></a>int QTextCursor::selectionStart () const</h3>
+<p>Returns the start of the selection or <a href="qtextcursor.html#position">position</a>() if the cursor doesn't have a selection.</p>
+<p>See also <a href="qtextcursor.html#selectionEnd">selectionEnd</a>(), <a href="qtextcursor.html#position">position</a>(), and <a href="qtextcursor.html#anchor">anchor</a>().</p>
+<h3 class="fn"><a name="setBlockCharFormat"></a>void QTextCursor::setBlockCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the block char format of the current block (or all blocks that are contained in the selection) to <i>format</i>.</p>
+<p>See also <a href="qtextcursor.html#blockCharFormat">blockCharFormat</a>().</p>
+<h3 class="fn"><a name="setBlockFormat"></a>void QTextCursor::setBlockFormat ( const <a href="qtextblockformat.html">QTextBlockFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the block format of the current block (or all blocks that are contained in the selection) to <i>format</i>.</p>
+<p>See also <a href="qtextcursor.html#blockFormat">blockFormat</a>() and <a href="qtextcursor.html#mergeBlockFormat">mergeBlockFormat</a>().</p>
+<h3 class="fn"><a name="setCharFormat"></a>void QTextCursor::setCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the cursor's current character format to the given <i>format</i>. If the cursor has a selection, the given <i>format</i> is applied to the current selection.</p>
+<p>See also <a href="qtextcursor.html#charFormat">charFormat</a>(), <a href="qtextcursor.html#hasSelection">hasSelection</a>(), and <a href="qtextcursor.html#mergeCharFormat">mergeCharFormat</a>().</p>
+<h3 class="fn"><a name="setPosition"></a>void QTextCursor::setPosition ( int <i>pos</i>, <a href="qtextcursor.html#MoveMode-enum">MoveMode</a> <i>m</i> = MoveAnchor )</h3>
+<p>Moves the cursor to the absolute position in the document specified by <i>pos</i> using a <tt>MoveMode</tt> specified by <i>m</i>. The cursor is positioned between characters.</p>
+<p>See also <a href="qtextcursor.html#position">position</a>(), <a href="qtextcursor.html#movePosition">movePosition</a>(), and <a href="qtextcursor.html#anchor">anchor</a>().</p>
+<h3 class="fn"><a name="setVisualNavigation"></a>void QTextCursor::setVisualNavigation ( bool <i>b</i> )</h3>
+<p>Sets visual navigation to <i>b</i>.</p>
+<p>Visual navigation means skipping over hidden text pragraphs. The default is false.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextcursor.html#visualNavigation">visualNavigation</a>() and <a href="qtextcursor.html#movePosition">movePosition</a>().</p>
+<h3 class="fn"><a name="visualNavigation"></a>bool QTextCursor::visualNavigation () const</h3>
+<p>Returns true if the cursor does visual navigation; otherwise returns false.</p>
+<p>Visual navigation means skipping over hidden text pragraphs. The default is false.</p>
+<p>/sa <a href="qtextcursor.html#setVisualNavigation">setVisualNavigation</a>(), <a href="qtextcursor.html#movePosition">movePosition</a>()</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextcursor.html#setVisualNavigation">setVisualNavigation</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QTextCursor::operator!= ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is at a different position in the document as this cursor; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QTextCursor::operator&lt; ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is positioned later in the document than this cursor; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt-eq"></a>bool QTextCursor::operator&lt;= ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is positioned later or at the same position in the document as this cursor; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTextCursor &amp; QTextCursor::operator= ( const QTextCursor &amp; <i>cursor</i> )</h3>
+<p>Makes a copy of <i>cursor</i> and assigns it to this <a href="qtextcursor.html">QTextCursor</a>.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QTextCursor::operator== ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is at the same position in the document as this cursor; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool QTextCursor::operator&gt; ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is positioned earlier in the document than this cursor; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt-eq"></a>bool QTextCursor::operator&gt;= ( const QTextCursor &amp; <i>other</i> ) const</h3>
+<p>Returns true if the <i>other</i> cursor is positioned earlier or at the same position in the document as this cursor; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

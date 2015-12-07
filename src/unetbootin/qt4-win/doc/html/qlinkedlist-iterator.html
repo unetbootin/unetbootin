@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qlinkedlist.cpp -->
+<head>
+  <title>Qt 4.4: iterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">iterator Class Reference<br /><span class="small-subtitle">(QLinkedList::iterator)<br />[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QLinkedList::iterator class provides an STL-style non-const iterator for <a href="qlinkedlist.html">QLinkedList</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;<a href="qlinkedlist.html">QLinkedList</a>&gt;</pre><p>Inherited by <a href="q3valuelistiterator.html" class="compat">Q3ValueListIterator</a>.</p>
+<ul>
+<li><a href="qlinkedlist-iterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlinkedlist-iterator.html#iterator">iterator</a></b> ()</li>
+<li><div class="fn"/><b><a href="qlinkedlist-iterator.html#iterator-3">iterator</a></b> ( const iterator &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qlinkedlist-iterator.html#operator-not-eq">operator!=</a></b> ( const iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlinkedlist-iterator.html#operator-not-eq-2">operator!=</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>T &amp; <b><a href="qlinkedlist-iterator.html#operator-2a">operator*</a></b> () const</li>
+<li><div class="fn"/>iterator <b><a href="qlinkedlist-iterator.html#operator-2b">operator+</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qlinkedlist-iterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>iterator <b><a href="qlinkedlist-iterator.html#operator-2b-2b-2">operator++</a></b> ( int )</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qlinkedlist-iterator.html#operator-2b-eq">operator+=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>iterator <b><a href="qlinkedlist-iterator.html#operator-">operator-</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qlinkedlist-iterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>iterator <b><a href="qlinkedlist-iterator.html#operator---2">operator--</a></b> ( int )</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qlinkedlist-iterator.html#operator--eq">operator-=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>T * <b><a href="qlinkedlist-iterator.html#operator--gt">operator-&gt;</a></b> () const</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qlinkedlist-iterator.html#operator-eq">operator=</a></b> ( const iterator &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qlinkedlist-iterator.html#operator-eq-eq">operator==</a></b> ( const iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlinkedlist-iterator.html#operator-eq-eq-2">operator==</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLinkedList::iterator class provides an STL-style non-const iterator for <a href="qlinkedlist.html">QLinkedList</a>.</p>
+<p><a href="qlinkedlist.html">QLinkedList</a> features both <a href="containers.html#stl-style-iterators">STL-style iterators</a> and <a href="containers.html#java-style-iterators">Java-style iterators</a>. The STL-style iterators are more low-level and more cumbersome to use; on the other hand, they are slightly faster and, for developers who already know STL, have the advantage of familiarity.</p>
+<p><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;::iterator allows you to iterate over a <a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt; and to modify the list item associated with the iterator. If you want to iterate over a const <a href="qlinkedlist.html">QLinkedList</a>, use <a href="qlinkedlist-const-iterator.html">QLinkedList::const_iterator</a> instead. It is generally good practice to use <a href="qlinkedlist-const-iterator.html">QLinkedList::const_iterator</a> on a non-const <a href="qlinkedlist.html">QLinkedList</a> as well, unless you need to change the <a href="qlinkedlist.html">QLinkedList</a> through the iterator. Const iterators are slightly faster, and can improve code readability.</p>
+<p>The default QLinkedList::iterator constructor creates an uninitialized iterator. You must initialize it using a function like <a href="qlinkedlist.html#begin">QLinkedList::begin</a>(), <a href="qlinkedlist.html#end">QLinkedList::end</a>(), or <a href="qlinkedlist.html#insert">QLinkedList::insert</a>() before you can start iterating. Here's a typical loop that prints all the items stored in a list:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         list.append(&quot;January&quot;);
+         list.append(&quot;February&quot;);
+         ...
+         list.append(&quot;December&quot;);
+
+         QLinkedList&lt;QString&gt;::iterator i;
+         for (i = list.begin(); i != list.end(); ++i)
+             cout &lt;&lt; *i &lt;&lt; endl;</pre>
+<p>STL-style iterators can be used as arguments to <a href="qtalgorithms.html">generic algorithms</a>. For example, here's how to find an item in the list using the <a href="qtalgorithms.html#qFind">qFind</a>() algorithm:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         QLinkedList&lt;QString&gt;::iterator it = qFind(list.begin(),
+                                                   list.end(), &quot;Joel&quot;);
+         if (it != list.end())
+             cout &lt;&lt; &quot;Found Joel&quot; &lt;&lt; endl;</pre>
+<p>Let's see a few examples of things we can do with a QLinkedList::iterator that we cannot do with a <a href="qlinkedlist-const-iterator.html">QLinkedList::const_iterator</a>. Here's an example that increments every value stored in a <a href="qlinkedlist.html">QLinkedList</a>&lt;int&gt; by 2:</p>
+<pre>         QLinkedList&lt;int&gt;::iterator i;
+         for (i = list.begin(); i != list.end(); ++i)
+             *i += 2;</pre>
+<p>Here's an example that removes all the items that start with an underscore character in a <a href="qlinkedlist.html">QLinkedList</a>&lt;<a href="qstring.html">QString</a>&gt;:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         QLinkedList&lt;QString&gt;::iterator i = list.begin();
+         while (i != list.end()) {
+             if ((*i).startsWith(&quot;_&quot;))
+                 i = list.erase(i);
+             else
+                 ++i;
+         }</pre>
+<p>The call to <a href="qlinkedlist.html#erase">QLinkedList::erase</a>() removes the item pointed to by the iterator from the list, and returns an iterator to the next item. Here's another way of removing an item while iterating:</p>
+<pre>         QLinkedList&lt;QString&gt;::iterator i = list.begin();
+         while (i != list.end()) {
+             QLinkedList&lt;QString&gt;::iterator previous = i;
+             ++i;
+             if ((*previous).startsWith(&quot;_&quot;))
+                 list.erase(previous);
+         }</pre>
+<p>It might be tempting to write code like this:</p>
+<pre>         // WRONG
+         while (i != list.end()) {
+             if ((*i).startsWith(&quot;_&quot;))
+                 list.erase(i);
+             ++i;
+         }</pre>
+<p>However, this will potentially crash in <tt>++i</tt>, because <tt>i</tt> is a dangling iterator after the call to <a href="qlinkedlist.html#erase">erase</a>().</p>
+<p>Multiple iterators can be used on the same list. If you add items to the list, existing iterators will remain valid. If you remove items from the list, iterators that point to the removed items will become dangling iterators. However, because of how <a href="shared.html#implicit-sharing">implicit sharing</a> works, you must not take a copy of a container while iterators are active on that container.</p>
+<p>See also <a href="qlinkedlist-const-iterator.html">QLinkedList::const_iterator</a> and <a href="qmutablelinkedlistiterator.html">QMutableLinkedListIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="iterator"></a>iterator::iterator ()</h3>
+<p>Constructs an uninitialized iterator.</p>
+<p>Functions like operator*() and operator++() should not be called on an uninitialized iterartor. Use operator=() to assign a value to it before using it.</p>
+<p>See also <a href="qlinkedlist.html#begin">QLinkedList::begin</a>() and <a href="qlinkedlist.html#end">QLinkedList::end</a>().</p>
+<h3 class="fn"><a name="iterator-3"></a>iterator::iterator ( const iterator &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool iterator::operator!= ( const iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to a different item than this iterator; otherwise returns false.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool iterator::operator!= ( const <a href="qlinkedlist-const-iterator.html">const_iterator</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> points to a different item than this iterator; otherwise returns false.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-2a"></a>T &amp; iterator::operator* () const</h3>
+<p>Returns a modifiable reference to the current item.</p>
+<p>You can change the value of an item by using operator*() on the left side of an assignment, for example:</p>
+<pre>         if (*it == &quot;Hello&quot;)
+             *it = &quot;Bonjour&quot;;</pre>
+<p>See also <a href="qlinkedlist-iterator.html#operator--gt">operator-&gt;</a>().</p>
+<h3 class="fn"><a name="operator-2b"></a>iterator iterator::operator+ ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions forward from this iterator. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>iterator &amp; iterator::operator++ ()</h3>
+<p>The prefix ++ operator (<tt>++it</tt>) advances the iterator to the next item in the list and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="qlinkedlist.html#end">QLinkedList::end</a>() leads to undefined results.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator--">operator--</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b-2"></a>iterator iterator::operator++ ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix ++ operator (<tt>it++</tt>) advances the iterator to the next item in the list and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>iterator &amp; iterator::operator+= ( int <i>j</i> )</h3>
+<p>Advances the iterator by <i>j</i> items. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator--eq">operator-=</a>() and <a href="qlinkedlist-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator-"></a>iterator iterator::operator- ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions backward from this iterator. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator--"></a>iterator &amp; iterator::operator-- ()</h3>
+<p>The prefix -- operator (<tt>--it</tt>) makes the preceding item current and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="qlinkedlist.html#begin">QLinkedList::begin</a>() leads to undefined results.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-2b-2b">operator++</a>().</p>
+<h3 class="fn"><a name="operator---2"></a>iterator iterator::operator-- ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix -- operator (<tt>it--</tt>) makes the preceding item current and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator--eq"></a>iterator &amp; iterator::operator-= ( int <i>j</i> )</h3>
+<p>Makes the iterator go back by <i>j</i> items. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-2b-eq">operator+=</a>() and <a href="qlinkedlist-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator--gt"></a>T * iterator::operator-&gt; () const</h3>
+<p>Returns a pointer to the current item.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-2a">operator*</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>iterator &amp; iterator::operator= ( const iterator &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i> to this iterator.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool iterator::operator== ( const iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to the same item as this iterator; otherwise returns false.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-not-eq">operator!=</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool iterator::operator== ( const <a href="qlinkedlist-const-iterator.html">const_iterator</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> points to the same item as this iterator; otherwise returns false.</p>
+<p>See also <a href="qlinkedlist-iterator.html#operator-not-eq">operator!=</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

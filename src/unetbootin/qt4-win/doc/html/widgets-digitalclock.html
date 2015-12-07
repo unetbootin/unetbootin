@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/digitalclock.qdoc -->
+<head>
+  <title>Qt 4.4: Digital Clock Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Digital Clock Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-digitalclock-digitalclock-cpp.html">widgets/digitalclock/digitalclock.cpp</a></li>
+<li><a href="widgets-digitalclock-digitalclock-h.html">widgets/digitalclock/digitalclock.h</a></li>
+<li><a href="widgets-digitalclock-main-cpp.html">widgets/digitalclock/main.cpp</a></li>
+<li><a href="widgets-digitalclock-digitalclock-pro.html">widgets/digitalclock/digitalclock.pro</a></li>
+</ul>
+<p>The Digital Clock example shows how to use <a href="qlcdnumber.html">QLCDNumber</a> to display a number with LCD-like digits.</p>
+<p align="center"><img src="images/digitalclock-example.png" alt="Screenshot of the Digital Clock example" /></p><p>This example also demonstrates how <a href="qtimer.html">QTimer</a> can be used to update a widget at regular intervals.</p>
+<a name="digitalclock-class-definition"></a>
+<h2>DigitalClock Class Definition</h2>
+<p>The <tt>DigitalClock</tt> class provides a clock widget showing the time with hours and minutes separated by a blinking colon. We subclass <a href="qlcdnumber.html">QLCDNumber</a> and implement a private slot called <tt>showTime()</tt> to update the clock display:</p>
+<pre> class DigitalClock : public QLCDNumber
+ {
+     Q_OBJECT
+
+ public:
+     DigitalClock(QWidget *parent = 0);
+
+ private slots:
+     void showTime();
+ };</pre>
+<a name="digitalclock-class-implementation"></a>
+<h2>DigitalClock Class Implementation</h2>
+<pre> DigitalClock::DigitalClock(QWidget *parent)
+     : QLCDNumber(parent)
+ {
+     setSegmentStyle(Filled);
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(showTime()));
+     timer-&gt;start(1000);
+
+     showTime();
+
+     setWindowTitle(tr(&quot;Digital Clock&quot;));
+     resize(150, 60);
+ }</pre>
+<p>In the constructor, we first change the look of the LCD numbers. The <a href="qlcdnumber.html#SegmentStyle-enum">QLCDNumber::Filled</a> style produces raised segments filled with the foreground color (typically black). We also set up a one-second timer to keep track of the current time, and we connect its <a href="qtimer.html#timeout">timeout()</a> signal to the private <tt>showTime()</tt> slot so that the display is updated every second. Then, we call the <tt>showTime()</tt> slot; without this call, there would be a one-second delay at startup before the time is shown.</p>
+<pre> void DigitalClock::showTime()
+ {
+     QTime time = QTime::currentTime();
+     QString text = time.toString(&quot;hh:mm&quot;);
+     if ((time.second() % 2) == 0)
+         text[2] = ' ';
+     display(text);
+ }</pre>
+<p>The <tt>showTime()</tt> slot is called whenever the clock display needs to be updated.</p>
+<p>The current time is converted into a string with the format &quot;hh:mm&quot;. When <a href="qtime.html#second">QTime::second</a>() is a even number, the colon in the string is replaced with a space. This makes the colon appear and vanish every other second.</p>
+<p>Finally, we call <a href="qlcdnumber.html#intValue-prop">QLCDNumber::display</a>() to update the widget.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

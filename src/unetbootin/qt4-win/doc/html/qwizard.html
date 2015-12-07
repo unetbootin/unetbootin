@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qwizard.cpp -->
+<head>
+  <title>Qt 4.4: QWizard Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWizard Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QWizard class provides a framework for wizards. <a href="#details">More...</a></p>
+<pre> #include &lt;QWizard&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qwizard-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qwizard.html#WizardButton-enum">WizardButton</a></b> { BackButton, NextButton, CommitButton, FinishButton, ..., Stretch }</li>
+<li><div class="fn"/>enum <b><a href="qwizard.html#WizardOption-enum">WizardOption</a></b> { IndependentPages, IgnoreSubTitles, ExtendedWatermarkPixmap, NoDefaultButton, ..., HaveCustomButton3 }</li>
+<li><div class="fn"/>flags <b><a href="qwizard.html#WizardOption-enum">WizardOptions</a></b></li>
+<li><div class="fn"/>enum <b><a href="qwizard.html#WizardPixmap-enum">WizardPixmap</a></b> { WatermarkPixmap, LogoPixmap, BannerPixmap, BackgroundPixmap }</li>
+<li><div class="fn"/>enum <b><a href="qwizard.html#WizardStyle-enum">WizardStyle</a></b> { ClassicStyle, ModernStyle, MacStyle, AeroStyle }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qwizard.html#currentId-prop">currentId</a></b> : const int</li>
+<li><div class="fn"/><b><a href="qwizard.html#options-prop">options</a></b> : WizardOptions</li>
+<li><div class="fn"/><b><a href="qwizard.html#startId-prop">startId</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qwizard.html#subTitleFormat-prop">subTitleFormat</a></b> : Qt::TextFormat</li>
+<li><div class="fn"/><b><a href="qwizard.html#titleFormat-prop">titleFormat</a></b> : Qt::TextFormat</li>
+<li><div class="fn"/><b><a href="qwizard.html#wizardStyle-prop">wizardStyle</a></b> : WizardStyle</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwizard.html#QWizard">QWizard</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qwizard.html#dtor.QWizard">~QWizard</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qwizard.html#addPage">addPage</a></b> ( QWizardPage * <i>page</i> )</li>
+<li><div class="fn"/>QAbstractButton * <b><a href="qwizard.html#button">button</a></b> ( WizardButton <i>which</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qwizard.html#buttonText">buttonText</a></b> ( WizardButton <i>which</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qwizard.html#currentId-prop">currentId</a></b> () const</li>
+<li><div class="fn"/>QWizardPage * <b><a href="qwizard.html#currentPage">currentPage</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="qwizard.html#field">field</a></b> ( const QString &amp; <i>name</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qwizard.html#hasVisitedPage">hasVisitedPage</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="qwizard.html#nextId">nextId</a></b> () const</li>
+<li><div class="fn"/>WizardOptions <b><a href="qwizard.html#options-prop">options</a></b> () const</li>
+<li><div class="fn"/>QWizardPage * <b><a href="qwizard.html#page">page</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qwizard.html#pixmap">pixmap</a></b> ( WizardPixmap <i>which</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setButton">setButton</a></b> ( WizardButton <i>which</i>, QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setButtonLayout">setButtonLayout</a></b> ( const QList&lt;WizardButton&gt; &amp; <i>layout</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setButtonText">setButtonText</a></b> ( WizardButton <i>which</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setDefaultProperty">setDefaultProperty</a></b> ( const char * <i>className</i>, const char * <i>property</i>, const char * <i>changedSignal</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setField">setField</a></b> ( const QString &amp; <i>name</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setOption">setOption</a></b> ( WizardOption <i>option</i>, bool <i>on</i> = true )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#options-prop">setOptions</a></b> ( WizardOptions <i>options</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setPage">setPage</a></b> ( int <i>id</i>, QWizardPage * <i>page</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#setPixmap">setPixmap</a></b> ( WizardPixmap <i>which</i>, const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#startId-prop">setStartId</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#subTitleFormat-prop">setSubTitleFormat</a></b> ( Qt::TextFormat <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#titleFormat-prop">setTitleFormat</a></b> ( Qt::TextFormat <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#wizardStyle-prop">setWizardStyle</a></b> ( WizardStyle <i>style</i> )</li>
+<li><div class="fn"/>int <b><a href="qwizard.html#startId-prop">startId</a></b> () const</li>
+<li><div class="fn"/>Qt::TextFormat <b><a href="qwizard.html#subTitleFormat-prop">subTitleFormat</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwizard.html#testOption">testOption</a></b> ( WizardOption <i>option</i> ) const</li>
+<li><div class="fn"/>Qt::TextFormat <b><a href="qwizard.html#titleFormat-prop">titleFormat</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qwizard.html#validateCurrentPage">validateCurrentPage</a></b> ()</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qwizard.html#visitedPages">visitedPages</a></b> () const</li>
+<li><div class="fn"/>WizardStyle <b><a href="qwizard.html#wizardStyle-prop">wizardStyle</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwizard.html#back">back</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#next">next</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#restart">restart</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwizard.html#currentIdChanged">currentIdChanged</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#customButtonClicked">customButtonClicked</a></b> ( int <i>which</i> )</li>
+<li><div class="fn"/>void <b><a href="qwizard.html#helpRequested">helpRequested</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qwizard.html#cleanupPage">cleanupPage</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qwizard.html#initializePage">initializePage</a></b> ( int <i>id</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWizard class provides a framework for wizards.</p>
+<p>A wizard (also called an assistant on Mac OS X) is a special type of input dialog that consists of a sequence of pages. A wizard's purpose is to guide the user through a process step by step. Wizards are useful for complex or infrequent tasks that users may find difficult to learn.</p>
+<p>QWizard inherits <a href="qdialog.html">QDialog</a> and represents a wizard. Each page is a <a href="qwizardpage.html">QWizardPage</a> (a <a href="qwidget.html">QWidget</a> subclass). To create your own wizards, you can use these classes directly, or you can subclass them for more control.</p>
+<p>Topics:</p>
+<ul><li><a href="#a-trivial-example">A Trivial Example</a></li>
+<li><a href="#wizard-look-and-feel">Wizard Look and Feel</a></li>
+<li><a href="#elements-of-a-wizard-page">Elements of a Wizard Page</a></li>
+<li><a href="#registering-and-using-fields">Registering and Using Fields</a></li>
+<li><a href="#creating-linear-wizards">Creating Linear Wizards</a></li>
+<li><a href="#creating-non-linear-wizards">Creating Non-Linear Wizards</a></li>
+</ul>
+<a name="a-trivial-example"></a>
+<h3>A Trivial Example</h3>
+<p>The following example illustrates how to create wizard pages and add them to a wizard. For more advanced examples, see <a href="dialogs-classwizard.html">Class Wizard</a> and <a href="dialogs-licensewizard.html">License Wizard</a>.</p>
+<pre> QWizardPage *createIntroPage()
+ {
+     QWizardPage *page = new QWizardPage;
+     page-&gt;setTitle(&quot;Introduction&quot;);
+
+     QLabel *label = new QLabel(&quot;This wizard will help you register your copy &quot;
+                                &quot;of Super Product Two.&quot;);
+     label-&gt;setWordWrap(true);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(label);
+     page-&gt;setLayout(layout);
+
+     return page;
+ }
+
+ QWizardPage *createRegistrationPage()
+ {
+     ...
+ }
+
+ QWizardPage *createConclusionPage()
+ {
+     ...
+ }
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QString translatorFileName = QLatin1String(&quot;qt_&quot;);
+     translatorFileName += QLocale::system().name();
+     QTranslator *translator = new QTranslator(&amp;app);
+     if (translator-&gt;load(translatorFileName, QLibraryInfo::location(QLibraryInfo::TranslationsPath)))
+         app.installTranslator(translator);
+
+     QWizard wizard;
+     wizard.addPage(createIntroPage());
+     wizard.addPage(createRegistrationPage());
+     wizard.addPage(createConclusionPage());
+
+     wizard.setWindowTitle(&quot;Trivial Wizard&quot;);
+     wizard.show();
+
+     return app.exec();
+ }</pre>
+<a name="wizard-look-and-feel"></a>
+<h3>Wizard Look and Feel</h3>
+<p>QWizard supports four wizard looks:</p>
+<ul>
+<li><a href="qwizard.html#WizardStyle-enum">ClassicStyle</a></li>
+<li><a href="qwizard.html#WizardStyle-enum">ModernStyle</a></li>
+<li><a href="qwizard.html#WizardStyle-enum">MacStyle</a></li>
+<li><a href="qwizard.html#WizardStyle-enum">AeroStyle</a></li>
+</ul>
+<p>You can explicitly set the look to use using <a href="qwizard.html#wizardStyle-prop">setWizardStyle</a>() (e.g&#x2e;, if you want the same look on all platforms).</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="qwizard.html#WizardStyle-enum">ClassicStyle</a></th><th><a href="qwizard.html#WizardStyle-enum">ModernStyle</a></th><th><a href="qwizard.html#WizardStyle-enum">MacStyle</a></th><th><a href="qwizard.html#WizardStyle-enum">AeroStyle</a></th></tr></thead>
+<tr valign="top" class="odd"><td><img src="images/qtwizard-classic1.png" /></td><td><img src="images/qtwizard-modern1.png" /></td><td><img src="images/qtwizard-mac1.png" /></td><td><img src="images/qtwizard-aero1.png" /></td></tr>
+<tr valign="top" class="even"><td><img src="images/qtwizard-classic2.png" /></td><td><img src="images/qtwizard-modern2.png" /></td><td><img src="images/qtwizard-mac2.png" /></td><td><img src="images/qtwizard-aero2.png" /></td></tr>
+</table></p>
+<p>Note: <a href="qwizard.html#WizardStyle-enum">AeroStyle</a> has effect only on a Windows Vista system with alpha compositing enabled. <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> is used as a fallback when this condition is not met.</p>
+<p>In addition to the wizard style, there are several options that control the look and feel of the wizard. These can be set using <a href="qwizard.html#setOption">setOption</a>() or <a href="qwizard.html#options-prop">setOptions</a>(). For example, <a href="qwizard.html#WizardOption-enum">HaveHelpButton</a> makes QWizard show a <b>Help</b> button along with the other wizard buttons.</p>
+<p>You can even change the order of the wizard buttons to any arbitrary order using <a href="qwizard.html#setButtonLayout">setButtonLayout</a>(), and you can add up to three custom buttons (e.g&#x2e;, a <b>Print</b> button) to the button row. This is achieved by calling <a href="qwizard.html#setButton">setButton</a>() or <a href="qwizard.html#setButtonText">setButtonText</a>() with <a href="qwizard.html#WizardButton-enum">CustomButton1</a>, <a href="qwizard.html#WizardButton-enum">CustomButton2</a>, or <a href="qwizard.html#WizardButton-enum">CustomButton3</a> to set up the button, and by enabling the <a href="qwizard.html#WizardOption-enum">HaveCustomButton1</a>, <a href="qwizard.html#WizardOption-enum">HaveCustomButton2</a>, or <a href="qwizard.html#WizardOption-enum">HaveCustomButton3</a> options. Whenever the user clicks a custom button, <a href="qwizard.html#customButtonClicked">customButtonClicked</a>() is emitted. For example:</p>
+<pre>         wizard()-&gt;setButtonText(QWizard::CustomButton1, tr(&quot;&amp;Print&quot;));
+         wizard()-&gt;setOption(QWizard::HaveCustomButton1, true);
+         connect(wizard(), SIGNAL(customButtonClicked(int)),
+                 this, SLOT(printButtonClicked()));</pre>
+<a name="elements-of-a-wizard-page"></a>
+<h3>Elements of a Wizard Page</h3>
+<p>Wizards consist of a sequence of <a href="qwizardpage.html">QWizardPage</a>s. At any time, only one page is shown. A page has the following attributes:</p>
+<ul>
+<li>A <a href="qwizardpage.html#title-prop">title</a>.</li>
+<li>A <a href="qwizardpage.html#subTitle-prop">subTitle</a>.</li>
+<li>A set of pixmaps, which may or may not be honored, depending on the wizard's style:<ul>
+<li><a href="qwizard.html#WizardPixmap-enum">WatermarkPixmap</a> (used by <a href="qwizard.html#WizardStyle-enum">ClassicStyle</a> and <a href="qwizard.html#WizardStyle-enum">ModernStyle</a>)</li>
+<li><a href="qwizard.html#WizardPixmap-enum">BannerPixmap</a> (used by <a href="qwizard.html#WizardStyle-enum">ModernStyle</a>)</li>
+<li><a href="qwizard.html#WizardPixmap-enum">LogoPixmap</a> (used by <a href="qwizard.html#WizardStyle-enum">ClassicStyle</a> and <a href="qwizard.html#WizardStyle-enum">ModernStyle</a>)</li>
+<li><a href="qwizard.html#WizardPixmap-enum">BackgroundPixmap</a> (used by <a href="qwizard.html#WizardStyle-enum">MacStyle</a>)</li>
+</ul>
+</li>
+</ul>
+<p>The diagram belows showns how QWizard renders these attributes, assuming they are all present and <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> is used:</p>
+<p align="center"><img src="images/qtwizard-nonmacpage.png" /></p><p>When a <a href="qwizardpage.html#subTitle-prop">subTitle</a> is set, QWizard displays it in a header, in which case it also uses the <a href="qwizard.html#WizardPixmap-enum">BannerPixmap</a> and the <a href="qwizard.html#WizardPixmap-enum">LogoPixmap</a> to decorate the header. The <a href="qwizard.html#WizardPixmap-enum">WatermarkPixmap</a> is displayed on the left side, below the header. At the bottom, there is a row of buttons allowing the user to navigate through the pages.</p>
+<p>The page itself (the <a href="qwizardpage.html">QWizardPage</a> widget) occupies the area between the header, the watermark, and the button row. Typically, the page is a <a href="qwizardpage.html">QWizardPage</a> on which a <a href="qgridlayout.html">QGridLayout</a> is installed, with standard child widgets (<a href="qlabel.html">QLabel</a>s, <a href="qlineedit.html">QLineEdit</a>s, etc.)&#x2e;</p>
+<p>If the wizard's style is <a href="qwizard.html#WizardStyle-enum">MacStyle</a>, the page looks radically different:</p>
+<p align="center"><img src="images/qtwizard-macpage.png" /></p><p>The watermark, banner, and logo pixmaps are ignored by the <a href="qwizard.html#WizardStyle-enum">MacStyle</a>. If the <a href="qwizard.html#WizardPixmap-enum">BackgroundPixmap</a> is set, it is used as the background for the wizard; otherwise, a default &quot;assistant&quot; image is used.</p>
+<p>The title and subtitle are set by calling <a href="qwizardpage.html#title-prop">QWizardPage::setTitle</a>() and <a href="qwizardpage.html#subTitle-prop">QWizardPage::setSubTitle</a>() on the individual pages. They may be plain text or HTML (see <a href="qwizard.html#titleFormat-prop">titleFormat</a> and <a href="qwizard.html#subTitleFormat-prop">subTitleFormat</a>). The pixmaps can be set globally for the entire wizard using <a href="qwizard.html#setPixmap">setPixmap</a>(), or on a per-page basis using <a href="qwizardpage.html#setPixmap">QWizardPage::setPixmap</a>().</p>
+<a name="field-mechanism"></a><a name="registering-and-using-fields"></a>
+<h3>Registering and Using Fields</h3>
+<p>In many wizards, the contents of a page may affect the default values of the fields of a later page. To make it easy to communicate between pages, QWizard supports a &quot;field&quot; mechanism that allows you to register a field (e.g&#x2e;, a <a href="qlineedit.html">QLineEdit</a>) on a page and to access its value from any page. It is also possible to specify mandatory fields (i.e&#x2e;, fields that must be filled before the user can advance to the next page).</p>
+<p>To register a field, call <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>() field. For example:</p>
+<pre> ClassInfoPage::ClassInfoPage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     ...
+     classNameLabel = new QLabel(tr(&quot;&amp;Class name:&quot;));
+     classNameLineEdit = new QLineEdit;
+     classNameLabel-&gt;setBuddy(classNameLineEdit);
+
+     baseClassLabel = new QLabel(tr(&quot;B&amp;ase class:&quot;));
+     baseClassLineEdit = new QLineEdit;
+     baseClassLabel-&gt;setBuddy(baseClassLineEdit);
+
+     qobjectMacroCheckBox = new QCheckBox(tr(&quot;Generate Q_OBJECT &amp;macro&quot;));
+
+     registerField(&quot;className*&quot;, classNameLineEdit);
+     registerField(&quot;baseClass&quot;, baseClassLineEdit);
+     registerField(&quot;qobjectMacro&quot;, qobjectMacroCheckBox);
+     ...
+ }</pre>
+<p>The above code registers three fields, <tt>className</tt>, <tt>baseClass</tt>, and <tt>qobjectMacro</tt>, which are associated with three child widgets. The asterisk (<tt>*</tt>) next to <tt>className</tt> denotes a mandatory field.</p>
+<a name="initialize-page"></a><p>The fields of any page are accessible from any other page. For example:</p>
+<pre> void OutputFilesPage::initializePage()
+ {
+     QString className = field(&quot;className&quot;).toString();
+     headerLineEdit-&gt;setText(className.toLower() + &quot;.h&quot;);
+     implementationLineEdit-&gt;setText(className.toLower() + &quot;.cpp&quot;);
+     outputDirLineEdit-&gt;setText(QDir::convertSeparators(QDir::tempPath()));
+ }</pre>
+<p>Here, we call <a href="qwizardpage.html#field">QWizardPage::field</a>() to access the contents of the <tt>className</tt> field (which was defined in the <tt>ClassInfoPage</tt>) and use it to initialize the <tt>OuputFilePage</tt>. The field's contents is returned as a <a href="qvariant.html">QVariant</a>.</p>
+<p>When we create a field using <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>(), we pass a unique field name and a widget. We can also provide a Qt property name and a &quot;changed&quot; signal (a signal that is emitted when the property changes) as third and fourth arguments; however, this is not necessary for the most common Qt widgets, such as <a href="qlineedit.html">QLineEdit</a>, <a href="qcheckbox.html">QCheckBox</a>, and <a href="qcombobox.html">QComboBox</a>, because QWizard knows which properties to look for.</p>
+<a name="mandatory-fields"></a><p>If an asterisk (<tt>*</tt>) is appended to the name when the property is registered, the field is a <i>mandatory field</i>. When a page has mandatory fields, the <b>Next</b> and/or <b>Finish</b> buttons are enabled only when all mandatory fields are filled.</p>
+<p>To consider a field &quot;filled&quot;, QWizard simply checks that the field's current value doesn't equal the original value (the value it had when <a href="qwizard.html#initializePage">initializePage</a>() was called). For <a href="qlineedit.html">QLineEdit</a> and <a href="qabstractspinbox.html">QAbstractSpinBox</a> subclasses, QWizard also checks that <a href="qlineedit.html#acceptableInput-prop">hasAcceptableInput()</a> returns true, to honor any validator or mask.</p>
+<p>QWizard's mandatory field mechanism is provided for convenience. A more powerful (but also more cumbersome) alternative is to reimplement <a href="qwizardpage.html#isComplete">QWizardPage::isComplete</a>() and to emit the <a href="qwizardpage.html#completeChanged">QWizardPage::completeChanged</a>() signal whenever the page becomes complete or incomplete.</p>
+<p>The enabled/disabled state of the <b>Next</b> and/or <b>Finish</b> buttons is one way to perform validation on the user input. Another way is to reimplement <a href="qwizard.html#validateCurrentPage">validateCurrentPage</a>() (or <a href="qwizardpage.html#validatePage">QWizardPage::validatePage</a>()) to perform some last-minute validation (and show an error message if the user has entered incomplete or invalid information). If the function returns true, the next page is shown (or the wizard finishes); otherwise, the current page stays up.</p>
+<a name="creating-linear-wizards"></a>
+<h3>Creating Linear Wizards</h3>
+<p>Most wizards have a linear structure, with page 1 followed by page 2 and so on until the last page. The <a href="dialogs-classwizard.html">Class Wizard</a> example is such a wizard. With QWizard, linear wizards are created by instantiating the <a href="qwizardpage.html">QWizardPage</a>s and inserting them using <a href="qwizard.html#addPage">addPage</a>(). By default, the pages are shown in the order in which they were added. For example:</p>
+<pre> ClassWizard::ClassWizard(QWidget *parent)
+     : QWizard(parent)
+ {
+     addPage(new IntroPage);
+     addPage(new ClassInfoPage);
+     addPage(new CodeStylePage);
+     addPage(new OutputFilesPage);
+     addPage(new ConclusionPage);
+     ...
+ }</pre>
+<p>When a page is about to be shown, QWizard calls <a href="qwizard.html#initializePage">initializePage</a>() (which in turn calls <a href="qwizardpage.html#initializePage">QWizardPage::initializePage</a>()) to fill the page with default values. By default, this function does nothing, but it can be reimplemented to initialize the page's contents based on other pages' fields (see the <a href="#initialize-page">example above</a>).</p>
+<p>If the user presses <b>Back</b>, <a href="qwizard.html#cleanupPage">cleanupPage</a>() is called (which in turn calls <a href="qwizardpage.html#cleanupPage">QWizardPage::cleanupPage</a>()). The default implementation resets the page's fields to their original values (the values they had before <a href="qwizard.html#initializePage">initializePage</a>() was called). If you want the <b>Back</b> button to be non-destructive and keep the values entered by the user, simply enable the <a href="qwizard.html#WizardOption-enum">IndependentPages</a> option.</p>
+<a name="creating-non-linear-wizards"></a>
+<h3>Creating Non-Linear Wizards</h3>
+<p>Some wizards are more complex in that they allow different traversal paths based on the information provided by the user. The <a href="dialogs-licensewizard.html">License Wizard</a> example illustrates this. It provides five wizard pages; depending on which options are selected, the user can reach different pages.</p>
+<p align="center"><img src="images/licensewizard-flow.png" /></p><p>In complex wizards, pages are identified by IDs. These IDs are typically defined using an enum. For example:</p>
+<pre> class LicenseWizard : public QWizard
+ {
+     ...
+     enum { Page_Intro, Page_Evaluate, Page_Register, Page_Details,
+            Page_Conclusion };
+     ...
+ };</pre>
+<p>The pages are inserted using <a href="qwizard.html#setPage">setPage</a>(), which takes an ID and an instance of <a href="qwizardpage.html">QWizardPage</a> (or of a subclass):</p>
+<pre> LicenseWizard::LicenseWizard(QWidget *parent)
+     : QWizard(parent)
+ {
+     setPage(Page_Intro, new IntroPage);
+     setPage(Page_Evaluate, new EvaluatePage);
+     setPage(Page_Register, new RegisterPage);
+     setPage(Page_Details, new DetailsPage);
+     setPage(Page_Conclusion, new ConclusionPage);
+     ...
+ }</pre>
+<p>By default, the pages are shown in increasing ID order. To provide a dynamic order that depends on the options chosen by the user, we must reimplement <a href="qwizardpage.html#nextId">QWizardPage::nextId</a>(). For example:</p>
+<pre> int IntroPage::nextId() const
+ {
+     if (evaluateRadioButton-&gt;isChecked()) {
+         return LicenseWizard::Page_Evaluate;
+     } else {
+         return LicenseWizard::Page_Register;
+     }
+ }
+
+ int EvaluatePage::nextId() const
+ {
+     return LicenseWizard::Page_Conclusion;
+ }
+
+ int RegisterPage::nextId() const
+ {
+     if (upgradeKeyLineEdit-&gt;text().isEmpty()) {
+         return LicenseWizard::Page_Details;
+     } else {
+         return LicenseWizard::Page_Conclusion;
+     }
+ }
+
+ int DetailsPage::nextId() const
+ {
+     return LicenseWizard::Page_Conclusion;
+ }
+
+ int ConclusionPage::nextId() const
+ {
+     return -1;
+ }</pre>
+<p>It would also be possible to put all the logic in one place, in a <a href="qwizard.html#nextId">QWizard::nextId</a>() reimplementation. For example:</p>
+<pre>         int LicenseWizard::nextId() const
+         {
+             switch (currentId()) {
+             case Page_Intro:
+                 if (field(&quot;intro.evaluate&quot;).toBool()) {
+                     return Page_Evaluate;
+                 } else {
+                     return Page_Register;
+                 }
+             case Page_Evaluate:
+                 return Page_Conclusion;
+             case Page_Register:
+                 if (field(&quot;register.upgradeKey&quot;).toString().isEmpty()) {
+                     return Page_Details;
+                 } else {
+                     return Page_Conclusion;
+                 }
+             case Page_Details:
+                 return Page_Conclusion;
+             case Page_Conclusion:
+             default:
+                 return -1;
+             }
+         }</pre>
+<p>To start at another page than the page with the lowest ID, call <a href="qwizard.html#startId-prop">setStartId</a>().</p>
+<p>To test whether a page has been visited or not, call <a href="qwizard.html#hasVisitedPage">hasVisitedPage</a>(). For example:</p>
+<pre> void ConclusionPage::initializePage()
+ {
+     QString licenseText;
+
+     if (wizard()-&gt;hasVisitedPage(LicenseWizard::Page_Evaluate)) {
+         licenseText = tr(&quot;&lt;u&gt;Evaluation License Agreement:&lt;/u&gt; &quot;
+                          &quot;You can use this software for 30 days and make one &quot;
+                          &quot;backup, but you are not allowed to distribute it.&quot;);
+     } else if (wizard()-&gt;hasVisitedPage(LicenseWizard::Page_Details)) {
+         licenseText = tr(&quot;&lt;u&gt;First-Time License Agreement:&lt;/u&gt; &quot;
+                          &quot;You can use this software subject to the license &quot;
+                          &quot;you will receive by email.&quot;);
+     } else {
+         licenseText = tr(&quot;&lt;u&gt;Upgrade License Agreement:&lt;/u&gt; &quot;
+                          &quot;This software is licensed under the terms of your &quot;
+                          &quot;current license.&quot;);
+     }
+     bottomLabel-&gt;setText(licenseText);
+ }</pre>
+<p>See also <a href="qwizardpage.html">QWizardPage</a>, <a href="dialogs-classwizard.html">Class Wizard Example</a>, and <a href="dialogs-licensewizard.html">License Wizard Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="WizardButton-enum"></a>enum QWizard::WizardButton</h3>
+<p>This enum specifies the buttons in a wizard.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QWizard::BackButton</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The <b>Back</b> button (<b>Go Back</b> on Mac OS X)</td></tr>
+<tr><td valign="top"><tt>QWizard::NextButton</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The <b>Next</b> button (<b>Continue</b> on Mac OS X)</td></tr>
+<tr><td valign="top"><tt>QWizard::CommitButton</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The <b>Commit</b> button</td></tr>
+<tr><td valign="top"><tt>QWizard::FinishButton</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The <b>Finish</b> button (<b>Done</b> on Mac OS X)</td></tr>
+<tr><td valign="top"><tt>QWizard::CancelButton</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The <b>Cancel</b> button (see also <a href="qwizard.html#WizardOption-enum">NoCancelButton</a>)</td></tr>
+<tr><td valign="top"><tt>QWizard::HelpButton</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The <b>Help</b> button (see also <a href="qwizard.html#WizardOption-enum">HaveHelpButton</a>)</td></tr>
+<tr><td valign="top"><tt>QWizard::CustomButton1</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The first user-defined button (see also <a href="qwizard.html#WizardOption-enum">HaveCustomButton1</a>)</td></tr>
+<tr><td valign="top"><tt>QWizard::CustomButton2</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The second user-defined button (see also <a href="qwizard.html#WizardOption-enum">HaveCustomButton2</a>)</td></tr>
+<tr><td valign="top"><tt>QWizard::CustomButton3</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">The third user-defined button (see also <a href="qwizard.html#WizardOption-enum">HaveCustomButton3</a>)</td></tr>
+</table></p>
+<p>The following value is only useful when calling <a href="qwizard.html#setButtonLayout">setButtonLayout</a>():</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QWizard::Stretch</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">A horizontal stretch in the button layout</td></tr>
+</table></p>
+<p>See also <a href="qwizard.html#setButton">setButton</a>(), <a href="qwizard.html#setButtonText">setButtonText</a>(), <a href="qwizard.html#setButtonLayout">setButtonLayout</a>(), and <a href="qwizard.html#customButtonClicked">customButtonClicked</a>().</p>
+<h3 class="flags"><a name="WizardOption-enum"></a>enum QWizard::WizardOption<br />flags QWizard::WizardOptions</h3>
+<p>This enum specifies various options that affect the look and feel of a wizard.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QWizard::IndependentPages</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The pages are independent of each other (i.e&#x2e;, they don't derive values from each other).</td></tr>
+<tr><td valign="top"><tt>QWizard::IgnoreSubTitles</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">Don't show any subtitles, even if they are set.</td></tr>
+<tr><td valign="top"><tt>QWizard::ExtendedWatermarkPixmap</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">Extend any <a href="qwizard.html#WizardPixmap-enum">WatermarkPixmap</a> all the way down to the window's edge.</td></tr>
+<tr><td valign="top"><tt>QWizard::NoDefaultButton</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td><td valign="top">Don't make the <b>Next</b> or <b>Finish</b> button the dialog's <a href="qpushbutton.html#default-prop">default button</a>.</td></tr>
+<tr><td valign="top"><tt>QWizard::NoBackButtonOnStartPage</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td><td valign="top">Don't show the <b>Back</b> button on the start page.</td></tr>
+<tr><td valign="top"><tt>QWizard::NoBackButtonOnLastPage</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td><td valign="top">Don't show the <b>Back</b> button on the last page.</td></tr>
+<tr><td valign="top"><tt>QWizard::DisabledBackButtonOnLastPage</tt></td><td align="center" valign="top"><tt>0x00000040</tt></td><td valign="top">Disable the <b>Back</b> button on the last page.</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveNextButtonOnLastPage</tt></td><td align="center" valign="top"><tt>0x00000080</tt></td><td valign="top">Show the (disabled) <b>Next</b> button on the last page.</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveFinishButtonOnEarlyPages</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td><td valign="top">Show the (disabled) <b>Finish</b> button on non-final pages.</td></tr>
+<tr><td valign="top"><tt>QWizard::NoCancelButton</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td><td valign="top">Don't show the <b>Cancel</b> button.</td></tr>
+<tr><td valign="top"><tt>QWizard::CancelButtonOnLeft</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td><td valign="top">Put the <b>Cancel</b> button on the left of <b>Back</b> (rather than on the right of <b>Finish</b> or <b>Next</b>).</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveHelpButton</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td><td valign="top">Show the <b>Help</b> button.</td></tr>
+<tr><td valign="top"><tt>QWizard::HelpButtonOnRight</tt></td><td align="center" valign="top"><tt>0x00001000</tt></td><td valign="top">Put the <b>Help</b> button on the far right of the button layout (rather than on the far left).</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveCustomButton1</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td><td valign="top">Show the first user-defined button (<a href="qwizard.html#WizardButton-enum">CustomButton1</a>).</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveCustomButton2</tt></td><td align="center" valign="top"><tt>0x00004000</tt></td><td valign="top">Show the second user-defined button (<a href="qwizard.html#WizardButton-enum">CustomButton2</a>).</td></tr>
+<tr><td valign="top"><tt>QWizard::HaveCustomButton3</tt></td><td align="center" valign="top"><tt>0x00008000</tt></td><td valign="top">Show the third user-defined button (<a href="qwizard.html#WizardButton-enum">CustomButton3</a>).</td></tr>
+</table></p>
+<p>The WizardOptions type is a typedef for <a href="qflags.html">QFlags</a>&lt;WizardOption&gt;. It stores an OR combination of WizardOption values.</p>
+<p>See also <a href="qwizard.html#options-prop">setOptions</a>(), <a href="qwizard.html#setOption">setOption</a>(), and <a href="qwizard.html#testOption">testOption</a>().</p>
+<h3 class="fn"><a name="WizardPixmap-enum"></a>enum QWizard::WizardPixmap</h3>
+<p>This enum specifies the pixmaps that can be associated with a page.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QWizard::WatermarkPixmap</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The tall pixmap on the left side of a <a href="qwizard.html#WizardStyle-enum">ClassicStyle</a> or <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> page</td></tr>
+<tr><td valign="top"><tt>QWizard::LogoPixmap</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The small pixmap on the right side of a <a href="qwizard.html#WizardStyle-enum">ClassicStyle</a> or <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> page header</td></tr>
+<tr><td valign="top"><tt>QWizard::BannerPixmap</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The pixmap that occupies the background of a <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> page header</td></tr>
+<tr><td valign="top"><tt>QWizard::BackgroundPixmap</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The pixmap that occupies the background of a <a href="qwizard.html#WizardStyle-enum">MacStyle</a> wizard</td></tr>
+</table></p>
+<p>See also <a href="qwizard.html#setPixmap">setPixmap</a>(), <a href="qwizardpage.html#setPixmap">QWizardPage::setPixmap</a>(), and <a href="qwizard.html#elements-of-a-wizard-page">Elements of a Wizard Page</a>.</p>
+<h3 class="fn"><a name="WizardStyle-enum"></a>enum QWizard::WizardStyle</h3>
+<p>This enum specifies the different looks supported by <a href="qwizard.html">QWizard</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QWizard::ClassicStyle</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Classic Windows look</td></tr>
+<tr><td valign="top"><tt>QWizard::ModernStyle</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Modern Windows look</td></tr>
+<tr><td valign="top"><tt>QWizard::MacStyle</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Mac OS X look</td></tr>
+<tr><td valign="top"><tt>QWizard::AeroStyle</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Windows Aero look</td></tr>
+</table></p>
+<p>See also <a href="qwizard.html#wizardStyle-prop">setWizardStyle</a>(), <a href="qwizard.html#WizardOption-enum">WizardOption</a>, and <a href="qwizard.html#wizard-look-and-feel">Wizard Look and Feel</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="currentId-prop"></a>currentId : const int</h3>
+<p>This property holds the ID of the current page.</p>
+<p>This property cannot be set directly. To change the current page, call <a href="qwizard.html#next">next</a>(), <a href="qwizard.html#back">back</a>(), or <a href="qwizard.html#restart">restart</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentId () const</b></li>
+</ul>
+<p>See also <a href="qwizard.html#currentIdChanged">currentIdChanged</a>() and <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<h3 class="fn"><a name="options-prop"></a>options : <a href="qwizard.html#WizardOption-enum">WizardOptions</a></h3>
+<p>This property holds the various options that affect the look and feel of the wizard.</p>
+<p>By default, the following options are set (depending on the platform):</p>
+<ul>
+<li>Windows: <a href="qwizard.html#WizardOption-enum">HelpButtonOnRight</a>.</li>
+<li>Mac OS X: <a href="qwizard.html#WizardOption-enum">NoDefaultButton</a> and <a href="qwizard.html#WizardOption-enum">NoCancelButton</a>.</li>
+<li>X11 and QWS (Qt for Embedded Linux): none.</li>
+</ul>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>WizardOptions options () const</b></li>
+<li><div class="fn"/><b>void setOptions ( WizardOptions <i>options</i> )</b></li>
+</ul>
+<p>See also <a href="qwizard.html#wizardStyle-prop">wizardStyle</a>.</p>
+<h3 class="fn"><a name="startId-prop"></a>startId : int</h3>
+<p>This property holds the ID of the first page.</p>
+<p>If this property isn't explicitly set, this property defaults to the lowest page ID in this wizard, or -1 if no page has been inserted yet.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int startId () const</b></li>
+<li><div class="fn"/><b>void setStartId ( int <i>id</i> )</b></li>
+</ul>
+<p>See also <a href="qwizard.html#restart">restart</a>() and <a href="qwizard.html#nextId">nextId</a>().</p>
+<h3 class="fn"><a name="subTitleFormat-prop"></a>subTitleFormat : <a href="qt.html#TextFormat-enum">Qt::TextFormat</a></h3>
+<p>This property holds the text format used by page subtitles.</p>
+<p>The default format is <a href="qt.html#TextFormat-enum">Qt::AutoText</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::TextFormat subTitleFormat () const</b></li>
+<li><div class="fn"/><b>void setSubTitleFormat ( Qt::TextFormat <i>format</i> )</b></li>
+</ul>
+<p>See also <a href="qwizardpage.html#title-prop">QWizardPage::title</a> and <a href="qwizard.html#titleFormat-prop">titleFormat</a>.</p>
+<h3 class="fn"><a name="titleFormat-prop"></a>titleFormat : <a href="qt.html#TextFormat-enum">Qt::TextFormat</a></h3>
+<p>This property holds the text format used by page titles.</p>
+<p>The default format is <a href="qt.html#TextFormat-enum">Qt::AutoText</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::TextFormat titleFormat () const</b></li>
+<li><div class="fn"/><b>void setTitleFormat ( Qt::TextFormat <i>format</i> )</b></li>
+</ul>
+<p>See also <a href="qwizardpage.html#title-prop">QWizardPage::title</a> and <a href="qwizard.html#subTitleFormat-prop">subTitleFormat</a>.</p>
+<h3 class="fn"><a name="wizardStyle-prop"></a>wizardStyle : <a href="qwizard.html#WizardStyle-enum">WizardStyle</a></h3>
+<p>This property holds the look and feel of the wizard.</p>
+<p>By default, <a href="qwizard.html">QWizard</a> uses the <a href="qwizard.html#WizardStyle-enum">AeroStyle</a> on a Windows Vista system with alpha compositing enabled, regardless of the current widget style. If this is not the case, the default wizard style depends on the current widget style as follows: <a href="qwizard.html#WizardStyle-enum">MacStyle</a> is the default if the current widget style is QMacStyle, <a href="qwizard.html#WizardStyle-enum">ModernStyle</a> is the default if the current widget style is <a href="qwindowsstyle.html">QWindowsStyle</a>, and <a href="qwizard.html#WizardStyle-enum">ClassicStyle</a> is the default in all other cases.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>WizardStyle wizardStyle () const</b></li>
+<li><div class="fn"/><b>void setWizardStyle ( WizardStyle <i>style</i> )</b></li>
+</ul>
+<p>See also <a href="qwizard.html#wizard-look-and-feel">Wizard Look and Feel</a> and <a href="qwizard.html#options-prop">options</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWizard"></a>QWizard::QWizard ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )</h3>
+<p>Constructs a wizard with the given <i>parent</i> and window <i>flags</i>.</p>
+<p>See also <a href="qobject.html#parent">parent</a>() and <a href="qwidget.html#windowFlags-prop">windowFlags</a>().</p>
+<h3 class="fn"><a name="dtor.QWizard"></a>QWizard::~QWizard ()</h3>
+<p>Destroys the wizard and its pages, releasing any allocated resources.</p>
+<h3 class="fn"><a name="addPage"></a>int QWizard::addPage ( <a href="qwizardpage.html">QWizardPage</a> * <i>page</i> )</h3>
+<p>Adds the given <i>page</i> to the wizard, and returns the page's ID.</p>
+<p>The ID is guaranteed to be larger than any other ID in the <a href="qwizard.html">QWizard</a> so far.</p>
+<p>See also <a href="qwizard.html#setPage">setPage</a>() and <a href="qwizard.html#page">page</a>().</p>
+<h3 class="fn"><a name="back"></a>void QWizard::back ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Goes back to the previous page.</p>
+<p>This is equivalent to pressing the <b>Back</b> button.</p>
+<p>See also <a href="qwizard.html#next">next</a>(), <a href="qdialog.html#accept">accept</a>(), <a href="qdialog.html#reject">reject</a>(), and <a href="qwizard.html#restart">restart</a>().</p>
+<h3 class="fn"><a name="button"></a><a href="qabstractbutton.html">QAbstractButton</a> * QWizard::button ( <a href="qwizard.html#WizardButton-enum">WizardButton</a> <i>which</i> ) const</h3>
+<p>Returns the button corresponding to role <i>which</i>.</p>
+<p>See also <a href="qwizard.html#setButton">setButton</a>() and <a href="qwizard.html#setButtonText">setButtonText</a>().</p>
+<h3 class="fn"><a name="buttonText"></a><a href="qstring.html">QString</a> QWizard::buttonText ( <a href="qwizard.html#WizardButton-enum">WizardButton</a> <i>which</i> ) const</h3>
+<p>Returns the text on button <i>which</i>.</p>
+<p>If a text has ben set using <a href="qwizard.html#setButtonText">setButtonText</a>(), this text is returned.</p>
+<p>By default, the text on buttons depends on the <a href="qwizard.html#wizardStyle-prop">wizardStyle</a>. For example, on Mac OS X, the <b>Next</b> button is called <b>Continue</b>.</p>
+<p>See also <a href="qwizard.html#button">button</a>(), <a href="qwizard.html#setButton">setButton</a>(), <a href="qwizard.html#setButtonText">setButtonText</a>(), <a href="qwizardpage.html#buttonText">QWizardPage::buttonText</a>(), and <a href="qwizardpage.html#setButtonText">QWizardPage::setButtonText</a>().</p>
+<h3 class="fn"><a name="cleanupPage"></a>void QWizard::cleanupPage ( int <i>id</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called by <a href="qwizard.html">QWizard</a> to clean up page <i>id</i> just before the user leaves it by clicking <b>Back</b> (unless the <a href="qwizard.html#WizardOption-enum">QWizard::IndependentPages</a> option is set).</p>
+<p>The default implementation calls <a href="qwizardpage.html#cleanupPage">QWizardPage::cleanupPage</a>() on page(<i>id</i>).</p>
+<p>See also <a href="qwizardpage.html#cleanupPage">QWizardPage::cleanupPage</a>() and <a href="qwizard.html#initializePage">initializePage</a>().</p>
+<h3 class="fn"><a name="currentIdChanged"></a>void QWizard::currentIdChanged ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the current page changes, with the new current <i>id</i>.</p>
+<p>See also <a href="qwizard.html#currentId-prop">currentId</a>() and <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<h3 class="fn"><a name="currentPage"></a><a href="qwizardpage.html">QWizardPage</a> * QWizard::currentPage () const</h3>
+<p>Returns a pointer to the current page, or 0 if there is no current page (e.g&#x2e;, before the wizard is shown).</p>
+<p>This is equivalent to calling page(<a href="qwizard.html#currentId-prop">currentId</a>()).</p>
+<p>See also <a href="qwizard.html#page">page</a>(), <a href="qwizard.html#currentId-prop">currentId</a>(), and <a href="qwizard.html#restart">restart</a>().</p>
+<h3 class="fn"><a name="customButtonClicked"></a>void QWizard::customButtonClicked ( int <i>which</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user clicks a custom button. <i>which</i> can be <a href="qwizard.html#WizardButton-enum">CustomButton1</a>, <a href="qwizard.html#WizardButton-enum">CustomButton2</a>, or <a href="qwizard.html#WizardButton-enum">CustomButton3</a>.</p>
+<p>By default, no custom button is shown. Call <a href="qwizard.html#setOption">setOption</a>() with <a href="qwizard.html#WizardOption-enum">HaveCustomButton1</a>, <a href="qwizard.html#WizardOption-enum">HaveCustomButton2</a>, or <a href="qwizard.html#WizardOption-enum">HaveCustomButton3</a> to have one, and use <a href="qwizard.html#setButtonText">setButtonText</a>() or <a href="qwizard.html#setButton">setButton</a>() to configure it.</p>
+<p>See also <a href="qwizard.html#helpRequested">helpRequested</a>().</p>
+<h3 class="fn"><a name="field"></a><a href="qvariant.html">QVariant</a> QWizard::field ( const <a href="qstring.html">QString</a> &amp; <i>name</i> ) const</h3>
+<p>Returns the value of the field called <i>name</i>.</p>
+<p>This function can be used to access fields on any page of the wizard.</p>
+<p>See also <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>(), <a href="qwizardpage.html#field">QWizardPage::field</a>(), and <a href="qwizard.html#setField">setField</a>().</p>
+<h3 class="fn"><a name="hasVisitedPage"></a>bool QWizard::hasVisitedPage ( int <i>id</i> ) const</h3>
+<p>Returns true if the page history contains page <i>id</i>; otherwise, returns false.</p>
+<p>Pressing <b>Back</b> marks the current page as &quot;unvisited&quot; again.</p>
+<p>See also <a href="qwizard.html#visitedPages">visitedPages</a>().</p>
+<h3 class="fn"><a name="helpRequested"></a>void QWizard::helpRequested ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user clicks the <b>Help</b> button.</p>
+<p>By default, no <b>Help</b> button is shown. Call setOption(<a href="qwizard.html#WizardOption-enum">HaveHelpButton</a>, true) to have one.</p>
+<p>Example:</p>
+<pre> LicenseWizard::LicenseWizard(QWidget *parent)
+     : QWizard(parent)
+ {
+     ...
+     setOption(HaveHelpButton, true);
+     connect(this, SIGNAL(helpRequested()), this, SLOT(showHelp()));
+     ...
+ }
+
+ void LicenseWizard::showHelp()
+ {
+     static QString lastHelpMessage;
+
+     QString message;
+
+     switch (currentId()) {
+     case Page_Intro:
+         message = tr(&quot;The decision you make here will affect which page you &quot;
+                      &quot;get to see next.&quot;);
+         break;
+     ...
+     default:
+         message = tr(&quot;This help is likely not to be of any help.&quot;);
+     }
+
+     QMessageBox::information(this, tr(&quot;License Wizard Help&quot;), message);
+
+ }</pre>
+<p>See also <a href="qwizard.html#customButtonClicked">customButtonClicked</a>().</p>
+<h3 class="fn"><a name="initializePage"></a>void QWizard::initializePage ( int <i>id</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called by <a href="qwizard.html">QWizard</a> to prepare page <i>id</i> just before it is shown as a result of the user clicking <b>Next</b>. (However, if the <a href="qwizard.html#WizardOption-enum">QWizard::IndependentPages</a> option is set, this function is only called the first time the page is shown.)</p>
+<p>By reimplementing this function, you can ensure that the page's fields are properly initialized based on fields from previous pages.</p>
+<p>The default implementation calls <a href="qwizardpage.html#initializePage">QWizardPage::initializePage</a>() on page(<i>id</i>).</p>
+<p>See also <a href="qwizardpage.html#initializePage">QWizardPage::initializePage</a>() and <a href="qwizard.html#cleanupPage">cleanupPage</a>().</p>
+<h3 class="fn"><a name="next"></a>void QWizard::next ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Advances to the next page.</p>
+<p>This is equivalent to pressing the <b>Next</b> or <b>Commit</b> button.</p>
+<p>See also <a href="qwizard.html#nextId">nextId</a>(), <a href="qwizard.html#back">back</a>(), <a href="qdialog.html#accept">accept</a>(), <a href="qdialog.html#reject">reject</a>(), and <a href="qwizard.html#restart">restart</a>().</p>
+<h3 class="fn"><a name="nextId"></a>int QWizard::nextId () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is called by <a href="qwizard.html">QWizard</a> to find out which page to show when the user clicks the <b>Next</b> button.</p>
+<p>The default implementation calls <a href="qwizardpage.html#nextId">QWizardPage::nextId</a>() on the <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<p>See also <a href="qwizardpage.html#nextId">QWizardPage::nextId</a>() and <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<h3 class="fn"><a name="page"></a><a href="qwizardpage.html">QWizardPage</a> * QWizard::page ( int <i>id</i> ) const</h3>
+<p>Returns the page with the given <i>id</i>, or 0 if there is no such page.</p>
+<p>See also <a href="qwizard.html#addPage">addPage</a>() and <a href="qwizard.html#setPage">setPage</a>().</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QWizard::pixmap ( <a href="qwizard.html#WizardPixmap-enum">WizardPixmap</a> <i>which</i> ) const</h3>
+<p>Returns the pixmap set for role <i>which</i>.</p>
+<p>By default, the only pixmap that is set is the <a href="qwizard.html#WizardPixmap-enum">BackgroundPixmap</a> on Mac OS X.</p>
+<p>See also <a href="qwizard.html#setPixmap">setPixmap</a>(), <a href="qwizardpage.html#pixmap">QWizardPage::pixmap</a>(), and <a href="qwizard.html#elements-of-a-wizard-page">Elements of a Wizard Page</a>.</p>
+<h3 class="fn"><a name="restart"></a>void QWizard::restart ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Restarts the wizard at the start page.</p>
+<p>See also <a href="qwizard.html#startId-prop">startId</a>().</p>
+<h3 class="fn"><a name="setButton"></a>void QWizard::setButton ( <a href="qwizard.html#WizardButton-enum">WizardButton</a> <i>which</i>, <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )</h3>
+<p>Sets the button corresponding to role <i>which</i> to <i>button</i>.</p>
+<p>To add extra buttons to the wizard (e.g&#x2e;, a <b>Print</b> button), one way is to call setButton() with <a href="qwizard.html#WizardButton-enum">CustomButton1</a> to <a href="qwizard.html#WizardButton-enum">CustomButton3</a>, and make the buttons visible using the <a href="qwizard.html#WizardOption-enum">HaveCustomButton1</a> to <a href="qwizard.html#WizardOption-enum">HaveCustomButton3</a> options.</p>
+<p>See also <a href="qwizard.html#button">button</a>(), <a href="qwizard.html#setButtonText">setButtonText</a>(), <a href="qwizard.html#setButtonLayout">setButtonLayout</a>(), and <a href="qwizard.html#options-prop">options</a>.</p>
+<h3 class="fn"><a name="setButtonLayout"></a>void QWizard::setButtonLayout ( const <a href="qlist.html">QList</a>&lt;<a href="qwizard.html#WizardButton-enum">WizardButton</a>&gt; &amp; <i>layout</i> )</h3>
+<p>Sets the order in which buttons are displayed to <i>layout</i>, where <i>layout</i> is a list of <a href="qwizard.html#WizardButton-enum">WizardButton</a>s.</p>
+<p>The default layout depends on the options (e.g&#x2e;, whether <a href="qwizard.html#WizardOption-enum">HelpButtonOnRight</a>) that are set. You can call this function if you need more control over the buttons' layout than what <a href="qwizard.html#options-prop">options</a> already provides.</p>
+<p>You can specify horizontal stretches in the layout using <a href="qwizard.html#WizardButton-enum">Stretch</a>.</p>
+<p>Example:</p>
+<pre>         MyWizard::MyWizard(QWidget *parent)
+             : QWizard(parent)
+         {
+             ...
+             QList&lt;QWizard::WizardButton&gt; layout;
+             layout &lt;&lt; QWizard::Stretch &lt;&lt; QWizard::BackButton &lt;&lt; QWizard::CancelButton
+                    &lt;&lt; QWizard::NextButton &lt;&lt; QWizard::FinishButton;
+             setButtonLayout(layout);
+             ...
+         }</pre>
+<p>See also <a href="qwizard.html#setButton">setButton</a>(), <a href="qwizard.html#setButtonText">setButtonText</a>(), and <a href="qwizard.html#options-prop">setOptions</a>().</p>
+<h3 class="fn"><a name="setButtonText"></a>void QWizard::setButtonText ( <a href="qwizard.html#WizardButton-enum">WizardButton</a> <i>which</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the text on button <i>which</i> to be <i>text</i>.</p>
+<p>By default, the text on buttons depends on the <a href="qwizard.html#wizardStyle-prop">wizardStyle</a>. For example, on Mac OS X, the <b>Next</b> button is called <b>Continue</b>.</p>
+<p>To add extra buttons to the wizard (e.g&#x2e;, a <b>Print</b> button), one way is to call setButtonText() with <a href="qwizard.html#WizardButton-enum">CustomButton1</a>, <a href="qwizard.html#WizardButton-enum">CustomButton2</a>, or <a href="qwizard.html#WizardButton-enum">CustomButton3</a> to set their text, and make the buttons visible using the <a href="qwizard.html#WizardOption-enum">HaveCustomButton1</a>, <a href="qwizard.html#WizardOption-enum">HaveCustomButton2</a>, and/or <a href="qwizard.html#WizardOption-enum">HaveCustomButton3</a> options.</p>
+<p>Button texts may also be set on a per-page basis using <a href="qwizardpage.html#setButtonText">QWizardPage::setButtonText</a>().</p>
+<p>See also <a href="qwizard.html#buttonText">buttonText</a>(), <a href="qwizard.html#setButton">setButton</a>(), <a href="qwizard.html#button">button</a>(), <a href="qwizard.html#setButtonLayout">setButtonLayout</a>(), <a href="qwizard.html#options-prop">setOptions</a>(), and <a href="qwizardpage.html#setButtonText">QWizardPage::setButtonText</a>().</p>
+<h3 class="fn"><a name="setDefaultProperty"></a>void QWizard::setDefaultProperty ( const char * <i>className</i>, const char * <i>property</i>, const char * <i>changedSignal</i> )</h3>
+<p>Sets the default property for <i>className</i> to be <i>property</i>, and the associated change signal to be <i>changedSignal</i>.</p>
+<p>The default property is used when an instance of <i>className</i> (or of one of its subclasses) is passed to <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>() and no property is specified.</p>
+<p><a href="qwizard.html">QWizard</a> knows the most common Qt widgets. For these (or their subclasses), you don't need to specify a <i>property</i> or a <i>changedSignal</i>. The table below lists these widgets:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Widget</th><th>Property</th><th>Change Notification Signal</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qabstractbutton.html">QAbstractButton</a></td><td>bool <a href="qabstractbutton.html#checked-prop">checked</a></td><td><a href="qabstractbutton.html#toggled">toggled()</a></td></tr>
+<tr valign="top" class="even"><td><a href="qabstractslider.html">QAbstractSlider</a></td><td>int <a href="qabstractslider.html#value-prop">value</a></td><td><a href="qabstractslider.html#valueChanged">valueChanged()</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qcombobox.html">QComboBox</a></td><td>int <a href="qcombobox.html#currentIndex-prop">currentIndex</a></td><td><a href="qcombobox.html#currentIndexChanged">currentIndexChanged()</a></td></tr>
+<tr valign="top" class="even"><td><a href="qdatetimeedit.html">QDateTimeEdit</a></td><td><a href="qdatetime.html">QDateTime</a> <a href="qdatetimeedit.html#dateTime-prop">dateTime</a></td><td><a href="qdatetimeedit.html#dateTimeChanged">dateTimeChanged()</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qlineedit.html">QLineEdit</a></td><td><a href="qstring.html">QString</a> <a href="qlineedit.html#text-prop">text</a></td><td><a href="qlineedit.html#textChanged">textChanged()</a></td></tr>
+<tr valign="top" class="even"><td><a href="qlistwidget.html">QListWidget</a></td><td>int <a href="qlistwidget.html#currentRow-prop">currentRow</a></td><td><a href="qlistwidget.html#currentRowChanged">currentRowChanged()</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qspinbox.html">QSpinBox</a></td><td>int <a href="qspinbox.html#value-prop">value</a></td><td><a href="qspinbox.html#valueChanged">valueChanged()</a></td></tr>
+</table></p>
+<p>See also <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>().</p>
+<h3 class="fn"><a name="setField"></a>void QWizard::setField ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Sets the value of the field called <i>name</i> to <i>value</i>.</p>
+<p>This function can be used to set fields on any page of the wizard.</p>
+<p>See also <a href="qwizardpage.html#registerField">QWizardPage::registerField</a>(), <a href="qwizardpage.html#setField">QWizardPage::setField</a>(), and <a href="qwizard.html#field">field</a>().</p>
+<h3 class="fn"><a name="setOption"></a>void QWizard::setOption ( <a href="qwizard.html#WizardOption-enum">WizardOption</a> <i>option</i>, bool <i>on</i> = true )</h3>
+<p>Sets the given <i>option</i> to be enabled if <i>on</i> is true; otherwise, clears the given <i>option</i>.</p>
+<p>See also <a href="qwizard.html#options-prop">options</a>, <a href="qwizard.html#testOption">testOption</a>(), and <a href="qwizard.html#wizardStyle-prop">setWizardStyle</a>().</p>
+<h3 class="fn"><a name="setPage"></a>void QWizard::setPage ( int <i>id</i>, <a href="qwizardpage.html">QWizardPage</a> * <i>page</i> )</h3>
+<p>Adds the given <i>page</i> to the wizard with the given <i>id</i>.</p>
+<p>See also <a href="qwizard.html#addPage">addPage</a>() and <a href="qwizard.html#page">page</a>().</p>
+<h3 class="fn"><a name="setPixmap"></a>void QWizard::setPixmap ( <a href="qwizard.html#WizardPixmap-enum">WizardPixmap</a> <i>which</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Sets the pixmap for role <i>which</i> to <i>pixmap</i>.</p>
+<p>The pixmaps are used by <a href="qwizard.html">QWizard</a> when displaying a page. Which pixmaps are actually used depend on the <a href="qwizard.html#wizard-look-and-feel">wizard style</a>.</p>
+<p>Pixmaps can also be set for a specific page using <a href="qwizardpage.html#setPixmap">QWizardPage::setPixmap</a>().</p>
+<p>See also <a href="qwizard.html#pixmap">pixmap</a>(), <a href="qwizardpage.html#setPixmap">QWizardPage::setPixmap</a>(), and <a href="qwizard.html#elements-of-a-wizard-page">Elements of a Wizard Page</a>.</p>
+<h3 class="fn"><a name="testOption"></a>bool QWizard::testOption ( <a href="qwizard.html#WizardOption-enum">WizardOption</a> <i>option</i> ) const</h3>
+<p>Returns true if the given <i>option</i> is enabled; otherwise, returns false.</p>
+<p>See also <a href="qwizard.html#options-prop">options</a>, <a href="qwizard.html#setOption">setOption</a>(), and <a href="qwizard.html#wizardStyle-prop">setWizardStyle</a>().</p>
+<h3 class="fn"><a name="validateCurrentPage"></a>bool QWizard::validateCurrentPage ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is called by <a href="qwizard.html">QWizard</a> when the user clicks <b>Next</b> or <b>Finish</b> to perform some last-minute validation. If it returns true, the next page is shown (or the wizard finishes); otherwise, the current page stays up.</p>
+<p>The default implementation calls <a href="qwizardpage.html#validatePage">QWizardPage::validatePage</a>() on the <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<p>When possible, it is usually better style to disable the <b>Next</b> or <b>Finish</b> button (by specifying <a href="qwizard.html#mandatory-fields">mandatory fields</a> or by reimplementing <a href="qwizardpage.html#isComplete">QWizardPage::isComplete</a>()) than to reimplement validateCurrentPage().</p>
+<p>See also <a href="qwizardpage.html#validatePage">QWizardPage::validatePage</a>() and <a href="qwizard.html#currentPage">currentPage</a>().</p>
+<h3 class="fn"><a name="visitedPages"></a><a href="qlist.html">QList</a>&lt;int&gt; QWizard::visitedPages () const</h3>
+<p>Returns the list of visited pages, in the order in which they were visited.</p>
+<p>Pressing <b>Back</b> marks the current page as &quot;unvisited&quot; again.</p>
+<p>See also <a href="qwizard.html#hasVisitedPage">hasVisitedPage</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

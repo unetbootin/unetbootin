@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Handling Selections in Item Views</title>
+  <link rel="prev" href="model-view-view.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-delegate.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-view.html">View Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-delegate.html">Delegate Classes</a>]
+</p>
+<h1 class="title">Handling Selections in Item Views<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#concepts">Concepts</a></li>
+<li><a href="#using-a-selection-model">Using a Selection Model</a></li>
+<ul><li><a href="#selecting-items">Selecting Items</a></li>
+<li><a href="#reading-the-selection-state">Reading the Selection State</a></li>
+<li><a href="#updating-a-selection">Updating a Selection</a></li>
+<li><a href="#selecting-all-items-in-a-model">Selecting All Items in a Model</a></li>
+</ul>
+</ul>
+<a name="concepts"></a>
+<h2>Concepts</h2>
+<p>The selection model used in the new item view classes offers many improvements over the selection model used in Qt 3. It provides a more general description of selections based on the facilities of the model/view architecture. Although the standard classes for manipulating selections are sufficient for the item views provided, the selection model allows you to create specialized selection models to suit the requirements for your own item models and views.</p>
+<p>Information about the items selected in a view is stored in an instance of the <a href="qitemselectionmodel.html">QItemSelectionModel</a> class. This maintains model indexes for items in a single model, and is independent of any views. Since there can be many views onto a model, it is possible to share selections between views, allowing applications to show multiple views in a consistent way.</p>
+<p>Selections are made up of <i>selection ranges</i>. These efficiently maintain information about large selections of items by recording only the starting and ending model indexes for each range of selected items. Non-contiguous selections of items are constructed by using more than one selection range to describe the selection.</p>
+<p>Selections are applied to a collection of model indexes held by a selection model. The most recent selection of items applied is known as the <i>current selection</i>. The effects of this selection can be modified even after its application through the use of certain types of selection commands. These are discussed later in this section.</p>
+<p>When manipulating selections, it is often helpful to think of <a href="qitemselectionmodel.html">QItemSelectionModel</a> as a record of the selection state of all the items in an item model. Once a selection model is set up, collections of items can be selected, deselected, or their selection states can be toggled without the need to know which items are already selected. The indexes of all selected items can be retrieved at any time, and other components can be informed of changes to the selection model via the signals and slots mechanism.</p>
+<a name="using-a-selection-model"></a>
+<h2>Using a Selection Model</h2>
+<p>The standard view classes provide default selection models that can be used in most applications. A selection model belonging to one view can be obtained using the view's <a href="qabstractitemview.html#selectionModel">selectionModel()</a> function, and shared between many views with <a href="qabstractitemview.html#setSelectionModel">setSelectionModel()</a>, so the construction of new selection models is generally not required.</p>
+<p>A selection is created by specifying a model, and a pair of model indexes to a <a href="qitemselection.html">QItemSelection</a>. This uses the indexes to refer to items in the given model, and interprets them as the top-left and bottom-right items in a block of selected items. To apply the selection to items in a model requires the selection to be submitted to a selection model; this can be achieved in a number of ways, each having a different effect on the selections already present in the selection model.</p>
+<a name="selecting-items"></a>
+<h3>Selecting Items</h3>
+<p>To demonstrate some of the principal features of selections, we construct an instance of a custom table model with 32 items in total, and open a table view onto its data:</p>
+<pre>     TableModel *model = new TableModel(8, 4, &amp;app);
+
+     QTableView *table = new QTableView(0);
+     table-&gt;setModel(model);
+
+     QItemSelectionModel *selectionModel = table-&gt;selectionModel();</pre>
+<p>The table view's default selection model is retrieved for later use. We do not modify any items in the model, but instead select a few items that the view will display at the top-left of the table. To do this, we need to retrieve the model indexes corresponding to the top-left and bottom-right items in the region to be selected:</p>
+<pre>     QModelIndex topLeft;
+     QModelIndex bottomRight;
+
+     topLeft = model-&gt;index(0, 0, QModelIndex());
+     bottomRight = model-&gt;index(5, 2, QModelIndex());</pre>
+<p>To select these items in the model, and see the corresponding change in the table view, we need to construct a selection object then apply it to the selection model:</p>
+<pre>     QItemSelection selection(topLeft, bottomRight);
+     selectionModel-&gt;select(selection, QItemSelectionModel::Select);</pre>
+<p>The selection is applied to the selection model using a command defined by a combination of <a href="qitemselectionmodel.html#SelectionFlag-enum">selection flags</a>. In this case, the flags used cause the items recorded in the selection object to be included in the selection model, regardless of their previous state. The resulting selection is shown by the view.</p>
+<p align="center"><img src="images/selected-items1.png" /></p><p>The selection of items can be modified using various operations that are defined by the selection flags. The selection that results from these operations may have a complex structure, but will be represented efficiently by the selection model. The use of different selection flags to manipulate the selected items is described when we examine how to update a selection.</p>
+<a name="reading-the-selection-state"></a>
+<h3>Reading the Selection State</h3>
+<p>The model indexes stored in the selection model can be read using the <a href="qitemselectionmodel.html#selectedIndexes">selectedIndexes()</a> function. This returns an unsorted list of model indexes that we can iterate over as long as we know which model they are for:</p>
+<pre>     QModelIndexList indexes = selectionModel-&gt;selectedIndexes();
+     QModelIndex index;
+
+     foreach(index, indexes) {
+         QString text = QString(&quot;(%1,%2)&quot;).arg(index.row()).arg(index.column());
+         model-&gt;setData(index, text);
+     }</pre>
+<p>The above code uses Qt's convenient <a href="containers.html">foreach keyword</a> to iterate over, and modify, the items corresponding to the indexes returned by the selection model.</p>
+<p>The selection model emits signals to indicate changes in the selection. These notify other components about changes to both the selection as a whole and the currently focused item in the item model. We can connect the <a href="qitemselectionmodel.html#selectionChanged">selectionChanged()</a> signal to a slot, and examine the items in the model that are selected or deselected when the selection changes. The slot is called with two <a href="qitemselection.html">QItemSelection</a> objects: one contains a list of indexes that correspond to newly selected items; the other contains indexes that correspond to newly deselected items.</p>
+<p>In the following code, we provide a slot that receives the <a href="qitemselectionmodel.html#selectionChanged">selectionChanged()</a> signal, fills in the selected items with a string, and clears the contents of the deselected items.</p>
+<pre> void MainWindow::updateSelection(const QItemSelection &amp;selected,
+     const QItemSelection &amp;deselected)
+ {
+     QModelIndex index;
+     QModelIndexList items = selected.indexes();
+
+     foreach (index, items) {
+         QString text = QString(&quot;(%1,%2)&quot;).arg(index.row()).arg(index.column());
+         model-&gt;setData(index, text);
+     }
+
+     items = deselected.indexes();
+
+     foreach (index, items)
+         model-&gt;setData(index, &quot;&quot;);
+ }</pre>
+<p>We can keep track of the currently focused item by connecting the <a href="qitemselectionmodel.html#currentChanged">currentChanged()</a> signal to a slot that is called with two model indexes. These correspond to the previously focused item, and the currently focused item.</p>
+<p>In the following code, we provide a slot that receives the <a href="qitemselectionmodel.html#currentChanged">currentChanged()</a> signal, and uses the information provided to update the status bar of a <a href="qmainwindow.html">QMainWindow</a>:</p>
+<pre> void MainWindow::changeCurrent(const QModelIndex &amp;current,
+     const QModelIndex &amp;previous)
+ {
+     statusBar()-&gt;showMessage(
+         tr(&quot;Moved from (%1,%2) to (%3,%4)&quot;)
+             .arg(previous.row()).arg(previous.column())
+             .arg(current.row()).arg(current.column()));
+ }</pre>
+<p>Monitoring selections made by the user is straightforward with these signals, but we can also update the selection model directly.</p>
+<a name="updating-a-selection"></a>
+<h3>Updating a Selection</h3>
+<p>Selection commands are provided by a combination of selection flags, defined by <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlag</a>. Each selection flag tells the selection model how to update its internal record of selected items when either of the <a href="qitemselection.html#select">select()</a> functions are called. The most commonly used flag is the <a href="qitemselectionmodel.html#SelectionFlag-enum">Select</a> flag which instructs the selection model to record the specified items as being selected. The <a href="qitemselectionmodel.html#SelectionFlag-enum">Toggle</a> flag causes the selection model to invert the state of the specified items, selecting any deselected items given, and deselecting any currently selected items. The <a href="qitemselectionmodel.html#SelectionFlag-enum">Deselect</a> flag deselects all the specified items.</p>
+<p>Individual items in the selection model are updated by creating a selection of items, and applying them to the selection model. In the following code, we apply a second selection of items to the table model shown above, using the <a href="qitemselectionmodel.html#SelectionFlag-enum">Toggle</a> command to invert the selection state of the items given.</p>
+<pre>     QItemSelection toggleSelection;
+
+     topLeft = model-&gt;index(2, 1, QModelIndex());
+     bottomRight = model-&gt;index(7, 3, QModelIndex());
+     toggleSelection.select(topLeft, bottomRight);
+
+     selectionModel-&gt;select(toggleSelection, QItemSelectionModel::Toggle);</pre>
+<p>The results of this operation are displayed in the table view, providing a convenient way of visualizing what we have achieved:</p>
+<p align="center"><img src="images/selected-items2.png" /></p><p>By default, the selection commands only operate on the individual items specified by the model indexes. However, the flag used to describe the selection command can be combined with additional flags to change entire rows and columns. For example if you call <a href="qitemselectionmodel.html#select">select()</a> with only one index, but with a command that is a combination of <a href="qitemselectionmodel.html#SelectionFlag-enum">Select</a> and <a href="qitemselectionmodel.html#SelectionFlag-enum">Rows</a>, the entire row containing the item referred to will be selected. The following code demonstrates the use of the <a href="qitemselectionmodel.html#SelectionFlag-enum">Rows</a> and <a href="qitemselectionmodel.html#SelectionFlag-enum">Columns</a> flags:</p>
+<pre>     QItemSelection columnSelection;
+
+     topLeft = model-&gt;index(0, 1, QModelIndex());
+     bottomRight = model-&gt;index(0, 2, QModelIndex());
+
+     columnSelection.select(topLeft, bottomRight);
+
+     selectionModel-&gt;select(columnSelection,
+         QItemSelectionModel::Select | QItemSelectionModel::Columns);
+
+     QItemSelection rowSelection;
+
+     topLeft = model-&gt;index(0, 0, QModelIndex());
+     bottomRight = model-&gt;index(1, 0, QModelIndex());
+
+     rowSelection.select(topLeft, bottomRight);
+
+     selectionModel-&gt;select(rowSelection,
+         QItemSelectionModel::Select | QItemSelectionModel::Rows);</pre>
+<p>Although only four indexes are supplied to the selection model, the use of the <a href="qitemselectionmodel.html#SelectionFlag-enum">Columns</a> and <a href="qitemselectionmodel.html#SelectionFlag-enum">Rows</a> selection flags means that two columns and two rows are selected. The following image shows the result of these two selections:</p>
+<p align="center"><img src="images/selected-items3.png" /></p><p>The commands performed on the example model have all involved accumulating a selection of items in the model. It is also possible to clear the selection, or to replace the current selection with a new one.</p>
+<p>To replace the current selection with a new selection, combine the other selection flags with the <a href="qitemselectionmodel.html#SelectionFlag-enum">Current</a> flag. A command using this flag instructs the selection model to replace its current collection of model indexes with those specified in a call to <a href="qitemselectionmodel.html#select">select()</a>. To clear all selections before you start adding new ones, combine the other selection flags with the <a href="qitemselectionmodel.html#SelectionFlag-enum">Clear</a> flag. This has the effect of resetting the selection model's collection of model indexes.</p>
+<a name="selecting-all-items-in-a-model"></a>
+<h3>Selecting All Items in a Model</h3>
+<p>To select all items in a model, it is necessary to create a selection for each level of the model that covers all items in that level. We do this by retrieving the indexes corresponding to the top-left and bottom-right items with a given parent index:</p>
+<pre>     QModelIndex topLeft = model-&gt;index(0, 0, parent);
+     QModelIndex bottomRight = model-&gt;index(model-&gt;rowCount(parent)-1,
+         model-&gt;columnCount(parent)-1, parent);</pre>
+<p>A selection is constructed with these indexes and the model. The corresponding items are then selected in the selection model:</p>
+<pre>     QItemSelection selection(topLeft, bottomRight);
+     selectionModel-&gt;select(selection, QItemSelectionModel::Select);</pre>
+<p>This needs to be performed for all levels in the model. For top-level items, we would define the parent index in the usual way:</p>
+<pre>     QModelIndex parent = QModelIndex();</pre>
+<p>For hierarchical models, the <a href="qabstractitemmodel.html#hasChildren">hasChildren()</a> function is used to determine whether any given item is the parent of another level of items.</p>
+<p>
+[Previous: <a href="model-view-view.html">View Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-delegate.html">Delegate Classes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

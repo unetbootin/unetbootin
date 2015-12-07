@@ -1,0 +1,145 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! 
+    \page activeqt-dumpcpp.html
+    \title The dumpcpp Tool (ActiveQt)
+
+    \ingroup activeqt-tools
+
+    \keyword dumpcpp
+
+    The \c dumpcpp tool generates a C++ namespace for a type library.
+
+    To generate a C++ namespace for a type library, call \c dumpcpp with the following 
+    command line parameters:
+
+    \table
+    \header
+    \i Option
+    \i Result
+    \row
+    \i input
+    \i Generate documentation for \e input. \e input can specify a type library file or a type 
+    library ID, or a CLSID or ProgID for an object
+    \row
+    \i -o file
+    \i Writes the class declaration to \e {file}.h and meta object infomation to \e {file}.cpp
+    \row
+    \i -n namespace
+    \i Generate a C++ namespace \e namespace
+    \row
+    \i -nometaobject
+    \i Do not generate a .cpp file with the meta object information. 
+    The meta object is then generated in runtime.
+    \row
+    \i -getfile libid
+    \i Print the filename for the typelibrary \e libid to stdout
+    \row
+    \i -compat
+    \i Generate namespace with dynamicCall-compatible API
+    \row
+    \i -v
+    \i Print version information
+    \row
+    \i -h
+    \i Print help
+    \endtable
+
+    \c dumpcpp can be integrated into the \c qmake build system. In your .pro file, list the type 
+    libraries you want to use in the TYPELIBS variable:
+
+    \snippet examples/activeqt/qutlook/qutlook.pro 0
+
+    The generated namespace will declare all enumerations, as well as one QAxObject subclass 
+    for each \c coclass and \c interface declared in the type library. coclasses marked with 
+    the \c control attribute will be wrapped by a QAxWidget subclass.
+
+    Those classes that wrap creatable coclasses (i.e. coclasses that are not marked 
+    as \c noncreatable) have a default constructor; this is typically a single class 
+    of type \c Application. 
+
+    \snippet doc/src/snippets/code/doc.src.activeqt-dumpcpp.qdoc 0
+
+    All other classes can only be created by passing an IDispatch interface pointer 
+    to the constructor; those classes should however not be created explicitly. 
+    Instead, use the appropriate API of already created objects.
+
+    \snippet doc/src/snippets/code/doc.src.activeqt-dumpcpp.qdoc 1
+
+    All coclass wrappers also have one constructors taking an interface wrapper class
+    for each interface implemented.
+
+    \snippet doc/src/snippets/code/doc.src.activeqt-dumpcpp.qdoc 2
+
+    You have to create coclasses to be able to connect to signals of the subobject.
+    Note that the constructor deletes the interface object, so the following will
+    cause a segmentation fault:
+
+    \snippet doc/src/snippets/code/doc.src.activeqt-dumpcpp.qdoc 3
+
+    If the return type is of a coclass or interface type declared in another type 
+    library you have to include the namespace header for that other type library 
+    before including the header for the namespace you want to use (both header have 
+    to be generated with this tool).
+
+    By default, methods and property returning subobjects will use the type as in 
+    the type library. The caller of the function is responsible for deleting or 
+    reparenting the object returned. If the \c -compat switch is set, properties 
+    and method returning a COM object have the return type \c IDispatch*, and 
+    the namespace will not declare wrapper classes for interfaces. 
+
+    In this case, create the correct wrapper class explicitly:
+
+    \snippet doc/src/snippets/code/doc.src.activeqt-dumpcpp.qdoc 4
+
+    You can of course use the IDispatch* returned directly, in which case you have to 
+    call \c Release() when finished with the interface.
+
+    All classes in the namespace are tagged with a macro that allows you to export
+    or import them from a DLL. To do that, declare the macro to expand to 
+    \c __declspec(dllimport/export) before including the header file.
+
+    To build the tool you must first build the QAxContainer library.
+    Then run your make tool in \c tools/dumpcpp.
+*/

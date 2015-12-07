@@ -1,0 +1,416 @@
+SOURCE_PATH = @SOURCE_PATH@
+BUILD_PATH = @BUILD_PATH@
+QTOBJS = @QMAKE_QTOBJS@
+QTSRCS = @QMAKE_QTSRCS@
+QMAKESPEC = @QMAKESPEC@
+LFLAGS = @QMAKE_LFLAGS@
+
+#qmake code
+OBJS=project.o property.o main.o makefile.o unixmake2.o unixmake.o  \
+     mingw_make.o option.o winmakefile.o projectgenerator.o \
+     meta.o makefiledeps.o metamakefile.o xmloutput.o pbuilder_pbx.o \
+     borland_bmake.o msvc_dsp.o msvc_vcproj.o msvc_nmake.o msvc_objectmodel.o
+
+#qt code
+QOBJS=qstring.o qtextstream.o qiodevice.o qmalloc.o qglobal.o \
+      qbytearray.o qbytearraymatcher.o qdatastream.o qbuffer.o qlistdata.o qfile.o \
+      qfsfileengine_unix.o qfsfileengine_iterator_unix.o qfsfileengine.o \
+      qfsfileengine_iterator.o qregexp.o qvector.o qbitarray.o qdir.o qdiriterator.o quuid.o qhash.o \
+      qfileinfo.o qdatetime.o qstringlist.o qabstractfileengine.o qtemporaryfile.o \
+      qmap.o qmetatype.o qsettings.o qlibraryinfo.o qvariant.o qvsnprintf.o \
+      qlocale.o qlinkedlist.o qurl.o qnumeric.o qcryptographichash.o \
+      qscriptasm.o qscriptast.o qscriptastvisitor.o \
+      qscriptcompiler.o qscriptecmaarray.o qscriptecmaboolean.o \
+      qscriptecmacore.o qscriptecmadate.o qscriptecmafunction.o \
+      qscriptecmaglobal.o qscriptecmamath.o qscriptecmanumber.o \
+      qscriptecmaobject.o qscriptecmaregexp.o qscriptecmastring.o \
+      qscriptecmaerror.o qscriptcontext_p.o qscriptengine.o \
+      qscriptengine_p.o qscriptextenumeration.o qscriptextvariant.o \
+      qscriptcontext.o qscriptfunction.o \
+      qscriptgrammar.o qscriptlexer.o qscriptclassdata.o \
+      qscriptparser.o qscriptprettypretty.o qscriptsyntaxchecker.o \
+      qscriptvalue.o qscriptvalueimpl.o qscriptvalueiterator.o \
+      qscriptvalueiteratorimpl.o \
+      qscriptclass.o qscriptclasspropertyiterator.o \
+      qscriptengineagent.o qscriptcontextinfo.o qscriptstring.o \
+      $(QTOBJS)
+
+
+
+
+#all sources, used for the depend target
+DEPEND_SRC=project.cpp property.cpp meta.cpp main.cpp generators/makefile.cpp generators/unix/unixmake2.cpp \
+	   generators/unix/unixmake.cpp generators/win32/winmakefile.cpp generators/projectgenerator.cpp \
+	   generators/mac/pbuilder_pbx.cpp generators/mac/xmloutput.cpp generators/metamakefile.cpp \
+	   generators/makefiledeps.cpp option.cpp generators/win32/mingw_make.cpp generators/makefile.cpp \
+	   generators/win32/msvc_objectmodel.cpp generators/win32/msvc_nmake.cpp generators/win32/borland_bmake.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qstring.cpp $(SOURCE_PATH)/src/corelib/io/qfile.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qtextstream.cpp $(SOURCE_PATH)/src/corelib/io/qiodevice.cpp \
+	   $(SOURCE_PATH)/src/corelib/global/qmalloc.cpp \
+	   $(SOURCE_PATH)/src/corelib/global/qglobal.cpp $(SOURCE_PATH)/src/corelib/tools/qregexp.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qbytearray.cpp $(SOURCE_PATH)/src/corelib/tools/qbytearraymatcher.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qdatastream.cpp $(SOURCE_PATH)/src/corelib/io/qbuffer.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qfsfileengine_unix.cpp $(SOURCE_PATH)/src/corelib/io/qabstractfileengine.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator_unix.cpp $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qfsfileengine.cpp $(SOURCE_PATH)/src/corelib/tools/qlistdata.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qvector.cpp $(SOURCE_PATH)/src/corelib/tools/qbitarray.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qdiriterator.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qdir.cpp $(SOURCE_PATH)/src/corelib/plugin/quuid.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qfileinfo.cpp $(SOURCE_PATH)/src/corelib/tools/qdatetime.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qstringlist.cpp $(SOURCE_PATH)/src/corelib/tools/qmap.cpp \
+	   $(SOURCE_PATH)/src/corelib/global/qconfig.cpp $(SOURCE_PATH)/src/corelib/io/qurl.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qlocale.cpp $(SOURCE_PATH)/src/corelib/tools/qlinkedlist.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qhash.cpp $(SOURCE_PATH)/src/corelib/kernel/qcore_mac.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qtemporaryfile.cpp $(SOURCE_PATH)/src/corelib/kernel/qmetatype.cpp \
+	   $(SOURCE_PATH)/src/corelib/io/qsettings.cpp $(SOURCE_PATH)/src/corelib/kernel/qvariant.cpp \
+	   $(SOURCE_PATH)/src/corelib/global/qlibraryinfo.cpp $(SOURCE_PATH)/src/corelib/tools/qcryptographichash.cpp \
+	   $(SOURCE_PATH)/src/corelib/tools/qvsnprintf.cpp $(SOURCE_PATH)/src/corelib/global/qnumeric.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptasm.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptast.cpp $(SOURCE_PATH)/src/script/qscriptastvisitor.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptcompiler.cpp $(SOURCE_PATH)/src/script/qscriptecmaarray.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmaboolean.cpp $(SOURCE_PATH)/src/script/qscriptecmacore.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmadate.cpp $(SOURCE_PATH)/src/script/qscriptecmafunction.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmaglobal.cpp $(SOURCE_PATH)/src/script/qscriptecmamath.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmanumber.cpp $(SOURCE_PATH)/src/script/qscriptecmaobject.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmaregexp.cpp $(SOURCE_PATH)/src/script/qscriptecmastring.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptecmaerror.cpp $(SOURCE_PATH)/src/script/qscriptcontext_p.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptengine.cpp $(SOURCE_PATH)/src/script/qscriptengine_p.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptextenumeration.cpp $(SOURCE_PATH)/src/script/qscriptextvariant.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptcontext.cpp $(SOURCE_PATH)/src/script/qscriptfunction.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptgrammar.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptlexer.cpp $(SOURCE_PATH)/src/script/qscriptclassdata.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptparser.cpp $(SOURCE_PATH)/src/script/qscriptprettypretty.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptsyntaxchecker.cpp $(SOURCE_PATH)/src/script/qscriptvalueimpl.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptvalue.cpp $(SOURCE_PATH)/src/script/qscriptvalueiterator.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptvalueiteratorimpl.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptclass.cpp $(SOURCE_PATH)/src/script/qscriptclasspropertyiterator.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptengineagent.cpp $(SOURCE_PATH)/src/script/qscriptcontextinfo.cpp \
+	   $(SOURCE_PATH)/src/script/qscriptstring.cpp \
+	   $(QTSRCS)
+
+CPPFLAGS = -I. -Igenerators -Igenerators/unix -Igenerators/win32 -Igenerators/mac \
+	   -I$(BUILD_PATH)/include -I$(BUILD_PATH)/include/QtCore \
+	   -I$(BUILD_PATH)/src/corelib/global \
+	   -I$(SOURCE_PATH)/src/script -DQT_NO_PCRE \
+	   -DQT_BUILD_QMAKE -DQT_BOOTSTRAPPED \
+	   -DQT_NO_TEXTCODEC -DQT_NO_UNICODETABLES -DQT_NO_COMPONENT -DQT_NO_STL \
+	   -DQT_NO_COMPRESS -I$(QMAKESPEC) -DHAVE_QCONFIG_CPP -DQT_NO_THREAD -DQT_NO_QOBJECT \
+           -DQT_NO_GEOM_VARIANT $(OPENSOURCE_CXXFLAGS)
+
+CXXFLAGS = @QMAKE_CXXFLAGS@ $(CPPFLAGS)
+
+first all: $(BUILD_PATH)/bin/qmake
+qmake: $(BUILD_PATH)/bin/qmake
+
+$(BUILD_PATH)/bin/qmake: $(OBJS) $(QOBJS)
+	$(CXX) -o "$@" $(OBJS) $(QOBJS) $(LFLAGS)
+
+clean::
+	rm -f $(OBJS) $(QOBJS)
+
+distclean:: clean
+	rm -rf $(BUILD_PATH)/bin/qmake .deps
+
+depend:
+	makedepend -D__MAKEDEPEND__ $(CPPFLAGS) $(DEPEND_SRC)
+
+# don't use optimization for these
+qtextstream.o: $(SOURCE_PATH)/src/corelib/io/qtextstream.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qtextstream.cpp
+
+qvariant.o: $(SOURCE_PATH)/src/corelib/kernel/qvariant.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/kernel/qvariant.cpp
+
+qsettings.o: $(SOURCE_PATH)/src/corelib/io/qsettings.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qsettings.cpp
+
+qlibraryinfo.o: $(SOURCE_PATH)/src/corelib/global/qlibraryinfo.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/global/qlibraryinfo.cpp
+
+qnumeric.o: $(SOURCE_PATH)/src/corelib/global/qnumeric.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/global/qnumeric.cpp
+
+qsettings_mac.o: $(SOURCE_PATH)/src/corelib/io/qsettings_mac.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qsettings_mac.cpp
+
+qiodevice.o: $(SOURCE_PATH)/src/corelib/io/qiodevice.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qiodevice.cpp
+
+qmalloc.o: $(SOURCE_PATH)/src/corelib/global/qmalloc.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/global/qmalloc.cpp
+
+qglobal.o: $(SOURCE_PATH)/src/corelib/global/qglobal.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/global/qglobal.cpp
+
+qbytearray.o: $(SOURCE_PATH)/src/corelib/tools/qbytearray.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qbytearray.cpp
+
+qvsnprintf.o: $(SOURCE_PATH)/src/corelib/tools/qvsnprintf.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qvsnprintf.cpp
+
+qbytearraymatcher.o: $(SOURCE_PATH)/src/corelib/tools/qbytearraymatcher.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qbytearraymatcher.cpp
+
+qmetatype.o: $(SOURCE_PATH)/src/corelib/kernel/qmetatype.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/kernel/qmetatype.cpp
+
+qcore_mac.o: $(SOURCE_PATH)/src/corelib/kernel/qcore_mac.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/kernel/qcore_mac.cpp
+
+qurl.o: $(SOURCE_PATH)/src/corelib/io/qurl.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qurl.cpp
+
+qstring.o: $(SOURCE_PATH)/src/corelib/tools/qstring.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qstring.cpp
+
+qlocale.o: $(SOURCE_PATH)/src/corelib/tools/qlocale.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qlocale.cpp
+
+qdatastream.o: $(SOURCE_PATH)/src/corelib/io/qdatastream.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qdatastream.cpp
+
+qbuffer.o: $(SOURCE_PATH)/src/corelib/io/qbuffer.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qbuffer.cpp
+
+qlistdata.o: $(SOURCE_PATH)/src/corelib/tools/qlistdata.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qlistdata.cpp
+
+qfile.o: $(SOURCE_PATH)/src/corelib/io/qfile.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfile.cpp
+
+qfsfileengine.o: $(SOURCE_PATH)/src/corelib/io/qfsfileengine.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfsfileengine.cpp
+
+qfsfileengine_iterator.o: $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator.cpp
+
+qfsfileengine_unix.o: $(SOURCE_PATH)/src/corelib/io/qfsfileengine_unix.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfsfileengine_unix.cpp
+
+qfsfileengine_iterator_unix.o: $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator_unix.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfsfileengine_iterator_unix.cpp
+
+qabstractfileengine.o: $(SOURCE_PATH)/src/corelib/io/qabstractfileengine.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qabstractfileengine.cpp
+
+qtemporaryfile.o: $(SOURCE_PATH)/src/corelib/io/qtemporaryfile.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qtemporaryfile.cpp
+
+qregexp.o: $(SOURCE_PATH)/src/corelib/tools/qregexp.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qregexp.cpp
+
+qvector.o: $(SOURCE_PATH)/src/corelib/tools/qvector.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qvector.cpp
+
+qbitarray.o: $(SOURCE_PATH)/src/corelib/tools/qbitarray.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qbitarray.cpp
+
+qdir.o: $(SOURCE_PATH)/src/corelib/io/qdir.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qdir.cpp
+
+qdiriterator.o: $(SOURCE_PATH)/src/corelib/io/qdiriterator.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qdiriterator.cpp
+
+quuid.o: $(SOURCE_PATH)/src/corelib/plugin/quuid.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/plugin/quuid.cpp
+
+qfileinfo.o: $(SOURCE_PATH)/src/corelib/io/qfileinfo.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/io/qfileinfo.cpp
+
+qdatetime.o: $(SOURCE_PATH)/src/corelib/tools/qdatetime.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qdatetime.cpp
+
+qstringlist.o: $(SOURCE_PATH)/src/corelib/tools/qstringlist.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qstringlist.cpp
+
+qmap.o: $(SOURCE_PATH)/src/corelib/tools/qmap.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qmap.cpp
+
+qhash.o: $(SOURCE_PATH)/src/corelib/tools/qhash.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qhash.cpp
+
+qlinkedlist.o: $(SOURCE_PATH)/src/corelib/tools/qlinkedlist.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qlinkedlist.cpp
+
+winmakefile.o: generators/win32/winmakefile.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/winmakefile.cpp
+
+project.o: project.cpp project.h option.h
+	$(CXX) -c -o $@ $(CXXFLAGS) project.cpp
+
+property.o: property.cpp project.h option.h
+	$(CXX) -c -o $@ $(CXXFLAGS) property.cpp
+
+meta.o: meta.cpp project.h option.h
+	$(CXX) -c -o $@ $(CXXFLAGS) meta.cpp
+
+main.o: main.cpp project.h
+	$(CXX) -c -o $@ $(CXXFLAGS) main.cpp
+
+option.o: option.cpp option.h $(BUILD_PATH)/src/corelib/global/qconfig.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) option.cpp
+
+qcryptographichash.o:  $(SOURCE_PATH)/src/corelib/tools/qcryptographichash.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/corelib/tools/qcryptographichash.cpp
+
+metamakefile.o: generators/metamakefile.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/metamakefile.cpp
+
+xmloutput.o: generators/xmloutput.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/xmloutput.cpp
+
+makefiledeps.o: generators/makefiledeps.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/makefiledeps.cpp
+
+makefile.o: generators/makefile.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/makefile.cpp
+
+unixmake.o: generators/unix/unixmake.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/unix/unixmake.cpp
+
+unixmake2.o: generators/unix/unixmake2.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/unix/unixmake2.cpp
+
+borland_bmake.o: generators/win32/borland_bmake.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/borland_bmake.cpp
+
+mingw_make.o: generators/win32/mingw_make.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/mingw_make.cpp
+
+msvc_objectmodel.o: generators/win32/msvc_objectmodel.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/msvc_objectmodel.cpp
+
+msvc_vcproj.o: generators/win32/msvc_vcproj.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/msvc_vcproj.cpp
+
+msvc_nmake.o: generators/win32/msvc_nmake.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/msvc_nmake.cpp
+
+pbuilder_pbx.o: generators/mac/pbuilder_pbx.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/mac/pbuilder_pbx.cpp
+
+msvc_dsp.o: generators/win32/msvc_dsp.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/win32/msvc_dsp.cpp
+
+projectgenerator.o: generators/projectgenerator.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) generators/projectgenerator.cpp
+
+qscriptasm.o: $(SOURCE_PATH)/src/script/qscriptasm.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptasm.cpp
+
+qscriptast.o: $(SOURCE_PATH)/src/script/qscriptast.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptast.cpp
+
+qscriptastvisitor.o: $(SOURCE_PATH)/src/script/qscriptastvisitor.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptastvisitor.cpp
+
+qscriptcompiler.o: $(SOURCE_PATH)/src/script/qscriptcompiler.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptcompiler.cpp
+
+qscriptecmaarray.o: $(SOURCE_PATH)/src/script/qscriptecmaarray.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaarray.cpp
+
+qscriptecmaboolean.o: $(SOURCE_PATH)/src/script/qscriptecmaboolean.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaboolean.cpp
+
+qscriptecmacore.o: $(SOURCE_PATH)/src/script/qscriptecmacore.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmacore.cpp
+
+qscriptecmadate.o: $(SOURCE_PATH)/src/script/qscriptecmadate.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmadate.cpp
+
+qscriptecmafunction.o: $(SOURCE_PATH)/src/script/qscriptecmafunction.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmafunction.cpp
+
+qscriptecmaglobal.o: $(SOURCE_PATH)/src/script/qscriptecmaglobal.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaglobal.cpp
+
+qscriptecmamath.o: $(SOURCE_PATH)/src/script/qscriptecmamath.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmamath.cpp
+
+qscriptecmanumber.o: $(SOURCE_PATH)/src/script/qscriptecmanumber.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmanumber.cpp
+
+qscriptecmaobject.o: $(SOURCE_PATH)/src/script/qscriptecmaobject.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaobject.cpp
+
+qscriptecmaregexp.o: $(SOURCE_PATH)/src/script/qscriptecmaregexp.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaregexp.cpp
+
+qscriptecmastring.o: $(SOURCE_PATH)/src/script/qscriptecmastring.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmastring.cpp
+
+qscriptecmaerror.o: $(SOURCE_PATH)/src/script/qscriptecmaerror.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptecmaerror.cpp
+
+qscriptcontext_p.o: $(SOURCE_PATH)/src/script/qscriptcontext_p.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptcontext_p.cpp
+
+qscriptengine.o: $(SOURCE_PATH)/src/script/qscriptengine.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptengine.cpp
+
+qscriptengine_p.o: $(SOURCE_PATH)/src/script/qscriptengine_p.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptengine_p.cpp
+
+qscriptextenumeration.o: $(SOURCE_PATH)/src/script/qscriptextenumeration.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptextenumeration.cpp
+
+qscriptextvariant.o: $(SOURCE_PATH)/src/script/qscriptextvariant.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptextvariant.cpp
+
+qscriptcontext.o: $(SOURCE_PATH)/src/script/qscriptcontext.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptcontext.cpp
+
+qscriptfunction.o: $(SOURCE_PATH)/src/script/qscriptfunction.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptfunction.cpp
+
+qscriptgrammar.o: $(SOURCE_PATH)/src/script/qscriptgrammar.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptgrammar.cpp
+
+qscriptlexer.o: $(SOURCE_PATH)/src/script/qscriptlexer.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptlexer.cpp
+
+qscriptclassdata.o: $(SOURCE_PATH)/src/script/qscriptclassdata.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptclassdata.cpp
+
+qscriptparser.o: $(SOURCE_PATH)/src/script/qscriptparser.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptparser.cpp
+
+qscriptprettypretty.o: $(SOURCE_PATH)/src/script/qscriptprettypretty.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptprettypretty.cpp
+
+qscriptsyntaxchecker.o: $(SOURCE_PATH)/src/script/qscriptsyntaxchecker.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptsyntaxchecker.cpp
+
+qscriptvalue.o: $(SOURCE_PATH)/src/script/qscriptvalue.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptvalue.cpp
+
+qscriptvalueimpl.o: $(SOURCE_PATH)/src/script/qscriptvalueimpl.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptvalueimpl.cpp
+
+qscriptvalueiterator.o: $(SOURCE_PATH)/src/script/qscriptvalueiterator.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptvalueiterator.cpp
+
+qscriptvalueiteratorimpl.o: $(SOURCE_PATH)/src/script/qscriptvalueiteratorimpl.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptvalueiteratorimpl.cpp
+
+qscriptclass.o: $(SOURCE_PATH)/src/script/qscriptclass.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptclass.cpp
+
+qscriptclasspropertyiterator.o: $(SOURCE_PATH)/src/script/qscriptclasspropertyiterator.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptclasspropertyiterator.cpp
+
+qscriptengineagent.o: $(SOURCE_PATH)/src/script/qscriptengineagent.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptengineagent.cpp
+
+qscriptcontextinfo.o: $(SOURCE_PATH)/src/script/qscriptcontextinfo.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptcontextinfo.cpp
+
+qscriptstring.o: $(SOURCE_PATH)/src/script/qscriptstring.cpp
+	$(CXX) -c -o $@ $(CXXFLAGS) $(SOURCE_PATH)/src/script/qscriptstring.cpp
+
+#default rules
+.cpp.o:
+	$(CXX) -c -o $@ $(CXXFLAGS) $<
+
+# DO NOT DELETE THIS LINE -- make depend depends on it

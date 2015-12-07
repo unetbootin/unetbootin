@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: ledmeter.cpp Example File (graphicsview/portedasteroids/ledmeter.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">ledmeter.cpp Example File<br /><span class="small-subtitle">graphicsview/portedasteroids/ledmeter.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  * KAsteroids - Copyright (c) Martin R. Jones 1997
+  *
+  * Part of the KDE project
+  */</span>
+
+ #include &lt;qpainter.h&gt;
+<span class="comment"> //</span>Added by qt3to4:
+ #include &lt;QResizeEvent&gt;
+ #include &lt;Q3Frame&gt;
+ #include &quot;ledmeter.h&quot;
+
+ KALedMeter::KALedMeter( QWidget *parent ) : Q3Frame( parent )
+ {
+     mCRanges.setAutoDelete( TRUE );
+     mRange = 100;
+     mCount = 20;
+     mCurrentCount = 0;
+     mValue = 0;
+     setMinimumWidth( mCount * 2 + frameWidth() );
+ }
+
+ void KALedMeter::setRange( int r )
+ {
+     mRange = r;
+     if ( mRange &lt; 1 )
+         mRange = 1;
+     setValue( mValue );
+     update();
+ }
+
+ void KALedMeter::setCount( int c )
+ {
+     mCount = c;
+     if ( mCount &lt; 1 )
+         mCount = 1;
+     setMinimumWidth( mCount * 2 + frameWidth() );
+     calcColorRanges();
+     setValue( mValue );
+     update();
+ }
+
+ void KALedMeter::setValue( int v )
+ {
+     mValue = v;
+     if ( mValue &gt; mRange )
+         mValue = mRange;
+     else if ( mValue &lt; 0 )
+         mValue = 0;
+     int c = ( mValue + mRange / mCount - 1 ) * mCount / mRange;
+     if ( c != mCurrentCount )
+     {
+         mCurrentCount = c;
+         update();
+     }
+ }
+
+ void KALedMeter::addColorRange( int pc, const QColor &amp;c )
+ {
+     ColorRange *cr = new ColorRange;
+     cr-&gt;mPc = pc;
+     cr-&gt;mColor = c;
+     mCRanges.append( cr );
+     calcColorRanges();
+ }
+
+ void KALedMeter::resizeEvent( QResizeEvent *e )
+ {
+     Q3Frame::resizeEvent( e );
+     int w = ( width() - frameWidth() - 2 ) / mCount * mCount;
+     w += frameWidth() + 2;
+     setFrameRect( QRect( 0, 0, w, height() ) );
+ }
+
+ void KALedMeter::drawContents( QPainter *p )
+ {
+     QRect b = contentsRect();
+
+     unsigned cidx = 0;
+     int ncol = mCount;
+     QColor col = colorGroup().foreground();
+
+     if ( !mCRanges.isEmpty() )
+     {
+         col = mCRanges.at( cidx )-&gt;mColor;
+         ncol = mCRanges.at( cidx )-&gt;mValue;
+     }
+     p-&gt;setBrush( col );
+     p-&gt;setPen( col );
+
+     int lw = b.width() / mCount;
+     int lx = b.left() + 1;
+     for ( int i = 0; i &lt; mCurrentCount; i++, lx += lw )
+     {
+         if ( i &gt; ncol )
+         {
+             if ( ++cidx &lt; mCRanges.count() )
+             {
+                 col = mCRanges.at( cidx )-&gt;mColor;
+                 ncol = mCRanges.at( cidx )-&gt;mValue;
+                 p-&gt;setBrush( col );
+                 p-&gt;setPen( col );
+             }
+         }
+
+         p-&gt;drawRect( lx, b.top() + 1, lw - 1, b.height() - 2 );
+     }
+ }
+
+ void KALedMeter::calcColorRanges()
+ {
+     int prev = 0;
+     ColorRange *cr;
+     for ( cr = mCRanges.first(); cr; cr = mCRanges.next() )
+     {
+         cr-&gt;mValue = prev + cr-&gt;mPc * mCount / 100;
+         prev = cr-&gt;mValue;
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

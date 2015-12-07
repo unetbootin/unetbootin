@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/sharedmemory.qdoc -->
+<head>
+  <title>Qt 4.4: Shared Memory Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Shared Memory Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="ipc-sharedmemory-dialog-cpp.html">ipc/sharedmemory/dialog.cpp</a></li>
+<li><a href="ipc-sharedmemory-dialog-h.html">ipc/sharedmemory/dialog.h</a></li>
+<li><a href="ipc-sharedmemory-dialog-ui.html">ipc/sharedmemory/dialog.ui</a></li>
+<li><a href="ipc-sharedmemory-main-cpp.html">ipc/sharedmemory/main.cpp</a></li>
+<li><a href="ipc-sharedmemory-sharedmemory-pro.html">ipc/sharedmemory/sharedmemory.pro</a></li>
+</ul>
+<p>The Shared Memory example shows how to use the <a href="qsharedmemory.html">QSharedMemory</a> class to implement inter-process communication using shared memory. To build the example, run make. To run the example, start two instances of the executable. The main() function creates an <a href="qapplication.html">application</a> and an instance of our example's Dialog class. The dialog is displayed and then control is passed to the application in the standard way.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication application(argc, argv);
+     Dialog dialog;
+     dialog.show();
+     return application.exec();
+ }</pre>
+<p>Two instances of class Dialog appear.</p>
+<p align="center"><img src="images/sharedmemory-example_1.png" alt="Screenshot of the Shared Memory example" /></p><p>Class Dialog inherits <a href="qdialog.html">QDialog</a>. It encapsulates the user interface and an instance of <a href="qsharedmemory.html">QSharedMemory</a>. It also has two public slots, loadFromFile() and loadFromMemory() that correspond to the two buttons on the dialog.</p>
+<pre> class Dialog : public QDialog
+ {
+     Q_OBJECT
+
+   public:
+     Dialog(QWidget *parent = 0);
+
+   public slots:
+     void loadFromFile();
+     void loadFromMemory();
+
+  private:
+     void detach();
+
+   private:
+     Ui::Dialog ui;
+     QSharedMemory sharedMemory;
+ };</pre>
+<p>The constructor builds the user interface widgets and connects the clicked() signal of each button to the corresponding slot function.</p>
+<pre> Dialog::Dialog(QWidget *parent)
+   : QDialog(parent), sharedMemory(&quot;QSharedMemoryExample&quot;)
+ {
+     ui.setupUi(this);
+     connect(ui.loadFromFileButton, SIGNAL(clicked()), SLOT(loadFromFile()));
+     connect(ui.loadFromSharedMemoryButton,
+             SIGNAL(clicked()),
+             SLOT(loadFromMemory()));
+     setWindowTitle(tr(&quot;SharedMemory Example&quot;));
+ }</pre>
+<p>Note that &quot;QSharedMemoryExample&quot; is passed to the <a href="qsharedmemory.html">QSharedMemory()</a> constructor to be used as the key. This will be used by the system as the identifier of the underlying shared memory segment.</p>
+<p>Click the <tt>Load Image From File..&#x2e;</tt> button on one of the dialogs. The loadFromFile() slot is invoked. First, it tests whether a shared memory segment is already attached to the process. If so, that segment is detached from the process, so we can be assured of starting off the example correctly.</p>
+<pre> void Dialog::loadFromFile()
+ {
+     if (sharedMemory.isAttached())
+         detach();
+
+     ui.label-&gt;setText(tr(&quot;Select an image file&quot;));
+     QString fileName = QFileDialog::getOpenFileName(0, QString(), QString(),
+                                         tr(&quot;Images (*.png *.xpm *.jpg)&quot;));
+     QImage image;
+     if (!image.load(fileName)) {
+         ui.label-&gt;setText(tr(&quot;Selected file is not an image, please select another.&quot;));
+         return;
+     }
+     ui.label-&gt;setPixmap(QPixmap::fromImage(image));</pre>
+<p>The user is then asked to select an image file using <a href="qfiledialog.html#getOpenFileName">QFileDialog::getOpenFileName</a>(). The selected file is loaded into a <a href="qimage.html">QImage</a>. Using a <a href="qimage.html">QImage</a> lets us ensure that the selected file is a valid image, and it also allows us to immediately display the image in the dialog using setPixmap().</p>
+<p>Next the image is streamed into a <a href="qbuffer.html">QBuffer</a> using a <a href="qdatastream.html">QDataStream</a>. This gives us the size, which we then use to <a href="qsharedmemory.html#create">create()</a> our shared memory segment. Creating a shared memory segment automatically <a href="qsharedmemory.html#attach">attaches</a> the segment to the process. Using a <a href="qbuffer.html">QBuffer</a> here lets us get a pointer to the image data, which we then use to do a memcopy() from the <a href="qbuffer.html">QBuffer</a> into the shared memory segment.</p>
+<pre>     <span class="comment">//</span> load into shared memory
+     QBuffer buffer;
+     buffer.open(QBuffer::ReadWrite);
+     QDataStream out(&amp;buffer);
+     out &lt;&lt; image;
+     int size = buffer.size();
+
+     if (!sharedMemory.create(size)) {
+         ui.label-&gt;setText(tr(&quot;Unable to create shared memory segment.&quot;));
+         return;
+     }
+     sharedMemory.lock();
+     char *to = (char*)sharedMemory.data();
+     const char *from = buffer.data().data();
+     memcpy(to, from, qMin(sharedMemory.size(), size));
+     sharedMemory.unlock();
+ }</pre>
+<p>Note that we <a href="qsharedmemory.html#lock">lock()</a> the shared memory segment before we copy into it, and we <a href="qsharedmemory.html#unlock">unlock()</a> it again immediately after the copy. This ensures we have exclusive access to the shared memory segment to do our memcopy(). If some other process has the segment lock, then our process will block until the lock becomes available.</p>
+<p>Note also that the function does not <a href="qsharedmemory.html#detach">detach()</a> from the shared memory segment after the memcopy() and unlock(). Recall that when the last process detaches from a shared memory segment, the segment is released by the operating system. Since this process only one that is attached to the shared memory segment at the moment, if loadFromFile() detached from the shared memory segment, the segment would be destroyed before we get to the next step.</p>
+<p>When the function returns, if the file you selected was qt.png, your first dialog looks like this.</p>
+<p align="center"><img src="images/sharedmemory-example_2.png" alt="Screenshot of the Shared Memory example" /></p><p>In the second dialog, click the <tt>Display Image From Shared Memory</tt> button. The loadFromMemory() slot is invoked. It first <a href="qsharedmemory.html#attach">attaches</a> the process to the same shared memory segment created by the first process. Then it <a href="qsharedmemory.html#lock">locks</a> the segment for exclusive access and links a <a href="qbuffer.html">QBuffer</a> to the image data in the shared memory segment. It then streams the data into a <a href="qimage.html">QImage</a> and <a href="qsharedmemory.html#unlock">unlocks</a> the segment.</p>
+<pre> void Dialog::loadFromMemory()
+ {
+     if (!sharedMemory.attach()) {
+         ui.label-&gt;setText(tr(&quot;Unable to attach to shared memory segment.\n&quot; \
+                              &quot;Load an image first.&quot;));
+         return;
+     }
+
+     QBuffer buffer;
+     QDataStream in(&amp;buffer);
+     QImage image;
+
+     sharedMemory.lock();
+     buffer.setData((char*)sharedMemory.constData(), sharedMemory.size());
+     buffer.open(QBuffer::ReadOnly);
+     in &gt;&gt; image;
+     sharedMemory.unlock();
+
+     sharedMemory.detach();
+     ui.label-&gt;setPixmap(QPixmap::fromImage(image));
+ }</pre>
+<p>In this case, the function does <a href="qsharedmemory.html#detach">detach()</a> from the segment, because now we are effectively finished using it. Finally, the <a href="qimage.html">QImage</a> is displayed. At this point, both dialogs should be showing the same image. When you close the first dialog, the Dialog destructor calls the <a href="qsharedmemory.html">QSharedMemory</a> destructor, which detaches from the shared memory segment. Since this is the last process to be detached from the segment, the operating system will now release the shared memory.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

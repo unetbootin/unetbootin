@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qdatetime.cpp -->
+<head>
+  <title>Qt 4.4: QDate Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDate Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QDate class provides date functions. <a href="#details">More...</a></p>
+<pre> #include &lt;QDate&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdate-members.html">List of all members, including inherited members</a></li>
+<li><a href="qdate-obsolete.html">Obsolete members</a></li>
+<li><a href="qdate-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdate.html#QDate">QDate</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdate.html#QDate-2">QDate</a></b> ( int <i>y</i>, int <i>m</i>, int <i>d</i> )</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#addDays">addDays</a></b> ( int <i>ndays</i> ) const</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#addMonths">addMonths</a></b> ( int <i>nmonths</i> ) const</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#addYears">addYears</a></b> ( int <i>nyears</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#day">day</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#dayOfWeek">dayOfWeek</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#dayOfYear">dayOfYear</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#daysInMonth">daysInMonth</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#daysInYear">daysInYear</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#daysTo">daysTo</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#month">month</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#setDate">setDate</a></b> ( int <i>year</i>, int <i>month</i>, int <i>day</i> )</li>
+<li><div class="fn"/>int <b><a href="qdate.html#toJulianDay">toJulianDay</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#toString">toString</a></b> ( const QString &amp; <i>format</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#toString-2">toString</a></b> ( Qt::DateFormat <i>format</i> = Qt::TextDate ) const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#weekNumber">weekNumber</a></b> ( int * <i>yearNumber</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qdate.html#year">year</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-not-eq">operator!=</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-lt">operator&lt;</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-lt-eq">operator&lt;=</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-eq-eq">operator==</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-gt">operator&gt;</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#operator-gt-eq">operator&gt;=</a></b> ( const QDate &amp; <i>d</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QDate <b><a href="qdate.html#currentDate">currentDate</a></b> ()</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#fromJulianDay">fromJulianDay</a></b> ( int <i>jd</i> )</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#fromString">fromString</a></b> ( const QString &amp; <i>string</i>, Qt::DateFormat <i>format</i> = Qt::TextDate )</li>
+<li><div class="fn"/>QDate <b><a href="qdate.html#fromString-2">fromString</a></b> ( const QString &amp; <i>string</i>, const QString &amp; <i>format</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#isLeapYear">isLeapYear</a></b> ( int <i>year</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdate.html#isValid-2">isValid</a></b> ( int <i>year</i>, int <i>month</i>, int <i>day</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#longDayName">longDayName</a></b> ( int <i>weekday</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#longMonthName">longMonthName</a></b> ( int <i>month</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#shortDayName">shortDayName</a></b> ( int <i>weekday</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdate.html#shortMonthName">shortMonthName</a></b> ( int <i>month</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdate.html#operator-lt-lt-122">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>out</i>, const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdate.html#operator-gt-gt-73">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>in</i>, QDate &amp; <i>date</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDate class provides date functions.</p>
+<p>A QDate object contains a calendar date, i.e&#x2e; year, month, and day numbers, in the Gregorian calendar (Julian calendar for dates before 15 October 1582). It can read the current date from the system clock. It provides functions for comparing dates, and for manipulating dates. For example, it is possible to add and subtract days, months, and years to dates.</p>
+<p>A QDate object is typically created either by giving the year, month, and day numbers explicitly, or by using the static function <a href="qdate.html#currentDate">currentDate</a>() that creates a QDate object containing the system clock's date. An explicit date can also be set using <a href="qdate.html#setDate">setDate</a>(). The <a href="qdate.html#fromString">fromString</a>() function returns a QDate given a string and a date format which is used to interpret the date within the string.</p>
+<p>The <a href="qdate.html#year">year</a>(), <a href="qdate.html#month">month</a>(), and <a href="qdate.html#day">day</a>() functions provide access to the year, month, and day numbers. Also, <a href="qdate.html#dayOfWeek">dayOfWeek</a>() and <a href="qdate.html#dayOfYear">dayOfYear</a>() functions are provided. The same information is provided in textual format by the <a href="qdate.html#toString">toString</a>(), <a href="qdate.html#shortDayName">shortDayName</a>(), <a href="qdate.html#longDayName">longDayName</a>(), <a href="qdate.html#shortMonthName">shortMonthName</a>(), and <a href="qdate.html#longMonthName">longMonthName</a>() functions.</p>
+<p>QDate provides a full set of operators to compare two QDate objects where smaller means earlier, and larger means later.</p>
+<p>You can increment (or decrement) a date by a given number of days using <a href="qdate.html#addDays">addDays</a>(). Similarly you can use <a href="qdate.html#addMonths">addMonths</a>() and <a href="qdate.html#addYears">addYears</a>(). The <a href="qdate.html#daysTo">daysTo</a>() function returns the number of days between two dates.</p>
+<p>The <a href="qdate.html#daysInMonth">daysInMonth</a>() and <a href="qdate.html#daysInYear">daysInYear</a>() functions return how many days there are in this date's month and year, respectively. The <a href="qdate.html#isLeapYear">isLeapYear</a>() function indicates whether this date is in a leap year.</p>
+<p>Note that the Gregorian calendar was introduced at different dates in different countries and regions. QDate uses the Gregorian calendar starting from 15 October 1582, and uses the Julian calendar for dates up to 4 October 1582.</p>
+<p>See also <a href="qtime.html">QTime</a>, <a href="qdatetime.html">QDateTime</a>, <a href="qdateedit.html">QDateEdit</a>, <a href="qdatetimeedit.html">QDateTimeEdit</a>, and <a href="qcalendarwidget.html">QCalendarWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDate"></a>QDate::QDate ()</h3>
+<p>Constructs a null date. Null dates are invalid.</p>
+<p>See also <a href="qdate.html#isNull">isNull</a>() and <a href="qdate.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QDate-2"></a>QDate::QDate ( int <i>y</i>, int <i>m</i>, int <i>d</i> )</h3>
+<p>Constructs a date with year <i>y</i>, month <i>m</i> and day <i>d</i>.</p>
+<p>If the specified date is invalid, the date is not set and <a href="qdate.html#isValid">isValid</a>() returns false. Any date before 2 January 4713 B.C&#x2e; is considered invalid.</p>
+<p><b>Warning:</b> Years 0 to 99 are interpreted as is. If you want to specify the year 2010, you must write 2010, not 10.</p>
+<p>See also <a href="qdate.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="addDays"></a>QDate QDate::addDays ( int <i>ndays</i> ) const</h3>
+<p>Returns a <a href="qdate.html">QDate</a> object containing a date <i>ndays</i> later than the date of this object (or earlier if <i>ndays</i> is negative).</p>
+<p>See also <a href="qdate.html#addMonths">addMonths</a>(), <a href="qdate.html#addYears">addYears</a>(), and <a href="qdate.html#daysTo">daysTo</a>().</p>
+<h3 class="fn"><a name="addMonths"></a>QDate QDate::addMonths ( int <i>nmonths</i> ) const</h3>
+<p>Returns a <a href="qdate.html">QDate</a> object containing a date <i>nmonths</i> later than the date of this object (or earlier if <i>nmonths</i> is negative).</p>
+<p>See also <a href="qdate.html#addDays">addDays</a>() and <a href="qdate.html#addYears">addYears</a>().</p>
+<h3 class="fn"><a name="addYears"></a>QDate QDate::addYears ( int <i>nyears</i> ) const</h3>
+<p>Returns a <a href="qdate.html">QDate</a> object containing a date <i>nyears</i> later than the date of this object (or earlier if <i>nyears</i> is negative).</p>
+<p>See also <a href="qdate.html#addDays">addDays</a>() and <a href="qdate.html#addMonths">addMonths</a>().</p>
+<h3 class="fn"><a name="currentDate"></a>QDate QDate::currentDate ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the current date, as reported by the system clock.</p>
+<p>See also <a href="qtime.html#currentTime">QTime::currentTime</a>() and <a href="qdatetime.html#currentDateTime">QDateTime::currentDateTime</a>().</p>
+<h3 class="fn"><a name="day"></a>int QDate::day () const</h3>
+<p>Returns the day of the month (1 to 31) of this date.</p>
+<p>See also <a href="qdate.html#year">year</a>(), <a href="qdate.html#month">month</a>(), and <a href="qdate.html#dayOfWeek">dayOfWeek</a>().</p>
+<h3 class="fn"><a name="dayOfWeek"></a>int QDate::dayOfWeek () const</h3>
+<p>Returns the weekday (1 to 7) for this date.</p>
+<p>See also <a href="qdate.html#day">day</a>(), <a href="qdate.html#dayOfYear">dayOfYear</a>(), and <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a>.</p>
+<h3 class="fn"><a name="dayOfYear"></a>int QDate::dayOfYear () const</h3>
+<p>Returns the day of the year (1 to 365 or 366 on leap years) for this date.</p>
+<p>See also <a href="qdate.html#day">day</a>() and <a href="qdate.html#dayOfWeek">dayOfWeek</a>().</p>
+<h3 class="fn"><a name="daysInMonth"></a>int QDate::daysInMonth () const</h3>
+<p>Returns the number of days in the month (28 to 31) for this date.</p>
+<p>See also <a href="qdate.html#day">day</a>() and <a href="qdate.html#daysInYear">daysInYear</a>().</p>
+<h3 class="fn"><a name="daysInYear"></a>int QDate::daysInYear () const</h3>
+<p>Returns the number of days in the year (365 or 366) for this date.</p>
+<p>See also <a href="qdate.html#day">day</a>() and <a href="qdate.html#daysInMonth">daysInMonth</a>().</p>
+<h3 class="fn"><a name="daysTo"></a>int QDate::daysTo ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns the number of days from this date to <i>d</i> (which is negative if <i>d</i> is earlier than this date).</p>
+<p>Example:</p>
+<pre>         QDate d1(1995, 5, 17);  // May 17, 1995
+         QDate d2(1995, 5, 20);  // May 20, 1995
+         d1.daysTo(d2);          // returns 3
+         d2.daysTo(d1);          // returns -3</pre>
+<p>See also <a href="qdate.html#addDays">addDays</a>().</p>
+<h3 class="fn"><a name="fromJulianDay"></a>QDate QDate::fromJulianDay ( int <i>jd</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Converts the Julian day <i>jd</i> to a <a href="qdate.html">QDate</a>.</p>
+<p>See also <a href="qdate.html#toJulianDay">toJulianDay</a>().</p>
+<h3 class="fn"><a name="fromString"></a>QDate QDate::fromString ( const <a href="qstring.html">QString</a> &amp; <i>string</i>, <a href="qt.html#DateFormat-enum">Qt::DateFormat</a> <i>format</i> = Qt::TextDate )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the <a href="qdate.html">QDate</a> represented by the <i>string</i>, using the <i>format</i> given, or an invalid date if the string cannot be parsed.</p>
+<p>Note for <a href="qt.html#DateFormat-enum">Qt::TextDate</a>: It is recommended that you use the English short month names (e.g&#x2e; &quot;Jan&quot;). Although localized month names can also be used, they depend on the user's locale settings.</p>
+<h3 class="fn"><a name="fromString-2"></a>QDate QDate::fromString ( const <a href="qstring.html">QString</a> &amp; <i>string</i>, const <a href="qstring.html">QString</a> &amp; <i>format</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the <a href="qdate.html">QDate</a> represented by the <i>string</i>, using the <i>format</i> given, or an invalid date if the string cannot be parsed.</p>
+<p>These expressions may be used for the format:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Expression</th><th>Output</th></tr></thead>
+<tr valign="top" class="odd"><td>d</td><td>The day as a number without a leading zero (1 to 31)</td></tr>
+<tr valign="top" class="even"><td>dd</td><td>The day as a number with a leading zero (01 to 31)</td></tr>
+<tr valign="top" class="odd"><td>ddd</td><td>The abbreviated localized day name (e.g&#x2e; 'Mon' to 'Sun'). Uses <a href="qdate.html#shortDayName">QDate::shortDayName</a>().</td></tr>
+<tr valign="top" class="even"><td>dddd</td><td>The long localized day name (e.g&#x2e; 'Monday' to 'Sunday'). Uses <a href="qdate.html#longDayName">QDate::longDayName</a>().</td></tr>
+<tr valign="top" class="odd"><td>M</td><td>The month as a number without a leading zero (1 to 12)</td></tr>
+<tr valign="top" class="even"><td>MM</td><td>The month as a number with a leading zero (01 to 12)</td></tr>
+<tr valign="top" class="odd"><td>MMM</td><td>The abbreviated localized month name (e.g&#x2e; 'Jan' to 'Dec'). Uses <a href="qdate.html#shortMonthName">QDate::shortMonthName</a>().</td></tr>
+<tr valign="top" class="even"><td>MMMM</td><td>The long localized month name (e.g&#x2e; 'January' to 'December'). Uses <a href="qdate.html#longMonthName">QDate::longMonthName</a>().</td></tr>
+<tr valign="top" class="odd"><td>yy</td><td>The year as two digit number (00 to 99)</td></tr>
+<tr valign="top" class="even"><td>yyyy</td><td>The year as four digit number. If the year is negative, a minus sign is prepended in addition.</td></tr>
+</table></p>
+<p>All other input characters will be treated as text. Any sequence of characters that are enclosed in single quotes will also be treated as text and will not be used as an expression. For example:</p>
+<pre>         QDate date = QDate::fromString(&quot;1MM12car2003&quot;, &quot;d'MM'MMcaryyyy&quot;);
+         // date is 1 December 2003</pre>
+<p>If the format is not satisfied, an invalid <a href="qdate.html">QDate</a> is returned. The expressions that don't expect leading zeroes (d, M) will be greedy. This means that they will use two digits even if this will put them outside the accepted range of values and leaves too few digits for other sections. For example, the following format string could have meant January 30 but the M will grab two digits, resulting in an invalid date:</p>
+<pre>         QDate date = QDate::fromString(&quot;130&quot;, &quot;Md&quot;); // invalid</pre>
+<p>For any field that is not represented in the format the following defaults are used:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Field</th><th>Default value</th></tr></thead>
+<tr valign="top" class="odd"><td>Year</td><td>1900</td></tr>
+<tr valign="top" class="even"><td>Month</td><td>1</td></tr>
+<tr valign="top" class="odd"><td>Day</td><td>1</td></tr>
+</table></p>
+<p>The following examples demonstrate the default values:</p>
+<pre>         QDate::fromString(&quot;1.30&quot;, &quot;M.d&quot;);           // January 30 1900
+         QDate::fromString(&quot;20000110&quot;, &quot;yyyyMMdd&quot;);  // January 10, 2000
+         QDate::fromString(&quot;20000110&quot;, &quot;yyyyMd&quot;);    // January 10, 2000</pre>
+<p>See also <a href="qdatetime.html#fromString">QDateTime::fromString</a>(), <a href="qtime.html#fromString">QTime::fromString</a>(), <a href="qdate.html#toString">QDate::toString</a>(), <a href="qdatetime.html#toString">QDateTime::toString</a>(), and <a href="qtime.html#toString">QTime::toString</a>().</p>
+<h3 class="fn"><a name="isLeapYear"></a>bool QDate::isLeapYear ( int <i>year</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the specified <i>year</i> is a leap year; otherwise returns false.</p>
+<h3 class="fn"><a name="isNull"></a>bool QDate::isNull () const</h3>
+<p>Returns true if the date is null; otherwise returns false. A null date is invalid.</p>
+<p>See also <a href="qdate.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QDate::isValid () const</h3>
+<p>Returns true if this date is valid; otherwise returns false.</p>
+<p>See also <a href="qdate.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="isValid-2"></a>bool QDate::isValid ( int <i>year</i>, int <i>month</i>, int <i>day</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if the specified date (<i>year</i>, <i>month</i>, and <i>day</i>) is valid; otherwise returns false.</p>
+<p>Example:</p>
+<pre>         QDate::isValid(2002, 5, 17);  // true
+         QDate::isValid(2002, 2, 30);  // false (Feb 30 does not exist)
+         QDate::isValid(2004, 2, 29);  // true (2004 is a leap year)
+         QDate::isValid(2000, 2, 29);  // true (2000 is a leap year)
+         QDate::isValid(2006, 2, 29);  // false (2006 is not a leap year)
+         QDate::isValid(2100, 2, 29);  // false (2100 is not a leap year)
+         QDate::isValid(1202, 6, 6);   // true (even though 1202 is pre-Gregorian)</pre>
+<p>See also <a href="qdate.html#isNull">isNull</a>() and <a href="qdate.html#setDate">setDate</a>().</p>
+<h3 class="fn"><a name="longDayName"></a><a href="qstring.html">QString</a> QDate::longDayName ( int <i>weekday</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the long name of the <i>weekday</i> using the following convention:</p>
+<ul>
+<li>1 = &quot;Monday&quot;</li>
+<li>2 = &quot;Tuesday&quot;</li>
+<li>3 = &quot;Wednesday&quot;</li>
+<li>4 = &quot;Thursday&quot;</li>
+<li>5 = &quot;Friday&quot;</li>
+<li>6 = &quot;Saturday&quot;</li>
+<li>7 = &quot;Sunday&quot;</li>
+</ul>
+<p>The day names will be localized according to the system's locale settings.</p>
+<p>See also <a href="qdate.html#toString">toString</a>(), <a href="qdate.html#shortDayName">shortDayName</a>(), <a href="qdate.html#shortMonthName">shortMonthName</a>(), and <a href="qdate.html#longMonthName">longMonthName</a>().</p>
+<h3 class="fn"><a name="longMonthName"></a><a href="qstring.html">QString</a> QDate::longMonthName ( int <i>month</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the long name of the <i>month</i> using the following convention:</p>
+<ul>
+<li>1 = &quot;January&quot;</li>
+<li>2 = &quot;February&quot;</li>
+<li>3 = &quot;March&quot;</li>
+<li>4 = &quot;April&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;June&quot;</li>
+<li>7 = &quot;July&quot;</li>
+<li>8 = &quot;August&quot;</li>
+<li>9 = &quot;September&quot;</li>
+<li>10 = &quot;October&quot;</li>
+<li>11 = &quot;November&quot;</li>
+<li>12 = &quot;December&quot;</li>
+</ul>
+<p>The month names will be localized according to the system's locale settings.</p>
+<p>See also <a href="qdate.html#toString">toString</a>(), <a href="qdate.html#shortMonthName">shortMonthName</a>(), <a href="qdate.html#shortDayName">shortDayName</a>(), and <a href="qdate.html#longDayName">longDayName</a>().</p>
+<h3 class="fn"><a name="month"></a>int QDate::month () const</h3>
+<p>Returns the number corresponding to the month of this date, using the following convention:</p>
+<ul>
+<li>1 = &quot;January&quot;</li>
+<li>2 = &quot;February&quot;</li>
+<li>3 = &quot;March&quot;</li>
+<li>4 = &quot;April&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;June&quot;</li>
+<li>7 = &quot;July&quot;</li>
+<li>8 = &quot;August&quot;</li>
+<li>9 = &quot;September&quot;</li>
+<li>10 = &quot;October&quot;</li>
+<li>11 = &quot;November&quot;</li>
+<li>12 = &quot;December&quot;</li>
+</ul>
+<p>See also <a href="qdate.html#year">year</a>() and <a href="qdate.html#day">day</a>().</p>
+<h3 class="fn"><a name="setDate"></a>bool QDate::setDate ( int <i>year</i>, int <i>month</i>, int <i>day</i> )</h3>
+<p>Sets the date's <i>year</i>, <i>month</i>, and <i>day</i>. Returns true if the date is valid; otherwise returns false.</p>
+<p>If the specified date is invalid, the <a href="qdate.html">QDate</a> object is set to be invalid. Any date before 2 January 4713 B.C&#x2e; is considered invalid.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qdate.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="shortDayName"></a><a href="qstring.html">QString</a> QDate::shortDayName ( int <i>weekday</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the name of the <i>weekday</i> using the following convention:</p>
+<ul>
+<li>1 = &quot;Mon&quot;</li>
+<li>2 = &quot;Tue&quot;</li>
+<li>3 = &quot;Wed&quot;</li>
+<li>4 = &quot;Thu&quot;</li>
+<li>5 = &quot;Fri&quot;</li>
+<li>6 = &quot;Sat&quot;</li>
+<li>7 = &quot;Sun&quot;</li>
+</ul>
+<p>The day names will be localized according to the system's locale settings.</p>
+<p>See also <a href="qdate.html#toString">toString</a>(), <a href="qdate.html#shortMonthName">shortMonthName</a>(), <a href="qdate.html#longMonthName">longMonthName</a>(), and <a href="qdate.html#longDayName">longDayName</a>().</p>
+<h3 class="fn"><a name="shortMonthName"></a><a href="qstring.html">QString</a> QDate::shortMonthName ( int <i>month</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the name of the <i>month</i> using the following convention:</p>
+<ul>
+<li>1 = &quot;Jan&quot;</li>
+<li>2 = &quot;Feb&quot;</li>
+<li>3 = &quot;Mar&quot;</li>
+<li>4 = &quot;Apr&quot;</li>
+<li>5 = &quot;May&quot;</li>
+<li>6 = &quot;Jun&quot;</li>
+<li>7 = &quot;Jul&quot;</li>
+<li>8 = &quot;Aug&quot;</li>
+<li>9 = &quot;Sep&quot;</li>
+<li>10 = &quot;Oct&quot;</li>
+<li>11 = &quot;Nov&quot;</li>
+<li>12 = &quot;Dec&quot;</li>
+</ul>
+<p>The month names will be localized according to the system's locale settings.</p>
+<p>See also <a href="qdate.html#toString">toString</a>(), <a href="qdate.html#longMonthName">longMonthName</a>(), <a href="qdate.html#shortDayName">shortDayName</a>(), and <a href="qdate.html#longDayName">longDayName</a>().</p>
+<h3 class="fn"><a name="toJulianDay"></a>int QDate::toJulianDay () const</h3>
+<p>Converts the date to a Julian day.</p>
+<p>See also <a href="qdate.html#fromJulianDay">fromJulianDay</a>().</p>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QDate::toString ( const <a href="qstring.html">QString</a> &amp; <i>format</i> ) const</h3>
+<p>Returns the date as a string. The <i>format</i> parameter determines the format of the result string.</p>
+<p>These expressions may be used:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Expression</th><th>Output</th></tr></thead>
+<tr valign="top" class="odd"><td>d</td><td>the day as number without a leading zero (1 to 31)</td></tr>
+<tr valign="top" class="even"><td>dd</td><td>the day as number with a leading zero (01 to 31)</td></tr>
+<tr valign="top" class="odd"><td>ddd</td><td>the abbreviated localized day name (e.g&#x2e; 'Mon' to 'Sun'). Uses <a href="qdate.html#shortDayName">QDate::shortDayName</a>().</td></tr>
+<tr valign="top" class="even"><td>dddd</td><td>the long localized day name (e.g&#x2e; 'Monday' to 'Sunday'). Uses <a href="qdate.html#longDayName">QDate::longDayName</a>().</td></tr>
+<tr valign="top" class="odd"><td>M</td><td>the month as number without a leading zero (1 to 12)</td></tr>
+<tr valign="top" class="even"><td>MM</td><td>the month as number with a leading zero (01 to 12)</td></tr>
+<tr valign="top" class="odd"><td>MMM</td><td>the abbreviated localized month name (e.g&#x2e; 'Jan' to 'Dec'). Uses <a href="qdate.html#shortMonthName">QDate::shortMonthName</a>().</td></tr>
+<tr valign="top" class="even"><td>MMMM</td><td>the long localized month name (e.g&#x2e; 'January' to 'December'). Uses <a href="qdate.html#longMonthName">QDate::longMonthName</a>().</td></tr>
+<tr valign="top" class="odd"><td>yy</td><td>the year as two digit number (00 to 99)</td></tr>
+<tr valign="top" class="even"><td>yyyy</td><td>the year as four digit number. If the year is negative, a minus sign is prepended in addition.</td></tr>
+</table></p>
+<p>All other input characters will be ignored. Any sequence of characters that are enclosed in singlequotes will be treated as text and not be used as an expression. Two consecutive singlequotes (&quot;''&quot;) are replaced by a singlequote in the output.</p>
+<p>Example format strings (assuming that the <a href="qdate.html">QDate</a> is the 20 July 1969):</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Format</th><th>Result</th></tr></thead>
+<tr valign="top" class="odd"><td>dd.MM.yyyy</td><td>20.07.1969</td></tr>
+<tr valign="top" class="even"><td>ddd MMMM d yy</td><td>Sun July 20 69</td></tr>
+<tr valign="top" class="odd"><td>'The day is' dddd</td><td>The day is Sunday</td></tr>
+</table></p>
+<p>If the datetime is invalid, an empty string will be returned.</p>
+<p><b>Warning:</b> The <a href="qt.html#DateFormat-enum">Qt::ISODate</a> format is only valid for years in the range 0 to 9999. This restriction may apply to locale-aware formats as well, depending on the locale settings.</p>
+<p>See also <a href="qdatetime.html#toString">QDateTime::toString</a>() and <a href="qtime.html#toString">QTime::toString</a>().</p>
+<h3 class="fn"><a name="toString-2"></a><a href="qstring.html">QString</a> QDate::toString ( <a href="qt.html#DateFormat-enum">Qt::DateFormat</a> <i>format</i> = Qt::TextDate ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the date as a string. The <i>format</i> parameter determines the format of the string.</p>
+<p>If the <i>format</i> is <a href="qt.html#DateFormat-enum">Qt::TextDate</a>, the string is formatted in the default way. <a href="qdate.html#shortDayName">QDate::shortDayName</a>() and <a href="qdate.html#shortMonthName">QDate::shortMonthName</a>() are used to generate the string, so the day and month names will be localized names. An example of this formatting is &quot;Sat May 20 1995&quot;.</p>
+<p>If the <i>format</i> is <a href="qt.html#DateFormat-enum">Qt::ISODate</a>, the string format corresponds to the ISO 8601 extended specification for representations of dates and times, taking the form YYYY-MM-DD, where YYYY is the year, MM is the month of the year (between 01 and 12), and DD is the day of the month between 01 and 31.</p>
+<p>If the <i>format</i> is <a href="qt.html#DateFormat-enum">Qt::SystemLocaleShortDate</a> or <a href="qt.html#DateFormat-enum">Qt::SystemLocaleLongDate</a>, the string format depends on the locale settings of the system. Identical to calling <a href="qlocale.html#system">QLocale::system</a>().toString(date, <a href="qlocale.html#FormatType-enum">QLocale::ShortFormat</a>) or <a href="qlocale.html#system">QLocale::system</a>().toString(date, <a href="qlocale.html#FormatType-enum">QLocale::LongFormat</a>).</p>
+<p>If the <i>format</i> is <a href="qt.html#DateFormat-enum">Qt::DefaultLocaleShortDate</a> or <a href="qt.html#DateFormat-enum">Qt::DefaultLocaleLongDate</a>, the string format depends on the default application locale. This is the locale set with <a href="qlocale.html#setDefault">QLocale::setDefault</a>(), or the system locale if no default locale has been set. Identical to calling QLocale().toString(date, <a href="qlocale.html#FormatType-enum">QLocale::ShortFormat</a>) or QLocale().toString(date, <a href="qlocale.html#FormatType-enum">QLocale::LongFormat</a>).</p>
+<p>If the date is invalid, an empty string will be returned.</p>
+<p><b>Warning:</b> The <a href="qt.html#DateFormat-enum">Qt::ISODate</a> format is only valid for years in the range 0 to 9999. This restriction may apply to locale-aware formats as well, depending on the locale settings.</p>
+<p>See also <a href="qdate.html#shortDayName">shortDayName</a>() and <a href="qdate.html#shortMonthName">shortMonthName</a>().</p>
+<h3 class="fn"><a name="weekNumber"></a>int QDate::weekNumber ( int * <i>yearNumber</i> = 0 ) const</h3>
+<p>Returns the week number (1 to 53), and stores the year in *<i>yearNumber</i> unless <i>yearNumber</i> is null (the default).</p>
+<p>Returns 0 if the date is invalid.</p>
+<p>In accordance with ISO 8601, weeks start on Monday and the first Thursday of a year is always in week 1 of that year. Most years have 52 weeks, but some have 53.</p>
+<p>*<i>yearNumber</i> is not always the same as <a href="qdate.html#year">year</a>(). For example, 1 January 2000 has week number 52 in the year 1999, and 31 December 2002 has week number 1 in the year 2003.</p>
+<div style="padding: 0.5em; background: #e0e0e0; color: black"><p>Copyright (c) 1989 The Regents of the University of California. All rights reserved.</p>
+<p>Redistribution and use in source and binary forms are permitted provided that the above copyright notice and this paragraph are duplicated in all such forms and that any documentation, advertising materials, and other materials related to such distribution and use acknowledge that the software was developed by the University of California, Berkeley. The name of the University may not be used to endorse or promote products derived from this software without specific prior written permission. THIS SOFTWARE IS PROVIDED &quot;AS IS&quot; AND WITHOUT ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.</p>
+</div><p>See also <a href="qdate.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="year"></a>int QDate::year () const</h3>
+<p>Returns the year of this date. Negative numbers indicate years before 1 A.D&#x2e; = 1 C.E&#x2e;, such that year -44 is 44 B.C&#x2e;</p>
+<p>See also <a href="qdate.html#month">month</a>() and <a href="qdate.html#day">day</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QDate::operator!= ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is different from <i>d</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QDate::operator&lt; ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is earlier than <i>d</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt-eq"></a>bool QDate::operator&lt;= ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is earlier than or equal to <i>d</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QDate::operator== ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is equal to <i>d</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool QDate::operator&gt; ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is later than <i>d</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt-eq"></a>bool QDate::operator&gt;= ( const QDate &amp; <i>d</i> ) const</h3>
+<p>Returns true if this date is later than or equal to <i>d</i>; otherwise returns false.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-122"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i>, const QDate &amp; <i>date</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the <i>date</i> to stream <i>out</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-73"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i>, QDate &amp; <i>date</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a date from stream <i>in</i> into the <i>date</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

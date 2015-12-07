@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/porting-qsa.qdoc -->
+<head>
+  <title>Qt 4.4: Moving from QSA to Qt Script</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Moving from QSA to Qt Script<br /><span class="subtitle"></span>
+</h1>
+<p>The purpose of this document is to map the differences between Qt Script for Applications (QSA) and Qt Script, the ECMAScript compatible engine supplied with Qt 4.3&#x2e; This document is not supposed to be a complete function by function porting guide, but will cover the most obvious aspects.</p>
+<p>First of all it is important to realize that Qt Script is only an interpreter, it does not provide an editor, completion or script project management, like QSA does. Qt Script however does provides almost full compliance with the ECMAScript standard and performs significantly better than the script engine provided by QSA.</p>
+<ul><li><a href="#the-scripting-language">The Scripting Language</a></li>
+<ul><li><a href="#classes-vs-objects-and-properties">Classes vs. Objects and Properties</a></li>
+<li><a href="#constructors">Constructors</a></li>
+<li><a href="#member-functions-and-prototypes">Member Functions and Prototypes</a></li>
+<li><a href="#inheritance">Inheritance</a></li>
+<li><a href="#static-members">Static Members</a></li>
+</ul>
+<li><a href="#the-built-in-functions-and-library">The Built-in Functions and Library</a></li>
+<li><a href="#the-c-api-of-qsa-vs-qt-script">The C++ API of QSA vs Qt Script</a></li>
+<ul><li><a href="#making-qobjects-accessible-from-scripts">Making QObjects Accessible from Scripts</a></li>
+<li><a href="#accessing-non-qobjects">Accessing Non-QObjects</a></li>
+<li><a href="#data-mapping">Data Mapping</a></li>
+</ul>
+</ul>
+<a name="the-scripting-language"></a>
+<h2>The Scripting Language</h2>
+<p>The scripting language used in QSA, from here on referred to as QSA, was derived from ECMAScript 3.0 and 4.0 and is a hybrid of these standards. Most of the run-time logic, such as classes and scoping rules, is based on the ECMAScript 4.0 proposal, while the library implementation is based on the ECMAScript 3.0 standard. Qt Script on the other hand is solely based on the ECMAScript 3.0 standard. Though the languages look identical at first glance, there are a few differences that we'll cover in the sections below.</p>
+<a name="classes-vs-objects-and-properties"></a>
+<h3>Classes vs. Objects and Properties</h3>
+<p>QSA implements classes and inheritance much in a familiar way to users of other object oriented languages, like C++ and Java. However, the ECMAScript 3.0 standard defines that everything is an object, and objects can have named properties. For instance to create an point object with the properties x and y one would write the following Qt Script code:</p>
+<pre>     point = new Object();
+     point.x = 12;
+     point.y = 35;</pre>
+<p>The object <tt>point</tt> in this case is constructed as a plain object and we assign two properties, <tt>x</tt> and <tt>y</tt>, to it with the values 12 and 35. The <tt>point</tt> object is assigned to the &quot;Global Object&quot; as the named property <tt>point</tt>. The global object can be considered the global namespace of the script engine. Similarly, global functions are named properties of the global object; for example:</p>
+<pre>     function manhattanLength(point) {
+         return point.x + point.y;
+     }</pre>
+<p>An equivalent construction that illustrates that the function is a property of the global object is the following assignment:</p>
+<pre>     manhattanLength = function(point) {
+        return point.x + point.y;
+     }</pre>
+<p>Since functions are objects, they can be assigned to objects as properties, becoming member functions:</p>
+<pre>     point.manhattanLength = function() {
+         return this.x + this.y;
+     }
+     print(point.manhattanLength()); // prints 47</pre>
+<p>In the code above, we see the first subtle difference between QSA and Qt Script. In QSA one would write the point class like this:</p>
+<pre>     class Point() {
+         var x;
+         var y;
+         function manhattanLength() { return x + y; }
+     }</pre>
+<p>where in the <tt>manhattanLength()</tt> function we access <tt>x</tt> and <tt>y</tt> directly because, when the function is called, the <tt>this</tt> object is implicitly part of the current scope, as in C++. In Qt Script, however, this is not the case, and we need to explicitly access the <tt>x</tt> and <tt>y</tt> values via <tt>this</tt>.</p>
+<p>All the code above runs with QSA except the assignment of a function to <tt>point.manhattanLength</tt>, which we repeat here for clarity:</p>
+<pre>     point.manhattanLength = function() {
+         return this.x + this.y;
+     }
+     print(point.manhattanLength()); // prints 47</pre>
+<p>This is because, in QSA, the value of <tt>this</tt> is decided based on the location of the declaration of the function it is used in. In the code above, the function is assigned to an object, but it is declared in the global scope, hence there will be no valid <tt>this</tt> value. In Qt Script, the value of <tt>this</tt> is decided at run-time, hence you could have assigned the <tt>manhattanLength()</tt> function to any object that had <tt>x</tt> and <tt>y</tt> values.</p>
+<a name="constructors"></a>
+<h3>Constructors</h3>
+<p>In the code above, we use a rather awkward method for constructing the objects, by first instantiating them, then manually assigning properties to them. In QSA, the proper way to solve this is to implement a constructor in the class:</p>
+<pre>     class Car {
+         var regNumber;
+         function Car(regnr) {
+             regNumber = regnr;
+         }
+     }
+     var car = new Car(&quot;ABC 123&quot;);</pre>
+<p>The equivalent in Qt Script is to create a constructor function:</p>
+<pre>     function Car(regnr) {
+         this.regNumber = regnr;
+     }
+     var car = new Car(&quot;ABC 123&quot;);</pre>
+<p>As we can see, the constructor is just a normal function. What is special with is how we call it, namely prefixed with the <tt>new</tt> keyword. This will create a new object and call the <tt>Car()</tt> function with the newly created object as the <tt>this</tt> pointer. So, in a sense, it is equivalent to:</p>
+<pre>     var car = new Object();
+     car.constructor = function(regnr) { ... }
+     car.constructor();</pre>
+<p>This is similar to the manhattenLength() example above. Again, the main difference between QSA and Qt Script is that one has to explicitly use the keyword <tt>this</tt> to access the members and that instead of declaring the variable, <tt>regNumber</tt>, we just extend the <tt>this</tt> object with the property.</p>
+<a name="member-functions-and-prototypes"></a>
+<h3>Member Functions and Prototypes</h3>
+<p>As we saw above, one way of creating member functions of a Qt Script object is to assign the member function to the object as a property and use the <tt>this</tt> object inside the functions. So, if we add a <tt>toString</tt> function to the <tt>Car</tt> class</p>
+<pre>     class Car {
+         var regNumber;
+         function Car(regnr) {
+             regNumber = regnr;
+         }
+         function toString() {
+             return regNumber;
+         }
+     }</pre>
+<p>one could write this in Qt Script as:</p>
+<pre>     function Car(regnr) {
+         this.regNumber = regnr;
+         this.toString = function() { return this.regNumber; }
+     }</pre>
+<p>In QSA, the member functions were part of the class declaration, and were therefore shared between all instances of a given class. In Qt Script, each instance has a instance member for each function. This means that more memory is used when multiple instances are used. Qt Script uses prototypes to remedy this.</p>
+<p>The basic prototype-based inheritance mechanism works as follows. Each Qt Script object has an internal link to another object, its prototype. When a property is looked up in an object, and the object itself does not have the property, the interpreter searches for the property in the prototype object instead; if the prototype has the property then that property is returned. If the prototype object does not have the property, the interpreter searches for the property in the prototype of the prototype object, and so on.</p>
+<p>This chain of objects constitutes a prototype chain. The chain of prototype objects is followed until the property is found or the end of the chain is reached.</p>
+<p>To make the <tt>toString()</tt> function part of the prototype, we write code like this:</p>
+<pre>     function Car(regnr) {
+         this.regNumber = regnr;
+     }
+     Car.prototype.toString = function() { return this.regNumber; }</pre>
+<p>Here, we made the <tt>toString()</tt> function part of the prototype so that, when we call <tt>car.toString()</tt> it will be resolved via the internal prototype object of the car object. Note, however, that the <tt>this</tt> object is still the original object that the function was called on, namely <tt>car</tt>.</p>
+<a name="inheritance"></a>
+<h3>Inheritance</h3>
+<p>Now that we've seen how to use prototypes to create a &quot;class&quot; members in Qt Script, let's see how we can use prototypes to create polymorphism. In QSA you would write</p>
+<pre>     class GasolineCar extends Car {
+         function GasolineCar(regnr) {
+             Car(regnr);
+         }
+         function toString() {
+             return &quot;GasolineCar(&quot; + regNumber + &quot;)&quot;;
+         }
+     }</pre>
+<p>With Qt Script, we acheive the same effect by creating a prototype chain. The default prototype of an object is a plain <tt>Object</tt> without any special members, but it is possible to replace this object with another prototype object.</p>
+<pre>     function GasolineCar(regnr) {
+         Car(regnr);
+     }
+     GasolineCar.prototype = new Car();
+     GasolineCar.prototype.toString = function() {
+         return &quot;GasolineCar(&quot; + this.regNumber + &quot;)&quot;;
+     }</pre>
+<p>In the code above, we have a constructor, <tt>GasolineCar</tt>, which calls the &quot;base class&quot; implementation of the constructor to initialize the <tt>this</tt> object with the property <tt>regNumber</tt>, based on the values passed in the constructor. The interesting line in this case is the line after the constructor where we change the default prototype for <tt>GasolineCar</tt> to be an instance of type <tt>Car</tt>. This means that all members available in a <tt>Car</tt> object are now available in all <tt>GasolineCar</tt> objects. In the last line, we replace the <tt>toString()</tt> function in the prototype with our own, thus overriding the <tt>toString()</tt> for all instances of <tt>GasolineCar</tt>.</p>
+<a name="static-members"></a>
+<h3>Static Members</h3>
+<p>QSA allowed users to declare static members in classes, and these could be accessed both through instances of the class and through the class itself. For example, the following variable is accessed through the <tt>Car</tt> class:</p>
+<pre>     class Car {
+         static var globalCount = 0;
+     }
+     print(Car.globalCount);</pre>
+<p>The equivalent in Qt Script is to assign variables that should appear as static members as properties of the constructor function. For example:</p>
+<pre>     Car.globalCount = 0;
+     print(Car.globalCount);</pre>
+<p>Note that in QSA, static member variables were also accessible in instances of the given class. In Qt Script, with the approach illustrated above, the variable is a member of the constructor object only, and thus only accessible through <tt>Car.globalCount</tt>.</p>
+<a name="the-built-in-functions-and-library"></a>
+<h2>The Built-in Functions and Library</h2>
+<p>The built-in functions in QSA are based on those defined in the ECMAScript 3.0 standard, the same standard used for Qt Script, but QSA adds some extensions to this, specifically for the <tt>String</tt> and <tt>RegExp</tt> types. QSA also lacked some functions from the standard, most notably the <tt>Date</tt> type. Below we list all the differences. All changes made to Qt Script are to increase compliance with ECMAScript 3.0&#x2e;</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>QSA Function</th><th>Notes about Equivalent Qt Script Functions</th></tr></thead>
+<tr valign="top" class="odd"><td>eval()</td><td>The eval function in QSA opened a new scope for code being executed in the eval function, so locally declared variables were not accessible outside. In Qt Script, the eval() function shares the current scope, making locally declared variables accessible outside the eval() call.</td></tr>
+<tr valign="top" class="even"><td>debug()</td><td>This function is not available in Qt Script. Use print() instead.</td></tr>
+<tr valign="top" class="odd"><td>connect()</td><td>QSA had closures, meaning that a member function reference implicitly contained its <tt>this</tt> object. Qt Script does not support this. See the Qt Script documentation for details on using the connect function.</td></tr>
+<tr valign="top" class="even"><td>String.arg()</td><td>This function is not available in Qt Script. Use replace() or concat() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.argDec()</td><td>This function is not available in Qt Script. Use replace() or concat() instead.</td></tr>
+<tr valign="top" class="even"><td>String.argInt()</td><td>This function is not available in Qt Script. Use replace() or concat() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.argStr()</td><td>This function is not available in Qt Script. Use replace() or concat() instead.</td></tr>
+<tr valign="top" class="even"><td>String.endsWith()</td><td>This function is not available in Qt Script. Use lastIndexOf() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.find()</td><td>This function is not available in Qt Script. Use indexOf() instead.</td></tr>
+<tr valign="top" class="even"><td>String.findRev()</td><td>This function is not available in Qt Script. Use lastIndexOf() and length instead.</td></tr>
+<tr valign="top" class="odd"><td>String.isEmpty()</td><td>This function is not available in Qt Script. Use length == 0 instead.</td></tr>
+<tr valign="top" class="even"><td>String.<a href="qtextstream.html#left">left</a>()</td><td>This function is not available in Qt Script. Use substring() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.lower()</td><td>This function is not available in Qt Script. Use toLowerCase() instead.</td></tr>
+<tr valign="top" class="even"><td>String.mid()</td><td>This function is not available in Qt Script. Use substring() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.<a href="qtextstream.html#right">right</a>()</td><td>This function is not available in Qt Script. Use substring() instead.</td></tr>
+<tr valign="top" class="even"><td>String.searchRev()</td><td>This function is not available in Qt Script. Use search() / match() instead.</td></tr>
+<tr valign="top" class="odd"><td>String.startsWith()</td><td>This function is not available in Qt Script. Use indexOf() instead.</td></tr>
+<tr valign="top" class="even"><td>String.upper()</td><td>This function is not available in Qt Script. Use toUpperCase() instead.</td></tr>
+<tr valign="top" class="odd"><td>RegExp.valid</td><td>This property is not available in Qt Script because it is not required; a <tt>SyntaxError</tt> exception is thrown for bad <tt>RegExp</tt> objects.</td></tr>
+<tr valign="top" class="even"><td>RegExp.empty</td><td>This property is not available in Qt Script. Use <tt>toString().length == 0</tt> instead.</td></tr>
+<tr valign="top" class="odd"><td>RegExp.matchedLength</td><td>This property is not available in Qt Script. RegExp.exec() returns an array whose size is the matched length.</td></tr>
+<tr valign="top" class="even"><td>RegExp.capturedTexts</td><td>This property is not available in Qt Script. RegExp.exec() returns an array of captured texts.</td></tr>
+<tr valign="top" class="odd"><td>RegExp.search()</td><td>This function is not available in Qt Script. Use RegExp.exec() instead.</td></tr>
+<tr valign="top" class="even"><td>RegExp.searchRev()</td><td>This function is not available in Qt Script. Use RegExp.exec() or String.search()/match() instead.</td></tr>
+<tr valign="top" class="odd"><td>RegExp.exactMatch()</td><td>This function is not available in Qt Script. Use RegExp.exec() instead.</td></tr>
+<tr valign="top" class="even"><td>RegExp.pos()</td><td>This function is not available in Qt Script. Use String.match() instead.</td></tr>
+<tr valign="top" class="odd"><td>RegExp.cap()</td><td>This function is not available in Qt Script. RegExp.exec() returns an array of captured texts.</td></tr>
+</table></p>
+<p>QSA also defined some internal Qt API which is not present in Qt Script. The types provided by QSA which are not provided by Qt Script are:</p>
+<ul>
+<li>Rect</li>
+<li>Point</li>
+<li>Size</li>
+<li>Color</li>
+<li>Palette</li>
+<li>ColorGroup</li>
+<li>Font</li>
+<li>Pixmap</li>
+<li>ByteArray</li>
+</ul>
+<a name="the-c-api-of-qsa-vs-qt-script"></a>
+<h2>The C++ API of QSA vs Qt Script</h2>
+<p>QSA is more than just a scripting engine. It provides project management, an editor with completion and a minimalistic IDE to edit scriptable projects. Qt Script on the other hand is just a scripting engine. This means that equivalents to the classes <tt>QSEditor</tt>, <tt>QSScript</tt>, <tt>QSProject</tt> and <tt>QSWorkbench</tt> do not exist in Qt Script. QSA also provides some extension APIs through the <tt>QSUtilFactory</tt> and <tt>QSInputDialogFactory</tt>. There is also no equivalent to these classes in the Qt Script API.</p>
+<a name="making-qobjects-accessible-from-scripts"></a>
+<h3>Making QObjects Accessible from Scripts</h3>
+<p>There are two different ways of making <a href="qobject.html">QObject</a>s accessible from scripts in QSA. The first method is via the <tt>QSInterpreter::addTransientObject()</tt> and <tt>QSProject::addObject()</tt> functions. In this case objects are added to the global namespace of the interpreter using their object names as the names of the variables.</p>
+<pre>     QPushButton *button = new QPushButton();
+     button-&gt;setObjectName(&quot;button&quot;);
+     interpreter-&gt;addTransientObject(button);</pre>
+<p>The code above adds the button to the global namespace under the name &quot;button&quot;. One obvious limitation here is that there is potential for either unnamed <a href="qobject.html">QObject</a>s or objects whose names conflict. Qt Script provides a more flexible way of adding QObjects to the scripting environment.</p>
+<pre>     QPushButton *button = new QPushButton();
+     QScriptValue scriptButton = engine.newQObject(button);
+     engine.globalObject().setProperty(&quot;button&quot;, scriptButton);</pre>
+<p>In the code above we create a <a href="qpushbutton.html">QPushButton</a> and wrap it in a script value using the function, <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>(). This gives us a script value that we put into the global object using the name &quot;button&quot;. The concept of objects and properties discussed above is quite visible here in the public C++ API as well. We have no dependency on the object's name and we can also resolve name conflicts more gracefully. Here, we operate directly on <a href="qscriptvalue.html">QScriptValue</a> objects. This is the actual object that is being passed around inside the script engine, so we actually have low-level access to the internal script data structures, far beyond that which is possible in QSA. Properties, signals and slots of the <a href="qobject.html">QObject</a> are accessible to the scripter in Qt Script, just like in QSA.</p>
+<p>The other way to expose <a href="qobject.html">QObject</a>s in QSA was to create a <tt>QSObjectFactory</tt> that made it possible to instantiate QObjects from scripts.</p>
+<p>Below is listed some code from the filter example in the QSA package.</p>
+<pre>     ModuleFactory::ModuleFactory()
+     {
+         registerClass( &quot;ImageSource&quot;, &amp;ImgSource::staticMetaObject);
+         ...
+     }
+
+     QObject *ModuleFactory::create( const QString &amp;type,
+                                     const QVariantList &amp;,
+                                     QObject * )
+     {
+         if ( type == &quot;ImageSource&quot; )
+             return new ImgSource();
+         ...
+     }
+
+     ...
+
+     interpreter.addObjectFactory(new ModuleFactory());</pre>
+<p>The equivalent in Qt Script is written in much the same way as constructors are written in scripts. We register a callback C++ function under the name &quot;ImageSource&quot; in the global namespace and return the <a href="qobject.html">QObject</a> from this function:</p>
+<pre>     QScriptValue construct_QPushButton(QScriptContext *, QScriptEngine *engine) {
+         return engine-&gt;newQObject(new QPushButton());
+     }
+
+     ...
+
+     QScriptValue constructor = engine.newFunction(construct_QPushButton);
+     QScriptValue value =
+         engine.newQMetaObject(&amp;QPushButton::staticMetaObject,
+                               constructor);
+     engine.globalObject().setProperty(&quot;QPushButton&quot;, value);</pre>
+<p>In the Qt Script case we use the same approach that we use to expose a <a href="qobject.html">QObject</a>, namely via <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>(). This function also has the benefit that it is possible to specify if the <a href="qobject.html">QObject</a> should expose properties and slots of its base class. It is also possible to specify custom ownership rules.</p>
+<p>The reader might question why we don't add the constructor function directly into the namespace, but create a meta-object script value for it in addition. The plain function would certainly be good enough, but by creating a <a href="qmetaobject.html">QMetaObject</a> based constructor we get the enums on <a href="qpushbutton.html">QPushButton</a> for free in the <a href="qpushbutton.html">QPushButton</a> function object. Exposing enums in QSA is rather painful in comparison.</p>
+<p>If we want to add more &quot;static&quot; data to the <a href="qpushbutton.html">QPushButton</a> type in Qt Script, we're free to add properties, similar to how we did for the script. It is also possible to add custom functions to a Qt Script <a href="qpushbutton.html">QPushButton</a> instance by setting more properties on it, such as making the <a href="qabstractbutton.html#text-prop">setText()</a> C++ function available. It is also possible to acheive this by installing a custom prototype, and be memory efficient, as discussed in the script example above.</p>
+<a name="accessing-non-qobjects"></a>
+<h3>Accessing Non-QObjects</h3>
+<p>In QSA, it was possible to expose non-QObjects to QSA by wrapping them in a <a href="qobject.html">QObject</a> and using either <tt>QSWrapperFactory</tt> or <tt>QSObjectFactory</tt> to expose them. Deciding when to use each of these classes could be confusing, as one was used for script based construction and the other for wrapping function parameters and return values, but in essence they did exactly the same thing.</p>
+<p>In Qt Script, providing access to QObjects and non-QObjects is done in the same way as shown above, by creating a constructor function, and by adding properties or a custom prototype to the constructed object.</p>
+<a name="data-mapping"></a>
+<h3>Data Mapping</h3>
+<p>QSA supported a hardcoded set of type mappings which covered most of the <a href="qvariant.html">QVariant</a> types, QObjects and primitives. For more complex type signatures, such as the template-based tool classes, it had rather limited support. Qt Script is significantly better at type mapping and will convert lists of template types into arrays of the appropriate types, given that all the types are declared to the meta-type system.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

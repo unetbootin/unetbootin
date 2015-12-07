@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsitem.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsPixmapItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsPixmapItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsPixmapItem class provides a pixmap item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsPixmapItem&gt;</pre><p>Inherits <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicspixmapitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qgraphicspixmapitem.html#ShapeMode-enum">ShapeMode</a></b> { MaskShape, BoundingRectShape, HeuristicMaskShape }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicspixmapitem.html#QGraphicsPixmapItem">QGraphicsPixmapItem</a></b> ( QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicspixmapitem.html#QGraphicsPixmapItem-2">QGraphicsPixmapItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicspixmapitem.html#dtor.QGraphicsPixmapItem">~QGraphicsPixmapItem</a></b> ()</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicspixmapitem.html#offset">offset</a></b> () const</li>
+<li><div class="fn"/>QPixmap <b><a href="qgraphicspixmapitem.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicspixmapitem.html#setOffset">setOffset</a></b> ( const QPointF &amp; <i>offset</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicspixmapitem.html#setOffset-2">setOffset</a></b> ( qreal <i>x</i>, qreal <i>y</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicspixmapitem.html#setPixmap">setPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicspixmapitem.html#setShapeMode">setShapeMode</a></b> ( ShapeMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicspixmapitem.html#setTransformationMode">setTransformationMode</a></b> ( Qt::TransformationMode <i>mode</i> )</li>
+<li><div class="fn"/>ShapeMode <b><a href="qgraphicspixmapitem.html#shapeMode">shapeMode</a></b> () const</li>
+<li><div class="fn"/>Qt::TransformationMode <b><a href="qgraphicspixmapitem.html#transformationMode">transformationMode</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsPixmapItem class provides a pixmap item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>To set the item's pixmap, pass a <a href="qpixmap.html">QPixmap</a> to QGraphicsPixmapItem's constructor, or call the <a href="qgraphicspixmapitem.html#setPixmap">setPixmap</a>() function. The <a href="qgraphicspixmapitem.html#pixmap">pixmap</a>() function returns the current pixmap.</p>
+<p>QGraphicsPixmapItem uses pixmap's optional alpha mask to provide a reasonable implementation of <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), <a href="qgraphicsitem.html#shape">shape</a>(), and <a href="qgraphicsitem.html#contains">contains</a>().</p>
+<p align="center"><img src="images/graphicsview-pixmapitem.png" /></p><p>The pixmap is drawn at the item's (0, 0) coordinate, as returned by <a href="qgraphicspixmapitem.html#offset">offset</a>(). You can change the drawing offset by calling <a href="qgraphicspixmapitem.html#setOffset">setOffset</a>().</p>
+<p>You can set the pixmap's transformation mode by calling <a href="qgraphicspixmapitem.html#setTransformationMode">setTransformationMode</a>(). By default, <a href="qt.html#TransformationMode-enum">Qt::FastTransformation</a> is used, which provides fast, non-smooth scaling. <a href="qt.html#TransformationMode-enum">Qt::SmoothTransformation</a> enables <a href="qpainter.html#RenderHint-enum">QPainter::SmoothPixmapTransform</a> on the painter, and the quality depends on the platform and viewport. The result is usually not as good as calling QPixmap::scale() directly. Call <a href="qgraphicspixmapitem.html#transformationMode">transformationMode</a>() to get the current transformation mode for the item.</p>
+<p>See also <a href="qgraphicspathitem.html">QGraphicsPathItem</a>, <a href="qgraphicsrectitem.html">QGraphicsRectItem</a>, <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a>, <a href="qgraphicstextitem.html">QGraphicsTextItem</a>, <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a>, <a href="qgraphicslineitem.html">QGraphicsLineItem</a>, and <a href="graphicsview.html">The Graphics View Framework</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ShapeMode-enum"></a>enum QGraphicsPixmapItem::ShapeMode</h3>
+<p>This enum describes how <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> calculates its shape and opaque area.</p>
+<p>The default value is MaskShape.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGraphicsPixmapItem::MaskShape</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The shape is determined by calling <a href="qpixmap.html#mask">QPixmap::mask</a>(). This shape includes only the opaque pixels of the pixmap. Because the shape is more complex, however, it can be slower than the other modes, and uses more memory.</td></tr>
+<tr><td valign="top"><tt>QGraphicsPixmapItem::BoundingRectShape</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The shape is determined by tracing the outline of the pixmap. This is the fastest shape mode, but it does not take into account any transparent areas on the pixmap.</td></tr>
+<tr><td valign="top"><tt>QGraphicsPixmapItem::HeuristicMaskShape</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The shape is determine by calling <a href="qpixmap.html#createHeuristicMask">QPixmap::createHeuristicMask</a>(). The performance and memory consumption is similar to MaskShape.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsPixmapItem"></a>QGraphicsPixmapItem::QGraphicsPixmapItem ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>. <i>parent</i> is passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="QGraphicsPixmapItem-2"></a>QGraphicsPixmapItem::QGraphicsPixmapItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>, using <i>pixmap</i> as the default pixmap. <i>parent</i> is passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="dtor.QGraphicsPixmapItem"></a>QGraphicsPixmapItem::~QGraphicsPixmapItem ()</h3>
+<p>Destroys the <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>.</p>
+<h3 class="fn"><a name="offset"></a><a href="qpointf.html">QPointF</a> QGraphicsPixmapItem::offset () const</h3>
+<p>Returns the pixmap item's <i>offset</i>, which defines the point of the top-left corner of the pixmap, in local coordinates.</p>
+<p>See also <a href="qgraphicspixmapitem.html#setOffset">setOffset</a>().</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QGraphicsPixmapItem::pixmap () const</h3>
+<p>Returns the item's pixmap, or an invalid <a href="qpixmap.html">QPixmap</a> if no pixmap has been set.</p>
+<p>See also <a href="qgraphicspixmapitem.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="setOffset"></a>void QGraphicsPixmapItem::setOffset ( const <a href="qpointf.html">QPointF</a> &amp; <i>offset</i> )</h3>
+<p>Sets the pixmap item's offset to <i>offset</i>. <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> will draw its pixmap using <i>offset</i> for its top-left corner.</p>
+<p>See also <a href="qgraphicspixmapitem.html#offset">offset</a>().</p>
+<h3 class="fn"><a name="setOffset-2"></a>void QGraphicsPixmapItem::setOffset ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling setOffset(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="setPixmap"></a>void QGraphicsPixmapItem::setPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Sets the item's pixmap to <i>pixmap</i>.</p>
+<p>See also <a href="qgraphicspixmapitem.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="setShapeMode"></a>void QGraphicsPixmapItem::setShapeMode ( <a href="qgraphicspixmapitem.html#ShapeMode-enum">ShapeMode</a> <i>mode</i> )</h3>
+<p>Sets the item's shape mode to <i>mode</i>. The shape mode describes how <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> calculates its shape. The default mode is <a href="qgraphicspixmapitem.html#ShapeMode-enum">MaskShape</a>.</p>
+<p>See also <a href="qgraphicspixmapitem.html#shapeMode">shapeMode</a>() and <a href="qgraphicspixmapitem.html#ShapeMode-enum">ShapeMode</a>.</p>
+<h3 class="fn"><a name="setTransformationMode"></a>void QGraphicsPixmapItem::setTransformationMode ( <a href="qt.html#TransformationMode-enum">Qt::TransformationMode</a> <i>mode</i> )</h3>
+<p>Sets the pixmap item's transformation mode to <i>mode</i>, and toggles an update of the item. The default mode is <a href="qt.html#TransformationMode-enum">Qt::FastTransformation</a>, which provides quick transformation with no smoothing.</p>
+<p><a href="qt.html#TransformationMode-enum">Qt::SmoothTransformation</a> enables <a href="qpainter.html#RenderHint-enum">QPainter::SmoothPixmapTransform</a> on the painter, and the quality depends on the platform and viewport. The result is usually not as good as calling QPixmap::scale() directly.</p>
+<p>See also <a href="qgraphicspixmapitem.html#transformationMode">transformationMode</a>().</p>
+<h3 class="fn"><a name="shapeMode"></a><a href="qgraphicspixmapitem.html#ShapeMode-enum">ShapeMode</a> QGraphicsPixmapItem::shapeMode () const</h3>
+<p>Returns the item's shape mode. The shape mode describes how <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> calculates its shape. The default mode is <a href="qgraphicspixmapitem.html#ShapeMode-enum">MaskShape</a>.</p>
+<p>See also <a href="qgraphicspixmapitem.html#setShapeMode">setShapeMode</a>() and <a href="qgraphicspixmapitem.html#ShapeMode-enum">ShapeMode</a>.</p>
+<h3 class="fn"><a name="transformationMode"></a><a href="qt.html#TransformationMode-enum">Qt::TransformationMode</a> QGraphicsPixmapItem::transformationMode () const</h3>
+<p>Returns the transformation mode of the pixmap. The default mode is <a href="qt.html#TransformationMode-enum">Qt::FastTransformation</a>, which provides quick transformation with no smoothing.</p>
+<p>See also <a href="qgraphicspixmapitem.html#setTransformationMode">setTransformationMode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

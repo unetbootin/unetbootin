@@ -1,0 +1,637 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Address Book Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="itemviews-addressbook-adddialog-cpp.html">itemviews/addressbook/adddialog.cpp</a></li>
+<li><a href="itemviews-addressbook-adddialog-h.html">itemviews/addressbook/adddialog.h</a></li>
+<li><a href="itemviews-addressbook-addresswidget-cpp.html">itemviews/addressbook/addresswidget.cpp</a></li>
+<li><a href="itemviews-addressbook-addresswidget-h.html">itemviews/addressbook/addresswidget.h</a></li>
+<li><a href="itemviews-addressbook-mainwindow-cpp.html">itemviews/addressbook/mainwindow.cpp</a></li>
+<li><a href="itemviews-addressbook-mainwindow-h.html">itemviews/addressbook/mainwindow.h</a></li>
+<li><a href="itemviews-addressbook-newaddresstab-cpp.html">itemviews/addressbook/newaddresstab.cpp</a></li>
+<li><a href="itemviews-addressbook-newaddresstab-h.html">itemviews/addressbook/newaddresstab.h</a></li>
+<li><a href="itemviews-addressbook-tablemodel-cpp.html">itemviews/addressbook/tablemodel.cpp</a></li>
+<li><a href="itemviews-addressbook-tablemodel-h.html">itemviews/addressbook/tablemodel.h</a></li>
+<li><a href="itemviews-addressbook-main-cpp.html">itemviews/addressbook/main.cpp</a></li>
+<li><a href="itemviews-addressbook-addressbook-pro.html">itemviews/addressbook/addressbook.pro</a></li>
+</ul>
+<p>The address book example shows how to use proxy models to display different views onto data from a single model.</p>
+<p align="center"><img src="images/addressbook-example.png" alt="Screenshot of the Address Book example" /></p><p>This example provides an address book that allows contacts to be grouped alphabetically into 9 groups: ABC, DEF, GHI, ..&#x2e; , VW, ..&#x2e;, XYZ. This is achieved by using multiple views on the same model, each of which is filtered using an instance of the <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> class.</p>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>The address book contains 5 classes: <tt>MainWindow</tt>, <tt>AddressWidget</tt>, <tt>TableModel</tt>, <tt>NewAddressTab</tt> and <tt>AddDialog</tt>. The <tt>MainWindow</tt> class uses <tt>AddressWidget</tt> as its central widget and provides <b>File</b> and <b>Tools</b> menus.</p>
+<p align="center"><img src="images/addressbook-classes.png" alt="Diagram for Address Book Example" /></p><p>The <tt>AddressWidget</tt> class is a <a href="qtabwidget.html">QTabWidget</a> subclass that is used to manipulate the 10 tabs displayed in the example: the 9 alphabet group tabs and an instance of <tt>NewAddressTab</tt>. The <tt>NewAddressTab</tt> class is a subclass of <a href="qwidget.html">QWidget</a> that is only used whenever the address book is empty, prompting the user to add some contacts. <tt>AddressWidget</tt> also interacts with an instance of <tt>TableModel</tt> to add, edit and remove entries to the address book.</p>
+<p><tt>TableModel</tt> is a subclass of <a href="qabstracttablemodel.html">QAbstractTableModel</a> that provides the standard model/view API to access data. It also holds a <a href="qlist.html">QList</a> of <a href="qpair.html">QPair</a>s corresponding to the contacts added. However, this data is not all visible in a single tab. Instead, <a href="qtableview.html">QTableView</a> is used to provide 9 different views of the same data, according to the alphabet groups.</p>
+<p><a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> is the class responsible for filtering the contacts for each group of contacts. Each proxy model uses a <a href="qregexp.html">QRegExp</a> to filter out contacts that do not belong in the corresponding alphabetical group. The <tt>AddDialog</tt> class is used to obtain information from the user for the address book. This <a href="qdialog.html">QDialog</a> subclass is instantiated by <tt>NewAddressTab</tt> to add contacts, and by <tt>AddressWidget</tt> to add and edit contacts.</p>
+<p>We begin by looking at the <tt>TableModel</tt> implementation.</p>
+<a name="tablemodel-class-definition"></a>
+<h2>TableModel Class Definition</h2>
+<p>The <tt>TableModel</tt> class provides standard API to access data in its <a href="qlist.html">QList</a> of <a href="qpair.html">QPair</a>s by subclassing <a href="qabstracttablemodel.html">QAbstractTableModel</a>. The basic functions that must be implemented in order to do so are: <tt>rowCount()</tt>, <tt>columnCount()</tt>, <tt>data()</tt>, <tt>headerData()</tt>. For TableModel to be editable, it has to provide implementations <tt>insertRows()</tt>, <tt>removeRows()</tt>, <tt>setData()</tt> and <tt>flags()</tt> functions.</p>
+<pre> class TableModel : public QAbstractTableModel
+ {
+     Q_OBJECT
+
+ public:
+     TableModel(QObject *parent=0);
+     TableModel(QList&lt; QPair&lt;QString, QString&gt; &gt; listofPairs, QObject *parent=0);
+
+     int rowCount(const QModelIndex &amp;parent) const;
+     int columnCount(const QModelIndex &amp;parent) const;
+     QVariant data(const QModelIndex &amp;index, int role) const;
+     QVariant headerData(int section, Qt::Orientation orientation, int role) const;
+     Qt::ItemFlags flags(const QModelIndex &amp;index) const;
+     bool setData(const QModelIndex &amp;index, const QVariant &amp;value, int role=Qt::EditRole);
+     bool insertRows(int position, int rows, const QModelIndex &amp;index=QModelIndex());
+     bool removeRows(int position, int rows, const QModelIndex &amp;index=QModelIndex());
+     QList&lt; QPair&lt;QString, QString&gt; &gt; getList();
+
+ private:
+     QList&lt; QPair&lt;QString, QString&gt; &gt; listOfPairs;
+ };</pre>
+<p>Two constructors are used, a default constructor which uses <tt>TableModel</tt>'s own <tt>QList&lt;QPair&lt;QString, QString&gt;&gt;</tt> and one that takes <tt>QList&lt;QPair&lt;QString, QString&gt;</tt> as an argument, for convenience.</p>
+<a name="tablemodel-class-implementation"></a>
+<h2>TableModel Class Implementation</h2>
+<p>We implement the two constructors as defined in the header file. The second constructor initializes the list of pairs in the model, with the parameter value.</p>
+<pre> TableModel::TableModel(QObject *parent)
+     : QAbstractTableModel(parent)
+ {
+ }
+
+ TableModel::TableModel(QList&lt; QPair&lt;QString, QString&gt; &gt; pairs, QObject *parent)
+     : QAbstractTableModel(parent)
+ {
+     listOfPairs=pairs;
+ }</pre>
+<p>The <tt>rowCount()</tt> and <tt>columnCount()</tt> functions return the dimensions of the model. Where <tt>rowCount()</tt>'s value will vary depending on the number of contacts added to the address book, <tt>columnCount()</tt>'s value is always 2 because we only need space for the <b>Name</b> and <b>Address</b> columns.</p>
+<p><b>Note:</b> The <tt>Q_UNUSED()</tt> macro prevents the compiler from generating warnings regarding unused parameters.</p>
+<pre> int TableModel::rowCount(const QModelIndex &amp;parent) const
+ {
+     Q_UNUSED(parent);
+     return listOfPairs.size();
+ }
+
+ int TableModel::columnCount(const QModelIndex &amp;parent) const
+ {
+     Q_UNUSED(parent);
+     return 2;
+ }</pre>
+<p>The <tt>data()</tt> function returns either a <b>Name</b> or <b>Address</b>, based on the contents of the model index supplied. The row number stored in the model index is used to reference an item in the list of pairs. Selection is handled by the <a href="qitemselectionmodel.html">QItemSelectionModel</a>, which will be explained with <tt>AddressWidget</tt>.</p>
+<pre> QVariant TableModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (!index.isValid())
+         return QVariant();
+
+     if (index.row() &gt;= listOfPairs.size() || index.row() &lt; 0)
+         return QVariant();
+
+     if (role == Qt::DisplayRole) {
+         QPair&lt;QString, QString&gt; pair = listOfPairs.at(index.row());
+
+         if (index.column() == 0)
+             return pair.first;
+         else if (index.column() == 1)
+             return pair.second;
+     }
+     return QVariant();
+ }</pre>
+<p>The <tt>headerData()</tt> function displays the table's header, <b>Name</b> and <b>Address</b>. If you require numbered entries for your address book, you can use a vertical header which we have hidden in this example (see the <tt>AddressWidget</tt> implementation).</p>
+<pre> QVariant TableModel::headerData(int section, Qt::Orientation orientation, int role) const
+ {
+     if (role != Qt::DisplayRole)
+         return QVariant();
+
+     if (orientation == Qt::Horizontal) {
+         switch (section) {
+             case 0:
+                 return tr(&quot;Name&quot;);
+
+             case 1:
+                 return tr(&quot;Address&quot;);
+
+             default:
+                 return QVariant();
+         }
+     }
+     return QVariant();
+ }</pre>
+<p>The <tt>insertRows()</tt> function is called before new data is added, otherwise the data will not be displayed. The <tt>beginInsertRows()</tt> and <tt>endInsertRows()</tt> functions are called to ensure all connected views are aware of the changes.</p>
+<pre> bool TableModel::insertRows(int position, int rows, const QModelIndex &amp;index)
+ {
+     Q_UNUSED(index);
+     beginInsertRows(QModelIndex(), position, position+rows-1);
+
+     for (int row=0; row &lt; rows; row++) {
+         QPair&lt;QString, QString&gt; pair(&quot; &quot;, &quot; &quot;);
+         listOfPairs.insert(position, pair);
+     }
+
+     endInsertRows();
+     return true;
+ }</pre>
+<p>The <tt>removeRows()</tt> function is called to remove data. Again, <a href="qabstractitemmodel.html#beginRemoveRows">beginRemoveRows()</a> and <a href="qabstractitemmodel.html#endRemoveRows">endRemoveRows()</a> are called to ensure all connected views are aware of the changes.</p>
+<pre> bool TableModel::removeRows(int position, int rows, const QModelIndex &amp;index)
+ {
+     Q_UNUSED(index);
+     beginRemoveRows(QModelIndex(), position, position+rows-1);
+
+     for (int row=0; row &lt; rows; ++row) {
+         listOfPairs.removeAt(position);
+     }
+
+     endRemoveRows();
+     return true;
+ }</pre>
+<p>The <tt>setData()</tt> function is the function that inserts data into the table, item by item and not row by row. This means that to fill a row in the address book, <tt>setData()</tt> must be called twice, as each row has 2 columns. It is important to emit the <a href="qabstractitemmodel.html#dataChanged">dataChanged()</a> signal as it tells all connected views to update their displays.</p>
+<pre> bool TableModel::setData(const QModelIndex &amp;index, const QVariant &amp;value, int role)
+ {
+         if (index.isValid() &amp;&amp; role == Qt::EditRole) {
+                 int row = index.row();
+
+                 QPair&lt;QString, QString&gt; p = listOfPairs.value(row);
+
+                 if (index.column() == 0)
+                         p.first = value.toString();
+                 else if (index.column() == 1)
+                         p.second = value.toString();
+         else
+             return false;
+
+         listOfPairs.replace(row, p);
+                 emit(dataChanged(index, index));
+
+         return true;
+         }
+
+         return false;
+ }</pre>
+<p>The <tt>flags()</tt> function returns the item flags for the given index.</p>
+<pre> Qt::ItemFlags TableModel::flags(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return Qt::ItemIsEnabled;
+
+     return QAbstractTableModel::flags(index) | Qt::ItemIsEditable;
+ }</pre>
+<p>We set the <a href="qt.html#ItemFlag-enum">Qt::ItemIsEditable</a> flag because we want to allow the <tt>TableModel</tt> to be edited. Although for this example we don't use the editing features of the <a href="qtableview.html">QTableView</a> object, we enable them here so that we can reuse the model in other programs.</p>
+<p>The last function in <tt>TableModel</tt>, <tt>getList()</tt> returns the <a href="qlist.html">QList</a>&lt;<a href="qpair.html">QPair</a>&lt;<a href="qstring.html">QString</a>, <a href="qstring.html">QString</a>&gt;&gt; object that holds all the contacts in the address book. We use this function later to obtain the list of contacts to check for existing entries, write the contacts to a file and read them back. Further explanation is given with <tt>AddressWidget</tt>.</p>
+<pre> QList&lt; QPair&lt;QString, QString&gt; &gt; TableModel::getList()
+ {
+     return listOfPairs;
+ }</pre>
+<a name="addresswidget-class-definition"></a>
+<h2>AddressWidget Class Definition</h2>
+<p>The <tt>AddressWidget</tt> class is technically the main class involved in this example as it provides functions to add, edit and remove contacts, to save the contacts to a file and to load them from a file.</p>
+<pre> class AddressWidget : public QTabWidget
+ {
+     Q_OBJECT
+
+ public:
+     AddressWidget(QWidget *parent=0);
+     void readFromFile(QString fileName);
+     void writeToFile(QString fileName);
+
+ public slots:
+     void addEntry();
+     void addEntry(QString name, QString address);
+     void editEntry();
+     void removeEntry();
+
+ signals:
+     void selectionChanged (const QItemSelection &amp;selected);
+
+ private:
+     void setupTabs();
+
+     TableModel *table;
+     NewAddressTab *newAddressTab;
+     QSortFilterProxyModel *proxyModel;
+ };</pre>
+<p><tt>AddressWidget</tt> extends <a href="qtabwidget.html">QTabWidget</a> in order to hold 10 tabs (<tt>NewAddressTab</tt> and the 9 alphabet group tabs) and also manipulates <tt>table</tt>, the <tt>TableModel</tt> object, <tt>proxyModel</tt>, the <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> object that we use to filter the entries, and <tt>tableView</tt>, the <a href="qtableview.html">QTableView</a> object.</p>
+<a name="addresswidget-class-implementation"></a>
+<h2>AddressWidget Class Implementation</h2>
+<p>The <tt>AddressWidget</tt> constructor accepts a parent widget and instantiates <tt>NewAddressTab</tt>, <tt>TableModel</tt> and <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a>. The <tt>NewAddressTab</tt> object, which is used to indicate that the address book is empty, is added and the rest of the 9 tabs are set up with <tt>setupTabs()</tt>.</p>
+<pre> AddressWidget::AddressWidget(QWidget *parent)
+     : QTabWidget(parent)
+ {
+     table = new TableModel(this);
+     newAddressTab = new NewAddressTab(this);
+     connect(newAddressTab, SIGNAL(sendDetails(QString, QString)),
+         this, SLOT(addEntry(QString, QString)));
+
+     addTab(newAddressTab, &quot;Address Book&quot;);
+
+     setupTabs();
+ }</pre>
+<p>The <tt>setupTabs()</tt> function is used to set up the 9 alphabet group tabs, table views and proxy models in <tt>AddressWidget</tt>. Each proxy model in turn is set to filter contact names according to the relevant alphabet group using a <a href="qt.html#CaseSensitivity-enum">case-insensitive</a> <a href="qregexp.html">QRegExp</a> object. The table views are also sorted in ascending order using the corresponding proxy model's <a href="qabstractitemmodel.html#sort">sort()</a> function.</p>
+<p>Each table view's <a href="qabstractitemview.html#selectionMode-prop">selectionMode</a> is set to <a href="qabstractitemview.html#SelectionMode-enum">QAbstractItemView::SingleSelection</a> and <a href="qabstractitemview.html#selectionBehavior-prop">selectionBehavior</a> is set to <a href="qabstractitemview.html#SelectionBehavior-enum">QAbstractItemView::SelectRows</a>, allowing the user to select all the items in one row at the same time. Each <a href="qtableview.html">QTableView</a> object is automatically given a <a href="qitemselectionmodel.html">QItemSelectionModel</a> that keeps track of the selected indexes.</p>
+<pre> void AddressWidget::setupTabs()
+ {
+     QStringList groups;
+     groups &lt;&lt; &quot;ABC&quot; &lt;&lt; &quot;DEF&quot; &lt;&lt; &quot;GHI&quot; &lt;&lt; &quot;JKL&quot; &lt;&lt; &quot;MNO&quot; &lt;&lt; &quot;PQR&quot; &lt;&lt; &quot;STU&quot; &lt;&lt; &quot;VW&quot; &lt;&lt; &quot;XYZ&quot;;
+
+     for (int i = 0; i &lt; groups.size(); ++i) {
+         QString str = groups.at(i);
+
+         proxyModel = new QSortFilterProxyModel(this);
+         proxyModel-&gt;setSourceModel(table);
+         proxyModel-&gt;setDynamicSortFilter(true);
+
+         QTableView *tableView = new QTableView;
+         tableView-&gt;setModel(proxyModel);
+         tableView-&gt;setSortingEnabled(true);
+         tableView-&gt;setSelectionBehavior(QAbstractItemView::SelectRows);
+         tableView-&gt;horizontalHeader()-&gt;setStretchLastSection(true);
+         tableView-&gt;verticalHeader()-&gt;hide();
+         tableView-&gt;setEditTriggers(QAbstractItemView::NoEditTriggers);
+         tableView-&gt;setSelectionMode(QAbstractItemView::SingleSelection);
+
+         QString newStr = QString(&quot;^[%1].*&quot;).arg(str);
+
+         proxyModel-&gt;setFilterRegExp(QRegExp(newStr, Qt::CaseInsensitive));
+         proxyModel-&gt;setFilterKeyColumn(0);
+         proxyModel-&gt;sort(0, Qt::AscendingOrder);
+
+         connect(tableView-&gt;selectionModel(),
+             SIGNAL(selectionChanged(const QItemSelection &amp;, const QItemSelection &amp;)),
+             this, SIGNAL(selectionChanged(const QItemSelection &amp;)));
+
+         addTab(tableView, str);
+     }
+ }</pre>
+<p>The <a href="qitemselectionmodel.html">QItemSelectionModel</a> class provides a <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a> signal that is connected to <tt>AddressWidget</tt>'s <tt>selectionChanged()</tt> signal. This signal to signal connection is necessary to enable the <b>Edit Entry..&#x2e;</b> and <b>Remove Entry</b> actions in <tt>MainWindow</tt>'s Tools menu. This connection is further explained in <tt>MainWindow</tt>'s implementation.</p>
+<p>Each table view in the address book is added as a tab to the <a href="qtabwidget.html">QTabWidget</a> with the relevant label, obtained from the <a href="qstringlist.html">QStringList</a> of groups.</p>
+<p align="center"><img src="images/addressbook-signals.png" alt="Signals and Slots Connections" /></p><p>We provide 2 <tt>addEntry()</tt> functions: 1 which is intended to be used to accept user input, and the other which performs the actual task of adding new entries to the address book. We divide the responsibility of adding entries into two parts to allow <tt>newAddressTab</tt> to insert data without having to popup a dialog.</p>
+<p>The first <tt>addEntry()</tt> function is a slot connected to the <tt>MainWindow</tt>'s <b>Add Entry..&#x2e;</b> action. This function creates an <tt>AddDialog</tt> object and then calls the second <tt>addEntry()</tt> function to actually add the contact to <tt>table</tt>.</p>
+<pre> void AddressWidget::addEntry()
+ {
+     AddDialog aDialog;
+
+     if (aDialog.exec()) {
+         QString name = aDialog.nameText-&gt;text();
+         QString address = aDialog.addressText-&gt;toPlainText();
+
+         addEntry(name, address);
+     }
+ }</pre>
+<p>Basic validation is done in the second <tt>addEntry()</tt> function to prevent duplicate entries in the address book. As mentioned with <tt>TableModel</tt>, this is part of the reason why we require the getter method <tt>getList()</tt>.</p>
+<pre> void AddressWidget::addEntry(QString name, QString address)
+ {
+     QList&lt; QPair&lt;QString, QString&gt; &gt;list = table-&gt;getList();
+     QPair&lt;QString, QString&gt; pair(name, address);
+
+     if (!list.contains(pair)) {
+         table-&gt;insertRows(0, 1, QModelIndex());
+
+         QModelIndex index = table-&gt;index(0, 0, QModelIndex());
+         table-&gt;setData(index, name, Qt::EditRole);
+         index = table-&gt;index(0, 1, QModelIndex());
+         table-&gt;setData(index, address, Qt::EditRole);
+         removeTab(indexOf(newAddressTab));
+     } else {
+         QMessageBox::information(this, tr(&quot;Duplicate Name&quot;),
+             tr(&quot;The name \&quot;%1\&quot; already exists.&quot;).arg(name));
+     }
+ }</pre>
+<p>If the model does not already contain an entry with the same name, we call <tt>setData()</tt> to insert the name and address into the first and second columns. Otherwise, we display a <a href="qmessagebox.html">QMessageBox</a> to inform the user.</p>
+<p><b>Note:</b> The <tt>newAddressTab</tt> is removed once a contact is added as the address book is no longer empty.</p>
+<p>Editing an entry is a way to update the contact's address only, as the example does not allow the user to change the name of an existing contact.</p>
+<p>Firstly, we obtain the active tab's <a href="qtableview.html">QTableView</a> object using <a href="qtabwidget.html#currentWidget">QTabWidget::currentWidget</a>(). Then we extract the <tt>selectionModel</tt> from the <tt>tableView</tt> to obtain the selected indexes.</p>
+<pre> void AddressWidget::editEntry()
+ {
+     QTableView *temp = static_cast&lt;QTableView*&gt;(currentWidget());
+     QItemSelectionModel *selectionModel = temp-&gt;selectionModel();
+
+     QModelIndexList indexes = selectionModel-&gt;selectedRows();
+     QModelIndex index, i;
+     QString name;
+     QString address;
+     int row;
+
+     foreach (index, indexes) {
+         row = index.row();
+         i = table-&gt;index(row, 0, QModelIndex());
+         QVariant varName = table-&gt;data(i, Qt::DisplayRole);
+         name = varName.toString();
+
+         i = table-&gt;index(row, 1, QModelIndex());
+         QVariant varAddr = table-&gt;data(i, Qt::DisplayRole);
+         address = varAddr.toString();
+     }</pre>
+<p>Next we extract data from the row the user intends to edit. This data is displayed in an instance of <tt>AddDialog</tt> with a different window title. The <tt>table</tt> is only updated if changes have been made to data in <tt>aDialog</tt>.</p>
+<pre>     AddDialog aDialog;
+     aDialog.setWindowTitle(tr(&quot;Edit a Contact&quot;));
+
+     aDialog.nameText-&gt;setReadOnly(true);
+     aDialog.nameText-&gt;setText(name);
+     aDialog.addressText-&gt;setText(address);
+
+     if (aDialog.exec()) {
+         QString newAddress = aDialog.addressText-&gt;toPlainText();
+         if (newAddress != address) {
+             i = table-&gt;index(row, 1, QModelIndex());
+             table-&gt;setData(i, newAddress, Qt::EditRole);
+         }
+     }
+ }</pre>
+<p align="center"><img src="images/addressbook-editdialog.png" alt="Screenshot of Dialog to Edit a Contact" /></p><p>Entries are removed using the <tt>removeEntry()</tt> function. The selected row is removed by accessing it through the <a href="qitemselectionmodel.html">QItemSelectionModel</a> object, <tt>selectionModel</tt>. The <tt>newAddressTab</tt> is re-added to the <tt>AddressWidget</tt> only if the user removes all the contacts in the address book.</p>
+<pre> void AddressWidget::removeEntry()
+ {
+     QTableView *temp = static_cast&lt;QTableView*&gt;(currentWidget());
+     QItemSelectionModel *selectionModel = temp-&gt;selectionModel();
+
+     QModelIndexList indexes = selectionModel-&gt;selectedRows();
+     QModelIndex index;
+
+     foreach (index, indexes) {
+         int row = index.row();
+         table-&gt;removeRows(row, 1, QModelIndex());
+     }
+
+     if (table-&gt;rowCount(QModelIndex()) == 0) {
+         insertTab(0, newAddressTab, &quot;Address Book&quot;);
+     }
+ }</pre>
+<p>The <tt>writeToFile()</tt> function is used to save a file containing all the contacts in the address book. The file is saved in a custom <tt>.dat</tt> format. The contents of the <a href="qlist.html">QList</a> of <a href="qpair.html">QPair</a>s are written to <tt>file</tt> using <a href="qdatastream.html">QDataStream</a>. If the file cannot be opened, a <a href="qmessagebox.html">QMessageBox</a> is displayed with the related error message.</p>
+<pre> void AddressWidget::writeToFile(QString fileName)
+ {
+     QFile file(fileName);
+
+     if (!file.open(QIODevice::WriteOnly)) {
+         QMessageBox::information(this, tr(&quot;Unable to open file&quot;), file.errorString());
+         return;
+     }
+
+     QList&lt; QPair&lt;QString, QString&gt; &gt; pairs = table-&gt;getList();
+     QDataStream out(&amp;file);
+     out &lt;&lt; pairs;
+ }</pre>
+<p>The <tt>readFromFile()</tt> function loads a file containing all the contacts in the address book, previously saved using <tt>writeToFile()</tt>. <a href="qdatastream.html">QDataStream</a> is used to read the contents of a <tt>.dat</tt> file into a list of pairs and each of these is added using <tt>addEntry()</tt>.</p>
+<pre> void AddressWidget::readFromFile(QString fileName)
+ {
+     QFile file(fileName);
+
+     if (!file.open(QIODevice::ReadOnly)) {
+         QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+             file.errorString());
+         return;
+     }
+
+     QList&lt; QPair&lt;QString, QString&gt; &gt; pairs = table-&gt;getList();
+     QDataStream in(&amp;file);
+     in &gt;&gt; pairs;
+
+     if (pairs.isEmpty()) {
+         QMessageBox::information(this, tr(&quot;No contacts in file&quot;),
+             tr(&quot;The file you are attempting to open contains no contacts.&quot;));
+     } else {
+         for (int i=0; i&lt;pairs.size(); ++i) {
+             QPair&lt;QString, QString&gt; p = pairs.at(i);
+             addEntry(p.first, p.second);
+         }
+     }
+ }</pre>
+<a name="newaddresstab-class-definition"></a>
+<h2>NewAddressTab Class Definition</h2>
+<p>The <tt>NewAddressTab</tt> class provides an informative tab telling the user that the address book is empty. It appears and disappears according to the contents of the address book, as mentioned in <tt>AddressWidget</tt>'s implementation.</p>
+<p align="center"><img src="images/addressbook-newaddresstab.png" alt="Screenshot of NewAddressTab" /></p><p>The <tt>NewAddressTab</tt> class extends <a href="qwidget.html">QWidget</a> and contains a <a href="qlabel.html">QLabel</a> and <a href="qpushbutton.html">QPushButton</a>.</p>
+<pre> class NewAddressTab : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     NewAddressTab(QWidget *parent=0);
+
+ public slots:
+     void addEntry();
+
+ signals:
+     void sendDetails(QString name, QString address);
+
+ private:
+     QLabel *descriptionLabel;
+     QPushButton *addButton;
+     QVBoxLayout *mainLayout;
+
+ };</pre>
+<a name="newaddresstab-class-implementation"></a>
+<h2>NewAddressTab Class Implementation</h2>
+<p>The constructor instantiates the <tt>addButton</tt>, <tt>descriptionLabel</tt> and connects the <tt>addButton</tt>'s signal to the <tt>addEntry()</tt> slot.</p>
+<pre> NewAddressTab::NewAddressTab(QWidget *parent)
+ {
+     Q_UNUSED(parent);
+
+     descriptionLabel = new QLabel(tr(&quot;There are currently no contacts in your address book. &quot;
+                                       &quot;\nClick Add to add new contacts.&quot;));
+
+     addButton = new QPushButton(tr(&quot;Add&quot;));
+
+     connect(addButton, SIGNAL(clicked()), this, SLOT(addEntry()));
+
+     mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(descriptionLabel);
+     mainLayout-&gt;addWidget(addButton, 0, Qt::AlignCenter);
+
+     setLayout(mainLayout);
+ }</pre>
+<p>The <tt>addEntry()</tt> function is similar to <tt>AddressWidget</tt>'s <tt>addEntry()</tt> in the sense that both functions instantiate an <tt>AddDialog</tt> object. Data from the dialog is extracted and sent to <tt>AddressWidget</tt>'s <tt>addEntry()</tt> slot by emitting the <tt>sendDetails()</tt> signal.</p>
+<pre> void NewAddressTab::addEntry()
+ {
+     AddDialog aDialog;
+
+     if (aDialog.exec()) {
+         QString name = aDialog.nameText-&gt;text();
+         QString address = aDialog.addressText-&gt;toPlainText();
+
+         emit sendDetails(name, address);
+     }
+ }</pre>
+<p align="center"><img src="images/signals-n-slots-aw-nat.png" /></p><a name="adddialog-class-definition"></a>
+<h2>AddDialog Class Definition</h2>
+<p>The <tt>AddDialog</tt> class extends <a href="qdialog.html">QDialog</a> and provides the user with a <a href="qlineedit.html">QLineEdit</a> and a <a href="qtextedit.html">QTextEdit</a> to input data into the address book.</p>
+<pre> class AddDialog : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     AddDialog(QWidget *parent=0);
+     QLineEdit *nameText;
+     QTextEdit *addressText;
+
+ private:
+     QLabel *nameLabel;
+     QLabel *addressLabel;
+     QPushButton *okButton;
+     QPushButton *cancelButton;
+ };</pre>
+<p align="center"><img src="images/addressbook-adddialog.png" /></p><a name="adddialog-class-implementation"></a>
+<h2>AddDialog Class Implementation</h2>
+<p>The <tt>AddDialog</tt>'s constructor sets up the user interface, creating the necessary widgets and placing them into layouts.</p>
+<pre> AddDialog::AddDialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     nameLabel = new QLabel(&quot;Name&quot;);
+     addressLabel = new QLabel(&quot;Address&quot;);
+     okButton = new QPushButton(&quot;OK&quot;);
+     cancelButton = new QPushButton(&quot;Cancel&quot;);
+
+     nameText = new QLineEdit;
+     addressText = new QTextEdit;
+
+     QGridLayout *gLayout = new QGridLayout;
+     gLayout-&gt;setColumnStretch(1, 2);
+     gLayout-&gt;addWidget(nameLabel, 0, 0);
+     gLayout-&gt;addWidget(nameText, 0, 1);
+
+     gLayout-&gt;addWidget(addressLabel, 1, 0, Qt::AlignLeft|Qt::AlignTop);
+     gLayout-&gt;addWidget(addressText, 1, 1, Qt::AlignLeft);
+
+     QHBoxLayout *buttonLayout = new QHBoxLayout;
+     buttonLayout-&gt;addWidget(okButton);
+     buttonLayout-&gt;addWidget(cancelButton);
+
+     gLayout-&gt;addLayout(buttonLayout, 2, 1, Qt::AlignRight);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addLayout(gLayout);
+     setLayout(mainLayout);
+
+     connect(okButton, SIGNAL(clicked()),
+             this, SLOT(accept()));
+
+     connect(cancelButton, SIGNAL(clicked()),
+             this, SLOT(reject()));
+
+     setWindowTitle(tr(&quot;Add a Contact&quot;));
+ }</pre>
+<p>To give the dialog the desired behavior, we connect the <b>OK</b> and <b>Cancel</b> buttons to the dialog's <a href="qdialog.html#accept">accept()</a> and <a href="qdialog.html#reject">reject()</a> slots. Since the dialog only acts as a container for name and address information, we do not need to implement any other functions for it.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class extends <a href="qmainwindow.html">QMainWindow</a> and implements the menus and actions necessary to manipulate the address book.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/addressbook-filemenu.png" /></td><td><img src="images/addressbook-toolsmenu.png" /></td></tr>
+</table></p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ private slots:
+     void updateActions(const QItemSelection &amp;selection);
+     void openFile();
+     void saveFile();
+
+ private:
+     void createMenus();
+
+     AddressWidget *addressWidget;
+     QMenu *fileMenu;
+     QMenu *toolMenu;
+     QAction *openAct;
+     QAction *saveAct;
+     QAction *exitAct;
+     QAction *addAct;
+     QAction *editAct;
+     QAction *removeAct;
+ };</pre>
+<p>The <tt>MainWindow</tt> class uses an <tt>AddressWidget</tt> as its central widget and provides the File menu with <b>Open</b>, <b>Close</b> and <b>Exit</b> actions, as well as the <b>Tools</b> menu with <b>Add Entry..&#x2e;</b>, <b>Edit Entry..&#x2e;</b> and <b>Remove Entry</b> actions.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The constructor for <tt>MainWindow</tt> instantiates AddressWidget, sets it as its central widget and calls the <tt>createMenus()</tt> function.</p>
+<pre> MainWindow::MainWindow()
+ {
+     addressWidget = new AddressWidget;
+     setCentralWidget(addressWidget);
+     createMenus();
+     setWindowTitle(tr(&quot;Address Book&quot;));
+ }</pre>
+<p>The <tt>createMenus()</tt> function sets up the <b>File</b> and <b>Tools</b> menus, connecting the actions to their respective slots. Both the <b>Edit Entry..&#x2e;</b> and <b>Remove Entry</b> actions are disabled by default as such actions cannot be carried out on an empty address book. They are only enabled when one or more contacts are added.</p>
+<pre> void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     fileMenu-&gt;addAction(openAct);
+     connect(openAct, SIGNAL(triggered()),
+         this, SLOT(openFile()));
+     ...
+
+     editAct = new QAction(tr(&quot;&amp;Edit Entry...&quot;), this);
+     editAct-&gt;setEnabled(false);
+     toolMenu-&gt;addAction(editAct);
+     connect(editAct, SIGNAL(triggered()),
+         addressWidget, SLOT(editEntry()));
+
+     toolMenu-&gt;addSeparator();
+
+     removeAct = new QAction(tr(&quot;&amp;Remove Entry&quot;), this);
+     removeAct-&gt;setEnabled(false);
+     toolMenu-&gt;addAction(removeAct);
+     connect(removeAct, SIGNAL(triggered()),
+         addressWidget, SLOT(removeEntry()));
+
+     connect(addressWidget, SIGNAL(selectionChanged(const QItemSelection &amp;)),
+         this, SLOT(updateActions(const QItemSelection &amp;)));
+ }</pre>
+<p>Apart from connecting all the actions' signals to their respective slots, we also connect <tt>AddressWidget</tt>'s <tt>selectionChanged()</tt> signal to its <tt>updateActions()</tt> slot.</p>
+<p>The <tt>openFile()</tt> function allows the user to choose a file with the <a href="qfiledialog.html#getOpenFileName">open file dialog</a>. The chosen file has to be a custom <tt>.dat</tt> file that contains address book contacts. This function is a slot connected to <tt>openAct</tt> in the <b>File</b> menu.</p>
+<pre> void MainWindow::openFile()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this);
+     if (!fileName.isEmpty()) {
+         addressWidget-&gt;readFromFile(fileName);
+     }
+ }</pre>
+<p>The <tt>saveFile()</tt> function allows the user to save a file with the <a href="qfiledialog.html#getSaveFileName">save file dialog</a>. This function is a slot connected to <tt>saveAct</tt> in the <b>File</b> menu.</p>
+<pre> void MainWindow::saveFile()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this);
+     if (!fileName.isEmpty()) {
+         addressWidget-&gt;writeToFile(fileName);
+     }
+ }</pre>
+<p>The <tt>updateActions()</tt> function enables and disables <b>Edit Entry..&#x2e;</b> and <b>Remove Entry</b> depending on the contents of the address book. If the address book is empty, these actions are disabled; otherwise, they are enabled. This function is a slot is connected to the <tt>AddressWidget</tt>'s <tt>selectionChanged()</tt> signal.</p>
+<pre> void MainWindow::updateActions(const QItemSelection &amp;selection)
+ {
+     QModelIndexList indexes = selection.indexes();
+
+     if (!indexes.isEmpty()) {
+         removeAct-&gt;setEnabled(true);
+         editAct-&gt;setEnabled(true);
+     } else {
+         removeAct-&gt;setEnabled(false);
+         editAct-&gt;setEnabled(false);
+     }
+ }</pre>
+<a name="main-function"></a>
+<h2>main() Function</h2>
+<p>The main function for the address book instantiates <a href="qapplication.html">QApplication</a> and opens a <tt>MainWindow</tt> before running the event loop.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MainWindow mw;
+     mw.show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

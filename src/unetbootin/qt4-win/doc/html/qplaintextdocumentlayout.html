@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qplaintextedit.cpp -->
+<head>
+  <title>Qt 4.4: QPlainTextDocumentLayout Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPlainTextDocumentLayout Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPlainTextDocumentLayout class implements a plain text layout for <a href="qtextdocument.html">QTextDocument</a> <a href="#details">More...</a></p>
+<pre> #include &lt;QPlainTextDocumentLayout&gt;</pre><p>Inherits <a href="qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qplaintextdocumentlayout-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qplaintextdocumentlayout.html#cursorWidth-prop">cursorWidth</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qplaintextdocumentlayout.html#QPlainTextDocumentLayout">QPlainTextDocumentLayout</a></b> ( QTextDocument * <i>document</i> )</li>
+<li><div class="fn"/><b><a href="qplaintextdocumentlayout.html#dtor.QPlainTextDocumentLayout">~QPlainTextDocumentLayout</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qplaintextdocumentlayout.html#cursorWidth-prop">cursorWidth</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qplaintextdocumentlayout.html#ensureBlockLayout">ensureBlockLayout</a></b> ( const QTextBlock &amp; <i>block</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qplaintextdocumentlayout.html#requestUpdate">requestUpdate</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qplaintextdocumentlayout.html#cursorWidth-prop">setCursorWidth</a></b> ( int <i>width</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>12 public functions inherited from <a href="qabstracttextdocumentlayout.html#public-functions">QAbstractTextDocumentLayout</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qabstracttextdocumentlayout.html#signals">QAbstractTextDocumentLayout</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="qabstracttextdocumentlayout.html#protected-functions">QAbstractTextDocumentLayout</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPlainTextDocumentLayout class implements a plain text layout for <a href="qtextdocument.html">QTextDocument</a></p>
+<p>A QPlainTextDocumentLayout is required for text documents that can be display or edited in a <a href="qplaintextedit.html">QPlainTextEdit</a>. See <a href="qtextdocument.html#setDocumentLayout">QTextDocument::setDocumentLayout</a>().</p>
+<p>QPlainTextDocumentLayout uses the <a href="qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a> API that <a href="qtextdocument.html">QTextDocument</a> requires, but redefines it partially in order to support plain text better. For instances, it does not operate on vertical pixels, but on paragraphs (called blocks) instead. The height of a document is identical to the number of paragraphs it contains. The layout also doesn't support tables or nested frames, or any sort of advanced text layout that goes beyond a list of paragraphs with syntax highlighting.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="cursorWidth-prop"></a>cursorWidth : int</h3>
+<p>This property specifies the width of the cursor in pixels. The default value is 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int cursorWidth () const</b></li>
+<li><div class="fn"/><b>void setCursorWidth ( int <i>width</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPlainTextDocumentLayout"></a>QPlainTextDocumentLayout::QPlainTextDocumentLayout ( <a href="qtextdocument.html">QTextDocument</a> * <i>document</i> )</h3>
+<p>Constructs a plain text document layout for the text <i>document</i>.</p>
+<h3 class="fn"><a name="dtor.QPlainTextDocumentLayout"></a>QPlainTextDocumentLayout::~QPlainTextDocumentLayout ()</h3>
+<p>Destructs a plain text document layout.</p>
+<h3 class="fn"><a name="ensureBlockLayout"></a>void QPlainTextDocumentLayout::ensureBlockLayout ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> ) const</h3>
+<p>Ensures that <i>block</i> has a valid layout</p>
+<h3 class="fn"><a name="requestUpdate"></a>void QPlainTextDocumentLayout::requestUpdate ()</h3>
+<p>Requests a complete update on all views.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

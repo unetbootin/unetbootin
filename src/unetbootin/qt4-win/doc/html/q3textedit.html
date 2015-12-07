@@ -1,0 +1,936 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/text/q3textedit.cpp -->
+<head>
+  <title>Qt 4.4: Q3TextEdit Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TextEdit Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TextEdit widget provides a powerful single-page rich text editor. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TextEdit&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qtextedit">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3scrollview.html">Q3ScrollView</a>.</p>
+<p>Inherited by <a href="q3multilineedit.html">Q3MultiLineEdit</a>, <a href="q3textbrowser.html">Q3TextBrowser</a>, and <a href="q3textview.html">Q3TextView</a>.</p>
+<ul>
+<li><a href="q3textedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>flags <b><a href="q3textedit.html#AutoFormattingFlag-enum">AutoFormatting</a></b></li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#AutoFormattingFlag-enum">AutoFormattingFlag</a></b> { AutoNone, AutoBulletList, AutoAll }</li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#CursorAction-enum">CursorAction</a></b> { MoveBackward, MoveWordBackward, MoveForward, MoveWordForward, ..., MovePgDown }</li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#KeyboardAction-enum">KeyboardAction</a></b> { ActionBackspace, ActionDelete, ActionReturn, ActionKill, ActionWordBackspace, ActionWordDelete }</li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#VerticalAlignment-enum">VerticalAlignment</a></b> { AlignNormal, AlignSuperScript, AlignSubScript }</li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#WordWrap-enum">WordWrap</a></b> { NoWrap, WidgetWidth, FixedPixelWidth, FixedColumnWidth }</li>
+<li><div class="fn"/>enum <b><a href="q3textedit.html#WrapPolicy-enum">WrapPolicy</a></b> { AtWhiteSpace, Anywhere, AtWordBoundary, AtWordOrDocumentBoundary }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3textedit.html#autoFormatting-prop">autoFormatting</a></b> : AutoFormattingFlag</li>
+<li><div class="fn"/><b><a href="q3textedit.html#documentTitle-prop">documentTitle</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="q3textedit.html#hasSelectedText-prop">hasSelectedText</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#length-prop">length</a></b> : const int</li>
+<li><div class="fn"/><b><a href="q3textedit.html#linkUnderline-prop">linkUnderline</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#modified-prop">modified</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#overwriteMode-prop">overwriteMode</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#paper-prop">paper</a></b> : QBrush</li>
+<li><div class="fn"/><b><a href="q3textedit.html#readOnly-prop">readOnly</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#selectedText-prop">selectedText</a></b> : const QString</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3textedit.html#tabChangesFocus-prop">tabChangesFocus</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#tabStopWidth-prop">tabStopWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3textedit.html#text-prop">text</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3textedit.html#textFormat-prop">textFormat</a></b> : Qt::TextFormat</li>
+<li><div class="fn"/><b><a href="q3textedit.html#undoDepth-prop">undoDepth</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3textedit.html#undoRedoEnabled-prop">undoRedoEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3textedit.html#wordWrap-prop">wordWrap</a></b> : WordWrap</li>
+<li><div class="fn"/><b><a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3textedit.html#wrapPolicy-prop">wrapPolicy</a></b> : WrapPolicy</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3textedit.html#Q3TextEdit">Q3TextEdit</a></b> ( const QString &amp; <i>text</i>, const QString &amp; <i>context</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3textedit.html#Q3TextEdit-2">Q3TextEdit</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3textedit.html#dtor.Q3TextEdit">~Q3TextEdit</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#anchorAt">anchorAt</a></b> ( const QPoint &amp; <i>pos</i>, Qt::AnchorAttribute <i>attr</i> = Qt::AnchorHref )</li>
+<li><div class="fn"/>AutoFormatting <b><a href="q3textedit.html#autoFormatting-prop">autoFormatting</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#bold">bold</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#charAt">charAt</a></b> ( const QPoint &amp; <i>pos</i>, int * <i>para</i> ) const</li>
+<li><div class="fn"/>QColor <b><a href="q3textedit.html#color">color</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#context">context</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="q3textedit.html#currentFont">currentFont</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#documentTitle-prop">documentTitle</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#family">family</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="q3textedit.html#find">find</a></b> ( const QString &amp; <i>expr</i>, bool <i>cs</i>, bool <i>wo</i>, bool <i>forward</i> = true, int * <i>para</i> = 0, int * <i>index</i> = 0 )</li>
+<li><div class="fn"/>QFont <b><a href="q3textedit.html#font">font</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#getCursorPosition">getCursorPosition</a></b> ( int * <i>para</i>, int * <i>index</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#getSelection">getSelection</a></b> ( int * <i>paraFrom</i>, int * <i>indexFrom</i>, int * <i>paraTo</i>, int * <i>indexTo</i>, int <i>selNum</i> = 0 ) const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#hasSelectedText-prop">hasSelectedText</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3textedit.html#heightForWidth">heightForWidth</a></b> ( int <i>w</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#modified-prop">isModified</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#overwriteMode-prop">isOverwriteMode</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#readOnly-prop">isReadOnly</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#isRedoAvailable">isRedoAvailable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#isUndoAvailable">isUndoAvailable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#undoRedoEnabled-prop">isUndoRedoEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#italic">italic</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#length-prop">length</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#lineOfChar">lineOfChar</a></b> ( int <i>para</i>, int <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#lines">lines</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#linesOfParagraph">linesOfParagraph</a></b> ( int <i>para</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#linkUnderline-prop">linkUnderline</a></b> () const</li>
+<li><div class="fn"/>Q3MimeSourceFactory * <b><a href="q3textedit.html#mimeSourceFactory">mimeSourceFactory</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="q3textedit.html#paper-prop">paper</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#paragraphAt">paragraphAt</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>QColor <b><a href="q3textedit.html#paragraphBackgroundColor">paragraphBackgroundColor</a></b> ( int <i>para</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#paragraphLength">paragraphLength</a></b> ( int <i>para</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="q3textedit.html#paragraphRect">paragraphRect</a></b> ( int <i>para</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#paragraphs">paragraphs</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#pointSize">pointSize</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#selectedText-prop">selectedText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#autoFormatting-prop">setAutoFormatting</a></b> ( AutoFormatting )</li>
+<li><div class="fn"/>Q3StyleSheet * <b><a href="q3textedit.html#styleSheet">styleSheet</a></b> () const</li>
+<li><div class="fn"/>Q3SyntaxHighlighter * <b><a href="q3textedit.html#syntaxHighlighter">syntaxHighlighter</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#tabChangesFocus-prop">tabChangesFocus</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#tabStopWidth-prop">tabStopWidth</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#text-prop">text</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3textedit.html#text-prop">text</a></b> ( int <i>para</i> ) const</li>
+<li><div class="fn"/>Qt::TextFormat <b><a href="q3textedit.html#textFormat-prop">textFormat</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3textedit.html#underline">underline</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#undoDepth-prop">undoDepth</a></b> () const</li>
+<li><div class="fn"/>VerticalAlignment <b><a href="q3textedit.html#verticalAlignment">verticalAlignment</a></b> () const</li>
+<li><div class="fn"/>WordWrap <b><a href="q3textedit.html#wordWrap-prop">wordWrap</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a></b> () const</li>
+<li><div class="fn"/>WrapPolicy <b><a href="q3textedit.html#wrapPolicy-prop">wrapPolicy</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#append">append</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#clearParagraphBackground">clearParagraphBackground</a></b> ( int <i>para</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#copy">copy</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#cut">cut</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#del">del</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#doKeyboardAction">doKeyboardAction</a></b> ( Q3TextEdit::KeyboardAction <i>action</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#ensureCursorVisible">ensureCursorVisible</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#insert">insert</a></b> ( const QString &amp; <i>text</i>, uint <i>insertionFlags</i> = CheckNewLines | RemoveSelected )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#insert-2">insert</a></b> ( const QString &amp; <i>text</i>, bool <i>indent</i>, bool <i>checkNewLine</i> = true, bool <i>removeSelected</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#insertAt">insertAt</a></b> ( const QString &amp; <i>text</i>, int <i>para</i>, int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#insertParagraph">insertParagraph</a></b> ( const QString &amp; <i>text</i>, int <i>para</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#moveCursor">moveCursor</a></b> ( Q3TextEdit::CursorAction <i>action</i>, bool <i>select</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#paste">paste</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#pasteSubType">pasteSubType</a></b> ( const QByteArray &amp; <i>subtype</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#placeCursor">placeCursor</a></b> ( const QPoint &amp; <i>pos</i>, Q3TextCursor * <i>c</i> = 0 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#redo">redo</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#removeParagraph">removeParagraph</a></b> ( int <i>para</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#removeSelectedText">removeSelectedText</a></b> ( int <i>selNum</i> = 0 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#removeSelection">removeSelection</a></b> ( int <i>selNum</i> = 0 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#scrollToAnchor">scrollToAnchor</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#scrollToBottom">scrollToBottom</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#selectAll">selectAll</a></b> ( bool <i>select</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setAlignment">setAlignment</a></b> ( int <i>a</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setBold">setBold</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setColor">setColor</a></b> ( const QColor &amp; <i>c</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setCurrentFont">setCurrentFont</a></b> ( const QFont &amp; <i>f</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setCursorPosition">setCursorPosition</a></b> ( int <i>para</i>, int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setFamily">setFamily</a></b> ( const QString &amp; <i>fontFamily</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setItalic">setItalic</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#linkUnderline-prop">setLinkUnderline</a></b> ( bool )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setMimeSourceFactory">setMimeSourceFactory</a></b> ( Q3MimeSourceFactory * <i>factory</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#modified-prop">setModified</a></b> ( bool <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#overwriteMode-prop">setOverwriteMode</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#paper-prop">setPaper</a></b> ( const QBrush &amp; <i>pap</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setParagraphBackgroundColor">setParagraphBackgroundColor</a></b> ( int <i>para</i>, const QColor &amp; <i>bg</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setPointSize">setPointSize</a></b> ( int <i>s</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#readOnly-prop">setReadOnly</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setSelection">setSelection</a></b> ( int <i>paraFrom</i>, int <i>indexFrom</i>, int <i>paraTo</i>, int <i>indexTo</i>, int <i>selNum</i> = 0 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setSelectionAttributes">setSelectionAttributes</a></b> ( int <i>selNum</i>, const QColor &amp; <i>back</i>, bool <i>invertText</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setStyleSheet">setStyleSheet</a></b> ( Q3StyleSheet * <i>styleSheet</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#tabChangesFocus-prop">setTabChangesFocus</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#tabStopWidth-prop">setTabStopWidth</a></b> ( int <i>ts</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#text-prop">setText</a></b> ( const QString &amp; <i>txt</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#text-prop">setText</a></b> ( const QString &amp; <i>text</i>, const QString &amp; <i>context</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#textFormat-prop">setTextFormat</a></b> ( Qt::TextFormat <i>f</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setUnderline">setUnderline</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#undoDepth-prop">setUndoDepth</a></b> ( int <i>d</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#undoRedoEnabled-prop">setUndoRedoEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#setVerticalAlignment">setVerticalAlignment</a></b> ( Q3TextEdit::VerticalAlignment <i>a</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#wordWrap-prop">setWordWrap</a></b> ( Q3TextEdit::WordWrap <i>mode</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#wrapColumnOrWidth-prop">setWrapColumnOrWidth</a></b> ( int )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#wrapPolicy-prop">setWrapPolicy</a></b> ( Q3TextEdit::WrapPolicy <i>policy</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#sync">sync</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#undo">undo</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#zoomIn">zoomIn</a></b> ( int <i>range</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#zoomIn-2">zoomIn</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#zoomOut">zoomOut</a></b> ( int <i>range</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#zoomOut-2">zoomOut</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#zoomTo">zoomTo</a></b> ( int <i>size</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3textedit.html#clicked">clicked</a></b> ( int <i>para</i>, int <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#copyAvailable">copyAvailable</a></b> ( bool <i>yes</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#currentAlignmentChanged">currentAlignmentChanged</a></b> ( int <i>a</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#currentColorChanged">currentColorChanged</a></b> ( const QColor &amp; <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#currentFontChanged">currentFontChanged</a></b> ( const QFont &amp; <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#currentVerticalAlignmentChanged">currentVerticalAlignmentChanged</a></b> ( Q3TextEdit::VerticalAlignment <i>a</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#cursorPositionChanged">cursorPositionChanged</a></b> ( int <i>para</i>, int <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#doubleClicked">doubleClicked</a></b> ( int <i>para</i>, int <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#modificationChanged">modificationChanged</a></b> ( bool <i>m</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#redoAvailable">redoAvailable</a></b> ( bool <i>yes</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#returnPressed">returnPressed</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#selectionChanged">selectionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#textChanged">textChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#undoAvailable">undoAvailable</a></b> ( bool <i>yes</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual Q3PopupMenu * <b><a href="q3textedit.html#createPopupMenu">createPopupMenu</a></b> ( const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>virtual Q3PopupMenu * <b><a href="q3textedit.html#createPopupMenu-2">createPopupMenu</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3textedit.html#focusNextPrevChild">focusNextPrevChild</a></b> ( bool <i>n</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textedit.html#keyPressEvent">keyPressEvent</a></b> ( QKeyEvent * <i>e</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textedit.html#repaintChanged">repaintChanged</a></b> ()</li>
+<li><div class="fn"/>Q3TextCursor * <b><a href="q3textedit.html#textCursor">textCursor</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TextEdit widget provides a powerful single-page rich text editor.</p>
+<ul><li><a href="#introduction-and-concepts">Introduction and Concepts</a></li>
+<li><a href="#using-q3textedit-as-a-display-widget">Using Q3TextEdit as a Display Widget</a></li>
+<ul><li><a href="#read-only-key-bindings">Read-only key bindings</a></li>
+<li><a href="#using-q3textedit-in-qt-logtext-mode">Using Q3TextEdit in Qt::LogText Mode</a></li>
+</ul>
+<li><a href="#using-q3textedit-as-an-editor">Using Q3TextEdit as an Editor</a></li>
+<ul><li><a href="#editing-key-bindings">Editing key bindings</a></li>
+</ul>
+</ul>
+<a name="introduction-and-concepts"></a>
+<h3>Introduction and Concepts</h3>
+<p>Q3TextEdit is an advanced WYSIWYG viewer/editor supporting rich text formatting using HTML-style tags. It is optimized to handle large documents and to respond quickly to user input.</p>
+<p>Q3TextEdit has four modes of operation:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Mode</th><th>Command</th><th>Notes</th></tr></thead>
+<tr valign="top" class="odd"><td>Plain Text Editor</td><td>setTextFormat(<a href="qt.html#TextFormat-enum">Qt::PlainText</a>)</td><td>Set text with <a href="q3textedit.html#text-prop">setText</a>(); <a href="q3textedit.html#text-prop">text</a>() returns plain text. Text attributes (e.g&#x2e; colors) can be set, but plain text is always returned.</td></tr>
+<tr valign="top" class="even"><td>Rich Text Editor</td><td>setTextFormat(<a href="qt.html#TextFormat-enum">Qt::RichText</a>)</td><td>Set text with <a href="q3textedit.html#text-prop">setText</a>(); <a href="q3textedit.html#text-prop">text</a>() returns rich text. Rich text editing is fairly limited. You can't set margins or insert images for example (although you can read and correctly display files that have margins set and that include images). This mode is mostly useful for editing small amounts of rich text.</td></tr>
+<tr valign="top" class="odd"><td>Text Viewer</td><td>setReadOnly(true)</td><td>Set text with <a href="q3textedit.html#text-prop">setText</a>() or <a href="q3textedit.html#append">append</a>() (which has no undo history so is faster and uses less memory); <a href="q3textedit.html#text-prop">text</a>() returns plain or rich text depending on the <a href="q3textedit.html#textFormat-prop">textFormat</a>(). This mode can correctly display a large subset of HTML tags.</td></tr>
+<tr valign="top" class="even"><td>Log Viewer</td><td>setTextFormat(<a href="qt.html#TextFormat-enum">Qt::LogText</a>)</td><td>Append text using <a href="q3textedit.html#append">append</a>(). The widget is set to be read only and rich text support is disabled although a few HTML tags (for color, bold, italic and underline) may be used. (See <a href="#logtextmode">Qt::LogText mode</a> for details.)</td></tr>
+</table></p>
+<p>Q3TextEdit can be used as a syntax highlighting editor when used in conjunction with <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a>.</p>
+<p>We recommend that you always call <a href="q3textedit.html#textFormat-prop">setTextFormat</a>() to set the mode you want to use. If you use <a href="qt.html#TextFormat-enum">Qt::AutoText</a> then <a href="q3textedit.html#text-prop">setText</a>() and <a href="q3textedit.html#append">append</a>() will try to determine whether the text they are given is plain text or rich text. If you use <a href="qt.html#TextFormat-enum">Qt::RichText</a> then <a href="q3textedit.html#text-prop">setText</a>() and <a href="q3textedit.html#append">append</a>() will assume that the text they are given is rich text. <a href="q3textedit.html#insert">insert</a>() simply inserts the text it is given.</p>
+<p>Q3TextEdit works on paragraphs and characters. A paragraph is a formatted string which is word-wrapped to fit into the width of the widget. By default when reading plain text, one newline signify a paragraph. A document consists of zero or more paragraphs, indexed from 0. Characters are indexed on a per-paragraph basis, also indexed from 0. The words in the paragraph are aligned in accordance with the paragraph's <a href="q3textedit.html#alignment">alignment</a>(). Paragraphs are separated by hard line breaks. Each character within a paragraph has its own attributes, for example, font and color.</p>
+<p>The text edit documentation uses the following concepts:</p>
+<ul>
+<li><i>current format</i> -- this is the format at the current cursor position, <i>and</i> it is the format of the selected text if any.</li>
+<li><i>current paragraph</i> -- the paragraph which contains the cursor.</li>
+</ul>
+<p>Q3TextEdit can display images (using <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a>), lists and tables. If the text is too large to view within the text edit's viewport, scroll bars will appear. The text edit can load both plain text and HTML files (a subset of HTML 3.2 and 4). The rendering style and the set of valid tags are defined by a <a href="q3textedit.html#styleSheet">styleSheet</a>(). Custom tags can be created and placed in a custom style sheet. Change the style sheet with <a href="q3textedit.html#setStyleSheet">setStyleSheet</a>(); see <a href="q3stylesheet.html">Q3StyleSheet</a> for details. The images identified by image tags are displayed if they can be interpreted using the text edit's <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a>; see <a href="q3textedit.html#setMimeSourceFactory">setMimeSourceFactory</a>().</p>
+<p>If you want a text browser with more navigation use <a href="qtextbrowser.html">QTextBrowser</a>. If you just need to display a small piece of rich text use <a href="qlabel.html">QLabel</a> or <a href="porting4.html#qsimplerichtext">QSimpleRichText</a>.</p>
+<p>If you create a new Q3TextEdit, and want to allow the user to edit rich text, call setTextFormat(<a href="qt.html#TextFormat-enum">Qt::RichText</a>) to ensure that the text is treated as rich text. (Rich text uses HTML tags to set text formatting attributes. See <a href="q3stylesheet.html">Q3StyleSheet</a> for information on the HTML tags that are supported.)&#x2e; If you don't call <a href="q3textedit.html#textFormat-prop">setTextFormat</a>() explicitly the text edit will guess from the text itself whether it is rich text or plain text. This means that if the text looks like HTML or XML it will probably be interpreted as rich text, so you should call setTextFormat(<a href="qt.html#TextFormat-enum">Qt::PlainText</a>) to preserve such text.</p>
+<p>Note that we do not intend to add a full-featured web browser widget to Qt (because that would easily double Qt's size and only a few applications would benefit from it). The rich text support in Qt is designed to provide a fast, portable and efficient way to add reasonable online help facilities to applications, and to provide a basis for rich text editors.</p>
+<a name="using-q3textedit-as-a-display-widget"></a>
+<h3>Using Q3TextEdit as a Display Widget</h3>
+<p>Q3TextEdit can display a large HTML subset, including tables and images.</p>
+<p>The text is set or replaced using <a href="q3textedit.html#text-prop">setText</a>() which deletes any existing text and replaces it with the text passed in the <a href="q3textedit.html#text-prop">setText</a>() call. If you call <a href="q3textedit.html#text-prop">setText</a>() with legacy HTML (with setTextFormat(<a href="qt.html#TextFormat-enum">Qt::RichText</a>) in force), and then call <a href="q3textedit.html#text-prop">text</a>(), the text that is returned may have different markup, but will render the same. Text can be inserted with <a href="q3textedit.html#insert">insert</a>(), <a href="q3textedit.html#paste">paste</a>(), <a href="q3textedit.html#pasteSubType">pasteSubType</a>() and <a href="q3textedit.html#append">append</a>(). Text that is appended does not go into the undo history; this makes <a href="q3textedit.html#append">append</a>() faster and consumes less memory. Text can also be <a href="q3textedit.html#cut">cut</a>(). The entire text is deleted with <a href="q3textedit.html#clear">clear</a>() and the selected text is deleted with <a href="q3textedit.html#removeSelectedText">removeSelectedText</a>(). Selected (marked) text can also be deleted with <a href="q3textedit.html#del">del</a>() (which will delete the character to the right of the cursor if no text is selected).</p>
+<p>Loading and saving text is achieved using <a href="q3textedit.html#text-prop">setText</a>() and <a href="q3textedit.html#text-prop">text</a>(), for example:</p>
+<pre>     QFile file(fileName); // Read the text from a file
+     if (file.open(IO_ReadOnly)) {
+         QTextStream stream(&amp;file);
+         textEdit-&gt;setText(stream.read());
+     }
+
+     QFile file(fileName); // Write the text to a file
+     if (file.open(IO_WriteOnly)) {
+         QTextStream stream(&amp;file);
+         stream &lt;&lt; textEdit-&gt;text();
+         textEdit-&gt;setModified(false);
+     }</pre>
+<p>By default the text edit wraps words at whitespace to fit within the text edit widget. The <a href="q3textedit.html#wordWrap-prop">setWordWrap</a>() function is used to specify the kind of word wrap you want, or <tt>NoWrap</tt> if you don't want any wrapping. Call <a href="q3textedit.html#wordWrap-prop">setWordWrap</a>() to set a fixed pixel width <tt>FixedPixelWidth</tt>, or character column (e.g&#x2e; 80 column) <tt>FixedColumnWidth</tt> with the pixels or columns specified with <a href="q3textedit.html#wrapColumnOrWidth-prop">setWrapColumnOrWidth</a>(). If you use word wrap to the widget's width <tt>WidgetWidth</tt>, you can specify whether to break on whitespace or anywhere with <a href="q3textedit.html#wrapPolicy-prop">setWrapPolicy</a>().</p>
+<p>The background color is set differently than other widgets, using <a href="q3textedit.html#paper-prop">setPaper</a>(). You specify a brush style which could be a plain color or a complex pixmap.</p>
+<p>Hypertext links are automatically underlined; this can be changed with <a href="q3textedit.html#linkUnderline-prop">setLinkUnderline</a>(). The tab stop width is set with <a href="q3textedit.html#tabStopWidth-prop">setTabStopWidth</a>().</p>
+<p>The <a href="q3textedit.html#zoomIn">zoomIn</a>() and <a href="q3textedit.html#zoomOut">zoomOut</a>() functions can be used to resize the text by increasing (decreasing for <a href="q3textedit.html#zoomOut">zoomOut</a>()) the point size used. Images are not affected by the zoom functions.</p>
+<p>The <a href="q3textedit.html#lines">lines</a>() function returns the number of lines in the text and <a href="q3textedit.html#paragraphs">paragraphs</a>() returns the number of paragraphs. The number of lines within a particular paragraph is returned by <a href="q3textedit.html#linesOfParagraph">linesOfParagraph</a>(). The length of the entire text in characters is returned by <a href="q3textedit.html#length-prop">length</a>().</p>
+<p>You can scroll to an anchor in the text, e.g&#x2e; <tt>&lt;a name=&quot;anchor&quot;&gt;</tt> with <a href="q3textedit.html#scrollToAnchor">scrollToAnchor</a>(). The <a href="q3textedit.html#find">find</a>() function can be used to find and select a given string within the text.</p>
+<p>A read-only Q3TextEdit provides the same functionality as the (obsolete) <a href="porting4.html#qtextview">QTextView</a>. (<a href="porting4.html#qtextview">QTextView</a> is still supplied for compatibility with old code.)</p>
+<a name="read-only-key-bindings"></a>
+<h4>Read-only key bindings</h4>
+<p>When Q3TextEdit is used read-only the key-bindings are limited to navigation, and text may only be selected with the mouse:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Keypresses</th><th>Action</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::UpArrow</a></td><td>Move one line up</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#ArrowType-enum">Qt::DownArrow</a></td><td>Move one line down</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::LeftArrow</a></td><td>Move one character left</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#ArrowType-enum">Qt::RightArrow</a></td><td>Move one character right</td></tr>
+<tr valign="top" class="odd"><td>PageUp</td><td>Move one (viewport) page up</td></tr>
+<tr valign="top" class="even"><td>PageDown</td><td>Move one (viewport) page down</td></tr>
+<tr valign="top" class="odd"><td>Home</td><td>Move to the beginning of the text</td></tr>
+<tr valign="top" class="even"><td>End</td><td>Move to the end of the text</td></tr>
+<tr valign="top" class="odd"><td>Shift+Wheel</td><td>Scroll the page horizontally (the Wheel is the mouse wheel)</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Wheel</td><td>Zoom the text</td></tr>
+</table></p>
+<p>The text edit may be able to provide some meta-information. For example, the <a href="q3textedit.html#documentTitle-prop">documentTitle</a>() function will return the text from within HTML <tt>&lt;title&gt;</tt> tags.</p>
+<p>The text displayed in a text edit has a <i>context</i>. The context is a path which the text edit's <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> uses to resolve the locations of files and images. It is passed to the <a href="q3textedit.html#mimeSourceFactory">mimeSourceFactory</a>() when quering data. (See <a href="q3textedit.html#Q3TextEdit">Q3TextEdit</a>() and <a href="q3textedit.html#context">context</a>().)</p>
+<a name="logtextmode"></a><a name="using-q3textedit-in-qt-logtext-mode"></a>
+<h4>Using Q3TextEdit in Qt::LogText Mode</h4>
+<p>Setting the text format to <a href="qt.html#TextFormat-enum">Qt::LogText</a> puts the widget in a special mode which is optimized for very large texts. In this mode editing and rich text support are disabled (the widget is explicitly set to read-only mode). This allows the text to be stored in a different, more memory efficient manner. However, a certain degree of text formatting is supported through the use of formatting tags. A tag is delimited by <tt>&lt;</tt> and <tt>&gt;</tt>. The characters <tt>&lt;</tt>, <tt>&gt;</tt> and <tt>&amp;</tt> are escaped by using <tt>&amp;lt;</tt>, <tt>&amp;gt;</tt> and <tt>&amp;amp;</tt>. A tag pair consists of a left and a right tag (or open/close tags). Left-tags mark the starting point for formatting, while right-tags mark the ending point. A right-tag always start with a <tt>/</tt> before the tag keyword. For example <tt>&lt;b&gt;</tt> and <tt>&lt;/b&gt;</tt> are a tag pair. Tags can be nested, but they have to be closed in the same order as they are opened. For example, <tt>&lt;b&gt;&lt;u&gt;&lt;/u&gt;&lt;/b&gt;</tt> is valid, while <tt>&lt;b&gt;&lt;u&gt;&lt;/b&gt;&lt;/u&gt;</tt> will output an error message.</p>
+<p>By using tags it is possible to change the color, bold, italic and underline settings for a piece of text. A color can be specified by using the HTML font tag <tt>&lt;font color=colorname&gt;</tt>. The color name can be one of the color names from the X11 color database, or a RGB hex value (e.g <tt>#00ff00</tt>). Example of valid color tags: <tt>&lt;font color=red&gt;</tt>, <tt>&lt;font color=&quot;light blue&quot;&gt;</tt>,<tt>&lt;font color=&quot;#223344&quot;&gt;</tt>. Bold, italic and underline settings can be specified by the tags <tt>&lt;b&gt;</tt>, <tt>&lt;i&gt;</tt> and <tt>&lt;u&gt;</tt>. Note that a tag does not necessarily have to be closed. A valid example:</p>
+<pre>     This is &lt;font color=red&gt;red&lt;/font&gt; while &lt;b&gt;this&lt;/b&gt; is &lt;font color=blue&gt;blue&lt;/font&gt;.
+     &lt;font color=green&gt;&lt;font color=yellow&gt;Yellow,&lt;/font&gt; and &lt;u&gt;green&lt;/u&gt;.</pre>
+<p>Stylesheets can also be used in <a href="qt.html#TextFormat-enum">Qt::LogText</a> mode. To create and use a custom tag, you could do the following:</p>
+<pre>     Q3TextEdit * log = new Q3TextEdit(this);
+     log-&gt;setTextFormat(Qt::LogText);
+     Q3StyleSheetItem * item = new Q3StyleSheetItem(log-&gt;styleSheet(), &quot;mytag&quot;);
+     item-&gt;setColor(&quot;red&quot;);
+     item-&gt;setFontWeight(QFont::Bold);
+     item-&gt;setFontUnderline(true);
+     log-&gt;append(&quot;This is a &lt;mytag&gt;custom tag&lt;/mytag&gt;!&quot;);</pre>
+<p>Note that only the color, bold, underline and italic attributes of a <a href="q3stylesheetitem.html">Q3StyleSheetItem</a> is used in <a href="qt.html#TextFormat-enum">Qt::LogText</a> mode.</p>
+<p>Note that you can use setMaxLogLines() to limit the number of lines the widget can hold in <a href="qt.html#TextFormat-enum">Qt::LogText</a> mode.</p>
+<p>There are a few things that you need to be aware of when the widget is in this mode:</p>
+<ul>
+<li>Functions that deal with rich text formatting and cursor movement will not work or return anything valid.</li>
+<li>Lines are equivalent to paragraphs.</li>
+</ul>
+<a name="using-q3textedit-as-an-editor"></a>
+<h3>Using Q3TextEdit as an Editor</h3>
+<p>All the information about using Q3TextEdit as a display widget also applies here.</p>
+<p>The current format's attributes are set with <a href="q3textedit.html#setItalic">setItalic</a>(), <a href="q3textedit.html#setBold">setBold</a>(), <a href="q3textedit.html#setUnderline">setUnderline</a>(), <a href="q3textedit.html#setFamily">setFamily</a>() (font family), <a href="q3textedit.html#setPointSize">setPointSize</a>(), <a href="q3textedit.html#setColor">setColor</a>() and <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>(). The current paragraph's alignment is set with <a href="q3textedit.html#setAlignment">setAlignment</a>().</p>
+<p>Use <a href="q3textedit.html#setSelection">setSelection</a>() to select text. The <a href="q3textedit.html#setSelectionAttributes">setSelectionAttributes</a>() function is used to indicate how selected text should be displayed. Use <a href="q3textedit.html#hasSelectedText-prop">hasSelectedText</a>() to find out if any text is selected. The currently selected text's position is available using <a href="q3textedit.html#getSelection">getSelection</a>() and the selected text itself is returned by <a href="q3textedit.html#selectedText-prop">selectedText</a>(). The selection can be copied to the clipboard with <a href="q3textedit.html#copy">copy</a>(), or cut to the clipboard with <a href="q3textedit.html#cut">cut</a>(). It can be deleted with <a href="q3textedit.html#removeSelectedText">removeSelectedText</a>(). The entire text can be selected (or unselected) using <a href="q3textedit.html#selectAll">selectAll</a>(). Q3TextEdit supports multiple selections. Most of the selection functions operate on the default selection, selection 0. If the user presses a non-selecting key, e.g&#x2e; a cursor key without also holding down Shift, all selections are cleared.</p>
+<p>Set and get the position of the cursor with <a href="q3textedit.html#setCursorPosition">setCursorPosition</a>() and <a href="q3textedit.html#getCursorPosition">getCursorPosition</a>() respectively. When the cursor is moved, the signals <a href="q3textedit.html#currentFontChanged">currentFontChanged</a>(), <a href="q3textedit.html#currentColorChanged">currentColorChanged</a>() and <a href="q3textedit.html#currentAlignmentChanged">currentAlignmentChanged</a>() are emitted to reflect the font, color and alignment at the new cursor position.</p>
+<p>If the text changes, the <a href="q3textedit.html#textChanged">textChanged</a>() signal is emitted, and if the user inserts a new line by pressing Return or Enter, <a href="q3textedit.html#returnPressed">returnPressed</a>() is emitted. The <a href="q3textedit.html#modified-prop">isModified</a>() function will return true if the text has been modified.</p>
+<p>Q3TextEdit provides command-based undo and redo. To set the depth of the command history use <a href="q3textedit.html#undoDepth-prop">setUndoDepth</a>() which defaults to 100 steps. To undo or redo the last operation call <a href="q3textedit.html#undo">undo</a>() or <a href="q3textedit.html#redo">redo</a>(). The signals <a href="q3textedit.html#undoAvailable">undoAvailable</a>() and <a href="q3textedit.html#redoAvailable">redoAvailable</a>() indicate whether the undo and redo operations can be executed.</p>
+<a name="editing-key-bindings"></a>
+<h4>Editing key bindings</h4>
+<p>The list of key-bindings which are implemented for editing:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Keypresses</th><th>Action</th></tr></thead>
+<tr valign="top" class="odd"><td>Backspace</td><td>Delete the character to the left of the cursor</td></tr>
+<tr valign="top" class="even"><td>Delete</td><td>Delete the character to the right of the cursor</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+A</td><td>Move the cursor to the beginning of the line</td></tr>
+<tr valign="top" class="even"><td>Ctrl+B</td><td>Move the cursor one character left</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+C</td><td>Copy the marked text to the clipboard (also Ctrl+Insert under Windows)</td></tr>
+<tr valign="top" class="even"><td>Ctrl+D</td><td>Delete the character to the right of the cursor</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+E</td><td>Move the cursor to the end of the line</td></tr>
+<tr valign="top" class="even"><td>Ctrl+F</td><td>Move the cursor one character right</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+H</td><td>Delete the character to the left of the cursor</td></tr>
+<tr valign="top" class="even"><td>Ctrl+K</td><td>Delete to end of line</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+N</td><td>Move the cursor one line down</td></tr>
+<tr valign="top" class="even"><td>Ctrl+P</td><td>Move the cursor one line up</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+V</td><td>Paste the clipboard text into line edit (also Shift+Insert under Windows)</td></tr>
+<tr valign="top" class="even"><td>Ctrl+X</td><td>Cut the marked text, copy to clipboard (also Shift+Delete under Windows)</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+Z</td><td>Undo the last operation</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Y</td><td>Redo the last operation</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::LeftArrow</a></td><td>Move the cursor one character left</td></tr>
+<tr valign="top" class="even"><td>Ctrl+<a href="qt.html#ArrowType-enum">Qt::LeftArrow</a></td><td>Move the cursor one word left</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::RightArrow</a></td><td>Move the cursor one character right</td></tr>
+<tr valign="top" class="even"><td>Ctrl+<a href="qt.html#ArrowType-enum">Qt::RightArrow</a></td><td>Move the cursor one word right</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::UpArrow</a></td><td>Move the cursor one line up</td></tr>
+<tr valign="top" class="even"><td>Ctrl+<a href="qt.html#ArrowType-enum">Qt::UpArrow</a></td><td>Move the cursor one word up</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::DownArrow</a></td><td>Move the cursor one line down</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Down Arrow</td><td>Move the cursor one word down</td></tr>
+<tr valign="top" class="odd"><td>PageUp</td><td>Move the cursor one page up</td></tr>
+<tr valign="top" class="even"><td>PageDown</td><td>Move the cursor one page down</td></tr>
+<tr valign="top" class="odd"><td>Home</td><td>Move the cursor to the beginning of the line</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Home</td><td>Move the cursor to the beginning of the text</td></tr>
+<tr valign="top" class="odd"><td>End</td><td>Move the cursor to the end of the line</td></tr>
+<tr valign="top" class="even"><td>Ctrl+End</td><td>Move the cursor to the end of the text</td></tr>
+<tr valign="top" class="odd"><td>Shift+Wheel</td><td>Scroll the page horizontally (the Wheel is the mouse wheel)</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Wheel</td><td>Zoom the text</td></tr>
+</table></p>
+<p>To select (mark) text hold down the Shift key whilst pressing one of the movement keystrokes, for example, <i>Shift+Right Arrow</i> will select the character to the right, and <i>Shift+Ctrl+Right Arrow</i> will select the word to the right, etc.</p>
+<p>By default the text edit widget operates in insert mode so all text that the user enters is inserted into the text edit and any text to the right of the cursor is moved out of the way. The mode can be changed to overwrite, where new text overwrites any text to the right of the cursor, using <a href="q3textedit.html#overwriteMode-prop">setOverwriteMode</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="AutoFormattingFlag-enum"></a>enum Q3TextEdit::AutoFormattingFlag<br />flags Q3TextEdit::AutoFormatting</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AutoNone</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Do not perform any automatic formatting</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AutoBulletList</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">Only automatically format bulletted lists</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AutoAll</tt></td><td align="center" valign="top"><tt>0xffffffff</tt></td><td valign="top">Apply all available autoformatting</td></tr>
+</table></p>
+<p>The AutoFormatting type is a typedef for <a href="qflags.html">QFlags</a>&lt;AutoFormattingFlag&gt;. It stores an OR combination of AutoFormattingFlag values.</p>
+<h3 class="fn"><a name="CursorAction-enum"></a>enum Q3TextEdit::CursorAction</h3>
+<p>This enum is used by <a href="q3textedit.html#moveCursor">moveCursor</a>() to specify in which direction the cursor should be moved:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveBackward</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Moves the cursor one character backward</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveWordBackward</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Moves the cursor one word backward</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveForward</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Moves the cursor one character forward</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveWordForward</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Moves the cursor one word forward</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveUp</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Moves the cursor up one line</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveDown</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Moves the cursor down one line</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveLineStart</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Moves the cursor to the beginning of the line</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveLineEnd</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Moves the cursor to the end of the line</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveHome</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Moves the cursor to the beginning of the document</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MoveEnd</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Moves the cursor to the end of the document</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MovePgUp</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">Moves the cursor one viewport page up</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::MovePgDown</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">Moves the cursor one viewport page down</td></tr>
+</table></p>
+<h3 class="fn"><a name="KeyboardAction-enum"></a>enum Q3TextEdit::KeyboardAction</h3>
+<p>This enum is used by <a href="q3textedit.html#doKeyboardAction">doKeyboardAction</a>() to specify which action should be executed:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionBackspace</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Delete the character to the left of the cursor.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionDelete</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Delete the character to the right of the cursor.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionReturn</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Split the paragraph at the cursor position.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionKill</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">If the cursor is not at the end of the paragraph, delete the text from the cursor position until the end of the paragraph. If the cursor is at the end of the paragraph, delete the hard line break at the end of the paragraph: this will cause this paragraph to be joined with the following paragraph.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionWordBackspace</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Delete the word to the left of the cursor position.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::ActionWordDelete</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Delete the word to the right of the cursor position</td></tr>
+</table></p>
+<h3 class="fn"><a name="VerticalAlignment-enum"></a>enum Q3TextEdit::VerticalAlignment</h3>
+<p>This enum is used to set the vertical alignment of the text.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AlignNormal</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Normal alignment</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AlignSuperScript</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Superscript</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AlignSubScript</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Subscript</td></tr>
+</table></p>
+<h3 class="fn"><a name="WordWrap-enum"></a>enum Q3TextEdit::WordWrap</h3>
+<p>This enum defines the <a href="q3textedit.html">Q3TextEdit</a>'s word wrap modes.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::NoWrap</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Do not wrap the text.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::WidgetWidth</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Wrap the text at the current width of the widget (this is the default). Wrapping is at whitespace by default; this can be changed with <a href="q3textedit.html#wrapPolicy-prop">setWrapPolicy</a>().</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::FixedPixelWidth</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Wrap the text at a fixed number of pixels from the widget's left side. The number of pixels is set with <a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a>().</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::FixedColumnWidth</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Wrap the text at a fixed number of character columns from the widget's left side. The number of characters is set with <a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a>(). This is useful if you need formatted text that can also be displayed gracefully on devices with monospaced fonts, for example a standard VT100 terminal, where you might set <a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a>() to 80.</td></tr>
+</table></p>
+<p>See also <a href="q3textedit.html#wordWrap-prop">setWordWrap</a>() and <a href="q3textedit.html#wordWrap-prop">wordWrap</a>().</p>
+<h3 class="fn"><a name="WrapPolicy-enum"></a>enum Q3TextEdit::WrapPolicy</h3>
+<p>This enum defines where text can be wrapped in word wrap mode.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AtWhiteSpace</tt></td><td align="center" valign="top"><tt>AtWordBoundary</tt></td><td valign="top">Don't use this deprecated value (it is a synonym for <tt>AtWordBoundary</tt> which you should use instead).</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::Anywhere</tt></td><td align="center" valign="top">?</td><td valign="top">Break anywhere, including within words.</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AtWordBoundary</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Break lines at word boundaries, e.g&#x2e; spaces or newlines</td></tr>
+<tr><td valign="top"><tt>Q3TextEdit::AtWordOrDocumentBoundary</tt></td><td align="center" valign="top">?</td><td valign="top">Break lines at whitespace, e.g&#x2e; spaces or newlines if possible. Break it anywhere otherwise.</td></tr>
+</table></p>
+<p>See also <a href="q3textedit.html#wrapPolicy-prop">setWrapPolicy</a>().</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoFormatting-prop"></a>autoFormatting : <a href="q3textedit.html#AutoFormattingFlag-enum">AutoFormattingFlag</a></h3>
+<p>This property holds the enabled set of auto formatting features.</p>
+<p>The value can be any combination of the values in the <tt>AutoFormattingFlag</tt> enum. The default is <tt>AutoAll</tt>. Choose <tt>AutoNone</tt> to disable all automatic formatting.</p>
+<p>Currently, the only automatic formatting feature provided is <tt>AutoBulletList</tt>; future versions of Qt may offer more.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>AutoFormatting autoFormatting () const</b></li>
+<li><div class="fn"/><b>void setAutoFormatting ( AutoFormatting )</b></li>
+</ul>
+<h3 class="fn"><a name="documentTitle-prop"></a>documentTitle : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the title of the document parsed from the text.</p>
+<p>For <a href="qt.html#TextFormat-enum">Qt::PlainText</a> the title will be an empty string. For <tt>Qt::RichText</tt> the title will be the text between the <tt>&lt;title&gt;</tt> tags, if present, otherwise an empty string.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString documentTitle () const</b></li>
+</ul>
+<h3 class="fn"><a name="hasSelectedText-prop"></a>hasSelectedText : const bool</h3>
+<p>This property holds whether some text is selected in selection 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool hasSelectedText () const</b></li>
+</ul>
+<h3 class="fn"><a name="length-prop"></a>length : const int</h3>
+<p>This property holds the number of characters in the text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int length () const</b></li>
+</ul>
+<h3 class="fn"><a name="linkUnderline-prop"></a>linkUnderline : bool</h3>
+<p>This property holds whether hypertext links will be underlined.</p>
+<p>If true (the default) hypertext links will be displayed underlined. If false links will not be displayed underlined.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool linkUnderline () const</b></li>
+<li><div class="fn"/><b>virtual void setLinkUnderline ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="modified-prop"></a>modified : bool</h3>
+<p>This property holds whether the document has been modified by the user.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isModified () const</b></li>
+<li><div class="fn"/><b>virtual void setModified ( bool <i>m</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="overwriteMode-prop"></a>overwriteMode : bool</h3>
+<p>This property holds the text edit's overwrite mode.</p>
+<p>If false (the default) characters entered by the user are inserted with any characters to the right being moved out of the way. If true, the editor is in overwrite mode, i.e&#x2e; characters entered by the user overwrite any characters to the right of the cursor position.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isOverwriteMode () const</b></li>
+<li><div class="fn"/><b>virtual void setOverwriteMode ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="paper-prop"></a>paper : <a href="qbrush.html">QBrush</a></h3>
+<p>This property holds the background (paper) brush.</p>
+<p>The brush that is currently used to draw the background of the text edit. The initial setting is an empty brush.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QBrush paper () const</b></li>
+<li><div class="fn"/><b>virtual void setPaper ( const QBrush &amp; <i>pap</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="readOnly-prop"></a>readOnly : bool</h3>
+<p>This property holds whether the text edit is read-only.</p>
+<p>In a read-only text edit the user can only navigate through the text and select text; modifying the text is not possible.</p>
+<p>This property's default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isReadOnly () const</b></li>
+<li><div class="fn"/><b>virtual void setReadOnly ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="selectedText-prop"></a>selectedText : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the selected text (from selection 0) or an empty string if there is no currently selected text (in selection 0).</p>
+<p>The text is always returned as <a href="qt.html#TextFormat-enum">Qt::PlainText</a> if the <a href="q3textedit.html#textFormat-prop">textFormat</a>() is <a href="qt.html#TextFormat-enum">Qt::PlainText</a> or <a href="qt.html#TextFormat-enum">Qt::AutoText</a>, otherwise it is returned as HTML.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString selectedText () const</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#hasSelectedText-prop">hasSelectedText</a>.</p>
+<h3 class="fn"><a name="tabChangesFocus-prop"></a>tabChangesFocus : bool</h3>
+<p>This property holds whether TAB changes focus or is accepted as input.</p>
+<p>In some occasions text edits should not allow the user to input tabulators or change indentation using the TAB key, as this breaks the focus chain. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool tabChangesFocus () const</b></li>
+<li><div class="fn"/><b>virtual void setTabChangesFocus ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="tabStopWidth-prop"></a>tabStopWidth : int</h3>
+<p>This property holds the tab stop width in pixels.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int tabStopWidth () const</b></li>
+<li><div class="fn"/><b>virtual void setTabStopWidth ( int <i>ts</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="text-prop"></a>text : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text edit's text.</p>
+<p>There is no default text.</p>
+<p>On setting, any previous text is deleted.</p>
+<p>The text may be interpreted either as plain text or as rich text, depending on the <a href="q3textedit.html#textFormat-prop">textFormat</a>(). The default setting is <a href="qt.html#TextFormat-enum">Qt::AutoText</a>, i.e&#x2e; the text edit auto-detects the format of the text.</p>
+<p>For richtext, calling text() on an editable <a href="q3textedit.html">Q3TextEdit</a> will cause the text to be regenerated from the textedit. This may mean that the <a href="qstring.html">QString</a> returned may not be exactly the same as the one that was set.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString text () const</b></li>
+<li><div class="fn"/><b>QString text ( int <i>para</i> ) const</b></li>
+<li><div class="fn"/><b>void setText ( const QString &amp; <i>txt</i> )</b></li>
+<li><div class="fn"/><b>virtual void setText ( const QString &amp; <i>text</i>, const QString &amp; <i>context</i> )</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#textFormat-prop">textFormat</a>.</p>
+<h3 class="fn"><a name="textFormat-prop"></a>textFormat : <a href="qt.html#TextFormat-enum">Qt::TextFormat</a></h3>
+<p>This property holds the text format: rich text, plain text, log text or auto text.</p>
+<p>The text format is one of the following:</p>
+<ul>
+<li><a href="qt.html#TextFormat-enum">Qt::PlainText</a> - all characters, except newlines, are displayed verbatim, including spaces. Whenever a newline appears in the text the text edit inserts a hard line break and begins a new paragraph.</li>
+<li><a href="qt.html#TextFormat-enum">Qt::RichText</a> - rich text rendering. The available styles are defined in the default stylesheet <a href="q3stylesheet.html#defaultSheet">Q3StyleSheet::defaultSheet</a>().</li>
+<li><a href="qt.html#TextFormat-enum">Qt::LogText</a> - optimized mode for very large texts. Supports a very limited set of formatting tags (color, bold, underline and italic settings).</li>
+<li><a href="qt.html#TextFormat-enum">Qt::AutoText</a> - this is the default. The text edit autodetects which rendering style is best, <a href="qt.html#TextFormat-enum">Qt::PlainText</a> or <a href="qt.html#TextFormat-enum">Qt::RichText</a>. This is done by using the <a href="q3stylesheet.html#mightBeRichText">Q3StyleSheet::mightBeRichText</a>() function.</li>
+</ul>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::TextFormat textFormat () const</b></li>
+<li><div class="fn"/><b>virtual void setTextFormat ( Qt::TextFormat <i>f</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="undoDepth-prop"></a>undoDepth : int</h3>
+<p>This property holds the depth of the undo history.</p>
+<p>The maximum number of steps in the undo/redo history. The default is 100.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int undoDepth () const</b></li>
+<li><div class="fn"/><b>virtual void setUndoDepth ( int <i>d</i> )</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#undo">undo</a>() and <a href="q3textedit.html#redo">redo</a>().</p>
+<h3 class="fn"><a name="undoRedoEnabled-prop"></a>undoRedoEnabled : bool</h3>
+<p>This property holds whether undo/redo is enabled.</p>
+<p>When changing this property, the undo/redo history is cleared.</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isUndoRedoEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setUndoRedoEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="wordWrap-prop"></a>wordWrap : <a href="q3textedit.html#WordWrap-enum">WordWrap</a></h3>
+<p>This property holds the word wrap mode.</p>
+<p>The default mode is <tt>WidgetWidth</tt> which causes words to be wrapped at the right edge of the text edit. Wrapping occurs at whitespace, keeping whole words intact. If you want wrapping to occur within words use <a href="q3textedit.html#wrapPolicy-prop">setWrapPolicy</a>(). If you set a wrap mode of <tt>FixedPixelWidth</tt> or <tt>FixedColumnWidth</tt> you should also call <a href="q3textedit.html#wrapColumnOrWidth-prop">setWrapColumnOrWidth</a>() with the width you want.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>WordWrap wordWrap () const</b></li>
+<li><div class="fn"/><b>virtual void setWordWrap ( Q3TextEdit::WordWrap <i>mode</i> )</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#WordWrap-enum">WordWrap</a>, <a href="q3textedit.html#wrapColumnOrWidth-prop">wrapColumnOrWidth</a>, and <a href="q3textedit.html#wrapPolicy-prop">wrapPolicy</a>.</p>
+<h3 class="fn"><a name="wrapColumnOrWidth-prop"></a>wrapColumnOrWidth : int</h3>
+<p>This property holds the position (in pixels or columns depending on the wrap mode) where text will be wrapped.</p>
+<p>If the wrap mode is <tt>FixedPixelWidth</tt>, the value is the number of pixels from the left edge of the text edit at which text should be wrapped. If the wrap mode is <tt>FixedColumnWidth</tt>, the value is the column number (in character columns) from the left edge of the text edit at which text should be wrapped.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int wrapColumnOrWidth () const</b></li>
+<li><div class="fn"/><b>virtual void setWrapColumnOrWidth ( int )</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#wordWrap-prop">wordWrap</a>.</p>
+<h3 class="fn"><a name="wrapPolicy-prop"></a>wrapPolicy : <a href="q3textedit.html#WrapPolicy-enum">WrapPolicy</a></h3>
+<p>This property holds the word wrap policy, at whitespace or anywhere.</p>
+<p>Defines where text can be wrapped when word wrap mode is not <tt>NoWrap</tt>. The choices are <tt>AtWordBoundary</tt> (the default), <tt>Anywhere</tt> and <tt>AtWordOrDocumentBoundary</tt></p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>WrapPolicy wrapPolicy () const</b></li>
+<li><div class="fn"/><b>virtual void setWrapPolicy ( Q3TextEdit::WrapPolicy <i>policy</i> )</b></li>
+</ul>
+<p>See also <a href="q3textedit.html#wordWrap-prop">wordWrap</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TextEdit"></a>Q3TextEdit::Q3TextEdit ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qstring.html">QString</a> &amp; <i>context</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3textedit.html">Q3TextEdit</a> called <i>name</i>, with parent <i>parent</i>. The text edit will display the text <i>text</i> using context <i>context</i>.</p>
+<p>The <i>context</i> is a path which the text edit's <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> uses to resolve the locations of files and images. It is passed to the <a href="q3textedit.html#mimeSourceFactory">mimeSourceFactory</a>() when quering data.</p>
+<p>For example if the text contains an image tag, <tt>&lt;img src=&quot;image.png&quot;&gt;</tt>, and the context is &quot;path/to/look/in&quot;, the <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> will try to load the image from &quot;path/to/look/in/image.png&quot;. If the tag was <tt>&lt;img src=&quot;/image.png&quot;&gt;</tt>, the context will not be used (because <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> recognizes that we have used an absolute path) and will try to load &quot;/image.png&quot;. The context is applied in exactly the same way to <i>hrefs</i>, for example, <tt>&lt;a href=&quot;target.html&quot;&gt;Target&lt;/a&gt;</tt>, would resolve to &quot;path/to/look/in/target.html&quot;.</p>
+<h3 class="fn"><a name="Q3TextEdit-2"></a>Q3TextEdit::Q3TextEdit ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs an empty <a href="q3textedit.html">Q3TextEdit</a> called <i>name</i>, with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.Q3TextEdit"></a>Q3TextEdit::~Q3TextEdit ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="alignment"></a>int Q3TextEdit::alignment () const</h3>
+<p>Returns the alignment of the current paragraph.</p>
+<p>See also <a href="q3textedit.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="anchorAt"></a><a href="qstring.html">QString</a> Q3TextEdit::anchorAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, <a href="qt.html#AnchorAttribute-enum">Qt::AnchorAttribute</a> <i>attr</i> = Qt::AnchorHref )</h3>
+<p>Returns the text for the attribute <i>attr</i> (<a href="qt.html#AnchorAttribute-enum">Qt::AnchorHref</a> by default) if there is an anchor at position <i>pos</i> (in contents coordinates); otherwise returns an empty string.</p>
+<h3 class="fn"><a name="append"></a>void Q3TextEdit::append ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Appends a new paragraph with <i>text</i> to the end of the text edit. Note that the undo/redo history is cleared by this function, and no undo history is kept for appends which makes them faster than <a href="q3textedit.html#insert">insert</a>()s. If you want to append text which is added to the undo/redo history as well, use <a href="q3textedit.html#insertParagraph">insertParagraph</a>().</p>
+<h3 class="fn"><a name="bold"></a>bool Q3TextEdit::bold () const</h3>
+<p>Returns true if the current format is bold; otherwise returns false.</p>
+<p>See also <a href="q3textedit.html#setBold">setBold</a>().</p>
+<h3 class="fn"><a name="charAt"></a>int Q3TextEdit::charAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, int * <i>para</i> ) const</h3>
+<p>Returns the index of the character (relative to its paragraph) at position <i>pos</i> (in contents coordinates). If <i>para</i> is not 0, <tt>*</tt><i>para</i> is set to the character's paragraph.</p>
+<h3 class="fn"><a name="clear"></a>void Q3TextEdit::clear ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Deletes all the text in the text edit.</p>
+<p>See also <a href="q3textedit.html#cut">cut</a>(), <a href="q3textedit.html#removeSelectedText">removeSelectedText</a>(), and <a href="q3textedit.html#text-prop">setText</a>().</p>
+<h3 class="fn"><a name="clearParagraphBackground"></a>void Q3TextEdit::clearParagraphBackground ( int <i>para</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears the background color of the paragraph <i>para</i>, so that the default color is used again.</p>
+<h3 class="fn"><a name="clicked"></a>void Q3TextEdit::clicked ( int <i>para</i>, int <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the mouse is clicked on the paragraph <i>para</i> at character position <i>pos</i>.</p>
+<p>See also <a href="q3textedit.html#doubleClicked">doubleClicked</a>().</p>
+<h3 class="fn"><a name="color"></a><a href="qcolor.html">QColor</a> Q3TextEdit::color () const</h3>
+<p>Returns the color of the current format.</p>
+<p>See also <a href="q3textedit.html#setColor">setColor</a>() and <a href="q3textedit.html#paper-prop">setPaper</a>().</p>
+<h3 class="fn"><a name="context"></a><a href="qstring.html">QString</a> Q3TextEdit::context () const</h3>
+<p>Returns the context of the text edit. The context is a path which the text edit's <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> uses to resolve the locations of files and images.</p>
+<p>See also <a href="q3textedit.html#text-prop">text</a>.</p>
+<h3 class="fn"><a name="copy"></a>void Q3TextEdit::copy ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Copies any selected text (from selection 0) to the clipboard.</p>
+<p>See also <a href="q3textedit.html#hasSelectedText-prop">hasSelectedText</a>() and <a href="q3textedit.html#copyAvailable">copyAvailable</a>().</p>
+<h3 class="fn"><a name="copyAvailable"></a>void Q3TextEdit::copyAvailable ( bool <i>yes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when text is selected or de-selected in the text edit.</p>
+<p>When text is selected this signal will be emitted with <i>yes</i> set to true. If no text has been selected or if the selected text is de-selected this signal is emitted with <i>yes</i> set to false.</p>
+<p>If <i>yes</i> is true then <a href="q3textedit.html#copy">copy</a>() can be used to copy the selection to the clipboard. If <i>yes</i> is false then <a href="q3textedit.html#copy">copy</a>() does nothing.</p>
+<p>See also <a href="q3textedit.html#selectionChanged">selectionChanged</a>().</p>
+<h3 class="fn"><a name="createPopupMenu"></a><a href="q3popupmenu.html">Q3PopupMenu</a> * Q3TextEdit::createPopupMenu ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called to create a right mouse button popup menu at the document position <i>pos</i>. If you want to create a custom popup menu, reimplement this function and return the created popup menu. Ownership of the popup menu is transferred to the caller.</p>
+<p><b>Warning:</b> The <a href="porting4.html#qpopupmenu">QPopupMenu</a> ID values 0-7 are reserved, and they map to the standard operations. When inserting items into your custom popup menu, be sure to specify ID values larger than 7.</p>
+<h3 class="fn"><a name="createPopupMenu-2"></a><a href="q3popupmenu.html">Q3PopupMenu</a> * Q3TextEdit::createPopupMenu ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function is called to create a right mouse button popup menu. If you want to create a custom popup menu, reimplement this function and return the created popup menu. Ownership of the popup menu is transferred to the caller.</p>
+<p>This function is only called if createPopupMenu(const <a href="qpoint.html">QPoint</a> &amp;) returns 0.</p>
+<h3 class="fn"><a name="currentAlignmentChanged"></a>void Q3TextEdit::currentAlignmentChanged ( int <i>a</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the alignment of the current paragraph has changed.</p>
+<p>The new alignment is <i>a</i>.</p>
+<p>See also <a href="q3textedit.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="currentColorChanged"></a>void Q3TextEdit::currentColorChanged ( const <a href="qcolor.html">QColor</a> &amp; <i>c</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the color of the current format has changed.</p>
+<p>The new color is <i>c</i>.</p>
+<p>See also <a href="q3textedit.html#setColor">setColor</a>().</p>
+<h3 class="fn"><a name="currentFont"></a><a href="qfont.html">QFont</a> Q3TextEdit::currentFont () const</h3>
+<p>Returns the font of the current format.</p>
+<p>See also <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>(), <a href="q3textedit.html#setFamily">setFamily</a>(), and <a href="q3textedit.html#setPointSize">setPointSize</a>().</p>
+<h3 class="fn"><a name="currentFontChanged"></a>void Q3TextEdit::currentFontChanged ( const <a href="qfont.html">QFont</a> &amp; <i>f</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the font of the current format has changed.</p>
+<p>The new font is <i>f</i>.</p>
+<p>See also <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>().</p>
+<h3 class="fn"><a name="currentVerticalAlignmentChanged"></a>void Q3TextEdit::currentVerticalAlignmentChanged ( <a href="q3textedit.html#VerticalAlignment-enum">Q3TextEdit::VerticalAlignment</a> <i>a</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the vertical alignment of the current format has changed.</p>
+<p>The new vertical alignment is <i>a</i>.</p>
+<h3 class="fn"><a name="cursorPositionChanged"></a>void Q3TextEdit::cursorPositionChanged ( int <i>para</i>, int <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the position of the cursor has changed. <i>para</i> contains the paragraph index and <i>pos</i> contains the character position within the paragraph.</p>
+<p>See also <a href="q3textedit.html#setCursorPosition">setCursorPosition</a>().</p>
+<h3 class="fn"><a name="cut"></a>void Q3TextEdit::cut ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Copies the selected text (from selection 0) to the clipboard and deletes it from the text edit.</p>
+<p>If there is no selected text (in selection 0) nothing happens.</p>
+<p>See also <a href="q3textedit.html#copy">Q3TextEdit::copy</a>(), <a href="q3textedit.html#paste">paste</a>(), and <a href="q3textedit.html#pasteSubType">pasteSubType</a>().</p>
+<h3 class="fn"><a name="del"></a>void Q3TextEdit::del ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If there is some selected text (in selection 0) it is deleted. If there is no selected text (in selection 0) the character to the right of the text cursor is deleted.</p>
+<p>See also <a href="q3textedit.html#removeSelectedText">removeSelectedText</a>() and <a href="q3textedit.html#cut">cut</a>().</p>
+<h3 class="fn"><a name="doKeyboardAction"></a>void Q3TextEdit::doKeyboardAction ( <a href="q3textedit.html#KeyboardAction-enum">Q3TextEdit::KeyboardAction</a> <i>action</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Executes keyboard action <i>action</i>. This is normally called by a key event handler.</p>
+<h3 class="fn"><a name="doubleClicked"></a>void Q3TextEdit::doubleClicked ( int <i>para</i>, int <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the mouse is double-clicked on the paragraph <i>para</i> at character position <i>pos</i>.</p>
+<p>See also <a href="q3textedit.html#clicked">clicked</a>().</p>
+<h3 class="fn"><a name="ensureCursorVisible"></a>void Q3TextEdit::ensureCursorVisible ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Ensures that the cursor is visible by scrolling the text edit if necessary.</p>
+<p>See also <a href="q3textedit.html#setCursorPosition">setCursorPosition</a>().</p>
+<h3 class="fn"><a name="family"></a><a href="qstring.html">QString</a> Q3TextEdit::family () const</h3>
+<p>Returns the font family of the current format.</p>
+<p>See also <a href="q3textedit.html#setFamily">setFamily</a>(), <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="q3textedit.html#setPointSize">setPointSize</a>().</p>
+<h3 class="fn"><a name="find"></a>bool Q3TextEdit::find ( const <a href="qstring.html">QString</a> &amp; <i>expr</i>, bool <i>cs</i>, bool <i>wo</i>, bool <i>forward</i> = true, int * <i>para</i> = 0, int * <i>index</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Finds the next occurrence of the string, <i>expr</i>. Returns true if <i>expr</i> was found; otherwise returns false.</p>
+<p>If <i>para</i> and <i>index</i> are both 0 the search begins from the current cursor position. If <i>para</i> and <i>index</i> are both not 0, the search begins from the <tt>*</tt><i>index</i> character position in the <tt>*</tt><i>para</i> paragraph.</p>
+<p>If <i>cs</i> is true the search is case sensitive, otherwise it is case insensitive. If <i>wo</i> is true the search looks for whole word matches only; otherwise it searches for any matching text. If <i>forward</i> is true (the default) the search works forward from the starting position to the end of the text, otherwise it works backwards to the beginning of the text.</p>
+<p>If <i>expr</i> is found the function returns true. If <i>index</i> and <i>para</i> are not 0, the number of the paragraph in which the first character of the match was found is put into <tt>*</tt><i>para</i>, and the index position of that character within the paragraph is put into <tt>*</tt><i>index</i>.</p>
+<p>If <i>expr</i> is not found the function returns false. If <i>index</i> and <i>para</i> are not 0 and <i>expr</i> is not found, <tt>*</tt><i>index</i> and <tt>*</tt><i>para</i> are undefined.</p>
+<p>Please note that this function will make the next occurrence of the string (if found) the current selection, and will thus modify the cursor position.</p>
+<p>Using the <i>para</i> and <i>index</i> parameters will not work correctly in case the document contains tables.</p>
+<h3 class="fn"><a name="focusNextPrevChild"></a>bool Q3TextEdit::focusNextPrevChild ( bool <i>n</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reimplemented to allow tabbing through links. If <i>n</i> is true the tab moves the focus to the next child; if <i>n</i> is false the tab moves the focus to the previous child. Returns true if the focus was moved; otherwise returns false.</p>
+<p>Reimplemented from <a href="qwidget.html#focusNextPrevChild">QWidget</a>.</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> Q3TextEdit::font () const</h3>
+<p>Returns <a href="qwidget.html#font-prop">Q3ScrollView::font</a>()</p>
+<p><b>Warning:</b> In previous versions this function returned the font of the current format. This lead to confusion. Please use <a href="q3textedit.html#currentFont">currentFont</a>() instead.</p>
+<h3 class="fn"><a name="getCursorPosition"></a>void Q3TextEdit::getCursorPosition ( int * <i>para</i>, int * <i>index</i> ) const</h3>
+<p>This function sets the <tt>*</tt><i>para</i> and <tt>*</tt><i>index</i> parameters to the current cursor position. <i>para</i> and <i>index</i> must not be 0.</p>
+<p>See also <a href="q3textedit.html#setCursorPosition">setCursorPosition</a>().</p>
+<h3 class="fn"><a name="getSelection"></a>void Q3TextEdit::getSelection ( int * <i>paraFrom</i>, int * <i>indexFrom</i>, int * <i>paraTo</i>, int * <i>indexTo</i>, int <i>selNum</i> = 0 ) const</h3>
+<p>If there is a selection, <tt>*</tt><i>paraFrom</i> is set to the number of the paragraph in which the selection begins and <tt>*</tt><i>paraTo</i> is set to the number of the paragraph in which the selection ends. (They could be the same.) <tt>*</tt><i>indexFrom</i> is set to the index at which the selection begins within <tt>*</tt><i>paraFrom</i>, and <tt>*</tt><i>indexTo</i> is set to the index at which the selection ends within <tt>*</tt><i>paraTo</i>.</p>
+<p>If there is no selection, <tt>*</tt><i>paraFrom</i>, <tt>*</tt><i>indexFrom</i>, <tt>*</tt><i>paraTo</i> and <tt>*</tt><i>indexTo</i> are all set to -1.</p>
+<p>If <i>paraFrom</i>, <i>indexFrom</i>, <i>paraTo</i> or <i>indexTo</i> is 0 this function does nothing.</p>
+<p>The <i>selNum</i> is the number of the selection (multiple selections are supported). It defaults to 0 (the default selection).</p>
+<p>See also <a href="q3textedit.html#setSelection">setSelection</a>() and <a href="q3textedit.html#selectedText-prop">selectedText</a>.</p>
+<h3 class="fn"><a name="heightForWidth"></a>int Q3TextEdit::heightForWidth ( int <i>w</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns how many pixels high the text edit needs to be to display all the text if the text edit is <i>w</i> pixels wide.</p>
+<p>Reimplemented from <a href="qwidget.html#heightForWidth">QWidget</a>.</p>
+<h3 class="fn"><a name="insert"></a>void Q3TextEdit::insert ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>insertionFlags</i> = CheckNewLines | RemoveSelected )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Inserts <i>text</i> at the current cursor position.</p>
+<p>The <i>insertionFlags</i> define how the text is inserted. If <tt>RedoIndentation</tt> is set, the paragraph is re-indented. If <tt>CheckNewLines</tt> is set, newline characters in <i>text</i> result in hard line breaks (i.e&#x2e; new paragraphs). If <tt>checkNewLine</tt> is not set, the behavior of the editor is undefined if the <i>text</i> contains newlines. (It is not possible to change <a href="q3textedit.html">Q3TextEdit</a>'s newline handling behavior, but you can use <a href="qstring.html#replace">QString::replace</a>() to preprocess text before inserting it.) If <tt>RemoveSelected</tt> is set, any selected text (in selection 0) is removed before the text is inserted.</p>
+<p>The default flags are <tt>CheckNewLines</tt> | <tt>RemoveSelected</tt>.</p>
+<p>If the widget is in <a href="qt.html#TextFormat-enum">Qt::LogText</a> mode this function will do nothing.</p>
+<p>See also <a href="q3textedit.html#paste">paste</a>() and <a href="q3textedit.html#pasteSubType">pasteSubType</a>().</p>
+<h3 class="fn"><a name="insert-2"></a>void Q3TextEdit::insert ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, bool <i>indent</i>, bool <i>checkNewLine</i> = true, bool <i>removeSelected</i> = true )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the given <i>text</i>. If <i>indent</i> is true the paragraph that contains the text is reindented; if <i>checkNewLine</i> is true the <i>text</i> is checked for newlines and relaid out. If <i>removeSelected</i> is true and there is a selection, the insertion replaces the selected text.</p>
+<h3 class="fn"><a name="insertAt"></a>void Q3TextEdit::insertAt ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>para</i>, int <i>index</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Inserts <i>text</i> in the paragraph <i>para</i> at position <i>index</i>.</p>
+<h3 class="fn"><a name="insertParagraph"></a>void Q3TextEdit::insertParagraph ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>para</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Inserts <i>text</i> as a new paragraph at position <i>para</i>. If <i>para</i> is -1, the text is appended. Use <a href="q3textedit.html#append">append</a>() if the append operation is performance critical.</p>
+<h3 class="fn"><a name="isRedoAvailable"></a>bool Q3TextEdit::isRedoAvailable () const</h3>
+<p>Returns true if redo is available; otherwise returns false.</p>
+<h3 class="fn"><a name="isUndoAvailable"></a>bool Q3TextEdit::isUndoAvailable () const</h3>
+<p>Returns true if undo is available; otherwise returns false.</p>
+<h3 class="fn"><a name="italic"></a>bool Q3TextEdit::italic () const</h3>
+<p>Returns true if the current format is italic; otherwise returns false.</p>
+<p>See also <a href="q3textedit.html#setItalic">setItalic</a>().</p>
+<h3 class="fn"><a name="keyPressEvent"></a>void Q3TextEdit::keyPressEvent ( <a href="qkeyevent.html">QKeyEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Processes the key event, <i>e</i>. By default key events are used to provide keyboard navigation and text editing.</p>
+<p>Reimplemented from <a href="qwidget.html#keyPressEvent">QWidget</a>.</p>
+<h3 class="fn"><a name="lineOfChar"></a>int Q3TextEdit::lineOfChar ( int <i>para</i>, int <i>index</i> )</h3>
+<p>Returns the line number of the line in paragraph <i>para</i> in which the character at position <i>index</i> appears. The <i>index</i> position is relative to the beginning of the paragraph. If there is no such paragraph or no such character at the <i>index</i> position (e.g&#x2e; the index is out of range) -1 is returned.</p>
+<h3 class="fn"><a name="lines"></a>int Q3TextEdit::lines () const</h3>
+<p>Returns the number of lines in the text edit; this could be 0.</p>
+<p><b>Warning:</b> This function may be slow. Lines change all the time during word wrapping, so this function has to iterate over all the paragraphs and get the number of lines from each one individually.</p>
+<h3 class="fn"><a name="linesOfParagraph"></a>int Q3TextEdit::linesOfParagraph ( int <i>para</i> ) const</h3>
+<p>Returns the number of lines in paragraph <i>para</i>, or -1 if there is no paragraph with index <i>para</i>.</p>
+<h3 class="fn"><a name="mimeSourceFactory"></a><a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> * Q3TextEdit::mimeSourceFactory () const</h3>
+<p>Returns the <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> which is being used by this text edit.</p>
+<p>See also <a href="q3textedit.html#setMimeSourceFactory">setMimeSourceFactory</a>().</p>
+<h3 class="fn"><a name="modificationChanged"></a>void Q3TextEdit::modificationChanged ( bool <i>m</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the modification status of the document has changed. If <i>m</i> is true, the document was modified, otherwise the modification state has been reset to unmodified.</p>
+<p>See also <a href="q3textedit.html#modified-prop">modified</a>.</p>
+<h3 class="fn"><a name="moveCursor"></a>void Q3TextEdit::moveCursor ( <a href="q3textedit.html#CursorAction-enum">Q3TextEdit::CursorAction</a> <i>action</i>, bool <i>select</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the text cursor according to <i>action</i>. This is normally used by some key event handler. <i>select</i> specifies whether the text between the current cursor position and the new position should be selected.</p>
+<h3 class="fn"><a name="paragraphAt"></a>int Q3TextEdit::paragraphAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Returns the paragraph which is at position <i>pos</i> (in contents coordinates).</p>
+<h3 class="fn"><a name="paragraphBackgroundColor"></a><a href="qcolor.html">QColor</a> Q3TextEdit::paragraphBackgroundColor ( int <i>para</i> ) const</h3>
+<p>Returns the background color of the paragraph <i>para</i> or an invalid color if <i>para</i> is out of range or the paragraph has no background set</p>
+<p>See also <a href="q3textedit.html#setParagraphBackgroundColor">setParagraphBackgroundColor</a>().</p>
+<h3 class="fn"><a name="paragraphLength"></a>int Q3TextEdit::paragraphLength ( int <i>para</i> ) const</h3>
+<p>Returns the length of the paragraph <i>para</i> (i.e&#x2e; the number of characters), or -1 if there is no paragraph with index <i>para</i>.</p>
+<p>This function ignores newlines.</p>
+<h3 class="fn"><a name="paragraphRect"></a><a href="qrect.html">QRect</a> Q3TextEdit::paragraphRect ( int <i>para</i> ) const</h3>
+<p>Returns the rectangle of the paragraph <i>para</i> in contents coordinates, or an invalid rectangle if <i>para</i> is out of range.</p>
+<h3 class="fn"><a name="paragraphs"></a>int Q3TextEdit::paragraphs () const</h3>
+<p>Returns the number of paragraphs in the text; an empty textedit is always considered to have one paragraph, so 1 is returned in this case.</p>
+<h3 class="fn"><a name="paste"></a>void Q3TextEdit::paste ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Pastes the text from the clipboard into the text edit at the current cursor position. Only plain text is pasted.</p>
+<p>If there is no text in the clipboard nothing happens.</p>
+<p>See also <a href="q3textedit.html#pasteSubType">pasteSubType</a>(), <a href="q3textedit.html#cut">cut</a>(), and <a href="q3textedit.html#copy">Q3TextEdit::copy</a>().</p>
+<h3 class="fn"><a name="pasteSubType"></a>void Q3TextEdit::pasteSubType ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>subtype</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Pastes the text with format <i>subtype</i> from the clipboard into the text edit at the current cursor position. The <i>subtype</i> can be &quot;plain&quot; or &quot;html&quot;.</p>
+<p>If there is no text with format <i>subtype</i> in the clipboard nothing happens.</p>
+<p>See also <a href="q3textedit.html#paste">paste</a>(), <a href="q3textedit.html#cut">cut</a>(), and <a href="q3textedit.html#copy">Q3TextEdit::copy</a>().</p>
+<h3 class="fn"><a name="placeCursor"></a>void Q3TextEdit::placeCursor ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, Q3TextCursor * <i>c</i> = 0 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Places the cursor <i>c</i> at the character which is closest to position <i>pos</i> (in contents coordinates). If <i>c</i> is 0, the default text cursor is used.</p>
+<p>See also <a href="q3textedit.html#setCursorPosition">setCursorPosition</a>().</p>
+<h3 class="fn"><a name="pointSize"></a>int Q3TextEdit::pointSize () const</h3>
+<p>Returns the point size of the font of the current format.</p>
+<p>See also <a href="q3textedit.html#setFamily">setFamily</a>(), <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="q3textedit.html#setPointSize">setPointSize</a>().</p>
+<h3 class="fn"><a name="redo"></a>void Q3TextEdit::redo ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Redoes the last operation.</p>
+<p>If there is no operation to redo, i.e&#x2e; there is no redo step in the undo/redo history, nothing happens.</p>
+<p>See also <a href="q3textedit.html#redoAvailable">redoAvailable</a>(), <a href="q3textedit.html#undo">undo</a>(), and <a href="q3textedit.html#undoDepth-prop">undoDepth</a>().</p>
+<h3 class="fn"><a name="redoAvailable"></a>void Q3TextEdit::redoAvailable ( bool <i>yes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the availability of redo changes. If <i>yes</i> is true, then <a href="q3textedit.html#redo">redo</a>() will work until redoAvailable(false) is next emitted.</p>
+<p>See also <a href="q3textedit.html#redo">redo</a>() and <a href="q3textedit.html#undoDepth-prop">undoDepth</a>().</p>
+<h3 class="fn"><a name="removeParagraph"></a>void Q3TextEdit::removeParagraph ( int <i>para</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes the paragraph <i>para</i>.</p>
+<h3 class="fn"><a name="removeSelectedText"></a>void Q3TextEdit::removeSelectedText ( int <i>selNum</i> = 0 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Deletes the text of selection <i>selNum</i> (by default, the default selection, 0). If there is no selected text nothing happens.</p>
+<p>See also <a href="q3textedit.html#selectedText-prop">selectedText</a> and <a href="q3textedit.html#removeSelection">removeSelection</a>().</p>
+<h3 class="fn"><a name="removeSelection"></a>void Q3TextEdit::removeSelection ( int <i>selNum</i> = 0 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes the selection <i>selNum</i> (by default 0). This does not remove the selected text.</p>
+<p>See also <a href="q3textedit.html#removeSelectedText">removeSelectedText</a>().</p>
+<h3 class="fn"><a name="repaintChanged"></a>void Q3TextEdit::repaintChanged ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Repaints any paragraphs that have changed.</p>
+<p>Although used extensively internally you shouldn't need to call this yourself.</p>
+<h3 class="fn"><a name="returnPressed"></a>void Q3TextEdit::returnPressed ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the user pressed the Return or the Enter key.</p>
+<h3 class="fn"><a name="scrollToAnchor"></a>void Q3TextEdit::scrollToAnchor ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Scrolls the text edit to make the text at the anchor called <i>name</i> visible, if it can be found in the document. If the anchor isn't found no scrolling will occur. An anchor is defined using the HTML anchor tag, e.g&#x2e; <tt>&lt;a name=&quot;target&quot;&gt;</tt>.</p>
+<h3 class="fn"><a name="scrollToBottom"></a>void Q3TextEdit::scrollToBottom ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Scrolls to the bottom of the document and does formatting if required.</p>
+<h3 class="fn"><a name="selectAll"></a>void Q3TextEdit::selectAll ( bool <i>select</i> = true )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>select</i> is true (the default), all the text is selected as selection 0. If <i>select</i> is false any selected text is unselected, i.e&#x2e; the default selection (selection 0) is cleared.</p>
+<p>See also <a href="q3textedit.html#selectedText-prop">selectedText</a>.</p>
+<h3 class="fn"><a name="selectionChanged"></a>void Q3TextEdit::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the selection changes.</p>
+<p>See also <a href="q3textedit.html#setSelection">setSelection</a>() and <a href="q3textedit.html#copyAvailable">copyAvailable</a>().</p>
+<h3 class="fn"><a name="setAlignment"></a>void Q3TextEdit::setAlignment ( int <i>a</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the alignment of the current paragraph to <i>a</i>. Valid alignments are <a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a>, <a href="qt.html#AlignmentFlag-enum">Qt::AlignRight</a>, <a href="qt.html#AlignmentFlag-enum">Qt::AlignJustify</a> and <a href="qt.html#AlignmentFlag-enum">Qt::AlignCenter</a> (which centers horizontally).</p>
+<p>See also <a href="q3textedit.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setBold"></a>void Q3TextEdit::setBold ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>b</i> is true sets the current format to bold; otherwise sets the current format to non-bold.</p>
+<p>See also <a href="q3textedit.html#bold">bold</a>().</p>
+<h3 class="fn"><a name="setColor"></a>void Q3TextEdit::setColor ( const <a href="qcolor.html">QColor</a> &amp; <i>c</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the color of the current format, i.e&#x2e; of the text, to <i>c</i>.</p>
+<p>See also <a href="q3textedit.html#color">color</a>() and <a href="q3textedit.html#paper-prop">setPaper</a>().</p>
+<h3 class="fn"><a name="setCurrentFont"></a>void Q3TextEdit::setCurrentFont ( const <a href="qfont.html">QFont</a> &amp; <i>f</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the font of the current format to <i>f</i>.</p>
+<p>If the widget is in <a href="qt.html#TextFormat-enum">Qt::LogText</a> mode this function will do nothing. Use <a href="qwidget.html#font-prop">setFont</a>() instead.</p>
+<p>See also <a href="q3textedit.html#currentFont">currentFont</a>(), <a href="q3textedit.html#setPointSize">setPointSize</a>(), and <a href="q3textedit.html#setFamily">setFamily</a>().</p>
+<h3 class="fn"><a name="setCursorPosition"></a>void Q3TextEdit::setCursorPosition ( int <i>para</i>, int <i>index</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the cursor to position <i>index</i> in paragraph <i>para</i>.</p>
+<p>See also <a href="q3textedit.html#getCursorPosition">getCursorPosition</a>().</p>
+<h3 class="fn"><a name="setFamily"></a>void Q3TextEdit::setFamily ( const <a href="qstring.html">QString</a> &amp; <i>fontFamily</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the font family of the current format to <i>fontFamily</i>.</p>
+<p>See also <a href="q3textedit.html#family">family</a>() and <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>().</p>
+<h3 class="fn"><a name="setItalic"></a>void Q3TextEdit::setItalic ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>b</i> is true sets the current format to italic; otherwise sets the current format to non-italic.</p>
+<p>See also <a href="q3textedit.html#italic">italic</a>().</p>
+<h3 class="fn"><a name="setMimeSourceFactory"></a>void Q3TextEdit::setMimeSourceFactory ( <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> * <i>factory</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the text edit's mimesource factory to <i>factory</i>. See <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> for further details.</p>
+<p>See also <a href="q3textedit.html#mimeSourceFactory">mimeSourceFactory</a>().</p>
+<h3 class="fn"><a name="setParagraphBackgroundColor"></a>void Q3TextEdit::setParagraphBackgroundColor ( int <i>para</i>, const <a href="qcolor.html">QColor</a> &amp; <i>bg</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the background color of the paragraph <i>para</i> to <i>bg</i>.</p>
+<p>See also <a href="q3textedit.html#paragraphBackgroundColor">paragraphBackgroundColor</a>().</p>
+<h3 class="fn"><a name="setPointSize"></a>void Q3TextEdit::setPointSize ( int <i>s</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the point size of the current format to <i>s</i>.</p>
+<p>Note that if <i>s</i> is zero or negative, the behavior of this function is not defined.</p>
+<p>See also <a href="q3textedit.html#pointSize">pointSize</a>(), <a href="q3textedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="q3textedit.html#setFamily">setFamily</a>().</p>
+<h3 class="fn"><a name="setSelection"></a>void Q3TextEdit::setSelection ( int <i>paraFrom</i>, int <i>indexFrom</i>, int <i>paraTo</i>, int <i>indexTo</i>, int <i>selNum</i> = 0 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets a selection which starts at position <i>indexFrom</i> in paragraph <i>paraFrom</i> and ends at position <i>indexTo</i> in paragraph <i>paraTo</i>.</p>
+<p>Any existing selections which have a different id (<i>selNum</i>) are left alone, but if an existing selection has the same id as <i>selNum</i> it is removed and replaced by this selection.</p>
+<p>Uses the selection settings of selection <i>selNum</i>. If <i>selNum</i> is 0, this is the default selection.</p>
+<p>The cursor is moved to the end of the selection if <i>selNum</i> is 0, otherwise the cursor position remains unchanged.</p>
+<p>See also <a href="q3textedit.html#getSelection">getSelection</a>() and <a href="q3textedit.html#selectedText-prop">selectedText</a>.</p>
+<h3 class="fn"><a name="setSelectionAttributes"></a>void Q3TextEdit::setSelectionAttributes ( int <i>selNum</i>, const <a href="qcolor.html">QColor</a> &amp; <i>back</i>, bool <i>invertText</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the background color of selection number <i>selNum</i> to <i>back</i> and specifies whether the text of this selection should be inverted with <i>invertText</i>.</p>
+<p>This only works for <i>selNum</i> &gt; 0. The default selection (<i>selNum</i> == 0) gets its attributes from the text edit's <a href="qwidget.html#palette-prop">palette</a>().</p>
+<h3 class="fn"><a name="setStyleSheet"></a>void Q3TextEdit::setStyleSheet ( <a href="q3stylesheet.html">Q3StyleSheet</a> * <i>styleSheet</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the stylesheet to use with this text edit to <i>styleSheet</i>. Changes will only take effect for new text added with <a href="q3textedit.html#text-prop">setText</a>() or <a href="q3textedit.html#append">append</a>().</p>
+<p>See also <a href="q3textedit.html#styleSheet">styleSheet</a>().</p>
+<h3 class="fn"><a name="setUnderline"></a>void Q3TextEdit::setUnderline ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>b</i> is true sets the current format to underline; otherwise sets the current format to non-underline.</p>
+<p>See also <a href="q3textedit.html#underline">underline</a>().</p>
+<h3 class="fn"><a name="setVerticalAlignment"></a>void Q3TextEdit::setVerticalAlignment ( <a href="q3textedit.html#VerticalAlignment-enum">Q3TextEdit::VerticalAlignment</a> <i>a</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the vertical alignment of the current format, i.e&#x2e; of the text, to <i>a</i>.</p>
+<p>See also <a href="q3textedit.html#verticalAlignment">verticalAlignment</a>(), <a href="q3textedit.html#color">color</a>(), and <a href="q3textedit.html#paper-prop">setPaper</a>().</p>
+<h3 class="fn"><a name="styleSheet"></a><a href="q3stylesheet.html">Q3StyleSheet</a> * Q3TextEdit::styleSheet () const</h3>
+<p>Returns the <a href="q3stylesheet.html">Q3StyleSheet</a> which is being used by this text edit.</p>
+<p>See also <a href="q3textedit.html#setStyleSheet">setStyleSheet</a>().</p>
+<h3 class="fn"><a name="sync"></a>void Q3TextEdit::sync ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p><a href="q3textedit.html">Q3TextEdit</a> is optimized for large amounts text. One of its optimizations is to format only the visible text, formatting the rest on demand, e.g&#x2e; as the user scrolls, so you don't usually need to call this function.</p>
+<p>In some situations you may want to force the whole text to be formatted. For example, if after calling <a href="q3textedit.html#text-prop">setText</a>(), you wanted to know the height of the document (using <a href="q3scrollview.html#contentsHeight-prop">contentsHeight</a>()), you would call this function first.</p>
+<h3 class="fn"><a name="syntaxHighlighter"></a><a href="q3syntaxhighlighter.html">Q3SyntaxHighlighter</a> * Q3TextEdit::syntaxHighlighter () const</h3>
+<p>Returns the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> set on this <a href="q3textedit.html">Q3TextEdit</a>. 0 is returned if no syntax highlighter is set.</p>
+<h3 class="fn"><a name="textChanged"></a>void Q3TextEdit::textChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the text in the text edit changes.</p>
+<p>See also <a href="q3textedit.html#text-prop">setText</a>() and <a href="q3textedit.html#append">append</a>().</p>
+<h3 class="fn"><a name="textCursor"></a>Q3TextCursor * Q3TextEdit::textCursor () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the text edit's text cursor.</p>
+<p><b>Warning:</b> Q3TextCursor is not in the public API, but in special circumstances you might wish to use it.</p>
+<h3 class="fn"><a name="underline"></a>bool Q3TextEdit::underline () const</h3>
+<p>Returns true if the current format is underlined; otherwise returns false.</p>
+<p>See also <a href="q3textedit.html#setUnderline">setUnderline</a>().</p>
+<h3 class="fn"><a name="undo"></a>void Q3TextEdit::undo ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Undoes the last operation.</p>
+<p>If there is no operation to undo, i.e&#x2e; there is no undo step in the undo/redo history, nothing happens.</p>
+<p>See also <a href="q3textedit.html#undoAvailable">undoAvailable</a>(), <a href="q3textedit.html#redo">redo</a>(), and <a href="q3textedit.html#undoDepth-prop">undoDepth</a>().</p>
+<h3 class="fn"><a name="undoAvailable"></a>void Q3TextEdit::undoAvailable ( bool <i>yes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the availability of undo changes. If <i>yes</i> is true, then <a href="q3textedit.html#undo">undo</a>() will work until undoAvailable(false) is next emitted.</p>
+<p>See also <a href="q3textedit.html#undo">undo</a>() and <a href="q3textedit.html#undoDepth-prop">undoDepth</a>().</p>
+<h3 class="fn"><a name="verticalAlignment"></a><a href="q3textedit.html#VerticalAlignment-enum">VerticalAlignment</a> Q3TextEdit::verticalAlignment () const</h3>
+<p>Returns the vertical alignment of the current format.</p>
+<p>See also <a href="q3textedit.html#setVerticalAlignment">setVerticalAlignment</a>().</p>
+<h3 class="fn"><a name="zoomIn"></a>void Q3TextEdit::zoomIn ( int <i>range</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Zooms in on the text by making the base font size <i>range</i> points larger and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="q3textedit.html#zoomOut">zoomOut</a>().</p>
+<h3 class="fn"><a name="zoomIn-2"></a>void Q3TextEdit::zoomIn ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Zooms in on the text by making the base font size one point larger and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="q3textedit.html#zoomOut">zoomOut</a>().</p>
+<h3 class="fn"><a name="zoomOut"></a>void Q3TextEdit::zoomOut ( int <i>range</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Zooms out on the text by making the base font size <i>range</i> points smaller and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="q3textedit.html#zoomIn">zoomIn</a>().</p>
+<h3 class="fn"><a name="zoomOut-2"></a>void Q3TextEdit::zoomOut ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Zooms out on the text by making the base font size one point smaller and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="q3textedit.html#zoomIn">zoomIn</a>().</p>
+<h3 class="fn"><a name="zoomTo"></a>void Q3TextEdit::zoomTo ( int <i>size</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Zooms the text by making the base font size <i>size</i> points and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

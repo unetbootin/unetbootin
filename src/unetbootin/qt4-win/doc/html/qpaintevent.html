@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QPaintEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPaintEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPaintEvent class contains event parameters for paint events. <a href="#details">More...</a></p>
+<pre> #include &lt;QPaintEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qpaintevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qpaintevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpaintevent.html#QPaintEvent">QPaintEvent</a></b> ( const QRegion &amp; <i>paintRegion</i> )</li>
+<li><div class="fn"/><b><a href="qpaintevent.html#QPaintEvent-2">QPaintEvent</a></b> ( const QRect &amp; <i>paintRect</i> )</li>
+<li><div class="fn"/>const QRect &amp; <b><a href="qpaintevent.html#rect">rect</a></b> () const</li>
+<li><div class="fn"/>const QRegion &amp; <b><a href="qpaintevent.html#region">region</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPaintEvent class contains event parameters for paint events.</p>
+<p>Paint events are sent to widgets that need to update themselves, for instance when part of a widget is exposed because a covering widget was moved.</p>
+<p>The event contains a <a href="qpaintevent.html#region">region</a>() that needs to be updated, and a <a href="qpaintevent.html#rect">rect</a>() that is the bounding rectangle of that region. Both are provided because many widgets can't make much use of <a href="qpaintevent.html#region">region</a>(), and <a href="qpaintevent.html#rect">rect</a>() can be much faster than <a href="qpaintevent.html#region">region</a>().boundingRect(). Painting is clipped to <a href="qpaintevent.html#region">region</a>() during the processing of a paint event.</p>
+<p>See also <a href="qpainter.html">QPainter</a>, <a href="qwidget.html#update">QWidget::update</a>(), <a href="qwidget.html#repaint">QWidget::repaint</a>(), and <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPaintEvent"></a>QPaintEvent::QPaintEvent ( const <a href="qregion.html">QRegion</a> &amp; <i>paintRegion</i> )</h3>
+<p>Constructs a paint event object with the region that needs to be updated. The region is specified by <i>paintRegion</i>.</p>
+<h3 class="fn"><a name="QPaintEvent-2"></a>QPaintEvent::QPaintEvent ( const <a href="qrect.html">QRect</a> &amp; <i>paintRect</i> )</h3>
+<p>Constructs a paint event object with the rectangle that needs to be updated. The region is specified by <i>paintRect</i>.</p>
+<h3 class="fn"><a name="rect"></a>const <a href="qrect.html">QRect</a> &amp; QPaintEvent::rect () const</h3>
+<p>Returns the rectangle that needs to be updated.</p>
+<p>See also <a href="qpaintevent.html#region">region</a>() and <a href="qpainter.html#setClipRect">QPainter::setClipRect</a>().</p>
+<h3 class="fn"><a name="region"></a>const <a href="qregion.html">QRegion</a> &amp; QPaintEvent::region () const</h3>
+<p>Returns the region that needs to be updated.</p>
+<p>See also <a href="qpaintevent.html#rect">rect</a>() and <a href="qpainter.html#setClipRegion">QPainter::setClipRegion</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

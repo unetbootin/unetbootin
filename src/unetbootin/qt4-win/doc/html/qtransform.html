@@ -1,0 +1,465 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qtransform.cpp -->
+<head>
+  <title>Qt 4.4: QTransform Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTransform Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTransform class specifies 2D transformations of a coordinate system. <a href="#details">More...</a></p>
+<pre> #include &lt;QTransform&gt;</pre><p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qtransform-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtransform.html#TransformationType-enum">TransformationType</a></b> { TxNone, TxTranslate, TxScale, TxRotate, TxShear, TxProject }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtransform.html#QTransform">QTransform</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtransform.html#QTransform-2">QTransform</a></b> ( qreal <i>h11</i>, qreal <i>h12</i>, qreal <i>h13</i>, qreal <i>h21</i>, qreal <i>h22</i>, qreal <i>h23</i>, qreal <i>h31</i>, qreal <i>h32</i>, qreal <i>h33</i> = 1.0 )</li>
+<li><div class="fn"/><b><a href="qtransform.html#QTransform-3">QTransform</a></b> ( qreal <i>h11</i>, qreal <i>h12</i>, qreal <i>h21</i>, qreal <i>h22</i>, qreal <i>dx</i>, qreal <i>dy</i> )</li>
+<li><div class="fn"/><b><a href="qtransform.html#QTransform-4">QTransform</a></b> ( const QMatrix &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m11">m11</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m12">m12</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m13">m13</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m21">m21</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m22">m22</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m23">m23</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m31">m31</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m32">m32</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#m33">m33</a></b> () const</li>
+<li><div class="fn"/>QTransform <b><a href="qtransform.html#adjoint">adjoint</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#det">det</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#determinant">determinant</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#dx">dx</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtransform.html#dy">dy</a></b> () const</li>
+<li><div class="fn"/>QTransform <b><a href="qtransform.html#inverted">inverted</a></b> ( bool * <i>invertible</i> = 0 ) const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isAffine">isAffine</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isIdentity">isIdentity</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isInvertible">isInvertible</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isRotating">isRotating</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isScaling">isScaling</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#isTranslating">isTranslating</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtransform.html#map">map</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal * <i>tx</i>, qreal * <i>ty</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qtransform.html#map-2">map</a></b> ( const QPointF &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>QPoint <b><a href="qtransform.html#map-3">map</a></b> ( const QPoint &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QLine <b><a href="qtransform.html#map-4">map</a></b> ( const QLine &amp; <i>l</i> ) const</li>
+<li><div class="fn"/>QLineF <b><a href="qtransform.html#map-5">map</a></b> ( const QLineF &amp; <i>line</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qtransform.html#map-6">map</a></b> ( const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qtransform.html#map-7">map</a></b> ( const QPolygon &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QRegion <b><a href="qtransform.html#map-8">map</a></b> ( const QRegion &amp; <i>region</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qtransform.html#map-9">map</a></b> ( const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtransform.html#map-10">map</a></b> ( int <i>x</i>, int <i>y</i>, int * <i>tx</i>, int * <i>ty</i> ) const</li>
+<li><div class="fn"/>QRectF <b><a href="qtransform.html#mapRect">mapRect</a></b> ( const QRectF &amp; <i>rectangle</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qtransform.html#mapRect-2">mapRect</a></b> ( const QRect &amp; <i>rectangle</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qtransform.html#mapToPolygon">mapToPolygon</a></b> ( const QRect &amp; <i>rectangle</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtransform.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#rotate">rotate</a></b> ( qreal <i>angle</i>, Qt::Axis <i>axis</i> = Qt::ZAxis )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#rotateRadians">rotateRadians</a></b> ( qreal <i>angle</i>, Qt::Axis <i>axis</i> = Qt::ZAxis )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#scale">scale</a></b> ( qreal <i>sx</i>, qreal <i>sy</i> )</li>
+<li><div class="fn"/>void <b><a href="qtransform.html#setMatrix">setMatrix</a></b> ( qreal <i>m11</i>, qreal <i>m12</i>, qreal <i>m13</i>, qreal <i>m21</i>, qreal <i>m22</i>, qreal <i>m23</i>, qreal <i>m31</i>, qreal <i>m32</i>, qreal <i>m33</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#shear">shear</a></b> ( qreal <i>sh</i>, qreal <i>sv</i> )</li>
+<li><div class="fn"/>const QMatrix &amp; <b><a href="qtransform.html#toAffine">toAffine</a></b> () const</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#translate">translate</a></b> ( qreal <i>dx</i>, qreal <i>dy</i> )</li>
+<li><div class="fn"/>QTransform <b><a href="qtransform.html#transposed">transposed</a></b> () const</li>
+<li><div class="fn"/>TransformationType <b><a href="qtransform.html#type">type</a></b> () const</li>
+<li><div class="fn"/><b><a href="qtransform.html#operator-QVariant">operator QVariant</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#operator-not-eq">operator!=</a></b> ( const QTransform &amp; <i>matrix</i> ) const</li>
+<li><div class="fn"/>QTransform <b><a href="qtransform.html#operator-2a">operator*</a></b> ( const QTransform &amp; <i>matrix</i> ) const</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator-2a-eq">operator*=</a></b> ( const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator-2a-eq-2">operator*=</a></b> ( qreal <i>scalar</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator-2b-eq">operator+=</a></b> ( qreal <i>scalar</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator--eq">operator-=</a></b> ( qreal <i>scalar</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator-2f-eq">operator/=</a></b> ( qreal <i>scalar</i> )</li>
+<li><div class="fn"/>QTransform &amp; <b><a href="qtransform.html#operator-eq">operator=</a></b> ( const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#operator-eq-eq">operator==</a></b> ( const QTransform &amp; <i>matrix</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qtransform.html#quadToQuad">quadToQuad</a></b> ( const QPolygonF &amp; <i>one</i>, const QPolygonF &amp; <i>two</i>, QTransform &amp; <i>trans</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#quadToSquare">quadToSquare</a></b> ( const QPolygonF &amp; <i>quad</i>, QTransform &amp; <i>trans</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtransform.html#squareToQuad">squareToQuad</a></b> ( const QPolygonF &amp; <i>quad</i>, QTransform &amp; <i>trans</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QPoint <b><a href="qtransform.html#operator-2a">operator*</a></b> ( const QPoint &amp; <i>point</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QPointF <b><a href="qtransform.html#operator-2a-3">operator*</a></b> ( const QPointF &amp; <i>point</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QLineF <b><a href="qtransform.html#operator-2a-4">operator*</a></b> ( const QLineF &amp; <i>line</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QLine <b><a href="qtransform.html#operator-2a-5">operator*</a></b> ( const QLine &amp; <i>line</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QPolygon <b><a href="qtransform.html#operator-2a-6">operator*</a></b> ( const QPolygon &amp; <i>polygon</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QPolygonF <b><a href="qtransform.html#operator-2a-7">operator*</a></b> ( const QPolygonF &amp; <i>polygon</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QRegion <b><a href="qtransform.html#operator-2a-8">operator*</a></b> ( const QRegion &amp; <i>region</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QPainterPath <b><a href="qtransform.html#operator-2a-9">operator*</a></b> ( const QPainterPath &amp; <i>path</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtransform.html#operator-lt-lt-74">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QTransform &amp; <i>matrix</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtransform.html#operator-gt-gt-47">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QTransform &amp; <i>matrix</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTransform class specifies 2D transformations of a coordinate system.</p>
+<p>A transformation specifies how to translate, scale, shear, rotate or project the coordinate system, and is typically used when rendering graphics.</p>
+<p>QTransform differs from <a href="qmatrix.html">QMatrix</a> in that it is a true 3x3 matrix, allowing perpective transformations. QTransform's <a href="qtransform.html#toAffine">toAffine</a>() method allows casting QTransform to <a href="qmatrix.html">QMatrix</a>. If a perspective transformation has been specified on the matrix, then the conversion to an affine <a href="qmatrix.html">QMatrix</a> will cause loss of data.</p>
+<p>QTransform is the recommended transformation class in Qt.</p>
+<p>A QTransform object can be built using the <a href="qtransform.html#setMatrix">setMatrix</a>(), <a href="qtransform.html#scale">scale</a>(), <a href="qtransform.html#rotate">rotate</a>(), <a href="qtransform.html#translate">translate</a>() and <a href="qtransform.html#shear">shear</a>() functions. Alternatively, it can be built by applying <a href="#basic-matrix-operations">basic matrix operations</a>. The matrix can also be defined when constructed, and it can be reset to the identity matrix (the default) using the <a href="qtransform.html#reset">reset</a>() function.</p>
+<p>The QTransform class supports mapping of graphic primitives: A given point, line, polygon, region, or painter path can be mapped to the coordinate system defined by <i>this</i> matrix using the <a href="qtransform.html#map">map</a>() function. In case of a rectangle, its coordinates can be transformed using the <a href="qtransform.html#mapRect">mapRect</a>() function. A rectangle can also be transformed into a <i>polygon</i> (mapped to the coordinate system defined by <i>this</i> matrix), using the <a href="qtransform.html#mapToPolygon">mapToPolygon</a>() function.</p>
+<p>QTransform provides the <a href="qtransform.html#isIdentity">isIdentity</a>() function which returns true if the matrix is the identity matrix, and the <a href="qtransform.html#isInvertible">isInvertible</a>() function which returns true if the matrix is non-singular (i.e&#x2e; AB = BA = I). The <a href="qtransform.html#inverted">inverted</a>() function returns an inverted copy of <i>this</i> matrix if it is invertible (otherwise it returns the identity matrix). In addition, QTransform provides the <a href="qtransform.html#det">det</a>() function returning the matrix's determinant.</p>
+<p>Finally, the QTransform class supports matrix multiplication, and objects of the class can be streamed as well as compared.</p>
+<ul><li><a href="#rendering-graphics">Rendering Graphics</a></li>
+<li><a href="#basic-matrix-operations">Basic Matrix Operations</a></li>
+</ul>
+<a name="rendering-graphics"></a>
+<h3>Rendering Graphics</h3>
+<p>When rendering graphics, the matrix defines the transformations but the actual transformation is performed by the drawing routines in <a href="qpainter.html">QPainter</a>.</p>
+<p>By default, <a href="qpainter.html">QPainter</a> operates on the associated device's own coordinate system. The standard coordinate system of a QPaintDevice has its origin located at the top-left position. The <i>x</i> values increase to the right; <i>y</i> values increase downward. For a complete description, see the <a href="coordsys.html">coordinate system</a> documentation.</p>
+<p><a href="qpainter.html">QPainter</a> has functions to translate, scale, shear and rotate the coordinate system without using a QTransform. For example:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qtransform-simpletransformation.png" /></td><td><pre> void SimpleTransformation::paintEvent(QPaintEvent *)
+ {
+     QPainter painter(this);
+     painter.setPen(QPen(Qt::blue, 1, Qt::DashLine));
+     painter.drawRect(0, 0, 100, 100);
+
+     painter.rotate(45);
+
+     painter.setFont(QFont(&quot;Helvetica&quot;, 24));
+     painter.setPen(QPen(Qt::black, 1));
+     painter.drawText(20, 10, &quot;QTransform&quot;);
+ }</pre>
+</td></tr>
+</table></p>
+<p>Although these functions are very convenient, it can be more efficient to build a QTransform and call <a href="qpainter.html#setTransform">QPainter::setTransform</a>() if you want to perform more than a single transform operation. For example:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qtransform-combinedtransformation.png" /></td><td><pre> void CombinedTransformation::paintEvent(QPaintEvent *)
+ {
+     QPainter painter(this);
+     painter.setPen(QPen(Qt::blue, 1, Qt::DashLine));
+     painter.drawRect(0, 0, 100, 100);
+
+     QTransform transform;
+     transform.translate(50, 50);
+     transform.rotate(45);
+     transform.scale(0.5, 1.0);
+     painter.setTransform(transform);
+
+     painter.setFont(QFont(&quot;Helvetica&quot;, 24));
+     painter.setPen(QPen(Qt::black, 1));
+     painter.drawText(20, 10, &quot;QTransform&quot;);
+ }</pre>
+</td></tr>
+</table></p>
+<a name="basic-matrix-operations"></a>
+<h3>Basic Matrix Operations</h3>
+<p align="center"><img src="images/qmatrix-representation.png" /></p><p>A QTransform object contains a 3 x 3 matrix. The <tt>dx</tt> and <tt>dy</tt> elements specify horizontal and vertical translation. The <tt>m11</tt> and <tt>m22</tt> elements specify horizontal and vertical scaling. And finally, the <tt>m21</tt> and <tt>m12</tt> elements specify horizontal and vertical <i>shearing</i>.</p>
+<p>QTransform transforms a point in the plane to another point using the following formulas:</p>
+<pre>         x' = m11*x + m21*y + dx
+         y' = m22*y + m12*x + dy</pre>
+<p>The point <i>(x, y)</i> is the original point, and <i>(x', y')</i> is the transformed point. <i>(x', y')</i> can be transformed back to <i>(x, y)</i> by performing the same operation on the <a href="qtransform.html#inverted">inverted</a>() matrix.</p>
+<p>The various matrix elements can be set when constructing the matrix, or by using the <a href="qtransform.html#setMatrix">setMatrix</a>() function later on. They also be manipulated using the <a href="qtransform.html#translate">translate</a>(), <a href="qtransform.html#rotate">rotate</a>(), <a href="qtransform.html#scale">scale</a>() and <a href="qtransform.html#shear">shear</a>() convenience functions, The currently set values can be retrieved using the <a href="qtransform.html#m11">m11</a>(), <a href="qtransform.html#m12">m12</a>(), <a href="qtransform.html#m21">m21</a>(), <a href="qtransform.html#m22">m22</a>(), <a href="qtransform.html#dx">dx</a>() and <a href="qtransform.html#dy">dy</a>() functions.</p>
+<p>Translation is the simplest transformation. Setting <tt>dx</tt> and <tt>dy</tt> will move the coordinate system <tt>dx</tt> units along the X axis and <tt>dy</tt> units along the Y axis. Scaling can be done by setting <tt>m11</tt> and <tt>m22</tt>. For example, setting <tt>m11</tt> to 2 and <tt>m22</tt> to 1.5 will double the height and increase the width by 50%. The identity matrix has <tt>m11</tt> and <tt>m22</tt> set to 1 (all others are set to 0) mapping a point to itself. Shearing is controlled by <tt>m12</tt> and <tt>m21</tt>. Setting these elements to values different from zero will twist the coordinate system. Rotation is achieved by carefully setting both the shearing factors and the scaling factors.</p>
+<p>Here's the combined transformations example using basic matrix operations:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qtransform-combinedtransformation2.png" /></td><td><pre> void BasicOperations::paintEvent(QPaintEvent *)
+ {
+     double pi = 3.14;
+
+     double a    = pi/180 * 45.0;
+     double sina = sin(a);
+     double cosa = cos(a);
+
+     QTransform translationTransform(1, 0, 0, 1, 50.0, 50.0);
+     QTransform rotationTransform(cosa, sina, -sina, cosa, 0, 0);
+     QTransform scalingTransform(0.5, 0, 0, 1.0, 0, 0);
+
+     QTransform transform;
+     transform = scalingTransform * rotationTransform * translationTransform;
+
+     QPainter painter(this);
+     painter.setPen(QPen(Qt::blue, 1, Qt::DashLine));
+     painter.drawRect(0, 0, 100, 100);
+
+     painter.setTransform(transform);
+
+     painter.setFont(QFont(&quot;Helvetica&quot;, 24));
+     painter.setPen(QPen(Qt::black, 1));
+     painter.drawText(20, 10, &quot;QTransform&quot;);
+ }</pre>
+</td></tr>
+</table></p>
+<p>See also <a href="qpainter.html">QPainter</a>, <a href="coordsys.html">The Coordinate System</a>, <a href="demos-affine.html">Affine Transformations Demo</a>, and <a href="painting-transformations.html">Transformations Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="TransformationType-enum"></a>enum QTransform::TransformationType</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTransform::TxNone</tt></td><td align="center" valign="top"><tt>0x00</tt></td></tr>
+<tr><td valign="top"><tt>QTransform::TxTranslate</tt></td><td align="center" valign="top"><tt>0x01</tt></td></tr>
+<tr><td valign="top"><tt>QTransform::TxScale</tt></td><td align="center" valign="top"><tt>0x02</tt></td></tr>
+<tr><td valign="top"><tt>QTransform::TxRotate</tt></td><td align="center" valign="top"><tt>0x04</tt></td></tr>
+<tr><td valign="top"><tt>QTransform::TxShear</tt></td><td align="center" valign="top"><tt>0x08</tt></td></tr>
+<tr><td valign="top"><tt>QTransform::TxProject</tt></td><td align="center" valign="top"><tt>0x10</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTransform"></a>QTransform::QTransform ()</h3>
+<p>Constructs an identity matrix.</p>
+<p>All elements are set to zero except <tt>m11</tt> and <tt>m22</tt> (specifying the scale) and <tt>m13</tt> which are set to 1.</p>
+<p>See also <a href="qtransform.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="QTransform-2"></a>QTransform::QTransform ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h11</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h12</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h13</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h21</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h22</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h23</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h31</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h32</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h33</i> = 1.0 )</h3>
+<p>Constructs a matrix with the elements, <i>h11</i>, <i>h12</i>, <i>h13</i>, <i>h21</i>, <i>h22</i>, <i>h23</i>, <i>h31</i>, <i>h32</i>, <i>h33</i>.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="QTransform-3"></a>QTransform::QTransform ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h11</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h12</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h21</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h22</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> )</h3>
+<p>Constructs a matrix with the elements, <i>h11</i>, <i>h12</i>, <i>h21</i>, <i>h22</i>, <i>dx</i> and <i>dy</i>.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="QTransform-4"></a>QTransform::QTransform ( const <a href="qmatrix.html">QMatrix</a> &amp; <i>matrix</i> )</h3>
+<p>Constructs a matrix that is a copy of the given <i>matrix</i>. Note that the <tt>m13</tt>, <tt>m23</tt>, and <tt>m33</tt> elements are set to 0, 0, and 1 respectively.</p>
+<h3 class="fn"><a name="m11"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m11 () const</h3>
+<p>Returns the horizontal scaling factor.</p>
+<p>See also <a href="qtransform.html#scale">scale</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m12"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m12 () const</h3>
+<p>Returns the vertical shearing factor.</p>
+<p>See also <a href="qtransform.html#shear">shear</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m13"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m13 () const</h3>
+<p>Returns the horizontal projection factor.</p>
+<p>See also <a href="qtransform.html#translate">translate</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m21"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m21 () const</h3>
+<p>Returns the horizontal shearing factor.</p>
+<p>See also <a href="qtransform.html#shear">shear</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m22"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m22 () const</h3>
+<p>Returns the vertical scaling factor.</p>
+<p>See also <a href="qtransform.html#scale">scale</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m23"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m23 () const</h3>
+<p>Returns the vertical projection factor.</p>
+<p>See also <a href="qtransform.html#translate">translate</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m31"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m31 () const</h3>
+<p>Returns the horizontal translation factor.</p>
+<p>See also <a href="qtransform.html#dx">dx</a>(), <a href="qtransform.html#translate">translate</a>(), and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m32"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m32 () const</h3>
+<p>Returns the vertical translation factor.</p>
+<p>See also <a href="qtransform.html#dy">dy</a>(), <a href="qtransform.html#translate">translate</a>(), and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="m33"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::m33 () const</h3>
+<p>Returns the division factor.</p>
+<p>See also <a href="qtransform.html#translate">translate</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="adjoint"></a>QTransform QTransform::adjoint () const</h3>
+<p>Returns the adjoint of this matrix.</p>
+<h3 class="fn"><a name="det"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::det () const</h3>
+<p>Returns the matrix's determinant.</p>
+<h3 class="fn"><a name="determinant"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::determinant () const</h3>
+<p>Returns the matrix's determinant.</p>
+<h3 class="fn"><a name="dx"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::dx () const</h3>
+<p>Returns the horizontal translation factor.</p>
+<p>See also <a href="qtransform.html#m31">m31</a>(), <a href="qtransform.html#translate">translate</a>(), and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="dy"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTransform::dy () const</h3>
+<p>Returns the vertical translation factor.</p>
+<p>See also <a href="qtransform.html#translate">translate</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="inverted"></a>QTransform QTransform::inverted ( bool * <i>invertible</i> = 0 ) const</h3>
+<p>Returns an inverted copy of this matrix.</p>
+<p>If the matrix is singular (not invertible), the returned matrix is the identity matrix. If <i>invertible</i> is valid (i.e&#x2e; not 0), its value is set to true if the matrix is invertible, otherwise it is set to false.</p>
+<p>See also <a href="qtransform.html#isInvertible">isInvertible</a>().</p>
+<h3 class="fn"><a name="isAffine"></a>bool QTransform::isAffine () const</h3>
+<p>Returns true if the matrix represent an affine transformation, otherwise returns false.</p>
+<h3 class="fn"><a name="isIdentity"></a>bool QTransform::isIdentity () const</h3>
+<p>Returns true if the matrix is the identity matrix, otherwise returns false.</p>
+<p>See also <a href="qtransform.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="isInvertible"></a>bool QTransform::isInvertible () const</h3>
+<p>Returns true if the matrix is invertible, otherwise returns false.</p>
+<p>See also <a href="qtransform.html#inverted">inverted</a>().</p>
+<h3 class="fn"><a name="isRotating"></a>bool QTransform::isRotating () const</h3>
+<p>Returns true if the matrix represents some kind of a rotating transformation, otherwise returns false.</p>
+<p>See also <a href="qtransform.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="isScaling"></a>bool QTransform::isScaling () const</h3>
+<p>Returns true if the matrix represents a scaling transformation, otherwise returns false.</p>
+<p>See also <a href="qtransform.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="isTranslating"></a>bool QTransform::isTranslating () const</h3>
+<p>Returns true if the matrix represents a translating transformation, otherwise returns false.</p>
+<p>See also <a href="qtransform.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="map"></a>void QTransform::map ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>tx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>ty</i> ) const</h3>
+<p>Maps the given coordinates <i>x</i> and <i>y</i> into the coordinate system defined by this matrix. The resulting values are put in *<i>tx</i> and *<i>ty</i>, respectively.</p>
+<p>The coordinates are transformed using the following formulas:</p>
+<pre>         x' = m11*x + m21*y + dx
+         y' = m22*y + m12*x + dy</pre>
+<p>The point (x, y) is the original point, and (x', y') is the transformed point.</p>
+<p>See also <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="map-2"></a><a href="qpointf.html">QPointF</a> QTransform::map ( const <a href="qpointf.html">QPointF</a> &amp; <i>p</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qpointf.html">QPointF</a> object that is a copy of the given point, <i>p</i>, mapped into the coordinate system defined by this matrix.</p>
+<h3 class="fn"><a name="map-3"></a><a href="qpoint.html">QPoint</a> QTransform::map ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qpoint.html">QPoint</a> object that is a copy of the given <i>point</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p>
+<h3 class="fn"><a name="map-4"></a><a href="qline.html">QLine</a> QTransform::map ( const <a href="qline.html">QLine</a> &amp; <i>l</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qlinef.html">QLineF</a> object that is a copy of the given line, <i>l</i>, mapped into the coordinate system defined by this matrix.</p>
+<h3 class="fn"><a name="map-5"></a><a href="qlinef.html">QLineF</a> QTransform::map ( const <a href="qlinef.html">QLineF</a> &amp; <i>line</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qline.html">QLine</a> object that is a copy of the given <i>line</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p>
+<h3 class="fn"><a name="map-6"></a><a href="qpolygonf.html">QPolygonF</a> QTransform::map ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qpolygonf.html">QPolygonF</a> object that is a copy of the given <i>polygon</i>, mapped into the coordinate system defined by this matrix.</p>
+<h3 class="fn"><a name="map-7"></a><a href="qpolygon.html">QPolygon</a> QTransform::map ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qpolygon.html">QPolygon</a> object that is a copy of the given <i>polygon</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p>
+<h3 class="fn"><a name="map-8"></a><a href="qregion.html">QRegion</a> QTransform::map ( const <a href="qregion.html">QRegion</a> &amp; <i>region</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qregion.html">QRegion</a> object that is a copy of the given <i>region</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>Calling this method can be rather expensive if rotations or shearing are used.</p>
+<h3 class="fn"><a name="map-9"></a><a href="qpainterpath.html">QPainterPath</a> QTransform::map ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qpainterpath.html">QPainterPath</a> object that is a copy of the given <i>path</i>, mapped into the coordinate system defined by this matrix.</p>
+<h3 class="fn"><a name="map-10"></a>void QTransform::map ( int <i>x</i>, int <i>y</i>, int * <i>tx</i>, int * <i>ty</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the given coordinates <i>x</i> and <i>y</i> into the coordinate system defined by this matrix. The resulting values are put in *<i>tx</i> and *<i>ty</i>, respectively. Note that the transformed coordinates are rounded to the nearest integer.</p>
+<h3 class="fn"><a name="mapRect"></a><a href="qrectf.html">QRectF</a> QTransform::mapRect ( const <a href="qrectf.html">QRectF</a> &amp; <i>rectangle</i> ) const</h3>
+<p>Creates and returns a <a href="qrectf.html">QRectF</a> object that is a copy of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>The rectangle's coordinates are transformed using the following formulas:</p>
+<pre>         x' = m11*x + m21*y + dx
+         y' = m22*y + m12*x + dy
+         if (is not affine) {
+             w' = m13*x + m23*y + m33
+             x' /= w'
+             y' /= w'
+         }</pre>
+<p>If rotation or shearing has been specified, this function returns the <i>bounding</i> rectangle. To retrieve the exact region the given <i>rectangle</i> maps to, use the <a href="qtransform.html#mapToPolygon">mapToPolygon</a>() function instead.</p>
+<p>See also <a href="qtransform.html#mapToPolygon">mapToPolygon</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="mapRect-2"></a><a href="qrect.html">QRect</a> QTransform::mapRect ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates and returns a <a href="qrect.html">QRect</a> object that is a copy of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix. Note that the transformed coordinates are rounded to the nearest integer.</p>
+<h3 class="fn"><a name="mapToPolygon"></a><a href="qpolygon.html">QPolygon</a> QTransform::mapToPolygon ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> ) const</h3>
+<p>Creates and returns a <a href="qpolygon.html">QPolygon</a> representation of the given <i>rectangle</i>, mapped into the coordinate system defined by this matrix.</p>
+<p>The rectangle's coordinates are transformed using the following formulas:</p>
+<pre>         x' = m11*x + m21*y + dx
+         y' = m22*y + m12*x + dy
+         if (is not affine) {
+             w' = m13*x + m23*y + m33
+             x' /= w'
+             y' /= w'
+         }</pre>
+<p>Polygons and rectangles behave slightly differently when transformed (due to integer rounding), so <tt>matrix.map(QPolygon(rectangle))</tt> is not always the same as <tt>matrix.mapToPolygon(rectangle)</tt>.</p>
+<p>See also <a href="qtransform.html#mapRect">mapRect</a>() and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="quadToQuad"></a>bool QTransform::quadToQuad ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>one</i>, const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>two</i>, QTransform &amp; <i>trans</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Creates a transformation matrix, <i>trans</i>, that maps a four-sided polygon, <i>one</i>, to another four-sided polygon, <i>two</i>. Returns true if the transformation is possible; otherwise returns false.</p>
+<p>This is a convenience method combining <a href="qtransform.html#quadToSquare">quadToSquare</a>() and <a href="qtransform.html#squareToQuad">squareToQuad</a>() methods. It allows the input quad to be transformed into any other quad.</p>
+<p>See also <a href="qtransform.html#squareToQuad">squareToQuad</a>() and <a href="qtransform.html#quadToSquare">quadToSquare</a>().</p>
+<h3 class="fn"><a name="quadToSquare"></a>bool QTransform::quadToSquare ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>quad</i>, QTransform &amp; <i>trans</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Creates a transformation matrix, <i>trans</i>, that maps a four-sided polygon, <i>quad</i>, to a unit square. Returns true if the transformation is constructed or false if such a transformation does not exist.</p>
+<p>See also <a href="qtransform.html#squareToQuad">squareToQuad</a>() and <a href="qtransform.html#quadToQuad">quadToQuad</a>().</p>
+<h3 class="fn"><a name="reset"></a>void QTransform::reset ()</h3>
+<p>Resets the matrix to an identity matrix, i.e&#x2e; all elements are set to zero, except <tt>m11</tt> and <tt>m22</tt> (specifying the scale) which are set to 1.</p>
+<p>See also <a href="qtransform.html#QTransform">QTransform</a>(), <a href="qtransform.html#isIdentity">isIdentity</a>(), and <a href="qtransform.html#basic-matrix-operations">Basic Matrix Operations</a>.</p>
+<h3 class="fn"><a name="rotate"></a>QTransform &amp; QTransform::rotate ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i>, <a href="qt.html#Axis-enum">Qt::Axis</a> <i>axis</i> = Qt::ZAxis )</h3>
+<p>Rotates the coordinate system counterclockwise by the given <i>angle</i> about the specified <i>axis</i> and returns a reference to the matrix.</p>
+<p>Note that if you apply a <a href="qtransform.html">QTransform</a> to a point defined in widget coordinates, the direction of the rotation will be clockwise because the y-axis points downwards.</p>
+<p>The angle is specified in degrees.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="rotateRadians"></a>QTransform &amp; QTransform::rotateRadians ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i>, <a href="qt.html#Axis-enum">Qt::Axis</a> <i>axis</i> = Qt::ZAxis )</h3>
+<p>Rotates the coordinate system counterclockwise by the given <i>angle</i> about the specified <i>axis</i> and returns a reference to the matrix.</p>
+<p>Note that if you apply a <a href="qtransform.html">QTransform</a> to a point defined in widget coordinates, the direction of the rotation will be clockwise because the y-axis points downwards.</p>
+<p>The angle is specified in radians.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="scale"></a>QTransform &amp; QTransform::scale ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sy</i> )</h3>
+<p>Scales the coordinate system by <i>sx</i> horizontally and <i>sy</i> vertically, and returns a reference to the matrix.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="setMatrix"></a>void QTransform::setMatrix ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m11</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m12</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m13</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m21</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m22</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m23</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m31</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m32</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m33</i> )</h3>
+<p>Sets the matrix elements to the specified values, <i>m11</i>, <i>m12</i>, <i>m13</i> <i>m21</i>, <i>m22</i>, <i>m23</i> <i>m31</i>, <i>m32</i> and <i>m33</i>. Note that this function replaces the previous values. <a href="qmatrix.html">QMatrix</a> provides the <a href="qtransform.html#translate">translate</a>(), <a href="qtransform.html#rotate">rotate</a>(), <a href="qtransform.html#scale">scale</a>() and <a href="qtransform.html#shear">shear</a>() convenience functions to manipulate the various matrix elements based on the currently defined coordinate system.</p>
+<p>See also <a href="qtransform.html#QTransform">QTransform</a>().</p>
+<h3 class="fn"><a name="shear"></a>QTransform &amp; QTransform::shear ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sh</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sv</i> )</h3>
+<p>Shears the coordinate system by <i>sh</i> horizontally and <i>sv</i> vertically, and returns a reference to the matrix.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="squareToQuad"></a>bool QTransform::squareToQuad ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>quad</i>, QTransform &amp; <i>trans</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Creates a transformation matrix, <i>trans</i>, that maps a unit square to a four-sided polygon, <i>quad</i>. Returns true if the transformation is constructed or false if such a transformation does not exist.</p>
+<p>See also <a href="qtransform.html#quadToSquare">quadToSquare</a>() and <a href="qtransform.html#quadToQuad">quadToQuad</a>().</p>
+<h3 class="fn"><a name="toAffine"></a>const <a href="qmatrix.html">QMatrix</a> &amp; QTransform::toAffine () const</h3>
+<p>Returns the <a href="qtransform.html">QTransform</a> cast to a <a href="qmatrix.html">QMatrix</a>.</p>
+<h3 class="fn"><a name="translate"></a>QTransform &amp; QTransform::translate ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> )</h3>
+<p>Moves the coordinate system <i>dx</i> along the x axis and <i>dy</i> along the y axis, and returns a reference to the matrix.</p>
+<p>See also <a href="qtransform.html#setMatrix">setMatrix</a>().</p>
+<h3 class="fn"><a name="transposed"></a>QTransform QTransform::transposed () const</h3>
+<p>Returns the transpose of this matrix.</p>
+<h3 class="fn"><a name="type"></a><a href="qtransform.html#TransformationType-enum">TransformationType</a> QTransform::type () const</h3>
+<p>Returns the transformation type of this matrix.</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QTransform::operator QVariant () const</h3>
+<p>Returns the transform as a <a href="qvariant.html">QVariant</a>.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QTransform::operator!= ( const QTransform &amp; <i>matrix</i> ) const</h3>
+<p>Returns true if this matrix is not equal to the given <i>matrix</i>, otherwise returns false.</p>
+<h3 class="fn"><a name="operator-2a"></a>QTransform QTransform::operator* ( const QTransform &amp; <i>matrix</i> ) const</h3>
+<p>Returns the result of multiplying this matrix by the given <i>matrix</i>.</p>
+<p>Note that matrix multiplication is not commutative, i.e&#x2e; a*b != b*a.</p>
+<h3 class="fn"><a name="operator-2a-eq"></a>QTransform &amp; QTransform::operator*= ( const QTransform &amp; <i>matrix</i> )</h3>
+<p>Returns the result of multiplying this matrix by the given <i>matrix</i>.</p>
+<h3 class="fn"><a name="operator-2a-eq-2"></a>QTransform &amp; QTransform::operator*= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>scalar</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the result of performing an element-wise multiplication of this matrix with the given <i>scalar</i>.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>QTransform &amp; QTransform::operator+= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>scalar</i> )</h3>
+<p>Returns the matrix obtained by adding the given <i>scalar</i> to each element of this matrix.</p>
+<h3 class="fn"><a name="operator--eq"></a>QTransform &amp; QTransform::operator-= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>scalar</i> )</h3>
+<p>Returns the matrix obtained by subtracting the given <i>scalar</i> from each element of this matrix.</p>
+<h3 class="fn"><a name="operator-2f-eq"></a>QTransform &amp; QTransform::operator/= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>scalar</i> )</h3>
+<p>Returns the result of performing an element-wise division of this matrix by the given <i>scalar</i>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTransform &amp; QTransform::operator= ( const QTransform &amp; <i>matrix</i> )</h3>
+<p>Assigns the given <i>matrix</i>'s values to this matrix.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QTransform::operator== ( const QTransform &amp; <i>matrix</i> ) const</h3>
+<p>Returns true if this matrix is equal to the given <i>matrix</i>, otherwise returns false.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-2a"></a><a href="qpoint.html">QPoint</a> operator* ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is the same as <i>matrix</i>.map(<i>point</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-3"></a><a href="qpointf.html">QPointF</a> operator* ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Same as <i>matrix</i>.map(<i>point</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-4"></a><a href="qlinef.html">QLineF</a> operator* ( const <a href="qlinef.html">QLineF</a> &amp; <i>line</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>line</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-5"></a><a href="qline.html">QLine</a> operator* ( const <a href="qline.html">QLine</a> &amp; <i>line</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>line</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-6"></a><a href="qpolygon.html">QPolygon</a> operator* ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>polygon</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-7"></a><a href="qpolygonf.html">QPolygonF</a> operator* ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>polygon</i>).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-8"></a><a href="qregion.html">QRegion</a> operator* ( const <a href="qregion.html">QRegion</a> &amp; <i>region</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>region</i>).</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-2a-9"></a><a href="qpainterpath.html">QPainterPath</a> operator* ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as <i>matrix</i>.map(<i>path</i>).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtransform.html#map">QTransform::map</a>().</p>
+<h3 class="fn"><a name="operator-lt-lt-74"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>matrix</i> to the given <i>stream</i> and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-47"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QTransform &amp; <i>matrix</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the given <i>matrix</i> from the given <i>stream</i> and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

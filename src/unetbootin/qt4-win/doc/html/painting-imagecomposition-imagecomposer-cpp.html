@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: imagecomposer.cpp Example File (painting/imagecomposition/imagecomposer.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">imagecomposer.cpp Example File<br /><span class="small-subtitle">painting/imagecomposition/imagecomposer.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;imagecomposer.h&quot;
+
+ static const QSize resultSize(200, 200);
+
+ ImageComposer::ImageComposer()
+ {
+     sourceButton = new QToolButton;
+     sourceButton-&gt;setIconSize(resultSize);
+
+     operatorComboBox = new QComboBox;
+     addOp(QPainter::CompositionMode_SourceOver, tr(&quot;SourceOver&quot;));
+     addOp(QPainter::CompositionMode_DestinationOver, tr(&quot;DestinationOver&quot;));
+     addOp(QPainter::CompositionMode_Clear, tr(&quot;Clear&quot;));
+     addOp(QPainter::CompositionMode_Source, tr(&quot;Source&quot;));
+     addOp(QPainter::CompositionMode_Destination, tr(&quot;Destination&quot;));
+     addOp(QPainter::CompositionMode_SourceIn, tr(&quot;SourceIn&quot;));
+     addOp(QPainter::CompositionMode_DestinationIn, tr(&quot;DestinationIn&quot;));
+     addOp(QPainter::CompositionMode_SourceOut, tr(&quot;SourceOut&quot;));
+     addOp(QPainter::CompositionMode_DestinationOut, tr(&quot;DestinationOut&quot;));
+     addOp(QPainter::CompositionMode_SourceAtop, tr(&quot;SourceAtop&quot;));
+     addOp(QPainter::CompositionMode_DestinationAtop, tr(&quot;DestinationAtop&quot;));
+     addOp(QPainter::CompositionMode_Xor, tr(&quot;Xor&quot;));
+
+     destinationButton = new QToolButton;
+     destinationButton-&gt;setIconSize(resultSize);
+
+     equalLabel = new QLabel(tr(&quot;=&quot;));
+
+     resultLabel = new QLabel;
+     resultLabel-&gt;setMinimumWidth(resultSize.width());
+
+     connect(sourceButton, SIGNAL(clicked()), this, SLOT(chooseSource()));
+     connect(operatorComboBox, SIGNAL(activated(int)),
+             this, SLOT(recalculateResult()));
+     connect(destinationButton, SIGNAL(clicked()),
+             this, SLOT(chooseDestination()));
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addWidget(sourceButton, 0, 0, 3, 1);
+     mainLayout-&gt;addWidget(operatorComboBox, 1, 1);
+     mainLayout-&gt;addWidget(destinationButton, 0, 2, 3, 1);
+     mainLayout-&gt;addWidget(equalLabel, 1, 3);
+     mainLayout-&gt;addWidget(resultLabel, 0, 4, 3, 1);
+     mainLayout-&gt;setSizeConstraint(QLayout::SetFixedSize);
+     setLayout(mainLayout);
+
+     resultImage = QImage(resultSize, QImage::Format_ARGB32_Premultiplied);
+
+     loadImage(&quot;:/images/butterfly.png&quot;, &amp;sourceImage, sourceButton);
+     loadImage(&quot;:/images/checker.png&quot;, &amp;destinationImage, destinationButton);
+
+     setWindowTitle(tr(&quot;Image Composition&quot;));
+ }
+
+ void ImageComposer::chooseSource()
+ {
+     chooseImage(tr(&quot;Choose Source Image&quot;), &amp;sourceImage, sourceButton);
+ }
+
+ void ImageComposer::chooseDestination()
+ {
+     chooseImage(tr(&quot;Choose Destination Image&quot;), &amp;destinationImage,
+                 destinationButton);
+ }
+
+ void ImageComposer::recalculateResult()
+ {
+     QPainter::CompositionMode mode = currentMode();
+
+     QPainter painter(&amp;resultImage);
+     painter.setCompositionMode(QPainter::CompositionMode_Source);
+     painter.fillRect(resultImage.rect(), Qt::transparent);
+     painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+     painter.drawImage(0, 0, destinationImage);
+     painter.setCompositionMode(mode);
+     painter.drawImage(0, 0, sourceImage);
+     painter.setCompositionMode(QPainter::CompositionMode_DestinationOver);
+     painter.fillRect(resultImage.rect(), Qt::white);
+     painter.end();
+
+     resultLabel-&gt;setPixmap(QPixmap::fromImage(resultImage));
+ }
+
+ void ImageComposer::addOp(QPainter::CompositionMode mode, const QString &amp;name)
+ {
+     operatorComboBox-&gt;addItem(name, mode);
+ }
+
+ void ImageComposer::chooseImage(const QString &amp;title, QImage *image,
+                                 QToolButton *button)
+ {
+     QString fileName = QFileDialog::getOpenFileName(this, title);
+     if (!fileName.isEmpty())
+         loadImage(fileName, image, button);
+ }
+
+ void ImageComposer::loadImage(const QString &amp;fileName, QImage *image,
+                               QToolButton *button)
+ {
+     image-&gt;load(fileName);
+
+     QImage fixedImage(resultSize, QImage::Format_ARGB32_Premultiplied);
+     QPainter painter(&amp;fixedImage);
+     painter.setCompositionMode(QPainter::CompositionMode_Source);
+     painter.fillRect(fixedImage.rect(), Qt::transparent);
+     painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
+     painter.drawImage(imagePos(*image), *image);
+     painter.end();
+     button-&gt;setIcon(QPixmap::fromImage(fixedImage));
+
+     *image = fixedImage;
+
+     recalculateResult();
+ }
+
+ QPainter::CompositionMode ImageComposer::currentMode() const
+ {
+     return (QPainter::CompositionMode)
+            operatorComboBox-&gt;itemData(operatorComboBox-&gt;currentIndex()).toInt();
+ }
+
+ QPoint ImageComposer::imagePos(const QImage &amp;image) const
+ {
+     return QPoint((resultSize.width() - image.width()) / 2,
+                   (resultSize.height() - image.height()) / 2);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

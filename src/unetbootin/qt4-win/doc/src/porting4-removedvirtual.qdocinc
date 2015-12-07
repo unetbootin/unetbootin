@@ -1,0 +1,605 @@
+\row \o void QAccessibleInterface::clearSelection() \o Port to the new QAccessibleInterface API.
+\row \o int QAccessibleInterface::controlAt(int, int) const \o Port to the new QAccessibleInterface API.
+\row \o bool QAccessibleInterface::doDefaultAction(int) \o Port to the new QAccessibleInterface API.
+\row \o QMemArray<int> QAccessibleInterface::selection() const \o Port to the new QAccessibleInterface API.
+\row \o bool QAccessibleInterface::setFocus(int) \o Port to the new QAccessibleInterface API.
+\row \o bool QAccessibleInterface::setSelected(int, bool, bool) \o Port to the new QAccessibleInterface API.
+\row \o bool QAction::addTo(QWidget *) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::addedTo(QWidget *, QWidget *) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::addedTo(int, QPopupMenu *) \o Use Q3Action instead or port to the new QAction API.
+\row \o bool QAction::removeFrom(QWidget *) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setAccel(const QKeySequence &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setEnabled(bool) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setIconSet(const QIcon &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setMenuText(const QString &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setOn(bool) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setStatusTip(const QString &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setText(const QString &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setToggleAction(bool) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setToolTip(const QString &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QAction::setWhatsThis(const QString &) \o Use Q3Action instead or port to the new QAction API.
+\row \o void QButton::drawButton(QPainter *) \o Use Q3Button instead or reimplement QButton::paintEvent().
+\row \o void QButton::drawButtonLabel(QPainter *) \o Use Q3Button instead or reimplement QButton::paintEvent().
+\row \o void QButton::setAccel(const QKeySequence &) \o Setter.
+\row \o void QButton::setAutoRepeat(bool) \o Setter.
+\row \o void QButton::setDown(bool) \o Setter.
+\row \o void QButton::setPixmap(const QPixmap &) \o Setter.
+\row \o void QButton::setState(ToggleState) \o Setter.
+\row \o void QButton::setText(const QString &) \o Use the QAbstractButton::setText() setter function.
+\row \o void QButton::setToggleType(ToggleType) \o Setter.
+\row \o void QButtonGroup::moveFocus(int) \o Use the QWidget::setFocus() setter function.
+\row \o void QButtonGroup::setButton(int) \o Setter.
+\row \o void QButtonGroup::setExclusive(bool) \o Setter.
+\row \o void QButtonGroup::setRadioButtonExclusive(bool) \o Setter.
+\row \o void QComboBox::setAutoCompletion(bool) \o Setter.
+\row \o void QComboBox::setAutoResize(bool) \o Setter.
+\row \o void QComboBox::setCurrentItem(int) \o Setter.
+\row \o void QComboBox::setCurrentText(const QString &) \o Setter.
+\row \o void QComboBox::setFont(const QFont &) \o Setter.
+\row \o void QComboBox::setInsertionPolicy(Policy) \o Setter.
+\row \o void QComboBox::setLineEdit(QLineEdit *) \o Setter.
+\row \o void QComboBox::setListBox(QListBox *) \o Setter.
+\row \o void QComboBox::setMaxCount(int) \o Setter.
+\row \o void QComboBox::setPalette(const QPalette &) \o Setter.
+\row \o void QComboBox::setSizeLimit(int) \o Setter.
+\row \o void QComboBox::setValidator(const QValidator *) \o Setter.
+\row \o void QDateEdit::fix() \o Port to the new QDateTimeEdit API.
+\row \o QString QDateEdit::sectionFormattedText(int) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setAutoAdvance(bool) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setDate(const QDate &) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setDay(int) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setMaxValue(const QDate &) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setMinValue(const QDate &) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setMonth(int) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setOrder(Order) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setRange(const QDate &, const QDate &) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setSeparator(const QString &) \o Port to the new QDateTimeEdit API.
+\row \o void QDateEdit::setYear(int) \o Port to the new QDateTimeEdit API.
+\row \o void QDateTimeEdit::setAutoAdvance(bool) \o Port to the new QDateTimeEdit API.
+\row \o void QDateTimeEdit::setDateTime(const QDateTime &) \o Port to the new QDateTimeEdit API.
+\row \o void QDial::rangeChange() \o Reimplement QDial::sliderChange() instead.
+\row \o void QDial::repaintScreen(const QRect *) \o Reimplement QDial::paintEvent() instead.
+\row \o void QDial::setNotchTarget(double) \o Setter.
+\row \o void QDial::setNotchesVisible(bool) \o Setter.
+\row \o void QDial::setTracking(bool) \o Setter.
+\row \o void QDial::setValue(int) \o Use QDial::sliderChange() instead.
+\row \o void QDial::setWrapping(bool) \o Setter.
+\row \o void QDial::valueChange() \o Use QDial::sliderChange() instead.
+\row \o QString QDir::absFilePath(const QString &, bool) const \o Value type.
+\row \o QString QDir::absPath() const \o Value type.
+\row \o QString QDir::canonicalPath() const \o Value type.
+\row \o bool QDir::cd(const QString &, bool) \o Value type.
+\row \o bool QDir::cdUp() \o Value type.
+\row \o void QDir::convertToAbs() \o Value type.
+\row \o QString QDir::dirName() const \o Value type.
+\row \o QStrList QDir::encodedEntryList(int, int) const \o Value type.
+\row \o QStrList QDir::encodedEntryList(const QString &, int, int) const \o Value type.
+\row \o const QFileInfoList * QDir::entryInfoList(int, int) const \o Value type.
+\row \o const QFileInfoList * QDir::entryInfoList(const QString &, int, int) const \o Value type.
+\row \o QStringList QDir::entryList(const QString &, int, int) const \o Value type.
+\row \o QStringList QDir::entryList(int, int) const \o Value type.
+\row \o bool QDir::exists() const \o Value type.
+\row \o bool QDir::exists(const QString &, bool) \o Value type.
+\row \o QString QDir::filePath(const QString &, bool) const \o Value type.
+\row \o bool QDir::isReadable() const \o Value type.
+\row \o bool QDir::isRelative() const \o Value type.
+\row \o bool QDir::isRoot() const \o Value type.
+\row \o bool QDir::mkdir(const QString &, bool) const \o Value type.
+\row \o bool QDir::operator!=() const \o Value type.
+\row \o bool QDir::operator==() const \o Value type.
+\row \o QString QDir::path() const \o Value type.
+\row \o bool QDir::remove(const QString &, bool) \o Value type.
+\row \o bool QDir::rename(const QString &, const QString &, bool) \o Value type.
+\row \o bool QDir::rmdir(const QString &, bool) const \o Value type.
+\row \o void QDir::setFilter(int) \o Value type.
+\row \o void QDir::setMatchAllDirs(bool) \o Value type.
+\row \o void QDir::setNameFilter(const QString &) \o Value type.
+\row \o void QDir::setPath(const QString &) \o Value type.
+\row \o void QDir::setSorting(int) \o Value type.
+\row \o void QDns::setLabel(const QString &) \o Use Q3Dns instead.
+\row \o void QDns::setLabel(const QHostAddress &) \o Use Q3Dns instead.
+\row \o void QDns::setRecordType(RecordType) \o Use Q3Dns instead.
+\row \o void QDockWindow::dock() \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setCloseMode(int) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setFixedExtentHeight(int) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setFixedExtentWidth(int) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setHorizontallyStretchable(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setMovingEnabled(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setNewLine(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setOffset(int) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setOpaqueMoving(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setOrientation(Orientation) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setResizeEnabled(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setVerticallyStretchable(bool) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::setWidget(QWidget *) \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o void QDockWindow::undock() \o Use Q3DockWindow instead or port to the new QDockWidget API.
+\row \o QString QDomAttr::name() const \o Value type.
+\row \o QDomElement QDomAttr::ownerElement() const \o Value type.
+\row \o void QDomAttr::setValue(const QString &) \o Value type.
+\row \o bool QDomAttr::specified() const \o Value type.
+\row \o QString QDomAttr::value() const \o Value type.
+\row \o void QDomCharacterData::appendData(const QString &) \o Value type.
+\row \o QString QDomCharacterData::data() const \o Value type.
+\row \o void QDomCharacterData::deleteData(unsigned, unsigned) \o Value type.
+\row \o void QDomCharacterData::insertData(unsigned, const QString &) \o Value type.
+\row \o uint QDomCharacterData::length() const \o Value type.
+\row \o void QDomCharacterData::replaceData(unsigned, unsigned, const QString &) \o Value type.
+\row \o void QDomCharacterData::setData(const QString &) \o Value type.
+\row \o QString QDomCharacterData::substringData(unsigned, unsigned) \o Value type.
+\row \o QDomNamedNodeMap QDomDocumentType::entities() const \o Value type.
+\row \o QString QDomDocumentType::internalSubset() const \o Value type.
+\row \o QString QDomDocumentType::name() const \o Value type.
+\row \o QDomNamedNodeMap QDomDocumentType::notations() const \o Value type.
+\row \o QString QDomDocumentType::publicId() const \o Value type.
+\row \o QString QDomDocumentType::systemId() const \o Value type.
+\row \o QDomNamedNodeMap QDomElement::attributes() const \o Value type.
+\row \o QDomNodeList QDomElement::elementsByTagName(const QString &) const \o Value type.
+\row \o QDomNodeList QDomElement::elementsByTagNameNS(const QString &, const QString &) const \o Value type.
+\row \o QString QDomEntity::notationName() const \o Value type.
+\row \o QString QDomEntity::publicId() const \o Value type.
+\row \o QString QDomEntity::systemId() const \o Value type.
+\row \o QDomDocument QDomImplementation::createDocument(const QString &, const QString &, const QDomDocumentType &) \o Value type.
+\row \o QDomDocumentType QDomImplementation::createDocumentType(const QString &, const QString &, const QString &) \o Value type.
+\row \o bool QDomImplementation::hasFeature(const QString &, const QString &) \o Value type.
+\row \o QDomImplementation::~QDomImplementation() \o Value type.
+\row \o QDomNode QDomNode::appendChild(const QDomNode &) \o Value type.
+\row \o QDomNamedNodeMap QDomNode::attributes() const \o Value type.
+\row \o QDomNodeList QDomNode::childNodes() const \o Value type.
+\row \o QDomNode QDomNode::cloneNode(bool) const \o Value type.
+\row \o QDomNode QDomNode::firstChild() const \o Value type.
+\row \o bool QDomNode::hasAttributes() const \o Value type.
+\row \o bool QDomNode::hasChildNodes() const \o Value type.
+\row \o QDomNode QDomNode::insertAfter(const QDomNode &, const QDomNode &) \o Value type.
+\row \o QDomNode QDomNode::insertBefore(const QDomNode &, const QDomNode &) \o Value type.
+\row \o bool QDomNode::isAttr() const \o Value type.
+\row \o bool QDomNode::isCDATASection() const \o Value type.
+\row \o bool QDomNode::isCharacterData() const \o Value type.
+\row \o bool QDomNode::isComment() const \o Value type.
+\row \o bool QDomNode::isDocument() const \o Value type.
+\row \o bool QDomNode::isDocumentFragment() const \o Value type.
+\row \o bool QDomNode::isDocumentType() const \o Value type.
+\row \o bool QDomNode::isElement() const \o Value type.
+\row \o bool QDomNode::isEntity() const \o Value type.
+\row \o bool QDomNode::isEntityReference() const \o Value type.
+\row \o bool QDomNode::isNotation() const \o Value type.
+\row \o bool QDomNode::isProcessingInstruction() const \o Value type.
+\row \o bool QDomNode::isSupported(const QString &, const QString &) const \o Value type.
+\row \o bool QDomNode::isText() const \o Value type.
+\row \o QDomNode QDomNode::lastChild() const \o Value type.
+\row \o QString QDomNode::localName() const \o Value type.
+\row \o QString QDomNode::namespaceURI() const \o Value type.
+\row \o QDomNode QDomNode::nextSibling() const \o Value type.
+\row \o QString QDomNode::nodeName() const \o Value type.
+\row \o QDomNode::NodeType QDomNode::nodeType() const \o Value type.
+\row \o QString QDomNode::nodeValue() const \o Value type.
+\row \o void QDomNode::normalize() \o Value type.
+\row \o QDomDocument QDomNode::ownerDocument() const \o Value type.
+\row \o QDomNode QDomNode::parentNode() const \o Value type.
+\row \o QString QDomNode::prefix() const \o Value type.
+\row \o QDomNode QDomNode::previousSibling() const \o Value type.
+\row \o QDomNode QDomNode::removeChild(const QDomNode &) \o Value type.
+\row \o QDomNode QDomNode::replaceChild(const QDomNode &, const QDomNode &) \o Value type.
+\row \o void QDomNode::setNodeValue(const QString &) \o Value type.
+\row \o void QDomNode::setPrefix(const QString &) \o Value type.
+\row \o QDomNode::~QDomNode() \o Value type.
+\row \o QDomNode QDomNodeList::item(int) const \o Value type.
+\row \o uint QDomNodeList::length() const \o Value type.
+\row \o QDomNodeList::~QDomNodeList() \o Value type.
+\row \o QString QDomProcessingInstruction::data() const \o Value type.
+\row \o void QDomProcessingInstruction::setData(const QString &) \o Value type.
+\row \o QString QDomProcessingInstruction::target() const \o Value type.
+\row \o int QEventLoop::enterLoop() \o Port to the new QAbstractEventDispatcher API.
+\row \o int QEventLoop::exec() \o Port to the new QAbstractEventDispatcher API.
+\row \o void QEventLoop::exit(int) \o Port to the new QAbstractEventDispatcher API.
+\row \o void QEventLoop::exitLoop() \o Port to the new QAbstractEventDispatcher API.
+\row \o bool QEventLoop::hasPendingEvents() const \o Port to the new QAbstractEventDispatcher API.
+\row \o int QEventLoop::loopLevel() const \o Port to the new QAbstractEventDispatcher API.
+\row \o bool QEventLoop::processEvents(ProcessEventsFlags) \o Port to the new QAbstractEventDispatcher API.
+\row \o void QEventLoop::registerSocketNotifier(QSocketNotifier *) \o Port to the new QAbstractEventDispatcher API.
+\row \o void QEventLoop::unregisterSocketNotifier(QSocketNotifier *) \o Port to the new QAbstractEventDispatcher API.
+\row \o void QEventLoop::wakeUp() \o Port to the new QAbstractEventDispatcher API.
+\row \o void QFrame::drawContents(QPainter *) \o Use Q3Frame or reimplement QFrame::paintEvent() instead.
+\row \o void QFrame::drawFrame(QPainter *) \o Use Q3Frame or reimplement QFrame::paintEvent() instead.
+\row \o void QFrame::frameChanged() \o Use Q3Frame or reimplement QFrame::resizeEvent() instead.
+\row \o void QFrame::setFrameRect(const QRect &) \o Setter.
+\row \o void QFrame::setFrameStyle(int) \o Setter.
+\row \o void QFrame::setLineWidth(int) \o Setter.
+\row \o void QFrame::setMargin(int) \o Setter.
+\row \o void QFrame::setMidLineWidth(int) \o Setter.
+\row \o void QGridLayout::setColStretch(int, int) \o Setter.
+\row \o void QGridLayout::setRowStretch(int, int) \o Setter.
+\row \o void QGroupBox::setAlignment(int) \o Setter.
+\row \o void QGroupBox::setColumnLayout(int, Orientation) \o Setter.
+\row \o void QGroupBox::setTitle(const QString &) \o Setter.
+\row \o QHostAddress::~QHostAddress() \o Value type.
+\row \o int QIODevice::getch() \o Port to the new QIODevice API.
+\row \o int QIODevice::putch(int) \o Port to the new QIODevice API.
+\row \o QByteArray QIODevice::readAll() \o Port to the new QIODevice API.
+\row \o Q_LONG QIODevice::readLine(char *, Q_ULONG) \o Port to the new QIODevice API.
+\row \o int QIODevice::ungetch(int) \o Port to the new QIODevice API.
+\row \o void QIcon::setPixmap(const QString &, Size, Mode, State) \o Value type.
+\row \o void QIcon::setPixmap(const QPixmap &, Size, Mode, State) \o Value type.
+\row \o QIcon::~QIcon() \o Value type.
+\row \o void QLabel::setAlignment(int) \o Setter.
+\row \o void QLabel::setAutoResize(bool) \o Setter.
+\row \o void QLabel::setBuddy(QWidget *) \o Setter.
+\row \o void QLabel::setMovie(const QMovie &) \o Setter.
+\row \o void QLabel::setNum(int) \o Setter.
+\row \o void QLabel::setNum(double) \o Setter.
+\row \o void QLabel::setPicture(const QPicture &) \o Setter.
+\row \o void QLabel::setPixmap(const QPixmap &) \o Setter.
+\row \o void QLabel::setText(const QString &) \o Setter.
+\row \o QLayoutIterator QLayout::iterator() \o Port to the new QLayout API.
+\row \o void QLayout::setAutoAdd(bool) \o Setter.
+\row \o void QLayout::setMargin(int) \o Setter.
+\row \o void QLayout::setMenuBar(QMenuBar *) \o Setter.
+\row \o void QLayout::setSpacing(int) \o Setter.
+\row \o QLayoutIterator QLayoutItem::iterator() \o Port to the new QLayoutItem API.
+\row \o void QLayoutItem::setAlignment(int) \o Setter.
+\row \o bool QLibrary::unload() \o Never used polymorphically in Qt.
+\row \o void QLineEdit::clear() \o Connect to QLineEdit::textChanged() instead.
+\row \o void QLineEdit::clearValidator() \o Never used polymorphically in Qt.
+\row \o void QLineEdit::copy() const \o Never used polymorphically in Qt.
+\row \o void QLineEdit::cut() \o Never used polymorphically in Qt.
+\row \o void QLineEdit::deselect() \o Connect to QLineEdit::selectionChanged() instead.
+\row \o void QLineEdit::insert(const QString &) \o Connect to QLineEdit::textChanged() instead.
+\row \o void QLineEdit::paste() \o Connect to QLineEdit::textChanged() instead.
+\row \o void QLineEdit::redo() \o Never used polymorphically in Qt.
+\row \o void QLineEdit::selectAll() \o Connect to QLineEdit::selectionChanged() instead.
+\row \o void QLineEdit::setAlignment(int) \o Setter.
+\row \o void QLineEdit::setCursorPosition(int) \o Connect to QLineEdit::cursorPositionChanged() instead.
+\row \o void QLineEdit::setDragEnabled(bool) \o Setter.
+\row \o void QLineEdit::setEchoMode(EchoMode) \o Setter.
+\row \o void QLineEdit::setFrame(bool) \o Setter.
+\row \o void QLineEdit::setMaxLength(int) \o Setter.
+\row \o void QLineEdit::setReadOnly(bool) \o Setter.
+\row \o void QLineEdit::setSelection(int, int) \o Connect to QLineEdit::selectionChanged() instead.
+\row \o void QLineEdit::setText(const QString &) \o Connect to QLineEdit::textChanged() instead.
+\row \o void QLineEdit::setValidator(const QValidator *) \o Setter.
+\row \o void QLineEdit::undo() \o Never used in a polymorphic way by Qt.
+\row \o void QMainWindow::addDockWindow(QDockWindow *, Dock, bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::addDockWindow(QDockWindow *, const QString &, Dock, bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::customize() \o Port to the new QMainWindow API.
+\row \o bool QMainWindow::isCustomizable() const \o Port to the new QMainWindow API.
+\row \o void QMainWindow::moveDockWindow(QDockWindow *, Dock) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::moveDockWindow(QDockWindow *, Dock, bool, int, int) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::removeDockWindow(QDockWindow *) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setAppropriate(QDockWindow *, bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setCentralWidget(QWidget *) \o Setter.
+\row \o void QMainWindow::setDockEnabled(QDockWindow *, Dock, bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setDockEnabled(Dock, bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setDockMenuEnabled(bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setDockWindowsMovable(bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setOpaqueMoving(bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setRightJustification(bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setUpLayout() \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setUsesBigPixmaps(bool) \o Port to the new QMainWindow API.
+\row \o void QMainWindow::setUsesTextLabel(bool) \o Port to the new QMainWindow API.
+\row \o bool QMainWindow::showDockMenu(const QPoint &) \o Port to the new QMainWindow API.
+\row \o void QMenuBar::activateItemAt(int) \o Port to the new QMenuBar API.
+\row \o void QMenuBar::menuContentsChanged() \o Port to the new QMenuBar API.
+\row \o void QMenuBar::menuDelPopup(QPopupMenu *) \o Port to the new QMenuBar API.
+\row \o void QMenuBar::menuInsPopup(QPopupMenu *) \o Port to the new QMenuBar API.
+\row \o void QMenuBar::menuStateChanged() \o Port to the new QMenuBar API.
+\row \o void QMenuBar::setId(int, int) \o Port to the new QMenuBar API.
+\row \o void QMenuBar::setSeparator(Separator) \o Port to the new QMenuBar API.
+\row \o void QMenuBar::updateItem(int) \o Port to the new QMenuBar API.
+\row \o QMutex::~QMutex() \o Value type.
+\row \o bool QObject::checkConnectArgs(const char *, const QObject *, const char *) \o Reimplementing this function is no longer possible.
+\row \o const char * QObject::className() const \o Reimplementing this function is no longer supported.
+\row \o void QObject::insertChild(QObject *) \o Reimplement QObject::childEvent() instead and handle QEvent::ChildAdded events.
+\row \o QVariant QObject::property(const char *) const \o Reimplementing this function is no longer supported.
+\row \o void QObject::removeChild(QObject *) \o  Reimplement QObject::childEvent() instead and handle QEvent::ChildRemoved events.
+\row \o void QObject::setName(const char *) \o Setter.
+\row \o bool QObject::setProperty(const char *, const QVariant &) \o Setter.
+\row \o bool QPaintDevice::cmd(int , QPainter * , QPDevCmdParam *) \o Port to the new QPaintEngine API.
+\row \o Qt::HANDLE QPaintDevice::handle() const \o Port to the new QPaintDevice API.
+\row \o HDC QPaintDevice::handle() const \o Port to the new QPaintDevice API.
+\row \o void QPopupMenu::activateItemAt(int) \o Port to the new QMenu API.
+\row \o void QPopupMenu::menuContentsChanged() \o Port to the new QMenu API.
+\row \o void QPopupMenu::menuDelPopup(QPopupMenu *) \o Port to the new QMenu API.
+\row \o void QPopupMenu::menuInsPopup(QPopupMenu *) \o Port to the new QMenu API.
+\row \o void QPopupMenu::menuStateChanged() \o Port to the new QMenu API.
+\row \o void QPopupMenu::setActiveItem(int) \o Port to the new QMenu API.
+\row \o void QPopupMenu::setCheckable(bool) \o Port to the new QMenu API.
+\row \o void QPopupMenu::setId(int, int) \o Port to the new QMenu API.
+\row \o void QPopupMenu::updateItem(int) \o Port to the new QMenu API.
+\row \o int QPrinter::resolution() const \o Call QPrinter::setResolution() to change the resolution.
+\row \o void QPrinter::setColorMode(ColorMode) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setCreator(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setDocName(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setFromTo(int, int) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setFullPage(bool) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setMinMax(int, int) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setNumCopies(int) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setOrientation(Orientation) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setOutputFileName(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setOutputToFile(bool) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPageOrder(PageOrder) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPageSize(PageSize) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPaperSource(PaperSource) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPrintProgram(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPrinterName(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setPrinterSelectionOption(const QString &) \o Subclass QPrintEngine instead.
+\row \o void QPrinter::setResolution(int) \o Subclass QPrintEngine instead.
+\row \o void QProcess::addArgument(const QString &) \o Not used polymorphically in Qt.
+\row \o void QProcess::closeStdin() \o Not used polymorphically in Qt.
+\row \o bool QProcess::launch(const QByteArray & buf, QStringList *) \o Not used polymorphically in Qt.
+\row \o bool QProcess::launch(const QString & buf, QStringList *) \o Not used polymorphically in Qt.
+\row \o QString QProcess::readLineStderr() \o Not used polymorphically in Qt.
+\row \o QString QProcess::readLineStdout() \o Not used polymorphically in Qt.
+\row \o QByteArray QProcess::readStderr() \o Not used polymorphically in Qt.
+\row \o QByteArray QProcess::readStdout() \o Not used polymorphically in Qt.
+\row \o void QProcess::setArguments(const QStringList &) \o Not used polymorphically in Qt.
+\row \o void QProcess::setWorkingDirectory(const QDir &) \o Not used polymorphically in Qt.
+\row \o bool QProcess::start(QStringList *) \o Not used polymorphically in Qt.
+\row \o void QProcess::writeToStdin(const QByteArray &) \o Not used polymorphically in Qt.
+\row \o bool QProgressBar::setIndicator(QString &, int, int) \o Not used polymorphically in Qt.
+\row \o void QProgressBar::setProgress(int) \o Not used polymorphically in Qt.
+\row \o void QProgressBar::setTotalSteps(int) \o Not used polymorphically in Qt.
+\row \o void QPushButton::setAutoDefault(bool) \o Not used polymorphically in Qt.
+\row \o void QPushButton::setDefault(bool) \o Not used polymorphically in Qt.
+\row \o void QPushButton::setIsMenuButton(bool) \o Not used polymorphically in Qt.
+\row \o void QPushButton::setOn(bool) \o Connect to QPushButton::toggled(bool) instead.
+\row \o void QRadioButton::setChecked(bool) \o Connect to QRadioButton::toggled(bool) instead.
+\row \o uchar * QScreen::cache(int , int) \o Port to the new QScreen API.
+\row \o void QScreen::set(unsigned int , unsigned int , unsigned int , unsigned) \o Port to the new QScreen API.
+\row \o void QScreen::uncache(uchar *) \o Port to the new QScreen API.
+\row \o void QScrollBar::setOrientation(Orientation) \o Setter.
+\row \o void QScrollBar::setTracking(bool) \o Setter.
+\row \o void QSignalMapper::setMapping(const QObject *, const QString &) \o Setter.
+\row \o void QSignalMapper::setMapping(const QObject *, int) \o Setter.
+\row \o void QSlider::rangeChange() \o Reimplement QSlider::sliderChange() instead.
+\row \o void QSlider::setOrientation(Orientation) \o Setter.
+\row \o void QSlider::setPalette(const QPalette &) \o Setter.
+\row \o void QSlider::setTickInterval(int) \o Setter.
+\row \o void QSlider::setTickmarks(TickSetting) \o Setter.
+\row \o void QSlider::setTracking(bool) \o Setter.
+\row \o void QSlider::setValue(int) \o Reimplement QSlider::sliderChange() instead.
+\row \o void QSlider::valueChange() \o Reimplement QSlider::sliderChange() instead.
+\row \o QString QSpinBox::cleanText() const \o Port to the new QSpinBox API.
+\row \o void QSpinBox::interpretText() \o Port to the new QSpinBox API.
+\row \o QString QSpinBox::prefix() const \o Port to the new QSpinBox API.
+\row \o void QSpinBox::rangeChange() \o Reimplement QSpinBox::sliderChange() instead.
+\row \o void QSpinBox::selectAll() \o Port to the new QSpinBox API.
+\row \o void QSpinBox::setButtonSymbols(ButtonSymbols) \o Setter.
+\row \o void QSpinBox::setPrefix(const QString &) \o Setter.
+\row \o void QSpinBox::setSpecialValueText(const QString &) \o Setter.
+\row \o void QSpinBox::setSuffix(const QString &) \o Setter.
+\row \o void QSpinBox::setValidator(const QValidator *) \o Setter.
+\row \o void QSpinBox::setValue(int) \o Connect to QSpinBox::valueChanged().
+\row \o void QSpinBox::setWrapping(bool) \o Setter.
+\row \o void QSpinBox::stepDown() \o Reimplement QSpinBox::stepBy() instead.
+\row \o void QSpinBox::stepUp() \o Reimplement QSpinBox::stepBy() instead.
+\row \o QString QSpinBox::suffix() const \o Port to the new QSpinBox API.
+\row \o void QSpinBox::updateDisplay() \o Port to the new QSpinBox API.
+\row \o void QSpinBox::valueChange() \o Reimplement QSpinBox::sliderChange() instead.
+\row \o void QSplitter::drawSplitter(QPainter *, QCOORD, QCOORD, QCOORD, QCOORD) \o Reimplement QStyle::drawPrimitive() instead and handle QStyle::PE_Splitter.
+\row \o void QSplitter::setOpaqueResize(bool) \o Setter.
+\row \o void QSplitter::setOrientation(Orientation) \o Setter.
+\row \o void QSplitter::setResizeMode(QWidget *, ResizeMode) \o Setter.
+\row \o void QSqlDatabase::setDatabaseName(const QString &) \o Setter.
+\row \o void QSqlDatabase::setHostName(const QString &) \o Setter.
+\row \o void QSqlDatabase::setPassword(const QString &) \o Setter.
+\row \o void QSqlDatabase::setPort(int) \o Setter.
+\row \o void QSqlDatabase::setUserName(const QString &) \o Setter.
+\row \o QSqlQuery QSqlDriver::createQuery() const \o Port to the new QSqlDriver API.
+\row \o QString QSqlDriver::nullText() const \o Port to the new QSqlDriver API.
+\row \o QSqlRecord QSqlDriver::record(const QSqlQuery &) const \o Port to the new QSqlDriver API.
+\row \o QSqlRecordInfo QSqlDriver::recordInfo(const QSqlQuery &) const \o Port to the new QSqlDriver API.
+\row \o QSqlRecordInfo QSqlDriver::recordInfo(const QString &) const \o Port to the new QSqlDriver API.
+\row \o void QSqlError::setDatabaseText(const QString &) \o Value type.
+\row \o void QSqlError::setDriverText(const QString &) \o Value type.
+\row \o void QSqlError::setNumber(int) \o Value type.
+\row \o void QSqlError::setType(int) \o Value type.
+\row \o QSqlError::~QSqlError() \o Value type.
+\row \o void QSqlField::setName(const QString &) \o Value type.
+\row \o void QSqlField::setNull() \o Value type.
+\row \o void QSqlField::setReadOnly(bool) \o Value type.
+\row \o void QSqlField::setValue(const QVariant &) \o Value type.
+\row \o QVariant QSqlField::value() const \o Value type.
+\row \o QSqlField::~QSqlField() \o Value type.
+\row \o void QSqlFieldInfo::setCalculated(bool) \o Value type.
+\row \o void QSqlFieldInfo::setGenerated(bool) \o Value type.
+\row \o void QSqlFieldInfo::setTrim(bool) \o Value type.
+\row \o QSqlFieldInfo::~QSqlFieldInfo() \o Value type.
+\row \o void QSqlIndex::append(const QSqlField &) \o Value type.
+\row \o void QSqlIndex::append(const QSqlField &, bool) \o Value type.
+\row \o void QSqlIndex::setCursorName(const QString &) \o Value type.
+\row \o void QSqlIndex::setDescending(int, bool) \o Value type.
+\row \o void QSqlIndex::setName(const QString &) \o Value type.
+\row \o QVariant QSqlQuery::value(int) const \o Exists as a non-virtual function.
+\row \o void QSqlRecord::append(const QSqlField &) \o Value type.
+\row \o void QSqlRecord::clear() \o Value type.
+\row \o void QSqlRecord::clearValues(bool) \o Value type.
+\row \o void QSqlRecord::insert(int, const QSqlField &) \o Value type.
+\row \o void QSqlRecord::remove(int) \o Value type.
+\row \o void QSqlRecord::setGenerated(const QString &, bool) \o Value type.
+\row \o void QSqlRecord::setGenerated(int, bool) \o Value type.
+\row \o void QSqlRecord::setNull(int) \o Value type.
+\row \o void QSqlRecord::setNull(const QString &) \o Value type.
+\row \o void QSqlRecord::setValue(const QString &, const QVariant &) \o Value type.
+\row \o void QSqlRecord::setValue(int, const QVariant &) \o Value type.
+\row \o QString QSqlRecord::toString(const QString &, const QString &) const \o Value type.
+\row \o QStringList QSqlRecord::toStringList(const QString &) const \o Value type.
+\row \o QVariant QSqlRecord::value(int) const \o Value type.
+\row \o QVariant QSqlRecord::value(const QString &) const \o Value type.
+\row \o QSqlRecord::~QSqlRecord() \o Value type.
+\row \o void QStyle::polishPopupMenu(QPopupMenu *) \o Reimplement QStyle::polish(QWidget *) instead.
+\row \o int QTabBar::addTab(QTab *) \o Reimplement QTabBar::tabInserted() instead.
+\row \o int QTabBar::insertTab(QTab *, int) \o Reimplement QTabBar::tabInserted() instead.
+\row \o void QTabBar::layoutTabs() \o Reimplement QTabBar::tabLayoutChange() instead.
+\row \o void QTabBar::paint(QPainter *, QTab *, bool) const \o Reimplement QTabBar::paintEvent() instead.
+\row \o void QTabBar::paintLabel(QPainter *, const QRect &, QTab *, bool) const \o Reimplement QTabBar::paintEvent() instead.
+\row \o void QTabBar::removeTab(QTab *) \o Reimplement QTabBar::tabRemoved() instead.
+\row \o QTab * QTabBar::selectTab(const QPoint &) const \o Reimplement QTabBar::mousePressEvent() instead.
+\row \o void QTabBar::setCurrentTab(int) \o Connect to the QTabBar::currentChanged() signal.
+\row \o void QTabBar::setCurrentTab(QTab *) \o Connect to the QTabBar::currentChanged() signal.
+\row \o void QTabBar::setShape(Shape) \o Setter.
+\row \o void QTabBar::setTabEnabled(int, bool) \o Setter.
+\row \o void QTabWidget::addTab(QWidget *, const QString &) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::addTab(QWidget *, const QIcon &, const QString &) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::addTab(QWidget *, QTab *) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::insertTab(QWidget *, const QIcon &, const QString &, int) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::insertTab(QWidget *, const QString &, int) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::insertTab(QWidget *, QTab *, int) \o Reimplement QTabWidget::tabInserted() instead.
+\row \o void QTabWidget::removePage(QWidget *) \o Reimplement QTabWidget::tabRemoved() instead.
+\row \o void QTabWidget::showPage(QWidget *) \o Connect to QTabWidget::currentChanged() instead.
+\row \o void QTextEdit::append(const QString &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::clear() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::clearParagraphBackground(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::copy() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o QPopupMenu * QTextEdit::createPopupMenu(const QPoint &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o QPopupMenu * QTextEdit::createPopupMenu() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::cut() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::del() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::doKeyboardAction(KeyboardAction) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::ensureCursorVisible() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o bool QTextEdit::find(const QString &, bool, bool, bool, int *, int *) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o bool QTextEdit::focusNextPrevChild(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o int QTextEdit::heightForWidth(int) const \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::insert(const QString &, bool, bool, bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::insertAt(const QString &, int, int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::insertParagraph(const QString &, int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::moveCursor(CursorAction, bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::paste() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::pasteSubType(const QCString &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::placeCursor(const QPoint &, QTextCursor *) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::redo() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::removeParagraph(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::removeSelectedText(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::removeSelection(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::scrollToAnchor(const QString &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::scrollToBottom() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::selectAll(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setAlignment(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setBold(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setColor(const QColor &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setCurrentFont(const QFont &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setCursorPosition(int, int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setFamily(const QString &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setItalic(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setLinkUnderline(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setMimeSourceFactory(QMimeSourceFactory *) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setModified(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setOverwriteMode(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setPaper(const QBrush &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setParagraphBackgroundColor(int, const QColor &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setPointSize(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setReadOnly(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setSelection(int, int, int, int, int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setSelectionAttributes(int, const QColor &, bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setStyleSheet(QStyleSheet *) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setTabStopWidth(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setText(const QString &, const QString &) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setTextFormat(TextFormat) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setUnderline(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setUndoDepth(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setUndoRedoEnabled(bool) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setVerticalAlignment(VerticalAlignment) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setWordWrap(WordWrap) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setWrapColumnOrWidth(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::setWrapPolicy(WrapPolicy) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::sync() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::undo() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::zoomIn() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::zoomIn(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::zoomOut(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::zoomOut() \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o void QTextEdit::zoomTo(int) \o Use Q3TextEdit or port to the new QTextEdit API.
+\row \o QString QTimeEdit::sectionFormattedText(int) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setAutoAdvance(bool) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setHour(int) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setMaxValue(const QTime &) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setMinValue(const QTime &) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setMinute(int) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setRange(const QTime &, const QTime &) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setSecond(int) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setSeparator(const QString &) \o Port to the new QDateTimeEdit API.
+\row \o void QTimeEdit::setTime(const QTime &) \o Port to the new QDateTimeEdit API.
+\row \o void QToolBar::clear() \o Setter.
+\row \o void QToolBar::setLabel(const QString &) \o Setter.
+\row \o void QToolBar::setStretchableWidget(QWidget *) \o Setter.
+\row \o void QToolButton::setIconSet(const QIcon &) \o Setter.
+\row \o void QToolButton::setOn(bool) \o Connect to QToolButton::toggled(bool) instead.
+\row \o void QToolButton::setTextLabel(const QString &, bool) \o Setter.
+\row \o void QToolButton::setToggleButton(bool) \o Setter.
+\row \o void QToolButton::setUsesBigPixmap(bool) \o Setter.
+\row \o void QToolButton::setUsesTextLabel(bool) \o Setter.
+\row \o void QToolTip::maybeTip(const QPoint &) \o Port to the new QToolTip API.
+\row \o void QUrl::addPath(const QString &) \o Value type.
+\row \o bool QUrl::cdUp() \o Value type.
+\row \o bool QUrl::parse(const QString &) \o Value type.
+\row \o void QUrl::reset() \o Value type.
+\row \o void QUrl::setEncodedPathAndQuery(const QString &) \o Value type.
+\row \o void QUrl::setFileName(const QString &) \o Value type.
+\row \o void QUrl::setHost(const QString &) \o Value type.
+\row \o void QUrl::setPassword(const QString &) \o Value type.
+\row \o void QUrl::setPath(const QString &) \o Value type.
+\row \o void QUrl::setPort(int) \o Value type.
+\row \o void QUrl::setProtocol(const QString &) \o Value type.
+\row \o void QUrl::setQuery(const QString &) \o Value type.
+\row \o void QUrl::setRef(const QString &) \o Value type.
+\row \o void QUrl::setUser(const QString &) \o Value type.
+\row \o QString QUrl::toString(bool, bool) const \o Value type.
+\row \o QUrl::~QUrl() \o Value type.
+\row \o QWaitCondition::~QWaitCondition() \o Value type.
+\row \o bool QWhatsThis::clicked(const QString &) \o Port to the new QWhatsThis API.
+\row \o QString QWhatsThis::text(const QPoint &) \o Port to the new QWhatsThis API.
+\row \o QWhatsThis::~QWhatsThis() \o Port to the new QWhatsThis API.
+\row \o void QWidget::adjustSize() \o Reimplement QWidget::sizeHint() instead.
+\row \o bool QWidget::close(bool) \o Reimplement QWidget::closeEvent().
+\row \o void QWidget::create(WId, bool, bool) \o Not supported in Qt 4.
+\row \o bool QWidget::customWhatsThis() const \o Not supported in Qt 4.
+\row \o void QWidget::destroy(bool, bool) \o Not supported in Qt 4.
+\row \o void QWidget::enabledChange(bool) \o Reimplement QWidget::changeEvent() and handle QEvent::EnabledChange.
+\row \o void QWidget::fontChange(const QFont &) \o Reimplement QWidget::changeEvent() and handle QEvent::FontChange.
+\row \o void QWidget::imComposeEvent(QIMEvent *) \o Reimplement QWidget::inputMethodEvent() instead.
+\row \o void QWidget::imEndEvent(QIMEvent *) \o Reimplement QWidget::inputMethodEvent() instead.
+\row \o void QWidget::imStartEvent(QIMEvent *) \o Reimplement QWidget::inputMethodEvent() instead.
+\row \o void QWidget::move(int, int) \o Setter.
+\row \o void QWidget::paletteChange(const QPalette &) \o Reimplement QWidget::changeEvent() and handle QEvent::PaletteChange and/or QEvent::ApplicationPaletteChange.
+\row \o void QWidget::polish() \o Reimplement event() and handle the QEvent::Polish event type.
+\row \o void QWidget::reparent(QWidget *, WFlags, const QPoint &, bool) \o Reimplement QWidget::event() and handle QEvent::Reparent.
+\row \o void QWidget::resize(int, int) \o Reimplement QWidget::resizeEvent() instead.
+\row \o void QWidget::setAcceptDrops(bool) \o Setter.
+\row \o void QWidget::setActiveWindow() \o Reimplement QWidget::changeEvent() and handle QEvent::ActivationChange.
+\row \o void QWidget::setAutoMask(bool) \o Setter.
+\row \o void QWidget::setBackgroundColor(const QColor &) \o Setter.
+\row \o void QWidget::setBackgroundMode(BackgroundMode) \o Setter.
+\row \o void QWidget::setBackgroundOrigin(BackgroundOrigin) \o Setter.
+\row \o void QWidget::setBackgroundPixmap(const QPixmap &) \o Setter.
+\row \o void QWidget::setCaption(const QString &) \o Reimplement QWidget::changeEvent() and handle QEvent::WindowTitleChange.
+\row \o void QWidget::setCursor(const QCursor &) \o Setter.
+\row \o void QWidget::setEnabled(bool) \o Reimplement QWidget::changeEvent() and handle QEvent::EnabledChange.
+\row \o void QWidget::setEraseColor(const QColor &) \o Setter.
+\row \o void QWidget::setErasePixmap(const QPixmap &) \o Setter.
+\row \o void QWidget::setFocus() \o Reimplement QWidget::focusInEvent() or QWidget::focusOutEvent().
+\row \o void QWidget::setFocusPolicy(FocusPolicy) \o Setter.
+\row \o void QWidget::setFocusProxy(QWidget *) \o Setter.
+\row \o void QWidget::setFont(const QFont &) \o Reimplement QWidget::changeEvent() and handle QEvent::FontChange and/or QEvent::ApplicationFontChange.
+\row \o void QWidget::setGeometry(int, int, int, int) \o Setter.
+\row \o void QWidget::setGeometry(const QRect &) \o Setter.
+\row \o void QWidget::setIcon(const QPixmap &) \o Reimplement QWidget::changeEvent() and handle QEvent::WindowIconChange.
+\row \o void QWidget::setIconText(const QString &) \o Reimplement QWidget::changeEvent() and handle QEvent::IconTextChange.
+\row \o void QWidget::setKeyCompression(bool) \o Setter.
+\row \o void QWidget::setMask(const QRegion &) \o Setter.
+\row \o void QWidget::setMask(const QBitmap &) \o Setter.
+\row \o void QWidget::setMaximumSize(int, int) \o Setter.
+\row \o void QWidget::setMicroFocusHint(int, int, int, int, bool, QFont *) \o Setter.
+\row \o void QWidget::setMinimumSize(int, int) \o Setter.
+\row \o void QWidget::setMouseTracking(bool) \o Reimplement QWidget::changeEvent() and handle QEvent::MouseTrackingChange.
+\row \o void QWidget::setPalette(const QPalette &) \o Reimplement QWidget::changeEvent() and handle QEvent::PaletteChange and/or QEvent::ApplicationPaletteChange.
+\row \o void QWidget::setPaletteBackgroundColor(const QColor &) \o Setter.
+\row \o void QWidget::setPaletteBackgroundPixmap(const QPixmap &) \o Setter.
+\row \o void QWidget::setSizeIncrement(int, int) \o Setter.
+\row \o void QWidget::setSizePolicy(QSizePolicy) \o Setter.
+\row \o void QWidget::setUpdatesEnabled(bool) \o Setter.
+\row \o void QWidget::setWFlags(WFlags) \o Setter.
+\row \o void QWidget::show() \o Reimplement QWidget::showEvent().
+\row \o void QWidget::showMaximized() \o Reimplement QWidget::changeEvent() and handle QEvent::WindowStateChange.
+\row \o void QWidget::showMinimized() \o Reimplement QWidget::changeEvent() and handle QEvent::WindowStateChange.
+\row \o void QWidget::showNormal() \o Reimplement QWidget::changeEvent() and handle QEvent::WindowStateChange.
+\row \o void QWidget::styleChange(QStyle &) \o Reimplement QWidget::changeEvent() and handle QEvent::StyleChange.
+\row \o void QWidget::unsetCursor() \o Setter.
+\row \o void QWidget::windowActivationChange(bool) \o Reimplement QWidget::changeEvent() and handle QEvent::ActivationChange.

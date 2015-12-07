@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextobject.cpp -->
+<head>
+  <title>Qt 4.4: QTextFragment Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextFragment Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextFragment class holds a piece of text in a <a href="qtextdocument.html">QTextDocument</a> with a single <a href="qtextcharformat.html">QTextCharFormat</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextFragment&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextfragment-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextfragment.html#QTextFragment">QTextFragment</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtextfragment.html#QTextFragment-3">QTextFragment</a></b> ( const QTextFragment &amp; <i>other</i> )</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtextfragment.html#charFormat">charFormat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextfragment.html#charFormatIndex">charFormatIndex</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextfragment.html#contains">contains</a></b> ( int <i>position</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextfragment.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextfragment.html#length">length</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextfragment.html#position">position</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextfragment.html#text">text</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextfragment.html#operator-not-eq">operator!=</a></b> ( const QTextFragment &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextfragment.html#operator-lt">operator&lt;</a></b> ( const QTextFragment &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTextFragment &amp; <b><a href="qtextfragment.html#operator-eq">operator=</a></b> ( const QTextFragment &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextfragment.html#operator-eq-eq">operator==</a></b> ( const QTextFragment &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextFragment class holds a piece of text in a <a href="qtextdocument.html">QTextDocument</a> with a single <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<p>A text fragment describes a piece of text that is stored with a single character format. Text in which the character format changes can be represented by sequences of text fragments with different formats.</p>
+<p>If the user edits the text in a fragment and introduces a different character format, the fragment's text will be split at each point where the format changes, and new fragments will be created. For example, changing the style of some text in the middle of a sentence will cause the fragment to be broken into three separate fragments: the first and third with the same format as before, and the second with the new style. The first fragment will contain the text from the beginning of the sentence, the second will contain the text from the middle, and the third takes the text from the end of the sentence.</p>
+<p align="center"><img src="images/qtextfragment-split.png" /></p><p>A fragment's text and character format can be obtained with the <a href="qtextfragment.html#text">text</a>() and <a href="qtextfragment.html#charFormat">charFormat</a>() functions. The <a href="qtextfragment.html#length">length</a>() function gives the length of the text in the fragment. <a href="qtextfragment.html#position">position</a>() gives the position in the document of the start of the fragment. To determine whether the fragment contains a particular position within the document, use the <a href="qtextfragment.html#contains">contains</a>() function.</p>
+<p>See also <a href="qtextdocument.html">QTextDocument</a> and <a href="richtext-structure.html">Rich Text Document Structure</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextFragment"></a>QTextFragment::QTextFragment ()</h3>
+<p>Creates a new empty text fragment.</p>
+<h3 class="fn"><a name="QTextFragment-3"></a>QTextFragment::QTextFragment ( const QTextFragment &amp; <i>other</i> )</h3>
+<p>Copies the content (text and format) of the <i>other</i> text fragment to this text fragment.</p>
+<h3 class="fn"><a name="charFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextFragment::charFormat () const</h3>
+<p>Returns the text fragment's character format.</p>
+<p>See also <a href="qtextfragment.html#text">text</a>().</p>
+<h3 class="fn"><a name="charFormatIndex"></a>int QTextFragment::charFormatIndex () const</h3>
+<p>Returns an index into the document's internal list of character formats for the text fragment's character format.</p>
+<p>See also <a href="qtextdocument.html#object">QTextDocument::object</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QTextFragment::contains ( int <i>position</i> ) const</h3>
+<p>Returns true if the text fragment contains the text at the given <i>position</i> in the document; otherwise returns false.</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextFragment::isValid () const</h3>
+<p>Returns true if this is a valid text fragment (i.e&#x2e; has a valid position in a document); otherwise returns false.</p>
+<h3 class="fn"><a name="length"></a>int QTextFragment::length () const</h3>
+<p>Returns the number of characters in the text fragment.</p>
+<p>See also <a href="qtextfragment.html#text">text</a>().</p>
+<h3 class="fn"><a name="position"></a>int QTextFragment::position () const</h3>
+<p>Returns the position of this text fragment in the document.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QTextFragment::text () const</h3>
+<p>Returns the text fragment's as plain text.</p>
+<p>See also <a href="qtextfragment.html#length">length</a>() and <a href="qtextfragment.html#charFormat">charFormat</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QTextFragment::operator!= ( const QTextFragment &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text fragment is different (at a different position) from the <i>other</i> text fragment; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QTextFragment::operator&lt; ( const QTextFragment &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text fragment appears earlier in the document than the <i>other</i> text fragment; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTextFragment &amp; QTextFragment::operator= ( const QTextFragment &amp; <i>other</i> )</h3>
+<p>Assigns the content (text and format) of the <i>other</i> text fragment to this text fragment.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QTextFragment::operator== ( const QTextFragment &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text fragment is the same (at the same position) as the <i>other</i> text fragment; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

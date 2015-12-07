@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Designer's Signals and Slots Editing Mode</title>
+  <link rel="prev" href="designer-creating-mainwindows.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-buddy-mode.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-creating-mainwindows.html">Creating Main Windows in Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-buddy-mode.html">Qt Designer's Buddy Editing Mode</a>]
+</p>
+<h1 class="title">Qt Designer's Signals and Slots Editing Mode<br /><span class="subtitle"></span>
+</h1>
+<p align="center"><img src="images/designer-connection-mode.png" /></p><p><i>Qt Designer</i>'s signals and slots editing mode allows objects in a form to be connected together using Qt's signals and slots mechanism. Both widgets and layout objects can be connected via an intuitive connection interface, and <i>Qt Designer</i> will present a menu of compatible signals and slots to use for each connection made. When the form is saved, the connections are preserved so that they will be ready for use when your project is built.</p>
+<ul><li><a href="#connecting-objects">Connecting Objects</a></li>
+<li><a href="#editing-and-deleting-connections">Editing and Deleting Connections</a></li>
+</ul>
+<a name="connectingobjects"></a><a name="connecting-objects"></a>
+<h2>Connecting Objects</h2>
+<p>To begin connecting objects, enter the signals and slots editing mode by opening the <b>Edit</b> menu and selecting <b>Edit Signals/Slots</b>, or by pressing the <b>F4</b> key. All widgets and layout objects on the form can be connected together. Spacers just provide spacing hints to layouts, so they cannot be connected to other objects.</p>
+<a name="highlightedobjects"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-highlight.png" /></td><td><b>Highlighted Objects</b><p>When the cursor is over an object that can be used in a connection, the object will be highlighted. To make a connection, press the left mouse button, and drag the cursor towards the object you want to connect it to.</p>
+</td></tr>
+</table></p>
+<p>To make a connection, hold down the left mouse button over a highlighted object, and drag the cursor towards the object you want to connect it to. As you do this, a line will extend from the source object to the cursor. If the cursor is over another object on the form, the line will end with an arrow head that points to the destination object, indicating that a connection will be made between the two objects when you release the mouse button.</p>
+<p>You can abandon the connection at any point while you are dragging the connection path by pressing <b>Esc</b>.</p>
+<a name="makingaconnection"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-making.png" /></td><td><b>Making a Connection</b><p>The connection path changes shape as the cursor moves around the form. As it passes over objects, they are highlighted, indicating that they can be used in a signal and slot connection. Release the mouse button to make the connection.</p>
+</td></tr>
+</table></p>
+<p>When you are satisfied that the correct objects will be connected, release the mouse button to make the connection. A dialog displays the signals from the source object and the slots from the destination object that can be used to connect the two objects.</p>
+<p>To complete the connection, select a signal from the source object and a slot from the destination object, then click the <b>OK</b> button. Click <b>Cancel</b> if you wish to abandon the connection.</p>
+<a name="choosingsignalsandslots"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-dialog.png" /></td><td><b>Choosing Signals and Slots</b><p>The <b>Configure Connection</b> dialog presents the signals that can be emitted by the source object alongside a list of compatible slots in the destination object. When you select a signal, the dialog automatically updates the list of compatible slots to ensure that a valid connection is made.</p>
+<p>If the <b>Show all signals and slots</b> checkbox is selected, all available signals from the source object are shown. Otherwise the signals and slots inherited from <a href="qwidget.html">QWidget</a> is hidden.</p>
+</td></tr>
+</table></p>
+<p>You can make as many connections as you like between objects on the form, and it is possible to connect signals from objects to slots in the form itself. As a result, the signal and slot connections in many dialogs can be completely configured from within <i>Qt Designer</i>.</p>
+<a name="connectingtotheform"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-to-form.png" /></td><td><b>Connecting to a Form</b><p>Connections can be made between objects on the form and the form itself. Instead of dragging a connection path to another object, position the cursor over the form and release the mouse button.</p>
+<p>To make it clear that the connection will be made with the form itself, the end point of the connection changes to an electrical &quot;ground&quot; symbol.</p>
+</td></tr>
+</table></p>
+<a name="editingconnections"></a><a name="editing-and-deleting-connections"></a>
+<h2>Editing and Deleting Connections</h2>
+<p>By default, connection paths are created with two labels that show the signal and slot involved in the connection. These labels are usually oriented along the line of the connection, and they can be moved around inside their host widgets by dragging the red square at each end of the connection path.</p>
+<a name="connectioneditor"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-editor.png" /></td><td><b>The Signal/Slot Editor</b><p>The signal and slot used in a connection can be changed after it has been set up. When a connection is configured, it becomes visible in <i>Qt Designer</i>'s signal and slot editor where it can be further edited.</p>
+</td></tr>
+</table></p>
+<p>In addition to using the signal and slot editor, you can edit the connection by simply double clicking on the connection path or one of its labels, and select the signal and slot to be used in the connection dialog.</p>
+<a name="deletingconnections"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-editing.png" /></td><td><b>Deleting Connections</b><p>The whole connection can be selected by clicking on any of the path segments. Once selected, connections can be deleted with the <b>Delete</b> key, and they will not be set up in the .ui file.</p>
+</td></tr>
+</table></p>
+<p>
+[Previous: <a href="designer-creating-mainwindows.html">Creating Main Windows in Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-buddy-mode.html">Qt Designer's Buddy Editing Mode</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

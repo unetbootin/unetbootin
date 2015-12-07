@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-qvfb.qdoc -->
+<head>
+  <title>Qt 4.4: The Virtual Framebuffer</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The Virtual Framebuffer<br /><span class="subtitle"></span>
+</h1>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory. For development and debugging purposes, a virtual framebuffer can be used, allowing <a href="qt-embedded.html">Qt for Embedded Linux</a> programs to be developed on a desktop machine, without switching between consoles and X11.</p>
+<p>QVFb is an X11 application supplied with Qt/X11 that provides a virtual framebuffer for Qt for Embedded Linux to use. To use it, you need to <a href="install-x11.html">configure and install Qt/X11</a> according</p>
+<p align="center"><img src="images/qt-embedded-virtualframebuffer.png" /></p><p>The virtual framebuffer emulates a framebuffer using a shared memory region and the <tt>qvfb</tt> tool to display the framebuffer in a window. The <tt>qvfb</tt> tool also supports a feature known as a skin which can be used to change the look and feel of the display. The tool is located in Qt's <tt>tools/qvfb</tt> directory, and provides several additional features accessible through its <b>File</b> and <b>View</b> menus.</p>
+<p>Please note that the virtual framebuffer is a development tool only. No security issues have been considered in the virtual framebuffer design. It should be avoided in a production environment, i.e&#x2e; do not configure production libraries with the <tt>-qvfb</tt> option.</p>
+<ul><li><a href="#displaying-the-virtual-framebuffer">Displaying the Virtual Framebuffer</a></li>
+<ul><li><a href="#skins">Skins</a></li>
+<li><a href="#the-file-menu">The File Menu</a></li>
+<li><a href="#the-view-menu">The View Menu</a></li>
+</ul>
+<li><a href="#running-applications-using-the-virtual-framebuffer">Running Applications Using the Virtual Framebuffer</a></li>
+</ul>
+<a name="displaying-the-virtual-framebuffer"></a>
+<h2>Displaying the Virtual Framebuffer</h2>
+<p>To run the <tt>qvfb</tt> tool displaying the virtual framebuffer, the <a href="qt-embedded.html">Qt for Embedded Linux</a> library must be configured and compiled with the <tt>-qvfb</tt> option:</p>
+<pre>          cd path/to/QtEmbedded
+          ./configure -qvfb
+          make</pre>
+<p>Then compile and run the <tt>qvfb</tt> tool as a normal Qt/X11 application (i.e&#x2e; do <i>not</i> compile it as a <a href="qt-embedded.html">Qt for Embedded Linux</a> application):</p>
+<pre>         cd path/to/Qt/tools/qvfb
+         make
+         ./qvfb</pre>
+<p>The <tt>qvfb</tt> application supports the following command line options:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>-width &lt;value&gt;</tt></td><td>The width of the virtual framebuffer (default: 240).</td></tr>
+<tr valign="top" class="even"><td><tt>-height &lt;value&gt;</tt></td><td>The height of the virtual framebuffer (default: 320).</td></tr>
+<tr valign="top" class="odd"><td><tt>-depth &lt;value&gt;</tt></td><td>The depth of the virtual framebuffer (1, 8 or 32; default: 8).</td></tr>
+<tr valign="top" class="even"><td><tt>-nocursor</tt></td><td>Do not display the X11 cursor in the framebuffer window.</td></tr>
+<tr valign="top" class="odd"><td><tt>-qwsdisplay &lt;:id&gt;</tt></td><td>The <a href="qt-embedded.html">Qt for Embedded Linux</a> display ID (default: 0).</td></tr>
+<tr valign="top" class="even"><td><tt>-skin &lt;name&gt;.skin</tt></td><td>The preferred skin. Note that the skin must be located in Qt's <tt>/tools/qvfb/</tt> directory.</td></tr>
+<tr valign="top" class="odd"><td><tt>-zoom &lt;factor&gt;</tt></td><td>Scales the application view with the given factor.</td></tr>
+</table></p>
+<a name="skins"></a>
+<h3>Skins</h3>
+<p>A skin is a set of XML and pixmap files that tells the vitual framebuffer what it should look like and how it should behave; a skin can change the unrealistic default display into a display that is similar to the target device. To access the <tt>qvfb</tt> tool's menus when a skin is activated, right-click over the display.</p>
+<p>Note that a skin can have buttons which (when clicked) send signals to the Qtopia application running inside the virtual framebuffer, just as would happen on a real device.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Target Device Environment</b><p>The <tt>qvfb</tt> tool provides various skins by default, allowing the user to view their application in an environment similar to their target device. The provided skins are:</p>
+<ul>
+<li>ClamshellPhone</li>
+<li>pda</li>
+<li>PDAPhone</li>
+<li>QtopiaPDA</li>
+<li>QtopiaPhone-Advanced</li>
+<li>QtopiaPhone-Simple</li>
+<li>SmartPhone</li>
+<li>SmartPhone2</li>
+<li>SmartPhoneWithButtons</li>
+<li>TouchscreenPhone</li>
+<li>Trolltech-Keypad</li>
+<li>Trolltech-Touchscreen</li>
+</ul>
+<p>In addition, it is possible to create custom skins.</p>
+</td><td><p align="center"><img src="images/qt-embedded-phone.png" /></p></td><td><p align="center"><img src="images/qt-embedded-pda.png" /></p></td></tr>
+</table></p>
+<p><b>Creating Custom Skins</b></p>
+<p>The XML and pixmap files specifying a custom skin must be located in subdirectory of the Qt's <tt>/tools/qvfb</tt> directory, called <tt>/customskin.skin</tt>. See the ClamshellPhone skin for an example of the file structure:</p>
+<pre>         cd path/to/Qt/tools/qvfb/ClamshellPhone.skin/</pre>
+<p>The <tt>/ClamshellPhone.skin</tt> directory contains the following files:</p>
+<ul>
+<li><tt>ClamshellPhone.skin</tt></li>
+<li><tt>ClamshellPhone1-5.png</tt></li>
+<li><tt>ClamshellPhone1-5-pressed.png</tt></li>
+<li><tt>ClamshellPhone1-5-closed.png</tt></li>
+<li><tt>defaultbuttons.conf</tt> (only necessary for <a href="http://www.trolltech.com/products/qtopia/">Qtopia</a>)</li>
+</ul>
+<p>Note that the <tt>defaultbuttons.conf</tt> file is only necessary if the skin is supposed to be used with <a href="http://www.trolltech.com/products/qtopia/">Qtopia</a> (The file customizes the launch screen applications, orders the soft keys and provides input method hints). See the <a href="http://www.trolltech.com/products/qtopia/">Qtopia</a> documentation for more information.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th colspan="3">The ClamshellPhone Skin</th></tr></thead>
+<tr valign="top" class="odd"><td colspan="3"><pre>         [SkinFile]
+         Up=ClamshellPhone1-5.png
+         Down=ClamshellPhone1-5-pressed.png
+         Closed=ClamshellPhone1-5-closed.png
+         Screen=72 84 176 208
+         Areas=22
+
+         &quot;Power&quot;     0x0100000a 205 563 249 586
+         &quot;1&quot;         0x0031      62 414 119 438
+         &quot;2&quot;         0x0032     130 414 189 438
+         &quot;3&quot;         0x0033     198 413 257 438
+         &quot;4&quot;         0x0034      54 444 117 470
+         &quot;5&quot;         0x0035     128 444 189 471
+         &quot;6&quot;         0x0036     202 444 264 471
+         &quot;7&quot;         0x0037      47 477 113 507
+         &quot;8&quot;         0x0038     126 477 190 507
+         &quot;9&quot;         0x0039     205 478 270 509
+         &quot;*&quot;         0x002a      39 515 110 552
+         &quot;0&quot;         0x0030     122 515 195 553
+         &quot;#&quot;         0x0023     207 516 280 553
+         &quot;Context1&quot;  0x01100000 137 360 108 383 123 410 90 409  60 387  63 378
+                                100 362
+         &quot;Back&quot;      0x01000061 184 361 206 376 213 387 197 410 226 410 256 392
+                                258 381 244 369
+         &quot;Backspace&quot; 0x01000003  68 563 113 587
+         &quot;Select&quot;    0x01010000 160 391 172 390 181 386 184 381 180 377 173
+                                373 165 372 155 372 145 375 138 378 136
+                                382 138 387 147 390
+         &quot;Left&quot;      0x1000012  141 390 136 385 136 381 143 375 132 371 120
+                                380 121 393 129 401
+         &quot;Down&quot;      0x1000015  143 389 130 402 162 412 191 404 175 390
+         &quot;Right&quot;     0x1000014  186 370 176 375 184 382 182 387 175 390 190 404
+                                201 396 202 375
+         &quot;Up&quot;        0x1000013  133 370 143 374 176 374 185 370 169 362 149 362
+         &quot;Flip&quot;      0x01100006  98 325 225 353</pre>
+<p>The <tt>ClamShellPhone.skin</tt> file quoted above, specifies three pixmaps: One for the normal skin (<tt>Up</tt>), one for the activated skin (<tt>Down</tt>) and one for the closed skin (<tt>Closed</tt>). In addition, it is possible to specify a pixmap for the cursor (using a <tt>Cursor</tt> variable).</p>
+<p>The file also specifies the screen size (<tt>Screen</tt>) and the number of available buttons (<tt>Areas</tt>). Then it describes the buttons themselves; each button is specified by its name, keycode and coordinates.</p>
+<p>The coordinates are a list of at least 2 points in clockwise order that define a shape for the button; a click inside this shape will be treated as a click on that button. While pressed, the pixels for the button are redrawn from the activated skin.</p>
+</td></tr>
+<tr valign="top" class="even"></tr>
+<tr valign="top" class="odd"><td><p align="center"><font color="red">[Missing image qt-embedded-clamshellphone-closed.png]</font></p></td><td><p align="center"><font color="red">[Missing image qt-embedded-clamshellphone.png]</font></p></td><td><p align="center"><font color="red">[Missing image qt-embedded-clamshellphone-pressed.png]</font></p></td></tr>
+<tr valign="top" class="even"><td><tt>ClamshellPhone1-5-closed.png</tt></td><td><tt>ClamshellPhone1-5.png</tt></td><td><tt>ClamshellPhone1-5-pressed.png</tt></td></tr>
+</table></p>
+<a name="the-file-menu"></a>
+<h3>The File Menu</h3>
+<p align="center"><img src="images/qt-embedded-qvfbfilemenu.png" /></p><p>The <b>File</b> menu allows the user to configure the virtual framebuffer display (<b>File|Configure..&#x2e;</b>), save a snapshot of the framebuffer contents (<b>File|Save Image..&#x2e;</b>) and record the movements in the framebuffer (<b>File|Animation..&#x2e;</b>).</p>
+<p>When choosing the <b>File|Configure</b> menu item, the <tt>qvfb</tt> tool provides a configuration dialog allowing the user to customize the display of the virtual framebuffer. The user can modify the size and depth as well as the Gamma values, and also select the preferred skin (i.e&#x2e; making the virtual framebuffer simulate the target device environment). In addition, it is possible to emulate a touch screen and a LCD screen.</p>
+<p>Note that when configuring (except when changing the Gamma values only), any applications using the virtual framebuffer will be terminated.</p>
+<a name="the-view-menu"></a>
+<h3>The View Menu</h3>
+<p align="center"><img src="images/qt-embedded-qvfbviewmenu.png" /></p><p>The <b>View</b> menu allows the user to modify the target's refresh rate (<b>View|Refresh Rate..&#x2e;</b>), making <tt>qvfb</tt> check for updated regions more or less frequently.</p>
+<p>The regions of the display that have changed are updated periodically, i.e&#x2e; the virtual framebuffer is displaying discrete snapshots of the framebuffer rather than each individual drawing operation. For this reason drawing problems such as flickering may not be apparent until the program is run using a real framebuffer. If little drawing is being done, the framebuffer will not show any updates between drawing events. If an application is displaying an animation, the updates will be frequent, and the application and <tt>qvfb</tt> will compete for processor time.</p>
+<p>The <b>View</b> menu also allows the user to zoom the view of the application (<b>View|Zoom *</b>).</p>
+<a name="running-applications-using-the-virtual-framebuffer"></a>
+<h2>Running Applications Using the Virtual Framebuffer</h2>
+<p>Once the virtual framebuffer (the <tt>qvfb</tt> application) is running, it is ready for use: Start a server application (i.e&#x2e; construct a <a href="qapplication.html">QApplication</a> object with the <a href="qapplication.html#Type-enum">QApplication::GuiServer</a> flag or use the <tt>-qws</tt> command line parameter. See the <a href="qt-embedded-running.html">running applications</a> documentation for details). For example:</p>
+<pre>         cd path/to/QtEmbedded/examples/widgets/analogclock
+         make
+         ./analogclock -qws</pre>
+<p>Note that as long as the virtual framebuffer is running and the current <a href="qt-embedded.html">Qt for Embedded Linux</a> configuration supports <tt>qvfb</tt>, <a href="qt-embedded.html">Qt for Embedded Linux</a> will automatically detect it and use it by default. Alternatively, the <tt>-display</tt> option can be used to specify the virtual framebuffer driver. For example:</p>
+<pre>         cd path/to/QtEmbedded/examples/widgets/analogclock
+         make
+         ./analogclock -qws -display QVFb:0</pre>
+<p><b>Warning:</b> If <tt>qvfb</tt> is not running (or the current <a href="qt-embedded.html">Qt for Embedded Linux</a> configuration doesn't support it) and the driver is not explicitly specified, <a href="qt-embedded.html">Qt for Embedded Linux</a> will write to the real framebuffer and the X11 display will be corrupted.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

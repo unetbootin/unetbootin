@@ -1,0 +1,19 @@
+--- sqlite3.c.orig	2008-02-06 16:03:28.000000000 +0100
++++ sqlite3.c	2008-02-13 00:00:00.000000000 +0100
+@@ -8837,6 +8837,16 @@
+ }
+ 
+ /*
++** Windows CE does not declare the localtime
++** function as it is not defined anywhere.
++** Anyway we need the forward-declaration to be
++** able to define it later on.
++*/
++#if defined(_WIN32_WCE) && (_WIN32_WCE >= 0x600)
++struct tm *__cdecl localtime(const time_t *t);
++#endif
++
++/*
+ ** Compute the difference (in days) between localtime and UTC (a.k.a. GMT)
+ ** for the time value p where p is in UTC.
+ */

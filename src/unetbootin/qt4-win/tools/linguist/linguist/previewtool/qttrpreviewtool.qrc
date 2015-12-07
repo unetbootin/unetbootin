@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/" >
+        <file>images/load_translation.png</file>
+        <file>images/open_form.png</file>
+        <file>images/reload_translations.png</file>
+        <file>about.html</file>
+    </qresource>
+</RCC>

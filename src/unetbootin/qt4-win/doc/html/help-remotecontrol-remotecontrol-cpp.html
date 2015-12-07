@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: remotecontrol.cpp Example File (help/remotecontrol/remotecontrol.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">remotecontrol.cpp Example File<br /><span class="small-subtitle">help/remotecontrol/remotecontrol.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtCore/QDir&gt;
+ #include &lt;QtCore/QProcess&gt;
+ #include &lt;QtCore/QTextStream&gt;
+ #include &lt;QtCore/QLibraryInfo&gt;
+
+ #include &lt;QtGui/QMessageBox&gt;
+
+ #include &quot;remotecontrol.h&quot;
+
+ RemoteControl::RemoteControl(QWidget *parent, Qt::WFlags flags)
+         : QMainWindow(parent, flags)
+ {
+     ui.setupUi(this);
+     connect(ui.indexLineEdit, SIGNAL(returnPressed()),
+         this, SLOT(on_indexButton_clicked()));
+     connect(ui.identifierLineEdit, SIGNAL(returnPressed()),
+         this, SLOT(on_identifierButton_clicked()));
+     connect(ui.urlLineEdit, SIGNAL(returnPressed()),
+         this, SLOT(on_urlButton_clicked()));
+
+     QString rc;
+     QTextStream(&amp;rc) &lt;&lt; QLatin1String(&quot;qthelp:<span class="comment">//</span>com.trolltech.qt.&quot;)
+                      &lt;&lt; (QT_VERSION &gt;&gt; 16) &lt;&lt; ((QT_VERSION &gt;&gt; 8) &amp; 0xFF)
+                      &lt;&lt; (QT_VERSION &amp; 0xFF)
+                      &lt;&lt; QLatin1String(&quot;/qdoc/index.html&quot;);
+
+     ui.startUrlLineEdit-&gt;setText(rc);
+
+     process = new QProcess(this);
+     connect(process, SIGNAL(finished(int, QProcess::ExitStatus)),
+         this, SLOT(helpViewerClosed()));
+ }
+
+ RemoteControl::~RemoteControl()
+ {
+     if (process-&gt;state() == QProcess::Running) {
+         process-&gt;terminate();
+         process-&gt;waitForFinished(3000);
+     }
+ }
+
+ void RemoteControl::on_actionQuit_triggered()
+ {
+     close();
+ }
+
+ void RemoteControl::on_launchButton_clicked()
+ {
+     if (process-&gt;state() == QProcess::Running)
+         return;
+
+     QString app = QLibraryInfo::location(QLibraryInfo::BinariesPath) + QDir::separator();
+ #if !defined(Q_OS_MAC)
+     app += QLatin1String(&quot;assistant&quot;);
+ #else
+     app += QLatin1String(&quot;Assistant.app/Contents/MacOS/Assistant&quot;);
+ #endif
+
+     ui.contentsCheckBox-&gt;setChecked(true);
+     ui.indexCheckBox-&gt;setChecked(true);
+     ui.bookmarksCheckBox-&gt;setChecked(true);
+
+     QStringList args;
+     args &lt;&lt; QLatin1String(&quot;-enableRemoteControl&quot;);
+     process-&gt;start(app, args);
+     if (!process-&gt;waitForStarted()) {
+         QMessageBox::critical(this, tr(&quot;Remote Control&quot;),
+             tr(&quot;Could not start Qt Assistant from %1.&quot;).arg(app));
+         return;
+     }
+
+     if (!ui.startUrlLineEdit-&gt;text().isEmpty())
+         sendCommand(QLatin1String(&quot;SetSource &quot;)
+             + ui.startUrlLineEdit-&gt;text());
+
+     ui.launchButton-&gt;setEnabled(false);
+     ui.startUrlLineEdit-&gt;setEnabled(false);
+     ui.actionGroupBox-&gt;setEnabled(true);
+ }
+
+ void RemoteControl::sendCommand(const QString &amp;cmd)
+ {
+     if (process-&gt;state() != QProcess::Running)
+         return;
+     QTextStream str(process);
+     str &lt;&lt; cmd &lt;&lt; QLatin1Char('\0') &lt;&lt; endl;
+ }
+
+ void RemoteControl::on_indexButton_clicked()
+ {
+     sendCommand(QLatin1String(&quot;ActivateKeyword &quot;)
+         + ui.indexLineEdit-&gt;text());
+ }
+
+ void RemoteControl::on_identifierButton_clicked()
+ {
+     sendCommand(QLatin1String(&quot;ActivateIdentifier &quot;)
+         + ui.identifierLineEdit-&gt;text());
+ }
+
+ void RemoteControl::on_urlButton_clicked()
+ {
+     sendCommand(QLatin1String(&quot;SetSource &quot;)
+         + ui.urlLineEdit-&gt;text());
+ }
+
+ void RemoteControl::on_syncContentsButton_clicked()
+ {
+     sendCommand(QLatin1String(&quot;SyncContents&quot;));
+ }
+
+ void RemoteControl::on_contentsCheckBox_toggled(bool checked)
+ {
+     sendCommand(checked ?
+         QLatin1String(&quot;Show Contents&quot;) : QLatin1String(&quot;Hide Contents&quot;));
+ }
+
+ void RemoteControl::on_indexCheckBox_toggled(bool checked)
+ {
+     sendCommand(checked ?
+         QLatin1String(&quot;Show Index&quot;) : QLatin1String(&quot;Hide Index&quot;));
+ }
+
+ void RemoteControl::on_bookmarksCheckBox_toggled(bool checked)
+ {
+     sendCommand(checked ?
+         QLatin1String(&quot;Show Bookmarks&quot;) : QLatin1String(&quot;Hide Bookmarks&quot;));
+ }
+
+ void RemoteControl::helpViewerClosed()
+ {
+     ui.launchButton-&gt;setEnabled(true);
+     ui.startUrlLineEdit-&gt;setEnabled(true);
+     ui.actionGroupBox-&gt;setEnabled(false);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

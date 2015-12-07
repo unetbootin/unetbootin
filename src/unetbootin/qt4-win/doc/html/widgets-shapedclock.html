@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/shapedclock.qdoc -->
+<head>
+  <title>Qt 4.4: Shaped Clock Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Shaped Clock Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-shapedclock-shapedclock-cpp.html">widgets/shapedclock/shapedclock.cpp</a></li>
+<li><a href="widgets-shapedclock-shapedclock-h.html">widgets/shapedclock/shapedclock.h</a></li>
+<li><a href="widgets-shapedclock-main-cpp.html">widgets/shapedclock/main.cpp</a></li>
+<li><a href="widgets-shapedclock-shapedclock-pro.html">widgets/shapedclock/shapedclock.pro</a></li>
+</ul>
+<p>The Shaped Clock example shows how to apply a widget mask to a top-level widget to produce a shaped window.</p>
+<p align="center"><img src="images/shapedclock-example.png" /></p><p>Widget masks are used to customize the shapes of top-level widgets by restricting the available area for painting. On some window systems, setting certain window flags will cause the window decoration (title bar, window frame, buttons) to be disabled, allowing specially-shaped windows to be created. In this example, we use this feature to create a circular window containing an analog clock.</p>
+<p>Since this example's window does not provide a <b>File</b> menu or a close button, we provide a context menu with an <b>Exit</b> entry so that the example can be closed. Click the right mouse button over the window to open this menu.</p>
+<a name="shapedclock-class-definition"></a>
+<h2>ShapedClock Class Definition</h2>
+<p>The <tt>ShapedClock</tt> class is based on the <tt>AnalogClock</tt> class defined in the <a href="widgets-analogclock.html">Analog Clock</a> example. The whole class definition is presented below:</p>
+<pre> class ShapedClock : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     ShapedClock(QWidget *parent = 0);
+     QSize sizeHint() const;
+
+ protected:
+     void mouseMoveEvent(QMouseEvent *event);
+     void mousePressEvent(QMouseEvent *event);
+     void paintEvent(QPaintEvent *event);
+     void resizeEvent(QResizeEvent *event);
+
+ private:
+     QPoint dragPosition;
+ };</pre>
+<p>The <a href="qwidget.html#paintEvent">paintEvent()</a> implementation is the same as that found in the <tt>AnalogClock</tt> class. We implement <a href="qwidget.html#sizeHint-prop">sizeHint()</a> so that we don't have to resize the widget explicitly. We also provide an event handler for resize events. This allows us to update the mask if the clock is resized.</p>
+<p>Since the window containing the clock widget will have no title bar, we provide implementations for <a href="qwidget.html#mouseMoveEvent">mouseMoveEvent()</a> and <a href="qwidget.html#mousePressEvent">mousePressEvent()</a> to allow the clock to be dragged around the screen. The <tt>dragPosition</tt> variable lets us keep track of where the user last clicked on the widget.</p>
+<a name="shapedclock-class-implementation"></a>
+<h2>ShapedClock Class Implementation</h2>
+<p>The <tt>ShapedClock</tt> constructor performs many of the same tasks as the <tt>AnalogClock</tt> constructor. We set up a timer and connect it to the widget's update() slot:</p>
+<pre> ShapedClock::ShapedClock(QWidget *parent)
+     : QWidget(parent, Qt::FramelessWindowHint)
+ {
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+     timer-&gt;start(1000);
+
+     QAction *quitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     quitAction-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     addAction(quitAction);
+
+     setContextMenuPolicy(Qt::ActionsContextMenu);
+     setToolTip(tr(&quot;Drag the clock with the left mouse button.\n&quot;
+                   &quot;Use the right mouse button to open a context menu.&quot;));
+     setWindowTitle(tr(&quot;Shaped Analog Clock&quot;));
+ }</pre>
+<p>We inform the window manager that the widget is not to be decorated with a window frame by setting the <a href="qt.html#WindowType-enum">Qt::FramelessWindowHint</a> flag on the widget. As a result, we need to provide a way for the user to move the clock around the screen.</p>
+<p>Mouse button events are delivered to the <tt>mousePressEvent()</tt> handler:</p>
+<pre> void ShapedClock::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         dragPosition = event-&gt;globalPos() - frameGeometry().topLeft();
+         event-&gt;accept();
+     }
+ }</pre>
+<p>If the left mouse button is pressed over the widget, we record the displacement in global (screen) coordinates between the top-left position of the widget's frame (even when hidden) and the point where the mouse click occurred. This displacement will be used if the user moves the mouse while holding down the left button. Since we acted on the event, we accept it by calling its <a href="qevent.html#accept">accept()</a> function.</p>
+<p align="center"><img src="images/shapedclock-dragging.png" /></p><p>The <tt>mouseMoveEvent()</tt> handler is called if the mouse is moved over the widget.</p>
+<pre> void ShapedClock::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (event-&gt;buttons() &amp; Qt::LeftButton) {
+         move(event-&gt;globalPos() - dragPosition);
+         event-&gt;accept();
+     }
+ }</pre>
+<p>If the left button is held down while the mouse is moved, the top-left corner of the widget is moved to the point given by subtracting the <tt>dragPosition</tt> from the current cursor position in global coordinates. If we drag the widget, we also accept the event.</p>
+<p>The <tt>paintEvent()</tt> function is given for completeness. See the <a href="widgets-analogclock.html">Analog Clock</a> example for a description of the process used to render the clock.</p>
+<pre> void ShapedClock::paintEvent(QPaintEvent *)
+ {
+     static const QPoint hourHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -40)
+     };
+     static const QPoint minuteHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -70)
+     };
+
+     QColor hourColor(127, 0, 127);
+     QColor minuteColor(0, 127, 127, 191);
+
+     int side = qMin(width(), height());
+     QTime time = QTime::currentTime();
+
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.translate(width() / 2, height() / 2);
+     painter.scale(side / 200.0, side / 200.0);
+
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(hourColor);
+
+     painter.save();
+     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
+     painter.drawConvexPolygon(hourHand, 3);
+     painter.restore();
+
+     painter.setPen(hourColor);
+
+     for (int i = 0; i &lt; 12; ++i) {
+         painter.drawLine(88, 0, 96, 0);
+         painter.rotate(30.0);
+     }
+
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(minuteColor);
+
+     painter.save();
+     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
+     painter.drawConvexPolygon(minuteHand, 3);
+     painter.restore();
+
+     painter.setPen(minuteColor);
+
+     for (int j = 0; j &lt; 60; ++j) {
+         if ((j % 5) != 0)
+             painter.drawLine(92, 0, 96, 0);
+         painter.rotate(6.0);
+     }
+ }</pre>
+<p>In the <tt>resizeEvent()</tt> handler, we re-use some of the code from the <tt>paintEvent()</tt> to determine the region of the widget that is visible to the user:</p>
+<pre> void ShapedClock::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     int side = qMin(width(), height());
+     QRegion maskedRegion(width() / 2 - side / 2, height() / 2 - side / 2, side,
+                          side, QRegion::Ellipse);
+     setMask(maskedRegion);
+ }</pre>
+<p>Since the clock face is a circle drawn in the center of the widget, this is the region we use as the mask.</p>
+<p>Although the lack of a window frame may make it difficult for the user to resize the widget on some platforms, it will not necessarily be impossible. The <tt>resizeEvent()</tt> function ensures that the widget mask will always be updated if the widget's dimensions change, and additionally ensures that it will be set up correctly when the widget is first displayed.</p>
+<p>Finally, we implement the <tt>sizeHint()</tt> for the widget so that it is given a reasonable default size when it is first shown:</p>
+<pre> QSize ShapedClock::sizeHint() const
+ {
+     return QSize(100, 100);
+ }</pre>
+<a name="notes-on-widget-masks"></a>
+<h2>Notes on Widget Masks</h2>
+<p>Since <a href="qregion.html">QRegion</a> allows arbitrarily complex regions to be created, widget masks can be made to suit the most unconventionally-shaped windows, and even allow widgets to be displayed with holes in them.</p>
+<p>Widget masks can also be constructed by using the contents of pixmap to define the opaque part of the widget. For a pixmap with an alpha channel, a suitable mask can be obtained with <a href="qpixmap.html#mask">QPixmap::mask</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

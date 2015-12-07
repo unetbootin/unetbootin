@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: findfiledialog.cpp Example File (assistant/simpletextviewer/findfiledialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">findfiledialog.cpp Example File<br /><span class="small-subtitle">assistant/simpletextviewer/findfiledialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;findfiledialog.h&quot;
+
+ FindFileDialog::FindFileDialog(QTextEdit *editor, QAssistantClient *assistant,
+                                QWidget *parent)
+     : QDialog(parent)
+ {
+     currentAssistantClient = assistant;
+     currentEditor = editor;
+
+     createButtons();
+     createComboBoxes();
+     createFilesTree();
+     createLabels();
+     createLayout();
+
+     directoryComboBox-&gt;addItem(QDir::toNativeSeparators(QDir::currentPath()));
+     fileNameComboBox-&gt;addItem(&quot;*&quot;);
+     findFiles();
+
+     setWindowTitle(tr(&quot;Find File&quot;));
+ }
+
+ void FindFileDialog::browse()
+ {
+     QString currentDirectory = directoryComboBox-&gt;currentText();
+     QString newDirectory = QFileDialog::getExistingDirectory(this,
+                                tr(&quot;Select Directory&quot;), currentDirectory);
+     if (!newDirectory.isEmpty()) {
+         directoryComboBox-&gt;addItem(QDir::toNativeSeparators(newDirectory));
+         directoryComboBox-&gt;setCurrentIndex(directoryComboBox-&gt;count() - 1);
+         update();
+     }
+ }
+
+ void FindFileDialog::help()
+ {
+     currentAssistantClient-&gt;showPage(QLibraryInfo::location(QLibraryInfo::ExamplesPath) +
+             QDir::separator() +  &quot;assistant/simpletextviewer/documentation/filedialog.html&quot;);
+ }
+
+ void FindFileDialog::openFile(QTreeWidgetItem *item)
+ {
+     if (!item) {
+         item = foundFilesTree-&gt;currentItem();
+         if (!item)
+             return;
+     }
+
+     QString fileName = item-&gt;text(0);
+     QString path = directoryComboBox-&gt;currentText() + QDir::separator();
+
+     QFile file(path + fileName);
+     if (file.open(QIODevice::ReadOnly)) {
+         QString data(file.readAll());
+
+         if (fileName.endsWith(&quot;.html&quot;))
+             currentEditor-&gt;setHtml(data);
+         else
+             currentEditor-&gt;setPlainText(data);
+     }
+     close();
+ }
+
+ void FindFileDialog::update()
+ {
+     findFiles();
+     buttonBox-&gt;button(QDialogButtonBox::Open)-&gt;setEnabled(
+             foundFilesTree-&gt;topLevelItemCount() &gt; 0);
+ }
+
+ void FindFileDialog::findFiles()
+ {
+     QRegExp filePattern(fileNameComboBox-&gt;currentText() + &quot;*&quot;);
+     filePattern.setPatternSyntax(QRegExp::Wildcard);
+
+     QDir directory(directoryComboBox-&gt;currentText());
+
+     QStringList allFiles = directory.entryList(QDir::Files | QDir::NoSymLinks);
+     QStringList matchingFiles;
+
+     foreach (QString file, allFiles) {
+         if (filePattern.exactMatch(file))
+             matchingFiles &lt;&lt; file;
+     }
+     showFiles(matchingFiles);
+ }
+
+ void FindFileDialog::showFiles(const QStringList &amp;files)
+ {
+     foundFilesTree-&gt;clear();
+
+     for (int i = 0; i &lt; files.count(); ++i) {
+         QTreeWidgetItem *item = new QTreeWidgetItem(foundFilesTree);
+         item-&gt;setText(0, files[i]);
+     }
+
+     if (files.count() &gt; 0)
+         foundFilesTree-&gt;setCurrentItem(foundFilesTree-&gt;topLevelItem(0));
+ }
+
+ void FindFileDialog::createButtons()
+ {
+     browseButton = new QToolButton;
+     browseButton-&gt;setText(tr(&quot;...&quot;));
+     connect(browseButton, SIGNAL(clicked()), this, SLOT(browse()));
+
+     buttonBox = new QDialogButtonBox(QDialogButtonBox::Open
+                                      | QDialogButtonBox::Cancel
+                                      | QDialogButtonBox::Help);
+     connect(buttonBox, SIGNAL(accepted()), this, SLOT(openFile()));
+     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+     connect(buttonBox, SIGNAL(helpRequested()), this, SLOT(help()));
+ }
+
+ void FindFileDialog::createComboBoxes()
+ {
+     directoryComboBox = new QComboBox;
+     fileNameComboBox = new QComboBox;
+
+     fileNameComboBox-&gt;setEditable(true);
+     fileNameComboBox-&gt;setSizePolicy(QSizePolicy::Expanding,
+                                     QSizePolicy::Preferred);
+
+     directoryComboBox-&gt;setMinimumContentsLength(30);
+     directoryComboBox-&gt;setSizeAdjustPolicy(
+             QComboBox::AdjustToMinimumContentsLength);
+     directoryComboBox-&gt;setSizePolicy(QSizePolicy::Expanding,
+                                      QSizePolicy::Preferred);
+
+     connect(fileNameComboBox, SIGNAL(editTextChanged(const QString &amp;)),
+             this, SLOT(update()));
+     connect(directoryComboBox, SIGNAL(currentIndexChanged(const QString &amp;)),
+             this, SLOT(update()));
+ }
+
+ void FindFileDialog::createFilesTree()
+ {
+     foundFilesTree = new QTreeWidget;
+     foundFilesTree-&gt;setColumnCount(1);
+     foundFilesTree-&gt;setHeaderLabels(QStringList(tr(&quot;Matching Files&quot;)));
+     foundFilesTree-&gt;setRootIsDecorated(false);
+     foundFilesTree-&gt;setSelectionMode(QAbstractItemView::SingleSelection);
+
+     connect(foundFilesTree, SIGNAL(itemActivated(QTreeWidgetItem *, int)),
+             this, SLOT(openFile(QTreeWidgetItem *)));
+ }
+
+ void FindFileDialog::createLabels()
+ {
+     directoryLabel = new QLabel(tr(&quot;Search in:&quot;));
+     fileNameLabel = new QLabel(tr(&quot;File name (including wildcards):&quot;));
+ }
+
+ void FindFileDialog::createLayout()
+ {
+     QHBoxLayout *fileLayout = new QHBoxLayout;
+     fileLayout-&gt;addWidget(fileNameLabel);
+     fileLayout-&gt;addWidget(fileNameComboBox);
+
+     QHBoxLayout *directoryLayout = new QHBoxLayout;
+     directoryLayout-&gt;addWidget(directoryLabel);
+     directoryLayout-&gt;addWidget(directoryComboBox);
+     directoryLayout-&gt;addWidget(browseButton);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addLayout(fileLayout);
+     mainLayout-&gt;addLayout(directoryLayout);
+     mainLayout-&gt;addWidget(foundFilesTree);
+     mainLayout-&gt;addStretch();
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

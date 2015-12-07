@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qvarlengtharray.qdoc -->
+<head>
+  <title>Qt 4.4: QVarLengthArray Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QVarLengthArray Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QVarLengthArray class provides a low-level variable-length array. <a href="#details">More...</a></p>
+<pre> #include &lt;QVarLengthArray&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qvarlengtharray-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qvarlengtharray.html#QVarLengthArray">QVarLengthArray</a></b> ( int <i>size</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qvarlengtharray.html#QVarLengthArray-2">QVarLengthArray</a></b> ( const QVarLengthArray&lt;T, Prealloc&gt; &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qvarlengtharray.html#dtor.QVarLengthArray">~QVarLengthArray</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qvarlengtharray.html#append">append</a></b> ( const T &amp; <i>t</i> )</li>
+<li><div class="fn"/>void <b><a href="qvarlengtharray.html#append-2">append</a></b> ( const T * <i>buf</i>, int <i>size</i> )</li>
+<li><div class="fn"/>int <b><a href="qvarlengtharray.html#capacity">capacity</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qvarlengtharray.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>const T * <b><a href="qvarlengtharray.html#constData">constData</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qvarlengtharray.html#count">count</a></b> () const</li>
+<li><div class="fn"/>T * <b><a href="qvarlengtharray.html#data">data</a></b> ()</li>
+<li><div class="fn"/>const T * <b><a href="qvarlengtharray.html#data-2">data</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qvarlengtharray.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qvarlengtharray.html#reserve">reserve</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qvarlengtharray.html#resize">resize</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/>int <b><a href="qvarlengtharray.html#size">size</a></b> () const</li>
+<li><div class="fn"/>QVarLengthArray&lt;T, Prealloc&gt; &amp; <b><a href="qvarlengtharray.html#operator-eq">operator=</a></b> ( const QVarLengthArray&lt;T, Prealloc&gt; &amp; <i>other</i> )</li>
+<li><div class="fn"/>T &amp; <b><a href="qvarlengtharray.html#operator-5b-5d">operator[]</a></b> ( int <i>i</i> )</li>
+<li><div class="fn"/>const T &amp; <b><a href="qvarlengtharray.html#operator-5b-5d-2">operator[]</a></b> ( int <i>i</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QVarLengthArray class provides a low-level variable-length array.</p>
+<p>The C++ language doesn't support variable-length arrays on the stack. For example, the following code won't compile:</p>
+<pre>         int myfunc(int n)
+         {
+             int table[n + 1];  // WRONG
+             ...
+             return table[n];
+         }</pre>
+<p>The alternative is to allocate the array on the heap (with <tt>new</tt>):</p>
+<pre>         int myfunc(int n)
+         {
+             int *table = new int[n + 1];
+             ...
+             int ret = table[n];
+             delete[] table;
+             return ret;
+         }</pre>
+<p>However, if myfunc() is called very frequently from the application's inner loop, heap allocation can be a major source of slowdown.</p>
+<p>QVarLengthArray is an attempt to work around this gap in the C++ language. It allocates a certain number of elements on the stack, and if you resize the array to a larger size, it automatically uses the heap instead. Stack allocation has the advantage that it is much faster than heap allocation.</p>
+<p>Example:</p>
+<pre>         int myfunc(int n)
+         {
+             QVarLengthArray&lt;int, 1024&gt; array(n + 1);
+             ...
+             return array[n];
+         }</pre>
+<p>In the example above, QVarLengthArray will preallocate 1024 elements on the stack and use them unless <tt>n + 1</tt> is greater than 1024. If you omit the second template argument, QVarLengthArray's default of 256 is used.</p>
+<p>QVarLengthArray's value type must be an <a href="containers.html#assignable-data-types">assignable data type</a>. This covers most data types that are commonly used, but the compiler won't let you, for example, store a <a href="qwidget.html">QWidget</a> as a value; instead, store a <a href="qwidget.html">QWidget</a> *.</p>
+<p>QVarLengthArray, like <a href="qvector.html">QVector</a>, provides a resizable array data structure. The main differences between the two classes are:</p>
+<ul>
+<li>QVarLengthArray's API is much more low-level. It provides no iterators and lacks much of <a href="qvector.html">QVector</a>'s functionality.</li>
+<li>QVarLengthArray doesn't initialize the memory if the value is a basic type. (<a href="qvector.html">QVector</a> always does.)</li>
+<li><a href="qvector.html">QVector</a> uses <a href="shared.html#implicit-sharing">implicit sharing</a> as a memory optimization. QVarLengthArray doesn't provide that feature; however, it usually produces slightly better performance due to reduced overhead, especially in tight loops.</li>
+</ul>
+<p>In summary, QVarLengthArray is a low-level optimization class that only makes sense in very specific cases. It is used a few places inside Qt and was added to Qt's public API for the convenience of advanced users.</p>
+<p>See also <a href="qvector.html">QVector</a>, <a href="qlist.html">QList</a>, and <a href="qlinkedlist.html">QLinkedList</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QVarLengthArray"></a>QVarLengthArray::QVarLengthArray ( int <i>size</i> = 0 )</h3>
+<p>Constructs an array with an initial size of <i>size</i> elements.</p>
+<p>If the value type is a primitive type (e.g&#x2e;, char, int, float) or a pointer type (e.g&#x2e;, <a href="qwidget.html">QWidget</a> *), the elements are not initialized. For other types, the elements are initialized with a <a href="containers.html#default-constructed-values">default-constructed value</a>.</p>
+<h3 class="fn"><a name="QVarLengthArray-2"></a>QVarLengthArray::QVarLengthArray ( const QVarLengthArray&lt;T, Prealloc&gt; &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QVarLengthArray"></a>QVarLengthArray::~QVarLengthArray ()</h3>
+<p>Destroys the array.</p>
+<h3 class="fn"><a name="append"></a>void QVarLengthArray::append ( const T &amp; <i>t</i> )</h3>
+<p>Appends item <i>t</i> to the array, extending the array if necessary.</p>
+<h3 class="fn"><a name="append-2"></a>void QVarLengthArray::append ( const T * <i>buf</i>, int <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Appends <i>size</i> amount of items referenced by <i>buf</i> to this array.</p>
+<h3 class="fn"><a name="capacity"></a>int QVarLengthArray::capacity () const</h3>
+<p>Returns the maximum number of elements that can be stored in the array without forcing a reallocation.</p>
+<p>The sole purpose of this function is to provide a means of fine tuning <a href="qvarlengtharray.html">QVarLengthArray</a>'s memory usage. In general, you will rarely ever need to call this function. If you want to know how many items are in the array, call <a href="qvarlengtharray.html#size">size</a>().</p>
+<p>See also <a href="qvarlengtharray.html#reserve">reserve</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QVarLengthArray::clear ()</h3>
+<p>Removes all the elements from the array.</p>
+<p>Same as resize(0).</p>
+<h3 class="fn"><a name="constData"></a>const T * QVarLengthArray::constData () const</h3>
+<p>Returns a const pointer to the data stored in the array. The pointer can be used to access the items in the array. The pointer remains valid as long as the array isn't reallocated.</p>
+<p>This function is mostly useful to pass an array to a function that accepts a plain C++ array.</p>
+<p>See also <a href="qvarlengtharray.html#data">data</a>() and <a href="qvarlengtharray.html#operator-5b-5d">operator[]</a>().</p>
+<h3 class="fn"><a name="count"></a>int QVarLengthArray::count () const</h3>
+<p>Same as <a href="qvarlengtharray.html#size">size</a>().</p>
+<p>See also <a href="qvarlengtharray.html#isEmpty">isEmpty</a>() and <a href="qvarlengtharray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="data"></a>T * QVarLengthArray::data ()</h3>
+<p>Returns a pointer to the data stored in the array. The pointer can be used to access and modify the items in the array.</p>
+<p>Example:</p>
+<pre>         QVarLengthArray&lt;int&gt; array(10);
+         int *data = array.data();
+         for (int i = 0; i &lt; 10; ++i)
+             data[i] = 2 * i;</pre>
+<p>The pointer remains valid as long as the array isn't reallocated.</p>
+<p>This function is mostly useful to pass an array to a function that accepts a plain C++ array.</p>
+<p>See also <a href="qvarlengtharray.html#constData">constData</a>() and <a href="qvarlengtharray.html#operator-5b-5d">operator[]</a>().</p>
+<h3 class="fn"><a name="data-2"></a>const T * QVarLengthArray::data () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QVarLengthArray::isEmpty () const</h3>
+<p>Returns true if the array has size 0; otherwise returns false.</p>
+<p>See also <a href="qvarlengtharray.html#size">size</a>() and <a href="qvarlengtharray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="reserve"></a>void QVarLengthArray::reserve ( int <i>size</i> )</h3>
+<p>Attempts to allocate memory for at least <i>size</i> elements. If you know in advance how large the array can get, you can call this function and if you call <a href="qvarlengtharray.html#resize">resize</a>() often, you are likely to get better performance. If <i>size</i> is an underestimate, the worst that will happen is that the <a href="qvarlengtharray.html">QVarLengthArray</a> will be a bit slower.</p>
+<p>The sole purpose of this function is to provide a means of fine tuning <a href="qvarlengtharray.html">QVarLengthArray</a>'s memory usage. In general, you will rarely ever need to call this function. If you want to change the size of the array, call <a href="qvarlengtharray.html#resize">resize</a>().</p>
+<p>See also <a href="qvarlengtharray.html#capacity">capacity</a>().</p>
+<h3 class="fn"><a name="resize"></a>void QVarLengthArray::resize ( int <i>size</i> )</h3>
+<p>Sets the size of the array to <i>size</i>. If <i>size</i> is greater than the current size, elements are added to the end. If <i>size</i> is less than the current size, elements are removed from the end.</p>
+<p>If the value type is a primitive type (e.g&#x2e;, char, int, float) or a pointer type (e.g&#x2e;, <a href="qwidget.html">QWidget</a> *), new elements are not initialized. For other types, the elements are initialized with a <a href="containers.html#default-constructed-values">default-constructed value</a>.</p>
+<p>See also <a href="qvarlengtharray.html#size">size</a>().</p>
+<h3 class="fn"><a name="size"></a>int QVarLengthArray::size () const</h3>
+<p>Returns the number of elements in the array.</p>
+<p>See also <a href="qvarlengtharray.html#isEmpty">isEmpty</a>() and <a href="qvarlengtharray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QVarLengthArray&lt;T, Prealloc&gt; &amp; QVarLengthArray::operator= ( const QVarLengthArray&lt;T, Prealloc&gt; &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i> to this array and returns a reference to this array.</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>T &amp; QVarLengthArray::operator[] ( int <i>i</i> )</h3>
+<p>Returns a reference to the item at index position <i>i</i>.</p>
+<p><i>i</i> must be a valid index position in the array (i.e&#x2e;, 0 &lt;= <i>i</i> &lt; <a href="qvarlengtharray.html#size">size</a>()).</p>
+<p>See also <a href="qvarlengtharray.html#data">data</a>().</p>
+<h3 class="fn"><a name="operator-5b-5d-2"></a>const T &amp; QVarLengthArray::operator[] ( int <i>i</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

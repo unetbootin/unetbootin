@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QDragMoveEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDragMoveEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QDragMoveEvent class provides an event which is sent while a drag and drop action is in progress. <a href="#details">More...</a></p>
+<pre> #include &lt;QDragMoveEvent&gt;</pre><p>Inherits <a href="qdropevent.html">QDropEvent</a>.</p>
+<p>Inherited by <a href="qdragenterevent.html">QDragEnterEvent</a>.</p>
+<ul>
+<li><a href="qdragmoveevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qdragmoveevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdragmoveevent.html#QDragMoveEvent">QDragMoveEvent</a></b> ( const QPoint &amp; <i>pos</i>, Qt::DropActions <i>actions</i>, const QMimeData * <i>data</i>, Qt::MouseButtons <i>buttons</i>, Qt::KeyboardModifiers <i>modifiers</i>, Type <i>type</i> = DragMove )</li>
+<li><div class="fn"/><b><a href="qdragmoveevent.html#dtor.QDragMoveEvent">~QDragMoveEvent</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdragmoveevent.html#accept">accept</a></b> ( const QRect &amp; <i>rectangle</i> )</li>
+<li><div class="fn"/>void <b><a href="qdragmoveevent.html#accept-3">accept</a></b> ()</li>
+<li><div class="fn"/>QRect <b><a href="qdragmoveevent.html#answerRect">answerRect</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdragmoveevent.html#ignore">ignore</a></b> ( const QRect &amp; <i>rectangle</i> )</li>
+<li><div class="fn"/>void <b><a href="qdragmoveevent.html#ignore-2">ignore</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 public functions inherited from <a href="qdropevent.html#public-functions">QDropEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qmimesource.html#public-functions">QMimeSource</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDragMoveEvent class provides an event which is sent while a drag and drop action is in progress.</p>
+<p>A widget will receive drag move events repeatedly while the drag is within its boundaries, if it accepts <a href="qwidget.html#acceptDrops-prop">drop events</a> and <a href="qwidget.html#dragEnterEvent">enter events</a>. The widget should examine the event to see what kind of data it <a href="qdropevent-qt3.html#provides">provides</a>, and call the <a href="qdragmoveevent.html#accept">accept</a>() function to accept the drop if appropriate.</p>
+<p>The rectangle supplied by the <a href="qdragmoveevent.html#answerRect">answerRect</a>() function can be used to restrict drops to certain parts of the widget. For example, we can check whether the rectangle intersects with the geometry of a certain child widget and only call <a href="qdropevent.html#acceptProposedAction">acceptProposedAction()</a> if that is the case.</p>
+<p>Note that this class inherits most of its functionality from <a href="qdropevent.html">QDropEvent</a>.</p>
+<p>See also <a href="qdragenterevent.html">QDragEnterEvent</a>, <a href="qdragleaveevent.html">QDragLeaveEvent</a>, and <a href="qdropevent.html">QDropEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDragMoveEvent"></a>QDragMoveEvent::QDragMoveEvent ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, <a href="qt.html#DropAction-enum">Qt::DropActions</a> <i>actions</i>, const <a href="qmimedata.html">QMimeData</a> * <i>data</i>, <a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> <i>buttons</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i>, <a href="qevent.html#Type-enum">Type</a> <i>type</i> = DragMove )</h3>
+<p>Creates a <a href="qdragmoveevent.html">QDragMoveEvent</a> of the required <i>type</i> indicating that the mouse is at position <i>pos</i> given within a widget.</p>
+<p>The mouse and keyboard states are specified by <i>buttons</i> and <i>modifiers</i>, and the <i>actions</i> describe the types of drag and drop operation that are possible. The drag data is passed as MIME-encoded information in <i>data</i>.</p>
+<p><b>Warning:</b> Do not attempt to create a <a href="qdragmoveevent.html">QDragMoveEvent</a> yourself. These objects rely on Qt's internal state.</p>
+<h3 class="fn"><a name="dtor.QDragMoveEvent"></a>QDragMoveEvent::~QDragMoveEvent ()</h3>
+<p>Destroys the event.</p>
+<h3 class="fn"><a name="accept"></a>void QDragMoveEvent::accept ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> )</h3>
+<p>The same as accept(), but also notifies that future moves will also be acceptable if they remain within the <i>rectangle</i> given on the widget. This can improve performance, but may also be ignored by the underlying system.</p>
+<p>If the rectangle is empty, drag move events will be sent continuously. This is useful if the source is scrolling in a timer event.</p>
+<h3 class="fn"><a name="accept-3"></a>void QDragMoveEvent::accept ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Calls QDropEvent::accept().</p>
+<h3 class="fn"><a name="answerRect"></a><a href="qrect.html">QRect</a> QDragMoveEvent::answerRect () const</h3>
+<p>Returns the rectangle in the widget where the drop will occur if accepted. You can use this information to restrict drops to certain places on the widget.</p>
+<h3 class="fn"><a name="ignore"></a>void QDragMoveEvent::ignore ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> )</h3>
+<p>The opposite of the accept(const <a href="qrect.html">QRect</a>&amp;) function. Moves within the <i>rectangle</i> are not acceptable, and will be ignored.</p>
+<h3 class="fn"><a name="ignore-2"></a>void QDragMoveEvent::ignore ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Calls <a href="qevent.html#ignore">QDropEvent::ignore</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,232 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page templates.html
+    \title Why Doesn't Qt Use Templates for Signals and Slots?
+    \ingroup architecture
+    \brief The reasoning behind Qt's implementation of signals and slots.
+
+    Templates are a builtin mechanism in C++ that allows the compiler to
+    generate code on the fly, depending on the type of the arguments
+    passed. As such, templates are highly interesting to a framework
+    creator like Trolltech, and we do use advanced templates in many places
+    in Qt. However, there are limitations: There are things that you can
+    easily express with templates, and there are things that are
+    impossible to express with templates. A generic vector container class
+    is easily expressible, even with partial specialisation for pointer
+    types, while a function that sets up a graphical user interface based
+    on a XML description given as a string is not expressible as
+    template. And then there is gray area in between. Things that you can
+    hack with templates at the cost of code size, readability,
+    portability, usability, extensability, robustness and ultimately
+    design beauty. Both templates and the C preprocessor can be stretched
+    to do incredibility smart and mind boggling things. But just because
+    those things can be done, does not necessarily mean doing them is the
+    right design choice.
+
+    There is an important practical challenge we have to mention: due to
+    the inadequacies of various compilers it is still not possible to
+    fully exploit the template mechanism in cross-platform
+    applications. Code unfortunately is not meant to be published in
+    books, but compiled with real-world compilers on real-world operating
+    system. Even today, many widely used C++ compilers have problems with
+    advanced templates. For example, you cannot safely rely on partial
+    template specialisation, which is essential for some non-trivial
+    problem domains. Some compilers also have limitations with regards to
+    template member functions, which make it hard to combine generic
+    programming with object orientated programming. However, we do not
+    perceive these problems as a serious limitation in our work. Even if
+    all our users had access to a fully standards compliant modern C++
+    compiler with excellent template support, we would not abandon the
+    string-based approach used by our meta object compiler for a template
+    based signals and slots system. Here are five reasons why:
+
+    \section1 Syntax matters
+
+    Syntax isn't just sugar: the syntax we use to express our algorithms can
+    significantly affect the readability and maintainability of our code.
+    The syntax used for Qt's signals and slots has proved very successful in
+    practice. The syntax is intuitive, simple to use and easy to read.
+    People learning Qt find the syntax helps them understand and utilize the
+    signals and slots concept -- despite its highly abstract and generic
+    nature. Furthermore, declaring signals in class definitions ensures that
+    the signals are protected in the sense of protected C++ member
+    functions. This helps programmers get their design right from the very
+    beginning, without even having to think about design patterns.
+
+    \section1 Code Generators are Good
+
+    Qt's \c{moc} (Meta Object Compiler) provides a clean way to go
+    beyond the compiled language's facilities. It does so by generating
+    additional C++ code which can be compiled by any standard C++ compiler.
+    The \c{moc} reads C++ source files. If it finds one or more class
+    declarations that contain the Q_OBJECT macro, it produces another C++
+    source file which contains the meta object code for those classes. The
+    C++ source file generated by the \c{moc} must be compiled and
+    linked with the implementation of the class (or it can be
+    \c{#included} into the class's source file). Typically \c{moc}
+    is not called manually, but automatically by the build system, so it
+    requires no additional effort by the programmer.
+
+    The \c{moc} is not the only code generator Qt is using. Another
+    prominent example is the \c{uic} (User Interface Compiler). It
+    takes a user interface description in XML and creates C++ code that
+    sets up the form. Outside Qt, code generators are common as well. Take
+    for example \c{rpc} and \c{idl}, that enable programs or
+    objects to communicate over process or machine boundaries. Or the vast
+    variety of scanner and parser generators, with \c{lex} and
+    \c{yacc} being the most well-known ones. They take a grammar
+    specification as input and generate code that implements a state
+    machine. The alternatives to code generators are hacked compilers,
+    proprietary languages or graphical programming tools with one-way
+    dialogs or wizards that generate obscure code during design time
+    rather than compile time. Rather than locking our customers into a
+    proprietary C++ compiler or into a particular Integrated Development
+    Environment, we enable them to use whatever tools they prefer. Instead
+    of forcing programmers to add generated code into source repositories,
+    we encourage them to add our tools to their build system: cleaner,
+    safer and more in the spirit of UNIX.
+
+
+    \section1 GUIs are Dynamic
+
+    C++ is a standarized, powerful and elaborate general-purpose language.
+    It's the only language that is exploited on such a wide range of
+    software projects, spanning every kind of application from entire
+    operating systems, database servers and high end graphics
+    applications to common desktop applications. One of the keys to C++'s
+    success is its scalable language design that focuses on maximum
+    performance and minimal memory consumption whilst still maintaining
+    ANSI C compatibility.
+
+    For all these advantages, there are some downsides. For C++, the static
+    object model is a clear disadvantage over the dynamic messaging approach
+    of Objective C when it comes to component-based graphical user interface
+    programming. What's good for a high end database server or an operating
+    system isn't necessarily the right design choice for a GUI frontend.
+    With \c{moc}, we have turned this disadvantage into an advantage,
+    and added the flexibility required to meet the challenge of safe and
+    efficient graphical user interface programming.
+
+    Our approach goes far beyond anything you can do with templates. For
+    example, we can have object properties. And we can have overloaded
+    signals and slots, which feels natural when programming in a language
+    where overloads are a key concept. Our signals add zero bytes to the
+    size of a class instance, which means we can add new signals without
+    breaking binary compatibility. Because we do not rely on excessive
+    inlining as done with templates, we can keep the code size smaller.
+    Adding new connections just expands to a simple function call rather
+    than a complex template function. 
+
+    Another benefit is that we can explore an object's signals and slots at
+    runtime. We can establish connections using type-safe call-by-name,
+    without having to know the exact types of the objects we are connecting.
+    This is impossible with a template based solution. This kind of runtime
+    introspection opens up new possibilities, for example GUIs that are
+    generated and connected from Qt Designer's XML \c{ui} files. 
+
+    \section1 Calling Performance is Not Everything
+
+    Qt's signals and slots implementation is not as fast as a
+    template-based solution. While emitting a signal is approximately the
+    cost of four ordinary function calls with common template
+    implementations, Qt requires effort comparable to about ten function
+    calls. This is not surprising since the Qt mechanism includes a
+    generic marshaller, introspection, queued calls between different
+    threads, and ultimately scriptability. It does not rely on excessive
+    inlining and code expansion and it provides unmatched runtime
+    safety. Qt's iterators are safe while those of faster template-based
+    systems are not. Even during the process of emitting a signal to
+    several receivers, those receivers can be deleted safely without your
+    program crashing. Without this safety, your application would
+    eventually crash with a difficult to debug free'd memory read or write
+    error.
+
+    Nonetheless, couldn't a template-based solution improve the performance
+    of an application using signals and slots? While it is true that Qt adds
+    a small overhead to the cost of calling a slot through a signal, the
+    cost of the call is only a small proportion of the entire cost of a
+    slot. Benchmarking against Qt's signals and slots system is typically
+    done with empty slots. As soon as you do anything useful in your slots,
+    for example a few simple string operations, the calling overhead becomes
+    negligible. Qt's system is so optimized that anything that requires
+    operator new or delete (for example, string operations or
+    inserting/removing something from a template container) is significantly
+    more expensive than emitting a signal.
+
+    Aside: If you have a signals and slots connection in a tight inner loop
+    of a performance critical task and you identify this connection as the
+    bottleneck, think about using the standard listener-interface pattern
+    rather than signals and slots. In cases where this occurs, you probably
+    only require a 1:1 connection anyway. For example, if you have an object
+    that downloads data from the network, it's a perfectly sensible design
+    to use a signal to indicate that the requested data arrived. But if you
+    need to send out every single byte one by one to a consumer, use a
+    listener interface rather than signals and slots.
+
+    \section1 No Limits
+
+    Because we had the \c{moc} for signals and slots, we could add
+    other useful things to it that could not be done with templates.
+    Among these are scoped translations via a generated \c{tr()}
+    function, and an advanced property system with introspection and
+    extended runtime type information. The property system alone is a
+    great advantage: a powerful and generic user interface design tool
+    like Qt Designer would be a lot harder to write - if not impossible -
+    without a powerful and introspective property system. But it does not
+    end here. We also provide a dynamic qobject_cast<T>() mechanism
+    that does not rely on the system's RTTI and thus does not share its
+    limitations. We use it to safely query interfaces from dynamically
+    loaded components. Another application domain are dynamic meta
+    objects. We can e.g. take ActiveX components and at runtime create a
+    meta object around it. Or we can export Qt components as ActiveX
+    components by exporting its meta object. You cannot do either of these
+    things with templates.
+
+    C++ with the \c{moc} essentially gives us the flexibility of
+    Objective-C or of a Java Runtime Environment, while maintaining C++'s
+    unique performance and scalability advantages. It is what makes Qt the
+    flexible and comfortable tool we have today.
+
+*/

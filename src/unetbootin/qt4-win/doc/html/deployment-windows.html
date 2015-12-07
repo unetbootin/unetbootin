@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/deployment.qdoc -->
+<head>
+  <title>Qt 4.4: Deploying an Application on Qt/Windows</title>
+  <link rel="contents" href="deployment.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[<a href="deployment.html">Deploying Qt Applications</a>]
+</p>
+<h1 class="title">Deploying an Application on Qt/Windows<br /><span class="subtitle"></span>
+</h1>
+<p>This documentation will describe how to determine which files you should include in your distribution, and how to make sure that the application will find them at run-time. We will demonstrate the procedures in terms of deploying the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application that is provided in Qt's examples directory.</p>
+<p>Contents:</p>
+<ul><li><a href="#static-linking">Static Linking</a></li>
+<ul><li><a href="#building-qt-statically">Building Qt Statically</a></li>
+<li><a href="#linking-the-application-to-the-static-version-of-qt">Linking the Application to the Static Version of Qt</a></li>
+</ul>
+<li><a href="#shared-libraries">Shared Libraries</a></li>
+<ul><li><a href="#building-qt-as-a-shared-library">Building Qt as a Shared Library</a></li>
+<li><a href="#linking-the-application-to-qt-as-a-shared-library">Linking the Application to Qt as a Shared Library</a></li>
+<li><a href="#creating-the-application-package">Creating the Application Package</a></li>
+<li><a href="#visual-studio-2005">Visual Studio 2005</a></li>
+</ul>
+<li><a href="#application-dependencies">Application Dependencies</a></li>
+<ul><li><a href="#additional-libraries">Additional Libraries</a></li>
+<li><a href="#qt-plugins">Qt Plugins</a></li>
+</ul>
+</ul>
+<a name="static-linking"></a>
+<h2>Static Linking</h2>
+<p>If you want to keep things simple by only having a few files to deploy, i.e&#x2e; a stand-alone executable with the associated compiler specific DLLs, then you must build everything statically.</p>
+<a name="building-qt-statically"></a>
+<h3>Building Qt Statically</h3>
+<p>Before we can build our application we must make sure that Qt is built statically. To do this, go to a command prompt and type the following:</p>
+<pre>         cd C:\path\to\Qt
+         configure -static &lt;any other options you need&gt;</pre>
+<p>Remember to specify any other options you need, such as data base drivers, as arguments to <tt>configure</tt>. Once <tt>configure</tt> has finished, type the following:</p>
+<pre>         nmake sub-src</pre>
+<p>This will build Qt statically. Note that unlike with a dynamic build, building Qt statically will result in libraries without version numbers; e.g&#x2e; <tt>QtCore4.lib</tt> will be <tt>QtCore.lib</tt>. Also, we have used <tt>nmake</tt> in all the examples, but if you use MinGW you must use <tt>mingw32-make</tt> instead.</p>
+<p><b>Note:</b> If you later need to reconfigure and rebuild Qt from the same location, ensure that all traces of the previous configuration are removed by entering the build directory and typing <tt>nmake distclean</tt> before running <tt>configure</tt> again.</p>
+<a name="linking-the-application-to-the-static-version-of-qt"></a>
+<h3>Linking the Application to the Static Version of Qt</h3>
+<p>Once Qt has finished building we can build the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application. First we must go into the directory that contains the application:</p>
+<pre>         cd examples\tools\plugandpaint</pre>
+<p>We must then run <tt>qmake</tt> to create a new makefile for the application, and do a clean build to create the statically linked executable:</p>
+<pre>         nmake clean
+         qmake -config release
+         nmake</pre>
+<p>You probably want to link against the release libraries, and you can specify this when invoking <tt>qmake</tt>. Now, provided that everything compiled and linked without any errors, we should have a <tt>plugandpaint.exe</tt> file that is ready for deployment. One easy way to check that the application really can be run stand-alone is to copy it to a machine that doesn't have Qt or any Qt applications installed, and run it on that machine.</p>
+<p>Remember that if your application depends on compiler specific libraries, these must still be redistributed along with your application. You can check which libraries your application is linking against by using the <tt>depends</tt> tool. For more information, see the <a href="#application-dependencies">Application Dependencies</a> section.</p>
+<p>The <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example consists of several components: The application itself (<a href="tools-plugandpaint.html">Plug &amp; Paint</a>), and the <a href="tools-plugandpaintplugins-basictools.html">Basic Tools</a> and <a href="tools-plugandpaintplugins-extrafilters.html">Extra Filters</a> plugins. Since we cannot deploy plugins using the static linking approach, the application we have prepared is incomplete. It will run, but the functionality will be disabled due to the missing plugins. To deploy plugin-based applications we should use the shared library approach.</p>
+<a name="shared-libraries"></a>
+<h2>Shared Libraries</h2>
+<p>We have two challenges when deploying the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application using the shared libraries approach: The Qt runtime has to be correctly redistributed along with the application executable, and the plugins have to be installed in the correct location on the target system so that the application can find them.</p>
+<a name="building-qt-as-a-shared-library"></a>
+<h3>Building Qt as a Shared Library</h3>
+<p>We assume that you already have installed Qt as a shared library, which is the default when installing Qt, in the <tt>C:\path\to\Qt</tt> directory. For more information on how to build Qt, see the <a href="installation.html">Installation</a> documentation.</p>
+<a name="linking-the-application-to-qt-as-a-shared-library"></a>
+<h3>Linking the Application to Qt as a Shared Library</h3>
+<p>After ensuring that Qt is built as a shared library, we can build the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application. First, we must go into the directory that contains the application:</p>
+<pre>         cd examples\tools\plugandpaint</pre>
+<p>Now run <tt>qmake</tt> to create a new makefile for the application, and do a clean build to create the dynamically linked executable:</p>
+<pre>         nmake clean
+         qmake -config release
+         nmake</pre>
+<p>This builds the core application, the following will build the plugins:</p>
+<pre>         cd ..\plugandpaintplugins
+         nmake clean
+         qmake -config release
+         nmake</pre>
+<p>If everything compiled and linked without any errors, we will get a <tt>plugandpaint.exe</tt> executable and the <tt>pnp_basictools.dll</tt> and <tt>pnp_extrafilters.dll</tt> plugin files.</p>
+<a name="creating-the-application-package"></a>
+<h3>Creating the Application Package</h3>
+<p>To deploy the application, we must make sure that we copy the relevant Qt DLL (corresponding to the Qt modules used in the application) as well as the executable to the same directory in the <tt>release</tt> subdirectory.</p>
+<p>Remember that if your application depends on compiler specific libraries, these must be redistributed along with your application. You can check which libraries your application is linking against by using the <tt>depends</tt> tool. For more information, see the <a href="#application-dependencies">Application Dependencies</a> section.</p>
+<p>We'll cover the plugins shortly, but first we'll check that the application will work in a deployed environment: Either copy the executable and the Qt DLLs to a machine that doesn't have Qt or any Qt applications installed, or if you want to test on the build machine, ensure that the machine doesn't have Qt in its environment.</p>
+<p>If the application starts without any problems, then we have successfully made a dynamically linked version of the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application. But the application's functionality will still be missing since we have not yet deployed the associated plugins.</p>
+<p>Plugins work differently to normal DLLs, so we can't just copy them into the same directory as our application's executable as we did with the Qt DLLs. When looking for plugins, the application searches in a <tt>plugins</tt> subdirectory inside the directory of the application executable.</p>
+<p>So to make the plugins available to our application, we have to create the <tt>plugins</tt> subdirectory and copy over the relevant DLLs:</p>
+<pre>         plugins\pnp_basictools.dll
+         plugins\pnp_extrafilters.dll</pre>
+<p>An archive distributing all the Qt DLLs and application specific plugins required to run the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application, would have to include the following files:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Component</th><th colspan="2" rowspan=" 1">File Name</th></tr></thead>
+<tr valign="top" class="odd"><td>The executable</td><td colspan="2" rowspan=" 1"><tt>plugandpaint.exe</tt></td></tr>
+<tr valign="top" class="even"><td>The Basic Tools plugin</td><td colspan="2" rowspan=" 1"><tt>plugins\pnp_basictools.dll</tt></td></tr>
+<tr valign="top" class="odd"><td>The ExtraFilters plugin</td><td colspan="2" rowspan=" 1"><tt>plugins\pnp_extrafilters.dll</tt></td></tr>
+<tr valign="top" class="even"><td>The Qt Core module</td><td colspan="2" rowspan=" 1"><tt>qtcore4.dll</tt></td></tr>
+<tr valign="top" class="odd"><td>The Qt GUI module</td><td colspan="2" rowspan=" 1"><tt>qtgui4.dll</tt></td></tr>
+</table></p>
+<p>In addition, the archive must contain the following compiler specific libraries depending on your version of Visual Studio:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th></th><th>VC++ 6.0</th><th>VC++ 7.1 (2003)</th><th>VC++ 8.0 (2005)</th></tr></thead>
+<tr valign="top" class="odd"><td>The C run-time</td><td><tt>msvcrt.dll</tt></td><td><tt>msvcr71.dll</tt></td><td><tt>msvcr80.dll</tt></td></tr>
+<tr valign="top" class="even"><td>The C++ run-time</td><td><tt>msvcp60.dll</tt></td><td><tt>msvcp71.dll</tt></td><td><tt>msvcp80.dll</tt></td></tr>
+</table></p>
+<p>To verify that the application now can be successfully deployed, you can extract this archive on a machine without Qt and without any compiler installed, and try to run it.</p>
+<p>An alternative to putting the plugins in the plugins subdirectory is to add a custom search path when you start your application using <a href="qcoreapplication.html#addLibraryPath">QApplication::addLibraryPath</a>() or <a href="qcoreapplication.html#setLibraryPaths">QApplication::setLibraryPaths</a>().</p>
+<pre>         qApp-&gt;addLibraryPath(&quot;C:\some\other\path&quot;);</pre>
+<p>One benefit of using plugins is that they can easily be made available to a whole family of applications.</p>
+<p>It's often most convenient to add the path in the application's <tt>main()</tt> function, right after the <a href="qapplication.html">QApplication</a> object is created. Once the path is added, the application will search it for plugins, in addition to looking in the <tt>plugins</tt> subdirectory in the application's own directory. Any number of additional paths can be added.</p>
+<a name="visual-studio-2005"></a>
+<h3>Visual Studio 2005</h3>
+<p>When deploying an application compiled with Visual Studio 2005 there are some additional considerations that need to be handled.</p>
+<p>First, we need to copy the manifest file created when linking the application. This manifest file contains information about the application's dependencies on side-by-side assemblies, such as the runtime libraries. The manifest file needs to be copied into the same folder as the application executable. You do not need to copy the manifest files for shared libraries (DLLs), since they are not used. If the shared library has different dependencies than the application using it, the manifest file needs to be embedded into the DLL binary. In Qt 4.1&#x2e;3 and later we have the following <tt>CONFIG</tt> options for embedding manifests:</p>
+<pre>         embed_manifest_dll
+         embed_manifest_exe</pre>
+<p>To use the options, add</p>
+<pre>         CONFIG += embed_manifest_exe</pre>
+<p>to your .pro file. The <tt>embed_manifest_dll</tt> option is enabled by default.</p>
+<p>You can find more information about manifest files and side-by-side assemblies at the <a href="http://msdn.microsoft.com/library/default.asp?url=/library/en-us/sbscs/setup/side_by_side_assemblies_reference.asp">MSDN website</a>.</p>
+<p>There are two ways to include the run time libraries: by bundling them directly with your application or by installing them on the end-user's system.</p>
+<p>To bundle the run time libraries with your application, copy the directory</p>
+<pre>         &lt;Visual Studio Install Path&gt;\VC\redist\&lt;Architecture&gt;\Microsoft.VC80.CRT</pre>
+<p>into the folder where your executable is, so that you are including a <tt>Microsoft.VC80.CRT</tt> directory alongside your application's executable. If you are bundling the runtimes and also need to deploy plugins you have to remove the manifest from the plugins (embedded as a resource) by adding this to the pro file of the plugins you are compiling:</p>
+<pre>     CONFIG-=embed_manifest_dll</pre>
+<p>If this is not done, plugins will not load on some systems.</p>
+<p>To install the run time libraries on the end-user's system, you need to include the appropriate Visual C++ Redistributable Package (VCRedist) executable with your application and ensure that it is executed when the user installs your application.</p>
+<p>For example, on an 32-bit x86-based system, you would include the <a href="http://www.microsoft.com/downloads/details.aspx?FamilyId=32BC1BEE-A3F9-4C13-9C99-220B62A191EE">vcredist_x86.exe</a> executable. The <a href="http://www.microsoft.com/downloads/details.aspx?familyid=526BF4A7-44E6-4A91-B328-A4594ADB70E5">vcredist_IA64.exe</a> and <a href="http://www.microsoft.com/downloads/details.aspx?familyid=90548130-4468-4BBC-9673-D6ACABD5D13B">vcredist_x64.exe</a> executables provide the appropriate libraries for the IA64 and 64-bit x86 architectures, respectively.</p>
+<a name="application-dependencies"></a>
+<h2>Application Dependencies</h2>
+<a name="additional-libraries"></a>
+<h3>Additional Libraries</h3>
+<p>Depending on configuration, compiler specific libraries must be redistributed along with your application. You can check which libraries your application is linking against by using the <a href="http://www.dependencywalker.com/">Dependency Walker</a> tool. All you need to do is to run it like this:</p>
+<pre>         depends &lt;application executable&gt;</pre>
+<p>This will provide a list of the libraries that your application depends on and other information.</p>
+<p align="center"><img src="images/deployment-windows-depends.png" /></p><p>When looking at the release build of the Plug &amp; Paint executable (<tt>plugandpaint.exe</tt>) with the <tt>depends</tt> tool, the tool lists the following immediate dependencies to non-system libraries:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Qt</th><th>VC++ 6.0</th><th>VC++ 7.1 (2003)</th><th>VC++ 8.0 (2005)</th><th>MinGW</th></tr></thead>
+<tr valign="top" class="odd"><td><ul>
+<li>QTCORE4.DLL - The <a href="qtcore.html">QtCore</a> runtime</li>
+<li>QTGUI4.DLL - The <a href="qtgui.html">QtGui</a> runtime</li>
+</ul>
+</td><td><ul>
+<li>MSVCRT.DLL - The C runtime</li>
+<li>MSVCP60.DLL - The C++ runtime (only when STL is installed)</li>
+</ul>
+</td><td><ul>
+<li>MSVCR71.DLL - The C runtime</li>
+<li>MSVCP71.DLL - The C++ runtime (only when STL is installed)</li>
+</ul>
+</td><td><ul>
+<li>MSVCR80.DLL - The C runtime</li>
+<li>MSVCP80.DLL - The C++ runtime (only when STL is installed)</li>
+</ul>
+</td><td><ul>
+<li>MINGWM10.DLL - The MinGW run-time</li>
+</ul>
+</td></tr>
+</table></p>
+<p>When looking at the plugin DLLs the exact same dependencies are listed.</p>
+<a name="qt-plugins"></a>
+<h3>Qt Plugins</h3>
+<p>Your application may also depend on one or more Qt plugins, such as the JPEG image format plugin or a SQL driver plugin. Be sure to distribute any Qt plugins that you need with your application, and note that each type of plugin should be located within a specific subdirectory (such as <tt>imageformats</tt> or <tt>sqldrivers</tt>) within your distribution directory, as described below.</p>
+<p>The search path for Qt plugins (as well as a few other paths) is hard-coded into the <a href="qtcore.html">QtCore</a> library. By default, the first plugin search path will be hard-coded to be a <tt>plugins</tt> subdirectory of the Qt installation:</p>
+<pre>     C:&lt;path to Qt&gt;\plugins</pre>
+<p>Pre-determined paths like this one have certain disadvantages. For example, they may not exist on the target machine. For that reason you need to examine various alternatives to make sure that the Qt plugins are found:</p>
+<ul>
+<li><a href="qt-conf.html">Using <tt>qt.conf</tt></a>. This is the recommended approach since it provides the most flexibility.</li>
+<li>Using <a href="qcoreapplication.html#addLibraryPath">QApplication::addLibraryPath</a>() or <a href="qcoreapplication.html#setLibraryPaths">QApplication::setLibraryPaths</a>().</li>
+<li>Using a third party installation utility to change the hard-coded paths in the <a href="qtcore.html">QtCore</a> library.</li>
+</ul>
+<p>The <a href="plugins-howto.html">How to Create Qt Plugins</a> document outlines the issues you need to pay attention to when building and deploying plugins for Qt applications.</p>
+<p>
+[<a href="deployment.html">Deploying Qt Applications</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

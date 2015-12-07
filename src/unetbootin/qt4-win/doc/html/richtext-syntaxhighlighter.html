@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/syntaxhighlighter.qdoc -->
+<head>
+  <title>Qt 4.4: Syntax Highlighter Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Syntax Highlighter Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="richtext-syntaxhighlighter-highlighter-cpp.html">richtext/syntaxhighlighter/highlighter.cpp</a></li>
+<li><a href="richtext-syntaxhighlighter-highlighter-h.html">richtext/syntaxhighlighter/highlighter.h</a></li>
+<li><a href="richtext-syntaxhighlighter-mainwindow-cpp.html">richtext/syntaxhighlighter/mainwindow.cpp</a></li>
+<li><a href="richtext-syntaxhighlighter-mainwindow-h.html">richtext/syntaxhighlighter/mainwindow.h</a></li>
+<li><a href="richtext-syntaxhighlighter-main-cpp.html">richtext/syntaxhighlighter/main.cpp</a></li>
+<li><a href="richtext-syntaxhighlighter-syntaxhighlighter-pro.html">richtext/syntaxhighlighter/syntaxhighlighter.pro</a></li>
+</ul>
+<p>The Syntax Highlighter example shows how to perform simple syntax highlighting by subclassing the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class.</p>
+<p align="center"><img src="images/syntaxhighlighter-example.png" /></p><p>The Syntax Highlighter application displays C++ files with custom syntax highlighting.</p>
+<p>The example consists of two classes:</p>
+<ul>
+<li>The <tt>Highlighter</tt> class defines and applies the highlighting rules.</li>
+<li>The <tt>MainWindow</tt> widget is the application's main window.</li>
+</ul>
+<p>We will first review the <tt>Highlighter</tt> class to see how you can customize the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class to fit your preferences, then we will take a look at the relevant parts of the <tt>MainWindow</tt> class to see how you can use your custom highlighter class in an application.</p>
+<a name="highlighter-class-definition"></a>
+<h2>Highlighter Class Definition</h2>
+<pre> class Highlighter : public QSyntaxHighlighter
+ {
+     Q_OBJECT
+
+ public:
+     Highlighter(QTextDocument *parent = 0);
+
+ protected:
+     void highlightBlock(const QString &amp;text);
+
+ private:
+     struct HighlightingRule
+     {
+         QRegExp pattern;
+         QTextCharFormat format;
+     };
+     QVector&lt;HighlightingRule&gt; highlightingRules;
+
+     QRegExp commentStartExpression;
+     QRegExp commentEndExpression;
+
+     QTextCharFormat keywordFormat;
+     QTextCharFormat classFormat;
+     QTextCharFormat singleLineCommentFormat;
+     QTextCharFormat multiLineCommentFormat;
+     QTextCharFormat quotationFormat;
+     QTextCharFormat functionFormat;
+ };</pre>
+<p>To provide your own syntax highlighting, you must subclass <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a>, reimplement the <a href="qsyntaxhighlighter.html#highlightBlock">highlightBlock()</a> function, and define your own highlighting rules.</p>
+<p>We have chosen to store our highlighting rules using a private struct: A rule consists of a <a href="qregexp.html">QRegExp</a> pattern and a <a href="qtextcharformat.html">QTextCharFormat</a> instance. The various rules are then stored using a <a href="qvector.html">QVector</a>.</p>
+<p>The <a href="qtextcharformat.html">QTextCharFormat</a> class provides formatting information for characters in a <a href="qtextdocument.html">QTextDocument</a> specifying the visual properties of the text, as well as information about its role in a hypertext document. In this example, we will only define the font weight and color using the <a href="qtextcharformat.html#setFontWeight">QTextCharFormat::setFontWeight</a>() and <a href="qtextformat.html#setForeground">QTextCharFormat::setForeground</a>() functions.</p>
+<a name="highlighter-class-implementation"></a>
+<h2>Highlighter Class Implementation</h2>
+<p>When subclassing the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class you must pass the parent parameter to the base class constructor. The parent is the text document upon which the syntax highligning will be applied. In this example, we have also chosen to define our highlighting rules in the constructor:</p>
+<pre> Highlighter::Highlighter(QTextDocument *parent)
+     : QSyntaxHighlighter(parent)
+ {
+     HighlightingRule rule;
+
+     keywordFormat.setForeground(Qt::darkBlue);
+     keywordFormat.setFontWeight(QFont::Bold);
+     QStringList keywordPatterns;
+     keywordPatterns &lt;&lt; &quot;\\bchar\\b&quot; &lt;&lt; &quot;\\bclass\\b&quot; &lt;&lt; &quot;\\bconst\\b&quot;
+                     &lt;&lt; &quot;\\bdouble\\b&quot; &lt;&lt; &quot;\\benum\\b&quot; &lt;&lt; &quot;\\bexplicit\\b&quot;
+                     &lt;&lt; &quot;\\bfriend\\b&quot; &lt;&lt; &quot;\\binline\\b&quot; &lt;&lt; &quot;\\bint\\b&quot;
+                     &lt;&lt; &quot;\\blong\\b&quot; &lt;&lt; &quot;\\bnamespace\\b&quot; &lt;&lt; &quot;\\boperator\\b&quot;
+                     &lt;&lt; &quot;\\bprivate\\b&quot; &lt;&lt; &quot;\\bprotected\\b&quot; &lt;&lt; &quot;\\bpublic\\b&quot;
+                     &lt;&lt; &quot;\\bshort\\b&quot; &lt;&lt; &quot;\\bsignals\\b&quot; &lt;&lt; &quot;\\bsigned\\b&quot;
+                     &lt;&lt; &quot;\\bslots\\b&quot; &lt;&lt; &quot;\\bstatic\\b&quot; &lt;&lt; &quot;\\bstruct\\b&quot;
+                     &lt;&lt; &quot;\\btemplate\\b&quot; &lt;&lt; &quot;\\btypedef\\b&quot; &lt;&lt; &quot;\\btypename\\b&quot;
+                     &lt;&lt; &quot;\\bunion\\b&quot; &lt;&lt; &quot;\\bunsigned\\b&quot; &lt;&lt; &quot;\\bvirtual\\b&quot;
+                     &lt;&lt; &quot;\\bvoid\\b&quot; &lt;&lt; &quot;\\bvolatile\\b&quot;;
+     foreach (QString pattern, keywordPatterns) {
+         rule.pattern = QRegExp(pattern);
+         rule.format = keywordFormat;
+         highlightingRules.append(rule);
+     }</pre>
+<p>First we define a keyword rule which recognizes the most common C++ keywords. We give the <tt>keywordFormat</tt> a bold, dark blue font. For each keyword, we assign the keyword and the specified format to a HighlightingRule object and append the object to our list of rules.</p>
+<pre>     classFormat.setFontWeight(QFont::Bold);
+     classFormat.setForeground(Qt::darkMagenta);
+     rule.pattern = QRegExp(&quot;\\bQ[A-Za-z]+\\b&quot;);
+     rule.format = classFormat;
+     highlightingRules.append(rule);
+
+     quotationFormat.setForeground(Qt::darkGreen);
+     rule.pattern = QRegExp(&quot;\&quot;.*\&quot;&quot;);
+     rule.format = quotationFormat;
+     highlightingRules.append(rule);
+
+     functionFormat.setFontItalic(true);
+     functionFormat.setForeground(Qt::blue);
+     rule.pattern = QRegExp(&quot;\\b[A-Za-z0-9_]+(?=\\()&quot;);
+     rule.format = functionFormat;
+     highlightingRules.append(rule);</pre>
+<p>Then we create a format that we will apply to Qt class names. The class names will be rendered with a dark magenta color and a bold style. We specify a string pattern that is actually a regular expression capturing all Qt class names. Then we assign the regular expression and the specified format to a HighlightingRule object and append the object to our list of rules.</p>
+<p>We also define highlighting rules for quotations and functions using the same approach: The patterns have the form of regular expressions and are stored in HighlightingRule objects with the associated format.</p>
+<pre>     singleLineCommentFormat.setForeground(Qt::red);
+     rule.pattern = QRegExp(&quot;<span class="comment">//</span>[^\n]*&quot;);
+     rule.format = singleLineCommentFormat;
+     highlightingRules.append(rule);
+
+     multiLineCommentFormat.setForeground(Qt::red);
+
+     commentStartExpression = QRegExp(&quot;/\\*&quot;);
+     commentEndExpression = QRegExp(&quot;\\*/&quot;);
+ }</pre>
+<p>The C++ language has two variations of comments: The single line comment (<tt><span class="comment">//</span></tt>) and the multiline comment (<tt>/*...</tt><tt>*/</tt>). The single line comment can easily be defined through a highlighting rule similar to the previous ones. But the multiline comment needs special care due to the design of the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class.</p>
+<p>After a <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> object is created, its <a href="qsyntaxhighlighter.html#highlightBlock">highlightBlock()</a> function will be called automatically whenever it is necessary by the rich text engine, highlighting the given text block. The problem appears when a comment spans several text blocks. We will take a closer look at how this problem can be solved when reviewing the implementation of the <tt>Highlighter::highlightBlock()</tt> function. At this point we only specify the multiline comment's color.</p>
+<pre> void Highlighter::highlightBlock(const QString &amp;text)
+ {
+     foreach (HighlightingRule rule, highlightingRules) {
+         QRegExp expression(rule.pattern);
+         int index = text.indexOf(expression);
+         while (index &gt;= 0) {
+             int length = expression.matchedLength();
+             setFormat(index, length, rule.format);
+             index = text.indexOf(expression, index + length);
+         }
+     }</pre>
+<p>The highlightBlock() function is called automatically whenever it is necessary by the rich text engine, i.e&#x2e; when there are text blocks that have changed.</p>
+<p>First we apply the syntax highlighting rules that we stored in the <tt>highlightingRules</tt> vector. For each rule (i.e&#x2e; for each HighlightingRule object) we search for the pattern in the given textblock using the <a href="qstring.html#indexOf">QString::indexOf</a>() function. When the first occurrence of the pattern is found, we use the <a href="qregexp.html#matchedLength">QRegExp::matchedLength</a>() function to determine the string that will be formatted. <a href="qregexp.html#matchedLength">QRegExp::matchedLength</a>() returns the length of the last matched string, or -1 if there was no match.</p>
+<p>To perform the actual formatting the <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class provides the <a href="qsyntaxhighlighter.html#setFormat">setFormat()</a> function. This function operates on the text block that is passed as argument to the <tt>highlightBlock()</tt> function. The specified format is applied to the text from the given start position for the given length. The formatting properties set in the given format are merged at display time with the formatting information stored directly in the document. Note that the document itself remains unmodified by the format set through this function.</p>
+<p>This process is repeated until the last occurrence of the pattern in the current text block is found.</p>
+<pre>     setCurrentBlockState(0);</pre>
+<p>To deal with constructs that can span several text blocks (like the C++ multiline comment), it is necessary to know the end state of the previous text block (e.g&#x2e; &quot;in comment&quot;). Inside your <tt>highlightBlock()</tt> implementation you can query the end state of the previous text block using the <a href="qsyntaxhighlighter.html#previousBlockState">QSyntaxHighlighter::previousBlockState</a>() function. After parsing the block you can save the last state using <a href="qsyntaxhighlighter.html#setCurrentBlockState">QSyntaxHighlighter::setCurrentBlockState</a>().</p>
+<p>The <a href="qsyntaxhighlighter.html#previousBlockState">previousBlockState()</a> function return an int value. If no state is set, the returned value is -1. You can designate any other value to identify any given state using the <a href="qsyntaxhighlighter.html#setCurrentBlockState">setCurrentBlockState()</a> function. Once the state is set, the <a href="qtextblock.html">QTextBlock</a> keeps that value until it is set again or until the corresponding paragraph of text is deleted.</p>
+<p>In this example we have chosen to use 0 to represent the &quot;not in comment&quot; state, and 1 for the &quot;in comment&quot; state. When the stored syntax highlighting rules are applied we initialize the current block state to 0.</p>
+<pre>     int startIndex = 0;
+     if (previousBlockState() != 1)
+         startIndex = text.indexOf(commentStartExpression);</pre>
+<p>If the previous block state was &quot;in comment&quot; (<tt>previousBlockState() == 1</tt>), we start the search for an end expression at the beginning of the text block. If the previousBlockState() returns 0, we start the search at the location of the first occurrence of a start expression.</p>
+<pre>     while (startIndex &gt;= 0) {
+         int endIndex = text.indexOf(commentEndExpression, startIndex);
+         int commentLength;
+         if (endIndex == -1) {
+             setCurrentBlockState(1);
+             commentLength = text.length() - startIndex;
+         } else {
+             commentLength = endIndex - startIndex
+                             + commentEndExpression.matchedLength();
+         }
+         setFormat(startIndex, commentLength, multiLineCommentFormat);
+         startIndex = text.indexOf(commentStartExpression,
+                                                 startIndex + commentLength);
+     }
+ }</pre>
+<p>When an end expression is found, we calculate the length of the comment and apply the multiline comment format. Then we search for the next occurrence of the start expression and repeat the process. If no end expression can be found in the current text block we set the current block state to 1, i.e&#x2e; &quot;in comment&quot;.</p>
+<p>This completes the <tt>Highlighter</tt> class implementation; it is now ready for use.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>Using a <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> subclass is simple; just provide your application with an instance of the class and pass it the document upon which you want the highlighting to be applied.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow(QWidget *parent = 0);
+
+ public slots:
+     void about();
+     void newFile();
+     void openFile(const QString &amp;path = QString());
+
+ private:
+     void setupEditor();
+     void setupFileMenu();
+     void setupHelpMenu();
+
+     QTextEdit *editor;
+     Highlighter *highlighter;
+ };</pre>
+<p>In this example we declare a pointer to a <tt>Highlighter</tt> instance which we later will initialize in the private <tt>setupEditor()</tt> function.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The constructor of the main window is straight forward. We first set up the menus, then we initialize the editor and make it the central widget of the application. Finally we set the main window's title.</p>
+<pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent)
+ {
+     setupFileMenu();
+     setupHelpMenu();
+     setupEditor();
+
+     setCentralWidget(editor);
+     setWindowTitle(tr(&quot;Syntax Highlighter&quot;));
+ }</pre>
+<p>We initialize and install the <tt>Highlighter</tt> object in the private setupEditor() convenience function:</p>
+<pre> void MainWindow::setupEditor()
+ {
+     QFont font;
+     font.setFamily(&quot;Courier&quot;);
+     font.setFixedPitch(true);
+     font.setPointSize(10);
+
+     editor = new QTextEdit;
+     editor-&gt;setFont(font);
+
+     highlighter = new Highlighter(editor-&gt;document());
+
+     QFile file(&quot;mainwindow.h&quot;);
+     if (file.open(QFile::ReadOnly | QFile::Text))
+         editor-&gt;setPlainText(file.readAll());
+ }</pre>
+<p>First we create the font we want to use in the editor, then we create the editor itself which is an instance of the <a href="qtextedit.html">QTextEdit</a> class. Before we initialize the editor with the <tt>MainWindow</tt> class definition file, we create a <tt>Highlighter</tt> instance passing the editor's document as argument. This is the document that the highlighting will be applied to. Then we are done.</p>
+<p>A <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> object can only be installed on one document at the time, but you can easily reinstall the highlighter on another document using the <a href="qsyntaxhighlighter.html#setDocument">QSyntaxHighlighter::setDocument</a>() function. The <a href="qsyntaxhighlighter.html">QSyntaxHighlighter</a> class also provides the <a href="qsyntaxhighlighter.html#document">document()</a> function which returns the currently set document.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

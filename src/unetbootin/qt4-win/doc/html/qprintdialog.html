@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qabstractprintdialog.cpp -->
+<head>
+  <title>Qt 4.4: QPrintDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPrintDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPrintDialog class provides a dialog for specifying the printer's configuration. <a href="#details">More...</a></p>
+<pre> #include &lt;QPrintDialog&gt;</pre><p>Inherits <a href="qabstractprintdialog.html">QAbstractPrintDialog</a>.</p>
+<ul>
+<li><a href="qprintdialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprintdialog.html#QPrintDialog">QPrintDialog</a></b> ( QPrinter * <i>printer</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprintdialog.html#dtor.QPrintDialog">~QPrintDialog</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintdialog.html#addButton">addButton</a></b> ( QPushButton * <i>button</i> )</li>
+<li><div class="fn"/>QPrinter * <b><a href="qprintdialog.html#printer">printer</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qprintdialog.html#setPrinter">setPrinter</a></b> ( QPrinter *, bool = false )</li>
+</ul>
+<ul>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractprintdialog.html#public-functions">QAbstractPrintDialog</a></li>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPrintDialog class provides a dialog for specifying the printer's configuration.</p>
+<p>The dialog allows users to change document-related settings, such as the paper size and orientation, type of print (color or grayscale), range of pages, and number of copies to print.</p>
+<p>Controls are also provided to enable users to choose from the printers available, including any configured network printers.</p>
+<p>Typically, QPrintDialog objects are constructed with a <a href="qprinter.html">QPrinter</a> object, and executed using the <a href="qabstractprintdialog.html#exec">exec</a>() function.</p>
+<pre>         QPrintDialog printDialog(printer, parent);
+         if (printDialog.exec() == QDialog::Accepted) {
+             // print ...
+         }</pre>
+<p>If the dialog is accepted by the user, the <a href="qprinter.html">QPrinter</a> object is correctly configured for printing.</p>
+    <table align="center">
+    <tr><td>
+    <p><img src="images/plastique-printdialog.png" /></p>
+    </td><td>
+    <p><img src="images/plastique-printdialog-properties.png" /></p>
+    </td></tr>
+    </table>
+    <p>The printer dialog (shown above in Plastique style) enables access to common printing properties. On X11 platforms that use the CUPS printing system, the settings for each available printer can be modified via the dialog's <b>Properties</b> push button.</p>
+<p>On Windows and Mac OS X, the native print dialog is used, which means that some <a href="qwidget.html">QWidget</a> and <a href="qdialog.html">QDialog</a> properties set on the dialog won't be respected. In addition, aside from the <a href="qabstractprintdialog.html#PrintDialogOption-enum">DontUseSheet</a> option, the native print dialog on Mac OS X does not support setting printer options, i.e&#x2e; <a href="qabstractprintdialog.html#setEnabledOptions">QAbstractPrintDialog::setEnabledOptions</a>() and <a href="qabstractprintdialog.html#addEnabledOption">QAbstractPrintDialog::addEnabledOption</a>() have no effect.</p>
+<p>See also QPageSetupDialog, <a href="qprinter.html">QPrinter</a>, <a href="itemviews-pixelator.html">Pixelator Example</a>, <a href="richtext-orderform.html">Order Form Example</a>, <a href="widgets-imageviewer.html">Image Viewer Example</a>, and <a href="widgets-scribble.html">Scribble Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPrintDialog"></a>QPrintDialog::QPrintDialog ( <a href="qprinter.html">QPrinter</a> * <i>printer</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new modal printer dialog for the given <i>printer</i> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QPrintDialog"></a>QPrintDialog::~QPrintDialog ()</h3>
+<p>Destroys the print dialog.</p>
+<h3 class="fn"><a name="addButton"></a>void QPrintDialog::addButton ( <a href="qpushbutton.html">QPushButton</a> * <i>button</i> )</h3>
+<h3 class="fn"><a name="printer"></a><a href="qprinter.html">QPrinter</a> * QPrintDialog::printer () const</h3>
+<p>See also <a href="qprintdialog.html#setPrinter">setPrinter</a>().</p>
+<h3 class="fn"><a name="setPrinter"></a>void QPrintDialog::setPrinter ( <a href="qprinter.html">QPrinter</a> *, bool = false )</h3>
+<p>See also <a href="qprintdialog.html#printer">printer</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,5 @@
+#ifndef QT_QTASSISTANT_MODULE_H
+#define QT_QTASSISTANT_MODULE_H
+#include <QtNetwork/QtNetwork>
+#include "qassistantclient.h"
+#endif

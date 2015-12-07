@@ -1,0 +1,4158 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page porting4.html
+    \title Porting to Qt 4
+    \contentspage {Porting Guides}{Contents}
+    \previouspage Porting Guides
+    \nextpage Porting to Qt 4 - Virtual Functions
+    \ingroup porting
+    \brief An overview of issues and techniques to consider when porting from Qt 3 to Qt 4.
+
+\omit
+    ### QFileInfo::PermissionSpec -> QFile::Permission(s?)
+    ### refer to porting4-renamedfunctions.qdoc
+    ### QApplication library mutex is gone
+    ### no integral conversion for containers? strings?
+    ### QVector etc. are initialized to 0 by default?
+    ### How to port from Qt 2.3 to Qt 4.
+    ### missing sort() functions?
+    ### QToolTipGroup
+    ### QServerSocket -> Q3ServerSocket
+
+    ### remove these when the classes are re-ported
+
+    ### QApplication::eventLoop()
+
+    \row \o void QCheckListItem::paintCell(QPainter *, const QColorGroup &, int, int, int)\row \o void Q3CheckListItem::paintCell(QPainter *, const QPalette &, int, int, int)
+    \row \o void QCheckListItem::paintFocus(QPainter *, const QColorGroup &, const QRect &) \o void Q3CheckListItem::paintFocus(QPainter *, const QPalette &, const QRect &)
+    \row \o QDataTable: a whole bunch of virtual functions have a different signature
+
+    <     Function: void QIconViewItem::paintFocus(QPainter *, const QColorGroup &)
+    >     Function: void QIconViewItem::paintFocus(QPainter *, const QPalette &)
+
+    <     Function: void QIconViewItem::paintItem(QPainter *, const QColorGroup &)
+    >     Function: void QIconViewItem::paintItem(QPainter *, const QPalette &)
+
+    <     Function: bool QUrlOperator::checkValid()
+
+    <     Function: void QWSInputMethod::setFont(const QFont &)
+
+    ### OpenMode or OpenMode
+
+    ### QWSDecoration
+\endomit
+
+    This document describes the process of porting applications from
+    Qt 3 to Qt 4.
+    If you haven't yet made the decision about porting, or are unsure
+    about whether it is worth it, take a look at the \l{What's New in
+    Qt 4}{key features} offered by Qt 4. See also
+    \l{Moving from Qt 3 to Qt 4} for tips on how to write Qt 3 code
+    that is easy to port to Qt 4.
+
+    \bold{Other porting guides:}
+
+    \list
+    \o \l{Porting to Qt 4 - Drag and Drop}
+    \o \l{Porting .ui Files to Qt 4}
+    \o \l{Porting to Graphics View}
+    \o \l{qt3to4 - The Qt 3 to 4 Porting Tool}
+    \endlist
+
+    The Qt 4 series is not binary compatible with the 3 series. This
+    means programs compiled for Qt 3 must be recompiled to work with
+    Qt 4. Qt 4 is also not completely \e source compatible with 3,
+    however nearly all points of incompatibility cause compiler
+    errors or run-time messages (rather than mysterious results). Qt
+    4 includes many additional features and discards obsolete
+    functionality. Porting from Qt 3 to Qt 4 requires some effort,
+    but once completed the considerable additional power and
+    flexibility of Qt 4 is available for use in your applications.
+
+    To port code from Qt 3 to Qt 4:
+
+    \list 1
+
+    \o Briefly read the porting notes below to get an idea of what to expect.
+
+    \o Be sure that your code compiles and runs well on all your target
+       platforms with Qt 3.
+
+    \o Add the line \c{QT += qt3support} to your \c .pro file if you use
+       \c qmake; otherwise, edit your makefile or project file to
+       link against the Qt3Support library and add \c -DQT3_SUPPORT to your
+       compiler flags. (You might also need to specify other
+       libraries. See \l{What's New in Qt 4} for details.)
+
+    \o Run the \l qt3to4 porting tool. The tool will go through your
+       source code and adapt it to Qt 4.
+
+    \o Follow the instructions in the \l{Porting .ui Files to Qt 4}
+       page to port Qt Designer files.
+
+    \o Recompile with Qt 4. For each error, search below for related
+       identifiers (e.g., function names, class names). This document
+       mentions all relevant identifiers to help you get the information
+       you need at the cost of being a little verbose.
+
+    \endlist
+
+    The \l qt3to4 porting tool replaces occurrences of Qt 3 classes
+    that don't exist anymore in Qt 4 with the corresponding Qt 3
+    support class; for example, \c QListBox is turned into \c
+    Q3ListBox.
+
+    At some point, you might want to stop linking against the Qt 3
+    support library (\l{Qt3Support}) and take advantage of Qt 4's
+    new features. The instructions below explain how to do that for
+    each compatibility class.
+
+    In addition to the Qt3Support classes (such as \c Q3Action, \c
+    Q3ListBox, and \c Q3ValueList), Qt 4 provides compatibility
+    functions when it's possible for an old API to cohabit with the
+    new one. For example, QString provides a
+    QString::simplifyWhiteSpace() compatibility function that's
+    implemented inline and that simply calls QString::simplified().
+    \bold{The compatibility functions are not documented here; instead,
+    they are documented for each class.}
+
+    If you have the line \c{QT += qt3support} in your \c .pro file, \c
+    qmake will automatically define the \c QT3_SUPPORT symbol, turning
+    on compatibility function support. You can also define the symbol
+    manually (e.g., if you don't want to link against the \c
+    Qt3Support library), or you can define \c QT3_SUPPORT_WARNINGS
+    instead, telling the compiler to emit a warning when a
+    compatibility function is called. (This works only with GCC 3.2+
+    and MSVC 7.)
+
+    If you get stuck, ask on the
+    \l{http://lists.trolltech.com/qt-interest/}{qt-interest}
+    mailing list. If you are a licensed customer, you can also contact
+    Trolltech support.
+
+\omit
+    ### what to do with slots that aren't slots anymore
+    ### what to do with virtual functions that aren't virtual anymore
+    ### what to do with virtual functions that changed signature
+\endomit
+
+\omit
+    ### <qtl.h> -- stuff that vanished?
+    ### implicit sharing
+    ### uint -> int indexes
+\endomit
+
+    Table of contents:
+
+    \tableofcontents{4}
+
+\omit
+    \section1 Header Files
+
+    ### New style of headers
+
+    \table
+    \header \o Old header \o New header
+    \row \o \c{<qtl.h>} \o \c{<qalgorithms.h>} or \c{<QtAlgorithms>}
+    \endtable
+
+    ### Some headers don't include each other anymore...
+\endomit
+
+    \section1 Casting and Object Types
+
+    In Qt 3, it was possible to use the \c qt_cast() function to determine
+    whether instances of QObject subclasses could be safely cast to derived
+    types of those subclasses. For example, if a QFrame instance is passed
+    to a function whose signature specifies a QWidget pointer as its argument,
+    \c qt_cast() could be used to obtain a QFrame pointer so that the
+    instance's functions can be accessed.
+
+    In Qt 4, much of this functionality is provided by the qobject_cast()
+    function, and additional functions also provide similar functionality for
+    certain non-QObject types:
+
+    \table
+    \header \o Qt 3 function \o Qt 4 function
+    \row    \o T *qt_cast<T *>(QObject *) \o \l{qobject_cast()}{T *qobject_cast<T *>(QObject *)}
+    \row    \o                            \o \l{qgraphicsitem_cast()}{T qgraphicsitem_cast<T>(QGraphicsItem *)}
+    \row    \o                            \o \l{qstyleoption_cast()}{T qstyleoption_cast<T>(QStyleOption *)}
+    \row    \o                            \o \l{qvariant_cast()}{T qvariant_cast<T>(const QVariant &)}
+    \row    \o                            \o \l{qdbus_cast()}{T qdbus_cast(const QDBusArgument &)}
+    \endtable
+
+\omit
+    \section1 Global Functions
+
+    \table
+    \header \o Qt 3 function \o Qt 4 function
+    \row \o cstrcmp() \o strcmp()
+    \row \o cstrcpy() \o strcpy()
+    \row \o cstrlen() \o strlen()
+    \row \o cstrncmp() \o strncmp()
+    \row \o qmemmove() \o memmove()
+    \endtable
+
+    qGLVersion() ###
+
+    copyBlt() ###
+    bitBlt()
+
+    #ifdef compat classes:
+        * QLayoutIterator
+        * QColorGroup
+        * QMenuItem
+
+    QWidget visibleRect property compat
+    QWidget::BackgroundOrigin compat
+\endomit
+
+    \section1 Type Names
+
+    The table below lists the classes that have been renamed in Qt 4.
+    If you compile your applications with \c QT3_SUPPORT defined, the
+    old names will be available.
+
+    Whenever you see an occurrence of the name on the left, you can
+    safely replace it with the Qt 4 equivalent in your program. The
+    \l qt3to4 tool performs the conversion automatically.
+
+    \table
+    \header \o Qt 3 class name \o Qt 4 class name
+    \input porting4-renamedclasses.qdocinc
+    \endtable
+
+    The table below lists the enums and typedefs that have been
+    renamed in Qt 4. If you compile your applications with \c
+    QT3_SUPPORT defined, the old names will be available.
+
+    Whenever you see an occurrence of the name on the left, you can
+    safely replace it with the Qt 4 equivalent in your program. The
+    \l qt3to4 tool performs the conversion
+    automatically.
+
+    \table
+    \header \o Qt 3 type name \o Qt 4 type name
+    \input porting4-renamedtypes.qdocinc
+    \endtable
+
+    \omit
+    ###
+    \row \o QButton::ToggleState \o Use QCheckBox::ToggleState instead.
+    \endomit
+
+    \section1 Enum Values
+
+    The table below lists the enum values that have been renamed in
+    Qt 4. If you compile your applications with \c QT3_SUPPORT defined,
+    the old names will be available.
+
+    Whenever you see an occurrence of the name on the left, you can
+    safely replace it with the Qt 4 equivalent in your program. The
+    \l qt3to4 tool performs the conversion automatically.
+
+    \table
+    \header \o Qt 3 enum value name \o Qt 4 enum value name
+    \input porting4-renamedenumvalues.qdocinc
+    \endtable
+
+    In addition, the following \l{Qt::WindowFlags}{window flags} have
+    been either replaced with \l{Qt::WidgetAttribute}{widget
+    attributes} or have been deprecated:
+
+    \table
+    \header \o Qt 3 type \o Qt 4 equivalent
+    \row \o Qt::WDestructiveClose \o Use QWidget::setAttribute(Qt::WA_DeleteOnClose) instead.
+    \row \o Qt::WStaticContents \o{1,2} Use QWidget::setAttribute(Qt::WA_StaticContents) instead.
+    \row \o Qt::WNorthWestGravity
+    \row \o Qt::WNoAutoErase \o{1,3} Use QWidget::setAttribute(Qt::WA_NoBackground) instead.
+    \row \o Qt::WResizeNoErase
+    \row \o Qt::WRepaintNoErase
+    \row \o Qt::WPaintClever \o Unnecessary in Qt 4.
+         \omit ### Check with Matthias \endomit
+    \row \o Qt::WMacNoSheet \o Unnecessary in Qt 4.
+         \omit ### Check with Sam \endomit
+    \endtable
+
+    In Qt 4.1, the widget flags used to determine window modality were
+    replaced by a single enum that can be used to specify the modal
+    behavior of top-level widgets:
+
+    \table
+    \header \o Qt 3 type \o Qt 4 equivalent
+    \row \o Qt::WShowModal \o Use QWidget::setWindowModality(Qt::ApplicationModal) instead.
+    \row \o Qt::WGroupLeader \o Use QWidget::setWindowModality(Qt::WindowModal)
+         for each child dialog of the group leader, but do not change the modality
+         of the group leader itself.
+    \endtable
+
+    \target properties
+    \section1 Properties
+
+    Some properties have been renamed in Qt 4, to make Qt's API more
+    consistent and more intuitive. For example, QWidget's \c caption
+    property has been renamed \c windowTitle to make it clear that it
+    refers to the title shown in the window's title bar.
+
+    In addition, the property system has been extended to allow
+    properties to be redefined in subclasses with the \l Q_PROPERTY()
+    macro, removing the need for a \c Q_OVERRIDE() macro.
+
+    The table below lists the Qt properties that have been renamed in
+    Qt 4. Occurrences of these in \e{Qt Designer} \c .ui files are
+    automatically converted to the new name by \c uic.
+
+    \table
+    \header \o Qt 3 name \o Qt 4 name
+    \row \o QButton::accel \o QButton::shortcut
+    \row \o QButton::on \o QButton::checked
+    \row \o QButton::toggleButton \o QAbstractButton::checkable
+    \row \o QDial::lineStep \o QDial::singleStep
+    \row \o QDial::maxValue \o QDial::maximum
+    \row \o QDial::minValue \o QDial::minimum
+    \row \o QDialog::modal \o QDialog::isModal
+    \row \o QLineEdit::edited \o QLineEdit::modified
+    \row \o QLineEdit::hasMarkedText \o QLineEdit::hasSelectedText
+    \row \o QLineEdit::markedText \o QLineEdit::selectedText
+    \row \o QObject::name \o QObject::objectName
+    \row \o QProgressDialog::progress \o QProgressDialog::value
+    \row \o QProgressDialog::totalSteps \o QProgressDialog::maximum
+    \row \o QProgressDialog::wasCancelled \o QProgressDialog::wasCanceled
+    \row \o QPushButton::iconSet \o QPushButton::icon
+    \row \o QScrollBar::draggingSlider \o QScrollBar::sliderDown
+    \row \o QScrollBar::lineStep \o QScrollBar::singleStep
+    \row \o QScrollBar::maxValue \o QScrollBar::maximum
+    \row \o QScrollBar::minValue \o QScrollBar::minimum
+    \row \o QSlider::lineStep \o QSlider::singleStep
+    \row \o QSlider::maxValue \o QSlider::maximum
+    \row \o QSlider::minValue \o QSlider::minimum
+    \row \o QSpinBox::lineStep \o QSpinBox::singleStep
+    \row \o QSpinBox::maxValue \o QSpinBox::maximum
+    \row \o QSpinBox::minValue \o QSpinBox::minimum
+    \row \o QTabBar::currentTab \o QTabBar::currentIndex
+    \row \o QTabWidget::currentPage \o QTabWidget::currentWidget
+    \row \o QToolButton::iconSet \o QToolButton::icon
+    \row \o QToolButton::textLabel \o QToolButton::text
+    \row \o QWidget::caption \o QWidget::windowTitle
+    \row \o QWidget::icon \o QWidget::windowIcon
+    \row \o QWidget::iconText \o QWidget::windowIconText
+    \endtable
+
+    A handful of properties in Qt 3 are no longer properties in Qt 4,
+    but the access functions still exist as part of the Qt 4 API.
+    These are not used by \e{Qt Designer}; the only case where you
+    need to worry about them is in highly dynamic applications that
+    use Qt's meta-object system to access properties. Here's the list
+    of these properties with the read and write functions that you
+    can use instead:
+
+    \table
+    \header \o Qt 3 property \o Qt 4 read function \o Qt 4 write function
+    \row \o QSqlDatabase::connectOptions \o QSqlDatabase::connectOptions() \o QSqlDatabase::setConnectOptions()
+    \row \o QSqlDatabase::databaseName \o QSqlDatabase::databaseName() \o QSqlDatabase::setDatabaseName()
+    \row \o QSqlDatabase::hostName \o QSqlDatabase::hostName() \o QSqlDatabase::setHostName()
+    \row \o QSqlDatabase::password \o QSqlDatabase::password() \o QSqlDatabase::setPassword()
+    \row \o QSqlDatabase::port \o QSqlDatabase::port() \o QSqlDatabase::setPort()
+    \row \o QSqlDatabase::userName \o QSqlDatabase::userName() \o QSqlDatabase::setUserName()
+    \endtable
+
+    Some properties have been removed from Qt 4, but the associated
+    access functions are provided if \c QT3_SUPPORT is defined to help
+    porting to Qt 4. When converting Qt 3 \c .ui files to Qt 4, \c uic
+    generates calls to the Qt 3 compatibility functions. Note that
+    this only applies to the properties of the Qt3Support library,
+    i.e. \c QT3_SUPPORT properties of the other libraries must be
+    ported manually when converting Qt 3 .ui files to Qt 4.
+
+    The table below lists these properties with the read and write
+    functions that you can use instead. The documentation for the
+    individual functions explains how to replace them with
+    non-compatibility Qt 4 functions.
+
+    \table
+    \header \o Qt 3 property \o Qt 4 read function (\c QT3_SUPPORT)\o Qt 4 write function (\c QT3_SUPPORT)
+    \row \o QMenuBar::separator \o QMenuBar::separator() \o QMenuBar::setSeparator()
+    \row \o QPushButton::menuButton \o QPushButton::isMenuButton() \o N/A
+    \row \o QTabWidget::margin \o QTabWidget::margin() \o QTabWidget::setMargin()
+    \row \o QTextEdit::textFormat \o QTextEdit::textFormat() \o QTextEdit::setTextFormat()
+    \row \o QWidget::backgroundBrush \o QWidget::backgroundBrush() \o N/A
+    \row \o QWidget::backgroundMode \o QWidget::backgroundMode() \o QWidget::setBackgroundMode()
+    \row \o QWidget::backgroundOrigin \o QWidget::backgroundOrigin() \o QWidget::setBackgroundOrigin()
+    \row \o QWidget::colorGroup \o QWidget::colorGroup() \o QWidget::setColorGroup()
+    \row \o QWidget::customWhatsThis \o QWidget::customWhatsThis() \o QWidget::setCustomWhatsThis()
+    \row \o QWidget::inputMethodEnabled \o QWidget::inputMethodEnabled() \o QWidget::setInputMethodEnabled()
+    \row \o QWidget::ownCursor \o QWidget::ownCursor() \o N/A
+    \row \o QWidget::ownFont \o QWidget::ownFont() \o N/A
+    \row \o QWidget::ownPalette \o QWidget::ownPalette() \o N/A
+    \row \o QWidget::paletteBackgroundColor \o QWidget::paletteBackgroundColor() \o QWidget::setPaletteBackgroundColor()
+    \row \o QWidget::paletteBackgroundPixmap \o QWidget::paletteBackgroundPixmap() \o QWidget::setPaletteBackgroundPixmap()
+    \row \o QWidget::paletteForegroundColor \o QWidget::paletteForegroundColor() \o QWidget::setPaletteForegroundColor()
+    \row \o QWidget::underMouse \o QWidget::underMouse() \o N/A
+    \endtable
+
+    The following Qt 3 properties and their access functions are no
+    longer available in Qt 4. In most cases, Qt 4 provides similar
+    functionality.
+
+    \table
+    \header \o Qt 3 property \o Qt 4 equivalent
+    \row \o QButton::autoRepeat \o N/A
+    \row \o QButton::autoResize \o Call QWidget:setFixedSize(QWidget::sizeHint()) whenever you change the contents.
+    \row \o QButton::exclusiveToggle \o See \l QAbstractButton::autoExclusive.
+    \row \o QButton::pixmap \o Use QAbstractButton::icon instead.
+    \row \o QButton::toggleState \o Use QCheckBox::setState() and QCheckBox::state() instead.
+    \row \o QButton::toggleType \o Use QCheckBox::setTristate() instead.
+    \row \o QComboBox::autoResize \o Call QWidget:setFixedSize(QWidget::sizeHint()) whenever you change the contents.
+    \row \o QFrame::contentsRect \o Use Q3Frame::contentsRect() instead.
+    \row \o QFrame::margin \o Use QWidget::setContentsMargins() instead.
+    \row \o QTabBar::keyboardFocusTab \o N/A
+    \row \o QToolButton::offIconSet \o Use the \l{QIcon::Off}{off component} of QAbstractButton::icon instead.
+    \row \o QToolButton::onIconSet \o Use the \l{QIcon::On}{on component} of QAbstractButton::icon instead.
+    \row \o QWidget::microFocusHint \o N/A
+    \endtable
+
+\omit
+    \section1 Inheritance Chain
+
+    ### QMenuBar, etc.
+
+    \section1 Null vs. Empty
+
+    ###
+\endomit
+
+    \section1 Explicit Sharing
+
+    Qt 4 is the first version of Qt that contains no \link
+    http://doc.trolltech.com/3.3/shclass.html explicitly shared
+    \endlink classes. All classes that were explicitly shared in Qt 3
+    are \e implicitly shared in Qt 4:
+
+    \list
+    \o QImage
+    \o QBitArray
+    \o QByteArray
+    \o Q3PointArray
+    \endlist
+
+    This means that if you took a copy of an instance of the class
+    (using operator=() or the class's copy constructor), any
+    modification to the copy would affect the original and vice
+    versa. Needless to say, this behavior is rarely desirable.
+
+    Fortunately, nearly all Qt 3 applications don't rely on explicit
+    sharing. When porting, you typically only need to remove calls to
+    detach() and/or copy(), which aren't necessary anymore.
+
+    If you deliberately rely on explicit sharing in your application,
+    you can use pointers or references to achieve the same result in
+    Qt 4.
+
+    \oldcode
+        void asciify(QByteArray array)
+        {
+            for (int i = 0; i < (int)array.size(); ++i) {
+                if ((uchar)array[i] >= 128)
+                    array[i] = '?';
+            }
+        }
+    \newcode
+        void asciify(QByteArray &array)
+        {
+            for (int i = 0; i < array.size(); ++i) {
+                if ((uchar)array[i] >= 128)
+                    array[i] = '?';
+            }
+        }
+    \endcode
+
+    (Notice the \c & in the parameter declaration.)
+
+\omit
+    \section1 Qt Designer .ui Files
+
+    ###
+\endomit
+
+    \section1 Painting and Redrawing Widgets
+
+    When implementing custom widgets in Qt 3, it was possible to use
+    QPainter to draw on a widget outside paint events. This made it
+    possible to integrate Qt applications with third party libraries
+    and tools that impose their own rendering models. For example,
+    a widget might be repainted in a slot using data obtained from
+    an external source.
+
+    In Qt 4, it is only possible to paint on a widget from within its
+    \l{QWidget::}{paintEvent()} handler function. This restriction simplifies
+    Qt's interaction with native window systems, improves the performance
+    of applications by reducing the number of redraw operations, and
+    also enables features to be implemented to improve the appearance of
+    widgets, such as a backing store.
+
+    Generally, we recommend redesigning applications to perform all
+    painting operations in \l{QWidget::}{paintEvent()} functions, deferring
+    actual painting until the next time this function is called.
+    Applications can post paint events to trigger repaints, and it may be
+    possible to examine your widget's internal state to determine which
+    part of the widget needs to be repainted.
+
+    If asynchronous repaints are used extensively by your application,
+    and it is not practical to redesign the rendering model to perform
+    all painting operations from within a widget's \l{QWidget::}{paintEvent()}
+    function, it may be necessary to consider using an intermediate painting
+    step. In this approach, one or more images can be updated asynchronously
+    and painted on the widget in the paint event. To avoid excessive
+    buffering, it may be worthwhile disabling the backing store by setting
+    the widget's Qt::WA_PaintOnScreen widget attribute.
+
+    On certain platforms, the Qt::WA_PaintOutsidePaintEvent widget attribute
+    can be set to allow a widget to be painted from outside paint events.
+
+    \note Setting widget attributes to disable key features of Qt's widget
+    rendering model may also cause other features to be disabled.
+
+    \section1 QAccel
+
+    The \c QAccel class has been renamed Q3Accel and moved to the
+    Qt3Support module. In new applications, you have three options:
+
+    \list 1
+    \o You can use QAction and set a key sequence using QAction::setShortcut().
+    \o You can use QShortcut, a class that provides similar
+       functionality to Q3Accel.
+    \o You can use QWidget::grabShortcut() and process "shortcut"
+       events by reimplementing QWidget::event().
+    \endlist
+
+    The Q3Accel class also supports multiple accelerators using the
+    same object, by calling Q3Accel::insertItem() multiple times. In
+    Qt 4, the solution is to create multiple QShortcut objects.
+
+    \section1 QAccessibleInterface
+
+    The QAccessibleInterface class has undergone some API changes in
+    Qt 4, to make it more consistent with the rest of the Qt API.
+
+    If you have classes that inherit QAccessibleInterface or one of
+    its subclasses (QAccessibleObject, QAccessibleWidget, etc.), you
+    must port them the new QAccessibleInterface API.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions}
+    for a list of QAccessibleInterface virtual member functions in
+    Qt 3 that are no longer virtual in Qt 4.
+
+    \section1 QAccessibleTitleBar
+
+    The \c QAccessibleTitleBar has been renamed Q3AccessibleTitleBar
+    and moved to the Qt3Support library.
+
+    \target qaction.section
+    \section1 QAction
+
+    The QAction class has been redesigned in Qt 4 to integrate better
+    with the rest of the menu system. It unifies the old \c QMenuItem
+    class and the old \c QAction class into one class, avoiding
+    unnecessary data duplication and the need to learn two different
+    APIs.
+
+    The old \c QAction and \c QActionGroup classes have been renamed
+    Q3Action and Q3ActionGroup and moved to Qt3Support. In addition,
+    the new QAction class has compatibility functions to ease
+    transition to Qt 4. Note that when using Q3ToolBar and
+    Q3PopupMenu, their actions must be \l {Q3Action}s.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions}
+    for a list of QAction virtual member functions in Qt 3 that are
+    no longer virtual in Qt 4.
+
+    \section1 QActionGroup
+
+    The QAction class has been completely redesigned in Qt 4 to
+    integrate better with the rest of the menu system. See the
+    \l{#qaction.section}{section on QAction} for details.
+
+    \section1 QApplication
+
+    The QApplication class has been split into two classes:
+    QCoreApplication and QApplication. The new QApplication class
+    inherits QCoreApplication and adds GUI-related functionality. In
+    practice, this has no consequences for existing Qt applications.
+
+    In addition, the following API changes were made:
+
+    \list 1
+    \o  QApplication::allWidgets() and QApplication::topLevelWidgets()
+        used to return a pointer to a QWidgetList. Now they return a
+        QWidgetList.
+
+        Also, QWidgetList has changed from being a typedef for
+        QPtrList<QWidget> to being a typedef for QList<QWidget *>.
+        See the \l{#qwidgetlist.section}{section on QWidgetList} below
+        for details.
+
+        \oldcode
+            QWidgetList *list = QApplication::topLevelWidgets();
+            QWidgetListIt it(*list);
+            QWidget *widget;
+            while ((widget = it.current())) {
+                if (widget->inherits("MainWindow"))
+                    ((MainWindow *)widget)->updateRecentFileItems();
+                ++it;
+            }
+            delete list;
+        \newcode
+            QWidgetList list = QApplication::topLevelWidgets();
+            for (int i = 0; i < list.size(); ++i) {
+                if (MainWindow *mainWin = qobject_cast<MainWindow *>(list.at(i)))
+                    mainWin->updateRecentFileItems();
+            }
+        \endcode
+    \o QApplication::setMainWidget() is no longer used. When all an application's
+       windows are closed, the application will exit normally.
+    \endlist
+
+    \section1 QAquaStyle
+
+    The \c QAquaStyle class first appeared in Qt 3.0, when the Qt/Mac
+    port was first released. It emulated Apple's "Aqua" theme. In Qt
+    3.1, QAquaStyle was obsoleted by QMacStyle, which uses Appearance
+    Manager to perform its drawing.
+
+    The \c QAquaStyle class is no longer provided in Qt 4. Use
+    QMacStyle instead.
+
+    \target qasciidict.section
+    \section1 QAsciiCache<T>
+
+    \c QAsciiCache<T> has been renamed Q3AsciiCache<T> and moved to
+    the Qt3Support library. It has been replaced by
+    QCache<QByteArray, T>.
+
+    For details, read the \l{#qcache.section}{section on QCache<T>},
+    mentally substituting QByteArray for QString.
+
+    \section1 QAsciiDict<T>
+
+    QAsciiDict<T> and QAsciiDictIterator<T> have been renamed
+    Q3AsciiDict<T> and Q3AsciiDictIterator<T> and moved to the
+    Qt3Support library. They have been replaced by the
+    more modern QHash<Key, T> and QMultiHash<Key, T> classes and
+    their associated iterator classes.
+
+    When porting old code that uses Q3AsciiDict<T> to Qt 4, there are
+    four classes that you can use:
+
+    \list
+    \o QMultiHash<QByteArray, T *>
+    \o QMultiHash<QByteArray, T>
+    \o QHash<QByteArray, T *>
+    \o QHash<QByteArray, T>
+    \endlist
+
+    For details, read the \l{#qdict.section}{section on QDict<T>},
+    mentally substituting QByteArray for QString.
+
+    \section1 QAsyncIO
+
+    The \c QAsyncIO class was used internally in Qt 2.x in
+    conjunction with QImageConsumer. It was obsoleted in Qt 3.0.
+
+    \input porting4-obsoletedmechanism.qdocinc
+
+    \section1 QBackInsertIterator
+
+    The undocumented \c QBackInsertIterator class has been removed
+    from the Qt library. If you need it in your application, feel
+    free to copy the source code from the Qt 3 \c <qtl.h> header
+    file.
+
+    \section1 QBitArray
+
+    In Qt 3, QBitArray inherited from QByteArray. In Qt 4, QBitArray
+    is a totally independent class. This makes very little difference
+    to the user, except that the new QBitArray doesn't provide any of
+    QByteArray's byte-based API anymore. These calls will result in a
+    compile-time error, except calls to QBitArray::truncate(), whose
+    parameter was a number of \e bytes in Qt 3 and a number of bits
+    in Qt 4.
+
+    QBitArray was an explicitly shared class in Qt 3. See \l{Explicit
+    Sharing} for more information.
+
+    The \c QBitVal class has been renamed QBitRef.
+
+    \section1 QButton
+
+    The \c QButton class has been replaced by QAbstractButton in Qt
+    4. Classes like QPushButton and QRadioButton inherit from
+    QAbstractButton. As a help when porting older Qt applications,
+    the Qt3Support library contains a Q3Button class
+    implemented in terms of the new QAbstractButton.
+
+    If you used the \c QButton class as a base class for your own
+    button type and want to port your code to the newer
+    QAbstractButton, you need to be aware that QAbstractButton has no
+    equivalent for the Q3Button::drawButton(QPainter *) virtual
+    function. The solution is to reimplement QWidget::paintEvent() in
+    your QAbstractButton subclass as follows:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 0
+
+    \table
+    \header \o Q3Button function \o QAbstractButton equivalent
+    \row \o Q3Button::autoResize() \o Call QWidget:setFixedSize(QWidget::sizeHint()) whenever you change the contents.
+    \row \o Q3Button::isExclusiveToggle() \o Use QAbstractButton::group() or QAbstractButton::autoExclusive() instead.
+    \row \o Q3Button::pixmap() const \o QAbstractButton::icon()
+    \row \o Q3Button::setAutoResize() \o N/A
+    \row \o Q3Button::setPixmap(const QPixmap &) \o QAbstractButton::setIcon(const QIcon &)
+    \row \o Q3Button::setState(ToggleState) \o See remark below
+    \row \o Q3Button::setToggleType(ToggleType) \o See remark below
+    \row \o Q3Button::state() \o See remark below
+    \row \o Q3Button::stateChanged(int) \o See remark below
+    \row \o Q3Button::toggleType() \o See remark below
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o In Qt 3, \c QButton had a "toggle type", which could be
+       QButton::SingleShot, QButton::Toggle, or QButton::Tristate.
+       The new QAbstractButton class doesn't support "tristate"
+       directly; this feature is implemented in QCheckBox instead.
+       The two other "toggle types" (\c QButton::SingleShot and \c
+       QButton::Toggle) are replaced by a QAbstractButton::checkable
+       property.
+    \o In Qt 3, QButton had a "toggle state", which could be \c
+       QButton::Off, \c QButton::NoChange, or \c QButton::On. In Qt
+       4, this mechanism has been moved to QCheckBox.
+    \endlist
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of \c QButton virtual member functions in Qt 3 that aren't
+    virtual in Qt 4.
+
+    See \l{#properties}{Properties} for a list of \c QButton properties
+    in Qt 3 that have changed in Qt 4.
+
+    \section1 QButtonGroup
+
+    The \c QButtonGroup class has been completely redesigned in Qt 4.
+    For compatibility, the old \c QButtonGroup class has been renamed
+    Q3ButtonGroup and has been moved to Qt3Support.
+    Likewise, the \c QHButtonGroup and \c QVButtonGroup convenience
+    subclasses have been renamed \c Q3HButtonGroup and \c Q3VButtonGroup and
+    moved to the Qt3Support library.
+
+    The old \c QButtonGroup, as well as Q3ButtonGroup, can be used in two ways:
+
+    \list 1
+    \o  The button group is the parent widget of a number of buttons,
+        i.e. the button group is the parent argument in the button
+        constructor. The buttons are assigned identifiers 0, 1, 2, etc.,
+        in the order they are created. A Q3ButtonGroup can display a frame
+        and a title because it inherits Q3GroupBox.
+    \o  The button group is an invisible widget and the contained
+        buttons have some other parent widget. In this usage, each
+        button must be manually inserted, using
+        Q3ButtonGroup::insert(), into the button group and given an
+        ID number.
+    \endlist
+
+    Unlike Q3ButtonGroup, the new QButtonGroup doesn't inherit
+    QWidget. It is very similar to a "hidden Q3ButtonGroup".
+
+    If you use a Q3ButtonGroup, Q3HButtonGroup, or Q3VButtonGroup as
+    a widget and want to port to Qt 4, you can replace it with
+    QGroupBox. In Qt 4, radio buttons with the same parent are
+    automatically part of an exclusive group, so you normally don't
+    need to do anything else. See also the
+    \l{#qgroupbox.section}{section on QGroupBox} below.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QButtonGroup virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \target qbytearray.section
+    \section1 QByteArray
+
+    In Qt 3, QByteArray was simply a typedef for QMemArray<char>. In
+    Qt 4, QByteArray is a class in its own right, with a higher-level
+    API in the style of QString.
+
+    Here are the main issues to be aware of when porting to Qt 4:
+
+    \list 1
+    \o  The QMemArray(int size) constructor has been replaced with
+        QByteArray(int size, char ch). The second argument specifies
+        which character should be used for initializing the array;
+        pass '\\0' if you have no specific needs.
+
+        \oldcode
+        QByteArray ba(64);
+        \newcode
+        QByteArray ba(64, '\0');
+        \endcode
+
+    \o  QMemArray::at() returned a non-const reference, whereas the
+        new QByteArray::at() returns a const value. Code like
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 1
+
+        will no longer compile. Instead, use QByteArray::operator[]:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 2
+
+    \o  The QMemArray::contains(char) function has been renamed
+        QByteArray::count(char). In addition, there now exists a
+        QByteArray::contains(char) function that returns a boolean
+        value. Replace old calls to contains() with either count() or
+        contains(), depending on whether you care about the specific
+        number of occurrences of a character in the byte array or
+        only care about whether the array contains that character or
+        not.
+
+    \o  The new QByteArray has no assign() function. Calls to
+        QMemArray::assign(const QMemArray &) can be replaced by calls
+        to QByteArray::operator=(). Calls to QMemArray::assign(const
+        T *, uint) have no equivalent in Qt 4; if you use it, the
+        solution is either to use QByteArray::fromRawData() and to
+        call free() yourself to avoid a memory leak, or to use the
+        QByteArray(const char *, int) constructor, which will take a
+        deep copy of the data.
+
+    \o  QMemArray::bsearch() and QMemArray::sort() have no equivalent
+        in the new QByteArray class. Use \l qBinaryFind() and \l qSort()
+        if you need that functionality.
+    \endlist
+
+    QByteArray was an explicitly shared class in Qt 3. See
+    \l{Explicit Sharing} for more information.
+
+    \target qcache.section
+    \section1 QCache<T>
+
+    QCache<T> has been renamed Q3Cache<T> and moved to Qt3Support.
+    The new QCache class has a different API, and takes different
+    template parameters: QCache<Key, T>.
+
+    When porting to Qt 4, QCache<QString, T> is the obvious
+    substitute for Q3Cache<T>. The following table summarizes the API
+    differences.
+
+    \table
+    \header \o Q3Cache<T> function \o QCache<QString, T> equivalent
+    \row \o Q3Cache::Q3Cache(int maxCost, int size, bool caseSensitive) \o See remark below
+    \row \o Q3Cache::autoDelete() \o N/A
+    \row \o Q3Cache::count() \o QCache::count() or QCache::size() (equivalent)
+    \row \o Q3Cache::setAutoDelete() \o See remark below
+    \row \o Q3Cache::size() \o N/A
+    \row \o Q3Cache::statistics() \o N/A
+    \row \o Q3Cache::operator=() \o See remark below
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  Q3Cache requires the user to allocate a specific number of
+        buckets by passing a prime number (17 by default) to the
+        constructor. In contrast, the new QCache's hash table
+        automatically grows and shrinks as needed, and the
+        constructor doesn't take a prime number.
+
+    \o  Q3Cache supportes case-insensitive lookups by passing false as
+        second argument to the constructor. This feature has no
+        equivalent in QMultiHash. Instead, call QString::toLower()
+        before you insert or lookup a key in the hash.
+
+    \o  The Q3Cache::insert() function returns a \c bool value that
+        indicates whether or not the item actually was inserted in
+        the cache. If the item wasn't inserted, it was the caller's
+        responsibility to delete the item. The new QCache::insert()
+        function returns \c void and either adds it to the cache or
+        deletes it right away. Old code like
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 3
+
+    becomes
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 4
+
+    \o  The new QCache class \e always takes ownership of the items
+        it stores (i.e. auto-delete is always on). If you use Q3Cache
+        with auto-delete turned off (the rarely useful default), you
+        cannot use QCache as a direct substitute. One unelegant trick
+        that works well in practice is to use QCache<QString, T *>
+        instead of QCache<QString, T>. In that case, QCache owns the
+        pointers, not the objects that the pointers refer to. For
+        example,
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 5
+
+        becomes
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 6
+
+        An alternative is to stick to using Q3Cache.
+    \endlist
+
+    QCacheIterator<T> has been renamed Q3CacheIterator<T> and moved
+    to the Qt3Support library. The new QCache class
+    doesn't offer any iterator types.
+
+    \section1 QCanvas
+
+    The canvas module classes have been
+    renamed and moved to the Qt3Support library.
+
+    \table
+    \header \o Qt 3 class name \o Compatibility class in Qt 4
+    \row \o \c QCanvas \o Q3Canvas
+    \row \o \c QCanvasEllipse \o Q3CanvasEllipse
+    \row \o \c QCanvasItem \o Q3CanvasItem
+    \row \o \c QCanvasItemList \o Q3CanvasItemList
+    \row \o \c QCanvasLine \o Q3CanvasLine
+    \row \o \c QCanvasPixmap \o Q3CanvasPixmap
+    \row \o \c QCanvasPixmapArray \o Q3CanvasPixmapArray
+    \row \o \c QCanvasPolygon \o Q3CanvasPolygon
+    \row \o \c QCanvasPolygonalItem \o Q3CanvasPolygonalItem
+    \row \o \c QCanvasRectangle \o Q3CanvasRectangle
+    \row \o \c QCanvasSpline \o Q3CanvasSpline
+    \row \o \c QCanvasSprite \o Q3CanvasSprite
+    \row \o \c QCanvasText \o Q3CanvasText
+    \row \o \c QCanvasView \o Q3CanvasView
+    \endtable
+
+    \l{The Graphics View Framework} replaces QCanvas. For more on porting to
+    Graphics View, see \l{Porting to Graphics View}.
+
+    \section1 QColor
+
+    In Qt 4, QColor is a value type like QPoint or QRect. Graphics
+    system-specific code has been implemented in QColormap.
+
+    The \c QColor::maxColors() function has been replaced
+    by QColormap::size().
+
+    The \c QColor::numBitPlanes() function has been replaced
+    by QColormap::depth().
+
+    The \c QColor::setNamedColor() function no longer supports
+    the named color in the same way as Qt 3. Qt 4's
+    \l{QColor::}{setNamedColor()} uses the new W3C convention
+    as stated 
+    \l{http://www.w3.org/TR/SVG/types.html#ColorKeywords}{here}.
+
+    \table
+    \header \o{4,1} Predefined Qt Colors
+    \row \o Qt::color0 \o Qt::color1 \o Qt::black \o Qt::white
+    \row \o Qt::darkGray \o Qt::gray \o Qt::lightGray \o Qt::red
+    \row \o Qt::green \o Qt::blue \o Qt::cyan \o Qt::magenta
+    \row \o Qt::yellow \o Qt::darkRed \o Qt::darkGreen \o Qt::darkBlue
+    \row \o Qt::darkCyan \o Qt::darkMagenta \o Qt::darkYellow \o Qt::transparent
+    \endtable
+
+    The predefined colors listed in the table above were static
+    QColor objects in Qt 3. In Qt 4, they are enum values of type
+    Qt::GlobalColor. Thanks to the implicit QColor(Qt::GlobalColor)
+    constructor, the enum values are automatically converted to
+    \l{QColor}s in most contexts. Occasionally, you might need a
+    cast.
+
+    \oldcode
+        QColor lightCyan = Qt::cyan.light(180);
+    \newcode
+        QColor lightCyan = QColor(Qt::cyan).light(180);
+    \endcode
+
+    \section1 QColorGroup
+
+    In Qt 3, a QPalette consisted of three QColorGroup objects. In Qt
+    4, the (rarely used) QColorGroup abstraction has been eliminated.
+    For source compatibility, a QColorGroup class is available when
+    \c QT3_SUPPORT is defined.
+
+    The new QPalette still works in terms of color groups, specified
+    through enum values (QPalette::Active, QPalette::Disabled, and
+    QPalette::Inactive). It also has the concept of a \e current
+    color group, which you can set using
+    QPalette::setCurrentColorGroup().
+
+    The QPalette object returned by QWidget::palette() returns a
+    QPalette initialized with the correct current color group for the
+    widget. This means that if you had code like
+
+    \badcode
+        painter.setBrush(colorGroup().brush(QColorGroup::Text));
+    \endcode
+
+    you can simply replace colorGroup() with palette():
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 7
+
+    \section1 QColorDrag
+
+    The \c QColorDrag class has been renamed Q3ColorDrag and moved to
+    the Qt3Support library. In Qt 4, use QMimeData
+    instead and call QMimeData::setColor() to set the color.
+
+    \section1 QComboBox
+
+    In Qt 3, the list box used to display the contents of a \c QComboBox
+    widget could be accessed by using the \c listBox() function. In Qt 4,
+    the standard list box is provided by a QListView widget, and can be
+    accessed with the \l{QComboBox::view()}{view()} function.
+
+    \omit ### \endomit
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QComboBox virtual member functions in Qt 3 that are no longer
+    virtual in Qt 4.
+
+    \section1 QCString
+
+    In Qt 3, QCString inherited from QByteArray. The main drawback
+    of this approach is that the user had the responsibility of
+    ensuring that the string is '\\0'-terminated. Another important
+    issue was that conversions between \c QCString and QByteArray often
+    gave confusing results. (See the
+    \l{http://doc.trolltech.com/qq/qq05-achtung.html#qcstringisastringofchars}{Achtung!
+    Binary and Character Data} article in \e{Qt Quarterly} for an
+    overview of the pitfalls.)
+
+    Qt 4 solves that problem by merging the QByteArray and \c QCString
+    classes into one class called QByteArray. Most functions that
+    were in \c QCString previously have been moved to QByteArray. The
+    '\\0' issue is handled by having QByteArray allocate one extra
+    byte that it always sets to '\\0'. For example:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 8
+
+    The Qt3Support library contains a class called
+    Q3CString that inherits from the new QByteArray class and that
+    extends it to provide an API that is as close to the old \c QCString
+    class as possible. Note that the following functions aren't
+    provided by Q3CString:
+
+    \list
+    \o QCString::find(const QRegExp &, int)
+    \o QCString::findRev(const QRegExp &, int)
+    \o QCString::contains(const QRegExp &)
+    \o QCString::replace(const QRegExp &, const char *)
+    \endlist
+
+    The following functions have lost their last parameter, which
+    specified whether the search was case sensitive or not:
+
+    \list
+    \o QByteArray::find(char, int)
+    \o QByteArray::find(const char *, int)
+    \o QByteArray::findRev(char, int)
+    \o QByteArray::findRev(const char *, int)
+    \o QByteArray::contains(char)
+    \o QByteArray::contains(const char *)
+    \endlist
+
+    In both cases, the solution is to convert the \c QCString to a
+    QString and use the corresponding QString functions instead.
+
+    Also be aware that \c QCString::size() (inherited from
+    QByteArray) used to return the size of the character data \e
+    including the '\\0'-terminator, whereas the new
+    QByteArray::size() is just a synonym for QByteArray::length().
+    This brings QByteArray in line with QString.
+
+    When porting to Qt 4, occurrences of \c QCString should be
+    replaced with QByteArray or QString. The following table
+    summarizes the API differences between the Q3CString
+    class and the Qt 4 QByteArray and QString classes:
+
+    \table
+    \header \o Q3CString function \o Qt 4 equivalent
+    \row \o Q3CString::Q3CString(const char *, uint) \o See remark below
+    \row \o Q3CString::Q3CString(int) \o QByteArray::QByteArray(int, char)
+    \row \o Q3CString::leftJustify() \o QString::leftJustified()
+    \row \o Q3CString::length() \o QByteArray::length() or QByteArray::size() (equivalent)
+    \row \o Q3CString::lower() \o QByteArray::toLower()
+    \row \o Q3CString::rightJustify() \o QString::rightJustified()
+    \row \o Q3CString::setExpand() \o See remark below
+    \row \o Q3CString::simplifyWhiteSpace() \o QByteArray::simplified()
+    \row \o Q3CString::sprintf() \o QString::sprintf()
+    \row \o Q3CString::stripWhiteSpace() \o QByteArray::trimmed()
+    \row \o Q3CString::toDouble() \o QString::toDouble()
+    \row \o Q3CString::toFloat() \o QString::toFloat()
+    \row \o Q3CString::toInt() \o QString::toInt()
+    \row \o Q3CString::toLong() \o QString::toLong()
+    \row \o Q3CString::toShort() \o QString::toShort()
+    \row \o Q3CString::toUInt() \o QString::toUInt()
+    \row \o Q3CString::toULong() \o QString::toULong()
+    \row \o Q3CString::toUShort() \o QString::toUShort()
+    \row \o Q3CString::upper() \o QByteArray::toUpper()
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  Q3CString(const char *str, uint max) constructs a string of
+        length strlen(str) or \e max - 1, whichever is shorter.
+        QByteArray(const char *data, int size) constructs a byte
+        array containing exactly \e size bytes.
+
+        \oldcode
+            QCString str1("Hello", 4);           // "Hel"
+            QCString str2("Hello world!", n);
+        \newcode
+            QByteArray str1("Hello", 3);
+            QByteArray str2("Hello world!");
+            str2.truncate(n - 1);
+        \endcode
+
+    \o  Q3CString::setExpand(uint index, char ch) has no equivalent in
+        Qt 4.
+
+        \oldcode
+            QCString str("Hello world");
+            str.setExpand(16, '\n');            // "Hello world     \n"
+        \newcode
+            QByteArray str("Hello world");
+            while (str.size() < 16)
+                str += ' ';
+            str += '\n';
+        \endcode
+    \endlist
+
+    Since the old \c QCString class inherited from QByteArray,
+    everything that is said in the \l{#qbytearray.section}{QByteArray
+    section} applies for \c QCString as well.
+
+    \section1 QCustomEvent
+
+    In Qt 3, developers could create a custom event by constructing
+    a new QCustomEvent, and send relevant data to other components in
+    the application by passing a void pointer, either on construction or
+    using the setData() function. Objects could receive custom events
+    by reimplementing the \l{QObject::customEvent()}{customEvent()}
+    function, and access the stored data using the event's data()
+    function.
+
+    In Qt 4, custom events are created by subclassing
+    QEvent. Event-specific data can be stored in a way that is
+    appropriate for your application. Custom events are still
+    delivered to each object's
+    \l{QObject::customEvent()}{customEvent()} handler function, but as
+    QEvent objects rather than as deprecated QCustomEvent objects.
+
+    \section1 QDataBrowser
+
+    The \c QDataBrowser class has been renamed Q3DataBrowser and
+    moved to the Qt3Support library. In Qt 4.2, you should use the
+    QDataWidgetMapper class to create data-aware forms.
+
+    See \l{QtSql Module} for an overview of the new SQL
+    classes.
+
+    \section1 QDataPump
+
+    The \c QDataPump class was used internally in Qt 2.x in
+    conjunction with QImageConsumer. It was obsoleted in Qt 3.0.
+
+    \input porting4-obsoletedmechanism.qdocinc
+
+    \section1 QDataSink
+
+    The \c QDataSink class was used internally in Qt 2.x in conjunction
+    with QImageConsumer. It was obsoleted in Qt 3.0.
+
+    \input porting4-obsoletedmechanism.qdocinc
+
+    \section1 QDataSource
+
+    The \c QDataSource class was used internally in Qt 2.x in
+    conjunction with QImageConsumer. It was obsoleted in Qt 3.0.
+    \input porting4-obsoletedmechanism.qdocinc
+
+    \section1 QDataTable
+
+    The \c QDataTable class has been renamed Q3DataTable and moved to
+    the Qt3Support library. In Qt 4.2, you should use the
+    QDataWidgetMapper class to create data-aware forms.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QDataView
+
+    The \c QDataView class has been renamed Q3DataView and moved to
+    the Qt3Support library. In Qt 4.2, you should use the
+    QDataWidgetMapper class to create data-aware forms.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QDateEdit
+
+    The QDateEdit class in Qt 4 is a convenience class based on
+    QDateTimeEdit. The old class has been renamed Q3DateEdit and moved
+    to the Qt3Support library.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of \c QDateEdit virtual member functions in Qt 3 that are
+    no longer virtual in Qt 4.
+
+    \section1 QDateTimeEditBase
+
+    The \c QDateTimeEditBase class has been renamed
+    Q3DateTimeEditBase and moved to Qt3Support. Use QDateTimeEdit or
+    QAbstractSpinBox instead.
+
+    \section1 QDateTimeEdit
+
+    The old \c QDateTimeEdit class has been renamed
+    Q3DateTimeEditBase and moved to Qt3Support. The new QDateTimeEdit
+    in Qt 4 has been rewritten from scratch to provide a more
+    flexible and powerful API.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QDateTimeEdit virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QDeepCopy<T>
+
+    The \c QDeepCopy<T> class in Qt 3 provided a means of ensuring that
+    implicitly shared and explicitly shared classes referenced unique
+    data. This was necessary because the reference counting in Qt's
+    container classes was done in a thread-unsafe manner.
+
+    With Qt 4, \c QDeepCopy<T> has been renamed Q3DeepCopy<T> and
+    moved to the Qt3Support library. Removing it from
+    existing code is straightforward.
+
+    \oldcode
+        QString str1 = "I am a string";
+        QDeepCopy<QString> str2 = str1;
+        QString str3 = QDeepCopy<QString>(str2);
+    \newcode
+        QString str1 = "I am a string";
+        QString str2 = str1;
+        QString str3 = str2;
+    \endcode
+
+    \section1 QDial
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QDial virtual member functions in Qt 3 that are no longer
+    virtual in Qt 4.
+
+    See \l{#properties}{Properties} for a list of QDial properties in
+    Qt 3 that have changed in Qt 4.
+
+    \target qdict.section
+    \section1 QDict<T>
+
+    \c QDict<T> has been renamed Q3Dict<T> and moved to Qt3Support.
+    It has been replaced by the more modern QHash<Key, T> and
+    QMultiHash<Key, T> classes.
+
+    When porting old code that uses QDict<T> to Qt 4, there are four
+    classes that you can use:
+
+    \table
+    \header \o Qt 4 class \o When to use it
+    \row \o QMultiHash<QString, T *>
+         \o Since Q3Dict<T> is pointer-based and allows duplicate keys, this
+            is usually the most straightforward conversion.
+    \row \o QMultiHash<QString, T>
+         \o If type \c T is an \l{assignable data type}, you can use
+            \c T as the value type rather than \c{T *}. This often leads
+            to nicer code.
+    \row \o QHash<QString, T *>
+         \o{1,2} If you don't use duplicate keys, you can use QHash
+                 instead of QMultiHash. QMultiHash inherits from
+                 QHash.
+    \row \o QHash<QString, T>
+    \endtable
+
+    The APIs of Q3Dict<T> and QMultiHash<QString, T *> are quite
+    similar. The main issue is that Q3Dict supports auto-delete
+    whereas QMultiHash doesn't.
+
+    \omit
+    (See \l{What's Wrong with
+    Auto-Delete} for an explanation of why the Qt 4 containers don't
+    offer that feature.)
+    \endomit
+
+    The following table summarizes the API differences between the
+    two classes:
+
+    \table
+    \header \o Q3Dict function \o QMultiHash equivalent
+    \row \o Q3Dict::Q3Dict(int size, bool caseSensitive) \o See remarks below
+    \row \o Q3Dict::autoDelete() \o N/A
+    \row \o Q3Dict::count() \o QMultiHash::count() or QMultiHash::size() (equivalent)
+    \row \o Q3Dict::find(const QString &) \o QMultiHash::value(const QString &)
+    \row \o Q3Dict::remove(const QString &) \o QMultiHash::take(const QString &)
+    \row \o Q3Dict::resize(uint) \o QMultiHash::reserve(int)
+    \row \o Q3Dict::setAutoDelete() \o See discussion below
+    \row \o Q3Dict::size() \o QMultiHash::capacity()
+    \row \o Q3Dict::statistics() \o N/A
+    \row \o Q3Dict::operator[](const QString &) \o See remark below
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  Q3Dict requires the user to allocate a specific number of
+        buckets by passing a prime number (17 by default) to the
+        constructor and/or calling Q3Dict::resize() later on. In
+        contrast, QMultiHash's hash table automatically grows and
+        shrinks as needed, and the constructor doesn't take a prime
+        number.
+
+    \o  Q3Dict supportes case-insensitive lookups by passing false as
+        second argument to the constructor. This feature has no
+        equivalent in QMultiHash. Instead, call QString::toLower()
+        before you insert or lookup a key in the hash.
+
+    \o  Q3Dict::size() and QMultiHash::size() have different semantics.
+        The former returns the number of buckets in the container, whereas
+        the latter returns the number of \e items in the container.
+
+    \o  If there are multiple items with the same key,
+        Q3Dict::remove() removes only the most recently inserted item,
+        whereas QMultiHash::remove() removes all items that share a
+        particular key. To remove only the most recently inserted item,
+        call QMultiHash::take().
+
+    \o  Q3Dict has only one [] operator (Q3Dict::operator[]()),
+        providing const access to an item's value. QMultiHash also
+        has a non-const overload that can be used on the left side of
+        the assignment operator. If you use the [] operator on a
+        non-const QHash with an unexisting item, QHash will created
+        an element and initialize it to be a null pointer. For that
+        reason, Q3Dict::operator[] should be converted to
+        QMultiHash::value(), not QMultiHash::operator[].
+
+    \endlist
+
+    If you use Q3Dict's auto-delete feature (by calling
+    Q3Dict::setAutoDelete(true)), you need to do some more work. You
+    have two options: Either you call \c delete yourself whenever you
+    remove an item from the container, or you use
+    QMultiHash<QString, T> instead of QMultiHash<QString, T *> (i.e.
+    store values directly instead of pointers to values). Here, we'll
+    see when to call \c delete.
+
+    The following table summarizes the idioms that you need to watch
+    out for if you want to call \c delete yourself.
+
+    \table
+    \header \o Q3Dict idiom \o QMultiHash idiom
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 9
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 10
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 11
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 12
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 13
+
+        (also called from Q3Dict's destructor)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 14
+
+        In 99% of cases, the following idiom also works:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 15
+
+        However, it may lead to crashes if \c hash is referenced from
+        the value type's destructor, because \c hash contains
+        dangling pointers until clear() is called.
+    \endtable
+
+    Be aware that Q3Dict's destructor automatically calls clear(). If
+    you have a Q3Dict data member in a custom class and use the
+    auto-delete feature, you will need to call \c delete on all the
+    items in the container from your class destructor to avoid a
+    memory leak.
+
+    Finally, \c QDictIterator<T> (renamed Q3DictIterator<T>) must
+    also be ported. There are no fewer than four iterator classes
+    that can be used as a replacement: QHash::const_iterator,
+    QHash::iterator, QHashIterator, and QMutableHashIterator. The
+    most straightforward class to use when porting is
+    QHashIterator<QString, T *>. The following table summarizes the
+    API differences:
+
+    \table
+    \header \o Q3DictIterator functions \o Qt 4 equivalent
+    \row \o Q3DictIterator::count() \o QHash::count() or QHash::size()
+    \row \o Q3DictIterator::current() \o QHashIterator::value()
+    \row \o Q3DictIterator::currentKey() \o QHashIterator::key()
+    \row \o Q3DictIterator::isEmpty() \o QHash::isEmpty()
+    \row \o Q3DictIterator::toFirst() \o QHashIterator::toFront()
+    \row \o Q3DictIterator::operator()() \o QHashIterator::value()
+    \row \o Q3DictIterator::operator*() \o QHashIterator::value()
+    \row \o Q3DictIterator::operator++() \o See remark below
+    \endtable
+
+    Be aware that QHashIterator has a different way of iterating than
+    Q3DictIterator. A typical loop with Q3DictIterator looks like this:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 16
+
+    Here's the equivalent QHashIterator loop:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 17
+
+    See \l{Java-style iterators} for details.
+
+    \section1 QDir
+
+    The following functions used to have a boolean \c{acceptAbsPath}
+    parameter that defaulted to true:
+
+    \list
+    \i QDir::filePath()
+    \i QDir::absFilePath()
+    \i QDir::cd()
+    \i QDir::mkdir()
+    \i QDir::rmdir()
+    \i QDir::remove()
+    \i QDir::rename()
+    \i QDir::exists()
+    \endlist
+
+    In Qt 3, if \c acceptAbsPath is true, a file name starting with
+    '/' is be returned without change; if \c acceptAbsPath is false,
+    an absolute path is prepended to the file name. For example:
+
+    \table
+    \header \i Current directory   \i File name        \i \c acceptAbsPath \i File path
+    \row    \i{1,2} /home/tsmith   \i{1,2} index.html  \i true             \i /home/tsmith/index.html
+    \row                                               \i false            \i /home/tsmith/index.html
+    \row    \i{1,2} /home/tsmith   \i{1,2} /index.html \i true             \i /index.html
+    \row                                               \i false            \i /home/tsmith/index.html
+    \endtable
+
+    In Qt 4, this parameter is no longer available. If you use it
+    in your code, you can check that QDir::isRelativePath() returns
+    false instead.
+
+    \oldcode
+        QDir dir("/home/tsmith");
+        QString path = dir.filePath(fileName, false);
+    \newcode
+        QDir dir("/home/tsmith");
+        QString path;
+        if (dir.isRelativePath(fileName))
+            path = dir.filePath(fileName);
+        else
+            path = fileName;
+    \endcode
+
+    QDir::encodedEntryList() has been removed.
+
+    fileInfoList(), entryInfoList(), and drives() now return a QList<QFileInfo>
+    and not a QPtrList<QFileInfo> *. Code using these methods will not work with
+    the Qt3Support library and must be adapted instead.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QDir virtual member functions in Qt 3 that are no longer
+    virtual in Qt 4.
+
+    QDir::match() now always matches case insensitively.
+
+    QDir::homeDirPath() has been removed. Use QDir::home() instead, and
+    extract the path separately.
+
+    \section1 QDns
+
+    Qt 3 used its own implementation of the DNS protocol and provided
+    a low-level \c QDns class. Qt 4's QHostInfo class uses the system's \c
+    gethostbyname() function from a thread instead.
+
+    The old \c QDns class has been renamed Q3Dns and moved to the
+    Qt3Support library. The new QHostInfo class has a
+    radically different API: It consists mainly of two static
+    functions, one of which is blocking (QHostInfo::fromName()), the
+    other non-blocking (QHostInfo::lookupHost()). See the QHostInfo
+    class documentation for details.
+
+    \section1 QDockArea
+
+    The \c QDockArea class has been renamed Q3DockArea and moved to
+    the Qt3Support library. In Qt 4, QMainWindow handles
+    the dock and toolbar areas itself. See the QMainWindow
+    documentation for details.
+
+    \section1 QDockWindow
+
+    The old \c QDockWindow class has been renamed Q3DockWindow and
+    moved to the Qt3Support library. In Qt 4, there is a
+    new QDockWidget class with a different API. See the class
+    documentation for details.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QDockWidget virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \note \l{Q3DockWindow}'s
+    \l{Q3DockWindow::setHorizontallyStretchable()}{horizontallyStretchable}
+    property can be achieved in QDockWidget with
+    \l{QWidget#Size Hints and Size Policies}{size policies}.
+
+    \section1 QDragObject
+
+    The \c QDragObject class has been renamed Q3DragObject and
+    moved to the Qt3Support library. In Qt 4, it has been
+    replaced by the QMimeData class. See the class documentation for
+    details.
+
+    Note that the Q3DragObject::DragCopyOrMove drag and drop mode is
+    interpreted differently to Qt 3's QDragObject::DragCopyOrMove mode.
+    In Qt 3, a move operation was performed by default, and the user had
+    to hold down the \key{Ctrl} key to perform a copy operation.
+    In Qt 4, a copy operation is performed by default; the user has to
+    hold down the \key{Shift} key to perform a move operation.
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QDropSite
+
+    The \c QDropSite class has been renamed Q3DropSite and moved to
+    the Qt3Support library.
+
+    The QDropSite class has been obsolete ever since Qt 2.0. The only
+    thing it does is call QWidget::setAcceptDrops(true).
+
+    \oldcode
+    class MyWidget : public QWidget, public QDropSite
+    {
+    public:
+        MyWidget(const QWidget *parent)
+            : QWidget(parent), QDropSite(this)
+        {
+        }
+        ...
+    }
+    \newcode
+    class MyWidget : public QWidget
+    {
+    public:
+        MyWidget(const QWidget *parent)
+            : QWidget(parent)
+        {
+            setAcceptDrops(true);
+        }
+        ...
+    }
+    \endcode
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QEditorFactory
+
+    The \c QEditorFactory class has been renamed Q3EditorFactory and
+    moved to the Qt3Support library.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QEventLoop
+
+    In Qt 3, \c QEventLoop combined the Qt event loop and the event
+    dispatching. In Qt 4, these tasks are now assigned to two
+    distinct classes: QEventLoop and QAbstractEventDispatcher.
+
+    If you subclassed QEventLoop to integrate with another library's
+    event loop, you must subclass QAbstractEventDispatcher instead. See
+    the class documentation for details.
+
+    \omit ### mention virtual functions that aren't virtual anymore \endomit
+
+    \omit
+    \section1 QFile
+
+    The QFile::readLine(QString&, Q_ULONG) method from qt3 has been removed
+    in qt4, but this change in the QFile interface is not documented in the
+    porting documentation as of qt-4.0.0-b1.
+    \endomit
+
+    \section1 QFileDialog
+
+    The QFileDialog class in Qt 4 has been totally rewritten. It
+    provides most of the functionality of the old \c QFileDialog
+    class, but with a different API. Some functionality, such as the
+    ability to preview files, is expected to be added in a later Qt 4
+    release.
+
+    The old \c QFileDialog, \c QFileIconProvider, and \c QFilePreview
+    classes has been renamed Q3FileDialog, Q3FileIconProvider, and
+    Q3FilePreview and have been moved to Qt3Support. You can use them
+    if you need some functionality not provided yet by the new
+    QFileDialog class.
+
+    The following table lists which functions have been renamed or
+    removed in Qt 4.
+
+    \table
+    \header \o Old function \o Qt 4 equivalent
+    \row \o Q3FileDialog::addFilter(const QString &) \o See remark below
+    \row \o Q3FileDialog::addLeftWidget(QWidget *) \o N/A
+    \row \o Q3FileDialog::addRightWidget(QWidget *) \o N/A
+    \row \o Q3FileDialog::addToolButton(QAbstractButton *, bool separator) \o N/A
+    \row \o Q3FileDialog::addWidgets(QLabel *, QWidget *, QPushButton *) \o N/A
+    \row \o Q3FileDialog::dir() \o QFileDialog::directory()
+    \row \o Q3FileDialog::dirPath() \o QFileDialog::directory().path()
+    \row \o Q3FileDialog::iconProvider() \o N/A
+    \row \o Q3FileDialog::isContentsPreviewEnabled() \o N/A
+    \row \o Q3FileDialog::isInfoPreviewEnabled() \o N/A
+    \row \o Q3FileDialog::previewMode() \o N/A
+    \row \o Q3FileDialog::rereadDir() \o N/A
+    \row \o Q3FileDialog::resortDir() \o N/A
+    \row \o Q3FileDialog::selectAll(bool) \o N/A
+    \row \o Q3FileDialog::setContentsPreview(QWidget *, Q3FilePreview *) \o N/A
+    \row \o Q3FileDialog::setContentsPreviewEnabled(bool) \o N/A
+    \row \o Q3FileDialog::setDir(const QString &) \o QFileDialog::setDirectory(const QString &)
+    \row \o Q3FileDialog::setFilters(const char **) \o Q3FileDialog::setFilters(const QStringList &)
+    \row \o Q3FileDialog::setIconProvider(Q3FileIconProvider *) \o N/A
+    \row \o Q3FileDialog::setInfoPreview(QWidget *, Q3FilePreview *) \o N/A
+    \row \o Q3FileDialog::setInfoPreviewEnabled(bool) \o N/A
+    \row \o Q3FileDialog::setPreviewMode(PreviewMode) \o N/A
+    \row \o Q3FileDialog::setSelectedFilter(const QString &) \o QFileDialog::selectFilter(const QString &)
+    \row \o Q3FileDialog::setSelectedFilter(int) \o See remark below
+    \row \o Q3FileDialog::setSelection(const QString &) \o QFileDialog::selectFile(const QString &)
+    \row \o Q3FileDialog::setShowHiddenFiles(bool) \o showHidden()
+    \row \o Q3FileDialog::setUrl(const QUrlOperator &) \o N/A
+    \row \o Q3FileDialog::showHiddenFiles() \o N/A
+    \row \o Q3FileDialog::url() \o QUrl::fromLocalFile(QFileDialog::directory())
+    \header \o Old signals \o Qt 4 equivalent
+    \row \o Q3FileDialog::fileHighlighted(const QString &) \o N/A
+    \row \o Q3FileDialog::fileSelected(const QString &) \o QFileDialog::filesSelected(const QStringList &)
+    \row \o Q3FileDialog::dirEntered(const QString &) \o N/A
+    \row \o Q3FileDialog::filterSelected(const QString &) \o N/A
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  The Q3FileDialog::addFilter(const QString &) function has no
+        direct equivalent in the new QFileDialog. Use
+        QFileDialog::setFilters() instead.
+
+        \oldcode
+        fileDialog->addFilter(tr("JPEG files (*.jpg *.jpeg)"));
+        \newcode
+        QStringList filters = fileDialog->filters();
+        filters << tr("JPEG files (*.jpg *.jpeg)");
+        fileDialog->setFilters(filters);
+        \endcode
+
+    \o  The Q3FileDialog::setSelectedFilter(int) overload has no direct
+        equivalent in the new QFileDialog. Use
+        QFileDialog::selectFilter(const QString &) instead.
+
+        \oldcode
+        fileDialog->setSelectedFilter(3);
+        \newcode
+        fileDialog->selectFilter(fileDialog->filters().at(3));
+        \endcode
+    \endlist
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QFileDialog virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QFocusData
+
+    The QFocusData class is not available in Qt 4. Some of its
+    functionality is available via the QWidget::nextInFocusChain()
+    and QWidget::focusNextPrevChild() functions.
+
+    \section1 QFocusEvent
+
+    The setReason() function is no longer present in Qt 4. It is
+    necessary to define the reason when constructing a focus event.
+
+    \section1 QFont
+
+    \c QFont::Script has been moved to QFontDatabase::WritingSystem.
+
+    \section1 QFrame
+
+    The QFrame class has been made more lightweight in Qt 4, by
+    reducing the number of properties and virtual functions. The
+    reduction in the number of virtual functions is significant
+    because QFrame is the base class of many Qt classes.
+
+    Here's an overview of the changes:
+
+    \list
+    \o  QFrame no longer has a \c margin property (which wasn't
+        honored by Qt's layout managers anyway).
+
+    \o  QFrame no longer has a frameChanged() function, reimplement
+        QFrame::resizeEvent() instead.
+
+    \o  QFrame used to have drawFrame(QPainter *) and
+        drawContents(QPainter *) virtual functions. These are now
+        gone. In Qt 4, the frame is drawn by the QFrame::paintEvent()
+        function. If you want to change the way QFrame paints itself,
+        reimplement this function. To draw the contents of the frame,
+        reimplement QFrame:paintEvent() and call the base class
+        implementation of the function before you use the
+        \l {QWidget::}{contentsRect()} function inherited from QWidget,
+        to retrieve the rectangle to paint on.
+
+    \endlist
+
+    To help with porting, the Qt3Support library contains a Q3Frame
+    class that inherits QFrame and provides a similar API to the old
+    QFrame class. If you derived from QFrame in your application, you
+    might want to use Q3Frame as a base class as a first step in the
+    porting process, and later move on to the new QFrame class.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QFrame virtual member functions in Qt 3 that are no longer
+    virtual in Qt 4.
+
+    \section1 QFtp
+
+    QFtp no longer inherits from QNetworkProtocol. See the
+    \l{#qnetworkprotocol.section}{section on QNetworkProtocol} for
+    details.
+
+    The old \c QFtp class has been renamed Q3Ftp and moved to the
+    Qt3Support library.
+
+    \target qglayoutiterator.section
+    \section1 QGLayoutIterator
+
+    The QGLayoutIterator class no longer exists in Qt 4. This makes
+    only a difference if you implemented custom layout managers
+    (i.e., QLayout subclasses).
+
+    The new approach is much simpler: It consists in reimplementing
+    QLayout::itemAt() and QLayout::takeAt(). These functions operate
+    on indexes, eliminating the need for a layout iterator class.
+
+    \section1 QGrid
+
+    The \c QGrid class is now only available as Q3Grid in Qt 4. You
+    can achieve the same result as \c QGrid by creating a QWidget
+    with a grid layout:
+
+    \oldcode
+    QGrid *grid = new QGrid(2, Qt::Horizontal);
+    QPushButton *child1 = new QPushButton(grid);
+    QPushButton *child2 = new QPushButton(grid);
+    QPushButton *child3 = new QPushButton(grid);
+    QPushButton *child4 = new QPushButton(grid);
+    \newcode
+    QWidget *grid = new QWidget;
+    QPushButton *child1 = new QPushButton(grid);
+    QPushButton *child2 = new QPushButton(grid);
+    QPushButton *child3 = new QPushButton(grid);
+    QPushButton *child4 = new QPushButton(grid);
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(child1, 0, 0);
+    layout->addWidget(child2, 0, 1);
+    layout->addWidget(child3, 1, 0);
+    layout->addWidget(child4, 1, 1);
+    grid->setLayout(layout);
+    \endcode
+
+    \section1 QGridLayout
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QGridLayout virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QGridView
+
+    The \c QGridView class has been renamed Q3GridView and moved to
+    the Qt3Support library. In Qt 4, we recommend that
+    you use QTableView or QAbstractItemView for presenting tabular
+    data.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \target qgroupbox.section
+    \section1 QGroupBox
+
+    The QGroupBox class has been redesigned in Qt 4. Many of the
+    features of the old \c QGroupBox class can be obtained by using
+    the Q3GroupBox class from the Qt3Support library.
+
+    The new QGroupBox is more lightweight. It doesn't attempt to
+    duplicate functionality already provided by QGridLayout, and it
+    does not inherit from QFrame. As a result, the following members
+    have been removed:
+
+    \list
+    \o Q3GroupBox::setColumns(), Q3GroupBox::columns()
+    \o Q3GroupBox::setOrientation(), Q3GroupBox::orientation()
+    \o Q3GroupBox::setInsideMargin(), Q3GroupBox::insideMargin()
+    \o Q3GroupBox::addSpace()
+    \endlist
+
+    Naturally, the \c columns and \c orientation properties have also
+    been removed.
+
+    If you rely on some of the missing functionality in your
+    application, you can use Q3GroupBox instead of QGroupBox as a
+    help to porting.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of QGroupBox virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QHBox
+
+    The \c QHBox class is now only available as Q3HBox in Qt 4. You
+    can achieve the same result as \c QHBox by creating a QWidget
+    with an horizontal layout:
+
+    \oldcode
+    QHBox *hbox = new QHBox;
+    QPushButton *child1 = new QPushButton(hbox);
+    QPushButton *child2 = new QPushButton(hbox);
+    \newcode
+    QWidget *hbox = new QWidget;
+    QPushButton *child1 = new QPushButton;
+    QPushButton *child2 = new QPushButton;
+
+    QHBoxLayout *layout = new QHBoxLayout;
+    layout->addWidget(child1);
+    layout->addWidget(child2);
+    hbox->setLayout(layout);
+    \endcode
+
+    Note that child widgets are not automatically placed into the widget's
+    layout; you will need to manually add each widget to the QHBoxLayout.
+
+    \section1 QHeader
+
+    The \c QHeader class has been renamed Q3Header and moved to
+    the Qt3Support library. In Qt 4, it is replaced
+    by the QHeaderView class.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \section1 QHGroupBox
+
+    The \c QHGroupBox class has been renamed Q3HGroupBox and moved to
+    the Qt3Support library.
+    Qt 4 does not provide a specific replacement class for \c QHGroupBox
+    since QGroupBox is designed to be a generic container widget. As a
+    result, you need to supply your own layout for any child widgets.
+
+    See \l{#QGroupBox} for more information about porting code that uses
+    group boxes.
+
+    \section1 QHttp
+
+    QHttp no longer inherits from QNetworkProtocol. See the See the
+    \l{#qnetworkprotocol.section}{section on QNetworkProtocol} for
+    details.
+
+    The old \c QHttp, \c QHttpHeader, \c QHttpRequestHeader, and \c
+    QHttpResponseHeader classes have been renamed Q3Http,
+    Q3HttpHeader, Q3HttpRequestHeader, and Q3HttpResponseHeader  and
+    have been moved to the Qt3Support library.
+
+    \section1 QIconFactory
+
+    The QIconFactory class is no longer part of Qt. It has been replaced by
+    the QIconEngine class.
+
+    \section1 QIconSet
+
+    The QIconSet class is no longer part of Qt. It has been replaced by
+    the QIcon class.
+
+    \section1 QIconView
+
+    The \c QIconView, \c QIconViewItem, \c QIconDrag, and \c
+    QIconDragItem classes has been renamed Q3IconView,
+    Q3IconViewItem, Q3IconDrag, and Q3IconDragItem and moved to the
+    Qt3Support library. New Qt applications should use
+    QListWidget or its base class QListView instead, and call
+    QListView::setViewMode(QListView::IconMode) to obtain an "icon
+    view" look.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \omit
+    ###
+
+    \section1 QImage
+
+    QImage::fromMimeSource(const QString &) -> qImageFromMimeSource(const QString &)
+    \endomit
+
+    \section1 QImageDrag
+
+    The \c QImageDrag class has been renamed Q3ImageDrag and moved to
+    the Qt3Support library. In Qt 4, use QMimeData
+    instead and call QMimeData::setImage() to set the image.
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QImageIO
+
+    The \c QImageIO class has been split into two classes:
+    QImageReader and QImageWriter. The table below shows the
+    correspondance between the two APIs:
+
+    \table
+    \header \o Qt 3 function              \o Qt 4 equivalents
+    \row    \o QImageIO::description()    \o QImageWriter::description()
+    \row    \o QImageIO::fileName()       \o QImageReader::fileName() and QImageWriter::fileName()
+    \row    \o QImageIO::format()         \o QImageReader::format() and QImageWriter::format()
+    \row    \o QImageIO::gamma()          \o QImageWriter::gamma()
+    \row    \o QImageIO::image()          \o Return value of QImageReader::read()
+    \row    \o QImageIO::inputFormats()   \o QImageReader::supportedImageFormats()
+    \row    \o QImageIO::ioDevice()       \o QImageReader::device() and QImageWriter::device()
+    \row    \o QImageIO::outputFormats()  \o QImageWriter::supportedImageFormats()
+    \row    \o QImageIO::parameters()     \o N/A
+    \row    \o QImageIO::quality()        \o QImageWriter::quality()
+    \row    \o QImageIO::read()           \o QImageReader::read()
+    \row    \o QImageIO::setDescription() \o QImageWriter::setDescription()
+    \row    \o QImageIO::setFileName()    \o QImageReader::setFileName() and QImageWriter::setFileName()
+    \row    \o QImageIO::setFormat()      \o QImageReader::setFormat() and QImageWriter::setFormat()
+    \row    \o QImageIO::setGamma()       \o QImageWriter::setGamma()
+    \row    \o QImageIO::setIODevice()    \o QImageReader::setDevice() and QImageWriter::setDevice()
+    \row    \o QImageIO::setImage()       \o Argument to QImageWriter::write()
+    \row    \o QImageIO::setParameters()  \o N/A
+    \row    \o QImageIO::setQuality()     \o QImageWriter::setQuality()
+    \row    \o QImageIO::setStatus()      \o N/A
+    \row    \o QImageIO::status()         \o QImageReader::error() and QImageWriter::error()
+    \row    \o QImageIO::write()          \o QImageWriter::write()
+    \endtable
+
+    \section1 QIntCache<T>
+
+    QIntCache<T> has been moved to Qt3Support. It has been replaced
+    by QCache<int, T>.
+
+    For details, read the \l{#qcache.section}{section on QCache<T>},
+    mentally substituting \c int for QString.
+
+    \section1 QIntDict<T>
+
+    QIntDict<T> and QIntDictIterator<T> have been moved to
+    Qt3Support. They have been replaced by the more modern QHash<Key,
+    T> and QMultiHash<Key, T> classes and their associated iterator
+    classes.
+
+    When porting old code that uses QIntDict<T> to Qt 4, there are
+    four classes that you can use:
+
+    \list
+    \o QMultiHash<int, T *>
+    \o QMultiHash<int, T>
+    \o QHash<int, T *>
+    \o QHash<int, T>
+    \endlist
+
+    For details, read the \l{#qdict.section}{section on QDict<T>},
+    mentally substituting \c int for QString.
+
+    \target qiodevice.section
+    \section1 QIODevice
+
+    The QIODevice class's API has been simplified to make it easier
+    to subclass and to make it work more smoothly with asynchronous
+    devices such as QTcpSocket and QProcess.
+
+    The following virtual functions have changed name or signature:
+
+    \table
+    \header \o Qt 3 function \o Comment
+    \row \o QIODevice::at() const \o Renamed QIODevice::pos().
+    \row \o QIODevice::at(Offset) \o Renamed QIODevice::seek().
+    \row \o QIODevice::open(int) \o The parameter is now of type QIODevice::OpenMode.
+    \row \o QIODevice::readBlock(char *, Q_ULONG) \o QIODevice::read(char *, qint64)
+    \row \o QIODevice::writeBlock(const char *, Q_ULONG) \o QIODevice::write(const char *, qint64)
+    \endtable
+
+    \note QIODevice::open(QIODevice::OpenMode) is no longer pure virtual.
+
+    The following functions are no longer virtual or don't exist anymore:
+
+    \table
+    \row \o QIODevice::getch() \o Renamed QIODevice::getChar() and implemented in terms of QIODevice::readData().
+    \row \o QIODevice::putch(int) \o Renamed QIODevice::putChar() and implemented in terms of QIODevice::writeData().
+    \row \o QIODevice::readAll() \o Implemented in terms of QIODevice::readData().
+    \row \o QIODevice::readLine(char *, Q_ULONG) \o Implemented in terms of QIODevice::readData()
+    \row \o QIODevice::ungetch(int) \o Renamed QIODevice::ungetChar() and simulated using an internal unget buffer.
+    \endtable
+
+    The \c IO_xxx flags have been revised, and the protected setFlags()
+    function removed. Most of the flags have been
+    eliminated because errors are best handled by implementing certain
+    functions in QIODevice subclasses rather than through the base classes.
+    The file access flags, such as \c IO_ReadOnly and \c IO_WriteOnly, have
+    been moved to the QIODevice class to avoid polluting the global
+    namespace. The table below shows the correspondence between the
+    Qt 3 \c IO_xxx flags and the Qt 4 API:
+
+    \table
+    \header \o Qt 3 constant \o Qt 4 equivalent
+    \row \o IO_Direct \o Use !QIODevice::isSequential() instead (notice the \e not).
+    \row \o IO_Sequential \o Use QIODevice::isSequential() instead.
+    \row \o IO_Combined \o N/A
+    \row \o IO_TypeMask \o N/A
+    \row \o IO_Raw \o QIODevice::Unbuffered
+    \row \o IO_Async \o N/A
+    \row \o IO_ReadOnly \o QIODevice::ReadOnly
+    \row \o IO_WriteOnly \o QIODevice::WriteOnly
+    \row \o IO_ReadWrite \o QIODevice::ReadWrite
+    \row \o IO_Append \o QIODevice::Append
+    \row \o IO_Truncate \o QIODevice::Truncate
+    \row \o IO_Translate \o QIODevice::Text
+    \row \o IO_ModeMask \o N/A
+    \row \o IO_Open \o Use QIODevice::isOpen() instead.
+    \row \o IO_StateMask \o N/A
+    \row \o IO_Ok \o N/A
+    \row \o IO_ReadError \o N/A
+    \row \o IO_WriteError \o N/A
+    \row \o IO_FatalError \o N/A
+    \row \o IO_ResourceError \o N/A
+    \row \o IO_OpenError \o N/A
+    \row \o IO_ConnectError \o N/A
+    \row \o IO_AbortError \o N/A
+    \row \o IO_TimeOutError \o N/A
+    \row \o IO_UnspecifiedError \o N/A
+    \endtable
+
+    \section1 QIODeviceSource
+
+    The QIODeviceSource class was used internally in Qt 2.x in
+    conjunction with QImageConsumer. It was obsoleted in Qt 3.0.
+    \input porting4-obsoletedmechanism.qdocinc
+
+    \section1 QLabel
+
+    QLabel doesn't enable word-wrap automatically anymore when rich
+    text is used. You can enable it by calling
+    QLabel::setWordWrap() or by setting the
+    \l{QLabel::wordWrap}{wordWrap} property. The reason for this
+    change is that the old behavior was confusing to many users.
+
+    Also, QLabel no longer offers an \c autoResize property. Instead,
+    you can call QWidget::setFixedSize() on the label, with
+    QLabel::sizeHint() as the argument, whenever you change the
+    contents of the QLabel.
+
+    See also \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions}
+    for a list of QLabel virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QLayout
+
+    In Qt 4, margins are always handled by layouts; there is no
+    QLayout::setSupportsMargin() function anymore.
+
+    The deleteAllItems() function is now only available if
+    \c QT3_SUPPORT is defined. If you maintain a QList of layout
+    items, you can use qDeleteAll() to remove all the items in one
+    go.
+
+    In Qt 3, it was possible to change the resizing behavior for layouts
+    in top-level widgets by adjusting the layout's \c resizeMode property.
+    In Qt 4, this property has been replaced by the QLayout::sizeConstraint
+    property which provides more control over how the layout behaves when
+    resized.
+
+    See also the \l{#qlayoutiterator.section}{section on
+    QLayoutIterator} and the \l{#qglayoutiterator.section}{section on
+    QGLayoutIterator}.
+
+    \target qlayoutiterator.section
+    \section1 QLayoutIterator
+
+    The QLayoutIterator class is obsoleted in Qt 4. It is available
+    only if \c QT3_SUPPORT is defined. It can be replaced by the
+    QLayout::itemAt() and QLayout::takeAt() functions, which operate
+    on indexes.
+
+    \oldcode
+        QLayoutIterator it = layout()->iterator();
+        QLayoutItem *child;
+        while ((child = it.current()) != 0) {
+            if (child->widget() == myWidget) {
+                it.takeCurrent();
+                return;
+            ++it;
+        }
+    \newcode
+        int i = 0;
+        QLayoutItem *child;
+        while ((child = layout()->itemAt(i)) != 0) {
+            if (child->widget() == myWidget) {
+                layout()->takeAt(i);
+                return;
+            }
+            ++i;
+        }
+    \endcode
+
+    \section1 QLineEdit
+
+    See \l{#properties}{Properties} for a list of QLineEdit
+    properties in Qt 3 that have changed in Qt 4.
+
+    Note that QLineEdit in Qt 4 is no longer a subclass of QFrame.
+    If you need to visually style a line edit with a frame, we recommend
+    either using a QFrame as a container for a QLineEdit or customizing
+    the line edit with a \l{Qt Style Sheets}{style sheet}.
+
+    \section1 QListBox
+
+    The \c QListBox, \c QListBoxItem, \c QListBoxText, and \c
+    QListBoxPixmap classes have been renamed Q3ListBox,
+    Q3ListBoxItem, Q3ListBoxText, and Q3ListBoxPixmap and have been
+    moved to the Qt3Support library. New Qt applications
+    should use QListWidget or its base class QListView instead.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \section1 QListView
+
+    The \c QListView, \c QListViewItem, \c QCheckListItem, and \c
+    QListViewItemIterator classes have been renamed Q3ListView,
+    Q3ListViewItem, Q3CheckListItem, and Q3ListViewItemIterator, and
+    have been moved to the Qt3Support library. New Qt
+    applications should use one of the following four classes
+    instead: QTreeView or QTreeWidget for tree-like structures;
+    QListWidget or the new QListView class for one-dimensional lists.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \section1 QLocalFs
+
+    The \c QLocalFs class is no longer part of the public Qt API. It
+    has been renamed Q3LocalFs and moved to Qt3Support. Use QDir,
+    QFileInfo, or QFile instead.
+
+    \section1 QMainWindow
+
+    The QMainWindow class has been redesigned in Qt 4 to provide a
+    more modern look and feel and more flexibility. The API has
+    changed to reflect that. The old \c QMainWindow class has been
+    renamed Q3MainWindow and moved to Qt3Support. See the QMainWindow
+    class documentation for details.
+
+    \omit ### More detail \endomit
+
+    \target qmemarray.section
+    \section1 QMemArray<T>
+
+    QMemArray<T> has been moved to Qt3Support. It has been replaced
+    by the QVector<T> class.
+
+    The following table summarizes the API differences between the
+    two classes.
+
+    \table
+    \row \o QMemArray::assign(const QMemArray<T> &) \o QVector::operator=()
+    \row \o QMemArray::assign(const T *, uint) \o See remark below
+    \row \o QMemArray::duplicate(const QMemArray &) \o QVector::operator=()
+    \row \o QMemArray::duplicate(const T *, uint) \o See remark below
+    \row \o QMemArray::setRawData(const T *, uint) \o N/A
+    \row \o QMemArray::resetRawData(const T *, uint) \o N/A
+    \row \o QMemArray::find(const T &, uint) \o QVector::indexOf(const T &, int)
+    \row \o QMemArray::contains(const T &) \o QVector::count(const T &)
+    \row \o QMemArray::sort() \o \l qSort()
+    \row \o QMemArray::bsearch(const T &d) \o \l qBinaryFind()
+    \row \o QMemArray::at(uint) \o QVector::operator[]()
+    \row \o QMemArray::operator const T *() \o QVector::constData()
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  QMemArray::assign(const T *, uint) and QMemArray::duplicate(const T *, uint)
+        can be replaced by QVector::resize() and qCopy().
+
+        \oldcode
+        QMemArray<QSize> array;
+        ...
+        array.assign(data, size);
+        \newcode
+        QVector<QSize> vector;
+        ...
+        vector.resize(size);
+        qCopy(data, data + size, vector.begin());
+        \endcode
+
+    \o  QMemArray is an explicitly shared class, whereas QVector is
+        implicitly shared. See \l{Explicit Sharing} for more
+        information.
+    \endlist
+
+    \section1 QMenuBar
+
+    In Qt 3, QMenuBar inherited from QFrame and QMenuData; in Qt 4, it is
+    a direct subclass of QWidget. Applications that provided customized
+    menu bars will need to take advantage of the styling features described
+    in the \l{Qt Style Sheets} document.
+
+    It is not possible to add widgets to menu bars in Qt 4.
+
+    \section1 QMenuData
+
+    In Qt 4, the QMenu class provides a menu widget that can be used in all
+    the places where menus are used in an application. Unlike \c QMenuData,
+    QMenu is designed around the concept of actions, provided by the QAction
+    class, instead of the identifiers used in Qt 3.
+
+    In Qt 3, it was possible to insert widgets directly into menus by using
+    a specific \c QMenuData::insertItem() overload. In Qt 4.2 and later,
+    the QWidgetAction class can be used to wrap widgets for use in Qt 4's
+    action-based APIs.
+
+    \section1 QMessageBox
+
+    The QMessageBox::iconPixmap() function used to return a "const
+    QPixmap *". In Qt 4, it returns a QPixmap.
+
+    \section1 QMimeSourceFactory
+
+    The \c QMimeSourceFactory has been renamed Q3MimeSourceFactory
+    and moved to the Qt3Support library. New Qt applications should
+    use Qt 4's \l{Resource System} instead.
+
+    \section1 QMovie
+
+    The QMovie API has been revised in Qt 4 to make it more
+    consistent with the other Qt classes (notably QImageReader). The
+    table below summarizes the changes.
+
+    \table
+    \header \o Qt 3 function \o Qt 4 equivalent
+    \row \o QMovie::connectResize() \o Connect to QMovie::resized()
+    \row \o QMovie::connectStatus() \o Connect to QMovie::stateChanged()
+    \row \o QMovie::connectUpdate() \o Connect to QMovie::updated()
+    \row \o QMovie::disconnectResize() \o Disconnect from QMovie::resized()
+    \row \o QMovie::disconnectStatus() \o Disconnect from QMovie::stateChanged()
+    \row \o QMovie::disconnectUpdate() \o Disconnect from QMovie::updated()
+    \row \o QMovie::finished() \o Use QMovie::state() instead
+    \row \o QMovie::frameImage() \o Use QMovie::currentImage() instead
+    \row \o QMovie::frameNumber() \o Use QMovie::currentFrameNumber() instead
+    \row \o QMovie::framePixmap() \o Use QMovie::currentPixmap() instead
+    \row \o QMovie::getValidRect() \o Use frameRect() instead
+    \row \o QMovie::isNull() \o Use QMovie::isValid() instead
+    \row \o QMovie::pause() \o Use QMovie::setPaused(true) instead
+    \row \o QMovie::paused() \o Use QMovie::state() instead
+    \row \o QMovie::pushData() \o N/A
+    \row \o QMovie::pushSpace() \o N/A
+    \row \o QMovie::restart() \o Use QMovie::jumpToFrame(0) instead
+    \row \o QMovie::running() \o Use QMovie::state() instead
+    \row \o QMovie::step() \o Use QMovie::jumpToFrame() and QMovie::setPaused() instead
+    \row \o QMovie::step() \o Use QMovie::jumpToNextFrame() instead
+    \row \o QMovie::steps() \o Use QMovie::currentFrameNumber() and QMovie::frameCount() instead
+    \row \o QMovie::unpause() \o Use QMovie::setPaused(false) instead
+    \endtable
+
+    \section1 QMultiLineEdit
+
+    The \c QMultiLineEdit class in Qt 3 was a convenience QTextEdit
+    subclass that provided an interface compatible with Qt 2's
+    QMultiLineEdit class. In Qt 4, it is called Q3MultiLineEdit, it
+    inherits Q3TextEdit, and it is part of Qt3Support. Use QTextEdit
+    in new code.
+
+    \target qnetworkprotocol.section
+    \section1 QNetworkProtocol
+
+    The QNetworkProtocol, QNetworkProtocolFactoryBase,
+    QNetworkProtocolFactory<T>, and QNetworkOperation classes are no
+    longer part of the public Qt API. They have been renamed
+    Q3NetworkProtocol, Q3NetworkProtocolFactoryBase,
+    Q3NetworkProtocolFactory<T>, and Q3NetworkOperation and have been
+    moved to the Qt3Support library.
+
+    In Qt 4 applications, you can use classes like QFtp and QHttp
+    directly to perform file-related actions on a remote host.
+
+    \section1 QObject
+
+    QObject::children() now returns a QObjectList instead of a
+    pointer to a QObjectList. See also the comments on QObjectList
+    below.
+
+    Use QObject::findChildren() (or qFindChildren() if you need MSVC 6
+    compatibility) instead of QObject::queryList(). For example:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 18
+
+    QObject::killTimers() has been removed because it was unsafe to
+    use in subclass. (A subclass normally doesn't know whether the
+    base class uses timers or not.)
+
+    The \c QObject::name property has been renamed
+    QObject::objectName.
+
+    \c QObject::objectTrees() has been removed. If you are primarly
+    interested in widgets, use QApplication::allWidgets() or
+    QApplication::topLevelWidgets().
+
+    \section1 QObjectDictionary
+
+    The QObjectDictionary class is a synonym for
+    QAsciiDict<QMetaObject>. See the \l{#qasciidict.section}{section
+    on QAsciiDict<T>}.
+
+    \section1 QObjectList
+
+    In Qt 3, the QObjectList class was a typedef for
+    QPtrList<QObject>. In Qt 4, it is a typedef for QList<QObject *>.
+    See the \l{#qptrlist.section}{section on QPtrList<T>}.
+
+    \section1 QPaintDevice
+
+    To reimplement painter backends one previously needed to reimplement
+    the virtual function QPaintDevice::cmd(). This function is taken out
+    and should is replaced with the function QPaintDevice::paintEngine()
+    and the abstract class QPaintEngine. QPaintEngine provides virtual
+    functions for all drawing operations that can be performed on a
+    painter backend.
+
+    bitBlt() and copyBlt() are now only compatibility functions. Use
+    QPainter::drawPixmap() instead.
+
+    \section1 QPaintDeviceMetrics
+
+    All functions that used to be provided by the \c
+    QPaintDeviceMetrics class have now been moved to QPaintDevice.
+
+    \oldcode
+        QPaintDeviceMetrics metrics(widget);
+        int deviceDepth = metrics.depth();
+    \newcode
+        int deviceDepth = widget->depth();
+    \endcode
+
+    For compatibility, the old \c QPaintDeviceMetrics class has been
+    renamed Q3PaintDeviceMetrics and moved to Qt3Support.
+
+    \section1 QPainter
+
+    The QPainter class has undergone some changes in Qt 4 because of
+    the way rectangles are drawn. In Qt 4, the result of drawing a
+    QRect with a pen width of 1 pixel is 1 pixel wider and 1 pixel
+    taller than in Qt 3.
+
+    For compatibility, we provide a Q3Painter class in Qt3Support
+    that provides the old semantics. See the Q3Painter documentation
+    for details and for the reasons why we had to make this change.
+
+    The \l{http://doc.trolltech.com/3.3/qpainter.html#CoordinateMode-enum}{QPainter::CoordinateMode}
+    enum has been removed in Qt 4. All clipping
+    operations are now defined using logical coordinates and are subject
+    to transformation operations.
+
+    The
+    \l{http://doc.trolltech.com/3.3/qpainter.html#RasterOP-enum}{QPainter::RasterOP}
+    enum has been replaced with QPainter::CompositionMode.
+
+    \section1 QPicture
+
+    In Qt 3, a QPicture could be saved in the SVG file format. In Qt
+    4, the SVG support is separated into the QtSvg module, which
+    provides classes for \e displaying the contents of SVG files. Qt 4
+    does not currently support saving of pictures in this format, but
+    it can be achieved using the Q3Picture compatibility class.
+
+    \section1 QPixmap
+
+    The mask() function has been changed to return a reference to a QBitmap
+    rather than a pointer. As a result, it is no longer possible simply to
+    test for a null pointer when determining whether a pixmap has a mask.
+    Instead, you need to explicitly test whether the mask bitmap is null or
+    not.
+
+    \oldcode
+        if (pixmap.mask())
+            widget->setMask(*pixmap.mask());
+    \newcode
+        if (!pixmap.mask().isNull())
+            widget->setMask(pixmap.mask());
+    \endcode
+
+    The \c QPixmap::setOptimization() and \c QPixmap::setDefaultOptimization()
+    mechanism is no longer available in Qt 4.
+
+\omit
+    QPixmap::fromMimeSource(const QString &) -> qPixmapFromMimeSource(const QString &)
+\endomit
+
+    \section1 QPointArray
+
+    The \c QPointArray class has been renamed QPolygon in Qt 4 and
+    has undergone significant changes. In Qt 3, \c QPointArray
+    inherited from QMemArray<QPoint>. In Qt 4, QPolygon inherits from
+    QVector<QPoint>. Everything mentioned in the
+    \l{#qmemarray.section}{section on QMemArray<T>} apply for
+    QPointArray as well.
+
+    The Qt3Support library contains a Q3PointArray class
+    that inherits from QPolygon and provides a few functions that
+    existed in \c QPointArray but no longer exist in QPolygon. These
+    functions include Q3PointArray::makeArc(),
+    Q3PointArray::makeEllipse(), and Q3PointArray::cubicBezier().
+    In Qt 4, we recommend that you use QPainterPath for representing
+    arcs, ellipses, and Bezier curves, rather than QPolygon.
+
+    The QPolygon::setPoints() and QPolygon::putPoints() functions
+    return \c void in Qt 4. The corresponding Qt 3 functions returned
+    a \c bool indicating whether the array was successfully resized
+    or not. This can now be checked by checking QPolygon::size()
+    after the call.
+
+\omit
+    X11 Specific:
+
+    ::appDisplay() -> QX11Info::display()
+    QPaintDevice::x11Display() -> QX11Info::display()
+    QPaintDevice::x11AppDisplay() -> QX11Info::display()
+    QPaintDevice::x11Screen() -> QX11Info::appScreen()
+    QPaintDevice::x11AppScreen() -> ???
+    QPaintDevice::x11Depth() -> QX11Info::appDepth()
+    QPaintDevice::x11ColorMap() -> QX11Info::appColorMap()
+    QPaintDevice::x11DefaultColorMap() -> ???
+    QPaintDevice::x11Visual() -> QX11Info::appVisual()
+    QPaintDevice::x11DefaultVisual() -> ???
+
+    QPaintDevice::x11AppDpiX() -> QX11Info::appDpiX()
+    QPaintDevice::x11AppDpiY() -> QX11Info::appDpiY()
+    QPaintDevice::x11SetAppDpiX() -> QX11Info::setAppDpiX()
+    QPaintDevice::x11SetAppDpiY() -> QX11Info::setAppDpiY()
+
+    QPaintDevice::x11AppDepth() -> ???
+    QPaintDevice::x11AppCells() -> ???
+    QPaintDevice::x11AppRootWindow() -> ???
+    QPaintDevice::x11AppColorMap() -> ???
+    QPaintDevice::x11AppDefaultColorMap() -> ???
+    QPaintDevice::x11AppVisual() -> ???
+    QPaintDevice::x11AppDefaultVisual() -> ???
+
+    End of X11 Specific
+\endomit
+
+    \section1 QPopupMenu
+
+    For most purposes, QPopupMenu has been replaced by QMenu in Qt
+    4. For compatibility with older applications, Q3PopupMenu provides
+    the old API and features that are specific to pop-up menus. Note
+    that, when using Q3PopupMenu, the menu's actions must be \l
+    {Q3Action}s.
+
+    In Qt 3, it was common practice to add entries to pop-up menus using the
+    insertItem() function, maintaining identifiers for future use; for
+    example, to dynamically change menu items.
+    In Qt 4, menu entries are completely represented
+    by actions for consistency with other user interface components, such as
+    toolbar buttons. Create new menus with the QMenu class, and use the
+    overloaded QMenu::addAction() functions to insert new entries.
+    If you need to manage a set of actions created for a particular menu,
+    we suggest that you construct a QActionGroup and add them to that.
+
+    The \l{Qt Examples#Main Windows}{Main Window examples} provided
+    show how to use Qt's action system to construct menus, toolbars, and other
+    common user interface elements.
+
+    \section1 QPrinter
+
+    The QPrinter class now expects printing to be set up from a
+    QPrintDialog.
+
+    \section1 QProcess
+
+    The QProcess class has undergone major improvements in Qt 4. It
+    now inherits QIODevice, which makes it possible to combine
+    QProcess with a QTextStream or a QDataStream.
+
+    The old \c QProcess class has been renamed Q3Process and moved to
+    the Qt3Support library.
+
+    \section1 QProgressBar
+
+    The QProgressBar API has been significantly improved in Qt 4. The
+    old \c QProgressBar API is available as Q3ProgressBar in the
+    Qt3Support library.
+
+    \section1 QProgressDialog
+
+    The QProgressDialog API has been significantly improved in Qt 4.
+    The old \c QProgressDialog API is available as Q3ProgressDialog
+    in the Qt3Support library.
+
+    See \l{#properties}{Properties} for a list of QProgressDialog
+    properties in Qt 3 that have changed in Qt 4.
+
+    \section1 QPtrCollection<T>
+
+    The \c QPtrCollection<T> abstract base class has been renamed
+    Q3PtrCollection<T> moved to the Qt3Support library.
+    There is no direct equivalent in Qt 4.
+
+    \omit
+    ###
+    The QPtrCollection entry is unsatisfactory. The xref is missing
+    its list and saying "no direct equivalent" with so suggestions
+    seems feeble.
+    \endomit
+
+    See \l{Generic Containers} for a list of Qt 4 containers.
+
+    \section1 QPtrDict<T>
+
+    \c QPtrDict<T> and \c QPtrDictIterator<T> have been renamed
+    Q3PtrDict<T> and Q3PtrDictIterator<T> and have been moved to the
+    Qt3Support library. They have been replaced by the
+    more modern QHash<Key, T> and QMultiHash<Key, T> classes and
+    their associated iterator classes.
+
+    When porting old code that uses Q3PtrDict<T> to Qt 4, there are
+    four classes that you can use:
+
+    \list
+    \o QMultiHash<void *, T *>
+    \o QMultiHash<void *, T>
+    \o QHash<void *, T *>
+    \o QHash<void *, T>
+    \endlist
+
+    (You can naturally use other types than \c{void *} for the key
+    type, e.g. \c{QWidget *}.)
+
+    To port Q3PtrDict<T> to Qt 4, read the \l{#qdict.section}{section
+    on QDict<T>}, mentally substituting \c{void *} for QString.
+
+    \target qptrlist.section
+    \section1 QPtrList<T>
+
+    QPtrList<T>, QPtrListIterator<T>, and QPtrListStdIterator<T> have
+    been moved to the Qt3Support library. They have been
+    replaced by the more modern QList and QLinkedList classes and
+    their associated iterator classes.
+
+    When porting to Qt 4, you have the choice of using QList<T> or
+    QLinkedList<T> as alternatives to QValueList<T>. QList<T> has an
+    index-based API and provides very fast random access
+    (QList::operator[]), whereas QLinkedList<T> has an iterator-based
+    API.
+
+    The following table summarizes the API differences between
+    QPtrList<T> and QList<T *>:
+
+    \table
+    \header \o QPtrList function \o QList equivalent
+    \row \o QPtrList::contains(const T *) \o QList::count(T *)
+    \row \o QPtrList::containsRef(const T *) \o QList::count(T *)
+    \row \o QPtrList::find(const T *) \o See remark below
+    \row \o QPtrList::findRef(const T *) \o See remark below
+    \row \o QPtrList::getFirst() \o QList::first()
+    \row \o QPtrList::getLast() \o QList::last()
+    \row \o QPtrList::inSort(const T *) \o N/A
+    \row \o QPtrList::remove(const T *) \o QList::removeAll(T *)
+    \row \o QPtrList::remove(uint) \o QList::removeAt(int)
+    \row \o QPtrList::removeNode(QLNode *) \o N/A
+    \row \o QPtrList::removeRef(const T *) \o QList::removeAll(T *)
+    \row \o QPtrList::sort() \o See remark below
+    \row \o QPtrList::takeNode(QLNode *) \o N/A
+    \row \o QPtrList::toVector(QGVector *) \o See remark below
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  QPtrList::toVector(QGVector *) can be replaced by
+        QVector::resize() and qCopy().
+
+        \oldcode
+        QPtrList<QWidget> list;
+        ...
+        QPtrVector<QWidget> vector;
+        list.toVector(&vector);
+        \newcode
+        QList<QWidget *> list;
+        ...
+        QVector<QWidget *> vector;
+        vector.resize(list.size());
+        qCopy(list.begin(), list.end(), vector.begin());
+        \endcode
+
+    \o  QPtrList::sort() relied on the virtual comparedItems() to
+        sort items. In Qt 4, you can use \l qSort() instead and pass
+        your "compare item" function as an argument.
+
+    \o  QPtrList::find(const T *) returns an iterator, whereas
+        QList::indexOf(T *) returns an index. To convert an index
+        into an iterator, add the index to QList::begin().
+
+    \o  QPtrList::removeFirst() and QPtrList::removeLast() return a \c
+        bool that indicates whether the element was removed or not.
+        The corresponding QList functions return \c void. You can
+        achieve the same result by calling QList::isEmpty() before
+        attempting to remove an item.
+    \endlist
+
+    If you use QPtrList's auto-delete feature (by calling
+    QPtrList::setAutoDelete(true)), you need to do some more work.
+    You have two options: Either you call \c delete yourself whenever
+    you remove an item from the container, or you can use QList<T>
+    instead of QList<T *> (i.e. store values directly instead of
+    pointers to values). Here, we'll see when to call \c delete.
+
+    \omit
+    (See \l{What's Wrong with Auto-Delete} for an explanation of why
+    the Qt 4 containers don't offer that feature.)
+    \endomit
+
+    The following table summarizes the idioms that you need to watch
+    out for if you want to call \c delete yourself.
+
+    \table
+    \header \o QPtrList idiom \o QList idiom
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 19
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 20
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 21
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 22
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 23
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 24
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 25
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 26
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 27
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 28
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 29
+        (removes the current item)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 30
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 31
+
+        (also called from QPtrList's destructor)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 32
+
+        In 99% of cases, the following idiom also works:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 33
+
+        However, it may lead to crashes if \c list is referenced from
+        the value type's destructor, because \c list contains
+        dangling pointers until clear() is called.
+    \endtable
+
+    Be aware that QPtrList's destructor automatically calls clear().
+    If you have a QPtrList data member in a custom class and use the
+    auto-delete feature, you will need to call \c delete on all the
+    items in the container from your class destructor to avoid a
+    memory leak.
+
+    QPtrList had the concept of a "current item", which could be used
+    for traversing the list without using an iterator. When porting
+    to Qt 4, you can use the Java-style QListIterator<T *> (or
+    QMutableListIterator<T *>) class instead. The following table
+    summarizes the API differences:
+
+    \table
+    \header \o QPtrList function \o QListIterator equivalent
+    \row \o QPtrList::at() \o N/A
+    \row \o QPtrList::current() \o QMutableListIterator::value()
+    \row \o QPtrList::currentNode() \o N/A
+    \row \o QPtrList::findNext(const T *) \o QListIterator::findNext(const T *)
+    \row \o QPtrList::findNextRef(const T *) \o QListIterator::findNext(const T *)
+    \row \o QPtrList::first() \o QPtrList::toFront()
+    \row \o QPtrList::last() \o QPtrList::toBack()
+    \row \o QPtrList::next() \o QPtrList::next()
+    \row \o QPtrList::prev() \o QPtrList::previous()
+    \row \o QPtrList::remove() \o QMutableListIterator::remove()
+    \row \o QPtrList::take() \o QMutableListIterator::remove()
+    \endtable
+
+    Be aware that QListIterator has a different way of iterating than
+    QPtrList. A typical loop with QPtrList looks like this:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 34
+
+    Here's the equivalent QListIterator loop:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 35
+
+    Finally, QPtrListIterator<T> must also be ported. There are no
+    fewer than four iterator classes that can be used as a
+    replacement: QList::const_iterator, QList::iterator,
+    QListIterator, and QMutableListIterator. The most straightforward
+    class to use when porting is QMutableListIterator<T *> (if you
+    modify the list through the iterator) or QListIterator<T *> (if
+    you don't). The following table summarizes the API differences:
+
+    \table
+    \header \o QPtrListIterator function \o Qt 4 equivalent
+    \row \o QPtrListIterator::atFirst() \o !QListIterator::hasPrevious() (notice the \c{!})
+    \row \o QPtrListIterator::atLast() \o !QListIterator::hasNext() (notice the \c{!})
+    \row \o QPtrListIterator::count() \o QList::count() or QList::size()
+    \row \o QPtrListIterator::current() \o QMutableListIterator::value()
+    \row \o QPtrListIterator::isEmpty() \o QList::isEmpty()
+    \row \o QPtrListIterator::toFirst() \o QListIterator::toFront()
+    \row \o QPtrListIterator::toLast() \o QListIterator::toBack()
+    \row \o QPtrListIterator::operator() \o QMutableListIterator::value()
+    \row \o QPtrListIterator::operator*() \o QMutableListIterator::value()
+    \endtable
+
+    Again, be aware that QListIterator has a different way of
+    iterating than QPtrList. A typical loop with QPtrList looks like
+    this:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 36
+
+    Here's the equivalent QListIterator loop:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 37
+
+    Finally, QPtrListStdIterator<T> must also be ported. This is
+    easy, because QList also provides STL-style iterators
+    (QList::iterator and QList::const_iterator).
+
+    \section1 QPtrQueue<T>
+
+    QPtrQueue has been moved to the Qt3Support library.
+    It has been replaced by the more modern QQueue class.
+
+    The following table summarizes the differences between
+    QPtrQueue<T> and QQueue<T *>:
+
+    \table
+    \header \o QPtrQueue function \o QQueue equivalent
+    \row \o QPtrQueue::autoDelete() \o See discussion below
+    \row \o QPtrQueue::count() \o QQueue::count() or QQueue::size() (equivalent)
+    \row \o QPtrQueue::current() \o QQueue::head()
+    \row \o QPtrQueue::remove() \o QQueue::dequeue()
+    \row \o QPtrQueue::setAutoDelete() \o See discussion below
+    \endtable
+
+    If you use QPtrQueue's auto-delete feature (by calling
+    QPtrQueue::setAutoDelete(true)), you need to do some more work.
+    You have two options: Either you call \c delete yourself whenever
+    you remove an item from the container, or you can use QQueue<T>
+    instead of QQueue<T *> (i.e. store values directly instead of
+    pointers to values). Here, we will show when to call \c delete.
+
+    \omit
+    (See \l{What's Wrong with Auto-Delete} for an explanation of why
+    the Qt 4 containers don't offer that feature.)
+    \endomit
+
+    \table
+    \header \o QPtrQueue idiom \o QQueue idiom
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 38
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 39
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 40
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 41
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 42
+
+        (also called from QPtrQueue's destructor)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 43
+
+        In 99% of cases, the following idiom also works:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 44
+
+        However, it may lead to crashes if \c queue is referenced
+        from the value type's destructor, because \c queue contains
+        dangling pointers until clear() is called.
+    \endtable
+
+    \section1 QPtrStack<T>
+
+    QPtrStack has been moved to the Qt3Support library.
+    It has been replaced by the more modern QStack class.
+
+    The following table summarizes the differences between
+    QPtrStack<T> and QStack<T *>:
+
+    \table
+    \header \o QPtrStack function \o QStack equivalent
+    \row \o QPtrStack::autoDelete() \o See discussion below
+    \row \o QPtrStack::count() \o QStack::count() or QStack::size() (equivalent)
+    \row \o QPtrStack::current() \o QStack::top()
+    \row \o QPtrStack::remove() \o QStack::pop()
+    \row \o QPtrStack::setAutoDelete() \o See discussion below
+    \endtable
+
+    If you use QPtrStack's auto-delete feature (by calling
+    QPtrStack::setAutoDelete(true)), you need to do some more work.
+    You have two options: Either you call \c delete yourself whenever
+    you remove an item from the container, or you can use QStack<T>
+    instead of QStack<T *> (i.e. store values directly instead of
+    pointers to values). Here, we will show when to call \c delete.
+
+    \omit
+    (See \l{What's Wrong with Auto-Delete} for an explanation of why
+    the Qt 4 containers don't offer that feature.)
+    \endomit
+
+    \table
+    \header \o QPtrStack idiom \o QStack idiom
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 45
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 46
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 47
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 48
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 49
+
+        (also called from QPtrStack's destructor)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 50
+
+        In 99% of cases, the following idiom also works:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 51
+
+        However, it may lead to crashes if \c stack is referenced
+        from the value type's destructor, because \c stack contains
+        dangling pointers until clear() is called.
+    \endtable
+
+    \section1 QPtrVector<T>
+
+    QPtrVector<T> has been moved to Qt3Support. It has been replaced
+    by the more modern QVector class.
+
+    When porting to Qt 4, you can use QVector<T *> as an alternative
+    to QPtrVector<T>. The APIs of QPtrVector<T> and QVector<T *> are
+    somewhat similar. The main issue is that QPtrVector supports
+    auto-delete whereas QVector doesn't.
+
+    \omit
+    (See \l{What's Wrong with Auto-Delete} for an explanation of why
+    the Qt 4 containers don't offer that feature.)
+    \endomit
+
+    The following table summarizes the API differences between the
+    two classes:
+
+    \table
+    \header \o QPtrVector function \o QVector equivalent
+    \row \o QPtrVector::autoDelete() \o See discussion below
+    \row \o QPtrVector::bsearch(const T *) \o \l qBinaryFind()
+    \row \o QPtrVector::contains(const T *) \o QVector::count(T *)
+    \row \o QPtrVector::containsRef(const T *) \o QVector::count(T *)
+    \row \o QPtrVector::count() \o See remark below
+    \row \o QPtrVector::insert(uint, T *) \o See remark below
+    \row \o QPtrVector::isNull() \o N/A
+    \row \o QPtrVector::remove(uint) \o See remark below
+    \row \o QPtrVector::setAutoDelete() \o See discussion below
+    \row \o QPtrVector::sort() \o \l qSort()
+    \row \o QPtrVector::take(uint) \o See remark below
+    \row \o QPtrVector::toList(QGList *) \o QList::QList(const QVector &)
+    \endtable
+
+    Remarks:
+
+    \list 1
+    \o  QPtrVector::insert(uint, T *) sets an item to store a certain
+        pointer value. This is \e not the same as QVector::insert(int, T *),
+        which creates space for the item by moving following items by
+        one position. Use \c{vect[i] = ptr} to set a QVector item to
+        a particular value.
+    \o  QPtrVector::remove(uint) sets an item to be 0. This is \e not
+        the same as QVector::removeAt(int), which entirely erases the
+        item, reducing the size of the vector. Use \c{vect[i] = 0} to
+        set a QVector item to 0.
+    \o  Likewise, QPtrVector::take(uint) sets an item to be 0 and
+        returns the previous value of the item. Again, this is easy to
+        achieve using QVector::operator[]().
+    \o  QPtrVector::count() returns the number of non-null items in
+        the vector, whereas QVector::count() (like QVector::size())
+        returns the number of items (null or non-null) in the vector.
+        Fortunately, it's not too hard to simulate QPtrVector::count().
+
+        \oldcode
+        int numValidItems = vect.count();
+        \newcode
+        int numValidItems = vect.size() - vect.count(0);
+        \endcode
+    \endlist
+
+    If you use QVector's auto-delete feature (by calling
+    QVector::setAutoDelete(true)), you need to do some more work. You
+    have two options: Either you call \c delete yourself whenever you
+    remove an item from the container, or you use QVector<T> instead
+    of QVector<T *> (i.e. store values directly instead of pointers
+    to values). Here, we'll see when to call \c delete.
+
+    The following table summarizes the idioms that you need to watch
+    out for if you want to call \c delete yourself.
+
+    \table
+    \header \o QPtrVector idiom \o QVector idiom
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 52
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 53
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 54
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 55
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 56
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 57
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 58
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 59
+    \row
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 60
+
+        (also called from QPtrVector's destructor)
+
+        \o
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 61
+
+        In 99% of cases, the following idiom also works:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 62
+
+        However, it may lead to crashes if \c vect is referenced from
+        the value type's destructor, because \c vect contains
+        dangling pointers until clear() is called.
+    \endtable
+
+    Be aware that QPtrVector's destructor automatically calls
+    clear(). If you have a QPtrVector data member in a custom class
+    and use the auto-delete feature, you will need to call \c delete
+    on all the items in the container from your class destructor to
+    avoid a memory leak.
+
+    \section1 QPushButton
+
+    See \l{#properties}{Properties} for a list of QPushButton
+    properties in Qt 3 that have changed in Qt 4.
+
+    \section1 QRangeControl
+
+    In Qt 3, various "range control" widgets (QDial, QScrollBar,
+    QSlider, and QSpin) inherited from both QWidget and
+    \c QRangeControl.
+
+    In Qt 4, \c QRangeControl has been replaced with the new
+    QAbstractSlider and QAbstractSpinBox classes, which inherit from
+    QWidget and provides similar functionality. Apart from eliminating
+    unnecessary multiple inheritance, the new design allows
+    QAbstractSlider to provide signals, slots, and properties.
+
+    The old \c QRangeControl class has been renamed Q3RangeControl
+    and moved to the Qt3Support library, together with
+    the (undocumented) \c QSpinWidget class.
+
+    If you use \c QRangeControl as a base class in your application,
+    you can switch to use QAbstractSlider or QAbstractSpinBox instead.
+
+    \oldcode
+        class VolumeControl : public QWidget, public QRangeControl
+        {
+            ...
+        protected:
+            void valueChange() {
+                update();
+                emit valueChanged(value());
+            }
+            void rangeChange() {
+                update();
+            }
+            void stepChange() {
+                update();
+            }
+        };
+    \newcode
+        class VolumeControl : public QAbstractSlider
+        {
+            ...
+        protected:
+            void sliderChange(SliderChange change) {
+                update();
+                if (change == SliderValueChange)
+                    emit valueChanged(value());
+            }
+        };
+    \endcode
+
+    \section1 QRegExp
+
+    The search() and searchRev() functions have been renamed to indexIn()
+    and lastIndexIn() respectively.
+
+    \section1 QRegion
+
+    The following changes have been made to QRegion in Qt 4:
+
+    \list
+    \o  There is no longer any difference between a \e null region and
+        an \e empty region. Use isEmpty() in most places where you
+        would have used a null QRegion.
+    \o  QRegion::rects() used to return a QMemArray<QRect>. It now returns
+        a QVector<QRect>.
+    \endlist
+
+    \section1 QScrollBar
+
+    See \l{#properties}{Properties} for a list of QScrollBar
+    properties in Qt 3 that have changed in Qt 4.
+
+    \section1 QScrollView
+
+    The \c QScrollView class has been renamed Q3ScrollView and moved
+    to the Qt3Support library. It has been replaced by
+    the QAbstractScrollArea and QScrollArea classes.
+
+    Note that Qt 4 in general uses the QScrollArea::widget() function
+    where Qt 3 used QScrollView::viewport(). The rationale for this is
+    that it is no longer possible to draw directly on a scroll
+    area. The QScrollArea::widget() function returns the widget set on
+    the scroll area.
+
+    \c QScrollView was designed to work around the 16-bit limitation
+    on widget coordinates found on most window systems. In Qt 4, this
+    is done transparently for \e all widgets, so there is no longer a
+    need for such functionality in \c QScrollView. For that reason,
+    the new QAbstractScrollArea and QScrollArea classes are much more
+    lightweight, and concentrate on handling scroll bars.
+
+    \section1 QServerSocket
+
+    The \c QServerSocket class has been renamed Q3ServerSocket and
+    moved to the Qt3Support library. In Qt 4, it has been
+    replaced by QTcpServer.
+
+    With Q3ServerSocket, connections are accepted by reimplementing a
+    virtual function (Q3ServerSocket::newConnection()). With
+    QTcpServer, on the other hand, you don't need to subclass.
+    Instead, simply connect to the QTcpServer::newConnection()
+    signal.
+
+    \section1 QSettings
+
+    The QSettings class has been rewritten to be more robust and to
+    respect existing standards (e.g., the INI file format). The API
+    has also been extensively revised. The old API is still provided
+    when Qt 3 support is enabled.
+
+    Since the format and location of settings have changed between Qt
+    3 and Qt 4, the Qt 4 version of your application won't recognize
+    settings written using Qt 3.
+
+    \section1 QShared
+
+    The \c QShared class has been obsoleted by the more powerful
+    QSharedData and QSharedDataPointer as a means of creating custom
+    implicitly shared classes. It has been renamed Q3Shared moved to
+    the Qt3Support library.
+
+    An easy way of porting to Qt 4 is to include this class into your
+    project and to use it instead of \c QShared:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 63
+
+    If possible, we recommend that you use QSharedData and
+    QSharedDataPointer instead. They provide thread-safe reference
+    counting and handle all the reference counting behind the scenes,
+    eliminating the risks of forgetting to increment or decrement the
+    reference count.
+
+    \section1 QSignal
+
+    The QSignal class has been renamed to Q3Signal and moved to the
+    Qt3Support library. The preferred approach is to create your own
+    QObject subclass with a signal that has the desired signature.
+    Alternatively, you can call QMetaObject::invokeMethod() if you
+    want to invoke a slot.
+
+    \section1 QSimpleRichText
+
+    QSimpleRichText has been obsoleted by QTextDocument. It has
+    bene renamed Q3SimpleRichText and moved to the Qt3Support
+    library.
+
+    Previously, you would do the following with Q3SimpleRichText:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 63a
+
+    However, with QTextDocument, you use the following code instead:
+
+    \snippet doc/src/snippets/code/doc.src.porting4.qdoc 63b
+
+    See \l{Rich Text Processing} for an overview of the Qt 4 rich
+    text classes.
+
+    \section1 QSlider
+
+    The QSlider::sliderStart() and QSlider::sliderRect() functions
+    have been removed. You can retrieve this information using
+    QAbstractSlider::sliderPosition() and
+    QStyle::querySubControlMetrics(), respectively.
+
+    In addition, the direction of a vertical QSlider has changed,
+    i.e. the bottom is now the minimum, and the top the maximum. You
+    can use the QAbstractSlider::invertedAppearance property to
+    control this behavior.
+
+    See \l{#properties}{Properties} for a list of QSlider properties
+    in Qt 3 that have changed in Qt 4.
+
+    \section1 QSocket
+
+    The \c QSocket class has been renamed Q3Socket and moved to the
+    Qt3Support library. In Qt 4, it has been replaced by
+    the QTcpSocket class, which inherits most of its functionality
+    from QAbstractSocket.
+
+    \section1 QSocketDevice
+
+    The \c QSocketDevice class has been renamed Q3SocketDevice and
+    moved to the Qt3Support library. In Qt 4, there is no
+    direct equivalent to Q3SocketDevice:
+
+    \list
+    \o If you use Q3SocketDevice in a thread to perform blocking network
+    I/O (a technique encouraged by the \e{Qt Quarterly} article
+    \l{http://doc.trolltech.com/qq/qq09-networkthread.html}{Unblocking Networking}),
+    you can now use QTcpSocket, QFtp, or QHttp instead, which can now be used from
+    non-GUI threads.
+
+    \o If you use Q3SocketDevice for UDP, you can now use QUdpSocket instead.
+
+    \o If you use Q3SocketDevice for other uses, Qt 4 offers no
+    alternative right now. However, there is a \c QAbstractSocketEngine
+    internal class that offers a low-level socket API similar to
+    Q3SocketDevice. Should the need for such functionality arise in
+    Qt 4 applications, we will consider making this class public in a
+    future release.
+    \endlist
+
+    \section1 QSortedList
+
+    The QSortedList<T> class has been deprecated since Qt 3.0. In Qt
+    4, it has been moved to the Qt3Support library.
+
+    In new code, we recommend that you use QList<T> instead and use
+    \l qSort() to sort the items.
+
+    \section1 QSplitter
+
+    The function setResizeMode() has been moved into Qt3Support. Set
+    the stretch factor in the widget's size policy to get equivalent
+    functionality.
+
+    The obsolete function drawSplitter() has been removed. Use
+    QStyle::drawPrimitive() to acheive similar functionality.
+
+    \section1 QSpinBox
+
+    See \l{#properties}{Properties} for a list of QSpinBox properties
+    in Qt 3 that have changed in Qt 4.
+
+    \section1 QSqlCursor
+
+    The \c QSqlCursor class has been renamed Q3SqlCursor and moved to
+    the Qt3Support library. In Qt 4, you can use
+    QSqlQuery, QSqlQueryModel, or QSqlTableModel, depending on
+    whether you want a low-level or a high-level interface for
+    accessing databases.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlDatabase
+
+    QSqlDatabase is now a smart pointer that is passed around by
+    value. Simply replace all QSqlDatabase pointers by QSqlDatabase
+    objects.
+
+    \section1 QSqlEditorFactory
+
+    The \c QSqlEditorFactory class has been renamed
+    Q3SqlEditorFactory and moved to Qt3Support.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlError
+
+    The enum \c{Type} was renamed to \c{ErrorType}, The values were renamed as well:
+
+    \list
+    \o None - use NoError instead
+    \o Connection - use ConnectionError instead
+    \o Statement - use StatementError instead
+    \o Transaction - use TransactionError instead
+    \o Unknown - use UnknownError instead
+    \endlist
+
+    \section1 QSqlFieldInfo
+
+    The QSqlFieldInfo class has been moved to Qt3Support. Its
+    functionality is now provided by the QSqlField class.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlForm
+
+    The \c QSqlForm class has been renamed Q3SqlForm and moved to the
+    Qt3Support library.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlPropertyMap
+
+    The \c QSqlPropertyMap class has been renamed Q3SqlPropertyMap
+    moved to the Qt3Support library.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlQuery
+
+    QSqlQuery::prev() was renamed to QSqlQuery::previous(). There is
+    a function call for compatibility, but if you subclassed QSqlQuery,
+    you have to reimplement previous() instead of prev().
+
+    \section1 QSqlRecord
+
+    QSqlRecord behaves like a vector now, QSqlRecord::insert() will
+    actually insert a new field instead of replacing the existing
+    one.
+
+    \section1 QSqlRecordInfo
+
+    The QSqlRecordInfo class has been moved to Qt3Support. Its
+    functionality is now provided by the QSqlRecord class.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QSqlSelectCursor
+
+    The \c QSqlSelectCursor class has been renamed Q3SqlSelectCursor
+    and moved to the Qt3Support library.
+
+    See \l{QtSql Module} for an overview of the new SQL classes.
+
+    \section1 QStoredDrag
+
+    The \c QStoredDrag class has been renamed Q3StoredDrag and moved
+    to the Qt3Support library. In Qt 4, use QMimeData
+    instead and call QMimeData::setData() to set the data.
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QStr(I)List
+
+    The QStrList and QStrIList convenience classes have been
+    deprecated since Qt 2.0. In Qt 4, they have been moved to the
+    Qt3Support library. If you used any of these, we
+    recommend that you use QStringList or QList<QByteArray> instead.
+
+    \section1 QStr(I)Vec
+
+    The QStrVec and QStrIVec convenience classes have been deprecated
+    since Qt 2.0. In Qt 4, they have been moved to Qt3Support. If you
+    used any of these, we recommend that you use QStringList or
+    QList<QByteArray> instead.
+
+    \section1 QString
+
+    Here are the main issues to be aware of when porting QString to
+    Qt 4:
+
+    \list 1
+    \o  The QString::QString(QChar) constructor performed implicit
+        conversion in Qt 3. Now, you will need a cast to convert a
+        QChar to a QString.
+
+    \o  The QString::QString(const QByteArray &) constructor used to
+        stop at the first '\\0' it encountered, for compatibility
+        with Qt 1. This quirk has now been fixed; in Qt 4, the
+        resulting QString always has the same length as the
+        QByteArray that was passed to the constructor.
+
+    \o  The QString::null static constant has been deprecated in Qt
+        4. For compatibility, Qt 4 provides a QString::null symbol
+        that behaves more or less the same as the old constant. The
+        new idiom is to write QString() instead of QString::null, or
+        to call clear().
+
+        \oldcode
+            str1 = QString::null;
+            if (str2 == QString::null)
+                do_something(QString::null);
+        \newcode
+            str1.clear();
+            if (str2.isNull())
+                do_something(QString());
+        \endcode
+
+        In new code, we recommend that you don't rely on the
+        distinction between a null string and a (non-null) empty
+        string. See \l{Distinction Between Null and Empty Strings}
+        for details.
+
+    \o  QString::latin1() and QString::ascii() have been replaced
+        with QString::toLatin1() and QString::toAscii(), which return
+        a QByteArray instead of a (non-reentrant) \c{const char *}.
+        For consistency, QString::utf8() and QString::local8Bit(),
+        which already returned a QByteArray (actually a \c QCString),
+        have been renamed QString::toUtf8() and
+        QString::toLocal8Bit().
+
+        To obtain a \c{const char *} pointer to ASCII or Latin-1 data,
+        use QString::toAscii() or QString::toLatin1() to obtain a
+        QByteArray containing the data, then call QByteArray::constData()
+        to access the character data directly. Note that the pointer
+        returned by this function is only valid for the lifetime of the
+        byte array; you should avoid taking a pointer to the data
+        contained in temporary objects.
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 64
+
+        In the above example, the \c goodData pointer is valid for the lifetime
+        of the \c asciiData byte array. If you need to keep a copy of the data
+        in a non-Qt data structure, use standard C memory allocation and string
+        copying functions to do so \e before destroying the byte array.
+
+    \o  QString::at() returned a non-const reference, whereas the
+        new QString::at() returns a const value. Code like
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 65
+
+        will no longer compile. Instead, use QString::operator[]:
+
+        \snippet doc/src/snippets/code/doc.src.porting4.qdoc 66
+
+    \o  The QString::contains(\e x) function (where \e x is a
+        character or a string) has been renamed QString::count(\e x).
+        In addition, there now exists a set of QString::contains()
+        functions that returns a boolean value. Replace old calls to
+        contains() with either count() or contains(), depending on
+        whether you care about the specific number of occurrences of
+        a character in the string or only care about whether the
+        string contains that character or not.
+
+    \o  Many functions in QString had a \c bool parameter that
+        specified case sensitivity. In Qt 4, in the interest of code
+        readability and maintainability, the \c bool parameters have
+        been replaced by the Qt::CaseSensitivity enum, which can take
+        the values Qt::CaseSensitive and Qt::CaseInsensitive.
+
+        \oldcode
+            if (url.startsWith("http:", false))
+                ...
+        \newcode
+            if (url.startsWith("http:", Qt::CaseInsensitive))
+                ...
+        \endcode
+
+    \o  The QString::setExpand(uint, QChar) function, which already
+        was obsolete in Qt 3, is no longer available. Use
+        QString::operator[] instead.
+
+        \oldcode
+            str.setExpand(32, '$');
+        \newcode
+            str[32] = '$';
+        \endcode
+
+    \o  The \c QT_NO_ASCII_CAST and \c QT_NO_CAST_ASCII macros have
+        been renamed \c QT_NO_CAST_TO_ASCII and \c
+        QT_NO_CAST_FROM_ASCII, respectively.
+
+    \o  The QString::data() used to return the same as
+        QString::ascii(). It now returns a pointer to the Unicode
+        data stored in the QString object. Call QString::ascii() if
+        you want the old behavior.
+
+    \o  QString::arg() now converts two-digit place markers, allowing
+        up to 99 place markers to be used in any given string.
+
+    \o  Comparisons between QStrings and \c NULL in order to determine
+        whether strings are empty are no longer allowed.
+        Use \l{QString::}{isEmpty()} instead.
+
+    \endlist
+
+    \section1 QStringList
+
+    QStringList now inherits from QList<QString> and can no longer be
+    converted to a QValueList<QString>. Since QValueList inherits QList a
+    cast will work as expected.
+
+    This change implies some API incompatibilities for QStringList.
+    For example, at() returns the string, not an iterator. See the
+    \l{#qvaluelist.section}{section on QValueList} for details.
+
+    The static QStringList::split() function for splitting strings into
+    lists of smaller strings has been replaced by QString::split(),
+    which returns a QStringList.
+
+    \section1 QStyle
+
+    The QStyle API has been overhauled and improved. Most of the information on
+    why this change was done is described in \l{The Qt 4 Style API}{the QStyle overview}.
+
+    Since QStyle is mostly used internally by Qt's widgets and styles and since
+    it is not essential to the good functioning of an application, there is no
+    compatibility path. This means that we have changed many enums and
+    functions and the qt3to4 porting tool will not change much in your qstyle
+    code. To ease the pain, we list some of the major changes here.
+
+    QStyleOption has taken on a more central role and is no longer an optional
+    argument, please see the QStyleOption documentation for more information.
+
+    The QStyle::StyleFlags have been renamed QStyle::StateFlags and are now prefixed State_
+    instead of Style_, in addition the Style_ButtonDefault flag has moved to
+    QStyleOptionButton.
+
+    The QStyle::PrimitiveElement enumeration has undergone extensive change.
+    Some of the enums were moved to QStyle::ControlElement, some were removed
+    and all were renamed. This renaming is not done by the qt3to4 porting tool,
+    so you must do it yourself. The table below shows how things look
+    now.
+
+    \table
+    \header \o Old name \o New name \o Remark
+    \row \o \c PE_ButtonCommand             \o QStyle::PE_PanelButtonCommand
+    \row \o \c PE_ButtonDefault             \o QStyle::PE_FrameDefaultButton
+    \row \o \c PE_ButtonBevel               \o QStyle::PE_PanelButtonBevel
+    \row \o \c PE_ButtonTool                \o QStyle::PE_PanelButtonTool
+    \row \o \c PE_ButtonDropDown            \o QStyle::PE_IndicatorButtonDropDown
+    \row \o \c PE_FocusRect                 \o QStyle::PE_FrameFocusRect
+    \row \o \c PE_ArrowUp                   \o QStyle::PE_IndicatorArrowUp
+    \row \o \c PE_ArrowDown                 \o QStyle::PE_IndicatorArrowDown
+    \row \o \c PE_ArrowRight                \o QStyle::PE_IndicatorArrowRight
+    \row \o \c PE_ArrowLeft                 \o QStyle::PE_IndicatorArrowLeft
+    \row \o \c PE_SpinBoxUp                 \o QStyle::PE_IndicatorSpinUp
+    \row \o \c PE_SpinBoxDown               \o QStyle::PE_IndicatorSpinDown
+    \row \o \c PE_SpinBoxPlus               \o QStyle::PE_IndicatorSpinPlus
+    \row \o \c PE_SpinBoxMinus              \o QStyle::PE_IndicatorSpinMinus
+    \row \o \c PE_SpinBoxSlider             \o QStyle::CE_SpinBoxSlider \o uses QStyle::drawControl()
+    \row \o \c PE_Indicator                 \o QStyle::PE_IndicatorCheckBox
+    \row \o \c PE_IndicatorMask             \o N/A \o use QStyle::styleHint() to retrieve mask
+    \row \o \c PE_ExclusiveIndicator        \o QStyle::PE_IndicatorRadioButton
+    \row \o \c PE_ExclusiveIndicatorMask    \o N/A \o use QStyle::styleHint() to retrieve mask
+    \row \o \c PE_DockWindowHandle          \o QStyle::PE_IndicatorToolBarHandle
+    \row \o \c PE_DockWindowSeparator       \o QStyle::PE_Q3DockWindowSeparator
+    \row \o \c PE_DockWindowResizeHandle    \o QStyle::PE_IndicatorDockWindowResizeHandle
+    \row \o \c PE_DockWindowTitle           \o QStyle::CE_DockWindowTitle \o uses QStyle::drawControl()
+    \row \o \c PE_Splitter                  \o QStyle::CE_Splitter \o uses QStyle::drawControl()
+    \row \o \c PE_Panel                     \o QStyle::PE_Frame
+    \row \o \c PE_PanelMenu                 \o QStyle::PE_FrameMenu
+    \row \o \c PE_PanelMenuBar              \o QStyle::PE_PanelMenuBar
+    \row \o \c PE_PanelDockWindow           \o QStyle::PE_FrameDockWindow
+    \row \o \c PE_TabBarBase                \o QStyle::PE_FrameTabBarBase
+    \row \o \c PE_HeaderSection             \o QStyle::CE_HeaderSection \o uses QStyle::drawControl()
+    \row \o \c PE_HeaderArrow               \o QStyle::PE_IndicatorHeaderArrow
+    \row \o \c PE_StatusBarSection          \o QStyle::PE_FrameStatusBar
+    \row \o \c PE_Separator                 \o QStyle::PE_Q3Separator
+    \row \o \c PE_SizeGrip                  \o QStyle::CE_SizeGrip \o uses QStyle::drawControl()
+    \row \o \c PE_CheckMark                 \o QStyle::PE_IndicatorMenuCheckMark
+    \row \o \c PE_ScrollBarAddLine          \o QStyle::CE_ScrollBarAddLine \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarSubLine          \o QStyle::CE_ScrollBarSubLine \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarAddPage          \o QStyle::CE_ScrollBarAddPage \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarSubPage          \o QStyle::CE_ScrollBarSubPage \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarSlider           \o QStyle::CE_ScrollBarSlider  \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarFirst            \o QStyle::CE_ScrollBarFirst   \o uses QStyle::drawControl()
+    \row \o \c PE_ScrollBarLast             \o QStyle::CE_ScrollBarLast    \o uses QStyle::drawControl()
+    \row \o \c PE_ProgressBarChunk          \o QStyle::PE_IndicatorProgressChunk
+    \row \o \c PE_PanelLineEdit             \o QStyle::PE_FrameLineEdit
+    \row \o \c PE_PanelTabWidget            \o QStyle::PE_FrameTabWidget
+    \row \o \c PE_WindowFrame               \o QStyle::PE_FrameWindow
+    \row \o \c PE_CheckListController       \o QStyle::PE_Q3CheckListController
+    \row \o \c PE_CheckListIndicator        \o QStyle::PE_Q3CheckListIndicator
+    \row \o \c PE_CheckListExclusiveIndicato\o QStyle::PE_Q3CheckListExclusiveIndicator
+    \row \o \c PE_PanelGroupBox             \o QStyle::PE_FrameGroupBox
+    \row \o \c PE_TreeBranch                \o QStyle::PE_IndicatorBranch
+    \row \o \c PE_RubberBand                \o QStyle::CE_RubberBand \o uses QStyle::drawControl()
+    \row \o \c PE_PanelToolBar              \o QStyle::PE_PanelToolBar
+    \row \o \c PE_ToolBarHandle             \o QStyle::PE_IndicatorToolBarHandle
+    \row \o \c PE_ToolBarSeparator          \o QStyle::PE_IndicatorToolBarSeparator
+    \endtable
+
+    The QStyle::drawControlMask() and QStyle::drawComplexControlMask()
+    functions have been removed. They are replaced with a style hint.
+
+    The QStyle::drawItem() overloads that took both a pixmap and a string have
+    been removed. Use QStyle::drawItemText() and QStyle::drawItemPixmap() directly.
+
+    The QStyle::itemRect() overload that took both a pixmap and a string is also removed, use
+    either QStyle::itemTextRect() or QStyle::itemPixmapRect() instead.
+
+    \section1 QStyleSheet
+
+    The QStyleSheet and QStyleSheetItem classes have been renamed
+    Q3StyleSheet and Q3StyleSheetItem, and have been moved to the
+    Qt3Support library.
+
+    See \l{Rich Text Processing} for an overview of the Qt 4 rich
+    text classes, and \l{Qt Style Sheets} for a description of
+    CSS-like style sheet support in Qt 4.2 and above.
+
+    \section1 QSyntaxHighlighter
+
+    The \c QSyntaxHighlighter class from Qt 3 has been renamed
+    Q3SyntaxHighlighter and moved to the Qt3Support library. Since Qt
+    4.1, it has been replaced by a new QSyntaxHighlighter class based
+    on Qt 4's new rich text engine.
+
+    \section1 QTabBar
+
+    See \l{#properties}{Properties} for a list of QTabBar properties
+    in Qt 3 that have changed in Qt 4.
+
+    \section1 QTabDialog
+
+    The \c QTabDialog class is no longer part of the public Qt API.
+    It has been renamed Q3TabDialog and moved to Qt3Support. In Qt 4
+    applications, you can easily obtain the same result by combining
+    a QTabWidget with a QDialog and provide \l{QPushButton}s
+    yourself.
+
+    See also the \l{dialogs/tabdialog} example, which shows how to
+    implement tab dialogs in Qt 4.
+
+    \section1 QTabWidget
+
+    See \l{#properties}{Properties} for a list of QTabWidget
+    properties in Qt 3 that have changed in Qt 4.
+
+    \section1 QTable
+
+    The \c QTable, \c QTableItem, \c QComboTableItem, \c
+    QCheckTableItem, and \c QTableSelection classes have been renamed
+    Q3Table, Q3TableItem, Q3ComboTableItem, Q3CheckTableItem, and
+    Q3TableSelection and moved to the Qt3Support library.
+    New Qt applications should use the new QTableWidget or QTableView
+    class instead.
+
+    Some of these classes behave differently with respect to the way
+    they handle \c NULL pointers. For example, Q3TableItem::setPixmap()
+    no longer accepts \c NULL or 0 to indicate that the item should
+    contain a null pixmap; in this case, a null pixmap should be
+    constructed and passed explicitly to the function.
+
+    See \l{Model/View Programming} for an overview of the new item
+    view classes.
+
+    \section1 QTextCodec
+
+    The loadCharmap() and loadCharmapFromFile() functions are no longer
+    available in Qt 4. You need to create your own codec if you want to
+    create a codec based on a POSIX2 charmap definition.
+
+    \section1 QTextDrag
+
+    The \c QTextDrag class has been renamed Q3TextDrag and moved to
+    the Qt3Support library. In Qt 4, use QMimeData
+    instead and call QMimeData::setText() to set the data.
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QTextEdit
+
+    The old QTextEdit and QTextBrowser classes have been renamed
+    Q3TextEdit and Q3TextBrowser, and have been moved to Qt3Support.
+    The new QTextEdit and QTextBrowser have a somewhat different API.
+
+    The \c QTextEdit::setWrapPolicy() function has been renamed to \l{QTextEdit::setWordWrapMode()}{setWordWrapMode()} and the
+    \c QTextEdit::setWrapColumnOrWidth() function has been renamed to \l{QTextEdit::setLineWrapColumnOrWidth()}
+    {setLineWrapColumnOrWidth()}. The Q3TextEdit::setWrapPolicy() and Q3TextEdit::setWrapColumnOrWidth() still provide this
+    functionality in the Q3TextEdit class.
+
+
+    See \l{Rich Text Processing} for an overview of the Qt 4 rich
+    text classes.
+
+    \section1 QTextIStream
+
+    The QTextIStream convenience class is no longer provided in Qt 4. Use
+    QTextStream directly instead.
+
+    \section1 QTextOStream
+
+    The QTextOStream convenience class is no longer provided in Qt 4. Use
+    QTextStream directly instead.
+
+    \section1 QTextOStreamIterator
+
+    The undocumented \c QTextOStreamIterator class has been removed
+    from the Qt library. If you need it in your application, feel
+    free to copy the source code from the Qt 3 \c <qtl.h> header
+    file.
+
+    \section1 QTextStream
+
+    QTextStream has undergone a number of API and implementation enhancements,
+    and some of the changes affect QTextStream's behavior:
+
+    \list
+    \o QTextStream now uses buffered writing, which means that you need to
+       call QTextStream::flush(), or use the streaming manipulators \c endl or
+       \c flush if you need QTextStream to flush its write buffer. The stream is
+       flushed automatically if QTextStream is deleted or when the device is
+       closed.
+    \o QTextStream now uses buffered reading, so if you read a line from the
+       stream, QTextStream will read as much as it can from the device to
+       fill up its internal read buffer. This speeds up reading significantly,
+       but Qt 3 code that mixed QTextStream access and direct device access
+       may need to be updated.
+    \o While QTextStream in Qt 3 always translated end-of-line characters from
+       Windows style ("\\r\\n") to Unix style ("\\n") on Windows, QTextStream in
+       Qt 4 only does this on devices opened with the \c{QIODevice::Text} mode
+       (formerly \c{IO_Translate}).
+    \endlist
+
+    Note that when using a QTextStream on a QFile in Qt 4, calling
+    QIODevice::reset() on the QFile will not have the expected result
+    because QTextStream now buffers the file. Use the
+    QTextStream::seek() function instead.
+
+    \section1 QTextView
+
+    The \c QTextView class has been renamed Q3TextView and moved to the
+    Qt3Support library.
+
+    \section1 QTimeEdit
+
+    The QTimeEdit class in Qt 4 is a convenience class based on
+    QDateTimeEdit. The old class has been renamed Q3TimeEdit and moved
+    to the Qt3Support library.
+
+    See \l{Porting to Qt 4 - Virtual Functions}{Virtual Functions} for
+    a list of \c QTimeEdit virtual member functions in Qt 3 that are no
+    longer virtual in Qt 4.
+
+    \section1 QTimer
+
+    Windows restricts the granularity of timers, but starting with Qt 4,
+    we emulate a finer time resolution. On Windows XP we use the
+    multimedia timer API, which gives us 1 millisecond resolution for
+    QTimer.
+
+    Note that other versions of Windows have a lower timer resolution,
+    and that code relying on underlying system timer restrictions
+    encounters no such limitations using Qt 4 (e.g., setting an
+    interval of 0 millisecond results in Qt occupying all of the
+    processor time when no GUI events need processing).
+
+    \section1 QToolBar
+
+    The old \c QToolBar class, which worked with the old \c
+    QMainWindow and \c QDockArea classes and inherited from \c
+    QDockWindow, has been renamed Q3ToolBar and moved to
+    Qt3Support. Note that, when using Q3ToolBar, the toolbar's actions
+    must be \l {Q3Action}s.
+
+    Use the new QToolBar class in new applications.
+
+    \note \l{Q3ToolBar}'s
+    \l{Q3DockWindow::setHorizontallyStretchable()}{horizontallyStretchable}
+    property can be achieved in QToolBar with
+    \l{QWidget#Size Hints and Size Policies}{size policies}.
+
+    \section1 QToolButton
+
+    See \l{#properties}{Properties} for a list of QToolButton properties
+    in Qt 3 that have changed in Qt 4.
+
+    Note that many of the properties that could previously be set in
+    the constructor must now be set separately.
+
+    \section1 QToolTip
+
+    The QToolTip::setGloballyEnabled() function no longer exists.
+    Tooltips can be disabled by \l{QObject::installEventFilter()}{installing
+    an event filter} on qApp (the unique QApplication object) to block events
+    of type QEvent::ToolTip.
+
+    \section1 QUriDrag
+
+    The \c QUriDrag class has been renamed Q3UriDrag and moved to the
+    Qt3Support library. In Qt 4, use QMimeData instead
+    and call QMimeData::setUrl() to set the URL.
+
+    See \l{Porting to Qt 4 - Drag and Drop} for a comparison between
+    the drag and drop APIs in Qt 3 and Qt 4.
+
+    \section1 QUrl
+
+    The QUrl class has been rewritten from scratch in Qt 4 to be more
+    standard-compliant. The old QUrl class has been renamed Q3Url and
+    moved to the Qt3Support library.
+
+    The new QUrl class provides an extensive list of compatibility
+    functions to ease porting from Q3Url to QUrl. A few functions
+    require you to change your code:
+
+    \list
+    \o Q3Url::Q3Url(const Q3Url &, const QString &, bool) can be
+       simulated by combining the URLs manually (using
+       QString::operator+(), for example).
+    \o Q3Url::setEncodedPathAndQuery(const QString &) is replaced by
+       QUrl::setPath() and QUrl::setEncodedQuery().
+    \o Q3Url::encodedPathAndQuery() is replaced by QUrl::path() and
+       QUrl::encodedQuery().
+    \o Q3Url::isLocalFile() can be simulated by checking that
+       QUrl::protocol() is "file".
+    \o Q3Url::toString(bool, bool) is replaced by
+       QUrl::toString(int), where the \c int parameter specifies a
+       combination of \l{QUrl::FormattingOptions}{formatting
+       options}.
+    \endlist
+
+    \section1 QUrlOperator
+
+    The \c QUrlOperator class is no longer part of the public Qt API.
+    It has been renamed Q3UrlOperator and moved to Qt3Support.
+
+    In Qt 4 applications, you can use classes like QFtp and QHttp
+    directly to perform file-related actions on a remote host.
+
+    \target qvaluelist.section
+    \section1 QValueList<T>
+
+    The QValueList<T> class has been replaced by QList<T> and
+    QLinkedList<T> in Qt 4. As a help when porting older Qt
+    applications, the Qt3Support library contains a
+    QValueList<T> class implemented in terms of the new
+    QLinkedList<T>. Similarly, it contains QValueListIterator<T> and
+    QValueListConstIterator<T> classes implemented in terms of
+    QLinkedList<T>::iterator and QLinkedList<T>::const_iterator.
+
+    When porting to Qt 4, you have the choice of using QList<T> or
+    QLinkedList<T> as alternatives to QValueList<T>. QList<T> has an
+    index-based API and provides very fast random access
+    (QList::operator[]), whereas QLinkedList<T> has an iterator-based
+    API.
+
+    Here's a list of problem functions:
+
+    \list
+    \o  QValueList(const std::list<T> &) doesn't exist in QList or
+        QLinkedList. You can simulate it by calling
+        \l{QLinkedList::append()}{append()} in a loop.
+
+    \o  QValueList::insert(iterator, size_type, const T& x) doesn't
+        exist in QList or QLinkedList. Call
+        \l{QLinkedList::insert()}{insert()} repeatedly instead.
+
+    \o  QValueList::fromLast() doesn't exist in QList or QLinkedList. Use
+        QValueList::end() instead.
+
+        \oldcode
+        for (QValueList<T>::iterator i = list.fromLast(); i != list.begin(); --i)
+            do_something(*i);
+        \newcode
+        QLinkedList<T>::iterator i = list.end();
+        while (i != list.begin()) {
+            --i; // decrement i before using it
+            do_something(*i);
+        }
+        \endcode
+
+    \o  QValueList::append() and QValueList::prepend() return an
+        iterator to the inserted item. QList's and QLinkedList's
+        corresponding functions don't, but it's not a problem because
+        QValueList::prepend() always returns begin() and append()
+        always returns QValueList::end() - 1.
+
+    \o  QValueList::at(\e i) return an iterator to the item at index
+        \e i. This corresponds to QList::begin() + \e i.
+
+    \o  QValueList::contains(const T &) corresponds to
+        QList::count(const T &) and QLinkedList::count(const T &).
+    \endlist
+
+    \section1 QValueVector<T>
+
+    The QValueVector<T> class has been replaced by QVector<T> in Qt
+    4. As a help when porting older Qt applications, the Qt3Support
+    library contains a Q3ValueVector<T> class implemented in terms of
+    the new QVector<T>.
+
+    When porting from QValueVector<T> to QVector<T>, you might run
+    into the following incompatibilities:
+
+    \list
+    \o QValueVector(const std::vector<T> &) doesn't exist in QVector.
+       You can simulate it by calling QVector::append()} in a loop.
+    \o QValueVector::resize(int, const T &) doesn't exist in QVector.
+       If you want the new items to be initialized with a particular
+       value, use QVector::insert() instead.
+    \o QValueVector::at() on a non-const vector returns a non-const
+       reference. This corresponds to QVector::operator[]().
+    \o Both QValueVector::at() functions have an \e ok parameter of
+       type \c{bool *} that is set to true if the index is within
+       bounds. This functionality doesn't exist in QVector; instead,
+       check the index against QVector::size() yourself.
+    \endlist
+
+    See \l{Generic Containers} for an overview of the Qt 4 container
+    classes.
+
+    \section1 QVariant
+
+    Some changes to the rest of the Qt library have
+    implications on QVariant:
+
+    \list 1
+    \o The \c QVariant::ColorGroup enum value is defined only
+       if \c QT3_SUPPORT is defined.
+    \o The \c QVariant::IconSet enum value has been renamed
+       QVariant::Icon.
+    \o The \c QVariant::CString enum value is now a synonym for
+       QVariant::ByteArray.
+    \endlist
+
+    Also, the QVariant(bool, int) constructor has been replaced by QVariant(bool).
+    Old code like QVariant(true, 0) should be replaced with QVariant(true); otherwise,
+    the QVariant(int, void *) overload might accidentally be triggered.
+
+    \section1 QVBox
+
+    The \c QVBox class is now only available as Q3VBox in Qt 4. You
+    can achieve the same result as \c QVBox by creating a QWidget
+    with a vertical layout:
+
+    \oldcode
+    QVBox *vbox = new QVBox;
+    QPushButton *child1 = new QPushButton(vbox);
+    QPushButton *child2 = new QPushButton(vbox);
+    \newcode
+    QWidget *vbox = new QWidget;
+    QPushButton *child1 = new QPushButton;
+    QPushButton *child2 = new QPushButton;
+
+    QVBoxLayout *layout = new QVBoxLayout;
+    layout->addWidget(child1);
+    layout->addWidget(child2);
+    vbox->setLayout(layout);
+    \endcode
+
+    Note that child widgets are not automatically placed into the widget's
+    layout; you will need to manually add each widget to the QVBoxLayout.
+
+    \section1 QVGroupBox
+
+    The \c QVGroupBox class has been renamed Q3VGroupBox and moved to
+    the Qt3Support library.
+    Qt 4 does not provide a specific replacement class for \c QVGroupBox
+    since QGroupBox is designed to be a generic container widget. As a
+    result, you need to supply your own layout for any child widgets.
+
+    See \l{#QGroupBox} for more information about porting code that uses
+    group boxes.
+
+    \section1 QWhatsThis
+
+    The QWhatsThis class has been redesigned in Qt 4. The old \c
+    QWhatsThis class is available as Q3WhatsThis in Qt3Support.
+
+    \section1 QWidget
+
+    Widget background painting has been greatly improved, supporting
+    flicker-free updates and making it possible to have
+    semi-transparent widgets. This renders the following background
+    handling functions obsolete:
+
+    \list
+    \o QWidget::repaint(bool noErase) - the \c noErase boolean parameter is gone
+    \o QWidget::setBackgroundMode(BackgroundMode m)
+    \o QWidget::backgroundBrush() const
+    \o QWidget::setBackgroundPixmap(const QPixmap &pm)
+    \o QWidget::backgroundPixmap() const
+    \o QWidget::setBackgroundColor(const QColor &c)
+    \o QWidget::backgroundColor() const
+    \o QWidget::foregroundColor() const
+    \o QWidget::eraseColor() const
+    \o QWidget::setEraseColor(const QColor &c)
+    \o QWidget::erasePixmap() const
+    \o QWidget::setErasePixmap(const QPixmap &p)
+    \o QWidget::paletteForegroundColor()
+    \o QWidget::setPaletteForegroundColor(const QColor &c)
+    \o QWidget::paletteBackgroundColor()
+    \o QWidget::setPaletteBackgroundColor(const QColor &c)
+    \o QWidget::paletteBackgroundPixmap() const
+    \o QWidget::setPaletteBackgroundPixmap(const QPixmap &p)
+    \o QWidget::erase()
+    \o QWidget::erase(const QRect &r)
+    \o QWidget::setBackgroundOrigin( BackgroundOrigin )
+    \o QWidget::BackgroundOrigin backgroundOrigin() const
+    \o QWidget::backgroundOffset()
+    \endlist
+
+    A widget now receives change events in its QWidget::changeEvent()
+    handler. This makes the following virtual change handlers obsolete:
+
+    \list
+    \o QWidget::styleChange - use QEvent::StyleChange
+    \o QWidget::enabledChange - use QEvent::EnabledChange
+    \o QWidget::paletteChange - use QEvent::PaletteChange
+    \o QWidget::fontChange - use QEvent::FontChange
+    \o QWidget::windowActivationChange - use QEvent::ActivationChange
+    \o QWidget::languageChange - use QEvent::LanguageChange
+    \endlist
+
+    The following functions were slots, but are no more:
+    \list
+    \o QWidget::clearFocus()
+    \o QWidget::setMouseTracking()
+    \o QWidget::stackUnder(QWidget*)
+    \o QWidget::move(int x, int y)
+    \o QWidget::move(const QPoint &)
+    \o QWidget::resize(int w, int h)
+    \o QWidget::resize(const QSize &)
+    \o QWidget::setGeometry(int x, int y, int w, int h)
+    \o QWidget::setGeometry(const QRect &)
+    \o QWidget::adjustSize()
+    \o QWidget::update(int x, int y, int w, int h)
+    \o QWidget::update(const QRect&)
+    \o QWidget::repaint(bool erase)
+    \o QWidget::repaint(int x, int y, int w, int h, bool erase)
+    \o QWidget::repaint(const QRect &, bool erase)
+    \o QWidget::repaint(const QRegion &, bool erase)
+    \o QWidget::setCaption(const QString &)
+    \o QWidget::setIcon(const QPixmap &)
+    \o QWidget::setIconText(const QString &)
+    \endlist
+
+    The following functions were incorrectly marked as virtual:
+
+    \list
+    \o QWidget::close(bool alsoDelete)
+    \o QWidget::create(WId, bool, bool)
+    \o QWidget::destroy(bool)
+    \o QWidget::move(int x, int y)
+    \o QWidget::reparent(QWidget *parent, WFlags, const QPoint &, bool)
+    \o QWidget::resize(int w, int h)
+    \o QWidget::setAcceptDrops(bool on)
+    \o QWidget::setActiveWindow()
+    \o QWidget::setAutoMask(bool)
+    \o QWidget::setBackgroundColor(const QColor &)
+    \o QWidget::setBackgroundMode(BackgroundMode)
+    \o QWidget::setBackgroundOrigin(BackgroundOrigin)
+    \o QWidget::setBackgroundPixmap(const QPixmap &)
+    \o QWidget::setCaption(const QString &)
+    \o QWidget::setCursor(const QCursor &)
+    \o QWidget::setEnabled(bool)
+    \o QWidget::setEraseColor(const QColor &)
+    \o QWidget::setErasePixmap(const QPixmap &)
+    \o QWidget::setFocus()
+    \o QWidget::setFocusPolicy(FocusPolicy)
+    \o QWidget::setFocusProxy(QWidget *)
+    \o QWidget::setFont(const QFont &)
+    \o QWidget::setGeometry(const QRect &)
+    \o QWidget::setGeometry(int x, int y, int w, int h)
+    \o QWidget::setIcon(const QPixmap &)
+    \o QWidget::setIconText(const QString &)
+    \o QWidget::setKeyCompression(bool)
+    \o QWidget::setMask(const QBitmap &)
+    \o QWidget::setMask(const QRegion &)
+    \o QWidget::setMaximumSize(int maxw, int maxh)
+    \o QWidget::setMicroFocusHint(int x, int y, int w, int h, bool, QFont *f)
+    \o QWidget::setMinimumSize(int minw, int minh)
+    \o QWidget::setMouseTracking(bool enable)
+    \o QWidget::setPalette(const QPalette &)
+    \o QWidget::setPaletteBackgroundColor(const QColor &)
+    \o QWidget::setPaletteBackgroundPixmap(const QPixmap &)
+    \o QWidget::setSizeIncrement(int w, int h)
+    \o QWidget::setSizePolicy(QSizePolicy)
+    \o QWidget::setUpdatesEnabled(bool enable)
+    \o QWidget::setWState(uint)
+    \o QWidget::show()
+    \o QWidget::showFullScreen()
+    \o QWidget::showMaximized()
+    \o QWidget::showMinimized()
+    \o QWidget::showNormal()
+    \o QWidget::unsetCursor()
+    \endlist
+
+    The internal clearWState() function was removed. Use
+    QWidget::setWindowState() instead.
+
+    setWFlags() was renamed QWidget::setWindowFlags().
+
+    See \l{#properties}{Properties} for a list of QWidget properties
+    in Qt 3 that have changed in Qt 4.
+
+    \section1 QWidgetFactory
+
+    The \c QWidgetFactory class has been replaced by QFormBuilder in Qt 4.
+
+    \section1 QWidgetIntDict
+
+    The QWidgetIntDict class was a synonym for QIntDict<QWidget>. It
+    is no longer available in Qt 4. If you link against Qt3Support,
+    you can use QIntDict<QWidget> instead; otherwise, see the
+    \l{#qdict.section}{section on QDict<T>}.
+
+    \target qwidgetlist.section
+    \section1 QWidgetList
+
+    In Qt 3, the QWidgetList class was a typedef for
+    QPtrList<QWidget>. In Qt 4, it is a typedef for QList<QWidget *>.
+    See the \l{#qptrlist.section}{section on QPtrList<T>}.
+
+    \section1 QWidgetPlugin
+
+    The QWidgetPlugin class is no longer available in Qt 4. To create
+    custom widget plugins, subclass QDesignerCustomWidgetInterface to
+    provide information about the custom widget, and build a plugin in
+    the way described in the \l{designer/customwidgetplugin}{Custom
+    Widget Plugin} example.
+
+    \section1 QWidgetStack
+
+    The QWidgetStack class is no longer part of the Qt public API. It
+    has been renamed Q3WidgetStack and moved to Qt3Support. In Qt 4
+    applications, you can use QStackedWidget instead to obtain the
+    same results.
+
+    \section1 QWizard
+
+    The \c QWizard class was reintroduced in Qt 4.3. See the
+    \l{Trivial Wizard Example}, \l{License Wizard Example} and
+    \l{Class Wizard Example} for more details.
+
+    \section1 QWorkspace
+
+    The \c QWorkspace in Qt 4 class requires explicit adding of MDI
+    windows with QWorkspace::addWindow().
+*/
+
+/*!
+    \page porting4-virtual-functions.html
+    \title Porting to Qt 4 - Virtual Functions
+    \contentspage {Porting Guides}{Contents}
+    \previouspage Porting to Qt 4
+    \nextpage Porting to Qt 4 - Drag and Drop
+    \ingroup porting
+    \brief An overview of changes to virtual functions in Qt 4.
+
+    \section1 Virtual Functions
+
+    Virtual functions that changed their signature in Qt 4:
+
+    \table
+    \header \o Qt 3 function signature \o Qt 4 function signature
+    \input porting4-modifiedvirtual.qdocinc
+    \endtable
+
+    Virtual functions that are not virtual in Qt 4:
+
+    \table
+    \header \o Qt 3 function \o Comment
+    \input porting4-removedvirtual.qdocinc
+    \endtable
+*/

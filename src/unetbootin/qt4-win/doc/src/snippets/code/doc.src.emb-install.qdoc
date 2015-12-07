@@ -1,0 +1,37 @@
+//! [0]
+        cd <anywhere>
+        gunzip qt-embedded-linux-commercial-src-4.4.0.tar.gz
+        tar xf qt-embedded-linux-commercial-src-4.4.0.tar
+//! [0]
+
+
+//! [1]
+        ~/qt-embedded-linux-commercial-src-4.4.0
+//! [1]
+
+
+//! [2]
+        cd  ~/qt-embedded-linux-commercial-src-4.4.0
+        ./configure -embedded [architecture]
+//! [2]
+
+
+//! [3]
+        make
+//! [3]
+
+
+//! [4]
+       su -c "make install"
+//! [4]
+
+
+//! [5]
+        PATH=/usr/local/Trolltech/QtEmbedded-4.4.0/bin:$PATH
+        export PATH
+//! [5]
+
+
+//! [6]
+        setenv PATH /usr/local/Trolltech/QtEmbedded-4.4.0/bin:$PATH
+//! [6]

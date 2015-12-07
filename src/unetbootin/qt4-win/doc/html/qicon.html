@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qicon.cpp -->
+<head>
+  <title>Qt 4.4: QIcon Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QIcon Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QIcon class provides scalable icons in different modes and states. <a href="#details">More...</a></p>
+<pre> #include &lt;QIcon&gt;</pre><ul>
+<li><a href="qicon-members.html">List of all members, including inherited members</a></li>
+<li><a href="qicon-obsolete.html">Obsolete members</a></li>
+<li><a href="qicon-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qicon.html#Mode-enum">Mode</a></b> { Normal, Disabled, Active, Selected }</li>
+<li><div class="fn"/>enum <b><a href="qicon.html#State-enum">State</a></b> { Off, On }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qicon.html#QIcon">QIcon</a></b> ()</li>
+<li><div class="fn"/><b><a href="qicon.html#QIcon-2">QIcon</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/><b><a href="qicon.html#QIcon-3">QIcon</a></b> ( const QIcon &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qicon.html#QIcon-4">QIcon</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/><b><a href="qicon.html#QIcon-5">QIcon</a></b> ( QIconEngine * <i>engine</i> )</li>
+<li><div class="fn"/><b><a href="qicon.html#QIcon-6">QIcon</a></b> ( QIconEngineV2 * <i>engine</i> )</li>
+<li><div class="fn"/><b><a href="qicon.html#dtor.QIcon">~QIcon</a></b> ()</li>
+<li><div class="fn"/>QSize <b><a href="qicon.html#actualSize">actualSize</a></b> ( const QSize &amp; <i>size</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>void <b><a href="qicon.html#addFile">addFile</a></b> ( const QString &amp; <i>fileName</i>, const QSize &amp; <i>size</i> = QSize(), Mode <i>mode</i> = Normal, State <i>state</i> = Off )</li>
+<li><div class="fn"/>void <b><a href="qicon.html#addPixmap">addPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off )</li>
+<li><div class="fn"/>qint64 <b><a href="qicon.html#cacheKey">cacheKey</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qicon.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qicon.html#paint">paint</a></b> ( QPainter * <i>painter</i>, const QRect &amp; <i>rect</i>, Qt::Alignment <i>alignment</i> = Qt::AlignCenter, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>void <b><a href="qicon.html#paint-2">paint</a></b> ( QPainter * <i>painter</i>, int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, Qt::Alignment <i>alignment</i> = Qt::AlignCenter, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qicon.html#pixmap">pixmap</a></b> ( const QSize &amp; <i>size</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qicon.html#pixmap-5">pixmap</a></b> ( int <i>w</i>, int <i>h</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qicon.html#pixmap-6">pixmap</a></b> ( int <i>extent</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/><b><a href="qicon.html#operator-QVariant">operator QVariant</a></b> () const</li>
+<li><div class="fn"/>QIcon &amp; <b><a href="qicon.html#operator-eq">operator=</a></b> ( const QIcon &amp; <i>other</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qicon.html#operator-lt-lt-80">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qicon.html#operator-gt-gt-48">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QIcon &amp; <i>icon</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QIcon class provides scalable icons in different modes and states.</p>
+<p>A QIcon can generate smaller, larger, active, and disabled pixmaps from the set of pixmaps it is given. Such pixmaps are used by Qt widgets to show an icon representing a particular action.</p>
+<p>The simplest use of QIcon is to create one from a <a href="qpixmap.html">QPixmap</a> file or resource, and then use it, allowing Qt to work out all the required icon styles and sizes. For example:</p>
+<pre>     QToolButton *button = new QToolButton;
+     button-&gt;setIcon(QIcon(&quot;open.xpm&quot;));</pre>
+<p>To undo a QIcon, simply set a null icon in its place:</p>
+<pre>    button-&gt;setIcon(QIcon());</pre>
+<p>Use the <a href="qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>() and <a href="qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() functions to retrieve a complete list of the supported file formats.</p>
+<p>When you retrieve a pixmap using pixmap(<a href="qsize.html">QSize</a>, Mode, State), and no pixmap for this given size, mode and state has been added with <a href="qicon.html#addFile">addFile</a>() or <a href="qicon.html#addPixmap">addPixmap</a>(), then QIcon will generate one on the fly. This pixmap generation happens in a <a href="qiconenginev2.html">QIconEngineV2</a>. The default engine scales pixmaps down if required, but never up, and it uses the current style to calculate a disabled appearance. By using custom icon engines, you can customize every aspect of generated icons. With <a href="qiconenginepluginv2.html">QIconEnginePluginV2</a> it is possible to register different icon engines for different file suffixes, making it possible for third parties to provide additional icon engines to those included with Qt.</p>
+<p><b>Note:</b> Since Qt 4.2, an icon engine that supports SVG is included.</p>
+<a name="making-classes-that-use-qicon"></a>
+<h3>Making Classes that Use QIcon</h3>
+<p>If you write your own widgets that have an option to set a small pixmap, consider allowing a QIcon to be set for that pixmap. The Qt class <a href="qtoolbutton.html">QToolButton</a> is an example of such a widget.</p>
+<p>Provide a method to set a QIcon, and when you draw the icon, choose whichever pixmap is appropriate for the current state of your widget. For example:</p>
+<pre>     void MyWidget::drawIcon(QPainter *painter, QPoint pos)
+     {
+         QPixmap pixmap = icon.pixmap(QSize(22, 22),
+                                        isEnabled() ? QIcon::Normal
+                                                    : QIcon::Disabled,
+                                        isOn() ? QIcon::On
+                                               : QIcon::Off);
+         painter-&gt;drawPixmap(pos, pixmap);
+     }</pre>
+<p>You might also make use of the <tt>Active</tt> mode, perhaps making your widget <tt>Active</tt> when the mouse is over the widget (see <a href="qwidget.html#enterEvent">QWidget::enterEvent</a>()), while the mouse is pressed pending the release that will activate the function, or when it is the currently selected item. If the widget can be toggled, the &quot;On&quot; mode might be used to draw a different icon.</p>
+<p align="center"><img src="images/icon.png" alt="QIcon" /></p><p>See also <a href="guibooks.html#fowler">GUI Design Handbook: Iconic Label</a> and <a href="widgets-icons.html">Icons Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Mode-enum"></a>enum QIcon::Mode</h3>
+<p>This enum type describes the mode for which a pixmap is intended to be used. The currently defined modes are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QIcon::Normal</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Display the pixmap when the user is not interacting with the icon, but the functionality represented by the icon is available.</td></tr>
+<tr><td valign="top"><tt>QIcon::Disabled</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Display the pixmap when the functionality represented by the icon is not available.</td></tr>
+<tr><td valign="top"><tt>QIcon::Active</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Display the pixmap when the functionality represented by the icon is available and the user is interacting with the icon, for example, moving the mouse over it or clicking it.</td></tr>
+<tr><td valign="top"><tt>QIcon::Selected</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Display the pixmap when the item represented by the icon is selected.</td></tr>
+</table></p>
+<h3 class="fn"><a name="State-enum"></a>enum QIcon::State</h3>
+<p>This enum describes the state for which a pixmap is intended to be used. The <i>state</i> can be:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QIcon::Off</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Display the pixmap when the widget is in an &quot;off&quot; state</td></tr>
+<tr><td valign="top"><tt>QIcon::On</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Display the pixmap when the widget is in an &quot;on&quot; state</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QIcon"></a>QIcon::QIcon ()</h3>
+<p>Constructs a null icon.</p>
+<h3 class="fn"><a name="QIcon-2"></a>QIcon::QIcon ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Constructs an icon from a <i>pixmap</i>.</p>
+<h3 class="fn"><a name="QIcon-3"></a>QIcon::QIcon ( const QIcon &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>. This is very fast.</p>
+<h3 class="fn"><a name="QIcon-4"></a>QIcon::QIcon ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Constructs an icon from the file with the given <i>fileName</i>. The file will be loaded on demand.</p>
+<p>If <i>fileName</i> contains a relative path (e.g&#x2e; the filename only) the relevant file must be found relative to the runtime working directory.</p>
+<p>The file name can be either refer to an actual file on disk or to one of the application's embedded resources. See the <a href="resources.html">Resource System</a> overview for details on how to embed images and other resource files in the application's executable.</p>
+<p>Use the <a href="qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>() and <a href="qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() functions to retrieve a complete list of the supported file formats.</p>
+<h3 class="fn"><a name="QIcon-5"></a>QIcon::QIcon ( <a href="qiconengine.html">QIconEngine</a> * <i>engine</i> )</h3>
+<p>Creates an icon with a specific icon <i>engine</i>. The icon takes ownership of the engine.</p>
+<h3 class="fn"><a name="QIcon-6"></a>QIcon::QIcon ( <a href="qiconenginev2.html">QIconEngineV2</a> * <i>engine</i> )</h3>
+<p>Creates an icon with a specific icon <i>engine</i>. The icon takes ownership of the engine.</p>
+<h3 class="fn"><a name="dtor.QIcon"></a>QIcon::~QIcon ()</h3>
+<p>Destroys the icon.</p>
+<h3 class="fn"><a name="actualSize"></a><a href="qsize.html">QSize</a> QIcon::actualSize ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>Returns the actual size of the icon for the requested <i>size</i>, <i>mode</i>, and <i>state</i>. The result might be smaller than requested, but never larger.</p>
+<p>See also <a href="qicon.html#pixmap">pixmap</a>() and <a href="qicon.html#paint">paint</a>().</p>
+<h3 class="fn"><a name="addFile"></a>void QIcon::addFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, const <a href="qsize.html">QSize</a> &amp; <i>size</i> = QSize(), <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off )</h3>
+<p>Adds an image from the file with the given <i>fileName</i> to the icon, as a specialization for <i>size</i>, <i>mode</i> and <i>state</i>. The file will be loaded on demand. Note: custom icon engines are free to ignore additionally added pixmaps.</p>
+<p>If <i>fileName</i> contains a relative path (e.g&#x2e; the filename only) the relevant file must be found relative to the runtime working directory.</p>
+<p>The file name can be either refer to an actual file on disk or to one of the application's embedded resources. See the <a href="resources.html">Resource System</a> overview for details on how to embed images and other resource files in the application's executable.</p>
+<p>Use the <a href="qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>() and <a href="qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() functions to retrieve a complete list of the supported file formats.</p>
+<p>See also <a href="qicon.html#addPixmap">addPixmap</a>().</p>
+<h3 class="fn"><a name="addPixmap"></a>void QIcon::addPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off )</h3>
+<p>Adds <i>pixmap</i> to the icon, as a specialization for <i>mode</i> and <i>state</i>.</p>
+<p>Custom icon engines are free to ignore additionally added pixmaps.</p>
+<p>See also <a href="qicon.html#addFile">addFile</a>().</p>
+<h3 class="fn"><a name="cacheKey"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QIcon::cacheKey () const</h3>
+<p>Returns a number that identifies the contents of this <a href="qicon.html">QIcon</a> object. Distinct <a href="qicon.html">QIcon</a> objects can have the same key if they refer to the same contents.</p>
+<p>The cacheKey() will change when the icon is altered via <a href="qicon.html#addPixmap">addPixmap</a>() or <a href="qicon.html#addFile">addFile</a>().</p>
+<p>Cache keys are mostly useful in conjunction with caching.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qpixmap.html#cacheKey">QPixmap::cacheKey</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QIcon::isNull () const</h3>
+<p>Returns true if the icon is empty; otherwise returns false.</p>
+<p>An icon is empty if it has neither a pixmap nor a filename.</p>
+<p>Note: Even a non-null icon might not be able to create valid pixmaps, eg. if the file does not exist or cannot be read.</p>
+<h3 class="fn"><a name="paint"></a>void QIcon::paint ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> = Qt::AlignCenter, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>Uses the <i>painter</i> to paint the icon with specified <i>alignment</i>, required <i>mode</i>, and <i>state</i> into the rectangle <i>rect</i>.</p>
+<p>See also <a href="qicon.html#actualSize">actualSize</a>() and <a href="qicon.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="paint-2"></a>void QIcon::paint ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> = Qt::AlignCenter, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Paints the icon into the rectangle <a href="qrect.html">QRect</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>).</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>Returns a pixmap with the requested <i>size</i>, <i>mode</i>, and <i>state</i>, generating one if necessary. The pixmap might be smaller than requested, but never larger.</p>
+<p>See also <a href="qicon-qt3.html#setPixmap">setPixmap</a>(), <a href="qicon.html#actualSize">actualSize</a>(), and <a href="qicon.html#paint">paint</a>().</p>
+<h3 class="fn"><a name="pixmap-5"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap ( int <i>w</i>, int <i>h</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a pixmap of size <a href="qsize.html">QSize</a>(<i>w</i>, <i>h</i>). The pixmap might be smaller than requested, but never larger.</p>
+<h3 class="fn"><a name="pixmap-6"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap ( int <i>extent</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a pixmap of size <a href="qsize.html">QSize</a>(<i>extent</i>, <i>extent</i>). The pixmap might be smaller than requested, but never larger.</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QIcon::operator QVariant () const</h3>
+<p>Returns the icon as a <a href="qvariant.html">QVariant</a>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QIcon &amp; QIcon::operator= ( const QIcon &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> icon to this icon and returns a reference to this icon.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-80"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QIcon &amp; <i>icon</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>icon</i> to the the given <i>stream</i> as a PNG image. If the icon contains more than one image, all images will be written to the stream. Note that writing the stream to a file will not produce a valid image file.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-gt-gt-48"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QIcon &amp; <i>icon</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an image, or a set of images, from the given <i>stream</i> into the given <i>icon</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

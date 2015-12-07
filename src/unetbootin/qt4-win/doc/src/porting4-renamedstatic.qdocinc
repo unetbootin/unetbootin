@@ -1,0 +1,3 @@
+\row \o QPixmap::fromMimeSource \o qPixmapFromMimeSource
+\row \o QImage::inputFormats \o QImageReader::supportedImageFormats
+\row \o QImage::outputFormats \o QImageWriter::supportedImageFormats

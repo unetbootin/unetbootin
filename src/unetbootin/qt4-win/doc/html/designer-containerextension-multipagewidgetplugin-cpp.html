@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: multipagewidgetplugin.cpp Example File (designer/containerextension/multipagewidgetplugin.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">multipagewidgetplugin.cpp Example File<br /><span class="small-subtitle">designer/containerextension/multipagewidgetplugin.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtDesigner/QExtensionFactory&gt;
+ #include &lt;QtDesigner/QExtensionManager&gt;
+ #include &lt;QtDesigner/QDesignerFormEditorInterface&gt;
+ #include &lt;QtDesigner/QDesignerFormWindowInterface&gt;
+ #include &lt;QtDesigner/QDesignerContainerExtension&gt;
+ #include &lt;QtDesigner/QDesignerPropertySheetExtension&gt;
+
+ #include &lt;QIcon&gt;
+ #include &lt;QtPlugin&gt;
+
+ #include &quot;multipagewidget.h&quot;
+ #include &quot;multipagewidgetplugin.h&quot;
+ #include &quot;multipagewidgetextensionfactory.h&quot;
+
+ MultiPageWidgetPlugin::MultiPageWidgetPlugin(QObject *parent)
+     :QObject(parent)
+ {
+     initialized = false;
+ }
+
+ QString MultiPageWidgetPlugin::name() const
+ {
+     return QLatin1String(&quot;MultiPageWidget&quot;);
+ }
+
+ QString MultiPageWidgetPlugin::group() const
+ {
+     return QLatin1String(&quot;Display Widgets [Examples]&quot;);
+ }
+
+ QString MultiPageWidgetPlugin::toolTip() const
+ {
+     return QString();
+ }
+
+ QString MultiPageWidgetPlugin::whatsThis() const
+ {
+     return QString();
+ }
+
+ QString MultiPageWidgetPlugin::includeFile() const
+ {
+     return QLatin1String(&quot;multipagewidget.h&quot;);
+ }
+
+ QIcon MultiPageWidgetPlugin::icon() const
+ {
+     return QIcon();
+ }
+
+ bool MultiPageWidgetPlugin::isContainer() const
+ {
+     return true;
+ }
+
+ QWidget *MultiPageWidgetPlugin::createWidget(QWidget *parent)
+ {
+     MultiPageWidget *widget = new MultiPageWidget(parent);
+     connect(widget, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(currentIndexChanged(int)));
+     connect(widget, SIGNAL(pageTitleChanged(const QString &amp;)),
+             this, SLOT(pageTitleChanged(const QString &amp;)));
+     return widget;
+ }
+
+ bool MultiPageWidgetPlugin::isInitialized() const
+ {
+     return initialized;
+ }
+
+ void MultiPageWidgetPlugin::initialize(QDesignerFormEditorInterface *formEditor)
+ {
+     if (initialized)
+         return;
+
+     QExtensionManager *manager = formEditor-&gt;extensionManager();
+     QExtensionFactory *factory = new MultiPageWidgetExtensionFactory(manager);
+
+     Q_ASSERT(manager != 0);
+     manager-&gt;registerExtensions(factory, Q_TYPEID(QDesignerContainerExtension));
+
+     initialized = true;
+ }
+
+ QString MultiPageWidgetPlugin::domXml() const
+ {
+     return QLatin1String(&quot;\
+ &lt;ui&gt;\
+     &lt;widget class=\&quot;MultiPageWidget\&quot; name=\&quot;multipagewidget\&quot;&gt;\
+         &lt;widget class=\&quot;QWidget\&quot; name=\&quot;page\&quot; /&gt;\
+     &lt;/widget&gt;\
+     &lt;customwidgets&gt;\
+         &lt;customwidget&gt;\
+             &lt;class&gt;MultiPageWidget&lt;/class&gt;\
+             &lt;extends&gt;QWidget&lt;/extends&gt;\
+             &lt;addpagemethod&gt;addPage&lt;/addpagemethod&gt;\
+         &lt;/customwidget&gt;\
+     &lt;/customwidgets&gt;\
+ &lt;/ui&gt;&quot;);
+ }
+
+ void MultiPageWidgetPlugin::currentIndexChanged(int index)
+ {
+     Q_UNUSED(index);
+     MultiPageWidget *widget = qobject_cast&lt;MultiPageWidget*&gt;(sender());
+     if (widget) {
+         QDesignerFormWindowInterface *form = QDesignerFormWindowInterface::findFormWindow(widget);
+         if (form)
+             form-&gt;emitSelectionChanged();
+     }
+ }
+
+ void MultiPageWidgetPlugin::pageTitleChanged(const QString &amp;title)
+ {
+     Q_UNUSED(title);
+     MultiPageWidget *widget = qobject_cast&lt;MultiPageWidget*&gt;(sender());
+     if (widget) {
+         QWidget *page = widget-&gt;widget(widget-&gt;currentIndex());
+         QDesignerFormWindowInterface *form;
+         form = QDesignerFormWindowInterface::findFormWindow(widget);
+         if (form) {
+             QDesignerFormEditorInterface *editor = form-&gt;core();
+             QExtensionManager *manager = editor-&gt;extensionManager();
+             QDesignerPropertySheetExtension *sheet;
+             sheet = qt_extension&lt;QDesignerPropertySheetExtension*&gt;(manager, page);
+             const int propertyIndex = sheet-&gt;indexOf(QLatin1String(&quot;windowTitle&quot;));
+             sheet-&gt;setChanged(propertyIndex, true);
+         }
+     }
+ }
+
+
+ Q_EXPORT_PLUGIN2(containerextension, MultiPageWidgetPlugin)</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

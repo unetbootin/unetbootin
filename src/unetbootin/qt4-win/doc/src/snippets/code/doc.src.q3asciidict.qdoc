@@ -1,0 +1,54 @@
+//! [0]
+    Q3AsciiDict<QLineEdit> fields; // char* keys, QLineEdit* values
+    fields.insert( "forename", new QLineEdit( this ) );
+    fields.insert( "surname", new QLineEdit( this ) );
+
+    fields["forename"]->setText( "Homer" );
+    fields["surname"]->setText( "Simpson" );
+
+    Q3AsciiDictIterator<QLineEdit> it( fields ); // See Q3AsciiDictIterator
+    for( ; it.current(); ++it )
+	cout << it.currentKey() << ": " << it.current()->text() << endl;
+    cout << endl;
+
+    if ( fields["forename"] && fields["surname"] )
+	cout << fields["forename"]->text() << " " 
+	    << fields["surname"]->text() << endl;  // Prints "Homer Simpson"
+
+    fields.remove( "forename" ); // Does not delete the line edit
+    if ( ! fields["forename"] )
+	cout << "forename is not in the dictionary" << endl;
+//! [0]
+
+
+//! [1]
+	Q3AsciiDict<char> dict;
+	    ...
+	if ( dict.find(key) )
+	    dict.remove( key );
+	dict.insert( key, item );
+//! [1]
+
+
+//! [2]
+    Q3AsciiDict<QLineEdit> fields;
+    fields.insert( "forename", new QLineEdit( this ) );
+    fields.insert( "surname", new QLineEdit( this ) );
+    fields.insert( "age", new QLineEdit( this ) );
+
+    fields["forename"]->setText( "Homer" );
+    fields["surname"]->setText( "Simpson" );
+    fields["age"]->setText( "45" );
+
+    Q3AsciiDictIterator<QLineEdit> it( fields );
+    for( ; it.current(); ++it )
+	cout << it.currentKey() << ": " << it.current()->text() << endl;
+    cout << endl;
+
+    // Output (random order):
+    //	age: 45
+    //	surname: Simpson
+    //	forename: Homer
+//! [2]
+
+

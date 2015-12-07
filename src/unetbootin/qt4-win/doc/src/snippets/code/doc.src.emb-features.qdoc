@@ -1,0 +1,20 @@
+//! [0]
+          configure.exe -D QT_NO_THREAD
+//! [0]
+
+
+//! [1]
+          ./configure -no-feature-thread
+//! [1]
+
+
+//! [2]
+          configure.exe -qconfig myfile
+//! [2]
+
+
+//! [3]
+          ./configure -qconfig myfile
+//! [3]
+
+

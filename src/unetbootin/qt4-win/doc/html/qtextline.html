@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextlayout.cpp -->
+<head>
+  <title>Qt 4.4: QTextLine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextLine Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextLine class represents a line of text inside a <a href="qtextlayout.html">QTextLayout</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextLine&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextline-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtextline.html#CursorPosition-enum">CursorPosition</a></b> { CursorBetweenCharacters, CursorOnCharacter }</li>
+<li><div class="fn"/>enum <b><a href="qtextline.html#Edge-enum">Edge</a></b> { Leading, Trailing }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextline.html#QTextLine">QTextLine</a></b> ()</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#ascent">ascent</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#cursorToX">cursorToX</a></b> ( int * <i>cursorPos</i>, Edge <i>edge</i> = Leading ) const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#cursorToX-2">cursorToX</a></b> ( int <i>cursorPos</i>, Edge <i>edge</i> = Leading ) const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#descent">descent</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextline.html#draw">draw</a></b> ( QPainter * <i>painter</i>, const QPointF &amp; <i>position</i>, const QTextLayout::FormatRange * <i>selection</i> = 0 ) const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#height">height</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextline.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextline.html#lineNumber">lineNumber</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qtextline.html#naturalTextRect">naturalTextRect</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#naturalTextWidth">naturalTextWidth</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qtextline.html#position">position</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qtextline.html#rect">rect</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextline.html#setLineWidth">setLineWidth</a></b> ( qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextline.html#setNumColumns">setNumColumns</a></b> ( int <i>numColumns</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextline.html#setNumColumns-2">setNumColumns</a></b> ( int <i>numColumns</i>, qreal <i>alignmentWidth</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextline.html#setPosition">setPosition</a></b> ( const QPointF &amp; <i>pos</i> )</li>
+<li><div class="fn"/>int <b><a href="qtextline.html#textLength">textLength</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextline.html#textStart">textStart</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#width">width</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#x">x</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextline.html#xToCursor">xToCursor</a></b> ( qreal <i>x</i>, CursorPosition <i>cpos</i> = CursorBetweenCharacters ) const</li>
+<li><div class="fn"/>qreal <b><a href="qtextline.html#y">y</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextLine class represents a line of text inside a <a href="qtextlayout.html">QTextLayout</a>.</p>
+<p>A text line is usually created by <a href="qtextlayout.html#createLine">QTextLayout::createLine</a>().</p>
+<p>After being created, the line can be filled using the <a href="qtextline.html#setLineWidth">setLineWidth</a>() or <a href="qtextline.html#setNumColumns">setNumColumns</a>() functions. A line has a number of attributes including the rectangle it occupies, <a href="qtextline.html#rect">rect</a>(), its coordinates, <a href="qtextline.html#x">x</a>() and <a href="qtextline.html#y">y</a>(), its <a href="qtextline.html#textLength">textLength</a>(), <a href="qtextline.html#width">width</a>() and <a href="qtextline.html#naturalTextWidth">naturalTextWidth</a>(), and its <a href="qtextline.html#ascent">ascent</a>() and decent() relative to the text. The position of the cursor in terms of the line is available from <a href="qtextline.html#cursorToX">cursorToX</a>() and its inverse from <a href="qtextline.html#xToCursor">xToCursor</a>(). A line can be moved with <a href="qtextline.html#setPosition">setPosition</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CursorPosition-enum"></a>enum QTextLine::CursorPosition</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextLine::CursorBetweenCharacters</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextLine::CursorOnCharacter</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="Edge-enum"></a>enum QTextLine::Edge</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextLine::Leading</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextLine::Trailing</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextLine"></a>QTextLine::QTextLine ()</h3>
+<p>Creates an invalid line.</p>
+<h3 class="fn"><a name="ascent"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::ascent () const</h3>
+<p>Returns the line's ascent.</p>
+<p>See also <a href="qtextline.html#descent">descent</a>() and <a href="qtextline.html#height">height</a>().</p>
+<h3 class="fn"><a name="cursorToX"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::cursorToX ( int * <i>cursorPos</i>, <a href="qtextline.html#Edge-enum">Edge</a> <i>edge</i> = Leading ) const</h3>
+<p>Converts the cursor position <i>cursorPos</i> to the corresponding x position inside the line, taking account of the <i>edge</i>.</p>
+<p>If <i>cursorPos</i> is not a valid cursor position, the nearest valid cursor position will be used instead, and cpos will be modified to point to this valid cursor position.</p>
+<p>See also <a href="qtextline.html#xToCursor">xToCursor</a>().</p>
+<h3 class="fn"><a name="cursorToX-2"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::cursorToX ( int <i>cursorPos</i>, <a href="qtextline.html#Edge-enum">Edge</a> <i>edge</i> = Leading ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="descent"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::descent () const</h3>
+<p>Returns the line's descent.</p>
+<p>See also <a href="qtextline.html#ascent">ascent</a>() and <a href="qtextline.html#height">height</a>().</p>
+<h3 class="fn"><a name="draw"></a>void QTextLine::draw ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>position</i>, const <a href="qtextlayout-formatrange.html">QTextLayout::FormatRange</a> * <i>selection</i> = 0 ) const</h3>
+<p>Draws a line on the given <i>painter</i> at the specified <i>position</i>. The <i>selection</i> is reserved for internal use.</p>
+<h3 class="fn"><a name="height"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::height () const</h3>
+<p>Returns the line's height. This is equal to <a href="qtextline.html#ascent">ascent</a>() + <a href="qtextline.html#descent">descent</a>() + 1.</p>
+<p>See also <a href="qtextline.html#ascent">ascent</a>() and <a href="qtextline.html#descent">descent</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextLine::isValid () const</h3>
+<p>Returns true if this text line is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="lineNumber"></a>int QTextLine::lineNumber () const</h3>
+<p>Returns the position of the line in the text engine.</p>
+<h3 class="fn"><a name="naturalTextRect"></a><a href="qrectf.html">QRectF</a> QTextLine::naturalTextRect () const</h3>
+<p>Returns the rectangle covered by the line.</p>
+<h3 class="fn"><a name="naturalTextWidth"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::naturalTextWidth () const</h3>
+<p>Returns the width of the line that is occupied by text. This is always &lt;= to <a href="qtextline.html#width">width</a>(), and is the minimum width that could be used by layout() without changing the line break position.</p>
+<h3 class="fn"><a name="position"></a><a href="qpointf.html">QPointF</a> QTextLine::position () const</h3>
+<p>Returns the line's position relative to the text layout's position.</p>
+<p>See also <a href="qtextline.html#setPosition">setPosition</a>().</p>
+<h3 class="fn"><a name="rect"></a><a href="qrectf.html">QRectF</a> QTextLine::rect () const</h3>
+<p>Returns the line's bounding rectangle.</p>
+<p>See also <a href="qtextline.html#x">x</a>(), <a href="qtextline.html#y">y</a>(), <a href="qtextline.html#textLength">textLength</a>(), and <a href="qtextline.html#width">width</a>().</p>
+<h3 class="fn"><a name="setLineWidth"></a>void QTextLine::setLineWidth ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Lays out the line with the given <i>width</i>. The line is filled from its starting position with as many characters as will fit into the line. In case the text cannot be split at the end of the line, it will be filled with additional characters to the next whitespace or end of the text.</p>
+<h3 class="fn"><a name="setNumColumns"></a>void QTextLine::setNumColumns ( int <i>numColumns</i> )</h3>
+<p>Lays out the line. The line is filled from its starting position with as many characters as are specified by <i>numColumns</i>. In case the text cannot be split until <i>numColumns</i> characters, the line will be filled with as many characters to the next whitespace or end of the text.</p>
+<h3 class="fn"><a name="setNumColumns-2"></a>void QTextLine::setNumColumns ( int <i>numColumns</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>alignmentWidth</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Lays out the line. The line is filled from its starting position with as many characters as are specified by <i>numColumns</i>. In case the text cannot be split until <i>numColumns</i> characters, the line will be filled with as many characters to the next whitespace or end of the text. The provided <i>alignmentWidth</i> is used as reference width for alignment.</p>
+<h3 class="fn"><a name="setPosition"></a>void QTextLine::setPosition ( const <a href="qpointf.html">QPointF</a> &amp; <i>pos</i> )</h3>
+<p>Moves the line to position <i>pos</i>.</p>
+<p>See also <a href="qtextline.html#position">position</a>().</p>
+<h3 class="fn"><a name="textLength"></a>int QTextLine::textLength () const</h3>
+<p>Returns the length of the text in the line.</p>
+<p>See also <a href="qtextline.html#naturalTextWidth">naturalTextWidth</a>().</p>
+<h3 class="fn"><a name="textStart"></a>int QTextLine::textStart () const</h3>
+<p>Returns the start of the line from the beginning of the string passed to the <a href="qtextlayout.html">QTextLayout</a>.</p>
+<h3 class="fn"><a name="width"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::width () const</h3>
+<p>Returns the line's width as specified by the layout() function.</p>
+<p>See also <a href="qtextline.html#naturalTextWidth">naturalTextWidth</a>(), <a href="qtextline.html#x">x</a>(), <a href="qtextline.html#y">y</a>(), <a href="qtextline.html#textLength">textLength</a>(), and <a href="qtextline.html#rect">rect</a>().</p>
+<h3 class="fn"><a name="x"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::x () const</h3>
+<p>Returns the line's x position.</p>
+<p>See also <a href="qtextline.html#rect">rect</a>(), <a href="qtextline.html#y">y</a>(), <a href="qtextline.html#textLength">textLength</a>(), and <a href="qtextline.html#width">width</a>().</p>
+<h3 class="fn"><a name="xToCursor"></a>int QTextLine::xToCursor ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtextline.html#CursorPosition-enum">CursorPosition</a> <i>cpos</i> = CursorBetweenCharacters ) const</h3>
+<p>Converts the x-coordinate <i>x</i>, to the nearest matching cursor position, depending on the cursor position type, <i>cpos</i>.</p>
+<p>See also <a href="qtextline.html#cursorToX">cursorToX</a>().</p>
+<h3 class="fn"><a name="y"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextLine::y () const</h3>
+<p>Returns the line's y position.</p>
+<p>See also <a href="qtextline.html#x">x</a>(), <a href="qtextline.html#rect">rect</a>(), <a href="qtextline.html#textLength">textLength</a>(), and <a href="qtextline.html#width">width</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

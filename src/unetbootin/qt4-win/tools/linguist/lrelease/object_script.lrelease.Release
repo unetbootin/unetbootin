@@ -1,0 +1,12 @@
+INPUT(
+./tmp\obj\release_static\main.o
+./tmp\obj\release_static\metatranslator.o
+./tmp\obj\release_static\translator.o
+./tmp\obj\release_static\profileevaluator.o
+./tmp\obj\release_static\proparser.o
+./tmp\obj\release_static\xliff.o
+./tmp\obj\release_static\proitems.o
+./tmp\obj\release_static\proreader.o
+./tmp\obj\release_static\moc_translator.o
+./tmp\obj\release_static\moc_proitems.o
+);

@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qabstractfileengine.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractFileEngine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractFileEngine Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAbstractFileEngine class provides an abstraction for accessing the filesystem. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractFileEngine&gt;</pre><p>Inherited by <a href="qfsfileengine.html">QFSFileEngine</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qabstractfileengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qabstractfileengine-extensionoption.html">ExtensionOption</a></b></li>
+<li><div class="fn"/>class <b><a href="qabstractfileengine-extensionreturn.html">ExtensionReturn</a></b></li>
+<li><div class="fn"/>class <b><a href="qabstractfileengine-mapextensionoption.html">MapExtensionOption</a></b></li>
+<li><div class="fn"/>class <b><a href="qabstractfileengine-mapextensionreturn.html">MapExtensionReturn</a></b></li>
+<li><div class="fn"/>class <b><a href="qabstractfileengine-unmapextensionoption.html">UnMapExtensionOption</a></b></li>
+<li><div class="fn"/>enum <b><a href="qabstractfileengine.html#Extension-enum">Extension</a></b> { AtEndExtension, FastReadLineExtension, MapExtension, UnMapExtension }</li>
+<li><div class="fn"/>enum <b><a href="qabstractfileengine.html#FileFlag-enum">FileFlag</a></b> { ReadOwnerPerm, WriteOwnerPerm, ExeOwnerPerm, ReadUserPerm, ..., Refresh }</li>
+<li><div class="fn"/>flags <b><a href="qabstractfileengine.html#FileFlag-enum">FileFlags</a></b></li>
+<li><div class="fn"/>enum <b><a href="qabstractfileengine.html#FileName-enum">FileName</a></b> { DefaultName, BaseName, PathName, AbsoluteName, ..., BundleName }</li>
+<li><div class="fn"/>enum <b><a href="qabstractfileengine.html#FileOwner-enum">FileOwner</a></b> { OwnerUser, OwnerGroup }</li>
+<li><div class="fn"/>enum <b><a href="qabstractfileengine.html#FileTime-enum">FileTime</a></b> { CreationTime, ModificationTime, AccessTime }</li>
+<li><div class="fn"/>typedef <b><a href="qabstractfileengine.html#Iterator-typedef">Iterator</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qabstractfileengine.html#dtor.QAbstractFileEngine">~QAbstractFileEngine</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qabstractfileengine.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>virtual Iterator * <b><a href="qabstractfileengine.html#beginEntryList">beginEntryList</a></b> ( QDir::Filters <i>filters</i>, const QStringList &amp; <i>filterNames</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#caseSensitive">caseSensitive</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#close">close</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#copy">copy</a></b> ( const QString &amp; <i>newName</i> )</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qabstractfileengine.html#entryList">entryList</a></b> ( QDir::Filters <i>filters</i>, const QStringList &amp; <i>filterNames</i> ) const</li>
+<li><div class="fn"/>QFile::FileError <b><a href="qabstractfileengine.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qabstractfileengine.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#extension">extension</a></b> ( Extension <i>extension</i>, const ExtensionOption * <i>option</i> = 0, ExtensionReturn * <i>output</i> = 0 )</li>
+<li><div class="fn"/>virtual FileFlags <b><a href="qabstractfileengine.html#fileFlags">fileFlags</a></b> ( FileFlags <i>type</i> = FileInfoAll ) const</li>
+<li><div class="fn"/>virtual QString <b><a href="qabstractfileengine.html#fileName">fileName</a></b> ( FileName <i>file</i> = DefaultName ) const</li>
+<li><div class="fn"/>virtual QDateTime <b><a href="qabstractfileengine.html#fileTime">fileTime</a></b> ( FileTime <i>time</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#flush">flush</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="qabstractfileengine.html#handle">handle</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#isRelativePath">isRelativePath</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#isSequential">isSequential</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#link">link</a></b> ( const QString &amp; <i>newName</i> )</li>
+<li><div class="fn"/>uchar * <b><a href="qabstractfileengine.html#map">map</a></b> ( qint64 <i>offset</i>, qint64 <i>size</i>, QFile::MemoryMapFlags <i>flags</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#mkdir">mkdir</a></b> ( const QString &amp; <i>dirName</i>, bool <i>createParentDirectories</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#open">open</a></b> ( QIODevice::OpenMode <i>mode</i> )</li>
+<li><div class="fn"/>virtual QString <b><a href="qabstractfileengine.html#owner">owner</a></b> ( FileOwner <i>owner</i> ) const</li>
+<li><div class="fn"/>virtual uint <b><a href="qabstractfileengine.html#ownerId">ownerId</a></b> ( FileOwner <i>owner</i> ) const</li>
+<li><div class="fn"/>virtual qint64 <b><a href="qabstractfileengine.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>virtual qint64 <b><a href="qabstractfileengine.html#read">read</a></b> ( char * <i>data</i>, qint64 <i>maxlen</i> )</li>
+<li><div class="fn"/>virtual qint64 <b><a href="qabstractfileengine.html#readLine">readLine</a></b> ( char * <i>data</i>, qint64 <i>maxlen</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#remove">remove</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#rename">rename</a></b> ( const QString &amp; <i>newName</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#rmdir">rmdir</a></b> ( const QString &amp; <i>dirName</i>, bool <i>recurseParentDirectories</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#seek">seek</a></b> ( qint64 <i>offset</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractfileengine.html#setFileName">setFileName</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#setPermissions">setPermissions</a></b> ( uint <i>perms</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#setSize">setSize</a></b> ( qint64 <i>size</i> )</li>
+<li><div class="fn"/>virtual qint64 <b><a href="qabstractfileengine.html#size">size</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengine.html#supportsExtension">supportsExtension</a></b> ( Extension <i>extension</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qabstractfileengine.html#unmap">unmap</a></b> ( uchar * <i>address</i> )</li>
+<li><div class="fn"/>virtual qint64 <b><a href="qabstractfileengine.html#write">write</a></b> ( const char * <i>data</i>, qint64 <i>len</i> )</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QAbstractFileEngine * <b><a href="qabstractfileengine.html#create">create</a></b> ( const QString &amp; <i>fileName</i> )</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractfileengine.html#QAbstractFileEngine">QAbstractFileEngine</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qabstractfileengine.html#setError">setError</a></b> ( QFile::FileError <i>error</i>, const QString &amp; <i>errorString</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="qabstractfileengine.html#Iterator-typedef">Iterator</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractFileEngine class provides an abstraction for accessing the filesystem.</p>
+<p>The <a href="qdir.html">QDir</a>, <a href="qfile.html">QFile</a>, and <a href="qfileinfo.html">QFileInfo</a> classes all make use of a QAbstractFileEngine internally. If you create your own QAbstractFileEngine subclass (and register it with Qt by creating a <a href="qabstractfileenginehandler.html">QAbstractFileEngineHandler</a> subclass), your file engine will be used when the path is one that your file engine handles.</p>
+<p>A QAbstractFileEngine refers to one file or one directory. If the referent is a file, the <a href="qabstractfileengine.html#setFileName">setFileName</a>(), <a href="qabstractfileengine.html#rename">rename</a>(), and <a href="qabstractfileengine.html#remove">remove</a>() functions are applicable. If the referent is a directory the <a href="qabstractfileengine.html#mkdir">mkdir</a>(), <a href="qabstractfileengine.html#rmdir">rmdir</a>(), and <a href="qabstractfileengine.html#entryList">entryList</a>() functions are applicable. In all cases the <a href="qabstractfileengine.html#caseSensitive">caseSensitive</a>(), <a href="qabstractfileengine.html#isRelativePath">isRelativePath</a>(), <a href="qabstractfileengine.html#fileFlags">fileFlags</a>(), <a href="qabstractfileengine.html#ownerId">ownerId</a>(), <a href="qabstractfileengine.html#owner">owner</a>(), and <a href="qabstractfileengine.html#fileTime">fileTime</a>() functions are applicable.</p>
+<p>A QAbstractFileEngine subclass can be created to do synchronous network I/O based file system operations, local file system operations, or to operate as a resource system to access file based resources.</p>
+<p>See also <a href="qabstractfileenginehandler.html">QAbstractFileEngineHandler</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Extension-enum"></a>enum QAbstractFileEngine::Extension</h3>
+<p>This enum describes the types of extensions that the file engine can support. Before using these extensions, you must verify that the extension is supported (i.e&#x2e;, call <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>()).</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::AtEndExtension</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Whether the current file position is at the end of the file or not. This extension allows file engines that implement local buffering to report end-of-file status without having to check the size of the file. It is also useful for sequential files, where the size of the file cannot be used to determine whether or not you have reached the end. This extension returns true if the file is at the end; otherwise it returns false. The input and output arguments to <a href="qabstractfileengine.html#extension">extension</a>() are ignored.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::FastReadLineExtension</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Whether the file engine provides a fast implementation for <a href="qabstractfileengine.html#readLine">readLine</a>() or not. If <a href="qabstractfileengine.html#readLine">readLine</a>() remains unimplemented in the file engine, <a href="qabstractfileengine.html">QAbstractFileEngine</a> will provide an implementation based on calling <a href="qabstractfileengine.html#read">read</a>() repeatedly. If <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>() returns false for this extension, however, <a href="qiodevice.html">QIODevice</a> can provide a faster implementation by making use of its internal buffer. For engines that already provide a fast <a href="qabstractfileengine.html#readLine">readLine</a>() implementation, returning false for this extension can avoid unnnecessary double-buffering in <a href="qiodevice.html">QIODevice</a>.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::MapExtension</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Whether the file engine provides the ability to map a file to memory.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::UnMapExtension</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Whether the file engine provides the ability to unmap memory that was previously mapped.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.3.</p>
+<h3 class="flags"><a name="FileFlag-enum"></a>enum QAbstractFileEngine::FileFlag<br />flags QAbstractFileEngine::FileFlags</h3>
+<p>The permissions and types of a file, suitable for OR'ing together.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ReadOwnerPerm</tt></td><td align="center" valign="top"><tt>0x4000</tt></td><td valign="top">The owner of the file has permission to read it.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::WriteOwnerPerm</tt></td><td align="center" valign="top"><tt>0x2000</tt></td><td valign="top">The owner of the file has permission to write to it.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ExeOwnerPerm</tt></td><td align="center" valign="top"><tt>0x1000</tt></td><td valign="top">The owner of the file has permission to execute it.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ReadUserPerm</tt></td><td align="center" valign="top"><tt>0x0400</tt></td><td valign="top">The current user has permission to read the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::WriteUserPerm</tt></td><td align="center" valign="top"><tt>0x0200</tt></td><td valign="top">The current user has permission to write to the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ExeUserPerm</tt></td><td align="center" valign="top"><tt>0x0100</tt></td><td valign="top">The current user has permission to execute the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ReadGroupPerm</tt></td><td align="center" valign="top"><tt>0x0040</tt></td><td valign="top">Members of the current user's group have permission to read the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::WriteGroupPerm</tt></td><td align="center" valign="top"><tt>0x0020</tt></td><td valign="top">Members of the current user's group have permission to write to the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ExeGroupPerm</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">Members of the current user's group have permission to execute the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ReadOtherPerm</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">All users have permission to read the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::WriteOtherPerm</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">All users have permission to write to the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ExeOtherPerm</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">All users have permission to execute the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::LinkType</tt></td><td align="center" valign="top"><tt>0x10000</tt></td><td valign="top">The file is a link to another file (or link) in the file system (i.e&#x2e; not a file or directory).</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::FileType</tt></td><td align="center" valign="top"><tt>0x20000</tt></td><td valign="top">The file is a regular file to the file system (i.e&#x2e; not a link or directory)</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::BundleType</tt></td><td align="center" valign="top"><tt>0x80000</tt></td><td valign="top">The file is a Mac OS X bundle implies DirectoryType</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::DirectoryType</tt></td><td align="center" valign="top"><tt>0x40000</tt></td><td valign="top">The file is a directory in the file system (i.e&#x2e; not a link or file).</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::HiddenFlag</tt></td><td align="center" valign="top"><tt>0x0100000</tt></td><td valign="top">The file is hidden.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ExistsFlag</tt></td><td align="center" valign="top"><tt>0x0400000</tt></td><td valign="top">The file actually exists in the file system.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::RootFlag</tt></td><td align="center" valign="top"><tt>0x0800000</tt></td><td valign="top">The file or the file pointed to is the root of the filesystem.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::LocalDiskFlag</tt></td><td align="center" valign="top"><tt>0x0200000</tt></td><td valign="top">The file resides on the local disk and can be passed to standard file functions.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::Refresh</tt></td><td align="center" valign="top"><tt>0x1000000</tt></td><td valign="top">Passing this flag will force the file engine to refresh all flags.</td></tr>
+</table></p>
+<p>The FileFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;FileFlag&gt;. It stores an OR combination of FileFlag values.</p>
+<p>See also <a href="qabstractfileengine.html#fileFlags">fileFlags</a>() and <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="FileName-enum"></a>enum QAbstractFileEngine::FileName</h3>
+<p>These values are used to request a file name in a particular format.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::DefaultName</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The same filename that was passed to the <a href="qabstractfileengine.html">QAbstractFileEngine</a>.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::BaseName</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The name of the file excluding the path.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::PathName</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The path to the file excluding the base name.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::AbsoluteName</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The absolute path to the file (including the base name).</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::AbsolutePathName</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The absolute path to the file (excluding the base name).</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::LinkName</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The full file name of the file that this file is a link to. (This will be empty if this file is not a link.)</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::CanonicalName</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Often very similar to LinkName. Will return the true path to the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::CanonicalPathName</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Same as CanonicalName, excluding the base name.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::BundleName</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Returns the name of the bundle implies <a href="qabstractfileengine.html#FileFlag-enum">BundleType</a> is set.</td></tr>
+</table></p>
+<p>See also <a href="qabstractfileengine.html#fileName">fileName</a>() and <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="FileOwner-enum"></a>enum QAbstractFileEngine::FileOwner</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::OwnerUser</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The user who owns the file.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::OwnerGroup</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The group who owns the file.</td></tr>
+</table></p>
+<p>See also <a href="qabstractfileengine.html#owner">owner</a>(), <a href="qabstractfileengine.html#ownerId">ownerId</a>(), and <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="FileTime-enum"></a>enum QAbstractFileEngine::FileTime</h3>
+<p>These are used by the <a href="qabstractfileengine.html#fileTime">fileTime</a>() function.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::CreationTime</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">When the file was created.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::ModificationTime</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">When the file was most recently modified.</td></tr>
+<tr><td valign="top"><tt>QAbstractFileEngine::AccessTime</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">When the file was most recently accessed (e.g&#x2e; read or written to).</td></tr>
+</table></p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="Iterator-typedef"></a>typedef QAbstractFileEngine::Iterator</h3>
+<p>Synonym for <a href="qabstractfileengineiterator.html">QAbstractFileEngineIterator</a>.</p>
+<p>This typedef was introduced in Qt 4.3.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractFileEngine"></a>QAbstractFileEngine::QAbstractFileEngine ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs a new <a href="qabstractfileengine.html">QAbstractFileEngine</a> that does not refer to any file or directory.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="dtor.QAbstractFileEngine"></a>QAbstractFileEngine::~QAbstractFileEngine ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="qabstractfileengine.html">QAbstractFileEngine</a>.</p>
+<h3 class="fn"><a name="atEnd"></a>bool QAbstractFileEngine::atEnd () const</h3>
+<p>Returns true if the current position is at the end of the file; otherwise, returns false.</p>
+<p>This function bases its behavior on calling <a href="qabstractfileengine.html#extension">extension</a>() with <a href="qabstractfileengine.html#Extension-enum">AtEndExtension</a>. If the engine does not support this extension, false is returned.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qabstractfileengine.html#extension">extension</a>(), <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>(), and <a href="qfile.html#atEnd">QFile::atEnd</a>().</p>
+<h3 class="fn"><a name="beginEntryList"></a><a href="qabstractfileengine.html#Iterator-typedef">Iterator</a> * QAbstractFileEngine::beginEntryList ( <a href="qdir.html#Filter-enum">QDir::Filters</a> <i>filters</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>filterNames</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns an instance of a <a href="qabstractfileengineiterator.html">QAbstractFileEngineIterator</a> using <i>filters</i> for entry filtering and <i>filterNames</i> for name filtering. This function is called by <a href="qdiriterator.html">QDirIterator</a> to initiate directory iteration.</p>
+<p><a href="qdiriterator.html">QDirIterator</a> takes ownership of the returned instance, and deletes it when it's done.</p>
+<p>See also <a href="qdiriterator.html">QDirIterator</a>.</p>
+<h3 class="fn"><a name="caseSensitive"></a>bool QAbstractFileEngine::caseSensitive () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Should return true if the underlying file system is case-sensitive; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<h3 class="fn"><a name="close"></a>bool QAbstractFileEngine::close ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Closes the file, returning true if successful; otherwise returns false.</p>
+<p>The default implementation always returns false.</p>
+<h3 class="fn"><a name="copy"></a>bool QAbstractFileEngine::copy ( const <a href="qstring.html">QString</a> &amp; <i>newName</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Copies the contents of this file to a file with the name <i>newName</i>. Returns true on success; otherwise, false is returned.</p>
+<h3 class="fn"><a name="create"></a>QAbstractFileEngine * QAbstractFileEngine::create ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Creates and returns a <a href="qabstractfileengine.html">QAbstractFileEngine</a> suitable for processing <i>fileName</i>.</p>
+<p>You should not need to call this function; use <a href="qfile.html">QFile</a>, <a href="qfileinfo.html">QFileInfo</a> or <a href="qdir.html">QDir</a> directly instead.</p>
+<p>If you reimplemnt this function, it should only return file engines that knows how to handle <i>fileName</i>; otherwise, it should return 0.</p>
+<p>See also <a href="qabstractfileenginehandler.html">QAbstractFileEngineHandler</a>.</p>
+<h3 class="fn"><a name="entryList"></a><a href="qstringlist.html">QStringList</a> QAbstractFileEngine::entryList ( <a href="qdir.html#Filter-enum">QDir::Filters</a> <i>filters</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>filterNames</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that a list of all the files matching the <i>filters</i> list based on the <i>filterNames</i> in the file engine's directory are returned.</p>
+<p>Should return an empty list if the file engine refers to a file rather than a directory, or if the directory is unreadable or does not exist or if nothing matches the specifications.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qfile.html#FileError-enum">QFile::FileError</a> QAbstractFileEngine::error () const</h3>
+<p>Returns the <a href="qfile.html#FileError-enum">QFile::FileError</a> that resulted from the last failed operation. If <a href="qfile.html#FileError-enum">QFile::UnspecifiedError</a> is returned, <a href="qfile.html">QFile</a> will use its own idea of the error status.</p>
+<p>See also <a href="qabstractfileengine.html#setError">setError</a>(), <a href="qfile.html#FileError-enum">QFile::FileError</a>, and <a href="qabstractfileengine.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QAbstractFileEngine::errorString () const</h3>
+<p>Returns the human-readable message appropriate to the current error reported by <a href="qabstractfileengine.html#error">error</a>(). If no suitable string is available, an empty string is returned.</p>
+<p>See also <a href="qabstractfileengine.html#error">error</a>().</p>
+<h3 class="fn"><a name="extension"></a>bool QAbstractFileEngine::extension ( <a href="qabstractfileengine.html#Extension-enum">Extension</a> <i>extension</i>, const <a href="qabstractfileengine-extensionoption.html">ExtensionOption</a> * <i>option</i> = 0, <a href="qabstractfileengine-extensionreturn.html">ExtensionReturn</a> * <i>output</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function can be reimplemented in a <a href="qabstractfileengine.html">QAbstractFileEngine</a> subclass to provide support for extensions. The <i>option</i> argument is provided as input to the extension, and this function can store output results in <i>output</i>.</p>
+<p>The behavior of this function is determined by <i>extension</i>; see the Extension documentation for details.</p>
+<p>You can call <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>() to check if an extension is supported by the file engine.</p>
+<p>By default, no extensions are supported, and this function returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>() and <a href="qabstractfileengine.html#Extension-enum">Extension</a>.</p>
+<h3 class="fn"><a name="fileFlags"></a><a href="qabstractfileengine.html#FileFlag-enum">FileFlags</a> QAbstractFileEngine::fileFlags ( <a href="qabstractfileengine.html#FileFlag-enum">FileFlags</a> <i>type</i> = FileInfoAll ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function should return the set of OR'd flags that are true for the file engine's file, and that are in the <i>type</i>'s OR'd members.</p>
+<p>In your reimplementation you can use the <i>type</i> argument as an optimization hint and only return the OR'd set of members that are true and that match those in <i>type</i>; in other words you can ignore any members not mentioned in <i>type</i>, thus avoiding some potentially expensive lookups or system calls.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QAbstractFileEngine::fileName ( <a href="qabstractfileengine.html#FileName-enum">FileName</a> <i>file</i> = DefaultName ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Return the file engine's current file name in the format specified by <i>file</i>.</p>
+<p>If you don't handle some <tt>FileName</tt> possibilities, return the file name set in <a href="qabstractfileengine.html#setFileName">setFileName</a>() when an unhandled format is requested.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>() and <a href="qabstractfileengine.html#FileName-enum">FileName</a>.</p>
+<h3 class="fn"><a name="fileTime"></a><a href="qdatetime.html">QDateTime</a> QAbstractFileEngine::fileTime ( <a href="qabstractfileengine.html#FileTime-enum">FileTime</a> <i>time</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>time</i> is <tt>CreationTime</tt>, return when the file was created. If <i>time</i> is <tt>ModificationTime</tt>, return when the file was most recently modified. If <i>time</i> is <tt>AccessTime</tt>, return when the file was most recently accessed (e.g&#x2e; read or written). If the time cannot be determined return QDateTime() (an invalid date time).</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>(), <a href="qdatetime.html">QDateTime</a>, <a href="qdatetime.html#isValid">QDateTime::isValid</a>(), and <a href="qabstractfileengine.html#FileTime-enum">FileTime</a>.</p>
+<h3 class="fn"><a name="flush"></a>bool QAbstractFileEngine::flush ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Flushes the open file, returning true if successful; otherwise returns false.</p>
+<p>The default implementation always returns false.</p>
+<h3 class="fn"><a name="handle"></a>int QAbstractFileEngine::handle () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the native file handle for this file engine. This handle must be used with care; its value and type are platform specific, and using it will most likely lead to non-portable code.</p>
+<h3 class="fn"><a name="isRelativePath"></a>bool QAbstractFileEngine::isRelativePath () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Return true if the file referred to by this file engine has a relative path; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="isSequential"></a>bool QAbstractFileEngine::isSequential () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the file is a sequential access device; returns false if the file is a direct access device.</p>
+<p>Operations involving <a href="qabstractfileengine.html#size">size</a>() and seek(int) are not valid on sequential devices.</p>
+<h3 class="fn"><a name="link"></a>bool QAbstractFileEngine::link ( const <a href="qstring.html">QString</a> &amp; <i>newName</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Creates a link from the file currently specified by <a href="qabstractfileengine.html#fileName">fileName</a>() to <i>newName</i>. What a link is depends on the underlying filesystem (be it a shortcut on Windows or a symbolic link on Unix). Returns true if successful; otherwise returns false.</p>
+<h3 class="fn"><a name="map"></a><a href="qtglobal.html#uchar-typedef">uchar</a> * QAbstractFileEngine::map ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>offset</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>size</i>, <a href="qfile.html#MemoryMapFlags-enum">QFile::MemoryMapFlags</a> <i>flags</i> )</h3>
+<p>maps <i>size</i> bytes of the file into memory starting at <i>offset</i>. Returns a pointer to the memory or 0 if there is an error.</p>
+<p>This function bases its behavior on calling <a href="qabstractfileengine.html#extension">extension</a>() with <a href="qabstractfileengine-mapextensionoption.html">MapExtensionOption</a>. If the engine does not support this extension, 0 is returned.</p>
+<p><i>flags</i> is currently not used, but could be used in the future.</p>
+<p>See also <a href="qabstractfileengine.html#unmap">unmap</a>() and <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>().</p>
+<h3 class="fn"><a name="mkdir"></a>bool QAbstractFileEngine::mkdir ( const <a href="qstring.html">QString</a> &amp; <i>dirName</i>, bool <i>createParentDirectories</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the directory <i>dirName</i> be created. If <i>createParentDirectories</i> is true, then any sub-directories in <i>dirName</i> that don't exist must be created. If <i>createParentDirectories</i> is false then any sub-directories in <i>dirName</i> must already exist for the function to succeed. If the operation succeeds return true; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>(), <a href="qabstractfileengine.html#rmdir">rmdir</a>(), and <a href="qabstractfileengine.html#isRelativePath">isRelativePath</a>().</p>
+<h3 class="fn"><a name="open"></a>bool QAbstractFileEngine::open ( <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::OpenMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Opens the file in the specified <i>mode</i>. Returns true if the file was successfully opened; otherwise returns false.</p>
+<p>The <i>mode</i> is an OR combination of <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::OpenMode</a> and QIODevice::HandlingMode values.</p>
+<h3 class="fn"><a name="owner"></a><a href="qstring.html">QString</a> QAbstractFileEngine::owner ( <a href="qabstractfileengine.html#FileOwner-enum">FileOwner</a> <i>owner</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>owner</i> is <tt>OwnerUser</tt> return the name of the user who owns the file. If <i>owner</i> is <tt>OwnerGroup</tt> return the name of the group that own the file. If you can't determine the owner return QString().</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#ownerId">ownerId</a>(), <a href="qabstractfileengine.html#setFileName">setFileName</a>(), and <a href="qabstractfileengine.html#FileOwner-enum">FileOwner</a>.</p>
+<h3 class="fn"><a name="ownerId"></a><a href="qtglobal.html#uint-typedef">uint</a> QAbstractFileEngine::ownerId ( <a href="qabstractfileengine.html#FileOwner-enum">FileOwner</a> <i>owner</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>owner</i> is <tt>OwnerUser</tt> return the ID of the user who owns the file. If <i>owner</i> is <tt>OwnerGroup</tt> return the ID of the group that own the file. If you can't determine the owner return -2.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#owner">owner</a>(), <a href="qabstractfileengine.html#setFileName">setFileName</a>(), and <a href="qabstractfileengine.html#FileOwner-enum">FileOwner</a>.</p>
+<h3 class="fn"><a name="pos"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QAbstractFileEngine::pos () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the current file position.</p>
+<p>This is the position of the data read/write head of the file.</p>
+<h3 class="fn"><a name="read"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QAbstractFileEngine::read ( char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>maxlen</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads a number of characters from the file into <i>data</i>. At most <i>maxlen</i> characters will be read.</p>
+<p>Returns -1 if a fatal error occurs, or 0 if there are no bytes to read.</p>
+<h3 class="fn"><a name="readLine"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QAbstractFileEngine::readLine ( char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>maxlen</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function reads one line, terminated by a '\n' character, from the file info <i>data</i>. At most <i>maxlen</i> characters will be read. The end-of-line character is included.</p>
+<h3 class="fn"><a name="remove"></a>bool QAbstractFileEngine::remove ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the file is deleted from the file system. If the operation succeeds return true; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>() and <a href="qabstractfileengine.html#rmdir">rmdir</a>().</p>
+<h3 class="fn"><a name="rename"></a>bool QAbstractFileEngine::rename ( const <a href="qstring.html">QString</a> &amp; <i>newName</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the file be renamed to <i>newName</i> in the file system. If the operation succeeds return true; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="rmdir"></a>bool QAbstractFileEngine::rmdir ( const <a href="qstring.html">QString</a> &amp; <i>dirName</i>, bool <i>recurseParentDirectories</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the directory <i>dirName</i> is deleted from the file system. When <i>recurseParentDirectories</i> is true, then any empty parent-directories in <i>dirName</i> must also be deleted. If <i>recurseParentDirectories</i> is false, only the <i>dirName</i> leaf-node should be deleted. In most file systems a directory cannot be deleted using this function if it is non-empty. If the operation succeeds return true; otherwise return false.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#setFileName">setFileName</a>(), <a href="qabstractfileengine.html#remove">remove</a>(), <a href="qabstractfileengine.html#mkdir">mkdir</a>(), and <a href="qabstractfileengine.html#isRelativePath">isRelativePath</a>().</p>
+<h3 class="fn"><a name="seek"></a>bool QAbstractFileEngine::seek ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>offset</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the file position to the given <i>offset</i>. Returns true if the position was successfully set; otherwise returns false.</p>
+<p>The offset is from the beginning of the file, unless the file is sequential.</p>
+<p>See also <a href="qabstractfileengine.html#isSequential">isSequential</a>().</p>
+<h3 class="fn"><a name="setError"></a>void QAbstractFileEngine::setError ( <a href="qfile.html#FileError-enum">QFile::FileError</a> <i>error</i>, const <a href="qstring.html">QString</a> &amp; <i>errorString</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the error type to <i>error</i>, and the error string to <i>errorString</i>. Call this function to set the error values returned by the higher-level classes.</p>
+<p>See also <a href="qfile.html#error">QFile::error</a>(), <a href="qiodevice.html#errorString">QIODevice::errorString</a>(), and <a href="qiodevice.html#setErrorString">QIODevice::setErrorString</a>().</p>
+<h3 class="fn"><a name="setFileName"></a>void QAbstractFileEngine::setFileName ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the file engine's file name to <i>file</i>. This file name is the file that the rest of the virtual functions will operate on.</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#fileName">fileName</a>() and <a href="qabstractfileengine.html#rename">rename</a>().</p>
+<h3 class="fn"><a name="setPermissions"></a>bool QAbstractFileEngine::setPermissions ( <a href="qtglobal.html#uint-typedef">uint</a> <i>perms</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the file's permissions be set to <i>perms</i>. The argument perms will be set to the OR-ed together combination of QAbstractFileEngine::FileInfo, with only the <a href="qabstractfileengine.html#FileFlag-enum">QAbstractFileEngine::PermsMask</a> being honored. If the operations succceeds return true; otherwise return false;</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#size">size</a>().</p>
+<h3 class="fn"><a name="setSize"></a>bool QAbstractFileEngine::setSize ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>size</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Requests that the file be set to size <i>size</i>. If <i>size</i> is larger than the current file then it is filled with 0's, if smaller it is simply truncated. If the operations succceeds return true; otherwise return false;</p>
+<p>This virtual function must be reimplemented by all subclasses.</p>
+<p>See also <a href="qabstractfileengine.html#size">size</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QAbstractFileEngine::size () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the size of the file.</p>
+<p>See also <a href="qabstractfileengine.html#setSize">setSize</a>().</p>
+<h3 class="fn"><a name="supportsExtension"></a>bool QAbstractFileEngine::supportsExtension ( <a href="qabstractfileengine.html#Extension-enum">Extension</a> <i>extension</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function returns true if the file engine supports <i>extension</i>; otherwise, false is returned. By default, no extensions are supported.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qabstractfileengine.html#extension">extension</a>().</p>
+<h3 class="fn"><a name="unmap"></a>bool QAbstractFileEngine::unmap ( <a href="qtglobal.html#uchar-typedef">uchar</a> * <i>address</i> )</h3>
+<p>unmaps the memory <i>address</i>. Returns true if the unmap succeeds; false otherwise.</p>
+<p>This function bases its behavior on calling <a href="qabstractfileengine.html#extension">extension</a>() with <a href="qabstractfileengine-unmapextensionoption.html">UnMapExtensionOption</a>. If the engine does not support this extension, false is returned.</p>
+<p>See also <a href="qabstractfileengine.html#map">map</a>() and <a href="qabstractfileengine.html#supportsExtension">supportsExtension</a>().</p>
+<h3 class="fn"><a name="write"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QAbstractFileEngine::write ( const char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>len</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Writes <i>len</i> bytes from <i>data</i> to the file. Returns the number of characters written on success; otherwise returns -1.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="Iterator-typedef"></a>typedef QAbstractFileEngine::Iterator</h3>
+<p>Synonym for <a href="qabstractfileengineiterator.html">QAbstractFileEngineIterator</a>.</p>
+<p>This typedef was introduced in Qt 4.3.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

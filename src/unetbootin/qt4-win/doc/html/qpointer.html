@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qpointer.cpp -->
+<head>
+  <title>Qt 4.4: QPointer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPointer Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QPointer class is a template class that provides guarded pointers to QObjects. <a href="#details">More...</a></p>
+<pre> #include &lt;QPointer&gt;</pre><ul>
+<li><a href="qpointer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpointer.html#QPointer">QPointer</a></b> ()</li>
+<li><div class="fn"/><b><a href="qpointer.html#QPointer-2">QPointer</a></b> ( T * <i>p</i> )</li>
+<li><div class="fn"/><b><a href="qpointer.html#QPointer-3">QPointer</a></b> ( const QPointer&lt;T&gt; &amp; <i>p</i> )</li>
+<li><div class="fn"/><b><a href="qpointer.html#dtor.QPointer">~QPointer</a></b> ()</li>
+<li><div class="fn"/>T * <b><a href="qpointer.html#data">data</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpointer.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/><b><a href="qpointer.html#operator-T--2a">operator T *</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qpointer.html#operator-2a">operator*</a></b> () const</li>
+<li><div class="fn"/>T * <b><a href="qpointer.html#operator--gt">operator-&gt;</a></b> () const</li>
+<li><div class="fn"/>QPointer&lt;T&gt; &amp; <b><a href="qpointer.html#operator-eq">operator=</a></b> ( const QPointer&lt;T&gt; &amp; <i>p</i> )</li>
+<li><div class="fn"/>QPointer&lt;T&gt; &amp; <b><a href="qpointer.html#operator-eq-2">operator=</a></b> ( T * <i>p</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPointer class is a template class that provides guarded pointers to QObjects.</p>
+<p>A guarded pointer, QPointer&lt;T&gt;, behaves like a normal C++ pointer <tt>T *</tt>, except that it is automatically set to 0 when the referenced object is destroyed (unlike normal C++ pointers, which become &quot;dangling pointers&quot; in such cases). <tt>T</tt> must be a subclass of <a href="qobject.html">QObject</a>.</p>
+<p>Guarded pointers are useful whenever you need to store a pointer to a <a href="qobject.html">QObject</a> that is owned by someone else, and therefore might be destroyed while you still hold a reference to it. You can safely test the pointer for validity.</p>
+<p>Example:</p>
+<pre>     QPointer&lt;QLabel&gt; label = new QLabel;
+     label-&gt;setText(&quot;&amp;Status:&quot;);
+     ...
+     if (label)
+         label-&gt;show();</pre>
+<p>If the <a href="qlabel.html">QLabel</a> is deleted in the meantime, the <tt>label</tt> variable will hold 0 instead of an invalid address, and the last line will never be executed.</p>
+<p>The functions and operators available with a QPointer are the same as those available with a normal unguarded pointer, except the pointer arithmetic operators (<tt>+</tt>, <tt>-</tt>, <tt>++</tt>, and <tt>--</tt>), which are normally used only with arrays of objects.</p>
+<p>Use QPointers like normal pointers and you will not need to read this class documentation.</p>
+<p>For creating guarded pointers, you can construct or assign to them from a T* or from another guarded pointer of the same type. You can compare them with each other using operator==() and operator!=(), or test for 0 with <a href="qpointer.html#isNull">isNull</a>(). You can dereference them using either the <tt>*x</tt> or the <tt>x-&gt;member</tt> notation.</p>
+<p>A guarded pointer will automatically cast to a <tt>T</tt> *, so you can freely mix guarded and unguarded pointers. This means that if you have a QPointer&lt;<a href="qwidget.html">QWidget</a>&gt;, you can pass it to a function that requires a <a href="qwidget.html">QWidget</a> *. For this reason, it is of little value to declare functions to take a QPointer as a parameter; just use normal pointers. Use a QPointer when you are storing a pointer over time.</p>
+<p>Note that class <tt>T</tt> must inherit <a href="qobject.html">QObject</a>, or a compilation or link error will result.</p>
+<p>See also <a href="qobject.html">QObject</a> and <a href="qobjectcleanuphandler.html">QObjectCleanupHandler</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPointer"></a>QPointer::QPointer ()</h3>
+<p>Constructs a 0 guarded pointer.</p>
+<p>See also <a href="qpointer.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="QPointer-2"></a>QPointer::QPointer ( T * <i>p</i> )</h3>
+<p>Constructs a guarded pointer that points to same object that <i>p</i> points to.</p>
+<h3 class="fn"><a name="QPointer-3"></a>QPointer::QPointer ( const QPointer&lt;T&gt; &amp; <i>p</i> )</h3>
+<p>Copies one guarded pointer from another. The constructed guarded pointer points to the same object that <i>p</i> points to (which may be 0).</p>
+<h3 class="fn"><a name="dtor.QPointer"></a>QPointer::~QPointer ()</h3>
+<p>Destroys the guarded pointer. Just like a normal pointer, destroying a guarded pointer does <i>not</i> destroy the object being pointed to.</p>
+<h3 class="fn"><a name="data"></a>T * QPointer::data () const</h3>
+<p>Returns the pointer to the object being guarded.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="isNull"></a>bool QPointer::isNull () const</h3>
+<p>Returns <tt>true</tt> if the referenced object has been destroyed or if there is no referenced object; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-T--2a"></a>QPointer::operator T * () const</h3>
+<p>Cast operator; implements pointer semantics. Because of this function you can pass a <a href="qpointer.html">QPointer</a>&lt;T&gt; to a function where a T* is required.</p>
+<h3 class="fn"><a name="operator-2a"></a>T &amp; QPointer::operator* () const</h3>
+<p>Dereference operator; implements pointer semantics. Just use this operator as you would with a normal C++ pointer.</p>
+<h3 class="fn"><a name="operator--gt"></a>T * QPointer::operator-&gt; () const</h3>
+<p>Overloaded arrow operator; implements pointer semantics. Just use this operator as you would with a normal C++ pointer.</p>
+<h3 class="fn"><a name="operator-eq"></a>QPointer&lt;T&gt; &amp; QPointer::operator= ( const QPointer&lt;T&gt; &amp; <i>p</i> )</h3>
+<p>Assignment operator. This guarded pointer will now point to the same object that <i>p</i> points to.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QPointer&lt;T&gt; &amp; QPointer::operator= ( T * <i>p</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assignment operator. This guarded pointer will now point to the same object that <i>p</i> points to.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/undoframework.qdoc -->
+<head>
+  <title>Qt 4.4: Undo Framework Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Undo Framework Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-undoframework-commands-cpp.html">tools/undoframework/commands.cpp</a></li>
+<li><a href="tools-undoframework-commands-h.html">tools/undoframework/commands.h</a></li>
+<li><a href="tools-undoframework-diagramitem-cpp.html">tools/undoframework/diagramitem.cpp</a></li>
+<li><a href="tools-undoframework-diagramitem-h.html">tools/undoframework/diagramitem.h</a></li>
+<li><a href="tools-undoframework-diagramscene-cpp.html">tools/undoframework/diagramscene.cpp</a></li>
+<li><a href="tools-undoframework-diagramscene-h.html">tools/undoframework/diagramscene.h</a></li>
+<li><a href="tools-undoframework-mainwindow-cpp.html">tools/undoframework/mainwindow.cpp</a></li>
+<li><a href="tools-undoframework-mainwindow-h.html">tools/undoframework/mainwindow.h</a></li>
+<li><a href="tools-undoframework-main-cpp.html">tools/undoframework/main.cpp</a></li>
+<li><a href="tools-undoframework-undoframework-pro.html">tools/undoframework/undoframework.pro</a></li>
+<li><a href="tools-undoframework-undoframework-qrc.html">tools/undoframework/undoframework.qrc</a></li>
+</ul>
+<p>This example shows how to implement undo/redo functionality with the Qt undo framework.</p>
+<p align="center"><img src="images/undoframeworkexample.png" alt="The Undo Diagram Example" /></p><p>In the Qt undo framework, all actions that the user performs are implemented in classes that inherit <a href="qundocommand.html">QUndoCommand</a>. An undo command class knows how to both <a href="qundocommand.html#redo">redo()</a> - or just do the first time - and <a href="qundocommand.html#undo">undo()</a> an action. For each action the user performs, a command is placed on a <a href="qundostack.html">QUndoStack</a>. Since the stack contains all commands executed (stacked in chronological order) on the document, it can roll the state of the document backwards and forwards by undoing and redoing its commands. See the <a href="qundo.html">overview document</a> for a high-level introduction to the undo framework.</p>
+<p>The undo example implements a simple diagram application. It is possible to add and delete items, which are either box or rectangular shaped, and move the items by dragging them with the mouse. The undo stack is shown in a <a href="qundoview.html">QUndoView</a>, which is a list in which the commands are shown as list items. Undo and redo are available through the edit menu. The user can also select a command from the undo view.</p>
+<p>We use the <a href="graphicsview.html">graphics view framework</a> to implement the diagram. We only treat the related code briefly as the framework has examples of its own (e.g&#x2e;, the <a href="graphicsview-diagramscene.html">Diagram Scene Example</a>).</p>
+<p>The example consists of the following classes:</p>
+<ul>
+<li><tt>MainWindow</tt> is the main window and arranges the example's widgets. It creates the commands based on user input and keeps them on the command stack.</li>
+<li><tt>AddCommand</tt> adds an item to the scene.</li>
+<li><tt>DeleteCommand</tt> deletes an item from the scene.</li>
+<li><tt>MoveCommand</tt> when an item is moved the MoveCommand keeps record of the start and stop positions of the move, and it moves the item according to these when <tt>redo()</tt> and <tt>undo()</tt> is called.</li>
+<li><tt>DiagramScene</tt> inherits <a href="qgraphicsscene.html">QGraphicsScene</a> and emits signals for the <tt>MoveComands</tt> when an item is moved.</li>
+<li><tt>DiagramItem</tt> inherits <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a> and represents an item in the diagram.</li>
+</ul>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ public slots:
+     void itemMoved(DiagramItem *movedDiagram, const QPointF &amp;moveStartPosition);
+
+ private slots:
+     void deleteItem();
+     void addBox();
+     void addTriangle();
+     void about();
+     void itemMenuAboutToShow();
+     void itemMenuAboutToHide();
+
+ private:
+     void createActions();
+     void createMenus();
+     void createUndoView();
+
+     QAction *deleteAction;
+     QAction *addBoxAction;
+     QAction *addTriangleAction;
+     QAction *undoAction;
+     QAction *redoAction;
+     QAction *exitAction;
+     QAction *aboutAction;
+
+     QMenu *fileMenu;
+     QMenu *editMenu;
+     QMenu *itemMenu;
+     QMenu *helpMenu;
+
+     DiagramScene *diagramScene;
+     QUndoStack *undoStack;
+     QUndoView *undoView;
+ };</pre>
+<p>The <tt>MainWindow</tt> class maintains the undo stack, i.e&#x2e;, it creates <a href="qundocommand.html">QUndoCommand</a>s and pushes and pops them from the stack when it receives the <tt>triggered()</tt> signal from <tt>undoAction</tt> and <tt>redoAction</tt>.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>We will start with a look at the constructor:</p>
+<pre> MainWindow::MainWindow()
+ {
+     undoStack = new QUndoStack();
+
+     createActions();
+     createMenus();
+
+     connect(undoStack, SIGNAL(canRedoChanged(bool)),
+             redoAction, SLOT(setEnabled(bool)));
+     connect(undoStack, SIGNAL(canUndoChanged(bool)),
+             undoAction, SLOT(setEnabled(bool)));
+     createUndoView();
+
+     diagramScene = new DiagramScene();
+     QBrush pixmapBrush(QPixmap(&quot;:/images/cross.png&quot;).scaled(30, 30));
+     diagramScene-&gt;setBackgroundBrush(pixmapBrush);
+     diagramScene-&gt;setSceneRect(QRect(0, 0, 500, 500));
+
+     connect(diagramScene, SIGNAL(itemMoved(DiagramItem *, const QPointF &amp;)),
+             this, SLOT(itemMoved(DiagramItem *, const QPointF &amp;)));
+
+     setWindowTitle(&quot;Undo Framework&quot;);
+     QGraphicsView *view = new QGraphicsView(diagramScene);
+     setCentralWidget(view);
+     resize(700, 500);
+ }</pre>
+<p>By connecting the undo stack's <tt>canRedoChanged()</tt> and canUndoChanged() signals to our undo and redo action's setEnabled() slot we make the actions disabled when the stack cannot undo and redo commands. The rest of the constructor sets up the DiagramScene and <a href="qgraphicsview.html">QGraphicsView</a>.</p>
+<p>Here is the <tt>createUndoView()</tt> function:</p>
+<pre> void MainWindow::createUndoView()
+ {
+     undoView = new QUndoView(undoStack);
+     undoView-&gt;setWindowTitle(tr(&quot;Command List&quot;));
+     undoView-&gt;show();
+     undoView-&gt;setAttribute(Qt::WA_QuitOnClose, false);
+ }</pre>
+<p>The <a href="qundoview.html">QUndoView</a> is a widget that display the text, which is set with the <a href="qundocommand.html#setText">setText()</a> function, for each <a href="qundocommand.html">QUndoCommand</a> in the undo stack in a list.</p>
+<p>Here is the <tt>createActions()</tt> function:</p>
+<pre> void MainWindow::createActions()
+ {
+     deleteAction = new QAction(tr(&quot;&amp;Delete Item&quot;), this);
+     deleteAction-&gt;setShortcut(tr(&quot;Del&quot;));
+     connect(deleteAction, SIGNAL(triggered()), this, SLOT(deleteItem()));
+     ...
+     undoAction = new QAction(tr(&quot;&amp;Undo&quot;), this);
+     undoAction-&gt;setShortcut(tr(&quot;Ctrl+Z&quot;));
+     undoAction-&gt;setEnabled(false);
+     connect(undoAction, SIGNAL(triggered()), undoStack, SLOT(undo()));
+
+     redoAction = new QAction(tr(&quot;&amp;Redo&quot;), this);
+     QList&lt;QKeySequence&gt; redoShortcuts;
+     redoShortcuts &lt;&lt; tr(&quot;Ctrl+Y&quot;) &lt;&lt; tr(&quot;Shift+Ctrl+Z&quot;);
+     redoAction-&gt;setShortcuts(redoShortcuts);
+     redoAction-&gt;setEnabled(false);
+     connect(redoAction, SIGNAL(triggered()), undoStack, SLOT(redo()));</pre>
+<p>The <tt>createActions()</tt> function sets up all the examples actions in the manner shown above. We can connect our <tt>undoAction</tt> and <tt>redoAction</tt> directly to the stack's <tt>undo()</tt> and <tt>redo()</tt> slots as we disable the actions when the stack cannot do undo and redo. For the other actions we have implemented slots in the <tt>MainWindow</tt> class.</p>
+<p>Here is the <tt>createMenues()</tt> function:</p>
+<pre> void MainWindow::createMenus()
+ {
+     ...
+     editMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Edit&quot;));
+     editMenu-&gt;addAction(undoAction);
+     editMenu-&gt;addAction(redoAction);
+     editMenu-&gt;addSeparator();
+     editMenu-&gt;addAction(deleteAction);
+     connect(editMenu, SIGNAL(aboutToShow()),
+             this, SLOT(itemMenuAboutToShow()));
+     connect(editMenu, SIGNAL(aboutToHide()),
+             this, SLOT(itemMenuAboutToHide()));
+     ...
+ }</pre>
+<p>We have to use the <a href="qmenu.html">QMenu</a> <tt>aboutToShow()</tt> and <tt>aboutToHide()</tt> signals since we only want <tt>deleteAction</tt> to be enabled when we have selected an item. We also want the <a href="qundocommand.html#text">text()</a> to be shown in the <tt>undoAction</tt> and <tt>redoAction</tt> menu items.</p>
+<p>Here is the <tt>itemMoved()</tt> slot:</p>
+<pre> void MainWindow::itemMoved(DiagramItem *movedItem,
+                            const QPointF &amp;oldPosition)
+ {
+     undoStack-&gt;push(new MoveCommand(movedItem, oldPosition));
+ }</pre>
+<p>We simply push a MoveCommand on the stack, which calls <tt>redo()</tt> on it.</p>
+<p>Here is the <tt>deleteItem()</tt> slot:</p>
+<pre> void MainWindow::deleteItem()
+ {
+     if (diagramScene-&gt;selectedItems().isEmpty())
+         return;
+
+     QUndoCommand *deleteCommand = new DeleteCommand(diagramScene);
+     undoStack-&gt;push(deleteCommand);
+ }</pre>
+<p>An item must be selected to be deleted. We need to check if it is selected as the <tt>deleteAction</tt> may be enabled even if an item is not selected. This can happen as we do not catch a signal or event when an item is selected.</p>
+<p>Here is the <tt>itemMenuAboutToShow()</tt> and itemMenuAboutToHide() slots:</p>
+<pre> void MainWindow::itemMenuAboutToHide()
+ {
+     deleteAction-&gt;setEnabled(true);
+ }
+
+ void MainWindow::itemMenuAboutToShow()
+ {
+     undoAction-&gt;setText(tr(&quot;Undo &quot;) + undoStack-&gt;undoText());
+     redoAction-&gt;setText(tr(&quot;Redo &quot;) + undoStack-&gt;redoText());
+     deleteAction-&gt;setEnabled(!diagramScene-&gt;selectedItems().isEmpty());
+ }</pre>
+<p>We implement <tt>itemMenuAboutToShow()</tt> and <tt>itemMenuAboutToHide()</tt> to get a dynamic item menu. These slots are connected to the <a href="qmenu.html#aboutToShow">aboutToShow()</a> and <a href="qmenu.html#aboutToHide">aboutToHide()</a> signals. We need this to disable or enable the <tt>deleteAction</tt> and fill the <tt>redoAction</tt> and <tt>undoAction</tt> menu item with the text from the next <a href="qundocommand.html">QUndoCommand</a> that will be redone or undone.</p>
+<p>Here is the <tt>addBox()</tt> slot:</p>
+<pre> void MainWindow::addBox()
+ {
+     QUndoCommand *addCommand = new AddCommand(DiagramItem::Box, diagramScene);
+     undoStack-&gt;push(addCommand);
+ }</pre>
+<p>The <tt>addBox()</tt> function creates an AddCommand and pushes it on the undo stack.</p>
+<p>Here is the <tt>addTriangle()</tt> sot:</p>
+<pre> void MainWindow::addTriangle()
+ {
+     QUndoCommand *addCommand = new AddCommand(DiagramItem::Triangle,
+                                               diagramScene);
+     undoStack-&gt;push(addCommand);
+ }</pre>
+<p>The <tt>addTriangle()</tt> function creates an AddCommand and pushes it on the undo stack.</p>
+<p>Here is the implementation of <tt>about()</tt>:</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Undo&quot;),
+                        tr(&quot;The &lt;b&gt;Undo&lt;/b&gt; example demonstrates how to &quot;
+                           &quot;use Qt's undo framework.&quot;));
+ }</pre>
+<p>The about slot is triggered by the <tt>aboutAction</tt> and displays an about box for the example.</p>
+<a name="addcommand-class-definition"></a>
+<h2>AddCommand Class Definition</h2>
+<pre> class AddCommand : public QUndoCommand
+ {
+ public:
+     AddCommand(DiagramItem::DiagramType addType, QGraphicsScene *graphicsScene,
+                QUndoCommand *parent = 0);
+
+     void undo();
+     void redo();
+
+ private:
+     DiagramItem *myDiagramItem;
+     QGraphicsScene *myGraphicsScene;
+     QPointF initialPosition;
+ };</pre>
+<p>The <tt>AddCommand</tt> class adds DiagramItem graphics items to the DiagramScene.</p>
+<a name="addcommand-class-implementation"></a>
+<h2>AddCommand Class Implementation</h2>
+<p>We start with the constructor:</p>
+<pre> AddCommand::AddCommand(DiagramItem::DiagramType addType,
+                        QGraphicsScene *scene, QUndoCommand *parent)
+     : QUndoCommand(parent)
+ {
+     static int itemCount = 0;
+
+     myGraphicsScene = scene;
+     myDiagramItem = new DiagramItem(addType);
+     initialPosition = QPointF((itemCount * 15) % int(scene-&gt;width()),
+                               (itemCount * 15) % int(scene-&gt;height()));
+     scene-&gt;update();
+     ++itemCount;
+     setText(QObject::tr(&quot;Add %1&quot;)
+         .arg(createCommandString(myDiagramItem, initialPosition)));
+ }</pre>
+<p>We first create the DiagramItem to add to the DiagramScene. The <a href="qundocommand.html#setText">setText()</a> function let us set a <a href="qstring.html">QString</a> that describes the command. We use this to get custom messages in the <a href="qundoview.html">QUndoView</a> and in the menu of the main window.</p>
+<pre> void AddCommand::undo()
+ {
+     myGraphicsScene-&gt;removeItem(myDiagramItem);
+     myGraphicsScene-&gt;update();
+ }</pre>
+<p><tt>undo()</tt> removes the item from the scene. We need to update the scene as ..&#x2e;(ask Andreas)</p>
+<pre> void AddCommand::redo()
+ {
+     myGraphicsScene-&gt;addItem(myDiagramItem);
+     myDiagramItem-&gt;setPos(initialPosition);
+     myGraphicsScene-&gt;clearSelection();
+     myGraphicsScene-&gt;update();
+ }</pre>
+<p>We set the position of the item as we do not do this in the constructor.</p>
+<a name="deletecommand-class-definition"></a>
+<h2>DeleteCommand Class Definition</h2>
+<pre> class DeleteCommand : public QUndoCommand
+ {
+ public:
+     DeleteCommand(QGraphicsScene *graphicsScene, QUndoCommand *parent = 0);
+
+     void undo();
+     void redo();
+
+ private:
+     DiagramItem *myDiagramItem;
+     QGraphicsScene *myGraphicsScene;
+ };</pre>
+<p>The DeleteCommand class implements the functionality to remove an item from the scene.</p>
+<a name="deletecommand-class-implementation"></a>
+<h2>DeleteCommand Class Implementation</h2>
+<pre> DeleteCommand::DeleteCommand(QGraphicsScene *scene, QUndoCommand *parent)
+     : QUndoCommand(parent)
+ {
+     myGraphicsScene = scene;
+     QList&lt;QGraphicsItem *&gt; list = myGraphicsScene-&gt;selectedItems();
+     list.first()-&gt;setSelected(false);
+     myDiagramItem = static_cast&lt;DiagramItem *&gt;(list.first());
+     setText(QObject::tr(&quot;Delete %1&quot;)
+         .arg(createCommandString(myDiagramItem, myDiagramItem-&gt;pos())));
+ }</pre>
+<p>We know that there must be one selected item as it is not possible to create a DeleteCommand unless the item to be deleted is selected and that only one item can be selected at any time. The item must be unselected if it is inserted back into the scene.</p>
+<pre> void DeleteCommand::undo()
+ {
+     myGraphicsScene-&gt;addItem(myDiagramItem);
+     myGraphicsScene-&gt;update();
+ }</pre>
+<p>The item is simply reinserted into the scene.</p>
+<pre> void DeleteCommand::redo()
+ {
+     myGraphicsScene-&gt;removeItem(myDiagramItem);
+ }</pre>
+<p>The item is removed from the scene.</p>
+<a name="movecommand-class-definition"></a>
+<h2>MoveCommand Class Definition</h2>
+<pre> class MoveCommand : public QUndoCommand
+ {
+ public:
+     enum { Id = 1234 };
+
+     MoveCommand(DiagramItem *diagramItem, const QPointF &amp;oldPos,
+                 QUndoCommand *parent = 0);
+
+     void undo();
+     void redo();
+     bool mergeWith(const QUndoCommand *command);
+     int id() const { return Id; }
+
+ private:
+     DiagramItem *myDiagramItem;
+     QPointF myOldPos;
+     QPointF newPos;
+ };</pre>
+<p>The <a href="qundocommand.html#mergeWith">mergeWith()</a> is reimplemented to make consecutive moves of an item one MoveCommand, i.e, the item will be moved back to the start position of the first move.</p>
+<a name="movecommand-class-implementation"></a>
+<h2>MoveCommand Class Implementation</h2>
+<p>The constructor of MoveCommand looks like this:</p>
+<pre> MoveCommand::MoveCommand(DiagramItem *diagramItem, const QPointF &amp;oldPos,
+                  QUndoCommand *parent)
+     : QUndoCommand(parent)
+ {
+     myDiagramItem = diagramItem;
+     newPos = diagramItem-&gt;pos();
+     myOldPos = oldPos;
+ }</pre>
+<p>We save both the old and new positions for undo and redo respectively.</p>
+<pre> void MoveCommand::undo()
+ {
+     myDiagramItem-&gt;setPos(myOldPos);
+     myDiagramItem-&gt;scene()-&gt;update();
+     setText(QObject::tr(&quot;Move %1&quot;)
+         .arg(createCommandString(myDiagramItem, newPos)));
+ }</pre>
+<p>We simply set the items old position and update the scene.</p>
+<pre> void MoveCommand::redo()
+ {
+     myDiagramItem-&gt;setPos(newPos);
+     setText(QObject::tr(&quot;Move %1&quot;)
+         .arg(createCommandString(myDiagramItem, newPos)));
+ }</pre>
+<p>We set the item to its new position.</p>
+<pre> bool MoveCommand::mergeWith(const QUndoCommand *command)
+ {
+     const MoveCommand *moveCommand = static_cast&lt;const MoveCommand *&gt;(command);
+     DiagramItem *item = moveCommand-&gt;myDiagramItem;
+
+     if (myDiagramItem != item)
+     return false;
+
+     newPos = item-&gt;pos();
+     setText(QObject::tr(&quot;Move %1&quot;)
+         .arg(createCommandString(myDiagramItem, newPos)));
+
+     return true;
+ }</pre>
+<p>Whenever a MoveCommand is created, this function is called to check if it should be merged with the previous command. It is the previous command object that is kept on the stack. The function returns true if the command is merged; otherwise false.</p>
+<p>We first check whether it is the same item that has been moved twice, in which case we merge the commands. We update the position of the item so that it will take the last position in the move sequence when undone.</p>
+<a name="diagramscene-class-definition"></a>
+<h2>DiagramScene Class Definition</h2>
+<pre> class DiagramScene : public QGraphicsScene
+ {
+     Q_OBJECT
+
+ public:
+     DiagramScene(QObject *parent = 0);
+
+ signals:
+     void itemMoved(DiagramItem *movedItem, const QPointF &amp;movedFromPosition);
+
+ protected:
+     void mousePressEvent(QGraphicsSceneMouseEvent *event);
+     void mouseReleaseEvent(QGraphicsSceneMouseEvent *event);
+
+ private:
+     QGraphicsItem *movingItem;
+     QPointF oldPos;
+ };</pre>
+<p>The DiagramScene implements the functionality to move a DiagramItem with the mouse. It emits a signal when a move is completed. This is caught by the <tt>MainWindow</tt>, which makes MoveCommands. We do not examine the implementation of DiagramScene as it only deals with graphics framework issues.</p>
+<a name="the-function"></a>
+<h2>The <tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function of the program looks like this:</p>
+<pre> int main(int argv, char *args[])
+ {
+     Q_INIT_RESOURCE(undoframework);
+
+     QApplication app(argv, args);
+
+     MainWindow mainWindow;
+     mainWindow.show();
+
+     return app.exec();
+ }</pre>
+<p>We draw a grid in the background of the DiagramScene, so we use a resource file. The rest of the function creates the <tt>MainWindow</tt> and shows it as a top level window.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

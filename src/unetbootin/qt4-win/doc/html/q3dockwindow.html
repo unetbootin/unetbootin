@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3dockwindow.cpp -->
+<head>
+  <title>Qt 4.4: Q3DockWindow Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DockWindow Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DockWindow class provides a widget which can be docked inside a <a href="q3dockarea.html">Q3DockArea</a> or floated as a top level window on the desktop. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DockWindow&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdockwindow">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3frame.html">Q3Frame</a>.</p>
+<p>Inherited by <a href="q3toolbar.html">Q3ToolBar</a>.</p>
+<ul>
+<li><a href="q3dockwindow-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3dockwindow.html#CloseMode-enum">CloseMode</a></b> { Never, Docked, Undocked, Always }</li>
+<li><div class="fn"/>enum <b><a href="q3dockwindow.html#Place-enum">Place</a></b> { InDock, OutsideDock }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3dockwindow.html#closeMode-prop">closeMode</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#horizontallyStretchable-prop">horizontallyStretchable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#movingEnabled-prop">movingEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#newLine-prop">newLine</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#offset-prop">offset</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3dockwindow.html#opaqueMoving-prop">opaqueMoving</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#place-prop">place</a></b> : const Place</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#resizeEnabled-prop">resizeEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#stretchable-prop">stretchable</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#verticallyStretchable-prop">verticallyStretchable</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dockwindow.html#Q3DockWindow">Q3DockWindow</a></b> ( Place <i>p</i> = InDock, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#Q3DockWindow-2">Q3DockWindow</a></b> ( QWidget * <i>parent</i>, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dockwindow.html#dtor.Q3DockWindow">~Q3DockWindow</a></b> ()</li>
+<li><div class="fn"/>Q3DockArea * <b><a href="q3dockwindow.html#area">area</a></b> () const</li>
+<li><div class="fn"/>QBoxLayout * <b><a href="q3dockwindow.html#boxLayout">boxLayout</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3dockwindow.html#closeMode-prop">closeMode</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="q3dockwindow.html#fixedExtent">fixedExtent</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#isCloseEnabled">isCloseEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#isHorizontalStretchable">isHorizontalStretchable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#horizontallyStretchable-prop">isHorizontallyStretchable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#movingEnabled-prop">isMovingEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#resizeEnabled-prop">isResizeEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#stretchable-prop">isStretchable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#isVerticalStretchable">isVerticalStretchable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#verticallyStretchable-prop">isVerticallyStretchable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#newLine-prop">newLine</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3dockwindow.html#offset-prop">offset</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3dockwindow.html#opaqueMoving-prop">opaqueMoving</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="q3dockwindow.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>Place <b><a href="q3dockwindow.html#place-prop">place</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#closeMode-prop">setCloseMode</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#setFixedExtentHeight">setFixedExtentHeight</a></b> ( int <i>h</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#setFixedExtentWidth">setFixedExtentWidth</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="q3dockwindow.html#setHorizontalStretchable">setHorizontalStretchable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#horizontallyStretchable-prop">setHorizontallyStretchable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#movingEnabled-prop">setMovingEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#newLine-prop">setNewLine</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#offset-prop">setOffset</a></b> ( int <i>o</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#opaqueMoving-prop">setOpaqueMoving</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="q3dockwindow.html#setVerticalStretchable">setVerticalStretchable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#verticallyStretchable-prop">setVerticallyStretchable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#setWidget">setWidget</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="q3dockwindow.html#widget">widget</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3dockwindow.html#windowTitle">windowTitle</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#dock">dock</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#setOrientation">setOrientation</a></b> ( Qt::Orientation <i>o</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#undock">undock</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dockwindow.html#undock-2">undock</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3dockwindow.html#orientationChanged">orientationChanged</a></b> ( Qt::Orientation <i>o</i> )</li>
+<li><div class="fn"/>void <b><a href="q3dockwindow.html#placeChanged">placeChanged</a></b> ( Q3DockWindow::Place <i>p</i> )</li>
+<li><div class="fn"/>void <b><a href="q3dockwindow.html#visibilityChanged">visibilityChanged</a></b> ( bool <i>visible</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DockWindow class provides a widget which can be docked inside a <a href="q3dockarea.html">Q3DockArea</a> or floated as a top level window on the desktop.</p>
+<p>This class handles moving, resizing, docking and undocking dock windows. <a href="q3toolbar.html">Q3ToolBar</a> is a subclass of Q3DockWindow so the functionality provided for dock windows is available with the same API for toolbars.</p>
+<p align="center"><img src="images/qmainwindow-qdockareas.png" alt="Q3DockWindows in a Q3DockArea" /></p><p>Two Q3DockWindows (<a href="q3toolbar.html">Q3ToolBar</a>s) in a <a href="q3dockarea.html">Q3DockArea</a></p>
+<p align="center"><img src="images/qdockwindow.png" alt="A Q3DockWindow" /></p><p>A Floating Q3DockWindow</p>
+<p>If the user drags the dock window into the dock area the dock window will be docked. If the user drags the dock area outside any dock areas the dock window will be undocked (floated) and will become a top level window. Double clicking a floating dock window's title bar will dock the dock window to the last dock area it was docked in. Double clicking a docked dock window's handle will undock (float) the dock window. If the user clicks the close button (which appears on floating dock windows by default) the dock window will disappear. You can control whether or not a dock window has a close button with <a href="q3dockwindow.html#closeMode-prop">setCloseMode</a>().</p>
+<p><a href="q3mainwindow.html">Q3MainWindow</a> provides four dock areas (top, left, right and bottom) which can be used by dock windows. For many applications using the dock areas provided by <a href="q3mainwindow.html">Q3MainWindow</a> is sufficient. (See the <a href="q3dockarea.html">Q3DockArea</a> documentation if you want to create your own dock areas.) In <a href="q3mainwindow.html">Q3MainWindow</a> a right-click popup menu (the dock window menu) is available which lists dock windows and can be used to show or hide them. (The popup menu only lists dock windows that have a <a href="qwidget.html#windowTitle-prop">caption</a>.)</p>
+<p>When you construct a dock window you <i>must</i> pass it a <a href="q3dockarea.html">Q3DockArea</a> or a <a href="q3mainwindow.html">Q3MainWindow</a> as its parent if you want it docked. Pass 0 for the parent if you want it floated.</p>
+<pre>     Q3ToolBar *fileTools = new Q3ToolBar(this, &quot;File Actions&quot;);
+     moveDockWindow(fileTools, Left);</pre>
+<p>In the example above we create a new <a href="q3toolbar.html">Q3ToolBar</a> in the constructor of a <a href="q3mainwindow.html">Q3MainWindow</a> subclass (so that the <i>this</i> pointer points to the <a href="q3mainwindow.html">Q3MainWindow</a>). By default the toolbar will be added to the <tt>Top</tt> dock area, but we've moved it to the <tt>Left</tt> dock area.</p>
+<p>A dock window is often used to contain a single widget. In these cases the widget can be set by calling <a href="q3dockwindow.html#setWidget">setWidget</a>(). If you're constructing a dock window that contains multiple widgets, e.g&#x2e; a toolbar, arrange the widgets within a box layout inside the dock window. To do this use the <a href="q3dockwindow.html#boxLayout">boxLayout</a>() function to get a pointer to the dock window's box layout, then add widgets to the layout using the box layout's <a href="qboxlayout.html#addWidget">QBoxLayout::addWidget</a>() function. The dock window will dynamically set the orientation of the layout to be vertical or horizontal as necessary, although you can control this yourself with <a href="q3dockwindow.html#setOrientation">setOrientation</a>().</p>
+<p>Although a common use of dock windows is for toolbars, they can be used with any widgets. When using larger widgets it may make sense for the dock window to be resizable by calling <a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a>(). Resizable dock windows are given splitter-like handles to allow the user to resize them within their dock area. When resizable dock windows are undocked they become top level windows and can be resized like any other top level windows, e.g&#x2e; by dragging a corner or edge.</p>
+<p><a href="qt-qt3.html#Dock-enum">Qt::Dock</a> windows can be docked and undocked using <a href="q3dockwindow.html#dock">dock</a>() and <a href="q3dockwindow.html#undock">undock</a>(). A dock window's orientation can be set with <a href="q3dockwindow.html#setOrientation">setOrientation</a>(). You can also use <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(). If you're using a <a href="q3mainwindow.html">Q3MainWindow</a>, <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>() and <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>() are available.</p>
+<p>A dock window can have some preferred settings, for example, you can set a preferred offset from the left edge (or top edge for vertical dock areas) of the dock area using <a href="q3dockwindow.html#offset-prop">setOffset</a>(). If you'd prefer a dock window to start on a new line when it is docked use <a href="q3dockwindow.html#newLine-prop">setNewLine</a>(). The <a href="q3dockwindow.html#setFixedExtentWidth">setFixedExtentWidth</a>() and <a href="q3dockwindow.html#setFixedExtentHeight">setFixedExtentHeight</a>() functions can be used to define the dock window's preferred size, and the <a href="q3dockwindow.html#horizontallyStretchable-prop">setHorizontallyStretchable</a>() and <a href="q3dockwindow.html#verticallyStretchable-prop">setVerticallyStretchable</a>() functions set whether the dock window can be stretched or not. Dock windows can be moved by default, but this can be changed with <a href="q3dockwindow.html#movingEnabled-prop">setMovingEnabled</a>(). When a dock window is moved it is shown as a rectangular outline, but it can be shown normally using <a href="q3dockwindow.html#opaqueMoving-prop">setOpaqueMoving</a>().</p>
+<p>When a dock window's visibility changes, i.e&#x2e; it is shown or hidden, the <a href="q3dockwindow.html#visibilityChanged">visibilityChanged</a>() signal is emitted. When a dock window is docked, undocked or moved inside the dock area the <a href="q3dockwindow.html#placeChanged">placeChanged</a>() signal is emitted.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CloseMode-enum"></a>enum Q3DockWindow::CloseMode</h3>
+<p>This enum type specifies when (if ever) a dock window has a close button.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DockWindow::Never</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The dock window never has a close button and cannot be closed by the user.</td></tr>
+<tr><td valign="top"><tt>Q3DockWindow::Docked</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The dock window has a close button only when docked.</td></tr>
+<tr><td valign="top"><tt>Q3DockWindow::Undocked</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The dock window has a close button only when floating.</td></tr>
+<tr><td valign="top"><tt>Q3DockWindow::Always</tt></td><td align="center" valign="top"><tt>Docked | Undocked</tt></td><td valign="top">The dock window always has a close button.</td></tr>
+</table></p>
+<h3 class="fn"><a name="Place-enum"></a>enum Q3DockWindow::Place</h3>
+<p>This enum specifies the possible locations for a <a href="q3dockwindow.html">Q3DockWindow</a>:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DockWindow::InDock</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Inside a <a href="q3dockarea.html">Q3DockArea</a>.</td></tr>
+<tr><td valign="top"><tt>Q3DockWindow::OutsideDock</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Floating as a top level window on the desktop.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="closeMode-prop"></a>closeMode : int</h3>
+<p>This property holds the close mode of a dock window.</p>
+<p>Defines when (if ever) the dock window has a close button. The choices are <tt>Never</tt>, <tt>Docked</tt> (i.e&#x2e; only when docked), <tt>Undocked</tt> (only when undocked, i.e&#x2e; floated) or <tt>Always</tt>.</p>
+<p>The default is <tt>Never</tt>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int closeMode () const</b></li>
+<li><div class="fn"/><b>virtual void setCloseMode ( int <i>m</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="horizontallyStretchable-prop"></a>horizontallyStretchable : bool</h3>
+<p>This property holds whether the dock window is horizontally stretchable.</p>
+<p>A dock window is horizontally stretchable if you call setHorizontallyStretchable(true) or setResizeEnabled(true).</p>
+<p><b>Warning:</b> Stretchability is broken. You must call setResizeEnabled(true) to get proper behavior and even then <a href="q3dockwindow.html">Q3DockWindow</a> does not limit stretchablilty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isHorizontallyStretchable () const</b></li>
+<li><div class="fn"/><b>virtual void setHorizontallyStretchable ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a>().</p>
+<h3 class="fn"><a name="movingEnabled-prop"></a>movingEnabled : bool</h3>
+<p>This property holds whether the user can move the dock window within the dock area, move the dock window to another dock area, or float the dock window.</p>
+<p>This property is true by default.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isMovingEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setMovingEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="newLine-prop"></a>newLine : bool</h3>
+<p>This property holds whether the dock window prefers to start a new line in the dock area.</p>
+<p>The default is false, i.e&#x2e; the dock window doesn't require a new line in the dock area.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool newLine () const</b></li>
+<li><div class="fn"/><b>virtual void setNewLine ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="offset-prop"></a>offset : int</h3>
+<p>This property holds the dock window's preferred offset from the dock area's left edge (top edge for vertical dock areas).</p>
+<p>The default is 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int offset () const</b></li>
+<li><div class="fn"/><b>virtual void setOffset ( int <i>o</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="opaqueMoving-prop"></a>opaqueMoving : bool</h3>
+<p>This property holds whether the dock window will be shown normally whilst it is being moved.</p>
+<p>If this property is false, (the default), the dock window will be represented by an outline rectangle whilst it is being moved.</p>
+<p><b>Warning:</b> Currently opaque moving has some problems and we do not recommend using it at this time. We expect to fix these problems in a future release.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool opaqueMoving () const</b></li>
+<li><div class="fn"/><b>virtual void setOpaqueMoving ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="place-prop"></a>place : const <a href="q3dockwindow.html#Place-enum">Place</a></h3>
+<p>This property holds the location where the dock window is placed.</p>
+<p>This is either <tt>InDock</tt> or <tt>OutsideDock</tt>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Place place () const</b></li>
+</ul>
+<p>See also <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(), <a href="q3dockarea.html#removeDockWindow">Q3DockArea::removeDockWindow</a>(), <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>(), and <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>().</p>
+<h3 class="fn"><a name="resizeEnabled-prop"></a>resizeEnabled : bool</h3>
+<p>This property holds whether the dock window is resizeable.</p>
+<p>A resizeable dock window can be resized using splitter-like handles inside a dock area and like every other top level window when floating.</p>
+<p>A dock window is both horizontally and vertically stretchable if you call setResizeEnabled(true).</p>
+<p>This property is false by default.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isResizeEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setResizeEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3dockwindow.html#verticallyStretchable-prop">setVerticallyStretchable</a>() and <a href="q3dockwindow.html#horizontallyStretchable-prop">setHorizontallyStretchable</a>().</p>
+<h3 class="fn"><a name="stretchable-prop"></a>stretchable : const bool</h3>
+<p>This property holds whether the dock window is stretchable in the current orientation().</p>
+<p>This property can be set using <a href="q3dockwindow.html#horizontallyStretchable-prop">setHorizontallyStretchable</a>() and <a href="q3dockwindow.html#verticallyStretchable-prop">setVerticallyStretchable</a>(), or with <a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a>().</p>
+<p><b>Warning:</b> Stretchability is broken. You must call setResizeEnabled(true) to get proper behavior and even then <a href="q3dockwindow.html">Q3DockWindow</a> does not limit stretchablilty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isStretchable () const</b></li>
+</ul>
+<p>See also <a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a>().</p>
+<h3 class="fn"><a name="verticallyStretchable-prop"></a>verticallyStretchable : bool</h3>
+<p>This property holds whether the dock window is vertically stretchable.</p>
+<p>A dock window is vertically stretchable if you call setVerticallyStretchable(true) or setResizeEnabled(true).</p>
+<p><b>Warning:</b> Stretchability is broken. You must call setResizeEnabled(true) to get proper behavior and even then <a href="q3dockwindow.html">Q3DockWindow</a> does not limit stretchablilty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isVerticallyStretchable () const</b></li>
+<li><div class="fn"/><b>virtual void setVerticallyStretchable ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3dockwindow.html#resizeEnabled-prop">setResizeEnabled</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DockWindow"></a>Q3DockWindow::Q3DockWindow ( <a href="q3dockwindow.html#Place-enum">Place</a> <i>p</i> = InDock, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a <a href="q3dockwindow.html">Q3DockWindow</a> with parent <i>parent</i>, called <i>name</i> and with widget flags <i>f</i>.</p>
+<p>If <i>p</i> is <tt>InDock</tt>, the dock window is docked into a dock area and <i>parent</i> <i>must</i> be a <a href="q3dockarea.html">Q3DockArea</a> or a <a href="q3mainwindow.html">Q3MainWindow</a>. If the <i>parent</i> is a <a href="q3mainwindow.html">Q3MainWindow</a> the dock window will be docked in the main window's <tt>Top</tt> dock area.</p>
+<p>If <i>p</i> is <tt>OutsideDock</tt>, the dock window is created as a floating window.</p>
+<p>We recommend creating the dock area <tt>InDock</tt> with a <a href="q3mainwindow.html">Q3MainWindow</a> as parent then calling <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>() to move the dock window where you want it.</p>
+<h3 class="fn"><a name="Q3DockWindow-2"></a>Q3DockWindow::Q3DockWindow ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a <a href="q3dockwindow.html">Q3DockWindow</a> with parent <i>parent</i>, called <i>name</i> and with widget flags <i>f</i>.</p>
+<h3 class="fn"><a name="dtor.Q3DockWindow"></a>Q3DockWindow::~Q3DockWindow ()</h3>
+<p>Destroys the dock window and its child widgets.</p>
+<h3 class="fn"><a name="area"></a><a href="q3dockarea.html">Q3DockArea</a> * Q3DockWindow::area () const</h3>
+<p>Returns the dock area in which this dock window is docked, or 0 if the dock window is floating.</p>
+<h3 class="fn"><a name="boxLayout"></a><a href="qboxlayout.html">QBoxLayout</a> * Q3DockWindow::boxLayout ()</h3>
+<p>Returns the layout which is used for adding widgets to the dock window. The layout's orientation is set automatically to match the orientation of the dock window. You can add widgets to the layout using the box layout's <a href="qboxlayout.html#addWidget">QBoxLayout::addWidget</a>() function.</p>
+<p>If the dock window only needs to contain a single widget use <a href="q3dockwindow.html#setWidget">setWidget</a>() instead.</p>
+<p>See also <a href="q3dockwindow.html#setWidget">setWidget</a>() and <a href="q3dockwindow.html#setOrientation">setOrientation</a>().</p>
+<h3 class="fn"><a name="dock"></a>void Q3DockWindow::dock ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Docks the dock window into the last dock area in which it was docked.</p>
+<p>If the dock window has no last dock area (e.g&#x2e; it was created as a floating window and has never been docked), or if the last dock area it was docked in does not exist (e.g&#x2e; the dock area has been deleted), nothing happens.</p>
+<p>The dock window will dock with the dock area regardless of the return value of <a href="q3dockarea.html#isDockWindowAccepted">Q3DockArea::isDockWindowAccepted</a>().</p>
+<p>See also <a href="q3dockwindow.html#undock">undock</a>(), <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(), <a href="q3dockarea.html#removeDockWindow">Q3DockArea::removeDockWindow</a>(), <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>(), <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>(), and <a href="q3dockarea.html#isDockWindowAccepted">Q3DockArea::isDockWindowAccepted</a>().</p>
+<h3 class="fn"><a name="fixedExtent"></a><a href="qsize.html">QSize</a> Q3DockWindow::fixedExtent () const</h3>
+<p>Returns the dock window's preferred size (fixed extent).</p>
+<p>See also <a href="q3dockwindow.html#setFixedExtentWidth">setFixedExtentWidth</a>() and <a href="q3dockwindow.html#setFixedExtentHeight">setFixedExtentHeight</a>().</p>
+<h3 class="fn"><a name="isCloseEnabled"></a>bool Q3DockWindow::isCloseEnabled () const</h3>
+<p>Returns true if the dock window has a close button; otherwise returns false. The result depends on the dock window's <a href="q3dockwindow.html#Place-enum">Place</a> and its <a href="q3dockwindow.html#CloseMode-enum">CloseMode</a>.</p>
+<p>See also <a href="q3dockwindow.html#closeMode-prop">setCloseMode</a>().</p>
+<h3 class="fn"><a name="isHorizontalStretchable"></a>bool Q3DockWindow::isHorizontalStretchable () const</h3>
+<p>Returns true if the dock window can be stretched horizontally; otherwise returns false.</p>
+<h3 class="fn"><a name="isVerticalStretchable"></a>bool Q3DockWindow::isVerticalStretchable () const</h3>
+<p>Returns true if the dock window can be stretched vertically; otherwise returns false.</p>
+<h3 class="fn"><a name="orientation"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> Q3DockWindow::orientation () const</h3>
+<p>Returns the orientation of the dock window.</p>
+<p>See also <a href="q3dockwindow.html#setOrientation">setOrientation</a>() and <a href="q3dockwindow.html#orientationChanged">orientationChanged</a>().</p>
+<h3 class="fn"><a name="orientationChanged"></a>void Q3DockWindow::orientationChanged ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>o</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the orientation of the dock window is changed. The new orientation is <i>o</i>.</p>
+<h3 class="fn"><a name="placeChanged"></a>void Q3DockWindow::placeChanged ( <a href="q3dockwindow.html#Place-enum">Q3DockWindow::Place</a> <i>p</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the dock window is docked (<i>p</i> is <tt>InDock</tt>), undocked (<i>p</i> is <tt>OutsideDock</tt>) or moved inside the the dock area.</p>
+<p>See also <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(), <a href="q3dockarea.html#removeDockWindow">Q3DockArea::removeDockWindow</a>(), <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>(), and <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>().</p>
+<h3 class="fn"><a name="setFixedExtentHeight"></a>void Q3DockWindow::setFixedExtentHeight ( int <i>h</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the dock window's preferred height for its fixed extent (size) to <i>h</i>.</p>
+<p>See also <a href="q3dockwindow.html#setFixedExtentWidth">setFixedExtentWidth</a>().</p>
+<h3 class="fn"><a name="setFixedExtentWidth"></a>void Q3DockWindow::setFixedExtentWidth ( int <i>w</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the dock window's preferred width for its fixed extent (size) to <i>w</i>.</p>
+<p>See also <a href="q3dockwindow.html#setFixedExtentHeight">setFixedExtentHeight</a>().</p>
+<h3 class="fn"><a name="setHorizontalStretchable"></a>void Q3DockWindow::setHorizontalStretchable ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true the dock window is set to be horizontally stretchable.</p>
+<p>See also <a href="q3dockwindow.html#isHorizontalStretchable">isHorizontalStretchable</a>().</p>
+<h3 class="fn"><a name="setOrientation"></a>void Q3DockWindow::setOrientation ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>o</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the orientation of the dock window to <i>o</i>. The orientation is propagated to the layout <a href="q3dockwindow.html#boxLayout">boxLayout</a>().</p>
+<p><b>Warning:</b> All undocked Q3ToolBars will always have a horizontal orientation.</p>
+<p>See also <a href="q3dockwindow.html#orientation">orientation</a>().</p>
+<h3 class="fn"><a name="setVerticalStretchable"></a>void Q3DockWindow::setVerticalStretchable ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true the dock window is set to be vertically stretchable.</p>
+<p>See also <a href="q3dockwindow.html#isVerticalStretchable">isVerticalStretchable</a>().</p>
+<h3 class="fn"><a name="setWidget"></a>void Q3DockWindow::setWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the dock window's main widget to <i>w</i>.</p>
+<p>See also <a href="q3dockwindow.html#widget">widget</a>() and <a href="q3dockwindow.html#boxLayout">boxLayout</a>().</p>
+<h3 class="fn"><a name="undock"></a>void Q3DockWindow::undock ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Undocks the specified <i>widget</i> from its current dock area if it is docked; otherwise does nothing.</p>
+<p>See also <a href="q3dockwindow.html#dock">dock</a>(), <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(), <a href="q3dockarea.html#removeDockWindow">Q3DockArea::removeDockWindow</a>(), <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>(), and <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>().</p>
+<h3 class="fn"><a name="undock-2"></a>void Q3DockWindow::undock ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Undocks the <a href="q3dockwindow.html">Q3DockWindow</a> from its current dock area if it is docked; otherwise does nothing.</p>
+<p>See also <a href="q3dockwindow.html#dock">dock</a>(), <a href="q3dockarea.html#moveDockWindow">Q3DockArea::moveDockWindow</a>(), <a href="q3dockarea.html#removeDockWindow">Q3DockArea::removeDockWindow</a>(), <a href="q3mainwindow.html#moveDockWindow">Q3MainWindow::moveDockWindow</a>(), and <a href="q3mainwindow.html#removeDockWindow">Q3MainWindow::removeDockWindow</a>().</p>
+<h3 class="fn"><a name="visibilityChanged"></a>void Q3DockWindow::visibilityChanged ( bool <i>visible</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the visibility of the dock window relatively to its dock area is changed. If <i>visible</i> is true, the <a href="q3dockwindow.html">Q3DockWindow</a> is now visible to the dock area, otherwise it has been hidden.</p>
+<p>A dock window can be hidden if it has a close button which the user has clicked. In the case of a <a href="q3mainwindow.html">Q3MainWindow</a> a dock window can have its visibility changed (hidden or shown) by clicking its name in the dock window menu that lists the <a href="q3mainwindow.html">Q3MainWindow</a>'s dock windows.</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * Q3DockWindow::widget () const</h3>
+<p>Returns the dock window's main widget.</p>
+<p>See also <a href="q3dockwindow.html#setWidget">setWidget</a>().</p>
+<h3 class="fn"><a name="windowTitle"></a><a href="qstring.html">QString</a> Q3DockWindow::windowTitle () const</h3>
+<p>Returns the dock window's title.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

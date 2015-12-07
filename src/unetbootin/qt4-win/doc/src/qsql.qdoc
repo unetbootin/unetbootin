@@ -1,0 +1,140 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \namespace QSql
+    \brief The QSql namespace contains miscellaneous identifiers used throughout
+    the Qt SQL library.
+
+    \ingroup database
+    \mainclass
+    \omit ### \module sql \endomit
+
+    \sa {QtSql Module}
+*/
+
+/*!
+    \enum QSql::Confirm
+    \compat
+
+    This enum type describes edit confirmations.
+
+    \value Yes
+    \value No
+    \value Cancel
+*/
+
+/*!
+    \enum QSql::Op
+    \compat
+
+    This enum type describes edit operations.
+
+    \value None
+    \value Insert
+    \value Update
+    \value Delete
+*/
+
+
+/*!
+    \enum QSql::Location
+
+    This enum type describes special SQL navigation locations:
+
+    \value BeforeFirstRow Before the first record.
+    \value AfterLastRow After the last record.
+
+    \omitvalue BeforeFirst
+    \omitvalue AfterLast
+
+    \sa QSqlQuery::at()
+*/
+
+/*!
+    \enum QSql::ParamTypeFlag
+
+    This enum is used to specify the type of a bind parameter.
+
+    \value In  The bind parameter is used to put data into the database.
+    \value Out  The bind parameter is used to receive data from the database.
+    \value InOut  The bind parameter is used to put data into the
+        database; it will be overwritten with output data on executing
+        a query.
+    \value Binary This must be OR'd with one of the other flags if
+           you want to indicate that the data being transferred is
+           raw binary data.
+*/
+
+/*!
+    \enum QSql::TableType
+
+    This enum type describes types of SQL tables.
+
+    \value Tables  All the tables visible to the user.
+    \value SystemTables  Internal tables used by the database.
+    \value Views  All the views visible to the user.
+    \value AllTables  All of the above.
+*/
+
+/*!
+    \enum QSql::NumericalPrecisionPolicy
+
+    This enum type describes at which precision levels numercial values are read from
+    a database.
+
+    Some databases support numerical values with a precision that is not storable in a
+    C++ basic data type. The default behavior is to bind these values as a QString.
+    This enum can be used to override this behavior.
+
+    \value LowPrecisionInt32  Force 32bit integer values. In case of floating point numbers,
+                              the fractional part is silently discarded.
+    \value LowPrecisionInt64  Force 64bit integer values. In case of floating point numbers,
+                              the fractional part is silently discarded.
+    \value LowPrecisionDouble Force \c double values.
+    \value HighPrecision      The default behavior - try to preserve maximum precision.
+
+    Note: The actual behaviour if an overflow occurs is driver specific. The Oracle database
+    just returns an error in this case.
+*/
+

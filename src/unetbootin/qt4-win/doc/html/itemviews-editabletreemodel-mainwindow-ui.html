@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.ui Example File (itemviews/editabletreemodel/mainwindow.ui)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.ui Example File<br /><span class="small-subtitle">itemviews/editabletreemodel/mainwindow.ui</span>
+</h1>
+<pre> &lt;ui version=&quot;4.0&quot; &gt;
+  &lt;class&gt;MainWindow&lt;/class&gt;
+  &lt;widget class=&quot;QMainWindow&quot; name=&quot;MainWindow&quot; &gt;
+   &lt;property name=&quot;geometry&quot; &gt;
+    &lt;rect&gt;
+     &lt;x&gt;0&lt;/x&gt;
+     &lt;y&gt;0&lt;/y&gt;
+     &lt;width&gt;573&lt;/width&gt;
+     &lt;height&gt;468&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;windowTitle&quot; &gt;
+    &lt;string&gt;Editable Tree Model&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;widget class=&quot;QWidget&quot; name=&quot;centralwidget&quot; &gt;
+    &lt;layout class=&quot;QVBoxLayout&quot; &gt;
+     &lt;property name=&quot;margin&quot; &gt;
+      &lt;number&gt;0&lt;/number&gt;
+     &lt;/property&gt;
+     &lt;property name=&quot;spacing&quot; &gt;
+      &lt;number&gt;0&lt;/number&gt;
+     &lt;/property&gt;
+     &lt;item&gt;
+      &lt;widget class=&quot;QTreeView&quot; name=&quot;view&quot; &gt;
+       &lt;property name=&quot;alternatingRowColors&quot; &gt;
+        &lt;bool&gt;true&lt;/bool&gt;
+       &lt;/property&gt;
+       &lt;property name=&quot;selectionBehavior&quot; &gt;
+        &lt;enum&gt;QAbstractItemView::SelectItems&lt;/enum&gt;
+       &lt;/property&gt;
+       &lt;property name=&quot;horizontalScrollMode&quot; &gt;
+        &lt;enum&gt;QAbstractItemView::ScrollPerPixel&lt;/enum&gt;
+       &lt;/property&gt;
+       &lt;property name=&quot;animated&quot; &gt;
+        &lt;bool&gt;false&lt;/bool&gt;
+       &lt;/property&gt;
+       &lt;property name=&quot;allColumnsShowFocus&quot; &gt;
+        &lt;bool&gt;true&lt;/bool&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+     &lt;/item&gt;
+    &lt;/layout&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QMenuBar&quot; name=&quot;menubar&quot; &gt;
+    &lt;property name=&quot;geometry&quot; &gt;
+     &lt;rect&gt;
+      &lt;x&gt;0&lt;/x&gt;
+      &lt;y&gt;0&lt;/y&gt;
+      &lt;width&gt;573&lt;/width&gt;
+      &lt;height&gt;31&lt;/height&gt;
+     &lt;/rect&gt;
+    &lt;/property&gt;
+    &lt;widget class=&quot;QMenu&quot; name=&quot;fileMenu&quot; &gt;
+     &lt;property name=&quot;title&quot; &gt;
+      &lt;string&gt;&amp;amp;File&lt;/string&gt;
+     &lt;/property&gt;
+     &lt;addaction name=&quot;exitAction&quot; /&gt;
+    &lt;/widget&gt;
+    &lt;widget class=&quot;QMenu&quot; name=&quot;actionsMenu&quot; &gt;
+     &lt;property name=&quot;title&quot; &gt;
+      &lt;string&gt;&amp;amp;Actions&lt;/string&gt;
+     &lt;/property&gt;
+     &lt;addaction name=&quot;insertRowAction&quot; /&gt;
+     &lt;addaction name=&quot;insertColumnAction&quot; /&gt;
+     &lt;addaction name=&quot;separator&quot; /&gt;
+     &lt;addaction name=&quot;removeRowAction&quot; /&gt;
+     &lt;addaction name=&quot;removeColumnAction&quot; /&gt;
+     &lt;addaction name=&quot;separator&quot; /&gt;
+     &lt;addaction name=&quot;insertChildAction&quot; /&gt;
+    &lt;/widget&gt;
+    &lt;addaction name=&quot;fileMenu&quot; /&gt;
+    &lt;addaction name=&quot;actionsMenu&quot; /&gt;
+   &lt;/widget&gt;
+   &lt;widget class=&quot;QStatusBar&quot; name=&quot;statusbar&quot; /&gt;
+   &lt;action name=&quot;exitAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;E&amp;amp;xit&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+Q&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+   &lt;action name=&quot;insertRowAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;Insert Row&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+I, R&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+   &lt;action name=&quot;removeRowAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;Remove Row&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+R, R&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+   &lt;action name=&quot;insertColumnAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;Insert Column&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+I, C&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+   &lt;action name=&quot;removeColumnAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;Remove Column&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+R, C&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+   &lt;action name=&quot;insertChildAction&quot; &gt;
+    &lt;property name=&quot;text&quot; &gt;
+     &lt;string&gt;Insert Child&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;shortcut&quot; &gt;
+     &lt;string&gt;Ctrl+N&lt;/string&gt;
+    &lt;/property&gt;
+   &lt;/action&gt;
+  &lt;/widget&gt;
+  &lt;resources&gt;
+   &lt;include location=&quot;editabletreemodel.qrc&quot; /&gt;
+  &lt;/resources&gt;
+  &lt;connections/&gt;
+ &lt;/ui&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

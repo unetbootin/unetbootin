@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qchar.cpp -->
+<head>
+  <title>Qt 4.4: QLatin1Char Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QLatin1Char Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QLatin1Char class provides an 8-bit ASCII/Latin-1 character. <a href="#details">More...</a></p>
+<pre> #include &lt;QLatin1Char&gt;</pre><ul>
+<li><a href="qlatin1char-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlatin1char.html#QLatin1Char">QLatin1Char</a></b> ( char <i>c</i> )</li>
+<li><div class="fn"/>char <b><a href="qlatin1char.html#toLatin1">toLatin1</a></b> () const</li>
+<li><div class="fn"/>ushort <b><a href="qlatin1char.html#unicode">unicode</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLatin1Char class provides an 8-bit ASCII/Latin-1 character.</p>
+<p>This class is only useful to avoid the codec for C strings business in the <a href="qchar.html">QChar</a>(ch) constructor. You can avoid it by writing <a href="qchar.html">QChar</a>(ch, 0).</p>
+<p>See also <a href="qchar.html">QChar</a>, <a href="qlatin1string.html">QLatin1String</a>, and <a href="qstring.html">QString</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLatin1Char"></a>QLatin1Char::QLatin1Char ( char <i>c</i> )</h3>
+<p>Constructs a Latin-1 character for <i>c</i>. This constructor should be used when the encoding of the input character is known to be Latin-1.</p>
+<h3 class="fn"><a name="toLatin1"></a>char QLatin1Char::toLatin1 () const</h3>
+<p>Converts a Latin-1 character to an 8-bit ASCII representation of the character.</p>
+<h3 class="fn"><a name="unicode"></a><a href="qtglobal.html#ushort-typedef">ushort</a> QLatin1Char::unicode () const</h3>
+<p>Converts a Latin-1 character to an 16-bit-encoded Unicode representation of the character.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

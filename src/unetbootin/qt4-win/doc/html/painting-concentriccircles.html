@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/concentriccircles.qdoc -->
+<head>
+  <title>Qt 4.4: Concentric Circles Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Concentric Circles Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="painting-concentriccircles-circlewidget-cpp.html">painting/concentriccircles/circlewidget.cpp</a></li>
+<li><a href="painting-concentriccircles-circlewidget-h.html">painting/concentriccircles/circlewidget.h</a></li>
+<li><a href="painting-concentriccircles-window-cpp.html">painting/concentriccircles/window.cpp</a></li>
+<li><a href="painting-concentriccircles-window-h.html">painting/concentriccircles/window.h</a></li>
+<li><a href="painting-concentriccircles-main-cpp.html">painting/concentriccircles/main.cpp</a></li>
+<li><a href="painting-concentriccircles-concentriccircles-pro.html">painting/concentriccircles/concentriccircles.pro</a></li>
+</ul>
+<p>The Concentric Circles example shows the improved rendering quality that can be obtained using floating point precision and anti-aliasing when drawing custom widgets. The example also shows how to do simple animations.</p>
+<p>The application's main window displays several widgets which are drawn using the various combinations of precision and anti-aliasing.</p>
+<p align="center"><img src="images/concentriccircles-example.png" /></p><p>Anti-aliasing is one of <a href="qpainter.html">QPainter</a>'s render hints. The <a href="qpainter.html#RenderHint-enum">QPainter::RenderHints</a> are used to specify flags to <a href="qpainter.html">QPainter</a> that may, or may not, be respected by any given engine. <a href="qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> indicates that the engine should anti-alias the edges of primitives if possible, i.e&#x2e; put additional pixels around the original ones to smooth the edges.</p>
+<p>The difference between floating point precision and integer precision is a matter of accuracy, and is visible in the application's main window: Even though the logic that is calculating the circles' geometry is the same, floating points ensure that the white spaces between each circle are of the same size, while integers make two and two circles appear as if they belong together. The reason is that the integer based precision rely on rounding off non-integer calculations.</p>
+<p>The example consists of two classes:</p>
+<ul>
+<li><tt>CircleWidget</tt> is a custom widget which renders several animated concentric circles.</li>
+<li><tt>Window</tt> is the application's main window displaying four <tt>CircleWidget</tt>s drawn using different combinations of precision and aliasing.</li>
+</ul>
+<p>First we will review the CircleWidget class, then we will take a look at the Window class.</p>
+<a name="circlewidget-class-definition"></a>
+<h2>CircleWidget Class Definition</h2>
+<p>The CircleWidget class inherits <a href="qwidget.html">QWidget</a>, and is a custom widget which renders several animated concentric circles.</p>
+<pre> class CircleWidget : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     CircleWidget(QWidget *parent = 0);
+
+     void setFloatBased(bool floatBased);
+     void setAntialiased(bool antialiased);
+
+     QSize minimumSizeHint() const;
+     QSize sizeHint() const;
+
+ public slots:
+     void nextAnimationFrame();
+
+ protected:
+     void paintEvent(QPaintEvent *event);
+
+ private:
+     bool floatBased;
+     bool antialiased;
+     int frameNo;
+ };</pre>
+<p>We declare the <tt>floatBased</tt> and <tt>antialiased</tt> variables to hold whether an instance of the class should be rendered with integer or float based precision, and whether the rendering should be anti-aliased or not. We also declare functions setting each of these variables.</p>
+<p>In addition we reimplement the <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>() function to apply the various combinations of precision and anti-aliasing when rendering, and to support the animation. We reimplement the <a href="qwidget.html#minimumSizeHint-prop">QWidget::minimumSizeHint</a>() and <a href="qwidget.html#sizeHint-prop">QWidget::sizeHint</a>() functions to give the widget a reasonable size within our application.</p>
+<p>We declare the private <tt>nextAnimationFrame()</tt> slot, and the associated <tt>frameNo</tt> variable holding the number of &quot;animation frames&quot; for the widget, to facilitate the animation.</p>
+<a name="circlewidget-class-implementation"></a>
+<h2>CircleWidget Class Implementation</h2>
+<p>In the constructor we make the widget's rendering integer based and aliased by default:</p>
+<pre> CircleWidget::CircleWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     floatBased = false;
+     antialiased = false;
+     frameNo = 0;
+
+     setBackgroundRole(QPalette::Base);
+     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+ }</pre>
+<p>We initialize the widget's <tt>frameNo</tt> variable, and set the widget's background color using the <a href="qwidget-qt3.html#setBackgroundColor">QWidget::setBackgroundColor</a>() function which takes a <a href="qpalette.html#ColorRole-enum">color role</a> as argument; the <a href="qpalette.html#ColorRole-enum">QPalette::Base</a> color role is typically white.</p>
+<p>Then we set the widgets size policy using the <a href="qwidget.html#sizePolicy-prop">QWidget::setSizePolicy</a>() function. <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Expanding</a> means that the widget's <a href="qwidget.html#sizeHint-prop">sizeHint()</a> is a sensible size, but that the widget can be shrunk and still be useful. The widget can also make use of extra space, so it should get as much space as possible.</p>
+<pre> void CircleWidget::setFloatBased(bool floatBased)
+ {
+     this-&gt;floatBased = floatBased;
+     update();
+ }
+
+ void CircleWidget::setAntialiased(bool antialiased)
+ {
+     this-&gt;antialiased = antialiased;
+     update();
+ }</pre>
+<p>The public <tt>setFloatBased()</tt> and <tt>setAntialiased()</tt> functions update the widget's rendering preferences, i.e&#x2e; whether the widget should be rendered with integer or float based precision, and whether the rendering should be anti-aliased or not.</p>
+<p>The functions also generate a paint event by calling the <a href="qwidget.html#update">QWidget::update</a>() function, forcing a repaint of the widget with the new rendering preferences.</p>
+<pre> QSize CircleWidget::minimumSizeHint() const
+ {
+     return QSize(50, 50);
+ }
+
+ QSize CircleWidget::sizeHint() const
+ {
+     return QSize(180, 180);
+ }</pre>
+<p>The default implementations of the <a href="qwidget.html#minimumSizeHint-prop">QWidget::minimumSizeHint</a>() and <a href="qwidget.html#sizeHint-prop">QWidget::sizeHint</a>() functions return invalid sizes if there is no layout for the widget, otherwise they return the layout's minimum and preferred size, respectively.</p>
+<p>We reimplement the functions to give the widget minimum and preferred sizes which are reasonable within our application.</p>
+<pre> void CircleWidget::nextAnimationFrame()
+ {
+     ++frameNo;
+     update();
+ }</pre>
+<p>The nextAnimationFrame() slot simply increments the <tt>frameNo</tt> variable's value, and calls the <a href="qwidget.html#update">QWidget::update</a>() function which schedules a paint event for processing when Qt returns to the main event loop.</p>
+<pre> void CircleWidget::paintEvent(QPaintEvent *)
+ {
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing, antialiased);
+     painter.translate(width() / 2, height() / 2);</pre>
+<p>A paint event is a request to repaint all or part of the widget. The <tt>paintEvent()</tt> function is an event handler that can be reimplemented to receive the widget's paint events. We reimplement the event handler to apply the various combinations of precision and anti-aliasing when rendering the widget, and to support the animation.</p>
+<p>First, we create a <a href="qpainter.html">QPainter</a> for the widget, and set its antialiased flag to the widget's preferred aliasing. We also translate the painters coordinate system, preparing to draw the widget's cocentric circles. The translation ensures that the center of the circles will be equivalent to the widget's center.</p>
+<pre>     for (int diameter = 0; diameter &lt; 256; diameter += 9) {
+         int delta = abs((frameNo % 128) - diameter / 2);
+         int alpha = 255 - (delta * delta) / 4 - diameter;</pre>
+<p>When painting a circle, we use the number of &quot;animation frames&quot; to determine the alpha channel of the circle's color. The alpha channel specifies the color's transparency effect, 0 represents a fully transparent color, while 255 represents a fully opaque color.</p>
+<pre>         if (alpha &gt; 0) {
+             painter.setPen(QPen(QColor(0, diameter / 2, 127, alpha), 3));
+
+             if (floatBased) {
+                 painter.drawEllipse(QRectF(-diameter / 2.0, -diameter / 2.0,
+                                            diameter, diameter));
+             } else {
+                 painter.drawEllipse(QRect(-diameter / 2, -diameter / 2,
+                                           diameter, diameter));
+             }
+         }
+     }
+ }</pre>
+<p>If the calculated alpha channel is fully transparent, we don't draw anything since that would be equivalent to drawing a white circle on a white background. Instead we skip to the next circle still creating a white space. If the calculated alpha channel is fully opaque, we set the pen (the <a href="qcolor.html">QColor</a> passed to the <a href="qpen.html">QPen</a> constructor is converted into the required <a href="qbrush.html">QBrush</a> by default) and draw the circle. If the widget's preferred precision is float based, we specify the circle's bounding rectangle using <a href="qrectf.html">QRectF</a> and double values, otherwise we use <a href="qrect.html">QRect</a> and integers.</p>
+<p>The animation is controlled by the public <tt>nextAnimationFrame()</tt> slot: Whenever the <tt>nextAnimationFrame()</tt> slot is called the number of frames is incremented and a paint event is scheduled. Then, when the widget is repainted, the alpha-blending of the circles' colors change and the circles appear as animated.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The Window class inherits <a href="qwidget.html">QWidget</a>, and is the application's main window rendering four <tt>CircleWidget</tt>s using different combinations of precision and aliasing.</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ private:
+     QLabel *createLabel(const QString &amp;text);
+
+     QLabel *aliasedLabel;
+     QLabel *antialiasedLabel;
+     QLabel *intLabel;
+     QLabel *floatLabel;
+     CircleWidget *circleWidgets[2][2];
+ };</pre>
+<p>We declare the various components of the main window, i.e the text labels and a double array that will hold reference to the four <tt>CircleWidget</tt>s. In addition we declare the private <tt>createLabel()</tt> function to simplify the constructor.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<pre> Window::Window()
+ {
+     aliasedLabel = createLabel(tr(&quot;Aliased&quot;));
+     antialiasedLabel = createLabel(tr(&quot;Antialiased&quot;));
+     intLabel = createLabel(tr(&quot;Int&quot;));
+     floatLabel = createLabel(tr(&quot;Float&quot;));
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(aliasedLabel, 0, 1);
+     layout-&gt;addWidget(antialiasedLabel, 0, 2);
+     layout-&gt;addWidget(intLabel, 1, 0);
+     layout-&gt;addWidget(floatLabel, 2, 0);</pre>
+<p>In the constructor, we first create the various labels and put them in a <a href="qgridlayout.html">QGridLayout</a>.</p>
+<pre>     QTimer *timer = new QTimer(this);
+
+     for (int i = 0; i &lt; 2; ++i) {
+         for (int j = 0; j &lt; 2; ++j) {
+             circleWidgets[i][j] = new CircleWidget;
+             circleWidgets[i][j]-&gt;setAntialiased(j != 0);
+             circleWidgets[i][j]-&gt;setFloatBased(i != 0);
+
+             connect(timer, SIGNAL(timeout()),
+                     circleWidgets[i][j], SLOT(nextAnimationFrame()));
+
+             layout-&gt;addWidget(circleWidgets[i][j], i + 1, j + 1);
+         }
+     }</pre>
+<p>Then we create a <a href="qtimer.html">QTimer</a>. The <a href="qtimer.html">QTimer</a> class is a high-level programming interface for timers, and provides repetitive and single-shot timers.</p>
+<p>We create a timer to facilitate the animation of our concentric circles; when we create the four CircleWidget instances (and add them to the layout), we connect the <a href="qtimer.html#timeout">QTimer::timeout</a>() signal to each of the widgets' <tt>nextAnimationFrame()</tt> slots.</p>
+<pre>     timer-&gt;start(100);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Concentric Circles&quot;));
+ }</pre>
+<p>Before we set the layout and window title for our main window, we make the timer start with a timeout interval of 100 milliseconds, using the <a href="qtimer.html#start">QTimer::start</a>() function. That means that the <a href="qtimer.html#timeout">QTimer::timeout</a>() signal will be emitted, forcing a repaint of the four <tt>CircleWidget</tt>s, every 100 millisecond which is the reason the circles appear as animated.</p>
+<pre> QLabel *Window::createLabel(const QString &amp;text)
+ {
+     QLabel *label = new QLabel(text);
+     label-&gt;setAlignment(Qt::AlignCenter);
+     label-&gt;setMargin(2);
+     label-&gt;setFrameStyle(QFrame::Box | QFrame::Sunken);
+     return label;
+ }</pre>
+<p>The private <tt>createLabel()</tt> function is implemented to simlify the constructor.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

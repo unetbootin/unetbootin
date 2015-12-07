@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: plasma.js Example File (script/context2d/scripts/plasma.js)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">plasma.js Example File<br /><span class="small-subtitle">script/context2d/scripts/plasma.js</span>
+</h1>
+<pre> var counter = 0;
+
+ var PIXEL_SIZE = 4;
+
+ var temp_1 = 0;
+
+ function init()
+ {
+     setInterval('render()',50);
+ }
+
+ function dist(a, b, c, d)
+ {
+     return Math.sqrt((a - c) * (a - c) + (b - d) * (b - d));
+ }
+
+ function render()
+ {
+     var canvas = document.getElementById('tutorial');
+     canvas.resize(128, 128);
+     var ctx = canvas.getContext('2d');
+     ctx.save();
+
+     var time = counter * 5;
+
+     for( y = 0; y &lt; 128; y+=PIXEL_SIZE) {
+         for( x = 0 ; x &lt; 128; x+=PIXEL_SIZE) {
+
+             var temp_val = Math.floor(Math.sin(dist(x + time, y, 128.0, 128.0) / 8.0)
+                                       + Math.sin(dist(x, y, 64.0, 64.0) / 8.0)
+                                       + Math.sin(dist(x, y + time / 7, 192.0, 64) / 7.0)
+                                       + Math.sin(dist(x, y, 192.0, 100.0) / 8.0));
+
+             var temp_col = Math.floor((2 + temp_val) * 50);
+
+             var rand_red = temp_col * 3;
+             var rand_green = temp_col  ;
+             var rand_blue = 128 - temp_col;
+
+             ctx.fillStyle = &quot;rgb(&quot;+rand_red+&quot;,&quot;+rand_green+&quot;,&quot;+rand_blue+&quot;)&quot;;
+
+             ctx.fillRect(x,y,PIXEL_SIZE,PIXEL_SIZE);
+         }
+     }
+
+     ctx.restore();
+     counter++;
+
+ }
+
+ init();</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

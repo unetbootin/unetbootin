@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 7 - One Thing Leads to Another</title>
+  <link rel="prev" href="tutorials-tutorial-t6.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t8.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t6.html">Chapter 6</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t8.html">Chapter 8</a>]
+</p>
+<h1 class="title">Qt Tutorial 7 - One Thing Leads to Another<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t7-lcdrange-cpp.html">tutorials/tutorial/t7/lcdrange.cpp</a></li>
+<li><a href="tutorials-tutorial-t7-lcdrange-h.html">tutorials/tutorial/t7/lcdrange.h</a></li>
+<li><a href="tutorials-tutorial-t7-main-cpp.html">tutorials/tutorial/t7/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t7-t7-pro.html">tutorials/tutorial/t7/t7.pro</a></li>
+</ul>
+<p align="center"><img src="images/t7.png" alt="Screenshot of Chapter 7" /></p><p>This example shows how to create custom widgets with signals and slots, and how to connect them together in more complex ways. For the first time, the source is split among several files which we've placed in the <tt>tutorials/tutorial/t7</tt> directory.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<a name="t7-lcdrange-h"></a>
+<h3><a href="tutorials-tutorial-t7-lcdrange-h.html">t7/lcdrange.h</a></h3>
+<p>This file is mainly lifted from <tt>main.cpp</tt> in Chapter 6; only the non-trivial changes are noted here.</p>
+<pre> #ifndef LCDRANGE_H
+ #define LCDRANGE_H</pre>
+<p>This, together with the <tt>#endif</tt> at the end of the file, is the standard C++ construction to avoid errors if a header file happens to be included more than once. If you don't use it already, it is a very good habit to develop.</p>
+<pre> #include &lt;QWidget&gt;</pre>
+<p><tt>&lt;QWidget&gt;</tt> is included since our <tt>LCDRange</tt> class inherits <a href="qwidget.html">QWidget</a>. The header file of a parent class must always be included - we cheated a bit in the previous chapters, and we let <tt>&lt;QWidget&gt;</tt> be included indirectly via other header files.</p>
+<pre> class QSlider;</pre>
+<p>This is another classic trick, but one that's much less used often. Because we don't need <a href="qslider.html">QSlider</a> in the interface of the class, only in the implementation, we use a forward declaration of the class in the header file and include the header file for <a href="qslider.html">QSlider</a> in the <tt>.cpp</tt> file.</p>
+<p>This makes the compilation of big projects much faster, because the compiler usually spends most of its time parsing header files, not the actual source code. This trick alone can often speed up compilations by a factor of two or more.</p>
+<pre> class LCDRange : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     LCDRange(QWidget *parent = 0);</pre>
+<p>Note the <tt>Q_OBJECT</tt>. This macro must be included in <i>all</i> classes that contain signals and/or slots. If you are curious, it defines the functions that are implemented in the <a href="metaobjects.html">meta-object file</a>.</p>
+<pre>     int value() const;
+
+ public slots:
+     void setValue(int value);
+
+ signals:
+     void valueChanged(int newValue);</pre>
+<p>These three members make up an interface between this widget and other components in a program. Until now, <tt>LCDRange</tt> didn't really have an API at all.</p>
+<p><tt>value()</tt> is a public function for accessing the value of the <tt>LCDRange</tt>, <tt>setValue()</tt> is our first custom slot, and <tt>valueChanged()</tt> is our first custom signal.</p>
+<p>Slots must be implemented in the normal way (a slot is also a C++ member function). Signals are automatically implemented in the meta-object file. Signals follow the access rules of protected C++ functions (i.e&#x2e;, they can be emitted only by the class they are defined in or by classes inheriting from it).</p>
+<p>The <tt>valueChanged()</tt> signal is used when the <tt>LCDRange</tt>'s value has changed.</p>
+<a name="t7-lcdrange-cpp"></a>
+<h3><a href="tutorials-tutorial-t7-lcdrange-cpp.html">t7/lcdrange.cpp</a></h3>
+<p>This file is mainly lifted from <tt>main.cpp</tt> in Chapter 6, and only the changes are noted here.</p>
+<pre>     connect(slider, SIGNAL(valueChanged(int)),
+             lcd, SLOT(display(int)));
+     connect(slider, SIGNAL(valueChanged(int)),
+             this, SIGNAL(valueChanged(int)));</pre>
+<p>This code is from the <tt>LCDRange</tt> constructor.</p>
+<p>The first <a href="qobject.html#connect">connect()</a> call is the same that you have seen in the previous chapter. The second is new; it connects slider's <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal to this object's <tt>valueChanged()</tt> signal. Yes, that's right. Signals can be connected to other signals. When the first is emitted, the second signal is also emitted.</p>
+<p>Let's look at what happens when the user operates the slider. The slider sees that its value has changed and emits the <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal. That signal is connected both to the <a href="qlcdnumber.html#intValue-prop">display()</a> slot of the <a href="qlcdnumber.html">QLCDNumber</a> and to the <tt>valueChanged()</tt> signal of the <tt>LCDRange</tt>.</p>
+<p>Thus, when the signal is emitted, <tt>LCDRange</tt> emits its own <tt>valueChanged()</tt> signal. In addition, <a href="qlcdnumber.html#intValue-prop">QLCDNumber::display</a>() is called and shows the new number.</p>
+<p>Note that you're not guaranteed any particular order of execution; <tt>LCDRange::valueChanged()</tt> may be emitted before or after <a href="qlcdnumber.html#intValue-prop">QLCDNumber::display</a>() is called.</p>
+<pre> int LCDRange::value() const
+ {
+     return slider-&gt;value();
+ }</pre>
+<p>The implementation of <tt>value()</tt> is straightforward. It simply returns the slider's value.</p>
+<pre> void LCDRange::setValue(int value)
+ {
+     slider-&gt;setValue(value);
+ }</pre>
+<p>The implementation of <tt>setValue()</tt> is equally straightforward. Note that because the slider and LCD number are connected, setting the slider's value automatically updates the LCD number as well. In addition, the slider will automatically adjust the value if it is outside its legal range.</p>
+<a name="t7-main-cpp"></a>
+<h3><a href="tutorials-tutorial-t7-main-cpp.html">t7/main.cpp</a></h3>
+<pre>     LCDRange *previousRange = 0;
+
+     for (int row = 0; row &lt; 3; ++row) {
+         for (int column = 0; column &lt; 3; ++column) {
+             LCDRange *lcdRange = new LCDRange;
+             grid-&gt;addWidget(lcdRange, row, column);
+             if (previousRange)
+                 connect(lcdRange, SIGNAL(valueChanged(int)),
+                         previousRange, SLOT(setValue(int)));
+             previousRange = lcdRange;
+         }
+     }</pre>
+<p>All of <tt>main.cpp</tt> is copied from the previous chapter except in the constructor for <tt>MyWidget</tt>. When we create the nine <tt>LCDRange</tt> objects, we connect them using the <a href="signalsandslots.html">signals and slots</a> mechanism. Each has its <tt>valueChanged()</tt> signal connected to the previous one's <tt>setValue()</tt> slot. Because <tt>LCDRange</tt> emits the <tt>valueChanged()</tt> signal when its value changes, we are here creating a chain of signals and slots.</p>
+<a name="compiling"></a><a name="compiling-the-application"></a>
+<h2>Compiling the Application</h2>
+<p>Creating a makefile for a multi-file application is no different from creating one for a single-file application. If you've saved all the files in this example in their own directory, all you have to do is:</p>
+<pre>         qmake -project
+         qmake</pre>
+<p>The first command tells <a href="qmake-manual.html#qmake">qmake</a> to create a <tt>.pro</tt> file. The second command tells it to create a (platform-specific) makefile based on the project file. You should now be able to type <tt>make</tt> (or <tt>nmake</tt> if you're using Visual Studio) to build your application.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>On startup, the program's appearance is identical to the previous one. Try operating the slider to the bottom-right.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Use the bottom-right slider to set all LCDs to 50. Then set the top six to 30 by clicking on the slider on the row above. Now, use the one to the left of the last one operated to set the first five LCDs back to 50.</p>
+<p>Click to the left of the handle on the bottom-right slider. What happens? Why is this the correct behavior?</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t6.html">Chapter 6</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t8.html">Chapter 8</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

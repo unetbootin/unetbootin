@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 8 - Preparing for Battle</title>
+  <link rel="prev" href="tutorials-tutorial-t7.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t9.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t7.html">Chapter 7</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t9.html">Chapter 9</a>]
+</p>
+<h1 class="title">Qt Tutorial 8 - Preparing for Battle<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t8-cannonfield-cpp.html">tutorials/tutorial/t8/cannonfield.cpp</a></li>
+<li><a href="tutorials-tutorial-t8-cannonfield-h.html">tutorials/tutorial/t8/cannonfield.h</a></li>
+<li><a href="tutorials-tutorial-t8-lcdrange-cpp.html">tutorials/tutorial/t8/lcdrange.cpp</a></li>
+<li><a href="tutorials-tutorial-t8-lcdrange-h.html">tutorials/tutorial/t8/lcdrange.h</a></li>
+<li><a href="tutorials-tutorial-t8-main-cpp.html">tutorials/tutorial/t8/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t8-t8-pro.html">tutorials/tutorial/t8/t8.pro</a></li>
+</ul>
+<p align="center"><img src="images/t8.png" alt="Screenshot of Chapter 8" /></p><p>In this example, we introduce the first custom widget that can paint itself. We also add a useful keyboard interface (with two lines of code).</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<a name="t8-lcdrange-h"></a>
+<h3><a href="tutorials-tutorial-t8-lcdrange-h.html">t8/lcdrange.h</a></h3>
+<p>This file is very similar to the lcdrange.h in Chapter 7. We have added one slot: <tt>setRange()</tt>.</p>
+<pre>     void setRange(int minValue, int maxValue);</pre>
+<p>We now add the possibility of setting the range of the <tt>LCDRange</tt>. Until now, it has been fixed at 0 to 99.</p>
+<a name="t8-lcdrange-cpp"></a>
+<h3><a href="tutorials-tutorial-t8-lcdrange-cpp.html">t8/lcdrange.cpp</a></h3>
+<p>There is a change to the constructor (we'll discuss that later).</p>
+<pre> void LCDRange::setRange(int minValue, int maxValue)
+ {
+     if (minValue &lt; 0 || maxValue &gt; 99 || minValue &gt; maxValue) {
+         qWarning(&quot;LCDRange::setRange(%d, %d)\n&quot;
+                  &quot;\tRange must be 0..99\n&quot;
+                  &quot;\tand minValue must not be greater than maxValue&quot;,
+                  minValue, maxValue);
+         return;
+     }
+     slider-&gt;setRange(minValue, maxValue);
+ }</pre>
+<p>The <tt>setRange()</tt> slot sets the range of the slider in the <tt>LCDRange</tt>. Because we have set up the <a href="qlcdnumber.html">QLCDNumber</a> to always display two digits, we want to limit the possible range of <tt>minVal</tt> and <tt>maxVal</tt> to avoid overflow of the <a href="qlcdnumber.html">QLCDNumber</a>. (We could have allowed values down to -9 but chose not to.) If the arguments are illegal, we use Qt's <a href="qtglobal.html#qWarning">qWarning</a>() function to issue a warning to the user and return immediately. <a href="qtglobal.html#qWarning">qWarning</a>() is a <tt>printf</tt>-like function that by default sends its output to <tt>stderr</tt>. If you want, you can install your own handler function using <a href="qtglobal.html#qInstallMsgHandler">qInstallMsgHandler</a>().</p>
+<a name="t8-cannonfield-h"></a>
+<h3><a href="tutorials-tutorial-t8-cannonfield-h.html">t8/cannonfield.h</a></h3>
+<p><tt>CannonField</tt> is a new custom widget that knows how to display itself.</p>
+<pre> class CannonField : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     CannonField(QWidget *parent = 0);</pre>
+<p><tt>CannonField</tt> inherits <a href="qwidget.html">QWidget</a>. We use the same idiom as for <tt>LCDRange</tt>.</p>
+<pre>     int angle() const { return currentAngle; }
+
+ public slots:
+     void setAngle(int angle);
+
+ signals:
+     void angleChanged(int newAngle);</pre>
+<p>For the time being, <tt>CannonField</tt> only contains an angle value for which we provide an interface using the same idiom as for value in <tt>LCDRange</tt>.</p>
+<pre> protected:
+     void paintEvent(QPaintEvent *event);</pre>
+<p>This is the second of the many event handlers in <a href="qwidget.html">QWidget</a> that we encounter. This virtual function is called by Qt whenever a widget needs to update itself (i.e&#x2e;, paint the widget's surface).</p>
+<a name="t8-cannonfield-cpp"></a>
+<h3><a href="tutorials-tutorial-t8-cannonfield-cpp.html">t8/cannonfield.cpp</a></h3>
+<pre> CannonField::CannonField(QWidget *parent)
+     : QWidget(parent)
+ {</pre>
+<p>Again, we use the same idiom as for <tt>LCDRange</tt> in the previous chapter.</p>
+<pre>     currentAngle = 45;
+     setPalette(QPalette(QColor(250, 250, 200)));
+     setAutoFillBackground(true);
+ }</pre>
+<p>The constructor initializes the angle value to 45 degrees and sets a custom palette for this widget.</p>
+<p>This palette uses the indicated color as background and picks other colors suitably. (For this widget only the background and text colors will actually be used.) We then call setAutoFillBackground(true) to tell Qt fill the background automatically.</p>
+<p>The <a href="qcolor.html">QColor</a> is specified as a RGB (red-green-blue) triplet, where each value is between 0 (dark) and 255 (bright). We could also have used a predefined color such as <a href="qt.html#GlobalColor-enum">Qt::yellow</a> instead of specifying an RGB value.</p>
+<pre> void CannonField::setAngle(int angle)
+ {
+     if (angle &lt; 5)
+         angle = 5;
+     if (angle &gt; 70)
+         angle = 70;
+     if (currentAngle == angle)
+         return;
+     currentAngle = angle;
+     update();
+     emit angleChanged(currentAngle);
+ }</pre>
+<p>This function sets the angle value. We have chosen a legal range of 5 to 70 and adjust the given number of degrees accordingly. We have chosen not to issue a warning if the new angle is out of range.</p>
+<p>If the new angle equals the old one, we return immediately. It is important to only emit the <tt>angleChanged()</tt> signal when the angle really has changed.</p>
+<p>Then we set the new angle value and repaint our widget. The <a href="qwidget.html#update">QWidget::update</a>() function clears the widget (usually filling it with its background color) and sends a paint event to the widget. This results in a call to the paint event function of the widget.</p>
+<p>Finally, we emit the <tt>angleChanged()</tt> signal to tell the outside world that the angle has changed. The <tt>emit</tt> keyword is unique to Qt and not regular C++ syntax. In fact, it is a macro.</p>
+<pre> void CannonField::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+     painter.drawText(200, 200,
+                      tr(&quot;Angle = &quot;) + QString::number(currentAngle));
+ }</pre>
+<p>This is our first attempt to write a paint event handler. The event argument contains information about the paint event, for example information about the region in the widget that must be updated. For the time being, we will be lazy and just paint everything.</p>
+<p>Our code displays the angle value in the widget at a fixed position. To achieve this we create a <a href="qpainter.html">QPainter</a> operating on the <tt>CannonField</tt> widget and use it to paint a string representation of the <tt>currentAngle</tt> value. We'll come back to <a href="qpainter.html">QPainter</a> later; it can do a great many things.</p>
+<a name="t8-main-cpp"></a>
+<h3><a href="tutorials-tutorial-t8-main-cpp.html">t8/main.cpp</a></h3>
+<pre> #include &quot;cannonfield.h&quot;</pre>
+<p>We include the definition of our new class.</p>
+<pre> class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };</pre>
+<p>The <tt>MyWidget</tt> class will include a single <tt>LCDRange</tt> and a <tt>CannonField</tt>.</p>
+<pre>     LCDRange *angle = new LCDRange;</pre>
+<p>In the constructor, we create and set up the <tt>LCDRange</tt> widget.</p>
+<pre>     angle-&gt;setRange(5, 70);</pre>
+<p>We set the <tt>LCDRange</tt> to accept angles from 5 to 70 degrees.</p>
+<pre>     CannonField *cannonField = new CannonField;</pre>
+<p>We create our <tt>CannonField</tt> widget.</p>
+<pre>     connect(angle, SIGNAL(valueChanged(int)),
+             cannonField, SLOT(setAngle(int)));
+     connect(cannonField, SIGNAL(angleChanged(int)),
+             angle, SLOT(setValue(int)));</pre>
+<p>Here we connect the <tt>valueChanged()</tt> signal of the <tt>LCDRange</tt> to the <tt>setAngle()</tt> slot of the <tt>CannonField</tt>. This will update <tt>CannonField</tt>'s angle value whenever the user operates the <tt>LCDRange</tt>. We also make the reverse connection so that changing the angle in the <tt>CannonField</tt> will update the <tt>LCDRange</tt> value. In our example we never change the angle of the <tt>CannonField</tt> directly; but by doing the last <a href="qobject.html#connect">connect()</a> we ensure that no future changes will disrupt the synchronization between those two values.</p>
+<p>This illustrates the power of component programming and proper encapsulation.</p>
+<p>Notice how important it is to emit the <tt>angleChanged()</tt> signal only when the angle actually changes. If both the <tt>LCDRange</tt> and the <tt>CannonField</tt> had omitted this check, the program would have entered an infinite loop upon the first change of one of the values.</p>
+<pre>     QGridLayout *gridLayout = new QGridLayout;</pre>
+<p>So far, we have used <a href="qvboxlayout.html">QVBoxLayout</a> for geometry management. Now, however, we want to have a little more control over the layout, and we switch to the more powerful <a href="qgridlayout.html">QGridLayout</a> class. <a href="qgridlayout.html">QGridLayout</a> isn't a widget; it is a different class that can manage the children of <i>any</i> widget.</p>
+<p>We don't need to specify any dimensions to the <a href="qgridlayout.html">QGridLayout</a> constructor. The <a href="qgridlayout.html">QGridLayout</a> will determine the number of rows and columns based on the grid cells we populate.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/tutorial8-layout.png" alt="A schematic view of the grid layout" /></td><td><img src="images/tutorial8-reallayout.png" alt="The actual grid layout" /></td></tr>
+</table></p>
+<p>The diagram above shows the layout we're trying to achieve. The left side shows a schematic view of the layout; the right side is an actual screenshot of the program.</p>
+<pre>     gridLayout-&gt;addWidget(quit, 0, 0);</pre>
+<p>We add the <b>Quit</b> button in the top-left cell of the grid, i.e&#x2e;, the cell with coordinates (0, 0).</p>
+<pre>     gridLayout-&gt;addWidget(angle, 1, 0);</pre>
+<p>We put the angle <tt>LCDRange</tt> cell (1, 0).</p>
+<pre>     gridLayout-&gt;addWidget(cannonField, 1, 1, 2, 1);</pre>
+<p>We let the <tt>CannonField</tt> object occupy cells (1, 1) and (2, 1).</p>
+<pre>     gridLayout-&gt;setColumnStretch(1, 10);</pre>
+<p>We tell <a href="qgridlayout.html">QGridLayout</a> that the right column (column 1) is stretchable, with a stretch factor of 10. Because the left column isn't (its stretch factor is 0, the default value), <a href="qgridlayout.html">QGridLayout</a> will try to let the left-hand widgets' sizes be unchanged and will resize just the <tt>CannonField</tt> when the <tt>MyWidget</tt> is resized.</p>
+<p>In this particular example, any stretch factor greater than 0 for column 1 would have the same effect. In more complex layouts, you can use the stretch factors to tell that a particular column or row should stretch twice as fast as another by assigning appropriate stretch factors.</p>
+<pre>     angle-&gt;setValue(60);</pre>
+<p>We set an initial angle value. Note that this will trigger the connection from <tt>LCDRange</tt> to <tt>CannonField</tt>.</p>
+<pre>     angle-&gt;setFocus();</pre>
+<p>Our last action is to set <tt>angle</tt> to have keyboard focus so that keyboard input will go to the <tt>LCDRange</tt> widget by default.</p>
+<p><tt>LCDRange</tt> does not contain any <a href="qwidget.html#keyPressEvent">keyPressEvent()</a>, so that would seem not to be terribly useful. However, its constructor just got a new line:</p>
+<pre>     setFocusProxy(slider);</pre>
+<p>The <tt>LCDRange</tt> sets the slider to be its focus proxy. That means that when someone (the program or the user) wants to give the <tt>LCDRange</tt> keyboard focus, the slider should take care of it. <a href="qslider.html">QSlider</a> has a decent keyboard interface, so with just one line of code we've given <tt>LCDRange</tt> one.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>The keyboard now does something: The arrow keys, <b>Home</b>, <b>End</b>, <b>PageUp</b>, and <b>PageDown</b> all do something sensible.</p>
+<p>When the slider is operated, the <tt>CannonField</tt> displays the new angle value. Upon resizing, <tt>CannonField</tt> is given as much space as possible.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try to resize the window. What happens if you make it really narrow or really squat?</p>
+<p>If you give the left-hand column a non-zero stretch factor, what happens when you resize the window?</p>
+<p>Leave out the <a href="qwidget.html#setFocus">QWidget::setFocus</a>() call. Which behavior do you prefer?</p>
+<p>Try to change &quot;Quit&quot; to &quot;&amp;Quit&quot;. How does the button's look change? (Whether it does change or not depends on the platform.) What happens if you press <b>Alt+Q</b> while the program is running?</p>
+<p>Center the text in the <tt>CannonField</tt>.</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t7.html">Chapter 7</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t9.html">Chapter 9</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

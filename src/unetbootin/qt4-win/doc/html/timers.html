@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/timers.qdoc -->
+<head>
+  <title>Qt 4.4: Timers</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Timers<br /><span class="subtitle"></span>
+</h1>
+<p><a href="qobject.html">QObject</a>, the base class of all Qt objects, provides the basic timer support in Qt. With <a href="qobject.html#startTimer">QObject::startTimer</a>(), you start a timer with an interval in milliseconds as argument. The function returns a unique integer timer ID. The timer will now fire at regular intervals until you explicitly call <a href="qobject.html#killTimer">QObject::killTimer</a>() with the timer ID.</p>
+<p>For this mechanism to work, the application must run in an event loop. You start an event loop with <a href="qapplication.html#exec">QApplication::exec</a>(). When a timer fires, the application sends a <a href="qtimerevent.html">QTimerEvent</a>, and the flow of control leaves the event loop until the timer event is processed. This implies that a timer cannot fire while your application is busy doing something else. In other words: the accuracy of timers depends on the granularity of your application.</p>
+<p>In multithreaded applications, you can use the timer mechanism in any thread that has an event loop. To start an event loop from a non-GUI thread, use <a href="qthread.html#exec">QThread::exec</a>(). Qt uses the the object's <a href="qobject.html#thread">thread affinity</a> to determine which thread will deliver the <a href="qtimerevent.html">QTimerEvent</a>. Because of this, you must start and stop all timers in the object's thread; it is not possible to start timers for objects in another thread.</p>
+<p>There is practically no upper limit for the interval value (more than one year is possible). The accuracy depends on the underlying operating system. Windows 98 has 55 millisecond accuracy; other systems that we have tested can handle 1 millisecond intervals.</p>
+<p>The main API for the timer functionality is <a href="qtimer.html">QTimer</a>. That class provides regular timers that emit a signal when the timer fires, and inherits <a href="qobject.html">QObject</a> so that it fits well into the ownership structure of most GUI programs. The normal way of using it is like this:</p>
+<pre>     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(updateCaption()));
+     timer-&gt;start(1000);</pre>
+<p>The <a href="qtimer.html">QTimer</a> object is made into a child of this widget so that, when this widget is deleted, the timer is deleted too. Next, its <a href="qtimer.html#timeout">timeout()</a> signal is connected to the slot that will do the work, it is started with a value of 1000 milliseconds, indicating that it will time out every second.</p>
+<p><a href="qtimer.html">QTimer</a> also provides a static function for single-shot timers. For example:</p>
+<pre>     QTimer::singleShot(200, this, SLOT(updateCaption()));</pre>
+<p>200 milliseconds (0.2 seconds) after this line of code is executed, the <tt>updateCaption()</tt> slot will be called.</p>
+<p>For <a href="qtimer.html">QTimer</a> to work, you must have an event loop in your application; that is, you must call <a href="qcoreapplication.html#exec">QCoreApplication::exec</a>() somewhere. Timer events will be delivered only while the event loop is running.</p>
+<p>In multithreaded applications, you can use <a href="qtimer.html">QTimer</a> in any thread that has an event loop. To start an event loop from a non-GUI thread, use <a href="qthread.html#exec">QThread::exec</a>(). Qt uses the the timer's <a href="qobject.html#thread">thread affinity</a> to determine which thread will emit the <a href="qtimer.html#timeout">timeout()</a> signal. Because of this, you must start and stop the timer in its thread; it is not possible to start a timer from another thread.</p>
+<p>The <a href="widgets-analogclock.html">Analog Clock</a> example shows how to use <a href="qtimer.html">QTimer</a> to redraw a widget at regular intervals. From <tt>AnalogClock</tt>'s implementation:</p>
+<pre> AnalogClock::AnalogClock(QWidget *parent)
+     : QWidget(parent)
+ {
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+     timer-&gt;start(1000);
+     ...
+ }</pre>
+<p>Every second, <a href="qtimer.html">QTimer</a> will call the <a href="qwidget.html#update">QWidget::update</a>() slot to refresh the clock's display.</p>
+<p>If you already have a <a href="qobject.html">QObject</a> subclass and want an easy optimization, you can use <a href="qbasictimer.html">QBasicTimer</a> instead of <a href="qtimer.html">QTimer</a>. With <a href="qbasictimer.html">QBasicTimer</a>, you must reimplement <a href="qobject.html#timerEvent">timerEvent()</a> in your <a href="qobject.html">QObject</a> subclass and handle the timeout there. The <a href="widgets-wiggly.html">Wiggly</a> example shows how to use <a href="qbasictimer.html">QBasicTimer</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

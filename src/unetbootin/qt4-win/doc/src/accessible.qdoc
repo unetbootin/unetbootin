@@ -1,0 +1,597 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page accessible.html
+    \title Accessibility
+    \ingroup accessibility
+
+    \tableofcontents
+
+    \section1 Introduction
+
+    Accessibility in computer software is making applications usable
+    for people with disabilities. This could be achieved by providing
+    keyboard shortcuts, a high-contrast user interface that uses
+    specially selected colors and fonts, or support for assistive tools
+    such as screen readers and braille displays.
+
+    An application does not usually communicate directly with
+    assistive tools but through an assistive technology, which is a
+    bridge for exchange of information between the applications and
+    the tools. Information about user interface elements, such
+    as buttons and scroll bars, is exposed to the assistive technologies.
+    Qt currently supports three technologies: Microsoft Active
+    Accessibility (MSAA), Mac OS X Accessibility, and Unix/X11 AT-SPI.
+    On Unix/X11, support is preliminary. The individual technologies
+    are abstracted from Qt, and there is only a single interface to
+    consider. We will use MSAA throughout this document when we need
+    to address technology related issues.
+
+    In this overview document, we will examine the overall Qt
+    accessibility architecture, and how to implement accessibility for
+    custom widgets and elements. 
+
+    \section1 Architecture
+
+    Providing accessibility is a collaboration between accessibility
+    compliant applications, the assistive technology, and the
+    assistive tools. 
+
+    \image accessibilityarchitecture.png
+
+    Accessibility compliant applications are called AT-Servers while
+    assistive tools are called AT-Clients. A Qt application will
+    typically be an AT-Server, but specialized programs might also
+    function like AT-Clients. We will refer to clients and servers
+    when talking about AT-Clients and AT-Servers in the rest of this
+    document.
+
+    We will from now on focus on the Qt accessibility interface and
+    how it is implemented to create Qt applications that support
+    accessibility.
+
+    \section2 Accessibility in Qt
+
+    When we communicate with the assistive technologies, we need to
+    describe Qt's user interface in a way that they can understand. Qt
+    applications use QAccessibleInterface to expose information about the
+    individual UI elements. Currently, Qt provides support for its widgets
+    and widget parts, e.g., slider handles, but the interface could
+    also be implemented for any QObject if necessary. QAccessible
+    contains enums that describe the UI. The description is mainly
+    based on MSAA and is independent of Qt. We will examine the enums
+    in the course of this document.
+
+    The structure of the UI is represented as a tree of
+    QAccessibleInterface subclasses. You can think of this as a
+    representation of a UI like the QObject tree built by Qt. Objects
+    can be widgets or widget parts (such as scroll bar handles). We
+    examine the tree in detail in the next section.
+
+    Servers notify clients through \l{QAccessible::}{updateAccessibility()}
+    about changes in objects by sending events, and the clients
+    register to receive the events. The available events are defined
+    by the QAccessible::Event enum. The clients may then query for
+    the object that generated the event through
+    QAccessible::queryAccessibleInterface().
+
+    Three of the enums in QAccessible help clients query and alter
+    accessible objects:
+
+    \list
+        \o \l{QAccessible::}{Role}: Describes the role the object
+            fills in the user interface, e.g., if it is a main
+            window, a text caret, or a cell in an item view.
+        \o \l{QAccessible::}{Action}: The actions that the
+            clients can perform on the objects, e.g., pushing a
+            button.
+        \o \l{QAccessible::}{Relation}: Describes the relationship
+            between objects in the object tree.
+            This is used for navigation.
+    \endlist
+
+    The clients also have some possibilities to get the content of
+    objects, e.g., a button's text; the object provides strings
+    defined by the QAccessible::Text enum, that give information
+    about content.
+
+    The objects can be in a number of different states as defined by
+    the \l{QAccessible::}{State} enum. Examples of states are whether
+    the object is disabled, if it has focus, or if it provides a pop-up
+    menu.
+
+    \section2 The Accessible Object Tree
+
+    As mentioned, a tree structure is built from the accessible
+    objects of an application. By navigating through the tree, the
+    clients can access all elements in the UI. Object relations give
+    clients information about the UI. For instance, a slider handle is
+    a child of the slider to which it belongs. QAccessible::Relation
+    describes the various relationships the clients can ask objects
+    for.
+
+    Note that there are no direct mapping between the Qt QObject tree
+    and the accessible object tree. For instance, scroll bar handles
+    are accessible objects but are not widgets or objects in Qt.
+
+    AT-Clients have access to the accessibility object tree through
+    the root object in the tree, which is the QApplication. They can
+    query other objects through QAccessible::navigate(), which fetches
+    objects based on \l{QAccessible::}{Relation}s. The children of any
+    node is 1-based numbered. The child numbered 0 is the object
+    itself. The children of all interfaces are numbered this way,
+    i.e., it is not a fixed numbering from the root node in the entire
+    tree.
+
+    Qt provides accessible interfaces for its widgets. Interfaces for
+    any QObject subclass can be requested through
+    QAccessible::queryInterface(). A default implementation is
+    provided if a more specialized interface is not defined. An
+    AT-Client cannot acquire an interface for accessible objects that
+    do not have an equivalent QObject, e.g., scroll bar handles, but
+    they appear as normal objects through interfaces of parent
+    accessible objects, e.g., you can query their relationships with
+    QAccessible::relationTo().
+
+    To illustrate, we present an image of an accessible object tree.
+    Beneath the tree is a table with examples of object relationships.
+
+    \image accessibleobjecttree.png
+
+    The labels in top-down order are: the QAccessibleInterface class
+    name, the widget for which an interface is provided, and the
+    \l{QAccessible::}{Role} of the object. The Position, PageLeft and 
+    PageRight correspond to the slider handle, the slider groove left
+    and the slider groove right, respectively. These accessible objects
+    do not have an equivalent QObject.
+
+    \table 40%
+        \header
+            \o Source Object
+            \o Target Object
+            \o Relation
+        \row
+            \o Slider
+            \o Indicator
+            \o Controller
+        \row
+            \o Indicator
+            \o Slider
+            \o Controlled
+        \row
+            \o Slider
+            \o Application
+            \o Ancestor
+        \row
+            \o Application
+            \o Slider
+            \o Child
+        \row
+            \o PushButton
+            \o Indicator
+            \o Sibling
+    \endtable
+
+    \section2 The Static QAccessible Functions
+
+    The accessibility is managed by QAccessible's static functions,
+    which we will examine shortly. They produce QAccessible
+    interfaces, build the object tree, and initiate the connection
+    with MSAA or the other platform specific technologies. If you are
+    only interested in learning how to make your application
+    accessible, you can safely skip over this section to
+    \l{Implementing Accessibility}.
+
+    The communication between clients and the server is initiated when
+    \l{QAccessible::}{setRootObject()} is called. This is done when
+    the QApplication instance is instantiated and you should not have
+    to do this yourself.
+
+    When a QObject calls \l{QAccessible::}{updateAccessibility()},
+    clients that are listening to events are notified of the
+    change. The function is used to post events to the assistive
+    technology, and accessible \l{QAccessible::Event}{events} are
+    posted by \l{QAccessible::}{updateAccessibility()}.
+
+    \l{QAccessible::}{queryAccessibleInterface()} returns accessible
+    interfaces for \l{QObject}s. All widgets in Qt provide interfaces;
+    if you need interfaces to control the behavior of other \l{QObject}
+    subclasses, you must implement the interfaces yourself, although
+    the QAccessibleObject convenience class implements parts of the
+    functionality for you.
+
+    The factory that produces accessibility interfaces for QObjects is
+    a function of type QAccessible::InterfaceFactory. It is possible
+    to have several factories installed. The last factory installed
+    will be the first to be asked for interfaces.
+    \l{QAccessible::}{queryAccessibleInterface()} uses the factories
+    to create interfaces for \l{QObject}s. Normally, you need not be
+    concerned about factories because you can implement plugins that
+    produce interfaces. We will give examples of both approaches
+    later.
+
+    \section1 Implementing Accessibility
+
+    To provide accessibility support for a widget or other user
+    interface element, you need to implement the QAccessibleInterface
+    and distribute it in a QAccessiblePlugin. It is also possible to
+    compile the interface into the application and provide a
+    QAccessible::InterfaceFactory for it. The factory can be used if
+    you link statically or do not want the added complexity of
+    plugins.  This can be an advantage if you, for instance, are
+    delivering a 3-rd party library.
+
+    All widgets and other user interface elements should have
+    interfaces and plugins. If you want your application to support
+    accessibility, you will need to consider the following:
+
+    \list
+        \o Qt already supports accessibility for its own widgets.
+           A good way to ensure accessibility compliance is to use
+           Qt's widgets as much as possible.
+        \o You need to send accessibility events from the custom
+           user interface elements that you implement, which are
+           usually custom widgets.
+        \o QAccessibleInterface needs to be implemented for widgets
+           that you want to make available to accessibility clients.
+    \endlist
+
+    In general, it is recommended that you are somewhat familiar with
+    MSAA, which Qt originally was built for. You should also study
+    the enum values of QAccessible, which describe the roles, actions,
+    relationships, and events that you need to consider.
+
+    Note that you can examine how Qt's widgets implement their
+    accessibility. One major problem with the MSAA standard is that
+    interfaces are often implemented in an inconsistent way. This
+    makes life difficult for clients and often leads to guesswork on
+    object functionality.
+
+    It is possible to implement interfaces by inheriting
+    QAccessibleInterface and implementing its pure virtual functions.
+    In practice, however, it is usually preferable to inherit
+    QAccessibleObject or QAccessibleWidget, which implement part of
+    the functionality for you. In the next section, we will see an
+    example of implementing accessibility for a widget by inheriting
+    the QAccessibleWidget class.
+
+    \section2 The QAccessibleObject and QAccessibleWidget Convenience Classes
+
+    When implementing an accessibility interface for widgets, one would
+    as a rule inherit QAccessibleWidget, which is a convenience class
+    for widgets. Another available convenience class, which is
+    inherited by QAccessibleWidget, is the QAccessibleObject, which
+    implements part of the interface for QObjects.
+
+    The QAccessibleWidget provides the following functionality:
+
+    \list
+        \o It handles the navigation of the tree and
+           hit testing of the objects. 
+        \o It handles events, roles, and actions that are common for all
+           \l{QWidget}s.
+        \o It handles action and methods that can be performed on
+           all widgets.
+        \o It calculates bounding rectangles with
+           \l{QAccessibleInterface::}{rect()}.
+        \o It gives \l{QAccessibleInterface::}{text()} strings that are
+           appropriate for a generic widget.
+        \o It sets the \l{QAccessible::State}{states} that
+           are common for all widgets.
+    \endlist
+
+    \section2 QAccessibleWidget Example
+
+    Instead of creating a custom widget and implementing an interface
+    for it, we will show how accessibility can be implemented for one of
+    Qt's standard widgets: QSlider. Making this widget accessible
+    demonstrates many of the issues that need to be faced when making
+    a custom widget accessible.
+
+    The slider is a complex control that functions as a
+    \l{QAccessible::}{Controller} for its accessible children.
+    This relationship must be known by the interface (for
+    \l{QAccessibleInterface::}{relationTo()} and
+    \l{QAccessibleInterface::}{navigate()}). This can be done
+    using a controlling signal, which is a mechanism provided by
+    QAccessibleWidget. We do this in the constructor:
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 0
+
+    The choice of signal shown is not important; the same principles
+    apply to all signals that are declared in this way. Note that we
+    use QLatin1String to ensure that the signal name is correctly
+    specified.
+
+    When an accessible object is changed in a way that users need
+    to know about, it notifies clients of the change by sending them
+    an event via the accessible interface. This is how QSlider calls
+    \l{QAccessibleInterface::}{updateAccessibility()} to indicate that
+    its value has changed:
+
+    \snippet doc/src/snippets/qabstractsliderisnippet.cpp 0
+    \dots
+    \snippet doc/src/snippets/qabstractsliderisnippet.cpp 1
+    \dots
+    \snippet doc/src/snippets/qabstractsliderisnippet.cpp 2
+
+    Note that the call is made after the value of the slider has
+    changed because clients may query the new value immediately after
+    receiving the event.
+
+    The interface must be able to calculate bounding rectangles of
+    itself and any children that do not provide an interface of their
+    own. The \c QAccessibleSlider has three such children identified by
+    the private enum, \c SliderElements, which has the following values:
+    \c PageLeft (the rectangle on the left hand side of the slider
+    handle), \c PageRight (the rectangle on the right hand side of the
+    handle), and \c Position (the slider handle). Here is the
+    implementation of \l{QAccessibleInterface::}{rect()}:
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 1
+    \dots
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 2
+    \dots
+
+    The first part of the function, which we have omitted, uses the
+    current \l{QStyle}{style} to calculate the slider handle's
+    bounding rectangle; it is stored in \c srect. Notice that child 0,
+    covered in the default case in the above code, is the slider itself,
+    so we can simply return the QSlider bounding rectangle obtained
+    from the superclass, which is effectively the value obtained from
+    QAccessibleWidget::rect().
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 3
+
+    Before the rectangle is returned it must be mapped to screen
+    coordinates.
+
+    The QAccessibleSlider must reimplement
+    QAccessibleInterface::childCount() since it manages children
+    without interfaces.
+
+    The \l{QAccessibleInterface::}{text()} function returns the
+    QAccessible::Text strings for the slider:
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 4
+
+    The \c slider() function returns a pointer to the interface's
+    QSlider. Some values are left for the superclass's implementation.
+    Not all values are appropriate for all accessible objects, as you
+    can see for QAccessible::Value case. You should just return an
+    empty string for those values where no relevant text can be
+    provided.
+
+    The implementation of the \l{QAccessibleInterface::}{role()}
+    function is straightforward:
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 5
+
+    The role function should be reimplemented by all objects and
+    describes the role of themselves and the children that do not
+    provide accessible interfaces of their own.
+
+    Next, the accessible interface needs to return the
+    \l{QAccessible::State}{states} that the slider can be in. We look
+    at parts of the \c state() implementation to show how just a few
+    of the states are handled:
+
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 6
+    \dots
+    \snippet doc/src/snippets/accessibilityslidersnippet.cpp 7
+
+    The superclass implementation of
+    \l{QAccessibleInterface::}{state()}, uses the
+    QAccessibleInterface::state() implementation. We simply need to
+    disable the buttons if the slider is at its minimum or maximum.
+
+    We have now exposed the information we have about the slider to
+    the clients. For the clients to be able to alter the slider - for
+    example, to change its value - we must provide information about
+    the actions that can be performed and perform them upon request.
+    We discuss this in the next section.
+
+    \section2 Handling Action Requests from Clients
+
+    QAccessible provides a number of \l{QAccessible::}{Action}s
+    that can be performed on request from clients. If an
+    accessible object supports actions, it should reimplement the
+    following functions from QAccessibleInterface:
+
+    \list
+        \o \l{QAccessibleInterface::}{actionText()} returns
+            strings that describe each action. The descriptions
+            to be made available are one for each
+            \l{QAccessible::}{Text} enum value.
+        \o  \l{QAccessibleInterface::}{doAction()} executes requests
+            from clients to perform actions.
+    \endlist
+
+    Note that a client can request any action from an object. If
+    the object does not support the action, it returns false from
+    \l{QAccessibleInterface::}{doAction()}.
+
+    None of the standard actions take any parameters. It is possible
+    to provide user-defined actions that can take parameters.
+    The interface must then also reimplement
+    \l{QAccessibleInterface::}{userActionCount()}. Since this is not
+    defined in the MSAA specification, it is probably only useful to
+    use this if you know which specific AT-Clients will use the
+    application.
+
+    QAccessibleInterface gives another technique for clients to handle
+    accessible objects. It works basically the same way, but uses the
+    concept of methods in place of actions. The available methods are
+    defined by the QAccessible::Method enum. The following functions
+    need to be reimplemented from QAccessibleInterface if the
+    accessible object is to support methods:
+
+    \list
+        \o \l{QAccessibleInterface::}{supportedMethods()} returns
+            a QSet of \l{QAccessible::}{Method} values that are 
+            supported by the object.
+        \o \l{QAccessibleInterface::}{invokeMethod()} executes
+           methods requested by clients.
+    \endlist
+
+    The action mechanism will probably be substituted by providing
+    methods in place of the standard actions. 
+
+    To see examples on how to implement actions and methods, you
+    could examine the QAccessibleObject and QAccessibleWidget
+    implementations. You might also want to take a look at the
+    MSAA documentation.
+
+    \section2 Implementing Accessible Plugins
+
+    In this section we will explain the procedure of implementing
+    accessible plugins for your interfaces. A plugin is a class stored
+    in a shared library that can be loaded at run-time. It is
+    convenient to distribute interfaces as plugins since they will only
+    be loaded when required.
+
+    Creating an accessible plugin is achieved by inheriting
+    QAccessiblePlugin, reimplementing \l{QAccessiblePlugin::}{keys()}
+    and \l{QAccessiblePlugin::}{create()} from that class, and adding
+    one or two macros. The \c .pro file must be altered to use the
+    plugin template, and the library containing the plugin must be
+    placed on a path where Qt searches for accessible plugins.
+
+    We will go through the implementation of \c SliderPlugin, which is an
+    accessible plugin that produces interfaces for the
+    QAccessibleSlider we implemented in the \l{QAccessibleWidget Example}.
+    We start with the \c key() function:
+
+    \snippet doc/src/snippets/accessibilitypluginsnippet.cpp 0
+
+    We simply need to return the class name of the single interface
+    our plugin can create an accessible interface for. A plugin
+    can support any number of classes; just add more class names
+    to the string list. We move on to the \c create() function:
+
+    \snippet doc/src/snippets/accessibilitypluginsnippet.cpp 1
+
+    We check whether the interface requested is for the QSlider; if it
+    is, we create and return an interface for it. Note that \c object
+    will always be an instance of \c classname. You must return 0 if
+    you do not support the class.
+    \l{QAccessible::}{updateAccessibility()} checks with the
+    available accessibility plugins until it finds one that does not
+    return 0.
+
+    Finally, you need to include macros in the cpp file:
+
+    \snippet doc/src/snippets/accessibilitypluginsnippet.cpp 2
+
+    The Q_EXPORT_PLUGIN2 macro exports the plugin in the \c
+    SliderPlugin class into the \c acc_sliderplugin library. The first
+    argument is the name of the plugin library file, excluding the
+    file suffix, and the second is the class name. For more information
+    on plugins, consult the plugins \l{How to Create Qt
+    Plugins}{overview document}.
+
+    You can omit the the first macro unless you want the plugin
+    to be statically linked with the application.
+
+    \section2 Implementing Interface Factories
+
+    If you do not want to provide plugins for your accessibility
+    interfaces, you can use an interface factory
+    (QAccessible::InterfaceFactory), which is the recommended way to
+    provide accessible interfaces in a statically-linked application.
+
+    A factory is a function pointer for a function that takes the same
+    parameters as \l{QAccessiblePlugin}'s
+    \l{QAccessiblePlugin::}{create()} - a QString and a QObject. It
+    also works the same way. You install the factory with the
+    \l{QAccessible::}{installFactory()} function. We give an example
+    of how to create a factory for the \c SliderPlugin class:
+
+    \snippet doc/src/snippets/accessibilityfactorysnippet.cpp 0
+    \dots
+    \snippet doc/src/snippets/accessibilityfactorysnippet.cpp 1
+
+    \omit
+
+    \section1 Implementing Bridges for Other Assistive Technologies
+
+    An accessibility bridge provides the means for an assistive
+    technology to talk to Qt. On Windows and Mac, the built-in bridges
+    will be used. On UNIX, however, there are no built-in standard
+    assistive technology, and it might therefore be necessary to
+    implement an accessible bridge.
+
+    A bridge is implemented by inheriting QAccessibleBridge for the
+    technology to support. The class defines the interface that Qt
+    needs an assistive technology to support:
+
+    \list
+        \o A root object. This is the root in the accessible
+           object tree and is of type QAccessibleInterface.
+        \o Receive events from from accessible objects.
+    \endlist
+
+    The root object is set with the
+    \l{QAccessibleBridge::}{setRootObject()}. In the case of Qt, this
+    will always be an interface for the QApplication instance of the
+    application.
+
+    Event notification is sent through
+    \l{QAccessibleBridge::}{notifyAccessibilityUpdate()}. This
+    function is called by \l{QAccessible::}{updateAccessibility()}. Even
+    though the bridge needs only to implement these two functions, it
+    must be able to communicate the entire QAccessibleInterface to the
+    underlying technology. How this is achieved is, naturally, up to
+    the individual bridge and none of Qt's concern.
+
+    As with accessible interfaces, you distribute accessible bridges
+    in plugins. Accessible bridge plugins are subclasses of the
+    QAccessibleBridgePlugin class; the class defines the functions
+    \l{QAccessibleBridgePlugin::}{create()} and
+    \l{QAccessibleBridgePlugin::}{keys()}, which must me
+    reimplemented. If Qt finds a built-in bridge to use, it will
+    ignore any available plugins.
+
+    \endomit
+*/

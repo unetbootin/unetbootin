@@ -1,0 +1,10 @@
+//! [0]
+    QVariant a = model->index(0, 0, QModelIndex()).data();
+//! [0]
+
+
+//! [1]
+    QVariant b = model->index(1, 0, QModelIndex()).data();
+//! [1]
+
+

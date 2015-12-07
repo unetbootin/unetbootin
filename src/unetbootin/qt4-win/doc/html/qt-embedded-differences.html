@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-differences.qdoc -->
+<head>
+  <title>Qt 4.4: Porting Qt Applications to Qt for Embedded Linux</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Porting Qt Applications to Qt for Embedded Linux<br /><span class="subtitle"></span>
+</h1>
+<p>Existing Qt applications should require no porting provided there is no platform dependent code.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Platform Dependent Code</th></tr></thead>
+<tr valign="top" class="odd"><td>Platform dependent code includes system calls, calls to the underlying window system (Windows or X11), and Qt platform specific methods such as <a href="qapplication.html#x11EventFilter">QApplication::x11EventFilter</a>().<p>For cases where it is necessary to use platform dependent code there are macros defined that can be used to enable and disable code for each platform using <tt>#ifdef</tt> directives:</p>
+<ul>
+<li>Qt for Embedded Linux: <a href="qtglobal.html#Q_WS_QWS">Q_WS_QWS</a></li>
+<li>Qt/Mac: <a href="qtglobal.html#Q_WS_MAC">Q_WS_MAC</a></li>
+<li>Qt/Windows: <a href="qtglobal.html#Q_WS_WIN">Q_WS_WIN</a></li>
+<li>Qt/X11: <a href="qtglobal.html#Q_WS_X11">Q_WS_X11</a></li>
+</ul>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/calendar.qdoc -->
+<head>
+  <title>Qt 4.4: Calendar Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Calendar Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="richtext-calendar-mainwindow-cpp.html">richtext/calendar/mainwindow.cpp</a></li>
+<li><a href="richtext-calendar-mainwindow-h.html">richtext/calendar/mainwindow.h</a></li>
+<li><a href="richtext-calendar-main-cpp.html">richtext/calendar/main.cpp</a></li>
+<li><a href="richtext-calendar-calendar-pro.html">richtext/calendar/calendar.pro</a></li>
+</ul>
+<p>The Calendar example shows how to create rich text content and display it using a rich text editor.</p>
+<p align="center"><img src="images/calendar-example.png" /></p><p>Specifically, the example demonstrates the following:</p>
+<ul>
+<li>Use of a text editor with a text document</li>
+<li>Insertion of tables and frames into a document</li>
+<li>Navigation within a table</li>
+<li>Insert text in different styles</li>
+</ul>
+<p>The rich text editor used to display the document is used within a main window application.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class provides a text editor widget and some controls to allow the user to change the month and year shown. The font size used for the text can also be adjusted.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ public slots:
+     void setFontSize(int size);
+     void setMonth(int month);
+     void setYear(QDate date);
+
+ private:
+     void insertCalendar();
+
+     int fontSize;
+     QDate selectedDate;
+     QTextBrowser *editor;
+ };</pre>
+<p>The private <tt>insertCalendar()</tt> function performs most of the work, relying on the <tt>fontSize</tt> and <tt>selectedDate</tt> variables to write useful information to the <tt>editor</tt>.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt> constructor sets up the user interface and initializes variables used to generate a calendar for each month.</p>
+<pre> MainWindow::MainWindow()
+ {
+     selectedDate = QDate::currentDate();
+     fontSize = 10;
+
+     QWidget *centralWidget = new QWidget;</pre>
+<p>We begin by setting default values for the selected date that will be highlighted in the calendar and the font size to be used. Since we are using a <a href="qmainwindow.html">QMainWindow</a> for the user interface, we construct a widget for use as the central widget.</p>
+<p>The user interface will include a line of controls above the generated calendar; we construct a label and a combobox to allow the month to be selected, and a spin box for the year. These widgets are configured to provide a reasonable range of values for the user to try:</p>
+<pre>     QLabel *dateLabel = new QLabel(tr(&quot;Date:&quot;));
+     QComboBox *monthCombo = new QComboBox;
+
+     for (int month = 1; month &lt;= 12; ++month)
+         monthCombo-&gt;addItem(QDate::longMonthName(month));
+
+     QDateTimeEdit *yearEdit = new QDateTimeEdit;
+     yearEdit-&gt;setDisplayFormat(&quot;yyyy&quot;);
+     yearEdit-&gt;setDateRange(QDate(1753, 1, 1), QDate(8000, 1, 1));</pre>
+<p>We use the <tt>selectedDate</tt> object to obtain the current month and year, and we set these in the combobox and spin box:</p>
+<p>The font size is displayed in a spin box which we restrict to a sensible range of values:</p>
+<pre>     QLabel *fontSizeLabel = new QLabel(tr(&quot;Font size:&quot;));
+     QSpinBox *fontSizeSpinBox = new QSpinBox;
+     fontSizeSpinBox-&gt;setRange(1, 64);
+     fontSizeSpinBox-&gt;setValue(10);
+
+     editor = new QTextBrowser;
+     insertCalendar();</pre>
+<p>We construct an editor and use the <tt>insertCalendar()</tt> function to create a calendar for it. Each calendar is displayed in the same text editor; in this example we use a <a href="qtextbrowser.html">QTextBrowser</a> since we do not allow the calendar to be edited.</p>
+<p>The controls used to set the month, year, and font size will not have any effect on the appearance of the calendar unless we make some signal-slot connections:</p>
+<pre>     connect(monthCombo, SIGNAL(activated(int)), this, SLOT(setMonth(int)));
+     connect(yearEdit, SIGNAL(dateChanged(QDate)), this, SLOT(setYear(QDate)));
+     connect(fontSizeSpinBox, SIGNAL(valueChanged(int)),
+             this, SLOT(setFontSize(int)));</pre>
+<p>The signals are connected to some simple slots in the <tt>MainWindow</tt> class which we will describe later.</p>
+<p>We create layouts to manage the widgets we constructed:</p>
+<pre>     QHBoxLayout *controlsLayout = new QHBoxLayout;
+     controlsLayout-&gt;addWidget(dateLabel);
+     controlsLayout-&gt;addWidget(monthCombo);
+     controlsLayout-&gt;addWidget(yearEdit);
+     controlsLayout-&gt;addSpacing(24);
+     controlsLayout-&gt;addWidget(fontSizeLabel);
+     controlsLayout-&gt;addWidget(fontSizeSpinBox);
+     controlsLayout-&gt;addStretch(1);
+
+     QVBoxLayout *centralLayout = new QVBoxLayout;
+     centralLayout-&gt;addLayout(controlsLayout);
+     centralLayout-&gt;addWidget(editor, 1);
+     centralWidget-&gt;setLayout(centralLayout);
+
+     setCentralWidget(centralWidget);</pre>
+<p>Finally, the central widget is set for the window.</p>
+<p>Each calendar is created for the editor by the <tt>insertCalendar()</tt> function which uses the date and font size, defined by the private <i>selectedDate</i> and <tt>fontSize</tt> variables, to produce a suitable plan for the specified month and year.</p>
+<pre> void MainWindow::insertCalendar()
+ {
+     editor-&gt;clear();
+     QTextCursor cursor = editor-&gt;textCursor();
+     cursor.beginEditBlock();
+
+     QDate date(selectedDate.year(), selectedDate.month(), 1);</pre>
+<p>We begin by clearing the editor's rich text document, and obtain a text cursor from the editor that we will use to add content. We also create a <a href="qdate.html">QDate</a> object based on the currently selected date.</p>
+<p>The calendar is made up of a table with a gray background color that contains seven columns: one for each day of the week. It is placed in the center of the page with equal space to the left and right of it. All of these properties are set in a <a href="qtexttableformat.html">QTextTableFormat</a> object:</p>
+<pre>     QTextTableFormat tableFormat;
+     tableFormat.setAlignment(Qt::AlignHCenter);
+     tableFormat.setBackground(QColor(&quot;#e0e0e0&quot;));
+     tableFormat.setCellPadding(2);
+     tableFormat.setCellSpacing(4);</pre>
+<p>Each cell in the table will be padded and spaced to make the text easier to read.</p>
+<p>We want the columns to have equal widths, so we provide a vector containing percentage widths for each of them and set the constraints in the <a href="qtexttableformat.html">QTextTableFormat</a>:</p>
+<pre>     QVector&lt;QTextLength&gt; constraints;
+     constraints &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14);
+     tableFormat.setColumnWidthConstraints(constraints);</pre>
+<p>The constraints used for the column widths are only useful if the table has an appropriate number of columns. With the format for the table defined, we construct a new table with one row and seven columns at the current cursor position:</p>
+<pre>     QTextTable *table = cursor.insertTable(1, 7, tableFormat);</pre>
+<p>We only need one row to start with; more can be added as we need them. Using this approach means that we do not need to perform any date calculations until we add cells to the table.</p>
+<p>When inserting objects into a document with the cursor's insertion functions, the cursor is automatically moved inside the newly inserted object. This means that we can immediately start modifying the table from within:</p>
+<pre>     QTextFrame *frame = cursor.currentFrame();
+     QTextFrameFormat frameFormat = frame-&gt;frameFormat();
+     frameFormat.setBorder(1);
+     frame-&gt;setFrameFormat(frameFormat);</pre>
+<p>Since the table has an outer frame, we obtain the frame and its format so that we can customize it. After making the changes we want, we set the frame's format using the modified format object. We have given the table an outer border one pixel wide.</p>
+<pre>     QTextCharFormat format = cursor.charFormat();
+     format.setFontPointSize(fontSize);
+
+     QTextCharFormat boldFormat = format;
+     boldFormat.setFontWeight(QFont::Bold);
+
+     QTextCharFormat highlightedFormat = boldFormat;
+     highlightedFormat.setBackground(Qt::yellow);</pre>
+<p>In a similar way, we obtain the cursor's current character format and create customized formats based on it.</p>
+<p>We do not set the format on the cursor because this would change the default character format; instead, we use the customized formats explicitly when we insert text. The following loop inserts the days of the week into the table as bold text:</p>
+<pre>     for (int weekDay = 1; weekDay &lt;= 7; ++weekDay) {
+         QTextTableCell cell = table-&gt;cellAt(0, weekDay-1);</pre>
+<p>For each day of the week, we obtain an existing table cell in the first row (row 0) using the table's <a href="qtexttable.html#cellAt">cellAt()</a> function. Since we start counting the days of the week at day 1 (Monday), we subtract 1 from <tt>weekDay</tt> to ensure that we obtain the cell for the correct column of the table.</p>
+<p>Before text can be inserted into a cell, we must obtain a cursor with the correct position in the document. The cell provides a function for this purpose, and we use this cursor to insert text using the <tt>boldFormat</tt> character format that we created earlier:</p>
+<pre>         QTextCursor cellCursor = cell.firstCursorPosition();
+         cellCursor.insertText(QString(&quot;%1&quot;).arg(QDate::longDayName(weekDay)),
+                               boldFormat);
+     }</pre>
+<p>Inserting text into document objects usually follows the same pattern. Each object can provide a new cursor that corresponds to the first valid position within itself, and this can be used to insert new content. We continue to use this pattern as we insert the days of the month into the table.</p>
+<p>Since every month has more than seven days, we insert a single row to begin and add days until we reach the end of the month. If the current date is encountered, it is inserted with a special format (created earlier) that makes it stand out:</p>
+<pre>     table-&gt;insertRows(table-&gt;rows(), 1);</pre>
+<p>We add a new row to the table at the end of each week only if the next week falls within the currently selected month.</p>
+<p>For each calendar that we create, we change the window title to reflect the currently selected month and year:</p>
+<pre>     setWindowTitle(tr(&quot;Calendar for %1 %2&quot;
+         ).arg(QDate::longMonthName(selectedDate.month())
+         ).arg(selectedDate.year()));
+ }</pre>
+<p>The <tt>insertCalendar()</tt> function relies on up-to-date values for the month, year, and font size. These are set in the following slots:</p>
+<pre> void MainWindow::setFontSize(int size)
+ {
+     fontSize = size;
+     insertCalendar();
+ }</pre>
+<p>The <tt>setFontSize()</tt> function simply changes the private <tt>fontSize</tt> variable before updating the calendar.</p>
+<pre> void MainWindow::setMonth(int month)
+ {
+     selectedDate = QDate(selectedDate.year(), month + 1, selectedDate.day());
+     insertCalendar();
+ }</pre>
+<p>The <tt>setMonth</tt> slot is called when the <a href="qcombobox.html">QComboBox</a> used to select the month is updated. The value supplied is the currently selected row in the combobox. We add 1 to this value to obtain a valid month number, and create a new <a href="qdate.html">QDate</a> based on the existing one. The calendar is then updated to use this new date.</p>
+<pre> void MainWindow::setYear(QDate date)
+ {
+     selectedDate = QDate(date.year(), selectedDate.month(), selectedDate.day());
+     insertCalendar();
+ }</pre>
+<p>The <tt>setYear()</tt> slot is called when the <a href="qdatetimeedit.html">QDateTimeEdit</a> used to select the year is updated. The value supplied is a <a href="qdate.html">QDate</a> object; this makes the construction of a new value for <tt>selectedDate</tt> simple. We update the calendar afterwards to use this new date.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

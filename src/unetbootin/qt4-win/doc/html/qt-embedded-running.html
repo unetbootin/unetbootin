@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-running.qdoc -->
+<head>
+  <title>Qt 4.4: Running Qt for Embedded Linux Applications</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Running Qt for Embedded Linux Applications<br /><span class="subtitle"></span>
+</h1>
+<p>A <a href="qt-embedded.html">Qt for Embedded Linux</a> application requires a server application to be running, or to be the server application itself. Any <a href="qt-embedded.html">Qt for Embedded Linux</a> application can be the server application by constructing the <a href="qapplication.html">QApplication</a> object with the <a href="qapplication.html#Type-enum">QApplication::GuiServer</a> type, or by running the application with the <tt>-qws</tt> command line option.</p>
+<p>Applications can run using both single and multiple displays, and various command line options are available.</p>
+<p>Note that this document assumes that you either are using the <a href="qvfb.html">The Virtual Framebuffer</a> or that you are running <a href="qt-embedded.html">Qt for Embedded Linux</a> using the <a href="qt-embedded-vnc.html">VNC</a> protocol, <i>or</i> that you have the Linux framebuffer configured correctly and that no server process is running. (To test that the Linux framebuffer is set up correctly, use the program provided by the <a href="qt-embedded-testingframebuffer.html">Testing the Linux Framebuffer</a> document.)</p>
+<ul><li><a href="#using-a-single-display">Using a Single Display</a></li>
+<li><a href="#using-multiple-displays">Using Multiple Displays</a></li>
+<li><a href="#command-line-options">Command Line Options</a></li>
+</ul>
+<a name="using-a-single-display"></a>
+<h2>Using a Single Display</h2>
+<p>To run the application using a single display, change to a Linux console and select an application to run, e.g&#x2e; <a href="demos-textedit.html">demos/textedit</a>. Run the application with the <tt>-qws</tt> option:</p>
+<pre>         cd path/to/QtEmbedded/demos/textedit
+         ./textedit -qws</pre>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>Provided that the environment variables are adjusted properly during the <a href="qt-embedded-install.html">installation process</a>, you should see the <a href="demos-textedit.html">Text Edit</a> demo appear.<p>It might be that the hardware drivers must be specified explicitly to make everything work properly. For more information, please consult the following documentation:</p>
+<ul>
+<li><a href="qt-embedded-pointer.html">Pointer Handling</a></li>
+<li><a href="qt-embedded-charinput.html">Character Input</a></li>
+<li><a href="qt-embedded-displaymanagement.html">Display Management</a></li>
+</ul>
+</td><td><img src="images/qt-embedded-runningapplication.png" /></td></tr>
+</table></p>
+<p>Additional applications can be run as clients, i.e&#x2e;, by running these applications <i>without</i> the <tt>-qws</tt> option they will connect to the existing server as clients. You can exit the server application at any time using <b>Ctrl+Alt+Backspace</b>.</p>
+<a name="using-multiple-displays"></a>
+<h2>Using Multiple Displays</h2>
+<p>Qt for Embedded Linux also allows multiple displays to be used simultaneously. There are two ways of achieving this: Either run multiple Qt for Embedded Linux server processes, or use the ready-made <tt>Multi</tt> screen driver.</p>
+<p>When running multiple server processes, the screen driver (and display number) must be specified for each process using the <tt>-display</tt> command line option or by setting the <a href="qt-embedded-envvars.html#qws-display">QWS_DISPLAY</a> environment variable. For example:</p>
+<pre>         ./myfirstserverapplication -qws -display &quot;transformed:rot90:1&quot;
+         ./mysecondserverapplication -qws -display &quot;QVFb:2&quot;</pre>
+<p>See the <a href="qt-embedded-displaymanagement.html">display management</a> documentation for more details on how to specify a screen driver. Note that you must also specify the display (i.e&#x2e;, server process) when starting client applications:</p>
+<pre>         ./myclientapplication -display &quot;QVFb:2&quot;</pre>
+<p>There is no way of moving a client from one display to another when running multiple server processes. Using the <tt>Multi</tt> screen driver, on the other hand, applications can easiliy be moved between the various screens.</p>
+<p>The <tt>Multi</tt> screen driver can be specified just like any other screen driver by using the <tt>-display</tt> command line option or by setting the <a href="qt-embedded-envvars.html#qws-display">QWS_DISPLAY</a> environment variable. For example:</p>
+<pre>         ./myserverapplication -qws -display &quot;Multi: QVFb:0
+                 QVFb:1:offset=0,0 VNC:offset=640,0 :2&quot;</pre>
+<p>See the <a href="qt-embedded-displaymanagement.html">display management</a> documentation for details regarding arguments.</p>
+<a name="command-line-options"></a>
+<h2>Command Line Options</h2>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><b>-fn</b> &lt;font&gt;</td><td>Defines the application font. For example:<pre>         ./myapplication -fn helvetica</pre>
+<p>The font should be specified using an X logical font description.</p>
+</td></tr>
+<tr valign="top" class="even"><td><b>-bg</b> &lt;color&gt;</td><td>Sets the default application background color. For example:<pre>         ./myapplication -bg blue</pre>
+<p>The color-name must be one of the names recognized by the <a href="qcolor.html">QColor</a> constructor.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>-btn</b> &lt;color&gt;</td><td>Sets the default button color. For example:<pre>         ./myapplication -btn green</pre>
+<p>The color-name must be one of the names recognized by the <a href="qcolor.html">QColor</a> constructor.</p>
+</td></tr>
+<tr valign="top" class="even"><td><b>-fg</b> &lt;color&gt;</td><td>Sets the default application foreground color. For example:<pre>         ./myapplication -fg 'dark blue'</pre>
+<p>The color-name must be one of the names recognized by the <a href="qcolor.html">QColor</a> constructor.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>-name</b> &lt;objectname&gt;</td><td>Sets the application name, i.e&#x2e; the application object's object name. For example:<pre>         ./myapplication -name texteditapplication</pre>
+</td></tr>
+<tr valign="top" class="even"><td><b>-title</b> &lt;title&gt;</td><td>Sets the application's title. For example:<pre>         ./myapplication -title 'Text Edit'</pre>
+</td></tr>
+<tr valign="top" class="odd"><td><b>-geometry</b> &lt;width&gt;x&lt;height&gt;x&lt;Xoffset&gt;x&lt;YOffset&gt;</td><td>Sets the client geometry of the first window that is shown. For example:<pre>         ./myapplication -geometry 300x200x50x50</pre>
+</td></tr>
+<tr valign="top" class="even"><td><b>-keyboard</b></td><td>Enables the keyboard.<p>See also: <a href="qt-embedded-charinput.html">Qt for Embedded Linux Character Input</a>.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>-nokeyboard</b></td><td>Disables the keyboard.</td></tr>
+<tr valign="top" class="even"><td><b>-mouse</b></td><td>Enables the mouse cursor.<p>See also: <a href="qt-embedded-pointer.html">Qt for Embedded Linux Pointer Handling</a>.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>-nomouse</b></td><td>Disables the mouse cursor.</td></tr>
+<tr valign="top" class="even"><td><b>-qws</b></td><td>Runs the application as a server application, i.e&#x2e; constructs a <a href="qapplication.html">QApplication</a> object of the <a href="qapplication.html#Type-enum">QApplication::GuiServer</a> type.</td></tr>
+<tr valign="top" class="odd"><td><b>-display</b></td><td>Specifies the screen driver.<p>See also: <a href="qt-embedded-displaymanagement.html">Qt for Embedded Linux Display Management</a>.</p>
+</td></tr>
+<tr valign="top" class="even"><td><b>-decoration</b> &lt;style&gt;</td><td>Sets the application decoration. For example:<pre>         ./myapplication -decoration windows</pre>
+<p>The supported styles are <tt>windows</tt>, <tt>default</tt> and <tt>styled</tt>.</p>
+<p>See also QDecoration.</p>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

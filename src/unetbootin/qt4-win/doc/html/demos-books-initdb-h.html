@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: initdb.h Example File (demos/books/initdb.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">initdb.h Example File<br /><span class="small-subtitle">demos/books/initdb.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef INITDB_H
+ #define INITDB_H
+
+ #include &lt;QtSql&gt;
+
+ void addBook(QSqlQuery &amp;q, const QString &amp;title, int year, const QVariant &amp;authorId,
+              const QVariant &amp;genreId, int rating)
+ {
+     q.addBindValue(title);
+     q.addBindValue(year);
+     q.addBindValue(authorId);
+     q.addBindValue(genreId);
+     q.addBindValue(rating);
+     q.exec();
+ }
+
+ QVariant addGenre(QSqlQuery &amp;q, const QString &amp;name)
+ {
+     q.addBindValue(name);
+     q.exec();
+     return q.lastInsertId();
+ }
+
+ QVariant addAuthor(QSqlQuery &amp;q, const QString &amp;name, const QDate &amp;birthdate)
+ {
+     q.addBindValue(name);
+     q.addBindValue(birthdate);
+     q.exec();
+     return q.lastInsertId();
+ }
+
+ QSqlError initDb()
+ {
+     QSqlDatabase db = QSqlDatabase::addDatabase(&quot;QSQLITE&quot;);
+     db.setDatabaseName(&quot;:memory:&quot;);
+
+     if (!db.open())
+         return db.lastError();
+
+     QStringList tables = db.tables();
+     if (tables.contains(&quot;books&quot;, Qt::CaseInsensitive)
+         &amp;&amp; tables.contains(&quot;authors&quot;, Qt::CaseInsensitive))
+         return QSqlError();
+
+     QSqlQuery q;
+     if (!q.exec(QLatin1String(&quot;create table books(id integer primary key, title varchar, author integer, genre integer, year integer, rating integer)&quot;)))
+         return q.lastError();
+     if (!q.exec(QLatin1String(&quot;create table authors(id integer primary key, name varchar, birthdate date)&quot;)))
+         return q.lastError();
+     if (!q.exec(QLatin1String(&quot;create table genres(id integer primary key, name varchar)&quot;)))
+         return q.lastError();
+
+     if (!q.prepare(QLatin1String(&quot;insert into authors(name, birthdate) values(?, ?)&quot;)))
+         return q.lastError();
+     QVariant asimovId = addAuthor(q, QLatin1String(&quot;Isaac Asimov&quot;), QDate(1920, 2, 1));
+     QVariant greeneId = addAuthor(q, QLatin1String(&quot;Graham Greene&quot;), QDate(1904, 10, 2));
+     QVariant pratchettId = addAuthor(q, QLatin1String(&quot;Terry Pratchett&quot;), QDate(1948, 4, 28));
+
+     if (!q.prepare(QLatin1String(&quot;insert into genres(name) values(?)&quot;)))
+         return q.lastError();
+     QVariant sfiction = addGenre(q, QLatin1String(&quot;Science Fiction&quot;));
+     QVariant fiction = addGenre(q, QLatin1String(&quot;Fiction&quot;));
+     QVariant fantasy = addGenre(q, QLatin1String(&quot;Fantasy&quot;));
+
+     if (!q.prepare(QLatin1String(&quot;insert into books(title, year, author, genre, rating) values(?, ?, ?, ?, ?)&quot;)))
+         return q.lastError();
+     addBook(q, QLatin1String(&quot;Foundation&quot;), 1951, asimovId, sfiction, 3);
+     addBook(q, QLatin1String(&quot;Foundation and Empire&quot;), 1952, asimovId, sfiction, 4);
+     addBook(q, QLatin1String(&quot;Second Foundation&quot;), 1953, asimovId, sfiction, 3);
+     addBook(q, QLatin1String(&quot;Foundation's Edge&quot;), 1982, asimovId, sfiction, 3);
+     addBook(q, QLatin1String(&quot;Foundation and Earth&quot;), 1986, asimovId, sfiction, 4);
+     addBook(q, QLatin1String(&quot;Prelude to Foundation&quot;), 1988, asimovId, sfiction, 3);
+     addBook(q, QLatin1String(&quot;Forward the Foundation&quot;), 1993, asimovId, sfiction, 3);
+     addBook(q, QLatin1String(&quot;The Power and the Glory&quot;), 1940, greeneId, fiction, 4);
+     addBook(q, QLatin1String(&quot;The Third Man&quot;), 1950, greeneId, fiction, 5);
+     addBook(q, QLatin1String(&quot;Our Man in Havana&quot;), 1958, greeneId, fiction, 4);
+     addBook(q, QLatin1String(&quot;Guards! Guards!&quot;), 1989, pratchettId, fantasy, 3);
+     addBook(q, QLatin1String(&quot;Night Watch&quot;), 2002, pratchettId, fantasy, 3);
+     addBook(q, QLatin1String(&quot;Going Postal&quot;), 2004, pratchettId, fantasy, 3);
+
+     return QSqlError();
+ }
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

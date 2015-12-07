@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qtreewidgetitemiterator.cpp -->
+<head>
+  <title>Qt 4.4: QTreeWidgetItemIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTreeWidgetItemIterator Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTreeWidgetItemIterator class provides a way to iterate over the items in a <a href="qtreewidget.html">QTreeWidget</a> instance. <a href="#details">More...</a></p>
+<pre> #include &lt;QTreeWidgetItemIterator&gt;</pre><ul>
+<li><a href="qtreewidgetitemiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtreewidgetitemiterator.html#IteratorFlag-enum">IteratorFlag</a></b> { All, Hidden, NotHidden, Selected, ..., UserFlag }</li>
+<li><div class="fn"/>flags <b><a href="qtreewidgetitemiterator.html#IteratorFlag-enum">IteratorFlags</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtreewidgetitemiterator.html#QTreeWidgetItemIterator">QTreeWidgetItemIterator</a></b> ( const QTreeWidgetItemIterator &amp; <i>it</i> )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitemiterator.html#QTreeWidgetItemIterator-2">QTreeWidgetItemIterator</a></b> ( QTreeWidget * <i>widget</i>, IteratorFlags <i>flags</i> = All )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitemiterator.html#QTreeWidgetItemIterator-3">QTreeWidgetItemIterator</a></b> ( QTreeWidgetItem * <i>item</i>, IteratorFlags <i>flags</i> = All )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitemiterator.html#dtor.QTreeWidgetItemIterator">~QTreeWidgetItemIterator</a></b> ()</li>
+<li><div class="fn"/>QTreeWidgetItem * <b><a href="qtreewidgetitemiterator.html#operator-2a">operator*</a></b> () const</li>
+<li><div class="fn"/>QTreeWidgetItemIterator &amp; <b><a href="qtreewidgetitemiterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>const QTreeWidgetItemIterator <b><a href="qtreewidgetitemiterator.html#operator-2b-2b-2">operator++</a></b> ( int )</li>
+<li><div class="fn"/>QTreeWidgetItemIterator &amp; <b><a href="qtreewidgetitemiterator.html#operator-2b-eq">operator+=</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>QTreeWidgetItemIterator &amp; <b><a href="qtreewidgetitemiterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>const QTreeWidgetItemIterator <b><a href="qtreewidgetitemiterator.html#operator---2">operator--</a></b> ( int )</li>
+<li><div class="fn"/>QTreeWidgetItemIterator &amp; <b><a href="qtreewidgetitemiterator.html#operator--eq">operator-=</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>QTreeWidgetItemIterator &amp; <b><a href="qtreewidgetitemiterator.html#operator-eq">operator=</a></b> ( const QTreeWidgetItemIterator &amp; <i>it</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTreeWidgetItemIterator class provides a way to iterate over the items in a <a href="qtreewidget.html">QTreeWidget</a> instance.</p>
+<p>The iterator will walk the items in a pre-order traversal order, thus visiting the parent node <i>before</i> it continues to the child nodes.</p>
+<p>For example, the following code examples each item in a tree, checking the text in the first column against a user-specified search string:</p>
+<pre>     QTreeWidgetItemIterator it(treeWidget);
+     while (*it) {
+         if ((*it)-&gt;text(0) == itemText)
+             treeWidget-&gt;setItemSelected(*it, true);
+         ++it;
+     }</pre>
+<p>It is also possible to filter out certain types of node by passing certain <a href="qtreewidgetitemiterator.html#IteratorFlag-enum">flags</a> to the constructor of QTreeWidgetItemIterator.</p>
+<p>See also <a href="qtreewidget.html">QTreeWidget</a>, <a href="model-view-programming.html">Model/View Programming</a>, and <a href="qtreewidgetitem.html">QTreeWidgetItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="IteratorFlag-enum"></a>enum QTreeWidgetItemIterator::IteratorFlag<br />flags QTreeWidgetItemIterator::IteratorFlags</h3>
+<p>These flags can be passed to a <a href="qtreewidgetitemiterator.html">QTreeWidgetItemIterator</a> constructor (OR-ed together if more than one is used), so that the iterator will only iterate over items that match the given flags.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::All</tt></td><td align="center" valign="top"><tt>0x00000000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Hidden</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::NotHidden</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Selected</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Unselected</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Selectable</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::NotSelectable</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::DragEnabled</tt></td><td align="center" valign="top"><tt>0x00000040</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::DragDisabled</tt></td><td align="center" valign="top"><tt>0x00000080</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::DropEnabled</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::DropDisabled</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::HasChildren</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::NoChildren</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Checked</tt></td><td align="center" valign="top"><tt>0x00001000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::NotChecked</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Enabled</tt></td><td align="center" valign="top"><tt>0x00004000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Disabled</tt></td><td align="center" valign="top"><tt>0x00008000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::Editable</tt></td><td align="center" valign="top"><tt>0x00010000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::NotEditable</tt></td><td align="center" valign="top"><tt>0x00020000</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItemIterator::UserFlag</tt></td><td align="center" valign="top"><tt>0x01000000</tt></td></tr>
+</table></p>
+<p>The IteratorFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;IteratorFlag&gt;. It stores an OR combination of IteratorFlag values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTreeWidgetItemIterator"></a>QTreeWidgetItemIterator::QTreeWidgetItemIterator ( const QTreeWidgetItemIterator &amp; <i>it</i> )</h3>
+<p>Constructs an iterator for the same <a href="qtreewidget.html">QTreeWidget</a> as <i>it</i>. The current iterator item is set to point on the current item of <i>it</i>.</p>
+<h3 class="fn"><a name="QTreeWidgetItemIterator-2"></a>QTreeWidgetItemIterator::QTreeWidgetItemIterator ( <a href="qtreewidget.html">QTreeWidget</a> * <i>widget</i>, <a href="qtreewidgetitemiterator.html#IteratorFlag-enum">IteratorFlags</a> <i>flags</i> = All )</h3>
+<p>Constructs an iterator for the given <i>widget</i> that uses the specified <i>flags</i> to determine which items are found during iteration. The iterator is set to point to the first top-level item contained in the widget, or the next matching item if the top-level item doesn't match the flags.</p>
+<p>See also <a href="qtreewidgetitemiterator.html#IteratorFlag-enum">QTreeWidgetItemIterator::IteratorFlag</a>.</p>
+<h3 class="fn"><a name="QTreeWidgetItemIterator-3"></a>QTreeWidgetItemIterator::QTreeWidgetItemIterator ( <a href="qtreewidgetitem.html">QTreeWidgetItem</a> * <i>item</i>, <a href="qtreewidgetitemiterator.html#IteratorFlag-enum">IteratorFlags</a> <i>flags</i> = All )</h3>
+<p>Constructs an iterator for the given <i>item</i> that uses the specified <i>flags</i> to determine which items are found during iteration. The iterator is set to point to <i>item</i>, or the next matching item if <i>item</i> doesn't match the flags.</p>
+<p>See also <a href="qtreewidgetitemiterator.html#IteratorFlag-enum">QTreeWidgetItemIterator::IteratorFlag</a>.</p>
+<h3 class="fn"><a name="dtor.QTreeWidgetItemIterator"></a>QTreeWidgetItemIterator::~QTreeWidgetItemIterator ()</h3>
+<p>Destroys the iterator.</p>
+<h3 class="fn"><a name="operator-2a"></a><a href="qtreewidgetitem.html">QTreeWidgetItem</a> * QTreeWidgetItemIterator::operator* () const</h3>
+<p>Dereference operator. Returns a pointer to the current item.</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>QTreeWidgetItemIterator &amp; QTreeWidgetItemIterator::operator++ ()</h3>
+<p>The prefix ++ operator (++it) advances the iterator to the next matching item and returns a reference to the resulting iterator. Sets the current pointer to 0 if the current item is the last matching item.</p>
+<h3 class="fn"><a name="operator-2b-2b-2"></a>const QTreeWidgetItemIterator QTreeWidgetItemIterator::operator++ ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix ++ operator (it++) advances the iterator to the next matching item and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>QTreeWidgetItemIterator &amp; QTreeWidgetItemIterator::operator+= ( int <i>n</i> )</h3>
+<p>Makes the iterator go forward by <i>n</i> matching items. (If n is negative, the iterator goes backward.)</p>
+<p>If the current item is beyond the last item, the current item pointer is set to 0. Returns the resulting iterator.</p>
+<h3 class="fn"><a name="operator--"></a>QTreeWidgetItemIterator &amp; QTreeWidgetItemIterator::operator-- ()</h3>
+<p>The prefix -- operator (--it) advances the iterator to the previous matching item and returns a reference to the resulting iterator. Sets the current pointer to 0 if the current item is the first matching item.</p>
+<h3 class="fn"><a name="operator---2"></a>const QTreeWidgetItemIterator QTreeWidgetItemIterator::operator-- ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix -- operator (it--) makes the preceding matching item current and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator--eq"></a>QTreeWidgetItemIterator &amp; QTreeWidgetItemIterator::operator-= ( int <i>n</i> )</h3>
+<p>Makes the iterator go backward by <i>n</i> matching items. (If n is negative, the iterator goes forward.)</p>
+<p>If the current item is ahead of the last item, the current item pointer is set to 0. Returns the resulting iterator.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTreeWidgetItemIterator &amp; QTreeWidgetItemIterator::operator= ( const QTreeWidgetItemIterator &amp; <i>it</i> )</h3>
+<p>Assignment. Makes a copy of <i>it</i> and returns a reference to its iterator.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

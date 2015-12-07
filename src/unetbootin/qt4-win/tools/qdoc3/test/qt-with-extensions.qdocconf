@@ -1,0 +1,8 @@
+include( qt.qdocconf )
+
+project		= Qt with Extensions
+headerdirs	+= $QUICK/src/extensions
+headers		+= qsa/date.h
+sourcedirs	+= $QUICK/src/extensions
+spurious	= ".*"
+outputformats	= ""

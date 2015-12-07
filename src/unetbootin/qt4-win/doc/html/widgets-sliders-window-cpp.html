@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (widgets/sliders/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">widgets/sliders/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;slidersgroup.h&quot;
+ #include &quot;window.h&quot;
+
+ Window::Window()
+ {
+     horizontalSliders = new SlidersGroup(Qt::Horizontal, tr(&quot;Horizontal&quot;));
+     verticalSliders = new SlidersGroup(Qt::Vertical, tr(&quot;Vertical&quot;));
+
+     stackedWidget = new QStackedWidget;
+     stackedWidget-&gt;addWidget(horizontalSliders);
+     stackedWidget-&gt;addWidget(verticalSliders);
+
+     createControls(tr(&quot;Controls&quot;));
+
+     connect(horizontalSliders, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setValue(int)));
+     connect(verticalSliders, SIGNAL(valueChanged(int)),
+             valueSpinBox, SLOT(setValue(int)));
+     connect(valueSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setValue(int)));
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(controlsGroup);
+     layout-&gt;addWidget(stackedWidget);
+     setLayout(layout);
+
+     minimumSpinBox-&gt;setValue(0);
+     maximumSpinBox-&gt;setValue(20);
+     valueSpinBox-&gt;setValue(5);
+
+     setWindowTitle(tr(&quot;Sliders&quot;));
+ }
+
+ void Window::createControls(const QString &amp;title)
+ {
+     controlsGroup = new QGroupBox(title);
+
+     minimumLabel = new QLabel(tr(&quot;Minimum value:&quot;));
+     maximumLabel = new QLabel(tr(&quot;Maximum value:&quot;));
+     valueLabel = new QLabel(tr(&quot;Current value:&quot;));
+
+     invertedAppearance = new QCheckBox(tr(&quot;Inverted appearance&quot;));
+     invertedKeyBindings = new QCheckBox(tr(&quot;Inverted key bindings&quot;));
+
+     minimumSpinBox = new QSpinBox;
+     minimumSpinBox-&gt;setRange(-100, 100);
+     minimumSpinBox-&gt;setSingleStep(1);
+
+     maximumSpinBox = new QSpinBox;
+     maximumSpinBox-&gt;setRange(-100, 100);
+     maximumSpinBox-&gt;setSingleStep(1);
+
+     valueSpinBox = new QSpinBox;
+     valueSpinBox-&gt;setRange(-100, 100);
+     valueSpinBox-&gt;setSingleStep(1);
+
+     orientationCombo = new QComboBox;
+     orientationCombo-&gt;addItem(tr(&quot;Horizontal slider-like widgets&quot;));
+     orientationCombo-&gt;addItem(tr(&quot;Vertical slider-like widgets&quot;));
+
+     connect(orientationCombo, SIGNAL(activated(int)),
+             stackedWidget, SLOT(setCurrentIndex(int)));
+     connect(minimumSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setMinimum(int)));
+     connect(minimumSpinBox, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setMinimum(int)));
+     connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+             horizontalSliders, SLOT(setMaximum(int)));
+     connect(maximumSpinBox, SIGNAL(valueChanged(int)),
+             verticalSliders, SLOT(setMaximum(int)));
+     connect(invertedAppearance, SIGNAL(toggled(bool)),
+             horizontalSliders, SLOT(invertAppearance(bool)));
+     connect(invertedAppearance, SIGNAL(toggled(bool)),
+             verticalSliders, SLOT(invertAppearance(bool)));
+     connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+             horizontalSliders, SLOT(invertKeyBindings(bool)));
+     connect(invertedKeyBindings, SIGNAL(toggled(bool)),
+             verticalSliders, SLOT(invertKeyBindings(bool)));
+
+     QGridLayout *controlsLayout = new QGridLayout;
+     controlsLayout-&gt;addWidget(minimumLabel, 0, 0);
+     controlsLayout-&gt;addWidget(maximumLabel, 1, 0);
+     controlsLayout-&gt;addWidget(valueLabel, 2, 0);
+     controlsLayout-&gt;addWidget(minimumSpinBox, 0, 1);
+     controlsLayout-&gt;addWidget(maximumSpinBox, 1, 1);
+     controlsLayout-&gt;addWidget(valueSpinBox, 2, 1);
+     controlsLayout-&gt;addWidget(invertedAppearance, 0, 2);
+     controlsLayout-&gt;addWidget(invertedKeyBindings, 1, 2);
+     controlsLayout-&gt;addWidget(orientationCombo, 3, 0, 1, 3);
+     controlsGroup-&gt;setLayout(controlsLayout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

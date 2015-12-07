@@ -1,0 +1,50 @@
+<!-- 
+ ! 
+ ! Some notes to the DTD:
+ !
+ ! The location element is set as optional since it was introduced first in Qt 4.2.
+ ! The userdata element is set as optional since it was introduced first in Qt 4.4.
+ !
+  -->
+<!-- 
+ ! Macro used in order to escape byte entities not allowed in an xml document
+ ! for instance, only #x9, #xA and #xD are allowed characters below #x20.
+ -->
+<!ENTITY % evilstring '(#PCDATA | byte)*' >
+<!ELEMENT byte EMPTY>
+<!ATTLIST byte
+          value CDATA #REQUIRED>
+<!ELEMENT TS (defaultcodec?, context+) > 
+<!ATTLIST TS
+          version CDATA #IMPLIED
+          language CDATA #IMPLIED>
+<!ELEMENT defaultcodec (#PCDATA) >
+<!ELEMENT context (name, comment?, extracomment?, message+) > 
+<!ATTLIST context
+          encoding CDATA #IMPLIED>
+<!ELEMENT name %evilstring; >
+<!ELEMENT comment %evilstring; >
+<!ELEMENT oldcomment %evilstring; >
+<!ELEMENT translatorcomment %evilstring; >
+<!ELEMENT extracomment %evilstring; >
+<!ELEMENT message (location*, source, oldsource?, comment?, oldcomment?, extracomment?, translatorcomment?, translation, userdata?) >
+<!ATTLIST message
+          encoding CDATA #IMPLIED
+          numerus (yes|no) "no">
+<!ELEMENT location EMPTY>
+<!ATTLIST location 
+          filename CDATA #REQUIRED
+          line CDATA #REQUIRED>
+<!ELEMENT source %evilstring;>
+<!-- 
+ ! The following should really say one evilstring macro or several numerusform elements, 
+ ! but the DTD can't express this. 
+  -->
+<!ELEMENT translation (#PCDATA|byte|numerusform)* >
+<!ATTLIST translation
+          type (unfinished|obsolete) #IMPLIED
+          encoding CDATA #IMPLIED>
+<!ELEMENT userdata (#PCDATA)* >
+<!ELEMENT numerusform %evilstring; >
+
+

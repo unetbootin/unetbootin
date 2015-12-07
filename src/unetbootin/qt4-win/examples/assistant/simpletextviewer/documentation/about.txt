@@ -1,0 +1,9 @@
+The Simple Text Viewer enables the user to select and view existing
+files.
+
+HTML files is displayed using rich text, while other files are
+presented as plain text. The application provides a file dialog
+allowing the user to search for files using wildcard matching. The
+search is performed within in the specified directory, and the user is
+given an option to browse the existing file system to find the
+relevant directory.

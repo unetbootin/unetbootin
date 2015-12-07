@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qtoolbox.cpp -->
+<head>
+  <title>Qt 4.4: QToolBox Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QToolBox Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QToolBox class provides a column of tabbed widget items. <a href="#details">More...</a></p>
+<pre> #include &lt;QToolBox&gt;</pre><p>Inherits <a href="qframe.html">QFrame</a>.</p>
+<ul>
+<li><a href="qtoolbox-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtoolbox-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtoolbox.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="qtoolbox.html#currentIndex-prop">currentIndex</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtoolbox.html#QToolBox">QToolBox</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtoolbox.html#dtor.QToolBox">~QToolBox</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#addItem">addItem</a></b> ( QWidget * <i>widget</i>, const QIcon &amp; <i>iconSet</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#addItem-2">addItem</a></b> ( QWidget * <i>w</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#currentIndex-prop">currentIndex</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qtoolbox.html#currentWidget">currentWidget</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#indexOf">indexOf</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#insertItem">insertItem</a></b> ( int <i>index</i>, QWidget * <i>widget</i>, const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>int <b><a href="qtoolbox.html#insertItem-2">insertItem</a></b> ( int <i>index</i>, QWidget * <i>widget</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtoolbox.html#isItemEnabled">isItemEnabled</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QIcon <b><a href="qtoolbox.html#itemIcon">itemIcon</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtoolbox.html#itemText">itemText</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtoolbox.html#itemToolTip">itemToolTip</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#removeItem">removeItem</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#setItemEnabled">setItemEnabled</a></b> ( int <i>index</i>, bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#setItemIcon">setItemIcon</a></b> ( int <i>index</i>, const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#setItemText">setItemText</a></b> ( int <i>index</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#setItemToolTip">setItemToolTip</a></b> ( int <i>index</i>, const QString &amp; <i>toolTip</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="qtoolbox.html#widget">widget</a></b> ( int <i>index</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#currentIndex-prop">setCurrentIndex</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#setCurrentWidget">setCurrentWidget</a></b> ( QWidget * <i>widget</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbox.html#currentChanged">currentChanged</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qtoolbox.html#itemInserted">itemInserted</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qtoolbox.html#itemRemoved">itemRemoved</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QToolBox class provides a column of tabbed widget items.</p>
+<p>A toolbox is a widget that displays a column of tabs one above the other, with the current item displayed below the current tab. Every tab has an index position within the column of tabs. A tab's item is a <a href="qwidget.html">QWidget</a>.</p>
+<p>Each item has an <a href="qtoolbox.html#itemText">itemText</a>(), an optional <a href="qtoolbox.html#itemIcon">itemIcon</a>(), an optional <a href="qtoolbox.html#itemToolTip">itemToolTip</a>(), and a <a href="qtoolbox.html#widget">widget</a>(). The item's attributes can be changed with <a href="qtoolbox.html#setItemText">setItemText</a>(), <a href="qtoolbox.html#setItemIcon">setItemIcon</a>(), and <a href="qtoolbox.html#setItemToolTip">setItemToolTip</a>(). Each item can be enabled or disabled individually with <a href="qtoolbox.html#setItemEnabled">setItemEnabled</a>().</p>
+<p>Items are added using <a href="qtoolbox.html#addItem">addItem</a>(), or inserted at particular positions using <a href="qtoolbox.html#insertItem">insertItem</a>(). The total number of items is given by <a href="qtoolbox.html#count-prop">count</a>(). Items can be deleted with delete, or removed from the toolbox with <a href="qtoolbox.html#removeItem">removeItem</a>(). Combining <a href="qtoolbox.html#removeItem">removeItem</a>() and <a href="qtoolbox.html#insertItem">insertItem</a>() allows you to move items to different positions.</p>
+<p>The index of the current item widget is returned by <a href="qtoolbox.html#currentIndex-prop">currentIndex</a>(), and set with <a href="qtoolbox.html#currentIndex-prop">setCurrentIndex</a>(). The index of a particular item can be found using <a href="qtoolbox.html#indexOf">indexOf</a>(), and the item at a given index is returned by <a href="qtoolbox-qt3.html#item">item</a>().</p>
+<p>The <a href="qtoolbox.html#currentChanged">currentChanged</a>() signal is emitted when the current item is changed.</p>
+<p>See also <a href="qtabwidget.html">QTabWidget</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of items contained in the toolbox.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="currentIndex-prop"></a>currentIndex : int</h3>
+<p>This property holds the index of the current item, or -1 if the toolbox is empty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentIndex () const</b></li>
+<li><div class="fn"/><b>void setCurrentIndex ( int <i>index</i> )</b></li>
+</ul>
+<p>See also <a href="qtoolbox.html#indexOf">indexOf</a>() and <a href="qtoolbox.html#widget">widget</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QToolBox"></a>QToolBox::QToolBox ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a new toolbox with the given <i>parent</i> and the flags, <i>f</i>.</p>
+<h3 class="fn"><a name="dtor.QToolBox"></a>QToolBox::~QToolBox ()</h3>
+<p>Destroys the toolbox.</p>
+<h3 class="fn"><a name="addItem"></a>int QToolBox::addItem ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qicon.html">QIcon</a> &amp; <i>iconSet</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Adds the <i>widget</i> in a new tab at bottom of the toolbox. The new tab's text is set to <i>text</i>, and the <i>iconSet</i> is displayed to the left of the <i>text</i>. Returns the new tab's index.</p>
+<h3 class="fn"><a name="addItem-2"></a>int QToolBox::addItem ( <a href="qwidget.html">QWidget</a> * <i>w</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds the widget <i>w</i> in a new tab at bottom of the toolbox. The new tab's text is set to <i>text</i>. Returns the new tab's index.</p>
+<h3 class="fn"><a name="currentChanged"></a>void QToolBox::currentChanged ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the current item is changed. The new current item's index is passed in <i>index</i>, or -1 if there is no current item.</p>
+<h3 class="fn"><a name="currentWidget"></a><a href="qwidget.html">QWidget</a> * QToolBox::currentWidget () const</h3>
+<p>Returns a pointer to the current widget, or 0 if there is no such item.</p>
+<p>See also <a href="qtoolbox.html#currentIndex-prop">currentIndex</a>() and <a href="qtoolbox.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="indexOf"></a>int QToolBox::indexOf ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the index of <i>widget</i>, or -1 if the item does not exist.</p>
+<h3 class="fn"><a name="insertItem"></a>int QToolBox::insertItem ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Inserts the <i>widget</i> at position <i>index</i>, or at the bottom of the toolbox if <i>index</i> is out of range. The new item's text is set to <i>text</i>, and the <i>icon</i> is displayed to the left of the <i>text</i>. Returns the new item's index.</p>
+<h3 class="fn"><a name="insertItem-2"></a>int QToolBox::insertItem ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the <i>widget</i> at position <i>index</i>, or at the bottom of the toolbox if <i>index</i> is out of range. The new item's text is set to <i>text</i>. Returns the new item's index.</p>
+<h3 class="fn"><a name="isItemEnabled"></a>bool QToolBox::isItemEnabled ( int <i>index</i> ) const</h3>
+<p>Returns true if the item at position <i>index</i> is enabled; otherwise returns false.</p>
+<h3 class="fn"><a name="itemIcon"></a><a href="qicon.html">QIcon</a> QToolBox::itemIcon ( int <i>index</i> ) const</h3>
+<p>Returns the icon of the item at position <i>index</i>, or a null icon if <i>index</i> is out of range.</p>
+<p>See also <a href="qtoolbox.html#setItemIcon">setItemIcon</a>().</p>
+<h3 class="fn"><a name="itemInserted"></a>void QToolBox::itemInserted ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called after a new item was added or inserted at position <i>index</i>.</p>
+<p>See also <a href="qtoolbox.html#itemRemoved">itemRemoved</a>().</p>
+<h3 class="fn"><a name="itemRemoved"></a>void QToolBox::itemRemoved ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called after an item was removed from position <i>index</i>.</p>
+<p>See also <a href="qtoolbox.html#itemInserted">itemInserted</a>().</p>
+<h3 class="fn"><a name="itemText"></a><a href="qstring.html">QString</a> QToolBox::itemText ( int <i>index</i> ) const</h3>
+<p>Returns the text of the item at position <i>index</i>, or an empty string if <i>index</i> is out of range.</p>
+<p>See also <a href="qtoolbox.html#setItemText">setItemText</a>().</p>
+<h3 class="fn"><a name="itemToolTip"></a><a href="qstring.html">QString</a> QToolBox::itemToolTip ( int <i>index</i> ) const</h3>
+<p>Returns the tooltip of the item at position <i>index</i>, or an empty string if <i>index</i> is out of range.</p>
+<p>See also <a href="qtoolbox.html#setItemToolTip">setItemToolTip</a>().</p>
+<h3 class="fn"><a name="removeItem"></a>void QToolBox::removeItem ( int <i>index</i> )</h3>
+<p>Removes the item at position <i>index</i> from the toolbox. Note that the widget is <i>not</i> deleted.</p>
+<h3 class="fn"><a name="setCurrentWidget"></a>void QToolBox::setCurrentWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Makes<i>widget</i> the current widget. The <i>widget</i> must be an item in this tool box.</p>
+<p>See also <a href="qtoolbox.html#addItem">addItem</a>(), <a href="qtoolbox.html#currentIndex-prop">setCurrentIndex</a>(), and <a href="qtoolbox.html#currentWidget">currentWidget</a>().</p>
+<h3 class="fn"><a name="setItemEnabled"></a>void QToolBox::setItemEnabled ( int <i>index</i>, bool <i>enabled</i> )</h3>
+<p>If <i>enabled</i> is true then the item at position <i>index</i> is enabled; otherwise the item at position <i>index</i> is disabled.</p>
+<p>See also <a href="qtoolbox.html#isItemEnabled">isItemEnabled</a>().</p>
+<h3 class="fn"><a name="setItemIcon"></a>void QToolBox::setItemIcon ( int <i>index</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i> )</h3>
+<p>Sets the icon of the item at position <i>index</i> to <i>icon</i>.</p>
+<p>See also <a href="qtoolbox.html#itemIcon">itemIcon</a>().</p>
+<h3 class="fn"><a name="setItemText"></a>void QToolBox::setItemText ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the text of the item at position <i>index</i> to <i>text</i>.</p>
+<p>If the provided text contains an ampersand character ('&amp;'), a mnemonic is automatically created for it. The character that follows the '&amp;' will be used as the shortcut key. Any previous mnemonic will be overwritten, or cleared if no mnemonic is defined by the text. See the <a href="qshortcut.html#mnemonic">QShortcut</a> documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>See also <a href="qtoolbox.html#itemText">itemText</a>().</p>
+<h3 class="fn"><a name="setItemToolTip"></a>void QToolBox::setItemToolTip ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>toolTip</i> )</h3>
+<p>Sets the tooltip of the item at position <i>index</i> to <i>toolTip</i>.</p>
+<p>See also <a href="qtoolbox.html#itemToolTip">itemToolTip</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QToolBox::widget ( int <i>index</i> ) const</h3>
+<p>Returns the widget at position <i>index</i>, or 0 if there is no such item.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

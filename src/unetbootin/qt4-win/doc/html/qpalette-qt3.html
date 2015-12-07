@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qpalette.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QPalette</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QPalette</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qpalette.html">QPalette class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpalette-qt3.html#QPalette-7">QPalette</a></b> ( const QColorGroup &amp; <i>active</i>, const QColorGroup &amp; <i>disabled</i>, const QColorGroup &amp; <i>inactive</i> )</li>
+<li><div class="fn"/>QColorGroup <b><a href="qpalette-qt3.html#active">active</a></b> () const</li>
+<li><div class="fn"/>QPalette <b><a href="qpalette-qt3.html#copy">copy</a></b> () const</li>
+<li><div class="fn"/>QColorGroup <b><a href="qpalette-qt3.html#disabled">disabled</a></b> () const</li>
+<li><div class="fn"/>QColorGroup <b><a href="qpalette-qt3.html#inactive">inactive</a></b> () const</li>
+<li><div class="fn"/>QColorGroup <b><a href="qpalette-qt3.html#normal">normal</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qpalette-qt3.html#setActive">setActive</a></b> ( const QColorGroup &amp; <i>colorGroup</i> )</li>
+<li><div class="fn"/>void <b><a href="qpalette-qt3.html#setDisabled">setDisabled</a></b> ( const QColorGroup &amp; <i>colorGroup</i> )</li>
+<li><div class="fn"/>void <b><a href="qpalette-qt3.html#setInactive">setInactive</a></b> ( const QColorGroup &amp; <i>colorGroup</i> )</li>
+<li><div class="fn"/>void <b><a href="qpalette-qt3.html#setNormal">setNormal</a></b> ( const QColorGroup &amp; <i>colorGroup</i> )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPalette-7"></a>QPalette::QPalette ( const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>active</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>disabled</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>inactive</i> )</h3>
+<p>Constructs a palette with the specified <i>active</i>, <i>disabled</i> and <i>inactive</i> color groups.</p>
+<h3 class="fn"><a name="active"></a><a href="qcolorgroup.html">QColorGroup</a> QPalette::active () const</h3>
+<p>See also <a href="qpalette-qt3.html#setActive">setActive</a>().</p>
+<h3 class="fn"><a name="copy"></a>QPalette QPalette::copy () const</h3>
+<p>Use simple assignment instead.</p>
+<h3 class="fn"><a name="disabled"></a><a href="qcolorgroup.html">QColorGroup</a> QPalette::disabled () const</h3>
+<p>See also <a href="qpalette-qt3.html#setDisabled">setDisabled</a>().</p>
+<h3 class="fn"><a name="inactive"></a><a href="qcolorgroup.html">QColorGroup</a> QPalette::inactive () const</h3>
+<p>See also <a href="qpalette-qt3.html#setInactive">setInactive</a>().</p>
+<h3 class="fn"><a name="normal"></a><a href="qcolorgroup.html">QColorGroup</a> QPalette::normal () const</h3>
+<p>Use createColorGroup(Active) instead.</p>
+<p>See also <a href="qpalette-qt3.html#setNormal">setNormal</a>().</p>
+<h3 class="fn"><a name="setActive"></a>void QPalette::setActive ( const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>colorGroup</i> )</h3>
+<p>Use setColorGroup(Active, colorGroup) instead.</p>
+<p>See also <a href="qpalette-qt3.html#active">active</a>().</p>
+<h3 class="fn"><a name="setDisabled"></a>void QPalette::setDisabled ( const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>colorGroup</i> )</h3>
+<p>Use setColorGroup(Disabled, colorGroup) instead.</p>
+<p>See also <a href="qpalette-qt3.html#disabled">disabled</a>().</p>
+<h3 class="fn"><a name="setInactive"></a>void QPalette::setInactive ( const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>colorGroup</i> )</h3>
+<p>Use setColorGroup(Inactive, colorGroup) instead.</p>
+<p>See also <a href="qpalette-qt3.html#inactive">inactive</a>().</p>
+<h3 class="fn"><a name="setNormal"></a>void QPalette::setNormal ( const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>colorGroup</i> )</h3>
+<p>Use setColorGroup(Active, colorGroup) instead.</p>
+<p>See also <a href="qpalette-qt3.html#normal">normal</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

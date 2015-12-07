@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/desktop-integration.qdoc -->
+<head>
+  <title>Qt 4.4: Desktop Integration</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Desktop Integration<br /><span class="subtitle"></span>
+</h1>
+<p>Various classes in Qt are designed to help developers integrate applications into users' desktop environments. These classes enable developers to take advantage of native services while still using a cross-platform API.</p>
+<ul><li><a href="#opening-external-resources">Opening External Resources</a></li>
+<li><a href="#system-tray-icons">System Tray Icons</a></li>
+<li><a href="#desktop-widgets">Desktop Widgets</a></li>
+</ul>
+<a name="opening-external-resources"></a>
+<h2>Opening External Resources</h2>
+<p>Although Qt provides facilities to handle and display resources, such as <a href="qimageiohandler.html">common image formats</a> and <a href="qtextdocument.html">HTML</a>, it is sometimes necessary to open files and external resources using external applications.</p>
+<p><a href="qdesktopservices.html">QDesktopServices</a> provides an interface to services offered by the user's desktop environment. In particular, the <a href="qdesktopservices.html#openUrl">openUrl()</a> function is used to open resources using the appropriate application, which may have been specifically configured by the user.</p>
+<a name="system-tray-icons"></a>
+<h2>System Tray Icons</h2>
+<p>Many modern desktop environments feature docks or panels with <i>system trays</i> in which applications can install icons. Applications often use system tray icons to display status information, either by updating the icon itself or by showing information in &quot;balloon messages&quot;. Additionally, many applications provide pop-up menus that can be accessed via their system tray icons.</p>
+<p>The <a href="qsystemtrayicon.html">QSystemTrayIcon</a> class exposes all of the above features via an intuitive Qt-style API that can be used on all desktop platforms.</p>
+<a name="desktop-widgets"></a>
+<h2>Desktop Widgets</h2>
+<p>On systems where the user's desktop is displayed using more than one screen, certain types of applications may need to obtain information about the configuration of the user's workspace to ensure that new windows and dialogs are opened in appropriate locations.</p>
+<p>The <a href="qdesktopwidget.html">QDesktopWidget</a> class can be used to monitor the positions of widgets and notify applications about changes to the way the desktop is split over the available screens. This enables applications to implement policies for positioning new windows so that, for example, they do not distract a user who is working on a specific task.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

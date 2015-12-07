@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 10 - Smooth as Silk</title>
+  <link rel="prev" href="tutorials-tutorial-t9.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t11.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t9.html">Chapter 9</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t11.html">Chapter 11</a>]
+</p>
+<h1 class="title">Qt Tutorial 10 - Smooth as Silk<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t10-cannonfield-cpp.html">tutorials/tutorial/t10/cannonfield.cpp</a></li>
+<li><a href="tutorials-tutorial-t10-cannonfield-h.html">tutorials/tutorial/t10/cannonfield.h</a></li>
+<li><a href="tutorials-tutorial-t10-lcdrange-cpp.html">tutorials/tutorial/t10/lcdrange.cpp</a></li>
+<li><a href="tutorials-tutorial-t10-lcdrange-h.html">tutorials/tutorial/t10/lcdrange.h</a></li>
+<li><a href="tutorials-tutorial-t10-main-cpp.html">tutorials/tutorial/t10/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t10-t10-pro.html">tutorials/tutorial/t10/t10.pro</a></li>
+</ul>
+<p align="center"><img src="images/t10.png" alt="Screenshot of Chapter 10" /></p><p>In this example, we add a force control.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<a name="t10-cannonfield-h"></a>
+<h3><a href="tutorials-tutorial-t10-cannonfield-h.html">t10/cannonfield.h</a></h3>
+<p>The <tt>CannonField</tt> now has a force value in addition to the angle.</p>
+<pre>     int angle() const { return currentAngle; }
+     int force() const { return currentForce; }
+
+ public slots:
+     void setAngle(int angle);
+     void setForce(int force);
+
+ signals:
+     void angleChanged(int newAngle);
+     void forceChanged(int newForce);</pre>
+<p>The interface to the force follows the same practice as for the angle.</p>
+<pre> private:
+     QRect cannonRect() const;</pre>
+<p>We have put the definition of the cannon's enclosing rectangle in a separate function.</p>
+<pre>     int currentAngle;
+     int currentForce;
+ };</pre>
+<p>The force is stored in the <tt>currentForce</tt> variable.</p>
+<a name="t10-cannonfield-cpp"></a>
+<h3><a href="tutorials-tutorial-t10-cannonfield-cpp.html">t10/cannonfield.cpp</a></h3>
+<pre> CannonField::CannonField(QWidget *parent)
+     : QWidget(parent)
+ {
+     currentAngle = 45;
+     currentForce = 0;
+     setPalette(QPalette(QColor(250, 250, 200)));
+     setAutoFillBackground(true);
+ }</pre>
+<p>The force is initialized to zero.</p>
+<pre> void CannonField::setAngle(int angle)
+ {
+     if (angle &lt; 5)
+         angle = 5;
+     if (angle &gt; 70)
+         angle = 70;
+     if (currentAngle == angle)
+         return;
+     currentAngle = angle;
+     update(cannonRect());
+     emit angleChanged(currentAngle);
+ }</pre>
+<p>We have made a slight change in the <tt>setAngle()</tt> function. It repaints only the portion of the widget that contains the cannon.</p>
+<pre> void CannonField::setForce(int force)
+ {
+     if (force &lt; 0)
+         force = 0;
+     if (currentForce == force)
+         return;
+     currentForce = force;
+     emit forceChanged(currentForce);
+ }</pre>
+<p>The implementation of <tt>setForce()</tt> is quite similar to that of <tt>setAngle()</tt>. The only difference is that because we don't show the force value, we don't need to repaint the widget.</p>
+<pre> void CannonField::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(Qt::blue);
+
+     painter.translate(0, height());
+     painter.drawPie(QRect(-35, -35, 70, 70), 0, 90 * 16);
+     painter.rotate(-currentAngle);
+     painter.drawRect(QRect(30, -5, 20, 10));
+ }</pre>
+<p>We paint as in Chapter 9.</p>
+<pre> QRect CannonField::cannonRect() const
+ {
+     QRect result(0, 0, 50, 50);
+     result.moveBottomLeft(rect().bottomLeft());
+     return result;
+ }</pre>
+<p>The <tt>cannonRect()</tt> function returns the rectangle enclosing the cannon in widget coordinates. First we create a rectangle with the size 50 x 50 and then move it so its bottom-left corner is equal to the widget's own bottom-left corner.</p>
+<p>The <a href="qwidget.html#rect-prop">QWidget::rect</a>() function returns the widget's enclosing rectangle in the widget's own coordinates. The top-left corner of the rectangle is always (0, 0).</p>
+<a name="t10-main-cpp"></a>
+<h3><a href="tutorials-tutorial-t10-main-cpp.html">t10/main.cpp</a></h3>
+<pre> MyWidget::MyWidget(QWidget *parent)
+     : QWidget(parent)
+ {</pre>
+<p>The constructor is mostly the same, but some new bits have been added.</p>
+<pre>     LCDRange *force = new LCDRange;
+     force-&gt;setRange(10, 50);</pre>
+<p>We add a second <tt>LCDRange</tt>, which will be used to set the force.</p>
+<pre>     connect(force, SIGNAL(valueChanged(int)),
+             cannonField, SLOT(setForce(int)));
+     connect(cannonField, SIGNAL(forceChanged(int)),
+             force, SLOT(setValue(int)));</pre>
+<p>We connect the <tt>force</tt> widget and the <tt>cannonField</tt> widget, just like we did for the <tt>angle</tt> widget.</p>
+<pre>     QVBoxLayout *leftLayout = new QVBoxLayout;
+     leftLayout-&gt;addWidget(angle);
+     leftLayout-&gt;addWidget(force);
+
+     QGridLayout *gridLayout = new QGridLayout;
+     gridLayout-&gt;addWidget(quit, 0, 0);
+     gridLayout-&gt;addLayout(leftLayout, 1, 0);
+     gridLayout-&gt;addWidget(cannonField, 1, 1, 2, 1);
+     gridLayout-&gt;setColumnStretch(1, 10);</pre>
+<p>In Chapter 9, we put <tt>angle</tt> in the lower-left cell of the layout. Now we want to have two widgets in that cell, so we make a vertical box, put the vertical box in the grid cell, and put each of <tt>angle</tt> and <tt>range</tt> in the vertical box.</p>
+<pre>     force-&gt;setValue(25);</pre>
+<p>We initialize the force value to 25.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>We now have a force control.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Make the size of the cannon barrel be dependent on the force.</p>
+<p>Put the cannon in the bottom-right corner.</p>
+<p>Try adding a better keyboard interface. For example, make <b>+</b> and <b>-</b> increase and decrease the force and enter shoot. If you're bothered by the way the <b>Left</b> and <b>Right</b> keys work, change that too. [Hint: Reimplement <a href="qwidget.html#keyPressEvent">QWidget::keyPressEvent</a>().]</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t9.html">Chapter 9</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t11.html">Chapter 11</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

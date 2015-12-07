@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/demos/deform.qdoc -->
+<head>
+  <title>Qt 4.4: Vector Deformation</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Vector Deformation<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="demos-deform-pathdeform-cpp.html">demos/deform/pathdeform.cpp</a></li>
+<li><a href="demos-deform-pathdeform-h.html">demos/deform/pathdeform.h</a></li>
+<li><a href="demos-deform-main-cpp.html">demos/deform/main.cpp</a></li>
+<li><a href="demos-deform-deform-pro.html">demos/deform/deform.pro</a></li>
+<li><a href="demos-deform-deform-qrc.html">demos/deform/deform.qrc</a></li>
+</ul>
+<p>This demo shows how to use advanced vector techniques to draw text using a <tt>QPainterPath</tt>.</p>
+<p align="center"><img src="images/deform-demo.png" /></p><p>We define a vector deformation field in the shape of a lens and apply this to all points in a path. This means that what is rendered on screen is not pixel manipulation, but modified vector representations of the glyphs themselves. This is visible from the high quality of the antialiased edges for the deformed glyphs.</p>
+<p>To get a fairly complex path we allow the user to type in text and convert the text to paths. This is done using the <a href="qpainterpath.html#addText">QPainterPath::addText</a>() function.</p>
+<p>The lens is drawn using a single call to <a href="qpainter.html#drawEllipse">QPainter::drawEllipse</a>(), using a <a href="qradialgradient.html">QRadialGradient</a> to fill it with a specialized color table, giving the effect of the sun's reflection and a drop shadow. The lens is cached as a pixmap for better performance.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: calculator.js Example File (script/calculator/calculator.js)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">calculator.js Example File<br /><span class="small-subtitle">script/calculator/calculator.js</span>
+</h1>
+<pre> function Calculator(ui)
+ {
+     this.ui = ui;
+
+     this.pendingAdditiveOperator = &quot;&quot;;
+     this.pendingMultiplicativeOperator = &quot;&quot;;
+     this.sumInMemory = 0;
+     this.sumSoFar = 0;
+     this.factorSoFar = 0;
+     this.waitingForOperand = true;
+
+     with (ui) {
+         display.text = &quot;0&quot;;
+
+         zeroButton.clicked.connect(this, this.digitClicked);
+         oneButton.clicked.connect(this, &quot;digitClicked&quot;);
+         twoButton.clicked.connect(this, &quot;digitClicked&quot;);
+         threeButton.clicked.connect(this, &quot;digitClicked&quot;);
+         fourButton.clicked.connect(this, &quot;digitClicked&quot;);
+         fiveButton.clicked.connect(this, &quot;digitClicked&quot;);
+         sixButton.clicked.connect(this, &quot;digitClicked&quot;);
+         sevenButton.clicked.connect(this, &quot;digitClicked&quot;);
+         eightButton.clicked.connect(this, &quot;digitClicked&quot;);
+         nineButton.clicked.connect(this, &quot;digitClicked&quot;);
+
+         pointButton.clicked.connect(this, &quot;pointClicked&quot;);
+         changeSignButton.clicked.connect(this, &quot;changeSignClicked&quot;);
+
+         backspaceButton.clicked.connect(this, &quot;backspaceClicked&quot;);
+         clearButton.clicked.connect(this, &quot;clear&quot;);
+         clearAllButton.clicked.connect(this, &quot;clearAll&quot;);
+
+         clearMemoryButton.clicked.connect(this, &quot;clearMemory&quot;);
+         readMemoryButton.clicked.connect(this, &quot;readMemory&quot;);
+         setMemoryButton.clicked.connect(this, &quot;setMemory&quot;);
+         addToMemoryButton.clicked.connect(this, &quot;addToMemory&quot;);
+
+         divisionButton.clicked.connect(this, &quot;multiplicativeOperatorClicked&quot;);
+         timesButton.clicked.connect(this, &quot;multiplicativeOperatorClicked&quot;);
+         minusButton.clicked.connect(this, &quot;additiveOperatorClicked&quot;);
+         plusButton.clicked.connect(this, &quot;additiveOperatorClicked&quot;);
+
+         squareRootButton.clicked.connect(this, &quot;unaryOperatorClicked&quot;);
+         powerButton.clicked.connect(this, &quot;unaryOperatorClicked&quot;);
+         reciprocalButton.clicked.connect(this, &quot;unaryOperatorClicked&quot;);
+         equalButton.clicked.connect(this, &quot;equalClicked&quot;);
+     }
+ }
+
+ Calculator.prototype.abortOperation = function()
+ {
+     this.clearAll();
+     this.ui.display.text = &quot;####&quot;;
+ }
+
+ Calculator.prototype.calculate = function(rightOperand, pendingOperator)
+ {
+     if (pendingOperator == &quot;+&quot;) {
+         this.sumSoFar += rightOperand;
+     } else if (pendingOperator == &quot;-&quot;) {
+         this.sumSoFar -= rightOperand;
+     } else if (pendingOperator == &quot;*&quot;) {
+         this.factorSoFar *= rightOperand;
+     } else if (pendingOperator == &quot;/&quot;) {
+         if (rightOperand == 0)
+         return false;
+         this.factorSoFar /= rightOperand;
+     }
+     return true;
+ }
+
+ Calculator.prototype.digitClicked = function()
+ {
+     var digitValue = __qt_sender__.text - 0;
+     if ((digitValue == 0) &amp;&amp; (this.ui.display.text == &quot;0&quot;))
+         return;
+     if (this.waitingForOperand) {
+         this.ui.display.clear();
+         this.waitingForOperand = false;
+     }
+     this.ui.display.text += digitValue;
+ }
+
+ Calculator.prototype.unaryOperatorClicked = function()
+ {
+     var operand = this.ui.display.text - 0;
+     var result = 0;
+     if (__qt_sender__.text == &quot;Sqrt&quot;) {
+         if (operand &lt; 0) {
+             this.abortOperation();
+             return;
+         }
+         result = Math.sqrt(operand);
+     } else if (__qt_sender__.text == &quot;x^2&quot;) {
+         result = Math.pow(operand, 2);
+     } else if (__qt_sender__.text == &quot;1/x&quot;) {
+         if (operand == 0.0) {
+             this.abortOperation();
+             return;
+         }
+         result = 1 / operand;
+     }
+     this.ui.display.text = result + &quot;&quot;;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.additiveOperatorClicked = function()
+ {
+     var operand = this.ui.display.text - 0;
+
+     if (this.pendingMultiplicativeOperator.length != 0) {
+         if (!this.calculate(operand, this.pendingMultiplicativeOperator)) {
+             this.abortOperation();
+             return;
+         }
+         this.ui.display.text = this.factorSoFar + &quot;&quot;;
+         operand = this.factorSoFar;
+         this.factorSoFar = 0;
+         this.pendingMultiplicativeOperator = &quot;&quot;;
+     }
+
+     if (this.pendingAdditiveOperator.length != 0) {
+         if (!this.calculate(operand, this.pendingAdditiveOperator)) {
+             this.abortOperation();
+             return;
+         }
+         this.ui.display.text = this.sumSoFar + &quot;&quot;;
+     } else {
+         this.sumSoFar = operand;
+     }
+
+     this.pendingAdditiveOperator = __qt_sender__.text;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.multiplicativeOperatorClicked = function()
+ {
+     var operand = this.ui.display.text - 0;
+
+     if (this.pendingMultiplicativeOperator.length != 0) {
+         if (!this.calculate(operand, this.pendingMultiplicativeOperator)) {
+             this.abortOperation();
+             return;
+         }
+         this.ui.display.text = this.factorSoFar + &quot;&quot;;
+     } else {
+         this.factorSoFar = operand;
+     }
+
+     this.pendingMultiplicativeOperator = __qt_sender__.text;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.equalClicked = function()
+ {
+     var operand = this.ui.display.text - 0;
+
+     if (this.pendingMultiplicativeOperator.length != 0) {
+         if (!this.calculate(operand, this.pendingMultiplicativeOperator)) {
+             this.abortOperation();
+             return;
+         }
+         operand = this.factorSoFar;
+         this.factorSoFar = 0.0;
+         this.pendingMultiplicativeOperator = &quot;&quot;;
+     }
+     if (this.pendingAdditiveOperator.length != 0) {
+         if (!this.calculate(operand, this.pendingAdditiveOperator)) {
+             this.abortOperation();
+             return;
+         }
+         this.pendingAdditiveOperator = &quot;&quot;;
+     } else {
+         this.sumSoFar = operand;
+     }
+
+     this.ui.display.text = this.sumSoFar + &quot;&quot;;
+     this.sumSoFar = 0.0;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.pointClicked = function()
+ {
+     if (this.waitingForOperand)
+         this.ui.display.text = &quot;0&quot;;
+     if (this.ui.display.text.indexOf(&quot;.&quot;) == -1)
+         this.ui.display.text += &quot;.&quot;;
+     this.waitingForOperand = false;
+ }
+
+ Calculator.prototype.changeSignClicked = function()
+ {
+     var text = this.ui.display.text;
+     var value = text - 0;
+
+     if (value &gt; 0) {
+         text = &quot;-&quot; + text;
+     } else if (value &lt; 0) {
+         text = text.slice(1);
+     }
+     this.ui.display.text = text;
+ }
+
+ Calculator.prototype.backspaceClicked = function()
+ {
+     if (this.waitingForOperand)
+         return;
+
+     var text = this.ui.display.text;
+     text = text.slice(0, -1);
+     if (text.length == 0) {
+         text = &quot;0&quot;;
+         this.waitingForOperand = true;
+     }
+     this.ui.display.text = text;
+ }
+
+ Calculator.prototype.clear = function()
+ {
+     if (this.waitingForOperand)
+         return;
+
+     this.ui.display.text = &quot;0&quot;;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.clearAll = function()
+ {
+     this.sumSoFar = 0.0;
+     this.factorSoFar = 0.0;
+     this.pendingAdditiveOperator = &quot;&quot;;
+     this.pendingMultiplicativeOperator = &quot;&quot;;
+     this.ui.display.text = &quot;0&quot;;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.clearMemory = function()
+ {
+     this.sumInMemory = 0.0;
+ }
+
+ Calculator.prototype.readMemory = function()
+ {
+     this.ui.display.text = this.sumInMemory + &quot;&quot;;
+     this.waitingForOperand = true;
+ }
+
+ Calculator.prototype.setMemory = function()
+ {
+     this.equalClicked();
+     this.sumInMemory = this.ui.display.text - 0;
+ }
+
+ Calculator.prototype.addToMemory = function()
+ {
+     this.equalClicked();
+     this.sumInMemory += this.ui.display.text - 0;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

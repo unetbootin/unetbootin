@@ -1,0 +1,292 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qvfb.html
+
+    \title The Virtual Framebuffer
+    \ingroup qt-embedded
+
+    \l{Qt for Embedded Linux} applications write directly to the framebuffer,
+    eliminating the need for the X Window System and saving
+    memory. For development and debugging purposes, a virtual framebuffer
+    can be used, allowing \l{Qt for Embedded Linux} programs to be developed on a
+    desktop machine, without switching between consoles and X11.
+
+    QVFb is an X11 application supplied with Qt/X11 that provides a
+    virtual framebuffer for Qt for Embedded Linux to use. To use it, you need to
+    \l{Installing Qt/X11}{configure and install Qt/X11} according
+
+    \image qt-embedded-virtualframebuffer.png
+
+    The virtual framebuffer emulates a framebuffer using a shared
+    memory region and the \c qvfb tool to display the framebuffer in a
+    window. The \c qvfb tool also supports a feature known as a skin
+    which can be used to change the look and feel of the display. The
+    tool is located in Qt's \c tools/qvfb directory, and provides
+    several additional features accessible through its \gui File and
+    \gui View menus.
+
+    Please note that the virtual framebuffer is a development tool
+    only. No security issues have been considered in the virtual
+    framebuffer design. It should be avoided in a production
+    environment, i.e. do not configure production libraries with the
+    \c -qvfb option.
+
+    \tableofcontents
+
+    \section1 Displaying the Virtual Framebuffer
+
+    To run the \c qvfb tool displaying the virtual framebuffer, the
+    \l{Qt for Embedded Linux} library must be configured and compiled with the \c
+    -qvfb option:
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 0
+
+    Then compile and run the \c qvfb tool as a normal Qt/X11
+    application (i.e. do \e not compile it as a \l{Qt for Embedded Linux}
+    application):
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 1
+
+    The \c qvfb application supports the following command line
+    options:
+
+    \table
+    \header \o Option \o Description
+    \row
+    \o \c {-width <value>}
+    \o The width of the virtual framebuffer (default: 240).
+    \row
+    \o \c {-height <value>}
+    \o The height of the virtual framebuffer (default: 320).
+    \row
+    \o \c {-depth <value>}
+    \o The depth of the virtual framebuffer (1, 8 or 32; default: 8).
+    \row
+    \o \c -nocursor
+    \o Do not display the X11 cursor in the framebuffer window.
+    \row
+    \o \c {-qwsdisplay <:id>}
+    \o The \l{Qt for Embedded Linux} display ID (default: 0).
+    \row
+    \o \c {-skin <name>.skin}
+    \o The preferred skin. Note that the skin must be located in Qt's
+    \c /tools/qvfb/ directory.
+    \row
+    \o \c {-zoom <factor>}
+    \o Scales the application view with the given factor.
+
+    \endtable
+
+    \section2 Skins
+
+    A skin is a set of XML and pixmap files that tells the vitual
+    framebuffer what it should look like and how it should behave; a
+    skin can change the unrealistic default display into a display
+    that is similar to the target device. To access the \c qvfb tool's
+    menus when a skin is activated, right-click over the display.
+
+    Note that a skin can have buttons which (when clicked) send
+    signals to the Qtopia application running inside the virtual
+    framebuffer, just as would happen on a real device.
+
+    \table 100%
+    \row
+        \o
+        \bold {Target Device Environment}
+
+        The \c qvfb tool provides various skins by default, allowing
+        the user to view their application in an environment similar
+        to their target device. The provided skins are:
+
+        \list
+            \o ClamshellPhone
+            \o pda
+            \o PDAPhone
+            \o QtopiaPDA
+            \o QtopiaPhone-Advanced
+            \o QtopiaPhone-Simple
+            \o SmartPhone
+            \o SmartPhone2
+            \o SmartPhoneWithButtons
+            \o TouchscreenPhone
+            \o Trolltech-Keypad
+            \o Trolltech-Touchscreen
+        \endlist
+
+        In addition, it is possible to create custom skins.
+
+        \o \image qt-embedded-phone.png
+        \o \image qt-embedded-pda.png
+    \endtable
+
+    \bold {Creating Custom Skins}
+
+    The XML and pixmap files specifying a custom skin must be located
+    in subdirectory of the Qt's \c /tools/qvfb directory, called \c
+    /customskin.skin. See the ClamshellPhone skin for an example of the
+    file structure:
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 2
+
+    The \c /ClamshellPhone.skin directory contains the following files:
+
+    \list
+        \o \c ClamshellPhone.skin
+        \o \c ClamshellPhone1-5.png
+        \o \c ClamshellPhone1-5-pressed.png
+        \o \c ClamshellPhone1-5-closed.png
+        \o \c defaultbuttons.conf (only necessary for \l Qtopia)
+    \endlist
+
+    Note that the \c defaultbuttons.conf file is only necessary if the
+    skin is supposed to be used with \l Qtopia (The file customizes
+    the launch screen applications, orders the soft keys and provides
+    input method hints). See the \l Qtopia documentation for more
+    information.
+
+    \table 100%
+    \header
+    \o {3,1} The ClamshellPhone Skin
+    \row
+    \o {3,1}
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 3
+
+    The \c ClamShellPhone.skin file quoted above, specifies three
+    pixmaps: One for the normal skin (\c Up), one for the activated
+    skin (\c Down) and one for the closed skin (\c Closed). In
+    addition, it is possible to specify a pixmap for the cursor (using
+    a \c Cursor variable).
+
+    The file also specifies the screen size (\c Screen) and the number
+    of available buttons (\c Areas). Then it describes the buttons
+    themselves; each button is specified by its name, keycode and
+    coordinates.
+
+    The coordinates are a list of at least 2 points in clockwise order
+    that define a shape for the button; a click inside this shape will
+    be treated as a click on that button. While pressed, the pixels
+    for the button are redrawn from the activated skin.
+
+    \row
+    \row
+    \o
+    \image qt-embedded-clamshellphone-closed.png The ClamshellPhone Skin (closed)
+    \o
+    \image qt-embedded-clamshellphone.png The ClamshellPhone Skin
+    \o
+    \image qt-embedded-clamshellphone-pressed.png The ClamshellPhone Skin (pressed)
+    \row
+    \o \c ClamshellPhone1-5-closed.png
+    \o \c ClamshellPhone1-5.png
+    \o \c ClamshellPhone1-5-pressed.png
+    \endtable
+
+    \section2 The File Menu
+
+    \image qt-embedded-qvfbfilemenu.png
+
+    The \gui File menu allows the user to configure the virtual
+    framebuffer display (\gui File|Configure...), save a snapshot of
+    the framebuffer contents (\gui {File|Save Image...}) and record
+    the movements in the framebuffer (\gui File|Animation...).
+
+    When choosing the \gui File|Configure menu item, the \c qvfb tool
+    provides a configuration dialog allowing the user to customize the
+    display of the virtual framebuffer. The user can modify the size
+    and depth as well as the Gamma values, and also select the
+    preferred skin (i.e. making the virtual framebuffer simulate the
+    target device environment). In addition, it is possible to emulate
+    a touch screen and a LCD screen.
+
+    Note that when configuring (except when changing the Gamma values
+    only), any applications using the virtual framebuffer will be
+    terminated.
+
+    \section2 The View Menu
+
+    \image qt-embedded-qvfbviewmenu.png
+
+    The \gui View menu allows the user to modify the target's refresh
+    rate (\gui {View|Refresh Rate...}), making \c qvfb check for
+    updated regions more or less frequently.
+
+    The regions of the display that have changed are updated
+    periodically, i.e. the virtual framebuffer is displaying discrete
+    snapshots of the framebuffer rather than each individual drawing
+    operation. For this reason drawing problems such as flickering may
+    not be apparent until the program is run using a real framebuffer.
+    If little drawing is being done, the framebuffer will not show any
+    updates between drawing events. If an application is displaying an
+    animation, the updates will be frequent, and the application and
+    \c qvfb will compete for processor time.
+
+    The \gui View menu also allows the user to zoom the view of the
+    application  (\gui {View|Zoom *}).
+
+    \section1 Running Applications Using the Virtual Framebuffer
+
+    Once the virtual framebuffer (the \c qvfb application) is running,
+    it is ready for use: Start a server application (i.e. construct a
+    QApplication object with the QApplication::GuiServer flag or use
+    the \c -qws command line parameter. See the
+    \l {Running Qt for Embedded Linux Applications}{running applications}
+    documentation for details). For example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 4
+
+    Note that as long as the virtual framebuffer is running and the
+    current \l{Qt for Embedded Linux} configuration supports \c qvfb,
+    \l{Qt for Embedded Linux} will automatically detect it and use it by
+    default. Alternatively, the \c -display option can be used to
+    specify the virtual framebuffer driver. For example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-qvfb.qdoc 5
+
+    \warning If \c qvfb is not running (or the current
+    \l{Qt for Embedded Linux} configuration doesn't support it) and the
+    driver is not explicitly specified, \l{Qt for Embedded Linux} will
+    write to the real framebuffer and the X11 display will be corrupted.
+*/

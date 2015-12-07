@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/kernel/qsqlindex.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QSqlIndex</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QSqlIndex</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qsqlindex.html">QSqlIndex class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qsqlindex-qt3.html#toString">toString</a></b> ( const QString &amp; <i>prefix</i> = QString(), const QString &amp; <i>sep</i> = QLatin1String( &quot;,&quot; ), bool <i>verbose</i> = true ) const</li>
+<li><div class="fn"/>QStringList <b><a href="qsqlindex-qt3.html#toStringList">toStringList</a></b> ( const QString &amp; <i>prefix</i> = QString(), bool <i>verbose</i> = true ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qsqlrecord.html#public-functions">QSqlRecord</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QSqlIndex::toString ( const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>sep</i> = QLatin1String( &quot;,&quot; ), bool <i>verbose</i> = true ) const</h3>
+<p>Returns a comma-separated list of all the index's field names as a string. This string is suitable, for example, for generating a SQL SELECT statement. Only generated fields are included in the list (see <a href="qsqlrecord.html#isGenerated">isGenerated</a>()). If a <i>prefix</i> is specified, e.g&#x2e; a table name, it is prepended before all field names in the form:</p>
+<p>&quot;<i>prefix</i>.&lt;fieldname&gt;&quot;</p>
+<p>If <i>sep</i> is specified, each field is separated by <i>sep</i>. If <i>verbose</i> is true (the default), each field contains a suffix indicating an ASCending or DESCending sort order.</p>
+<h3 class="fn"><a name="toStringList"></a><a href="qstringlist.html">QStringList</a> QSqlIndex::toStringList ( const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString(), bool <i>verbose</i> = true ) const</h3>
+<p>Returns a list of all the index's field names. Only generated fields are included in the list (see <a href="qsqlrecord.html#isGenerated">isGenerated</a>()). If a <i>prefix</i> is specified, e.g&#x2e; a table name, all fields are prefixed in the form:</p>
+<p>&quot;<i>prefix</i>.&lt;fieldname&gt;&quot;</p>
+<p>If <i>verbose</i> is true (the default), each field contains a suffix indicating an ASCending or DESCending sort order.</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = myIndex.toStringList();
+     QStringList::Iterator it = list.begin();
+     while(it != list.end()) {
+         myProcessing(*it);
+         ++it;
+     }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

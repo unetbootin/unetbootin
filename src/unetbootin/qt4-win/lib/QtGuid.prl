@@ -1,0 +1,7 @@
+QMAKE_PRL_BUILD_DIR = c:\tools\qt4-win\src\gui
+QMAKE_PRO_INPUT = gui.pro
+QMAKE_PRL_TARGET = libQtGuid
+QMAKE_PRL_DEFINES = QT_THREAD_SUPPORT
+QMAKE_PRL_CONFIG = lex yacc warn_on debug uic resources incremental_off windows debug DebugBuild Debug build_pass qt warn_on link_prl copy_dir_files debug_and_release debug_and_release_target precompile_header static stl exceptions rtti dist-config large-config medium-config minimal-config small-config full-config incremental create_prl link_prl depend_includepath QTDIR_build debug DebugBuild Debug build_pass qt_install_headers qt warn_on depend_includepath qmake_cache target_qt debug_and_release static zlib debug DebugBuild Debug build_pass no_autoqmake staticlib static moc thread
+QMAKE_PRL_VERSION = 4
+QMAKE_PRL_LIBS = -lgdi32 -lcomdlg32 -loleaut32 -limm32 -lwinmm -lwinspool -lmsimg32 -lQtCored -lkernel32 -luser32 -lshell32 -luuid -lole32 -ladvapi32 -lws2_32 

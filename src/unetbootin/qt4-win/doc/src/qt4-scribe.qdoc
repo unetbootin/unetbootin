@@ -1,0 +1,259 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-scribe.html
+    \title The Scribe Classes
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage The Arthur Paint System
+    \nextpage The Qt 4 Main Window Classes
+
+    \keyword Scribe
+
+    Scribe introduces a set of text layout classes to Qt 4. These classes
+    replace the old rich text engine found in Qt 3, and provide new features
+    for processing and laying out both plain and rich text.
+
+    \tableofcontents
+
+    For more details about how to use the Scribe classes, see the
+    \l{richtext.html}{Rich Text Processing} document.
+
+    \section1 Overview of Scribe
+
+    Support for text rendering and layout in Qt 4 has been redesigned
+    around a system that allows textual content to be represented in a more
+    flexible way than was possible with Qt 3. Qt 4 also provides a more
+    convenient programming interface for editing documents. These
+    improvements are made available through a reimplementation of the
+    existing text rendering engine, and the introduction of several new
+    classes.
+
+    The following sections provide a brief overview of the main concepts
+    behind Scribe.
+
+    \section2 The Document Interface
+
+    Text documents are represented by the QTextDocument class, rather
+    than by QString objects. Each QTextDocument object contains
+    information about the document's internal representation, its
+    structure, and keeps track of modifications to provide undo/redo
+    facilities.
+    This approach allows features such as layout management to be
+    delegated to specialized classes, but also provides a focus for the
+    framework.
+
+    Documents are either converted from external sources or created from
+    scratch using Qt. The creation process can done by an editor widget,
+    such as QTextEdit, or by explicit calls to the Scribe API.
+
+    Text documents can be accessed in two complementary ways: as a linear
+    buffer for editors to use, and as an object hierarchy that is useful to
+    layout engines. 
+    In the hierarchical document model, objects generally correspond to
+    visual elements such as frames, tables, and lists. At a lower level,
+    these elements describe properties such as the text style and alignment.
+    The linear representation of the document is used for editing and
+    manipulation of the document's contents.
+
+    \section2 Document Structure
+
+    Each document contains a root frame into which all other structural
+    elements are placed. This frame contains other structural elements,
+    including tables, text blocks, and other frames; these can be nested to
+    an arbitrary depth.
+
+    Frames provide logical separation between parts of the document, but
+    also have properties that determine how they will appear when rendered.
+    A table is a specialized type of frame that consists of a number of
+    cells, arranged into rows and columns, each of which can contain
+    further structure and text. Tables provide management and layout
+    features that allow flexible configurations of cells to be created.
+
+    Text blocks contain text fragments, each of which specifies text and
+    character format information. Textual properties are defined both at
+    the character level and at the block level. At the character level,
+    properties such as font family, text color, and font weight can be
+    specified. The block level properties control the higher level
+    appearance and behavior of the text, such as the direction of text
+    flow, alignment, and background color.
+
+    The document structure is not manipulated directly. Editing is
+    performed through a cursor-based interface.
+
+    \section2 Editing and Content Creation
+
+    Documents can be edited via the interface provided by the QTextCursor
+    class; cursors are either created using a constructor or obtained from
+    an editor widget. The cursor is used to perform editing operations that
+    correspond exactly to those the user is able to make themselves in an
+    editor. As a result, information about the document structure is also
+    available through the cursor, and this allows the structure to be
+    modified. The use of a cursor-oriented interface for editing makes the
+    process of writing a custom editor simpler for developers, since the
+    editing operations can be easily visualized.
+
+    The QTextCursor class also maintains information about any text it
+    has selected in the document, again following a model that is
+    conceptually similar to the actions made by the user to select text
+    in an editor.
+
+    \section2 Document Layout
+
+    The layout of a document is only relevant when it is to be displayed on
+    a device, or when some information is requested that requires a visual
+    representation of the document. Until this occurs, the document does
+    not need to be formatted and prepared for a device.
+
+    Each document's layout is managed by a subclass of the
+    QAbstractTextDocumentLayout class. This class provides a common
+    interface for layout and rendering engines. The default rendering
+    behavior is currently implemented in a private class. This approach
+    makes it possible to create custom layouts, and provides the
+    mechanism used when preparing pages for printing or exporting to
+    Portable Document Format (PDF) files.
+
+    \section1 Example Code
+
+    Here we present two different ways in which the Scribe classes can be
+    used: for creating and manipulating rich text, and for laying out
+    plain text.
+
+
+    \section2 Manipulating Rich Text
+
+    Rich text is stored in text documents that can either be created by
+    importing HTML from an external source, or generated using a
+    QTextCursor. The easiest way to use a rich text document is through
+    the QTextEdit class, providing an editable view onto a document. The code
+    below imports HTML into a document, and displays the document using a
+    text edit widget.
+
+    \snippet doc/src/snippets/scribe-overview/main.cpp 1
+
+    You can retrieve the document from the text edit using the
+    document() function. The document can then be edited programmatically
+    using the QTextCursor class. This class is modeled after a screen
+    cursor, and editing operations follow the same semantics. The following
+    code changes the first line of the document to a bold font, leaving all
+    other font properties untouched. The editor will be automatically
+    updated to reflect the changes made to the underlying document data.
+
+    \snippet doc/src/snippets/scribe-overview/main.cpp 0
+
+    Note that the cursor was moved from the start of the first line to the
+    end, but that it retained an anchor at the start of the line. This
+    demonstrates the cursor-based selection facilities of the
+    QTextCursor class.
+
+    Rich text can be generated very quickly using the cursor-based
+    approach. The following example shows a simple calendar in a
+    QTextEdit widget with bold headers for the days of the week:
+
+    \snippet doc/src/snippets/textdocument-blocks/mainwindow.cpp 0
+    \codeline
+    \snippet doc/src/snippets/textdocument-blocks/mainwindow.cpp 1
+    \snippet doc/src/snippets/textdocument-blocks/mainwindow.cpp 2
+    \snippet doc/src/snippets/textdocument-blocks/mainwindow.cpp 3
+
+    The above example demonstrates how simple it is to quickly generate new
+    rich text documents using a minimum amount of code. Although we have
+    generated a crude fixed-pitch calendar to avoid quoting too much code,
+    Scribe provides much more sophisticated layout and formatting features.
+
+    \section2 Plain Text Layout
+
+    Sometimes it is important to be able to format plain text within an
+    irregularly-shaped region, perhaps when rendering a custom widget, for
+    example. Scribe provides generic features, such as those provided by
+    the QTextLayout class, to help developers perform word-wrapping and
+    layout tasks without the need to create a document first.
+
+    \img plaintext-layout.png
+
+    Formatting and drawing a paragraph of plain text is straightforward.
+    The example below will lay out a paragraph of text, using a single
+    font, around the right hand edge of a circle.
+
+    \snippet doc/src/snippets/plaintextlayout/window.cpp 0
+
+    We create a text layout, specifying the text string we want to display
+    and the font to use. We ensure that the text we supplied is formatted
+    correctly by obtaining text lines from the text format, and wrapping
+    the remaining text using the available space. The lines are positioned
+    as we move down the page.
+
+    The formatted text can be drawn onto a paint device; in the above code,
+    the text is drawn directly onto a widget.
+
+    \section2 Printing Features
+
+    The layout system used to display rich text documents also supports
+    paged layout of documents, and this is used by Qt to generate output for
+    printing. The printing process is performed by QPrinter and controlled by
+    the user via options displayed in a QPrintDialog:
+
+    \snippet doc/src/snippets/textdocument-printing/mainwindow.cpp 0
+
+    Rich text documents can also be exported as PDF files using QPrinter and
+    the appropriate print engine:
+
+    \snippet demos/textedit/textedit.cpp 0
+
+    \section1 Comparison with Qt 3
+
+    The cursor-based editing features, combined with the structural document
+    model, provide a powerful set of tools for manipulating and displaying
+    rich text documents. These provide features that were unavailable in
+    Qt 3's public API. The engine used is a complete rewrite and does not
+    use the rich text engine supplied with Qt 3.
+
+    The QTextEdit class in Qt 4 has also been completely rewritten with an
+    API that is quite different from its Qt 3 counterpart. Some compatibility
+    methods have been added to allow the widget to be used, for basic cases,
+    in a way that is familiar to users of Qt 3. This class is provided as a
+    working example of an editor widget that uses the new API, showing that
+    it is possible to completely implement a document editor based on the
+    QTextCursor editing interface.
+*/

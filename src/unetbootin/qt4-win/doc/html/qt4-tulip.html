@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-tulip.qdoc -->
+<head>
+  <title>Qt 4.4: The Tulip Container Classes</title>
+  <link rel="prev" href="qt4-intro.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link rel="next" href="qt4-interview.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-intro.html">What's New in Qt 4</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-interview.html">The Interview Framework</a>]
+</p>
+<h1 class="title">The Tulip Container Classes<br /><span class="subtitle"></span>
+</h1>
+<p>Qt 4 introduces a new set of containers that supersede both the old QCollection pointer-based containers and the newer QTL value-based containers.</p>
+<ul><li><a href="#general-overview">General Overview</a></li>
+<li><a href="#examples">Examples</a></li>
+<li><a href="#comparison-with-qt-3">Comparison with Qt 3</a></li>
+</ul>
+<a name="general-overview"></a>
+<h2>General Overview</h2>
+<p>The Tulip containers are similar to Qt 3's QTL containers (QValueList, QValueVector, <a href="qmap.html">QMap</a>), but have the following advantages:</p>
+<ul>
+<li>The containers provide new iterators with a nicer, less error-prone syntax than STL, inspired by Java's iterators. (The STL-style iterators are still available as a lightweight, STL-compatible alternative.)</li>
+<li>The containers have been optimized for minimal code expansion.</li>
+<li>An empty container performs no memory allocation, and only requires the same space as a pointer.</li>
+<li>Even though they are implicitly shared, they can safely be copied across different threads without formality. There's no need to use <tt>QDeepCopy</tt>.</li>
+</ul>
+<p>Tulip provides the following sequential containers: <a href="qlist.html">QList</a>, <a href="qlinkedlist.html">QLinkedList</a>, <a href="qvector.html">QVector</a>, <a href="qstack.html">QStack</a>, and <a href="qqueue.html">QQueue</a>. For most applications, <a href="qlist.html">QList</a> is the best type to use. Although it is implemented as an array-list, it provides very fast prepends and appends. If you really need a linked-list, use <a href="qlinkedlist.html">QLinkedList</a>; if you want your items to occupy consecutive memory locations, use <a href="qvector.html">QVector</a>. <a href="qstack.html">QStack</a> and <a href="qqueue.html">QQueue</a> are convenience classes that provide LIFO and FIFO semantics.</p>
+<p>Tulip also provides these associative containers: <a href="qmap.html">QMap</a>, <a href="qmultimap.html">QMultiMap</a>, <a href="qhash.html">QHash</a>, <a href="qmultihash.html">QMultiHash</a>, and <a href="qset.html">QSet</a>. The &quot;Multi&quot; containers conveniently support multiple values associated with a single key. The &quot;Hash&quot; containers provide faster lookup by using a hash function instead of a binary search on a sorted set.</p>
+<p>The Tulip containers support the <a href="containers.html#foreach">foreach</a> keyword, a Qt-specific addition to the C++ language that is implemented using the standard C++ preprocessor. The syntax is:</p>
+<pre>         foreach (variable, container)
+             statement;</pre>
+<p>Example:</p>
+<pre>         QList&lt;QString&gt; list;
+         ...
+         foreach (QString str, list)
+             cout &lt;&lt; str.ascii() &lt;&lt; endl;</pre>
+<p>The iterator variable can also be defined outside the loop. For example:</p>
+<pre>         QString str;
+         foreach (str, list)
+             cout &lt;&lt; str.ascii() &lt;&lt; endl;</pre>
+<p>Just like standard <tt>for</tt> loops, foreach supports braces, <tt>break</tt>, <tt>continue</tt>, and nested loops. Qt makes a copy of the container when it enters the loop. If you modify the container as you are iterating, that won't affect the loop.</p>
+<p>For details about the new containers, see the <a href="containers.html">Generic Containers</a> and <a href="qtalgorithms.html">Generic Algorithms</a> overview documents.</p>
+<p>In addition to the new containers, considerable work has also gone into <a href="qbytearray.html">QByteArray</a> and <a href="qstring.html">QString</a>. The Qt 3 <a href="porting4.html#qcstring">QCString</a> class has been merged with <a href="qbytearray.html">QByteArray</a>. The new <a href="qbytearray.html">QByteArray</a> automatically provides a '\0' terminator after the last character. For example, the byte array of size 5 containing &quot;abcde&quot; has a null byte at position 5 (one past the end). This solves all the typical problems that occurred in Qt 3 with conversions between <a href="qbytearray.html">QByteArray</a> and <a href="porting4.html#qcstring">QCString</a>.</p>
+<p>To avoid crashes, <a href="qbytearray.html#data">QByteArray::data</a>() never returns a null pointer. Furthermore, the distinction between null and empty strings has been watered down so that <tt>QByteArray() == QByteArray(&quot;&quot;)</tt> and <tt>QString() == QString(&quot;&quot;)</tt>.</p>
+<a name="examples"></a>
+<h2>Examples</h2>
+<p>The first group of examples show how to use the new Java-style iterators. The main difference between the Java-style iterators and the STL-style iterators is that the Java-style ones point between items (or before the first item, or after the last item), whereas the STL ones point at an item (or past the last item). One advantage of the Java-style iterators is that iterating forward and backward are symmetric operations.</p>
+<p>Traversing a container using a Java-style iterator:</p>
+<pre>         // forward                                  // backward
+         QList&lt;QString&gt; list;                        QList&lt;QString&gt; list;
+         ...                                         ...
+         QListIterator&lt;QString&gt; i(list);             QListIterator&lt;QString&gt; i(list);
+         while (i.hasNext())                         i.toBack();
+             cout &lt;&lt; i.next().ascii() &lt;&lt; endl;       while (i.hasPrev())
+                                                         cout &lt;&lt; i.prev().ascii() &lt;&lt; endl;</pre>
+<p>Modifying items using a Java-style iterator:</p>
+<pre>         // forward                                  // backward
+         QMutableListIterator&lt;int&gt; i(list);          QMutableListIterator&lt;int&gt; i(list);
+         while (i.hasNext())                         i.toBack();
+             if (i.next() &gt; 128)                     while (i.hasPrev())
+                 i.setValue(128);                        if (i.prev() &gt; 128)
+                                                             i.setValue(128);</pre>
+<p>Removing items using a Java-style iterator:</p>
+<pre>         // forward                                  // backward
+         QMutableListIterator&lt;int&gt; i(list);          QMutableListIterator&lt;int&gt; i(list);
+         while (i.hasNext())                         i.toBack();
+             if (i.next() % 2 != 0)                  while (i.hasPrev())
+                 i.remove();                             if (i.prev() % 2 != 0)
+                                                             i.remove();</pre>
+<p>Iterating over items with a particular value using STL-style vs. Java-style iterators:</p>
+<pre>         // STL-style                                // Java-style
+         QMap&lt;int, QWidget *&gt;::const_iterator i;     QMapIterator&lt;int, QWidget *&gt; i(map);
+         for (i = map.begin(); i != map.end(); ++i)  while (i.findNext(widget))
+             if (i.value() == widget)                    cout &lt;&lt; &quot;Found widget &quot; &lt;&lt; widget
+                 cout &lt;&lt; &quot;Found widget &quot; &lt;&lt; widget            &lt;&lt; &quot; under key &quot;
+                      &lt;&lt; &quot; under key &quot;                        &lt;&lt; i.key() &lt;&lt; endl;
+                      &lt;&lt; i.key() &lt;&lt; endl;</pre>
+<p>Modifying and removing items using STL-style vs. Java-style iterators:</p>
+<pre>         // STL-style                                // Java-style
+         QList&lt;int&gt;::iterator i = list.begin();      QMutableListIterator&lt;int&gt; i(list);
+         while (i != list.end()) {                   while (i.hasNext()) {
+             if (*i == 0) {                              int val = i.next();
+                 i = list.erase(i);                      if (val &lt; 0)
+             } else {                                        i.setValue(-val);
+                 if (*i &lt; 0)                             else if (val == 0)
+                     *i = -*i;                               i.remove();
+                 ++i;                                }
+             }
+         }</pre>
+<p>The next group of examples show the API of the container classes themselves. The API is similar to the QTL classes of Qt 3, but is nicer in many respects.</p>
+<p>Iterating over a <a href="qlist.html">QList</a> using an index (which is fast even for large lists, because <a href="qlist.html">QList</a> is implemented as an array-list):</p>
+<pre>         QList&lt;double&gt; list;
+         ...
+         for (int i = 0; i &lt; list.size(); ++i) {
+             if (list[i] &lt; 0.0)
+                 list[i] = 0.0;
+         }</pre>
+<p>Retrieving a value from a map, using a default value if the key doesn't exist:</p>
+<pre>         QMap&lt;QString, int&gt; map;
+         ...
+         map.value(&quot;TIMEOUT&quot;, 30);  // returns 30 if &quot;TIMEOUT&quot; isn't in the map</pre>
+<p>Getting all the values for a particular key in a <a href="qmultimap.html">QMultiMap</a> or <a href="qmultihash.html">QMultiHash</a>:</p>
+<pre>         QMultiMap&lt;QString, int&gt; map;
+         ...
+         QList&lt;int&gt; values = map.values(&quot;TIMEOUT&quot;);</pre>
+<a name="comparison-with-qt-3"></a>
+<h2>Comparison with Qt 3</h2>
+<p>Tulip containers are value based. If you want to store a list where each item is a <a href="qwidget.html">QWidget</a> *, use <a href="qlist.html">QList</a>&lt;<a href="qwidget.html">QWidget</a> *&gt;.</p>
+<p>The new containers do not support auto-delete. In practice, we discovered that the only case where auto-delete proved worthwhile was when the data really should be stored as a value rather than as a pointer (e.g&#x2e;, <a href="qlist.html">QList</a>&lt;int&gt; rather than <a href="qlist.html">QList</a>&lt;int *&gt;). If you need to delete all the items in a container, use <a href="qtalgorithms.html#qDeleteAll">qDeleteAll</a>().</p>
+<p>If you use QValueList in Qt 3, you can replace it with either <a href="qlist.html">QList</a> or <a href="qlinkedlist.html">QLinkedList</a> in Qt 4. In most cases, <a href="qlist.html">QList</a> is the best choice: It is typically faster, results in less code in your executable, and requires less memory. However, <a href="qlinkedlist.html">QLinkedList</a>'s iterators provide stronger guarantees, and only <a href="qlinkedlist.html">QLinkedList</a> provides constant-time insertions in the middle, which can make a difference for lists with thousands of items.</p>
+<p>If you use QValueVector or <a href="qmap.html">QMap</a> in Qt 3, the corresponding Qt 4 classes (<a href="qvector.html">QVector</a>, <a href="qmap.html">QMap</a>) are very similar to use.</p>
+<p>
+[Previous: <a href="qt4-intro.html">What's New in Qt 4</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-interview.html">The Interview Framework</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

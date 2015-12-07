@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QWheelEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWheelEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QWheelEvent class contains parameters that describe a wheel event. <a href="#details">More...</a></p>
+<pre> #include &lt;QWheelEvent&gt;</pre><p>Inherits <a href="qinputevent.html">QInputEvent</a>.</p>
+<ul>
+<li><a href="qwheelevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qwheelevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwheelevent.html#QWheelEvent">QWheelEvent</a></b> ( const QPoint &amp; <i>pos</i>, int <i>delta</i>, Qt::MouseButtons <i>buttons</i>, Qt::KeyboardModifiers <i>modifiers</i>, Qt::Orientation <i>orient</i> = Qt::Vertical )</li>
+<li><div class="fn"/><b><a href="qwheelevent.html#QWheelEvent-2">QWheelEvent</a></b> ( const QPoint &amp; <i>pos</i>, const QPoint &amp; <i>globalPos</i>, int <i>delta</i>, Qt::MouseButtons <i>buttons</i>, Qt::KeyboardModifiers <i>modifiers</i>, Qt::Orientation <i>orient</i> = Qt::Vertical )</li>
+<li><div class="fn"/>Qt::MouseButtons <b><a href="qwheelevent.html#buttons">buttons</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwheelevent.html#delta">delta</a></b> () const</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qwheelevent.html#globalPos">globalPos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwheelevent.html#globalX">globalX</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwheelevent.html#globalY">globalY</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qwheelevent.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qwheelevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwheelevent.html#x">x</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwheelevent.html#y">y</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qinputevent.html#public-functions">QInputEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWheelEvent class contains parameters that describe a wheel event.</p>
+<p>Wheel events are sent to the widget under the mouse cursor, but if that widget does not handle the event they are sent to the focus widget. The rotation distance is provided by <a href="qwheelevent.html#delta">delta</a>(). The functions <a href="qwheelevent.html#pos">pos</a>() and <a href="qwheelevent.html#globalPos">globalPos</a>() return the mouse cursor's location at the time of the event.</p>
+<p>A wheel event contains a special accept flag that indicates whether the receiver wants the event. You should call <a href="qevent.html#ignore">ignore</a>() if you do not handle the wheel event; this ensures that it will be sent to the parent widget.</p>
+<p>The <a href="qwidget.html#enabled-prop">QWidget::setEnabled</a>() function can be used to enable or disable mouse and keyboard events for a widget.</p>
+<p>The event handler <a href="qwidget.html#wheelEvent">QWidget::wheelEvent</a>() receives wheel events.</p>
+<p>See also <a href="qmouseevent.html">QMouseEvent</a> and <a href="qwidget.html#grabMouse">QWidget::grabMouse</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWheelEvent"></a>QWheelEvent::QWheelEvent ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, int <i>delta</i>, <a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> <i>buttons</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i>, <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orient</i> = Qt::Vertical )</h3>
+<p>Constructs a wheel event object.</p>
+<p>The position, <i>pos</i>, is the location of the mouse cursor within the widget. The <a href="qwheelevent.html#globalPos">globalPos</a>() is initialized to <a href="qcursor.html#pos">QCursor::pos</a>() which is usually, but not always, correct. Use the other constructor if you need to specify the global position explicitly.</p>
+<p>The <i>buttons</i> describe the state of the mouse buttons at the time of the event, <i>delta</i> contains the rotation distance, <i>modifiers</i> holds the keyboard modifier flags at the time of the event, and <i>orient</i> holds the wheel's orientation.</p>
+<p>See also <a href="qwheelevent.html#pos">pos</a>(), <a href="qwheelevent.html#delta">delta</a>(), and <a href="qwheelevent-qt3.html#state">state</a>().</p>
+<h3 class="fn"><a name="QWheelEvent-2"></a>QWheelEvent::QWheelEvent ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>globalPos</i>, int <i>delta</i>, <a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> <i>buttons</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i>, <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orient</i> = Qt::Vertical )</h3>
+<p>Constructs a wheel event object.</p>
+<p>The <i>pos</i> provides the location of the mouse cursor within the widget. The position in global coordinates is specified by <i>globalPos</i>. <i>delta</i> contains the rotation distance, <i>modifiers</i> holds the keyboard modifier flags at the time of the event, and <i>orient</i> holds the wheel's orientation.</p>
+<p>See also <a href="qwheelevent.html#pos">pos</a>(), <a href="qwheelevent.html#globalPos">globalPos</a>(), <a href="qwheelevent.html#delta">delta</a>(), and <a href="qwheelevent-qt3.html#state">state</a>().</p>
+<h3 class="fn"><a name="buttons"></a><a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> QWheelEvent::buttons () const</h3>
+<p>Returns the mouse state when the event occurred.</p>
+<h3 class="fn"><a name="delta"></a>int QWheelEvent::delta () const</h3>
+<p>Returns the distance that the wheel is rotated, in eighths of a degree. A positive value indicates that the wheel was rotated forwards away from the user; a negative value indicates that the wheel was rotated backwards toward the user.</p>
+<p>Most mouse types work in steps of 15 degrees, in which case the delta value is a multiple of 120; i.e&#x2e;, 120 * 1/8 = 15.</p>
+<p>Example:</p>
+<pre>         void MyWidget::wheelEvent(QWheelEvent *event)
+         {
+             int numDegrees = event-&gt;delta() / 8;
+             int numSteps = numDegrees / 15;
+
+             if (event-&gt;orientation() == Qt::Horizontal) {
+                 scrollHorizontally(numSteps);
+             } else {
+                 scrollVertically(numSteps);
+             }
+             event-&gt;accept();
+         }</pre>
+<h3 class="fn"><a name="globalPos"></a>const <a href="qpoint.html">QPoint</a> &amp; QWheelEvent::globalPos () const</h3>
+<p>Returns the global position of the mouse pointer <i>at the time of the event</i>. This is important on asynchronous window systems such as X11; whenever you move your widgets around in response to mouse events, globalPos() can differ a lot from the current cursor position returned by <a href="qcursor.html#pos">QCursor::pos</a>().</p>
+<p>See also <a href="qwheelevent.html#globalX">globalX</a>() and <a href="qwheelevent.html#globalY">globalY</a>().</p>
+<h3 class="fn"><a name="globalX"></a>int QWheelEvent::globalX () const</h3>
+<p>Returns the global x position of the mouse cursor at the time of the event.</p>
+<p>See also <a href="qwheelevent.html#globalY">globalY</a>() and <a href="qwheelevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="globalY"></a>int QWheelEvent::globalY () const</h3>
+<p>Returns the global y position of the mouse cursor at the time of the event.</p>
+<p>See also <a href="qwheelevent.html#globalX">globalX</a>() and <a href="qwheelevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="orientation"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> QWheelEvent::orientation () const</h3>
+<p>Returns the wheel's orientation.</p>
+<h3 class="fn"><a name="pos"></a>const <a href="qpoint.html">QPoint</a> &amp; QWheelEvent::pos () const</h3>
+<p>Returns the position of the mouse cursor relative to the widget that received the event.</p>
+<p>If you move your widgets around in response to mouse events, use <a href="qwheelevent.html#globalPos">globalPos</a>() instead of this function.</p>
+<p>See also <a href="qwheelevent.html#x">x</a>(), <a href="qwheelevent.html#y">y</a>(), and <a href="qwheelevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="x"></a>int QWheelEvent::x () const</h3>
+<p>Returns the x position of the mouse cursor, relative to the widget that received the event.</p>
+<p>See also <a href="qwheelevent.html#y">y</a>() and <a href="qwheelevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="y"></a>int QWheelEvent::y () const</h3>
+<p>Returns the y position of the mouse cursor, relative to the widget that received the event.</p>
+<p>See also <a href="qwheelevent.html#x">x</a>() and <a href="qwheelevent.html#pos">pos</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

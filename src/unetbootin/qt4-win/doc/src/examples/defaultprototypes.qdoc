@@ -1,0 +1,140 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example script/defaultprototypes
+    \title Default Prototypes Example
+
+    This Qt Script example shows how to use default prototypes
+    to make a non-QObject-based type scriptable.
+
+    \image defaultprototypes-example.png
+
+    With QScriptEngine::setDefaultPrototype() you can specify
+    a QtScript object that defines a scripting interface for
+    a C++ type; Qt Script operations on values of such types
+    will then be delegated to your prototype object. In this
+    example, a simple scripting interface for QListWidgetItem is
+    defined, so that the text of items can easily be accessed from
+    script code.
+
+    To define a scripting API for QListWidgetItem in terms of
+    Qt properties and slots, we subclass QObject and QScriptable.
+
+    \snippet examples/script/defaultprototypes/prototypes.h 0
+
+    A single property, \c{text}, is defined, along with a slot,
+    \c{toString}.
+
+    \snippet examples/script/defaultprototypes/prototypes.cpp 0
+
+    The implementation of the property accessors use
+    the qscriptvalue_cast() function to cast the script object
+    to a QListWidgetItem pointer. The normal C++ QListWidgetItem
+    API is then used to implement the desired functionality.
+
+    Although not shown here, it is possible to throw a script
+    exception from a prototype function; for example, you could throw
+    a TypeError exception if the qscriptvalue_cast() fails.
+
+    QListWidgetItems are usually added to a QListWidget. While
+    QListWidget is a QObject-based class, not all the functionality
+    needed for this example are present. We can solve this by creating
+    a default prototype for the QListWidget class as well. The
+    prototype will augment the functionality already provided by the
+    Qt Script QObject integration; i.e. if a property or slot is not
+    found in the QListWidget object itself, the prototype will be used
+    as a fallback.
+
+    \snippet examples/script/defaultprototypes/prototypes.h 1
+
+    The additional slots will make it possible to add items to
+    a QListWidget from script code, and to set the background
+    color of the widget from a string.
+
+    \snippet examples/script/defaultprototypes/prototypes.cpp 1
+
+    Again, we use qscriptvalue_cast() to cast the script object
+    to the relevant C++ type, in this case a QListWidget pointer.
+    The addItem() and addItems() functions simply forward their
+    arguments to the corresponding functions in the QListWidget
+    class. setBackgroundColor() gets the widget's palette, creates
+    a QColor from the given string argument and changes the palette
+    accordingly.
+
+    \snippet examples/script/defaultprototypes/main.cpp 0
+
+    The relevant C++ types must be made known to Qt's meta type
+    system.
+
+    \snippet examples/script/defaultprototypes/main.cpp 1
+
+    For each type that we want to associate a prototype object with,
+    we create an instance of the prototype class, pass it to
+    QScriptEngine::newQObject(), and then create the link between
+    the C++ type and the resulting script object by calling
+    QScriptEngine::setDefaultPrototype().
+
+    \snippet examples/script/defaultprototypes/main.cpp 2
+
+    In this example, a single QListWidget object is added as
+    a global script variable, called \c{listWidget}. Script code
+    can add items to this widget by calling addItem() or addItems().
+
+    \snippet examples/script/defaultprototypes/code.js 0
+
+    Script code can connect to signals of the QListWidget object;
+    signal handlers can use the interface defined in
+    the QListWidgetItem prototype to manipulate item arguments.
+
+    \snippet examples/script/defaultprototypes/code.js 1
+
+    Not shown in this example is how to make QListWidgetItem
+    constructible from Qt Script code, i.e. to be able to
+    write "new QListWidgetItem()" in a script. In order to do
+    this, you have to define your own script constructor for
+    the type. The constructor would just be a factory function
+    that constructs a new C++ QListWidgetItem and returns it
+    back to the script. See QScriptEngine::newFunction() for more
+    information.
+*/

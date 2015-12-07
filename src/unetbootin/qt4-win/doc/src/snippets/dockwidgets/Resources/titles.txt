@@ -1,0 +1,7 @@
+Qt Classes by Module		:/Resources/modules.html
+QtCore				:/Resources/qtcore.html
+QtGui				:/Resources/qtgui.html
+QtNetwork			:/Resources/qtnetwork.html
+QtOpenGL			:/Resources/qtopengl.html
+QtSql				:/Resources/qtsql.html
+QtXml				:/Resources/qtxml.html

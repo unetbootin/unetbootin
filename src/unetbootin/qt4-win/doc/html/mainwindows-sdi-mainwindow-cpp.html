@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (mainwindows/sdi/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">mainwindows/sdi/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     init();
+     setCurrentFile(&quot;&quot;);
+ }
+
+ MainWindow::MainWindow(const QString &amp;fileName)
+ {
+     init();
+     loadFile(fileName);
+ }
+
+ void MainWindow::closeEvent(QCloseEvent *event)
+ {
+     if (maybeSave()) {
+         writeSettings();
+         event-&gt;accept();
+     } else {
+         event-&gt;ignore();
+     }
+ }
+
+ void MainWindow::newFile()
+ {
+     MainWindow *other = new MainWindow;
+     other-&gt;move(x() + 40, y() + 40);
+     other-&gt;show();
+ }
+
+ void MainWindow::open()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this);
+     if (!fileName.isEmpty()) {
+         MainWindow *existing = findMainWindow(fileName);
+         if (existing) {
+             existing-&gt;show();
+             existing-&gt;raise();
+             existing-&gt;activateWindow();
+             return;
+         }
+
+         if (isUntitled &amp;&amp; textEdit-&gt;document()-&gt;isEmpty()
+                 &amp;&amp; !isWindowModified()) {
+             loadFile(fileName);
+         } else {
+             MainWindow *other = new MainWindow(fileName);
+             if (other-&gt;isUntitled) {
+                 delete other;
+                 return;
+             }
+             other-&gt;move(x() + 40, y() + 40);
+             other-&gt;show();
+         }
+     }
+ }
+
+ bool MainWindow::save()
+ {
+     if (isUntitled) {
+         return saveAs();
+     } else {
+         return saveFile(curFile);
+     }
+ }
+
+ bool MainWindow::saveAs()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this, tr(&quot;Save As&quot;),
+                                                     curFile);
+     if (fileName.isEmpty())
+         return false;
+
+     return saveFile(fileName);
+ }
+
+ void MainWindow::about()
+ {
+    QMessageBox::about(this, tr(&quot;About SDI&quot;),
+             tr(&quot;The &lt;b&gt;SDI&lt;/b&gt; example demonstrates how to write single &quot;
+                &quot;document interface applications using Qt.&quot;));
+ }
+
+ void MainWindow::documentWasModified()
+ {
+     setWindowModified(true);
+ }
+
+ void MainWindow::init()
+ {
+     setAttribute(Qt::WA_DeleteOnClose);
+
+     isUntitled = true;
+
+     textEdit = new QTextEdit;
+     setCentralWidget(textEdit);
+
+     createActions();
+     createMenus();
+     createToolBars();
+     createStatusBar();
+
+     readSettings();
+
+     connect(textEdit-&gt;document(), SIGNAL(contentsChanged()),
+             this, SLOT(documentWasModified()));
+ }
+
+ void MainWindow::createActions()
+ {
+     newAct = new QAction(QIcon(&quot;:/images/new.png&quot;), tr(&quot;&amp;New&quot;), this);
+     newAct-&gt;setShortcut(tr(&quot;Ctrl+N&quot;));
+     newAct-&gt;setStatusTip(tr(&quot;Create a new file&quot;));
+     connect(newAct, SIGNAL(triggered()), this, SLOT(newFile()));
+
+     openAct = new QAction(QIcon(&quot;:/images/open.png&quot;), tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     openAct-&gt;setStatusTip(tr(&quot;Open an existing file&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     saveAct = new QAction(QIcon(&quot;:/images/save.png&quot;), tr(&quot;&amp;Save&quot;), this);
+     saveAct-&gt;setShortcut(tr(&quot;Ctrl+S&quot;));
+     saveAct-&gt;setStatusTip(tr(&quot;Save the document to disk&quot;));
+     connect(saveAct, SIGNAL(triggered()), this, SLOT(save()));
+
+     saveAsAct = new QAction(tr(&quot;Save &amp;As...&quot;), this);
+     saveAsAct-&gt;setStatusTip(tr(&quot;Save the document under a new name&quot;));
+     connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
+
+     closeAct = new QAction(tr(&quot;&amp;Close&quot;), this);
+     closeAct-&gt;setShortcut(tr(&quot;Ctrl+W&quot;));
+     closeAct-&gt;setStatusTip(tr(&quot;Close this window&quot;));
+     connect(closeAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     exitAct-&gt;setStatusTip(tr(&quot;Exit the application&quot;));
+     connect(exitAct, SIGNAL(triggered()), qApp, SLOT(closeAllWindows()));
+
+     cutAct = new QAction(QIcon(&quot;:/images/cut.png&quot;), tr(&quot;Cu&amp;t&quot;), this);
+     cutAct-&gt;setShortcut(tr(&quot;Ctrl+X&quot;));
+     cutAct-&gt;setStatusTip(tr(&quot;Cut the current selection's contents to the &quot;
+                             &quot;clipboard&quot;));
+     connect(cutAct, SIGNAL(triggered()), textEdit, SLOT(cut()));
+
+     copyAct = new QAction(QIcon(&quot;:/images/copy.png&quot;), tr(&quot;&amp;Copy&quot;), this);
+     copyAct-&gt;setShortcut(tr(&quot;Ctrl+C&quot;));
+     copyAct-&gt;setStatusTip(tr(&quot;Copy the current selection's contents to the &quot;
+                              &quot;clipboard&quot;));
+     connect(copyAct, SIGNAL(triggered()), textEdit, SLOT(copy()));
+
+     pasteAct = new QAction(QIcon(&quot;:/images/paste.png&quot;), tr(&quot;&amp;Paste&quot;), this);
+     pasteAct-&gt;setShortcut(tr(&quot;Ctrl+V&quot;));
+     pasteAct-&gt;setStatusTip(tr(&quot;Paste the clipboard's contents into the current &quot;
+                               &quot;selection&quot;));
+     connect(pasteAct, SIGNAL(triggered()), textEdit, SLOT(paste()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     aboutAct-&gt;setStatusTip(tr(&quot;Show the application's About box&quot;));
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     aboutQtAct-&gt;setStatusTip(tr(&quot;Show the Qt library's About box&quot;));
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     cutAct-&gt;setEnabled(false);
+     copyAct-&gt;setEnabled(false);
+     connect(textEdit, SIGNAL(copyAvailable(bool)),
+             cutAct, SLOT(setEnabled(bool)));
+     connect(textEdit, SIGNAL(copyAvailable(bool)),
+             copyAct, SLOT(setEnabled(bool)));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(newAct);
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(saveAct);
+     fileMenu-&gt;addAction(saveAsAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(closeAct);
+     fileMenu-&gt;addAction(exitAct);
+
+     editMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Edit&quot;));
+     editMenu-&gt;addAction(cutAct);
+     editMenu-&gt;addAction(copyAct);
+     editMenu-&gt;addAction(pasteAct);
+
+     menuBar()-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }
+
+ void MainWindow::createToolBars()
+ {
+     fileToolBar = addToolBar(tr(&quot;File&quot;));
+     fileToolBar-&gt;addAction(newAct);
+     fileToolBar-&gt;addAction(openAct);
+     fileToolBar-&gt;addAction(saveAct);
+
+     editToolBar = addToolBar(tr(&quot;Edit&quot;));
+     editToolBar-&gt;addAction(cutAct);
+     editToolBar-&gt;addAction(copyAct);
+     editToolBar-&gt;addAction(pasteAct);
+ }
+
+ void MainWindow::createStatusBar()
+ {
+     statusBar()-&gt;showMessage(tr(&quot;Ready&quot;));
+ }
+
+ void MainWindow::readSettings()
+ {
+     QSettings settings(&quot;Trolltech&quot;, &quot;SDI Example&quot;);
+     QPoint pos = settings.value(&quot;pos&quot;, QPoint(200, 200)).toPoint();
+     QSize size = settings.value(&quot;size&quot;, QSize(400, 400)).toSize();
+     move(pos);
+     resize(size);
+ }
+
+ void MainWindow::writeSettings()
+ {
+     QSettings settings(&quot;Trolltech&quot;, &quot;SDI Example&quot;);
+     settings.setValue(&quot;pos&quot;, pos());
+     settings.setValue(&quot;size&quot;, size());
+ }
+
+ bool MainWindow::maybeSave()
+ {
+     if (textEdit-&gt;document()-&gt;isModified()) {
+         QMessageBox::StandardButton ret;
+         ret = QMessageBox::warning(this, tr(&quot;SDI&quot;),
+                      tr(&quot;The document has been modified.\n&quot;
+                         &quot;Do you want to save your changes?&quot;),
+                      QMessageBox::Save | QMessageBox::Discard
+                      | QMessageBox::Cancel);
+         if (ret == QMessageBox::Save)
+             return save();
+         else if (ret == QMessageBox::Cancel)
+             return false;
+     }
+     return true;
+ }
+
+ void MainWindow::loadFile(const QString &amp;fileName)
+ {
+
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly | QFile::Text)) {
+         QMessageBox::warning(this, tr(&quot;SDI&quot;),
+                              tr(&quot;Cannot read file %1:\n%2.&quot;)
+                              .arg(fileName)
+                              .arg(file.errorString()));
+         return;
+     }
+
+     QTextStream in(&amp;file);
+     QApplication::setOverrideCursor(Qt::WaitCursor);
+     textEdit-&gt;setPlainText(in.readAll());
+     QApplication::restoreOverrideCursor();
+
+     setCurrentFile(fileName);
+     statusBar()-&gt;showMessage(tr(&quot;File loaded&quot;), 2000);
+ }
+
+ bool MainWindow::saveFile(const QString &amp;fileName)
+ {
+     QFile file(fileName);
+     if (!file.open(QFile::WriteOnly | QFile::Text)) {
+         QMessageBox::warning(this, tr(&quot;SDI&quot;),
+                              tr(&quot;Cannot write file %1:\n%2.&quot;)
+                              .arg(fileName)
+                              .arg(file.errorString()));
+         return false;
+     }
+
+     QTextStream out(&amp;file);
+     QApplication::setOverrideCursor(Qt::WaitCursor);
+     out &lt;&lt; textEdit-&gt;toPlainText();
+     QApplication::restoreOverrideCursor();
+
+     setCurrentFile(fileName);
+     statusBar()-&gt;showMessage(tr(&quot;File saved&quot;), 2000);
+     return true;
+ }
+
+ void MainWindow::setCurrentFile(const QString &amp;fileName)
+ {
+     static int sequenceNumber = 1;
+
+     isUntitled = fileName.isEmpty();
+     if (isUntitled) {
+         curFile = tr(&quot;document%1.txt&quot;).arg(sequenceNumber++);
+     } else {
+         curFile = QFileInfo(fileName).canonicalFilePath();
+     }
+
+     textEdit-&gt;document()-&gt;setModified(false);
+     setWindowModified(false);
+
+     setWindowTitle(tr(&quot;%1[*] - %2&quot;).arg(strippedName(curFile))
+                                        .arg(tr(&quot;SDI&quot;)));
+ }
+
+ QString MainWindow::strippedName(const QString &amp;fullFileName)
+ {
+     return QFileInfo(fullFileName).fileName();
+ }
+
+ MainWindow *MainWindow::findMainWindow(const QString &amp;fileName)
+ {
+     QString canonicalFilePath = QFileInfo(fileName).canonicalFilePath();
+
+     foreach (QWidget *widget, qApp-&gt;topLevelWidgets()) {
+         MainWindow *mainWin = qobject_cast&lt;MainWindow *&gt;(widget);
+         if (mainWin &amp;&amp; mainWin-&gt;curFile == canonicalFilePath)
+             return mainWin;
+     }
+     return 0;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

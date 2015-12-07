@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qstandarditemmodel.cpp -->
+<head>
+  <title>Qt 4.4: QStandardItemModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStandardItemModel Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStandardItemModel class provides a generic model for storing custom data. <a href="#details">More...</a></p>
+<pre> #include &lt;QStandardItemModel&gt;</pre><p>Inherits <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<ul>
+<li><a href="qstandarditemmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstandarditemmodel.html#sortRole-prop">sortRole</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstandarditemmodel.html#QStandardItemModel">QStandardItemModel</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qstandarditemmodel.html#QStandardItemModel-2">QStandardItemModel</a></b> ( int <i>rows</i>, int <i>columns</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qstandarditemmodel.html#dtor.QStandardItemModel">~QStandardItemModel</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#appendColumn">appendColumn</a></b> ( const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#appendRow">appendRow</a></b> ( const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#appendRow-2">appendRow</a></b> ( QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>QList&lt;QStandardItem *&gt; <b><a href="qstandarditemmodel.html#findItems">findItems</a></b> ( const QString &amp; <i>text</i>, Qt::MatchFlags <i>flags</i> = Qt::MatchExactly, int <i>column</i> = 0 ) const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#horizontalHeaderItem">horizontalHeaderItem</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qstandarditemmodel.html#indexFromItem">indexFromItem</a></b> ( const QStandardItem * <i>item</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#insertColumn">insertColumn</a></b> ( int <i>column</i>, const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstandarditemmodel.html#insertColumn-2">insertColumn</a></b> ( int <i>column</i>, const QModelIndex &amp; <i>parent</i> = QModelIndex() )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#insertRow">insertRow</a></b> ( int <i>row</i>, const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstandarditemmodel.html#insertRow-2">insertRow</a></b> ( int <i>row</i>, const QModelIndex &amp; <i>parent</i> = QModelIndex() )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#insertRow-3">insertRow</a></b> ( int <i>row</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#invisibleRootItem">invisibleRootItem</a></b> () const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#item">item</a></b> ( int <i>row</i>, int <i>column</i> = 0 ) const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>const QStandardItem * <b><a href="qstandarditemmodel.html#itemPrototype">itemPrototype</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setColumnCount">setColumnCount</a></b> ( int <i>columns</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setHorizontalHeaderItem">setHorizontalHeaderItem</a></b> ( int <i>column</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setHorizontalHeaderLabels">setHorizontalHeaderLabels</a></b> ( const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setItem">setItem</a></b> ( int <i>row</i>, int <i>column</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setItem-2">setItem</a></b> ( int <i>row</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setItemPrototype">setItemPrototype</a></b> ( const QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setRowCount">setRowCount</a></b> ( int <i>rows</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#sortRole-prop">setSortRole</a></b> ( int <i>role</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setVerticalHeaderItem">setVerticalHeaderItem</a></b> ( int <i>row</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#setVerticalHeaderLabels">setVerticalHeaderLabels</a></b> ( const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>int <b><a href="qstandarditemmodel.html#sortRole-prop">sortRole</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QStandardItem *&gt; <b><a href="qstandarditemmodel.html#takeColumn">takeColumn</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#takeHorizontalHeaderItem">takeHorizontalHeaderItem</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#takeItem">takeItem</a></b> ( int <i>row</i>, int <i>column</i> = 0 )</li>
+<li><div class="fn"/>QList&lt;QStandardItem *&gt; <b><a href="qstandarditemmodel.html#takeRow">takeRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#takeVerticalHeaderItem">takeVerticalHeaderItem</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditemmodel.html#verticalHeaderItem">verticalHeaderItem</a></b> ( int <i>row</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qstandarditemmodel.html#itemChanged">itemChanged</a></b> ( QStandardItem * <i>item</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStandardItemModel class provides a generic model for storing custom data.</p>
+<p>QStandardItemModel can be used as a repository for standard Qt data types. It is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view</a> framework.</p>
+<p>QStandardItemModel provides a classic item-based approach to working with the model. The items in a QStandardItemModel are provided by <a href="qstandarditem.html">QStandardItem</a>.</p>
+<p>QStandardItemModel implements the <a href="qabstractitemmodel.html">QAbstractItemModel</a> interface, which means that the model can be used to provide data in any view that supports that interface (such as <a href="qlistview.html">QListView</a>, <a href="qtableview.html">QTableView</a> and <a href="qtreeview.html">QTreeView</a>, and your own custom views). For performance and flexibility, you may want to subclass <a href="qabstractitemmodel.html">QAbstractItemModel</a> to provide support for different kinds of data repositories. For example, the <a href="qdirmodel.html">QDirModel</a> provides a model interface to the underlying file system, and does not actually store file information internally.</p>
+<p>When you want a list or tree, you typically create an empty QStandardItemModel and use <a href="qstandarditemmodel.html#appendRow">appendRow</a>() to add items to the model, and <a href="qstandarditemmodel.html#item">item</a>() to access an item. If your model represents a table, you typically pass the dimensions of the table to the QStandardItemModel constructor and use <a href="qstandarditemmodel.html#setItem">setItem</a>() to position items into the table. You can also use <a href="qstandarditemmodel.html#setRowCount">setRowCount</a>() and <a href="qstandarditemmodel.html#setColumnCount">setColumnCount</a>() to alter the dimensions of the model. To insert items, use <a href="qstandarditemmodel.html#insertRow">insertRow</a>() or <a href="qstandarditemmodel.html#insertColumn">insertColumn</a>(), and to remove items, use <a href="qabstractitemmodel.html#removeRow">removeRow</a>() or <a href="qabstractitemmodel.html#removeColumn">removeColumn</a>().</p>
+<p>You can set the header labels of your model with <a href="qstandarditemmodel.html#setHorizontalHeaderLabels">setHorizontalHeaderLabels</a>() and <a href="qstandarditemmodel.html#setVerticalHeaderLabels">setVerticalHeaderLabels</a>().</p>
+<p>You can search for items in the model with <a href="qstandarditemmodel.html#findItems">findItems</a>(), and sort the model by calling <a href="qabstractitemmodel.html#sort">sort</a>().</p>
+<p>Call <a href="qstandarditemmodel.html#clear">clear</a>() to remove all items from the model.</p>
+<p>An example usage of QStandardItemModel to create a table:</p>
+<pre>             QStandardItemModel model(4, 4);
+             for (int row = 0; row &lt; 4; ++row) {
+                 for (int column = 0; column &lt; 4; ++column) {
+                     QStandardItem *item = new QStandardItem(QString(&quot;row %0, column %1&quot;).arg(row).arg(column));
+                     model.setItem(row, column, item);
+                 }
+             }</pre>
+<p>An example usage of QStandardItemModel to create a tree:</p>
+<pre>             QStandardItemModel model;
+             QStandardItem *parentItem = model.invisibleRootItem();
+             for (int i = 0; i &lt; 4; ++i) {
+                 QStandardItem *item = new QStandardItem(QString(&quot;item %0&quot;).arg(i));
+                 parentItem-&gt;appendRow(item);
+                 parentItem = item;
+             }</pre>
+<p>After setting the model on a view, you typically want to react to user actions, such as an item being clicked. Since a <a href="qabstractitemview.html">QAbstractItemView</a> provides <a href="qmodelindex.html">QModelIndex</a>-based signals and functions, you need a way to obtain the <a href="qstandarditem.html">QStandardItem</a> that corresponds to a given <a href="qmodelindex.html">QModelIndex</a>, and vice versa. <a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a>() and <a href="qstandarditemmodel.html#indexFromItem">indexFromItem</a>() provide this mapping. Typical usage of <a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a>() includes obtaining the item at the current index in a view, and obtaining the item that corresponds to an index carried by a <a href="qabstractitemview.html">QAbstractItemView</a> signal, such as <a href="qabstractitemview.html#clicked">QAbstractItemView::clicked</a>(). First you connect the view's signal to a slot in your class:</p>
+<pre>         QTreeView *treeView = new QTreeView(this);
+         treeView-&gt;setModel(myStandardItemModel);
+         connect(treeView, SIGNAL(clicked(QModelIndex)),
+                 this, SLOT(clicked(QModelIndex)));</pre>
+<p>When you receive the signal, you call <a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a>() on the given model index to get a pointer to the item:</p>
+<pre>         void MyWidget::clicked(const QModelIndex &amp;index)
+         {
+             QStandardItem *item = myStandardItemModel-&gt;itemFromIndex(index);
+             // Do stuff with the item ...
+         }</pre>
+<p>Conversely, you must obtain the <a href="qmodelindex.html">QModelIndex</a> of an item when you want to invoke a model/view function that takes an index as argument. You can obtain the index either by using the model's <a href="qstandarditemmodel.html#indexFromItem">indexFromItem</a>() function, or, equivalently, by calling <a href="qstandarditem.html#index">QStandardItem::index</a>():</p>
+<pre>         treeView-&gt;scrollTo(item-&gt;index());</pre>
+<p>You are, of course, not required to use the item-based approach; you could instead rely entirely on the <a href="qabstractitemmodel.html">QAbstractItemModel</a> interface when working with the model, or use a combination of the two as appropriate.</p>
+<p>See also <a href="qstandarditem.html">QStandardItem</a>, <a href="model-view-programming.html">Model/View Programming</a>, <a href="qabstractitemmodel.html">QAbstractItemModel</a>, <a href="itemviews-simpletreemodel.html">Simple Tree Model example</a>, and <a href="model-view-convenience.html">Item View Convenience Classes</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="sortRole-prop"></a>sortRole : int</h3>
+<p>This property holds the item role that is used to query the model's data when sorting items.</p>
+<p>The default value is <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a>.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int sortRole () const</b></li>
+<li><div class="fn"/><b>void setSortRole ( int <i>role</i> )</b></li>
+</ul>
+<p>See also <a href="qabstractitemmodel.html#sort">sort</a>() and <a href="qstandarditem.html#sortChildren">QStandardItem::sortChildren</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStandardItemModel"></a>QStandardItemModel::QStandardItemModel ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new item model with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QStandardItemModel-2"></a>QStandardItemModel::QStandardItemModel ( int <i>rows</i>, int <i>columns</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new item model that initially has <i>rows</i> rows and <i>columns</i> columns, and that has the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QStandardItemModel"></a>QStandardItemModel::~QStandardItemModel ()</h3>
+<p>Destructs the model. The model destroys all its items.</p>
+<h3 class="fn"><a name="appendColumn"></a>void QStandardItemModel::appendColumn ( const <a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; &amp; <i>items</i> )</h3>
+<p>Appends a column containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#insertColumn">insertColumn</a>() and <a href="qstandarditemmodel.html#appendRow">appendRow</a>().</p>
+<h3 class="fn"><a name="appendRow"></a>void QStandardItemModel::appendRow ( const <a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; &amp; <i>items</i> )</h3>
+<p>Appends a row containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#insertRow">insertRow</a>() and <a href="qstandarditemmodel.html#appendColumn">appendColumn</a>().</p>
+<h3 class="fn"><a name="appendRow-2"></a>void QStandardItemModel::appendRow ( <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to append a single new <i>item</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="clear"></a>void QStandardItemModel::clear ()</h3>
+<p>Removes all items (including header items) from the model and sets the number of rows and columns to zero.</p>
+<p>See also <a href="qabstractitemmodel.html#removeColumns">removeColumns</a>() and <a href="qabstractitemmodel.html#removeRows">removeRows</a>().</p>
+<h3 class="fn"><a name="findItems"></a><a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; QStandardItemModel::findItems ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qt.html#MatchFlag-enum">Qt::MatchFlags</a> <i>flags</i> = Qt::MatchExactly, int <i>column</i> = 0 ) const</h3>
+<p>Returns a list of items that match the given <i>text</i>, using the given <i>flags</i>, in the given <i>column</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="horizontalHeaderItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::horizontalHeaderItem ( int <i>column</i> ) const</h3>
+<p>Returns the horizontal header item for <i>column</i> if one has been set; otherwise returns 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setHorizontalHeaderItem">setHorizontalHeaderItem</a>() and <a href="qstandarditemmodel.html#verticalHeaderItem">verticalHeaderItem</a>().</p>
+<h3 class="fn"><a name="indexFromItem"></a><a href="qmodelindex.html">QModelIndex</a> QStandardItemModel::indexFromItem ( const <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> ) const</h3>
+<p>Returns the <a href="qmodelindex.html">QModelIndex</a> associated with the given <i>item</i>.</p>
+<p>Use this function when you want to perform an operation that requires the <a href="qmodelindex.html">QModelIndex</a> of the item, such as <a href="qabstractitemview.html#scrollTo">QAbstractItemView::scrollTo</a>(). <a href="qstandarditem.html#index">QStandardItem::index</a>() is provided as convenience; it is equivalent to calling this function.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a>() and <a href="qstandarditem.html#index">QStandardItem::index</a>().</p>
+<h3 class="fn"><a name="insertColumn"></a>void QStandardItemModel::insertColumn ( int <i>column</i>, const <a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; &amp; <i>items</i> )</h3>
+<p>Inserts a column at <i>column</i> containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#takeColumn">takeColumn</a>(), <a href="qstandarditemmodel.html#appendColumn">appendColumn</a>(), and <a href="qstandarditemmodel.html#insertRow">insertRow</a>().</p>
+<h3 class="fn"><a name="insertColumn-2"></a>bool QStandardItemModel::insertColumn ( int <i>column</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> = QModelIndex() )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a single column before the given <i>column</i> in the child items of the <i>parent</i> specified. Returns true if the column is inserted; otherwise returns false.</p>
+<p>See also <a href="qabstractitemmodel.html#insertColumns">insertColumns</a>(), <a href="qstandarditemmodel.html#insertRow">insertRow</a>(), and <a href="qabstractitemmodel.html#removeColumn">removeColumn</a>().</p>
+<h3 class="fn"><a name="insertRow"></a>void QStandardItemModel::insertRow ( int <i>row</i>, const <a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; &amp; <i>items</i> )</h3>
+<p>Inserts a row at <i>row</i> containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#takeRow">takeRow</a>(), <a href="qstandarditemmodel.html#appendRow">appendRow</a>(), and <a href="qstandarditemmodel.html#insertColumn">insertColumn</a>().</p>
+<h3 class="fn"><a name="insertRow-2"></a>bool QStandardItemModel::insertRow ( int <i>row</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> = QModelIndex() )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a single row before the given <i>row</i> in the child items of the <i>parent</i> specified. Returns true if the row is inserted; otherwise returns false.</p>
+<p>See also <a href="qabstractitemmodel.html#insertRows">insertRows</a>(), <a href="qstandarditemmodel.html#insertColumn">insertColumn</a>(), and <a href="qabstractitemmodel.html#removeRow">removeRow</a>().</p>
+<h3 class="fn"><a name="insertRow-3"></a>void QStandardItemModel::insertRow ( int <i>row</i>, <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a row at <i>row</i> containing <i>item</i>.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to append a single new item.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="invisibleRootItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::invisibleRootItem () const</h3>
+<p>Returns the model's invisible root item.</p>
+<p>The invisible root item provides access to the model's top-level items through the <a href="qstandarditem.html">QStandardItem</a> API, making it possible to write functions that can treat top-level items and their children in a uniform way; for example, recursive functions involving a tree model.</p>
+<p><b>Note:</b> Calling <a href="qabstractitemmodel.html#index">index()</a> on the <a href="qstandarditem.html">QStandardItem</a> object retrieved from this function is not valid.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="item"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::item ( int <i>row</i>, int <i>column</i> = 0 ) const</h3>
+<p>Returns the item for the given <i>row</i> and <i>column</i> if one has been set; otherwise returns 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setItem">setItem</a>(), <a href="qstandarditemmodel.html#takeItem">takeItem</a>(), and <a href="qstandarditemmodel.html#itemFromIndex">itemFromIndex</a>().</p>
+<h3 class="fn"><a name="itemChanged"></a>void QStandardItemModel::itemChanged ( <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the data of <i>item</i> has changed.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="itemFromIndex"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::itemFromIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns a pointer to the <a href="qstandarditem.html">QStandardItem</a> associated with the given <i>index</i>.</p>
+<p>Calling this function is typically the initial step when processing <a href="qmodelindex.html">QModelIndex</a>-based signals from a view, such as <a href="qabstractitemview.html#activated">QAbstractItemView::activated</a>(). In your slot, you call itemFromIndex(), with the <a href="qmodelindex.html">QModelIndex</a> carried by the signal as argument, to obtain a pointer to the corresponding <a href="qstandarditem.html">QStandardItem</a>.</p>
+<p>Note that this function will lazily create an item for the index (using <a href="qstandarditemmodel.html#itemPrototype">itemPrototype</a>()), and set it in the parent item's child table, if no item already exists at that index.</p>
+<p>If <i>index</i> is an invalid index, this function returns 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#indexFromItem">indexFromItem</a>().</p>
+<h3 class="fn"><a name="itemPrototype"></a>const <a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::itemPrototype () const</h3>
+<p>Returns the item prototype used by the model. The model uses the item prototype as an item factory when it needs to construct new items on demand (for instance, when a view or item delegate calls <a href="qabstractitemmodel.html#setData">setData</a>()).</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setItemPrototype">setItemPrototype</a>().</p>
+<h3 class="fn"><a name="setColumnCount"></a>void QStandardItemModel::setColumnCount ( int <i>columns</i> )</h3>
+<p>Sets the number of columns in this model to <i>columns</i>. If this is less than <a href="qabstractitemmodel.html#columnCount">columnCount</a>(), the data in the unwanted columns is discarded.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setRowCount">setRowCount</a>().</p>
+<h3 class="fn"><a name="setHorizontalHeaderItem"></a>void QStandardItemModel::setHorizontalHeaderItem ( int <i>column</i>, <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>Sets the horizontal header item for <i>column</i> to <i>item</i>. The model takes ownership of the item. If necessary, the column count is increased to fit the item. The previous header item (if there was one) is deleted.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#horizontalHeaderItem">horizontalHeaderItem</a>(), <a href="qstandarditemmodel.html#setHorizontalHeaderLabels">setHorizontalHeaderLabels</a>(), and <a href="qstandarditemmodel.html#setVerticalHeaderItem">setVerticalHeaderItem</a>().</p>
+<h3 class="fn"><a name="setHorizontalHeaderLabels"></a>void QStandardItemModel::setHorizontalHeaderLabels ( const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )</h3>
+<p>Sets the horizontal header labels using <i>labels</i>. If necessary, the column count is increased to the size of <i>labels</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setHorizontalHeaderItem">setHorizontalHeaderItem</a>().</p>
+<h3 class="fn"><a name="setItem"></a>void QStandardItemModel::setItem ( int <i>row</i>, int <i>column</i>, <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>Sets the item for the given <i>row</i> and <i>column</i> to <i>item</i>. The model takes ownership of the item. If necessary, the row count and column count are increased to fit the item. The previous item at the given location (if there was one) is deleted.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#item">item</a>().</p>
+<h3 class="fn"><a name="setItem-2"></a>void QStandardItemModel::setItem ( int <i>row</i>, <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setItemPrototype"></a>void QStandardItemModel::setItemPrototype ( const <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>Sets the item prototype for the model to the specified <i>item</i>. The model takes ownership of the prototype.</p>
+<p>The item prototype acts as a <a href="qstandarditem.html">QStandardItem</a> factory, by relying on the <a href="qstandarditem.html#clone">QStandardItem::clone</a>() function. To provide your own prototype, subclass <a href="qstandarditem.html">QStandardItem</a>, reimplement <a href="qstandarditem.html#clone">QStandardItem::clone</a>() and set the prototype to be an instance of your custom class. Whenever <a href="qstandarditemmodel.html">QStandardItemModel</a> needs to create an item on demand (for instance, when a view or item delegate calls <a href="qabstractitemmodel.html#setData">setData</a>())), the new items will be instances of your custom class.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#itemPrototype">itemPrototype</a>() and <a href="qstandarditem.html#clone">QStandardItem::clone</a>().</p>
+<h3 class="fn"><a name="setRowCount"></a>void QStandardItemModel::setRowCount ( int <i>rows</i> )</h3>
+<p>Sets the number of rows in this model to <i>rows</i>. If this is less than <a href="qabstractitemmodel.html#rowCount">rowCount</a>(), the data in the unwanted rows is discarded.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setColumnCount">setColumnCount</a>().</p>
+<h3 class="fn"><a name="setVerticalHeaderItem"></a>void QStandardItemModel::setVerticalHeaderItem ( int <i>row</i>, <a href="qstandarditem.html">QStandardItem</a> * <i>item</i> )</h3>
+<p>Sets the vertical header item for <i>row</i> to <i>item</i>. The model takes ownership of the item. If necessary, the row count is increased to fit the item. The previous header item (if there was one) is deleted.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#verticalHeaderItem">verticalHeaderItem</a>(), <a href="qstandarditemmodel.html#setVerticalHeaderLabels">setVerticalHeaderLabels</a>(), and <a href="qstandarditemmodel.html#setHorizontalHeaderItem">setHorizontalHeaderItem</a>().</p>
+<h3 class="fn"><a name="setVerticalHeaderLabels"></a>void QStandardItemModel::setVerticalHeaderLabels ( const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )</h3>
+<p>Sets the vertical header labels using <i>labels</i>. If necessary, the row count is increased to the size of <i>labels</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setVerticalHeaderItem">setVerticalHeaderItem</a>().</p>
+<h3 class="fn"><a name="takeColumn"></a><a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; QStandardItemModel::takeColumn ( int <i>column</i> )</h3>
+<p>Removes the given <i>column</i> without deleting the column items, and returns a list of pointers to the removed items. The model releases ownership of the items. For items in the column that have not been set, the corresponding pointers in the list will be 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#takeRow">takeRow</a>().</p>
+<h3 class="fn"><a name="takeHorizontalHeaderItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::takeHorizontalHeaderItem ( int <i>column</i> )</h3>
+<p>Removes the horizontal header item at <i>column</i> from the header without deleting it, and returns a pointer to the item. The model releases ownership of the item.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#horizontalHeaderItem">horizontalHeaderItem</a>() and <a href="qstandarditemmodel.html#takeVerticalHeaderItem">takeVerticalHeaderItem</a>().</p>
+<h3 class="fn"><a name="takeItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::takeItem ( int <i>row</i>, int <i>column</i> = 0 )</h3>
+<p>Removes the item at (<i>row</i>, <i>column</i>) without deleting it. The model releases ownership of the item.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#item">item</a>(), <a href="qstandarditemmodel.html#takeRow">takeRow</a>(), and <a href="qstandarditemmodel.html#takeColumn">takeColumn</a>().</p>
+<h3 class="fn"><a name="takeRow"></a><a href="qlist.html">QList</a>&lt;<a href="qstandarditem.html">QStandardItem</a> *&gt; QStandardItemModel::takeRow ( int <i>row</i> )</h3>
+<p>Removes the given <i>row</i> without deleting the row items, and returns a list of pointers to the removed items. The model releases ownership of the items. For items in the row that have not been set, the corresponding pointers in the list will be 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#takeColumn">takeColumn</a>().</p>
+<h3 class="fn"><a name="takeVerticalHeaderItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::takeVerticalHeaderItem ( int <i>row</i> )</h3>
+<p>Removes the vertical header item at <i>row</i> from the header without deleting it, and returns a pointer to the item. The model releases ownership of the item.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#verticalHeaderItem">verticalHeaderItem</a>() and <a href="qstandarditemmodel.html#takeHorizontalHeaderItem">takeHorizontalHeaderItem</a>().</p>
+<h3 class="fn"><a name="verticalHeaderItem"></a><a href="qstandarditem.html">QStandardItem</a> * QStandardItemModel::verticalHeaderItem ( int <i>row</i> ) const</h3>
+<p>Returns the vertical header item for row <i>row</i> if one has been set; otherwise returns 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qstandarditemmodel.html#setVerticalHeaderItem">setVerticalHeaderItem</a>() and <a href="qstandarditemmodel.html#horizontalHeaderItem">horizontalHeaderItem</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

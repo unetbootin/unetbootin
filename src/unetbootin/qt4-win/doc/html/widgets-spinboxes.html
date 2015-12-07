@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/spinboxes.qdoc -->
+<head>
+  <title>Qt 4.4: Spin Boxes Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Spin Boxes Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-spinboxes-window-cpp.html">widgets/spinboxes/window.cpp</a></li>
+<li><a href="widgets-spinboxes-window-h.html">widgets/spinboxes/window.h</a></li>
+<li><a href="widgets-spinboxes-main-cpp.html">widgets/spinboxes/main.cpp</a></li>
+<li><a href="widgets-spinboxes-spinboxes-pro.html">widgets/spinboxes/spinboxes.pro</a></li>
+</ul>
+<p>The Spin Boxes example shows how to use the many different types of spin boxes available in Qt, from a simple <a href="qspinbox.html">QSpinBox</a> widget to more complex editors like the <a href="qdatetimeedit.html">QDateTimeEdit</a> widget.</p>
+<p align="center"><img src="images/spinboxes-example.png" /></p><p>The example consists of a single <tt>Window</tt> class that is used to display the different spin box-based widgets available with Qt.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class inherits <a href="qwidget.html">QWidget</a> and contains two slots that are used to provide interactive features:</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ public slots:
+     void changePrecision(int decimals);
+     void setFormatString(const QString &amp;formatString);
+
+ private:
+     void createSpinBoxes();
+     void createDateTimeEdits();
+     void createDoubleSpinBoxes();
+
+     QDateTimeEdit *meetingEdit;
+     QDoubleSpinBox *doubleSpinBox;
+     QDoubleSpinBox *priceSpinBox;
+     QDoubleSpinBox *scaleSpinBox;
+     QGroupBox *spinBoxesGroup;
+     QGroupBox *editsGroup;
+     QGroupBox *doubleSpinBoxesGroup;
+     QLabel *meetingLabel;
+ };</pre>
+<p>The private functions are used to set up each type of spin box in the window. We use member variables to keep track of various widgets so that they can be reconfigured when required.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor simply calls private functions to set up the different types of spin box used in the example, and places each group in a layout:</p>
+<pre> Window::Window()
+ {
+     createSpinBoxes();
+     createDateTimeEdits();
+     createDoubleSpinBoxes();
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(spinBoxesGroup);
+     layout-&gt;addWidget(editsGroup);
+     layout-&gt;addWidget(doubleSpinBoxesGroup);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Spin Boxes&quot;));
+ }</pre>
+<p>We use the layout to manage the arrangement of the window's child widgets, and change the window title.</p>
+<p>The <tt>createSpinBoxes()</tt> function constructs a <a href="qgroupbox.html">QGroupBox</a> and places three <a href="qspinbox.html">QSpinBox</a> widgets inside it with descriptive labels to indicate the types of input they expect.</p>
+<pre> void Window::createSpinBoxes()
+ {
+     spinBoxesGroup = new QGroupBox(tr(&quot;Spinboxes&quot;));
+
+     QLabel *integerLabel = new QLabel(tr(&quot;Enter a value between &quot;
+         &quot;%1 and %2:&quot;).arg(-20).arg(20));
+     QSpinBox *integerSpinBox = new QSpinBox;
+     integerSpinBox-&gt;setRange(-20, 20);
+     integerSpinBox-&gt;setSingleStep(1);
+     integerSpinBox-&gt;setValue(0);</pre>
+<p>The first spin box shows the simplest way to use <a href="qspinbox.html">QSpinBox</a>. It accepts values from -20 to 20, the current value can be increased or decreased by 1 with either the arrow buttons or <b>Up</b> and <b>Down</b> keys, and the default value is 0.</p>
+<p>The second spin box uses a larger step size and displays a suffix to provide more information about the type of data the number represents:</p>
+<pre>     QLabel *zoomLabel = new QLabel(tr(&quot;Enter a zoom value between &quot;
+         &quot;%1 and %2:&quot;).arg(0).arg(1000));
+     QSpinBox *zoomSpinBox = new QSpinBox;
+     zoomSpinBox-&gt;setRange(0, 1000);
+     zoomSpinBox-&gt;setSingleStep(10);
+     zoomSpinBox-&gt;setSuffix(&quot;%&quot;);
+     zoomSpinBox-&gt;setSpecialValueText(tr(&quot;Automatic&quot;));
+     zoomSpinBox-&gt;setValue(100);</pre>
+<p>This spin box also displays a <a href="qabstractspinbox.html#specialValueText-prop">special value</a> instead of the minimum value defined for it. This means that it will never show <b>0%</b>, but will display <b>Automatic</b> when the minimum value is selected.</p>
+<p>The third spin box shows how a prefix can be used:</p>
+<pre>     QLabel *priceLabel = new QLabel(tr(&quot;Enter a price between &quot;
+         &quot;%1 and %2:&quot;).arg(0).arg(999));
+     QSpinBox *priceSpinBox = new QSpinBox;
+     priceSpinBox-&gt;setRange(0, 999);
+     priceSpinBox-&gt;setSingleStep(1);
+     priceSpinBox-&gt;setPrefix(&quot;$&quot;);
+     priceSpinBox-&gt;setValue(99);</pre>
+<p>For simplicity, we show a spin box with a prefix and no suffix. It is also possible to use both at the same time.</p>
+<pre>     QVBoxLayout *spinBoxLayout = new QVBoxLayout;
+     spinBoxLayout-&gt;addWidget(integerLabel);
+     spinBoxLayout-&gt;addWidget(integerSpinBox);
+     spinBoxLayout-&gt;addWidget(zoomLabel);
+     spinBoxLayout-&gt;addWidget(zoomSpinBox);
+     spinBoxLayout-&gt;addWidget(priceLabel);
+     spinBoxLayout-&gt;addWidget(priceSpinBox);
+     spinBoxesGroup-&gt;setLayout(spinBoxLayout);
+ }</pre>
+<p>The rest of the function sets up a layout for the group box and places each of the widgets inside it.</p>
+<p>The <tt>createDateTimeEdits()</tt> function constructs another group box with a selection of spin boxes used for editing dates and times.</p>
+<pre> void Window::createDateTimeEdits()
+ {
+     editsGroup = new QGroupBox(tr(&quot;Date and time spin boxes&quot;));
+
+     QLabel *dateLabel = new QLabel;
+     QDateEdit *dateEdit = new QDateEdit(QDate::currentDate());
+     dateEdit-&gt;setDateRange(QDate(2005, 1, 1), QDate(2010, 12, 31));
+     dateLabel-&gt;setText(tr(&quot;Appointment date (between %0 and %1):&quot;)
+                        .arg(dateEdit-&gt;minimumDate().toString(Qt::ISODate))
+                        .arg(dateEdit-&gt;maximumDate().toString(Qt::ISODate)));</pre>
+<p>The first spin box is a <a href="qdateedit.html">QDateEdit</a> widget that is able to accept dates within a given range specified using <a href="qdate.html">QDate</a> values. The arrow buttons and <b>Up</b> and <b>Down</b> keys can be used to increase and decrease the values for year, month, and day when the cursor is in the relevant section.</p>
+<p>The second spin box is a <a href="qtimeedit.html">QTimeEdit</a> widget:</p>
+<pre>     QLabel *timeLabel = new QLabel;
+     QTimeEdit *timeEdit = new QTimeEdit(QTime::currentTime());
+     timeEdit-&gt;setTimeRange(QTime(9, 0, 0, 0), QTime(16, 30, 0, 0));
+     timeLabel-&gt;setText(tr(&quot;Appointment time (between %0 and %1):&quot;)
+                        .arg(timeEdit-&gt;minimumTime().toString(Qt::ISODate))
+                        .arg(timeEdit-&gt;maximumTime().toString(Qt::ISODate)));</pre>
+<p>Acceptable values for the time are defined using <a href="qtime.html">QTime</a> values.</p>
+<p>The third spin box is a <a href="qdatetimeedit.html">QDateTimeEdit</a> widget that can display both date and time values, and we place a label above it to indicate the range of allowed times for a meeting. These widgets will be updated when the user changes a format string.</p>
+<pre>     meetingLabel = new QLabel;
+     meetingEdit = new QDateTimeEdit(QDateTime::currentDateTime());</pre>
+<p>The format string used for the date time editor, which is also shown in the string displayed by the label, is chosen from a set of strings in a combobox:</p>
+<pre>     QLabel *formatLabel = new QLabel(tr(&quot;Format string for the meeting date &quot;
+                                         &quot;and time:&quot;));
+     QComboBox *formatComboBox = new QComboBox;
+     formatComboBox-&gt;addItem(&quot;yyyy-MM-dd hh:mm:ss (zzz 'ms')&quot;);
+     formatComboBox-&gt;addItem(&quot;hh:mm:ss MM/dd/yyyy&quot;);
+     formatComboBox-&gt;addItem(&quot;hh:mm:ss dd/MM/yyyy&quot;);
+     formatComboBox-&gt;addItem(&quot;hh:mm:ss&quot;);
+     formatComboBox-&gt;addItem(&quot;hh:mm ap&quot;);
+
+     connect(formatComboBox, SIGNAL(activated(const QString &amp;)),
+             this, SLOT(setFormatString(const QString &amp;)));</pre>
+<p>A signal from this combobox is connected to a slot in the <tt>Window</tt> class (shown later).</p>
+<pre>     QVBoxLayout *editsLayout = new QVBoxLayout;
+     editsLayout-&gt;addWidget(dateLabel);
+     editsLayout-&gt;addWidget(dateEdit);
+     editsLayout-&gt;addWidget(timeLabel);
+     editsLayout-&gt;addWidget(timeEdit);
+     editsLayout-&gt;addWidget(meetingLabel);
+     editsLayout-&gt;addWidget(meetingEdit);
+     editsLayout-&gt;addWidget(formatLabel);
+     editsLayout-&gt;addWidget(formatComboBox);
+     editsGroup-&gt;setLayout(editsLayout);
+ }</pre>
+<p>Each child widget of the group box in placed in a layout.</p>
+<p>The <tt>setFormatString()</tt> slot is called whenever the user selects a new format string in the combobox. The display format for the <a href="qdatetimeedit.html">QDateTimeEdit</a> widget is set using the raw string passed by the signal:</p>
+<pre> void Window::setFormatString(const QString &amp;formatString)
+ {
+     meetingEdit-&gt;setDisplayFormat(formatString);</pre>
+<p>Depending on the visible sections in the widget, we set a new date or time range, and update the associated label to provide relevant information for the user:</p>
+<pre>     if (meetingEdit-&gt;displayedSections() &amp; QDateTimeEdit::DateSections_Mask) {
+         meetingEdit-&gt;setDateRange(QDate(2004, 11, 1), QDate(2005, 11, 30));
+         meetingLabel-&gt;setText(tr(&quot;Meeting date (between %0 and %1):&quot;)
+             .arg(meetingEdit-&gt;minimumDate().toString(Qt::ISODate))
+             .arg(meetingEdit-&gt;maximumDate().toString(Qt::ISODate)));
+     } else {
+         meetingEdit-&gt;setTimeRange(QTime(0, 7, 20, 0), QTime(21, 0, 0, 0));
+         meetingLabel-&gt;setText(tr(&quot;Meeting time (between %0 and %1):&quot;)
+             .arg(meetingEdit-&gt;minimumTime().toString(Qt::ISODate))
+             .arg(meetingEdit-&gt;maximumTime().toString(Qt::ISODate)));
+     }
+ }</pre>
+<p>When the format string is changed, there will be an appropriate label and entry widget for dates, times, or both types of input.</p>
+<p>The <tt>createDoubleSpinBoxes()</tt> function constructs three spin boxes that are used to input double-precision floating point numbers:</p>
+<pre> void Window::createDoubleSpinBoxes()
+ {
+     doubleSpinBoxesGroup = new QGroupBox(tr(&quot;Double precision spinboxes&quot;));
+
+     QLabel *precisionLabel = new QLabel(tr(&quot;Number of decimal places &quot;
+                                            &quot;to show:&quot;));
+     QSpinBox *precisionSpinBox = new QSpinBox;
+     precisionSpinBox-&gt;setRange(0, 100);
+     precisionSpinBox-&gt;setValue(2);</pre>
+<p>Before the <a href="qdoublespinbox.html">QDoubleSpinBox</a> widgets are constructed, we create a spin box to control how many decimal places they show. By default, only two decimal places are shown in the following spin boxes, each of which is the equivalent of a spin box in the group created by the <tt>createSpinBoxes()</tt> function.</p>
+<p>The first double spin box shows a basic double-precision spin box with the same range, step size, and default value as the first spin box in the <tt>createSpinBoxes()</tt> function:</p>
+<pre>     QLabel *doubleLabel = new QLabel(tr(&quot;Enter a value between &quot;
+         &quot;%1 and %2:&quot;).arg(-20).arg(20));
+     doubleSpinBox = new QDoubleSpinBox;
+     doubleSpinBox-&gt;setRange(-20.0, 20.0);
+     doubleSpinBox-&gt;setSingleStep(1.0);
+     doubleSpinBox-&gt;setValue(0.0);</pre>
+<p>However, this spin box also allows non-integer values to be entered.</p>
+<p>The second spin box displays a suffix and shows a special value instead of the minimum value:</p>
+<pre>     QLabel *scaleLabel = new QLabel(tr(&quot;Enter a scale factor between &quot;
+         &quot;%1 and %2:&quot;).arg(0).arg(1000.0));
+     scaleSpinBox = new QDoubleSpinBox;
+     scaleSpinBox-&gt;setRange(0.0, 1000.0);
+     scaleSpinBox-&gt;setSingleStep(10.0);
+     scaleSpinBox-&gt;setSuffix(&quot;%&quot;);
+     scaleSpinBox-&gt;setSpecialValueText(tr(&quot;No scaling&quot;));
+     scaleSpinBox-&gt;setValue(100.0);</pre>
+<p>The third spin box displays a prefix instead of a suffix:</p>
+<pre>     QLabel *priceLabel = new QLabel(tr(&quot;Enter a price between &quot;
+         &quot;%1 and %2:&quot;).arg(0).arg(1000));
+     priceSpinBox = new QDoubleSpinBox;
+     priceSpinBox-&gt;setRange(0.0, 1000.0);
+     priceSpinBox-&gt;setSingleStep(1.0);
+     priceSpinBox-&gt;setPrefix(&quot;$&quot;);
+     priceSpinBox-&gt;setValue(99.99);
+
+     connect(precisionSpinBox, SIGNAL(valueChanged(int)),</pre>
+<p>We connect the <a href="qspinbox.html">QSpinBox</a> widget that specifies the precision to a slot in the <tt>Window</tt> class.</p>
+<pre>     QVBoxLayout *spinBoxLayout = new QVBoxLayout;
+     spinBoxLayout-&gt;addWidget(precisionLabel);
+     spinBoxLayout-&gt;addWidget(precisionSpinBox);
+     spinBoxLayout-&gt;addWidget(doubleLabel);
+     spinBoxLayout-&gt;addWidget(doubleSpinBox);
+     spinBoxLayout-&gt;addWidget(scaleLabel);
+     spinBoxLayout-&gt;addWidget(scaleSpinBox);
+     spinBoxLayout-&gt;addWidget(priceLabel);
+     spinBoxLayout-&gt;addWidget(priceSpinBox);
+     doubleSpinBoxesGroup-&gt;setLayout(spinBoxLayout);
+ }</pre>
+<p>The rest of the function places each of the widgets into a layout for the group box.</p>
+<p>The <tt>changePrecision()</tt> slot is called when the user changes the value in the precision spin box:</p>
+<pre> void Window::changePrecision(int decimals)
+ {
+     doubleSpinBox-&gt;setDecimals(decimals);
+     scaleSpinBox-&gt;setDecimals(decimals);
+     priceSpinBox-&gt;setDecimals(decimals);
+ }</pre>
+<p>This function simply uses the integer supplied by the signal to specify the number of decimal places in each of the <a href="qdoublespinbox.html">QDoubleSpinBox</a> widgets. Each one of these will be updated automatically when their <a href="qdoublespinbox.html#decimals-prop">decimals</a> property is changed.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

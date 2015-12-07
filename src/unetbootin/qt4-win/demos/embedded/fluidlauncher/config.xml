@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<demolauncher>
+  <demos>
+    <example filename="../embeddedsvgviewer/embeddedsvgviewer" name="SVG Viewer" image="screenshots/embeddedsvgviewer.png" args="../embeddedsvgviewer/shapes.svg"/>
+    <example filename="../styledemo/styledemo" name="Stylesheets" image="screenshots/styledemo.png"/>
+    <example filename="../../deform/deform" name="Vector Deformation" image="screenshots/deform.png" args="-small-screen"/>
+    <example filename="../../pathstroke/pathstroke" name="Path Stroking" image="screenshots/pathstroke.png" args="-small-screen"/>
+    <example filename="../../../examples/widgets/wiggly/wiggly" name="Wiggly Text" image="screenshots/wiggly.png"/>
+    <example filename="../../../examples/painting/concentriccircles/concentriccircles" name="Concentric Circles" image="screenshots/concentriccircles.png"/>
+<!--
+    <example filename="../../../examples/graphicsview/elasticnodes/elasticnodes" name="Elastic Nodes" image="screenshots/elasticnodes.png" args="-maximize"/>
+    <example filename="../../../examples/assistant/simpletextviewer/simpletextviewer" name="Simple Text Viewer" image="../../../doc/html/images/simpletextviewer-mainwindow.png"/>
+    <example filename="../../../examples/dialogs/trivialwizard/trivialwizard" name="Trivial Wizard" image="../../../doc/html/images/trivialwizard-example-conclusion.png"/>
+    <example filename="../../../examples/draganddrop/draggableicons/draggableicons" name="Draggable Icons" image="../../../doc/html/images/draggableicons-example.png"/>
+    <example filename="../../../examples/draganddrop/draggabletext/draggabletext" name="Draggable Text" image="../../../doc/html/images/draggabletext-example.png"/>
+    <example filename="../../../examples/draganddrop/fridgemagnets/fridgemagnets" name="Fridge Magnets" image="../../../doc/html/images/fridgemagnets-example.png"/>
+    <example filename="../../../examples/graphicsview/collidingmice/collidingmice" name="Colliding Mice" image="../../../doc/html/images/collidingmice-example.png"/>
+    <example filename="../../../examples/graphicsview/padnavigator/padnavigator" name="Pad Navigator" image="../../../doc/html/images/padnavigator-example.png"/>
+    <example filename="../../../examples/itemviews/coloreditorfactory/coloreditorfactory" name="Color Editor" image="../../../doc/html/images/coloreditorfactoryimage.png"/>
+-->    
+    
+  </demos>
+  <slideshow timeout="60000" interval="10000">
+    <imagedir dir="slides"/>
+  </slideshow>
+</demolauncher>

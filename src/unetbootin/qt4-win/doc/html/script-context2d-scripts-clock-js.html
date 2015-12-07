@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: clock.js Example File (script/context2d/scripts/clock.js)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">clock.js Example File<br /><span class="small-subtitle">script/context2d/scripts/clock.js</span>
+</h1>
+<pre> function init(){
+   clock();
+   setInterval('clock()',1000);
+ }
+ function clock(){
+   var now = new Date();
+   var ctx = document.getElementById('tutorial').getContext('2d');
+   ctx.save();
+   ctx.clearRect(0,0,150,150);
+   ctx.translate(75,75);
+   ctx.scale(0.4,0.4);
+   ctx.rotate(-Math.PI/2);
+   ctx.strokeStyle = &quot;black&quot;;
+   ctx.fillStyle = &quot;white&quot;;
+   ctx.lineWidth = 8;
+   ctx.lineCap = &quot;round&quot;;
+
+   // Hour marks
+   ctx.save();
+   ctx.beginPath();
+   for (i=0;i&lt;12;i++){
+     ctx.rotate(Math.PI/6);
+     ctx.moveTo(100,0);
+     ctx.lineTo(120,0);
+   }
+   ctx.stroke();
+   ctx.restore();
+
+   // Minute marks
+   ctx.save();
+   ctx.lineWidth = 5;
+   ctx.beginPath();
+   for (i=0;i&lt;60;i++){
+     if (i%5!=0) {
+       ctx.moveTo(117,0);
+       ctx.lineTo(120,0);
+     }
+     ctx.rotate(Math.PI/30);
+   }
+   ctx.stroke();
+   ctx.restore();
+
+   var sec = now.getSeconds();
+   var min = now.getMinutes();
+   var hr  = now.getHours();
+   hr = hr&gt;=12 ? hr-12 : hr;
+
+   ctx.fillStyle = &quot;black&quot;;
+
+   // write Hours
+   ctx.save();
+   ctx.rotate( hr*(Math.PI/6) + (Math.PI/360)*min + (Math.PI/21600)*sec )
+   ctx.lineWidth = 14;
+   ctx.beginPath();
+   ctx.moveTo(-20,0);
+   ctx.lineTo(80,0);
+   ctx.stroke();
+   ctx.restore();
+
+   // write Minutes
+   ctx.save();
+   ctx.rotate( (Math.PI/30)*min + (Math.PI/1800)*sec )
+   ctx.lineWidth = 10;
+   ctx.beginPath();
+   ctx.moveTo(-28,0);
+   ctx.lineTo(112,0);
+   ctx.stroke();
+   ctx.restore();
+
+   // Write seconds
+   ctx.save();
+   ctx.rotate(sec * Math.PI/30);
+   ctx.strokeStyle = &quot;#D40000&quot;;
+   ctx.fillStyle = &quot;#D40000&quot;;
+   ctx.lineWidth = 6;
+   ctx.beginPath();
+   ctx.moveTo(-30,0);
+   ctx.lineTo(83,0);
+   ctx.stroke();
+   ctx.beginPath();
+   ctx.arc(0,0,10,0,Math.PI*2,true);
+   ctx.fill();
+   ctx.beginPath();
+   ctx.arc(95,0,10,0,Math.PI*2,true);
+   ctx.stroke();
+   ctx.fillStyle = &quot;#555&quot;;
+   ctx.arc(0,0,3,0,Math.PI*2,true);
+   ctx.fill();
+   ctx.restore();
+
+   ctx.beginPath();
+   ctx.lineWidth = 14;
+   ctx.strokeStyle = '#325FA2';
+   ctx.arc(0,0,142,0,Math.PI*2,true);
+   ctx.stroke();
+
+   ctx.restore();
+ }
+ init();</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

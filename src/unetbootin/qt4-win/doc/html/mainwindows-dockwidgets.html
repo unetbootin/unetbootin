@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/dockwidgets.qdoc -->
+<head>
+  <title>Qt 4.4: Dock Widgets Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Dock Widgets Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="mainwindows-dockwidgets-mainwindow-cpp.html">mainwindows/dockwidgets/mainwindow.cpp</a></li>
+<li><a href="mainwindows-dockwidgets-mainwindow-h.html">mainwindows/dockwidgets/mainwindow.h</a></li>
+<li><a href="mainwindows-dockwidgets-main-cpp.html">mainwindows/dockwidgets/main.cpp</a></li>
+<li><a href="mainwindows-dockwidgets-dockwidgets-pro.html">mainwindows/dockwidgets/dockwidgets.pro</a></li>
+<li><a href="mainwindows-dockwidgets-dockwidgets-qrc.html">mainwindows/dockwidgets/dockwidgets.qrc</a></li>
+</ul>
+<p>The Dock Widgets example shows how to add dock windows to an application. It also shows how to use Qt's rich text engine.</p>
+<p align="center"><img src="images/dockwidgets-example.png" alt="Screenshot of the Dock Widgets example" /></p><p>The application presents a simple business letter template, and has a list of customer names and addresses and a list of standard phrases in two dock windows. The user can click a customer to have their name and address inserted into the template, and click one or more of the standard phrases. Errors can be corrected by clicking the Undo button. Once the letter has been prepared it can be printed or saved as HTML.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>Here's the class definition:</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ private slots:
+     void newLetter();
+     void save();
+     void print();
+     void undo();
+     void about();
+     void insertCustomer(const QString &amp;customer);
+     void addParagraph(const QString &amp;paragraph);
+
+ private:
+     void createActions();
+     void createMenus();
+     void createToolBars();
+     void createStatusBar();
+     void createDockWindows();
+
+     QTextEdit *textEdit;
+     QListWidget *customerList;
+     QListWidget *paragraphsList;
+
+     QMenu *fileMenu;
+     QMenu *editMenu;
+     QMenu *viewMenu;
+     QMenu *helpMenu;
+     QToolBar *fileToolBar;
+     QToolBar *editToolBar;
+     QAction *newLetterAct;
+     QAction *saveAct;
+     QAction *printAct;
+     QAction *undoAct;
+     QAction *aboutAct;
+     QAction *aboutQtAct;
+     QAction *quitAct;
+ };</pre>
+<p>We will now review each function in turn.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<pre> #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;</pre>
+<p>We start by including <tt>&lt;QtGui&gt;</tt>, a header file that contains the definition of all classes in the <a href="qtcore.html">QtCore</a> and <a href="qtgui.html">QtGui</a> libraries. This saves us from having to include every class individually and is especially convenient if we add new widgets. We also include <tt>mainwindow.h</tt>.</p>
+<pre> MainWindow::MainWindow()
+ {
+     textEdit = new QTextEdit;
+     setCentralWidget(textEdit);
+
+     createActions();
+     createMenus();
+     createToolBars();
+     createStatusBar();
+     createDockWindows();
+
+     setWindowTitle(tr(&quot;Dock Widgets&quot;));
+
+     newLetter();
+ }</pre>
+<p>In the constructor, we start by creating a <a href="qtextedit.html">QTextEdit</a> widget. Then we call <a href="qmainwindow.html#setCentralWidget">QMainWindow::setCentralWidget</a>(). This function passes ownership of the <a href="qtextedit.html">QTextEdit</a> to the <tt>MainWindow</tt> and tells the <tt>MainWindow</tt> that the <a href="qtextedit.html">QTextEdit</a> will occupy the <tt>MainWindow</tt>'s central area.</p>
+<p>Then we call <tt>createActions()</tt>, <tt>createMenus()</tt>, <tt>createToolBars()</tt>, <tt>createStatusBar()</tt>, and <tt>createDockWindows()</tt> to set up the user interface. Finally we call <tt>setWindowTitle()</tt> to give the application a title, and <tt>newLetter()</tt> to create a new letter template.</p>
+<p>We won't quote the <tt>createActions()</tt>, <tt>createMenus()</tt>, <tt>createToolBars()</tt>, and <tt>createStatusBar()</tt> functions since they follow the same pattern as all the other Qt examples.</p>
+<pre> void MainWindow::createDockWindows()
+ {
+     QDockWidget *dock = new QDockWidget(tr(&quot;Customers&quot;), this);
+     dock-&gt;setAllowedAreas(Qt::LeftDockWidgetArea | Qt::RightDockWidgetArea);
+     customerList = new QListWidget(dock);
+     customerList-&gt;addItems(QStringList()
+             &lt;&lt; &quot;John Doe, Harmony Enterprises, 12 Lakeside, Ambleton&quot;
+             &lt;&lt; &quot;Jane Doe, Memorabilia, 23 Watersedge, Beaton&quot;
+             &lt;&lt; &quot;Tammy Shea, Tiblanka, 38 Sea Views, Carlton&quot;
+             &lt;&lt; &quot;Tim Sheen, Caraba Gifts, 48 Ocean Way, Deal&quot;
+             &lt;&lt; &quot;Sol Harvey, Chicos Coffee, 53 New Springs, Eccleston&quot;
+             &lt;&lt; &quot;Sally Hobart, Tiroli Tea, 67 Long River, Fedula&quot;);
+     dock-&gt;setWidget(customerList);
+     addDockWidget(Qt::RightDockWidgetArea, dock);
+     viewMenu-&gt;addAction(dock-&gt;toggleViewAction());
+
+     dock = new QDockWidget(tr(&quot;Paragraphs&quot;), this);
+     paragraphsList = new QListWidget(dock);
+     paragraphsList-&gt;addItems(QStringList()
+             &lt;&lt; &quot;Thank you for your payment which we have received today.&quot;
+             &lt;&lt; &quot;Your order has been dispatched and should be with you &quot;
+                &quot;within 28 days.&quot;
+             &lt;&lt; &quot;We have dispatched those items that were in stock. The &quot;
+                &quot;rest of your order will be dispatched once all the &quot;
+                &quot;remaining items have arrived at our warehouse. No &quot;
+                &quot;additional shipping charges will be made.&quot;
+             &lt;&lt; &quot;You made a small overpayment (less than $5) which we &quot;
+                &quot;will keep on account for you, or return at your request.&quot;
+             &lt;&lt; &quot;You made a small underpayment (less than $1), but we have &quot;
+                &quot;sent your order anyway. We'll add this underpayment to &quot;
+                &quot;your next bill.&quot;
+             &lt;&lt; &quot;Unfortunately you did not send enough money. Please remit &quot;
+                &quot;an additional $. Your order will be dispatched as soon as &quot;
+                &quot;the complete amount has been received.&quot;
+             &lt;&lt; &quot;You made an overpayment (more than $5). Do you wish to &quot;
+                &quot;buy more items, or should we return the excess to you?&quot;);
+     dock-&gt;setWidget(paragraphsList);
+     addDockWidget(Qt::RightDockWidgetArea, dock);
+     viewMenu-&gt;addAction(dock-&gt;toggleViewAction());
+
+     connect(customerList, SIGNAL(currentTextChanged(const QString &amp;)),
+             this, SLOT(insertCustomer(const QString &amp;)));
+     connect(paragraphsList, SIGNAL(currentTextChanged(const QString &amp;)),
+             this, SLOT(addParagraph(const QString &amp;)));
+ }</pre>
+<p>We create the customers dock window first, and in addition to a window title, we also pass it a <tt>this</tt> pointer so that it becomes a child of <tt>MainWindow</tt>. Normally we don't have to pass a parent because widgets are parented automatically when they are laid out: but dock windows aren't laid out using layouts.</p>
+<p>We've chosen to restrict the customers dock window to the left and right dock areas. (So the user cannot drag the dock window to the top or bottom dock areas.) The user can drag the dock window out of the dock areas entirely so that it becomes a free floating window. We can change this (and whether the dock window is moveable or closable) using <a href="qdockwidget.html#features-prop">QDockWidget::setFeatures</a>().</p>
+<p>Once we've created the dock window we create a list widget with the dock window as parent, then we populate the list and make it the dock window's widget. Finally we add the dock widget to the <tt>MainWindow</tt> using <tt>addDockWidget()</tt>, choosing to put it in the right dock area.</p>
+<p>We undertake a similar process for the paragraphs dock window, except that we don't restrict which dock areas it can be dragged to.</p>
+<p>Finally we set up the signal-slot connections. If the user clicks a customer or a paragraph their <tt>currentTextChanged()</tt> signal will be emitted and we connect these to <tt>insertCustomer()</tt> and addParagraph() passing the text that was clicked.</p>
+<p>We briefly discuss the rest of the implementation, but have now covered everything relating to dock windows.</p>
+<pre> void MainWindow::newLetter()
+ {
+     textEdit-&gt;clear();
+
+     QTextCursor cursor(textEdit-&gt;textCursor());
+     cursor.movePosition(QTextCursor::Start);
+     QTextFrame *topFrame = cursor.currentFrame();
+     QTextFrameFormat topFrameFormat = topFrame-&gt;frameFormat();
+     topFrameFormat.setPadding(16);
+     topFrame-&gt;setFrameFormat(topFrameFormat);
+
+     QTextCharFormat textFormat;
+     QTextCharFormat boldFormat;
+     boldFormat.setFontWeight(QFont::Bold);
+     QTextCharFormat italicFormat;
+     italicFormat.setFontItalic(true);
+
+     QTextTableFormat tableFormat;
+     tableFormat.setBorder(1);
+     tableFormat.setCellPadding(16);
+     tableFormat.setAlignment(Qt::AlignRight);
+     cursor.insertTable(1, 1, tableFormat);
+     cursor.insertText(&quot;The Firm&quot;, boldFormat);
+     cursor.insertBlock();
+     cursor.insertText(&quot;321 City Street&quot;, textFormat);
+     cursor.insertBlock();
+     cursor.insertText(&quot;Industry Park&quot;);
+     cursor.insertBlock();
+     cursor.insertText(&quot;Some Country&quot;);
+     cursor.setPosition(topFrame-&gt;lastPosition());
+     cursor.insertText(QDate::currentDate().toString(&quot;d MMMM yyyy&quot;), textFormat);
+     cursor.insertBlock();
+     cursor.insertBlock();
+     cursor.insertText(&quot;Dear &quot;, textFormat);
+     cursor.insertText(&quot;NAME&quot;, italicFormat);
+     cursor.insertText(&quot;,&quot;, textFormat);
+     for (int i = 0; i &lt; 3; ++i)
+         cursor.insertBlock();
+     cursor.insertText(tr(&quot;Yours sincerely,&quot;), textFormat);
+     for (int i = 0; i &lt; 3; ++i)
+         cursor.insertBlock();
+     cursor.insertText(&quot;The Boss&quot;, textFormat);
+     cursor.insertBlock();
+     cursor.insertText(&quot;ADDRESS&quot;, italicFormat);
+ }</pre>
+<p>In this function we clear the <a href="qtextedit.html">QTextEdit</a> so that it is empty. Next we create a <a href="qtextcursor.html">QTextCursor</a> on the <a href="qtextedit.html">QTextEdit</a>. We move the cursor to the start of the document and create and format a frame. We then create some character formats and a table format. We insert a table into the document and insert the company's name and address into a table using the table and character formats we created earlier. Then we insert the skeleton of the letter including two markers <tt>NAME</tt> and <tt>ADDRESS</tt>. We will also use the <tt>Yours sincerely,</tt> text as a marker.</p>
+<pre> void MainWindow::insertCustomer(const QString &amp;customer)
+ {
+     if (customer.isEmpty())
+         return;
+     QStringList customerList = customer.split(&quot;, &quot;);
+     QTextDocument *document = textEdit-&gt;document();
+     QTextCursor cursor = document-&gt;find(&quot;NAME&quot;);
+     if (!cursor.isNull()) {
+         cursor.beginEditBlock();
+         cursor.insertText(customerList.at(0));
+         QTextCursor oldcursor = cursor;
+         cursor = document-&gt;find(&quot;ADDRESS&quot;);
+         if (!cursor.isNull()) {
+             for (int i = 1; i &lt; customerList.size(); ++i) {
+                 cursor.insertBlock();
+                 cursor.insertText(customerList.at(i));
+             }
+             cursor.endEditBlock();
+         }
+         else
+             oldcursor.endEditBlock();
+     }
+ }</pre>
+<p>If the user clicks a customer we split the customer details into pieces. We then look for the <tt>NAME</tt> marker using the <tt>find()</tt> function. This function selects the text it finds, so when we call <tt>insertText()</tt> with the customer's name the name replaces the marker. We then look for the <tt>ADDRESS</tt> marker and replace it with each line of the customer's address. Notice that we wrapped all the insertions between a <tt>beginEditBlock()</tt> and <tt>endEditBlock()</tt> pair. This means that the entire name and address insertion is treated as a single operation by the <a href="qtextedit.html">QTextEdit</a>, so a single undo will revert all the insertions.</p>
+<pre> void MainWindow::addParagraph(const QString &amp;paragraph)
+ {
+     if (paragraph.isEmpty())
+         return;
+     QTextDocument *document = textEdit-&gt;document();
+     QTextCursor cursor = document-&gt;find(tr(&quot;Yours sincerely,&quot;));
+     if (cursor.isNull())
+         return;
+     cursor.beginEditBlock();
+     cursor.movePosition(QTextCursor::PreviousBlock, QTextCursor::MoveAnchor, 2);
+     cursor.insertBlock();
+     cursor.insertText(paragraph);
+     cursor.insertBlock();
+     cursor.endEditBlock();
+
+ }</pre>
+<p>This function works in a similar way to <tt>insertCustomer()</tt>. First we look for the marker, in this case, <tt>Yours sincerely,</tt>, and then replace it with the standard paragraph that the user clicked. Again we use a <tt>beginEditBlock()</tt> ..&#x2e; <tt>endEditBlock()</tt> pair so that the insertion can be undone as a single operation.</p>
+<pre> void MainWindow::print()
+ {
+ #ifndef QT_NO_PRINTER
+     QTextDocument *document = textEdit-&gt;document();
+     QPrinter printer;
+
+     QPrintDialog *dlg = new QPrintDialog(&amp;printer, this);
+     if (dlg-&gt;exec() != QDialog::Accepted)
+         return;
+
+     document-&gt;print(&amp;printer);
+
+     statusBar()-&gt;showMessage(tr(&quot;Ready&quot;), 2000);
+ #endif
+ }</pre>
+<p>Qt's <a href="qtextdocument.html">QTextDocument</a> class makes printing documents easy. We simply take the <a href="qtextedit.html">QTextEdit</a>'s <a href="qtextdocument.html">QTextDocument</a>, set up the printer and print the document.</p>
+<pre> void MainWindow::save()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this,
+                         tr(&quot;Choose a file name&quot;), &quot;.&quot;,
+                         tr(&quot;HTML (*.html *.htm)&quot;));
+     if (fileName.isEmpty())
+         return;
+     QFile file(fileName);
+     if (!file.open(QFile::WriteOnly | QFile::Text)) {
+         QMessageBox::warning(this, tr(&quot;Dock Widgets&quot;),
+                              tr(&quot;Cannot write file %1:\n%2.&quot;)
+                              .arg(fileName)
+                              .arg(file.errorString()));
+         return;
+     }
+
+     QTextStream out(&amp;file);
+     QApplication::setOverrideCursor(Qt::WaitCursor);
+     out &lt;&lt; textEdit-&gt;toHtml();
+     QApplication::restoreOverrideCursor();
+
+     statusBar()-&gt;showMessage(tr(&quot;Saved '%1'&quot;).arg(fileName), 2000);
+ }</pre>
+<p><a href="qtextedit.html">QTextEdit</a> can output its contents in HTML format, so we prompt the user for the name of an HTML file and if they provide one we simply write the <a href="qtextedit.html">QTextEdit</a>'s contents in HTML format to the file.</p>
+<pre> void MainWindow::undo()
+ {
+     QTextDocument *document = textEdit-&gt;document();
+     document-&gt;undo();
+ }</pre>
+<p>If the focus is in the <a href="qtextedit.html">QTextEdit</a>, pressing <b>Ctrl+Z</b> undoes as expected. But for the user's convenience we provide an application-wide undo function that simply calls the <a href="qtextedit.html">QTextEdit</a>'s undo: this means that the user can undo regardless of where the focus is in the application.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

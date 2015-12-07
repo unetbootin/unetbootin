@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3http.cpp -->
+<head>
+  <title>Qt 4.4: Q3Http Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Http Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Http class provides an implementation of the HTTP protocol. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Http&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qhttp">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3networkprotocol.html">Q3NetworkProtocol</a>.</p>
+<ul>
+<li><a href="q3http-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3http.html#Error-enum">Error</a></b> { NoError, HostNotFound, ConnectionRefused, UnexpectedClose, ..., UnknownError }</li>
+<li><div class="fn"/>enum <b><a href="q3http.html#State-enum">State</a></b> { Unconnected, HostLookup, Connecting, Sending, ..., Closing }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3http.html#Q3Http">Q3Http</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3http.html#Q3Http-2">Q3Http</a></b> ( QObject * <i>parent</i>, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3http.html#Q3Http-3">Q3Http</a></b> ( const QString &amp; <i>hostname</i>, Q_UINT16 <i>port</i> = 80, QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3http.html#dtor.Q3Http">~Q3Http</a></b> ()</li>
+<li><div class="fn"/>Q_ULONG <b><a href="q3http.html#bytesAvailable">bytesAvailable</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3http.html#clearPendingRequests">clearPendingRequests</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3http.html#closeConnection">closeConnection</a></b> ()</li>
+<li><div class="fn"/>QIODevice * <b><a href="q3http.html#currentDestinationDevice">currentDestinationDevice</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3http.html#currentId">currentId</a></b> () const</li>
+<li><div class="fn"/>Q3HttpRequestHeader <b><a href="q3http.html#currentRequest">currentRequest</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="q3http.html#currentSourceDevice">currentSourceDevice</a></b> () const</li>
+<li><div class="fn"/>Error <b><a href="q3http.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3http.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3http.html#get">get</a></b> ( const QString &amp; <i>path</i>, QIODevice * <i>to</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3http.html#hasPendingRequests">hasPendingRequests</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3http.html#head">head</a></b> ( const QString &amp; <i>path</i> )</li>
+<li><div class="fn"/>int <b><a href="q3http.html#post">post</a></b> ( const QString &amp; <i>path</i>, QIODevice * <i>data</i>, QIODevice * <i>to</i> = 0 )</li>
+<li><div class="fn"/>int <b><a href="q3http.html#post-2">post</a></b> ( const QString &amp; <i>path</i>, const QByteArray &amp; <i>data</i>, QIODevice * <i>to</i> = 0 )</li>
+<li><div class="fn"/>QByteArray <b><a href="q3http.html#readAll">readAll</a></b> ()</li>
+<li><div class="fn"/>Q_LONG <b><a href="q3http.html#readBlock">readBlock</a></b> ( char * <i>data</i>, Q_ULONG <i>maxlen</i> )</li>
+<li><div class="fn"/>int <b><a href="q3http.html#request">request</a></b> ( const Q3HttpRequestHeader &amp; <i>header</i>, QIODevice * <i>data</i> = 0, QIODevice * <i>to</i> = 0 )</li>
+<li><div class="fn"/>int <b><a href="q3http.html#request-2">request</a></b> ( const Q3HttpRequestHeader &amp; <i>header</i>, const QByteArray &amp; <i>data</i>, QIODevice * <i>to</i> = 0 )</li>
+<li><div class="fn"/>int <b><a href="q3http.html#setHost">setHost</a></b> ( const QString &amp; <i>hostname</i>, Q_UINT16 <i>port</i> = 80 )</li>
+<li><div class="fn"/>State <b><a href="q3http.html#state">state</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public functions inherited from <a href="q3networkprotocol.html#public-functions">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3http.html#abort">abort</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3http.html#dataReadProgress">dataReadProgress</a></b> ( int <i>done</i>, int <i>total</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#dataSendProgress">dataSendProgress</a></b> ( int <i>done</i>, int <i>total</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#done">done</a></b> ( bool <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#readyRead">readyRead</a></b> ( const Q3HttpResponseHeader &amp; <i>resp</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#requestFinished">requestFinished</a></b> ( int <i>id</i>, bool <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#requestStarted">requestStarted</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#responseHeaderReceived">responseHeaderReceived</a></b> ( const Q3HttpResponseHeader &amp; <i>resp</i> )</li>
+<li><div class="fn"/>void <b><a href="q3http.html#stateChanged">stateChanged</a></b> ( int <i>state</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 signals inherited from <a href="q3networkprotocol.html#signals">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>3 static public members inherited from <a href="q3networkprotocol.html#static-public-members">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="q3networkprotocol.html#protected-functions">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Http class provides an implementation of the HTTP protocol.</p>
+<p>This class provides two different interfaces: one is the <a href="q3networkprotocol.html">Q3NetworkProtocol</a> interface that allows you to use HTTP through the <a href="porting4.html#qurloperator">QUrlOperator</a> abstraction. The other is a direct interface to HTTP that allows you to have more control over the requests and that allows you to access the response header fields.</p>
+<p>Don't mix the two interfaces, since the behavior is not well-defined.</p>
+<p>If you want to use Q3Http with the <a href="q3networkprotocol.html">Q3NetworkProtocol</a> interface, you do not use it directly, but rather through a <a href="porting4.html#qurloperator">QUrlOperator</a>, for example:</p>
+<pre>     QUrlOperator op( &quot;http://www.trolltech.com&quot; );
+     op.get( &quot;index.html&quot; );</pre>
+<p>This code will only work if the Q3Http class is registered; to register the class, you must call <a href="q3urloperator.html#q3InitNetworkProtocols">q3InitNetworkProtocols</a>() before using a <a href="porting4.html#qurloperator">QUrlOperator</a> with HTTP.</p>
+<p>The <a href="q3networkprotocol.html">Q3NetworkProtocol</a> interface for HTTP only supports the operations <a href="q3networkprotocol.html#operationGet">operationGet</a>() and <a href="q3networkprotocol.html#operationPut">operationPut</a>(), i.e&#x2e; QUrlOperator::get() and QUrlOperator::put(), if you use it with a <a href="porting4.html#qurloperator">QUrlOperator</a>.</p>
+<p>The rest of this descrption describes the direct interface to HTTP.</p>
+<p>The class works asynchronously, so there are no blocking functions. If an operation cannot be executed immediately, the function will still return straight away and the operation will be scheduled for later execution. The results of scheduled operations are reported via signals. This approach depends on the event loop being in operation.</p>
+<p>The operations that can be scheduled (they are called &quot;requests&quot; in the rest of the documentation) are the following: <a href="q3http.html#setHost">setHost</a>(), <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>() and <a href="q3http.html#request">request</a>().</p>
+<p>All of these requests return a unique identifier that allows you to keep track of the request that is currently executed. When the execution of a request starts, the <a href="q3http.html#requestStarted">requestStarted</a>() signal with the identifier is emitted and when the request is finished, the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted with the identifier and a bool that indicates if the request finished with an error.</p>
+<p>To make an HTTP request you must set up suitable HTTP headers. The following example demonstrates, how to request the main HTML page from the Trolltech home page (i.e&#x2e; the URL http://www.trolltech.com/index.html):</p>
+<pre>     Q3HttpRequestHeader header( &quot;GET&quot;, &quot;/index.html&quot; );
+     header.setValue( &quot;Host&quot;, &quot;www.trolltech.com&quot; );
+     http-&gt;setHost( &quot;www.trolltech.com&quot; );
+     http-&gt;request( header );</pre>
+<p>For the common HTTP requests <tt>GET</tt>, <tt>POST</tt> and <tt>HEAD</tt>, Q3Http provides the convenience functions <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>() and <a href="q3http.html#head">head</a>(). They already use a reasonable header and if you don't have to set special header fields, they are easier to use. The above example can also be written as:</p>
+<pre>     http-&gt;setHost( &quot;www.trolltech.com&quot; ); // id == 1
+     http-&gt;get( &quot;/index.html&quot; );           // id == 2</pre>
+<p>For this example the following sequence of signals is emitted (with small variations, depending on network traffic, etc.):</p>
+<pre>     requestStarted( 1 )
+     requestFinished( 1, false )
+
+     requestStarted( 2 )
+     stateChanged( Connecting )
+     stateChanged( Sending )
+     dataSendProgress( 77, 77 )
+     stateChanged( Reading )
+     responseHeaderReceived( responseheader )
+     dataReadProgress( 5388, 0 )
+     readyRead( responseheader )
+     dataReadProgress( 18300, 0 )
+     readyRead( responseheader )
+     stateChanged( Connected )
+     requestFinished( 2, false )
+
+     done( false )
+
+     stateChanged( Closing )
+     stateChanged( Unconnected )</pre>
+<p>The <a href="q3http.html#dataSendProgress">dataSendProgress</a>() and <a href="q3http.html#dataReadProgress">dataReadProgress</a>() signals in the above example are useful if you want to show a <a href="qprogressbar.html">progress bar</a> to inform the user about the progress of the download. The second argument is the total size of data. In certain cases it is not possible to know the total amount in advance, in which case the second argument is 0. (If you connect to a <a href="qprogressbar.html">QProgressBar</a> a total of 0 results in a busy indicator.)</p>
+<p>When the response header is read, it is reported with the <a href="q3http.html#responseHeaderReceived">responseHeaderReceived</a>() signal.</p>
+<p>The <a href="q3http.html#readyRead">readyRead</a>() signal tells you that there is data ready to be read. The amount of data can then be queried with the <a href="q3http.html#bytesAvailable">bytesAvailable</a>() function and it can be read with the <a href="q3http.html#readBlock">readBlock</a>() or <a href="q3http.html#readAll">readAll</a>() functions.</p>
+<p>If an error occurs during the execution of one of the commands in a sequence of commands, all the pending commands (i.e&#x2e; scheduled, but not yet executed commands) are cleared and no signals are emitted for them.</p>
+<p>For example, if you have the following sequence of reqeusts</p>
+<pre>     http-&gt;setHost( &quot;www.foo.bar&quot; );       // id == 1
+     http-&gt;get( &quot;/index.html&quot; );           // id == 2
+     http-&gt;post( &quot;register.html&quot;, data );  // id == 3</pre>
+<p>and the <a href="q3http.html#get">get</a>() request fails because the host lookup fails, then the <a href="q3http.html#post">post</a>() request is never executed and the signals would look like this:</p>
+<pre>     requestStarted( 1 )
+     requestFinished( 1, false )
+
+     requestStarted( 2 )
+     stateChanged( HostLookup )
+     requestFinished( 2, true )
+
+     done( true )
+
+     stateChanged( Unconnected )</pre>
+<p>You can then get details about the error with the <a href="q3http.html#error">error</a>() and <a href="q3http.html#errorString">errorString</a>() functions. Note that only unexpected behaviour, like network failure is considered as an error. If the server response contains an error status, like a 404 response, this is reported as a normal response case. So you should always check the <a href="q3httpresponseheader.html#statusCode">status code</a> of the response header.</p>
+<p>The functions <a href="q3http.html#currentId">currentId</a>() and <a href="q3http.html#currentRequest">currentRequest</a>() provide more information about the currently executing request.</p>
+<p>The functions <a href="q3http.html#hasPendingRequests">hasPendingRequests</a>() and <a href="q3http.html#clearPendingRequests">clearPendingRequests</a>() allow you to query and clear the list of pending requests.</p>
+<p>See also <a href="q3networkprotocol.html">Q3NetworkProtocol</a>, <a href="q3urloperator.html">Q3UrlOperator</a>, and <a href="q3ftp.html">Q3Ftp</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Error-enum"></a>enum Q3Http::Error</h3>
+<p>This enum identifies the error that occurred.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Http::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error occurred.</td></tr>
+<tr><td valign="top"><tt>Q3Http::HostNotFound</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The host name lookup failed.</td></tr>
+<tr><td valign="top"><tt>Q3Http::ConnectionRefused</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The server refused the connection.</td></tr>
+<tr><td valign="top"><tt>Q3Http::UnexpectedClose</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The server closed the connection unexpectedly.</td></tr>
+<tr><td valign="top"><tt>Q3Http::InvalidResponseHeader</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The server sent an invalid response header.</td></tr>
+<tr><td valign="top"><tt>Q3Http::WrongContentLength</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The client could not read the content correctly because an error with respect to the content length occurred.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Aborted</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The request was aborted with <a href="q3http.html#abort">abort</a>().</td></tr>
+<tr><td valign="top"><tt>Q3Http::UnknownError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">An error other than those specified above occurred.</td></tr>
+</table></p>
+<p>See also <a href="q3http.html#error">error</a>().</p>
+<h3 class="fn"><a name="State-enum"></a>enum Q3Http::State</h3>
+<p>This enum is used to specify the state the client is in:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Http::Unconnected</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">There is no connection to the host.</td></tr>
+<tr><td valign="top"><tt>Q3Http::HostLookup</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A host name lookup is in progress.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Connecting</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">An attempt to connect to the host is in progress.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Sending</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The client is sending its request to the server.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Reading</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The client's request has been sent and the client is reading the server's response.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Connected</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The connection to the host is open, but the client is neither sending a request, nor waiting for a response.</td></tr>
+<tr><td valign="top"><tt>Q3Http::Closing</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The connection is closing down, but is not yet closed. (The state will be <tt>Unconnected</tt> when the connection is closed.)</td></tr>
+</table></p>
+<p>See also <a href="q3http.html#stateChanged">stateChanged</a>() and <a href="q3http.html#state">state</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Http"></a>Q3Http::Q3Http ()</h3>
+<p>Constructs a <a href="q3http.html">Q3Http</a> object.</p>
+<h3 class="fn"><a name="Q3Http-2"></a>Q3Http::Q3Http ( <a href="qobject.html">QObject</a> * <i>parent</i>, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3http.html">Q3Http</a> object. The parameters <i>parent</i> and <i>name</i> are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<h3 class="fn"><a name="Q3Http-3"></a>Q3Http::Q3Http ( const <a href="qstring.html">QString</a> &amp; <i>hostname</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i> = 80, <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3http.html">Q3Http</a> object. Subsequent requests are done by connecting to the server <i>hostname</i> on port <i>port</i>. The parameters <i>parent</i> and <i>name</i> are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>See also <a href="q3http.html#setHost">setHost</a>().</p>
+<h3 class="fn"><a name="dtor.Q3Http"></a>Q3Http::~Q3Http ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="q3http.html">Q3Http</a> object. If there is an open connection, it is closed.</p>
+<h3 class="fn"><a name="abort"></a>void Q3Http::abort ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Aborts the current request and deletes all scheduled requests.</p>
+<p>For the current request, the <a href="q3http.html#requestFinished">requestFinished</a>() signal with the <tt>error</tt> argument <tt>true</tt> is emitted. For all other requests that are affected by the abort(), no signals are emitted.</p>
+<p>Since this slot also deletes the scheduled requests, there are no requests left and the <a href="q3http.html#done">done</a>() signal is emitted (with the <tt>error</tt> argument <tt>true</tt>).</p>
+<p>See also <a href="q3http.html#clearPendingRequests">clearPendingRequests</a>().</p>
+<h3 class="fn"><a name="bytesAvailable"></a><a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> Q3Http::bytesAvailable () const</h3>
+<p>Returns the number of bytes that can be read from the response content at the moment.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#readyRead">readyRead</a>(), <a href="q3http.html#readBlock">readBlock</a>(), and <a href="q3http.html#readAll">readAll</a>().</p>
+<h3 class="fn"><a name="clearPendingRequests"></a>void Q3Http::clearPendingRequests ()</h3>
+<p>Deletes all pending requests from the list of scheduled requests. This does not affect the request that is being executed. If you want to stop this this as well, use <a href="q3http.html#abort">abort</a>().</p>
+<p>See also <a href="q3http.html#hasPendingRequests">hasPendingRequests</a>() and <a href="q3http.html#abort">abort</a>().</p>
+<h3 class="fn"><a name="closeConnection"></a>int Q3Http::closeConnection ()</h3>
+<p>Closes the connection; this is useful if you have a keep-alive connection and want to close it.</p>
+<p>For the requests issued with <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>() and <a href="q3http.html#head">head</a>(), <a href="q3http.html">Q3Http</a> sets the connection to be keep-alive. You can also do this using the header you pass to the <a href="q3http.html#request">request</a>() function. <a href="q3http.html">Q3Http</a> only closes the connection to the HTTP server if the response header requires it to do so.</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>If you want to close the connection immediately, you have to use <a href="q3http.html#abort">abort</a>() instead.</p>
+<p>See also <a href="q3http.html#stateChanged">stateChanged</a>(), <a href="q3http.html#abort">abort</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="currentDestinationDevice"></a><a href="qiodevice.html">QIODevice</a> * Q3Http::currentDestinationDevice () const</h3>
+<p>Returns the <a href="qiodevice.html">QIODevice</a> pointer that is used as to store the data of the HTTP request being executed. If there is no current request or if the request does not store the data to an IO device, this function returns 0.</p>
+<p>This function can be used to delete the <a href="qiodevice.html">QIODevice</a> in the slot connected to the <a href="q3http.html#requestFinished">requestFinished</a>() signal.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), and <a href="q3http.html#request">request</a>().</p>
+<h3 class="fn"><a name="currentId"></a>int Q3Http::currentId () const</h3>
+<p>Returns the identifier of the HTTP request being executed or 0 if there is no request being executed (i.e&#x2e; they've all finished).</p>
+<p>See also <a href="q3http.html#currentRequest">currentRequest</a>().</p>
+<h3 class="fn"><a name="currentRequest"></a><a href="q3httprequestheader.html">Q3HttpRequestHeader</a> Q3Http::currentRequest () const</h3>
+<p>Returns the request header of the HTTP request being executed. If the request is one issued by <a href="q3http.html#setHost">setHost</a>() or <a href="q3http.html#closeConnection">closeConnection</a>(), it returns an invalid request header, i.e&#x2e; <a href="q3httpheader.html#isValid">Q3HttpRequestHeader::isValid</a>() returns false.</p>
+<p>See also <a href="q3http.html#currentId">currentId</a>().</p>
+<h3 class="fn"><a name="currentSourceDevice"></a><a href="qiodevice.html">QIODevice</a> * Q3Http::currentSourceDevice () const</h3>
+<p>Returns the <a href="qiodevice.html">QIODevice</a> pointer that is used as the data source of the HTTP request being executed. If there is no current request or if the request does not use an IO device as the data source, this function returns 0.</p>
+<p>This function can be used to delete the <a href="qiodevice.html">QIODevice</a> in the slot connected to the <a href="q3http.html#requestFinished">requestFinished</a>() signal.</p>
+<p>See also <a href="q3http.html#currentDestinationDevice">currentDestinationDevice</a>(), <a href="q3http.html#post">post</a>(), and <a href="q3http.html#request">request</a>().</p>
+<h3 class="fn"><a name="dataReadProgress"></a>void Q3Http::dataReadProgress ( int <i>done</i>, int <i>total</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when this object reads data from a HTTP server to indicate the current progress of the download.</p>
+<p><i>done</i> is the amount of data that has already arrived and <i>total</i> is the total amount of data. It is possible that the total amount of data that should be transferred cannot be determined, in which case <i>total</i> is 0.(If you connect to a <a href="qprogressbar.html">QProgressBar</a>, the progress bar shows a busy indicator if the total is 0).</p>
+<p><b>Warning:</b> <i>done</i> and <i>total</i> are not necessarily the size in bytes, since for large files these values might need to be &quot;scaled&quot; to avoid overflow.</p>
+<p>See also <a href="q3http.html#dataSendProgress">dataSendProgress</a>(), <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), and <a href="qprogressbar.html#value-prop">QProgressBar::setValue</a>().</p>
+<h3 class="fn"><a name="dataSendProgress"></a>void Q3Http::dataSendProgress ( int <i>done</i>, int <i>total</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when this object sends data to a HTTP server to inform it about the progress of the upload.</p>
+<p><i>done</i> is the amount of data that has already arrived and <i>total</i> is the total amount of data. It is possible that the total amount of data that should be transferred cannot be determined, in which case <i>total</i> is 0.(If you connect to a <a href="qprogressbar.html">QProgressBar</a>, the progress bar shows a busy indicator if the total is 0).</p>
+<p><b>Warning:</b> <i>done</i> and <i>total</i> are not necessarily the size in bytes, since for large files these values might need to be &quot;scaled&quot; to avoid overflow.</p>
+<p>See also <a href="q3http.html#dataReadProgress">dataReadProgress</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), and <a href="qprogressbar.html#value-prop">QProgressBar::setValue</a>().</p>
+<h3 class="fn"><a name="done"></a>void Q3Http::done ( bool <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the last pending request has finished; (it is emitted after the last request's <a href="q3http.html#requestFinished">requestFinished</a>() signal). <i>error</i> is true if an error occurred during the processing; otherwise <i>error</i> is false.</p>
+<p>See also <a href="q3http.html#requestFinished">requestFinished</a>(), <a href="q3http.html#error">error</a>(), and <a href="q3http.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="q3http.html#Error-enum">Error</a> Q3Http::error () const</h3>
+<p>Returns the last error that occurred. This is useful to find out what happened when receiving a <a href="q3http.html#requestFinished">requestFinished</a>() or a <a href="q3http.html#done">done</a>() signal with the <tt>error</tt> argument <tt>true</tt>.</p>
+<p>If you start a new request, the error status is reset to <tt>NoError</tt>.</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> Q3Http::errorString () const</h3>
+<p>Returns a human-readable description of the last error that occurred. This is useful to present a error message to the user when receiving a <a href="q3http.html#requestFinished">requestFinished</a>() or a <a href="q3http.html#done">done</a>() signal with the <tt>error</tt> argument <tt>true</tt>.</p>
+<h3 class="fn"><a name="get"></a>int Q3Http::get ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, <a href="qiodevice.html">QIODevice</a> * <i>to</i> = 0 )</h3>
+<p>Sends a get request for <i>path</i> to the server set by <a href="q3http.html#setHost">setHost</a>() or as specified in the constructor.</p>
+<p><i>path</i> must be an absolute path like <tt>/index.html</tt> or an absolute URI like <tt>http:<span class="comment">//</span>www.trolltech.com/index.html</tt>.</p>
+<p>If the IO device <i>to</i> is 0 the <a href="q3http.html#readyRead">readyRead</a>() signal is emitted every time new content data is available to read.</p>
+<p>If the IO device <i>to</i> is not 0, the content data of the response is written directly to the device. Make sure that the <i>to</i> pointer is valid for the duration of the operation (it is safe to delete it when the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted).</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#setHost">setHost</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="hasPendingRequests"></a>bool Q3Http::hasPendingRequests () const</h3>
+<p>Returns true if there are any requests scheduled that have not yet been executed; otherwise returns false.</p>
+<p>The request that is being executed is <i>not</i> considered as a scheduled request.</p>
+<p>See also <a href="q3http.html#clearPendingRequests">clearPendingRequests</a>(), <a href="q3http.html#currentId">currentId</a>(), and <a href="q3http.html#currentRequest">currentRequest</a>().</p>
+<h3 class="fn"><a name="head"></a>int Q3Http::head ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )</h3>
+<p>Sends a header request for <i>path</i> to the server set by <a href="q3http.html#setHost">setHost</a>() or as specified in the constructor.</p>
+<p><i>path</i> must be an absolute path like <tt>/index.html</tt> or an absolute URI like <tt>http:<span class="comment">//</span>www.trolltech.com/index.html</tt>.</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#setHost">setHost</a>(), <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="post"></a>int Q3Http::post ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, <a href="qiodevice.html">QIODevice</a> * <i>data</i>, <a href="qiodevice.html">QIODevice</a> * <i>to</i> = 0 )</h3>
+<p>Sends a post request for <i>path</i> to the server set by <a href="q3http.html#setHost">setHost</a>() or as specified in the constructor.</p>
+<p><i>path</i> must be an absolute path like <tt>/index.html</tt> or an absolute URI like <tt>http:<span class="comment">//</span>www.trolltech.com/index.html</tt>.</p>
+<p>The incoming data comes via the <i>data</i> IO device.</p>
+<p>If the IO device <i>to</i> is 0 the <a href="q3http.html#readyRead">readyRead</a>() signal is emitted every time new content data is available to read.</p>
+<p>If the IO device <i>to</i> is not 0, the content data of the response is written directly to the device. Make sure that the <i>to</i> pointer is valid for the duration of the operation (it is safe to delete it when the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted).</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#setHost">setHost</a>(), <a href="q3http.html#get">get</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="post-2"></a>int Q3Http::post ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, <a href="qiodevice.html">QIODevice</a> * <i>to</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>data</i> is used as the content data of the HTTP request.</p>
+<h3 class="fn"><a name="readAll"></a><a href="qbytearray.html">QByteArray</a> Q3Http::readAll ()</h3>
+<p>Reads all the bytes from the response content and returns them.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#readyRead">readyRead</a>(), <a href="q3http.html#bytesAvailable">bytesAvailable</a>(), and <a href="q3http.html#readBlock">readBlock</a>().</p>
+<h3 class="fn"><a name="readBlock"></a><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> Q3Http::readBlock ( char * <i>data</i>, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>maxlen</i> )</h3>
+<p>Reads <i>maxlen</i> bytes from the response content into <i>data</i> and returns the number of bytes read. Returns -1 if an error occurred.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#readyRead">readyRead</a>(), <a href="q3http.html#bytesAvailable">bytesAvailable</a>(), and <a href="q3http.html#readAll">readAll</a>().</p>
+<h3 class="fn"><a name="readyRead"></a>void Q3Http::readyRead ( const <a href="q3httpresponseheader.html">Q3HttpResponseHeader</a> &amp; <i>resp</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when there is new response data to read.</p>
+<p>If you specified a device in the request where the data should be written to, then this signal is <i>not</i> emitted; instead the data is written directly to the device.</p>
+<p>The response header is passed in <i>resp</i>.</p>
+<p>You can read the data with the <a href="q3http.html#readAll">readAll</a>() or <a href="q3http.html#readBlock">readBlock</a>() functions</p>
+<p>This signal is useful if you want to process the data in chunks as soon as it becomes available. If you are only interested in the complete data, just connect to the <a href="q3http.html#requestFinished">requestFinished</a>() signal and read the data then instead.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#readAll">readAll</a>(), <a href="q3http.html#readBlock">readBlock</a>(), and <a href="q3http.html#bytesAvailable">bytesAvailable</a>().</p>
+<h3 class="fn"><a name="request"></a>int Q3Http::request ( const <a href="q3httprequestheader.html">Q3HttpRequestHeader</a> &amp; <i>header</i>, <a href="qiodevice.html">QIODevice</a> * <i>data</i> = 0, <a href="qiodevice.html">QIODevice</a> * <i>to</i> = 0 )</h3>
+<p>Sends a request to the server set by <a href="q3http.html#setHost">setHost</a>() or as specified in the constructor. Uses the <i>header</i> as the HTTP request header. You are responsible for setting up a header that is appropriate for your request.</p>
+<p>The incoming data comes via the <i>data</i> IO device.</p>
+<p>If the IO device <i>to</i> is 0 the <a href="q3http.html#readyRead">readyRead</a>() signal is emitted every time new content data is available to read.</p>
+<p>If the IO device <i>to</i> is not 0, the content data of the response is written directly to the device. Make sure that the <i>to</i> pointer is valid for the duration of the operation (it is safe to delete it when the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted).</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#setHost">setHost</a>(), <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="request-2"></a>int Q3Http::request ( const <a href="q3httprequestheader.html">Q3HttpRequestHeader</a> &amp; <i>header</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, <a href="qiodevice.html">QIODevice</a> * <i>to</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>data</i> is used as the content data of the HTTP request.</p>
+<h3 class="fn"><a name="requestFinished"></a>void Q3Http::requestFinished ( int <i>id</i>, bool <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when processing the request identified by <i>id</i> has finished. <i>error</i> is true if an error occurred during the processing; otherwise <i>error</i> is false.</p>
+<p>See also <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#done">done</a>(), <a href="q3http.html#error">error</a>(), and <a href="q3http.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="requestStarted"></a>void Q3Http::requestStarted ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when processing the request identified by <i>id</i> starts.</p>
+<p>See also <a href="q3http.html#requestFinished">requestFinished</a>() and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="responseHeaderReceived"></a>void Q3Http::responseHeaderReceived ( const <a href="q3httpresponseheader.html">Q3HttpResponseHeader</a> &amp; <i>resp</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the HTTP header of a server response is available. The header is passed in <i>resp</i>.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#request">request</a>(), and <a href="q3http.html#readyRead">readyRead</a>().</p>
+<h3 class="fn"><a name="setHost"></a>int Q3Http::setHost ( const <a href="qstring.html">QString</a> &amp; <i>hostname</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i> = 80 )</h3>
+<p>Sets the HTTP server that is used for requests to <i>hostname</i> on port <i>port</i>.</p>
+<p>The function does not block and returns immediately. The request is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3http.html#requestStarted">requestStarted</a>() and <a href="q3http.html#requestFinished">requestFinished</a>().</p>
+<p>When the request is started the <a href="q3http.html#requestStarted">requestStarted</a>() signal is emitted. When it is finished the <a href="q3http.html#requestFinished">requestFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#requestStarted">requestStarted</a>(), <a href="q3http.html#requestFinished">requestFinished</a>(), and <a href="q3http.html#done">done</a>().</p>
+<h3 class="fn"><a name="state"></a><a href="q3http.html#State-enum">State</a> Q3Http::state () const</h3>
+<p>Returns the current state of the object. When the state changes, the <a href="q3http.html#stateChanged">stateChanged</a>() signal is emitted.</p>
+<p>See also <a href="q3http.html#State-enum">State</a> and <a href="q3http.html#stateChanged">stateChanged</a>().</p>
+<h3 class="fn"><a name="stateChanged"></a>void Q3Http::stateChanged ( int <i>state</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the state of the <a href="q3http.html">Q3Http</a> object changes. The argument <i>state</i> is the new state of the connection; it is one of the <a href="q3http.html#State-enum">State</a> values.</p>
+<p>This usually happens when a request is started, but it can also happen when the server closes the connection or when a call to <a href="q3http.html#closeConnection">closeConnection</a>() succeeded.</p>
+<p>See also <a href="q3http.html#get">get</a>(), <a href="q3http.html#post">post</a>(), <a href="q3http.html#head">head</a>(), <a href="q3http.html#request">request</a>(), <a href="q3http.html#closeConnection">closeConnection</a>(), <a href="q3http.html#state">state</a>(), and <a href="q3http.html#State-enum">State</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

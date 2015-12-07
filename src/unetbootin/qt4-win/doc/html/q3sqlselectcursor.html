@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/sql/q3sqlselectcursor.cpp -->
+<head>
+  <title>Qt 4.4: Q3SqlSelectCursor Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3SqlSelectCursor Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3SqlSelectCursor class provides browsing of general SQL SELECT statements. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3SqlSelectCursor&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsqlselectcursor">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3sqlcursor.html">Q3SqlCursor</a>.</p>
+<ul>
+<li><a href="q3sqlselectcursor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3sqlselectcursor.html#Q3SqlSelectCursor">Q3SqlSelectCursor</a></b> ( const QString &amp; <i>query</i> = QString(), QSqlDatabase <i>db</i> = QSqlDatabase() )</li>
+<li><div class="fn"/><b><a href="q3sqlselectcursor.html#Q3SqlSelectCursor-2">Q3SqlSelectCursor</a></b> ( const Q3SqlSelectCursor &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="q3sqlselectcursor.html#dtor.Q3SqlSelectCursor">~Q3SqlSelectCursor</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>43 public functions inherited from <a href="q3sqlcursor.html#public-functions">Q3SqlCursor</a></li>
+<li><div class="fn"/>28 public functions inherited from <a href="qsqlrecord.html#public-functions">QSqlRecord</a></li>
+<li><div class="fn"/>38 public functions inherited from <a href="qsqlquery.html#public-functions">QSqlQuery</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual int <b><a href="q3sqlselectcursor.html#update">update</a></b> ( const QString &amp; <i>filter</i>, bool <i>invalidate</i> = true )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="q3sqlcursor.html#protected-functions">Q3SqlCursor</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3SqlSelectCursor class provides browsing of general SQL SELECT statements.</p>
+<p>Q3SqlSelectCursor is a convenience class that makes it possible to display result sets from general SQL <tt>SELECT</tt> statements in data-aware Qt widgets. Q3SqlSelectCursor is read-only and does not support <tt>INSERT</tt>, <tt>UPDATE</tt> or <tt>DELETE</tt> operations.</p>
+<p>Pass the query in at construction time, or use the <a href="q3sqlcursor.html#exec">Q3SqlSelectCursor::exec</a>() function.</p>
+<p>Example:</p>
+<pre>     ...
+     Q3SqlSelectCursor* cur = new Q3SqlSelectCursor(&quot;SELECT id, firstname, lastname FROM author&quot;);
+     Q3DataTable* table = new Q3DataTable(this);
+     table-&gt;setSqlCursor(cur, true, true);
+     table-&gt;refresh();
+     ...
+     cur-&gt;exec(&quot;SELECT * FROM books&quot;);
+     table-&gt;refresh();
+     ...</pre>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3SqlSelectCursor"></a>Q3SqlSelectCursor::Q3SqlSelectCursor ( const <a href="qstring.html">QString</a> &amp; <i>query</i> = QString(), <a href="qsqldatabase.html">QSqlDatabase</a> <i>db</i> = QSqlDatabase() )</h3>
+<p>Constructs a read only cursor on database <i>db</i> using the query <i>query</i>.</p>
+<h3 class="fn"><a name="Q3SqlSelectCursor-2"></a>Q3SqlSelectCursor::Q3SqlSelectCursor ( const Q3SqlSelectCursor &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i></p>
+<h3 class="fn"><a name="dtor.Q3SqlSelectCursor"></a>Q3SqlSelectCursor::~Q3SqlSelectCursor ()</h3>
+<p>Destroys the object and frees any allocated resources</p>
+<h3 class="fn"><a name="update"></a>int Q3SqlSelectCursor::update ( const <a href="qstring.html">QString</a> &amp; <i>filter</i>, bool <i>invalidate</i> = true )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Updates the database with the current contents of the cursor edit buffer using the specified <i>filter</i>. Returns the number of records which were updated. For error information, use <a href="qsqlquery.html#lastError">lastError</a>().</p>
+<p>Only records which meet the filter criteria are updated, otherwise all records in the table are updated.</p>
+<p>If <i>invalidate</i> is true (the default), the cursor can no longer be navigated. A new select() call must be made before you can move to a valid record.</p>
+<p>Reimplemented from <a href="q3sqlcursor.html#update-2">Q3SqlCursor</a>.</p>
+<p>See also <a href="q3sqlcursor.html#update">Q3SqlCursor::update</a>(), <a href="q3sqlcursor.html#primeUpdate">primeUpdate</a>(), <a href="q3sqlcursor.html#setMode">setMode</a>(), and <a href="qsqlquery.html#lastError">lastError</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

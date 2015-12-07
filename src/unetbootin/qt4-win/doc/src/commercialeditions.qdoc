@@ -1,0 +1,162 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Documentation on the commercial editions.
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page commercialeditions.html
+    \title Qt Commercial Editions
+    \ingroup licensing
+    \brief Information about the license and features of the Commercial Edition.
+
+    \keyword Qt Console Edition
+    \keyword Qt Desktop Edition
+    \keyword Qt Desktop Light Edition
+
+    Several editions of Qt are available under a commercial license:
+    Qt Console Edition, Qt Desktop Light Edition, and Qt Desktop
+    Edition.
+
+    You may write commercial, proprietary, or otherwise non-free
+    software \e only if you have purchased a commercial edition of
+    Qt. If you purchase a commercial edition, you are entitled to
+    technical support and upgrades.
+
+    If you want to develop Free or Open Source software for release
+    using a recognized Open Source license, you can use the \l{Qt
+    Open Source Edition}.
+
+    The table below summarizes the differences between the three
+    commercial editions:
+
+    \table 75%
+    \header \o Features                      \o{3,1} Editions
+    \header \o                               \o Qt Console \o Qt Desktop Light \o Qt Desktop
+    \row    \o \l{QtCore}{Qt Core classes}   \o \bold{X}   \o \bold{X}         \o \bold{X}
+    \row    \o \l{QtGui}{Qt GUI classes}     \o            \o \bold{X}         \o \bold{X}
+    \row    \o \l{QtNetwork}{Networking}     \o \bold{X}   \o                  \o \bold{X}
+    \row    \o \l{QtOpenGL}{OpenGL}          \o            \o                  \o \bold{X}
+    \row    \o \l{QtScript}{Scripting}       \o \bold{X}   \o                  \o \bold{X}
+    \row    \o \l{QtSql}{Database/SQL}       \o \bold{X}   \o                  \o \bold{X}
+    \row    \o \l{QtSvg}{SVG}                \o            \o                  \o \bold{X}
+    \row    \o \l{QtXml}{XML}                \o \bold{X}   \o                  \o \bold{X}
+    \row    \o \l{Qt3Support}{Qt 3 Support}  \o            \o \bold{(X)}       \o \bold{X}
+    \row    \o \l{QtAssistant}{Help system}  \o            \o                  \o \bold{X}
+    \row    \o \l{QtDesigner}{\QD extension classes}
+                                             \o            \o                  \o \bold{X}
+    \row    \o \l{QtTest}{Unit testing framework}
+                                             \o \bold{X}   \o \bold{X}         \o \bold{X}
+    \row    \o \l{QtUiTools}{Run-time form handling}
+                                             \o            \o                  \o \bold{X}
+    \row    \o \l{ActiveQt}                  \o            \o                  \o \bold{X}
+    \endtable
+
+    \bold{(X)} The Qt Desktop Light Edition contains selected classes from the Qt3Support
+    module corresponding to the functionality available in the Qt 3 Professional Edition.
+
+    Lists of the classes available in each edition are available on the
+    following pages:
+
+    \list
+    \o \l{Qt Console Edition Classes}
+    \o \l{Qt Desktop Light Edition Classes}
+    \o \l{Qt Desktop Edition Classes}
+    \endlist
+
+    Please see the \l{Qt 4 Supported Platforms}{list of supported
+    platforms} for up-to-date information about the various platforms
+    and compilers that Qt supports.
+
+    On the Trolltech web site, you can find a
+    \l{Qt Licensing Overview} and information on \l{Qt License Pricing}
+    for commercial editions of Qt and other Trolltech products.
+
+    To purchase, please visit the \l{How to Order}{online order
+    form}.
+
+    For further information and assistance, please contact Trolltech
+    sales.
+
+    Email: \l{mailto:sales@trolltech.com}{sales@trolltech.com}.
+
+    Phone, U.S. office (for North America): \bold{1-650-813-1676}.
+
+    Phone, Norway office (for the rest of the world): \bold{+47 21 60
+    48 00}.
+*/
+
+/*!
+    \page console-edition-classes.html
+    \title Qt Console Edition Classes
+    \ingroup classlists
+
+    \generatelist{classesbyedition Console}
+*/
+
+/*!
+    \page desktop-edition-classes.html
+    \title Qt Desktop Edition Classes
+    \ingroup classlists
+
+    \generatelist{classesbyedition Desktop}
+*/
+
+/*!
+    \page desktop-light-edition-classes.html
+    \title Qt Desktop Light Edition Classes
+    \ingroup classlists
+
+    \generatelist{classesbyedition DesktopLight}
+*/

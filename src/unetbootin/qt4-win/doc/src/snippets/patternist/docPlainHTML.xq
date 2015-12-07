@@ -1,0 +1,1 @@
+doc("myPlainHTML.html")/body

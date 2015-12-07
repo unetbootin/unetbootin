@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qabstractitemmodel.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractListModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractListModel Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAbstractListModel class provides an abstract model that can be subclassed to create one-dimensional list models. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractListModel&gt;</pre><p>Inherits <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>Inherited by <a href="qstringlistmodel.html">QStringListModel</a>.</p>
+<ul>
+<li><a href="qabstractlistmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractlistmodel.html#QAbstractListModel">QAbstractListModel</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qabstractlistmodel.html#dtor.QAbstractListModel">~QAbstractListModel</a></b> ()</li>
+<li><div class="fn"/>virtual QModelIndex <b><a href="qabstractlistmodel.html#index">index</a></b> ( int <i>row</i>, int <i>column</i> = 0, const QModelIndex &amp; <i>parent</i> = QModelIndex() ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractListModel class provides an abstract model that can be subclassed to create one-dimensional list models.</p>
+<p>QAbstractListModel provides a standard interface for models that represent their data as a simple non-hierarchical sequence of items. It is not used directly, but must be subclassed.</p>
+<p>Since the model provides a more specialized interface than <a href="qabstractitemmodel.html">QAbstractItemModel</a>, it is not suitable for use with tree views; you will need to subclass <a href="qabstractitemmodel.html">QAbstractItemModel</a> if you want to provide a model for that purpose. If you need to use a number of list models to manage data, it may be more appropriate to subclass <a href="qabstracttablemodel.html">QAbstractTableModel</a> class instead.</p>
+<p>Simple models can be created by subclassing this class and implementing the minimum number of required functions. For example, we could implement a simple read-only <a href="qstringlist.html">QStringList</a>-based model that provides a list of strings to a <a href="qlistview.html">QListView</a> widget. In such a case, we only need to implement the <a href="qabstractitemmodel.html#rowCount">rowCount</a>() function to return the number of items in the list, and the <a href="qabstractitemmodel.html#data">data</a>() function to retrieve items from the list.</p>
+<p>Since the model represents a one-dimensional structure, the <a href="qabstractitemmodel.html#rowCount">rowCount</a>() function returns the total number of items in the model. The <a href="qabstractitemmodel.html#columnCount">columnCount</a>() function is implemented for interoperability with all kinds of views, but by default informs views that the model contains only one column.</p>
+<a name="subclassing"></a>
+<h3>Subclassing</h3>
+<p><b>Note:</b> Some general guidelines for subclassing models are available in the <a href="model-view-model-subclassing.html">Model Subclassing Reference</a>.</p>
+<p>When subclassing QAbstractListModel, you must provide implementations of the <a href="qabstractitemmodel.html#rowCount">rowCount</a>() and <a href="qabstractitemmodel.html#data">data</a>() functions. Well behaved models also provide a <a href="qabstractitemmodel.html#headerData">headerData</a>() implementation.</p>
+<p>For editable list models, you must also provide an implementation of <a href="qabstractitemmodel.html#setData">setData</a>(), implement the <a href="qabstractitemmodel.html#flags">flags</a>() function so that it returns a value containing <a href="qt.html#ItemFlag-enum">Qt::ItemIsEditable</a>.</p>
+<p>Note that QAbstractListModel provides a default implementation of <a href="qabstractitemmodel.html#columnCount">columnCount</a>() that informs views that there is only a single column of items in this model.</p>
+<p>Models that provide interfaces to resizable list-like data structures can provide implementations of <a href="qabstractitemmodel.html#insertRows">insertRows</a>() and <a href="qabstractitemmodel.html#removeRows">removeRows</a>(). When implementing these functions, it is important to call the appropriate functions so that all connected views are aware of any changes:</p>
+<ul>
+<li>An <a href="qabstractitemmodel.html#insertRows">insertRows</a>() implementation must call <a href="qabstractitemmodel.html#beginInsertRows">beginInsertRows</a>() <i>before</i> inserting new rows into the data structure, and it must call <a href="qabstractitemmodel.html#endInsertRows">endInsertRows</a>() <i>immediately afterwards</i>.</li>
+<li>A <a href="qabstractitemmodel.html#removeRows">removeRows</a>() implementation must call <a href="qabstractitemmodel.html#beginRemoveRows">beginRemoveRows</a>() <i>before</i> the rows are removed from the data structure, and it must call <a href="qabstractitemmodel.html#endRemoveRows">endRemoveRows</a>() <i>immediately afterwards</i>.</li>
+</ul>
+<p>See also <a href="model-view-model.html">Model Classes</a>, <a href="model-view-model-subclassing.html">Model Subclassing Reference</a>, <a href="qabstractitemview.html">QAbstractItemView</a>, <a href="qabstracttablemodel.html">QAbstractTableModel</a>, and <a href="itemviews-puzzle.html">Item Views Puzzle Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractListModel"></a>QAbstractListModel::QAbstractListModel ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an abstract list model with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QAbstractListModel"></a>QAbstractListModel::~QAbstractListModel ()</h3>
+<p>Destroys the abstract list model.</p>
+<h3 class="fn"><a name="index"></a><a href="qmodelindex.html">QModelIndex</a> QAbstractListModel::index ( int <i>row</i>, int <i>column</i> = 0, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> = QModelIndex() ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the index of the data in <i>row</i> and <i>column</i> with <i>parent</i>.</p>
+<p>Reimplemented from <a href="qabstractitemmodel.html#index">QAbstractItemModel</a>.</p>
+<p>See also <a href="qabstractitemmodel.html#parent">parent</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

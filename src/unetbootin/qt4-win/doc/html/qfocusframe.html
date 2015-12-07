@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qfocusframe.cpp -->
+<head>
+  <title>Qt 4.4: QFocusFrame Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFocusFrame Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFocusFrame widget provides a focus frame which can be outside of a widget's normal paintable area. <a href="#details">More...</a></p>
+<pre> #include &lt;QFocusFrame&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qfocusframe-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfocusframe.html#QFocusFrame">QFocusFrame</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qfocusframe.html#dtor.QFocusFrame">~QFocusFrame</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qfocusframe.html#setWidget">setWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="qfocusframe.html#widget">widget</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qfocusframe.html#initStyleOption">initStyleOption</a></b> ( QStyleOption * <i>option</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFocusFrame widget provides a focus frame which can be outside of a widget's normal paintable area.</p>
+<p>Normally an application will not need to create its own QFocusFrame as <a href="qstyle.html">QStyle</a> will handle this detail for you. A style writer can optionally use a QFocusFrame to have a focus area outside of the widget's paintable geometry. In this way space need not be reserved for the widget to have focus but only set on a <a href="qwidget.html">QWidget</a> with QFocusFrame::setWidget. It is, however, legal to create your own QFocusFrame on a custom widget and set its geometry manually via QWidget::setGeometry however you will not get auto-placement when the focused widget changes size or placement.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFocusFrame"></a>QFocusFrame::QFocusFrame ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qfocusframe.html">QFocusFrame</a>.</p>
+<p>The focus frame will not monitor <i>parent</i> for updates but rather can be placed manually or by using QFocusFrame::setWidget. A <a href="qfocusframe.html">QFocusFrame</a> sets <a href="qt.html#WidgetAttribute-enum">Qt::WA_NoChildEventsForParent</a> attribute; as a result the parent will not receive a <a href="qevent.html#Type-enum">QEvent::ChildInserted</a> event, this will make it possible to manually set the geometry of the <a href="qfocusframe.html">QFocusFrame</a> inside of a <a href="qsplitter.html">QSplitter</a> or other child event monitoring widget.</p>
+<p>See also <a href="qfocusframe.html#setWidget">QFocusFrame::setWidget</a>().</p>
+<h3 class="fn"><a name="dtor.QFocusFrame"></a>QFocusFrame::~QFocusFrame ()</h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QFocusFrame::initStyleOption ( <a href="qstyleoption.html">QStyleOption</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from this <a href="qfocusframe.html">QFocusFrame</a>. This method is useful for subclasses when they need a <a href="qstyleoption.html">QStyleOption</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<h3 class="fn"><a name="setWidget"></a>void QFocusFrame::setWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p><a href="qfocusframe.html">QFocusFrame</a> will track changes to <i>widget</i> and resize itself automatically. If the monitored widget's parent changes, <a href="qfocusframe.html">QFocusFrame</a> will follow the widget and place itself around the widget automatically. If the monitored widget is deleted, <a href="qfocusframe.html">QFocusFrame</a> will set it to zero.</p>
+<p>See also <a href="qfocusframe.html#widget">QFocusFrame::widget</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QFocusFrame::widget () const</h3>
+<p>Returns the currently monitored widget for automatically resize and update.</p>
+<p>See also <a href="qfocusframe.html#setWidget">QFocusFrame::setWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

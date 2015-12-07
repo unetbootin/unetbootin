@@ -1,0 +1,12 @@
+iwmake is the tool used to generate the Qt installer binaries.
+
+To be able to use it yourself create a config.default in the
+config/ directory. You can refer to config.default.sample to see
+which values need to be set within this file.
+
+Afterwards call "iwmake.bat mingw-opensource.conf" to create an
+installer package yourself.
+
+Note that the binary creation takes a lot of time and is very
+CPU-intensive as it recompiles the Qt source package among other
+steps.

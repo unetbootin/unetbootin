@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/extension/qextensionmanager.cpp -->
+<head>
+  <title>Qt 4.4: QExtensionManager Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QExtensionManager Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QExtensionManager class provides extension management facilities for Qt Designer. <a href="#details">More...</a></p>
+<pre> #include &lt;QExtensionManager&gt;</pre><p>Inherits <a href="qobject.html">QObject</a> and <a href="qabstractextensionmanager.html">QAbstractExtensionManager</a>.</p>
+<ul>
+<li><a href="qextensionmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qextensionmanager.html#QExtensionManager">QExtensionManager</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qextensionmanager.html#dtor.QExtensionManager">~QExtensionManager</a></b> ()</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qextensionmanager.html#extension">extension</a></b> ( QObject * <i>object</i>, const QString &amp; <i>iid</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qextensionmanager.html#registerExtensions">registerExtensions</a></b> ( QAbstractExtensionFactory * <i>factory</i>, const QString &amp; <i>iid</i> = QString() )</li>
+<li><div class="fn"/>virtual void <b><a href="qextensionmanager.html#unregisterExtensions">unregisterExtensions</a></b> ( QAbstractExtensionFactory * <i>factory</i>, const QString &amp; <i>iid</i> = QString() )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qabstractextensionmanager.html#public-functions">QAbstractExtensionManager</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>T <b><a href="qextensionmanager.html#qt_extension">qt_extension</a></b> ( QAbstractExtensionManager * <i>manager</i>, QObject * <i>object</i> )</li>
+</ul>
+<a name="macros"></a>
+<h3>Macros</h3>
+<ul>
+<li><div class="fn"/><b><a href="qextensionmanager.html#Q_DECLARE_EXTENSION_INTERFACE">Q_DECLARE_EXTENSION_INTERFACE</a></b> (  <i>ExtensionName</i>,  <i>Identifier</i> )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QExtensionManager class provides extension management facilities for Qt Designer.</p>
+<p>In <i>Qt Designer</i> the extensions are not created until they are required. For that reason, when implementing an extension, you must also create a <a href="qextensionfactory.html">QExtensionFactory</a>, i.e a class that is able to make an instance of your extension, and register it using <i>Qt Designer</i>'s extension manager.</p>
+<p>The registration of an extension factory is typically made in the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function:</p>
+<pre>         void MyPlugin::initialize(QDesignerFormEditorInterface *formEditor)
+         {
+             if (initialized)
+                 return;
+
+             QExtensionManager *manager = formEditor-&gt;extensionManager();
+             Q_ASSERT(manager != 0);
+
+             manager-&gt;registerExtensions(new MyExtensionFactory(manager),
+                                         Q_TYPEID(QDesignerTaskMenuExtension));
+
+             initialized = true;
+         }</pre>
+<p>The QExtensionManager is not intended to be instantiated directly. You can retrieve an interface to <i>Qt Designer</i>'s extension manager using the <a href="qdesignerformeditorinterface.html#extensionManager">QDesignerFormEditorInterface::extensionManager</a>() function. A pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object (<tt>formEditor</tt> in the example above) is provided by the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function's parameter. When implementing a custom widget plugin, you must subclass the <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> to expose your plugin to <i>Qt Designer</i>.</p>
+<p>Then, when an extension is required, <i>Qt Designer</i>'s extension manager will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until the first one that is able to create the requested extension for the selected object, is found. This factory will then make an instance of the extension.</p>
+<p>There are four available types of extensions in <i>Qt Designer</i>: <a href="qdesignercontainerextension.html">QDesignerContainerExtension</a> , <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a>, <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a> and <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a>. <i>Qt Designer</i>'s behavior is the same whether the requested extension is associated with a container, a member sheet, a property sheet or a task menu.</p>
+<p>For a complete example using the QExtensionManager class, see the <a href="designer-taskmenuextension.html">Task Menu Extension example</a>. The example shows how to create a custom widget plugin for Qt Designer, and how to to use the <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a> class to add custom items to <i>Qt Designer</i>'s task menu.</p>
+<p>See also <a href="qextensionfactory.html">QExtensionFactory</a> and <a href="qabstractextensionmanager.html">QAbstractExtensionManager</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QExtensionManager"></a>QExtensionManager::QExtensionManager ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an extension manager with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QExtensionManager"></a>QExtensionManager::~QExtensionManager ()</h3>
+<p>Destroys the extension manager</p>
+<h3 class="fn"><a name="extension"></a><a href="qobject.html">QObject</a> * QExtensionManager::extension ( <a href="qobject.html">QObject</a> * <i>object</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the extension specified by <i>iid</i>, for the given <i>object</i>.</p>
+<p>Reimplemented from <a href="qabstractextensionmanager.html#extension">QAbstractExtensionManager</a>.</p>
+<h3 class="fn"><a name="registerExtensions"></a>void QExtensionManager::registerExtensions ( <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a> * <i>factory</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> = QString() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Register the extension specified by the given <i>factory</i> and extension identifier <i>iid</i>.</p>
+<p>Reimplemented from <a href="qabstractextensionmanager.html#registerExtensions">QAbstractExtensionManager</a>.</p>
+<h3 class="fn"><a name="unregisterExtensions"></a>void QExtensionManager::unregisterExtensions ( <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a> * <i>factory</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> = QString() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Unregister the extension specified by the given <i>factory</i> and extension identifier <i>iid</i>.</p>
+<p>Reimplemented from <a href="qabstractextensionmanager.html#unregisterExtensions">QAbstractExtensionManager</a>.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="qt_extension"></a>T qt_extension ( <a href="qabstractextensionmanager.html">QAbstractExtensionManager</a> * <i>manager</i>, <a href="qobject.html">QObject</a> * <i>object</i> )</h3>
+<p>Returns the extension of the given <i>object</i> cast to type T if the object is of type T (or of a subclass); otherwise returns 0. The extension is retrieved using the given extension <i>manager</i>.</p>
+<pre>        QDesignerPropertySheetExtension *propertySheet;
+        QExtensionManager manager = formEditor-&gt;extensionManager();
+
+        propertySheet = qt_extension&lt;QDesignerPropertySheetExtension*&gt;(manager, widget);
+
+        if(propertySheet) {...}</pre>
+<p>When implementing a custom widget plugin, a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object (<tt>formEditor</tt>) is provided by the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function's parameter.</p>
+<p>If the widget in the example above doesn't have a defined <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a>, <tt>propertySheet</tt> will be a null pointer.</p>
+<hr />
+<h2>Macro Documentation</h2>
+<h3 class="fn"><a name="Q_DECLARE_EXTENSION_INTERFACE"></a>Q_DECLARE_EXTENSION_INTERFACE (  <i>ExtensionName</i>,  <i>Identifier</i> )</h3>
+<p>Associates the given <i>Identifier</i> (a string literal) to the extension class called <i>ExtensionName</i>. The <i>Identifier</i> must be unique. For example:</p>
+<pre>    Q_DECLARE_EXTENSION_INTERFACE(MyExtension, &quot;com.mycompany.myproduct.myextension&quot;)</pre>
+<p>Using the company and product names is a good way to ensure uniqueness of the identifier.</p>
+<p>When implementing a custom extension class, you must use Q_DECLARE_EXTENSION_INTERFACE() to enable usage of the <a href="qextensionmanager.html#qt_extension">qt_extension</a>() function. The macro is normally located right after the class definition for <i>ExtensionName</i>, in the associated header file.</p>
+<p>See also <a href="qtplugin.html#Q_DECLARE_INTERFACE">Q_DECLARE_INTERFACE</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

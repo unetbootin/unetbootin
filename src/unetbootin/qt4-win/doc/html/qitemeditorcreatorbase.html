@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qitemeditorfactory.cpp -->
+<head>
+  <title>Qt 4.4: QItemEditorCreatorBase Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QItemEditorCreatorBase Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QItemEditorCreatorBase class provides an abstract base class that must be subclassed when implementing new item editor creators. <a href="#details">More...</a></p>
+<pre> #include &lt;QItemEditorCreatorBase&gt;</pre><p>Inherited by <a href="qitemeditorcreator.html">QItemEditorCreator</a> and <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qitemeditorcreatorbase-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qitemeditorcreatorbase.html#dtor.QItemEditorCreatorBase">~QItemEditorCreatorBase</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qitemeditorcreatorbase.html#createWidget">createWidget</a></b> ( QWidget * <i>parent</i> ) const = 0</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qitemeditorcreatorbase.html#valuePropertyName">valuePropertyName</a></b> () const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QItemEditorCreatorBase class provides an abstract base class that must be subclassed when implementing new item editor creators.</p>
+<p>QItemEditorCreatorBase objects are specialized widget factories that provide editor widgets for one particular <a href="qvariant.html">QVariant</a> data type. They are used by <a href="qitemeditorfactory.html">QItemEditorFactory</a> to create editors for <a href="qitemdelegate.html">QItemDelegate</a>s. Creator bases must be registered with <a href="qitemeditorfactory.html#registerEditor">QItemEditorFactory::registerEditor</a>().</p>
+<p>An editor should provide a user property for the data it edits. QItemDelagates can then access the property using Qt's <a href="metaobjects.html">meta-object system</a> to set and retrieve the editing data. A property is set as the user property with the USER keyword:</p>
+<pre>         Q_PROPERTY(QColor color READ color WRITE setColor USER true)</pre>
+<p>If the editor does not provide a user property, it must return the name of the property from <a href="qitemeditorcreatorbase.html#valuePropertyName">valuePropertyName</a>(); delegates will then use the name to access the property. If a user property exists, item delegates will not call <a href="qitemeditorcreatorbase.html#valuePropertyName">valuePropertyName</a>().</p>
+<p><a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a> is a convenience template class that can be used to register widgets without the need to subclass QItemEditorCreatorBase.</p>
+<p>See also <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a>, <a href="qitemeditorfactory.html">QItemEditorFactory</a>, <a href="model-view-programming.html">Model/View Programming</a>, and <a href="itemviews-coloreditorfactory.html">Color Editor Factory Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QItemEditorCreatorBase"></a>QItemEditorCreatorBase::~QItemEditorCreatorBase ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the editor creator object.</p>
+<h3 class="fn"><a name="createWidget"></a><a href="qwidget.html">QWidget</a> * QItemEditorCreatorBase::createWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns an editor widget with the given <i>parent</i>.</p>
+<p>When implementing this function in subclasses of this class, you must construct and return new editor widgets with the parent widget specified.</p>
+<h3 class="fn"><a name="valuePropertyName"></a><a href="qbytearray.html">QByteArray</a> QItemEditorCreatorBase::valuePropertyName () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the name of the property used to get and set values in the creator's editor widgets.</p>
+<p>When implementing this function in subclasses, you must ensure that the editor widget's property specified by this function can accept the type the creator is registered for. For example, a creator which constructs <a href="qcheckbox.html">QCheckBox</a> widgets to edit boolean values would return the <a href="qabstractbutton.html#checkable-prop">checkable</a> property name from this function, and must be registered in the item editor factory for the <a href="qvariant.html#Type-enum">QVariant::Bool</a> type.</p>
+<p>Note: Since Qt 4.2 the item delegates query the user property of widgets, and only call this function if the widget has no user property. You can override this behavior by reimplementing <a href="qabstractitemdelegate.html#setModelData">QAbstractItemDelegate::setModelData</a>() and <a href="qabstractitemdelegate.html#setEditorData">QAbstractItemDelegate::setEditorData</a>().</p>
+<p>See also <a href="qmetaobject.html#userProperty">QMetaObject::userProperty</a>() and <a href="qitemeditorfactory.html#registerEditor">QItemEditorFactory::registerEditor</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

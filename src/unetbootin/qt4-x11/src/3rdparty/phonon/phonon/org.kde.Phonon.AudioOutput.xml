@@ -1,0 +1,32 @@
+<!DOCTYPE node PUBLIC "-//freedesktop//DTD D-BUS Object Introspection 1.0//EN" "http://www.freedesktop.org/standards/dbus/1.0/introspect.dtd">
+<node>
+  <interface name="org.kde.Phonon.AudioOutput">
+    <property name="volume" type="d" access="readwrite"/>
+    <property name="muted" type="b" access="readwrite"/>
+    <property name="outputDeviceIndex" type="i" access="readwrite"/>
+    <signal name="volumeChanged">
+      <arg type="d" direction="out"/>
+    </signal>
+    <signal name="mutedChanged">
+      <arg type="b" direction="out"/>
+    </signal>
+    <signal name="outputDeviceIndexChanged">
+      <arg type="i" direction="out"/>
+    </signal>
+    <signal name="nameChanged">
+      <arg name="newName" type="s" direction="out"/>
+    </signal>
+    <signal name="newOutputAvailable">
+      <arg name="service" type="s" direction="out"/>
+      <arg name="path" type="s" direction="out"/>
+    </signal>
+    <signal name="outputDestroyed">
+    </signal>
+    <method name="category">
+      <arg type="s" direction="out"/>
+    </method>
+    <method name="name">
+      <arg type="s" direction="out"/>
+    </method>
+  </interface>
+</node>

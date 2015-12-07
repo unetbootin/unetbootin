@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/lineedits.qdoc -->
+<head>
+  <title>Qt 4.4: Line Edits Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Line Edits Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-lineedits-window-cpp.html">widgets/lineedits/window.cpp</a></li>
+<li><a href="widgets-lineedits-window-h.html">widgets/lineedits/window.h</a></li>
+<li><a href="widgets-lineedits-main-cpp.html">widgets/lineedits/main.cpp</a></li>
+<li><a href="widgets-lineedits-lineedits-pro.html">widgets/lineedits/lineedits.pro</a></li>
+</ul>
+<p>The Line Edits example demonstrates the many ways that <a href="qlineedit.html">QLineEdit</a> can be used, and shows the effects of various properties and validators on the input and output supplied by the user.</p>
+<p align="center"><img src="images/lineedits-example.png" /></p><p>The example consists of a single <tt>Window</tt> class, containing a selection of line edits with different input constraints and display properties that can be changed by selecting items from comboboxes. Presenting these together helps developers choose suitable properties to use with line edits, and makes it easy to compare the effects of each validator on user input.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class inherits <a href="qwidget.html">QWidget</a> and contains a constructor and several slots:</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ public slots:
+     void echoChanged(int);
+     void validatorChanged(int);
+     void alignmentChanged(int);
+     void inputMaskChanged(int);
+     void accessChanged(int);
+
+ private:
+     QLineEdit *echoLineEdit;
+     QLineEdit *validatorLineEdit;
+     QLineEdit *alignmentLineEdit;
+     QLineEdit *inputMaskLineEdit;
+     QLineEdit *accessLineEdit;
+ };</pre>
+<p>The slots are used to update the type of validator used for a given line edit when a new validator has been selected in the associated combobox. The line edits are stored in the window for use in these slots.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The <tt>Window</tt> constructor is used to set up the line edits, validators, and comboboxes, connect signals from the comboboxes to slots in the <tt>Window</tt> class, and arrange the child widgets in layouts.</p>
+<p>We begin by constructing a <a href="qgroupbox.html">group box</a> to hold a label, combobox, and line edit so that we can demonstrate the <a href="qlineedit.html#echoMode-prop">QLineEdit::echoMode</a> property:</p>
+<pre> Window::Window()
+ {
+     QGroupBox *echoGroup = new QGroupBox(tr(&quot;Echo&quot;));
+
+     QLabel *echoLabel = new QLabel(tr(&quot;Mode:&quot;));
+     QComboBox *echoComboBox = new QComboBox;
+     echoComboBox-&gt;addItem(tr(&quot;Normal&quot;));
+     echoComboBox-&gt;addItem(tr(&quot;Password&quot;));
+     echoComboBox-&gt;addItem(tr(&quot;PasswordEchoOnEdit&quot;));
+     echoComboBox-&gt;addItem(tr(&quot;No Echo&quot;));
+
+     echoLineEdit = new QLineEdit;
+     echoLineEdit-&gt;setFocus();</pre>
+<p>At this point, none of these widgets have been arranged in layouts. Eventually, the <tt>echoLabel</tt>, <tt>echoComboBox</tt>, and <tt>echoLineEdit</tt> will be placed in a vertical layout inside the <tt>echoGroup</tt> group box.</p>
+<p>Similarly, we construct group boxes and collections of widgets to show the effects of <a href="qintvalidator.html">QIntValidator</a> and <a href="qdoublevalidator.html">QDoubleValidator</a> on a line edit's contents:</p>
+<pre>     QGroupBox *validatorGroup = new QGroupBox(tr(&quot;Validator&quot;));
+
+     QLabel *validatorLabel = new QLabel(tr(&quot;Type:&quot;));
+     QComboBox *validatorComboBox = new QComboBox;
+     validatorComboBox-&gt;addItem(tr(&quot;No validator&quot;));
+     validatorComboBox-&gt;addItem(tr(&quot;Integer validator&quot;));
+     validatorComboBox-&gt;addItem(tr(&quot;Double validator&quot;));
+
+     validatorLineEdit = new QLineEdit;</pre>
+<p>Text alignment is demonstrated by another group of widgets:</p>
+<pre>     QGroupBox *alignmentGroup = new QGroupBox(tr(&quot;Alignment&quot;));
+
+     QLabel *alignmentLabel = new QLabel(tr(&quot;Type:&quot;));
+     QComboBox *alignmentComboBox = new QComboBox;
+     alignmentComboBox-&gt;addItem(tr(&quot;Left&quot;));
+     alignmentComboBox-&gt;addItem(tr(&quot;Centered&quot;));
+     alignmentComboBox-&gt;addItem(tr(&quot;Right&quot;));
+
+     alignmentLineEdit = new QLineEdit;</pre>
+<p><a href="qlineedit.html">QLineEdit</a> supports the use of <a href="qlineedit.html#inputMask-prop">input masks</a>. These only allow the user to type characters into the line edit that follow a simple specification. We construct a group of widgets to demonstrate a selection of predefined masks:</p>
+<pre>     QGroupBox *inputMaskGroup = new QGroupBox(tr(&quot;Input mask&quot;));
+
+     QLabel *inputMaskLabel = new QLabel(tr(&quot;Type:&quot;));
+     QComboBox *inputMaskComboBox = new QComboBox;
+     inputMaskComboBox-&gt;addItem(tr(&quot;No mask&quot;));
+     inputMaskComboBox-&gt;addItem(tr(&quot;Phone number&quot;));
+     inputMaskComboBox-&gt;addItem(tr(&quot;ISO date&quot;));
+     inputMaskComboBox-&gt;addItem(tr(&quot;License key&quot;));
+
+     inputMaskLineEdit = new QLineEdit;</pre>
+<p>Another useful feature of <a href="qlineedit.html">QLineEdit</a> is its ability to make its contents read-only. This property is used to control access to a line edit in the following group of widgets:</p>
+<pre>     QGroupBox *accessGroup = new QGroupBox(tr(&quot;Access&quot;));
+
+     QLabel *accessLabel = new QLabel(tr(&quot;Read-only:&quot;));
+     QComboBox *accessComboBox = new QComboBox;
+     accessComboBox-&gt;addItem(tr(&quot;False&quot;));
+     accessComboBox-&gt;addItem(tr(&quot;True&quot;));
+
+     accessLineEdit = new QLineEdit;</pre>
+<p>Now that all the child widgets have been constructed, we connect signals from the comboboxes to slots in the <tt>Window</tt> object:</p>
+<pre>     connect(echoComboBox, SIGNAL(activated(int)),
+             this, SLOT(echoChanged(int)));
+     connect(validatorComboBox, SIGNAL(activated(int)),
+             this, SLOT(validatorChanged(int)));
+     connect(alignmentComboBox, SIGNAL(activated(int)),
+             this, SLOT(alignmentChanged(int)));
+     connect(inputMaskComboBox, SIGNAL(activated(int)),
+             this, SLOT(inputMaskChanged(int)));
+     connect(accessComboBox, SIGNAL(activated(int)),
+             this, SLOT(accessChanged(int)));</pre>
+<p>Each of these connections use the <a href="qcombobox.html#activated">QComboBox::activated</a>() signal that supplies an integer to the slot. This will be used to efficiently make changes to the appropriate line edit in each slot.</p>
+<p>We place each combobox, line edit, and label in a layout for each group box, beginning with the layout for the <tt>echoGroup</tt> group box:</p>
+<pre>     QGridLayout *echoLayout = new QGridLayout;
+     echoLayout-&gt;addWidget(echoLabel, 0, 0);
+     echoLayout-&gt;addWidget(echoComboBox, 0, 1);
+     echoLayout-&gt;addWidget(echoLineEdit, 1, 0, 1, 2);
+     echoGroup-&gt;setLayout(echoLayout);</pre>
+<p>The other layouts are constructed in the same way:</p>
+<pre>     QGridLayout *validatorLayout = new QGridLayout;
+     validatorLayout-&gt;addWidget(validatorLabel, 0, 0);
+     validatorLayout-&gt;addWidget(validatorComboBox, 0, 1);
+     validatorLayout-&gt;addWidget(validatorLineEdit, 1, 0, 1, 2);
+     validatorGroup-&gt;setLayout(validatorLayout);
+
+     QGridLayout *alignmentLayout = new QGridLayout;
+     alignmentLayout-&gt;addWidget(alignmentLabel, 0, 0);
+     alignmentLayout-&gt;addWidget(alignmentComboBox, 0, 1);
+     alignmentLayout-&gt;addWidget(alignmentLineEdit, 1, 0, 1, 2);
+     alignmentGroup-&gt; setLayout(alignmentLayout);
+
+     QGridLayout *inputMaskLayout = new QGridLayout;
+     inputMaskLayout-&gt;addWidget(inputMaskLabel, 0, 0);
+     inputMaskLayout-&gt;addWidget(inputMaskComboBox, 0, 1);
+     inputMaskLayout-&gt;addWidget(inputMaskLineEdit, 1, 0, 1, 2);
+     inputMaskGroup-&gt;setLayout(inputMaskLayout);
+
+     QGridLayout *accessLayout = new QGridLayout;
+     accessLayout-&gt;addWidget(accessLabel, 0, 0);
+     accessLayout-&gt;addWidget(accessComboBox, 0, 1);
+     accessLayout-&gt;addWidget(accessLineEdit, 1, 0, 1, 2);
+     accessGroup-&gt;setLayout(accessLayout);</pre>
+<p>Finally, we place each group box in a grid layout for the <tt>Window</tt> object and set the window title:</p>
+<pre>     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(echoGroup, 0, 0);
+     layout-&gt;addWidget(validatorGroup, 1, 0);
+     layout-&gt;addWidget(alignmentGroup, 2, 0);
+     layout-&gt;addWidget(inputMaskGroup, 0, 1);
+     layout-&gt;addWidget(accessGroup, 1, 1);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Line Edits&quot;));
+ }</pre>
+<p>The slots respond to signals emitted when the comboboxes are changed by the user.</p>
+<p>When the combobox for the <b>Echo</b> group box is changed, the <tt>echoChanged()</tt> slot is called:</p>
+<pre> void Window::echoChanged(int index)
+ {
+     switch (index) {
+     case 0:
+         echoLineEdit-&gt;setEchoMode(QLineEdit::Normal);
+         break;
+     case 1:
+         echoLineEdit-&gt;setEchoMode(QLineEdit::Password);
+         break;
+     case 2:
+         echoLineEdit-&gt;setEchoMode(QLineEdit::PasswordEchoOnEdit);
+         break;
+     case 3:
+         echoLineEdit-&gt;setEchoMode(QLineEdit::NoEcho);
+     }
+ }</pre>
+<p>The slot updates the line edit in the same group box to use an echo mode that corresponds to the entry described in the combobox.</p>
+<p>When the combobox for the <b>Validator</b> group box is changed, the <tt>validatorChanged()</tt> slot is called:</p>
+<pre> void Window::validatorChanged(int index)
+ {
+     switch (index) {
+     case 0:
+         validatorLineEdit-&gt;setValidator(0);
+         break;
+     case 1:
+         validatorLineEdit-&gt;setValidator(new QIntValidator(
+             validatorLineEdit));
+         break;
+     case 2:
+         validatorLineEdit-&gt;setValidator(new QDoubleValidator(-999.0,
+             999.0, 2, validatorLineEdit));
+     }
+
+     validatorLineEdit-&gt;clear();
+ }</pre>
+<p>The slot either creates a new validator for the line edit to use, or it removes the validator in use by calling <a href="qlineedit.html#setValidator">QLineEdit::setValidator</a>() with a zero pointer. We clear the line edit in this case to ensure that the new validator is initially given valid input to work with.</p>
+<p>When the combobox for the <b>Alignment</b> group box is changed, the <tt>alignmentChanged()</tt> slot is called:</p>
+<pre> void Window::alignmentChanged(int index)
+ {
+     switch (index) {
+     case 0:
+         alignmentLineEdit-&gt;setAlignment(Qt::AlignLeft);
+         break;
+     case 1:
+         alignmentLineEdit-&gt;setAlignment(Qt::AlignCenter);
+         break;
+     case 2:
+         alignmentLineEdit-&gt;setAlignment(Qt::AlignRight);
+     }
+ }</pre>
+<p>This changes the way that text is displayed in the line edit to correspond with the description selected in the combobox.</p>
+<p>The <tt>inputMaskChanged()</tt> slot handles changes to the combobox in the <b>Input Mask</b> group box:</p>
+<pre> void Window::inputMaskChanged(int index)
+ {
+     switch (index) {
+     case 0:
+         inputMaskLineEdit-&gt;setInputMask(&quot;&quot;);
+         break;
+     case 1:
+         inputMaskLineEdit-&gt;setInputMask(&quot;+99 99 99 99 99;_&quot;);
+         break;
+     case 2:
+         inputMaskLineEdit-&gt;setInputMask(&quot;0000-00-00&quot;);
+         inputMaskLineEdit-&gt;setText(&quot;00000000&quot;);
+         inputMaskLineEdit-&gt;setCursorPosition(0);
+         break;
+     case 3:
+         inputMaskLineEdit-&gt;setInputMask(&quot;&gt;AAAAA-AAAAA-AAAAA-AAAAA-AAAAA;#&quot;);
+     }
+ }</pre>
+<p>Each entry in the relevant combobox is associated with an input mask. We set a new mask by calling the <a href="qwidget.html#setMask">QLineEdit::setMask</a>() function with a suitable string; the mask is disabled if an empty string is used.</p>
+<p>The <tt>accessChanged()</tt> slot handles changes to the combobox in the <b>Access</b> group box:</p>
+<pre> void Window::accessChanged(int index)
+ {
+     switch (index) {
+     case 0:
+         accessLineEdit-&gt;setReadOnly(false);
+         break;
+     case 1:
+         accessLineEdit-&gt;setReadOnly(true);
+     }
+ }</pre>
+<p>Here, we simply associate the <b>False</b> and <b>True</b> entries in the combobox with <tt>false</tt> and <tt>true</tt> values to be passed to <a href="qlineedit.html#readOnly-prop">QLineEdit::setReadOnly</a>(). This allows the user to enable and disable input to the line edit.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

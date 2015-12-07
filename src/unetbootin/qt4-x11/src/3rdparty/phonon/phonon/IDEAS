@@ -1,0 +1,70 @@
+MediaInfo class
+===============
+
+It might be nice to have a class that gives information about MediaSource
+objects without having to use MediaObject for it. Something like QFileInfo for
+QFile. MediaObject could also return a list of MediaInfo objects for all the
+MediaSource objects in the queue.
+
+Rationale: The app then can get info about length and substreams so that it can
+set up everything correctly for the next "file" in the queue.
+
+
+- on hotplug of a USB audio/video device:
+  1. If the device is plugged in for the first time
+    Check whether the backend now provides new device selections. If yes, open
+    up central config with the page that allows selection of the default
+    devices. Tell the user what new options are available.
+    Allow the user to set preference of devices: If device USB-Headset is
+    available use that, else use builtin speakers.
+
+ device info persistance
+=========================
+On device selections: should the user be presented with options that are
+currently not available? It might actually be confusing to select a device that
+is not usable at the moment.
+
+Some situations:
+(device A is always available)
+- user plugs device B
+- selects device B as default
+next day: device B unplugged
+- phonon falls back to device A as B is not available and shows a passive popup
+  informing the user about the fallback
+- user opens config dialog
+- device B still shows up as default
+- selects device A, closes dialog
+- opens dialog again
+- device B is gone...
+- user plugs device B
+- device B reappears
+
+The Backend has to provide the information about devices. Those can map directly
+to hardware or a soundserver or some other virtual device. The Backend has to
+have some unique identifier. For example the ALSA devices could be identified
+using the ALSA device names (either hw:0, hw:1 or aliases from asoundrc). OSS
+devices could be identified using /dev/dsp, /dev/dsp1 and so on.
+=> the backend internal uid is a string
+In the Frontend all that is needed is a name and a description of the device
+(both translated to the current locale) and a unique identifier to talk to the
+backend. This identifier could be the same as used internally by the Backend,
+but doesn't have to be.
+
+ "lowlevel" audio I/O
+======================
+ByteStream is a buffered stream, and as therefore completely useless for cases
+where an application wants to write audio data to the soundcard/-system with low
+latency.
+=> PcmInStream and PcmOutStream
+
+
+============================================================================
+= Ideas for "useless but nice" things (until somebody can convince me that =
+= they're useful)                                                          =
+============================================================================
+
+ Video Output
+==============
+Add another VideoOutput that can be used directly with QGraphicsView by creating
+a QGraphicsItem subclass.
+

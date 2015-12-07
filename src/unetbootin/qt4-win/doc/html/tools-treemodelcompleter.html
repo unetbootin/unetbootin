@@ -1,0 +1,271 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/treemodelcompleter.qdoc -->
+<head>
+  <title>Qt 4.4: Tree Model Completer Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Tree Model Completer Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-treemodelcompleter-mainwindow-cpp.html">tools/treemodelcompleter/mainwindow.cpp</a></li>
+<li><a href="tools-treemodelcompleter-mainwindow-h.html">tools/treemodelcompleter/mainwindow.h</a></li>
+<li><a href="tools-treemodelcompleter-treemodelcompleter-cpp.html">tools/treemodelcompleter/treemodelcompleter.cpp</a></li>
+<li><a href="tools-treemodelcompleter-treemodelcompleter-h.html">tools/treemodelcompleter/treemodelcompleter.h</a></li>
+<li><a href="tools-treemodelcompleter-main-cpp.html">tools/treemodelcompleter/main.cpp</a></li>
+<li><a href="tools-treemodelcompleter-treemodelcompleter-pro.html">tools/treemodelcompleter/treemodelcompleter.pro</a></li>
+<li><a href="tools-treemodelcompleter-treemodelcompleter-qrc.html">tools/treemodelcompleter/treemodelcompleter.qrc</a></li>
+</ul>
+<p>The Tree Model Completer example shows how to provide completion facilities for a hierarchical model, using a period as the separator to access Child, GrandChild and GrandGrandChild level objects.</p>
+<p align="center"><img src="images/treemodelcompleter-example.png" /></p><p>Similar to the <a href="tools-completer.html">Completer Example</a>, we provide <a href="qcombobox.html">QComboBox</a> objects to enable selection for completion mode and case sensitivity, as well as a <a href="qcheckbox.html">QCheckBox</a> for wrap completions.</p>
+<a name="the-resource-file"></a>
+<h2>The Resource File</h2>
+<p>The contents of the TreeModelCompleter is read from <i>treemodel.txt</i>. This file is embedded within the <i>treemodelcompleter.qrc</i> resource file, which contains the following:</p>
+<pre> &lt;!DOCTYPE RCC&gt;&lt;RCC version=&quot;1.0&quot;&gt;
+ &lt;qresource prefix=&quot;/&quot;&gt;
+    &lt;file&gt;resources/treemodel.txt&lt;/file&gt;
+ &lt;/qresource&gt;
+ &lt;/RCC&gt;</pre>
+<a name="treemodelcompleter-class-definition"></a>
+<h2>TreeModelCompleter Class Definition</h2>
+<p>The <tt>TreeModelCompleter</tt> is a subclass of <a href="qcompleter.html">QCompleter</a> with two constructors - one with <i>parent</i> as an argument and another with <i>parent</i> and <i>model</i> as arguments.</p>
+<pre> class TreeModelCompleter : public QCompleter
+ {
+     Q_OBJECT
+     Q_PROPERTY(QString separator READ separator WRITE setSeparator)
+
+ public:
+     TreeModelCompleter(QObject *parent = 0);
+     TreeModelCompleter(QAbstractItemModel *model, QObject *parent = 0);
+
+     QString separator() const;
+ public slots:
+     void setSeparator(const QString &amp;separator);
+
+ protected:
+     QStringList splitPath(const QString &amp;path) const;
+     QString pathFromIndex(const QModelIndex &amp;index) const;
+
+ private:
+     QString sep;
+ };</pre>
+<p>The class reimplements the protected functions <a href="qcompleter.html#splitPath">splitPath()</a> and <a href="qcompleter.html#pathFromIndex">pathFromIndex()</a> to suit a tree model. For more information on customizing <a href="qcompleter.html">QCompleter</a> to suit tree models, refer to <a href="qcompleter.html#handling-tree-models">Handling Tree Models</a>.</p>
+<p><tt>TreeModelCompleter</tt> also has a separator property which is declared using the <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>() macro. The separator has READ and WRITE attributes and the corresponding functions <tt>separator()</tt> and <tt>setSeparator()</tt>. For more information on <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>(), refer to <a href="properties.html">Qt's Property System</a>.</p>
+<a name="treemodelcompleter-class-implementation"></a>
+<h2>TreeModelCompleter Class Implementation</h2>
+<p>The first constructor constructs a <tt>TreeModelCompleter</tt> object with a parent while the second constructor constructs an object with a parent and a <a href="qabstractitemmodel.html">QAbstractItemModel</a>, <i>model</i>.</p>
+<pre> TreeModelCompleter::TreeModelCompleter(QObject *parent)
+     : QCompleter(parent)
+ {
+ }
+
+ TreeModelCompleter::TreeModelCompleter(QAbstractItemModel *model, QObject *parent)
+     : QCompleter(model, parent)
+ {
+ }</pre>
+<p>The <tt>separator()</tt> function is a getter function that returns the separator string.</p>
+<pre> QString TreeModelCompleter::separator() const
+ {
+     return sep;
+ }</pre>
+<p>As mentioned earlier, the <tt>splitPath()</tt> function is reimplemented because the default implementation is more suited to <a href="qdirmodel.html">QDirModel</a> or list models. In order for <a href="qcompleter.html">QCompleter</a> to split the path into a list of strings that are matched at each level, we split it using <a href="qstring.html#split">QString::split</a>() with <tt>sep</tt> as its separator.</p>
+<pre> QStringList TreeModelCompleter::splitPath(const QString &amp;path) const
+ {
+     if (sep.isNull()) {
+         return QCompleter::splitPath(path);
+     }
+
+     return path.split(sep);
+ }</pre>
+<p>The <tt>pathFromIndex()</tt> function returns data for the completionRole() for a tree model. This function is reimplemented as its default implementation is more suitable for list models. If there is no separator, we use <a href="qcompleter.html">QCompleter</a>'s default implementation, otherwise we use the <a href="qlist.html#prepend">prepend()</a> function to navigate upwards and accumulate the data. The function then returns a <a href="qstringlist.html">QStringList</a>, <tt>dataList</tt>, using a separator to join objects of different levels.</p>
+<pre> QString TreeModelCompleter::pathFromIndex(const QModelIndex &amp;index) const
+ {
+     if (sep.isNull()) {
+         return QCompleter::pathFromIndex(index);
+     }
+
+     <span class="comment">//</span> navigate up and accumulate data
+     QStringList dataList;
+     for (QModelIndex i = index; i.isValid(); i = i.parent()) {
+         dataList.prepend(model()-&gt;data(i, completionRole()).toString());
+     }
+
+     return dataList.join(sep);
+ }</pre>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class is a subclass of <a href="qmainwindow.html">QMainWindow</a> and implements five custom slots: <tt>about()</tt>, <tt>changeCase()</tt>, <tt>changeMode()</tt>, <tt>highlight()</tt>, and <tt>updateContentsLabel()</tt>.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow(QWidget *parent = 0);
+
+ private slots:
+     void about();
+     void changeCase(int);
+     void changeMode(int);
+     void highlight(const QModelIndex&amp;);
+     void updateContentsLabel(const QString&amp;);</pre>
+<p>In addition, the class has two private functions, <tt>createMenu()</tt> and <tt>modelFromFile()</tt>, as well as private instances of <a href="qtreeview.html">QTreeView</a>, <a href="qcombobox.html">QComboBox</a>, <a href="qlabel.html">QLabel</a>, <tt>TreeModelCompleter</tt> and <a href="qlineedit.html">QLineEdit</a>.</p>
+<pre> private:
+     void createMenu();
+     QAbstractItemModel *modelFromFile(const QString&amp; fileName);
+
+     QTreeView *treeView;
+     QComboBox *caseCombo;
+     QComboBox *modeCombo;
+     QLabel *contentsLabel;
+     TreeModelCompleter *completer;
+     QLineEdit *lineEdit;
+ };</pre>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt>'s constructor creates a <tt>MainWindow</tt> object with a parent and initializes the <tt>completer</tt> and <tt>lineEdit</tt>. The <tt>createMenu()</tt> function is invoked to set up the &quot;File&quot; menu and &quot;Help&quot; menu. The <tt>completer</tt>'s model is set to the <a href="qabstractitemmodel.html">QAbstractItemModel</a> obtained from <tt>modelFromFile()</tt>, and the <a href="qcompleter.html#highlighted">highlighted()</a> signal is connected to <tt>MainWindow</tt>'s <tt>highlight()</tt> slot.</p>
+<pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent), completer(0), lineEdit(0)
+ {
+     createMenu();
+
+     completer = new TreeModelCompleter(this);
+     completer-&gt;setModel(modelFromFile(&quot;:/resources/treemodel.txt&quot;));
+     completer-&gt;setSeparator(QLatin1String(&quot;.&quot;));
+     QObject::connect(completer, SIGNAL(highlighted(const QModelIndex&amp;)),
+                      this, SLOT(highlight(const QModelIndex&amp;)));
+
+     QWidget *centralWidget = new QWidget;
+
+     QLabel *modelLabel = new QLabel;
+     modelLabel-&gt;setText(tr(&quot;Tree Model&lt;br&gt;(Double click items to edit)&quot;));
+
+     QLabel *modeLabel = new QLabel;
+     modeLabel-&gt;setText(tr(&quot;Completion Mode&quot;));
+     modeCombo = new QComboBox;
+     modeCombo-&gt;addItem(tr(&quot;Inline&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Filtered Popup&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Unfiltered Popup&quot;));
+     modeCombo-&gt;setCurrentIndex(1);
+
+     QLabel *caseLabel = new QLabel;
+     caseLabel-&gt;setText(tr(&quot;Case Sensitivity&quot;));
+     caseCombo = new QComboBox;
+     caseCombo-&gt;addItem(tr(&quot;Case Insensitive&quot;));
+     caseCombo-&gt;addItem(tr(&quot;Case Sensitive&quot;));
+     caseCombo-&gt;setCurrentIndex(0);</pre>
+<p>The <a href="qlabel.html">QLabel</a> objects <tt>modelLabel</tt>, <tt>modeLabel</tt> and <tt>caseLabel</tt> are instantiated. Also, the <a href="qcombobox.html">QComboBox</a> objects, <tt>modeCombo</tt> and <tt>caseCombo</tt>, are instantiated and populated. By default, the <tt>completer</tt>'s mode is &quot;Filtered Popup&quot; and the case is insensitive.</p>
+<pre>     QLabel *separatorLabel = new QLabel;
+     separatorLabel-&gt;setText(tr(&quot;Tree Separator&quot;));
+
+     QLineEdit *separatorLineEdit = new QLineEdit;
+     separatorLineEdit-&gt;setText(completer-&gt;separator());
+     connect(separatorLineEdit, SIGNAL(textChanged(const QString&amp;)),
+             completer, SLOT(setSeparator(const QString&amp;)));
+
+     QCheckBox *wrapCheckBox = new QCheckBox;
+     wrapCheckBox-&gt;setText(tr(&quot;Wrap around completions&quot;));
+     wrapCheckBox-&gt;setChecked(completer-&gt;wrapAround());
+     connect(wrapCheckBox, SIGNAL(clicked(bool)), completer, SLOT(setWrapAround(bool)));
+
+     contentsLabel = new QLabel;
+     contentsLabel-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+     connect(separatorLineEdit, SIGNAL(textChanged(const QString&amp;)),
+             this, SLOT(updateContentsLabel(const QString&amp;)));
+
+     treeView = new QTreeView;
+     treeView-&gt;setModel(completer-&gt;model());
+     treeView-&gt;header()-&gt;hide();
+     treeView-&gt;expandAll();
+
+     connect(modeCombo, SIGNAL(activated(int)), this, SLOT(changeMode(int)));
+     connect(caseCombo, SIGNAL(activated(int)), this, SLOT(changeCase(int)));
+
+     lineEdit = new QLineEdit;
+     lineEdit-&gt;setCompleter(completer);</pre>
+<p>We use a <a href="qgridlayout.html">QGridLayout</a> to place all the objects in the <tt>MainWindow</tt>.</p>
+<pre>     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(modelLabel, 0, 0); layout-&gt;addWidget(treeView, 0, 1);
+     layout-&gt;addWidget(modeLabel, 1, 0);  layout-&gt;addWidget(modeCombo, 1, 1);
+     layout-&gt;addWidget(caseLabel, 2, 0);  layout-&gt;addWidget(caseCombo, 2, 1);
+     layout-&gt;addWidget(separatorLabel, 3, 0); layout-&gt;addWidget(separatorLineEdit, 3, 1);
+     layout-&gt;addWidget(wrapCheckBox, 4, 0);
+     layout-&gt;addWidget(contentsLabel, 5, 0, 1, 2);
+     layout-&gt;addWidget(lineEdit, 6, 0, 1, 2);
+     centralWidget-&gt;setLayout(layout);
+     setCentralWidget(centralWidget);
+
+     changeCase(caseCombo-&gt;currentIndex());
+     changeMode(modeCombo-&gt;currentIndex());
+
+     setWindowTitle(tr(&quot;Tree Model Completer&quot;));
+     lineEdit-&gt;setFocus();
+ }</pre>
+<p>The <tt>createMenu()</tt> function sets up the <a href="qaction.html">QAction</a> objects required and adds them to the &quot;File&quot; menu and &quot;Help&quot; menu. The <a href="qaction.html#triggered">triggered()</a> signals from these actions are connected to their respective slots.</p>
+<pre> void MainWindow::createMenu()
+ {
+     QAction *exitAction = new QAction(tr(&quot;Exit&quot;), this);
+     QAction *aboutAct = new QAction(tr(&quot;About&quot;), this);
+     QAction *aboutQtAct = new QAction(tr(&quot;About Qt&quot;), this);
+
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     QMenu* fileMenu = menuBar()-&gt;addMenu(tr(&quot;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     QMenu* helpMenu = menuBar()-&gt;addMenu(tr(&quot;About&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }</pre>
+<p>The <tt>changeMode()</tt> function accepts an <i>index</i> corresponding to the user's choice of completion mode and changes the <tt>completer</tt>'s mode accordingly.</p>
+<pre> void MainWindow::changeMode(int index)
+ {
+     QCompleter::CompletionMode mode;
+     if (index == 0)
+         mode = QCompleter::InlineCompletion;
+     else if (index == 1)
+         mode = QCompleter::PopupCompletion;
+     else
+         mode = QCompleter::UnfilteredPopupCompletion;
+
+     completer-&gt;setCompletionMode(mode);
+ }</pre>
+<p>The <tt>about()</tt> function provides a brief description on the Tree Model Completer example.</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About&quot;), tr(&quot;This example demonstrates how &quot;
+         &quot;to use a QCompleter with a custom tree model.&quot;));
+ }</pre>
+<p>The <tt>changeCase()</tt> function alternates between <a href="qt.html#CaseSensitivity-enum">Case Sensitive</a> and <a href="qt.html#CaseSensitivity-enum">Case Insensitive</a> modes, depending on the value of <i>cs</i>.</p>
+<pre> void MainWindow::changeCase(int cs)
+ {
+     completer-&gt;setCaseSensitivity(cs ? Qt::CaseSensitive : Qt::CaseInsensitive);
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <tt>MainWindow</tt> and invokes the <a href="qwidget.html#show">show()</a> function to display it.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     Q_INIT_RESOURCE(treemodelcompleter);
+
+     QApplication app(argc, argv);
+     MainWindow window;
+     window.show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

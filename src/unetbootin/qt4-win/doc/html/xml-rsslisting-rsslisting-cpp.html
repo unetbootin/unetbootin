@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: rsslisting.cpp Example File (xml/rsslisting/rsslisting.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">rsslisting.cpp Example File<br /><span class="small-subtitle">xml/rsslisting/rsslisting.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+ rsslisting.cpp
+
+ Provides a widget for displaying news items from RDF news sources.
+ RDF is an XML-based format for storing items of information (see
+ http://www.w3.org/RDF/ for details).
+
+ The widget itself provides a simple user interface for specifying
+ the URL of a news source, and controlling the downloading of news.
+
+ The widget downloads and parses the XML asynchronously, feeding the
+ data to an XML reader in pieces. This allows the user to interrupt
+ its operation, and also allows very large data sources to be read.
+ */</span>
+
+ #include &lt;QtCore&gt;
+ #include &lt;QtGui&gt;
+ #include &lt;QtNetwork&gt;
+
+ #include &quot;rsslisting.h&quot;
+
+<span class="comment"> /*
+     Constructs an RSSListing widget with a simple user interface, and sets
+     up the XML reader to use a custom handler class.
+
+     The user interface consists of a line edit, two push buttons, and a
+     list view widget. The line edit is used for entering the URLs of news
+     sources; the push buttons start and abort the process of reading the
+     news.
+ */</span>
+
+ RSSListing::RSSListing(QWidget *parent)
+     : QWidget(parent)
+ {
+     lineEdit = new QLineEdit(this);
+     lineEdit-&gt;setText(&quot;http:<span class="comment">//</span>labs.trolltech.com/blogs/feed&quot;);
+
+     fetchButton = new QPushButton(tr(&quot;Fetch&quot;), this);
+     abortButton = new QPushButton(tr(&quot;Abort&quot;), this);
+     abortButton-&gt;setEnabled(false);
+
+     treeWidget = new QTreeWidget(this);
+     connect(treeWidget, SIGNAL(itemActivated(QTreeWidgetItem*, int)),
+             this, SLOT(itemActivated(QTreeWidgetItem*)));
+     QStringList headerLabels;
+     headerLabels &lt;&lt; tr(&quot;Title&quot;) &lt;&lt; tr(&quot;Link&quot;);
+     treeWidget-&gt;setHeaderLabels(headerLabels);
+     treeWidget-&gt;header()-&gt;setResizeMode(QHeaderView::ResizeToContents);
+
+     connect(&amp;http, SIGNAL(readyRead(const QHttpResponseHeader &amp;)),
+              this, SLOT(readData(const QHttpResponseHeader &amp;)));
+
+     connect(&amp;http, SIGNAL(requestFinished(int, bool)),
+              this, SLOT(finished(int, bool)));
+
+     connect(lineEdit, SIGNAL(returnPressed()), this, SLOT(fetch()));
+     connect(fetchButton, SIGNAL(clicked()), this, SLOT(fetch()));
+     connect(abortButton, SIGNAL(clicked()), &amp;http, SLOT(abort()));
+
+     QVBoxLayout *layout = new QVBoxLayout(this);
+
+     QHBoxLayout *hboxLayout = new QHBoxLayout;
+
+     hboxLayout-&gt;addWidget(lineEdit);
+     hboxLayout-&gt;addWidget(fetchButton);
+     hboxLayout-&gt;addWidget(abortButton);
+
+     layout-&gt;addLayout(hboxLayout);
+     layout-&gt;addWidget(treeWidget);
+
+     setWindowTitle(tr(&quot;RSS listing example&quot;));
+     resize(640,480);
+ }
+
+<span class="comment"> /*
+     Starts fetching data from a news source specified in the line
+     edit widget.
+
+     The line edit is made read only to prevent the user from modifying its
+     contents during the fetch; this is only for cosmetic purposes.
+     The fetch button is disabled, and the abort button is enabled to allow
+     the user to interrupt processing. The list view is cleared, and we
+     define the last list view item to be 0, meaning that there are no
+     existing items in the list.
+
+     The HTTP handler is supplied with the raw contents of the line edit and
+     a fetch is initiated. We keep the ID value returned by the HTTP handler
+     for future reference.
+ */</span>
+
+ void RSSListing::fetch()
+ {
+     lineEdit-&gt;setReadOnly(true);
+     fetchButton-&gt;setEnabled(false);
+     abortButton-&gt;setEnabled(true);
+     treeWidget-&gt;clear();
+
+     xml.clear();
+
+     QUrl url(lineEdit-&gt;text());
+
+     http.setHost(url.host());
+     connectionId = http.get(url.path());
+ }
+
+<span class="comment"> /*
+     Reads data received from the RDF source.
+
+     We read all the available data, and pass it to the XML
+     stream reader. Then we call the XML parsing function.
+
+     If parsing fails for any reason, we abort the fetch.
+ */</span>
+
+ void RSSListing::readData(const QHttpResponseHeader &amp;resp)
+ {
+     if (resp.statusCode() != 200)
+         http.abort();
+     else {
+         xml.addData(http.readAll());
+         parseXml();
+     }
+ }
+
+<span class="comment"> /*
+     Finishes processing an HTTP request.
+
+     The default behavior is to keep the text edit read only.
+
+     If an error has occurred, the user interface is made available
+     to the user for further input, allowing a new fetch to be
+     started.
+
+     If the HTTP get request has finished, we make the
+     user interface available to the user for further input.
+ */</span>
+
+ void RSSListing::finished(int id, bool error)
+ {
+     if (error) {
+         qWarning(&quot;Received error during HTTP fetch.&quot;);
+         lineEdit-&gt;setReadOnly(false);
+         abortButton-&gt;setEnabled(false);
+         fetchButton-&gt;setEnabled(true);
+     }
+     else if (id == connectionId) {
+         lineEdit-&gt;setReadOnly(false);
+         abortButton-&gt;setEnabled(false);
+         fetchButton-&gt;setEnabled(true);
+     }
+ }
+
+<span class="comment"> /*
+     Parses the XML data and creates treeWidget items accordingly.
+ */</span>
+ void RSSListing::parseXml()
+ {
+     while (!xml.atEnd()) {
+         xml.readNext();
+         if (xml.isStartElement()) {
+             if (xml.name() == &quot;item&quot;)
+                 linkString = xml.attributes().value(&quot;rss:about&quot;).toString();
+             currentTag = xml.name().toString();
+         } else if (xml.isEndElement()) {
+             if (xml.name() == &quot;item&quot;) {
+
+                 QTreeWidgetItem *item = new QTreeWidgetItem;
+                 item-&gt;setText(0, titleString);
+                 item-&gt;setText(1, linkString);
+                 treeWidget-&gt;addTopLevelItem(item);
+
+                 titleString.clear();
+                 linkString.clear();
+             }
+
+         } else if (xml.isCharacters() &amp;&amp; !xml.isWhitespace()) {
+             if (currentTag == &quot;title&quot;)
+                 titleString += xml.text().toString();
+             else if (currentTag == &quot;link&quot;)
+                 linkString += xml.text().toString();
+         }
+     }
+     if (xml.error() &amp;&amp; xml.error() != QXmlStreamReader::PrematureEndOfDocumentError) {
+         qWarning() &lt;&lt; &quot;XML ERROR:&quot; &lt;&lt; xml.lineNumber() &lt;&lt; &quot;: &quot; &lt;&lt; xml.errorString();
+         http.abort();
+     }
+ }
+
+<span class="comment"> /*
+     Open the link in the browser
+ */</span>
+ void RSSListing::itemActivated(QTreeWidgetItem * item)
+ {
+     QDesktopServices::openUrl(QUrl(item-&gt;text(1)));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

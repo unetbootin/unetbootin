@@ -1,0 +1,715 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/porting4.qdoc -->
+<head>
+  <title>Qt 4.4: Porting to Qt 4 - Virtual Functions</title>
+  <link rel="prev" href="porting4.html" />
+  <link rel="contents" href="porting.html" />
+  <link rel="next" href="porting4-dnd.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="porting4.html">Porting to Qt 4</a>]
+[<a href="porting.html">Contents</a>]
+[Next: <a href="porting4-dnd.html">Porting to Qt 4 - Drag and Drop</a>]
+</p>
+<h1 class="title">Porting to Qt 4 - Virtual Functions<br /><span class="subtitle"></span>
+</h1>
+<a name="virtual-functions"></a>
+<h3>Virtual Functions</h3>
+<p>Virtual functions that changed their signature in Qt 4:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Qt 3 function signature</th><th>Qt 4 function signature</th></tr></thead>
+<tr valign="top" class="odd"><td>int QAccessibleInterface::navigate(NavDirection, int) const</td><td>int QAccessibleInterface::navigate(RelationFlag, int, <a href="qaccessibleinterface.html">QAccessibleInterface</a> **) const</td></tr>
+<tr valign="top" class="even"><td>bool QApplication::winEventFilter(MSG *)</td><td>bool QApplication::winEventFilter(MSG *, long *)</td></tr>
+<tr valign="top" class="odd"><td>Function: Offset <a href="qiodevice-qt3.html#at">QIODevice::at</a>() const</td><td>Function: Q_LONGLONG <a href="qiodevice.html#pos">QIODevice::pos</a>() const</td></tr>
+<tr valign="top" class="even"><td>bool QIODevice::at(Offset)</td><td>bool QIODevice::seek(Q_LONGLONG)</td></tr>
+<tr valign="top" class="odd"><td>bool QIODevice::open(int)</td><td>bool QIODevice::open(OpenMode)</td></tr>
+<tr valign="top" class="even"><td><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> QIODevice::readBlock(char *, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a>)</td><td>Q_LONGLONG QIODevice::readData(char *, Q_LONGLONG)</td></tr>
+<tr valign="top" class="odd"><td><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> QIODevice::writeBlock(const char *, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a>)</td><td>Q_LONGLONG QIODevice::writeData(const char *, Q_LONGLONG)</td></tr>
+<tr valign="top" class="even"><td>const char * QImageFormatType::formatName() const</td><td><a href="qbytearray.html">QByteArray</a> QImageFormatType::formatName() const</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qpopupmenu">QPopupMenu</a> * QLineEdit::createPopupMenu()</td><td><a href="qmenu.html">QMenu</a> * QLineEdit::createPopupMenu()</td></tr>
+<tr valign="top" class="even"><td>bool QMacMime::canConvert(const char *, int)</td><td>bool QMacMime::canConvert(const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="odd"><td>QValueList&lt;<a href="qbytearray.html">QByteArray</a>&gt; QMacMime::convertFromMime(<a href="qbytearray.html">QByteArray</a>, const char *, int)</td><td><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QMacMime::convertFromMime(<a href="qbytearray.html">QByteArray</a>, const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="even"><td><a href="qbytearray.html">QByteArray</a> QMacMime::convertToMime(QValueList&lt;<a href="qbytearray.html">QByteArray</a>&gt; data, const char *, int)</td><td><a href="qbytearray.html">QByteArray</a> QMacMime::convertToMime(<a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; data, const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="odd"><td>const char * <a href="qmacmime.html#convertorName">QMacMime::convertorName</a>()</td><td><a href="qstring.html">QString</a> <a href="qmacmime.html#convertorName">QMacMime::convertorName</a>()</td></tr>
+<tr valign="top" class="even"><td>int QMacMime::flavorFor(const char *)</td><td>int QMacMime::flavorFor(const <a href="qstring.html">QString</a> &amp;)</td></tr>
+<tr valign="top" class="odd"><td>const char * QMacMime::mimeFor(int)</td><td><a href="qstring.html">QString</a> QMacMime::mimeFor(int)</td></tr>
+<tr valign="top" class="even"><td><a href="qmetaobject.html">QMetaObject</a> * <a href="qobject.html#metaObject">QObject::metaObject</a>() const</td><td>const <a href="qmetaobject.html">QMetaObject</a> * <a href="qobject.html#metaObject">QObject::metaObject</a>() const</td></tr>
+<tr valign="top" class="odd"><td>bool QScreen::onCard(unsigned char *) const</td><td>bool QScreen::onCard(const unsigned char *) const</td></tr>
+<tr valign="top" class="even"><td>bool QScreen::onCard(unsigned char *, ulong &amp;) const</td><td>bool QScreen::onCard(const unsigned char *, ulong &amp;) const</td></tr>
+<tr valign="top" class="odd"><td>int QSpinBox::mapTextToValue(bool *)</td><td>int QSpinBox::mapTextToValue(<a href="qstring.html">QString</a> *, <a href="qvalidator.html#State-enum">QValidator::State</a> *) const</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QSpinBox::mapValueToText(int)</td><td><a href="qstring.html">QString</a> QSpinBox::mapValueToText(int) const</td></tr>
+<tr valign="top" class="odd"><td>bool QSqlDriver::open(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, int)</td><td>bool QSqlDriver::open(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, int, const <a href="qstring.html">QString</a> &amp;)</td></tr>
+<tr valign="top" class="even"><td><a href="qstringlist.html">QStringList</a> QSqlDriver::tables(const <a href="qstring.html">QString</a> &amp;) const</td><td><a href="qstringlist.html">QStringList</a> QSqlDriver::tables(<a href="qsql.html#TableType-enum">QSql::TableType</a>) const</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qsqlquery-qt3.html#prev">QSqlQuery::prev</a>()</td><td>bool <a href="qsqlquery.html#previous">QSqlQuery::previous</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="qvariant.html">QVariant</a> QSqlResult::data(int)</td><td><a href="qvariant.html">QVariant</a> QSqlResult::data(int)</td></tr>
+<tr valign="top" class="odd"><td>bool QSqlResult::fetchPrev()</td><td>bool <a href="qsqlresult.html#fetchPrevious">QSqlResult::fetchPrevious</a>()</td></tr>
+<tr valign="top" class="even"><td>void QStyle::drawComplexControl(ComplexControl, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *, const <a href="qrect.html">QRect</a> &amp;, const <a href="qcolorgroup.html">QColorGroup</a> &amp;, SFlags, SCFlags, SCFlags, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td>void QStyle::drawComplexControl(ComplexControl, const <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> *, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="odd"><td>void QStyle::drawComplexControlMask(ComplexControl, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *, const <a href="qrect.html">QRect</a> &amp;, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td>void QStyle::drawComplexControlMask(ComplexControl, const <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> *, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td>void QStyle::drawControl(ControlElement, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *, const <a href="qrect.html">QRect</a> &amp;, const <a href="qcolorgroup.html">QColorGroup</a> &amp;, SFlags, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td>void QStyle::drawControl(ControlElement, const <a href="qstyleoption.html">QStyleOption</a> *, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="odd"><td>void QStyle::drawControlMask(ControlElement, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *, const <a href="qrect.html">QRect</a> &amp;, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td>void QStyle::drawControlMask(ControlElement, const <a href="qstyleoption.html">QStyleOption</a> *, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td>void QStyle::drawItem(<a href="qpainter.html">QPainter</a> *, const <a href="qrect.html">QRect</a> &amp;, int, const <a href="qcolorgroup.html">QColorGroup</a> &amp;, bool, const <a href="qpixmap.html">QPixmap</a> *, const <a href="qstring.html">QString</a> &amp;, int, const <a href="qcolor.html">QColor</a> *) const</td><td>void QStyle::drawItem(<a href="qpainter.html">QPainter</a> *, const <a href="qrect.html">QRect</a> &amp;, int, const <a href="qpalette.html">QPalette</a> &amp;, bool, const <a href="qstring.html">QString</a> &amp;, int, const <a href="qcolor.html">QColor</a> *) const</td></tr>
+<tr valign="top" class="odd"><td>void QStyle::drawPrimitive(PrimitiveElement, <a href="qpainter.html">QPainter</a> *, const <a href="qrect.html">QRect</a> &amp;, const <a href="qcolorgroup.html">QColorGroup</a> &amp;, SFlags, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td>void QStyle::drawPrimitive(PrimitiveElement, const <a href="qstyleoption.html">QStyleOption</a> *, <a href="qpainter.html">QPainter</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td><a href="qrect.html">QRect</a> QStyle::itemRect(<a href="qpainter.html">QPainter</a> *, const <a href="qrect.html">QRect</a> &amp;, int, bool, const <a href="qpixmap.html">QPixmap</a> *, const <a href="qstring.html">QString</a> &amp;, int) const</td><td><a href="qrect.html">QRect</a> QStyle::itemRect(const <a href="qfontmetrics.html">QFontMetrics</a> &amp;, const <a href="qrect.html">QRect</a> &amp;, int, bool, const <a href="qstring.html">QString</a> &amp;, int) const</td></tr>
+<tr valign="top" class="odd"><td>int QStyle::pixelMetric(PixelMetric, const <a href="qwidget.html">QWidget</a> *) const</td><td>int QStyle::pixelMetric(PixelMetric, const <a href="qstyleoption.html">QStyleOption</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td><a href="stylesheet-reference.html#subcontrols">SubControl</a> QStyle::querySubControl(ComplexControl, const <a href="qwidget.html">QWidget</a> *, const <a href="qpoint.html">QPoint</a> &amp;, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td><a href="stylesheet-reference.html#subcontrols">SubControl</a> QStyle::hitTestComplexControl(ComplexControl, const <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> *, const <a href="qpoint.html">QPoint</a> &amp;, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="odd"><td><a href="qrect.html">QRect</a> QStyle::querySubControlMetrics(ComplexControl, const <a href="qwidget.html">QWidget</a> *, <a href="stylesheet-reference.html#subcontrols">SubControl</a>, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td><a href="qrect.html">QRect</a> QStyle::subControlRect(ComplexControl, const <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> *, <a href="stylesheet-reference.html#subcontrols">SubControl</a>, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td><a href="qsize.html">QSize</a> QStyle::sizeFromContents(ContentsType, const <a href="qwidget.html">QWidget</a> *, const <a href="qsize.html">QSize</a> &amp;, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td><a href="qsize.html">QSize</a> QStyle::sizeFromContents(ContentsType, const <a href="qstyleoption.html">QStyleOption</a> *, const <a href="qsize.html">QSize</a> &amp;, const <a href="qfontmetrics.html">QFontMetrics</a> &amp;, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="odd"><td>int QStyle::styleHint(StyleHint, const <a href="qwidget.html">QWidget</a> *, const <a href="qstyleoption.html">QStyleOption</a> &amp;, <a href="qstylehintreturn.html">QStyleHintReturn</a> *) const</td><td>int QStyle::styleHint(StyleHint, const <a href="qstyleoption.html">QStyleOption</a> *, const <a href="qwidget.html">QWidget</a> *, <a href="qstylehintreturn.html">QStyleHintReturn</a> *) const</td></tr>
+<tr valign="top" class="even"><td><a href="qpixmap.html">QPixmap</a> QStyle::stylePixmap(StylePixmap, const <a href="qwidget.html">QWidget</a> *, const <a href="qstyleoption.html">QStyleOption</a> &amp;) const</td><td><a href="qpixmap.html">QPixmap</a> QStyle::standardPixmap(StandardPixmap, const <a href="qstyleoption.html">QStyleOption</a> *, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="odd"><td><a href="qrect.html">QRect</a> QStyle::subRect(SubRect, const <a href="qwidget.html">QWidget</a> *) const</td><td><a href="qrect.html">QRect</a> QStyle::subRect(SubRect, const <a href="qstyleoption.html">QStyleOption</a> *, const <a href="qfontmetrics.html">QFontMetrics</a> &amp;, const <a href="qwidget.html">QWidget</a> *) const</td></tr>
+<tr valign="top" class="even"><td>void QStyle::unPolish(<a href="qapplication.html">QApplication</a> *)</td><td>void QStyle::unpolish(<a href="qapplication.html">QApplication</a> *)</td></tr>
+<tr valign="top" class="odd"><td>void QStyle::unPolish(<a href="qwidget.html">QWidget</a> *)</td><td>void QStyle::unpolish(<a href="qwidget.html">QWidget</a> *)</td></tr>
+<tr valign="top" class="even"><td><a href="porting4.html#qcstring">QCString</a> QTextCodec::fromUnicode(const <a href="qstring.html">QString</a> &amp;, int &amp;) const</td><td><a href="qbytearray.html">QByteArray</a> QTextCodec::fromUnicode(const <a href="qstring.html">QString</a> &amp;, int &amp;) const</td></tr>
+<tr valign="top" class="odd"><td>QValueList&lt;int&gt; <a href="qtextcodecplugin.html#mibEnums">QTextCodecPlugin::mibEnums</a>() const</td><td><a href="qlist.html">QList</a>&lt;int&gt; <a href="qtextcodecplugin.html#mibEnums">QTextCodecPlugin::mibEnums</a>() const</td></tr>
+<tr valign="top" class="even"><td>void QTextDrag::setSubtype(const <a href="porting4.html#qcstring">QCString</a> &amp;)</td><td>void QTextDrag::setSubtype(const <a href="qstring.html">QString</a> &amp;)</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qcstring">QCString</a> QTextEncoder::fromUnicode(const <a href="qstring.html">QString</a> &amp;, int &amp;)</td><td><a href="qbytearray.html">QByteArray</a> QTextEncoder::fromUnicode(const <a href="qstring.html">QString</a> &amp;, int &amp;)</td></tr>
+<tr valign="top" class="even"><td>void QUriDrag::setUris(QStrList)</td><td>void QUriDrag::setUris(const <a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; &amp; list)</td></tr>
+<tr valign="top" class="odd"><td>void QUrlInfo::setSize(uint)</td><td>void QUrlInfo::setSize(Q_LONGLONG)</td></tr>
+<tr valign="top" class="even"><td>bool QWindowsMime::canConvert(const char *, int)</td><td>bool QWindowsMime::canConvert(const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="odd"><td>int QWindowsMime::cfFor(const char *)</td><td>int QWindowsMime::cfFor(const <a href="qstring.html">QString</a> &amp;)</td></tr>
+<tr valign="top" class="even"><td><a href="qbytearray.html">QByteArray</a> QWindowsMime::convertFromMime(<a href="qbytearray.html">QByteArray</a>, const char *, int)</td><td><a href="qbytearray.html">QByteArray</a> QWindowsMime::convertFromMime(const <a href="qbytearray.html">QByteArray</a> &amp;, const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="odd"><td><a href="qbytearray.html">QByteArray</a> QWindowsMime::convertToMime(<a href="qbytearray.html">QByteArray</a>, const char *, int)</td><td><a href="qbytearray.html">QByteArray</a> QWindowsMime::convertToMime(const <a href="qbytearray.html">QByteArray</a> &amp;, const <a href="qstring.html">QString</a> &amp;, int)</td></tr>
+<tr valign="top" class="even"><td>const char * QWindowsMime::convertorName()</td><td><a href="qstring.html">QString</a> QWindowsMime::convertorName()</td></tr>
+<tr valign="top" class="odd"><td>void QWSMouseHandler::calibrate(QWSPointerCalibrationData *)</td><td>void QWSMouseHandler::calibrate(const QWSPointerCalibrationData *)</td></tr>
+<tr valign="top" class="even"><td>bool QWidget::macEvent(MSG *)</td><td>bool QWidget::macEvent(EventHandlerCallRef, EventRef)</td></tr>
+<tr valign="top" class="odd"><td>bool QWidget::winEvent(MSG *)</td><td>bool QWidget::winEvent(MSG *, long *)</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qxmlcontenthandler.html#errorString">QXmlContentHandler::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmlcontenthandler.html#errorString">QXmlContentHandler::errorString</a>() const</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qxmldtdhandler.html#errorString">QXmlDTDHandler::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmldtdhandler.html#errorString">QXmlDTDHandler::errorString</a>() const</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qxmldeclhandler.html#errorString">QXmlDeclHandler::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmldeclhandler.html#errorString">QXmlDeclHandler::errorString</a>() const</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qxmlentityresolver.html#errorString">QXmlEntityResolver::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmlentityresolver.html#errorString">QXmlEntityResolver::errorString</a>() const</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qxmlerrorhandler.html#errorString">QXmlErrorHandler::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmlerrorhandler.html#errorString">QXmlErrorHandler::errorString</a>() const</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qxmlinputsource.html#data">QXmlInputSource::data</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmlinputsource.html#data">QXmlInputSource::data</a>() const</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qxmllexicalhandler.html#errorString">QXmlLexicalHandler::errorString</a>()</td><td><a href="qstring.html">QString</a> <a href="qxmllexicalhandler.html#errorString">QXmlLexicalHandler::errorString</a>() const</td></tr>
+<tr valign="top" class="odd"><td>int <a href="qxmllocator.html#columnNumber">QXmlLocator::columnNumber</a>()</td><td>int <a href="qxmllocator.html#columnNumber">QXmlLocator::columnNumber</a>() const</td></tr>
+<tr valign="top" class="even"><td>int <a href="qxmllocator.html#lineNumber">QXmlLocator::lineNumber</a>()</td><td>int <a href="qxmllocator.html#lineNumber">QXmlLocator::lineNumber</a>() const</td></tr>
+</table></p>
+<p>Virtual functions that are not virtual in Qt 4:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Qt 3 function</th><th>Comment</th></tr></thead>
+<tr valign="top" class="odd"><td>void QAccessibleInterface::clearSelection()</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="even"><td>int QAccessibleInterface::controlAt(int, int) const</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QAccessibleInterface::doDefaultAction(int)</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="even"><td>QMemArray&lt;int&gt; QAccessibleInterface::selection() const</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QAccessibleInterface::setFocus(int)</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="even"><td>bool QAccessibleInterface::setSelected(int, bool, bool)</td><td>Port to the new <a href="qaccessibleinterface.html">QAccessibleInterface</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QAction::addTo(<a href="qwidget.html">QWidget</a> *)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::addedTo(<a href="qwidget.html">QWidget</a> *, <a href="qwidget.html">QWidget</a> *)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::addedTo(int, <a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>bool QAction::removeFrom(<a href="qwidget.html">QWidget</a> *)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::setAccel(const <a href="qkeysequence.html">QKeySequence</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::setEnabled(bool)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::setIconSet(const <a href="qicon.html">QIcon</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::setMenuText(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::setOn(bool)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::setStatusTip(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::setText(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::setToggleAction(bool)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QAction::setToolTip(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QAction::setWhatsThis(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3action.html">Q3Action</a> instead or port to the new <a href="qaction.html">QAction</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QButton::drawButton(<a href="qpainter.html">QPainter</a> *)</td><td>Use <a href="q3button.html">Q3Button</a> instead or reimplement QButton::paintEvent().</td></tr>
+<tr valign="top" class="even"><td>void QButton::drawButtonLabel(<a href="qpainter.html">QPainter</a> *)</td><td>Use <a href="q3button.html">Q3Button</a> instead or reimplement QButton::paintEvent().</td></tr>
+<tr valign="top" class="odd"><td>void QButton::setAccel(const <a href="qkeysequence.html">QKeySequence</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QButton::setAutoRepeat(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QButton::setDown(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QButton::setPixmap(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QButton::setState(ToggleState)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QButton::setText(const <a href="qstring.html">QString</a> &amp;)</td><td>Use the <a href="qabstractbutton.html#text-prop">QAbstractButton::setText</a>() setter function.</td></tr>
+<tr valign="top" class="odd"><td>void QButton::setToggleType(ToggleType)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QButtonGroup::moveFocus(int)</td><td>Use the <a href="qwidget.html#setFocus">QWidget::setFocus</a>() setter function.</td></tr>
+<tr valign="top" class="odd"><td>void QButtonGroup::setButton(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QButtonGroup::setExclusive(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QButtonGroup::setRadioButtonExclusive(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setAutoCompletion(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setAutoResize(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setCurrentItem(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setCurrentText(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setFont(const <a href="qfont.html">QFont</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setInsertionPolicy(Policy)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setLineEdit(<a href="qlineedit.html">QLineEdit</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setListBox(<a href="porting4.html#qlistbox">QListBox</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setMaxCount(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setPalette(const <a href="qpalette.html">QPalette</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QComboBox::setSizeLimit(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QComboBox::setValidator(const <a href="qvalidator.html">QValidator</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::fix()</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> QDateEdit::sectionFormattedText(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::setAutoAdvance(bool)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateEdit::setDate(const <a href="qdate.html">QDate</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::setDay(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateEdit::setMaxValue(const <a href="qdate.html">QDate</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::setMinValue(const <a href="qdate.html">QDate</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateEdit::setMonth(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::setOrder(Order)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateEdit::setRange(const <a href="qdate.html">QDate</a> &amp;, const <a href="qdate.html">QDate</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateEdit::setSeparator(const <a href="qstring.html">QString</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateEdit::setYear(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDateTimeEdit::setAutoAdvance(bool)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDateTimeEdit::setDateTime(const <a href="qdatetime.html">QDateTime</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDial::rangeChange()</td><td>Reimplement <a href="qabstractslider.html#sliderChange">QDial::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QDial::repaintScreen(const <a href="qrect.html">QRect</a> *)</td><td>Reimplement <a href="qwidget.html#paintEvent">QDial::paintEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QDial::setNotchTarget(double)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QDial::setNotchesVisible(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QDial::setTracking(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QDial::setValue(int)</td><td>Use <a href="qabstractslider.html#sliderChange">QDial::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QDial::setWrapping(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QDial::valueChange()</td><td>Use <a href="qabstractslider.html#sliderChange">QDial::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QDir::absFilePath(const <a href="qstring.html">QString</a> &amp;, bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qdir-qt3.html#absPath">QDir::absPath</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdir.html#canonicalPath">QDir::canonicalPath</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDir::cd(const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdir.html#cdUp">QDir::cdUp</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qdir-qt3.html#convertToAbs">QDir::convertToAbs</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdir.html#dirName">QDir::dirName</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>QStrList QDir::encodedEntryList(int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>QStrList QDir::encodedEntryList(const <a href="qstring.html">QString</a> &amp;, int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>const <a href="qfileinfo.html#QFileInfoList-typedef">QFileInfoList</a> * QDir::entryInfoList(int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>const <a href="qfileinfo.html#QFileInfoList-typedef">QFileInfoList</a> * QDir::entryInfoList(const <a href="qstring.html">QString</a> &amp;, int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstringlist.html">QStringList</a> QDir::entryList(const <a href="qstring.html">QString</a> &amp;, int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstringlist.html">QStringList</a> QDir::entryList(int, int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdir.html#exists">QDir::exists</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QDir::exists(const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> QDir::filePath(const <a href="qstring.html">QString</a> &amp;, bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdir.html#isReadable">QDir::isReadable</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdir.html#isRelative">QDir::isRelative</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdir.html#isRoot">QDir::isRoot</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDir::mkdir(const <a href="qstring.html">QString</a> &amp;, bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QDir::operator!=() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDir::operator==() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdir.html#pathx">QDir::path</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDir::remove(const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QDir::rename(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDir::rmdir(const <a href="qstring.html">QString</a> &amp;, bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDir::setFilter(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDir::setMatchAllDirs(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDir::setNameFilter(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDir::setPath(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDir::setSorting(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDns::setLabel(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3dns.html">Q3Dns</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QDns::setLabel(const <a href="qhostaddress.html">QHostAddress</a> &amp;)</td><td>Use <a href="q3dns.html">Q3Dns</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QDns::setRecordType(RecordType)</td><td>Use <a href="q3dns.html">Q3Dns</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::dock()</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setCloseMode(int)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setFixedExtentHeight(int)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setFixedExtentWidth(int)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setHorizontallyStretchable(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setMovingEnabled(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setNewLine(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setOffset(int)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setOpaqueMoving(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setOrientation(Orientation)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setResizeEnabled(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::setVerticallyStretchable(bool)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QDockWindow::setWidget(<a href="qwidget.html">QWidget</a> *)</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QDockWindow::undock()</td><td>Use <a href="q3dockwindow.html">Q3DockWindow</a> instead or port to the new <a href="qdockwidget.html">QDockWidget</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomattr.html#name">QDomAttr::name</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomelement.html">QDomElement</a> <a href="qdomattr.html#ownerElement">QDomAttr::ownerElement</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDomAttr::setValue(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomattr.html#specified">QDomAttr::specified</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomattr.html#value">QDomAttr::value</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDomCharacterData::appendData(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomcharacterdata.html#data">QDomCharacterData::data</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDomCharacterData::deleteData(unsigned, unsigned)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDomCharacterData::insertData(unsigned, const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>uint <a href="qdomcharacterdata.html#length">QDomCharacterData::length</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDomCharacterData::replaceData(unsigned, unsigned, const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDomCharacterData::setData(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QDomCharacterData::substringData(unsigned, unsigned)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnamednodemap.html">QDomNamedNodeMap</a> <a href="qdomdocumenttype.html#entities">QDomDocumentType::entities</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomdocumenttype.html#internalSubset">QDomDocumentType::internalSubset</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qdomdocumenttype.html#name">QDomDocumentType::name</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnamednodemap.html">QDomNamedNodeMap</a> <a href="qdomdocumenttype.html#notations">QDomDocumentType::notations</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qdomdocumenttype.html#publicId">QDomDocumentType::publicId</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomdocumenttype.html#systemId">QDomDocumentType::systemId</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnamednodemap.html">QDomNamedNodeMap</a> <a href="qdomelement.html#attributes">QDomElement::attributes</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnodelist.html">QDomNodeList</a> QDomElement::elementsByTagName(const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnodelist.html">QDomNodeList</a> QDomElement::elementsByTagNameNS(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomentity.html#notationName">QDomEntity::notationName</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qdomentity.html#publicId">QDomEntity::publicId</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomentity.html#systemId">QDomEntity::systemId</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomdocument.html">QDomDocument</a> QDomImplementation::createDocument(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qdomdocumenttype.html">QDomDocumentType</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomdocumenttype.html">QDomDocumentType</a> QDomImplementation::createDocumentType(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QDomImplementation::hasFeature(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>QDomImplementation::~QDomImplementation()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> QDomNode::appendChild(const <a href="qdomnode.html">QDomNode</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnamednodemap.html">QDomNamedNodeMap</a> <a href="qdomnode.html#attributes">QDomNode::attributes</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnodelist.html">QDomNodeList</a> <a href="qdomnode.html#childNodes">QDomNode::childNodes</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnode.html">QDomNode</a> QDomNode::cloneNode(bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> <a href="qdomnode.html#firstChild">QDomNode::firstChild</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#hasAttributes">QDomNode::hasAttributes</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#hasChildNodes">QDomNode::hasChildNodes</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnode.html">QDomNode</a> QDomNode::insertAfter(const <a href="qdomnode.html">QDomNode</a> &amp;, const <a href="qdomnode.html">QDomNode</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> QDomNode::insertBefore(const <a href="qdomnode.html">QDomNode</a> &amp;, const <a href="qdomnode.html">QDomNode</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isAttr">QDomNode::isAttr</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isCDATASection">QDomNode::isCDATASection</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isCharacterData">QDomNode::isCharacterData</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isComment">QDomNode::isComment</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isDocument">QDomNode::isDocument</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isDocumentFragment">QDomNode::isDocumentFragment</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isDocumentType">QDomNode::isDocumentType</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isElement">QDomNode::isElement</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isEntity">QDomNode::isEntity</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isEntityReference">QDomNode::isEntityReference</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool <a href="qdomnode.html#isNotation">QDomNode::isNotation</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isProcessingInstruction">QDomNode::isProcessingInstruction</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QDomNode::isSupported(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qdomnode.html#isText">QDomNode::isText</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnode.html">QDomNode</a> <a href="qdomnode.html#lastChild">QDomNode::lastChild</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qdomnode.html#localName">QDomNode::localName</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomnode.html#namespaceURIx">QDomNode::namespaceURI</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> <a href="qdomnode.html#nextSibling">QDomNode::nextSibling</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomnode.html#nodeName">QDomNode::nodeName</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html#NodeType-enum">QDomNode::NodeType</a> <a href="qdomnode.html#nodeType">QDomNode::nodeType</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomnode.html#nodeValue">QDomNode::nodeValue</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qdomnode.html#normalize">QDomNode::normalize</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomdocument.html">QDomDocument</a> <a href="qdomnode.html#ownerDocument">QDomNode::ownerDocument</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> <a href="qdomnode.html#parentNode">QDomNode::parentNode</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomnode.html#prefix">QDomNode::prefix</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> <a href="qdomnode.html#previousSibling">QDomNode::previousSibling</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qdomnode.html">QDomNode</a> QDomNode::removeChild(const <a href="qdomnode.html">QDomNode</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> QDomNode::replaceChild(const <a href="qdomnode.html">QDomNode</a> &amp;, const <a href="qdomnode.html">QDomNode</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QDomNode::setNodeValue(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDomNode::setPrefix(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>QDomNode::~QDomNode()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qdomnode.html">QDomNode</a> QDomNodeList::item(int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>uint <a href="qdomnodelist.html#length">QDomNodeList::length</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>QDomNodeList::~QDomNodeList()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomprocessinginstruction.html#data">QDomProcessingInstruction::data</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QDomProcessingInstruction::setData(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qdomprocessinginstruction.html#target">QDomProcessingInstruction::target</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>int QEventLoop::enterLoop()</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="even"><td>int <a href="qeventloop.html#exec">QEventLoop::exec</a>()</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QEventLoop::exit(int)</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QEventLoop::exitLoop()</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QEventLoop::hasPendingEvents() const</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="even"><td>int QEventLoop::loopLevel() const</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QEventLoop::processEvents(ProcessEventsFlags)</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QEventLoop::registerSocketNotifier(<a href="qsocketnotifier.html">QSocketNotifier</a> *)</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QEventLoop::unregisterSocketNotifier(<a href="qsocketnotifier.html">QSocketNotifier</a> *)</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qeventloop.html#wakeUp">QEventLoop::wakeUp</a>()</td><td>Port to the new <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QFrame::drawContents(<a href="qpainter.html">QPainter</a> *)</td><td>Use <a href="q3frame.html">Q3Frame</a> or reimplement <a href="qwidget.html#paintEvent">QFrame::paintEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QFrame::drawFrame(<a href="qpainter.html">QPainter</a> *)</td><td>Use <a href="q3frame.html">Q3Frame</a> or reimplement <a href="qwidget.html#paintEvent">QFrame::paintEvent</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QFrame::frameChanged()</td><td>Use <a href="q3frame.html">Q3Frame</a> or reimplement <a href="qwidget.html#resizeEvent">QFrame::resizeEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QFrame::setFrameRect(const <a href="qrect.html">QRect</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QFrame::setFrameStyle(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QFrame::setLineWidth(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QFrame::setMargin(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QFrame::setMidLineWidth(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QGridLayout::setColStretch(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QGridLayout::setRowStretch(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QGroupBox::setAlignment(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QGroupBox::setColumnLayout(int, Orientation)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QGroupBox::setTitle(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>QHostAddress::~QHostAddress()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>int <a href="qiodevice-qt3.html#getch">QIODevice::getch</a>()</td><td>Port to the new <a href="qiodevice.html">QIODevice</a> API.</td></tr>
+<tr valign="top" class="even"><td>int QIODevice::putch(int)</td><td>Port to the new <a href="qiodevice.html">QIODevice</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="qbytearray.html">QByteArray</a> <a href="qiodevice.html#readAll">QIODevice::readAll</a>()</td><td>Port to the new <a href="qiodevice.html">QIODevice</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> QIODevice::readLine(char *, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a>)</td><td>Port to the new <a href="qiodevice.html">QIODevice</a> API.</td></tr>
+<tr valign="top" class="odd"><td>int QIODevice::ungetch(int)</td><td>Port to the new <a href="qiodevice.html">QIODevice</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QIcon::setPixmap(const <a href="qstring.html">QString</a> &amp;, Size, Mode, State)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QIcon::setPixmap(const <a href="qpixmap.html">QPixmap</a> &amp;, Size, Mode, State)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>QIcon::~QIcon()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QLabel::setAlignment(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLabel::setAutoResize(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLabel::setBuddy(<a href="qwidget.html">QWidget</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLabel::setMovie(const <a href="qmovie.html">QMovie</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLabel::setNum(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLabel::setNum(double)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLabel::setPicture(const <a href="qpicture.html">QPicture</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLabel::setPixmap(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLabel::setText(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>QLayoutIterator <a href="qlayout-qt3.html#iterator">QLayout::iterator</a>()</td><td>Port to the new <a href="qlayout.html">QLayout</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QLayout::setAutoAdd(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLayout::setMargin(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLayout::setMenuBar(<a href="qmenubar.html">QMenuBar</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLayout::setSpacing(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>QLayoutIterator QLayoutItem::iterator()</td><td>Port to the new <a href="qlayoutitem.html">QLayoutItem</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QLayoutItem::setAlignment(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qlibrary.html#unload">QLibrary::unload</a>()</td><td>Never used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qlineedit.html#clear">QLineEdit::clear</a>()</td><td>Connect to <a href="qlineedit.html#textChanged">QLineEdit::textChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qlineedit-qt3.html#clearValidator">QLineEdit::clearValidator</a>()</td><td>Never used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qlineedit.html#copy">QLineEdit::copy</a>() const</td><td>Never used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qlineedit.html#cut">QLineEdit::cut</a>()</td><td>Never used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qlineedit.html#deselect">QLineEdit::deselect</a>()</td><td>Connect to <a href="qlineedit.html#selectionChanged">QLineEdit::selectionChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::insert(const <a href="qstring.html">QString</a> &amp;)</td><td>Connect to <a href="qlineedit.html#textChanged">QLineEdit::textChanged</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qlineedit.html#paste">QLineEdit::paste</a>()</td><td>Connect to <a href="qlineedit.html#textChanged">QLineEdit::textChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qlineedit.html#redo">QLineEdit::redo</a>()</td><td>Never used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qlineedit.html#selectAll">QLineEdit::selectAll</a>()</td><td>Connect to <a href="qlineedit.html#selectionChanged">QLineEdit::selectionChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::setAlignment(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLineEdit::setCursorPosition(int)</td><td>Connect to <a href="qlineedit.html#cursorPositionChanged">QLineEdit::cursorPositionChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::setDragEnabled(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLineEdit::setEchoMode(EchoMode)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::setFrame(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLineEdit::setMaxLength(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::setReadOnly(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QLineEdit::setSelection(int, int)</td><td>Connect to <a href="qlineedit.html#selectionChanged">QLineEdit::selectionChanged</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QLineEdit::setText(const <a href="qstring.html">QString</a> &amp;)</td><td>Connect to <a href="qlineedit.html#textChanged">QLineEdit::textChanged</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QLineEdit::setValidator(const <a href="qvalidator.html">QValidator</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qlineedit.html#undo">QLineEdit::undo</a>()</td><td>Never used in a polymorphic way by Qt.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::addDockWindow(<a href="porting4.html#qdockwindow">QDockWindow</a> *, Dock, bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::addDockWindow(<a href="porting4.html#qdockwindow">QDockWindow</a> *, const <a href="qstring.html">QString</a> &amp;, Dock, bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::customize()</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QMainWindow::isCustomizable() const</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::moveDockWindow(<a href="porting4.html#qdockwindow">QDockWindow</a> *, Dock)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::moveDockWindow(<a href="porting4.html#qdockwindow">QDockWindow</a> *, Dock, bool, int, int)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::removeDockWindow(<a href="porting4.html#qdockwindow">QDockWindow</a> *)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setAppropriate(<a href="porting4.html#qdockwindow">QDockWindow</a> *, bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::setCentralWidget(<a href="qwidget.html">QWidget</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setDockEnabled(<a href="porting4.html#qdockwindow">QDockWindow</a> *, Dock, bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::setDockEnabled(Dock, bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setDockMenuEnabled(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::setDockWindowsMovable(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setOpaqueMoving(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::setRightJustification(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setUpLayout()</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMainWindow::setUsesBigPixmaps(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMainWindow::setUsesTextLabel(bool)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="even"><td>bool QMainWindow::showDockMenu(const <a href="qpoint.html">QPoint</a> &amp;)</td><td>Port to the new <a href="qmainwindow.html">QMainWindow</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMenuBar::activateItemAt(int)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMenuBar::menuContentsChanged()</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMenuBar::menuDelPopup(<a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMenuBar::menuInsPopup(<a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMenuBar::menuStateChanged()</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMenuBar::setId(int, int)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QMenuBar::setSeparator(Separator)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QMenuBar::updateItem(int)</td><td>Port to the new <a href="qmenubar.html">QMenuBar</a> API.</td></tr>
+<tr valign="top" class="odd"><td>QMutex::~QMutex()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QObject::checkConnectArgs(const char *, const <a href="qobject.html">QObject</a> *, const char *)</td><td>Reimplementing this function is no longer possible.</td></tr>
+<tr valign="top" class="odd"><td>const char * <a href="qobject-qt3.html#className">QObject::className</a>() const</td><td>Reimplementing this function is no longer supported.</td></tr>
+<tr valign="top" class="even"><td>void QObject::insertChild(<a href="qobject.html">QObject</a> *)</td><td>Reimplement <a href="qobject.html#childEvent">QObject::childEvent</a>() instead and handle <a href="qevent.html#Type-enum">QEvent::ChildAdded</a> events.</td></tr>
+<tr valign="top" class="odd"><td><a href="qvariant.html">QVariant</a> QObject::property(const char *) const</td><td>Reimplementing this function is no longer supported.</td></tr>
+<tr valign="top" class="even"><td>void QObject::removeChild(<a href="qobject.html">QObject</a> *)</td><td>Reimplement <a href="qobject.html#childEvent">QObject::childEvent</a>() instead and handle <a href="qevent.html#Type-enum">QEvent::ChildRemoved</a> events.</td></tr>
+<tr valign="top" class="odd"><td>void QObject::setName(const char *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>bool QObject::setProperty(const char *, const <a href="qvariant.html">QVariant</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>bool QPaintDevice::cmd(int , <a href="qpainter.html">QPainter</a> * , QPDevCmdParam *)</td><td>Port to the new <a href="qpaintengine.html">QPaintEngine</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> QPaintDevice::handle() const</td><td>Port to the new QPaintDevice API.</td></tr>
+<tr valign="top" class="odd"><td>HDC QPaintDevice::handle() const</td><td>Port to the new QPaintDevice API.</td></tr>
+<tr valign="top" class="even"><td>void QPopupMenu::activateItemAt(int)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QPopupMenu::menuContentsChanged()</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QPopupMenu::menuDelPopup(<a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QPopupMenu::menuInsPopup(<a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QPopupMenu::menuStateChanged()</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QPopupMenu::setActiveItem(int)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QPopupMenu::setCheckable(bool)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QPopupMenu::setId(int, int)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QPopupMenu::updateItem(int)</td><td>Port to the new <a href="qmenu.html">QMenu</a> API.</td></tr>
+<tr valign="top" class="odd"><td>int <a href="qprinter.html#resolution">QPrinter::resolution</a>() const</td><td>Call <a href="qprinter.html#setResolution">QPrinter::setResolution</a>() to change the resolution.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setColorMode(ColorMode)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setCreator(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setDocName(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setFromTo(int, int)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setFullPage(bool)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setMinMax(int, int)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setNumCopies(int)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setOrientation(Orientation)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setOutputFileName(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setOutputToFile(bool)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setPageOrder(PageOrder)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setPageSize(PageSize)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setPaperSource(PaperSource)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setPrintProgram(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setPrinterName(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QPrinter::setPrinterSelectionOption(const <a href="qstring.html">QString</a> &amp;)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="even"><td>void QPrinter::setResolution(int)</td><td>Subclass <a href="qprintengine.html">QPrintEngine</a> instead.</td></tr>
+<tr valign="top" class="odd"><td>void QProcess::addArgument(const <a href="qstring.html">QString</a> &amp;)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QProcess::closeStdin()</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>bool QProcess::launch(const <a href="qbytearray.html">QByteArray</a> &amp; buf, <a href="qstringlist.html">QStringList</a> *)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>bool QProcess::launch(const <a href="qstring.html">QString</a> &amp; buf, <a href="qstringlist.html">QStringList</a> *)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> QProcess::readLineStderr()</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QProcess::readLineStdout()</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td><a href="qbytearray.html">QByteArray</a> QProcess::readStderr()</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td><a href="qbytearray.html">QByteArray</a> QProcess::readStdout()</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>void QProcess::setArguments(const <a href="qstringlist.html">QStringList</a> &amp;)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QProcess::setWorkingDirectory(const <a href="qdir.html">QDir</a> &amp;)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>bool QProcess::start(<a href="qstringlist.html">QStringList</a> *)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QProcess::writeToStdin(const <a href="qbytearray.html">QByteArray</a> &amp;)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>bool QProgressBar::setIndicator(<a href="qstring.html">QString</a> &amp;, int, int)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QProgressBar::setProgress(int)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>void QProgressBar::setTotalSteps(int)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QPushButton::setAutoDefault(bool)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>void QPushButton::setDefault(bool)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="even"><td>void QPushButton::setIsMenuButton(bool)</td><td>Not used polymorphically in Qt.</td></tr>
+<tr valign="top" class="odd"><td>void QPushButton::setOn(bool)</td><td>Connect to QPushButton::toggled(bool) instead.</td></tr>
+<tr valign="top" class="even"><td>void QRadioButton::setChecked(bool)</td><td>Connect to QRadioButton::toggled(bool) instead.</td></tr>
+<tr valign="top" class="odd"><td>uchar * QScreen::cache(int , int)</td><td>Port to the new QScreen API.</td></tr>
+<tr valign="top" class="even"><td>void QScreen::set(unsigned int , unsigned int , unsigned int , unsigned)</td><td>Port to the new QScreen API.</td></tr>
+<tr valign="top" class="odd"><td>void QScreen::uncache(uchar *)</td><td>Port to the new QScreen API.</td></tr>
+<tr valign="top" class="even"><td>void QScrollBar::setOrientation(Orientation)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QScrollBar::setTracking(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSignalMapper::setMapping(const <a href="qobject.html">QObject</a> *, const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSignalMapper::setMapping(const <a href="qobject.html">QObject</a> *, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSlider::rangeChange()</td><td>Reimplement <a href="qabstractslider.html#sliderChange">QSlider::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QSlider::setOrientation(Orientation)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSlider::setPalette(const <a href="qpalette.html">QPalette</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSlider::setTickInterval(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSlider::setTickmarks(TickSetting)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSlider::setTracking(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSlider::setValue(int)</td><td>Reimplement <a href="qabstractslider.html#sliderChange">QSlider::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QSlider::valueChange()</td><td>Reimplement <a href="qabstractslider.html#sliderChange">QSlider::sliderChange</a>() instead.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qspinbox.html#cleanText-prop">QSpinBox::cleanText</a>() const</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qabstractspinbox.html#interpretText">QSpinBox::interpretText</a>()</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qspinbox.html#prefix-prop">QSpinBox::prefix</a>() const</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::rangeChange()</td><td>Reimplement QSpinBox::sliderChange() instead.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qabstractspinbox.html#selectAll">QSpinBox::selectAll</a>()</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::setButtonSymbols(ButtonSymbols)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSpinBox::setPrefix(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::setSpecialValueText(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSpinBox::setSuffix(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::setValidator(const <a href="qvalidator.html">QValidator</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSpinBox::setValue(int)</td><td>Connect to <a href="qspinbox.html#valueChanged">QSpinBox::valueChanged</a>().</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::setWrapping(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qabstractspinbox.html#stepDown">QSpinBox::stepDown</a>()</td><td>Reimplement <a href="qabstractspinbox.html#stepBy">QSpinBox::stepBy</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qabstractspinbox.html#stepUp">QSpinBox::stepUp</a>()</td><td>Reimplement <a href="qabstractspinbox.html#stepBy">QSpinBox::stepBy</a>() instead.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> <a href="qspinbox.html#suffix-prop">QSpinBox::suffix</a>() const</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QSpinBox::updateDisplay()</td><td>Port to the new <a href="qspinbox.html">QSpinBox</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QSpinBox::valueChange()</td><td>Reimplement QSpinBox::sliderChange() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QSplitter::drawSplitter(<a href="qpainter.html">QPainter</a> *, QCOORD, QCOORD, QCOORD, QCOORD)</td><td>Reimplement <a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>() instead and handle QStyle::PE_Splitter.</td></tr>
+<tr valign="top" class="even"><td>void QSplitter::setOpaqueResize(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSplitter::setOrientation(Orientation)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSplitter::setResizeMode(<a href="qwidget.html">QWidget</a> *, ResizeMode)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlDatabase::setDatabaseName(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSqlDatabase::setHostName(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlDatabase::setPassword(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QSqlDatabase::setPort(int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlDatabase::setUserName(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td><a href="qsqlquery.html">QSqlQuery</a> QSqlDriver::createQuery() const</td><td>Port to the new <a href="qsqldriver.html">QSqlDriver</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> <a href="qsqldriver-qt3.html#nullText">QSqlDriver::nullText</a>() const</td><td>Port to the new <a href="qsqldriver.html">QSqlDriver</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qsqlrecord.html">QSqlRecord</a> QSqlDriver::record(const <a href="qsqlquery.html">QSqlQuery</a> &amp;) const</td><td>Port to the new <a href="qsqldriver.html">QSqlDriver</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qsqlrecordinfo">QSqlRecordInfo</a> QSqlDriver::recordInfo(const <a href="qsqlquery.html">QSqlQuery</a> &amp;) const</td><td>Port to the new <a href="qsqldriver.html">QSqlDriver</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="porting4.html#qsqlrecordinfo">QSqlRecordInfo</a> QSqlDriver::recordInfo(const <a href="qstring.html">QString</a> &amp;) const</td><td>Port to the new <a href="qsqldriver.html">QSqlDriver</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlError::setDatabaseText(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlError::setDriverText(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlError::setNumber(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlError::setType(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qsqlerror">QSqlError::</a>~<a href="porting4.html#qsqlerror">QSqlError</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlField::setName(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qsqlfield-qt3.html#setNull">QSqlField::setNull</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlField::setReadOnly(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlField::setValue(const <a href="qvariant.html">QVariant</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qvariant.html">QVariant</a> <a href="qsqlfield.html#value">QSqlField::value</a>() const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>QSqlField::~QSqlField()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlFieldInfo::setCalculated(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlFieldInfo::setGenerated(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlFieldInfo::setTrim(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qsqlfieldinfo">QSqlFieldInfo::</a>~<a href="porting4.html#qsqlfieldinfo">QSqlFieldInfo</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlIndex::append(const <a href="qsqlfield.html">QSqlField</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlIndex::append(const <a href="qsqlfield.html">QSqlField</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlIndex::setCursorName(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlIndex::setDescending(int, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlIndex::setName(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qvariant.html">QVariant</a> QSqlQuery::value(int) const</td><td>Exists as a non-virtual function.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::append(const <a href="qsqlfield.html">QSqlField</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qsqlrecord.html#clear">QSqlRecord::clear</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::clearValues(bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlRecord::insert(int, const <a href="qsqlfield.html">QSqlField</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::remove(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlRecord::setGenerated(const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::setGenerated(int, bool)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlRecord::setNull(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::setNull(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QSqlRecord::setValue(const <a href="qstring.html">QString</a> &amp;, const <a href="qvariant.html">QVariant</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QSqlRecord::setValue(int, const <a href="qvariant.html">QVariant</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qstring.html">QString</a> QSqlRecord::toString(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstringlist.html">QStringList</a> QSqlRecord::toStringList(const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="qvariant.html">QVariant</a> QSqlRecord::value(int) const</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qvariant.html">QVariant</a> QSqlRecord::value(const <a href="qstring.html">QString</a> &amp;) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qsqlrecord">QSqlRecord::</a>~<a href="porting4.html#qsqlrecord">QSqlRecord</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QStyle::polishPopupMenu(<a href="porting4.html#qpopupmenu">QPopupMenu</a> *)</td><td>Reimplement QStyle::polish(<a href="qwidget.html">QWidget</a> *) instead.</td></tr>
+<tr valign="top" class="odd"><td>int QTabBar::addTab(QTab *)</td><td>Reimplement <a href="qtabbar.html#tabInserted">QTabBar::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>int QTabBar::insertTab(QTab *, int)</td><td>Reimplement <a href="qtabbar.html#tabInserted">QTabBar::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabBar::layoutTabs()</td><td>Reimplement <a href="qtabbar.html#tabLayoutChange">QTabBar::tabLayoutChange</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabBar::paint(<a href="qpainter.html">QPainter</a> *, QTab *, bool) const</td><td>Reimplement <a href="qwidget.html#paintEvent">QTabBar::paintEvent</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabBar::paintLabel(<a href="qpainter.html">QPainter</a> *, const <a href="qrect.html">QRect</a> &amp;, QTab *, bool) const</td><td>Reimplement <a href="qwidget.html#paintEvent">QTabBar::paintEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabBar::removeTab(QTab *)</td><td>Reimplement <a href="qtabbar.html#tabRemoved">QTabBar::tabRemoved</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>QTab * QTabBar::selectTab(const <a href="qpoint.html">QPoint</a> &amp;) const</td><td>Reimplement <a href="qwidget.html#mousePressEvent">QTabBar::mousePressEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabBar::setCurrentTab(int)</td><td>Connect to the <a href="qtabbar.html#currentChanged">QTabBar::currentChanged</a>() signal.</td></tr>
+<tr valign="top" class="odd"><td>void QTabBar::setCurrentTab(QTab *)</td><td>Connect to the <a href="qtabbar.html#currentChanged">QTabBar::currentChanged</a>() signal.</td></tr>
+<tr valign="top" class="even"><td>void QTabBar::setShape(Shape)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QTabBar::setTabEnabled(int, bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QTabWidget::addTab(<a href="qwidget.html">QWidget</a> *, const <a href="qstring.html">QString</a> &amp;)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabWidget::addTab(<a href="qwidget.html">QWidget</a> *, const <a href="qicon.html">QIcon</a> &amp;, const <a href="qstring.html">QString</a> &amp;)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabWidget::addTab(<a href="qwidget.html">QWidget</a> *, QTab *)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabWidget::insertTab(<a href="qwidget.html">QWidget</a> *, const <a href="qicon.html">QIcon</a> &amp;, const <a href="qstring.html">QString</a> &amp;, int)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabWidget::insertTab(<a href="qwidget.html">QWidget</a> *, const <a href="qstring.html">QString</a> &amp;, int)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabWidget::insertTab(<a href="qwidget.html">QWidget</a> *, QTab *, int)</td><td>Reimplement <a href="qtabwidget.html#tabInserted">QTabWidget::tabInserted</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTabWidget::removePage(<a href="qwidget.html">QWidget</a> *)</td><td>Reimplement <a href="qtabwidget.html#tabRemoved">QTabWidget::tabRemoved</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QTabWidget::showPage(<a href="qwidget.html">QWidget</a> *)</td><td>Connect to <a href="qtabwidget.html#currentChanged">QTabWidget::currentChanged</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::append(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit.html#clear">QTextEdit::clear</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::clearParagraphBackground(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit.html#copy">QTextEdit::copy</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="porting4.html#qpopupmenu">QPopupMenu</a> * QTextEdit::createPopupMenu(const <a href="qpoint.html">QPoint</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qpopupmenu">QPopupMenu</a> * QTextEdit::createPopupMenu()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qtextedit.html#cut">QTextEdit::cut</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::del()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::doKeyboardAction(KeyboardAction)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit.html#ensureCursorVisible">QTextEdit::ensureCursorVisible</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>bool QTextEdit::find(const <a href="qstring.html">QString</a> &amp;, bool, bool, bool, int *, int *)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>bool QTextEdit::focusNextPrevChild(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>int QTextEdit::heightForWidth(int) const</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::insert(const <a href="qstring.html">QString</a> &amp;, bool, bool, bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::insertAt(const <a href="qstring.html">QString</a> &amp;, int, int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::insertParagraph(const <a href="qstring.html">QString</a> &amp;, int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::moveCursor(CursorAction, bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit.html#paste">QTextEdit::paste</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::pasteSubType(const <a href="porting4.html#qcstring">QCString</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::placeCursor(const <a href="qpoint.html">QPoint</a> &amp;, <a href="qtextcursor.html">QTextCursor</a> *)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qtextedit.html#redo">QTextEdit::redo</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::removeParagraph(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::removeSelectedText(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::removeSelection(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::scrollToAnchor(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::scrollToBottom()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::selectAll(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setAlignment(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setBold(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setColor(const <a href="qcolor.html">QColor</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setCurrentFont(const <a href="qfont.html">QFont</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setCursorPosition(int, int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setFamily(const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setItalic(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setLinkUnderline(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setMimeSourceFactory(<a href="porting4.html#qmimesourcefactory">QMimeSourceFactory</a> *)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setModified(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setOverwriteMode(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setPaper(const <a href="qbrush.html">QBrush</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setParagraphBackgroundColor(int, const <a href="qcolor.html">QColor</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setPointSize(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setReadOnly(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setSelection(int, int, int, int, int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setSelectionAttributes(int, const <a href="qcolor.html">QColor</a> &amp;, bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setStyleSheet(<a href="porting4.html#qstylesheet">QStyleSheet</a> *)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setTabStopWidth(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setText(const <a href="qstring.html">QString</a> &amp;, const <a href="qstring.html">QString</a> &amp;)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setTextFormat(TextFormat)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setUnderline(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setUndoDepth(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setUndoRedoEnabled(bool)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setVerticalAlignment(VerticalAlignment)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setWordWrap(WordWrap)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::setWrapColumnOrWidth(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::setWrapPolicy(WrapPolicy)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit-qt3.html#sync">QTextEdit::sync</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qtextedit.html#undo">QTextEdit::undo</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qtextedit.html#zoomIn">QTextEdit::zoomIn</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTextEdit::zoomIn(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::zoomOut(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qtextedit.html#zoomOut">QTextEdit::zoomOut</a>()</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTextEdit::zoomTo(int)</td><td>Use <a href="q3textedit.html">Q3TextEdit</a> or port to the new <a href="qtextedit.html">QTextEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QTimeEdit::sectionFormattedText(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTimeEdit::setAutoAdvance(bool)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTimeEdit::setHour(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTimeEdit::setMaxValue(const <a href="qtime.html">QTime</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTimeEdit::setMinValue(const <a href="qtime.html">QTime</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTimeEdit::setMinute(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTimeEdit::setRange(const <a href="qtime.html">QTime</a> &amp;, const <a href="qtime.html">QTime</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTimeEdit::setSecond(int)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QTimeEdit::setSeparator(const <a href="qstring.html">QString</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="odd"><td>void QTimeEdit::setTime(const <a href="qtime.html">QTime</a> &amp;)</td><td>Port to the new <a href="qdatetimeedit.html">QDateTimeEdit</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qtoolbar.html#clear">QToolBar::clear</a>()</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QToolBar::setLabel(const <a href="qstring.html">QString</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QToolBar::setStretchableWidget(<a href="qwidget.html">QWidget</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QToolButton::setIconSet(const <a href="qicon.html">QIcon</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QToolButton::setOn(bool)</td><td>Connect to QToolButton::toggled(bool) instead.</td></tr>
+<tr valign="top" class="odd"><td>void QToolButton::setTextLabel(const <a href="qstring.html">QString</a> &amp;, bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QToolButton::setToggleButton(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QToolButton::setUsesBigPixmap(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QToolButton::setUsesTextLabel(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QToolTip::maybeTip(const <a href="qpoint.html">QPoint</a> &amp;)</td><td>Port to the new <a href="qtooltip.html">QToolTip</a> API.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::addPath(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool <a href="qurl-qt3.html#cdUp">QUrl::cdUp</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>bool QUrl::parse(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qurl-qt3.html#reset">QUrl::reset</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::setEncodedPathAndQuery(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QUrl::setFileName(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::setHost(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QUrl::setPassword(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::setPath(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QUrl::setPort(int)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::setProtocol(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QUrl::setQuery(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>void QUrl::setRef(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>void QUrl::setUser(const <a href="qstring.html">QString</a> &amp;)</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QUrl::toString(bool, bool) const</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qurl">QUrl::</a>~<a href="porting4.html#qurl">QUrl</a>()</td><td>Value type.</td></tr>
+<tr valign="top" class="even"><td>QWaitCondition::~QWaitCondition()</td><td>Value type.</td></tr>
+<tr valign="top" class="odd"><td>bool QWhatsThis::clicked(const <a href="qstring.html">QString</a> &amp;)</td><td>Port to the new <a href="qwhatsthis.html">QWhatsThis</a> API.</td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a> QWhatsThis::text(const <a href="qpoint.html">QPoint</a> &amp;)</td><td>Port to the new <a href="qwhatsthis.html">QWhatsThis</a> API.</td></tr>
+<tr valign="top" class="odd"><td><a href="porting4.html#qwhatsthis">QWhatsThis::</a>~<a href="porting4.html#qwhatsthis">QWhatsThis</a>()</td><td>Port to the new <a href="qwhatsthis.html">QWhatsThis</a> API.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget.html#adjustSize">QWidget::adjustSize</a>()</td><td>Reimplement <a href="qwidget.html#sizeHint-prop">QWidget::sizeHint</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>bool QWidget::close(bool)</td><td>Reimplement <a href="qwidget.html#closeEvent">QWidget::closeEvent</a>().</td></tr>
+<tr valign="top" class="even"><td>void QWidget::create(WId, bool, bool)</td><td>Not supported in Qt 4.</td></tr>
+<tr valign="top" class="odd"><td>bool QWidget::customWhatsThis() const</td><td>Not supported in Qt 4.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::destroy(bool, bool)</td><td>Not supported in Qt 4.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::enabledChange(bool)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::EnabledChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::fontChange(const <a href="qfont.html">QFont</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::FontChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::imComposeEvent(QIMEvent *)</td><td>Reimplement <a href="qwidget.html#inputMethodEvent">QWidget::inputMethodEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::imEndEvent(QIMEvent *)</td><td>Reimplement <a href="qwidget.html#inputMethodEvent">QWidget::inputMethodEvent</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::imStartEvent(QIMEvent *)</td><td>Reimplement <a href="qwidget.html#inputMethodEvent">QWidget::inputMethodEvent</a>() instead.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::move(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::paletteChange(const <a href="qpalette.html">QPalette</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::PaletteChange</a> and/or <a href="qevent.html#Type-enum">QEvent::ApplicationPaletteChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget-qt3.html#polish">QWidget::polish</a>()</td><td>Reimplement event() and handle the <a href="qevent.html#Type-enum">QEvent::Polish</a> event type.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::reparent(<a href="qwidget.html">QWidget</a> *, WFlags, const <a href="qpoint.html">QPoint</a> &amp;, bool)</td><td>Reimplement <a href="qwidget.html#event">QWidget::event</a>() and handle <a href="qevent.html#Type-enum">QEvent::Reparent</a>.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::resize(int, int)</td><td>Reimplement <a href="qwidget.html#resizeEvent">QWidget::resizeEvent</a>() instead.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setAcceptDrops(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget-qt3.html#setActiveWindow">QWidget::setActiveWindow</a>()</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::ActivationChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setAutoMask(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setBackgroundColor(const <a href="qcolor.html">QColor</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setBackgroundMode(BackgroundMode)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setBackgroundOrigin(BackgroundOrigin)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setBackgroundPixmap(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setCaption(const <a href="qstring.html">QString</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::WindowTitleChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setCursor(const <a href="qcursor.html">QCursor</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setEnabled(bool)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::EnabledChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setEraseColor(const <a href="qcolor.html">QColor</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setErasePixmap(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qwidget.html#setFocus">QWidget::setFocus</a>()</td><td>Reimplement <a href="qwidget.html#focusInEvent">QWidget::focusInEvent</a>() or <a href="qwidget.html#focusOutEvent">QWidget::focusOutEvent</a>().</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setFocusPolicy(FocusPolicy)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setFocusProxy(<a href="qwidget.html">QWidget</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setFont(const <a href="qfont.html">QFont</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::FontChange</a> and/or <a href="qevent.html#Type-enum">QEvent::ApplicationFontChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setGeometry(int, int, int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setGeometry(const <a href="qrect.html">QRect</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setIcon(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::WindowIconChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setIconText(const <a href="qstring.html">QString</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::IconTextChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setKeyCompression(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setMask(const <a href="qregion.html">QRegion</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setMask(const <a href="qbitmap.html">QBitmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setMaximumSize(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setMicroFocusHint(int, int, int, int, bool, <a href="qfont.html">QFont</a> *)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setMinimumSize(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setMouseTracking(bool)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::MouseTrackingChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setPalette(const <a href="qpalette.html">QPalette</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::PaletteChange</a> and/or <a href="qevent.html#Type-enum">QEvent::ApplicationPaletteChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setPaletteBackgroundColor(const <a href="qcolor.html">QColor</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setPaletteBackgroundPixmap(const <a href="qpixmap.html">QPixmap</a> &amp;)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setSizeIncrement(int, int)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setSizePolicy(<a href="qsizepolicy.html">QSizePolicy</a>)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::setUpdatesEnabled(bool)</td><td>Setter.</td></tr>
+<tr valign="top" class="even"><td>void QWidget::setWFlags(WFlags)</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qwidget.html#show">QWidget::show</a>()</td><td>Reimplement <a href="qwidget.html#showEvent">QWidget::showEvent</a>().</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget.html#showMaximized">QWidget::showMaximized</a>()</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::WindowStateChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void <a href="qwidget.html#showMinimized">QWidget::showMinimized</a>()</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::WindowStateChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget.html#showNormal">QWidget::showNormal</a>()</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::WindowStateChange</a>.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::styleChange(<a href="qstyle.html">QStyle</a> &amp;)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::StyleChange</a>.</td></tr>
+<tr valign="top" class="even"><td>void <a href="qwidget.html#cursor-prop">QWidget::unsetCursor</a>()</td><td>Setter.</td></tr>
+<tr valign="top" class="odd"><td>void QWidget::windowActivationChange(bool)</td><td>Reimplement <a href="qwidget.html#changeEvent">QWidget::changeEvent</a>() and handle <a href="qevent.html#Type-enum">QEvent::ActivationChange</a>.</td></tr>
+</table></p>
+<p>
+[Previous: <a href="porting4.html">Porting to Qt 4</a>]
+[<a href="porting.html">Contents</a>]
+[Next: <a href="porting4-dnd.html">Porting to Qt 4 - Drag and Drop</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

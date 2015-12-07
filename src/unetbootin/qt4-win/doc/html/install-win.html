@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/installation.qdoc -->
+<head>
+  <title>Qt 4.4: Installing Qt/Windows</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Installing Qt/Windows<br /><span class="subtitle"></span>
+</h1>
+<p><b>Note:</b> Qt for Windows has some requirements that are given in more detail in the <a href="requirements-win.html">Qt/Windows Requirements</a> document.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Notes:</b><ul>
+<li>If you have obtained a binary package for this platform, consult the installation instructions provided instead of the ones in this document.</li>
+<li><a href="opensourceedition.html">Qt Open Source Edition</a> is not officially supported for use with any version of Visual Studio. Integration with Visual Studio is available as part of the <a href="commercialeditions.html">Qt Commercial Editions</a>.</li>
+</ul>
+</td></tr>
+</table></p>
+<ol type="1">
+<li>If you have the commercial edition of Qt, copy the license file from your account on dist.trolltech.com into your home directory (this may be known as the <tt>userprofile</tt> environment variable) and rename it to <tt>.qt-license</tt>. This renaming process must be done using a <i>command prompt</i> on Windows, <b>not</b> with Windows Explorer. For example on Windows 2000, <tt>%USERPROFILE%</tt> should be something like <tt>C:\Documents and Settings\username</tt><p>For the open source version you do not need a license file.</p>
+</li>
+<li>Uncompress the files into the directory you want Qt installed; e.g&#x2e; <tt>C:\Qt\4.4.0</tt>.<p><b>Note:</b> The install path must not contain any spaces or Windows specific file system characters.</p>
+</li>
+<li>Environment variables<p>In order to build and use Qt, the <tt>PATH</tt> environment variable needs to be extended:</p>
+<pre>     PATH               - to locate qmake, moc and other Qt tools</pre>
+<p>This is done by adding <tt>c:\Qt\4.4.0\bin</tt> to the <tt>PATH</tt> variable.</p>
+<p>For newer versions of Windows, <tt>PATH</tt> can be extended through the <b>Control Panel|System|Advanced|Environment variables</b> menu and for older versions by editing <tt>c:\autoexec.bat</tt>.</p>
+<p>You may also need to ensure that the locations of your compiler and other build tools are listed in the <tt>PATH</tt> variable. This will depend on your choice of software development environment.</p>
+<p><b>Note</b>: If you don't use the configured shells, which is available in the application menu, in the <a href="opensourceedition.html">Qt Open Source Edition</a>, <tt>configure</tt> requires that <tt>sh.exe</tt> is not in the path or that it is run from <tt>msys</tt>. This also goes for mingw32-make.</p>
+</li>
+<li>Building<p>To configure the Qt library for your machine type:</p>
+<pre>     C:
+     cd \Qt\4.4.0
+     configure</pre>
+<p>Type <tt>configure -help</tt> to get a list of all available options.</p>
+<p>If you have multiple compilers installed, and want to build the Qt library using a specific compiler, you must specify a <tt>qmake</tt> specification. This is done by pasing <tt>-platform &lt;spec&gt;</tt> to configure; for example:</p>
+<pre>     configure -platform win32-msvc</pre>
+<p>In some cases you need to set up the compilation environment before running configure in order to use the right compiler. For instance, you need to do this if you have Visual Studio 2005 installed and want to compile Qt using the x64 compiler because the 32-bit and 64-bit compiler both use the same <tt>qmake</tt> specification file. This is usually done by selecting <b>Microsoft Visual Studio 2005|Visual Studio Tools|&lt;Command Prompt&gt;</b> from the <b>Start</b> menu.</p>
+<p>The actual commands needed to build Qt depends on your development system. For Microsoft Visual Studio to create the library and compile all the demos, examples, tools and tutorials type:</p>
+<pre>     nmake</pre>
+<p><b>Note:</b> If you later need to reconfigure and rebuild Qt from the same location, ensure that all traces of the previous configuration are removed by entering the build directory and typing <tt>nmake distclean</tt> before running <tt>configure</tt> again.</p>
+</li>
+<li>That's all. Qt is now installed.<p>If you are new to Qt, we suggest that you take a look at the demos and examples to see Qt in action. Run the Qt Examples and Demos either by typing <tt>qtdemo</tt> on the command line or through the desktop's Start menu.</p>
+<p>You might also want to try the following links:</p>
+<ul>
+<li><a href="how-to-learn-qt.html">How to Learn Qt</a></li>
+<li><a href="tutorials-tutorial.html">Qt Tutorial</a></li>
+<li><a href="http://www.trolltech.com/developer">Developer Zone</a></li>
+<li><a href="deployment.html">Deploying Qt Applications</a></li>
+</ul>
+</li>
+</ol>
+<p>We hope you will enjoy using Qt. Good luck!</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

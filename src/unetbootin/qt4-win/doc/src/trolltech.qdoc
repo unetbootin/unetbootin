@@ -1,0 +1,176 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! \page trolltech.html
+
+\title About Trolltech
+
+Trolltech is an international software company with
+headquarters in Oslo, Norway, and with offices
+in Brisbane, Australia and Redwood City, California.
+
+Our flagship product is \l{Qt Homepage}{Qt}, the cross-platform C++
+GUI toolkit. Qt enables you to develop professional, efficient,
+portable, and maintainable GUI applications quickly and easily.
+
+Qt for Embedded Linux is designed to power today's new generation of
+single-application embedded devices. Qt for Embedded Linux sits at the
+heart of Trolltech's product portfolio, optimizing Qt for embedded
+development and forming the core of \l{Qtopia}, Trolltech's product
+family for mobile and embedded devices.
+
+See the \l{Product Overview} for a complete list of products.
+
+\section1 Software that Makes Sense
+
+We design our products to give our customers the feeling of "this is
+the way that things were always meant to be". We know that it is
+crucial for our customers to have good tools for making good
+software. Therefore, we do not compromise our demands for superior
+design and technical quality when we develop our products.
+
+Trolltech is also known for providing top-quality technical support
+to our customers. At Trolltech, support inquiries are handled by the
+most qualified developers and designers themselves.
+
+\section1 History
+
+Trolltech was founded in 1994. The core team of designers at Trolltech
+started developing Qt in 1992, and the first commercial version of Qt was
+released in 1995. Since then, Trolltech has experienced rapid growth, and
+Qt is currently used in thousands of successful commercial software
+development projects world wide. At Trolltech, we continuously work to
+improve and expand Qt to ensure that it always represents the state of the
+art in usability, look and feel, performance, and stability.
+
+For more information, please visit the \l{Trolltech website}.
+
+\section1 Contact Information
+
+\raw HTML
+
+<table cellpadding="3" cellspacing="0" border="0" bgcolor="#E5E5E5">
+<tr><th colspan="6" valign="top" bgcolor="#a2c511">Email</th></tr>
+<tr>
+ <td rowspan="4"><br /></td>
+ <td colspan="2">
+  <a href="mailto:info@trolltech.com"><strong>info@trolltech.com</strong></a>
+ </td><td colspan="2">
+  <a href="mailto:sales@trolltech.com"><strong>sales@trolltech.com</strong></a>
+ </td><td rowspan="4"><br /></td>
+</tr><tr>
+ <td ><br /></td>
+ <td valign="top"> General inquiries and questions. Please check the
+  <a href="http://www.trolltech.com/developer/faqs/">FAQs</a> to see if your question is already answered there.
+ </td><td ><br />
+ </td><td valign="top"> Inquires related to purchasing, pricing and availability of
+  Trolltech products
+ </td>
+</tr><tr>
+ <td colspan="2">
+  <a href="mailto:www@trolltech.com"><strong>www@trolltech.com</strong></a>
+ </td><td colspan="2">
+  <a href="http://www.trolltech.com/developer/task-tracker/">
+   <strong>Task Tracker</strong></a>
+ </td>
+</tr><tr>
+ <td ><br /></td>
+ <td valign="top"> Comments about our web pages</td>
+ <td ><br /></td>
+ <td valign="top">
+  Use this page to submit bug reports; please read
+  <a href="bughowto.html">How to Report a Bug</a> page first.
+ </td>
+</tr><tr>
+ <td ><br /></td>
+ <td colspan="4" valign="top">Note that Trolltech uses the
+  <a href="http://mail-abuse.org/rbl/">RBL</a> and
+  <a href="http://work-rss.mail-abuse.org/rss/">RSS</a> databases to cut down on
+  spam. If your mail server is listed, you will regrettably not be able to
+  send us mail. The <a href="http://www.mail-abuse.org/tsi/">MAPS TSI</a>
+  pages provide information about how to secure your server.
+ </td><td>
+  <br />
+ </td>
+</tr>
+<tr bgcolor="#ffffff"><td bgcolor="#ffffff" colspan="6"><br /></td></tr>
+<tr><th colspan="6" valign="top" bgcolor="#a2c511">Norway Office</th></tr>
+<tr>
+ <td rowspan="4"><br /></td>
+ <td colspan="2"><strong>Telephone</strong></td>
+ <td colspan="2"><strong>Street/Mail Address</strong></td>
+<td rowspan="4"><br /></td>
+</tr><tr>
+ <td ><br /></td>
+ <td valign="top"> General inquiries: +47 21 60 48 00</td>
+ <td rowspan="3"><br /></td>
+ <td valign="top" rowspan="3"> Sandakerveien 116<br /> PO Box 4332 Nydalen<br /> NO-0402 Oslo<br /> Norway</td>
+</tr><tr>
+ <td colspan="2"><strong>Telefax</strong></td>
+</tr><tr>
+ <td><br /></td>
+ <td valign="top"> All inquiries: +47 21 60 48 01</td>
+</tr><tr bgcolor="#ffffff">
+ <td bgcolor="#ffffff" colspan="6"> <br /> </td>
+</tr><tr>
+ <th colspan="6" valign="top" bgcolor="#a2c511">USA Office</th>
+</tr><tr>
+ <td rowspan="4"><br /></td>
+ <td colspan="2"><strong>Telephone</strong></td>
+ <td colspan="2"><strong>Street/Mail Address</strong></td>
+ <td rowspan="4"><br /></td>
+</tr><tr>
+ <td ><br /></td>
+ <td valign="top"> General inquiries: 1-650-551-1676</td>
+ <td rowspan="3"><br /></td>
+ <td valign="top" rowspan="3"> 555 Twin Dolphin Drive<br /> Suite 280<br /> Redwood City, CA 94065<br /> USA</td>
+</tr><tr>
+ <td colspan="2"><strong>Telefax</strong></td>
+</tr><tr>
+ <td ><br /></td>
+ <td valign="top"> All inquiries: 1-650-551-1851</td>
+</tr>
+</table>
+\endraw
+
+*/

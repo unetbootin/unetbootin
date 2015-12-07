@@ -1,0 +1,242 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'designerpropertymanager.cpp'
+**
+** Created: Thu Mar 5 20:49:04 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'designerpropertymanager.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_qdesigner_internal__TextEditor[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       5,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      37,   32,   31,   31, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      58,   32,   31,   31, 0x0a,
+      75,   31,   31,   31, 0x08,
+      91,   31,   31,   31, 0x08,
+     117,   31,   31,   31, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_qdesigner_internal__TextEditor[] = {
+    "qdesigner_internal::TextEditor\0\0text\0"
+    "textChanged(QString)\0setText(QString)\0"
+    "buttonClicked()\0resourceActionActivated()\0"
+    "fileActionActivated()\0"
+};
+
+const QMetaObject qdesigner_internal::TextEditor::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_qdesigner_internal__TextEditor,
+      qt_meta_data_qdesigner_internal__TextEditor, 0 }
+};
+
+const QMetaObject *qdesigner_internal::TextEditor::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *qdesigner_internal::TextEditor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_qdesigner_internal__TextEditor))
+        return static_cast<void*>(const_cast< TextEditor*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int qdesigner_internal::TextEditor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: textChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: setText((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: buttonClicked(); break;
+        case 3: resourceActionActivated(); break;
+        case 4: fileActionActivated(); break;
+        default: ;
+        }
+        _id -= 5;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void qdesigner_internal::TextEditor::textChanged(const QString & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+static const uint qt_meta_data_qdesigner_internal__PixmapEditor[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       9,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      39,   34,   33,   33, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      60,   34,   33,   33, 0x0a,
+      84,   77,   33,   33, 0x0a,
+     110,   33,   33,   33, 0x08,
+     135,   33,   33,   33, 0x08,
+     161,   33,   33,   33, 0x08,
+     183,   33,   33,   33, 0x08,
+     205,   33,   33,   33, 0x08,
+     228,   33,   33,   33, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_qdesigner_internal__PixmapEditor[] = {
+    "qdesigner_internal::PixmapEditor\0\0"
+    "path\0pathChanged(QString)\0setPath(QString)\0"
+    "pixmap\0setDefaultPixmap(QPixmap)\0"
+    "defaultActionActivated()\0"
+    "resourceActionActivated()\0"
+    "fileActionActivated()\0copyActionActivated()\0"
+    "pasteActionActivated()\0clipboardDataChanged()\0"
+};
+
+const QMetaObject qdesigner_internal::PixmapEditor::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_qdesigner_internal__PixmapEditor,
+      qt_meta_data_qdesigner_internal__PixmapEditor, 0 }
+};
+
+const QMetaObject *qdesigner_internal::PixmapEditor::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *qdesigner_internal::PixmapEditor::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_qdesigner_internal__PixmapEditor))
+        return static_cast<void*>(const_cast< PixmapEditor*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int qdesigner_internal::PixmapEditor::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: pathChanged((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 1: setPath((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: setDefaultPixmap((*reinterpret_cast< const QPixmap(*)>(_a[1]))); break;
+        case 3: defaultActionActivated(); break;
+        case 4: resourceActionActivated(); break;
+        case 5: fileActionActivated(); break;
+        case 6: copyActionActivated(); break;
+        case 7: pasteActionActivated(); break;
+        case 8: clipboardDataChanged(); break;
+        default: ;
+        }
+        _id -= 9;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void qdesigner_internal::PixmapEditor::pathChanged(const QString & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+static const uint qt_meta_data_qdesigner_internal__ResetWidget[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       2,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      42,   33,   32,   32, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      69,   32,   32,   32, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_qdesigner_internal__ResetWidget[] = {
+    "qdesigner_internal::ResetWidget\0\0"
+    "property\0resetProperty(QtProperty*)\0"
+    "slotClicked()\0"
+};
+
+const QMetaObject qdesigner_internal::ResetWidget::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_qdesigner_internal__ResetWidget,
+      qt_meta_data_qdesigner_internal__ResetWidget, 0 }
+};
+
+const QMetaObject *qdesigner_internal::ResetWidget::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *qdesigner_internal::ResetWidget::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_qdesigner_internal__ResetWidget))
+        return static_cast<void*>(const_cast< ResetWidget*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int qdesigner_internal::ResetWidget::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: resetProperty((*reinterpret_cast< QtProperty*(*)>(_a[1]))); break;
+        case 1: slotClicked(); break;
+        default: ;
+        }
+        _id -= 2;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void qdesigner_internal::ResetWidget::resetProperty(QtProperty * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+QT_END_MOC_NAMESPACE

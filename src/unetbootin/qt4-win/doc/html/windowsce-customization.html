@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/wince-customization.qdoc -->
+<head>
+  <title>Qt 4.4: Windows CE - Working with Custom SDKs</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Windows CE - Working with Custom SDKs<br /><span class="subtitle"></span>
+</h1>
+<p>When working with a custom SDK for Windows CE, Qt provides an easy way to add support for it to your development environment. The following is a tutorial that covers how to create a specification for Qt on Windows CE platforms.</p>
+<ul><li><a href="#creating-a-custom-build-specification">Creating a Custom Build Specification</a></li>
+<li><a href="#fine-tuning-options">Fine-Tuning Options</a></li>
+</ul>
+<a name="creating-a-custom-build-specification"></a>
+<h2>Creating a Custom Build Specification</h2>
+<p>Create a subdirectory in the <tt>mkspecs</tt> folder of the Qt directory. New specifications for Qt/Windows CE following this naming convention:</p>
+<pre>     wince&lt;version&gt;&lt;SDK-shortcut&gt;-[architecture]-msvc2005</pre>
+<p>Using this convention makes it possible for <a href="qmake-manual.html#qmake">qmake</a> to identify that you are building Qt for Windows CE, and will customize the compilation process accordingly.</p>
+<p>Create the files <tt>qmake.conf</tt> and <tt>qplatformdefs.h</tt> inside the new specification directory. Take a look at the implementation of the other Windows CE specifications included in the <tt>mkspecs</tt> directory to see what is required to build Qt/Windows CE successfully.</p>
+<a name="fine-tuning-options"></a>
+<h2>Fine-Tuning Options</h2>
+<p>Compared to the desktop versions, Qt/Windows CE needs two additional options:</p>
+<ul>
+<li><b>CE_SDK</b> specifies the name of the SDK.</li>
+<li><b>CE_ARCH</b> specifies information about the target architecture.</li>
+</ul>
+<p>Following is an example configuration for the Windows Mobile 5 for Pocket PC SDK:</p>
+<pre>     CE_SDK        = Windows Mobile 5.0 Pocket PC SDK
+     CE_ARCH       = ARMV4I</pre>
+<p><b>Note:</b> <a href="qmake-manual.html#qmake">qmake</a> uses this information to build a valid Visual Studio project file. You need to ensure that they are identical to the configuration of the custom SDK, otherwise you might not be able to compile or debug your project with Visual Studio.</p>
+<p>Additionally, most Windows CE SDKs use extra compiler options. These can be specified by expanding the <tt>DEFINES</tt> value.</p>
+<p>For example, with Windows Mobile 5 for Pocket PC, the <tt>DEFINES</tt> variable is expanded in the following way:</p>
+<pre>     DEFINES          += UNDER_CE WINCE _WINDOWS _UNICODE UNICODE _WIN32_WCE=0x501 $$CE_ARCH _ARMV4I_ armv4i _ARM_ ARM _M_ARM ARM _WIN32 __arm__ Q_OS_WINCE_WM QT_NO_PRINTER QT_NO_PRINTDIALOG</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

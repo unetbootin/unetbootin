@@ -1,0 +1,97 @@
+//! [0]
+    class Employee
+    {
+    public:
+	Employee(): sn(0) {}
+	Employee( const QString& forename, const QString& surname, int salary )
+	    : fn(forename), sn(surname), sal(salary)
+	{}
+
+	QString forename() const { return fn; }
+	QString surname() const { return sn; }
+	int salary() const { return sal; }
+	void setSalary( int salary ) { sal = salary; }
+
+    private:
+	QString fn;
+	QString sn;
+	int sal;
+    };
+
+    typedef Q3ValueList<Employee> EmployeeList;
+    EmployeeList list;
+
+    list.append( Employee("John", "Doe", 50000) );
+    list.append( Employee("Jane", "Williams", 80000) );
+    list.append( Employee("Tom", "Jones", 60000) );
+
+    Employee mary( "Mary", "Hawthorne", 90000 );
+    list.append( mary );
+    mary.setSalary( 100000 );
+
+    EmployeeList::iterator it;
+    for ( it = list.begin(); it != list.end(); ++it )
+	cout << (*it).surname().latin1() << ", " <<
+		(*it).forename().latin1() << " earns " <<
+		(*it).salary() << endl;
+
+    // Output:
+    // Doe, John earns 50000
+    // Williams, Jane earns 80000
+    // Hawthorne, Mary earns 90000
+    // Jones, Tom earns 60000
+//! [0]
+
+
+//! [1]
+    Q3ValueList<int> list;
+    list.append( 1 );
+    list.append( 2 );
+    list.append( 3 );
+    ...
+    if ( !list.empty() ) {
+	// OK, modify the first item
+	int& i = list.first();
+	i = 18;
+    }
+    ...
+    Q3ValueList<double> dlist;
+    double d = dlist.last(); // undefined
+//! [1]
+
+
+//! [2]
+    Q3ValueList<int> l;
+    ...
+    Q3ValueList<int>::iterator it = l.end();
+    --it;
+    if ( it != end() )
+	// ...
+//! [2]
+
+
+//! [3]
+    Q3ValueList<int> l;
+    ...
+    Q3ValueList<int>::iterator it = l.end();
+    --it;
+    if ( it != end() )
+	// ...
+//! [3]
+
+
+//! [4]
+    EmployeeList::iterator it;
+    for ( it = list.begin(); it != list.end(); ++it )
+	cout << (*it).surname().latin1() << ", " <<
+		(*it).forename().latin1() << " earns " <<
+		(*it).salary() << endl;
+
+    // Output:
+    // Doe, John earns 50000
+    // Williams, Jane earns 80000
+    // Hawthorne, Mary earns 90000
+    // Jones, Tom earns 60000
+//! [4]
+
+

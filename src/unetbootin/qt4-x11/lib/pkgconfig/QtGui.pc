@@ -1,0 +1,16 @@
+prefix=/usr/local/Trolltech/Qt-4.5.0
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/QtGui
+qt_config=lex yacc warn_on uic resources qt warn_on release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath QTDIR_build x11 qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib x11sm opentype moc thread x11lib x11inc staticlib static
+moc_location=/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/bin/moc
+uic_location=/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/bin/uic
+
+Name: Qtgui
+Description: Qtgui Library
+Version: 4.5.0
+Libs: -L${libdir} -lQtGui 
+Libs.private: -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -L/usr/X11R6/lib  -pthread -lpng -lfreetype -lSM -lICE -lQtCore -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -lz -pthread -lgthread-2.0 -lglib-2.0 -lrt -lpthread -lXrender -lfontconfig -lXext -lX11 -lm -ldl  
+Cflags: -I/usr/local/Trolltech/Qt-4.5.0/include -I${includedir}
+Requires: QtCore
+

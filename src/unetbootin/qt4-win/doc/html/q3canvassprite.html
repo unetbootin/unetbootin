@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasSprite Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasSprite Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasSprite class provides an animated canvas item on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasSprite&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvasitem.html">Q3CanvasItem</a>.</p>
+<ul>
+<li><a href="q3canvassprite-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3canvassprite.html#FrameAnimationType-enum">FrameAnimationType</a></b> { Cycle, Oscillate }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvassprite.html#Q3CanvasSprite">Q3CanvasSprite</a></b> ( Q3CanvasPixmapArray * <i>a</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3canvassprite.html#dtor.Q3CanvasSprite">~Q3CanvasSprite</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvassprite.html#advance">advance</a></b> ( int <i>phase</i> )</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#bottomEdge">bottomEdge</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#bottomEdge-2">bottomEdge</a></b> ( int <i>ny</i> ) const</li>
+<li><div class="fn"/>virtual QRect <b><a href="q3canvassprite.html#boundingRect">boundingRect</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvassprite.html#draw">draw</a></b> ( QPainter &amp; <i>painter</i> )</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#frame">frame</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#frameCount">frameCount</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#height">height</a></b> () const</li>
+<li><div class="fn"/>Q3CanvasPixmap * <b><a href="q3canvassprite.html#image">image</a></b> () const</li>
+<li><div class="fn"/>Q3CanvasPixmap * <b><a href="q3canvassprite.html#image-2">image</a></b> ( int <i>f</i> ) const</li>
+<li><div class="fn"/>virtual Q3CanvasPixmap * <b><a href="q3canvassprite.html#imageAdvanced">imageAdvanced</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#leftEdge">leftEdge</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#leftEdge-2">leftEdge</a></b> ( int <i>nx</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3canvassprite.html#move">move</a></b> ( double <i>x</i>, double <i>y</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvassprite.html#move-2">move</a></b> ( double <i>nx</i>, double <i>ny</i>, int <i>nf</i> )</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#rightEdge">rightEdge</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#rightEdge-2">rightEdge</a></b> ( int <i>nx</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvassprite.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvassprite.html#setFrame">setFrame</a></b> ( int <i>f</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvassprite.html#setFrameAnimation">setFrameAnimation</a></b> ( FrameAnimationType <i>type</i> = Cycle, int <i>step</i> = 1, int <i>state</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="q3canvassprite.html#setSequence">setSequence</a></b> ( Q3CanvasPixmapArray * <i>a</i> )</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#topEdge">topEdge</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#topEdge-2">topEdge</a></b> ( int <i>ny</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3canvassprite.html#width">width</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasSprite class provides an animated canvas item on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>A canvas sprite is an object which can contain any number of images (referred to as frames), only one of which is current, i.e&#x2e; displayed, at any one time. The images can be passed in the constructor or set or changed later with <a href="q3canvassprite.html#setSequence">setSequence</a>(). If you subclass Q3CanvasSprite you can change the frame that is displayed periodically, e.g&#x2e; whenever Q3CanvasItem::advance(1) is called to create the effect of animation.</p>
+<p>The current frame can be set with <a href="q3canvassprite.html#setFrame">setFrame</a>() or with <a href="q3canvassprite.html#move">move</a>(). The number of frames available is given by <a href="q3canvassprite.html#frameCount">frameCount</a>(). The bounding rectangle of the current frame is returned by <a href="q3canvassprite.html#boundingRect">boundingRect</a>().</p>
+<p>The current frame's image can be retrieved with <a href="q3canvassprite.html#image">image</a>(); use <a href="q3canvassprite.html#imageAdvanced">imageAdvanced</a>() to retrieve the image for the frame that will be shown after advance(1) is called. Use the <a href="q3canvassprite.html#image">image</a>() overload passing it an integer index to retrieve a particular image from the list of frames.</p>
+<p>Use <a href="q3canvassprite.html#width">width</a>() and <a href="q3canvassprite.html#height">height</a>() to retrieve the dimensions of the current frame.</p>
+<p>Use <a href="q3canvassprite.html#leftEdge">leftEdge</a>() and <a href="q3canvassprite.html#rightEdge">rightEdge</a>() to retrieve the current frame's left-hand and right-hand x-coordinates respectively. Use <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>() and <a href="q3canvassprite.html#topEdge">topEdge</a>() to retrieve the current frame's bottom and top y-coordinates respectively. These functions have an overload which will accept an integer frame number to retrieve the coordinates of a particular frame.</p>
+<p>Q3CanvasSprite draws very quickly, at the expense of memory.</p>
+<p>The current frame's image can be drawn on a painter with <a href="q3canvassprite.html#draw">draw</a>().</p>
+<p>Like any other canvas item, canvas sprites can be moved with <a href="q3canvassprite.html#move">move</a>() which sets the x and y coordinates and the frame number, as well as with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="FrameAnimationType-enum"></a>enum Q3CanvasSprite::FrameAnimationType</h3>
+<p>This enum is used to identify the different types of frame animation offered by <a href="q3canvassprite.html">Q3CanvasSprite</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3CanvasSprite::Cycle</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">at each advance the frame number will be incremented by 1 (modulo the frame count).</td></tr>
+<tr><td valign="top"><tt>Q3CanvasSprite::Oscillate</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">at each advance the frame number will be incremented by 1 up to the frame count then decremented to by 1 to 0, repeating this sequence forever.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasSprite"></a>Q3CanvasSprite::Q3CanvasSprite ( <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> * <i>a</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <a href="q3canvassprite.html">Q3CanvasSprite</a> which uses images from the <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> <i>a</i>.</p>
+<p>The sprite in initially positioned at (0, 0) on <i>canvas</i>, using frame 0.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasSprite"></a>Q3CanvasSprite::~Q3CanvasSprite ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the sprite and removes it from the canvas. Does <i>not</i> delete the images.</p>
+<h3 class="fn"><a name="advance"></a>void Q3CanvasSprite::advance ( int <i>phase</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Extends the default <a href="q3canvasitem.html">Q3CanvasItem</a> implementation to provide the functionality of <a href="q3canvassprite.html#setFrameAnimation">setFrameAnimation</a>().</p>
+<p>The <i>phase</i> is 0 or 1: see <a href="q3canvasitem.html#advance">Q3CanvasItem::advance</a>() for details.</p>
+<p>Reimplemented from <a href="q3canvasitem.html#advance">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#advance">Q3CanvasItem::advance</a>() and <a href="q3canvasitem.html#setVelocity">setVelocity</a>().</p>
+<h3 class="fn"><a name="bottomEdge"></a>int Q3CanvasSprite::bottomEdge () const</h3>
+<p>Returns the y-coordinate of the current bottom edge of the sprite. (This may change as the sprite animates since different frames may have different bottom edges.)</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="bottomEdge-2"></a>int Q3CanvasSprite::bottomEdge ( int <i>ny</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns what the y-coordinate of the top edge of the sprite would be if the sprite (actually its hotspot) were moved to y-position <i>ny</i>.</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrect.html">QRect</a> Q3CanvasSprite::boundingRect () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the bounding rectangle for the image in the sprite's current frame. This assumes that the images are tightly cropped (i.e&#x2e; do not have transparent pixels all along a side).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#boundingRect">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="draw"></a>void Q3CanvasSprite::draw ( <a href="qpainter.html">QPainter</a> &amp; <i>painter</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Draws the current frame's image at the sprite's current position on painter <i>painter</i>.</p>
+<p>Reimplemented from <a href="q3canvasitem.html#draw">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="frame"></a>int Q3CanvasSprite::frame () const</h3>
+<p>Returns the index of the current animation frame in the <a href="q3canvassprite.html">Q3CanvasSprite</a>'s <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>.</p>
+<p>See also <a href="q3canvassprite.html#setFrame">setFrame</a>() and <a href="q3canvassprite.html#move">move</a>().</p>
+<h3 class="fn"><a name="frameCount"></a>int Q3CanvasSprite::frameCount () const</h3>
+<p>Returns the number of frames in the <a href="q3canvassprite.html">Q3CanvasSprite</a>'s <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>.</p>
+<h3 class="fn"><a name="height"></a>int Q3CanvasSprite::height () const</h3>
+<p>The height of the sprite for the current frame's image.</p>
+<p>See also <a href="q3canvassprite.html#frame">frame</a>().</p>
+<h3 class="fn"><a name="image"></a><a href="q3canvaspixmap.html">Q3CanvasPixmap</a> * Q3CanvasSprite::image () const</h3>
+<p>Returns the current frame's image.</p>
+<p>See also <a href="q3canvassprite.html#frame">frame</a>() and <a href="q3canvassprite.html#setFrame">setFrame</a>().</p>
+<h3 class="fn"><a name="image-2"></a><a href="q3canvaspixmap.html">Q3CanvasPixmap</a> * Q3CanvasSprite::image ( int <i>f</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the image for frame <i>f</i>. Does not do any bounds checking on <i>f</i>.</p>
+<h3 class="fn"><a name="imageAdvanced"></a><a href="q3canvaspixmap.html">Q3CanvasPixmap</a> * Q3CanvasSprite::imageAdvanced () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the image the sprite <i>will</i> have after advance(1) is called. By default this is the same as <a href="q3canvassprite.html#image">image</a>().</p>
+<h3 class="fn"><a name="leftEdge"></a>int Q3CanvasSprite::leftEdge () const</h3>
+<p>Returns the x-coordinate of the current left edge of the sprite. (This may change as the sprite animates since different frames may have different left edges.)</p>
+<p>See also <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="leftEdge-2"></a>int Q3CanvasSprite::leftEdge ( int <i>nx</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns what the x-coordinate of the left edge of the sprite would be if the sprite (actually its hotspot) were moved to x-position <i>nx</i>.</p>
+<p>See also <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="move"></a>void Q3CanvasSprite::move ( double <i>x</i>, double <i>y</i> )</h3>
+<p>Moves the sprite to (<i>x</i>, <i>y</i>).</p>
+<h3 class="fn"><a name="move-2"></a>void Q3CanvasSprite::move ( double <i>nx</i>, double <i>ny</i>, int <i>nf</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Moves the sprite to (<i>nx</i>, <i>ny</i>) and sets the current frame to <i>nf</i>. <i>nf</i> will be ignored if it is larger than <a href="q3canvassprite.html#frameCount">frameCount</a>() or smaller than 0.</p>
+<h3 class="fn"><a name="rightEdge"></a>int Q3CanvasSprite::rightEdge () const</h3>
+<p>Returns the x-coordinate of the current right edge of the sprite. (This may change as the sprite animates since different frames may have different right edges.)</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="rightEdge-2"></a>int Q3CanvasSprite::rightEdge ( int <i>nx</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns what the x-coordinate of the right edge of the sprite would be if the sprite (actually its hotspot) were moved to x-position <i>nx</i>.</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>(), and <a href="q3canvassprite.html#topEdge">topEdge</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasSprite::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 1 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Sprite</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setFrame"></a>void Q3CanvasSprite::setFrame ( int <i>f</i> )</h3>
+<p>Sets the animation frame used for displaying the sprite to <i>f</i>, an index into the <a href="q3canvassprite.html">Q3CanvasSprite</a>'s <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>. The call will be ignored if <i>f</i> is larger than <a href="q3canvassprite.html#frameCount">frameCount</a>() or smaller than 0.</p>
+<p>See also <a href="q3canvassprite.html#frame">frame</a>() and <a href="q3canvassprite.html#move">move</a>().</p>
+<h3 class="fn"><a name="setFrameAnimation"></a>void Q3CanvasSprite::setFrameAnimation ( <a href="q3canvassprite.html#FrameAnimationType-enum">FrameAnimationType</a> <i>type</i> = Cycle, int <i>step</i> = 1, int <i>state</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the animation characteristics for the sprite.</p>
+<p>For <i>type</i> == <tt>Cycle</tt>, the frames will increase by <i>step</i> at each advance, modulo the <a href="q3canvassprite.html#frameCount">frameCount</a>().</p>
+<p>For <i>type</i> == <tt>Oscillate</tt>, the frames will increase by <i>step</i> at each advance, up to the <a href="q3canvassprite.html#frameCount">frameCount</a>(), then decrease by <i>step</i> back to 0, repeating forever.</p>
+<p>The <i>state</i> parameter is for internal use.</p>
+<h3 class="fn"><a name="setSequence"></a>void Q3CanvasSprite::setSequence ( <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> * <i>a</i> )</h3>
+<p>Set the array of images used for displaying the sprite to the <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> <i>a</i>.</p>
+<p>If the current <a href="q3canvassprite.html#frame">frame</a>() is larger than the number of images in <i>a</i>, the current frame will be reset to 0.</p>
+<h3 class="fn"><a name="topEdge"></a>int Q3CanvasSprite::topEdge () const</h3>
+<p>Returns the y-coordinate of the top edge of the sprite. (This may change as the sprite animates since different frames may have different top edges.)</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), and <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>().</p>
+<h3 class="fn"><a name="topEdge-2"></a>int Q3CanvasSprite::topEdge ( int <i>ny</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns what the y-coordinate of the top edge of the sprite would be if the sprite (actually its hotspot) were moved to y-position <i>ny</i>.</p>
+<p>See also <a href="q3canvassprite.html#leftEdge">leftEdge</a>(), <a href="q3canvassprite.html#rightEdge">rightEdge</a>(), and <a href="q3canvassprite.html#bottomEdge">bottomEdge</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3CanvasSprite::width () const</h3>
+<p>The width of the sprite for the current frame's image.</p>
+<p>See also <a href="q3canvassprite.html#frame">frame</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

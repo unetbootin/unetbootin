@@ -1,0 +1,459 @@
+<ui version="4.0" >
+ <comment>*********************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+**
+** This file is part of the Qt Assistant of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+*********************************************************************</comment>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>949</width>
+    <height>670</height>
+   </rect>
+  </property>
+  <property name="windowTitle" >
+   <string>Qt Assistant by Nokia</string>
+  </property>
+  <widget class="QWidget" name="__qt_central_widget" />
+  <widget class="QToolBar" name="Toolbar" >
+   <property name="windowTitle" >
+    <string>Toolbar</string>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionGoPrevious" />
+   <addaction name="actionGoNext" />
+   <addaction name="actionGoHome" />
+   <addaction name="actionSyncToc" />
+   <addaction name="separator" />
+   <addaction name="actionEditCopy" />
+   <addaction name="actionEditFind" />
+   <addaction name="actionFilePrint" />
+   <addaction name="separator" />
+   <addaction name="actionZoomIn" />
+   <addaction name="actionZoomOut" />
+   <addaction name="separator" />
+   <addaction name="actionHelpWhatsThis" />
+  </widget>
+  <widget class="QToolBar" name="goActionToolbar" >
+   <property name="windowTitle" >
+    <string>Go</string>
+   </property>
+   <property name="orientation" >
+    <enum>Qt::Horizontal</enum>
+   </property>
+   <attribute name="toolBarArea" >
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak" >
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QMenuBar" name="menubar" >
+   <property name="geometry" >
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>949</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="helpMenu" >
+    <property name="title" >
+     <string>&amp;Help</string>
+    </property>
+    <addaction name="actionHelpAssistant" />
+    <addaction name="separator" />
+    <addaction name="actionAboutAssistant" />
+    <addaction name="actionAboutApplication" />
+    <addaction name="separator" />
+    <addaction name="actionHelpWhatsThis" />
+   </widget>
+   <widget class="QMenu" name="fileMenu" >
+    <property name="title" >
+     <string>&amp;File</string>
+    </property>
+    <addaction name="actionNewWindow" />
+    <addaction name="actionOpenPage" />
+    <addaction name="actionClosePage" />
+    <addaction name="separator" />
+    <addaction name="actionSaveAs" />
+    <addaction name="separator" />
+    <addaction name="actionFilePrint" />
+    <addaction name="separator" />
+    <addaction name="actionClose" />
+    <addaction name="actionFileExit" />
+   </widget>
+   <widget class="QMenu" name="bookmarkMenu" >
+    <property name="title" >
+     <string>Boo&amp;kmarks</string>
+    </property>
+   </widget>
+   <widget class="QMenu" name="goMenu" >
+    <property name="title" >
+     <string>&amp;Go</string>
+    </property>
+    <addaction name="actionGoPrevious" />
+    <addaction name="actionGoNext" />
+    <addaction name="actionGoHome" />
+    <addaction name="actionSyncToc" />
+    <addaction name="separator" />
+    <addaction name="actionNextPage" />
+    <addaction name="actionPrevPage" />
+   </widget>
+   <widget class="QMenu" name="viewMenu" >
+    <property name="title" >
+     <string>&amp;View</string>
+    </property>
+    <addaction name="actionZoomIn" />
+    <addaction name="actionZoomOut" />
+   </widget>
+   <widget class="QMenu" name="editMenu" >
+    <property name="title" >
+     <string>&amp;Edit</string>
+    </property>
+    <addaction name="actionEditCopy" />
+    <addaction name="actionEditFind" />
+    <addaction name="actionEditFindNext" />
+    <addaction name="actionEditFindPrev" />
+    <addaction name="separator" />
+    <addaction name="actionEditFont_Settings" />
+   </widget>
+   <addaction name="fileMenu" />
+   <addaction name="editMenu" />
+   <addaction name="viewMenu" />
+   <addaction name="goMenu" />
+   <addaction name="bookmarkMenu" />
+   <addaction name="helpMenu" />
+  </widget>
+  <action name="actionFilePrint" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/print.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Print...</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Print the currently displayed page.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="actionFileExit" >
+   <property name="text" >
+    <string>E&amp;xit</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Quit Qt Assistant.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Q</string>
+   </property>
+   <property name="menuRole" >
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
+  <action name="actionEditCopy" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/editcopy.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Copy</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Copy the selected text to the clipboard.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="actionEditFind" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/find.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Find in Text...</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Open the Find dialog. Qt Assistant will search the currently displayed page for the text you enter.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+F</string>
+   </property>
+  </action>
+  <action name="actionEditFindNext" >
+   <property name="text" >
+    <string>Find &amp;Next</string>
+   </property>
+   <property name="shortcut" >
+    <string>F3</string>
+   </property>
+  </action>
+  <action name="actionEditFindPrev" >
+   <property name="text" >
+    <string>Find &amp;Previous</string>
+   </property>
+   <property name="shortcut" >
+    <string>Shift+F3</string>
+   </property>
+  </action>
+  <action name="actionGoHome" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/home.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Home</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Go to the home page. Qt Assistant's home page is the Qt Reference Documentation.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Home</string>
+   </property>
+  </action>
+  <action name="actionGoPrevious" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/previous.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Previous</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Go to the previous page.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+Left</string>
+   </property>
+  </action>
+  <action name="actionGoNext" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/next.png</iconset>
+   </property>
+   <property name="text" >
+    <string>&amp;Next</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Go to the next page.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Alt+Right</string>
+   </property>
+  </action>
+  <action name="actionAboutAssistant" >
+   <property name="text" >
+    <string>About Qt Assistant</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Display further information about Qt Assistant.</string>
+   </property>
+   <property name="menuRole" >
+    <enum>QAction::AboutRole</enum>
+   </property>
+  </action>
+  <action name="actionAboutApplication" >
+   <property name="text" >
+    <string>About Qt</string>
+   </property>
+   <property name="menuRole" >
+    <enum>QAction::AboutQtRole</enum>
+   </property>
+  </action>
+  <action name="actionZoomIn" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/zoomin.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Zoom &amp;in</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Zoom in on the document, i.e. increase the font size.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl++</string>
+   </property>
+  </action>
+  <action name="actionZoomOut" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/zoomout.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Zoom &amp;out</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Zoom out on the document, i.e. decrease the font size.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+-</string>
+   </property>
+  </action>
+  <action name="actionNewWindow" >
+   <property name="text" >
+    <string>New Window</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Open a new window.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionClose" >
+   <property name="text" >
+    <string>&amp;Close</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Close the current window.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+W</string>
+   </property>
+  </action>
+  <action name="actionAddBookmark" >
+   <property name="text" >
+    <string>&amp;Add Bookmark</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Add the currently displayed page as a new bookmark.</string>
+   </property>
+  </action>
+  <action name="actionHelpWhatsThis" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/whatsthis.png</iconset>
+   </property>
+   <property name="text" >
+    <string>What's This?</string>
+   </property>
+   <property name="statusTip" >
+    <string>"What's This?" context sensitive help.</string>
+   </property>
+   <property name="whatsThis" >
+    <string>"What's This?" context sensitive help.</string>
+   </property>
+   <property name="shortcut" >
+    <string>Shift+F1</string>
+   </property>
+  </action>
+  <action name="actionOpenPage" >
+   <property name="text" >
+    <string>Add Tab</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Alt+N</string>
+   </property>
+  </action>
+  <action name="actionNextPage" >
+   <property name="text" >
+    <string>Next Tab</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Alt+Right</string>
+   </property>
+  </action>
+  <action name="actionPrevPage" >
+   <property name="text" >
+    <string>Previous Tab</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Alt+Left</string>
+   </property>
+  </action>
+  <action name="actionClosePage" >
+   <property name="text" >
+    <string>Close Tab</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Alt+Q</string>
+   </property>
+  </action>
+  <action name="actionHelpAssistant" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/assistant.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Qt Assistant Manual</string>
+   </property>
+   <property name="shortcut" >
+    <string>F1</string>
+   </property>
+  </action>
+  <action name="actionSaveAs" >
+   <property name="text" >
+    <string>Save Page As...</string>
+   </property>
+   <property name="shortcut" >
+    <string>Ctrl+Alt+S</string>
+   </property>
+  </action>
+  <action name="actionSyncToc" >
+   <property name="icon" >
+    <iconset resource="assistant.qrc" >:/trolltech/assistant/images/win/synctoc.png</iconset>
+   </property>
+   <property name="text" >
+    <string>Sync with Table of Contents</string>
+   </property>
+   <property name="whatsThis" >
+    <string>Select the page in contents tab.</string>
+   </property>
+  </action>
+  <action name="actionEditFont_Settings" >
+   <property name="text" >
+    <string>Font Settings...</string>
+   </property>
+   <property name="menuRole" >
+    <enum>QAction::PreferencesRole</enum>
+   </property>
+  </action>
+ </widget>
+ <resources>
+  <include location="assistant.qrc" />
+ </resources>
+ <connections/>
+</ui>

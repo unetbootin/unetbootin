@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/painting/q3pointarray.cpp -->
+<head>
+  <title>Qt 4.4: Q3PointArray Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3PointArray Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<pre> #include &lt;Q3PointArray&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qpointarray">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qpolygon.html">QPolygon</a>.</p>
+<ul>
+<li><a href="q3pointarray-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3pointarray.html#Q3PointArray">Q3PointArray</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3pointarray.html#Q3PointArray-2">Q3PointArray</a></b> ( const QRect &amp; <i>r</i>, bool <i>closed</i> = false )</li>
+<li><div class="fn"/><b><a href="q3pointarray.html#Q3PointArray-3">Q3PointArray</a></b> ( const QPolygon &amp; <i>other</i> )</li>
+<li><div class="fn"/>Q3PointArray <b><a href="q3pointarray.html#copy">copy</a></b> () const</li>
+<li><div class="fn"/>Q3PointArray <b><a href="q3pointarray.html#cubicBezier">cubicBezier</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3pointarray.html#isNull">isNull</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3pointarray.html#makeArc">makeArc</a></b> ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, int <i>a1</i>, int <i>a2</i> )</li>
+<li><div class="fn"/>void <b><a href="q3pointarray.html#makeArc-2">makeArc</a></b> ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, int <i>a1</i>, int <i>a2</i>, const QMatrix &amp; <i>xf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3pointarray.html#makeEllipse">makeEllipse</a></b> ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>16 public functions inherited from <a href="qpolygon.html#public-functions">QPolygon</a></li>
+<li><div class="fn"/>62 public functions inherited from <a href="qvector.html#public-functions">QVector</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 static public members inherited from <a href="qvector.html#static-public-members">QVector</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3PointArray class provides an array of points.</p>
+<p>Q3PointArray is a <a href="qpolygon.html">QPolygon</a> subclass that provides functions to make it more source compatible with the <tt>QPointArray</tt> class in Qt 3.</p>
+<p>In Qt 4, we recommend that you use <a href="qpainterpath.html">QPainterPath</a> for representing arcs, ellipses, and Bezier curves, rather than <a href="qpolygon.html">QPolygon</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3PointArray"></a>Q3PointArray::Q3PointArray ()</h3>
+<p>Constructs an empty <a href="q3pointarray.html">Q3PointArray</a>.</p>
+<h3 class="fn"><a name="Q3PointArray-2"></a>Q3PointArray::Q3PointArray ( const <a href="qrect.html">QRect</a> &amp; <i>r</i>, bool <i>closed</i> = false )</h3>
+<p>Constructs a point array from the rectangle <i>r</i>.</p>
+<p>If <i>closed</i> is false, then the point array just contains the following four points of the rectangle ordered clockwise. The bottom-right point is located at (r.x() + r.width(), r.y() + r.height()).</p>
+<h3 class="fn"><a name="Q3PointArray-3"></a>Q3PointArray::Q3PointArray ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="copy"></a>Q3PointArray Q3PointArray::copy () const</h3>
+<p>Returns a copy of this <a href="q3pointarray.html">Q3PointArray</a>.</p>
+<h3 class="fn"><a name="cubicBezier"></a>Q3PointArray Q3PointArray::cubicBezier () const</h3>
+<p>Returns the Bezier points for the four control points in this array.</p>
+<h3 class="fn"><a name="isNull"></a>bool Q3PointArray::isNull ()</h3>
+<p>Returns <a href="qvector.html#isEmpty">isEmpty</a>(). Use <a href="qvector.html#isEmpty">isEmpty</a>() instead.</p>
+<h3 class="fn"><a name="makeArc"></a>void Q3PointArray::makeArc ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, int <i>a1</i>, int <i>a2</i> )</h3>
+<p>Sets the points of the array to those describing an arc of an ellipse with size, width <i>w</i> by height <i>h</i>, and position (<i>x</i>, <i>y</i>), starting from angle <i>a1</i> and spanning by angle <i>a2</i>. The resulting array has sufficient resolution for pixel accuracy (see the overloaded function which takes an additional <a href="qmatrix.html">QMatrix</a> parameter).</p>
+<p>Angles are specified in 16ths of a degree, i.e&#x2e; a full circle equals 5760 (16*360). Positive values mean counter-clockwise, whereas negative values mean the clockwise direction. Zero degrees is at the 3 o'clock position.</p>
+<h3 class="fn"><a name="makeArc-2"></a>void Q3PointArray::makeArc ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, int <i>a1</i>, int <i>a2</i>, const <a href="qmatrix.html">QMatrix</a> &amp; <i>xf</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the points of the array to those describing an arc of an ellipse with width <i>w</i> and height <i>h</i> and position (<i>x</i>, <i>y</i>), starting from angle <i>a1</i>, and spanning angle by <i>a2</i>, and transformed by the matrix <i>xf</i>. The resulting array has sufficient resolution for pixel accuracy.</p>
+<p>Angles are specified in 16ths of a degree, i.e&#x2e; a full circle equals 5760 (16 * 360). Positive values mean counter-clockwise, whereas negative values mean the clockwise direction. Zero degrees is at the 3 o'clock position.</p>
+<h3 class="fn"><a name="makeEllipse"></a>void Q3PointArray::makeEllipse ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i> )</h3>
+<p>Sets the points of the array to those describing an ellipse with size, width <i>w</i> by height <i>h</i>, and position (<i>x</i>, <i>y</i>).</p>
+<p>The returned array has sufficient resolution for use as pixels.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

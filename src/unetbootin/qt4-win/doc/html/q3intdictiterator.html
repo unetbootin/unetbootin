@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3intdict.qdoc -->
+<head>
+  <title>Qt 4.4: Q3IntDictIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3IntDictIterator Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3IntDictIterator class provides an iterator for <a href="q3intdict.html">Q3IntDict</a> collections. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3IntDictIterator&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3intdictiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3intdictiterator.html#Q3IntDictIterator">Q3IntDictIterator</a></b> ( const Q3IntDict&lt;type&gt; &amp; <i>dict</i> )</li>
+<li><div class="fn"/><b><a href="q3intdictiterator.html#dtor.Q3IntDictIterator">~Q3IntDictIterator</a></b> ()</li>
+<li><div class="fn"/>uint <b><a href="q3intdictiterator.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3intdictiterator.html#current">current</a></b> () const</li>
+<li><div class="fn"/>long <b><a href="q3intdictiterator.html#currentKey">currentKey</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3intdictiterator.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3intdictiterator.html#toFirst">toFirst</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3intdictiterator.html#operator-type--2a">operator type *</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3intdictiterator.html#operator-28-29">operator()</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3intdictiterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3intdictiterator.html#operator-2b-eq">operator+=</a></b> ( uint <i>jump</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3IntDictIterator class provides an iterator for <a href="q3intdict.html">Q3IntDict</a> collections.</p>
+<p>Q3IntDictIterator is implemented as a template class. Define a template instance Q3IntDictIterator&lt;X&gt; to create a dictionary iterator that operates on <a href="q3intdict.html">Q3IntDict</a>&lt;X&gt; (dictionary of X*).</p>
+<p>Example:</p>
+<pre>     Q3IntDict&lt;QLineEdit&gt; fields;
+     for ( int i = 0; i &lt; 3; i++ )
+         fields.insert( i, new QLineEdit( this ) );
+
+     fields[0]-&gt;setText( &quot;Homer&quot; );
+     fields[1]-&gt;setText( &quot;Simpson&quot; );
+     fields[2]-&gt;setText( &quot;45&quot; );
+
+     Q3IntDictIterator&lt;QLineEdit&gt; it( fields );
+     for ( ; it.current(); ++it )
+         cout &lt;&lt; it.currentKey() &lt;&lt; &quot;: &quot; &lt;&lt; it.current()-&gt;text() &lt;&lt; endl;
+
+     // Output (random order):
+     //  0: Homer
+     //  1: Simpson
+     //  2: 45</pre>
+<p>Note that the traversal order is arbitrary; you are not guaranteed the order shown above.</p>
+<p>Multiple iterators may independently traverse the same dictionary. A <a href="q3intdict.html">Q3IntDict</a> knows about all the iterators that are operating on the dictionary. When an item is removed from the dictionary, <a href="q3intdict.html">Q3IntDict</a> updates all iterators that refer the removed item to point to the next item in the traversal order.</p>
+<p>See also <a href="q3intdict.html">Q3IntDict</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3IntDictIterator"></a>Q3IntDictIterator::Q3IntDictIterator ( const <a href="q3intdict.html">Q3IntDict</a>&lt;type&gt; &amp; <i>dict</i> )</h3>
+<p>Constructs an iterator for <i>dict</i>. The current iterator item is set to point to the 'first' item in the <i>dict</i>. The first item refers to the first item in the dictionary's arbitrary internal ordering.</p>
+<h3 class="fn"><a name="dtor.Q3IntDictIterator"></a>Q3IntDictIterator::~Q3IntDictIterator ()</h3>
+<p>Destroys the iterator.</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3IntDictIterator::count () const</h3>
+<p>Returns the number of items in the dictionary this iterator operates over.</p>
+<p>See also <a href="q3intdictiterator.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="current"></a>type * Q3IntDictIterator::current () const</h3>
+<p>Returns a pointer to the current iterator item.</p>
+<h3 class="fn"><a name="currentKey"></a>long Q3IntDictIterator::currentKey () const</h3>
+<p>Returns the key for the current iterator item.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3IntDictIterator::isEmpty () const</h3>
+<p>Returns TRUE if the dictionary is empty; otherwise eturns FALSE.</p>
+<p>See also <a href="q3intdictiterator.html#count">count</a>().</p>
+<h3 class="fn"><a name="toFirst"></a>type * Q3IntDictIterator::toFirst ()</h3>
+<p>Sets the current iterator item to point to the first item in the dictionary and returns a pointer to the item. The first item refers to the first item in the dictionary's arbitrary internal ordering. If the dictionary is empty it sets the current item to 0 and returns 0.</p>
+<h3 class="fn"><a name="operator-type--2a"></a>Q3IntDictIterator::operator type * () const</h3>
+<p>Cast operator. Returns a pointer to the current iterator item. Same as <a href="q3intdictiterator.html#current">current</a>().</p>
+<h3 class="fn"><a name="operator-28-29"></a>type * Q3IntDictIterator::operator() ()</h3>
+<p>Makes the succeeding item current and returns the original current item.</p>
+<p>If the current iterator item was the last item in the dictionary or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>type * Q3IntDictIterator::operator++ ()</h3>
+<p>Prefix ++ makes the succeeding item current and returns the new current item.</p>
+<p>If the current iterator item was the last item in the dictionary or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>type * Q3IntDictIterator::operator+= ( <a href="qtglobal.html#uint-typedef">uint</a> <i>jump</i> )</h3>
+<p>Sets the current item to the item <i>jump</i> positions after the current item, and returns a pointer to that item.</p>
+<p>If that item is beyond the last item or if the dictionary is empty, it sets the current item to 0 and returns 0.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

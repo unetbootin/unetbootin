@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (richtext/calendar/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">richtext/calendar/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     selectedDate = QDate::currentDate();
+     fontSize = 10;
+
+     QWidget *centralWidget = new QWidget;
+
+     QLabel *dateLabel = new QLabel(tr(&quot;Date:&quot;));
+     QComboBox *monthCombo = new QComboBox;
+
+     for (int month = 1; month &lt;= 12; ++month)
+         monthCombo-&gt;addItem(QDate::longMonthName(month));
+
+     QDateTimeEdit *yearEdit = new QDateTimeEdit;
+     yearEdit-&gt;setDisplayFormat(&quot;yyyy&quot;);
+     yearEdit-&gt;setDateRange(QDate(1753, 1, 1), QDate(8000, 1, 1));
+
+     monthCombo-&gt;setCurrentIndex(selectedDate.month() - 1);
+     yearEdit-&gt;setDate(selectedDate);
+
+     QLabel *fontSizeLabel = new QLabel(tr(&quot;Font size:&quot;));
+     QSpinBox *fontSizeSpinBox = new QSpinBox;
+     fontSizeSpinBox-&gt;setRange(1, 64);
+     fontSizeSpinBox-&gt;setValue(10);
+
+     editor = new QTextBrowser;
+     insertCalendar();
+
+     connect(monthCombo, SIGNAL(activated(int)), this, SLOT(setMonth(int)));
+     connect(yearEdit, SIGNAL(dateChanged(QDate)), this, SLOT(setYear(QDate)));
+     connect(fontSizeSpinBox, SIGNAL(valueChanged(int)),
+             this, SLOT(setFontSize(int)));
+
+     QHBoxLayout *controlsLayout = new QHBoxLayout;
+     controlsLayout-&gt;addWidget(dateLabel);
+     controlsLayout-&gt;addWidget(monthCombo);
+     controlsLayout-&gt;addWidget(yearEdit);
+     controlsLayout-&gt;addSpacing(24);
+     controlsLayout-&gt;addWidget(fontSizeLabel);
+     controlsLayout-&gt;addWidget(fontSizeSpinBox);
+     controlsLayout-&gt;addStretch(1);
+
+     QVBoxLayout *centralLayout = new QVBoxLayout;
+     centralLayout-&gt;addLayout(controlsLayout);
+     centralLayout-&gt;addWidget(editor, 1);
+     centralWidget-&gt;setLayout(centralLayout);
+
+     setCentralWidget(centralWidget);
+ }
+
+ void MainWindow::insertCalendar()
+ {
+     editor-&gt;clear();
+     QTextCursor cursor = editor-&gt;textCursor();
+     cursor.beginEditBlock();
+
+     QDate date(selectedDate.year(), selectedDate.month(), 1);
+
+     QTextTableFormat tableFormat;
+     tableFormat.setAlignment(Qt::AlignHCenter);
+     tableFormat.setBackground(QColor(&quot;#e0e0e0&quot;));
+     tableFormat.setCellPadding(2);
+     tableFormat.setCellSpacing(4);
+     QVector&lt;QTextLength&gt; constraints;
+     constraints &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14)
+                 &lt;&lt; QTextLength(QTextLength::PercentageLength, 14);
+     tableFormat.setColumnWidthConstraints(constraints);
+
+     QTextTable *table = cursor.insertTable(1, 7, tableFormat);
+
+     QTextFrame *frame = cursor.currentFrame();
+     QTextFrameFormat frameFormat = frame-&gt;frameFormat();
+     frameFormat.setBorder(1);
+     frame-&gt;setFrameFormat(frameFormat);
+
+     QTextCharFormat format = cursor.charFormat();
+     format.setFontPointSize(fontSize);
+
+     QTextCharFormat boldFormat = format;
+     boldFormat.setFontWeight(QFont::Bold);
+
+     QTextCharFormat highlightedFormat = boldFormat;
+     highlightedFormat.setBackground(Qt::yellow);
+
+     for (int weekDay = 1; weekDay &lt;= 7; ++weekDay) {
+         QTextTableCell cell = table-&gt;cellAt(0, weekDay-1);
+         QTextCursor cellCursor = cell.firstCursorPosition();
+         cellCursor.insertText(QString(&quot;%1&quot;).arg(QDate::longDayName(weekDay)),
+                               boldFormat);
+     }
+
+     table-&gt;insertRows(table-&gt;rows(), 1);
+
+     while (date.month() == selectedDate.month()) {
+         int weekDay = date.dayOfWeek();
+         QTextTableCell cell = table-&gt;cellAt(table-&gt;rows()-1, weekDay-1);
+         QTextCursor cellCursor = cell.firstCursorPosition();
+
+         if (date == QDate::currentDate())
+             cellCursor.insertText(QString(&quot;%1&quot;).arg(date.day()), highlightedFormat);
+         else
+             cellCursor.insertText(QString(&quot;%1&quot;).arg(date.day()), format);
+
+         date = date.addDays(1);
+         if (weekDay == 7 &amp;&amp; date.month() == selectedDate.month())
+             table-&gt;insertRows(table-&gt;rows(), 1);
+     }
+
+     cursor.endEditBlock();
+     setWindowTitle(tr(&quot;Calendar for %1 %2&quot;
+         ).arg(QDate::longMonthName(selectedDate.month())
+         ).arg(selectedDate.year()));
+ }
+
+ void MainWindow::setFontSize(int size)
+ {
+     fontSize = size;
+     insertCalendar();
+ }
+
+ void MainWindow::setMonth(int month)
+ {
+     selectedDate = QDate(selectedDate.year(), month + 1, selectedDate.day());
+     insertCalendar();
+ }
+
+ void MainWindow::setYear(QDate date)
+ {
+     selectedDate = QDate(date.year(), selectedDate.month(), selectedDate.day());
+     insertCalendar();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

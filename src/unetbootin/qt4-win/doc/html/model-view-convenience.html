@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Item View Convenience Classes</title>
+  <link rel="prev" href="model-view-delegate.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-dnd.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-delegate.html">Delegate Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>]
+</p>
+<h1 class="title">Item View Convenience Classes<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#overview">Overview</a></li>
+<li><a href="#list-widgets">List Widgets</a></li>
+<li><a href="#tree-widgets">Tree Widgets</a></li>
+<li><a href="#table-widgets">Table Widgets</a></li>
+<li><a href="#common-features">Common Features</a></li>
+<ul><li><a href="#hidden-items">Hidden Items</a></li>
+<li><a href="#selections">Selections</a></li>
+<li><a href="#searching">Searching</a></li>
+</ul>
+</ul>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>Alongside the model/view classes, Qt 4 also includes standard widgets to provide classic item-based container widgets. These behave in a similar way to the item view classes in Qt 3, but have been rewritten to use the underlying model/view framework for performance and maintainability. The old item view classes are still available in the compatibility library (see the <a href="porting4.html">Porting Guide</a> for more information).</p>
+<p>The item-based widgets have been given names which reflect their uses: <tt>QListWidget</tt> provides a list of items, <tt>QTreeWidget</tt> displays a multi-level tree structure, and <tt>QTableWidget</tt> provides a table of cell items. Each class inherits the behavior of the <tt>QAbstractItemView</tt> class which implements common behavior for item selection and header management.</p>
+<a name="list-widgets"></a>
+<h2>List Widgets</h2>
+<p>Single level lists of items are typically displayed using a <tt>QListWidget</tt> and a number of <tt>QListWidgetItem</tt>s. A list widget is constructed in the same way as any other widget:</p>
+<pre>     QListWidget *listWidget = new QListWidget(this);</pre>
+<p>List items can be added directly to the list widget when they are constructed:</p>
+<pre>     new QListWidgetItem(tr(&quot;Sycamore&quot;), listWidget);
+     new QListWidgetItem(tr(&quot;Chestnut&quot;), listWidget);
+     new QListWidgetItem(tr(&quot;Mahogany&quot;), listWidget);</pre>
+<p>They can also be constructed without a parent list widget and added to a list at some later time:</p>
+<pre>     QListWidgetItem *newItem = new QListWidgetItem;
+     newItem-&gt;setText(itemText);
+     listWidget-&gt;insertItem(row, newItem);</pre>
+<p>Each item in a list can display a text label and an icon. The colors and font used to render the text can be changed to provide a customized appearance for items. Tooltips, status tips, and &quot;What's This?&quot; help are all easily configured to ensure that the list is properly integrated into the application.</p>
+<pre>     newItem-&gt;setToolTip(toolTipText);
+     newItem-&gt;setStatusTip(toolTipText);
+     newItem-&gt;setWhatsThis(whatsThisText);</pre>
+<p>By default, items in a list are presented in the order of their creation. Lists of items can be sorted according to the criteria given in <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> to produce a list of items that is sorted in forward or reverse alphabetical order:</p>
+<pre>     listWidget-&gt;sortItems(Qt::AscendingOrder);
+     listWidget-&gt;sortItems(Qt::DescendingOrder);</pre>
+<a name="tree-widgets"></a>
+<h2>Tree Widgets</h2>
+<p>Trees or hierarchical lists of items are provided by the <tt>QTreeWidget</tt> and <tt>QTreeWidgetItem</tt> classes. Each item in the tree widget can have child items of its own, and can display a number of columns of information. Tree widgets are created just like any other widget:</p>
+<pre>     QTreeWidget *treeWidget = new QTreeWidget(this);</pre>
+<p>Before items can be added to the tree widget, the number of columns must be set. For example, we could define two columns, and create a header to provide labels at the top of each column:</p>
+<pre>     treeWidget-&gt;setColumnCount(2);
+     QStringList headers;
+     headers &lt;&lt; tr(&quot;Subject&quot;) &lt;&lt; tr(&quot;Default&quot;);
+     treeWidget-&gt;setHeaderLabels(headers);</pre>
+<p>The easiest way to set up the labels for each section is to supply a string list. For more sophisticated headers, you can construct a tree item, decorate it as you wish, and use that as the tree widget's header.</p>
+<p>Top-level items in the tree widget are constructed with the tree widget as their parent widget. They can be inserted in an arbitrary order, or you can ensure that they are listed in a particular order by specifying the previous item when constructing each item:</p>
+<pre>     QTreeWidgetItem *cities = new QTreeWidgetItem(treeWidget);
+     cities-&gt;setText(0, tr(&quot;Cities&quot;));
+     QTreeWidgetItem *osloItem = new QTreeWidgetItem(cities);
+     osloItem-&gt;setText(0, tr(&quot;Oslo&quot;));
+     osloItem-&gt;setText(1, tr(&quot;Yes&quot;));
+
+     QTreeWidgetItem *planets = new QTreeWidgetItem(treeWidget, cities);</pre>
+<p>Tree widgets deal with top-level items slightly differently to other items from deeper within the tree. Items can be removed from the top level of the tree by calling the tree widget's <a href="qtreewidget.html#takeTopLevelItem">takeTopLevelItem()</a> function, but items from lower levels are removed by calling their parent item's <a href="qtreewidgetitem.html#takeChild">takeChild()</a> function. Items are inserted in the top level of the tree with the <a href="qtreewidget.html#insertTopLevelItem">insertTopLevelItem()</a> function. At lower levels in the tree, the parent item's <a href="qtreewidgetitem.html#insertChild">insertChild()</a> function is used.</p>
+<p>It is easy to move items around between the top level and lower levels in the tree. We just need to check whether the items are top-level items or not, and this information is supplied by each item's <tt>parent()</tt> function. For example, we can remove the current item in the tree widget regardless of its location:</p>
+<pre>     QTreeWidgetItem *parent = currentItem-&gt;parent();
+     int index;
+
+     if (parent) {
+         index = parent-&gt;indexOfChild(treeWidget-&gt;currentItem());
+         delete parent-&gt;takeChild(index);
+     } else {
+         index = treeWidget-&gt;indexOfTopLevelItem(treeWidget-&gt;currentItem());
+         delete treeWidget-&gt;takeTopLevelItem(index);
+     }</pre>
+<p>Inserting the item somewhere else in the tree widget follows the same pattern:</p>
+<pre>     QTreeWidgetItem *parent = currentItem-&gt;parent();
+     QTreeWidgetItem *newItem;
+     if (parent)
+         newItem = new QTreeWidgetItem(parent, treeWidget-&gt;currentItem());
+     else
+         newItem = new QTreeWidgetItem(treeWidget, treeWidget-&gt;currentItem());</pre>
+<a name="table-widgets"></a>
+<h2>Table Widgets</h2>
+<p>Tables of items similar to those found in spreadsheet applications are constructed with the <tt>QTableWidget</tt> and <tt>QTableWidgetItem</tt>. These provide a scrolling table widget with headers and items to use within it.</p>
+<p>Tables can be created with a set number of rows and columns, or these can be added to an unsized table as they are needed.</p>
+<pre>     QTableWidget *tableWidget;
+     tableWidget = new QTableWidget(12, 3, this);</pre>
+<p>Items are constructed outside the table before being added to the table at the required location:</p>
+<pre>     QTableWidgetItem *newItem = new QTableWidgetItem(tr(&quot;%1&quot;).arg(
+         pow(row, column+1)));
+     tableWidget-&gt;setItem(row, column, newItem);</pre>
+<p>Horizontal and vertical headers can be added to the table by constructing items outside the table and using them as headers:</p>
+<pre>     QTableWidgetItem *valuesHeaderItem = new QTableWidgetItem(tr(&quot;Values&quot;));
+     tableWidget-&gt;setHorizontalHeaderItem(0, valuesHeaderItem);</pre>
+<p>Note that the rows and columns in the table begin at zero.</p>
+<a name="common-features"></a>
+<h2>Common Features</h2>
+<p>There are a number of item-based features common to each of the convenience classes that are available through the same interfaces in each class. We present these in the following sections with some examples for different widgets. Look at the list of <a href="model-view.html">Model/View Classes</a> for each of the widgets for more details about the use of each function used.</p>
+<a name="hidden-items"></a>
+<h3>Hidden Items</h3>
+<p>It is sometimes useful to be able to hide items in an item view widget rather than remove them. Items for all of the above widgets can be hidden and later shown again. You can determine whether an item is hidden by calling the isItemHidden() function, and items can be hidden with <tt>setItemHidden()</tt>.</p>
+<p>Since this operation is item-based, the same function is available for all three convenience classes.</p>
+<a name="selections"></a>
+<h3>Selections</h3>
+<p>The way items are selected is controlled by the widget's selection mode (<a href="qabstractitemview.html#SelectionMode-enum">QAbstractItemView::SelectionMode</a>). This property controls whether the user can select one or many items and, in many-item selections, whether the selection must be a continuous range of items. The selection mode works in the same way for all of the above widgets.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><p align="center"><img src="images/selection-single.png" /></p></td><td><b>Single item selections:</b> Where the user needs to choose a single item from a widget, the default <tt>SingleSelection</tt> mode is most suitable. In this mode, the current item and the selected item are the same.</td></tr>
+<tr valign="top" class="even"><td><p align="center"><img src="images/selection-multi.png" /></p></td><td><b>Multi-item selections:</b> In this mode, the user can toggle the selection state of any item in the widget without changing the existing selection, much like the way non-exclusive checkboxes can be toggled independently.</td></tr>
+<tr valign="top" class="odd"><td><p align="center"><img src="images/selection-extended.png" /></p></td><td><b>Extended selections:</b> Widgets that often require many adjacent items to be selected, such as those found in spreadsheets, require the <tt>ExtendedSelection</tt> mode. In this mode, continuous ranges of items in the widget can be selected with both the mouse and the keyboard. Complex selections, involving many items that are not adjacent to other selected items in the widget, can also be created if modifier keys are used.<p>If the user selects an item without using a modifier key, the existing selection is cleared.</p>
+</td></tr>
+</table></p>
+<p>The selected items in a widget are read using the <tt>selectedItems()</tt> function, providing a list of relevant items that can be iterated over. For example, we can find the sum of all the numeric values within a list of selected items with the following code:</p>
+<pre>     QList&lt;QTableWidgetItem *&gt; selected = tableWidget-&gt;selectedItems();
+     QTableWidgetItem *item;
+     int number = 0;
+     double total = 0;
+
+     foreach (item, selected) {
+         bool ok;
+         double value = item-&gt;text().toDouble(&amp;ok);
+
+         if (ok &amp;&amp; !item-&gt;text().isEmpty()) {
+             total += value;
+             number++;
+         }
+     }</pre>
+<p>Note that for the single selection mode, the current item will be in the selection. In the multi-selection and extended selection modes, the current item may not lie within the selection, depending on the way the user formed the selection.</p>
+<a name="searching"></a>
+<h3>Searching</h3>
+<p>It is often useful to be able to find items within an item view widget, either as a developer or as a service to present to users. All three item view convenience classes provide a common <tt>findItems()</tt> function to make this as consistent and simple as possible.</p>
+<p>Items are searched for by the text that they contain according to criteria specified by a selection of values from <a href="qt.html#MatchFlag-enum">Qt::MatchFlags</a>. We can obtain a list of matching items with the <tt>findItems()</tt> function:</p>
+<pre>     QTreeWidgetItem *item;
+     QList&lt;QTreeWidgetItem *&gt; found = treeWidget-&gt;findItems(
+         itemText, Qt::MatchWildcard);
+
+     foreach (item, found) {
+         treeWidget-&gt;setItemSelected(item, true);
+         <span class="comment">//</span> Show the item-&gt;text(0) for each item.
+     }</pre>
+<p>The above code causes items in a tree widget to be selected if they contain the text given in the search string. This pattern can also be used in the list and table widgets.</p>
+<p>
+[Previous: <a href="model-view-delegate.html">Delegate Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/codecs/qtextcodec.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QTextCodec</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QTextCodec</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qtextcodec.html">QTextCodec class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QByteArray <b><a href="qtextcodec-qt3.html#fromUnicode-3">fromUnicode</a></b> ( const QString &amp; <i>uc</i>, int &amp; <i>lenInOut</i> ) const</li>
+<li><div class="fn"/>QByteArray <b><a href="qtextcodec-qt3.html#mimeName">mimeName</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextcodec-qt3.html#toUnicode-3">toUnicode</a></b> ( const QByteArray &amp; <i>a</i>, int <i>len</i> ) const</li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec-qt3.html#codecForContent">codecForContent</a></b> ( const char * <i>str</i>, int <i>size</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec-qt3.html#codecForIndex">codecForIndex</a></b> ( int <i>i</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec-qt3.html#codecForName-3">codecForName</a></b> ( const char * <i>hint</i>, int <i>accuracy</i> )</li>
+<li><div class="fn"/>const char * <b><a href="qtextcodec-qt3.html#locale">locale</a></b> ()</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="codecForContent"></a>QTextCodec * QTextCodec::codecForContent ( const char * <i>str</i>, int <i>size</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This functionality is no longer provided by Qt. This compatibility function always returns a null pointer.</p>
+<h3 class="fn"><a name="codecForIndex"></a>QTextCodec * QTextCodec::codecForIndex ( int <i>i</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Use <a href="qtextcodec.html#availableCodecs">availableCodecs</a>() or <a href="qtextcodec.html#availableMibs">availableMibs</a>() instead and iterate through the resulting list.</p>
+<h3 class="fn"><a name="codecForName-3"></a>QTextCodec * QTextCodec::codecForName ( const char * <i>hint</i>, int <i>accuracy</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the codecForName(const <a href="qbytearray.html">QByteArray</a> &amp;) overload instead.</p>
+<h3 class="fn"><a name="fromUnicode-3"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::fromUnicode ( const <a href="qstring.html">QString</a> &amp; <i>uc</i>, int &amp; <i>lenInOut</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="locale"></a>const char * QTextCodec::locale ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a string representing the current language and sublanguage, e.g&#x2e; &quot;pt&quot; for Portuguese, or &quot;pt_br&quot; for Portuguese/Brazil.</p>
+<p>See also <a href="qlocale.html">QLocale</a>.</p>
+<h3 class="fn"><a name="mimeName"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::mimeName () const</h3>
+<p>Use <a href="qtextcodec.html#name">name</a>() instead.</p>
+<h3 class="fn"><a name="toUnicode-3"></a><a href="qstring.html">QString</a> QTextCodec::toUnicode ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>a</i>, int <i>len</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>a</i> contains the source characters; <i>len</i> contains the number of characters in <i>a</i> to use.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

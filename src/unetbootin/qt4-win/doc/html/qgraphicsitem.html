@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsitem.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsItem class is the base class for all graphical items in a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsItem&gt;</pre><p>Inherited by <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>, <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a>, <a href="qgraphicslineitem.html">QGraphicsLineItem</a>, <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>, <a href="qgraphicssvgitem.html">QGraphicsSvgItem</a>, <a href="qgraphicstextitem.html">QGraphicsTextItem</a>, and <a href="qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicsitem-members.html">List of all members, including inherited members</a></li>
+<li><a href="qgraphicsitem-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qgraphicsitem.html#CacheMode-enum">CacheMode</a></b> { NoCache, ItemCoordinateCache, DeviceCoordinateCache }</li>
+<li><div class="fn"/>enum <b><a href="qgraphicsitem.html#GraphicsItemChange-enum">GraphicsItemChange</a></b> { ItemEnabledChange, ItemEnabledHasChanged, ItemMatrixChange, ItemPositionChange, ..., ItemZValueHasChanged }</li>
+<li><div class="fn"/>enum <b><a href="qgraphicsitem.html#GraphicsItemFlag-enum">GraphicsItemFlag</a></b> { ItemIsMovable, ItemIsSelectable, ItemIsFocusable, ItemClipsToShape, ItemClipsChildrenToShape, ItemIgnoresTransformations }</li>
+<li><div class="fn"/>flags <b><a href="qgraphicsitem.html#GraphicsItemFlag-enum">GraphicsItemFlags</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicsitem.html#QGraphicsItem">QGraphicsItem</a></b> ( QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qgraphicsitem.html#dtor.QGraphicsItem">~QGraphicsItem</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#acceptDrops">acceptDrops</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#acceptHoverEvents">acceptHoverEvents</a></b> () const</li>
+<li><div class="fn"/>Qt::MouseButtons <b><a href="qgraphicsitem.html#acceptedMouseButtons">acceptedMouseButtons</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#advance">advance</a></b> ( int <i>phase</i> )</li>
+<li><div class="fn"/>virtual QRectF <b><a href="qgraphicsitem.html#boundingRect">boundingRect</a></b> () const = 0</li>
+<li><div class="fn"/>QRegion <b><a href="qgraphicsitem.html#boundingRegion">boundingRegion</a></b> ( const QTransform &amp; <i>itemToDeviceTransform</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsitem.html#boundingRegionGranularity">boundingRegionGranularity</a></b> () const</li>
+<li><div class="fn"/>CacheMode <b><a href="qgraphicsitem.html#cacheMode">cacheMode</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QGraphicsItem *&gt; <b><a href="qgraphicsitem.html#childItems">childItems</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicsitem.html#childrenBoundingRect">childrenBoundingRect</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#clearFocus">clearFocus</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a></b> ( const QGraphicsItem * <i>other</i>, Qt::ItemSelectionMode <i>mode</i> = Qt::IntersectsItemShape ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#collidesWithPath">collidesWithPath</a></b> ( const QPainterPath &amp; <i>path</i>, Qt::ItemSelectionMode <i>mode</i> = Qt::IntersectsItemShape ) const</li>
+<li><div class="fn"/>QList&lt;QGraphicsItem *&gt; <b><a href="qgraphicsitem.html#collidingItems">collidingItems</a></b> ( Qt::ItemSelectionMode <i>mode</i> = Qt::IntersectsItemShape ) const</li>
+<li><div class="fn"/>QGraphicsItem * <b><a href="qgraphicsitem.html#commonAncestorItem">commonAncestorItem</a></b> ( const QGraphicsItem * <i>other</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#contains">contains</a></b> ( const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QCursor <b><a href="qgraphicsitem.html#cursor">cursor</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="qgraphicsitem.html#data">data</a></b> ( int <i>key</i> ) const</li>
+<li><div class="fn"/>QTransform <b><a href="qgraphicsitem.html#deviceTransform">deviceTransform</a></b> ( const QTransform &amp; <i>viewportTransform</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#ensureVisible">ensureVisible</a></b> ( const QRectF &amp; <i>rect</i> = QRectF(), int <i>xmargin</i> = 50, int <i>ymargin</i> = 50 )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#ensureVisible-2">ensureVisible</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i>, int <i>xmargin</i> = 50, int <i>ymargin</i> = 50 )</li>
+<li><div class="fn"/>GraphicsItemFlags <b><a href="qgraphicsitem.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#grabKeyboard">grabKeyboard</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#grabMouse">grabMouse</a></b> ()</li>
+<li><div class="fn"/>QGraphicsItemGroup * <b><a href="qgraphicsitem.html#group">group</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#handlesChildEvents">handlesChildEvents</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#hasCursor">hasCursor</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#hasFocus">hasFocus</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#hide">hide</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#installSceneEventFilter">installSceneEventFilter</a></b> ( QGraphicsItem * <i>filterItem</i> )</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isAncestorOf">isAncestorOf</a></b> ( const QGraphicsItem * <i>child</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isEnabled">isEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isObscured">isObscured</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isObscured-2">isObscured</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isObscured-3">isObscured</a></b> ( const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#isObscuredBy">isObscuredBy</a></b> ( const QGraphicsItem * <i>item</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isSelected">isSelected</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isUnderMouse">isUnderMouse</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isVisible">isVisible</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isVisibleTo">isVisibleTo</a></b> ( const QGraphicsItem * <i>parent</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isWidget">isWidget</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicsitem.html#isWindow">isWindow</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromItem">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromItem-2">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromItem-3">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapFromItem-4">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromItem-5">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromItem-6">mapFromItem</a></b> ( const QGraphicsItem * <i>item</i>, qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromParent">mapFromParent</a></b> ( const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromParent-2">mapFromParent</a></b> ( const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromParent-3">mapFromParent</a></b> ( const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapFromParent-4">mapFromParent</a></b> ( const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromParent-5">mapFromParent</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromParent-6">mapFromParent</a></b> ( qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromScene">mapFromScene</a></b> ( const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromScene-2">mapFromScene</a></b> ( const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromScene-3">mapFromScene</a></b> ( const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapFromScene-4">mapFromScene</a></b> ( const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapFromScene-5">mapFromScene</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapFromScene-6">mapFromScene</a></b> ( qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToItem">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToItem-2">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToItem-3">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapToItem-4">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToItem-5">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToItem-6">mapToItem</a></b> ( const QGraphicsItem * <i>item</i>, qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToParent">mapToParent</a></b> ( const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToParent-2">mapToParent</a></b> ( const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToParent-3">mapToParent</a></b> ( const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapToParent-4">mapToParent</a></b> ( const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToParent-5">mapToParent</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToParent-6">mapToParent</a></b> ( qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToScene">mapToScene</a></b> ( const QPointF &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToScene-2">mapToScene</a></b> ( const QRectF &amp; <i>rect</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToScene-3">mapToScene</a></b> ( const QPolygonF &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPainterPath <b><a href="qgraphicsitem.html#mapToScene-4">mapToScene</a></b> ( const QPainterPath &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QPolygonF <b><a href="qgraphicsitem.html#mapToScene-5">mapToScene</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#mapToScene-6">mapToScene</a></b> ( qreal <i>x</i>, qreal <i>y</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#moveBy">moveBy</a></b> ( qreal <i>dx</i>, qreal <i>dy</i> )</li>
+<li><div class="fn"/>virtual QPainterPath <b><a href="qgraphicsitem.html#opaqueArea">opaqueArea</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#paint">paint</a></b> ( QPainter * <i>painter</i>, const QStyleOptionGraphicsItem * <i>option</i>, QWidget * <i>widget</i> = 0 ) = 0</li>
+<li><div class="fn"/>QGraphicsItem * <b><a href="qgraphicsitem.html#parentItem">parentItem</a></b> () const</li>
+<li><div class="fn"/>QGraphicsWidget * <b><a href="qgraphicsitem.html#parentWidget">parentWidget</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#removeSceneEventFilter">removeSceneEventFilter</a></b> ( QGraphicsItem * <i>filterItem</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#resetTransform">resetTransform</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#rotate">rotate</a></b> ( qreal <i>angle</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#scale">scale</a></b> ( qreal <i>sx</i>, qreal <i>sy</i> )</li>
+<li><div class="fn"/>QGraphicsScene * <b><a href="qgraphicsitem.html#scene">scene</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicsitem.html#sceneBoundingRect">sceneBoundingRect</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsitem.html#scenePos">scenePos</a></b> () const</li>
+<li><div class="fn"/>QTransform <b><a href="qgraphicsitem.html#sceneTransform">sceneTransform</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#scroll">scroll</a></b> ( qreal <i>dx</i>, qreal <i>dy</i>, const QRectF &amp; <i>rect</i> = QRectF() )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setAcceptDrops">setAcceptDrops</a></b> ( bool <i>on</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setAcceptHoverEvents">setAcceptHoverEvents</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setAcceptedMouseButtons">setAcceptedMouseButtons</a></b> ( Qt::MouseButtons <i>buttons</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setBoundingRegionGranularity">setBoundingRegionGranularity</a></b> ( qreal <i>granularity</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setCacheMode">setCacheMode</a></b> ( CacheMode <i>mode</i>, const QSize &amp; <i>logicalCacheSize</i> = QSize() )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setCursor">setCursor</a></b> ( const QCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setData">setData</a></b> ( int <i>key</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setEnabled">setEnabled</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setFlag">setFlag</a></b> ( GraphicsItemFlag <i>flag</i>, bool <i>enabled</i> = true )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setFlags">setFlags</a></b> ( GraphicsItemFlags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setFocus">setFocus</a></b> ( Qt::FocusReason <i>focusReason</i> = Qt::OtherFocusReason )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setGroup">setGroup</a></b> ( QGraphicsItemGroup * <i>group</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setHandlesChildEvents">setHandlesChildEvents</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setParentItem">setParentItem</a></b> ( QGraphicsItem * <i>parent</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setPos">setPos</a></b> ( const QPointF &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setPos-2">setPos</a></b> ( qreal <i>x</i>, qreal <i>y</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setSelected">setSelected</a></b> ( bool <i>selected</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setToolTip">setToolTip</a></b> ( const QString &amp; <i>toolTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setTransform">setTransform</a></b> ( const QTransform &amp; <i>matrix</i>, bool <i>combine</i> = false )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setVisible">setVisible</a></b> ( bool <i>visible</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#setZValue">setZValue</a></b> ( qreal <i>z</i> )</li>
+<li><div class="fn"/>virtual QPainterPath <b><a href="qgraphicsitem.html#shape">shape</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#shear">shear</a></b> ( qreal <i>sh</i>, qreal <i>sv</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#show">show</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qgraphicsitem.html#toolTip">toolTip</a></b> () const</li>
+<li><div class="fn"/>QGraphicsItem * <b><a href="qgraphicsitem.html#topLevelItem">topLevelItem</a></b> () const</li>
+<li><div class="fn"/>QGraphicsWidget * <b><a href="qgraphicsitem.html#topLevelWidget">topLevelWidget</a></b> () const</li>
+<li><div class="fn"/>QTransform <b><a href="qgraphicsitem.html#transform">transform</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#translate">translate</a></b> ( qreal <i>dx</i>, qreal <i>dy</i> )</li>
+<li><div class="fn"/>virtual int <b><a href="qgraphicsitem.html#type">type</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#unsetCursor">unsetCursor</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#update">update</a></b> ( const QRectF &amp; <i>rect</i> = QRectF() )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#update-2">update</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>width</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>QGraphicsWidget * <b><a href="qgraphicsitem.html#window">window</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsitem.html#x">x</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsitem.html#y">y</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsitem.html#zValue">zValue</a></b> () const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>const int <b><a href="qgraphicsitem.html#UserType-var">UserType</a></b></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#contextMenuEvent">contextMenuEvent</a></b> ( QGraphicsSceneContextMenuEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#dragEnterEvent">dragEnterEvent</a></b> ( QGraphicsSceneDragDropEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#dragLeaveEvent">dragLeaveEvent</a></b> ( QGraphicsSceneDragDropEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#dragMoveEvent">dragMoveEvent</a></b> ( QGraphicsSceneDragDropEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#dropEvent">dropEvent</a></b> ( QGraphicsSceneDragDropEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#focusInEvent">focusInEvent</a></b> ( QFocusEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#focusOutEvent">focusOutEvent</a></b> ( QFocusEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a></b> ( QGraphicsSceneHoverEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a></b> ( QGraphicsSceneHoverEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a></b> ( QGraphicsSceneHoverEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#inputMethodEvent">inputMethodEvent</a></b> ( QInputMethodEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qgraphicsitem.html#inputMethodQuery">inputMethodQuery</a></b> ( Qt::InputMethodQuery <i>query</i> ) const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qgraphicsitem.html#itemChange">itemChange</a></b> ( GraphicsItemChange <i>change</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#keyPressEvent">keyPressEvent</a></b> ( QKeyEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#keyReleaseEvent">keyReleaseEvent</a></b> ( QKeyEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a></b> ( QGraphicsSceneMouseEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a></b> ( QGraphicsSceneMouseEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a></b> ( QGraphicsSceneMouseEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a></b> ( QGraphicsSceneMouseEvent * <i>event</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsitem.html#prepareGeometryChange">prepareGeometryChange</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#sceneEvent">sceneEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicsitem.html#sceneEventFilter">sceneEventFilter</a></b> ( QGraphicsItem * <i>watched</i>, QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsitem.html#wheelEvent">wheelEvent</a></b> ( QGraphicsSceneWheelEvent * <i>event</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>T <b><a href="qgraphicsitem.html#qgraphicsitem_cast">qgraphicsitem_cast</a></b> ( QGraphicsItem * <i>item</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsItem class is the base class for all graphical items in a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>It provides a light-weight foundation for writing your own custom items. This includes defining the item's geometry, collision detection, its painting implementation and item interaction through its event handlers. QGraphicsItem is part of <a href="graphicsview.html">The Graphics View Framework</a></p>
+<p align="center"><img src="images/graphicsview-items.png" /></p><p>For convenience, Qt provides a set of standard graphics items for the most common shapes. These are:</p>
+<ul>
+<li><a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a> provides an ellipse item</li>
+<li><a href="qgraphicslineitem.html">QGraphicsLineItem</a> provides a line item</li>
+<li><a href="qgraphicspathitem.html">QGraphicsPathItem</a> provides an arbitrary path item</li>
+<li><a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> provides a pixmap item</li>
+<li><a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a> provides a polygon item</li>
+<li><a href="qgraphicsrectitem.html">QGraphicsRectItem</a> provides a rectangular item</li>
+<li><a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a> provides a simple text label item</li>
+<li><a href="qgraphicstextitem.html">QGraphicsTextItem</a> provides an advanced text browser item</li>
+</ul>
+<p>All of an item's geometric information is based on its local coordinate system. The item's position, <a href="qgraphicsitem.html#pos">pos</a>(), is the only function that does not operate in local coordinates, as it returns a position in parent coordinates. {The Graphics View Coordinate System} describes the coordinate system in detail.</p>
+<p>You can set whether an item should be visible (i.e&#x2e;, drawn, and accepting events), by calling <a href="qgraphicsitem.html#setVisible">setVisible</a>(). Hiding an item will also hide its children. Similarly, you can enable or disable an item by calling <a href="qgraphicsitem.html#setEnabled">setEnabled</a>(). If you disable an item, all its children will also be disabled. By default, items are both visible and enabled. To toggle whether an item is selected or not, first enable selection by setting the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsSelectable</a> flag, and then call <a href="qgraphicsitem.html#setSelected">setSelected</a>(). Normally, selection is toggled by the scene, as a result of user interaction.</p>
+<p>To write your own graphics item, you first create a subclass of QGraphicsItem, and then start by implementing its two pure virtual public functions: <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), which returns an estimate of the area painted by the item, and <a href="qgraphicsitem.html#paint">paint</a>(), which implements the actual painting. For example:</p>
+<pre>         class SimpleItem : public QGraphicsItem
+         {
+         public:
+             QRectF boundingRect() const
+             {
+                 qreal penWidth = 1;
+                 return QRectF(-10 - penWidth / 2, -10 - penWidth / 2,
+                               20 + penWidth / 2, 20 + penWidth / 2);
+             }
+
+             void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+                        QWidget *widget)
+             {
+                 painter-&gt;drawRoundedRect(-10, -10, 20, 20, 5, 5);
+             }
+         };</pre>
+<p>The <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() function has many different purposes. <a href="qgraphicsscene.html">QGraphicsScene</a> bases its item index on <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), and <a href="qgraphicsview.html">QGraphicsView</a> uses it both for culling invisible items, and for determining the area that needs to be recomposed when drawing overlapping items. In addition, QGraphicsItem's collision detection mechanisms use <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() to provide an efficient cut-off. The fine grained collision algorithm in <a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a>() is based on calling <a href="qgraphicsitem.html#shape">shape</a>(), which returns an accurate outline of the item's shape as a <a href="qpainterpath.html">QPainterPath</a>.</p>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a> expects all items <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() and <a href="qgraphicsitem.html#shape">shape</a>() to remain unchanged unless it is notified. If you want to change an item's geometry in any way, you must first call <a href="qgraphicsitem.html#prepareGeometryChange">prepareGeometryChange</a>() to allow <a href="qgraphicsscene.html">QGraphicsScene</a> to update its bookkeeping.</p>
+<p>Collision detection can be done in two ways:</p>
+<ol type="1">
+<li>Reimplement <a href="qgraphicsitem.html#shape">shape</a>() to return an accurate shape for your item, and rely on the default implementation of <a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a>() to do shape-shape intersection. This can be rather expensive if the shapes are complex.</li>
+<li>Reimplement <a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a>() to provide your own custom item and shape collision algorithm.</li>
+</ol>
+<p>The <a href="qgraphicsitem.html#contains">contains</a>() function can be called to determine whether the item <i>contains</i> a point or not. This function can also be reimplemented by the item. The default behavior of <a href="qgraphicsitem.html#contains">contains</a>() is based on calling <a href="qgraphicsitem.html#shape">shape</a>().</p>
+<p>Items can contain other items, and also be contained by other items. All items can have a parent item and a list of children. Unless the item has no parent, its position is in <i>parent</i> coordinates (i.e&#x2e;, the parent's local coordinates). Parent items propagate both their position and their transformation to all children.</p>
+<p align="center"><img src="images/graphicsview-parentchild.png" /></p><p>QGraphicsItem supports affine transformations in addition to its base position, <a href="qgraphicsitem.html#pos">pos</a>(). To change the item's transformation, you can either pass a transformation matrix to <a href="qgraphicsitem.html#setTransform">setTransform</a>(), or call one of the convenience functions <a href="qgraphicsitem.html#rotate">rotate</a>(), <a href="qgraphicsitem.html#scale">scale</a>(), <a href="qgraphicsitem.html#translate">translate</a>(), or <a href="qgraphicsitem.html#shear">shear</a>(). Item transformations accumulate from parent to child, so if both a parent and child item are rotated 90 degrees, the child's total transformation will be 180 degrees. Similarly, if the item's parent is scaled to 2x its original size, its children will also be twice as large. An item's transformation does not affect its own local geometry; all geometry functions (e.g&#x2e;, <a href="qgraphicsitem.html#contains">contains</a>(), <a href="qgraphicsitem.html#update">update</a>(), and all the mapping functions) still operate in local coordinates. For convenience, QGraphicsItem provides the functions <a href="qgraphicsitem.html#sceneTransform">sceneTransform</a>(), which returns the item's total transformation matrix (including its position and all parents' positions and transformations), and <a href="qgraphicsitem.html#scenePos">scenePos</a>(), which returns its position in scene coordinates. To reset an item's matrix, call <a href="qgraphicsitem.html#resetTransform">resetTransform</a>().</p>
+<p>The <a href="qgraphicsitem.html#paint">paint</a>() function is called by <a href="qgraphicsview.html">QGraphicsView</a> to paint the item's contents. The item has no background or default fill of its own; whatever is behind the item will shine through all areas that are not explicitly painted in this function. You can call <a href="qgraphicsitem.html#update">update</a>() to schedule a repaint, optionally passing the rectangle that needs a repaint. Depending on whether or not the item is visible in a view, the item may or may not be repainted; there is no equivalent to <a href="qwidget.html#repaint">QWidget::repaint</a>() in QGraphicsItem.</p>
+<p>Items are painted by the view, starting with the parent items and then drawing children, in ascending stacking order. You can set an item's stacking order by calling <a href="qgraphicsitem.html#setZValue">setZValue</a>(), and test it by calling <a href="qgraphicsitem.html#zValue">zValue</a>(), where items with low z-values are painted before items with high z-values. Stacking order applies to sibling items; parents are always drawn before their children.</p>
+<p>QGraphicsItem receives events from <a href="qgraphicsscene.html">QGraphicsScene</a> through the virtual function <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>(). This function distributes the most common events to a set of convenience event handlers:</p>
+<ul>
+<li><a href="qgraphicsitem.html#contextMenuEvent">contextMenuEvent</a>() handles context menu events</li>
+<li><a href="qgraphicsitem.html#focusInEvent">focusInEvent</a>() and <a href="qgraphicsitem.html#focusOutEvent">focusOutEvent</a>() handle focus in and out events</li>
+<li><a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a>(), <a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a>(), and <a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a>() handles hover enter, move and leave events</li>
+<li><a href="qgraphicsitem.html#inputMethodEvent">inputMethodEvent</a>() handles input events, for accessibility support</li>
+<li><a href="qgraphicsitem.html#keyPressEvent">keyPressEvent</a>() and keyReleaseEvent handle key press and release events</li>
+<li><a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(), <a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a>(), <a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a>(), and <a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>() handles mouse press, move, release, click and doubleclick events</li>
+</ul>
+<p>You can filter events for any other item by installing event filters. This functionaly is separate from from Qt's regular event filters (see <a href="qobject.html#installEventFilter">QObject::installEventFilter</a>()), which only work on subclasses of <a href="qobject.html">QObject</a>. After installing your item as an event filter for another item by calling <a href="qgraphicsitem.html#installSceneEventFilter">installSceneEventFilter</a>(), the filtered events will be received by the virtual function <a href="qgraphicsitem.html#sceneEventFilter">sceneEventFilter</a>(). You can remove item event filters by calling <a href="qgraphicsitem.html#removeSceneEventFilter">removeSceneEventFilter</a>().</p>
+<p>Sometimes it's useful to register custom data with an item, be it a custom item, or a standard item. You can call <a href="qgraphicsitem.html#setData">setData</a>() on any item to store data in it using a key-value pair (the key being an integer, and the value is a <a href="qvariant.html">QVariant</a>). To get custom data from an item, call <a href="qgraphicsitem.html#data">data</a>(). This functionality is completely untouched by Qt itself; it is provided for the user's convenience.</p>
+<p>See also <a href="qgraphicsscene.html">QGraphicsScene</a>, <a href="qgraphicsview.html">QGraphicsView</a>, and <a href="graphicsview.html">The Graphics View Framework</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CacheMode-enum"></a>enum QGraphicsItem::CacheMode</h3>
+<p>This enum describes <a href="qgraphicsitem.html">QGraphicsItem</a>'s cache modes. Caching is used to speed up rendering by allocating and rendering to an off-screen pixel buffer, which can be reused when the item requires redrawing. For some paint devices, the cache is stored directly in graphics memory, which makes rendering very quick.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGraphicsItem::NoCache</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default; all item caching is disabled. <a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>() is called every time the item needs redrawing.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemCoordinateCache</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Caching is enabled for the item's logical (local) coordinate system. <a href="qgraphicsitem.html">QGraphicsItem</a> creates an off-screen pixel buffer with a configurable size / resolution that you can pass to <a href="qgraphicsitem.html#setCacheMode">QGraphicsItem::setCacheMode</a>(). Rendering quality will typically degrade, depending on the resolution of the cache and the item transformation. The first time the item is redrawn, it will render itself into the cache, and the cache is then reused for every subsequent expose. The cache is also reused as the item is transformed. To adjust the resolution of the cache, you can call <a href="qgraphicsitem.html#setCacheMode">setCacheMode</a>() again.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::DeviceCoordinateCache</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Caching is enabled at the paint device level, in device coordinates. This mode is for items that can move, but are not rotated, scaled or sheared. If the item is transformed directly or indirectly, the cache will be regenerated automatically. Unlike ItemCoordinateCacheMode, DeviceCoordinateCache always renders at maximum quality.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#setCacheMode">QGraphicsItem::setCacheMode</a>().</p>
+<h3 class="fn"><a name="GraphicsItemChange-enum"></a>enum QGraphicsItem::GraphicsItemChange</h3>
+<p>ItemVisibleHasChanged, ItemEnabledHasChanged, ItemSelectedHasChanged, ItemParentHasChanged, ItemSceneHasChanged</p>
+<p>This enum describes the state changes that are notified by <a href="qgraphicsitem.html#itemChange">QGraphicsItem::itemChange</a>(). The notifications are sent as the state changes, and in some cases, adjustments can be made (see the documentation for each change for details).</p>
+<p>Note: Be careful with calling functions on the <a href="qgraphicsitem.html">QGraphicsItem</a> itself inside <a href="qgraphicsitem.html#itemChange">itemChange</a>(), as certain function calls can lead to unwanted recursion. For example, you cannot call <a href="qgraphicsitem.html#setPos">setPos</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() on an ItemPositionChange notification, as the <a href="qgraphicsitem.html#setPos">setPos</a>() function will again call itemChange(ItemPositionChange). Instead, you can return the new, adjusted position from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemEnabledChange</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The item's enabled state changes. If the item is presently enabled, it will become disabled, and vice verca. The value argument is the new enabled state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setEnabled">setEnabled</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return the new state from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemEnabledHasChanged</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">The item's enabled state has changed. The value argument is the new enabled state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setEnabled">setEnabled</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemMatrixChange</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The item's affine transformation matrix is changing. This value is obsolete; you can use ItemTransformChange instead.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemPositionChange</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The item's position changes. This notification is only sent when the item's local position changes, relative to its parent, has changed (i.e&#x2e;, as a result of calling <a href="qgraphicsitem.html#setPos">setPos</a>() or <a href="qgraphicsitem.html#moveBy">moveBy</a>()). The value argument is the new position (i.e&#x2e;, a <a href="qpointf.html">QPointF</a>). You can call <a href="qgraphicsitem.html#pos">pos</a>() to get the original position. Do not call <a href="qgraphicsitem.html#setPos">setPos</a>() or <a href="qgraphicsitem.html#moveBy">moveBy</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new, adjusted position from <a href="qgraphicsitem.html#itemChange">itemChange</a>(). After this notification, <a href="qgraphicsitem.html">QGraphicsItem</a> immediately sends the ItemPositionHasChanged notification if the position changed.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemPositionHasChanged</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">The item's position has changed. This notification is only sent after the item's local position, relative to its parent, has changed. The value argument is the new position (the same as <a href="qgraphicsitem.html#pos">pos</a>()), and <a href="qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e&#x2e;, a read-only notification).</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemTransformChange</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">The item's transformation matrix changes. This notification is only sent when the item's local transformation matrix changes (i.e&#x2e;, as a result of calling <a href="qgraphicsitem.html#setTransform">setTransform</a>(), or one of the convenience transformation functions, such as <a href="qgraphicsitem.html#rotate">rotate</a>()). The value argument is the new matrix (i.e&#x2e;, a <a href="qtransform.html">QTransform</a>); to get the old matrix, call <a href="qgraphicsitem.html#transform">transform</a>(). Do not call <a href="qgraphicsitem.html#setTransform">setTransform</a>() or any of the transformation convenience functions in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new matrix from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemTransformHasChanged</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">The item's transformation matrix has changed. This notification is only sent after the item's local trasformation matrix has changed. The value argument is the new matrix (same as <a href="qgraphicsitem.html#transform">transform</a>()), and <a href="qgraphicsitem.html">QGraphicsItem</a> ignores the return value for this notification (i.e&#x2e;, a read-only notification).</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemSelectedChange</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The item's selected state changes. If the item is presently selected, it will become unselected, and vice verca. The value argument is the new selected state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setSelected">setSelected</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered(); instead, you can return the new selected state from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemSelectedHasChanged</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">The item's selected state has changed. The value argument is the new selected state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setSelected">setSelected</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemVisibleChange</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The item's visible state changes. If the item is presently visible, it will become invisible, and vice verca. The value argument is the new visible state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setVisible">setVisible</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new visible state from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemVisibleHasChanged</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">The item's visible state has changed. The value argument is the new visible state (i.e&#x2e;, true or false). Do not call <a href="qgraphicsitem.html#setVisible">setVisible</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemParentChange</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The item's parent changes. The value argument is the new parent item (i.e&#x2e;, a <a href="qgraphicsitem.html">QGraphicsItem</a> pointer). Do not call <a href="qgraphicsitem.html#setParentItem">setParentItem</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered; instead, you can return the new parent from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemParentHasChanged</tt></td><td align="center" valign="top"><tt>15</tt></td><td valign="top">The item's parent has changed. The value argument is the new parent (i.e&#x2e;, a pointer to a <a href="qgraphicsitem.html">QGraphicsItem</a>). Do not call <a href="qgraphicsitem.html#setParentItem">setParentItem</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemChildAddedChange</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">A child is added to this item. The value argument is the new child item (i.e&#x2e;, a <a href="qgraphicsitem.html">QGraphicsItem</a> pointer). Do not pass this item to any item's <a href="qgraphicsitem.html#setParentItem">setParentItem</a>() function as this notification is delivered. The return value is unused; you cannot adjust anything in this notification. Note that the new child might not be fully constructed when this notification is sent; calling pure virtual functions on the child can lead to a crash.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemChildRemovedChange</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">A child is removed from this item. The value argument is the child item that is about to be removed (i.e&#x2e;, a <a href="qgraphicsitem.html">QGraphicsItem</a> pointer). The return value is unused; you cannot adjust anything in this notification.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemSceneChange</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">The item is moved to a new scene. This notification is also sent when the item is added to its initial scene, and when it is removed. The value argument is the new scene (i.e&#x2e;, a <a href="qgraphicsscene.html">QGraphicsScene</a> pointer), or a null pointer if the item is removed from a scene. Do not override this change by passing this item to <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>() as this notification is delivered; instead, you can return the new scene from <a href="qgraphicsitem.html#itemChange">itemChange</a>(). Use this feature with caution; objecting to a scene change can quickly lead to unwanted recursion.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemSceneHasChanged</tt></td><td align="center" valign="top"><tt>16</tt></td><td valign="top">The item's scene has changed. The value argument is the new scene (i.e&#x2e;, a pointer to a <a href="qgraphicsscene.html">QGraphicsScene</a>). Do not call setScene() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemCursorChange</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">The item's cursor changes. The value argument is the new cursor (i.e&#x2e;, a <a href="qcursor.html">QCursor</a>). Do not call <a href="qgraphicsitem.html#setCursor">setCursor</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new cursor from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemCursorHasChanged</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">The item's cursor has changed. The value argument is the new cursor (i.e&#x2e;, a <a href="qcursor.html">QCursor</a>). Do not call <a href="qgraphicsitem.html#setCursor">setCursor</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemToolTipChange</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">The item's tooltip changes. The value argument is the new tooltip (i.e&#x2e;, a <a href="qtooltip.html">QToolTip</a>). Do not call <a href="qgraphicsitem.html#setToolTip">setToolTip</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new tooltip from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemToolTipHasChanged</tt></td><td align="center" valign="top"><tt>20</tt></td><td valign="top">The item's tooltip has changed. The value argument is the new tooltip (i.e&#x2e;, a <a href="qtooltip.html">QToolTip</a>). Do not call <a href="qgraphicsitem.html#setToolTip">setToolTip</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemFlagsChange</tt></td><td align="center" valign="top"><tt>21</tt></td><td valign="top">The item's flags change. The value argument is the new flags (i.e&#x2e;, a quint32). Do not call <a href="qgraphicsitem.html#setFlags">setFlags</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return the new flags from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemFlagsHaveChanged</tt></td><td align="center" valign="top"><tt>22</tt></td><td valign="top">The item's flags have changed. The value argument is the new flags (i.e&#x2e;, a quint32). Do not call <a href="qgraphicsitem.html#setFlags">setFlags</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. The return value is ignored.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemZValueChange</tt></td><td align="center" valign="top"><tt>23</tt></td><td valign="top">The item's Z-value changes. The value argument is the new Z-value (i.e&#x2e;, a double). Do not call <a href="qgraphicsitem.html#setZValue">setZValue</a>() in <a href="qgraphicsitem.html#itemChange">itemChange</a>() as this notification is delivered. Instead, you can return a new Z-value from <a href="qgraphicsitem.html#itemChange">itemChange</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemZValueHasChanged</tt></td><td align="center" valign="top"><tt>24</tt></td><td valign="top">The item's Z-value has changed. The value argument is the new Z-value (i.e&#x2e;, a double). Do not call <a href="qgraphicsitem.html#setZValue">setZValue</a>() as this notification is delivered. The return value is ignored.</td></tr>
+</table></p>
+<h3 class="flags"><a name="GraphicsItemFlag-enum"></a>enum QGraphicsItem::GraphicsItemFlag<br />flags QGraphicsItem::GraphicsItemFlags</h3>
+<p>This enum describes different flags that you can set on an item to toggle different features in the item's behavior.</p>
+<p>All flags are disabled by default.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemIsMovable</tt></td><td align="center" valign="top"><tt>0x1</tt></td><td valign="top">The item supports interactive movement using the mouse. By clicking on the item and then dragging, the item will move together with the mouse cursor. If the item has children, all children are also moved. If the item is part of a selection, all selected items are also moved. This feature is provided as a convenience through the base implementation of <a href="qgraphicsitem.html">QGraphicsItem</a>'s mouse event handlers.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemIsSelectable</tt></td><td align="center" valign="top"><tt>0x2</tt></td><td valign="top">The item supports selection. Enabling this feature will enable <a href="qgraphicsitem.html#setSelected">setSelected</a>() to toggle selection for the item. It will also let the item be selected automatically as a result of calling <a href="qgraphicsscene.html#setSelectionArea">QGraphicsScene::setSelectionArea</a>(), by clicking on an item, or by using rubber band selection in <a href="qgraphicsview.html">QGraphicsView</a>.</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemIsFocusable</tt></td><td align="center" valign="top"><tt>0x4</tt></td><td valign="top">The item supports keyboard input focus (i.e&#x2e;, it is an input item). Enabling this flag will allow the item to accept focus, which again allows the delivery of key events to <a href="qgraphicsitem.html#keyPressEvent">QGraphicsItem::keyPressEvent</a>() and <a href="qgraphicsitem.html#keyReleaseEvent">QGraphicsItem::keyReleaseEvent</a>().</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemClipsToShape</tt></td><td align="center" valign="top"><tt>0x8</tt></td><td valign="top">The item clips (i.e&#x2e;, restricts) its own painting to inside its shape. Its paintEvent() function cannot draw outside its shape. For complex shapes, this function can be expensive. It is disabled by default. This behavior is enforced by <a href="qgraphicsview.html#drawItems">QGraphicsView::drawItems</a>() or <a href="qgraphicsscene.html#drawItems">QGraphicsScene::drawItems</a>(). This flag was introduced in Qt 4.3&#x2e;</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemClipsChildrenToShape</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">The item clips the painting of all its descendents to its own shape. Items that are either direct or indirect children of this item cannot draw outside this item's shape. By default, this flag is disabled; children can draw anywhere. This behavior is enforced by <a href="qgraphicsview.html#drawItems">QGraphicsView::drawItems</a>() or <a href="qgraphicsscene.html#drawItems">QGraphicsScene::drawItems</a>(). This flag was introduced in Qt 4.3&#x2e;</td></tr>
+<tr><td valign="top"><tt>QGraphicsItem::ItemIgnoresTransformations</tt></td><td align="center" valign="top"><tt>0x20</tt></td><td valign="top">The item ignores inherited transformations (i.e&#x2e;, its position is still relative to its parent, but the parent or view rotation, zoom or shear transformations are ignored). This flag is particularly useful for text label items, which can become unreadable when the view zooms away from the scene. By default, this flag is disabled. This flag was introduced in Qt 4.3&#x2e;</td></tr>
+</table></p>
+<p>The GraphicsItemFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;GraphicsItemFlag&gt;. It stores an OR combination of GraphicsItemFlag values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsItem"></a>QGraphicsItem::QGraphicsItem ( QGraphicsItem * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicsitem.html">QGraphicsItem</a> with the given <i>parent</i>.</p>
+<p>If <i>parent</i> is 0, you can add the item to a scene by calling <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>(). The item will then become a top-level item.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>() and <a href="qgraphicsitem.html#setParentItem">setParentItem</a>().</p>
+<h3 class="fn"><a name="dtor.QGraphicsItem"></a>QGraphicsItem::~QGraphicsItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="qgraphicsitem.html">QGraphicsItem</a> and all its children. If this item is currently associated with a scene, the item will be removed from the scene before it is deleted.</p>
+<h3 class="fn"><a name="acceptDrops"></a>bool QGraphicsItem::acceptDrops () const</h3>
+<p>Returns true if this item can accept drag and drop events; otherwise, returns false. By default, items do not accept drag and drop events; items are transparent to drag and drop.</p>
+<p>See also <a href="qgraphicsitem.html#setAcceptDrops">setAcceptDrops</a>().</p>
+<h3 class="fn"><a name="acceptHoverEvents"></a>bool QGraphicsItem::acceptHoverEvents () const</h3>
+<p>Returns true if an item accepts hover events (<a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>); otherwise, returns false. By default, items do not accept hover events.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#setAcceptHoverEvents">setAcceptHoverEvents</a>() and <a href="qgraphicsitem.html#setAcceptedMouseButtons">setAcceptedMouseButtons</a>().</p>
+<h3 class="fn"><a name="acceptedMouseButtons"></a><a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> QGraphicsItem::acceptedMouseButtons () const</h3>
+<p>Returns the mouse buttons that this item accepts mouse events for. By default, all mouse buttons are accepted.</p>
+<p>If an item accepts a mouse button, it will become the mouse grabber item when a mouse press event is delivered for that mouse button. However, if the item does not accept the button, <a href="qgraphicsscene.html">QGraphicsScene</a> will forward the mouse events to the first item beneath it that does.</p>
+<p>See also <a href="qgraphicsitem.html#setAcceptedMouseButtons">setAcceptedMouseButtons</a>() and <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>().</p>
+<h3 class="fn"><a name="advance"></a>void QGraphicsItem::advance ( int <i>phase</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is called twice for all items by the <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>() slot. In the first phase, all items are called with <i>phase</i> == 0, indicating that items on the scene are about to advance, and then all items are called with <i>phase</i> == 1. Reimplement this function to update your item if you need simple scene-controlled animation.</p>
+<p>The default implementation does nothing.</p>
+<p>For individual item animation, an alternative to this function is to either use <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a>, or to multiple-inherit from <a href="qobject.html">QObject</a> and <a href="qgraphicsitem.html">QGraphicsItem</a>, and animate your item using <a href="qobject.html#startTimer">QObject::startTimer</a>() and <a href="qobject.html#timerEvent">QObject::timerEvent</a>().</p>
+<p>See also <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a> and <a href="qtimeline.html">QTimeLine</a>.</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrectf.html">QRectF</a> QGraphicsItem::boundingRect () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure virtual function defines the outer bounds of the item as a rectangle; all painting must be restricted to inside an item's bounding rect. <a href="qgraphicsview.html">QGraphicsView</a> uses this to determine whether the item requires redrawing.</p>
+<p>Although the item's shape can be arbitrary, the bounding rect is always rectangular, and it is unaffected by the items' transformation (<a href="qgraphicsitem.html#scale">scale</a>(), <a href="qgraphicsitem.html#rotate">rotate</a>(), etc.)&#x2e;</p>
+<p>If you want to change the item's bounding rectangle, you must first call <a href="qgraphicsitem.html#prepareGeometryChange">prepareGeometryChange</a>(). This notifies the scene of the imminent change, so that its can update its item geometry index; otherwise, the scene will be unaware of the item's new geometry, and the results are undefined (typically, rendering artifacts are left around in the view).</p>
+<p>Reimplement this function to let <a href="qgraphicsview.html">QGraphicsView</a> determine what parts of the widget, if any, need to be redrawn.</p>
+<p>Note: For shapes that paint an outline / stroke, it is important to include half the pen width in the bounding rect. It is not necessary to compensate for antialiasing, though.</p>
+<p>Example:</p>
+<pre>     QRectF CircleItem::boundingRect() const
+     {
+         qreal penWidth = 1;
+         return QRectF(-radius - penWidth / 2, -radius - penWidth / 2,
+                       diameter + penWidth, diameter + penWidth);
+     }</pre>
+<p>See also <a href="qgraphicsitem.html#boundingRegion">boundingRegion</a>(), <a href="qgraphicsitem.html#shape">shape</a>(), <a href="qgraphicsitem.html#contains">contains</a>(), <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>, and <a href="qgraphicsitem.html#prepareGeometryChange">prepareGeometryChange</a>().</p>
+<h3 class="fn"><a name="boundingRegion"></a><a href="qregion.html">QRegion</a> QGraphicsItem::boundingRegion ( const <a href="qtransform.html">QTransform</a> &amp; <i>itemToDeviceTransform</i> ) const</h3>
+<p>Returns the bounding region for this item. The coordinate space of the returned region depends on <i>itemToDeviceTransform</i>. If you pass an identity <a href="qtransform.html">QTransform</a> as a parameter, this function will return a local coordinate region.</p>
+<p>The bounding region describes a coarse outline of the item's visual contents. Although it's expensive to calculate, it's also more precise than <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), and it can help to avoid unnecessary repainting when an item is updated. This is particularily efficient for thin items (e.g&#x2e;, lines or simple polygons). You can tune the granularity for the bounding region by calling <a href="qgraphicsitem.html#setBoundingRegionGranularity">setBoundingRegionGranularity</a>(). The default granularity is 0; in which the item's bounding region is the same as its bounding rect.</p>
+<p><i>itemToDeviceTransform</i> is the transformation from item coordinates to device coordinates. If you want this function to return a <a href="qregion.html">QRegion</a> in scene coordinates, you can pass <a href="qgraphicsitem.html#sceneTransform">sceneTransform</a>() as an argument.</p>
+<p>See also <a href="qgraphicsitem.html#boundingRegionGranularity">boundingRegionGranularity</a>().</p>
+<h3 class="fn"><a name="boundingRegionGranularity"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsItem::boundingRegionGranularity () const</h3>
+<p>Returns the item's bounding region granularity; a value between and including 0 and 1. The default value is 0 (i.e&#x2e;, the lowest granularity, where the bounding region corresponds to the item's bounding rectangle).</p>
+<p>### NOTE</p>
+<p>See also <a href="qgraphicsitem.html#setBoundingRegionGranularity">setBoundingRegionGranularity</a>().</p>
+<h3 class="fn"><a name="cacheMode"></a><a href="qgraphicsitem.html#CacheMode-enum">CacheMode</a> QGraphicsItem::cacheMode () const</h3>
+<p>Returns the cache mode for this item. The default mode is <a href="qgraphicsitem.html#CacheMode-enum">NoCache</a> (i.e&#x2e;, cache is disabled and all painting is immediate).</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#setCacheMode">setCacheMode</a>().</p>
+<h3 class="fn"><a name="childItems"></a><a href="qlist.html">QList</a>&lt;QGraphicsItem *&gt; QGraphicsItem::childItems () const</h3>
+<p>Returns a list of this item's children. The items are returned in no particular order.</p>
+<p>See also <a href="qgraphicsitem.html#setParentItem">setParentItem</a>().</p>
+<h3 class="fn"><a name="childrenBoundingRect"></a><a href="qrectf.html">QRectF</a> QGraphicsItem::childrenBoundingRect () const</h3>
+<p>Returns the bounding rect of this item's descendents (i.e&#x2e;, its children, their children, etc.) in local coordinates. If the item has no children, this function returns an empty <a href="qrectf.html">QRectF</a>.</p>
+<p>This does not include this item's own bounding rect; it only returns its descendents' accumulated bounding rect. If you need to include this item's bounding rect, you can add <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() to childrenBoundingRect() using QRectF::operator|().</p>
+<p>This function is linear in complexity; it determines the size of the returned bounding rect by iterating through all descendents.</p>
+<p>See also <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() and <a href="qgraphicsitem.html#sceneBoundingRect">sceneBoundingRect</a>().</p>
+<h3 class="fn"><a name="clearFocus"></a>void QGraphicsItem::clearFocus ()</h3>
+<p>Takes keyboard input focus from the item.</p>
+<p>If it has focus, a focus out event is sent to this item to tell it that it is about to lose the focus.</p>
+<p>Only items that set the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag can accept keyboard focus.</p>
+<p>See also <a href="qgraphicsitem.html#setFocus">setFocus</a>().</p>
+<h3 class="fn"><a name="collidesWithItem"></a>bool QGraphicsItem::collidesWithItem ( const QGraphicsItem * <i>other</i>, <a href="qt.html#ItemSelectionMode-enum">Qt::ItemSelectionMode</a> <i>mode</i> = Qt::IntersectsItemShape ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this item collides with <i>other</i>; otherwise returns false. The ways items collide is determined by <i>mode</i>. The default value for <i>mode</i> is <a href="qt.html#ItemSelectionMode-enum">Qt::IntersectsItemShape</a>; <i>other</i> collides with this item if it either intersects, contains, or is contained by this item's shape.</p>
+<p>The default implementation is based on shape intersection, and it calls <a href="qgraphicsitem.html#shape">shape</a>() on both items. Because the complexity of arbitrary shape-shape intersection grows with an order of magnitude when the shapes are complex, this operation can be noticably time consuming. You have the option of reimplementing this function in a subclass of <a href="qgraphicsitem.html">QGraphicsItem</a> to provide a custom algorithm. This allows you to make use of natural constraints in the shapes of your own items, in order to improve the performance of the collision detection. For instance, two untransformed perfectly circular items' collision can be determined very efficiently by comparing their positions and radii.</p>
+<p>Keep in mind that when reimplementing this function and calling <a href="qgraphicsitem.html#shape">shape</a>() or <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() on <i>other</i>, the returned coordinates must be mapped to this item's coordinate system before any intersection can take place.</p>
+<p>See also <a href="qgraphicsitem.html#contains">contains</a>() and <a href="qgraphicsitem.html#shape">shape</a>().</p>
+<h3 class="fn"><a name="collidesWithPath"></a>bool QGraphicsItem::collidesWithPath ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i>, <a href="qt.html#ItemSelectionMode-enum">Qt::ItemSelectionMode</a> <i>mode</i> = Qt::IntersectsItemShape ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this item collides with <i>path</i>.</p>
+<p>The collision is determined by <i>mode</i>. The default value for <i>mode</i> is <a href="qt.html#ItemSelectionMode-enum">Qt::IntersectsItemShape</a>; <i>path</i> collides with this item if it either intersects, contains, or is contained by this item's shape.</p>
+<p>See also <a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a>(), <a href="qgraphicsitem.html#contains">contains</a>(), and <a href="qgraphicsitem.html#shape">shape</a>().</p>
+<h3 class="fn"><a name="collidingItems"></a><a href="qlist.html">QList</a>&lt;QGraphicsItem *&gt; QGraphicsItem::collidingItems ( <a href="qt.html#ItemSelectionMode-enum">Qt::ItemSelectionMode</a> <i>mode</i> = Qt::IntersectsItemShape ) const</h3>
+<p>Returns a list of all items that collide with this item.</p>
+<p>The way collisions are detected is determined by <i>mode</i>. The default value for <i>mode</i> is <a href="qt.html#ItemSelectionMode-enum">Qt::IntersectsItemShape</a>; All items whose shape intersects or is contained by this item's shape are returned.</p>
+<p>See also <a href="qgraphicsscene.html#collidingItems">QGraphicsScene::collidingItems</a>() and <a href="qgraphicsitem.html#collidesWithItem">collidesWithItem</a>().</p>
+<h3 class="fn"><a name="commonAncestorItem"></a>QGraphicsItem * QGraphicsItem::commonAncestorItem ( const QGraphicsItem * <i>other</i> ) const</h3>
+<p>Returns the closest common ancestor item of this item and <i>other</i>, or 0 if either <i>other</i> is 0, or there is no common ancestor.</p>
+<p>See also <a href="qgraphicsitem.html#isAncestorOf">isAncestorOf</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QGraphicsItem::contains ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this item contains <i>point</i>, which is in local coordinates; otherwise, false is returned. It is most often called from <a href="qgraphicsview.html">QGraphicsView</a> to determine what item is under the cursor, and for that reason, the implementation of this function should be as light-weight as possible.</p>
+<p>By default, this function calls <a href="qgraphicsitem.html#shape">shape</a>(), but you can reimplement it in a subclass to provide a (perhaps more efficient) implementation.</p>
+<p>See also <a href="qgraphicsitem.html#shape">shape</a>(), <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), and <a href="qgraphicsitem.html#collidesWithPath">collidesWithPath</a>().</p>
+<h3 class="fn"><a name="contextMenuEvent"></a>void QGraphicsItem::contextMenuEvent ( <a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler can be reimplemented in a subclass to process context menu events. The <i>event</i> parameter contains details about the event to be handled.</p>
+<p>If you ignore the event, (i.e&#x2e;, by calling <a href="qevent.html#ignore">QEvent::ignore</a>(),) <i>event</i> will propagate to any item beneath this item. If no items accept the event, it will be ignored by the scene, and propagate to the view.</p>
+<p>It's common to open a <a href="qmenu.html">QMenu</a> in response to receiving a context menu event. Example:</p>
+<pre>         void CustomItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+         {
+             QMenu menu;
+             QAction *removeAction = menu.addAction(&quot;Remove&quot;);
+             QAction *markAction = menu.addAction(&quot;Mark&quot;);
+             QAction *selectedAction = menu.exec(event-&gt;screenPos());
+             // ...
+         }</pre>
+<p>The default implementation ignores the event.</p>
+<p>See also <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="cursor"></a><a href="qcursor.html">QCursor</a> QGraphicsItem::cursor () const</h3>
+<p>Returns the current cursor shape for the item. The mouse cursor will assume this shape when it's over this item. See the <a href="qt.html#CursorShape-enum">list of predefined cursor objects</a> for a range of useful shapes.</p>
+<p>An editor item might want to use an I-beam cursor:</p>
+<pre>         item-&gt;setCursor(Qt::IBeamCursor);</pre>
+<p>If no cursor has been set, the parent's cursor is used.</p>
+<p>See also <a href="qgraphicsitem.html#setCursor">setCursor</a>(), <a href="qgraphicsitem.html#hasCursor">hasCursor</a>(), <a href="qgraphicsitem.html#unsetCursor">unsetCursor</a>(), <a href="qwidget.html#cursor-prop">QWidget::cursor</a>, and <a href="qapplication.html#overrideCursor">QApplication::overrideCursor</a>().</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QGraphicsItem::data ( int <i>key</i> ) const</h3>
+<p>Returns this item's custom data for the key <i>key</i> as a <a href="qvariant.html">QVariant</a>.</p>
+<p>Custom item data is useful for storing arbitrary properties in any item. Example:</p>
+<pre>         static const int ObjectName = 0;
+
+         QGraphicsItem *item = scene.itemAt(100, 50);
+         if (item-&gt;data(ObjectName).toString().isEmpty()) {
+             if (qgraphicsitem_cast&lt;ButtonItem *&gt;(item))
+                 item-&gt;setData(ObjectName, &quot;Button&quot;);
+         }</pre>
+<p>Qt does not use this feature for storing data; it is provided solely for the convenience of the user.</p>
+<p>See also <a href="qgraphicsitem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="deviceTransform"></a><a href="qtransform.html">QTransform</a> QGraphicsItem::deviceTransform ( const <a href="qtransform.html">QTransform</a> &amp; <i>viewportTransform</i> ) const</h3>
+<p>Returns this item's device transformation matrix, using <i>viewportTransform</i> to map from scene to device coordinates. This matrix can be used to map coordinates and geometrical shapes from this item's local coordinate system to the viewport's (or any device's) coordinate system. To map coordinates from the viewport, you must first invert the returned matrix.</p>
+<p>Example:</p>
+<pre>         QGraphicsRectItem rect;
+         rect.setPos(100, 100);
+
+         rect.deviceTransform(view-&gt;viewportTransform()).map(QPointF(0, 0));
+         // returns the item's (0, 0) point in view's viewport coordinates
+
+         rect.deviceTransform(view-&gt;viewportTransform()).inverted().map(QPointF(100, 100));
+         // returns view's viewport's (100, 100) coordinate in item coordinates</pre>
+<p>This function is the same as combining this item's scene transform with the view's viewport transform, but is also understands <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIgnoresTransformations</a>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#scenePos">scenePos</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="dragEnterEvent"></a>void QGraphicsItem::dragEnterEvent ( <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive drag enter events for this item. Drag enter events are generated as the cursor enters the item's area.</p>
+<p>By accepting the event, (i.e&#x2e;, by calling <a href="qevent.html#accept">QEvent::accept</a>(),) the item will accept drop events, in addition to receiving drag move and drag leave. Otherwise, the event will be ignored and propagate to the item beneath. If the event is accepted, the item will receive a drag move event before control goes back to the event loop.</p>
+<p>A common implementation of dragEnterEvent accepts or ignores <i>event</i> depending on the associated mime data in <i>event</i>. Example:</p>
+<pre>         CustomItem::CustomItem()
+         {
+             setAcceptDrops(true);
+             ...
+         }
+
+         void CustomItem::dragEnterEvent(QGraphicsSceneDragDropEvent *event)
+         {
+             event-&gt;setAccepted(event-&gt;mimeData()-&gt;hasFormat(&quot;text/plain&quot;));
+         }</pre>
+<p>Items do not receive drag and drop events by default; to enable this feature, call <tt>setAcceptDrops(true)</tt>.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#dropEvent">dropEvent</a>(), <a href="qgraphicsitem.html#dragMoveEvent">dragMoveEvent</a>(), and <a href="qgraphicsitem.html#dragLeaveEvent">dragLeaveEvent</a>().</p>
+<h3 class="fn"><a name="dragLeaveEvent"></a>void QGraphicsItem::dragLeaveEvent ( <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive drag leave events for this item. Drag leave events are generated as the cursor leaves the item's area. Most often you will not need to reimplement this function, but it can be useful for resetting state in your item (e.g&#x2e;, highlighting).</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>Items do not receive drag and drop events by default; to enable this feature, call <tt>setAcceptDrops(true)</tt>.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#dragEnterEvent">dragEnterEvent</a>(), <a href="qgraphicsitem.html#dropEvent">dropEvent</a>(), and <a href="qgraphicsitem.html#dragMoveEvent">dragMoveEvent</a>().</p>
+<h3 class="fn"><a name="dragMoveEvent"></a>void QGraphicsItem::dragMoveEvent ( <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive drag move events for this item. Drag move events are generated as the cursor moves around inside the item's area. Most often you will not need to reimplement this function; it is used to indicate that only parts of the item can accept drops.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> toggles whether or not the item will accept drops at the position from the event. By default, <i>event</i> is accepted, indicating that the item allows drops at the specified position.</p>
+<p>Items do not receive drag and drop events by default; to enable this feature, call <tt>setAcceptDrops(true)</tt>.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#dropEvent">dropEvent</a>(), <a href="qgraphicsitem.html#dragEnterEvent">dragEnterEvent</a>(), and <a href="qgraphicsitem.html#dragLeaveEvent">dragLeaveEvent</a>().</p>
+<h3 class="fn"><a name="dropEvent"></a>void QGraphicsItem::dropEvent ( <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive drop events for this item. Items can only receive drop events if the last drag move event was accepted.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>Items do not receive drag and drop events by default; to enable this feature, call <tt>setAcceptDrops(true)</tt>.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#dragEnterEvent">dragEnterEvent</a>(), <a href="qgraphicsitem.html#dragMoveEvent">dragMoveEvent</a>(), and <a href="qgraphicsitem.html#dragLeaveEvent">dragLeaveEvent</a>().</p>
+<h3 class="fn"><a name="ensureVisible"></a>void QGraphicsItem::ensureVisible ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> = QRectF(), int <i>xmargin</i> = 50, int <i>ymargin</i> = 50 )</h3>
+<p>If this item is part of a scene that is viewed by a <a href="qgraphicsview.html">QGraphicsView</a>, this convenience function will attempt to scroll the view to ensure that <i>rect</i> is visible inside the view's viewport. If <i>rect</i> is a null rect (the default), <a href="qgraphicsitem.html">QGraphicsItem</a> will default to the item's bounding rect. <i>xmargin</i> and <i>ymargin</i> are the number of pixels the view should use for margins.</p>
+<p>If the specified rect cannot be reached, the contents are scrolled to the nearest valid position.</p>
+<p>If this item is not viewed by a <a href="qgraphicsview.html">QGraphicsView</a>, this function does nothing.</p>
+<p>See also <a href="qgraphicsview.html#ensureVisible">QGraphicsView::ensureVisible</a>().</p>
+<h3 class="fn"><a name="ensureVisible-2"></a>void QGraphicsItem::ensureVisible ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i>, int <i>xmargin</i> = 50, int <i>ymargin</i> = 50 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling ensureVisible(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>), <i>xmargin</i>, <i>ymargin</i>):</p>
+<h3 class="fn"><a name="flags"></a><a href="qgraphicsitem.html#GraphicsItemFlag-enum">GraphicsItemFlags</a> QGraphicsItem::flags () const</h3>
+<p>Returns this item's flags. The flags describe what configurable features of the item are enabled and not. For example, if the flags include <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a>, the item can accept input focus.</p>
+<p>By default, no flags are enabled.</p>
+<p>See also <a href="qgraphicsitem.html#setFlags">setFlags</a>() and <a href="qgraphicsitem.html#setFlag">setFlag</a>().</p>
+<h3 class="fn"><a name="focusInEvent"></a>void QGraphicsItem::focusInEvent ( <a href="qfocusevent.html">QFocusEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive focus in events for this item. The default implementation calls <a href="qgraphicsitem.html#ensureVisible">ensureVisible</a>().</p>
+<p>See also <a href="qgraphicsitem.html#focusOutEvent">focusOutEvent</a>() and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="focusOutEvent"></a>void QGraphicsItem::focusOutEvent ( <a href="qfocusevent.html">QFocusEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive focus out events for this item. The default implementation does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#focusInEvent">focusInEvent</a>() and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="grabKeyboard"></a>void QGraphicsItem::grabKeyboard ()</h3>
+<p>Grabs the keyboard input.</p>
+<p>The item will receive all keyboard input to the scene until one of the following events occur:</p>
+<ul>
+<li>The item becomes invisible</li>
+<li>The item is removed from the scene</li>
+<li>The item is deleted</li>
+<li>The item calls <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>()</li>
+<li>Another item calls grabKeyboard(); the item will regain the keyboard grab when the other item calls <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>().</li>
+</ul>
+<p>When an item gains the keyboard grab, it receives a <a href="qevent.html#Type-enum">QEvent::GrabKeyboard</a> event. When it loses the keyboard grab, it receives a <a href="qevent.html#Type-enum">QEvent::UngrabKeyboard</a> event. These events can be used to detect when your item gains or loses the keyboard grab through other means than gaining input focus.</p>
+<p>It is almost never necessary to explicitly grab the keyboard in Qt, as Qt grabs and releases it sensibly. In particular, Qt grabs the keyboard when your item gains input focus, and releases it when your item loses input focus, or when the item is hidden.</p>
+<p>Note that only visible items can grab keyboard input. Calling grabKeyboard() on an invisible item has no effect.</p>
+<p>Keyboard events are not affected.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>(), <a href="qgraphicsitem.html#grabMouse">grabMouse</a>(), and <a href="qgraphicsitem.html#setFocus">setFocus</a>().</p>
+<h3 class="fn"><a name="grabMouse"></a>void QGraphicsItem::grabMouse ()</h3>
+<p>Grabs the mouse input.</p>
+<p>This item will receive all mouse events for the scene until any of the following events occurs:</p>
+<ul>
+<li>The item becomes invisible</li>
+<li>The item is removed from the scene</li>
+<li>The item is deleted</li>
+<li>The item call <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>()</li>
+<li>Another item calls grabMouse(); the item will regain the mouse grab when the other item calls <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>().</li>
+</ul>
+<p>When an item gains the mouse grab, it receives a <a href="qevent.html#Type-enum">QEvent::GrabMouse</a> event. When it loses the mouse grab, it receives a <a href="qevent.html#Type-enum">QEvent::UngrabMouse</a> event. These events can be used to detect when your item gains or loses the mouse grab through other means than receiving mouse button events.</p>
+<p>It is almost never necessary to explicitly grab the mouse in Qt, as Qt grabs and releases it sensibly. In particular, Qt grabs the mouse when you press a mouse button, and keeps the mouse grabbed until you release the last mouse button. Also, <a href="qt.html#WindowType-enum">Qt::Popup</a> widgets implicitly call grabMouse() when shown, and <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>() when hidden.</p>
+<p>Note that only visible items can grab mouse input. Calling grabMouse() on an invisible item has no effect.</p>
+<p>Keyboard events are not affected.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsscene.html#mouseGrabberItem">QGraphicsScene::mouseGrabberItem</a>(), <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>(), and <a href="qgraphicsitem.html#grabKeyboard">grabKeyboard</a>().</p>
+<h3 class="fn"><a name="group"></a><a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a> * QGraphicsItem::group () const</h3>
+<p>Returns a pointer to this item's item group, or 0 if this item is not member of a group.</p>
+<p>See also <a href="qgraphicsitem.html#setGroup">setGroup</a>(), <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a>, and <a href="qgraphicsscene.html#createItemGroup">QGraphicsScene::createItemGroup</a>().</p>
+<h3 class="fn"><a name="handlesChildEvents"></a>bool QGraphicsItem::handlesChildEvents () const</h3>
+<p>Returns true if this item handles child events (i.e&#x2e;, all events intended for any of its children are instead sent to this item); otherwise, false is returned.</p>
+<p>This property is useful for item groups; it allows one item to handle events on behalf of its children, as opposed to its children handling their events individually.</p>
+<p>The default is to return false; children handle their own events. The exception for this is if the item is a <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a>, then it defaults to return true.</p>
+<p>See also <a href="qgraphicsitem.html#setHandlesChildEvents">setHandlesChildEvents</a>().</p>
+<h3 class="fn"><a name="hasCursor"></a>bool QGraphicsItem::hasCursor () const</h3>
+<p>Returns true if this item has a cursor set; otherwise, false is returned.</p>
+<p>By default, items don't have any cursor set. <a href="qgraphicsitem.html#cursor">cursor</a>() will return a standard pointing arrow cursor.</p>
+<p>See also <a href="qgraphicsitem.html#unsetCursor">unsetCursor</a>().</p>
+<h3 class="fn"><a name="hasFocus"></a>bool QGraphicsItem::hasFocus () const</h3>
+<p>Returns true if this item has focus (i.e&#x2e;, can accept key events); otherwise, returns false.</p>
+<p>See also <a href="qgraphicsitem.html#setFocus">setFocus</a>() and <a href="qgraphicsscene.html#setFocusItem">QGraphicsScene::setFocusItem</a>().</p>
+<h3 class="fn"><a name="hide"></a>void QGraphicsItem::hide ()</h3>
+<p>Hides the item. (Items are visible by default.)</p>
+<p>This convenience function is equivalent to calling <tt>setVisible(false)</tt>.</p>
+<p>See also <a href="qgraphicsitem.html#show">show</a>() and <a href="qgraphicsitem.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="hoverEnterEvent"></a>void QGraphicsItem::hoverEnterEvent ( <a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive hover enter events for this item. The default implementation calls <a href="qgraphicsitem.html#update">update</a>(); otherwise it does nothing.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a>(), <a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a>(), <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>(), and <a href="qgraphicsitem.html#setAcceptHoverEvents">setAcceptHoverEvents</a>().</p>
+<h3 class="fn"><a name="hoverLeaveEvent"></a>void QGraphicsItem::hoverLeaveEvent ( <a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive hover leave events for this item. The default implementation calls <a href="qgraphicsitem.html#update">update</a>(); otherwise it does nothing.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a>(), <a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a>(), <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>(), and <a href="qgraphicsitem.html#setAcceptHoverEvents">setAcceptHoverEvents</a>().</p>
+<h3 class="fn"><a name="hoverMoveEvent"></a>void QGraphicsItem::hoverMoveEvent ( <a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive hover move events for this item. The default implementation does nothing.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a>(), <a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a>(), <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>(), and <a href="qgraphicsitem.html#setAcceptHoverEvents">setAcceptHoverEvents</a>().</p>
+<h3 class="fn"><a name="inputMethodEvent"></a>void QGraphicsItem::inputMethodEvent ( <a href="qinputmethodevent.html">QInputMethodEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive input method events for this item. The default implementation ignores the event.</p>
+<p>See also <a href="qgraphicsitem.html#inputMethodQuery">inputMethodQuery</a>() and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="inputMethodQuery"></a><a href="qvariant.html">QVariant</a> QGraphicsItem::inputMethodQuery ( <a href="qt.html#InputMethodQuery-enum">Qt::InputMethodQuery</a> <i>query</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This method is only relevant for input items. It is used by the input method to query a set of properties of the item to be able to support complex input method operations, such as support for surrounding text and reconversions. <i>query</i> specifies which property is queried.</p>
+<p>See also <a href="qgraphicsitem.html#inputMethodEvent">inputMethodEvent</a>().</p>
+<h3 class="fn"><a name="installSceneEventFilter"></a>void QGraphicsItem::installSceneEventFilter ( QGraphicsItem * <i>filterItem</i> )</h3>
+<p>Installs an event filter for this item on <i>filterItem</i>, causing all events for this item to first pass through <i>filterItem</i>'s <a href="qgraphicsitem.html#sceneEventFilter">sceneEventFilter</a>() function.</p>
+<p>To filter another item's events, install this item as an event filter for the other item. Example:</p>
+<pre>         QGraphicsScene scene;
+         QGraphicsEllipseItem *ellipse = scene.addEllipse(QRectF(-10, -10, 20, 20));
+         QGraphicsLineItem *line = scene.addLine(QLineF(-10, -10, 20, 20));
+
+         line-&gt;installSceneEventFilter(ellipse);
+         // line's events are filtered by ellipse's sceneEventFilter() function.
+
+         ellipse-&gt;installSceneEventFilter(line);
+         // ellipse's events are filtered by line's sceneEventFilter() function.</pre>
+<p>An item can only filter events for other items in the same scene. Also, an item cannot filter its own events; instead, you can reimplement <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>() directly.</p>
+<p>Items must belong to a scene for scene event filters to be installed and used.</p>
+<p>See also <a href="qgraphicsitem.html#removeSceneEventFilter">removeSceneEventFilter</a>(), <a href="qgraphicsitem.html#sceneEventFilter">sceneEventFilter</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="isAncestorOf"></a>bool QGraphicsItem::isAncestorOf ( const QGraphicsItem * <i>child</i> ) const</h3>
+<p>Returns true if this item is an ancestor of <i>child</i> (i.e&#x2e;, if this item is <i>child</i>'s parent, or one of <i>child</i>'s parent's ancestors).</p>
+<p>See also <a href="qgraphicsitem.html#parentItem">parentItem</a>().</p>
+<h3 class="fn"><a name="isEnabled"></a>bool QGraphicsItem::isEnabled () const</h3>
+<p>Returns true if the item is enabled; otherwise, false is returned.</p>
+<p>See also <a href="qgraphicsitem.html#setEnabled">setEnabled</a>().</p>
+<h3 class="fn"><a name="isObscured"></a>bool QGraphicsItem::isObscured () const</h3>
+<p>Returns true if this item's bounding rect is completely obscured by the opaque shape of any of colliding items above it (i.e&#x2e;, with a higher Z value than this item).</p>
+<p>Its implementation is based on calling <a href="qgraphicsitem.html#isObscuredBy">isObscuredBy</a>(), which you can reimplement to provide a custom obscurity algorithm.</p>
+<p>See also <a href="qgraphicsitem.html#opaqueArea">opaqueArea</a>().</p>
+<h3 class="fn"><a name="isObscured-2"></a>bool QGraphicsItem::isObscured ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling isObscured(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="isObscured-3"></a>bool QGraphicsItem::isObscured ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>rect</i> is completely obscured by the opaque shape of any of colliding items above it (i.e&#x2e;, with a higher Z value than this item).</p>
+<p>Unlike the default <a href="qgraphicsitem.html#isObscured">isObscured</a>() function, this function does not call <a href="qgraphicsitem.html#isObscuredBy">isObscuredBy</a>().</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#opaqueArea">opaqueArea</a>().</p>
+<h3 class="fn"><a name="isObscuredBy"></a>bool QGraphicsItem::isObscuredBy ( const QGraphicsItem * <i>item</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this item's bounding rect is completely obscured by the opaque shape of <i>item</i>.</p>
+<p>The base implementation maps <i>item</i>'s <a href="qgraphicsitem.html#opaqueArea">opaqueArea</a>() to this item's coordinate system, and then checks if this item's <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() is fully contained within the mapped shape.</p>
+<p>You can reimplement this function to provide a custom algorithm for determining whether this item is obscured by <i>item</i>.</p>
+<p>See also <a href="qgraphicsitem.html#opaqueArea">opaqueArea</a>() and <a href="qgraphicsitem.html#isObscured">isObscured</a>().</p>
+<h3 class="fn"><a name="isSelected"></a>bool QGraphicsItem::isSelected () const</h3>
+<p>Returns true if this item is selected; otherwise, false is returned.</p>
+<p>Items that are in a group inherit the group's selected state.</p>
+<p>Items are not selected by default.</p>
+<p>See also <a href="qgraphicsitem.html#setSelected">setSelected</a>() and <a href="qgraphicsscene.html#setSelectionArea">QGraphicsScene::setSelectionArea</a>().</p>
+<h3 class="fn"><a name="isUnderMouse"></a>bool QGraphicsItem::isUnderMouse () const</h3>
+<p>Returns true if this item is currently under the mouse cursor in one of the views; otherwise, false is returned.</p>
+<p>See also <a href="qgraphicsscene.html#views">QGraphicsScene::views</a>() and <a href="qcursor.html#pos">QCursor::pos</a>().</p>
+<h3 class="fn"><a name="isVisible"></a>bool QGraphicsItem::isVisible () const</h3>
+<p>Returns true if the item is visible; otherwise, false is returned.</p>
+<p>Note that the item's general visibility is unrelated to whether or not it is actually being visualized by a <a href="qgraphicsview.html">QGraphicsView</a>.</p>
+<p>See also <a href="qgraphicsitem.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="isVisibleTo"></a>bool QGraphicsItem::isVisibleTo ( const QGraphicsItem * <i>parent</i> ) const</h3>
+<p>Returns true if the item is visible to <i>parent</i>; otherwise, false is returned. <i>parent</i> can be 0, in which case this function will return whether the item is visible to the scene or not.</p>
+<p>An item may not be visible to its ancestors even if <a href="qgraphicsitem.html#isVisible">isVisible</a>() is true. If any ancestor is hidden, the item itself will be implicitly hidden, in which case this function will return false.</p>
+<p>See also <a href="qgraphicsitem.html#isVisible">isVisible</a>() and <a href="qgraphicsitem.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="isWidget"></a>bool QGraphicsItem::isWidget () const</h3>
+<p>Returns true if this item is a widget (i.e&#x2e;, <a href="qgraphicswidget.html">QGraphicsWidget</a>); otherwise, returns false.</p>
+<h3 class="fn"><a name="isWindow"></a>bool QGraphicsItem::isWindow () const</h3>
+<p>Returns true if the item is a <a href="qgraphicswidget.html">QGraphicsWidget</a> window, otherwise returns false.</p>
+<p>See also <a href="qgraphicswidget.html#windowFlags-prop">QGraphicsWidget::windowFlags</a>().</p>
+<h3 class="fn"><a name="itemChange"></a><a href="qvariant.html">QVariant</a> QGraphicsItem::itemChange ( <a href="qgraphicsitem.html#GraphicsItemChange-enum">GraphicsItemChange</a> <i>change</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called by <a href="qgraphicsitem.html">QGraphicsItem</a> to notify custom items that some part of the item's state changes. By reimplementing this function, your can react to a change, and in some cases, (depending on <i>change</i>,) adjustments can be made.</p>
+<p><i>change</i> is the parameter of the item that is changing. <i>value</i> is the new value; the type of the value depends on <i>change</i>.</p>
+<p>Example:</p>
+<pre>         QVariant Component::itemChange(GraphicsItemChange change, const QVariant &amp;value)
+         {
+             if (change == ItemPositionChange &amp;&amp; scene()) {
+                 // value is the new position.
+                 QPointF newPos = value.toPointF();
+                 QRectF rect = scene()-&gt;sceneRect();
+                 if (!rect.contains(newPos)) {
+                     // Keep the item inside the scene rect.
+                     newPos.setX(qMin(rect.right(), qMax(newPos.x(), rect.left())));
+                     newPos.setY(qMin(rect.bottom(), qMax(newPos.y(), rect.top())));
+                     return newPos;
+                 }
+             }
+             return QGraphicsItem::itemChange(change, value);
+         }</pre>
+<p>The default implementation does nothing, and returns <i>value</i>.</p>
+<p>Note: Certain <a href="qgraphicsitem.html">QGraphicsItem</a> functions cannot be called in a reimplementation of this function; see the <a href="qgraphicsitem.html#GraphicsItemChange-enum">GraphicsItemChange</a> documentation for details.</p>
+<p>See also <a href="qgraphicsitem.html#GraphicsItemChange-enum">GraphicsItemChange</a>.</p>
+<h3 class="fn"><a name="keyPressEvent"></a>void QGraphicsItem::keyPressEvent ( <a href="qkeyevent.html">QKeyEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive key press events for this item. The default implementation ignores the event. If you reimplement this handler, the event will by default be accepted.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>Note that key events are only received for items that set the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag, and that have keyboard input focus.</p>
+<p>See also <a href="qgraphicsitem.html#keyReleaseEvent">keyReleaseEvent</a>(), <a href="qgraphicsitem.html#setFocus">setFocus</a>(), <a href="qgraphicsscene.html#setFocusItem">QGraphicsScene::setFocusItem</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="keyReleaseEvent"></a>void QGraphicsItem::keyReleaseEvent ( <a href="qkeyevent.html">QKeyEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive key release events for this item. The default implementation ignores the event. If you reimplement this handler, the event will by default be accepted.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>Note that key events are only received for items that set the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag, and that have keyboard input focus.</p>
+<p>See also <a href="qgraphicsitem.html#keyPressEvent">keyPressEvent</a>(), <a href="qgraphicsitem.html#setFocus">setFocus</a>(), <a href="qgraphicsscene.html#setFocusItem">QGraphicsScene::setFocusItem</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="mapFromItem"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in <i>item</i>'s coordinate system, to this item's coordinate system, and returns the mapped coordinate.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromItem-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in <i>item</i>'s coordinate system, to this item's coordinate system, and returns the mapped rectangle as a polygon.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>()</p>
+<p>See also <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromItem-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in <i>item</i>'s coordinate system, to this item's coordinate system, and returns the mapped polygon.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromItem-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in <i>item</i>'s coordinate system, to this item's coordinate system, and returns the mapped path.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromItem-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromItem(item, <a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapFromItem-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromItem ( const QGraphicsItem * <i>item</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromItem(<i>item</i>, <a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mapFromParent"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromParent ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in this item's parent's coordinate system, to this item's coordinate system, and returns the mapped coordinate.</p>
+<p>See also <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromParent-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromParent ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in this item's parent's coordinate system, to this item's coordinate system, and returns the mapped rectangle as a polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromParent-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromParent ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in this item's parent's coordinate system, to this item's coordinate system, and returns the mapped polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromParent-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapFromParent ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in this item's parent's coordinate system, to this item's coordinate system, and returns the mapped path.</p>
+<p>See also <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromParent-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromParent ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromItem(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapFromParent-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromParent ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromParent(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mapFromScene"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromScene ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in this item's scene's coordinate system, to this item's coordinate system, and returns the mapped coordinate.</p>
+<p>See also <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromScene-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromScene ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in this item's scene's coordinate system, to this item's coordinate system, and returns the mapped rectangle as a polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromScene-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromScene ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in this item's scene's coordinate system, to this item's coordinate system, and returns the mapped polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromScene-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapFromScene ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in this item's scene's coordinate system, to this item's coordinate system, and returns the mapped path.</p>
+<p>See also <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapFromScene-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapFromScene ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromScene(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapFromScene-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapFromScene ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapFromScene(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mapToItem"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in this item's coordinate system, to <i>item</i>'s coordinate system, and returns the mapped coordinate.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapToScene">mapToScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToItem-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in this item's coordinate system, to <i>item</i>'s coordinate system, and returns the mapped rectangle as a polygon.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapToScene">mapToScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToItem-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in this item's coordinate system, to <i>item</i>'s coordinate system, and returns the mapped polygon.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapToScene">mapToScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToItem-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in this item's coordinate system, to <i>item</i>'s coordinate system, and returns the mapped path.</p>
+<p>If <i>item</i> is 0, this function returns the same as <a href="qgraphicsitem.html#mapToScene">mapToScene</a>().</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapFromItem">mapFromItem</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToItem-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToItem(item, <a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapToItem-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToItem ( const QGraphicsItem * <i>item</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToItem(<i>item</i>, <a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mapToParent"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToParent ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in this item's coordinate system, to its parent's coordinate system, and returns the mapped coordinate. If the item has no parent, <i>point</i> will be mapped to the scene's coordinate system.</p>
+<p>See also <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToParent-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToParent ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in this item's coordinate system, to its parent's coordinate system, and returns the mapped rectangle as a polygon. If the item has no parent, <i>rect</i> will be mapped to the scene's coordinate system.</p>
+<p>See also <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToParent-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToParent ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in this item's coordinate system, to its parent's coordinate system, and returns the mapped polygon. If the item has no parent, <i>polygon</i> will be mapped to the scene's coordinate system.</p>
+<p>See also <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToParent-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapToParent ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in this item's coordinate system, to its parent's coordinate system, and returns the mapped path. If the item has no parent, <i>path</i> will be mapped to the scene's coordinate system.</p>
+<p>See also <a href="qgraphicsitem.html#mapToScene">mapToScene</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromParent">mapFromParent</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToParent-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToParent ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToParent(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapToParent-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToParent ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToParent(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mapToScene"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToScene ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i> ) const</h3>
+<p>Maps the point <i>point</i>, which is in this item's coordinate system, to the scene's coordinate system, and returns the mapped coordinate.</p>
+<p>See also <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToScene-2"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToScene ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the rectangle <i>rect</i>, which is in this item's coordinate system, to the scene's coordinate system, and returns the mapped rectangle as a polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToScene-3"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToScene ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the polygon <i>polygon</i>, which is in this item's coordinate system, to the scene's coordinate system, and returns the mapped polygon.</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToScene-4"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::mapToScene ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Maps the path <i>path</i>, which is in this item's coordinate system, to the scene's coordinate system, and returns the mapped path.</p>
+<p>See also <a href="qgraphicsitem.html#mapToParent">mapToParent</a>(), <a href="qgraphicsitem.html#mapToItem">mapToItem</a>(), <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="mapToScene-5"></a><a href="qpolygonf.html">QPolygonF</a> QGraphicsItem::mapToScene ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToScene(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="mapToScene-6"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::mapToScene ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling mapToScene(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="mouseDoubleClickEvent"></a>void QGraphicsItem::mouseDoubleClickEvent ( <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive mouse doubleclick events for this item.</p>
+<p>When doubleclicking an item, the item will first receive a mouse press event, followed by a release event (i.e&#x2e;, a click), then a doubleclick event, and finally a release event.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>The default implementation calls <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(). If you want to keep the base implementation when reimplementing this function, call QGraphicsItem::mouseDoubleClickEvent() in your reimplementation.</p>
+<p>See also <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(), <a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a>(), <a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="mouseMoveEvent"></a>void QGraphicsItem::mouseMoveEvent ( <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive mouse move events for this item. If you do receive this event, you can be certain that this item also received a mouse press event, and that this item is the current mouse grabber.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>The default implementation handles basic item interaction, such as selection and moving. If you want to keep the base implementation when reimplementing this function, call QGraphicsItem::mouseMoveEvent() in your reimplementation.</p>
+<p>See also <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(), <a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a>(), <a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="mousePressEvent"></a>void QGraphicsItem::mousePressEvent ( <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive mouse press events for this item. Mouse press events are only delivered to items that accept the mouse button that is pressed. By default, an item accepts all mouse buttons, but you can change this by calling <a href="qgraphicsitem.html#setAcceptedMouseButtons">setAcceptedMouseButtons</a>().</p>
+<p>The mouse press event decides which item should become the mouse grabber (see <a href="qgraphicsscene.html#mouseGrabberItem">QGraphicsScene::mouseGrabberItem</a>()). If you do not reimplement this function, the press event will propagate to any topmost item beneath this item, and no other mouse events will be delivered to this item.</p>
+<p>If you do reimplement this function, <i>event</i> will by default be accepted (see <a href="qevent.html#accept">QEvent::accept</a>()), and this item is then the mouse grabber. This allows the item to receive future move, release and doubleclick events. If you call <a href="qevent.html#ignore">QEvent::ignore</a>() on <i>event</i>, this item will lose the mouse grab, and <i>event</i> will propagate to any topmost item beneath. No further mouse events will be delivered to this item unless a new mouse press event is received.</p>
+<p>The default implementation handles basic item interaction, such as selection and moving. If you want to keep the base implementation when reimplementing this function, call QGraphicsItem::mousePressEvent() in your reimplementation.</p>
+<p>See also <a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a>(), <a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a>(), <a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="mouseReleaseEvent"></a>void QGraphicsItem::mouseReleaseEvent ( <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive mouse release events for this item.</p>
+<p>Calling <a href="qevent.html#ignore">QEvent::ignore</a>() or <a href="qevent.html#accept">QEvent::accept</a>() on <i>event</i> has no effect.</p>
+<p>The default implementation handles basic item interaction, such as selection and moving. If you want to keep the base implementation when reimplementing this function, call QGraphicsItem::mouseReleaseEvent() in your reimplementation.</p>
+<p>See also <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(), <a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a>(), <a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>(), and <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="moveBy"></a>void QGraphicsItem::moveBy ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> )</h3>
+<p>Moves the item by <i>dx</i> points horizontally, and <i>dy</i> point vertically. This function is equivalent to calling setPos(<a href="qgraphicsitem.html#pos">pos</a>() + <a href="qpointf.html">QPointF</a>(<i>dx</i>, <i>dy</i>)).</p>
+<h3 class="fn"><a name="opaqueArea"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::opaqueArea () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function returns a shape representing the area where this item is opaque. An area is opaque if it is filled using an opaque brush or color (i.e&#x2e;, not transparent).</p>
+<p>This function is used by <a href="qgraphicsitem.html#isObscuredBy">isObscuredBy</a>(), which is called by underlying items to determine if they are obscured by this item.</p>
+<p>The default implementation returns an empty <a href="qpainterpath.html">QPainterPath</a>, indicating that this item is completely transparent and does not obscure any other items.</p>
+<p>See also <a href="qgraphicsitem.html#isObscuredBy">isObscuredBy</a>(), <a href="qgraphicsitem.html#isObscured">isObscured</a>(), and <a href="qgraphicsitem.html#shape">shape</a>().</p>
+<h3 class="fn"><a name="paint"></a>void QGraphicsItem::paint ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a> * <i>option</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> = 0 )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This function, which is usually called by <a href="qgraphicsview.html">QGraphicsView</a>, paints the contents of an item in local coordinates.</p>
+<p>Reimplement this function in a <a href="qgraphicsitem.html">QGraphicsItem</a> subclass to provide the item's painting implementation, using <i>painter</i>. The <i>option</i> parameter provides style options for the item, such as its state, exposed area and its level-of-detail hints. The <i>widget</i> argument is optional. If provided, it points to the widget that is being painted on; otherwise, it is 0. For cached painting, <i>widget</i> is always 0.</p>
+<pre>         void RoundRectItem::paint(QPainter *painter,
+                                   const QStyleOptionGraphicsItem *option,
+                                   QWidget *widget)
+         {
+             painter-&gt;drawRoundedRect(-10, -10, 20, 20, 5, 5);
+         }</pre>
+<p>The painter's pen is 0-width by default, and its pen is initialized to the <a href="qpalette.html#ColorRole-enum">QPalette::Text</a> brush from the paint device's palette. The brush is initialized to <a href="qpalette.html#ColorRole-enum">QPalette::Window</a>.</p>
+<p>All painting is done in local coordinates.</p>
+<p>See also <a href="qgraphicsitem.html#setCacheMode">setCacheMode</a>().</p>
+<h3 class="fn"><a name="parentItem"></a>QGraphicsItem * QGraphicsItem::parentItem () const</h3>
+<p>Returns a pointer to this item's parent item. If this item does not have a parent, 0 is returned.</p>
+<p>See also <a href="qgraphicsitem.html#setParentItem">setParentItem</a>() and <a href="qgraphicsitem-obsolete.html#children">children</a>().</p>
+<h3 class="fn"><a name="parentWidget"></a><a href="qgraphicswidget.html">QGraphicsWidget</a> * QGraphicsItem::parentWidget () const</h3>
+<p>Returns a pointer to the item's parent widget. The item's parent widget is the closest parent item that is a widget.</p>
+<p>See also <a href="qgraphicsitem.html#parentItem">parentItem</a>() and <a href="qgraphicsitem.html#childItems">childItems</a>().</p>
+<h3 class="fn"><a name="pos"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::pos () const</h3>
+<p>Returns the position of the item in parent coordinates. If the item has no parent, its position is given in scene coordinates.</p>
+<p>The position of the item describes its origin (local coordinate (0, 0)) in parent coordinates; this function returns the same as mapToParent(0, 0).</p>
+<p>For convenience, you can also call <a href="qgraphicsitem.html#scenePos">scenePos</a>() to determine the item's position in scene coordinates, regardless of its parent.</p>
+<p>See also <a href="qgraphicsitem.html#x">x</a>(), <a href="qgraphicsitem.html#y">y</a>(), <a href="qgraphicsitem.html#setPos">setPos</a>(), <a href="qgraphicsitem-obsolete.html#matrix">matrix</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="prepareGeometryChange"></a>void QGraphicsItem::prepareGeometryChange ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Prepares the item for a geometry change. Call this function before changing the bounding rect of an item to keep <a href="qgraphicsscene.html">QGraphicsScene</a>'s index up to date.</p>
+<p>prepareGeometryChange() will call <a href="qgraphicsitem.html#update">update</a>() if this is necessary.</p>
+<p>Example:</p>
+<pre>         void CircleItem::setRadius(qreal newRadius)
+         {
+             if (radius != newRadius) {
+                 prepareGeometryChange();
+                 radius = newRadius;
+             }
+         }</pre>
+<p>See also <a href="qgraphicsitem.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="removeSceneEventFilter"></a>void QGraphicsItem::removeSceneEventFilter ( QGraphicsItem * <i>filterItem</i> )</h3>
+<p>Removes an event filter on this item from <i>filterItem</i>.</p>
+<p>See also <a href="qgraphicsitem.html#installSceneEventFilter">installSceneEventFilter</a>().</p>
+<h3 class="fn"><a name="resetTransform"></a>void QGraphicsItem::resetTransform ()</h3>
+<p>Resets this item's transformation matrix to the identity matrix. This is equivalent to calling <tt>setTransform(QTransform())</tt>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>() and <a href="qgraphicsitem.html#transform">transform</a>().</p>
+<h3 class="fn"><a name="rotate"></a>void QGraphicsItem::rotate ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )</h3>
+<p>Rotates the current item transformation <i>angle</i> degrees clockwise around its origin. To translate around an arbitrary point (x, y), you need to combine translation and rotation with <a href="qgraphicsitem.html#setTransform">setTransform</a>().</p>
+<p>Example:</p>
+<pre>         // Rotate an item 45 degrees around (0, 0).
+         item-&gt;rotate(45);
+
+         // Rotate an item 45 degrees around (x, y).
+         item-&gt;setTransform(QTransform().translate(x, y).rotate(45).translate(-x, -y));</pre>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#scale">scale</a>(), <a href="qgraphicsitem.html#shear">shear</a>(), and <a href="qgraphicsitem.html#translate">translate</a>().</p>
+<h3 class="fn"><a name="scale"></a>void QGraphicsItem::scale ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sy</i> )</h3>
+<p>Scales the current item transformation by (<i>sx</i>, <i>sy</i>) around its origin. To scale from an arbitrary point (x, y), you need to combine translation and scaling with <a href="qgraphicsitem.html#setTransform">setTransform</a>().</p>
+<p>Example:</p>
+<pre>         // Scale an item by 3x2 from its origin
+         item-&gt;scale(3, 2);
+
+         // Scale an item by 3x2 from (x, y)
+         item-&gt;setTransform(QTransform().translate(x, y).scale(3, 2).translate(-x, -y));</pre>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#rotate">rotate</a>(), <a href="qgraphicsitem.html#shear">shear</a>(), and <a href="qgraphicsitem.html#translate">translate</a>().</p>
+<h3 class="fn"><a name="scene"></a><a href="qgraphicsscene.html">QGraphicsScene</a> * QGraphicsItem::scene () const</h3>
+<p>Returns the current scene for the item, or 0 if the item is not stored in a scene.</p>
+<p>To add or move an item to a scene, call <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="sceneBoundingRect"></a><a href="qrectf.html">QRectF</a> QGraphicsItem::sceneBoundingRect () const</h3>
+<p>Returns the bounding rect of this item in scene coordinates, by combining <a href="qgraphicsitem.html#sceneTransform">sceneTransform</a>() with <a href="qgraphicsitem.html#boundingRect">boundingRect</a>().</p>
+<p>See also <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="sceneEvent"></a>bool QGraphicsItem::sceneEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function receives events to this item. Reimplement this function to intercept events before they are dispatched to the specialized event handlers <a href="qgraphicsitem.html#contextMenuEvent">contextMenuEvent</a>(), <a href="qgraphicsitem.html#focusInEvent">focusInEvent</a>(), <a href="qgraphicsitem.html#focusOutEvent">focusOutEvent</a>(), <a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a>(), <a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a>(), <a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a>(), <a href="qgraphicsitem.html#keyPressEvent">keyPressEvent</a>(), <a href="qgraphicsitem.html#keyReleaseEvent">keyReleaseEvent</a>(), <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>(), <a href="qgraphicsitem.html#mouseReleaseEvent">mouseReleaseEvent</a>(), <a href="qgraphicsitem.html#mouseMoveEvent">mouseMoveEvent</a>(), and <a href="qgraphicsitem.html#mouseDoubleClickEvent">mouseDoubleClickEvent</a>().</p>
+<p>Returns true if the event was recognized and handled; otherwise, (e.g&#x2e;, if the event type was not recognized,) false is returned.</p>
+<p><i>event</i> is the intercepted event.</p>
+<h3 class="fn"><a name="sceneEventFilter"></a>bool QGraphicsItem::sceneEventFilter ( QGraphicsItem * <i>watched</i>, <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Filters events for the item <i>watched</i>. <i>event</i> is the filtered event.</p>
+<p>Reimplementing this function in a subclass makes it possible for the item to be used as an event filter for other items, intercepting all the events send to those items before they are able to respond.</p>
+<p>Reimplementations must return true to prevent further processing of a given event, ensuring that it will not be delivered to the watched item, or return false to indicate that the event should be propagated further by the event system.</p>
+<p>See also <a href="qgraphicsitem.html#installSceneEventFilter">installSceneEventFilter</a>().</p>
+<h3 class="fn"><a name="scenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsItem::scenePos () const</h3>
+<p>Returns the item's position in scene coordinates. This is equivalent to calling <tt>mapToScene(0, 0)</tt>.</p>
+<p>See also <a href="qgraphicsitem.html#pos">pos</a>(), <a href="qgraphicsitem.html#sceneTransform">sceneTransform</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="sceneTransform"></a><a href="qtransform.html">QTransform</a> QGraphicsItem::sceneTransform () const</h3>
+<p>Returns this item's scene transformation matrix. This matrix can be used to map coordinates and geometrical shapes from this item's local coordinate system to the scene's coordinate system. To map coordinates from the scene, you must first invert the returned matrix.</p>
+<p>Example:</p>
+<pre>         QGraphicsRectItem rect;
+         rect.setPos(100, 100);
+
+         rect.sceneTransform().map(QPointF(0, 0));
+         // returns QPointF(100, 100);
+
+         rect.sceneTransform().inverted().map(QPointF(100, 100));
+         // returns QPointF(0, 0);</pre>
+<p>Unlike <a href="qgraphicsitem.html#transform">transform</a>(), which returns only an item's local transformation, this function includes the item's (and any parents') position.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#scenePos">scenePos</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="scroll"></a>void QGraphicsItem::scroll ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> = QRectF() )</h3>
+<p>Scrolls the contents of <i>rect</i> by <i>dx</i>, <i>dy</i>. If <i>rect</i> is a null rect (the default), the item's bounding rect is scrolled.</p>
+<p>Scrolling provides a fast alternative to simply redrawing when the contents of the item (or parts of the item) are shifted vertically or horizontally. Depending on the current transformation and the capabilities of the paint device (i.e&#x2e;, the viewport), this operation may consist of simply moving pixels from one location to another using memmove(). In most cases this is faster than rerendering the entire area.</p>
+<p>After scrolling, the item will issue an update for the newly exposed areas. If scrolling is not supported (e.g&#x2e;, you are rendering to an OpenGL viewport, which does not benefit from scroll optimizations), this function is equivalent to calling update(<i>rect</i>).</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="setAcceptDrops"></a>void QGraphicsItem::setAcceptDrops ( bool <i>on</i> )</h3>
+<p>If <i>on</i> is true, this item will accept drag and drop events; otherwise, it is transparent for drag and drop events. By default, items do not accept drag and drop events.</p>
+<p>See also <a href="qgraphicsitem.html#acceptDrops">acceptDrops</a>().</p>
+<h3 class="fn"><a name="setAcceptHoverEvents"></a>void QGraphicsItem::setAcceptHoverEvents ( bool <i>enabled</i> )</h3>
+<p>If <i>enabled</i> is true, this item will accept hover events; otherwise, it will ignore them. By default, items do not accept hover events.</p>
+<p>Hover events are delivered when there is no current mouse grabber item. They are sent when the mouse cursor enters an item, when it moves around inside the item, and when the cursor leaves an item. Hover events are commonly used to highlight an item when it's entered, and for tracking the mouse cursor as it hovers over the item (equivalent to <a href="qwidget.html#mouseTracking-prop">QWidget::mouseTracking</a>).</p>
+<p>Parent items receive hover enter events before their children, and leave events after their children. The parent does not receive a hover leave event if the cursor enters a child, though; the parent stays &quot;hovered&quot; until the cursor leaves its area, including its children's areas.</p>
+<p>If a parent item handles child events (<a href="qgraphicsitem.html#setHandlesChildEvents">setHandlesChildEvents</a>()), it will receive hover move, drag move, and drop events as the cursor passes through its children, but it does not receive hover enter and hover leave, nor drag enter and drag leave events on behalf of its children.</p>
+<p>A <a href="qgraphicswidget.html">QGraphicsWidget</a> with window decorations will accept hover events regardless of the value of <a href="qgraphicsitem.html#acceptHoverEvents">acceptHoverEvents</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#acceptHoverEvents">acceptHoverEvents</a>(), <a href="qgraphicsitem.html#hoverEnterEvent">hoverEnterEvent</a>(), <a href="qgraphicsitem.html#hoverMoveEvent">hoverMoveEvent</a>(), and <a href="qgraphicsitem.html#hoverLeaveEvent">hoverLeaveEvent</a>().</p>
+<h3 class="fn"><a name="setAcceptedMouseButtons"></a>void QGraphicsItem::setAcceptedMouseButtons ( <a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> <i>buttons</i> )</h3>
+<p>Sets the mouse <i>buttons</i> that this item accepts mouse events for.</p>
+<p>By default, all mouse buttons are accepted. If an item accepts a mouse button, it will become the mouse grabber item when a mouse press event is delivered for that button. However, if the item does not accept the mouse button, <a href="qgraphicsscene.html">QGraphicsScene</a> will forward the mouse events to the first item beneath it that does.</p>
+<p>To disable mouse events for an item (i.e&#x2e;, make it transparent for mouse events), call setAcceptedMouseButtons(0).</p>
+<p>See also <a href="qgraphicsitem.html#acceptedMouseButtons">acceptedMouseButtons</a>() and <a href="qgraphicsitem.html#mousePressEvent">mousePressEvent</a>().</p>
+<h3 class="fn"><a name="setBoundingRegionGranularity"></a>void QGraphicsItem::setBoundingRegionGranularity ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>granularity</i> )</h3>
+<p>Sets the bounding region granularity to <i>granularity</i>; a value between and including 0 and 1. The default value is 0 (i.e&#x2e;, the lowest granularity, where the bounding region corresponds to the item's bounding rectangle).</p>
+<p>The granularity is used by <a href="qgraphicsitem.html#boundingRegion">boundingRegion</a>() to calculate how fine the bounding region of the item should be. The highest achievable granularity is 1, where <a href="qgraphicsitem.html#boundingRegion">boundingRegion</a>() will return the finest outline possible for the respective device (e.g&#x2e;, for a <a href="qgraphicsview.html">QGraphicsView</a> viewport, this gives you a pixel-perfect bounding region). The lowest possible granularity is 0. The value of <i>granularity</i> describes the ratio between device resolution and the resolution of the bounding region (e.g&#x2e;, a value of 0.25 will provide a region where each chunk corresponds to 4x4 device units / pixels).</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#boundingRegionGranularity">boundingRegionGranularity</a>().</p>
+<h3 class="fn"><a name="setCacheMode"></a>void QGraphicsItem::setCacheMode ( <a href="qgraphicsitem.html#CacheMode-enum">CacheMode</a> <i>mode</i>, const <a href="qsize.html">QSize</a> &amp; <i>logicalCacheSize</i> = QSize() )</h3>
+<p>Sets the item's cache mode to <i>mode</i>.</p>
+<p>The optional <i>logicalCacheSize</i> argument is used only by <a href="qgraphicsitem.html#CacheMode-enum">ItemCoordinateCache</a> mode, and describes the resolution of the cache buffer; if <i>logicalCacheSize</i> is (100, 100), <a href="qgraphicsitem.html">QGraphicsItem</a> will fit the item into 100x100 pixels in graphics memory, regardless of the logical size of the item itself. By default <a href="qgraphicsitem.html">QGraphicsItem</a> uses the size of <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(). For all other cache modes than <a href="qgraphicsitem.html#CacheMode-enum">ItemCoordinateCache</a>, <i>logicalCacheSize</i> is ignored.</p>
+<p>Caching can speed up rendering if your item spends a significant time redrawing itself. In some cases the cache can also slow down rendering, in particular when the item spends less time redrawing than <a href="qgraphicsitem.html">QGraphicsItem</a> spends redrawing from the cache. When enabled, the item's <a href="qgraphicsitem.html#paint">paint</a>() function will be called only once for each call to <a href="qgraphicsitem.html#update">update</a>(); for any subsequent repaint requests, the Graphics View framework will redraw from the cache. This approach works particularly well with <a href="qglwidget.html">QGLWidget</a>, which stores all the cache as OpenGL textures.</p>
+<p>Be aware that <a href="qpixmapcache.html">QPixmapCache</a>'s cache limit may need to be changed to obtain optimal performance.</p>
+<p>You can read more about the different cache modes in the <a href="qgraphicsitem.html#CacheMode-enum">CacheMode</a> documentation.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#cacheMode">cacheMode</a>(), <a href="qgraphicsitem.html#CacheMode-enum">CacheMode</a>, and <a href="qpixmapcache.html#setCacheLimit">QPixmapCache::setCacheLimit</a>().</p>
+<h3 class="fn"><a name="setCursor"></a>void QGraphicsItem::setCursor ( const <a href="qcursor.html">QCursor</a> &amp; <i>cursor</i> )</h3>
+<p>Sets the current cursor shape for the item to <i>cursor</i>. The mouse cursor will assume this shape when it's over this item. See the <a href="qt.html#CursorShape-enum">list of predefined cursor objects</a> for a range of useful shapes.</p>
+<p>An editor item might want to use an I-beam cursor:</p>
+<pre>         item-&gt;setCursor(Qt::IBeamCursor);</pre>
+<p>If no cursor has been set, the cursor of the item beneath is used.</p>
+<p>See also <a href="qgraphicsitem.html#cursor">cursor</a>(), <a href="qgraphicsitem.html#hasCursor">hasCursor</a>(), <a href="qgraphicsitem.html#unsetCursor">unsetCursor</a>(), <a href="qwidget.html#cursor-prop">QWidget::cursor</a>, and <a href="qapplication.html#overrideCursor">QApplication::overrideCursor</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QGraphicsItem::setData ( int <i>key</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Sets this item's custom data for the key <i>key</i> to <i>value</i>.</p>
+<p>Custom item data is useful for storing arbitrary properties for any item. Qt does not use this feature for storing data; it is provided solely for the convenience of the user.</p>
+<p>See also <a href="qgraphicsitem.html#data">data</a>().</p>
+<h3 class="fn"><a name="setEnabled"></a>void QGraphicsItem::setEnabled ( bool <i>enabled</i> )</h3>
+<p>If <i>enabled</i> is true, the item is enabled; otherwise, it is disabled.</p>
+<p>Disabled items are visible, but they do not receive any events, and cannot take focus nor be selected. Mouse events are discarded; they are not propagated unless the item is also invisible, or if it does not accept mouse events (see <a href="qgraphicsitem.html#acceptedMouseButtons">acceptedMouseButtons</a>()). A disabled item cannot become the mouse grabber, and as a result of this, an item loses the grab if it becomes disabled when grabbing the mouse, just like it loses focus if it had focus when it was disabled.</p>
+<p>Disabled items are traditionally drawn using grayed-out colors (see <a href="qpalette.html#ColorGroup-enum">QPalette::Disabled</a>).</p>
+<p>If you disable a parent item, all its children will also be disabled. If you enable a parent item, all children will be enabled, unless they have been explicitly disabled (i.e&#x2e;, if you call setEnabled(false) on a child, it will not be reenabled if its parent is disabled, and then enabled again).</p>
+<p>Items are enabled by default.</p>
+<p><b>Note:</b> If you install an event filter, you can still intercept events before they are delivered to items; this mechanism disregards the item's enabled state.</p>
+<p>See also <a href="qgraphicsitem.html#isEnabled">isEnabled</a>().</p>
+<h3 class="fn"><a name="setFlag"></a>void QGraphicsItem::setFlag ( <a href="qgraphicsitem.html#GraphicsItemFlag-enum">GraphicsItemFlag</a> <i>flag</i>, bool <i>enabled</i> = true )</h3>
+<p>If <i>enabled</i> is true, the item flag <i>flag</i> is enabled; otherwise, it is disabled.</p>
+<p>See also <a href="qgraphicsitem.html#flags">flags</a>() and <a href="qgraphicsitem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setFlags"></a>void QGraphicsItem::setFlags ( <a href="qgraphicsitem.html#GraphicsItemFlag-enum">GraphicsItemFlags</a> <i>flags</i> )</h3>
+<p>Sets the item flags to <i>flags</i>. All flags in <i>flags</i> are enabled; all flags not in <i>flags</i> are disabled.</p>
+<p>If the item had focus and <i>flags</i> does not enable <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a>, the item loses focus as a result of calling this function. Similarly, if the item was selected, and <i>flags</i> does not enabled <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsSelectable</a>, the item is automatically unselected.</p>
+<p>By default, no flags are enabled.</p>
+<p>See also <a href="qgraphicsitem.html#flags">flags</a>() and <a href="qgraphicsitem.html#setFlag">setFlag</a>().</p>
+<h3 class="fn"><a name="setFocus"></a>void QGraphicsItem::setFocus ( <a href="qt.html#FocusReason-enum">Qt::FocusReason</a> <i>focusReason</i> = Qt::OtherFocusReason )</h3>
+<p>Gives keyboard input focus to this item. The <i>focusReason</i> argument will be passed into any focus event generated by this function; it is used to give an explanation of what caused the item to get focus.</p>
+<p>Only items that set the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag can accept keyboard focus.</p>
+<p>If this item is not visible (i.e&#x2e;, <a href="qgraphicsitem.html#isVisible">isVisible</a>() returns false), not enabled, not associated with a scene, or if it already has input focus, this function will do nothing.</p>
+<p>As a result of calling this function, this item will receive a focus in event with <i>focusReason</i>. If another item already has focus, that item will first receive a focus out event indicating that it has lost input focus.</p>
+<p>See also <a href="qgraphicsitem.html#clearFocus">clearFocus</a>() and <a href="qgraphicsitem.html#hasFocus">hasFocus</a>().</p>
+<h3 class="fn"><a name="setGroup"></a>void QGraphicsItem::setGroup ( <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a> * <i>group</i> )</h3>
+<p>Adds this item to the item group <i>group</i>. If <i>group</i> is 0, this item is removed from any current group and added as a child of the previous group's parent.</p>
+<p>See also <a href="qgraphicsitem.html#group">group</a>() and <a href="qgraphicsscene.html#createItemGroup">QGraphicsScene::createItemGroup</a>().</p>
+<h3 class="fn"><a name="setHandlesChildEvents"></a>void QGraphicsItem::setHandlesChildEvents ( bool <i>enabled</i> )</h3>
+<p>If <i>enabled</i> is true, this item is set to handle all events for all its children (i.e&#x2e;, all events intented for any of its children are instead sent to this item); otherwise, if <i>enabled</i> is false, this item will only handle its own events. The default value is false.</p>
+<p>This property is useful for item groups; it allows one item to handle events on behalf of its children, as opposed to its children handling their events individually.</p>
+<p>If a child item accepts hover events, its parent will receive hover move events as the cursor passes through the child, but it does not receive hover enter and hover leave events on behalf of its child.</p>
+<p>See also <a href="qgraphicsitem.html#handlesChildEvents">handlesChildEvents</a>().</p>
+<h3 class="fn"><a name="setParentItem"></a>void QGraphicsItem::setParentItem ( QGraphicsItem * <i>parent</i> )</h3>
+<p>Sets this item's parent item to <i>parent</i>. If this item already has a parent, it is first removed from the previous parent. If <i>parent</i> is 0, this item will become a top-level item.</p>
+<p>See also <a href="qgraphicsitem.html#parentItem">parentItem</a>() and <a href="qgraphicsitem-obsolete.html#children">children</a>().</p>
+<h3 class="fn"><a name="setPos"></a>void QGraphicsItem::setPos ( const <a href="qpointf.html">QPointF</a> &amp; <i>pos</i> )</h3>
+<p>Sets the position of the item to <i>pos</i>, which is in parent coordinates. For items with no parent, <i>pos</i> is in scene coordinates.</p>
+<p>The position of the item describes its origin (local coordinate (0, 0)) in parent coordinates.</p>
+<p>See also <a href="qgraphicsitem.html#pos">pos</a>(), <a href="qgraphicsitem.html#scenePos">scenePos</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="setPos-2"></a>void QGraphicsItem::setPos ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling setPos(<a href="qpointf.html">QPointF</a>(<i>x</i>, <i>y</i>)).</p>
+<h3 class="fn"><a name="setSelected"></a>void QGraphicsItem::setSelected ( bool <i>selected</i> )</h3>
+<p>If <i>selected</i> is true and this item is selectable, this item is selected; otherwise, it is unselected.</p>
+<p>If the item is in a group, the whole group's selected state is toggled by this function. If the group is selected, all items in the group are also selected, and if the group is not selected, no item in the group is selected.</p>
+<p>Only visible, enabled, selectable items can be selected. If <i>selected</i> is true and this item is either invisible or disabled or unselectable, this function does nothing.</p>
+<p>By default, items cannot be selected. To enable selection, set the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsSelectable</a> flag.</p>
+<p>This function is provided for convenience, allowing individual toggling of the selected state of an item. However, a more common way of selecting items is to call <a href="qgraphicsscene.html#setSelectionArea">QGraphicsScene::setSelectionArea</a>(), which will call this function for all visible, enabled, and selectable items within a specified area on the scene.</p>
+<p>See also <a href="qgraphicsitem.html#isSelected">isSelected</a>() and <a href="qgraphicsscene.html#selectedItems">QGraphicsScene::selectedItems</a>().</p>
+<h3 class="fn"><a name="setToolTip"></a>void QGraphicsItem::setToolTip ( const <a href="qstring.html">QString</a> &amp; <i>toolTip</i> )</h3>
+<p>Sets the item's tool tip to <i>toolTip</i>. If <i>toolTip</i> is empty, the item's tool tip is cleared.</p>
+<p>See also <a href="qgraphicsitem.html#toolTip">toolTip</a>() and <a href="qtooltip.html">QToolTip</a>.</p>
+<h3 class="fn"><a name="setTransform"></a>void QGraphicsItem::setTransform ( const <a href="qtransform.html">QTransform</a> &amp; <i>matrix</i>, bool <i>combine</i> = false )</h3>
+<p>Sets the item's current transformation matrix to <i>matrix</i>.</p>
+<p>If <i>combine</i> is true, then <i>matrix</i> is combined with the current matrix; otherwise, <i>matrix</i> <i>replaces</i> the current matrix. <i>combine</i> is false by default.</p>
+<p>To simplify interation with items using a transformed view, <a href="qgraphicsitem.html">QGraphicsItem</a> provides mapTo... and mapFrom... functions that can translate between items' and the scene's coordinates. For example, you can call <a href="qgraphicsitem.html#mapToScene">mapToScene</a>() to map an item coordiate to a scene coordinate, or <a href="qgraphicsitem.html#mapFromScene">mapFromScene</a>() to map from scene coordinates to item coordinates.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#rotate">rotate</a>(), <a href="qgraphicsitem.html#scale">scale</a>(), <a href="qgraphicsitem.html#shear">shear</a>(), <a href="qgraphicsitem.html#translate">translate</a>(), and <a href="graphicsview.html#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a>.</p>
+<h3 class="fn"><a name="setVisible"></a>void QGraphicsItem::setVisible ( bool <i>visible</i> )</h3>
+<p>If <i>visible</i> is true, the item is made visible. Otherwise, the item is made invisible. Invisible items are not painted, nor do they receive any events. In particular, mouse events pass right through invisible items, and are delivered to any item that may be behind. Invisible items are also unselectable, they cannot take input focus, and are not detected by <a href="qgraphicsscene.html">QGraphicsScene</a>'s item location functions.</p>
+<p>If an item becomes invisible while grabbing the mouse, (i.e&#x2e;, while it is receiving mouse events,) it will automatically lose the mouse grab, and the grab is not regained by making the item visible again; it must receive a new mouse press to regain the mouse grab.</p>
+<p>Similarly, an invisible item cannot have focus, so if the item has focus when it becomes invisible, it will lose focus, and the focus is not regained by simply making the item visible again.</p>
+<p>If you hide a parent item, all its children will also be hidden. If you show a parent item, all children will be shown, unless they have been explicitly hidden (i.e&#x2e;, if you call setVisible(false) on a child, it will not be reshown even if its parent is hidden, and then shown again).</p>
+<p>Items are visible by default; it is unnecessary to call setVisible() on a new item.</p>
+<p>See also <a href="qgraphicsitem.html#isVisible">isVisible</a>(), <a href="qgraphicsitem.html#show">show</a>(), and <a href="qgraphicsitem.html#hide">hide</a>().</p>
+<h3 class="fn"><a name="setZValue"></a>void QGraphicsItem::setZValue ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>z</i> )</h3>
+<p>Sets the Z-value, or the elevation, of the item, to <i>z</i>. The elevation decides the stacking order of sibling (neighboring) items. An item of high Z-value will be drawn on top of an item with a lower Z-value if they share the same parent item. In addition, children of an item will always be drawn on top of the parent, regardless of the child's Z-value. Sibling items that share the same Z-value will be drawn in an undefined order, although the order will stay the same for as long as the items live.</p>
+<p align="center"><img src="images/graphicsview-zorder.png" /></p><p>Children of different parents are stacked according to the Z-value of each item's ancestor item which is an immediate child of the two items' closest common ancestor. For example, a robot item might define a torso item as the parent of a head item, two arm items, and two upper-leg items. The upper-leg items would each be parents of one lower-leg item, and each lower-leg item would be parents of one foot item. The stacking order of the feet is the same as the stacking order of each foot's ancestor that is an immediate child of the two feet's common ancestor (i.e&#x2e;, the torso item); so the feet are stacked in the same order as the upper-leg items, regardless of each foot's Z-value.</p>
+<p>The Z-value does not affect the item's size in any way.</p>
+<p>The default Z-value is 0.</p>
+<p>See also <a href="qgraphicsitem.html#zValue">zValue</a>().</p>
+<h3 class="fn"><a name="shape"></a><a href="qpainterpath.html">QPainterPath</a> QGraphicsItem::shape () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the shape of this item as a <a href="qpainterpath.html">QPainterPath</a> in local coordinates. The shape is used for many things, including collision detection, hit tests, and for the <a href="qgraphicsscene.html#items">QGraphicsScene::items</a>() functions.</p>
+<p>The default implementation calls <a href="qgraphicsitem.html#boundingRect">boundingRect</a>() to return a simple rectangular shape, but subclasses can reimplement this function to return a more accurate shape for non-rectangular items. For example, a round item may choose to return an elliptic shape for better collision detection. For example:</p>
+<pre>         QPainterPath RoundItem::shape() const
+         {
+             QPainterPath path;
+             path.addEllipse(boundingRect());
+             return path;
+         }</pre>
+<p>This function is called by the default implementations of <a href="qgraphicsitem.html#contains">contains</a>() and <a href="qgraphicsitem.html#collidesWithPath">collidesWithPath</a>().</p>
+<p>See also <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), <a href="qgraphicsitem.html#contains">contains</a>(), and <a href="qgraphicsitem.html#prepareGeometryChange">prepareGeometryChange</a>().</p>
+<h3 class="fn"><a name="shear"></a>void QGraphicsItem::shear ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sh</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>sv</i> )</h3>
+<p>Shears the current item transformation by (<i>sh</i>, <i>sv</i>).</p>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#rotate">rotate</a>(), <a href="qgraphicsitem.html#scale">scale</a>(), and <a href="qgraphicsitem.html#translate">translate</a>().</p>
+<h3 class="fn"><a name="show"></a>void QGraphicsItem::show ()</h3>
+<p>Shows the item. (Items are visible by default.)</p>
+<p>This convenience function is equivalent to calling <tt>setVisible(true)</tt>.</p>
+<p>See also <a href="qgraphicsitem.html#hide">hide</a>() and <a href="qgraphicsitem.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="toolTip"></a><a href="qstring.html">QString</a> QGraphicsItem::toolTip () const</h3>
+<p>Returns the item's tool tip, or an empty <a href="qstring.html">QString</a> if no tool tip has been set.</p>
+<p>See also <a href="qgraphicsitem.html#setToolTip">setToolTip</a>() and <a href="qtooltip.html">QToolTip</a>.</p>
+<h3 class="fn"><a name="topLevelItem"></a>QGraphicsItem * QGraphicsItem::topLevelItem () const</h3>
+<p>Returns this item's top-level item. The top-level item is the item's topmost ancestor item whose parent is 0. If an item has no parent, its own pointer is returned (i.e&#x2e;, a top-level item is its own top-level item).</p>
+<p>See also <a href="qgraphicsitem.html#parentItem">parentItem</a>().</p>
+<h3 class="fn"><a name="topLevelWidget"></a><a href="qgraphicswidget.html">QGraphicsWidget</a> * QGraphicsItem::topLevelWidget () const</h3>
+<p>Returns a pointer to the item's top level widget (i.e&#x2e;, the item's ancestor whose parent is 0, or whose parent is not a widget), or 0 if this item does not have a top level widget. If the item is its own top level widget, this function returns a pointer to the item itself.</p>
+<h3 class="fn"><a name="transform"></a><a href="qtransform.html">QTransform</a> QGraphicsItem::transform () const</h3>
+<p>Returns this item's transformation matrix. If no matrix has been set, the identity matrix is returned.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>() and <a href="qgraphicsitem.html#sceneTransform">sceneTransform</a>().</p>
+<h3 class="fn"><a name="translate"></a>void QGraphicsItem::translate ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> )</h3>
+<p>Translates the current item transformation by (<i>dx</i>, <i>dy</i>).</p>
+<p>If all you want is to move an item, you should call <a href="qgraphicsitem.html#moveBy">moveBy</a>() or <a href="qgraphicsitem.html#setPos">setPos</a>() instead; this function changes the item's translation, which is conceptually separate from its position.</p>
+<p>See also <a href="qgraphicsitem.html#setTransform">setTransform</a>(), <a href="qgraphicsitem.html#transform">transform</a>(), <a href="qgraphicsitem.html#rotate">rotate</a>(), <a href="qgraphicsitem.html#scale">scale</a>(), and <a href="qgraphicsitem.html#shear">shear</a>().</p>
+<h3 class="fn"><a name="type"></a>int QGraphicsItem::type () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the type of an item as an int. All standard graphicsitem classes are associated with a unique value; see <a href="qgraphicsitem.html#Type-varx">QGraphicsItem::Type</a>. This type information is used by <a href="qgraphicsitem.html#qgraphicsitem_cast">qgraphicsitem_cast</a>() to distinguish between types.</p>
+<p>The default implementation (in <a href="qgraphicsitem.html">QGraphicsItem</a>) returns <a href="qgraphicsitem.html#UserType-var">UserType</a>.</p>
+<p>To enable use of <a href="qgraphicsitem.html#qgraphicsitem_cast">qgraphicsitem_cast</a>() with a custom item, reimplement this function and declare a Type enum value equal to your custom item's type. Custom items must return a value larger than or equal to <a href="qgraphicsitem.html#UserType-var">UserType</a> (65536).</p>
+<p>For example:</p>
+<pre> class CustomItem : public QGraphicsItem
+ {
+    ...
+    enum { Type = UserType + 1 };
+
+    int type() const
+    {
+        // Enable the use of qgraphicsitem_cast with this item.
+        return Type;
+    }
+    ...
+ };</pre>
+<p>See also <a href="qgraphicsitem.html#UserType-var">UserType</a>.</p>
+<h3 class="fn"><a name="ungrabKeyboard"></a>void QGraphicsItem::ungrabKeyboard ()</h3>
+<p>Releases the keyboard grab.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#grabKeyboard">grabKeyboard</a>() and <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>().</p>
+<h3 class="fn"><a name="ungrabMouse"></a>void QGraphicsItem::ungrabMouse ()</h3>
+<p>Releases the mouse grab.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgraphicsitem.html#grabMouse">grabMouse</a>() and <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>().</p>
+<h3 class="fn"><a name="unsetCursor"></a>void QGraphicsItem::unsetCursor ()</h3>
+<p>Clears the cursor from this item.</p>
+<p>See also <a href="qgraphicsitem.html#hasCursor">hasCursor</a>() and <a href="qgraphicsitem.html#setCursor">setCursor</a>().</p>
+<h3 class="fn"><a name="update"></a>void QGraphicsItem::update ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> = QRectF() )</h3>
+<p>Schedules a redraw of the area covered by <i>rect</i> in this item. You can call this function whenever your item needs to be redrawn, such as if it changes appearance or size.</p>
+<p>This function does not cause an immediate paint; instead it schedules a paint request that is processed by <a href="qgraphicsview.html">QGraphicsView</a> after control reaches the event loop. The item will only be redrawn if it is visible in any associated view.</p>
+<p>As a side effect of the item being repainted, other items that overlap the area <i>rect</i> may also be repainted.</p>
+<p>If the item is invisible (i.e&#x2e;, <a href="qgraphicsitem.html#isVisible">isVisible</a>() returns false), this function does nothing.</p>
+<p>See also <a href="qgraphicsitem.html#paint">paint</a>() and <a href="qgraphicsitem.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="update-2"></a>void QGraphicsItem::update ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling update(<a href="qrectf.html">QRectF</a>(<i>x</i>, <i>y</i>, <i>width</i>, <i>height</i>)).</p>
+<h3 class="fn"><a name="wheelEvent"></a>void QGraphicsItem::wheelEvent ( <a href="qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for event <i>event</i>, can be reimplemented to receive wheel events for this item. If you reimplement this function, <i>event</i> will be accepted by default.</p>
+<p>If you ignore the event, (i.e&#x2e;, by calling <a href="qevent.html#ignore">QEvent::ignore</a>(),) it will propagate to any item beneath this item. If no items accept the event, it will be ignored by the scene, and propagate to the view (e.g&#x2e;, the view's vertical scroll bar).</p>
+<p>The default implementation ignores the event.</p>
+<p>See also <a href="qgraphicsitem.html#sceneEvent">sceneEvent</a>().</p>
+<h3 class="fn"><a name="window"></a><a href="qgraphicswidget.html">QGraphicsWidget</a> * QGraphicsItem::window () const</h3>
+<p>Returns the item's window, or 0 if this item does not have a window. If the item is a window, it will return itself. Otherwise it will return the closest ancestor that is a window.</p>
+<p>See also <a href="qgraphicsitem.html#isWindow">QGraphicsWidget::isWindow</a>().</p>
+<h3 class="fn"><a name="x"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsItem::x () const</h3>
+<p>This convenience function is equivalent to calling <a href="qgraphicsitem.html#pos">pos</a>().x().</p>
+<p>See also <a href="qgraphicsitem.html#y">y</a>().</p>
+<h3 class="fn"><a name="y"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsItem::y () const</h3>
+<p>This convenience function is equivalent to calling <a href="qgraphicsitem.html#pos">pos</a>().y().</p>
+<p>See also <a href="qgraphicsitem.html#x">x</a>().</p>
+<h3 class="fn"><a name="zValue"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsItem::zValue () const</h3>
+<p>Returns the Z-value, or the elevation, of the item. The Z-value decides the stacking order of sibling (neighboring) items.</p>
+<p>The default Z-value is 0.</p>
+<p>See also <a href="qgraphicsitem.html#setZValue">setZValue</a>().</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="UserType-var"></a>const int QGraphicsItem::UserType</h3>
+<p>The lowest permitted type value for custom items (subclasses of <a href="qgraphicsitem.html">QGraphicsItem</a> or any of the standard items). This value is used in conjunction with a reimplementation of <a href="qgraphicsitem.html#type">QGraphicsItem::type</a>() and declaring a Type enum value. Example:</p>
+<pre>         class CustomItem : public QGraphicsItem
+         {
+            ...
+            enum { Type = UserType + 1 };
+
+            int type() const
+            {
+                // Enable the use of qgraphicsitem_cast with this item.
+                return Type;
+            }
+            ...
+         };</pre>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="qgraphicsitem_cast"></a>T qgraphicsitem_cast ( QGraphicsItem * <i>item</i> )</h3>
+<p>Returns the given <i>item</i> cast to type T if <i>item</i> is of type T; otherwise, 0 is returned.</p>
+<p><b>Note:</b> To make this function work correctly with custom items, reimplement the {QGraphicsItem::}{type()} function for each custom <a href="qgraphicsitem.html">QGraphicsItem</a> subclass.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qgraphicsitem.html#type">QGraphicsItem::type</a>() and <a href="qgraphicsitem.html#UserType-var">QGraphicsItem::UserType</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

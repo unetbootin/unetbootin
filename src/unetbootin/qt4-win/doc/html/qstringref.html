@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qstring.cpp -->
+<head>
+  <title>Qt 4.4: QStringRef Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStringRef Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QStringRef class provides a thin wrapper around <a href="qstring.html">QString</a> substrings. <a href="#details">More...</a></p>
+<pre> #include &lt;QStringRef&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qstringref-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstringref.html#QStringRef">QStringRef</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstringref.html#QStringRef-2">QStringRef</a></b> ( const QString * <i>string</i>, int <i>position</i>, int <i>length</i> )</li>
+<li><div class="fn"/><b><a href="qstringref.html#QStringRef-3">QStringRef</a></b> ( const QString * <i>string</i> )</li>
+<li><div class="fn"/><b><a href="qstringref.html#QStringRef-4">QStringRef</a></b> ( const QStringRef &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qstringref.html#dtor.QStringRef">~QStringRef</a></b> ()</li>
+<li><div class="fn"/>QStringRef <b><a href="qstringref.html#appendTo">appendTo</a></b> ( QString * <i>string</i> ) const</li>
+<li><div class="fn"/>const QChar <b><a href="qstringref.html#at">at</a></b> ( int <i>position</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qstringref.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>const QChar * <b><a href="qstringref.html#constData">constData</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstringref.html#count">count</a></b> () const</li>
+<li><div class="fn"/>const QChar * <b><a href="qstringref.html#data">data</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstringref.html#length">length</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstringref.html#position">position</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstringref.html#size">size</a></b> () const</li>
+<li><div class="fn"/>const QString * <b><a href="qstringref.html#string">string</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstringref.html#toString">toString</a></b> () const</li>
+<li><div class="fn"/>const QChar * <b><a href="qstringref.html#unicode">unicode</a></b> () const</li>
+<li><div class="fn"/>QStringRef &amp; <b><a href="qstringref.html#operator-eq">operator=</a></b> ( const QStringRef &amp; <i>other</i> )</li>
+<li><div class="fn"/>QStringRef &amp; <b><a href="qstringref.html#operator-eq-2">operator=</a></b> ( const QString * <i>string</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-lt">operator&lt;</a></b> ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-lt-eq">operator&lt;=</a></b> ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-eq-eq-12">operator==</a></b> ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-eq-eq-13">operator==</a></b> ( const QString &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-eq-eq-15">operator==</a></b> ( const QLatin1String &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-gt">operator&gt;</a></b> ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstringref.html#operator-gt-eq">operator&gt;=</a></b> ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStringRef class provides a thin wrapper around <a href="qstring.html">QString</a> substrings.</p>
+<p>QStringRef provides a read-only subset of the <a href="qstring.html">QString</a> API.</p>
+<p>A string reference explicitly references a portion of a <a href="qstringref.html#string">string</a>() with a given <a href="qstringref.html#size">size</a>(), starting at a specific <a href="qstringref.html#position">position</a>(). Calling <a href="qstringref.html#toString">toString</a>() returns a copy of the data as a real <a href="qstring.html">QString</a> instance.</p>
+<p>This class is designed to improve the performance of substring handling when manipulating substrings obtained from existing <a href="qstring.html">QString</a> instances. QStringRef avoids the memory allocation and reference counting overhead of a standard <a href="qstring.html">QString</a> by simply referencing a part of the original string. This can prove to be advantageous in low level code, such as that used in a parser, at the expense of potentially more complex code.</p>
+<p>For most users, there are no semantic benefits to using QStringRef instead of <a href="qstring.html">QString</a> since QStringRef requires attention to be paid to memory management issues, potentially making code more complex to write and maintain.</p>
+<p><b>Warning:</b> A QStringRef is only valid as long as the referenced string exists. If the original string is deleted, the string reference points to an invalid memory location.</p>
+<p>We suggest that you only use this class in stable code where profiling has clearly identified that performance improvements can be made by replacing standard string operations with the optimized substring handling provided by this class.</p>
+<p>See also <a href="shared.html">Implicitly Shared Classes</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStringRef"></a>QStringRef::QStringRef ()</h3>
+<p>Constructs an empty string reference.</p>
+<h3 class="fn"><a name="QStringRef-2"></a>QStringRef::QStringRef ( const <a href="qstring.html">QString</a> * <i>string</i>, int <i>position</i>, int <i>length</i> )</h3>
+<p>Constructs a string reference to the range of characters in the given <i>string</i> specified by the starting <i>position</i> and <i>length</i> in characters.</p>
+<p><b>Warning:</b> This function exists to improve performance as much as possible, and performs no bounds checking. For program correctness, <i>position</i> and <i>length</i> must describe a valid substring of <i>string</i>.</p>
+<p>This means that the starting <i>position</i> must be positive or 0 and smaller than <i>string</i>'s length, and <i>length</i> must be positive or 0 but smaller than the string's length minus the starting <i>position</i>; i.e, 0 &lt;= position &lt; string-&gt;<a href="qstringref.html#length">length</a>() and 0 &lt;= length &lt;= string-&gt;<a href="qstringref.html#length">length</a>() - position must both be satisfied.</p>
+<h3 class="fn"><a name="QStringRef-3"></a>QStringRef::QStringRef ( const <a href="qstring.html">QString</a> * <i>string</i> )</h3>
+<p>Constructs a string reference to the given <i>string</i>.</p>
+<h3 class="fn"><a name="QStringRef-4"></a>QStringRef::QStringRef ( const QStringRef &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> string reference.</p>
+<h3 class="fn"><a name="dtor.QStringRef"></a>QStringRef::~QStringRef ()</h3>
+<p>Destroys the string reference.</p>
+<p>Since this class is only used to refer to string data, and does not take ownership of it, no memory is freed when instances are destroyed.</p>
+<h3 class="fn"><a name="appendTo"></a>QStringRef QStringRef::appendTo ( <a href="qstring.html">QString</a> * <i>string</i> ) const</h3>
+<p>Appends the string reference to <i>string</i>, and returns a new reference to the combined string data.</p>
+<h3 class="fn"><a name="at"></a>const <a href="qchar.html">QChar</a> QStringRef::at ( int <i>position</i> ) const</h3>
+<p>Returns the character at the given index <i>position</i> in the string reference.</p>
+<p>The <i>position</i> must be a valid index position in the string (i.e&#x2e;, 0 &lt;= <i>position</i> &lt; <a href="qstringref.html#size">size</a>()).</p>
+<h3 class="fn"><a name="clear"></a>void QStringRef::clear ()</h3>
+<p>Clears the contents of the string reference by making it null and empty.</p>
+<p>See also <a href="qstringref.html#isEmpty">isEmpty</a>() and <a href="qstringref.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="constData"></a>const <a href="qchar.html">QChar</a> * QStringRef::constData () const</h3>
+<p>Same as <a href="qstringref.html#unicode">unicode</a>().</p>
+<h3 class="fn"><a name="count"></a>int QStringRef::count () const</h3>
+<p>Returns the number of characters referred to by the string reference. Equivalent to <a href="qstringref.html#size">size</a>() and <a href="qstringref.html#length">length</a>().</p>
+<p>See also <a href="qstringref.html#position">position</a>() and <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="data"></a>const <a href="qchar.html">QChar</a> * QStringRef::data () const</h3>
+<p>Same as <a href="qstringref.html#unicode">unicode</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QStringRef::isEmpty () const</h3>
+<p>Returns true if the string reference has no characters; otherwise returns false.</p>
+<p>A string reference is empty if its size is zero.</p>
+<p>See also <a href="qstringref.html#size">size</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QStringRef::isNull () const</h3>
+<p>Returns true if <a href="qstringref.html#string">string</a>() returns a null pointer or a pointer to a null string; otherwise returns true.</p>
+<p>See also <a href="qstringref.html#size">size</a>().</p>
+<h3 class="fn"><a name="length"></a>int QStringRef::length () const</h3>
+<p>Returns the number of characters referred to by the string reference. Equivalent to <a href="qstringref.html#size">size</a>() and <a href="qstringref.html#count">count</a>().</p>
+<p>See also <a href="qstringref.html#position">position</a>() and <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="position"></a>int QStringRef::position () const</h3>
+<p>Returns the starting position in the referenced string that is referred to by the string reference.</p>
+<p>See also <a href="qstringref.html#size">size</a>() and <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="size"></a>int QStringRef::size () const</h3>
+<p>Returns the number of characters referred to by the string reference. Equivalent to <a href="qstringref.html#length">length</a>() and <a href="qstringref.html#count">count</a>().</p>
+<p>See also <a href="qstringref.html#position">position</a>() and <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="string"></a>const <a href="qstring.html">QString</a> * QStringRef::string () const</h3>
+<p>Returns a pointer to the string referred to by the string reference, or 0 if it does not reference a string.</p>
+<p>See also <a href="qstringref.html#unicode">unicode</a>().</p>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QStringRef::toString () const</h3>
+<p>Returns a copy of the string reference as a <a href="qstring.html">QString</a> object.</p>
+<p>If the string reference is not a complete reference of the string (meaning that <a href="qstringref.html#position">position</a>() is 0 and <a href="qstringref.html#size">size</a>() equals <a href="qstringref.html#string">string</a>()-&gt;<a href="qstringref.html#size">size</a>()), this function will allocate a new string to return.</p>
+<p>See also <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="unicode"></a>const <a href="qchar.html">QChar</a> * QStringRef::unicode () const</h3>
+<p>Returns a Unicode representation of the string reference. Since the data stems directly from the referenced string, it is not null-terminated unless the string reference includes the string's null terminator.</p>
+<p>See also <a href="qstringref.html#string">string</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QStringRef &amp; QStringRef::operator= ( const QStringRef &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> string reference to this string reference, and returns the result.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QStringRef &amp; QStringRef::operator= ( const <a href="qstring.html">QString</a> * <i>string</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Constructs a string reference to the given <i>string</i> and assigns it to this string reference, returning the result.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt"></a>bool operator&lt; ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>Returns true if string reference <i>s1</i> is lexically less than string reference <i>s2</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p>
+<h3 class="fn"><a name="operator-lt-eq"></a>bool operator&lt;= ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>Returns true if string reference <i>s1</i> is lexically less than or equal to string reference <i>s2</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p>
+<h3 class="fn"><a name="operator-eq-eq-12"></a>bool operator== ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if string reference <i>s1</i> is lexically equal to string reference <i>s2</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq-13"></a>bool operator== ( const <a href="qstring.html">QString</a> &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if string <i>s1</i> is lexically equal to string reference <i>s2</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq-15"></a>bool operator== ( const <a href="qlatin1string.html">QLatin1String</a> &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if string <i>s1</i> is lexically equal to string reference <i>s2</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool operator&gt; ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>Returns true if string reference <i>s1</i> is lexically greater than string reference <i>s2</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p>
+<h3 class="fn"><a name="operator-gt-eq"></a>bool operator&gt;= ( const QStringRef &amp; <i>s1</i>, const QStringRef &amp; <i>s2</i> )</h3>
+<p>Returns true if string reference <i>s1</i> is lexically greater than or equal to string reference <i>s2</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

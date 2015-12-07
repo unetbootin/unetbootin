@@ -1,0 +1,434 @@
+/*!
+    \page assistant.html
+    \title Qt Assistant
+
+    \chapter Introduction
+
+    This document introduces \e{Qt Assistant}, a tool for presenting on-line
+    documentation. It also introduces the Qt Reference Documentation which
+    is accessible using \e{Qt Assistant}, or with a web browser. The document is
+    divided into the following sections:
+
+    Table of contents:
+
+    \list
+    \o \l{Introduction}
+    \o \l{The One-Minute Guide to Using Qt Assistant}
+    \o \l{Introduction to the Qt Reference Documentation}
+    \o \l{Qt Assistant in More Detail}
+    \o \l{Full Text Searching}
+    \endlist
+
+    \chapter The One-Minute Guide to Using Qt Assistant
+
+    Once you have installed Qt, \QA should be ready to run:
+
+    \list
+    \o On Windows, \QA is available as a menu option on the Qt menu.
+    \o On Mac OS X, \QA is installed in the /Developer/Applications/Qt directory.
+    \o On Unix/Linux, open a terminal, type \c{assistant} and press \key{Enter}.
+    \endlist
+
+    When you start up \QA, you will be presented with a standard main window
+    application, with a menu bar and toolbar. Below these, on the left hand
+    side are navigation windows called \e{Contents}, \e{Index} and \e{Bookmarks}.
+    On the right, taking up most of the space, is the \e{Documentation} window.
+    By default, \QA loads the Qt reference documentation along with the manuals
+    of other Qt tools, like \QD or \QL.
+
+    \QA works in a similar way to a Web browser. If you click hyperlinks
+    (cross-references), the \e{Documentation} window will present the relevant
+    page. You can bookmark pages of particular interest and you can click the
+    \gui{Previous} and \gui{Next} toolbar buttons to navigate within the pages
+    you have visited.
+
+    Although \QA can be used just like a Web browser to navigate through
+    the documentation, \QA offers a powerful means of navigation that Web
+    browsers do not provide. \QA uses an advanced full text search engine
+    to index all the pages in each compressed help file so that you can
+    search for particular words and phrases.
+
+    To perform an index search, click the \gui{Index} tab on the Sidebar
+    (or press \key{Alt+I}). In the \gui{'Look For'} line edit enter a word;
+    e.g., 'homedirpath'. As you type, words are found and highlighted in a list
+    beneath the line edit. If the highlighted text matches what you're
+    looking for, double click it, (or press \key{Enter}) and the
+    \e{Documentation} window will display the relevant page. You rarely have
+    to type in the whole word before \QA finds a match. Note that for some
+    words there may be more than one possible page that is relevant.
+
+    \QA also provides full text searching for finding specific words in
+    the documentation. To activate the full text search, either press \key(Alt+S)
+    or click on the \gui{Search} tab in the \e{Documentation} window. Then
+    enter the term you're looking for and hit the \gui{Search} button. All
+    documents containing the specified term will then be listed in the list box
+    below.
+
+    \chapter Introduction to the Qt Reference Documentation
+
+    The documentation for the Qt library is written in-line in the \c
+    .cpp files by the developers themselves. The documentation team
+    revises the documentation to ensure that it is accurate and usable,
+    and to provide quality control. The documentation team also writes the
+    larger texts, such as the class descriptions that introduce a class
+    along with the concepts the class uses, as well as introducing the
+    functions and properties that the class provides.
+
+    The documentation focuses on the API rather than the internals, since
+    we make great efforts to keep our API consistent and compatible with
+    each new version, but we may change the internals considerably to improve
+    performance and enhance functionality.
+
+    The Qt Reference Documentation consists of almost 1,500 HTML pages
+    (over 2,500 printed pages). The overwhelming majority of pages
+    document Qt classes. Since developers differ in the way they
+    think and work we provide a variety of approaches to navigating the
+    documentation set:
+
+    \list
+    \i The \menu{Qt's Classes} page lists every class
+    in Qt's public API, and consists of several hundred classes.
+    \i The \menu{Qt's Main Classes} page lists the
+    classes you're most likely to use most often, and provides a much
+    shorter and more managable list than the All Classes list.
+    \i The \menu{Grouped Classes} page presents a list
+    of groups, each of which leads to a list of related classes, for
+    example, the \menu{Advanced Widgets} list.
+    \i The \menu{Class Inheritance Hierarchy} page
+    presents a list of classes in terms of the hierarchy of Qt classes.
+    \i The \menu{Member Function Index} page lists all the
+    functions provided by Qt classes, each one with links to the class(es)
+    in which it appears.
+    \endlist
+
+    No matter where you find yourself in the Qt documentation, you will
+    find extensive cross-referencing. Even snippets of example code
+    contain clickable links, so that for example, if you come across a
+    class declaration in a code example, the class name will be a
+    clickable link to the class's documentation.
+
+    In addition to the class documentation some of Qt's modules have
+    extensive descriptions, and there are many overview documents which
+    describe various aspects of the Qt library; all these are linked from
+    the reference documentation home page. There are also two tutorials
+    and numerous example programs in the examples subdirectory of the Qt
+    distribution.
+
+    \chapter Qt Assistant in More Detail
+
+    \img assistant-assistant.png
+
+    \section1 Command Line Options
+
+    \QA handles the following command line options:
+
+    \table
+        \header
+            \o Command Line Option
+            \o Brief Description
+        \row
+            \o -collectionFile <file.qhc>
+            \o Uses the specified collection file instead of the default one.
+        \row
+            \o -showUrl URL
+            \o Shows the document referenced by URL.
+        \row
+            \o -enableRemoteControl
+            \o Enables \QA to be remotly controlled.
+        \row
+            \o -show <widget>
+            \o Shows the specified dockwidget which can be "contents", "index",
+            "bookmarks" or "search".
+        \row
+            \o -hide <widget>
+            \o Hides the specified dockwidget which can be "contents", "index",
+            "bookmarks" or "search.
+        \row
+            \o -activate <widget>
+            \o Activates the specified dockwidget which can be "contents",
+            "index", "bookmarks" or "search.
+        \row
+            \o -register <doc.qch>
+            \o Registers the specified compressed help file in the given help
+            collection.
+        \row
+            \o -unregister <doc.qch>
+            \o Unregisters the specified compressed help file from the given
+            collection file.
+        \row
+            \o -quiet
+            \o Doesn't show any error, warning or success messages.
+    \endtable
+
+    \section1 Tool Windows
+
+    \img assistant-dockwidgets.png
+
+    The tool windows provide four ways to navigate the documentation:
+
+    \list
+    \o The \gui{Contents} window presents a table of contents implemented as a
+    tree view for the documentation that is available. If you click an item,
+    its documentation will appear in the \e{Documentation} window. If you double
+    click an item or click on the control to the left of it, the item's sub-items
+    will appear. Click a sub-item to make its page appear in the \e{Documentation}
+    window. Click on the control next to an open item to hide its sub-items.
+    \o The \gui{Index} window is used to look up key words or phrases.
+    See \l{The One-Minute Guide to Using Qt Assistant} for how to use this
+    window.
+    \o The \gui{Bookmarks} window lists any bookmarks you have made. Double
+    click a bookmark to make its page appear in the \e{Documentation} window.
+    The \gui{Bookmarks} window provides a context menu with \gui{Show Item},
+    \gui{Delete Item} as well as \gui{Rename Item}. Click in the main menu
+    \menu{Bookmark|Add Bookmark...} (or press \key{Ctrl+B}) to bookmark the
+    page that is currently showing in the \e{Documentation} window. Right click
+    a bookmark in the list to rename or delete the highlighted bookmark.
+    \endlist
+
+    If you want the \gui{Documentation} window to use as much space as possible,
+    you can easily group, move or hide the tool windows. To group the windows,
+    drag one on top of the other and release the mouse. If one or all tool
+    windows are not shown, press \key{Alt+C}, \key{Alt+I} or \key{Alt+O} to show
+    the required window.
+
+    The tool windows can be docked into the main window, so you can drag them
+    to the top, left, right or bottom of \e{Qt Assistant's} window, or you can
+    drag them outside \QA to float them as independent windows.
+
+    \section1 Documentation Window
+
+    \img assistant-docwindow.png
+
+    The \gui{Documentation} window lets you create a tab for each
+    documentation page that you view. Click the \gui{Add Tab} button and a new
+    tab will appear with the page name as the tab's caption. This makes it
+    convenient to switch between pages when you are working with different
+    documentation. You can delete a tab by clicking the \gui{Close Tab} button
+    located on the right side of the \gui{Documentation} window.
+
+    \section1 Toolbars
+
+    \img assistant-toolbar.png
+
+    The main toolbar provides fast access to the most common actions.
+
+    \table
+    \header \o Action \o Description \o Menu Item \o Shortcut
+    \row \o \gui{Previous} \o Takes you to the previous page in the history.
+         \o \menu{Go|Previous} \o \key{Alt+Left Arrow}
+    \row \o \gui{Next} \o Takes you to the next page in the history.
+         \o \menu{Go|Next} \o \key{Alt+Right Arrow}
+    \row \o \gui{Home}
+         \o Takes you to the home page as specified in the Preferences Dialog.
+         \o \menu{Go|Home} \o \key{Ctrl+Home}.
+    \row \o \gui{Sync with Table of Contents}
+         \o Synchronizes the \gui{Contents} tool window with the page currently
+            shown in the \gui{Documentation} window.
+         \o \menu{Go|Sync with Table of Contents} \o
+    \row \o \gui{Copy} \o Copies any selected text to the clipboard.
+         \o \menu{Edit|Copy} \o \key{Ctrl+C}
+    \row \o \gui{Print} \o Opens the \gui{Print} dialog.
+         \o \menu{File|Print} \o \key{Ctrl+P}
+    \row \o \gui{Find in Text} \o Opens the \gui{Find Text} dialog.
+         \o \menu{Edit|Find in Text} \o \key{Ctrl+F}
+    \row \o \gui{Zoom in}
+         \o Increases the font size used to display text in the current tab.
+         \o \menu{View|Zoom in} \o \key{Ctrl++}
+    \row \o \gui{Zoom out}
+         \o Decreases the font size used to display text in the current tab.
+         \o \menu{View|Zoom out} \o \key{Ctrl+-}
+    \row \o \gui{Normal Size}
+         \o Resets the font size to its normal size in the current tab.
+         \o \menu{View|Normal Size} \o \key{Ctrl+0}
+    \endtable
+
+    \img assistant-address-toolbar.png
+
+    The address toolbar provides a fast way to enter a specific URL for a
+    documentation file. By default, the address toolbar is not shown, so it
+    has to be activated via \menu{View|Toolbars|Address Toolbar}.
+
+    \img assistant-filter-toolbar.png
+
+    The filter toolbar allows you to apply a filter to the currently installed
+    documentation. As with the address toolbar, the filter toolbar is not visible
+    by default and has to be activated via \menu{View|Toolbars|Filter Toolbar}.
+
+    \section1 Menus
+
+    \section2 File Menu
+
+    \list
+    \o \menu{File|Page Setup...} invokes a dialog allowing you to define
+    page layout properties, such as margin sizes, page orientation and paper size.
+    \o \menu{File|Print Preview...} provides a preview of the printed pages.
+    \o \menu{File|Print...} opens the \l{#Print Dialog}{\gui{Print} dialog}.
+    \o \menu{File|New Tab} opens a new empty tab in the \gui{Documentation}
+    window.
+    \o \menu{File|Close Tab} closes the current tab of the
+    \gui{Documentation} window.
+    \o \menu{File|Exit} closes the \QA application.
+    \endlist
+
+    \section2 Edit Menu
+
+    \list
+    \o \menu{Edit|Copy} copies any selected text to the clipboard.
+    \o \menu{Edit|Find in Text} invokes the \l{#Find Text Control}{\gui{Find Text}
+    control} at the lower end of the \gui{Documentation} window.
+    \o \menu{Edit|Find Next} looks for the next occurance of the specified
+    text in the \gui{Find Text} control.
+    \o \menu{Edit|Find Previous} looks for the previous occurance of
+    the specified text in the \l{#Find Text Control}{\gui{Find Text} control}.
+    \o \menu{Edit|Preferences} invokes the \l{#Preferences Dialog}{\gui{Preferences} dialog}.
+    \endlist
+
+    \section2 View Menu
+
+    \list
+    \o \menu{View|Zoom in} increases the font size in the current tab.
+    \o \menu{View|Zoom out} decreases the font size in the current tab.
+    \o \menu{View|Normal Size} resets the font size in the current tab.
+    \o \menu{View|Contents} toggles the display of the \gui{Contents} tool window.
+    \o \menu{View|Index} toggles the display of the \gui{Index} tool window.
+    \o \menu{View|Bookmarks} toggles the display of the \gui{Bookmarks} tool window.
+    \o \menu{View|Search} toggles the display of the Search in the \gui{Documentation} window.
+    \endlist
+
+    \section2 Go Menu
+
+    \list
+    \o \menu{Go|Home} goes to the home page.
+    \o \menu{Go|Back} displays the previous page in the history.
+    \o \menu{Go|Forward} displays the next page in the history.
+    \o \menu{Go|Sync with Table of Contents} syncs the \gui{Contents} tool window to the currently shown page.
+    \o \menu{Go|Next Page} selects the next tab in the \gui{Documentation} window.
+    \o \menu{Go|Previous Page} selects the previous tab in the \gui{Documentation} window.
+    \endlist
+
+    \section2 Bookmarks Menu
+
+    \list
+    \o \menu{Bookmarks|Add} adds the current page to the list of bookmarks.
+    \endlist
+
+    \section1 Dialogs
+
+    \section2 Print Dialog
+
+    This dialog is platform-specific. It gives access to various printer
+    options and can be used to print the document shown in the current tab.
+
+    \section2 Preferences Dialog
+
+    \img assistant-preferences-fonts.png
+
+    The \menu{Fonts} page allows you to change the font family and font sizes of the
+    browser window displaying the documentation or the application itself.
+
+    \img assistant-preferences-filters.png
+
+    The \menu{Filters} page lets you create and remove documentation
+    filters. To add a new filter, click the \gui{Add} button, specify a
+    filter name in the pop-up dialog and click \gui{OK}, then select
+    the filter attributes in the list box on the right hand side.
+    You can delete a filter by selecting it and clicking the \gui{Remove}
+    button.
+
+    \img assistant-preferences-documentation.png
+
+    The \menu{Documentation} page lets you install and remove compressed help
+    files. Click the \gui{Install} button and choose the path of the compressed
+    help file (*.qch) you would like to install.
+    To delete a help file, select a documentation set in the list and click
+    \gui{Remove}.
+
+    \img assistant-preferences-options.png
+
+    The \menu{Options} page lets you specify the homepage \QA will display when
+    you click the \gui{Home} button in \QA's main user interface. You can specify
+    the hompage by typing it here or clicking on one of the buttons below the
+    textbox. \gui{Current Page} sets the currently displayed page as your home
+    page while \gui{Restore to default} will reset your home page to the default
+    home page.
+
+    \section1 Find Text Control
+
+    This control is used to find text in the current page. Enter the text you want
+    to find in the line edit. The search is incremental, meaning that the most
+    relevant result is shown as you enter characters into the line edit.
+
+    If you check the \gui{Whole words only} checkbox, the search will only consider
+    whole words; for example, if you search for "spin" with this checkbox checked it will
+    not match "spinbox", but will match "spin". If you check the \gui{Case sensitive}
+    checkbox then, for example, "spin" will match "spin" but not "Spin". You can
+    search forwards or backwards from your current position in the page by clicking
+    the \gui{Previous} or \gui{Next} buttons. To hide the find control, either click the
+    \gui{Close} button or hit the \key{Esc} key.
+
+    \section1 Filtering Help Contents
+
+    \QA allows you to install any kind of documentation as long as it is organized
+    in Qt compressed help files (*.qch). For example, it is possible to install the
+    Qt reference documentation for Qt 4.4.0 and Qt 4.4.1 at the same time. In many
+    respects, this is very convenient since only one version of \QA is needed.
+    However, at the same time it becomes more complicated when performing tasks like
+    searching the index because nearly every keyword is defined in Qt 4.4.0 as well
+    as in Qt 4.4.1. This means that \QA will always ask the user to choose which one
+    should be displayed.
+
+    We use documentation filters to solve this issue. A filter is identified by its
+    name, and contains a list of filter attributes. An attribute is just a string and
+    can be freely chosen. Attributes are defined by the documentation itself, this
+    means that every documentation set usually has one or more attributes.
+
+    For example, the Qt 4.4.0 \QA documentation defines the attributes \c {assistant},
+    \c{tools} and \c{4.4.0}, \QD defines \c{designer}, \c{tools} and \c{4.4.0}.
+    The filter to display all tools would then define only the attribute
+    \c{tools} since this attribute is part of both documentation sets.
+    Adding the attribute \c{assistant} to the filter would then only show \QA
+    documentation since the \QD documentation does not contain this
+    attribute. Having an empty list of attributes in a filter will match all
+    documentation; i.e., it is equivalent to requesting unfiltered documentation.
+
+    \section1 Full Text Searching
+
+    \img assistant-search.png
+
+    \QA provides a powerful full text search engine. To search
+    for certain words or text, click the \gui{Search} tab in the \gui{Documentation}
+    window. Then enter the text you want to look for and press \key{Enter}
+    or click the \gui{Search} button. The search is not case sensitive, so,
+    for example, Foo, fOo and FOO are all treated as the same. The following are
+    examples of common search patterns:
+
+    \list
+    \o \c deep -- lists all the documents that contain the word 'deep'
+    \o \c{deep*} -- lists all the documents that contain a word beginning
+    with 'deep'
+    \o \c{deep copy} -- lists all documents that contain both 'deep' \e
+    and 'copy'
+    \o \c{"deep copy"} -- list all documents that contain the phrase 'deep copy'
+    \endlist
+
+    It is also possible to use the \gui{Advanced search} to get more flexibility.
+    You can specify some words so that hits containing these are excluded from the
+    result, or you can search for an exact phrase. Searching for similar words will
+    give results like these:
+
+    \list
+    \o \c{QStin} -- lists all the documents with titles that are similar, such as \c{QString}
+    \o \c{QSting} -- lists all the documents with titles that are similar, such as \c{QString}
+    \o \c{QStrin} -- lists all the documents with titles that are similar, such as \c{QString}
+    \endlist
+
+    Options can be combined to improve the search results.
+
+    The list of documents found is ordered according to the number of
+    occurrences of the search text which they contain, with those containing
+    the highest number of occurrences appearing first. Simply click any
+    document in the list to display it in the \gui{Documentation} window.
+
+    If the documentation has changed \mdash for example, if documents have been added
+    or removed \mdash \QA will index them again.
+*/

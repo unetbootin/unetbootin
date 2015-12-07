@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-porting.qdoc -->
+<head>
+  <title>Qt 4.4: Porting Qt for Embedded Linux to a New Architecture</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Porting Qt for Embedded Linux to a New Architecture<br /><span class="subtitle"></span>
+</h1>
+<p>When porting <a href="qt-embedded.html">Qt for Embedded Linux</a> to a new architecture there are several issues to be aware of: You must provide suitable hardware drivers, and you must ensure to implement platform dependent atomic operations to enable multithreading on the new architecture.</p>
+<a name="hardware-drivers"></a>
+<h2>Hardware Drivers</h2>
+<p>When running a <a href="qt-embedded.html">Qt for Embedded Linux</a> application, it either runs as a server or connects to an existing server. All system generated events, including keyboard and mouse events, are passed to the server application which then propagates the event to the appropiate client. When rendering, the default behavior is for each client to render its widgets into memory while the server is responsible for putting the contents of the memory onto the screen.</p>
+<p>The various hardware drivers are loaded by the server application when it starts running, using Qt's <a href="plugins-howto.html">plugin system</a>.</p>
+<p>Derive from the QWSMouseHandler, QWSKeyboardHandler and QScreen classes to create a custom mouse, keyboard and screen driver respectively. To load the drivers into the server application at runtime, you must also create corresponding plugins. See the following documentation for more details:</p>
+<ul>
+<li><a href="qt-embedded-pointer.html">Pointer Handling</a></li>
+<li><a href="qt-embedded-charinput.html">Character Input</a></li>
+<li><a href="qt-embedded-displaymanagement.html">Display Management</a></li>
+</ul>
+<a name="atomic-operations"></a>
+<h2>Atomic Operations</h2>
+<p>Qt uses an optimization called <a href="shared.html">implicit sharing</a> for many of its value classes; implicitly shared classes can safely be copied across threads. This technology is implemented using atomic operations; i.e&#x2e;, <a href="qt-embedded.html">Qt for Embedded Linux</a> requires that platform-specific atomic operations are implemented to support Linux.</p>
+<p>When porting <a href="qt-embedded.html">Qt for Embedded Linux</a> to a new architecture, it is important to ensure that the platform-specific atomic operations are implemented in a corresponding header file, and that this file is located in Qt's <tt>src/corelib/arch</tt> directory.</p>
+<p>See the <a href="atomic-operations.html">atomic operations</a> documentation for more details.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

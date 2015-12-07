@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (tools/i18n/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">tools/i18n/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+
+ static const char * const listEntries[] = {
+     QT_TRANSLATE_NOOP(&quot;MainWindow&quot;, &quot;First&quot;),
+     QT_TRANSLATE_NOOP(&quot;MainWindow&quot;, &quot;Second&quot;),
+     QT_TRANSLATE_NOOP(&quot;MainWindow&quot;, &quot;Third&quot;),
+     0
+ };
+
+ MainWindow::MainWindow()
+ {
+     centralWidget = new QWidget;
+     setCentralWidget(centralWidget);
+
+     createGroupBox();
+
+     listWidget = new QListWidget;
+     for (int i = 0; listEntries[i]; ++i)
+         listWidget-&gt;addItem(tr(listEntries[i]));
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(groupBox);
+     mainLayout-&gt;addWidget(listWidget);
+     centralWidget-&gt;setLayout(mainLayout);
+
+     exitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;setPalette(QPalette(Qt::red));
+     fileMenu-&gt;addAction(exitAction);
+
+     setWindowTitle(tr(&quot;Language: %1&quot;).arg(tr(&quot;English&quot;)));
+     statusBar()-&gt;showMessage(tr(&quot;Internationalization Example&quot;));
+
+     if (tr(&quot;LTR&quot;) == &quot;RTL&quot;)
+         setLayoutDirection(Qt::RightToLeft);
+ }
+
+ void MainWindow::createGroupBox()
+ {
+     groupBox = new QGroupBox(tr(&quot;View&quot;));
+     perspectiveRadioButton = new QRadioButton(tr(&quot;Perspective&quot;));
+     isometricRadioButton = new QRadioButton(tr(&quot;Isometric&quot;));
+     obliqueRadioButton = new QRadioButton(tr(&quot;Oblique&quot;));
+     perspectiveRadioButton-&gt;setChecked(true);
+
+     QVBoxLayout *groupBoxLayout = new QVBoxLayout;
+     groupBoxLayout-&gt;addWidget(perspectiveRadioButton);
+     groupBoxLayout-&gt;addWidget(isometricRadioButton);
+     groupBoxLayout-&gt;addWidget(obliqueRadioButton);
+     groupBox-&gt;setLayout(groupBoxLayout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

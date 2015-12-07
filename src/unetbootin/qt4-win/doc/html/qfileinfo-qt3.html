@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qfileinfo.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QFileInfo</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QFileInfo</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qfileinfo.html">QFileInfo class reference</a></li></ul></p>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qfileinfo-qt3.html#Permission-enum">Permission</a></b> { ReadOwner, WriteOwner, ExeOwner, ReadUser, ..., ExeOther }</li>
+</ul>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qfileinfo-qt3.html#absFilePath">absFilePath</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qfileinfo-qt3.html#baseName-2">baseName</a></b> ( bool <i>complete</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfileinfo-qt3.html#convertToAbs">convertToAbs</a></b> ()</li>
+<li><div class="fn"/>QDir <b><a href="qfileinfo-qt3.html#dir-2">dir</a></b> ( bool <i>absPath</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qfileinfo-qt3.html#dirPath">dirPath</a></b> ( bool <i>absPath</i> = false ) const</li>
+<li><div class="fn"/>QString <b><a href="qfileinfo-qt3.html#extension">extension</a></b> ( bool <i>complete</i> = true ) const</li>
+<li><div class="fn"/>bool <b><a href="qfileinfo-qt3.html#permission-2">permission</a></b> ( PermissionSpec <i>permissions</i> ) const</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="Permission-enum"></a>enum QFileInfo::Permission<br />flags QFileInfo::PermissionSpec</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QFileInfo::ReadOwner</tt></td><td align="center" valign="top"><tt>QFile::ReadOwner</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::WriteOwner</tt></td><td align="center" valign="top"><tt>QFile::WriteOwner</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ExeOwner</tt></td><td align="center" valign="top"><tt>QFile::ExeOwner</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ReadUser</tt></td><td align="center" valign="top"><tt>QFile::ReadUser</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::WriteUser</tt></td><td align="center" valign="top"><tt>QFile::WriteUser</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ExeUser</tt></td><td align="center" valign="top"><tt>QFile::ExeUser</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ReadGroup</tt></td><td align="center" valign="top"><tt>QFile::ReadGroup</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::WriteGroup</tt></td><td align="center" valign="top"><tt>QFile::WriteGroup</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ExeGroup</tt></td><td align="center" valign="top"><tt>QFile::ExeGroup</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ReadOther</tt></td><td align="center" valign="top"><tt>QFile::ReadOther</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::WriteOther</tt></td><td align="center" valign="top"><tt>QFile::WriteOther</tt></td></tr>
+<tr><td valign="top"><tt>QFileInfo::ExeOther</tt></td><td align="center" valign="top"><tt>QFile::ExeOther</tt></td></tr>
+</table></p>
+<p>The PermissionSpec type is a typedef for <a href="qflags.html">QFlags</a>&lt;Permission&gt;. It stores an OR combination of Permission values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="absFilePath"></a><a href="qstring.html">QString</a> QFileInfo::absFilePath () const</h3>
+<p>Use <a href="qfileinfo.html#absoluteFilePath">absoluteFilePath</a>() instead.</p>
+<h3 class="fn"><a name="baseName-2"></a><a href="qstring.html">QString</a> QFileInfo::baseName ( bool <i>complete</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qfileinfo.html#completeBaseName">completeBaseName</a>() or the <a href="qfileinfo.html#baseName">baseName</a>() overload that takes no parameters instead.</p>
+<h3 class="fn"><a name="convertToAbs"></a>bool QFileInfo::convertToAbs ()</h3>
+<p>Use <a href="qfileinfo.html#makeAbsolute">makeAbsolute</a>() instead.</p>
+<h3 class="fn"><a name="dir-2"></a><a href="qdir.html">QDir</a> QFileInfo::dir ( bool <i>absPath</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qfileinfo.html#absoluteDir">absoluteDir</a>() or the <a href="qfileinfo.html#dir">dir</a>() overload that takes no parameters instead.</p>
+<h3 class="fn"><a name="dirPath"></a><a href="qstring.html">QString</a> QFileInfo::dirPath ( bool <i>absPath</i> = false ) const</h3>
+<p>Use <a href="qfileinfo.html#absoluteFilePath">absoluteFilePath</a>() if the absolute path is wanted (<i>absPath</i> is true) or <a href="qfileinfo.html#pathx">path</a>() if it's not necessary (<i>absPath</i> is false).</p>
+<h3 class="fn"><a name="extension"></a><a href="qstring.html">QString</a> QFileInfo::extension ( bool <i>complete</i> = true ) const</h3>
+<p>Use <a href="qfileinfo.html#completeSuffix">completeSuffix</a>() or <a href="qfileinfo.html#suffix">suffix</a>() instead.</p>
+<h3 class="fn"><a name="permission-2"></a>bool QFileInfo::permission ( <a href="qfileinfo.html#Permission-enum">PermissionSpec</a> <i>permissions</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qfileinfo.html#permission">permission</a>() instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

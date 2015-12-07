@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xmlpatterns/api/qsimplexmlnodemodel.cpp -->
+<head>
+  <title>Qt 4.4: QSimpleXmlNodeModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSimpleXmlNodeModel Class Reference<br /><span class="small-subtitle">[<a href="qtxmlpatterns.html">QtXmlPatterns</a> module]</span>
+</h1>
+<p>The QSimpleXmlNodeModel class provides a simple yet powerful way of implementing <a href="qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QSimpleXmlNodeModel&gt;</pre><p>Inherits <a href="qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qsimplexmlnodemodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsimplexmlnodemodel.html#QSimpleXmlNodeModel">QSimpleXmlNodeModel</a></b> ( const QXmlNamePool &amp; <i>namePool</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qsimplexmlnodemodel.html#dtor.QSimpleXmlNodeModel">~QSimpleXmlNodeModel</a></b> ()</li>
+<li><div class="fn"/>virtual QUrl <b><a href="qsimplexmlnodemodel.html#baseUri">baseUri</a></b> ( const QXmlNodeModelIndex &amp; <i>node</i> ) const</li>
+<li><div class="fn"/>virtual QXmlNodeModelIndex <b><a href="qsimplexmlnodemodel.html#elementById">elementById</a></b> ( const QXmlName &amp; <i>id</i> ) const</li>
+<li><div class="fn"/>QXmlNamePool &amp; <b><a href="qsimplexmlnodemodel.html#namePool">namePool</a></b> () const</li>
+<li><div class="fn"/>virtual QVector&lt;QXmlName&gt; <b><a href="qsimplexmlnodemodel.html#namespaceBindings">namespaceBindings</a></b> ( const QXmlNodeModelIndex &amp; <i>node</i> ) const</li>
+<li><div class="fn"/>virtual QVector&lt;QXmlNodeModelIndex&gt; <b><a href="qsimplexmlnodemodel.html#nodesByIdref">nodesByIdref</a></b> ( const QXmlName &amp; <i>idref</i> ) const</li>
+<li><div class="fn"/>virtual QString <b><a href="qsimplexmlnodemodel.html#stringValue">stringValue</a></b> ( const QXmlNodeModelIndex &amp; <i>node</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>11 public functions inherited from <a href="qabstractxmlnodemodel.html#public-functions">QAbstractXmlNodeModel</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="qabstractxmlnodemodel.html#protected-functions">QAbstractXmlNodeModel</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSimpleXmlNodeModel class provides a simple yet powerful way of implementing <a href="qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a>.</p>
+<p>Since QAbstractXmlNodeModel::iterate() requires a sub-class of QAbstractXmlForwardIterator to be returned for each axis, it can be a bit time consuming to implement. For that reason QSimpleXmlNodeModel exists which has <a href="qabstractxmlnodemodel.html#nextFromSimpleAxis">nextFromSimpleAxis</a>(), that that is a quick but often sufficient way of providing the node navigation. Behind the scenes QSimpleXmlNodeModel::iterate() &quot;emulates&quot; the full XPath axes using <a href="qabstractxmlnodemodel.html#nextFromSimpleAxis">nextFromSimpleAxis</a>().</p>
+<p>Apart from <a href="qabstractxmlnodemodel.html#nextFromSimpleAxis">nextFromSimpleAxis</a>(), QSimpleXmlNodeModel provides default implementations for many of the members in <a href="qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a> that are suitable for a wide range of scenarios.</p>
+<p>Sub-classes of QSimpleXmlNodeModel must be thread-safe, just like sub-classes other sub-classes of <a href="qabstractxmlnodemodel.html">QAbstractXmlNodeModel</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSimpleXmlNodeModel"></a>QSimpleXmlNodeModel::QSimpleXmlNodeModel ( const <a href="qxmlnamepool.html">QXmlNamePool</a> &amp; <i>namePool</i> )</h3>
+<p>Constructs a <a href="qsimplexmlnodemodel.html">QSimpleXmlNodeModel</a> instance that can be used with the name pool <i>namePool</i>. It can subsequently be accessed with <a href="qsimplexmlnodemodel.html#namePool">namePool</a>().</p>
+<h3 class="fn"><a name="dtor.QSimpleXmlNodeModel"></a>QSimpleXmlNodeModel::~QSimpleXmlNodeModel ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="baseUri"></a><a href="qurl.html">QUrl</a> QSimpleXmlNodeModel::baseUri ( const <a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a> &amp; <i>node</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the base URI for <i>node</i>. This is always the document URI. This is safe, works and is often ok.</p>
+<p>Reimplemented from <a href="qabstractxmlnodemodel.html#baseUri">QAbstractXmlNodeModel</a>.</p>
+<p>See also <a href="qabstractxmlnodemodel.html#documentUri">documentUri</a>().</p>
+<h3 class="fn"><a name="elementById"></a><a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a> QSimpleXmlNodeModel::elementById ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>id</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Always returns a default constructed <a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a> instance, regardless of <i>id</i>.</p>
+<p>This effectively means the model has no elements that has an id.</p>
+<p>Reimplemented from <a href="qabstractxmlnodemodel.html#elementById">QAbstractXmlNodeModel</a>.</p>
+<h3 class="fn"><a name="namePool"></a><a href="qxmlnamepool.html">QXmlNamePool</a> &amp; QSimpleXmlNodeModel::namePool () const</h3>
+<p>Returns the name pool that is associated with this model. The implementation of <a href="qabstractxmlnodemodel.html#name">name</a>() would use this to create names.</p>
+<h3 class="fn"><a name="namespaceBindings"></a><a href="qvector.html">QVector</a>&lt;<a href="qxmlname.html">QXmlName</a>&gt; QSimpleXmlNodeModel::namespaceBindings ( const <a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a> &amp; <i>node</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns always an empty <a href="qvector.html">QVector</a>. This signals that no namespace bindings are in scope for <i>node</i>.</p>
+<p>Reimplemented from <a href="qabstractxmlnodemodel.html#namespaceBindings">QAbstractXmlNodeModel</a>.</p>
+<h3 class="fn"><a name="nodesByIdref"></a><a href="qvector.html">QVector</a>&lt;<a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a>&gt; QSimpleXmlNodeModel::nodesByIdref ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>idref</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Always returns an empty vector, regardless of <i>idref</i>.</p>
+<p>This effectively means the model has no elements or attributes of type <tt>IDREF</tt>.</p>
+<p>Reimplemented from <a href="qabstractxmlnodemodel.html#nodesByIdref">QAbstractXmlNodeModel</a>.</p>
+<h3 class="fn"><a name="stringValue"></a><a href="qstring.html">QString</a> QSimpleXmlNodeModel::stringValue ( const <a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a> &amp; <i>node</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>node</i> is an element or attribute, <a href="qabstractxmlnodemodel.html#typedValue">typedValue</a>() is called, and the return value converted to a string, as per XQuery's rules.</p>
+<p>If <i>node</i> is another type of node, the empty string is returned.</p>
+<p>If this function is overriden for for instance comments or processing instructions, it is important to remember to call this function for elements and attribute, if they have atomic values that are not of type <tt>xs:string</tt>, such that they get formatted according to XQuery.</p>
+<p>Reimplemented from <a href="qabstractxmlnodemodel.html#stringValue">QAbstractXmlNodeModel</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

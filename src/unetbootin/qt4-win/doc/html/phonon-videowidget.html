@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: VideoWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">VideoWidget Class Reference<br /><span class="small-subtitle">(Phonon::VideoWidget)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The VideoWidget class provides a widget that is used to display video. <a href="#details">More...</a></p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-videowidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="phonon-videowidget.html#AspectRatio-enum">AspectRatio</a></b> { AspectRatioAuto, AspectRatioWidget, AspectRatio4_3, AspectRatio16_9 }</li>
+<li><div class="fn"/>enum <b><a href="phonon-videowidget.html#ScaleMode-enum">ScaleMode</a></b> { FitInView, ScaleAndCrop }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#aspectRatio-prop">aspectRatio</a></b> : AspectRatio</li>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#brightness-prop">brightness</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#contrast-prop">contrast</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#fullScreen-prop">fullScreen</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#hue-prop">hue</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#saturation-prop">saturation</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#scaleMode-prop">scaleMode</a></b> : ScaleMode</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#VideoWidget">VideoWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>AspectRatio <b><a href="phonon-videowidget.html#aspectRatio-prop">aspectRatio</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-videowidget.html#brightness-prop">brightness</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-videowidget.html#contrast-prop">contrast</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-videowidget.html#hue-prop">hue</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-videowidget.html#saturation-prop">saturation</a></b> () const</li>
+<li><div class="fn"/>ScaleMode <b><a href="phonon-videowidget.html#scaleMode-prop">scaleMode</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#enterFullScreen">enterFullScreen</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#exitFullScreen">exitFullScreen</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#aspectRatio-prop">setAspectRatio</a></b> ( AspectRatio )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#brightness-prop">setBrightness</a></b> ( qreal <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#contrast-prop">setContrast</a></b> ( qreal <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#fullScreen-prop">setFullScreen</a></b> ( bool <i>fullscreen</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#hue-prop">setHue</a></b> ( qreal <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#saturation-prop">setSaturation</a></b> ( qreal <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-videowidget.html#scaleMode-prop">setScaleMode</a></b> ( ScaleMode )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-videowidget.html#VideoWidget-2">VideoWidget</a></b> ( VideoWidgetPrivate &amp; <i>d</i>, QWidget * <i>parent</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="phonon-videowidget.html#event">event</a></b> ( QEvent * )</li>
+<li><div class="fn"/>virtual void <b><a href="phonon-videowidget.html#mouseMoveEvent">mouseMoveEvent</a></b> ( QMouseEvent * )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The VideoWidget class provides a widget that is used to display video.</p>
+<p>The VideoWidget class renders the video of a media stream on a <a href="qwidget.html">QWidget</a>. It is connected to the <a href="phonon-mediaobject.html">MediaObject</a>, of which video stream it should render. You connect the two objects using the <a href="phonon-path.html#createPath">Phonon::createPath</a>() function.</p>
+<p>The widget has some possibilities to manipulate the video stream. You can change the <a href="phonon-videowidget.html#brightness-prop">brightness</a>(), <a href="phonon-videowidget.html#hue-prop">hue</a>(), <a href="phonon-videowidget.html#saturation-prop">saturation</a>(), and <a href="phonon-videowidget.html#contrast-prop">contrast</a>().</p>
+<p>The widget can resize the video to fit the widget, the <a href="phonon-videowidget.html#AspectRatio-enum">AspectRatio</a> is kept during resizing. It is also possible to go to fullScreen() mode.</p>
+<p>A typical example of usage follows below:</p>
+<pre>     MediaObject *media = new MediaObject(parent);
+     VideoWidget *vwidget = new VideoWidget(parent);
+     Phonon::createPath(media, vwidget);</pre>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="AspectRatio-enum"></a>enum VideoWidget::AspectRatio</h3>
+<p>Defines the width:height to be used for the video.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::AspectRatioAuto</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Let the decoder find the aspect ratio automatically from the media file (this is the default).</td></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::AspectRatioWidget</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Fits the video into the widget making the aspect ratio depend solely on the size of the widget. This way the aspect ratio is freely resizeable by the user.</td></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::AspectRatio4_3</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Make width/height == 4/3, which is the old TV size and monitor size (1024/768 == 4/3). (4:3)</td></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::AspectRatio16_9</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Make width/height == 16/9, which is the size of most current media. (16:9)</td></tr>
+</table></p>
+<h3 class="fn"><a name="ScaleMode-enum"></a>enum VideoWidget::ScaleMode</h3>
+<p>The ScaleMode enum describes how to treat aspect ratio during resizing of video.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::FitInView</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The video will be fitted to fill the view keeping aspect ratio.</td></tr>
+<tr><td valign="top"><tt>Phonon::VideoWidget::ScaleAndCrop</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The video is scaled</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="aspectRatio-prop"></a>aspectRatio : <a href="phonon-videowidget.html#AspectRatio-enum">AspectRatio</a></h3>
+<p>Defaults to <a href="phonon-videowidget.html#AspectRatio-enum">AspectRatioAuto</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>AspectRatio aspectRatio () const</b></li>
+<li><div class="fn"/><b>void setAspectRatio ( AspectRatio )</b></li>
+</ul>
+<p>See also <a href="phonon-videowidget.html#AspectRatio-enum">AspectRatio</a>.</p>
+<h3 class="fn"><a name="brightness-prop"></a>brightness : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds brightness of the video.</p>
+<p>Default is 0. Acceptable values are in range of -1, 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal brightness () const</b></li>
+<li><div class="fn"/><b>void setBrightness ( qreal <i>value</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="contrast-prop"></a>contrast : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the contrast of the video.</p>
+<p>Default is 0. Acceptable values are in range of -1, 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal contrast () const</b></li>
+<li><div class="fn"/><b>void setContrast ( qreal <i>value</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="fullScreen-prop"></a>fullScreen : bool</h3>
+<p>This property holds whether the video is shown using the complete screen.</p>
+<p>The property differs from <a href="qwidget.html#fullScreen-prop">QWidget::fullScreen</a> in that it is writeable.</p>
+<p>By default the widget is not shown in fullScreen.</p>
+<p><b>Warning:</b> When switching the video to fullscreen using setFullScreen your application loses control over the widget that actually shows the video (which is then shown as a toplevel window while your application still uses this widget). If you only need to capture key events the event forwarding done internally should suffice for your needs. If you need to map mouse coordinates or add widgets (that are not overlays) you should probably handle fullscreen yourself.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool <a href="qwidget.html#fullScreen-prop">isFullScreen</a> () const</b></li>
+<li><div class="fn"/><b>void setFullScreen ( bool <i>fullscreen</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="hue-prop"></a>hue : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the hue of the video.</p>
+<p>Default is 0. Acceptable values are in range of -1, 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal hue () const</b></li>
+<li><div class="fn"/><b>void setHue ( qreal <i>value</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="saturation-prop"></a>saturation : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds saturation of the video.</p>
+<p>Default is 0. Acceptable values are in range of -1, 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal saturation () const</b></li>
+<li><div class="fn"/><b>void setSaturation ( qreal <i>value</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="scaleMode-prop"></a>scaleMode : <a href="phonon-videowidget.html#ScaleMode-enum">ScaleMode</a></h3>
+<p>If the size of the widget and the size of the video are not equal. The video will be zoomed to fit the widget. The smaller zoom (AddBarsScaleMode) adds black bars at the left/right or top/bottom to make all of the image visible (default). The bigger zoom (ExpandMode) fills the widget completely, keeping all information in one direction and leaving parts of the image outside of the widget in the other direction.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ScaleMode scaleMode () const</b></li>
+<li><div class="fn"/><b>void setScaleMode ( ScaleMode )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="VideoWidget"></a>VideoWidget::VideoWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new video widget with a <i>parent</i>.</p>
+<h3 class="fn"><a name="VideoWidget-2"></a>VideoWidget::VideoWidget ( VideoWidgetPrivate &amp; <i>d</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<h3 class="fn"><a name="enterFullScreen"></a>void VideoWidget::enterFullScreen ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot, calling setFullScreen(true)</p>
+<h3 class="fn"><a name="event"></a>bool VideoWidget::event ( <a href="qevent.html">QEvent</a> * )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<h3 class="fn"><a name="exitFullScreen"></a>void VideoWidget::exitFullScreen ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot, calling setFullScreen(false)</p>
+<h3 class="fn"><a name="mouseMoveEvent"></a>void VideoWidget::mouseMoveEvent ( <a href="qmouseevent.html">QMouseEvent</a> * )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

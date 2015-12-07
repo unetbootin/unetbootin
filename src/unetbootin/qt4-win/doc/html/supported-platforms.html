@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/platform-notes.qdoc -->
+<head>
+  <title>Qt 4.4: Supported Platforms</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Supported Platforms<br /><span class="subtitle"></span>
+</h1>
+<p>Qt is supported on a variety of 32-bit and 64-bit platforms, and can usually be built on each platform with GCC, a vendor-supplied compiler, or a third party compiler. Although Qt may be built on a range of platform-compiler combinations, only a subset of these are actively supported by Trolltech:</p>
+<a name="actively-supported-platforms"></a>
+<h3>Actively Supported Platforms</h3>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Platform</th><th>Compilers</th></tr></thead>
+<tr valign="top" class="odd"><td>Apple Mac OS X (32-bit)</td><td>gcc 4.0&#x2e;1</td></tr>
+<tr valign="top" class="even"><td>Linux (32 and 64-bit)</td><td>gcc 4.1, 4.2</td></tr>
+<tr valign="top" class="odd"><td>Microsoft Windows</td><td>gcc 4.3 (MinGW) (32-bit), MSVC 2003, 2005 (32 and 64-bit), Intel icc</td></tr>
+</table></p>
+<p>Other platform-compiler combinations are either community supported or unsupported. See the Makespec Support section further down for a complete list of platform-compiler combinations that ship with Qt and their support levels.</p>
+<p>Trolltech's online <a href="http://www.trolltech.com/developer/notes/supportpolicy">Platform Support Policy</a> describes the level of support you should expect for these platforms.</p>
+<a name="supported-features"></a>
+<h3>Supported Features</h3>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Compiler</th><th colspan="5">Features</th></tr>
+<tr valign="top" class="qt-style"><th></th><th>Concurrent</th><th>XmlPatterns</th><th><a href="examples.html#webkit">WebKit</a></th><th>CLucene</th><th>Phonon</th></tr></thead>
+<tr valign="top" class="odd"><td>g++ 3.3</td><td><b>X</b></td><td><b>X</b></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="even"><td>g++ 3.4 and up</td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"></tr>
+<tr valign="top" class="even"><td>SunCC &lt;= 5.6</td><td><b>X</b></td><td></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"><td>SunCC 5.7 &amp; 5.8</td><td><b>X</b></td><td><b>X</b></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="even"><td>SunCC 5.9 and up</td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"></tr>
+<tr valign="top" class="even"><td>aCC series 3</td><td></td><td></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"><td>aCC series 6</td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="even"><td>MIPSpro 7.4&#x2e;2m</td><td></td><td><b>X</b></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"><td>xlC 6</td><td></td><td></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="even"><td>Intel CC 10</td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"></tr>
+<tr valign="top" class="even"><td>MSVC 6.0</td><td></td><td></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"><td>MSVC 2002</td><td></td><td></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="even"><td>MSVC 2003</td><td><b>X</b></td><td><b>X</b></td><td></td><td><b>X</b></td><td><b>X</b></td></tr>
+<tr valign="top" class="odd"><td>MSVC 2005 and up</td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td><td><b>X</b></td></tr>
+</table></p>
+<a name="makespec-support"></a>
+<h3>Makespec Support</h3>
+<p>Note that any platform-compiler combinations not listed here should be considered unsupported.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Makespec</th><th>Architecture</th><th>Compiler version(s)</th><th>Support Level</th></tr></thead>
+<tr valign="top" class="odd"><td>aix-g++</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="even"><td>aix-g++-64</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="odd"><td>aix-xlc</td><td>PowerPC</td><td>6</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>aix-xlc-64</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="odd"><td>cygwin-g++</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>darwin-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>freebsd-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>freebsd-g++34</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>freebsd-g++40</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>freebsd-icc</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>hpux-acc*</td><td>PA/RISC</td><td>A.03.57</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>hpux-g++</td><td>PA/RISC</td><td>3.4</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>hpux-g++-64</td><td>-</td><td>-</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>hpuxi-acc*</td><td>Itanium</td><td>A.06.10</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>hpuxi-g++*</td><td>Itanium</td><td>4.1</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>hurd-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>irix-cc*</td><td>MIPS</td><td>MIPS Pro</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>irix-g++*</td><td>MIPS</td><td>3.3</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>linux-cxx</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>linux-ecc-64</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>linux-g++</td><td>Itanium</td><td>3.4</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>linux-g++</td><td>x86, x86-64</td><td>3.3, 3.4</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>linux-g++</td><td>x86, x86-64</td><td>4.1, 4.2</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>linux-icc</td><td>x86, x86-64</td><td>10.1</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>linux-icc-32</td><td>-</td><td>-</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>linux-icc-64</td><td>-</td><td>-</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>linux-kcc</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>linux-llvm</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>linux-lsb-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>linux-pgcc</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="odd"><td>lynxos-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>macx-icc</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="odd"><td>macx-g++</td><td>ppc</td><td>3.3</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>macx-g++</td><td>x86*, ppc*</td><td>4.0&#x2e;1</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>macx-llvm</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>macx-pbuilder</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="odd"><td>macx-xcode</td><td>-</td><td>-</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>macx-xlc</td><td>-</td><td>-</td><td>-</td></tr>
+<tr valign="top" class="odd"><td>netbsd-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>openbsd-g++</td><td>-</td><td>-</td><td>Community</td></tr>
+<tr valign="top" class="odd"><td>qws/linux-g++</td><td>MIPS, PowerPC</td><td>3.4, 4.1, 4.2</td><td>Community</td></tr>
+<tr valign="top" class="even"><td>qws/linux-g++</td><td>x86, ARM</td><td>3.4, 4.1, 4.2</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>sco-cc</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>sco-g++</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="odd"><td>solaris-cc*</td><td>sparc, x86</td><td>5.5</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>solaris-g++*</td><td>sparc, x86</td><td>3.4&#x2e;2</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>unixware-cc</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>unixware-g++</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="odd"><td>win32-borland</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>win32-g++</td><td>x86</td><td>3.4</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>win32-icc</td><td>x86</td><td>9.1</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>win32-msvc</td><td>x86</td><td>6.0</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>win32-msvc2002</td><td>-</td><td>2002</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>win32-msvc2003</td><td>x86</td><td>2003</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>win32-msvc2005</td><td>x86</td><td>2005</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>win32-msvc2008</td><td>-</td><td>2008</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>win32-msvc.net</td><td>x86</td><td>2002</td><td>Active</td></tr>
+<tr valign="top" class="even"><td>wince*-msvc.net2005</td><td>x86, ARMv4i</td><td>2005</td><td>Active</td></tr>
+<tr valign="top" class="odd"><td>tru64-cxx</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+<tr valign="top" class="even"><td>tru64-g++</td><td>-</td><td>-</td><td>Unsupported</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

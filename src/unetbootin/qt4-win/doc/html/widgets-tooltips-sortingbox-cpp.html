@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: sortingbox.cpp Example File (widgets/tooltips/sortingbox.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">sortingbox.cpp Example File<br /><span class="small-subtitle">widgets/tooltips/sortingbox.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;stdlib.h&gt;
+
+ #include &quot;sortingbox.h&quot;
+
+ SortingBox::SortingBox()
+ {
+     setAttribute(Qt::WA_StaticContents);
+     setMouseTracking(true);
+     setBackgroundRole(QPalette::Base);
+
+     itemInMotion = 0;
+
+     newCircleButton = createToolButton(tr(&quot;New Circle&quot;),
+                                        QIcon(&quot;:/images/circle.png&quot;),
+                                        SLOT(createNewCircle()));
+
+     newSquareButton = createToolButton(tr(&quot;New Square&quot;),
+                                        QIcon(&quot;:/images/square.png&quot;),
+                                        SLOT(createNewSquare()));
+
+     newTriangleButton = createToolButton(tr(&quot;New Triangle&quot;),
+                                          QIcon(&quot;:/images/triangle.png&quot;),
+                                          SLOT(createNewTriangle()));
+
+     circlePath.addEllipse(QRect(0, 0, 100, 100));
+     squarePath.addRect(QRect(0, 0, 100, 100));
+
+     qreal x = trianglePath.currentPosition().x();
+     qreal y = trianglePath.currentPosition().y();
+     trianglePath.moveTo(x + 120 / 2, y);
+     trianglePath.lineTo(0, 100);
+     trianglePath.lineTo(120, 100);
+     trianglePath.lineTo(x + 120 / 2, y);
+
+     setWindowTitle(tr(&quot;Tool Tips&quot;));
+     resize(500, 300);
+
+     createShapeItem(circlePath, tr(&quot;Circle&quot;), initialItemPosition(circlePath),
+                     initialItemColor());
+     createShapeItem(squarePath, tr(&quot;Square&quot;), initialItemPosition(squarePath),
+                     initialItemColor());
+     createShapeItem(trianglePath, tr(&quot;Triangle&quot;),
+                     initialItemPosition(trianglePath), initialItemColor());
+ }
+
+ bool SortingBox::event(QEvent *event)
+ {
+     if (event-&gt;type() == QEvent::ToolTip) {
+         QHelpEvent *helpEvent = static_cast&lt;QHelpEvent *&gt;(event);
+         int index = itemAt(helpEvent-&gt;pos());
+         if (index != -1)
+             QToolTip::showText(helpEvent-&gt;globalPos(), shapeItems[index].toolTip());
+         else
+             QToolTip::hideText();
+     }
+     return QWidget::event(event);
+ }
+
+ void SortingBox::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     int margin = style()-&gt;pixelMetric(QStyle::PM_DefaultTopLevelMargin);
+     int x = width() - margin;
+     int y = height() - margin;
+
+     y = updateButtonGeometry(newCircleButton, x, y);
+     y = updateButtonGeometry(newSquareButton, x, y);
+     updateButtonGeometry(newTriangleButton, x, y);
+ }
+
+ void SortingBox::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     foreach (ShapeItem shapeItem, shapeItems) {
+         painter.translate(shapeItem.position());
+         painter.setBrush(shapeItem.color());
+         painter.drawPath(shapeItem.path());
+         painter.translate(-shapeItem.position());
+     }
+ }
+
+ void SortingBox::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         int index = itemAt(event-&gt;pos());
+         if (index != -1) {
+             itemInMotion = &amp;shapeItems[index];
+             previousPosition = event-&gt;pos();
+             shapeItems.move(index, shapeItems.size() - 1);
+             update();
+         }
+     }
+ }
+
+ void SortingBox::mouseMoveEvent(QMouseEvent *event)
+ {
+     if ((event-&gt;buttons() &amp; Qt::LeftButton) &amp;&amp; itemInMotion)
+         moveItemTo(event-&gt;pos());
+ }
+
+ void SortingBox::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton &amp;&amp; itemInMotion) {
+         moveItemTo(event-&gt;pos());
+         itemInMotion = 0;
+     }
+ }
+
+ void SortingBox::createNewCircle()
+ {
+     static int count = 1;
+     createShapeItem(circlePath, tr(&quot;Circle &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }
+
+ void SortingBox::createNewSquare()
+ {
+     static int count = 1;
+     createShapeItem(squarePath, tr(&quot;Square &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }
+
+ void SortingBox::createNewTriangle()
+ {
+     static int count = 1;
+     createShapeItem(trianglePath, tr(&quot;Triangle &lt;%1&gt;&quot;).arg(++count),
+                     randomItemPosition(), randomItemColor());
+ }
+
+ int SortingBox::itemAt(const QPoint &amp;pos)
+ {
+     for (int i = shapeItems.size() - 1; i &gt;= 0; --i) {
+         const ShapeItem &amp;item = shapeItems[i];
+         if (item.path().contains(pos - item.position()))
+             return i;
+     }
+     return -1;
+ }
+
+ void SortingBox::moveItemTo(const QPoint &amp;pos)
+ {
+     QPoint offset = pos - previousPosition;
+     itemInMotion-&gt;setPosition(itemInMotion-&gt;position() + offset);
+     previousPosition = pos;
+     update();
+ }
+
+ int SortingBox::updateButtonGeometry(QToolButton *button, int x, int y)
+ {
+     QSize size = button-&gt;sizeHint();
+     button-&gt;setGeometry(x - size.rwidth(), y - size.rheight(),
+                         size.rwidth(), size.rheight());
+
+     return y - size.rheight()
+            - style()-&gt;pixelMetric(QStyle::PM_DefaultLayoutSpacing);
+ }
+
+ void SortingBox::createShapeItem(const QPainterPath &amp;path,
+                                  const QString &amp;toolTip, const QPoint &amp;pos,
+                                  const QColor &amp;color)
+ {
+     ShapeItem shapeItem;
+     shapeItem.setPath(path);
+     shapeItem.setToolTip(toolTip);
+     shapeItem.setPosition(pos);
+     shapeItem.setColor(color);
+     shapeItems.append(shapeItem);
+     update();
+ }
+
+ QToolButton *SortingBox::createToolButton(const QString &amp;toolTip,
+                                           const QIcon &amp;icon, const char *member)
+ {
+     QToolButton *button = new QToolButton(this);
+     button-&gt;setToolTip(toolTip);
+     button-&gt;setIcon(icon);
+     button-&gt;setIconSize(QSize(32, 32));
+     connect(button, SIGNAL(clicked()), this, member);
+
+     return button;
+ }
+
+ QPoint SortingBox::initialItemPosition(const QPainterPath &amp;path)
+ {
+     int x;
+     int y = (height() - (int)path.controlPointRect().height()) / 2;
+     if (shapeItems.size() == 0)
+         x = ((3 * width()) / 2 - (int)path.controlPointRect().width()) / 2;
+     else
+         x = (width() / shapeItems.size()
+              - (int)path.controlPointRect().width()) / 2;
+
+     return QPoint(x, y);
+ }
+
+ QPoint SortingBox::randomItemPosition()
+ {
+     return QPoint(qrand() % (width() - 120), qrand() % (height() - 120));
+ }
+
+ QColor SortingBox::initialItemColor()
+ {
+     return QColor::fromHsv(((shapeItems.size() + 1) * 85) % 256, 255, 190);
+ }
+
+ QColor SortingBox::randomItemColor()
+ {
+     return QColor::fromHsv(qrand() % 256, 255, 190);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/waitconditions.qdoc -->
+<head>
+  <title>Qt 4.4: Wait Conditions Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Wait Conditions Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="threads-waitconditions-waitconditions-cpp.html">threads/waitconditions/waitconditions.cpp</a></li>
+<li><a href="threads-waitconditions-waitconditions-pro.html">threads/waitconditions/waitconditions.pro</a></li>
+</ul>
+<p>The Wait Conditions example shows how to use QWaitCondition and <a href="qmutex.html">QMutex</a> to control access to a circular buffer shared by a producer thread and a consumer thread.</p>
+<p>The producer writes data to the buffer until it reaches the end of the buffer, at which point it restarts from the beginning, overwriting existing data. The consumer thread reads the data as it is produced and writes it to standard error.</p>
+<p>Wait conditions make it possible to have a higher level of concurrency than what is possible with mutexes alone. If accesses to the buffer were simply guarded by a <a href="qmutex.html">QMutex</a>, the consumer thread couldn't access the buffer at the same time as the producer thread. Yet, there is no harm in having both threads working on <i>different parts</i> of the buffer at the same time.</p>
+<p>The example comprises two classes: <tt>Producer</tt> and <tt>Consumer</tt>. Both inherit from <a href="qthread.html">QThread</a>. The circular buffer used for communicating between these two classes and the synchronization tools that protect it are global variables.</p>
+<p>An alternative to using QWaitCondition and <a href="qmutex.html">QMutex</a> to solve the producer-consumer problem is to use <a href="qsemaphore.html">QSemaphore</a>. This is what the <a href="threads-semaphores.html">Semaphores</a> example does.</p>
+<a name="global-variables"></a>
+<h2>Global Variables</h2>
+<p>Let's start by reviewing the circular buffer and the associated synchronization tools:</p>
+<pre> const int DataSize = 100000;
+ const int BufferSize = 8192;
+ char buffer[BufferSize];
+
+ QWaitCondition bufferNotEmpty;
+ QWaitCondition bufferNotFull;
+ QMutex mutex;
+ int numUsedBytes = 0;</pre>
+<p><tt>DataSize</tt> is the amount of data that the producer will generate. To keep the example as simple as possible, we make it a constant. <tt>BufferSize</tt> is the size of the circular buffer. It is less than <tt>DataSize</tt>, meaning that at some point the producer will reach the end of the buffer and restart from the beginning.</p>
+<p>To synchronize the producer and the consumer, we need two wait conditions and one mutex. The <tt>bufferNotEmpty</tt> condition is signalled when the producer has generated some data, telling the consumer that it can start reading it. The <tt>bufferNotFull</tt> condition is signalled when the consumer has read some data, telling the producer that it can generate more. The <tt>numUsedBytes</tt> is the number of bytes in the buffer that contain data.</p>
+<p>Together, the wait conditions, the mutex, and the <tt>numUsedBytes</tt> counter ensure that the producer is never more than <tt>BufferSize</tt> bytes ahead of the consumer, and that the consumer never reads data that the consumer hasn't generated yet.</p>
+<a name="producer-class"></a>
+<h2>Producer Class</h2>
+<p>Let's review the code for the <tt>Producer</tt> class:</p>
+<pre> class Producer : public QThread
+ {
+ public:
+     void run();
+ };
+
+ void Producer::run()
+ {
+     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
+
+     for (int i = 0; i &lt; DataSize; ++i) {
+         mutex.lock();
+         if (numUsedBytes == BufferSize)
+             bufferNotFull.wait(&amp;mutex);
+         mutex.unlock();
+
+         buffer[i % BufferSize] = &quot;ACGT&quot;[(int)qrand() % 4];
+
+         mutex.lock();
+         ++numUsedBytes;
+         bufferNotEmpty.wakeAll();
+         mutex.unlock();
+     }
+ }</pre>
+<p>The producer generates <tt>DataSize</tt> bytes of data. Before it writes a byte to the circular buffer, it must first check whether the buffer is full (i.e&#x2e;, <tt>numUsedBytes</tt> equals <tt>BufferSize</tt>). If the buffer is full, the thread waits on the <tt>bufferNotFull</tt> condition.</p>
+<p>At the end, the producer increments <tt>numUsedBytes</tt> and signalls that the condition <tt>bufferNotEmpty</tt> is true, since <tt>numUsedBytes</tt> is necessarily greater than 0.</p>
+<p>We guard all accesses to the <tt>numUsedBytes</tt> variable with a mutex. In addition, the <a href="qwaitcondition.html#wait">QWaitCondition::wait</a>() function accepts a mutex as its argument. This mutex is unlocked before the thread is put to sleep and locked when the thread wakes up. Furthermore, the transition from the locked state to the wait state is atomic, to prevent race conditions from occurring.</p>
+<a name="consumer-class"></a>
+<h2>Consumer Class</h2>
+<p>Let's turn to the <tt>Consumer</tt> class:</p>
+<pre> class Consumer : public QThread
+ {
+ public:
+     void run();
+ };
+
+ void Consumer::run()
+ {
+     for (int i = 0; i &lt; DataSize; ++i) {
+         mutex.lock();
+         if (numUsedBytes == 0)
+             bufferNotEmpty.wait(&amp;mutex);
+         mutex.unlock();
+
+         fprintf(stderr, &quot;%c&quot;, buffer[i % BufferSize]);
+
+         mutex.lock();
+         --numUsedBytes;
+         bufferNotFull.wakeAll();
+         mutex.unlock();
+     }
+     fprintf(stderr, &quot;\n&quot;);
+ }</pre>
+<p>The code is very similar to the producer. Before we read the byte, we check whether the buffer is empty (<tt>numUsedBytes</tt> is 0) instead of whether it's full and wait on the <tt>bufferNotEmpty</tt> condition if it's empty. After we've read the byte, we decrement <tt>numUsedBytes</tt> (instead of incrementing it), and we signal the <tt>bufferNotFull</tt> condition (instead of the <tt>bufferNotEmpty</tt> condition).</p>
+<a name="the-main-function"></a>
+<h2>The main() Function</h2>
+<p>In <tt>main()</tt>, we create the two threads and call <a href="qthread.html#wait">QThread::wait</a>() to ensure that both threads get time to finish before we exit:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QCoreApplication app(argc, argv);
+     Producer producer;
+     Consumer consumer;
+     producer.start();
+     consumer.start();
+     producer.wait();
+     consumer.wait();
+     return 0;
+ }</pre>
+<p>So what happens when we run the program? Initially, the producer thread is the only one that can do anything; the consumer is blocked waiting for the <tt>bufferNotEmpty</tt> condition to be signalled (<tt>numUsedBytes</tt> is 0). Once the producer has put one byte in the buffer, <tt>numUsedBytes</tt> is <tt>BufferSize</tt> - 1 and the <tt>bufferNotEmpty</tt> condition is signalled. At that point, two things can happen: Either the consumer thread takes over and reads that byte, or the consumer gets to produce a second byte.</p>
+<p>The producer-consumer model presented in this example makes it possible to write highly concurrent multithreaded applications. On a multiprocessor machine, the program is potentially up to twice as fast as the equivalent mutex-based program, since the two threads can be active at the same time on different parts of the buffer.</p>
+<p>Be aware though that these benefits aren't always realized. Locking and unlocking a <a href="qmutex.html">QMutex</a> has a cost. In practice, it would probably be worthwhile to divide the buffer into chunks and to operate on chunks instead of individual bytes. The buffer size is also a parameter that must be selected carefully, based on experimentation.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

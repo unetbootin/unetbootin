@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/dom/qdom.cpp -->
+<head>
+  <title>Qt 4.4: QDomProcessingInstruction Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDomProcessingInstruction Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QDomProcessingInstruction class represents an XML processing instruction. <a href="#details">More...</a></p>
+<pre> #include &lt;QDomProcessingInstruction&gt;</pre><p>Inherits <a href="qdomnode.html">QDomNode</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdomprocessinginstruction-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdomprocessinginstruction.html#QDomProcessingInstruction">QDomProcessingInstruction</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdomprocessinginstruction.html#QDomProcessingInstruction-2">QDomProcessingInstruction</a></b> ( const QDomProcessingInstruction &amp; <i>x</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdomprocessinginstruction.html#data">data</a></b> () const</li>
+<li><div class="fn"/>QDomNode::NodeType <b><a href="qdomprocessinginstruction.html#nodeType">nodeType</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdomprocessinginstruction.html#setData">setData</a></b> ( const QString &amp; <i>d</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdomprocessinginstruction.html#target">target</a></b> () const</li>
+<li><div class="fn"/>QDomProcessingInstruction &amp; <b><a href="qdomprocessinginstruction.html#operator-eq">operator=</a></b> ( const QDomProcessingInstruction &amp; <i>x</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>66 public functions inherited from <a href="qdomnode.html#public-functions">QDomNode</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDomProcessingInstruction class represents an XML processing instruction.</p>
+<p>Processing instructions are used in XML to keep processor-specific information in the text of the document.</p>
+<p>The XML declaration that appears at the top of an XML document, typically <tt>&lt;?xml version='1.0' encoding='UTF-8'?&gt;</tt>, is treated by QDom as a processing instruction. This is unfortunate, since the XML declaration is not a processing instruction; among other differences, it cannot be inserted into a document anywhere but on the first line.</p>
+<p>Do not use this function to create an xml declaration, since although it has the same syntax as a processing instruction, it isn't, and might not be treated by QDom as such.</p>
+<p>The content of the processing instruction is retrieved with <a href="qdomprocessinginstruction.html#data">data</a>() and set with <a href="qdomprocessinginstruction.html#setData">setData</a>(). The processing instruction's target is retrieved with <a href="qdomprocessinginstruction.html#target">target</a>().</p>
+<p>For further information about the Document Object Model see <a href="http://www.w3.org/TR/REC-DOM-Level-1/">Level 1</a> and <a href="http://www.w3.org/TR/DOM-Level-2-Core/">Level 2 Core</a>. For a more general introduction of the DOM implementation see the <a href="qdomdocument.html">QDomDocument</a> documentation.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDomProcessingInstruction"></a>QDomProcessingInstruction::QDomProcessingInstruction ()</h3>
+<p>Constructs an empty processing instruction. Use <a href="qdomdocument.html#createProcessingInstruction">QDomDocument::createProcessingInstruction</a>() to create a processing instruction with content.</p>
+<h3 class="fn"><a name="QDomProcessingInstruction-2"></a>QDomProcessingInstruction::QDomProcessingInstruction ( const QDomProcessingInstruction &amp; <i>x</i> )</h3>
+<p>Constructs a copy of <i>x</i>.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<h3 class="fn"><a name="data"></a><a href="qstring.html">QString</a> QDomProcessingInstruction::data () const</h3>
+<p>Returns the content of this processing instruction.</p>
+<p>See also <a href="qdomprocessinginstruction.html#setData">setData</a>() and <a href="qdomprocessinginstruction.html#target">target</a>().</p>
+<h3 class="fn"><a name="nodeType"></a><a href="qdomnode.html#NodeType-enum">QDomNode::NodeType</a> QDomProcessingInstruction::nodeType () const</h3>
+<p>Returns <tt>ProcessingInstructionNode</tt>.</p>
+<h3 class="fn"><a name="setData"></a>void QDomProcessingInstruction::setData ( const <a href="qstring.html">QString</a> &amp; <i>d</i> )</h3>
+<p>Sets the data contained in the processing instruction to <i>d</i>.</p>
+<p>See also <a href="qdomprocessinginstruction.html#data">data</a>().</p>
+<h3 class="fn"><a name="target"></a><a href="qstring.html">QString</a> QDomProcessingInstruction::target () const</h3>
+<p>Returns the target of this processing instruction.</p>
+<p>See also <a href="qdomprocessinginstruction.html#data">data</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QDomProcessingInstruction &amp; QDomProcessingInstruction::operator= ( const QDomProcessingInstruction &amp; <i>x</i> )</h3>
+<p>Assigns <i>x</i> to this processing instruction.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,191 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Qt/Mac documentation
+**
+** Copyright (C) 2002-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+**
+** This file may be distributed under the terms of the Q Public License
+** as defined by Trolltech ASA of Norway and appearing in the file
+** LICENSE.QPL included in the packaging of this file.
+**
+** This file may be distributed and/or modified under the terms of the
+** GNU General Public License version 2 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+** See http://www.trolltech.com/pricing.html or email sales@trolltech.com for
+**   information about Qt Commercial License Agreements.
+** See http://www.trolltech.com/qpl/ for QPL licensing information.
+** See http://www.trolltech.com/gpl/ for GPL licensing information.
+**
+** Contact info@trolltech.com if any conditions of this licensing are
+** not clear to you.
+**
+**********************************************************************/
+
+/*!
+    \page qtmac-as-native.html
+    \title Qt/Mac is Mac OS X Native
+    \brief An explanation of Qt/Mac's native features on Mac OS X.
+    \ingroup platform-notes
+
+    This document explains what makes an application native on Mac OS X.
+    It shows the areas where Qt/Mac is compliant, and the grey areas where
+    compliance is more questionable. (See also the document 
+    \l{mac-differences.html}{Qt/Mac-Specific Issues}.)
+
+    Normally when referring to a native Mac application, one really means an
+    application that talks directly to the underlying window system, rather
+    than one that uses some intermediary (for example Apple's X11 server, or a
+    web browser). Qt/Mac applications run as first class citizens, just like
+    Cocoa, and Carbon applications. In fact, we use Carbon and HIView
+    internally to communicate with OS X.
+
+    When an application is running as a first class citizen, it means that
+    it can interact with specific components of the Mac OS X experience:
+
+    \tableofcontents
+
+    \section1 The Global Menu Bar
+
+    Qt/Mac does this via the QMenuBar abstraction. Mac users expect to
+    have a menu bar at the top of the screen and Qt/Mac honors this.
+
+    Additionally, users expect certain conventions to be respected, for
+    example the application menu should contain About, Preferences,
+    Quit, etc. Qt/Mac handles this automatically, although it does not
+    provide a means of interacting directly with the application menu.
+    (By doing this automatically, Qt/Mac makes it easier to port Qt/Mac
+    applications to other platforms.)
+
+    \section1 Aqua
+
+    This is a critical piece of Mac OS X (documentation can be found at
+    \l{http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/index.html}).
+    It is a huge topic, but the most important guidelines for GUI
+    design are probably these:
+
+    \list
+    \i \e{Aqua look}
+
+      As with Cocoa/Carbon, Qt/Mac provides widgets that look like those
+      described in the Human Interface Descriptions. Qt/Mac's widgets use
+      Appearance Manager on Mac OS X 10.2 and the new HIThemes on Mac OS X 10.3
+      and higher to implement the look, in other words we use Apple's own API's
+      for doing the rendering.
+
+    \i \e{Aqua feel}
+
+      This is a bit more subjective, but certainly Qt/Mac strives to
+      provide the same feel as any Mac OS X application (and we
+      consider situations where it doesn't achieve this to be bugs).
+      Of course Qt has other concerns to bear in mind, especially
+      remaining cross-platform. Some "baggage" that Qt carries is in
+      an effort to provide a widget on a platform for which an
+      equivelant doesn't exist, or so that a single API can be used to
+      do something, even if the API doesn't make entire sense for a
+      specific widget.
+
+    \i \e{Aqua guides}
+
+      This is the most subjective, but there are many suggestions and
+      guidelines in the Aqua style guidelines. This is the area where Qt/Mac is
+      of least assistance. The decisions that must be made to conform (widget
+      sizes, widget layouts with respect to other widgets, window margins,
+      placement of OK and Cancel, etc) must be made based on the user
+      experience demanded by your application. If your user base is small or
+      mostly comes from the Windows or Unix worlds, these are minor issues much
+      less important than trying to make a mass market product. Qt/Mac is fully
+      API compatible with Qt/Windows and Qt/X11, but Mac OS X is a
+      significantly different platform to Windows and some special
+      considerations must be made based on your audience.
+
+    \endlist
+
+    \section1 Dock
+
+    Interaction with the dock is possible. The icon can be set by calling
+    QWidget::setWindowIcon() on the main window in your application. The
+    setWindowIcon() call can be made as often as necessary, providing an
+    icon that can be easily updated.
+    \omit
+    It is also possible to set a QMenu as the dock menu through the use of the
+    qt_mac_set_dock_menu() function.
+    \endomit
+
+    \section1 Accessiblity
+
+    Although many users never use this, some users will only interact with your
+    applications via assistive devices. With Qt the aim is to make this
+    automatic in your application so that it conforms to accepted practice on
+    its platform. Qt/Mac uses Apple's accessibility framework to provide access
+    to users with diabilities.
+
+    \section1 Development Tools
+
+    Mac OS X developers expect a certain level of interopability
+    between their development toolkit and the platform's developer
+    tools (for example Visual Studio, gmake, etc). Qt/Mac supports both Unix
+    style Makefiles, and ProjectBuilder/Xcode project files by using
+    the \l qmake tool. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qtmac-as-native.qdoc 0
+
+    will generate an Xcode project file from project.pro. With \l qmake
+    you do not have to worry about rules for Qt's preprocessors (\l moc
+    and \l uic) since \l qmake automatically handles them and ensures that
+    everything necessary is linked into your application.
+
+    Qt does not entirely interact with the development environment (for
+    example plugins to set a file to "mocable" from within the Xcode
+    user interface). Trolltech is actively working on improving Qt's
+    interoperability with various IDEs.
+*/

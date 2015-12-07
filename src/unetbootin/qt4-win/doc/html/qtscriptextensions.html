@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtscriptextensions.qdoc -->
+<head>
+  <title>Qt 4.4: Creating QtScript Extensions</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Creating QtScript Extensions<br /><span class="subtitle"></span>
+</h1>
+<p><a href="qtscript.html">QtScript</a> extensions can make additional functionality available to scripts evaluated by a <a href="qscriptengine.html">QScriptEngine</a>. Extensions are imported by calling the <a href="qscriptengine.html#importExtension">QScriptEngine::importExtension</a>() function.</p>
+<p>There are three ways to create an extension:</p>
+<ul>
+<li>Subclass <a href="qscriptextensionplugin.html">QScriptExtensionPlugin</a> and implement the desired functionality.</li>
+<li>Implement the functionality in a script file.</li>
+<li>Use a hybrid approach, where part of the functionality is implemented in a <a href="qscriptextensionplugin.html">QScriptExtensionPlugin</a>, and part is implemented in a script file.</li>
+</ul>
+<p>The (dot-qualified) extension name is used to determine the path (relative to the application's plugin path) where <a href="qscriptengine.html">QScriptEngine</a> will look for the script file that will initialize the extension; if a file called <tt>__init__.js</tt> is found in the corresponding folder, its contents will be evaluated by the engine when the extension is imported. As an example, if the extension is called <tt>&quot;foo.bar.baz&quot;</tt>, the engine will look for <tt>__init__.js</tt> in <tt>foo/bar/baz</tt>. Additionally, before importing <tt>&quot;foo.bar.baz&quot;</tt>, the engine will ensure that the extensions <tt>&quot;foo&quot;</tt> and <tt>&quot;foo.bar&quot;</tt> are imported, locating and evaluating the corresponding <tt>__init__.js</tt> in the same manner (in folders <tt>foo</tt> and <tt>foo/bar</tt>, respectively).</p>
+<p>The contents of <tt>__init__.js</tt> are evaluated in a new <a href="qscriptcontext.html">QScriptContext</a>, as if it were the body of a function. The engine's Global Object acts as the <tt>this</tt> object. The following local variables are initially available to the script:</p>
+<ul>
+<li><b>__extension__</b>: The name of the extension (e.g&#x2e; <tt>&quot;foo.bar.baz&quot;</tt>).</li>
+<li><b>__setupPackage__</b>: A convenience function for setting up a &quot;namespace&quot; in the script environment. A typical application is to call <tt>__setupPackage__()</tt> with <tt>__extension__</tt> as argument; e.g&#x2e; <tt>__setupPackage__(&quot;foo.bar.baz&quot;)</tt> would ensure that the object chain represented by the expression <tt>foo.bar.baz</tt> exists in the script environment. (This function is semantically equivalent to <a href="qscriptextensionplugin.html#setupPackage">QScriptExtensionPlugin::setupPackage</a>().)</li>
+<li><b>__postInit__</b>: By default, this variable is undefined. If you assign a function to it, that function will be called <b>after</b> the C++ plugin's initialize() function has been called. You can use this to perform further initialization that depends on e.g&#x2e; native functions that the C++ plugin registers.</li>
+</ul>
+<p>An example of a simple <tt>__init__.js</tt>:</p>
+<pre>         print(&quot;importing &quot; + __extension__);
+         __setupPackage__(&quot;cool.stuff&quot;);
+
+         cool.stuff.add = function(a, b) { return a + b; }
+         cool.stuff.subtract = function(a, b) { return a - b; }</pre>
+<p><a href="qscriptengine.html">QScriptEngine</a> will look for a <a href="qscriptextensionplugin.html">QScriptExtensionPlugin</a> that provides the relevant extension by querying each plugin for its keys() until a match is found. The plugin's initialize() function will be called <b>after</b> the relevant <tt>__init__.js</tt> (if any) has been evaluated.</p>
+<p>Continuining with the example of our imaginary extension <tt>&quot;foo.bar.baz&quot;</tt>, the following steps will be performed by <a href="qscriptengine.html#importExtension">QScriptEngine::importExtension</a>():</p>
+<ul>
+<li>If it exists, <tt>foo/__init__.js</tt> is evaluated.</li>
+<li>If a plugin with <tt>&quot;foo&quot;</tt> in its list of keys is found, its initialize() function is called with <tt>&quot;foo&quot;</tt> as key.</li>
+<li>If it exists, <tt>foo/bar/__init__.js</tt> is evaluated.</li>
+<li>If a plugin with <tt>&quot;foo.bar&quot;</tt> in its list of keys is found, its initialize() function is called with <tt>&quot;foo.bar&quot;</tt> as key.</li>
+<li>If it exists, <tt>foo/bar/baz/__init__.js</tt> is evaluated.</li>
+<li>If a plugin with &quot;foo.bar.baz&quot; in its list of keys is found, its initialize() function is called with <tt>&quot;foo.bar.baz&quot;</tt> as key.</li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

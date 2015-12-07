@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/plugandpaint.qdoc -->
+<head>
+  <title>Qt 4.4: Plug &amp; Paint Basic Tools Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Plug &amp; Paint Basic Tools Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-plugandpaintplugins-basictools-basictoolsplugin-cpp.html">tools/plugandpaintplugins/basictools/basictoolsplugin.cpp</a></li>
+<li><a href="tools-plugandpaintplugins-basictools-basictoolsplugin-h.html">tools/plugandpaintplugins/basictools/basictoolsplugin.h</a></li>
+<li><a href="tools-plugandpaintplugins-basictools-basictools-pro.html">tools/plugandpaintplugins/basictools/basictools.pro</a></li>
+</ul>
+<p>The Basic Tools example is a static plugin for the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example. It provides a set of basic brushes, shapes, and filters. Through the Basic Tools example, we will review the four steps involved in writing a Qt plugin:</p>
+<ol type="1">
+<li>Declare a plugin class.</li>
+<li>Implement the interfaces provided by the plugin.</li>
+<li>Export the plugin using the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro.</li>
+<li>Build the plugin using an adequate <tt>.pro</tt> file.</li>
+</ol>
+<a name="declaration-of-the-plugin-class"></a>
+<h2>Declaration of the Plugin Class</h2>
+<pre> #include &lt;plugandpaint/interfaces.h&gt;
+
+ class BasicToolsPlugin : public QObject,
+                          public BrushInterface,
+                          public ShapeInterface,
+                          public FilterInterface
+ {
+     Q_OBJECT
+     Q_INTERFACES(BrushInterface ShapeInterface FilterInterface)</pre>
+<p>We start by including <tt>interfaces.h</tt>, which defines the plugin interfaces for the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application. For the <tt>#include</tt> to work, we need to add an <tt>INCLUDEPATH</tt> entry to the <tt>.pro</tt> file with the path to Qt's <tt>examples/tools</tt> directory.</p>
+<p>The <tt>BasicToolsPlugin</tt> class is a <a href="qobject.html">QObject</a> subclass that implements the <tt>BrushInterface</tt>, the <tt>ShapeInterface</tt>, and the <tt>FilterInterface</tt>. This is done through multiple inheritance. The <tt>Q_INTERFACES()</tt> macro is necessary to tell <a href="moc.html#moc">moc</a>, Qt's meta-object compiler, that the base classes are plugin interfaces. Without the <tt>Q_INTERFACES()</tt> macro, we couldn't use <a href="qobject.html#qobject_cast">qobject_cast</a>() in the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> application to detect interfaces.</p>
+<pre> public:
+     <span class="comment">//</span> BrushInterface
+     QStringList brushes() const;
+     QRect mousePress(const QString &amp;brush, QPainter &amp;painter,
+                      const QPoint &amp;pos);
+     QRect mouseMove(const QString &amp;brush, QPainter &amp;painter,
+                     const QPoint &amp;oldPos, const QPoint &amp;newPos);
+     QRect mouseRelease(const QString &amp;brush, QPainter &amp;painter,
+                        const QPoint &amp;pos);
+
+     <span class="comment">//</span> ShapeInterface
+     QStringList shapes() const;
+     QPainterPath generateShape(const QString &amp;shape, QWidget *parent);
+
+     <span class="comment">//</span> FilterInterface
+     QStringList filters() const;
+     QImage filterImage(const QString &amp;filter, const QImage &amp;image,
+                        QWidget *parent);
+ };</pre>
+<p>In the <tt>public</tt> section of the class, we declare all the functions from the three interfaces.</p>
+<a name="implementation-of-the-brush-interface"></a>
+<h2>Implementation of the Brush Interface</h2>
+<p>Let's now review the implementation of the <tt>BasicToolsPlugin</tt> member functions inherited from <tt>BrushInterface</tt>.</p>
+<pre> QStringList BasicToolsPlugin::brushes() const
+ {
+     return QStringList() &lt;&lt; tr(&quot;Pencil&quot;) &lt;&lt; tr(&quot;Air Brush&quot;)
+                          &lt;&lt; tr(&quot;Random Letters&quot;);
+ }</pre>
+<p>The <tt>brushes()</tt> function returns a list of brushes provided by this plugin. We provide three brushes: <b>Pencil</b>, <b>Air Brush</b>, and <b>Random Letters</b>.</p>
+<pre> QRect BasicToolsPlugin::mousePress(const QString &amp;brush, QPainter &amp;painter,
+                                    const QPoint &amp;pos)
+ {
+     return mouseMove(brush, painter, pos, pos);
+ }</pre>
+<p>On a mouse press event, we just call <tt>mouseMove()</tt> to draw the spot where the event occurred.</p>
+<pre> QRect BasicToolsPlugin::mouseMove(const QString &amp;brush, QPainter &amp;painter,
+                                   const QPoint &amp;oldPos, const QPoint &amp;newPos)
+ {
+     painter.save();
+
+     int rad = painter.pen().width() / 2;
+     QRect boundingRect = QRect(oldPos, newPos).normalized()
+                                               .adjusted(-rad, -rad, +rad, +rad);
+     QColor color = painter.pen().color();
+     int thickness = painter.pen().width();
+     QColor transparentColor(color.red(), color.green(), color.blue(), 0);</pre>
+<p>In <tt>mouseMove()</tt>, we start by saving the state of the <a href="qpainter.html">QPainter</a> and we compute a few variables that we'll need later.</p>
+<pre>     if (brush == tr(&quot;Pencil&quot;)) {
+         painter.drawLine(oldPos, newPos);
+     } else if (brush == tr(&quot;Air Brush&quot;)) {
+         int numSteps = 2 + (newPos - oldPos).manhattanLength() / 2;
+
+         painter.setBrush(QBrush(color, Qt::Dense6Pattern));
+         painter.setPen(Qt::NoPen);
+
+         for (int i = 0; i &lt; numSteps; ++i) {
+             int x = oldPos.x() + i * (newPos.x() - oldPos.x()) / (numSteps - 1);
+             int y = oldPos.y() + i * (newPos.y() - oldPos.y()) / (numSteps - 1);
+
+             painter.drawEllipse(x - (thickness / 2), y - (thickness / 2),
+                                 thickness, thickness);
+         }
+     } else if (brush == tr(&quot;Random Letters&quot;)) {
+         QChar ch('A' + (qrand() % 26));
+
+         QFont biggerFont = painter.font();
+         biggerFont.setBold(true);
+         biggerFont.setPointSize(biggerFont.pointSize() + thickness);
+         painter.setFont(biggerFont);
+
+         painter.drawText(newPos, QString(ch));
+
+         QFontMetrics metrics(painter.font());
+         boundingRect = metrics.boundingRect(ch);
+         boundingRect.translate(newPos);
+         boundingRect.adjust(-10, -10, +10, +10);
+     }
+     painter.restore();
+     return boundingRect;
+ }</pre>
+<p>Then comes the brush-dependent part of the code:</p>
+<ul>
+<li>If the brush is <b>Pencil</b>, we just call <a href="qpainter.html#drawLine">QPainter::drawLine</a>() with the current <a href="qpen.html">QPen</a>.</li>
+<li>If the brush is <b>Air Brush</b>, we start by setting the painter's <a href="qbrush.html">QBrush</a> to <a href="qt.html#BrushStyle-enum">Qt::Dense6Pattern</a> to obtain a dotted pattern. Then we draw a circle filled with that <a href="qbrush.html">QBrush</a> several times, resulting in a thick line.</li>
+<li>If the brush is <b>Random Letters</b>, we draw a random letter at the new cursor position. Most of the code is for setting the font to be bold and larger than the default font and for computing an appropriate bounding rect.</li>
+</ul>
+<p>At the end, we restore the painter state to what it was upon entering the function and we return the bounding rectangle.</p>
+<pre> QRect BasicToolsPlugin::mouseRelease(const QString &amp; <span class="comment">/* brush */</span>,
+                                      QPainter &amp; <span class="comment">/* painter */</span>,
+                                      const QPoint &amp; <span class="comment">/* pos */</span>)
+ {
+     return QRect(0, 0, 0, 0);
+ }</pre>
+<p>When the user releases the mouse, we do nothing and return an empty <a href="qrect.html">QRect</a>.</p>
+<a name="implementation-of-the-shape-interface"></a>
+<h2>Implementation of the Shape Interface</h2>
+<pre> QStringList BasicToolsPlugin::shapes() const
+ {
+     return QStringList() &lt;&lt; tr(&quot;Circle&quot;) &lt;&lt; tr(&quot;Star&quot;) &lt;&lt; tr(&quot;Text...&quot;);
+ }</pre>
+<p>The plugin provides three shapes: <b>Circle</b>, <b>Star</b>, and <b>Text..&#x2e;</b>. The three dots after <b>Text</b> are there because the shape pops up a dialog asking for more information. We know that the shape names will end up in a menu, so we include the three dots in the shape name.</p>
+<p>A cleaner but more complicated design would have been to distinguish between the internal shape name and the name used in the user interface.</p>
+<pre> QPainterPath BasicToolsPlugin::generateShape(const QString &amp;shape,
+                                              QWidget *parent)
+ {
+     QPainterPath path;
+
+     if (shape == tr(&quot;Circle&quot;)) {
+         path.addEllipse(0, 0, 50, 50);
+     } else if (shape == tr(&quot;Star&quot;)) {
+         path.moveTo(90, 50);
+         for (int i = 1; i &lt; 5; ++i) {
+             path.lineTo(50 + 40 * cos(0.8 * i * Pi),
+                         50 + 40 * sin(0.8 * i * Pi));
+         }
+         path.closeSubpath();
+     } else if (shape == tr(&quot;Text...&quot;)) {
+         QString text = QInputDialog::getText(parent, tr(&quot;Text Shape&quot;),
+                                              tr(&quot;Enter text:&quot;),
+                                              QLineEdit::Normal, tr(&quot;Qt&quot;));
+         if (!text.isEmpty()) {
+             QFont timesFont(&quot;Times&quot;, 50);
+             timesFont.setStyleStrategy(QFont::ForceOutline);
+             path.addText(0, 0, timesFont, text);
+         }
+     }
+
+     return path;
+ }</pre>
+<p>The <tt>generateShape()</tt> creates a <a href="qpainterpath.html">QPainterPath</a> for the specified shape. If the shape is <b>Text</b>, we pop up a <a href="qinputdialog.html">QInputDialog</a> to let the user enter some text.</p>
+<a name="implementation-of-the-filter-interface"></a>
+<h2>Implementation of the Filter Interface</h2>
+<pre> QStringList BasicToolsPlugin::filters() const
+ {
+     return QStringList() &lt;&lt; tr(&quot;Invert Pixels&quot;) &lt;&lt; tr(&quot;Swap RGB&quot;)
+                          &lt;&lt; tr(&quot;Grayscale&quot;);
+ }</pre>
+<p>The plugin provides three filters: <b>Invert Pixels</b>, <b>Swap RGB</b>, and <b>Grayscale</b>.</p>
+<pre> QImage BasicToolsPlugin::filterImage(const QString &amp;filter, const QImage &amp;image,
+                                      QWidget * <span class="comment">/* parent */</span>)
+ {
+     QImage result = image.convertToFormat(QImage::Format_RGB32);
+
+     if (filter == tr(&quot;Invert Pixels&quot;)) {
+         result.invertPixels();
+     } else if (filter == tr(&quot;Swap RGB&quot;)) {
+         result = result.rgbSwapped();
+     } else if (filter == tr(&quot;Grayscale&quot;)) {
+         for (int y = 0; y &lt; result.height(); ++y) {
+             for (int x = 0; x &lt; result.width(); ++x) {
+                 int pixel = result.pixel(x, y);
+                 int gray = qGray(pixel);
+                 int alpha = qAlpha(pixel);
+                 result.setPixel(x, y, qRgba(gray, gray, gray, alpha));
+             }
+         }
+     }
+     return result;
+ }</pre>
+<p>The <tt>filterImage()</tt> function takes a filter name and a <a href="qimage.html">QImage</a> as parameters and returns an altered <a href="qimage.html">QImage</a>. The first thing we do is to convert the image to a 32-bit RGB format, to ensure that the algorithms will work as expected. For example, <a href="qimage.html#invertPixels">QImage::invertPixels</a>(), which is used to implement the <b>Invert Pixels</b> filter, gives counterintuitive results for 8-bit images, because they invert the indices into the color table instead of inverting the color table's entries.</p>
+<a name="exporting-the-plugin"></a>
+<h2>Exporting the Plugin</h2>
+<p>Whereas applications have a <tt>main()</tt> function as their entry point, plugins need to contain exactly one occurrence of the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro to specify which class provides the plugin:</p>
+<pre> Q_EXPORT_PLUGIN2(pnp_basictools, BasicToolsPlugin)</pre>
+<p>This line may appear in any <tt>.cpp</tt> file that is part of the plugin's source code.</p>
+<a name="the-pro-file"></a>
+<h2>The .pro File</h2>
+<p>Here's the project file for building the Basic Tools plugin:</p>
+<pre> TEMPLATE      = lib
+ CONFIG       += plugin static
+ INCLUDEPATH  += ../..
+ HEADERS       = basictoolsplugin.h
+ SOURCES       = basictoolsplugin.cpp
+ TARGET        = $$qtLibraryTarget(pnp_basictools)
+ DESTDIR       = ../../plugandpaint/plugins</pre>
+<p>The <tt>.pro</tt> file differs from typical <tt>.pro</tt> files in many respects. First, it starts with a <tt>TEMPLATE</tt> entry specifying <tt>lib</tt>. (The default template is <tt>app</tt>.) It also adds <tt>plugin</tt> to the <tt>CONFIG</tt> variable. This is necessary on some platforms to avoid generating symbolic links with version numbers in the file name, which is appropriate for most dynamic libraries but not for plugins.</p>
+<p>To make the plugin a static plugin, all that is required is to specify <tt>static</tt> in addition to <tt>plugin</tt>. The <a href="tools-plugandpaintplugins-extrafilters.html">Extra Filters</a> plugin, which is compiled as a dynamic plugin, doesn't specify <tt>static</tt> in its <tt>.pro</tt> file.</p>
+<p>The <tt>INCLUDEPATH</tt> variable sets the search paths for global headers (i.e&#x2e;, header files included using <tt>#include &lt;...&gt;</tt>). We add Qt's <tt>examples/tools</tt> directory (strictly speaking, <tt>examples/tools/plugandpaintplugins/basictools/../..</tt>) to the list, so that we can include <tt>&lt;plugandpaint/interfaces.h&gt;</tt>.</p>
+<p>The <tt>TARGET</tt> variable specifies which name we want to give the target library. We use <tt>pnp_</tt> as the prefix to show that the plugin is designed to work with Plug &amp; Paint. On Unix, <tt>lib</tt> is also prepended to that name. On all platforms, a platform-specific suffix is appended (e.g&#x2e;, <tt>.dll</tt> on Windows, <tt>.a</tt> on Linux).</p>
+<p>The <tt>CONFIG()</tt> code at the end is necessary for this example because the example is part of the Qt distribution and Qt can be configured to be built simultaneously in debug and in release modes. You don't need to for your own plugins.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

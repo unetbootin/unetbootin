@@ -1,0 +1,117 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page how-to-learn-qt.html
+    \brief Links to guides and resources for learning Qt.
+    \title How to Learn Qt
+    \ingroup howto
+
+    We assume that you already know C++ and will be using it for Qt
+    development. See the \l{Trolltech website} for more information about
+    using other programming languages with Qt.
+
+    The best way to learn Qt is to read the official Qt book,
+    \l{http://www.amazon.com/gp/product/0132354160/ref=ase_trolltech/}{C++
+    GUI Programming with Qt 4, Second Edition} (ISBN 0-13-235416-0). This book
+    provides comprehensive coverage of Qt programming all the way
+    from "Hello Qt" to advanced features such as multithreading, 2D and
+    3D graphics, networking, item view classes, and XML. (The first edition,
+    which is based on Qt 4.1, is available
+    \l{http://www.qtrac.eu/C++-GUI-Programming-with-Qt-4-1st-ed.zip}{online}.)
+
+    If you want to program purely in C++, designing your interfaces
+    in code without the aid of any design tools, take a look at the
+    \l{Tutorials}. These are designed to get you into Qt programming,
+    with an emphasis on working code rather than being a tour of features.
+
+    If you want to design your user interfaces using a design tool, then
+    read at least the first few chapters of the \l{Qt Designer manual}.
+
+    By now you'll have produced some small working applications and have a
+    broad feel for Qt programming. You could start work on your own
+    projects straight away, but we recommend reading a couple of key
+    overviews to deepen your understanding of Qt: \l{Qt Object Model}
+    and \l{Signals and Slots}.
+
+    At this point, we recommend looking at the
+    \l{All Overviews and HOWTOs}{overviews} and reading those that are
+    relevant to your projects. You may also find it useful to browse the
+    source code of the \l{Qt Examples}{examples} that have things in
+    common with your projects. You can also read Qt's source code since
+    this is supplied.
+
+    \table
+    \row \o \inlineimage qtdemo-small.png
+    \o \bold{Getting an Overview}
+
+    If you run the \l{Examples and Demos Launcher}, you'll see many of Qt's
+    widgets in action.
+
+    The \l{Qt Widget Gallery} also provides overviews of selected Qt
+    widgets in each of the styles used on various supported platforms.
+    \endtable
+
+    Qt comes with extensive documentation, with hypertext
+    cross-references throughout, so you can easily click your way to
+    whatever interests you. The part of the documentation that you'll
+    probably use the most is the \link index.html API
+    Reference\endlink. Each link provides a different way of
+    navigating the API Reference; try them all to see which work best
+    for you. You might also like to try \l{Qt Assistant}:
+    this tool is supplied with Qt and provides access to the entire
+    Qt API, and it provides a full text search facility.
+
+    There are also a growing number of books about Qt programming; see
+    \l{Books about Qt Programming} for a complete list of Qt books,
+    including translations to various languages.
+
+    Another valuable source of example code and explanations of Qt
+    features is the archive of articles from \l {http://doc.trolltech.com/qq}
+    {Qt Quarterly}, a quarterly newsletter for users of Qt.
+
+    For documentation on specific Qt modules and other guides, refer to
+    \l{All Overviews and HOWTOs}.
+
+    Good luck, and have fun!
+*/

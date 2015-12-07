@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt3to4.qdoc -->
+<head>
+  <title>Qt 4.4: qt3to4 - The Qt 3 to 4 Porting Tool</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">qt3to4 - The Qt 3 to 4 Porting Tool<br /><span class="subtitle"></span>
+</h1>
+<a name="qt3to4"></a><p>The <tt>qt3to4</tt> tool provides help when moving a project from Qt 3 to Qt 4. It is designed to automate the most tedious part of the porting effort.</p>
+<p>See <a href="porting4.html">Porting to Qt 4</a> and <a href="porting4-designer.html">Porting .ui Files to Qt 4</a> for more information about porting Qt 3 applications to Qt 4.</p>
+<a name="usage"></a>
+<h2>Usage</h2>
+<p><tt>qt3to4</tt> can be run either on individual C++ source or header files, or on an entire project specified by a <tt>qmake</tt> <tt>.pro</tt> file:</p>
+<pre>         qt3to4 myfile.cpp
+         qt3to4 myapp.pro</pre>
+<p>In project mode, <tt>qt3to4</tt> reads the <tt>.pro</tt> file and converts all files specified in it. The tool modifies the files in place. You might want to make a copy of your project before you run the tool.</p>
+<a name="porting-rules"></a>
+<h2>Porting Rules</h2>
+<p>The Qt porting tool loads its porting rules from an XML file called <tt>q3porting.xml</tt> located in Qt's <tt>tools/porting/src</tt> directory. By editing this file, you can add your own rules or remove some rules.</p>
+<p>The standard <tt>q3porting.xml</tt> file specifies the following conversions:</p>
+<ul>
+<li>Rename classes that are now part of the Qt 3 support library (e.g&#x2e;, replace <tt>QFileDialog</tt> with <tt>Q3FileDialog</tt>).</li>
+<li>Prefix or rename enum values that have been moved or renamed (e.g&#x2e;, replace <tt>QButton::On</tt> with <tt>QCheckBox::On</tt>) or members of the Qt namespace (e.g&#x2e;, replace <tt>QWidget::red</tt> with <tt>Qt::red</tt>).</li>
+<li>Add <tt>#include</tt> directives that might be needed in Qt 4.</li>
+</ul>
+<a name="location-of-the-qt3porting-xml-file"></a>
+<h3>Location of the qt3porting.xml File</h3>
+<p>You can now specify the location of the <tt>qt3porting.xml</tt> file with the <tt>-f</tt> command line option. This is useful if you want to use a modified file with your own rules.</p>
+<p>If you you don't want to maintain a modified <tt>qt3porting.xml</tt> it is possible to create a &quot;patch&quot; file that includes the original file and adds or disables rules. The syntax for this file looks like this:</p>
+<pre>     &lt;Rules&gt;
+       &lt;Include&gt;/path/to/q3porting.xml&lt;/Include&gt;
+
+       &lt;item Type=&quot;RenamedHeader&quot; Disable=&quot;True&quot; &gt;
+         &lt;Qt4&gt;q3sqlselectcursor.h&lt;/Qt4&gt;
+         &lt;Qt3&gt;qsqlselectcursor.h&lt;/Qt3&gt;
+       &lt;/item&gt;
+
+       &lt;item Type=&quot;RenamedHeader&quot; &gt;
+         &lt;Qt4&gt;newclass.h&lt;/Qt4&gt;
+         &lt;Qt3&gt;oldclass.h&lt;/Qt3&gt;
+       &lt;/item&gt;
+     &lt;/Rules&gt;</pre>
+<a name="logging"></a>
+<h2>Logging</h2>
+<p>The porting tool logs all changes to a file called <tt>portinglog.txt</tt> in the current directory. This file lists all changes made to the source files.</p>
+<a name="advanced-usage"></a>
+<h2>Advanced Usage</h2>
+<p>When porting, <tt>qt3to4</tt> parses the source files and ports the contents according to the C++ language rules. This C++ parsing step can be disabled with the <tt>-disableCppParsing</tt> option.</p>
+<p>If C++ parsing is enabled, <tt>qt3to4</tt> must be able to locate the headers included from the source files. Necessary headers include the public Qt headers and any headers that declares names that may conflict with names in the public Qt headers. The standard C++ headers and system headers are usually not needed.</p>
+<p>You can tell <tt>qt3to4</tt> where to look for headers by using the <tt>-I</tt> command-line option. Qt 3.3 header information is built in, so it is normaly not necessary to specify the location of the Qt headers. If you are porting from a different version of Qt 3, you may want to disable the built-in headers with <tt>-disableBuiltInQt3Headers</tt>, and then add the path to the actual headers with the <tt>-I</tt> option.</p>
+<p>When porting a project, <tt>qt3to4</tt> will read the <tt>INCLUDEPATH</tt> and <tt>DEPENDPATH</tt> variables from the <tt>.pro</tt> file and add the paths specified here to the list of include search directories.</p>
+<p>To see which headers that are not found, use the <tt>-missingFileWarnings</tt> option.</p>
+<a name="limitations"></a>
+<h2>Limitations</h2>
+<p>In some cases, you might get compiler errors because of identifiers in the global namespace (e.g&#x2e;, <tt>CTRL</tt>). Adding</p>
+<pre>         using namespace Qt;</pre>
+<p>at the beginning of the source file that contains the indentifier solves the problem.</p>
+<a name="legal-notices"></a>
+<h2>Legal Notices</h2>
+<p>Some source code in <tt>qt3to4</tt> is licensed under specific highly permissive licenses from the original authors. Trolltech gratefully acknowledges these contributions to <tt>qt3to4</tt> and all uses of <tt>qt3to4</tt> should also acknowledge these contributions and quote the following license statements in an appendix to the documentation.</p>
+<ul>
+<li><a href="qt3to4-treewalker.html">Contributions to the Following qt3to4 Files: treewalker.h, treedump.cpp, treedump.h, treewalker.cpp</a></li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

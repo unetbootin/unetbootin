@@ -1,0 +1,98 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example itemviews/chart
+    \title Chart Example
+
+    The Chart example shows how to create a custom view for the model/view framework.
+
+    \image chart-example.png
+
+    In this example, the items in a table model are represented as slices in a pie chart,
+    relying on the flexibility of the model/view architecture to handle custom editing
+    and selection features.
+
+    \bold{Note that you only need to create a new view class if your data requires a
+    specialized representation.} You should first consider using a standard QListView,
+    QTableView, or QTreeView with a custom QItemDelegate subclass if you need to
+    represent data in a special way.
+
+    \omit
+    \section1 PieView Class Definition
+
+    The \c PieView class is a subclass of QAbstractItemView. The base class provides
+    much of the functionality required by view classes, so we only need to provide
+    implementations for three public functions: visualRect(), scrollTo(), and
+    indexAt(). However, the view needs to maintain strict control over its look and
+    feel, so we also provide implementations for a number of other functions:
+
+    \snippet examples/itemviews/chart/pieview.h 0
+
+
+
+    \section1 PieView Class Implementation
+
+    The paint event renders the data from the standard item model as a pie chart.
+    We interpret the data in the following way:
+
+    \list
+    \o Column 0 contains data in two different roles:
+       The \l{Qt::ItemDataRole}{DisplayRole} contains a label, and the
+       \l{Qt::ItemDataRole}{DecorationRole} contains the color of the pie slice.
+    \o Column 1 contains a quantity which we will convert to the angular extent of
+       the slice.
+    \endlist
+
+    The figure is always drawn with the chart on the left and the key on
+    the right. This means that we must try and obtain an area that is wider
+    than it is tall. We do this by imposing a particular aspect ratio on
+    the chart and applying it to the available vertical space. This ensures
+    that we always obtain the maximum horizontal space for the aspect ratio
+    used.
+    We also apply fixed size margin around the figure.
+
+    We use logical coordinates to draw the chart and key, and position them
+    on the view using viewports.
+    \endomit
+*/

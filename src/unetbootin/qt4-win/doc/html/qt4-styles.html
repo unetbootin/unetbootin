@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-styles.qdoc -->
+<head>
+  <title>Qt 4.4: The Qt 4 Style API</title>
+  <link rel="prev" href="qt4-network.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link rel="next" href="qt4-threads.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-network.html">The Network Module in Qt 4</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-threads.html">Thread Support in Qt 4</a>]
+</p>
+<h1 class="title">The Qt 4 Style API<br /><span class="subtitle"></span>
+</h1>
+<p>Qt's style API is responsible for performing the widget drawing for built-in widgets. The Qt 4 style API has been revised to make it possible for a style to draw widgets without calling any functions on the widget.</p>
+<p>Because Qt 4 is split across multiple libraries, Qt needed this update to be able to draw widgets from other libraries than <a href="qtgui.html">QtGui</a>. For application developers, this has other benefits, such as more managable parameter lists and the possibility of drawing any graphical element without having a widget of a specific type.</p>
+<a name="general-overview"></a>
+<h2>General Overview</h2>
+<p>The <a href="qstyle.html">QStyle</a> class is an abstract base class that encapsulates the look and feel of a GUI. Qt's built-in widgets use it to perform nearly all of their drawing, ensuring that they look exactly like the equivalent native widgets.</p>
+<p>Most draw functions now take four arguments:</p>
+<ul>
+<li>an enum value specifying which graphical element to draw</li>
+<li>a <a href="qstyleoption.html">QStyleOption</a> specifying how and where to render that element</li>
+<li>a <a href="qpainter.html">QPainter</a> that should be used to draw the element</li>
+<li>a <a href="qwidget.html">QWidget</a> on which the drawing is performed (optional)</li>
+</ul>
+<p>The style gets all the information it needs to render the graphical element from <a href="qstyleoption.html">QStyleOption</a>. The widget is passed as the last argument in case the style needs it to perform special effects (such as animated default buttons on Mac OS X), but it isn't mandatory. In fact, <a href="qstyle.html">QStyle</a> can be used to draw on any paint device, not just widgets, by setting the <a href="qpainter.html">QPainter</a> properly.</p>
+<p>Thanks to <a href="qstyleoption.html">QStyleOption</a>, it is now possible to make <a href="qstyle.html">QStyle</a> draw widgets without linking in any code for the widget. This is how Qt's built-in styles can draw Qt 3 widgets such as <a href="q3listview.html">Q3ListView</a> without necessarily linking against the <a href="qt3support.html">Qt3Support</a> library. Another significant benefit of the new approach is that it's now possible to use <a href="qstyle.html">QStyle</a>'s draw functions on other widgets than the built-in widgets; for example, you can draw a combobox on any widget, not just on a <a href="qcombobox.html">QComboBox</a>.</p>
+<p><a href="qstyleoption.html">QStyleOption</a> has various subclasses for the various types of graphical elements that can be drawn, and it's possible to create custom subclasses. For example, the <a href="qstyle.html#PrimitiveElement-enum">QStyle::PE_FrameFocusRect</a> element expects a <a href="qstyleoptionfocusrect.html">QStyleOptionFocusRect</a> argument. This is documented for each enum value.</p>
+<p>When reimplementing <a href="qstyle.html">QStyle</a> functions that take a <a href="qstyleoption.html">QStyleOption</a> parameter, you often need to cast the <a href="qstyleoption.html">QStyleOption</a> to a subclass (e.g&#x2e;, <a href="qstyleoptionfocusrect.html">QStyleOptionFocusRect</a>). For safety, you can use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to ensure that the pointer type is correct. If the object isn't of the right type, <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() returns 0. For example:</p>
+<pre>         const QStyleOptionFocusRect *focusRectOption =
+                 qstyleoption_cast&lt;const QStyleOptionFocusRect *&gt;(option);
+         if (focusRectOption) {
+             ...
+         }</pre>
+<p>For performance reasons, there are few member functions and the access to the variables is direct. This &quot;low-level&quot; feel makes the structures use straightforward and emphasizes that these are simply parameters used by the style functions. In addition, the caller of a <a href="qstyle.html">QStyle</a> function usually creates <a href="qstyleoption.html">QStyleOption</a> objects on the stack. This combined with Qt's extensive use of <a href="shared.html#implicit-sharing">implicit sharing</a> for types such as <a href="qstring.html">QString</a>, <a href="qpalette.html">QPalette</a>, and <a href="qcolor.html">QColor</a> ensures that no memory allocation needlessly takes place. (Dynamic memory allocation can be an expensive operation, especially when drawing very often in a short time.)</p>
+<a name="example-code"></a>
+<h2>Example Code</h2>
+<p>The following code snippet illustrates how to use <a href="qstyle.html">QStyle</a> to draw the focus rectangle from a custom widget's paintEvent():</p>
+<pre>         void MyWidget::paintEvent(QPaintEvent *event)
+         {
+             QPainter painter(this);
+             ...
+
+             QStyleOptionFocusRect option(1);
+             option.init(this);
+             option.backgroundColor = palette().color(QPalette::Window);
+
+             style().drawPrimitive(QStyle::PE_FrameFocusRect, &amp;option, &amp;painter,
+                                   this);
+         }</pre>
+<p>The next example shows how to derive from an existing style to customize the look of a graphical element:</p>
+<pre> class CustomStyle : public QWindowsStyle
+ {
+     Q_OBJECT
+
+ public:
+     CustomStyle()
+     ~CustomStyle() {}
+
+     void drawPrimitive(PrimitiveElement element, const QStyleOption *option,
+                        QPainter *painter, const QWidget *widget) const;
+ };
+
+ void CustomStyle::drawPrimitive(PrimitiveElement element, const QStyleOption *option,
+                                 QPainter *painter, const QWidget *widget) const
+ {
+     if (element == PE_IndicatorSpinUp || element == PE_IndicatorSpinDown) {
+         QPolygon points(3);
+         int x = option-&gt;rect.x();
+         int y = option-&gt;rect.y();
+         int w = option-&gt;rect.width() / 2;
+         int h = option-&gt;rect.height() / 2;
+         x += (option-&gt;rect.width() - w) / 2;
+         y += (option-&gt;rect.height() - h) / 2;
+
+         if (element == PE_IndicatorSpinUp) {
+             points[0] = QPoint(x, y + h);
+             points[1] = QPoint(x + w, y + h);
+             points[2] = QPoint(x + w / 2, y);
+         } else { <span class="comment">//</span> PE_SpinBoxDown
+             points[0] = QPoint(x, y);
+             points[1] = QPoint(x + w, y);
+             points[2] = QPoint(x + w / 2, y + h);
+         }
+
+         if (option-&gt;state &amp; State_Enabled) {
+             painter-&gt;setPen(option-&gt;palette.mid().color());
+             painter-&gt;setBrush(option-&gt;palette.buttonText());
+         } else {
+             painter-&gt;setPen(option-&gt;palette.buttonText().color());
+             painter-&gt;setBrush(option-&gt;palette.mid());
+         }
+         painter-&gt;drawPolygon(points);
+     } else {
+         QWindowsStyle::drawPrimitive(element, option, painter, widget);
+     }
+ }</pre>
+<p>See also the <a href="widgets-styles.html">Styles Example</a> for a more detailed description of how custom styles can be created.</p>
+<a name="comparison-with-qt-3"></a>
+<h2>Comparison with Qt 3</h2>
+<p>The <a href="qstyle.html">QStyle</a> class has a similar API in Qt 4 as in Qt 3, with more or less the same functions. What has changed is the signature of the functions and the role played by <a href="qstyleoption.html">QStyleOption</a>. For example, here's the signature of the <a href="qstyle.html#drawControl">QStyle::drawControl</a>() function in Qt 3:</p>
+<pre>         void drawControl(ControlElement element,
+                          QPainter *painter,
+                          const QWidget *widget,
+                          const QRect &amp;rect,
+                          const QColorGroup &amp;colorGroup,
+                          SFlags how = Style_Default,
+                          const QStyleOption &amp;option = QStyleOption::Default) const;</pre>
+<p>Here's the signature of the same function in Qt 4:</p>
+<pre>         void drawControl(ControlElement element,
+                          const QStyleOption *option,
+                          QPainter *painter,
+                          const QWidget *widget = 0) const;</pre>
+<p>In Qt 3, some of the information required to draw a graphical element was stored in a <a href="qstyleoption.html">QStyleOption</a> parameter, while the rest was deduced by querying the widget. In Qt 4, everything is stored in the <a href="qstyleoption.html">QStyleOption</a> parameter.</p>
+<p>
+[Previous: <a href="qt4-network.html">The Network Module in Qt 4</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-threads.html">Thread Support in Qt 4</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-designer.qdoc -->
+<head>
+  <title>Qt 4.4: The New Qt Designer</title>
+  <link rel="prev" href="qt4-mainwindow.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link rel="next" href="qt4-accessibility.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-mainwindow.html">The Qt 4 Main Window Classes</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-accessibility.html">Cross-Platform Accessibility Support in Qt 4</a>]
+</p>
+<h1 class="title">The New Qt Designer<br /><span class="subtitle"></span>
+</h1>
+<p><i>Qt Designer</i> has been completely re-written based on our experience with the previous versions of the product for Qt 3. One of the main new ideas behind this new version is to release the application as a collection of interchangeable components that include the property editor, the widget box, and other useful tools for creating graphical user interfaces with Qt. These components can either be used together in the <i>Qt Designer</i> application, or independently integrated into other systems. As a result, certain features such as the project editor and code editor have been removed from the version included with this release.</p>
+<p>The current version of <i>Qt Designer</i> is near feature complete and can be used for many tasks. However, it is still under continuous development. This document will explain what is already in place.</p>
+<p>See also the <a href="designer-manual.html">Qt Designer Manual</a>.</p>
+<ul><li><a href="#the-current-state-of-qt-designer">The Current State of Qt Designer</a></li>
+<ul><li><a href="#user-interface-features">User Interface Features</a></li>
+<li><a href="#editing-features">Editing Features</a></li>
+<li><a href="#plugin-support">Plugin Support</a></li>
+</ul>
+<li><a href="#run-time-support-for-forms">Run-Time Support for Forms</a></li>
+</ul>
+<a name="the-current-state-of-qt-designer"></a>
+<h2>The Current State of Qt Designer</h2>
+<p>When used as a standalone application, <i>Qt Designer</i> includes a number of components that work together to provide a flexible GUI design tool. Widgets and dialog windows can be composed using a form-based interface that fully supports drag and drop, clipboard operations, and an undo/redo stack.</p>
+<p>This version of <i>Qt Designer</i> introduces a number of editing modes to make different types of editing more natural. Each editing mode displays the form in an appropriate way for that mode, and provides a specialized user interface for manipulating its contents. The current editing modes are Widget Editing, Signals and Slots Editing, Buddy Editing, and Tab Order Editing.</p>
+<a name="user-interface-features"></a>
+<h3>User Interface Features</h3>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-main-window.png" /></td><td><b>Widget Box</b><p>The Widget Box displays a categorized list of widgets and other objects that can be placed on a form using drag and drop.</p>
+<p>When <i>Qt Designer</i> is in multi-window mode, the window containing the Widget Box also holds the main menu and the tool bar. When in workbench mode, the Widget Box becomes an independent window within the <i>Qt Designer</i> workspace.</p>
+<p>The contents of the Widget Box are defined in an XML file that holds a collection of .ui documents for standard Qt widgets. This file can be extended, making it possible to add custom widgets to the Widget Box.</p>
+</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Property Editor</b><p>The Property Editor allows designers to edit most properties of widgets and layout objects. The property names and values are presented in an editable tree view that shows the properties of the currently selected object.</p>
+<p>Certain resources, such as icons, can be configured in the Property Editor. Resources can be taken from any currently installed resource files, making it easier to design self-contained components.</p>
+</td><td><img src="images/designer-property-editor.png" /></td></tr>
+</table></p>
+<a name="editing-features"></a>
+<h3>Editing Features</h3>
+<p><i>Qt Designer</i> allows form designers to work on different aspects of their forms by switching between specialized editing modes. Tools for editing widget properties, resources, and actions provide context-sensitive information about the forms being edited.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-choosing-form.png" /></td><td><b>Form Templates</b><p>Form templates provide ready-to-use forms for various types of widgets, such as <a href="qwidget.html">QWidget</a>, <a href="qdialog.html">QDialog</a>, and <a href="qmainwindow.html">QMainWindow</a>. Custom templates based on these widgets can also be created.</p>
+<p>Templates can contain child widgets and layouts. Designers can save time by creating templates for the most common user interface features for repeated use.</p>
+</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Widget Editing Mode</b><p>The new <i>Qt Designer</i> allows widgets to be dropped into existing layouts on the form. Previously, it was necessary to break layouts in order to add new widgets to them.</p>
+<p><i>Qt Designer</i> now supports more direct manipulation of widgets: You can clone a widget by dragging it with the <b>CTRL</b> key held down, and it is even possible to drag widgets between forms.</p>
+<p>In-place widget editors provide specialized editing facilities for the most-used widget properties.</p>
+</td><td><img src="images/designer-editing-mode.png" /></td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-connection-mode.png" /></td><td><b>Signals and Slots Editing Mode</b><p><i>Qt Designer</i> now employs a &quot;wired&quot; approach when representing and editing connections between objects on a form. The Signal and Slots Editing mode displays all the signal and slot connections on your form as arrows. These arrows can be manipulated visually, and provide the user with an overview of the form's connection logic.</p>
+<p>Connections can be made between objects on a form and the form itself. This is particularly useful when designing dialogs.</p>
+</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Buddy Editing Mode</b><p>Widgets that cannot accept keyboard input are often given buddy widgets that will take the keyboard focus on their behalf.</p>
+<p>In Buddy Editing mode, <i>Qt Designer</i> provides a similar approach to that used in the Signals and Slots Editing mode to show the relationships between widgets and their buddies.</p>
+</td><td><img src="images/designer-buddy-mode.png" /></td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-tab-order-mode.png" /></td><td><b>Tab Order Mode</b><p>In this mode, users can specify the order in which input widgets accept the keyboard focus.</p>
+<p>The way that the tab order is defined follows the approach taken in Qt 3's version of <i>Qt Designer</i>; The default tab order is based on the order in which widgets are constructed.</p>
+</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>The Resource Editor</b><p>The new <i>Qt Designer</i> fully supports The Qt Resource System, and provide the Resource Editor to help designers and developers manage the resources that are needed by their applications.</p>
+<p>Using the Resource Editor, resources can be associated with a given form, and also modified and extended throught the editor's file browser style interface.</p>
+<p>The Resource Editor uses files that are processed by various components of the <a href="resources.html">Qt Resource System</a> to ensure that all required resources are embedded in the application.</p>
+</td><td><img src="images/designer-resources-editing.png" /></td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-action-editor.png" /></td><td><b>The Action Editor</b><p>With the release of Qt 4.1, <i>Qt Designer</i> introduces the Action Editor simplifying the management of actions when creating main window applications.</p>
+<p>When creating a main window, you can add a menu bar and toolbars using <i>Qt Designer</i>'s context menu. Once you have the menu bar or a toolbar in place, you can create and add actions using the Action Editor.</p>
+</td></tr>
+</table></p>
+<a name="plugin-support"></a>
+<h3>Plugin Support</h3>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/worldtimeclockplugin-example.png" /></td><td><b>Custom Widgets</b><p>Plugins can be used to add new custom widgets, special editors, and support for widgets from the Qt 3 support library.</p>
+<p>Support for custom widget plugins allows user interface designers to use application-specific widgets in their designs as early as possible in the development process.</p>
+<p><i>Qt Designer</i> handles custom widgets in the same way as standard Qt widgets, and allows custom signals and slots to be connected to other objects from within Signals and Slots Editing mode.</p>
+</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>The <a href="qtdesigner.html">QtDesigner</a> Module</b><p>The new modular <i>Qt Designer</i> is designed to be integrated into other environments and extended with custom components.</p>
+<p>The <a href="qtdesigner.html">QtDesigner</a> Module is a library that developers can use to write extensions and plugins for <i>Qt Designer</i>, and enables <i>Qt Designer</i> components to be embedded into Integrated Development Environments (IDEs).</p>
+<p>With the release of Qt 4.1 the <a href="qtdesigner.html">QtDesigner</a> Module is fully documented. The release also provides several new examples using the <a href="qtdesigner.html">QtDesigner</a> API to create task menu extensions and custom multi-page widgets (i.e&#x2e; container extensions).</p>
+</td><td><img src="images/designer-manual-taskmenuextension.png" /></td></tr>
+</table></p>
+<a name="run-time-support-for-forms"></a>
+<h2>Run-Time Support for Forms</h2>
+<p>With the Qt 4.1 release, the new <a href="qtuitools.html">QtUiTools</a> module is introduced to provide classes handling forms created with <i>Qt Designer</i>.</p>
+<p>Currently the module only contains the <a href="quiloader.html">QUiLoader</a> class.</p>
+<p><a href="quiloader.html">QUiLoader</a> can be used by standalone applications to dynamically create form-based user interfaces at run-time. This library can be statically linked with applications and redistributed under the same terms as Qt.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/calculatorbuilder-example.png" /></td><td><b>Dynamic Form Creation</b><p>The <a href="qtuitools.html">QtUiTools</a> library lets developers dynamically construct user interfaces at run-time using the same techniques as <i>Qt Designer</i>. Since forms can contain custom widget plugins, the loading mechanism can be customized to search for third party or application-specific plugins.</p>
+</td></tr>
+</table></p>
+<p>
+[Previous: <a href="qt4-mainwindow.html">The Qt 4 Main Window Classes</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-accessibility.html">Cross-Platform Accessibility Support in Qt 4</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE DCF>
+<DCF ref="qmake-manual.html" imagedir="../../gif" title="qmake Manual">
+<section ref="qmake-using.html" title="Using qmake">
+    <keyword ref="qmake-using.html">Using qmake</keyword>
+</section>
+<section ref="qmake-project-files.html" title="qmake Project Files">
+    <keyword ref="qmake-project-files.html">qmake Project Files</keyword>
+</section>
+<section ref="qmake-running.html" title="Running qmake">
+    <keyword ref="qmake-running.html">Running qmake</keyword>
+</section>
+<section ref="qmake-platform-notes.html" title="qmake Platform Notes">
+    <keyword ref="qmake-platform-notes.html">qmake Platform Notes</keyword>
+</section>
+<section ref="qmake-reference.html" title="qmake Reference">
+    <keyword ref="qmake-reference.html">qmake Reference</keyword>
+</section>
+<section ref="qmake-variable-reference.html" title="qmake Variable Reference">
+    <keyword ref="qmake-variable-reference.html">qmake Variable Reference</keyword>
+</section>
+<section ref="qmake-function-reference.html" title="qmake Function Reference">
+    <keyword ref="qmake-function-reference.html">qmake Function Reference</keyword>
+</section>
+<section ref="qmake-environment-reference.html" title="Configuring qmake's Environment">
+    <keyword ref="qmake-environment-reference.html">Configuring qmake's Environment</keyword>
+</section>
+<section ref="qmake-advanced-usage.html" title="qmake Advanced Usage">
+    <keyword ref="qmake-advanced-usage.html">qmake Advanced Usage</keyword>
+</section>
+<section ref="qmake-precompiledheaders.html" title="Using Precompiled Headers">
+    <keyword ref="qmake-precompiledheaders.html">Using Precompiled Headers</keyword>
+</section>
+<section ref="qmake-tutorial.html" title="qmake Tutorial">
+    <keyword ref="qmake-tutorial.html">qmake Tutorial</keyword>
+</section>
+<section ref="qmake-common-projects.html" title="qmake Common Projects">
+    <keyword ref="qmake-common-projects.html">qmake Common Projects</keyword>
+</section>
+</DCF>

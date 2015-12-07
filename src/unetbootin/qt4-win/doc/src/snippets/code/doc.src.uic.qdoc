@@ -1,0 +1,17 @@
+//! [0]
+        uic [options] <uifile>
+//! [0]
+
+
+//! [1]
+        ui_%.h: %.ui
+                uic $< -o $@
+//! [1]
+
+
+//! [2]
+        ui_foo.h: foo.ui
+                uic $< -o $@
+//! [2]
+
+

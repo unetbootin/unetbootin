@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: Effect Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Effect Class Reference<br /><span class="small-subtitle">(Phonon::Effect)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The Effect class is used to transform audio streams. <a href="#details">More...</a></p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-effect-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-effect.html#Effect">Effect</a></b> ( const EffectDescription &amp; <i>description</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>EffectDescription <b><a href="phonon-effect.html#description">description</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="phonon-effect.html#parameterValue">parameterValue</a></b> ( const EffectParameter &amp; <i>parameter</i> ) const</li>
+<li><div class="fn"/>QList&lt;EffectParameter&gt; <b><a href="phonon-effect.html#parameters">parameters</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="phonon-effect.html#setParameterValue">setParameterValue</a></b> ( const EffectParameter &amp; <i>parameter</i>, const QVariant &amp; <i>value</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Effect class is used to transform audio streams.</p>
+<p>An effect is a media node which is inserted into a path between a <a href="phonon-mediaobject.html">MediaObject</a> and an audio output node, for instance, an <a href="phonon-audiooutput.html">AudioOutput</a>, and transforms the media stream on that path.</p>
+<p>Examples may include simple modifiers such as fading or pitch shifting, or more complex mathematical transformations. You can query the backend for available effects with <a href="phonon-backendcapabilities.html#availableAudioEffects">BackendCapabilities::availableAudioEffects</a>().</p>
+<p>In order to use an effect, insert it into the path as follows:</p>
+<pre>     Path path = Phonon::createPath(...);
+     Effect *effect = new Effect(this);
+     path.insertEffect(effect);</pre>
+<p>The effect will immediately begin applying it's transformations on the path. To stop it, remove the Effect from the path.</p>
+<p>For creating an effect, you use the <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a>, which you get from <a href="phonon-backendcapabilities.html#availableAudioEffects">availableAudioEffects()</a>. We give a code example below.</p>
+<pre>     QList&lt;Phonon::EffectDescription&gt; effectDescriptions =
+             Phonon::BackendCapabilities::availableAudioEffects();
+     Phonon::EffectDescription effectDescription = effectDescriptions.at(4);
+
+     Phonon::Path path = Phonon::createPath(mediaObject, audioOutput);
+
+     Phonon::Effect *effect = new Phonon::Effect(effectDescription);
+     path.insertEffect(effect);</pre>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Effect"></a>Effect::Effect ( const <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a> &amp; <i>description</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new effect object with the given <i>description</i> and <i>parent</i> object.</p>
+<p>The <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a> object determines the type of the effect. See <a href="phonon-backendcapabilities.html#availableAudioEffects">BackendCapabilities::availableAudioEffects</a>().</p>
+<h3 class="fn"><a name="description"></a><a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a> Effect::description () const</h3>
+<p>Returns the description of this effect. This is the same type as was passed to the constructor.</p>
+<h3 class="fn"><a name="parameterValue"></a><a href="qvariant.html">QVariant</a> Effect::parameterValue ( const <a href="phonon-effectparameter.html">EffectParameter</a> &amp; <i>parameter</i> ) const</h3>
+<p>Returns the value of the given effect <i>parameter</i>.</p>
+<p>See also <a href="phonon-effect.html#setParameterValue">setParameterValue</a>().</p>
+<h3 class="fn"><a name="parameters"></a><a href="qlist.html">QList</a>&lt;<a href="phonon-effectparameter.html">EffectParameter</a>&gt; Effect::parameters () const</h3>
+<p>Returns a list of parameters that this effect provides to control its behavior.</p>
+<p>See also <a href="phonon-effectparameter.html">EffectParameter</a> and <a href="phonon-effectwidget.html">EffectWidget</a>.</p>
+<h3 class="fn"><a name="setParameterValue"></a>void Effect::setParameterValue ( const <a href="phonon-effectparameter.html">EffectParameter</a> &amp; <i>parameter</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Sets the given effect <i>parameter</i> to the specified <i>value</i>.</p>
+<p>See also <a href="phonon-effect.html#parameterValue">parameterValue</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

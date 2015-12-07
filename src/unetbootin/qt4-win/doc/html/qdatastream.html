@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qdatastream.cpp -->
+<head>
+  <title>Qt 4.4: QDataStream Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDataStream Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QDataStream class provides serialization of binary data to a <a href="qiodevice.html">QIODevice</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QDataStream&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdatastream-members.html">List of all members, including inherited members</a></li>
+<li><a href="qdatastream-obsolete.html">Obsolete members</a></li>
+<li><a href="qdatastream-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdatastream.html#ByteOrder-enum">ByteOrder</a></b> { BigEndian, LittleEndian }</li>
+<li><div class="fn"/>enum <b><a href="qdatastream.html#Status-enum">Status</a></b> { Ok, ReadPastEnd, ReadCorruptData }</li>
+<li><div class="fn"/>enum <b><a href="qdatastream.html#Version-enum">Version</a></b> { Qt_1_0, Qt_2_0, Qt_2_1, Qt_3_0, ..., Qt_4_4 }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdatastream.html#QDataStream">QDataStream</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdatastream.html#QDataStream-2">QDataStream</a></b> ( QIODevice * <i>d</i> )</li>
+<li><div class="fn"/><b><a href="qdatastream.html#QDataStream-4">QDataStream</a></b> ( QByteArray * <i>a</i>, QIODevice::OpenMode <i>mode</i> )</li>
+<li><div class="fn"/><b><a href="qdatastream.html#QDataStream-5">QDataStream</a></b> ( const QByteArray &amp; <i>a</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qdatastream.html#dtor.QDataStream">~QDataStream</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qdatastream.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>ByteOrder <b><a href="qdatastream.html#byteOrder">byteOrder</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qdatastream.html#device">device</a></b> () const</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#readBytes">readBytes</a></b> ( char *&amp; <i>s</i>, uint &amp; <i>l</i> )</li>
+<li><div class="fn"/>int <b><a href="qdatastream.html#readRawData">readRawData</a></b> ( char * <i>s</i>, int <i>len</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatastream.html#resetStatus">resetStatus</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdatastream.html#setByteOrder">setByteOrder</a></b> ( ByteOrder <i>bo</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatastream.html#setDevice">setDevice</a></b> ( QIODevice * <i>d</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatastream.html#setStatus">setStatus</a></b> ( Status <i>status</i> )</li>
+<li><div class="fn"/>void <b><a href="qdatastream.html#setVersion">setVersion</a></b> ( int <i>v</i> )</li>
+<li><div class="fn"/>int <b><a href="qdatastream.html#skipRawData">skipRawData</a></b> ( int <i>len</i> )</li>
+<li><div class="fn"/>Status <b><a href="qdatastream.html#status">status</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdatastream.html#version">version</a></b> () const</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#writeBytes">writeBytes</a></b> ( const char * <i>s</i>, uint <i>len</i> )</li>
+<li><div class="fn"/>int <b><a href="qdatastream.html#writeRawData">writeRawData</a></b> ( const char * <i>s</i>, int <i>len</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt">operator&lt;&lt;</a></b> ( qint8 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-2">operator&lt;&lt;</a></b> ( bool <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-3">operator&lt;&lt;</a></b> ( quint8 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-4">operator&lt;&lt;</a></b> ( quint16 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-5">operator&lt;&lt;</a></b> ( qint16 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-6">operator&lt;&lt;</a></b> ( qint32 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-7">operator&lt;&lt;</a></b> ( quint64 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-8">operator&lt;&lt;</a></b> ( qint64 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-9">operator&lt;&lt;</a></b> ( quint32 <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-10">operator&lt;&lt;</a></b> ( float <i>f</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-11">operator&lt;&lt;</a></b> ( double <i>f</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-lt-lt-12">operator&lt;&lt;</a></b> ( const char * <i>s</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt">operator&gt;&gt;</a></b> ( qint8 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-2">operator&gt;&gt;</a></b> ( bool &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-3">operator&gt;&gt;</a></b> ( quint8 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-4">operator&gt;&gt;</a></b> ( quint16 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-5">operator&gt;&gt;</a></b> ( qint16 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-6">operator&gt;&gt;</a></b> ( quint32 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-7">operator&gt;&gt;</a></b> ( qint32 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-8">operator&gt;&gt;</a></b> ( quint64 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-9">operator&gt;&gt;</a></b> ( qint64 &amp; <i>i</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-10">operator&gt;&gt;</a></b> ( float &amp; <i>f</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-11">operator&gt;&gt;</a></b> ( double &amp; <i>f</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qdatastream.html#operator-gt-gt-12">operator&gt;&gt;</a></b> ( char *&amp; <i>s</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDataStream class provides serialization of binary data to a <a href="qiodevice.html">QIODevice</a>.</p>
+<p>A data stream is a binary stream of encoded information which is 100% independent of the host computer's operating system, CPU or byte order. For example, a data stream that is written by a PC under Windows can be read by a Sun SPARC running Solaris.</p>
+<p>You can also use a data stream to read/write <a href="#raw">raw unencoded binary data</a>. If you want a &quot;parsing&quot; input stream, see <a href="qtextstream.html">QTextStream</a>.</p>
+<p>The QDataStream class implements the serialization of C++'s basic data types, like <tt>char</tt>, <tt>short</tt>, <tt>int</tt>, <tt>char *</tt>, etc. Serialization of more complex data is accomplished by breaking up the data into primitive units.</p>
+<p>A data stream cooperates closely with a <a href="qiodevice.html">QIODevice</a>. A <a href="qiodevice.html">QIODevice</a> represents an input/output medium one can read data from and write data to. The <a href="qfile.html">QFile</a> class is an example of an I/O device.</p>
+<p>Example (write binary data to a stream):</p>
+<pre>         QFile file(&quot;file.dat&quot;);
+         file.open(QIODevice::WriteOnly);
+         QDataStream out(&amp;file);   // we will serialize the data into the file
+         out &lt;&lt; &quot;the answer is&quot;;   // serialize a string
+         out &lt;&lt; (qint32)42;        // serialize an integer</pre>
+<p>Example (read binary data from a stream):</p>
+<pre>         QFile file(&quot;file.dat&quot;);
+         file.open(QIODevice::ReadOnly);
+         QDataStream in(&amp;file);    // read the data serialized from the file
+         QString str;
+         qint32 a;
+         in &gt;&gt; str &gt;&gt; a;           // extract &quot;the answer is&quot; and 42</pre>
+<p>Each item written to the stream is written in a predefined binary format that varies depending on the item's type. Supported Qt types include <a href="qbrush.html">QBrush</a>, <a href="qcolor.html">QColor</a>, <a href="qdatetime.html">QDateTime</a>, <a href="qfont.html">QFont</a>, <a href="qpixmap.html">QPixmap</a>, <a href="qstring.html">QString</a>, <a href="qvariant.html">QVariant</a> and many others. For the complete list of all Qt types supporting data streaming see the <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p>For integers it is best to always cast to a Qt integer type for writing, and to read back into the same Qt integer type. This ensures that you get integers of the size you want and insulates you from compiler and platform differences.</p>
+<p>To take one example, a <tt>char *</tt> string is written as a 32-bit integer equal to the length of the string including the '\0' byte, followed by all the characters of the string including the '\0' byte. When reading a <tt>char *</tt> string, 4 bytes are read to create the 32-bit length value, then that many characters for the <tt>char *</tt> string including the '\0' terminator are read.</p>
+<p>The initial I/O device is usually set in the constructor, but can be changed with <a href="qdatastream.html#setDevice">setDevice</a>(). If you've reached the end of the data (or if there is no I/O device set) <a href="qdatastream.html#atEnd">atEnd</a>() will return true.</p>
+<a name="versioning"></a>
+<h3>Versioning</h3>
+<p>QDataStream's binary format has evolved since Qt 1.0, and is likely to continue evolving to reflect changes done in Qt. When inputting or outputting complex types, it's very important to make sure that the same version of the stream (<a href="qdatastream.html#version">version</a>()) is used for reading and writing. If you need both forward and backward compatibility, you can hardcode the version number in the application:</p>
+<pre>         stream.setVersion(QDataStream::Qt_4_0);</pre>
+<p>If you are producing a new binary data format, such as a file format for documents created by your application, you could use a QDataStream to write the data in a portable format. Typically, you would write a brief header containing a magic string and a version number to give yourself room for future expansion. For example:</p>
+<pre>         QFile file(&quot;file.xxx&quot;);
+         file.open(QIODevice::WriteOnly);
+         QDataStream out(&amp;file);
+
+         // Write a header with a &quot;magic number&quot; and a version
+         out &lt;&lt; (quint32)0xA0B0C0D0;
+         out &lt;&lt; (qint32)123;
+
+         out.setVersion(QDataStream::Qt_4_0);
+
+         // Write the data
+         out &lt;&lt; lots_of_interesting_data;</pre>
+<p>Then read it in with:</p>
+<pre>         QFile file(&quot;file.xxx&quot;);
+         file.open(QIODevice::ReadOnly);
+         QDataStream in(&amp;file);
+
+         // Read and check the header
+         quint32 magic;
+         in &gt;&gt; magic;
+         if (magic != 0xA0B0C0D0)
+             return XXX_BAD_FILE_FORMAT;
+
+         // Read the version
+         qint32 version;
+         in &gt;&gt; version;
+         if (version &lt; 100)
+             return XXX_BAD_FILE_TOO_OLD;
+         if (version &gt; 123)
+             return XXX_BAD_FILE_TOO_NEW;
+
+         if (version &lt;= 110)
+             in.setVersion(QDataStream::Qt_3_2);
+         else
+             in.setVersion(QDataStream::Qt_4_0);
+
+         // Read the data
+         in &gt;&gt; lots_of_interesting_data;
+         if (version &gt;= 120)
+             in &gt;&gt; data_new_in_XXX_version_1_2;
+         in &gt;&gt; other_interesting_data;</pre>
+<p>You can select which byte order to use when serializing data. The default setting is big endian (MSB first). Changing it to little endian breaks the portability (unless the reader also changes to little endian). We recommend keeping this setting unless you have special requirements.</p>
+<a name="raw"></a><a name="reading-and-writing-raw-binary-data"></a>
+<h3>Reading and writing raw binary data</h3>
+<p>You may wish to read/write your own raw binary data to/from the data stream directly. Data may be read from the stream into a preallocated <tt>char *</tt> using <a href="qdatastream.html#readRawData">readRawData</a>(). Similarly data can be written to the stream using <a href="qdatastream.html#writeRawData">writeRawData</a>(). Note that any encoding/decoding of the data must be done by you.</p>
+<p>A similar pair of functions is <a href="qdatastream.html#readBytes">readBytes</a>() and <a href="qdatastream.html#writeBytes">writeBytes</a>(). These differ from their <i>raw</i> counterparts as follows: <a href="qdatastream.html#readBytes">readBytes</a>() reads a quint32 which is taken to be the length of the data to be read, then that number of bytes is read into the preallocated <tt>char *</tt>; <a href="qdatastream.html#writeBytes">writeBytes</a>() writes a quint32 containing the length of the data, followed by the data. Note that any encoding/decoding of the data (apart from the length quint32) must be done by you.</p>
+<p>See also <a href="qtextstream.html">QTextStream</a> and <a href="qvariant.html">QVariant</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ByteOrder-enum"></a>enum QDataStream::ByteOrder</h3>
+<p>The byte order used for reading/writing the data.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDataStream::BigEndian</tt></td><td align="center" valign="top"><tt>QSysInfo::BigEndian</tt></td><td valign="top">Most significant byte first (the default)</td></tr>
+<tr><td valign="top"><tt>QDataStream::LittleEndian</tt></td><td align="center" valign="top"><tt>QSysInfo::LittleEndian</tt></td><td valign="top">Least significant byte first</td></tr>
+</table></p>
+<h3 class="fn"><a name="Status-enum"></a>enum QDataStream::Status</h3>
+<p>This enum describes the current status of the data stream.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDataStream::Ok</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The data stream is operating normally.</td></tr>
+<tr><td valign="top"><tt>QDataStream::ReadPastEnd</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The data stream has read past the end of the data in the underlying device.</td></tr>
+<tr><td valign="top"><tt>QDataStream::ReadCorruptData</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The data stream has read corrupt data.</td></tr>
+</table></p>
+<h3 class="fn"><a name="Version-enum"></a>enum QDataStream::Version</h3>
+<p>This enum provides symbolic synonyms for the data serialization format version numbers.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_1_0</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Version 1 (Qt 1.x)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_2_0</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Version 2 (Qt 2.0)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_2_1</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Version 3 (Qt 2.1, 2.2, 2.3)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_3_0</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Version 4 (Qt 3.0)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_3_1</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Version 5 (Qt 3.1, 3.2)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_3_3</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Version 6 (Qt 3.3)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_4_0</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Version 7 (Qt 4.0, Qt 4.1)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_4_1</tt></td><td align="center" valign="top"><tt>Qt_4_0</tt></td><td valign="top">Version 7 (Qt 4.0, Qt 4.1)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_4_2</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Version 8 (Qt 4.2)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_4_3</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Version 9 (Qt 4.3)</td></tr>
+<tr><td valign="top"><tt>QDataStream::Qt_4_4</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">Version 10 (Qt 4.4)</td></tr>
+</table></p>
+<p>See also <a href="qdatastream.html#setVersion">setVersion</a>() and <a href="qdatastream.html#version">version</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDataStream"></a>QDataStream::QDataStream ()</h3>
+<p>Constructs a data stream that has no I/O device.</p>
+<p>See also <a href="qdatastream.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="QDataStream-2"></a>QDataStream::QDataStream ( <a href="qiodevice.html">QIODevice</a> * <i>d</i> )</h3>
+<p>Constructs a data stream that uses the I/O device <i>d</i>.</p>
+<p><b>Warning:</b> If you use <a href="porting4.html#qsocket">QSocket</a> or <a href="porting4.html#qsocketdevice">QSocketDevice</a> as the I/O device <i>d</i> for reading data, you must make sure that enough data is available on the socket for the operation to successfully proceed; <a href="qdatastream.html">QDataStream</a> does not have any means to handle or recover from short-reads.</p>
+<p>See also <a href="qdatastream.html#setDevice">setDevice</a>() and <a href="qdatastream.html#device">device</a>().</p>
+<h3 class="fn"><a name="QDataStream-4"></a>QDataStream::QDataStream ( <a href="qbytearray.html">QByteArray</a> * <i>a</i>, <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::OpenMode</a> <i>mode</i> )</h3>
+<p>Constructs a data stream that operates on a byte array, <i>a</i>. The <i>mode</i> describes how the device is to be used.</p>
+<p>Alternatively, you can use <a href="qdatastream.html">QDataStream</a>(const <a href="qbytearray.html">QByteArray</a> &amp;) if you just want to read from a byte array.</p>
+<p>Since <a href="qbytearray.html">QByteArray</a> is not a <a href="qiodevice.html">QIODevice</a> subclass, internally a <a href="qbuffer.html">QBuffer</a> is created to wrap the byte array.</p>
+<h3 class="fn"><a name="QDataStream-5"></a>QDataStream::QDataStream ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>a</i> )</h3>
+<p>Constructs a read-only data stream that operates on byte array <i>a</i>. Use <a href="qdatastream.html">QDataStream</a>(<a href="qbytearray.html">QByteArray</a>*, int) if you want to write to a byte array.</p>
+<p>Since <a href="qbytearray.html">QByteArray</a> is not a <a href="qiodevice.html">QIODevice</a> subclass, internally a <a href="qbuffer.html">QBuffer</a> is created to wrap the byte array.</p>
+<h3 class="fn"><a name="dtor.QDataStream"></a>QDataStream::~QDataStream ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the data stream.</p>
+<p>The destructor will not affect the current I/O device, unless it is an internal I/O device (e.g&#x2e; a <a href="qbuffer.html">QBuffer</a>) processing a <a href="qbytearray.html">QByteArray</a> passed in the <i>constructor</i>, in which case the internal I/O device is destroyed.</p>
+<h3 class="fn"><a name="atEnd"></a>bool QDataStream::atEnd () const</h3>
+<p>Returns true if the I/O device has reached the end position (end of the stream or file) or if there is no I/O device set; otherwise returns false.</p>
+<p>See also <a href="qiodevice.html#atEnd">QIODevice::atEnd</a>().</p>
+<h3 class="fn"><a name="byteOrder"></a><a href="qdatastream.html#ByteOrder-enum">ByteOrder</a> QDataStream::byteOrder () const</h3>
+<p>Returns the current byte order setting -- either <a href="qdatastream.html#ByteOrder-enum">BigEndian</a> or <a href="qdatastream.html#ByteOrder-enum">LittleEndian</a>.</p>
+<p>See also <a href="qdatastream.html#setByteOrder">setByteOrder</a>().</p>
+<h3 class="fn"><a name="device"></a><a href="qiodevice.html">QIODevice</a> * QDataStream::device () const</h3>
+<p>Returns the I/O device currently set.</p>
+<p>See also <a href="qdatastream.html#setDevice">setDevice</a>() and <a href="qdatastream-obsolete.html#unsetDevice">unsetDevice</a>().</p>
+<h3 class="fn"><a name="readBytes"></a>QDataStream &amp; QDataStream::readBytes ( char *&amp; <i>s</i>, <a href="qtglobal.html#uint-typedef">uint</a> &amp; <i>l</i> )</h3>
+<p>Reads the buffer <i>s</i> from the stream and returns a reference to the stream.</p>
+<p>The buffer <i>s</i> is allocated using <tt>new</tt>. Destroy it with the <tt>delete[]</tt> operator.</p>
+<p>The <i>l</i> parameter is set to the length of the buffer. If the string read is empty, <i>l</i> is set to 0 and <i>s</i> is set to a null pointer.</p>
+<p>The serialization format is a quint32 length specifier first, then <i>l</i> bytes of data.</p>
+<p>See also <a href="qdatastream.html#readRawData">readRawData</a>() and <a href="qdatastream.html#writeBytes">writeBytes</a>().</p>
+<h3 class="fn"><a name="readRawData"></a>int QDataStream::readRawData ( char * <i>s</i>, int <i>len</i> )</h3>
+<p>Reads at most <i>len</i> bytes from the stream into <i>s</i> and returns the number of bytes read. If an error occurs, this function returns -1.</p>
+<p>The buffer <i>s</i> must be preallocated. The data is <i>not</i> encoded.</p>
+<p>See also <a href="qdatastream.html#readBytes">readBytes</a>(), <a href="qiodevice.html#read">QIODevice::read</a>(), and <a href="qdatastream.html#writeRawData">writeRawData</a>().</p>
+<h3 class="fn"><a name="resetStatus"></a>void QDataStream::resetStatus ()</h3>
+<p>Resets the status of the data stream.</p>
+<p>See also <a href="qdatastream.html#Status-enum">Status</a>, <a href="qdatastream.html#status">status</a>(), and <a href="qdatastream.html#setStatus">setStatus</a>().</p>
+<h3 class="fn"><a name="setByteOrder"></a>void QDataStream::setByteOrder ( <a href="qdatastream.html#ByteOrder-enum">ByteOrder</a> <i>bo</i> )</h3>
+<p>Sets the serialization byte order to <i>bo</i>.</p>
+<p>The <i>bo</i> parameter can be <a href="qdatastream.html#ByteOrder-enum">QDataStream::BigEndian</a> or <a href="qdatastream.html#ByteOrder-enum">QDataStream::LittleEndian</a>.</p>
+<p>The default setting is big endian. We recommend leaving this setting unless you have special requirements.</p>
+<p>See also <a href="qdatastream.html#byteOrder">byteOrder</a>().</p>
+<h3 class="fn"><a name="setDevice"></a>void QDataStream::setDevice ( <a href="qiodevice.html">QIODevice</a> * <i>d</i> )</h3>
+<p>void QDataStream::setDevice(<a href="qiodevice.html">QIODevice</a> *d)</p>
+<p>Sets the I/O device to <i>d</i>.</p>
+<p>See also <a href="qdatastream.html#device">device</a>() and <a href="qdatastream-obsolete.html#unsetDevice">unsetDevice</a>().</p>
+<h3 class="fn"><a name="setStatus"></a>void QDataStream::setStatus ( <a href="qdatastream.html#Status-enum">Status</a> <i>status</i> )</h3>
+<p>Sets the status of the data stream to the <i>status</i> given.</p>
+<p>See also <a href="qdatastream.html#Status-enum">Status</a>, <a href="qdatastream.html#status">status</a>(), and <a href="qdatastream.html#resetStatus">resetStatus</a>().</p>
+<h3 class="fn"><a name="setVersion"></a>void QDataStream::setVersion ( int <i>v</i> )</h3>
+<p>Sets the version number of the data serialization format to <i>v</i>.</p>
+<p>You don't <i>have</i> to set a version if you are using the current version of Qt, but for your own custom binary formats we recommend that you do; see <a href="qdatastream.html#versioning">Versioning</a> in the Detailed Description.</p>
+<p>In order to accommodate new functionality, the datastream serialization format of some Qt classes has changed in some versions of Qt. If you want to read data that was created by an earlier version of Qt, or write data that can be read by a program that was compiled with an earlier version of Qt, use this function to modify the serialization format used by <a href="qdatastream.html">QDataStream</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Qt Version</th><th><a href="qdatastream.html">QDataStream</a> Version</th></tr></thead>
+<tr valign="top" class="odd"><td>Qt 4.3</td><td>9</td></tr>
+<tr valign="top" class="even"><td>Qt 4.2</td><td>8</td></tr>
+<tr valign="top" class="odd"><td>Qt 4.0, 4.1</td><td>7</td></tr>
+<tr valign="top" class="even"><td>Qt 3.3</td><td>6</td></tr>
+<tr valign="top" class="odd"><td>Qt 3.1, 3.2</td><td>5</td></tr>
+<tr valign="top" class="even"><td>Qt 3.0</td><td>4</td></tr>
+<tr valign="top" class="odd"><td>Qt 2.1, 2.2, 2.3</td><td>3</td></tr>
+<tr valign="top" class="even"><td>Qt 2.0</td><td>2</td></tr>
+<tr valign="top" class="odd"><td>Qt 1.x</td><td>1</td></tr>
+</table></p>
+<p>The <a href="qdatastream.html#Version-enum">Version</a> enum provides symbolic constants for the different versions of Qt. For example:</p>
+<pre>         QDataStream out(file);
+         out.setVersion(QDataStream::Qt_4_0);</pre>
+<p>See also <a href="qdatastream.html#version">version</a>() and <a href="qdatastream.html#Version-enum">Version</a>.</p>
+<h3 class="fn"><a name="skipRawData"></a>int QDataStream::skipRawData ( int <i>len</i> )</h3>
+<p>Skips <i>len</i> bytes from the device. Returns the number of bytes actually skipped, or -1 on error.</p>
+<p>This is equivalent to calling <a href="qdatastream.html#readRawData">readRawData</a>() on a buffer of length <i>len</i> and ignoring the buffer.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qiodevice.html#seek">QIODevice::seek</a>().</p>
+<h3 class="fn"><a name="status"></a><a href="qdatastream.html#Status-enum">Status</a> QDataStream::status () const</h3>
+<p>Returns the status of the data stream.</p>
+<p>See also <a href="qdatastream.html#Status-enum">Status</a>, <a href="qdatastream.html#setStatus">setStatus</a>(), and <a href="qdatastream.html#resetStatus">resetStatus</a>().</p>
+<h3 class="fn"><a name="version"></a>int QDataStream::version () const</h3>
+<p>Returns the version number of the data serialization format.</p>
+<p>See also <a href="qdatastream.html#setVersion">setVersion</a>() and <a href="qdatastream.html#Version-enum">Version</a>.</p>
+<h3 class="fn"><a name="writeBytes"></a>QDataStream &amp; QDataStream::writeBytes ( const char * <i>s</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>len</i> )</h3>
+<p>Writes the length specifier <i>len</i> and the buffer <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>The <i>len</i> is serialized as a quint32, followed by <i>len</i> bytes from <i>s</i>. Note that the data is <i>not</i> encoded.</p>
+<p>See also <a href="qdatastream.html#writeRawData">writeRawData</a>() and <a href="qdatastream.html#readBytes">readBytes</a>().</p>
+<h3 class="fn"><a name="writeRawData"></a>int QDataStream::writeRawData ( const char * <i>s</i>, int <i>len</i> )</h3>
+<p>Writes <i>len</i> bytes from <i>s</i> to the stream. Returns the number of bytes actually written, or -1 on error. The data is <i>not</i> encoded.</p>
+<p>See also <a href="qdatastream.html#writeBytes">writeBytes</a>(), <a href="qiodevice.html#write">QIODevice::write</a>(), and <a href="qdatastream.html#readRawData">readRawData</a>().</p>
+<h3 class="fn"><a name="operator-lt-lt"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#qint8-typedef">qint8</a> <i>i</i> )</h3>
+<p>Writes a signed byte, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-2"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( bool <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a boolean value, <i>i</i>, to the stream. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-3"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#quint8-typedef">quint8</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an unsigned byte, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-4"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#quint16-typedef">quint16</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an unsigned 16-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-5"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#qint16-typedef">qint16</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a signed 16-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-6"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#qint32-typedef">qint32</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a signed 32-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-7"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#quint64-typedef">quint64</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an unsigned 64-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-8"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a signed 64-bit integer, <i>i</i>, to the stream and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-9"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( <a href="qtglobal.html#quint32-typedef">quint32</a> <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an unsigned integer, <i>i</i>, to the stream as a 32-bit unsigned integer (quint32). Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-10"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( float <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a 32-bit floating point number, <i>f</i>, to the stream using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-11"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( double <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a 64-bit floating point number, <i>f</i>, to the stream using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-lt-lt-12"></a>QDataStream &amp; QDataStream::operator&lt;&lt; ( const char * <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the '\0'-terminated string <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>The string is serialized using <a href="qdatastream.html#writeBytes">writeBytes</a>().</p>
+<h3 class="fn"><a name="operator-gt-gt"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#qint8-typedef">qint8</a> &amp; <i>i</i> )</h3>
+<p>Reads a signed byte from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-2"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( bool &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a boolean value from the stream into <i>i</i>. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-3"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#quint8-typedef">quint8</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned byte from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-4"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#quint16-typedef">quint16</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned 16-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-5"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#qint16-typedef">qint16</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed 16-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-6"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#quint32-typedef">quint32</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned 32-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-7"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#qint32-typedef">qint32</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed 32-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-8"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#quint64-typedef">quint64</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned 64-bit integer from the stream, into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-9"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( <a href="qtglobal.html#qint64-typedef">qint64</a> &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed 64-bit integer from the stream into <i>i</i>, and returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-10"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( float &amp; <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a 32-bit floating point number from the stream into <i>f</i>, using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-11"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( double &amp; <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a 64-bit floating point number from the stream into <i>f</i>, using the standard IEEE 754 format. Returns a reference to the stream.</p>
+<h3 class="fn"><a name="operator-gt-gt-12"></a>QDataStream &amp; QDataStream::operator&gt;&gt; ( char *&amp; <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the '\0'-terminated string <i>s</i> from the stream and returns a reference to the stream.</p>
+<p>Space for the string is allocated using <tt>new</tt> -- the caller must destroy it with <tt>delete[]</tt>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

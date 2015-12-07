@@ -1,0 +1,113 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-deployment.html
+
+    \title Deploying Qt for Embedded Linux Applications
+    \ingroup qt-embedded
+
+    The procedure of deploying an Qt application on \l{Qt for Embedded Linux}
+    is essentially the same as the deployment procedure on Qt/X11
+    which is described in detail in the \l {Deploying an Application
+    on Qt/X11} documentation. See also the \l {Deploying Qt
+    applications}{general remarks} about deploying Qt applications.
+
+    In addition, there is a couple of Qt for Embedded Linux specific issues to
+    keep in mind:
+
+    \tableofcontents
+
+    \section1 Fonts
+
+    When Qt for Embedded Linux applications run, they look for a file called
+    \c fontdir in Qt's \c /lib/fonts/ directory defining the
+    fonts that are available to the application (i.e. the fonts
+    located in the mentioned directory).
+
+    For that reason, the preferred fonts must be copied to the \c
+    /lib/fonts/ directory, and the \c fontdir file must be customized
+    accordingly.  See the \l {Qt for Embedded Linux Fonts}{fonts} documentation
+    for more details about the supported font formats.
+
+    Note that the application will look for the \c /lib/fonts/
+    directory relative to the path set using the \c -prefix parameter
+    when running the \c configure script; ensure that this is a
+    sensible path in the target device environment. See the \l
+    {Installing Qt for Embedded Linux#Step 3: Building the
+    Library}{installation} documentation for more details.
+
+    \section1 Environment Variables
+
+    In general, any variable value that differs from the provided
+    default values must be set explicitly in the target device
+    environment.  Typically, these include the QWS_MOUSE_PROTO,
+    QWS_KEYBOARD and QWS_DISPLAY variables specifying the drivers for
+    pointer handling, character input and display management,
+    respectively.
+
+    For example, without the proper mouse and keyboard drivers, there
+    is no way to give any input to the application when it is
+    installed on the target device. By running the \c configure script
+    using the \c -qt-kbd-<keyboarddriver> and \c
+    -qt-mouse-<mousedriver> options, the drivers are enabled, but in
+    addition the drivers and the preferred devices must be specified
+    as the ones to use in the target environment, by setting the
+    environment variables.
+
+    See the \l{Qt for Embedded Linux Pointer Handling}{pointer handling},
+    \l{Qt for Embedded Linux Character Input}{character input} and
+    \l{Qt for Embedded Linux Display Management}{display management}
+    documentation for more information.
+
+    \section1 Framebuffer Support
+
+    No particular actions are required to enable the framebuffer on
+    target devices: The Linux framebuffer is enabled by default on all
+    modern Linux distributions. For information on older versions, see
+    \l http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html.
+
+    To test that the Linux framebuffer is set up correctly, and that
+    the device permissions are correct, use the program provided by
+    the \l {Testing the Linux Framebuffer} document.
+*/

@@ -1,0 +1,425 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: classwizard.cpp Example File (dialogs/classwizard/classwizard.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">classwizard.cpp Example File<br /><span class="small-subtitle">dialogs/classwizard/classwizard.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;classwizard.h&quot;
+
+ ClassWizard::ClassWizard(QWidget *parent)
+     : QWizard(parent)
+ {
+     addPage(new IntroPage);
+     addPage(new ClassInfoPage);
+     addPage(new CodeStylePage);
+     addPage(new OutputFilesPage);
+     addPage(new ConclusionPage);
+
+     setPixmap(QWizard::BannerPixmap, QPixmap(&quot;:/images/banner.png&quot;));
+     setPixmap(QWizard::BackgroundPixmap, QPixmap(&quot;:/images/background.png&quot;));
+
+     setWindowTitle(tr(&quot;Class Wizard&quot;));
+ }
+
+ void ClassWizard::accept()
+ {
+     QByteArray className = field(&quot;className&quot;).toByteArray();
+     QByteArray baseClass = field(&quot;baseClass&quot;).toByteArray();
+     QByteArray macroName = field(&quot;macroName&quot;).toByteArray();
+     QByteArray baseInclude = field(&quot;baseInclude&quot;).toByteArray();
+
+     QString outputDir = field(&quot;outputDir&quot;).toString();
+     QString header = field(&quot;header&quot;).toString();
+     QString implementation = field(&quot;implementation&quot;).toString();
+
+     QByteArray block;
+
+     if (field(&quot;comment&quot;).toBool()) {
+         block += &quot;<span class="comment">/*\n&quot;;
+         block += &quot;    &quot; + header.toAscii() + &quot;\n&quot;;
+         block += &quot;*/</span>\n&quot;;
+         block += &quot;\n&quot;;
+     }
+     if (field(&quot;protect&quot;).toBool()) {
+         block += &quot;#ifndef &quot; + macroName + &quot;\n&quot;;
+         block += &quot;#define &quot; + macroName + &quot;\n&quot;;
+         block += &quot;\n&quot;;
+     }
+     if (field(&quot;includeBase&quot;).toBool()) {
+         block += &quot;#include &quot; + baseInclude + &quot;\n&quot;;
+         block += &quot;\n&quot;;
+     }
+
+     block += &quot;class &quot; + className;
+     if (!baseClass.isEmpty())
+         block += &quot; : public &quot; + baseClass;
+     block += &quot;\n&quot;;
+     block += &quot;{\n&quot;;
+
+     <span class="comment">/* qmake ignore Q_OBJECT */</span>
+
+     if (field(&quot;qobjectMacro&quot;).toBool()) {
+         block += &quot;    Q_OBJECT\n&quot;;
+         block += &quot;\n&quot;;
+     }
+     block += &quot;public:\n&quot;;
+
+     if (field(&quot;qobjectCtor&quot;).toBool()) {
+         block += &quot;    &quot; + className + &quot;(QObject *parent = 0);\n&quot;;
+     } else if (field(&quot;qwidgetCtor&quot;).toBool()) {
+         block += &quot;    &quot; + className + &quot;(QWidget *parent = 0);\n&quot;;
+     } else if (field(&quot;defaultCtor&quot;).toBool()) {
+         block += &quot;    &quot; + className + &quot;();\n&quot;;
+         if (field(&quot;copyCtor&quot;).toBool()) {
+             block += &quot;    &quot; + className + &quot;(const &quot; + className + &quot; &amp;other);\n&quot;;
+             block += &quot;\n&quot;;
+             block += &quot;    &quot; + className + &quot; &amp;operator=&quot; + &quot;(const &quot; + className
+                      + &quot; &amp;other);\n&quot;;
+         }
+     }
+     block += &quot;};\n&quot;;
+
+     if (field(&quot;protect&quot;).toBool()) {
+         block += &quot;\n&quot;;
+         block += &quot;#endif\n&quot;;
+     }
+
+     QFile headerFile(outputDir + &quot;/&quot; + header);
+     if (!headerFile.open(QFile::WriteOnly | QFile::Text)) {
+         QMessageBox::warning(0, QObject::tr(&quot;Simple Wizard&quot;),
+                              QObject::tr(&quot;Cannot write file %1:\n%2&quot;)
+                              .arg(headerFile.fileName())
+                              .arg(headerFile.errorString()));
+         return;
+     }
+     headerFile.write(block);
+
+     block.clear();
+
+     if (field(&quot;comment&quot;).toBool()) {
+         block += &quot;<span class="comment">/*\n&quot;;
+         block += &quot;    &quot; + implementation.toAscii() + &quot;\n&quot;;
+         block += &quot;*/</span>\n&quot;;
+         block += &quot;\n&quot;;
+     }
+     block += &quot;#include \&quot;&quot; + header.toAscii() + &quot;\&quot;\n&quot;;
+     block += &quot;\n&quot;;
+
+     if (field(&quot;qobjectCtor&quot;).toBool()) {
+         block += className + &quot;::&quot; + className + &quot;(QObject *parent)\n&quot;;
+         block += &quot;    : &quot; + baseClass + &quot;(parent)\n&quot;;
+         block += &quot;{\n&quot;;
+         block += &quot;}\n&quot;;
+     } else if (field(&quot;qwidgetCtor&quot;).toBool()) {
+         block += className + &quot;::&quot; + className + &quot;(QWidget *parent)\n&quot;;
+         block += &quot;    : &quot; + baseClass + &quot;(parent)\n&quot;;
+         block += &quot;{\n&quot;;
+         block += &quot;}\n&quot;;
+     } else if (field(&quot;defaultCtor&quot;).toBool()) {
+         block += className + &quot;::&quot; + className + &quot;()\n&quot;;
+         block += &quot;{\n&quot;;
+         block += &quot;    <span class="comment">//</span> missing code\n&quot;;
+         block += &quot;}\n&quot;;
+
+         if (field(&quot;copyCtor&quot;).toBool()) {
+             block += &quot;\n&quot;;
+             block += className + &quot;::&quot; + className + &quot;(const &quot; + className
+                      + &quot; &amp;other)\n&quot;;
+             block += &quot;{\n&quot;;
+             block += &quot;    *this = other;\n&quot;;
+             block += &quot;}\n&quot;;
+             block += &quot;\n&quot;;
+             block += className + &quot; &amp;&quot; + className + &quot;::operator=(const &quot;
+                      + className + &quot; &amp;other)\n&quot;;
+             block += &quot;{\n&quot;;
+             if (!baseClass.isEmpty())
+                 block += &quot;    &quot; + baseClass + &quot;::operator=(other);\n&quot;;
+             block += &quot;    <span class="comment">//</span> missing code\n&quot;;
+             block += &quot;    return *this;\n&quot;;
+             block += &quot;}\n&quot;;
+         }
+     }
+
+     QFile implementationFile(outputDir + &quot;/&quot; + implementation);
+     if (!implementationFile.open(QFile::WriteOnly | QFile::Text)) {
+         QMessageBox::warning(0, QObject::tr(&quot;Simple Wizard&quot;),
+                              QObject::tr(&quot;Cannot write file %1:\n%2&quot;)
+                              .arg(implementationFile.fileName())
+                              .arg(implementationFile.errorString()));
+         return;
+     }
+     implementationFile.write(block);
+
+     QDialog::accept();
+ }
+
+ IntroPage::IntroPage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     setTitle(tr(&quot;Introduction&quot;));
+     setPixmap(QWizard::WatermarkPixmap, QPixmap(&quot;:/images/watermark1.png&quot;));
+
+     label = new QLabel(tr(&quot;This wizard will generate a skeleton C++ class &quot;
+                           &quot;definition, including a few functions. You simply &quot;
+                           &quot;need to specify the class name and set a few &quot;
+                           &quot;options to produce a header file and an &quot;
+                           &quot;implementation file for your new C++ class.&quot;));
+     label-&gt;setWordWrap(true);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(label);
+     setLayout(layout);
+ }
+
+ ClassInfoPage::ClassInfoPage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     setTitle(tr(&quot;Class Information&quot;));
+     setSubTitle(tr(&quot;Specify basic information about the class for which you &quot;
+                    &quot;want to generate skeleton source code files.&quot;));
+     setPixmap(QWizard::LogoPixmap, QPixmap(&quot;:/images/logo1.png&quot;));
+
+     classNameLabel = new QLabel(tr(&quot;&amp;Class name:&quot;));
+     classNameLineEdit = new QLineEdit;
+     classNameLabel-&gt;setBuddy(classNameLineEdit);
+
+     baseClassLabel = new QLabel(tr(&quot;B&amp;ase class:&quot;));
+     baseClassLineEdit = new QLineEdit;
+     baseClassLabel-&gt;setBuddy(baseClassLineEdit);
+
+     qobjectMacroCheckBox = new QCheckBox(tr(&quot;Generate Q_OBJECT &amp;macro&quot;));
+
+     groupBox = new QGroupBox(tr(&quot;C&amp;onstructor&quot;));
+
+     qobjectCtorRadioButton = new QRadioButton(tr(&quot;&amp;QObject-style constructor&quot;));
+     qwidgetCtorRadioButton = new QRadioButton(tr(&quot;Q&amp;Widget-style constructor&quot;));
+     defaultCtorRadioButton = new QRadioButton(tr(&quot;&amp;Default constructor&quot;));
+     copyCtorCheckBox = new QCheckBox(tr(&quot;&amp;Generate copy constructor and &quot;
+                                         &quot;operator=&quot;));
+
+     defaultCtorRadioButton-&gt;setChecked(true);
+
+     connect(defaultCtorRadioButton, SIGNAL(toggled(bool)),
+             copyCtorCheckBox, SLOT(setEnabled(bool)));
+
+     registerField(&quot;className*&quot;, classNameLineEdit);
+     registerField(&quot;baseClass&quot;, baseClassLineEdit);
+     registerField(&quot;qobjectMacro&quot;, qobjectMacroCheckBox);
+     registerField(&quot;qobjectCtor&quot;, qobjectCtorRadioButton);
+     registerField(&quot;qwidgetCtor&quot;, qwidgetCtorRadioButton);
+     registerField(&quot;defaultCtor&quot;, defaultCtorRadioButton);
+     registerField(&quot;copyCtor&quot;, copyCtorCheckBox);
+
+     QVBoxLayout *groupBoxLayout = new QVBoxLayout;
+     groupBoxLayout-&gt;addWidget(qobjectCtorRadioButton);
+     groupBoxLayout-&gt;addWidget(qwidgetCtorRadioButton);
+     groupBoxLayout-&gt;addWidget(defaultCtorRadioButton);
+     groupBoxLayout-&gt;addWidget(copyCtorCheckBox);
+     groupBox-&gt;setLayout(groupBoxLayout);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(classNameLabel, 0, 0);
+     layout-&gt;addWidget(classNameLineEdit, 0, 1);
+     layout-&gt;addWidget(baseClassLabel, 1, 0);
+     layout-&gt;addWidget(baseClassLineEdit, 1, 1);
+     layout-&gt;addWidget(qobjectMacroCheckBox, 2, 0, 1, 2);
+     layout-&gt;addWidget(groupBox, 3, 0, 1, 2);
+     setLayout(layout);
+ }
+
+ CodeStylePage::CodeStylePage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     setTitle(tr(&quot;Code Style Options&quot;));
+     setSubTitle(tr(&quot;Choose the formatting of the generated code.&quot;));
+     setPixmap(QWizard::LogoPixmap, QPixmap(&quot;:/images/logo2.png&quot;));
+
+     commentCheckBox = new QCheckBox(tr(&quot;&amp;Start generated files with a &quot;
+                                        &quot;comment&quot;));
+     commentCheckBox-&gt;setChecked(true);
+
+     protectCheckBox = new QCheckBox(tr(&quot;&amp;Protect header file against multiple &quot;
+                                        &quot;inclusions&quot;));
+     protectCheckBox-&gt;setChecked(true);
+
+     macroNameLabel = new QLabel(tr(&quot;&amp;Macro name:&quot;));
+     macroNameLineEdit = new QLineEdit;
+     macroNameLabel-&gt;setBuddy(macroNameLineEdit);
+
+     includeBaseCheckBox = new QCheckBox(tr(&quot;&amp;Include base class definition&quot;));
+     baseIncludeLabel = new QLabel(tr(&quot;Base class include:&quot;));
+     baseIncludeLineEdit = new QLineEdit;
+     baseIncludeLabel-&gt;setBuddy(baseIncludeLineEdit);
+
+     connect(protectCheckBox, SIGNAL(toggled(bool)),
+             macroNameLabel, SLOT(setEnabled(bool)));
+     connect(protectCheckBox, SIGNAL(toggled(bool)),
+             macroNameLineEdit, SLOT(setEnabled(bool)));
+     connect(includeBaseCheckBox, SIGNAL(toggled(bool)),
+             baseIncludeLabel, SLOT(setEnabled(bool)));
+     connect(includeBaseCheckBox, SIGNAL(toggled(bool)),
+             baseIncludeLineEdit, SLOT(setEnabled(bool)));
+
+     registerField(&quot;comment&quot;, commentCheckBox);
+     registerField(&quot;protect&quot;, protectCheckBox);
+     registerField(&quot;macroName&quot;, macroNameLineEdit);
+     registerField(&quot;includeBase&quot;, includeBaseCheckBox);
+     registerField(&quot;baseInclude&quot;, baseIncludeLineEdit);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;setColumnMinimumWidth(0, 20);
+     layout-&gt;addWidget(commentCheckBox, 0, 0, 1, 3);
+     layout-&gt;addWidget(protectCheckBox, 1, 0, 1, 3);
+     layout-&gt;addWidget(macroNameLabel, 2, 1);
+     layout-&gt;addWidget(macroNameLineEdit, 2, 2);
+     layout-&gt;addWidget(includeBaseCheckBox, 3, 0, 1, 3);
+     layout-&gt;addWidget(baseIncludeLabel, 4, 1);
+     layout-&gt;addWidget(baseIncludeLineEdit, 4, 2);
+     setLayout(layout);
+ }
+
+ void CodeStylePage::initializePage()
+ {
+     QString className = field(&quot;className&quot;).toString();
+     macroNameLineEdit-&gt;setText(className.toUpper() + &quot;_H&quot;);
+
+     QString baseClass = field(&quot;baseClass&quot;).toString();
+
+     includeBaseCheckBox-&gt;setChecked(!baseClass.isEmpty());
+     includeBaseCheckBox-&gt;setEnabled(!baseClass.isEmpty());
+     baseIncludeLabel-&gt;setEnabled(!baseClass.isEmpty());
+     baseIncludeLineEdit-&gt;setEnabled(!baseClass.isEmpty());
+
+     if (baseClass.isEmpty()) {
+         baseIncludeLineEdit-&gt;clear();
+     } else if (QRegExp(&quot;Q[A-Z].*&quot;).exactMatch(baseClass)) {
+         baseIncludeLineEdit-&gt;setText(&quot;&lt;&quot; + baseClass + &quot;&gt;&quot;);
+     } else {
+         baseIncludeLineEdit-&gt;setText(&quot;\&quot;&quot; + baseClass.toLower() + &quot;.h\&quot;&quot;);
+     }
+ }
+
+ OutputFilesPage::OutputFilesPage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     setTitle(tr(&quot;Output Files&quot;));
+     setSubTitle(tr(&quot;Specify where you want the wizard to put the generated &quot;
+                    &quot;skeleton code.&quot;));
+     setPixmap(QWizard::LogoPixmap, QPixmap(&quot;:/images/logo3.png&quot;));
+
+     outputDirLabel = new QLabel(tr(&quot;&amp;Output directory:&quot;));
+     outputDirLineEdit = new QLineEdit;
+     outputDirLabel-&gt;setBuddy(outputDirLineEdit);
+
+     headerLabel = new QLabel(tr(&quot;&amp;Header file name:&quot;));
+     headerLineEdit = new QLineEdit;
+     headerLabel-&gt;setBuddy(headerLineEdit);
+
+     implementationLabel = new QLabel(tr(&quot;&amp;Implementation file name:&quot;));
+     implementationLineEdit = new QLineEdit;
+     implementationLabel-&gt;setBuddy(implementationLineEdit);
+
+     registerField(&quot;outputDir*&quot;, outputDirLineEdit);
+     registerField(&quot;header*&quot;, headerLineEdit);
+     registerField(&quot;implementation*&quot;, implementationLineEdit);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(outputDirLabel, 0, 0);
+     layout-&gt;addWidget(outputDirLineEdit, 0, 1);
+     layout-&gt;addWidget(headerLabel, 1, 0);
+     layout-&gt;addWidget(headerLineEdit, 1, 1);
+     layout-&gt;addWidget(implementationLabel, 2, 0);
+     layout-&gt;addWidget(implementationLineEdit, 2, 1);
+     setLayout(layout);
+ }
+
+ void OutputFilesPage::initializePage()
+ {
+     QString className = field(&quot;className&quot;).toString();
+     headerLineEdit-&gt;setText(className.toLower() + &quot;.h&quot;);
+     implementationLineEdit-&gt;setText(className.toLower() + &quot;.cpp&quot;);
+     outputDirLineEdit-&gt;setText(QDir::convertSeparators(QDir::tempPath()));
+ }
+
+ ConclusionPage::ConclusionPage(QWidget *parent)
+     : QWizardPage(parent)
+ {
+     setTitle(tr(&quot;Conclusion&quot;));
+     setPixmap(QWizard::WatermarkPixmap, QPixmap(&quot;:/images/watermark2.png&quot;));
+
+     label = new QLabel;
+     label-&gt;setWordWrap(true);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(label);
+     setLayout(layout);
+ }
+
+ void ConclusionPage::initializePage()
+ {
+     QString finishText = wizard()-&gt;buttonText(QWizard::FinishButton);
+     finishText.remove('&amp;');
+     label-&gt;setText(tr(&quot;Click %1 to generate the class skeleton.&quot;)
+                    .arg(finishText));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

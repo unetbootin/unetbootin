@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/kernel/qsqlresult.cpp -->
+<head>
+  <title>Qt 4.4: QSqlResult Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSqlResult Class Reference<br /><span class="small-subtitle">[<a href="qtsql.html">QtSql</a> module]</span>
+</h1>
+<p>The QSqlResult class provides an abstract interface for accessing data from specific SQL databases. <a href="#details">More...</a></p>
+<pre> #include &lt;QSqlResult&gt;</pre><ul>
+<li><a href="qsqlresult-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qsqlresult.html#dtor.QSqlResult">~QSqlResult</a></b> ()</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qsqlresult.html#handle">handle</a></b> () const</li>
+</ul>
+<a name="protected-types"></a>
+<h3>Protected Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qsqlresult.html#BindingSyntax-enum">BindingSyntax</a></b> { PositionalBinding, NamedBinding }</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsqlresult.html#QSqlResult">QSqlResult</a></b> ( const QSqlDriver * <i>db</i> )</li>
+<li><div class="fn"/>void <b><a href="qsqlresult.html#addBindValue">addBindValue</a></b> ( const QVariant &amp; <i>val</i>, QSql::ParamType <i>paramType</i> )</li>
+<li><div class="fn"/>int <b><a href="qsqlresult.html#at">at</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#bindValue">bindValue</a></b> ( int <i>index</i>, const QVariant &amp; <i>val</i>, QSql::ParamType <i>paramType</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#bindValue-2">bindValue</a></b> ( const QString &amp; <i>placeholder</i>, const QVariant &amp; <i>val</i>, QSql::ParamType <i>paramType</i> )</li>
+<li><div class="fn"/>QSql::ParamType <b><a href="qsqlresult.html#bindValueType">bindValueType</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QSql::ParamType <b><a href="qsqlresult.html#bindValueType-2">bindValueType</a></b> ( const QString &amp; <i>placeholder</i> ) const</li>
+<li><div class="fn"/>BindingSyntax <b><a href="qsqlresult.html#bindingSyntax">bindingSyntax</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="qsqlresult.html#boundValue">boundValue</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QVariant <b><a href="qsqlresult.html#boundValue-2">boundValue</a></b> ( const QString &amp; <i>placeholder</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qsqlresult.html#boundValueCount">boundValueCount</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsqlresult.html#boundValueName">boundValueName</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QVector&lt;QVariant&gt; &amp; <b><a href="qsqlresult.html#boundValues">boundValues</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsqlresult.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qsqlresult.html#data">data</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>const QSqlDriver * <b><a href="qsqlresult.html#driver">driver</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#exec">exec</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qsqlresult.html#executedQuery">executedQuery</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#fetch">fetch</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#fetchFirst">fetchFirst</a></b> () = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#fetchLast">fetchLast</a></b> () = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#fetchNext">fetchNext</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#fetchPrevious">fetchPrevious</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qsqlresult.html#hasOutValues">hasOutValues</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsqlresult.html#isActive">isActive</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsqlresult.html#isForwardOnly">isForwardOnly</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#isNull">isNull</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>bool <b><a href="qsqlresult.html#isSelect">isSelect</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsqlresult.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QSqlError <b><a href="qsqlresult.html#lastError">lastError</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qsqlresult.html#lastInsertId">lastInsertId</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsqlresult.html#lastQuery">lastQuery</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qsqlresult.html#numRowsAffected">numRowsAffected</a></b> () = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#prepare">prepare</a></b> ( const QString &amp; <i>query</i> )</li>
+<li><div class="fn"/>virtual QSqlRecord <b><a href="qsqlresult.html#record">record</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#reset">reset</a></b> ( const QString &amp; <i>query</i> ) = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlresult.html#savePrepare">savePrepare</a></b> ( const QString &amp; <i>query</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setActive">setActive</a></b> ( bool <i>active</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setAt">setAt</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setForwardOnly">setForwardOnly</a></b> ( bool <i>forward</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setLastError">setLastError</a></b> ( const QSqlError &amp; <i>error</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setQuery">setQuery</a></b> ( const QString &amp; <i>query</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlresult.html#setSelect">setSelect</a></b> ( bool <i>select</i> )</li>
+<li><div class="fn"/>virtual int <b><a href="qsqlresult.html#size">size</a></b> () = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSqlResult class provides an abstract interface for accessing data from specific SQL databases.</p>
+<p>Normally, you would use <a href="qsqlquery.html">QSqlQuery</a> instead of QSqlResult, since <a href="qsqlquery.html">QSqlQuery</a> provides a generic wrapper for database-specific implementations of QSqlResult.</p>
+<p>If you are implementing your own SQL driver (by subclassing <a href="qsqldriver.html">QSqlDriver</a>), you will need to provide your own QSqlResult subclass that implements all the pure virtual functions and other virtual functions that you need.</p>
+<p>See also <a href="qsqldriver.html">QSqlDriver</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="BindingSyntax-enum"></a>enum QSqlResult::BindingSyntax</h3>
+<p>This enum type specifies the different syntaxes for specifying placeholders in prepared queries.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSqlResult::PositionalBinding</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Use the ODBC-style positional syntax, with &quot;?&quot; as placeholders.</td></tr>
+<tr><td valign="top"><tt>QSqlResult::NamedBinding</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Use the Oracle-style syntax with named placeholders (e.g&#x2e;, &quot;:id&quot;)</td></tr>
+</table></p>
+<p>See also <a href="qsqlresult.html#bindingSyntax">bindingSyntax</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSqlResult"></a>QSqlResult::QSqlResult ( const <a href="qsqldriver.html">QSqlDriver</a> * <i>db</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Creates a <a href="qsqlresult.html">QSqlResult</a> using database driver <i>db</i>. The object is initialized to an inactive state.</p>
+<p>See also <a href="qsqlresult.html#isActive">isActive</a>() and <a href="qsqlresult.html#driver">driver</a>().</p>
+<h3 class="fn"><a name="dtor.QSqlResult"></a>QSqlResult::~QSqlResult ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="addBindValue"></a>void QSqlResult::addBindValue ( const <a href="qvariant.html">QVariant</a> &amp; <i>val</i>, <a href="qsql.html#ParamTypeFlag-enum">QSql::ParamType</a> <i>paramType</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Binds the value <i>val</i> of parameter type <i>paramType</i> to the next available position in the current record (row).</p>
+<p>See also <a href="qsqlresult.html#bindValue">bindValue</a>().</p>
+<h3 class="fn"><a name="at"></a>int QSqlResult::at () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current (zero-based) row position of the result. May return the special values <a href="qsql.html#Location-enum">QSql::BeforeFirstRow</a> or <a href="qsql.html#Location-enum">QSql::AfterLastRow</a>.</p>
+<p>See also <a href="qsqlresult.html#setAt">setAt</a>() and <a href="qsqlresult.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="bindValue"></a>void QSqlResult::bindValue ( int <i>index</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>val</i>, <a href="qsql.html#ParamTypeFlag-enum">QSql::ParamType</a> <i>paramType</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Binds the value <i>val</i> of parameter type <i>paramType</i> to position <i>index</i> in the current record (row).</p>
+<p>See also <a href="qsqlresult.html#addBindValue">addBindValue</a>().</p>
+<h3 class="fn"><a name="bindValue-2"></a>void QSqlResult::bindValue ( const <a href="qstring.html">QString</a> &amp; <i>placeholder</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>val</i>, <a href="qsql.html#ParamTypeFlag-enum">QSql::ParamType</a> <i>paramType</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Binds the value <i>val</i> of parameter type <i>paramType</i> to the <i>placeholder</i> name in the current record (row).</p>
+<p>Note that binding an undefined placeholder will result in undefined behavior.</p>
+<h3 class="fn"><a name="bindValueType"></a><a href="qsql.html#ParamTypeFlag-enum">QSql::ParamType</a> QSqlResult::bindValueType ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the parameter type for the value bound at position <i>index</i>.</p>
+<p>See also <a href="qsqlresult.html#boundValue">boundValue</a>().</p>
+<h3 class="fn"><a name="bindValueType-2"></a><a href="qsql.html#ParamTypeFlag-enum">QSql::ParamType</a> QSqlResult::bindValueType ( const <a href="qstring.html">QString</a> &amp; <i>placeholder</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the parameter type for the value bound with the given <i>placeholder</i> name.</p>
+<h3 class="fn"><a name="bindingSyntax"></a><a href="qsqlresult.html#BindingSyntax-enum">BindingSyntax</a> QSqlResult::bindingSyntax () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the binding syntax used by prepared queries.</p>
+<h3 class="fn"><a name="boundValue"></a><a href="qvariant.html">QVariant</a> QSqlResult::boundValue ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the value bound at position <i>index</i> in the current record (row).</p>
+<p>See also <a href="qsqlresult.html#bindValue">bindValue</a>() and <a href="qsqlresult.html#boundValues">boundValues</a>().</p>
+<h3 class="fn"><a name="boundValue-2"></a><a href="qvariant.html">QVariant</a> QSqlResult::boundValue ( const <a href="qstring.html">QString</a> &amp; <i>placeholder</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the value bound by the given <i>placeholder</i> name in the current record (row).</p>
+<p>See also <a href="qsqlresult.html#bindValueType">bindValueType</a>().</p>
+<h3 class="fn"><a name="boundValueCount"></a>int QSqlResult::boundValueCount () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the number of bound values in the result.</p>
+<p>See also <a href="qsqlresult.html#boundValues">boundValues</a>().</p>
+<h3 class="fn"><a name="boundValueName"></a><a href="qstring.html">QString</a> QSqlResult::boundValueName ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the name of the bound value at position <i>index</i> in the current record (row).</p>
+<p>See also <a href="qsqlresult.html#boundValue">boundValue</a>().</p>
+<h3 class="fn"><a name="boundValues"></a><a href="qvector.html">QVector</a>&lt;<a href="qvariant.html">QVariant</a>&gt; &amp; QSqlResult::boundValues () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a vector of the result's bound values for the current record (row).</p>
+<p>See also <a href="qsqlresult.html#boundValueCount">boundValueCount</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QSqlResult::clear ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Clears the entire result set and releases any associated resources.</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QSqlResult::data ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Returns the data for field <i>index</i> in the current row as a <a href="qvariant.html">QVariant</a>. This function is only called if the result is in an active state and is positioned on a valid record and <i>index</i> is non-negative. Derived classes must reimplement this function and return the value of field <i>index</i>, or QVariant() if it cannot be determined.</p>
+<h3 class="fn"><a name="driver"></a>const <a href="qsqldriver.html">QSqlDriver</a> * QSqlResult::driver () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the driver associated with the result. This is the object that was passed to the constructor.</p>
+<h3 class="fn"><a name="exec"></a>bool QSqlResult::exec ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Executes the query, returning true if successful; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#prepare">prepare</a>().</p>
+<h3 class="fn"><a name="executedQuery"></a><a href="qstring.html">QString</a> QSqlResult::executedQuery () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the query that was actually executed. This may differ from the query that was passed, for example if bound values were used with a prepared query and the underlying database doesn't support prepared queries.</p>
+<p>See also <a href="qsqlresult.html#exec">exec</a>() and <a href="qsqlresult.html#setQuery">setQuery</a>().</p>
+<h3 class="fn"><a name="fetch"></a>bool QSqlResult::fetch ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Positions the result to an arbitrary (zero-based) row <i>index</i>.</p>
+<p>This function is only called if the result is in an active state. Derived classes must reimplement this function and position the result to the row <i>index</i>, and call <a href="qsqlresult.html#setAt">setAt</a>() with an appropriate value. Return true to indicate success, or false to signify failure.</p>
+<p>See also <a href="qsqlresult.html#isActive">isActive</a>(), <a href="qsqlresult.html#fetchFirst">fetchFirst</a>(), <a href="qsqlresult.html#fetchLast">fetchLast</a>(), <a href="qsqlresult.html#fetchNext">fetchNext</a>(), and <a href="qsqlresult.html#fetchPrevious">fetchPrevious</a>().</p>
+<h3 class="fn"><a name="fetchFirst"></a>bool QSqlResult::fetchFirst ()&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Positions the result to the first record (row 0) in the result.</p>
+<p>This function is only called if the result is in an active state. Derived classes must reimplement this function and position the result to the first record, and call <a href="qsqlresult.html#setAt">setAt</a>() with an appropriate value. Return true to indicate success, or false to signify failure.</p>
+<p>See also <a href="qsqlresult.html#fetch">fetch</a>() and <a href="qsqlresult.html#fetchLast">fetchLast</a>().</p>
+<h3 class="fn"><a name="fetchLast"></a>bool QSqlResult::fetchLast ()&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Positions the result to the last record (last row) in the result.</p>
+<p>This function is only called if the result is in an active state. Derived classes must reimplement this function and position the result to the last record, and call <a href="qsqlresult.html#setAt">setAt</a>() with an appropriate value. Return true to indicate success, or false to signify failure.</p>
+<p>See also <a href="qsqlresult.html#fetch">fetch</a>() and <a href="qsqlresult.html#fetchFirst">fetchFirst</a>().</p>
+<h3 class="fn"><a name="fetchNext"></a>bool QSqlResult::fetchNext ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Positions the result to the next available record (row) in the result.</p>
+<p>This function is only called if the result is in an active state. The default implementation calls <a href="qsqlresult.html#fetch">fetch</a>() with the next index. Derived classes can reimplement this function and position the result to the next record in some other way, and call <a href="qsqlresult.html#setAt">setAt</a>() with an appropriate value. Return true to indicate success, or false to signify failure.</p>
+<p>See also <a href="qsqlresult.html#fetch">fetch</a>() and <a href="qsqlresult.html#fetchPrevious">fetchPrevious</a>().</p>
+<h3 class="fn"><a name="fetchPrevious"></a>bool QSqlResult::fetchPrevious ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Positions the result to the previous record (row) in the result.</p>
+<p>This function is only called if the result is in an active state. The default implementation calls <a href="qsqlresult.html#fetch">fetch</a>() with the previous index. Derived classes can reimplement this function and position the result to the next record in some other way, and call <a href="qsqlresult.html#setAt">setAt</a>() with an appropriate value. Return true to indicate success, or false to signify failure.</p>
+<h3 class="fn"><a name="handle"></a><a href="qvariant.html">QVariant</a> QSqlResult::handle () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the low-level database handle for this result set wrapped in a <a href="qvariant.html">QVariant</a> or an invalid <a href="qvariant.html">QVariant</a> if there is no handle.</p>
+<p><b>Warning:</b> Use this with uttermost care and only if you know what you're doing.</p>
+<p><b>Warning:</b> The handle returned here can become a stale pointer if the result is modified (for example, if you clear it).</p>
+<p><b>Warning:</b> The handle can be NULL if the result was not executed yet.</p>
+<p>The handle returned here is database-dependent, you should query the type name of the variant before accessing it.</p>
+<p>This example retrieves the handle for a sqlite result:</p>
+<pre>     QSqlQuery query = ...
+     QVariant v = query.result()-&gt;handle();
+     if (v.isValid() &amp;&amp; qstrcmp(v.typeName(), &quot;sqlite3_stmt*&quot;)) {
+         // v.data() returns a pointer to the handle
+         sqlite3_stmt *handle = *static_cast&lt;sqlite3_stmt **&gt;(v.data());
+         if (handle != 0) { // check that it is not NULL
+             ...
+         }
+     }</pre>
+<p>This snippet returns the handle for PostgreSQL or MySQL:</p>
+<pre>     if (v.typeName() == &quot;PGresult*&quot;) {
+         PGresult *handle = *static_cast&lt;PGresult **&gt;(v.data());
+         if (handle != 0) ...
+     }
+
+     if (v.typeName() == &quot;MYSQL_STMT*&quot;) {
+         MYSQL_STMT *handle = *static_cast&lt;MYSQL_STMT **&gt;(v.data());
+         if (handle != 0) ...
+     }</pre>
+<p>See also <a href="qsqldriver.html#handle">QSqlDriver::handle</a>().</p>
+<h3 class="fn"><a name="hasOutValues"></a>bool QSqlResult::hasOutValues () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if at least one of the query's bound values is a <tt>QSql::Out</tt> or a <a href="qsql.html#ParamTypeFlag-enum">QSql::InOut</a>; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#bindValueType">bindValueType</a>().</p>
+<h3 class="fn"><a name="isActive"></a>bool QSqlResult::isActive () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the result has records to be retrieved; otherwise returns false.</p>
+<h3 class="fn"><a name="isForwardOnly"></a>bool QSqlResult::isForwardOnly () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if you can only scroll forward through the result set; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#setForwardOnly">setForwardOnly</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QSqlResult::isNull ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Returns true if the field at position <i>index</i> in the current row is null; otherwise returns false.</p>
+<h3 class="fn"><a name="isSelect"></a>bool QSqlResult::isSelect () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the current result is from a <tt>SELECT</tt> statement; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#setSelect">setSelect</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QSqlResult::isValid () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the result is positioned on a valid record (that is, the result is not positioned before the first or after the last record); otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#at">at</a>().</p>
+<h3 class="fn"><a name="lastError"></a><a href="qsqlerror.html">QSqlError</a> QSqlResult::lastError () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the last error associated with the result.</p>
+<p>See also <a href="qsqlresult.html#setLastError">setLastError</a>().</p>
+<h3 class="fn"><a name="lastInsertId"></a><a href="qvariant.html">QVariant</a> QSqlResult::lastInsertId () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the object ID of the most recent inserted row if the database supports it. An invalid <a href="qvariant.html">QVariant</a> will be returned if the query did not insert any value or if the database does not report the id back. If more than one row was touched by the insert, the behavior is undefined.</p>
+<p>Note that for Oracle databases the row's ROWID will be returned, while for MySQL databases the row's auto-increment field will be returned.</p>
+<p>See also <a href="qsqldriver.html#hasFeature">QSqlDriver::hasFeature</a>().</p>
+<h3 class="fn"><a name="lastQuery"></a><a href="qstring.html">QString</a> QSqlResult::lastQuery () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current SQL query text, or an empty string if there isn't one.</p>
+<p>See also <a href="qsqlresult.html#setQuery">setQuery</a>().</p>
+<h3 class="fn"><a name="numRowsAffected"></a>int QSqlResult::numRowsAffected ()&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Returns the number of rows affected by the last query executed, or -1 if it cannot be determined or if the query is a <tt>SELECT</tt> statement.</p>
+<p>See also <a href="qsqlresult.html#size">size</a>().</p>
+<h3 class="fn"><a name="prepare"></a>bool QSqlResult::prepare ( const <a href="qstring.html">QString</a> &amp; <i>query</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Prepares the given <i>query</i> for execution; the query will normally use placeholders so that it can be executed repeatedly. Returns true if the query is prepared successfully; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#exec">exec</a>().</p>
+<h3 class="fn"><a name="record"></a><a href="qsqlrecord.html">QSqlRecord</a> QSqlResult::record () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the current record if the query is active; otherwise returns an empty <a href="qsqlrecord.html">QSqlRecord</a>.</p>
+<p>The default implementation always returns an empty <a href="qsqlrecord.html">QSqlRecord</a>.</p>
+<p>See also <a href="qsqlresult.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="reset"></a>bool QSqlResult::reset ( const <a href="qstring.html">QString</a> &amp; <i>query</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Sets the result to use the SQL statement <i>query</i> for subsequent data retrieval.</p>
+<p>Derived classes must reimplement this function and apply the <i>query</i> to the database. This function is only called after the result is set to an inactive state and is positioned before the first record of the new result. Derived classes should return true if the query was successful and ready to be used, or false otherwise.</p>
+<p>See also <a href="qsqlresult.html#setQuery">setQuery</a>().</p>
+<h3 class="fn"><a name="savePrepare"></a>bool QSqlResult::savePrepare ( const <a href="qstring.html">QString</a> &amp; <i>query</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Prepares the given <i>query</i>, using the underlying database functionality where possible. Returns true if the query is prepared successfully; otherwise returns false.</p>
+<p>See also <a href="qsqlresult.html#prepare">prepare</a>().</p>
+<h3 class="fn"><a name="setActive"></a>void QSqlResult::setActive ( bool <i>active</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is provided for derived classes to set the internal active state to <i>active</i>.</p>
+<p>See also <a href="qsqlresult.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="setAt"></a>void QSqlResult::setAt ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is provided for derived classes to set the internal (zero-based) row position to <i>index</i>.</p>
+<p>See also <a href="qsqlresult.html#at">at</a>().</p>
+<h3 class="fn"><a name="setForwardOnly"></a>void QSqlResult::setForwardOnly ( bool <i>forward</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets forward only mode to <i>forward</i>. If <i>forward</i> is true, only <a href="qsqlresult.html#fetchNext">fetchNext</a>() is allowed for navigating the results. Forward only mode needs much less memory since results do not have to be cached. By default, this feature is disabled.</p>
+<p>See also <a href="qsqlresult.html#isForwardOnly">isForwardOnly</a>() and <a href="qsqlresult.html#fetchNext">fetchNext</a>().</p>
+<h3 class="fn"><a name="setLastError"></a>void QSqlResult::setLastError ( const <a href="qsqlerror.html">QSqlError</a> &amp; <i>error</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is provided for derived classes to set the last error to <i>error</i>.</p>
+<p>See also <a href="qsqlresult.html#lastError">lastError</a>().</p>
+<h3 class="fn"><a name="setQuery"></a>void QSqlResult::setQuery ( const <a href="qstring.html">QString</a> &amp; <i>query</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the current query for the result to <i>query</i>. You must call <a href="qsqlresult.html#reset">reset</a>() to execute the query on the database.</p>
+<p>See also <a href="qsqlresult.html#reset">reset</a>() and <a href="qsqlresult.html#lastQuery">lastQuery</a>().</p>
+<h3 class="fn"><a name="setSelect"></a>void QSqlResult::setSelect ( bool <i>select</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is provided for derived classes to indicate whether or not the current statement is a SQL <tt>SELECT</tt> statement. The <i>select</i> parameter should be true if the statement is a <tt>SELECT</tt> statement; otherwise it should be false.</p>
+<p>See also <a href="qsqlresult.html#isSelect">isSelect</a>().</p>
+<h3 class="fn"><a name="size"></a>int QSqlResult::size ()&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Returns the size of the <tt>SELECT</tt> result, or -1 if it cannot be determined or if the query is not a <tt>SELECT</tt> statement.</p>
+<p>See also <a href="qsqlresult.html#numRowsAffected">numRowsAffected</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

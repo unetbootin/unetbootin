@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qeventloop.cpp -->
+<head>
+  <title>Qt 4.4: QEventLoop Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QEventLoop Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QEventLoop class provides a means of entering and leaving an event loop. <a href="#details">More...</a></p>
+<pre> #include &lt;QEventLoop&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qpatternist-networkloop.html">QPatternist::NetworkLoop</a>.</p>
+<ul>
+<li><a href="qeventloop-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qeventloop.html#ProcessEventsFlag-enum">ProcessEventsFlag</a></b> { AllEvents, ExcludeUserInputEvents, ExcludeSocketNotifiers, WaitForMoreEvents, DeferredDeletion }</li>
+<li><div class="fn"/>flags <b><a href="qeventloop.html#ProcessEventsFlag-enum">ProcessEventsFlags</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qeventloop.html#QEventLoop">QEventLoop</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qeventloop.html#dtor.QEventLoop">~QEventLoop</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qeventloop.html#exec">exec</a></b> ( ProcessEventsFlags <i>flags</i> = AllEvents )</li>
+<li><div class="fn"/>void <b><a href="qeventloop.html#exit">exit</a></b> ( int <i>returnCode</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qeventloop.html#isRunning">isRunning</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qeventloop.html#processEvents">processEvents</a></b> ( ProcessEventsFlags <i>flags</i> = AllEvents )</li>
+<li><div class="fn"/>void <b><a href="qeventloop.html#processEvents-2">processEvents</a></b> ( ProcessEventsFlags <i>flags</i>, int <i>maxTime</i> )</li>
+<li><div class="fn"/>void <b><a href="qeventloop.html#wakeUp">wakeUp</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qeventloop.html#quit">quit</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QEventLoop class provides a means of entering and leaving an event loop.</p>
+<p>At any time, you can create a QEventLoop object and call <a href="qeventloop.html#exec">exec</a>() on it to start a local event loop. From within the event loop, calling <a href="qeventloop.html#exit">exit</a>() will force <a href="qeventloop.html#exec">exec</a>() to return.</p>
+<p>See also <a href="qabstracteventdispatcher.html">QAbstractEventDispatcher</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="ProcessEventsFlag-enum"></a>enum QEventLoop::ProcessEventsFlag<br />flags QEventLoop::ProcessEventsFlags</h3>
+<p>This enum controls the types of events processed by the <a href="qeventloop.html#processEvents">processEvents</a>() functions.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QEventLoop::AllEvents</tt></td><td align="center" valign="top"><tt>0x00</tt></td><td valign="top">All events. Note that <a href="qevent.html#Type-enum">DeferredDelete</a> events are processed specially. See <a href="qobject.html#deleteLater">QObject::deleteLater</a>() for more details.</td></tr>
+<tr><td valign="top"><tt>QEventLoop::ExcludeUserInputEvents</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">Do not process user input events, such as ButtonPress and KeyPress. Note that the events are not discarded; they will be delivered the next time <a href="qeventloop.html#processEvents">processEvents</a>() is called without the ExcludeUserInputEvents flag.</td></tr>
+<tr><td valign="top"><tt>QEventLoop::ExcludeSocketNotifiers</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">Do not process socket notifier events. Note that the events are not discarded; they will be delivered the next time <a href="qeventloop.html#processEvents">processEvents</a>() is called without the ExcludeSocketNotifiers flag.</td></tr>
+<tr><td valign="top"><tt>QEventLoop::WaitForMoreEvents</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">Wait for events if no pending events are available.</td></tr>
+<tr><td valign="top"><tt>QEventLoop::DeferredDeletion</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">deprecated - do not use.</td></tr>
+</table></p>
+<p>The ProcessEventsFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;ProcessEventsFlag&gt;. It stores an OR combination of ProcessEventsFlag values.</p>
+<p>See also <a href="qeventloop.html#processEvents">processEvents</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QEventLoop"></a>QEventLoop::QEventLoop ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an event loop object with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QEventLoop"></a>QEventLoop::~QEventLoop ()</h3>
+<p>Destroys the event loop object.</p>
+<h3 class="fn"><a name="exec"></a>int QEventLoop::exec ( <a href="qeventloop.html#ProcessEventsFlag-enum">ProcessEventsFlags</a> <i>flags</i> = AllEvents )</h3>
+<p>Enters the main event loop and waits until <a href="qeventloop.html#exit">exit</a>() is called. Returns the value that was passed to <a href="qeventloop.html#exit">exit</a>().</p>
+<p>If <i>flags</i> are specified, only events of the types allowed by the <i>flags</i> will be processed.</p>
+<p>It is necessary to call this function to start event handling. The main event loop receives events from the window system and dispatches these to the application widgets.</p>
+<p>Generally speaking, no user interaction can take place before calling exec(). As a special case, modal widgets like <a href="qmessagebox.html">QMessageBox</a> can be used before calling exec(), because modal widgets use their own local event loop.</p>
+<p>To make your application perform idle processing (i.e&#x2e; executing a special function whenever there are no pending events), use a <a href="qtimer.html">QTimer</a> with 0 timeout. More sophisticated idle processing schemes can be achieved using <a href="qeventloop.html#processEvents">processEvents</a>().</p>
+<p>See also <a href="qcoreapplication.html#quit">QApplication::quit</a>(), <a href="qeventloop.html#exit">exit</a>(), and <a href="qeventloop.html#processEvents">processEvents</a>().</p>
+<h3 class="fn"><a name="exit"></a>void QEventLoop::exit ( int <i>returnCode</i> = 0 )</h3>
+<p>Tells the event loop to exit with a return code.</p>
+<p>After this function has been called, the event loop returns from the call to <a href="qeventloop.html#exec">exec</a>(). The <a href="qeventloop.html#exec">exec</a>() function returns <i>returnCode</i>.</p>
+<p>By convention, a <i>returnCode</i> of 0 means success, and any non-zero value indicates an error.</p>
+<p>Note that unlike the C library function of the same name, this function <i>does</i> return to the caller -- it is event processing that stops.</p>
+<p>See also <a href="qcoreapplication.html#quit">QCoreApplication::quit</a>(), <a href="qeventloop.html#quit">quit</a>(), and <a href="qeventloop.html#exec">exec</a>().</p>
+<h3 class="fn"><a name="isRunning"></a>bool QEventLoop::isRunning () const</h3>
+<p>Returns true if the event loop is running; otherwise returns false. The event loop is considered running from the time when <a href="qeventloop.html#exec">exec</a>() is called until <a href="qeventloop.html#exit">exit</a>() is called.</p>
+<p>See also <a href="qeventloop.html#exec">exec</a>() and <a href="qeventloop.html#exit">exit</a>().</p>
+<h3 class="fn"><a name="processEvents"></a>bool QEventLoop::processEvents ( <a href="qeventloop.html#ProcessEventsFlag-enum">ProcessEventsFlags</a> <i>flags</i> = AllEvents )</h3>
+<p>Processes pending events that match <i>flags</i> until there are no more events to process. Returns true if pending events were handled; otherwise returns false.</p>
+<p>This function is especially useful if you have a long running operation and want to show its progress without allowing user input; i.e&#x2e; by using the <a href="qeventloop.html#ProcessEventsFlag-enum">ExcludeUserInputEvents</a> flag.</p>
+<p>This function is simply a wrapper for <a href="qabstracteventdispatcher.html#processEvents">QAbstractEventDispatcher::processEvents</a>(). See the documentation for that function for details.</p>
+<h3 class="fn"><a name="processEvents-2"></a>void QEventLoop::processEvents ( <a href="qeventloop.html#ProcessEventsFlag-enum">ProcessEventsFlags</a> <i>flags</i>, int <i>maxTime</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Process pending events that match <i>flags</i> for a maximum of <i>maxTime</i> milliseconds, or until there are no more events to process, whichever is shorter. This function is especially useful if you have a long running operation and want to show its progress without allowing user input, i.e&#x2e; by using the <a href="qeventloop.html#ProcessEventsFlag-enum">ExcludeUserInputEvents</a> flag.</p>
+<p><b>Notes:</b></p>
+<ul>
+<li>This function does not process events continuously; it returns after all available events are processed.</li>
+<li>Specifying the <a href="qeventloop.html#ProcessEventsFlag-enum">WaitForMoreEvents</a> flag makes no sense and will be ignored.</li>
+</ul>
+<h3 class="fn"><a name="quit"></a>void QEventLoop::quit ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Tells the event loop to exit normally.</p>
+<p>Same as exit(0).</p>
+<p>See also <a href="qcoreapplication.html#quit">QCoreApplication::quit</a>() and <a href="qeventloop.html#exit">exit</a>().</p>
+<h3 class="fn"><a name="wakeUp"></a>void QEventLoop::wakeUp ()</h3>
+<p>Wakes up the event loop.</p>
+<p>See also <a href="qabstracteventdispatcher.html#wakeUp">QAbstractEventDispatcher::wakeUp</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

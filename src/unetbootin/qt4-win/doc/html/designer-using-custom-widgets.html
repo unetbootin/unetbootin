@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Using Custom Widgets with Qt Designer</title>
+  <link rel="prev" href="designer-customizing-forms.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-using-a-component.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-customizing-forms.html">Customizing Qt Designer Forms</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-using-a-component.html">Using a Component in Your Application</a>]
+</p>
+<h1 class="title">Using Custom Widgets with Qt Designer<br /><span class="subtitle"></span>
+</h1>
+<p><i>Qt Designer</i> can display custom widgets through its extensible plugin mechanism, allowing the range of designable widgets to be extended by the user and third parties. This feature also allows <i>Qt Designer</i> to optionally support <a href="qt3support.html">Qt 3 compatibility widgets</a>. Alternatively, it is possible to use existing widgets as placeholders for widget classes that provide similar APIs.</p>
+<ul><li><a href="#handling-custom-widgets">Handling Custom Widgets</a></li>
+<ul><li><a href="#promoting-widgets">Promoting Widgets</a></li>
+<li><a href="#user-defined-custom-widgets">User Defined Custom Widgets</a></li>
+</ul>
+</ul>
+<p>Widgets from the <a href="qt3support.html">Qt3Support</a> library are made available via in <i>Qt Designer</i>'s support for custom widgets.</p>
+<a name="handling-custom-widgets"></a>
+<h2>Handling Custom Widgets</h2>
+<p>Although <i>Qt Designer</i> supports all of the standard Qt widgets, and can be configured to handle widgets supplied in the <a href="qt3support.html">Qt3Support</a> library, some specialized widgets may not be available as standard for a number of reasons:</p>
+<ul>
+<li>Custom widgets may not be available at the time the user interface is being designed.</li>
+<li>Custom widgets may be platform-specific, and designers may be developing the user interface on a different platform to end users.</li>
+<li>The source code for a custom widget is not available, or the user interface designers are unable to use the widget for non-technical reasons.</li>
+</ul>
+<p>In the above situations, it is still possible to design forms with the aim of using custom widgets in the application. To achieve this, we can use the widget promotion feature of <i>Qt Designer</i>.</p>
+<p>In all other cases, where the source code to the custom widgets is available, we can adapt the custom widget for use with <i>Qt Designer</i>.</p>
+<a name="promoting-widgets"></a>
+<h3>Promoting Widgets</h3>
+<p align="center"><img src="images/designer-promoting-widgets.png" /></p><p>In the case where forms must be designed, but where certain custom widgets are unavailable to the designer, we can substitute similar widgets to represent the missing widgets. For example, we might represent instances of a custom push button class, <tt>MyPushButton</tt>, with instances of <a href="qpushbutton.html">QPushButton</a> and promote these to <tt>MyPushButton</tt> so that <a href="uic.html">uic</a> generates suitable code for this missing class.</p>
+<p>When choosing a widget to use as a placeholder, it is useful to compare the API of the missing widget with those of standard Qt widgets. For specialized widgets that subclass standard classes, the obvious choice of placeholder is the base class of the custom widget; for example, <a href="qslider.html">QSlider</a> might be used for specialized <a href="qslider.html">QSlider</a> subclasses.</p>
+<p>For specialized widgets that do not share a common API with standard Qt widgets, it is worth considering adapting a custom widget for use in <i>Qt Designer</i>. If this is not possible then <a href="qwidget.html">QWidget</a> is the obvious choice for a placeholder widget since it is the lowest common denominator for all widgets.</p>
+<p>To add a placeholder, select an object of a suitable base class and choose <b>Promote to ..&#x2e;</b> from the form's context menu. After entering the class name and header file in the lower part of the dialog, choose <b>Add</b>. The placeholder class will now appear along with the base class in the upper list. Click the <b>Promote</b> button to accept this choice.</p>
+<p>Now, when the form's context menu is opened over objects of the base class, the placeholder class will appear in the <b>Promote to</b> submenu, allowing for convenient promotion of objects to that class.</p>
+<p>A promoted widget can be reverted to its base class by choosing <b>Demote to</b> from the form's context menu.</p>
+<a name="user-defined-custom-widgets"></a>
+<h3>User Defined Custom Widgets</h3>
+<p align="center"><img src="images/worldtimeclockplugin-example.png" /></p><p>Custom widgets can be adapted for use with <i>Qt Designer</i>, giving designers the opportunity to configure the user interface using the actual widgets that will be used in an application rather than placeholder widgets.</p>
+<p>The process of creating a custom widget plugin is described in the <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a> chapter of this manual.</p>
+<p>To use a plugin created in this way, it is necessary to ensure that it is located on a path that <i>Qt Designer</i> searches for plugins. Generally, plugins stored in <tt>$QTDIR/plugins/designer</tt> will be loaded when <i>Qt Designer</i> starts. Further information on building and installing plugins can be found <a href="designer-creating-custom-widgets.html#buildingandinstallingtheplugin">here</a>. You can also refer to the <a href="plugins-howto.html">Plugins HOWTO</a> document for information about creating plugins.</p>
+<p>
+[Previous: <a href="designer-customizing-forms.html">Customizing Qt Designer Forms</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-using-a-component.html">Using a Component in Your Application</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

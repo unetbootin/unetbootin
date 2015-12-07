@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasEllipse Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasEllipse Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasEllipse class provides an ellipse or ellipse segment on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasEllipse&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a>.</p>
+<ul>
+<li><a href="q3canvasellipse-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvasellipse.html#Q3CanvasEllipse">Q3CanvasEllipse</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasellipse.html#Q3CanvasEllipse-2">Q3CanvasEllipse</a></b> ( int <i>width</i>, int <i>height</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasellipse.html#Q3CanvasEllipse-3">Q3CanvasEllipse</a></b> ( int <i>width</i>, int <i>height</i>, int <i>startangle</i>, int <i>angle</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasellipse.html#dtor.Q3CanvasEllipse">~Q3CanvasEllipse</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3canvasellipse.html#angleLength">angleLength</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvasellipse.html#angleStart">angleStart</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvasellipse.html#height">height</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvasellipse.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvasellipse.html#setAngles">setAngles</a></b> ( int <i>start</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="q3canvasellipse.html#setSize">setSize</a></b> ( int <i>width</i>, int <i>height</i> )</li>
+<li><div class="fn"/>int <b><a href="q3canvasellipse.html#width">width</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="q3canvaspolygonalitem.html#public-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3canvasellipse.html#drawShape">drawShape</a></b> ( QPainter &amp; <i>p</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 protected functions inherited from <a href="q3canvaspolygonalitem.html#protected-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasEllipse class provides an ellipse or ellipse segment on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>A canvas item that paints an ellipse or ellipse segment with a <a href="qbrush.html">QBrush</a>. The ellipse's height, width, start angle and angle length can be set at construction time. The size can be changed at runtime with <a href="q3canvasellipse.html#setSize">setSize</a>(), and the angles can be changed (if you're displaying an ellipse segment rather than a whole ellipse) with <a href="q3canvasellipse.html#setAngles">setAngles</a>().</p>
+<p>Note that angles are specified in 16ths of a degree.</p>
+<a name="anglediagram"></a><p align="center"><img src="images/qcanvasellipse.png" alt="Ellipse" /></p><p>If a start angle and length angle are set then an ellipse segment will be drawn. The start angle is the angle that goes from zero in a counter-clockwise direction (shown in green in the diagram). The length angle is the angle from the start angle in a counter-clockwise direction (shown in blue in the diagram). The blue segment is the segment of the ellipse that would be drawn. If no start angle and length angle are specified the entire ellipse is drawn.</p>
+<p>The ellipse can be drawn on a painter with <a href="q3canvasellipse.html#drawShape">drawShape</a>().</p>
+<p>Like any other canvas item ellipses can be moved with <a href="q3canvasitem.html#move">move</a>() and <a href="q3canvasitem.html#moveBy">moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">setX</a>(), <a href="q3canvasitem.html#setY">setY</a>() and <a href="q3canvasitem.html#setZ">setZ</a>().</p>
+<p>Note: Q3CanvasEllipse does not use the pen.</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasEllipse"></a>Q3CanvasEllipse::Q3CanvasEllipse ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a 32x32 ellipse, centered at (0, 0) on <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasEllipse-2"></a>Q3CanvasEllipse::Q3CanvasEllipse ( int <i>width</i>, int <i>height</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <i>width</i> by <i>height</i> pixel ellipse, centered at (0, 0) on <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasEllipse-3"></a>Q3CanvasEllipse::Q3CanvasEllipse ( int <i>width</i>, int <i>height</i>, int <i>startangle</i>, int <i>angle</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <i>width</i> by <i>height</i> pixel ellipse, centered at (0, 0) on <i>canvas</i>. Only a segment of the ellipse is drawn, starting at angle <i>startangle</i>, and extending for angle <i>angle</i> (the angle length).</p>
+<p>Note that angles are specified in sixteenths of a degree.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasEllipse"></a>Q3CanvasEllipse::~Q3CanvasEllipse ()</h3>
+<p>Destroys the ellipse.</p>
+<h3 class="fn"><a name="angleLength"></a>int Q3CanvasEllipse::angleLength () const</h3>
+<p>Returns the length angle (the extent of the ellipse segment) in 16ths of a degree. Initially this will be 360 * 16 (a complete ellipse).</p>
+<p>See also <a href="q3canvasellipse.html#setAngles">setAngles</a>() and <a href="q3canvasellipse.html#angleStart">angleStart</a>().</p>
+<h3 class="fn"><a name="angleStart"></a>int Q3CanvasEllipse::angleStart () const</h3>
+<p>Returns the start angle in 16ths of a degree. Initially this will be 0.</p>
+<p>See also <a href="q3canvasellipse.html#setAngles">setAngles</a>() and <a href="q3canvasellipse.html#angleLength">angleLength</a>().</p>
+<h3 class="fn"><a name="drawShape"></a>void Q3CanvasEllipse::drawShape ( <a href="qpainter.html">QPainter</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draws the ellipse, centered at <a href="q3canvasitem.html#x">x</a>(), <a href="q3canvasitem.html#y">y</a>() using the painter <i>p</i>.</p>
+<p>Note that <a href="q3canvasellipse.html">Q3CanvasEllipse</a> does not support an outline (the pen is always NoPen).</p>
+<p>Reimplemented from <a href="q3canvaspolygonalitem.html#drawShape">Q3CanvasPolygonalItem</a>.</p>
+<h3 class="fn"><a name="height"></a>int Q3CanvasEllipse::height () const</h3>
+<p>Returns the height of the ellipse.</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasEllipse::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 6 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Ellipse</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setAngles"></a>void Q3CanvasEllipse::setAngles ( int <i>start</i>, int <i>length</i> )</h3>
+<p>Sets the angles for the ellipse. The start angle is <i>start</i> and the extent of the segment is <i>length</i> (the angle length) from the <i>start</i>. The angles are specified in 16ths of a degree. By default the ellipse will start at 0 and have an angle length of 360 * 16 (a complete ellipse).</p>
+<p>See also <a href="q3canvasellipse.html#angleStart">angleStart</a>() and <a href="q3canvasellipse.html#angleLength">angleLength</a>().</p>
+<h3 class="fn"><a name="setSize"></a>void Q3CanvasEllipse::setSize ( int <i>width</i>, int <i>height</i> )</h3>
+<p>Sets the <i>width</i> and <i>height</i> of the ellipse.</p>
+<h3 class="fn"><a name="width"></a>int Q3CanvasEllipse::width () const</h3>
+<p>Returns the width of the ellipse.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

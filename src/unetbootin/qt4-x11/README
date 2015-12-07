@@ -1,0 +1,134 @@
+This is Qt version 4.5.0.
+
+Qt is a comprehensive cross-platform C++ application framework. Qt 4
+introduces new features and many improvements over the 3.x series. See
+http://doc.trolltech.com/latest/qt4-intro.html for details.
+
+The Qt 4.x series is not binary compatible or source compatible with
+the 3.x series. For more information on porting from Qt 3 to Qt 4, see
+http://doc.trolltech.com/latest/porting4.html.
+
+
+INSTALLING Qt
+
+On Windows and Mac OS X, if you want to install the precompiled binary
+packages, simply launch the package and follow the instructions in the
+installation wizard.
+
+On Mac OS X, the binary package requires Mac OS X 10.4.x (Tiger) or
+later and GCC 4.0.1 to develop applications. Its applications will run
+on Mac OS X 10.3.9 and above.
+
+If you have a source package (a .tar.gz, .tar.bz2, or .zip file),
+follow the instructions in the INSTALL file.
+
+
+DEMOS AND EXAMPLES
+
+Once Qt is installed, we suggest that you take a look at the demos and
+examples to see Qt in action. Run the Qt Examples and Demos either by
+typing 'qtdemo' on the command line or through the desktop's Start
+menu. On Mac OS X, you can find it in /Developers/Applications/Qt.
+
+
+REFERENCE DOCUMENTATION
+
+The Qt reference documentation is available locally in Qt's doc/html
+directory. You can use Qt Assistant to view it; to launch Assistant,
+type 'assistant' on the command line or use the Start menu. On Mac OS
+X, you can find it in /Developer/Applications/Qt.  The latest
+documentation is available at http://doc.trolltech.com/.
+
+
+SUPPORTED PLATFORMS
+
+For this release, the following platforms have been tested:
+
+  win32-g++        (mingw)
+  win32-msvc
+  win32-msvc2003
+  win32-msvc2005
+  win32-msvc2008
+
+  aix-xlc
+  aix-xlc-64
+  hpux-acc
+  hpux-acc-64
+  hpux-acc-o64
+  hpux-g++
+  hpux-g++-64
+  hpuxi-acc-32
+  hpuxi-acc-64
+  linux-g++
+  linux-icc
+  linux-icc-32
+  linux-icc-64
+  solaris-cc
+  solaris-cc-64
+  solaris-g++
+  solaris-g++-64
+
+  macx-g++
+  macx-g++42
+
+  qws/linux-x86-g++
+  qws/linux-arm-g++
+
+  wince50standard-armv4i-msvc2005
+  wince50standard-armv4i-msvc2008
+  wince50standard-mipsii-msvc2005
+  wince50standard-mipsii-msvc2008
+  wince50standard-x86-msvc2005
+  wince50standard-x86-msvc2008
+  wincewm50pocket-msvc2005
+  wincewm50pocket-msvc2008
+  wincewm50smart-msvc2005
+  wincewm50smart-msvc2008
+  wincewm60professional-msvc2005
+  wincewm60professional-msvc2008
+  wincewm60standard-msvc2005
+  wincewm60standard-msvc2008
+
+For a complete list of supported platforms, see
+http://www.qtsoftware.com/developer/supported-platforms/supported-platforms/
+
+For a description of Qt's platform support policy, see
+http://www.qtsoftware.com/support-services/support/platform-support-policy
+
+
+COMMERCIAL EDITIONS
+
+Desktop Edition licensees can use all the modules provided with their
+Qt package.
+
+GUI Framework licensees may only use the classes contained in
+the QtCore, QtGui (except QGraphicsView), QtTest, QtDBus and
+Qt3Support modules.
+
+For a full listing of the contents of each module, please refer to 
+http://doc.trolltech.com/4.4/modules.html.
+
+
+HOW TO REPORT A BUG
+
+If you think you have found a bug in Qt, we would like to hear about
+it so that we can fix it. Before reporting a bug, please check
+http://qtsoftware.com/developer/faqs/ and
+http://qtsoftware.com/products/appdev/platform/platforms/ to see if the to see if
+the issue is already known.
+
+Always include the following information in your bug report: the name
+and version number of your compiler; the name and version number of
+your operating system; the version of Qt you are using, and what
+configure options it was compiled with.
+
+If the problem you are reporting is only visible at run-time, try to
+create a small test program that shows the problem when run. Often,
+such a program can be created with some minor changes to one of the
+many example programs in Qt's examples directory. Please submit the
+bug report using the Task Tracker on the Trolltech website:
+
+http://qtsoftware.com/developer/task-tracker
+
+
+Qt is a trademark of Nokia Corporation and/or its subsidiary(-ies).

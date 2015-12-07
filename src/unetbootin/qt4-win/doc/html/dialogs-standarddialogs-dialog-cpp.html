@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: dialog.cpp Example File (dialogs/standarddialogs/dialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">dialog.cpp Example File<br /><span class="small-subtitle">dialogs/standarddialogs/dialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;dialog.h&quot;
+
+ #define MESSAGE \
+     Dialog::tr(&quot;&lt;p&gt;Message boxes have a caption, a text, &quot; \
+                &quot;and any number of buttons, each with standard or custom texts.&quot; \
+                &quot;&lt;p&gt;Click a button to close the message box. Pressing the Esc button &quot; \
+                &quot;will activate the detected escape button (if any).&quot;)
+
+ Dialog::Dialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     errorMessageDialog = new QErrorMessage(this);
+
+     int frameStyle = QFrame::Sunken | QFrame::Panel;
+
+     integerLabel = new QLabel;
+     integerLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *integerButton =
+             new QPushButton(tr(&quot;QInputDialog::get&amp;Integer()&quot;));
+
+     doubleLabel = new QLabel;
+     doubleLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *doubleButton =
+             new QPushButton(tr(&quot;QInputDialog::get&amp;Double()&quot;));
+
+     itemLabel = new QLabel;
+     itemLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *itemButton = new QPushButton(tr(&quot;QInputDialog::getIte&amp;m()&quot;));
+
+     textLabel = new QLabel;
+     textLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *textButton = new QPushButton(tr(&quot;QInputDialog::get&amp;Text()&quot;));
+
+     colorLabel = new QLabel;
+     colorLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *colorButton = new QPushButton(tr(&quot;QColorDialog::get&amp;Color()&quot;));
+
+     fontLabel = new QLabel;
+     fontLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *fontButton = new QPushButton(tr(&quot;QFontDialog::get&amp;Font()&quot;));
+
+     directoryLabel = new QLabel;
+     directoryLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *directoryButton =
+             new QPushButton(tr(&quot;QFileDialog::getE&amp;xistingDirectory()&quot;));
+
+     openFileNameLabel = new QLabel;
+     openFileNameLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *openFileNameButton =
+             new QPushButton(tr(&quot;QFileDialog::get&amp;OpenFileName()&quot;));
+
+     openFileNamesLabel = new QLabel;
+     openFileNamesLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *openFileNamesButton =
+             new QPushButton(tr(&quot;QFileDialog::&amp;getOpenFileNames()&quot;));
+
+     saveFileNameLabel = new QLabel;
+     saveFileNameLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *saveFileNameButton =
+             new QPushButton(tr(&quot;QFileDialog::get&amp;SaveFileName()&quot;));
+
+     criticalLabel = new QLabel;
+     criticalLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *criticalButton =
+             new QPushButton(tr(&quot;QMessageBox::critica&amp;l()&quot;));
+
+     informationLabel = new QLabel;
+     informationLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *informationButton =
+             new QPushButton(tr(&quot;QMessageBox::i&amp;nformation()&quot;));
+
+     questionLabel = new QLabel;
+     questionLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *questionButton =
+             new QPushButton(tr(&quot;QMessageBox::&amp;question()&quot;));
+
+     warningLabel = new QLabel;
+     warningLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *warningButton = new QPushButton(tr(&quot;QMessageBox::&amp;warning()&quot;));
+
+     errorLabel = new QLabel;
+     errorLabel-&gt;setFrameStyle(frameStyle);
+     QPushButton *errorButton =
+             new QPushButton(tr(&quot;QErrorMessage::show&amp;M&amp;essage()&quot;));
+
+     connect(integerButton, SIGNAL(clicked()), this, SLOT(setInteger()));
+     connect(doubleButton, SIGNAL(clicked()), this, SLOT(setDouble()));
+     connect(itemButton, SIGNAL(clicked()), this, SLOT(setItem()));
+     connect(textButton, SIGNAL(clicked()), this, SLOT(setText()));
+     connect(colorButton, SIGNAL(clicked()), this, SLOT(setColor()));
+     connect(fontButton, SIGNAL(clicked()), this, SLOT(setFont()));
+     connect(directoryButton, SIGNAL(clicked()),
+             this, SLOT(setExistingDirectory()));
+     connect(openFileNameButton, SIGNAL(clicked()),
+             this, SLOT(setOpenFileName()));
+     connect(openFileNamesButton, SIGNAL(clicked()),
+             this, SLOT(setOpenFileNames()));
+     connect(saveFileNameButton, SIGNAL(clicked()),
+             this, SLOT(setSaveFileName()));
+     connect(criticalButton, SIGNAL(clicked()), this, SLOT(criticalMessage()));
+     connect(informationButton, SIGNAL(clicked()),
+             this, SLOT(informationMessage()));
+     connect(questionButton, SIGNAL(clicked()), this, SLOT(questionMessage()));
+     connect(warningButton, SIGNAL(clicked()), this, SLOT(warningMessage()));
+     connect(errorButton, SIGNAL(clicked()), this, SLOT(errorMessage()));
+
+     native = new QCheckBox(this);
+     native-&gt;setText(&quot;Use native file dialog.&quot;);
+     native-&gt;setChecked(true);
+ #ifndef Q_WS_WIN
+ #ifndef Q_OS_MAC
+     native-&gt;hide();
+ #endif
+ #endif
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;setColumnStretch(1, 1);
+     layout-&gt;setColumnMinimumWidth(1, 250);
+     layout-&gt;addWidget(integerButton, 0, 0);
+     layout-&gt;addWidget(integerLabel, 0, 1);
+     layout-&gt;addWidget(doubleButton, 1, 0);
+     layout-&gt;addWidget(doubleLabel, 1, 1);
+     layout-&gt;addWidget(itemButton, 2, 0);
+     layout-&gt;addWidget(itemLabel, 2, 1);
+     layout-&gt;addWidget(textButton, 3, 0);
+     layout-&gt;addWidget(textLabel, 3, 1);
+     layout-&gt;addWidget(colorButton, 4, 0);
+     layout-&gt;addWidget(colorLabel, 4, 1);
+     layout-&gt;addWidget(fontButton, 5, 0);
+     layout-&gt;addWidget(fontLabel, 5, 1);
+     layout-&gt;addWidget(directoryButton, 6, 0);
+     layout-&gt;addWidget(directoryLabel, 6, 1);
+     layout-&gt;addWidget(openFileNameButton, 7, 0);
+     layout-&gt;addWidget(openFileNameLabel, 7, 1);
+     layout-&gt;addWidget(openFileNamesButton, 8, 0);
+     layout-&gt;addWidget(openFileNamesLabel, 8, 1);
+     layout-&gt;addWidget(saveFileNameButton, 9, 0);
+     layout-&gt;addWidget(saveFileNameLabel, 9, 1);
+     layout-&gt;addWidget(criticalButton, 10, 0);
+     layout-&gt;addWidget(criticalLabel, 10, 1);
+     layout-&gt;addWidget(informationButton, 11, 0);
+     layout-&gt;addWidget(informationLabel, 11, 1);
+     layout-&gt;addWidget(questionButton, 12, 0);
+     layout-&gt;addWidget(questionLabel, 12, 1);
+     layout-&gt;addWidget(warningButton, 13, 0);
+     layout-&gt;addWidget(warningLabel, 13, 1);
+     layout-&gt;addWidget(errorButton, 14, 0);
+     layout-&gt;addWidget(errorLabel, 14, 1);
+     layout-&gt;addWidget(native, 15, 0);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Standard Dialogs&quot;));
+ }
+
+ void Dialog::setInteger()
+ {
+     bool ok;
+     int i = QInputDialog::getInteger(this, tr(&quot;QInputDialog::getInteger()&quot;),
+                                      tr(&quot;Percentage:&quot;), 25, 0, 100, 1, &amp;ok);
+     if (ok)
+         integerLabel-&gt;setText(tr(&quot;%1%&quot;).arg(i));
+ }
+
+ void Dialog::setDouble()
+ {
+     bool ok;
+     double d = QInputDialog::getDouble(this, tr(&quot;QInputDialog::getDouble()&quot;),
+                                        tr(&quot;Amount:&quot;), 37.56, -10000, 10000, 2, &amp;ok);
+     if (ok)
+         doubleLabel-&gt;setText(QString(&quot;$%1&quot;).arg(d));
+ }
+
+ void Dialog::setItem()
+ {
+     QStringList items;
+     items &lt;&lt; tr(&quot;Spring&quot;) &lt;&lt; tr(&quot;Summer&quot;) &lt;&lt; tr(&quot;Fall&quot;) &lt;&lt; tr(&quot;Winter&quot;);
+
+     bool ok;
+     QString item = QInputDialog::getItem(this, tr(&quot;QInputDialog::getItem()&quot;),
+                                          tr(&quot;Season:&quot;), items, 0, false, &amp;ok);
+     if (ok &amp;&amp; !item.isEmpty())
+         itemLabel-&gt;setText(item);
+ }
+
+ void Dialog::setText()
+ {
+     bool ok;
+     QString text = QInputDialog::getText(this, tr(&quot;QInputDialog::getText()&quot;),
+                                          tr(&quot;User name:&quot;), QLineEdit::Normal,
+                                          QDir::home().dirName(), &amp;ok);
+     if (ok &amp;&amp; !text.isEmpty())
+         textLabel-&gt;setText(text);
+ }
+
+ void Dialog::setColor()
+ {
+     QColor color = QColorDialog::getColor(Qt::green, this);
+     if (color.isValid()) {
+         colorLabel-&gt;setText(color.name());
+         colorLabel-&gt;setPalette(QPalette(color));
+         colorLabel-&gt;setAutoFillBackground(true);
+     }
+ }
+
+ void Dialog::setFont()
+ {
+     bool ok;
+     QFont font = QFontDialog::getFont(&amp;ok, QFont(fontLabel-&gt;text()), this);
+     if (ok) {
+         fontLabel-&gt;setText(font.key());
+         fontLabel-&gt;setFont(font);
+     }
+ }
+
+ void Dialog::setExistingDirectory()
+ {
+     QFileDialog::Options options = QFileDialog::DontResolveSymlinks | QFileDialog::ShowDirsOnly;
+     if (!native-&gt;isChecked())
+         options |= QFileDialog::DontUseNativeDialog;
+     QString directory = QFileDialog::getExistingDirectory(this,
+                                 tr(&quot;QFileDialog::getExistingDirectory()&quot;),
+                                 directoryLabel-&gt;text(),
+                                 options);
+     if (!directory.isEmpty())
+         directoryLabel-&gt;setText(directory);
+ }
+
+ void Dialog::setOpenFileName()
+ {
+     QFileDialog::Options options;
+     if (!native-&gt;isChecked())
+         options |= QFileDialog::DontUseNativeDialog;
+     QString selectedFilter;
+     QString fileName = QFileDialog::getOpenFileName(this,
+                                 tr(&quot;QFileDialog::getOpenFileName()&quot;),
+                                 openFileNameLabel-&gt;text(),
+                                 tr(&quot;All Files (*);;Text Files (*.txt)&quot;),
+                                 &amp;selectedFilter,
+                                 options);
+     if (!fileName.isEmpty())
+         openFileNameLabel-&gt;setText(fileName);
+ }
+
+ void Dialog::setOpenFileNames()
+ {
+     QFileDialog::Options options;
+     if (!native-&gt;isChecked())
+         options |= QFileDialog::DontUseNativeDialog;
+     QString selectedFilter;
+     QStringList files = QFileDialog::getOpenFileNames(
+                                 this, tr(&quot;QFileDialog::getOpenFileNames()&quot;),
+                                 openFilesPath,
+                                 tr(&quot;All Files (*);;Text Files (*.txt)&quot;),
+                                 &amp;selectedFilter,
+                                 options);
+     if (files.count()) {
+         openFilesPath = files[0];
+         openFileNamesLabel-&gt;setText(QString(&quot;[%1]&quot;).arg(files.join(&quot;, &quot;)));
+     }
+ }
+
+ void Dialog::setSaveFileName()
+ {
+     QFileDialog::Options options;
+     if (!native-&gt;isChecked())
+         options |= QFileDialog::DontUseNativeDialog;
+     QString selectedFilter;
+     QString fileName = QFileDialog::getSaveFileName(this,
+                                 tr(&quot;QFileDialog::getSaveFileName()&quot;),
+                                 saveFileNameLabel-&gt;text(),
+                                 tr(&quot;All Files (*);;Text Files (*.txt)&quot;),
+                                 &amp;selectedFilter,
+                                 options);
+     if (!fileName.isEmpty())
+         saveFileNameLabel-&gt;setText(fileName);
+ }
+
+ void Dialog::criticalMessage()
+ {
+     QMessageBox::StandardButton reply;
+     reply = QMessageBox::critical(this, tr(&quot;QMessageBox::critical()&quot;),
+                                     MESSAGE,
+                                     QMessageBox::Abort | QMessageBox::Retry | QMessageBox::Ignore);
+     if (reply == QMessageBox::Abort)
+         criticalLabel-&gt;setText(tr(&quot;Abort&quot;));
+     else if (reply == QMessageBox::Retry)
+         criticalLabel-&gt;setText(tr(&quot;Retry&quot;));
+     else
+         criticalLabel-&gt;setText(tr(&quot;Ignore&quot;));
+ }
+
+ void Dialog::informationMessage()
+ {
+     QMessageBox::StandardButton reply;
+     reply = QMessageBox::information(this, tr(&quot;QMessageBox::information()&quot;), MESSAGE);
+     if (reply == QMessageBox::Ok)
+         informationLabel-&gt;setText(tr(&quot;OK&quot;));
+     else
+         informationLabel-&gt;setText(tr(&quot;Escape&quot;));
+ }
+
+ void Dialog::questionMessage()
+ {
+     QMessageBox::StandardButton reply;
+     reply = QMessageBox::question(this, tr(&quot;QMessageBox::question()&quot;),
+                                     MESSAGE,
+                                     QMessageBox::Yes | QMessageBox::No | QMessageBox::Cancel);
+     if (reply == QMessageBox::Yes)
+         questionLabel-&gt;setText(tr(&quot;Yes&quot;));
+     else if (reply == QMessageBox::No)
+         questionLabel-&gt;setText(tr(&quot;No&quot;));
+     else
+         questionLabel-&gt;setText(tr(&quot;Cancel&quot;));
+ }
+
+ void Dialog::warningMessage()
+ {
+     QMessageBox msgBox(QMessageBox::Warning, tr(&quot;QMessageBox::warning()&quot;),
+                        MESSAGE, 0, this);
+     msgBox.addButton(tr(&quot;Save &amp;Again&quot;), QMessageBox::AcceptRole);
+     msgBox.addButton(tr(&quot;&amp;Continue&quot;), QMessageBox::RejectRole);
+     if (msgBox.exec() == QMessageBox::AcceptRole)
+         warningLabel-&gt;setText(tr(&quot;Save Again&quot;));
+     else
+         warningLabel-&gt;setText(tr(&quot;Continue&quot;));
+
+ }
+
+ void Dialog::errorMessage()
+ {
+     errorMessageDialog-&gt;showMessage(
+             tr(&quot;This dialog shows and remembers error messages. &quot;
+                &quot;If the checkbox is checked (as it is by default), &quot;
+                &quot;the shown message will be shown again, &quot;
+                &quot;but if the user unchecks the box the message &quot;
+                &quot;will not appear again if QErrorMessage::showMessage() &quot;
+                &quot;is called with the same message.&quot;));
+     errorLabel-&gt;setText(tr(&quot;If the box is unchecked, the message &quot;
+                            &quot;won't appear again.&quot;));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Using Models and Views</title>
+  <link rel="prev" href="model-view-introduction.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-model.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-introduction.html">An Introduction to Model/View Programming</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-model.html">Model Classes</a>]
+</p>
+<h1 class="title">Using Models and Views<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#using-views-with-an-existing-model">Using Views with an Existing Model</a></li>
+</ul>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>Two of the standard models provided by Qt are <a href="qstandarditemmodel.html">QStandardItemModel</a> and <a href="qdirmodel.html">QDirModel</a>. <a href="qstandarditemmodel.html">QStandardItemModel</a> is a multi-purpose model that can be used to represent various different data structures needed by list, table, and tree views. This model also holds the items of data. <a href="qdirmodel.html">QDirModel</a> is a model that maintains information about the contents of a directory. As a result, it does not hold any items of data itself, but simply represents files and directories on the local filing system.</p>
+<p><a href="qdirmodel.html">QDirModel</a> provides a ready-to-use model to experiment with, and can be easily configured to use existing data. Using this model, we can show how to set up a model for use with ready-made views, and explore how to manipulate data using model indexes.</p>
+<a name="using-views-with-an-existing-model"></a>
+<h2>Using Views with an Existing Model</h2>
+<p>The <a href="qlistview.html">QListView</a> and <a href="qtreeview.html">QTreeView</a> classes are the most suitable views to use with <a href="qdirmodel.html">QDirModel</a>. The example presented below displays the contents of a directory in a tree view next to the same information in a list view. The views share the user's selection so that the selected items are highlighted in both views.</p>
+<p align="center"><img src="images/shareddirmodel.png" /></p><p>We set up a <a href="qdirmodel.html">QDirModel</a> so that it is ready for use, and create some views to display the contents of a directory. This shows the simplest way to use a model. The construction and use of the model is performed from within a single <tt>main()</tt> function:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     QSplitter *splitter = new QSplitter;
+
+     QDirModel *model = new QDirModel;</pre>
+<p>The model is set up to use data from a default directory. We create two views so that we can examine the items held in the model in two different ways:</p>
+<pre>     QTreeView *tree = new QTreeView(splitter);
+     tree-&gt;setModel(model);
+     tree-&gt;setRootIndex(model-&gt;index(QDir::currentPath()));
+
+     QListView *list = new QListView(splitter);
+     list-&gt;setModel(model);
+     list-&gt;setRootIndex(model-&gt;index(QDir::currentPath()));</pre>
+<p>The views are constructed in the same way as other widgets. Setting up a view to display the items in the model is simply a matter of calling its <a href="qabstractitemview.html#setModel">setModel()</a> function with the directory model as the argument. The calls to <a href="qabstractitemview.html#setRootIndex">setRootIndex()</a> tell the views which directory to display by supplying a <i>model index</i> that we obtain from the directory model.</p>
+<p>The <tt>index()</tt> function used in this case is unique to <a href="qdirmodel.html">QDirModel</a>; we supply it with a directory and it returns a model index. Model indexes are discussed in the <a href="model-view-model.html">Model Classes</a> chapter.</p>
+<p>The rest of the function just displays the views within a splitter widget, and runs the application's event loop:</p>
+<pre>     splitter-&gt;setWindowTitle(&quot;Two views onto the same directory model&quot;);
+     splitter-&gt;show();
+     return app.exec();
+ }</pre>
+<p>In the above example, we neglected to mention how to handle selections of items. This subject is covered in more detail in the chapter on <a href="model-view-selection.html">Handling Selections in Item Views</a>. Before examining how selections are handled, you may find it useful to read the <a href="model-view-model.html">Model Classes</a> chapter which describes the concepts used in the model/view framework.</p>
+<p>
+[Previous: <a href="model-view-introduction.html">An Introduction to Model/View Programming</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-model.html">Model Classes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

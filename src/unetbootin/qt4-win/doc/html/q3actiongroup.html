@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3action.cpp -->
+<head>
+  <title>Qt 4.4: Q3ActionGroup Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ActionGroup Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ActionGroup class groups actions together. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ActionGroup&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qactiongroup">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3action.html">Q3Action</a>.</p>
+<ul>
+<li><a href="q3actiongroup-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3actiongroup.html#exclusive-prop">exclusive</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3actiongroup.html#usesDropDown-prop">usesDropDown</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>11 properties inherited from <a href="q3action.html#properties">Q3Action</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3actiongroup.html#Q3ActionGroup">Q3ActionGroup</a></b> ( QObject * <i>parent</i>, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3actiongroup.html#Q3ActionGroup-2">Q3ActionGroup</a></b> ( QObject * <i>parent</i>, const char * <i>name</i>, bool <i>exclusive</i> )</li>
+<li><div class="fn"/><b><a href="q3actiongroup.html#dtor.Q3ActionGroup">~Q3ActionGroup</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#add">add</a></b> ( Q3Action * <i>action</i> )</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#addSeparator">addSeparator</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3actiongroup.html#addTo">addTo</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#insert">insert</a></b> ( Q3Action * <i>action</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3actiongroup.html#exclusive-prop">isExclusive</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#exclusive-prop">setExclusive</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#usesDropDown-prop">setUsesDropDown</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3actiongroup.html#usesDropDown-prop">usesDropDown</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>21 public functions inherited from <a href="q3action.html#public-functions">Q3Action</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#activated">activated</a></b> ( Q3Action * <i>action</i> )</li>
+<li><div class="fn"/>void <b><a href="q3actiongroup.html#selected">selected</a></b> ( Q3Action * <i>action</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 signals inherited from <a href="q3action.html#signals">Q3Action</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3actiongroup.html#addedTo">addedTo</a></b> ( QWidget * <i>actionWidget</i>, QWidget * <i>container</i>, Q3Action * <i>a</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3actiongroup.html#addedTo-2">addedTo</a></b> ( int <i>index</i>, Q3PopupMenu * <i>menu</i>, Q3Action * <i>a</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="q3action.html#protected-functions">Q3Action</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>6 public slots inherited from <a href="q3action.html#public-slots">Q3Action</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ActionGroup class groups actions together.</p>
+<p>In some situations it is useful to group actions together. For example, if you have a left justify action, a right justify action and a center action, only one of these actions should be active at any one time, and one simple way of achieving this is to group the actions together in an action group.</p>
+<p>An action group can also be added to a menu or a toolbar as a single unit, with all the actions within the action group appearing as separate menu options and toolbar buttons.</p>
+<p>The actions in an action group emit their <a href="q3actiongroup.html#activated">activated</a>() (and for toggle actions, <a href="q3action.html#toggled">toggled</a>()) signals as usual.</p>
+<p>The <a href="q3actiongroup.html#exclusive-prop">setExclusive</a>() function is used to ensure that only one action is active at any one time: it should be used with actions which have their <tt>toggleAction</tt> set to true.</p>
+<p>Action group actions appear as individual menu options and toolbar buttons. For exclusive action groups use <a href="q3actiongroup.html#usesDropDown-prop">setUsesDropDown</a>() to display the actions in a subwidget of any widget the action group is added to. For example, the actions would appear in a combobox in a toolbar or as a submenu in a menu.</p>
+<p>Actions can be added to an action group using <a href="q3actiongroup.html#add">add</a>(), but normally they are added by creating the action with the action group as parent. Actions can have separators dividing them using <a href="q3actiongroup.html#addSeparator">addSeparator</a>(). Action groups are added to widgets with <a href="q3actiongroup.html#addTo">addTo</a>().</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="exclusive-prop"></a>exclusive : bool</h3>
+<p>This property holds whether the action group does exclusive toggling.</p>
+<p>If exclusive is true only one toggle action in the action group can ever be active at any one time. If the user chooses another toggle action in the group the one they chose becomes active and the one that was active becomes inactive.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isExclusive () const</b></li>
+<li><div class="fn"/><b>void setExclusive ( bool )</b></li>
+</ul>
+<p>See also <a href="q3action.html#toggleAction-prop">Q3Action::toggleAction</a>.</p>
+<h3 class="fn"><a name="usesDropDown-prop"></a>usesDropDown : bool</h3>
+<p>This property holds whether the group's actions are displayed in a subwidget of the widgets the action group is added to.</p>
+<p>Exclusive action groups added to a toolbar display their actions in a combobox with the action's <a href="q3action.html#text-prop">Q3Action::text</a> and <a href="q3action.html#iconSet-prop">Q3Action::iconSet</a> properties shown. Non-exclusive groups are represented by a tool button showing their <a href="q3action.html#iconSet-prop">Q3Action::iconSet</a> and <a href="q3action.html#text-prop">text</a>() property.</p>
+<p>In a popup menu the member actions are displayed in a submenu.</p>
+<p>Changing usesDropDown only affects <i>subsequent</i> calls to <a href="q3actiongroup.html#addTo">addTo</a>().</p>
+<p>This property's default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool usesDropDown () const</b></li>
+<li><div class="fn"/><b>void setUsesDropDown ( bool <i>enable</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ActionGroup"></a>Q3ActionGroup::Q3ActionGroup ( <a href="qobject.html">QObject</a> * <i>parent</i>, const char * <i>name</i> = 0 )</h3>
+<p>Constructs an action group called <i>name</i>, with parent <i>parent</i>.</p>
+<p>The action group is exclusive by default. Call setExclusive(false) to make the action group non-exclusive.</p>
+<h3 class="fn"><a name="Q3ActionGroup-2"></a>Q3ActionGroup::Q3ActionGroup ( <a href="qobject.html">QObject</a> * <i>parent</i>, const char * <i>name</i>, bool <i>exclusive</i> )</h3>
+<p>Constructs an action group called <i>name</i>, with parent <i>parent</i>.</p>
+<p>If <i>exclusive</i> is true only one toggle action in the group will ever be active.</p>
+<p>See also <a href="q3actiongroup.html#exclusive-prop">exclusive</a>.</p>
+<h3 class="fn"><a name="dtor.Q3ActionGroup"></a>Q3ActionGroup::~Q3ActionGroup ()</h3>
+<p>Destroys the object and frees allocated resources.</p>
+<h3 class="fn"><a name="activated"></a>void Q3ActionGroup::activated ( <a href="q3action.html">Q3Action</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted from groups when one of its actions gets activated.</p>
+<p>The argument is the <i>action</i> which was activated.</p>
+<p>See also <a href="q3actiongroup.html#exclusive-prop">setExclusive</a>(), <a href="q3action.html#on-prop">isOn</a>(), and <a href="q3action.html#toggled">Q3Action::toggled</a>().</p>
+<h3 class="fn"><a name="add"></a>void Q3ActionGroup::add ( <a href="q3action.html">Q3Action</a> * <i>action</i> )</h3>
+<p>Adds action <i>action</i> to this group.</p>
+<p>Normally an action is added to a group by creating it with the group as parent, so this function is not usually used.</p>
+<p>See also <a href="q3actiongroup.html#addTo">addTo</a>().</p>
+<h3 class="fn"><a name="addSeparator"></a>void Q3ActionGroup::addSeparator ()</h3>
+<p>Adds a separator to the group.</p>
+<h3 class="fn"><a name="addTo"></a>bool Q3ActionGroup::addTo ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds this action group to the widget <i>w</i>.</p>
+<p>If <a href="q3actiongroup.html#exclusive-prop">isExclusive</a>() is false or <a href="q3actiongroup.html#usesDropDown-prop">usesDropDown</a>() is false, the actions within the group are added to the widget individually. For example, if the widget is a menu, the actions will appear as individual menu options, and if the widget is a toolbar, the actions will appear as toolbar buttons.</p>
+<p>If both <a href="q3actiongroup.html#exclusive-prop">isExclusive</a>() and <a href="q3actiongroup.html#usesDropDown-prop">usesDropDown</a>() are true, the actions are presented either in a combobox (if <i>w</i> is a toolbar) or in a submenu (if <i>w</i> is a menu).</p>
+<p>All actions should be added to the action group <i>before</i> the action group is added to the widget. If actions are added to the action group <i>after</i> the action group has been added to the widget these later actions will <i>not</i> appear.</p>
+<p>Reimplemented from <a href="q3action.html#addTo">Q3Action</a>.</p>
+<p>See also <a href="q3actiongroup.html#exclusive-prop">setExclusive</a>(), <a href="q3actiongroup.html#usesDropDown-prop">setUsesDropDown</a>(), and <a href="q3action.html#removeFrom">removeFrom</a>().</p>
+<h3 class="fn"><a name="addedTo"></a>void Q3ActionGroup::addedTo ( <a href="qwidget.html">QWidget</a> * <i>actionWidget</i>, <a href="qwidget.html">QWidget</a> * <i>container</i>, <a href="q3action.html">Q3Action</a> * <i>a</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called from the <a href="q3actiongroup.html#addTo">addTo</a>() function when it has created a widget (<i>actionWidget</i>) for the child action <i>a</i> in the <i>container</i>.</p>
+<h3 class="fn"><a name="addedTo-2"></a>void Q3ActionGroup::addedTo ( int <i>index</i>, <a href="q3popupmenu.html">Q3PopupMenu</a> * <i>menu</i>, <a href="q3action.html">Q3Action</a> * <i>a</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function is called from the <a href="q3actiongroup.html#addTo">addTo</a>() function when it has created a menu item for the child action at the index position <i>index</i> in the popup menu <i>menu</i>.</p>
+<h3 class="fn"><a name="insert"></a>void Q3ActionGroup::insert ( <a href="q3action.html">Q3Action</a> * <i>action</i> )</h3>
+<p>Use add(<i>action</i>) instead.</p>
+<h3 class="fn"><a name="selected"></a>void Q3ActionGroup::selected ( <a href="q3action.html">Q3Action</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted from exclusive groups when toggle actions change state.</p>
+<p>The argument is the <i>action</i> whose state changed to &quot;on&quot;.</p>
+<p>See also <a href="q3actiongroup.html#exclusive-prop">setExclusive</a>(), <a href="q3action.html#on-prop">isOn</a>(), and <a href="q3action.html#toggled">Q3Action::toggled</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

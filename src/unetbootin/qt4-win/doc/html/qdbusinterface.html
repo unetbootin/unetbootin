@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/dbus/qdbusinterface.cpp -->
+<head>
+  <title>Qt 4.4: QDBusInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDBusInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdbus.html">QtDBus</a> module]</span>
+</h1>
+<p>The QDBusInterface class is a proxy for interfaces on remote objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QDBusInterface&gt;</pre><p>Inherits <a href="qdbusabstractinterface.html">QDBusAbstractInterface</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdbusinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusinterface.html#QDBusInterface">QDBusInterface</a></b> ( const QString &amp; <i>service</i>, const QString &amp; <i>path</i>, const QString &amp; <i>interface</i> = QString(), const QDBusConnection &amp; <i>connection</i> = QDBusConnection::sessionBus(), QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qdbusinterface.html#dtor.QDBusInterface">~QDBusInterface</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>11 public functions inherited from <a href="qdbusabstractinterface.html#public-functions">QDBusAbstractInterface</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDBusInterface class is a proxy for interfaces on remote objects.</p>
+<p>QDBusInterface is a generic accessor class that is used to place calls to remote objects, connect to signals exported by remote objects and get/set the value of remote properties. This class is useful for dynamic access to remote objects: that is, when you do not have a generated code that represents the remote interface.</p>
+<p>Calls are usually placed by using the <a href="qdbusabstractinterface.html#call">call</a>() function, which constructs the message, sends it over the bus, waits for the reply and decodes the reply. Signals are connected to by using the normal <a href="qobject.html#connect">QObject::connect</a>() function. Finally, properties are accessed using the <a href="qobject.html#property">QObject::property</a>() and <a href="qobject.html#setProperty">QObject::setProperty</a>() functions.</p>
+<p>The following code snippet demonstrates how to perform a mathematical operation of <tt>&quot;2 + 2&quot;</tt> in a remote application called <tt>com.example.Calculator</tt>, accessed via the session bus.</p>
+<pre>         QDBusInterface remoteApp( &quot;com.example.Calculator&quot;, &quot;/Calculator/Operations&quot;,
+                                   &quot;org.mathematics.RPNCalculator&quot; );
+         remoteApp.call( &quot;PushOperand&quot;, 2 );
+         remoteApp.call( &quot;PushOperand&quot;, 2 );
+         remoteApp.call( &quot;ExecuteOperation&quot;, &quot;+&quot; );
+         QDBusReply&lt;int&gt; reply = remoteApp.call( &quot;PopOperand&quot; );
+
+         if ( reply.isValid() )
+             printf( &quot;%d&quot;, reply.value() );          // prints 4</pre>
+<p>See also <a href="qdbusxml2cpp.html">QtDBus XML compiler (qdbusxml2cpp)</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDBusInterface"></a>QDBusInterface::QDBusInterface ( const <a href="qstring.html">QString</a> &amp; <i>service</i>, const <a href="qstring.html">QString</a> &amp; <i>path</i>, const <a href="qstring.html">QString</a> &amp; <i>interface</i> = QString(), const <a href="qdbusconnection.html">QDBusConnection</a> &amp; <i>connection</i> = QDBusConnection::sessionBus(), <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a dynamic <a href="qdbusinterface.html">QDBusInterface</a> object associated with the interface <i>interface</i> on object at path <i>path</i> on service <i>service</i>, using the given <i>connection</i>. If <i>interface</i> is an empty string, the object created will refer to the merging of all interfaces found in that object.</p>
+<p><i>parent</i> is passed to the base class constructor.</p>
+<p>If the remote service <i>service</i> is not present or if an error occurs trying to obtain the description of the remote interface <i>interface</i>, the object created will not be valid (see <a href="qdbusabstractinterface.html#isValid">isValid</a>()).</p>
+<h3 class="fn"><a name="dtor.QDBusInterface"></a>QDBusInterface::~QDBusInterface ()</h3>
+<p>Destroy the object interface and frees up any resource used.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

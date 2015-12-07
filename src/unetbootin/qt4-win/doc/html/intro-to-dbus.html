@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/introtodbus.qdoc -->
+<head>
+  <title>Qt 4.4: Introduction to D-Bus</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Introduction to D-Bus<br /><span class="subtitle"></span>
+</h1>
+<a name="qtdbus"></a><a name="introduction"></a>
+<h3>Introduction</h3>
+<p>D-Bus is an Inter-Process Communication (IPC) and Remote Procedure Calling (RPC) mechanism originally developed for Linux to replace existing and competing IPC solutions with one unified protocol. It has also been designed to allow communication between system-level processes (such as printer and hardware driver services) and normal user processes.</p>
+<p>It uses a fast, binary message-passing protocol, which is suitable for same-machine communication due to its low latency and low overhead. Its specification is currently defined by the <tt>freedesktop.org</tt> project, and is available to all parties.</p>
+<p>Communication in general happens through a central server application, called the &quot;bus&quot; (hence the name), but direct application-to-application communication is also possible. When communicating on a bus, applications can query which other applications and services are available, as well as activate one on demand.</p>
+<a name="the-buses"></a>
+<h3>The Buses</h3>
+<p>D-Bus buses are used to when many-to-many communication is desired. In order to achieve that, a central server is launched before any applications can connect to the bus: this server is responsible for keeping track of the applications that are connected and for properly routing messages from their source to their destination.</p>
+<p>In addition, D-Bus defines two well-known buses, called the system bus and the session bus. These buses are special in the sense that they have well-defined semantics: some services are defined to be found in one or both of these buses.</p>
+<p>For example, an application wishing to query the list of hardware devices attached to the computer will probably communicate to a service available on the system bus, while the service providing opening of the user's web browser will be probably found on the session bus.</p>
+<p>On the system bus, one can also expect to find restrictions on what services each application is allowed to offer. Therefore, one can be reasonably certain that, if a certain service is present, it is being offered by a trusted application.</p>
+<a name="concepts"></a>
+<h3>Concepts</h3>
+<a name="messages"></a>
+<h4>Messages</h4>
+<p>On the low level, applications communicate over D-Bus by sending messages to one another. Messages are used to relay the remote procedure calls as well as the replies and errors associated with them. When used over a bus, messages have a destination, which means they are routed only to the interested parties, avoiding congestion due to &quot;swarming&quot; or broadcasting.</p>
+<p>A special kind of message called a &quot;signal message&quot; (a concept based on Qt's <a href="signalsandslots.html">Signals and Slots</a> mechanism), however, does not have a pre-defined destination. Since its purpose is to be used in a one-to-many context, signal messages are designed to work over an &quot;opt-in&quot; mechanism.</p>
+<p>The <a href="qtdbus.html">QtDBus</a> module fully encapsulates the low-level concept of messages into a simpler, object-oriented approach familiar to Qt developers. In most cases, the developer need not worry about sending or receiving messages.</p>
+<a name="service-names"></a>
+<h4>Service Names</h4>
+<p>When communicating over a bus, applications obtain what is called a &quot;service name&quot;: it is how that application choses to be known by other applications on the same bus. The service names are brokered by the D-Bus bus daemon and are used to route messages from one application to another. An analogous concept to service names are IP addresses and hostnames: a computer normally has one IP address and may have one or more hostnames associated with it, according to the services that it provides to the network.</p>
+<p>On the other hand, if a bus is not used, service names are also not used. If we compare this to a computer network again, this would equate to a point-to-point network: since the peer is known, there is no need to use hostnames to find it or its IP address.</p>
+<p>The format of a D-Bus service name is in fact very similar to a host name: it is a dot-separated sequence of letters and digits. The common practice is even to name one's service name according to the domain name of the organization that defined that service.</p>
+<p>For example, the D-Bus service is defined by <tt>freedesktop.org</tt> and can be found on the bus under the service name:</p>
+<pre>       org.freedesktop.DBus</pre>
+<a name="object-paths"></a>
+<h4>Object Paths</h4>
+<p>Like network hosts, applications provide specific services to other applications by exporting objects. Those objects are hierarchically organised, much like the parent-child relationship that classes derived from <a href="qobject.html">QObject</a> possess. One difference, however, is that there is the concept of &quot;root object&quot;, that all objects have as ultimate parent.</p>
+<p>If we continue our analogy with Web services, object paths equate to the path part of a URL:</p>
+<p align="center"><img src="images/qurl-ftppath.png" /></p><p>Like them, object paths in D-Bus are formed resembling path names on the filesystem: they are slash-separated labels, each consisting of letters, digits and the underscore character (&quot;_&quot;). They must always start with a slash and must not end with one.</p>
+<a name="interfaces"></a>
+<h4>Interfaces</h4>
+<p>Interfaces are similar to C++ abstract classes and Java's <tt>interface</tt> keyword and declare the &quot;contract&quot; that is established between caller and callee. That is, they establish the names of the methods, signals and properties that are available as well as the behavior that is expected from either side when communication is established.</p>
+<p>Qt uses a very similar mechanism in its <a href="plugins-howto.html">Plugin system</a>: Base classes in C++ are associated with a unique identifier by way of the <a href="qtplugin.html#Q_DECLARE_INTERFACE">Q_DECLARE_INTERFACE</a>() macro.</p>
+<p>D-Bus interface names are, in fact, named in a manner similar to what is suggested by the Qt Plugin System: an identifier usually constructed from the domain name of the entity that defined that interface.</p>
+<a name="cheat-sheet"></a>
+<h4>Cheat Sheet</h4>
+<p>To facilitate remembering of the naming formats and their purposes, the following table can be used:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>D-Bus Concept</th><th>Analogy</th><th>Name format</th></tr></thead>
+<tr valign="top" class="odd"><td>Service name</td><td>Network hostnames</td><td>Dot-separated (&quot;looks like a hostname&quot;)</td></tr>
+<tr valign="top" class="even"><td>Object path</td><td>URL path component</td><td>Slash-separated (&quot;looks like a path&quot;)</td></tr>
+<tr valign="top" class="odd"><td>Interface</td><td>Plugin identifier</td><td>Dot-separated</td></tr>
+</table></p>
+<a name="further-reading"></a>
+<h4>Further Reading</h4>
+<p>The following documents contain information about Qt's D-Bus integration features, and provide details about the mechanisms used to send and receive type information over the bus:</p>
+<ul>
+<li><a href="usingadaptors.html">Using QtDBus Adaptors</a></li>
+<li><a href="qdbustypesystem.html">The QtDBus Type System</a></li>
+<li><a href="qdbusxml2cpp.html">QtDBus XML compiler (qdbusxml2cpp)</a></li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

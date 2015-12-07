@@ -1,0 +1,6 @@
+# handle pkg-config files
+for(PKGCONFIG_LIB, $$list($$unique(PKGCONFIG))) {
+    QMAKE_CXXFLAGS += $$system(pkg-config --cflags $$PKGCONFIG_LIB)
+    QMAKE_CFLAGS += $$system(pkg-config --cflags $$PKGCONFIG_LIB)
+    LIBS += $$system(pkg-config --libs $$PKGCONFIG_LIB)
+}

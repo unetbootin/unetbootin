@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: piecesmodel.cpp Example File (itemviews/puzzle/piecesmodel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">piecesmodel.cpp Example File<br /><span class="small-subtitle">itemviews/puzzle/piecesmodel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;piecesmodel.h&quot;
+
+ PiecesModel::PiecesModel(QObject *parent)
+     : QAbstractListModel(parent)
+ {
+ }
+
+ QVariant PiecesModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (!index.isValid())
+         return QVariant();
+
+     if (role == Qt::DecorationRole)
+         return QIcon(pixmaps.value(index.row()).scaled(60, 60,
+                          Qt::KeepAspectRatio, Qt::SmoothTransformation));
+     else if (role == Qt::UserRole)
+         return pixmaps.value(index.row());
+     else if (role == Qt::UserRole + 1)
+         return locations.value(index.row());
+
+     return QVariant();
+ }
+
+ void PiecesModel::addPiece(const QPixmap &amp;pixmap, const QPoint &amp;location)
+ {
+     int row;
+     if (int(2.0*qrand()/(RAND_MAX+1.0)) == 1)
+         row = 0;
+     else
+         row = pixmaps.size();
+
+     beginInsertRows(QModelIndex(), row, row);
+     pixmaps.insert(row, pixmap);
+     locations.insert(row, location);
+     endInsertRows();
+ }
+
+ Qt::ItemFlags PiecesModel::flags(const QModelIndex &amp;index) const
+ {
+     if (index.isValid()) {
+         return (Qt::ItemIsEnabled | Qt::ItemIsSelectable
+               | Qt::ItemIsDragEnabled | Qt::ItemIsSelectable);
+     }
+
+     return Qt::ItemIsDropEnabled;
+ }
+
+ bool PiecesModel::removeRows(int row, int count, const QModelIndex &amp;parent)
+ {
+     if (parent.isValid())
+         return false;
+
+     if (row &gt;= pixmaps.size() || row + count &lt;= 0)
+         return false;
+
+     int beginRow = qMax(0, row);
+     int endRow = qMin(row + count - 1, pixmaps.size() - 1);
+
+     beginRemoveRows(parent, beginRow, endRow);
+
+     while (beginRow &lt;= endRow) {
+         pixmaps.removeAt(beginRow);
+         locations.removeAt(beginRow);
+         ++beginRow;
+     }
+
+     endRemoveRows();
+     return true;
+ }
+
+ QStringList PiecesModel::mimeTypes() const
+ {
+     QStringList types;
+     types &lt;&lt; &quot;image/x-puzzle-piece&quot;;
+     return types;
+ }
+
+ QMimeData *PiecesModel::mimeData(const QModelIndexList &amp;indexes) const
+ {
+     QMimeData *mimeData = new QMimeData();
+     QByteArray encodedData;
+
+     QDataStream stream(&amp;encodedData, QIODevice::WriteOnly);
+
+     foreach (QModelIndex index, indexes) {
+         if (index.isValid()) {
+             QPixmap pixmap = qVariantValue&lt;QPixmap&gt;(data(index, Qt::UserRole));
+             QPoint location = data(index, Qt::UserRole+1).toPoint();
+             stream &lt;&lt; pixmap &lt;&lt; location;
+         }
+     }
+
+     mimeData-&gt;setData(&quot;image/x-puzzle-piece&quot;, encodedData);
+     return mimeData;
+ }
+
+ bool PiecesModel::dropMimeData(const QMimeData *data, Qt::DropAction action,
+                                int row, int column, const QModelIndex &amp;parent)
+ {
+     if (!data-&gt;hasFormat(&quot;image/x-puzzle-piece&quot;))
+         return false;
+
+     if (action == Qt::IgnoreAction)
+         return true;
+
+     if (column &gt; 0)
+         return false;
+
+     int endRow;
+
+     if (!parent.isValid()) {
+         if (row &lt; 0)
+             endRow = pixmaps.size();
+         else
+             endRow = qMin(row, pixmaps.size());
+     } else
+         endRow = parent.row();
+
+     QByteArray encodedData = data-&gt;data(&quot;image/x-puzzle-piece&quot;);
+     QDataStream stream(&amp;encodedData, QIODevice::ReadOnly);
+
+     while (!stream.atEnd()) {
+         QPixmap pixmap;
+         QPoint location;
+         stream &gt;&gt; pixmap &gt;&gt; location;
+
+         beginInsertRows(QModelIndex(), endRow, endRow);
+         pixmaps.insert(endRow, pixmap);
+         locations.insert(endRow, location);
+         endInsertRows();
+
+         ++endRow;
+     }
+
+     return true;
+ }
+
+ int PiecesModel::rowCount(const QModelIndex &amp;parent) const
+ {
+     if (parent.isValid())
+         return 0;
+     else
+         return pixmaps.size();
+ }
+
+ Qt::DropActions PiecesModel::supportedDropActions() const
+ {
+     return Qt::CopyAction | Qt::MoveAction;
+ }
+
+ void PiecesModel::addPieces(const QPixmap&amp; pixmap)
+ {
+     beginRemoveRows(QModelIndex(), 0, 24);
+     pixmaps.clear();
+     locations.clear();
+     endRemoveRows();
+     for (int y = 0; y &lt; 5; ++y) {
+         for (int x = 0; x &lt; 5; ++x) {
+             QPixmap pieceImage = pixmap.copy(x*80, y*80, 80, 80);
+             addPiece(pieceImage, QPoint(x, y));
+         }
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

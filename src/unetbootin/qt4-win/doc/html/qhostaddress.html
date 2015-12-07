@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/kernel/qhostaddress.cpp -->
+<head>
+  <title>Qt 4.4: QHostAddress Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHostAddress Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QHostAddress class provides an IP address. <a href="#details">More...</a></p>
+<pre> #include &lt;QHostAddress&gt;</pre><ul>
+<li><a href="qhostaddress-members.html">List of all members, including inherited members</a></li>
+<li><a href="qhostaddress-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qhostaddress.html#SpecialAddress-enum">SpecialAddress</a></b> { Null, LocalHost, LocalHostIPv6, Broadcast, Any, AnyIPv6 }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress">QHostAddress</a></b> ()</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-2">QHostAddress</a></b> ( quint32 <i>ip4Addr</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-3">QHostAddress</a></b> ( quint8 * <i>ip6Addr</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-4">QHostAddress</a></b> ( const Q_IPV6ADDR &amp; <i>ip6Addr</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-5">QHostAddress</a></b> ( const sockaddr * <i>sockaddr</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-6">QHostAddress</a></b> ( const QString &amp; <i>address</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-7">QHostAddress</a></b> ( const QHostAddress &amp; <i>address</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#QHostAddress-8">QHostAddress</a></b> ( SpecialAddress <i>address</i> )</li>
+<li><div class="fn"/><b><a href="qhostaddress.html#dtor.QHostAddress">~QHostAddress</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>QAbstractSocket::NetworkLayerProtocol <b><a href="qhostaddress.html#protocol">protocol</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qhostaddress.html#scopeId">scopeId</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#setAddress">setAddress</a></b> ( quint32 <i>ip4Addr</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#setAddress-2">setAddress</a></b> ( quint8 * <i>ip6Addr</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#setAddress-3">setAddress</a></b> ( const Q_IPV6ADDR &amp; <i>ip6Addr</i> )</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#setAddress-4">setAddress</a></b> ( const QString &amp; <i>address</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#setAddress-5">setAddress</a></b> ( const sockaddr * <i>sockaddr</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostaddress.html#setScopeId">setScopeId</a></b> ( const QString &amp; <i>id</i> )</li>
+<li><div class="fn"/>quint32 <b><a href="qhostaddress.html#toIPv4Address">toIPv4Address</a></b> () const</li>
+<li><div class="fn"/>Q_IPV6ADDR <b><a href="qhostaddress.html#toIPv6Address">toIPv6Address</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qhostaddress.html#toString">toString</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#operator-not-eq">operator!=</a></b> ( const QHostAddress &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#operator-not-eq-2">operator!=</a></b> ( SpecialAddress <i>other</i> ) const</li>
+<li><div class="fn"/>QHostAddress &amp; <b><a href="qhostaddress.html#operator-eq">operator=</a></b> ( const QHostAddress &amp; <i>address</i> )</li>
+<li><div class="fn"/>QHostAddress &amp; <b><a href="qhostaddress.html#operator-eq-2">operator=</a></b> ( const QString &amp; <i>address</i> )</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#operator-eq-eq">operator==</a></b> ( const QHostAddress &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qhostaddress.html#operator-eq-eq-2">operator==</a></b> ( SpecialAddress <i>other</i> ) const</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qhostaddress.html#operator-lt-lt">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>out</i>, const QHostAddress &amp; <i>address</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qhostaddress.html#operator-gt-gt">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>in</i>, QHostAddress &amp; <i>address</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHostAddress class provides an IP address.</p>
+<p>This class holds an IPv4 or IPv6 address in a platform- and protocol-independent manner.</p>
+<p>QHostAddress is normally used with the <a href="qtcpsocket.html">QTcpSocket</a>, <a href="qtcpserver.html">QTcpServer</a>, and <a href="qudpsocket.html">QUdpSocket</a> to connect to a host or to set up a server.</p>
+<p>A host address is set with <a href="qhostaddress.html#setAddress">setAddress</a>(), checked for its type using <a href="qhostaddress-qt3.html#isIPv4Address">isIPv4Address</a>() or <a href="qhostaddress-qt3.html#isIPv6Address">isIPv6Address</a>(), and retrieved with <a href="qhostaddress.html#toIPv4Address">toIPv4Address</a>(), <a href="qhostaddress.html#toIPv6Address">toIPv6Address</a>(), or <a href="qhostaddress.html#toString">toString</a>().</p>
+<p>The class also supports common predefined addresses: <a href="qhostaddress.html#SpecialAddress-enum">Null</a>, <a href="qhostaddress.html#SpecialAddress-enum">LocalHost</a>, <a href="qhostaddress.html#SpecialAddress-enum">LocalHostIPv6</a>, <a href="qhostaddress.html#SpecialAddress-enum">Broadcast</a>, and <a href="qhostaddress.html#SpecialAddress-enum">Any</a>.</p>
+<p>See also <a href="qtcpsocket.html">QTcpSocket</a>, <a href="qtcpserver.html">QTcpServer</a>, and <a href="qudpsocket.html">QUdpSocket</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="SpecialAddress-enum"></a>enum QHostAddress::SpecialAddress</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QHostAddress::Null</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The null address object. Equivalent to <a href="qhostaddress.html#QHostAddress">QHostAddress</a>().</td></tr>
+<tr><td valign="top"><tt>QHostAddress::LocalHost</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The IPv4 localhost address. Equivalent to <a href="qhostaddress.html">QHostAddress</a>(&quot;127.0&#x2e;0&#x2e;1&quot;).</td></tr>
+<tr><td valign="top"><tt>QHostAddress::LocalHostIPv6</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The IPv6 localhost address. Equivalent to <a href="qhostaddress.html">QHostAddress</a>(&quot;::1&quot;).</td></tr>
+<tr><td valign="top"><tt>QHostAddress::Broadcast</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The IPv4 broadcast address. Equivalent to <a href="qhostaddress.html">QHostAddress</a>(&quot;255.255.255.255&quot;).</td></tr>
+<tr><td valign="top"><tt>QHostAddress::Any</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The IPv4 any-address. Equivalent to <a href="qhostaddress.html">QHostAddress</a>(&quot;0.0&#x2e;0&#x2e;0&quot;).</td></tr>
+<tr><td valign="top"><tt>QHostAddress::AnyIPv6</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The IPv6 any-address. Equivalent to <a href="qhostaddress.html">QHostAddress</a>(&quot;::&quot;).</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QHostAddress"></a>QHostAddress::QHostAddress ()</h3>
+<p>Constructs a host address object with the IP address 0.0&#x2e;0&#x2e;0&#x2e;</p>
+<p>See also <a href="qhostaddress.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="QHostAddress-2"></a>QHostAddress::QHostAddress ( <a href="qtglobal.html#quint32-typedef">quint32</a> <i>ip4Addr</i> )</h3>
+<p>Constructs a host address object with the IPv4 address <i>ip4Addr</i>.</p>
+<h3 class="fn"><a name="QHostAddress-3"></a>QHostAddress::QHostAddress ( <a href="qtglobal.html#quint8-typedef">quint8</a> * <i>ip6Addr</i> )</h3>
+<p>Constructs a host address object with the IPv6 address <i>ip6Addr</i>.</p>
+<p><i>ip6Addr</i> must be a 16-byte array in network byte order (big endian).</p>
+<h3 class="fn"><a name="QHostAddress-4"></a>QHostAddress::QHostAddress ( const Q_IPV6ADDR &amp; <i>ip6Addr</i> )</h3>
+<p>Constructs a host address object with the IPv6 address <i>ip6Addr</i>.</p>
+<h3 class="fn"><a name="QHostAddress-5"></a>QHostAddress::QHostAddress ( const sockaddr * <i>sockaddr</i> )</h3>
+<p>Constructs an IPv4 or IPv6 address using the address specified by the native structure <i>sockaddr</i>.</p>
+<p>See also <a href="qhostaddress.html#setAddress">setAddress</a>().</p>
+<h3 class="fn"><a name="QHostAddress-6"></a>QHostAddress::QHostAddress ( const <a href="qstring.html">QString</a> &amp; <i>address</i> )</h3>
+<p>Constructs an IPv4 or IPv6 address based on the string <i>address</i> (e.g&#x2e;, &quot;127.0&#x2e;0&#x2e;1&quot;).</p>
+<p>See also <a href="qhostaddress.html#setAddress">setAddress</a>().</p>
+<h3 class="fn"><a name="QHostAddress-7"></a>QHostAddress::QHostAddress ( const QHostAddress &amp; <i>address</i> )</h3>
+<p>Constructs a copy of the given <i>address</i>.</p>
+<h3 class="fn"><a name="QHostAddress-8"></a>QHostAddress::QHostAddress ( <a href="qhostaddress.html#SpecialAddress-enum">SpecialAddress</a> <i>address</i> )</h3>
+<p>Constructs a <a href="qhostaddress.html">QHostAddress</a> object for <i>address</i>.</p>
+<h3 class="fn"><a name="dtor.QHostAddress"></a>QHostAddress::~QHostAddress ()</h3>
+<p>Destroys the host address object.</p>
+<h3 class="fn"><a name="clear"></a>void QHostAddress::clear ()</h3>
+<p>Sets the host address to 0.0&#x2e;0&#x2e;0&#x2e;</p>
+<h3 class="fn"><a name="isNull"></a>bool QHostAddress::isNull () const</h3>
+<p>Returns true if this host address is null (INADDR_ANY or in6addr_any). The default constructor creates a null address, and that address is not valid for any host or interface.</p>
+<h3 class="fn"><a name="protocol"></a><a href="qabstractsocket.html#NetworkLayerProtocol-enum">QAbstractSocket::NetworkLayerProtocol</a> QHostAddress::protocol () const</h3>
+<p>Returns the network layer protocol of the host address.</p>
+<h3 class="fn"><a name="scopeId"></a><a href="qstring.html">QString</a> QHostAddress::scopeId () const</h3>
+<p>Returns the scope ID of an IPv6 address. For IPv4 addresses, or if the address does not contain a scope ID, an empty <a href="qstring.html">QString</a> is returned.</p>
+<p>The IPv6 scope ID specifies the scope of <i>reachability</i> for non-global IPv6 addresses, limiting the area in which the address can be used. All IPv6 addresses are associated with such a reachability scope. The scope ID is used to disambiguate addresses that are not guaranteed to be globally unique.</p>
+<p>IPv6 specifies the following four levels of reachability:</p>
+<ul>
+<li>Node-local: Addresses that are only used for communicating with services on the same interface (e.g&#x2e;, the loopback interface &quot;::1&quot;).</li>
+<li>Link-local: Addresses that are local to the network interface (<i>link</i>). There is always one link-local address for each IPv6 interface on your host. Link-local addresses (&quot;fe80..&#x2e;&quot;) are generated from the MAC address of the local network adaptor, and are not guaranteed to be unique.</li>
+<li>Site-local: Addresses that are local to the site / private network (e.g&#x2e;, the company intranet). Site-local addresses (&quot;fec0..&#x2e;&quot;) are usually distributed by the site router, and are not guaranteed to be unique outside of the local site.</li>
+<li>Global: For globally routable addresses, such as public servers on the Internet.</li>
+</ul>
+<p>When using a link-local or site-local address for IPv6 connections, you must specify the scope ID. The scope ID for a link-local address is usually the same as the interface name (e.g&#x2e;, &quot;eth0&quot;, &quot;en1&quot;) or number (e.g&#x2e;, &quot;1&quot;, &quot;2&quot;).</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qhostaddress.html#setScopeId">setScopeId</a>().</p>
+<h3 class="fn"><a name="setAddress"></a>void QHostAddress::setAddress ( <a href="qtglobal.html#quint32-typedef">quint32</a> <i>ip4Addr</i> )</h3>
+<p>Set the IPv4 address specified by <i>ip4Addr</i>.</p>
+<h3 class="fn"><a name="setAddress-2"></a>void QHostAddress::setAddress ( <a href="qtglobal.html#quint8-typedef">quint8</a> * <i>ip6Addr</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Set the IPv6 address specified by <i>ip6Addr</i>.</p>
+<p><i>ip6Addr</i> must be an array of 16 bytes in network byte order (high-order byte first).</p>
+<h3 class="fn"><a name="setAddress-3"></a>void QHostAddress::setAddress ( const Q_IPV6ADDR &amp; <i>ip6Addr</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Set the IPv6 address specified by <i>ip6Addr</i>.</p>
+<h3 class="fn"><a name="setAddress-4"></a>bool QHostAddress::setAddress ( const <a href="qstring.html">QString</a> &amp; <i>address</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the IPv4 or IPv6 address specified by the string representation specified by <i>address</i> (e.g&#x2e; &quot;127.0&#x2e;0&#x2e;1&quot;). Returns true and sets the address if the address was successfully parsed; otherwise returns false.</p>
+<h3 class="fn"><a name="setAddress-5"></a>void QHostAddress::setAddress ( const sockaddr * <i>sockaddr</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the IPv4 or IPv6 address specified by the native structure <i>sockaddr</i>. Returns true and sets the address if the address was successfully parsed; otherwise returns false.</p>
+<h3 class="fn"><a name="setScopeId"></a>void QHostAddress::setScopeId ( const <a href="qstring.html">QString</a> &amp; <i>id</i> )</h3>
+<p>Sets the IPv6 scope ID of the address to <i>id</i>. If the address protocol is not IPv6, this function does nothing.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qhostaddress.html#scopeId">scopeId</a>().</p>
+<h3 class="fn"><a name="toIPv4Address"></a><a href="qtglobal.html#quint32-typedef">quint32</a> QHostAddress::toIPv4Address () const</h3>
+<p>Returns the IPv4 address as a number.</p>
+<p>For example, if the address is 127.0&#x2e;0&#x2e;1, the returned value is 2130706433 (i.e&#x2e; 0x7f000001).</p>
+<p>This value is only valid if <a href="qhostaddress-qt3.html#isIp4Addr">isIp4Addr</a>() returns true.</p>
+<p>See also <a href="qhostaddress.html#toString">toString</a>().</p>
+<h3 class="fn"><a name="toIPv6Address"></a>Q_IPV6ADDR QHostAddress::toIPv6Address () const</h3>
+<p>Returns the IPv6 address as a Q_IPV6ADDR structure. The structure consists of 16 unsigned characters.</p>
+<pre>         Q_IPV6ADDR addr = hostAddr.toIPv6Address();
+         // addr contains 16 unsigned characters
+
+         for (int i = 0; i &lt; 16; ++i) {
+             // process addr[i]
+         }</pre>
+<p>This value is only valid if <a href="qhostaddress-qt3.html#isIPv6Address">isIPv6Address</a>() returns true.</p>
+<p>See also <a href="qhostaddress.html#toString">toString</a>().</p>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QHostAddress::toString () const</h3>
+<p>Returns the address as a string.</p>
+<p>For example, if the address is the IPv4 address 127.0&#x2e;0&#x2e;1, the returned string is &quot;127.0&#x2e;0&#x2e;1&quot;.</p>
+<p>See also <a href="qhostaddress.html#toIPv4Address">toIPv4Address</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QHostAddress::operator!= ( const QHostAddress &amp; <i>other</i> ) const</h3>
+<p>Returns true if this host address is not the same as the <i>other</i> address given; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool QHostAddress::operator!= ( <a href="qhostaddress.html#SpecialAddress-enum">SpecialAddress</a> <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this host address is not the same as the <i>other</i> address given; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QHostAddress &amp; QHostAddress::operator= ( const QHostAddress &amp; <i>address</i> )</h3>
+<p>Assigns another host <i>address</i> to this object, and returns a reference to this object.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QHostAddress &amp; QHostAddress::operator= ( const <a href="qstring.html">QString</a> &amp; <i>address</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns the host address <i>address</i> to this object, and returns a reference to this object.</p>
+<p>See also <a href="qhostaddress.html#setAddress">setAddress</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QHostAddress::operator== ( const QHostAddress &amp; <i>other</i> ) const</h3>
+<p>Returns true if this host address is the same as the <i>other</i> address given; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool QHostAddress::operator== ( <a href="qhostaddress.html#SpecialAddress-enum">SpecialAddress</a> <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this host address is the same as the <i>other</i> address given; otherwise returns false.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i>, const QHostAddress &amp; <i>address</i> )</h3>
+<p>Writes host address <i>address</i> to the stream <i>out</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i>, QHostAddress &amp; <i>address</i> )</h3>
+<p>Reads a host address into <i>address</i> from the stream <i>in</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

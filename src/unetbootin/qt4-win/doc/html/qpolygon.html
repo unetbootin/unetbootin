@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qpolygon.cpp -->
+<head>
+  <title>Qt 4.4: QPolygon Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPolygon Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPolygon class provides a vector of points using integer precision. <a href="#details">More...</a></p>
+<pre> #include &lt;QPolygon&gt;</pre><p>Inherits <a href="qvector.html">QVector&lt;QPoint&gt;</a>.</p>
+<p>Inherited by <a href="q3pointarray.html" class="compat">Q3PointArray</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qpolygon-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpolygon.html#QPolygon">QPolygon</a></b> ()</li>
+<li><div class="fn"/><b><a href="qpolygon.html#QPolygon-2">QPolygon</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/><b><a href="qpolygon.html#QPolygon-3">QPolygon</a></b> ( const QPolygon &amp; <i>polygon</i> )</li>
+<li><div class="fn"/><b><a href="qpolygon.html#QPolygon-4">QPolygon</a></b> ( const QVector&lt;QPoint&gt; &amp; <i>points</i> )</li>
+<li><div class="fn"/><b><a href="qpolygon.html#QPolygon-5">QPolygon</a></b> ( const QRect &amp; <i>rectangle</i>, bool <i>closed</i> = false )</li>
+<li><div class="fn"/><b><a href="qpolygon.html#dtor.QPolygon">~QPolygon</a></b> ()</li>
+<li><div class="fn"/>QRect <b><a href="qpolygon.html#boundingRect">boundingRect</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpolygon.html#containsPoint">containsPoint</a></b> ( const QPoint &amp; <i>point</i>, Qt::FillRule <i>fillRule</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qpolygon.html#intersected">intersected</a></b> ( const QPolygon &amp; <i>r</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#point">point</a></b> ( int <i>index</i>, int * <i>x</i>, int * <i>y</i> ) const</li>
+<li><div class="fn"/>QPoint <b><a href="qpolygon.html#point-2">point</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#putPoints">putPoints</a></b> ( int <i>index</i>, int <i>nPoints</i>, int <i>firstx</i>, int <i>firsty</i>, ... )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#putPoints-3">putPoints</a></b> ( int <i>index</i>, int <i>nPoints</i>, const QPolygon &amp; <i>fromPolygon</i>, int <i>fromIndex</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#setPoint">setPoint</a></b> ( int <i>index</i>, int <i>x</i>, int <i>y</i> )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#setPoint-2">setPoint</a></b> ( int <i>index</i>, const QPoint &amp; <i>point</i> )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#setPoints">setPoints</a></b> ( int <i>nPoints</i>, const int * <i>points</i> )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#setPoints-2">setPoints</a></b> ( int <i>nPoints</i>, int <i>firstx</i>, int <i>firsty</i>, ... )</li>
+<li><div class="fn"/>QPolygon <b><a href="qpolygon.html#subtracted">subtracted</a></b> ( const QPolygon &amp; <i>r</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#translate">translate</a></b> ( int <i>dx</i>, int <i>dy</i> )</li>
+<li><div class="fn"/>void <b><a href="qpolygon.html#translate-2">translate</a></b> ( const QPoint &amp; <i>offset</i> )</li>
+<li><div class="fn"/>QPolygon <b><a href="qpolygon.html#united">united</a></b> ( const QPolygon &amp; <i>r</i> ) const</li>
+<li><div class="fn"/><b><a href="qpolygon.html#operator-QVariant">operator QVariant</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>62 public functions inherited from <a href="qvector.html#public-functions">QVector</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qpolygon.html#operator-lt-lt-102">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QPolygon &amp; <i>polygon</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qpolygon.html#operator-gt-gt-62">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QPolygon &amp; <i>polygon</i> )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 static public members inherited from <a href="qvector.html#static-public-members">QVector</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPolygon class provides a vector of points using integer precision.</p>
+<p>A QPolygon object is a <a href="qvector.html">QVector</a>&lt;<a href="qpoint.html">QPoint</a>&gt;. The easiest way to add points to a QPolygon is to use <a href="qvector.html">QVector</a>'s streaming operator, as illustrated below:</p>
+<pre>         QPolygon polygon;
+         polygon &lt;&lt; QPoint(10, 20) &lt;&lt; QPoint(20, 30);</pre>
+<p>In addition to the functions provided by <a href="qvector.html">QVector</a>, QPolygon provides some point-specific functions.</p>
+<p>Each point in a polygon can be retrieved by passing its index to the <a href="qpolygon.html#point">point</a>() function. To populate the polygon, QPolygon provides the <a href="qpolygon.html#setPoint">setPoint</a>() function to set the point at a given index, the <a href="qpolygon.html#setPoints">setPoints</a>() function to set all the points in the polygon (resizing it to the given number of points), and the <a href="qpolygon.html#putPoints">putPoints</a>() function which copies a number of given points into the polygon from a specified index (resizing the polygon if necessary).</p>
+<p>QPolygon provides the <a href="qpolygon.html#boundingRect">boundingRect</a>() and <a href="qpolygon.html#translate">translate</a>() functions for geometry functions. Use the <a href="qmatrix.html#map">QMatrix::map</a>() function for more general transformations of QPolygons.</p>
+<p>The QPolygon class is <a href="shared.html#implicit-data-sharing">implicitly shared</a>.</p>
+<p>See also <a href="qvector.html">QVector</a>, <a href="qpolygonf.html">QPolygonF</a>, and <a href="qline.html">QLine</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPolygon"></a>QPolygon::QPolygon ()</h3>
+<p>Constructs a polygon with no points.</p>
+<p>See also <a href="qvector.html#isEmpty">QVector::isEmpty</a>().</p>
+<h3 class="fn"><a name="QPolygon-2"></a>QPolygon::QPolygon ( int <i>size</i> )</h3>
+<p>Constructs a polygon of the given <i>size</i>. Creates an empty polygon if <i>size</i> == 0.</p>
+<p>See also <a href="qvector.html#isEmpty">QVector::isEmpty</a>().</p>
+<h3 class="fn"><a name="QPolygon-3"></a>QPolygon::QPolygon ( const QPolygon &amp; <i>polygon</i> )</h3>
+<p>Constructs a copy of the given <i>polygon</i>.</p>
+<p>See also <a href="qpolygon.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="QPolygon-4"></a>QPolygon::QPolygon ( const <a href="qvector.html">QVector</a>&lt;<a href="qpoint.html">QPoint</a>&gt; &amp; <i>points</i> )</h3>
+<p>Constructs a polygon containing the specified <i>points</i>.</p>
+<p>See also <a href="qpolygon.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="QPolygon-5"></a>QPolygon::QPolygon ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i>, bool <i>closed</i> = false )</h3>
+<p>Constructs a polygon from the given <i>rectangle</i>. If <i>closed</i> is false, the polygon just contains the four points of the rectangle ordered clockwise, otherwise the polygon's fifth point is set to <i>rectangle</i>.topLeft().</p>
+<p>Note that the bottom-right corner of the rectangle is located at (rectangle.x() + rectangle.width(), rectangle.y() + rectangle.height()).</p>
+<p>See also <a href="qpolygon.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="dtor.QPolygon"></a>QPolygon::~QPolygon ()</h3>
+<p>Destroys the polygon.</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrect.html">QRect</a> QPolygon::boundingRect () const</h3>
+<p>Returns the bounding rectangle of the polygon, or <a href="qrect.html">QRect</a>(0, 0, 0, 0) if the polygon is empty.</p>
+<p>See also <a href="qvector.html#isEmpty">QVector::isEmpty</a>().</p>
+<h3 class="fn"><a name="containsPoint"></a>bool QPolygon::containsPoint ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i>, <a href="qt.html#FillRule-enum">Qt::FillRule</a> <i>fillRule</i> ) const</h3>
+<p>Returns true if the given <i>point</i> is inside the polygon according to the specified <i>fillRule</i>; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="intersected"></a>QPolygon QPolygon::intersected ( const QPolygon &amp; <i>r</i> ) const</h3>
+<p>Returns a polygon which is the intersection of this polygon and <i>r</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="point"></a>void QPolygon::point ( int <i>index</i>, int * <i>x</i>, int * <i>y</i> ) const</h3>
+<p>Extracts the coordinates of the point at the given <i>index</i> to *<i>x</i> and *<i>y</i> (if they are valid pointers).</p>
+<p>See also <a href="qpolygon.html#setPoint">setPoint</a>().</p>
+<h3 class="fn"><a name="point-2"></a><a href="qpoint.html">QPoint</a> QPolygon::point ( int <i>index</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the point at the given <i>index</i>.</p>
+<h3 class="fn"><a name="putPoints"></a>void QPolygon::putPoints ( int <i>index</i>, int <i>nPoints</i>, int <i>firstx</i>, int <i>firsty</i>, ... )</h3>
+<p>Copies <i>nPoints</i> points from the variable argument list into this polygon from the given <i>index</i>.</p>
+<p>The points are given as a sequence of integers, starting with <i>firstx</i> then <i>firsty</i>, and so on. The polygon is resized if <tt>index+nPoints</tt> exceeds its current size.</p>
+<p>The example code creates a polygon with three points (4,5), (6,7) and (8,9), by expanding the polygon from 1 to 3 points:</p>
+<pre>         QPolygon polygon(1);
+         polygon[0] = QPoint(4, 5);
+         polygon.putPoints(1, 2, 6,7, 8,9);</pre>
+<p>The following code has the same result, but here the putPoints() function overwrites rather than extends:</p>
+<pre>         QPolygon polygon(3);
+         polygon.putPoints(0, 3, 4,5, 0,0, 8,9);
+         polygon.putPoints(1, 1, 6,7);</pre>
+<p>See also <a href="qpolygon.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="putPoints-3"></a>void QPolygon::putPoints ( int <i>index</i>, int <i>nPoints</i>, const QPolygon &amp; <i>fromPolygon</i>, int <i>fromIndex</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Copies <i>nPoints</i> points from the given <i>fromIndex</i> ( 0 by default) in <i>fromPolygon</i> into this polygon, starting at the specified <i>index</i>. For example:</p>
+<pre>         QPolygon polygon1;
+         polygon1.putPoints(0, 3, 1,2, 0,0, 5,6);
+         <span class="comment">//</span> polygon1 is now the three-point polygon(1,2, 0,0, 5,6);
+
+         QPolygon polygon2;
+         polygon2.putPoints(0, 3, 4,4, 5,5, 6,6);
+         <span class="comment">//</span> polygon2 is now (4,4, 5,5, 6,6);
+
+         polygon1.putPoints(2, 3, polygon2);
+         <span class="comment">//</span> polygon1 is now the five-point polygon(1,2, 0,0, 4,4, 5,5, 6,6);</pre>
+<h3 class="fn"><a name="setPoint"></a>void QPolygon::setPoint ( int <i>index</i>, int <i>x</i>, int <i>y</i> )</h3>
+<p>Sets the point at the given <i>index</i> to the point specified by (<i>x</i>, <i>y</i>).</p>
+<p>See also <a href="qpolygon.html#point">point</a>(), <a href="qpolygon.html#putPoints">putPoints</a>(), and <a href="qpolygon.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="setPoint-2"></a>void QPolygon::setPoint ( int <i>index</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the point at the given <i>index</i> to the given <i>point</i>.</p>
+<h3 class="fn"><a name="setPoints"></a>void QPolygon::setPoints ( int <i>nPoints</i>, const int * <i>points</i> )</h3>
+<p>Resizes the polygon to <i>nPoints</i> and populates it with the given <i>points</i>.</p>
+<p>The example code creates a polygon with two points (10, 20) and (30, 40):</p>
+<pre>         static const int points[] = { 10, 20, 30, 40 };
+         QPolygon polygon;
+         polygon.setPoints(2, points);</pre>
+<p>See also <a href="qpolygon.html#setPoint">setPoint</a>() and <a href="qpolygon.html#putPoints">putPoints</a>().</p>
+<h3 class="fn"><a name="setPoints-2"></a>void QPolygon::setPoints ( int <i>nPoints</i>, int <i>firstx</i>, int <i>firsty</i>, ... )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Resizes the polygon to <i>nPoints</i> and populates it with the points specified by the variable argument list. The points are given as a sequence of integers, starting with <i>firstx</i> then <i>firsty</i>, and so on.</p>
+<p>The example code creates a polygon with two points (10, 20) and (30, 40):</p>
+<pre>         QPolygon polygon;
+         polygon.setPoints(2, 10, 20, 30, 40);</pre>
+<h3 class="fn"><a name="subtracted"></a>QPolygon QPolygon::subtracted ( const QPolygon &amp; <i>r</i> ) const</h3>
+<p>Returns a polygon which is <i>r</i> subtracted from this polygon.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="translate"></a>void QPolygon::translate ( int <i>dx</i>, int <i>dy</i> )</h3>
+<p>Translates all points in the polygon by (<i>dx</i>, <i>dy</i>).</p>
+<h3 class="fn"><a name="translate-2"></a>void QPolygon::translate ( const <a href="qpoint.html">QPoint</a> &amp; <i>offset</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Translates all points in the polygon by the given <i>offset</i>.</p>
+<h3 class="fn"><a name="united"></a>QPolygon QPolygon::united ( const QPolygon &amp; <i>r</i> ) const</h3>
+<p>Returns a polygon which is the union of this polygon and <i>r</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qpolygon.html#intersected">intersected</a>() and <a href="qpolygon.html#subtracted">subtracted</a>().</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QPolygon::operator QVariant () const</h3>
+<p>Returns the polygon as a <a href="qvariant.html">QVariant</a></p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-102"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QPolygon &amp; <i>polygon</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>polygon</i> to the given <i>stream</i>, and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-62"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QPolygon &amp; <i>polygon</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a polygon from the given <i>stream</i> into the given <i>polygon</i>, and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

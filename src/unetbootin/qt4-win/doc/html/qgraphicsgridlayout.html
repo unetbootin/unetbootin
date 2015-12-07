@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsgridlayout.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsGridLayout Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsGridLayout Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsGridLayout class provides a grid layout for managing widgets in Graphics View. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsGridLayout&gt;</pre><p>Inherits <a href="qgraphicslayout.html">QGraphicsLayout</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qgraphicsgridlayout-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicsgridlayout.html#QGraphicsGridLayout">QGraphicsGridLayout</a></b> ( QGraphicsLayoutItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qgraphicsgridlayout.html#dtor.QGraphicsGridLayout">~QGraphicsGridLayout</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#addItem">addItem</a></b> ( QGraphicsLayoutItem * <i>item</i>, int <i>row</i>, int <i>column</i>, int <i>rowSpan</i>, int <i>columnSpan</i>, Qt::Alignment <i>alignment</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#addItem-2">addItem</a></b> ( QGraphicsLayoutItem * <i>item</i>, int <i>row</i>, int <i>column</i>, Qt::Alignment <i>alignment</i> = 0 )</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qgraphicsgridlayout.html#alignment">alignment</a></b> ( QGraphicsLayoutItem * <i>item</i> ) const</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qgraphicsgridlayout.html#columnAlignment">columnAlignment</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgraphicsgridlayout.html#columnCount">columnCount</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#columnMaximumWidth">columnMaximumWidth</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#columnMinimumWidth">columnMinimumWidth</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#columnPreferredWidth">columnPreferredWidth</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#columnSpacing">columnSpacing</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgraphicsgridlayout.html#columnStretchFactor">columnStretchFactor</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="qgraphicsgridlayout.html#count">count</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#horizontalSpacing">horizontalSpacing</a></b> () const</li>
+<li><div class="fn"/>QGraphicsLayoutItem * <b><a href="qgraphicsgridlayout.html#itemAt">itemAt</a></b> ( int <i>row</i>, int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual QGraphicsLayoutItem * <b><a href="qgraphicsgridlayout.html#itemAt-2">itemAt</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsgridlayout.html#removeAt">removeAt</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qgraphicsgridlayout.html#rowAlignment">rowAlignment</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgraphicsgridlayout.html#rowCount">rowCount</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#rowMaximumHeight">rowMaximumHeight</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#rowMinimumHeight">rowMinimumHeight</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#rowPreferredHeight">rowPreferredHeight</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#rowSpacing">rowSpacing</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgraphicsgridlayout.html#rowStretchFactor">rowStretchFactor</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setAlignment">setAlignment</a></b> ( QGraphicsLayoutItem * <i>item</i>, Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnAlignment">setColumnAlignment</a></b> ( int <i>column</i>, Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnFixedWidth">setColumnFixedWidth</a></b> ( int <i>column</i>, qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnMaximumWidth">setColumnMaximumWidth</a></b> ( int <i>column</i>, qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnMinimumWidth">setColumnMinimumWidth</a></b> ( int <i>column</i>, qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnPreferredWidth">setColumnPreferredWidth</a></b> ( int <i>column</i>, qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnSpacing">setColumnSpacing</a></b> ( int <i>column</i>, qreal <i>spacing</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setColumnStretchFactor">setColumnStretchFactor</a></b> ( int <i>column</i>, int <i>stretch</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicsgridlayout.html#setGeometry">setGeometry</a></b> ( const QRectF &amp; <i>rect</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setHorizontalSpacing">setHorizontalSpacing</a></b> ( qreal <i>spacing</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowAlignment">setRowAlignment</a></b> ( int <i>row</i>, Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowFixedHeight">setRowFixedHeight</a></b> ( int <i>row</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowMaximumHeight">setRowMaximumHeight</a></b> ( int <i>row</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowMinimumHeight">setRowMinimumHeight</a></b> ( int <i>row</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowPreferredHeight">setRowPreferredHeight</a></b> ( int <i>row</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowSpacing">setRowSpacing</a></b> ( int <i>row</i>, qreal <i>spacing</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setRowStretchFactor">setRowStretchFactor</a></b> ( int <i>row</i>, int <i>stretch</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setSpacing">setSpacing</a></b> ( qreal <i>spacing</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicsgridlayout.html#setVerticalSpacing">setVerticalSpacing</a></b> ( qreal <i>spacing</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qgraphicsgridlayout.html#verticalSpacing">verticalSpacing</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="qgraphicslayout.html#public-functions">QGraphicsLayout</a></li>
+<li><div class="fn"/>33 public functions inherited from <a href="qgraphicslayoutitem.html#public-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qgraphicslayoutitem.html#protected-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsGridLayout class provides a grid layout for managing widgets in Graphics View.</p>
+<p>The most common way to use QGraphicsGridLayout is to construct an object on the heap with no parent, add widgets and layouts by calling <a href="qgraphicsgridlayout.html#addItem">addItem</a>(), and finally assign the layout to a widget by calling <a href="qgraphicswidget.html#setLayout">QGraphicsWidget::setLayout</a>(). QGraphicsGridLayout automatically computes the dimensions of the grid as you add items.</p>
+<pre>         QGraphicsScene scene;
+         QGraphicsWidget *textEdit = scene.addWidget(new QTextEdit);
+         QGraphicsWidget *pushButton = scene.addWidget(new QPushButton);
+
+         QGraphicsLinearLayout *layout = new QGraphicsLinearLayout;
+         layout-&gt;addItem(textEdit, 0, 0);
+         layout-&gt;addItem(pushButton, 0, 1);
+
+         QGraphicsWidget *form = new QGraphicsWidget;
+         form-&gt;setLayout(layout);
+         scene.addItem(form);</pre>
+<p>See also <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> and <a href="qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsGridLayout"></a>QGraphicsGridLayout::QGraphicsGridLayout ( <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a> instance. <i>parent</i> is passed to <a href="qgraphicslayout.html">QGraphicsLayout</a>'s constructor.</p>
+<h3 class="fn"><a name="dtor.QGraphicsGridLayout"></a>QGraphicsGridLayout::~QGraphicsGridLayout ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a> object.</p>
+<h3 class="fn"><a name="addItem"></a>void QGraphicsGridLayout::addItem ( <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * <i>item</i>, int <i>row</i>, int <i>column</i>, int <i>rowSpan</i>, int <i>columnSpan</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> = 0 )</h3>
+<p>Adds <i>item</i> to the grid on <i>row</i> and <i>column</i>. You can specify a <i>rowSpan</i> and <i>columnSpan</i> and an optional <i>alignment</i>.</p>
+<h3 class="fn"><a name="addItem-2"></a>void QGraphicsGridLayout::addItem ( <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * <i>item</i>, int <i>row</i>, int <i>column</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds <i>item</i> to the grid on <i>row</i> and <i>column</i>. You can specify an optional <i>alignment</i> for <i>item</i>.</p>
+<h3 class="fn"><a name="alignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QGraphicsGridLayout::alignment ( <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * <i>item</i> ) const</h3>
+<p>Returns the alignment for <i>item</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="columnAlignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QGraphicsGridLayout::columnAlignment ( int <i>column</i> ) const</h3>
+<p>Returns the alignment for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnAlignment">setColumnAlignment</a>().</p>
+<h3 class="fn"><a name="columnCount"></a>int QGraphicsGridLayout::columnCount () const</h3>
+<p>Returns the number of columns in the grid layout. This is always one more than the index of the last column that is occupied by a layout item (empty columns are counted except for those at the end).</p>
+<h3 class="fn"><a name="columnMaximumWidth"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::columnMaximumWidth ( int <i>column</i> ) const</h3>
+<p>Returns the maximum width for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnMaximumWidth">setColumnMaximumWidth</a>().</p>
+<h3 class="fn"><a name="columnMinimumWidth"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::columnMinimumWidth ( int <i>column</i> ) const</h3>
+<p>Returns the minimum width for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnMinimumWidth">setColumnMinimumWidth</a>().</p>
+<h3 class="fn"><a name="columnPreferredWidth"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::columnPreferredWidth ( int <i>column</i> ) const</h3>
+<p>Returns the preferred width for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnPreferredWidth">setColumnPreferredWidth</a>().</p>
+<h3 class="fn"><a name="columnSpacing"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::columnSpacing ( int <i>column</i> ) const</h3>
+<p>Returns the column spacing for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnSpacing">setColumnSpacing</a>().</p>
+<h3 class="fn"><a name="columnStretchFactor"></a>int QGraphicsGridLayout::columnStretchFactor ( int <i>column</i> ) const</h3>
+<p>Returns the stretch factor for <i>column</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setColumnStretchFactor">setColumnStretchFactor</a>().</p>
+<h3 class="fn"><a name="count"></a>int QGraphicsGridLayout::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of layout items in this grid layout.</p>
+<p>Reimplemented from <a href="qgraphicslayout.html#count">QGraphicsLayout</a>.</p>
+<h3 class="fn"><a name="horizontalSpacing"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::horizontalSpacing () const</h3>
+<p>Returns the default horizontal spacing for the grid layout.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setHorizontalSpacing">setHorizontalSpacing</a>().</p>
+<h3 class="fn"><a name="itemAt"></a><a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * QGraphicsGridLayout::itemAt ( int <i>row</i>, int <i>column</i> ) const</h3>
+<p>Returns a pointer to the layout item at (<i>row</i>, <i>column</i>).</p>
+<h3 class="fn"><a name="itemAt-2"></a><a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * QGraphicsGridLayout::itemAt ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the layout item at <i>index</i>, or 0 if there is no layout item at this index.</p>
+<p>Reimplemented from <a href="qgraphicslayout.html#itemAt">QGraphicsLayout</a>.</p>
+<h3 class="fn"><a name="removeAt"></a>void QGraphicsGridLayout::removeAt ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes the layout item at <i>index</i> without destroying it. Ownership of the item is transferred to the caller.</p>
+<p>Reimplemented from <a href="qgraphicslayout.html#removeAt">QGraphicsLayout</a>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#addItem">addItem</a>().</p>
+<h3 class="fn"><a name="rowAlignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QGraphicsGridLayout::rowAlignment ( int <i>row</i> ) const</h3>
+<p>Returns the alignment of <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowAlignment">setRowAlignment</a>().</p>
+<h3 class="fn"><a name="rowCount"></a>int QGraphicsGridLayout::rowCount () const</h3>
+<p>Returns the number of rows in the grid layout. This is always one more than the index of the last row that is occupied by a layout item (empty rows are counted except for those at the end).</p>
+<h3 class="fn"><a name="rowMaximumHeight"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::rowMaximumHeight ( int <i>row</i> ) const</h3>
+<p>Returns the maximum height for row, <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowMaximumHeight">setRowMaximumHeight</a>().</p>
+<h3 class="fn"><a name="rowMinimumHeight"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::rowMinimumHeight ( int <i>row</i> ) const</h3>
+<p>Returns the minimum height for row, <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowMinimumHeight">setRowMinimumHeight</a>().</p>
+<h3 class="fn"><a name="rowPreferredHeight"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::rowPreferredHeight ( int <i>row</i> ) const</h3>
+<p>Returns the preferred height for row, <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowPreferredHeight">setRowPreferredHeight</a>().</p>
+<h3 class="fn"><a name="rowSpacing"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::rowSpacing ( int <i>row</i> ) const</h3>
+<p>Returns the row spacing for <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowSpacing">setRowSpacing</a>().</p>
+<h3 class="fn"><a name="rowStretchFactor"></a>int QGraphicsGridLayout::rowStretchFactor ( int <i>row</i> ) const</h3>
+<p>Returns the stretch factor for <i>row</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setRowStretchFactor">setRowStretchFactor</a>().</p>
+<h3 class="fn"><a name="setAlignment"></a>void QGraphicsGridLayout::setAlignment ( <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a> * <i>item</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the alignment for <i>item</i> to <i>alignment</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setColumnAlignment"></a>void QGraphicsGridLayout::setColumnAlignment ( int <i>column</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the alignment for <i>column</i> to <i>alignment</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnAlignment">columnAlignment</a>().</p>
+<h3 class="fn"><a name="setColumnFixedWidth"></a>void QGraphicsGridLayout::setColumnFixedWidth ( int <i>column</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the fixed width of <i>column</i> to <i>width</i>.</p>
+<h3 class="fn"><a name="setColumnMaximumWidth"></a>void QGraphicsGridLayout::setColumnMaximumWidth ( int <i>column</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the maximum width of <i>column</i> to <i>width</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnMaximumWidth">columnMaximumWidth</a>().</p>
+<h3 class="fn"><a name="setColumnMinimumWidth"></a>void QGraphicsGridLayout::setColumnMinimumWidth ( int <i>column</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the minimum width for <i>column</i> to <i>width</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnMinimumWidth">columnMinimumWidth</a>().</p>
+<h3 class="fn"><a name="setColumnPreferredWidth"></a>void QGraphicsGridLayout::setColumnPreferredWidth ( int <i>column</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the preferred width for <i>column</i> to <i>width</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnPreferredWidth">columnPreferredWidth</a>().</p>
+<h3 class="fn"><a name="setColumnSpacing"></a>void QGraphicsGridLayout::setColumnSpacing ( int <i>column</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the spacing for <i>column</i> to <i>spacing</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnSpacing">columnSpacing</a>().</p>
+<h3 class="fn"><a name="setColumnStretchFactor"></a>void QGraphicsGridLayout::setColumnStretchFactor ( int <i>column</i>, int <i>stretch</i> )</h3>
+<p>Sets the stretch factor for <i>column</i> to <i>stretch</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#columnStretchFactor">columnStretchFactor</a>().</p>
+<h3 class="fn"><a name="setGeometry"></a>void QGraphicsGridLayout::setGeometry ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the bounding geometry of the grid layout to <i>rect</i>.</p>
+<p>Reimplemented from <a href="qgraphicslayoutitem.html#setGeometry">QGraphicsLayoutItem</a>.</p>
+<h3 class="fn"><a name="setHorizontalSpacing"></a>void QGraphicsGridLayout::setHorizontalSpacing ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the default horizontal spacing for the grid layout to <i>spacing</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#horizontalSpacing">horizontalSpacing</a>().</p>
+<h3 class="fn"><a name="setRowAlignment"></a>void QGraphicsGridLayout::setRowAlignment ( int <i>row</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the alignment of <i>row</i> to <i>alignment</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowAlignment">rowAlignment</a>().</p>
+<h3 class="fn"><a name="setRowFixedHeight"></a>void QGraphicsGridLayout::setRowFixedHeight ( int <i>row</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Sets the fixed height for row, <i>row</i>, to <i>height</i>.</p>
+<h3 class="fn"><a name="setRowMaximumHeight"></a>void QGraphicsGridLayout::setRowMaximumHeight ( int <i>row</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Sets the maximum height for row, <i>row</i>, to <i>height</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowMaximumHeight">rowMaximumHeight</a>().</p>
+<h3 class="fn"><a name="setRowMinimumHeight"></a>void QGraphicsGridLayout::setRowMinimumHeight ( int <i>row</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Sets the minimum height for row, <i>row</i>, to <i>height</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowMinimumHeight">rowMinimumHeight</a>().</p>
+<h3 class="fn"><a name="setRowPreferredHeight"></a>void QGraphicsGridLayout::setRowPreferredHeight ( int <i>row</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Sets the preferred height for row, <i>row</i>, to <i>height</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowPreferredHeight">rowPreferredHeight</a>().</p>
+<h3 class="fn"><a name="setRowSpacing"></a>void QGraphicsGridLayout::setRowSpacing ( int <i>row</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the spacing for <i>row</i> to <i>spacing</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowSpacing">rowSpacing</a>().</p>
+<h3 class="fn"><a name="setRowStretchFactor"></a>void QGraphicsGridLayout::setRowStretchFactor ( int <i>row</i>, int <i>stretch</i> )</h3>
+<p>Sets the stretch factor for <i>row</i> to <i>stretch</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowStretchFactor">rowStretchFactor</a>().</p>
+<h3 class="fn"><a name="setSpacing"></a>void QGraphicsGridLayout::setSpacing ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the grid layout's default spacing, both vertical and horizontal, to <i>spacing</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#rowSpacing">rowSpacing</a>() and <a href="qgraphicsgridlayout.html#columnSpacing">columnSpacing</a>().</p>
+<h3 class="fn"><a name="setVerticalSpacing"></a>void QGraphicsGridLayout::setVerticalSpacing ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>spacing</i> )</h3>
+<p>Sets the default vertical spacing for the grid layout to <i>spacing</i>.</p>
+<p>See also <a href="qgraphicsgridlayout.html#verticalSpacing">verticalSpacing</a>().</p>
+<h3 class="fn"><a name="verticalSpacing"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QGraphicsGridLayout::verticalSpacing () const</h3>
+<p>Returns the default vertical spacing for the grid layout.</p>
+<p>See also <a href="qgraphicsgridlayout.html#setVerticalSpacing">setVerticalSpacing</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

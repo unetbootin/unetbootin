@@ -1,0 +1,110 @@
+<html>
+<head>
+<title>Known issues</title>
+<link rel="stylesheet" href="http://www.trolltech.com/trollstyle.css">
+<style type="text/css">
+    H2 { position: relative; top: 10px; }
+    H4 { margin-left: 15px; }
+    .issue { margin-left: 15px; }
+    .workaround { margin-left: 30px; margin-right: 30px; padding: 2px; border-style: solid; border-color: #AACA00; border-width: 1px; }
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+    <tr bgcolor="#E5E5E5">
+        <td><img src="http://doc.trolltech.com/doctitle.png" width="443" height="32" border="0"></td>
+        <td align="right" valign="middle"></td></tr></table>
+<h1>Known Issues: Qt 4.0.0 Technology Preview 1</h1>
+<p>
+    This is the list of known and reported issues for the the Qt 4.0.0 
+    Technology Preview 1. This list is updated daily.
+</p>
+<br><br>
+<table width="100%">
+    <tr><td align="left"><b><a href="#buildissues">Build Issues</a></b></td></tr>
+    <tr><td align="left"><b><a href="#general">General</a></b></td></tr>
+    <tr><td align="left"><b><a href="#demos">Demos</a></b></td></tr>
+    <tr><td align="left"><b><a href="#window">Windows specific</a></b></td></tr>
+    <tr><td align="left"><b><a href="#x11">X11 specific</a></b></td></tr>
+    <tr><td align="left"><b><a href="#mac">Mac specific</a></b></td></tr>
+</table>
+<br><br>
+<!-- Build section ------------------------------------------------- -->
+<a name="buildissues"></a>
+<h2>Build Issues</h2>
+    <h4>Static libraries on Mac OS X</h4>
+    <p class="issue">Building a static build on mac will fail the first time.</p>
+    <p class="workaround">Run qmake a second time.</p>
+    
+    <h4>QTDIR</h4>
+    <p class="issue">Some applications(e.g. uic3) need QTDIR set and QTDIR/bin in the path to work.</p>
+    <p class="workaround">Set QTDIR and PATH as described in INSTALL.</p>
+
+    <h4>ODBC driver on Windows</h4>
+    <p class="issue">Problems compiling the ODBC driver.</p>
+    <p class="workaround">Change the include from qapplication.h to qcoreapplication.h</p>
+
+    <h4>QtGui does not link because of accessibility errors</h4>
+    <p class="issue">undefined reference to QAccessible::setRootObject(QObject*)</p>
+    <p class="workaround">Rerun configure and rebuild, if that does not help, add the contents of $QTDIR/.qt.config to $QTDIR/.qmake.cache</p>
+
+
+<!-- General section ---------------------------------------------- -->
+<a name="general"></a>
+<h2>General</h2>
+
+    <h4>No connection to Oracle</h4>
+    <p class="issue">I cannot connect to my Oracle server</p>
+    <p class="workaround">Use the Oracle &gt;= 9 client libraries, currently there is no workaround for OCI 8</p>
+
+    <h4>QSqlModel</h4>
+    <p class="issue">Only the first 16 rows from a database result are displayed</p>
+    <p class="workaround">You are using a database driver which does not report back the size of a result set and incremental fetching is not yet implemented in the itemviews. You can either use another database like MySQL or increase the QSQL_PREFETCH in qsqlmodel.cpp</p>
+
+
+<!-- Demos section ------------------------------------------------- -->
+<a name="demos"></a>
+<h2>Demos</h2>
+
+    <h4>-</h4>
+
+
+<!-- Windows platform section -------------------------------------- -->
+<a name="window"></a>
+<h2>Windows specific</h2>
+
+    <h4>Qt Assistant</h4>
+    <p class="issue">Problems with zooming and laying out text. Sometimes the text overlaps.</p>
+
+    <h4>GDI handle leak</h4>
+    <p class="issue">Setting fonts through QPainter::setFont() leaks GDI
+    handles on windows. This is for instance visible in the OpenGL
+    part of the Arthur demo. The issue will be fixed before the next
+    preview.</p>
+
+<!-- X11 platform section ------------------------------------------ -->
+<a name="x11"></a>
+<h2>X11 specific</h2>
+
+    <h4>-</h4>
+
+
+<!-- Mac platform section ------------------------------------------ -->
+<a name="mac"></a>
+<h2>Mac specific</h2>
+
+    <h4>QComboBox</h4>
+    <p class="issue">Does not have the native Mac look and feel yet. It is rendered in a Windows-like style.</p>
+
+    <h4>Clicking on widgets</h4>
+    <p class="issue"><i>Jaguar 10.2 only:</i> Clicking on widgets that has a focusrect may fail.</p>
+    <p class="workaround">Use 10.3 for now.</p>
+
+    
+<!-- [Page footer] ------------------------------------------------- -->
+<table width="100%">
+    <tr><td><hr size="1" noshade></td></tr>
+    <tr><td align="center" valign="bottom"><a href="http://www.trolltech.com">www.trolltech.com</a></td></tr>
+</table>
+</body>
+</html>

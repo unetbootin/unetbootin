@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3table.cpp -->
+<head>
+  <title>Qt 4.4: Q3TableSelection Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TableSelection Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TableSelection class provides access to a selected area in a <a href="q3table.html">Q3Table</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TableSelection&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<ul>
+<li><a href="q3tableselection-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3tableselection.html#Q3TableSelection">Q3TableSelection</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3tableselection.html#Q3TableSelection-2">Q3TableSelection</a></b> ( int <i>start_row</i>, int <i>start_col</i>, int <i>end_row</i>, int <i>end_col</i> )</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#anchorCol">anchorCol</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#anchorRow">anchorRow</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#bottomRow">bottomRow</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3tableselection.html#expandTo">expandTo</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>void <b><a href="q3tableselection.html#init">init</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3tableselection.html#isActive">isActive</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3tableselection.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#leftCol">leftCol</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#numCols">numCols</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#numRows">numRows</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#rightCol">rightCol</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableselection.html#topRow">topRow</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3tableselection.html#operator-not-eq">operator!=</a></b> ( const Q3TableSelection &amp; <i>s</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3tableselection.html#operator-eq-eq">operator==</a></b> ( const Q3TableSelection &amp; <i>s</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TableSelection class provides access to a selected area in a <a href="q3table.html">Q3Table</a>.</p>
+<p>The selection is a rectangular set of cells in a <a href="q3table.html">Q3Table</a>. One of the rectangle's cells is called the anchor cell; this is the cell that was selected first. The <a href="q3tableselection.html#init">init</a>() function sets the anchor and the selection rectangle to exactly this cell; the <a href="q3tableselection.html#expandTo">expandTo</a>() function expands the selection rectangle to include additional cells.</p>
+<p>There are various access functions to find out about the area: <a href="q3tableselection.html#anchorRow">anchorRow</a>() and <a href="q3tableselection.html#anchorCol">anchorCol</a>() return the anchor's position; <a href="q3tableselection.html#leftCol">leftCol</a>(), <a href="q3tableselection.html#rightCol">rightCol</a>(), <a href="q3tableselection.html#topRow">topRow</a>() and <a href="q3tableselection.html#bottomRow">bottomRow</a>() return the rectangle's four edges. All four are part of the selection.</p>
+<p>A newly created Q3TableSelection is inactive -- <a href="q3tableselection.html#isActive">isActive</a>() returns false. You must use <a href="q3tableselection.html#init">init</a>() and <a href="q3tableselection.html#expandTo">expandTo</a>() to activate it.</p>
+<p><a href="q3table.html#selectCells">Q3Table::selectCells</a>() <a href="q3table.html#selectRow">Q3Table::selectRow</a>() <a href="q3table.html#selectColumn">Q3Table::selectColumn</a>()</p>
+<p>See also <a href="q3table.html">Q3Table</a>, <a href="q3table.html#addSelection">Q3Table::addSelection</a>(), and <a href="q3table.html#selection">Q3Table::selection</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TableSelection"></a>Q3TableSelection::Q3TableSelection ()</h3>
+<p>Creates an inactive selection. Use <a href="q3tableselection.html#init">init</a>() and <a href="q3tableselection.html#expandTo">expandTo</a>() to activate it.</p>
+<h3 class="fn"><a name="Q3TableSelection-2"></a>Q3TableSelection::Q3TableSelection ( int <i>start_row</i>, int <i>start_col</i>, int <i>end_row</i>, int <i>end_col</i> )</h3>
+<p>Creates an active selection, starting at <i>start_row</i> and <i>start_col</i>, ending at <i>end_row</i> and <i>end_col</i>.</p>
+<h3 class="fn"><a name="anchorCol"></a>int Q3TableSelection::anchorCol () const</h3>
+<p>Returns the anchor column of the selection.</p>
+<p>See also <a href="q3tableselection.html#anchorRow">anchorRow</a>() and <a href="q3tableselection.html#expandTo">expandTo</a>().</p>
+<h3 class="fn"><a name="anchorRow"></a>int Q3TableSelection::anchorRow () const</h3>
+<p>Returns the anchor row of the selection.</p>
+<p>See also <a href="q3tableselection.html#anchorCol">anchorCol</a>() and <a href="q3tableselection.html#expandTo">expandTo</a>().</p>
+<h3 class="fn"><a name="bottomRow"></a>int Q3TableSelection::bottomRow () const</h3>
+<p>Returns the bottom row of the selection.</p>
+<p>See also <a href="q3tableselection.html#topRow">topRow</a>(), <a href="q3tableselection.html#leftCol">leftCol</a>(), and <a href="q3tableselection.html#rightCol">rightCol</a>().</p>
+<h3 class="fn"><a name="expandTo"></a>void Q3TableSelection::expandTo ( int <i>row</i>, int <i>col</i> )</h3>
+<p>Expands the selection to include cell <i>row</i>, <i>col</i>. The new selection rectangle is the bounding rectangle of <i>row</i>, <i>col</i> and the previous selection rectangle. After calling this function the selection is active.</p>
+<p>If you haven't called <a href="q3tableselection.html#init">init</a>(), this function does nothing.</p>
+<p>See also <a href="q3tableselection.html#init">init</a>() and <a href="q3tableselection.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="init"></a>void Q3TableSelection::init ( int <i>row</i>, int <i>col</i> )</h3>
+<p>Sets the selection anchor to cell <i>row</i>, <i>col</i> and the selection to only contain this cell. The selection is not active until <a href="q3tableselection.html#expandTo">expandTo</a>() is called.</p>
+<p>To extend the selection to include additional cells, call <a href="q3tableselection.html#expandTo">expandTo</a>().</p>
+<p>See also <a href="q3tableselection.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="isActive"></a>bool Q3TableSelection::isActive () const</h3>
+<p>Returns whether the selection is active or not. A selection is active after <a href="q3tableselection.html#init">init</a>() <i>and</i> <a href="q3tableselection.html#expandTo">expandTo</a>() have been called.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3TableSelection::isEmpty () const</h3>
+<p>Returns whether the selection is empty or not.</p>
+<p>See also <a href="q3tableselection.html#numRows">numRows</a>() and <a href="q3tableselection.html#numCols">numCols</a>().</p>
+<h3 class="fn"><a name="leftCol"></a>int Q3TableSelection::leftCol () const</h3>
+<p>Returns the left column of the selection.</p>
+<p>See also <a href="q3tableselection.html#topRow">topRow</a>(), <a href="q3tableselection.html#bottomRow">bottomRow</a>(), and <a href="q3tableselection.html#rightCol">rightCol</a>().</p>
+<h3 class="fn"><a name="numCols"></a>int Q3TableSelection::numCols () const</h3>
+<p>Returns the number of columns in the selection.</p>
+<p>See also <a href="q3tableselection.html#numRows">numRows</a>().</p>
+<h3 class="fn"><a name="numRows"></a>int Q3TableSelection::numRows () const</h3>
+<p>Returns the number of rows in the selection.</p>
+<p>See also <a href="q3tableselection.html#numCols">numCols</a>().</p>
+<h3 class="fn"><a name="rightCol"></a>int Q3TableSelection::rightCol () const</h3>
+<p>Returns the right column of the selection.</p>
+<p>See also <a href="q3tableselection.html#topRow">topRow</a>(), <a href="q3tableselection.html#bottomRow">bottomRow</a>(), and <a href="q3tableselection.html#leftCol">leftCol</a>().</p>
+<h3 class="fn"><a name="topRow"></a>int Q3TableSelection::topRow () const</h3>
+<p>Returns the top row of the selection.</p>
+<p>See also <a href="q3tableselection.html#bottomRow">bottomRow</a>(), <a href="q3tableselection.html#leftCol">leftCol</a>(), and <a href="q3tableselection.html#rightCol">rightCol</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool Q3TableSelection::operator!= ( const Q3TableSelection &amp; <i>s</i> ) const</h3>
+<p>Returns true if <i>s</i> does not include the same cells as the selection; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool Q3TableSelection::operator== ( const Q3TableSelection &amp; <i>s</i> ) const</h3>
+<p>Returns true if <i>s</i> includes the same cells as the selection; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

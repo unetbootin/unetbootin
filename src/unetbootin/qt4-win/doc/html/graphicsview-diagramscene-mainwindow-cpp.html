@@ -1,0 +1,607 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (graphicsview/diagramscene/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">graphicsview/diagramscene/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &lt;QLabel&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;diagramitem.h&quot;
+ #include &quot;diagramscene.h&quot;
+ #include &quot;diagramtextitem.h&quot;
+
+ const int InsertTextButton = 10;
+
+ MainWindow::MainWindow()
+ {
+     createActions();
+     createToolBox();
+     createMenus();
+
+     scene = new DiagramScene(itemMenu);
+     scene-&gt;setSceneRect(QRectF(0, 0, 5000, 5000));
+     connect(scene, SIGNAL(itemInserted(DiagramItem *)),
+             this, SLOT(itemInserted(DiagramItem *)));
+     connect(scene, SIGNAL(textInserted(QGraphicsTextItem *)),
+         this, SLOT(textInserted(QGraphicsTextItem *)));
+     connect(scene, SIGNAL(itemSelected(QGraphicsItem *)),
+         this, SLOT(itemSelected(QGraphicsItem *)));
+     createToolbars();
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(toolBox);
+     view = new QGraphicsView(scene);
+     layout-&gt;addWidget(view);
+
+     QWidget *widget = new QWidget;
+     widget-&gt;setLayout(layout);
+
+     setCentralWidget(widget);
+     setWindowTitle(tr(&quot;Diagramscene&quot;));
+ }
+
+ void MainWindow::backgroundButtonGroupClicked(QAbstractButton *button)
+ {
+     QList&lt;QAbstractButton *&gt; buttons = backgroundButtonGroup-&gt;buttons();
+     foreach (QAbstractButton *myButton, buttons) {
+     if (myButton != button)
+         button-&gt;setChecked(false);
+     }
+     QString text = button-&gt;text();
+     if (text == tr(&quot;Blue Grid&quot;))
+         scene-&gt;setBackgroundBrush(QPixmap(&quot;:/images/background1.png&quot;));
+     else if (text == tr(&quot;White Grid&quot;))
+         scene-&gt;setBackgroundBrush(QPixmap(&quot;:/images/background2.png&quot;));
+     else if (text == tr(&quot;Gray Grid&quot;))
+         scene-&gt;setBackgroundBrush(QPixmap(&quot;:/images/background3.png&quot;));
+     else
+         scene-&gt;setBackgroundBrush(QPixmap(&quot;:/images/background4.png&quot;));
+
+     scene-&gt;update();
+     view-&gt;update();
+ }
+
+ void MainWindow::buttonGroupClicked(int id)
+ {
+     QList&lt;QAbstractButton *&gt; buttons = buttonGroup-&gt;buttons();
+     foreach (QAbstractButton *button, buttons) {
+     if (buttonGroup-&gt;button(id) != button)
+         button-&gt;setChecked(false);
+     }
+     if (id == InsertTextButton) {
+         scene-&gt;setMode(DiagramScene::InsertText);
+     } else {
+         scene-&gt;setItemType(DiagramItem::DiagramType(id));
+         scene-&gt;setMode(DiagramScene::InsertItem);
+     }
+ }
+
+ void MainWindow::deleteItem()
+ {
+     foreach (QGraphicsItem *item, scene-&gt;selectedItems()) {
+         if (item-&gt;type() == DiagramItem::Type) {
+             qgraphicsitem_cast&lt;DiagramItem *&gt;(item)-&gt;removeArrows();
+         }
+         scene-&gt;removeItem(item);
+     }
+ }
+
+ void MainWindow::pointerGroupClicked(int)
+ {
+     scene-&gt;setMode(DiagramScene::Mode(pointerTypeGroup-&gt;checkedId()));
+ }
+
+ void MainWindow::bringToFront()
+ {
+     if (scene-&gt;selectedItems().isEmpty())
+         return;
+
+     QGraphicsItem *selectedItem = scene-&gt;selectedItems().first();
+     QList&lt;QGraphicsItem *&gt; overlapItems = selectedItem-&gt;collidingItems();
+
+     qreal zValue = 0;
+     foreach (QGraphicsItem *item, overlapItems) {
+         if (item-&gt;zValue() &gt;= zValue &amp;&amp;
+             item-&gt;type() == DiagramItem::Type)
+             zValue = item-&gt;zValue() + 0.1;
+     }
+     selectedItem-&gt;setZValue(zValue);
+ }
+
+ void MainWindow::sendToBack()
+ {
+     if (scene-&gt;selectedItems().isEmpty())
+         return;
+
+     QGraphicsItem *selectedItem = scene-&gt;selectedItems().first();
+     QList&lt;QGraphicsItem *&gt; overlapItems = selectedItem-&gt;collidingItems();
+
+     qreal zValue = 0;
+     foreach (QGraphicsItem *item, overlapItems) {
+         if (item-&gt;zValue() &lt;= zValue &amp;&amp;
+             item-&gt;type() == DiagramItem::Type)
+             zValue = item-&gt;zValue() - 0.1;
+     }
+     selectedItem-&gt;setZValue(zValue);
+ }
+
+ void MainWindow::itemInserted(DiagramItem *item)
+ {
+     scene-&gt;setMode(DiagramScene::Mode(pointerTypeGroup-&gt;checkedId()));
+     buttonGroup-&gt;button(int(item-&gt;diagramType()))-&gt;setChecked(false);
+ }
+
+ void MainWindow::textInserted(QGraphicsTextItem *)
+ {
+     buttonGroup-&gt;button(InsertTextButton)-&gt;setChecked(false);
+     scene-&gt;setMode(DiagramScene::Mode(pointerTypeGroup-&gt;checkedId()));
+ }
+
+ void MainWindow::currentFontChanged(const QFont &amp;)
+ {
+     handleFontChange();
+ }
+
+ void MainWindow::fontSizeChanged(const QString &amp;)
+ {
+     handleFontChange();
+ }
+
+ void MainWindow::sceneScaleChanged(const QString &amp;scale)
+ {
+     double newScale = scale.left(scale.indexOf(tr(&quot;%&quot;))).toDouble() / 100.0;
+     QMatrix oldMatrix = view-&gt;matrix();
+     view-&gt;resetMatrix();
+     view-&gt;translate(oldMatrix.dx(), oldMatrix.dy());
+     view-&gt;scale(newScale, newScale);
+ }
+
+ void MainWindow::textColorChanged()
+ {
+     textAction = qobject_cast&lt;QAction *&gt;(sender());
+     fontColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+                 &quot;:/images/textpointer.png&quot;,
+                 qVariantValue&lt;QColor&gt;(textAction-&gt;data())));
+     textButtonTriggered();
+ }
+
+ void MainWindow::itemColorChanged()
+ {
+     fillAction = qobject_cast&lt;QAction *&gt;(sender());
+     fillColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+                  &quot;:/images/floodfill.png&quot;,
+                  qVariantValue&lt;QColor&gt;(fillAction-&gt;data())));
+     fillButtonTriggered();
+ }
+
+ void MainWindow::lineColorChanged()
+ {
+     lineAction = qobject_cast&lt;QAction *&gt;(sender());
+     lineColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+                  &quot;:/images/linecolor.png&quot;,
+                  qVariantValue&lt;QColor&gt;(lineAction-&gt;data())));
+     lineButtonTriggered();
+ }
+
+ void MainWindow::textButtonTriggered()
+ {
+     scene-&gt;setTextColor(qVariantValue&lt;QColor&gt;(textAction-&gt;data()));
+ }
+
+ void MainWindow::fillButtonTriggered()
+ {
+     scene-&gt;setItemColor(qVariantValue&lt;QColor&gt;(fillAction-&gt;data()));
+ }
+
+ void MainWindow::lineButtonTriggered()
+ {
+     scene-&gt;setLineColor(qVariantValue&lt;QColor&gt;(lineAction-&gt;data()));
+ }
+
+ void MainWindow::handleFontChange()
+ {
+     QFont font = fontCombo-&gt;currentFont();
+     font.setPointSize(fontSizeCombo-&gt;currentText().toInt());
+     font.setWeight(boldAction-&gt;isChecked() ? QFont::Bold : QFont::Normal);
+     font.setItalic(italicAction-&gt;isChecked());
+     font.setUnderline(underlineAction-&gt;isChecked());
+
+     scene-&gt;setFont(font);
+ }
+
+ void MainWindow::itemSelected(QGraphicsItem *item)
+ {
+     DiagramTextItem *textItem =
+     qgraphicsitem_cast&lt;DiagramTextItem *&gt;(item);
+
+     QFont font = textItem-&gt;font();
+     QColor color = textItem-&gt;defaultTextColor();
+     fontCombo-&gt;setCurrentFont(font);
+     fontSizeCombo-&gt;setEditText(QString().setNum(font.pointSize()));
+     boldAction-&gt;setChecked(font.weight() == QFont::Bold);
+     italicAction-&gt;setChecked(font.italic());
+     underlineAction-&gt;setChecked(font.underline());
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Diagram Scene&quot;),
+                        tr(&quot;The &lt;b&gt;Diagram Scene&lt;/b&gt; example shows &quot;
+                           &quot;use of the graphics framework.&quot;));
+ }
+
+ void MainWindow::createToolBox()
+ {
+     buttonGroup = new QButtonGroup;
+     buttonGroup-&gt;setExclusive(false);
+     connect(buttonGroup, SIGNAL(buttonClicked(int)),
+             this, SLOT(buttonGroupClicked(int)));
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(createCellWidget(tr(&quot;Conditional&quot;),
+                                DiagramItem::Conditional), 0, 0);
+     layout-&gt;addWidget(createCellWidget(tr(&quot;Process&quot;),
+                       DiagramItem::Step),0, 1);
+     layout-&gt;addWidget(createCellWidget(tr(&quot;Input/Output&quot;),
+                       DiagramItem::Io), 1, 0);
+
+     QToolButton *textButton = new QToolButton;
+     textButton-&gt;setCheckable(true);
+     buttonGroup-&gt;addButton(textButton, InsertTextButton);
+     textButton-&gt;setIcon(QIcon(QPixmap(&quot;:/images/textpointer.png&quot;)
+                         .scaled(30, 30)));
+     textButton-&gt;setIconSize(QSize(50, 50));
+     QGridLayout *textLayout = new QGridLayout;
+     textLayout-&gt;addWidget(textButton, 0, 0, Qt::AlignHCenter);
+     textLayout-&gt;addWidget(new QLabel(tr(&quot;Text&quot;)), 1, 0, Qt::AlignCenter);
+     QWidget *textWidget = new QWidget;
+     textWidget-&gt;setLayout(textLayout);
+     layout-&gt;addWidget(textWidget, 1, 1);
+
+     layout-&gt;setRowStretch(3, 10);
+     layout-&gt;setColumnStretch(2, 10);
+
+     QWidget *itemWidget = new QWidget;
+     itemWidget-&gt;setLayout(layout);
+
+     backgroundButtonGroup = new QButtonGroup;
+     connect(backgroundButtonGroup, SIGNAL(buttonClicked(QAbstractButton *)),
+             this, SLOT(backgroundButtonGroupClicked(QAbstractButton *)));
+
+     QGridLayout *backgroundLayout = new QGridLayout;
+     backgroundLayout-&gt;addWidget(createBackgroundCellWidget(tr(&quot;Blue Grid&quot;),
+                 &quot;:/images/background1.png&quot;), 0, 0);
+     backgroundLayout-&gt;addWidget(createBackgroundCellWidget(tr(&quot;White Grid&quot;),
+                 &quot;:/images/background2.png&quot;), 0, 1);
+     backgroundLayout-&gt;addWidget(createBackgroundCellWidget(tr(&quot;Gray Grid&quot;),
+                     &quot;:/images/background3.png&quot;), 1, 0);
+     backgroundLayout-&gt;addWidget(createBackgroundCellWidget(tr(&quot;No Grid&quot;),
+                 &quot;:/images/background4.png&quot;), 1, 1);
+
+     backgroundLayout-&gt;setRowStretch(2, 10);
+     backgroundLayout-&gt;setColumnStretch(2, 10);
+
+     QWidget *backgroundWidget = new QWidget;
+     backgroundWidget-&gt;setLayout(backgroundLayout);
+
+     toolBox = new QToolBox;
+     toolBox-&gt;setSizePolicy(QSizePolicy(QSizePolicy::Maximum, QSizePolicy::Ignored));
+     toolBox-&gt;setMinimumWidth(itemWidget-&gt;sizeHint().width());
+     toolBox-&gt;addItem(itemWidget, tr(&quot;Basic Flowchart Shapes&quot;));
+     toolBox-&gt;addItem(backgroundWidget, tr(&quot;Backgrounds&quot;));
+ }
+
+ void MainWindow::createActions()
+ {
+     toFrontAction = new QAction(QIcon(&quot;:/images/bringtofront.png&quot;),
+                                 tr(&quot;Bring to &amp;Front&quot;), this);
+     toFrontAction-&gt;setShortcut(tr(&quot;Ctrl+F&quot;));
+     toFrontAction-&gt;setStatusTip(tr(&quot;Bring item to front&quot;));
+     connect(toFrontAction, SIGNAL(triggered()),
+             this, SLOT(bringToFront()));
+
+     sendBackAction = new QAction(QIcon(&quot;:/images/sendtoback.png&quot;),
+                                  tr(&quot;Send to &amp;Back&quot;), this);
+     sendBackAction-&gt;setShortcut(tr(&quot;Ctrl+B&quot;));
+     sendBackAction-&gt;setStatusTip(tr(&quot;Send item to back&quot;));
+     connect(sendBackAction, SIGNAL(triggered()),
+         this, SLOT(sendToBack()));
+
+     deleteAction = new QAction(QIcon(&quot;:/images/delete.png&quot;),
+                                tr(&quot;&amp;Delete&quot;), this);
+     deleteAction-&gt;setShortcut(tr(&quot;Delete&quot;));
+     deleteAction-&gt;setStatusTip(tr(&quot;Delete item from diagram&quot;));
+     connect(deleteAction, SIGNAL(triggered()),
+         this, SLOT(deleteItem()));
+
+     exitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAction-&gt;setShortcut(tr(&quot;Ctrl+X&quot;));
+     exitAction-&gt;setStatusTip(tr(&quot;Quit Scenediagram example&quot;));
+     connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+
+     boldAction = new QAction(tr(&quot;Bold&quot;), this);
+     boldAction-&gt;setCheckable(true);
+     QPixmap pixmap(&quot;:/images/bold.png&quot;);
+     boldAction-&gt;setIcon(QIcon(pixmap));
+     boldAction-&gt;setShortcut(tr(&quot;Ctrl+B&quot;));
+     connect(boldAction, SIGNAL(triggered()),
+             this, SLOT(handleFontChange()));
+
+     italicAction = new QAction(QIcon(&quot;:/images/italic.png&quot;),
+                                tr(&quot;Italic&quot;), this);
+     italicAction-&gt;setCheckable(true);
+     italicAction-&gt;setShortcut(tr(&quot;Ctrl+I&quot;));
+     connect(italicAction, SIGNAL(triggered()),
+             this, SLOT(handleFontChange()));
+
+     underlineAction = new QAction(QIcon(&quot;:/images/underline.png&quot;),
+                                   tr(&quot;Underline&quot;), this);
+     underlineAction-&gt;setCheckable(true);
+     underlineAction-&gt;setShortcut(tr(&quot;Ctrl+U&quot;));
+     connect(underlineAction, SIGNAL(triggered()),
+             this, SLOT(handleFontChange()));
+
+     aboutAction = new QAction(tr(&quot;A&amp;bout&quot;), this);
+     aboutAction-&gt;setShortcut(tr(&quot;Ctrl+B&quot;));
+     connect(aboutAction, SIGNAL(triggered()),
+             this, SLOT(about()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     itemMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Item&quot;));
+     itemMenu-&gt;addAction(deleteAction);
+     itemMenu-&gt;addSeparator();
+     itemMenu-&gt;addAction(toFrontAction);
+     itemMenu-&gt;addAction(sendBackAction);
+
+     aboutMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     aboutMenu-&gt;addAction(aboutAction);
+ }
+
+ void MainWindow::createToolbars()
+ {
+     editToolBar = addToolBar(tr(&quot;Edit&quot;));
+     editToolBar-&gt;addAction(deleteAction);
+     editToolBar-&gt;addAction(toFrontAction);
+     editToolBar-&gt;addAction(sendBackAction);
+
+     fontCombo = new QFontComboBox();
+     fontSizeCombo = new QComboBox();
+     connect(fontCombo, SIGNAL(currentFontChanged(const QFont &amp;)),
+             this, SLOT(currentFontChanged(const QFont &amp;)));
+
+     fontSizeCombo = new QComboBox;
+     fontSizeCombo-&gt;setEditable(true);
+     for (int i = 8; i &lt; 30; i = i + 2)
+         fontSizeCombo-&gt;addItem(QString().setNum(i));
+     QIntValidator *validator = new QIntValidator(2, 64, this);
+     fontSizeCombo-&gt;setValidator(validator);
+     connect(fontSizeCombo, SIGNAL(currentIndexChanged(const QString &amp;)),
+             this, SLOT(fontSizeChanged(const QString &amp;)));
+
+     fontColorToolButton = new QToolButton;
+     fontColorToolButton-&gt;setPopupMode(QToolButton::MenuButtonPopup);
+     fontColorToolButton-&gt;setMenu(createColorMenu(SLOT(textColorChanged()),
+                                                  Qt::black));
+     textAction = fontColorToolButton-&gt;menu()-&gt;defaultAction();
+     fontColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+     &quot;:/images/textpointer.png&quot;, Qt::black));
+     fontColorToolButton-&gt;setAutoFillBackground(true);
+     connect(fontColorToolButton, SIGNAL(clicked()),
+             this, SLOT(textButtonTriggered()));
+
+     fillColorToolButton = new QToolButton;
+     fillColorToolButton-&gt;setPopupMode(QToolButton::MenuButtonPopup);
+     fillColorToolButton-&gt;setMenu(createColorMenu(SLOT(itemColorChanged()),
+                          Qt::white));
+     fillAction = fillColorToolButton-&gt;menu()-&gt;defaultAction();
+     fillColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+     &quot;:/images/floodfill.png&quot;, Qt::white));
+     connect(fillColorToolButton, SIGNAL(clicked()),
+             this, SLOT(fillButtonTriggered()));
+
+     lineColorToolButton = new QToolButton;
+     lineColorToolButton-&gt;setPopupMode(QToolButton::MenuButtonPopup);
+     lineColorToolButton-&gt;setMenu(createColorMenu(SLOT(lineColorChanged()),
+                                  Qt::black));
+     lineAction = lineColorToolButton-&gt;menu()-&gt;defaultAction();
+     lineColorToolButton-&gt;setIcon(createColorToolButtonIcon(
+         &quot;:/images/linecolor.png&quot;, Qt::black));
+     connect(lineColorToolButton, SIGNAL(clicked()),
+             this, SLOT(lineButtonTriggered()));
+
+     textToolBar = addToolBar(tr(&quot;Font&quot;));
+     textToolBar-&gt;addWidget(fontCombo);
+     textToolBar-&gt;addWidget(fontSizeCombo);
+     textToolBar-&gt;addAction(boldAction);
+     textToolBar-&gt;addAction(italicAction);
+     textToolBar-&gt;addAction(underlineAction);
+
+     colorToolBar = addToolBar(tr(&quot;Color&quot;));
+     colorToolBar-&gt;addWidget(fontColorToolButton);
+     colorToolBar-&gt;addWidget(fillColorToolButton);
+     colorToolBar-&gt;addWidget(lineColorToolButton);
+
+     QToolButton *pointerButton = new QToolButton;
+     pointerButton-&gt;setCheckable(true);
+     pointerButton-&gt;setChecked(true);
+     pointerButton-&gt;setIcon(QIcon(&quot;:/images/pointer.png&quot;));
+     QToolButton *linePointerButton = new QToolButton;
+     linePointerButton-&gt;setCheckable(true);
+     linePointerButton-&gt;setIcon(QIcon(&quot;:/images/linepointer.png&quot;));
+
+     pointerTypeGroup = new QButtonGroup;
+     pointerTypeGroup-&gt;addButton(pointerButton, int(DiagramScene::MoveItem));
+     pointerTypeGroup-&gt;addButton(linePointerButton,
+                                 int(DiagramScene::InsertLine));
+     connect(pointerTypeGroup, SIGNAL(buttonClicked(int)),
+             this, SLOT(pointerGroupClicked(int)));
+
+     sceneScaleCombo = new QComboBox;
+     QStringList scales;
+     scales &lt;&lt; tr(&quot;50%&quot;) &lt;&lt; tr(&quot;75%&quot;) &lt;&lt; tr(&quot;100%&quot;) &lt;&lt; tr(&quot;125%&quot;) &lt;&lt; tr(&quot;150%&quot;);
+     sceneScaleCombo-&gt;addItems(scales);
+     sceneScaleCombo-&gt;setCurrentIndex(2);
+     connect(sceneScaleCombo, SIGNAL(currentIndexChanged(const QString &amp;)),
+             this, SLOT(sceneScaleChanged(const QString &amp;)));
+
+     pointerToolbar = addToolBar(tr(&quot;Pointer type&quot;));
+     pointerToolbar-&gt;addWidget(pointerButton);
+     pointerToolbar-&gt;addWidget(linePointerButton);
+     pointerToolbar-&gt;addWidget(sceneScaleCombo);
+ }
+
+ QWidget *MainWindow::createBackgroundCellWidget(const QString &amp;text,
+                         const QString &amp;image)
+ {
+     QToolButton *button = new QToolButton;
+     button-&gt;setText(text);
+     button-&gt;setIcon(QIcon(image));
+     button-&gt;setIconSize(QSize(50, 50));
+     button-&gt;setCheckable(true);
+     backgroundButtonGroup-&gt;addButton(button);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(button, 0, 0, Qt::AlignHCenter);
+     layout-&gt;addWidget(new QLabel(text), 1, 0, Qt::AlignCenter);
+
+     QWidget *widget = new QWidget;
+     widget-&gt;setLayout(layout);
+
+     return widget;
+ }
+
+ QWidget *MainWindow::createCellWidget(const QString &amp;text,
+                       DiagramItem::DiagramType type)
+ {
+
+     DiagramItem item(type, itemMenu);
+     QIcon icon(item.image());
+
+     QToolButton *button = new QToolButton;
+     button-&gt;setIcon(icon);
+     button-&gt;setIconSize(QSize(50, 50));
+     button-&gt;setCheckable(true);
+     buttonGroup-&gt;addButton(button, int(type));
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(button, 0, 0, Qt::AlignHCenter);
+     layout-&gt;addWidget(new QLabel(text), 1, 0, Qt::AlignCenter);
+
+     QWidget *widget = new QWidget;
+     widget-&gt;setLayout(layout);
+
+     return widget;
+ }
+
+ QMenu *MainWindow::createColorMenu(const char *slot, QColor defaultColor)
+ {
+     QList&lt;QColor&gt; colors;
+     colors &lt;&lt; Qt::black &lt;&lt; Qt::white &lt;&lt; Qt::red &lt;&lt; Qt::blue &lt;&lt; Qt::yellow;
+     QStringList names;
+     names &lt;&lt; tr(&quot;black&quot;) &lt;&lt; tr(&quot;white&quot;) &lt;&lt; tr(&quot;red&quot;) &lt;&lt; tr(&quot;blue&quot;)
+           &lt;&lt; tr(&quot;yellow&quot;);
+
+     QMenu *colorMenu = new QMenu;
+     for (int i = 0; i &lt; colors.count(); ++i) {
+         QAction *action = new QAction(names.at(i), this);
+         action-&gt;setData(colors.at(i));
+         action-&gt;setIcon(createColorIcon(colors.at(i)));
+         connect(action, SIGNAL(triggered()),
+                 this, slot);
+         colorMenu-&gt;addAction(action);
+         if (colors.at(i) == defaultColor) {
+             colorMenu-&gt;setDefaultAction(action);
+         }
+     }
+     return colorMenu;
+ }
+
+ QIcon MainWindow::createColorToolButtonIcon(const QString &amp;imageFile,
+                         QColor color)
+ {
+     QPixmap pixmap(50, 80);
+     pixmap.fill(Qt::transparent);
+     QPainter painter(&amp;pixmap);
+     QPixmap image(imageFile);
+     QRect target(0, 0, 50, 60);
+     QRect source(0, 0, 42, 42);
+     painter.fillRect(QRect(0, 60, 50, 80), color);
+     painter.drawPixmap(target, image, source);
+
+     return QIcon(pixmap);
+ }
+
+ QIcon MainWindow::createColorIcon(QColor color)
+ {
+     QPixmap pixmap(20, 20);
+     QPainter painter(&amp;pixmap);
+     painter.setPen(Qt::NoPen);
+     painter.fillRect(QRect(0, 0, 20, 20), color);
+
+     return QIcon(pixmap);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

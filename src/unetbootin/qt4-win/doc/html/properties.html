@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/properties.qdoc -->
+<head>
+  <title>Qt 4.4: Qt's Property System</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt's Property System<br /><span class="subtitle"></span>
+</h1>
+<p>Qt provides a sophisticated property system similar to the ones supplied by some compiler vendors. However, as a compiler- and platform-independent library, Qt does not rely on non-standard compiler features like <tt>__property</tt> or <tt>[property]</tt>. The Qt solution works with <i>any</i> standard C++ compiler on every platform Qt supports. It is based on the <a href="metaobjects.html">Meta-Object System</a> that also provides inter-object communication via <a href="signalsandslots.html">signals and slots</a>.</p>
+<a name="requirements-for-declaring-properties"></a>
+<h3>Requirements for Declaring Properties</h3>
+<p>To declare a property, use the <a href="qobject.html#Q_PROPERTY">Q_PROPERTY()</a> macro in a class that inherits <a href="qobject.html">QObject</a>.</p>
+<pre>         Q_PROPERTY(type name
+                    READ getFunction
+                    [WRITE setFunction]
+                    [RESET resetFunction]
+                    [DESIGNABLE bool]
+                    [SCRIPTABLE bool]
+                    [STORED bool]
+                    [USER bool])</pre>
+<p>Here are some typical examples of property declarations taken from class <a href="qwidget.html">QWidget</a>.</p>
+<pre>         Q_PROPERTY(bool focus READ hasFocus)
+         Q_PROPERTY(bool enabled READ isEnabled WRITE setEnabled)
+         Q_PROPERTY(QCursor cursor READ cursor WRITE setCursor RESET unsetCursor)</pre>
+<p>A property behaves like a class data member, but it has additional features accessible through the <a href="metaobjects.html">Meta-Object System</a>.</p>
+<ul>
+<li>A <tt>READ</tt> accessor function is required. It is for reading the property value. It must be const and must return either the property's type or a pointer or reference to that type. e.g&#x2e;, <a href="qwidget.html#focus-prop">QWidget::focus</a> is a read-only property with <tt>READ</tt> function <a href="qwidget.html#focus-prop">QWidget::hasFocus</a>().</li>
+<li>A <tt>WRITE</tt> accessor function is optional. It is for setting the property value. It must return void and must take exactly one argument, either of the property's type or a pointer or reference to that type. e.g&#x2e;, <a href="qwidget.html#enabled-prop">QWidget::enabled</a> has the <tt>WRITE</tt> function <a href="qwidget.html#enabled-prop">QWidget::setEnabled</a>(). Read-only properties do not need <tt>WRITE</tt> functions. e.g&#x2e;, <a href="qwidget.html#focus-prop">QWidget::focus</a> has no <tt>WRITE</tt> function.</li>
+<li>A <tt>RESET</tt> function is optional. It is for setting the property back to its context specific default value. e.g&#x2e;, <a href="qwidget.html#cursor-prop">QWidget::cursor</a> has the typical <tt>READ</tt> and <tt>WRITE</tt> functions, <a href="qwidget.html#cursor-prop">QWidget::cursor</a>() and <a href="qwidget.html#cursor-prop">QWidget::setCursor</a>(), and it also has a <tt>RESET</tt> function, <a href="qwidget.html#cursor-prop">QWidget::unsetCursor</a>(), since no call to <a href="qwidget.html#cursor-prop">QWidget::setCursor</a>() can mean <i>reset to the context specific cursor</i>. The <tt>RESET</tt> function musrt return void and take no parameters.</li>
+<li>The <tt>DESIGNABLE</tt> attribute indicates whether the property should be visible in the property editor of GUI design tool (e.g&#x2e;, <a href="designer-manual.html#qt-designer">Qt Designer</a>). Most properties are <tt>DESIGNABLE</tt> (default true). Instead of true or false, you can specify a boolean member function.</li>
+<li>The <tt>SCRIPTABLE</tt> attribute indicates whether this property should be accessible by a scripting engine (default true). Instead of true or false, you can specify a boolean member function.</li>
+<li>The <tt>STORED</tt> attribute indicates whether the property should be thought of as existing on its own or as depending on other values. It also indicates whether the property value must be saved when storing the object's state. Most properties are <tt>STORED</tt> (default true), but e.g&#x2e;, <a href="qwidget.html#minimumWidth-prop">QWidget::minimumWidth</a>() has <tt>STORED</tt> false, because its value is just taken from the width component of property <a href="qwidget.html#minimumSize-prop">QWidget::minimumSize</a>(), which is a <a href="qsize.html">QSize</a>.</li>
+<li>The <tt>USER</tt> attribute indicates whether the property is designated as the user-facing or user-editable property for the class. Normally, there is only one <tt>USER</tt> property per class (default false). e.g&#x2e;, <a href="qabstractbutton.html#checked-prop">QAbstractButton::checked</a> is the user editable property for (checkable) buttons. Note that <a href="qitemdelegate.html">QItemDelegate</a> gets and sets a widget's <tt>USER</tt> property.</li>
+</ul>
+<p>The <tt>READ</tt>, <tt>WRITE</tt>, and <tt>RESET</tt> functions can be inherited. They can also be virtual. When they are inherited in classes where multiple inheritance is used, they must come from the first inherited class.</p>
+<p>The property type can be any type supported by <a href="qvariant.html">QVariant</a>, or it can be a user-defined type. In this example, class <a href="qdate.html">QDate</a> is considered to be a user-defined type.</p>
+<pre>         Q_PROPERTY(QDate date READ getDate WRITE setDate)</pre>
+<p>Because <a href="qdate.html">QDate</a> is user-defined, you must include the <tt>&lt;QDate&gt;</tt> header file with the property declaration.</p>
+<p>For <a href="qmap.html">QMap</a>, <a href="qlist.html">QList</a>, and QValueList properties, the property value is a <a href="qvariant.html">QVariant</a> whose value is the entire list or map. Note that the Q_PROPERTY string cannot contain commas, because commas separate macro arguments. Therefore, you must use <tt>QMap</tt> as the property type instead of <tt>QMap&lt;QString,QVariant&gt;</tt>. For consistency, also use <tt>QList</tt> and <tt>QValueList</tt> instead of <tt>QList&lt;QVariant&gt;</tt> and <tt>QValueList&lt;QVariant&gt;</tt>.</p>
+<a name="reading-and-writing-properties-with-the-meta-object-system"></a>
+<h3>Reading and Writing Properties with the Meta-Object System</h3>
+<p>A property can be read and written using the generic functions <a href="qobject.html#property">QObject::property</a>() and <a href="qobject.html#setProperty">QObject::setProperty</a>(), without knowing anything about the owning class except the property's name. In the code snippet below, the call to <a href="qabstractbutton.html#down-prop">QAbstractButton::setDown</a>() and the call to <a href="qobject.html#setProperty">QObject::setProperty</a>() both set property &quot;down&quot;.</p>
+<pre>         QPushButton *button = new QPushButton;
+         QObject *object = button;
+
+         button-&gt;setDown(true);
+         object-&gt;setProperty(&quot;down&quot;, true);</pre>
+<p>Accessing a property through its <tt>WRITE</tt> accessor is the better of the two, because it is faster and gives better diagnostics at compile time, but setting the property this way requires that you know about the class at compile time. Accessing properties by name lets you access classes you don't know about at compile time. You can <i>discover</i> a class's properties at run time by querying its <a href="qobject.html">QObject</a>, <a href="qmetaobject.html">QMetaObject</a>, and <a href="qmetaproperty.html">QMetaProperties</a>.</p>
+<pre>         QObject *object = ...
+         const QMetaObject *metaobject = object-&gt;metaObject();
+         int count = metaobject-&gt;propertyCount();
+         for (int i=0; i&lt;count; ++i) {
+             QMetaProperty metaproperty = metaobject-&gt;property(i);
+             const char *name = metaproperty.name();
+             QVariant value = object-&gt;property(name);
+             ...
+         }</pre>
+<p>In the above snippet, <a href="qmetaobject.html#property">QMetaObject::property</a>() is used to get <a href="qmetaproperty.html">metadata</a> about each property defined in some unknown class. The property name is fetched from the metadata and passed to <a href="qobject.html#property">QObject::property</a>() to get the <a href="qvariant.html">value</a> of the property in the current <a href="qobject.html">object</a>.</p>
+<a name="a-simple-example"></a>
+<h3>A Simple Example</h3>
+<p>Suppose we have a class MyClass, which is derived from <a href="qobject.html">QObject</a> and which uses the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro in its private section. We want to declare a property in MyClass to keep track of a priorty value. The name of the property will be <i>priority</i>, and its type will be an enumeration type named <i>Priority</i>, which is defined in MyClass.</p>
+<p>We declare the property with the <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>() macro in the private section of the class. The required <tt>READ</tt> function is named <tt>priority</tt>, and we include a <tt>WRITE</tt> function named <tt>setPriority</tt>. The enumeration type must be registered with the <a href="metaobjects.html">Meta-Object System</a> using the <a href="qobject.html#Q_ENUMS">Q_ENUMS</a>() macro. Registering an enumeration type makes the enumerator names available for use in calls to <a href="qobject.html#setProperty">QObject::setProperty</a>(). We must also provide our own declarations for the <tt>READ</tt> and <tt>WRITE</tt> functions. The declaration of MyClass then might look like this:</p>
+<pre>         class MyClass : public QObject
+         {
+             Q_OBJECT
+             Q_PROPERTY(Priority priority READ priority WRITE setPriority)
+             Q_ENUMS(Priority)
+
+         public:
+             MyClass(QObject *parent = 0);
+             ~MyClass();
+
+             enum Priority { High, Low, VeryHigh, VeryLow };
+
+             void setPriority(Priority priority);
+             Priority priority() const;
+         };</pre>
+<p>The <tt>READ</tt> function is const and returns the property type. The <tt>WRITE</tt> function returns void and has exactly one parameter of the property type. The meta-object compiler enforces these requirements.</p>
+<p>Given a pointer to an instance of MyClass or a pointer to an instance of <a href="qobject.html">QObject</a> that happens to be an instance of MyClass, we have two ways to set its priority property.</p>
+<pre>         MyClass *myinstance = new MyClass;
+         QObject *object = myinstance;
+
+         myinstance-&gt;setPriority(MyClass::VeryHigh);
+         object-&gt;setProperty(&quot;priority&quot;, &quot;VeryHigh&quot;);</pre>
+<p>In the example, the enumeration type used for the property type was locally declared in MyClass. Had it been declared in another class, its fully qualified name (i.e&#x2e;, OtherClass::Priority) would be required. In addition, that other class must also inherit <a href="qobject.html">QObject</a> and register the enum type using <a href="qobject.html#Q_ENUMS">Q_ENUMS</a>().</p>
+<p>A similar macro, <a href="qobject.html#Q_FLAGS">Q_FLAGS</a>(), is also available. Like <a href="qobject.html#Q_ENUMS">Q_ENUMS</a>(), it registers an enumeration type, but it marks the type as being a set of <i>flags</i>, i.e&#x2e; values that can be OR'd together. An I/O class might have enumeration values <tt>Read</tt> and <tt>Write</tt> and then <a href="qobject.html#setProperty">QObject::setProperty</a>() could accept <tt>Read | Write</tt>. <a href="qobject.html#Q_FLAGS">Q_FLAGS</a>() should be used to register this enumeration type.</p>
+<a name="dynamic-properties"></a>
+<h3>Dynamic Properties</h3>
+<p><a href="qobject.html#setProperty">QObject::setProperty</a>() can also be used to add <i>new</i> properties to an instance of a class at runtime. When it is called with a name and a value, if a property with the given name exists in the <a href="qobject.html">QObject</a>, and if the given value is compatible with the property's type, the value is stored in the property, and true is returned. If the value is <i>not</i> compatible with the property's type, the property is <i>not</i> changed, and false is returned. But if the property with the given name doesn't exist in the <a href="qobject.html">QObject</a> (i.e&#x2e;, if it wasn't declared with <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>(), a new property with the given name and value is automatically added to the <a href="qobject.html">QObject</a>, but false is still returned. This means that a return of false can't be used to determine whether a partyicular property was actually set, unless you know in advance that the property already exists in the <a href="qobject.html">QObject</a>.</p>
+<p>Note that <i>dynamic</i> properties are added on a per instance basis, i.e&#x2e;, they are added to <a href="qobject.html">QObject</a>, not <a href="qmetaobject.html">QMetaObject</a>. A property can be removed from an instance by passing the property name and an invalid <a href="qvariant.html">QVariant</a> value to <a href="qobject.html#setProperty">QObject::setProperty</a>(). The default constructor for <a href="qvariant.html">QVariant</a> constructs an invalid <a href="qvariant.html">QVariant</a>.</p>
+<p>Dynamic properties can be queried with <a href="qobject.html#property">QObject::property</a>(), just like properties declared at compile time with <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>().</p>
+<a name="adding-additional-information-to-a-class"></a>
+<h3>Adding Additional Information to a Class</h3>
+<p>Connected to the property system is an additional macro, <a href="qobject.html#Q_CLASSINFO">Q_CLASSINFO</a>(), that can be used to attach additional <i>name</i>--<i>value</i> pairs to a class's meta-object, for example:</p>
+<pre>         Q_CLASSINFO(&quot;Version&quot;, &quot;3.0.0&quot;)</pre>
+<p>Like other meta-data, class information is accessible at run-time through the meta-object; see <a href="qmetaobject.html#classInfo">QMetaObject::classInfo</a>() for details.</p>
+<p>See also <a href="metaobjects.html">Meta-Object System</a> and <a href="signalsandslots.html">Signals and Slots</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

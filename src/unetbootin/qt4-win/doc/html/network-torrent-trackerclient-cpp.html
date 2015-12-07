@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: trackerclient.cpp Example File (network/torrent/trackerclient.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">trackerclient.cpp Example File<br /><span class="small-subtitle">network/torrent/trackerclient.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;bencodeparser.h&quot;
+ #include &quot;connectionmanager.h&quot;
+ #include &quot;torrentclient.h&quot;
+ #include &quot;torrentserver.h&quot;
+ #include &quot;trackerclient.h&quot;
+
+ #include &lt;QtCore&gt;
+
+ TrackerClient::TrackerClient(TorrentClient *downloader, QObject *parent)
+     : QObject(parent), torrentDownloader(downloader)
+ {
+     length = 0;
+     requestInterval = 5 * 60;
+     requestIntervalTimer = -1;
+     firstTrackerRequest = true;
+     lastTrackerRequest = false;
+     firstSeeding = true;
+
+     connect(&amp;http, SIGNAL(done(bool)), this, SLOT(httpRequestDone(bool)));
+ }
+
+ void TrackerClient::start(const MetaInfo &amp;info)
+ {
+     metaInfo = info;
+     QTimer::singleShot(0, this, SLOT(fetchPeerList()));
+
+     if (metaInfo.fileForm() == MetaInfo::SingleFileForm) {
+         length = metaInfo.singleFile().length;
+     } else {
+         QList&lt;MetaInfoMultiFile&gt; files = metaInfo.multiFiles();
+         for (int i = 0; i &lt; files.size(); ++i)
+             length += files.at(i).length;
+     }
+ }
+
+ void TrackerClient::startSeeding()
+ {
+     firstSeeding = true;
+     fetchPeerList();
+ }
+
+ void TrackerClient::stop()
+ {
+     lastTrackerRequest = true;
+     http.abort();
+     fetchPeerList();
+ }
+
+ void TrackerClient::timerEvent(QTimerEvent *event)
+ {
+     if (event-&gt;timerId() == requestIntervalTimer) {
+         if (http.state() == QHttp::Unconnected)
+             fetchPeerList();
+     } else {
+         QObject::timerEvent(event);
+     }
+ }
+
+ void TrackerClient::fetchPeerList()
+ {
+     <span class="comment">//</span> Prepare connection details
+     QString fullUrl = metaInfo.announceUrl();
+     QUrl url(fullUrl);
+     QString passkey = &quot;?&quot;;
+     if (fullUrl.contains(&quot;?passkey&quot;)) {
+         passkey = metaInfo.announceUrl().mid(fullUrl.indexOf(&quot;?passkey&quot;), -1);
+         passkey += &quot;&amp;&quot;;
+     }
+
+     <span class="comment">//</span> Percent encode the hash
+     QByteArray infoHash = torrentDownloader-&gt;infoHash();
+     QString encodedSum;
+     for (int i = 0; i &lt; infoHash.size(); ++i) {
+         encodedSum += '%';
+         encodedSum += QString::number(infoHash[i], 16).right(2).rightJustified(2, '0');
+     }
+
+     bool seeding = (torrentDownloader-&gt;state() == TorrentClient::Seeding);
+     QByteArray query;
+     query += url.path().toLatin1();
+     query += passkey;
+     query += &quot;info_hash=&quot; + encodedSum;
+     query += &quot;&amp;peer_id=&quot; + ConnectionManager::instance()-&gt;clientId();
+     query += &quot;&amp;port=&quot; + QByteArray::number(TorrentServer::instance()-&gt;serverPort());
+     query += &quot;&amp;compact=1&quot;;
+     query += &quot;&amp;uploaded=&quot; + QByteArray::number(torrentDownloader-&gt;uploadedBytes());
+
+     if (!firstSeeding) {
+         query += &quot;&amp;downloaded=0&quot;;
+         query += &quot;&amp;left=0&quot;;
+     } else {
+         query += &quot;&amp;downloaded=&quot; + QByteArray::number(
+             torrentDownloader-&gt;downloadedBytes());
+         int left = qMax&lt;int&gt;(0, metaInfo.totalSize() - torrentDownloader-&gt;downloadedBytes());
+         query += &quot;&amp;left=&quot; + QByteArray::number(seeding ? 0 : left);
+     }
+
+     if (seeding &amp;&amp; firstSeeding) {
+         query += &quot;&amp;event=completed&quot;;
+         firstSeeding = false;
+     } else if (firstTrackerRequest) {
+         firstTrackerRequest = false;
+         query += &quot;&amp;event=started&quot;;
+     } else if(lastTrackerRequest) {
+         query += &quot;&amp;event=stopped&quot;;
+     }
+
+     if (!trackerId.isEmpty())
+         query += &quot;&amp;trackerid=&quot; + trackerId;
+
+     http.setHost(url.host(), url.port() == -1 ? 80 : url.port());
+     if (!url.userName().isEmpty())
+         http.setUser(url.userName(), url.password());
+     http.get(query);
+ }
+
+ void TrackerClient::httpRequestDone(bool error)
+ {
+     if (lastTrackerRequest) {
+         emit stopped();
+         return;
+     }
+
+     if (error) {
+         emit connectionError(http.error());
+         return;
+     }
+
+     QByteArray response = http.readAll();
+     http.abort();
+
+     BencodeParser parser;
+     if (!parser.parse(response)) {
+         qWarning(&quot;Error parsing bencode response from tracker: %s&quot;,
+                  qPrintable(parser.errorString()));
+         http.abort();
+         return;
+     }
+
+     QMap&lt;QByteArray, QVariant&gt; dict = parser.dictionary();
+
+     if (dict.contains(&quot;failure reason&quot;)) {
+         <span class="comment">//</span> no other items are present
+         emit failure(QString::fromUtf8(dict.value(&quot;failure reason&quot;).toByteArray()));
+         return;
+     }
+
+     if (dict.contains(&quot;warning message&quot;)) {
+         <span class="comment">//</span> continue processing
+         emit warning(QString::fromUtf8(dict.value(&quot;warning message&quot;).toByteArray()));
+     }
+
+     if (dict.contains(&quot;tracker id&quot;)) {
+         <span class="comment">//</span> store it
+         trackerId = dict.value(&quot;tracker id&quot;).toByteArray();
+     }
+
+     if (dict.contains(&quot;interval&quot;)) {
+         <span class="comment">//</span> Mandatory item
+         if (requestIntervalTimer != -1)
+             killTimer(requestIntervalTimer);
+         requestIntervalTimer = startTimer(dict.value(&quot;interval&quot;).toInt() * 1000);
+     }
+
+     if (dict.contains(&quot;peers&quot;)) {
+         <span class="comment">//</span> store it
+         peers.clear();
+         QVariant peerEntry = dict.value(&quot;peers&quot;);
+         if (peerEntry.type() == QVariant::List) {
+             QList&lt;QVariant&gt; peerTmp = peerEntry.toList();
+             for (int i = 0; i &lt; peerTmp.size(); ++i) {
+                 TorrentPeer tmp;
+                 QMap&lt;QByteArray, QVariant&gt; peer = qVariantValue&lt;QMap&lt;QByteArray, QVariant&gt; &gt;(peerTmp.at(i));
+                 tmp.id = QString::fromUtf8(peer.value(&quot;peer id&quot;).toByteArray());
+                 tmp.address.setAddress(QString::fromUtf8(peer.value(&quot;ip&quot;).toByteArray()));
+                 tmp.port = peer.value(&quot;port&quot;).toInt();
+                 peers &lt;&lt; tmp;
+             }
+         } else {
+             QByteArray peerTmp = peerEntry.toByteArray();
+             for (int i = 0; i &lt; peerTmp.size(); i += 6) {
+                 TorrentPeer tmp;
+                 uchar *data = (uchar *)peerTmp.constData() + i;
+                 tmp.port = (int(data[4]) &lt;&lt; 8) + data[5];
+                 uint ipAddress = 0;
+                 ipAddress += uint(data[0]) &lt;&lt; 24;
+                 ipAddress += uint(data[1]) &lt;&lt; 16;
+                 ipAddress += uint(data[2]) &lt;&lt; 8;
+                 ipAddress += uint(data[3]);
+                 tmp.address.setAddress(ipAddress);
+                 peers &lt;&lt; tmp;
+             }
+         }
+         emit peerListUpdated(peers);
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

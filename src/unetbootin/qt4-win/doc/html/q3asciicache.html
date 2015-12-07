@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3asciicache.qdoc -->
+<head>
+  <title>Qt 4.4: Q3AsciiCache Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3AsciiCache Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3AsciiCache class is a template class that provides a cache based on char* keys. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3AsciiCache&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3ptrcollection.html">Q3PtrCollection</a>.</p>
+<ul>
+<li><a href="q3asciicache-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3asciicache.html#Q3AsciiCache">Q3AsciiCache</a></b> ( int <i>maxCost</i> = 100, int <i>size</i> = 17, bool <i>caseSensitive</i> = true, bool <i>copyKeys</i> = true )</li>
+<li><div class="fn"/><b><a href="q3asciicache.html#dtor.Q3AsciiCache">~Q3AsciiCache</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3asciicache.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual uint <b><a href="q3asciicache.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3asciicache.html#find">find</a></b> ( const char * <i>k</i>, bool <i>ref</i> = true ) const</li>
+<li><div class="fn"/>bool <b><a href="q3asciicache.html#insert">insert</a></b> ( const char * <i>k</i>, const type * <i>d</i>, int <i>c</i> = 1, int <i>p</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3asciicache.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3asciicache.html#maxCost">maxCost</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3asciicache.html#remove">remove</a></b> ( const char * <i>k</i> )</li>
+<li><div class="fn"/>void <b><a href="q3asciicache.html#setMaxCost">setMaxCost</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>uint <b><a href="q3asciicache.html#size">size</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3asciicache.html#statistics">statistics</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3asciicache.html#take">take</a></b> ( const char * <i>k</i> )</li>
+<li><div class="fn"/>int <b><a href="q3asciicache.html#totalCost">totalCost</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3asciicache.html#operator-5b-5d">operator[]</a></b> ( const char * <i>k</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3ptrcollection.html#public-functions">Q3PtrCollection</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="q3ptrcollection.html#protected-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3AsciiCache class is a template class that provides a cache based on char* keys.</p>
+<p>Q3AsciiCache is implemented as a template class. Define a template instance Q3AsciiCache&lt;X&gt; to create a cache that operates on pointers to X (X*).</p>
+<p>A cache is a least recently used (LRU) list of cache items. The cache items are accessed via <tt>char*</tt> keys. For Unicode keys use the <a href="q3cache.html">Q3Cache</a> template instead, which uses <a href="qstring.html">QString</a> keys. A <a href="q3cache.html">Q3Cache</a> has the same performace as a Q3AsciiCache.</p>
+<p>Each cache item has a cost. The sum of item costs, <a href="q3asciicache.html#totalCost">totalCost</a>(), will not exceed the maximum cache cost, <a href="q3asciicache.html#maxCost">maxCost</a>(). If inserting a new item would cause the total cost to exceed the maximum cost, the least recently used items in the cache are removed.</p>
+<p>Apart from <a href="q3asciicache.html#insert">insert</a>(), by far the most important function is <a href="q3asciicache.html#find">find</a>() (which also exists as operator[]()). This function looks up an item, returns it, and by default marks it as being the most recently used item.</p>
+<p>There are also methods to <a href="q3asciicache.html#remove">remove</a>() or <a href="q3asciicache.html#take">take</a>() an object from the cache. Calling <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete(TRUE)</a> tells the cache to delete items that are removed. The default is to not delete items when then are removed (i.e&#x2e;, <a href="q3asciicache.html#remove">remove</a>() and <a href="q3asciicache.html#take">take</a>() are equivalent).</p>
+<p>When inserting an item into the cache, only the pointer is copied, not the item itself. This is called a shallow copy. It is possible to make the cache copy all of the item's data (known as a deep copy) when an item is inserted. <a href="q3asciicache.html#insert">insert</a>() calls the virtual function <a href="q3ptrcollection.html#newItem">Q3PtrCollection::newItem</a>() for the item to be inserted. Inherit a cache and reimplement <a href="q3ptrcollection.html#newItem">newItem</a>() if you want deep copies.</p>
+<p>When removing a cache item the virtual function <a href="q3ptrcollection.html#deleteItem">Q3PtrCollection::deleteItem</a>() is called. Its default implementation in Q3AsciiCache is to delete the item if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>There is a <a href="q3asciicacheiterator.html">Q3AsciiCacheIterator</a> which may be used to traverse the items in the cache in arbitrary order.</p>
+<p>See also <a href="q3asciicacheiterator.html">Q3AsciiCacheIterator</a>, <a href="q3cache.html">Q3Cache</a>, and <a href="q3intcache.html">Q3IntCache</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3AsciiCache"></a>Q3AsciiCache::Q3AsciiCache ( int <i>maxCost</i> = 100, int <i>size</i> = 17, bool <i>caseSensitive</i> = true, bool <i>copyKeys</i> = true )</h3>
+<p>Constructs a cache whose contents will never have a total cost greater than <i>maxCost</i> and which is expected to contain less than <i>size</i> items.</p>
+<p><i>size</i> is actually the size of an internal hash array; it's usually best to make it prime and at least 50% bigger than the largest expected number of items in the cache.</p>
+<p>Each inserted item has an associated cost. When inserting a new item, if the total cost of all items in the cache will exceed <i>maxCost</i>, the cache will start throwing out the older (least recently used) items until there is enough room for the new item to be inserted.</p>
+<p>If <i>caseSensitive</i> is TRUE (the default), the cache keys are case sensitive; if it is FALSE, they are case-insensitive. Case-insensitive comparison only affects the 26 letters in US-ASCII. If <i>copyKeys</i> is TRUE (the default), <a href="q3asciicache.html">Q3AsciiCache</a> makes a copy of the cache keys, otherwise it copies just the const char * pointer - slightly faster if you can guarantee that the keys will never change, but very risky.</p>
+<h3 class="fn"><a name="dtor.Q3AsciiCache"></a>Q3AsciiCache::~Q3AsciiCache ()</h3>
+<p>Removes all items from the cache and destroys it. All iterators that access this cache will be reset.</p>
+<h3 class="fn"><a name="clear"></a>void Q3AsciiCache::clear ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes all items from the cache, and deletes them if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> has been enabled.</p>
+<p>All cache iterators that operate on this cache are reset.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#clear">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3asciicache.html#remove">remove</a>() and <a href="q3asciicache.html#take">take</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3AsciiCache::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of items in the cache.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#count">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3asciicache.html#totalCost">totalCost</a>() and <a href="q3asciicache.html#size">size</a>().</p>
+<h3 class="fn"><a name="find"></a>type * Q3AsciiCache::find ( const char * <i>k</i>, bool <i>ref</i> = true ) const</h3>
+<p>Returns the item with key <i>k</i>, or 0 if the key does not exist in the cache. If <i>ref</i> is TRUE (the default), the item is moved to the front of the least recently used list.</p>
+<p>If there are two or more items with equal keys, the one that was inserted last is returned.</p>
+<h3 class="fn"><a name="insert"></a>bool Q3AsciiCache::insert ( const char * <i>k</i>, const type * <i>d</i>, int <i>c</i> = 1, int <i>p</i> = 0 )</h3>
+<p>Inserts the item <i>d</i> into the cache using key <i>k</i>, and with an associated cost of <i>c</i>. Returns TRUE if the item is successfully inserted. Returns FALSE if the item is not inserted, for example, if the cost of the item exceeds <a href="q3asciicache.html#maxCost">maxCost</a>().</p>
+<p>The cache's size is limited, and if the total cost is too high, <a href="q3asciicache.html">Q3AsciiCache</a> will remove old, least recently used items until there is room for this new item.</p>
+<p>Items with duplicate keys can be inserted.</p>
+<p>The parameter <i>p</i> is internal and should be left at the default value (0).</p>
+<p><b>Warning:</b> If this function returns FALSE, you must delete <i>d</i> yourself. Additionally, be very careful about using <i>d</i> after calling this function, because any other insertions into the cache, from anywhere in the application or within Qt itself, could cause the object to be discarded from the cache and the pointer to become invalid.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3AsciiCache::isEmpty () const</h3>
+<p>Returns TRUE if the cache is empty; otherwise returns FALSE.</p>
+<h3 class="fn"><a name="maxCost"></a>int Q3AsciiCache::maxCost () const</h3>
+<p>Returns the maximum allowed total cost of the cache.</p>
+<p>See also <a href="q3asciicache.html#setMaxCost">setMaxCost</a>() and <a href="q3asciicache.html#totalCost">totalCost</a>().</p>
+<h3 class="fn"><a name="remove"></a>bool Q3AsciiCache::remove ( const char * <i>k</i> )</h3>
+<p>Removes the item with key <i>k</i> and returns TRUE if the item was present in the cache; otherwise returns FALSE.</p>
+<p>The item is deleted if auto-deletion has been enabled, i.e&#x2e;, if you have called <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete(TRUE)</a>.</p>
+<p>If there are two or more items with equal keys, the one that was inserted last is removed.</p>
+<p>All iterators that refer to the removed item are set to point to the next item in the cache's traversal order.</p>
+<p>See also <a href="q3asciicache.html#take">take</a>() and <a href="q3asciicache.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="setMaxCost"></a>void Q3AsciiCache::setMaxCost ( int <i>m</i> )</h3>
+<p>Sets the maximum allowed total cost of the cache to <i>m</i>. If the current total cost is greater than <i>m</i>, some items are removed immediately.</p>
+<p>See also <a href="q3asciicache.html#maxCost">maxCost</a>() and <a href="q3asciicache.html#totalCost">totalCost</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3AsciiCache::size () const</h3>
+<p>Returns the size of the hash array used to implement the cache. This should be a bit bigger than <a href="q3asciicache.html#count">count</a>() is likely to be.</p>
+<h3 class="fn"><a name="statistics"></a>void Q3AsciiCache::statistics () const</h3>
+<p>A debug-only utility function. Prints out cache usage, hit/miss, and distribution information using <a href="qtglobal.html#qDebug">qDebug</a>(). This function does nothing in the release library.</p>
+<h3 class="fn"><a name="take"></a>type * Q3AsciiCache::take ( const char * <i>k</i> )</h3>
+<p>Takes the item associated with <i>k</i> out of the cache without deleting it and returns a pointer to the item taken out, or 0 if the key does not exist in the cache.</p>
+<p>If there are two or more items with equal keys, the one that was inserted last is taken.</p>
+<p>All iterators that refer to the taken item are set to point to the next item in the cache's traversal order.</p>
+<p>See also <a href="q3asciicache.html#remove">remove</a>() and <a href="q3asciicache.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="totalCost"></a>int Q3AsciiCache::totalCost () const</h3>
+<p>Returns the total cost of the items in the cache. This is an integer in the range 0 to <a href="q3asciicache.html#maxCost">maxCost</a>().</p>
+<p>See also <a href="q3asciicache.html#setMaxCost">setMaxCost</a>().</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>type * Q3AsciiCache::operator[] ( const char * <i>k</i> ) const</h3>
+<p>Returns the item with key <i>k</i>, or 0 if <i>k</i> does not exist in the cache, and moves the item to the front of the least recently used list.</p>
+<p>If there are two or more items with equal keys, the one that was inserted last is returned.</p>
+<p>This is the same as find( k, TRUE ).</p>
+<p>See also <a href="q3asciicache.html#find">find</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,87 @@
+//! [0]
+    #include <qvaluevector.h>
+    #include <qstring.h>
+    #include <stdio.h>
+
+    class Employee
+    {
+    public:
+	Employee(): s(0) {}
+	Employee( const QString& name, int salary )
+	    : n( name ), s( salary )
+	{ }
+
+	QString name()   const	 	{ return n; }
+	int	salary() const	 	{ return s; }
+	void	setSalary( int salary )	{ s = salary; }
+    private:
+	QString n;
+	int     s;
+    };
+
+    int main()
+    {
+	typedef Q3ValueVector<Employee> EmployeeVector;
+	EmployeeVector vec( 3 );  // vector of 3 Employees
+
+	vec[0] = Employee( "Bill", 50000 );
+	vec[1] = Employee( "Steve", 80000 );
+	vec[2] = Employee( "Ron", 60000 );
+
+	Employee joe( "Joe", 50000 );
+	vec.push_back( joe );  // vector expands to accommodate 4 Employees
+	joe.setSalary( 70000 );
+	
+	EmployeeVector::iterator it;
+	for( it = vec.begin(); it != vec.end(); ++it )
+	    printf( "%s earns %d\n", (*it).name().latin1(), (*it).salary() );
+
+	return 0;
+    }
+//! [0]
+
+
+//! [1]
+	Bill earns 50000
+	Steve earns 80000
+	Ron earns 60000
+	Joe earns 50000
+//! [1]
+
+
+//! [2]
+    Q3ValueVector<int> vec1;  // an empty vector
+    vec1[10] = 4;  // WARNING: undefined, probably a crash
+
+    Q3ValueVector<QString> vec2(25); // initialize with 25 elements
+    vec2[10] = "Dave";  // OK
+//! [2]
+
+
+//! [3]
+    void func( Q3ValueVector<int>& vec )
+    {
+	if ( vec.size() > 10 ) {
+	    vec[9] = 99; // OK
+	}
+    };
+//! [3]
+
+
+//! [4]
+    Q3ValueVector<int> vec( 3 );
+    vec.push_back( 1 );
+    vec.push_back( 2 );
+    vec.push_back( 3 );
+    ...
+    if ( !vec.empty() ) {
+	// OK: modify the first element
+	int& i = vec.front();
+	i = 18;
+    }
+    ...
+    Q3ValueVector<double> dvec;
+    double d = dvec.back(); // undefined behavior
+//! [4]
+
+

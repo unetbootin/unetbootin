@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qwhatsthis.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QWhatsThis</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QWhatsThis</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qwhatsthis.html">QWhatsThis class reference</a></li></ul></p>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwhatsthis-qt3.html#add">add</a></b> ( QWidget * <i>w</i>, const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qwhatsthis-qt3.html#remove">remove</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>QToolButton * <b><a href="qwhatsthis-qt3.html#whatsThisButton">whatsThisButton</a></b> ( QWidget * <i>parent</i> )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="add"></a>void QWhatsThis::add ( <a href="qwidget.html">QWidget</a> * <i>w</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the What's This text <i>s</i> for the widget <i>w</i>.</p>
+<p>Use <a href="qwidget.html#whatsThis-prop">QWidget::setWhatsThis</a>() or <a href="qaction.html#whatsThis-prop">QAction::setWhatsThis</a>() instead.</p>
+<h3 class="fn"><a name="remove"></a>void QWhatsThis::remove ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Remove's the What's This text for the widget <i>w</i>.</p>
+<p>Use <a href="qwidget.html#whatsThis-prop">QWidget::setWhatsThis</a>() or <a href="qaction.html#whatsThis-prop">QAction::setWhatsThis</a>() instead.</p>
+<h3 class="fn"><a name="whatsThisButton"></a><a href="qtoolbutton.html">QToolButton</a> * QWhatsThis::whatsThisButton ( <a href="qwidget.html">QWidget</a> * <i>parent</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a new &quot;What's This?&quot; <a href="qtoolbutton.html">QToolButton</a> with the given <i>parent</i>. To do this now, create your own <a href="qtoolbutton.html">QToolButton</a> and a <a href="qwhatsthis.html">QWhatsThis</a> object and call the <a href="qwhatsthis.html">QWhatsThis</a> object's <a href="qwhatsthis.html#showText">showText</a>() function when the <a href="qtoolbutton.html">QToolButton</a> is invoked.</p>
+<p>Use <a href="qwhatsthis.html#createAction">createAction</a>() instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

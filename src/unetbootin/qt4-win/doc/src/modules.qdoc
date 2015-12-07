@@ -1,0 +1,106 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \group modules
+    \title Qt's Modules
+    \startpage index.html Qt Reference Documentation
+    \nextpage QtCore
+
+    Qt 4 consists of several modules, each of which lives in a
+    separate library.
+
+    Modules for general software development:
+
+    \table 80%
+    \row \o \l{QtCore} \o Core non-graphical classes used by other modules
+    \row \o \l{QtGui} \o Graphical user interface (GUI) components
+    \row \o \l{QtNetwork} \o Classes for network programming
+    \row \o \l{QtOpenGL} \o OpenGL support classes
+    \row \o \l{QtScript} \o Classes for evaluating Qt Scripts
+    \row \o \l{QtSql} \o Classes for database integration using SQL
+    \row \o \l{QtSvg} \o Classes for displaying the contents of SVG files
+    \row \o \l{QtWebKit} \o Classes for displaying and editing Web content
+    \row \o \l{QtXml} \o Classes for handling XML
+    \row \o \l{QtXmlPatterns} \o An XQuery & XPath engine for XML and custom data models
+    \row \o \l{Phonon Module}{Phonon} \o Multimedia framework classes
+    \row \o \l{Qt3Support} \o Qt 3 compatibility classes
+    \endtable
+
+    Modules for working with Qt's tools:
+
+    \table 80%
+    \row \o \l{QtDesigner} \o Classes for extending \QD
+    \row \o \l{QtUiTools} \o Classes for handling \QD forms in applications
+    \row \o \l{QtHelp} \o Classes for online help    
+    \row \o \l{QtAssistant} \o Support for online help
+    \row \o \l{QtTest} \o Tool classes for unit testing
+    \endtable
+
+    The following extension modules are available in the \l{Qt
+    Commercial Editions} on Windows:
+
+    \table 80%
+    \row \o \l{QAxContainer} \o Extension for accessing ActiveX controls
+    \row \o \l{QAxServer} \o Extension for writing ActiveX servers
+    \endtable
+
+    The following extension module is available in all \l {Qt Editions}
+    on Unix platforms:
+
+    \table 80%
+    \row \o \l{QtDBus} \o Classes for Inter-Process Communication using the D-Bus
+    \endtable
+
+    If you use \l qmake to build your projects, the QtCore and QtGui
+    modules are included by default. To link only against QtCore, add
+    the following line to your \c .pro file:
+
+    \snippet doc/src/snippets/code/doc.src.modules.qdoc 0
+
+    On Windows, if you do not use \l qmake or the \l{Visual Studio Integration}
+    available to \l{Qt Commercial Editions}{commercial licensees}, you also
+    need to link against the \c qtmain library.
+
+    \sa {Qt's Classes}
+*/

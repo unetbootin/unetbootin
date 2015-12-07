@@ -1,0 +1,590 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Designer's UI File Format</title>
+  <link rel="prev" href="designer-creating-custom-widgets-extensions.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>]
+[<a href="designer-manual.html">Contents</a>]
+</p>
+<h1 class="title">Qt Designer's UI File Format<br /><span class="subtitle"></span>
+</h1>
+<p>The <tt>.ui</tt> file format used by <i>Qt Designer</i> is described by the <a href="http://www.w3.org/XML/Schema">XML schema</a> presented below, which we include for your convenience. Be aware that the format may change in future Qt releases.</p>
+<pre> &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+ &lt;xs:schema xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot;&gt;
+
+         &lt;xs:element name=&quot;ui&quot; type=&quot;UI&quot;/&gt;
+
+         &lt;xs:complexType name=&quot;UI&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;author&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;comment&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;exportMacro&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;class&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;widget&quot; type=&quot;Widget&quot; /&gt;
+                         &lt;xs:element name=&quot;layoutDefault&quot; type=&quot;LayoutDefault&quot; /&gt;
+                         &lt;xs:element name=&quot;layoutFunction&quot; type=&quot;LayoutFunction&quot; /&gt;
+                         &lt;xs:element name=&quot;pixmapFunction&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;customWidgets&quot; type=&quot;CustomWidgets&quot; /&gt;
+                         &lt;xs:element name=&quot;tabStops&quot; type=&quot;TabStops&quot; /&gt;
+                         &lt;xs:element name=&quot;images&quot; type=&quot;Images&quot; /&gt;
+                         &lt;xs:element name=&quot;includes&quot; type=&quot;Includes&quot; /&gt;
+                         &lt;xs:element name=&quot;resources&quot; type=&quot;Resources&quot; /&gt;
+                         &lt;xs:element name=&quot;connections&quot; type=&quot;Connections&quot; /&gt;
+                         &lt;xs:element name=&quot;designerdata&quot; type=&quot;DesignerData&quot; /&gt;
+                         &lt;xs:element name=&quot;slots&quot; type=&quot;Slots&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;version&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;language&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;stdSetDef&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+ &lt;!-- include begin --&gt;
+         &lt;xs:complexType name=&quot;Includes&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;include&quot; type=&quot;Include&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Include&quot;&gt;
+                 &lt;xs:sequence/&gt;
+                 &lt;xs:attribute name=&quot;location&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;impldecl&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+ &lt;!-- include end --&gt;
+
+ &lt;!-- resource begin --&gt;
+         &lt;xs:complexType name=&quot;Resources&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;include&quot; type=&quot;Resource&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Resource&quot;&gt;
+                 &lt;xs:sequence/&gt;
+                 &lt;xs:attribute name=&quot;location&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+ &lt;!-- resource end --&gt;
+
+ &lt;!-- actions begin --&gt;
+         &lt;xs:complexType name=&quot;ActionGroup&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;action&quot; type=&quot;Action&quot; /&gt;
+                         &lt;xs:element name=&quot;actionGroup&quot; type=&quot;ActionGroup&quot; /&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;attribute&quot; type=&quot;Property&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Action&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;attribute&quot; type=&quot;Property&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;menu&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ActionRef&quot;&gt;
+                 &lt;xs:sequence /&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+ &lt;!-- actions end --&gt;
+
+ &lt;!-- images begin --&gt;
+         &lt;xs:complexType name=&quot;Images&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;image&quot; type=&quot;Image&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Image&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;data&quot; type=&quot;ImageData&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ImageData&quot;&gt;
+                 &lt;xs:sequence/&gt;
+                 &lt;xs:attribute name=&quot;format&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;length&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+ &lt;!-- images end --&gt;
+
+ &lt;!-- custom widget support begin --&gt;
+         &lt;xs:complexType name=&quot;CustomWidgets&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;customWidget&quot; type=&quot;CustomWidget&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Header&quot;&gt;
+                 &lt;xs:attribute name=&quot;location&quot; type=&quot;xs:string&quot; /&gt;  &lt;!-- local or global --&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;CustomWidget&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;class&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;extends&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;header&quot; type=&quot;Header&quot; /&gt;
+                         &lt;xs:element name=&quot;sizeHint&quot; type=&quot;Size&quot; /&gt;
+                         &lt;xs:element name=&quot;addPageMethod&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;container&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;sizePolicy&quot; type=&quot;SizePolicyData&quot; /&gt;
+                         &lt;xs:element name=&quot;pixmap&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;script&quot; type=&quot;Script&quot; /&gt;
+                         &lt;xs:element name=&quot;properties&quot; type=&quot;Properties&quot; /&gt;
+                         &lt;xs:element name=&quot;slots&quot; type=&quot;Slots&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Properties&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;PropertyData&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;PropertyData&quot;&gt;
+                 &lt;xs:sequence /&gt;
+                 &lt;xs:attribute name=&quot;type&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;SizePolicyData&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;horData&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;verData&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+ &lt;!-- custom widget support end --&gt;
+
+         &lt;xs:complexType name=&quot;LayoutDefault&quot;&gt;
+                 &lt;xs:sequence /&gt;
+                 &lt;xs:attribute name=&quot;spacing&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;xs:attribute name=&quot;margin&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;LayoutFunction&quot;&gt;
+                 &lt;xs:sequence /&gt;
+                 &lt;xs:attribute name=&quot;spacing&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;margin&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;TabStops&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;tabStop&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Layout&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;attribute&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;item&quot; type=&quot;LayoutItem&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;class&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;LayoutItem&quot;&gt;
+                 &lt;xs:choice&gt;
+                         &lt;xs:element name=&quot;widget&quot; type=&quot;Widget&quot; /&gt;
+                         &lt;xs:element name=&quot;layout&quot; type=&quot;Layout&quot; /&gt;
+                         &lt;xs:element name=&quot;spacer&quot; type=&quot;Spacer&quot; /&gt;
+                 &lt;/xs:choice&gt;
+                 &lt;xs:attribute name=&quot;row&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;xs:attribute name=&quot;column&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;xs:attribute name=&quot;rowSpan&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;xs:attribute name=&quot;colSpan&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+ &lt;!-- item view begin --&gt;
+         &lt;xs:complexType name=&quot;Row&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Column&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Item&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;item&quot; type=&quot;Item&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;row&quot; type=&quot;xs:integer&quot;/&gt;
+                 &lt;xs:attribute name=&quot;column&quot; type=&quot;xs:integer&quot;/&gt;
+         &lt;/xs:complexType&gt;
+ &lt;!-- item view end --&gt;
+
+         &lt;xs:complexType name=&quot;Widget&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;class&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                         &lt;xs:element name=&quot;script&quot; type=&quot;Script&quot; /&gt;
+                         &lt;xs:element name=&quot;widgetData&quot; type=&quot;WidgetData&quot; /&gt;
+                         &lt;xs:element name=&quot;attribute&quot; type=&quot;Property&quot; /&gt;
+ &lt;!-- item view begin --&gt;
+                         &lt;xs:element name=&quot;row&quot; type=&quot;Row&quot; /&gt;
+                         &lt;xs:element name=&quot;column&quot; type=&quot;Column&quot; /&gt;
+                         &lt;xs:element name=&quot;item&quot; type=&quot;Item&quot; /&gt;
+ &lt;!-- item view end --&gt;
+                         &lt;xs:element name=&quot;layout&quot; type=&quot;Layout&quot; /&gt;
+                         &lt;xs:element name=&quot;widget&quot; type=&quot;Widget&quot; /&gt;
+                         &lt;xs:element name=&quot;action&quot; type=&quot;Action&quot; /&gt;
+                         &lt;xs:element name=&quot;actionGroup&quot; type=&quot;ActionGroup&quot; /&gt;
+                         &lt;xs:element name=&quot;addAction&quot; type=&quot;ActionRef&quot; /&gt;
+                         &lt;xs:element name=&quot;zOrder&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;class&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;native&quot; type=&quot;xs:boolean&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Spacer&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Color&quot;&gt;
+                 &lt;xs:sequence&gt;
+                     &lt;xs:element name=&quot;red&quot; type=&quot;xs:integer&quot; /&gt;
+                     &lt;xs:element name=&quot;green&quot; type=&quot;xs:integer&quot; /&gt;
+                     &lt;xs:element name=&quot;blue&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;alpha&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;GradientStop&quot;&gt;
+                 &lt;xs:sequence&gt;
+                     &lt;xs:element name=&quot;color&quot; type=&quot;Color&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;position&quot; type=&quot;xs:double&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Gradient&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                     &lt;xs:element name=&quot;gradientStop&quot; type=&quot;GradientStop&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;startX&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;startY&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;endX&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;endY&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;centralX&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;centralY&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;focalX&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;focalY&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;radius&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;angle&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;xs:attribute name=&quot;type&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;spread&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;coordinateMode&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Brush&quot;&gt;
+                 &lt;xs:choice&gt;
+                     &lt;xs:element name=&quot;color&quot; type=&quot;Color&quot; /&gt;
+                     &lt;xs:element name=&quot;texture&quot; type=&quot;Property&quot; /&gt;
+                     &lt;xs:element name=&quot;gradient&quot; type=&quot;Gradient&quot; /&gt;
+                 &lt;/xs:choice&gt;
+                 &lt;xs:attribute name=&quot;brushStyle&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ColorRole&quot;&gt;
+                 &lt;xs:sequence&gt;
+                     &lt;xs:element name=&quot;brush&quot; type=&quot;Brush&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;role&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ColorGroup&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;colorRole&quot; type=&quot;ColorRole&quot; /&gt;
+                         &lt;xs:element name=&quot;color&quot; type=&quot;Color&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Palette&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;active&quot; type=&quot;ColorGroup&quot; /&gt;
+                         &lt;xs:element name=&quot;inactive&quot; type=&quot;ColorGroup&quot; /&gt;
+                         &lt;xs:element name=&quot;disabled&quot; type=&quot;ColorGroup&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Font&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;family&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;pointSize&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;weight&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;italic&quot; type=&quot;xs:boolean&quot; /&gt;
+                         &lt;xs:element name=&quot;bold&quot; type=&quot;xs:boolean&quot; /&gt;
+                         &lt;xs:element name=&quot;underline&quot; type=&quot;xs:boolean&quot; /&gt;
+                         &lt;xs:element name=&quot;strikeOut&quot; type=&quot;xs:boolean&quot; /&gt;
+                         &lt;xs:element name=&quot;antialiasing&quot; type=&quot;xs:boolean&quot; /&gt;
+                         &lt;xs:element name=&quot;styleStrategy&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;kerning&quot; type=&quot;xs:boolean&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Point&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;x&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;y&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Rect&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;x&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;y&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;width&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;height&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Locale&quot;&gt;
+                 &lt;xs:attribute name=&quot;language&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;country&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;SizePolicy&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;hSizeType&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;vSizeType&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;horStretch&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;verStretch&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+                 &lt;xs:attribute name=&quot;hSizeType&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;vSizeType&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Size&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;width&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;height&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Date&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;year&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;month&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;day&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Time&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;hour&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;minute&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;second&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;DateTime&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;hour&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;minute&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;second&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;year&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;month&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;day&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;StringList&quot;&gt;
+                 &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                         &lt;xs:element name=&quot;string&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ResourcePixmap&quot;&gt;
+                 &lt;xs:sequence/&gt;
+                 &lt;xs:attribute name=&quot;resource&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;alias&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ResourceIcon&quot;&gt;
+                 &lt;xs:attribute name=&quot;resource&quot; type=&quot;xs:string&quot; /&gt; &lt;!-- pre 4.4 legacy support --&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;normalOff&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;normalOn&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;disabledOff&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;disabledOn&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;activeOff&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;activeOn&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;selectedOff&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;selectedOn&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;String&quot;&gt;
+                 &lt;xs:sequence/&gt;
+                 &lt;xs:attribute name=&quot;notr&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;comment&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;PointF&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;x&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;y&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;RectF&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;x&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;y&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;width&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;height&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;SizeF&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;width&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;height&quot; type=&quot;xs:double&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Char&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;unicode&quot; type=&quot;xs:integer&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Url&quot;&gt;
+                 &lt;xs:sequence&gt;
+                         &lt;xs:element name=&quot;string&quot; type=&quot;String&quot; /&gt;
+                 &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Property&quot;&gt;
+                 &lt;xs:choice&gt;
+                         &lt;xs:element name=&quot;bool&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;color&quot; type=&quot;Color&quot; /&gt;
+                         &lt;xs:element name=&quot;cstring&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;cursor&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;cursorShape&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;enum&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;font&quot; type =&quot;Font&quot; /&gt;
+                         &lt;xs:element name=&quot;iconSet&quot; type=&quot;ResourceIcon&quot;/&gt;
+                         &lt;xs:element name=&quot;pixmap&quot; type=&quot;ResourcePixmap&quot; /&gt;
+                         &lt;xs:element name=&quot;palette&quot; type=&quot;Palette&quot; /&gt;
+                         &lt;xs:element name=&quot;point&quot; type=&quot;Point&quot; /&gt;
+                         &lt;xs:element name=&quot;rect&quot; type=&quot;Rect&quot; /&gt;
+                         &lt;xs:element name=&quot;set&quot; type=&quot;xs:string&quot; /&gt;
+                         &lt;xs:element name=&quot;locale&quot; type=&quot;Locale&quot; /&gt;
+                         &lt;xs:element name=&quot;sizePolicy&quot; type=&quot;SizePolicy&quot; /&gt;
+                         &lt;xs:element name=&quot;size&quot; type=&quot;Size&quot; /&gt;
+                         &lt;xs:element name=&quot;string&quot; type=&quot;String&quot; /&gt;
+                         &lt;xs:element name=&quot;stringList&quot; type=&quot;StringList&quot; /&gt;
+                         &lt;xs:element name=&quot;number&quot; type=&quot;xs:integer&quot; /&gt;
+                         &lt;xs:element name=&quot;float&quot; type=&quot;xs:float&quot; /&gt;
+                         &lt;xs:element name=&quot;double&quot; type=&quot;xs:double&quot; /&gt;
+                         &lt;xs:element name=&quot;date&quot; type=&quot;Date&quot; /&gt;
+                         &lt;xs:element name=&quot;time&quot; type=&quot;Time&quot; /&gt;
+                         &lt;xs:element name=&quot;dateTime&quot; type=&quot;DateTime&quot; /&gt;
+                         &lt;xs:element name=&quot;pointF&quot; type=&quot;PointF&quot; /&gt;
+                         &lt;xs:element name=&quot;rectF&quot; type=&quot;RectF&quot; /&gt;
+                         &lt;xs:element name=&quot;sizeF&quot; type=&quot;SizeF&quot; /&gt;
+                         &lt;xs:element name=&quot;longLong&quot; type=&quot;xs:longlong&quot; /&gt;
+                         &lt;xs:element name=&quot;char&quot; type=&quot;Char&quot; /&gt;
+                         &lt;xs:element name=&quot;url&quot; type=&quot;Url&quot; /&gt;
+                         &lt;xs:element name=&quot;uInt&quot; type=&quot;xs:unsignedInt&quot; /&gt;
+                         &lt;xs:element name=&quot;uLongLong&quot; type=&quot;xs:unsignedLong&quot; /&gt;
+                         &lt;xs:element name=&quot;brush&quot; type=&quot;Brush&quot; /&gt;
+                 &lt;/xs:choice&gt;
+                 &lt;xs:attribute name=&quot;name&quot; type=&quot;xs:string&quot; /&gt;
+                 &lt;xs:attribute name=&quot;stdset&quot; type=&quot;xs:integer&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Connections&quot;&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                     &lt;xs:element name=&quot;connection&quot; type=&quot;Connection&quot; /&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Connection&quot;&gt;
+             &lt;xs:sequence&gt;
+                 &lt;xs:element name=&quot;sender&quot; type=&quot;xs:string&quot;/&gt;
+                 &lt;xs:element name=&quot;signal&quot; type=&quot;xs:string&quot;/&gt;
+                 &lt;xs:element name=&quot;receiver&quot; type=&quot;xs:string&quot;/&gt;
+                 &lt;xs:element name=&quot;slot&quot; type=&quot;xs:string&quot;/&gt;
+                 &lt;xs:element name=&quot;hints&quot; type=&quot;ConnectionHints&quot;/&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ConnectionHints&quot;&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                 &lt;xs:element name=&quot;hint&quot; type=&quot;ConnectionHint&quot; /&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;ConnectionHint&quot;&gt;
+             &lt;xs:sequence&gt;
+                 &lt;xs:element name=&quot;x&quot; type=&quot;xs:integer&quot;/&gt;
+                 &lt;xs:element name=&quot;y&quot; type=&quot;xs:integer&quot;/&gt;
+             &lt;/xs:sequence&gt;
+             &lt;xs:attribute name=&quot;type&quot; type=&quot;xs:string&quot; /&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Script&quot;&gt;
+             &lt;xs:sequence/&gt;
+             &lt;xs:attribute name=&quot;source&quot;   type=&quot;xs:string&quot;/&gt;
+             &lt;xs:attribute name=&quot;language&quot; type=&quot;xs:string&quot;/&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;WidgetData&quot;&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                 &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+         &lt;xs:complexType name=&quot;DesignerData&quot;&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                 &lt;xs:element name=&quot;property&quot; type=&quot;Property&quot; /&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+         &lt;xs:complexType name=&quot;Slots&quot;&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                     &lt;xs:element name=&quot;slot&quot; type=&quot;xs:string&quot; /&gt;
+             &lt;/xs:sequence&gt;
+             &lt;xs:sequence maxOccurs=&quot;unbounded&quot;&gt;
+                     &lt;xs:element name=&quot;signal&quot; type=&quot;xs:string&quot; /&gt;
+             &lt;/xs:sequence&gt;
+         &lt;/xs:complexType&gt;
+
+ &lt;/xs:schema&gt;</pre>
+<p>
+[Previous: <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>]
+[<a href="designer-manual.html">Contents</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

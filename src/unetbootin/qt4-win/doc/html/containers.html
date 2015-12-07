@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/containers.qdoc -->
+<head>
+  <title>Qt 4.4: Generic Containers</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Generic Containers<br /><span class="subtitle"></span>
+</h1>
+<a name="container-class"></a><a name="container-classes"></a><ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#the-container-classes">The Container Classes</a></li>
+<li><a href="#the-iterator-classes">The Iterator Classes</a></li>
+<ul><li><a href="#java-style-iterators">Java-Style Iterators</a></li>
+<li><a href="#stl-style-iterators">STL-Style Iterators</a></li>
+</ul>
+<li><a href="#the-foreach-keyword">The foreach Keyword</a></li>
+<li><a href="#other-container-like-classes">Other Container-Like Classes</a></li>
+<li><a href="#algorithmic-complexity">Algorithmic Complexity</a></li>
+<li><a href="#growth-strategies">Growth Strategies</a></li>
+</ul>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+<p>The Qt library provides a set of general purpose template-based container classes. These classes can be used to store items of a specified type. For example, if you need a resizable array of <a href="qstring.html">QString</a>s, use <a href="qvector.html">QVector</a>&lt;<a href="qstring.html">QString</a>&gt;.</p>
+<p>These container classes are designed to be lighter, safer, and easier to use than the STL containers. If you are unfamiliar with the STL, or prefer to do things the &quot;Qt way&quot;, you can use these classes instead of the STL classes.</p>
+<p>The container classes are <a href="shared.html#implicitly-shared">implicitly shared</a>, they are <a href="threads.html#reentrant">reentrant</a>, and they are optimized for speed, low memory consumption, and minimal inline code expansion, resulting in smaller executables. In addition, they are <a href="threads.html#thread-safe">thread-safe</a> in situations where they are used as read-only containers by all threads used to access them.</p>
+<p>For traversing the items stored in a container, you can use one of two types of iterators: <a href="#java-style-iterators">Java-style iterators</a> and <a href="#stl-style-iterators">STL-style iterators</a>. The Java-style iterators are easier to use and provide high-level functionality, whereas the STL-style iterators are slightly more efficient and can be used together with Qt's and STL's <a href="qtalgorithms.html">generic algorithms</a>.</p>
+<p>Qt also offers a <a href="#foreach">foreach</a> keyword that make it very easy to iterate over all the items stored in a container.</p>
+<a name="the-container-classes"></a>
+<h3>The Container Classes</h3>
+<p>Qt provides the following container classes:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Class</th><th>Summary</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qlist.html">QList</a>&lt;T&gt;</td><td>This is by far the most commonly used container class. It stores a list of values of a given type (T) that can be accessed by index. Internally, the <a href="qlist.html">QList</a> is implemented using an array, ensuring that index-based access is very fast.<p>Items can be added at either end of the list using <a href="qlist.html#append">QList::append</a>() and <a href="qlist.html#prepend">QList::prepend</a>(), or they can be inserted in the middle using <a href="qlist.html#insert">QList::insert</a>(). More than any other container class, <a href="qlist.html">QList</a> is highly optimized to expand to as little code as possible in the executable. <a href="qstringlist.html">QStringList</a> inherits from <a href="qlist.html">QList</a>&lt;<a href="qstring.html">QString</a>&gt;.</p>
+</td></tr>
+<tr valign="top" class="even"><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;</td><td>This is similar to <a href="qlist.html">QList</a>, except that it uses iterators rather than integer indexes to access items. It also provides better performance than <a href="qlist.html">QList</a> when inserting in the middle of a huge list, and it has nicer iterator semantics. (Iterators pointing to an item in a <a href="qlinkedlist.html">QLinkedList</a> remain valid as long as the item exists, whereas iterators to a <a href="qlist.html">QList</a> can become invalid after any insertion or removal.)</td></tr>
+<tr valign="top" class="odd"><td><a href="qvector.html">QVector</a>&lt;T&gt;</td><td>This stores an array of values of a given type at adjacent positions in memory. Inserting at the front or in the middle of a vector can be quite slow, because it can lead to large numbers of items having to be moved by one position in memory.</td></tr>
+<tr valign="top" class="even"><td><a href="qstack.html">QStack</a>&lt;T&gt;</td><td>This is a convenience subclass of <a href="qvector.html">QVector</a> that provides &quot;last in, first out&quot; (LIFO) semantics. It adds the following functions to those already present in <a href="qvector.html">QVector</a>: <a href="qstack.html#push">push()</a>, <a href="qstack.html#pop">pop()</a>, and <a href="qstack.html#top">top()</a>.</td></tr>
+<tr valign="top" class="odd"><td><a href="qqueue.html">QQueue</a>&lt;T&gt;</td><td>This is a convenience subclass of <a href="qlist.html">QList</a> that provides &quot;first in, first out&quot; (FIFO) semantics. It adds the following functions to those already present in <a href="qlist.html">QList</a>: <a href="qqueue.html#enqueue">enqueue()</a>, <a href="qqueue.html#dequeue">dequeue()</a>, and <a href="qqueue.html#head">head()</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="qset.html">QSet</a>&lt;T&gt;</td><td>This provides a single-valued mathematical set with fast lookups.</td></tr>
+<tr valign="top" class="odd"><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;</td><td>This provides a dictionary (associative array) that maps keys of type Key to values of type T. Normally each key is associated with a single value. <a href="qmap.html">QMap</a> stores its data in Key order; if order doesn't matter <a href="qhash.html">QHash</a> is a faster alternative.</td></tr>
+<tr valign="top" class="even"><td><a href="qmultimap.html">QMultiMap</a>&lt;Key, T&gt;</td><td>This is a convenience subclass of <a href="qmap.html">QMap</a> that provides a nice interface for multi-valued maps, i.e&#x2e; maps where one key can be associated with multiple values.</td></tr>
+<tr valign="top" class="odd"><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;</td><td>This has almost the same API as <a href="qmap.html">QMap</a>, but provides significantly faster lookups. <a href="qhash.html">QHash</a> stores its data in an arbitrary order.</td></tr>
+<tr valign="top" class="even"><td><a href="qmultihash.html">QMultiHash</a>&lt;Key, T&gt;</td><td>This is a convenience subclass of <a href="qhash.html">QHash</a> that provides a nice interface for multi-valued hashes.</td></tr>
+</table></p>
+<p>Containers can be nested. For example, it is perfectly possible to use a <a href="qmap.html">QMap</a>&lt;<a href="qstring.html">QString</a>, <a href="qlist.html">QList</a>&lt;int&gt; &gt;, where the key type is <a href="qstring.html">QString</a> and the value type <a href="qlist.html">QList</a>&lt;int&gt;. The only pitfall is that you must insert a space between the closing angle brackets (&gt;); otherwise the C++ compiler will misinterpret the two &gt;'s as a right-shift operator (&gt;&gt;) and report a syntax error.</p>
+<p>The containers are defined in individual header files with the same name as the container (e.g&#x2e;, <tt>&lt;QLinkedList&gt;</tt>). For convenience, the containers are forward declared in <tt>&lt;QtContainerFwd&gt;</tt>.</p>
+<a name="assignable-data-types"></a><p>The values stored in the various containers can be of any <i>assignable data type</i>. To qualify, a type must provide a default constructor, a copy constructor, and an assignment operator. This covers most data types you are likely to want to store in a container, including basic types such as <tt>int</tt> and <tt>double</tt>, pointer types, and Qt data types such as <a href="qstring.html">QString</a>, <a href="qdate.html">QDate</a>, and <a href="qtime.html">QTime</a>, but it doesn't cover <a href="qobject.html">QObject</a> or any <a href="qobject.html">QObject</a> subclass (<a href="qwidget.html">QWidget</a>, <a href="qdialog.html">QDialog</a>, <a href="qtimer.html">QTimer</a>, etc.)&#x2e; If you attempt to instantiate a <a href="qlist.html">QList</a>&lt;<a href="qwidget.html">QWidget</a>&gt;, the compiler will complain that <a href="qwidget.html">QWidget</a>'s copy constructor and assignment operators are disabled. If you want to store these kinds of objects in a container, store them as pointers, for example as <a href="qlist.html">QList</a>&lt;<a href="qwidget.html">QWidget</a> *&gt;.</p>
+<p>Here's an example custom data type that meets the requirement of an assignable data type:</p>
+<pre>         class Employee
+         {
+         public:
+             Employee() {}
+             Employee(const Employee &amp;other);
+
+             Employee &amp;operator=(const Employee &amp;other);
+
+         private:
+             QString myName;
+             QDate myDateOfBirth;
+         };</pre>
+<p>If we don't provide a copy constructor or an assignment operator, C++ provides a default implementation that performs a member-by-member copy. In the example above, that would have been sufficient. Also, if you don't provide any constructors, C++ provides a default constructor that initializes its member using default constructors. Although it doesn't provide any explicit constructors or assignment operator, the following data type can be stored in a container:</p>
+<pre> struct Movie
+ {
+     int id;
+     QString title;
+     QDate releaseDate;
+ };</pre>
+<p>Some containers have additional requirements for the data types they can store. For example, the Key type of a <a href="qmap.html">QMap</a>&lt;Key, T&gt; must provide <tt>operator&lt;()</tt>. Such special requirements are documented in a class's detailed description. In some cases, specific functions have special requirements; these are described on a per-function basis. The compiler will always emit an error if a requirement isn't met.</p>
+<p>Qt's containers provide operator&lt;&lt;() and operator&gt;&gt;() so that they can easily be read and written using a <a href="qdatastream.html">QDataStream</a>. This means that the data types stored in the container must also support operator&lt;&lt;() and operator&gt;&gt;(). Providing such support is straightforward; here's how we could do it for the Movie struct above:</p>
+<pre> QDataStream &amp;operator&lt;&lt;(QDataStream &amp;out, const Movie &amp;movie)
+ {
+     out &lt;&lt; (quint32)movie.id &lt;&lt; movie.title
+         &lt;&lt; movie.releaseDate;
+     return out;
+ }
+
+ QDataStream &amp;operator&gt;&gt;(QDataStream &amp;in, Movie &amp;movie)
+ {
+     quint32 id;
+     QDate date;
+
+     in &gt;&gt; id &gt;&gt; movie.title &gt;&gt; date;
+     movie.id = (int)id;
+     movie.releaseDate = date;
+     return in;
+ }</pre>
+<a name="default-constructed-values"></a><p>The documentation of certain container class functions refer to <i>default-constructed values</i>; for example, <a href="qvector.html">QVector</a> automatically initializes its items with default-constructed values, and <a href="qmap.html#value">QMap::value</a>() returns a default-constructed value if the specified key isn't in the map. For most value types, this simply means that a value is created using the default constructor (e.g&#x2e; an empty string for <a href="qstring.html">QString</a>). But for primitive types like <tt>int</tt> and <tt>double</tt>, as well as for pointer types, the C++ language doesn't specify any initialization; in those cases, Qt's containers automatically initialize the value to 0.</p>
+<a name="the-iterator-classes"></a>
+<h3>The Iterator Classes</h3>
+<p>Iterators provide a uniform means to access items in a container. Qt's container classes provide two types of iterators: Java-style iterators and STL-style iterators.</p>
+<a name="java-style-iterators"></a>
+<h4>Java-Style Iterators</h4>
+<p>The Java-style iterators are new in Qt 4 and are the standard ones used in Qt applications. They are more convenient to use than the STL-style iterators, at the price of being slightly less efficient. Their API is modelled on Java's iterator classes.</p>
+<p>For each container class, there are two Java-style iterator data types: one that provides read-only access and one that provides read-write access.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Containers</th><th>Read-only iterator</th><th>Read-write iterator</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qlist.html">QList</a>&lt;T&gt;, <a href="qqueue.html">QQueue</a>&lt;T&gt;</td><td><a href="qlistiterator.html">QListIterator</a>&lt;T&gt;</td><td><a href="qmutablelistiterator.html">QMutableListIterator</a>&lt;T&gt;</td></tr>
+<tr valign="top" class="even"><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;</td><td><a href="qlinkedlistiterator.html">QLinkedListIterator</a>&lt;T&gt;</td><td><a href="qmutablelinkedlistiterator.html">QMutableLinkedListIterator</a>&lt;T&gt;</td></tr>
+<tr valign="top" class="odd"><td><a href="qvector.html">QVector</a>&lt;T&gt;, <a href="qstack.html">QStack</a>&lt;T&gt;</td><td><a href="qvectoriterator.html">QVectorIterator</a>&lt;T&gt;</td><td><a href="qmutablevectoriterator.html">QMutableVectorIterator</a>&lt;T&gt;</td></tr>
+<tr valign="top" class="even"><td><a href="qset.html">QSet</a>&lt;T&gt;</td><td><a href="qsetiterator.html">QSetIterator</a>&lt;T&gt;</td><td><a href="qmutablesetiterator.html">QMutableSetIterator</a>&lt;T&gt;</td></tr>
+<tr valign="top" class="odd"><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;, <a href="qmultimap.html">QMultiMap</a>&lt;Key, T&gt;</td><td><a href="qmapiterator.html">QMapIterator</a>&lt;Key, T&gt;</td><td><a href="qmutablemapiterator.html">QMutableMapIterator</a>&lt;Key, T&gt;</td></tr>
+<tr valign="top" class="even"><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;, <a href="qmultihash.html">QMultiHash</a>&lt;Key, T&gt;</td><td><a href="qhashiterator.html">QHashIterator</a>&lt;Key, T&gt;</td><td><a href="qmutablehashiterator.html">QMutableHashIterator</a>&lt;Key, T&gt;</td></tr>
+</table></p>
+<p>In this discussion, we will concentrate on <a href="qlist.html">QList</a> and <a href="qmap.html">QMap</a>. The iterator types for <a href="qlinkedlist.html">QLinkedList</a>, <a href="qvector.html">QVector</a>, and <a href="qset.html">QSet</a> have exactly the same interface as <a href="qlist.html">QList</a>'s iterators; similarly, the iterator types for <a href="qhash.html">QHash</a> have the same interface as <a href="qmap.html">QMap</a>'s iterators.</p>
+<p>Unlike STL-style iterators (covered <a href="#stl-style-iterators">below</a>), Java-style iterators point <i>between</i> items rather than directly <i>at</i> items. For this reason, they are either pointing to the very beginning of the container (before the first item), at the very end of the container (after the last item), or between two items. The diagram below shows the valid iterator positions as red arrows for a list containing four items:</p>
+<p align="center"><img src="images/javaiterators1.png" /></p><p>Here's a typical loop for iterating through all the elements of a <a href="qlist.html">QList</a>&lt;<a href="qstring.html">QString</a>&gt; in order and printing them to the console:</p>
+<pre>         QList&lt;QString&gt; list;
+         list &lt;&lt; &quot;A&quot; &lt;&lt; &quot;B&quot; &lt;&lt; &quot;C&quot; &lt;&lt; &quot;D&quot;;
+
+         QListIterator&lt;QString&gt; i(list);
+         while (i.hasNext())
+             qDebug() &lt;&lt; i.next();</pre>
+<p>It works as follows: The <a href="qlist.html">QList</a> to iterate over is passed to the <a href="qlistiterator.html">QListIterator</a> constructor. At that point, the iterator is located just in front of the first item in the list (before item &quot;A&quot;). Then we call <a href="qlistiterator.html#hasNext">hasNext()</a> to check whether there is an item after the iterator. If there is, we call <a href="qlistiterator.html#next">next()</a> to jump over that item. The next() function returns the item that it jumps over. For a <a href="qlist.html">QList</a>&lt;<a href="qstring.html">QString</a>&gt;, that item is of type <a href="qstring.html">QString</a>.</p>
+<p>Here's how to iterate backward in a <a href="qlist.html">QList</a>:</p>
+<pre>         QListIterator&lt;QString&gt; i(list);
+         i.toBack();
+         while (i.hasPrevious())
+             qDebug() &lt;&lt; i.previous();</pre>
+<p>The code is symmetric with iterating forward, except that we start by calling <a href="qlistiterator.html#toBack">toBack()</a> to move the iterator after the last item in the list.</p>
+<p>The diagram below illustrates the effect of calling <a href="qlistiterator.html#next">next()</a> and <a href="qlistiterator.html#previous">previous()</a> on an iterator:</p>
+<p align="center"><img src="images/javaiterators2.png" /></p><p>The following table summarizes the <a href="qlistiterator.html">QListIterator</a> API:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Function</th><th>Behavior</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qlistiterator.html#toFront">toFront()</a></td><td>Moves the iterator to the front of the list (before the first item)</td></tr>
+<tr valign="top" class="even"><td><a href="qlistiterator.html#toBack">toBack()</a></td><td>Moves the iterator to the back of the list (after the last item)</td></tr>
+<tr valign="top" class="odd"><td><a href="qlistiterator.html#hasNext">hasNext()</a></td><td>Returns true if the iterator isn't at the back of the list</td></tr>
+<tr valign="top" class="even"><td><a href="qlistiterator.html#next">next()</a></td><td>Returns the next item and advances the iterator by one position</td></tr>
+<tr valign="top" class="odd"><td><a href="qlistiterator.html#peekNext">peekNext()</a></td><td>Returns the next item without moving the iterator</td></tr>
+<tr valign="top" class="even"><td><a href="qlistiterator.html#hasPrevious">hasPrevious()</a></td><td>Returns true if the iterator isn't at the front of the list</td></tr>
+<tr valign="top" class="odd"><td><a href="qlistiterator.html#previous">previous()</a></td><td>Returns the previous item and moves the iterator back by one position</td></tr>
+<tr valign="top" class="even"><td><a href="qlistiterator.html#peekPrevious">peekPrevious()</a></td><td>Returns the previous item without moving the iterator</td></tr>
+</table></p>
+<p><a href="qlistiterator.html">QListIterator</a> provides no functions to insert or remove items from the list as we iterate. To accomplish this, you must use <a href="qmutablelistiterator.html">QMutableListIterator</a>. Here's an example where we remove all odd numbers from a <a href="qlist.html">QList</a>&lt;int&gt; using <a href="qmutablelistiterator.html">QMutableListIterator</a>:</p>
+<pre>         QMutableListIterator&lt;int&gt; i(list);
+         while (i.hasNext()) {
+             if (i.next() % 2 != 0)
+                 i.remove();
+         }</pre>
+<p>The next() call in the loop is made every time. It jumps over the next item in the list. The <a href="qmutablelistiterator.html#remove">remove()</a> function removes the last item that we jumped over from the list. The call to <a href="qmutablelistiterator.html#remove">remove()</a> does not invalidate the iterator, so it is safe to continue using it. This works just as well when iterating backward:</p>
+<pre>         QMutableListIterator&lt;int&gt; i(list);
+         i.toBack();
+         while (i.hasPrevious()) {
+             if (i.previous() % 2 != 0)
+                 i.remove();
+         }</pre>
+<p>If want just want to modify the value of an existing item, we can use <a href="qmutablelistiterator.html#setValue">setValue()</a>. In the code below, we replace any value larger than 128 with 128:</p>
+<pre>         QMutableListIterator&lt;int&gt; i(list);
+         while (i.hasNext()) {
+             if (i.next() &gt; 128)
+                 i.setValue(128);
+         }</pre>
+<p>Just like <a href="qmutablelistiterator.html#remove">remove()</a>, <a href="qmutablelistiterator.html#setValue">setValue()</a> operates on the last item that we jumped over. If we iterate forward, this is the item just before the iterator; if we iterate backward, this is the item just after the iterator.</p>
+<p>The <a href="qmutablelistiterator.html#next">next()</a> function returns a non-const reference to the item in the list. For simple operations, we don't even need <a href="qmutablelistiterator.html#setValue">setValue()</a>:</p>
+<pre>         QMutableListIterator&lt;int&gt; i(list);
+         while (i.hasNext())
+             i.next() *= 2;</pre>
+<p>As mentioned above, <a href="qlinkedlist.html">QLinkedList</a>'s, <a href="qvector.html">QVector</a>'s, and <a href="qset.html">QSet</a>'s iterator classes have exactly the same API as <a href="qlist.html">QList</a>'s. We will now turn to <a href="qmapiterator.html">QMapIterator</a>, which is somewhat different because it iterates on (key, value) pairs.</p>
+<p>Like <a href="qlistiterator.html">QListIterator</a>, <a href="qmapiterator.html">QMapIterator</a> provides <a href="qmapiterator.html#toFront">toFront()</a>, <a href="qmapiterator.html#toBack">toBack()</a>, <a href="qmapiterator.html#hasNext">hasNext()</a>, <a href="qmapiterator.html#next">next()</a>, <a href="qmapiterator.html#peekNext">peekNext()</a>, <a href="qmapiterator.html#hasPrevious">hasPrevious()</a>, <a href="qmapiterator.html#previous">previous()</a>, and <a href="qmapiterator.html#peekPrevious">peekPrevious()</a>. The key and value components are extracted by calling key() and value() on the object returned by next(), peekNext(), previous(), or peekPrevious().</p>
+<p>The following example removes all (capital, country) pairs where the capital's name ends with &quot;City&quot;:</p>
+<pre>         QMap&lt;QString, QString&gt; map;
+         map.insert(&quot;Paris&quot;, &quot;France&quot;);
+         map.insert(&quot;Guatemala City&quot;, &quot;Guatemala&quot;);
+         map.insert(&quot;Mexico City&quot;, &quot;Mexico&quot;);
+         map.insert(&quot;Moscow&quot;, &quot;Russia&quot;);
+         ...
+
+         QMutableMapIterator&lt;QString, QString&gt; i(map);
+         while (i.hasNext()) {
+             if (i.next().key().endsWith(&quot;City&quot;))
+                 i.remove();
+         }</pre>
+<p><a href="qmapiterator.html">QMapIterator</a> also provides a key() and a value() function that operate directly on the iterator and that return the key and value of the last item that the iterator jumped above. For example, the following code copies the contents of a <a href="qmap.html">QMap</a> into a <a href="qhash.html">QHash</a>:</p>
+<pre>         QMap&lt;int, QWidget *&gt; map;
+         QHash&lt;int, QWidget *&gt; hash;
+
+         QMapIterator&lt;int, QWidget *&gt; i(map);
+         while (i.hasNext()) {
+             i.next();
+             hash.insert(i.key(), i.value());
+         }</pre>
+<p>If we want to iterate through all the items with the same value, we can use <a href="qmapiterator.html#findNext">findNext()</a> or <a href="qmapiterator.html#findPrevious">findPrevious()</a>. Here's an example where we remove all the items with a particular value:</p>
+<pre>         QMutableMapIterator&lt;int, QWidget *&gt; i(map);
+         while (i.findNext(widget))
+             i.remove();</pre>
+<a name="stl-style-iterators"></a>
+<h4>STL-Style Iterators</h4>
+<p>STL-style iterators have been available since the release of Qt 2.0&#x2e; They are compatible with Qt's and STL's <a href="qtalgorithms.html">generic algorithms</a> and are optimized for speed.</p>
+<p>For each container class, there are two STL-style iterator types: one that provides read-only access and one that provides read-write access. Read-only iterators should be used wherever possible because they are faster than read-write iterators.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Containers</th><th>Read-only iterator</th><th>Read-write iterator</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qlist.html">QList</a>&lt;T&gt;, <a href="qqueue.html">QQueue</a>&lt;T&gt;</td><td><a href="qlist.html">QList</a>&lt;T&gt;::const_iterator</td><td><a href="qlist.html">QList</a>&lt;T&gt;::iterator</td></tr>
+<tr valign="top" class="even"><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;</td><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;::const_iterator</td><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;::iterator</td></tr>
+<tr valign="top" class="odd"><td><a href="qvector.html">QVector</a>&lt;T&gt;, <a href="qstack.html">QStack</a>&lt;T&gt;</td><td><a href="qvector.html">QVector</a>&lt;T&gt;::const_iterator</td><td><a href="qvector.html">QVector</a>&lt;T&gt;::iterator</td></tr>
+<tr valign="top" class="even"><td><a href="qset.html">QSet</a>&lt;T&gt;</td><td><a href="qset.html">QSet</a>&lt;T&gt;::const_iterator</td><td><a href="qset.html">QSet</a>&lt;T&gt;::iterator</td></tr>
+<tr valign="top" class="odd"><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;, <a href="qmultimap.html">QMultiMap</a>&lt;Key, T&gt;</td><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;::const_iterator</td><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;::iterator</td></tr>
+<tr valign="top" class="even"><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;, <a href="qmultihash.html">QMultiHash</a>&lt;Key, T&gt;</td><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator</td><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;::iterator</td></tr>
+</table></p>
+<p>The API of the STL iterators is modelled on pointers in an array. For example, the <tt>++</tt> operator advances the iterator to the next item, and the <tt>*</tt> operator returns the item that the iterator points to. In fact, for <a href="qvector.html">QVector</a> and <a href="qstack.html">QStack</a>, which store their items at adjacent memory positions, the <a href="qvector.html#iterator-typedefx">iterator</a> type is just a typedef for <tt>T *</tt>, and the <a href="qvector.html#iterator-typedefx">const_iterator</a> type is just a typedef for <tt>const T *</tt>.</p>
+<p>In this discussion, we will concentrate on <a href="qlist.html">QList</a> and <a href="qmap.html">QMap</a>. The iterator types for <a href="qlinkedlist.html">QLinkedList</a>, <a href="qvector.html">QVector</a>, and <a href="qset.html">QSet</a> have exactly the same interface as <a href="qlist.html">QList</a>'s iterators; similarly, the iterator types for <a href="qhash.html">QHash</a> have the same interface as <a href="qmap.html">QMap</a>'s iterators.</p>
+<p>Here's a typical loop for iterating through all the elements of a <a href="qlist.html">QList</a>&lt;<a href="qstring.html">QString</a>&gt; in order and converting them to lowercase:</p>
+<pre>         QList&lt;QString&gt; list;
+         list &lt;&lt; &quot;A&quot; &lt;&lt; &quot;B&quot; &lt;&lt; &quot;C&quot; &lt;&lt; &quot;D&quot;;
+
+         QList&lt;QString&gt;::iterator i;
+         for (i = list.begin(); i != list.end(); ++i)
+             *i = (*i).toLower();</pre>
+<p>Unlike <a href="#java-style-iterators">Java-style iterators</a>, STL-style iterators point directly at items. The begin() function of a container returns an iterator that points to the first item in the container. The end() function of a container returns an iterator to the imaginary item one position past the last item in the container. end() marks an invalid position; it must never be dereferenced. It is typically used in a loop's break condition. If the list is empty, begin() equals end(), so we never execute the loop.</p>
+<p>The diagram below shows the valid iterator positions as red arrows for a vector containing four items:</p>
+<p align="center"><img src="images/stliterators1.png" /></p><p>Iterating backward with an STL-style iterator requires us to decrement the iterator <i>before</i> we access the item. This requires a <tt>while</tt> loop:</p>
+<pre>         QList&lt;QString&gt; list;
+         list &lt;&lt; &quot;A&quot; &lt;&lt; &quot;B&quot; &lt;&lt; &quot;C&quot; &lt;&lt; &quot;D&quot;;
+
+         QList&lt;QString&gt;::iterator i = list.end();
+         while (i != list.begin()) {
+             --i;
+             *i = (*i).toLower();
+         }</pre>
+<p>In the code snippets so far, we used the unary <tt>*</tt> operator to retrieve the item (of type <a href="qstring.html">QString</a>) stored at a certain iterator position, and we then called <a href="qstring.html#toLower">QString::toLower</a>() on it. Most C++ compilers also allow us to write <tt>i-&gt;toLower()</tt>, but some don't.</p>
+<p>For read-only access, you can use const_iterator, constBegin(), and constEnd(). For example:</p>
+<pre>         QList&lt;QString&gt;::const_iterator i;
+         for (i = list.constBegin(); i != list.constEnd(); ++i)
+             qDebug() &lt;&lt; *i;</pre>
+<p>The following table summarizes the STL-style iterators' API:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Expression</th><th>Behavior</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>*i</tt></td><td>Returns the current item</td></tr>
+<tr valign="top" class="even"><td><tt>++i</tt></td><td>Advances the iterator to the next item</td></tr>
+<tr valign="top" class="odd"><td><tt>i += n</tt></td><td>Advances the iterator by <tt>n</tt> items</td></tr>
+<tr valign="top" class="even"><td><tt>--i</tt></td><td>Moves the iterator back by one item</td></tr>
+<tr valign="top" class="odd"><td><tt>i -= n</tt></td><td>Moves the iterator back by <tt>n</tt> items</td></tr>
+<tr valign="top" class="even"><td><tt>i - j</tt></td><td>Returns the number of items between iterators <tt>i</tt> and <tt>j</tt></td></tr>
+</table></p>
+<p>The <tt>++</tt> and <tt>--</tt> operators are available both as prefix (<tt>++i</tt>, <tt>--i</tt>) and postfix (<tt>i++</tt>, <tt>i--</tt>) operators. The prefix versions modify the iterators and return a reference to the modified iterator; the postfix versions take a copy of the iterator before they modify it, and return that copy. In expressions where the return value is ignored, we recommend that you use the prefix operators (<tt>++i</tt>, <tt>--i</tt>), as these are slightly faster.</p>
+<p>For non-const iterator types, the return value of the unary <tt>*</tt> operator can be used on the left side of the assignment operator.</p>
+<p>For <a href="qmap.html">QMap</a> and <a href="qhash.html">QHash</a>, the <tt>*</tt> operator returns the value component of an item. If you want to retrieve the key, call key() on the iterator. For symmetry, the iterator types also provide a value() function to retrieve the value. For example, here's how we would print all items in a <a href="qmap.html">QMap</a> to the console:</p>
+<pre>         QMap&lt;int, int&gt; map;
+         ...
+         QMap&lt;int, int&gt;::const_iterator i;
+         for (i = map.constBegin(); i != map.constEnd(); ++i)
+             qDebug() &lt;&lt; i.key() &lt;&lt; &quot;:&quot; &lt;&lt; i.value();</pre>
+<p>Thanks to <a href="shared.html#implicit-sharing">implicit sharing</a>, it is very inexpensive for a function to return a container per value. The Qt API contains dozens of functions that return a <a href="qlist.html">QList</a> or <a href="qstringlist.html">QStringList</a> per value (e.g&#x2e;, <a href="qsplitter.html#sizes">QSplitter::sizes</a>()). If you want to iterate over these using an STL iterator, you should always take a copy of the container and iterate over the copy. For example:</p>
+<pre>         // RIGHT
+         const QList&lt;int&gt; sizes = splitter-&gt;sizes();
+         QList&lt;int&gt;::const_iterator i;
+         for (i = sizes.begin(); i != sizes.end(); ++i)
+             ...
+
+         // WRONG
+         QList&lt;int&gt;::const_iterator i;
+         for (i = splitter-&gt;sizes().begin();
+                 i != splitter-&gt;sizes().end(); ++i)
+             ...</pre>
+<p>This problem doesn't occur with functions that return a const or non-const reference to a container.</p>
+<p><a href="shared.html#implicit-sharing">Implicit sharing</a> has another consequence on STL-style iterators: You must not take a copy of a container while non-const iterators are active on that container. Java-style iterators don't suffer from that limitation.</p>
+<a name="foreach"></a><a name="the-foreach-keyword"></a>
+<h3>The foreach Keyword</h3>
+<p>If you just want to iterate over all the items in a container in order, you can use Qt's <tt>foreach</tt> keyword. The keyword is a Qt-specific addition to the C++ language, and is implemented using the preprocessor.</p>
+<p>Its syntax is: <tt>foreach</tt> (<i>variable</i>, <i>container</i>) <i>statement</i>. For example, here's how to use <tt>foreach</tt> to iterate over a <a href="qlinkedlist.html">QLinkedList</a>&lt;<a href="qstring.html">QString</a>&gt;:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         QString str;
+         foreach (str, list)
+             qDebug() &lt;&lt; str;</pre>
+<p>The <tt>foreach</tt> code is significantly shorter than the equivalent code that uses iterators:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         QLinkedListIterator&lt;QString&gt; i(list);
+         while (i.hasNext())
+             qDebug() &lt;&lt; i.next();</pre>
+<p>Unless the data type contains a comma (e.g&#x2e;, <tt>QPair&lt;int, int&gt;</tt>), the variable used for iteration can be defined within the <tt>foreach</tt> statement:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         foreach (QString str, list)
+             qDebug() &lt;&lt; str;</pre>
+<p>And like any other C++ loop construct, you can use braces around the body of a <tt>foreach</tt> loop, and you can use <tt>break</tt> to leave the loop:</p>
+<pre>         QLinkedList&lt;QString&gt; list;
+         ...
+         foreach (QString str, list) {
+             if (str.isEmpty())
+                 break;
+             qDebug() &lt;&lt; str;
+         }</pre>
+<p>With <a href="qmap.html">QMap</a> and <a href="qhash.html">QHash</a>, <tt>foreach</tt> accesses the value component of the (key, value) pairs. If you want to iterate over both the keys and the values, you can use iterators (which are fastest), or you can write code like this:</p>
+<pre>         QMap&lt;QString, int&gt; map;
+         ...
+         foreach (QString str, map.keys())
+             qDebug() &lt;&lt; str &lt;&lt; &quot;:&quot; &lt;&lt; map.value(str);</pre>
+<p>For a multi-valued map:</p>
+<pre>         QMultiMap&lt;QString, int&gt; map;
+         ...
+         foreach (QString str, map.uniqueKeys()) {
+             foreach (int i, map.values(str))
+                 qDebug() &lt;&lt; str &lt;&lt; &quot;:&quot; &lt;&lt; i;
+         }</pre>
+<p>Qt automatically takes a copy of the container when it enters a <tt>foreach</tt> loop. If you modify the container as you are iterating, that won't affect the loop. (If you don't modify the container, the copy still takes place, but thanks to <a href="shared.html#implicit-sharing">implicit sharing</a> copying a container is very fast.) Similarly, declaring the variable to be a non-const reference, in order to modify the current item in the list will not work either.</p>
+<p>In addition to <tt>foreach</tt>, Qt also provides a <tt>forever</tt> pseudo-keyword for infinite loops:</p>
+<pre>         forever {
+             ...
+         }</pre>
+<p>If you're worried about namespace pollution, you can disable these macros by adding the following line to your <tt>.pro</tt> file:</p>
+<pre>         CONFIG += no_keywords</pre>
+<a name="other-container-like-classes"></a>
+<h3>Other Container-Like Classes</h3>
+<p>Qt includes three template classes that resemble containers in some respects. These classes don't provide iterators and cannot be used with the <tt>foreach</tt> keyword.</p>
+<ul>
+<li><a href="qvarlengtharray.html">QVarLengthArray</a>&lt;T, Prealloc&gt; provides a low-level variable-length array. It can be used instead of <a href="qvector.html">QVector</a> in places where speed is particularly important.</li>
+<li><a href="qcache.html">QCache</a>&lt;Key, T&gt; provides a cache to store objects of a certain type T associated with keys of type Key.</li>
+<li><a href="qpair.html">QPair</a>&lt;T1, T2&gt; stores a pair of elements.</li>
+</ul>
+<p>Additional non-template types that compete with Qt's template containers are <a href="qbitarray.html">QBitArray</a>, <a href="qbytearray.html">QByteArray</a>, <a href="qstring.html">QString</a>, and <a href="qstringlist.html">QStringList</a>.</p>
+<a name="algorithmic-complexity"></a>
+<h3>Algorithmic Complexity</h3>
+<p>Algorithmic complexity is concerned about how fast (or slow) each function is as the number of items in the container grow. For example, inserting an item in the middle of a <a href="qlinkedlist.html">QLinkedList</a> is an extremely fast operation, irrespective of the number of items stored in the <a href="qlinkedlist.html">QLinkedList</a>. On the other hand, inserting an item in the middle of a <a href="qvector.html">QVector</a> is potentially very expensive if the <a href="qvector.html">QVector</a> contains many items, since half of the items must be moved one position in memory.</p>
+<p>To describe algorithmic complexity, we use the following terminology, based on the &quot;big Oh&quot; notation:</p>
+<a name="constant-time"></a><a name="logarithmic-time"></a><a name="linear-time"></a><a name="linear-logarithmic-time"></a><a name="quadratic-time"></a><ul>
+<li><b>Constant time:</b> O(1). A function is said to run in constant time if it requires the same amount of time no matter how many items are present in the container. One example is <a href="qlinkedlist.html#insert">QLinkedList::insert</a>().</li>
+<li><b>Logarithmic time:</b> O(log <i>n</i>). A function that runs in logarithmic time is a function whose running time is proportional to the logarithm of the number of items in the container. One example is <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>().</li>
+<li><b>Linear time:</b> O(<i>n</i>). A function that runs in linear time will execute in a time directly proportional to the number of items stored in the container. One example is <a href="qvector.html#insert">QVector::insert</a>().</li>
+<li><b>Linear-logarithmic time:</b> O(<i>n</i> log <i>n</i>). A function that runs in linear-logarithmic time is asymptotically slower than a linear-time function, but faster than a quadratic-time function.</li>
+<li><b>Quadratic time:</b> O(<i>n</i>²). A quadratic-time function executes in a time that is proportional to the square of the number of items stored in the container.</li>
+</ul>
+<p>The following table summarizes the algorithmic complexity of Qt's sequential container classes:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th></th><th>Index lookup</th><th>Insertion</th><th>Prepending</th><th>Appending</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qlinkedlist.html">QLinkedList</a>&lt;T&gt;</td><td>O(<i>n</i>)</td><td>O(1)</td><td>O(1)</td><td>O(1)</td></tr>
+<tr valign="top" class="even"><td><a href="qlist.html">QList</a>&lt;T&gt;</td><td>O(1)</td><td>O(n)</td><td>Amort. O(1)</td><td>Amort. O(1)</td></tr>
+<tr valign="top" class="odd"><td><a href="qvector.html">QVector</a>&lt;T&gt;</td><td>O(1)</td><td>O(n)</td><td>O(n)</td><td>Amort. O(1)</td></tr>
+</table></p>
+<p>In the table, &quot;Amort.&quot; stands for &quot;amortized behavior&quot;. For example, &quot;Amort. O(1)&quot; means that if you call the function only once, you might get O(<i>n</i>) behavior, but if you call it multiple times (e.g&#x2e;, <i>n</i> times), the average behavior will be O(1).</p>
+<p>The following table summarizes the algorithmic complexity of Qt's associative containers and sets:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th rowspan="2"></th><th colspan="2">Key lookup</th><th colspan="2">Insertion</th></tr>
+<tr valign="top" class="qt-style"><th>Average</th><th>Worst case</th><th>Average</th><th>Worst case</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qmap.html">QMap</a>&lt;Key, T&gt;</td><td>O(log <i>n</i>)</td><td>O(log <i>n</i>)</td><td>O(log <i>n</i>)</td><td>O(log <i>n</i>)</td></tr>
+<tr valign="top" class="even"><td><a href="qmultimap.html">QMultiMap</a>&lt;Key, T&gt;</td><td>O((log <i>n</i>)</td><td>O(log <i>n</i>)</td><td>O(log <i>n</i>)</td><td>O(log <i>n</i>)</td></tr>
+<tr valign="top" class="odd"><td><a href="qhash.html">QHash</a>&lt;Key, T&gt;</td><td>Amort. O(1)</td><td>O(<i>n</i>)</td><td>Amort. O(1)</td><td>O(<i>n</i>)</td></tr>
+<tr valign="top" class="even"><td><a href="qset.html">QSet</a>&lt;Key&gt;</td><td>Amort. O(1)</td><td>O(<i>n</i>)</td><td>Amort. O(1)</td><td>O(<i>n</i>)</td></tr>
+</table></p>
+<p>With <a href="qvector.html">QVector</a>, <a href="qhash.html">QHash</a>, and <a href="qset.html">QSet</a>, the performance of appending items is amortized O(log <i>n</i>). It can be brought down to O(1) by calling <a href="qvector.html#reserve">QVector::reserve</a>(), <a href="qhash.html#reserve">QHash::reserve</a>(), or <a href="qset.html#reserve">QSet::reserve</a>() with the expected number of items before you insert the items. The next section discusses this topic in more depth.</p>
+<a name="growth-strategies"></a>
+<h3>Growth Strategies</h3>
+<p><a href="qvector.html">QVector</a>&lt;T&gt;, <a href="qstring.html">QString</a>, and <a href="qbytearray.html">QByteArray</a> store their items contiguously in memory; <a href="qlist.html">QList</a>&lt;T&gt; maintains an array of pointers to the items it stores to provide fast index-based access (unless T is a pointer type or a basic type of the size of a pointer, in which case the value itself is stored in the array); <a href="qhash.html">QHash</a>&lt;Key, T&gt; keeps a hash table whose size is proportional to the number of items in the hash. To avoid reallocating the data every single time an item is added at the end of the container, these classes typically allocate more memory than necessary.</p>
+<p>Consider the following code, which builds a <a href="qstring.html">QString</a> from another <a href="qstring.html">QString</a>:</p>
+<pre>         QString onlyLetters(const QString &amp;in)
+         {
+             QString out;
+             for (int j = 0; j &lt; in.size(); ++j) {
+                 if (in[j].isLetter())
+                     out += in[j];
+             }
+             return out;
+         }</pre>
+<p>We build the string <tt>out</tt> dynamically by appending one character to it at a time. Let's assume that we append 15000 characters to the <a href="qstring.html">QString</a> string. Then the following 18 reallocations (out of a possible 15000) occur when <a href="qstring.html">QString</a> runs out of space: 4, 8, 12, 16, 20, 52, 116, 244, 500, 1012, 2036, 4084, 6132, 8180, 10228, 12276, 14324, 16372. At the end, the <a href="qstring.html">QString</a> has 16372 Unicode characters allocated, 15000 of which are occupied.</p>
+<p>The values above may seem a bit strange, but here are the guiding priciples:</p>
+<ul>
+<li><a href="qstring.html">QString</a> allocates 4 characters at a time until it reaches size 20.</li>
+<li>From 20 to 4084, it advances by doubling the size each time. More precisely, it advances to the next power of two, minus 12. (Some memory allocators perform worst when requested exact powers of two, because they use a few bytes per block for book-keeping.)</li>
+<li>From 4084 on, it advances by blocks of 2048 characters (4096 bytes). This makes sense because modern operating systems don't copy the entire data when reallocating a buffer; the physical memory pages are simply reordered, and only the data on the first and last pages actually needs to be copied.</li>
+</ul>
+<p><a href="qbytearray.html">QByteArray</a> and <a href="qlist.html">QList</a>&lt;T&gt; use more or less the same algorithm as <a href="qstring.html">QString</a>.</p>
+<p><a href="qvector.html">QVector</a>&lt;T&gt; also uses that algorithm for data types that can be moved around in memory using memcpy() (including the basic C++ types, the pointer types, and Qt's <a href="shared.html#shared-classes">shared classes</a>) but uses a different algorithm for data types that can only be moved by calling the copy constructor and a destructor. Since the cost of reallocating is higher in that case, <a href="qvector.html">QVector</a>&lt;T&gt; reduces the number of reallocations by always doubling the memory when running out of space.</p>
+<p><a href="qhash.html">QHash</a>&lt;Key, T&gt; is a totally different case. <a href="qhash.html">QHash</a>'s internal hash table grows by powers of two, and each time it grows, the items are relocated in a new bucket, computed as qHash(<i>key</i>) % <a href="qhash.html#capacity">QHash::capacity</a>() (the number of buckets). This remark applies to <a href="qset.html">QSet</a>&lt;T&gt; and <a href="qcache.html">QCache</a>&lt;Key, T&gt; as well.</p>
+<p>For most applications, the default growing algorithm provided by Qt does the trick. If you need more control, <a href="qvector.html">QVector</a>&lt;T&gt;, <a href="qhash.html">QHash</a>&lt;Key, T&gt;, <a href="qset.html">QSet</a>&lt;T&gt;, <a href="qstring.html">QString</a>, and <a href="qbytearray.html">QByteArray</a> provide a trio of functions that allow you to check and specify how much memory to use to store the items:</p>
+<ul>
+<li><a href="qstring.html#capacity">capacity()</a> returns the number of items for which memory is allocated (for <a href="qhash.html">QHash</a> and <a href="qset.html">QSet</a>, the number of buckets in the hash table).</li>
+<li><a href="qstring.html#reserve">reserve</a>(<i>size</i>) explicitly preallocates memory for <i>size</i> items.</li>
+<li><a href="qstring.html#squeeze">squeeze()</a> frees any memory not required to store the items.</li>
+</ul>
+<p>If you know approximately how many items you will store in a container, you can start by calling reserve(), and when you are done populating the container, you can call squeeze() to release the extra preallocated memory.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

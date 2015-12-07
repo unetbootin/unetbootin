@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/thread/qthread.cpp -->
+<head>
+  <title>Qt 4.4: QThread Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QThread Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QThread class provides platform-independent threads. <a href="#details">More...</a></p>
+<pre> #include &lt;QThread&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qt-fulltextsearch-clucene-qhelpsearchindexreader.html">qt::fulltextsearch::clucene::QHelpSearchIndexReader</a>, <a href="qt-fulltextsearch-clucene-qhelpsearchindexwriter.html">qt::fulltextsearch::clucene::QHelpSearchIndexWriter</a>, <a href="qt-fulltextsearch-std-qhelpsearchindexreader.html">qt::fulltextsearch::std::QHelpSearchIndexReader</a>, <a href="qt-fulltextsearch-std-qhelpsearchindexwriter.html">qt::fulltextsearch::std::QHelpSearchIndexWriter</a>, </p>
+<ul>
+<li><a href="qthread-members.html">List of all members, including inherited members</a></li>
+<li><a href="qthread-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qthread.html#Priority-enum">Priority</a></b> { IdlePriority, LowestPriority, LowPriority, NormalPriority, ..., InheritPriority }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qthread.html#QThread">QThread</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qthread.html#dtor.QThread">~QThread</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qthread.html#exit">exit</a></b> ( int <i>returnCode</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qthread.html#isFinished">isFinished</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qthread.html#isRunning">isRunning</a></b> () const</li>
+<li><div class="fn"/>Priority <b><a href="qthread.html#priority">priority</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qthread.html#setPriority">setPriority</a></b> ( Priority <i>priority</i> )</li>
+<li><div class="fn"/>void <b><a href="qthread.html#setStackSize">setStackSize</a></b> ( uint <i>stackSize</i> )</li>
+<li><div class="fn"/>uint <b><a href="qthread.html#stackSize">stackSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qthread.html#wait">wait</a></b> ( unsigned long <i>time</i> = ULONG_MAX )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qthread.html#quit">quit</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qthread.html#start">start</a></b> ( Priority = InheritPriority )</li>
+<li><div class="fn"/>void <b><a href="qthread.html#terminate">terminate</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qthread.html#finished">finished</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qthread.html#started">started</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qthread.html#terminated">terminated</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QThread * <b><a href="qthread.html#currentThread">currentThread</a></b> ()</li>
+<li><div class="fn"/>Qt::HANDLE <b><a href="qthread.html#currentThreadId">currentThreadId</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qthread.html#idealThreadCount">idealThreadCount</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qthread.html#exec">exec</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qthread.html#run">run</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="static-protected-members"></a>
+<h3>Static Protected Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qthread.html#msleep">msleep</a></b> ( unsigned long )</li>
+<li><div class="fn"/>void <b><a href="qthread.html#setTerminationEnabled">setTerminationEnabled</a></b> ( bool <i>enabled</i> = true )</li>
+<li><div class="fn"/>void <b><a href="qthread.html#sleep">sleep</a></b> ( unsigned long )</li>
+<li><div class="fn"/>void <b><a href="qthread.html#usleep">usleep</a></b> ( unsigned long )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QThread class provides platform-independent threads.</p>
+<p>A QThread represents a separate thread of control within the program; it shares data with all the other threads within the process but executes independently in the way that a separate program does on a multitasking operating system. Instead of starting in <tt>main()</tt>, QThreads begin executing in <a href="qthread.html#run">run</a>(). By default, <a href="qthread.html#run">run</a>() starts the event loop by calling <a href="qthread.html#exec">exec</a>() (see below). To create your own threads, subclass QThread and reimplement <a href="qthread.html#run">run</a>(). For example:</p>
+<pre>         class MyThread : public QThread
+         {
+         public:
+             void run();
+         };
+
+         void MyThread::run()
+         {
+             QTcpSocket socket;
+             // connect QTcpSocket's signals somewhere meaningful
+             ...
+             socket.connectToHost(hostName, portNumber);
+             exec();
+         }</pre>
+<p>This will create a <a href="qtcpsocket.html">QTcpSocket</a> in the thread and then execute the thread's event loop. Use the <a href="qthread.html#start">start</a>() method to begin execution. Execution ends when you return from <a href="qthread.html#run">run</a>(), just as an application does when it leaves main(). QThread will notifiy you via a signal when the thread is <a href="qthread.html#started">started</a>(), <a href="qthread.html#finished">finished</a>(), and <a href="qthread.html#terminated">terminated</a>(), or you can use <a href="qthread.html#isFinished">isFinished</a>() and <a href="qthread.html#isRunning">isRunning</a>() to query the state of the thread. Use <a href="qthread.html#wait">wait</a>() to block until the thread has finished execution.</p>
+<p>Each thread gets its own stack from the operating system. The operating system also determines the default size of the stack. You can use <a href="qthread.html#setStackSize">setStackSize</a>() to set a custom stack size.</p>
+<p>Each QThread can have its own event loop. You can start the event loop by calling <a href="qthread.html#exec">exec</a>(); you can stop it by calling <a href="qthread.html#exit">exit</a>() or <a href="qthread.html#quit">quit</a>(). Having an event loop in a thread makes it possible to connect signals from other threads to slots in this threads, using a mechanism called <a href="qt.html#ConnectionType-enum">queued connections</a>. It also makes it possible to use classes that require the event loop, such as <a href="qtimer.html">QTimer</a> and <a href="qtcpsocket.html">QTcpSocket</a>, in the thread. Note, however, that is is not possible to use any widget classes in the thread.</p>
+<p>In extreme cases, you may want to forcibly <a href="qthread.html#terminate">terminate</a>() an executing thread. However, doing so is dangerous and discouraged. Please read the documentation for <a href="qthread.html#terminate">terminate</a>() and <a href="qthread.html#setTerminationEnabled">setTerminationEnabled</a>() for detailed information.</p>
+<p>The static functions <a href="qthread.html#currentThreadId">currentThreadId</a>() and <a href="qthread.html#currentThread">currentThread</a>() return identifiers for the currently executing thread. The former returns a platform specific ID for the thread; the latter returns a QThread pointer.</p>
+<p>QThread also provides platform independent sleep functions in varying resolutions. Use <a href="qthread.html#sleep">sleep</a>() for full second resolution, <a href="qthread.html#msleep">msleep</a>() for millisecond resolution, and <a href="qthread.html#usleep">usleep</a>() for microsecond resolution.</p>
+<p>See also <a href="threads.html">Thread Support in Qt</a>, <a href="qthreadstorage.html">QThreadStorage</a>, <a href="qmutex.html">QMutex</a>, <a href="qsemaphore.html">QSemaphore</a>, QWaitCondition, <a href="threads-mandelbrot.html">Mandelbrot Example</a>, <a href="threads-semaphores.html">Semaphores Example</a>, and <a href="threads-waitconditions.html">Wait Conditions Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Priority-enum"></a>enum QThread::Priority</h3>
+<p>This enum type indicates how the operating system should schedule newly created threads.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QThread::IdlePriority</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">scheduled only when no other threads are running.</td></tr>
+<tr><td valign="top"><tt>QThread::LowestPriority</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">scheduled less often than LowPriority.</td></tr>
+<tr><td valign="top"><tt>QThread::LowPriority</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">scheduled less often than NormalPriority.</td></tr>
+<tr><td valign="top"><tt>QThread::NormalPriority</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">the default priority of the operating system.</td></tr>
+<tr><td valign="top"><tt>QThread::HighPriority</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">scheduled more often than NormalPriority.</td></tr>
+<tr><td valign="top"><tt>QThread::HighestPriority</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">scheduled more often than HighPriority.</td></tr>
+<tr><td valign="top"><tt>QThread::TimeCriticalPriority</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">scheduled as often as possible.</td></tr>
+<tr><td valign="top"><tt>QThread::InheritPriority</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">use the same priority as the creating thread. This is the default.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QThread"></a>QThread::QThread ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new thread with the given <i>parent</i>. The thread does not begin executing until <a href="qthread.html#start">start</a>() is called.</p>
+<p>See also <a href="qthread.html#start">start</a>().</p>
+<h3 class="fn"><a name="dtor.QThread"></a>QThread::~QThread ()</h3>
+<p>Destroys the thread.</p>
+<p>Note that deleting a <a href="qthread.html">QThread</a> object will not stop the execution of the thread it represents. Deleting a running <a href="qthread.html">QThread</a> (i.e&#x2e; <a href="qthread.html#isFinished">isFinished</a>() returns false) will probably result in a program crash. You can <a href="qthread.html#wait">wait</a>() on a thread to make sure that it has finished.</p>
+<h3 class="fn"><a name="currentThread"></a>QThread * QThread::currentThread ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a pointer to a <a href="qthread.html">QThread</a> which represents the currently executing thread.</p>
+<h3 class="fn"><a name="currentThreadId"></a><a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> QThread::currentThreadId ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="exec"></a>int QThread::exec ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Enters the event loop and waits until <a href="qthread.html#exit">exit</a>() is called, returning the value that was passed to <a href="qthread.html#exit">exit</a>(). The value returned is 0 if <a href="qthread.html#exit">exit</a>() is called via <a href="qthread.html#quit">quit</a>().</p>
+<p>It is necessary to call this function to start event handling.</p>
+<p>See also <a href="qthread.html#quit">quit</a>() and <a href="qthread.html#exit">exit</a>().</p>
+<h3 class="fn"><a name="exit"></a>void QThread::exit ( int <i>returnCode</i> = 0 )</h3>
+<p>Tells the thread's event loop to exit with a return code.</p>
+<p>After calling this function, the thread leaves the event loop and returns from the call to <a href="qeventloop.html#exec">QEventLoop::exec</a>(). The <a href="qeventloop.html#exec">QEventLoop::exec</a>() function returns <i>returnCode</i>.</p>
+<p>By convention, a <i>returnCode</i> of 0 means success, any non-zero value indicates an error.</p>
+<p>Note that unlike the C library function of the same name, this function <i>does</i> return to the caller -- it is event processing that stops.</p>
+<p>This function does nothing if the thread does not have an event loop.</p>
+<p>See also <a href="qthread.html#quit">quit</a>() and <a href="qeventloop.html">QEventLoop</a>.</p>
+<h3 class="fn"><a name="finished"></a>void QThread::finished ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the thread has finished executing.</p>
+<p>See also <a href="qthread.html#started">started</a>() and <a href="qthread.html#terminated">terminated</a>().</p>
+<h3 class="fn"><a name="idealThreadCount"></a>int QThread::idealThreadCount ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="isFinished"></a>bool QThread::isFinished () const</h3>
+<p>Returns true is the thread is finished; otherwise returns false.</p>
+<p>See also <a href="qthread.html#isRunning">isRunning</a>().</p>
+<h3 class="fn"><a name="isRunning"></a>bool QThread::isRunning () const</h3>
+<p>Returns true if the thread is running; otherwise returns false.</p>
+<p>See also <a href="qthread.html#isFinished">isFinished</a>().</p>
+<h3 class="fn"><a name="msleep"></a>void QThread::msleep ( unsigned long )&nbsp;&nbsp;<tt> [static protected]</tt></h3>
+<h3 class="fn"><a name="priority"></a><a href="qthread.html#Priority-enum">Priority</a> QThread::priority () const</h3>
+<p>Returns the priority for a running thread. If the thread is not running, this function returns <tt>InheritPriority</tt>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qthread.html#Priority-enum">Priority</a>, <a href="qthread.html#setPriority">setPriority</a>(), and <a href="qthread.html#start">start</a>().</p>
+<h3 class="fn"><a name="quit"></a>void QThread::quit ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Tells the thread's event loop to exit with return code 0 (success). Equivalent to calling QThread::exit(0).</p>
+<p>This function does nothing if the thread does not have an event loop.</p>
+<p>See also <a href="qthread.html#exit">exit</a>() and <a href="qeventloop.html">QEventLoop</a>.</p>
+<h3 class="fn"><a name="run"></a>void QThread::run ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>The starting point for the thread. After calling <a href="qthread.html#start">start</a>(), the newly created thread calls this function. The default implementation simply calls <a href="qthread.html#exec">exec</a>().</p>
+<p>You can reimplemented this function to do other useful work. Returning from this method will end the execution of the thread.</p>
+<p>See also <a href="qthread.html#start">start</a>() and <a href="qthread.html#wait">wait</a>().</p>
+<h3 class="fn"><a name="setPriority"></a>void QThread::setPriority ( <a href="qthread.html#Priority-enum">Priority</a> <i>priority</i> )</h3>
+<p>This function sets the <i>priority</i> for a running thread. If the thread is not running, this function does nothing and returns immediately. Use <a href="qthread.html#start">start</a>() to start a thread with a specific priority.</p>
+<p>The <i>priority</i> argument can be any value in the <tt>QThread::Priority</tt> enum except for <tt>InheritPriorty</tt>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qthread.html#Priority-enum">Priority</a>, <a href="qthread.html#priority">priority</a>(), and <a href="qthread.html#start">start</a>().</p>
+<h3 class="fn"><a name="setStackSize"></a>void QThread::setStackSize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>stackSize</i> )</h3>
+<p>Sets the maximum stack size for the thread to <i>stackSize</i>. If <i>stackSize</i> is greater than zero, the maximum stack size is set to <i>stackSize</i> bytes, otherwise the maximum stack size is automatically determined by the operating system.</p>
+<p><b>Warning:</b> Most operating systems place minimum and maximum limits on thread stack sizes. The thread will fail to start if the stack size is outside these limits.</p>
+<p>See also <a href="qthread.html#stackSize">stackSize</a>().</p>
+<h3 class="fn"><a name="setTerminationEnabled"></a>void QThread::setTerminationEnabled ( bool <i>enabled</i> = true )&nbsp;&nbsp;<tt> [static protected]</tt></h3>
+<h3 class="fn"><a name="sleep"></a>void QThread::sleep ( unsigned long )&nbsp;&nbsp;<tt> [static protected]</tt></h3>
+<h3 class="fn"><a name="stackSize"></a><a href="qtglobal.html#uint-typedef">uint</a> QThread::stackSize () const</h3>
+<p>Returns the maximum stack size for the thread (if set with <a href="qthread.html#setStackSize">setStackSize</a>()); otherwise returns zero.</p>
+<p>See also <a href="qthread.html#setStackSize">setStackSize</a>().</p>
+<h3 class="fn"><a name="start"></a>void QThread::start ( <a href="qthread.html#Priority-enum">Priority</a> = InheritPriority )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="started"></a>void QThread::started ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the thread starts executing.</p>
+<p>See also <a href="qthread.html#finished">finished</a>() and <a href="qthread.html#terminated">terminated</a>().</p>
+<h3 class="fn"><a name="terminate"></a>void QThread::terminate ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="terminated"></a>void QThread::terminated ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the thread is terminated.</p>
+<p>See also <a href="qthread.html#started">started</a>() and <a href="qthread.html#finished">finished</a>().</p>
+<h3 class="fn"><a name="usleep"></a>void QThread::usleep ( unsigned long )&nbsp;&nbsp;<tt> [static protected]</tt></h3>
+<h3 class="fn"><a name="wait"></a>bool QThread::wait ( unsigned long <i>time</i> = ULONG_MAX )</h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

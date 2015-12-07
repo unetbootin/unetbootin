@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Creating Custom Widget Extensions</title>
+  <link rel="prev" href="designer-creating-custom-widgets.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-ui-file-format.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-ui-file-format.html">Qt Designer's UI File Format</a>]
+</p>
+<h1 class="title">Creating Custom Widget Extensions<br /><span class="subtitle"></span>
+</h1>
+<p>Once you have a custom widget plugin for <i>Qt Designer</i>, you can provide it with the expected behavior and functionality within <i>Qt Designer</i>'s workspace, using custom widget extensions.</p>
+<ul><li><a href="#extension-types">Extension Types</a></li>
+<li><a href="#creating-an-extension">Creating an Extension</a></li>
+<li><a href="#exposing-an-extension-to-qt-designer">Exposing an Extension to Qt Designer</a></li>
+<ul><li><a href="#creating-an-extension-factory">Creating an Extension Factory</a></li>
+<li><a href="#accessing-qt-designer-s-extension-manager">Accessing Qt Designer's Extension Manager</a></li>
+</ul>
+<li><a href="#related-examples">Related Examples</a></li>
+</ul>
+<a name="extension-types"></a>
+<h2>Extension Types</h2>
+<p>There are several available types of extensions in <i>Qt Designer</i>. You can use all the extensions following the same pattern, only replacing the respective extension base class.</p>
+<p><a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a> is useful for custom widgets while <a href="qdesignercontainerextension.html">QDesignerContainerExtension</a> is necessary when implementing a custom multi-page container.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-manual-taskmenuextension.png" /></td><td><b><a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a></b><p><a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a> provides an extension that allows you to add custom menu entries to <i>Qt Designer</i>'s task menu.</p>
+<p>See also the <a href="designer-taskmenuextension.html">Task Menu Extension</a> example.</p>
+</td></tr>
+<tr valign="top" class="even"><td><img src="images/designer-manual-containerextension.png" /></td><td><b><a href="qdesignercontainerextension.html">QDesignerContainerExtension</a></b><p><a href="qdesignercontainerextension.html">QDesignerContainerExtension</a> provides an extension that allows you to add (and delete) pages to a multi-page container plugin in <i>Qt Designer</i>.</p>
+<p>See also the <a href="designer-containerextension.html">Container Extension</a> example.</p>
+<p><b>Note:</b> It is not possible to add custom per-page properties to certain widgets (e.g&#x2e;, <a href="qtabwidget.html">QTabWidget</a>) due to the way they are implemented. This limitation will be addressed in future versions of Qt.</p>
+</td></tr>
+</table></p>
+<p>The usage of <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a> and <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a> is more rare, but the classes enables you to manipulate the appearance of class members within <i>Qt Designer</i>'s workspace.</p>
+<p><table width="100 %" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-manual-membersheetextension.png" /></td><td><b><a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a></b><p>The <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a> class allows you to manipulate a widget's member functions displayed when connecting signals and slots.</p>
+</td></tr>
+<tr valign="top" class="even"><td><img src="images/designer-manual-propertysheetextension.png" /></td><td><b><a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a>, <a href="qdesignerdynamicpropertysheetextension.html">QDesignerDynamicPropertySheetExtension</a></b><p>These extension classes allow you to manipulate a widget's properties displayed in <i>Qt Designer</i>'s property editor.</p>
+</td></tr>
+<tr valign="top" class="odd"><td></td><td><b>QDesignerScriptExtension</b><p>The QDesignerScriptExtension class allows you to define script snippets that are executed when a form is loaded. The extension is primarily intended to be used to set up the internal states of custom widgets.</p>
+</td></tr>
+</table></p>
+<p><i>Qt Designer</i> uses the <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a> and the <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a> classes to feed its property and signal and slot editors. Whenever a widget is selected in its workspace, <i>Qt Designer</i> will query for the widget's property sheet extension, and whenever a connection between two widgets is requested, <i>Qt Designer</i> will query for the widgets' member sheet extensions.</p>
+<p><b>Warning:</b> All widgets have default property and member sheets. But if you implement custom property sheet or member sheet extensions, these extensions will override the default sheets.</p>
+<a name="creating-an-extension"></a>
+<h2>Creating an Extension</h2>
+<p>To create an extension you must inherit both <a href="qobject.html">QObject</a> and the appropriate base class, and reimplement its functions. Since we are implementing an interface, we must ensure that it's made known to the meta object system using the <a href="qobject.html#Q_INTERFACES">Q_INTERFACES</a>() macro in the extension class's definition. For example:</p>
+<pre>     class MyExtension: public QObject,
+                        public QdesignerContainerExtension
+     {
+         Q_OBJECT
+         Q_INTERFACE(QDesignerContainerExtension)
+
+         ...
+     }</pre>
+<p>This enables <i>Qt Designer</i> to use the <a href="qobject.html#qobject_cast">qobject_cast</a>() function to query for supported interfaces using nothing but a <a href="qobject.html">QObject</a> pointer.</p>
+<a name="exposing-an-extension-to-qt-designer"></a>
+<h2>Exposing an Extension to Qt Designer</h2>
+<p>In <i>Qt Designer</i> the extensions are not created until they are required. For that reason, when implementing extensions, you must subclass <a href="qextensionfactory.html">QExtensionFactory</a> to create a class that is able to make instances of your extensions. In addition you must register your factory with <i>Qt Designer</i>'s extension manager; the extension manager controls the construction of extensions as they are required.</p>
+<p>When an extension is requested, <i>Qt Designer</i>'s extension manager will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until it finds one that is able to create the requested extension for the selected widget. This factory will then make an instance of the extension.</p>
+<p align="center"><img src="images/qtdesignerextensions.png" /></p><a name="creating-an-extension-factory"></a>
+<h3>Creating an Extension Factory</h3>
+<p>The <a href="qextensionfactory.html">QExtensionFactory</a> class provides a standard extension factory, but can also be used as an interface for custom extension factories. The purpose is to reimplement the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function, making it able to create your extension, such as a <a href="designer-containerextension.html">MultiPageWidget</a> container extension.</p>
+<p>You can either create a new <a href="qextensionfactory.html">QExtensionFactory</a> and reimplement the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function:</p>
+<pre>         QObject *ANewExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             if (iid != Q_TYPEID(QDesignerContainerExtension))
+                 return 0;
+
+             if (MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;
+                     (object))
+                 return new MyContainerExtension(widget, parent);
+
+             return 0;
+         }</pre>
+<p>or you can use an existing factory, expanding the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function to enable the factory to create your custom extension as well:</p>
+<pre>         QObject *AGeneralExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;(object);
+
+             if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerTaskMenuExtension))) {
+                  return new MyTaskMenuExtension(widget, parent);
+
+             } else if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerContainerExtension))) {
+                 return new MyContainerExtension(widget, parent);
+
+             } else {
+                 return 0;
+             }
+         }</pre>
+<a name="accessing-qt-designer-s-extension-manager"></a>
+<h3>Accessing Qt Designer's Extension Manager</h3>
+<p>When implementing a custom widget plugin, you must subclass the <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> to expose your plugin to Qt Designer. This is covered in more detail in the <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a> section. The registration of an extension factory is typically made in the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function:</p>
+<pre>     void MyPlugin::initialize(QDesignerFormEditorInterface *formEditor)
+     {
+         if (initialized)
+             return;
+
+         QExtensionManager *manager = formEditor-&gt;extensionManager();
+         Q_ASSERT(manager != 0);
+
+         manager-&gt;registerExtensions(new MyExtensionFactory(manager),
+                                     Q_TYPEID(QDesignerTaskMenuExtension));
+
+         initialized = true;
+     }</pre>
+<p>The <tt>formEditor</tt> parameter in the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function is a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object. You must use the <a href="qdesignerformeditorinterface.html#extensionManager">QDesignerFormEditorInterface::extensionManager</a>() function to retrieve an interface to <i>Qt Designer</i>'s extension manager. Then you use the <a href="qextensionmanager.html#registerExtensions">QExtensionManager::registerExtensions</a>() function to register your custom extension factory.</p>
+<a name="related-examples"></a>
+<h2>Related Examples</h2>
+<p>Please see the <a href="designer-taskmenuextension.html">Task Menu Extension</a> and <a href="designer-containerextension.html">Container Extension</a> examples for more information about creating custom widget extensions in <i>Qt Designer</i>.</p>
+<p>
+[Previous: <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-ui-file-format.html">Qt Designer's UI File Format</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

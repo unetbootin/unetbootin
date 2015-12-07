@@ -1,0 +1,71 @@
+/*
+ * Copyright (C) 2006 Apple Computer, Inc.
+ * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module html {
+
+    interface [LegacyParent=JSHTMLInputElementBase, GenerateConstructor] HTMLInputElement : HTMLElement {
+                 attribute [ConvertNullToNullString] DOMString defaultValue;
+                 attribute boolean         defaultChecked;
+        readonly attribute HTMLFormElement form;
+                 attribute [ConvertNullToNullString] DOMString accept;
+                 attribute [ConvertNullToNullString] DOMString accessKey;
+                 attribute [ConvertNullToNullString] DOMString align;
+                 attribute [ConvertNullToNullString] DOMString alt;
+                 attribute boolean         checked;
+                 attribute boolean         disabled;
+                 attribute long            maxLength;
+                 attribute [ConvertNullToNullString] DOMString name;
+                 attribute boolean         readOnly;
+#if defined(LANGUAGE_OBJECTIVE_C)
+                 attribute [ConvertToString] DOMString size; // DOM level 2 changed this to a long, but our existing API is a string
+#else
+                 attribute unsigned long   size; // Changed string -> long as part of DOM level 2
+#endif
+                 attribute [ConvertNullToNullString] DOMString src;
+                 attribute long            tabIndex;
+                 attribute [ConvertNullToNullString] DOMString type; // readonly dropped as part of DOM level 2
+                 attribute [ConvertNullToNullString] DOMString useMap;
+                 attribute [ConvertNullToNullString] DOMString value;
+        
+        void               blur();
+        void               focus();
+        void               select();
+        void               click();
+        
+        // WinIE extension:
+                 attribute boolean         indeterminate;
+        
+        // WinIE & FireFox extension:
+        
+        // Handled by JSHTMLInputElementBase to allow hiding based on input type
+#if !defined(LANGUAGE_JAVASCRIPT)
+                 attribute long            selectionStart;
+                 attribute long            selectionEnd;
+        void               setSelectionRange(in long start, in long end);
+#endif
+
+#if defined(LANGUAGE_OBJECTIVE_C)
+        // Objective-C extension:
+        readonly attribute DOMString       altDisplayString;
+        readonly attribute URL             absoluteImageURL;
+#endif
+    };
+
+}

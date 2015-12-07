@@ -1,0 +1,170 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example phonon/capabilities
+    \title Capabilities Example
+
+    The Backend Capabilities example shows how to check which MIME
+    types, audio devices, and audio effects are available.
+
+    \image capabilitiesexample.png
+
+    Phonon does not implement the multimedia functionality itself, but
+    relies on a backend to manage this. The backends do not manage the
+    hardware directly, but use intermediate technologies: QuickTime on
+    Mac, GStreamer on Linux, and DirectShow (which requires DirectX)
+    on Windows. 
+
+    The user may add support for new MIME types and effects to these
+    systems, and the systems abilities may also be different. The
+    support for multimedia MIME types, and audio effects in Phonon
+    will therefore vary from system to system.
+
+    Backends informs the programmer about current capabilities through
+    an implementation of the Phonon::BackendCapabilities namespace.
+    The backend reports which MIME types can be played back, which
+    audio effects are available, and which sound devices are available
+    on the system. When the capabilities of a backend changes, it will
+    emit the
+    \l{Phonon::BackendCapabilities::Notifier::}{capabilitiesChanged()}
+    signal.
+
+    The example consists of one class, \c Window, which displays
+    capabilities information from the current backend used by Phonon.
+
+    See the \l{Phonon Overview} for a high-level introduction to
+    Phonon.
+
+    \section1 Window Class Definition
+
+    The \c Window class queries the Phonon backend for its
+    capabilities. The results are presented in a GUI consisting of
+    standard Qt widgets. We will now take a tour of the Phonon related
+    parts of both the definition and implementation of the \c Window
+    class.
+
+    \snippet phonon/capabilities/window.h windowMembers
+
+    We need the slot to notice changes in the backends capabilities. 
+
+    \c mimeListWidget and \c devicesListView lists MIME types and
+    audio devices. The \c effectsTreeWidget lists audio effects, and
+    expands to show their parameters.
+
+    The \c setupUi() and \c setupBackendBox() private utility
+    functions create the widgets and lays them out. We skip these
+    functions while discussing the implementation because they do not
+    contain Phonon relevant code.
+
+    \section1 Window Class Implementation
+
+    Our examination starts with a look at the constructor:
+
+    \snippet phonon/capabilities/window.cpp constructor
+
+    After creating the user interface, we call \c updateWidgets(),
+    which will fill the widgets with the information we get from the
+    backend. We then connect the slot to the
+    \l{Phonon::BackendCapabilities::Notifier::}{capabilitiesChanged()}
+    and
+    \l{Phonon::BackendCapabilities::Notifier::availableAudioOutputDevicesChanged()}{availableAudioOutputDevicesChanged()}
+    signals in case the backend's abilities changes while the example
+    is running. The signal is emitted by a
+    Phonon::BackendCapabilities::Notifier object, which listens for
+    changes in the backend.
+
+    In the \c updateWidgets() function, we query the backend for
+    information it has about its abilities and present it in the GUI
+    of \c Window. We dissect it here:
+
+    \snippet phonon/capabilities/window.cpp outputDevices
+
+    The
+    \l{Phonon::BackendCapabilities::}{availableAudioOutputDevicesChanged()}
+    function is a member of the Phonon::BackendCapabilities namespace.
+    It returns a list of \l{Phonon::}{AudioOutputDevice}s, which gives
+    us information about a particular device, e.g., a sound card or a
+    USB headset.
+
+    Note that \l{Phonon::}{AudioOutputDevice} and also
+    \l{Phonon::}{EffectDescription}, which is described shortly, are
+    typedefs of \l{Phonon::}{ObjectDescriptionType}.
+
+    The \l{Phonon::}{ObjectDescriptionModel} is a convenience
+    model that displays the names of the devices. Their
+    descriptions are shown as tooltips and disabled devices are
+    shown in gray.
+
+    \snippet phonon/capabilities/window.cpp mimeTypes
+
+    The MIME types supported are given as strings in a QStringList. We
+    can therefore create a list widget item with the string, and
+    append it to the \c mimeListWidget, which displays the available
+    MIME types.
+
+    \snippet phonon/capabilities/window.cpp effects
+
+    As before we add the description and name to our widget, which in
+    this case is a QTreeWidget. A particular effect may also have
+    parameters, which are inserted in the tree as child nodes of their
+    effect.
+
+    \snippet phonon/capabilities/window.cpp effectsParameters
+
+    The parameters are only accessible through an instance of the
+    \l{Phonon::}{Effect} class. Notice that an effect is created
+    with the effect description.
+
+    The \l{Phonon::}{EffectParameter} contains information about one
+    of an effects parameters. We pick out some of the information to
+    describe the parameter in the tree widget.
+
+    \section1 The main() function
+
+    Because Phonon uses D-Bus on Linux, it is necessary to give the
+    application a name. You do this with
+    \l{QCoreApplication::}{setApplicationName()}.
+
+    \snippet phonon/capabilities/main.cpp everything
+*/

@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/linguist-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Linguist Manual: Translators</title>
+  <link rel="prev" href="linguist-manager.html" />
+  <link rel="contents" href="linguist-manual.html" />
+  <link rel="next" href="linguist-programmers.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="linguist-manager.html">Qt Linguist Manual: Release Manager</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-programmers.html">Qt Linguist Manual: Programmers</a>]
+</p>
+<h1 class="title">Qt Linguist Manual: Translators<br /><span class="subtitle"></span>
+</h1>
+<p>Contents</p>
+<ul><li><a href="#the-one-minute-guide-to-using-qt-linguist">The One Minute Guide to Using Qt Linguist</a></li>
+<li><a href="#qt-linguist-s-main-window">Qt Linguist's Main Window</a></li>
+<ul><li><a href="#context-list">Context List</a></li>
+<li><a href="#string-list">String List</a></li>
+<li><a href="#translation-area">Translation Area</a></li>
+<li><a href="#phrases-and-guesses-window">Phrases and Guesses Window</a></li>
+<li><a href="#source-code-window">Source Code Window</a></li>
+<li><a href="#warnings-window">Warnings Window</a></li>
+</ul>
+<li><a href="#common-tasks">Common Tasks</a></li>
+<ul><li><a href="#leaving-a-translation-for-later">Leaving a Translation for Later</a></li>
+<li><a href="#phrases-that-require-multiple-translations-depending-on-context">Phrases That Require Multiple Translations Depending on Context</a></li>
+<li><a href="#changing-keyboard-accelerators">Changing Keyboard Accelerators</a></li>
+<li><a href="#dealing-with-phrases-that-contain-variables">Dealing with Phrases That Contain Variables</a></li>
+<li><a href="#reusing-translations">Reusing Translations</a></li>
+<li><a href="#showing-auxiliary-translations">Showing Auxiliary Translations</a></li>
+<li><a href="#changing-the-target-locale">Changing the Target Locale</a></li>
+</ul>
+<li><a href="#phrase-books">Phrase Books</a></li>
+<ul><li><a href="#creating-and-editing-phrase-books">Creating and Editing Phrase Books</a></li>
+<li><a href="#shortcuts-for-editing-phrase-books">Shortcuts for Editing Phrase Books</a></li>
+<li><a href="#batch-translation">Batch Translation</a></li>
+</ul>
+<li><a href="#validation">Validation</a></li>
+<li><a href="#form-preview">Form Preview</a></li>
+<li><a href="#qt-linguist-reference">Qt Linguist Reference</a></li>
+<ul><li><a href="#message-states">Message States</a></li>
+<li><a href="#context-states">Context States</a></li>
+<li><a href="#file-types">File Types</a></li>
+<li><a href="#the-menu-bar">The Menu Bar</a></li>
+<li><a href="#the-toolbar">The Toolbar</a></li>
+</ul>
+</ul>
+<a name="the-one-minute-guide-to-using-qt-linguist"></a>
+<h2>The One Minute Guide to Using Qt Linguist</h2>
+<p><i>Qt Linguist</i> is a tool for adding translations to Qt applications. To start, run <i>Qt Linguist</i>, either from the taskbar menu, or by double clicking the desktop icon, or type <tt>linguist</tt> (followed by <b>Enter</b>) at the command line. Once <i>Qt Linguist</i> has started choose <b>File|Open</b> from the menu bar and select a <tt>.ts</tt> translation source file to work on. If you do not have a <tt>.ts</tt> file to work on, see <a href="linguist-manager.html">the release manager manual</a> on how to generate one.</p>
+<p>By default, <i>Qt Linguist</i>'s main window is divided into four main areas. The left hand side contains the Context List, the top right shows the String List, the middle right is the Translation Area and the bottom right shows either the Phrases and Guesses Window, the Source Code Window or the Warnings Window. We will describe them all in detail later.</p>
+<p>First open a translation file choosing <b>File|Open..&#x2e;</b> in the menu bar. Click on one of the contexts in the Context List (left hand side) and then click on one of the phrases that appears in the String List (top right). The phrase will be copied into the Translation Area (middle right). Click under the word 'translation' and type in the translation. Press <b>Ctrl+Enter</b> (Done &amp; Next) to confirm that you have completed the translation and to move on to the next phrase that requires translation. The cycle of entering a translation and pressing <b>Ctrl+Enter</b> can be repeated until all the translations are done or until you finish the session.</p>
+<p>Additional help for the translation is provided in the area at the bottom right: If you activate the Phrases and Guesses Window (e.g&#x2e; by clicking on its tab), <i>Qt Linguist</i> will show possible translations from open phrase books and previous translations. Each has a keyboard shortcut, e.g&#x2e; <b>Ctrl+1</b>, <b>Ctrl+2</b>, etc., which you can use to copy the guess into the Translation Area. (Mouse users can double click a phrase or guess to move it into the Translation Area.) <i>Qt Linguist</i> can also check for you if the source and the translation obey certain consistency rules: The results are shown in the Warnings Window. Finally, if you have the source code of the program to translate available, the Source Code Window can help you to get to know the context where a translation is used.</p>
+<p>At the end of the session choose <b>File|Save</b> from the menu bar and then <b>File|Exit</b> to quit.</p>
+<a name="qt-linguist-s-main-window"></a>
+<h2>Qt Linguist's Main Window</h2>
+<p align="center"><img src="images/linguist-linguist.png" /></p><p>The main window of <i>Qt Linguist</i> is divided into different sub windows: The <a href="#context-list">Context List</a>, <a href="#string-list">String List</a>, <a href="#translation-area">Translation Area</a>, <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>, <a href="#source-code-window">Source Code Window</a> and <a href="#warnings-window">Warnings Window</a>. On first startup the sub windows are arranged as shown in the image above. Activate/deactivate the individual windows through the <b>View|Views</b> menu and arrange them by dragging their title bar.</p>
+<a name="context-list"></a>
+<h3>Context List</h3>
+<p>This appears at the left hand side of the main window by default. The first column identifies whether or not the translations for the context have been done. A tick indicates that all the translations have been done. Otherwise a question mark is shown. Note that a greyed out tick indicates an obsolete translation context, i.e&#x2e; a context that was translated in a previous version of the application but which does not occur in the new version. See also <a href="#context-states">Context States</a>.</p>
+<p>The second column, 'Context' is the name of the context in which the translation phrases appear. The third column, 'Items' shows two numbers, the first is the number of translations that have been done, and the second is the number of phrases that are in the context; if the numbers are equal then all the translations have been done. Click on the appropriate header to sort the Context List either by the status, the name or the number of items in a context.</p>
+<p>The Context List is a dockable window so it can be dragged to another position in the main window, or dragged out of the main window to be a window in its own right. If you move the Context List, <i>Qt Linguist</i> will remember its position and restore it whenever you start the program. If the dock has been closed or is hidden it can be made visible by pressing <b>F6</b>.</p>
+<a name="string-list"></a>
+<h3>String List</h3>
+<p>This appears at the top right of the main window by default. The first column signifies the status of the translation. A tick indicates that the phrase has been translated and is finished: If it is grey, the translation is obsolete. A yellow tick marks a finished translation which does not pass the automatic validation tests (see <a href="#validation">Validation</a>). Other finished translations have a green tick. A question mark indicates that the translation has not been done. An exclamation mark indicates that the translation is unfinished and has failed validation. See also <a href="#message-states">Message States</a>. The second column 'Source text' shows the text that must be translated. The third column shows the translation.</p>
+<p>The String List is a dockable window. If it has been closed or is hidden it can be made visible by pressing <b>F7</b>.</p>
+<a name="translation-area"></a>
+<h3>Translation Area</h3>
+<p>This area appears at the middle right of the main window by default. At the top is the text to translate under the label &quot;Source text&quot;, at the bottom the input field or (in the case of plural forms) multiple input fields for editing the translations. The number of fields, as well as their description, depend on the language to translate to. See also <a href="#changing-the-target-locale">Changing the Target Locale</a>.</p>
+<p>The programmer can provide additional information about a certain translation. If available, this information will appear right beneath the source text on a light blue background. Furthermore, you can display auxiliary translations: These are translations of the same source text in other languages, and are displayed above the translation input fields. The fields are only visible in case you explicitly loaded an auxiliary translation file, and the file actually contains a translation for the source text (see <a href="#showing-auxiliary-translations">Auxiliary Translations</a>).</p>
+<a name="phrases-and-guesses-window"></a>
+<h3>Phrases and Guesses Window</h3>
+<p>This window appears at the bottom right of the main window by default. If the text to translate is in one of the phrase books that has been loaded, the phrase will appear in this window with its translation. If the phrase is the same or similar to another phrase that has already been translated the phrase and translation will be shown in this window. To copy a translation from the Phrases and Guesses Window press <b>F10</b> to move to the Phrases and Guesses Window, use the up and down arrow keys to move to the phrase you want to use and press Enter to copy it. If you decide that you don't want to copy a phrase after all, press <i>Esc</i>. In both cases the focus will return to the <a href="#translation-area">Translation Area</a>. Alternatively, double click the translation you want to use and it will be copied into the <a href="#translation-area">Translation Area</a>.</p>
+<p>The Phrases and Guesses Window is a dockable window. If it has been closed or is hidden it can be made visible by pressing <b>F10</b>.</p>
+<a name="source-code-window"></a>
+<h3>Source Code Window</h3>
+<p>This window appears at the bottom right of the main window by default. If the appropriate files are available locally, the window shows the context of the source code the source text was extracted from. The corresponding line is centered vertically, and highlighted. If the file containing the source code is not available, or not at the expected folder, an error message containing the expected absolute file path is shown.</p>
+<p>The Source Code Window is a dockable window. If it has been closed or is hidden it can be made visible by pressing <b>F9</b>.</p>
+<a name="warnings-window"></a>
+<h3>Warnings Window</h3>
+<p>This window appears at the bottom right of the main window by default. It shows the active validation checks that the current translation fails. The first warning is also shown in the main window's status bar.</p>
+<p>The Warnings Window is a dockable window. If it has been closed or is hidden it can be made visible by pressing <b>F8</b>.</p>
+<a name="common-tasks"></a>
+<h2>Common Tasks</h2>
+<a name="leaving-a-translation-for-later"></a>
+<h3>Leaving a Translation for Later</h3>
+<p>If you wish to leave a translation press <b>Ctrl+L</b> (Next Unfinished) to move to the next unfinished translation. To move to the next translation (whether finished or unfinished) press <b>Shift+Ctrl+L</b>. You can also navigate using the Translation menu. If you want to go to a different context entirely, click the context you want to work on in the Context list, then click the source text in the <a href="#string-list">String List</a>.</p>
+<a name="phrases-that-require-multiple-translations-depending-on-context"></a>
+<h3>Phrases That Require Multiple Translations Depending on Context</h3>
+<p>The same phrase may occur in two or more contexts without conflict. Once a phrase has been translated in one context, <i>Qt Linguist</i> notes that the translation has been made and when the translator reaches a later occurrence of the same phrase <i>Qt Linguist</i> will provide the previous translation as a possible translation candidate in the <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>.</p>
+<p>If a phrase occurs more than once in a particular context it will only be shown once in <i>Qt Linguist</i>'s <a href="#context-list">Context List</a> and the translation will be applied to every occurrence within the context. If the same phrase needs to be translated differently within the same context the programmer must provide a distinguishing comment for each of the phrases concerned. If such comments are used the duplicate phrases will appear in the <a href="#context-list">Context List</a>. The programmers comments will appear in the <a href="#translation-area">Translation Area</a> on a light blue background.</p>
+<a name="changing-keyboard-accelerators"></a>
+<h3>Changing Keyboard Accelerators</h3>
+<p>A keyboard accelerator is a key combination that when pressed will cause an application to perform an action. Keyboard accelerators normally come in two forms: Alt key and Ctrl key accelerators.</p>
+<p>Alt key accelerators are used for menus and buttons. The underlining signifies that pressing the Alt key with the underlined letter is the same as clicking the menu item with the mouse. For example, most applications have a <i>File</i> menu with the &quot;F&quot; in the word &quot;file&quot; underlined. In these applications the file menu can be invoked either by clicking the word &quot;File&quot; on the menu bar or by pressing Alt+F. The accelerator key which is underlined is signified by preceding it with an ampersand, e.g&#x2e; <i>&amp;File</i>. If a source phrase appears with an ampersand in it then the translation should also contain an ampersand, preferably in front of the same letter. The meaning of Alt key accelerators can be determined from the phrase in which the ampersand is embedded. The translator may need to change the letter used with the Alt key, e.g&#x2e; if the translated phrase does not contain the original accelerator letter. Conflicts with other keys, i.e&#x2e; having two Alt key accelerators using the same letter in the same context, must be avoided. Note that some Alt key accelerators, usually those on the menu bar, may apply in other contexts.</p>
+<p>Ctrl key accelerators can exist independently of any visual control. They are often used to invoke actions in menus that would otherwise take several keystrokes or mouse clicks. They may also be used to perform actions that do not appear in any menu or on any button. For example, most applications that have a <i>File</i> menu have a submenu item called <i>New</i>. In many applications this will appear as &quot;<u>N</u>ew Ctrl+N&quot;. This menu option could be invoked by clicking <i>File</i> then clicking <i>New</i> with the mouse. Or you could press Alt+F then press N since these letters are underlined. But the same thing can be achieved simply by pressing <b>Ctrl+N</b>. Accelerators that use the Ctrl key are shown literally in the source text, e.g&#x2e; <b>Ctrl+Enter</b>. Ctrl key accelerators have no phrase so the translator must rely on the programmer to add a &quot;comment&quot; which appears in the top right hand pane. This comment should explain what action the Ctrl key accelerator performs. Ideally Ctrl key accelerators are translated simply by copying them by choosing the <i>Begin from Source</i> entry in the <b>Translation</b> menu. However in some cases the letter will not make sense in the target language and must be changed. Whatever letter (or digit) is chosen, the translation should always be in the form &quot;Ctrl+&quot; followed by the letter or digit in upper case: <i>Qt</i> will automatically display the correct name at runtime. As with Alt key accelerators, if the translator changes the key it must not conflict with any other Ctrl key accelerator.</p>
+<p><b>Warning:</b> Do not translate the &quot;Alt&quot;, &quot;Ctrl&quot; or &quot;Shift&quot; parts of the accelerators, since <i>Qt</i> internally relies on these identifiers. For the supported languages, <i>Qt</i> will automatically translate these strings.</p>
+<a name="dealing-with-phrases-that-contain-variables"></a>
+<h3>Dealing with Phrases That Contain Variables</h3>
+<p>Some phrases contain variables. Variables are placeholders for items of text that are filled in at runtime. They are signified in the source text with a percent sign followed by a digit, e.g&#x2e; <i>After processing file %1, file %2 is next in line</i>. In this example, <tt>%1</tt> will be replaced at runtime with the name of the first file to be processed and <tt>%2</tt> with the name of the next file to be processed. In the translated version the variables must still appear. For example a German translation might reverse the phrases, e.g&#x2e; <i>Datei %2 wird bearbeitet, wenn Datei %1 fertig ist</i>. Note that both variables are still used but their order has changed. The order in which variables appear does not matter; <tt>%1</tt> will always be replaced by the same text at runtime no matter where it appears in the source text or translation and similarly <tt>%2</tt>, etc.</p>
+<a name="reusing-translations"></a>
+<h3>Reusing Translations</h3>
+<p>If the translated text is similar to the source text, choose the <i>Begin from Source</i> entry in the <b>Translation</b> menu (press <b>Ctrl+B</b>) which will copy the source text into the <a href="#translation-area">Translation Area</a>.</p>
+<p><i>Qt Linguist</i> automatically lists phrases from the open phrase books and similar or identical phrases that have already been translated in the <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>.</p>
+<a name="showing-auxiliary-translations"></a>
+<h3>Showing Auxiliary Translations</h3>
+<p align="center"><img src="images/linguist-auxlanguages.png" /></p><p><i>Qt Linguist</i> currently only allows one translation file to be worked on at any given time. However, if the program has already been translated to other languages, you can display these auxiliary translations in addition to the source text.</p>
+<p>This feature enables translators who are not familiar with the language used for the source text to create new translations based on existing ones. This &quot;translation chain&quot; approach enables a wider range of translation services to be used, since translators only need to know one of the of the languages for which an existing translation is available.</p>
+<p>The list of auxiliary files to display is managed in the <i>Auxiliary Languages</i> dialog, which can be activated by selecting <i>Other Languages..&#x2e;</i> in the <b>Phrases</b> menu.</p>
+<p>By default the list of auxiliary files is empty. Click on the folder button (the fourth from the left) to select files containing other translations of the same source. If you select multiple files you can sort them in the dialog by the up- and down buttons. Auxiliary translations for the selected locales will show up in the <a href="#translation-area">Translation Area</a> if an auxiliary translation is available.</p>
+<a name="changing-the-target-locale"></a>
+<h3>Changing the Target Locale</h3>
+<p align="center"><img src="images/linguist-translationfilesettings.png" /></p><p><i>Qt Linguist</i> displays the language to translate to in the <a href="#translation-area">Translation Area</a>, and adapts the number of input fields for plural forms accordingly. If not explicitly set, <i>Qt Linguist</i> guesses the target language and country by evaluating the translation source file name: E.g&#x2e; <tt>app_de.ts</tt> sets the target language to German, and <tt>app_de_ch.ts</tt> sets the target language to German and the target country to Switzerland (this also helps loading translations for the current locale automatically; see <a href="linguist-programmers.html">Programmers Manual</a> for details). If your files do not follow this convention, you can also set the locale information explicitly by activating <i>Translation File Settings..&#x2e;</i> in the <b>Edit</b> menu.</p>
+<a name="phrase-books"></a>
+<h2>Phrase Books</h2>
+<p>A <i>Qt Linguist</i> phrase book is a set of source phrases, target (translated) phrases, and optional definitions. Typically one phrase book will be created per language and family of applications. Phrase books are used to provide a common set of translations to help ensure consistency. They can also be used to avoid duplication of effort since the translations for a family of applications can be produced once in the phrase book. If the translator reaches an untranslated phrase that is the same as a source phrase in a phrase book, <i>Qt Linguist</i> will show the phrase book entry in the <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>.</p>
+<a name="creating-and-editing-phrase-books"></a>
+<h3>Creating and Editing Phrase Books</h3>
+<p align="center"><img src="images/linguist-phrasebookdialog.png" /></p><p>Before a phrase book can be edited it must be created or, if it already exists, opened. Create a new phrase book by selecting <b>Phrase|New Phrase Book</b> from the menu bar. You must enter a filename and may change the location of the file if you wish. A newly created phrase book is automatically opened. Open an existing phrase book by choosing <b>Phrase|Open Phrase Book</b> from the menu bar.</p>
+<p>The phrase book contents can be displayed and changed by selecting <b>Phrase|Edit Phrase Book</b>, and then activating the phrase book you want to work on. This will pop up the Phrase Book Dialog as shown in the image above. To add a new phrase click the <b>New Phrase</b> button (or press Alt+N) and type in a new source phrase. Press Tab and type in the translation. Optionally press Tab and enter a definition -- this is useful to distinguish different translations of the same source phrase. This process may be repeated as often as necessary. You can delete a phrase by selecting it in the phrases list and clicking Remove Phrase. Click the <b>Close</b> button (press Esc) once you've finished adding (and removing) phrases.</p>
+<a name="shortcuts-for-editing-phrase-books"></a>
+<h3>Shortcuts for Editing Phrase Books</h3>
+<p>You can also create a new phrase book entry directly out of the translation you are working on: Clicking <b>Phrases|Add to Phrase Book</b> or pressing <b>Ctrl+T</b> will add the source text and the content of the first translation field to the current phrase book. If multiple phrase books are loaded, you have to specify the phrase book to add the entry to in a dialogue. If you detect an error in a phrase book entry that is shown in the <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>, you can also edit it in place by right clicking on the entry, and selecting <b>Edit</b>. After fixing the error press <b>Return</b> to leave the editing mode.</p>
+<a name="batch-translation"></a>
+<h3>Batch Translation</h3>
+<p align="center"><img src="images/linguist-batchtranslation.png" /></p><p>Use the batch translation feature of <i>Qt Linguist</i> to automatically translate source texts that are also in a phrase book. Selecting <b>Tools|Batch Translation</b> will show you the batch translation dialog, which let you configure which phrase books to use in what order during the batch translation process. Furthermore you can set whether only entries with no present translation should be considered, and whether batch translated entries should be set to finished (see also <a href="#message-states">Message States</a>).</p>
+<a name="validation"></a>
+<h2>Validation</h2>
+<p><i>Qt Linguist</i> provides four kinds of validation on translated phrases.</p>
+<ol type="1">
+<li><i>Accelerator validation</i> detects translated phrases that do not have an ampersand when the source phrase does and vice versa.</li>
+<li><i>Punctuation validation</i> detects differences in the terminating punctuation between source and translated phrases when this may be significant, e.g&#x2e; warns if the source phrase ends with an ellipsis, exclamation mark or question mark, and the translated phrase doesn't and vice versa.</li>
+<li><i>Phrases validation</i> detects source phrases that are also in the phrase book but whose translation differs from that given in the phrase book.</li>
+<li><i>Place marker validation</i> detects whether the same variables (like <tt>%1</tt>, <tt>%2</tt>) are used both in the source text and in the translation.</li>
+</ol>
+<p>Validation may be switched on or off from the menu bar's Validation item or using the toolbar buttons. Unfinished phrases that fail validation are marked with an exclamation mark in the source text pane. Finished phrases will get a yellow tick instead. If you switch validation off and then switch it on later, <i>Qt Linguist</i> will recheck all phrases and mark any that fail validation. See also <a href="#message-states">Message States</a>.</p>
+<a name="form-preview"></a>
+<h2>Form Preview</h2>
+<p align="center"><img src="images/linguist-previewtool.png" /></p><p>Forms created by <i>Qt Designer</i> are stored in special <tt>.ui</tt> files. <i>Qt Linguist</i> can make use of these <tt>.ui</tt> files to show the translations done so far on the form itself. This of course requires access to the <tt>.ui</tt> files during the translation process. Activate <b>Tools|Open/Refresh Form Preview</b> to open the window shown above. The list of <tt>.ui</tt> files <i>Qt Linguist</i> has detected are displayed in the Forms List on the left hand. If the path to the files has changed, you can load the files manually via <b>File|Open Form..&#x2e;</b>. Double-click on an entry in the Forms List to display the Form File. Select <i>&lt;No Translation&gt;</i> from the toolbar to display the untranslated form.</p>
+<a name="qt-linguist-reference"></a>
+<h2>Qt Linguist Reference</h2>
+<a name="message-states"></a>
+<h3>Message States</h3>
+<p>A message in <i>Qt Linguist</i> can be in a variety of states, depending on whether the translation has been marked as finished, the source text is obsolete, a translation has been provided or the translation fails a validity check. <i>Qt Linguist</i> summarizes these properties in six overall states that are shown as individual icons in the first row of the <a href="#string-list">String List</a>:</p>
+<ul>
+<li><img src="images/linguist-check-on.png" /> <br /> The message is marked as finished, and there are no warnings. Clicking on the icon or editing a translation will mark the message as unfinished. Also, if the source text is changed by lupdate, the message is automatically set to unfinished.</li>
+<li><img src="images/linguist-check-warning.png" /> <br /> The message is marked as finished while there are warnings. Clicking on the icon or editing a translation will mark it as unfinished. Also, if the source text is changed by lupdate, the message is automatically set to unfinished.</li>
+<li><img src="images/linguist-check-obsolete.png" /> <br /> The message is obsolete. See the <a href="linguist-manager.html">Release Manager manual</a> on how to remove such messages from the file.</li>
+<li><img src="images/linguist-check-empty.png" /> <br /> The message is unfinished, and no translation has been provided. This is default state for messages that were not changed before. You should insert a translation.</li>
+<li><img src="images/linguist-check-off.png" /> <br /> The message is unfinished, but not empty. Furthermore, there are no warnings generated by validity checks. Clicking on the icon or pressing <b>Ctrl+Enter</b> (Done &amp; Next) will mark it as finished.</li>
+<li><img src="images/linguist-danger.png" /> <br /> The message is unfinished, and there are warnings about the translation. It is recommended to fix these first, but if the warnings are wrong you can just click on the icon or press <b>Ctrl+Return</b> (Done &amp; Next) to mark the message as finished.</li>
+</ul>
+<a name="context-states"></a>
+<h3>Context States</h3>
+<p>The states of the individual messages in a context are also summarized in a context state:</p>
+<ul>
+<li><img src="images/linguist-check-on.png" /> <br /> All messages in the context are marked as finished.</li>
+<li><img src="images/linguist-check-obsolete.png" /> <br /> All the messages in the context are obsolete.</li>
+<li><img src="images/linguist-check-off.png" /> <br /> At least one message in the context is not marked as finished.</li>
+</ul>
+<a name="file-types"></a>
+<h3>File Types</h3>
+<p><i>Qt Linguist</i> makes use of four kinds of files:</p>
+<ul>
+<li><tt>.ts</tt> <i>translation source files</i> <br /> are human-readable XML files containing source phrases and their translations. These files are usually created and updated by <a href="linguist-manager.html#lupdate">lupdate</a> and are specific to an application.</li>
+<li><tt>.xlf</tt> <i>XLIFF files</i> <br /> are human-readable XML files that adhere to the international XML Localization Interchange File Format. <i>Qt Linguist</i> can be used to edit XLIFF files generated by other programs. For standard Qt projects, however, only the <tt>.ts</tt> file format is used.</li>
+<li><tt>.qm</tt> <i>Qt message files</i> <br /> are binary files that contain translations used by an application at runtime. These files are generated by <a href="linguist-manager.html#lrelease">lrelease</a>, but can also be generated by <i>Qt Linguist</i>.</li>
+<li><tt>.qph</tt> <i>Qt phrase book files</i> <br /> are human-readable XML files containing standard phrases and their translations. These files are created and updated by <i>Qt Linguist</i> and may be used by any number of projects and applications.</li>
+</ul>
+<a name="the-menu-bar"></a>
+<h3>The Menu Bar</h3>
+<p align="center"><img src="images/linguist-menubar.png" /></p><ul>
+<li><i>File</i><ul>
+<li><i>Open..&#x2e; Ctrl+O</i> <br /> pops up an open file dialog from which a translation source <tt>.ts</tt> or <tt>.xlf</tt> file can be chosen.</li>
+<li><i>Recently opened files</i> <br /> shows the <tt>.ts</tt> files that have been opened recently, click one to open it.</li>
+<li><i>Save Ctrl+S</i> <br /> saves the current translation source file.</li>
+<li><i>Save As..&#x2e;</i> <br /> pops up a save as file dialog so that the current translation source file may be saved with a different name, format and/or put in a different location.</li>
+<li><i>Release</i> <br /> create a Qt message <tt>.qm</tt> file with the same base name as the current translation source file. The release manager's command line tool <a href="linguist-manager.html#lrelease">lrelease</a> performs the same function on <i>all</i> of an application's translation source files.</li>
+<li><i>Release As..&#x2e;</i> <br /> pops up a save as file dialog. The filename entered will be a Qt message <tt>.qm</tt> file of the translation based on the current translation source file. The release manager's command line tool <a href="linguist-manager.html#lrelease">lrelease</a> performs the same function on <i>all</i> of an application's translation source files.</li>
+<li><i>Print..&#x2e; Ctrl+P</i> <br /> pops up a print dialog. If you click OK the translation source and the translations will be printed.</li>
+<li><i>Exit Ctrl+Q</i> <br /> closes <i>Qt Linguist</i>.</li>
+</ul>
+</li>
+<li><i>Edit</i><ul>
+<li><i>Undo Ctrl+Z</i> <br /> undoes the last editing action in the translation pane.</li>
+<li><i>Redo Ctrl+Y</i> <br /> redoes the last editing action in the translation pane.</li>
+<li><i>Cut Ctrl+X</i> <br /> deletes any highlighted text in the translation pane and saves a copy to the clipboard.</li>
+<li><i>Copy Ctrl+C</i> <br /> copies the highlighted text in the translation pane to the clipboard.</li>
+<li><i>Paste Ctrl+V</i> <br /> pastes the clipboard text into the translation pane.</li>
+<li><i>Select All Ctrl+A</i> <br /> selects all the text in the translation pane ready for copying or deleting.</li>
+<li><i>Find..&#x2e; Ctrl+F</i> <br /> pops up the Find dialog. When the dialog pops up enter the text to be found and click the <b>Find Next</b> button. Source phrases, translations and comments may be searched.</li>
+<li><i>Find Next F3</i> <br /> finds the next occurrence of the text that was last entered in the Find dialog.</li>
+<li><i>Search and Translate..&#x2e;</i> <br /> pops up the Search and Replace Dialog. Use this dialog to translate the same text in multiple items.</li>
+<li><i>Translation File Settings..&#x2e;</i> <br /> let you configure the target language and the country/region of a translation source file.</li>
+</ul>
+</li>
+<li><i>Translation</i><ul>
+<li><i>Prev Unfinished Ctrl+K</i> <br /> moves to the nearest previous unfinished source phrase (unfinished means untranslated or translated but failed validation).</li>
+<li><i>Next Unfinished Ctrl+L</i> <br /> moves to the next unfinished source phrase.</li>
+<li><i>Prev Shift+Ctrl+K</i> <br /> moves to the previous source phrase.</li>
+<li><i>Next Shift+Ctrl+L</i> <br /> moves to the next source phrase.</li>
+<li><i>Done &amp; Next Ctrl+Enter</i> <br /> mark this phrase as 'done' (translated) and move to the next unfinished source phrase.</li>
+<li><i>Begin from Source Ctrl+B</i> <br /> copies the source text into the translation.</li>
+</ul>
+</li>
+<li><i>Validation</i> (See the <a href="#validation">Validation</a> section)<ul>
+<li><i>Accelerators</i> <br /> toggles validation on or off for Alt accelerators.</li>
+<li><i>Ending Punctuation</i> <br /> switches validation on or off for phrase ending punctuation, e.g&#x2e; ellipsis, exclamation mark, question mark, etc.</li>
+<li><i>Phrase Matches</i> <br /> sets validation on or off for matching against translations that are in the current phrase book.</li>
+<li><i>Place Marker Matches</i> <br /> sets validation on or off for the use of the same place markers in the source and translation.</li>
+</ul>
+</li>
+<li><i>Phrases</i> (See the section <a href="#phrase-books">Phrase Books</a> for details.)<ul>
+<li><i>New Phrase Book..&#x2e; Ctrl+N</i> <br /> pops up a save as file dialog. You must enter a filename to be used for the phrase book and save the file. Once saved you should open the phrase book to begin using it.</li>
+<li><i>Open Phrase Book..&#x2e; Ctrl+H</i> <br /> pops up an open file dialog. Find and choose a phrase book to open.</li>
+<li><i>Close Phrase Book</i> <br /> displays the list of phrase books currently opened. Clicking on one of the items will close the phrase book. If the phrase book has been modified, a dialog box asks whether <i>Qt Linguist</i> should save the changes.</li>
+<li><i>Edit Phrase Book..&#x2e;</i> <br /> displays the list of phrase books currently opened. Clicking on one of the items will open the <a href="#creating-and-editing-phrase-books">Phrase Book Dialog</a> where you can add, edit or delete phrases.</li>
+<li><i>Print Phrase Book..&#x2e;</i> <br /> displays the list of phrase books currently opened. Clicking on one of the items pops up a print dialog. If you click OK the phrase book will be printed.</li>
+<li><i>Add to Phrase Book Ctrl+T</i> <br /> Adds the source text and translation currently shown in the <a href="#translation-area">Translation Area</a> to a phrase book. If multiple phrase books are loaded, a dialog box let you specify select one.</li>
+<li><i>Other Languages..&#x2e;</i> <br /> Open the <a href="#showing-auxiliary-translations">Auxiliary Languages Dialog</a>. This dialog let you specify which other auxiliary translations should be shown in the <a href="#translation-area">Translation Area</a>.</li>
+</ul>
+</li>
+<li><i>Tools</i><ul>
+<li><i>Batch Translation..&#x2e;</i> <br /> Opens a <a href="#batch-translation">dialog</a> which let you automatically insert translations for source texts which are in a phrase book.</li>
+<li><i>Open/Refresh Form Preview F3</i> <br /> Opens the <a href="#form-preview">Form Preview</a>. This window let you instantly see translations for forms created with <i>designer</i>.</li>
+</ul>
+</li>
+<li><i>View</i><ul>
+<li><i>Revert Sorting</i> <br /> puts the items in the <a href="#context-list">Context List</a> and in the <a href="#string-list">String List</a> into their original order.</li>
+<li><i>Display Guesses</i> <br /> turns the display of phrases and guesses on or off.</li>
+<li><i>Statistics</i> <br /> toggles the visibility of the Statistics dialog.</li>
+<li><i>Views</i> <br /> toggles the visibility of the <a href="#context-list">Context List</a>, <a href="#string-list">String List</a>, <a href="#phrases-and-guesses-window">Phrases and Guesses Window</a>, <a href="#warnings-window">Warnings Window</a>, or <a href="#source-code-window">Source Code Window</a>.</li>
+<li><i>Toolbars</i> <br /> toggles the visibility of the different toolbars.</li>
+</ul>
+</li>
+<li><i>Help</i><ul>
+<li><i>Manual F1</i> <br /> opens this manual.</li>
+<li><i>About Qt Linguist</i> <br /> Shows information about <i>Qt Linguist</i>.</li>
+<li><i>About Qt</i> <br /> Shows information about <i>Qt</i>.</li>
+<li><i>What's This? Shift+F1</i> <br /> Click on one item in the main window to get additional information about it.</li>
+</ul>
+</li>
+</ul>
+<a name="the-toolbar"></a>
+<h3>The Toolbar</h3>
+<p align="center"><img src="images/linguist-toolbar.png" /></p><ul>
+<li><img src="images/linguist-fileopen.png" /> <br /> Pops up the open file dialog to open a new translation source <tt>.ts</tt> file.</li>
+<li><img src="images/linguist-filesave.png" /> <br /> Saves the current translation source <tt>.ts</tt> file.</li>
+<li><img src="images/linguist-fileprint.png" /> <br /> Prints the current translation source <tt>.ts</tt> file.</li>
+<li><img src="images/linguist-phrasebookopen.png" /> <br /> Pops up the file open dialog to open a new phrase book <tt>.qph</tt> file.</li>
+<li><img src="images/linguist-editundo.png" /> <br /> Undoes the last editing action in the translation pane.</li>
+<li><img src="images/linguist-editredo.png" /> <br /> Redoes the last editing action in the translation pane.</li>
+<li><img src="images/linguist-editcut.png" /> <br /> Deletes any highlighted text in the translation pane and save a copy to the clipboard.</li>
+<li><img src="images/linguist-editcopy.png" /> <br /> Copies the highlighted text in the translation pane to the clipboard.</li>
+<li><img src="images/linguist-editpaste.png" /> <br /> Pastes the clipboard text into the translation pane.</li>
+<li><img src="images/linguist-editfind.png" /> <br /> Pops up the Find dialog .</li>
+<li><img src="images/linguist-prev.png" /> <br /> Moves to the previous source phrase.</li>
+<li><img src="images/linguist-next.png" /> <br /> Moves to the next source phrase.</li>
+<li><img src="images/linguist-prevunfinished.png" /> <br /> Moves to the previous unfinished source phrase.</li>
+<li><img src="images/linguist-nextunfinished.png" /> <br /> Moves to the next unfinished source phrase.</li>
+<li><img src="images/linguist-doneandnext.png" /> <br /> Marks the phrase as 'done' (translated) and move to the next unfinished source phrase.</li>
+<li><img src="images/linguist-validateaccelerators.png" /> <br /> Toggles accelerator validation on and off.</li>
+<li><img src="images/linguist-validatepunctuation.png" /> <br /> Toggles phrase ending punctuation validation on and off.</li>
+<li><img src="images/linguist-validatephrases.png" /> <br /> Toggles phrase book validation on or off.</li>
+<li><img src="images/linguist-validateplacemarkers.png" /> <br /> Toggles place marker validation on or off.</li>
+</ul>
+<p>
+[Previous: <a href="linguist-manager.html">Qt Linguist Manual: Release Manager</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-programmers.html">Qt Linguist Manual: Programmers</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

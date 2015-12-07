@@ -1,0 +1,22 @@
+//! [0]
+        ./configure -help
+//! [0]
+
+
+//! [1]
+        configure -qt-kbd-s15000
+//! [1]
+
+
+//! [2]
+         export QWS_KEYBOARD=<driver>[:<driver specific options>]
+//! [2]
+
+
+//! [3]
+         export QWS_KEYBOARD="<driver>[:<driver specific options>]
+                 <driver>[:<driver specific options>]
+                 <driver>[:<driver specific options>]"
+//! [3]
+
+

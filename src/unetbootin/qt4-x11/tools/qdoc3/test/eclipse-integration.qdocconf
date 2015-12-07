@@ -1,0 +1,13 @@
+include(qt.qdocconf)
+
+headerdirs = 
+sourcedirs =
+sourcedirs = $QTDIR/../qteclipsetools/main/doc
+imagedirs = $QTDIR/../qteclipsetools/main/doc
+outputdir = $QTDIR/../qteclipsetools/main/doc/html
+
+project               = Qt Eclipse Integration
+description           = "Qt Eclipse Integration"
+url                   = http://doc.trolltech.com/eclipse-integration-4.4
+
+HTML.{postheader,address} = ""

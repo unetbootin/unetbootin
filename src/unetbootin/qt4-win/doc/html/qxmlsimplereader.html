@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlSimpleReader Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlSimpleReader Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlSimpleReader class provides an implementation of a simple XML parser. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlSimpleReader&gt;</pre><p>Inherits <a href="qxmlreader.html">QXmlReader</a>.</p>
+<p><b>Warning:</b> This class is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmlsimplereader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlsimplereader.html#QXmlSimpleReader">QXmlSimpleReader</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qxmlsimplereader.html#dtor.QXmlSimpleReader">~QXmlSimpleReader</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlsimplereader.html#parse">parse</a></b> ( const QXmlInputSource * <i>input</i>, bool <i>incremental</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlsimplereader.html#parseContinue">parseContinue</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qxmlsimplereader.html#setFeature">setFeature</a></b> ( const QString &amp; <i>name</i>, bool <i>enable</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public functions inherited from <a href="qxmlreader.html#public-functions">QXmlReader</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlSimpleReader class provides an implementation of a simple XML parser.</p>
+<p>This XML reader is suitable for a wide range of applications. It is able to parse well-formed XML and can report the namespaces of elements to a content handler; however, it does not parse any external entities. For historical reasons, Attribute Value Normalization and End-of-Line Handling as described in the XML 1.0 specification is not performed.</p>
+<p>The easiest pattern of use for this class is to create a reader instance, define an input source, specify the handlers to be used by the reader, and parse the data.</p>
+<p>For example, we could use a <a href="qfile.html">QFile</a> to supply the input. Here, we create a reader, and define an input source to be used by the reader:</p>
+<pre>     QXmlSimpleReader xmlReader;
+     QXmlInputSource *source = new QXmlInputSource(file);</pre>
+<p>A handler lets us perform actions when the reader encounters certain types of content, or if errors in the input are found. The reader must be told which handler to use for each type of event. For many common applications, we can create a custom handler by subclassing <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a>, and use this to handle both error and content events:</p>
+<pre>     Handler *handler = new Handler;
+     xmlReader.setContentHandler(handler);
+     xmlReader.setErrorHandler(handler);</pre>
+<p>If you don't set at least the content and error handlers, the parser will fall back on its default behavior---and will do nothing.</p>
+<p>The most convenient way to handle the input is to read it in a single pass using the <a href="qxmlsimplereader.html#parse">parse</a>() function with an argument that specifies the input source:</p>
+<pre>     bool ok = xmlReader.parse(source);
+
+     if (!ok)
+         std::cout &lt;&lt; &quot;Parsing failed.&quot; &lt;&lt; std::endl;</pre>
+<p>If you can't parse the entire input in one go (for example, it is huge, or is being delivered over a network connection), data can be fed to the parser in pieces. This is achieved by telling <a href="qxmlsimplereader.html#parse">parse</a>() to work incrementally, and making subsequent calls to the <a href="qxmlsimplereader.html#parseContinue">parseContinue</a>() function, until all the data has been processed.</p>
+<p>A common way to perform incremental parsing is to connect the <tt>readyRead()</tt> signal of the input source to a slot, and handle the incoming data there. For example, the following code shows how a parser for <a href="http://web.resource.org/rss/1.0/">RSS feeds</a> can be used to incrementally parse data that it receives from a <a href="qhttp.html">QHttp</a> object:</p>
+<pre> void RSSListing::readData(const QHttpResponseHeader &amp;resp)
+ {
+     bool ok;
+
+     if (resp.statusCode() != 200)
+         http.abort();
+     else {
+         xmlInput.setData(http.readAll());
+
+         if (newInformation) {
+             ok = xmlReader.parse(&amp;xmlInput, true);
+             newInformation = false;
+         }
+         else
+             ok = xmlReader.parseContinue();
+
+         if (!ok)
+             http.abort();
+     }
+ }</pre>
+<p>Aspects of the parsing behavior can be adapted using <a href="qxmlsimplereader.html#setFeature">setFeature</a>() and <a href="qxmlreader.html#setProperty">setProperty</a>(). For example, the following code could be used to enable reporting of namespace prefixes to the content handler:</p>
+<p>QXmlSimpleReader is not reentrant. If you want to use the class in threaded code, lock the code using QXmlSimpleReader with a locking mechanism, such as a <a href="qmutex.html">QMutex</a>.</p>
+<pre>         xmlReader.setFeature(&quot;http://xml.org/sax/features/namespace-prefixes&quot;, true);</pre>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlSimpleReader"></a>QXmlSimpleReader::QXmlSimpleReader ()</h3>
+<p>Constructs a simple XML reader.</p>
+<h3 class="fn"><a name="dtor.QXmlSimpleReader"></a>QXmlSimpleReader::~QXmlSimpleReader ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the simple XML reader.</p>
+<h3 class="fn"><a name="parse"></a>bool QXmlSimpleReader::parse ( const <a href="qxmlinputsource.html">QXmlInputSource</a> * <i>input</i>, bool <i>incremental</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads an XML document from <i>input</i> and parses it. Returns true if the parsing is completed successfully; otherwise returns false, indicating that an error occurred.</p>
+<p>If <i>incremental</i> is false, this function will return false if the XML file is not read completely. The parsing cannot be continued in this case.</p>
+<p>If <i>incremental</i> is true, the parser does not return false if it reaches the end of the <i>input</i> before reaching the end of the XML file. Instead, it stores the state of the parser so that parsing can be continued later when more data is available. In such a case, you can use the function <a href="qxmlsimplereader.html#parseContinue">parseContinue</a>() to continue with parsing. This class stores a pointer to the input source <i>input</i> and the <a href="qxmlsimplereader.html#parseContinue">parseContinue</a>() function tries to read from that input source. Therefore, you should not delete the input source <i>input</i> until you no longer need to call <a href="qxmlsimplereader.html#parseContinue">parseContinue</a>().</p>
+<p>If this function is called with <i>incremental</i> set to true while an incremental parse is in progress, a new parsing session will be started, and the previous session will be lost.</p>
+<p>See also <a href="qxmlsimplereader.html#parseContinue">parseContinue</a>() and <a href="qtcpsocket.html">QTcpSocket</a>.</p>
+<h3 class="fn"><a name="parseContinue"></a>bool QXmlSimpleReader::parseContinue ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Continues incremental parsing, taking input from the <a href="qxmlinputsource.html">QXmlInputSource</a> that was specified with the most recent call to <a href="qxmlsimplereader.html#parse">parse</a>(). To use this function, you <i>must</i> have called <a href="qxmlsimplereader.html#parse">parse</a>() with the incremental argument set to true.</p>
+<p>Returns false if a parsing error occurs; otherwise returns true, even if the end of the XML file has not been reached. You can continue parsing at a later stage by calling this function again when there is more data available to parse.</p>
+<p>Calling this function when there is no data available in the input source indicates to the reader that the end of the XML file has been reached. If the input supplied up to this point was not well-formed then a parsing error occurs, and false is returned. If the input supplied was well-formed, true is returned. It is important to end the input in this way because it allows you to reuse the reader to parse other XML files.</p>
+<p>Calling this function after the end of file has been reached, but without available data will cause false to be returned whether the previous input was well-formed or not.</p>
+<p>See also <a href="qxmlsimplereader.html#parse">parse</a>(), <a href="qxmlinputsource.html#data">QXmlInputSource::data</a>(), and <a href="qxmlinputsource.html#next">QXmlInputSource::next</a>().</p>
+<h3 class="fn"><a name="setFeature"></a>void QXmlSimpleReader::setFeature ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Turns on the feature <i>name</i> if <i>enable</i> is true; otherwise turns it off.</p>
+<p>The <i>name</i> parameter must be one of the following strings:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Feature</th><th>Default</th><th>Notes</th></tr></thead>
+<tr valign="top" class="odd"><td><i>http://xml.org/sax/features/namespaces</i></td><td>true</td><td>If enabled, namespaces are reported to the content handler.</td></tr>
+<tr valign="top" class="even"><td><i>http://xml.org/sax/features/namespace-prefixes</i></td><td>false</td><td>If enabled, the original prefixed names and attributes used for namespace declarations are reported.</td></tr>
+<tr valign="top" class="odd"><td><i>http://trolltech.com/xml/features/report-whitespace-only-CharData</i></td><td>true</td><td>If enabled, CharData that consist of only whitespace characters are reported using <a href="qxmlcontenthandler.html#characters">QXmlContentHandler::characters</a>(). If disabled, whitespace is silently discarded.</td></tr>
+<tr valign="top" class="even"><td><i>http://trolltech.com/xml/features/report-start-end-entity</i></td><td>false</td><td>If enabled, the parser reports QXmlContentHandler::startEntity() and QXmlContentHandler::endEntity() events, so character data might be reported in chunks. If disabled, the parser does not report these events, but silently substitutes the entities, and reports the character data in one chunk.</td></tr>
+</table></p>
+<p>Reimplemented from <a href="qxmlreader.html#setFeature">QXmlReader</a>.</p>
+<p>See also <a href="qxmlreader.html#feature">feature</a>(), <a href="qxmlreader.html#hasFeature">hasFeature</a>(), and <a href="qtxml.html#sax2-features">SAX2 Features</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

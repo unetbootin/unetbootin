@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: httpwindow.cpp Example File (network/http/httpwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">httpwindow.cpp Example File<br /><span class="small-subtitle">network/http/httpwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &lt;QtNetwork&gt;
+
+ #include &quot;httpwindow.h&quot;
+ #include &quot;ui_authenticationdialog.h&quot;
+
+ HttpWindow::HttpWindow(QWidget *parent)
+     : QDialog(parent)
+ {
+ #ifndef QT_NO_OPENSSL
+     urlLineEdit = new QLineEdit(&quot;https:<span class="comment">//</span>&quot;);
+ #else
+     urlLineEdit = new QLineEdit(&quot;http:<span class="comment">//</span>&quot;);
+ #endif
+
+     urlLabel = new QLabel(tr(&quot;&amp;URL:&quot;));
+     urlLabel-&gt;setBuddy(urlLineEdit);
+     statusLabel = new QLabel(tr(&quot;Please enter the URL of a file you want to &quot;
+                                 &quot;download.&quot;));
+
+     downloadButton = new QPushButton(tr(&quot;Download&quot;));
+     downloadButton-&gt;setDefault(true);
+     quitButton = new QPushButton(tr(&quot;Quit&quot;));
+     quitButton-&gt;setAutoDefault(false);
+
+     buttonBox = new QDialogButtonBox;
+     buttonBox-&gt;addButton(downloadButton, QDialogButtonBox::ActionRole);
+     buttonBox-&gt;addButton(quitButton, QDialogButtonBox::RejectRole);
+
+     progressDialog = new QProgressDialog(this);
+
+     http = new QHttp(this);
+
+     connect(urlLineEdit, SIGNAL(textChanged(const QString &amp;)),
+             this, SLOT(enableDownloadButton()));
+     connect(http, SIGNAL(requestFinished(int, bool)),
+             this, SLOT(httpRequestFinished(int, bool)));
+     connect(http, SIGNAL(dataReadProgress(int, int)),
+             this, SLOT(updateDataReadProgress(int, int)));
+     connect(http, SIGNAL(responseHeaderReceived(const QHttpResponseHeader &amp;)),
+             this, SLOT(readResponseHeader(const QHttpResponseHeader &amp;)));
+     connect(http, SIGNAL(authenticationRequired(const QString &amp;, quint16, QAuthenticator *)),
+             this, SLOT(slotAuthenticationRequired(const QString &amp;, quint16, QAuthenticator *)));
+ #ifndef QT_NO_OPENSSL
+     connect(http, SIGNAL(sslErrors(const QList&lt;QSslError&gt; &amp;)),
+             this, SLOT(sslErrors(const QList&lt;QSslError&gt; &amp;)));
+ #endif
+     connect(progressDialog, SIGNAL(canceled()), this, SLOT(cancelDownload()));
+     connect(downloadButton, SIGNAL(clicked()), this, SLOT(downloadFile()));
+     connect(quitButton, SIGNAL(clicked()), this, SLOT(close()));
+
+     QHBoxLayout *topLayout = new QHBoxLayout;
+     topLayout-&gt;addWidget(urlLabel);
+     topLayout-&gt;addWidget(urlLineEdit);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addLayout(topLayout);
+     mainLayout-&gt;addWidget(statusLabel);
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;HTTP&quot;));
+     urlLineEdit-&gt;setFocus();
+ }
+
+ void HttpWindow::downloadFile()
+ {
+     QUrl url(urlLineEdit-&gt;text());
+     QFileInfo fileInfo(url.path());
+     QString fileName = fileInfo.fileName();
+     if (fileName.isEmpty())
+         fileName = &quot;index.html&quot;;
+
+     if (QFile::exists(fileName)) {
+         if (QMessageBox::question(this, tr(&quot;HTTP&quot;),
+                                   tr(&quot;There already exists a file called %1 in &quot;
+                                      &quot;the current directory. Overwrite?&quot;).arg(fileName),
+                                   QMessageBox::Ok|QMessageBox::Cancel, QMessageBox::Cancel)
+             == QMessageBox::Cancel)
+             return;
+         QFile::remove(fileName);
+     }
+
+     file = new QFile(fileName);
+     if (!file-&gt;open(QIODevice::WriteOnly)) {
+         QMessageBox::information(this, tr(&quot;HTTP&quot;),
+                                  tr(&quot;Unable to save the file %1: %2.&quot;)
+                                  .arg(fileName).arg(file-&gt;errorString()));
+         delete file;
+         file = 0;
+         return;
+     }
+
+     QHttp::ConnectionMode mode = url.scheme().toLower() == &quot;https&quot; ? QHttp::ConnectionModeHttps : QHttp::ConnectionModeHttp;
+     http-&gt;setHost(url.host(), mode, url.port() == -1 ? 0 : url.port());
+
+     if (!url.userName().isEmpty())
+         http-&gt;setUser(url.userName(), url.password());
+
+     httpRequestAborted = false;
+     QByteArray path = QUrl::toPercentEncoding(url.path(), &quot;!$&amp;'()*+,;=:@/&quot;);
+     if (path.isEmpty())
+         path = &quot;/&quot;;
+     httpGetId = http-&gt;get(path, file);
+
+     progressDialog-&gt;setWindowTitle(tr(&quot;HTTP&quot;));
+     progressDialog-&gt;setLabelText(tr(&quot;Downloading %1.&quot;).arg(fileName));
+     downloadButton-&gt;setEnabled(false);
+ }
+
+ void HttpWindow::cancelDownload()
+ {
+     statusLabel-&gt;setText(tr(&quot;Download canceled.&quot;));
+     httpRequestAborted = true;
+     http-&gt;abort();
+     downloadButton-&gt;setEnabled(true);
+ }
+
+ void HttpWindow::httpRequestFinished(int requestId, bool error)
+ {
+     if (requestId != httpGetId)
+         return;
+     if (httpRequestAborted) {
+         if (file) {
+             file-&gt;close();
+             file-&gt;remove();
+             delete file;
+             file = 0;
+         }
+
+         progressDialog-&gt;hide();
+         return;
+     }
+
+     if (requestId != httpGetId)
+         return;
+
+     progressDialog-&gt;hide();
+     file-&gt;close();
+
+     if (error) {
+         file-&gt;remove();
+         QMessageBox::information(this, tr(&quot;HTTP&quot;),
+                                  tr(&quot;Download failed: %1.&quot;)
+                                  .arg(http-&gt;errorString()));
+     } else {
+         QString fileName = QFileInfo(QUrl(urlLineEdit-&gt;text()).path()).fileName();
+         statusLabel-&gt;setText(tr(&quot;Downloaded %1 to current directory.&quot;).arg(fileName));
+     }
+
+     downloadButton-&gt;setEnabled(true);
+     delete file;
+     file = 0;
+ }
+
+ void HttpWindow::readResponseHeader(const QHttpResponseHeader &amp;responseHeader)
+ {
+     switch (responseHeader.statusCode()) {
+     case 200:                   <span class="comment">//</span> Ok
+     case 301:                   <span class="comment">//</span> Moved Permanently
+     case 302:                   <span class="comment">//</span> Found
+     case 303:                   <span class="comment">//</span> See Other
+     case 307:                   <span class="comment">//</span> Temporary Redirect
+         <span class="comment">//</span> these are not error conditions
+         break;
+
+     default:
+         QMessageBox::information(this, tr(&quot;HTTP&quot;),
+                                  tr(&quot;Download failed: %1.&quot;)
+                                  .arg(responseHeader.reasonPhrase()));
+         httpRequestAborted = true;
+         progressDialog-&gt;hide();
+         http-&gt;abort();
+     }
+ }
+
+ void HttpWindow::updateDataReadProgress(int bytesRead, int totalBytes)
+ {
+     if (httpRequestAborted)
+         return;
+
+     progressDialog-&gt;setMaximum(totalBytes);
+     progressDialog-&gt;setValue(bytesRead);
+ }
+
+ void HttpWindow::enableDownloadButton()
+ {
+     downloadButton-&gt;setEnabled(!urlLineEdit-&gt;text().isEmpty());
+ }
+
+ void HttpWindow::slotAuthenticationRequired(const QString &amp;hostName, quint16, QAuthenticator *authenticator)
+ {
+     QDialog dlg;
+     Ui::Dialog ui;
+     ui.setupUi(&amp;dlg);
+     dlg.adjustSize();
+     ui.siteDescription-&gt;setText(tr(&quot;%1 at %2&quot;).arg(authenticator-&gt;realm()).arg(hostName));
+
+     if (dlg.exec() == QDialog::Accepted) {
+         authenticator-&gt;setUser(ui.userEdit-&gt;text());
+         authenticator-&gt;setPassword(ui.passwordEdit-&gt;text());
+     }
+ }
+
+ #ifndef QT_NO_OPENSSL
+ void HttpWindow::sslErrors(const QList&lt;QSslError&gt; &amp;errors)
+ {
+     QString errorString;
+     foreach (const QSslError &amp;error, errors) {
+         if (!errorString.isEmpty())
+             errorString += &quot;, &quot;;
+         errorString += error.errorString();
+     }
+
+     if (QMessageBox::warning(this, tr(&quot;HTTP Example&quot;),
+                              tr(&quot;One or more SSL errors has occurred: %1&quot;).arg(errorString),
+                              QMessageBox::Ignore | QMessageBox::Abort) == QMessageBox::Ignore) {
+         http-&gt;ignoreSslErrors();
+     }
+ }
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

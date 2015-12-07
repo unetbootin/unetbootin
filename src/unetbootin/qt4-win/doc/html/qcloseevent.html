@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QCloseEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCloseEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QCloseEvent class contains parameters that describe a close event. <a href="#details">More...</a></p>
+<pre> #include &lt;QCloseEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qcloseevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcloseevent.html#QCloseEvent">QCloseEvent</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCloseEvent class contains parameters that describe a close event.</p>
+<p>Close events are sent to widgets that the user wants to close, usually by choosing &quot;Close&quot; from the window menu, or by clicking the <b>X</b> title bar button. They are also sent when you call <a href="qwidget.html#close">QWidget::close</a>() to close a widget programmatically.</p>
+<p>Close events contain a flag that indicates whether the receiver wants the widget to be closed or not. When a widget accepts the close event, it is hidden (and destroyed if it was created with the <a href="qt.html#WidgetAttribute-enum">Qt::WA_DeleteOnClose</a> flag). If it refuses to accept the close event nothing happens. (Under X11 it is possible that the window manager will forcibly close the window; but at the time of writing we are not aware of any window manager that does this.)</p>
+<p>The event handler <a href="qwidget.html#closeEvent">QWidget::closeEvent</a>() receives close events. The default implementation of this event handler accepts the close event. If you do not want your widget to be hidden, or want some special handing, you should reimplement the event handler and <a href="qevent.html#ignore">ignore</a>() the event.</p>
+<p>The <a href="mainwindows-application.html#close-event-handler">closeEvent() in the Application example</a> shows a close event handler that asks whether to save a document before closing.</p>
+<p>If you want the widget to be deleted when it is closed, create it with the <a href="qt.html#WidgetAttribute-enum">Qt::WA_DeleteOnClose</a> flag. This is very useful for independent top-level windows in a multi-window application.</p>
+<p><a href="qobject.html">QObject</a>s emits the <a href="qobject.html#destroyed">destroyed()</a> signal when they are deleted.</p>
+<p>If the last top-level window is closed, the <a href="qapplication.html#lastWindowClosed">QApplication::lastWindowClosed</a>() signal is emitted.</p>
+<p>The <a href="qevent.html#accepted-prop">isAccepted</a>() function returns true if the event's receiver has agreed to close the widget; call <a href="qevent.html#accept">accept</a>() to agree to close the widget and call <a href="qevent.html#ignore">ignore</a>() if the receiver of this event does not want the widget to be closed.</p>
+<p>See also <a href="qwidget.html#close">QWidget::close</a>(), <a href="qwidget.html#hide">QWidget::hide</a>(), <a href="qobject.html#destroyed">QObject::destroyed</a>(), <a href="qcoreapplication.html#exec">QCoreApplication::exec</a>(), <a href="qcoreapplication.html#quit">QCoreApplication::quit</a>(), and <a href="qapplication.html#lastWindowClosed">QApplication::lastWindowClosed</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCloseEvent"></a>QCloseEvent::QCloseEvent ()</h3>
+<p>Constructs a close event object.</p>
+<p>See also <a href="qevent.html#accept">accept</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

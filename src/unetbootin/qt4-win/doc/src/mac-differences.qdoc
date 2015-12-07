@@ -1,0 +1,251 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page mac-differences.html
+    \title Qt/Mac-Specific Issues
+    \brief A description of issues with Qt that are specific to Mac OS X.
+    \ingroup platform-notes
+
+    This file outlines known issues and possible workarounds for
+    limitations on Mac OS X with Qt. Contact Trolltech support if you find
+    additional issues which are not covered here.
+
+    See also the document \link qtmac-as-native.html Qt/Mac is Mac OS X
+    Native\endlink.
+
+    \tableofcontents
+
+    \section1 GUI Applications
+
+    GUI Applications must be run out of a bundle (something like widgets.app/)
+    or using the open(1) command. Mac OS X needs this to dispatch events
+    correctly, as well as gaining access to the menu bar.
+
+    If you are using older versions of GDB you must run with the full path to
+    the executable.  Later versions allow you to pass the bundle name on the
+    command line.
+
+    \section1 Painting
+    Mac OS X always double buffers the screen so the Qt::WA_PaintOnScreen attribute
+    has no effect. Also it is impossible to paint outside of a paint event so
+    Qt::WA_PaintOutsidePaintEvent has no effect either.
+
+    \section1 Library Support
+
+    \section2 Qt libraries as frameworks
+    By default, Qt is built as a set of frameworks. This is the Mac OS X
+    "preferred" way of distributing libraries (and there are some
+    definite advantages to using them) see \l{http://developer.apple.com/documentation/MacOSX/Conceptual/BPFrameworks/index.html}{Apple's Framework Programming Guide} for more info.
+
+    In general, this shouldn't be an issue as qmake will take care of the
+    specifics for you.  However, there are a couple of things you need to keep
+    in mind when using frameworks over normal dynamic libraries. Most are
+    included in the Framework Programming Guide, but one that you may not be
+    aware of is that:
+
+    \bold {frameworks will always link with the "release" version of a library}.
+
+    This means that if you want to actually use a "debug" version of a Qt
+    framework, you must make sure that the application actually loads the debug
+    version. This is usually done by using the DYLD_IMAGE_SUFFIX environment
+    variables. However, for several reasons, this typically doesn't work so
+    well. Instead, you can temporarily swap your debug and release versions.
+    This is documented in \l{http://developer.apple.com/technotes/tn2004/tn2124.html#SECJUSTONELIB}{Apple's "Debugging Magic" technical note}.
+
+    If you do not wish to use frameworks simply configure Qt with \c{-no-framework}.
+
+    \section2 Bundle-Based Libraries
+
+    If you want to incorporate dynamic libraries as part of your Mac OS X
+    application bundle (the application directory), then you place these into a
+    directory called Frameworks, a subdirectory of the application bundle.
+
+    The application finds these dynamic libraries if the libraries have an
+    install name of "@executable_path/../Frameworks/libname.dylib.
+
+    If you use \c qmake and Makefiles, use the \c QMAKE_LFLAGS_SONAME setting:
+
+    \snippet doc/src/snippets/code/doc.src.mac-differences.qdoc 0
+
+    Alternatively you can modify the intall name using the install_name_tool(1)
+    command line tool. See its manpage for more information.
+
+    Note that the \c DYLD_LIBRARY_PATH environment variable will override these
+    settings, and any other default paths such as a lookup of dynamic
+    libraries inside \c /usr/lib and similar default locations.
+
+    \section2 Combining Libraries
+
+    If you want to build a new dynamic library combining the Qt 4 dynamic
+    libraries, you need to introduce the \c{ld -r} flag. Then relocation
+    information is stored in the the output file, so that this file could
+    be the subject of another \c ld run. This is done by setting the \c -r flag
+    in the \c .pro file, and the \c LFLAGS settings.
+
+    \section2 Initialization Order
+
+    dyld(1) will call global static initializers in the order in which
+    they are linked into your application. If a library links against Qt
+    and references globals in Qt (from global initializers in your own
+    library) you should be sure to link against Qt before your library,
+    otherwise the result will be undefined (as Qt's global initializers
+    have not been called yet).
+
+    \section1 Compiler Settings
+
+    \section2 Compile-Time Flags
+
+    There are two flags that are helpful when wanting to define Mac OS X specific code:
+
+    \list
+    \o Q_OS_DARWIN is defined when Qt detects you are on a Darwin-based system (including the Open Source version)
+    \o Q_WS_MAC is defined when we the Mac OS X GUI is present.
+    \endlist
+
+    Q_OS_MAC is defined as a convenience and is available whenever Q_OS_DARWIN is defined.
+
+    If you desire to define for specific versions of Mac OS X, use the
+    availability macros defined in /usr/include/AvailabilityMacros.h.
+
+    See QSysInfo for information on runtime version checking.
+
+    \section1 Mac OS X Native API Access
+
+    \section2 Accessing the Bundle Path
+
+    The Mac OS X application is actually a directory (ending with \c .app).
+    This directory has various sub-directories and sources. It may be useful to
+    place items (e.g. plugins, online-documentation, etc.) inside this
+    bundle. You will then you need to find out where the bundle resides on the
+    disk. The following code will return the path of the application bundle:
+
+    \snippet doc/src/snippets/code/doc.src.mac-differences.qdoc 1
+
+    More information about using the CFBundle API is available on
+    \l{http://developer.apple.com/documentation/CoreFoundation/Reference/CFBundleRef/index.html}{Apple's
+    Developer Website}.
+
+    \section2 Translating the Application Menu and Native Dialogs
+
+    The items in the Application Menu will be merged correctly for your
+    localized application, but they will not show up translated until
+    you add a localized resource folder \l{http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/Concepts/BundleAnatomy.html}{inside the Bundle}:
+
+    And look for the heading: Adding Localized Resources
+
+    The main thing you need to do is create a file called locversion.plist.
+    Here is an example one for Norwegian:
+
+    \snippet doc/src/snippets/code/doc.src.mac-differences.qdoc 2
+
+    Then when you run the application with your preferred language set to Norwegian
+    you should see menu items like "Avslutt" instead of "Quit".
+
+    \section1 User Interface
+
+    \section2 Right-Mouse Clicks
+
+    If you want to provide right-mouse click support for Mac OS X, use the
+    QContextMenuEvent class. This will map to a context menu event, in other
+    words a menu that will display a pop-up selection. This is the most common
+    use of right-mouse clicks, and maps to a control-click with the Mac OS X
+    one-button mouse support.
+
+    \section2 Menu Bar
+
+    Qt/Mac will automatically detect your menu bars for you and turn them
+    into Mac native menu bars. Fitting this into your existing Qt application
+    will normally be automatic, however, if you have special needs the Qt/Mac
+    implementation currently selects a menu bar by starting at the active window
+    (i.e. QApplication::activeWindow()), and applying the following tests:
+
+    \list 1
+    \i If the window has a QMenuBar then it is used.
+    \i If the window is a modal then its menu bar is used. If no menu bar is
+       specified then a default menu bar is used (as documented below).
+    \i If the window has no parent then the default menu bar is used (as documented
+       below).
+    \endlist
+
+    These tests are followed all the way up the parent window chain until
+    one of the above is satisifed. If all else fails a default menu bar will be
+    created, the default menu bar on Qt/Mac is an empty menu bar, however you can
+    create a different default menu bar by creating a parentless QMenuBar; the
+    first one created will be designated the default menu bar, and will be
+    used whenever a default menu bar is needed.
+
+    Note that using native menu bars introduces certain limitations on Qt classes.
+    See the \l{#Limitations}{list of limitations} below for more information about
+    these.
+
+    \section2 Special Keys
+
+    To provide the expected behavior for Qt applications on Mac OS X, the Qt::Meta,
+    Qt::MetaModifier, and Qt::META enum values correspond to the Control keys on the
+    standard Macintosh keyboard, and the Qt::Control, Qt::ControlModifier, and
+    Qt::CTRL enum values correspond to the Command keys.
+
+    \section1 Limitations
+
+    \section2 Menu Actions
+
+    \list
+    \o Actions in into a QMenu with accelerators that have more than one
+       keystroke (QKeySequence) will not display correctly when the QMenu is
+       translated into a Mac native menu bar. The first key will be displayed,
+       however the shortcut will still be activated as on all other
+       platforms.
+    \o QMenu objects used in the native menu bar are not able to handle "show",
+       "hide", and "mouse move" events. Reimplementations of
+       \l{QMenu::}{showEvent()}, \l{QMenu::}{hideEvent()}, and
+       \l{QMenu::}{mouseMoveEvent()} in QMenu subclasses will not be called
+       for menus used in this way.
+    \endlist
+
+    \section2 Native Widgets
+
+    Qt/Mac has support for sheets and drawers, represented in the window flags
+    by Qt::Sheet and Qt::Drawer respectiviely. Brushed metal windows can also
+    be created by using the Qt::WA_MacMetalStyle window attribute.
+*/

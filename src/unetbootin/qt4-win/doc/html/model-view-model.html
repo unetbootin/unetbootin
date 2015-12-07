@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Model Classes</title>
+  <link rel="prev" href="model-view-using.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-creating-models.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-using.html">Using Models and Views</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-creating-models.html">Creating New Models</a>]
+</p>
+<h1 class="title">Model Classes<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#basic-concepts">Basic Concepts</a></li>
+<ul><li><a href="#model-indexes">Model Indexes</a></li>
+<li><a href="#rows-and-columns">Rows and Columns</a></li>
+<li><a href="#parents-of-items">Parents of Items</a></li>
+<li><a href="#item-roles">Item Roles</a></li>
+<li><a href="#summary-of-concepts">Summary of Concepts</a></li>
+<li><a href="#using-model-indexes">Using Model Indexes</a></li>
+</ul>
+<li><a href="#further-reading">Further Reading</a></li>
+</ul>
+<a name="basic-concepts"></a>
+<h2>Basic Concepts</h2>
+<p>In the model/view architecture, the model provides a standard interface that views and delegates use to access data. In Qt, the standard interface is defined by the <a href="qabstractitemmodel.html">QAbstractItemModel</a> class. No matter how the items of data are stored in any underlying data structure, all subclasses of <a href="qabstractitemmodel.html">QAbstractItemModel</a> represent the data as a hierarchical structure containing tables of items. Views use this <i>convention</i> to access items of data in the model, but they are not restricted in the way that they present this information to the user.</p>
+<p align="center"><img src="images/modelview-models.png" /></p><p>Models also notify any attached views about changes to data through the signals and slots mechanism.</p>
+<p>This chapter describes some basic concepts that are central to the way item of data are accessed by other components via a model class. More advanced concepts are discussed in later chapters.</p>
+<a name="model-indexes"></a>
+<h3>Model Indexes</h3>
+<p>To ensure that the representation of the data is kept separate from the way it is accessed, the concept of a <i>model index</i> is introduced. Each piece of information that can be obtained via a model is represented by a model index. Views and delegates use these indexes to request items of data to display.</p>
+<p>As a result, only the model needs to know how to obtain data, and the type of data managed by the model can be defined fairly generally. Model indexes contain a pointer to the model that created them, and this prevents confusion when working with more than one model.</p>
+<pre>     QAbstractItemModel *model = index.model();</pre>
+<p>Model indexes provide <i>temporary</i> references to pieces of information, and can be used to retrieve or modify data via the model. Since models may reorganize their internal structures from time to time, model indexes may become invalid, and <i>should not be stored</i>. If a long-term reference to a piece of information is required, a <i>persistent model index</i> must be created. This provides a reference to the information that the model keeps up-to-date. Temporary model indexes are provided by the <a href="qmodelindex.html">QModelIndex</a> class, and persistent model indexes are provided by the <a href="qpersistentmodelindex.html">QPersistentModelIndex</a> class.</p>
+<p>To obtain a model index that corresponds to an item of data, three properties must be specified to the model: a row number, a column number, and the model index of a parent item. The following sections describe and explain these properties in detail.</p>
+<a name="rows-and-columns"></a>
+<h3>Rows and Columns</h3>
+<p>In its most basic form, a model can be accessed as a simple table in which items are located by their row and column numbers. <i>This does not mean that the underlying pieces of data are stored in an array structure</i>; the use of row and column numbers is only a convention to allow components to communicate with each other. We can retrieve information about any given item by specifying its row and column numbers to the model, and we receive an index that represents the item:</p>
+<pre>     QModelIndex index = model-&gt;index(row, column, ...);</pre>
+<p>Models that provide interfaces to simple, single level data structures like lists and tables do not need any other information to be provided but, as the above code indicates, we need to supply more information when obtaining a model index.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/modelview-tablemodel.png" /></td><td><b>Rows and columns</b><p>The diagram shows a representation of a basic table model in which each item is located by a pair of row and column numbers. By passing the relevant row and column numbers to the model we obtain a model index that refers to an item of data.</p>
+<pre>     QModelIndex indexA = model-&gt;index(0, 0, QModelIndex());
+     QModelIndex indexB = model-&gt;index(1, 1, QModelIndex());
+     QModelIndex indexC = model-&gt;index(2, 1, QModelIndex());</pre>
+<p>Top level items in a model are always referenced by specifying <tt>QModelIndex()</tt> as their parent item. This is discussed in the next section.</p>
+</td></tr>
+</table></p>
+<a name="parents-of-items"></a>
+<h3>Parents of Items</h3>
+<p>The table-like interface to item data provided by models is ideal when using data in a table or list view; the row and column number system maps exactly to the way the views display items. However, structures such as tree views require the model to expose a more flexible interface to the items within. As a result, each item can also be the parent of another table of items, in much the same way that a top-level item in a tree view can contain another list of items.</p>
+<p>When requesting an index for a model item, we must provide some information about the item's parent. Outside the model, the only way to refer to an item is through a model index, so a parent model index must also be given:</p>
+<pre>     QModelIndex index = model-&gt;index(row, column, parent);</pre>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/modelview-treemodel.png" /></td><td><b>Parents, rows, and columns</b><p>The diagram shows a representation of a tree model in which each item is referred to by a parent, a row number, and a column number.</p>
+<p>Items &quot;A&quot; and &quot;C&quot; are represented as top-level siblings in the model:</p>
+<pre>     QModelIndex indexA = model-&gt;index(0, 0, QModelIndex());
+     QModelIndex indexC = model-&gt;index(2, 1, QModelIndex());</pre>
+<p>Item &quot;A&quot; has a number of children. A model index for item &quot;B&quot; is obtained with the following code:</p>
+<pre>     QModelIndex indexB = model-&gt;index(1, 0, indexA);</pre>
+</td></tr>
+</table></p>
+<a name="item-roles"></a>
+<h3>Item Roles</h3>
+<p>Items in a model can perform various <i>roles</i> for other components, allowing different kinds of data to be supplied for different situations. For example, <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a> is used to access a string that can be displayed as text in a view. Typically, items contain data for a number of different roles, and the standard roles are defined by <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>.</p>
+<p>We can ask the model for the item's data by passing it the model index corresponding to the item, and by specifying a role to obtain the type of data we want:</p>
+<pre>     QVariant value = model-&gt;data(index, role);</pre>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/modelview-roles.png" /></td><td><b>Item roles</b><p>The role indicates to the model which type of data is being referred to. Views can display the roles in different ways, so it is important to supply appropriate information for each role.</p>
+<p>The <a href="model-view-creating-models.html">Creating New Models</a> section covers some specific uses of roles in more detail.</p>
+</td></tr>
+</table></p>
+<p>Most common uses for item data are covered by the standard roles defined in <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>. By supplying appropriate item data for each role, models can provide hints to views and delegates about how items should be presented to the user. Different kinds of views have the freedom to interpret or ignore this information as required. It is also possible to define additional roles for application-specific purposes.</p>
+<a name="summary-of-concepts"></a>
+<h3>Summary of Concepts</h3>
+<ul>
+<li>Model indexes give views and delegates information about the location of items provided by models in a way that is independent of any underlying data structures.</li>
+<li>Items are referred to by their row and column numbers, and by the model index of their parent items.</li>
+<li>Model indexes are constructed by models at the request of other components, such as views and delegates.</li>
+<li>If a valid model index is specified for the parent item when an index is requested using <a href="qabstractitemmodel.html#index">index()</a>, the index returned will refer to an item beneath that parent item in the model. The index obtained refers to a child of that item.</li>
+<li>If an invalid model index is specified for the parent item when an index is requested using <a href="qabstractitemmodel.html#index">index()</a>, the index returned will refer to a top-level item in the model.</li>
+<li>The <a href="qt.html#ItemDataRole-enum">role</a> distinguishes between the different kinds of data associated with an item.</li>
+</ul>
+<a name="using-model-indexes"></a>
+<h3>Using Model Indexes</h3>
+<p>To demonstrate how data can be retrieved from a model, using model indexes, we set up a <a href="qdirmodel.html">QDirModel</a> without a view and display the names of files and directories in a widget. Although this does not show a normal way of using a model, it demonstrates the conventions used by models when dealing with model indexes.</p>
+<p>We construct a directory model in the following way:</p>
+<pre>     QDirModel *model = new QDirModel;
+     QModelIndex parentIndex = model-&gt;index(QDir::currentPath());
+     int numRows = model-&gt;rowCount(parentIndex);</pre>
+<p>In this case, we set up a default <a href="qdirmodel.html">QDirModel</a>, obtain a parent index using a specific implementation of <a href="qdirmodel.html#index">index()</a> provided by that model, and we count the number of rows in the model using the <a href="qdirmodel.html#rowCount">rowCount()</a> function.</p>
+<p>For simplicity, we are only interested in the items in the first column of the model. We examine each row in turn, obtaining a model index for the first item in each row, and read the data stored for that item in the model.</p>
+<pre>     for (int row = 0; row &lt; numRows; ++row) {
+         QModelIndex index = model-&gt;index(row, 0, parentIndex);</pre>
+<p>To obtain a model index, we specify the row number, column number (zero for the first column), and the appropriate model index for the parent of all the items that we want. The text stored in each item is retrieved using the model's <a href="qdirmodel.html#data">data()</a> function. We specify the model index and the <a href="qt.html#ItemDataRole-enum">DisplayRole</a> to obtain data for the item in the form of a string.</p>
+<pre>         QString text = model-&gt;data(index, Qt::DisplayRole).toString();
+         <span class="comment">//</span> Display the text in a widget.
+
+     }</pre>
+<p>The above example demonstrates the basic principles used to retrieve data from a model:</p>
+<ul>
+<li>The dimensions of a model can be found using <a href="qabstractitemmodel.html#rowCount">rowCount()</a> and <a href="qabstractitemmodel.html#columnCount">columnCount()</a>. These functions generally require a parent model index to be specified.</li>
+<li>Model indexes are used to access items in the model. The row, column, and parent model index are needed to specify the item.</li>
+<li>To access top-level items in a model, specify a null model index as the parent index with <tt>QModelIndex()</tt>.</li>
+<li>Items contain data for different roles. To obtain the data for a particular role, both the model index and the role must be supplied to the model.</li>
+</ul>
+<a name="further-reading"></a>
+<h2>Further Reading</h2>
+<p>New models can be created by implementing the standard interface provided by <a href="qabstractitemmodel.html">QAbstractItemModel</a>. In the <a href="model-view-creating-models.html">Creating New Models</a> chapter, we will demonstrate this by creating a convenient ready-to-use model for holding lists of strings.</p>
+<p>
+[Previous: <a href="model-view-using.html">Using Models and Views</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-creating-models.html">Creating New Models</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

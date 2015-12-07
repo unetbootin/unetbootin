@@ -1,0 +1,151 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page demos.html
+    \title Qt Demonstrations
+    \brief Information about the demonstration programs provided with Qt.
+    \ingroup howto
+
+    This is the list of demonstrations in Qt's \c demos directory.
+    These are larger and more complicated programs than the
+    \l{Qt Examples} and are used to highlight certain features of
+    Qt. You can launch any of these programs from the
+    \l{Examples and Demos Launcher} application.
+
+    If you are new to Qt, and want to start developing applications,
+    you should probably start by going through the \l{Tutorials}.
+
+    \section1 Painting
+
+    \list
+    \o \l{demos/composition}{Composition Modes} demonstrates the range of
+       composition modes available with Qt.
+    \o \l{demos/deform}{Vector Deformation} demonstrates effects that are made
+       possible with a vector-oriented paint engine.
+    \o \l{demos/gradients}{Gradients} shows the different types of gradients
+       that are available in Qt.
+    \o \l{demos/pathstroke}{Path Stroking} shows Qt's built-in dash patterns
+       and shows how custom patterns can be used to extend the range of
+       available patterns.
+    \o \l{demos/affine}{Affine Transformations} demonstrates the different
+       affine transformations that can be used to influence painting operations.
+    \o \l{demos/arthurplugin}{Arthur Plugin} shows the widgets from the
+       other painting demos packaged as a custom widget plugin for \QD.
+    \endlist
+
+    \section1 Item Views
+
+    \list
+    \o \l{demos/interview}{Interview} shows the same model and selection being
+       shared between three different views.
+    \o \l{demos/spreadsheet}{Spreadsheet} demonstrates the use of a table view
+       as a spreadsheet, using custom delegates to render each item according to
+       the type of data it contains.
+    \endlist
+
+    \section1 SQL
+
+    \list
+    \o \l{demos/books}{Books} shows how Qt's SQL support and model/view integration
+       enables the user to modify the contents of a database without requiring
+       knowledge of SQL.
+    \o \l{demos/sqlbrowser}{SQL Browser} demonstrates a console for executing SQL
+       statements on a live database and provides a data browser for interactively
+       visualizing the results.
+    \endlist
+
+    \section1 Rich Text
+
+    \list
+    \o \l{demos/textedit}{Text Edit} shows Qt's rich text editing features and provides
+       an environment for experimenting with them.
+    \endlist
+
+    \section1 Main Window
+
+    \list
+    \o \l{demos/mainwindow}{Main Window} shows Qt's extensive support for main window
+       features, such as tool bars, dock windows, and menus.
+    \o \l{demos/macmainwindow}{Mac Main Window} shows how to create main window applications that has 
+      the same appearance as other Mac OS X applications.
+    \endlist
+
+    \section1 Graphics View
+
+    \list
+    \o \l{demos/chip}{40000 Chips} uses the
+       \l{The Graphics View Framework}{Graphics View} framework to efficiently
+       display a large number of individual graphical items on a scrolling canvas,
+       highlighting features such as rotation, zooming, level of detail control,
+       and item selection.
+    \o \l{demos/embeddeddialogs}{Embedded Dialogs} showcases Qt 4.4's \e{Widgets on
+       the Canvas} feature by embedding a multitude of fully-working dialogs into a
+       scene.
+    \endlist
+
+    \section1 Tools
+
+    \list
+    \o \l{demos/undo}{Undo Framework} demonstrates how Qt's
+        \l{Overview of Qt's Undo Framework}{undo framework} is used to
+        provide advanced undo/redo functionality.
+    \endlist
+
+    \section1 QtWebKit
+
+    \list
+    \o \l{Browser} demonstrates how Qt's \l{QtWebKit Module}{WebKit module}
+        can be used to implement a small web browser.
+    \endlist
+
+    \section1 Phonon
+
+    \list
+    \o \l{demos/mediaplayer}{Media Player} demonstrates how the \l{Phonon Module} can be
+    used to implement a basic media player application.
+    \endlist
+
+    \note The Phonon demos are currently not available for the MinGW platform.
+
+*/

@@ -1,0 +1,103 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-threads.html
+    \title Thread Support in Qt 4
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage The Qt 4 Style API
+
+    Qt 4 makes it easier than ever to write multithreaded
+    applications. More classes have been made usable from non-GUI
+    threads, and the signals and slots mechanism can now be used to
+    communicate between threads.
+
+    \section1 General Overview
+
+    QThread now inherits QObject. It emits signals to indicate that
+    the thread started or finished executing, and provides a few
+    slots as well.
+
+    Each thread can now have its own event loop. The initial thread
+    starts its event loops using QCoreApplication::exec(); other
+    threads can start an event loop using QThread::exec(). Like
+    QCoreApplication, QThread also provides an
+    \l{QThread::exit()}{exit(int)} function and a
+    \l{QThread::quit()}{quit()} slot.
+
+    An event loop in a thread makes it possible for the thread to use
+    certain non-GUI Qt classes that require the presence of an event
+    loop (such as QTimer, QTcpSocket, and QProcess). It also makes it
+    possible to connect signals from any threads to slots of a
+    specific thread. When a signal is emitted, the slot isn't called
+    immediately; instead, it is invoked when control returns to the
+    event loop of the thread to which the object belongs. The slot is
+    executed in the thread where the receiver object lives. See
+    QObject::connect() for details.
+
+    Qt 4 also introduces a new synchronization class: QReadWriteLock.
+    It is similar to QMutex, except that it distinguishes between
+    "read" and "write" access to shared data and allows multiple
+    readers to access the data simultaneously. Using QReadWriteLock
+    instead of QMutex when it is possible can make multithreaded
+    programs more concurrent.
+
+    Since Qt 4, \l{implicitly shared} classes can safely be copied
+    across threads, like any other value classes. They are fully
+    reentrant. This is implemented using atomic reference counting
+    operations, which are implemented in assembly language for the
+    different platforms supported by Qt. Atomic reference counting is
+    very fast, much faster than using a mutex.
+
+    See \l{Thread Support in Qt} for more information.
+
+    \section1 Comparison with Qt 3
+
+    Earlier versions of Qt offered an option to build the library
+    without thread support. In Qt 4, threads are always enabled.
+
+    Qt 3 had a class called \c QDeepCopy that you could use to take a
+    deep copy of an implicitly shared object. In Qt 4, the atomic
+    reference counting makes this class superfluous.
+*/

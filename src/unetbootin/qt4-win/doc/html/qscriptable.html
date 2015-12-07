@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/script/qscriptable.cpp -->
+<head>
+  <title>Qt 4.4: QScriptable Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QScriptable Class Reference<br /><span class="small-subtitle">[<a href="qtscript.html">QtScript</a> module]</span>
+</h1>
+<p>The QScriptable class provides access to the Qt Script environment from Qt C++ member functions. <a href="#details">More...</a></p>
+<pre> #include &lt;QScriptable&gt;</pre><p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qscriptable-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QScriptValue <b><a href="qscriptable.html#argument">argument</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qscriptable.html#argumentCount">argumentCount</a></b> () const</li>
+<li><div class="fn"/>QScriptContext * <b><a href="qscriptable.html#context">context</a></b> () const</li>
+<li><div class="fn"/>QScriptEngine * <b><a href="qscriptable.html#engine">engine</a></b> () const</li>
+<li><div class="fn"/>QScriptValue <b><a href="qscriptable.html#thisObject">thisObject</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QScriptable class provides access to the Qt Script environment from Qt C++ member functions.</p>
+<p>With <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>(), you can expose the signals and slots and properties of any <a href="qobject.html">QObject</a> (or subclass) to script code. QScriptable augments this functionality by giving your C++ members access to the Qt Script environment they are invoked in; conceptually, it is similar to <a href="qobject.html#sender">QObject::sender</a>().</p>
+<p>By subclassing QScriptable, you get the following functions in your class: <a href="qscriptable.html#thisObject">thisObject</a>(), <a href="qscriptable.html#argumentCount">argumentCount</a>(), <a href="qscriptable.html#argument">argument</a>(), <a href="qscriptable.html#context">context</a>() and <a href="qscriptable.html#engine">engine</a>(). With these functions, you have full access to the Qt Script environment from the slots and property access functions of your class, when they are invoked from script code.</p>
+<p>For example, you can throw a Qt Script exception from a slot; manipulate the `this' object associated with the function call; inspect the arguments stored in the <a href="qscriptcontext.html">QScriptContext</a> to know the &quot;real&quot; arguments passed to the function from script code; and call script functions from your slot.</p>
+<p>A typical use case of QScriptable is to implement prototype objects for custom C++ types. You define the scriptable interface of your custom type in a QScriptable subclass using properties and slots; then you wrap an instance of your class using <a href="qscriptengine.html#newQObject">QScriptEngine::newQObject</a>(), and finally pass the result to <a href="qscriptengine.html#setDefaultPrototype">QScriptEngine::setDefaultPrototype</a>(). See the <a href="script-defaultprototypes.html">Default Prototypes Example</a> to see how this can be done.</p>
+<p>The following is what subclassing QScriptable typically looks like:</p>
+<pre>   class MyScriptableObject: public QObject,
+         protected QScriptable
+   {
+     Q_OBJECT
+   ...
+
+   public slots:
+     void doSomething();
+     double doSomethingElse();
+   }</pre>
+<p>The only difference from regular <a href="qobject.html">QObject</a> subclassing is that you also inherit from QScriptable.</p>
+<p>In the implementation of your slots, you can then use the functions inherited from QScriptable:</p>
+<pre>     void MyScriptableObject::doSomething()
+     {
+       context()-&gt;throwError(&quot;Threw an error from a slot&quot;);
+     }
+
+     double MyScriptableObject::doSomethingElse()
+     {
+       return qscriptvalue_cast&lt;double&gt;(thisObject());
+     }</pre>
+<p>See also <a href="script-defaultprototypes.html">Default Prototypes Example</a> and <a href="qscriptengine.html#newFunction">QScriptEngine::newFunction</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="argument"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptable::argument ( int <i>index</i> ) const</h3>
+<p>Returns the function argument at the given <i>index</i>, or an invalid <a href="qscriptvalue.html">QScriptValue</a> if the Qt function was not invoked from script code.</p>
+<p>See also <a href="qscriptable.html#argumentCount">argumentCount</a>().</p>
+<h3 class="fn"><a name="argumentCount"></a>int QScriptable::argumentCount () const</h3>
+<p>Returns the number of arguments passed to the function in this invocation, or -1 if the Qt function was not invoked from script code.</p>
+<p>See also <a href="qscriptable.html#argument">argument</a>().</p>
+<h3 class="fn"><a name="context"></a><a href="qscriptcontext.html">QScriptContext</a> * QScriptable::context () const</h3>
+<p>Returns a pointer to the <a href="qscriptcontext.html">QScriptContext</a> associated with the current Qt function call, or 0 if the Qt function was not invoked from script code.</p>
+<h3 class="fn"><a name="engine"></a><a href="qscriptengine.html">QScriptEngine</a> * QScriptable::engine () const</h3>
+<p>Returns a pointer to the <a href="qscriptengine.html">QScriptEngine</a> associated with the current Qt function call, or 0 if the Qt function was not invoked from script code.</p>
+<h3 class="fn"><a name="thisObject"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptable::thisObject () const</h3>
+<p>Returns the `this' object associated with the current Qt function call, or an invalid <a href="qscriptvalue.html">QScriptValue</a> if the Qt function was not invoked from script code.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

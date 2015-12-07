@@ -1,0 +1,114 @@
+/* This is the default Qt style sheet.
+
+   IMPORTANT: This style sheet is primarily meant for defining feature
+   capablities of styles. Do NOT add default styling rules here. When in 
+   doubt ask me - Girish
+*/
+
+QLineEdit {
+    -qt-background-role: base;
+    border: native;
+    -qt-style-features: background-color;
+}
+
+QLineEdit:no-frame {
+    border: none;
+}
+
+QLineEdit[style="QCleanlooksStyle"] {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+QLineEdit[style="QWindowsXPStyle"], QLineEdit[style="QWindowsVistaStyle"] {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+QFrame {
+    border: native;
+}
+
+QLabel, QToolBox {
+    border: none;
+    background: none;
+    border-image: none;
+}
+
+QGroupBox {
+    border: native;
+}
+
+QToolTip {
+    -qt-background-role: window;
+    border: native;
+}
+
+QPushButton, QToolButton {
+    border-style: native;
+    -qt-style-features: background-color;
+}
+
+QPushButton[style="QPlastiqueStyle"],
+QToolButton[style="QPlastiqueStyle"]
+{
+    -qt-style-features: background-color;
+}
+
+QPushButton[style="QWindowsXPStyle"],
+QPushButton[style="QWindowsVistaStyle"]
+{
+    -qt-style-features: none;
+}
+    
+QComboBox {
+    border: native;
+    -qt-style-features: background-color background-gradient;
+    -qt-background-role: base;
+}
+
+QComboBox[style="QWindowsXPStyle"],
+QComboBox[style="QWindowsVistaStyle"]
+{
+    -qt-style-features: none;
+}
+
+QComboBox[style="QPlastiqueStyle"][readOnly="true"],
+QComboBox[style="QCleanlooksStyle"][readOnly="true"]
+{
+    -qt-background-role: button;
+}
+
+QAbstractSpinBox {
+    border: native;
+    -qt-style-features: background-color;
+    -qt-background-role: base;
+}
+
+QMenu {
+    -qt-background-role: window;
+}
+
+QHeaderView {
+    -qt-background-role: window;
+}
+
+QTableCornerButton::section, QHeaderView::section {
+    -qt-background-role: button;
+    -qt-style-features: background-color;
+    border: native;
+}
+
+
+QHeaderView[style="QWindowsXPStyle"]::section,
+QHeaderView[style="QWindowsVistaStyle"]::section {
+    -qt-style-features: none;
+}
+
+QProgressBar {
+    -qt-background-role: base;
+}
+
+QScrollBar {
+    -qt-background-role: window;
+}

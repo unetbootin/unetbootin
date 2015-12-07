@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/arrowpad.qdoc -->
+<head>
+  <title>Qt 4.4: Arrow Pad Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Arrow Pad Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="linguist-arrowpad-arrowpad-cpp.html">linguist/arrowpad/arrowpad.cpp</a></li>
+<li><a href="linguist-arrowpad-arrowpad-h.html">linguist/arrowpad/arrowpad.h</a></li>
+<li><a href="linguist-arrowpad-mainwindow-cpp.html">linguist/arrowpad/mainwindow.cpp</a></li>
+<li><a href="linguist-arrowpad-mainwindow-h.html">linguist/arrowpad/mainwindow.h</a></li>
+<li><a href="linguist-arrowpad-main-cpp.html">linguist/arrowpad/main.cpp</a></li>
+<li><a href="linguist-arrowpad-arrowpad-pro.html">linguist/arrowpad/arrowpad.pro</a></li>
+</ul>
+<p>This example is a slightly more involved and introduces a key <i>Qt Linguist</i> concept: &quot;contexts&quot;. It also shows how to use two or more languages.</p>
+<p align="center"><img src="images/linguist-arrowpad_en.png" /></p><p>We will use two translations, French and Dutch, although there is no effective limit on the number of possible translations that can be used with an application. The relevant lines of <tt>arrowpad.pro</tt> are</p>
+<pre> HEADERS      = arrowpad.h \
+                mainwindow.h
+ SOURCES      = arrowpad.cpp \
+                main.cpp \
+                mainwindow.cpp
+
+ TRANSLATIONS = arrowpad_fr.ts \
+                arrowpad_nl.ts</pre>
+<p>Run <tt>lupdate</tt>; it should produce two identical message files <tt>arrowpad_fr.ts</tt> and <tt>arrowpad_nl.ts</tt>. These files will contain all the source texts marked for translation with <tt>tr()</tt> calls and their contexts.</p>
+<p>See the <a href="linguist-manual.html">Qt Linguist manual</a> for more information about translating Qt application.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<p>In <tt>arrowpad.h</tt> we define the <tt>ArrowPad</tt> subclass which is a subclass of <a href="qwidget.html">QWidget</a>. In the screenshot above, the central widget with the four buttons is an <tt>ArrowPad</tt>.</p>
+<pre> class ArrowPad : public QWidget
+ {
+     Q_OBJECT</pre>
+<p>When <tt>lupdate</tt> is run it not only extracts the source texts but it also groups them into contexts. A context is the name of the class in which the source text appears. Thus, in this example, &quot;ArrowPad&quot; is a context: it is the context of the texts in the <tt>ArrowPad</tt> class. The <tt>Q_OBJECT</tt> macro defines <tt>tr(x)</tt> in <tt>ArrowPad</tt> like this:</p>
+<pre>         qApp-&gt;translate(&quot;ArrowPad&quot;, x)</pre>
+<p>Knowing which class each source text appears in enables <i>Qt Linguist</i> to group texts that are logically related together, e.g&#x2e; all the text in a dialog will have the context of the dialog's class name and will be shown together. This provides useful information for the translator since the context in which text appears may influence how it should be translated. For some translations keyboard accelerators may need to be changed and having all the source texts in a particular context (class) grouped together makes it easier for the translator to perform any accelerator changes without introducing conflicts.</p>
+<p>In <tt>arrowpad.cpp</tt> we implement the <tt>ArrowPad</tt> class.</p>
+<pre>     upButton = new QPushButton(tr(&quot;&amp;Up&quot;));
+     downButton = new QPushButton(tr(&quot;&amp;Down&quot;));
+     leftButton = new QPushButton(tr(&quot;&amp;Left&quot;));
+     rightButton = new QPushButton(tr(&quot;&amp;Right&quot;));</pre>
+<p>We call <tt>ArrowPad::tr()</tt> for each button's label since the labels are user-visible text.</p>
+<p align="center"><img src="images/linguist-arrowpad_en.png" /></p><pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT</pre>
+<p>In the screenshot above, the whole window is a <tt>MainWindow</tt>. This is defined in the <tt>mainwindow.h</tt> header file. Here too, we use <tt>Q_OBJECT</tt>, so that <tt>MainWindow</tt> will become a context in <i>Qt Linguist</i>.</p>
+<pre>     arrowPad = new ArrowPad;</pre>
+<p>In the implementation of <tt>MainWindow</tt>, <tt>mainwindow.cpp</tt>, we create an instance of our <tt>ArrowPad</tt> class.</p>
+<pre>     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));</pre>
+<p>We also call <tt>MainWindow::tr()</tt> twice, once for the action and once for the shortcut.</p>
+<p>Note the use of <tt>tr()</tt> to support different keys in other languages. &quot;Ctrl+Q&quot; is a good choice for Quit in English, but a Dutch translator might want to use &quot;Ctrl+A&quot; (for Afsluiten) and a German translator &quot;Strg+E&quot; (for Beenden). When using <tt>tr()</tt> for <b>Ctrl</b> key accelerators, the two argument form should be used with the second argument describing the function that the accelerator performs.</p>
+<p>Our <tt>main()</tt> function is defined in <tt>main.cpp</tt> as usual.</p>
+<pre>     QTranslator translator;
+     translator.load(QString(&quot;arrowpad_&quot;) + locale);
+     app.installTranslator(&amp;translator);</pre>
+<p>We choose which translation to use according to the current locale. <a href="qlocale.html#system">QLocale::system</a>() can be influenced by setting the <tt>LANG</tt> environment variable, for example. Notice that the use of a naming convention that incorporates the locale for <tt>.qm</tt> message files, (and <tt>.ts</tt> files), makes it easy to implement choosing the translation file according to locale.</p>
+<p>If there is no <tt>.qm</tt> message file for the locale chosen the original source text will be used and no error raised.</p>
+<a name="translating-to-french-and-dutch"></a>
+<h2>Translating to French and Dutch</h2>
+<p>We'll begin by translating the example application into French. Start <i>Qt Linguist</i> with <tt>arrowpad_fr.ts</tt>. You should get the seven source texts (&quot;&amp;Up&quot;, &quot;&amp;Left&quot;, etc.) grouped in two contexts (&quot;ArrowPad&quot; and &quot;<a href="designer-getting-started.html#mainwindow">MainWindow</a>&quot;).</p>
+<p>Now, enter the following translations:</p>
+<ul>
+<li><tt>ArrowPad</tt><ul>
+<li>&amp;Up - &amp;Haut</li>
+<li>&amp;Left - &amp;Gauche</li>
+<li>&amp;Right - &amp;Droite</li>
+<li>&amp;Down - &amp;Bas</li>
+</ul>
+</li>
+<li><tt>MainWindow</tt><ul>
+<li>E&amp;xit - &amp;Quitter</li>
+<li>Ctrl+Q - Ctrl+Q</li>
+<li>&amp;File - &amp;Fichier</li>
+</ul>
+</li>
+</ul>
+<p>It's quickest to press <b>Alt+D</b> (which clicks the <b>Done &amp; Next</b> button) after typing each translation, since this marks the translation as done and moves on to the next source text.</p>
+<p>Save the file and do the same for Dutch working with <tt>arrowpad_nl.ts</tt>:</p>
+<ul>
+<li><tt>ArrowPad</tt><ul>
+<li>&amp;Up - &amp;Boven</li>
+<li>&amp;Left - &amp;Links</li>
+<li>&amp;Right - &amp;Rechts</li>
+<li>&amp;Down - &amp;Onder</li>
+</ul>
+</li>
+<li><tt>MainWindow</tt><ul>
+<li>E&amp;xit - &amp;Afsluiten</li>
+<li>Ctrl+Q - Ctrl+A</li>
+<li>File - &amp;Bestand</li>
+</ul>
+</li>
+</ul>
+<p>We have to convert the <tt>tt1_fr.ts</tt> and <tt>tt1_nl.ts</tt> translation source files into <tt>.qm</tt> files. We could use <i>Qt Linguist</i> as we've done before; however using the command line tool <tt>lrelease</tt> ensures that <i>all</i> the <tt>.qm</tt> files for the application are created without us having to remember to load and <b>File|Release</b> each one individually from <i>Qt Linguist</i>.</p>
+<p>Type</p>
+<pre>         lrelease arrowpad.pro</pre>
+<p>This should create both <tt>arrowpad_fr.qm</tt> and <tt>arrowpad_nl.qm</tt>. Set the <tt>LANG</tt> environment variable to <tt>fr</tt>. In Unix, one of the two following commands should work</p>
+<pre>         export LANG=fr
+         setenv LANG fr</pre>
+<p>In Windows, either modify <tt>autoexec.bat</tt> or run</p>
+<pre>         set LANG=fr</pre>
+<p>When you run the program, you should now see the French version:</p>
+<p align="center"><img src="images/linguist-arrowpad_fr.png" /></p><p>Try the same with Dutch, by setting <tt>LANG=nl</tt>. Now the Dutch version should appear:</p>
+<p align="center"><img src="images/linguist-arrowpad_nl.png" /></p><a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Mark one of the translations in <i>Qt Linguist</i> as not done, i.e&#x2e; by unchecking the &quot;done&quot; checkbox; run <tt>lupdate</tt>, then <tt>lrelease</tt>, then the example. What effect did this change have?</p>
+<p>Set <tt>LANG=fr_CA</tt> (French Canada) and run the example program again. Explain why the result is the same as with <tt>LANG=fr</tt>.</p>
+<p>Change one of the accelerators in the Dutch translation to eliminate the conflict between <i>&amp;Bestand</i> and <i>&amp;Boven</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

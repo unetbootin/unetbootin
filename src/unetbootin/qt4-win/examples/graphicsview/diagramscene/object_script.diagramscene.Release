@@ -1,0 +1,12 @@
+INPUT(
+./tmp\obj\release_static\mainwindow.o
+./tmp\obj\release_static\diagramitem.o
+./tmp\obj\release_static\main.o
+./tmp\obj\release_static\arrow.o
+./tmp\obj\release_static\diagramtextitem.o
+./tmp\obj\release_static\diagramscene.o
+./tmp\obj\release_static\moc_mainwindow.o
+./tmp\obj\release_static\moc_diagramscene.o
+./tmp\obj\release_static\moc_diagramtextitem.o
+./tmp\obj\release_static\qrc_diagramscene.o
+);

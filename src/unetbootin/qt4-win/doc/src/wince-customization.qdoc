@@ -1,0 +1,168 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page windowsce-customization.html
+    \ingroup qtce
+
+    \title Windows CE - Working with Custom SDKs
+
+    When working with a custom SDK for Windows CE, Qt provides an easy way
+    to add support for it to your development environment. The following is
+    a tutorial that covers how to create a specification for Qt on Windows
+    CE platforms.
+
+    \tableofcontents
+
+    \section1 Creating a Custom Build Specification
+
+    Create a subdirectory in the \c mkspecs folder of the Qt directory.
+    New specifications for Qt/Windows CE following this naming convention:
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 0
+
+    Using this convention makes it possible for \l{qmake} to identify that
+    you are building Qt for Windows CE, and will customize the compilation
+    process accordingly.
+
+    Create the files \c qmake.conf and \c qplatformdefs.h inside the new
+    specification directory. Take a look at the implementation of the other
+    Windows CE specifications included in the \c mkspecs directory to see
+    what is required to build Qt/Windows CE successfully.
+
+    \section1 Fine-Tuning Options
+
+    Compared to the desktop versions, Qt/Windows CE needs two additional
+    options:
+
+    \list
+    \o \bold{CE_SDK} specifies the name of the SDK.
+    \o \bold{CE_ARCH} specifies information about the target architecture.
+    \endlist
+
+    Following is an example configuration for the Windows Mobile 5 for 
+    Pocket PC SDK:
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 1
+
+    \bold{Note:} \l{qmake} uses this information to build a valid Visual
+    Studio project file. You need to ensure that they are identical to the
+    configuration of the custom SDK, otherwise you might not be able to
+    compile or debug your project with Visual Studio.
+
+    Additionally, most Windows CE SDKs use extra compiler options. These
+    can be specified by expanding the \c DEFINES value.
+
+    For example, with Windows Mobile 5 for Pocket PC, the \c DEFINES variable
+    is expanded in the following way:
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 2
+
+*/
+
+/*! \page shadow builds-wince.html
+    \ingroup qtce
+
+    \title Windows CE - Using shadow builds
+
+    \tableofcontents
+
+    While developing for Windows CE you might want to compile a
+    version of Qt for several different platforms and SDKs. In order
+    to create those different builds of Qt you do not have to copy the
+    whole Qt package or the Qt source. You are able to create multiple
+    Qt builds from a single source tree. Such builds are called shadow
+    builds.
+
+    Basicly a shadow build is created by calling configure.exe from a
+    different directory.
+
+    To make sure that the shadow build compiles correctly it is important that:   
+    \list
+    \o The original Qt source package is untouched (configure has never been run in the source tree directory).
+    \o The shadow build directory is on the same level as the Qt source package. 
+
+     If the Qt package is in \c{C:\Qt\4.4.0} the shadow build
+     directory could be \c{C:\Qt\shadowbuild}. A shadow build from a
+     directory like \c{C:\shadowbuild} will not compile.
+
+    \o Add the \c{\bin} directory of the shadow build directory to the \c PATH environment variable.
+    \endlist
+
+    So lets assume you have installed Qt in \c{C:\Qt\4.4.0} and
+    you want to create a shadow build in
+    \c{C:\Qt\mobile5-release-shared}:
+
+    \list
+
+    \o First add \c{C:\Qt\mobile5-release-shared\bin} to the \c PATH variable.
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 3
+
+    \o Make sure the enviroment variables for your compiler are set.
+
+    Visual Studio includes vcvars32.bat for that purpose - or simply
+    use the "Visual Studio Command Prompt" from the Start menu.
+
+    \o Now navigate to your shadow build directory and run configure:
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 4
+
+    \o
+    Now, to build Qt you first have to update your \c{PATH, INCLUDE} and \c LIB
+    paths to point to your target platforms. For a default installation
+    of the Windows Mobile 5.0 Pocket PC SDK this is done by:    
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 5
+    We have provided a convenience script for this called \c{setcepaths}.
+    Simply type:    
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 6
+
+    \o
+    Then to build the shadow build type:
+
+    \snippet doc/src/snippets/code/doc.src.wince-customization.qdoc 7
+
+    \o That's all. Now you created a shadow build of Qt in \c{C:\Qt\mobile5-release-shared}.    
+
+    \endlist
+*/

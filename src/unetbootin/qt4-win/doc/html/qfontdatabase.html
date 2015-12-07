@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qfontdatabase.cpp -->
+<head>
+  <title>Qt 4.4: QFontDatabase Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFontDatabase Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFontDatabase class provides information about the fonts available in the underlying window system. <a href="#details">More...</a></p>
+<pre> #include &lt;QFontDatabase&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#thread-safe">thread-safe</a>.</p>
+<ul>
+<li><a href="qfontdatabase-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a></b> { Any, Latin, Greek, Cyrillic, ..., Runic }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfontdatabase.html#QFontDatabase">QFontDatabase</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#bold">bold</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> ) const</li>
+<li><div class="fn"/>QStringList <b><a href="qfontdatabase.html#families">families</a></b> ( WritingSystem <i>writingSystem</i> = Any ) const</li>
+<li><div class="fn"/>QFont <b><a href="qfontdatabase.html#font">font</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i>, int <i>pointSize</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#isBitmapScalable">isBitmapScalable</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> = QString() ) const</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#isFixedPitch">isFixedPitch</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> = QString() ) const</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#isScalable">isScalable</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> = QString() ) const</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> = QString() ) const</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#italic">italic</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> ) const</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qfontdatabase.html#pointSizes">pointSizes</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> = QString() )</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qfontdatabase.html#smoothSizes">smoothSizes</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> )</li>
+<li><div class="fn"/>QString <b><a href="qfontdatabase.html#styleString">styleString</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>QString <b><a href="qfontdatabase.html#styleString-2">styleString</a></b> ( const QFontInfo &amp; <i>fontInfo</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="qfontdatabase.html#styles">styles</a></b> ( const QString &amp; <i>family</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfontdatabase.html#weight">weight</a></b> ( const QString &amp; <i>family</i>, const QString &amp; <i>style</i> ) const</li>
+<li><div class="fn"/>QList&lt;WritingSystem&gt; <b><a href="qfontdatabase.html#writingSystems">writingSystems</a></b> () const</li>
+<li><div class="fn"/>QList&lt;WritingSystem&gt; <b><a href="qfontdatabase.html#writingSystems-2">writingSystems</a></b> ( const QString &amp; <i>family</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>int <b><a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a></b> ( const QByteArray &amp; <i>fontData</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="qfontdatabase.html#applicationFontFamilies">applicationFontFamilies</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#removeAllApplicationFonts">removeAllApplicationFonts</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qfontdatabase.html#standardSizes">standardSizes</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qfontdatabase.html#supportsThreadedFontRendering">supportsThreadedFontRendering</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qfontdatabase.html#writingSystemName">writingSystemName</a></b> ( WritingSystem <i>writingSystem</i> )</li>
+<li><div class="fn"/>QString <b><a href="qfontdatabase.html#writingSystemSample">writingSystemSample</a></b> ( WritingSystem <i>writingSystem</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFontDatabase class provides information about the fonts available in the underlying window system.</p>
+<p>The most common uses of this class are to query the database for the list of font <a href="qfontdatabase.html#families">families</a>() and for the <a href="qfontdatabase.html#pointSizes">pointSizes</a>() and <a href="qfontdatabase.html#styles">styles</a>() that are available for each family. An alternative to <a href="qfontdatabase.html#pointSizes">pointSizes</a>() is <a href="qfontdatabase.html#smoothSizes">smoothSizes</a>() which returns the sizes at which a given family and style will look attractive.</p>
+<p>If the font family is available from two or more foundries the foundry name is included in the family name, e.g&#x2e; &quot;Helvetica [Adobe]&quot; and &quot;Helvetica [Cronyx]&quot;. When you specify a family you can either use the old hyphenated Qt 2.x &quot;foundry-family&quot; format, e.g&#x2e; &quot;Cronyx-Helvetica&quot;, or the new bracketed Qt 3.x &quot;family [foundry]&quot; format e.g&#x2e; &quot;Helvetica [Cronyx]&quot;. If the family has a foundry it is always returned, e.g&#x2e; by <a href="qfontdatabase.html#families">families</a>(), using the bracketed format.</p>
+<p>The <a href="qfontdatabase.html#font">font</a>() function returns a <a href="qfont.html">QFont</a> given a family, style and point size.</p>
+<p>A family and style combination can be checked to see if it is <a href="qfontdatabase.html#italic">italic</a>() or <a href="qfontdatabase.html#bold">bold</a>(), and to retrieve its <a href="qfontdatabase.html#weight">weight</a>(). Similarly we can call <a href="qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>(), <a href="qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>(), <a href="qfontdatabase.html#isScalable">isScalable</a>() and <a href="qfontdatabase.html#isFixedPitch">isFixedPitch</a>().</p>
+<p>Use the <a href="qfontdatabase.html#styleString">styleString</a>() to obtain a text version of a style.</p>
+<p>The QFontDatabase class also supports some static functions, for example, <a href="qfontdatabase.html#standardSizes">standardSizes</a>(). You can retrieve the description of a writing system using <a href="qfontdatabase.html#writingSystemName">writingSystemName</a>(), and a sample of characters in a writing system with <a href="qfontdatabase.html#writingSystemSample">writingSystemSample</a>().</p>
+<p>Example:</p>
+<pre>     QFontDatabase database;
+     QTreeWidget fontTree;
+     fontTree.setColumnCount(2);
+     fontTree.setHeaderLabels(QStringList() &lt;&lt; &quot;Font&quot; &lt;&lt; &quot;Smooth Sizes&quot;);
+
+     foreach (QString family, database.families()) {
+         QTreeWidgetItem *familyItem = new QTreeWidgetItem(&amp;fontTree);
+         familyItem-&gt;setText(0, family);
+
+         foreach (QString style, database.styles(family)) {
+             QTreeWidgetItem *styleItem = new QTreeWidgetItem(familyItem);
+             styleItem-&gt;setText(0, style);
+
+             QString sizes;
+             foreach (int points, database.smoothSizes(family, style))
+                 sizes += QString::number(points) + &quot; &quot;;
+
+             styleItem-&gt;setText(1, sizes.trimmed());
+         }
+     }</pre>
+<p>This example gets the list of font families, the list of styles for each family, and the point sizes that are available for each combination of family and style, displaying this information in a tree view.</p>
+<p>See also <a href="qfont.html">QFont</a>, <a href="qfontinfo.html">QFontInfo</a>, <a href="qfontmetrics.html">QFontMetrics</a>, <a href="qfontcombobox.html">QFontComboBox</a>, and <a href="widgets-charactermap.html">Character Map Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="WritingSystem-enum"></a>enum QFontDatabase::WritingSystem</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QFontDatabase::Any</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Latin</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Greek</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Cyrillic</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Armenian</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Hebrew</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Arabic</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Syriac</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Thaana</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Devanagari</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Bengali</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Gurmukhi</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Gujarati</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Oriya</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Tamil</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Telugu</tt></td><td align="center" valign="top"><tt>15</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Kannada</tt></td><td align="center" valign="top"><tt>16</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Malayalam</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Sinhala</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Thai</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Lao</tt></td><td align="center" valign="top"><tt>20</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Tibetan</tt></td><td align="center" valign="top"><tt>21</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Myanmar</tt></td><td align="center" valign="top"><tt>22</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Georgian</tt></td><td align="center" valign="top"><tt>23</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Khmer</tt></td><td align="center" valign="top"><tt>24</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::SimplifiedChinese</tt></td><td align="center" valign="top"><tt>25</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::TraditionalChinese</tt></td><td align="center" valign="top"><tt>26</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Japanese</tt></td><td align="center" valign="top"><tt>27</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Korean</tt></td><td align="center" valign="top"><tt>28</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Vietnamese</tt></td><td align="center" valign="top"><tt>29</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Symbol</tt></td><td align="center" valign="top"><tt>30</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Other</tt></td><td align="center" valign="top"><tt>Symbol</tt></td><td valign="top">(the same as Symbol)</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Ogham</tt></td><td align="center" valign="top">?</td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QFontDatabase::Runic</tt></td><td align="center" valign="top">?</td><td valign="top">&nbsp;</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFontDatabase"></a>QFontDatabase::QFontDatabase ()</h3>
+<p>Creates a font database object.</p>
+<h3 class="fn"><a name="addApplicationFont"></a>int QFontDatabase::addApplicationFont ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Loads the font from the file specified by <i>fileName</i> and makes it available to the application. An ID is returned that can be used to remove the font again with <a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>() or to retrieve the list of family names contained in the font.</p>
+<p>The function returns -1 if the font could not be loaded.</p>
+<p>Currently only TrueType fonts and TrueType font collections are supported.</p>
+<p><b>Note:</b> Adding application fonts on Unix/X11 platforms without fontconfig is currently not supported.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>(), <a href="qfontdatabase.html#applicationFontFamilies">applicationFontFamilies</a>(), and <a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>().</p>
+<h3 class="fn"><a name="addApplicationFontFromData"></a>int QFontDatabase::addApplicationFontFromData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>fontData</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Loads the font from binary data specified by <i>fontData</i> and makes it available to the application. An ID is returned that can be used to remove the font again with <a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>() or to retrieve the list of family names contained in the font.</p>
+<p>The function returns -1 if the font could not be loaded.</p>
+<p>Currently only TrueType fonts and TrueType font collections are supported.</p>
+<p><b>Note:</b> Adding application fonts on Unix/X11 platforms without fontconfig is currently not supported.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), <a href="qfontdatabase.html#applicationFontFamilies">applicationFontFamilies</a>(), and <a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>().</p>
+<h3 class="fn"><a name="applicationFontFamilies"></a><a href="qstringlist.html">QStringList</a> QFontDatabase::applicationFontFamilies ( int <i>id</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a list of font families for the given application font identified by <i>id</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a>() and <a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p>
+<h3 class="fn"><a name="bold"></a>bool QFontDatabase::bold ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is bold; otherwise returns false.</p>
+<p>See also <a href="qfontdatabase.html#italic">italic</a>() and <a href="qfontdatabase.html#weight">weight</a>().</p>
+<h3 class="fn"><a name="families"></a><a href="qstringlist.html">QStringList</a> QFontDatabase::families ( <a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a> <i>writingSystem</i> = Any ) const</h3>
+<p>Returns a sorted list of the available font families which support the <i>writingSystem</i>.</p>
+<p>If a family exists in several foundries, the returned name for that font is in the form &quot;family [foundry]&quot;. Examples: &quot;Times [Adobe]&quot;, &quot;Times [Cronyx]&quot;, &quot;Palatino&quot;.</p>
+<p>See also <a href="qfontdatabase.html#writingSystems">writingSystems</a>().</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> QFontDatabase::font ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i>, int <i>pointSize</i> ) const</h3>
+<p>Returns a <a href="qfont.html">QFont</a> object that has family <i>family</i>, style <i>style</i> and point size <i>pointSize</i>. If no matching font could be created, a <a href="qfont.html">QFont</a> object that uses the application's default font is returned.</p>
+<h3 class="fn"><a name="isBitmapScalable"></a>bool QFontDatabase::isBitmapScalable ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> = QString() ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is a scalable bitmap font; otherwise returns false. Scaling a bitmap font usually produces an unattractive hardly readable result, because the pixels of the font are scaled. If you need to scale a bitmap font it is better to scale it to one of the fixed sizes returned by <a href="qfontdatabase.html#smoothSizes">smoothSizes</a>().</p>
+<p>See also <a href="qfontdatabase.html#isScalable">isScalable</a>() and <a href="qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>().</p>
+<h3 class="fn"><a name="isFixedPitch"></a>bool QFontDatabase::isFixedPitch ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> = QString() ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is fixed pitch; otherwise returns false.</p>
+<h3 class="fn"><a name="isScalable"></a>bool QFontDatabase::isScalable ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> = QString() ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is scalable; otherwise returns false.</p>
+<p>See also <a href="qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>() and <a href="qfontdatabase.html#isSmoothlyScalable">isSmoothlyScalable</a>().</p>
+<h3 class="fn"><a name="isSmoothlyScalable"></a>bool QFontDatabase::isSmoothlyScalable ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> = QString() ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is smoothly scalable; otherwise returns false. If this function returns true, it's safe to scale this font to any size, and the result will always look attractive.</p>
+<p>See also <a href="qfontdatabase.html#isScalable">isScalable</a>() and <a href="qfontdatabase.html#isBitmapScalable">isBitmapScalable</a>().</p>
+<h3 class="fn"><a name="italic"></a>bool QFontDatabase::italic ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> ) const</h3>
+<p>Returns true if the font that has family <i>family</i> and style <i>style</i> is italic; otherwise returns false.</p>
+<p>See also <a href="qfontdatabase.html#weight">weight</a>() and <a href="qfontdatabase.html#bold">bold</a>().</p>
+<h3 class="fn"><a name="pointSizes"></a><a href="qlist.html">QList</a>&lt;int&gt; QFontDatabase::pointSizes ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> = QString() )</h3>
+<p>Returns a list of the point sizes available for the font that has family <i>family</i> and style <i>style</i>. The list may be empty.</p>
+<p>See also <a href="qfontdatabase.html#smoothSizes">smoothSizes</a>() and <a href="qfontdatabase.html#standardSizes">standardSizes</a>().</p>
+<h3 class="fn"><a name="removeAllApplicationFonts"></a>bool QFontDatabase::removeAllApplicationFonts ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Removes all application-local fonts previously added using <a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a>() and <a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p>
+<p>Returns true if unloading of the fonts succeeded; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qfontdatabase.html#removeApplicationFont">removeApplicationFont</a>(), <a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), and <a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p>
+<h3 class="fn"><a name="removeApplicationFont"></a>bool QFontDatabase::removeApplicationFont ( int <i>id</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Removes the previously loaded application font identified by <i>id</i>. Returns true if unloading of the font succeeded; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qfontdatabase.html#removeAllApplicationFonts">removeAllApplicationFonts</a>(), <a href="qfontdatabase.html#addApplicationFont">addApplicationFont</a>(), and <a href="qfontdatabase.html#addApplicationFontFromData">addApplicationFontFromData</a>().</p>
+<h3 class="fn"><a name="smoothSizes"></a><a href="qlist.html">QList</a>&lt;int&gt; QFontDatabase::smoothSizes ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> )</h3>
+<p>Returns the point sizes of a font that has family <i>family</i> and style <i>style</i> that will look attractive. The list may be empty. For non-scalable fonts and bitmap scalable fonts, this function is equivalent to <a href="qfontdatabase.html#pointSizes">pointSizes</a>().</p>
+<p>See also <a href="qfontdatabase.html#pointSizes">pointSizes</a>() and <a href="qfontdatabase.html#standardSizes">standardSizes</a>().</p>
+<h3 class="fn"><a name="standardSizes"></a><a href="qlist.html">QList</a>&lt;int&gt; QFontDatabase::standardSizes ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a list of standard font sizes.</p>
+<p>See also <a href="qfontdatabase.html#smoothSizes">smoothSizes</a>() and <a href="qfontdatabase.html#pointSizes">pointSizes</a>().</p>
+<h3 class="fn"><a name="styleString"></a><a href="qstring.html">QString</a> QFontDatabase::styleString ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Returns a string that describes the style of the <i>font</i>. For example, &quot;Bold Italic&quot;, &quot;Bold&quot;, &quot;Italic&quot; or &quot;Normal&quot;. An empty string may be returned.</p>
+<h3 class="fn"><a name="styleString-2"></a><a href="qstring.html">QString</a> QFontDatabase::styleString ( const <a href="qfontinfo.html">QFontInfo</a> &amp; <i>fontInfo</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string that describes the style of the <i>fontInfo</i>. For example, &quot;Bold Italic&quot;, &quot;Bold&quot;, &quot;Italic&quot; or &quot;Normal&quot;. An empty string may be returned.</p>
+<h3 class="fn"><a name="styles"></a><a href="qstringlist.html">QStringList</a> QFontDatabase::styles ( const <a href="qstring.html">QString</a> &amp; <i>family</i> ) const</h3>
+<p>Returns a list of the styles available for the font family <i>family</i>. Some example styles: &quot;Light&quot;, &quot;Light Italic&quot;, &quot;Bold&quot;, &quot;Oblique&quot;, &quot;Demi&quot;. The list may be empty.</p>
+<p>See also <a href="qfontdatabase.html#families">families</a>().</p>
+<h3 class="fn"><a name="supportsThreadedFontRendering"></a>bool QFontDatabase::supportsThreadedFontRendering ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if font rendering is supported outside the GUI thread, false otherwise. In other words, a return value of false means that all <a href="qpainter.html#drawText">QPainter::drawText</a>() calls outside the GUI thread will not produce readable output.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="threads.html#painting-in-threads">threads.html#painting-in-threads</a>.</p>
+<h3 class="fn"><a name="weight"></a>int QFontDatabase::weight ( const <a href="qstring.html">QString</a> &amp; <i>family</i>, const <a href="qstring.html">QString</a> &amp; <i>style</i> ) const</h3>
+<p>Returns the weight of the font that has family <i>family</i> and style <i>style</i>. If there is no such family and style combination, returns -1.</p>
+<p>See also <a href="qfontdatabase.html#italic">italic</a>() and <a href="qfontdatabase.html#bold">bold</a>().</p>
+<h3 class="fn"><a name="writingSystemName"></a><a href="qstring.html">QString</a> QFontDatabase::writingSystemName ( <a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a> <i>writingSystem</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the names the <i>writingSystem</i> (e.g&#x2e; for displaying to the user in a dialog).</p>
+<h3 class="fn"><a name="writingSystemSample"></a><a href="qstring.html">QString</a> QFontDatabase::writingSystemSample ( <a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a> <i>writingSystem</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a string with sample characters from <i>writingSystem</i>.</p>
+<h3 class="fn"><a name="writingSystems"></a><a href="qlist.html">QList</a>&lt;<a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a>&gt; QFontDatabase::writingSystems () const</h3>
+<p>Returns a sorted list of the available writing systems. This is list generated from information about all installed fonts on the system.</p>
+<p>See also <a href="qfontdatabase.html#families">families</a>().</p>
+<h3 class="fn"><a name="writingSystems-2"></a><a href="qlist.html">QList</a>&lt;<a href="qfontdatabase.html#WritingSystem-enum">WritingSystem</a>&gt; QFontDatabase::writingSystems ( const <a href="qstring.html">QString</a> &amp; <i>family</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a sorted list of the writing systems supported by a given font <i>family</i>.</p>
+<p>See also <a href="qfontdatabase.html#families">families</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

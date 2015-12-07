@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 4 - Let There Be Widgets</title>
+  <link rel="prev" href="tutorials-tutorial-t3.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t5.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t3.html">Chapter 3</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t5.html">Chapter 5</a>]
+</p>
+<h1 class="title">Qt Tutorial 4 - Let There Be Widgets<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t4-main-cpp.html">tutorials/tutorial/t4/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t4-t4-pro.html">tutorials/tutorial/t4/t4.pro</a></li>
+</ul>
+<p align="center"><img src="images/t4.png" alt="Screenshot of Chapter 4" /></p><p>This example shows how to create your own widget, and describes how to control the minimum and maximum sizes of a widget.</p>
+<pre> #include &lt;QApplication&gt;
+ #include &lt;QFont&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QWidget&gt;
+
+ class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };
+
+ MyWidget::MyWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     setFixedSize(200, 120);
+
+     QPushButton *quit = new QPushButton(tr(&quot;Quit&quot;), this);
+     quit-&gt;setGeometry(62, 40, 75, 30);
+     quit-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
+ }
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MyWidget widget;
+     widget.show();
+     return app.exec();
+ }</pre>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };</pre>
+<p>Here we create a new class. Because this class inherits from <a href="qwidget.html">QWidget</a>, the new class is a widget and may be a top-level window or a child widget (like the <a href="qpushbutton.html">QPushButton</a> in the previous chapter).</p>
+<p>This class has only one member, a constructor (in addition to the members it inherits from <a href="qwidget.html">QWidget</a>). The constructor is a standard Qt widget constructor; you should always include a similar constructor when you create widgets.</p>
+<p>The argument is its parent widget. To create a top-level window you specify a null pointer as the parent. As you can see, this widget defaults to be a top-level window.</p>
+<pre> MyWidget::MyWidget(QWidget *parent)</pre>
+<p>The implementation of the constructor starts here. Like most widgets, it just passes on the <tt>parent</tt> to the <a href="qwidget.html">QWidget</a> constructor.</p>
+<pre>     : QWidget(parent)
+ {
+     setFixedSize(200, 120);</pre>
+<p>Because this widget doesn't know how to handle resizing, we fix its size. In the next chapter, we will show how a widget can respond to resize event from the user.</p>
+<pre>     QPushButton *quit = new QPushButton(tr(&quot;Quit&quot;), this);
+     quit-&gt;setGeometry(62, 40, 75, 30);
+     quit-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));</pre>
+<p>Here we create and set up a child widget of this widget (the new widget's parent is <tt>this</tt>, i.e&#x2e; the <tt>MyWidget</tt> instance).</p>
+<p>The <a href="qobject.html#tr">tr()</a> function call around the string literal &quot;Quit&quot; marks the string for translation, making it possible to change it at run-time based on the contents of a translation file. It is a good habit to use <a href="qobject.html#tr">tr()</a> around all user-visible strings, in case you decide later to translate your application to other languages.</p>
+<p>Note that <tt>quit</tt> is a local variable in the constructor. <tt>MyWidget</tt> does not keep track of it; Qt does, and will automatically delete it when the <tt>MyWidget</tt> object is deleted. This is why <tt>MyWidget</tt> doesn't need a destructor. (On the other hand, there is no harm in deleting a child when you choose to. The child will automatically tell Qt about its imminent death.)</p>
+<p>The <a href="qwidget.html#geometry-prop">QWidget::setGeometry</a>() call sets both the widget's screen position and the size. It is equivalent to calling <a href="qwidget.html#pos-prop">QWidget::move</a>() followed by <a href="qwidget.html#size-prop">QWidget::resize</a>().</p>
+<pre>     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
+ }</pre>
+<p>The <tt>qApp</tt> pointer is a global variable declared in the <tt>&lt;QApplication&gt;</tt> header file. It points to the application's unique <a href="qapplication.html">QApplication</a> instance.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MyWidget widget;
+     widget.show();
+     return app.exec();
+ }</pre>
+<p>Here we instantiate our new child, show it, and execute the application.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>This program is very similar in behavior to the previous one. The difference lies in the way we have implemented it. It does behave slightly differently, however. Just try to resize it to see.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try to create another <tt>MyWidget</tt> object in <tt>main()</tt>. What happens?</p>
+<p>Try to add more buttons or put in widgets other than <a href="qpushbutton.html">QPushButton</a>.</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t3.html">Chapter 3</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t5.html">Chapter 5</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

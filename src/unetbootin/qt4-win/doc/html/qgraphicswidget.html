@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicswidget.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsWidget class is the base class for all widget items in a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsWidget&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>, <a href="qgraphicsitem.html">QGraphicsItem</a>, and <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a>.</p>
+<p>Inherited by <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qgraphicswidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#enabled-prop">enabled</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#focusPolicy-prop">focusPolicy</a></b> : Qt::FocusPolicy</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#font-prop">font</a></b> : QFont</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#layoutDirection-prop">layoutDirection</a></b> : Qt::LayoutDirection</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#palette-prop">palette</a></b> : QPalette</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#size-prop">size</a></b> : QSizeF</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#visible-prop">visible</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#windowFlags-prop">windowFlags</a></b> : Qt::WindowFlags</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#windowTitle-prop">windowTitle</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#QGraphicsWidget">QGraphicsWidget</a></b> ( QGraphicsItem * <i>parent</i> = 0, Qt::WindowFlags <i>wFlags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicswidget.html#dtor.QGraphicsWidget">~QGraphicsWidget</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#adjustSize">adjustSize</a></b> ()</li>
+<li><div class="fn"/>const QObjectList &amp; <b><a href="qgraphicswidget.html#children">children</a></b> () const</li>
+<li><div class="fn"/>Qt::FocusPolicy <b><a href="qgraphicswidget.html#focusPolicy-prop">focusPolicy</a></b> () const</li>
+<li><div class="fn"/>QGraphicsWidget * <b><a href="qgraphicswidget.html#focusWidget">focusWidget</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qgraphicswidget.html#font-prop">font</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#getContentsMargins">getContentsMargins</a></b> ( qreal * <i>left</i>, qreal * <i>top</i>, qreal * <i>right</i>, qreal * <i>bottom</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#getWindowFrameMargins">getWindowFrameMargins</a></b> ( qreal * <i>left</i>, qreal * <i>top</i>, qreal * <i>right</i>, qreal * <i>bottom</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicswidget.html#isActiveWindow">isActiveWindow</a></b> () const</li>
+<li><div class="fn"/>QGraphicsLayout * <b><a href="qgraphicswidget.html#layout">layout</a></b> () const</li>
+<li><div class="fn"/>Qt::LayoutDirection <b><a href="qgraphicswidget.html#layoutDirection-prop">layoutDirection</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#paintWindowFrame">paintWindowFrame</a></b> ( QPainter * <i>painter</i>, const QStyleOptionGraphicsItem * <i>option</i>, QWidget * <i>widget</i> = 0 )</li>
+<li><div class="fn"/>QPalette <b><a href="qgraphicswidget.html#palette-prop">palette</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicswidget.html#rect">rect</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#size-prop">resize</a></b> ( const QSizeF &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#size-prop">resize</a></b> ( qreal <i>w</i>, qreal <i>h</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setAttribute">setAttribute</a></b> ( Qt::WidgetAttribute <i>attribute</i>, bool <i>on</i> = true )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setContentsMargins">setContentsMargins</a></b> ( qreal <i>left</i>, qreal <i>top</i>, qreal <i>right</i>, qreal <i>bottom</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#focusPolicy-prop">setFocusPolicy</a></b> ( Qt::FocusPolicy <i>policy</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#font-prop">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#setGeometry">setGeometry</a></b> ( const QRectF &amp; <i>rect</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setGeometry-2">setGeometry</a></b> ( qreal <i>x</i>, qreal <i>y</i>, qreal <i>w</i>, qreal <i>h</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setLayout">setLayout</a></b> ( QGraphicsLayout * <i>layout</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#layoutDirection-prop">setLayoutDirection</a></b> ( Qt::LayoutDirection <i>direction</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#palette-prop">setPalette</a></b> ( const QPalette &amp; <i>palette</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setStyle">setStyle</a></b> ( QStyle * <i>style</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#windowFlags-prop">setWindowFlags</a></b> ( Qt::WindowFlags <i>wFlags</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setWindowFrameMargins">setWindowFrameMargins</a></b> ( qreal <i>left</i>, qreal <i>top</i>, qreal <i>right</i>, qreal <i>bottom</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#windowTitle-prop">setWindowTitle</a></b> ( const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>QSizeF <b><a href="qgraphicswidget.html#size-prop">size</a></b> () const</li>
+<li><div class="fn"/>QStyle * <b><a href="qgraphicswidget.html#style">style</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgraphicswidget.html#testAttribute">testAttribute</a></b> ( Qt::WidgetAttribute <i>attribute</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#layoutDirection-prop">unsetLayoutDirection</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#unsetWindowFrameMargins">unsetWindowFrameMargins</a></b> ()</li>
+<li><div class="fn"/>Qt::WindowFlags <b><a href="qgraphicswidget.html#windowFlags-prop">windowFlags</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicswidget.html#windowFrameGeometry">windowFrameGeometry</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicswidget.html#windowFrameRect">windowFrameRect</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qgraphicswidget.html#windowTitle-prop">windowTitle</a></b> () const</li>
+<li><div class="fn"/>Qt::WindowType <b><a href="qgraphicswidget.html#windowType">windowType</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+<li><div class="fn"/>33 public functions inherited from <a href="qgraphicslayoutitem.html#public-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qgraphicswidget.html#close">close</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qgraphicswidget.html#setTabOrder">setTabOrder</a></b> ( QGraphicsWidget * <i>first</i>, QGraphicsWidget * <i>second</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#changeEvent">changeEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#closeEvent">closeEvent</a></b> ( QCloseEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicswidget.html#focusNextPrevChild">focusNextPrevChild</a></b> ( bool <i>next</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#grabKeyboardEvent">grabKeyboardEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#grabMouseEvent">grabMouseEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#hideEvent">hideEvent</a></b> ( QHideEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#initStyleOption">initStyleOption</a></b> ( QStyleOption * <i>option</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#moveEvent">moveEvent</a></b> ( QGraphicsSceneMoveEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#polishEvent">polishEvent</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#resizeEvent">resizeEvent</a></b> ( QGraphicsSceneResizeEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicswidget.html#sceneEvent">sceneEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#showEvent">showEvent</a></b> ( QShowEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#ungrabKeyboardEvent">ungrabKeyboardEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#ungrabMouseEvent">ungrabMouseEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qgraphicswidget.html#updateGeometry">updateGeometry</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qgraphicswidget.html#windowFrameEvent">windowFrameEvent</a></b> ( QEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual Qt::WindowFrameSection <b><a href="qgraphicswidget.html#windowFrameSectionAt">windowFrameSectionAt</a></b> ( const QPointF &amp; <i>pos</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qgraphicslayoutitem.html#protected-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsWidget class is the base class for all widget items in a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>QGraphicsWidget is an extended base item that provides extra functionality over <a href="qgraphicsitem.html">QGraphicsItem</a>. It is similar to <a href="qwidget.html">QWidget</a> in many ways:</p>
+<ul>
+<li>Provides a <a href="qgraphicswidget.html#palette-prop">palette</a>, a <a href="qgraphicswidget.html#font-prop">font</a> and a <a href="qgraphicswidget.html#style">style</a>().</li>
+<li>Has a defined <a href="qgraphicslayoutitem.html#geometry">geometry</a>().</li>
+<li>Supports layouts with <a href="qgraphicswidget.html#setLayout">setLayout</a>() and <a href="qgraphicswidget.html#layout">layout</a>().</li>
+</ul>
+<p>Unlike <a href="qgraphicsitem.html">QGraphicsItem</a>, QGraphicsWidget is not an abstract class; you can create instances of a QGraphicsWidget without having to subclass it. This approach is useful for widgets that only serve the purpose of organizing child widgets into a layout.</p>
+<p>QGraphicsWidget can be used as a base item for your own custom item if you require advanced input focus handling, e.g&#x2e;, tab focus and activation, or layouts.</p>
+<p>Since QGraphicsWidget resembles <a href="qwidget.html">QWidget</a> and has similar API, it is easier to port a widget from <a href="qwidget.html">QWidget</a> to QGraphicsWidget, instead of <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p><b>Note:</b> <a href="qwidget.html">QWidget</a>-based widgets can be directly embedded into a <a href="qgraphicsscene.html">QGraphicsScene</a> using <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a>.</p>
+<p>Noticeable differences between QGraphicsWidget and <a href="qwidget.html">QWidget</a> are:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>QGraphicsWidget</th><th><a href="qwidget.html">QWidget</a></th></tr></thead>
+<tr valign="top" class="odd"><td>Coordinates and geometry are defined with qreals (doubles or floats, depending on the platform).</td><td><a href="qwidget.html">QWidget</a> uses integer geometry (<a href="qpoint.html">QPoint</a>, <a href="qrect.html">QRect</a>).</td></tr>
+<tr valign="top" class="even"><td>The widget is already visible by default; you do not have to call <a href="qgraphicsitem.html#show">show</a>() to display the widget.</td><td><a href="qwidget.html">QWidget</a> is hidden by default until you call <a href="qgraphicsitem.html#show">show</a>().</td></tr>
+<tr valign="top" class="odd"><td>A subset of widget attributes are supported.</td><td>All widget attributes are supported.</td></tr>
+<tr valign="top" class="even"><td>A top-level item's style defaults to QGraphicsScene::style</td><td>A top-level widget's style defaults to QApplication::style</td></tr>
+<tr valign="top" class="odd"><td>Graphics View provides a custom DnD framework, different from <a href="qwidget.html">QWidget</a>.</td><td>Standard DnD framework.</td></tr>
+<tr valign="top" class="even"><td>Widget items do not support modality.</td><td>Full modality support.</td></tr>
+</table></p>
+<p>QGraphicsWidget supports a subset of Qt's widget attributes, (<a href="qt.html#WidgetAttribute-enum">Qt::WidgetAttribute</a>), as shown in the table below. Any attributes not listed in this table are unsupported, or otherwise unused.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Widget Attribute</th><th>Usage</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qt.html#WidgetAttribute-enum">Qt::WA_SetLayoutDirection</a></td><td>Set by <a href="qgraphicswidget.html#layoutDirection-prop">setLayoutDirection</a>(), cleared by <a href="qgraphicswidget.html#layoutDirection-prop">unsetLayoutDirection</a>(). You can test this attribute to check if the widget has been explicitly assigned a <a href="qgraphicswidget.html#layoutDirection-prop">layoutDirection</a>. If the attribute is not set, the <a href="qgraphicswidget.html#layoutDirection-prop">layoutDirection()</a> is inherited.</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#WidgetAttribute-enum">Qt::WA_RightToLeft</a></td><td>Toggled by <a href="qgraphicswidget.html#layoutDirection-prop">setLayoutDirection</a>(). Inherited from the parent/scene. If set, the widget's layout will order horizontally arranged widgets from right to left.</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#WidgetAttribute-enum">Qt::WA_SetStyle</a></td><td>Set and cleared by <a href="qgraphicswidget.html#setStyle">setStyle</a>(). If this attribute is set, the widget has been explicitly assigned a style. If it is unset, the widget will use the scene's or the application's style.</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#WidgetAttribute-enum">Qt::WA_Resized</a></td><td>Set by <a href="qgraphicswidget.html#setGeometry">setGeometry</a>() and <a href="qgraphicswidget.html#size-prop">resize</a>().</td></tr>
+</table></p>
+<p>Although QGraphicsWidget inherits from both <a href="qobject.html">QObject</a> and <a href="qgraphicsitem.html">QGraphicsItem</a>, you should use the functions provided by <a href="qgraphicsitem.html">QGraphicsItem</a>, <i>not</i> <a href="qobject.html">QObject</a>, to manage the relationships between parent and child items. These functions control the stacking order of items as well as their ownership.</p>
+<p><b>Note:</b> The <a href="qobject.html#parent">QObject::parent</a>() should always return 0 for QGraphicsWidgets, but this policy is not strictly defined.</p>
+<p>See also <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a>, <a href="qgraphicsitem.html">QGraphicsItem</a>, and <a href="graphicsview.html#widgets-and-layouts">Widgets and Layouts</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="enabled-prop"></a>enabled : const bool</h3>
+<p>This property holds whether the item is enabled or not.</p>
+<p>This property is declared in <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p>See also <a href="qgraphicsitem.html#isEnabled">QGraphicsItem::isEnabled</a>() and <a href="qgraphicsitem.html#setEnabled">QGraphicsItem::setEnabled</a>().</p>
+<h3 class="fn"><a name="focusPolicy-prop"></a>focusPolicy : <a href="qt.html#FocusPolicy-enum">Qt::FocusPolicy</a></h3>
+<p>This property holds the way the widget accepts keyboard focus.</p>
+<p>The focus policy is <a href="qt.html#FocusPolicy-enum">Qt::TabFocus</a> if the widget accepts keyboard focus by tabbing, <a href="qt.html#FocusPolicy-enum">Qt::ClickFocus</a> if the widget accepts focus by clicking, <a href="qt.html#FocusPolicy-enum">Qt::StrongFocus</a> if it accepts both, and <a href="qt.html#FocusPolicy-enum">Qt::NoFocus</a> (the default) if it does not accept focus at all.</p>
+<p>You must enable keyboard focus for a widget if it processes keyboard events. This is normally done from the widget's constructor. For instance, the <a href="qlineedit.html">QLineEdit</a> constructor calls setFocusPolicy(<a href="qt.html#FocusPolicy-enum">Qt::StrongFocus</a>).</p>
+<p>If you enable a focus policy (i.e&#x2e;, not <a href="qt.html#FocusPolicy-enum">Qt::NoFocus</a>), <a href="qgraphicswidget.html">QGraphicsWidget</a> will automatically enable the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag. Setting <a href="qt.html#FocusPolicy-enum">Qt::NoFocus</a> on a widget will clear the <a href="qgraphicsitem.html#GraphicsItemFlag-enum">ItemIsFocusable</a> flag. If the widget currently has keyboard focus, the widget will automatically lose focus.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::FocusPolicy focusPolicy () const</b></li>
+<li><div class="fn"/><b>void setFocusPolicy ( Qt::FocusPolicy <i>policy</i> )</b></li>
+</ul>
+<p>See also <a href="qgraphicsitem.html#focusInEvent">focusInEvent</a>(), <a href="qgraphicsitem.html#focusOutEvent">focusOutEvent</a>(), <a href="qgraphicsitem.html#keyPressEvent">keyPressEvent</a>(), <a href="qgraphicsitem.html#keyReleaseEvent">keyReleaseEvent</a>(), and <a href="qgraphicswidget.html#enabled-prop">enabled</a>.</p>
+<h3 class="fn"><a name="font-prop"></a>font : <a href="qfont.html">QFont</a></h3>
+<p>This property holds the widgets' font.</p>
+<p>This property provides the widget's font.</p>
+<p><a href="qfont.html">QFont</a> consists of font properties that have been explicitly defined and properties implicitly inherited from the widget's parent. Hence, font() can return a different font compared to the one set with setFont(). This scheme allows you to define single entries in a font without affecting the font's inherited entries.</p>
+<p>When a widget's font changes, it resolves its entries against its parent widget. If the widget does not have a parent widget, it resolves its entries against the scene. The widget then sends itself a <a href="qevent.html#Type-enum">FontChange</a> event and notifies all its descendants so that they can resolve their fonts as well.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QFont font () const</b></li>
+<li><div class="fn"/><b>void setFont ( const QFont &amp; <i>font</i> )</b></li>
+</ul>
+<p>See also <a href="qapplication.html#font">QApplication::font</a>(), <a href="qgraphicsscene.html#font-prop">QGraphicsScene::font</a>, and <a href="qfont.html#resolve">QFont::resolve</a>().</p>
+<h3 class="fn"><a name="layoutDirection-prop"></a>layoutDirection : <a href="qt.html#LayoutDirection-enum">Qt::LayoutDirection</a></h3>
+<p>This property holds the layout direction for this widget.</p>
+<p>This property modifies this widget's and all of its descendants' <a href="qt.html#WidgetAttribute-enum">Qt::WA_RightToLeft</a> attribute. It also sets this widget's <a href="qt.html#WidgetAttribute-enum">Qt::WA_SetLayoutDirection</a> attribute.</p>
+<p>The widget's layout direction determines the order in which the layout manager horizontally arranges subwidgets of this widget. The default value depends on the language and locale of the application, and is typically in the same direction as words are read and written. With <a href="qt.html#LayoutDirection-enum">Qt::LeftToRight</a>, the layout starts placing subwidgets from the left side of this widget towards the right. <a href="qt.html#LayoutDirection-enum">Qt::RightToLeft</a> does the opposite - the layout will place widgets starting from the right edge moving towards the left.</p>
+<p>Subwidgets inherit their layout direction from the parent. Top-level widget items inherit their layout direction from QGraphicsScene::layoutDirection. If you change a widget's layout direction by calling setLayoutDirection(), the widget will send itself a <a href="qevent.html#Type-enum">LayoutDirectionChange</a> event, and then propagate the new layout direction to all its descendants.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::LayoutDirection layoutDirection () const</b></li>
+<li><div class="fn"/><b>void setLayoutDirection ( Qt::LayoutDirection <i>direction</i> )</b></li>
+<li><div class="fn"/><b>void unsetLayoutDirection ()</b></li>
+</ul>
+<p>See also <a href="qwidget.html#layoutDirection-prop">QWidget::layoutDirection</a> and <a href="qapplication.html#layoutDirection-prop">QApplication::layoutDirection</a>.</p>
+<h3 class="fn"><a name="palette-prop"></a>palette : <a href="qpalette.html">QPalette</a></h3>
+<p>This property holds the widgets' palette.</p>
+<p>This property provides the widget's palette. The palette provides colors and brushes for color groups (e.g&#x2e;, <a href="qpalette.html#ColorRole-enum">QPalette::Button</a>) and states (e.g&#x2e;, <a href="qpalette.html#ColorGroup-enum">QPalette::Inactive</a>), loosely defining the general look of the widget and its children.</p>
+<p><a href="qpalette.html">QPalette</a> consists of color groups that have been explicitly defined, and groups that are implicitly inherited from the widget's parent. Because of this, palette() can return a different palette than what has been set with setPalette(). This scheme allows you to define single entries in a palette without affecting the palette's inherited entries.</p>
+<p>When a widget's palette changes, it resolves its entries against its parent widget, or if it doesn't have a parent widget, it resolves against the scene. It then sends itself a <a href="qevent.html#Type-enum">PaletteChange</a> event, and notifies all its descendents so they can resolve their palettes as well.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QPalette palette () const</b></li>
+<li><div class="fn"/><b>void setPalette ( const QPalette &amp; <i>palette</i> )</b></li>
+</ul>
+<p>See also <a href="qapplication.html#palette">QApplication::palette</a>(), <a href="qgraphicsscene.html#palette-prop">QGraphicsScene::palette</a>, and <a href="qpalette.html#resolve">QPalette::resolve</a>().</p>
+<h3 class="fn"><a name="size-prop"></a>size : <a href="qsizef.html">QSizeF</a></h3>
+<p>This property holds the size of the widget.</p>
+<p>Calling setSize() resizes the widget to <i>size</i> bounded by <a href="qgraphicslayoutitem.html#minimumSize">minimumSize</a>() and <a href="qgraphicslayoutitem.html#maximumSize">maximumSize</a>(). This property only affects the widget's width and height (e.g&#x2e;, its right and bottom edges); the widget's position and top-left corner remains unaffected.</p>
+<p>Resizing a widget triggers the widget to immediately receive a <a href="qevent.html#Type-enum">GraphicsSceneResize</a> event with the widget's old and new size. If the widget has a layout assigned when this event arrives, the layout will be activated and it will automatically update any child widgets's geometry.</p>
+<p>This property does not affect any layout of the parent widget. If the widget itself is managed by a parent layout, e.g&#x2e;, it has a parent widget with a layout assigned, that layout will not activate.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSizeF size () const</b></li>
+<li><div class="fn"/><b>void resize ( const QSizeF &amp; <i>size</i> )</b></li>
+<li><div class="fn"/><b>void resize ( qreal <i>w</i>, qreal <i>h</i> )</b></li>
+</ul>
+<p>See also <a href="qgraphicswidget.html#setGeometry">setGeometry</a>(), <a href="qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a>, and <a href="qgraphicslayout.html">QGraphicsLayout</a>.</p>
+<h3 class="fn"><a name="visible-prop"></a>visible : const bool</h3>
+<p>This property holds whether the item is visible or not.</p>
+<p>This property is declared in <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p>See also <a href="qgraphicsitem.html#isVisible">QGraphicsItem::isVisible</a>(), <a href="qgraphicsitem.html#setVisible">QGraphicsItem::setVisible</a>(), <a href="qgraphicsitem.html#show">show</a>(), and <a href="qgraphicsitem.html#hide">hide</a>().</p>
+<h3 class="fn"><a name="windowFlags-prop"></a>windowFlags : <a href="qt.html#WindowType-enum">Qt::WindowFlags</a></h3>
+<p>This property holds this propery holds the widget's window flags.</p>
+<p>Window flags are a combination a window type (e.g&#x2e; <a href="qt.html#WindowType-enum">Qt::Dialog</a>) and several flags giving hints on the behaviour of the window. The behaviour is platform dependent.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::WindowFlags windowFlags () const</b></li>
+<li><div class="fn"/><b>void setWindowFlags ( Qt::WindowFlags <i>wFlags</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="windowTitle-prop"></a>windowTitle : <a href="qstring.html">QString</a></h3>
+<p>This property holds this property holds the window title (caption).</p>
+<p>This property is only used for windows. If no title has been set, the title is an empty string.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString windowTitle () const</b></li>
+<li><div class="fn"/><b>void setWindowTitle ( const QString &amp; <i>title</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsWidget"></a>QGraphicsWidget::QGraphicsWidget ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>wFlags</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicswidget.html">QGraphicsWidget</a> instance. The optional <i>parent</i> argument is passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor. The optional <i>wFlags</i> argument specifies the widget's window flags (e.g&#x2e;, whether the widget should be a window, a tool, a popup, etc).</p>
+<h3 class="fn"><a name="dtor.QGraphicsWidget"></a>QGraphicsWidget::~QGraphicsWidget ()</h3>
+<p>Destroys the <a href="qgraphicswidget.html">QGraphicsWidget</a> instance.</p>
+<h3 class="fn"><a name="adjustSize"></a>void QGraphicsWidget::adjustSize ()</h3>
+<p>Adjusts the size of the widget to its effective minimum size hint.</p>
+<p>This function is called implicitly when the item is shown for the first time.</p>
+<p>See also <a href="qgraphicslayoutitem.html#effectiveSizeHint">effectiveSizeHint</a>() and <a href="qt.html#SizeHint-enum">Qt::MinimumSize</a>.</p>
+<h3 class="fn"><a name="changeEvent"></a>void QGraphicsWidget::changeEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler can be reimplemented to handle state changes.</p>
+<p>The state being changed in this event can be retrieved through <i>event</i>.</p>
+<p>Change events include: <a href="qevent.html#Type-enum">QEvent::ActivationChange</a>, <a href="qevent.html#Type-enum">QEvent::EnabledChange</a>, <a href="qevent.html#Type-enum">QEvent::FontChange</a>, <a href="qevent.html#Type-enum">QEvent::StyleChange</a>, <a href="qevent.html#Type-enum">QEvent::PaletteChange</a>, <a href="qevent.html#Type-enum">QEvent::ParentChange</a>, <a href="qevent.html#Type-enum">QEvent::LayoutDirectionChange</a>, and <a href="qevent.html#Type-enum">QEvent::ContentsRectChange</a>.</p>
+<h3 class="fn"><a name="children"></a>const <a href="qobject.html#QObjectList-typedef">QObjectList</a> &amp; QGraphicsWidget::children () const</h3>
+<p>This function returns the same value as <a href="qobject.html#children">QObject::children</a>(). It's provided to differentiate between the obsolete member <a href="qgraphicsitem-obsolete.html#children">QGraphicsItem::children</a>() and <a href="qobject.html#children">QObject::children</a>(). <a href="qgraphicsitem.html">QGraphicsItem</a> now provides <a href="qgraphicsitem.html#childItems">childItems</a>() instead.</p>
+<h3 class="fn"><a name="close"></a>bool QGraphicsWidget::close ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Call this function to close the widget.</p>
+<p>Returns true if the widget was closed; otherwise returns false. This slot will first send a <a href="qcloseevent.html">QCloseEvent</a> to the widget, which may or may not accept the event. If the event was ignored, nothing happens. If the event was accepted, it will <a href="qgraphicsitem.html#hide">hide</a>() the widget.</p>
+<p>If the widget has the <a href="qt.html#WidgetAttribute-enum">Qt::WA_DeleteOnClose</a> attribute set it will be deleted.</p>
+<h3 class="fn"><a name="closeEvent"></a>void QGraphicsWidget::closeEvent ( <a href="qcloseevent.html">QCloseEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, can be reimplemented in a subclass to receive widget close events. The default implementation accepts the event.</p>
+<p>See also <a href="qgraphicswidget.html#close">close</a>() and <a href="qcloseevent.html">QCloseEvent</a>.</p>
+<h3 class="fn"><a name="focusNextPrevChild"></a>bool QGraphicsWidget::focusNextPrevChild ( bool <i>next</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Finds a new widget to give the keyboard focus to, as appropriate for Tab and Shift+Tab, and returns true if it can find a new widget; returns false otherwise. If <i>next</i> is true, this function searches forward; if <i>next</i> is false, it searches backward.</p>
+<p>Sometimes, you will want to reimplement this function to provide special focus handling for your widget and its subwidgets. For example, a web browser might reimplement it to move its current active link forward or backward, and call the base implementation only when it reaches the last or first link on the page.</p>
+<p>Child widgets call focusNextPrevChild() on their parent widgets, but only the window that contains the child widgets decides where to redirect focus. By reimplementing this function for an object, you gain control of focus traversal for all child widgets.</p>
+<p>See also <a href="qgraphicswidget.html#focusPolicy-prop">focusPolicy</a>().</p>
+<h3 class="fn"><a name="focusWidget"></a>QGraphicsWidget * QGraphicsWidget::focusWidget () const</h3>
+<p>If this widget, a child or descendent of this widget currently has input focus, this function will return a pointer to that widget. If no descendent has input focus, 0 is returned.</p>
+<p>See also <a href="qwidget.html#focusWidget">QWidget::focusWidget</a>().</p>
+<h3 class="fn"><a name="getContentsMargins"></a>void QGraphicsWidget::getContentsMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>bottom</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Gets the widget's contents margins. The margins are stored in <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i>, as pointers to qreals. Each argument can be <i>omitted</i> by passing 0.</p>
+<p>Reimplemented from <a href="qgraphicslayoutitem.html#getContentsMargins">QGraphicsLayoutItem</a>.</p>
+<p>See also <a href="qgraphicswidget.html#setContentsMargins">setContentsMargins</a>().</p>
+<h3 class="fn"><a name="getWindowFrameMargins"></a>void QGraphicsWidget::getWindowFrameMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>bottom</i> ) const</h3>
+<p>Gets the widget's window frame margins. The margins are stored in <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i> as pointers to qreals. Each argument can be <i>omitted</i> by passing 0.</p>
+<p>See also <a href="qgraphicswidget.html#setWindowFrameMargins">setWindowFrameMargins</a>() and <a href="qgraphicswidget.html#windowFrameRect">windowFrameRect</a>().</p>
+<h3 class="fn"><a name="grabKeyboardEvent"></a>void QGraphicsWidget::grabKeyboardEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, can be reimplemented in a subclass to receive notifications for Qt::GrabKeyboard events.</p>
+<p>See also <a href="qgraphicsitem.html#grabKeyboard">grabKeyboard</a>() and <a href="qgraphicsitem.html#grabMouse">grabMouse</a>().</p>
+<h3 class="fn"><a name="grabMouseEvent"></a>void QGraphicsWidget::grabMouseEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, can be reimplemented in a subclass to receive notifications for Qt::GrabMouse events.</p>
+<p>See also <a href="qgraphicsitem.html#grabMouse">grabMouse</a>() and <a href="qgraphicsitem.html#grabKeyboard">grabKeyboard</a>().</p>
+<h3 class="fn"><a name="hideEvent"></a>void QGraphicsWidget::hideEvent ( <a href="qhideevent.html">QHideEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <a href="qevent.html#Type-enum">Hide</a> events, is delivered after the widget has been hidden, for example, setVisible(false) has been called for the widget or one of its ancestors when the widget was previously shown.</p>
+<p>You can reimplement this event handler to detect when your widget is hidden. Calling <a href="qevent.html#accept">QEvent::accept</a>() or <a href="qevent.html#ignore">QEvent::ignore</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicswidget.html#showEvent">showEvent</a>(), <a href="qwidget.html#hideEvent">QWidget::hideEvent</a>(), and <a href="qgraphicsitem.html#GraphicsItemChange-enum">ItemVisibleChange</a>.</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QGraphicsWidget::initStyleOption ( <a href="qstyleoption.html">QStyleOption</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Populates a style option object for this widget based on its current state, and stores the output in <i>option</i>. The default implementation populates <i>option</i> with the following properties.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>state &amp; <a href="qstyle.html#StateFlag-enum">QStyle::State_Enabled</a></td><td>Corresponds to <a href="qgraphicsitem.html#isEnabled">QGraphicsItem::isEnabled</a>().</td></tr>
+<tr valign="top" class="even"><td>state &amp; <a href="qstyle.html#StateFlag-enum">QStyle::State_HasFocus</a></td><td>Corresponds to <a href="qgraphicsitem.html#hasFocus">QGraphicsItem::hasFocus</a>().</td></tr>
+<tr valign="top" class="odd"><td>state &amp; <a href="qstyle.html#StateFlag-enum">QStyle::State_MouseOver</a></td><td>Corresponds to <a href="qgraphicsitem.html#isUnderMouse">QGraphicsItem::isUnderMouse</a>().</td></tr>
+<tr valign="top" class="even"><td>direction</td><td>Corresponds to <a href="qgraphicswidget.html#layoutDirection-prop">QGraphicsWidget::layoutDirection</a>().</td></tr>
+<tr valign="top" class="odd"><td>rect</td><td>Corresponds to <a href="qgraphicswidget.html#rect">QGraphicsWidget::rect</a>().toRect().</td></tr>
+<tr valign="top" class="even"><td>palette</td><td>Corresponds to <a href="qgraphicswidget.html#palette-prop">QGraphicsWidget::palette</a>().</td></tr>
+<tr valign="top" class="odd"><td>fontMetrics</td><td>Corresponds to <a href="qfontmetrics.html">QFontMetrics</a>(<a href="qgraphicswidget.html#font-prop">QGraphicsWidget::font</a>()).</td></tr>
+</table></p>
+<p>Subclasses of <a href="qgraphicswidget.html">QGraphicsWidget</a> should call the base implementation, and then test the type of <i>option</i> using qstyleoption_cast&lt;&gt;() or test <a href="qstyleoption.html#StyleOptionType-enum">QStyleOption::Type</a> before storing widget-specific options.</p>
+<p>For example:</p>
+<pre>         void MyGroupBoxWidget::initStyleOption(QStyleOption *option) const
+         {
+             QGraphicsWidget::initStyleOption(option);
+             if (QStyleOptionGroupBox *box = qstyleoption_cast&lt;QStyleOptionGroupBox *&gt;(option)) {
+                 // Add group box specific state.
+                 box-&gt;flat = isFlat();
+                 ...
+             }
+         }</pre>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<h3 class="fn"><a name="isActiveWindow"></a>bool QGraphicsWidget::isActiveWindow () const</h3>
+<p>Returns true if this widget's window is the active window.</p>
+<p>The active window is the window that either contains a child widget that currently has input focus, or that itself has input focus.</p>
+<h3 class="fn"><a name="layout"></a><a href="qgraphicslayout.html">QGraphicsLayout</a> * QGraphicsWidget::layout () const</h3>
+<p>Returns this widget's layout, or 0 if no layout is currently managing this widget.</p>
+<p>See also <a href="qgraphicswidget.html#setLayout">setLayout</a>().</p>
+<h3 class="fn"><a name="moveEvent"></a>void QGraphicsWidget::moveEvent ( <a href="qgraphicsscenemoveevent.html">QGraphicsSceneMoveEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <a href="qevent.html#Type-enum">GraphicsSceneMove</a> events, is delivered after the widget has moved (e.g&#x2e;, its local position has changed).</p>
+<p>This event is only delivered when the item is moved locally. Calling <a href="qgraphicsitem.html#setTransform">setTransform</a>() or moving any of the item's ancestors does not affect the item's local position.</p>
+<p>You can reimplement this event handler to detect when your widget has moved. Calling <a href="qevent.html#accept">QEvent::accept</a>() or <a href="qevent.html#ignore">QEvent::ignore</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicsitem.html#GraphicsItemChange-enum">ItemPositionChange</a> and <a href="qgraphicsitem.html#GraphicsItemChange-enum">ItemPositionHasChanged</a>.</p>
+<h3 class="fn"><a name="paintWindowFrame"></a>void QGraphicsWidget::paintWindowFrame ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a> * <i>option</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is called by <a href="qgraphicsscene.html">QGraphicsScene</a> to draw the window frame for windows using <i>painter</i>, <i>option</i>, and <i>widget</i>, in local coordinates. The base implementation uses the current style to render the frame and title bar.</p>
+<p>You can reimplement this function in a subclass of <a href="qgraphicswidget.html">QGraphicsWidget</a> to provide custom rendering of the widget's window frame.</p>
+<p>See also <a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>().</p>
+<h3 class="fn"><a name="polishEvent"></a>void QGraphicsWidget::polishEvent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event is delivered to the item by the scene at some point after it has been constructed, but before it is shown or otherwise accessed through the scene. You can use this event handler to do last-minute initializations of the widget which require the item to be fully constructed.</p>
+<p>The base implementation does nothing.</p>
+<h3 class="fn"><a name="rect"></a><a href="qrectf.html">QRectF</a> QGraphicsWidget::rect () const</h3>
+<p>Returns the item's local rect as a <a href="qrectf.html">QRectF</a>. This function is equivalent to <a href="qrectf.html">QRectF</a>(QPointF(), <a href="qgraphicswidget.html#size-prop">size</a>()).</p>
+<p>See also <a href="qgraphicswidget.html#setGeometry">setGeometry</a>() and <a href="qgraphicswidget.html#size-prop">resize</a>().</p>
+<h3 class="fn"><a name="resizeEvent"></a>void QGraphicsWidget::resizeEvent ( <a href="qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <a href="qevent.html#Type-enum">GraphicsSceneResize</a> events, is delivered after the widget has been resized (i.e&#x2e;, its local size has changed). <i>event</i> contains both the old and the new size.</p>
+<p>This event is only delivered when the widget is resized locally; calling <a href="qgraphicsitem.html#setTransform">setTransform</a>() on the widget or any of its ancestors or view, does not affect the widget's local size.</p>
+<p>You can reimplement this event handler to detect when your widget has been resized. Calling <a href="qevent.html#accept">QEvent::accept</a>() or <a href="qevent.html#ignore">QEvent::ignore</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicslayoutitem.html#geometry">geometry</a>() and <a href="qgraphicswidget.html#setGeometry">setGeometry</a>().</p>
+<h3 class="fn"><a name="sceneEvent"></a>bool QGraphicsWidget::sceneEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p><a href="qgraphicswidget.html">QGraphicsWidget</a>'s implementation of sceneEvent() simply passes <i>event</i> to <a href="qobject.html#event">QGraphicsWidget::event</a>(). You can handle all events for your widget in <a href="qobject.html#event">event</a>() or in any of the convenience functions; you should not have to reimplement this function in a subclass of <a href="qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<p>Reimplemented from <a href="qgraphicsitem.html#sceneEvent">QGraphicsItem</a>.</p>
+<p>See also <a href="qgraphicsitem.html#sceneEvent">QGraphicsItem::sceneEvent</a>().</p>
+<h3 class="fn"><a name="setAttribute"></a>void QGraphicsWidget::setAttribute ( <a href="qt.html#WidgetAttribute-enum">Qt::WidgetAttribute</a> <i>attribute</i>, bool <i>on</i> = true )</h3>
+<p>If <i>on</i> is true, this function enables <i>attribute</i>; otherwise <i>attribute</i> is disabled.</p>
+<p>See the class documentation for <a href="qgraphicswidget.html">QGraphicsWidget</a> for a complete list of which attributes are supported, and what they are for.</p>
+<p>See also <a href="qgraphicswidget.html#testAttribute">testAttribute</a>() and <a href="qwidget.html#setAttribute">QWidget::setAttribute</a>().</p>
+<h3 class="fn"><a name="setContentsMargins"></a>void QGraphicsWidget::setContentsMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>bottom</i> )</h3>
+<p>Sets the widget's contents margins to <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i>.</p>
+<p>Contents margins are used by the assigned layout to define the placement of subwidgets and layouts. Margins are particularily useful for widgets that constrain subwidgets to only a section of its own geometry. For example, a group box with a layout will place subwidgets inside its frame, but below the title.</p>
+<p>Changing a widget's contents margins will always trigger an <a href="qgraphicsitem.html#update">update</a>(), and any assigned layout will be activated automatically. The widget will then receive a <a href="qevent.html#Type-enum">ContentsRectChange</a> event.</p>
+<p>See also <a href="qgraphicswidget.html#getContentsMargins">getContentsMargins</a>() and <a href="qgraphicswidget.html#setGeometry">setGeometry</a>().</p>
+<h3 class="fn"><a name="setGeometry"></a>void QGraphicsWidget::setGeometry ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the item's geometry to <i>rect</i>. The item's position and size are modified as a result of calling this function. The item is first moved, then resized.</p>
+<p>A side effect of calling this function is that the widget will receive a move event and a resize event. Also, if the widget has a layout assigned, the layout will activate.</p>
+<p>Reimplemented from <a href="qgraphicslayoutitem.html#setGeometry">QGraphicsLayoutItem</a>.</p>
+<p>See also <a href="qgraphicslayoutitem.html#geometry">geometry</a>() and <a href="qgraphicswidget.html#size-prop">resize</a>().</p>
+<h3 class="fn"><a name="setGeometry-2"></a>void QGraphicsWidget::setGeometry ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>w</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function is equivalent to calling setGeometry(<a href="qrectf.html">QRectF</a>( <i>x</i>, <i>y</i>, <i>w</i>, <i>h</i>)).</p>
+<p>See also <a href="qgraphicslayoutitem.html#geometry">geometry</a>() and <a href="qgraphicswidget.html#size-prop">resize</a>().</p>
+<h3 class="fn"><a name="setLayout"></a>void QGraphicsWidget::setLayout ( <a href="qgraphicslayout.html">QGraphicsLayout</a> * <i>layout</i> )</h3>
+<p>Sets the layout for this widget to <i>layout</i>. Any existing layout manager is deleted before the new layout is assigned. If <i>layout</i> is 0, the widget is left without a layout. Existing subwidgets' geometries will remain unaffected.</p>
+<p>All widgets that are currently managed by <i>layout</i> or all of its sublayouts, are automatically reparented to this item. The layout is then invalidated, and the child widget geometries are adjusted according to this item's <a href="qgraphicslayoutitem.html#geometry">geometry</a>() and contentsMargins(). Children who are not explicitly managed by <i>layout</i> remain unaffected by the layout after it has been assigned to this widget.</p>
+<p><a href="qgraphicswidget.html">QGraphicsWidget</a> takes ownership of <i>layout</i>.</p>
+<p>See also <a href="qgraphicswidget.html#layout">layout</a>(), <a href="qgraphicslinearlayout.html#addItem">QGraphicsLinearLayout::addItem</a>(), and <a href="qgraphicslayout.html#invalidate">QGraphicsLayout::invalidate</a>().</p>
+<h3 class="fn"><a name="setStyle"></a>void QGraphicsWidget::setStyle ( <a href="qstyle.html">QStyle</a> * <i>style</i> )</h3>
+<p>Sets the widget's style to <i>style</i>. <a href="qgraphicswidget.html">QGraphicsWidget</a> does <i>not</i> take ownership of <i>style</i>.</p>
+<p>If no style is assigned, or <i>style</i> is 0, the widget will use <a href="qgraphicsscene.html#style">QGraphicsScene::style</a>() (if this has been set). Otherwise the widget will use <a href="qapplication.html#style">QApplication::style</a>().</p>
+<p>This function sets the <a href="qt.html#WidgetAttribute-enum">Qt::WA_SetStyle</a> attribute if <i>style</i> is not 0; otherwise it clears the attribute.</p>
+<p>See also <a href="qgraphicswidget.html#style">style</a>().</p>
+<h3 class="fn"><a name="setTabOrder"></a>void QGraphicsWidget::setTabOrder ( QGraphicsWidget * <i>first</i>, QGraphicsWidget * <i>second</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Moves the <i>second</i> widget around the ring of focus widgets so that keyboard focus moves from the <i>first</i> widget to the <i>second</i> widget when the Tab key is pressed.</p>
+<p>Note that since the tab order of the <i>second</i> widget is changed, you should order a chain like this:</p>
+<pre>         setTabOrder(a, b); // a to b
+         setTabOrder(b, c); // a to b to c
+         setTabOrder(c, d); // a to b to c to d</pre>
+<p><i>not</i> like this:</p>
+<pre>         // WRONG
+         setTabOrder(c, d); // c to d
+         setTabOrder(a, b); // a to b AND c to d
+         setTabOrder(b, c); // a to b to c, but not c to d</pre>
+<p>If <i>first</i> is 0, this indicates that <i>second</i> should be the first widget to receive input focus should the scene gain Tab focus (i.e&#x2e;, the user hits Tab so that focus passes into the scene). If <i>second</i> is 0, this indicates that <i>first</i> should be the first widget to gain focus if the scene gained BackTab focus.</p>
+<p>By default, tab order is defined implicitly using widget creation order.</p>
+<p>See also <a href="qgraphicswidget.html#focusPolicy-prop">focusPolicy</a> and <a href="focus.html">Keyboard Focus</a>.</p>
+<h3 class="fn"><a name="setWindowFrameMargins"></a>void QGraphicsWidget::setWindowFrameMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>bottom</i> )</h3>
+<p>Sets the widget's window frame margins to <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i>. The default frame margins are provided by the style, and they depend on the current window flags.</p>
+<p>If you would like to draw your own window decoration, you can set your own frame margins to override the default margins.</p>
+<p>See also <a href="qgraphicswidget.html#unsetWindowFrameMargins">unsetWindowFrameMargins</a>(), <a href="qgraphicswidget.html#getWindowFrameMargins">getWindowFrameMargins</a>(), and <a href="qgraphicswidget.html#windowFrameRect">windowFrameRect</a>().</p>
+<h3 class="fn"><a name="showEvent"></a>void QGraphicsWidget::showEvent ( <a href="qshowevent.html">QShowEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <a href="qevent.html#Type-enum">Show</a> events, is delivered before the widget has been shown, for example, setVisible(true) has been called for the widget or one of its ancestors when the widget was previously hidden.</p>
+<p>You can reimplement this event handler to detect when your widget is shown. Calling <a href="qevent.html#accept">QEvent::accept</a>() or <a href="qevent.html#ignore">QEvent::ignore</a>() on <i>event</i> has no effect.</p>
+<p>See also <a href="qgraphicswidget.html#hideEvent">hideEvent</a>(), <a href="qwidget.html#showEvent">QWidget::showEvent</a>(), and <a href="qgraphicsitem.html#GraphicsItemChange-enum">ItemVisibleChange</a>.</p>
+<h3 class="fn"><a name="style"></a><a href="qstyle.html">QStyle</a> * QGraphicsWidget::style () const</h3>
+<p>Returns a pointer to the widget's style. If this widget does not have any explicitly assigned style, the scene's style is returned instead. In turn, if the scene does not have any assigned style, this function returns <a href="qapplication.html#style">QApplication::style</a>().</p>
+<p>See also <a href="qgraphicswidget.html#setStyle">setStyle</a>().</p>
+<h3 class="fn"><a name="testAttribute"></a>bool QGraphicsWidget::testAttribute ( <a href="qt.html#WidgetAttribute-enum">Qt::WidgetAttribute</a> <i>attribute</i> ) const</h3>
+<p>Returns true if <i>attribute</i> is enabled for this widget; otherwise, returns false.</p>
+<p>See also <a href="qgraphicswidget.html#setAttribute">setAttribute</a>().</p>
+<h3 class="fn"><a name="ungrabKeyboardEvent"></a>void QGraphicsWidget::ungrabKeyboardEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, can be reimplemented in a subclass to receive notifications for Qt::UngrabKeyboard events.</p>
+<p>See also <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>() and <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>().</p>
+<h3 class="fn"><a name="ungrabMouseEvent"></a>void QGraphicsWidget::ungrabMouseEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, can be reimplemented in a subclass to receive notifications for Qt::UngrabMouse events.</p>
+<p>See also <a href="qgraphicsitem.html#ungrabMouse">ungrabMouse</a>() and <a href="qgraphicsitem.html#ungrabKeyboard">ungrabKeyboard</a>().</p>
+<h3 class="fn"><a name="unsetWindowFrameMargins"></a>void QGraphicsWidget::unsetWindowFrameMargins ()</h3>
+<p>Resets the window frame margins to the default value, provided by the style.</p>
+<p>See also <a href="qgraphicswidget.html#setWindowFrameMargins">setWindowFrameMargins</a>(), <a href="qgraphicswidget.html#getWindowFrameMargins">getWindowFrameMargins</a>(), and <a href="qgraphicswidget.html#windowFrameRect">windowFrameRect</a>().</p>
+<h3 class="fn"><a name="updateGeometry"></a>void QGraphicsWidget::updateGeometry ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>If this widget is currently managed by a layout, this function notifies the layout that the widget's size hints have changed and the layout may need to resize and reposition the widget accordingly.</p>
+<p>Call this function if the widget's <a href="qgraphicslayoutitem.html#sizeHint">sizeHint</a>() has changed.</p>
+<p>Reimplemented from <a href="qgraphicslayoutitem.html#updateGeometry">QGraphicsLayoutItem</a>.</p>
+<p>See also <a href="qgraphicslayout.html#invalidate">QGraphicsLayout::invalidate</a>().</p>
+<h3 class="fn"><a name="windowFrameEvent"></a>bool QGraphicsWidget::windowFrameEvent ( <a href="qevent.html">QEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler, for <i>event</i>, receives events for the window frame if this widget is a window. Its base implementation provides support for default window frame interaction such as moving, resizing, etc.</p>
+<p>You can reimplement this handler in a subclass of <a href="qgraphicswidget.html">QGraphicsWidget</a> to provide your own custom window frame interaction support.</p>
+<p>Returns true if <i>event</i> has been recognized and processed; otherwise, returns false.</p>
+<p>See also <a href="qobject.html#event">event</a>().</p>
+<h3 class="fn"><a name="windowFrameGeometry"></a><a href="qrectf.html">QRectF</a> QGraphicsWidget::windowFrameGeometry () const</h3>
+<p>Returns the widget's geometry in parent coordinates including any window frame.</p>
+<p>See also <a href="qgraphicswidget.html#windowFrameRect">windowFrameRect</a>(), <a href="qgraphicswidget.html#getWindowFrameMargins">getWindowFrameMargins</a>(), and <a href="qgraphicswidget.html#setWindowFrameMargins">setWindowFrameMargins</a>().</p>
+<h3 class="fn"><a name="windowFrameRect"></a><a href="qrectf.html">QRectF</a> QGraphicsWidget::windowFrameRect () const</h3>
+<p>Returns the widget's local rect including any window frame.</p>
+<p>See also <a href="qgraphicswidget.html#windowFrameGeometry">windowFrameGeometry</a>(), <a href="qgraphicswidget.html#getWindowFrameMargins">getWindowFrameMargins</a>(), and <a href="qgraphicswidget.html#setWindowFrameMargins">setWindowFrameMargins</a>().</p>
+<h3 class="fn"><a name="windowFrameSectionAt"></a><a href="qt.html#WindowFrameSection-enum">Qt::WindowFrameSection</a> QGraphicsWidget::windowFrameSectionAt ( const <a href="qpointf.html">QPointF</a> &amp; <i>pos</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the window frame section at position <i>pos</i>, or Qt::NoWindowFrameSection if there is no window frame section at this position.</p>
+<p>This function is used in <a href="qgraphicswidget.html">QGraphicsWidget</a>'s base implementation for window frame interaction.</p>
+<p>You can reimplement this function if you want to customize how a window can be interactively moved or resized. For instance, if you only want to allow a window to be resized by the bottom right corner, you can reimplement this function to return <a href="qt.html#WindowFrameSection-enum">Qt::NoSection</a> for all sections except <a href="qt.html#WindowFrameSection-enum">Qt::BottomRightSection</a>.</p>
+<p>See also <a href="qgraphicswidget.html#windowFrameEvent">windowFrameEvent</a>(), <a href="qgraphicswidget.html#paintWindowFrame">paintWindowFrame</a>(), and <a href="qgraphicswidget.html#windowFrameGeometry">windowFrameGeometry</a>().</p>
+<h3 class="fn"><a name="windowType"></a><a href="qt.html#WindowType-enum">Qt::WindowType</a> QGraphicsWidget::windowType () const</h3>
+<p>Returns the widgets window type.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

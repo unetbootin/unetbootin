@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qwidget.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QWidget</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QWidget</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qwidget.html">QWidget class reference</a></li></ul></p>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qwidget-qt3.html#BackgroundOrigin-enum">BackgroundOrigin</a></b> { WidgetOrigin, ParentOrigin, WindowOrigin, AncestorOrigin }</li>
+</ul>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwidget-qt3.html#QWidget-3">QWidget</a></b> ( QWidget * <i>parent</i>, const char * <i>name</i>, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/>Qt::BackgroundMode <b><a href="qwidget-qt3.html#backgroundMode">backgroundMode</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qwidget-qt3.html#backgroundOffset">backgroundOffset</a></b> () const</li>
+<li><div class="fn"/>BackgroundOrigin <b><a href="qwidget-qt3.html#backgroundOrigin">backgroundOrigin</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwidget-qt3.html#caption">caption</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qwidget-qt3.html#childAt-2">childAt</a></b> ( int <i>x</i>, int <i>y</i>, bool <i>includeThis</i> ) const</li>
+<li><div class="fn"/>QWidget * <b><a href="qwidget-qt3.html#childAt-3">childAt</a></b> ( const QPoint &amp; <i>p</i>, bool <i>includeThis</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#close-2">close</a></b> ( bool <i>alsoDelete</i> )</li>
+<li><div class="fn"/>QColorGroup <b><a href="qwidget-qt3.html#colorGroup">colorGroup</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#constPolish">constPolish</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#drawText">drawText</a></b> ( const QPoint &amp; <i>p</i>, const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#drawText-2">drawText</a></b> ( int <i>x</i>, int <i>y</i>, const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#erase">erase</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#erase-2">erase</a></b> ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#erase-3">erase</a></b> ( const QRect &amp; <i>rect</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#erase-4">erase</a></b> ( const QRegion &amp; <i>rgn</i> )</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#hasMouse">hasMouse</a></b> () const</li>
+<li><div class="fn"/>const QPixmap * <b><a href="qwidget-qt3.html#icon">icon</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwidget-qt3.html#iconText">iconText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#iconify">iconify</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isDesktop">isDesktop</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isDialog">isDialog</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isInputMethodEnabled">isInputMethodEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isPopup">isPopup</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isShown">isShown</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isUpdatesEnabled">isUpdatesEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#isVisibleToTLW">isVisibleToTLW</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#ownCursor">ownCursor</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#ownFont">ownFont</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwidget-qt3.html#ownPalette">ownPalette</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qwidget-qt3.html#parentWidget-2">parentWidget</a></b> ( bool <i>sameWindow</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#polish">polish</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#recreate">recreate</a></b> ( QWidget * <i>parent</i>, Qt::WindowFlags <i>f</i>, const QPoint &amp; <i>p</i>, bool <i>showIt</i> = false )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#repaint-2">repaint</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#repaint-3">repaint</a></b> ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#repaint-4">repaint</a></b> ( const QRect &amp; <i>r</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#repaint-5">repaint</a></b> ( const QRegion &amp; <i>rgn</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#reparent">reparent</a></b> ( QWidget * <i>parent</i>, Qt::WindowFlags <i>f</i>, const QPoint &amp; <i>p</i>, bool <i>showIt</i> = false )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#reparent-2">reparent</a></b> ( QWidget * <i>parent</i>, const QPoint &amp; <i>p</i>, bool <i>showIt</i> = false )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setActiveWindow">setActiveWindow</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setBackgroundColor">setBackgroundColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setBackgroundMode">setBackgroundMode</a></b> ( Qt::BackgroundMode <i>widgetBackground</i>, Qt::BackgroundMode <i>paletteBackground</i> = Qt::PaletteBackground )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setBackgroundOrigin">setBackgroundOrigin</a></b> ( BackgroundOrigin <i>background</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setBackgroundPixmap">setBackgroundPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setCaption">setCaption</a></b> ( const QString &amp; <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setEraseColor">setEraseColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setErasePixmap">setErasePixmap</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setFont-2">setFont</a></b> ( const QFont &amp; <i>f</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setIcon">setIcon</a></b> ( const QPixmap &amp; <i>i</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setIconText">setIconText</a></b> ( const QString &amp; <i>it</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setInputMethodEnabled">setInputMethodEnabled</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setKeyCompression">setKeyCompression</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setPalette-2">setPalette</a></b> ( const QPalette &amp; <i>p</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setPaletteBackgroundColor">setPaletteBackgroundColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setPaletteBackgroundPixmap">setPaletteBackgroundPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setPaletteForegroundColor">setPaletteForegroundColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setSizePolicy-2">setSizePolicy</a></b> ( QSizePolicy::Policy <i>hor</i>, QSizePolicy::Policy <i>ver</i>, bool <i>hfw</i> )</li>
+<li><div class="fn"/>QStyle * <b><a href="qwidget-qt3.html#setStyle-2">setStyle</a></b> ( const QString &amp; <i>style</i> )</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#unsetFont">unsetFont</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#unsetPalette">unsetPalette</a></b> ()</li>
+<li><div class="fn"/>QRect <b><a href="qwidget-qt3.html#visibleRect">visibleRect</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwidget-qt3.html#setShown">setShown</a></b> ( bool <i>shown</i> )</li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QWidgetMapper * <b><a href="qwidget-qt3.html#wmapper">wmapper</a></b> ()</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="BackgroundOrigin-enum"></a>enum QWidget::BackgroundOrigin</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QWidget::WidgetOrigin</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QWidget::ParentOrigin</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QWidget::WindowOrigin</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QWidget::AncestorOrigin</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWidget-3"></a>QWidget::QWidget ( QWidget * <i>parent</i>, const char * <i>name</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<h3 class="fn"><a name="backgroundMode"></a><a href="qt-qt3.html#BackgroundMode-enum">Qt::BackgroundMode</a> QWidget::backgroundMode () const</h3>
+<p>Returns the color role used for painting the widget's background.</p>
+<p>Use <a href="qpalette.html">QPalette</a>(backgroundRole(()) instead.</p>
+<p>See also <a href="qwidget-qt3.html#setBackgroundMode">setBackgroundMode</a>().</p>
+<h3 class="fn"><a name="backgroundOffset"></a><a href="qpoint.html">QPoint</a> QWidget::backgroundOffset () const</h3>
+<p>Always returns QPoint().</p>
+<h3 class="fn"><a name="backgroundOrigin"></a><a href="qwidget-qt3.html#BackgroundOrigin-enum">BackgroundOrigin</a> QWidget::backgroundOrigin () const</h3>
+<p>Always returns <tt>WindowOrigin</tt>.</p>
+<p>See also <a href="qwidget-qt3.html#setBackgroundOrigin">setBackgroundOrigin</a>().</p>
+<h3 class="fn"><a name="caption"></a><a href="qstring.html">QString</a> QWidget::caption () const</h3>
+<p>Use <a href="qwidget.html#windowTitle-prop">windowTitle</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#setCaption">setCaption</a>().</p>
+<h3 class="fn"><a name="childAt-2"></a>QWidget * QWidget::childAt ( int <i>x</i>, int <i>y</i>, bool <i>includeThis</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qwidget.html#childAt">childAt</a>() overload that doesn't have an <i>includeThis</i> parameter.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> return widget-&gt;childAt(x, y, true);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QWidget *child = widget-&gt;childAt(x, y, true);
+ if (child)
+     return child;
+ if (widget-&gt;rect().contains(x, y))
+     return widget;</pre>
+<h3 class="fn"><a name="childAt-3"></a>QWidget * QWidget::childAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, bool <i>includeThis</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the single point argument overload instead.</p>
+<h3 class="fn"><a name="close-2"></a>bool QWidget::close ( bool <i>alsoDelete</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Closes the widget.</p>
+<p>Use the no-argument overload instead.</p>
+<h3 class="fn"><a name="colorGroup"></a><a href="qcolorgroup.html">QColorGroup</a> QWidget::colorGroup () const</h3>
+<p>Use <a href="qcolorgroup.html">QColorGroup</a>(<a href="qwidget.html#palette-prop">palette</a>()) instead.</p>
+<h3 class="fn"><a name="constPolish"></a>void QWidget::constPolish () const</h3>
+<p>Use <a href="qwidget.html#ensurePolished">ensurePolished</a>() instead.</p>
+<h3 class="fn"><a name="drawText"></a>void QWidget::drawText ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i> )</h3>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your drawing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="drawText-2"></a>void QWidget::drawText ( int <i>x</i>, int <i>y</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your drawing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="erase"></a>void QWidget::erase ()</h3>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your erasing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="erase-2"></a>void QWidget::erase ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your erasing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="erase-3"></a>void QWidget::erase ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your erasing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="erase-4"></a>void QWidget::erase ( const <a href="qregion.html">QRegion</a> &amp; <i>rgn</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Clear the given region, <i>rgn</i>.</p>
+<p>Drawing may only take place in a <a href="qpaintevent.html">QPaintEvent</a>. Overload <a href="qwidget.html#paintEvent">paintEvent</a>() to do your erasing and call <a href="qwidget.html#update">update</a>() to schedule a replaint whenever necessary. See also <a href="qpainter.html">QPainter</a>.</p>
+<h3 class="fn"><a name="hasMouse"></a>bool QWidget::hasMouse () const</h3>
+<p>Use testAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_UnderMouse</a>) instead.</p>
+<h3 class="fn"><a name="icon"></a>const <a href="qpixmap.html">QPixmap</a> * QWidget::icon () const</h3>
+<p>Return's the widget's icon.</p>
+<p>Use <a href="qwidget.html#windowIcon-prop">windowIcon</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#setIcon">setIcon</a>().</p>
+<h3 class="fn"><a name="iconText"></a><a href="qstring.html">QString</a> QWidget::iconText () const</h3>
+<p>Use <a href="qwidget.html#windowIconText-prop">windowIconText</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#setIconText">setIconText</a>().</p>
+<h3 class="fn"><a name="iconify"></a>void QWidget::iconify ()</h3>
+<p>Use <a href="qwidget.html#showMinimized">showMinimized</a>() instead.</p>
+<h3 class="fn"><a name="isDesktop"></a>bool QWidget::isDesktop () const</h3>
+<p>Use <a href="qwidget.html#windowType">windowType</a>() == <a href="qt.html#WindowType-enum">Qt::Desktop</a> instead.</p>
+<h3 class="fn"><a name="isDialog"></a>bool QWidget::isDialog () const</h3>
+<p>Use <a href="qwidget.html#windowType">windowType</a>() == <a href="qt.html#WindowType-enum">Qt::Dialog</a> instead.</p>
+<h3 class="fn"><a name="isInputMethodEnabled"></a>bool QWidget::isInputMethodEnabled () const</h3>
+<p>Use testAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_InputMethodEnabled</a>) instead.</p>
+<h3 class="fn"><a name="isPopup"></a>bool QWidget::isPopup () const</h3>
+<p>Use <a href="qwidget.html#windowType">windowType</a>() == <a href="qt.html#WindowType-enum">Qt::Popup</a> instead.</p>
+<h3 class="fn"><a name="isShown"></a>bool QWidget::isShown () const</h3>
+<p>Use !<a href="qwidget.html#isHidden">isHidden</a>() instead (notice the exclamation mark), or use <a href="qwidget.html#visible-prop">isVisible</a>() to check whether the widget is visible.</p>
+<h3 class="fn"><a name="isUpdatesEnabled"></a>bool QWidget::isUpdatesEnabled () const</h3>
+<p>Use the <a href="qwidget.html#updatesEnabled-prop">updatesEnabled</a> property instead.</p>
+<h3 class="fn"><a name="isVisibleToTLW"></a>bool QWidget::isVisibleToTLW () const</h3>
+<p>Use <a href="qwidget.html#visible-prop">isVisible</a>() instead.</p>
+<h3 class="fn"><a name="ownCursor"></a>bool QWidget::ownCursor () const</h3>
+<p>Use testAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_SetCursor</a>) instead.</p>
+<h3 class="fn"><a name="ownFont"></a>bool QWidget::ownFont () const</h3>
+<p>Use testAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_SetFont</a>) instead.</p>
+<h3 class="fn"><a name="ownPalette"></a>bool QWidget::ownPalette () const</h3>
+<p>Use testAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_SetPalette</a>) instead.</p>
+<h3 class="fn"><a name="parentWidget-2"></a>QWidget * QWidget::parentWidget ( bool <i>sameWindow</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the no-argument overload instead.</p>
+<h3 class="fn"><a name="polish"></a>void QWidget::polish ()</h3>
+<p>Use <a href="qwidget.html#ensurePolished">ensurePolished</a>() instead.</p>
+<h3 class="fn"><a name="recreate"></a>void QWidget::recreate ( QWidget * <i>parent</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, bool <i>showIt</i> = false )</h3>
+<p>Use <a href="qwidget.html#setParent">setParent</a>() to change the parent or the widget's widget flags; use <a href="qwidget.html#pos-prop">move</a>() to move the widget, and use <a href="qwidget.html#show">show</a>() to show the widget.</p>
+<h3 class="fn"><a name="repaint-2"></a>void QWidget::repaint ( bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The boolean parameter <i>b</i> is ignored. Use the no-argument overload instead.</p>
+<h3 class="fn"><a name="repaint-3"></a>void QWidget::repaint ( int <i>x</i>, int <i>y</i>, int <i>w</i>, int <i>h</i>, bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The boolean parameter <i>b</i> is ignored. Use the four-argument overload instead.</p>
+<h3 class="fn"><a name="repaint-4"></a>void QWidget::repaint ( const <a href="qrect.html">QRect</a> &amp; <i>r</i>, bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The boolean parameter <i>b</i> is ignored. Use the single rect-argument overload instead.</p>
+<h3 class="fn"><a name="repaint-5"></a>void QWidget::repaint ( const <a href="qregion.html">QRegion</a> &amp; <i>rgn</i>, bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The boolean parameter <i>b</i> is ignored. Use the single region-argument overload instead.</p>
+<h3 class="fn"><a name="reparent"></a>void QWidget::reparent ( QWidget * <i>parent</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, bool <i>showIt</i> = false )</h3>
+<p>Use <a href="qwidget.html#setParent">setParent</a>() to change the parent or the widget's widget flags; use <a href="qwidget.html#pos-prop">move</a>() to move the widget, and use <a href="qwidget.html#show">show</a>() to show the widget.</p>
+<h3 class="fn"><a name="reparent-2"></a>void QWidget::reparent ( QWidget * <i>parent</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, bool <i>showIt</i> = false )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#setParent">setParent</a>() to change the parent; use <a href="qwidget.html#pos-prop">move</a>() to move the widget, and use <a href="qwidget.html#show">show</a>() to show the widget.</p>
+<h3 class="fn"><a name="setActiveWindow"></a>void QWidget::setActiveWindow ()</h3>
+<p>Use <a href="qwidget.html#activateWindow">activateWindow</a>() instead.</p>
+<p>See also <a href="qwidget.html#isActiveWindow-prop">isActiveWindow</a>().</p>
+<h3 class="fn"><a name="setBackgroundColor"></a>void QWidget::setBackgroundColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Use the palette instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setBackgroundColor(color);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setColor(widget-&gt;backgroundRole(), color);
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setBackgroundMode"></a>void QWidget::setBackgroundMode ( <a href="qt-qt3.html#BackgroundMode-enum">Qt::BackgroundMode</a> <i>widgetBackground</i>, <a href="qt-qt3.html#BackgroundMode-enum">Qt::BackgroundMode</a> <i>paletteBackground</i> = Qt::PaletteBackground )</h3>
+<p>Sets the color role used for painting the widget's background to background mode <i>widgetBackground</i>. The <i>paletteBackground</i> mode parameter is ignored.</p>
+<p>See also <a href="qwidget-qt3.html#backgroundMode">backgroundMode</a>().</p>
+<h3 class="fn"><a name="setBackgroundOrigin"></a>void QWidget::setBackgroundOrigin ( <a href="qwidget-qt3.html#BackgroundOrigin-enum">BackgroundOrigin</a> <i>background</i> )</h3>
+<p>See also <a href="qwidget-qt3.html#backgroundOrigin">backgroundOrigin</a>().</p>
+<h3 class="fn"><a name="setBackgroundPixmap"></a>void QWidget::setBackgroundPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Use the palette instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setBackgroundPixmap(pixmap);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setBrush(widget-&gt;backgroundRole(), QBrush(pixmap));
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setCaption"></a>void QWidget::setCaption ( const <a href="qstring.html">QString</a> &amp; <i>c</i> )</h3>
+<p>Use <a href="qwidget.html#windowTitle-prop">setWindowTitle</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#caption">caption</a>().</p>
+<h3 class="fn"><a name="setEraseColor"></a>void QWidget::setEraseColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Use the palette instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setEraseColor(color);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setColor(widget-&gt;backgroundRole(), color);
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setErasePixmap"></a>void QWidget::setErasePixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Use the palette instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setErasePixmap(pixmap);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setBrush(widget-&gt;backgroundRole(), QBrush(pixmap));
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setFont-2"></a>void QWidget::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>f</i>, bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the single-argument overload instead.</p>
+<h3 class="fn"><a name="setIcon"></a>void QWidget::setIcon ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>i</i> )</h3>
+<p>Use <a href="qwidget.html#windowIcon-prop">setWindowIcon</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#icon">icon</a>().</p>
+<h3 class="fn"><a name="setIconText"></a>void QWidget::setIconText ( const <a href="qstring.html">QString</a> &amp; <i>it</i> )</h3>
+<p>Use <a href="qwidget.html#windowIconText-prop">setWindowIconText</a>() instead.</p>
+<p>See also <a href="qwidget-qt3.html#iconText">iconText</a>().</p>
+<h3 class="fn"><a name="setInputMethodEnabled"></a>void QWidget::setInputMethodEnabled ( bool <i>enabled</i> )</h3>
+<p>Use setAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_InputMethodEnabled</a>, <i>enabled</i>) instead.</p>
+<p>See also <a href="qwidget-qt3.html#isInputMethodEnabled">isInputMethodEnabled</a>().</p>
+<h3 class="fn"><a name="setKeyCompression"></a>void QWidget::setKeyCompression ( bool <i>b</i> )</h3>
+<p>Use setAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>, b) instead.</p>
+<h3 class="fn"><a name="setPalette-2"></a>void QWidget::setPalette ( const <a href="qpalette.html">QPalette</a> &amp; <i>p</i>, bool <i>b</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the single-argument overload instead.</p>
+<h3 class="fn"><a name="setPaletteBackgroundColor"></a>void QWidget::setPaletteBackgroundColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Use the palette directly.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setPaletteBackgroundColor(color);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setColor(widget-&gt;backgroundRole(), color);
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setPaletteBackgroundPixmap"></a>void QWidget::setPaletteBackgroundPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Use the palette directly.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setPaletteBackgroundPixmap(pixmap);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setBrush(widget-&gt;backgroundRole(), QBrush(pixmap));
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setPaletteForegroundColor"></a>void QWidget::setPaletteForegroundColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Use the palette directly.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> widget-&gt;setPaletteForegroundColor(color);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPalette palette;
+ palette.setColor(widget-&gt;foregroundRole(), color);
+ widget-&gt;setPalette(palette);</pre>
+<h3 class="fn"><a name="setShown"></a>void QWidget::setShown ( bool <i>shown</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Use setVisible(<i>shown</i>) instead.</p>
+<p>See also <a href="qwidget-qt3.html#isShown">isShown</a>().</p>
+<h3 class="fn"><a name="setSizePolicy-2"></a>void QWidget::setSizePolicy ( <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>hor</i>, <a href="qsizepolicy.html#Policy-enum">QSizePolicy::Policy</a> <i>ver</i>, bool <i>hfw</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qwidget.html#sizePolicy-prop">sizePolicy</a> property and <a href="qwidget.html#heightForWidth">heightForWidth</a>() function instead.</p>
+<h3 class="fn"><a name="setStyle-2"></a><a href="qstyle.html">QStyle</a> * QWidget::setStyle ( const <a href="qstring.html">QString</a> &amp; <i>style</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the widget's GUI style to <i>style</i> using the <a href="qstylefactory.html">QStyleFactory</a>.</p>
+<h3 class="fn"><a name="unsetFont"></a>void QWidget::unsetFont ()</h3>
+<p>Use setFont(<a href="porting4.html#qfont">QFont</a>()) instead.</p>
+<h3 class="fn"><a name="unsetPalette"></a>void QWidget::unsetPalette ()</h3>
+<p>Use setPalette(QPalette()) instead.</p>
+<h3 class="fn"><a name="visibleRect"></a><a href="qrect.html">QRect</a> QWidget::visibleRect () const</h3>
+<p>Use <a href="qwidget.html#visibleRegion">visibleRegion</a>() instead.</p>
+<h3 class="fn"><a name="wmapper"></a>QWidgetMapper * QWidget::wmapper ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>The widget mapper is no longer part of the public API.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

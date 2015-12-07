@@ -1,0 +1,54 @@
+<!DOCTYPE DCF>
+<DCF ref="designer-manual.html" icon="designer.png" imagedir="../../gif" title="Qt Designer Manual">
+<section ref="designer-getting-started.html" title="Getting Started with Qt Designer">
+    <keyword ref="designer-getting-started.html">Getting Started with Qt Designer</keyword>
+</section>
+<section ref="designer-designing-a-component.html" title="Designing a Component with Qt Designer">
+    <keyword ref="designer-designing-a-component.html">Designing a Component with Qt Designer</keyword>
+</section>
+<section ref="designer-editing-mode.html" title="Qt Designer's Widget Editing Mode">
+    <keyword ref="designer-editing-mode.html">Qt Designer's Widget Editing Mode</keyword>
+</section>
+<section ref="designer-using-containers.html" title="Using Containers in Qt Designer">
+    <keyword ref="designer-using-containers.html">Using Containers in Qt Designer</keyword>
+</section>
+<section ref="designer-creating-mainwindows.html" title="Creating Main Windows in Qt Designer">
+    <keyword ref="designer-creating-mainwindows.html">Creating Main Windows in Qt Designer</keyword>
+</section>
+<section ref="designer-connection-mode.html" title="Qt Designer's Signals and Slots Editing Mode">
+    <keyword ref="designer-connection-mode.html">Qt Designer's Signals and Slots Editing Mode</keyword>
+</section>
+<section ref="designer-buddy-mode.html" title="Qt Designer's Buddy Editing Mode">
+    <keyword ref="designer-buddy-mode.html">Qt Designer's Buddy Editing Mode</keyword>
+</section>
+<section ref="designer-tab-order.html" title="Qt Designer's Tab Order Editing Mode">
+    <keyword ref="designer-tab-order.html">Qt Designer's Tab Order Editing Mode</keyword>
+</section>
+<section ref="designer-resources.html" title="Editing Resources with Qt Designer">
+    <keyword ref="designer-resources.html">Editing Resources with Qt Designer</keyword>
+</section>
+<section ref="designer-stylesheet.html" title="Using Stylesheets with Qt Designer">
+    <keyword ref="designer-stylesheet.html">Using Stylesheets with Qt Designer</keyword>
+</section>
+<section ref="designer-customizing-forms.html" title="Customizing Qt Designer Forms">
+    <keyword ref="designer-customizing-forms.html">Customizing Qt Designer Forms</keyword>
+</section>
+<section ref="designer-using-custom-widgets.html" title="Using Custom Widgets with Qt Designer">
+    <keyword ref="designer-using-custom-widgets.html">Using Custom Widgets with Qt Designer</keyword>
+</section>
+<section ref="designer-using-a-component.html" title="Using a Component in Your Application">
+    <keyword ref="designer-using-a-component.html">Using a Component in Your Application</keyword>
+</section>
+<section ref="designer-creating-custom-widgets.html" title="Creating Custom Widgets for Qt Designer">
+    <keyword ref="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</keyword>
+</section>
+<section ref="designer-creating-custom-widgets-extensions.html" title="Creating Custom Widget Extensions">
+    <keyword ref="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</keyword>
+</section>
+<section ref="designer-ui-file-format.html" title="Qt Designer's UI File Format">
+    <keyword ref="designer-ui-file-format.html">Qt Designer's UI File Format</keyword>
+</section>
+<section ref="designer-recursive-shadow-casting.html" title="Implementation of the Recursive Shadow Casting Algorithm in Qt Designer">
+    <keyword ref="designer-recursive-shadow-casting.html">Implementation of the Recursive Shadow Casting Algorithm in Qt Designer</keyword>
+</section>
+</DCF>

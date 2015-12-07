@@ -1,0 +1,26 @@
+//! [0]
+        imageLabel->resize(imageLabel->pixmap()->size());
+//! [0]
+
+
+//! [1]
+        if (!imageLabel->pixmap())
+             qFatal("ASSERT: "imageLabel->pixmap()" in file ...");
+//! [1]
+
+
+//! [2]
+        qmake "CONFIG += debug" foo.pro
+//! [2]
+
+
+//! [3]
+        qmake "CONFIG += release" foo.pro
+//! [3]
+
+
+//! [4]
+        scrollBar->setValue(int(factor * scrollBar->value()));
+//! [4]
+
+

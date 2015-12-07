@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/completer.qdoc -->
+<head>
+  <title>Qt 4.4: Completer Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Completer Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-completer-dirmodel-cpp.html">tools/completer/dirmodel.cpp</a></li>
+<li><a href="tools-completer-dirmodel-h.html">tools/completer/dirmodel.h</a></li>
+<li><a href="tools-completer-mainwindow-cpp.html">tools/completer/mainwindow.cpp</a></li>
+<li><a href="tools-completer-mainwindow-h.html">tools/completer/mainwindow.h</a></li>
+<li><a href="tools-completer-main-cpp.html">tools/completer/main.cpp</a></li>
+<li><a href="tools-completer-completer-pro.html">tools/completer/completer.pro</a></li>
+<li><a href="tools-completer-completer-qrc.html">tools/completer/completer.qrc</a></li>
+</ul>
+<p>The Completer example shows how to provide string-completion facilities for an input widget based on data provided by a model.</p>
+<p align="center"><img src="images/completer-example.png" /></p><p>This example uses a custom item model, <tt>DirModel</tt>, and a <a href="qcompleter.html">QCompleter</a> object. <a href="qcompleter.html">QCompleter</a> is a class that provides completions based on an item model. The type of model, the completion mode, and the case sensitivity can be selected using combo boxes.</p>
+<a name="the-resource-file"></a>
+<h2>The Resource File</h2>
+<p>The Completer example requires a resource file in order to store the <i>countries.txt</i> and <i>words.txt</i>. The resource file contains the following code:</p>
+<pre> &lt;!DOCTYPE RCC&gt;&lt;RCC version=&quot;1.0&quot;&gt;
+ &lt;qresource prefix=&quot;/&quot;&gt;
+    &lt;file&gt;resources/countries.txt&lt;/file&gt;
+    &lt;file&gt;resources/wordlist.txt&lt;/file&gt;
+ &lt;/qresource&gt;
+ &lt;/RCC&gt;</pre>
+<a name="dirmodel-class-definition"></a>
+<h2>DirModel Class Definition</h2>
+<p>The <tt>DirModel</tt> class is a subclass of <a href="qdirmodel.html">QDirModel</a>, which provides a data model for the local filesystem.</p>
+<pre> class DirModel : public QDirModel
+ {
+ public:
+     DirModel(QObject *parent = 0);
+     QVariant data(const QModelIndex &amp;index, int role = Qt::DisplayRole) const;
+ };</pre>
+<p>This class only has a constructor and a <tt>data()</tt> function as it is only created to enable <tt>data()</tt> to return the entire file path for the display role, unlike <a href="qdirmodel.html">QDirModel</a>'s <tt>data()</tt> function that only returns the folder and not the drive label. This is further explained in <tt>DirModel</tt>'s implementation.</p>
+<a name="dirmodel-class-implementation"></a>
+<h2>DirModel Class Implementation</h2>
+<p>The constructor for the <tt>DirModel</tt> class is used to pass <i>parent</i> to <a href="qdirmodel.html">QDirModel</a>.</p>
+<pre> DirModel::DirModel(QObject *parent)
+     : QDirModel(parent)
+ {
+ }</pre>
+<p>As mentioned earlier, the <tt>data()</tt> function is reimplemented in order to get it to return the entire file parth for the display role. For example, with a <a href="qdirmodel.html">QDirModel</a>, you will see &quot;Program Files&quot; in the view. However, with <tt>DirModel</tt>, you will see &quot;C:\Program Files&quot;.</p>
+<pre> QVariant DirModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (role == Qt::DisplayRole &amp;&amp; index.column() == 0) {
+         QString path  = QDir::toNativeSeparators(filePath(index));
+         if (path.endsWith(QDir::separator()))
+             path.chop(1);
+         return path;
+     }
+
+     return QDirModel::data(index, role);
+ }</pre>
+<p>The screenshots below illustrate this difference:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/completer-example-qdirmodel.png" /></td><td><img src="images/completer-example-dirmodel.png" /></td></tr>
+</table></p>
+<p>The <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a>, which <a href="qcompleter.html">QCompleter</a> uses to look for matches, is left unchanged.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class is a subclass of <a href="qmainwindow.html">QMainWindow</a> and implements four private slots - <tt>about()</tt>, <tt>changeCase()</tt>, <tt>changeMode()</tt>, and <tt>changeModel()</tt>.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow(QWidget *parent = 0);
+
+ private slots:
+     void about();
+     void changeCase(int);
+     void changeMode(int);
+     void changeModel();</pre>
+<p>Within the <tt>MainWindow</tt> class, we have two private functions: <tt>createMenu()</tt> and <tt>modelFromFile()</tt>. We also declare the private widgets needed - three <a href="qcombobox.html">QComboBox</a> objects, a <a href="qcheckbox.html">QCheckBox</a>, a <a href="qcompleter.html">QCompleter</a>, a <a href="qlabel.html">QLabel</a>, and a <a href="qlineedit.html">QLineEdit</a>.</p>
+<pre> private:
+     void createMenu();
+     QAbstractItemModel *modelFromFile(const QString&amp; fileName);
+
+     QComboBox *caseCombo;
+     QComboBox *modeCombo;
+     QComboBox *modelCombo;
+     QCheckBox *wrapCheckBox;
+     QCompleter *completer;
+     QLabel *contentsLabel;
+     QLineEdit *lineEdit;
+ };</pre>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The constructor of <tt>MainWindow</tt> constructs a <tt>MainWindow</tt> with a parent widget and initializes the private members. The <tt>createMenu()</tt> function is then invoked.</p>
+<p>We set up three <a href="qcombobox.html">QComboBox</a> objects, <tt>modelComb</tt>, <tt>modeCombo</tt> and <tt>caseCombo</tt>. By default, the <tt>modelCombo</tt> is set to <a href="qdirmodel.html">QDirModel</a>, the <tt>modeCombo</tt> is set to &quot;Filtered Popup&quot; and the <tt>caseCombo</tt> is set to &quot;Case Insensitive&quot;.</p>
+<pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent), completer(0), lineEdit(0)
+ {
+     createMenu();
+
+     QWidget *centralWidget = new QWidget;
+
+     QLabel *modelLabel = new QLabel;
+     modelLabel-&gt;setText(tr(&quot;Model&quot;));
+
+     modelCombo = new QComboBox;
+     modelCombo-&gt;addItem(tr(&quot;QDirModel&quot;));
+     modelCombo-&gt;addItem(tr(&quot;QDirModel that shows full path&quot;));
+     modelCombo-&gt;addItem(tr(&quot;Country list&quot;));
+     modelCombo-&gt;addItem(tr(&quot;Word list&quot;));
+     modelCombo-&gt;setCurrentIndex(0);
+
+     QLabel *modeLabel = new QLabel;
+     modeLabel-&gt;setText(tr(&quot;Completion Mode&quot;));
+     modeCombo = new QComboBox;
+     modeCombo-&gt;addItem(tr(&quot;Inline&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Filtered Popup&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Unfiltered Popup&quot;));
+     modeCombo-&gt;setCurrentIndex(1);
+
+     QLabel *caseLabel = new QLabel;
+     caseLabel-&gt;setText(tr(&quot;Case Sensitivity&quot;));
+     caseCombo = new QComboBox;
+     caseCombo-&gt;addItem(tr(&quot;Case Insensitive&quot;));
+     caseCombo-&gt;addItem(tr(&quot;Case Sensitive&quot;));
+     caseCombo-&gt;setCurrentIndex(0);</pre>
+<p>The <tt>wrapCheckBox</tt> is then set up. This <tt>checkBox</tt> determines if the <tt>completer</tt>'s <a href="qcompleter.html#wrapAround-prop">setWrapAround()</a> property is enabled or disabled.</p>
+<pre>     wrapCheckBox = new QCheckBox;
+     wrapCheckBox-&gt;setText(tr(&quot;Wrap around completions&quot;));
+     wrapCheckBox-&gt;setChecked(true);</pre>
+<p>We instantiate <tt>contentsLabel</tt> and set its size policy to <a href="qsizepolicy.html#Policy-enum">fixed</a>. The combo boxes' <a href="qcombobox.html#activated">activated()</a> signals are then connected to their respective slots.</p>
+<pre>     contentsLabel = new QLabel;
+     contentsLabel-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+     connect(modelCombo, SIGNAL(activated(int)), this, SLOT(changeModel()));
+     connect(modeCombo, SIGNAL(activated(int)), this, SLOT(changeMode(int)));
+     connect(caseCombo, SIGNAL(activated(int)), this, SLOT(changeCase(int)));</pre>
+<p>The <tt>lineEdit</tt> is set up and then we arrange all the widgets using a <a href="qgridlayout.html">QGridLayout</a>. The <tt>changeModel()</tt> function is called, to initialize the <tt>completer</tt>.</p>
+<pre>     lineEdit = new QLineEdit;
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(modelLabel, 0, 0); layout-&gt;addWidget(modelCombo, 0, 1);
+     layout-&gt;addWidget(modeLabel, 1, 0);  layout-&gt;addWidget(modeCombo, 1, 1);
+     layout-&gt;addWidget(caseLabel, 2, 0);  layout-&gt;addWidget(caseCombo, 2, 1);
+     layout-&gt;addWidget(wrapCheckBox, 3, 0);
+     layout-&gt;addWidget(contentsLabel, 4, 0, 1, 2);
+     layout-&gt;addWidget(lineEdit, 5, 0, 1, 2);
+     centralWidget-&gt;setLayout(layout);
+     setCentralWidget(centralWidget);
+
+     changeModel();
+
+     setWindowTitle(tr(&quot;Completer&quot;));
+     lineEdit-&gt;setFocus();
+ }</pre>
+<p>The <tt>createMenu()</tt> function is used to instantiate the <a href="qaction.html">QAction</a> objects needed to fill the <tt>fileMenu</tt> and <tt>helpMenu</tt>. The actions' <a href="qaction.html#triggered">triggered()</a> signals are connected to their respective slots.</p>
+<pre> void MainWindow::createMenu()
+ {
+     QAction *exitAction = new QAction(tr(&quot;Exit&quot;), this);
+     QAction *aboutAct = new QAction(tr(&quot;About&quot;), this);
+     QAction *aboutQtAct = new QAction(tr(&quot;About Qt&quot;), this);
+
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     QMenu* fileMenu = menuBar()-&gt;addMenu(tr(&quot;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     QMenu* helpMenu = menuBar()-&gt;addMenu(tr(&quot;About&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }</pre>
+<p>The <tt>modelFromFile()</tt> function accepts the <i>fileName</i> of a file and processes it depending on its contents.</p>
+<p>We first validate the <tt>file</tt> to ensure that it can be opened in <a href="qiodevice.html#OpenModeFlag-enum">QFile::ReadOnly</a> mode. If this is unsuccessful, the function returns an empty <a href="qstringlistmodel.html">QStringListModel</a>.</p>
+<pre> QAbstractItemModel *MainWindow::modelFromFile(const QString&amp; fileName)
+ {
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly))
+         return new QStringListModel(completer);</pre>
+<p>The mouse cursor is then overriden with <a href="qt.html#CursorShape-enum">Qt::WaitCursor</a> before we fill a <a href="qstringlist.html">QStringList</a> object, <tt>words</tt>, with the contents of <tt>file</tt>. Once this is done, we restore the mouse cursor.</p>
+<pre> #ifndef QT_NO_CURSOR
+     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+ #endif
+     QStringList words;
+
+     while (!file.atEnd()) {
+         QByteArray line = file.readLine();
+         if (!line.isEmpty())
+             words &lt;&lt; line.trimmed();
+     }
+
+ #ifndef QT_NO_CURSOR
+     QApplication::restoreOverrideCursor();
+ #endif</pre>
+<p>As mentioned earlier, the resources file contains two files - <i>countries.txt</i> and <i>words.txt</i>. If the <tt>file</tt> read is <i>words.txt</i>, we return a <a href="qstringlistmodel.html">QStringListModel</a> with <tt>words</tt> as its <a href="qstringlist.html">QStringList</a> and <tt>completer</tt> as its parent.</p>
+<pre>     if (!fileName.contains(QLatin1String(&quot;countries.txt&quot;)))
+         return new QStringListModel(words, completer);</pre>
+<p>If the <tt>file</tt> read is <i>countries.txt</i>, then we require a <a href="qstandarditemmodel.html">QStandardItemModel</a> with <tt>words.count()</tt> rows, 2 columns, and <tt>completer</tt> as its parent.</p>
+<pre>     QStandardItemModel *m = new QStandardItemModel(words.count(), 2, completer);</pre>
+<p>A standard line in <i>countries.txt</i> is:</p>
+<blockquote><p>Norway NO</p>
+</blockquote>
+<p>Hence, to populate the <a href="qstandarditemmodel.html">QStandardItemModel</a> object, <tt>m</tt>, we have to split the country name and its symbol. Once this is done, we return <tt>m</tt>.</p>
+<pre>     for (int i = 0; i &lt; words.count(); ++i) {
+         QModelIndex countryIdx = m-&gt;index(i, 0);
+         QModelIndex symbolIdx = m-&gt;index(i, 1);
+         QString country = words[i].mid(0, words[i].length() - 2).trimmed();
+         QString symbol = words[i].right(2);
+         m-&gt;setData(countryIdx, country);
+         m-&gt;setData(symbolIdx, symbol);
+     }
+
+     return m;
+ }</pre>
+<p>The <tt>changeMode()</tt> function sets the <tt>completer</tt>'s mode, depending on the value of <tt>index</tt>.</p>
+<pre> void MainWindow::changeMode(int index)
+ {
+     QCompleter::CompletionMode mode;
+     if (index == 0)
+         mode = QCompleter::InlineCompletion;
+     else if (index == 1)
+         mode = QCompleter::PopupCompletion;
+     else
+         mode = QCompleter::UnfilteredPopupCompletion;
+
+     completer-&gt;setCompletionMode(mode);
+ }</pre>
+<p>The <tt>changeModel()</tt> function changes the item model used based on the model selected by the user.</p>
+<p>A <tt>switch</tt> statement is used to change the item model based on the index of <tt>modelCombo</tt>. If <tt>case</tt> is 0, we use an unsorted <a href="qdirmodel.html">QDirModel</a>, providing us with a file path excluding the drive label.</p>
+<pre> void MainWindow::changeModel()
+ {
+     delete completer;
+     completer = new QCompleter(this);
+
+     switch (modelCombo-&gt;currentIndex()) {
+     default:
+     case 0:
+         { <span class="comment">//</span> Unsorted QDirModel
+             QDirModel *dirModel = new QDirModel(completer);
+             completer-&gt;setModel(dirModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter file path&quot;));
+         }
+         break;</pre>
+<p>Note that we create the model with <tt>completer</tt> as the parent as this allows us to replace the model with a new model. The <tt>completer</tt> will ensure that the old one is deleted the moment a new model is assigned to it.</p>
+<p>If <tt>case</tt> is 1, we use the <tt>DirModel</tt> we defined earlier, resulting in full paths for the files.</p>
+<pre>     case 1:
+         { <span class="comment">//</span> DirModel that shows full paths
+             DirModel *dirModel = new DirModel(completer);
+             completer-&gt;setModel(dirModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter file path&quot;));
+         }
+         break;</pre>
+<p>When <tt>case</tt> is 2, we attempt to complete names of countries. This requires a <a href="qtreeview.html">QTreeView</a> object, <tt>treeView</tt>. The country names are extracted from <i>countries.txt</i> and set the popup used to display completions to <tt>treeView</tt>.</p>
+<pre>     case 2:
+         { <span class="comment">//</span> Country List
+             completer-&gt;setModel(modelFromFile(&quot;:/resources/countries.txt&quot;));
+             QTreeView *treeView = new QTreeView;
+             completer-&gt;setPopup(treeView);
+             treeView-&gt;setRootIsDecorated(false);
+             treeView-&gt;header()-&gt;hide();
+             treeView-&gt;header()-&gt;setStretchLastSection(false);
+             treeView-&gt;header()-&gt;setResizeMode(0, QHeaderView::Stretch);
+             treeView-&gt;header()-&gt;setResizeMode(1, QHeaderView::ResizeToContents);
+             contentsLabel-&gt;setText(tr(&quot;Enter name of your country&quot;));
+         }
+         break;</pre>
+<p>The screenshot below shows the Completer with the country list model.</p>
+<p align="center"><img src="images/completer-example-country.png" /></p><p>If <tt>case</tt> is 3, we attempt to complete words. This is done using a <a href="qstringlistmodel.html">QStringListModel</a> that contains data extracted from <i>words.txt</i>. The model is sorted <a href="qcompleter.html#ModelSorting-enum">case insensitively</a>.</p>
+<p>The screenshot below shows the Completer with the word list model.</p>
+<p align="center"><img src="images/completer-example-word.png" /></p><p>Once the model type is selected, we call the <tt>changeMode()</tt> function and the <tt>changeCase()</tt> function and set the wrap option accordingly. The <tt>wrapCheckBox</tt>'s <a href="qabstractbutton.html#clicked">clicked()</a> signal is connected to the <tt>completer</tt>'s <a href="qcompleter.html#wrapAround-prop">setWrapAround()</a> slot.</p>
+<pre>     case 3:
+         { <span class="comment">//</span> Word list
+             completer-&gt;setModel(modelFromFile(&quot;:/resources/wordlist.txt&quot;));
+             completer-&gt;setModelSorting(QCompleter::CaseInsensitivelySortedModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter a word&quot;));
+         }
+         break;
+     }
+
+     changeMode(modeCombo-&gt;currentIndex());
+     changeCase(caseCombo-&gt;currentIndex());
+     completer-&gt;setWrapAround(wrapCheckBox-&gt;isChecked());
+     lineEdit-&gt;setCompleter(completer);
+     connect(wrapCheckBox, SIGNAL(clicked(bool)), completer, SLOT(setWrapAround(bool)));
+ }</pre>
+<p>The <tt>about()</tt> function provides a brief description about the example.</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About&quot;), tr(&quot;This example demonstrates the &quot;
+         &quot;different features of the QCompleter class.&quot;));
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <a href="qapplication.html">QApplication</a> and <tt>MainWindow</tt> and invokes the <a href="qwidget.html#show">show()</a> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     Q_INIT_RESOURCE(completer);
+
+     QApplication app(argc, argv);
+     MainWindow window;
+     window.show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

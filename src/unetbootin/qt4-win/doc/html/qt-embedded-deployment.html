@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-deployment.qdoc -->
+<head>
+  <title>Qt 4.4: Deploying Qt for Embedded Linux Applications</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Deploying Qt for Embedded Linux Applications<br /><span class="subtitle"></span>
+</h1>
+<p>The procedure of deploying an Qt application on <a href="qt-embedded.html">Qt for Embedded Linux</a> is essentially the same as the deployment procedure on Qt/X11 which is described in detail in the <a href="deployment-x11.html">Deploying an Application on Qt/X11</a> documentation. See also the <a href="deployment.html">general remarks</a> about deploying Qt applications.</p>
+<p>In addition, there is a couple of Qt for Embedded Linux specific issues to keep in mind:</p>
+<ul><li><a href="#fonts">Fonts</a></li>
+<li><a href="#environment-variables">Environment Variables</a></li>
+<li><a href="#framebuffer-support">Framebuffer Support</a></li>
+</ul>
+<a name="fonts"></a>
+<h2>Fonts</h2>
+<p>When Qt for Embedded Linux applications run, they look for a file called <tt>fontdir</tt> in Qt's <tt>/lib/fonts/</tt> directory defining the fonts that are available to the application (i.e&#x2e; the fonts located in the mentioned directory).</p>
+<p>For that reason, the preferred fonts must be copied to the <tt>/lib/fonts/</tt> directory, and the <tt>fontdir</tt> file must be customized accordingly. See the <a href="qt-embedded-fonts.html">fonts</a> documentation for more details about the supported font formats.</p>
+<p>Note that the application will look for the <tt>/lib/fonts/</tt> directory relative to the path set using the <tt>-prefix</tt> parameter when running the <tt>configure</tt> script; ensure that this is a sensible path in the target device environment. See the <a href="qt-embedded-install.html#step-3-building-the-library">installation</a> documentation for more details.</p>
+<a name="environment-variables"></a>
+<h2>Environment Variables</h2>
+<p>In general, any variable value that differs from the provided default values must be set explicitly in the target device environment. Typically, these include the <a href="qt-embedded-envvars.html#qws-mouse-proto">QWS_MOUSE_PROTO</a>, <a href="qt-embedded-envvars.html#qws-keyboard">QWS_KEYBOARD</a> and <a href="qt-embedded-envvars.html#qws-display">QWS_DISPLAY</a> variables specifying the drivers for pointer handling, character input and display management, respectively.</p>
+<p>For example, without the proper mouse and keyboard drivers, there is no way to give any input to the application when it is installed on the target device. By running the <tt>configure</tt> script using the <tt>-qt-kbd-&lt;keyboarddriver&gt;</tt> and <tt>-qt-mouse-&lt;mousedriver&gt;</tt> options, the drivers are enabled, but in addition the drivers and the preferred devices must be specified as the ones to use in the target environment, by setting the environment variables.</p>
+<p>See the <a href="qt-embedded-pointer.html">pointer handling</a>, <a href="qt-embedded-charinput.html">character input</a> and <a href="qt-embedded-displaymanagement.html">display management</a> documentation for more information.</p>
+<a name="framebuffer-support"></a>
+<h2>Framebuffer Support</h2>
+<p>No particular actions are required to enable the framebuffer on target devices: The Linux framebuffer is enabled by default on all modern Linux distributions. For information on older versions, see <a href="http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html">http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html</a>.</p>
+<p>To test that the Linux framebuffer is set up correctly, and that the device permissions are correct, use the program provided by the <a href="qt-embedded-testingframebuffer.html">Testing the Linux Framebuffer</a> document.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

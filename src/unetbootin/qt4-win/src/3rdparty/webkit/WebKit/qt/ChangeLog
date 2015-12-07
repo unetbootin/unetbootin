@@ -1,0 +1,3984 @@
+2007-12-12  Brady Eidson  <beidson@apple.com>
+
+        Reviewed by Sam Weinig
+
+        As part of doing some CachedPage and client cleanup, keep Qt building
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::savePlatformDataToCachedPage):
+        (WebCore::FrameLoaderClientQt::transitionToCommittedFromCachedPage):
+        (WebCore::FrameLoaderClientQt::transitionToCommittedForNewPage):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-12-03  Holger Hans Peter Freyther  <holger.freyther@trolltech.com>
+
+        Rubber stamped by Mark.
+
+        Always include config.h at the beginning of the file.
+
+        * Api/qwebsettings.cpp:
+
+2007-10-10  Alice Liu  <alice.liu@apple.com>
+
+        Reviewed by Geoff Garen.
+
+        changes to keep the build from breaking
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createFrame):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-10-09  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        set a default encoding for documents. Makes fast/dom/Document/document-charset.html pass.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::setSettings):
+
+2007-10-09  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        Don't return a 404 status code for empty data: urls. Fixes fast/dom/HTMLHeadElement/head-check.html
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::cancel):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkInterfacePrivate::parseDataUrl):
+
+2007-10-09  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        Don't set up connections inside QWebPage::createFrame, as users might be reimplementing that method. Make sure we get only one titleChanged() signal per title change, and implement the support for testing this in DRT.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::createMainFrame):
+        (QWebPage::createFrame):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveTitle):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-10-09  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        add a clear() method to QWebPageHistory.
+
+        * Api/qwebpagehistory.cpp:
+        (QWebPageHistory::clear):
+        (QWebPageHistory::itemAtIndex):
+        * Api/qwebpagehistory.h:
+
+2007-10-05  Lars Knoll  <lars@trolltech.com>
+
+        add proper error messages to the FrameLoaderClient.
+        Implement ChromeClientQt::closeWindowSoon and
+        FrameLoaderClientQt::dispatchCreatePage (which should go away IMO).
+        Some fixes in DRT to make it work correctly with multiple windows.
+
+        Reviewed by Maciej.
+
+        * Api/qwebframe.h:
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::cancel):
+        (QWebNetworkInterface::addJob):
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::closeWindowSoon):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::cancelledError):
+        (WebCore::):
+        (WebCore::FrameLoaderClientQt::blockedError):
+        (WebCore::FrameLoaderClientQt::cannotShowURLError):
+        (WebCore::FrameLoaderClientQt::interruptForPolicyChangeError):
+        (WebCore::FrameLoaderClientQt::cannotShowMIMETypeError):
+        (WebCore::FrameLoaderClientQt::dispatchCreatePage):
+
+2007-10-03  Lars Knoll  <lars@trolltech.com>
+
+        Signed off by Olliej.
+
+        move WebKitQt to WebKit/qt for consistency with the other ports.
+
+        * Api/headers.pri: Renamed from WebKitQt/Api/headers.pri.
+        * Api/qcookiejar.cpp: Renamed from WebKitQt/Api/qcookiejar.cpp.
+        (QCookieJarPrivate::QCookieJarPrivate):
+        (qHash):
+        (QCookieJar::QCookieJar):
+        (QCookieJar::~QCookieJar):
+        (QCookieJar::setCookies):
+        (QCookieJar::cookies):
+        (QCookieJar::isEnabled):
+        (QCookieJar::setEnabled):
+        (gCleanupJar):
+        (QCookieJar::setCookieJar):
+        (QCookieJar::cookieJar):
+        * Api/qcookiejar.h: Renamed from WebKitQt/Api/qcookiejar.h.
+        * Api/qtwebkit.prf: Renamed from WebKitQt/Api/qtwebkit.prf.
+        * Api/qwebframe.cpp: Renamed from WebKitQt/Api/qwebframe.cpp.
+        (QWebFramePrivate::init):
+        (QWebFramePrivate::parentFrame):
+        (QWebFramePrivate::horizontalScrollBar):
+        (QWebFramePrivate::verticalScrollBar):
+        (QWebFrame::QWebFrame):
+        (QWebFrame::~QWebFrame):
+        (QWebFrame::addToJSWindowObject):
+        (QWebFrame::markup):
+        (QWebFrame::innerText):
+        (QWebFrame::renderTreeDump):
+        (QWebFrame::title):
+        (QWebFrame::name):
+        (QWebFrame::page):
+        (QWebFrame::selectedText):
+        (QWebFrame::childFrames):
+        (QWebFrame::verticalScrollBarPolicy):
+        (QWebFrame::setVerticalScrollBarPolicy):
+        (QWebFrame::horizontalScrollBarPolicy):
+        (QWebFrame::setHorizontalScrollBarPolicy):
+        (QWebFrame::render):
+        (QWebFrame::layout):
+        (QWebFrame::pos):
+        (QWebFrame::geometry):
+        (QWebFrame::evaluateJavaScript):
+        (QWebFrame::mouseMoveEvent):
+        (QWebFrame::mousePressEvent):
+        (QWebFrame::mouseDoubleClickEvent):
+        (QWebFrame::mouseReleaseEvent):
+        (QWebFrame::wheelEvent):
+        * Api/qwebframe.h: Renamed from WebKitQt/Api/qwebframe.h.
+        * Api/qwebframe_p.h: Renamed from WebKitQt/Api/qwebframe_p.h.
+        (QWebFramePrivate::QWebFramePrivate):
+        * Api/qwebhistoryinterface.cpp: Renamed from WebKitQt/Api/qwebhistoryinterface.cpp.
+        (WebCore::historyContains):
+        (gCleanupInterface):
+        (QWebHistoryInterface::setDefaultInterface):
+        (QWebHistoryInterface::defaultInterface):
+        (QWebHistoryInterface::QWebHistoryInterface):
+        * Api/qwebhistoryinterface.h: Renamed from WebKitQt/Api/qwebhistoryinterface.h.
+        * Api/qwebkitglobal.h: Renamed from WebKitQt/Api/qwebkitglobal.h.
+        * Api/qwebnetworkinterface.cpp: Renamed from WebKitQt/Api/qwebnetworkinterface.cpp.
+        (qHash):
+        (operator==):
+        (QWebNetworkRequestPrivate::init):
+        (QWebNetworkRequestPrivate::setURL):
+        (QWebNetworkRequest::QWebNetworkRequest):
+        (QWebNetworkRequest::operator=):
+        (QWebNetworkRequest::~QWebNetworkRequest):
+        (QWebNetworkRequest::url):
+        (QWebNetworkRequest::setUrl):
+        (QWebNetworkRequest::httpHeader):
+        (QWebNetworkRequest::setHttpHeader):
+        (QWebNetworkRequest::httpHeaderField):
+        (QWebNetworkRequest::setHttpHeaderField):
+        (QWebNetworkRequest::postData):
+        (QWebNetworkRequest::setPostData):
+        (QWebNetworkJob::QWebNetworkJob):
+        (QWebNetworkJob::~QWebNetworkJob):
+        (QWebNetworkJob::url):
+        (QWebNetworkJob::postData):
+        (QWebNetworkJob::httpHeader):
+        (QWebNetworkJob::request):
+        (QWebNetworkJob::response):
+        (QWebNetworkJob::setResponse):
+        (QWebNetworkJob::cancelled):
+        (QWebNetworkJob::ref):
+        (QWebNetworkJob::deref):
+        (QWebNetworkJob::networkInterface):
+        (QWebNetworkJob::frame):
+        (QWebNetworkManager::QWebNetworkManager):
+        (QWebNetworkManager::self):
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::cancel):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        (QWebNetworkManager::addHttpJob):
+        (QWebNetworkManager::cancelHttpJob):
+        (QWebNetworkManager::httpConnectionClosed):
+        (QWebNetworkInterfacePrivate::sendFileData):
+        (QWebNetworkInterfacePrivate::parseDataUrl):
+        (gCleanupInterface):
+        (QWebNetworkInterface::setDefaultInterface):
+        (QWebNetworkInterface::defaultInterface):
+        (QWebNetworkInterface::QWebNetworkInterface):
+        (QWebNetworkInterface::~QWebNetworkInterface):
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (WebCoreHttp::WebCoreHttp):
+        (WebCoreHttp::~WebCoreHttp):
+        (WebCoreHttp::request):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::getConnection):
+        (WebCoreHttp::onResponseHeaderReceived):
+        (WebCoreHttp::onReadyRead):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::onDone):
+        (WebCoreHttp::onStateChanged):
+        (WebCoreHttp::cancel):
+        (WebCoreHttp::onSslErrors):
+        (WebCoreHttp::onAuthenticationRequired):
+        (WebCoreHttp::onProxyAuthenticationRequired):
+        (HostInfo::HostInfo):
+        * Api/qwebnetworkinterface.h: Renamed from WebKitQt/Api/qwebnetworkinterface.h.
+        * Api/qwebnetworkinterface_p.h: Renamed from WebKitQt/Api/qwebnetworkinterface_p.h.
+        (QWebNetworkJobPrivate::QWebNetworkJobPrivate):
+        (WebCore::HostInfo::HostInfo):
+        (WebCore::WebCoreHttp::HttpConnection::HttpConnection):
+        * Api/qwebobjectplugin.cpp: Renamed from WebKitQt/Api/qwebobjectplugin.cpp.
+        (QWebFactoryLoader::QWebFactoryLoader):
+        (QWebFactoryLoader::self):
+        (QWebFactoryLoader::descriptionForName):
+        (QWebFactoryLoader::mimetypesForName):
+        (QWebFactoryLoader::mimeTypeForExtension):
+        (QWebFactoryLoader::extensions):
+        (QWebFactoryLoader::nameForMimetype):
+        (QWebFactoryLoader::create):
+        (QWebObjectPlugin::QWebObjectPlugin):
+        (QWebObjectPlugin::~QWebObjectPlugin):
+        (QWebObjectPlugin::descriptionForKey):
+        (QWebObjectPlugin::mimetypesForKey):
+        (QWebObjectPlugin::extensionsForMimetype):
+        * Api/qwebobjectplugin.h: Renamed from WebKitQt/Api/qwebobjectplugin.h.
+        * Api/qwebobjectplugin_p.h: Renamed from WebKitQt/Api/qwebobjectplugin_p.h.
+        (QWebFactoryLoader::names):
+        (QWebFactoryLoader::supportsMimeType):
+        * Api/qwebobjectpluginconnector.cpp: Renamed from WebKitQt/Api/qwebobjectpluginconnector.cpp.
+        (QWebObjectPluginConnector::QWebObjectPluginConnector):
+        (QWebObjectPluginConnector::frame):
+        (QWebObjectPluginConnector::pluginParentWidget):
+        (QWebObjectPluginConnector::requestUrl):
+        * Api/qwebobjectpluginconnector.h: Renamed from WebKitQt/Api/qwebobjectpluginconnector.h.
+        * Api/qwebpage.cpp: Renamed from WebKitQt/Api/qwebpage.cpp.
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPagePrivate::~QWebPagePrivate):
+        (QWebPagePrivate::navigationRequested):
+        (QWebPagePrivate::createMainFrame):
+        (QWebPage::QWebPage):
+        (QWebPage::~QWebPage):
+        (QWebPage::createFrame):
+        (QWebPage::open):
+        (QWebPage::url):
+        (QWebPage::title):
+        (QWebPage::mainFrame):
+        (QWebPage::sizeHint):
+        (QWebPage::stop):
+        (QWebPage::history):
+        (QWebPage::goBack):
+        (QWebPage::goForward):
+        (QWebPage::goToHistoryItem):
+        (QWebPage::javaScriptConsoleMessage):
+        (QWebPage::javaScriptAlert):
+        (QWebPage::javaScriptConfirm):
+        (QWebPage::javaScriptPrompt):
+        (QWebPage::createWindow):
+        (QWebPage::createModalDialog):
+        (QWebPage::createPlugin):
+        (QWebPage::navigationRequested):
+        (QWebPage::setWindowGeometry):
+        (QWebPage::canCut):
+        (QWebPage::canCopy):
+        (QWebPage::canPaste):
+        (QWebPage::cut):
+        (QWebPage::copy):
+        (QWebPage::paste):
+        (QWebPage::isModified):
+        (QWebPage::undoStack):
+        (dropActionToDragOp):
+        (dragOpToDropAction):
+        (QWebPage::resizeEvent):
+        (QWebPage::paintEvent):
+        (QWebPage::mouseMoveEvent):
+        (QWebPage::mousePressEvent):
+        (QWebPage::mouseDoubleClickEvent):
+        (QWebPage::mouseReleaseEvent):
+        (QWebPage::wheelEvent):
+        (QWebPage::keyPressEvent):
+        (QWebPage::keyReleaseEvent):
+        (QWebPage::focusInEvent):
+        (QWebPage::focusOutEvent):
+        (QWebPage::focusNextPrevChild):
+        (QWebPage::dragEnterEvent):
+        (QWebPage::dragLeaveEvent):
+        (QWebPage::dragMoveEvent):
+        (QWebPage::dropEvent):
+        (QWebPage::setNetworkInterface):
+        (QWebPage::networkInterface):
+        (QWebPage::icon):
+        (QWebPage::setSettings):
+        (QWebPage::settings):
+        (QWebPage::chooseFile):
+        (QWebPage::setNetworkProxy):
+        (QWebPage::networkProxy):
+        (QWebPage::userAgentStringForUrl):
+        (QWebPage::onLoadProgressChanged):
+        (QWebPage::totalBytes):
+        * Api/qwebpage.h: Renamed from WebKitQt/Api/qwebpage.h.
+        * Api/qwebpage_p.h: Renamed from WebKitQt/Api/qwebpage_p.h.
+        * Api/qwebpagehistory.cpp: Renamed from WebKitQt/Api/qwebpagehistory.cpp.
+        (QWebHistoryItem::QWebHistoryItem):
+        (QWebHistoryItem::operator=):
+        (QWebHistoryItem::~QWebHistoryItem):
+        (QWebHistoryItem::originalUrl):
+        (QWebHistoryItem::currentUrl):
+        (QWebHistoryItem::title):
+        (QWebHistoryItem::lastVisited):
+        (QWebHistoryItem::icon):
+        (QWebPageHistory::QWebPageHistory):
+        (QWebPageHistory::itemAtIndex):
+        (QWebPageHistory::operator=):
+        (QWebPageHistory::~QWebPageHistory):
+        (QWebPageHistory::items):
+        (QWebPageHistory::backItems):
+        (QWebPageHistory::forwardItems):
+        (QWebPageHistory::canGoBack):
+        (QWebPageHistory::canGoForward):
+        (QWebPageHistory::goBack):
+        (QWebPageHistory::goForward):
+        (QWebPageHistory::goToItem):
+        (QWebPageHistory::backItem):
+        (QWebPageHistory::currentItem):
+        (QWebPageHistory::forwardItem):
+        * Api/qwebpagehistory.h: Renamed from WebKitQt/Api/qwebpagehistory.h.
+        (QExplicitlySharedDataPointer::operator*):
+        (QExplicitlySharedDataPointer::operator->):
+        (QExplicitlySharedDataPointer::operator T *):
+        (QExplicitlySharedDataPointer::operator const T *):
+        (QExplicitlySharedDataPointer::data):
+        (QExplicitlySharedDataPointer::constData):
+        (QExplicitlySharedDataPointer::operator==):
+        (QExplicitlySharedDataPointer::operator!=):
+        (QExplicitlySharedDataPointer::QExplicitlySharedDataPointer):
+        (QExplicitlySharedDataPointer::~QExplicitlySharedDataPointer):
+        (QExplicitlySharedDataPointer::operator=):
+        (QExplicitlySharedDataPointer::operator!):
+        (::QExplicitlySharedDataPointer):
+        * Api/qwebpagehistory_p.h: Renamed from WebKitQt/Api/qwebpagehistory_p.h.
+        (QWebHistoryItemPrivate::QWebHistoryItemPrivate):
+        (QWebHistoryItemPrivate::~QWebHistoryItemPrivate):
+        (QWebPageHistoryPrivate::QWebPageHistoryPrivate):
+        (QWebPageHistoryPrivate::~QWebPageHistoryPrivate):
+        * Api/qwebsettings.cpp: Renamed from WebKitQt/Api/qwebsettings.cpp.
+        (QWebSettingsPrivate::QWebSettingsPrivate):
+        (QWebSettings::QWebSettings):
+        (QWebSettings::~QWebSettings):
+        (QWebSettings::setMinimumFontSize):
+        (QWebSettings::minimumFontSize):
+        (QWebSettings::setMinimumLogicalFontSize):
+        (QWebSettings::minimumLogicalFontSize):
+        (QWebSettings::setDefaultFontSize):
+        (QWebSettings::defaultFontSize):
+        (QWebSettings::setDefaultFixedFontSize):
+        (QWebSettings::defaultFixedFontSize):
+        (QWebSettings::setUserStyleSheetLocation):
+        (QWebSettings::userStyleSheetLocation):
+        (QWebSettings::setIconDatabaseEnabled):
+        (QWebSettings::iconDatabaseEnabled):
+        (QWebSettings::setWebGraphic):
+        (QWebSettings::webGraphic):
+        (QWebSettings::operator=):
+        (QWebSettings::setGlobal):
+        (QWebSettings::global):
+        (QWebSettings::setFontFamily):
+        (QWebSettings::fontFamily):
+        (QWebSettings::setAttribute):
+        (QWebSettings::testAttribute):
+        (loadResourcePixmap):
+        * Api/qwebsettings.h: Renamed from WebKitQt/Api/qwebsettings.h.
+        * ChangeLog: Renamed from WebKitQt/ChangeLog.
+        * Plugins/ICOHandler.cpp: Renamed from WebKitQt/Plugins/ICOHandler.cpp.
+        (IcoHeader::operator >>):
+        (IcoHeader::BMP_INFOHDR::):
+        (IcoHeader::operator<<):
+        (IcoHeader::LessDifference::LessDifference):
+        (IcoHeader::LessDifference::operator ()):
+        (IcoHeader::loadFromDIB):
+        (ICOHandler::ICOHandler):
+        (ICOHandler::canRead):
+        (ICOHandler::read):
+        (ICOHandler::write):
+        (ICOHandler::name):
+        (ICOPlugin::keys):
+        (ICOPlugin::capabilities):
+        (ICOPlugin::create):
+        * Plugins/ICOHandler.h: Renamed from WebKitQt/Plugins/ICOHandler.h.
+        * Plugins/Plugins.pro: Renamed from WebKitQt/Plugins/Plugins.pro.
+        * QtLauncher/QtLauncher.pro: Renamed from WebKitQt/QtLauncher/QtLauncher.pro.
+        * QtLauncher/main.cpp: Renamed from WebKitQt/QtLauncher/main.cpp.
+        (HoverLabel::HoverLabel):
+        (HoverLabel::setHoverLink):
+        (HoverLabel::sizeForFont):
+        (HoverLabel::sizeHint):
+        (HoverLabel::updateSize):
+        (HoverLabel::resetAnimation):
+        (HoverLabel::paintEvent):
+        (HoverLabel::interpolate):
+        (ClearButton::ClearButton):
+        (ClearButton::paintEvent):
+        (SearchEdit::SearchEdit):
+        (SearchEdit::~SearchEdit):
+        (SearchEdit::paintEvent):
+        (SearchEdit::resizeEvent):
+        (SearchEdit::moveEvent):
+        (MainWindow::MainWindow):
+        (MainWindow::changeLocation):
+        (MainWindow::loadFinished):
+        (MainWindow::showLinkHover):
+        (MainWindow::resizeEvent):
+        (main):
+        * WebCoreSupport/ChromeClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/ChromeClientQt.cpp.
+        (WebCore::ChromeClientQt::ChromeClientQt):
+        (WebCore::ChromeClientQt::~ChromeClientQt):
+        (WebCore::ChromeClientQt::setWindowRect):
+        (WebCore::ChromeClientQt::windowRect):
+        (WebCore::ChromeClientQt::pageRect):
+        (WebCore::ChromeClientQt::scaleFactor):
+        (WebCore::ChromeClientQt::focus):
+        (WebCore::ChromeClientQt::unfocus):
+        (WebCore::ChromeClientQt::canTakeFocus):
+        (WebCore::ChromeClientQt::takeFocus):
+        (WebCore::ChromeClientQt::createWindow):
+        (WebCore::ChromeClientQt::createModalDialog):
+        (WebCore::ChromeClientQt::show):
+        (WebCore::ChromeClientQt::canRunModal):
+        (WebCore::ChromeClientQt::runModal):
+        (WebCore::ChromeClientQt::setToolbarsVisible):
+        (WebCore::ChromeClientQt::toolbarsVisible):
+        (WebCore::ChromeClientQt::setStatusbarVisible):
+        (WebCore::ChromeClientQt::statusbarVisible):
+        (WebCore::ChromeClientQt::setScrollbarsVisible):
+        (WebCore::ChromeClientQt::scrollbarsVisible):
+        (WebCore::ChromeClientQt::setMenubarVisible):
+        (WebCore::ChromeClientQt::menubarVisible):
+        (WebCore::ChromeClientQt::setResizable):
+        (WebCore::ChromeClientQt::addMessageToConsole):
+        (WebCore::ChromeClientQt::chromeDestroyed):
+        (WebCore::ChromeClientQt::canRunBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::closeWindowSoon):
+        (WebCore::ChromeClientQt::runJavaScriptAlert):
+        (WebCore::ChromeClientQt::runJavaScriptConfirm):
+        (WebCore::ChromeClientQt::runJavaScriptPrompt):
+        (WebCore::ChromeClientQt::setStatusbarText):
+        (WebCore::ChromeClientQt::shouldInterruptJavaScript):
+        (WebCore::ChromeClientQt::tabsToLinks):
+        (WebCore::ChromeClientQt::windowResizerRect):
+        (WebCore::ChromeClientQt::addToDirtyRegion):
+        (WebCore::ChromeClientQt::scrollBackingStore):
+        (WebCore::ChromeClientQt::updateBackingStore):
+        (WebCore::ChromeClientQt::mouseDidMoveOverElement):
+        (WebCore::ChromeClientQt::setToolTip):
+        (WebCore::ChromeClientQt::print):
+        * WebCoreSupport/ChromeClientQt.h: Renamed from WebKitQt/WebCoreSupport/ChromeClientQt.h.
+        * WebCoreSupport/ContextMenuClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/ContextMenuClientQt.cpp.
+        (WebCore::ContextMenuClientQt::contextMenuDestroyed):
+        (WebCore::ContextMenuClientQt::getCustomMenuFromDefaultItems):
+        (WebCore::ContextMenuClientQt::contextMenuItemSelected):
+        (WebCore::ContextMenuClientQt::downloadURL):
+        (WebCore::ContextMenuClientQt::lookUpInDictionary):
+        (WebCore::ContextMenuClientQt::speak):
+        (WebCore::ContextMenuClientQt::stopSpeaking):
+        (WebCore::ContextMenuClientQt::searchWithGoogle):
+        * WebCoreSupport/ContextMenuClientQt.h: Renamed from WebKitQt/WebCoreSupport/ContextMenuClientQt.h.
+        * WebCoreSupport/DragClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/DragClientQt.cpp.
+        (WebCore::DragClientQt::actionMaskForDrag):
+        (WebCore::DragClientQt::willPerformDragDestinationAction):
+        (WebCore::DragClientQt::dragControllerDestroyed):
+        (WebCore::DragClientQt::dragSourceActionMaskForPoint):
+        (WebCore::DragClientQt::willPerformDragSourceAction):
+        (WebCore::DragClientQt::startDrag):
+        * WebCoreSupport/DragClientQt.h: Renamed from WebKitQt/WebCoreSupport/DragClientQt.h.
+        (WebCore::DragClientQt::DragClientQt):
+        * WebCoreSupport/EditCommandQt.cpp: Renamed from WebKitQt/WebCoreSupport/EditCommandQt.cpp.
+        (EditCommandQt::EditCommandQt):
+        (EditCommandQt::~EditCommandQt):
+        (EditCommandQt::redo):
+        (EditCommandQt::undo):
+        * WebCoreSupport/EditCommandQt.h: Renamed from WebKitQt/WebCoreSupport/EditCommandQt.h.
+        * WebCoreSupport/EditorClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/EditorClientQt.cpp.
+        (WebCore::EditorClientQt::shouldDeleteRange):
+        (WebCore::EditorClientQt::shouldShowDeleteInterface):
+        (WebCore::EditorClientQt::isContinuousSpellCheckingEnabled):
+        (WebCore::EditorClientQt::isGrammarCheckingEnabled):
+        (WebCore::EditorClientQt::spellCheckerDocumentTag):
+        (WebCore::EditorClientQt::shouldBeginEditing):
+        (WebCore::EditorClientQt::shouldEndEditing):
+        (WebCore::EditorClientQt::shouldInsertText):
+        (WebCore::EditorClientQt::shouldChangeSelectedRange):
+        (WebCore::EditorClientQt::shouldApplyStyle):
+        (WebCore::EditorClientQt::shouldMoveRangeAfterDelete):
+        (WebCore::EditorClientQt::didBeginEditing):
+        (WebCore::EditorClientQt::respondToChangedContents):
+        (WebCore::EditorClientQt::respondToChangedSelection):
+        (WebCore::EditorClientQt::didEndEditing):
+        (WebCore::EditorClientQt::didWriteSelectionToPasteboard):
+        (WebCore::EditorClientQt::didSetSelectionTypesForPasteboard):
+        (WebCore::EditorClientQt::selectWordBeforeMenuEvent):
+        (WebCore::EditorClientQt::isEditable):
+        (WebCore::EditorClientQt::registerCommandForUndo):
+        (WebCore::EditorClientQt::registerCommandForRedo):
+        (WebCore::EditorClientQt::clearUndoRedoOperations):
+        (WebCore::EditorClientQt::canUndo):
+        (WebCore::EditorClientQt::canRedo):
+        (WebCore::EditorClientQt::undo):
+        (WebCore::EditorClientQt::redo):
+        (WebCore::EditorClientQt::shouldInsertNode):
+        (WebCore::EditorClientQt::pageDestroyed):
+        (WebCore::EditorClientQt::smartInsertDeleteEnabled):
+        (WebCore::EditorClientQt::toggleContinuousSpellChecking):
+        (WebCore::EditorClientQt::toggleGrammarChecking):
+        (WebCore::EditorClientQt::handleKeypress):
+        (WebCore::EditorClientQt::handleInputMethodKeypress):
+        (WebCore::EditorClientQt::EditorClientQt):
+        (WebCore::EditorClientQt::textFieldDidBeginEditing):
+        (WebCore::EditorClientQt::textFieldDidEndEditing):
+        (WebCore::EditorClientQt::textDidChangeInTextField):
+        (WebCore::EditorClientQt::doTextFieldCommandFromEvent):
+        (WebCore::EditorClientQt::textWillBeDeletedInTextField):
+        (WebCore::EditorClientQt::textDidChangeInTextArea):
+        (WebCore::EditorClientQt::ignoreWordInSpellDocument):
+        (WebCore::EditorClientQt::learnWord):
+        (WebCore::EditorClientQt::checkSpellingOfString):
+        (WebCore::EditorClientQt::checkGrammarOfString):
+        (WebCore::EditorClientQt::updateSpellingUIWithGrammarString):
+        (WebCore::EditorClientQt::updateSpellingUIWithMisspelledWord):
+        (WebCore::EditorClientQt::showSpellingUI):
+        (WebCore::EditorClientQt::spellingUIIsShowing):
+        (WebCore::EditorClientQt::getGuessesForWord):
+        (WebCore::EditorClientQt::isEditing):
+        (WebCore::EditorClientQt::setInputMethodState):
+        * WebCoreSupport/EditorClientQt.h: Renamed from WebKitQt/WebCoreSupport/EditorClientQt.h.
+        * WebCoreSupport/FrameLoaderClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/FrameLoaderClientQt.cpp.
+        (WebCore::FrameLoaderClientQt::FrameLoaderClientQt):
+        (WebCore::FrameLoaderClientQt::~FrameLoaderClientQt):
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::webFrame):
+        (WebCore::FrameLoaderClientQt::callPolicyFunction):
+        (WebCore::FrameLoaderClientQt::slotCallPolicyFunction):
+        (WebCore::FrameLoaderClientQt::hasWebView):
+        (WebCore::FrameLoaderClientQt::hasFrameView):
+        (WebCore::FrameLoaderClientQt::hasBackForwardList):
+        (WebCore::FrameLoaderClientQt::resetBackForwardList):
+        (WebCore::FrameLoaderClientQt::provisionalItemIsTarget):
+        (WebCore::FrameLoaderClientQt::loadProvisionalItemFromPageCache):
+        (WebCore::FrameLoaderClientQt::invalidateCurrentItemPageCache):
+        (WebCore::FrameLoaderClientQt::privateBrowsingEnabled):
+        (WebCore::FrameLoaderClientQt::makeDocumentView):
+        (WebCore::FrameLoaderClientQt::makeRepresentation):
+        (WebCore::FrameLoaderClientQt::forceLayout):
+        (WebCore::FrameLoaderClientQt::forceLayoutForNonHTML):
+        (WebCore::FrameLoaderClientQt::setCopiesOnScroll):
+        (WebCore::FrameLoaderClientQt::tokenForLoadErrorReset):
+        (WebCore::FrameLoaderClientQt::resetAfterLoadError):
+        (WebCore::FrameLoaderClientQt::doNotResetAfterLoadError):
+        (WebCore::FrameLoaderClientQt::willCloseDocument):
+        (WebCore::FrameLoaderClientQt::detachedFromParent2):
+        (WebCore::FrameLoaderClientQt::detachedFromParent3):
+        (WebCore::FrameLoaderClientQt::detachedFromParent4):
+        (WebCore::FrameLoaderClientQt::loadedFromCachedPage):
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveServerRedirectForProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidCancelClientRedirect):
+        (WebCore::FrameLoaderClientQt::dispatchWillPerformClientRedirect):
+        (WebCore::FrameLoaderClientQt::dispatchDidChangeLocationWithinPage):
+        (WebCore::FrameLoaderClientQt::dispatchWillClose):
+        (WebCore::FrameLoaderClientQt::dispatchDidStartProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveTitle):
+        (WebCore::FrameLoaderClientQt::dispatchDidCommitLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishDocumentLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFirstLayout):
+        (WebCore::FrameLoaderClientQt::dispatchShow):
+        (WebCore::FrameLoaderClientQt::cancelPolicyCheck):
+        (WebCore::FrameLoaderClientQt::dispatchWillSubmitForm):
+        (WebCore::FrameLoaderClientQt::dispatchDidLoadMainResource):
+        (WebCore::FrameLoaderClientQt::clearLoadingFromPageCache):
+        (WebCore::FrameLoaderClientQt::isLoadingFromPageCache):
+        (WebCore::FrameLoaderClientQt::revertToProvisionalState):
+        (WebCore::FrameLoaderClientQt::clearUnarchivingState):
+        (WebCore::FrameLoaderClientQt::postProgressStartedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressFinishedNotification):
+        (WebCore::FrameLoaderClientQt::setMainFrameDocumentReady):
+        (WebCore::FrameLoaderClientQt::willChangeTitle):
+        (WebCore::FrameLoaderClientQt::didChangeTitle):
+        (WebCore::FrameLoaderClientQt::finishedLoading):
+        (WebCore::FrameLoaderClientQt::finalSetupForReplace):
+        (WebCore::FrameLoaderClientQt::setDefersLoading):
+        (WebCore::FrameLoaderClientQt::isArchiveLoadPending):
+        (WebCore::FrameLoaderClientQt::cancelPendingArchiveLoad):
+        (WebCore::FrameLoaderClientQt::clearArchivedResources):
+        (WebCore::FrameLoaderClientQt::canShowMIMEType):
+        (WebCore::FrameLoaderClientQt::representationExistsForURLScheme):
+        (WebCore::FrameLoaderClientQt::generatedMIMETypeForURLScheme):
+        (WebCore::FrameLoaderClientQt::frameLoadCompleted):
+        (WebCore::FrameLoaderClientQt::restoreViewState):
+        (WebCore::FrameLoaderClientQt::provisionalLoadStarted):
+        (WebCore::FrameLoaderClientQt::shouldTreatURLAsSameAsCurrent):
+        (WebCore::FrameLoaderClientQt::addHistoryItemForFragmentScroll):
+        (WebCore::FrameLoaderClientQt::didFinishLoad):
+        (WebCore::FrameLoaderClientQt::prepareForDataSourceReplacement):
+        (WebCore::FrameLoaderClientQt::setTitle):
+        (WebCore::FrameLoaderClientQt::userAgent):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveIcon):
+        (WebCore::FrameLoaderClientQt::frameLoaderDestroyed):
+        (WebCore::FrameLoaderClientQt::canHandleRequest):
+        (WebCore::FrameLoaderClientQt::windowObjectCleared):
+        (WebCore::FrameLoaderClientQt::didPerformFirstNavigation):
+        (WebCore::FrameLoaderClientQt::registerForIconNotification):
+        (WebCore::FrameLoaderClientQt::setDocumentViewFromCachedPage):
+        (WebCore::FrameLoaderClientQt::updateGlobalHistoryForStandardLoad):
+        (WebCore::FrameLoaderClientQt::updateGlobalHistoryForReload):
+        (WebCore::FrameLoaderClientQt::shouldGoToHistoryItem):
+        (WebCore::FrameLoaderClientQt::saveViewStateToItem):
+        (WebCore::FrameLoaderClientQt::saveDocumentViewToCachedPage):
+        (WebCore::FrameLoaderClientQt::canCachePage):
+        (WebCore::FrameLoaderClientQt::setMainDocumentError):
+        (WebCore::FrameLoaderClientQt::committedLoad):
+        (WebCore::FrameLoaderClientQt::cancelledError):
+        (WebCore::FrameLoaderClientQt::blockedError):
+        (WebCore::FrameLoaderClientQt::cannotShowURLError):
+        (WebCore::FrameLoaderClientQt::interruptForPolicyChangeError):
+        (WebCore::FrameLoaderClientQt::cannotShowMIMETypeError):
+        (WebCore::FrameLoaderClientQt::fileDoesNotExistError):
+        (WebCore::FrameLoaderClientQt::shouldFallBack):
+        (WebCore::FrameLoaderClientQt::createDocumentLoader):
+        (WebCore::FrameLoaderClientQt::download):
+        (WebCore::FrameLoaderClientQt::assignIdentifierToInitialRequest):
+        (WebCore::FrameLoaderClientQt::dispatchWillSendRequest):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveAuthenticationChallenge):
+        (WebCore::FrameLoaderClientQt::dispatchDidCancelAuthenticationChallenge):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveResponse):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveContentLength):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidLoadResourceFromMemoryCache):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoad):
+        (WebCore::FrameLoaderClientQt::dispatchCreatePage):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForMIMEType):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+        (WebCore::FrameLoaderClientQt::dispatchUnableToImplementPolicy):
+        (WebCore::FrameLoaderClientQt::startDownload):
+        (WebCore::FrameLoaderClientQt::willUseArchive):
+        (WebCore::FrameLoaderClientQt::createFrame):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+        (WebCore::FrameLoaderClientQt::redirectDataToPlugin):
+        (WebCore::FrameLoaderClientQt::createJavaAppletWidget):
+        (WebCore::FrameLoaderClientQt::overrideMediaType):
+        * WebCoreSupport/FrameLoaderClientQt.h: Renamed from WebKitQt/WebCoreSupport/FrameLoaderClientQt.h.
+        * WebCoreSupport/InspectorClientQt.cpp: Renamed from WebKitQt/WebCoreSupport/InspectorClientQt.cpp.
+        (WebCore::InspectorClientQt::inspectorDestroyed):
+        (WebCore::InspectorClientQt::createPage):
+        (WebCore::InspectorClientQt::showWindow):
+        (WebCore::InspectorClientQt::closeWindow):
+        (WebCore::InspectorClientQt::attachWindow):
+        (WebCore::InspectorClientQt::detachWindow):
+        (WebCore::InspectorClientQt::highlight):
+        (WebCore::InspectorClientQt::hideHighlight):
+        * WebCoreSupport/InspectorClientQt.h: Renamed from WebKitQt/WebCoreSupport/InspectorClientQt.h.
+        * WebKitPart/WebKitFactory.cpp: Renamed from WebKitQt/WebKitPart/WebKitFactory.cpp.
+        (WebKitFactory::WebKitFactory):
+        (WebKitFactory::~WebKitFactory):
+        (WebKitFactory::createPartObject):
+        (WebKitFactory::instance):
+        (WebKitFactory::ref):
+        (WebKitFactory::deref):
+        * WebKitPart/WebKitFactory.h: Renamed from WebKitQt/WebKitPart/WebKitFactory.h.
+        * WebKitPart/WebKitPart.cpp: Renamed from WebKitQt/WebKitPart/WebKitPart.cpp.
+        (WebKitPart::WebKitPart):
+        (WebKitPart::~WebKitPart):
+        (WebKitPart::openFile):
+        (WebKitPart::openUrl):
+        (WebKitPart::closeUrl):
+        (WebKitPart::parentPart):
+        (WebKitPart::frame):
+        (WebKitPart::initView):
+        * WebKitPart/WebKitPart.desktop: Renamed from WebKitQt/WebKitPart/WebKitPart.desktop.
+        * WebKitPart/WebKitPart.h: Renamed from WebKitQt/WebKitPart/WebKitPart.h.
+        (WebKitPart::):
+        * WebKitPart/WebKitPart.rc: Renamed from WebKitQt/WebKitPart/WebKitPart.rc.
+        * WebKitPart/WebKitPartBrowser.rc: Renamed from WebKitQt/WebKitPart/WebKitPartBrowser.rc.
+        * WebKitPart/WebKitPartBrowserExtension.cpp: Renamed from WebKitQt/WebKitPart/WebKitPartBrowserExtension.cpp.
+        (WebKitPartBrowserExtension::WebKitPartBrowserExtension):
+        * WebKitPart/WebKitPartBrowserExtension.h: Renamed from WebKitQt/WebKitPart/WebKitPartBrowserExtension.h.
+        * WebKitPart/WebKitPartClient.cpp: Renamed from WebKitQt/WebKitPart/WebKitPartClient.cpp.
+        (WebKitPartClient::WebKitPartClient):
+        (WebKitPartClient::~WebKitPartClient):
+        * WebKitPart/WebKitPartClient.h: Renamed from WebKitQt/WebKitPart/WebKitPartClient.h.
+        * WebKitPart/WebKitPartInterface.cpp: Renamed from WebKitQt/WebKitPart/WebKitPartInterface.cpp.
+        (WebKitPartInterface::WebKitPartInterface):
+        (WebKitPartInterface::~WebKitPartInterface):
+        (WebKitPartInterface::url):
+        * WebKitPart/WebKitPartInterface.h: Renamed from WebKitQt/WebKitPart/WebKitPartInterface.h.
+        * WebKitPart/org.kde.WebKitPart.xml: Renamed from WebKitQt/WebKitPart/org.kde.WebKitPart.xml.
+
+2007-10-02  Adam Treat  <treat@kde.org>
+
+        Reviewed by Eric Seidel.
+
+        Open the requested url on the newly created window.
+        Implement createModalDialog and provide new API for this.
+        Patch by M. Mehdi Salem Naraghi (momesana) with additions by me.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::createModalDialog):
+        * Api/qwebpage.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::createWindow):
+        (WebCore::ChromeClientQt::createModalDialog):
+
+2007-10-02  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by bdash.
+
+        Add API to retrieve the frame name from QWebFrame.
+        Implement support for DRT::dumpChildrenAsText.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::name):
+        * Api/qwebframe.h:
+
+2007-10-02  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by bdash.
+
+        Fix the handling of the response header for data urls. Make sure we always pass absolute URLs to WebKit from both DRT and QtLauncher.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        (QWebNetworkInterfacePrivate::sendFileData):
+        (QWebNetworkInterfacePrivate::parseDataUrl):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::onSslErrors):
+        * QtLauncher/main.cpp:
+        (main):
+
+2007-10-01  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Eric.
+
+        Fix a wrong extension mapping in the MIMETypeRegistry and identify about: url's as frames in the FrameLoaderClient.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::makeDocumentView):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoad):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-09-30  George Staikos  <staikos@kde.org>
+
+        Qt build fix (OS X specific).
+
+        * QtLauncher/QtLauncher.pro:
+
+2007-09-26  Mark Rowe  <mrowe@apple.com>
+
+        Qt build fix.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType): Check for empty URL instead of invalid URL.
+
+2007-09-25  David Kilzer  <ddkilzer@webkit.org>
+
+        Reviewed by Adam.
+
+        - Fix http://bugs.webkit.org/show_bug.cgi?id=14885
+          LGPL'ed files contain incorrect FSF address
+
+        * Api/qcookiejar.cpp:
+        * Api/qcookiejar.h:
+        * Api/qwebframe.cpp:
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        * Api/qwebhistoryinterface.cpp:
+        * Api/qwebhistoryinterface.h:
+        * Api/qwebkitglobal.h:
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        * Api/qwebobjectplugin.cpp:
+        * Api/qwebobjectplugin.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        * Api/qwebobjectpluginconnector.h:
+        * Api/qwebpage.cpp:
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * Api/qwebpagehistory.cpp:
+        * Api/qwebpagehistory.h:
+        * Api/qwebsettings.cpp:
+        * Api/qwebsettings.h:
+        * WebCoreSupport/EditCommandQt.cpp:
+        * WebCoreSupport/EditCommandQt.h:
+
+2007-09-25  Adam Treat  <treat@kde.org>
+
+        Reviewed by Simon and Lars.
+
+        Modifies the addToJSWindowObject to bind js objects using the built-in
+        kjs_window class.  Make sure to protect the created runtime object from
+        garbage collection.
+
+        Adds a signal to QWebFrame to notify clients of the beginning of a
+        provisional load.  DRT needs this.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::addToJSWindowObject):
+        * Api/qwebframe.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidStartProvisionalLoad):
+
+2007-09-10  Qing Zhao  <qing@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Don't re-encode urls, resulting in double encoding.  Fixes login to
+        GMail.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequestPrivate::init):
+        (QWebNetworkManager::started):
+
+2007-09-08  Mark Rowe  <mrowe@apple.com>
+
+        Qt build fix.  Move stub method implementations to the right class.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::didPerformFirstNavigation):
+
+2007-09-08  Brady Eidson  <beidson@apple.com>
+
+        YABF (Yet Another Build Fix)
+
+        * Api/qwebsettings.cpp:
+        (QWebSettings::iconDatabaseEnabled):
+
+2007-09-08  Brady Eidson  <beidson@apple.com>
+
+        Better build fix
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClient::registerForIconNotification):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-09-08  Brady Eidson  <beidson@apple.com>
+
+        Build fix
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClient::registerForIconNotification):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-09-05  Geoffrey Garen  <ggaren@apple.com>
+
+        Reviewed by Darin Adler, Maciej Stachowiak, Mark Rowe, Tim Hatcher.
+        
+        Fixed <rdar://problem/5326009> Make non-browser WebKit clients have no 
+        memory cache, or a very tiny one
+        
+        Keep the Qt build working with an empty stub.
+        
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClient::didPerformFirstNavigation):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-09-07  George Staikos  <staikos@kde.org>
+
+        Fix typo.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::onLoadProgressChanged):
+
+2007-09-07  Qing Zhao  <qing@staikos.net>
+
+        Reviewed by Anders and George.
+
+        Export page size and load progress in bytes.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::QWebPage):
+        (QWebPage::onLoadProgressChanged):
+        (QWebPage::totalBytes):
+        (QWebPage::bytesReceived):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+
+2007-09-06  George Staikos  <staikos@kde.org>
+
+        Reviewed by Anders.
+
+        Make popup windows work again.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+
+2007-09-01  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by Sam.
+
+        <rdar://problem/5344848> IME is incorrectly used for key events when on non-editable regions
+ 
+        EditorClient::setInputMethodState stub
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::setInputMethodState):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-08-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Use QKeySequence::StandardKey for the page wise scrolling shortcuts.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::keyPressEvent):
+
+2007-08-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        When scrolling with the keyboard don't call update() on the entire widget.
+        The scrollbar/scrollview implementation is already smart enough to scroll with bitblt
+        on a value change.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::keyPressEvent):
+
+2007-08-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Fix scrolling with the keyboard if only one of the two scrollbars is visible.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::keyPressEvent):
+
+2007-08-29  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Fix compilation.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType):
+
+2007-08-19  Mike Hommey  <mh+webkit@glandium.org>
+
+        Reviewed by George Staikos.
+
+        Don't export ICO symbols.
+
+        * Plugins/Plugins.pro:
+
+2007-08-19  George Staikos  <staikos@kde.org>
+
+        Fix compilation.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createPlugin):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-08-10  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed and landed by Simon.
+
+        Limit the set of properties from the computed style to apply to Qt
+        plugin widgets, as only a few of them make sense.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::):
+
+2007-08-10  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        Use <object>'s classid attribute for creation of plugins through QWebPage::createPlugin.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::createPlugin):
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-08-10  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added support for network jobs from Qt resources using the qrc protocol.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkInterface::addJob):
+
+2007-08-10  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added support for "application/x-qt-styled-widget" that is treated like "application/x-qt-plugin" but also
+        gets a Qt widget stylesheet set from the CSS computed style and the element style attribute.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-08-10  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added virtual QWebPage::createPlugin that is called for embedded objects with the mime type "application/x-qt-plugin"
+        and fixed widget embedding by setting the right QWidget parent.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::createPlugin):
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-08-02  George Staikos  <staikos@kde.org>
+
+        Reviewed by Simon.
+
+        Add an interface for the useragent string.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::userAgentStringForUrl):
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::userAgent):
+
+2007-08-01  Adam Treat  <treat@kde.org>
+
+        Reviewed by George Staikos.
+
+        Add an interface to manage global history for clients
+
+        * Api/headers.pri:
+        * Api/qwebhistoryinterface.cpp: Added.
+        (WebCore::historyContains):
+        (gCleanupInterface):
+        (QWebHistoryInterface::setDefaultInterface):
+        (QWebHistoryInterface::defaultInterface):
+        (QWebHistoryInterface::QWebHistoryInterface):
+        * Api/qwebhistoryinterface.h: Added.
+
+2007-07-30  Adam Treat  <treat@kde.org>
+
+        Fix build.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::shouldMoveRangeAfterDelete):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-07-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Link QtLauncher into $$OUTPUT_DIR/bin
+
+        * QtLauncher/QtLauncher.pro:
+
+2007-07-29  Adam Treat  <treat@kde.org>
+
+        Reviewed by George Staikos.
+
+        Change QWebPage::paintEvent to draw using the individual rects provided
+        via the QRegion and set the widget to use opaque paint events.
+
+        These changes greatly reduce the cpu load as we are no longer painting the
+        entire page for each 1px scroll :P
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::render):
+        * Api/qwebpage.cpp:
+        (QWebPage::QWebPage):
+        (QWebPage::paintEvent):
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::addToDirtyRegion):
+
+2007-07-29  Adam Treat  <treat@kde.org>
+
+        Reviewed by Alexey Proskuryakov.
+
+        Respect the margins when creating frames.
+        Set the scroll mode to always off like we did before the rendered
+        frames patch and the other ports do now.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+
+2007-07-27  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Mark.
+
+        Don't create an app bundle on OSX to keep WebKitTools/Scripts/run-launcher working.
+
+        * QtLauncher/QtLauncher.pro:
+
+2007-07-27  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Fix compilation with MSVC.
+
+        * Api/qwebpagehistory.cpp:
+        (QWebPageHistory::operator=):
+        * Api/qwebpagehistory.h:
+        * Api/qwebsettings.cpp:
+        (QWebSettings::operator=):
+        * Api/qwebsettings.h:
+
+2007-07-26  Qing Zhao  <qing@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Add a signal for history notification.
+
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+
+2007-07-24  Adam Treat  <treat@kde.org>
+
+        Reviewed by Niko and Lars.
+
+        These are no longer necessary or used.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-07-20  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Add a signal for first layout and add the action type for the policy
+        function.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::navigationRequested):
+        (QWebPage::navigationRequested):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidFirstLayout):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+
+2007-07-19  Adam Treat  <treat@kde.org>
+
+        Reviewed by George.
+
+        Do a recursive layout on the frame's children.  This fixes a
+        segfault found when rendering some framesets.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::render):
+        (QWebFrame::layout):
+        * Api/qwebframe.h:
+
+2007-07-18  Timothy Hatcher  <timothy@apple.com>
+
+        Reviewed by Adam.
+
+        Make the Page with the now required InspectorClient.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::initView):
+
+2007-07-18  Sam Weinig  <sam@webkit.org>
+
+        Build fix.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::started):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::canShowMIMEType):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+
+2007-07-18  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack & Simon
+
+        Reallow setting of scrollbar policies on QWebFrame.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::verticalScrollBarPolicy):
+        (QWebFrame::setVerticalScrollBarPolicy):
+        (QWebFrame::horizontalScrollBarPolicy):
+        * Api/qwebframe.h:
+
+2007-07-17  Adam Treat <treat@kde.org>
+
+        Build fix.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createFrame):
+
+2007-07-17  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Blind build fix for Qt after r24366 by adding the additional
+        WebCore::ResourceRequest& parameter to the download method.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::download):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-07-17  Adam Roben  <aroben@apple.com>
+
+        Remove ContextMenuClientQt::shouldIncludeInspectElementItem
+
+        Reviewed by Tim.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2007-07-16  Adam Roben  <aroben@apple.com>
+
+        Updated ChromeClientQt for ChromeClient changes.
+
+        Reviewed by Darin.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::print): Added a Frame* parameter.
+        * WebCoreSupport/ChromeClientQt.h: Ditto.
+
+2007-07-13  Mark Rowe  <mrowe@apple.com>
+
+        Reviewed by Mitz.
+
+        Build fix.  Stub out ChromeClientQt::print.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::print):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-07-12  George Staikos  <staikos@kde.org>
+
+        Qt build fix for assertions.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+
+2007-07-12  George Staikos  <staikos@kde.org>
+
+        Qt build fix.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+
+2007-07-10  Mark Rowe  <mrowe@apple.com>
+
+        Qt build fix after r24126.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::evaluateJavaScript):
+
+2007-07-10  Eli Fidler  <eli@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Properly url-decode data urls.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkInterfacePrivate::parseDataUrl):
+
+2007-07-09  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Convert QWebFrame from a QFrame to a pure QObject to eliminate all
+        traces of widgets.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        (QWebFramePrivate::parentFrame):
+        (QWebFrame::QWebFrame):
+        (QWebFrame::render):
+        (QWebFrame::pos):
+        (QWebFrame::geometry):
+        (QWebFrame::evaluateJavaScript):
+        (QWebFrame::mouseMoveEvent):
+        (QWebFrame::mousePressEvent):
+        (QWebFrame::mouseDoubleClickEvent):
+        (QWebFrame::mouseReleaseEvent):
+        (QWebFrame::wheelEvent):
+        * Api/qwebframe.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::pluginParentWidget):
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPagePrivate::createMainFrame):
+        (QWebPage::QWebPage):
+        (QWebPage::javaScriptAlert):
+        (QWebPage::javaScriptConfirm):
+        (QWebPage::javaScriptPrompt):
+        (QWebPage::resizeEvent):
+        (QWebPage::paintEvent):
+        (QWebPage::mouseMoveEvent):
+        (QWebPage::mousePressEvent):
+        (QWebPage::mouseDoubleClickEvent):
+        (QWebPage::mouseReleaseEvent):
+        (QWebPage::wheelEvent):
+        (QWebPage::keyPressEvent):
+        (QWebPage::keyReleaseEvent):
+        (QWebPage::focusInEvent):
+        (QWebPage::focusOutEvent):
+        (QWebPage::focusNextPrevChild):
+        (QWebPage::chooseFile):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::addToDirtyRegion):
+
+2007-07-09  George Staikos  <staikos@kde.org>
+
+        Fix a minor memory leak in the loader.
+
+        * Api/qwebnetworkinterface.cpp:
+        (gCleanupInterface):
+        (QWebNetworkInterface::setDefaultInterface):
+        (QWebNetworkInterface::defaultInterface):
+
+2007-07-09  George Staikos  <staikos@kde.org>
+
+        Fix a massive memory leak in the loader.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::httpConnectionClosed):
+        (WebCoreHttp::~WebCoreHttp):
+
+2007-07-09  George Staikos  <staikos@kde.org>
+
+        Reviewed by Simon.
+
+        Rework much of the HTTP stuff to make it more stable, and add SSL and
+        proxy support.  Major memory leak also discovered but it needs more
+        research as the obvious fix causes crashes.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (WebCoreHttp::WebCoreHttp):
+        (WebCoreHttp::~WebCoreHttp):
+        (WebCoreHttp::request):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::getConnection):
+        (WebCoreHttp::onResponseHeaderReceived):
+        (WebCoreHttp::onReadyRead):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::onDone):
+        (WebCoreHttp::onStateChanged):
+        (WebCoreHttp::onSslErrors):
+        (WebCoreHttp::onAuthenticationRequired):
+        (WebCoreHttp::onProxyAuthenticationRequired):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        (WebCore::WebCoreHttp::HttpConnection::HttpConnection):
+
+2007-07-06  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Convert QWebFrame to a QFrame from a scroll area.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        (QWebFramePrivate::parentFrame):
+        (QWebFramePrivate::horizontalScrollBar):
+        (QWebFramePrivate::verticalScrollBar):
+        (QWebFrame::QWebFrame):
+        (QWebFrame::resizeEvent):
+        (QWebFrame::suppressScrollbars):
+        (QWebFrame::paintEvent):
+        (QWebFrame::mouseMoveEvent):
+        (QWebFrame::mousePressEvent):
+        (QWebFrame::mouseDoubleClickEvent):
+        (QWebFrame::mouseReleaseEvent):
+        (QWebFrame::wheelEvent):
+        (QWebFrame::keyPressEvent):
+        (QWebFrame::focusInEvent):
+        (QWebFrame::focusOutEvent):
+        (QWebFrame::evaluateJavaScript):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::pluginParentWidget):
+
+2007-07-04  Adam Roben  <aroben@apple.com>
+
+        Added a stub for ChromeClientQt::setToolTip
+
+        Reviewed by Sam.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::setToolTip):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-07-04  Adam Roben  <aroben@apple.com>
+
+        Added a stub for ChromeClientQt::mouseDidMoveOverElement
+
+        Reviewed by Sam.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::mouseDidMoveOverElement):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-06-28  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Propagate mouse double click events from Qt to WebCore.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::mouseDoubleClickEvent):
+        * Api/qwebframe.h:
+
+2007-06-28  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Implemented clipboard functions in QWebPage, in particular can(Cut|Copy|Paste), cut/copy/paste as slot as well as a selectionChanged() signal.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::canCut):
+        (QWebPage::canCopy):
+        (QWebPage::canPaste):
+        (QWebPage::cut):
+        (QWebPage::copy):
+        (QWebPage::paste):
+        * Api/qwebpage.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+
+2007-06-27  George Staikos  <staikos@kde.org>
+
+        Compile with various Qt configurations.
+
+        * Api/qwebnetworkinterface.cpp:
+        (WebCoreHttp::scheduleNextRequest):
+        * Api/qwebpage.cpp:
+        (QWebPage::javaScriptPrompt):
+        (QWebPage::dragEnterEvent):
+        (QWebPage::dragLeaveEvent):
+        (QWebPage::dragMoveEvent):
+        (QWebPage::dropEvent):
+        (QWebPage::chooseFile):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::startDrag):
+
+2007-06-27  Eli Fidler  <eli@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Check for QT_NO_IMAGE_TEXT and compile either way.
+
+        * Plugins/ICOHandler.cpp:
+        (ICOHandler::read):
+
+2007-06-27  Eli Fidler  <eli@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Remove QT3_SUPPORT dependency in the ICO plugin.
+
+        * Plugins/ICOHandler.cpp:
+        (IcoHeader::loadFromDIB):
+
+2007-06-25  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Start to add proxy and SSL support to WebKit Qt.  Proxy works
+        unauthenticated.  Added hooks to be able to add authentication.
+        Also fixes some network errors.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequestPrivate::setURL):
+        (QWebNetworkJob::frame):
+        (WebCoreHttp::WebCoreHttp):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::onDone):
+        (WebCoreHttp::onSslErrors):
+        (WebCoreHttp::onAuthenticationRequired):
+        (WebCoreHttp::onProxyAuthenticationRequired):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        * Api/qwebpage.cpp:
+        (QWebPage::setNetworkProxy):
+        (QWebPage::networkProxy):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+
+2007-06-21  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Implement the default resources on Qt.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::icon):
+        * Api/qwebsettings.cpp:
+        (QWebSettings::setWebGraphic):
+        (QWebSettings::webGraphic):
+        (loadResourcePixmap):
+        * Api/qwebsettings.h:
+
+2007-06-15  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Add ICO support to the Qt build.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::icon):
+        * Api/qwebpage.h:
+        * Api/qwebsettings.cpp:
+        (QWebSettings::setIconDatabaseEnabled):
+        (QWebSettings::iconDatabaseEnabled):
+        * Api/qwebsettings.h:
+        * Plugins: Added.
+        * Plugins/ICOHandler.cpp: Added.
+        (IcoHeader::operator >>):
+        (IcoHeader::BMP_INFOHDR::):
+        (IcoHeader::operator<<):
+        (IcoHeader::LessDifference::LessDifference):
+        (IcoHeader::LessDifference::operator ()):
+        (IcoHeader::loadFromDIB):
+        (ICOHandler::ICOHandler):
+        (ICOHandler::canRead):
+        (ICOHandler::read):
+        (ICOHandler::write):
+        (ICOHandler::name):
+        (ICOPlugin::keys):
+        (ICOPlugin::capabilities):
+        (ICOPlugin::create):
+        * Plugins/ICOHandler.h: Added.
+        * Plugins/Plugins.pro: Added.
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveIcon):
+
+2007-06-15  George Staikos  <staikos@kde.org>
+
+        Fixing the Qt build.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        (WebCore::ContextMenuClientQt::shouldIncludeInspectElementItem):
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2007-06-20  Adam Roben  <aroben@apple.com>
+
+        More speculative Qt build fixes.
+
+        Add a stub implementation of InspectorClientQt.
+
+        * WebCoreSupport/InspectorClientQt.cpp: Added.
+        (WebCore::InspectorClientQt::inspectorDestroyed):
+        (WebCore::InspectorClientQt::createPage):
+        (WebCore::InspectorClientQt::showWindow):
+        (WebCore::InspectorClientQt::closeWindow):
+        (WebCore::InspectorClientQt::attachWindow):
+        (WebCore::InspectorClientQt::detachWindow):
+        (WebCore::InspectorClientQt::highlight):
+        (WebCore::InspectorClientQt::hideHighlight):
+        * WebCoreSupport/InspectorClientQt.h: Added.
+
+2007-06-19  George Staikos  <staikos@kde.org>
+
+        Reviewed by Tim Hatcher.
+
+        Add https support.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (WebCoreHttp::WebCoreHttp):
+
+2007-06-14  George Staikos  <staikos@kde.org>
+
+        Reviewed by Lars.
+
+        Add evaluateJavaScript() method.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::evaluateJavaScript):
+        * Api/qwebframe.h:
+
+2007-06-14  George Staikos  <staikos@kde.org>
+
+        Reviewed by Lars.
+
+        Implement most of the editing commands, better focus handling, fix some
+        keyboard and mouse handling, and add keyboard navigation.  May be
+        refactored later as the key switches are ugly.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        (QWebFrame::mousePressEvent):
+        (QWebFrame::mouseReleaseEvent):
+        (QWebFrame::wheelEvent):
+        (QWebFrame::keyPressEvent):
+        (QWebFrame::keyReleaseEvent):
+        (QWebFrame::focusInEvent):
+        (QWebFrame::focusOutEvent):
+        (QWebFrame::focusNextPrevChild):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeypress):
+
+2007-06-14  George Staikos  <staikos@kde.org>
+
+        Reviewed by Lars.
+
+        Implement all of the Javascript dialogs and file chooser.
+        Also makes the statusbar virtual into a signal and shuffles some
+        virtuals around a bit.  The helper in FrameLoaderClientQt may go away
+        shortly.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::javaScriptAlert):
+        (QWebPage::javaScriptConfirm):
+        (QWebPage::javaScriptPrompt):
+        (QWebPage::chooseFile):
+        * Api/qwebpage.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::canRunBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runJavaScriptAlert):
+        (WebCore::ChromeClientQt::runJavaScriptConfirm):
+        (WebCore::ChromeClientQt::runJavaScriptPrompt):
+        (WebCore::ChromeClientQt::setStatusbarText):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::chooseFile):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-06-14  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Removed QWebHistoryItem::parent() as it is not implemented and WebCore's
+
+        HistoryItem itself doesn't seem to have a parent pointer either.
+
+        * Api/qwebpagehistory.h:
+
+2007-06-14  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Make it possible to copy QWebHistoryItem objects.
+
+        * Api/qwebpagehistory.cpp:
+        * Api/qwebpagehistory.h:
+
+2007-06-14  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by George
+
+        Fix a crash when a request from the plugin resulted
+        in a HTTP redirect.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::started):
+
+2007-06-14  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by George.
+
+        Work around a bug in Qt's QHttp implementation and
+        get web pages to load again.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::open):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added a make install target that installs the Qt port and renamed
+        WebKitQt to QtWebKit
+
+        * Api/headers.pri: Added.
+        * Api/qtwebkit.prf: Added.
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added httpHeaderField setter/getter to QWebNetworkRequest for convenience.
+
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Changed QWebObjectPluginConnector::requestUrl to take a QWebNetworkRequest as argument.
+
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::requestUrl):
+        * Api/qwebobjectpluginconnector.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added a QWebNetworkRequest convenience constructor.
+
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebpage.cpp:
+        (QWebPage::open):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Changed the QWebPage::open(const QUrl &url, const QHttpRequestHeader &httpHeader, const QByteArray &postData)
+        overload to take a QWebNetworkRequest instead.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::open):
+        * Api/qwebpage.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        In QWebPage::open(const QUrl &, const QHttpRequestHeader &, ...) don't make the population
+        of the WebCore::ResourceRequest depend on the validity of the QHttpRequestHeader but just
+        pick the individual fields if we can use them.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::open):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Minor QWebNetworkRequet API fixlet
+
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Use QWebNetworkRequest for QWebPage::navigationRequested.
+
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::navigationRequested):
+        (QWebPage::navigationRequested):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Some docs for QWebNetworkRequest
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequest::QWebNetworkRequest):
+        (QWebNetworkRequest::~QWebNetworkRequest):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Moved QWebNetworkJob::Method enum into QWebNetworkRequest.
+
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::requestUrl):
+        * Api/qwebobjectpluginconnector.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Rename QWebNetworkJob::request() into QWebNetworkJob::httpHeader() and added
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkJob::postData):
+        (WebCoreHttp::WebCoreHttp):
+        (WebCoreHttp::scheduleNextRequest):
+        * Api/qwebnetworkinterface.h:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Introduce QWebNetworkRequest in the public API.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequestPrivate::init):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Changed QWebNetworkJobPrivate to aggregate a QWebNetworkRequest instead of inheriting from it.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        * Api/qwebnetworkinterface_p.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::requestUrl):
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Rename QWebNetworkRequest::request into QWebNetworkRequest::httpHeader.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequest::init):
+        (QWebNetworkRequest::setURL):
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::started):
+        * Api/qwebnetworkinterface_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+
+2007-06-12  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by George Staikos.
+
+        Remove duplicate symbols.
+
+        * Api/qwebobjectplugin_p.h:
+
+2007-06-13  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Niko.
+
+        Fix compilation, and remove dependency on Qt
+        private header.
+
+        * Api/qwebobjectplugin_p.h:
+        (QWebFactoryLoader::supportsMimeType):
+
+2007-06-13  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Niko.
+
+        Parts of the patch done by Zack.
+        Fix up some parts in the implementation of QWebNetworkInterface
+        so it can be used by plugins.
+        Change the plugin API so we can actually get all the information
+        required by the JS bridge from them as well.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkJob::cancelled):
+        (QWebNetworkManager::cancel):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::finished):
+        * Api/qwebobjectplugin.cpp:
+        (QWebFactoryLoader::QWebFactoryLoader):
+        (QWebFactoryLoader::descriptionForName):
+        (QWebFactoryLoader::mimetypesForName):
+        (QWebFactoryLoader::mimeTypeForExtension):
+        (QWebFactoryLoader::extensions):
+        (QWebFactoryLoader::nameForMimetype):
+        (QWebFactoryLoader::create):
+        (QWebObjectPlugin::descriptionForKey):
+        (QWebObjectPlugin::mimetypesForKey):
+        * Api/qwebobjectplugin.h:
+        * Api/qwebobjectplugin_p.h:
+        (QWebFactoryLoader::names):
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::requestUrl):
+        * Api/qwebpage.cpp:
+        (QWebPage::networkInterface):
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added a QWebPage::open overload to allow specifying the http header and post data.
+        (it's an overload instead of a merged openUrl to avoid including qhttp.h in qwebpage.h,
+        which would imply that one has to have QT += network in the .pro file for using WebKitQt)
+
+        * Api/qwebpage.cpp:
+        * Api/qwebpage.h:
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added the possibility to intercept url requests through QWebPage::navigationRequested.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::createFrame):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Added a QWebNetworkRequest::init overload that takes a WebCore::ResourceRequest,
+        to be called from FrameLoaderClientQt in the near future.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+        * Api/qwebnetworkinterface_p.h:
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Moved the postData setup into QWebNetworkRequest::init.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequest::init):
+        (QWebNetworkManager::add):
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Moved HTTP header field propagation to QWebNetworkRequest::init.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequest::init):
+        (QWebNetworkManager::add):
+
+2007-06-11  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Started moving the code to separate a WebCore::ResourceRequest into a QUrl, postData
+        and QHttpRequestHeader into a separate little QWebNetworkRequest struct.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkRequest::init):
+        (QWebNetworkManager::add):
+        * Api/qwebnetworkinterface_p.h:
+        * Api/qwebobjectpluginconnector.cpp:
+        (QWebObjectPluginConnector::requestUrl):
+
+2007-06-11  Zack Rusin <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Forgot to export the plugin connector.
+
+        * Api/qwebobjectpluginconnector.h
+
+2007-06-08  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack.
+
+        Add a QWebObjectPluginConnector class. The class will
+        facility communication between the plugin and WebKit.
+        Currently it's used to make the plugin network capable.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkJobPrivate::setDefaults):
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        (QWebNetworkJobPrivate::QWebNetworkJobPrivate):
+        * Api/qwebobjectplugin.cpp:
+        (QWebFactoryLoader::create):
+        * Api/qwebobjectplugin.h:
+        * Api/qwebobjectplugin_p.h:
+        * Api/qwebobjectpluginconnector.cpp: Added.
+        (QWebObjectPluginConnector::QWebObjectPluginConnector):
+        (QWebObjectPluginConnector::frame):
+        (QWebObjectPluginConnector::pluginParentWidget):
+        (QWebObjectPluginConnector::requestUrl):
+        * Api/qwebobjectpluginconnector.h: Added.
+        (QWebObjectPluginConnector::):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-06-06  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Add an API to create and load plugins.
+        Don't include moc files by hand anymore, rather let
+        qmake handle them.
+
+        * Api/qcookiejar.cpp:
+        (QCookieJar::cookieJar):
+        * Api/qwebframe.cpp:
+        (QWebFrame::scrollContentsBy):
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebobjectplugin.cpp: Added.
+        (QWebFactoryLoader::QWebFactoryLoader):
+        (QWebFactoryLoader::self):
+        (QWebFactoryLoader::mimeTypeForExtension):
+        (QWebFactoryLoader::create):
+        (QWebObjectPlugin::QWebObjectPlugin):
+        (QWebObjectPlugin::~QWebObjectPlugin):
+        (QWebObjectPlugin::extensionsForMimetype):
+        * Api/qwebobjectplugin.h: Added.
+        * Api/qwebobjectplugin_p.h: Added.
+        (QWebFactoryLoader::mimeTypes):
+        (QWebFactoryLoader::extensions):
+        (QWebFactoryLoader::supportsMimeType):
+        * Api/qwebpage.cpp:
+        (QWebPage::settings):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+
+2007-05-28  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by andersca and simon
+
+        Adding public settings Api to the Qt port.
+        QWebSetting's is a value based settings
+        object settable on the QWebPage.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::QWebPage):
+        (QWebPage::setSettings):
+        (QWebPage::settings):
+        * Api/qwebpage.h:
+        * Api/qwebsettings.cpp: Added.
+        (QWebSettingsPrivate::QWebSettingsPrivate):
+        (QWebSettings::QWebSettings):
+        (QWebSettings::~QWebSettings):
+        (QWebSettings::setMinimumFontSize):
+        (QWebSettings::minimumFontSize):
+        (QWebSettings::setMinimumLogicalFontSize):
+        (QWebSettings::minimumLogicalFontSize):
+        (QWebSettings::setDefaultFontSize):
+        (QWebSettings::defaultFontSize):
+        (QWebSettings::setDefaultFixedFontSize):
+        (QWebSettings::defaultFixedFontSize):
+        (QWebSettings::setUserStyleSheetLocation):
+        (QWebSettings::userStyleSheetLocation):
+        (QWebSettings::setGlobal):
+        (QWebSettings::global):
+        (QWebSettings::setFontFamily):
+        (QWebSettings::fontFamily):
+        (QWebSettings::setAttribute):
+        (QWebSettings::testAttribute):
+        * Api/qwebsettings.h: Added.
+        * QtLauncher/main.cpp:
+        (main):
+2007-05-27  Kevin Ollivier  <kevino@theolliviers.com>
+
+        Reviewed by Sam Weinig.
+        
+        Consolidate all notImplemented() macro definitions into
+        one header file for all platforms.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        * WebCoreSupport/EditorClientQt.cpp:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+
+2007-05-25  George Staikos  <staikos@kde.org>
+
+        Reviewed by Simon.
+
+        The http loader should only ask for .... http cookies!
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+
+2007-05-24  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Fix multipart/form-data HTTP POSTs. The content-type wasn't set
+        correctly. Fortunately WebCore does it already, so there's no need
+        for us to do it since we already transfer all HTTP header fields :)
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+
+2007-05-23  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack, idea from Lars.
+
+        Share WebCoreHttp and therefore HTTP connections among multiple
+        QWebNetworkInterface instances by moving the code into
+        QWebNetworkManager.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::addHttpJob):
+        (QWebNetworkManager::cancelHttpJob):
+        (QWebNetworkManager::httpConnectionClosed):
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::onResponseHeaderReceived):
+        (WebCoreHttp::onReadyRead):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::cancel):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+
+2007-05-23  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack, discussed also with Lars.
+
+        Make it possible to specify a per-QWebPage network interface (needed
+        for the KDE KIO integration).
+
+        Merged the file and the network loader into
+        QWebNetworkInterface(Private), which simplifies the loading code.
+
+        When receiving a redirection don't emit the data of the redirected job
+        to the document. (otherwise the kind of "This page has moved" text
+        appears right on top of the real page content)
+
+        * Api/qwebnetworkinterface.cpp:
+        (qHash):
+        (operator==):
+        (QWebNetworkJob::QWebNetworkJob):
+        (QWebNetworkJob::networkInterface):
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::cancel):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        (QWebNetworkInterfacePrivate::sendFileData):
+        (QWebNetworkInterfacePrivate::parseDataUrl):
+        (QWebNetworkInterfacePrivate::addHttpJob):
+        (QWebNetworkInterfacePrivate::httpConnectionClosed):
+        (QWebNetworkInterface::setDefaultInterface):
+        (QWebNetworkInterface::QWebNetworkInterface):
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::onResponseHeaderReceived):
+        (WebCoreHttp::onReadyRead):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::cancel):
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::setNetworkInterface):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+
+2007-05-23  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Don't do HTTP downloads in a second thread. Simplifies
+        the code significantly and fixes crashes on some
+        Web pages.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add):
+        (QWebNetworkInterface::QWebNetworkInterface):
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (LoaderThread::LoaderThread):
+        (LoaderThread::run):
+        (WebCoreHttp::cancel):
+        (NetworkLoader::NetworkLoader):
+        (NetworkLoader::request):
+        (NetworkLoader::cancel):
+        * Api/qwebnetworkinterface_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::committedLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveContentLength):
+
+2007-05-23  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Simon.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkJobPrivate::setURL):
+        (QWebNetworkManager::started):
+            Fix Host: line in HTTP headers and resolving of relative URLs
+            when redirecting.
+        * Api/qwebnetworkinterface_p.h:
+            Clean up qHash forward declaration a bit.
+
+2007-05-23  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        * QtLauncher/main.cpp:
+        (MainWindow::MainWindow): Fix loading progress signal/slot connection.
+
+2007-05-22  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        * Api/qwebnetworkinterface.cpp:
+        (QWebNetworkManager::add): Fix http headers for POST.
+
+2007-05-21  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Simon
+
+        Remove the userHandle methods from QWebnetworkJob again.
+        They don't really give us anything and just clutter the API.
+
+        * Api/qwebnetworkinterface.cpp:
+        * Api/qwebnetworkinterface.h:
+        * Api/qwebnetworkinterface_p.h:
+
+2007-05-21  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        * Api/qwebnetworkinterface.h: Export the net API.
+
+2007-05-21  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack.
+
+        Add an API layer for network downloads. Basically QWebnetworkInterface
+        is an interface class for downloading resources. QWebnetworkJob describes
+        the actual object to download.
+
+        QWebNetworkInterface has a default implementation that replaces the
+        old ResourceHandleManager class in the Qt port.
+
+        * Api/qwebnetworkinterface.cpp: Added.
+        (QWebNetworkJobPrivate::setURL):
+        (QWebNetworkJob::QWebNetworkJob):
+        (QWebNetworkJob::~QWebNetworkJob):
+        (QWebNetworkJob::url):
+        (QWebNetworkJob::postData):
+        (QWebNetworkJob::request):
+        (QWebNetworkJob::response):
+        (QWebNetworkJob::setResponse):
+        (QWebNetworkJob::cancelled):
+        (QWebNetworkJob::ref):
+        (QWebNetworkJob::deref):
+        (QWebNetworkJob::setUserHandle):
+        (QWebNetworkJob::userHandle):
+        (QWebNetworkManager::QWebNetworkManager):
+        (QWebNetworkManager::self):
+        (QWebNetworkManager::add):
+        (QWebNetworkManager::cancel):
+        (QWebNetworkManager::started):
+        (QWebNetworkManager::data):
+        (QWebNetworkManager::finished):
+        (QWebNetworkInterface::setDefaultInterface):
+        (QWebNetworkInterface::defaultInterface):
+        (QWebNetworkInterface::QWebNetworkInterface):
+        (QWebNetworkInterface::~QWebNetworkInterface):
+        (QWebNetworkInterface::addJob):
+        (QWebNetworkInterface::cancelJob):
+        (LoaderThread::LoaderThread):
+        (LoaderThread::run):
+        (FileLoader::FileLoader):
+        (FileLoader::request):
+        (FileLoader::sendData):
+        (FileLoader::parseDataUrl):
+        (WebCoreHttp::WebCoreHttp):
+        (WebCoreHttp::~WebCoreHttp):
+        (WebCoreHttp::request):
+        (WebCoreHttp::scheduleNextRequest):
+        (WebCoreHttp::getConnection):
+        (WebCoreHttp::onResponseHeaderReceived):
+        (WebCoreHttp::onReadyRead):
+        (WebCoreHttp::onRequestFinished):
+        (WebCoreHttp::onStateChanged):
+        (WebCoreHttp::cancel):
+        (HostInfo::HostInfo):
+        (qHash):
+        (operator==):
+        (NetworkLoader::NetworkLoader):
+        (NetworkLoader::~NetworkLoader):
+        (NetworkLoader::request):
+        (NetworkLoader::connectionClosed):
+        (NetworkLoader::cancel):
+        * Api/qwebnetworkinterface.h: Added.
+        (QWebNetworkJob::setHandle):
+        (QWebNetworkJob::handle):
+        * Api/qwebnetworkinterface_p.h: Added.
+        (WebCore::LoaderThread::):
+        (WebCore::LoaderThread::waitForSetup):
+        (WebCore::HostInfo::HostInfo):
+
+2007-05-18  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Nikolas.
+
+        * Api/qwebpage.h: Changed the loadProgressChanged API to use an
+        percent integer instead of a double precision floating pointer number.
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-05-18  Marius Bugge Monsen  <mbm@trolltech.com>
+
+        Reviewed by Zack Rusin.
+
+        The default constructed KeyboardEvent has
+        no PlatformKeyboardEvent.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeypress):
+
+2007-05-17  Adam Treat <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        - Implement frameLoadCompleted
+        - Fix build (by George)
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::frameLoadCompleted):
+        (WebCore::FrameLoaderClientQt::createFrame):
+
+2007-05-17  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Implement canShowMIMEType
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::canShowMIMEType):
+
+2007-05-16  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        pass the mouse events to the event handler, not the frameview.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::mouseMoveEvent):
+        (QWebFrame::mouseReleaseEvent):
+
+2007-05-14  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Updates after Maciej's frame change.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::stop):
+              Call stopForUserCancel() instead of stopAllLoaders()
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoad):
+        (WebCore::FrameLoaderClientQt::didFinishLoad):
+        (WebCore::FrameLoaderClientQt::setMainDocumentError):
+        (WebCore::FrameLoaderClientQt::dispatchWillSendRequest):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveResponse):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoad):
+              Call QWebFrame::loadDone() from the places it's supposed to be
+              called from.
+
+2007-05-12  Maciej Stachowiak  <mjs@apple.com>
+
+        Reviewed by Rob Buis.
+        
+        - call Frame::init as needed - this prevents crashes but pages don't appear.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::initView):
+
+2007-05-08  Steve Falkenburg  <sfalken@apple.com>
+
+        Reviewed by Ada.
+        
+        Slight modification to last editor method fix.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::updateSpellingUIWithGrammarString):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-05-03  Steve Falkenburg  <sfalken@apple.com>
+
+        Reviewed by Oliver.
+
+        Add missing user description parameter to spelling-related editor client method.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::updateSpellingUIWithGrammarString):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-04-29  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by Zack.
+
+        Tie QT drag events to the DragController logic
+        to allow drag and drop events to be handled by
+        webkit.
+
+        * Api/qwebframe.cpp:
+        * Api/qwebframe.h:
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::QWebPage):
+        (dropActionToDragOp):
+        (dragOpToDropAction):
+        (QWebPage::dragEnterEvent):
+        (QWebPage::dragLeaveEvent):
+        (QWebPage::dragMoveEvent):
+        (QWebPage::dropEvent):
+        * Api/qwebpage.h:
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::startDrag):
+        * WebCoreSupport/DragClientQt.h:
+        (WebCore::DragClientQt::DragClientQt):
+
+2007-04-27  Holger Freyther <freyther@kde.org>
+
+        Reviewed by Maciej.
+
+        Remove unmaintained CMake build system.
+
+        * QtLauncher/CMakeLists.txt: Removed.
+        * WebKitPart/CMakeLists.txt: Removed.
+
+2007-04-25  Steve Falkenburg  <sfalken@apple.com>
+
+        Reviewed by Adam.
+        
+        Fix spelling error in spelling method name.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::updateSpellingUIWithGrammarString):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-04-24  Steve Falkenburg  <sfalken@apple.com>
+
+        Reviewed by Oliver.
+        
+        Spelling and grammar stubs
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::ignoreWordInSpellDocument):
+        (WebCore::EditorClientQt::learnWord):
+        (WebCore::EditorClientQt::checkSpellingOfString):
+        (WebCore::EditorClientQt::checkGrammarOfString):
+        (WebCore::EditorClientQt::udpateSpellingUIWithGrammarString):
+        (WebCore::EditorClientQt::updateSpellingUIWithMisspelledWord):
+        (WebCore::EditorClientQt::showSpellingUI):
+        (WebCore::EditorClientQt::spellingUIIsShowing):
+        (WebCore::EditorClientQt::getGuessesForWord):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-04-11  MorganL  <morganl.webkit@yahoo.com>
+
+        Reviewed by Maciej.
+
+        Add a Frame pointer to ChromeClient methods:
+        http://bugs.webkit.org/show_bug.cgi?id=13127
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::createWindow):
+        (WebCore::ChromeClientQt::createModalDialog):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-04-12  Mark Rowe  <mrowe@apple.com>
+
+        Second part of Qt build fix.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::loadedFromCachedPage):
+        (WebCore::FrameLoaderClientQt::setDocumentViewFromCachedPage):
+        (WebCore::FrameLoaderClientQt::saveDocumentViewToCachedPage):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-03-27  Zack Rusin  <zrusin@trolltech.com>
+
+        Fix the rendering crashes due triggered
+        asserts. Improve a bit the layout
+        scheduling.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::resizeEvent):
+        (QWebFrame::paintEvent):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::forceLayout):
+
+2007-03-16  Lars Knoll <lars@trolltech.com>
+
+        Fix the Qt build once again.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeypress):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::blockedError):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-03-13  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by George.
+
+        Don't try to load <object> tags with an invalid url.
+        Fixes LayoutTests/fast/dom/object-plugin-hides-properties.html
+        which hit an assertion in the frameloader.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::objectContentType):
+
+2007-03-13  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Anders.
+
+        Fix some crashes in the Qt build.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::markup):
+            Check for null pointer
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+            Don't use an async callback into the FrameLoader.
+        (WebCore::FrameLoaderClientQt::createFrame):
+
+2007-03-11  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by Adele.
+
+        Stub for EditorClientQt::respondToChangedSelection
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::respondToChangedSelection):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-03-07  Adele Peterson  <adele@apple.com>
+
+        Reviewed by Darin.
+
+        WebKitQT part of fix for:
+        http://bugs.webkit.org/show_bug.cgi?id=10871
+        http://bugs.webkit.org/show_bug.cgi?id=12677
+        <rdar://problem/4823129> REGRESSION: IME key events different in nightly
+        <rdar://problem/4759563> REGRESSION: Return key is always sent when you confirm a clause in kotoeri
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeypress): Changed handleKeyPress to handleKeypress.
+        (WebCore::EditorClientQt::handleInputMethodKeypress): Added.
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-03-07  Darin Adler  <darin@apple.com>
+
+        * WebCoreSupport/FrameLoaderClientQt.h: Oops, forgot the header.
+
+2007-03-07  Darin Adler  <darin@apple.com>
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp: (WebCore::FrameLoaderClientQt::userAgent):
+        Try to fix the build by correcting the parameter here.
+
+2007-03-02  Sam Weinig  <sam@webkit.org>
+
+        Reviewed by Anders.
+
+        Try to fix the Qt build
+
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::willPerformDragDestinationAction):
+        (WebCore::DragClientQt::dragControllerDestroyed):
+        (WebCore::DragClientQt::createDragImageForLink):
+
+2007-02-26  Maciej Stachowiak  <mjs@apple.com>
+
+        Reviewed by Kevin McCullough.
+
+        - fix Qt build for earlier SVG changes.
+
+        * WebCoreSupport/EditCommandQt.cpp:
+
+2007-02-24  Zack Rusin  <zrusin@trolltech.com>
+
+        Adjust the animation a little bit to make it more natural.
+
+        * QtLauncher/main.cpp:
+        (HoverLabel::paintEvent):
+
+2007-02-23  Zack Rusin  <zrusin@trolltech.com>
+
+        Adding a little bit of eye-candy to the last
+        commit (animations on hover events)
+
+        * QtLauncher/main.cpp:
+        (HoverLabel::HoverLabel):
+        (HoverLabel::setHoverLink):
+        (HoverLabel::sizeForFont):
+        (HoverLabel::sizeHint):
+        (HoverLabel::resetAnimation):
+        (HoverLabel::paintEvent):
+        (HoverLabel::interpolate):
+        (SearchEdit::resizeEvent):
+
+2007-02-23  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Adding API and code for notification of when the
+        mouse is hovering over a link and adding code to
+        the sample app to showcase it.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::mouseMoveEvent):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        (QWebFramePrivate::QWebFramePrivate):
+        * Api/qwebpage.cpp:
+        (QWebPage::createFrame):
+        * Api/qwebpage.h:
+        * QtLauncher/main.cpp:
+        (HoverLabel::HoverLabel):
+        (HoverLabel::setHoverLink):
+        (HoverLabel::sizeHint):
+        (HoverLabel::updateSize):
+        (HoverLabel::paintEvent):
+        (ClearButton::ClearButton):
+        (ClearButton::paintEvent):
+        (SearchEdit::SearchEdit):
+        (SearchEdit::resizeEvent):
+        (SearchEdit::moveEvent):
+        (MainWindow::MainWindow):
+        (MainWindow::showLinkHover):
+        (MainWindow::resizeEvent):
+
+2007-02-22  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Fixing the default scroll offset, cleaning
+        up private methods and making the default
+        look not use any frames.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        (QWebFramePrivate::_q_handleKeyEvent):
+        (QWebFrame::QWebFrame):
+        (QWebFrame::wheelEvent):
+        (QWebFrame::keyPressEvent):
+        (QWebFrame::keyReleaseEvent):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+
+2007-02-22  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Make the qwebframe act as a proper canvas.
+        Implement it on top of QAbstractScrollArea.
+
+        * Api/qwebframe.cpp:
+        (QWebFramePrivate::init):
+        (QWebFramePrivate::_q_adjustScrollbars):
+        (QWebFrame::init):
+        (QWebFrame::QWebFrame):
+        (QWebFrame::resizeEvent):
+        (QWebFrame::childFrames):
+        (QWebFrame::paintEvent):
+        (QWebFrame::mouseMoveEvent):
+        (QWebFrame::mousePressEvent):
+        (QWebFrame::mouseReleaseEvent):
+        (QWebFrame::wheelEvent):
+        (QWebFrame::keyPressEvent):
+        (QWebFrame::keyReleaseEvent):
+        (QWebFrame::dragEnterEvent):
+        (QWebFrame::dragLeaveEvent):
+        (QWebFrame::dragMoveEvent):
+        (QWebFrame::handleKeyEvent):
+        (QWebFrame::scrollContentsBy):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        (QWebFramePrivate::QWebFramePrivate):
+
+2007-02-21  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Add more editing support, and undo/redo.  Requires some nasty evil
+        hacks that have to be sorted out in WebCore/editor.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPagePrivate::~QWebPagePrivate):
+        (QWebPage::undoStack):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::didBeginEditing):
+        (WebCore::EditorClientQt::didEndEditing):
+        (WebCore::EditorClientQt::isEditable):
+        (WebCore::EditorClientQt::registerCommandForUndo):
+        (WebCore::EditorClientQt::registerCommandForRedo):
+        (WebCore::EditorClientQt::clearUndoRedoOperations):
+        (WebCore::EditorClientQt::canUndo):
+        (WebCore::EditorClientQt::canRedo):
+        (WebCore::EditorClientQt::undo):
+        (WebCore::EditorClientQt::redo):
+        (WebCore::EditorClientQt::handleKeyPress):
+        (WebCore::EditorClientQt::EditorClientQt):
+        (WebCore::EditorClientQt::textFieldDidBeginEditing):
+        (WebCore::EditorClientQt::textFieldDidEndEditing):
+        (WebCore::EditorClientQt::isEditing):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-02-21  Zack Rusin  <zrusin@trolltech.com>
+
+        Fix compilation.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2007-02-21  George Staikos  <staikos@kde.org>
+
+        Fix compile.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::stop):
+
+2007-02-20  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Make editing of forms work plus make sure that non-void methods
+        always return something.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::canRunBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runJavaScriptConfirm):
+        (WebCore::ChromeClientQt::runJavaScriptPrompt):
+        (WebCore::ChromeClientQt::shouldInterruptJavaScript):
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::shouldDeleteRange):
+        (WebCore::EditorClientQt::shouldBeginEditing):
+        (WebCore::EditorClientQt::shouldEndEditing):
+        (WebCore::EditorClientQt::shouldInsertText):
+        (WebCore::EditorClientQt::shouldChangeSelectedRange):
+        (WebCore::EditorClientQt::shouldApplyStyle):
+        (WebCore::EditorClientQt::shouldInsertNode):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidLoadResourceFromMemoryCache):
+        (WebCore::FrameLoaderClientQt::dispatchCreatePage):
+
+2007-02-17  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Maciej.
+
+        Additional coding by Maciej, additional review by Oliver.
+
+        Add stubs for the new methods in ChormeClient and EditorClient,
+        remove all references to FrameQt.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        * Api/qwebframe_p.h:
+        * Api/qwebpage.cpp:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::shouldInterruptJavaScript):
+        * WebCoreSupport/ChromeClientQt.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::shouldChangeSelectedRange):
+        (WebCore::EditorClientQt::isEditable):
+        * WebCoreSupport/EditorClientQt.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::webFrame):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-02-18  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by NOBODY (Buildfix).
+
+        Build fix -- adding DragClientQt method stubs
+
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::willPerformDragSourceAction):
+        (WebCore::DragClientQt::startDrag):
+        (WebCore::DragClientQt::createDragImageForLink):
+        * WebCoreSupport/DragClientQt.h:
+
+2007-02-15  Brady Eidson  <beidson@apple.com>
+
+        Reviewed by Adam
+
+        Moved scroll state down into the cross platform FrameLoader - 
+        Blind attempt at keeping Qt building
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::restoreViewState):
+        (WebCore::FrameLoaderClientQt::saveViewStateToItem):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-02-07  Anders Carlsson  <acarlsson@apple.com>
+
+        Try fixing the Qt build.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::shouldInterruptJavaScript):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-02-02  Zack Rusin  <zrusin@trolltech.com>
+
+        Compilation fix: forward declare d-ptr.
+
+        * Api/qcookiejar.h:
+
+2007-02-02  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Make the frames white by default and get the
+        files that WebCore can handle render inside
+        the frames.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createFrame):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+
+2007-02-01  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack and Lars.
+
+        Add a cookie interface for the Qt build.
+
+        * Api/qcookiejar.cpp: Added.
+        (QCookieJarPrivate::QCookieJarPrivate):
+        (qHash):
+        (QCookieJar::QCookieJar):
+        (QCookieJar::~QCookieJar):
+        (QCookieJar::setCookies):
+        (QCookieJar::cookies):
+        (QCookieJar::isEnabled):
+        (QCookieJar::setEnabled):
+        (gCleanupJar):
+        (QCookieJar::setCookieJar):
+        (QCookieJar::cookieJar):
+        * Api/qcookiejar.h: Added.
+
+2007-02-01  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Adam.
+
+        Fix form loading for the Qt build.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::callPolicyFunction):
+        (WebCore::FrameLoaderClientQt::slotCallPolicyFunction):
+        (WebCore::FrameLoaderClientQt::dispatchWillSubmitForm):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForMIMEType):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+
+2007-01-31  Zack Rusin  <zrusin@trolltech.com>
+
+        Expose the fact that the form has been edited
+        in the public api.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPage::isModified):
+        * Api/qwebpage.h:
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::respondToChangedContents):
+        (WebCore::EditorClientQt::isEditable):
+
+2007-01-31  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Properly propagate key events.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::addToJSWindowObject):
+        (QWebFrame::innerText):
+        (QWebFrame::renderTreeDump):
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        * Api/qwebpage.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::pageDestroyed):
+        (WebCore::EditorClientQt::handleKeyPress):
+        (WebCore::EditorClientQt::EditorClientQt):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-01-31  George Staikos  <staikos@kde.org>
+
+        Remove focusFrame() - misguided - and add childFrames().  Fix a crash
+        on exit.
+
+        Reviewed by Zack.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::resizeEvent):
+        (QWebFrame::childFrames):
+        * Api/qwebframe.h:
+        * Api/qwebpage.cpp:
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::webFrame):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-30  Zack Rusin  <zrusin@trolltech.com>
+
+        Improve QtLauncher to make it more useful as a testing tool.
+
+        * QtLauncher/main.cpp:
+        (ClearButton::ClearButton):
+        (ClearButton::paintEvent):
+        (SearchEdit::SearchEdit):
+        (SearchEdit::~SearchEdit):
+        (SearchEdit::paintEvent):
+        (SearchEdit::resizeEvent):
+        (SearchEdit::moveEvent):
+        (MainWindow::MainWindow):
+        (MainWindow::changeLocation):
+        (MainWindow::loadFinished):
+
+2007-01-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Added import/export macros needed for build with ELF visibility and
+        for a build on Windows (in the future).
+
+        * Api/qwebframe.h:
+        * Api/qwebkitglobal.h: Added.
+        * Api/qwebpage.h:
+        * Api/qwebpagehistory.h:
+
+2007-01-30  Zack Rusin  <zack@kde.org>
+
+        Change the signature of handleKeyPress
+        (make it compile)
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeyPress):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-01-29  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Lars
+
+        Set the allows-scrolling property on the view.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+
+2007-01-29  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by Adam.
+
+        Stub for new DragClient method
+
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::dragSourceActionMaskForPoint):
+        * WebCoreSupport/DragClientQt.h:
+
+2007-01-29  Maciej Stachowiak  <mjs@apple.com>
+
+        Reviewed by Mark.
+
+        - updated for cross-platform data loading support
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::createDocumentLoader):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-29  George Staikos  <staikos@kde.org>
+
+        Make window resizing work.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::setWindowGeometry):
+        * Api/qwebpage.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::setWindowRect):
+
+2007-01-29  George Staikos  <staikos@kde.org>
+
+        Make popup windows work.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::createWindow):
+        * Api/qwebpage.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::createWindow):
+
+2007-01-29  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Fix the way we handle native widgets (QWidget) inside
+        WebCore. Now WebCore::Widget owns the QWidget in all
+        cases. This is the only way to get well defined semantics
+        for all teh native widgets we have (currently ScrollView
+        and ScrollBar, but plugins will follow).
+
+        This has the side effect that one cannot rely on a defined 
+        lifetime of a QWebFrame when using the API. 
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::~QWebFrame):
+        * Api/qwebpage.cpp:
+        (QWebPage::~QWebPage):
+        * Api/qwebpage_p.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::detachedFromParent3):
+        (WebCore::FrameLoaderClientQt::detachedFromParent4):
+        (WebCore::FrameLoaderClientQt::frameLoaderDestroyed):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-29  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Implement more functions
+
+        * Api/qwebpage.cpp:
+        (QWebPage::javaScriptConsoleMessage):
+        (QWebPage::statusTextChanged):
+        (QWebPage::runJavaScriptAlert):
+        * Api/qwebpage.h:
+        * Api/qwebpagehistory.cpp:
+        (QWebPageHistory::canGoBack):
+        (QWebPageHistory::canGoForward):
+        * Api/qwebpagehistory.h:
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::addMessageToConsole):
+        (WebCore::ChromeClientQt::runJavaScriptAlert):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::shouldGoToHistoryItem):
+
+2007-01-26  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Qt implementation.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        (QWebFrame::title):
+        (QWebFrame::selectedText):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        * Api/qwebpage.cpp:
+        (QWebPage::createFrame):
+        (QWebPage::open):
+        (QWebPage::url):
+        (QWebPage::title):
+        (QWebPage::focusFrame):
+        (QWebPage::stop):
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::detachFrameLoader):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveTitle):
+        (WebCore::FrameLoaderClientQt::didChangeTitle):
+        (WebCore::FrameLoaderClientQt::setTitle):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-26  Lars Knoll <lars@trolltech.com>
+
+        Make it compile again with Qt 4.2 and add the copyright
+        headers where forgotten in the last submit.
+
+        * Api/qwebpagehistory.cpp:
+        * Api/qwebpagehistory.h:
+        (QExplicitlySharedDataPointer::operator*):
+        (QExplicitlySharedDataPointer::operator->):
+        (QExplicitlySharedDataPointer::operator T *):
+        (QExplicitlySharedDataPointer::operator const T *):
+        (QExplicitlySharedDataPointer::data):
+        (QExplicitlySharedDataPointer::constData):
+        (QExplicitlySharedDataPointer::operator==):
+        (QExplicitlySharedDataPointer::operator!=):
+        (QExplicitlySharedDataPointer::QExplicitlySharedDataPointer):
+        (QExplicitlySharedDataPointer::~QExplicitlySharedDataPointer):
+        (QExplicitlySharedDataPointer::operator=):
+        (QExplicitlySharedDataPointer::operator!):
+        (::QExplicitlySharedDataPointer):
+
+2007-01-26  Zack Rusin  <zrusin@trolltech.com>
+
+        Reviewed by Lars
+
+        Implement history support on platform Qt.
+
+        * Api/qwebpage.cpp:
+        (QWebPage::history):
+        (QWebPage::goBack):
+        (QWebPage::goForward):
+        (QWebPage::goToHistoryItem):
+        * Api/qwebpage.h:
+        * Api/qwebpagehistory.cpp: Added.
+        (QWebHistoryItem::~QWebHistoryItem):
+        (QWebHistoryItem::originalUrl):
+        (QWebHistoryItem::currentUrl):
+        (QWebHistoryItem::title):
+        (QWebHistoryItem::lastVisited):
+        (QWebHistoryItem::icon):
+        (QWebHistoryItem::QWebHistoryItem):
+        (QWebPageHistory::QWebPageHistory):
+        (QWebPageHistory::itemAtIndex):
+        (QWebPageHistory::~QWebPageHistory):
+        (QWebPageHistory::items):
+        (QWebPageHistory::backItems):
+        (QWebPageHistory::forwardItems):
+        (QWebPageHistory::goBack):
+        (QWebPageHistory::goForward):
+        (QWebPageHistory::goToItem):
+        (QWebPageHistory::backItem):
+        (QWebPageHistory::currentItem):
+        (QWebPageHistory::forwardItem):
+        * Api/qwebpagehistory.h: Added.
+        * Api/qwebpagehistory_p.h: Added.
+        (QWebHistoryItemPrivate::QWebHistoryItemPrivate):
+        (QWebHistoryItemPrivate::~QWebHistoryItemPrivate):
+        (QWebPageHistoryPrivate::QWebPageHistoryPrivate):
+        (QWebPageHistoryPrivate::~QWebPageHistoryPrivate):
+
+2007-01-26  Lars Knoll <lars@trolltech.com>
+
+        Get rid of FrameQtClient. It's unused since we moved over
+        to the loader.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+
+2007-01-26  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Lars
+
+        Correctly position child frames within the 
+        toplevel frame. We were placed it on the widget
+        itself instead of the vieweport.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+
+2007-01-26  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Make sure we resize the HTML when resizing a 
+        QWebFrame. Also ensure that the render tree
+        is up to date before dumping it.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::innerText):
+        (QWebFrame::renderTreeDump):
+        (QWebFrame::resizeEvent):
+        * Api/qwebframe.h:
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::createMainFrame):
+
+2007-01-26  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Lars
+
+        Display pages inside a mainwindow instead
+        of a custom qwidget.
+
+        * QtLauncher/main.cpp:
+        (MainWindow::MainWindow):
+        (main):
+
+2007-01-25  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Emit the loadDone() signal from teh onload event callback
+        again. This hangs on one or two test cases, but removes
+        hundreds of failures elsewhere.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoad):
+
+2007-01-24  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Implement some bits and pieces required by the loader.
+        Fixes quite a few crashes and hangs in the lyout tests
+
+        * Api/qwebframe.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoad):
+        (WebCore::FrameLoaderClientQt::finishedLoading):
+        (WebCore::FrameLoaderClientQt::setMainDocumentError):
+        (WebCore::FrameLoaderClientQt::committedLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+        (WebCore::FrameLoaderClientQt::createFrame):
+
+2007-01-24  Lars Knoll <lars@trolltech.com>
+
+        Fix compilation again.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::handleKeyPress):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-01-23  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Fix refcounting of FrameViews (they get created with a
+        refcount of 1) and add a few safety checks to the 
+        FrameLoaderClientQt.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        (QWebFrame::~QWebFrame):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::detachedFromParent3):
+        (WebCore::FrameLoaderClientQt::detachedFromParent4):
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::postProgressStartedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressFinishedNotification):
+        (WebCore::FrameLoaderClientQt::frameLoaderDestroyed):
+        (WebCore::FrameLoaderClientQt::windowObjectCleared):
+
+2007-01-23  Zack Rusin  <zack@kde.org>
+
+        Adjust the DragClientQt to latest changes.
+
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::dragControllerDestroyed):
+        * WebCoreSupport/DragClientQt.h:
+
+2007-01-23  Zack Rusin  <zack@kde.org>
+
+        Fix the Qt build
+
+        * WebCoreSupport/DragClientQt.cpp:
+        (WebCore::DragClientQt::willPerformDragDestinationAction):
+        * WebCoreSupport/DragClientQt.h:
+
+2007-01-23  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Maciej
+
+        Add support for Frames to the Qt build and fix some issues
+        in the API classes.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        (QWebFrame::~QWebFrame):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        * Api/qwebpage.cpp:
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPagePrivate::createMainFrame):
+        (QWebPage::createFrame):
+        * Api/qwebpage.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::detachedFromParent3):
+        (WebCore::FrameLoaderClientQt::detachedFromParent4):
+        (WebCore::FrameLoaderClientQt::cancelPolicyCheck):
+        (WebCore::FrameLoaderClientQt::windowObjectCleared):
+        (WebCore::FrameLoaderClientQt::createFrame):
+        (WebCore::FrameLoaderClientQt::objectContentType):
+        (WebCore::FrameLoaderClientQt::createPlugin):
+        (WebCore::FrameLoaderClientQt::redirectDataToPlugin):
+        (WebCore::FrameLoaderClientQt::createJavaAppletWidget):
+        (WebCore::FrameLoaderClientQt::overrideMediaType):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-23  Oliver Hunt  <oliver@apple.com>
+
+        Reviewed by Adam.
+
+        Qt build stubs for Drop logic
+
+        * WebCoreSupport/DragClientQt.cpp: Added.
+        (WebCore::DragClientQt::actionMaskForDrag):
+        (WebCore::DragClientQt::willPerformDragDestinationAction):
+        * WebCoreSupport/DragClientQt.h: Added.
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::initView):
+
+2007-01-19  John Sullivan  <sullivan@apple.com>
+
+        Added stubs for new callbacks, to try to avoid breaking the Qt port.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishDocumentLoad):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-19  Anders Carlsson  <acarlsson@apple.com>
+
+        Try fixing the QT build.
+        
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::runJavaScriptAlert):
+        (WebCore::ChromeClientQt::runJavaScriptConfirm):
+        (WebCore::ChromeClientQt::runJavaScriptPrompt):
+        (WebCore::ChromeClientQt::setStatusbarText):
+        * WebCoreSupport/ChromeClientQt.h:
+
+2007-01-18  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Lars.
+
+        Implementing a little bit of load progress tracking in the Qt port.
+
+        * Api/qwebframe.cpp:
+        (QWebFrame::QWebFrame):
+        (QWebFrame::page):
+        * Api/qwebframe.h:
+        * Api/qwebframe_p.h:
+        (QWebFramePrivate::QWebFramePrivate):
+        * Api/qwebpage.h:
+        * QtLauncher/main.cpp:
+        (main):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::detachFrameLoader):
+        (WebCore::FrameLoaderClientQt::postProgressStartedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressFinishedNotification):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-17  Alice Liu  <alice.liu@apple.com>
+
+        Added these stubs to keep the Qt build from failing.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::didSetSelectionTypesForPasteboard):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-01-17  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Remove the inheritance from Shared<XxxClient> in the
+        client classes.
+
+        Answer asynchronously to most of the Policy checking methods
+        in FrameLoaderClientQt to avoid some crashes in the loader.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        * WebCoreSupport/ChromeClientQt.h:
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        * WebCoreSupport/ContextMenuClientQt.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        * WebCoreSupport/EditorClientQt.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::FrameLoaderClientQt):
+        (WebCore::FrameLoaderClientQt::callPolicyFunction):
+        (WebCore::FrameLoaderClientQt::slotCallPolicyFunction):
+        (WebCore::FrameLoaderClientQt::cancelPolicyCheck):
+        (WebCore::FrameLoaderClientQt::dispatchWillSubmitForm):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForMIMEType):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-17  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        change all notImplemented() macros to use qDebug
+        instead of fprintf(stder, ...)
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        * WebCoreSupport/EditorClientQt.cpp:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+
+2007-01-16  Alice Liu  <alice.liu@apple.com>
+
+        Added these stubs to keep the Qt build from failing.
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::didWriteSelectionToPasteboard):
+        * WebCoreSupport/EditorClientQt.h:
+
+2007-01-16  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Added the start of a public API to the Qt build
+        of WebKit. Currently we have QWebPage and QWebFrame
+        with a few small methods.
+
+        Converted the QtLauncher to use the new public API.
+
+        * Api/qwebframe.cpp: Added.
+        (QWebFrame::QWebFrame):
+        (QWebFrame::~QWebFrame):
+        (QWebFrame::addToJSWindowObject):
+        (QWebFrame::markup):
+        (QWebFrame::innerText):
+        (QWebFrame::renderTreeDump):
+        * Api/qwebframe.h: Added.
+        * Api/qwebframe_p.h: Added.
+        (QWebFramePrivate::QWebFramePrivate):
+        * Api/qwebpage.cpp: Added.
+        (QWebPagePrivate::QWebPagePrivate):
+        (QWebPagePrivate::~QWebPagePrivate):
+        (QWebPagePrivate::createMainFrame):
+        (QWebPage::QWebPage):
+        (QWebPage::~QWebPage):
+        (QWebPage::createFrame):
+        (QWebPage::open):
+        (QWebPage::mainFrame):
+        (QWebPage::sizeHint):
+        * Api/qwebpage.h: Added.
+        * Api/qwebpage_p.h: Added.
+        * QtLauncher/main.cpp:
+        (main):
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::ChromeClientQt):
+        (WebCore::ChromeClientQt::setWindowRect):
+        (WebCore::ChromeClientQt::windowRect):
+        (WebCore::ChromeClientQt::pageRect):
+        (WebCore::ChromeClientQt::focus):
+        (WebCore::ChromeClientQt::unfocus):
+        (WebCore::ChromeClientQt::canTakeFocus):
+        (WebCore::ChromeClientQt::takeFocus):
+        (WebCore::ChromeClientQt::createWindow):
+        (WebCore::ChromeClientQt::createModalDialog):
+        (WebCore::ChromeClientQt::show):
+        (WebCore::ChromeClientQt::addMessageToConsole):
+        (WebCore::ChromeClientQt::chromeDestroyed):
+        (WebCore::ChromeClientQt::canRunBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::closeWindowSoon):
+        * WebCoreSupport/ChromeClientQt.h:
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::detachFrameLoader):
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::partClearedInBegin):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-15  Anders Carlsson  <acarlsson@apple.com>
+
+        Fix build.
+        
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::postProgressStartedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressEstimateChangedNotification):
+        (WebCore::FrameLoaderClientQt::postProgressFinishedNotification):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-13  Lars Knoll <lars@trolltech.com>
+
+        Compile again after yesterdays changes.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::assignIdentifierToInitialRequest):
+        (WebCore::FrameLoaderClientQt::dispatchWillSendRequest):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveAuthenticationChallenge):
+        (WebCore::FrameLoaderClientQt::dispatchDidCancelAuthenticationChallenge):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveResponse):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveContentLength):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoading):
+        (WebCore::FrameLoaderClientQt::incrementProgress):
+        (WebCore::FrameLoaderClientQt::completeProgress):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-11  Brady Eidson  <beidson@apple.com>
+
+        Keep the fancy new FrameLoaderClientQt building with a small api change in WebCore
+        Yay for the loader on QT!
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveAuthenticationChallenge):
+        (WebCore::FrameLoaderClientQt::dispatchDidCancelAuthenticationChallenge):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-11  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Darin
+
+        Start using the loader in the Qt port.
+
+        * QtLauncher/main.cpp:
+        (main):
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::FrameLoaderClientQt):
+        (WebCore::FrameLoaderClientQt::~FrameLoaderClientQt):
+        (WebCore::FrameLoaderClientQt::setFrame):
+        (WebCore::FrameLoaderClientQt::detachFrameLoader):
+        (WebCore::FrameLoaderClientQt::makeDocumentView):
+        (WebCore::FrameLoaderClientQt::makeRepresentation):
+        (WebCore::FrameLoaderClientQt::setCopiesOnScroll):
+        (WebCore::FrameLoaderClientQt::dispatchDidStartProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::cancelPolicyCheck):
+        (WebCore::FrameLoaderClientQt::dispatchWillSubmitForm):
+        (WebCore::FrameLoaderClientQt::progressStarted):
+        (WebCore::FrameLoaderClientQt::progressCompleted):
+        (WebCore::FrameLoaderClientQt::setMainFrameDocumentReady):
+        (WebCore::FrameLoaderClientQt::clearArchivedResources):
+        (WebCore::FrameLoaderClientQt::canShowMIMEType):
+        (WebCore::FrameLoaderClientQt::representationExistsForURLScheme):
+        (WebCore::FrameLoaderClientQt::provisionalLoadStarted):
+        (WebCore::FrameLoaderClientQt::prepareForDataSourceReplacement):
+        (WebCore::FrameLoaderClientQt::frameLoaderDestroyed):
+        (WebCore::FrameLoaderClientQt::canHandleRequest):
+        (WebCore::FrameLoaderClientQt::shouldGoToHistoryItem):
+        (WebCore::FrameLoaderClientQt::canCachePage):
+        (WebCore::FrameLoaderClientQt::committedLoad):
+        (WebCore::FrameLoaderClientQt::cancelledError):
+        (WebCore::FrameLoaderClientQt::cannotShowURLError):
+        (WebCore::FrameLoaderClientQt::interruptForPolicyChangeError):
+        (WebCore::FrameLoaderClientQt::cannotShowMIMETypeError):
+        (WebCore::FrameLoaderClientQt::fileDoesNotExistError):
+        (WebCore::FrameLoaderClientQt::shouldFallBack):
+        (WebCore::FrameLoaderClientQt::createDocumentLoader):
+        (WebCore::FrameLoaderClientQt::dispatchWillSendRequest):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveResponse):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForMIMEType):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+        (WebCore::FrameLoaderClientQt::willUseArchive):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-11  George Staikos  <staikos@kde.org>
+
+        Fix Qt Build.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        (WebCore::ContextMenuClientQt::searchWithGoogle):
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2007-01-06  George Staikos  <staikos@kde.org>
+
+        Reviewed by Brady.
+
+        Make it link.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setMainDocumentError):
+        (WebCore::FrameLoaderClientQt::committedLoad):
+        (WebCore::FrameLoaderClientQt::cancelledError):
+        (WebCore::FrameLoaderClientQt::cannotShowURLError):
+        (WebCore::FrameLoaderClientQt::interruptForPolicyChangeError):
+        (WebCore::FrameLoaderClientQt::cannotShowMIMETypeError):
+        (WebCore::FrameLoaderClientQt::fileDoesNotExistError):
+        (WebCore::FrameLoaderClientQt::shouldFallBack):
+        (WebCore::FrameLoaderClientQt::createDocumentLoader):
+        (WebCore::FrameLoaderClientQt::download):
+        (WebCore::FrameLoaderClientQt::dispatchWillSendRequest):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveResponse):
+        (WebCore::FrameLoaderClientQt::dispatchDidReceiveContentLength):
+        (WebCore::FrameLoaderClientQt::dispatchDidFinishLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoading):
+        (WebCore::FrameLoaderClientQt::dispatchDidLoadResourceFromMemoryCache):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailProvisionalLoad):
+        (WebCore::FrameLoaderClientQt::dispatchDidFailLoad):
+        (WebCore::FrameLoaderClientQt::dispatchCreatePage):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForMIMEType):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNewWindowAction):
+        (WebCore::FrameLoaderClientQt::dispatchDecidePolicyForNavigationAction):
+        (WebCore::FrameLoaderClientQt::dispatchUnableToImplementPolicy):
+        (WebCore::FrameLoaderClientQt::incrementProgress):
+        (WebCore::FrameLoaderClientQt::completeProgress):
+        (WebCore::FrameLoaderClientQt::startDownload):
+        (WebCore::FrameLoaderClientQt::willUseArchive):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2007-01-05  Lars Knoll <lars@trolltech.com>
+
+        Make the Qt build compile again
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::canTakeFocus):
+        (WebCore::ChromeClientQt::takeFocus):
+        * WebCoreSupport/ChromeClientQt.h:
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        (WebCore::ContextMenuClientQt::getCustomMenuFromDefaultItems):
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2007-01-03  Lars Knoll <lars@trolltech.com>
+
+        Fix the Qt build
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::setDocumentViewFromPageCache):
+        (WebCore::FrameLoaderClientQt::updateGlobalHistoryForStandardLoad):
+        (WebCore::FrameLoaderClientQt::updateGlobalHistoryForReload):
+        (WebCore::FrameLoaderClientQt::shouldGoToHistoryItem):
+        (WebCore::FrameLoaderClientQt::saveScrollPositionAndViewStateToItem):
+        (WebCore::FrameLoaderClientQt::saveDocumentViewToPageCache):
+        (WebCore::FrameLoaderClientQt::canCachePage):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+
+2006-12-29  George Staikos  <staikos@kde.org>
+
+        Add missing notimplemented.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::frameLoaderDestroyed):
+        (WebCore::FrameLoaderClientQt::canHandleRequest):
+        (WebCore::FrameLoaderClientQt::partClearedInBegin):
+
+2006-12-21  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::hasWebView):
+        (WebCore::FrameLoaderClientQt::hasFrameView):
+        (WebCore::FrameLoaderClientQt::dispatchDidHandleOnloadEvents):
+        (WebCore::FrameLoaderClientQt::dispatchDidFirstLayout):
+        (WebCore::FrameLoaderClientQt::setTitle):
+        (WebCore::FrameLoaderClientQt::partClearedInBegin):
+        * WebCoreSupport/FrameLoaderClientQt.h:
+                 Remove some runtimw warnings
+                 Add partClearedInBegin forwarding call, so
+                 I can catch this in the layout tests.
+
+2006-12-19  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Rob.
+
+        * WebCoreSupport/ChromeClientQt.cpp:
+        (WebCore::ChromeClientQt::canRunBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::runBeforeUnloadConfirmPanel):
+        (WebCore::ChromeClientQt::closeWindowSoon):
+        * WebCoreSupport/ChromeClientQt.h:
+                Make it compile.
+
+2006-12-16  Zack Rusin  <zack@kde.org>
+
+        Adjust the client to the most recent interface.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        (WebCore::ContextMenuClientQt::contextMenuDestroyed):
+        (WebCore::ContextMenuClientQt::addCustomContextMenuItems):
+        (WebCore::ContextMenuClientQt::contextMenuItemSelected):
+        (WebCore::ContextMenuClientQt::downloadURL):
+        (WebCore::ContextMenuClientQt::copyImageToClipboard):
+        (WebCore::ContextMenuClientQt::lookUpInDictionary):
+        * WebCoreSupport/ContextMenuClientQt.h:
+
+2006-12-14  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        * QtLauncher/QtLauncher.pro: Link this little test program
+        with rpath, for convenience. (This is never going to get installed
+        anyway)
+
+2006-12-12  George Staikos  <staikos@kde.org>
+
+        Reviewed by Alexey.
+
+        Fix the Qt build again.
+
+        * WebCoreSupport/ContextMenuClientQt.cpp:
+        (WebCore::ContextMenuClientQt::speak):
+        (WebCore::ContextMenuClientQt::stopSpeaking):
+        * WebCoreSupport/ContextMenuClientQt.h:
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::toggleContinuousSpellChecking):
+        (WebCore::EditorClientQt::toggleGrammarChecking):
+        * WebCoreSupport/EditorClientQt.h:
+
+2006-12-10  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Add a default user agent for now.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+        (WebCore::FrameLoaderClientQt::userAgent):
+
+2006-12-10  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Comment out a notImplemented() warning
+
+        * WebCoreSupport/EditorClientQt.cpp:
+        (WebCore::EditorClientQt::clearUndoRedoOperations):
+
+2006-12-10  Zack Rusin  <zack@kde.org>
+
+        Print out the method name if it's unimplemented.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp:
+
+2006-12-10  Zack Rusin  <zack@kde.org>
+
+        Moving the clients from platform to their final location.
+
+        * WebCoreSupport/FrameLoaderClientQt.cpp: Added.
+        * WebCoreSupport/FrameLoaderClientQt.h: Added.
+        * WebCoreSupport/ChromeClientQt.cpp: Added.
+        * WebCoreSupport/ChromeClientQt.h: Added.
+        * WebCoreSupport/ContextMenuClientQt.cpp: Added.
+        * WebCoreSupport/ContextMenuClientQt.h: Added.
+        * WebCoreSupport/EditorClientQt.cpp: Added.
+        * WebCoreSupport/EditorClientQt.h: Added.
+
+2006-12-10  Zack Rusin  <zack@kde.org>
+
+        Adjusting to the changes in platform/qt.
+
+        * QtLauncher/main.cpp:
+        (main):
+
+2006-12-09  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Make it possible to build WebKit with qmake.
+
+        * QtLauncher/QtLauncher.pro: Added.
+        * QtLauncher/main.cpp:
+
+2006-12-08  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Maciej.
+
+        Fix the build after the recent changes.
+
+        * QtLauncher/main.cpp:
+        (main):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::initView):
+
+2006-11-19  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        http://bugs.webkit.org/show_bug.cgi?id=11649
+        Fix Qt-only build
+
+        * QtLauncher/CMakeLists.txt:
+
+2006-11-17  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Mitz. Landed by Niko.
+
+        Adjusting to the new api.
+
+        * QtLauncher/main.cpp:
+        (main):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::initView):
+
+2006-11-10  Zack Rusin  <zack@kde.org>
+
+        Reviewed and landed by Anders.
+
+        Adjusting to the recent loader changes, making it compile
+        and work.
+
+        * QtLauncher/main.cpp:
+        (main):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::closeUrl):
+        (WebKitPart::initView):
+
+2006-11-03  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Maciej.
+
+        Fixing compile on both Qt and KDE platforms.
+
+        * QtLauncher/main.cpp:
+        (main): url has already been defined
+        * WebKitPart/WebKitPartBrowserExtension.cpp: removing
+        duplicate implementation of this class
+
+2006-10-31  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Maciej, landed by Anders.
+
+        * QtLauncher/CMakeLists.txt: Make linkage against kde libraries
+          optional
+        * QtLauncher/main.cpp: Make it compile without KDE.
+        (main):
+
+2006-11-02  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Maciej, landed by Anders.
+
+        * QtLauncher/main.cpp:
+        (main): Declare our frame as main frame to the Page object.
+        Fixes crashes on various web sites
+
+2006-10-31  Zack Rusin  <zack@kde.org>
+
+        Reviewed by Mitz.
+
+        Fix the Qt build after last nights changes.
+
+        * QtLauncher/CMakeLists.txt:
+        * WebKitPart/CMakeLists.txt:
+
+2006-10-26  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by Darin.
+
+        Fix Qt/Linux build.
+
+        * QtLauncher/main.cpp:
+        (main):
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::openUrl):
+
+2006-10-24  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by Maciej.
+
+        Fix Qt/Linux build.
+
+        - Remove BrowserExtensionQt, move it's methods to Page/FrameQt.
+        - Fix CMakeLists.txt to include platform/network.
+
+        * QtLauncher/CMakeLists.txt:
+        * WebKitPart/CMakeLists.txt:
+
+2006-10-24  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Darin.
+
+        * QtLauncher/CMakeLists.txt, WebKitPart/CMakeLists.txt: Added project name to
+          kde4_automoc macro, as required by the latest KDE4 cmake module.
+
+2006-10-20  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed and landed by Anders.
+
+        Adapt to FrameQtClient changes, and provide some kind of status
+        information to the KPart wheter we're loading or not (started/completed signaling).
+
+        * WebKitPart/CMakeLists.txt:
+        * WebKitPart/WebKitPart.cpp:
+        (WebKitPart::WebKitPart):
+        (WebKitPart::~WebKitPart):
+        (WebKitPart::openUrl):
+        (WebKitPart::initView):
+        * WebKitPart/WebKitPart.h:
+        * WebKitPart/WebKitPartBrowserExtension.cpp: Added.
+        (WebKitPartBrowserExtension::WebKitPartBrowserExtension):
+        (WebKitPartBrowserExtension::~WebKitPartBrowserExtension):
+        * WebKitPart/WebKitPartBrowserExtension.h: Added.
+        * WebKitPart/WebKitPartClient.cpp:
+        (WebKitPartClient::WebKitPartClient):
+        (WebKitPartClient::loadFinished):
+        * WebKitPart/WebKitPartClient.h:
+        * WebKitPart/WebKitPartInterface.h:
+
+2006-10-02  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by eseidel.  Landed by eseidel.
+
+        Fix last remaining issue Qt/Linux build with gcc3.
+
+        * WebKitPart/WebKitPart.h: Remove Q_PROPERTY usage, which is not needed and made problems.
+
+2006-09-10  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed and landed by ap.
+
+        Fix QtLauncher - it is supposed to create a FrameView on its own nowadays.
+
+        * QtLauncher/main.cpp:
+        (main):
+
+2006-09-04  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by Tim H.
+
+        Fixes last part of: http://bugs.webkit.org/show_bug.cgi?id=10644
+        Move QtLauncher down to WebKitQt.
+
+        * QtLauncher/CMakeLists.txt: Added.
+        * QtLauncher/main.cpp: Added.
+        (main):
+
+2006-09-04  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by Darin. Final polish by Sam.
+
+        Fixes parts of: http://bugs.webkit.org/show_bug.cgi?id=10644
+        Add WebKitPart, an embeddable KPart for the KDE platform.
+
+        * WebKitPart/CMakeLists.txt: Added.
+        * WebKitPart/WebKitFactory.cpp: Added.
+        (WebKitFactory::WebKitFactory):
+        (WebKitFactory::~WebKitFactory):
+        (WebKitFactory::createPartObject):
+        (WebKitFactory::instance):
+        (WebKitFactory::ref):
+        (WebKitFactory::deref):
+        (init_libWebKitPart):
+        * WebKitPart/WebKitFactory.h: Added.
+        * WebKitPart/WebKitPart.cpp: Added.
+        (WebKitPart::WebKitPart):
+        (WebKitPart::~WebKitPart):
+        (WebKitPart::openFile):
+        (WebKitPart::openUrl):
+        (WebKitPart::closeUrl):
+        (WebKitPart::parentPart):
+        (WebKitPart::frame):
+        (WebKitPart::initView):
+        * WebKitPart/WebKitPart.desktop: Added.
+        * WebKitPart/WebKitPart.h: Added.
+        (WebKitPart::):
+        * WebKitPart/WebKitPart.rc: Added.
+        * WebKitPart/WebKitPartBrowser.rc: Added.
+        * WebKitPart/WebKitPartClient.cpp: Added.
+        (WebKitPartClient::WebKitPartClient):
+        (WebKitPartClient::~WebKitPartClient):
+        * WebKitPart/WebKitPartClient.h: Added.
+        * WebKitPart/WebKitPartInterface.cpp: Added.
+        (WebKitPartInterface::WebKitPartInterface):
+        (WebKitPartInterface::~WebKitPartInterface):
+        (WebKitPartInterface::url):
+        (WebKitPartInterface::closeURL):
+        * WebKitPart/WebKitPartInterface.h: Added.
+        * WebKitPart/org.kde.WebKitPart.xml: Added.
+

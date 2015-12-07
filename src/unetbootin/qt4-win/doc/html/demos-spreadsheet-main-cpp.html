@@ -1,0 +1,918 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: main.cpp Example File (demos/spreadsheet/main.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">main.cpp Example File<br /><span class="small-subtitle">demos/spreadsheet/main.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ static QString encode_pos(int row, int col) {
+     return QString(col + 'A') + QString::number(row + 1);
+ }
+
+ static void decode_pos(const QString &amp;pos, int *row, int *col)
+ {
+     if (pos.isEmpty()) {
+         *col = -1;
+         *row = -1;
+     } else {
+         *col = pos.at(0).toLatin1() - 'A';
+         *row = pos.right(pos.size() - 1).toInt() - 1;
+     }
+ }
+
+ class SpreadSheetDelegate : public QItemDelegate
+ {
+     Q_OBJECT
+ public:
+     SpreadSheetDelegate(QObject *parent = 0);
+     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &amp;,
+         const QModelIndex &amp;index) const;
+     void setEditorData(QWidget *editor, const QModelIndex &amp;index) const;
+     void setModelData(QWidget *editor, QAbstractItemModel *model,
+         const QModelIndex &amp;index) const;
+ private slots:
+     void commitAndCloseEditor();
+ };
+
+ SpreadSheetDelegate::SpreadSheetDelegate(QObject *parent)
+     : QItemDelegate(parent) {}
+
+ QWidget *SpreadSheetDelegate::createEditor(QWidget *parent, const QStyleOptionViewItem&amp;,
+     const QModelIndex &amp;index) const
+ {
+     if(index.column() == 1){
+         QDateTimeEdit *editor = new QDateTimeEdit(parent);
+         editor-&gt;setDisplayFormat(&quot;dd/M/yyyy&quot;);
+         editor-&gt;setCalendarPopup(true);
+         return editor;
+     }
+     QLineEdit *editor = new QLineEdit(parent);
+     <span class="comment">//</span>create a completer with the strings in the column as model.
+     QStringList allStrings;
+     for(int i = 1; i&lt;index.model()-&gt;rowCount(); i++){
+         QString strItem(index.model()-&gt;data(index.sibling(i, index.column()), Qt::EditRole).toString());
+         if(!allStrings.contains(strItem))
+             allStrings.append(strItem);
+     }
+     QCompleter *autoComplete = new QCompleter(allStrings);
+     editor-&gt;setCompleter(autoComplete);
+     connect(editor, SIGNAL(editingFinished()), this, SLOT(commitAndCloseEditor()));
+     return editor;
+ }
+
+ void SpreadSheetDelegate::commitAndCloseEditor()
+ {
+     QLineEdit *editor = qobject_cast&lt;QLineEdit *&gt;(sender());
+     emit commitData(editor);
+     emit closeEditor(editor);
+ }
+
+ void SpreadSheetDelegate::setEditorData(QWidget *editor, const QModelIndex &amp;index) const
+ {
+     QLineEdit *edit = qobject_cast&lt;QLineEdit *&gt;(editor);
+     if (edit) {
+         edit-&gt;setText(index.model()-&gt;data(index, Qt::EditRole).toString());
+     }
+     else {
+         QDateTimeEdit *dateEditor = qobject_cast&lt;QDateTimeEdit *&gt;(editor);
+         if (dateEditor) {
+             dateEditor-&gt;setDate(QDate::fromString(index.model()-&gt;data(index, Qt::EditRole).toString(), &quot;d/M/yyyy&quot;));
+         }
+     }
+ }
+
+ void SpreadSheetDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+     const QModelIndex &amp;index) const
+ {
+     QLineEdit *edit = qobject_cast&lt;QLineEdit *&gt;(editor);
+     if (edit) {
+         model-&gt;setData(index, edit-&gt;text());
+     }
+     else {
+         QDateTimeEdit *dateEditor = qobject_cast&lt;QDateTimeEdit *&gt;(editor);
+         if (dateEditor) {
+             model-&gt;setData(index, dateEditor-&gt;date().toString(&quot;dd/M/yyyy&quot;));
+         }
+     }
+ }
+
+ class SpreadSheetItem : public QTableWidgetItem
+ {
+ public:
+     SpreadSheetItem();
+     SpreadSheetItem(const QString &amp;text);
+
+     QTableWidgetItem *clone() const;
+
+     QVariant data(int role) const;
+     void setData(int role, const QVariant &amp;value);
+     QVariant display() const;
+
+     inline QString formula() const
+         { return QTableWidgetItem::data(Qt::DisplayRole).toString(); }
+
+     static QVariant computeFormula(const QString &amp;formula,
+                                    const QTableWidget *widget,
+                                    const QTableWidgetItem *self = 0);
+
+ private:
+     mutable bool isResolving;
+ };
+
+ SpreadSheetItem::SpreadSheetItem()
+     : QTableWidgetItem(), isResolving(false) {}
+
+ SpreadSheetItem::SpreadSheetItem(const QString &amp;text)
+     : QTableWidgetItem(text), isResolving(false) {}
+
+ QTableWidgetItem *SpreadSheetItem::clone() const
+ {
+     SpreadSheetItem *item = new SpreadSheetItem();
+     *item = *this;
+     return item;
+ }
+
+ QVariant SpreadSheetItem::data(int role) const
+ {
+     if (role == Qt::EditRole || role == Qt::StatusTipRole)
+         return formula();
+
+     if (role == Qt::DisplayRole)
+         return display();
+
+     QString t = display().toString();
+     bool isNumber = false;
+     int number = t.toInt(&amp;isNumber);
+
+     if (role == Qt::TextColorRole) {
+         if (!isNumber)
+             return qVariantFromValue(QColor(Qt::black));
+         else if (number &lt; 0)
+             return qVariantFromValue(QColor(Qt::red));
+         return qVariantFromValue(QColor(Qt::blue));
+     }
+
+     if (role == Qt::TextAlignmentRole)
+         if (!t.isEmpty() &amp;&amp; (t.at(0).isNumber() || t.at(0) == '-'))
+             return (int)(Qt::AlignRight | Qt::AlignVCenter);
+
+     return QTableWidgetItem::data(role);
+ }
+
+ void SpreadSheetItem::setData(int role, const QVariant &amp;value)
+ {
+     QTableWidgetItem::setData(role, value);
+     if (tableWidget())
+         tableWidget()-&gt;viewport()-&gt;update();
+ }
+
+ QVariant SpreadSheetItem::display() const
+ {
+     <span class="comment">//</span> avoid circular dependencies
+     if (isResolving)
+         return QVariant();
+     isResolving = true;
+     QVariant result = computeFormula(formula(), tableWidget(), this);
+     isResolving = false;
+     return result;
+ }
+
+ QVariant SpreadSheetItem::computeFormula(const QString &amp;formula,
+                                          const QTableWidget *widget,
+                                          const QTableWidgetItem *self)
+ {
+     <span class="comment">//</span> check if the string is actually a formula or not
+     QStringList list = formula.split(' ');
+     if (list.isEmpty() || !widget)
+         return formula; <span class="comment">//</span> its a normal string
+
+     QString op = list.value(0).toLower();
+
+     int firstRow = -1;
+     int firstCol = -1;
+     int secondRow = -1;
+     int secondCol = -1;
+
+     if (list.count() &gt; 1)
+         decode_pos(list.value(1), &amp;firstRow, &amp;firstCol);
+     if (list.count() &gt; 2)
+         decode_pos(list.value(2), &amp;secondRow, &amp;secondCol);
+
+     const QTableWidgetItem *start = widget-&gt;item(firstRow, firstCol);
+     const QTableWidgetItem *end = widget-&gt;item(secondRow, secondCol);
+
+     int firstVal = start ? start-&gt;text().toInt() : 0;
+     int secondVal = end ? end-&gt;text().toInt() : 0;
+
+     QVariant result;
+     if (op == &quot;sum&quot;) {
+         int sum = 0;
+         for (int r = firstRow; r &lt;= secondRow; ++r) {
+             for (int c = firstCol; c &lt;= secondCol; ++c) {
+                 const QTableWidgetItem *tableItem = widget-&gt;item(r, c);
+                 if (tableItem &amp;&amp; tableItem != self)
+                     sum += tableItem-&gt;text().toInt();
+             }
+         }
+         result = sum;
+     } else if (op == &quot;+&quot;) {
+         result = (firstVal + secondVal);
+     } else if (op == &quot;-&quot;) {
+         result = (firstVal - secondVal);
+     } else if (op == &quot;*&quot;) {
+         result = (firstVal * secondVal);
+     } else if (op == &quot;/&quot;) {
+         if (secondVal == 0)
+             result = QString(&quot;nan&quot;);
+         else
+             result = (firstVal / secondVal);
+     } else if (op == &quot;=&quot;) {
+         if (start)
+         result = start-&gt;text();
+     } else {
+         result = formula;
+     }
+
+     return result;
+ }
+
+ #if !defined(QT_NO_DBUS) &amp;&amp; defined(Q_OS_UNIX)
+ #include &lt;QtDBus/QtDBus&gt;
+
+ class SpreadSheetAdaptor : public QDBusAbstractAdaptor
+ {
+     Q_OBJECT
+     Q_CLASSINFO(&quot;D-Bus Interface&quot;, &quot;com.trolltech.DBus.SpreadSheetDemo&quot;)
+
+ public:
+     SpreadSheetAdaptor(QTableWidget *table) : QDBusAbstractAdaptor(table), table(table)
+     { QDBusConnection::sessionBus().registerObject(&quot;/SpreadSheetDemo&quot;, table); }
+
+ public slots:
+     QString computeFormula(const QString &amp;formula)
+     { return SpreadSheetItem::computeFormula(formula, table).toString(); }
+ private:
+     QTableWidget *table;
+ };
+ #endif <span class="comment">//</span> QT_NO_DBUS
+
+ class SpreadSheet : public QMainWindow
+ {
+     Q_OBJECT
+ public:
+     SpreadSheet(int rows, int cols, QWidget *parent = 0);
+
+ public slots:
+     void updateStatus(QTableWidgetItem *item);
+     void updateColor(QTableWidgetItem *item);
+     void updateLineEdit(QTableWidgetItem *item);
+     void returnPressed();
+     void selectColor();
+     void selectFont();
+     void clear();
+     void showAbout();
+
+     void actionSum();
+     void actionSubtract();
+     void actionAdd();
+     void actionMultiply();
+     void actionDivide();
+
+ protected:
+     void setupContextMenu();
+     void setupContents();
+
+     void setupMenuBar();
+     void createActions();
+
+     void actionMath_helper(const QString &amp;title, const QString &amp;op);
+     bool runInputDialog(const QString &amp;title,
+                         const QString &amp;c1Text,
+                         const QString &amp;c2Text,
+                         const QString &amp;opText,
+                         const QString &amp;outText,
+                         QString *cell1, QString *cell2, QString *outCell);
+
+ private:
+     QToolBar *toolBar;
+     QAction *colorAction;
+     QAction *fontAction;
+     QAction *firstSeparator;
+     QAction *cell_sumAction;
+     QAction *cell_addAction;
+     QAction *cell_subAction;
+     QAction *cell_mulAction;
+     QAction *cell_divAction;
+     QAction *secondSeparator;
+     QAction *clearAction;
+     QAction *aboutSpreadSheet;
+     QAction *exitAction;
+
+     QLabel *cellLabel;
+     QTableWidget *table;
+     QLineEdit *formulaInput;
+ };
+
+ SpreadSheet::SpreadSheet(int rows, int cols, QWidget *parent)
+     : QMainWindow(parent)
+ {
+     addToolBar(toolBar = new QToolBar());
+     formulaInput = new QLineEdit();
+
+     cellLabel = new QLabel(toolBar);
+     cellLabel-&gt;setMinimumSize(80, 0);
+
+     toolBar-&gt;addWidget(cellLabel);
+     toolBar-&gt;addWidget(formulaInput);
+
+     table = new QTableWidget(rows, cols, this);
+     for (int c = 0; c &lt; cols; ++c) {
+         QString character(QChar('A' + c));
+         table-&gt;setHorizontalHeaderItem(c, new QTableWidgetItem(character));
+     }
+     table-&gt;setItemPrototype(table-&gt;item(rows - 1, cols - 1));
+     table-&gt;setItemDelegate(new SpreadSheetDelegate());
+ #if !defined(QT_NO_DBUS) &amp;&amp; defined(Q_OS_UNIX)
+     new SpreadSheetAdaptor(table);
+ #endif
+     createActions();
+
+     updateColor(0);
+     setupMenuBar();
+     setupContextMenu();
+     setupContents();
+     setCentralWidget(table);
+
+     statusBar();
+     connect(table, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
+             this, SLOT(updateStatus(QTableWidgetItem*)));
+     connect(table, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
+             this, SLOT(updateColor(QTableWidgetItem*)));
+     connect(table, SIGNAL(currentItemChanged(QTableWidgetItem*, QTableWidgetItem*)),
+             this, SLOT(updateLineEdit(QTableWidgetItem*)));
+     connect(table, SIGNAL(itemChanged(QTableWidgetItem*)),
+             this, SLOT(updateStatus(QTableWidgetItem*)));
+     connect(formulaInput, SIGNAL(returnPressed()), this, SLOT(returnPressed()));
+     connect(table, SIGNAL(itemChanged(QTableWidgetItem*)),
+             this, SLOT(updateLineEdit(QTableWidgetItem*)));
+     setWindowTitle(tr(&quot;Spreadsheet&quot;));
+ }
+
+ void SpreadSheet::createActions()
+ {
+     cell_sumAction = new QAction(tr(&quot;Sum&quot;), this);
+     connect(cell_sumAction, SIGNAL(triggered()), this, SLOT(actionSum()));
+
+     cell_addAction = new QAction(tr(&quot;&amp;Add&quot;), this);
+     cell_addAction-&gt;setShortcut(Qt::CTRL | Qt::Key_Plus);
+     connect(cell_addAction, SIGNAL(triggered()), this, SLOT(actionAdd()));
+
+     cell_subAction = new QAction(tr(&quot;&amp;Subtract&quot;), this);
+     cell_subAction-&gt;setShortcut(Qt::CTRL | Qt::Key_Minus);
+     connect(cell_subAction, SIGNAL(triggered()), this, SLOT(actionSubtract()));
+
+     cell_mulAction = new QAction(tr(&quot;&amp;Multiply&quot;), this);
+     cell_mulAction-&gt;setShortcut(Qt::CTRL | Qt::Key_multiply);
+     connect(cell_mulAction, SIGNAL(triggered()), this, SLOT(actionMultiply()));
+
+     cell_divAction = new QAction(tr(&quot;&amp;Divide&quot;), this);
+     cell_divAction-&gt;setShortcut(Qt::CTRL | Qt::Key_division);
+     connect(cell_divAction, SIGNAL(triggered()), this, SLOT(actionDivide()));
+
+     fontAction = new QAction(tr(&quot;Font...&quot;), this);
+     fontAction-&gt;setShortcut(Qt::CTRL|Qt::Key_F);
+     connect(fontAction, SIGNAL(triggered()), this, SLOT(selectFont()));
+
+     colorAction = new QAction(QPixmap(16, 16), tr(&quot;Background &amp;Color...&quot;), this);
+     connect(colorAction, SIGNAL(triggered()), this, SLOT(selectColor()));
+
+     clearAction = new QAction(tr(&quot;Clear&quot;), this);
+     clearAction-&gt;setShortcut(Qt::Key_Delete);
+     connect(clearAction, SIGNAL(triggered()), this, SLOT(clear()));
+
+     aboutSpreadSheet = new QAction(tr(&quot;About Spreadsheet&quot;), this);
+     connect(aboutSpreadSheet, SIGNAL(triggered()), this, SLOT(showAbout()));
+
+     exitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+     firstSeparator = new QAction(this);
+     firstSeparator-&gt;setSeparator(true);
+
+     secondSeparator = new QAction(this);
+     secondSeparator-&gt;setSeparator(true);
+
+ }
+
+ void SpreadSheet::setupMenuBar()
+ {
+     QMenu *fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     QMenu *cellMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Cell&quot;));
+     cellMenu-&gt;addAction(cell_addAction);
+     cellMenu-&gt;addAction(cell_subAction);
+     cellMenu-&gt;addAction(cell_mulAction);
+     cellMenu-&gt;addAction(cell_divAction);
+     cellMenu-&gt;addAction(cell_sumAction);
+     cellMenu-&gt;addSeparator();
+     cellMenu-&gt;addAction(colorAction);
+     cellMenu-&gt;addAction(fontAction);
+
+     menuBar()-&gt;addSeparator();
+
+     QMenu *aboutMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     aboutMenu-&gt;addAction(aboutSpreadSheet);
+ }
+
+ void SpreadSheet::updateStatus(QTableWidgetItem *item)
+ {
+     if (item &amp;&amp; item == table-&gt;currentItem()) {
+         statusBar()-&gt;showMessage(item-&gt;data(Qt::StatusTipRole).toString(), 1000);
+         cellLabel-&gt;setText(&quot;Cell: (&quot; + encode_pos(table-&gt;row(item), table-&gt;column(item)) + &quot;)&quot;);
+     }
+ }
+
+ void SpreadSheet::updateColor(QTableWidgetItem *item)
+ {
+     QPixmap pix(16, 16);
+     QColor col;
+     if (item)
+         col = item-&gt;backgroundColor();
+     if (!col.isValid())
+         col = palette().base().color();
+
+     QPainter pt(&amp;pix);
+     pt.fillRect(0, 0, 16, 16, col);
+
+     QColor lighter = col.light();
+     pt.setPen(lighter);
+     QPoint lightFrame[] = { QPoint(0, 15), QPoint(0, 0), QPoint(15, 0) };
+     pt.drawPolyline(lightFrame, 3);
+
+     pt.setPen(col.dark());
+     QPoint darkFrame[] = { QPoint(1, 15), QPoint(15, 15), QPoint(15, 1) };
+     pt.drawPolyline(darkFrame, 3);
+
+     pt.end();
+
+     colorAction-&gt;setIcon(pix);
+ }
+
+ void SpreadSheet::updateLineEdit(QTableWidgetItem *item)
+ {
+     if (item != table-&gt;currentItem())
+         return;
+     if (item)
+         formulaInput-&gt;setText(item-&gt;data(Qt::EditRole).toString());
+     else
+         formulaInput-&gt;clear();
+ }
+
+ void SpreadSheet::returnPressed()
+ {
+     QString text = formulaInput-&gt;text();
+     int row = table-&gt;currentRow();
+     int col = table-&gt;currentColumn();
+     QTableWidgetItem *item = table-&gt;item(row, col);
+     if (!item)
+         table-&gt;setItem(row, col, new SpreadSheetItem(text));
+     else
+         item-&gt;setData(Qt::EditRole, text);
+     table-&gt;viewport()-&gt;update();
+ }
+
+ void SpreadSheet::selectColor()
+ {
+     QTableWidgetItem *item = table-&gt;currentItem();
+     QColor col = item ? item-&gt;backgroundColor() : table-&gt;palette().base().color();
+     col = QColorDialog::getColor(col, this);
+     if (!col.isValid())
+         return;
+
+     QList&lt;QTableWidgetItem*&gt; selected = table-&gt;selectedItems();
+     if (selected.count() == 0)
+         return;
+
+     foreach(QTableWidgetItem *i, selected)
+         if (i) i-&gt;setBackgroundColor(col);
+
+     updateColor(table-&gt;currentItem());
+ }
+
+ void SpreadSheet::selectFont()
+ {
+     QList&lt;QTableWidgetItem*&gt; selected = table-&gt;selectedItems();
+     if (selected.count() == 0)
+         return;
+     bool ok = false;
+     QFont fnt = QFontDialog::getFont(&amp;ok, font(), this);
+     if (!ok)
+         return;
+     foreach(QTableWidgetItem *i, selected)
+         if (i) i-&gt;setFont(fnt);
+ }
+
+ bool SpreadSheet::runInputDialog(const QString &amp;title,
+                                  const QString &amp;c1Text,
+                                  const QString &amp;c2Text,
+                                  const QString &amp;opText,
+                                  const QString &amp;outText,
+                                  QString *cell1, QString *cell2, QString *outCell)
+ {
+
+     QStringList rows, cols;
+     for (int c = 0; c &lt; table-&gt;columnCount(); ++c)
+         cols &lt;&lt; QChar('A' + c);
+     for (int r = 0; r &lt; table-&gt;rowCount(); ++r)
+         rows &lt;&lt; QString::number(1 + r);
+
+     QDialog addDialog(this);
+     addDialog.setWindowTitle(title);
+
+     QGroupBox group(title, &amp;addDialog);
+     group.setMinimumSize(250, 100);
+
+     QLabel cell1Label(c1Text, &amp;group);
+     QComboBox cell1RowInput(&amp;group);
+     int c1Row, c1Col;
+     decode_pos(*cell1, &amp;c1Row, &amp;c1Col);
+     cell1RowInput.addItems(rows);
+     cell1RowInput.setCurrentIndex(c1Row);
+     QComboBox cell1ColInput(&amp;group);
+     cell1ColInput.addItems(cols);
+     cell1ColInput.setCurrentIndex(c1Col);
+
+     QLabel operatorLabel(opText, &amp;group);
+     operatorLabel.setAlignment(Qt::AlignHCenter);
+
+     QLabel cell2Label(c2Text, &amp;group);
+     QComboBox cell2RowInput(&amp;group);
+     int c2Row, c2Col;
+     decode_pos(*cell2, &amp;c2Row, &amp;c2Col);
+     cell2RowInput.addItems(rows);
+     cell2RowInput.setCurrentIndex(c2Row);
+     QComboBox cell2ColInput(&amp;group);
+     cell2ColInput.addItems(cols);
+     cell2ColInput.setCurrentIndex(c2Col);
+
+     QLabel equalsLabel(&quot;=&quot;, &amp;group);
+     equalsLabel.setAlignment(Qt::AlignHCenter);
+
+     QLabel outLabel(outText, &amp;group);
+     QComboBox outRowInput(&amp;group);
+     int outRow, outCol;
+     decode_pos(*outCell, &amp;outRow, &amp;outCol);
+     outRowInput.addItems(rows);
+     outRowInput.setCurrentIndex(outRow);
+     QComboBox outColInput(&amp;group);
+     outColInput.addItems(cols);
+     outColInput.setCurrentIndex(outCol);
+
+     QPushButton cancelButton(tr(&quot;Cancel&quot;), &amp;addDialog);
+     connect(&amp;cancelButton, SIGNAL(clicked()), &amp;addDialog, SLOT(reject()));
+
+     QPushButton okButton(tr(&quot;OK&quot;), &amp;addDialog);
+     okButton.setDefault(true);
+     connect(&amp;okButton, SIGNAL(clicked()), &amp;addDialog, SLOT(accept()));
+
+     QHBoxLayout *buttonsLayout = new QHBoxLayout;
+     buttonsLayout-&gt;addStretch(1);
+     buttonsLayout-&gt;addWidget(&amp;okButton);
+     buttonsLayout-&gt;addSpacing(10);
+     buttonsLayout-&gt;addWidget(&amp;cancelButton);
+
+     QVBoxLayout *dialogLayout = new QVBoxLayout(&amp;addDialog);
+     dialogLayout-&gt;addWidget(&amp;group);
+     dialogLayout-&gt;addStretch(1);
+     dialogLayout-&gt;addItem(buttonsLayout);
+
+     QHBoxLayout *cell1Layout = new QHBoxLayout;
+     cell1Layout-&gt;addWidget(&amp;cell1Label);
+     cell1Layout-&gt;addSpacing(10);
+     cell1Layout-&gt;addWidget(&amp;cell1ColInput);
+     cell1Layout-&gt;addSpacing(10);
+     cell1Layout-&gt;addWidget(&amp;cell1RowInput);
+
+     QHBoxLayout *cell2Layout = new QHBoxLayout;
+     cell2Layout-&gt;addWidget(&amp;cell2Label);
+     cell2Layout-&gt;addSpacing(10);
+     cell2Layout-&gt;addWidget(&amp;cell2ColInput);
+     cell2Layout-&gt;addSpacing(10);
+     cell2Layout-&gt;addWidget(&amp;cell2RowInput);
+
+     QHBoxLayout *outLayout = new QHBoxLayout;
+     outLayout-&gt;addWidget(&amp;outLabel);
+     outLayout-&gt;addSpacing(10);
+     outLayout-&gt;addWidget(&amp;outColInput);
+     outLayout-&gt;addSpacing(10);
+     outLayout-&gt;addWidget(&amp;outRowInput);
+
+     QVBoxLayout *vLayout = new QVBoxLayout(&amp;group);
+     vLayout-&gt;addItem(cell1Layout);
+     vLayout-&gt;addWidget(&amp;operatorLabel);
+     vLayout-&gt;addItem(cell2Layout);
+     vLayout-&gt;addWidget(&amp;equalsLabel);
+     vLayout-&gt;addStretch(1);
+     vLayout-&gt;addItem(outLayout);
+
+     if (addDialog.exec()) {
+         *cell1 = cell1ColInput.currentText() + cell1RowInput.currentText();
+         *cell2 = cell2ColInput.currentText() + cell2RowInput.currentText();
+         *outCell = outColInput.currentText() + outRowInput.currentText();
+         return true;
+     }
+
+     return false;
+ }
+
+ void SpreadSheet::actionSum()
+ {
+
+     int row_first = 0;
+     int row_last = 0;
+     int row_cur = 0;
+
+     int col_first = 0;
+     int col_last = 0;
+     int col_cur = 0;
+
+     QList&lt;QTableWidgetItem*&gt; selected = table-&gt;selectedItems();
+     if (!selected.isEmpty()) {
+         QTableWidgetItem *first = selected.first();
+         QTableWidgetItem *last = selected.last();
+         row_first = table-&gt;row(first);
+         row_last = table-&gt;row(last);
+         col_first = table-&gt;column(first);
+         col_last = table-&gt;column(last);
+     }
+
+     QTableWidgetItem *current = table-&gt;currentItem();
+     if (current) {
+         row_cur = table-&gt;row(current);
+         col_cur = table-&gt;column(current);
+     }
+
+     QString cell1 = encode_pos(row_first, col_first);
+     QString cell2 = encode_pos(row_last, col_last);
+     QString out = encode_pos(row_cur, col_cur);
+
+     if (runInputDialog(tr(&quot;Sum cells&quot;), tr(&quot;First cell:&quot;), tr(&quot;Last cell:&quot;),
+                        QString(&quot;%1&quot;).arg(QChar(0x03a3)), tr(&quot;Output to:&quot;),
+                        &amp;cell1, &amp;cell2, &amp;out)) {
+         int row, col;
+         decode_pos(out, &amp;row, &amp;col);
+         table-&gt;item(row, col)-&gt;setText(&quot;sum &quot; + cell1 + &quot; &quot; + cell2);
+     }
+ }
+
+ void SpreadSheet::actionMath_helper(const QString &amp;title, const QString &amp;op)
+ {
+     QString cell1 = &quot;C1&quot;;
+     QString cell2 = &quot;C2&quot;;
+     QString out = &quot;C3&quot;;
+
+     QTableWidgetItem *current = table-&gt;currentItem();
+     if (current)
+         out = encode_pos(table-&gt;currentRow(), table-&gt;currentColumn());
+
+     if (runInputDialog(title, tr(&quot;Cell 1&quot;), tr(&quot;Cell 2&quot;), op, tr(&quot;Output to:&quot;),
+                        &amp;cell1, &amp;cell2, &amp;out)) {
+         int row, col;
+         decode_pos(out, &amp;row, &amp;col);
+         table-&gt;item(row, col)-&gt;setText(op + &quot; &quot; + cell1 + &quot; &quot; + cell2);
+     }
+ }
+
+ void SpreadSheet::actionAdd()
+ {
+     actionMath_helper(tr(&quot;Addition&quot;), &quot;+&quot;);
+ }
+
+ void SpreadSheet::actionSubtract()
+ {
+     actionMath_helper(tr(&quot;Subtraction&quot;), &quot;-&quot;);
+ }
+
+ void SpreadSheet::actionMultiply()
+ {
+     actionMath_helper(tr(&quot;Multiplication&quot;), &quot;*&quot;);
+ }
+
+ void SpreadSheet::actionDivide()
+ {
+     actionMath_helper(tr(&quot;Division&quot;), &quot;/&quot;);
+ }
+
+ void SpreadSheet::clear()
+ {
+     foreach (QTableWidgetItem *i, table-&gt;selectedItems())
+         i-&gt;setText(&quot;&quot;);
+ }
+
+ void SpreadSheet::setupContextMenu()
+ {
+     addAction(cell_addAction);
+     addAction(cell_subAction);
+     addAction(cell_mulAction);
+     addAction(cell_divAction);
+     addAction(cell_sumAction);
+     addAction(firstSeparator);
+     addAction(colorAction);
+     addAction(fontAction);
+     addAction(secondSeparator);
+     addAction(clearAction);
+     setContextMenuPolicy(Qt::ActionsContextMenu);
+ }
+
+ void SpreadSheet::setupContents()
+ {
+     QColor titleBackground(Qt::lightGray);
+     QFont titleFont = table-&gt;font();
+     titleFont.setBold(true);
+
+     <span class="comment">//</span> column 0
+     table-&gt;setItem(0, 0, new SpreadSheetItem(&quot;Item&quot;));
+     table-&gt;item(0, 0)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 0)-&gt;setToolTip(&quot;This column shows the purchased item/service&quot;);
+     table-&gt;item(0, 0)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 0, new SpreadSheetItem(&quot;AirportBus&quot;));
+     table-&gt;setItem(2, 0, new SpreadSheetItem(&quot;Flight (Munich)&quot;));
+     table-&gt;setItem(3, 0, new SpreadSheetItem(&quot;Lunch&quot;));
+     table-&gt;setItem(4, 0, new SpreadSheetItem(&quot;Flight (LA)&quot;));
+     table-&gt;setItem(5, 0, new SpreadSheetItem(&quot;Taxi&quot;));
+     table-&gt;setItem(6, 0, new SpreadSheetItem(&quot;Dinner&quot;));
+     table-&gt;setItem(7, 0, new SpreadSheetItem(&quot;Hotel&quot;));
+     table-&gt;setItem(8, 0, new SpreadSheetItem(&quot;Flight (Oslo)&quot;));
+     table-&gt;setItem(9, 0, new SpreadSheetItem(&quot;Total:&quot;));
+     table-&gt;item(9, 0)-&gt;setFont(titleFont);
+     table-&gt;item(9,0)-&gt;setBackgroundColor(Qt::lightGray);
+     <span class="comment">//</span> column 1
+     table-&gt;setItem(0, 1, new SpreadSheetItem(&quot;Date&quot;));
+     table-&gt;item(0, 1)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 1)-&gt;setToolTip(&quot;This column shows the purchase date, double click to change&quot;);
+     table-&gt;item(0, 1)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 1, new SpreadSheetItem(&quot;15/6/2006&quot;));
+     table-&gt;setItem(2, 1, new SpreadSheetItem(&quot;15/6/2006&quot;));
+     table-&gt;setItem(3, 1, new SpreadSheetItem(&quot;15/6/2006&quot;));
+     table-&gt;setItem(4, 1, new SpreadSheetItem(&quot;21/5/2006&quot;));
+     table-&gt;setItem(5, 1, new SpreadSheetItem(&quot;16/6/2006&quot;));
+     table-&gt;setItem(6, 1, new SpreadSheetItem(&quot;16/6/2006&quot;));
+     table-&gt;setItem(7, 1, new SpreadSheetItem(&quot;16/6/2006&quot;));
+     table-&gt;setItem(8, 1, new SpreadSheetItem(&quot;18/6/2006&quot;));
+     table-&gt;setItem(9, 1, new SpreadSheetItem());
+     table-&gt;item(9,1)-&gt;setBackgroundColor(Qt::lightGray);
+     <span class="comment">//</span> column 2
+     table-&gt;setItem(0, 2, new SpreadSheetItem(&quot;Price&quot;));
+     table-&gt;item(0, 2)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 2)-&gt;setToolTip(&quot;This column shows the price of the purchase&quot;);
+     table-&gt;item(0, 2)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 2, new SpreadSheetItem(&quot;150&quot;));
+     table-&gt;setItem(2, 2, new SpreadSheetItem(&quot;2350&quot;));
+     table-&gt;setItem(3, 2, new SpreadSheetItem(&quot;-14&quot;));
+     table-&gt;setItem(4, 2, new SpreadSheetItem(&quot;980&quot;));
+     table-&gt;setItem(5, 2, new SpreadSheetItem(&quot;5&quot;));
+     table-&gt;setItem(6, 2, new SpreadSheetItem(&quot;120&quot;));
+     table-&gt;setItem(7, 2, new SpreadSheetItem(&quot;300&quot;));
+     table-&gt;setItem(8, 2, new SpreadSheetItem(&quot;1240&quot;));
+     table-&gt;setItem(9, 2, new SpreadSheetItem());
+     table-&gt;item(9,2)-&gt;setBackgroundColor(Qt::lightGray);
+     <span class="comment">//</span> column 3
+     table-&gt;setItem(0, 3, new SpreadSheetItem(&quot;Currency&quot;));
+     table-&gt;item(0, 3)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 3)-&gt;setToolTip(&quot;This column shows the currency&quot;);
+     table-&gt;item(0, 3)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 3, new SpreadSheetItem(&quot;NOK&quot;));
+     table-&gt;setItem(2, 3, new SpreadSheetItem(&quot;NOK&quot;));
+     table-&gt;setItem(3, 3, new SpreadSheetItem(&quot;EUR&quot;));
+     table-&gt;setItem(4, 3, new SpreadSheetItem(&quot;EUR&quot;));
+     table-&gt;setItem(5, 3, new SpreadSheetItem(&quot;USD&quot;));
+     table-&gt;setItem(6, 3, new SpreadSheetItem(&quot;USD&quot;));
+     table-&gt;setItem(7, 3, new SpreadSheetItem(&quot;USD&quot;));
+     table-&gt;setItem(8, 3, new SpreadSheetItem(&quot;USD&quot;));
+     table-&gt;setItem(9, 3, new SpreadSheetItem());
+     table-&gt;item(9,3)-&gt;setBackgroundColor(Qt::lightGray);
+     <span class="comment">//</span> column 4
+     table-&gt;setItem(0, 4, new SpreadSheetItem(&quot;Ex.Rate&quot;));
+     table-&gt;item(0, 4)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 4)-&gt;setToolTip(&quot;This column shows the exchange rate to NOK&quot;);
+     table-&gt;item(0, 4)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 4, new SpreadSheetItem(&quot;1&quot;));
+     table-&gt;setItem(2, 4, new SpreadSheetItem(&quot;1&quot;));
+     table-&gt;setItem(3, 4, new SpreadSheetItem(&quot;8&quot;));
+     table-&gt;setItem(4, 4, new SpreadSheetItem(&quot;8&quot;));
+     table-&gt;setItem(5, 4, new SpreadSheetItem(&quot;7&quot;));
+     table-&gt;setItem(6, 4, new SpreadSheetItem(&quot;7&quot;));
+     table-&gt;setItem(7, 4, new SpreadSheetItem(&quot;7&quot;));
+     table-&gt;setItem(8, 4, new SpreadSheetItem(&quot;7&quot;));
+     table-&gt;setItem(9, 4, new SpreadSheetItem());
+     table-&gt;item(9,4)-&gt;setBackgroundColor(Qt::lightGray);
+     <span class="comment">//</span> column 5
+     table-&gt;setItem(0, 5, new SpreadSheetItem(&quot;NOK&quot;));
+     table-&gt;item(0, 5)-&gt;setBackgroundColor(titleBackground);
+     table-&gt;item(0, 5)-&gt;setToolTip(&quot;This column shows the expenses in NOK&quot;);
+     table-&gt;item(0, 5)-&gt;setFont(titleFont);
+     table-&gt;setItem(1, 5, new SpreadSheetItem(&quot;* C2 E2&quot;));
+     table-&gt;setItem(2, 5, new SpreadSheetItem(&quot;* C3 E3&quot;));
+     table-&gt;setItem(3, 5, new SpreadSheetItem(&quot;* C4 E4&quot;));
+     table-&gt;setItem(4, 5, new SpreadSheetItem(&quot;* C5 E5&quot;));
+     table-&gt;setItem(5, 5, new SpreadSheetItem(&quot;* C6 E6&quot;));
+     table-&gt;setItem(6, 5, new SpreadSheetItem(&quot;* C7 E7&quot;));
+     table-&gt;setItem(7, 5, new SpreadSheetItem(&quot;* C8 E8&quot;));
+     table-&gt;setItem(8, 5, new SpreadSheetItem(&quot;* C9 E9&quot;));
+     table-&gt;setItem(9, 5, new SpreadSheetItem(&quot;sum F2 F9&quot;));
+     table-&gt;item(9,5)-&gt;setBackgroundColor(Qt::lightGray);
+
+ }
+
+ const char *htmlText =
+ &quot;&lt;HTML&gt;&quot;
+ &quot;&lt;p&gt;&lt;b&gt;This demo shows use of &lt;c&gt;QTableWidget&lt;/c&gt; with custom handling for&quot;
+ &quot; individual cells.&lt;/b&gt;&lt;/p&gt;&quot;
+ &quot;&lt;p&gt;Using a customized table item we make it possible to have dynamic&quot;
+ &quot; output in different cells. The content that is implemented for this&quot;
+ &quot; particular demo is:&quot;
+ &quot;&lt;ul&gt;&quot;
+ &quot;&lt;li&gt;Adding two cells.&lt;/li&gt;&quot;
+ &quot;&lt;li&gt;Subtracting one cell from another.&lt;/li&gt;&quot;
+ &quot;&lt;li&gt;Multiplying two cells.&lt;/li&gt;&quot;
+ &quot;&lt;li&gt;Dividing one cell with another.&lt;/li&gt;&quot;
+ &quot;&lt;li&gt;Summing the contents of an arbitrary number of cells.&lt;/li&gt;&quot;
+ &quot;&lt;/HTML&gt;&quot;;
+
+ void SpreadSheet::showAbout()
+ {
+     QMessageBox::about(this, &quot;About Spreadsheet&quot;, htmlText);
+ }
+
+ int main(int argc, char** argv) {
+     Q_INIT_RESOURCE(spreadsheet);
+     QApplication app(argc, argv);
+     SpreadSheet sheet(10, 6);
+     sheet.setWindowIcon(QPixmap(&quot;:/images/interview.png&quot;));
+     sheet.resize(640, 420);
+     sheet.show();
+     return app.exec();
+ }
+
+ #include &quot;main.moc&quot;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

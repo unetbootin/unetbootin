@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book 3 - Navigating between Entries</title>
+  <link rel="prev" href="tutorials-addressbook-part2.html" />
+  <link rel="contents" href="tutorials-addressbook.html" />
+  <link rel="next" href="tutorials-addressbook-part4.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-addressbook-part2.html">Address Book 2 - Adding Addresses</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part4.html">Chapter 4</a>]
+</p>
+<h1 class="title">Address Book 3 - Navigating between Entries<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-addressbook-part3-addressbook-cpp.html">tutorials/addressbook/part3/addressbook.cpp</a></li>
+<li><a href="tutorials-addressbook-part3-addressbook-h.html">tutorials/addressbook/part3/addressbook.h</a></li>
+<li><a href="tutorials-addressbook-part3-main-cpp.html">tutorials/addressbook/part3/main.cpp</a></li>
+<li><a href="tutorials-addressbook-part3-part3-pro.html">tutorials/addressbook/part3/part3.pro</a></li>
+</ul>
+<p>The address book application is now half complete. We need to add some functions to navigate between contacts. But first, we have to decide what sort of a data structure we would like to use to hold these contacts.</p>
+<p>In Chapter 2, we used a <a href="qmap.html">QMap</a> of key-value pairs with the contact's name as the <i>key</i>, and the contact's address as the <i>value</i>. This works well for our case. However, in order to navigate and display each entry, a little bit of enhancement is needed.</p>
+<p>We enhance the <a href="qmap.html">QMap</a> by making it replicate a data structure similar to a circularly-linked list, where all elements are connected, including the first element and the last element. The figure below illustrates this data structure.</p>
+<p align="center"><img src="images/addressbook-tutorial-part3-linkedlist.png" /></p><a name="defining-the-addressbook-class"></a>
+<h2>Defining the AddressBook Class</h2>
+<p>In order to add navigation functions to the address book application, we need to add two more slots to our <tt>AddressBook</tt> class: <tt>next()</tt> and <tt>previous()</tt>. These are added to our <tt>addressbook.h</tt> file:</p>
+<pre>     void next();
+     void previous();</pre>
+<p>We also require another two <a href="qpushbutton.html">QPushButton</a> objects, so we declare <tt>nextButton</tt> and <tt>previousButton</tt> as private variables:</p>
+<pre>     QPushButton *nextButton;
+     QPushButton *previousButton;</pre>
+<a name="implementing-the-addressbook-class"></a>
+<h2>Implementing the AddressBook Class</h2>
+<p>In the <tt>AddressBook</tt> constructor in <tt>addressbook.cpp</tt>, we instantiate <tt>nextButton</tt> and <tt>previousButton</tt> and disable them by default. This is because navigation is only enabled when there is more than one contact in the address book.</p>
+<pre>     nextButton = new QPushButton(tr(&quot;&amp;Next&quot;));
+     nextButton-&gt;setEnabled(false);
+     previousButton = new QPushButton(tr(&quot;&amp;Previous&quot;));
+     previousButton-&gt;setEnabled(false);</pre>
+<p>We then connect these push buttons to their respective slots:</p>
+<pre>     connect(nextButton, SIGNAL(clicked()), this, SLOT(next()));
+     connect(previousButton, SIGNAL(clicked()), this, SLOT(previous()));</pre>
+<p>The image below is our expected graphical user interface. Notice that it is getting closer to our expected final output.</p>
+<p align="center"><img src="images/addressbook-tutorial-part3-screenshot.png" /></p><p>We follow basic conventions for <tt>next()</tt> and <tt>previous()</tt> functions by placing the <tt>nextButton</tt> on the right and the <tt>previousButton</tt> on the left. In order to achieve this intuitive layout, we use <a href="qhboxlayout.html">QHBoxLayout</a> to place the widgets side-by-side:</p>
+<pre>     QHBoxLayout *buttonLayout2 = new QHBoxLayout;
+     buttonLayout2-&gt;addWidget(previousButton);
+     buttonLayout2-&gt;addWidget(nextButton);</pre>
+<p>The <a href="qhboxlayout.html">QHBoxLayout</a> object, <tt>buttonLayout2</tt>, is then added to <tt>mainLayout</tt>.</p>
+<pre>     mainLayout-&gt;addLayout(buttonLayout2, 3, 1);</pre>
+<p>The figure below shows the coordinates of the widgets in <tt>mainLayout</tt>.</p>
+<p align="center"><img src="images/addressbook-tutorial-part3-labeled-layout.png" /></p><p>Within our <tt>addContact()</tt> function, we have to disable these buttons so that the user does not attempt to navigate while adding a contact.</p>
+<pre>     nextButton-&gt;setEnabled(false);
+     previousButton-&gt;setEnabled(false);</pre>
+<p>Also, in our <tt>submitContact()</tt> function, we enable the navigation buttons, <tt>nextButton</tt> and <tt>previousButton</tt>, depending on the size of <tt>contacts</tt>. As mentioned earlier, navigation is only enabled when there is more than one contact in the address book. The following lines of code demonstrates how to do this:</p>
+<pre>     int number = contacts.size();
+     nextButton-&gt;setEnabled(number &gt; 1);
+     previousButton-&gt;setEnabled(number &gt; 1);</pre>
+<p>We also include these lines of code in the <tt>cancel()</tt> function.</p>
+<p>Recall that we intend to emulate a circularly-linked list with our <a href="qmap.html">QMap</a> object, <tt>contacts</tt>. So, in the <tt>next()</tt> function, we obtain an iterator for <tt>contacts</tt> and then:</p>
+<ul>
+<li>If the iterator is not at the end of <tt>contacts</tt>, we increment it by one.</li>
+<li>If the iterator is at the end of <tt>contacts</tt>, we move it to the beginning of <tt>contacts</tt>. This gives us the illusion that our <a href="qmap.html">QMap</a> is working like a circularly-linked list.</li>
+</ul>
+<pre> void AddressBook::next()
+ {
+     QString name = nameLine-&gt;text();
+     QMap&lt;QString, QString&gt;::iterator i = contacts.find(name);
+
+     if (i != contacts.end())
+         i++;
+
+     if (i == contacts.end())
+         i = contacts.begin();
+
+     nameLine-&gt;setText(i.key());
+     addressText-&gt;setText(i.value());
+ }</pre>
+<p>Once we have iterated to the correct object in <tt>contacts</tt>, we display its contents on <tt>nameLine</tt> and <tt>addressText</tt>.</p>
+<p>Similarly, for the <tt>previous()</tt> function, we obtain an iterator for <tt>contacts</tt> and then:</p>
+<ul>
+<li>If the iterator is at the end of <tt>contacts</tt>, we clear the display and return.</li>
+<li>If the iterator is the beginning of <tt>contacts</tt>, we move it to the end.</li>
+<li>We then decrement the iterator by one.</li>
+</ul>
+<pre> void AddressBook::previous()
+ {
+     QString name = nameLine-&gt;text();
+     QMap&lt;QString, QString&gt;::iterator i = contacts.find(name);
+
+     if (i == contacts.end()){
+         nameLine-&gt;clear();
+         addressText-&gt;clear();
+         return;
+     }
+
+     if (i == contacts.begin())
+         i = contacts.end();
+
+     i--;
+     nameLine-&gt;setText(i.key());
+     addressText-&gt;setText(i.value());
+ }</pre>
+<p>Again, we display the contents of the current object in <tt>contacts</tt>.</p>
+<p>
+[Previous: <a href="tutorials-addressbook-part2.html">Address Book 2 - Adding Addresses</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part4.html">Chapter 4</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,6 @@
+#!/bin/sh
+if [ "$#" -gt 0 ]; then
+  /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/configure -static -opengl desktop -no-gtkstyle -no-nas-sound -confirm-license "$@"
+else
+  /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/configure -static -opengl desktop -no-gtkstyle -no-nas-sound -confirm-license
+fi

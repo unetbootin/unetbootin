@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/extension/extension.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractExtensionManager Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractExtensionManager Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QAbstractExtensionManager class provides an interface for extension managers in Qt Designer. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractExtensionManager&gt;</pre><p>Inherited by <a href="qextensionmanager.html">QExtensionManager</a>.</p>
+<ul>
+<li><a href="qabstractextensionmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qabstractextensionmanager.html#dtor.QAbstractExtensionManager">~QAbstractExtensionManager</a></b> ()</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qabstractextensionmanager.html#extension">extension</a></b> ( QObject * <i>object</i>, const QString &amp; <i>iid</i> ) const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractextensionmanager.html#registerExtensions">registerExtensions</a></b> ( QAbstractExtensionFactory * <i>factory</i>, const QString &amp; <i>iid</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractextensionmanager.html#unregisterExtensions">unregisterExtensions</a></b> ( QAbstractExtensionFactory * <i>factory</i>, const QString &amp; <i>iid</i> ) = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractExtensionManager class provides an interface for extension managers in Qt Designer.</p>
+<p>QAbstractExtensionManager is not intended to be instantiated directly; use the <a href="qextensionmanager.html">QExtensionManager</a> instead.</p>
+<p>In <i>Qt Designer</i>, extension are not created until they are required. For that reason, when implementing a custom extension, you must also create a <a href="qextensionfactory.html">QExtensionFactory</a>, i.e a class that is able to make an instance of your extension, and register it using <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a>.</p>
+<p>When an extension is required, <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a> will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until the first one that is able to create the requested extension for the selected object, is found. This factory will then make an instance of the extension.</p>
+<p>See also <a href="qextensionmanager.html">QExtensionManager</a> and <a href="qextensionfactory.html">QExtensionFactory</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QAbstractExtensionManager"></a>QAbstractExtensionManager::~QAbstractExtensionManager ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the extension manager.</p>
+<h3 class="fn"><a name="extension"></a><a href="qobject.html">QObject</a> * QAbstractExtensionManager::extension ( <a href="qobject.html">QObject</a> * <i>object</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the extension, specified by <i>iid</i>, for the given <i>object</i>.</p>
+<h3 class="fn"><a name="registerExtensions"></a>void QAbstractExtensionManager::registerExtensions ( <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a> * <i>factory</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Register the given extension <i>factory</i> with the extension specified by <i>iid</i>.</p>
+<h3 class="fn"><a name="unregisterExtensions"></a>void QAbstractExtensionManager::unregisterExtensions ( <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a> * <i>factory</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Unregister the given <i>factory</i> with the extension specified by <i>iid</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

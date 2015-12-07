@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionGraphicsItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionGraphicsItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionGraphicsItem class is used to describe the parameters needed to draw a <a href="qgraphicsitem.html">QGraphicsItem</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionGraphicsItem&gt;</pre><p>Inherits <a href="qstyleoption.html">QStyleOption</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qstyleoptiongraphicsitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptiongraphicsitem.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiongraphicsitem.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptiongraphicsitem.html#QStyleOptionGraphicsItem">QStyleOptionGraphicsItem</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptiongraphicsitem.html#QStyleOptionGraphicsItem-2">QStyleOptionGraphicsItem</a></b> ( const QStyleOptionGraphicsItem &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>QRectF <b><a href="qstyleoptiongraphicsitem.html#exposedRect-var">exposedRect</a></b></li>
+<li><div class="fn"/>qreal <b><a href="qstyleoptiongraphicsitem.html#levelOfDetail-var">levelOfDetail</a></b></li>
+<li><div class="fn"/>QMatrix <b><a href="qstyleoptiongraphicsitem.html#matrix-var">matrix</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionGraphicsItem class is used to describe the parameters needed to draw a <a href="qgraphicsitem.html">QGraphicsItem</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a> and <a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionGraphicsItem::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionGraphicsItem::Type</tt></td><td align="center" valign="top"><tt>SO_GraphicsItem</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_GraphicsItem</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptiongraphicsitem.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionGraphicsItem::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionGraphicsItem::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptiongraphicsitem.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionGraphicsItem"></a>QStyleOptionGraphicsItem::QStyleOptionGraphicsItem ()</h3>
+<p>Constructs a <a href="qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a>. The <a href="qstyleoptiongraphicsitem.html#levelOfDetail-var">levelOfDetail</a> parameter is initialized to 1.</p>
+<h3 class="fn"><a name="QStyleOptionGraphicsItem-2"></a>QStyleOptionGraphicsItem::QStyleOptionGraphicsItem ( const QStyleOptionGraphicsItem &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="exposedRect-var"></a><a href="qrectf.html">QRectF</a> QStyleOptionGraphicsItem::exposedRect</h3>
+<p>This variable holds the exposed rectangle, in item coordinates.</p>
+<p>Make use of this rectangle to speed up item drawing when only parts of the item are exposed. If the whole item is exposed, this rectangle will be the same as <a href="qgraphicsitem.html#boundingRect">QGraphicsItem::boundingRect</a>().</p>
+<h3 class="fn"><a name="levelOfDetail-var"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QStyleOptionGraphicsItem::levelOfDetail</h3>
+<p>This variable holds a simple metric for determining an item's level of detail.</p>
+<p>This simple metric provides an easy way to determine the level of detail for an item. Its value represents the maximum value of the height and width of a unity rectangle, mapped using the complete transformation matrix of the painter used to draw the item. By default, if no transformations are applied, its value is 1. If zoomed out 1:2, the level of detail will be 0.5, and if zoomed in 2:1, its value is 2.</p>
+<p>For more advanced level-of-detail metrics, use <a href="qstyleoptiongraphicsitem.html#matrix-var">QStyleOptionGraphicsItem::matrix</a> directly.</p>
+<p>See also <a href="qstyleoptiongraphicsitem.html#matrix-var">QStyleOptionGraphicsItem::matrix</a>.</p>
+<h3 class="fn"><a name="matrix-var"></a><a href="qmatrix.html">QMatrix</a> QStyleOptionGraphicsItem::matrix</h3>
+<p>This variable holds the complete transformation matrix for the item.</p>
+<p>This matrix is the sum of the item's scene matrix and the matrix of the painter used for drawing the item. It is provided for convenience, allowing anvanced level-of-detail metrics that can be used to speed up item drawing.</p>
+<p>To find the dimentions of an item in screen coordinates (i.e&#x2e;, pixels), you can use the mapping functions of <a href="qmatrix.html">QMatrix</a>, such as <a href="qmatrix.html#map">QMatrix::map</a>().</p>
+<p>See also <a href="qstyleoptiongraphicsitem.html#levelOfDetail-var">QStyleOptionGraphicsItem::levelOfDetail</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

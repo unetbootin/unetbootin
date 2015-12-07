@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qsystemsemaphore.cpp -->
+<head>
+  <title>Qt 4.4: QSystemSemaphore Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSystemSemaphore Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QSystemSemaphore class provides a general counting system semaphore. <a href="#details">More...</a></p>
+<pre> #include &lt;QSystemSemaphore&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qsystemsemaphore-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qsystemsemaphore.html#AccessMode-enum">AccessMode</a></b> { Open, Create }</li>
+<li><div class="fn"/>enum <b><a href="qsystemsemaphore.html#SystemSemaphoreError-enum">SystemSemaphoreError</a></b> { NoError, PermissionDenied, KeyError, AlreadyExists, ..., UnknownError }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsystemsemaphore.html#QSystemSemaphore">QSystemSemaphore</a></b> ( const QString &amp; <i>key</i>, int <i>initialValue</i> = 0, AccessMode <i>mode</i> = Open )</li>
+<li><div class="fn"/><b><a href="qsystemsemaphore.html#dtor.QSystemSemaphore">~QSystemSemaphore</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qsystemsemaphore.html#acquire">acquire</a></b> ()</li>
+<li><div class="fn"/>SystemSemaphoreError <b><a href="qsystemsemaphore.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsystemsemaphore.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsystemsemaphore.html#key">key</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsystemsemaphore.html#release">release</a></b> ( int <i>n</i> = 1 )</li>
+<li><div class="fn"/>void <b><a href="qsystemsemaphore.html#setKey">setKey</a></b> ( const QString &amp; <i>key</i>, int <i>initialValue</i> = 0, AccessMode <i>mode</i> = Open )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSystemSemaphore class provides a general counting system semaphore.</p>
+<p>A semaphore is a generalization of a mutex. While a mutex can be locked only once, a semaphore can be acquired multiple times. Typically, a semaphore is used to protect a certain number of identical resources.</p>
+<p>Like its lighter counterpart <a href="qsemaphore.html">QSemaphore</a>, a QSystemSemaphore can be accessed from multiple <a href="qthread.html">threads</a>. Unlike <a href="qsemaphore.html">QSemaphore</a>, a QSystemSemaphore can also be accessed from multiple <a href="qprocess.html">processes</a>. This means QSystemSemaphore is a much heavier class, so if your application doesn't need to access your semaphores across multiple processes, you will probably want to use <a href="qsemaphore.html">QSemaphore</a>.</p>
+<p>When using this class, be aware of the following platform differences:</p>
+<ul>
+<li>Windows: QSystemSemaphore does not own its underlying system semaphore. Windows owns it. This means that when all instances of QSystemSemaphore for a particular key have been destroyed, either by having their destructors called, or because one or more processes crash, Windows removes the underlying system semaphore.</li>
+<li>Unix: QSystemSemaphore owns the underlying system semaphore in Unix systems. This means that the last process having an instance of QSystemSemaphore for a particular key must remove the underlying system semaphore in its destructor. If the last process crashes without running the QSystemSemaphore destructor, Unix does not automatically remove the underlying system semaphore, and the semaphore survives the crash. A subsequent process that constructs a QSystemSemaphore with the same key will then be given the existing system semaphore. In that case, if the QSystemSemaphore constructor has specified its <a href="qsystemsemaphore.html#AccessMode-enum">access mode</a> as <a href="qsystemsemaphore.html#AccessMode-enum">Open</a>, its initial resource count will not be reset to the one provided but remain set to the value it received in the crashed process. To protect against this, the first process to create a semaphore for a particular key (usually a server), must pass its <a href="qsystemsemaphore.html#AccessMode-enum">access mode</a> as <a href="qsystemsemaphore.html#AccessMode-enum">Create</a>, which will force Unix to reset the resource count in the underlying system semaphore.</li>
+<li>Unix: When a process using QSystemSemaphore terminates for any reason, Unix automatically reverses the effect of all acquire operations that were not released. Thus if the process acquires a resource and then exits without releasing it, Unix will release that resource.</li>
+</ul>
+<p>Semaphores support two fundamental operations, <a href="qsystemsemaphore.html#acquire">acquire</a>() and <a href="qsystemsemaphore.html#release">release</a>():</p>
+<p><a href="qsystemsemaphore.html#acquire">acquire</a>() tries to acquire one resource. If there isn't a resource available, the call blocks until a resource becomes available. Then the resource is acquired and the call returns.</p>
+<p><a href="qsystemsemaphore.html#release">release</a>() releases one resource so it can be acquired by another process. The function can also be called with a parameter n &gt; 1, which releases n resources.</p>
+<p>A system semaphore is created with a string key that other processes can use to use the same semaphore.</p>
+<p>Example: Create a system semaphore</p>
+<pre>     QSystemSemaphore sem(&quot;market&quot;, 3, QSystemSemaphore::Create);
+                                  // resources available == 3
+     sem.acquire();               // resources available == 2
+     sem.acquire();               // resources available == 1
+     sem.acquire();               // resources available == 0
+     sem.release();               // resources available == 1
+     sem.release(2);              // resources available == 3</pre>
+<p>A typical application of system semaphores is for controlling access to a circular buffer shared by a producer process and a consumer processes.</p>
+<p>See also <a href="qsharedmemory.html">QSharedMemory</a>, <a href="qsemaphore.html">QSemaphore</a></p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="AccessMode-enum"></a>enum QSystemSemaphore::AccessMode</h3>
+<p>This enum is used by the constructor and <a href="qsystemsemaphore.html#setKey">setKey</a>(). Its purpose is to enable handling the problem in Unix implementations of semaphores that survive a crash. In Unix, when a semaphore survives a crash, we need a way to force it to reset its resource count, when the system reuses the semaphore. In Windows, where semaphores can't survive a crash, this enum has no effect.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::Open</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">If the semaphore already exists, its initial resource count is not reset. If the semaphore does not already exist, it is created and its initial resource count set.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::Create</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="qsystemsemaphore.html">QSystemSemaphore</a> takes ownership of the semaphore and sets its resource count to the requested value, regardless of whether the semaphore already exists by having survived a crash. This value should be passed to the constructor, when the first semaphore for a particular key is constructed and you know that if the semaphore already exists it could only be because of a crash. In Windows, where a semaphore can't survive a crash, Create and Open have the same behavior.</td></tr>
+</table></p>
+<h3 class="fn"><a name="SystemSemaphoreError-enum"></a>enum QSystemSemaphore::SystemSemaphoreError</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error occurred.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::PermissionDenied</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The operation failed because the caller didn't have the required permissions.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::KeyError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The operation failed because of an invalid key.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::AlreadyExists</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The operation failed because a system semaphore with the specified key already existed.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::NotFound</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The operation failed because a system semaphore with the specified key could not be found.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::OutOfResources</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The operation failed because there was not enough memory available to fill the request.</td></tr>
+<tr><td valign="top"><tt>QSystemSemaphore::UnknownError</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Something else happened and it was bad.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSystemSemaphore"></a>QSystemSemaphore::QSystemSemaphore ( const <a href="qstring.html">QString</a> &amp; <i>key</i>, int <i>initialValue</i> = 0, <a href="qsystemsemaphore.html#AccessMode-enum">AccessMode</a> <i>mode</i> = Open )</h3>
+<p>Requests a system semaphore for the specified <i>key</i>. The parameters <i>initialValue</i> and <i>mode</i> are used according to the following rules, which are system dependent.</p>
+<p>In Unix, if the <i>mode</i> is <a href="qsystemsemaphore.html#AccessMode-enum">Open</a> and the system already has a semaphore identified by <i>key</i>, that semaphore is used, and the semaphore's resource count is not changed, i.e&#x2e;, <i>initialValue</i> is ignored. But if the system does not already have a semaphore identified by <i>key</i>, it creates a new semaphore for that key and sets its resource count to <i>initialValue</i>.</p>
+<p>In Unix, if the <i>mode</i> is <a href="qsystemsemaphore.html#AccessMode-enum">Create</a> and the system already has a semaphore identified by <i>key</i>, that semaphore is used, and its resource count is set to <i>initialValue</i>. If the system does not already have a semaphore identified by <i>key</i>, it creates a new semaphore for that key and sets its resource count to <i>initialValue</i>.</p>
+<p>In Windows, <i>mode</i> is ignored, and the system always tries to create a semaphore for the specified <i>key</i>. If the system does not already have a semaphore identified as <i>key</i>, it creates the semaphore and sets its resource count to <i>initialValue</i>. But if the system already has a semaphore identified as <i>key</i> it uses that semaphore and ignores <i>initialValue</i>.</p>
+<p>The <a href="qsystemsemaphore.html#AccessMode-enum">mode</a> parameter is only used in Unix systems to handle the case where a semaphore survives a process crash. In that case, the next process to allocate a semaphore with the same <i>key</i> will get the semaphore that survived the crash, and unless <i>mode</i> is <a href="qsystemsemaphore.html#AccessMode-enum">Create</a>, the resource count will not be reset to <i>initialValue</i> but will retain the initial value it had been given by the crashed process.</p>
+<p>See also <a href="qsystemsemaphore.html#acquire">acquire</a>() and <a href="qsystemsemaphore.html#key">key</a>().</p>
+<h3 class="fn"><a name="dtor.QSystemSemaphore"></a>QSystemSemaphore::~QSystemSemaphore ()</h3>
+<p>The destructor destroys the <a href="qsystemsemaphore.html">QSystemSemaphore</a> object, but the underlying system semaphore is not removed from the system unless this instance of <a href="qsystemsemaphore.html">QSystemSemaphore</a> is the last one existing for that system semaphore.</p>
+<p>Two important side effects of the destructor depend on the system. In Windows, if <a href="qsystemsemaphore.html#acquire">acquire</a>() has been called for this semaphore but not <a href="qsystemsemaphore.html#release">release</a>(), <a href="qsystemsemaphore.html#release">release</a>() will not be called by the destructor, nor will the resource be released when the process exits normally. This would be a program bug which could be the cause of a deadlock in another process trying to acquire the same resource. In Unix, acquired resources that are not released before the destructor is called are automatically released when the process exits.</p>
+<h3 class="fn"><a name="acquire"></a>bool QSystemSemaphore::acquire ()</h3>
+<p>Acquires one of the resources guarded by this semaphore, if there is one available, and returns true. If all the resources guarded by this semaphore have already been acquired, the call blocks until one of them is released by another process or thread having a semaphore with the same key.</p>
+<p>If false is returned, a system error has occurred.</p>
+<p>See also <a href="qsystemsemaphore.html#release">release</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qsystemsemaphore.html#SystemSemaphoreError-enum">SystemSemaphoreError</a> QSystemSemaphore::error () const</h3>
+<p>Returns a value indicating whether an error occurred, and, if so, which error it was.</p>
+<p>See also <a href="qsystemsemaphore.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QSystemSemaphore::errorString () const</h3>
+<p>Returns a text description of the last error that occurred. If <a href="qsystemsemaphore.html#error">error</a>() returns an <a href="qsystemsemaphore.html#SystemSemaphoreError-enum">error value</a>, call this function to get a text string that describes the error.</p>
+<p>See also <a href="qsystemsemaphore.html#error">error</a>().</p>
+<h3 class="fn"><a name="key"></a><a href="qstring.html">QString</a> QSystemSemaphore::key () const</h3>
+<p>Returns the key assigned to this system semaphore. The key is the name by which the semaphore can be accessed from other processes.</p>
+<p>See also <a href="qsystemsemaphore.html#setKey">setKey</a>().</p>
+<h3 class="fn"><a name="release"></a>bool QSystemSemaphore::release ( int <i>n</i> = 1 )</h3>
+<p>Releases <i>n</i> resources guarded by the semaphore. Returns true unless there is a system error.</p>
+<p>Example: Create a system semaphore having five resources; acquire them all and then release them all.</p>
+<pre>   QSystemSemaphore sem(&quot;market&quot;, 5, QSystemSemaphore::Create);
+   sem.acquire(5);           // acquire all 5 resources
+   sem.release(5);           // release the 5 resources</pre>
+<p>This function can also &quot;create&quot; resources. For example, immediately following the sequence of statements above, suppose we add the statement:</p>
+<pre>   sem.release(10);          // &quot;create&quot; 10 new resources</pre>
+<p>Ten new resources are now guarded by the semaphore, in addition to the five that already existed. You would not normally use this function to create more resources.</p>
+<p>See also <a href="qsystemsemaphore.html#acquire">acquire</a>().</p>
+<h3 class="fn"><a name="setKey"></a>void QSystemSemaphore::setKey ( const <a href="qstring.html">QString</a> &amp; <i>key</i>, int <i>initialValue</i> = 0, <a href="qsystemsemaphore.html#AccessMode-enum">AccessMode</a> <i>mode</i> = Open )</h3>
+<p>This function works the same as the constructor. It reconstructs this <a href="qsystemsemaphore.html">QSystemSemaphore</a> object. If the new <i>key</i> is different from the old key, calling this function is like calling the destructor of the semaphore with the old key, then calling the constructor to create a new semaphore with the new <i>key</i>. The <i>initialValue</i> and <i>mode</i> parameters are as defined for the constructor.</p>
+<p>See also <a href="qsystemsemaphore.html#QSystemSemaphore">QSystemSemaphore</a>() and <a href="qsystemsemaphore.html#key">key</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

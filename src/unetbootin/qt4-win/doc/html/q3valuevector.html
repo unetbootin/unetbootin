@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3valuevector.qdoc -->
+<head>
+  <title>Qt 4.4: Q3ValueVector Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ValueVector Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ValueVector class is a value-based template class that provides a dynamic array. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ValueVector&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qvector.html">QVector&lt;T&gt;</a>.</p>
+<ul>
+<li><a href="q3valuevector-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3valuevector.html#Q3ValueVector">Q3ValueVector</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3valuevector.html#Q3ValueVector-2">Q3ValueVector</a></b> ( const Q3ValueVector&lt;T&gt; &amp; <i>v</i> )</li>
+<li><div class="fn"/><b><a href="q3valuevector.html#Q3ValueVector-3">Q3ValueVector</a></b> ( QVector&lt;T&gt;::size_type <i>n</i>, const T &amp; <i>val</i> = T() )</li>
+<li><div class="fn"/><b><a href="q3valuevector.html#Q3ValueVector-4">Q3ValueVector</a></b> ( const std::vector&lt;T&gt; &amp; <i>v</i> )</li>
+<li><div class="fn"/>T &amp; <b><a href="q3valuevector.html#at">at</a></b> ( int <i>i</i>, bool * <i>ok</i> = 0 )</li>
+<li><div class="fn"/>const T &amp; <b><a href="q3valuevector.html#at-2">at</a></b> ( int <i>i</i>, bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>void <b><a href="q3valuevector.html#resize">resize</a></b> ( int <i>n</i>, const T &amp; <i>val</i> = T() )</li>
+<li><div class="fn"/>Q3ValueVector&lt;T&gt; &amp; <b><a href="q3valuevector.html#operator-eq">operator=</a></b> ( const Q3ValueVector&lt;T&gt; &amp; <i>v</i> )</li>
+<li><div class="fn"/>Q3ValueVector&lt;T&gt; &amp; <b><a href="q3valuevector.html#operator-eq-2">operator=</a></b> ( const std::vector&lt;T&gt; &amp; <i>v</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>62 public functions inherited from <a href="qvector.html#public-functions">QVector</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 static public members inherited from <a href="qvector.html#static-public-members">QVector</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ValueVector class is a value-based template class that provides a dynamic array.</p>
+<p>Q3ValueVector is a Qt implementation of an STL-like vector container. It can be used in your application if the standard <tt>vector</tt> is not available for your target platforms.</p>
+<p>Q3ValueVector&lt;T&gt; defines a template instance to create a vector of values that all have the class T. Q3ValueVector does not store pointers to the members of the vector; it holds a copy of every member. Q3ValueVector is said to be value based; in contrast, <a href="q3ptrlist.html">Q3PtrList</a> and <a href="q3dict.html">Q3Dict</a> are pointer based.</p>
+<p>Q3ValueVector contains and manages a collection of objects of type T and provides random access iterators that allow the contained objects to be addressed. Q3ValueVector owns the contained elements. For more relaxed ownership semantics, see <a href="q3ptrcollection.html">Q3PtrCollection</a> and friends, which are pointer-based containers.</p>
+<p>Q3ValueVector provides good performance if you append or remove elements from the end of the vector. If you insert or remove elements from anywhere but the end, performance is very bad. The reason for this is that elements must to be copied into new positions.</p>
+<p>Some classes cannot be used within a Q3ValueVector: for example, all classes derived from <a href="qobject.html">QObject</a> and thus all classes that implement widgets. Only values can be used in a Q3ValueVector. To qualify as a value the class must provide:</p>
+<ul>
+<li>a copy constructor;</li>
+<li>an assignment operator;</li>
+<li>a default constructor, i.e&#x2e;, a constructor that does not take any arguments.</li>
+</ul>
+<p>Note that C++ defaults to field-by-field assignment operators and copy constructors if no explicit version is supplied. In many cases this is sufficient.</p>
+<p>Q3ValueVector uses an STL-like syntax to manipulate and address the objects it contains.</p>
+<p>Example:</p>
+<pre>     #include &lt;qvaluevector.h&gt;
+     #include &lt;qstring.h&gt;
+     #include &lt;stdio.h&gt;
+
+     class Employee
+     {
+     public:
+         Employee(): s(0) {}
+         Employee( const QString&amp; name, int salary )
+             : n( name ), s( salary )
+         { }
+
+         QString name()   const          { return n; }
+         int     salary() const          { return s; }
+         void    setSalary( int salary ) { s = salary; }
+     private:
+         QString n;
+         int     s;
+     };
+
+     int main()
+     {
+         typedef Q3ValueVector&lt;Employee&gt; EmployeeVector;
+         EmployeeVector vec( 3 );  // vector of 3 Employees
+
+         vec[0] = Employee( &quot;Bill&quot;, 50000 );
+         vec[1] = Employee( &quot;Steve&quot;, 80000 );
+         vec[2] = Employee( &quot;Ron&quot;, 60000 );
+
+         Employee joe( &quot;Joe&quot;, 50000 );
+         vec.push_back( joe );  // vector expands to accommodate 4 Employees
+         joe.setSalary( 70000 );
+
+         EmployeeVector::iterator it;
+         for( it = vec.begin(); it != vec.end(); ++it )
+             printf( &quot;%s earns %d\n&quot;, (*it).name().latin1(), (*it).salary() );
+
+         return 0;
+     }</pre>
+<p>Program output:</p>
+<pre>         Bill earns 50000
+         Steve earns 80000
+         Ron earns 60000
+         Joe earns 50000</pre>
+<p>As you can see, the most recent change to Joe's salary did not affect the value in the vector because the vector created a copy of Joe's entry.</p>
+<p>Many Qt functions return const value vectors; to iterate over these you should make a copy and iterate over the copy.</p>
+<p>There are several ways to find items in the vector. The <a href="qvector.html#begin">begin</a>() and <a href="qvector.html#end">end</a>() functions return iterators to the beginning and end of the vector. The advantage of getting an iterator is that you can move forward or backward from this position by incrementing/decrementing the iterator. The iterator returned by <a href="qvector.html#end">end</a>() points to the element which is one past the last element in the container. The past-the-end iterator is still associated with the vector it belongs to, however it is <i>not</i> dereferenceable; operator*() will not return a well-defined value. If the vector is <a href="qvector.html#empty">empty</a>(), the iterator returned by <a href="qvector.html#begin">begin</a>() will equal the iterator returned by <a href="qvector.html#end">end</a>().</p>
+<p>The fastest way to access an element of a vector is by using operator[]. This function provides random access and will return a reference to the element located at the specified index. Thus, you can access every element directly, in constant time, providing you know the location of the element. It is undefined to access an element that does not exist (your application will probably crash). For example:</p>
+<pre>     Q3ValueVector&lt;int&gt; vec1;  // an empty vector
+     vec1[10] = 4;  // WARNING: undefined, probably a crash
+
+     Q3ValueVector&lt;QString&gt; vec2(25); // initialize with 25 elements
+     vec2[10] = &quot;Dave&quot;;  // OK</pre>
+<p>Whenever inserting, removing or referencing elements in a vector, always make sure you are referring to valid positions. For example:</p>
+<pre>     void func( Q3ValueVector&lt;int&gt;&amp; vec )
+     {
+         if ( vec.size() &gt; 10 ) {
+             vec[9] = 99; // OK
+         }
+     };</pre>
+<p>The iterators provided by vector are random access iterators, therefore you can use them with many generic algorithms, for example, algorithms provided by the STL.</p>
+<p>It is safe to have multiple iterators on the vector at the same time. Since Q3ValueVector manages memory dynamically, all iterators can become invalid if a memory reallocation occurs. For example, if some member of the vector is removed, iterators that point to the removed element and to all following elements become invalidated. Inserting into the middle of the vector will invalidate all iterators. For convenience, the function <a href="qvector.html#back">back</a>() returns a reference to the last element in the vector, and <a href="qvector.html#front">front</a>() returns a reference to the first element. If the vector is <a href="qvector.html#empty">empty</a>(), both <a href="qvector.html#back">back</a>() and <a href="qvector.html#front">front</a>() have undefined behavior (your application will crash or do unpredictable things). Use <a href="qvector.html#back">back</a>() and <a href="qvector.html#front">front</a>() with caution, for example:</p>
+<pre>     Q3ValueVector&lt;int&gt; vec( 3 );
+     vec.push_back( 1 );
+     vec.push_back( 2 );
+     vec.push_back( 3 );
+     ...
+     if ( !vec.empty() ) {
+         // OK: modify the first element
+         int&amp; i = vec.front();
+         i = 18;
+     }
+     ...
+     Q3ValueVector&lt;double&gt; dvec;
+     double d = dvec.back(); // undefined behavior</pre>
+<p>Because Q3ValueVector manages memory dynamically, it is recommended that you contruct a vector with an initial size. Inserting and removing elements happens fastest when:</p>
+<ul>
+<li>Inserting or removing elements happens at the <a href="qvector.html#end">end</a>() of the vector;</li>
+<li>The vector does not need to allocate additional memory.</li>
+</ul>
+<p>By creating a Q3ValueVector with a sufficiently large initial size, there will be less memory allocations. Do not use an initial size that is too big, since it will still take time to construct all the empty entries, and the extra space will be wasted if it is never used.</p>
+<p>Because Q3ValueVector is value-based there is no need to be careful about deleting elements in the vector. The vector holds its own copies and will free them if the corresponding member or the vector itself is deleted. You can force the vector to free all of its items with <a href="qvector.html#clear">clear</a>().</p>
+<p>Q3ValueVector is shared implicitly, which means it can be copied in constant time. If multiple Q3ValueVector instances share the same data and one needs to modify its contents, this modifying instance makes a copy and modifies its private copy; it thus does not affect the other instances. This is often called &quot;copy on write&quot;. If a Q3ValueVector is being used in a multi-threaded program, you must protect all access to the vector. See <a href="qmutex.html">QMutex</a>.</p>
+<p>There are several ways to insert elements into the vector. The <a href="qvector.html#push_back">push_back</a>() function insert elements into the end of the vector, and is usually fastest. The <a href="qvector.html#insert">insert</a>() function can be used to add elements at specific positions within the vector.</p>
+<p>Items can be also be removed from the vector in several ways. There are several variants of the <a href="qvector.html#erase">erase</a>() function which removes a specific element, or range of elements, from the vector.</p>
+<p>Q3ValueVector stores its elements in contiguous memory. This means that you can use a Q3ValueVector in any situation that requires an array.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ValueVector"></a>Q3ValueVector::Q3ValueVector ()</h3>
+<p>Constructs an empty vector without any elements. To create a vector which reserves an initial amount of space for elements, use <tt>Q3ValueVector(size_type n)</tt>.</p>
+<h3 class="fn"><a name="Q3ValueVector-2"></a>Q3ValueVector::Q3ValueVector ( const Q3ValueVector&lt;T&gt; &amp; <i>v</i> )</h3>
+<p>Constructs a copy of <i>v</i>.</p>
+<p>This operation costs O(1) time because <a href="q3valuevector.html">Q3ValueVector</a> is implicitly shared.</p>
+<p>The first modification to the vector does takes O(n) time, because the elements must be copied.</p>
+<h3 class="fn"><a name="Q3ValueVector-3"></a>Q3ValueVector::Q3ValueVector ( <a href="qvector.html">QVector</a>&lt;T&gt;::size_type <i>n</i>, const T &amp; <i>val</i> = T() )</h3>
+<p>Constructs a vector with an initial size of <i>n</i> elements. Each element is initialized with the value of <i>val</i>.</p>
+<h3 class="fn"><a name="Q3ValueVector-4"></a>Q3ValueVector::Q3ValueVector ( const std::vector&lt;T&gt; &amp; <i>v</i> )</h3>
+<p>This operation costs O(n) time because <i>v</i> is copied.</p>
+<h3 class="fn"><a name="at"></a>T &amp; Q3ValueVector::at ( int <i>i</i>, bool * <i>ok</i> = 0 )</h3>
+<p>Returns a reference to the element with index <i>i</i>. If <i>ok</i> is non-null, and the index <i>i</i> is out of range, *<i>ok</i> is set to FALSE and the returned reference is undefined. If the index <i>i</i> is within the range of the vector, and <i>ok</i> is non-null, *<i>ok</i> is set to TRUE and the returned reference is well defined.</p>
+<h3 class="fn"><a name="at-2"></a>const T &amp; Q3ValueVector::at ( int <i>i</i>, bool * <i>ok</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a const reference to the element with index <i>i</i>. If <i>ok</i> is non-null, and the index <i>i</i> is out of range, *<i>ok</i> is set to FALSE and the returned reference is undefined. If the index <i>i</i> is within the range of the vector, and <i>ok</i> is non-null, *<i>ok</i> is set to TRUE and the returned reference is well defined.</p>
+<h3 class="fn"><a name="resize"></a>void Q3ValueVector::resize ( int <i>n</i>, const T &amp; <i>val</i> = T() )</h3>
+<p>Changes the size of the vector to <i>n</i>. If <i>n</i> is greater than the current <a href="qvector.html#size">size</a>(), elements are added to the end and initialized with the value of <i>val</i>. If <i>n</i> is less than <a href="qvector.html#size">size</a>(), elements are removed from the end. If <i>n</i> is equal to <a href="qvector.html#size">size</a>() nothing happens.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3ValueVector&lt;T&gt; &amp; Q3ValueVector::operator= ( const Q3ValueVector&lt;T&gt; &amp; <i>v</i> )</h3>
+<p>Assigns <i>v</i> to this vector and returns a reference to this vector.</p>
+<p>All iterators of the current vector become invalidated by this operation. The cost of such an assignment is O(1) since <a href="q3valuevector.html">Q3ValueVector</a> is implicitly shared.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>Q3ValueVector&lt;T&gt; &amp; Q3ValueVector::operator= ( const std::vector&lt;T&gt; &amp; <i>v</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns <i>v</i> to this vector and returns a reference to this vector.</p>
+<p>All iterators of the current vector become invalidated by this operation. The cost of this assignment is O(n) since <i>v</i> is copied.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

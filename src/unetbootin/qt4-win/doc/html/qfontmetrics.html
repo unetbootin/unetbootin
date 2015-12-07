@@ -1,0 +1,268 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qfontmetrics.cpp -->
+<head>
+  <title>Qt 4.4: QFontMetrics Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFontMetrics Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFontMetrics class provides font metrics information. <a href="#details">More...</a></p>
+<pre> #include &lt;QFontMetrics&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qfontmetrics-members.html">List of all members, including inherited members</a></li>
+<li><a href="qfontmetrics-obsolete.html">Obsolete members</a></li>
+<li><a href="qfontmetrics-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfontmetrics.html#QFontMetrics">QFontMetrics</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/><b><a href="qfontmetrics.html#QFontMetrics-2">QFontMetrics</a></b> ( const QFont &amp; <i>font</i>, QPaintDevice * <i>paintdevice</i> )</li>
+<li><div class="fn"/><b><a href="qfontmetrics.html#QFontMetrics-3">QFontMetrics</a></b> ( const QFontMetrics &amp; <i>fm</i> )</li>
+<li><div class="fn"/><b><a href="qfontmetrics.html#dtor.QFontMetrics">~QFontMetrics</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#ascent">ascent</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#averageCharWidth">averageCharWidth</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="qfontmetrics.html#boundingRect">boundingRect</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qfontmetrics.html#boundingRect-2">boundingRect</a></b> ( const QString &amp; <i>text</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qfontmetrics.html#boundingRect-5">boundingRect</a></b> ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</li>
+<li><div class="fn"/>QRect <b><a href="qfontmetrics.html#boundingRect-6">boundingRect</a></b> ( const QRect &amp; <i>rect</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#descent">descent</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qfontmetrics.html#elidedText">elidedText</a></b> ( const QString &amp; <i>text</i>, Qt::TextElideMode <i>mode</i>, int <i>width</i>, int <i>flags</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#height">height</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfontmetrics.html#inFont">inFont</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#leading">leading</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#leftBearing">leftBearing</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#lineSpacing">lineSpacing</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#lineWidth">lineWidth</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#maxWidth">maxWidth</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#minLeftBearing">minLeftBearing</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#minRightBearing">minRightBearing</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#overlinePos">overlinePos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#rightBearing">rightBearing</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>QSize <b><a href="qfontmetrics.html#size">size</a></b> ( int <i>flags</i>, const QString &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#strikeOutPos">strikeOutPos</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="qfontmetrics.html#tightBoundingRect">tightBoundingRect</a></b> ( const QString &amp; <i>text</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#underlinePos">underlinePos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#width">width</a></b> ( const QString &amp; <i>text</i>, int <i>len</i> = -1 ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#width-2">width</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfontmetrics.html#xHeight">xHeight</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfontmetrics.html#operator-not-eq">operator!=</a></b> ( const QFontMetrics &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfontmetrics.html#operator-not-eq-2">operator!=</a></b> ( const QFontMetrics &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QFontMetrics &amp; <b><a href="qfontmetrics.html#operator-eq">operator=</a></b> ( const QFontMetrics &amp; <i>fm</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfontmetrics.html#operator-eq-eq">operator==</a></b> ( const QFontMetrics &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfontmetrics.html#operator-eq-eq-2">operator==</a></b> ( const QFontMetrics &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFontMetrics class provides font metrics information.</p>
+<p>QFontMetrics functions calculate the size of characters and strings for a given font. There are three ways you can create a QFontMetrics object:</p>
+<ol type="1">
+<li>Calling the QFontMetrics constructor with a <a href="qfont.html">QFont</a> creates a font metrics object for a screen-compatible font, i.e&#x2e; the font cannot be a printer font. If the font is changed later, the font metrics object is <i>not</i> updated.<p>(Note: If you use a printer font the values returned may be inaccurate. Printer fonts are not always accessible so the nearest screen font is used if a printer font is supplied.)</p>
+</li>
+<li><a href="qwidget.html#fontMetrics">QWidget::fontMetrics</a>() returns the font metrics for a widget's font. This is equivalent to QFontMetrics(widget-&gt;font()). If the widget's font is changed later, the font metrics object is <i>not</i> updated.</li>
+<li><a href="qpainter.html#fontMetrics">QPainter::fontMetrics</a>() returns the font metrics for a painter's current font. If the painter's font is changed later, the font metrics object is <i>not</i> updated.</li>
+</ol>
+<p>Once created, the object provides functions to access the individual metrics of the font, its characters, and for strings rendered in the font.</p>
+<p>There are several functions that operate on the font: <a href="qfontmetrics.html#ascent">ascent</a>(), <a href="qfontmetrics.html#descent">descent</a>(), <a href="qfontmetrics.html#height">height</a>(), <a href="qfontmetrics.html#leading">leading</a>() and <a href="qfontmetrics.html#lineSpacing">lineSpacing</a>() return the basic size properties of the font. The <a href="qfontmetrics.html#underlinePos">underlinePos</a>(), <a href="qfontmetrics.html#overlinePos">overlinePos</a>(), <a href="qfontmetrics.html#strikeOutPos">strikeOutPos</a>() and <a href="qfontmetrics.html#lineWidth">lineWidth</a>() functions, return the properties of the line that underlines, overlines or strikes out the characters. These functions are all fast.</p>
+<p>There are also some functions that operate on the set of glyphs in the font: <a href="qfontmetrics.html#minLeftBearing">minLeftBearing</a>(), <a href="qfontmetrics.html#minRightBearing">minRightBearing</a>() and <a href="qfontmetrics.html#maxWidth">maxWidth</a>(). These are by necessity slow, and we recommend avoiding them if possible.</p>
+<p>For each character, you can get its <a href="qfontmetrics.html#width">width</a>(), <a href="qfontmetrics.html#leftBearing">leftBearing</a>() and <a href="qfontmetrics.html#rightBearing">rightBearing</a>() and find out whether it is in the font using <a href="qfontmetrics.html#inFont">inFont</a>(). You can also treat the character as a string, and use the string functions on it.</p>
+<p>The string functions include <a href="qfontmetrics.html#width">width</a>(), to return the width of a string in pixels (or points, for a printer), <a href="qfontmetrics.html#boundingRect">boundingRect</a>(), to return a rectangle large enough to contain the rendered string, and <a href="qfontmetrics.html#size">size</a>(), to return the size of that rectangle.</p>
+<p>Example:</p>
+<pre>     QFont font(&quot;times&quot;, 24);
+     QFontMetrics fm(font);
+     int pixelsWide = fm.width(&quot;What's the width of this text?&quot;);
+     int pixelsHigh = fm.height();</pre>
+<p>See also <a href="qfont.html">QFont</a>, <a href="qfontinfo.html">QFontInfo</a>, <a href="qfontdatabase.html">QFontDatabase</a>, <a href="qfontcombobox.html">QFontComboBox</a>, and <a href="widgets-charactermap.html">Character Map Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFontMetrics"></a>QFontMetrics::QFontMetrics ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Constructs a font metrics object for <i>font</i>.</p>
+<p>The font metrics will be compatible with the paintdevice used to create <i>font</i>.</p>
+<p>The font metrics object holds the information for the font that is passed in the constructor at the time it is created, and is not updated if the font's attributes are changed later.</p>
+<p>Use <a href="qfontmetrics.html">QFontMetrics</a>(const <a href="qfont.html">QFont</a> &amp;, QPaintDevice *) to get the font metrics that are compatible with a certain paint device.</p>
+<h3 class="fn"><a name="QFontMetrics-2"></a>QFontMetrics::QFontMetrics ( const <a href="qfont.html">QFont</a> &amp; <i>font</i>, QPaintDevice * <i>paintdevice</i> )</h3>
+<p>Constructs a font metrics object for <i>font</i> and <i>paintdevice</i>.</p>
+<p>The font metrics will be compatible with the paintdevice passed. If the <i>paintdevice</i> is 0, the metrics will be screen-compatible, ie. the metrics you get if you use the font for drawing text on a <a href="qwidget.html">widgets</a> or <a href="qpixmap.html">pixmaps</a>, not on a <a href="qpicture.html">QPicture</a> or <a href="qprinter.html">QPrinter</a>.</p>
+<p>The font metrics object holds the information for the font that is passed in the constructor at the time it is created, and is not updated if the font's attributes are changed later.</p>
+<h3 class="fn"><a name="QFontMetrics-3"></a>QFontMetrics::QFontMetrics ( const QFontMetrics &amp; <i>fm</i> )</h3>
+<p>Constructs a copy of <i>fm</i>.</p>
+<h3 class="fn"><a name="dtor.QFontMetrics"></a>QFontMetrics::~QFontMetrics ()</h3>
+<p>Destroys the font metrics object and frees all allocated resources.</p>
+<h3 class="fn"><a name="ascent"></a>int QFontMetrics::ascent () const</h3>
+<p>Returns the ascent of the font.</p>
+<p>The ascent of a font is the distance from the baseline to the highest position characters extend to. In practice, some font designers break this rule, e.g&#x2e; when they put more than one accent on top of a character, or to accommodate an unusual character in an exotic language, so it is possible (though rare) that this value will be too small.</p>
+<p>See also <a href="qfontmetrics.html#descent">descent</a>().</p>
+<h3 class="fn"><a name="averageCharWidth"></a>int QFontMetrics::averageCharWidth () const</h3>
+<p>Returns the average width of glyphs in the font.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrect.html">QRect</a> QFontMetrics::boundingRect ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>Returns the rectangle that is covered by ink if character <i>ch</i> were to be drawn at the origin of the coordinate system.</p>
+<p>Note that the bounding rectangle may extend to the left of (0, 0), e.g&#x2e; for italicized fonts, and that the text output may cover <i>all</i> pixels in the bounding rectangle. For a space character the rectangle will usually be empty.</p>
+<p>Note that the rectangle usually extends both above and below the base line.</p>
+<p><b>Warning:</b> The width of the returned rectangle is not the advance width of the character. Use boundingRect(const <a href="qstring.html">QString</a> &amp;) or <a href="qfontmetrics.html#width">width</a>() instead.</p>
+<p>See also <a href="qfontmetrics.html#width">width</a>().</p>
+<h3 class="fn"><a name="boundingRect-2"></a><a href="qrect.html">QRect</a> QFontMetrics::boundingRect ( const <a href="qstring.html">QString</a> &amp; <i>text</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the bounding rectangle of the characters in the string specified by <i>text</i>. The bounding rectangle always covers at least the set of pixels the text would cover if drawn at (0, 0).</p>
+<p>Note that the bounding rectangle may extend to the left of (0, 0), e.g&#x2e; for italicized fonts, and that the width of the returned rectangle might be different than what the <a href="qfontmetrics.html#width">width</a>() method returns.</p>
+<p>If you want to know the advance width of the string (to layout a set of strings next to each other), use <a href="qfontmetrics.html#width">width</a>() instead.</p>
+<p>Newline characters are processed as normal characters, <i>not</i> as linebreaks.</p>
+<p>The height of the bounding rectangle is at least as large as the value returned by <a href="qfontmetrics.html#height">height</a>().</p>
+<p>See also <a href="qfontmetrics.html#width">width</a>(), <a href="qfontmetrics.html#height">height</a>(), <a href="qpainter.html#boundingRect">QPainter::boundingRect</a>(), and <a href="qfontmetrics.html#tightBoundingRect">tightBoundingRect</a>().</p>
+<h3 class="fn"><a name="boundingRect-5"></a><a href="qrect.html">QRect</a> QFontMetrics::boundingRect ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the bounding rectangle for the given <i>text</i> within the rectangle specified by the <i>x</i> and <i>y</i> coordinates, <i>width</i>, and <i>height</i>.</p>
+<p>If <a href="qt.html#TextFlag-enum">Qt::TextExpandTabs</a> is set in <i>flags</i> and <i>tabArray</i> is non-null, it specifies a 0-terminated sequence of pixel-positions for tabs; otherwise, if <i>tabStops</i> is non-zero, it is used as the tab spacing (in pixels).</p>
+<h3 class="fn"><a name="boundingRect-6"></a><a href="qrect.html">QRect</a> QFontMetrics::boundingRect ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the bounding rectangle of the characters in the string specified by <i>text</i>, which is the set of pixels the text would cover if drawn at (0, 0). The drawing, and hence the bounding rectangle, is constrained to the rectangle <i>rect</i>.</p>
+<p>The <i>flags</i> argument is the bitwise OR of the following flags:</p>
+<ul>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a> aligns to the left border, except for Arabic and Hebrew where it aligns to the right.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignRight</a> aligns to the right border, except for Arabic and Hebrew where it aligns to the left.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignJustify</a> produces justified text.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignHCenter</a> aligns horizontally centered.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignTop</a> aligns to the top border.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignBottom</a> aligns to the bottom border.</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignVCenter</a> aligns vertically centered</li>
+<li><a href="qt.html#AlignmentFlag-enum">Qt::AlignCenter</a> (== <tt>Qt::AlignHCenter | Qt::AlignVCenter</tt>)</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextSingleLine</a> ignores newline characters in the text.</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextExpandTabs</a> expands tabs (see below)</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextShowMnemonic</a> interprets &quot;&amp;amp;x&quot; as <u>x</u>, i.e&#x2e; underlined.</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextWordWrap</a> breaks the text to fit the rectangle.</li>
+</ul>
+<p><a href="qt.html#Orientation-enum">Qt::Horizontal</a> alignment defaults to <a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a> and vertical alignment defaults to <a href="qt.html#AlignmentFlag-enum">Qt::AlignTop</a>.</p>
+<p>If several of the horizontal or several of the vertical alignment flags are set, the resulting alignment is undefined.</p>
+<p>If <a href="qt.html#TextFlag-enum">Qt::TextExpandTabs</a> is set in <i>flags</i>, then: if <i>tabArray</i> is non-null, it specifies a 0-terminated sequence of pixel-positions for tabs; otherwise if <i>tabStops</i> is non-zero, it is used as the tab spacing (in pixels).</p>
+<p>Note that the bounding rectangle may extend to the left of (0, 0), e.g&#x2e; for italicized fonts, and that the text output may cover <i>all</i> pixels in the bounding rectangle.</p>
+<p>Newline characters are processed as linebreaks.</p>
+<p>Despite the different actual character heights, the heights of the bounding rectangles of &quot;Yes&quot; and &quot;yes&quot; are the same.</p>
+<p>The bounding rectangle returned by this function is somewhat larger than that calculated by the simpler <a href="qfontmetrics.html#boundingRect">boundingRect</a>() function. This function uses the <a href="qfontmetrics.html#minLeftBearing">maximum left</a> and <a href="qfontmetrics.html#minRightBearing">right</a> font bearings as is necessary for multi-line text to align correctly. Also, fontHeight() and <a href="qfontmetrics.html#lineSpacing">lineSpacing</a>() are used to calculate the height, rather than individual character heights.</p>
+<p>See also <a href="qfontmetrics.html#width">width</a>(), <a href="qpainter.html#boundingRect">QPainter::boundingRect</a>(), and <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="descent"></a>int QFontMetrics::descent () const</h3>
+<p>Returns the descent of the font.</p>
+<p>The descent is the distance from the base line to the lowest point characters extend to. In practice, some font designers break this rule, e.g&#x2e; to accommodate an unusual character in an exotic language, so it is possible (though rare) that this value will be too small.</p>
+<p>See also <a href="qfontmetrics.html#ascent">ascent</a>().</p>
+<h3 class="fn"><a name="elidedText"></a><a href="qstring.html">QString</a> QFontMetrics::elidedText ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qt.html#TextElideMode-enum">Qt::TextElideMode</a> <i>mode</i>, int <i>width</i>, int <i>flags</i> = 0 ) const</h3>
+<p>If the string <i>text</i> is wider than <i>width</i>, returns an elided version of the string (i.e&#x2e;, a string with &quot;..&#x2e;&quot; in it). Otherwise, returns the original string.</p>
+<p>The <i>mode</i> parameter specifies whether the text is elided on the left (e.g&#x2e;, &quot;..&#x2e;tech&quot;), in the middle (e.g&#x2e;, &quot;Tr..&#x2e;ch&quot;), or on the right (e.g&#x2e;, &quot;Trol..&#x2e;&quot;).</p>
+<p>The <i>width</i> is specified in pixels, not characters.</p>
+<p>The <i>flags</i> argument is optional and currently only supports <a href="qt.html#TextFlag-enum">Qt::TextShowMnemonic</a> as value.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="height"></a>int QFontMetrics::height () const</h3>
+<p>Returns the height of the font.</p>
+<p>This is always equal to <a href="qfontmetrics.html#ascent">ascent</a>()+<a href="qfontmetrics.html#descent">descent</a>()+1 (the 1 is for the base line).</p>
+<p>See also <a href="qfontmetrics.html#leading">leading</a>() and <a href="qfontmetrics.html#lineSpacing">lineSpacing</a>().</p>
+<h3 class="fn"><a name="inFont"></a>bool QFontMetrics::inFont ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>Returns true if character <i>ch</i> is a valid character in the font; otherwise returns false.</p>
+<h3 class="fn"><a name="leading"></a>int QFontMetrics::leading () const</h3>
+<p>Returns the leading of the font.</p>
+<p>This is the natural inter-line spacing.</p>
+<p>See also <a href="qfontmetrics.html#height">height</a>() and <a href="qfontmetrics.html#lineSpacing">lineSpacing</a>().</p>
+<h3 class="fn"><a name="leftBearing"></a>int QFontMetrics::leftBearing ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>Returns the left bearing of character <i>ch</i> in the font.</p>
+<p>The left bearing is the right-ward distance of the left-most pixel of the character from the logical origin of the character. This value is negative if the pixels of the character extend to the left of the logical origin.</p>
+<p>See width(<a href="qchar.html">QChar</a>) for a graphical description of this metric.</p>
+<p>See also <a href="qfontmetrics.html#rightBearing">rightBearing</a>(), <a href="qfontmetrics.html#minLeftBearing">minLeftBearing</a>(), and <a href="qfontmetrics.html#width">width</a>().</p>
+<h3 class="fn"><a name="lineSpacing"></a>int QFontMetrics::lineSpacing () const</h3>
+<p>Returns the distance from one base line to the next.</p>
+<p>This value is always equal to <a href="qfontmetrics.html#leading">leading</a>()+<a href="qfontmetrics.html#height">height</a>().</p>
+<p>See also <a href="qfontmetrics.html#height">height</a>() and <a href="qfontmetrics.html#leading">leading</a>().</p>
+<h3 class="fn"><a name="lineWidth"></a>int QFontMetrics::lineWidth () const</h3>
+<p>Returns the width of the underline and strikeout lines, adjusted for the point size of the font.</p>
+<p>See also <a href="qfontmetrics.html#underlinePos">underlinePos</a>(), <a href="qfontmetrics.html#overlinePos">overlinePos</a>(), and <a href="qfontmetrics.html#strikeOutPos">strikeOutPos</a>().</p>
+<h3 class="fn"><a name="maxWidth"></a>int QFontMetrics::maxWidth () const</h3>
+<p>Returns the width of the widest character in the font.</p>
+<h3 class="fn"><a name="minLeftBearing"></a>int QFontMetrics::minLeftBearing () const</h3>
+<p>Returns the minimum left bearing of the font.</p>
+<p>This is the smallest leftBearing(char) of all characters in the font.</p>
+<p>Note that this function can be very slow if the font is large.</p>
+<p>See also <a href="qfontmetrics.html#minRightBearing">minRightBearing</a>() and <a href="qfontmetrics.html#leftBearing">leftBearing</a>().</p>
+<h3 class="fn"><a name="minRightBearing"></a>int QFontMetrics::minRightBearing () const</h3>
+<p>Returns the minimum right bearing of the font.</p>
+<p>This is the smallest rightBearing(char) of all characters in the font.</p>
+<p>Note that this function can be very slow if the font is large.</p>
+<p>See also <a href="qfontmetrics.html#minLeftBearing">minLeftBearing</a>() and <a href="qfontmetrics.html#rightBearing">rightBearing</a>().</p>
+<h3 class="fn"><a name="overlinePos"></a>int QFontMetrics::overlinePos () const</h3>
+<p>Returns the distance from the base line to where an overline should be drawn.</p>
+<p>See also <a href="qfontmetrics.html#underlinePos">underlinePos</a>(), <a href="qfontmetrics.html#strikeOutPos">strikeOutPos</a>(), and <a href="qfontmetrics.html#lineWidth">lineWidth</a>().</p>
+<h3 class="fn"><a name="rightBearing"></a>int QFontMetrics::rightBearing ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>Returns the right bearing of character <i>ch</i> in the font.</p>
+<p>The right bearing is the left-ward distance of the right-most pixel of the character from the logical origin of a subsequent character. This value is negative if the pixels of the character extend to the right of the <a href="qfontmetrics.html#width">width</a>() of the character.</p>
+<p>See <a href="qfontmetrics.html#width">width</a>() for a graphical description of this metric.</p>
+<p>See also <a href="qfontmetrics.html#leftBearing">leftBearing</a>(), <a href="qfontmetrics.html#minRightBearing">minRightBearing</a>(), and <a href="qfontmetrics.html#width">width</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qsize.html">QSize</a> QFontMetrics::size ( int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>tabStops</i> = 0, int * <i>tabArray</i> = 0 ) const</h3>
+<p>Returns the size in pixels of <i>text</i>.</p>
+<p>The <i>flags</i> argument is the bitwise OR of the following flags:</p>
+<ul>
+<li><a href="qt.html#TextFlag-enum">Qt::TextSingleLine</a> ignores newline characters.</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextExpandTabs</a> expands tabs (see below)</li>
+<li><a href="qt.html#TextFlag-enum">Qt::TextShowMnemonic</a> interprets &quot;&amp;amp;x&quot; as <u>x</u>, i.e&#x2e; underlined.</li>
+<li>Qt::TextWordBreak breaks the text to fit the rectangle.</li>
+</ul>
+<p>If <a href="qt.html#TextFlag-enum">Qt::TextExpandTabs</a> is set in <i>flags</i>, then: if <i>tabArray</i> is non-null, it specifies a 0-terminated sequence of pixel-positions for tabs; otherwise if <i>tabStops</i> is non-zero, it is used as the tab spacing (in pixels).</p>
+<p>Newline characters are processed as linebreaks.</p>
+<p>Despite the different actual character heights, the heights of the bounding rectangles of &quot;Yes&quot; and &quot;yes&quot; are the same.</p>
+<p>See also <a href="qfontmetrics.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="strikeOutPos"></a>int QFontMetrics::strikeOutPos () const</h3>
+<p>Returns the distance from the base line to where the strikeout line should be drawn.</p>
+<p>See also <a href="qfontmetrics.html#underlinePos">underlinePos</a>(), <a href="qfontmetrics.html#overlinePos">overlinePos</a>(), and <a href="qfontmetrics.html#lineWidth">lineWidth</a>().</p>
+<h3 class="fn"><a name="tightBoundingRect"></a><a href="qrect.html">QRect</a> QFontMetrics::tightBoundingRect ( const <a href="qstring.html">QString</a> &amp; <i>text</i> ) const</h3>
+<p>Returns a tight bounding rectangle around the characters in the string specified by <i>text</i>. The bounding rectangle always covers at least the set of pixels the text would cover if drawn at (0, 0).</p>
+<p>Note that the bounding rectangle may extend to the left of (0, 0), e.g&#x2e; for italicized fonts, and that the width of the returned rectangle might be different than what the <a href="qfontmetrics.html#width">width</a>() method returns.</p>
+<p>If you want to know the advance width of the string (to layout a set of strings next to each other), use <a href="qfontmetrics.html#width">width</a>() instead.</p>
+<p>Newline characters are processed as normal characters, <i>not</i> as linebreaks.</p>
+<p><b>Warning:</b> Calling this method is very slow on Windows.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qfontmetrics.html#width">width</a>(), <a href="qfontmetrics.html#height">height</a>(), and <a href="qfontmetrics.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="underlinePos"></a>int QFontMetrics::underlinePos () const</h3>
+<p>Returns the distance from the base line to where an underscore should be drawn.</p>
+<p>See also <a href="qfontmetrics.html#overlinePos">overlinePos</a>(), <a href="qfontmetrics.html#strikeOutPos">strikeOutPos</a>(), and <a href="qfontmetrics.html#lineWidth">lineWidth</a>().</p>
+<h3 class="fn"><a name="width"></a>int QFontMetrics::width ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>len</i> = -1 ) const</h3>
+<p>Returns the width in pixels of the first <i>len</i> characters of <i>text</i>. If <i>len</i> is negative (the default), the entire string is used.</p>
+<p>Note that this value is <i>not</i> equal to <a href="qfontmetrics.html#boundingRect">boundingRect</a>().width(); <a href="qfontmetrics.html#boundingRect">boundingRect</a>() returns a rectangle describing the pixels this string will cover whereas width() returns the distance to where the next string should be drawn.</p>
+<p>See also <a href="qfontmetrics.html#boundingRect">boundingRect</a>().</p>
+<h3 class="fn"><a name="width-2"></a>int QFontMetrics::width ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p align="center"><img src="images/bearings.png" alt="Bearings" /></p><p>Returns the logical width of character <i>ch</i> in pixels. This is a distance appropriate for drawing a subsequent character after <i>ch</i>.</p>
+<p>Some of the metrics are described in the image to the right. The central dark rectangles cover the logical <a href="qfontmetrics.html#width">width</a>() of each character. The outer pale rectangles cover the <a href="qfontmetrics.html#leftBearing">leftBearing</a>() and <a href="qfontmetrics.html#rightBearing">rightBearing</a>() of each character. Notice that the bearings of &quot;f&quot; in this particular font are both negative, while the bearings of &quot;o&quot; are both positive.</p>
+<p><b>Warning:</b> This function will produce incorrect results for Arabic characters or non-spacing marks in the middle of a string, as the glyph shaping and positioning of marks that happens when processing strings cannot be taken into account. Use <a href="qfontmetrics-obsolete.html#charWidth">charWidth</a>() instead if you aren't looking for the width of isolated characters.</p>
+<p>See also <a href="qfontmetrics.html#boundingRect">boundingRect</a>() and <a href="qfontmetrics-obsolete.html#charWidth">charWidth</a>().</p>
+<h3 class="fn"><a name="xHeight"></a>int QFontMetrics::xHeight () const</h3>
+<p>Returns the 'x' height of the font. This is often but not always the same as the height of the character 'x'.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QFontMetrics::operator!= ( const QFontMetrics &amp; <i>other</i> )</h3>
+<p>Returns true if <i>other</i> is not equal to this object; otherwise returns false.</p>
+<p>Two font metrics are considered equal if they were constructed from the same <a href="qfont.html">QFont</a> and the paint devices they were constructed for are considered compatible.</p>
+<p>See also <a href="qfontmetrics.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool QFontMetrics::operator!= ( const QFontMetrics &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> is not equal to this object; otherwise returns false.</p>
+<p>Two font metrics are considered equal if they were constructed from the same <a href="qfont.html">QFont</a> and the paint devices they were constructed for are considered compatible.</p>
+<p>See also <a href="qfontmetrics.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QFontMetrics &amp; QFontMetrics::operator= ( const QFontMetrics &amp; <i>fm</i> )</h3>
+<p>Assigns the font metrics <i>fm</i>.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QFontMetrics::operator== ( const QFontMetrics &amp; <i>other</i> )</h3>
+<p>Returns true if <i>other</i> is equal to this object; otherwise returns false.</p>
+<p>Two font metrics are considered equal if they were constructed from the same <a href="qfont.html">QFont</a> and the paint devices they were constructed for are considered compatible.</p>
+<p>See also <a href="qfontmetrics.html#operator-not-eq">operator!=</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool QFontMetrics::operator== ( const QFontMetrics &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> is equal to this object; otherwise returns false.</p>
+<p>Two font metrics are considered equal if they were constructed from the same <a href="qfont.html">QFont</a> and the paint devices they were constructed for are considered compatible.</p>
+<p>See also <a href="qfontmetrics.html#operator-not-eq">operator!=</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

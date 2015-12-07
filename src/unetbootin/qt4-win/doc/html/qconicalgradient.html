@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qbrush.cpp -->
+<head>
+  <title>Qt 4.4: QConicalGradient Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QConicalGradient Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QConicalGradient class is used in combination with <a href="qbrush.html">QBrush</a> to specify a conical gradient brush. <a href="#details">More...</a></p>
+<pre> #include &lt;QConicalGradient&gt;</pre><p>Inherits <a href="qgradient.html">QGradient</a>.</p>
+<ul>
+<li><a href="qconicalgradient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qconicalgradient.html#QConicalGradient">QConicalGradient</a></b> ()</li>
+<li><div class="fn"/><b><a href="qconicalgradient.html#QConicalGradient-2">QConicalGradient</a></b> ( const QPointF &amp; <i>center</i>, qreal <i>angle</i> )</li>
+<li><div class="fn"/><b><a href="qconicalgradient.html#QConicalGradient-3">QConicalGradient</a></b> ( qreal <i>cx</i>, qreal <i>cy</i>, qreal <i>angle</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qconicalgradient.html#angle">angle</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qconicalgradient.html#center">center</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qconicalgradient.html#setAngle">setAngle</a></b> ( qreal <i>angle</i> )</li>
+<li><div class="fn"/>void <b><a href="qconicalgradient.html#setCenter">setCenter</a></b> ( const QPointF &amp; <i>center</i> )</li>
+<li><div class="fn"/>void <b><a href="qconicalgradient.html#setCenter-2">setCenter</a></b> ( qreal <i>x</i>, qreal <i>y</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 public functions inherited from <a href="qgradient.html#public-functions">QGradient</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QConicalGradient class is used in combination with <a href="qbrush.html">QBrush</a> to specify a conical gradient brush.</p>
+<p>Conical gradients interpolate interpolate colors counter-clockwise around a center point.</p>
+<p align="center"><img src="images/qconicalgradient.png" /></p><p>The colors in a gradient is defined using stop points of the <a href="qgradient.html#QGradientStop-typedef">QGradientStop</a> type, i.e&#x2e; a position and a color. Use the <a href="qgradient.html#setColorAt">QGradient::setColorAt</a>() or the <a href="qgradient.html#setStops">QGradient::setStops</a>() function to define the stop points. It is the gradient's complete set of stop points that describes how the gradient area should be filled. If no stop points have been specified, a gradient of black at 0 to white at 1 is used.</p>
+<p>In addition to the functions inherited from <a href="qgradient.html">QGradient</a>, the QConicalGradient class provides the <a href="qconicalgradient.html#angle">angle</a>() and <a href="qconicalgradient.html#center">center</a>() functions returning the start angle and center of the gradient.</p>
+<p>Note that the <a href="qgradient.html#setSpread">setSpread</a>() function has no effect for conical gradients. The reason is that the conical gradient is closed by definition, i.e&#x2e; the conical gradient fills the entire circle from 0 - 360 degrees, while the boundary of a radial or a linear gradient can be specified through its radius or final stop points, respectively.</p>
+<p>See also <a href="qlineargradient.html">QLinearGradient</a>, <a href="qradialgradient.html">QRadialGradient</a>, and <a href="demos-gradients.html">The Gradients Demo</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QConicalGradient"></a>QConicalGradient::QConicalGradient ()</h3>
+<p>Constructs a conical with center at (0, 0) starting the interpolation at angle 0.</p>
+<p>See also <a href="qgradient.html#setColorAt">QGradient::setColorAt</a>(), <a href="qconicalgradient.html#setCenter">setCenter</a>(), and <a href="qconicalgradient.html#setAngle">setAngle</a>().</p>
+<h3 class="fn"><a name="QConicalGradient-2"></a>QConicalGradient::QConicalGradient ( const <a href="qpointf.html">QPointF</a> &amp; <i>center</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )</h3>
+<p>Constructs a conical gradient with the given <i>center</i>, starting the interpolation at the given <i>angle</i>. The <i>angle</i> must be specified in degrees between 0 and 360.</p>
+<p>See also <a href="qgradient.html#setColorAt">QGradient::setColorAt</a>() and <a href="qgradient.html#setStops">QGradient::setStops</a>().</p>
+<h3 class="fn"><a name="QConicalGradient-3"></a>QConicalGradient::QConicalGradient ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>cx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>cy</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )</h3>
+<p>Constructs a conical gradient with the given center (<i>cx</i>, <i>cy</i>), starting the interpolation at the given <i>angle</i>. The angle must be specified in degrees between 0 and 360.</p>
+<p>See also <a href="qgradient.html#setColorAt">QGradient::setColorAt</a>() and <a href="qgradient.html#setStops">QGradient::setStops</a>().</p>
+<h3 class="fn"><a name="angle"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QConicalGradient::angle () const</h3>
+<p>Returns the start angle of the conical gradient in logical coordinates.</p>
+<p>See also <a href="qconicalgradient.html#setAngle">setAngle</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<h3 class="fn"><a name="center"></a><a href="qpointf.html">QPointF</a> QConicalGradient::center () const</h3>
+<p>Returns the center of the conical gradient in logical coordinates.</p>
+<p>See also <a href="qconicalgradient.html#setCenter">setCenter</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<h3 class="fn"><a name="setAngle"></a>void QConicalGradient::setAngle ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )</h3>
+<p>Sets <i>angle</i> to be the start angle for this conical gradient in logical coordinates.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qconicalgradient.html#angle">angle</a>().</p>
+<h3 class="fn"><a name="setCenter"></a>void QConicalGradient::setCenter ( const <a href="qpointf.html">QPointF</a> &amp; <i>center</i> )</h3>
+<p>Sets the center of this conical gradient in logical coordinates to <i>center</i>.</p>
+<p>See also <a href="qconicalgradient.html#center">center</a>().</p>
+<h3 class="fn"><a name="setCenter-2"></a>void QConicalGradient::setCenter ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the center of this conical gradient in logical coordinates to (<i>x</i>, <i>y</i>).</p>
+<p>See also <a href="qconicalgradient.html#center">center</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

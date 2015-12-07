@@ -1,0 +1,98 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example dialogs/trivialwizard
+    \title Trivial Wizard Example
+
+    The Trivial Wizard example illustrates how to create a linear three-page
+    registration wizard using three instances of QWizardPage and one instance
+    of QWizard.
+
+    \image trivialwizard-example-flow.png
+
+    \section1 Introduction Page
+
+    \image trivialwizard-example-introduction.png
+
+    The introduction page is created with the \c createIntroPage()
+    function where a QWizardPage is created and its title is set to
+    "Introduction". A QLabel is used to hold the description of \c page.
+    A QVBoxLayout is used to hold the \c label. This \c page is returned
+    when the \c createIntroPage() function is called.
+
+    \snippet examples/dialogs/trivialwizard/trivialwizard.cpp 0
+
+    \section1 Registration Page
+
+    \image trivialwizard-example-registration.png
+
+    The registration page is created with the \c createRegistrationPage()
+    function. QLineEdit objects are used to allow the user to input a name
+    and an e-mail address. A QGridLayout is used to hold the QLabel and
+    QLineEdit objects.
+
+    \snippet examples/dialogs/trivialwizard/trivialwizard.cpp 2
+
+    \section1 Conclusion Page
+
+    \image trivialwizard-example-conclusion.png
+
+    The conclusion page is created in the \c createConclusionPage()
+    function. This function's content is similar to \c createIntroPage(). A
+    QLabel is used to inform the user that the registration process has
+    completed successfully.
+
+    \snippet examples/dialogs/trivialwizard/trivialwizard.cpp 6
+
+    \section1 \c main() Function
+
+    The \c main() function instantiates a QWizard object, \c wizard, and
+    adds all three QWizardPage objects to it. The \c wizard window title is
+    set to "Trivial Wizard" and its \c show() function is invoked to display
+    it.
+
+    \snippet examples/dialogs/trivialwizard/trivialwizard.cpp 10
+
+    \sa QWizard, {Class Wizard Example}, {License Wizard Example}
+*/

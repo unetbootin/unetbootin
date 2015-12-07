@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: certificateinfo.cpp Example File (network/securesocketclient/certificateinfo.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">certificateinfo.cpp Example File<br /><span class="small-subtitle">network/securesocketclient/certificateinfo.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;certificateinfo.h&quot;
+ #include &quot;ui_certificateinfo.h&quot;
+
+ CertificateInfo::CertificateInfo(QWidget *parent)
+     : QDialog(parent)
+ {
+     form = new Ui_CertificateInfo;
+     form-&gt;setupUi(this);
+
+     connect(form-&gt;certificationPathView, SIGNAL(currentRowChanged(int)),
+             this, SLOT(updateCertificateInfo(int)));
+ }
+
+ CertificateInfo::~CertificateInfo()
+ {
+     delete form;
+ }
+
+ void CertificateInfo::setCertificateChain(const QList&lt;QSslCertificate&gt; &amp;chain)
+ {
+     this-&gt;chain = chain;
+
+     form-&gt;certificationPathView-&gt;clear();
+
+     for (int i = 0; i &lt; chain.size(); ++i) {
+         const QSslCertificate &amp;cert = chain.at(i);
+         form-&gt;certificationPathView-&gt;addItem(tr(&quot;%1%2 (%3)&quot;).arg(!i ? QString() : tr(&quot;Issued by: &quot;))
+                                              .arg(cert.subjectInfo(QSslCertificate::Organization))
+                                              .arg(cert.subjectInfo(QSslCertificate::CommonName)));
+     }
+
+     form-&gt;certificationPathView-&gt;setCurrentRow(0);
+ }
+
+ void CertificateInfo::updateCertificateInfo(int index)
+ {
+     form-&gt;certificateInfoView-&gt;clear();
+     if (index &gt;= 0 &amp;&amp; index &lt; chain.size()) {
+         const QSslCertificate &amp;cert = chain.at(index);
+         QStringList lines;
+         lines &lt;&lt; tr(&quot;Organization: %1&quot;).arg(cert.subjectInfo(QSslCertificate::Organization))
+               &lt;&lt; tr(&quot;Subunit: %1&quot;).arg(cert.subjectInfo(QSslCertificate::OrganizationalUnitName))
+               &lt;&lt; tr(&quot;Country: %1&quot;).arg(cert.subjectInfo(QSslCertificate::CountryName))
+               &lt;&lt; tr(&quot;Locality: %1&quot;).arg(cert.subjectInfo(QSslCertificate::LocalityName))
+               &lt;&lt; tr(&quot;State/Province: %1&quot;).arg(cert.subjectInfo(QSslCertificate::StateOrProvinceName))
+               &lt;&lt; tr(&quot;Common Name: %1&quot;).arg(cert.subjectInfo(QSslCertificate::CommonName))
+               &lt;&lt; QString()
+               &lt;&lt; tr(&quot;Issuer Organization: %1&quot;).arg(cert.issuerInfo(QSslCertificate::Organization))
+               &lt;&lt; tr(&quot;Issuer Unit Name: %1&quot;).arg(cert.issuerInfo(QSslCertificate::OrganizationalUnitName))
+               &lt;&lt; tr(&quot;Issuer Country: %1&quot;).arg(cert.issuerInfo(QSslCertificate::CountryName))
+               &lt;&lt; tr(&quot;Issuer Locality: %1&quot;).arg(cert.issuerInfo(QSslCertificate::LocalityName))
+               &lt;&lt; tr(&quot;Issuer State/Province: %1&quot;).arg(cert.issuerInfo(QSslCertificate::StateOrProvinceName))
+               &lt;&lt; tr(&quot;Issuer Common Name: %1&quot;).arg(cert.issuerInfo(QSslCertificate::CommonName));
+         foreach (QString line, lines)
+             form-&gt;certificateInfoView-&gt;addItem(line);
+     } else {
+         form-&gt;certificateInfoView-&gt;clear();
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

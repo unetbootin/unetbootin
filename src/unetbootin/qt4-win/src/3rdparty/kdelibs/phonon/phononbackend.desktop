@@ -1,0 +1,94 @@
+[Desktop Entry]
+Type=ServiceType
+X-KDE-ServiceType=PhononBackend
+Name=KDE Multimedia Backend
+Name[af]=KDE multimedia onderliggende program
+Name[ar]=خلفية وسائطية كيدي
+Name[bg]=Заден план за мултимедия (KDE)
+Name[bn_IN]=KDE মাল্টিমিডিয়া ব্যাক-এন্ড
+Name[ca]=Dorsal multimèdia del KDE
+Name[csb]=Spòdlé KDE multimedów
+Name[da]=Multimedia-backend til KDE
+Name[de]=KDE Multimedia-Backend
+Name[el]=Σύστημα υποστήριξης πολυμέσων του KDE
+Name[eo]=KDE-aŭdvida interno
+Name[es]=Motor multimedia de KDE
+Name[et]=KDE multimeedia taustaprogramm
+Name[eu]=KDE Multimedia interfazea
+Name[fa]=پایانۀ پشتیبانی چندرسانه‌ای KDE
+Name[fr]=Moteur multimédia KDE
+Name[ga]=Inneall Ilmheán KDE
+Name[gl]=Infraestrutura multimedia de KDE
+Name[gu]=KDE મલ્ટીમીડિયા પાશ્ર્વભાગ
+Name[he]=ממשק מולטימדיה של KDE
+Name[hi]=केडीई मल्टीमीडिया बैकएण्ड
+Name[hu]=KDE multimédiakezelő
+Name[is]=KDE margmiðlunarbakvinnsla
+Name[it]=Motore multimediale KDE
+Name[ja]=KDE マルチメディアバックエンド
+Name[kk]=KDE мультимедиа тетігі
+Name[km]=កម្មវិធី​ខាងក្រោយ​ពហុព័ត៌មាន​របស់ KDE
+Name[kn]=ಕೆಡಿಇ ಬಹುಮಾಧ್ಯಮ (ಮಲ್ಟಿಮೀಡಿಯಾ) ಹಿಂಬದಿ (ಬಾಕ್ ಎಂಡ್)
+Name[ko]=KDE 멀티미디어 백엔드
+Name[lv]=KDE multimēdijas aizmugure
+Name[mk]=Заден крај на KDE за мултимедија
+Name[ml]=കെഡിഇയുടെ മള്‍ട്ടിമീഡിയ ചട്ടക്കൂട് 
+Name[nb]=KDE Multimedia-bakstykke
+Name[nds]=KDE-Multimedia-Hülpprogramm
+Name[ne]=केडीई मल्टिमिडिया ब्याकइन्ड
+Name[nl]=KDE-multimedia-backend
+Name[nn]=KDE-multimediamotor
+Name[pa]=KDE ਮਲਟੀਮੀਡਿਆ ਬੈਕ-ਐਂਡ
+Name[pl]=Oprogramowanie multimedialne KDE
+Name[pt]=Infra-Estrutura Multimédia do KDE
+Name[pt_BR]=Backend do KDE Multimída
+Name[ro]=Backend multimedia KDE
+Name[se]=KDE-multimediamohtor
+Name[sl]=KDE-jevo ogrodje za večpredstavnost
+Name[sr]=КДЕ‑ова мултимедијска позадина
+Name[sr@latin]=KDE‑ova multimedijska pozadina
+Name[sv]=KDE:s multimediagränssnitt
+Name[ta]=கேபசூ பல்லூடக பின்னணி
+Name[te]=కెడిఈ బహుళ మాద్యమం బేక్ ఎండ్
+Name[tg]=Пуштибонии мултимедиаи KDE
+Name[th]=โปรแกรมเบื้องหลังเกี่ยวกับมัลติมีเดียของ KDE
+Name[tr]=KDE Çokluortam Arka Ucu
+Name[uk]=Програма мультимедії KDE
+Name[vi]=Hậu phương ảnh/nhạc KDE
+Name[wa]=Programe fondmint multimedia di KDE
+Name[x-test]=xxKDE Multimedia Backendxx
+Name[zh_CN]=KDE 多媒体后端
+Name[zh_TW]=KDE 多媒體後端介面
+
+##
+# The interface version is used by phonon to be able to only load binary
+# compatible backends.
+[PropertyDef::X-KDE-PhononBackendInfo-InterfaceVersion]
+Type=int
+
+## This is information for the user
+[PropertyDef::X-KDE-PhononBackendInfo-Version]
+Type=QString
+
+## This is information for the user
+[PropertyDef::X-KDE-PhononBackendInfo-Website]
+Type=QString
+
+#[PropertyDef::X-KDE-PhononBackendInfo-Supports]
+#Type=QStringList
+#
+#[PropertyDef::X-KDE-PhononBackendInfo-Depends]
+#Type=QStringList
+#
+#[PropertyDef::X-KDE-PhononBackendInfo-License]
+#Type=QString
+#
+#[PropertyDef::X-KDE-PhononBackendInfo-Author]
+#Type=QString
+#
+#[PropertyDef::X-KDE-PhononBackendInfo-Email]
+#Type=QString
+#
+#[PropertyDef::X-KDE-PhononBackendInfo-Name]
+#Type=QString
+#

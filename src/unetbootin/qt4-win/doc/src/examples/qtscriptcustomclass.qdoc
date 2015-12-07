@@ -1,0 +1,200 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example script/customclass
+    \title Custom Script Class Example
+
+    The Custom Script Class example shows how to use QScriptClass and QScriptClassPropertyIterator
+    to implement a custom script class.
+
+    The script class we are going to implement is called \c{ByteArray}. It provides a wrapper around
+    the QByteArray class in Qt, with a simplified API. Why do we need such a class? Well, neither the
+    ECMAScript \c{Array} class or \c{String} class is appropriate to use when working with arrays of
+    bytes. Our \c{ByteArray} class will have the right semantics; objects will use only the amount of
+    memory that is really needed (a byte is stored as a byte, not as a floating-point number or a
+    Unicode character) and can be passed directly to C++ slots taking QByteArray arguments (no costly
+    conversion necessary).
+
+    \section1 ByteArray Class In Use
+
+    When the \c{ByteArray} class has been made available to the
+    scripting environment, \c{ByteArray} objects can be constructed like
+    so:
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 0
+
+    \c{ByteArray} objects behave similar to normal \c{Array} objects. Every \c{ByteArray} object has
+    a \c{length} property, that holds the length of the array. If a new value is assigned to the \c{length}
+    property, the array is resized. If the array is enlarged, the new bytes are initialized to 0.
+    (This is a difference from normal \c{Array} objects; \c{ByteArray} objects are always dense arrays.)
+    Use normal array operations to read or write bytes in the array. The following code sets all the
+    bytes of an array to a certain value:
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 1
+
+    When assigning a value to an array element, the value is truncated to eight bits:
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 2
+
+    Like normal \c{Array} objects, if the array index is greater than the current length
+    of the array, the array is resized accordingly:
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 3
+
+    Property names that aren't valid array indexes are treated
+    like normal object properties (again, the same is the case for normal \c{Array} objects);
+    in other words, it's perfectly fine to do something like this:
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 4
+
+    The above assignment won't affect the contents of the array, but will rather assign a value
+    to the object property named "foo".
+
+    \c{ByteArray} objects have a set of methods: chop(), equals(), left(), mid(), toBase64() and so on.
+    These map directly onto the corresponding methods in QByteArray.
+
+    \snippet doc/src/snippets/code/doc.src.examples.qtscriptcustomclass.qdoc 5
+
+    \section1 ByteArray Class Implementation
+
+    To implement the \c{ByteArray} script class in C++, we create a subclass of QScriptClass,
+    called ByteArrayClass, and reimplement the virtual functions from QScriptClass. We also provide
+    a Qt Script constructor function suitable for being added to a QScriptEngine's environment.
+
+    The ByteArrayClass constructor prepares the script class:
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 0
+
+    First, the constructor registers a pair of conversion functions, so that C++ QByteArray objects
+    and Qt Script \c{ByteArray} objects can move seamlessly between the C++ side and the script side.
+    For example, if a \c{ByteArray} object is passed to a C++ slot that takes a QByteArray
+    argument, the actual QByteArray that the \c{ByteArray} object wraps will be passed correctly.
+
+    Second, we store a handle to the string "length", so that we can quickly compare a given property name
+    to "length" later on.
+
+    Third, we initialize the standard \c{ByteArray} prototype, to be returned by our prototype()
+    reimplementation later on. (The implementation of the prototype is discussed later.)
+
+    Fourth, we initialize a constructor function for \c{ByteArray}, to be returned by the
+    constructor() function. We set the internal data of the constructor to be a pointer to
+    this ByteArrayClass object, so that the constructor, when it is invoked, can extract the
+    pointer and use it to create a new \c{ByteArray} object.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 1
+
+    The newInstance() function isn't part of the QScriptClass API; its purpose is to offer
+    a convenient way to construct a \c{ByteArray} object from an existing QByteArray. We store the
+    QByteArray as the internal data of the new object, and return the new object.
+    QScriptEngine::newObject() will call the prototype() function of our class, ensuring that
+    the prototype of the new object will be the standard \c{ByteArray} prototype.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 2
+
+    construct() is the native function that will act as a constructor for \c{ByteArray}
+    in scripts. We extract the pointer to the class, then call a newInstance() overload
+    that takes an initial size as argument, and return the new script object.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 3
+
+    queryProperty() is the function that Qt Script will call whenever someone tries to access
+    a property of a \c{ByteArray} object. We first get a pointer to the underlying QByteArray.
+    We check if the property being accessed is the special \c{length} property; if so, we
+    return, indicating that we will handle every kind of access to this property (e.g. both
+    read and write). Otherwise, we attempt to convert the property name to an array index. If
+    this fails, we return, indicating that we don't want to handle this property. Otherwise, we
+    have a valid array index, and store it in the \c{id} argument, so that we don't have to
+    recompute it in e.g. property() or setProperty(). If the index is greater than or equal to
+    the QByteArray's size, we indicate that we don't want to handle read access (but we still want
+    to handle writes, if requested).
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 4
+
+    In the property() reimplementation, we do similar checks as in queryProperty() to find out
+    which property is being requested, and then return the value of that property.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 5
+
+    The setProperty() reimplementation has a structure that is similar to property(). If the \c{length} property
+    is being set, we resize the underlying QByteArray to the given length. Otherwise, we grab the
+    array index that was calculated in the queryProperty() function, enlarge the array if necessary,
+    and write the given value to the array.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 6
+
+    The propertyFlags() reimplementation specifies that the \c{length} property can't be deleted,
+    and that it is not enumerable. Array elements can't be deleted.
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 7
+
+    We want the array elements to show up when a \c{ByteArray} object is used in for-in
+    statements and together with QScriptValueIterator. Therefore, we reimplement the
+    newIterator() function and have it return a new iterator for a given \c{ByteArray}.
+
+    \section1 ByteArray Iterator Implementation
+
+    \snippet examples/script/customclass/bytearrayclass.cpp 8
+
+    The \c{ByteArrayClassPropertyIterator} class is simple. It maintains an index into the
+    underlying QByteArray, and checks and updates the index in hasNext(), next() and so on.
+
+    \section1 ByteArray Prototype Implementation
+
+    The prototype class, ByteArrayPrototype, implements the \c{ByteArray} functions as slots.
+
+    \snippet examples/script/customclass/bytearrayprototype.h 0
+
+    There is a small helper function, thisByteArray(), that returns a pointer to the QByteArray
+    being operated upon:
+
+    \snippet examples/script/customclass/bytearrayprototype.cpp 0
+
+    The slots simply forward the calls to the QByteArray. Examples:
+
+    \snippet examples/script/customclass/bytearrayprototype.cpp 1
+
+    The remove() function is noteworthy; if we look at QByteArray::remove(), we see that it
+    should return a reference to the QByteArray itself (i.e. not a copy). To get the same
+    behavior in scripts, we return the script object (thisObject()).
+*/

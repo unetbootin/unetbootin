@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qthelp.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Help Project</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt Help Project<br /><span class="subtitle"></span>
+</h1>
+<p>A Qt help project collects all data necessary to generate a compressed help file. Along with the actual help data, like the table of contents, index keywords and help documents, it contains some extra information like a namespace to identify the help file. One help project stands for one documentation, e.g&#x2e; the Qt Assistant manual.</p>
+<a name="qt-help-project-file-format"></a>
+<h2>Qt Help Project File Format</h2>
+<p>The file format is XML based. For a better understanding of the format we'll discuss the following example:</p>
+<pre>     &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+     &lt;QtHelpProject version=&quot;1.0&quot;&gt;
+         &lt;namespace&gt;mycompany.com.myapplication.1_0&lt;/namespace&gt;
+         &lt;virtualFolder&gt;doc&lt;/virtualFolder&gt;
+         &lt;customFilter name=&quot;My Application 1.0&quot;&gt;
+             &lt;filterAttribute&gt;myapp&lt;/filterAttribute&gt;
+             &lt;filterAttribute&gt;1.0&lt;/filterAttribute&gt;
+         &lt;/customFilter&gt;
+         &lt;filterSection&gt;
+             &lt;filterAttribute&gt;myapp&lt;/filterAttribute&gt;
+             &lt;filterAttribute&gt;1.0&lt;/filterAttribute&gt;
+             &lt;toc&gt;
+                 &lt;section title=&quot;My Application Manual&quot; ref=&quot;index.html&quot;&gt;
+                     &lt;section title=&quot;Chapter 1&quot; ref=&quot;doc.html#chapter1&quot;/&gt;
+                     &lt;section title=&quot;Chapter 2&quot; ref=&quot;doc.html#chapter2&quot;/&gt;
+                     &lt;section title=&quot;Chapter 3&quot; ref=&quot;doc.html#chapter3&quot;/&gt;
+                 &lt;/section&gt;
+             &lt;/toc&gt;
+             &lt;keywords&gt;
+                 &lt;keyword name=&quot;foo&quot; id=&quot;MyApplication::foo&quot; ref=&quot;doc.html#foo&quot;/&gt;
+                 &lt;keyword name=&quot;bar&quot; ref=&quot;doc.html#bar&quot;/&gt;
+                 &lt;keyword id=&quot;MyApplication::foobar&quot; ref=&quot;doc.html#foobar&quot;/&gt;
+             &lt;/keywords&gt;
+             &lt;files&gt;
+                 &lt;file&gt;classic.css&lt;/file&gt;
+                 &lt;file&gt;index.html&lt;/file&gt;
+                 &lt;file&gt;doc.html&lt;/file&gt;
+             &lt;/files&gt;
+         &lt;/filterSection&gt;
+     &lt;/QtHelpProject&gt;</pre>
+<a name="namespace"></a>
+<h3>Namespace</h3>
+<p>To enable the <a href="qhelpengine.html">QHelpEngine</a> to retrieve the proper documentation to a given link, every documentation set has to have a unique identifier. A unique identifier makes is also possible for the help collection to keep track of a documentation set without relying on its file name. The Qt help system uses a namespace as identifier which is defined by the mandatory namespace tags. In the example above, the namespace is &quot;mycompany.com.myapplication.1_0&quot;.</p>
+<a name="virtual-folders"></a><a name="virtual-folders"></a>
+<h3>Virtual Folders</h3>
+<p>Having a namespace for every documentation naturally means that the documentation sets are quite separated. From the help engines point of view this is beneficial, but from the documentors view it is often desirable to cross reference certain topic from one manual to another without having to specify absolute links. To solve this problem, the help system introduced the concept of virtual folders.</p>
+<p>A virtual folder will become the root directory of all files referenced in a compressed help file. When two documentations share the same virtual folder, they can use relative paths when defining hyperlinks pointing to the other documentation. If a file is contained in both documentations or manuals, the one from the current manual has precedence over the other.</p>
+<pre>     ...
+     &lt;virtualFolder&gt;doc&lt;/virtualFolder&gt;
+     ...</pre>
+<p>The above example specifies 'doc' as virtual folder. If another manual, e.g&#x2e; for a small helper tool for 'My Application' specifies the same folder, it is sufficient to write 'doc.html#section1' to reference the first section in the 'My Application' manual.</p>
+<p>The virtual folder tag is mandatory and the folder must not contain any '/'.</p>
+<a name="custom-filters"></a><a name="custom-filters"></a>
+<h3>Custom Filters</h3>
+<p>Next in the Qt help project file are the optional definitions of custom filters. A custom filter contains a list of filter attributes which will be used later to display only the documentation which has all those attributes assigned to. So, when setting the current filter in the <a href="qhelpengine.html">QHelpEngine</a> to &quot;My Application 1.0&quot; only the documentation which has &quot;myapp&quot; and &quot;1.0&quot; set as filter attributes will be shown.</p>
+<pre>     ...
+     &lt;customFilter name=&quot;My Application 1.0&quot;&gt;
+         &lt;filterId&gt;myapp&lt;/filterId&gt;
+         &lt;filterId&gt;1.0&lt;/filterId&gt;
+     &lt;/customFilter&gt;
+     ...</pre>
+<p>It is possible to define any number of custom filters in a help project file. Important to know is, that the filter attributes have not to be specified in the same project file; they can be defined in any other help file. The definition of a filter attributes takes place by specifying them in a filter section.</p>
+<a name="filter-section"></a><a name="filter-section"></a>
+<h3>Filter Section</h3>
+<p>A filter section contains the actual documentation. One Qt help project file may contain more than one filter sections. Every filter section consists of four parts, the filter attributes section, the table of contents, the keywords and the files list. In theory all parts are optional but not specifying anything there will result in an empty documentation.</p>
+<a name="filter-attributes"></a>
+<h4>Filter Attributes</h4>
+<p>Every filter section should have filter attributes assigned to it, to enable documentation filtering. If no filter attribute is defined, the documentation will only be shown if no filtering occurs, meaning the current custom filter in the <a href="qhelpengine.html">QHelpEngine</a> does not contain any filter attributes.</p>
+<pre>     ...
+     &lt;filterSection&gt;
+         &lt;filterAttribute&gt;myapp&lt;/filterAttribute&gt;
+         &lt;filterAttribute&gt;1.0&lt;/filterAttribute&gt;
+     ...</pre>
+<p>In this case, the filter attributes 'myapp' and '1.0' are assigned to the filter section, i.e&#x2e; all contents specified in this section will only be shown if the current custom filter has 'myapp' or '1.0' or both as filter attributes.</p>
+<a name="table-of-contents"></a>
+<h4>Table of contents</h4>
+<pre>     ...
+     &lt;toc&gt;
+         &lt;section title=&quot;My Application Manual&quot; ref=&quot;index.html&quot;&gt;
+             &lt;section title=&quot;Chapter 1&quot; ref=&quot;doc.html#chapter1&quot;/&gt;
+             &lt;section title=&quot;Chapter 2&quot; ref=&quot;doc.html#chapter2&quot;/&gt;
+             &lt;section title=&quot;Chapter 3&quot; ref=&quot;doc.html#chapter3&quot;/&gt;
+         &lt;/section&gt;
+     &lt;/toc&gt;
+     ...</pre>
+<p>One section tag represents one item in the table of contents. The sections can be nested to any degree, but from a users perspective it shouldn't be more than four or five levels. A section is defined by its title and reference. The reference, like all file references in a Qt help project file are relative to the help project file itself.</p>
+<a name="keywords"></a>
+<h4>Keywords</h4>
+<pre>     ...
+     &lt;keywords&gt;
+        &lt;keyword name=&quot;foo&quot; id=&quot;MyApplication::foo&quot; ref=&quot;doc.html#foo&quot;/&gt;
+        &lt;keyword name=&quot;bar&quot; ref=&quot;doc.html#bar&quot;/&gt;
+        &lt;keyword id=&quot;MyApplication::foobar&quot; ref=&quot;doc.html#foobar&quot;/&gt;
+     &lt;/keywords&gt;
+     ...</pre>
+<p>The keyword section lists all keywords of this filter section. A keyword consists basically of a name and a file reference. If the attribute 'name' is used then the keyword specified there will appear in the visible index, i.e&#x2e; it will be accessible through the <a href="qhelpindexmodel.html">QHelpIndexModel</a>. If 'id' is used, the keyword does not appear in the index and is only accessible via the linksForIdentifier() function of the <a href="qhelpenginecore.html">QHelpEngineCore</a>. 'name' and 'id' can be specified at the same time.</p>
+<a name="files"></a>
+<h4>Files</h4>
+<pre>     ...
+     &lt;files&gt;
+         &lt;file&gt;classic.css&lt;/file&gt;
+         &lt;file&gt;index.html&lt;/file&gt;
+         &lt;file&gt;doc.html&lt;/file&gt;
+     &lt;/files&gt;
+     ...</pre>
+<p>Finally, the actual documentation files have to be listed. Make sure that all files neccessary to display the help are mentioned, i.e&#x2e; stylesheets or similar files need to be there as well. All listed files will be compressed and written to the Qt compressed help file. So, in the end, one single Qt help file contains all documentation files along with the contents and indices.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

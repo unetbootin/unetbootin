@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qabstractitemdelegate.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractItemDelegate Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractItemDelegate Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAbstractItemDelegate class is used to display and edit data items from a model. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractItemDelegate&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qitemdelegate.html">QItemDelegate</a> and <a href="qstyleditemdelegate.html">QStyledItemDelegate</a>.</p>
+<ul>
+<li><a href="qabstractitemdelegate-members.html">List of all members, including inherited members</a></li>
+<li><a href="qabstractitemdelegate-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qabstractitemdelegate.html#EndEditHint-enum">EndEditHint</a></b> { NoHint, EditNextItem, EditPreviousItem, SubmitModelCache, RevertModelCache }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractitemdelegate.html#QAbstractItemDelegate">QAbstractItemDelegate</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qabstractitemdelegate.html#dtor.QAbstractItemDelegate">~QAbstractItemDelegate</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qabstractitemdelegate.html#createEditor">createEditor</a></b> ( QWidget * <i>parent</i>, const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractitemdelegate.html#editorEvent">editorEvent</a></b> ( QEvent * <i>event</i>, QAbstractItemModel * <i>model</i>, const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractitemdelegate.html#paint">paint</a></b> ( QPainter * <i>painter</i>, const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractitemdelegate.html#setEditorData">setEditorData</a></b> ( QWidget * <i>editor</i>, const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractitemdelegate.html#setModelData">setModelData</a></b> ( QWidget * <i>editor</i>, QAbstractItemModel * <i>model</i>, const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>virtual QSize <b><a href="qabstractitemdelegate.html#sizeHint">sizeHint</a></b> ( const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractitemdelegate.html#updateEditorGeometry">updateEditorGeometry</a></b> ( QWidget * <i>editor</i>, const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qabstractitemdelegate.html#helpEvent">helpEvent</a></b> ( QHelpEvent * <i>event</i>, QAbstractItemView * <i>view</i>, const QStyleOptionViewItem &amp; <i>option</i>, const QModelIndex &amp; <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qabstractitemdelegate.html#closeEditor">closeEditor</a></b> ( QWidget * <i>editor</i>, QAbstractItemDelegate::EndEditHint <i>hint</i> = NoHint )</li>
+<li><div class="fn"/>void <b><a href="qabstractitemdelegate.html#commitData">commitData</a></b> ( QWidget * <i>editor</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractitemdelegate.html#sizeHintChanged">sizeHintChanged</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractItemDelegate class is used to display and edit data items from a model.</p>
+<p>A QAbstractItemDelegate provides the interface and common functionality for delegates in the model/view architecture. Delegates display individual items in views, and handle the editing of model data.</p>
+<p>The QAbstractItemDelegate class is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view framework</a>.</p>
+<p>To render an item in a custom way, you must implement <a href="qabstractitemdelegate.html#paint">paint</a>() and <a href="qabstractitemdelegate.html#sizeHint">sizeHint</a>(). The <a href="qitemdelegate.html">QItemDelegate</a> class provides default implementations for these functions; if you do not need custom rendering, subclass that class instead.</p>
+<p>To provide custom editing, there are two approaches that can be used. The first approach is to create an editor widget and display it directly on top of the item. To do this you must reimplement <a href="qabstractitemdelegate.html#createEditor">createEditor</a>() to provide an editor widget, <a href="qabstractitemdelegate.html#setEditorData">setEditorData</a>() to populate the editor with the data from the model, and <a href="qabstractitemdelegate.html#setModelData">setModelData</a>() so that the delegate can update the model with data from the editor.</p>
+<p>The second approach is to handle user events directly by reimplementing <a href="qabstractitemdelegate.html#editorEvent">editorEvent</a>().</p>
+<p>See also <a href="model-view-programming.html">Model/View Programming</a>, <a href="qitemdelegate.html">QItemDelegate</a>, and <a href="itemviews-pixelator.html">Pixelator Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="EndEditHint-enum"></a>enum QAbstractItemDelegate::EndEditHint</h3>
+<p>This enum describes the different hints that the delegate can give to the model and view components to make editing data in a model a comfortable experience for the user.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractItemDelegate::NoHint</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">There is no recommended action to be performed.</td></tr>
+</table></p>
+<p>These hints let the delegate influence the behavior of the view:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractItemDelegate::EditNextItem</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The view should use the delegate to open an editor on the next item in the view.</td></tr>
+<tr><td valign="top"><tt>QAbstractItemDelegate::EditPreviousItem</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The view should use the delegate to open an editor on the previous item in the view.</td></tr>
+</table></p>
+<p>Note that custom views may interpret the concepts of next and previous differently.</p>
+<p>The following hints are most useful when models are used that cache data, such as those that manipulate date locally in order to increase performance or conserve network bandwidth.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractItemDelegate::SubmitModelCache</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">If the model caches data, it should write out cached data to the underlying data store.</td></tr>
+<tr><td valign="top"><tt>QAbstractItemDelegate::RevertModelCache</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">If the model caches data, it should discard cached data and replace it with data from the underlying data store.</td></tr>
+</table></p>
+<p>Although models and views should respond to these hints in appropriate ways, custom components may ignore any or all of them if they are not relevant.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractItemDelegate"></a>QAbstractItemDelegate::QAbstractItemDelegate ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new abstract item delegate with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QAbstractItemDelegate"></a>QAbstractItemDelegate::~QAbstractItemDelegate ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the abstract item delegate.</p>
+<h3 class="fn"><a name="closeEditor"></a>void QAbstractItemDelegate::closeEditor ( <a href="qwidget.html">QWidget</a> * <i>editor</i>, <a href="qabstractitemdelegate.html#EndEditHint-enum">QAbstractItemDelegate::EndEditHint</a> <i>hint</i> = NoHint )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user has finished editing an item using the specified <i>editor</i>.</p>
+<p>The <i>hint</i> provides a way for the delegate to influence how the model and view behave after editing is completed. It indicates to these components what action should be performed next to provide a comfortable editing experience for the user. For example, if <tt>EditNextItem</tt> is specified, the view should use a delegate to open an editor on the next item in the model.</p>
+<p>See also <a href="qabstractitemdelegate.html#EndEditHint-enum">EndEditHint</a>.</p>
+<h3 class="fn"><a name="commitData"></a>void QAbstractItemDelegate::commitData ( <a href="qwidget.html">QWidget</a> * <i>editor</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal must be emitted when the <i>editor</i> widget has completed editing the data, and wants to write it back into the model.</p>
+<h3 class="fn"><a name="createEditor"></a><a href="qwidget.html">QWidget</a> * QAbstractItemDelegate::createEditor ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the editor to be used for editing the data item with the given <i>index</i>. Note that the index contains information about the model being used. The editor's parent widget is specified by <i>parent</i>, and the item options by <i>option</i>.</p>
+<p>The base implementation returns 0. If you want custom editing you will need to reimplement this function.</p>
+<p>The returned editor widget should have <a href="qt.html#FocusPolicy-enum">Qt::StrongFocus</a>; otherwise, <a href="qmouseevent.html">QMouseEvent</a>s received by the widget will propagate to the view. The view's background will shine through unless the editor paints its own background (e.g&#x2e;, with <a href="qwidget.html#autoFillBackground-prop">setAutoFillBackground()</a>).</p>
+<p>See also <a href="qabstractitemdelegate.html#setModelData">setModelData</a>() and <a href="qabstractitemdelegate.html#setEditorData">setEditorData</a>().</p>
+<h3 class="fn"><a name="editorEvent"></a>bool QAbstractItemDelegate::editorEvent ( <a href="qevent.html">QEvent</a> * <i>event</i>, <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i>, const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Whenever an event occurs, this function is called with the <i>event</i> <i>model</i> <i>option</i> and the <i>index</i> that corresponds to the item being edited.</p>
+<p>The base implementation returns false (indicating that it has not handled the event).</p>
+<h3 class="fn"><a name="helpEvent"></a>bool QAbstractItemDelegate::helpEvent ( <a href="qhelpevent.html">QHelpEvent</a> * <i>event</i>, <a href="qabstractitemview.html">QAbstractItemView</a> * <i>view</i>, const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Whenever a help event occurs, this function is called with the <i>event</i> <i>view</i> <i>option</i> and the <i>index</i> that corresponds to the item where the event occurs.</p>
+<p>Returns true if the delegate can handle the event; otherwise returns false. A return value of true indicates that the data obtained using the index had the required role.</p>
+<p>For <a href="qevent.html#Type-enum">QEvent::ToolTip</a> and <a href="qevent.html#Type-enum">QEvent::WhatsThis</a> events that were handled successfully, the relevant popup may be shown depending on the user's system configuration.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhelpevent.html">QHelpEvent</a>.</p>
+<h3 class="fn"><a name="paint"></a>void QAbstractItemDelegate::paint ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure abstract function must be reimplemented if you want to provide custom rendering. Use the <i>painter</i> and style <i>option</i> to render the item specified by the item <i>index</i>.</p>
+<p>If you reimplement this you must also reimplement <a href="qabstractitemdelegate.html#sizeHint">sizeHint</a>().</p>
+<h3 class="fn"><a name="setEditorData"></a>void QAbstractItemDelegate::setEditorData ( <a href="qwidget.html">QWidget</a> * <i>editor</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the contents of the given <i>editor</i> to the data for the item at the given <i>index</i>. Note that the index contains information about the model being used.</p>
+<p>The base implementation does nothing. If you want custom editing you will need to reimplement this function.</p>
+<p>See also <a href="qabstractitemdelegate.html#setModelData">setModelData</a>().</p>
+<h3 class="fn"><a name="setModelData"></a>void QAbstractItemDelegate::setModelData ( <a href="qwidget.html">QWidget</a> * <i>editor</i>, <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the data for the item at the given <i>index</i> in the <i>model</i> to the contents of the given <i>editor</i>.</p>
+<p>The base implementation does nothing. If you want custom editing you will need to reimplement this function.</p>
+<p>See also <a href="qabstractitemdelegate.html#setEditorData">setEditorData</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QAbstractItemDelegate::sizeHint ( const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure abstract function must be reimplemented if you want to provide custom rendering. The options are specified by <i>option</i> and the model item by <i>index</i>.</p>
+<p>If you reimplement this you must also reimplement <a href="qabstractitemdelegate.html#paint">paint</a>().</p>
+<h3 class="fn"><a name="sizeHintChanged"></a>void QAbstractItemDelegate::sizeHintChanged ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal must be emitted when the <a href="qabstractitemdelegate.html#sizeHint">sizeHint</a>() of <i>index</i> changed.</p>
+<p>Views automatically connect to this signal and relayout items as necessary.</p>
+<h3 class="fn"><a name="updateEditorGeometry"></a>void QAbstractItemDelegate::updateEditorGeometry ( <a href="qwidget.html">QWidget</a> * <i>editor</i>, const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>option</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Updates the geometry of the <i>editor</i> for the item with the given <i>index</i>, according to the rectangle specified in the <i>option</i>. If the item has an internal layout, the editor will be laid out accordingly. Note that the index contains information about the model being used.</p>
+<p>The base implementation does nothing. If you want custom editing you must reimplement this function.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

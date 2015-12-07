@@ -1,0 +1,53 @@
+/*
+ * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
+ * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module html {
+
+    interface [
+        GenerateConstructor,
+        CustomPutFunction,
+        CustomGetOwnPropertySlot,
+        CustomCall,
+        HasOverridingNameGetter,
+        InterfaceUUID=9b5cb4a8-c156-4b55-afdb-c60938a4d1b1,
+        ImplementationUUID=56544372-675e-40dd-ba39-fa708a4c7678
+    ] HTMLAppletElement : HTMLElement {
+                 attribute [ConvertNullToNullString] DOMString align;
+                 attribute [ConvertNullToNullString] DOMString alt;
+                 attribute [ConvertNullToNullString] DOMString archive;
+                 attribute [ConvertNullToNullString] DOMString code;
+                 attribute [ConvertNullToNullString] DOMString codeBase;
+                 attribute [ConvertNullToNullString] DOMString height;
+#if defined(LANGUAGE_JAVASCRIPT)
+                 attribute [ConvertNullToNullString] DOMString hspace;
+#else
+                 attribute [ConvertFromString] long hspace;
+#endif
+                 attribute [ConvertNullToNullString] DOMString name;
+                 attribute [ConvertNullToNullString] DOMString object;
+#if defined(LANGUAGE_JAVASCRIPT)
+                 attribute [ConvertNullToNullString] DOMString vspace;
+#else
+                 attribute [ConvertFromString] long vspace;
+#endif
+                 attribute [ConvertNullToNullString] DOMString width;
+    };
+
+}

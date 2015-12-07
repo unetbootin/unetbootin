@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/opengl/qglframebufferobject.cpp -->
+<head>
+  <title>Qt 4.4: QGLFramebufferObject Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGLFramebufferObject Class Reference<br /><span class="small-subtitle">[<a href="qtopengl.html">QtOpenGL</a> module]</span>
+</h1>
+<p>The QGLFramebufferObject class encapsulates an OpenGL framebuffer object. <a href="#details">More...</a></p>
+<pre> #include &lt;QGLFramebufferObject&gt;</pre><p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qglframebufferobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qglframebufferobject.html#Attachment-enum">Attachment</a></b> { NoAttachment, CombinedDepthStencil, Depth }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qglframebufferobject.html#QGLFramebufferObject">QGLFramebufferObject</a></b> ( const QSize &amp; <i>size</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/><b><a href="qglframebufferobject.html#QGLFramebufferObject-2">QGLFramebufferObject</a></b> ( int <i>width</i>, int <i>height</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/><b><a href="qglframebufferobject.html#QGLFramebufferObject-3">QGLFramebufferObject</a></b> ( int <i>width</i>, int <i>height</i>, Attachment <i>attachment</i>, GLenum <i>target</i> = GL_TEXTURE_2D, GLenum <i>internal_format</i> = GL_RGBA8 )</li>
+<li><div class="fn"/><b><a href="qglframebufferobject.html#QGLFramebufferObject-4">QGLFramebufferObject</a></b> ( const QSize &amp; <i>size</i>, Attachment <i>attachment</i>, GLenum <i>target</i> = GL_TEXTURE_2D, GLenum <i>internal_format</i> = GL_RGBA8 )</li>
+<li><div class="fn"/>virtual <b><a href="qglframebufferobject.html#dtor.QGLFramebufferObject">~QGLFramebufferObject</a></b> ()</li>
+<li><div class="fn"/>Attachment <b><a href="qglframebufferobject.html#attachment">attachment</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qglframebufferobject.html#bind">bind</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qglframebufferobject.html#drawTexture">drawTexture</a></b> ( const QRectF &amp; <i>target</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>void <b><a href="qglframebufferobject.html#drawTexture-2">drawTexture</a></b> ( const QPointF &amp; <i>point</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>GLuint <b><a href="qglframebufferobject.html#handle">handle</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qglframebufferobject.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qglframebufferobject.html#release">release</a></b> ()</li>
+<li><div class="fn"/>QSize <b><a href="qglframebufferobject.html#size">size</a></b> () const</li>
+<li><div class="fn"/>GLuint <b><a href="qglframebufferobject.html#texture">texture</a></b> () const</li>
+<li><div class="fn"/>QImage <b><a href="qglframebufferobject.html#toImage">toImage</a></b> () const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qglframebufferobject.html#hasOpenGLFramebufferObjects">hasOpenGLFramebufferObjects</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGLFramebufferObject class encapsulates an OpenGL framebuffer object.</p>
+<p>The QGLFramebufferObject class encapsulates an OpenGL framebuffer object, defined by the <tt>GL_EXT_framebuffer_object</tt> extension. In addition it provides a rendering surface that can be painted on with a <a href="qpainter.html">QPainter</a>, rendered to using native GL calls, or both. This surface can be bound and used as a regular texture in your own GL drawing code. By default, the QGLFramebufferObject class generates a 2D GL texture (using the <tt>GL_TEXTURE_2D</tt> target), which is used as the internal rendering target.</p>
+<p><b>It is important to have a current GL context when creating a QGLFramebufferObject, otherwise initialization will fail.</b></p>
+<p>OpenGL framebuffer objects and pbuffers (see <a href="qglpixelbuffer.html">QGLPixelBuffer</a>) can both be used to render to offscreen surfaces, but there are a number of advantages with using framebuffer objects instead of pbuffers:</p>
+<ol type="1">
+<li>A framebuffer object does not require a separate rendering context, so no context switching will occur when switching rendering targets. There is an overhead involved in switching targets, but in general it is cheaper than a context switch to a pbuffer.</li>
+<li>Rendering to dynamic textures (i.e&#x2e; render-to-texture functionality) works on all platforms. No need to do explicit copy calls from a render buffer into a texture, as was necessary on systems that did not support the <tt>render_texture</tt> extension.</li>
+<li>It is possible to attach several rendering buffers (or texture objects) to the same framebuffer object, and render to all of them without doing a context switch.</li>
+<li>The OpenGL framebuffer extension is a pure GL extension with no system dependant WGL, AGL or GLX parts. This makes using framebuffer objects more portable.</li>
+</ol>
+<p>Note that <a href="qpainter.html">QPainter</a> antialiasing of drawing primitives will not work when using a QGLFramebufferObject as a paintdevice. This is because sample buffers, which are needed for antialiasing, are not yet supported in application-defined framebuffer objects. However, an extension to solve this has already been approved by the OpenGL ARB (<tt>GL_EXT_framebuffer_multisample</tt>), and will most likely be available in the near future.</p>
+<p>See also <a href="opengl-framebufferobject.html">Framebuffer Object Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Attachment-enum"></a>enum QGLFramebufferObject::Attachment</h3>
+<p>This enum type is used to configure the depth and stencil buffers attached to the framebuffer object when it is created.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGLFramebufferObject::NoAttachment</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No attachment is added to the framebuffer object. Note that the OpenGL depth and stencil tests won't work when rendering to a framebuffer object without any depth or stencil buffers. This is the default value.</td></tr>
+<tr><td valign="top"><tt>QGLFramebufferObject::CombinedDepthStencil</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">If the <tt>GL_EXT_packed_depth_stencil</tt> extension is present, a combined depth and stencil buffer is attached. If the extension is not present, only a depth buffer is attached.</td></tr>
+<tr><td valign="top"><tt>QGLFramebufferObject::Depth</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">A depth buffer is attached to the framebuffer object.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.3.</p>
+<p>See also <a href="qglframebufferobject.html#attachment">attachment</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGLFramebufferObject"></a>QGLFramebufferObject::QGLFramebufferObject ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</h3>
+<p>Constructs an OpenGL framebuffer object and binds a 2D GL texture to the buffer of the size <i>size</i>. The texture is bound to the <tt>GL_COLOR_ATTACHMENT0</tt> target in the framebuffer object.</p>
+<p>The <i>target</i> parameter is used to specify the GL texture target. The default target is <tt>GL_TEXTURE_2D</tt>. Keep in mind that <tt>GL_TEXTURE_2D</tt> textures must have a power of 2 width and height (e.g&#x2e; 256x512), unless you are using OpenGL 2.0 or higher.</p>
+<p>By default, no depth and stencil buffers are attached. This behavior can be toggled using one of the overloaded constructors.</p>
+<p>The default internal texture format is <tt>GL_RGBA8</tt>.</p>
+<p>It is important that you have a current GL context set when creating the <a href="qglframebufferobject.html">QGLFramebufferObject</a>, otherwise the initialization will fail.</p>
+<p>See also <a href="qglframebufferobject.html#size">size</a>(), <a href="qglframebufferobject.html#texture">texture</a>(), and <a href="qglframebufferobject.html#attachment">attachment</a>().</p>
+<h3 class="fn"><a name="QGLFramebufferObject-2"></a>QGLFramebufferObject::QGLFramebufferObject ( int <i>width</i>, int <i>height</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</h3>
+<p>Constructs an OpenGL framebuffer object and binds a 2D GL texture to the buffer of the given <i>width</i> and <i>height</i>.</p>
+<p>See also <a href="qglframebufferobject.html#size">size</a>() and <a href="qglframebufferobject.html#texture">texture</a>().</p>
+<h3 class="fn"><a name="QGLFramebufferObject-3"></a>QGLFramebufferObject::QGLFramebufferObject ( int <i>width</i>, int <i>height</i>, <a href="qglframebufferobject.html#Attachment-enum">Attachment</a> <i>attachment</i>, GLenum <i>target</i> = GL_TEXTURE_2D, GLenum <i>internal_format</i> = GL_RGBA8 )</h3>
+<p>Constructs an OpenGL framebuffer object and binds a texture to the buffer of the given <i>width</i> and <i>height</i>.</p>
+<p>The <i>attachment</i> parameter describes the depth/stencil buffer configuration, <i>target</i> the texture target and <i>internal_format</i> the internal texture format. The default texture target is <tt>GL_TEXTURE_2D</tt>, while the default internal format is <tt>GL_RGBA8</tt>.</p>
+<p>See also <a href="qglframebufferobject.html#size">size</a>(), <a href="qglframebufferobject.html#texture">texture</a>(), and <a href="qglframebufferobject.html#attachment">attachment</a>().</p>
+<h3 class="fn"><a name="QGLFramebufferObject-4"></a>QGLFramebufferObject::QGLFramebufferObject ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qglframebufferobject.html#Attachment-enum">Attachment</a> <i>attachment</i>, GLenum <i>target</i> = GL_TEXTURE_2D, GLenum <i>internal_format</i> = GL_RGBA8 )</h3>
+<p>Constructs an OpenGL framebuffer object and binds a texture to the buffer of the given <i>size</i>.</p>
+<p>The <i>attachment</i> parameter describes the depth/stencil buffer configuration, <i>target</i> the texture target and <i>internal_format</i> the internal texture format. The default texture target is <tt>GL_TEXTURE_2D</tt>, while the default internal format is <tt>GL_RGBA8</tt>.</p>
+<p>See also <a href="qglframebufferobject.html#size">size</a>(), <a href="qglframebufferobject.html#texture">texture</a>(), and <a href="qglframebufferobject.html#attachment">attachment</a>().</p>
+<h3 class="fn"><a name="dtor.QGLFramebufferObject"></a>QGLFramebufferObject::~QGLFramebufferObject ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the framebuffer object and frees any allocated resources.</p>
+<h3 class="fn"><a name="attachment"></a><a href="qglframebufferobject.html#Attachment-enum">Attachment</a> QGLFramebufferObject::attachment () const</h3>
+<p>Returns the status of the depth and stencil buffers attached to this framebuffer object.</p>
+<h3 class="fn"><a name="bind"></a>bool QGLFramebufferObject::bind ()</h3>
+<p>Switches rendering from the default, windowing system provided framebuffer to this framebuffer object. Returns true upon success, false otherwise.</p>
+<h3 class="fn"><a name="drawTexture"></a>void QGLFramebufferObject::drawTexture ( const <a href="qrectf.html">QRectF</a> &amp; <i>target</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</h3>
+<p>Draws the given texture, <i>textureId</i>, to the given target rectangle, <i>target</i>, in OpenGL model space. The <i>textureTarget</i> should be a 2D texture target.</p>
+<p>The framebuffer object should be bound when calling this function.</p>
+<p>Equivalent to the corresponding <a href="qglcontext.html#drawTexture">QGLContext::drawTexture</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="drawTexture-2"></a>void QGLFramebufferObject::drawTexture ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Draws the given texture, <i>textureId</i>, at the given <i>point</i> in OpenGL model space. The <i>textureTarget</i> should be a 2D texture target.</p>
+<p>The framebuffer object should be bound when calling this function.</p>
+<p>Equivalent to the corresponding <a href="qglcontext.html#drawTexture">QGLContext::drawTexture</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="handle"></a>GLuint QGLFramebufferObject::handle () const</h3>
+<p>Returns the GL framebuffer object handle for this framebuffer object (returned by the <tt>glGenFrameBuffersEXT()</tt> function). This handle can be used to attach new images or buffers to the framebuffer. The user is responsible for cleaning up and destroying these objects.</p>
+<h3 class="fn"><a name="hasOpenGLFramebufferObjects"></a>bool QGLFramebufferObject::hasOpenGLFramebufferObjects ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the OpenGL <tt>GL_EXT_framebuffer_object</tt> extension is present on this system; otherwise returns false.</p>
+<h3 class="fn"><a name="isValid"></a>bool QGLFramebufferObject::isValid () const</h3>
+<p>Returns true if the framebuffer object is valid.</p>
+<p>The framebuffer can become invalid if the initialization process fails, the user attaches an invalid buffer to the framebuffer object, or a non-power of 2 width/height is specified as the texture size if the texture target is <tt>GL_TEXTURE_2D</tt>.</p>
+<h3 class="fn"><a name="release"></a>bool QGLFramebufferObject::release ()</h3>
+<p>Switches rendering back to the default, windowing system provided framebuffer. Returns true upon success, false otherwise.</p>
+<h3 class="fn"><a name="size"></a><a href="qsize.html">QSize</a> QGLFramebufferObject::size () const</h3>
+<p>Returns the size of the texture attached to this framebuffer object.</p>
+<h3 class="fn"><a name="texture"></a>GLuint QGLFramebufferObject::texture () const</h3>
+<p>Returns the texture id for the texture attached as the default rendering target in this framebuffer object. This texture id can be bound as a normal texture in your own GL code.</p>
+<h3 class="fn"><a name="toImage"></a><a href="qimage.html">QImage</a> QGLFramebufferObject::toImage () const</h3>
+<p>Returns the contents of this framebuffer object as a <a href="qimage.html">QImage</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

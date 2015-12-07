@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xmlpatterns/api/qxmlserializer.cpp -->
+<head>
+  <title>Qt 4.4: QXmlSerializer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlSerializer Class Reference<br /><span class="small-subtitle">[<a href="qtxmlpatterns.html">QtXmlPatterns</a> module]</span>
+</h1>
+<p>The QXmlSerializer class receives an XQuery sequence and translates it into XML. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlSerializer&gt;</pre><p>Inherits <a href="qabstractxmlreceiver.html">QAbstractXmlReceiver</a>.</p>
+<p>Inherited by <a href="qxmlformatter.html">QXmlFormatter</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qxmlserializer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlserializer.html#QXmlSerializer">QXmlSerializer</a></b> ( const QXmlQuery &amp; <i>query</i>, QIODevice * <i>outputDevice</i> )</li>
+<li><div class="fn"/>const QTextCodec * <b><a href="qxmlserializer.html#codec">codec</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qxmlserializer.html#outputDevice">outputDevice</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qxmlserializer.html#setCodec">setCodec</a></b> ( const QTextCodec * <i>outputCodec</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>12 public functions inherited from <a href="qabstractxmlreceiver.html#public-functions">QAbstractXmlReceiver</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlSerializer class receives an XQuery sequence and translates it into XML.</p>
+<p>QXmlSerializer translates an <a href="qabstractxmlreceiver.html#xquery-sequence">XQuery sequence</a>, usually the output of an <a href="qxmlquery.html">QXmlQuery</a>, into XML. Consider the example:</p>
+<pre>   QXmlQuery query;
+   query.setQuery(&quot;doc('index.html')/html/body/p[1]&quot;);
+
+   QXmlSerializer serializer(query, myOutputDevice);
+   query.evaluateTo(&amp;serializer);</pre>
+<p>First it constructs a <a href="qxmlquery.html">query</a> that gets the first paragraph from document <tt>index.html</tt>. Then it constructs an instance of this class with the <a href="qxmlquery.html">query</a> and <a href="qiodevice.html">myOutputDevice</a>. Finally, it <a href="qxmlquery.html#evaluateTo">evaluates</a> the <a href="qxmlquery.html">query</a>, producing an ordered sequence of calls to the serializer's callback functions. The sequence of callbacks transforms the query output to XML and writes it to <a href="qiodevice.html">myOutputDevice</a>.</p>
+<p>QXmlSerializer will:</p>
+<ul>
+<li>Declare namespaces when needed,</li>
+<li>Use appropriate escaping, when characters can't be represented in the XML,</li>
+<li>Handle line endings appropriately,</li>
+<li>Report errors, when it can't serialize the content, e.g&#x2e;, when asked to serialize an attribute that is a top-level node, or when more than one top-level element is encountered.</li>
+</ul>
+<p>If an error occurs during serialization, result is undefined unless the serializer is driven through a call to <a href="qxmlquery.html#evaluateTo">QXmlQuery::evaluateTo</a>().</p>
+<p>If the generated XML should be indented and formatted for reading, use <a href="qxmlformatter.html">QXmlFormatter</a>.</p>
+<p>See also <a href="http://www.w3.org/TR/xslt-xquery-serialization/">XSLT 2.0 and XQuery 1.0 Serialization</a> and <a href="qxmlformatter.html">QXmlFormatter</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlSerializer"></a>QXmlSerializer::QXmlSerializer ( const <a href="qxmlquery.html">QXmlQuery</a> &amp; <i>query</i>, <a href="qiodevice.html">QIODevice</a> * <i>outputDevice</i> )</h3>
+<p>Constructs a serializer that uses the name pool and message handler in <i>query</i>, and writes the output to <i>outputDevice</i>.</p>
+<p><i>outputDevice</i> must be a valid, non-null device that is open in write mode, otherwise behavior is undefined.</p>
+<p><i>outputDevice</i> must not be opened with <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::Text</a> because it will cause the output to be incorrect. This class will ensure line endings are serialized as according with the XML specification.</p>
+<p><a href="qxmlserializer.html">QXmlSerializer</a> does not own <i>outputDevice</i>.</p>
+<h3 class="fn"><a name="codec"></a>const <a href="qtextcodec.html">QTextCodec</a> * QXmlSerializer::codec () const</h3>
+<p>Returns the codec being used by the serializer for encoding its XML output.</p>
+<p>See also <a href="qxmlserializer.html#setCodec">setCodec</a>().</p>
+<h3 class="fn"><a name="outputDevice"></a><a href="qiodevice.html">QIODevice</a> * QXmlSerializer::outputDevice () const</h3>
+<p>Returns a pointer to the output device. There is no corresponding function to <i>set</i> the output device, because the output device must be passed to the constructor. The serializer does not own the IO device returned.</p>
+<h3 class="fn"><a name="setCodec"></a>void QXmlSerializer::setCodec ( const <a href="qtextcodec.html">QTextCodec</a> * <i>outputCodec</i> )</h3>
+<p>Sets the codec the serializer will use for encoding its XML output. The output codec is set to <i>outputCodec</i>. By default, the output codec is set to the one for <tt>UTF-8</tt>.</p>
+<p>The serializer does not take ownership of the codec.</p>
+<p>See also <a href="qxmlserializer.html#codec">codec</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

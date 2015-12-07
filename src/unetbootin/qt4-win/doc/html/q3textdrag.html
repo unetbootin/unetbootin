@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/other/q3dragobject.cpp -->
+<head>
+  <title>Qt 4.4: Q3TextDrag Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TextDrag Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TextDrag class is a drag and drop object for transferring plain and Unicode text. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TextDrag&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qtextdrag">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3dragobject.html">Q3DragObject</a>.</p>
+<ul>
+<li><a href="q3textdrag-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3textdrag.html#Q3TextDrag">Q3TextDrag</a></b> ( const QString &amp; <i>text</i>, QWidget * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3textdrag.html#Q3TextDrag-2">Q3TextDrag</a></b> ( QWidget * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3textdrag.html#dtor.Q3TextDrag">~Q3TextDrag</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3textdrag.html#setSubtype">setSubtype</a></b> ( const QString &amp; <i>subtype</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3textdrag.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public functions inherited from <a href="q3dragobject.html#public-functions">Q3DragObject</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qmimesource.html#public-functions">QMimeSource</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="q3textdrag.html#canDecode">canDecode</a></b> ( const QMimeSource * <i>source</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3textdrag.html#decode">decode</a></b> ( const QMimeSource * <i>source</i>, QString &amp; <i>string</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3textdrag.html#decode-2">decode</a></b> ( const QMimeSource * <i>source</i>, QString &amp; <i>string</i>, QString &amp; <i>subtype</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="q3dragobject.html#static-public-members">Q3DragObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3dragobject.html#protected-functions">Q3DragObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TextDrag class is a drag and drop object for transferring plain and Unicode text.</p>
+<p>Plain text is passed in a <a href="qstring.html">QString</a> which may contain multiple lines (i.e&#x2e; may contain newline characters). The drag target will receive the newlines according to the runtime environment, e.g&#x2e; LF on Unix, and CRLF on Windows.</p>
+<p>Qt provides no built-in mechanism for delivering only a single-line.</p>
+<p>For more information about drag and drop, see the <a href="q3dragobject.html">Q3DragObject</a> class and the <a href="dnd.html">drag and drop documentation</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TextDrag"></a>Q3TextDrag::Q3TextDrag ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qwidget.html">QWidget</a> * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a text drag object with the given <i>name</i>, and sets its data to <i>text</i>. The <i>dragSource</i> is the widget that the drag operation started from.</p>
+<h3 class="fn"><a name="Q3TextDrag-2"></a>Q3TextDrag::Q3TextDrag ( <a href="qwidget.html">QWidget</a> * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a default text drag object with the given <i>name</i>. The <i>dragSource</i> is the widget that the drag operation started from.</p>
+<h3 class="fn"><a name="dtor.Q3TextDrag"></a>Q3TextDrag::~Q3TextDrag ()</h3>
+<p>Destroys the text drag object.</p>
+<h3 class="fn"><a name="canDecode"></a>bool Q3TextDrag::canDecode ( const <a href="qmimesource.html">QMimeSource</a> * <i>source</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the information in the MIME <i>source</i> can be decoded into a <a href="qstring.html">QString</a>; otherwise returns false.</p>
+<p>See also <a href="q3textdrag.html#decode">decode</a>().</p>
+<h3 class="fn"><a name="decode"></a>bool Q3TextDrag::decode ( const <a href="qmimesource.html">QMimeSource</a> * <i>source</i>, <a href="qstring.html">QString</a> &amp; <i>string</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Attempts to decode the dropped information in the MIME <i>source</i> into the <i>string</i> given. Returns true if successful; otherwise returns false.</p>
+<p>See also <a href="q3textdrag.html#canDecode">canDecode</a>().</p>
+<h3 class="fn"><a name="decode-2"></a>bool Q3TextDrag::decode ( const <a href="qmimesource.html">QMimeSource</a> * <i>source</i>, <a href="qstring.html">QString</a> &amp; <i>string</i>, <a href="qstring.html">QString</a> &amp; <i>subtype</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Attempts to decode the dropped information in the MIME <i>source</i> into the <i>string</i> given. Returns true if successful; otherwise returns false. If <i>subtype</i> is null, any text subtype is accepted; otherwise only the specified <i>subtype</i> is accepted.</p>
+<p>See also <a href="q3textdrag.html#canDecode">canDecode</a>().</p>
+<h3 class="fn"><a name="setSubtype"></a>void Q3TextDrag::setSubtype ( const <a href="qstring.html">QString</a> &amp; <i>subtype</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the MIME <i>subtype</i> of the text being dragged. The default subtype is &quot;plain&quot;, so the default MIME type of the text is &quot;text/plain&quot;. You might use this to declare that the text is &quot;text/html&quot; by calling setSubtype(&quot;html&quot;).</p>
+<h3 class="fn"><a name="setText"></a>void Q3TextDrag::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the <i>text</i> to be dragged. You will need to call this if you did not pass the text during construction.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

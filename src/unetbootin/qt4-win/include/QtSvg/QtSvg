@@ -1,0 +1,6 @@
+#include <QtCore/QtCore>
+#include <QtGui/QtGui>
+#include "qgraphicssvgitem.h"
+#include "qsvggenerator.h"
+#include "qsvgrenderer.h"
+#include "qsvgwidget.h"

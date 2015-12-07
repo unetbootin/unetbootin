@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/richtext.qdoc -->
+<head>
+  <title>Qt 4.4: Common Rich Text Editing Tasks</title>
+  <link rel="prev" href="richtext-cursor.html" />
+  <link rel="contents" href="richtext.html" />
+  <link rel="next" href="richtext-advanced-processing.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="richtext-cursor.html">The QTextCursor Interface</a>]
+[<a href="richtext.html">Contents</a>]
+[Next: <a href="richtext-advanced-processing.html">Advanced Rich Text Processing</a>]
+</p>
+<h1 class="title">Common Rich Text Editing Tasks<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#using-qtextedit">Using QTextEdit</a></li>
+<li><a href="#selecting-text">Selecting Text</a></li>
+<li><a href="#finding-text">Finding Text</a></li>
+<li><a href="#printing-documents">Printing Documents</a></li>
+</ul>
+<p>There are a number of tasks that are often performed by developers when editing and processing text documents using Qt. These include the use of display widgets such as <a href="qtextbrowser.html">QTextBrowser</a> and <a href="qtextedit.html">QTextEdit</a>, creation of documents with <a href="qtextdocument.html">QTextDocument</a>, editing using a <a href="qtextcursor.html">QTextCursor</a>, and exporting the document structure. This document outlines some of the more common ways of using the rich text classes to perform these tasks, showing convenient patterns that can be reused in your own applications.</p>
+<a name="using-qtextedit"></a>
+<h2>Using QTextEdit</h2>
+<p>A text editor widget can be constructed and used to display HTML in the following way:</p>
+<pre>     QTextEdit *editor = new QTextEdit(parent);
+     editor-&gt;setHtml(aStringContainingHTMLtext);
+     editor-&gt;show();</pre>
+<p>By default, the text editor contains a document with a root frame, inside which is an empty text block. This document can be obtained so that it can be modified directly by the application:</p>
+<pre>     QTextDocument *document = editor-&gt;document();</pre>
+<p>The text editor's cursor may also be used to edit a document:</p>
+<pre>     QTextCursor cursor = editor-&gt;textCursor();</pre>
+<p>Although a document can be edited using many cursors at once, a <a href="qtextedit.html">QTextEdit</a> only displays a single cursor at a time. Therefore, if we want to update the editor to display a particular cursor or its selection, we need to set the editor's cursor after we have modified the document:</p>
+<pre>     editor-&gt;setTextCursor(cursor);</pre>
+<a name="selecting-text"></a>
+<h2>Selecting Text</h2>
+<p>Text is selected by moving the cursor using operations that are similar to those performed by a user in a text editor. To select text between two points in the document, we need to position the cursor at the first point then move it using a special mode (<a href="qtextcursor.html#MoveMode-enum">QTextCursor::MoveMode</a>) with a move operation (<a href="qtextcursor.html#MoveOperation-enum">QTextCursor::MoveOperation</a>). When we select the text, we leave the selection anchor at the old cursor position just as the user might do by holding down the Shift key when selecting text:</p>
+<pre>     cursor.movePosition(QTextCursor::StartOfWord);
+     cursor.movePosition(QTextCursor::EndOfWord, QTextCursor::KeepAnchor);</pre>
+<p>In the above code, a whole word is selected using this method. <a href="qtextcursor.html">QTextCursor</a> provides a number of common move operations for selecting individual characters, words, lines, and whole blocks.</p>
+<a name="finding-text"></a>
+<h2>Finding Text</h2>
+<p><a href="qtextdocument.html">QTextDocument</a> provides a cursor-based interface for searching, making it easy to find and modify text in the style of a text editor. The following code finds all the instances of a particular word in a document, and changes the color of each:</p>
+<pre>     QTextCursor newCursor(document);
+
+     while (!newCursor.isNull() &amp;&amp; !newCursor.atEnd()) {
+         newCursor = document-&gt;find(searchString, newCursor);
+
+         if (!newCursor.isNull()) {
+             newCursor.movePosition(QTextCursor::WordRight,
+                                    QTextCursor::KeepAnchor);
+
+             newCursor.mergeCharFormat(colorFormat);
+         }
+     }</pre>
+<p>Note that the cursor does not have to be moved after each search and replace operation; it is always positioned at the end of the word that was just replaced.</p>
+<a name="printing-documents"></a>
+<h2>Printing Documents</h2>
+<p><a href="qtextedit.html">QTextEdit</a> is designed for the display of large rich text documents that are read on screen, rendering them in the same way as a web browser. As a result, it does not automatically break the contents of the document into page-sized pieces that are suitable for printing.</p>
+<p><a href="qtextdocument.html">QTextDocument</a> provides a <a href="qtextdocument.html#print">print()</a> function to allow documents to be printed using the <a href="qprinter.html">QPrinter</a> class. The following code shows how to prepare a document in a <a href="qtextedit.html">QTextEdit</a> for printing with a <a href="qprinter.html">QPrinter</a>:</p>
+<pre>     QTextDocument *document = editor-&gt;document();
+     QPrinter printer;
+
+     QPrintDialog *dlg = new QPrintDialog(&amp;printer, this);
+     if (dlg-&gt;exec() != QDialog::Accepted)
+         return;
+
+     document-&gt;print(&amp;printer);</pre>
+<p>The document is obtained from the text editor, and a <a href="qprinter.html">QPrinter</a> is constructed then configured using a <a href="qprintdialog.html">QPrintDialog</a>. If the user accepts the printer's configuration then the document is formatted and printed using the <a href="qtextdocument.html#print">print()</a> function.</p>
+<p>
+[Previous: <a href="richtext-cursor.html">The QTextCursor Interface</a>]
+[<a href="richtext.html">Contents</a>]
+[Next: <a href="richtext-advanced-processing.html">Advanced Rich Text Processing</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

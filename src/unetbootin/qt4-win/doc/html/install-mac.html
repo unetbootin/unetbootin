@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/installation.qdoc -->
+<head>
+  <title>Qt 4.4: Installing Qt/Mac</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Installing Qt/Mac<br /><span class="subtitle"></span>
+</h1>
+<p><b>Note:</b> Qt for Mac OS X has some requirements that are given in more detail in the <a href="requirements-mac.html">Qt/Mac Requirements</a> document.</p>
+<p><b>Note for the binary package</b>: If you have the binary package, simply double-click on the Qt.mpkg and follow the instructions to install Qt. You can later run the <tt>uninstall-qt.py</tt> script to uninstall the binary package. The script is located in /Developer/Tools and must be run as root.</p>
+<p>What follows is how to install Qt/Mac from the source package.</p>
+<ol type="1">
+<li>If you have the commercial edition of Qt, install your license file as <tt>$HOME/.qt-license</tt>.<p>For the open source version you do not need a license file.</p>
+</li>
+<li>Unpack the archive if you have not done so already. For example, if you have the <tt>qt-mac-opensource-desktop-4.4.0.tar.gz</tt> package, type the following commands at a command line prompt:<pre>     cd /tmp
+     gunzip qt-mac-opensource-desktop-4.4.0.tar.gz        # uncompress the archive
+     tar xvf qt-mac-opensource-desktop-4.4.0.tar          # unpack it</pre>
+<p>This creates the directory <tt>/tmp/qt-mac-opensource-desktop-4.4.0</tt> containing the files from the archive.</p>
+</li>
+<li>Building<p>To configure the Qt library for your machine type, run the <tt>./configure</tt> script in the package directory.</p>
+<p>By default, Qt is configured for installation in the <tt>/usr/local/Trolltech/Qt-4.4.0</tt> directory, but this can be changed by using the <tt>-prefix</tt> option. Alternatively, the <tt>-prefix-install</tt> option can be used to specify a &quot;local&quot; installation within the source directory.</p>
+<pre>     cd /tmp/qt-mac-opensource-desktop-4.4.0
+     ./configure</pre>
+<p>Type <tt>./configure -help</tt> to get a list of all available options.</p>
+<p>Note that you will need to specify <tt>-universal</tt> if you want to build universal binaries, and also supply a path to the <tt>-sdk</tt> option if your development machine has a PowerPC CPU. By default, Qt is built as a framework, but you can built it as a set of dynamic libraries (dylibs) by specifying the <tt>-no-framework</tt> option.</p>
+<p>Qt can also be configured to be built with debugging symbols. This process is described in detail in the <a href="debug.html">Debugging Techniques</a> document.</p>
+<p>To create the library and compile all the demos, examples, tools, and tutorials, type:</p>
+<pre>     make</pre>
+<p>If you did not configure Qt using the <tt>-prefix-install</tt> option, you need to install the library, demos, examples, tools, and tutorials in the appropriate place. To do this, type:</p>
+<pre>     sudo make install</pre>
+<p>and enter your password, this requires that you have administrator access to your machine.</p>
+<p><b>Note:</b> If you later need to reconfigure and rebuild Qt from the same location, ensure that all traces of the previous configuration are removed by entering the build directory and typing <tt>make confclean</tt> before running <tt>configure</tt> again.</p>
+</li>
+<li>Environment variables<p>In order to use Qt, some environment variables need to be extended.</p>
+<pre>     PATH               - to locate qmake, moc and other Qt tools</pre>
+<p>This is done like this:</p>
+<p>In <tt>.profile</tt> (if your shell is bash), add the following lines:</p>
+<pre>     PATH=/usr/local/Trolltech/Qt-4.4.0/bin:$PATH
+     export PATH</pre>
+<p>In <tt>.login</tt> (in case your shell is csh or tcsh), add the following line:</p>
+<pre>     setenv PATH /usr/local/Trolltech/Qt-4.4.0/bin:$PATH</pre>
+<p>If you use a different shell, please modify your environment variables accordingly.</p>
+</li>
+<li>That's all. Qt is now installed.<p>If you are new to Qt, we suggest that you take a look at the demos and examples to see Qt in action. Run the Qt Examples and Demos either by typing <tt>qtdemo</tt> on the command line or through the desktop's Start menu.</p>
+<p>You might also want to try the following links:</p>
+<ul>
+<li><a href="how-to-learn-qt.html">How to Learn Qt</a></li>
+<li><a href="tutorials-tutorial.html">Qt Tutorial</a></li>
+<li><a href="http://www.trolltech.com/developer">Developer Zone</a></li>
+<li><a href="deployment.html">Deploying Qt Applications</a></li>
+</ul>
+</li>
+</ol>
+<p>We hope you will enjoy using Qt. Good luck!</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

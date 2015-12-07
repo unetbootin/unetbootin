@@ -1,0 +1,126 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! 
+    \page opensourceedition.html
+
+    \title Qt Open Source Edition
+    \ingroup licensing
+    \brief Information about the license and features of the Open Source Edition.
+
+    Free (or open source) software is software that comes with a license
+    that gives users certain rights. In particular the right to use the
+    software, to modify it, to obtain its source, and to pass it on (under
+    the same terms). Notice that the term "free" is about rights, not
+    money. The Free Software Foundation (creators of the GNU GPL) speaks
+    of free in this context as in "free speech", not as in "no cost".
+
+    Trolltech supports the free software concept by providing the Qt Open Source
+    Edition. You can use this edition of Qt to create free software, i.e.
+    software that is licensed under the GNU GPL or a similarly recognized
+    open source license. Trolltech's support of open source with the Qt Open
+    Source Edition has enabled large successful software projects like KDE to
+    thrive, with thousands of developers around the world using Qt Open Source
+    Edition at no cost to themselves. With the release of Qt 4, Qt Open Source
+    Edition is available for Unix/X11, Mac OS X, and Windows.
+    \omit
+    A separate Edition of Qt is also available for embedded Linux.
+    \endomit
+
+    The Open Source Edition can be downloaded from
+    \l{Downloads}{Trolltech's website}.
+
+    It is also possible to develop commercial software using Qt: but to do
+    so you must buy a commercial license for one of the \l{Qt Commercial Editions}.
+    If you buy a commercial edition of Qt you can sell your software for any
+    price and with any license you like. Thousands of commercial companies
+    use the commercial edition of Qt to develop the products they sell.
+
+    If you use the Qt Open Source Edition, there are certain licensing
+    conditions that the GNU GPL imposes on you, to ensure that your users
+    enjoy the freedoms guaranteed by the GPL. Users are entitled to:
+
+    \list 1
+    \o Run your software for any purpose.
+    \o Obtain and study your software's source code, and adapt it to their
+       needs.
+    \o Redistribute your software and its source code to others (under the
+       same terms).
+    \o Improve or modify your software, and release these changes to the
+       public.
+    \endlist
+
+    These freedoms apply to all the source code for all the modules your
+    software is based on, regardless of whether they have been written by
+    you or by others. The freedoms also apply to any associated interface
+    definition files, and even include the scripts and control files used
+    to control compilation and installation of the executable; otherwise
+    users could not exercise their rights.
+
+    This means that you cannot use a Qt Open Source Edition if your software
+    must be built with any modules that impose conditions on you that
+    contradict the conditions of the GNU GPL, including, but not limited
+    to, software patents, commercial license agreements, copyrighted
+    interface definitions or any sort of non-disclosure agreement (NDA).
+    In these circumstances you must use a commercial edition of Qt.
+
+    See the \l{Licensing Information} documents for more information
+    or look in the online \l{License FAQ} for answers to frequently asked
+    questions on Qt Open Source Edition licensing and its implications.
+
+    More information on Free and Open Source software is available online:
+
+    \list
+    \o GNU GPL: \l http://www.gnu.org/.
+    \o Open Source licensing: \l http://www.opensource.org/.
+    \endlist
+
+    Information about Qt Commercial License Agreements is available
+    in the \l{Qt Licensing Overview} on Trolltech's web site or by email
+    from \l{mailto:sales@trolltech.com}{sales@trolltech.com}.
+
+    If you are in doubt what edition of Qt is right for your project,
+    please contact
+    \l{mailto:info@trolltech.com}{info@trolltech.com}.
+
+*/

@@ -1,0 +1,664 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page xquery-introduction.html
+    \startpage index.html QtReference Documentation
+    \title A Short Path to XQuery
+    \brief An introduction to the programming language XQuery.
+    \target XQuery-introduction
+
+XQuery is programming language specified by the W3C for working with XML -- or
+anything that can be represented as so.
+
+\tableofcontents
+
+\section1 Introduction
+
+Compared to programming languages such as Java and C++, which comprise of
+statements, XQuery has expressions at its core. There are various expressions
+available ranging from sorting to function calls, but one of the simplest is
+a direct node constructor. For example:
+
+\quotefile snippets/patternist/oneElementConstructor.xq
+
+This is an XQuery query and it also happens to be a well-formed XML document.
+Regular XML nodes can be used as expressions in XQuery. Other expressions can
+be embedded using curly braces:
+
+\quotefile snippets/patternist/copyID.xq
+
+\section1 Selecting Nodes with Paths
+
+In C++ and Java, \c for loops and function recursion is used to perform
+iterative tasks. In contrast, XQuery supplies the declarative path expressions,
+specifically designed to make iterative tasks concise and precise.
+
+A path expression consists of one or more steps separated by slash or double
+slash, where the result of each step becomes the \e focus for the next step.
+The resulting nodes are always delivered in document order and without
+duplicates. For instance:
+
+\quotefile snippets/patternist/pathsAllParagraphs.xq
+
+selects all \c p elements in the document \c index.html regardless of where
+they appear.
+
+A path expression is always evaluated to a particular focus. Sometimes this
+focus is created by the path expression itself, as seen above by using the \c
+doc() function. In other cases the focus is set by a parent expression, or by
+calling QXmlQuery::setFocus().
+
+The focus is a sequence of nodes, however it can consist of atomic values too.
+This focus acts as a context, which the subsequent step filters. A step is
+invoked for each item in the focus; for each item that the step accepts, the
+next step is applied. This way paths provide iteration, similar to a nested set
+of \c for loops. This query:
+
+\quotefile snippets/patternist/pathAB.xq
+
+contains one top level path expression which has four steps: a call to the \c
+doc() function, and then three node tests. Reading through the query in a
+step-by-step manner gives:
+
+\list 1
+    \o For each node returned by the function \c doc() (which is one document
+       node);
+    \o for each node that appears as a descendant of the document node and
+       is an element with name \c p
+    \o return the child elements whose name is \c span
+\endlist
+
+This query evaluates to zero or more \c span elements.
+
+Although a step in a path can be any expression as long as only the last step
+evaluates to atomic values, the most common is when steps are \e axis \e steps.
+Axis steps consists of two parts: an axis, and a node test. For each node in
+the focus for the step, the axis navigates it and the node test is applied to
+each node along that axis. In fact, the element test above actually use a short
+form for a combination between the \c child axis, and the \c element() node
+test. This query evaluates to the exact same output:
+
+\quotefile snippets/patternist/nodeTestChildElement.xq
+
+There is a wide range of different axes and node tests, in order to be able
+to filter nodes in specific ways.
+
+\section2 Axes
+
+These are the axes available in XPath, and hence also XQuery:
+
+\list
+    \o \c child All child nodes, but no attribute nodes of the current context node
+    \o \c descendant All the descendants
+    \o \c attribute All the attribute node
+    \o \c self The current item in the focus itself.
+    \o \c descendant-or-self As the \c descendant axis, but includes the context node too
+    \o \c following-sibling All the other child nodes of the parent of the
+          context node, that appears after the context node, in document order.
+    \o \c following The nodes that appear after the context node in document order
+    \o \c parent The parent node, if any
+    \o \c ancestor The ancestors of the context node. That is the parent, and
+          the parent's parent, and so on.
+    \o \c preceding-sibling All the other child nodes of the parent of the context
+          node, that appears before the context node, in document order.
+    \o \c preceding All the nodes that appear before the context node except ancestor
+    \o \c ancestor-or-self As the axis \c ancestor but includes the context node
+\endlist
+
+\section2 Node tests
+
+Node tests generally filter nodes based on their kind, whether the context node
+is a processing-instruction or not for instance, or their name, or a
+combination between the two.
+
+\section3 Name Tests
+
+Name tests are namespace aware, meaning that a name test such as \c svg
+wouldn't match the document element in a SVG document, since the document
+element is in the SVG namespace. The various namespace declarations can be used
+to provide namespaces. This query:
+
+\quotefile snippets/patternist/twoSVGElements.xq
+
+selects the document element twice, because the two name tests match the same
+element, although the namespaces are supplied differently each time.  Once
+through a prefix binding, and the other by picking up the default element
+namespace.
+
+\section3 Names and Wildcards
+
+Names can be combined with wildcards in order to select for instance any element or
+attribute as long as it is in a particular namespace, or an attribute or element
+appearing in any namespace, as long as it has a particular local name. This is
+achieved by using a wildcard as the prefix or local name. For instance this
+query:
+
+\quotefile snippets/patternist/anyXLinkAttribute.xq
+
+selects all the attributes that are in the XLink namespace, and this query:
+
+\quotefile snippets/patternist/anyHTMLElement.xq
+
+selects an element whose local name is \c html, regardless of its namespace.
+
+The following are various kind tests.
+
+\section3 Kind Tests
+\list
+    \o \c node() matches any node
+    \o \c text() matches any text node
+    \o \c comment() matches any comment node
+    \o \c element() matches any element. This is the same as the star: *
+    \o \c element(name) matches any element with the name name
+    \o \c attribute() matches any attribute.
+    \o \c processing-instruction() matches any processing-instruction
+    \o \c processing-instruction(target) matches any processing-instruction
+          whose target (name) is \c target
+    \o \c attribute(name) matches any attribute with the name name
+    \o \c document-node() matches any document node
+    \o \c document-node(element(doc)) matches any document node that
+          has a document element named \c doc
+\endlist
+
+In addition there are node tests related to the schema types of nodes, although they
+are currently unsupported by QtXmlPatterns.
+
+\section2 Abbreviated syntax
+
+For many common tasks the full axis step syntax is a bit verbose and for that
+reason simplified alternatives exists, which typically combine axes and node
+tests. Some examples:
+
+\list
+    \o \c item selects any child element of the context node that is named
+       \c item. Short for \c child::element(item)
+    \o \c * selects any child that is an element. Note that children of
+         other types, such as comments, are skipped. Short for
+         \c child::element(). If all nodes are of interest, \c node()
+         will select them.
+    \o \c .. is equal to \c parent::node(). That is, it selects the parent node
+    \o \c @* selects any attribute. Short for \c attribute::attribute()
+    \o \c @href selects any attribute by name \c href. Short for \c attribute::attribute(href)
+    \o \c // before another step is a short form for descendant-or-self::node()
+\endlist
+
+\section1 More on Focus and Filtering: Predicates
+
+In addition to steps as a way to filter content, XPath & XQuery has the
+predicate expression: an expression with a second expression to its right
+enclosed in brackets. For instance this query:
+
+\quotefile snippets/patternist/firstParagraph.xq
+
+selects the paragraph that has an attribute with the ID \c thatSpecialOne.
+
+Like steps in path expressions, predicates also make use of the focus. For each
+item in the source sequence, the predicate is applied, and if the item passes
+the filter, it is part of the result. Inside a predicate (and inside steps too)
+the current context item can be accessed by using the dot expression. Consider
+this query:
+
+\quotefile snippets/patternist/emptyParagraphs.xq
+
+For each \c p element that the node test returns, the predicate is invoked. If
+the predicate expression evaluates to true, it returns the node, and that it will
+do if the string value of the predicate's context item is zero.
+
+There are two kinds of predicates: numeric predicates and truth predicates.
+
+\section2 Select based on Positions and Numeric Ranges
+
+While a predicate is applied to its focus, the current \e context \e position
+can be obtained by using the function \c position(). For instance, this query:
+
+\quotefile snippets/patternist/paragraphsExceptTheFiveFirst.xq
+
+selects all the paragraphs except the five first.
+
+In addition to \c position(), the function last() also returns a number related
+to the focus: the position of the last item. \c last() inside a predicate by itself
+will simply select the last item in the input sequence, but it can also be combined
+with for instances an offset:
+
+\quotefile snippets/patternist/nextLastParagraph.xq
+
+which would return the next last paragraph in the document.
+
+Positions inside a focus starts from one, not zero.
+
+\section2 Filterting based on Logic
+
+If a predicate doesn't evaluate to a number, it is considered a truth predicate.
+A truth predicate takes the value the predicate expression evaluates to
+and computes its \e effective \e boolean \e value. The rules for how that is done,
+is as follows:
+
+\list
+    \o If it's a single node, the result is \c true
+    \o If the value is a string, the value is \c false if it's empty,
+       otherwise \c true
+    \o If it's a value of type \c xs:boolean, the value is returned as is
+    \o Otherwise, for instance if the return value is date, a type error occur
+\endlist
+
+For instance, this query:
+
+\quotefile snippets/patternist/paragraphsWithTables.xq
+
+selects all paragraphs that has a table as a child, since the predicate
+evaluates to true if the contained step, \c table, matches any nodes. This is
+of course very different from:
+
+\quotefile snippets/patternist/tablesInParagraphs.xq
+
+which returns the tables found inside paragraphs (which should be none, since
+they cannot appear there).
+
+\section1 Creating nodes
+
+While the XQuery language has a lot of functions and expression for
+selecting and filtering exisitng content, it can also create new content using
+its node constructors. Consider:
+
+\quotefile snippets/patternist/directTreeFragment.xq
+
+While this looks like an XML document, and in fact is so, it also is a valid
+XQuery query. Node constructors are by large just like XML, so if one knows
+XML, one can simply continue to write XML inside queries whenever one needs to
+have nodes created. There is however two things that set direct node constructs
+apart from XML: one can embed XQuery expressions inside of them, and they are
+expressions themselves. Let's first look at the former.
+
+\section2 Computing values inside nodes
+
+Creating a value inside a node at runtime is done by embedding
+expressions inside curly braces. For instance, this expression, simple as it
+is, constructs an element with the text node "6" inside of it:
+
+\quotefile snippets/patternist/bracesIncluded.xq
+
+Similarly, one can embed expressions inside attributes. For instance:
+
+\quotefile snippets/patternist/expressionInsideAttribute.xq
+
+creates an element whose attribute called \c class has the value "important
+example obsolete", without quotes.
+
+\section2 Node Constructors are Expressions
+
+Because node constructors are expressions just like for instance function
+calls, paths and literals, they can appear anywhere where expressions can
+appear. For instance:
+
+\quotefile snippets/patternist/nodeConstructorsAreExpressions.xq
+
+If \c maybeNotWellformed.xml can be read successfully it creates a \c para
+element for each \c p element that appears anywhere in the document and copies
+\c p's child nodes into it. But if the document cannot be loaded, a single \c para
+element is created that contains a descriptive message.
+
+Hence, in the above query node constructors appear in two places:
+
+\list
+    \o Once as a child in the \c else branch in the \c if expression
+    \o As one of the axis steps in the path expression
+\endlist
+
+\section2 Computing Node Names at Runtime
+
+Direct node constructors are fine, but what if one doesn't know the names of
+the nodes to construct when writing the query? For each direct element
+constructor, there exist a \e computed node constructor, that takes names and
+the node values as arbitrary expressions. For instance, the query seen above
+that produced a small XML document, can also be written like this:
+
+\quotefile snippets/patternist/computedTreeFragment.xq
+
+\section2 Copying nodes into other nodes
+
+When an expression embedded inside a node expression evaluates to strings (or
+any other type of atomic values) the values becomes text nodes by concatenating
+them with a space inbetween. However, when the expression evaluates to nodes,
+they are copied and becomes children of the surrounding node. This can
+occasionally be deceptive. Consider this query:
+
+\quotefile snippets/patternist/copyAttribute.xq
+
+This won't output a \c p element that has the value of the \c version
+attribute, it will instead copy the attribute onto the \c p element whose result
+in not even valid XHTML. The approach is instead, in the case of wanting the
+value of the attribute instead of itself, to extract that using for instance
+the \c string() function:
+
+\quotefile snippets/patternist/fnStringOnAttribute.xq
+
+\section1 Escaping Characters
+
+In the XQuery syntax, a set of characters are given special meaning. For instance,
+apostrophes or quotes start and terminate string literals. These can be escaped by
+writing the character twice:
+
+For instance:
+
+\quotefile snippets/patternist/escapeStringLiterals.xq
+
+Evaluates to:
+
+\quotefile snippets/patternist/escapeStringLiterals.xml
+
+However, sometimes the easiest is to start the string literal with
+apostrophes instead of quotes, if the string contains quotes. One can also use XML
+character references, like \c &amp; or \c &#xA;, to express characters that cannot be directly
+represented in the encoding of the file containing the query.
+
+When curly braces should appear inside node constructors, one can again escape them
+with double braces or use character references. For instance:
+
+\quotefile snippets/patternist/escapeCurlyBraces.xq
+
+\section1 Dates, Times, Numbers and other Atomic Values
+
+Apart from nodes, XQuery has atomic values and they are just what one would
+think they are: small, primitive values, that have a similar role to C++'s
+plain old data structures like \c float or \c long. In total there are about
+twenty of them, some of the most common being:
+
+\table
+    \header
+        \o Name
+        \o Description
+    \row
+        \o \c xs:integer
+        \o A 64 bit integer
+    \row
+        \o \c xs:boolean
+        \o A boolean value, \c false or \c true
+    \row
+        \o \c xs:double
+        \o A 64 bit floating point value
+    \row
+        \o \c xs:string
+        \o A string where each codepoint is an XML 1.0
+           character(essentially Unicode)
+    \row
+        \o \c xs:date
+        \o A date, such as when you're born: \c 1984-10-15
+    \row
+        \o \c xs:time
+        \o A time, such as when you show up at work: \c 09:00:00
+    \row
+        \o \c xs:dateTime
+        \o A date followed by a time: 1974-10-15T05:00:00
+    \row
+        \o \c xs:duration
+        \o A time interval such as P5Y2M10DT15H, which
+           represents five years, two months, 10 days, and 15 hours.
+    \row
+        \o \c xs:base64Binary
+        \o Represents data, possibly binary data, in Base 64 encoding.
+\endtable
+
+Atomic values can be seen as types which have:
+
+\list
+    \o a name, such as \c xs:duration
+    \o builtin operators for performing arithmetics, comparisons, and
+       conversions between other atomic values
+\endlist
+
+\section2 Creating Atomic Values
+
+Apart from the builtin functions that returns atomic values, such as
+\c current-date-time(), constructor functions can be used to 
+
+Integers, decimals, doubles and strings can be created by using literal expressions.
+Booleans with the functions \c true() or \c false() (just \c true or \c false
+would be name tests), and for the rest constructor functions must be used.
+
+Essentially each atomic type can construct a value from a string. While doing so it
+validates the input string to ensure it has a proper format and if not, it
+issues a dynamic error. These formats tend to be as one would guess it to be. For
+instance, if one passes "1.five" to \c xs:decimal's constructor, as opposed to
+"1.5" it will halt the query such that the bug can be corrected.
+
+In the example an \c xs:boolean was created from an \c xs:integer as opposed to
+from a string, and that's because values doesn't have to be constructed from
+strings, they can be created, or converted, from a range of different types.
+For instance, an \c xs:double can be created from a \c xs:decimal, or a \c
+xs:boolean can be converted to an \c xs:string. What conversions that are
+possible depends on the types but they tend to be intuitive. One of the
+specifications has a
+\l{http://www.w3.org/TR/xpath-functions/#casting-from-primitive-to-primitive}{nifty
+table} outlining those.
+
+\section2 Using Atomic Values
+
+Once atomic values have been constructed, via one of the methods mentioned
+above, or as return values from functions or by evaluating variables, one can
+pass them along to functions, convert them to strings and attach them as part
+of text nodes to nodes, or use operators between them. Let's look at the
+latter.
+
+Apart from the usual arithmetic operators between numbers one would expect,
+they are also available between more exotic types. Have a look at this query:
+
+\quotefromfile snippets/patternist/literalsAndOperators.xq
+\skipuntil -
+
+It substracts two dates which returns an \c xs:dayTimeDuration, which it
+subsequently compares against another \c :xs:dayTimeDuration. The query
+finally evaluates to a single atomic value of type \c xs:boolean.
+
+The available operators and between what types are summarized in
+\l{http://www.w3.org/TR/xquery/#mapping}{a table} in the main XQuery
+specification.
+
+\section1 Further Reading
+
+XQuery is a big language that is hard to cover in an overview. If one wants a
+good understanding of the subject, a good thing could be to get a book on
+topic.
+
+Another alternative is to ask a question or two on the mailing lists
+\l{http://lists.trolltech.com/qt-interest/}{qt-interest} or
+\l{http://www.x-query.com/mailman/listinfo/talk}{talk at x-query.com}.
+
+\l{http://www.functx.com/functx/}{FunctX} is a collection of XQuery functions
+that can be both useful and educational.
+
+Of course, the specifications is one alternative, but one has to take a deep
+breath before diving into those. Here are the links to (some of) them:
+
+\list
+    \o \l{http://www.w3.org/TR/xquery/}{XQuery 1.0: An XML Query Language} is
+        the main specification that describes the syntax and behavior.
+    \o \l{http://www.w3.org/TR/xpath-functions/}{XQuery 1.0 and XPath 2.0 Functions
+       and Operators} describes all the builtin functions, and how conversions between
+       atomic values are done.
+\endlist
+
+\section1 FAQ
+
+\section2 Path expressions misses
+
+Often this is caused by that the names that the axis step matches, is different
+from nodes being matched.  For instance, let's say that \c index.html in this
+query:
+
+\quotefile snippets/patternist/simpleHTML.xq
+
+is an XHTML document and hence it resides in the namespace \c
+http://www.w3.org/1999/xhtml/. The path won't match since they look for
+\c{{}html} and so forth, while the actual name is
+\c{{http://www.w3.org/1999/xhtml/}html}. The fix is straight forward:
+
+\quotefile snippets/patternist/simpleXHTML.xq
+
+Path expressions also pick up the default namespace if one is declared:
+
+\quotefile snippets/patternist/embedDataInXHTML.xq
+
+In this case the nodes created by the direct element constructors will be in
+the XHTML namespace, but so will the path expressions. Hence they look for
+\c{{http://www.w3.org/1999/xhtml/}tests} and so forth, while \c testResult.xml
+is perhaps in a different namespace, or no namespace at all.
+
+Another reason coulbe be that the context item is not what one expects it to
+be. For instance, this expression:
+
+\quotefile snippets/patternist/docPlainHTML.xq
+
+won't match because the node the \c doc() function returns is not the top
+element node(\c html), it is the document node.
+
+\section2 Variable in for loop is out of scope
+
+Due to expression precedence it might be necessary to wrap the \c return
+expression in a \c for clause with paranteses:
+
+\quotefile snippets/patternist/forClause.xq
+
+Without the paranteses on the last line, the arithmetic expression would have
+had the whole \c for clause as it left operand, and since the scope of variable
+\c $d ends at the \c return clause, the variable reference would be out of
+scope.
+
+\section2 Expressions aren't evaluated
+
+If an expression is inside a node constructor it must be surrounded by curly
+braces, otherwise it's interpreted as text. This:
+
+\quotefile snippets/patternist/bracesOmitted.xq
+
+evaluates to:
+
+\quotefile snippets/patternist/bracesOmittedResult.xml
+
+while:
+
+\quotefile snippets/patternist/bracesIncluded.xq
+
+evaluates to:
+
+\quotefile snippets/patternist/bracesIncludedResult.xml
+
+\section2 Filters selects the wrong things
+
+When having predicates, consider what the predicate applies to. For instance,
+this query:
+
+\quotefile snippets/patternist/filterOnStep.xq
+
+evaluates to the first \c span elements in each \c p element, while this query:
+
+\quotefile snippets/patternist/filterOnPath.xq
+
+evaluates to only one \c span element, the one that occured first in the result
+of the path expression as a whole. In the first case the filter expression was
+applied for the \c span step.
+
+\section2 FLWOR doesn't behave as expected
+
+Note that a \c for expression generates a so called tuple stream, while a \c
+let clause is an ordinary variable binding. For instance, if a \c let binding
+is placed inside a \c for binding it is created for each tuple. The \c order \c
+by clause in turn applies to the result of the tuple stream that the \c for
+clause evaluates to. Consider:
+
+\quotefile snippets/patternist/letOrderBy.xq
+
+evaluates to 4 2 -2 2 -8 2.
+
+This expression:
+
+\quotefile snippets/patternist/invalidLetOrderBy.xq
+
+wouldn't be sorted since the items the \c let clause binds aren't
+dealt with on an individual basis.
+
+\section2 Nodes are created in the wrong order
+
+If nodes are created in the wrong order, it can possibly be related to that the
+document order between nodes created with node constructors is undefined. For
+that reason node sorting, which is invoked by path expressions for instance,
+returns nodes in an order which is undefined. Hence, one gets nodes in an
+arbitrary order if node constructors are placed somewhere in a path expression;
+or indirectly, if nodes are created inside a user-declared function which is
+called from a path step. Consider:
+
+\quotefile snippets/patternist/nodeConstructorsInPaths.xq
+
+This query evaluates to a sequence of \c p elements. However, the order is not
+in the same order as the \c item elements appear in \c feed.rss. The order is,
+counter intuitive as it may seem, undefined.
+
+One approach to this is to instead use the \c for loop, which doesn't perform
+node sorting on its result:
+
+\quotefile snippets/patternist/forClauseOnFeed.xq
+
+\section2 true or false doesn't work
+
+Boolean values, that is atomic values of type \c xs:boolean, cannot be created
+by writing \c true or \c false inside the query, since those are steps, name
+tests to be precise. The safest and easiest way to create boolean values is to
+use the builtin functions \c false() or \c true().
+
+Another way is to invoke its constructor function:
+
+\quotefile snippets/patternist/xsBooleanTrue.xq
+
+*/
+
+/*
++ Selecting nodes with Path Expressions
+    - Languages like C++ and Java typically use for loops and recursion in
+      order to perform tasks iteratively. XQuery supplies the declarative path
+expressions, which are specifically designed to make such jobs concise and
+precise to evaluate.
+
++ Filtering content
+    - Closely related to paths are filter expressions.
+*/
+

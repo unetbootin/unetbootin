@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/sdk/abstractformwindowcursor.cpp -->
+<head>
+  <title>Qt 4.4: QDesignerFormWindowCursorInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerFormWindowCursorInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerFormWindowCursorInterface class allows you to query and modify a form window's widget selection, and in addition modify the properties of all the form's widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerFormWindowCursorInterface&gt;</pre><ul>
+<li><a href="qdesignerformwindowcursorinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdesignerformwindowcursorinterface.html#MoveMode-enum">MoveMode</a></b> { MoveAnchor, KeepAnchor }</li>
+<li><div class="fn"/>enum <b><a href="qdesignerformwindowcursorinterface.html#MoveOperation-enum">MoveOperation</a></b> { NoMove, Start, End, Next, ..., Down }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qdesignerformwindowcursorinterface.html#dtor.QDesignerFormWindowCursorInterface">~QDesignerFormWindowCursorInterface</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qdesignerformwindowcursorinterface.html#current">current</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QDesignerFormWindowInterface * <b><a href="qdesignerformwindowcursorinterface.html#formWindow">formWindow</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerformwindowcursorinterface.html#hasSelection">hasSelection</a></b> () const = 0</li>
+<li><div class="fn"/>bool <b><a href="qdesignerformwindowcursorinterface.html#isWidgetSelected">isWidgetSelected</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerformwindowcursorinterface.html#movePosition">movePosition</a></b> ( MoveOperation <i>operation</i>, MoveMode <i>mode</i> = MoveAnchor ) = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerformwindowcursorinterface.html#position">position</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowcursorinterface.html#resetWidgetProperty">resetWidgetProperty</a></b> ( QWidget * <i>widget</i>, const QString &amp; <i>name</i> ) = 0</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qdesignerformwindowcursorinterface.html#selectedWidget">selectedWidget</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerformwindowcursorinterface.html#selectedWidgetCount">selectedWidgetCount</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowcursorinterface.html#setPosition">setPosition</a></b> ( int <i>position</i>, MoveMode <i>mode</i> = MoveAnchor ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowcursorinterface.html#setProperty">setProperty</a></b> ( const QString &amp; <i>name</i>, const QVariant &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty</a></b> ( QWidget * <i>widget</i>, const QString &amp; <i>name</i>, const QVariant &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qdesignerformwindowcursorinterface.html#widget">widget</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerformwindowcursorinterface.html#widgetCount">widgetCount</a></b> () const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerFormWindowCursorInterface class allows you to query and modify a form window's widget selection, and in addition modify the properties of all the form's widgets.</p>
+<p>QDesignerFormWindowCursorInterface is a convenience class that provides an interface to the associated form window's text cursor; it provides a collection of functions that enables you to query a given form window's selection and change the selection's focus according to defined modes (<a href="qdesignerformwindowcursorinterface.html#MoveMode-enum">MoveMode</a>) and movements (<a href="qdesignerformwindowcursorinterface.html#MoveOperation-enum">MoveOperation</a>). You can also use the interface to query the form's widgets and change their properties.</p>
+<p>The interface is not intended to be instantiated directly, but to provide access to the selections and widgets of <i>Qt Designer</i>'s current form windows. <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> always provides an associated cursor interface. The form window for a given widget can be retrieved using the static <a href="qdesignerformwindowinterface.html#findFormWindow">QDesignerFormWindowInterface::findFormWindow</a>() functions. For example:</p>
+<pre>     QDesignerFormWindowInterface *formWindow = 0;
+     formWindow = QDesignerFormWindowInterface::findFormWindow(myWidget);
+
+     formWindow-&gt;cursor()-&gt;setProperty(myWidget, myProperty, newValue);</pre>
+<p>You can retrieve any of <i>Qt Designer</i>'s current form windows through <i>Qt Designer</i>'s <a href="qdesignerformwindowmanagerinterface.html">form window manager</a>.</p>
+<p>Once you have a form window's cursor interface, you can check if the form window has a selection at all using the <a href="qdesignerformwindowcursorinterface.html#hasSelection">hasSelection</a>() function. You can query the form window for its total <a href="qdesignerformwindowcursorinterface.html#widgetCount">widgetCount</a>() and <a href="qdesignerformwindowcursorinterface.html#selectedWidgetCount">selectedWidgetCount</a>(). You can retrieve the currently selected widget (or widgets) using the <a href="qdesignerformwindowcursorinterface.html#current">current</a>() or <a href="qdesignerformwindowcursorinterface.html#selectedWidget">selectedWidget</a>() functions.</p>
+<p>You can retrieve any of the form window's widgets using the <a href="qdesignerformwindowcursorinterface.html#widget">widget</a>() function, and check if a widget is selected using the <a href="qdesignerformwindowcursorinterface.html#isWidgetSelected">isWidgetSelected</a>() function. You can use the <a href="qdesignerformwindowcursorinterface.html#setProperty">setProperty</a>() function to set the selected widget's properties, and the <a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty</a>() or <a href="qdesignerformwindowcursorinterface.html#resetWidgetProperty">resetWidgetProperty</a>() functions to modify the properties of any given widget.</p>
+<p>Finally, you can change the selection by changing the text cursor's <a href="qdesignerformwindowcursorinterface.html#position">position</a>() using the <a href="qdesignerformwindowcursorinterface.html#setPosition">setPosition</a>() and <a href="qdesignerformwindowcursorinterface.html#movePosition">movePosition</a>() functions.</p>
+<p>See also <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> and <a href="qdesignerformwindowmanagerinterface.html">QDesignerFormWindowManagerInterface</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="MoveMode-enum"></a>enum QDesignerFormWindowCursorInterface::MoveMode</h3>
+<p>This enum describes the different modes that are used when the text cursor moves.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::MoveAnchor</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The anchor moves with the cursor to its new location.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::KeepAnchor</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The anchor remains at the cursor's old location.</td></tr>
+</table></p>
+<h3 class="fn"><a name="MoveOperation-enum"></a>enum QDesignerFormWindowCursorInterface::MoveOperation</h3>
+<p>This enum describes the types of text cursor operation that can occur in a form window.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::NoMove</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The cursor does not move.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Start</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Moves the cursor to the start of the focus chain.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::End</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Moves the cursor to the end of the focus chain.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Next</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Moves the cursor to the next widget in the focus chain.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Prev</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Moves the cursor to the previous widget in the focus chain.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Left</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The cursor moves to the left.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Right</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The cursor moves to the right.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Up</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The cursor moves upwards.</td></tr>
+<tr><td valign="top"><tt>QDesignerFormWindowCursorInterface::Down</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">The cursor moves downwards.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QDesignerFormWindowCursorInterface"></a>QDesignerFormWindowCursorInterface::~QDesignerFormWindowCursorInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the cursor interface.</p>
+<h3 class="fn"><a name="current"></a><a href="qwidget.html">QWidget</a> * QDesignerFormWindowCursorInterface::current () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the currently selected widget in the form window.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#selectedWidget">selectedWidget</a>().</p>
+<h3 class="fn"><a name="formWindow"></a><a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * QDesignerFormWindowCursorInterface::formWindow () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the form window interface associated with this cursor interface.</p>
+<h3 class="fn"><a name="hasSelection"></a>bool QDesignerFormWindowCursorInterface::hasSelection () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the form window contains a selection; otherwise returns false.</p>
+<h3 class="fn"><a name="isWidgetSelected"></a>bool QDesignerFormWindowCursorInterface::isWidgetSelected ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns true if the specified <i>widget</i> is selected; otherwise returns false.</p>
+<h3 class="fn"><a name="movePosition"></a>bool QDesignerFormWindowCursorInterface::movePosition ( <a href="qdesignerformwindowcursorinterface.html#MoveOperation-enum">MoveOperation</a> <i>operation</i>, <a href="qdesignerformwindowcursorinterface.html#MoveMode-enum">MoveMode</a> <i>mode</i> = MoveAnchor )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Performs the given <i>operation</i> on the cursor using the specified <i>mode</i>, and returns true if it completed successfully; otherwise returns false.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#position">position</a>() and <a href="qdesignerformwindowcursorinterface.html#setPosition">setPosition</a>().</p>
+<h3 class="fn"><a name="position"></a>int QDesignerFormWindowCursorInterface::position () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the cursor position.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#setPosition">setPosition</a>() and <a href="qdesignerformwindowcursorinterface.html#movePosition">movePosition</a>().</p>
+<h3 class="fn"><a name="resetWidgetProperty"></a>void QDesignerFormWindowCursorInterface::resetWidgetProperty ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Resets the property with the given <i>name</i> for the specified <i>widget</i> to its default value.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#setProperty">setProperty</a>() and <a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty</a>().</p>
+<h3 class="fn"><a name="selectedWidget"></a><a href="qwidget.html">QWidget</a> * QDesignerFormWindowCursorInterface::selectedWidget ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the widget with the given <i>index</i> in the list of selected widgets.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#current">current</a>() and <a href="qdesignerformwindowcursorinterface.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="selectedWidgetCount"></a>int QDesignerFormWindowCursorInterface::selectedWidgetCount () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the number of selected widgets in the form window.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#widgetCount">widgetCount</a>().</p>
+<h3 class="fn"><a name="setPosition"></a>void QDesignerFormWindowCursorInterface::setPosition ( int <i>position</i>, <a href="qdesignerformwindowcursorinterface.html#MoveMode-enum">MoveMode</a> <i>mode</i> = MoveAnchor )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the position of the cursor to the given <i>position</i> using the <i>mode</i> to specify how it is moved there.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#position">position</a>() and <a href="qdesignerformwindowcursorinterface.html#movePosition">movePosition</a>().</p>
+<h3 class="fn"><a name="setProperty"></a>void QDesignerFormWindowCursorInterface::setProperty ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the property with the given <i>name</i> for the currently selected widget to the specified <i>value</i>.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty</a>() and <a href="qdesignerformwindowcursorinterface.html#resetWidgetProperty">resetWidgetProperty</a>().</p>
+<h3 class="fn"><a name="setWidgetProperty"></a>void QDesignerFormWindowCursorInterface::setWidgetProperty ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the property with the given <i>name</i> for the given <i>widget</i> to the specified <i>value</i>.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#resetWidgetProperty">resetWidgetProperty</a>() and <a href="qdesignerformwindowcursorinterface.html#setProperty">setProperty</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QDesignerFormWindowCursorInterface::widget ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the widget with the given <i>index</i> in the list of widgets in the form window.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#selectedWidget">selectedWidget</a>().</p>
+<h3 class="fn"><a name="widgetCount"></a>int QDesignerFormWindowCursorInterface::widgetCount () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the number of widgets in the form window.</p>
+<p>See also <a href="qdesignerformwindowcursorinterface.html#selectedWidgetCount">selectedWidgetCount</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

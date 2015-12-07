@@ -1,0 +1,153 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example graphicsview/basicgraphicslayouts
+    \title Basic Graphics Layouts Example
+
+    The Basic Graphics Layouts example shows how to use the layout classes
+    in QGraphicsView: QGraphicsLinearLayout and QGraphicsGridLayout.
+
+    \image basicgraphicslayouts-example.png Screenshot of the Basic Layouts Example
+
+    \section1 Window Class Definition
+
+    The \c Window class is a subclass of QGraphicsWidget. It has a
+    constructor with a QGraphicsWidget \a parent as its parameter.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/window.h 0
+
+    \section1 Window Class Implementation
+
+    The constructor of \c Window instantiates a QGraphicsLinearLayout object,
+    \c windowLayout, with vertical orientation. We instantiate another
+    QGraphicsLinearLayout object, \c linear, whose parent is \c windowLayout.
+    Next, we create a \c LayoutItem object, \c item and add it to \c linear
+    with the \l{QGraphicsLinearLayout::}{addItem()} function. We also provide
+    \c item with a \l{QGraphicsLinearLayout::setStretchFactor()}
+    {stretchFactor}.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/window.cpp 0
+
+    We repeat the process:
+
+    \list
+        \o create a new \c LayoutItem,
+        \o add the item \c linear, and
+        \o provide a stretch factor.
+    \endlist
+
+    \snippet examples/graphicsview/basicgraphicslayouts/window.cpp 1
+
+    We then add \c linear to \c windowLayout, nesting two
+    QGraphicsLinearLayout objects. Apart from the QGraphicsLinearLayout, we
+    also use a QGraphicsGridLayout object, \c grid, which is a 4x3 grid with
+    some cells spanning to other rows.
+
+    We create seven \c LayoutItem objects and place them into \c grid with
+    the \l{QGraphicsGridLayout::}{addItem()} function as shown in the code
+    snippet below:
+
+    \snippet examples/graphicsview/basicgraphicslayouts/window.cpp 2
+
+    The first item we add to \c grid is placed in the top left cell,
+    spanning four rows. The next two items are placed in the second column,
+    and they span two rows. Each item's \l{QGraphicsWidget::}{maximumHeight()}
+    and \l{QGraphicsWidget::}{minimumHeight()} are set to be equal so that
+    they do not expand vertically. As a result, these items will not
+    fit vertically in their cells. So, we specify that they should be
+    vertically aligned in the center of the cell using Qt::AlignVCenter.
+
+    Finally, \c grid itself is added to \c windowLayout. Unlike
+    QGridLayout::addItem(), QGraphicsGridLayout::addItem() requires a row
+    and a column for its argument, specifying which cell the item should be
+    positioned in. Also, if the \c rowSpan and \c columnSpan arguments
+    are omitted, they will default to 1.
+
+    Note that we do not specify a parent for each \c LayoutItem that we
+    construct, as all these items will be added to \c windowLayout. When we
+    add an item to a layout, it will be automatically reparented to the widget
+    on which the layout is installed.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/window.cpp 3
+
+    Now that we have set up \c grid and added it to \c windowLayout, we
+    install \c windowLayout onto the window object using
+    QGraphicsWidget::setLayout() and we set the window title.
+
+    \section1 LayoutItem Class Definition
+
+    The \c LayoutItem class is a subclass of QGraphicsWidget. It has a
+    constructor, a destructor, and a reimplementation of the
+    {QGraphicsItem::paint()}{paint()} function.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/layoutitem.h 0
+
+    The \c LayoutItem class also has a private instance of QPixmap, \c pix.
+
+    \note We subclass QGraphicsWidget so that \c LayoutItem objects can
+    be automatically plugged into a layout, as QGraphicsWidget is a
+    specialization of QGraphicsLayoutItem.
+
+    \section1 LayoutItem Class Implementation
+
+    In \c{LayoutItem}'s constructor, \c pix is instantiated and the
+    \c{QT_original_R.png} image is loaded into it. We set the size of
+    \c LayoutItem to be slightly larger than the size of the pixmap as we
+    require some space around it for borders that we will paint later.
+    Alternatively, you could scale the pixmap to prevent the item from
+    becoming smaller than the pixmap.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/layoutitem.cpp 0
+
+    We use the Q_UNUSED() macro to prevent the compiler from generating
+    warnings regarding unused parameters.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/layoutitem.cpp 1
+
+    The idea behind the \c paint() function is to paint the
+    background rect then paint a rect around the pixmap.
+
+    \snippet examples/graphicsview/basicgraphicslayouts/layoutitem.cpp 2
+
+*/

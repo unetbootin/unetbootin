@@ -1,0 +1,15 @@
+include(qt.qdocconf)
+headerdirs = 
+sourcedirs =
+sourcedirs = $QT_BUILD_TREE/../eclipse/eclipse_patched/doc
+imagedirs = $QT_BUILD_TREE/../eclipse/eclipse_patched/doc
+outputdir = $QT_BUILD_TREE/../eclipse/eclipse_patched/doc/html
+project = eclipse-integration
+description = "Qt Eclipse Integration"
+HTML.{postheader,address} = ""
+HTML.footer = "<p /><address><hr /><div align=\"center\">\n" \
+              "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+              "<td width=\"40%\" align="left">Copyright &copy; 2007 <a href=\"http://doc.trolltech.com/trolltech.html\">Trolltech</a></td>\n" \
+              "<td width=\"30%\" align=\"center\"><a href=\"http://doc.trolltech.com/trademarks.html\">Trademarks</a></td>\n" \
+              "<td width=\"40%\" align=\"right\"><div align=\"right\">Qt 4.4.0</div></td>\n" \
+              "</tr></table></div></address>"

@@ -1,0 +1,146 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+
+project                 = Qt
+description             = Qt Reference Documentation
+url                     = http://doc.trolltech.com/4.4
+
+edition.Console         = QtCore QtNetwork QtSql QtXml QtScript QtTest
+edition.Desktop         = QtCore QtGui QtNetwork QtOpenGL QtSql QtSvg QtXml QtScript \
+                          QtDesigner QtAssistant Qt3Support QAxContainer \
+                          QAxServer QtUiTools QtTest QtDBus
+edition.DesktopLight    = QtCore QtGui Qt3SupportLight QtTest
+
+language                = Cpp
+
+norecursion             = true
+sources.fileextensions  = "*.cpp *.qdoc"
+sourcedirs              = $QDOC_CURRENT_DIR
+headerdirs              = $QDOC_CURRENT_DIR
+exampledirs             = $QTDIR/doc/src \
+                          $QTDIR/examples \
+                          $QTDIR \
+                          $QTDIR/qmake/examples
+imagedirs               = $QTDIR/doc/src/images \
+                          $QTDIR/examples
+outputdir               = $QTDIR/doc/html
+indexdir                = $QTDIR/doc/indexes
+indexes                 = $QDOC_INPUT_INDEXES
+outputindex             = $QDOC_OUTPUT_INDEX
+base                    = file:$QTDIR/doc/html
+versionsym              = QT_VERSION_STR
+defines                 = Q_QDOC \
+                          QT_.*_SUPPORT \
+                          QT_.*_LIB \
+                          QT_COMPAT \
+                          QT_KEYPAD_NAVIGATION \
+                          QT3_SUPPORT \
+                          Q_WS_.* \
+                          Q_OS_.* \
+                          Q_BYTE_ORDER \
+                          __cplusplus
+
+codeindent              = 1
+extraimages.HTML        = qt-logo \
+                          trolltech-logo
+
+Cpp.ignoretokens        = QAXFACTORY_EXPORT \
+                          QDESIGNER_COMPONENTS_LIBRARY \
+                          QDESIGNER_EXTENSION_LIBRARY \
+                          QDESIGNER_SDK_LIBRARY \
+                          QDESIGNER_SHARED_LIBRARY \
+                          QDESIGNER_UILIB_LIBRARY \
+                          QM_EXPORT_CANVAS \
+                          QM_EXPORT_DNS \
+                          QM_EXPORT_DOM \
+                          QM_EXPORT_FTP \
+                          QM_EXPORT_HTTP \
+                          QM_EXPORT_ICONVIEW \
+                          QM_EXPORT_NETWORK \
+                          QM_EXPORT_OPENGL \
+                          QM_EXPORT_SQL \
+                          QM_EXPORT_TABLE \
+                          QM_EXPORT_WORKSPACE \
+                          QM_EXPORT_XML \
+                          QT_ASCII_CAST_WARN \
+                          QT_BEGIN_HEADER \
+                          QT_DESIGNER_STATIC \
+                          QT_END_HEADER \
+                          QT_WIDGET_PLUGIN_EXPORT \
+                          Q_COMPAT_EXPORT \
+                          Q_CORE_EXPORT \
+                          Q_EXPLICIT \
+                          Q_EXPORT \
+                          Q_EXPORT_CODECS_CN \
+                          Q_EXPORT_CODECS_JP \
+                          Q_EXPORT_CODECS_KR \
+                          Q_EXPORT_PLUGIN \
+                          Q_GFX_INLINE \
+                          Q_GUI_EXPORT \
+                          Q_GUI_EXPORT_INLINE \
+                          Q_GUI_EXPORT_STYLE_CDE \
+                          Q_GUI_EXPORT_STYLE_COMPACT \
+                          Q_GUI_EXPORT_STYLE_MAC \
+                          Q_GUI_EXPORT_STYLE_MOTIF \
+                          Q_GUI_EXPORT_STYLE_MOTIFPLUS \
+                          Q_GUI_EXPORT_STYLE_PLATINUM \
+                          Q_GUI_EXPORT_STYLE_POCKETPC \
+                          Q_GUI_EXPORT_STYLE_SGI \
+                          Q_GUI_EXPORT_STYLE_WINDOWS \
+                          Q_GUI_EXPORT_STYLE_WINDOWSXP \
+                          Q_INLINE_TEMPLATE \
+                          Q_NETWORK_EXPORT \
+                          Q_OPENGL_EXPORT \
+                          Q_OUTOFLINE_TEMPLATE \
+                          Q_SQL_EXPORT \
+                          Q_SVG_EXPORT \
+                          Q_SCRIPT_EXPORT \
+                          Q_TESTLIB_EXPORT \
+                          Q_TYPENAME \
+                          Q_XML_EXPORT \
+                          QDBUS_EXPORT
+Cpp.ignoredirectives    = Q_DECLARE_HANDLE \
+                          Q_DECLARE_INTERFACE \
+                          Q_DECLARE_METATYPE \
+                          Q_DECLARE_OPERATORS_FOR_FLAGS \
+                          Q_DECLARE_PRIVATE \
+                          Q_DECLARE_PUBLIC \
+                          Q_DECLARE_SHARED \
+                          Q_DECLARE_TR_FUNCTIONS \
+                          Q_DECLARE_TYPEINFO \
+                          Q_DISABLE_COPY \
+                          Q_DUMMY_COMPARISON_OPERATOR \
+                          Q_ENUMS \
+                          Q_FLAGS \
+                          Q_INTERFACES \
+                          __attribute__
+
+HTML.stylesheets        = $QTDIR/util/qdoc3/test/classic.css
+HTML.postheader         = "<table border=\"0\" cellpadding=\"0\" cellspacing=\"0\" width=\"100%\">\n" \
+                          "<tr>\n" \
+                          "<td align=\"left\" valign=\"top\" width=\"32\">" \
+                          "<a href=\"http://www.trolltech.com/products/qt\"><img src=\"images/qt-logo.png\" align=\"left\" width=\"32\" height=\"32\" border=\"0\" /></a>" \
+                          "</td>\n" \
+                          "<td width=\"1\">&nbsp;&nbsp;</td>" \
+                          "<td class=\"postheader\" valign=\"center\">" \
+                          "<a href=\"index.html\">" \
+                          "<font color=\"#004faf\">Home</font></a>&nbsp;&middot;" \
+                          " <a href=\"classes.html\">" \
+                          "<font color=\"#004faf\">All&nbsp;Classes</font></a>&nbsp;&middot;" \
+                          " <a href=\"mainclasses.html\">" \
+                          "<font color=\"#004faf\">Main&nbsp;Classes</font></a>&nbsp;&middot;" \
+                          " <a href=\"groups.html\">" \
+                          "<font color=\"#004faf\">Grouped&nbsp;Classes</font></a>&nbsp;&middot;" \
+                          " <a href=\"modules.html\">" \
+                          "<font color=\"#004faf\">Modules</font></a>&nbsp;&middot;" \
+                          " <a href=\"functions.html\">" \
+                          "<font color=\"#004faf\">Functions</font></a>" \
+                          "</td>\n" \
+                          "<td align=\"right\" valign=\"top\" width=\"230\"><a href=\"http://www.trolltech.com\"><img src=\"images/trolltech-logo.png\" align=\"right\" width=\"203\" height=\"32\" border=\"0\" /></a></td></tr></table>"
+
+HTML.footer             = "<p /><address><hr /><div align=\"center\">\n" \
+                          "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+                          "<td width=\"30%\">Copyright &copy; 2008 <a href=\"trolltech.html\">Trolltech</a></td>\n" \
+                          "<td width=\"40%\" align=\"center\"><a href=\"trademarks.html\">Trademarks</a></td>\n" \
+                          "<td width=\"30%\" align=\"right\"><div align=\"right\">Qt \\version</div></td>\n" \
+                          "</tr></table></div></address>"

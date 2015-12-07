@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasSpline Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasSpline Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasSpline class provides multi-bezier splines on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasSpline&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvaspolygon.html">Q3CanvasPolygon</a>.</p>
+<ul>
+<li><a href="q3canvasspline-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvasspline.html#Q3CanvasSpline">Q3CanvasSpline</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasspline.html#dtor.Q3CanvasSpline">~Q3CanvasSpline</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3canvasspline.html#closed">closed</a></b> () const</li>
+<li><div class="fn"/>Q3PointArray <b><a href="q3canvasspline.html#controlPoints">controlPoints</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvasspline.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvasspline.html#setControlPoints">setControlPoints</a></b> ( Q3PointArray <i>ctrl</i>, bool <i>close</i> = true )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3canvaspolygon.html#public-functions">Q3CanvasPolygon</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="q3canvaspolygonalitem.html#public-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvaspolygon.html#protected-functions">Q3CanvasPolygon</a></li>
+<li><div class="fn"/>6 protected functions inherited from <a href="q3canvaspolygonalitem.html#protected-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasSpline class provides multi-bezier splines on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>A Q3CanvasSpline is a sequence of 4-point bezier curves joined together to make a curved shape.</p>
+<p>You set the control points of the spline with <a href="q3canvasspline.html#setControlPoints">setControlPoints</a>().</p>
+<p>If the bezier is <a href="q3canvasspline.html#closed">closed</a>(), then the first control point will be re-used as the last control point. Therefore, a closed bezier must have a multiple of 3 control points and an open bezier must have one extra point.</p>
+<p>The beziers are not necessarily joined &quot;smoothly&quot;. To ensure this, set control points appropriately (general reference texts about beziers will explain this in detail).</p>
+<p>Like any other canvas item splines can be moved with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasSpline"></a>Q3CanvasSpline::Q3CanvasSpline ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Create a spline with no control points on the canvas <i>canvas</i>.</p>
+<p>See also <a href="q3canvasspline.html#setControlPoints">setControlPoints</a>().</p>
+<h3 class="fn"><a name="dtor.Q3CanvasSpline"></a>Q3CanvasSpline::~Q3CanvasSpline ()</h3>
+<p>Destroy the spline.</p>
+<h3 class="fn"><a name="closed"></a>bool Q3CanvasSpline::closed () const</h3>
+<p>Returns true if the control points are a closed set; otherwise returns false.</p>
+<h3 class="fn"><a name="controlPoints"></a><a href="q3pointarray.html">Q3PointArray</a> Q3CanvasSpline::controlPoints () const</h3>
+<p>Returns the current set of control points.</p>
+<p>See also <a href="q3canvasspline.html#setControlPoints">setControlPoints</a>() and <a href="q3canvasspline.html#closed">closed</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasSpline::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 8 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Spline</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setControlPoints"></a>void Q3CanvasSpline::setControlPoints ( <a href="q3pointarray.html">Q3PointArray</a> <i>ctrl</i>, bool <i>close</i> = true )</h3>
+<p>Set the spline control points to <i>ctrl</i>.</p>
+<p>If <i>close</i> is true, then the first point in <i>ctrl</i> will be re-used as the last point, and the number of control points must be a multiple of 3. If <i>close</i> is false, one additional control point is required, and the number of control points must be one of (4, 7, 10, 13, ..&#x2e;)&#x2e;</p>
+<p>If the number of control points doesn't meet the above conditions, the number of points will be truncated to the largest number of points that do meet the requirement.</p>
+<p>See also <a href="q3canvasspline.html#controlPoints">controlPoints</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

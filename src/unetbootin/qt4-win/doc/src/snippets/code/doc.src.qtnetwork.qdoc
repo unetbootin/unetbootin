@@ -1,0 +1,10 @@
+//! [0]
+        QT += network
+//! [0]
+
+
+//! [1]
+        #include <QtNetwork>
+//! [1]
+
+

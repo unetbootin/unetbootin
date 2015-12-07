@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (widgets/tablet/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">widgets/tablet/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;tabletcanvas.h&quot;
+
+ MainWindow::MainWindow(TabletCanvas *canvas)
+ {
+     myCanvas = canvas;
+     createActions();
+     createMenus();
+
+     myCanvas-&gt;setColor(Qt::red);
+     myCanvas-&gt;setLineWidthType(TabletCanvas::LineWidthPressure);
+     myCanvas-&gt;setAlphaChannelType(TabletCanvas::NoAlpha);
+     myCanvas-&gt;setColorSaturationType(TabletCanvas::NoSaturation);
+
+     setWindowTitle(tr(&quot;Tablet Example&quot;));
+     setCentralWidget(myCanvas);
+ }
+
+ void MainWindow::brushColorAct()
+ {
+     QColor color = QColorDialog::getColor(myCanvas-&gt;color());
+
+     if (color.isValid())
+         myCanvas-&gt;setColor(color);
+ }
+
+ void MainWindow::alphaActionTriggered(QAction *action)
+ {
+     if (action == alphaChannelPressureAction) {
+         myCanvas-&gt;setAlphaChannelType(TabletCanvas::AlphaPressure);
+     } else if (action == alphaChannelTiltAction) {
+         myCanvas-&gt;setAlphaChannelType(TabletCanvas::AlphaTilt);
+     } else {
+         myCanvas-&gt;setAlphaChannelType(TabletCanvas::NoAlpha);
+     }
+ }
+
+ void MainWindow::lineWidthActionTriggered(QAction *action)
+ {
+     if (action == lineWidthPressureAction) {
+         myCanvas-&gt;setLineWidthType(TabletCanvas::LineWidthPressure);
+     } else if (action == lineWidthTiltAction) {
+         myCanvas-&gt;setLineWidthType(TabletCanvas::LineWidthTilt);
+     } else {
+         myCanvas-&gt;setLineWidthType(TabletCanvas::NoLineWidth);
+     }
+ }
+
+ void MainWindow::saturationActionTriggered(QAction *action)
+ {
+     if (action == colorSaturationVTiltAction) {
+         myCanvas-&gt;setColorSaturationType(TabletCanvas::SaturationVTilt);
+     } else if (action == colorSaturationHTiltAction) {
+         myCanvas-&gt;setColorSaturationType(TabletCanvas::SaturationHTilt);
+     } else if (action == colorSaturationPressureAction) {
+         myCanvas-&gt;setColorSaturationType(TabletCanvas::SaturationPressure);
+     } else {
+         myCanvas-&gt;setColorSaturationType(TabletCanvas::NoSaturation);
+     }
+ }
+
+ void MainWindow::saveAct()
+ {
+     QString path = QDir::currentPath() + &quot;/untitled.png&quot;;
+     QString fileName = QFileDialog::getSaveFileName(this, tr(&quot;Save Picture&quot;),
+                              path);
+
+     if (!myCanvas-&gt;saveImage(fileName))
+         QMessageBox::information(this, &quot;Error Saving Picture&quot;,
+                                  &quot;Could not save the image&quot;);
+ }
+
+ void MainWindow::loadAct()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this, tr(&quot;Open Picture&quot;),
+                                                     QDir::currentPath());
+
+     if (!myCanvas-&gt;loadImage(fileName))
+         QMessageBox::information(this, &quot;Error Opening Picture&quot;,
+                                  &quot;Could not open picture&quot;);
+ }
+
+ void MainWindow::aboutAct()
+ {
+     QMessageBox::about(this, tr(&quot;About Tablet Example&quot;),
+                        tr(&quot;This example shows use of a Wacom tablet in Qt&quot;));
+ }
+
+ void MainWindow::createActions()
+ {
+     brushColorAction = new QAction(tr(&quot;&amp;Brush Color...&quot;), this);
+     brushColorAction-&gt;setShortcut(tr(&quot;Ctrl+C&quot;));
+     connect(brushColorAction, SIGNAL(triggered()),
+             this, SLOT(brushColorAct()));
+
+     alphaChannelPressureAction = new QAction(tr(&quot;&amp;Pressure&quot;), this);
+     alphaChannelPressureAction-&gt;setCheckable(true);
+
+     alphaChannelTiltAction = new QAction(tr(&quot;&amp;Tilt&quot;), this);
+     alphaChannelTiltAction-&gt;setCheckable(true);
+
+     noAlphaChannelAction = new QAction(tr(&quot;No Alpha Channel&quot;), this);
+     noAlphaChannelAction-&gt;setCheckable(true);
+     noAlphaChannelAction-&gt;setChecked(true);
+
+     alphaChannelGroup = new QActionGroup(this);
+     alphaChannelGroup-&gt;addAction(alphaChannelPressureAction);
+     alphaChannelGroup-&gt;addAction(alphaChannelTiltAction);
+     alphaChannelGroup-&gt;addAction(noAlphaChannelAction);
+     connect(alphaChannelGroup, SIGNAL(triggered(QAction *)),
+             this, SLOT(alphaActionTriggered(QAction *)));
+
+     colorSaturationVTiltAction = new QAction(tr(&quot;&amp;Vertical Tilt&quot;), this);
+     colorSaturationVTiltAction-&gt;setCheckable(true);
+
+     colorSaturationHTiltAction = new QAction(tr(&quot;&amp;Horizontal Tilt&quot;), this);
+     colorSaturationHTiltAction-&gt;setCheckable(true);
+
+     colorSaturationPressureAction = new QAction(tr(&quot;&amp;Pressure&quot;), this);
+     colorSaturationPressureAction-&gt;setCheckable(true);
+
+     noColorSaturationAction = new QAction(tr(&quot;&amp;No Color Saturation&quot;), this);
+     noColorSaturationAction-&gt;setCheckable(true);
+     noColorSaturationAction-&gt;setChecked(true);
+
+     colorSaturationGroup = new QActionGroup(this);
+     colorSaturationGroup-&gt;addAction(colorSaturationVTiltAction);
+     colorSaturationGroup-&gt;addAction(colorSaturationHTiltAction);
+     colorSaturationGroup-&gt;addAction(colorSaturationPressureAction);
+     colorSaturationGroup-&gt;addAction(noColorSaturationAction);
+     connect(colorSaturationGroup, SIGNAL(triggered(QAction *)),
+             this, SLOT(saturationActionTriggered(QAction *)));
+
+     lineWidthPressureAction = new QAction(tr(&quot;&amp;Pressure&quot;), this);
+     lineWidthPressureAction-&gt;setCheckable(true);
+     lineWidthPressureAction-&gt;setChecked(true);
+
+     lineWidthTiltAction = new QAction(tr(&quot;&amp;Tilt&quot;), this);
+     lineWidthTiltAction-&gt;setCheckable(true);
+
+     lineWidthFixedAction = new QAction(tr(&quot;&amp;Fixed&quot;), this);
+     lineWidthFixedAction-&gt;setCheckable(true);
+
+     lineWidthGroup = new QActionGroup(this);
+     lineWidthGroup-&gt;addAction(lineWidthPressureAction);
+     lineWidthGroup-&gt;addAction(lineWidthTiltAction);
+     lineWidthGroup-&gt;addAction(lineWidthFixedAction);
+     connect(lineWidthGroup, SIGNAL(triggered(QAction *)),
+             this, SLOT(lineWidthActionTriggered(QAction *)));
+
+     exitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAction-&gt;setShortcut(tr(&quot;Ctrl+X&quot;));
+     connect(exitAction, SIGNAL(triggered()),
+             this, SLOT(close()));
+
+     loadAction = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     loadAction-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(loadAction, SIGNAL(triggered()),
+             this, SLOT(loadAct()));
+
+     saveAction = new QAction(tr(&quot;&amp;Save As...&quot;), this);
+     saveAction-&gt;setShortcut(tr(&quot;Ctrl+S&quot;));
+     connect(saveAction, SIGNAL(triggered()),
+             this, SLOT(saveAct()));
+
+     aboutAction = new QAction(tr(&quot;A&amp;bout&quot;), this);
+     aboutAction-&gt;setShortcut(tr(&quot;Ctrl+B&quot;));
+     connect(aboutAction, SIGNAL(triggered()),
+             this, SLOT(aboutAct()));
+
+     aboutQtAction = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     aboutQtAction-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(aboutQtAction, SIGNAL(triggered()),
+             qApp, SLOT(aboutQt()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(loadAction);
+     fileMenu-&gt;addAction(saveAction);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAction);
+
+     brushMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Brush&quot;));
+     brushMenu-&gt;addAction(brushColorAction);
+
+     tabletMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Tablet&quot;));
+
+     lineWidthMenu = tabletMenu-&gt;addMenu(tr(&quot;&amp;Line Width&quot;));
+     lineWidthMenu-&gt;addAction(lineWidthPressureAction);
+     lineWidthMenu-&gt;addAction(lineWidthTiltAction);
+     lineWidthMenu-&gt;addAction(lineWidthFixedAction);
+
+     alphaChannelMenu = tabletMenu-&gt;addMenu(tr(&quot;&amp;Alpha Channel&quot;));
+     alphaChannelMenu-&gt;addAction(alphaChannelPressureAction);
+     alphaChannelMenu-&gt;addAction(alphaChannelTiltAction);
+     alphaChannelMenu-&gt;addAction(noAlphaChannelAction);
+
+     colorSaturationMenu = tabletMenu-&gt;addMenu(tr(&quot;&amp;Color Saturation&quot;));
+     colorSaturationMenu-&gt;addAction(colorSaturationVTiltAction);
+     colorSaturationMenu-&gt;addAction(colorSaturationHTiltAction);
+     colorSaturationMenu-&gt;addAction(noColorSaturationAction);
+
+     helpMenu = menuBar()-&gt;addMenu(&quot;&amp;Help&quot;);
+     helpMenu-&gt;addAction(aboutAction);
+     helpMenu-&gt;addAction(aboutQtAction);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

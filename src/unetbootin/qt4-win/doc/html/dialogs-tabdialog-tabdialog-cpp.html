@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: tabdialog.cpp Example File (dialogs/tabdialog/tabdialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">tabdialog.cpp Example File<br /><span class="small-subtitle">dialogs/tabdialog/tabdialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;tabdialog.h&quot;
+
+ TabDialog::TabDialog(const QString &amp;fileName, QWidget *parent)
+     : QDialog(parent)
+ {
+     QFileInfo fileInfo(fileName);
+
+     tabWidget = new QTabWidget;
+     tabWidget-&gt;addTab(new GeneralTab(fileInfo), tr(&quot;General&quot;));
+     tabWidget-&gt;addTab(new PermissionsTab(fileInfo), tr(&quot;Permissions&quot;));
+     tabWidget-&gt;addTab(new ApplicationsTab(fileInfo), tr(&quot;Applications&quot;));
+
+     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
+                                      | QDialogButtonBox::Cancel);
+
+     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(tabWidget);
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Tab Dialog&quot;));
+ }
+
+ GeneralTab::GeneralTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *fileNameLabel = new QLabel(tr(&quot;File Name:&quot;));
+     QLineEdit *fileNameEdit = new QLineEdit(fileInfo.fileName());
+
+     QLabel *pathLabel = new QLabel(tr(&quot;Path:&quot;));
+     QLabel *pathValueLabel = new QLabel(fileInfo.absoluteFilePath());
+     pathValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *sizeLabel = new QLabel(tr(&quot;Size:&quot;));
+     qlonglong size = fileInfo.size()/1024;
+     QLabel *sizeValueLabel = new QLabel(tr(&quot;%1 K&quot;).arg(size));
+     sizeValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *lastReadLabel = new QLabel(tr(&quot;Last Read:&quot;));
+     QLabel *lastReadValueLabel = new QLabel(fileInfo.lastRead().toString());
+     lastReadValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *lastModLabel = new QLabel(tr(&quot;Last Modified:&quot;));
+     QLabel *lastModValueLabel = new QLabel(fileInfo.lastModified().toString());
+     lastModValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(fileNameLabel);
+     mainLayout-&gt;addWidget(fileNameEdit);
+     mainLayout-&gt;addWidget(pathLabel);
+     mainLayout-&gt;addWidget(pathValueLabel);
+     mainLayout-&gt;addWidget(sizeLabel);
+     mainLayout-&gt;addWidget(sizeValueLabel);
+     mainLayout-&gt;addWidget(lastReadLabel);
+     mainLayout-&gt;addWidget(lastReadValueLabel);
+     mainLayout-&gt;addWidget(lastModLabel);
+     mainLayout-&gt;addWidget(lastModValueLabel);
+     mainLayout-&gt;addStretch(1);
+     setLayout(mainLayout);
+ }
+
+ PermissionsTab::PermissionsTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QGroupBox *permissionsGroup = new QGroupBox(tr(&quot;Permissions&quot;));
+
+     QCheckBox *readable = new QCheckBox(tr(&quot;Readable&quot;));
+     if (fileInfo.isReadable())
+         readable-&gt;setChecked(true);
+
+     QCheckBox *writable = new QCheckBox(tr(&quot;Writable&quot;));
+     if ( fileInfo.isWritable() )
+         writable-&gt;setChecked(true);
+
+     QCheckBox *executable = new QCheckBox(tr(&quot;Executable&quot;));
+     if ( fileInfo.isExecutable() )
+         executable-&gt;setChecked(true);
+
+     QGroupBox *ownerGroup = new QGroupBox(tr(&quot;Ownership&quot;));
+
+     QLabel *ownerLabel = new QLabel(tr(&quot;Owner&quot;));
+     QLabel *ownerValueLabel = new QLabel(fileInfo.owner());
+     ownerValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *groupLabel = new QLabel(tr(&quot;Group&quot;));
+     QLabel *groupValueLabel = new QLabel(fileInfo.group());
+     groupValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QVBoxLayout *permissionsLayout = new QVBoxLayout;
+     permissionsLayout-&gt;addWidget(readable);
+     permissionsLayout-&gt;addWidget(writable);
+     permissionsLayout-&gt;addWidget(executable);
+     permissionsGroup-&gt;setLayout(permissionsLayout);
+
+     QVBoxLayout *ownerLayout = new QVBoxLayout;
+     ownerLayout-&gt;addWidget(ownerLabel);
+     ownerLayout-&gt;addWidget(ownerValueLabel);
+     ownerLayout-&gt;addWidget(groupLabel);
+     ownerLayout-&gt;addWidget(groupValueLabel);
+     ownerGroup-&gt;setLayout(ownerLayout);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(permissionsGroup);
+     mainLayout-&gt;addWidget(ownerGroup);
+     mainLayout-&gt;addStretch(1);
+     setLayout(mainLayout);
+ }
+
+ ApplicationsTab::ApplicationsTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *topLabel = new QLabel(tr(&quot;Open with:&quot;));
+
+     QListWidget *applicationsListBox = new QListWidget;
+     QStringList applications;
+
+     for (int i = 1; i &lt;= 30; ++i)
+         applications.append(tr(&quot;Application %1&quot;).arg(i));
+     applicationsListBox-&gt;insertItems(0, applications);
+
+     QCheckBox *alwaysCheckBox;
+
+     if (fileInfo.suffix().isEmpty())
+         alwaysCheckBox = new QCheckBox(tr(&quot;Always use this application to &quot;
+             &quot;open this type of file&quot;));
+     else
+         alwaysCheckBox = new QCheckBox(tr(&quot;Always use this application to &quot;
+             &quot;open files with the extension '%1'&quot;).arg(fileInfo.suffix()));
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(topLabel);
+     layout-&gt;addWidget(applicationsListBox);
+     layout-&gt;addWidget(alwaysCheckBox);
+     setLayout(layout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

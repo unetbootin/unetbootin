@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/i18n.qdoc -->
+<head>
+  <title>Qt 4.4: Internationalization with Qt</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Internationalization with Qt<br /><span class="subtitle"></span>
+</h1>
+<a name="internationalization"></a><a name="i18n"></a><p>The internationalization of an application is the process of making the application usable by people in countries other than one's own.</p>
+<ul><li><a href="#step-by-step">Step by Step</a></li>
+<ul><li><a href="#use-qstring-for-all-user-visible-text">Use QString for All User-Visible Text</a></li>
+<li><a href="#use-tr-for-all-literal-text">Use tr() for All Literal Text</a></li>
+<li><a href="#use-qkeysequence-for-accelerator-values">Use QKeySequence() for Accelerator Values</a></li>
+<li><a href="#use-qstring-arg-for-dynamic-text">Use QString::arg() for Dynamic Text</a></li>
+<li><a href="#produce-translations">Produce Translations</a></li>
+<li><a href="#support-for-encodings">Support for Encodings</a></li>
+<li><a href="#localize">Localize</a></li>
+</ul>
+<li><a href="#dynamic-translation">Dynamic Translation</a></li>
+<li><a href="#translating-non-qt-classes">Translating Non-Qt Classes</a></li>
+<li><a href="#system-support">System Support</a></li>
+<ul><li><a href="#unix-x11">Unix/X11</a></li>
+<li><a href="#windows">Windows</a></li>
+</ul>
+<li><a href="#note-about-locales-on-x11">Note about Locales on X11</a></li>
+<li><a href="#relevant-qt-classes">Relevant Qt Classes</a></li>
+</ul>
+<p>In some cases internationalization is simple, for example, making a US application accessible to Australian or British users may require little more than a few spelling corrections. But to make a US application usable by Japanese users, or a Korean application usable by German users, will require that the software operate not only in different languages, but use different input techniques, character encodings and presentation conventions.</p>
+<p>Qt tries to make internationalization as painless as possible for developers. All input widgets and text drawing methods in Qt offer built-in support for all supported languages. The built-in font engine is capable of correctly and attractively rendering text that contains characters from a variety of different writing systems at the same time.</p>
+<p>Qt supports most languages in use today, in particular:</p>
+<ul>
+<li>All East Asian languages (Chinese, Japanese and Korean)</li>
+<li>All Western languages (using Latin script)</li>
+<li>Arabic</li>
+<li>Cyrillic languages (Russian, Ukrainian, etc.)</li>
+<li>Greek</li>
+<li>Hebrew</li>
+<li>Thai and Lao</li>
+<li>All scripts in Unicode 4.0 that do not require special processing</li>
+</ul>
+<p>On Windows, Unix/X11 with FontConfig (client side font support) and Qt for Embedded Linux the following languages are also supported:</p>
+<ul>
+<li>Bengali</li>
+<li>Devanagari</li>
+<li>Dhivehi (Thaana)</li>
+<li>Gujarati</li>
+<li>Gurmukhi</li>
+<li>Kannada</li>
+<li>Khmer</li>
+<li>Malayalam</li>
+<li>Myanmar</li>
+<li>Syriac</li>
+<li>Tamil</li>
+<li>Telugu</li>
+<li>Tibetan</li>
+</ul>
+<p>Many of these writing systems exhibit special features:</p>
+<ul>
+<li><b>Special line breaking behavior.</b> Some of the Asian languages are written without spaces between words. Line breaking can occur either after every character (with exceptions) as in Chinese, Japanese and Korean, or after logical word boundaries as in Thai.</li>
+<li><b>Bidirectional writing.</b> Arabic and Hebrew are written from right to left, except for numbers and embedded English text which is written left to right. The exact behavior is defined in the <a href="http://www.unicode.org/unicode/reports/tr9/">Unicode Technical Annex #9</a>.</li>
+<li><b>Non-spacing or diacritical marks (accents or umlauts in European languages).</b> Some languages such as Vietnamese make extensive use of these marks and some characters can have more than one mark at the same time to clarify pronunciation.</li>
+<li><b>Ligatures.</b> In special contexts, some pairs of characters get replaced by a combined glyph forming a ligature. Common examples are the fl and fi ligatures used in typesetting US and European books.</li>
+</ul>
+<p>Qt tries to take care of all the special features listed above. You usually don't have to worry about these features so long as you use Qt's input widgets (e.g&#x2e; <a href="qlineedit.html">QLineEdit</a>, <a href="qtextedit.html">QTextEdit</a>, and derived classes) and Qt's display widgets (e.g&#x2e; <a href="qlabel.html">QLabel</a>).</p>
+<p>Support for these writing systems is transparent to the programmer and completely encapsulated in <a href="richtext.html">Qt's text engine</a>. This means that you don't need to have any knowledge about the writing system used in a particular language, except for the following small points:</p>
+<ul>
+<li>QPainter::drawText(int x, int y, const <a href="qstring.html">QString</a> &amp;str) will always draw the string with its left edge at the position specified with the x, y parameters. This will usually give you left aligned strings. Arabic and Hebrew application strings are usually right aligned, so for these languages use the version of drawText() that takes a <a href="qrect.html">QRect</a> since this will align in accordance with the language.</li>
+<li>When you write your own text input controls, use <a href="qfontmetrics-obsolete.html#charWidth">QFontMetrics::charWidth</a>() to determine the width of a character in a string. In some languages (e.g&#x2e; Arabic or languages from the Indian subcontinent), the width and shape of a glyph changes depending on the surrounding characters. Writing input controls usually requires a certain knowledge of the scripts it is going to be used in. Usually the easiest way is to subclass <a href="qlineedit.html">QLineEdit</a> or <a href="qtextedit.html">QTextEdit</a>.</li>
+</ul>
+<p>The following sections give some information on the status of the internationalization (i18n) support in Qt. See also the <a href="linguist-manual.html">Qt Linguist manual</a>.</p>
+<a name="step-by-step"></a>
+<h3>Step by Step</h3>
+<p>Writing cross-platform international software with Qt is a gentle, incremental process. Your software can become internationalized in the following stages:</p>
+<a name="use-qstring-for-all-user-visible-text"></a>
+<h4>Use QString for All User-Visible Text</h4>
+<p>Since <a href="qstring.html">QString</a> uses the Unicode 4.0 encoding internally, every language in the world can be processed transparently using familiar text processing operations. Also, since all Qt functions that present text to the user take a <a href="qstring.html">QString</a> as a parameter, there is no <tt>char *</tt> to <a href="qstring.html">QString</a> conversion overhead.</p>
+<p>Strings that are in &quot;programmer space&quot; (such as <a href="qobject.html">QObject</a> names and file format texts) need not use <a href="qstring.html">QString</a>; the traditional <tt>char *</tt> or the <a href="qbytearray.html">QByteArray</a> class will suffice.</p>
+<p>You're unlikely to notice that you are using Unicode; <a href="qstring.html">QString</a>, and <a href="qchar.html">QChar</a> are just like easier versions of the crude <tt>const char *</tt> and char from traditional C.</p>
+<a name="use-tr-for-all-literal-text"></a>
+<h4>Use tr() for All Literal Text</h4>
+<p>Wherever your program uses &quot;quoted text&quot; for text that will be presented to the user, ensure that it is processed by the <a href="qcoreapplication.html#translate">QCoreApplication::translate</a>() function. Essentially all that is necessary to achieve this is to use <a href="qobject.html#tr">QObject::tr</a>(). For example, assuming the <tt>LoginWidget</tt> is a subclass of <a href="qwidget.html">QWidget</a>:</p>
+<pre>         LoginWidget::LoginWidget()
+         {
+             QLabel *label = new QLabel(tr(&quot;Password:&quot;));
+             ...
+         }</pre>
+<p>This accounts for 99% of the user-visible strings you're likely to write.</p>
+<p>If the quoted text is not in a member function of a <a href="qobject.html">QObject</a> subclass, use either the tr() function of an appropriate class, or the <a href="qcoreapplication.html#translate">QCoreApplication::translate</a>() function directly:</p>
+<pre>         void some_global_function(LoginWidget *logwid)
+         {
+             QLabel *label = new QLabel(
+                         LoginWidget::tr(&quot;Password:&quot;), logwid);
+         }
+
+         void same_global_function(LoginWidget *logwid)
+         {
+             QLabel *label = new QLabel(
+                         qApp-&gt;translate(&quot;LoginWidget&quot;, &quot;Password:&quot;), logwid);
+         }</pre>
+<p>If you need to have translatable text completely outside a function, there are two macros to help: <a href="qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>() and <a href="qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(). They merely mark the text for extraction by the <tt>lupdate</tt> utility described below. The macros expand to just the text (without the context).</p>
+<p>Example of <a href="qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>():</p>
+<pre>         QString FriendlyConversation::greeting(int type)
+         {
+             static const char *greeting_strings[] = {
+                 QT_TR_NOOP(&quot;Hello&quot;),
+                 QT_TR_NOOP(&quot;Goodbye&quot;)
+             };
+             return tr(greeting_strings[type]);
+         }</pre>
+<p>Example of <a href="qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>():</p>
+<pre>         static const char *greeting_strings[] = {
+             QT_TRANSLATE_NOOP(&quot;FriendlyConversation&quot;, &quot;Hello&quot;),
+             QT_TRANSLATE_NOOP(&quot;FriendlyConversation&quot;, &quot;Goodbye&quot;)
+         };
+
+         QString FriendlyConversation::greeting(int type)
+         {
+             return tr(greeting_strings[type]);
+         }
+
+         QString global_greeting(int type)
+         {
+             return qApp-&gt;translate(&quot;FriendlyConversation&quot;,
+                                    greeting_strings[type]);
+         }</pre>
+<p>If you disable the <tt>const char *</tt> to <a href="qstring.html">QString</a> automatic conversion by compiling your software with the macro <tt>QT_NO_CAST_FROM_ASCII</tt> defined, you'll be very likely to catch any strings you are missing. See <a href="qstring.html#fromLatin1">QString::fromLatin1</a>() for more information. Disabling the conversion can make programming a bit cumbersome.</p>
+<p>If your source language uses characters outside Latin1, you might find <a href="qobject.html#trUtf8">QObject::trUtf8</a>() more convenient than <a href="qobject.html#tr">QObject::tr</a>(), as tr() depends on the <a href="qtextcodec.html#codecForTr">QTextCodec::codecForTr</a>(), which makes it more fragile than <a href="qobject.html#trUtf8">QObject::trUtf8</a>().</p>
+<a name="use-qkeysequence-for-accelerator-values"></a>
+<h4>Use QKeySequence() for Accelerator Values</h4>
+<p>Accelerator values such as Ctrl+Q or Alt+F need to be translated too. If you hardcode <a href="qt.html#Modifier-enum">Qt::CTRL</a> + <a href="qt.html#Key-enum">Qt::Key_Q</a> for &quot;quit&quot; in your application, translators won't be able to override it. The correct idiom is</p>
+<pre>     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));</pre>
+<a name="use-qstring-arg-for-dynamic-text"></a>
+<h4>Use QString::arg() for Dynamic Text</h4>
+<p>The <a href="qstring.html#arg">QString::arg</a>() functions offer a simple means for substituting arguments:</p>
+<pre>         void FileCopier::showProgress(int done, int total,
+                                       const QString &amp;currentFile)
+         {
+             label.setText(tr(&quot;%1 of %2 files copied.\nCopying: %3&quot;)
+                           .arg(done)
+                           .arg(total)
+                           .arg(currentFile));
+         }</pre>
+<p>In some languages the order of arguments may need to change, and this can easily be achieved by changing the order of the % arguments. For example:</p>
+<pre>         QString s1 = &quot;%1 of %2 files copied. Copying: %3&quot;;
+         QString s2 = &quot;Kopierer nu %3. Av totalt %2 filer er %1 kopiert.&quot;;
+
+         qDebug() &lt;&lt; s1.arg(5).arg(10).arg(&quot;somefile.txt&quot;);
+         qDebug() &lt;&lt; s2.arg(5).arg(10).arg(&quot;somefile.txt&quot;);</pre>
+<p>produces the correct output in English and Norwegian:</p>
+<pre>     5 of 10 files copied. Copying: somefile.txt
+     Kopierer nu somefile.txt. Av totalt 10 filer er 5 kopiert.</pre>
+<a name="produce-translations"></a>
+<h4>Produce Translations</h4>
+<p>Once you are using tr() throughout an application, you can start producing translations of the user-visible text in your program.</p>
+<p>The <a href="linguist-manual.html">Qt Linguist manual</a> provides further information about Qt's translation tools, <i>Qt Linguist</i>, <tt>lupdate</tt> and <tt>lrelease</tt>.</p>
+<p>Translation of a Qt application is a three-step process:</p>
+<ol type="1">
+<li>Run <tt>lupdate</tt> to extract translatable text from the C++ source code of the Qt application, resulting in a message file for translators (a <tt>.ts</tt> file). The utility recognizes the tr() construct and the <tt>QT_TR*_NOOP()</tt> macros described above and produces <tt>.ts</tt> files (usually one per language).</li>
+<li>Provide translations for the source texts in the <tt>.ts</tt> file, using <i>Qt Linguist</i>. Since <tt>.ts</tt> files are in XML format, you can also edit them by hand.</li>
+<li>Run <tt>lrelease</tt> to obtain a light-weight message file (a <tt>.qm</tt> file) from the <tt>.ts</tt> file, suitable only for end use. Think of the <tt>.ts</tt> files as &quot;source files&quot;, and <tt>.qm</tt> files as &quot;object files&quot;. The translator edits the <tt>.ts</tt> files, but the users of your application only need the <tt>.qm</tt> files. Both kinds of files are platform and locale independent.</li>
+</ol>
+<p>Typically, you will repeat these steps for every release of your application. The <tt>lupdate</tt> utility does its best to reuse the translations from previous releases.</p>
+<p>Before you run <tt>lupdate</tt>, you should prepare a project file. Here's an example project file (<tt>.pro</tt> file):</p>
+<pre>         HEADERS         = funnydialog.h \
+                           wackywidget.h
+         SOURCES         = funnydialog.cpp \
+                           main.cpp \
+                           wackywidget.cpp
+         FORMS           = fancybox.ui
+         TRANSLATIONS    = superapp_dk.ts \
+                           superapp_fi.ts \
+                           superapp_no.ts \
+                           superapp_se.ts</pre>
+<p>When you run <tt>lupdate</tt> or <tt>lrelease</tt>, you must give the name of the project file as a command-line argument.</p>
+<p>In this example, four exotic languages are supported: Danish, Finnish, Norwegian and Swedish. If you use <a href="qmake-manual.html#qmake">qmake</a>, you usually don't need an extra project file for <tt>lupdate</tt>; your <tt>qmake</tt> project file will work fine once you add the <tt>TRANSLATIONS</tt> entry.</p>
+<p>In your application, you must <a href="qtranslator.html#load">QTranslator::load</a>() the translation files appropriate for the user's language, and install them using <a href="qcoreapplication.html#installTranslator">QCoreApplication::installTranslator</a>().</p>
+<p><tt>linguist</tt>, <tt>lupdate</tt> and <tt>lrelease</tt> are installed in the <tt>bin</tt> subdirectory of the base directory Qt is installed into. Click Help|Manual in <i>Qt Linguist</i> to access the user's manual; it contains a tutorial to get you started.</p>
+<a name="qt-itself"></a><p>Qt itself contains over 400 strings that will also need to be translated into the languages that you are targeting. You will find translation files for French and German in <tt>$QTDIR/translations</tt> as well as a template for translating to other languages. (This directory also contains some additional unsupported translations which may be useful.)</p>
+<p>Typically, your application's <tt>main()</tt> function will look like this:</p>
+<pre>         int main(int argc, char *argv[])
+         {
+             QApplication app(argc, argv);
+
+             QTranslator qtTranslator;
+             qtTranslator.load(&quot;qt_&quot; + QLocale::system().name(),
+                     QLibraryInfo::location(QLibraryInfo::TranslationsPath));
+             app.installTranslator(&amp;qtTranslator);
+
+             QTranslator myappTranslator;
+             myappTranslator.load(&quot;myapp_&quot; + QLocale::system().name());
+             app.installTranslator(&amp;myappTranslator);
+
+             ...
+             return app.exec();
+         }</pre>
+<a name="support-for-encodings"></a>
+<h4>Support for Encodings</h4>
+<p>The <a href="qtextcodec.html">QTextCodec</a> class and the facilities in <a href="qtextstream.html">QTextStream</a> make it easy to support many input and output encodings for your users' data. When an application starts, the locale of the machine will determine the 8-bit encoding used when dealing with 8-bit data: such as for font selection, text display, 8-bit text I/O, and character input.</p>
+<p>The application may occasionally require encodings other than the default local 8-bit encoding. For example, an application in a Cyrillic KOI8-R locale (the de-facto standard locale in Russia) might need to output Cyrillic in the ISO 8859-5 encoding. Code for this would be:</p>
+<pre>         QString string = ...; // some Unicode text
+
+         QTextCodec *codec = QTextCodec::codecForName(&quot;ISO 8859-5&quot;);
+         QByteArray encodedString = codec-&gt;fromUnicode(string);</pre>
+<p>For converting Unicode to local 8-bit encodings, a shortcut is available: the <a href="qstring.html#toLocal8Bit">QString::toLocal8Bit</a>() function returns such 8-bit data. Another useful shortcut is <a href="qstring.html#toUtf8">QString::toUtf8</a>(), which returns text in the 8-bit UTF-8 encoding: this perfectly preserves Unicode information while looking like plain ASCII if the text is wholly ASCII.</p>
+<p>For converting the other way, there are the <a href="qstring.html#fromUtf8">QString::fromUtf8</a>() and <a href="qstring.html#fromLocal8Bit">QString::fromLocal8Bit</a>() convenience functions, or the general code, demonstrated by this conversion from ISO 8859-5 Cyrillic to Unicode conversion:</p>
+<pre>         QByteArray encodedString = ...; // some ISO 8859-5 encoded text
+
+         QTextCodec *codec = QTextCodec::codecForName(&quot;ISO 8859-5&quot;);
+         QString string = codec-&gt;toUnicode(encodedString);</pre>
+<p>Ideally Unicode I/O should be used as this maximizes the portability of documents between users around the world, but in reality it is useful to support all the appropriate encodings that your users will need to process existing documents. In general, Unicode (UTF-16 or UTF-8) is best for information transferred between arbitrary people, while within a language or national group, a local standard is often more appropriate. The most important encoding to support is the one returned by <a href="qtextcodec.html#codecForLocale">QTextCodec::codecForLocale</a>(), as this is the one the user is most likely to need for communicating with other people and applications (this is the codec used by local8Bit()).</p>
+<p>Qt supports most of the more frequently used encodings natively. For a complete list of supported encodings see the <a href="qtextcodec.html">QTextCodec</a> documentation.</p>
+<p>In some cases and for less frequently used encodings it may be necessary to write your own <a href="qtextcodec.html">QTextCodec</a> subclass. Depending on the urgency, it may be useful to contact Trolltech technical support or ask on the <tt>qt-interest</tt> mailing list to see if someone else is already working on supporting the encoding.</p>
+<a name="localization"></a><a name="localize"></a>
+<h4>Localize</h4>
+<p>Localization is the process of adapting to local conventions, for example presenting dates and times using the locally preferred formats. Such localizations can be accomplished using appropriate tr() strings.</p>
+<pre>         void Clock::setTime(const QTime &amp;time)
+         {
+             if (tr(&quot;AMPM&quot;) == &quot;AMPM&quot;) {
+                 // 12-hour clock
+             } else {
+                 // 24-hour clock
+             }
+         }</pre>
+<p>In the example, for the US we would leave the translation of &quot;AMPM&quot; as it is and thereby use the 12-hour clock branch; but in Europe we would translate it as something else and this will make the code use the 24-hour clock branch.</p>
+<p>For localized numbers use the <a href="qlocale.html">QLocale</a> class.</p>
+<p>Localizing images is not recommended. Choose clear icons that are appropriate for all localities, rather than relying on local puns or stretched metaphors. The exception is for images of left and right pointing arrows which may need to be reversed for Arabic and Hebrew locales.</p>
+<a name="dynamic-translation"></a>
+<h3>Dynamic Translation</h3>
+<p>Some applications, such as Qt Linguist, must be able to support changes to the user's language settings while they are still running. To make widgets aware of changes to the system language, reimplement the widget's <a href="qwidget.html#changeEvent">changeEvent()</a> function to check whether the event is a <a href="qevent.html#Type-enum">LanguageChange</a> event, and update the text displayed by widgets using the <a href="qobject.html#tr">tr()</a> function in the usual way. For example:</p>
+<pre>     void QWidget::changeEvent(QEvent *event)
+     {
+         if (e-&gt;type() == QEvent::LanguageChange) {
+             titleLabel-&gt;setText(tr(&quot;Document Title&quot;));
+             ...
+             okPushButton-&gt;setText(tr(&quot;&amp;OK&quot;));
+         } else
+             QWidget::changeEvent(event);
+     }</pre>
+<p>All other change events should be passed on by calling the default implementation of the function.</p>
+<p>The default event handler for <a href="qwidget.html">QWidget</a> subclasses responds to the <a href="qevent.html#Type-enum">QEvent::LanguageChange</a> event, and will call this function when necessary; other application components can also force widgets to update themselves by posting the <a href="qevent.html#Type-enum">LanguageChange</a> event to them.</p>
+<a name="translating-non-qt-classes"></a>
+<h3>Translating Non-Qt Classes</h3>
+<p>It is sometimes necessary to provide internationalization support for strings used in classes that do not inherit <a href="qobject.html">QObject</a> or use the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro to enable translation features. Since Qt translates strings at run-time based on the class they are associated with and <tt>lupdate</tt> looks for translatable strings in the source code, non-Qt classes must use mechanisms that also provide this information.</p>
+<p>One way to do this is to add translation support to a non-Qt class using the <a href="qcoreapplication.html#Q_DECLARE_TR_FUNCTIONS">Q_DECLARE_TR_FUNCTIONS</a>() macro; for example:</p>
+<pre> class MyClass
+ {
+     Q_DECLARE_TR_FUNCTIONS(MyClass)
+
+ public:
+     MyClass();
+     ...
+ };</pre>
+<p>This provides the class with <a href="qobject.html#tr">tr()</a> functions that can be used to translate strings associated with the class, and makes it possible for <tt>lupdate</tt> to find translatable strings in the source code.</p>
+<p>Alternatively, the <a href="qcoreapplication.html#translate">QCoreApplication::translate</a>() function can be called with a specific context, and this will be recognized by <tt>lupdate</tt> and Qt Linguist.</p>
+<a name="system-support"></a>
+<h3>System Support</h3>
+<p>Some of the operating systems and windowing systems that Qt runs on only have limited support for Unicode. The level of support available in the underlying system has some influence on the support that Qt can provide on those platforms, although in general Qt applications need not be too concerned with platform-specific limitations.</p>
+<a name="unix-x11"></a>
+<h4>Unix/X11</h4>
+<ul>
+<li>Locale-oriented fonts and input methods. Qt hides these and provides Unicode input and output.</li>
+<li>Filesystem conventions such as <a href="http://www.ietf.org/rfc/rfc2279.txt">UTF-8</a> are under development in some Unix variants. All Qt file functions allow Unicode, but convert filenames to the local 8-bit encoding, as this is the Unix convention (see <a href="qfile.html#setEncodingFunction">QFile::setEncodingFunction</a>() to explore alternative encodings).</li>
+<li>File I/O defaults to the local 8-bit encoding, with Unicode options in <a href="qtextstream.html">QTextStream</a>.</li>
+</ul>
+<a name="windows"></a>
+<h4>Windows</h4>
+<ul>
+<li>Qt provides full Unicode support, including input methods, fonts, clipboard, drag-and-drop and file names.</li>
+<li>File I/O defaults to Latin1, with Unicode options in <a href="qtextstream.html">QTextStream</a>. Note that some Windows programs do not understand big-endian Unicode text files even though that is the order prescribed by the Unicode Standard in the absence of higher-level protocols.</li>
+<li>Unlike programs written with MFC or plain winlib, Qt programs are portable between Windows 98 and Windows NT. <i>You do not need different binaries to support Unicode.</i></li>
+</ul>
+<a name="note-about-locales-on-x11"></a>
+<h3>Note about Locales on X11</h3>
+<p>Many Unix distributions contain only partial support for some locales. For example, if you have a <tt>/usr/share/locale/ja_JP.EUC</tt> directory, this does not necessarily mean you can display Japanese text; you also need JIS encoded fonts (or Unicode fonts), and the <tt>/usr/share/locale/ja_JP.EUC</tt> directory needs to be complete. For best results, use complete locales from your system vendor.</p>
+<a name="relevant-qt-classes"></a>
+<h3>Relevant Qt Classes</h3>
+<p>These classes are relevant to internationalizing Qt applications.</p>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qinputcontext.html">QInputContext</a></th><td>Abstracts the input method dependent data and composing state</td></tr>
+<tr valign="top" class="even"><th><a href="qlocale.html">QLocale</a></th><td>Converts between numbers and their string representations in various languages</td></tr>
+<tr valign="top" class="odd"><th><a href="qsystemlocale.html">QSystemLocale</a></th><td>Can be used to finetune the system locale of the user</td></tr>
+<tr valign="top" class="even"><th><a href="qtextcodec.html">QTextCodec</a></th><td>Conversions between text encodings</td></tr>
+<tr valign="top" class="odd"><th><a href="qtextdecoder.html">QTextDecoder</a></th><td>State-based decoder</td></tr>
+<tr valign="top" class="even"><th><a href="qtextencoder.html">QTextEncoder</a></th><td>State-based encoder</td></tr>
+<tr valign="top" class="odd"><th><a href="qtranslator.html">QTranslator</a></th><td>Internationalization support for text output</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

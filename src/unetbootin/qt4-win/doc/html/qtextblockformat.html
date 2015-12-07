@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextformat.cpp -->
+<head>
+  <title>Qt 4.4: QTextBlockFormat Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextBlockFormat Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextBlockFormat class provides formatting information for blocks of text in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextBlockFormat&gt;</pre><p>Inherits <a href="qtextformat.html">QTextFormat</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextblockformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextblockformat.html#QTextBlockFormat">QTextBlockFormat</a></b> ()</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qtextblockformat.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextblockformat.html#bottomMargin">bottomMargin</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblockformat.html#indent">indent</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextblockformat.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextblockformat.html#leftMargin">leftMargin</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextblockformat.html#nonBreakableLines">nonBreakableLines</a></b> () const</li>
+<li><div class="fn"/>PageBreakFlags <b><a href="qtextblockformat.html#pageBreakPolicy">pageBreakPolicy</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextblockformat.html#rightMargin">rightMargin</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setAlignment">setAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setIndent">setIndent</a></b> ( int <i>indentation</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setNonBreakableLines">setNonBreakableLines</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setPageBreakPolicy">setPageBreakPolicy</a></b> ( PageBreakFlags <i>policy</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setRightMargin">setRightMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setTabPositions">setTabPositions</a></b> ( const QList&lt;QTextOption::Tab&gt; &amp; <i>tabs</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setTextIndent">setTextIndent</a></b> ( qreal <i>indent</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblockformat.html#setTopMargin">setTopMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>QList&lt;QTextOption::Tab&gt; <b><a href="qtextblockformat.html#tabPositions">tabPositions</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextblockformat.html#textIndent">textIndent</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextblockformat.html#topMargin">topMargin</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>49 public functions inherited from <a href="qtextformat.html#public-functions">QTextFormat</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextBlockFormat class provides formatting information for blocks of text in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A document is composed of a list of blocks, represented by <a href="qtextblock.html">QTextBlock</a> objects. Each block can contain an item of some kind, such as a paragraph of text, a table, a list, or an image. Every block has an associated QTextBlockFormat that specifies its characteristics.</p>
+<p>To cater for left-to-right and right-to-left languages you can set a block's direction with setDirection(). Paragraph alignment is set with <a href="qtextblockformat.html#setAlignment">setAlignment</a>(). Margins are controlled by <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>(), <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>(), <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>(). Overall indentation is set with <a href="qtextblockformat.html#setIndent">setIndent</a>(), the indentation of the first line with <a href="qtextblockformat.html#setTextIndent">setTextIndent</a>().</p>
+<p>Line breaking can be enabled and disabled with <a href="qtextblockformat.html#setNonBreakableLines">setNonBreakableLines</a>().</p>
+<p>The brush used to paint the paragraph's background is set with <a href="qtextformat.html#setBackground">setBackground()</a>, and other aspects of the text's appearance can be customized by using the <a href="qtextformat.html#setProperty">setProperty()</a> function with the <tt>OutlinePen</tt>, <tt>ForegroundBrush</tt>, and <tt>BackgroundBrush</tt> <a href="qtextformat.html#Property-enum">QTextFormat::Property</a> values.</p>
+<p>If a text block is part of a list, it can also have a list format that is accessible with the listFormat() function.</p>
+<p>See also <a href="qtextblock.html">QTextBlock</a> and <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextBlockFormat"></a>QTextBlockFormat::QTextBlockFormat ()</h3>
+<p>Constructs a new <a href="qtextblockformat.html">QTextBlockFormat</a>.</p>
+<h3 class="fn"><a name="alignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QTextBlockFormat::alignment () const</h3>
+<p>Returns the paragraph's alignment.</p>
+<p>See also <a href="qtextblockformat.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="bottomMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextBlockFormat::bottomMargin () const</h3>
+<p>Returns the paragraph's bottom margin.</p>
+<p>See also <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>() and <a href="qtextblockformat.html#topMargin">topMargin</a>().</p>
+<h3 class="fn"><a name="indent"></a>int QTextBlockFormat::indent () const</h3>
+<p>Returns the paragraph's indent.</p>
+<p>See also <a href="qtextblockformat.html#setIndent">setIndent</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextBlockFormat::isValid () const</h3>
+<p>Returns true if this block format is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="leftMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextBlockFormat::leftMargin () const</h3>
+<p>Returns the paragraph's left margin.</p>
+<p>See also <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), <a href="qtextblockformat.html#rightMargin">rightMargin</a>(), and <a href="qtextblockformat.html#indent">indent</a>().</p>
+<h3 class="fn"><a name="nonBreakableLines"></a>bool QTextBlockFormat::nonBreakableLines () const</h3>
+<p>Returns true if the lines in the paragraph are non-breakable; otherwise returns false.</p>
+<p>See also <a href="qtextblockformat.html#setNonBreakableLines">setNonBreakableLines</a>().</p>
+<h3 class="fn"><a name="pageBreakPolicy"></a><a href="qtextformat.html#PageBreakFlag-enum">PageBreakFlags</a> QTextBlockFormat::pageBreakPolicy () const</h3>
+<p>Returns the currently set page break policy for the paragraph. The default is <a href="qtextformat.html#PageBreakFlag-enum">QTextFormat::PageBreak_Auto</a>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextblockformat.html#setPageBreakPolicy">setPageBreakPolicy</a>().</p>
+<h3 class="fn"><a name="rightMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextBlockFormat::rightMargin () const</h3>
+<p>Returns the paragraph's right margin.</p>
+<p>See also <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>() and <a href="qtextblockformat.html#leftMargin">leftMargin</a>().</p>
+<h3 class="fn"><a name="setAlignment"></a>void QTextBlockFormat::setAlignment ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the paragraph's <i>alignment</i>.</p>
+<p>See also <a href="qtextblockformat.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setBottomMargin"></a>void QTextBlockFormat::setBottomMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the paragraph's bottom <i>margin</i>.</p>
+<p>See also <a href="qtextblockformat.html#bottomMargin">bottomMargin</a>(), <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>(), <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), and <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>().</p>
+<h3 class="fn"><a name="setIndent"></a>void QTextBlockFormat::setIndent ( int <i>indentation</i> )</h3>
+<p>Sets the paragraph's <i>indentation</i>. Margins are set independently of indentation with <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>() and setTextIdent().</p>
+<p>See also <a href="qtextblockformat.html#indent">indent</a>().</p>
+<h3 class="fn"><a name="setLeftMargin"></a>void QTextBlockFormat::setLeftMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the paragraph's left <i>margin</i>. Indentation can be applied separately with <a href="qtextblockformat.html#setIndent">setIndent</a>().</p>
+<p>See also <a href="qtextblockformat.html#leftMargin">leftMargin</a>(), <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>(), <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>(), and <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>().</p>
+<h3 class="fn"><a name="setNonBreakableLines"></a>void QTextBlockFormat::setNonBreakableLines ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true, the lines in the paragraph are treated as non-breakable; otherwise they are breakable.</p>
+<p>See also <a href="qtextblockformat.html#nonBreakableLines">nonBreakableLines</a>().</p>
+<h3 class="fn"><a name="setPageBreakPolicy"></a>void QTextBlockFormat::setPageBreakPolicy ( <a href="qtextformat.html#PageBreakFlag-enum">PageBreakFlags</a> <i>policy</i> )</h3>
+<p>Sets the page break policy for the paragraph to <i>policy</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextblockformat.html#pageBreakPolicy">pageBreakPolicy</a>().</p>
+<h3 class="fn"><a name="setRightMargin"></a>void QTextBlockFormat::setRightMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the paragraph's right <i>margin</i>.</p>
+<p>See also <a href="qtextblockformat.html#rightMargin">rightMargin</a>(), <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>(), and <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>().</p>
+<h3 class="fn"><a name="setTabPositions"></a>void QTextBlockFormat::setTabPositions ( const <a href="qlist.html">QList</a>&lt;<a href="qtextoption-tab.html">QTextOption::Tab</a>&gt; &amp; <i>tabs</i> )</h3>
+<p>Sets the tab positions for the text block to those specified by <i>tabs</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblockformat.html#tabPositions">tabPositions</a>().</p>
+<h3 class="fn"><a name="setTextIndent"></a>void QTextBlockFormat::setTextIndent ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>indent</i> )</h3>
+<p>Sets the <i>indent</i> for the first line in the block. This allows the first line of a paragraph to be indented differently to the other lines, enhancing the readability of the text.</p>
+<p>See also <a href="qtextblockformat.html#textIndent">textIndent</a>(), <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>(), <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>(), and <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>().</p>
+<h3 class="fn"><a name="setTopMargin"></a>void QTextBlockFormat::setTopMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the paragraph's top <i>margin</i>.</p>
+<p>See also <a href="qtextblockformat.html#topMargin">topMargin</a>(), <a href="qtextblockformat.html#setBottomMargin">setBottomMargin</a>(), <a href="qtextblockformat.html#setLeftMargin">setLeftMargin</a>(), and <a href="qtextblockformat.html#setRightMargin">setRightMargin</a>().</p>
+<h3 class="fn"><a name="tabPositions"></a><a href="qlist.html">QList</a>&lt;<a href="qtextoption-tab.html">QTextOption::Tab</a>&gt; QTextBlockFormat::tabPositions () const</h3>
+<p>Returns a list of tab positions defined for the text block.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblockformat.html#setTabPositions">setTabPositions</a>().</p>
+<h3 class="fn"><a name="textIndent"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextBlockFormat::textIndent () const</h3>
+<p>Returns the paragraph's text indent.</p>
+<p>See also <a href="qtextblockformat.html#setTextIndent">setTextIndent</a>().</p>
+<h3 class="fn"><a name="topMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextBlockFormat::topMargin () const</h3>
+<p>Returns the paragraph's top margin.</p>
+<p>See also <a href="qtextblockformat.html#setTopMargin">setTopMargin</a>() and <a href="qtextblockformat.html#bottomMargin">bottomMargin</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

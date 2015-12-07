@@ -1,0 +1,101 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page windowsce-opengl.html
+
+    \title Windows CE OpenGL ES
+    \ingroup qtce
+
+    \section1 Introduction
+
+
+    \l {http://www.opengl.org}{OpenGL} is an industry standard API for 2D/3D
+    graphics. It provides a powerful, low-level interface between software
+    and acceleration hardware, and it is operating system and window system
+    independent.
+
+    \l {http://www.khronos.org/opengles}{OpenGL ES} is a subset of the
+    \l {http://www.opengl.org}{OpenGL} standard. It is meant for use in
+    embedded systems. Hence, it has a smaller, more constrained API.
+
+    Qt for Windows CE uses EGL 1.1 to embed OpenGL ES windows within the
+    Windows CE window manager.
+
+    To use OpenGL ES enabled widgets in a Qt/WindowsCE application, you only
+    need to subclass QGLWidget and draw on instances of the subclass with
+    OpenGL ES functions.
+
+    OpenGL ES includes profiles for floating-point and fixed-point arithmetic.
+    The floating point profile is called OpenGL ES CM (Common) and the
+    fixed-point profile is called OpenGL ES CL (Common Lite).
+
+    You can run \c{configure} with the \c{-opengl-es-cm} option for the Common
+    profile or \c{-opengl-es-cl} for the Common Lite profile. In both cases,
+    ensure that the \c{lib} and \c{includes} paths include the OpenGL ES
+    headers and libararies from your SDK. The OpenGL ES lib should be called
+    either \c{libGLES_CM.lib} for the Common profile or \c{libGLES_CL.lib}
+    for the Common Lite profile.
+
+    To configure Qt for Windows Mobile 5.0 and OpenGL ES Common Lite support
+    you can run \c{configure} like this:
+
+    \snippet doc/src/snippets/code/doc.src.wince-opengl.qdoc 0
+
+    The distinction between the Common and Common Lite profiles is important,
+    because the Common Lite profile has less functionality and only supports a
+    fixed-point vertex format.
+
+    To start programming with Qt and OpenGL ES on Windows CE, you can start
+    with the \l{Hello GL ES Example}. This example shows how to use QGLWidget
+    and QGLPainter with OpenGL ES. It also provides some hints on how to port
+    OpenGL code to OpenGL ES.
+
+   \section2 Using OpenGL to Accelerate Normal 2D Painting
+
+    Qt provides QOpenGLPaintEngine, a subclass of QPaintEngine that translates
+    QPainter operations into OpenGL calls. This is especially convenient for
+    drawing text or QImage objects in an OpenGL ES context. For further
+    details, refer to the \l{Hello GL ES Example}.
+
+*/

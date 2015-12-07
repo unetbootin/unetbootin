@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: qobjectxmlmodel.cpp Example File (xmlpatterns/qobjectxmlmodel/qobjectxmlmodel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">qobjectxmlmodel.cpp Example File<br /><span class="small-subtitle">xmlpatterns/qobjectxmlmodel/qobjectxmlmodel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QVector&gt;
+ #include &lt;QtDebug&gt;
+
+ #include &lt;QCoreApplication&gt;
+ #include &lt;QMetaProperty&gt;
+ #include &lt;QXmlQuery&gt;
+ #include &lt;QXmlResultItems&gt;
+
+ #include &quot;qobjectxmlmodel.h&quot;
+
+<span class="comment"> /*
+ &lt;metaObjects&gt;
+     &lt;metaObject className=&quot;QObject&quot;/&gt;
+     &lt;metaObject className=&quot;QWidget&quot; superClass=&quot;QObject&quot;&gt;
+     &lt;/metaObject&gt;
+     ...
+ &lt;/metaObjects&gt;
+ &lt;QObject objectName=&quot;MyWidget&quot; property1=&quot;...&quot; property2=&quot;...&quot;&gt; &lt;!-- This is root() --&gt;
+     &lt;QObject objectName=&quot;MyFOO&quot; property1=&quot;...&quot;/&gt;
+     ....
+ &lt;/QObject&gt;
+ */</span>
+
+ QMetaProperty QObjectXmlModel::toMetaProperty(const QXmlNodeModelIndex &amp;n)
+ {
+     const int propertyOffset = n.additionalData() &amp; (~QObjectProperty);
+     const QObject *const qo = asQObject(n);
+     return qo-&gt;metaObject()-&gt;property(propertyOffset);
+ }
+
+ QObjectXmlModel::QObjectXmlModel(QObject *const object,
+                                  const QXmlNamePool &amp;np) : QSimpleXmlNodeModel(np)
+                                                          , m_baseURI(QUrl::fromLocalFile(QCoreApplication::applicationFilePath()))
+                                                          , m_root(object)
+                                                          , m_allMetaObjects(allMetaObjects())
+ {
+     Q_ASSERT(m_baseURI.isValid());
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::qObjectSibling(const int pos,
+                                                    const QXmlNodeModelIndex &amp;ni) const
+ {
+     Q_ASSERT(pos == 1 || pos == -1);
+     Q_ASSERT(asQObject(ni));
+
+     const QObject *parent = asQObject(ni)-&gt;parent();
+     if(parent)
+     {
+         const QList&lt;QObject *&gt; &amp;children = parent-&gt;children();
+         const int siblingPos = children.indexOf(asQObject(ni)) + pos;
+
+         if(siblingPos &gt;= 0 &amp;&amp; siblingPos &lt; children.count())
+             return createIndex(children.at(siblingPos));
+         else
+             return QXmlNodeModelIndex();
+     }
+     else
+         return QXmlNodeModelIndex();
+ }
+
+ QObjectXmlModel::QObjectNodeType QObjectXmlModel::toNodeType(const QXmlNodeModelIndex &amp;ni)
+ {
+     return QObjectNodeType(ni.additionalData() &amp; (15 &lt;&lt; 26));
+ }
+
+ QObjectXmlModel::AllMetaObjects QObjectXmlModel::allMetaObjects() const
+ {
+     <span class="comment">/* Actually, we could call this in our constructor and store this
+      * as a member to avoid it being called each time. Afterall, it's
+      * only pointers to existing structures. */</span>
+
+     <span class="comment">/* It's easier to do this with QXmlQuery than with C++. */</span>
+     QXmlQuery query(namePool());
+     query.bindVariable(&quot;root&quot;, root());
+     query.setQuery(&quot;declare variable $root external;&quot;
+                    &quot;$root/descendant-or-self::QObject&quot;);
+     Q_ASSERT(query.isValid());
+
+     QXmlResultItems result;
+     query.evaluateTo(&amp;result);
+     QXmlItem i(result.next());
+
+     AllMetaObjects objects;
+
+     while(!i.isNull())
+     {
+         const QMetaObject *moo = asQObject(i.toNodeModelIndex())-&gt;metaObject();
+
+         while(moo)
+         {
+             if(!objects.contains(moo))
+                 objects.append(moo);
+
+             moo = moo-&gt;superClass();
+         }
+
+         i = result.next();
+     }
+
+     Q_ASSERT(!objects.contains(0));
+     return objects;
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::metaObjectSibling(const int pos,
+                                                       const QXmlNodeModelIndex &amp;ni) const
+ {
+     Q_ASSERT(pos == 1 || pos == -1);
+     Q_ASSERT(!ni.isNull());
+
+     const int indexOf = m_allMetaObjects.indexOf(static_cast&lt;const QMetaObject *&gt;(ni.internalPointer())) + pos;
+
+     if(indexOf &gt;= 0 &amp;&amp; indexOf &lt; m_allMetaObjects.count())
+         return createIndex(const_cast&lt;QMetaObject *&gt;(m_allMetaObjects.at(indexOf)), MetaObject);
+     else
+         return QXmlNodeModelIndex();
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::nextFromSimpleAxis(SimpleAxis axis, const QXmlNodeModelIndex &amp;ni) const
+ {
+     switch(toNodeType(ni))
+     {
+         case MetaObjects:
+         {
+             switch(axis)
+             {
+                 case Parent:
+                     return QXmlNodeModelIndex();
+                 case PreviousSibling:
+                     return QXmlNodeModelIndex();
+                 case NextSibling:
+                     return root();
+                 case FirstChild:
+                 {
+                     <span class="comment">/* Since we have at least m_root, we're guaranteed to have
+                      * at least one meta object. */</span>
+                     return createIndex(const_cast&lt;QMetaObject *&gt;(m_allMetaObjects.first()), MetaObject);
+                 }
+             }
+             Q_ASSERT(false);
+         }
+         case MetaObject:
+         {
+             switch(axis)
+             {
+                 case FirstChild:
+                     return QXmlNodeModelIndex();
+                 case Parent:
+                     return createIndex(qint64(0), MetaObjects);
+                 case PreviousSibling:
+                     return metaObjectSibling(-1, ni);
+                 case NextSibling:
+                     return metaObjectSibling(1, ni);
+             }
+         }
+         case IsQObject:
+         {
+             switch(axis)
+             {
+                 case Parent:
+                     return createIndex(asQObject(ni)-&gt;parent());
+                 case FirstChild:
+                 {
+                     if(asQObject(ni)-&gt;children().isEmpty())
+                         return QXmlNodeModelIndex();
+                     else
+                         return createIndex(asQObject(ni)-&gt;children().first());
+                 }
+                 case PreviousSibling:
+                 {
+                     if(asQObject(ni) == m_root)
+                         return createIndex(qint64(0), MetaObjects);
+                     else
+                         return qObjectSibling(-1, ni);
+                 }
+                 case NextSibling:
+                     return qObjectSibling(1, ni);
+             }
+             Q_ASSERT(false);
+         }
+         case MetaObjectClassName:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObjectSuperClass:
+         {
+             Q_ASSERT(axis == Parent);
+             return createIndex(asQObject(ni), MetaObject);
+         }
+         case QObjectClassName:
+         <span class="comment">/* Fallthrough. */</span>
+         case QObjectProperty:
+         {
+             Q_ASSERT(axis == Parent);
+             return createIndex(asQObject(ni));
+         }
+     }
+
+     Q_ASSERT(false);
+     return QXmlNodeModelIndex();
+ }
+
+ QVector&lt;QXmlNodeModelIndex&gt; QObjectXmlModel::attributes(const QXmlNodeModelIndex &amp;ni) const
+ {
+      QVector&lt;QXmlNodeModelIndex&gt; result;
+
+      QObject *const object = asQObject(ni);
+
+      switch(toNodeType(ni))
+      {
+         case IsQObject:
+         {
+             const QMetaObject *const metaObject = object-&gt;metaObject();
+             const int count = metaObject-&gt;propertyCount();
+
+             result.append(createIndex(object, QObjectClassName));
+
+             for(int i = 0; i &lt; count; ++i)
+                 result.append(createIndex(object, QObjectProperty | i));
+             return result;
+         }
+         case MetaObject:
+         {
+             result.append(createIndex(object, MetaObjectClassName));
+             result.append(createIndex(object, MetaObjectSuperClass));
+             return result;
+         }
+         default:
+             return QVector&lt;QXmlNodeModelIndex&gt;();
+      }
+ }
+
+ QObject *QObjectXmlModel::asQObject(const QXmlNodeModelIndex &amp;n)
+ {
+     return static_cast&lt;QObject *&gt;(n.internalPointer());
+ }
+
+ bool QObjectXmlModel::isProperty(const QXmlNodeModelIndex n)
+ {
+     return n.additionalData() &amp; QObjectProperty;
+ }
+
+ QUrl QObjectXmlModel::documentUri(const QXmlNodeModelIndex &amp;) const
+ {
+     return m_baseURI;
+ }
+
+ QXmlNodeModelIndex::NodeKind QObjectXmlModel::kind(const QXmlNodeModelIndex &amp;ni) const
+ {
+     switch(toNodeType(ni))
+     {
+         case IsQObject:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObject:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObjects:
+             return QXmlNodeModelIndex::Element;
+         case QObjectProperty:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObjectClassName:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObjectSuperClass:
+         <span class="comment">/* Fallthrough. */</span>
+         case QObjectClassName:
+             return QXmlNodeModelIndex::Attribute;
+     }
+
+     Q_ASSERT(false);
+     return QXmlNodeModelIndex::Element;
+ }
+
+ QXmlNodeModelIndex::DocumentOrder QObjectXmlModel::compareOrder(const QXmlNodeModelIndex &amp;, const QXmlNodeModelIndex &amp;) const
+ {
+     return QXmlNodeModelIndex::Follows; <span class="comment">//</span> TODO
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::root() const
+ {
+     return createIndex(m_root);
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::root(const QXmlNodeModelIndex &amp;n) const
+ {
+     QObject *p = asQObject(n);
+     Q_ASSERT(p);
+
+     do
+     {
+         QObject *const candidate = p-&gt;parent();
+         if(candidate)
+             p = candidate;
+         else
+             break;
+     }
+     while(true);
+
+     return createIndex(p);
+ }
+
+ QXmlNodeModelIndex QObjectXmlModel::parent(const QXmlNodeModelIndex &amp;ni) const
+ {
+     QObject *const p = asQObject(ni)-&gt;parent();
+
+     if(p)
+         return createIndex(p);
+     else
+         return QXmlNodeModelIndex();
+ }
+
+ QXmlNodeModelIndex::List QObjectXmlModel::ancestors(const QXmlNodeModelIndex n) const
+ {
+     <span class="comment">/* We simply throw all of them into a QList and return an iterator over it. */</span>
+     const QObject *p = asQObject(n);
+     Q_ASSERT(p);
+
+     QXmlNodeModelIndex::List result;
+     do
+     {
+         QObject *const candidate = p-&gt;parent();
+         if(candidate)
+         {
+             result.append(createIndex(candidate, 0));
+             p = candidate;
+         }
+         else
+             break;
+     }
+     while(true);
+
+     return result;
+ }
+
+ QXmlName QObjectXmlModel::name(const QXmlNodeModelIndex &amp;ni) const
+ {
+     switch(toNodeType(ni))
+     {
+         case IsQObject:
+             return QXmlName(namePool(), QLatin1String(&quot;QObject&quot;));
+         case MetaObject:
+             return QXmlName(namePool(), QLatin1String(&quot;metaObject&quot;));
+         case QObjectClassName:
+         <span class="comment">/* Fallthrough. */</span>
+         case MetaObjectClassName:
+             return QXmlName(namePool(), QLatin1String(&quot;className&quot;));
+         case QObjectProperty:
+             return QXmlName(namePool(), toMetaProperty(ni).name());
+         case MetaObjects:
+             return QXmlName(namePool(), QLatin1String(&quot;metaObjects&quot;));
+         case MetaObjectSuperClass:
+             return QXmlName(namePool(), QLatin1String(&quot;superClass&quot;));
+     }
+
+     Q_ASSERT(false);
+     return QXmlName();
+ }
+
+ QVariant QObjectXmlModel::typedValue(const QXmlNodeModelIndex &amp;n) const
+ {
+     switch(toNodeType(n))
+     {
+         case QObjectProperty:
+         {
+            const QVariant &amp;candidate = toMetaProperty(n).read(asQObject(n));
+            if(isTypeSupported(candidate.type()))
+                return candidate;
+            else
+                return QVariant();
+         }
+         case MetaObjectClassName:
+             return QVariant(static_cast&lt;QMetaObject *&gt;(n.internalPointer())-&gt;className());
+         case MetaObjectSuperClass:
+         {
+             const QMetaObject *const superClass = static_cast&lt;QMetaObject *&gt;(n.internalPointer())-&gt;superClass();
+             if(superClass)
+                 return QVariant(superClass-&gt;className());
+             else
+                 return QVariant();
+         }
+         case QObjectClassName:
+             return QVariant(asQObject(n)-&gt;metaObject()-&gt;className());
+         default:
+             return QVariant();
+     }
+ }
+
+<span class="comment"> /*!
+  Returns \c true if QVariants of type \a type can be used
+  in QtXmlPatterns, otherwise \c false.
+  */</span>
+ bool QObjectXmlModel::isTypeSupported(QVariant::Type type)
+ {
+     <span class="comment">/* See data/qatomicvalue.cpp too. */</span>
+     switch(type)
+     {
+         <span class="comment">/* Fallthrough all these. */</span>
+         case QVariant::Char:
+         case QVariant::String:
+         case QVariant::Url:
+         case QVariant::Bool:
+         case QVariant::ByteArray:
+         case QVariant::Int:
+         case QVariant::LongLong:
+         case QVariant::ULongLong:
+         case QVariant::Date:
+         case QVariant::DateTime:
+         case QVariant::Time:
+         case QVariant::Double:
+             return true;
+         default:
+             return false;
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-threads.qdoc -->
+<head>
+  <title>Qt 4.4: Thread Support in Qt 4</title>
+  <link rel="prev" href="qt4-styles.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-styles.html">The Qt 4 Style API</a>]
+[<a href="qt4-intro.html">Home</a>]
+</p>
+<h1 class="title">Thread Support in Qt 4<br /><span class="subtitle"></span>
+</h1>
+<p>Qt 4 makes it easier than ever to write multithreaded applications. More classes have been made usable from non-GUI threads, and the signals and slots mechanism can now be used to communicate between threads.</p>
+<a name="general-overview"></a>
+<h2>General Overview</h2>
+<p><a href="qthread.html">QThread</a> now inherits <a href="qobject.html">QObject</a>. It emits signals to indicate that the thread started or finished executing, and provides a few slots as well.</p>
+<p>Each thread can now have its own event loop. The initial thread starts its event loops using <a href="qcoreapplication.html#exec">QCoreApplication::exec</a>(); other threads can start an event loop using <a href="qthread.html#exec">QThread::exec</a>(). Like <a href="qcoreapplication.html">QCoreApplication</a>, <a href="qthread.html">QThread</a> also provides an <a href="qthread.html#exit">exit</a>(int) function and a <a href="qthread.html#quit">quit()</a> slot.</p>
+<p>An event loop in a thread makes it possible for the thread to use certain non-GUI Qt classes that require the presence of an event loop (such as <a href="qtimer.html">QTimer</a>, <a href="qtcpsocket.html">QTcpSocket</a>, and <a href="qprocess.html">QProcess</a>). It also makes it possible to connect signals from any threads to slots of a specific thread. When a signal is emitted, the slot isn't called immediately; instead, it is invoked when control returns to the event loop of the thread to which the object belongs. The slot is executed in the thread where the receiver object lives. See <a href="qobject.html#connect">QObject::connect</a>() for details.</p>
+<p>Qt 4 also introduces a new synchronization class: <a href="qreadwritelock.html">QReadWriteLock</a>. It is similar to <a href="qmutex.html">QMutex</a>, except that it distinguishes between &quot;read&quot; and &quot;write&quot; access to shared data and allows multiple readers to access the data simultaneously. Using <a href="qreadwritelock.html">QReadWriteLock</a> instead of <a href="qmutex.html">QMutex</a> when it is possible can make multithreaded programs more concurrent.</p>
+<p>Since Qt 4, <a href="shared.html#implicitly-shared">implicitly shared</a> classes can safely be copied across threads, like any other value classes. They are fully reentrant. This is implemented using atomic reference counting operations, which are implemented in assembly language for the different platforms supported by Qt. Atomic reference counting is very fast, much faster than using a mutex.</p>
+<p>See <a href="threads.html">Thread Support in Qt</a> for more information.</p>
+<a name="comparison-with-qt-3"></a>
+<h2>Comparison with Qt 3</h2>
+<p>Earlier versions of Qt offered an option to build the library without thread support. In Qt 4, threads are always enabled.</p>
+<p>Qt 3 had a class called <tt>QDeepCopy</tt> that you could use to take a deep copy of an implicitly shared object. In Qt 4, the atomic reference counting makes this class superfluous.</p>
+<p>
+[Previous: <a href="qt4-styles.html">The Qt 4 Style API</a>]
+[<a href="qt4-intro.html">Home</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

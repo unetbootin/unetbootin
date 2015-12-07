@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: tetrixboard.cpp Example File (script/tetrix/tetrixboard.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">tetrixboard.cpp Example File<br /><span class="small-subtitle">script/tetrix/tetrixboard.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;tetrixboard.h&quot;
+
+ #include &lt;QtGui&gt;
+
+ Q_DECLARE_METATYPE(QPainter*)
+
+ TetrixBoard::TetrixBoard(QWidget *parent)
+     : QFrame(parent)
+ {
+     timer = new QTimer(this);
+     qMetaTypeId&lt;QPainter*&gt;();
+ }
+
+ void TetrixBoard::setNextPieceLabel(QWidget *label)
+ {
+     nextPieceLabel = qobject_cast&lt;QLabel*&gt;(label);
+ }
+
+ QObject *TetrixBoard::getTimer()
+ {
+     return timer;
+ }
+
+ QSize TetrixBoard::minimumSizeHint() const
+ {
+     return QSize(BoardWidth * 5 + frameWidth() * 2,
+                  BoardHeight * 5 + frameWidth() * 2);
+ }
+
+ void TetrixBoard::paintEvent(QPaintEvent *event)
+ {
+     QFrame::paintEvent(event);
+
+     QPainter painter(this);
+     QRect rect = contentsRect();
+     int boardTop = rect.bottom() - BoardHeight*squareHeight();
+     painter.translate(rect.left(), boardTop);
+
+     emit paintRequested(&amp;painter);
+ }
+
+ void TetrixBoard::keyPressEvent(QKeyEvent *event)
+ {
+     emit keyPressed(event-&gt;key());
+ }
+
+ void TetrixBoard::showNextPiece(int width, int height)
+ {
+     if (!nextPieceLabel)
+         return;
+
+     QPixmap pixmap(width * squareWidth(), height * squareHeight());
+     QPainter painter(&amp;pixmap);
+     painter.fillRect(pixmap.rect(), nextPieceLabel-&gt;palette().background());
+
+     emit paintNextPieceRequested(&amp;painter);
+
+     nextPieceLabel-&gt;setPixmap(pixmap);
+ }
+
+ void TetrixBoard::drawPauseScreen(QPainter *painter)
+ {
+     painter-&gt;drawText(contentsRect(), Qt::AlignCenter, tr(&quot;Pause&quot;));
+ }
+
+ void TetrixBoard::drawSquare(QPainter *painter, int x, int y, int shape)
+ {
+     static const QRgb colorTable[8] = {
+         0x000000, 0xCC6666, 0x66CC66, 0x6666CC,
+         0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00
+     };
+
+     x = x*squareWidth();
+     y = y*squareHeight();
+
+     QColor color = colorTable[shape];
+     painter-&gt;fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2,
+                       color);
+
+     painter-&gt;setPen(color.light());
+     painter-&gt;drawLine(x, y + squareHeight() - 1, x, y);
+     painter-&gt;drawLine(x, y, x + squareWidth() - 1, y);
+
+     painter-&gt;setPen(color.dark());
+     painter-&gt;drawLine(x + 1, y + squareHeight() - 1,
+                       x + squareWidth() - 1, y + squareHeight() - 1);
+     painter-&gt;drawLine(x + squareWidth() - 1, y + squareHeight() - 1,
+                       x + squareWidth() - 1, y + 1);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

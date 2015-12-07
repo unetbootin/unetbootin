@@ -1,0 +1,223 @@
+/****************************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Contact: Qt Software Information (qt-info@nokia.com)
+**
+** This file is part of the QtXMLPatterns module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+/**
+ * @file qtokenlookup.cpp
+ * @short This file is generated from TokenLookup.gperf and contains
+ * TokenLookup, a class housing a perfect hash function class for XQuery's keywords.
+ * @author Frans Englich <fenglich@trolltech.com>
+ */
+
+/**
+ * @class QPatternist::TokenLookup
+ * @short Contains a perfect hash function for XQuery's keywords.
+ */
+
+/**
+ * @fn QPatternist::TokenLookup::value(const QString &keyword)
+ * Looks up @p keyword and returns a pointer to the corresponding value.
+ *
+ * If @p keyword is not contained in the hash, a null pointer is returned.
+ */
+
+/**
+ * @file
+ * @short This file is the @c gperf declaration for generating TokenLookup.cpp.
+ *
+ * You generate TokenLookup.cpp by running:
+ *
+ * @code
+ * gperf TokenLookup.gperf --output-file=../src/parser/TokenLookup.cpp
+ * @endcode
+ *
+ * @c gperf generates a perfect hash function, which the tokenizer, src/parser/qxquerytokenizer.cpp,
+ * uses for looking up XQuery keywords.
+ *
+ * @see <a href="http://en.wikipedia.org/wiki/Perfect_hash_function">Perfect hash function, Wikipedia</a>
+ * @see <a href="http://www.gnu.org/software/gperf/manual/gperf.html">Perfect Hash Function Generator</a>
+ */
+
+%language=C++
+
+/* Declare data const such that the compiler can put them
+ * in the read-only section. */
+%readonly-tables
+
+/* Yes, for crisps sake, we want enums instead of macros. */
+%enum
+
+/* Rename in_word_set to value, such that it's more
+ * like QHash::value(). */
+%define lookup-function-name value
+
+/* Rename Perfect_Hash to TokenLookup. More Qt/Patternist'ish. */
+%define class-name TokenLookup
+
+/* Output initializers for the TokenMap struct. Note the lack
+ * of a space between the comma and ERROR. Anything else is
+ * a syntax error to gperf. Rocket science. */
+%define initializer-suffix ,ERROR
+
+%struct-type
+
+struct TokenMap
+{
+    const char *name;
+    const Tokenizer::TokenType token;
+}
+
+%{
+
+QT_BEGIN_NAMESPACE
+
+namespace QPatternist
+{
+
+%}
+
+/* The strings below are in UTF-16 encoding. Subsequently, each ASCII
+ * character is stored as the ASCII character, followed by a null byte.
+ * Sorted alphabetically. */
+%%
+"ancestor",                 ANCESTOR
+"ancestor-or-self",         ANCESTOR_OR_SELF
+"and",                      AND
+"as",                       AS
+"ascending",                ASCENDING
+"assign",                   ASSIGN
+"at",                       AT
+"attribute",                ATTRIBUTE
+"base-uri",                 BASEURI
+"boundary-space",           BOUNDARY_SPACE
+"by",                       BY
+"case",                     CASE
+"castable",                 CASTABLE
+"cast",                     CAST
+"child",                    CHILD
+"collation",                COLLATION
+"comment",                  COMMENT
+"construction",             CONSTRUCTION
+"copy-namespaces",          COPY_NAMESPACES
+"declare",                  DECLARE
+"default",                  DEFAULT
+"descendant",               DESCENDANT
+"descendant-or-self",       DESCENDANT_OR_SELF
+"descending",               DESCENDING
+"div",                      DIV
+"document",                 DOCUMENT
+"document-node",            DOCUMENT_NODE
+"element",                  ELEMENT
+"else",                     ELSE
+"empty",                    EMPTY
+"empty-sequence",           EMPTY_SEQUENCE
+"encoding",                 ENCODING
+"eq",                       EQ
+"every",                    EVERY
+"except",                   EXCEPT
+"external",                 EXTERNAL
+"following",                FOLLOWING
+"following-sibling",        FOLLOWING_SIBLING
+"follows",                  FOLLOWS
+"for",                      FOR
+"function",                 FUNCTION
+"ge",                       GE
+"greatest",                 GREATEST
+"gt",                       GT
+"idiv",                     IDIV
+"if",                       IF
+"import",                   IMPORT
+"inherit",                  INHERIT
+"in",                       IN
+"instance",                 INSTANCE
+"intersect",                INTERSECT
+"is",                       IS
+"item",                     ITEM
+"lax",                      LAX
+"least",                    LEAST
+"le",                       LE
+"let",                      LET
+"lt",                       LT
+"mod",                      MOD
+"module",                   MODULE
+"namespace",                NAMESPACE
+"ne",                       NE
+"node",                     NODE
+"no-inherit",               NO_INHERIT
+"no-preserve",              NO_PRESERVE
+"of",                       OF
+"option",                   OPTION
+"ordered",                  ORDERED
+"ordering",                 ORDERING
+"order",                    ORDER
+"or",                       OR
+"parent",                   PARENT
+"precedes",                 PRECEDES
+"preceding",                PRECEDING
+"preceding-sibling",        PRECEDING_SIBLING
+"preserve",                 PRESERVE
+"processing-instruction",   PROCESSING_INSTRUCTION
+"return",                   RETURN
+"satisfies",                SATISFIES
+"schema-attribute",         SCHEMA_ATTRIBUTE
+"schema-element",           SCHEMA_ELEMENT
+"schema",                   SCHEMA
+"self",                     SELF
+"some",                     SOME
+"stable",                   STABLE
+"strict",                   STRICT
+"strip",                    STRIP
+"text",                     TEXT
+"then",                     THEN
+"to",                       TO
+"treat",                    TREAT
+"typeswitch",               TYPESWITCH
+"union",                    UNION
+"unordered",                UNORDERED
+"validate",                 VALIDATE
+"variable",                 VARIABLE
+"version",                  VERSION
+"where",                    WHERE
+"xquery",                   XQUERY
+%%
+
+} /* Close the QPatternist namespace. */
+
+QT_END_NAMESPACE

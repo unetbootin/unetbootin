@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/access/qnetworkreply.cpp -->
+<head>
+  <title>Qt 4.4: QNetworkReply Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QNetworkReply Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QNetworkReply class contains the data and headers for a request posted with <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> <a href="#details">More...</a></p>
+<pre> #include &lt;QNetworkReply&gt;</pre><p>Inherits <a href="qiodevice.html">QIODevice</a>.</p>
+<p>Inherited by <a href="qpatternist-qiodevicedelegate.html">QPatternist::QIODeviceDelegate</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qnetworkreply-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qnetworkreply.html#NetworkError-enum">NetworkError</a></b> { NoError, ConnectionRefusedError, RemoteHostClosedError, HostNotFoundError, ..., ProtocolFailure }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qnetworkreply.html#dtor.QNetworkReply">~QNetworkReply</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qnetworkreply.html#abort">abort</a></b> () = 0</li>
+<li><div class="fn"/>QVariant <b><a href="qnetworkreply.html#attributex">attribute</a></b> ( QNetworkRequest::Attribute <i>code</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qnetworkreply.html#close">close</a></b> ()</li>
+<li><div class="fn"/>NetworkError <b><a href="qnetworkreply.html#error">error</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qnetworkreply.html#hasRawHeader">hasRawHeader</a></b> ( const QByteArray &amp; <i>headerName</i> ) const</li>
+<li><div class="fn"/>QVariant <b><a href="qnetworkreply.html#header">header</a></b> ( QNetworkRequest::KnownHeaders <i>header</i> ) const</li>
+<li><div class="fn"/>QNetworkAccessManager * <b><a href="qnetworkreply.html#manager">manager</a></b> () const</li>
+<li><div class="fn"/>QNetworkAccessManager::Operation <b><a href="qnetworkreply.html#operation">operation</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qnetworkreply.html#rawHeader">rawHeader</a></b> ( const QByteArray &amp; <i>headerName</i> ) const</li>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qnetworkreply.html#rawHeaderList">rawHeaderList</a></b> () const</li>
+<li><div class="fn"/>qint64 <b><a href="qnetworkreply.html#readBufferSize">readBufferSize</a></b> () const</li>
+<li><div class="fn"/>QNetworkRequest <b><a href="qnetworkreply.html#request">request</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qnetworkreply.html#setReadBufferSize">setReadBufferSize</a></b> ( qint64 <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setSslConfiguration">setSslConfiguration</a></b> ( const QSslConfiguration &amp; <i>config</i> )</li>
+<li><div class="fn"/>QSslConfiguration <b><a href="qnetworkreply.html#sslConfiguration">sslConfiguration</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="qnetworkreply.html#url">url</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qnetworkreply.html#ignoreSslErrors">ignoreSslErrors</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#downloadProgress">downloadProgress</a></b> ( qint64 <i>bytesReceived</i>, qint64 <i>bytesTotal</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#error-2">error</a></b> ( QNetworkReply::NetworkError <i>code</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#finished">finished</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#metaDataChanged">metaDataChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#sslErrors">sslErrors</a></b> ( const QList&lt;QSslError&gt; &amp; <i>errors</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#uploadProgress">uploadProgress</a></b> ( qint64 <i>bytesSent</i>, qint64 <i>bytesTotal</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qnetworkreply.html#QNetworkReply">QNetworkReply</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setAttribute">setAttribute</a></b> ( QNetworkRequest::Attribute <i>code</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setError">setError</a></b> ( NetworkError <i>errorCode</i>, const QString &amp; <i>errorString</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setHeader">setHeader</a></b> ( QNetworkRequest::KnownHeaders <i>header</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setOperation">setOperation</a></b> ( QNetworkAccessManager::Operation <i>operation</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setRawHeader">setRawHeader</a></b> ( const QByteArray &amp; <i>headerName</i>, const QByteArray &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setRequest">setRequest</a></b> ( const QNetworkRequest &amp; <i>request</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkreply.html#setUrl">setUrl</a></b> ( const QUrl &amp; <i>url</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QNetworkReply class contains the data and headers for a request posted with <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a></p>
+<p>The QNetworkReply class contains the data and meta data related to a request posted with <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a>. Like <a href="qnetworkrequest.html">QNetworkRequest</a>, it contains a URL and headers (both in parsed and raw form), some information about the reply's state and the contents of the reply itself.</p>
+<p>QNetworkReply is a sequential-access <a href="qiodevice.html">QIODevice</a>, which means that once data is read from the object, it no longer kept by the device. It is therefore the application's responsibility to keep this data if it needs to. Whenever more data is received from the network and processed, the <a href="qiodevice.html#readyRead">readyRead</a>() signal is emitted.</p>
+<p>The <a href="qnetworkreply.html#downloadProgress">downloadProgress</a>() signal is also emitted when data is received, but the number of bytes contained in it may not represent the actual bytes received, if any transformation is done to the contents (for example, decompressing and removing the protocol overhead).</p>
+<p>Even though QNetworkReply is a <a href="qiodevice.html">QIODevice</a> connected to the contents of the reply, it also emits the <a href="qnetworkreply.html#uploadProgress">uploadProgress</a>() signal, which indicates the progress of the upload for operations that have such content.</p>
+<p>See also <a href="qnetworkrequest.html">QNetworkRequest</a> and <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="NetworkError-enum"></a>enum QNetworkReply::NetworkError</h3>
+<p>Indicates all possible error conditions found during the processing of the request.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QNetworkReply::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">no error condition</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ConnectionRefusedError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">the remote server refused the connection (the server is not accepting requests)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::RemoteHostClosedError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">the remote server closed the connection prematurely, before the entire reply was received and processed</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::HostNotFoundError</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">the remote host name was not found (invalid hostname)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::TimeoutError</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">the connection to the remote server timed out</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::OperationCanceledError</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">the operation was canceled via calls to <a href="qnetworkreply.html#abort">abort</a>() or <a href="qnetworkreply.html#close">close</a>() before it was finished.</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::SslHandshakeFailedError</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">the SSL/TLS handshake failed and the encrypted channel could not be established. The <a href="qnetworkreply.html#sslErrors">sslErrors</a>() signal should have been emitted.</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProxyConnectionRefusedError</tt></td><td align="center" valign="top"><tt>101</tt></td><td valign="top">the connection to the proxy server was refused (the proxy server is not accepting requests)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProxyConnectionClosedError</tt></td><td align="center" valign="top"><tt>102</tt></td><td valign="top">the proxy server closed the connection prematurely, before the entire reply was received and processed</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProxyNotFoundError</tt></td><td align="center" valign="top"><tt>103</tt></td><td valign="top">the proxy host name was not found (invalid proxy hostname)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProxyTimeoutError</tt></td><td align="center" valign="top"><tt>104</tt></td><td valign="top">the connection to the proxy timed out or the proxy did not reply in time to the request sent</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProxyAuthenticationRequiredError</tt></td><td align="center" valign="top"><tt>105</tt></td><td valign="top">the proxy requires authentication in order to honour the request but did not accept any credentials offered (if any)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ContentAccessDenied</tt></td><td align="center" valign="top"><tt>201</tt></td><td valign="top">the access to the remote content was denied (similar to HTTP error 401)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ContentOperationNotPermittedError</tt></td><td align="center" valign="top"><tt>202</tt></td><td valign="top">the operation requested on the remote content is not permitted</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ContentNotFoundError</tt></td><td align="center" valign="top"><tt>203</tt></td><td valign="top">the remote content was not found at the server (similar to HTTP error 404)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::AuthenticationRequiredError</tt></td><td align="center" valign="top"><tt>204</tt></td><td valign="top">the remote server requires authentication to serve the content but the credentials provided were not accepted (if any)</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProtocolUnknownError</tt></td><td align="center" valign="top"><tt>301</tt></td><td valign="top">the Network Access API cannot honor the request because the protocol is not known</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProtocolInvalidOperationError</tt></td><td align="center" valign="top"><tt>302</tt></td><td valign="top">the requested operation is invalid for this protocol</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::UnknownNetworkError</tt></td><td align="center" valign="top"><tt>99</tt></td><td valign="top">an unknown network-related error was detected</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::UnknownProxyError</tt></td><td align="center" valign="top"><tt>199</tt></td><td valign="top">an unknown proxy-related error was detected</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::UnknownContentError</tt></td><td align="center" valign="top"><tt>299</tt></td><td valign="top">an unknonwn error related to the remote content was detected</td></tr>
+<tr><td valign="top"><tt>QNetworkReply::ProtocolFailure</tt></td><td align="center" valign="top"><tt>399</tt></td><td valign="top">a breakdown in protocol was detected (parsing error, invalid or unexpected responses, etc.)</td></tr>
+</table></p>
+<p>See also <a href="qnetworkreply.html#error">error</a>() and error(QNetworkReply::NetworkError).</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QNetworkReply"></a>QNetworkReply::QNetworkReply ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Creates a <a href="qnetworkreply.html">QNetworkReply</a> object with parent <i>parent</i>.</p>
+<p>You cannot directly instantiate <a href="qnetworkreply.html">QNetworkReply</a> objects. Use <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> functions to do that.</p>
+<h3 class="fn"><a name="dtor.QNetworkReply"></a>QNetworkReply::~QNetworkReply ()</h3>
+<p>Disposes of this reply and frees any resources associated with it. If any network connections are still open, they will be closed.</p>
+<p>See also <a href="qnetworkreply.html#abort">abort</a>() and <a href="qnetworkreply.html#close">close</a>().</p>
+<h3 class="fn"><a name="abort"></a>void QNetworkReply::abort ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Aborts the operation immediately and close down any network connections still open. Uploads still in progress are also aborted.</p>
+<p>See also <a href="qnetworkreply.html#close">close</a>().</p>
+<h3 class="fn"><a name="attributex"></a><a href="qvariant.html">QVariant</a> QNetworkReply::attribute ( <a href="qnetworkrequest.html#Attribute-enum">QNetworkRequest::Attribute</a> <i>code</i> ) const</h3>
+<p>Returns the attribute associated with the code <i>code</i>. If the attribute has not been set, it returns an invalid <a href="qvariant.html">QVariant</a> (type QVariant::Null).</p>
+<p>You can expect the default values listed in <a href="qnetworkrequest.html#Attribute-enum">QNetworkRequest::Attribute</a> to be applied to the values returned by this function.</p>
+<p>See also <a href="qnetworkreply.html#setAttribute">setAttribute</a>() and <a href="qnetworkrequest.html#Attribute-enum">QNetworkRequest::Attribute</a>.</p>
+<h3 class="fn"><a name="close"></a>void QNetworkReply::close ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Closes this device for reading. Unread data is discarded, but the network resources are not discarded until they are finished. In particular, if any upload is in progress, it will continue until it is done.</p>
+<p>The <a href="qnetworkreply.html#finished">finished</a>() signal is emitted when all operations are over and the network resources are freed.</p>
+<p>Reimplemented from <a href="qiodevice.html#close">QIODevice</a>.</p>
+<p>See also <a href="qnetworkreply.html#abort">abort</a>() and <a href="qnetworkreply.html#finished">finished</a>().</p>
+<h3 class="fn"><a name="downloadProgress"></a>void QNetworkReply::downloadProgress ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>bytesReceived</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>bytesTotal</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted to indicate the progress of the download part of this network request, if there's any. If there's no download associated with this request, this signal will be emitted once with 0 as the value of both <i>bytesReceived</i> and <i>bytesTotal</i>.</p>
+<p>The <i>bytesReceived</i> parameter indicates the number of bytes received, while <i>bytesTotal</i> indicates the total number of bytes expected to be downloaded. If the number of bytes to be downloaded is not known, <i>bytesTotal</i> will be -1.</p>
+<p>The download is finished when <i>bytesReceived</i> is equal to <i>bytesTotal</i>. At that time, <i>bytesTotal</i> will not be -1.</p>
+<p>This signal is suitable to connecting to <a href="qprogressbar.html#value-prop">QProgressBar::setValue</a>() to update the <a href="qprogressbar.html">QProgressBar</a> that provides user feedback.</p>
+<p>Note that the values of both <i>bytesReceived</i> and <i>bytesTotal</i> may be different from <a href="qiodevice.html#size">size</a>(), the total number of bytes obtained through <a href="qiodevice.html#read">read</a>() or <a href="qiodevice.html#readAll">readAll</a>(), or the value of the header(ContentLengthHeader). The reason for that is that there may be protocol overhead or the data may be compressed during the download.</p>
+<p>See also <a href="qnetworkreply.html#uploadProgress">uploadProgress</a>() and <a href="qiodevice.html#bytesAvailable">bytesAvailable</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qnetworkreply.html#NetworkError-enum">NetworkError</a> QNetworkReply::error () const</h3>
+<p>Returns the error that was found during the processing of this request. If no error was found, returns <a href="qnetworkreply.html#NetworkError-enum">NoError</a>.</p>
+<p>See also <a href="qnetworkreply.html#setError">setError</a>().</p>
+<h3 class="fn"><a name="error-2"></a>void QNetworkReply::error ( <a href="qnetworkreply.html#NetworkError-enum">QNetworkReply::NetworkError</a> <i>code</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when the reply detects an error in processing. The <a href="qnetworkreply.html#finished">finished</a>() signal will probably follow, indicating that the connection is over.</p>
+<p>The <i>code</i> parameter contains the code of the error that was detected. Call <a href="qiodevice.html#errorString">errorString</a>() to obtain a textual representation of the error condition.</p>
+<p>See also <a href="qnetworkreply.html#error">error</a>() and <a href="qiodevice.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="finished"></a>void QNetworkReply::finished ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the reply has finished processing. After this signal is emitted, there will be no more updates to the reply's data or metadata.</p>
+<p>Unless <a href="qnetworkreply.html#close">close</a>() has been called, the reply will be still be opened for reading, so the data can be retrieved by calls to <a href="qiodevice.html#read">read</a>() or <a href="qiodevice.html#readAll">readAll</a>(). In particular, if no calls to <a href="qiodevice.html#read">read</a>() were made as a result of <a href="qiodevice.html#readyRead">readyRead</a>(), a call to <a href="qiodevice.html#readAll">readAll</a>() will retrieve the full contents in a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>This signal is emitted in tandem with <a href="qnetworkaccessmanager.html#finished">QNetworkAccessManager::finished</a>() where that signal's reply parameter is this object.</p>
+<p>See also <a href="qnetworkaccessmanager.html#finished">QNetworkAccessManager::finished</a>().</p>
+<h3 class="fn"><a name="hasRawHeader"></a>bool QNetworkReply::hasRawHeader ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>headerName</i> ) const</h3>
+<p>Returns true if the raw header of name <i>headerName</i> was sent by the remote server</p>
+<p>See also <a href="qnetworkreply.html#rawHeader">rawHeader</a>().</p>
+<h3 class="fn"><a name="header"></a><a href="qvariant.html">QVariant</a> QNetworkReply::header ( <a href="qnetworkrequest.html#KnownHeaders-enum">QNetworkRequest::KnownHeaders</a> <i>header</i> ) const</h3>
+<p>Returns the value of the known header <i>header</i>, if that header was sent by the remote server. If the header was not sent, returns an invalid <a href="qvariant.html">QVariant</a>.</p>
+<p>See also <a href="qnetworkreply.html#rawHeader">rawHeader</a>(), <a href="qnetworkreply.html#setHeader">setHeader</a>(), and <a href="qnetworkrequest.html#header">QNetworkRequest::header</a>().</p>
+<h3 class="fn"><a name="ignoreSslErrors"></a>void QNetworkReply::ignoreSslErrors ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If this function is called, SSL errors related to network connection will be ignored, including certificate validation errors.</p>
+<p>Note that calling this function without restraint may pose a security risk for your application. Use it with care.</p>
+<p>This function can be called from the slot connected to the <a href="qnetworkreply.html#sslErrors">sslErrors</a>() signal, which indicates which errors were found.</p>
+<p>See also <a href="qnetworkreply.html#sslConfiguration">sslConfiguration</a>() and <a href="qnetworkreply.html#sslErrors">sslErrors</a>().</p>
+<h3 class="fn"><a name="manager"></a><a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> * QNetworkReply::manager () const</h3>
+<p>Returns the <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> that was used to create this <a href="qnetworkreply.html">QNetworkReply</a> object. Initially, it is also the parent object.</p>
+<h3 class="fn"><a name="metaDataChanged"></a>void QNetworkReply::metaDataChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>FIXME: Update name?</p>
+<p>This signal is emitted whenever the metadata in this reply changes. metadata is any information that is not the content (data) itself, including the network headers. In the majority of cases, the metadata will be known fully by the time the first byte of data is received. However, it is possible to receive updates of headers or other metadata during the processing of the data.</p>
+<p>See also <a href="qnetworkreply.html#header">header</a>(), <a href="qnetworkreply.html#rawHeaderList">rawHeaderList</a>(), <a href="qnetworkreply.html#rawHeader">rawHeader</a>(), and <a href="qnetworkreply.html#hasRawHeader">hasRawHeader</a>().</p>
+<h3 class="fn"><a name="operation"></a><a href="qnetworkaccessmanager.html#Operation-enum">QNetworkAccessManager::Operation</a> QNetworkReply::operation () const</h3>
+<p>Returns the operation that was posted for this reply.</p>
+<p>See also <a href="qnetworkreply.html#setOperation">setOperation</a>().</p>
+<h3 class="fn"><a name="rawHeader"></a><a href="qbytearray.html">QByteArray</a> QNetworkReply::rawHeader ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>headerName</i> ) const</h3>
+<p>Returns the raw contents of the header <i>headerName</i> as sent by the remote server. If there is no such header, returns an empty byte array, which may be indistinguishable from an empty header. Use <a href="qnetworkreply.html#hasRawHeader">hasRawHeader</a>() to verify if the server sent such header field.</p>
+<p>See also <a href="qnetworkreply.html#setRawHeader">setRawHeader</a>(), <a href="qnetworkreply.html#hasRawHeader">hasRawHeader</a>(), and <a href="qnetworkreply.html#header">header</a>().</p>
+<h3 class="fn"><a name="rawHeaderList"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QNetworkReply::rawHeaderList () const</h3>
+<p>Returns a list of headers fields that were sent by the remote server, in the order that they were sent. Duplicate headers are merged together and take place of the latter duplicate.</p>
+<h3 class="fn"><a name="readBufferSize"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QNetworkReply::readBufferSize () const</h3>
+<p>Returns the size of the read buffer, in bytes.</p>
+<p>See also <a href="qnetworkreply.html#setReadBufferSize">setReadBufferSize</a>().</p>
+<h3 class="fn"><a name="request"></a><a href="qnetworkrequest.html">QNetworkRequest</a> QNetworkReply::request () const</h3>
+<p>Returns the request that was posted for this reply. In special, note that the URL for the request may be different than that of the reply.</p>
+<p>See also <a href="qnetworkrequest.html#url">QNetworkRequest::url</a>(), <a href="qnetworkreply.html#url">url</a>(), and <a href="qnetworkreply.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="setAttribute"></a>void QNetworkReply::setAttribute ( <a href="qnetworkrequest.html#Attribute-enum">QNetworkRequest::Attribute</a> <i>code</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the attribute <i>code</i> to have value <i>value</i>. If <i>code</i> was previously set, it will be overridden. If <i>value</i> is an invalid <a href="qvariant.html">QVariant</a>, the attribute will be unset.</p>
+<p>See also <a href="qnetworkreply.html#attributex">attribute</a>() and <a href="qnetworkrequest.html#setAttribute">QNetworkRequest::setAttribute</a>().</p>
+<h3 class="fn"><a name="setError"></a>void QNetworkReply::setError ( <a href="qnetworkreply.html#NetworkError-enum">NetworkError</a> <i>errorCode</i>, const <a href="qstring.html">QString</a> &amp; <i>errorString</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the error condition to be <i>errorCode</i>. The human-readable message is set with <i>errorString</i>.</p>
+<p>Calling setError() does not emit the error(<a href="qnetworkreply.html#NetworkError-enum">QNetworkReply::NetworkError</a>) signal.</p>
+<p>See also <a href="qnetworkreply.html#error">error</a>() and <a href="qiodevice.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="setHeader"></a>void QNetworkReply::setHeader ( <a href="qnetworkrequest.html#KnownHeaders-enum">QNetworkRequest::KnownHeaders</a> <i>header</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the known header <i>header</i> to be of value <i>value</i>. The corresponding raw form of the header will be set as well.</p>
+<p>See also <a href="qnetworkreply.html#header">header</a>(), <a href="qnetworkreply.html#setRawHeader">setRawHeader</a>(), and <a href="qnetworkrequest.html#setHeader">QNetworkRequest::setHeader</a>().</p>
+<h3 class="fn"><a name="setOperation"></a>void QNetworkReply::setOperation ( <a href="qnetworkaccessmanager.html#Operation-enum">QNetworkAccessManager::Operation</a> <i>operation</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the associated operation for this object to be <i>operation</i>. This value will be returned by <a href="qnetworkreply.html#operation">operation</a>().</p>
+<p>Note: the operation should be set when this object is created and not changed again.</p>
+<p>See also <a href="qnetworkreply.html#operation">operation</a>() and <a href="qnetworkreply.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="setRawHeader"></a>void QNetworkReply::setRawHeader ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>headerName</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the raw header <i>headerName</i> to be of value <i>value</i>. If <i>headerName</i> was previously set, it is overridden. Multiple HTTP headers of the same name are functionally equivalent to one single header with the values concatenated, separated by commas.</p>
+<p>If <i>headerName</i> matches a known header, the value <i>value</i> will be parsed and the corresponding parsed form will also be set.</p>
+<p>See also <a href="qnetworkreply.html#rawHeader">rawHeader</a>(), <a href="qnetworkreply.html#header">header</a>(), <a href="qnetworkreply.html#setHeader">setHeader</a>(), and <a href="qnetworkrequest.html#setRawHeader">QNetworkRequest::setRawHeader</a>().</p>
+<h3 class="fn"><a name="setReadBufferSize"></a>void QNetworkReply::setReadBufferSize ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>size</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the size of the read buffer to be <i>size</i> bytes. The read buffer is the buffer that holds data that is being downloaded off the network, before it is read with <a href="qiodevice.html#read">QIODevice::read</a>(). Setting the buffer size to 0 will make the buffer unlimited in size.</p>
+<p><a href="qnetworkreply.html">QNetworkReply</a> will try to stop reading from the network once this buffer is full (i.e&#x2e;, <a href="qiodevice.html#bytesAvailable">bytesAvailable</a>() returns <i>size</i> or more), thus causing the download to throttle down as well. If the buffer is not limited in size, <a href="qnetworkreply.html">QNetworkReply</a> will try to download as fast as possible from the network.</p>
+<p>Unlike <a href="qabstractsocket.html#setReadBufferSize">QAbstractSocket::setReadBufferSize</a>(), <a href="qnetworkreply.html">QNetworkReply</a> cannot guarantee precision in the read buffer size. That is, <a href="qiodevice.html#bytesAvailable">bytesAvailable</a>() can return more than <i>size</i>.</p>
+<p>See also <a href="qnetworkreply.html#readBufferSize">readBufferSize</a>().</p>
+<h3 class="fn"><a name="setRequest"></a>void QNetworkReply::setRequest ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the associated request for this object to be <i>request</i>. This value will be returned by <a href="qnetworkreply.html#request">request</a>().</p>
+<p>Note: the request should be set when this object is created and not changed again.</p>
+<p>See also <a href="qnetworkreply.html#request">request</a>() and <a href="qnetworkreply.html#setOperation">setOperation</a>().</p>
+<h3 class="fn"><a name="setSslConfiguration"></a>void QNetworkReply::setSslConfiguration ( const <a href="qsslconfiguration.html">QSslConfiguration</a> &amp; <i>config</i> )</h3>
+<p>Sets the SSL configuration for the network connection associated with this request, if possible, to be that of <i>config</i>.</p>
+<p>See also <a href="qnetworkreply.html#sslConfiguration">sslConfiguration</a>().</p>
+<h3 class="fn"><a name="setUrl"></a>void QNetworkReply::setUrl ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the URL being processed to be <i>url</i>. Normally, the URL matches that of the request that was posted, but for a variety of reasons it can be different (for example, a file path being made absolute or canonical).</p>
+<p>See also <a href="qnetworkreply.html#url">url</a>(), <a href="qnetworkreply.html#request">request</a>(), and <a href="qnetworkrequest.html#url">QNetworkRequest::url</a>().</p>
+<h3 class="fn"><a name="sslConfiguration"></a><a href="qsslconfiguration.html">QSslConfiguration</a> QNetworkReply::sslConfiguration () const</h3>
+<p>Returns the SSL configuration and state associated with this reply, if SSL was used. It will contain the remote server's certificate, its certificate chain leading to the Certificate Authority as well as the encryption ciphers in use.</p>
+<p>The peer's certificate and its certificate chain will be known by the time <a href="qnetworkreply.html#sslErrors">sslErrors</a>() is emitted, if it's emitted.</p>
+<p>See also <a href="qnetworkreply.html#setSslConfiguration">setSslConfiguration</a>().</p>
+<h3 class="fn"><a name="sslErrors"></a>void QNetworkReply::sslErrors ( const <a href="qlist.html">QList</a>&lt;<a href="qsslerror.html">QSslError</a>&gt; &amp; <i>errors</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the SSL/TLS session encountered errors during the set up, including certificate verification errors. The <i>errors</i> parameter contains the list of errors.</p>
+<p>To indicate that the errors are not fatal and that the connection should proceed, the <a href="qnetworkreply.html#ignoreSslErrors">ignoreSslErrors</a>() function should be called from the slot connected to this signal. If it is not called, the SSL session will be torn down before any data is exchanged (including the URL).</p>
+<p>This signal can be used to display an error message to the user indicating that security may be compromised and display the SSL settings (see <a href="qnetworkreply.html#sslConfiguration">sslConfiguration</a>() to obtain it). If the user decides to proceed after analyzing the remote certificate, the slot should call <a href="qnetworkreply.html#ignoreSslErrors">ignoreSslErrors</a>().</p>
+<p>See also <a href="qsslsocket.html#sslErrors">QSslSocket::sslErrors</a>(), <a href="qnetworkaccessmanager.html#sslErrors">QNetworkAccessManager::sslErrors</a>(), <a href="qnetworkreply.html#sslConfiguration">sslConfiguration</a>(), and <a href="qnetworkreply.html#ignoreSslErrors">ignoreSslErrors</a>().</p>
+<h3 class="fn"><a name="uploadProgress"></a>void QNetworkReply::uploadProgress ( <a href="qtglobal.html#qint64-typedef">qint64</a> <i>bytesSent</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>bytesTotal</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted to indicate the progress of the upload part of this network request, if there's any. If there's no upload associated with this request, this signal will not be emitted.</p>
+<p>The <i>bytesSent</i> parameter indicates the number of bytes uploaded, while <i>bytesTotal</i> indicates the total number of bytes to be uploaded. If the number of bytes to be uploaded could not be determined, <i>bytesTotal</i> will be -1.</p>
+<p>The upload is finished when <i>bytesSent</i> is equal to <i>bytesTotal</i>. At that time, <i>bytesTotal</i> will not be -1.</p>
+<p>This signal is suitable to connecting to <a href="qprogressbar.html#value-prop">QProgressBar::setValue</a>() to update the <a href="qprogressbar.html">QProgressBar</a> that provides user feedback.</p>
+<p>See also <a href="qnetworkreply.html#downloadProgress">downloadProgress</a>().</p>
+<h3 class="fn"><a name="url"></a><a href="qurl.html">QUrl</a> QNetworkReply::url () const</h3>
+<p>Returns the URL of the content downloaded or uploaded. Note that the URL may be different from that of the original request.</p>
+<p>See also <a href="qnetworkreply.html#request">request</a>(), <a href="qnetworkreply.html#setUrl">setUrl</a>(), and <a href="qnetworkrequest.html#url">QNetworkRequest::url</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

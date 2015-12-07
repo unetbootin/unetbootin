@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/porting4-overview.qdoc -->
+<head>
+  <title>Qt 4.4: Moving from Qt 3 to Qt 4</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Moving from Qt 3 to Qt 4<br /><span class="subtitle"></span>
+</h1>
+<p>This document describes which parts of Qt should be used when writing an application with Qt 3, so that it can be upgraded to use Qt 4 later with a minimum of effort. However, the advice may also be useful to developers who are porting existing applications from Qt 3 to Qt 4.</p>
+<p>For a detailed overview of the porting process for existing Qt 3 applications, see the <a href="porting4.html">Porting to Qt 4</a> document.</p>
+<ul><li><a href="#qt-3-features-to-avoid">Qt 3 Features to Avoid</a></li>
+<ul><li><a href="#qt-designer">Qt Designer</a></li>
+<li><a href="#menu-items-qmenuitem">Menu Items (QMenuItem)</a></li>
+<li><a href="#pointer-based-classes-qptr">Pointer-Based Classes (QPtr*)</a></li>
+<li><a href="#other-collection-classes-qstrlist-q-dict">Other Collection Classes (QStrList, Q*Dict)</a></li>
+<li><a href="#memory-arrays-qmemarray">Memory Arrays (QMemArray)</a></li>
+<li><a href="#url-operations-qurloperator">URL Operations (QUrlOperator)</a></li>
+<li><a href="#sql-cursors-qsqlcursor">SQL Cursors (QSqlCursor)</a></li>
+<li><a href="#domain-name-service-qdns">Domain Name Service (QDns)</a></li>
+<li><a href="#wizard-dialogs-qwizard">Wizard Dialogs (QWizard)</a></li>
+<li><a href="#abstract-grid-views-qgridview">Abstract Grid Views (QGridView)</a></li>
+<li><a href="#specialized-scrolling-views">Specialized Scrolling Views</a></li>
+</ul>
+<li><a href="#significantly-changed-features">Significantly Changed Features</a></li>
+<ul><li><a href="#drag-and-drop">Drag and Drop</a></li>
+<li><a href="#extensive-customization-of-item-views">Extensive Customization of Item Views</a></li>
+<li><a href="#double-buffering">Double Buffering</a></li>
+<li><a href="#data-aware-forms">Data-Aware Forms</a></li>
+<li><a href="#dock-windows-and-areas">Dock Windows and Areas</a></li>
+<li><a href="#custom-styles">Custom Styles</a></li>
+</ul>
+</ul>
+<p>Since Qt 4 provides important new functionality at the cost of some compatibility with Qt 3, it is useful for developers of Qt 3-based applications to learn how to take advantage of Qt 3's API now while preparing for future changes that will be needed when upgrading to Qt 4.</p>
+<p>Certain advanced Qt 3 features were moved to the Qt 3 support library (<a href="qt3support.html">Qt3Support</a>) in Qt 4.0, and have been gradually replaced in subsequent releases of Qt 4.</p>
+<p>Making Qt 3 applications as portable to Qt 4 as possible enables a smooth transition between versions of Qt in the long term, and allows for a stable development process throughout.</p>
+<a name="qt-3-features-to-avoid"></a>
+<h3>Qt 3 Features to Avoid</h3>
+<p>Although we are proud of the level of stability we have achieved with Qt, it is important to realise that, for Qt 4 to be a substantial improvement over Qt 3, certain features have been revised to make the framework more maintainable for us and more usable for developers. It is therefore useful to know which features of Qt 3 should be avoided to help save time during a later porting effort to Qt 4. Note that it is still possible to use many of the following classes and features through the use of the <a href="qt3support.html">Qt3Support</a> module.</p>
+<a name="qt-designer"></a>
+<h4>Qt Designer</h4>
+<p>The version of Qt Designer supplied with Qt 3 provided extensive code editing and project management features (control over <tt>.ui.h</tt> and <tt>.pro</tt> files), and encouraged users to design main window applications from within the Qt Designer environment.</p>
+<p>The version of Qt Designer supplied with Qt 4 is intended to be integrated with other software development tools (such as integrated development environments), and does not support these project-level features.</p>
+<p>We recommend using one of the <a href="designer-using-a-component.html">form subclassing approaches</a> with forms created using Qt Designer. This avoids the need to use <tt>.ui.h</tt> files and special purpose code editors.</p>
+<p>Existing Qt 3 forms created using Qt Designer can be gradually ported to Qt 4 by following the advice in the <a href="porting4-designer.html">Porting .ui Files to Qt 4</a> guide. However, some extra effort will be required to move application logic from <tt>.ui.h</tt> files into the main body of a Qt 4 application.</p>
+<a name="menu-items-qmenuitem"></a>
+<h4>Menu Items (QMenuItem)</h4>
+<p>The old-style construction of menus by creating individual menu items has been superseded in Qt 4 by the use of generic actions which can be used in menus, toolbars, and as keyboard shortcuts.</p>
+<p>Qt 3 also supports this action-based approach, so, by using <a href="qaction.html">QAction</a> throughout your application, less work will be required to adapt your application to Qt 4.</p>
+<a name="pointer-based-classes-qptr"></a>
+<h4>Pointer-Based Classes (QPtr*)</h4>
+<p>Qt 3 provides a group of pointer-based classes (<tt>QPtrList</tt>, <tt>QPtrDict</tt>, <tt>QPtrVector</tt>, etc.) that help manage collections of pointers to objects (usually <a href="qobject.html">QObject</a> subclasses) in an application. In addition, the value-based collection classes (<tt>QValueList</tt>, <tt>QValueDict</tt>, <tt>QValueVector</tt>, etc.) provide a way to store standard value types which cannot be easily stored in pointer-based collections.</p>
+<p>Qt 4 introduces a single set of collection classes which does not require developers to pay as much attention to memory allocation and object ownership issues. As a result, Qt 3's pointer-based classes have no direct equivalent classes in Qt 4.</p>
+<p>To ease migration, use Qt 3's value-based classes to store most objects, including pointers; for example, use <tt>QValueVector&lt;QWidget</tt> *&gt; rather than <tt>QPtrVector&lt;QWidget</tt> *&gt;. These can be replaced by Qt 4's <a href="qvector.html">QVector</a>, <a href="qlinkedlist.html">QLinkedList</a>, and <a href="qlist.html">QList</a> later.</p>
+<a name="other-collection-classes-qstrlist-q-dict"></a>
+<h4>Other Collection Classes (QStrList, Q*Dict)</h4>
+<p>Some collection classes in Qt 3 have been deprecated in favor of easier to use, higher level alternatives. These include the dictionary classes (<tt>QAsciiDict</tt>, <tt>QDict</tt>, <tt>QIntDict</tt>, <tt>QPtrDict</tt>) and <tt>QStrList</tt>.</p>
+<p><tt>QStrList</tt> can usually replaced by the higher level <a href="qstringlist.html">QStringList</a> class in Qt 3; this is also available in Qt 4. It is recommended that you use the <a href="qmap.html">QMap</a> class instead of the <tt>QDict</tt> classes. In Qt 4, <a href="qmap.html">QMap</a> is also complemented by the <a href="qhash.html">QHash</a> class.</p>
+<a name="memory-arrays-qmemarray"></a>
+<h4>Memory Arrays (QMemArray)</h4>
+<p>In Qt 3, the <tt>QMemArray</tt> class is used as a simple array container for simple data types. This class is deprecated in Qt 4 in favor of the <a href="qvector.html">QVector</a> and QVarLengthVector classes which provide more powerful and consistent array objects.</p>
+<p>Qt 3's closest equivalent class to Qt 4's <a href="qvector.html">QVector</a> is the <tt>QValueVector</tt> class. For many purposes, this can be used instead of <tt>QMemArray</tt>.</p>
+<a name="url-operations-qurloperator"></a>
+<h4>URL Operations (QUrlOperator)</h4>
+<p>The URL operator in Qt 3 provides an abstract way to handle files via HTTP, FTP, and on the local file system. However, Qt 4 only provides this functionality through the use of the <a href="q3urloperator.html">Q3UrlOperator</a>.</p>
+<p>It is still possible to perform operations on remote files through the <a href="qhttp.html">QHttp</a> and <a href="qftp.html">QFtp</a> classes, and on local files with the <a href="qfile.html">QFile</a> class.</p>
+<a name="sql-cursors-qsqlcursor"></a>
+<h4>SQL Cursors (QSqlCursor)</h4>
+<p>In Qt 3, one of the preferred methods of working with SQL is to use a cursor to manipulate the contents of a database. In Qt 4, the preferred method of working with SQL is to use the model/view architecture (<a href="qsqlquerymodel.html">QSqlQueryModel</a> and <a href="qsqltablemodel.html">QSqlTableModel</a>) and, as a result, the cursor interface is only supplied in the <a href="q3sqlcursor.html">Q3SqlCursor</a> class.</p>
+<p>The easiest way to ensure continuity between Qt 3 and Qt 4 is to use <a href="qsqlquery.html">QSqlQuery</a> rather than <tt>QSqlCursor</tt>, and migrate to <a href="qsqlquerymodel.html">QSqlQueryModel</a> later.</p>
+<a name="domain-name-service-qdns"></a>
+<h4>Domain Name Service (QDns)</h4>
+<p>The <a href="porting4.html#qdns">QDns</a> class in Qt 4 provides a much simpler interface than the <a href="porting4.html#qdns">QDns</a> class in Qt 3, and is mainly used for host name resolution. As a result, many of the more complex features of Qt 3's <a href="porting4.html#qdns">QDns</a> class are only available through Qt 4's <a href="q3dns.html">Q3Dns</a> compatibility class.</p>
+<p>To resolve host names with Qt 3, it is recommended that you use the higher level interface of <a href="porting4.html#qsocket">QSocket</a> rather than <a href="porting4.html#qdns">QDns</a>. The equivalent functionality is available in Qt 4 in the <a href="qabstractsocket.html">QAbstractSocket</a> and <a href="qhostinfo.html">QHostInfo</a> classes.</p>
+<a name="wizard-dialogs-qwizard"></a>
+<h4>Wizard Dialogs (QWizard)</h4>
+<p>Qt 3 provides support for &quot;wizard&quot; dialogs in the form of the <tt>QWizard</tt> class. Prior to Qt 4.3, this class was made available as <a href="q3wizard.html">Q3Wizard</a>, and provides the same interface for creating relatively complex wizards.</p>
+<p>In Qt 4.3 and later, a revised <a href="qwizard.html">QWizard</a> class can be used to create this kind of dialog, but existing Qt 3 wizard implementations may need to be redesigned to work with the new <a href="qwizard.html">QWizard</a> API.</p>
+<a name="abstract-grid-views-qgridview"></a>
+<h4>Abstract Grid Views (QGridView)</h4>
+<p>Before the introduction of the Qt 3 <tt>QTable</tt> class, <tt>QGridView</tt> was the recommended way to create tables of custom items. With the introduction of <tt>QTable</tt>, the <tt>QGridView</tt> class was effectively obsoleted, and the <tt>QTable</tt> class should now be used to display tabular information in your Qt 3 application. This approach allows you to use <a href="qtablewidget.html">QTableWidget</a> as a replacement when later porting your application to Qt 4.</p>
+<a name="specialized-scrolling-views"></a>
+<h4>Specialized Scrolling Views</h4>
+<p>In Qt 3, the <tt>QScrollView</tt> class provides a viewport that can be used to display part of a larger widget, and will optionally provide scroll bars for navigation purposes. In Qt 4, this functionality is superseded by classes such as <a href="qscrollarea.html">QScrollArea</a>, which provides a more intuitive interface for developers to use. <tt>QScrollView</tt> is available in Qt 4 as the <a href="q3scrollview.html">Q3ScrollView</a> class.</p>
+<p>In Qt 3, it is recommended that <tt>QScrollView</tt> should be used with child widgets rather than subclassed. However, it should be noted that this approach may not be appropriate if you need to use extremely large scrolling areas in your application, since Qt 3 widgets cannot be wider or taller than 32767 pixels.</p>
+<a name="significantly-changed-features"></a>
+<h3>Significantly Changed Features</h3>
+<p>Some Qt 3 features have changed significantly for Qt 4. and the recommended way of using them has therefore changed significantly, too. This is most notably true for the drag and drop API.</p>
+<p>Additionally, some of the more specialized features in Qt 3 are often used to help customize widgets and add extra polish to an application. Although these improvements make applications more presentable to users, many of them are unnecessary with Qt 4, and may create additional porting work.</p>
+<a name="drag-and-drop"></a>
+<h4>Drag and Drop</h4>
+<p>Qt 4 introduces a simpler and more intuitive implementation of drag and drop between widgets, and with other applications. As a result, there is no simple approach that can be used to make drag and drop in a Qt 3 application easier to port to Qt 4.</p>
+<a name="extensive-customization-of-item-views"></a>
+<h4>Extensive Customization of Item Views</h4>
+<p>Each of the classes that are used to display list, tree, and table items in Qt 3 can be subclassed for the purposes of customizing their appearance. The item view framework in Qt 4 is implemented according to a different paradigm (model/view) which does not allow items to be customized using this method.</p>
+<p>Although Qt 4 provides compatibility classes (<a href="q3listboxitem.html">Q3ListBoxItem</a>, <a href="q3listviewitem.html">Q3ListViewItem</a>, and <a href="q3tableitem.html">Q3TableItem</a>) that can be used in the same way as their Qt 3 counterparts, these cannot be used within the standard model/view framework. It is recommended that, to minimize porting effort, extensive customization of item classes should be avoided in Qt 3, if at all possible.</p>
+<a name="double-buffering"></a>
+<h4>Double Buffering</h4>
+<p>Qt 3 applications often use double buffering for reducing flicker when painting custom widgets. This approach is unnecessary with Qt 4 because double buffering is automatically performed by the paint engine.</p>
+<p>It still makes sense to use double buffering in Qt 4 in certain contexts. For example, in Chapter 5 of <a href="http://www.trolltech.com/products/qt/qt3/book">GUI Programming with Qt 3</a>, double buffering was presented as a speed optimization and not just as a means of reducing flicker.</p>
+<a name="data-aware-forms"></a>
+<h4>Data-Aware Forms</h4>
+<p>The <tt>QDataTable</tt>, <tt>QDataBrowser</tt>, and <tt>QDataView</tt> classes in Qt 3 allow integration between widgets and SQL-based databases.</p>
+<p>In Qt 4.1 and earlier, the preferred way to create a data-aware widget is to connect an generic item view (such as a table view) to a SQL model. In Qt 4.2 and later, the <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> class can be used to map data to widgets in a form-based user interface.</p>
+<p>New applications written with Qt 3 should use <a href="qsqlquery.html">QSqlQuery</a> in preference to an approach based on the old-style data-aware widgets. This offers a choice of porting strategies when later migrating the application to Qt 4: You can either continue to use <a href="qsqlquery.html">QSqlQuery</a> or take the opportunity to use the model/view classes to handle database integration.</p>
+<a name="dock-windows-and-areas"></a>
+<h4>Dock Windows and Areas</h4>
+<p>In Qt 4, the way that dock windows are constructed and used in main window applications differs significantly to the pattern of use provided by Qt 3. As a result, the introduction of a simpler and cleaner API means that Qt 3 applications that make extensive use of dock window areas will require careful examination when they are ported to Qt 4.</p>
+<p>We recommend that the <a href="qmainwindow.html">QMainWindow</a> class be used in preference to the <a href="q3mainwindow.html">Q3MainWindow</a> compatibility class when an existing Qt 3 main window application is ported to Qt 4. Therefore, we recommend that specialized use of dock window areas should be avoided when writing a Qt 3 application with Qt 4 in mind.</p>
+<a name="custom-styles"></a>
+<h4>Custom Styles</h4>
+<p>The style system used to provide consistent themes for Qt's standard widgets has been revised for Qt 4. As a result, custom styles for Qt 3 require some porting work to be done before they can be used with Qt 4. To ease the porting process, we recommend that you avoid implementing custom widget styles for Qt 3 applications unless it is absolutely necessary for your users.</p>
+<p>In Qt 4.2 and later, <a href="stylesheet.html">Qt Style Sheets</a> can be used to implement many common modifications to existing styles, and this may be sufficient for Qt 3 applications.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

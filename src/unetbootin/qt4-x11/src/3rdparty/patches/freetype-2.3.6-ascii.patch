@@ -1,0 +1,174 @@
+--- include/freetype/ftbbox.h.orig	2007-10-20 15:27:57.000000000 +0200
++++ include/freetype/ftbbox.h	2008-06-15 00:00:00.000000000 +0200
+@@ -61,7 +61,7 @@
+   /*    Computes the exact bounding box of an outline.  This is slower     */
+   /*    than computing the control box.  However, it uses an advanced      */
+   /*    algorithm which returns _very_ quickly when the two boxes          */
+-  /*    coincide.  Otherwise, the outline Bézier arcs are traversed to     */
++  /*    coincide.  Otherwise, the outline Bezier arcs are traversed to     */
+   /*    extract their extrema.                                             */
+   /*                                                                       */
+   /* <Input>                                                               */
+--- include/freetype/ftglyph.h.orig	2008-04-13 23:58:59.000000000 +0200
++++ include/freetype/ftglyph.h	2008-06-15 00:00:00.000000000 +0200
+@@ -354,10 +354,10 @@
+   /*                                                                       */
+   /* <Description>                                                         */
+   /*    Return a glyph's `control box'.  The control box encloses all the  */
+-  /*    outline's points, including Bézier control points.  Though it      */
++  /*    outline's points, including Bezier control points.  Though it      */
+   /*    coincides with the exact bounding box for most glyphs, it can be   */
+   /*    slightly larger in some situations (like when rotating an outline  */
+-  /*    which contains Bézier outside arcs).                               */
++  /*    which contains Bezier outside arcs).                               */
+   /*                                                                       */
+   /*    Computing the control box is very fast, while getting the bounding */
+   /*    box can take much more time as it needs to walk over all segments  */
+--- include/freetype/ftimage.h.orig	2008-05-31 08:46:38.000000000 +0200
++++ include/freetype/ftimage.h	2008-06-15 00:00:00.000000000 +0200
+@@ -318,11 +318,11 @@
+   /*                                                                       */
+   /*    tags       :: A pointer to an array of `n_points' chars, giving    */
+   /*                  each outline point's type.  If bit 0 is unset, the   */
+-  /*                  point is `off' the curve, i.e., a Bézier control     */
++  /*                  point is `off' the curve, i.e., a Bezier control     */
+   /*                  point, while it is `on' when set.                    */
+   /*                                                                       */
+   /*                  Bit 1 is meaningful for `off' points only.  If set,  */
+-  /*                  it indicates a third-order Bézier arc control point; */
++  /*                  it indicates a third-order Bezier arc control point; */
+   /*                  and a second-order control point if unset.           */
+   /*                                                                       */
+   /*    contours   :: An array of `n_contours' shorts, giving the end      */
+@@ -528,7 +528,7 @@
+   /*    A function pointer type use to describe the signature of a `conic  */
+   /*    to' function during outline walking/decomposition.                 */
+   /*                                                                       */
+-  /*    A `conic to' is emitted to indicate a second-order Bézier arc in   */
++  /*    A `conic to' is emitted to indicate a second-order Bezier arc in   */
+   /*    the outline.                                                       */
+   /*                                                                       */
+   /* <Input>                                                               */
+@@ -560,12 +560,12 @@
+   /*    A function pointer type used to describe the signature of a `cubic */
+   /*    to' function during outline walking/decomposition.                 */
+   /*                                                                       */
+-  /*    A `cubic to' is emitted to indicate a third-order Bézier arc.      */
++  /*    A `cubic to' is emitted to indicate a third-order Bezier arc.      */
+   /*                                                                       */
+   /* <Input>                                                               */
+-  /*    control1 :: A pointer to the first Bézier control point.           */
++  /*    control1 :: A pointer to the first Bezier control point.           */
+   /*                                                                       */
+-  /*    control2 :: A pointer to the second Bézier control point.          */
++  /*    control2 :: A pointer to the second Bezier control point.          */
+   /*                                                                       */
+   /*    to       :: A pointer to the target end point.                     */
+   /*                                                                       */
+@@ -591,7 +591,7 @@
+   /*                                                                       */
+   /* <Description>                                                         */
+   /*    A structure to hold various function pointers used during outline  */
+-  /*    decomposition in order to emit segments, conic, and cubic Béziers, */
++  /*    decomposition in order to emit segments, conic, and cubic Beziers, */
+   /*    as well as `move to' and `close to' operations.                    */
+   /*                                                                       */
+   /* <Fields>                                                              */
+@@ -599,9 +599,9 @@
+   /*                                                                       */
+   /*    line_to  :: The segment emitter.                                   */
+   /*                                                                       */
+-  /*    conic_to :: The second-order Bézier arc emitter.                   */
++  /*    conic_to :: The second-order Bezier arc emitter.                   */
+   /*                                                                       */
+-  /*    cubic_to :: The third-order Bézier arc emitter.                    */
++  /*    cubic_to :: The third-order Bezier arc emitter.                    */
+   /*                                                                       */
+   /*    shift    :: The shift that is applied to coordinates before they   */
+   /*                are sent to the emitter.                               */
+@@ -698,7 +698,7 @@
+   /*                                                                       */
+   /*    FT_GLYPH_FORMAT_OUTLINE ::                                         */
+   /*      The glyph image is a vectorial outline made of line segments     */
+-  /*      and Bézier arcs; it can be described as an @FT_Outline; you      */
++  /*      and Bezier arcs; it can be described as an @FT_Outline; you      */
+   /*      generally want to access the `outline' field of the              */
+   /*      @FT_GlyphSlotRec structure to read it.                           */
+   /*                                                                       */
+--- include/freetype/ftoutln.h.orig      2008-05-29 00:05:07.000000000 +0200
++++ include/freetype/ftoutln.h   2008-06-15 00:00:00.000000000 +0200
+@@ -85,7 +85,7 @@
+   /*                                                                       */
+   /* <Description>                                                         */
+   /*    Walks over an outline's structure to decompose it into individual  */
+-  /*    segments and Bézier arcs.  This function is also able to emit      */
++  /*    segments and Bezier arcs.  This function is also able to emit      */
+   /*    `move to' and `close to' operations to indicate the start and end  */
+   /*    of new contours in the outline.                                    */
+   /*                                                                       */
+@@ -213,10 +213,10 @@
+   /*                                                                       */
+   /* <Description>                                                         */
+   /*    Returns an outline's `control box'.  The control box encloses all  */
+-  /*    the outline's points, including Bézier control points.  Though it  */
++  /*    the outline's points, including Bezier control points.  Though it  */
+   /*    coincides with the exact bounding box for most glyphs, it can be   */
+   /*    slightly larger in some situations (like when rotating an outline  */
+-  /*    which contains Bézier outside arcs).                               */
++  /*    which contains Bezier outside arcs).                               */
+   /*                                                                       */
+   /*    Computing the control box is very fast, while getting the bounding */
+   /*    box can take much more time as it needs to walk over all segments  */
+--- include/freetype/ftstroke.h.orig     2008-05-29 00:06:54.000000000 +0200
++++ include/freetype/ftstroke.h  2008-06-15 00:00:00.000000000 +0200
+@@ -407,7 +407,7 @@
+    *   FT_Stroker_ConicTo
+    *
+    * @description:
+-   *   `Draw' a single quadratic Bézier in the stroker's current sub-path,
++   *   `Draw' a single quadratic Bezier in the stroker's current sub-path,
+    *   from the last position.
+    *
+    * @input:
+@@ -415,7 +415,7 @@
+    *     The target stroker handle.
+    *
+    *   control ::
+-   *     A pointer to a Bézier control point.
++   *     A pointer to a Bezier control point.
+    *
+    *   to ::
+    *     A pointer to the destination point.
+@@ -439,7 +439,7 @@
+    *   FT_Stroker_CubicTo
+    *
+    * @description:
+-   *   `Draw' a single cubic Bézier in the stroker's current sub-path,
++   *   `Draw' a single cubic Bezier in the stroker's current sub-path,
+    *   from the last position.
+    *
+    * @input:
+@@ -447,10 +447,10 @@
+    *     The target stroker handle.
+    *
+    *   control1 ::
+-   *     A pointer to the first Bézier control point.
++   *     A pointer to the first Bezier control point.
+    *
+    *   control2 ::
+-   *     A pointer to second Bézier control point.
++   *     A pointer to second Bezier control point.
+    *
+    *   to ::
+    *     A pointer to the destination point.
+--- include/freetype/ftwinfnt.h.orig     2008-05-28 23:27:19.000000000 +0200
++++ include/freetype/ftwinfnt.h  2008-06-15 00:00:00.000000000 +0200
+@@ -77,7 +77,7 @@
+    *     Mac Roman encoding.
+    *
+    *   FT_WinFNT_ID_OEM ::
+-   *     From Michael Pöttgen <michael@poettgen.de>:
++   *     From Michael Poettgen <michael@poettgen.de>:
+    *
+    *       The `Windows Font Mapping' article says that FT_WinFNT_ID_OEM
+    *       is used for the charset of vector fonts, like `modern.fon',

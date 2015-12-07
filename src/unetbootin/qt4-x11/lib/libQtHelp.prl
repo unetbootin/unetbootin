@@ -1,0 +1,6 @@
+QMAKE_PRL_BUILD_DIR = /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/tools/assistant/lib
+QMAKE_PRO_INPUT = lib.pro
+QMAKE_PRL_TARGET = libQtHelp.a
+QMAKE_PRL_CONFIG = lex yacc warn_on uic resources qt warn_on release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath QTDIR_build qt warn_on qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib moc thread staticlib static
+QMAKE_PRL_VERSION = 4.5.0
+QMAKE_PRL_LIBS = -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib  -lQtCLucene -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -pthread -pthread -lQtSql -pthread -pthread -lQtXml -pthread -pthread -lQtGui -L/usr/X11R6/lib -pthread -lpng -lfreetype -lSM -lICE -pthread -pthread -lXrender -lfontconfig -lXext -lX11 -lQtNetwork -pthread -pthread -lQtCore -lz -lm -pthread -lgthread-2.0 -lglib-2.0 -lrt -lpthread -ldl 

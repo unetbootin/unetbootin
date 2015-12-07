@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/styleplugin.qdoc -->
+<head>
+  <title>Qt 4.4: Style Plugin Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Style Plugin Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-styleplugin-plugin-simplestyle-cpp.html">tools/styleplugin/plugin/simplestyle.cpp</a></li>
+<li><a href="tools-styleplugin-plugin-simplestyle-h.html">tools/styleplugin/plugin/simplestyle.h</a></li>
+<li><a href="tools-styleplugin-plugin-simplestyleplugin-cpp.html">tools/styleplugin/plugin/simplestyleplugin.cpp</a></li>
+<li><a href="tools-styleplugin-plugin-simplestyleplugin-h.html">tools/styleplugin/plugin/simplestyleplugin.h</a></li>
+<li><a href="tools-styleplugin-stylewindow-stylewindow-cpp.html">tools/styleplugin/stylewindow/stylewindow.cpp</a></li>
+<li><a href="tools-styleplugin-stylewindow-stylewindow-h.html">tools/styleplugin/stylewindow/stylewindow.h</a></li>
+<li><a href="tools-styleplugin-stylewindow-main-cpp.html">tools/styleplugin/stylewindow/main.cpp</a></li>
+<li><a href="tools-styleplugin-styleplugin-pro.html">tools/styleplugin/styleplugin.pro</a></li>
+<li><a href="tools-styleplugin-plugin-plugin-pro.html">tools/styleplugin/plugin/plugin.pro</a></li>
+<li><a href="tools-styleplugin-stylewindow-stylewindow-pro.html">tools/styleplugin/stylewindow/stylewindow.pro</a></li>
+</ul>
+<p>This example shows how to create a plugin that extends Qt with a new GUI look and feel.</p>
+<p align="center"><img src="images/stylepluginexample.png" /></p><p>On some platforms, the native style will prevent the button from having a red background. In this case, try to run the example in another style (e.g&#x2e;, plastique).</p>
+<p>A plugin in Qt is a class stored in a shared library that can be loaded by a <a href="qpluginloader.html">QPluginLoader</a> at run-time. When you create plugins in Qt, they either extend a Qt application or Qt itself. Writing a plugin that extends Qt itself is achieved by inheriting one of the plugin <a href="plugins.html">base classes</a>, reimplementing functions from that class, and adding a macro. In this example we extend Qt by adding a new GUI look and feel (i.e&#x2e;, making a new <a href="qstyle.html">QStyle</a> available). A high-level introduction to plugins is given in the plugin <a href="plugins-howto.html">overview document</a>.</p>
+<p>Plugins that provide new styles inherit the <a href="qstyleplugin.html">QStylePlugin</a> base class. Style plugins are loaded by Qt and made available through <a href="qstylefactory.html">QStyleFactory</a>; we will look at this later. We have implemented <tt>SimpleStylePlugin</tt>, which provides <tt>SimpleStyle</tt>. The new style inherits <a href="qwindowsstyle.html">QWindowsStyle</a> and contributes to widget styling by drawing button backgrounds in red - not a major contribution, but it still makes a new style. We test the plugin with <tt>StyleWindow</tt>, in which we display a <a href="qpushbutton.html">QPushButton</a>.</p>
+<p>The <tt>SimpleStyle</tt> and <tt>StyleWindow</tt> classes do not contain any plugin specific functionality and their implementations are trivial; we will therefore leap past them and head on to the <tt>SimpleStylePlugin</tt> and the <tt>main()</tt> function. After we have looked at that, we examine the plugin's profile.</p>
+<a name="simplestyleplugin-class-definition"></a>
+<h2>SimpleStylePlugin Class Definition</h2>
+<p><tt>SimpleStylePlugin</tt> inherits <a href="qstyleplugin.html">QStylePlugin</a> and is the plugin class.</p>
+<pre> class SimpleStylePlugin : public QStylePlugin
+ {
+     Q_OBJECT
+
+ public:
+     SimpleStylePlugin() {};
+
+     QStringList keys() const;
+     QStyle *create(const QString &amp;key);
+ };</pre>
+<p><tt>keys()</tt> returns a list of style names that this plugin can create, while <tt>create()</tt> takes such a string and returns the <a href="qstyle.html">QStyle</a> corresponding to the key. Both functions are pure virtual functions reimplemented from <a href="qstyleplugin.html">QStylePlugin</a>. When an application requests an instance of the <tt>SimpleStyle</tt> style, which this plugin creates, Qt will create it with this plugin.</p>
+<a name="simplestyleplugin-class-implementation"></a>
+<h2>SimpleStylePlugin Class Implementation</h2>
+<p>Here is the implementation of <tt>keys()</tt>:</p>
+<pre> QStringList SimpleStylePlugin::keys() const
+ {
+     return QStringList() &lt;&lt; &quot;SimpleStyle&quot;;
+ }</pre>
+<p>Since this plugin only supports one style, we return a <a href="qstringlist.html">QStringList</a> with the class name of that style.</p>
+<p>Here is the <tt>create()</tt> function:</p>
+<pre> QStyle *SimpleStylePlugin::create(const QString &amp;key)
+ {
+     if (key.toLower() == &quot;simplestyle&quot;)
+         return new SimpleStyle;
+     return 0;
+ }</pre>
+<p>Note that the key for style plugins are case insensitive. The case sensitivity varies from plugin to plugin, so you need to check this when implementing new plugins.</p>
+<a name="the-function"></a>
+<h2>The <tt>main()</tt> function</h2>
+<pre> int main(int argv, char *args[])
+ {
+     QApplication app(argv, args);
+     QApplication::setStyle(QStyleFactory::create(&quot;simplestyle&quot;));
+
+     StyleWindow window;
+     window.resize(200, 50);
+     window.show();
+
+     return app.exec();
+ }</pre>
+<p>Qt loads the available style plugins when the <a href="qapplication.html">QApplication</a> object is initialized. The <a href="qstylefactory.html">QStyleFactory</a> class knows about all styles and produces them with <a href="qstylefactory.html#create">create()</a> (it is a wrapper around all the style plugins).</p>
+<a name="the-simple-style-plugin-profile"></a>
+<h2>The Simple Style Plugin Profile</h2>
+<p>The <tt>SimpleStylePlugin</tt> lives in its own directory and have its own profile:</p>
+<pre> TEMPLATE    = lib
+ CONFIG     += plugin
+ HEADERS     = simplestyle.h \
+               simplestyleplugin.h
+ SOURCES     = simplestyle.cpp \
+               simplestyleplugin.cpp
+ TARGET      = simplestyleplugin</pre>
+<p>In the plugin profile we need to set the lib template as we are building a shared library instead of an executable. We must also set the config to plugin. We set the library to be stored in the styles folder under stylewindow because this is a path in which Qt will search for style plugins.</p>
+<a name="related-articles-and-examples"></a>
+<h2>Related articles and examples</h2>
+<p>In addition to the plugin <a href="plugins-howto.html">overview document</a>, we have other examples and articles that concern plugins.</p>
+<p>In the <a href="tools-echoplugin.html">echo plugin example</a> we show how to implement plugins that extends Qt applications rather than Qt itself, which is the case with the style plugin of this example. The <a href="tools-plugandpaint.html">plug &amp; paint</a> example shows how to implement a static plugin as well as being a more involved example on plugins that extend applications.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

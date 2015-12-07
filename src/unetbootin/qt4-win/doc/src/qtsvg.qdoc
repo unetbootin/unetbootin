@@ -1,0 +1,137 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \module QtSvg
+  \since 4.1
+  \title QtSvg Module
+  \contentspage Qt's Modules
+  \previouspage QtSql
+  \nextpage QtWebKit
+  \ingroup modules
+
+  \brief The QtSvg module provides classes for displaying the contents of SVG
+  files.
+
+  Scalable Vector Graphics (SVG) is a language for describing two-dimensional
+  graphics and graphical applications in XML. SVG 1.1 is a W3C Recommendation
+  and forms the core of the current SVG developments in Qt. SVG 1.2 is the
+  specification currently being developed by the \l{SVG Working Group}, and it
+  is \l{http://www.w3.org/TR/SVG12/}{available in draft form}.
+  The \l{Mobile SVG Profiles} (SVG Basic and SVG Tiny) are aimed at
+  resource-limited devices and are part of the 3GPP platform for third generation
+  mobile phones. You can read more about SVG at \l{About SVG}.
+
+  \tableofcontents
+
+  \section1 SVG Support
+  Qt supports the \l{SVG 1.2 Tiny Static Features}{static features} of
+  \l{SVG 1.2 Tiny}. ECMA scripts and DOM manipulation are currently not
+  supported.
+
+  \section1 Configuring the Build Process
+
+  Applications that use Qt's SVG classes need to
+  be configured to be built against the QtSvg module.
+  To include the definitions of the module's classes, use the
+  following directive:
+
+  \snippet doc/src/snippets/code/doc.src.qtsvg.qdoc 0
+
+  To link against the module, add this line to your \l qmake \c
+  .pro file:
+
+  \snippet doc/src/snippets/code/doc.src.qtsvg.qdoc 1
+
+  The QtSvg module is part of the \l{Qt Desktop Edition} and the
+  \l{Qt Open Source Edition}.
+
+  \section1 Rendering SVG files
+
+  The easiest way to render SVG files is to construct a QSvgWidget and
+  load an SVG file using one of the QSvgWidget::load() functions.
+
+  QSvgRenderer is the class responsible for rendering SVG files for
+  QSvgWidget, and it can be used directly to provide SVG support for
+  custom widgets.
+  To load an SVG file, construct a QSvgRenderer with a file name or the
+  contents of a file, or call QSvgRenderer::load() on an existing
+  renderer. If the SVG file has been loaded successfully the
+  QSvgRenderer::isValid() will return true.
+
+  Once you have loaded the SVG file successfully, you can render it
+  with the QSvgRenderer::render() function. Note that this scheme allows
+  you to render SVG files on all paint devices supported by Qt, including
+  QWidget, QGLWidget, and QImage. See the \l{SVG Viewer Example}{SVG Viewer}
+  example for more details.
+
+  \section1 Additional Information
+
+  Some code for arc handling in this module is derived from code with
+  the following license:
+
+  \legalese
+  Copyright  2002 USC/Information Sciences Institute
+
+  Permission to use, copy, modify, distribute, and sell this software
+  and its documentation for any purpose is hereby granted without
+  fee, provided that the above copyright notice appear in all copies
+  and that both that copyright notice and this permission notice
+  appear in supporting documentation, and that the name of
+  Information Sciences Institute not be used in advertising or
+  publicity pertaining to distribution of the software without
+  specific, written prior permission.  Information Sciences Institute
+  makes no representations about the suitability of this software for
+  any purpose.  It is provided "as is" without express or implied
+  warranty.
+
+  INFORMATION SCIENCES INSTITUTE DISCLAIMS ALL WARRANTIES WITH REGARD
+  TO THIS SOFTWARE, INCLUDING ALL IMPLIED WARRANTIES OF
+  MERCHANTABILITY AND FITNESS, IN NO EVENT SHALL INFORMATION SCIENCES
+  INSTITUTE BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL
+  DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA
+  OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER
+  TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR
+  PERFORMANCE OF THIS SOFTWARE.
+  \endlegalese
+*/

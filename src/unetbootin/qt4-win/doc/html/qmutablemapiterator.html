@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qiterator.qdoc -->
+<head>
+  <title>Qt 4.4: QMutableMapIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMutableMapIterator Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QMutableMapIterator class provides a Java-style non-const iterator for <a href="qmap.html">QMap</a> and <a href="qmultimap.html">QMultiMap</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QMutableMapIterator&gt;</pre><ul>
+<li><a href="qmutablemapiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmutablemapiterator.html#QMutableMapIterator">QMutableMapIterator</a></b> ( QMap&lt;Key, T&gt; &amp; <i>map</i> )</li>
+<li><div class="fn"/><b><a href="qmutablemapiterator.html#dtor.QMutableMapIterator">~QMutableMapIterator</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qmutablemapiterator.html#findNext">findNext</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmutablemapiterator.html#findPrevious">findPrevious</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmutablemapiterator.html#hasNext">hasNext</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmutablemapiterator.html#hasPrevious">hasPrevious</a></b> () const</li>
+<li><div class="fn"/>const Key &amp; <b><a href="qmutablemapiterator.html#key">key</a></b> () const</li>
+<li><div class="fn"/>Item <b><a href="qmutablemapiterator.html#next">next</a></b> ()</li>
+<li><div class="fn"/>Item <b><a href="qmutablemapiterator.html#peekNext">peekNext</a></b> () const</li>
+<li><div class="fn"/>Item <b><a href="qmutablemapiterator.html#peekPrevious">peekPrevious</a></b> () const</li>
+<li><div class="fn"/>Item <b><a href="qmutablemapiterator.html#previous">previous</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablemapiterator.html#remove">remove</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablemapiterator.html#setValue">setValue</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qmutablemapiterator.html#toBack">toBack</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablemapiterator.html#toFront">toFront</a></b> ()</li>
+<li><div class="fn"/>const T &amp; <b><a href="qmutablemapiterator.html#value">value</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablemapiterator.html#value-2">value</a></b> ()</li>
+<li><div class="fn"/>QMutableMapIterator &amp; <b><a href="qmutablemapiterator.html#operator-eq">operator=</a></b> ( QMap&lt;Key, T&gt; &amp; <i>map</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMutableMapIterator class provides a Java-style non-const iterator for <a href="qmap.html">QMap</a> and <a href="qmultimap.html">QMultiMap</a>.</p>
+<p><a href="qmap.html">QMap</a> has both <a href="containers.html#java-style-iterators">Java-style iterators</a> and <a href="containers.html#stl-style-iterators">STL-style iterators</a>. The Java-style iterators are more high-level and easier to use than the STL-style iterators; on the other hand, they are slightly less efficient.</p>
+<p>QMutableMapIterator&lt;Key, T&gt; allows you to iterate over a <a href="qmap.html">QMap</a> (or a <a href="qmultimap.html">QMultiMap</a>) and modify the map. If you don't want to modify the map (or have a const <a href="qmap.html">QMap</a>), use the slightly faster <a href="qmapiterator.html">QMapIterator</a> instead.</p>
+<p>The QMutableMapIterator constructor takes a <a href="qmap.html">QMap</a> as argument. After construction, the iterator is located at the very beginning of the map (before the first item). Here's how to iterate over all the elements sequentially:</p>
+<pre>         QMap&lt;int, QWidget *&gt; map;
+         ...
+         QMutableMapIterator&lt;int, QWidget *&gt; i(map);
+         while (i.hasNext()) {
+             i.next();
+             qDebug() &lt;&lt; i.key() &lt;&lt; &quot;: &quot; &lt;&lt; i.value();
+         }</pre>
+<p>The <a href="qmutablemapiterator.html#next">next</a>() function returns the next item in the map and advances the iterator. The <a href="qmutablemapiterator.html#key">key</a>() and <a href="qmutablemapiterator.html#value">value</a>() functions return the key and value of the last item that was jumped over.</p>
+<p>Unlike STL-style iterators, Java-style iterators point <i>between</i> items rather than directly <i>at</i> items. The first call to <a href="qmutablemapiterator.html#next">next</a>() advances the iterator to the position between the first and second item, and returns the first item; the second call to <a href="qmutablemapiterator.html#next">next</a>() advances the iterator to the position between the second and third item; and so on.</p>
+<p align="center"><img src="images/javaiterators1.png" /></p><p>Here's how to iterate over the elements in reverse order:</p>
+<pre>         QMutableMapIterator&lt;int, QWidget *&gt; i(map);
+         i.toBack();
+         while (i.hasPrevious()) {
+             i.previous();
+             qDebug() &lt;&lt; i.key() &lt;&lt; &quot;: &quot; &lt;&lt; i.value();
+         }</pre>
+<p>If you want to find all occurrences of a particular value, use <a href="qmutablemapiterator.html#findNext">findNext</a>() or <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>() in a loop. For example:</p>
+<pre>         QMutableMapIterator&lt;int, QWidget *&gt; i(map);
+         while (i.findNext(widget)) {
+             qDebug() &lt;&lt; &quot;Found widget &quot; &lt;&lt; widget &lt;&lt; &quot; under key &quot;
+                      &lt;&lt; i.key();
+         }</pre>
+<p>If you want to remove items as you iterate over the map, use <a href="qmutablemapiterator.html#remove">remove</a>(). If you want to modify the value of an item, use <a href="qmutablemapiterator.html#setValue">setValue</a>().</p>
+<p>Example:</p>
+<pre>         QMutableMapIterator&lt;QString, QString&gt; i(map);
+         while (i.hasNext()) {
+             i.next();
+             if (i.key() == i.value())
+                 i.remove();
+         }</pre>
+<p>The example removes all (key, value) pairs where the key and the value are the same.</p>
+<p>Only one mutable iterator can be active on a given map at any time. Furthermore, no changes should be done directly to the map while the iterator is active (as opposed to through the iterator), since this could invalidate the iterator and lead to undefined behavior.</p>
+<p>See also <a href="qmapiterator.html">QMapIterator</a> and <a href="qmap-iterator.html">QMap::iterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMutableMapIterator"></a>QMutableMapIterator::QMutableMapIterator ( <a href="qmap.html">QMap</a>&lt;Key, T&gt; &amp; <i>map</i> )</h3>
+<p>Constructs an iterator for traversing <i>map</i>. The iterator is set to be at the front of the map (before the first item).</p>
+<p>See also <a href="qmutablemapiterator.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="dtor.QMutableMapIterator"></a>QMutableMapIterator::~QMutableMapIterator ()</h3>
+<p>Destroys the iterator.</p>
+<p>See also <a href="qmutablemapiterator.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="findNext"></a>bool QMutableMapIterator::findNext ( const T &amp; <i>value</i> )</h3>
+<p>Searches for <i>value</i> starting from the current iterator position forward. Returns true if a (key, value) pair with value <i>value</i> is found; otherwise returns false.</p>
+<p>After the call, if <i>value</i> was found, the iterator is positioned just after the matching item; otherwise, the iterator is positioned at the back of the container.</p>
+<p>See also <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>().</p>
+<h3 class="fn"><a name="findPrevious"></a>bool QMutableMapIterator::findPrevious ( const T &amp; <i>value</i> )</h3>
+<p>Searches for <i>value</i> starting from the current iterator position backward. Returns true if a (key, value) pair with value <i>value</i> is found; otherwise returns false.</p>
+<p>After the call, if <i>value</i> was found, the iterator is positioned just before the matching item; otherwise, the iterator is positioned at the front of the container.</p>
+<p>See also <a href="qmutablemapiterator.html#findNext">findNext</a>().</p>
+<h3 class="fn"><a name="hasNext"></a>bool QMutableMapIterator::hasNext () const</h3>
+<p>Returns true if there is at least one item ahead of the iterator, i.e&#x2e; the iterator is <i>not</i> at the back of the container; otherwise returns false.</p>
+<p>See also <a href="qmutablemapiterator.html#hasPrevious">hasPrevious</a>() and <a href="qmutablemapiterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="hasPrevious"></a>bool QMutableMapIterator::hasPrevious () const</h3>
+<p>Returns true if there is at least one item behind the iterator, i.e&#x2e; the iterator is <i>not</i> at the front of the container; otherwise returns false.</p>
+<p>See also <a href="qmutablemapiterator.html#hasNext">hasNext</a>() and <a href="qmutablemapiterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="key"></a>const Key &amp; QMutableMapIterator::key () const</h3>
+<p>Returns the key of the last item that was jumped over using one of the traversal functions (<a href="qmutablemapiterator.html#next">next</a>(), <a href="qmutablemapiterator.html#previous">previous</a>(), <a href="qmutablemapiterator.html#findNext">findNext</a>(), <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>()).</p>
+<p>After a call to <a href="qmutablemapiterator.html#next">next</a>() or <a href="qmutablemapiterator.html#findNext">findNext</a>(), key() is equivalent to <a href="qmutablemapiterator.html#peekPrevious">peekPrevious</a>().key(). After a call to <a href="qmutablemapiterator.html#previous">previous</a>() or <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>(), key() is equivalent to <a href="qmutablemapiterator.html#peekNext">peekNext</a>().key().</p>
+<p>See also <a href="qmutablemapiterator.html#value">value</a>().</p>
+<h3 class="fn"><a name="next"></a>Item QMutableMapIterator::next ()</h3>
+<p>Returns the next item and advances the iterator by one position.</p>
+<p>Call <a href="qmutablemapiterator.html#key">key</a>() on the return value to obtain the item's key, and <a href="qmutablemapiterator.html#value">value</a>() to obtain the value.</p>
+<p>Calling this function on an iterator located at the back of the container leads to undefined results.</p>
+<p>See also <a href="qmutablemapiterator.html#hasNext">hasNext</a>(), <a href="qmutablemapiterator.html#peekNext">peekNext</a>(), and <a href="qmutablemapiterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="peekNext"></a>Item QMutableMapIterator::peekNext () const</h3>
+<p>Returns a reference to the next item without moving the iterator.</p>
+<p>Call <a href="qmutablemapiterator.html#key">key</a>() on the return value to obtain the item's key, and <a href="qmutablemapiterator.html#value">value</a>() to obtain the value.</p>
+<p>Calling this function on an iterator located at the back of the container leads to undefined results.</p>
+<p>See also <a href="qmutablemapiterator.html#hasNext">hasNext</a>(), <a href="qmutablemapiterator.html#next">next</a>(), and <a href="qmutablemapiterator.html#peekPrevious">peekPrevious</a>().</p>
+<h3 class="fn"><a name="peekPrevious"></a>Item QMutableMapIterator::peekPrevious () const</h3>
+<p>Returns the previous item without moving the iterator.</p>
+<p>Call <a href="qmutablemapiterator.html#key">key</a>() on the return value to obtain the item's key, and <a href="qmutablemapiterator.html#value">value</a>() to obtain the value.</p>
+<p>Calling this function on an iterator located at the front of the container leads to undefined results.</p>
+<p>See also <a href="qmutablemapiterator.html#hasPrevious">hasPrevious</a>(), <a href="qmutablemapiterator.html#previous">previous</a>(), and <a href="qmutablemapiterator.html#peekNext">peekNext</a>().</p>
+<h3 class="fn"><a name="previous"></a>Item QMutableMapIterator::previous ()</h3>
+<p>Returns the previous item and moves the iterator back by one position.</p>
+<p>Call <a href="qmutablemapiterator.html#key">key</a>() on the return value to obtain the item's key, and <a href="qmutablemapiterator.html#value">value</a>() to obtain the value.</p>
+<p>Calling this function on an iterator located at the front of the container leads to undefined results.</p>
+<p>See also <a href="qmutablemapiterator.html#hasPrevious">hasPrevious</a>(), <a href="qmutablemapiterator.html#peekPrevious">peekPrevious</a>(), and <a href="qmutablemapiterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="remove"></a>void QMutableMapIterator::remove ()</h3>
+<p>Removes the last item that was jumped over using one of the traversal functions (<a href="qmutablemapiterator.html#next">next</a>(), <a href="qmutablemapiterator.html#previous">previous</a>(), <a href="qmutablemapiterator.html#findNext">findNext</a>(), <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>()).</p>
+<p>See also <a href="qmutablemapiterator.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="setValue"></a>void QMutableMapIterator::setValue ( const T &amp; <i>value</i> )</h3>
+<p>Replaces the value of the last item that was jumped over using one of the traversal functions with <i>value</i>.</p>
+<p>The traversal functions are <a href="qmutablemapiterator.html#next">next</a>(), <a href="qmutablemapiterator.html#previous">previous</a>(), <a href="qmutablemapiterator.html#findNext">findNext</a>(), and <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>().</p>
+<p>See also <a href="qmutablemapiterator.html#key">key</a>(), <a href="qmutablemapiterator.html#value">value</a>(), and <a href="qmutablemapiterator.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="toBack"></a>void QMutableMapIterator::toBack ()</h3>
+<p>Moves the iterator to the back of the container (after the last item).</p>
+<p>See also <a href="qmutablemapiterator.html#toFront">toFront</a>() and <a href="qmutablemapiterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="toFront"></a>void QMutableMapIterator::toFront ()</h3>
+<p>Moves the iterator to the front of the container (before the first item).</p>
+<p>See also <a href="qmutablemapiterator.html#toBack">toBack</a>() and <a href="qmutablemapiterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="value"></a>const T &amp; QMutableMapIterator::value () const</h3>
+<p>Returns the value of the last item that was jumped over using one of the traversal functions (<a href="qmutablemapiterator.html#next">next</a>(), <a href="qmutablemapiterator.html#previous">previous</a>(), <a href="qmutablemapiterator.html#findNext">findNext</a>(), <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>()).</p>
+<p>After a call to <a href="qmutablemapiterator.html#next">next</a>() or <a href="qmutablemapiterator.html#findNext">findNext</a>(), value() is equivalent to <a href="qmutablemapiterator.html#peekPrevious">peekPrevious</a>().value(). After a call to <a href="qmutablemapiterator.html#previous">previous</a>() or <a href="qmutablemapiterator.html#findPrevious">findPrevious</a>(), value() is equivalent to <a href="qmutablemapiterator.html#peekNext">peekNext</a>().value().</p>
+<p>See also <a href="qmutablemapiterator.html#key">key</a>() and <a href="qmutablemapiterator.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="value-2"></a>T &amp; QMutableMapIterator::value ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a non-const reference to the value of the last item that was jumped over using one of the traversal functions.</p>
+<h3 class="fn"><a name="operator-eq"></a>QMutableMapIterator &amp; QMutableMapIterator::operator= ( <a href="qmap.html">QMap</a>&lt;Key, T&gt; &amp; <i>map</i> )</h3>
+<p>Makes the iterator operate on <i>map</i>. The iterator is set to be at the front of the map (before the first item).</p>
+<p>See also <a href="qmutablemapiterator.html#toFront">toFront</a>() and <a href="qmutablemapiterator.html#toBack">toBack</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

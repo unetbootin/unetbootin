@@ -1,0 +1,368 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/qxmlstreambookmarks.qdoc -->
+<head>
+  <title>Qt 4.4: QXmlStream Bookmarks Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlStream Bookmarks Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="xml-streambookmarks-mainwindow-cpp.html">xml/streambookmarks/mainwindow.cpp</a></li>
+<li><a href="xml-streambookmarks-mainwindow-h.html">xml/streambookmarks/mainwindow.h</a></li>
+<li><a href="xml-streambookmarks-xbelreader-cpp.html">xml/streambookmarks/xbelreader.cpp</a></li>
+<li><a href="xml-streambookmarks-xbelreader-h.html">xml/streambookmarks/xbelreader.h</a></li>
+<li><a href="xml-streambookmarks-xbelwriter-cpp.html">xml/streambookmarks/xbelwriter.cpp</a></li>
+<li><a href="xml-streambookmarks-xbelwriter-h.html">xml/streambookmarks/xbelwriter.h</a></li>
+<li><a href="xml-streambookmarks-main-cpp.html">xml/streambookmarks/main.cpp</a></li>
+<li><a href="xml-streambookmarks-streambookmarks-pro.html">xml/streambookmarks/streambookmarks.pro</a></li>
+</ul>
+<p>The QXmlStream Bookmarks example provides a reader for XML Bookmark Exchange Language (XBEL) files using Qt's <a href="qxmlstreamreader.html">QXmlStreamReader</a> class for reading, and <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> class for writing the files.</p>
+<p align="center"><img src="images/xmlstreamexample-screenshot.png" /></p><a name="xbelwriter-class-definition"></a>
+<h2>XbelWriter Class Definition</h2>
+<p>The <tt>XbelWriter</tt> class is a subclass of <a href="qxmlstreamreader.html">QXmlStreamReader</a>, which provides an XML parser with a streaming API. <tt>XbelWriter</tt> also contains a private instance of <a href="qtreewidget.html">QTreeWidget</a> in order to display the bookmarks according to hierarchies.</p>
+<pre> class XbelWriter : public QXmlStreamWriter
+ {
+ public:
+     XbelWriter(QTreeWidget *treeWidget);
+     bool writeFile(QIODevice *device);
+
+ private:
+     void writeItem(QTreeWidgetItem *item);
+     QTreeWidget *treeWidget;
+ };</pre>
+<a name="xbelwriter-class-implementation"></a>
+<h2>XbelWriter Class Implementation</h2>
+<p>The <tt>XbelWriter</tt> constructor accepts a <i>treeWidget</i> to initialize within its definition. We enable <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>'s auto-formatting property to ensure line-breaks and indentations are added automatically to empty sections between elements, increasing readability as the data is split into several lines.</p>
+<pre> XbelWriter::XbelWriter(QTreeWidget *treeWidget)
+     : treeWidget(treeWidget)
+ {
+     setAutoFormatting(true);
+ }</pre>
+<p>The <tt>writeFile()</tt> function accepts a <a href="qiodevice.html">QIODevice</a> object and sets it using <tt>setDevice()</tt>. This function then writes the document type definition(DTD), the start element, the version, and <tt>treeWidget</tt>'s top-level items.</p>
+<pre> bool XbelWriter::writeFile(QIODevice *device)
+ {
+     setDevice(device);
+
+     writeStartDocument();
+     writeDTD(&quot;&lt;!DOCTYPE xbel&gt;&quot;);
+     writeStartElement(&quot;xbel&quot;);
+     writeAttribute(&quot;version&quot;, &quot;1.0&quot;);
+     for (int i = 0; i &lt; treeWidget-&gt;topLevelItemCount(); ++i)
+         writeItem(treeWidget-&gt;topLevelItem(i));
+
+     writeEndDocument();
+     return true;
+ }</pre>
+<p>The <tt>writeItem()</tt> function accepts a <a href="qtreewidget.html">QTreeWidget</a> object and writes it to the stream, depending on its <tt>tagName</tt>, which can either be a &quot;folder&quot;, &quot;bookmark&quot;, or &quot;separator&quot;.</p>
+<pre> void XbelWriter::writeItem(QTreeWidgetItem *item)
+ {
+     QString tagName = item-&gt;data(0, Qt::UserRole).toString();
+     if (tagName == &quot;folder&quot;) {
+         bool folded = !treeWidget-&gt;isItemExpanded(item);
+         writeStartElement(tagName);
+         writeAttribute(&quot;folded&quot;, folded ? &quot;yes&quot; : &quot;no&quot;);
+         writeTextElement(&quot;title&quot;, item-&gt;text(0));
+         for (int i = 0; i &lt; item-&gt;childCount(); ++i)
+             writeItem(item-&gt;child(i));
+         writeEndElement();
+     } else if (tagName == &quot;bookmark&quot;) {
+         writeStartElement(tagName);
+         if (!item-&gt;text(1).isEmpty())
+             writeAttribute(&quot;href&quot;, item-&gt;text(1));
+         writeTextElement(&quot;title&quot;, item-&gt;text(0));
+         writeEndElement();
+     } else if (tagName == &quot;separator&quot;) {
+         writeEmptyElement(tagName);
+     }
+ }</pre>
+<a name="xbelreader-class-definition"></a>
+<h2>XbelReader Class Definition</h2>
+<p>The <tt>XbelReader</tt> class is a subclass of <a href="qxmlstreamreader.html">QXmlStreamReader</a>, the pendent class for <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>. <tt>XbelReader</tt> contains a private instance of <a href="qtreewidget.html">QTreeWidget</a> to group bookmarks according to their hierarchies.</p>
+<pre> class XbelReader : public QXmlStreamReader
+ {
+ public:
+     XbelReader(QTreeWidget *treeWidget);
+
+     bool read(QIODevice *device);
+
+ private:
+     void readUnknownElement();
+     void readXBEL();
+     void readTitle(QTreeWidgetItem *item);
+     void readSeparator(QTreeWidgetItem *item);
+     void readFolder(QTreeWidgetItem *item);
+     void readBookmark(QTreeWidgetItem *item);
+
+     QTreeWidgetItem *createChildItem(QTreeWidgetItem *item);
+
+     QTreeWidget *treeWidget;
+
+     QIcon folderIcon;
+     QIcon bookmarkIcon;
+ };</pre>
+<a name="xbelreader-class-implementation"></a>
+<h2>XbelReader Class Implementation</h2>
+<p>The <tt>XbelReader</tt> constructor accepts a <a href="qtreewidget.html">QTreeWidget</a> to initialize the <tt>treeWidget</tt> within its definition. A <a href="qstyle.html">QStyle</a> object is used to set <tt>treeWidget</tt>'s style property. The <tt>folderIcon</tt> is set to <a href="qicon.html#Mode-enum">QIcon::Normal</a> mode where the pixmap is only displayed when the user is not interacting with the icon. The <a href="qstyle.html#StandardPixmap-enum">QStyle::SP_DirClosedIcon</a>, <a href="qstyle.html#StandardPixmap-enum">QStyle::SP_DirOpenIcon</a>, and <a href="qstyle.html#StandardPixmap-enum">QStyle::SP_FileIcon</a> correspond to standard pixmaps that follow the style of your GUI.</p>
+<pre> XbelReader::XbelReader(QTreeWidget *treeWidget)
+     : treeWidget(treeWidget)
+ {
+     QStyle *style = treeWidget-&gt;style();
+
+     folderIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_DirClosedIcon),
+                          QIcon::Normal, QIcon::Off);
+     folderIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_DirOpenIcon),
+                          QIcon::Normal, QIcon::On);
+     bookmarkIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_FileIcon));
+ }</pre>
+<p>The <tt>read()</tt> function accepts a <a href="qiodevice.html">QIODevice</a> and sets it using <a href="qxmlstreamreader.html#setDevice">setDevice()</a>. The actual process of reading only takes place in event the file is a valid XBEL 1.0 file. Otherwise, the <a href="qxmlstreamreader.html#raiseError">raiseError()</a> function is used to display an error message.</p>
+<pre> bool XbelReader::read(QIODevice *device)
+ {
+     setDevice(device);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isStartElement()) {
+             if (name() == &quot;xbel&quot; &amp;&amp; attributes().value(&quot;version&quot;) == &quot;1.0&quot;)
+                 readXBEL();
+             else
+                 raiseError(QObject::tr(&quot;The file is not an XBEL version 1.0 file.&quot;));
+         }
+     }
+
+     return !error();
+ }</pre>
+<p>The <tt>readUnknownElement()</tt> function reads an unknown element. The <a href="qtglobal.html#Q_ASSERT">Q_ASSERT</a>() macro is used to provide a pre-condition for the function.</p>
+<pre> void XbelReader::readUnknownElement()
+ {
+     Q_ASSERT(isStartElement());
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement())
+             readUnknownElement();
+     }
+ }</pre>
+<p>The <tt>readXBEL()</tt> function reads the name of a startElement and calls the appropriate function to read it, depending on whether if its a &quot;folder&quot;, &quot;bookmark&quot; or &quot;separator&quot;. Otherwise, it calls <tt>readUnknownElement()</tt>.</p>
+<pre> void XbelReader::readXBEL()
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;xbel&quot;);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement()) {
+             if (name() == &quot;folder&quot;)
+                 readFolder(0);
+             else if (name() == &quot;bookmark&quot;)
+                 readBookmark(0);
+             else if (name() == &quot;separator&quot;)
+                 readSeparator(0);
+             else
+                 readUnknownElement();
+         }
+     }
+ }</pre>
+<p>The <tt>readTitle()</tt> function reads the bookmark's title.</p>
+<pre> void XbelReader::readTitle(QTreeWidgetItem *item)
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;title&quot;);
+
+     QString title = readElementText();
+     item-&gt;setText(0, title);
+ }</pre>
+<p>The <tt>readSeparator()</tt> function creates a separator and sets its flags. The text is set to 30 &quot;0xB7&quot;, the HEX equivalent for period, and then read using <tt>readElementText()</tt>.</p>
+<pre> void XbelReader::readSeparator(QTreeWidgetItem *item)
+ {
+     QTreeWidgetItem *separator = createChildItem(item);
+     separator-&gt;setFlags(item-&gt;flags() &amp; ~Qt::ItemIsSelectable);
+     separator-&gt;setText(0, QString(30, 0xB7));
+     readElementText();
+ }</pre>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class is a subclass of <a href="qmainwindow.html">QMainWindow</a>, with a <tt>File</tt> menu and a <tt>Help</tt> menu.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ public slots:
+     void open();
+     void saveAs();
+     void about();
+
+ private:
+     void createActions();
+     void createMenus();
+
+     QTreeWidget *treeWidget;
+
+     QMenu *fileMenu;
+     QMenu *helpMenu;
+     QAction *openAct;
+     QAction *saveAsAct;
+     QAction *exitAct;
+     QAction *aboutAct;
+     QAction *aboutQtAct;
+ };</pre>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt> constructor instantiates the <a href="qtreewidget.html">QTreeWidget</a> object, <tt>treeWidget</tt> and sets its header with a <a href="qstringlist.html">QStringList</a> object, <tt>labels</tt>. The constructor also invokes <tt>createActions()</tt> and <tt>createMenus()</tt> to set up the menus and their corresponding actions. The <tt>statusBar()</tt> is used to display the message &quot;Ready&quot; and the window's size is fixed to 480x320 pixels.</p>
+<pre> MainWindow::MainWindow()
+ {
+     QStringList labels;
+     labels &lt;&lt; tr(&quot;Title&quot;) &lt;&lt; tr(&quot;Location&quot;);
+
+     treeWidget = new QTreeWidget;
+     treeWidget-&gt;header()-&gt;setResizeMode(QHeaderView::Stretch);
+     treeWidget-&gt;setHeaderLabels(labels);
+     setCentralWidget(treeWidget);
+
+     createActions();
+     createMenus();
+
+     statusBar()-&gt;showMessage(tr(&quot;Ready&quot;));
+
+     setWindowTitle(tr(&quot;QXmlStream Bookmarks&quot;));
+     resize(480, 320);
+ }</pre>
+<p>The <tt>open()</tt> function enables the user to open an XBEL file using <a href="qfiledialog.html#getOpenFileName">QFileDialog::getOpenFileName</a>(). A warning message is displayed along with the <tt>fileName</tt> and <tt>errorString</tt> if the file cannot be read or if there is a parse error.</p>
+<pre> void MainWindow::open()
+ {
+     QString fileName =
+             QFileDialog::getOpenFileName(this, tr(&quot;Open Bookmark File&quot;),
+                                          QDir::currentPath(),
+                                          tr(&quot;XBEL Files (*.xbel *.xml)&quot;));
+     if (fileName.isEmpty())
+         return;
+
+     treeWidget-&gt;clear();
+
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly | QFile::Text)) {
+         QMessageBox::warning(this, tr(&quot;QXmlStream Bookmarks&quot;),
+                              tr(&quot;Cannot read file %1:\n%2.&quot;)
+                              .arg(fileName)
+                              .arg(file.errorString()));
+         return;
+     }
+
+     XbelReader reader(treeWidget);
+     if (!reader.read(&amp;file)) {
+         QMessageBox::warning(this, tr(&quot;QXmlStream Bookmarks&quot;),
+                              tr(&quot;Parse error in file %1 at line %2, column %3:\n%4&quot;)
+                              .arg(fileName)
+                              .arg(reader.lineNumber())
+                              .arg(reader.columnNumber())
+                              .arg(reader.errorString()));
+     } else {
+         statusBar()-&gt;showMessage(tr(&quot;File loaded&quot;), 2000);
+     }
+
+ }</pre>
+<p>The <tt>saveAs()</tt> function displays a <a href="qfiledialog.html">QFileDialog</a>, prompting the user for a <tt>fileName</tt> using <a href="qfiledialog.html#getSaveFileName">QFileDialog::getSaveFileName</a>(). Similar to the <tt>open()</tt> function, this function also displays a warning message if the file cannot be written to.</p>
+<pre> void MainWindow::saveAs()
+ {
+     QString fileName =
+             QFileDialog::getSaveFileName(this, tr(&quot;Save Bookmark File&quot;),
+                                          QDir::currentPath(),
+                                          tr(&quot;XBEL Files (*.xbel *.xml)&quot;));
+     if (fileName.isEmpty())
+         return;
+
+     QFile file(fileName);
+     if (!file.open(QFile::WriteOnly | QFile::Text)) {
+         QMessageBox::warning(this, tr(&quot;QXmlStream Bookmarks&quot;),
+                              tr(&quot;Cannot write file %1:\n%2.&quot;)
+                              .arg(fileName)
+                              .arg(file.errorString()));
+         return;
+     }
+
+     XbelWriter writer(treeWidget);
+     if (writer.writeFile(&amp;file))
+         statusBar()-&gt;showMessage(tr(&quot;File saved&quot;), 2000);
+ }</pre>
+<p>The <tt>about()</tt> function displays a <a href="qmessagebox.html">QMessageBox</a> with a brief description of the example.</p>
+<pre> void MainWindow::about()
+ {
+    QMessageBox::about(this, tr(&quot;About QXmlStream Bookmarks&quot;),
+             tr(&quot;The &lt;b&gt;QXmlStream Bookmarks&lt;/b&gt; example demonstrates how to use Qt's &quot;
+                &quot;QXmlStream classes to read and write XML documents.&quot;));
+ }</pre>
+<p>In order to implement the <tt>open()</tt>, <tt>saveAs()</tt>, <tt>exit()</tt>, <tt>about()</tt> and <tt>aboutQt()</tt> functions, we connect them to <a href="qaction.html">QAction</a> objects and add them to the <tt>fileMenu</tt> and <tt>helpMenu</tt>. The connections are as shown below:</p>
+<pre> void MainWindow::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     saveAsAct = new QAction(tr(&quot;&amp;Save As...&quot;), this);
+     saveAsAct-&gt;setShortcut(tr(&quot;Ctrl+S&quot;));
+     connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }</pre>
+<p>The <tt>createMenus()</tt> function creates the <tt>fileMenu</tt> and <tt>helpMenu</tt> and adds the <a href="qaction.html">QAction</a> objects to them in order to create the menu shown in the screenshot below:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/xmlstreamexample-filemenu.png" /></td><td><img src="images/xmlstreamexample-helpmenu.png" /></td></tr>
+</table></p>
+<pre> void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(saveAsAct);
+     fileMenu-&gt;addAction(exitAct);
+
+     menuBar()-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <tt>MainWindow</tt> and invokes the <tt>show()</tt> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MainWindow mainWin;
+     mainWin.show();
+     mainWin.open();
+     return app.exec();
+ }</pre>
+<p>See the <a href="http://pyxml.sourceforge.net/topics/xbel/">XML Bookmark Exchange Language Resource Page</a> for more information about XBEL files.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

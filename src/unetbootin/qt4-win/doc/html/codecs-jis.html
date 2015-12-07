@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/codecs.qdoc -->
+<head>
+  <title>Qt 4.4: ISO 2022-JP (JIS) Text Codec</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">ISO 2022-JP (JIS) Text Codec<br /><span class="subtitle"></span>
+</h1>
+<p>The JIS codec provides conversion to and from ISO 2022-JP.</p>
+<p>The environment variable <tt>UNICODEMAP_JP</tt> can be used to fine-tune the JIS, Shift-JIS, and EUC-JP codecs. The mapping names are as for the Japanese XML working group's <a href="http://www.y-adagio.com/public/standards/tr_xml_jpf/toc.htm">XML Japanese Profile</a>, because it names and explains all the widely used mappings. Here are brief descriptions, written by Serika Kurusugawa:</p>
+<ul>
+<li>&quot;unicode-0.9&quot; or &quot;unicode-0201&quot; for Unicode style. This assumes JISX0201 for 0x00-0x7f. (0.9 is a table version of jisx02xx mapping used for Unicode 1.1&#x2e;)</li>
+<li>&quot;unicode-ascii&quot; This assumes US-ASCII for 0x00-0x7f; some chars (JISX0208 0x2140 and JISX0212 0x2237) are different from Unicode 1.1 to avoid conflict.</li>
+<li>&quot;open-19970715-0201&quot; (&quot;open-0201&quot; for convenience) or &quot;jisx0221-1995&quot; for JISX0221-JISX0201 style. JIS X 0221 is JIS version of Unicode, but a few chars (0x5c, 0x7e, 0x2140, 0x216f, 0x2131) are different from Unicode 1.1&#x2e; This is used when 0x5c is treated as YEN SIGN.</li>
+<li>&quot;open-19970715-ascii&quot; (&quot;open-ascii&quot; for convenience) for JISX0221-ASCII style. This is used when 0x5c is treated as REVERSE SOLIDUS.</li>
+<li>&quot;open-19970715-ms&quot; (&quot;open-ms&quot; for convenience) or &quot;cp932&quot; for Microsoft Windows style. Windows Code Page 932. Some chars (0x2140, 0x2141, 0x2142, 0x215d, 0x2171, 0x2172) are different from Unicode 1.1&#x2e;</li>
+<li>&quot;jdk1.1&#x2e;7&quot; for Sun's JDK style. Same as Unicode 1.1, except that JIS 0x2140 is mapped to UFF3C. Either ASCII or JISX0201 can be used for 0x00-0x7f.</li>
+</ul>
+<p>In addition, the extensions &quot;nec-vdc&quot;, &quot;ibm-vdc&quot; and &quot;udc&quot; are supported.</p>
+<p>For example, if you want to use Unicode style conversion but with NEC's extension, set <tt>UNICODEMAP_JP</tt> to <tt>unicode-0.9, nec-vdc</tt>. (You will probably need to quote that in a shell command.)</p>
+<p>Most of the code here was written by Serika Kurusugawa, a.k&#x2e;a&#x2e; Junji Takagi, and is included in Qt with the author's permission and the grateful thanks of the Trolltech team. Here is the copyright statement for that code:</p>
+<div style="padding: 0.5em; background: #e0e0e0; color: black"><p>Copyright (C) 1999 Serika Kurusugawa. All rights reserved.</p>
+<p>Redistribution and use in source and binary forms, with or without modification, are permitted provided that the following conditions are met:</p>
+<ol type="1">
+<li>Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.</li>
+<li>Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.</li>
+</ol>
+<p>THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS &quot;AS IS&quot;. ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE REGENTS OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.</p>
+</div><p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

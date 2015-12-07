@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/access/qnetworkaccessmanager.cpp -->
+<head>
+  <title>Qt 4.4: QNetworkAccessManager Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QNetworkAccessManager Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QNetworkAccessManager class allows the application to post network requests and receive replies <a href="#details">More...</a></p>
+<pre> #include &lt;QNetworkAccessManager&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qpatternist-uriloader.html">QPatternist::URILoader</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qnetworkaccessmanager-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qnetworkaccessmanager.html#Operation-enum">Operation</a></b> { HeadOperation, GetOperation, PutOperation, PostOperation }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qnetworkaccessmanager.html#QNetworkAccessManager">QNetworkAccessManager</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qnetworkaccessmanager.html#dtor.QNetworkAccessManager">~QNetworkAccessManager</a></b> ()</li>
+<li><div class="fn"/>QNetworkCookieJar * <b><a href="qnetworkaccessmanager.html#cookieJar">cookieJar</a></b> () const</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#get">get</a></b> ( const QNetworkRequest &amp; <i>request</i> )</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#head">head</a></b> ( const QNetworkRequest &amp; <i>request</i> )</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#post">post</a></b> ( const QNetworkRequest &amp; <i>request</i>, QIODevice * <i>data</i> )</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#post-2">post</a></b> ( const QNetworkRequest &amp; <i>request</i>, const QByteArray &amp; <i>data</i> )</li>
+<li><div class="fn"/>QNetworkProxy <b><a href="qnetworkaccessmanager.html#proxy">proxy</a></b> () const</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#put">put</a></b> ( const QNetworkRequest &amp; <i>request</i>, QIODevice * <i>data</i> )</li>
+<li><div class="fn"/>QNetworkReply * <b><a href="qnetworkaccessmanager.html#put-2">put</a></b> ( const QNetworkRequest &amp; <i>request</i>, const QByteArray &amp; <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#setCookieJar">setCookieJar</a></b> ( QNetworkCookieJar * <i>cookieJar</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#setProxy">setProxy</a></b> ( const QNetworkProxy &amp; <i>proxy</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#authenticationRequired">authenticationRequired</a></b> ( QNetworkReply * <i>reply</i>, QAuthenticator * <i>authenticator</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#finished">finished</a></b> ( QNetworkReply * <i>reply</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#proxyAuthenticationRequired">proxyAuthenticationRequired</a></b> ( const QNetworkProxy &amp; <i>proxy</i>, QAuthenticator * <i>authenticator</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaccessmanager.html#sslErrors">sslErrors</a></b> ( QNetworkReply * <i>reply</i>, const QList&lt;QSslError&gt; &amp; <i>errors</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QNetworkReply * <b><a href="qnetworkaccessmanager.html#createRequest">createRequest</a></b> ( Operation <i>op</i>, const QNetworkRequest &amp; <i>req</i>, QIODevice * <i>outgoingData</i> = 0 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QNetworkAccessManager class allows the application to post network requests and receive replies</p>
+<p>The Network Access API is constructed around one QNetworkAccessManager object, which holds the common configuration and settings for the requests sent. It contains the proxy and cache configuration, as well as the signals related to such issues and reply signals.</p>
+<p>Once a QNetworkAccessManager object has been created, the application can send requests over the network through that object. The methods in QNetworkAccessManager take a request and optionally some data to be uploaded and return a <a href="qnetworkreply.html">QNetworkReply</a> object. The returned object is where most of the signals as well as the downloaded data are posted.</p>
+<p>A simple download off the network could be accomplished with:</p>
+<pre>         QNetworkAccessManager *manager = new QNetworkAccessManager(this);
+         connect(manager, SIGNAL(finished(QNetworkReply*)),
+                 this, SLOT(replyFinished(QNetworkReply*)));
+
+         manager-&gt;get(QNetworkRequest(&quot;http://www.trolltech.com&quot;));</pre>
+<p>When the <tt>replyFinished</tt> slot above is called, the parameter it takes is the <a href="qnetworkreply.html">QNetworkReply</a> object containing the downloaded data as well as meta-data (headers, etc.)&#x2e;</p>
+<p>\b Note: The slot is responsible for deleting the object at that point.</p>
+<p>A more involved example, assuming the manager is already existent, can be:</p>
+<pre>         QNetworkRequest request;
+         request.setUrl(&quot;http://www.trolltech.com&quot;);
+         request.setRawHeader(&quot;User-Agent&quot;, &quot;MyOwnBrowser 1.0&quot;);
+
+         QNetworkReply *reply = manager-&gt;get(request);
+         connect(reply, SIGNAL(readyRead()), this, SLOT(slotReadyRead()));
+         connect(reply, SIGNAL(error(QNetworkReply::NetworkError)),
+                 this, SLOT(slotError(QNetworkReply::NetworkError)));
+         connect(reply, SIGNAL(sslErrors(QList&lt;QSslError&gt;)),
+                 this, SLOT(slotSslErrors(QList&lt;QSslError)));</pre>
+<p>See also <a href="qnetworkrequest.html">QNetworkRequest</a>, <a href="qnetworkreply.html">QNetworkReply</a>, and <a href="qnetworkproxy.html">QNetworkProxy</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Operation-enum"></a>enum QNetworkAccessManager::Operation</h3>
+<p>Indicates the operation this reply is processing.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QNetworkAccessManager::HeadOperation</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">retrieve headers operation (created with <a href="qnetworkaccessmanager.html#head">head</a>())</td></tr>
+<tr><td valign="top"><tt>QNetworkAccessManager::GetOperation</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">retrieve headers and download contents (created with <a href="qnetworkaccessmanager.html#get">get</a>())</td></tr>
+<tr><td valign="top"><tt>QNetworkAccessManager::PutOperation</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">upload contents operation (created with <a href="qnetworkaccessmanager.html#put">put</a>())</td></tr>
+<tr><td valign="top"><tt>QNetworkAccessManager::PostOperation</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">send the contents of an HTML form for processing via HTTP POST (created with <a href="qnetworkaccessmanager.html#post">post</a>())</td></tr>
+</table></p>
+<p>See also <a href="qnetworkreply.html#operation">QNetworkReply::operation</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QNetworkAccessManager"></a>QNetworkAccessManager::QNetworkAccessManager ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> object that is the center of the Network Access API and sets <i>parent</i> as the parent object.</p>
+<h3 class="fn"><a name="dtor.QNetworkAccessManager"></a>QNetworkAccessManager::~QNetworkAccessManager ()</h3>
+<p>Destroys the <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> object and frees up any resources. Note that <a href="qnetworkreply.html">QNetworkReply</a> objects that are returned from this class have this object set as their parents, which means that they will be deleted along with it if you don't call <a href="qobject.html#setParent">QObject::setParent</a>() on them.</p>
+<h3 class="fn"><a name="authenticationRequired"></a>void QNetworkAccessManager::authenticationRequired ( <a href="qnetworkreply.html">QNetworkReply</a> * <i>reply</i>, <a href="qauthenticator.html">QAuthenticator</a> * <i>authenticator</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a final server requests authentication before it delivers the requested contents. The slot connected to this signal should fill the credentials for the contents (which can be determined by inspecting the <i>reply</i> object) in the <i>authenticator</i> object.</p>
+<p><a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will cache the credentials internally and will send the same values if the server requires authentication again, without emitting the authenticationRequired() signal. If it rejects the credentials, this signal will be emitted again.</p>
+<p>See also <a href="qnetworkaccessmanager.html#proxyAuthenticationRequired">proxyAuthenticationRequired</a>().</p>
+<h3 class="fn"><a name="cookieJar"></a><a href="qnetworkcookiejar.html">QNetworkCookieJar</a> * QNetworkAccessManager::cookieJar () const</h3>
+<p>Returns the <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> that is used to store cookies obtained from the network as well as cookies that are about to be sent.</p>
+<p>See also <a href="qnetworkaccessmanager.html#setCookieJar">setCookieJar</a>().</p>
+<h3 class="fn"><a name="createRequest"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::createRequest ( <a href="qnetworkaccessmanager.html#Operation-enum">Operation</a> <i>op</i>, const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>req</i>, <a href="qiodevice.html">QIODevice</a> * <i>outgoingData</i> = 0 )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns a new <a href="qnetworkreply.html">QNetworkReply</a> object to handle the operation <i>op</i> and request <i>req</i>. The device <i>outgoingData</i> is always 0 for Get and Head requests, but is the value passed to <a href="qnetworkaccessmanager.html#post">post</a>() and <a href="qnetworkaccessmanager.html#put">put</a>() in those operations (the <a href="qbytearray.html">QByteArray</a> variants will pass a <a href="qbuffer.html">QBuffer</a> object).</p>
+<p>The default implementation calls <a href="qnetworkcookiejar.html#cookiesForUrl">QNetworkCookieJar::cookiesForUrl</a>() on the cookie jar set with <a href="qnetworkaccessmanager.html#setCookieJar">setCookieJar</a>() to obtain the cookies to be sent to the remote server.</p>
+<p>The returned object must be in an open state.</p>
+<h3 class="fn"><a name="finished"></a>void QNetworkAccessManager::finished ( <a href="qnetworkreply.html">QNetworkReply</a> * <i>reply</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a pending network reply is finished. The <i>reply</i> parameter will contain a pointer to the reply that has just finished. This signal is emitted in tandem with the <a href="qnetworkreply.html#finished">QNetworkReply::finished</a>() signal.</p>
+<p>See <a href="qnetworkreply.html#finished">QNetworkReply::finished</a>() for information on the status that the object will be in.</p>
+<p>See also <a href="qnetworkreply.html#finished">QNetworkReply::finished</a>() and <a href="qnetworkreply.html#error">QNetworkReply::error</a>().</p>
+<h3 class="fn"><a name="get"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::get ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i> )</h3>
+<p>This function is used to post a request to obtain the contents of the target <i>request</i>. It will cause the contents to be downloaded, along with the headers associated with it. It returns a new <a href="qnetworkreply.html">QNetworkReply</a> object opened for reading which emits its <a href="qiodevice.html#readyRead">QIODevice::readyRead</a>() signal whenever new data arrives.</p>
+<p>See also <a href="qnetworkaccessmanager.html#post">post</a>() and <a href="qnetworkaccessmanager.html#put">put</a>().</p>
+<h3 class="fn"><a name="head"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::head ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i> )</h3>
+<p>This function is used to post a request to obtain the network headers for <i>request</i>. It takes its name after the HTTP request associated (HEAD). It returns a new <a href="qnetworkreply.html">QNetworkReply</a> object which will contain such headers.</p>
+<h3 class="fn"><a name="post"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::post ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i>, <a href="qiodevice.html">QIODevice</a> * <i>data</i> )</h3>
+<p>This function is used to send an HTTP POST request to the destination specified by <i>request</i>. The contents of the <i>data</i> device will be uploaded to the server.</p>
+<p><i>data</i> must be opened for reading when this function is called and must remain valid until the <a href="qnetworkaccessmanager.html#finished">finished</a>() signal is emitted for this reply.</p>
+<p>The returned <a href="qnetworkreply.html">QNetworkReply</a> object will be open for reading and will contain the reply sent by the server to the POST request.</p>
+<p>Note: sending a POST request on protocols other than HTTP and HTTPS is undefined and will probably fail.</p>
+<p>See also <a href="qnetworkaccessmanager.html#get">get</a>() and <a href="qnetworkaccessmanager.html#put">put</a>().</p>
+<h3 class="fn"><a name="post-2"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::post ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function sends the contents of the <i>data</i> byte array to the destination specified by <i>request</i>.</p>
+<h3 class="fn"><a name="proxy"></a><a href="qnetworkproxy.html">QNetworkProxy</a> QNetworkAccessManager::proxy () const</h3>
+<p>Returns the <a href="qnetworkproxy.html">QNetworkProxy</a> that the requests sent using this <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> object will use. By default, <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> uses the application global proxy settings.</p>
+<p>See also <a href="qnetworkaccessmanager.html#setProxy">setProxy</a>() and <a href="qnetworkaccessmanager.html#proxyAuthenticationRequired">proxyAuthenticationRequired</a>().</p>
+<h3 class="fn"><a name="proxyAuthenticationRequired"></a>void QNetworkAccessManager::proxyAuthenticationRequired ( const <a href="qnetworkproxy.html">QNetworkProxy</a> &amp; <i>proxy</i>, <a href="qauthenticator.html">QAuthenticator</a> * <i>authenticator</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a proxy requests authentication and <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> cannot find a valid, cached credential. The slot connected to this signal should fill in the credentials for the proxy <i>proxy</i> in the <i>authenticator</i> object.</p>
+<p><a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will cache the credentials internally. The next time the proxy requests authentication, <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will automatically send the same credential without emitting the proxyAuthenticationRequired signal again.</p>
+<p>If the proxy rejects the credentials, <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> will emit the signal again.</p>
+<p>See also <a href="qnetworkaccessmanager.html#proxy">proxy</a>(), <a href="qnetworkaccessmanager.html#setProxy">setProxy</a>(), and <a href="qnetworkaccessmanager.html#authenticationRequired">authenticationRequired</a>().</p>
+<h3 class="fn"><a name="put"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::put ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i>, <a href="qiodevice.html">QIODevice</a> * <i>data</i> )</h3>
+<p>This function is used to upload the contents of <i>data</i> to the destination <i>request</i>.</p>
+<p><i>data</i> must be opened for reading when this function is called and must remain valid until the <a href="qnetworkaccessmanager.html#finished">finished</a>() signal is emitted for this reply.</p>
+<p>The returned <a href="qnetworkreply.html">QNetworkReply</a> object will be open for reply, but whether anything will be available for reading is protocol dependent. For HTTP, the server may send a small HTML page indicating the upload was successful (or not). Other protocols will probably have content in their replies.</p>
+<p>For HTTP, this request will send a PUT request, which most servers do not allow. Form upload mechanisms, including that of uploading files through HTML forms, use the POST mechanism.</p>
+<p>See also <a href="qnetworkaccessmanager.html#get">get</a>() and <a href="qnetworkaccessmanager.html#post">post</a>().</p>
+<h3 class="fn"><a name="put-2"></a><a href="qnetworkreply.html">QNetworkReply</a> * QNetworkAccessManager::put ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function sends the contents of the <i>data</i> byte array to the destination specified by <i>request</i>.</p>
+<h3 class="fn"><a name="setCookieJar"></a>void QNetworkAccessManager::setCookieJar ( <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> * <i>cookieJar</i> )</h3>
+<p>Sets the cookie jar that is used by all request sent using this <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> object to be <i>cookieJar</i>. Use this function to set the cookie jar object to a class that implements further features, like saving the cookies to permanent storage.</p>
+<p>Note that <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> takes ownership of the object <i>cookieJar</i>.</p>
+<p><a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> by default does not implement any cookie policy of its own: it accepts all cookies sent by the server, as long as they are well formed and meet the minimum security requirements (cookie domain matches the request's and cookie path matches the request's). In order to implement your own security policy, override the <a href="qnetworkcookiejar.html#cookiesForUrl">QNetworkCookieJar::cookiesForUrl</a>() and <a href="qnetworkcookiejar.html#setCookiesFromUrl">QNetworkCookieJar::setCookiesFromUrl</a>() virtual functions. Those functions are called by <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> when it detects a new cookie.</p>
+<p>See also <a href="qnetworkaccessmanager.html#cookieJar">cookieJar</a>(), <a href="qnetworkcookiejar.html#cookiesForUrl">QNetworkCookieJar::cookiesForUrl</a>(), and <a href="qnetworkcookiejar.html#setCookiesFromUrl">QNetworkCookieJar::setCookiesFromUrl</a>().</p>
+<h3 class="fn"><a name="setProxy"></a>void QNetworkAccessManager::setProxy ( const <a href="qnetworkproxy.html">QNetworkProxy</a> &amp; <i>proxy</i> )</h3>
+<p>Sets the proxy to be used in future requests to be <i>proxy</i>. This does not affect requests that have already been sent. The <a href="qnetworkaccessmanager.html#proxyAuthenticationRequired">proxyAuthenticationRequired</a>() signal will be emitted if the proxy requests authentication.</p>
+<p>See also <a href="qnetworkaccessmanager.html#proxy">proxy</a>() and <a href="qnetworkaccessmanager.html#proxyAuthenticationRequired">proxyAuthenticationRequired</a>().</p>
+<h3 class="fn"><a name="sslErrors"></a>void QNetworkAccessManager::sslErrors ( <a href="qnetworkreply.html">QNetworkReply</a> * <i>reply</i>, const <a href="qlist.html">QList</a>&lt;<a href="qsslerror.html">QSslError</a>&gt; &amp; <i>errors</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the SSL/TLS session encountered errors during the set up, including certificate verification errors. The <i>errors</i> parameter contains the list of errors and <i>reply</i> is the <a href="qnetworkreply.html">QNetworkReply</a> that is encountering these errors.</p>
+<p>To indicate that the errors are not fatal and that the connection should proceed, the <a href="qnetworkreply.html#ignoreSslErrors">QNetworkReply::ignoreSslErrors</a>() function should be called from the slot connected to this signal. If it is not called, the SSL session will be torn down before any data is exchanged (including the URL).</p>
+<p>This signal can be used to display an error message to the user indicating that security may be compromised and display the SSL settings (see sslConfiguration() to obtain it). If the user decides to proceed after analyzing the remote certificate, the slot should call ignoreSslErrors().</p>
+<p>See also <a href="qsslsocket.html#sslErrors">QSslSocket::sslErrors</a>(), <a href="qnetworkreply.html#sslErrors">QNetworkReply::sslErrors</a>(), <a href="qnetworkreply.html#sslConfiguration">QNetworkReply::sslConfiguration</a>(), and <a href="qnetworkreply.html#ignoreSslErrors">QNetworkReply::ignoreSslErrors</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

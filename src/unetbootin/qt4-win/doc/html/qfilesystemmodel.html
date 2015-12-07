@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qfilesystemmodel.cpp -->
+<head>
+  <title>Qt 4.4: QFileSystemModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFileSystemModel Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFileSystemModel class provides a data model for the local filesystem. <a href="#details">More...</a></p>
+<pre> #include &lt;QFileSystemModel&gt;</pre><p>Inherits <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qfilesystemmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qfilesystemmodel.html#Roles-enum">Roles</a></b> { FileIconRole, FilePathRole, FileNameRole, FilePermissions }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfilesystemmodel.html#nameFilterDisables-prop">nameFilterDisables</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qfilesystemmodel.html#readOnly-prop">readOnly</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qfilesystemmodel.html#resolveSymlinks-prop">resolveSymlinks</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfilesystemmodel.html#QFileSystemModel">QFileSystemModel</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qfilesystemmodel.html#dtor.QFileSystemModel">~QFileSystemModel</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qfilesystemmodel.html#dropMimeData">dropMimeData</a></b> ( const QMimeData * <i>data</i>, Qt::DropAction <i>action</i>, int <i>row</i>, int <i>column</i>, const QModelIndex &amp; <i>parent</i> )</li>
+<li><div class="fn"/>QIcon <b><a href="qfilesystemmodel.html#fileIcon">fileIcon</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QFileInfo <b><a href="qfilesystemmodel.html#fileInfo">fileInfo</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qfilesystemmodel.html#fileName">fileName</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qfilesystemmodel.html#filePath">filePath</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QDir::Filters <b><a href="qfilesystemmodel.html#filter">filter</a></b> () const</li>
+<li><div class="fn"/>QFileIconProvider * <b><a href="qfilesystemmodel.html#iconProvider">iconProvider</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qfilesystemmodel.html#index">index</a></b> ( const QString &amp; <i>path</i>, int <i>column</i> = 0 ) const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#isDir">isDir</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#readOnly-prop">isReadOnly</a></b> () const</li>
+<li><div class="fn"/>QDateTime <b><a href="qfilesystemmodel.html#lastModified">lastModified</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>virtual QMimeData * <b><a href="qfilesystemmodel.html#mimeData">mimeData</a></b> ( const QModelIndexList &amp; <i>indexes</i> ) const</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qfilesystemmodel.html#mimeTypes">mimeTypes</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qfilesystemmodel.html#mkdir">mkdir</a></b> ( const QModelIndex &amp; <i>parent</i>, const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>QVariant <b><a href="qfilesystemmodel.html#myComputer">myComputer</a></b> ( int <i>role</i> = Qt::DisplayRole ) const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#nameFilterDisables-prop">nameFilterDisables</a></b> () const</li>
+<li><div class="fn"/>QStringList <b><a href="qfilesystemmodel.html#nameFilters">nameFilters</a></b> () const</li>
+<li><div class="fn"/>QFile::Permissions <b><a href="qfilesystemmodel.html#permissions">permissions</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#remove">remove</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#resolveSymlinks-prop">resolveSymlinks</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfilesystemmodel.html#rmdir">rmdir</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QDir <b><a href="qfilesystemmodel.html#rootDirectory">rootDirectory</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qfilesystemmodel.html#rootPath">rootPath</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#setFilter">setFilter</a></b> ( QDir::Filters <i>filters</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#setIconProvider">setIconProvider</a></b> ( QFileIconProvider * <i>provider</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#nameFilterDisables-prop">setNameFilterDisables</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#setNameFilters">setNameFilters</a></b> ( const QStringList &amp; <i>filters</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#readOnly-prop">setReadOnly</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#resolveSymlinks-prop">setResolveSymlinks</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>QModelIndex <b><a href="qfilesystemmodel.html#setRootPath">setRootPath</a></b> ( const QString &amp; <i>newPath</i> )</li>
+<li><div class="fn"/>qint64 <b><a href="qfilesystemmodel.html#size">size</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qfilesystemmodel.html#type">type</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#fileRenamed">fileRenamed</a></b> ( const QString &amp; <i>path</i>, const QString &amp; <i>oldName</i>, const QString &amp; <i>newName</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemmodel.html#rootPathChanged">rootPathChanged</a></b> ( const QString &amp; <i>newPath</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFileSystemModel class provides a data model for the local filesystem.</p>
+<p>This class provides access to the local filesystem, providing functions for renaming and removing files and directories, and for creating new directories. In the simplest case, it can be used with a suitable display widget as part of a browser or filter.</p>
+<p>QFileSystemModel will not fetch any files or directories until setRootPath is called. This will prevent any unnecessary querying on the file system until that point such as listing the drives on Windows.</p>
+<p>Unlike the <a href="qdirmodel.html">QDirModel</a>, QFileSystemModel uses a separate thread to populate itself so it will not cause the main thread to hang as the file system is being queried. Calls to <a href="qabstractitemmodel.html#rowCount">rowCount</a>() will return 0 until the model populates a directory.</p>
+<p>QFileSystemModel keeps a cache with file information. The cache is automatically kept up to date using the <a href="qfilesystemwatcher.html">QFileSystemWatcher</a>.</p>
+<p>QFileSystemModel can be accessed using the standard interface provided by <a href="qabstractitemmodel.html">QAbstractItemModel</a>, but it also provides some convenience functions that are specific to a directory model. The <a href="qfilesystemmodel.html#fileInfo">fileInfo</a>(), <a href="qfilesystemmodel.html#isDir">isDir</a>(), <a href="qobject-qt3.html#name">name</a>(), and path() functions provide information about the underlying files and directories related to items in the model. Directories can be created and removed using <a href="qfilesystemmodel.html#mkdir">mkdir</a>(), <a href="qfilesystemmodel.html#rmdir">rmdir</a>().</p>
+<p>See also <a href="model-view-model.html">Model Classes</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Roles-enum"></a>enum QFileSystemModel::Roles</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QFileSystemModel::FileIconRole</tt></td><td align="center" valign="top"><tt>Qt::DecorationRole</tt></td></tr>
+<tr><td valign="top"><tt>QFileSystemModel::FilePathRole</tt></td><td align="center" valign="top"><tt>Qt::UserRole + 1</tt></td></tr>
+<tr><td valign="top"><tt>QFileSystemModel::FileNameRole</tt></td><td align="center" valign="top"><tt>Qt::UserRole + 2</tt></td></tr>
+<tr><td valign="top"><tt>QFileSystemModel::FilePermissions</tt></td><td align="center" valign="top"><tt>Qt::UserRole + 3</tt></td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="nameFilterDisables-prop"></a>nameFilterDisables : bool</h3>
+<p>This property holds whether files that don't pass the name filter are hidden or disabled.</p>
+<p>This property is true by default</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool nameFilterDisables () const</b></li>
+<li><div class="fn"/><b>void setNameFilterDisables ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="readOnly-prop"></a>readOnly : bool</h3>
+<p>This property holds whether the directory model allows writing to the file system.</p>
+<p>If this property is set to false, the directory model will allow renaming, copying and deleting of files and directories.</p>
+<p>This property is true by default</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isReadOnly () const</b></li>
+<li><div class="fn"/><b>void setReadOnly ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="resolveSymlinks-prop"></a>resolveSymlinks : bool</h3>
+<p>This property holds whether the directory model should resolve symbolic links.</p>
+<p>This is only relevant on operating systems that support symbolic links.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool resolveSymlinks () const</b></li>
+<li><div class="fn"/><b>void setResolveSymlinks ( bool <i>enable</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFileSystemModel"></a>QFileSystemModel::QFileSystemModel ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a file system model with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QFileSystemModel"></a>QFileSystemModel::~QFileSystemModel ()</h3>
+<p>Destroys this file system model.</p>
+<h3 class="fn"><a name="dropMimeData"></a>bool QFileSystemModel::dropMimeData ( const <a href="qmimedata.html">QMimeData</a> * <i>data</i>, <a href="qt.html#DropAction-enum">Qt::DropAction</a> <i>action</i>, int <i>row</i>, int <i>column</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Handles the <i>data</i> supplied by a drag and drop operation that ended with the given <i>action</i> over the row in the model specified by the <i>row</i> and <i>column</i> and by the <i>parent</i> index.</p>
+<p>Reimplemented from <a href="qabstractitemmodel.html#dropMimeData">QAbstractItemModel</a>.</p>
+<p>See also <a href="qabstractitemmodel.html#supportedDropActions">supportedDropActions</a>().</p>
+<h3 class="fn"><a name="fileIcon"></a><a href="qicon.html">QIcon</a> QFileSystemModel::fileIcon ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the icon for the item stored in the model under the given <i>index</i>.</p>
+<h3 class="fn"><a name="fileInfo"></a><a href="qfileinfo.html">QFileInfo</a> QFileSystemModel::fileInfo ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the <a href="qfileinfo.html">QFileInfo</a> for the item stored in the model under the given <i>index</i>.</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QFileSystemModel::fileName ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the file name for the item stored in the model under the given <i>index</i>.</p>
+<h3 class="fn"><a name="filePath"></a><a href="qstring.html">QString</a> QFileSystemModel::filePath ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the path of the item stored in the model under the <i>index</i> given.</p>
+<h3 class="fn"><a name="fileRenamed"></a>void QFileSystemModel::fileRenamed ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, const <a href="qstring.html">QString</a> &amp; <i>oldName</i>, const <a href="qstring.html">QString</a> &amp; <i>newName</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a file with the <i>oldName</i> is successfully renamed to <i>newName</i>. The file is located in in the directory <i>path</i>.</p>
+<h3 class="fn"><a name="filter"></a><a href="qdir.html#Filter-enum">QDir::Filters</a> QFileSystemModel::filter () const</h3>
+<p>Returns the filter specification for the directory model.</p>
+<p>See also <a href="qfilesystemmodel.html#setFilter">setFilter</a>() and <a href="qdir.html#Filter-enum">QDir::Filters</a>.</p>
+<h3 class="fn"><a name="iconProvider"></a><a href="qfileiconprovider.html">QFileIconProvider</a> * QFileSystemModel::iconProvider () const</h3>
+<p>Returns the file icon provider for this directory model.</p>
+<p>See also <a href="qfilesystemmodel.html#setIconProvider">setIconProvider</a>().</p>
+<h3 class="fn"><a name="index"></a><a href="qmodelindex.html">QModelIndex</a> QFileSystemModel::index ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, int <i>column</i> = 0 ) const</h3>
+<p>Returns the model item index for the given <i>path</i> and <i>column</i>.</p>
+<h3 class="fn"><a name="isDir"></a>bool QFileSystemModel::isDir ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns true if the model item <i>index</i> represents a directory; otherwise returns false.</p>
+<h3 class="fn"><a name="lastModified"></a><a href="qdatetime.html">QDateTime</a> QFileSystemModel::lastModified ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the date and time when <i>index</i> was last modified.</p>
+<h3 class="fn"><a name="mimeData"></a><a href="qmimedata.html">QMimeData</a> * QFileSystemModel::mimeData ( const <a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> &amp; <i>indexes</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns an object that contains a serialized description of the specified <i>indexes</i>. The format used to describe the items corresponding to the indexes is obtained from the <a href="qfilesystemmodel.html#mimeTypes">mimeTypes</a>() function.</p>
+<p>If the list of indexes is empty, 0 is returned rather than a serialized empty list.</p>
+<p>Reimplemented from <a href="qabstractitemmodel.html#mimeData">QAbstractItemModel</a>.</p>
+<h3 class="fn"><a name="mimeTypes"></a><a href="qstringlist.html">QStringList</a> QFileSystemModel::mimeTypes () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a list of MIME types that can be used to describe a list of items in the model.</p>
+<p>Reimplemented from <a href="qabstractitemmodel.html#mimeTypes">QAbstractItemModel</a>.</p>
+<h3 class="fn"><a name="mkdir"></a><a href="qmodelindex.html">QModelIndex</a> QFileSystemModel::mkdir ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Create a directory with the <i>name</i> in the <i>parent</i> model index.</p>
+<h3 class="fn"><a name="myComputer"></a><a href="qvariant.html">QVariant</a> QFileSystemModel::myComputer ( int <i>role</i> = Qt::DisplayRole ) const</h3>
+<p>Returns the data stored under the given <i>role</i> for the item &quot;My Computer&quot;.</p>
+<p>See also <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>.</p>
+<h3 class="fn"><a name="nameFilters"></a><a href="qstringlist.html">QStringList</a> QFileSystemModel::nameFilters () const</h3>
+<p>Returns a list of filters applied to the names in the model.</p>
+<p>See also <a href="qfilesystemmodel.html#setNameFilters">setNameFilters</a>().</p>
+<h3 class="fn"><a name="permissions"></a><a href="qfile.html#Permission-enum">QFile::Permissions</a> QFileSystemModel::permissions ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the complete OR-ed together combination of <a href="qfile.html#Permission-enum">QFile::Permission</a> for the <i>index</i>.</p>
+<h3 class="fn"><a name="remove"></a>bool QFileSystemModel::remove ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Removes the model item <i>index</i> from the file system model and <b>deletes the corresponding file from the file system</b>, returning true if successful. If the item cannot be removed, false is returned.</p>
+<p><b>Warning:</b> This function deletes files from the file system; it does <b>not</b> move them to a location where they can be recovered.</p>
+<p>See also <a href="qfilesystemmodel.html#rmdir">rmdir</a>().</p>
+<h3 class="fn"><a name="rmdir"></a>bool QFileSystemModel::rmdir ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Removes the directory corresponding to the model item <i>index</i> in the file system model and <b>deletes the corresponding directory from the file system</b>, returning true if successful. If the directory cannot be removed, false is returned.</p>
+<p><b>Warning:</b> This function deletes directories from the file system; it does <b>not</b> move them to a location where they can be recovered.</p>
+<p>See also <a href="qfilesystemmodel.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="rootDirectory"></a><a href="qdir.html">QDir</a> QFileSystemModel::rootDirectory () const</h3>
+<p>The currently set directory</p>
+<p>See also <a href="qfilesystemmodel.html#rootPath">rootPath</a>().</p>
+<h3 class="fn"><a name="rootPath"></a><a href="qstring.html">QString</a> QFileSystemModel::rootPath () const</h3>
+<p>The currently set root path</p>
+<p>See also <a href="qfilesystemmodel.html#setRootPath">setRootPath</a>() and <a href="qfilesystemmodel.html#rootDirectory">rootDirectory</a>().</p>
+<h3 class="fn"><a name="rootPathChanged"></a>void QFileSystemModel::rootPathChanged ( const <a href="qstring.html">QString</a> &amp; <i>newPath</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the root path has been changed to a <i>newPath</i>.</p>
+<h3 class="fn"><a name="setFilter"></a>void QFileSystemModel::setFilter ( <a href="qdir.html#Filter-enum">QDir::Filters</a> <i>filters</i> )</h3>
+<p>Sets the directory model's filter to that specified by <i>filters</i>.</p>
+<p>Note that the filter you set should always include the <a href="qdir.html#Filter-enum">QDir::AllDirs</a> enum value, otherwise <a href="qfilesystemmodel.html">QFileSystemModel</a> won't be able to read the directory structure.</p>
+<p>See also <a href="qfilesystemmodel.html#filter">filter</a>() and <a href="qdir.html#Filter-enum">QDir::Filters</a>.</p>
+<h3 class="fn"><a name="setIconProvider"></a>void QFileSystemModel::setIconProvider ( <a href="qfileiconprovider.html">QFileIconProvider</a> * <i>provider</i> )</h3>
+<p>Sets the <i>provider</i> of file icons for the directory model.</p>
+<p>See also <a href="qfilesystemmodel.html#iconProvider">iconProvider</a>().</p>
+<h3 class="fn"><a name="setNameFilters"></a>void QFileSystemModel::setNameFilters ( const <a href="qstringlist.html">QStringList</a> &amp; <i>filters</i> )</h3>
+<p>Sets the name <i>filters</i> to apply against the existing files.</p>
+<p>See also <a href="qfilesystemmodel.html#nameFilters">nameFilters</a>().</p>
+<h3 class="fn"><a name="setRootPath"></a><a href="qmodelindex.html">QModelIndex</a> QFileSystemModel::setRootPath ( const <a href="qstring.html">QString</a> &amp; <i>newPath</i> )</h3>
+<p>Sets the directory that is being watched by the model to <i>newPath</i>. If the path is changed the model will be reset.</p>
+<p>See also <a href="qfilesystemmodel.html#rootPath">rootPath</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QFileSystemModel::size ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the size in bytes of <i>index</i>. If the file does not exist, 0 is returned.</p>
+<h3 class="fn"><a name="type"></a><a href="qstring.html">QString</a> QFileSystemModel::type ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns the type of file <i>index</i> such as &quot;Directory&quot; or &quot;JPEG file&quot;.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

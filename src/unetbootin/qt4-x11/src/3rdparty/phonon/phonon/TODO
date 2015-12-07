@@ -1,0 +1,31 @@
+- add a metadata function that returns a QVariant instead of a QString - useful for QImage or other binary (QByteArray) content
+
+- QImage VideoWidget::screenshot(): ordinary screenshot doesn't work with XV says Christoph. And VideoDataOutput
+  would be major overkill.
+
+- consider whether to add a signal to notify when the information for
+  availableAudioStreams/availableVideoStreams/availableSubtitleStreams
+  is available
+
+- look at collaboration with other projects, e.g. pavucontrol, gsmartmix
+
+- consider Player dbus interface in MediaObject
+
+- add global setting to pause video when it's not visible
+
+- add a way to request a specific version (>=) from the Backend, so that known to be buggy Backends aren't used
+
+- Video Overlays (OSD) like: show a rectangle as a play symbol, show the position in
+  the file as something like [IIIIIIIII------], and so on
+
+- http://bugs.kde.org/show_bug.cgi?id=147494
+
+- frame/sample precise positioning (cue in/out)
+
+- different timecode support like SMPTE
+
+- Codec interface - at least for audio
+
+- Speed factor for playback (useful mostly for audio - but video still needs to stay in sync)
+
+- tell the platform plugin which backend was loaded (if it doesn't do it itself) so that it can load KDE translations for the backend

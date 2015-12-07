@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtopiacore-architecture.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux Architecture</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux Architecture<br /><span class="subtitle"></span>
+</h1>
+<p>A <a href="qt-embedded.html">Qt for Embedded Linux</a> application requires a server application to be running, or to be the server application itself. Any <a href="qt-embedded.html">Qt for Embedded Linux</a> application can act as the server. When more than one application are running, the subsequent applications connect to the existing server application as clients.</p>
+<p>The server and client processes have different responsibilities: The server process manages pointer handling, character input, and screen output. In addition, the server controls the appearance of the screen cursor and the screen saver. The client process performs all application specific operations.</p>
+<p>The server application is represented by an instance of the QWSServer class, while the client applications are represented by instances of the QWSClient class. On each side, there are several classes performing the various operations.</p>
+<p align="center"><img src="images/qt-embedded-architecture2.png" /></p><p>All system generated events, including keyboard and mouse events, are passed to the server application which then propagates the event to the appropiate client.</p>
+<p>When rendering, the default behavior is for each client to render its widgets into memory while the server is responsible for putting the contents of the memory onto the screen. But when the hardware is known and well defined, as is often the case with software for embedded devices, it may be useful for the clients to manipulate and control the underlying hardware directly. <a href="qt-embedded.html">Qt for Embedded Linux</a> provides two different approaches to achieve this behavior, see the graphics rendering section below for details.</p>
+<ul><li><a href="#client-server-communication">Client/Server Communication</a></li>
+<li><a href="#pointer-handling-layer">Pointer Handling Layer</a></li>
+<li><a href="#character-input-layer">Character Input Layer</a></li>
+<li><a href="#graphics-rendering">Graphics Rendering</a></li>
+<li><a href="#drawing-on-screen">Drawing on Screen</a></li>
+</ul>
+<a name="client-server-communication"></a>
+<h2>Client/Server Communication</h2>
+<p>The running applications continuously alter the appearance of the screen by adding and removing widgets. The server maintains information about each top-level window in a corresponding QWSWindow object.</p>
+<p>Whenever the server receives an event, it queries its stack of top-level windows to find the window containing the event's position. Each window can identify the client application that created it, and returns its ID to the server upon request. Finally, the server forwards the event, encapsulated by an instance of the QWSEvent class, to the appropiate client.</p>
+<p align="center"><img src="images/qt-embedded-clientservercommunication.png" /></p><p>If an input method is installed, it is used as a filter between the server and the client application. Derive from the QWSInputMethod class to implement custom input methods, and use the server's setCurrentInputMethod() function to install it. In addition, it is possible to implement global, low-level filters on key events using the QWSServer::KeyboardFilter class; this can be used to implement things like advanced power management suspended from a button without having to filter for it in all applications.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>UNIX Domain Socket</th></tr></thead>
+<tr valign="top" class="odd"><td><p align="center"><img src="images/qt-embedded-client.png" /></p><p>The server communicates with the client applications over the UNIX domain socket. You can retrieve direct access to all the events a client receives from the server, by reimplementing <a href="qapplication.html">QApplication</a>'s <a href="qapplication.html#qwsEventFilter">qwsEventFilter()</a> function.</p>
+</td></tr>
+</table></p>
+<p>The clients (and the server) communicate with each other using the QCopChannel class. QCOP is a many-to-many communication protocol for transferring messages on various channels. A channel is identified by a name, and anyone who wants to can listen to it. The QCOP protocol allows clients to communicate both within the same address space and between different processes.</p>
+<a name="pointer-handling-layer"></a>
+<h2>Pointer Handling Layer</h2>
+<ul>
+<li>QWSMouseHandler</li>
+<li>QMouseDriverPlugin</li>
+<li>QMouseDriverFactory</li>
+</ul>
+<p>The mouse driver (represented by an instance of the QWSMouseHandler class) is loaded by the server application when it starts running, using Qt's <a href="plugins-howto.html">plugin system</a>.</p>
+<p align="center"><img src="images/qt-embedded-pointerhandlinglayer.png" /></p><p>A mouse driver receives mouse events from the device and encapsulates each event with an instance of the QWSEvent class which it then passes to the server.</p>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> provides ready-made drivers for several mouse protocols, see the <a href="qt-embedded-pointer.html">pointer handling</a> documentation for details. Custom mouse drivers can be implemented by subclassing the QWSMouseHandler class and creating a mouse driver plugin. The default implementation of the QMouseDriverFactory class will automatically detect the plugin, loading the driver into the server application at runtime.</p>
+<p>In addition to the generic mouse handler, <a href="qt-embedded.html">Qt for Embedded Linux</a> provides a calibrated mouse handler. Use the QWSCalibratedMouseHandler class as the base class when the system device does not have a fixed mapping between device and screen coordinates and/or produces noisy events, e.g&#x2e; a touchscreen.</p>
+<p>See also: <a href="qt-embedded-pointer.html">Qt for Embedded Linux Pointer Handling</a> and <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<a name="character-input-layer"></a>
+<h2>Character Input Layer</h2>
+<ul>
+<li>QWSKeyboardHandler</li>
+<li>QKbdDriverPlugin</li>
+<li>QKbdDriverFactory</li>
+</ul>
+<p>The keyboard driver (represented by an instance of the QWSKeyboardHandler class) is loaded by the server application when it starts running, using Qt's <a href="plugins-howto.html">plugin system</a>.</p>
+<p align="center"><img src="images/qt-embedded-characterinputlayer.png" /></p><p>A keyboard driver receives keyboard events from the device and encapsulates each event with an instance of the QWSEvent class which it then passes to the server.</p>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> provides ready-made drivers for several keyboard protocols, see the <a href="qt-embedded-charinput.html">character input</a> documentation for details. Custom keyboard drivers can be implemented by subclassing the QWSKeyboardHandler class and creating a keyboard driver plugin. The default implementation of the QKbdDriverFactory class will automatically detect the plugin, loading the driver into the server application at run-time.</p>
+<p>See also: <a href="qt-embedded-charinput.html">Qt for Embedded Linux Character Input</a> and <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<a name="graphics-rendering"></a>
+<h2>Graphics Rendering</h2>
+<ul>
+<li><a href="qapplication.html">QApplication</a></li>
+<li>QDecoration</li>
+<li>QDecorationPlugin</li>
+<li>QDecorationFactory</li>
+</ul>
+<p>The default behavior is for each client to render its widgets as well as its decorations into memory, while the server copies the memory content to the device's framebuffer.</p>
+<p>Whenever a client receives an event that alters any of its widgets, the application updates the relevant parts of its memory buffer:</p>
+<p align="center"><img src="images/qt-embedded-clientrendering.png" /></p><p>The decoration is loaded by the client application when it starts running (using Qt's <a href="plugins-howto.html">plugin system</a>), and can be customized by deriving from the QDecoration class and creating a decoration plugin. The default implementation of the QDecorationFactory class will automatically detect the plugin, loading the decoration into the application at runtime. Call the <a href="qapplication.html#qwsSetDecoration">QApplication::qwsSetDecoration</a>() function to actually apply the given decoration to an application.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Direct Painting <a name="direct-painting"></a></th></tr></thead>
+<tr valign="top" class="odd"><td>It is possible for the clients to manipulate and control the underlying hardware directly. There are two ways of achieving this: The first approach is to set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> window attribute for each widget, the other is to use the QDirectPainter class to reserve a region of the framebuffer.<p align="center"><img src="images/qt-embedded-setwindowattribute.png" /></p><p>By setting the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> attribute, the application renders the widget directly onto the screen and the affected region will not be modified by the screen driver <i>unless</i> another window with a higher focus requests (parts of) the same region. Note that if you want to render all of an application's widgets directly on screen, it might be easier to set the <a href="qt-embedded-envvars.html#qt-onscreen-paint">QT_ONSCREEN_PAINT</a> environment variable.</p>
+<p align="center"><img src="images/qt-embedded-reserveregion.png" /></p><p>Using QDirectPainter, on the other hand, provides a complete control over the reserved region, i.e&#x2e;, the screen driver will never modify the given region.</p>
+<p>To draw on a region reserved by a QDirectPainter instance, the application must get hold of a pointer to the framebuffer. In general, a pointer to the framebuffer can be retrieved using the QDirectPainter::frameBuffer() function. But note that if the current screen has subscreens, you must query the screen driver instead to identify the correct subscreen. A pointer to the current screen driver can always be retrieved using the static QScreen::instance() function. Then use QScreen's subScreenIndexAt() and subScreens() functions to access the correct subscreen, and the subscreen's base() function to retrieve a pointer to the framebuffer.</p>
+<p>Note that <a href="qt-embedded.html">Qt for Embedded Linux</a> also provides the QWSEmbedWidget class, making it possible to embed the reserved region (i.e&#x2e;, the QDirectPainter object) in a regular widget.</p>
+</td></tr>
+</table></p>
+<a name="drawing-on-screen"></a>
+<h2>Drawing on Screen</h2>
+<ul>
+<li>QScreen</li>
+<li>QScreenDriverPlugin</li>
+<li>QScreenDriverFactory</li>
+</ul>
+<p>When a screen update is required, the server runs through all the top-level windows that intersect with the region that is about to be updated, and ensures that the associated clients have updated their memory buffer. Then the server uses the screen driver (represented by an instance of the QScreen class) to copy the content of the memory to the screen.</p>
+<p>The screen driver is loaded by the server application when it starts running, using Qt's plugin system. <a href="qt-embedded.html">Qt for Embedded Linux</a> provides ready-made drivers for several screen protocols, see the <a href="qt-embedded-displaymanagement.html">display management</a> documentation for details. Custom screen drivers can be implemented by subclassing the QScreen class and creating a screen driver plugin. The default implementation of the QScreenDriverFactory class will automatically detect the plugin, loading the driver into the server application at run-time.</p>
+<p align="center"><img src="images/qt-embedded-drawingonscreen.png" /></p><p>To locate the relevant parts of memory, the driver is provided with the list of top-level windows that intersect with the given region. Associated with each of the top-level windows there is an instance of the QWSWindowSurface class representing the drawing area of the window. The driver uses these objects to retrieve pointers to the various memory blocks. Finally, the screen driver composes the surface images before copying the updated region to the framebuffer.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Accelerated Graphics</th></tr></thead>
+<tr valign="top" class="odd"><td>In <a href="qt-embedded.html">Qt for Embedded Linux</a>, painting is a pure software implementation, but (starting with Qt 4.2) it is possible to add an accelerated graphics driver to take advantage of available hardware resources.<p align="center"><img src="images/qt-embedded-accelerateddriver.png" /></p><p>The clients render each window onto a corresponding window surface object using Qt's paint system, and then store the surface in memory. The screen driver accesses the memory and composes the surface images before it copies them to the screen as explained above.</p>
+<p>To add an accelerated graphics driver you must create a custom screen and implement a custom raster paint engine (<a href="qt-embedded.html">Qt for Embedded Linux</a> uses a raster-based paint engine to implement the painting operations). Then you must create a custom paint device that is aware of your paint engine, a custom window surface that knows about your paint device, and make your screen able to recognize your window surface.</p>
+<p>See the <a href="qt-embedded-accel.html">accelerated graphics driver</a> documentation for details.</p>
+</td></tr>
+</table></p>
+<p>See also: <a href="qt-embedded-displaymanagement.html">Qt for Embedded Linux Display Management</a> and <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

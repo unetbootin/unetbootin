@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/text/q3textstream.cpp -->
+<head>
+  <title>Qt 4.4: Q3TextStream Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TextStream Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TextStream class provides basic functions for reading and writing text using a <a href="qiodevice.html">QIODevice</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TextStream&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qtextstream">Porting to Qt 4</a> for more information.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="q3textstream-members.html">List of all members, including inherited members</a></li>
+<li><a href="q3textstream-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3textstream.html#Encoding-enum">Encoding</a></b> { Locale, Latin1, Unicode, UnicodeNetworkOrder, ..., UnicodeUTF8 }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3textstream.html#Q3TextStream">Q3TextStream</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3textstream.html#Q3TextStream-2">Q3TextStream</a></b> ( QIODevice * <i>iod</i> )</li>
+<li><div class="fn"/><b><a href="q3textstream.html#Q3TextStream-3">Q3TextStream</a></b> ( QString * <i>str</i>, int <i>filemode</i> )</li>
+<li><div class="fn"/><b><a href="q3textstream.html#Q3TextStream-5">Q3TextStream</a></b> ( QByteArray &amp; <i>a</i>, int <i>mode</i> )</li>
+<li><div class="fn"/><b><a href="q3textstream.html#Q3TextStream-6">Q3TextStream</a></b> ( FILE * <i>fh</i>, int <i>mode</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3textstream.html#dtor.Q3TextStream">~Q3TextStream</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3textstream.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>QTextCodec * <b><a href="q3textstream.html#codec">codec</a></b> ()</li>
+<li><div class="fn"/>QIODevice * <b><a href="q3textstream.html#device">device</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#fill">fill</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#fill-2">fill</a></b> ( int <i>f</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#flags-2">flags</a></b> ( int <i>f</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#precision">precision</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#precision-2">precision</a></b> ( int <i>p</i> )</li>
+<li><div class="fn"/>QString <b><a href="q3textstream.html#read">read</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="q3textstream.html#readLine">readLine</a></b> ()</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#readRawBytes">readRawBytes</a></b> ( char * <i>s</i>, uint <i>len</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#setCodec">setCodec</a></b> ( QTextCodec * <i>codec</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#setDevice">setDevice</a></b> ( QIODevice * <i>iod</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#setEncoding">setEncoding</a></b> ( Encoding <i>e</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#setf">setf</a></b> ( int <i>bits</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#setf-2">setf</a></b> ( int <i>bits</i>, int <i>mask</i> )</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#skipWhiteSpace">skipWhiteSpace</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3textstream.html#unsetDevice">unsetDevice</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#unsetf">unsetf</a></b> ( int <i>bits</i> )</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#width">width</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3textstream.html#width-2">width</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#writeRawBytes">writeRawBytes</a></b> ( const char * <i>s</i>, uint <i>len</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt">operator&lt;&lt;</a></b> ( QChar <i>c</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-2">operator&lt;&lt;</a></b> ( char <i>c</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-3">operator&lt;&lt;</a></b> ( signed short <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-4">operator&lt;&lt;</a></b> ( unsigned short <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-5">operator&lt;&lt;</a></b> ( signed int <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-6">operator&lt;&lt;</a></b> ( unsigned int <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-7">operator&lt;&lt;</a></b> ( signed long <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-8">operator&lt;&lt;</a></b> ( unsigned long <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-9">operator&lt;&lt;</a></b> ( float <i>f</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-10">operator&lt;&lt;</a></b> ( double <i>f</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-11">operator&lt;&lt;</a></b> ( const char * <i>s</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-12">operator&lt;&lt;</a></b> ( const Q3CString &amp; <i>s</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-13">operator&lt;&lt;</a></b> ( const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-lt-lt-14">operator&lt;&lt;</a></b> ( void * <i>ptr</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt">operator&gt;&gt;</a></b> ( QChar &amp; <i>c</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-2">operator&gt;&gt;</a></b> ( char &amp; <i>c</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-3">operator&gt;&gt;</a></b> ( signed short &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-4">operator&gt;&gt;</a></b> ( unsigned short &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-5">operator&gt;&gt;</a></b> ( signed int &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-6">operator&gt;&gt;</a></b> ( unsigned int &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-7">operator&gt;&gt;</a></b> ( signed long &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-8">operator&gt;&gt;</a></b> ( unsigned long &amp; <i>i</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-9">operator&gt;&gt;</a></b> ( float &amp; <i>f</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-10">operator&gt;&gt;</a></b> ( double &amp; <i>f</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-11">operator&gt;&gt;</a></b> ( char * <i>s</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-12">operator&gt;&gt;</a></b> ( QString &amp; <i>str</i> )</li>
+<li><div class="fn"/>Q3TextStream &amp; <b><a href="q3textstream.html#operator-gt-gt-13">operator&gt;&gt;</a></b> ( Q3CString &amp; <i>str</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TextStream class provides basic functions for reading and writing text using a <a href="qiodevice.html">QIODevice</a>.</p>
+<p>The text stream class has a functional interface that is very similar to that of the standard C++ iostream class.</p>
+<p>Qt provides several global functions similar to the ones in iostream:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Function</th><th>Meaning</th></tr></thead>
+<tr valign="top" class="odd"><td>bin</td><td>sets the Q3TextStream to read/write binary numbers</td></tr>
+<tr valign="top" class="even"><td>oct</td><td>sets the Q3TextStream to read/write octal numbers</td></tr>
+<tr valign="top" class="odd"><td>dec</td><td>sets the Q3TextStream to read/write decimal numbers</td></tr>
+<tr valign="top" class="even"><td>hex</td><td>sets the Q3TextStream to read/write hexadecimal numbers</td></tr>
+<tr valign="top" class="odd"><td>endl</td><td>forces a line break</td></tr>
+<tr valign="top" class="even"><td>flush</td><td>forces the <a href="qiodevice.html">QIODevice</a> to flush any buffered data</td></tr>
+<tr valign="top" class="odd"><td>ws</td><td>eats any available whitespace (on input)</td></tr>
+<tr valign="top" class="even"><td>reset</td><td>resets the Q3TextStream to its default mode (see <a href="q3textstream.html#reset">reset</a>())</td></tr>
+<tr valign="top" class="odd"><td>qSetW(int)</td><td>sets the <a href="q3textstream.html#width">field width</a> to the given argument</td></tr>
+<tr valign="top" class="even"><td>qSetFill(int)</td><td>sets the <a href="q3textstream.html#fill">fill character</a> to the given argument</td></tr>
+<tr valign="top" class="odd"><td>qSetPrecision(int)</td><td>sets the <a href="q3textstream.html#precision">precision</a> to the given argument</td></tr>
+</table></p>
+<p><b>Warning:</b> By default Q3TextStream will automatically detect whether integers in the stream are in decimal, octal, hexadecimal or binary format when reading from the stream. In particular, a leading '0' signifies octal, i.e&#x2e; the sequence &quot;0100&quot; will be interpreted as 64.</p>
+<p>The Q3TextStream class reads and writes text; it is not appropriate for dealing with binary data (but <a href="qdatastream.html">QDataStream</a> is).</p>
+<p>By default, output of Unicode text (i.e&#x2e; <a href="qstring.html">QString</a>) is done using the local 8-bit encoding. This can be changed using the <a href="q3textstream.html#setEncoding">setEncoding</a>() method. For input, the Q3TextStream will auto-detect standard Unicode &quot;byte order marked&quot; text files; otherwise the local 8-bit encoding is used.</p>
+<p>The <a href="qiodevice.html">QIODevice</a> is set in the constructor, or later using <a href="q3textstream.html#setDevice">setDevice</a>(). If the end of the input is reached <a href="q3textstream.html#atEnd">atEnd</a>() returns TRUE. Data can be read into variables of the appropriate type using the operator&gt;&gt;() overloads, or read in its entirety into a single string using <a href="q3textstream.html#read">read</a>(), or read a line at a time using <a href="q3textstream.html#readLine">readLine</a>(). Whitespace can be skipped over using <a href="q3textstream.html#skipWhiteSpace">skipWhiteSpace</a>(). You can set flags for the stream using <a href="q3textstream.html#flags">flags</a>() or <a href="q3textstream.html#setf">setf</a>(). The stream also supports <a href="q3textstream.html#width">width</a>(), <a href="q3textstream.html#precision">precision</a>() and <a href="q3textstream.html#fill">fill</a>(); use <a href="q3textstream.html#reset">reset</a>() to reset the defaults.</p>
+<p>See also <a href="qdatastream.html">QDataStream</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Encoding-enum"></a>enum Q3TextStream::Encoding</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Q3TextStream::Locale</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::Latin1</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::Unicode</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::UnicodeNetworkOrder</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::UnicodeReverse</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::RawUnicode</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>Q3TextStream::UnicodeUTF8</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+</table></p>
+<p>See <a href="q3textstream.html#setEncoding">setEncoding</a>() for an explanation of the encodings.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TextStream"></a>Q3TextStream::Q3TextStream ()</h3>
+<p>Constructs a data stream that has no IO device.</p>
+<h3 class="fn"><a name="Q3TextStream-2"></a>Q3TextStream::Q3TextStream ( <a href="qiodevice.html">QIODevice</a> * <i>iod</i> )</h3>
+<p>Constructs a text stream that uses the IO device <i>iod</i>.</p>
+<h3 class="fn"><a name="Q3TextStream-3"></a>Q3TextStream::Q3TextStream ( <a href="qstring.html">QString</a> * <i>str</i>, int <i>filemode</i> )</h3>
+<p>Constructs a text stream that operates on the Unicode <a href="qstring.html">QString</a>, <i>str</i>, through an internal device. The <i>filemode</i> argument is passed to the device's open() function; see <a href="qiodevice-qt3.html#mode">QIODevice::mode</a>().</p>
+<p>If you set an encoding or codec with <a href="q3textstream.html#setEncoding">setEncoding</a>() or <a href="q3textstream.html#setCodec">setCodec</a>(), this setting is ignored for text streams that operate on <a href="qstring.html">QString</a>.</p>
+<p>Example:</p>
+<pre>     QString str;
+     Q3TextStream ts( &amp;str, IO_WriteOnly );
+     ts &lt;&lt; &quot;pi = &quot; &lt;&lt; 3.14; // str == &quot;pi = 3.14&quot;</pre>
+<p>Writing data to the text stream will modify the contents of the string. The string will be expanded when data is written beyond the end of the string. Note that the string will not be truncated:</p>
+<pre>     QString str = &quot;pi = 3.14&quot;;
+     Q3TextStream ts( &amp;str, IO_WriteOnly );
+     ts &lt;&lt;  &quot;2+2 = &quot; &lt;&lt; 2+2; // str == &quot;2+2 = 414&quot;</pre>
+<p>Note that because <a href="qstring.html">QString</a> is Unicode, you should not use <a href="q3textstream.html#readRawBytes">readRawBytes</a>() or <a href="q3textstream.html#writeRawBytes">writeRawBytes</a>() on such a stream.</p>
+<h3 class="fn"><a name="Q3TextStream-5"></a>Q3TextStream::Q3TextStream ( <a href="qbytearray.html">QByteArray</a> &amp; <i>a</i>, int <i>mode</i> )</h3>
+<p>Constructs a text stream that operates on the byte array, <i>a</i>, through an internal <a href="qbuffer.html">QBuffer</a> device. The <i>mode</i> argument is passed to the device's open() function; see <a href="qiodevice-qt3.html#mode">QIODevice::mode</a>().</p>
+<p>Example:</p>
+<pre>     QByteArray array;
+     Q3TextStream ts( array, IO_WriteOnly );
+     ts &lt;&lt; &quot;pi = &quot; &lt;&lt; 3.14 &lt;&lt; '\0'; // array == &quot;pi = 3.14&quot;</pre>
+<p>Writing data to the text stream will modify the contents of the array. The array will be expanded when data is written beyond the end of the string.</p>
+<p>Same example, using a <a href="qbuffer.html">QBuffer</a>:</p>
+<pre>     QByteArray array;
+     QBuffer buf( array );
+     buf.open( IO_WriteOnly );
+     Q3TextStream ts( &amp;buf );
+     ts &lt;&lt; &quot;pi = &quot; &lt;&lt; 3.14 &lt;&lt; '\0'; // array == &quot;pi = 3.14&quot;
+     buf.close();</pre>
+<h3 class="fn"><a name="Q3TextStream-6"></a>Q3TextStream::Q3TextStream ( FILE * <i>fh</i>, int <i>mode</i> )</h3>
+<p>Constructs a text stream that operates on an existing file handle <i>fh</i> through an internal <a href="qfile.html">QFile</a> device. The <i>mode</i> argument is passed to the device's open() function; see <a href="qiodevice-qt3.html#mode">QIODevice::mode</a>().</p>
+<p>Note that if you create a <a href="q3textstream.html">Q3TextStream</a> <tt>cout</tt> or another name that is also used for another variable of a different type, some linkers may confuse the two variables, which will often cause crashes.</p>
+<h3 class="fn"><a name="dtor.Q3TextStream"></a>Q3TextStream::~Q3TextStream ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the text stream.</p>
+<p>The destructor does not affect the current IO device.</p>
+<h3 class="fn"><a name="atEnd"></a>bool Q3TextStream::atEnd () const</h3>
+<p>Returns TRUE if the IO device has reached the end position (end of the stream or file) or if there is no IO device set; otherwise returns FALSE.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qiodevice.html#atEnd">QIODevice::atEnd</a>().</p>
+<h3 class="fn"><a name="codec"></a><a href="qtextcodec.html">QTextCodec</a> * Q3TextStream::codec ()</h3>
+<p>Returns the codec actually used for this stream.</p>
+<p>If Unicode is automatically detected in input, a codec with <a href="qtextcodec.html#name">name()</a> &quot;ISO-10646-UCS-2&quot; is returned.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setCodec">setCodec</a>().</p>
+<h3 class="fn"><a name="device"></a><a href="qiodevice.html">QIODevice</a> * Q3TextStream::device () const</h3>
+<p>Returns the IO device currently set.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setDevice">setDevice</a>() and <a href="q3textstream.html#unsetDevice">unsetDevice</a>().</p>
+<h3 class="fn"><a name="fill"></a>int Q3TextStream::fill () const</h3>
+<p>Returns the fill character. The default value is ' ' (space).</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="fill-2"></a>int Q3TextStream::fill ( int <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the fill character to <i>f</i>. Returns the previous fill character.</p>
+<h3 class="fn"><a name="flags"></a>int Q3TextStream::flags () const</h3>
+<p>Returns the current stream flags. The default value is 0.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Flag</th><th>Meaning</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>skipws</tt></td><td>Not currently used; whitespace always skipped</td></tr>
+<tr valign="top" class="even"><td><tt>left</tt></td><td>Numeric fields are left-aligned</td></tr>
+<tr valign="top" class="odd"><td><tt>right</tt></td><td>Not currently used (by default, numerics are right-aligned)</td></tr>
+<tr valign="top" class="even"><td><tt>internal</tt></td><td>Puts any padding spaces between +/- and value</td></tr>
+<tr valign="top" class="odd"><td><tt>bin</tt></td><td>Output <i>and</i> input only in binary</td></tr>
+<tr valign="top" class="even"><td><tt>oct</tt></td><td>Output <i>and</i> input only in octal</td></tr>
+<tr valign="top" class="odd"><td><tt>dec</tt></td><td>Output <i>and</i> input only in decimal</td></tr>
+<tr valign="top" class="even"><td><tt>hex</tt></td><td>Output <i>and</i> input only in hexadecimal</td></tr>
+<tr valign="top" class="odd"><td><tt>showbase</tt></td><td>Annotates numeric outputs with 0b, 0, or 0x if in <tt>bin</tt>, <tt>oct</tt>, or <tt>hex</tt> format</td></tr>
+<tr valign="top" class="even"><td><tt>showpoint</tt></td><td>Not currently used</td></tr>
+<tr valign="top" class="odd"><td><tt>uppercase</tt></td><td>Uses 0B and 0X rather than 0b and 0x</td></tr>
+<tr valign="top" class="even"><td><tt>showpos</tt></td><td>Shows + for positive numeric values</td></tr>
+<tr valign="top" class="odd"><td><tt>scientific</tt></td><td>Uses scientific notation for floating point values</td></tr>
+<tr valign="top" class="even"><td><tt>fixed</tt></td><td>Uses fixed-point notation for floating point values</td></tr>
+</table></p>
+<p>Note that unless <tt>bin</tt>, <tt>oct</tt>, <tt>dec</tt>, or <tt>hex</tt> is set, the input base is octal if the value starts with 0, hexadecimal if it starts with 0x, binary if it starts with 0b, and decimal otherwise.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setf">setf</a>() and <a href="q3textstream.html#unsetf">unsetf</a>().</p>
+<h3 class="fn"><a name="flags-2"></a>int Q3TextStream::flags ( int <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the stream flags to <i>f</i>. Returns the previous stream flags.</p>
+<p>See also <a href="q3textstream.html#setf">setf</a>(), <a href="q3textstream.html#unsetf">unsetf</a>(), and <a href="q3textstream.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="precision"></a>int Q3TextStream::precision () const</h3>
+<p>Returns the precision. The default value is 6.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="precision-2"></a>int Q3TextStream::precision ( int <i>p</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the precision to <i>p</i>. Returns the previous precision setting.</p>
+<h3 class="fn"><a name="read"></a><a href="qstring.html">QString</a> Q3TextStream::read ()</h3>
+<p>Reads the entire stream from the current position, and returns a string containing the text.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#readLine">readLine</a>().</p>
+<h3 class="fn"><a name="readLine"></a><a href="qstring.html">QString</a> Q3TextStream::readLine ()</h3>
+<p>Reads a line from the stream and returns a string containing the text.</p>
+<p>The returned string does not contain any trailing newline or carriage return. Note that this is different from <a href="qiodevice.html#readLine">QIODevice::readLine</a>(), which does not strip the newline at the end of the line.</p>
+<p>On EOF you will get a <a href="qstring.html">QString</a> that is null. On reading an empty line the returned <a href="qstring.html">QString</a> is empty but not null.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qiodevice.html#readLine">QIODevice::readLine</a>().</p>
+<h3 class="fn"><a name="readRawBytes"></a>Q3TextStream &amp; Q3TextStream::readRawBytes ( char * <i>s</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>len</i> )</h3>
+<p>Reads <i>len</i> bytes from the stream into <i>s</i> and returns a reference to the stream.</p>
+<p>The buffer <i>s</i> must be preallocated.</p>
+<p>Note that no encoding is done by this function.</p>
+<p><b>Warning:</b> The behavior of this function is undefined unless the stream's encoding is set to Unicode or Latin1.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qiodevice-qt3.html#readBlock">QIODevice::readBlock</a>().</p>
+<h3 class="fn"><a name="reset"></a>void Q3TextStream::reset ()</h3>
+<p>Resets the text stream.</p>
+<ul>
+<li>All flags are set to 0.</li>
+<li>The field width is set to 0.</li>
+<li>The fill character is set to ' ' (Space).</li>
+<li>The precision is set to 6.</li>
+</ul>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setf">setf</a>(), <a href="q3textstream.html#width">width</a>(), <a href="q3textstream.html#fill">fill</a>(), and <a href="q3textstream.html#precision">precision</a>().</p>
+<h3 class="fn"><a name="setCodec"></a>void Q3TextStream::setCodec ( <a href="qtextcodec.html">QTextCodec</a> * <i>codec</i> )</h3>
+<p>Sets the codec for this stream to <i>codec</i>. Will not try to autodetect Unicode.</p>
+<p>Note that this function should be called before any data is read to/written from the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setEncoding">setEncoding</a>() and <a href="q3textstream.html#codec">codec</a>().</p>
+<h3 class="fn"><a name="setDevice"></a>void Q3TextStream::setDevice ( <a href="qiodevice.html">QIODevice</a> * <i>iod</i> )</h3>
+<p>Sets the IO device to <i>iod</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#device">device</a>() and <a href="q3textstream.html#unsetDevice">unsetDevice</a>().</p>
+<h3 class="fn"><a name="setEncoding"></a>void Q3TextStream::setEncoding ( <a href="q3textstream.html#Encoding-enum">Encoding</a> <i>e</i> )</h3>
+<p>Sets the encoding of this stream to <i>e</i>, where <i>e</i> is one of the following values:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Encoding</th><th>Meaning</th></tr></thead>
+<tr valign="top" class="odd"><td>Locale</td><td>Uses local file format (Latin1 if locale is not set), but autodetecting Unicode(utf16) on input.</td></tr>
+<tr valign="top" class="even"><td>Unicode</td><td>Uses Unicode(utf16) for input and output. Output will be written in the order most efficient for the current platform (i.e&#x2e; the order used internally in <a href="qstring.html">QString</a>).</td></tr>
+<tr valign="top" class="odd"><td><a href="q3textstream.html#Encoding-enum">UnicodeUTF8</a></td><td>Using Unicode(utf8) for input and output. If you use it for input it will autodetect utf16 and use it instead of utf8.</td></tr>
+<tr valign="top" class="even"><td>Latin1</td><td>ISO-8859-1. Will not autodetect utf16.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3textstream.html#Encoding-enum">UnicodeNetworkOrder</a></td><td>Uses network order Unicode(utf16) for input and output. Useful when reading Unicode data that does not start with the byte order marker.</td></tr>
+<tr valign="top" class="even"><td><a href="q3textstream.html#Encoding-enum">UnicodeReverse</a></td><td>Uses reverse network order Unicode(utf16) for input and output. Useful when reading Unicode data that does not start with the byte order marker or when writing data that should be read by buggy Windows applications.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3textstream.html#Encoding-enum">RawUnicode</a></td><td>Like Unicode, but does not write the byte order marker nor does it auto-detect the byte order. Useful only when writing to non-persistent storage used by a single process.</td></tr>
+</table></p>
+<p><tt>Locale</tt> and all Unicode encodings, except <tt>RawUnicode</tt>, will look at the first two bytes in an input stream to determine the byte order. The initial byte order marker will be stripped off before data is read.</p>
+<p>Note that this function should be called before any data is read to or written from the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setCodec">setCodec</a>().</p>
+<h3 class="fn"><a name="setf"></a>int Q3TextStream::setf ( int <i>bits</i> )</h3>
+<p>Sets the stream flag bits <i>bits</i>. Returns the previous stream flags.</p>
+<p>Equivalent to <tt>flags( flags() | bits )</tt>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#unsetf">unsetf</a>().</p>
+<h3 class="fn"><a name="setf-2"></a>int Q3TextStream::setf ( int <i>bits</i>, int <i>mask</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the stream flag bits <i>bits</i> with a bit mask <i>mask</i>. Returns the previous stream flags.</p>
+<p>Equivalent to <tt>flags( (flags() &amp; ~mask) | (bits &amp; mask) )</tt>.</p>
+<p>See also <a href="q3textstream.html#setf">setf</a>() and <a href="q3textstream.html#unsetf">unsetf</a>().</p>
+<h3 class="fn"><a name="skipWhiteSpace"></a>void Q3TextStream::skipWhiteSpace ()</h3>
+<p>Positions the read pointer at the first non-whitespace character.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="unsetDevice"></a>void Q3TextStream::unsetDevice ()</h3>
+<p>Unsets the IO device. Equivalent to setDevice( 0 ).</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#device">device</a>() and <a href="q3textstream.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="unsetf"></a>int Q3TextStream::unsetf ( int <i>bits</i> )</h3>
+<p>Clears the stream flag bits <i>bits</i>. Returns the previous stream flags.</p>
+<p>Equivalent to <tt>flags( flags() &amp; ~mask )</tt>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3textstream.html#setf">setf</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3TextStream::width () const</h3>
+<p>Returns the field width. The default value is 0.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="width-2"></a>int Q3TextStream::width ( int <i>w</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the field width to <i>w</i>. Returns the previous field width.</p>
+<h3 class="fn"><a name="writeRawBytes"></a>Q3TextStream &amp; Q3TextStream::writeRawBytes ( const char * <i>s</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>len</i> )</h3>
+<p>Writes the <i>len</i> bytes from <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>Note that no encoding is done by this function.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qiodevice-qt3.html#writeBlock">QIODevice::writeBlock</a>().</p>
+<h3 class="fn"><a name="operator-lt-lt"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( <a href="qchar.html">QChar</a> <i>c</i> )</h3>
+<p>Writes character <tt>char</tt> to the stream and returns a reference to the stream.</p>
+<p>The character <i>c</i> is assumed to be Latin1 encoded independent of the Encoding set for the <a href="q3textstream.html">Q3TextStream</a>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-2"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( char <i>c</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes character <i>c</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-3"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( signed short <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a <tt>short</tt> integer <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-4"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( unsigned short <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an <tt>unsigned</tt> <tt>short</tt> integer <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-5"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( signed int <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an <tt>int</tt> <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-6"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( unsigned int <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an <tt>unsigned</tt> <tt>int</tt> <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-7"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( signed long <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a <tt>long</tt> <tt>int</tt> <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-8"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( unsigned long <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes an <tt>unsigned</tt> <tt>long</tt> <tt>int</tt> <i>i</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-9"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( float <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a <tt>float</tt> <i>f</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-10"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( double <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a <tt>double</tt> <i>f</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-11"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( const char * <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a string to the stream and returns a reference to the stream.</p>
+<p>The string <i>s</i> is assumed to be Latin1 encoded independent of the Encoding set for the <a href="q3textstream.html">Q3TextStream</a>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-12"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( const <a href="q3cstring.html">Q3CString</a> &amp; <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>The string <i>s</i> is assumed to be Latin1 encoded independent of the Encoding set for the <a href="q3textstream.html">Q3TextStream</a>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-13"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( const <a href="qstring.html">QString</a> &amp; <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes <i>s</i> to the stream and returns a reference to the stream.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-lt-lt-14"></a>Q3TextStream &amp; Q3TextStream::operator&lt;&lt; ( void * <i>ptr</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes a pointer to the stream and returns a reference to the stream.</p>
+<p>The <i>ptr</i> is output as an unsigned long hexadecimal integer.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="operator-gt-gt"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( <a href="qchar.html">QChar</a> &amp; <i>c</i> )</h3>
+<p>Reads a char <i>c</i> from the stream and returns a reference to the stream. Note that whitespace is <i>not</i> skipped.</p>
+<h3 class="fn"><a name="operator-gt-gt-2"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( char &amp; <i>c</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a char <i>c</i> from the stream and returns a reference to the stream. Note that whitespace is skipped.</p>
+<h3 class="fn"><a name="operator-gt-gt-3"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( signed short &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed <tt>short</tt> integer <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-4"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( unsigned short &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned <tt>short</tt> integer <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-5"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( signed int &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed <tt>int</tt> <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-6"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( unsigned int &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned <tt>int</tt> <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-7"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( signed long &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a signed <tt>long</tt> int <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-8"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( unsigned long &amp; <i>i</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads an unsigned <tt>long</tt> int <i>i</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-9"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( float &amp; <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a <tt>float</tt> <i>f</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-10"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( double &amp; <i>f</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a <tt>double</tt> <i>f</i> from the stream and returns a reference to the stream. See <a href="q3textstream.html#flags">flags</a>() for an explanation of the expected input format.</p>
+<h3 class="fn"><a name="operator-gt-gt-11"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( char * <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a &quot;word&quot; from the stream into <i>s</i> and returns a reference to the stream.</p>
+<p>A word consists of characters for which isspace() returns FALSE.</p>
+<h3 class="fn"><a name="operator-gt-gt-12"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( <a href="qstring.html">QString</a> &amp; <i>str</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a &quot;word&quot; from the stream into <i>str</i> and returns a reference to the stream.</p>
+<p>A word consists of characters for which isspace() returns FALSE.</p>
+<h3 class="fn"><a name="operator-gt-gt-13"></a>Q3TextStream &amp; Q3TextStream::operator&gt;&gt; ( <a href="q3cstring.html">Q3CString</a> &amp; <i>str</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a &quot;word&quot; from the stream into <i>str</i> and returns a reference to the stream.</p>
+<p>A word consists of characters for which isspace() returns FALSE.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

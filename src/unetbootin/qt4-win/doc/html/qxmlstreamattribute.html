@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/xml/qxmlstream.cpp -->
+<head>
+  <title>Qt 4.4: QXmlStreamAttribute Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlStreamAttribute Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QXmlStreamAttribute class represents a single XML attribute <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlStreamAttribute&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qxmlstreamattribute-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlstreamattribute.html#QXmlStreamAttribute">QXmlStreamAttribute</a></b> ()</li>
+<li><div class="fn"/><b><a href="qxmlstreamattribute.html#QXmlStreamAttribute-2">QXmlStreamAttribute</a></b> ( const QString &amp; <i>qualifiedName</i>, const QString &amp; <i>value</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamattribute.html#QXmlStreamAttribute-3">QXmlStreamAttribute</a></b> ( const QString &amp; <i>namespaceUri</i>, const QString &amp; <i>name</i>, const QString &amp; <i>value</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamattribute.html#QXmlStreamAttribute-4">QXmlStreamAttribute</a></b> ( const QXmlStreamAttribute &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamattribute.html#dtor.QXmlStreamAttribute">~QXmlStreamAttribute</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamattribute.html#isDefault">isDefault</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamattribute.html#name">name</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamattribute.html#namespaceUri">namespaceUri</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamattribute.html#prefix">prefix</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamattribute.html#qualifiedName">qualifiedName</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamattribute.html#value">value</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamattribute.html#operator-not-eq">operator!=</a></b> ( const QXmlStreamAttribute &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QXmlStreamAttribute &amp; <b><a href="qxmlstreamattribute.html#operator-eq">operator=</a></b> ( const QXmlStreamAttribute &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamattribute.html#operator-eq-eq">operator==</a></b> ( const QXmlStreamAttribute &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlStreamAttribute class represents a single XML attribute</p>
+<p>An attribute consists of an optionally empty <a href="qxmlstreamattribute.html#namespaceUri">namespaceUri</a>(), a <a href="qxmlstreamattribute.html#name">name</a>(), a <a href="qxmlstreamattribute.html#value">value</a>(), and an <a href="qxmlstreamattribute.html#isDefault">isDefault</a>() attribute.</p>
+<p>The raw XML attribute name is returned as <a href="qxmlstreamattribute.html#qualifiedName">qualifiedName</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlStreamAttribute"></a>QXmlStreamAttribute::QXmlStreamAttribute ()</h3>
+<p>Creates an empty attribute.</p>
+<h3 class="fn"><a name="QXmlStreamAttribute-2"></a>QXmlStreamAttribute::QXmlStreamAttribute ( const <a href="qstring.html">QString</a> &amp; <i>qualifiedName</i>, const <a href="qstring.html">QString</a> &amp; <i>value</i> )</h3>
+<p>Constructs an attribute with qualified name <i>qualifiedName</i> and value <i>value</i>.</p>
+<h3 class="fn"><a name="QXmlStreamAttribute-3"></a>QXmlStreamAttribute::QXmlStreamAttribute ( const <a href="qstring.html">QString</a> &amp; <i>namespaceUri</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qstring.html">QString</a> &amp; <i>value</i> )</h3>
+<p>Constructs an attribute in the namespace described with <i>namespaceUri</i> with <i>name</i> and value <i>value</i>.</p>
+<h3 class="fn"><a name="QXmlStreamAttribute-4"></a>QXmlStreamAttribute::QXmlStreamAttribute ( const QXmlStreamAttribute &amp; <i>other</i> )</h3>
+<p>Creates a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QXmlStreamAttribute"></a>QXmlStreamAttribute::~QXmlStreamAttribute ()</h3>
+<p>Destructs an attribute.</p>
+<h3 class="fn"><a name="isDefault"></a>bool QXmlStreamAttribute::isDefault () const</h3>
+<p>Returns true if the parser added this attribute with a default value following an ATTLIST declaration in the DTD; otherwise returns false.</p>
+<h3 class="fn"><a name="name"></a><a href="qstringref.html">QStringRef</a> QXmlStreamAttribute::name () const</h3>
+<p>Returns the attribute's local name.</p>
+<h3 class="fn"><a name="namespaceUri"></a><a href="qstringref.html">QStringRef</a> QXmlStreamAttribute::namespaceUri () const</h3>
+<p>Returns the attribute's resolved namespaceUri, or an empty string reference if the attribute does not have a defined namespace.</p>
+<h3 class="fn"><a name="prefix"></a><a href="qstringref.html">QStringRef</a> QXmlStreamAttribute::prefix () const</h3>
+<p>Returns the attribute's namespace prefix.</p>
+<p>See also <a href="qxmlstreamattribute.html#name">name</a>() and <a href="qxmlstreamattribute.html#qualifiedName">qualifiedName</a>().</p>
+<h3 class="fn"><a name="qualifiedName"></a><a href="qstringref.html">QStringRef</a> QXmlStreamAttribute::qualifiedName () const</h3>
+<p>Returns the attribute's qualified name.</p>
+<p>A qualified name is the raw name of an attribute in the XML data. It consists of the namespace <a href="qxmlstreamattribute.html#prefix">prefix</a>(), followed by colon, followed by the attribute's local <a href="qxmlstreamattribute.html#name">name</a>(). Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use qualifiedName(), but the resolved <a href="qxmlstreamattribute.html#namespaceUri">namespaceUri</a>() and the attribute's local <a href="qxmlstreamattribute.html#name">name</a>().</p>
+<h3 class="fn"><a name="value"></a><a href="qstringref.html">QStringRef</a> QXmlStreamAttribute::value () const</h3>
+<p>Returns the attribute's value.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QXmlStreamAttribute::operator!= ( const QXmlStreamAttribute &amp; <i>other</i> ) const</h3>
+<p>Compares this attribute with <i>other</i> and returns true if they are not equal; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QXmlStreamAttribute &amp; QXmlStreamAttribute::operator= ( const QXmlStreamAttribute &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i> to this attribute.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QXmlStreamAttribute::operator== ( const QXmlStreamAttribute &amp; <i>other</i> ) const</h3>
+<p>Compares this attribute with <i>other</i> and returns true if they are equal; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

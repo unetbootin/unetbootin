@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/trolltech/qdbusviewer" >
+        <file>images/qdbusviewer-128.png</file>
+        <file>images/qdbusviewer.png</file>
+    </qresource>
+</RCC>

@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3widgetstack.cpp -->
+<head>
+  <title>Qt 4.4: Q3WidgetStack Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3WidgetStack Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3WidgetStack class provides a stack of widgets of which only the top widget is user-visible. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3WidgetStack&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qwidgetstack">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3frame.html">Q3Frame</a>.</p>
+<ul>
+<li><a href="q3widgetstack-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3widgetstack.html#Q3WidgetStack">Q3WidgetStack</a></b> ( QWidget * <i>parent</i>, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3widgetstack.html#dtor.Q3WidgetStack">~Q3WidgetStack</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3widgetstack.html#addWidget">addWidget</a></b> ( QWidget * <i>w</i>, int <i>id</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="q3widgetstack.html#id">id</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3widgetstack.html#removeWidget">removeWidget</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="q3widgetstack.html#visibleWidget">visibleWidget</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="q3widgetstack.html#widget">widget</a></b> ( int <i>id</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3widgetstack.html#raiseWidget">raiseWidget</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="q3widgetstack.html#raiseWidget-2">raiseWidget</a></b> ( QWidget * <i>w</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3widgetstack.html#aboutToShow">aboutToShow</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="q3widgetstack.html#aboutToShow-2">aboutToShow</a></b> ( QWidget * <i>widget</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3widgetstack.html#setChildGeometries">setChildGeometries</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3WidgetStack class provides a stack of widgets of which only the top widget is user-visible.</p>
+<p>The application programmer can move any widget to the top of the stack at any time using <a href="q3widgetstack.html#raiseWidget">raiseWidget</a>(), and add or remove widgets using <a href="q3widgetstack.html#addWidget">addWidget</a>() and <a href="q3widgetstack.html#removeWidget">removeWidget</a>(). It is not sufficient to pass the widget stack as parent to a widget which should be inserted into the widgetstack.</p>
+<p><a href="q3widgetstack.html#visibleWidget">visibleWidget</a>() is the <i>get</i> equivalent of <a href="q3widgetstack.html#raiseWidget">raiseWidget</a>(); it returns a pointer to the widget that is currently at the top of the stack.</p>
+<p>Q3WidgetStack also provides the ability to manipulate widgets through application-specified integer IDs. You can also translate from widget pointers to IDs using <a href="q3widgetstack.html#id">id</a>() and from IDs to widget pointers using <a href="q3widgetstack.html#widget">widget</a>(). These numeric IDs are unique (per Q3WidgetStack, not globally), but Q3WidgetStack does not attach any additional meaning to them.</p>
+<p>The default widget stack is frameless, but you can use the usual <a href="q3frame.html">Q3Frame</a> functions (such as <a href="qframe.html#setFrameStyle">setFrameStyle</a>()) to add a frame.</p>
+<p>Q3WidgetStack provides a signal, <a href="q3widgetstack.html#aboutToShow">aboutToShow</a>(), which is emitted just before a managed widget is shown.</p>
+<p>See also <a href="q3tabdialog.html">Q3TabDialog</a>, <a href="qtabwidget.html">QTabWidget</a>, <a href="qtabbar.html">QTabBar</a>, and <a href="q3frame.html">Q3Frame</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3WidgetStack"></a>Q3WidgetStack::Q3WidgetStack ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs an empty widget stack.</p>
+<p>The <i>parent</i>, <i>name</i> and <i>f</i> arguments are passed to the <a href="q3frame.html">Q3Frame</a> constructor.</p>
+<h3 class="fn"><a name="dtor.Q3WidgetStack"></a>Q3WidgetStack::~Q3WidgetStack ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="aboutToShow"></a>void Q3WidgetStack::aboutToShow ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before a managed widget is shown if that managed widget has an ID != -1. The <i>id</i> parameter is the numeric ID of the widget.</p>
+<p>If you call <a href="q3widgetstack.html#visibleWidget">visibleWidget</a>() in a slot connected to aboutToShow(), the widget it returns is the one that is currently visible, not the one that is about to be shown.</p>
+<h3 class="fn"><a name="aboutToShow-2"></a>void Q3WidgetStack::aboutToShow ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted just before a managed widget is shown. The argument is a pointer to the <i>widget</i>.</p>
+<p>If you call <a href="q3widgetstack.html#visibleWidget">visibleWidget</a>() in a slot connected to <a href="q3widgetstack.html#aboutToShow">aboutToShow</a>(), the widget returned is the one that is currently visible, not the one that is about to be shown.</p>
+<h3 class="fn"><a name="addWidget"></a>int Q3WidgetStack::addWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i>, int <i>id</i> = -1 )</h3>
+<p>Adds widget <i>w</i> to this stack of widgets, with ID <i>id</i>.</p>
+<p>If you pass an id &gt;= 0 this ID is used. If you pass an <i>id</i> of -1 (the default), the widgets will be numbered automatically. If you pass -2 a unique negative integer will be generated. No widget has an ID of -1. Returns the ID or -1 on failure (e.g&#x2e; <i>w</i> is 0).</p>
+<p>If you pass an id that is already used, then a unique negative integer will be generated to prevent two widgets having the same id.</p>
+<p>If <i>w</i> already exists in the stack the widget will be removed first.</p>
+<p>If <i>w</i> is not a child of this <a href="q3widgetstack.html">Q3WidgetStack</a> moves it using <a href="qwidget-qt3.html#reparent">reparent</a>().</p>
+<h3 class="fn"><a name="id"></a>int Q3WidgetStack::id ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the ID of the <i>widget</i>. Returns -1 if <i>widget</i> is 0 or is not being managed by this widget stack.</p>
+<p>See also <a href="q3widgetstack.html#widget">widget</a>() and <a href="q3widgetstack.html#addWidget">addWidget</a>().</p>
+<h3 class="fn"><a name="raiseWidget"></a>void Q3WidgetStack::raiseWidget ( int <i>id</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Raises the widget with ID <i>id</i> to the top of the widget stack.</p>
+<p>See also <a href="q3widgetstack.html#visibleWidget">visibleWidget</a>().</p>
+<h3 class="fn"><a name="raiseWidget-2"></a>void Q3WidgetStack::raiseWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Raises widget <i>w</i> to the top of the widget stack.</p>
+<h3 class="fn"><a name="removeWidget"></a>void Q3WidgetStack::removeWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i> )</h3>
+<p>Removes widget <i>w</i> from this stack of widgets. Does not delete <i>w</i>. If <i>w</i> is the currently visible widget, no other widget is substituted.</p>
+<p>See also <a href="q3widgetstack.html#visibleWidget">visibleWidget</a>() and <a href="q3widgetstack.html#raiseWidget">raiseWidget</a>().</p>
+<h3 class="fn"><a name="setChildGeometries"></a>void Q3WidgetStack::setChildGeometries ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Fixes up the children's geometries.</p>
+<h3 class="fn"><a name="visibleWidget"></a><a href="qwidget.html">QWidget</a> * Q3WidgetStack::visibleWidget () const</h3>
+<p>Returns the currently visible widget (the one at the top of the stack), or 0 if nothing is currently being shown.</p>
+<p>See also <a href="q3widgetstack.html#aboutToShow">aboutToShow</a>(), <a href="q3widgetstack.html#id">id</a>(), and <a href="q3widgetstack.html#raiseWidget">raiseWidget</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * Q3WidgetStack::widget ( int <i>id</i> ) const</h3>
+<p>Returns the widget with ID <i>id</i>. Returns 0 if this widget stack does not manage a widget with ID <i>id</i>.</p>
+<p>See also <a href="q3widgetstack.html#id">id</a>() and <a href="q3widgetstack.html#addWidget">addWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

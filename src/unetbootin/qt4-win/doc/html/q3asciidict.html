@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3asciidict.qdoc -->
+<head>
+  <title>Qt 4.4: Q3AsciiDict Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3AsciiDict Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3AsciiDict class is a template class that provides a dictionary based on char* keys. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3AsciiDict&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3ptrcollection.html">Q3PtrCollection</a>.</p>
+<ul>
+<li><a href="q3asciidict-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3asciidict.html#Q3AsciiDict">Q3AsciiDict</a></b> ( int <i>size</i> = 17, bool <i>caseSensitive</i> = true, bool <i>copyKeys</i> = true )</li>
+<li><div class="fn"/><b><a href="q3asciidict.html#Q3AsciiDict-2">Q3AsciiDict</a></b> ( const Q3AsciiDict&lt;type&gt; &amp; <i>dict</i> )</li>
+<li><div class="fn"/><b><a href="q3asciidict.html#dtor.Q3AsciiDict">~Q3AsciiDict</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3asciidict.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual uint <b><a href="q3asciidict.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3asciidict.html#find">find</a></b> ( const char * <i>key</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3asciidict.html#insert">insert</a></b> ( const char * <i>key</i>, const type * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3asciidict.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3asciidict.html#remove">remove</a></b> ( const char * <i>key</i> )</li>
+<li><div class="fn"/>void <b><a href="q3asciidict.html#replace">replace</a></b> ( const char * <i>key</i>, const type * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3asciidict.html#resize">resize</a></b> ( uint <i>newsize</i> )</li>
+<li><div class="fn"/>uint <b><a href="q3asciidict.html#size">size</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3asciidict.html#statistics">statistics</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3asciidict.html#take">take</a></b> ( const char * <i>key</i> )</li>
+<li><div class="fn"/>Q3AsciiDict&lt;type&gt; &amp; <b><a href="q3asciidict.html#operator-eq">operator=</a></b> ( const Q3AsciiDict&lt;type&gt; &amp; <i>dict</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3asciidict.html#operator-5b-5d">operator[]</a></b> ( const char * <i>key</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3ptrcollection.html#public-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3asciidict.html#read">read</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item &amp; <i>item</i> )</li>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3asciidict.html#write">write</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item <i>item</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="q3ptrcollection.html#protected-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3AsciiDict class is a template class that provides a dictionary based on char* keys.</p>
+<p>Q3AsciiDict is implemented as a template class. Define a template instance Q3AsciiDict&lt;X&gt; to create a dictionary that operates on pointers to X (X*).</p>
+<p>A dictionary is a collection of key-value pairs. The key is a char* used for insertion, removal and lookup. The value is a pointer. Dictionaries provide very fast insertion and lookup.</p>
+<p>Q3AsciiDict cannot handle Unicode keys; use the <a href="q3dict.html">Q3Dict</a> template instead, which uses <a href="qstring.html">QString</a> keys. A <a href="q3dict.html">Q3Dict</a> has the same performace as a Q3AsciiDict.</p>
+<p>Example:</p>
+<pre>     Q3AsciiDict&lt;QLineEdit&gt; fields; // char* keys, QLineEdit* values
+     fields.insert( &quot;forename&quot;, new QLineEdit( this ) );
+     fields.insert( &quot;surname&quot;, new QLineEdit( this ) );
+
+     fields[&quot;forename&quot;]-&gt;setText( &quot;Homer&quot; );
+     fields[&quot;surname&quot;]-&gt;setText( &quot;Simpson&quot; );
+
+     Q3AsciiDictIterator&lt;QLineEdit&gt; it( fields ); // See Q3AsciiDictIterator
+     for( ; it.current(); ++it )
+         cout &lt;&lt; it.currentKey() &lt;&lt; &quot;: &quot; &lt;&lt; it.current()-&gt;text() &lt;&lt; endl;
+     cout &lt;&lt; endl;
+
+     if ( fields[&quot;forename&quot;] &amp;&amp; fields[&quot;surname&quot;] )
+         cout &lt;&lt; fields[&quot;forename&quot;]-&gt;text() &lt;&lt; &quot; &quot;
+             &lt;&lt; fields[&quot;surname&quot;]-&gt;text() &lt;&lt; endl;  // Prints &quot;Homer Simpson&quot;
+
+     fields.remove( &quot;forename&quot; ); // Does not delete the line edit
+     if ( ! fields[&quot;forename&quot;] )
+         cout &lt;&lt; &quot;forename is not in the dictionary&quot; &lt;&lt; endl;</pre>
+<p>In this example we use a dictionary to keep track of the line edits we're using. We insert each line edit into the dictionary with a unique name and then access the line edits via the dictionary. See <a href="q3ptrdict.html">Q3PtrDict</a>, <a href="q3intdict.html">Q3IntDict</a> and <a href="q3dict.html">Q3Dict</a>.</p>
+<p>See <a href="q3dict.html">Q3Dict</a> for full details, including the choice of dictionary size, and how deletions are handled.</p>
+<p>See also <a href="q3asciidictiterator.html">Q3AsciiDictIterator</a>, <a href="q3dict.html">Q3Dict</a>, <a href="q3intdict.html">Q3IntDict</a>, and <a href="q3ptrdict.html">Q3PtrDict</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3AsciiDict"></a>Q3AsciiDict::Q3AsciiDict ( int <i>size</i> = 17, bool <i>caseSensitive</i> = true, bool <i>copyKeys</i> = true )</h3>
+<p>Constructs a dictionary optimized for less than <i>size</i> entries.</p>
+<p>We recommend setting <i>size</i> to a suitably large prime number (a bit larger than the expected number of entries). This makes the hash distribution better and will improve lookup performance.</p>
+<p>When <i>caseSensitive</i> is TRUE (the default) <a href="q3asciidict.html">Q3AsciiDict</a> treats &quot;abc&quot; and &quot;Abc&quot; as different keys; when it is FALSE &quot;abc&quot; and &quot;Abc&quot; are the same. Case-insensitive comparison only considers the 26 letters in US-ASCII.</p>
+<p>If <i>copyKeys</i> is TRUE (the default), the dictionary copies keys using strcpy(); if it is FALSE, the dictionary just copies the pointers.</p>
+<h3 class="fn"><a name="Q3AsciiDict-2"></a>Q3AsciiDict::Q3AsciiDict ( const Q3AsciiDict&lt;type&gt; &amp; <i>dict</i> )</h3>
+<p>Constructs a copy of <i>dict</i>.</p>
+<p>Each item in <i>dict</i> is inserted into this dictionary. Only the pointers are copied (shallow copy).</p>
+<h3 class="fn"><a name="dtor.Q3AsciiDict"></a>Q3AsciiDict::~Q3AsciiDict ()</h3>
+<p>Removes all items from the dictionary and destroys it.</p>
+<p>The items are deleted if auto-delete is enabled.</p>
+<p>All iterators that access this dictionary will be reset.</p>
+<p>See also <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="clear"></a>void Q3AsciiDict::clear ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes all items from the dictionary.</p>
+<p>The removed items are deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>All dictionary iterators that operate on dictionary are reset.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#clear">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3asciidict.html#remove">remove</a>(), <a href="q3asciidict.html#take">take</a>(), and <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3AsciiDict::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of items in the dictionary.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#count">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3asciidict.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="find"></a>type * Q3AsciiDict::find ( const char * <i>key</i> ) const</h3>
+<p>Returns the item associated with <i>key</i>, or 0 if the key does not exist in the dictionary.</p>
+<p>This function uses an internal hashing algorithm to optimize lookup.</p>
+<p>If there are two or more items with equal keys, then the item that was most recently inserted will be found.</p>
+<p>Equivalent to the [] operator.</p>
+<p>See also <a href="q3asciidict.html#operator-5b-5d">operator[]</a>().</p>
+<h3 class="fn"><a name="insert"></a>void Q3AsciiDict::insert ( const char * <i>key</i>, const type * <i>item</i> )</h3>
+<p>Inserts the <i>key</i> with the <i>item</i> into the dictionary.</p>
+<p>Multiple items can have the same key, in which case only the last item will be accessible using <a href="q3asciidict.html#operator-5b-5d">operator[]</a>().</p>
+<p><i>item</i> may not be 0.</p>
+<p>See also <a href="q3asciidict.html#replace">replace</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3AsciiDict::isEmpty () const</h3>
+<p>Returns TRUE if the dictionary is empty, i.e&#x2e; <a href="q3asciidict.html#count">count</a>() == 0; otherwise it returns FALSE.</p>
+<p>See also <a href="q3asciidict.html#count">count</a>().</p>
+<h3 class="fn"><a name="read"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3AsciiDict::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> &amp; <i>item</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads a dictionary item from the stream <i>s</i> and returns a reference to the stream.</p>
+<p>The default implementation sets <i>item</i> to 0.</p>
+<p>See also <a href="q3asciidict.html#write">write</a>().</p>
+<h3 class="fn"><a name="remove"></a>bool Q3AsciiDict::remove ( const char * <i>key</i> )</h3>
+<p>Removes the item associated with <i>key</i> from the dictionary. Returns TRUE if successful, i.e&#x2e; if the key existed in the dictionary; otherwise returns FALSE.</p>
+<p>If there are two or more items with equal keys, then the most recently inserted item will be removed.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>All dictionary iterators that refer to the removed item will be set to point to the next item in the dictionary traversal order.</p>
+<p>See also <a href="q3asciidict.html#take">take</a>(), <a href="q3asciidict.html#clear">clear</a>(), and <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="replace"></a>void Q3AsciiDict::replace ( const char * <i>key</i>, const type * <i>item</i> )</h3>
+<p>Replaces an item that has a key equal to <i>key</i> with <i>item</i>.</p>
+<p>If the item does not already exist, it will be inserted.</p>
+<p><i>item</i> may not be 0.</p>
+<p>Equivalent to:</p>
+<pre>         Q3AsciiDict&lt;char&gt; dict;
+             ...
+         if ( dict.find(key) )
+             dict.remove( key );
+         dict.insert( key, item );</pre>
+<p>If there are two or more items with equal keys, then the most recently inserted item will be replaced.</p>
+<p>See also <a href="q3asciidict.html#insert">insert</a>().</p>
+<h3 class="fn"><a name="resize"></a>void Q3AsciiDict::resize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>newsize</i> )</h3>
+<p>Changes the size of the hashtable to <i>newsize</i>. The contents of the dictionary are preserved but all iterators on the dictionary become invalid.</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3AsciiDict::size () const</h3>
+<p>Returns the size of the internal hash array (as specified in the constructor).</p>
+<p>See also <a href="q3asciidict.html#count">count</a>().</p>
+<h3 class="fn"><a name="statistics"></a>void Q3AsciiDict::statistics () const</h3>
+<p>Debugging-only function that prints out the dictionary distribution using <a href="qtglobal.html#qDebug">qDebug</a>().</p>
+<h3 class="fn"><a name="take"></a>type * Q3AsciiDict::take ( const char * <i>key</i> )</h3>
+<p>Takes the item associated with <i>key</i> out of the dictionary without deleting it (even if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled).</p>
+<p>If there are two or more items with equal keys, then the most recently inserted item will be taken.</p>
+<p>Returns a pointer to the item taken out, or 0 if the key does not exist in the dictionary.</p>
+<p>All dictionary iterators that refer to the taken item will be set to point to the next item in the dictionary traversal order.</p>
+<p>See also <a href="q3asciidict.html#remove">remove</a>(), <a href="q3asciidict.html#clear">clear</a>(), and <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="write"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3AsciiDict::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> <i>item</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Writes a dictionary <i>item</i> to the stream <i>s</i> and returns a reference to the stream.</p>
+<p>See also <a href="q3asciidict.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3AsciiDict&lt;type&gt; &amp; Q3AsciiDict::operator= ( const Q3AsciiDict&lt;type&gt; &amp; <i>dict</i> )</h3>
+<p>Assigns <i>dict</i> to this dictionary and returns a reference to this dictionary.</p>
+<p>This dictionary is first cleared and then each item in <i>dict</i> is inserted into this dictionary. Only the pointers are copied (shallow copy) unless <a href="q3ptrcollection.html#newItem">newItem</a>() has been reimplemented().</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>type * Q3AsciiDict::operator[] ( const char * <i>key</i> ) const</h3>
+<p>Returns the item associated with <i>key</i>, or 0 if the key does not exist in the dictionary.</p>
+<p>This function uses an internal hashing algorithm to optimize lookup.</p>
+<p>If there are two or more items with equal keys, then the item that was most recently inserted will be found.</p>
+<p>Equivalent to the <a href="q3asciidict.html#find">find</a>() function.</p>
+<p>See also <a href="q3asciidict.html#find">find</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

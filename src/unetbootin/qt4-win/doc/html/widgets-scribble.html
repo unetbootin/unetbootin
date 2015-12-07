@@ -1,0 +1,473 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/scribble.qdoc -->
+<head>
+  <title>Qt 4.4: Scribble Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Scribble Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-scribble-mainwindow-cpp.html">widgets/scribble/mainwindow.cpp</a></li>
+<li><a href="widgets-scribble-mainwindow-h.html">widgets/scribble/mainwindow.h</a></li>
+<li><a href="widgets-scribble-scribblearea-cpp.html">widgets/scribble/scribblearea.cpp</a></li>
+<li><a href="widgets-scribble-scribblearea-h.html">widgets/scribble/scribblearea.h</a></li>
+<li><a href="widgets-scribble-main-cpp.html">widgets/scribble/main.cpp</a></li>
+<li><a href="widgets-scribble-scribble-pro.html">widgets/scribble/scribble.pro</a></li>
+</ul>
+<p>The Scribble example shows how to reimplement some of <a href="qwidget.html">QWidget</a>'s event handlers to receive the events generated for the application's widgets.</p>
+<p>We reimplement the mouse event handlers to implement drawing, the paint event handler to update the application and the resize event handler to optimize the application's appearance. In addition we reimplement the close event handler to intercept the close events before terminating the application.</p>
+<p>The example also demonstrates how to use <a href="qpainter.html">QPainter</a> to draw an image in real time, as well as to repaint widgets.</p>
+<p align="center"><img src="images/scribble-example.png" alt="Screenshot of the Scribble example" /></p><p>With the Scribble application the users can draw an image. The <b>File</b> menu gives the users the possibility to open and edit an existing image file, save an image and exit the application. While drawing, the <b>Options</b> menu allows the users to to choose the pen color and pen width, as well as clear the screen. In addition the <b>Help</b> menu provides the users with information about the Scribble example in particular, and about Qt in general.</p>
+<p>The example consists of two classes:</p>
+<ul>
+<li><tt>ScribbleArea</tt> is a custom widget that displays a <a href="qimage.html">QImage</a> and allows to the user to draw on it.</li>
+<li><tt>MainWindow</tt> provides a menu above the <tt>ScribbleArea</tt>.</li>
+</ul>
+<p>We will start by reviewing the <tt>ScribbleArea</tt> class, which contains the interesting, then we will take a look at the <tt>MainWindow</tt> class that uses it.</p>
+<a name="scribblearea-class-definition"></a>
+<h2>ScribbleArea Class Definition</h2>
+<pre> class ScribbleArea : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     ScribbleArea(QWidget *parent = 0);
+
+     bool openImage(const QString &amp;fileName);
+     bool saveImage(const QString &amp;fileName, const char *fileFormat);
+     void setPenColor(const QColor &amp;newColor);
+     void setPenWidth(int newWidth);
+
+     bool isModified() const { return modified; }
+     QColor penColor() const { return myPenColor; }
+     int penWidth() const { return myPenWidth; }
+
+ public slots:
+     void clearImage();
+     void print();
+
+ protected:
+     void mousePressEvent(QMouseEvent *event);
+     void mouseMoveEvent(QMouseEvent *event);
+     void mouseReleaseEvent(QMouseEvent *event);
+     void paintEvent(QPaintEvent *event);
+     void resizeEvent(QResizeEvent *event);
+
+ private:
+     void drawLineTo(const QPoint &amp;endPoint);
+     void resizeImage(QImage *image, const QSize &amp;newSize);
+
+     bool modified;
+     bool scribbling;
+     int myPenWidth;
+     QColor myPenColor;
+     QImage image;
+     QPoint lastPoint;
+ };</pre>
+<p>The <tt>ScribbleArea</tt> class inherits from <a href="qwidget.html">QWidget</a>. We reimplement the <tt>mousePressEvent()</tt>, <tt>mouseMoveEvent()</tt> and <tt>mouseReleaseEvent()</tt> functions to implement the drawing. We reimplement the <tt>paintEvent()</tt> function to update the scribble area, and the <tt>resizeEvent()</tt> function to ensure that the <a href="qimage.html">QImage</a> on which we draw is at least as large as the widget at any time.</p>
+<p>We need several public functions: <tt>openImage()</tt> loads an image from a file into the scribble area, allowing the user to edit the image; <tt>save()</tt> writes the currently displayed image to file; <tt>clearImage()</tt> slot clears the image displayed in the scribble area. We need the private <tt>drawLineTo()</tt> function to actually do the drawing, and <tt>resizeImage()</tt> to change the size of a <a href="qimage.html">QImage</a>. The <tt>print()</tt> slot handles printing.</p>
+<p>We also need the following private variables:</p>
+<ul>
+<li><tt>modified</tt> is <tt>true</tt> if there are unsaved changes to the image displayed in the scribble area.</li>
+<li><tt>scribbling</tt> is <tt>true</tt> while the user is pressing the left mouse button within the scribble area.</li>
+<li><tt>penWidth</tt> and <tt>penColor</tt> hold the currently set width and color for the pen used in the application.</li>
+<li><tt>image</tt> stores the image drawn by the user.</li>
+<li><tt>lastPoint</tt> holds the position of the cursor at the last mouse press or mouse move event.</li>
+</ul>
+<a name="scribblearea-class-implementation"></a>
+<h2>ScribbleArea Class Implementation</h2>
+<pre> ScribbleArea::ScribbleArea(QWidget *parent)
+     : QWidget(parent)
+ {
+     setAttribute(Qt::WA_StaticContents);
+     modified = false;
+     scribbling = false;
+     myPenWidth = 1;
+     myPenColor = Qt::blue;
+ }</pre>
+<p>In the constructor, we set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_StaticContents</a> attribute for the widget, indicating that the widget contents are rooted to the top-left corner and don't change when the widget is resized. Qt uses this attribute to optimize paint events on resizes. This is purely an optimization and should only be used for widgets whose contents are static and rooted to the top-left corner.</p>
+<pre> bool ScribbleArea::openImage(const QString &amp;fileName)
+ {
+     QImage loadedImage;
+     if (!loadedImage.load(fileName))
+         return false;
+
+     QSize newSize = loadedImage.size().expandedTo(size());
+     resizeImage(&amp;loadedImage, newSize);
+     image = loadedImage;
+     modified = false;
+     update();
+     return true;
+ }</pre>
+<p>In the <tt>openImage()</tt> function, we load the given image. Then we resize the loaded <a href="qimage.html">QImage</a> to be at least as large as the widget in both directions using the private <tt>resizeImage()</tt> function and we set the <tt>image</tt> member variable to be the loaded image. At the end, we call <a href="qwidget.html#update">QWidget::update</a>() to schedule a repaint.</p>
+<pre> bool ScribbleArea::saveImage(const QString &amp;fileName, const char *fileFormat)
+ {
+     QImage visibleImage = image;
+     resizeImage(&amp;visibleImage, size());
+
+     if (visibleImage.save(fileName, fileFormat)) {
+         modified = false;
+         return true;
+     } else {
+         return false;
+     }
+ }</pre>
+<p>The <tt>saveImage()</tt> function creates a <a href="qimage.html">QImage</a> object that covers only the visible section of the actual <tt>image</tt> and saves it using <a href="qimage.html#save">QImage::save</a>(). If the image is successfully saved, we set the scribble area's <tt>modified</tt> variable to <tt>false</tt>, because there is no unsaved data.</p>
+<pre> void ScribbleArea::setPenColor(const QColor &amp;newColor)
+ {
+     myPenColor = newColor;
+ }
+
+ void ScribbleArea::setPenWidth(int newWidth)
+ {
+     myPenWidth = newWidth;
+ }</pre>
+<p>The <tt>setPenColor()</tt> and <tt>setPenWidth()</tt> functions set the current pen color and width. These values will be used for future drawing operations.</p>
+<pre> void ScribbleArea::clearImage()
+ {
+     image.fill(qRgb(255, 255, 255));
+     modified = true;
+     update();
+ }</pre>
+<p>The public <tt>clearImage()</tt> slot clears the image displayed in the scribble area. We simply fill the entire image with white, which corresponds to RGB value (255, 255, 255). As usual when we modify the image, we set <tt>modified</tt> to <tt>true</tt> and schedule a repaint.</p>
+<pre> void ScribbleArea::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton) {
+         lastPoint = event-&gt;pos();
+         scribbling = true;
+     }
+ }
+
+ void ScribbleArea::mouseMoveEvent(QMouseEvent *event)
+ {
+     if ((event-&gt;buttons() &amp; Qt::LeftButton) &amp;&amp; scribbling)
+         drawLineTo(event-&gt;pos());
+ }
+
+ void ScribbleArea::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton &amp;&amp; scribbling) {
+         drawLineTo(event-&gt;pos());
+         scribbling = false;
+     }
+ }</pre>
+<p>For mouse press and mouse release events, we use the <a href="qmouseevent.html#button">QMouseEvent::button</a>() function to find out which button caused the event. For mose move events, we use <a href="qmouseevent.html#buttons">QMouseEvent::buttons</a>() to find which buttons are currently held down (as an OR-combination).</p>
+<p>If the users press the left mouse button, we store the position of the mouse cursor in <tt>lastPoint</tt>. We also make a note that the user is currently scribbling. (The <tt>scribbling</tt> variable is necessary because we can't assume that a mouse move and mouse release event is always preceded by a mouse press event on the same widget.)</p>
+<p>If the user moves the mouse with the left button pressed down or releases the button, we call the private <tt>drawLineTo()</tt> function to draw.</p>
+<pre> void ScribbleArea::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+     painter.drawImage(QPoint(0, 0), image);
+ }</pre>
+<p>In the reimplementation of the <a href="qwidget.html#paintEvent">paintEvent()</a> function, we simply create a <a href="qpainter.html">QPainter</a> for the scribble area, and draw the image.</p>
+<p>At this point, you might wonder why we don't just draw directly onto the widget instead of drawing in a <a href="qimage.html">QImage</a> and copying the <a href="qimage.html">QImage</a> onto screen in <tt>paintEvent()</tt>. There are at least three good reasons for this:</p>
+<ul>
+<li>The window system requires us to be able to redraw the widget <i>at any time</i>. For example, if the window is minimized and restored, the window system might have forgotten the contents of the widget and send us a paint event. In other words, we can't rely on the window system to remember our image.</li>
+<li>Qt normally doesn't allow us to paint outside of <tt>paintEvent()</tt>. In particular, we can't paint from the mouse event handlers. (This behavior can be changed using the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> widget attribute, though.)</li>
+<li>If initialized properly, a <a href="qimage.html">QImage</a> is guaranteed to use 8-bit for each color channel (red, green, blue, and alpha), whereas a <a href="qwidget.html">QWidget</a> might have a lower color depth, depending on the monitor configuration. This means that if we load a 24-bit or 32-bit image and paint it onto a <a href="qwidget.html">QWidget</a>, then copy the <a href="qwidget.html">QWidget</a> into a <a href="qimage.html">QImage</a> again, we might lose some information.</li>
+</ul>
+<pre> void ScribbleArea::resizeEvent(QResizeEvent *event)
+ {
+     if (width() &gt; image.width() || height() &gt; image.height()) {
+         int newWidth = qMax(width() + 128, image.width());
+         int newHeight = qMax(height() + 128, image.height());
+         resizeImage(&amp;image, QSize(newWidth, newHeight));
+         update();
+     }
+     QWidget::resizeEvent(event);
+ }</pre>
+<p>When the user starts the Scribble application, a resize event is generated and an image is created and displayed in the scribble area. We make this initial image slightly larger than the application's main window and scribble area, to avoid always resizing the image when the user resizes the main window (which would be very inefficient). But when the main window becomes larger than this initial size, the image needs to be resized.</p>
+<pre> void ScribbleArea::drawLineTo(const QPoint &amp;endPoint)
+ {
+     QPainter painter(&amp;image);
+     painter.setPen(QPen(myPenColor, myPenWidth, Qt::SolidLine, Qt::RoundCap,
+                         Qt::RoundJoin));
+     painter.drawLine(lastPoint, endPoint);
+     modified = true;
+
+     int rad = (myPenWidth / 2) + 2;
+     update(QRect(lastPoint, endPoint).normalized()
+                                      .adjusted(-rad, -rad, +rad, +rad));
+     lastPoint = endPoint;
+ }</pre>
+<p>In <tt>drawLineTo()</tt>, we draw a line from the point where the mouse was located when the last mouse press or mouse move occurred, we set <tt>modified</tt> to true, we generate a repaint event, and we update <tt>lastPoint</tt> so that next time <tt>drawLineTo()</tt> is called, we continue drawing from where we left.</p>
+<p>We could call the <tt>update()</tt> function with no parameter, but as an easy optimization we pass a <a href="qrect.html">QRect</a> that specifies the rectangle inside the scribble are needs updating, to avoid a complete repaint of the widget.</p>
+<pre> void ScribbleArea::resizeImage(QImage *image, const QSize &amp;newSize)
+ {
+     if (image-&gt;size() == newSize)
+         return;
+
+     QImage newImage(newSize, QImage::Format_RGB32);
+     newImage.fill(qRgb(255, 255, 255));
+     QPainter painter(&amp;newImage);
+     painter.drawImage(QPoint(0, 0), *image);
+     *image = newImage;
+ }</pre>
+<p><a href="qimage.html">QImage</a> has no nice API for resizing an image. There's a <a href="qimage.html#copy">QImage::copy</a>() function that could do the trick, but when used to expand an image, it fills the new areas with black, whereas we want white.</p>
+<p>So the trick is to create a brand new <a href="qimage.html">QImage</a> with the right size, to fill it with white, and to draw the old image onto it using <a href="qpainter.html">QPainter</a>. The new image is given the <a href="qimage.html#Format-enum">QImage::Format_RGB32</a> format, which means that each pixel is stored as 0xffRRGGBB (where RR, GG, and BB are the red, green and blue color channels, ff is the hexadecimal value 255).</p>
+<p>Printing is handled by the <tt>print()</tt> slot:</p>
+<pre> void ScribbleArea::print()
+ {
+ #ifndef QT_NO_PRINTER
+     QPrinter printer(QPrinter::HighResolution);
+
+     QPrintDialog *printDialog = new QPrintDialog(&amp;printer, this);</pre>
+<p>We construct a high resolution <a href="qprinter.html">QPrinter</a> object for the required output format, using a <a href="qprintdialog.html">QPrintDialog</a> to ask the user to specify a page size and indicate how the output should be formatted on the page.</p>
+<p>If the dialog is accepted, we perform the task of printing to the paint device:</p>
+<pre>     if (printDialog-&gt;exec() == QDialog::Accepted) {
+         QPainter painter(&amp;printer);
+         QRect rect = painter.viewport();
+         QSize size = image.size();
+         size.scale(rect.size(), Qt::KeepAspectRatio);
+         painter.setViewport(rect.x(), rect.y(), size.width(), size.height());
+         painter.setWindow(image.rect());
+         painter.drawImage(0, 0, image);
+     }
+ #endif <span class="comment">//</span> QT_NO_PRINTER
+ }</pre>
+<p>Printing an image to a file in this way is simply a matter of painting onto the <a href="qprinter.html">QPrinter</a>. We scale the image to fit within the available space on the page before painting it onto the paint device.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ protected:
+     void closeEvent(QCloseEvent *event);
+
+ private slots:
+     void open();
+     void save();
+     void penColor();
+     void penWidth();
+     void about();
+
+ private:
+     void createActions();
+     void createMenus();
+     bool maybeSave();
+     bool saveFile(const QByteArray &amp;fileFormat);
+
+     ScribbleArea *scribbleArea;
+
+     QMenu *saveAsMenu;
+     QMenu *fileMenu;
+     QMenu *optionMenu;
+     QMenu *helpMenu;
+
+     QAction *openAct;
+     QList&lt;QAction *&gt; saveAsActs;
+     QAction *exitAct;
+     QAction *penColorAct;
+     QAction *penWidthAct;
+     QAction *printAct;
+     QAction *clearScreenAct;
+     QAction *aboutAct;
+     QAction *aboutQtAct;
+ };</pre>
+<p>The <tt>MainWindow</tt> class inherits from <a href="qmainwindow.html">QMainWindow</a>. We reimplement the <a href="qwidget.html#closeEvent">closeEvent()</a> handler from <a href="qwidget.html">QWidget</a>. The <tt>open()</tt>, <tt>save()</tt>, <tt>penColor()</tt> and <tt>penWidth()</tt> slots correspond to menu entries. In addition we create four private functions.</p>
+<p>We use the boolean <tt>maybeSave()</tt> function to check if there are any unsaved changes. If there are unsaved changes, we give the user the opportunity to save these changes. The function returns <tt>false</tt> if the user clicks <b>Cancel</b>. We use the <tt>saveFile()</tt> function to let the user save the image currently displayed in the scribble area.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<pre> MainWindow::MainWindow()
+ {
+     scribbleArea = new ScribbleArea;
+     setCentralWidget(scribbleArea);
+
+     createActions();
+     createMenus();
+
+     setWindowTitle(tr(&quot;Scribble&quot;));
+     resize(500, 500);
+ }</pre>
+<p>In the constructor, we create a scribble area which we make the central widget of the <tt>MainWindow</tt> widget. Then we create the associated actions and menus.</p>
+<pre> void MainWindow::closeEvent(QCloseEvent *event)
+ {
+     if (maybeSave()) {
+         event-&gt;accept();
+     } else {
+         event-&gt;ignore();
+     }
+ }</pre>
+<p>Close events are sent to widgets that the users want to close, usually by clicking <b>File|Exit</b> or by clicking the <b>X</b> title bar button. By reimplementing the event handler, we can intercept attempts to close the application.</p>
+<p>In this example, we use the close event to ask the user to save any unsaved changes. The logic for that is located in the <tt>maybeSave()</tt> function. If <tt>maybeSave()</tt> returns true, there are no modifications or the users successfully saved them, and we accept the event. The application can then terminate normally. If <tt>maybeSave()</tt> returns false, the user clicked <b>Cancel</b>, so we &quot;ignore&quot; the event, leaving the application unaffected by it.</p>
+<pre> void MainWindow::open()
+ {
+     if (maybeSave()) {
+         QString fileName = QFileDialog::getOpenFileName(this,
+                                    tr(&quot;Open File&quot;), QDir::currentPath());
+         if (!fileName.isEmpty())
+             scribbleArea-&gt;openImage(fileName);
+     }
+ }</pre>
+<p>In the <tt>open()</tt> slot we first give the user the opportunity to save any modifications to the currently displayed image, before a new image is loaded into the scribble area. Then we ask the user to choose a file and we load the file in the <tt>ScribbleArea</tt>.</p>
+<pre> void MainWindow::save()
+ {
+     QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+     QByteArray fileFormat = action-&gt;data().toByteArray();
+     saveFile(fileFormat);
+ }</pre>
+<p>The <tt>save()</tt> slot is called when the users choose the <b>Save As</b> menu entry, and then choose an entry from the format menu. The first thing we need to do is to find out which action sent the signal using <a href="qobject.html#sender">QObject::sender</a>(). This function returns the sender as a <a href="qobject.html">QObject</a> pointer. Since we know that the sender is an action object, we can safely cast the <a href="qobject.html">QObject</a>. We could have used a C-style cast or a C++ <tt>static_cast&lt;&gt;()</tt>, but as a defensive programming technique we use a <a href="qobject.html#qobject_cast">qobject_cast</a>(). The advantage is that if the object has the wrong type, a null pointer is returned. Crashes due to null pointers are much easier to diagnose than crashes due to unsafe casts.</p>
+<p>Once we have the action, we extract the chosen format using <a href="qaction.html#data">QAction::data</a>(). (When the actions are created, we use <a href="qaction.html#setData">QAction::setData</a>() to set our own custom data attached to the action, as a <a href="qvariant.html">QVariant</a>. More on this when we review <tt>createActions()</tt>.)</p>
+<p>Now that we know the format, we call the private <tt>saveFile()</tt> function to save the currently displayed image.</p>
+<pre> void MainWindow::penColor()
+ {
+     QColor newColor = QColorDialog::getColor(scribbleArea-&gt;penColor());
+     if (newColor.isValid())
+         scribbleArea-&gt;setPenColor(newColor);
+ }</pre>
+<p>We use the <tt>penColor()</tt> slot to retrieve a new color from the user with a <a href="qcolordialog.html">QColorDialog</a>. If the user chooses a new color, we make it the scribble area's color.</p>
+<pre> void MainWindow::penWidth()
+ {
+     bool ok;
+     int newWidth = QInputDialog::getInteger(this, tr(&quot;Scribble&quot;),
+                                             tr(&quot;Select pen width:&quot;),
+                                             scribbleArea-&gt;penWidth(),
+                                             1, 50, 1, &amp;ok);
+     if (ok)
+         scribbleArea-&gt;setPenWidth(newWidth);
+ }</pre>
+<p>To retrieve a new pen width in the <tt>penWidth()</tt> slot, we use <a href="qinputdialog.html">QInputDialog</a>. The <a href="qinputdialog.html">QInputDialog</a> class provides a simple convenience dialog to get a single value from the user. We use the static <a href="qinputdialog.html#getInteger">QInputDialog::getInteger</a>() function, which combines a <a href="qlabel.html">QLabel</a> and a <a href="qspinbox.html">QSpinBox</a>. The <a href="qspinbox.html">QSpinBox</a> is initialized with the scribble area's pen width, allows a range from 1 to 50, a step of 1 (meaning that the up and down arrow increment or decrement the value by 1).</p>
+<p>The boolean <tt>ok</tt> variable will be set to <tt>true</tt> if the user clicked <b>OK</b> and to <tt>false</tt> if the user pressed <b>Cancel</b>.</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Scribble&quot;),
+             tr(&quot;&lt;p&gt;The &lt;b&gt;Scribble&lt;/b&gt; example shows how to use QMainWindow as the &quot;
+                &quot;base widget for an application, and how to reimplement some of &quot;
+                &quot;QWidget's event handlers to receive the events generated for &quot;
+                &quot;the application's widgets:&lt;/p&gt;&lt;p&gt; We reimplement the mouse event &quot;
+                &quot;handlers to facilitate drawing, the paint event handler to &quot;
+                &quot;update the application and the resize event handler to optimize &quot;
+                &quot;the application's appearance. In addition we reimplement the &quot;
+                &quot;close event handler to intercept the close events before &quot;
+                &quot;terminating the application.&lt;/p&gt;&lt;p&gt; The example also demonstrates &quot;
+                &quot;how to use QPainter to draw an image in real time, as well as &quot;
+                &quot;to repaint widgets.&lt;/p&gt;&quot;));
+ }</pre>
+<p>We implement the <tt>about()</tt> slot to create a message box describing what the example is designed to show.</p>
+<pre> void MainWindow::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     foreach (QByteArray format, QImageWriter::supportedImageFormats()) {
+         QString text = tr(&quot;%1...&quot;).arg(QString(format).toUpper());
+
+         QAction *action = new QAction(text, this);
+         action-&gt;setData(format);
+         connect(action, SIGNAL(triggered()), this, SLOT(save()));
+         saveAsActs.append(action);
+     }
+
+     printAct = new QAction(tr(&quot;&amp;Print...&quot;), this);
+     connect(printAct, SIGNAL(triggered()), scribbleArea, SLOT(print()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     penColorAct = new QAction(tr(&quot;&amp;Pen Color...&quot;), this);
+     connect(penColorAct, SIGNAL(triggered()), this, SLOT(penColor()));
+
+     penWidthAct = new QAction(tr(&quot;Pen &amp;Width...&quot;), this);
+     connect(penWidthAct, SIGNAL(triggered()), this, SLOT(penWidth()));
+
+     clearScreenAct = new QAction(tr(&quot;&amp;Clear Screen&quot;), this);
+     clearScreenAct-&gt;setShortcut(tr(&quot;Ctrl+L&quot;));
+     connect(clearScreenAct, SIGNAL(triggered()),
+             scribbleArea, SLOT(clearImage()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }</pre>
+<p>In the <tt>createAction()</tt> function we create the actions representing the menu entries and connect them to the appropiate slots. In particular we create the actions found in the <b>Save As</b> sub-menu. We use <a href="qimagewriter.html#supportedImageFormats">QImageWriter::supportedImageFormats</a>() to get a list of the supported formats (as a <a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt;).</p>
+<p>Then we iterate through the list, creating an action for each format. We call <a href="qaction.html#setData">QAction::setData</a>() with the file format, so we can retrieve it later as <a href="qaction.html#data">QAction::data</a>(). We could also have deduced the file format from the action's text, by truncating the &quot;..&#x2e;&quot;, but that would have been inelegant.</p>
+<pre> void MainWindow::createMenus()
+ {
+     saveAsMenu = new QMenu(tr(&quot;&amp;Save As&quot;), this);
+     foreach (QAction *action, saveAsActs)
+         saveAsMenu-&gt;addAction(action);
+
+     fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addMenu(saveAsMenu);
+     fileMenu-&gt;addAction(printAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     optionMenu = new QMenu(tr(&quot;&amp;Options&quot;), this);
+     optionMenu-&gt;addAction(penColorAct);
+     optionMenu-&gt;addAction(penWidthAct);
+     optionMenu-&gt;addSeparator();
+     optionMenu-&gt;addAction(clearScreenAct);
+
+     helpMenu = new QMenu(tr(&quot;&amp;Help&quot;), this);
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+
+     menuBar()-&gt;addMenu(fileMenu);
+     menuBar()-&gt;addMenu(optionMenu);
+     menuBar()-&gt;addMenu(helpMenu);
+ }</pre>
+<p>In the <tt>createMenu()</tt> function, we add the previously created format actions to the <tt>saveAsMenu</tt>. Then we add the rest of the actions as well as the <tt>saveAsMenu</tt> sub-menu to the <b>File</b>, <b>Options</b> and <b>Help</b> menus.</p>
+<p>The <a href="qmenu.html">QMenu</a> class provides a menu widget for use in menu bars, context menus, and other popup menus. The <a href="qmenubar.html">QMenuBar</a> class provides a horizontal menu bar with a list of pull-down <a href="qmenu.html">QMenu</a>s. At the end we put the <b>File</b> and <b>Options</b> menus in the <tt>MainWindow</tt>'s menu bar, which we retrieve using the <a href="qmainwindow.html#menuBar">QMainWindow::menuBar</a>() function.</p>
+<pre> bool MainWindow::maybeSave()
+ {
+     if (scribbleArea-&gt;isModified()) {
+        QMessageBox::StandardButton ret;
+        ret = QMessageBox::warning(this, tr(&quot;Scribble&quot;),
+                           tr(&quot;The image has been modified.\n&quot;
+                              &quot;Do you want to save your changes?&quot;),
+                           QMessageBox::Save | QMessageBox::Discard
+                           | QMessageBox::Cancel);
+         if (ret == QMessageBox::Save) {
+             return saveFile(&quot;png&quot;);
+         } else if (ret == QMessageBox::Cancel) {
+             return false;
+         }
+     }
+     return true;
+ }</pre>
+<p>In <tt>mayBeSave()</tt>, we check if there are any unsaved changes. If there are any, we use <a href="qmessagebox.html">QMessageBox</a> to give the user a warning that the image has been modified and the opportunity to save the modifications.</p>
+<p>As with <a href="qcolordialog.html">QColorDialog</a> and <a href="qfiledialog.html">QFileDialog</a>, the easiest way to create a <a href="qmessagebox.html">QMessageBox</a> is to use its static functions. <a href="qmessagebox.html">QMessageBox</a> provides a range of different messages arranged along two axes: severity (question, information, warning and critical) and complexity (the number of necessary response buttons). Here we use the <tt>warning()</tt> function sice the message is rather important.</p>
+<p>If the user chooses to save, we call the private <tt>saveFile()</tt> function. For simplicitly, we use PNG as the file format; the user can always press <b>Cancel</b> and save the file using another format.</p>
+<p>The <tt>maybeSave()</tt> function returns <tt>false</tt> if the user clicks <b>Cancel</b>; otherwise it returns <tt>true</tt>.</p>
+<pre> bool MainWindow::saveFile(const QByteArray &amp;fileFormat)
+ {
+     QString initialPath = QDir::currentPath() + &quot;/untitled.&quot; + fileFormat;
+
+     QString fileName = QFileDialog::getSaveFileName(this, tr(&quot;Save As&quot;),
+                                initialPath,
+                                tr(&quot;%1 Files (*.%2);;All Files (*)&quot;)
+                                .arg(QString(fileFormat.toUpper()))
+                                .arg(QString(fileFormat)));
+     if (fileName.isEmpty()) {
+         return false;
+     } else {
+         return scribbleArea-&gt;saveImage(fileName, fileFormat);
+     }
+ }</pre>
+<p>In <tt>saveFile()</tt>, we pop up a file dialog with a file name suggestion. The static <a href="qfiledialog.html#getSaveFileName">QFileDialog::getSaveFileName</a>() function returns a file name selected by the user. The file does not have to exist.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

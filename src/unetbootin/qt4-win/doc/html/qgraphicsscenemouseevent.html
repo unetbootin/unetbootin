@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicssceneevent.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsSceneMouseEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsSceneMouseEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsSceneMouseEvent class provides mouse events in the graphics view framework. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsSceneMouseEvent&gt;</pre><p>Inherits <a href="qgraphicssceneevent.html">QGraphicsSceneEvent</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicsscenemouseevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicsscenemouseevent.html#dtor.QGraphicsSceneMouseEvent">~QGraphicsSceneMouseEvent</a></b> ()</li>
+<li><div class="fn"/>Qt::MouseButton <b><a href="qgraphicsscenemouseevent.html#button">button</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#buttonDownPos">buttonDownPos</a></b> ( Qt::MouseButton <i>button</i> ) const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#buttonDownScenePos">buttonDownScenePos</a></b> ( Qt::MouseButton <i>button</i> ) const</li>
+<li><div class="fn"/>QPoint <b><a href="qgraphicsscenemouseevent.html#buttonDownScreenPos">buttonDownScreenPos</a></b> ( Qt::MouseButton <i>button</i> ) const</li>
+<li><div class="fn"/>Qt::MouseButtons <b><a href="qgraphicsscenemouseevent.html#buttons">buttons</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#lastPos">lastPos</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos</a></b> () const</li>
+<li><div class="fn"/>Qt::KeyboardModifiers <b><a href="qgraphicsscenemouseevent.html#modifiers">modifiers</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qgraphicssceneevent.html#public-functions">QGraphicsSceneEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsSceneMouseEvent class provides mouse events in the graphics view framework.</p>
+<p>When a <a href="qgraphicsview.html">QGraphicsView</a> receives a <a href="qmouseevent.html">QMouseEvent</a>, it translates it to a QGraphicsSceneMouseEvent. The event is then forwarded to the <a href="qgraphicsscene.html">QGraphicsScene</a> associated with the view.</p>
+<p>In addition to containing the item, scene, and screen coordinates of the event (as <a href="qgraphicsscenemouseevent.html#pos">pos</a>(), <a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a>(), and <a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a>()), mouse events also contain the coordinates of the previous mouse event received by the view. These can be retrieved with <a href="qgraphicsscenemouseevent.html#lastPos">lastPos</a>(), <a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos</a>(), and <a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos</a>().</p>
+<p>See also <a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a>, <a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>, <a href="qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a>, and <a href="qmouseevent.html">QMouseEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QGraphicsSceneMouseEvent"></a>QGraphicsSceneMouseEvent::~QGraphicsSceneMouseEvent ()</h3>
+<p>Destroys the event.</p>
+<h3 class="fn"><a name="button"></a><a href="qt.html#MouseButton-enum">Qt::MouseButton</a> QGraphicsSceneMouseEvent::button () const</h3>
+<p>Returns the mouse button (if any) that caused the event.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#buttons">buttons</a>() and <a href="qgraphicsscenemouseevent.html#modifiers">modifiers</a>().</p>
+<h3 class="fn"><a name="buttonDownPos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::buttonDownPos ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i> ) const</h3>
+<p>Returns the mouse cursor position in item coordinates where the specified <i>button</i> was clicked.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#buttonDownScenePos">buttonDownScenePos</a>(), <a href="qgraphicsscenemouseevent.html#buttonDownScreenPos">buttonDownScreenPos</a>(), and <a href="qgraphicsscenemouseevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="buttonDownScenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::buttonDownScenePos ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i> ) const</h3>
+<p>Returns the mouse cursor position in scene coordinates where the specified <i>button</i> was clicked.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#buttonDownPos">buttonDownPos</a>(), <a href="qgraphicsscenemouseevent.html#buttonDownScreenPos">buttonDownScreenPos</a>(), and <a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a>().</p>
+<h3 class="fn"><a name="buttonDownScreenPos"></a><a href="qpoint.html">QPoint</a> QGraphicsSceneMouseEvent::buttonDownScreenPos ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i> ) const</h3>
+<p>Returns the mouse cursor position in screen coordinates where the specified <i>button</i> was clicked.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a>(), <a href="qgraphicsscenemouseevent.html#buttonDownPos">buttonDownPos</a>(), and <a href="qgraphicsscenemouseevent.html#buttonDownScenePos">buttonDownScenePos</a>().</p>
+<h3 class="fn"><a name="buttons"></a><a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> QGraphicsSceneMouseEvent::buttons () const</h3>
+<p>Returns the combination of mouse buttons that were pressed at the time the event was sent.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#button">button</a>() and <a href="qgraphicsscenemouseevent.html#modifiers">modifiers</a>().</p>
+<h3 class="fn"><a name="lastPos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::lastPos () const</h3>
+<p>Returns the last recorded mouse cursor position in item coordinates.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos</a>(), <a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos</a>(), and <a href="qgraphicsscenemouseevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="lastScenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::lastScenePos () const</h3>
+<p>Returns the last recorded mouse cursor position in scene coordinates. The last recorded position is the position of the previous mouse event received by the view that created the event.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#lastPos">lastPos</a>(), <a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos</a>(), and <a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a>().</p>
+<h3 class="fn"><a name="lastScreenPos"></a><a href="qpoint.html">QPoint</a> QGraphicsSceneMouseEvent::lastScreenPos () const</h3>
+<p>Returns the last recorded mouse cursor position in screen coordinates. The last recorded position is the position of the previous mouse event received by the view that created the event.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#lastPos">lastPos</a>(), <a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos</a>(), and <a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a>().</p>
+<h3 class="fn"><a name="modifiers"></a><a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> QGraphicsSceneMouseEvent::modifiers () const</h3>
+<p>Returns the keyboard modifiers in use at the time the event was sent.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#buttons">buttons</a>() and <a href="qgraphicsscenemouseevent.html#button">button</a>().</p>
+<h3 class="fn"><a name="pos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::pos () const</h3>
+<p>Returns the mouse cursor position in item coordinates.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a>(), <a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a>(), and <a href="qgraphicsscenemouseevent.html#lastPos">lastPos</a>().</p>
+<h3 class="fn"><a name="scenePos"></a><a href="qpointf.html">QPointF</a> QGraphicsSceneMouseEvent::scenePos () const</h3>
+<p>Returns the mouse cursor position in scene coordinates.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#pos">pos</a>(), <a href="qgraphicsscenemouseevent.html#screenPos">screenPos</a>(), and <a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos</a>().</p>
+<h3 class="fn"><a name="screenPos"></a><a href="qpoint.html">QPoint</a> QGraphicsSceneMouseEvent::screenPos () const</h3>
+<p>Returns the mouse cursor position in screen coordinates.</p>
+<p>See also <a href="qgraphicsscenemouseevent.html#pos">pos</a>(), <a href="qgraphicsscenemouseevent.html#scenePos">scenePos</a>(), and <a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

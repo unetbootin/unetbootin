@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qiterator.qdoc -->
+<head>
+  <title>Qt 4.4: QMutableVectorIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMutableVectorIterator Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QMutableVectorIterator class provides a Java-style non-const iterator for <a href="qvector.html">QVector</a> and <a href="qstack.html">QStack</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QMutableVectorIterator&gt;</pre><ul>
+<li><a href="qmutablevectoriterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmutablevectoriterator.html#QMutableVectorIterator">QMutableVectorIterator</a></b> ( QVector&lt;T&gt; &amp; <i>vector</i> )</li>
+<li><div class="fn"/><b><a href="qmutablevectoriterator.html#dtor.QMutableVectorIterator">~QMutableVectorIterator</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qmutablevectoriterator.html#findNext">findNext</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmutablevectoriterator.html#findPrevious">findPrevious</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmutablevectoriterator.html#hasNext">hasNext</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmutablevectoriterator.html#hasPrevious">hasPrevious</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qmutablevectoriterator.html#insert">insert</a></b> ( const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablevectoriterator.html#next">next</a></b> ()</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablevectoriterator.html#peekNext">peekNext</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablevectoriterator.html#peekPrevious">peekPrevious</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablevectoriterator.html#previous">previous</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablevectoriterator.html#remove">remove</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablevectoriterator.html#setValue">setValue</a></b> ( const T &amp; <i>value</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qmutablevectoriterator.html#toBack">toBack</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmutablevectoriterator.html#toFront">toFront</a></b> ()</li>
+<li><div class="fn"/>const T &amp; <b><a href="qmutablevectoriterator.html#value">value</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmutablevectoriterator.html#value-2">value</a></b> ()</li>
+<li><div class="fn"/>QMutableVectorIterator &amp; <b><a href="qmutablevectoriterator.html#operator-eq">operator=</a></b> ( QVector&lt;T&gt; &amp; <i>vector</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMutableVectorIterator class provides a Java-style non-const iterator for <a href="qvector.html">QVector</a> and <a href="qstack.html">QStack</a>.</p>
+<p><a href="qvector.html">QVector</a> has both <a href="containers.html#java-style-iterators">Java-style iterators</a> and <a href="containers.html#stl-style-iterators">STL-style iterators</a>. The Java-style iterators are more high-level and easier to use than the STL-style iterators; on the other hand, they are slightly less efficient.</p>
+<p>An alternative to using iterators is to use index positions. Most <a href="qvector.html">QVector</a> member functions take an index as their first parameter, making it possible to access, insert, and remove items without using iterators.</p>
+<p>QMutableVectorIterator&lt;T&gt; allows you to iterate over a <a href="qvector.html">QVector</a>&lt;T&gt; and modify the vector. If you don't want to modify the vector (or have a const <a href="qvector.html">QVector</a>), use the slightly faster <a href="qvectoriterator.html">QVectorIterator</a>&lt;T&gt; instead.</p>
+<p>The QMutableVectorIterator constructor takes a <a href="qvector.html">QVector</a> as argument. After construction, the iterator is located at the very beginning of the list (before the first item). Here's how to iterate over all the elements sequentially:</p>
+<pre>         QVector&lt;float&gt; vector;
+         ...
+         QMutableVectorIterator&lt;float&gt; i(vector);
+         while (i.hasNext())
+             qDebug() &lt;&lt; i.next();</pre>
+<p>The <a href="qmutablevectoriterator.html#next">next</a>() function returns the next item in the vector and advances the iterator. Unlike STL-style iterators, Java-style iterators point <i>between</i> items rather than directly <i>at</i> items. The first call to <a href="qmutablevectoriterator.html#next">next</a>() advances the iterator to the position between the first and second item, and returns the first item; the second call to <a href="qmutablevectoriterator.html#next">next</a>() advances the iterator to the position between the second and third item, returning the second item; and so on.</p>
+<p align="center"><img src="images/javaiterators1.png" /></p><p>Here's how to iterate over the elements in reverse order:</p>
+<pre>         QMutableVectorIterator&lt;float&gt; i(vector);
+         i.toBack();
+         while (i.hasPrevious())
+             qDebug() &lt;&lt; i.previous();</pre>
+<p>If you want to find all occurrences of a particular value, use <a href="qmutablevectoriterator.html#findNext">findNext</a>() or <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>() in a loop.</p>
+<p>If you want to remove items as you iterate over the vector, use <a href="qmutablevectoriterator.html#remove">remove</a>(). If you want to modify the value of an item, use <a href="qmutablevectoriterator.html#setValue">setValue</a>(). If you want to insert a new item in the vector, use <a href="qmutablevectoriterator.html#insert">insert</a>().</p>
+<p>Example:</p>
+<pre>         QMutableVectorIterator&lt;int&gt; i(vector);
+         while (i.hasNext()) {
+             int val = i.next();
+             if (val &lt; 0) {
+                 i.setValue(-val);
+             } else if (val == 0) {
+                 i.remove();
+             }
+         }</pre>
+<p>The example traverses a vector, replacing negative numbers with their absolute values, and eliminating zeroes.</p>
+<p>Only one mutable iterator can be active on a given vector at any time. Furthermore, no changes should be done directly to the vector while the iterator is active (as opposed to through the iterator), since this could invalidate the iterator and lead to undefined behavior.</p>
+<p>See also <a href="qvectoriterator.html">QVectorIterator</a> and <a href="qvector.html#iterator-typedefx">QVector::iterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMutableVectorIterator"></a>QMutableVectorIterator::QMutableVectorIterator ( <a href="qvector.html">QVector</a>&lt;T&gt; &amp; <i>vector</i> )</h3>
+<p>Constructs an iterator for traversing <i>vector</i>. The iterator is set to be at the front of the vector (before the first item).</p>
+<p>See also <a href="qmutablevectoriterator.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="dtor.QMutableVectorIterator"></a>QMutableVectorIterator::~QMutableVectorIterator ()</h3>
+<p>Destroys the iterator.</p>
+<p>See also <a href="qmutablevectoriterator.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="findNext"></a>bool QMutableVectorIterator::findNext ( const T &amp; <i>value</i> )</h3>
+<p>Searches for <i>value</i> starting from the current iterator position forward. Returns true if <i>value</i> is found; otherwise returns false.</p>
+<p>After the call, if <i>value</i> was found, the iterator is positioned just after the matching item; otherwise, the iterator is positioned at the back of the container.</p>
+<p>See also <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>().</p>
+<h3 class="fn"><a name="findPrevious"></a>bool QMutableVectorIterator::findPrevious ( const T &amp; <i>value</i> )</h3>
+<p>Searches for <i>value</i> starting from the current iterator position backward. Returns true if <i>value</i> is found; otherwise returns false.</p>
+<p>After the call, if <i>value</i> was found, the iterator is positioned just before the matching item; otherwise, the iterator is positioned at the front of the container.</p>
+<p>See also <a href="qmutablevectoriterator.html#findNext">findNext</a>().</p>
+<h3 class="fn"><a name="hasNext"></a>bool QMutableVectorIterator::hasNext () const</h3>
+<p>Returns true if there is at least one item ahead of the iterator, i.e&#x2e; the iterator is <i>not</i> at the back of the container; otherwise returns false.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasPrevious">hasPrevious</a>() and <a href="qmutablevectoriterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="hasPrevious"></a>bool QMutableVectorIterator::hasPrevious () const</h3>
+<p>Returns true if there is at least one item behind the iterator, i.e&#x2e; the iterator is <i>not</i> at the front of the container; otherwise returns false.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasNext">hasNext</a>() and <a href="qmutablevectoriterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="insert"></a>void QMutableVectorIterator::insert ( const T &amp; <i>value</i> )</h3>
+<p>Inserts <i>value</i> at the current iterator position. After the call, the iterator is located just after the inserted item.</p>
+<p>See also <a href="qmutablevectoriterator.html#remove">remove</a>() and <a href="qmutablevectoriterator.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="next"></a>T &amp; QMutableVectorIterator::next ()</h3>
+<p>Returns a reference to the next item, and advances the iterator by one position.</p>
+<p>Calling this function on an iterator located at the back of the container leads to undefined results.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasNext">hasNext</a>(), <a href="qmutablevectoriterator.html#peekNext">peekNext</a>(), and <a href="qmutablevectoriterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="peekNext"></a>T &amp; QMutableVectorIterator::peekNext () const</h3>
+<p>Returns a reference to the next item, without moving the iterator.</p>
+<p>Calling this function on an iterator located at the back of the container leads to undefined results.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasNext">hasNext</a>(), <a href="qmutablevectoriterator.html#next">next</a>(), and <a href="qmutablevectoriterator.html#peekPrevious">peekPrevious</a>().</p>
+<h3 class="fn"><a name="peekPrevious"></a>T &amp; QMutableVectorIterator::peekPrevious () const</h3>
+<p>Returns a reference to the previous item, without moving the iterator.</p>
+<p>Calling this function on an iterator located at the front of the container leads to undefined results.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasPrevious">hasPrevious</a>(), <a href="qmutablevectoriterator.html#previous">previous</a>(), and <a href="qmutablevectoriterator.html#peekNext">peekNext</a>().</p>
+<h3 class="fn"><a name="previous"></a>T &amp; QMutableVectorIterator::previous ()</h3>
+<p>Returns a reference to the previous item and moves the iterator back by one position.</p>
+<p>Calling this function on an iterator located at the front of the container leads to undefined results.</p>
+<p>See also <a href="qmutablevectoriterator.html#hasPrevious">hasPrevious</a>(), <a href="qmutablevectoriterator.html#peekPrevious">peekPrevious</a>(), and <a href="qmutablevectoriterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="remove"></a>void QMutableVectorIterator::remove ()</h3>
+<p>Removes the last item that was jumped over using one of the traversal functions (<a href="qmutablevectoriterator.html#next">next</a>(), <a href="qmutablevectoriterator.html#previous">previous</a>(), <a href="qmutablevectoriterator.html#findNext">findNext</a>(), <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>()).</p>
+<p>Example:</p>
+<pre>         QMutableVectorIterator&lt;int&gt; i(vector);
+         while (i.hasNext()) {
+             int val = i.next();
+             if (val &lt; -32768 || val &gt; 32767)
+                 i.remove();
+         }</pre>
+<p>See also <a href="qmutablevectoriterator.html#insert">insert</a>() and <a href="qmutablevectoriterator.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="setValue"></a>void QMutableVectorIterator::setValue ( const T &amp; <i>value</i> ) const</h3>
+<p>Replaces the value of the last item that was jumped over using one of the traversal functions with <i>value</i>.</p>
+<p>The traversal functions are <a href="qmutablevectoriterator.html#next">next</a>(), <a href="qmutablevectoriterator.html#previous">previous</a>(), <a href="qmutablevectoriterator.html#findNext">findNext</a>(), and <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>().</p>
+<p>Example:</p>
+<pre>         QMutableVectorIterator&lt;double&gt; i(list);
+         while (i.hasNext()) {
+             double val = i.next();
+             i.setValue(sqrt(val));
+         }</pre>
+<p>See also <a href="qmutablevectoriterator.html#value">value</a>(), <a href="qmutablevectoriterator.html#remove">remove</a>(), and <a href="qmutablevectoriterator.html#insert">insert</a>().</p>
+<h3 class="fn"><a name="toBack"></a>void QMutableVectorIterator::toBack ()</h3>
+<p>Moves the iterator to the back of the container (after the last item).</p>
+<p>See also <a href="qmutablevectoriterator.html#toFront">toFront</a>() and <a href="qmutablevectoriterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="toFront"></a>void QMutableVectorIterator::toFront ()</h3>
+<p>Moves the iterator to the front of the container (before the first item).</p>
+<p>See also <a href="qmutablevectoriterator.html#toBack">toBack</a>() and <a href="qmutablevectoriterator.html#next">next</a>().</p>
+<h3 class="fn"><a name="value"></a>const T &amp; QMutableVectorIterator::value () const</h3>
+<p>Returns the value of the last item that was jumped over using one of the traversal functions (<a href="qmutablevectoriterator.html#next">next</a>(), <a href="qmutablevectoriterator.html#previous">previous</a>(), <a href="qmutablevectoriterator.html#findNext">findNext</a>(), <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>()).</p>
+<p>After a call to <a href="qmutablevectoriterator.html#next">next</a>() or <a href="qmutablevectoriterator.html#findNext">findNext</a>(), value() is equivalent to <a href="qmutablevectoriterator.html#peekPrevious">peekPrevious</a>(). After a call to <a href="qmutablevectoriterator.html#previous">previous</a>() or <a href="qmutablevectoriterator.html#findPrevious">findPrevious</a>(), value() is equivalent to <a href="qmutablevectoriterator.html#peekNext">peekNext</a>().</p>
+<p>See also <a href="qmutablevectoriterator.html#setValue">setValue</a>().</p>
+<h3 class="fn"><a name="value-2"></a>T &amp; QMutableVectorIterator::value ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a non-const reference to the value of the last item that was jumped over using one of the traversal functions.</p>
+<h3 class="fn"><a name="operator-eq"></a>QMutableVectorIterator &amp; QMutableVectorIterator::operator= ( <a href="qvector.html">QVector</a>&lt;T&gt; &amp; <i>vector</i> )</h3>
+<p>Makes the iterator operate on <i>vector</i>. The iterator is set to be at the front of the vector (before the first item).</p>
+<p>See also <a href="qmutablevectoriterator.html#toFront">toFront</a>() and <a href="qmutablevectoriterator.html#toBack">toBack</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

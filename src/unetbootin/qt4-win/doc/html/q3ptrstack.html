@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3ptrstack.qdoc -->
+<head>
+  <title>Qt 4.4: Q3PtrStack Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3PtrStack Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3PtrStack class is a template class that provides a stack. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3PtrStack&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3ptrcollection.html">Q3PtrCollection</a>.</p>
+<ul>
+<li><a href="q3ptrstack-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3ptrstack.html#Q3PtrStack">Q3PtrStack</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3ptrstack.html#Q3PtrStack-2">Q3PtrStack</a></b> ( const Q3PtrStack&lt;type&gt; &amp; <i>s</i> )</li>
+<li><div class="fn"/><b><a href="q3ptrstack.html#dtor.Q3PtrStack">~Q3PtrStack</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3ptrstack.html#autoDelete">autoDelete</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3ptrstack.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual uint <b><a href="q3ptrstack.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrstack.html#current">current</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3ptrstack.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrstack.html#pop">pop</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ptrstack.html#push">push</a></b> ( const type * <i>d</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrstack.html#remove">remove</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ptrstack.html#setAutoDelete">setAutoDelete</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrstack.html#top">top</a></b> () const</li>
+<li><div class="fn"/><b><a href="q3ptrstack.html#operator-type--2a">operator type *</a></b> () const</li>
+<li><div class="fn"/>Q3PtrStack&lt;type&gt; &amp; <b><a href="q3ptrstack.html#operator-eq">operator=</a></b> ( const Q3PtrStack&lt;type&gt; &amp; <i>s</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3ptrcollection.html#public-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3ptrstack.html#read">read</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item &amp; <i>item</i> )</li>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3ptrstack.html#write">write</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item <i>item</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="q3ptrcollection.html#protected-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3PtrStack class is a template class that provides a stack.</p>
+<p><a href="q3valuestack.html">Q3ValueStack</a> is an STL-compatible alternative to this class.</p>
+<p>Define a template instance Q3PtrStack&lt;X&gt; to create a stack that operates on pointers to X, (X*).</p>
+<p>A stack is a last in, first out (LIFO) structure. Items are added to the top of the stack with <a href="q3ptrstack.html#push">push</a>() and retrieved from the top with <a href="q3ptrstack.html#pop">pop</a>(). Use <a href="q3ptrstack.html#top">top</a>() to get a reference to the top element without changing the stack.</p>
+<p>You can control the stack's deletion policy with <a href="q3ptrstack.html#setAutoDelete">setAutoDelete</a>().</p>
+<p>For compatibility with the <a href="q3ptrcollection.html">Q3PtrCollection</a> classes <a href="q3ptrstack.html#current">current</a>() and <a href="q3ptrstack.html#remove">remove</a>() are provided; they both operate on the <a href="q3ptrstack.html#top">top</a>().</p>
+<p>See also <a href="q3ptrlist.html">Q3PtrList</a> and <a href="q3ptrqueue.html">Q3PtrQueue</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3PtrStack"></a>Q3PtrStack::Q3PtrStack ()</h3>
+<p>Creates an empty stack.</p>
+<h3 class="fn"><a name="Q3PtrStack-2"></a>Q3PtrStack::Q3PtrStack ( const Q3PtrStack&lt;type&gt; &amp; <i>s</i> )</h3>
+<p>Creates a stack by making a shallow copy of another stack <i>s</i>.</p>
+<h3 class="fn"><a name="dtor.Q3PtrStack"></a>Q3PtrStack::~Q3PtrStack ()</h3>
+<p>Destroys the stack. All items will be deleted if <a href="q3ptrstack.html#autoDelete">autoDelete</a>() is true.</p>
+<h3 class="fn"><a name="autoDelete"></a>bool Q3PtrStack::autoDelete () const</h3>
+<p>The same as <a href="q3ptrcollection.html#autoDelete">Q3PtrCollection::autoDelete</a>(). Returns true if the auto-delete option is set. If the option is set, the stack auto-deletes its contents.</p>
+<p>See also <a href="q3ptrstack.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="clear"></a>void Q3PtrStack::clear ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes all items from the stack, deleting them if <a href="q3ptrstack.html#autoDelete">autoDelete</a>() is true.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#clear">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3ptrstack.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3PtrStack::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of items in the stack.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#count">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3ptrstack.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="current"></a>type * Q3PtrStack::current () const</h3>
+<p>Returns a pointer to the top item on the stack (most recently pushed). The stack is not changed. Returns 0 if the stack is empty.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3PtrStack::isEmpty () const</h3>
+<p>Returns true if the stack contains no elements; otherwise returns false.</p>
+<h3 class="fn"><a name="pop"></a>type * Q3PtrStack::pop ()</h3>
+<p>Removes the top item from the stack and returns it. The stack must not be empty.</p>
+<h3 class="fn"><a name="push"></a>void Q3PtrStack::push ( const type * <i>d</i> )</h3>
+<p>Adds an element <i>d</i> to the top of the stack. Last in, first out.</p>
+<h3 class="fn"><a name="read"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3PtrStack::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> &amp; <i>item</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads a stack item, <i>item</i>, from the stream <i>s</i> and returns a reference to the stream.</p>
+<p>The default implementation sets <i>item</i> to 0.</p>
+<p>See also <a href="q3ptrstack.html#write">write</a>().</p>
+<h3 class="fn"><a name="remove"></a>bool Q3PtrStack::remove ()</h3>
+<p>Removes the top item from the stack and deletes it if <a href="q3ptrstack.html#autoDelete">autoDelete</a>() is true. Returns true if there was an item to pop; otherwise returns false.</p>
+<p>See also <a href="q3ptrstack.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="setAutoDelete"></a>void Q3PtrStack::setAutoDelete ( bool <i>enable</i> )</h3>
+<p>Defines whether this stack auto-deletes its contents. The same as <a href="q3ptrcollection.html#setAutoDelete">Q3PtrCollection::setAutoDelete</a>(). If <i>enable</i> is true, auto-delete is turned on.</p>
+<p>If auto-deleting is turned on, all the items in the stack are deleted when the stack itself is deleted. This is convenient if the stack has the only pointers to the items.</p>
+<p>The default setting is false, for safety. If you turn it on, be careful about copying the stack, or you might find yourself with two stacks deleting the same items.</p>
+<p>Note that the auto-delete setting may also affect other functions in subclasses. For example, a subclass that has a <a href="q3ptrstack.html#remove">remove</a>() function will remove the item from its data structure, and if auto-delete is enabled, will also delete the item.</p>
+<p>See also <a href="q3ptrstack.html#autoDelete">autoDelete</a>().</p>
+<h3 class="fn"><a name="top"></a>type * Q3PtrStack::top () const</h3>
+<p>Returns a pointer to the top item on the stack (most recently pushed). The stack is not changed. Returns 0 if the stack is empty.</p>
+<h3 class="fn"><a name="write"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3PtrStack::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> <i>item</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Writes a stack item, <i>item</i>, to the stream <i>s</i> and returns a reference to the stream.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="q3ptrstack.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-type--2a"></a>Q3PtrStack::operator type * () const</h3>
+<p>Returns a pointer to the top item on the stack (most recently pushed). The stack is not changed. Returns 0 if the stack is empty.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3PtrStack&lt;type&gt; &amp; Q3PtrStack::operator= ( const Q3PtrStack&lt;type&gt; &amp; <i>s</i> )</h3>
+<p>Sets the contents of this stack by making a shallow copy of another stack <i>s</i>. Elements currently in this stack will be deleted if <a href="q3ptrstack.html#autoDelete">autoDelete</a>() is true.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

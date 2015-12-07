@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: View Classes</title>
+  <link rel="prev" href="model-view-creating-models.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-selection.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-creating-models.html">Creating New Models</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-selection.html">Handling Selections in Item Views</a>]
+</p>
+<h1 class="title">View Classes<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#concepts">Concepts</a></li>
+<li><a href="#using-an-existing-view">Using an Existing View</a></li>
+<ul><li><a href="#using-a-model">Using a Model</a></li>
+<li><a href="#using-multiple-views-onto-the-same-model">Using Multiple Views onto the Same Model</a></li>
+</ul>
+<li><a href="#handling-selections-of-items">Handling Selections of Items</a></li>
+<ul><li><a href="#sharing-selections-between-views">Sharing Selections Between Views</a></li>
+</ul>
+</ul>
+<a name="concepts"></a>
+<h2>Concepts</h2>
+<p>In the model/view architecture, the view obtains items of data from the model and presents them to the user. The way that the data is presented need not resemble the representation of the data provided by the model, and may be <i>completely different</i> from the underlying data structure used to store items of data.</p>
+<p>The separation of content and presentation is achieved by the use of a standard model interface provided by <a href="qabstractitemmodel.html">QAbstractItemModel</a>, a standard view interface provided by <a href="qabstractitemview.html">QAbstractItemView</a>, and the use of model indexes that represent items of data in a general way. Views typically manage the overall layout of the data obtained from models. They may render individual items of data themselves, or use <a href="model-view-delegate.html">delegates</a> to handle both rendering and editing features.</p>
+<p>As well as presenting data, views handle navigation between items, and some aspects of item selection. The views also implement basic user interface features, such as context menus and drag and drop. A view can provide default editing facilities for items, or it may work with a <a href="model-view-delegate.html">delegate</a> to provide a custom editor.</p>
+<p>A view can be constructed without a model, but a model must be provided before it can display useful information. Views keep track of the items that the user has selected through the use of <a href="model-view-selection.html">selections</a> which can be maintained separately for each view, or shared between multiple views.</p>
+<p>Some views, such as <a href="qtableview.html">QTableView</a> and <a href="qtreeview.html">QTreeView</a>, display headers as well as items. These are also implemented by a view class, <a href="qheaderview.html">QHeaderView</a>. Headers usually access the same model as the view that contains them. They retrieve data from the model using the <a href="qabstractitemmodel.html#headerData">QAbstractItemModel::headerData</a>() function, and usually display header information in the form of a label. New headers can be subclassed from the <a href="qheaderview.html">QHeaderView</a> class to provide more specialized labels for views.</p>
+<a name="using-an-existing-view"></a>
+<h2>Using an Existing View</h2>
+<p>Qt provides three ready-to-use view classes that present data from models in ways that are familiar to most users. <a href="qlistview.html">QListView</a> can display items from a model as a simple list, or in the form of a classic icon view. <a href="qtreeview.html">QTreeView</a> displays items from a model as a hierarchy of lists, allowing deeply nested structures to be represented in a compact way. <a href="qtableview.html">QTableView</a> presents items from a model in the form of a table, much like the layout of a spreadsheet application.</p>
+<p align="center"><img src="images/standard-views.png" /></p><p>The default behavior of the standard views shown above should be sufficient for most applications. They provide basic editing facilities, and can be customized to suit the needs of more specialized user interfaces.</p>
+<a name="using-a-model"></a>
+<h3>Using a Model</h3>
+<p>We take the string list model that <a href="model-view-creating-models.html">we created as an example model</a>, set it up with some data, and construct a view to display the contents of the model. This can all be performed within a single function:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+<span class="comment"> //</span> Unindented for quoting purposes:
+ QStringList numbers;
+ numbers &lt;&lt; &quot;One&quot; &lt;&lt; &quot;Two&quot; &lt;&lt; &quot;Three&quot; &lt;&lt; &quot;Four&quot; &lt;&lt; &quot;Five&quot;;
+
+ QAbstractItemModel *model = new StringListModel(numbers);</pre>
+<p>Note that the <tt>StringListModel</tt> is declared as a <a href="qabstractitemmodel.html">QAbstractItemModel</a>. This allows us to use the abstract interface to the model, and ensures that the code will still work even if we replace the string list model with a different model in the future.</p>
+<p>The list view provided by <a href="qlistview.html">QListView</a> is sufficient for presenting the items in the string list model. We construct the view, and set up the model using the following lines of code:</p>
+<pre> QListView *view = new QListView;
+ view-&gt;setModel(model);</pre>
+<p>The view is shown in the normal way:</p>
+<pre>     view-&gt;show();
+     return app.exec();
+ }</pre>
+<p>The view renders the contents of a model, accessing data via the model's interface. When the user tries to edit an item, the view uses a default delegate to provide an editor widget.</p>
+<p align="center"><img src="images/stringlistmodel.png" /></p><p>The above image shows how a <a href="qlistview.html">QListView</a> represents the data in the string list model. Since the model is editable, the view automatically allows each item in the list to be edited using the default delegate.</p>
+<a name="using-multiple-views-onto-the-same-model"></a>
+<h3>Using Multiple Views onto the Same Model</h3>
+<p>Providing multiple views onto the same model is simply a matter of setting the same model for each view. In the following code we create two table views, each using the same simple table model which we have created for this example:</p>
+<pre>     QTableView *firstTableView = new QTableView;
+     QTableView *secondTableView = new QTableView;
+
+     firstTableView-&gt;setModel(model);
+     secondTableView-&gt;setModel(model);</pre>
+<p>The use of signals and slots in the model/view architecture means that changes to the model can be propagated to all the attached views, ensuring that we can always access the same data regardless of the view being used.</p>
+<p align="center"><img src="images/sharedmodel-tableviews.png" /></p><p>The above image shows two different views onto the same model, each containing a number of selected items. Although the data from the model is shown consistently across view, each view maintains its own internal selection model. This can be useful in certain situations but, for many applications, a shared selection model is desirable.</p>
+<a name="handling-selections-of-items"></a>
+<h2>Handling Selections of Items</h2>
+<p>The mechanism for handling selections of items within views is provided by the <a href="qitemselectionmodel.html">QItemSelectionModel</a> class. All of the standard views construct their own selection models by default, and interact with them in the normal way. The selection model being used by a view can be obtained through the <a href="qabstractitemview.html#selectionModel">selectionModel()</a> function, and a replacement selection model can be specified with <a href="qabstractitemview.html#setSelectionModel">setSelectionModel()</a>. The ability to control the selection model used by a view is useful when we want to provide multiple consistent views onto the same model data.</p>
+<p>Generally, unless you are subclassing a model or view, you will not need to manipulate the contents of selections directly. However, the interface to the selection model can be accessed, if required, and this is explored in the chapter on <a href="model-view-selection.html">Handling Selections in Item Views</a>.</p>
+<a name="sharing-selections-between-views"></a>
+<h3>Sharing Selections Between Views</h3>
+<p>Although it is convenient that the view classes provide their own selection models by default, when we use more than one view onto the same model it is often desirable that both the model's data and the user's selection are shown consistently in all views. Since the view classes allow their internal selection models to be replaced, we can achieve a unified selection between views with the following line:</p>
+<pre>     secondTableView-&gt;setSelectionModel(firstTableView-&gt;selectionModel());</pre>
+<p>The second view is given the selection model for the first view. Both views now operate on the same selection model, keeping both the data and the selected items synchronized.</p>
+<p align="center"><img src="images/sharedselection-tableviews.png" /></p><p>In the example shown above, two views of the same type were used to display the same model's data. However, if two different types of view were used, the selected items may be represented very differently in each view; for example, a contiguous selection in a table view can be represented as a fragmented set of highlighted items in a tree view.</p>
+<p>
+[Previous: <a href="model-view-creating-models.html">Creating New Models</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-selection.html">Handling Selections in Item Views</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

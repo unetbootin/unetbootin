@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3ptrlist.qdoc -->
+<head>
+  <title>Qt 4.4: Q3PtrListIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3PtrListIterator Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3PtrListIterator class provides an iterator for <a href="q3ptrlist.html">Q3PtrList</a> collections. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3PtrListIterator&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherited by <a href="q3strlistiterator.html">Q3StrListIterator</a>.</p>
+<ul>
+<li><a href="q3ptrlistiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3ptrlistiterator.html#Q3PtrListIterator">Q3PtrListIterator</a></b> ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> )</li>
+<li><div class="fn"/><b><a href="q3ptrlistiterator.html#dtor.Q3PtrListIterator">~Q3PtrListIterator</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlistiterator.html#atFirst">atFirst</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlistiterator.html#atLast">atLast</a></b> () const</li>
+<li><div class="fn"/>uint <b><a href="q3ptrlistiterator.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#current">current</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlistiterator.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#toFirst">toFirst</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#toLast">toLast</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3ptrlistiterator.html#operator-type--2a">operator type *</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator-28-29">operator()</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator-2a">operator*</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator-2b-eq">operator+=</a></b> ( uint <i>jump</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlistiterator.html#operator--eq">operator-=</a></b> ( uint <i>jump</i> )</li>
+<li><div class="fn"/>Q3PtrListIterator&lt;type&gt; &amp; <b><a href="q3ptrlistiterator.html#operator-eq">operator=</a></b> ( const Q3PtrListIterator&lt;type&gt; &amp; <i>it</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3PtrListIterator class provides an iterator for <a href="q3ptrlist.html">Q3PtrList</a> collections.</p>
+<p>Define a template instance Q3PtrListIterator&lt;X&gt; to create a list iterator that operates on <a href="q3ptrlist.html">Q3PtrList</a>&lt;X&gt; (list of X*).</p>
+<p>The following example is similar to the example in the <a href="q3ptrlist.html">Q3PtrList</a> class documentation, but it uses Q3PtrListIterator. The class Employee is defined there.</p>
+<pre>     Q3PtrList&lt;Employee&gt; list;
+
+     list.append( new Employee(&quot;John&quot;, &quot;Doe&quot;, 50000) );
+     list.append( new Employee(&quot;Jane&quot;, &quot;Williams&quot;, 80000) );
+     list.append( new Employee(&quot;Tom&quot;, &quot;Jones&quot;, 60000) );
+
+     Q3PtrListIterator&lt;Employee&gt; it( list );
+     Employee *employee;
+     while ( (employee = it.current()) != 0 ) {
+         ++it;
+         cout &lt;&lt; employee-&gt;surname().latin1() &lt;&lt; &quot;, &quot; &lt;&lt;
+                 employee-&gt;forename().latin1() &lt;&lt; &quot; earns &quot; &lt;&lt;
+                 employee-&gt;salary() &lt;&lt; endl;
+     }</pre>
+<p>The output is</p>
+<pre>     Doe, John earns 50000
+     Williams, Jane earns 80000
+     Jones, Tom earns 60000</pre>
+<p>Using a list iterator is a more robust way of traversing the list than using the <a href="q3ptrlist.html">Q3PtrList</a> member functions <a href="q3ptrlist.html#first">first</a>(), <a href="q3ptrlist.html#next">next</a>(), <a href="q3ptrlist.html#current">current</a>(), etc., as many iterators can traverse the same list independently.</p>
+<p>An iterator has its own current list item and can get the next and previous list items. It doesn't modify the list in any way.</p>
+<p>When an item is removed from the list, all iterators that point to that item are updated to point to <a href="q3ptrlist.html#current">Q3PtrList::current</a>() instead to avoid dangling references.</p>
+<p>See also <a href="q3ptrlist.html">Q3PtrList</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3PtrListIterator"></a>Q3PtrListIterator::Q3PtrListIterator ( const <a href="q3ptrlist.html">Q3PtrList</a>&lt;type&gt; &amp; <i>list</i> )</h3>
+<p>Constructs an iterator for <i>list</i>. The current iterator item is set to point on the first item in the <i>list</i>.</p>
+<h3 class="fn"><a name="dtor.Q3PtrListIterator"></a>Q3PtrListIterator::~Q3PtrListIterator ()</h3>
+<p>Destroys the iterator.</p>
+<h3 class="fn"><a name="atFirst"></a>bool Q3PtrListIterator::atFirst () const</h3>
+<p>Returns TRUE if the current iterator item is the first list item; otherwise returns FALSE.</p>
+<p>See also <a href="q3ptrlistiterator.html#toFirst">toFirst</a>() and <a href="q3ptrlistiterator.html#atLast">atLast</a>().</p>
+<h3 class="fn"><a name="atLast"></a>bool Q3PtrListIterator::atLast () const</h3>
+<p>Returns TRUE if the current iterator item is the last list item; otherwise returns FALSE.</p>
+<p>See also <a href="q3ptrlistiterator.html#toLast">toLast</a>() and <a href="q3ptrlistiterator.html#atFirst">atFirst</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3PtrListIterator::count () const</h3>
+<p>Returns the number of items in the list this iterator operates on.</p>
+<p>See also <a href="q3ptrlistiterator.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="current"></a>type * Q3PtrListIterator::current () const</h3>
+<p>Returns a pointer to the current iterator item. If the iterator is positioned before the first item in the list or after the last item in the list, 0 is returned.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3PtrListIterator::isEmpty () const</h3>
+<p>Returns TRUE if the list is empty; otherwise returns FALSE.</p>
+<p>See also <a href="q3ptrlistiterator.html#count">count</a>().</p>
+<h3 class="fn"><a name="toFirst"></a>type * Q3PtrListIterator::toFirst ()</h3>
+<p>Sets the current iterator item to point to the first list item and returns a pointer to the item. Sets the current item to 0 and returns 0 if the list is empty.</p>
+<p>See also <a href="q3ptrlistiterator.html#toLast">toLast</a>() and <a href="q3ptrlistiterator.html#atFirst">atFirst</a>().</p>
+<h3 class="fn"><a name="toLast"></a>type * Q3PtrListIterator::toLast ()</h3>
+<p>Sets the current iterator item to point to the last list item and returns a pointer to the item. Sets the current item to 0 and returns 0 if the list is empty.</p>
+<p>See also <a href="q3ptrlistiterator.html#toFirst">toFirst</a>() and <a href="q3ptrlistiterator.html#atLast">atLast</a>().</p>
+<h3 class="fn"><a name="operator-type--2a"></a>Q3PtrListIterator::operator type * () const</h3>
+<p>Cast operator. Returns a pointer to the current iterator item. Same as <a href="q3ptrlistiterator.html#current">current</a>().</p>
+<h3 class="fn"><a name="operator-28-29"></a>type * Q3PtrListIterator::operator() ()</h3>
+<p>Makes the succeeding item current and returns the original current item.</p>
+<p>If the current iterator item was the last item in the list or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator-2a"></a>type * Q3PtrListIterator::operator* ()</h3>
+<p>Asterisk operator. Returns a pointer to the current iterator item. Same as <a href="q3ptrlistiterator.html#current">current</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>type * Q3PtrListIterator::operator++ ()</h3>
+<p>Prefix ++ makes the succeeding item current and returns the new current item.</p>
+<p>If the current iterator item was the last item in the list or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>type * Q3PtrListIterator::operator+= ( <a href="qtglobal.html#uint-typedef">uint</a> <i>jump</i> )</h3>
+<p>Sets the current item to the item <i>jump</i> positions after the current item and returns a pointer to that item.</p>
+<p>If that item is beyond the last item or if the list is empty, it sets the current item to 0 and returns 0</p>
+<h3 class="fn"><a name="operator--"></a>type * Q3PtrListIterator::operator-- ()</h3>
+<p>Prefix - makes the preceding item current and returns the new current item.</p>
+<p>If the current iterator item was the first item in the list or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator--eq"></a>type * Q3PtrListIterator::operator-= ( <a href="qtglobal.html#uint-typedef">uint</a> <i>jump</i> )</h3>
+<p>Returns the item <i>jump</i> positions before the current item or 0 if it is beyond the first item. Makes this the current item.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3PtrListIterator&lt;type&gt; &amp; Q3PtrListIterator::operator= ( const Q3PtrListIterator&lt;type&gt; &amp; <i>it</i> )</h3>
+<p>Assignment. Makes a copy of the iterator <i>it</i> and returns a reference to this iterator.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

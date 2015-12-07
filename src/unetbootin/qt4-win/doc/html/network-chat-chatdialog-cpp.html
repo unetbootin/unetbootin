@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: chatdialog.cpp Example File (network/chat/chatdialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">chatdialog.cpp Example File<br /><span class="small-subtitle">network/chat/chatdialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;chatdialog.h&quot;
+
+ ChatDialog::ChatDialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     setupUi(this);
+
+     lineEdit-&gt;setFocusPolicy(Qt::StrongFocus);
+     textEdit-&gt;setFocusPolicy(Qt::NoFocus);
+     textEdit-&gt;setReadOnly(true);
+     listWidget-&gt;setFocusPolicy(Qt::NoFocus);
+
+     connect(lineEdit, SIGNAL(returnPressed()), this, SLOT(returnPressed()));
+     connect(&amp;client, SIGNAL(newMessage(const QString &amp;, const QString &amp;)),
+             this, SLOT(appendMessage(const QString &amp;, const QString &amp;)));
+     connect(&amp;client, SIGNAL(newParticipant(const QString &amp;)),
+             this, SLOT(newParticipant(const QString &amp;)));
+     connect(&amp;client, SIGNAL(participantLeft(const QString &amp;)),
+             this, SLOT(participantLeft(const QString &amp;)));
+
+     myNickName = client.nickName();
+     newParticipant(myNickName);
+     tableFormat.setBorder(0);
+     QTimer::singleShot(10 * 1000, this, SLOT(showInformation()));
+ }
+
+ void ChatDialog::appendMessage(const QString &amp;from, const QString &amp;message)
+ {
+     if (from.isEmpty() || message.isEmpty())
+         return;
+
+     QTextCursor cursor(textEdit-&gt;textCursor());
+     cursor.movePosition(QTextCursor::End);
+     QTextTable *table = cursor.insertTable(1, 2, tableFormat);
+     table-&gt;cellAt(0, 0).firstCursorPosition().insertText(&quot;&lt;&quot; + from + &quot;&gt; &quot;);
+     table-&gt;cellAt(0, 1).firstCursorPosition().insertText(message);
+     QScrollBar *bar = textEdit-&gt;verticalScrollBar();
+     bar-&gt;setValue(bar-&gt;maximum());
+ }
+
+ void ChatDialog::returnPressed()
+ {
+     QString text = lineEdit-&gt;text();
+     if (text.isEmpty())
+         return;
+
+     if (text.startsWith(QChar('/'))) {
+         QColor color = textEdit-&gt;textColor();
+         textEdit-&gt;setTextColor(Qt::red);
+         textEdit-&gt;append(tr(&quot;! Unknown command: %1&quot;)
+                          .arg(text.left(text.indexOf(' '))));
+         textEdit-&gt;setTextColor(color);
+     } else {
+         client.sendMessage(text);
+         appendMessage(myNickName, text);
+     }
+
+     lineEdit-&gt;clear();
+ }
+
+ void ChatDialog::newParticipant(const QString &amp;nick)
+ {
+     if (nick.isEmpty())
+         return;
+
+     QColor color = textEdit-&gt;textColor();
+     textEdit-&gt;setTextColor(Qt::gray);
+     textEdit-&gt;append(tr(&quot;* %1 has joined&quot;).arg(nick));
+     textEdit-&gt;setTextColor(color);
+     listWidget-&gt;addItem(nick);
+ }
+
+ void ChatDialog::participantLeft(const QString &amp;nick)
+ {
+     if (nick.isEmpty())
+         return;
+
+     QList&lt;QListWidgetItem *&gt; items = listWidget-&gt;findItems(nick,
+                                                            Qt::MatchExactly);
+     if (items.isEmpty())
+         return;
+
+     delete items.at(0);
+     QColor color = textEdit-&gt;textColor();
+     textEdit-&gt;setTextColor(Qt::gray);
+     textEdit-&gt;append(tr(&quot;* %1 has left&quot;).arg(nick));
+     textEdit-&gt;setTextColor(color);
+ }
+
+ void ChatDialog::showInformation()
+ {
+     if (listWidget-&gt;count() == 1) {
+         QMessageBox::information(this, tr(&quot;Chat&quot;),
+                                  tr(&quot;Launch several instances of this &quot;
+                                     &quot;program on your local network and &quot;
+                                     &quot;start chatting!&quot;));
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

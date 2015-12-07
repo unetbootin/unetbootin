@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qcoreevent.cpp -->
+<head>
+  <title>Qt 4.4: QChildEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QChildEvent Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QChildEvent class contains event parameters for child object events. <a href="#details">More...</a></p>
+<pre> #include &lt;QChildEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qchildevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qchildevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qchildevent.html#QChildEvent">QChildEvent</a></b> ( Type <i>type</i>, QObject * <i>child</i> )</li>
+<li><div class="fn"/>bool <b><a href="qchildevent.html#added">added</a></b> () const</li>
+<li><div class="fn"/>QObject * <b><a href="qchildevent.html#child">child</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qchildevent.html#polished">polished</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qchildevent.html#removed">removed</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QChildEvent class contains event parameters for child object events.</p>
+<p>Child events are sent immediately to objects when children are added or removed.</p>
+<p>In both cases you can only rely on the child being a <a href="qobject.html">QObject</a> (or, if <a href="qobject.html#isWidgetType">QObject::isWidgetType</a>() returns true, a <a href="qwidget.html">QWidget</a>). This is because in the <a href="qevent.html#Type-enum">QEvent::ChildAdded</a> case the child is not yet fully constructed; in the <a href="qevent.html#Type-enum">QEvent::ChildRemoved</a> case it might have already been destructed.</p>
+<p>The handler for these events is <a href="qobject.html#childEvent">QObject::childEvent</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QChildEvent"></a>QChildEvent::QChildEvent ( <a href="qevent.html#Type-enum">Type</a> <i>type</i>, <a href="qobject.html">QObject</a> * <i>child</i> )</h3>
+<p>Constructs a child event object of a particular <i>type</i> for the <i>child</i>.</p>
+<p><i>type</i> can be <a href="qevent.html#Type-enum">QEvent::ChildAdded</a>, <a href="qevent.html#Type-enum">QEvent::ChildRemoved</a>, <a href="qevent.html#Type-enum">QEvent::ChildPolished</a>, or <a href="qevent.html#Type-enum">QEvent::ChildRemoved</a>.</p>
+<p>See also <a href="qchildevent.html#child">child</a>().</p>
+<h3 class="fn"><a name="added"></a>bool QChildEvent::added () const</h3>
+<p>Returns true if <a href="qevent.html#type">type</a>() is <a href="qevent.html#Type-enum">QEvent::ChildAdded</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="child"></a><a href="qobject.html">QObject</a> * QChildEvent::child () const</h3>
+<p>Returns the child object that was added or removed.</p>
+<h3 class="fn"><a name="polished"></a>bool QChildEvent::polished () const</h3>
+<p>Returns true if <a href="qevent.html#type">type</a>() is <a href="qevent.html#Type-enum">QEvent::ChildPolished</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="removed"></a>bool QChildEvent::removed () const</h3>
+<p>Returns true if <a href="qevent.html#type">type</a>() is <a href="qevent.html#Type-enum">QEvent::ChildRemoved</a>; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

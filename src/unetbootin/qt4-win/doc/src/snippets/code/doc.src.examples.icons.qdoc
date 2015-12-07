@@ -1,0 +1,16 @@
+//! [0]
+        if (!condition)
+             qFatal("ASSERT: "condition" in file ...");
+//! [0]
+
+
+//! [1]
+        qmake "CONFIG += debug" icons.pro
+//! [1]
+
+
+//! [2]
+        qmake "CONFIG += release" icons.pro
+//! [2]
+
+

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/svg/qsvgrenderer.cpp -->
+<head>
+  <title>Qt 4.4: QSvgRenderer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSvgRenderer Class Reference<br /><span class="small-subtitle">[<a href="qtsvg.html">QtSvg</a> module]</span>
+</h1>
+<p>The QSvgRenderer class is used to draw the contents of SVG files onto paint devices. <a href="#details">More...</a></p>
+<pre> #include &lt;QSvgRenderer&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qsvgrenderer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#framesPerSecond-prop">framesPerSecond</a></b> : int</li>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#viewBox-prop">viewBox</a></b> : QRectF</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#QSvgRenderer">QSvgRenderer</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#QSvgRenderer-2">QSvgRenderer</a></b> ( const QString &amp; <i>filename</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#QSvgRenderer-3">QSvgRenderer</a></b> ( const QByteArray &amp; <i>contents</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsvgrenderer.html#dtor.QSvgRenderer">~QSvgRenderer</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qsvgrenderer.html#animated">animated</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qsvgrenderer.html#boundsOnElement">boundsOnElement</a></b> ( const QString &amp; <i>id</i> ) const</li>
+<li><div class="fn"/>QSize <b><a href="qsvgrenderer.html#defaultSize">defaultSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsvgrenderer.html#elementExists">elementExists</a></b> ( const QString &amp; <i>id</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qsvgrenderer.html#framesPerSecond-prop">framesPerSecond</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsvgrenderer.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QMatrix <b><a href="qsvgrenderer.html#matrixForElement">matrixForElement</a></b> ( const QString &amp; <i>id</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#framesPerSecond-prop">setFramesPerSecond</a></b> ( int <i>num</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#viewBox-prop">setViewBox</a></b> ( const QRect &amp; <i>viewbox</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#viewBox-prop">setViewBox</a></b> ( const QRectF &amp; <i>viewbox</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qsvgrenderer.html#viewBox">viewBox</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qsvgrenderer.html#viewBox-prop">viewBoxF</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qsvgrenderer.html#load">load</a></b> ( const QString &amp; <i>filename</i> )</li>
+<li><div class="fn"/>bool <b><a href="qsvgrenderer.html#load-2">load</a></b> ( const QByteArray &amp; <i>contents</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#render">render</a></b> ( QPainter * <i>painter</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#render-2">render</a></b> ( QPainter * <i>painter</i>, const QRectF &amp; <i>bounds</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#render-3">render</a></b> ( QPainter * <i>painter</i>, const QString &amp; <i>elementId</i>, const QRectF &amp; <i>bounds</i> = QRectF() )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qsvgrenderer.html#repaintNeeded">repaintNeeded</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSvgRenderer class is used to draw the contents of SVG files onto paint devices.</p>
+<p>Using QSvgRenderer, Scalable Vector Graphics (SVG) can be rendered onto any QPaintDevice subclass, including <a href="qwidget.html">QWidget</a>, <a href="qimage.html">QImage</a>, and <a href="qglwidget.html">QGLWidget</a>.</p>
+<p>QSvgRenderer provides an API that supports basic features of SVG rendering, such as loading and rendering of static drawings, and more interactive features like animation. Since the rendering is performed using <a href="qpainter.html">QPainter</a>, SVG drawings can be rendered on any subclass of QPaintDevice.</p>
+<p>SVG drawings are either loaded when an QSvgRenderer is constructed, or loaded later using the <a href="qsvgrenderer.html#load">load</a>() functions. Data is either supplied directly as serialized XML, or indirectly using a file name. If a valid file has been loaded, either when the renderer is constructed or at some later time, <a href="qsvgrenderer.html#isValid">isValid</a>() returns true; otherwise it returns false. QSvgRenderer provides the <a href="qsvgrenderer.html#render">render</a>() slot to render the current document, or the current frame of an animated document, using a given painter.</p>
+<p>The <a href="qsvgrenderer.html#defaultSize">defaultSize</a>() function provides information about the amount of space that is required to render the currently loaded SVG file. This is useful for paint devices, such as <a href="qwidget.html">QWidget</a>, that often need to supply a size hint to their parent layout. The default size of a drawing may differ from its visible area, found using the <a href="qsvgrenderer.html#viewBox-prop">viewBox</a> property.</p>
+<p>Animated SVG drawings are supported, and can be controlled with a simple collection of functions and properties:</p>
+<ul>
+<li>The <a href="qsvgrenderer.html#animated">animated</a>() function indicates whether a drawing contains animation information.</li>
+<li>The <a href="qsvgrenderer.html#framesPerSecond-prop">framesPerSecond</a> property contains the rate at which the animation plays.</li>
+</ul>
+<p>Finally, the QSvgRenderer class provides the <a href="qsvgrenderer.html#repaintNeeded">repaintNeeded</a>() signal which is emitted whenever the rendering of the document needs to be updated.</p>
+<p>See also <a href="qsvgwidget.html">QSvgWidget</a>, <a href="qtsvg.html">QtSvg Module</a>, <a href="painting-svgviewer.html">SVG Viewer Example</a>, and <a href="qpicture.html">QPicture</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="framesPerSecond-prop"></a>framesPerSecond : int</h3>
+<p>This property holds the number of frames per second to be shown.</p>
+<p>The number of frames per second is 0 if the current document is not animated.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int framesPerSecond () const</b></li>
+<li><div class="fn"/><b>void setFramesPerSecond ( int <i>num</i> )</b></li>
+</ul>
+<p>See also <a href="qsvgrenderer.html#animated">animated</a>().</p>
+<h3 class="fn"><a name="viewBox-prop"></a>viewBox : <a href="qrectf.html">QRectF</a></h3>
+<p>This property holds the rectangle specifying the visible area of the document in logical coordinates.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QRectF viewBoxF () const</b></li>
+<li><div class="fn"/><b>void setViewBox ( const QRect &amp; <i>viewbox</i> )</b></li>
+<li><div class="fn"/><b>void setViewBox ( const QRectF &amp; <i>viewbox</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSvgRenderer"></a>QSvgRenderer::QSvgRenderer ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new renderer with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QSvgRenderer-2"></a>QSvgRenderer::QSvgRenderer ( const <a href="qstring.html">QString</a> &amp; <i>filename</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new renderer with the given <i>parent</i> and loads the contents of the SVG file with the specified <i>filename</i>.</p>
+<h3 class="fn"><a name="QSvgRenderer-3"></a>QSvgRenderer::QSvgRenderer ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>contents</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new renderer with the given <i>parent</i> and loads the specified SVG format <i>contents</i>.</p>
+<h3 class="fn"><a name="dtor.QSvgRenderer"></a>QSvgRenderer::~QSvgRenderer ()</h3>
+<p>Destroys the renderer.</p>
+<h3 class="fn"><a name="animated"></a>bool QSvgRenderer::animated () const</h3>
+<p>Returns true if the current document contains animated elements; otherwise returns false.</p>
+<p>See also <a href="qsvgrenderer.html#framesPerSecond-prop">framesPerSecond</a>().</p>
+<h3 class="fn"><a name="boundsOnElement"></a><a href="qrectf.html">QRectF</a> QSvgRenderer::boundsOnElement ( const <a href="qstring.html">QString</a> &amp; <i>id</i> ) const</h3>
+<p>Returns bounding rectangle of the item with the given <i>id</i>. The transformation matrix of parent elements is not affecting the bounds of the element.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="defaultSize"></a><a href="qsize.html">QSize</a> QSvgRenderer::defaultSize () const</h3>
+<p>Returns the default size of the document contents.</p>
+<h3 class="fn"><a name="elementExists"></a>bool QSvgRenderer::elementExists ( const <a href="qstring.html">QString</a> &amp; <i>id</i> ) const</h3>
+<p>Returns true if the element with the given <i>id</i> exists in the currently parsed SVG file and is a renderable element.</p>
+<p>Note: this method returns true only for elements that can be rendered. Which implies that elements that are considered part of the fill/stroke style properties, e.g&#x2e; radialGradients even tough marked with &quot;id&quot; attributes will not be found by this method.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="isValid"></a>bool QSvgRenderer::isValid () const</h3>
+<p>Returns true if there is a valid current document; otherwise returns false.</p>
+<h3 class="fn"><a name="load"></a>bool QSvgRenderer::load ( const <a href="qstring.html">QString</a> &amp; <i>filename</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Loads the SVG file specified by <i>filename</i>, returning true if the content was successfully parsed; otherwise returns false.</p>
+<h3 class="fn"><a name="load-2"></a>bool QSvgRenderer::load ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>contents</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Loads the specified SVG format <i>contents</i>, returning true if the content was successfully parsed; otherwise returns false.</p>
+<h3 class="fn"><a name="matrixForElement"></a><a href="qmatrix.html">QMatrix</a> QSvgRenderer::matrixForElement ( const <a href="qstring.html">QString</a> &amp; <i>id</i> ) const</h3>
+<p>Returns the transformation matrix setup for the element with the given <i>id</i>. That includes the transformation on the element itself.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="render"></a>void QSvgRenderer::render ( <a href="qpainter.html">QPainter</a> * <i>painter</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Renders the current document, or the current frame of an animated document, using the given <i>painter</i>.</p>
+<h3 class="fn"><a name="render-2"></a>void QSvgRenderer::render ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>bounds</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Renders the current document, or the current frame of an animated document, using the given <i>painter</i> on the specified <i>bounds</i> within the painter. If the bounding rectangle is not specified the SVG file is mapped to the whole paint device.</p>
+<h3 class="fn"><a name="render-3"></a>void QSvgRenderer::render ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qstring.html">QString</a> &amp; <i>elementId</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>bounds</i> = QRectF() )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Renders the given element with <i>elementId</i> using the given <i>painter</i> on the specified <i>bounds</i>. If the bounding rectangle is not specified the SVG element is mapped to the whole paint device.</p>
+<h3 class="fn"><a name="repaintNeeded"></a>void QSvgRenderer::repaintNeeded ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the rendering of the document needs to be updated, usually for the purposes of animation.</p>
+<h3 class="fn"><a name="viewBox"></a><a href="qrect.html">QRect</a> QSvgRenderer::viewBox () const</h3>
+<p>Returns <a href="qsvgrenderer.html#viewBox-prop">viewBoxF</a>().toRect().</p>
+<p>See also <a href="qsvgrenderer.html#viewBox-prop">setViewBox</a>() and <a href="qsvgrenderer.html#viewBox-prop">viewBoxF</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

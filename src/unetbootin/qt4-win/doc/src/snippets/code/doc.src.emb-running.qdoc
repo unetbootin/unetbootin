@@ -1,0 +1,61 @@
+//! [0]
+        cd path/to/QtEmbedded/demos/textedit
+        ./textedit -qws
+//! [0]
+
+
+//! [1]
+        ./myfirstserverapplication -qws -display "transformed:rot90:1"
+        ./mysecondserverapplication -qws -display "QVFb:2"
+//! [1]
+
+
+//! [2]
+        ./myclientapplication -display "QVFb:2"
+//! [2]
+
+
+//! [3]
+        ./myserverapplication -qws -display "Multi: QVFb:0
+                QVFb:1:offset=0,0 VNC:offset=640,0 :2"
+//! [3]
+
+
+//! [4]
+        ./myapplication -fn helvetica
+//! [4]
+
+
+//! [5]
+        ./myapplication -bg blue
+//! [5]
+
+
+//! [6]
+        ./myapplication -btn green
+//! [6]
+
+
+//! [7]
+        ./myapplication -fg 'dark blue'
+//! [7]
+
+
+//! [8]
+        ./myapplication -name texteditapplication
+//! [8]
+
+
+//! [9]
+        ./myapplication -title 'Text Edit'
+//! [9]
+
+
+//! [10]
+        ./myapplication -geometry 300x200x50x50
+//! [10]
+
+
+//! [11]
+        ./myapplication -decoration windows
+//! [11]

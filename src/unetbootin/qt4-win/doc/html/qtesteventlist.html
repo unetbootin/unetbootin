@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtestevent.qdoc -->
+<head>
+  <title>Qt 4.4: QTestEventList Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTestEventList Class Reference<br /><span class="small-subtitle">[<a href="qttest.html">QtTest</a> module]</span>
+</h1>
+<p>The QTestEventList class provides a list of GUI events. <a href="#details">More...</a></p>
+<pre> #include &lt;QTestEventList&gt;</pre><p>Inherits <a href="qlist.html">QList&lt;QTestEvent *&gt;</a>.</p>
+<ul>
+<li><a href="qtesteventlist-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtesteventlist.html#QTestEventList">QTestEventList</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtesteventlist.html#QTestEventList-2">QTestEventList</a></b> ( const QTestEventList &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qtesteventlist.html#dtor.QTestEventList">~QTestEventList</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addDelay">addDelay</a></b> ( int <i>msecs</i> )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyClick">addKeyClick</a></b> ( Qt::Key <i>qtKey</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyClick-2">addKeyClick</a></b> ( char <i>ascii</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyClicks">addKeyClicks</a></b> ( const QString &amp; <i>keys</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyPress">addKeyPress</a></b> ( Qt::Key <i>qtKey</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyPress-2">addKeyPress</a></b> ( char <i>ascii</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyRelease">addKeyRelease</a></b> ( Qt::Key <i>qtKey</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addKeyRelease-2">addKeyRelease</a></b> ( char <i>ascii</i>, Qt::KeyboardModifiers <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addMouseClick">addMouseClick</a></b> ( Qt::MouseButton <i>button</i>, Qt::KeyboardModifiers <i>modifiers</i> = 0, QPoint <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addMouseDClick">addMouseDClick</a></b> ( Qt::MouseButton <i>button</i>, Qt::KeyboardModifiers <i>modifiers</i> = 0, QPoint <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addMouseMove">addMouseMove</a></b> ( QPoint <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addMousePress">addMousePress</a></b> ( Qt::MouseButton <i>button</i>, Qt::KeyboardModifiers <i>modifiers</i> = 0, QPoint <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#addMouseRelease">addMouseRelease</a></b> ( Qt::MouseButton <i>button</i>, Qt::KeyboardModifiers <i>modifiers</i> = 0, QPoint <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtesteventlist.html#simulate">simulate</a></b> ( QWidget * <i>w</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>61 public functions inherited from <a href="qlist.html#public-functions">QList</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>3 static public members inherited from <a href="qlist.html#static-public-members">QList</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTestEventList class provides a list of GUI events.</p>
+<p>QTestEventList inherits from <a href="qlist.html">QList</a>&lt;QTestEvent *&gt;, and provides convenience functions for populating the list.</p>
+<p>A QTestEventList can be populated with GUI events that can be stored as test data for later usage, or be replayed on any <a href="qwidget.html">QWidget</a>.</p>
+<p>Example:</p>
+<pre>     QTestEventList events;
+     events.addKeyClick('a');
+     events.addKeyClick(Qt::Key_Backspace);
+     events.addDelay(200);
+
+     QLineEdit *lineEdit = new QLineEdit(myParent);
+     ...
+     events.simulate(lineEdit);
+     events.simulate(lineEdit);</pre>
+<p>The example above simulates the user entering the character <tt>a</tt> followed by a backspace, waiting for 200 milliseconds and repeating it.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTestEventList"></a>QTestEventList::QTestEventList ()</h3>
+<p>Constructs an empty <a href="qtesteventlist.html">QTestEventList</a>.</p>
+<h3 class="fn"><a name="QTestEventList-2"></a>QTestEventList::QTestEventList ( const QTestEventList &amp; <i>other</i> )</h3>
+<p>Constructs a new <a href="qtesteventlist.html">QTestEventList</a> as a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QTestEventList"></a>QTestEventList::~QTestEventList ()</h3>
+<p>Empties the list and destroys all stored events.</p>
+<h3 class="fn"><a name="addDelay"></a>void QTestEventList::addDelay ( int <i>msecs</i> )</h3>
+<p>Adds a <i>msecs</i> milliseconds delay.</p>
+<p>See also <a href="qtest.html#qWait">QTest::qWait</a>().</p>
+<h3 class="fn"><a name="addKeyClick"></a>void QTestEventList::addKeyClick ( <a href="qt.html#Key-enum">Qt::Key</a> <i>qtKey</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>Adds a new key click to the list. The event will simulate the key <i>qtKey</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyClick">QTest::keyClick</a>().</p>
+<h3 class="fn"><a name="addKeyClick-2"></a>void QTestEventList::addKeyClick ( char <i>ascii</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds a new key click to the list. The event will simulate the key <i>ascii</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyClick">QTest::keyClick</a>().</p>
+<h3 class="fn"><a name="addKeyClicks"></a>void QTestEventList::addKeyClicks ( const <a href="qstring.html">QString</a> &amp; <i>keys</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>Adds new keyboard entries to the list. The event will press the <i>keys</i> with the <i>modifiers</i> and wait <i>msecs</i> milliseconds between each key.</p>
+<p>See also <a href="qtest.html#keyClicks">QTest::keyClicks</a>().</p>
+<h3 class="fn"><a name="addKeyPress"></a>void QTestEventList::addKeyPress ( <a href="qt.html#Key-enum">Qt::Key</a> <i>qtKey</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>Adds a new key press to the list. The event will press the key <i>qtKey</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyPress">QTest::keyPress</a>().</p>
+<h3 class="fn"><a name="addKeyPress-2"></a>void QTestEventList::addKeyPress ( char <i>ascii</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds a new key press to the list. The event will press the key <i>ascii</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyPress">QTest::keyPress</a>().</p>
+<h3 class="fn"><a name="addKeyRelease"></a>void QTestEventList::addKeyRelease ( <a href="qt.html#Key-enum">Qt::Key</a> <i>qtKey</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>Adds a new key release to the list. The event will release the key <i>qtKey</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyRelease">QTest::keyRelease</a>().</p>
+<h3 class="fn"><a name="addKeyRelease-2"></a>void QTestEventList::addKeyRelease ( char <i>ascii</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = Qt::NoModifier, int <i>msecs</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds a new key release to the list. The event will release the key <i>ascii</i> with the modifier <i>modifiers</i> and then wait for <i>msecs</i> milliseconds.</p>
+<p>See also <a href="qtest.html#keyRelease">QTest::keyRelease</a>().</p>
+<h3 class="fn"><a name="addMouseClick"></a>void QTestEventList::addMouseClick ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = 0, <a href="qpoint.html">QPoint</a> <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</h3>
+<p>Add a mouse click to the list. The event will click the <i>button</i> with optional <i>modifiers</i> at the position <i>pos</i> with an optional <i>delay</i>. The default position is the center of the widget.</p>
+<p>See also <a href="qtest.html#mouseClick">QTest::mouseClick</a>().</p>
+<h3 class="fn"><a name="addMouseDClick"></a>void QTestEventList::addMouseDClick ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = 0, <a href="qpoint.html">QPoint</a> <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</h3>
+<p>Add a double mouse click to the list. The event will double click the <i>button</i> with optional <i>modifiers</i> at the position <i>pos</i> with an optional <i>delay</i>. The default position is the center of the widget.</p>
+<p>See also <a href="qtest.html#mousePress">QTest::mousePress</a>().</p>
+<h3 class="fn"><a name="addMouseMove"></a>void QTestEventList::addMouseMove ( <a href="qpoint.html">QPoint</a> <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</h3>
+<p>Adds a mouse move to the list. The event will move the mouse to the position <i>pos</i>. If a <i>delay</i> (in milliseconds) is set, the test will wait after moving the mouse. The default position is the center of the widget.</p>
+<p>See also <a href="qtest.html#mousePress">QTest::mousePress</a>().</p>
+<h3 class="fn"><a name="addMousePress"></a>void QTestEventList::addMousePress ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = 0, <a href="qpoint.html">QPoint</a> <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</h3>
+<p>Add a mouse press to the list. The event will press the <i>button</i> with optional <i>modifiers</i> at the position <i>pos</i> with an optional <i>delay</i>. The default position is the center of the widget.</p>
+<p>See also <a href="qtest.html#mousePress">QTest::mousePress</a>().</p>
+<h3 class="fn"><a name="addMouseRelease"></a>void QTestEventList::addMouseRelease ( <a href="qt.html#MouseButton-enum">Qt::MouseButton</a> <i>button</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> = 0, <a href="qpoint.html">QPoint</a> <i>pos</i> = QPoint(), int <i>delay</i> = -1 )</h3>
+<p>Add a mouse release to the list. The event will release the <i>button</i> with optional <i>modifiers</i> at the position <i>pos</i> with an optional <i>delay</i>. The default position is the center of the widget.</p>
+<p>See also <a href="qtest.html#mouseRelease">QTest::mouseRelease</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QTestEventList::clear ()</h3>
+<p>Removes all events from the list.</p>
+<h3 class="fn"><a name="simulate"></a>void QTestEventList::simulate ( <a href="qwidget.html">QWidget</a> * <i>w</i> )</h3>
+<p>Simulates the events from the list one by one on the widget <i>w</i>. For an example, please read the <a href="qtesteventlist.html">QTestEventList</a> class documentation.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,36 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+include(qt-cpp-ignore.qdocconf)
+include(qt-html-templates.qdocconf)
+include(qt-defines.qdocconf)
+
+project                 = Qt Linguist
+description             = Qt Linguist Manual
+url                     = http://doc.trolltech.com/4.4
+
+indexes                 = $QT_BUILD_TREE/doc/html-qt/qt.index
+
+qhp.projects            = qmake
+
+qhp.qmake.file                = qmake.qhp
+qhp.qmake.namespace           = com.trolltech.qmake.440
+qhp.qmake.virtualFolder       = qdoc
+qhp.qmake.indexTitle          = QMake Manual
+qhp.qmake.extraFiles          = classic.css images/qt-logo.png images/trolltech-logo.png
+qhp.qmake.filterAttributes    = qt 4.4.0 tools qmake
+qhp.qmake.customFilters.qmake.name = qmake Manual
+qhp.qmake.customFilters.qmake.filterAttributes = qt tools qmake
+
+language                = Cpp
+
+sources                 = $QT_SOURCE_TREE/doc/src/qmake-manual.qdoc
+
+sources.fileextensions  = "*.cpp *.qdoc"
+
+exampledirs             = $QT_SOURCE_TREE \
+                          $QT_SOURCE_TREE/examples \
+                          $QT_SOURCE_TREE/doc/src
+
+imagedirs               = $QT_SOURCE_TREE/doc/src/images
+outputdir               = $QT_BUILD_TREE/doc-build/html-qmake
+base                    = file:$QT_BUILD_TREE/doc-build/html-qmake

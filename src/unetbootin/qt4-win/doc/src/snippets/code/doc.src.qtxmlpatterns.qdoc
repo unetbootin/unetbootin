@@ -1,0 +1,10 @@
+//! [0]
+     #include <QtXmlPatterns>
+//! [0]
+
+
+//! [1]
+     QT += xmlpatterns
+//! [1]
+
+

@@ -1,0 +1,14 @@
+CREATE ..\..\lib\libQtSvgd.a
+ADDMOD tmp\obj\debug_static\qsvggraphics.o
+ADDMOD tmp\obj\debug_static\qsvghandler.o
+ADDMOD tmp\obj\debug_static\qsvgnode.o
+ADDMOD tmp\obj\debug_static\qsvgstructure.o
+ADDMOD tmp\obj\debug_static\qsvgstyle.o
+ADDMOD tmp\obj\debug_static\qsvgfont.o
+ADDMOD tmp\obj\debug_static\qsvgtinydocument.o
+ADDMOD tmp\obj\debug_static\qsvgrenderer.o
+ADDMOD tmp\obj\debug_static\qsvgwidget.o
+ADDMOD tmp\obj\debug_static\qgraphicssvgitem.o
+ADDMOD tmp\obj\debug_static\qsvggenerator.o
+ADDMOD tmp\obj\debug_static\moc_qsvgwidget.o
+SAVE

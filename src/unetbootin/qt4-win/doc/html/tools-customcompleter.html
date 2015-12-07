@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/customcompleter.qdoc -->
+<head>
+  <title>Qt 4.4: Custom Completer Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Custom Completer Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tools-customcompleter-mainwindow-cpp.html">tools/customcompleter/mainwindow.cpp</a></li>
+<li><a href="tools-customcompleter-mainwindow-h.html">tools/customcompleter/mainwindow.h</a></li>
+<li><a href="tools-customcompleter-textedit-cpp.html">tools/customcompleter/textedit.cpp</a></li>
+<li><a href="tools-customcompleter-textedit-h.html">tools/customcompleter/textedit.h</a></li>
+<li><a href="tools-customcompleter-main-cpp.html">tools/customcompleter/main.cpp</a></li>
+<li><a href="tools-customcompleter-customcompleter-pro.html">tools/customcompleter/customcompleter.pro</a></li>
+<li><a href="tools-customcompleter-customcompleter-qrc.html">tools/customcompleter/customcompleter.qrc</a></li>
+</ul>
+<p>The Custom Completer example shows how to provide string-completion facilities for an input widget based on data provided by a model. The completer pops up suggestions for possible words based on the first three characters input by the user and the user's choice of word is inserted into the <tt>TextEdit</tt> using <a href="qtextcursor.html">QTextCursor</a>.</p>
+<p align="center"><img src="images/customcompleter-example.png" /></p><a name="setting-up-the-resource-file"></a>
+<h2>Setting Up The Resource File</h2>
+<p>The Custom Completer example requires a resource file, <i>wordlist.txt</i>, that has a list of words to help <a href="qcompleter.html">QCompleter</a> complete words. This file contains the following:</p>
+<pre> &lt;!DOCTYPE RCC&gt;&lt;RCC version=&quot;1.0&quot;&gt;
+ &lt;qresource prefix=&quot;/&quot;&gt;
+    &lt;file&gt;resources/wordlist.txt&lt;/file&gt;
+ &lt;/qresource&gt;
+ &lt;/RCC&gt;</pre>
+<a name="textedit-class-definition"></a>
+<h2>TextEdit Class Definition</h2>
+<p>The <tt>TextEdit</tt> class is a subclass of <a href="qtextedit.html">QTextEdit</a> with a custom <tt>insertCompletion()</tt> slot and it reimplements the <a href="qabstractscrollarea.html#keyPressEvent">keyPressEvent()</a> and the <a href="qwidget.html#focusInEvent">focusInEvent()</a> functions. <tt>TextEdit</tt> also contains a private function <tt>textUnderCursor()</tt> and a private instance of <a href="qcompleter.html">QCompleter</a>, <tt>c</tt>.</p>
+<pre> class TextEdit : public QTextEdit
+ {
+     Q_OBJECT
+
+ public:
+     TextEdit(QWidget *parent = 0);
+     ~TextEdit();
+
+     void setCompleter(QCompleter *c);
+     QCompleter *completer() const;
+
+ protected:
+     void keyPressEvent(QKeyEvent *e);
+     void focusInEvent(QFocusEvent *e);
+
+ private slots:
+     void insertCompletion(const QString &amp;completion);
+
+ private:
+     QString textUnderCursor() const;
+
+ private:
+     QCompleter *c;
+ };</pre>
+<a name="textedit-class-implementation"></a>
+<h2>TextEdit Class Implementation</h2>
+<p>The constructor for <tt>TextEdit</tt> constructs a <tt>TextEdit</tt> with a parent and initializes <tt>c</tt>. The instructions to use the completer is displayed on the <tt>TextEdit</tt> object, using the <a href="qtextedit.html#plainText-prop">setPlainText()</a> function.</p>
+<pre> TextEdit::TextEdit(QWidget *parent)
+ : QTextEdit(parent), c(0)
+ {
+     setPlainText(tr(&quot;This TextEdit provides autocompletions for words that have more than&quot;
+                     &quot; 3 characters. You can trigger autocompletion using &quot;) +
+                     QKeySequence(&quot;Ctrl+E&quot;).toString(QKeySequence::NativeText));
+ }</pre>
+<p>In addition, <tt>TextEdit</tt> also includes a default destructor:</p>
+<pre> TextEdit::~TextEdit()
+ {
+ }</pre>
+<p>The <tt>setCompleter()</tt> function accepts a <i>completer</i> and sets it up. We use <tt>if (c)</tt> to check if <tt>c</tt> has been initialized. If it has been initialized, the <a href="qobject.html#disconnect">QObject::disconnect</a>() function is invoked to disconnect the signal from the slot. This is to ensure that no previous completer object is still connected to the slot.</p>
+<pre> void TextEdit::setCompleter(QCompleter *completer)
+ {
+     if (c)
+         QObject::disconnect(c, 0, this, 0);
+
+     c = completer;
+
+     if (!c)
+         return;
+
+     c-&gt;setWidget(this);
+     c-&gt;setCompletionMode(QCompleter::PopupCompletion);
+     c-&gt;setCaseSensitivity(Qt::CaseInsensitive);
+     QObject::connect(c, SIGNAL(activated(const QString&amp;)),
+                      this, SLOT(insertCompletion(const QString&amp;)));
+ }</pre>
+<p>We then instantiate <tt>c</tt> with <i>completer</i> and set it as <tt>TextEdit</tt>'s widget. The completion mode and case sensitivity are also set and then we connect the <a href="qcompleter.html#activated">activated()</a> signal to the <tt>insertCompletion()</tt> slot.</p>
+<p>The <tt>completer()</tt> function is a getter function that returns <tt>c</tt>.</p>
+<pre> QCompleter *TextEdit::completer() const
+ {
+     return c;
+ }</pre>
+<p>The completer pops up the options available, based on the contents of <i>wordlist.txt</i>, but the text cursor is responsible for filling in the missing characters, according to the user's choice of word.</p>
+<p>Suppose the user inputs &quot;ACT&quot; and accepts the completer's suggestion of &quot;ACTUAL&quot;. The <tt>completion</tt> string is then sent to <tt>insertCompletion()</tt> by the completer's <a href="qcompleter.html#activated">activated()</a> signal.</p>
+<p>The <tt>insertCompletion()</tt> function is responsible for completing the word using a <a href="qtextcursor.html">QTextCursor</a> object, <tt>tc</tt>. It validates to ensure that the completer's widget is <tt>TextEdit</tt> before using <tt>tc</tt> to insert the extra characters to complete the word.</p>
+<pre> void TextEdit::insertCompletion(const QString&amp; completion)
+ {
+     if (c-&gt;widget() != this)
+         return;
+     QTextCursor tc = textCursor();
+     int extra = completion.length() - c-&gt;completionPrefix().length();
+     tc.movePosition(QTextCursor::Left);
+     tc.movePosition(QTextCursor::EndOfWord);
+     tc.insertText(completion.right(extra));
+     setTextCursor(tc);
+ }</pre>
+<p>The figure below illustrates this process:</p>
+<p align="center"><img src="images/customcompleter-insertcompletion.png" /></p><p><tt>completion.length()</tt> = 6</p>
+<p><tt>c-&gt;completionPrefix().length()</tt>=3</p>
+<p>The difference between these two values is <tt>extra</tt>, which is 3. This means that the last three characters from the right, &quot;U&quot;, &quot;A&quot;, and &quot;L&quot;, will be inserted by <tt>tc</tt>.</p>
+<p>The <tt>textUnderCursor()</tt> function uses a <a href="qtextcursor.html">QTextCursor</a>, <tt>tc</tt>, to select a word under the cursor and return it.</p>
+<pre> QString TextEdit::textUnderCursor() const
+ {
+     QTextCursor tc = textCursor();
+     tc.select(QTextCursor::WordUnderCursor);
+     return tc.selectedText();
+ }</pre>
+<p>The <tt>TextEdit</tt> class reimplements <a href="qwidget.html#focusInEvent">focusInEvent()</a> function, which is an event handler used to receive keyboard focus events for the widget.</p>
+<pre> void TextEdit::focusInEvent(QFocusEvent *e)
+ {
+     if (c)
+         c-&gt;setWidget(this);
+     QTextEdit::focusInEvent(e);
+ }</pre>
+<p>The <a href="qabstractscrollarea.html#keyPressEvent">keyPressEvent()</a> is reimplemented to ignore key events like <a href="qt.html#Key-enum">Qt::Key_Enter</a>, <a href="qt.html#Key-enum">Qt::Key_Return</a>, <a href="qt.html#Key-enum">Qt::Key_Escape</a>, <a href="qt.html#Key-enum">Qt::Key_Tab</a>, and <a href="qt.html#Key-enum">Qt::Key_Backtab</a> so the completer can handle them.</p>
+<p>If there is an active completer, we cannot process the shortcut, Ctrl+E.</p>
+<pre> void TextEdit::keyPressEvent(QKeyEvent *e)
+ {
+     if (c &amp;&amp; c-&gt;popup()-&gt;isVisible()) {
+         <span class="comment">//</span> The following keys are forwarded by the completer to the widget
+        switch (e-&gt;key()) {
+        case Qt::Key_Enter:
+        case Qt::Key_Return:
+        case Qt::Key_Escape:
+        case Qt::Key_Tab:
+        case Qt::Key_Backtab:
+             e-&gt;ignore();
+             return; <span class="comment">//</span> let the completer do default behavior
+        default:
+            break;
+        }
+     }
+
+     bool isShortcut = ((e-&gt;modifiers() &amp; Qt::ControlModifier) &amp;&amp; e-&gt;key() == Qt::Key_E); <span class="comment">//</span> CTRL+E
+     if (!c || !isShortcut) <span class="comment">//</span> dont process the shortcut when we have a completer
+         QTextEdit::keyPressEvent(e);</pre>
+<p>We also handle other modifiers and shortcuts for which we do not want the completer to respond to.</p>
+<pre>     const bool ctrlOrShift = e-&gt;modifiers() &amp; (Qt::ControlModifier | Qt::ShiftModifier);
+     if (!c || (ctrlOrShift &amp;&amp; e-&gt;text().isEmpty()))
+         return;
+
+     static QString eow(&quot;~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;?,./;'[]\\-=&quot;); <span class="comment">//</span> end of word
+     bool hasModifier = (e-&gt;modifiers() != Qt::NoModifier) &amp;&amp; !ctrlOrShift;
+     QString completionPrefix = textUnderCursor();
+
+     if (!isShortcut &amp;&amp; (hasModifier || e-&gt;text().isEmpty()|| completionPrefix.length() &lt; 3
+                       || eow.contains(e-&gt;text().right(1)))) {
+         c-&gt;popup()-&gt;hide();
+         return;
+     }
+
+     if (completionPrefix != c-&gt;completionPrefix()) {
+         c-&gt;setCompletionPrefix(completionPrefix);
+         c-&gt;popup()-&gt;setCurrentIndex(c-&gt;completionModel()-&gt;index(0, 0));
+     }
+     QRect cr = cursorRect();
+     cr.setWidth(c-&gt;popup()-&gt;sizeHintForColumn(0)
+                 + c-&gt;popup()-&gt;verticalScrollBar()-&gt;sizeHint().width());
+     c-&gt;complete(cr); <span class="comment">//</span> popup it up!
+ }</pre>
+<p>Finally, we pop up the completer.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class is a subclass of <a href="qmainwindow.html">QMainWindow</a> and implements a private slot, <tt>about()</tt>. This class also has two private functions, <tt>createMenu()</tt> and <tt>modelFromFile()</tt> as well as private instances of <a href="qcompleter.html">QCompleter</a> and <tt>TextEdit</tt>.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow(QWidget *parent = 0);
+
+ private slots:
+     void about();
+
+ private:
+     void createMenu();
+     QAbstractItemModel *modelFromFile(const QString&amp; fileName);
+
+     QCompleter *completer;
+     TextEdit *completingTextEdit;
+ };</pre>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The constructor constructs a <tt>MainWindow</tt> with a parent and initializes the <tt>completer</tt>. It also instantiates a <tt>TextEdit</tt> and sets its completer. A <a href="qstringlistmodel.html">QStringListModel</a>, obtained from <tt>modelFromFile()</tt>, is used to populate the <tt>completer</tt>. The <tt>MainWindow</tt>'s central widget is set to <tt>TextEdit</tt> and its size is set to 500 x 300.</p>
+<pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent), completer(0)
+ {
+     createMenu();
+
+     completingTextEdit = new TextEdit;
+     completer = new QCompleter(this);
+     completer-&gt;setModel(modelFromFile(&quot;:/resources/wordlist.txt&quot;));
+     completer-&gt;setModelSorting(QCompleter::CaseInsensitivelySortedModel);
+     completer-&gt;setCaseSensitivity(Qt::CaseInsensitive);
+     completer-&gt;setWrapAround(false);
+     completingTextEdit-&gt;setCompleter(completer);
+
+     setCentralWidget(completingTextEdit);
+     resize(500, 300);
+     setWindowTitle(tr(&quot;Completer&quot;));
+ }</pre>
+<p>The <tt>createMenu()</tt> function creates the necessary <a href="qaction.html">QAction</a> objects needed for the &quot;File&quot; and &quot;Help&quot; menu and their <a href="qaction.html#triggered">triggered()</a> signals are connected to the <tt>quit()</tt>, <tt>about()</tt>, and <tt>aboutQt()</tt> slots respectively.</p>
+<pre> void MainWindow::createMenu()
+ {
+     QAction *exitAction = new QAction(tr(&quot;Exit&quot;), this);
+     QAction *aboutAct = new QAction(tr(&quot;About&quot;), this);
+     QAction *aboutQtAct = new QAction(tr(&quot;About Qt&quot;), this);
+
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     QMenu* fileMenu = menuBar()-&gt;addMenu(tr(&quot;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     QMenu* helpMenu = menuBar()-&gt;addMenu(tr(&quot;About&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }</pre>
+<p>The <tt>modelFromFile()</tt> function accepts a <i>fileName</i> and attempts to extract the contents of this file into a <a href="qstringlistmodel.html">QStringListModel</a>. We display the <a href="qt.html#CursorShape-enum">Qt::WaitCursor</a> when we are populating the <a href="qstringlist.html">QStringList</a>, <tt>words</tt>, and restore the mouse cursor when we are done.</p>
+<pre> QAbstractItemModel *MainWindow::modelFromFile(const QString&amp; fileName)
+ {
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly))
+         return new QStringListModel(completer);
+
+ #ifndef QT_NO_CURSOR
+     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+ #endif
+     QStringList words;
+
+     while (!file.atEnd()) {
+         QByteArray line = file.readLine();
+         if (!line.isEmpty())
+             words &lt;&lt; line.trimmed();
+     }
+
+ #ifndef QT_NO_CURSOR
+     QApplication::restoreOverrideCursor();
+ #endif
+     return new QStringListModel(words, completer);
+ }</pre>
+<p>The <tt>about()</tt> function provides a brief description about the Custom Completer example.</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About&quot;), tr(&quot;This example demonstrates the &quot;
+         &quot;different features of the QCompleter class.&quot;));
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <tt>MainWindow</tt> and invokes the <a href="qwidget.html#show">show()</a> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     Q_INIT_RESOURCE(customcompleter);
+
+     QApplication app(argc, argv);
+     MainWindow window;
+     window.show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

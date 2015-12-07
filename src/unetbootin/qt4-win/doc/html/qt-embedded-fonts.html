@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-fonts.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux Fonts</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux Fonts<br /><span class="subtitle"></span>
+</h1>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> uses the <a href="http://freetype.sourceforge.net/freetype2/index.html">FreeType 2</a> font engine to produce font output. The formats supported depends on the locally installed version of the <a href="#freetype">FreeType</a> library. In addition, <a href="qt-embedded.html">Qt for Embedded Linux</a> supports the Qt Prerendered Font formats (<a href="#qpf">QPF</a> and <a href="#qpf2">QPF2</a>): light-weight non-scalable font formats specific to <a href="qt-embedded.html">Qt for Embedded Linux</a>. QPF2 is the native format of <a href="qt-embedded.html">Qt for Embedded Linux</a>. QPF is the legacy format used by Qt/Embedded 2.x and 3.x&#x2e; Several of the formats may be rendered using anti-aliasing for improved readability.</p>
+<p>When <a href="qt-embedded.html">Qt for Embedded Linux</a> applications run, they look for fonts in Qt's <tt>lib/fonts/</tt> directory. <a href="qt-embedded.html">Qt for Embedded Linux</a> will automatically detect prerendered fonts and TrueType fonts. For compatibility, it will also read the legacy <tt>lib/fonts/fontdir</tt> file.</p>
+<p>Support for other font formats can be added, contact <a href="mailto:info@trolltech.com">info@trolltech.com</a> for more information.</p>
+<ul><li><a href="#freetype-formats">FreeType Formats</a></li>
+<li><a href="#qt-prerendered-font-qpf2">Qt Prerendered Font (QPF2)</a></li>
+<li><a href="#legacy-qt-prerendered-font-qpf">Legacy Qt Prerendered Font (QPF)</a></li>
+<li><a href="#the-legacy-file">The Legacy <tt>fontdir</tt> File</a></li>
+</ul>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Optimization</b><p>The <a href="#freetype">FreeType</a>, <a href="#qpf2">QPF2</a> and <a href="#qpf">QPF</a> formats are features that can be disabled using the <a href="qt-embedded-features.html">feature definition system</a>, reducing the size of Qt and saving resources.</p>
+<p>Note that at least one font format must be defined.</p>
+<p>See the <a href="qt-embedded-features.html">Fine-Tuning Features in Qt for Embedded Linux</a> documentation for details.</p>
+</td><td><img src="images/qt-embedded-fontfeatures.png" /></td></tr>
+</table></p>
+<p>All supported fonts use the Unicode character encoding. Most fonts available today do, but they usually don't contain <i>all</i> the Unicode characters. A complete 16-point Unicode font uses over 1 MB of memory.</p>
+<a name="freetype"></a><a name="freetype-formats"></a>
+<h2>FreeType Formats</h2>
+<p>The <a href="http://freetype.sourceforge.net/freetype2/index.html">FreeType 2</a> library (and therefore <a href="qt-embedded.html">Qt for Embedded Linux</a>) can support the following font formats:</p>
+<ul>
+<li>TrueType (TTF)</li>
+<li>PostScript Type1 (PFA/PFB)</li>
+<li>Bitmap Distribution Format (BDF)</li>
+<li>CID-keyed Type1</li>
+<li>Compact Font Format (CFF)</li>
+<li>OpenType fonts</li>
+<li>SFNT-based bitmap fonts</li>
+<li>Portable Compiled Format (PCF)</li>
+<li>Microsoft Windows Font File Format (Windows FNT)</li>
+<li>Portable Font Resource (PFR)</li>
+<li>Type 42 (limited support)</li>
+</ul>
+<p>It is possible to add modules to the <a href="http://freetype.sourceforge.net/freetype2/index.html">FreeType 2</a> font engine to support other types of font files. For more information, see the font engine's own website: <a href="http://freetype.sourceforge.net/freetype2/index.html">http://freetype.sourceforge.net/freetype2/index.html</a>.</p>
+<p>Glyphs rendered using <a href="#freetype">FreeType</a> are shared efficiently between applications, reducing memory requirements and speeding up text rendering.</p>
+<a name="qpf2"></a><a name="qt-prerendered-font-qpf2"></a>
+<h2>Qt Prerendered Font (QPF2)</h2>
+<p>The Qt Prerendered Font (QPF2) is an architecture-independent, light-weight and non-scalable font format specific to <a href="qt-embedded.html">Qt for Embedded Linux</a>.</p>
+<p>Trolltech provides the cross-platform <tt>makeqpf</tt> tool, included in the <tt>tools</tt> directory of both <a href="qt.html">Qt</a> and <a href="qt-embedded.html">Qt for Embedded Linux</a>, which allows generation of QPF2 files from system fonts.</p>
+<p>QPF2 supports anti-aliasing and complex writing systems, using information from the corresponding TrueType font, if present on the system. The format is designed to be mapped directly to memory. The same format is used to share glyphs from non-prerendered fonts between applications.</p>
+<a name="qpf"></a><a name="legacy-qt-prerendered-font-qpf"></a>
+<h2>Legacy Qt Prerendered Font (QPF)</h2>
+<p>Trolltech provides support for the legacy QPF format for compatibility reasons. QPF is based on the internal font engine data structure of Qt/Embedded versions 2 and 3.</p>
+<p>Note that the file name describes the font, for example <tt>helvetica_120_50.qpf</tt> is 12 point Helvetica while <tt>helvetica_120_50i.qpf</tt> is 12 point Helvetica <i>italic</i>.</p>
+<a name="the-legacy-file"></a>
+<h2>The Legacy <tt>fontdir</tt> File</h2>
+<p>For compatibility reasons <a href="qt-embedded.html">Qt for Embedded Linux</a> supports the <tt>fontdir</tt> file, if present. The file defines additional fonts available to the application, and has the following format:</p>
+<pre>         name file renderer italic weight size flags</pre>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Field</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><b>name</b></td><td>The name of the font format, e.g&#x2e;,<tt>Helvetica</tt>, <tt>Times</tt>, etc.</td></tr>
+<tr valign="top" class="even"><td><b>file</b></td><td>The name of the file containing the font, e.g&#x2e;, <tt>helvR0810.bdf</tt>, <tt>verdana.ttf</tt>, etc.</td></tr>
+<tr valign="top" class="odd"><td><b>renderer</b></td><td>Specifies the font engine that should be used to render the font, currently only the <a href="#freetype">FreeType</a> font engine (<tt>FT</tt>) is supported.</td></tr>
+<tr valign="top" class="even"><td><b>italic</b></td><td>Specifies whether the font is italic or not; the accepted values are <tt>y</tt> or <tt>n</tt>.</td></tr>
+<tr valign="top" class="odd"><td><b>weight</b></td><td>Specifies the font's weight: <tt>50</tt> is normal, <tt>75</tt> is bold, etc.</td></tr>
+<tr valign="top" class="even"><td><b>size</b></td><td>Specifies the font size, i.e&#x2e;, point size * 10. For example, a value of 120 means 12pt. A value of 0 means that the font is scalable.</td></tr>
+<tr valign="top" class="odd"><td><b>flags</b></td><td>The following flag is supported:<ul>
+<li><tt>s</tt>: smooth (anti-aliased)</li>
+</ul>
+<p>All other flags are ignored.</p>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

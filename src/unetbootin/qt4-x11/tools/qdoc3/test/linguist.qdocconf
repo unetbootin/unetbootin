@@ -1,0 +1,47 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+include(qt-cpp-ignore.qdocconf)
+include(qt-html-templates.qdocconf)
+include(qt-defines.qdocconf)
+
+project                 = Qt Linguist
+description             = Qt Linguist Manual
+url                     = http://doc.trolltech.com/4.5
+
+indexes                 = $QT_BUILD_TREE/doc-build/html-qt/qt.index
+
+qhp.projects            = Linguist
+
+qhp.Linguist.file                = linguist.qhp
+qhp.Linguist.namespace           = com.trolltech.linguist.450
+qhp.Linguist.virtualFolder       = qdoc
+qhp.Linguist.indexTitle          = Qt Linguist Manual
+qhp.Linguist.extraFiles          = classic.css images/qt-logo.png images/trolltech-logo.png
+qhp.Linguist.filterAttributes    = qt 4.5.0 tools linguist
+qhp.Linguist.customFilters.Linguist.name = Qt Linguist Manual
+qhp.Linguist.customFilters.Linguist.filterAttributes = qt tools linguist
+qhp.Linguist.subprojects         = manual examples
+qhp.Linguist.subprojects.manual.title = Manual
+qhp.Linguist.subprojects.manual.indexTitle = Qt Linguist Manual
+qhp.Linguist.subprojects.manual.selectors = fake:page
+qhp.Linguist.subprojects.examples.title = Examples
+qhp.Linguist.subprojects.examples.indexTitle = Qt Examples
+qhp.Linguist.subprojects.examples.selectors = fake:example
+qhp.Linguist.subprojects.examples.sortPages = true
+
+language                = Cpp
+
+sources                 = $QT_SOURCE_TREE/doc/src/linguist-manual.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/hellotr.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/arrowpad.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/trollprint.qdoc
+
+sources.fileextensions  = "*.cpp *.qdoc"
+
+exampledirs             = $QT_SOURCE_TREE \
+                          $QT_SOURCE_TREE/examples \
+                          $QT_SOURCE_TREE/doc/src
+
+imagedirs               = $QT_SOURCE_TREE/doc/src/images
+outputdir               = $QT_BUILD_TREE/doc-build/html-linguist
+base                    = file:$QT_BUILD_TREE/doc-build/html-linguist

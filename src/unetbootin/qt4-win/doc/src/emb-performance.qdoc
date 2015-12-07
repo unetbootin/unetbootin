@@ -1,0 +1,168 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \if defined(qtce)
+      \page qtce-performance.html
+      \title Qt/WinCE Performance Tuning
+      \ingroup qtce
+    \else
+      \page qt-embedded-performance.html
+      \title Qt for Embedded Linux Performance Tuning
+      \ingroup qt-embedded
+    \endif
+
+    When building embedded applications on low-powered devices,
+    \if defined(qtce)
+      \l{Qt/WinCE}
+    \else
+      \l{Qt for Embedded Linux}
+    \endif
+    provides a number of options that reduce the memory
+    and/or CPU requirements by making various trade-offs. These
+    options range from variations in programming style, to linking and
+    memory allocation.
+
+    But note that the most direct way of saving resources, is to avoid
+    compiling in features that are not required. See the
+    \if defined(qtce)
+      \l{Fine-Tuning Features in Qt/WinCE}{fine tuning features}
+    \else
+      \l{Fine-Tuning Features in Qt for Embedded Linux}{fine tuning features}
+    \endif
+    documentation for details.
+
+    \tableofcontents
+
+    \section1 Programming Style
+
+    Rather than creating dialogs and widgets every time they are
+    needed, and delete them when they are no longer required, create
+    them once and use the QWidget::hide() and QWidget::show()
+    functions whenever appropiate. To avoid a slow startup of the
+    application, delay the creation of dialogs and widgets until they
+    are requested. All this will improve the CPU performance, it
+    requires a little more memory, but will be much faster.
+
+    \section1 Static vs. Dynamic Linking
+
+    A lot of CPU and memory is used by the ELF (Executable and Linking
+    Format) linking process. Significant savings can be achieved by
+    using a static build of the application suite; rather than having
+    a collection of executables which link dynamically to Qt's
+    libraries, all the applications is built into into a single
+    executable which is statically linked to Qt's libraries.
+
+    This improves the start-up time and reduces memory usage at the
+    expense of flexibility (to add a new application, you must
+    recompile the single executable) and robustness (if one
+    application has a bug, it might harm other applications).
+
+    \table 100%
+    \row
+    \o \bold {Creating a Static Build}
+
+    To compile Qt as a static library, use the \c -static option when
+    running configure:
+
+    \snippet doc/src/snippets/code/doc.src.emb-performance.qdoc 0
+
+    To build the application suite as an all-in-one application,
+    design each application as a stand-alone widget (or set of
+    widgets) with only minimal code in the \c main() function. Then,
+    write an application that provides a means of switching between
+    the applications.  The \l Qtopia platform is an example using this
+    approach: It can be built either as a set of dynamically linked
+    executables, or as a single static application.
+
+    Note that the application still should link dynamically against
+    the standard C library and any other libraries which might be used
+    by other applications on the target device.
+
+    \endtable
+
+    When installing end-user applications, this approach may not be an
+    option, but when building a single application suite for a device
+    with limited CPU power and memory, this option could be very
+    beneficial.
+
+    \section1 Alternative Memory Allocation
+
+    The libraries shipped with some C++ compilers on some platforms
+    have poor performance in the built-in "new" and "delete"
+    operators. Improved memory allocation and performance may be
+    gained by re-implementing these functions:
+
+    \snippet doc/src/snippets/code/doc.src.emb-performance.qdoc 1
+
+    The example above shows the necessary code to switch to the plain
+    C memory allocators.
+
+    \section1 Bypassing the Backing Store
+
+    When rendering, Qt uses the concept of a backing store; i.e., a
+    paint buffer, to reduce flicker and to support graphics operations
+    such as blending.
+
+    The default behavior is for each client to render
+    its widgets into memory while the server is responsible for
+    putting the contents of the memory onto the screen. But when the
+    hardware is known and well defined, as is often the case with
+    software for embedded devices, it might be useful to bypass the
+    backing store, allowing the clients to manipulate the underlying
+    hardware directly.
+    \if defined(qtce)
+    This is achieved by setting the Qt::WA_PaintOnScreen window attribute
+    for each widget.
+    \else
+
+    There are two approaches to direct painting: The first approach is
+    to set the Qt::WA_PaintOnScreen window attribute for each widget,
+    the other is to use the QDirectPainter class to reserve a region
+    of the framebuffer.
+      For more information, see the
+      \l{Qt for Embedded Linux Architecture#Direct Painting}{direct painting}
+      section of the \l{Qt for Embedded Linux Architecture}{architecture}
+      documentation.
+    \endif
+*/

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/assistant/lib/qhelpindexwidget.cpp -->
+<head>
+  <title>Qt 4.4: QHelpIndexModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHelpIndexModel Class Reference<br /><span class="small-subtitle">[<a href="qthelp.html">QtHelp</a> module]</span>
+</h1>
+<p>The QHelpIndexModel class provides a model that supplies index keywords to views. <a href="#details">More...</a></p>
+<pre> #include &lt;QHelpIndexModel&gt;</pre><p>Inherits <a href="qstringlistmodel.html">QStringListModel</a>.</p>
+<ul>
+<li><a href="qhelpindexmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qhelpindexmodel.html#createIndex">createIndex</a></b> ( const QString &amp; <i>customFilterName</i> )</li>
+<li><div class="fn"/>QModelIndex <b><a href="qhelpindexmodel.html#filter">filter</a></b> ( const QString &amp; <i>filter</i>, const QString &amp; <i>wildcard</i> = QString() )</li>
+<li><div class="fn"/>bool <b><a href="qhelpindexmodel.html#isCreatingIndex">isCreatingIndex</a></b> () const</li>
+<li><div class="fn"/>QMap&lt;QString, QUrl&gt; <b><a href="qhelpindexmodel.html#linksForKeyword">linksForKeyword</a></b> ( const QString &amp; <i>keyword</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="qstringlistmodel.html#public-functions">QStringListModel</a></li>
+<li><div class="fn"/>1 public function inherited from <a href="qabstractlistmodel.html#public-functions">QAbstractListModel</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qhelpindexmodel.html#indexCreated">indexCreated</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qhelpindexmodel.html#indexCreationStarted">indexCreationStarted</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHelpIndexModel class provides a model that supplies index keywords to views.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="createIndex"></a>void QHelpIndexModel::createIndex ( const <a href="qstring.html">QString</a> &amp; <i>customFilterName</i> )</h3>
+<p>Creates a new index by querying the help system for keywords for the specified <i>customFilterName</i>.</p>
+<h3 class="fn"><a name="filter"></a><a href="qmodelindex.html">QModelIndex</a> QHelpIndexModel::filter ( const <a href="qstring.html">QString</a> &amp; <i>filter</i>, const <a href="qstring.html">QString</a> &amp; <i>wildcard</i> = QString() )</h3>
+<p>Filters the indices and returns the model index of the best matching keyword. In a first step, only the keywords containing <i>filter</i> are kept in the model's index list. Analogously, if <i>wildcard</i> is not empty, only the keywords matched are left in the index list. In a second step, the best match is determined and its index model returned. When specifying a wildcard expression, the <i>filter</i> string is used to search for the best match.</p>
+<h3 class="fn"><a name="indexCreated"></a>void QHelpIndexModel::indexCreated ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the index has been created.</p>
+<h3 class="fn"><a name="indexCreationStarted"></a>void QHelpIndexModel::indexCreationStarted ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the creation of a new index has started. The current index is invalid from this point on until the signal <a href="qhelpindexmodel.html#indexCreated">indexCreated</a>() is emitted.</p>
+<p>See also <a href="qhelpindexmodel.html#isCreatingIndex">isCreatingIndex</a>().</p>
+<h3 class="fn"><a name="isCreatingIndex"></a>bool QHelpIndexModel::isCreatingIndex () const</h3>
+<p>Returns true if the index is currently built up, otherwise false.</p>
+<h3 class="fn"><a name="linksForKeyword"></a><a href="qmap.html">QMap</a>&lt;<a href="qstring.html">QString</a>, <a href="qurl.html">QUrl</a>&gt; QHelpIndexModel::linksForKeyword ( const <a href="qstring.html">QString</a> &amp; <i>keyword</i> ) const</h3>
+<p>Returns all hits found for the <i>keyword</i>. A hit consists of the URL and the document title.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

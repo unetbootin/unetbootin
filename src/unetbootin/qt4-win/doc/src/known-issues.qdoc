@@ -1,0 +1,79 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page known-issues.html
+    \title Known Issues in 4.4.0
+
+    An up-to-date list of known issues with Qt 4.4.0 can be found via the
+    \l{Task Tracker} on the Trolltech website which provides additional information
+    about known issues and tasks related to Qt.
+
+    \section1 Issues with Third Party Software
+
+    \section2 X11 Hardware Support
+
+    \list
+    \o There is a bug in the 169.xx NVIDIA drivers on certain GeForce 8 series cards that is
+       triggered by the OpenGL paint engine when using QPainter on a QGLWidget to draw paths
+       and polygons. Some other painting operations that end up in the path fallback are
+       affected as well. The bug causes the whole X server to repeatedly hang for several
+       seconds at a time.
+    \o There is an issue with NVIDIA's 9xxx driver series on X11 that causes a crash in cases
+       where there are several \l{QGLContext}s and the extended composition modes are used (the
+       composition modes between and including QPainter::CompositionMode_Multiply and
+       QPainter::CompositionMode_Exclusion). This affects the composition mode demo in Qt 4.4,
+       for example. The crash does not occur in newer versions of the drivers.
+    \endlist
+
+    \omit
+    \section2 Windows Applications
+    \endomit
+
+    \section2 Mac OS X
+
+    \list
+    \o If a sheet is opened for a given window, clicking the title bar of that window will cause
+    it to flash. This behavior has been reported to Apple (bug number 5827676).
+    \endlist
+*/

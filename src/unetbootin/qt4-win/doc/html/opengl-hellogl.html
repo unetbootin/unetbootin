@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/hellogl.qdoc -->
+<head>
+  <title>Qt 4.4: Hello GL Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Hello GL Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="opengl-hellogl-glwidget-cpp.html">opengl/hellogl/glwidget.cpp</a></li>
+<li><a href="opengl-hellogl-glwidget-h.html">opengl/hellogl/glwidget.h</a></li>
+<li><a href="opengl-hellogl-window-cpp.html">opengl/hellogl/window.cpp</a></li>
+<li><a href="opengl-hellogl-window-h.html">opengl/hellogl/window.h</a></li>
+<li><a href="opengl-hellogl-main-cpp.html">opengl/hellogl/main.cpp</a></li>
+<li><a href="opengl-hellogl-hellogl-pro.html">opengl/hellogl/hellogl.pro</a></li>
+</ul>
+<p>The Hello GL example demonstrates the basic use of the OpenGL-related classes provided with Qt.</p>
+<p align="center"><img src="images/hellogl-example.png" /></p><p>Qt provides the <a href="qglwidget.html">QGLWidget</a> class to enable OpenGL graphics to be rendered within a standard application user interface. By subclassing this class, and providing reimplementations of event handler functions, 3D scenes can be displayed on widgets that can be placed in layouts, connected to other objects using signals and slots, and manipulated like any other widget.</p>
+<ul><li><a href="#glwidget-class-definition">GLWidget Class Definition</a></li>
+<li><a href="#glwidget-class-implementation">GLWidget Class Implementation</a></li>
+<ul><li><a href="#widget-construction-and-sizing">Widget Construction and Sizing</a></li>
+<li><a href="#opengl-initialization">OpenGL Initialization</a></li>
+<li><a href="#resizing-the-viewport">Resizing the Viewport</a></li>
+<li><a href="#painting-the-scene">Painting the Scene</a></li>
+<li><a href="#mouse-handling">Mouse Handling</a></li>
+<li><a href="#utility-functions">Utility Functions</a></li>
+</ul>
+<li><a href="#window-class-definition">Window Class Definition</a></li>
+<li><a href="#window-class-implementation">Window Class Implementation</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+<a name="glwidget-class-definition"></a>
+<h2>GLWidget Class Definition</h2>
+<p>The <tt>GLWidget</tt> class contains some standard public definitions for the constructor, destructor, <a href="qwidget.html#sizeHint-prop">sizeHint()</a>, and <a href="qwidget.html#minimumSizeHint-prop">minimumSizeHint()</a> functions:</p>
+<pre> class GLWidget : public QGLWidget
+ {
+     Q_OBJECT
+
+ public:
+     GLWidget(QWidget *parent = 0);
+     ~GLWidget();
+
+     QSize minimumSizeHint() const;
+     QSize sizeHint() const;</pre>
+<p>We use a destructor to ensure that any OpenGL-specific data structures are deleted when the widget is no longer needed.</p>
+<pre> public slots:
+     void setXRotation(int angle);
+     void setYRotation(int angle);
+     void setZRotation(int angle);
+
+ signals:
+     void xRotationChanged(int angle);
+     void yRotationChanged(int angle);
+     void zRotationChanged(int angle);</pre>
+<p>The signals and slots are used to allow other objects to interact with the 3D scene.</p>
+<pre> protected:
+     void initializeGL();
+     void paintGL();
+     void resizeGL(int width, int height);
+     void mousePressEvent(QMouseEvent *event);
+     void mouseMoveEvent(QMouseEvent *event);</pre>
+<p>OpenGL initialization, viewport resizing, and painting are handled by reimplementing the <a href="qglwidget.html#initializeGL">QGLWidget::initializeGL</a>(), <a href="qglwidget.html#resizeGL">QGLWidget::resizeGL</a>(), and <a href="qglwidget.html#paintGL">QGLWidget::paintGL</a>() handler functions. To enable the user to interact directly with the scene using the mouse, we reimplement <a href="qwidget.html#mousePressEvent">QWidget::mousePressEvent</a>() and <a href="qwidget.html#mouseMoveEvent">QWidget::mouseMoveEvent</a>().</p>
+<pre> private:
+     GLuint makeObject();
+     void quad(GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2,
+               GLdouble x3, GLdouble y3, GLdouble x4, GLdouble y4);
+     void extrude(GLdouble x1, GLdouble y1, GLdouble x2, GLdouble y2);
+     void normalizeAngle(int *angle);
+
+     GLuint object;
+     int xRot;
+     int yRot;
+     int zRot;
+     QPoint lastPos;
+     QColor trolltechGreen;
+     QColor trolltechPurple;
+ };</pre>
+<p>The rest of the class contains utility functions and variables that are used to construct and hold orientation information for the scene. The <tt>object</tt> variable will be used to hold an identifier for an OpenGL display list.</p>
+<a name="glwidget-class-implementation"></a>
+<h2>GLWidget Class Implementation</h2>
+<p>In this example, we split the class into groups of functions and describe them separately. This helps to illustrate the differences between subclasses of native widgets (such as <a href="qwidget.html">QWidget</a> and <a href="qframe.html">QFrame</a>) and <a href="qglwidget.html">QGLWidget</a> subclasses.</p>
+<a name="widget-construction-and-sizing"></a>
+<h3>Widget Construction and Sizing</h3>
+<p>The constructor provides default rotation angles for the scene, initializes the variable used for the display list, and sets up some colors for later use.</p>
+<pre> GLWidget::GLWidget(QWidget *parent)
+     : QGLWidget(parent)
+ {
+     object = 0;
+     xRot = 0;
+     yRot = 0;
+     zRot = 0;
+
+     trolltechGreen = QColor::fromCmykF(0.40, 0.0, 1.0, 0.0);
+     trolltechPurple = QColor::fromCmykF(0.39, 0.39, 0.0, 0.0);
+ }</pre>
+<p>We also implement a destructor to release OpenGL-related resources when the widget is deleted:</p>
+<pre> GLWidget::~GLWidget()
+ {
+     makeCurrent();
+     glDeleteLists(object, 1);
+ }</pre>
+<p>The destructor ensures that the display list is deleted properly.</p>
+<p>We provide size hint functions to ensure that the widget is shown at a reasonable size:</p>
+<pre> QSize GLWidget::minimumSizeHint() const
+ {
+     return QSize(50, 50);
+ }
+
+ QSize GLWidget::sizeHint() const
+ {
+     return QSize(400, 400);
+ }</pre>
+<p>The widget provides three slots that enable other components in the example to change the orientation of the scene:</p>
+<pre> void GLWidget::setXRotation(int angle)
+ {
+     normalizeAngle(&amp;angle);
+     if (angle != xRot) {
+         xRot = angle;
+         emit xRotationChanged(angle);
+         updateGL();
+     }
+ }</pre>
+<p>In the above slot, the <tt>xRot</tt> variable is updated only if the new angle is different to the old one, the <tt>xRotationChanged()</tt> signal is emitted to allow other components to be updated, and the widget's <a href="qglwidget.html#updateGL">updateGL()</a> handler function is called.</p>
+<p>The <tt>setYRotation()</tt> and <tt>setZRotation()</tt> slots perform the same task for rotations measured by the <tt>yRot</tt> and <tt>zRot</tt> variables.</p>
+<a name="opengl-initialization"></a>
+<h3>OpenGL Initialization</h3>
+<p>The <a href="qglwidget.html#initializeGL">initializeGL()</a> function is used to perform useful initialization tasks that are needed to render the 3D scene. These often involve defining colors and materials, enabling and disabling certain rendering flags, and setting other properties used to customize the rendering process.</p>
+<pre> void GLWidget::initializeGL()
+ {
+     qglClearColor(trolltechPurple.dark());
+     object = makeObject();
+     glShadeModel(GL_FLAT);
+     glEnable(GL_DEPTH_TEST);
+     glEnable(GL_CULL_FACE);
+ }</pre>
+<p>In this example, we reimplement the function to set the background color, create a display list containing information about the object we want to display, and set up the rendering process to use a particular shading model and rendering flags:</p>
+<a name="resizing-the-viewport"></a>
+<h3>Resizing the Viewport</h3>
+<p>The <a href="qglwidget.html#resizeGL">resizeGL()</a> function is used to ensure that the OpenGL implementation renders the scene onto a viewport that matches the size of the widget, using the correct transformation from 3D coordinates to 2D viewport coordinates.</p>
+<p>The function is called whenever the widget's dimensions change, and is supplied with the new width and height. Here, we define a square viewport based on the length of the smallest side of the widget to ensure that the scene is not distorted if the widget has sides of unequal length:</p>
+<pre> void GLWidget::resizeGL(int width, int height)
+ {
+     int side = qMin(width, height);
+     glViewport((width - side) / 2, (height - side) / 2, side, side);
+
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(-0.5, +0.5, +0.5, -0.5, 4.0, 15.0);
+     glMatrixMode(GL_MODELVIEW);
+ }</pre>
+<p>A discussion of the projection transformation used is outside the scope of this example. Please consult the OpenGL reference documentation for an explanation of projection matrices.</p>
+<a name="painting-the-scene"></a>
+<h3>Painting the Scene</h3>
+<p>The <a href="qglwidget.html#paintGL">paintGL()</a> function is used to paint the contents of the scene onto the widget. For widgets that only need to be decorated with pure OpenGL content, we reimplement <a href="qglwidget.html#paintGL">QGLWidget::paintGL</a>() <i>instead</i> of reimplementing <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>():</p>
+<pre> void GLWidget::paintGL()
+ {
+     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+     glLoadIdentity();
+     glTranslated(0.0, 0.0, -10.0);
+     glRotated(xRot / 16.0, 1.0, 0.0, 0.0);
+     glRotated(yRot / 16.0, 0.0, 1.0, 0.0);
+     glRotated(zRot / 16.0, 0.0, 0.0, 1.0);
+     glCallList(object);
+ }</pre>
+<p>In this example, we clear the widget using the background color that we defined in the <a href="qglwidget.html#initializeGL">initializeGL()</a> function, set up the frame of reference for the object we want to display, and call the display list containing the rendering commands for the object.</p>
+<a name="mouse-handling"></a>
+<h3>Mouse Handling</h3>
+<p>Just as in subclasses of native widgets, mouse events are handled by reimplementing functions such as <a href="qwidget.html#mousePressEvent">QWidget::mousePressEvent</a>() and <a href="qwidget.html#mouseMoveEvent">QWidget::mouseMoveEvent</a>().</p>
+<p>The <a href="qwidget.html#mousePressEvent">mousePressEvent()</a> function simply records the position of the mouse when a button is initially pressed:</p>
+<pre> void GLWidget::mousePressEvent(QMouseEvent *event)
+ {
+     lastPos = event-&gt;pos();
+ }</pre>
+<p>The <a href="qwidget.html#mouseMoveEvent">mouseMoveEvent()</a> function uses the previous location of the mouse cursor to determine how much the object in the scene should be rotated, and in which direction:</p>
+<pre> void GLWidget::mouseMoveEvent(QMouseEvent *event)
+ {
+     int dx = event-&gt;x() - lastPos.x();
+     int dy = event-&gt;y() - lastPos.y();
+
+     if (event-&gt;buttons() &amp; Qt::LeftButton) {
+         setXRotation(xRot + 8 * dy);
+         setYRotation(yRot + 8 * dx);
+     } else if (event-&gt;buttons() &amp; Qt::RightButton) {
+         setXRotation(xRot + 8 * dy);
+         setZRotation(zRot + 8 * dx);
+     }
+     lastPos = event-&gt;pos();
+ }</pre>
+<p>Since the user is expected to hold down the mouse button and drag the cursor to rotate the object, the cursor's position is updated every time a move event is received.</p>
+<a name="utility-functions"></a>
+<h3>Utility Functions</h3>
+<p>We have omitted the utility functions, <tt>makeObject()</tt>, <tt>quad()</tt>, <tt>extrude()</tt>, and <tt>normalizeAngle()</tt> from our discussion. These can be viewed in the quoted source for <tt>glwidget.cpp</tt> via the link at the start of this document.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class is used as a container for the <tt>GLWidget</tt> used to display the scene:</p>
+<pre> class GLWidget;
+
+ class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ private:
+     QSlider *createSlider();
+
+     GLWidget *glWidget;
+     QSlider *xSlider;
+     QSlider *ySlider;
+     QSlider *zSlider;
+ };</pre>
+<p>In addition, it contains sliders that are used to change the orientation of the object in the scene.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor constructs an instance of the <tt>GLWidget</tt> class and some sliders to manipulate its contents.</p>
+<pre> Window::Window()
+ {
+     glWidget = new GLWidget;
+
+     xSlider = createSlider();
+     ySlider = createSlider();
+     zSlider = createSlider();
+
+     connect(xSlider, SIGNAL(valueChanged(int)), glWidget, SLOT(setXRotation(int)));
+     connect(glWidget, SIGNAL(xRotationChanged(int)), xSlider, SLOT(setValue(int)));
+     connect(ySlider, SIGNAL(valueChanged(int)), glWidget, SLOT(setYRotation(int)));
+     connect(glWidget, SIGNAL(yRotationChanged(int)), ySlider, SLOT(setValue(int)));
+     connect(zSlider, SIGNAL(valueChanged(int)), glWidget, SLOT(setZRotation(int)));
+     connect(glWidget, SIGNAL(zRotationChanged(int)), zSlider, SLOT(setValue(int)));</pre>
+<p>We connect the <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal from each of the sliders to the appropriate slots in <tt>glWidget</tt>. This allows the user to change the orientation of the object by dragging the sliders.</p>
+<p>We also connect the <tt>xRotationChanged()</tt>, <tt>yRotationChanged()</tt>, and <tt>zRotationChanged()</tt> signals from <tt>glWidget</tt> to the <a href="qabstractslider.html#value-prop">setValue()</a> slots in the corresponding sliders.</p>
+<pre>     QHBoxLayout *mainLayout = new QHBoxLayout;
+     mainLayout-&gt;addWidget(glWidget);
+     mainLayout-&gt;addWidget(xSlider);
+     mainLayout-&gt;addWidget(ySlider);
+     mainLayout-&gt;addWidget(zSlider);
+     setLayout(mainLayout);
+
+     xSlider-&gt;setValue(15 * 16);
+     ySlider-&gt;setValue(345 * 16);
+     zSlider-&gt;setValue(0 * 16);
+     setWindowTitle(tr(&quot;Hello GL&quot;));
+ }</pre>
+<p>The sliders are placed horizontally in a layout alongside the <tt>GLWidget</tt>, and initialized with suitable default values.</p>
+<p>The <tt>createSlider()</tt> utility function constructs a <a href="qslider.html">QSlider</a>, and ensures that it is set up with a suitable range, step value, tick interval, and page step value before returning it to the calling function:</p>
+<pre> QSlider *Window::createSlider()
+ {
+     QSlider *slider = new QSlider(Qt::Vertical);
+     slider-&gt;setRange(0, 360 * 16);
+     slider-&gt;setSingleStep(16);
+     slider-&gt;setPageStep(15 * 16);
+     slider-&gt;setTickInterval(15 * 16);
+     slider-&gt;setTickPosition(QSlider::TicksRight);
+     return slider;
+ }</pre>
+<a name="summary"></a>
+<h2>Summary</h2>
+<p>The <tt>GLWidget</tt> class implementation shows how to subclass <a href="qglwidget.html">QGLWidget</a> for the purposes of rendering a 3D scene using OpenGL calls. Since <a href="qglwidget.html">QGLWidget</a> is a subclass of <a href="qwidget.html">QWidget</a>, subclasses of <a href="qglwidget.html">QGLWidget</a> can be placed in layouts and provided with interactive features just like normal custom widgets.</p>
+<p>We ensure that the widget is able to correctly render the scene using OpenGL by reimplementing the following functions:</p>
+<ul>
+<li><a href="qglwidget.html#initializeGL">QGLWidget::initializeGL</a>() sets up resources needed by the OpenGL implementation to render the scene.</li>
+<li><a href="qglwidget.html#resizeGL">QGLWidget::resizeGL</a>() resizes the viewport so that the rendered scene fits onto the widget, and sets up a projection matrix to map 3D coordinates to 2D viewport coordinates.</li>
+<li><a href="qglwidget.html#paintGL">QGLWidget::paintGL</a>() performs painting operations using OpenGL calls.</li>
+</ul>
+<p>Since <a href="qglwidget.html">QGLWidget</a> is a subclass of <a href="qwidget.html">QWidget</a>, it can also be used as a normal paint device, allowing 2D graphics to be drawn with <a href="qpainter.html">QPainter</a>. This use of <a href="qglwidget.html">QGLWidget</a> is discussed in the <a href="opengl-2dpainting.html">2D Painting</a> example.</p>
+<p>More advanced users may want to paint over parts of a scene rendered using OpenGL. <a href="qglwidget.html">QGLWidget</a> allows pure OpenGL rendering to be mixed with <a href="qpainter.html">QPainter</a> calls, but care must be taken to maintain the state of the OpenGL implementation. See the <a href="opengl-overpainting.html">Overpainting</a> example for more information.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3serversocket.cpp -->
+<head>
+  <title>Qt 4.4: Q3ServerSocket Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ServerSocket Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ServerSocket class provides a TCP-based server. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ServerSocket&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qserversocket">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="q3serversocket-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3serversocket.html#Q3ServerSocket">Q3ServerSocket</a></b> ( Q_UINT16 <i>port</i>, int <i>backlog</i> = 1, QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3serversocket.html#Q3ServerSocket-2">Q3ServerSocket</a></b> ( const QHostAddress &amp; <i>address</i>, Q_UINT16 <i>port</i>, int <i>backlog</i> = 1, QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3serversocket.html#Q3ServerSocket-3">Q3ServerSocket</a></b> ( QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3serversocket.html#dtor.Q3ServerSocket">~Q3ServerSocket</a></b> ()</li>
+<li><div class="fn"/>QHostAddress <b><a href="q3serversocket.html#address">address</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3serversocket.html#newConnection">newConnection</a></b> ( int <i>socket</i> ) = 0</li>
+<li><div class="fn"/>bool <b><a href="q3serversocket.html#ok">ok</a></b> () const</li>
+<li><div class="fn"/>Q_UINT16 <b><a href="q3serversocket.html#port">port</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3serversocket.html#setSocket">setSocket</a></b> ( int <i>socket</i> )</li>
+<li><div class="fn"/>int <b><a href="q3serversocket.html#socket">socket</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>Q3SocketDevice * <b><a href="q3serversocket.html#socketDevice">socketDevice</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ServerSocket class provides a TCP-based server.</p>
+<p>This class is a convenience class for accepting incoming TCP connections. You can specify the port or have Q3ServerSocket pick one, and listen on just one address or on all the machine's addresses.</p>
+<p>Using the API is very simple: subclass Q3ServerSocket, call the constructor of your choice, and implement <a href="q3serversocket.html#newConnection">newConnection</a>() to handle new incoming connections. There is nothing more to do.</p>
+<p>(Note that due to lack of support in the underlying APIs, Q3ServerSocket cannot accept or reject connections conditionally.)</p>
+<p>See also <a href="q3socket.html">Q3Socket</a>, <a href="q3socketdevice.html">Q3SocketDevice</a>, <a href="qhostaddress.html">QHostAddress</a>, and <a href="qsocketnotifier.html">QSocketNotifier</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ServerSocket"></a>Q3ServerSocket::Q3ServerSocket ( <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i>, int <i>backlog</i> = 1, <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Creates a server socket object, that will serve the given <i>port</i> on all the addresses of this host. If <i>port</i> is 0, <a href="q3serversocket.html">Q3ServerSocket</a> will pick a suitable port in a system-dependent manner. Use <i>backlog</i> to specify how many pending connections the server can have.</p>
+<p>The <i>parent</i> and <i>name</i> arguments are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<p><b>Warning:</b> On Tru64 Unix systems a value of 0 for <i>backlog</i> means that you don't accept any connections at all; you should specify a value larger than 0.</p>
+<h3 class="fn"><a name="Q3ServerSocket-2"></a>Q3ServerSocket::Q3ServerSocket ( const <a href="qhostaddress.html">QHostAddress</a> &amp; <i>address</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i>, int <i>backlog</i> = 1, <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Creates a server socket object, that will serve the given <i>port</i> only on the given <i>address</i>. Use <i>backlog</i> to specify how many pending connections the server can have.</p>
+<p>The <i>parent</i> and <i>name</i> arguments are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<p><b>Warning:</b> On Tru64 Unix systems a value of 0 for <i>backlog</i> means that you don't accept any connections at all; you should specify a value larger than 0.</p>
+<h3 class="fn"><a name="Q3ServerSocket-3"></a>Q3ServerSocket::Q3ServerSocket ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Construct an empty server socket.</p>
+<p>This constructor, in combination with <a href="q3serversocket.html#setSocket">setSocket</a>(), allows us to use the <a href="q3serversocket.html">Q3ServerSocket</a> class as a wrapper for other socket types (e.g&#x2e; Unix Domain Sockets under Unix).</p>
+<p>The <i>parent</i> and <i>name</i> arguments are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>See also <a href="q3serversocket.html#setSocket">setSocket</a>().</p>
+<h3 class="fn"><a name="dtor.Q3ServerSocket"></a>Q3ServerSocket::~Q3ServerSocket ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the socket.</p>
+<p>This causes any backlogged connections (connections that have reached the host, but not yet been completely set up by calling <a href="q3socketdevice.html#accept">Q3SocketDevice::accept</a>()) to be severed.</p>
+<p>Existing connections continue to exist; this only affects the acceptance of new connections.</p>
+<h3 class="fn"><a name="address"></a><a href="qhostaddress.html">QHostAddress</a> Q3ServerSocket::address () const</h3>
+<p>Returns the address on which this object listens, or 0.0&#x2e;0&#x2e;0 if this object listens on more than one address. <a href="q3serversocket.html#ok">ok</a>() must be true before calling this function.</p>
+<p>See also <a href="q3serversocket.html#port">port</a>() and <a href="q3socketdevice.html#address">Q3SocketDevice::address</a>().</p>
+<h3 class="fn"><a name="newConnection"></a>void Q3ServerSocket::newConnection ( int <i>socket</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure virtual function is responsible for setting up a new incoming connection. <i>socket</i> is the fd (file descriptor) for the newly accepted connection.</p>
+<h3 class="fn"><a name="ok"></a>bool Q3ServerSocket::ok () const</h3>
+<p>Returns true if the construction succeeded; otherwise returns false.</p>
+<h3 class="fn"><a name="port"></a><a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> Q3ServerSocket::port () const</h3>
+<p>Returns the port number on which this server socket listens. This is always non-zero; if you specify 0 in the constructor, <a href="q3serversocket.html">Q3ServerSocket</a> will pick a non-zero port itself. <a href="q3serversocket.html#ok">ok</a>() must be true before calling this function.</p>
+<p>See also <a href="q3serversocket.html#address">address</a>() and <a href="q3socketdevice.html#port">Q3SocketDevice::port</a>().</p>
+<h3 class="fn"><a name="setSocket"></a>void Q3ServerSocket::setSocket ( int <i>socket</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the socket to use <i>socket</i>. bind() and listen() should already have been called for <i>socket</i>.</p>
+<p>This allows us to use the <a href="q3serversocket.html">Q3ServerSocket</a> class as a wrapper for other socket types (e.g&#x2e; Unix Domain Sockets).</p>
+<p>See also <a href="q3serversocket.html#socket">socket</a>().</p>
+<h3 class="fn"><a name="socket"></a>int Q3ServerSocket::socket () const</h3>
+<p>Returns the operating system socket.</p>
+<p>See also <a href="q3serversocket.html#setSocket">setSocket</a>().</p>
+<h3 class="fn"><a name="socketDevice"></a><a href="q3socketdevice.html">Q3SocketDevice</a> * Q3ServerSocket::socketDevice ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a pointer to the internal socket device. The returned pointer is 0 if there is no connection or pending connection.</p>
+<p>There is normally no need to manipulate the socket device directly since this class does all the necessary setup for most client or server socket applications.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,181 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt3to4.html
+    \title qt3to4 - The Qt 3 to 4 Porting Tool
+
+    \ingroup porting
+    \keyword qt3to4
+
+    The \c qt3to4 tool provides help when moving a project from Qt 3
+    to Qt 4. It is designed to automate the most tedious part of the
+    porting effort.
+
+    See \l{Porting to Qt 4} and \l{Porting .ui Files to Qt 4} for
+    more information about porting Qt 3 applications to Qt 4.
+
+    \section1 Usage
+
+    \c qt3to4 can be run either on individual C++ source or header
+    files, or on an entire project specified by a \c qmake \c .pro
+    file:
+
+    \snippet doc/src/snippets/code/doc.src.qt3to4.qdoc 0
+
+    In project mode, \c qt3to4 reads the \c .pro file and converts
+    all files specified in it. The tool modifies the files in place.
+    You might want to make a copy of your project before you run the
+    tool.
+
+    \section1 Porting Rules
+
+    The Qt porting tool loads its porting rules from an XML file
+    called \c q3porting.xml located in Qt's \c tools/porting/src directory. 
+    By editing this file, you can add your own rules or remove some
+    rules.
+
+    The standard \c q3porting.xml file specifies the following
+    conversions:
+
+    \list
+    \o  Rename classes that are now part of the Qt 3 support
+        library (e.g., replace \c QFileDialog with \c{Q3FileDialog}).
+    \o  Prefix or rename enum values that have been moved or
+        renamed (e.g., replace \c QButton::On with \c{QCheckBox::On}) or
+        members of the Qt namespace (e.g., replace \c QWidget::red with
+        \c{Qt::red}).
+    \o  Add \c #include directives that might be needed in Qt 4.
+    \endlist
+
+    \section2 Location of the qt3porting.xml File
+
+    You can now specify the location of the \c qt3porting.xml file with the
+    \c{-f} command line option. This is useful if you want to use a modified
+    file with your own rules. 
+
+    If you you don't want to maintain a modified \c qt3porting.xml it is
+    possible to create a "patch" file that includes the original file and adds
+    or disables rules. The syntax for this file looks like this:
+
+    \snippet doc/src/snippets/code/doc.src.qt3to4.qdoc 1
+
+    \section1 Logging
+
+    The porting tool logs all changes to a file called \c
+    portinglog.txt in the current directory. This file lists all
+    changes made to the source files.
+
+    \section1 Advanced Usage
+
+    When porting, \c qt3to4 parses the source files and ports the
+    contents according to the C++ language rules. This C++ parsing
+    step can be disabled with the \c -disableCppParsing option.
+
+    If C++ parsing is enabled, \c qt3to4 must be able to locate the
+    headers included from the source files. Necessary headers include
+    the public Qt headers and  any headers that declares names that
+    may conflict with names in the public Qt headers. The standard
+    C++ headers and system headers are usually not needed.
+
+    You can tell \c qt3to4 where to look for headers by using the
+    \c{-I} command-line option. Qt 3.3 header information is built
+    in, so it is normaly not necessary to specify the location of the
+    Qt headers. If you are porting from a different version of Qt 3,
+    you may want to disable the built-in headers with
+    \c{-disableBuiltInQt3Headers}, and then add the path to the
+    actual headers with the \c{-I} option.
+
+    When porting a project, \c qt3to4 will read the \c INCLUDEPATH
+    and \c DEPENDPATH variables from the \c .pro file and add the
+    paths specified here to the list of include search directories.
+
+    To see which headers that are not found, use the \c{-missingFileWarnings}
+    option.
+
+    \section1 Limitations
+
+    In some cases, you might get compiler errors because of identifiers
+    in the global namespace (e.g., \c CTRL). Adding
+
+    \snippet doc/src/snippets/code/doc.src.qt3to4.qdoc 2
+
+    at the beginning of the source file that contains
+    the indentifier solves the problem.
+
+    \section1 Legal Notices
+
+    Some source code in \c qt3to4 is licensed under specific highly
+    permissive licenses from the original authors. Trolltech gratefully
+    acknowledges these contributions to \c qt3to4 and all uses of
+    \c qt3to4 should also acknowledge these contributions and quote the
+    following license statements in an appendix to the documentation.
+
+    \list
+    \o \l{Contributions to the Following qt3to4 Files: treewalker.h,
+    treedump.cpp, treedump.h, treewalker.cpp}
+    \endlist
+*/
+
+/*!
+    \page qt3to4-treewalker.html
+    \title Contributions to the Following qt3to4 Files: treewalker.h, treedump.cpp, treedump.h, treewalker.cpp
+    \ingroup licensing
+    \brief License information for contributions to the qt3to4 source code.
+
+    \legalese
+    Copyright (C) 2005-2008 Trolltech ASA. All rights reserved. \BR
+    Copyright (C) 2005 Roberto Raggi
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, modify, market, reproduce,
+    grant sublicenses and distribute subject to the following
+    conditions:  The above copyright notice and this permission notice
+    shall be included in all copies or substantial portions of the
+    Software.  These files are provided AS IS with NO WARRANTY OF ANY
+    KIND, INCLUDING THE WARRANTY OF DESIGN, MERCHANTIBILITY AND FITNESS
+    FOR A PARTICULAR PURPOSE.
+    \endlegalese
+*/

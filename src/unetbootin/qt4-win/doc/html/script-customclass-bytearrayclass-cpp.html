@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: bytearrayclass.cpp Example File (script/customclass/bytearrayclass.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">bytearrayclass.cpp Example File<br /><span class="small-subtitle">script/customclass/bytearrayclass.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtScript/QScriptClassPropertyIterator&gt;
+ #include &lt;QtScript/QScriptEngine&gt;
+ #include &quot;bytearrayclass.h&quot;
+ #include &quot;bytearrayprototype.h&quot;
+
+ #include &lt;stdlib.h&gt;
+
+ Q_DECLARE_METATYPE(QByteArray*)
+ Q_DECLARE_METATYPE(ByteArrayClass*)
+
+ class ByteArrayClassPropertyIterator : public QScriptClassPropertyIterator
+ {
+ public:
+     ByteArrayClassPropertyIterator(const QScriptValue &amp;object);
+     ~ByteArrayClassPropertyIterator();
+
+     bool hasNext() const;
+     void next();
+
+     bool hasPrevious() const;
+     void previous();
+
+     void toFront();
+     void toBack();
+
+     QScriptString name() const;
+     uint id() const;
+
+ private:
+     int m_index;
+     int m_last;
+ };
+
+ static qint32 toArrayIndex(const QString &amp;str)
+ {
+     QByteArray bytes = str.toUtf8();
+     char *eptr;
+     quint32 pos = strtoul(bytes.constData(), &amp;eptr, 10);
+     if ((eptr == bytes.constData() + bytes.size())
+         &amp;&amp; (QByteArray::number(pos) == bytes)) {
+         return pos;
+     }
+     return -1;
+ }
+
+ ByteArrayClass::ByteArrayClass(QScriptEngine *engine)
+     : QObject(engine), QScriptClass(engine)
+ {
+     qScriptRegisterMetaType&lt;QByteArray&gt;(engine, toScriptValue, fromScriptValue);
+
+     length = engine-&gt;toStringHandle(QLatin1String(&quot;length&quot;));
+
+     proto = engine-&gt;newQObject(new ByteArrayPrototype(this),
+                                QScriptEngine::QtOwnership,
+                                QScriptEngine::SkipMethodsInEnumeration
+                                | QScriptEngine::ExcludeSuperClassMethods
+                                | QScriptEngine::ExcludeSuperClassProperties);
+     QScriptValue global = engine-&gt;globalObject();
+     proto.setPrototype(global.property(&quot;Object&quot;).property(&quot;prototype&quot;));
+
+     ctor = engine-&gt;newFunction(construct);
+     ctor.setData(qScriptValueFromValue(engine, this));
+ }
+
+ ByteArrayClass::~ByteArrayClass()
+ {
+ }
+
+ QScriptClass::QueryFlags ByteArrayClass::queryProperty(const QScriptValue &amp;object,
+                                                        const QScriptString &amp;name,
+                                                        QueryFlags flags, uint *id)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return 0;
+     if (name == length) {
+         return flags;
+     } else {
+         qint32 pos = toArrayIndex(name);
+         if (pos == -1)
+             return 0;
+         *id = pos;
+         if ((flags &amp; HandlesReadAccess) &amp;&amp; (pos &gt;= ba-&gt;size()))
+             flags &amp;= ~HandlesReadAccess;
+         return flags;
+     }
+ }
+
+ QScriptValue ByteArrayClass::property(const QScriptValue &amp;object,
+                                       const QScriptString &amp;name, uint id)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return QScriptValue();
+     if (name == length) {
+         return QScriptValue(engine(), ba-&gt;length());
+     } else {
+         qint32 pos = id;
+         if ((pos &lt; 0) || (pos &gt;= ba-&gt;size()))
+             return QScriptValue();
+         return QScriptValue(engine(), uint(ba-&gt;at(pos)) &amp; 255);
+     }
+     return QScriptValue();
+ }
+
+ void ByteArrayClass::setProperty(QScriptValue &amp;object,
+                                  const QScriptString &amp;name,
+                                  uint id, const QScriptValue &amp;value)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return;
+     if (name == length) {
+         ba-&gt;resize(value.toInt32());
+     } else {
+         qint32 pos = id;
+         if (pos &lt; 0)
+             return;
+         if (ba-&gt;size() &lt;= pos)
+             ba-&gt;resize(pos + 1);
+         (*ba)[pos] = char(value.toInt32());
+     }
+ }
+
+ QScriptValue::PropertyFlags ByteArrayClass::propertyFlags(
+     const QScriptValue &amp;<span class="comment">/*object*/</span>, const QScriptString &amp;name, uint <span class="comment">/*id*/</span>)
+ {
+     if (name == length) {
+         return QScriptValue::Undeletable
+             | QScriptValue::SkipInEnumeration;
+     }
+     return QScriptValue::Undeletable;
+ }
+
+ QScriptClassPropertyIterator *ByteArrayClass::newIterator(const QScriptValue &amp;object)
+ {
+     return new ByteArrayClassPropertyIterator(object);
+ }
+
+ QString ByteArrayClass::name() const
+ {
+     return QLatin1String(&quot;ByteArray&quot;);
+ }
+
+ QScriptValue ByteArrayClass::prototype() const
+ {
+     return proto;
+ }
+
+ QScriptValue ByteArrayClass::constructor()
+ {
+     return ctor;
+ }
+
+ QScriptValue ByteArrayClass::newInstance(int size)
+ {
+     return newInstance(QByteArray(size, <span class="comment">/*ch=*/</span>0));
+ }
+
+ QScriptValue ByteArrayClass::newInstance(const QByteArray &amp;ba)
+ {
+     QScriptValue data = engine()-&gt;newVariant(qVariantFromValue(ba));
+     return engine()-&gt;newObject(this, data);
+ }
+
+ QScriptValue ByteArrayClass::construct(QScriptContext *ctx, QScriptEngine *)
+ {
+     ByteArrayClass *cls = qscriptvalue_cast&lt;ByteArrayClass*&gt;(ctx-&gt;callee().data());
+     if (!cls)
+         return QScriptValue();
+     int size = ctx-&gt;argument(0).toInt32();
+     return cls-&gt;newInstance(size);
+ }
+
+ QScriptValue ByteArrayClass::toScriptValue(QScriptEngine *eng, const QByteArray &amp;ba)
+ {
+     QScriptValue ctor = eng-&gt;globalObject().property(&quot;ByteArray&quot;);
+     ByteArrayClass *cls = qscriptvalue_cast&lt;ByteArrayClass*&gt;(ctor.data());
+     if (!cls)
+         return eng-&gt;newVariant(qVariantFromValue(ba));
+     return cls-&gt;newInstance(ba);
+ }
+
+ void ByteArrayClass::fromScriptValue(const QScriptValue &amp;obj, QByteArray &amp;ba)
+ {
+     ba = qscriptvalue_cast&lt;QByteArray&gt;(obj.data());
+ }
+
+ ByteArrayClassPropertyIterator::ByteArrayClassPropertyIterator(const QScriptValue &amp;object)
+     : QScriptClassPropertyIterator(object)
+ {
+     toFront();
+ }
+
+ ByteArrayClassPropertyIterator::~ByteArrayClassPropertyIterator()
+ {
+ }
+
+ bool ByteArrayClassPropertyIterator::hasNext() const
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object().data());
+     return m_index &lt; ba-&gt;size();
+ }
+
+ void ByteArrayClassPropertyIterator::next()
+ {
+     m_last = m_index;
+     ++m_index;
+ }
+
+ bool ByteArrayClassPropertyIterator::hasPrevious() const
+ {
+     return (m_index &gt; 0);
+ }
+
+ void ByteArrayClassPropertyIterator::previous()
+ {
+     --m_index;
+     m_last = m_index;
+ }
+
+ void ByteArrayClassPropertyIterator::toFront()
+ {
+     m_index = 0;
+     m_last = -1;
+ }
+
+ void ByteArrayClassPropertyIterator::toBack()
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object().data());
+     m_index = ba-&gt;size();
+     m_last = -1;
+ }
+
+ QScriptString ByteArrayClassPropertyIterator::name() const
+ {
+     return QScriptString();
+ }
+
+ uint ByteArrayClassPropertyIterator::id() const
+ {
+     return m_last;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

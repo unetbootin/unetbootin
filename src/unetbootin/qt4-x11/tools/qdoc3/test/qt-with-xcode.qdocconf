@@ -1,0 +1,3 @@
+include( qt.qdocconf )
+
+HTML.generatemacrefs       = "true"

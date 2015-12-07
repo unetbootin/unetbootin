@@ -1,0 +1,6 @@
+QMAKE_PRL_BUILD_DIR = /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/src/tools/bootstrap
+QMAKE_PRO_INPUT = bootstrap.pro
+QMAKE_PRL_TARGET = libbootstrap.a
+QMAKE_PRL_CONFIG = lex yacc warn_on uic resources warn_on release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath fix_output_dirs QTDIR_build staticlib console qtinc static staticlib
+QMAKE_PRL_VERSION = 1.0.0
+QMAKE_PRL_LIBS =   -ldl 

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/svgalib.qdoc -->
+<head>
+  <title>Qt 4.4: Accelerated Graphics Driver Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Accelerated Graphics Driver Example<br /><span class="subtitle"></span>
+</h1>
+<p>The Accelerated Graphics Driver example shows how you can write your own accelerated graphics driver and <a href="qt-embedded-accel.html#add-your-graphics-driver-to-qt-for-embedded-linux">add your graphics driver to Qt for Embedded Linux</a>. In <a href="qt-embedded.html">Qt for Embedded Linux</a>, painting is a pure software implementation and is normally performed in two steps: The clients render each window onto a corresponding surface (stored in memory) using a paint engine, and then the server uses the graphics driver to compose the surface images and copy them to the screen. (See the <a href="qt-embedded-architecture.html">Qt for Embedded Linux Architecture</a> documentation for details.)</p>
+<p>The rendering can be accelerated in two ways: Either by accelerating the copying of pixels to the screen, or by accelerating the explicit painting operations. The first is done in the graphics driver implementation, the latter is performed by the paint engine implementation. Typically, both the pixel copying and the painting operations are accelerated using the following approach:</p>
+<ol type="1">
+<li><a href="#step-1-creating-a-custom-graphics-driver">Creating a Custom Graphics Driver</a></li>
+<li><a href="#step-2-implementing-a-custom-raster-paint-engine">Implementing a Custom Paint Engine</a></li>
+<li><a href="#step-3-making-the-widgets-aware-of-the-custom-paint-engine">Making the Widgets Aware of the Custom Paint Engine</a></li>
+</ol>
+<p>After compiling the example code, install the graphics driver plugin with the command <tt>make install</tt>. To start an application using the graphics driver, you can either set the environment variable <a href="qt-embedded-envvars.html#qws-display">QWS_DISPLAY</a> and then run the application, or you can just run the application using the <tt>-display</tt> switch:</p>
+<pre>         myApplication -qws -display svgalib</pre>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>SVGAlib</th></tr></thead>
+<tr valign="top" class="odd"><td>Instead of interfacing the graphics hardware directly, this example relies on <a href="http://www.svgalib.org">SVGAlib</a> being installed on your system. <a href="http://www.svgalib.org">SVGAlib</a> is a small graphics library which provides acceleration for many common graphics cards used on desktop computers. It should work on most workstations and has a small and simple API.</td></tr>
+</table></p>
+<a name="step-1-creating-a-custom-graphics-driver"></a>
+<h2>Step 1: Creating a Custom Graphics Driver</h2>
+<p>The custom graphics driver is created by deriving from the QScreen class. QScreen is the base class for implementing screen/graphics drivers in Qt for Embedded Linux.</p>
+<pre></pre>
+<p>The connect(), disconnect(), initDevice() and shutdownDevice() functions are declared as pure virtual functions in QScreen and must be implemented. They are used to configure the hardware, or query its configuration: connect() and disconnect() are called by both the server and client processes, while the initDevice() and shutdownDevice() functions are only called by the server process.</p>
+<p>QScreen's setMode() and blank() functions are also pure virtual, but our driver's implementations are trivial. The last two functions (blit() and solidFill()) are the ones involved in putting pixels on the screen, i.e&#x2e;, we reimplement these functions to perform the pixel copying acceleration.</p>
+<p>Finally, the <tt>context</tt> variable is a pointer to a <a href="http://www.svgalib.org">SVGAlib</a> specific type. Note that the details of using the <a href="http://www.svgalib.org">SVGAlib</a> library is beyond the scope of this example.</p>
+<a name="svgalibscreen-class-implementation"></a>
+<h3>SvgalibScreen Class Implementation</h3>
+<p>The connect() function is the first function that is called after the constructor returns. It queries <a href="http://www.svgalib.org">SVGAlib</a> about the graphics mode and initializes the variables.</p>
+<pre></pre>
+<p>It is important that the connect() function initializes the <tt>data</tt>, <tt>lstep</tt>, <tt>w</tt>, <tt>h</tt>, <tt>dw</tt>, <tt>dh</tt>, <tt>d</tt>, <tt>physWidth</tt> and <tt>physHeight</tt> variables (inherited from QScreen) to ensure that the driver is in a state consistent with the driver configuration.</p>
+<p>In this particular example we do not have any information of the real physical size of the screen, so we set these values with the assumption of a screen with 72 DPI.</p>
+<pre></pre>
+<p>When the connect() function returns, the server process calls the initDevice() function which is expected to do the necessary hardware initialization, leaving the hardware in a state consistent with the driver configuration.</p>
+<p>Note that we have chosen to use the software cursor. If you want to use a hardware cursor, you should create a subclass of QScreenCursor, create an instance of it, and make the global variable <tt>qt_screencursor</tt> point to this instance.</p>
+<pre></pre>
+<p>Before exiting, the server process will call the shutdownDevice() function to do the necessary hardware cleanup. Again, it is important that the function leaves the hardware in a state consistent with the driver configuration. When shutdownDevice() returns, the disconnect() function is called. Our implementation of the latter function is trivial.</p>
+<p>Note that, provided that the <tt>QScreen::data</tt> variable points to a valid linear framebuffer, the graphics driver is fully functional as a simple screen driver at this point. The rest of this example will show where to take advantage of the accelerated capabilities available on the hardware.</p>
+<p>Whenever an area on the screen needs to be updated, the server will call the exposeRegion() function that paints the given region on screen. The default implementation will do the necessary composing of the top-level windows and call solidFill() and blit() whenever it is required. We do not want to change this behavior in the driver so we do not reimplement exposeRegion().</p>
+<p>To control how the pixels are put onto the screen we need to reimplement the solidFill() and blit() functions.</p>
+<pre></pre>
+<a name="step-2-implementing-a-custom-raster-paint-engine"></a>
+<h2>Step 2: Implementing a Custom Raster Paint Engine</h2>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> uses <a href="qrasterpaintengine.html">QRasterPaintEngine</a> (a raster-based implementation of <a href="qpaintengine.html">QPaintEngine</a>) to implement the painting operations.</p>
+<p>Acceleration of the painting operations is done by deriving from <a href="qrasterpaintengine.html">QRasterPaintEngine</a> class. This is a powerful mechanism for accelerating graphic primitives while getting software fallbacks for all the primitives you do not accelerate.</p>
+<pre></pre>
+<p>In this example, we will only accelerate one of the <a href="qpaintengine.html#drawRects-2">drawRects()</a> functions, i.e&#x2e;, only non-rotated, aliased and opaque rectangles will be rendered using accelerated painting. All other primitives are rendered using the base class's unaccelerated implementation.</p>
+<p>The paint engine's state is stored in the private member variables, and we reimplement the <a href="qpaintengine.html#updateState">updateState()</a> function to ensure that our custom paint engine's state is updated properly whenever it is required. The private <tt>setClip()</tt> and <tt>updateClip()</tt> functions are only helper function used to simplify the <a href="qpaintengine.html#updateState">updateState()</a> implementation.</p>
+<p>We also reimplement <a href="qrasterpaintengine.html">QRasterPaintEngine</a>'s <a href="qpaintengine.html#begin">begin()</a> and <a href="qpaintengine.html#end">end()</a> functions to initialize the paint engine and to do the cleanup when we are done rendering, respectively.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Private Header Files</th></tr></thead>
+<tr valign="top" class="odd"><td>Note the <tt>include</tt> statement used by this class. The files prefixed with <tt>private/</tt> are private headers file within <a href="qt-embedded.html">Qt for Embedded Linux</a>. Private header files are not part of the standard installation and are only present while compiling Qt. To be able to compile using private header files you need to use a <tt>qmake</tt> binary within a compiled <a href="qt-embedded.html">Qt for Embedded Linux</a> package.<p><b>Warning:</b> Private header files may change without notice between releases.</p>
+</td></tr>
+</table></p>
+<p>The <a href="qpaintengine.html#begin">begin()</a> function initializes the internal state of the paint engine. Note that it also calls the base class implementation to initialize the parts inherited from <a href="qrasterpaintengine.html">QRasterPaintEngine</a>:</p>
+<pre></pre>
+<p>The implementation of the <a href="qpaintengine.html#end">end()</a> function removes the clipping constraints that might have been set in <a href="http://www.svgalib.org">SVGAlib</a>, before calling the corresponding base class implementation.</p>
+<pre></pre>
+<p>The <a href="qpaintengine.html#updateState">updateState()</a> function updates our custom paint engine's state. The <a href="qpaintenginestate.html">QPaintEngineState</a> class provides information about the active paint engine's current state.</p>
+<p>Note that we only accept and save the current matrix if it doesn't do any shearing. The pen is accepted if it is opaque and only one pixel wide. The rest of the engine's properties are updated following the same pattern. Again it is important that the <a href="qpaintengine.html#updateState">QRasterPaintEngine::updateState</a>() function is called to update the parts inherited from the base class.</p>
+<pre></pre>
+<p>The <tt>setClip()</tt> helper function is called from our custom implementation of <a href="qpaintengine.html#updateState">updateState()</a>, and enables clipping to the given region. An empty region means that clipping is disabled.</p>
+<p>Our custom update function also makes use of the <tt>updateClip()</tt> helper function that checks if the clip is &quot;simple&quot;, i.e&#x2e;, that it can be represented by only one rectangle, and updates the clip region in <a href="http://www.svgalib.org">SVGAlib</a>.</p>
+<pre></pre>
+<p>Finally, we accelerated that drawing of non-rotated, aliased and opaque rectangles in our reimplementation of the <a href="qpaintengine.html#drawRects-2">drawRects()</a> function. The <a href="qrasterpaintengine.html">QRasterPaintEngine</a> fallback is used whenever the rectangle is not simple enough.</p>
+<a name="step-3-making-the-widgets-aware-of-the-custom-paint-engine"></a>
+<h2>Step 3: Making the Widgets Aware of the Custom Paint Engine</h2>
+<p>To activate the custom paint engine, we also need to implement a corresponding paint device and window surface and make some minor adjustments of the graphics driver.</p>
+<ul>
+<li><a href="#implementing-a-custom-paint-device">Implementing a Custom Paint Device</a></li>
+<li><a href="#implementing-a-custom-window-surface">Implementing a Custom Window Surface</a></li>
+<li><a href="#adjusting-the-graphics-driver">Adjusting the Graphics Driver</a></li>
+</ul>
+<a name="implementing-a-custom-paint-device"></a>
+<h3>Implementing a Custom Paint Device</h3>
+<p>The custom paint device can be derived from the <a href="qcustomrasterpaintdevice.html">QCustomRasterPaintDevice</a> class. Reimplement its paintEngine() and <a href="qcustomrasterpaintdevice.html#memory">memory()</a> functions to activate the accelerated paint engine:</p>
+<pre></pre>
+<p>The paintEngine() function should return an instance of the <tt>SvgalibPaintEngine</tt> class. The <a href="qcustomrasterpaintdevice.html#memory">memory()</a> function should return a pointer to the buffer which should be used when drawing the widget.</p>
+<p>Our example driver is rendering directly to the screen without any buffering, i.e&#x2e;, our custom pain device's <a href="qcustomrasterpaintdevice.html#memory">memory()</a> function returns a pointer to the framebuffer. For this reason, we must also reimplement the <a href="qpaintdevice.html#metric">metric()</a> function to reflect the metrics of framebuffer.</p>
+<a name="implementing-a-custom-window-surface"></a>
+<h3>Implementing a Custom Window Surface</h3>
+<p>The custom window surface can be derived from the QWSWindowSurface class. QWSWindowSurface manages the memory used when drawing a window.</p>
+<pre></pre>
+<p>We can implement most of the pure virtual functions inherited from QWSWindowSurface as trivial inline functions, except the <a href="qwindowsurface.html#scroll">scroll()</a> function that actually makes use of some hardware acceleration:</p>
+<pre></pre>
+<a name="adjusting-the-graphics-driver"></a>
+<h3>Adjusting the Graphics Driver</h3>
+<p>Finally, we enable the graphics driver to recognize an instance of our custom window surface:</p>
+<pre></pre>
+<p>The createSurface() functions are factory functions that determines what kind of surface a top-level window is using. In our example we only use the custom surface if the given window has the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> attribute or the <a href="qt-embedded-envvars.html#qt-onscreen-paint">QT_ONSCREEN_PAINT</a> environment variable is set.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

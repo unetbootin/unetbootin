@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book 7 - Additional Features</title>
+  <link rel="prev" href="tutorials-addressbook-part6.html" />
+  <link rel="contents" href="tutorials-addressbook.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-addressbook-part6.html">Address Book 6 - Loading and Saving</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+</p>
+<h1 class="title">Address Book 7 - Additional Features<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-addressbook-part7-addressbook-cpp.html">tutorials/addressbook/part7/addressbook.cpp</a></li>
+<li><a href="tutorials-addressbook-part7-addressbook-h.html">tutorials/addressbook/part7/addressbook.h</a></li>
+<li><a href="tutorials-addressbook-part7-finddialog-cpp.html">tutorials/addressbook/part7/finddialog.cpp</a></li>
+<li><a href="tutorials-addressbook-part7-finddialog-h.html">tutorials/addressbook/part7/finddialog.h</a></li>
+<li><a href="tutorials-addressbook-part7-main-cpp.html">tutorials/addressbook/part7/main.cpp</a></li>
+<li><a href="tutorials-addressbook-part7-part7-pro.html">tutorials/addressbook/part7/part7.pro</a></li>
+</ul>
+<p>This chapter covers some additional features that make the address book application more convenient for everyday use.</p>
+<p align="center"><img src="images/addressbook-tutorial-part7-screenshot.png" /></p><p>Although our address book application is useful in its own right, it would be useful if we could exchange contact data with other applications. The vCard format is a popular file format that can be used for this purpose. In this chapter, we extend our address book client to allow contacts to be exported to vCard <tt>.vcf</tt> files.</p>
+<a name="defining-the-addressbook-class"></a>
+<h2>Defining the AddressBook Class</h2>
+<p>We add a <a href="qpushbutton.html">QPushButton</a> object, <tt>exportButton</tt>, and a corresponding public slot, <tt>exportAsVCard()</tt> to our <tt>AddressBook</tt> class in the <tt>addressbook.h</tt> file.</p>
+<pre>     void exportAsVCard();
+     ...
+     QPushButton *exportButton;</pre>
+<a name="implementing-the-addressbook-class"></a>
+<h2>Implementing the AddressBook Class</h2>
+<p>Within the <tt>AddressBook</tt> constructor, we connect <tt>exportButton</tt>'s <a href="qabstractbutton.html#clicked">clicked()</a> signal to <tt>exportAsVCard()</tt>. We also add this button to our <tt>buttonLayout1</tt>, the layout responsible for our panel of buttons on the right.</p>
+<p>In our <tt>exportAsVCard()</tt> function, we start by extracting the contact's name into <tt>name</tt>. We declare <tt>firstName</tt>, <tt>lastName</tt> and <tt>nameList</tt>. Next, we look for the index of the first white space in <tt>name</tt>. If there is a white space, we split the contact's name into <tt>firstName</tt> and <tt>lastName</tt>. Then, we replace the space with an underscore (&quot;_&quot;). Alternately, if there is no white space, we assume that the contact only has a first name.</p>
+<pre> void AddressBook::exportAsVCard()
+ {
+     QString name = nameLine-&gt;text();
+     QString address = addressText-&gt;toPlainText();
+     QString firstName;
+     QString lastName;
+     QStringList nameList;
+
+     int index = name.indexOf(&quot; &quot;);
+
+     if (index != -1) {
+         nameList = name.split(QRegExp(&quot;\\s+&quot;), QString::SkipEmptyParts);
+         firstName = nameList.first();
+         lastName = nameList.last();
+     } else {
+         firstName = name;
+         lastName = &quot;&quot;;
+     }
+
+     QString fileName = QFileDialog::getSaveFileName(this,
+         tr(&quot;Export Contact&quot;), &quot;&quot;,
+         tr(&quot;vCard Files (*.vcf);;All Files (*)&quot;));
+
+     if (fileName.isEmpty())
+         return;
+
+     QFile file(fileName);</pre>
+<p>As with the <tt>saveToFile()</tt> function, we open a file dialog to let the user choose a location for the file. Using the file name chosen, we create an instance of <a href="qfile.html">QFile</a> to write to.</p>
+<p>We attempt to open the file in <a href="qiodevice.html#OpenModeFlag-enum">WriteOnly</a> mode. If this process fails, we display a <a href="qmessagebox.html">QMessageBox</a> to inform the user about the problem and return. Otherwise, we pass the file as a parameter to a <a href="qtextstream.html">QTextStream</a> object, <tt>out</tt>. Like <a href="qdatastream.html">QDataStream</a>, the <a href="qtextstream.html">QTextStream</a> class provides functionality to read and write plain text to files. As a result, the <tt>.vcf</tt> file generated can be opened for editing in a text editor.</p>
+<pre>     if (!file.open(QIODevice::WriteOnly)) {
+         QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+             file.errorString());
+         return;
+     }
+
+     QTextStream out(&amp;file);</pre>
+<p>We then write out a vCard file with the <tt>BEGIN:VCARD</tt> tag, followed by the <tt>VERSION:2.1</tt> tag. The contact's name is written with the <tt>N:</tt> tag. For the <tt>FN:</tt> tag, which fills in the &quot;File as&quot; property of a vCard, we have to check whether the contact has a last name or not. If the contact does, we use the details in <tt>nameList</tt> to fill it. Otherwise, we write <tt>firstName</tt> only.</p>
+<pre>     out &lt;&lt; &quot;BEGIN:VCARD&quot; &lt;&lt; &quot;\n&quot;;
+     out &lt;&lt; &quot;VERSION:2.1&quot; &lt;&lt; &quot;\n&quot;;
+     out &lt;&lt; &quot;N:&quot; &lt;&lt; lastName &lt;&lt; &quot;;&quot; &lt;&lt; firstName &lt;&lt; &quot;\n&quot;;
+
+     if (!nameList.isEmpty())
+        out &lt;&lt; &quot;FN:&quot; &lt;&lt; nameList.join(&quot; &quot;) &lt;&lt; &quot;\n&quot;;
+     else
+        out &lt;&lt; &quot;FN:&quot; &lt;&lt; firstName &lt;&lt; &quot;\n&quot;;</pre>
+<p>We proceed to write the contact's address. The semicolons in the address are escaped with &quot;\&quot;, the newlines are replaced with semicolons, and the commas are replaced with spaces. Lastly, we write the <tt>ADR;HOME:;</tt> tag, followed by <tt>address</tt> and then the <tt>END:VCARD</tt> tag.</p>
+<pre>     address.replace(&quot;;&quot;, &quot;\\;&quot;, Qt::CaseInsensitive);
+     address.replace(&quot;\n&quot;, &quot;;&quot;, Qt::CaseInsensitive);
+     address.replace(&quot;,&quot;, &quot; &quot;, Qt::CaseInsensitive);
+
+     out &lt;&lt; &quot;ADR;HOME:;&quot; &lt;&lt; address &lt;&lt; &quot;\n&quot;;
+     out &lt;&lt; &quot;END:VCARD&quot; &lt;&lt; &quot;\n&quot;;
+
+     QMessageBox::information(this, tr(&quot;Export Successful&quot;),
+         tr(&quot;\&quot;%1\&quot; has been exported as a vCard.&quot;).arg(name));
+ }</pre>
+<p>In the end, a <a href="qmessagebox.html">QMessageBox</a> is displayed to inform the user that the vCard has been successfully exported.</p>
+<p><i>vCard is a trademark of the <a href="http://www.imc.org">Internet Mail Consortium</a></i>.</p>
+<p>
+[Previous: <a href="tutorials-addressbook-part6.html">Address Book 6 - Loading and Saving</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

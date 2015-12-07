@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-features.qdoc -->
+<head>
+  <title>Qt 4.4: Fine-Tuning Features in Qt for Embedded Linux</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Fine-Tuning Features in Qt for Embedded Linux<br /><span class="subtitle"></span>
+</h1>
+<p>In many cases, only a fixed set of applications are deployed on an embedded device, making it possible to save resources by minimizing the size of the associated libraries. The Qt installation can easily be optimized by avoiding to compile in the features that are not required.</p>
+<p>To disable a particular feature, just run the <tt>configure</tt> script for Qt for Embedded Linux with the <tt>-no-feature-&lt;feature&gt;</tt> option. For example:</p>
+<pre>           ./configure -no-feature-thread</pre>
+<p>The feature can easily be enabled again by running <tt>configure</tt> with the <tt>-feature-&lt;feature&gt;</tt> option. You can look up the different feature definitions in <tt>/src/corelib/global/qfeatures.txt</tt>.</p>
+<p>If you want to disable a lot of features, it is more comfortable to use the <tt>qconfig</tt> tool. You can disable a <i>set</i> of features by creating a custom configuration file that defines the preferred subset of Qt's functionality. Such a file uses macros to disable the unwanted features, and can be created manually or by using the <tt>qconfig</tt> tool located in the <tt>/tools/qconfig</tt> directory.</p>
+<p><b>Note:</b> The <tt>qconfig</tt> tool is intended to be built against Qt on desktop platforms.</p>
+<p align="center"><img src="images/qt-embedded-qconfigtool.png" /></p><p>The <tt>qconfig</tt> tool's interface displays all of Qt's functionality, and allows the user to both disable and enable features. The user can open and edit any custom configuration file located in the <tt>/src/corelib/global</tt> directory. When creating a custom configuration file manually, a description of the currently available Qt features can be found in the <tt>/src/corelib/global/qfeatures.txt</tt> file.</p>
+<p>Note that some features depend on others; disabling any feature will automatically disable all features depending on it. The feature dependencies can be explored using the <tt>qconfig</tt> tool, but they are also described in the <tt>/src/corelib/global/qfeatures.h</tt> file.</p>
+<p>To be able to apply the custom configuration, it must be saved in a file called <tt>qconfig-myfile.h</tt> in the <tt>/src/corelib/global</tt> directory. Then use the <tt>configure</tt> tool's <tt>-qconfig</tt> option and pass the configuration's filename without the <tt>qconfig-</tt> prefix and <tt>.h</tt> extension, as argument. For example:</p>
+<pre>           ./configure -qconfig myfile</pre>
+<p>Qt provides several ready-made custom configuration files, defining minimal, small, medium and large installations, respectively. These files are located in the <tt>/src/corelib/global</tt> directory.</p>
+<p>See also <a href="qt-embedded-performance.html">Performance Tuning</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

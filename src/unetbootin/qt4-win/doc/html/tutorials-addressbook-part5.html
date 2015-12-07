@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book 5 - Adding a Find Function</title>
+  <link rel="prev" href="tutorials-addressbook-part4.html" />
+  <link rel="contents" href="tutorials-addressbook.html" />
+  <link rel="next" href="tutorials-addressbook-part6.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-addressbook-part4.html">Address Book 4 - Editing and Removing Addresses</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part6.html">Chapter 6</a>]
+</p>
+<h1 class="title">Address Book 5 - Adding a Find Function<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-addressbook-part5-addressbook-cpp.html">tutorials/addressbook/part5/addressbook.cpp</a></li>
+<li><a href="tutorials-addressbook-part5-addressbook-h.html">tutorials/addressbook/part5/addressbook.h</a></li>
+<li><a href="tutorials-addressbook-part5-finddialog-cpp.html">tutorials/addressbook/part5/finddialog.cpp</a></li>
+<li><a href="tutorials-addressbook-part5-finddialog-h.html">tutorials/addressbook/part5/finddialog.h</a></li>
+<li><a href="tutorials-addressbook-part5-main-cpp.html">tutorials/addressbook/part5/main.cpp</a></li>
+<li><a href="tutorials-addressbook-part5-part5-pro.html">tutorials/addressbook/part5/part5.pro</a></li>
+</ul>
+<p>In this chapter, we look at ways to locate contacts and addresses in the address book application.</p>
+<p align="center"><img src="images/addressbook-tutorial-part5-screenshot.png" /></p><p>As we keep adding contacts to our address book application, it becomes tedious to navigate them with the <i>Next</i> and <i>Previous</i> buttons. In this case, a <i>Find</i> function would be more efficient in looking up contacts. The screenshot above shows the <i>Find</i> button and its position on the panel of buttons.</p>
+<p>When the user clicks on the <i>Find</i> button, it is useful to display a dialog that can prompt the user for a contact's name. Qt provides <a href="qdialog.html">QDialog</a>, which we subclass in this chapter, to implement a <tt>FindDialog</tt> class.</p>
+<a name="defining-the-finddialog-class"></a>
+<h2>Defining the FindDialog Class</h2>
+<p align="center"><img src="images/addressbook-tutorial-part5-finddialog.png" /></p><p>In order to subclass <a href="qdialog.html">QDialog</a>, we first include the header for <a href="qdialog.html">QDialog</a> in the <tt>finddialog.h</tt> file. Also, we use forward declaration to declare <a href="qlineedit.html">QLineEdit</a> and <a href="qpushbutton.html">QPushButton</a> since we will be using those widgets in our dialog class.</p>
+<p>As in our <tt>AddressBook</tt> class, the <tt>FindDialog</tt> class includes the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro and its constructor is defined to accept a parent <a href="qwidget.html">QWidget</a>, even though the dialog will be opened as a separate window.</p>
+<pre> #include &lt;QDialog&gt;
+
+ class QLineEdit;
+ class QPushButton;
+
+ class FindDialog : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     FindDialog(QWidget *parent = 0);
+     QString getFindText();
+
+ public slots:
+     void findClicked();
+
+ private:
+     QPushButton *findButton;
+     QLineEdit *lineEdit;
+     QString findText;
+ };</pre>
+<p>We define a public function, <tt>getFindText()</tt> for use by classes that instantiate <tt>FindDialog</tt>, which allows them to obtain the text entered by the user. A public slot, <tt>findClicked()</tt>, is defined to handle the search string when the user clicks the <b>Find</b> button.</p>
+<p>Lastly, we define the private variables, <tt>findButton</tt>, <tt>lineEdit</tt> and <tt>findText</tt>, corresponding to the <b>Find</b> button, the line edit into which the user types the search string, and an internal string used to store the search string for later use.</p>
+<a name="implementing-the-finddialog-class"></a>
+<h2>Implementing the FindDialog Class</h2>
+<p>Within the constructor of <tt>FindDialog</tt>, we set up the private variables, <tt>lineEdit</tt>, <tt>findButton</tt> and <tt>findText</tt>. We use a <a href="qhboxlayout.html">QHBoxLayout</a> to position the widgets.</p>
+<pre> FindDialog::FindDialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     QLabel *findLabel = new QLabel(tr(&quot;Enter the name of a contact:&quot;));
+     lineEdit = new QLineEdit;
+
+     findButton = new QPushButton(tr(&quot;&amp;Find&quot;));
+     findText = &quot;&quot;;
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(findLabel);
+     layout-&gt;addWidget(lineEdit);
+     layout-&gt;addWidget(findButton);
+
+     setLayout(layout);
+     setWindowTitle(tr(&quot;Find a Contact&quot;));
+     connect(findButton, SIGNAL(clicked()), this, SLOT(findClicked()));
+     connect(findButton, SIGNAL(clicked()), this, SLOT(accept()));
+ }</pre>
+<p>We set the layout and window title, as well as connect the signals to their respective slots. Notice that <tt>findButton</tt>'s <a href="qabstractbutton.html#clicked">clicked()</a> signal is connected to to <tt>findClicked()</tt> and <a href="qdialog.html#accept">accept()</a>. The <a href="qdialog.html#accept">accept()</a> slot provided by <a href="qdialog.html">QDialog</a> hides the dialog and sets the result code to <a href="qdialog.html#DialogCode-enum">Accepted</a>. We use this function to help <tt>AddressBook</tt>'s <tt>findContact()</tt> function know when the <tt>FindDialog</tt> object has been closed. This will be further explained when discussing the <tt>findContact()</tt> function.</p>
+<p align="center"><img src="images/addressbook-tutorial-part5-signals-and-slots.png" /></p><p>In <tt>findClicked()</tt>, we validate to ensure that the user did not click the <b>Find</b> button without entering a contact's name. Then, we set <tt>findText</tt> to the search string, extracted from <tt>lineEdit</tt>. After that, we clear the contents of <tt>lineEdit</tt> and hide the dialog.</p>
+<pre> void FindDialog::findClicked()
+ {
+     QString text = lineEdit-&gt;text();
+
+     if (text.isEmpty()) {
+         QMessageBox::information(this, tr(&quot;Empty Field&quot;),
+             tr(&quot;Please enter a name.&quot;));
+         return;
+     } else {
+         findText = text;
+         lineEdit-&gt;clear();
+         hide();
+     }
+ }</pre>
+<p>The <tt>findText</tt> variable has a public getter function, <tt>getFindText()</tt>, associated with it. Since we only ever set <tt>findText</tt> directly in both the constructor and in the <tt>findClicked()</tt> function, we do not create a setter function to accompany <tt>getFindText()</tt>. Because <tt>getFindText()</tt> is public, classes instantiating and using <tt>FindDialog</tt> can always access the search string that the user has entered and accepted.</p>
+<pre> QString FindDialog::getFindText()
+ {
+     return findText;
+ }</pre>
+<a name="defining-the-addressbook-class"></a>
+<h2>Defining the AddressBook Class</h2>
+<p>In ensure we can use <tt>FindDialog</tt> from within our <tt>AddressBook</tt> class, we include <tt>finddialog.h</tt> in the <tt>addressbook.h</tt> file.</p>
+<pre> #include &quot;finddialog.h&quot;</pre>
+<p>So far, all our address book features have a <a href="qpushbutton.html">QPushButton</a> and a corresponding slot. Similarly, for the <b>Find</b> feature we have <tt>findButton</tt> and <tt>findContact()</tt>.</p>
+<p>The <tt>findButton</tt> is declared as a private variable and the <tt>findContact()</tt> function is declared as a public slot.</p>
+<pre>     void findContact();
+     ...
+     QPushButton *findButton;</pre>
+<p>Lastly, we declare the private variable, <tt>dialog</tt>, which we will use to refer to an instance of <tt>FindDialog</tt>.</p>
+<pre>     FindDialog *dialog;</pre>
+<p>Once we have instantiated a dialog, we will want to use it more than once; using a private variable allows us to refer to it from more than one place in the class.</p>
+<a name="implementing-the-addressbook-class"></a>
+<h2>Implementing the AddressBook Class</h2>
+<p>Within the <tt>AddressBook</tt> class's constructor, we instantiate our private objects, <tt>findButton</tt> and <tt>findDialog</tt>:</p>
+<pre>     findButton = new QPushButton(tr(&quot;&amp;Find&quot;));
+     findButton-&gt;setEnabled(false);
+     ...
+     dialog = new FindDialog;</pre>
+<p>Next, we connect the <tt>findButton</tt>'s <a href="qabstractbutton.html#clicked">clicked()</a> signal to <tt>findContact()</tt>.</p>
+<pre>     connect(findButton, SIGNAL(clicked()), this, SLOT(findContact()));</pre>
+<p>Now all that is left is the code for our <tt>findContact()</tt> function:</p>
+<pre> void AddressBook::findContact()
+ {
+     dialog-&gt;show();
+
+     if (dialog-&gt;exec() == QDialog::Accepted) {
+         QString contactName = dialog-&gt;getFindText();
+
+         if (contacts.contains(contactName)) {
+             nameLine-&gt;setText(contactName);
+             addressText-&gt;setText(contacts.value(contactName));
+         } else {
+             QMessageBox::information(this, tr(&quot;Contact Not Found&quot;),
+                 tr(&quot;Sorry, \&quot;%1\&quot; is not in your address book.&quot;).arg(contactName));
+             return;
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }</pre>
+<p>We start out by displaying the <tt>FindDialog</tt> instance, <tt>dialog</tt>. This is when the user enters a contact name to look up. Once the user clicks the dialog's <tt>findButton</tt>, the dialog is hidden and the result code is set to <a href="qdialog.html#DialogCode-enum">QDialog::Accepted</a>. This ensures that our <tt>if</tt> statement is always true.</p>
+<p>We then proceed to extract the search string, which in this case is <tt>contactName</tt>, using <tt>FindDialog</tt>'s <tt>getFindText()</tt> function. If the contact exists in our address book, we display it immediately. Otherwise, we display the <a href="qmessagebox.html">QMessageBox</a> shown below to indicate that their search failed.</p>
+<p align="center"><img src="images/addressbook-tutorial-part5-notfound.png" /></p><p>
+[Previous: <a href="tutorials-addressbook-part4.html">Address Book 4 - Editing and Removing Addresses</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part6.html">Chapter 6</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3table.cpp -->
+<head>
+  <title>Qt 4.4: Q3TableItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TableItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TableItem class provides the cell content for <a href="q3table.html">Q3Table</a> cells. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TableItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherited by <a href="q3checktableitem.html">Q3CheckTableItem</a> and <a href="q3combotableitem.html">Q3ComboTableItem</a>.</p>
+<ul>
+<li><a href="q3tableitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3tableitem.html#EditType-enum">EditType</a></b> { Always, WhenCurrent, OnTyping, Never }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3tableitem.html#Q3TableItem">Q3TableItem</a></b> ( Q3Table * <i>table</i>, EditType <i>et</i> )</li>
+<li><div class="fn"/><b><a href="q3tableitem.html#Q3TableItem-2">Q3TableItem</a></b> ( Q3Table * <i>table</i>, EditType <i>et</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/><b><a href="q3tableitem.html#Q3TableItem-3">Q3TableItem</a></b> ( Q3Table * <i>table</i>, EditType <i>et</i>, const QString &amp; <i>text</i>, const QPixmap &amp; <i>p</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3tableitem.html#dtor.Q3TableItem">~Q3TableItem</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3tableitem.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableitem.html#col">col</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableitem.html#colSpan">colSpan</a></b> () const</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="q3tableitem.html#createEditor">createEditor</a></b> () const</li>
+<li><div class="fn"/>EditType <b><a href="q3tableitem.html#editType">editType</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3tableitem.html#isEnabled">isEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3tableitem.html#isReplaceable">isReplaceable</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="q3tableitem.html#key">key</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#paint">paint</a></b> ( QPainter * <i>p</i>, const QColorGroup &amp; <i>cg</i>, const QRect &amp; <i>cr</i>, bool <i>selected</i> )</li>
+<li><div class="fn"/>virtual QPixmap <b><a href="q3tableitem.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableitem.html#row">row</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3tableitem.html#rowSpan">rowSpan</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3tableitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setCol">setCol</a></b> ( int <i>c</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setEnabled">setEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setPixmap">setPixmap</a></b> ( const QPixmap &amp; <i>p</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setReplaceable">setReplaceable</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setRow">setRow</a></b> ( int <i>r</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setSpan">setSpan</a></b> ( int <i>rs</i>, int <i>cs</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setText">setText</a></b> ( const QString &amp; <i>str</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3tableitem.html#setWordWrap">setWordWrap</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual QSize <b><a href="q3tableitem.html#sizeHint">sizeHint</a></b> () const</li>
+<li><div class="fn"/>Q3Table * <b><a href="q3tableitem.html#table">table</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="q3tableitem.html#text">text</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3tableitem.html#wordWrap">wordWrap</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TableItem class provides the cell content for <a href="q3table.html">Q3Table</a> cells.</p>
+<p>For many applications Q3TableItems are ideal for presenting and editing the contents of <a href="q3table.html">Q3Table</a> cells. In situations where you need to create very large tables you may prefer an alternative approach to using Q3TableItems: see the notes on large tables.</p>
+<p>A Q3TableItem contains a cell's data, by default, a string and a pixmap. The table item also holds the cell's display size and how the data should be aligned. The table item specifies the cell's <a href="q3tableitem.html#EditType-enum">EditType</a> and the editor used for in-place editing (by default a <a href="qlineedit.html">QLineEdit</a>). If you want checkboxes use <a href="q3checktableitem.html">Q3CheckTableItem</a>, and if you want comboboxes use <a href="q3combotableitem.html">Q3ComboTableItem</a>. The <a href="q3tableitem.html#EditType-enum">EditType</a> (set in the constructor) determines whether the cell's contents may be edited.</p>
+<p>If a pixmap is specified it is displayed to the left of any text. You can change the text or pixmap with <a href="q3tableitem.html#setText">setText</a>() and <a href="q3tableitem.html#setPixmap">setPixmap</a>() respectively. For text you can use <a href="q3tableitem.html#setWordWrap">setWordWrap</a>().</p>
+<p>When sorting table items the <a href="q3tableitem.html#key">key</a>() function is used; by default this returns the table item's <a href="q3tableitem.html#text">text</a>(). Reimplement <a href="q3tableitem.html#key">key</a>() to customize how your table items will sort.</p>
+<p>Table items are inserted into a table using <a href="q3table.html#setItem">Q3Table::setItem</a>(). If you insert an item into a cell that already contains a table item the original item will be deleted.</p>
+<p>Example:</p>
+<pre>     for (int row = 0; row &lt; table-&gt;numRows(); row++) {
+         for (int col = 0; col &lt; table-&gt;numCols(); col++) {
+             table-&gt;setItem(row, col,
+                 new Q3TableItem(table, Q3TableItem::WhenCurrent, QString::number(row * col)));
+         }
+     }</pre>
+<p>You can move a table item from one cell to another, in the same or a different table, using <a href="q3table.html#takeItem">Q3Table::takeItem</a>() and <a href="q3table.html#setItem">Q3Table::setItem</a>() but see also <a href="q3table.html#swapCells">Q3Table::swapCells</a>().</p>
+<p>Table items can be deleted with delete in the standard way; the table and cell will be updated accordingly.</p>
+<p>Note, that if you have a table item that is not currently in a table then anything you do to that item other than insert it into a table will result in undefined behaviour.</p>
+<p>Reimplement <a href="q3tableitem.html#createEditor">createEditor</a>() and <a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a>() if you want to use your own widget instead of a <a href="qlineedit.html">QLineEdit</a> for editing cell contents. Reimplement <a href="q3tableitem.html#paint">paint</a>() if you want to display custom content.</p>
+<p>It is important to ensure that your custom widget can accept the keyboard focus, so that the user can use the tab key to navigate the table as normal. Therefore, if the widget returned by <a href="q3tableitem.html#createEditor">createEditor</a>() does not itself accept the keyboard focus, it is necessary to nominate a child widget to do so on its behalf. For example, a <a href="porting4.html#qhbox">QHBox</a> with two child <a href="qlineedit.html">QLineEdit</a> widgets may use one of them to accept the keyboard focus:</p>
+<pre>     QWidget* MyTableItem::createEditor() const
+     {
+         QHBox* hbox = new QHBox(table()-&gt;viewport());
+         hbox-&gt;setFocusProxy(new QLineEdit(hbox));
+         new QLineEdit(hbox);
+         return hbox;
+     }</pre>
+<p>By default, table items may be replaced by new Q3TableItems during the lifetime of a <a href="q3table.html">Q3Table</a>. Therefore, if you create your own subclass of Q3TableItem, and you want to ensure that this does not happen, you must call setReplaceable(false) in the constructor of your subclass.</p>
+<p align="center"><img src="images/qtableitems.png" alt="Table Items" /></p><p>See also <a href="q3checktableitem.html">Q3CheckTableItem</a> and <a href="q3combotableitem.html">Q3ComboTableItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="EditType-enum"></a>enum Q3TableItem::EditType</h3>
+<a name="wheneditable"></a><p>This enum is used to define whether a cell is editable or read-only (in conjunction with other settings), and how the cell should be displayed.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TableItem::Always</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The cell always <i>looks</i> editable.</td></tr>
+</table></p>
+<p>Using this EditType ensures that the editor created with <a href="q3tableitem.html#createEditor">createEditor</a>() (by default a <a href="qlineedit.html">QLineEdit</a>) is always visible. This has implications for the alignment of the content: the default editor aligns everything (even numbers) to the left whilst numerical values in the cell are by default aligned to the right.</p>
+<p>If a cell with the edit type <tt>Always</tt> looks misaligned you could reimplement <a href="q3tableitem.html#createEditor">createEditor</a>() for these items.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TableItem::WhenCurrent</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The cell <i>looks</i> editable only when it has keyboard focus (see <a href="q3table.html#setCurrentCell">Q3Table::setCurrentCell</a>()).</td></tr>
+<tr><td valign="top"><tt>Q3TableItem::OnTyping</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The cell <i>looks</i> editable only when the user types in it or double-clicks it. It resembles the <tt>WhenCurrent</tt> functionality but is, perhaps, nicer.</td></tr>
+</table></p>
+<p>The <tt>OnTyping</tt> edit type is the default when <a href="q3tableitem.html">Q3TableItem</a> objects are created by the convenience functions <a href="q3table.html#setText">Q3Table::setText</a>() and <a href="q3table.html#setPixmap">Q3Table::setPixmap</a>().</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TableItem::Never</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The cell is not editable.</td></tr>
+</table></p>
+<p>The cell is actually editable only if <a href="q3table.html#isRowReadOnly">Q3Table::isRowReadOnly</a>() is false for its row, <a href="q3table.html#isColumnReadOnly">Q3Table::isColumnReadOnly</a>() is false for its column, and <a href="q3table.html#readOnly-prop">Q3Table::isReadOnly</a>() is false.</p>
+<p>Q3ComboTableItems have an isEditable() property. This property is used to indicate whether the user may enter their own text or are restricted to choosing one of the choices in the list. Q3ComboTableItems may be interacted with only if they are editable in accordance with their EditType as described above.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TableItem"></a>Q3TableItem::Q3TableItem ( <a href="q3table.html">Q3Table</a> * <i>table</i>, <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i> )</h3>
+<p>Creates a table item that is a child of table <i>table</i> with no text. The item has the <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i>.</p>
+<p>The table item will use a <a href="qlineedit.html">QLineEdit</a> for its editor, will not word-wrap and will occupy a single cell. Insert the table item into a table with <a href="q3table.html#setItem">Q3Table::setItem</a>().</p>
+<p>The table takes ownership of the table item, so a table item should not be inserted into more than one table at a time.</p>
+<h3 class="fn"><a name="Q3TableItem-2"></a>Q3TableItem::Q3TableItem ( <a href="q3table.html">Q3Table</a> * <i>table</i>, <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Creates a table item that is a child of table <i>table</i> with text <i>text</i>. The item has the <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i>.</p>
+<p>The table item will use a <a href="qlineedit.html">QLineEdit</a> for its editor, will not word-wrap and will occupy a single cell. Insert the table item into a table with <a href="q3table.html#setItem">Q3Table::setItem</a>().</p>
+<p>The table takes ownership of the table item, so a table item should not be inserted into more than one table at a time.</p>
+<h3 class="fn"><a name="Q3TableItem-3"></a>Q3TableItem::Q3TableItem ( <a href="q3table.html">Q3Table</a> * <i>table</i>, <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>p</i> )</h3>
+<p>Creates a table item that is a child of table <i>table</i> with text <i>text</i> and pixmap <i>p</i>. The item has the <a href="q3tableitem.html#EditType-enum">EditType</a> <i>et</i>.</p>
+<p>The table item will display the pixmap to the left of the text. It will use a <a href="qlineedit.html">QLineEdit</a> for editing the text, will not word-wrap and will occupy a single cell. Insert the table item into a table with <a href="q3table.html#setItem">Q3Table::setItem</a>().</p>
+<p>The table takes ownership of the table item, so a table item should not be inserted in more than one table at a time.</p>
+<h3 class="fn"><a name="dtor.Q3TableItem"></a>Q3TableItem::~Q3TableItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The destructor deletes this item and frees all allocated resources.</p>
+<p>If the table item is in a table (i.e&#x2e; was inserted with setItem()), it will be removed from the table and the cell it occupied.</p>
+<h3 class="fn"><a name="alignment"></a>int Q3TableItem::alignment () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The alignment function returns how the text contents of the cell are aligned when drawn. The default implementation aligns numbers to the right and any other text to the left.</p>
+<p>See also <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="col"></a>int Q3TableItem::col () const</h3>
+<p>Returns the column where the table item is located. If the cell spans multiple columns, this function returns the left-most column.</p>
+<p>See also <a href="q3tableitem.html#row">row</a>() and <a href="q3tableitem.html#setCol">setCol</a>().</p>
+<h3 class="fn"><a name="colSpan"></a>int Q3TableItem::colSpan () const</h3>
+<p>Returns the column span of the table item, usually 1.</p>
+<p>See also <a href="q3tableitem.html#setSpan">setSpan</a>() and <a href="q3tableitem.html#rowSpan">rowSpan</a>().</p>
+<h3 class="fn"><a name="createEditor"></a><a href="qwidget.html">QWidget</a> * Q3TableItem::createEditor () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function creates an editor which the user can interact with to edit the cell's contents. The default implementation creates a <a href="qlineedit.html">QLineEdit</a>.</p>
+<p>If the function returns 0, the cell is read-only.</p>
+<p>The returned widget should preferably be invisible, ideally with <a href="q3scrollview.html#viewport">Q3Table::viewport</a>() as parent.</p>
+<p>If you reimplement this function you'll almost certainly need to reimplement <a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a>(), and may need to reimplement <a href="q3tableitem.html#sizeHint">sizeHint</a>().</p>
+<p>See also <a href="q3table.html#createEditor">Q3Table::createEditor</a>(), <a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a>(), <a href="q3scrollview.html#viewport">Q3Table::viewport</a>(), and <a href="q3tableitem.html#setReplaceable">setReplaceable</a>().</p>
+<h3 class="fn"><a name="editType"></a><a href="q3tableitem.html#EditType-enum">EditType</a> Q3TableItem::editType () const</h3>
+<p>Returns the table item's edit type.</p>
+<p>This is set when the table item is constructed.</p>
+<p>See also <a href="q3tableitem.html#EditType-enum">EditType</a> and <a href="q3tableitem.html#Q3TableItem">Q3TableItem</a>().</p>
+<h3 class="fn"><a name="isEnabled"></a>bool Q3TableItem::isEnabled () const</h3>
+<p>Returns true if the table item is enabled; otherwise returns false.</p>
+<p>See also <a href="q3tableitem.html#setEnabled">setEnabled</a>().</p>
+<h3 class="fn"><a name="isReplaceable"></a>bool Q3TableItem::isReplaceable () const</h3>
+<p>This function returns whether the contents of the cell may be replaced with the contents of another table item. Regardless of this setting, table items that span more than one cell may not have their contents replaced by another table item.</p>
+<p>(This differs from <a href="q3tableitem.html#EditType-enum">EditType</a> because <a href="q3tableitem.html#EditType-enum">EditType</a> is concerned with whether the <i>user</i> is able to change the contents of a cell.)</p>
+<p>See also <a href="q3tableitem.html#setReplaceable">setReplaceable</a>() and <a href="q3tableitem.html#EditType-enum">EditType</a>.</p>
+<h3 class="fn"><a name="key"></a><a href="qstring.html">QString</a> Q3TableItem::key () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function returns the key that should be used for sorting. The default implementation returns the <a href="q3tableitem.html#text">text</a>() of the relevant item.</p>
+<p>See also <a href="q3table.html#sorting-prop">Q3Table::setSorting</a>().</p>
+<h3 class="fn"><a name="paint"></a>void Q3TableItem::paint ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, const <a href="qrect.html">QRect</a> &amp; <i>cr</i>, bool <i>selected</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is used to paint the contents of an item using the painter <i>p</i> in the rectangular area <i>cr</i> using the color group <i>cg</i>.</p>
+<p>If <i>selected</i> is true the cell is displayed in a way that indicates that it is highlighted.</p>
+<p>You don't usually need to use this function but if you want to draw custom content in a cell you will need to reimplement it.</p>
+<p>The painter passed to this function is translated so that 0, 0 is the top-left corner of the item that is being painted.</p>
+<p>Note that the painter is not clipped by default in order to get maximum efficiency. If you want clipping, use</p>
+<pre>     p-&gt;setClipRect(table()-&gt;cellRect(row, col), QPainter::ClipPainter);
+     //... your drawing code
+     p-&gt;setClipping(false);</pre>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> Q3TableItem::pixmap () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the table item's pixmap or a null pixmap if no pixmap has been set.</p>
+<p>See also <a href="q3tableitem.html#setPixmap">setPixmap</a>() and <a href="q3tableitem.html#text">text</a>().</p>
+<h3 class="fn"><a name="row"></a>int Q3TableItem::row () const</h3>
+<p>Returns the row where the table item is located. If the cell spans multiple rows, this function returns the top-most row.</p>
+<p>See also <a href="q3tableitem.html#col">col</a>() and <a href="q3tableitem.html#setRow">setRow</a>().</p>
+<h3 class="fn"><a name="rowSpan"></a>int Q3TableItem::rowSpan () const</h3>
+<p>Returns the row span of the table item, usually 1.</p>
+<p>See also <a href="q3tableitem.html#setSpan">setSpan</a>() and <a href="q3tableitem.html#colSpan">colSpan</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3TableItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the Run Time Type Identification value for this table item which for Q3TableItems is 0.</p>
+<p>When you create subclasses based on <a href="q3tableitem.html">Q3TableItem</a> make sure that each subclass returns a unique rtti() value. It is advisable to use values greater than 1000, preferably large random numbers, to allow for extensions to this class.</p>
+<p>See also <a href="q3checktableitem.html#rtti">Q3CheckTableItem::rtti</a>() and <a href="q3combotableitem.html#rtti">Q3ComboTableItem::rtti</a>().</p>
+<h3 class="fn"><a name="setCol"></a>void Q3TableItem::setCol ( int <i>c</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets column <i>c</i> as the table item's column. Usually you will not need to call this function.</p>
+<p>If the cell spans multiple columns, this function sets the left-most column and retains the width of the multi-cell table item.</p>
+<p>See also <a href="q3tableitem.html#col">col</a>(), <a href="q3tableitem.html#setRow">setRow</a>(), and <a href="q3tableitem.html#colSpan">colSpan</a>().</p>
+<h3 class="fn"><a name="setContentFromEditor"></a>void Q3TableItem::setContentFromEditor ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Whenever the content of a cell has been edited by the editor <i>w</i>, <a href="q3table.html">Q3Table</a> calls this virtual function to copy the new values into the <a href="q3tableitem.html">Q3TableItem</a>.</p>
+<p>If you reimplement <a href="q3tableitem.html#createEditor">createEditor</a>() and return something that is not a <a href="qlineedit.html">QLineEdit</a> you will need to reimplement this function.</p>
+<p>See also <a href="q3table.html#setCellContentFromEditor">Q3Table::setCellContentFromEditor</a>().</p>
+<h3 class="fn"><a name="setEnabled"></a>void Q3TableItem::setEnabled ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true, the table item is enabled; if <i>b</i> is false the table item is disabled.</p>
+<p>A disabled item doesn't respond to user interaction.</p>
+<p>See also <a href="q3tableitem.html#isEnabled">isEnabled</a>().</p>
+<h3 class="fn"><a name="setPixmap"></a>void Q3TableItem::setPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets pixmap <i>p</i> to be this item's pixmap.</p>
+<p>Note that setPixmap() does not update the cell the table item belongs to. Use <a href="q3table.html#updateCell">Q3Table::updateCell</a>() to repaint the cell's contents.</p>
+<p>For <a href="q3combotableitem.html">Q3ComboTableItem</a>s and <a href="q3checktableitem.html">Q3CheckTableItem</a>s this function has no visible effect.</p>
+<p>See also <a href="q3table.html#setPixmap">Q3Table::setPixmap</a>(), <a href="q3tableitem.html#pixmap">pixmap</a>(), and <a href="q3tableitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="setReplaceable"></a>void Q3TableItem::setReplaceable ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true it is acceptable to replace the contents of the cell with the contents of another <a href="q3tableitem.html">Q3TableItem</a>. If <i>b</i> is false the contents of the cell may not be replaced by the contents of another table item. Table items that span more than one cell may not have their contents replaced by another table item.</p>
+<p>(This differs from <a href="q3tableitem.html#EditType-enum">EditType</a> because <a href="q3tableitem.html#EditType-enum">EditType</a> is concerned with whether the <i>user</i> is able to change the contents of a cell.)</p>
+<p>See also <a href="q3tableitem.html#isReplaceable">isReplaceable</a>().</p>
+<h3 class="fn"><a name="setRow"></a>void Q3TableItem::setRow ( int <i>r</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets row <i>r</i> as the table item's row. Usually you do not need to call this function.</p>
+<p>If the cell spans multiple rows, this function sets the top row and retains the height of the multi-cell table item.</p>
+<p>See also <a href="q3tableitem.html#row">row</a>(), <a href="q3tableitem.html#setCol">setCol</a>(), and <a href="q3tableitem.html#rowSpan">rowSpan</a>().</p>
+<h3 class="fn"><a name="setSpan"></a>void Q3TableItem::setSpan ( int <i>rs</i>, int <i>cs</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Changes the extent of the <a href="q3tableitem.html">Q3TableItem</a> so that it spans multiple cells covering <i>rs</i> rows and <i>cs</i> columns. The top left cell is the original cell.</p>
+<p><b>Warning:</b> This function only works if the item has already been inserted into the table using e.g&#x2e; <a href="q3table.html#setItem">Q3Table::setItem</a>(). This function also checks to make sure if <i>rs</i> and <i>cs</i> are within the bounds of the table and returns without changing the span if they are not. In addition swapping, inserting or removing rows and columns that cross Q3TableItems spanning more than one cell is not supported.</p>
+<p>See also <a href="q3tableitem.html#rowSpan">rowSpan</a>() and <a href="q3tableitem.html#colSpan">colSpan</a>().</p>
+<h3 class="fn"><a name="setText"></a>void Q3TableItem::setText ( const <a href="qstring.html">QString</a> &amp; <i>str</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Changes the table item's text to <i>str</i>.</p>
+<p>Note that setText() does not update the cell the table item belongs to. Use <a href="q3table.html#updateCell">Q3Table::updateCell</a>() to repaint the cell's contents.</p>
+<p>See also <a href="q3table.html#setText">Q3Table::setText</a>(), <a href="q3tableitem.html#text">text</a>(), <a href="q3tableitem.html#setPixmap">setPixmap</a>(), and <a href="q3table.html#updateCell">Q3Table::updateCell</a>().</p>
+<h3 class="fn"><a name="setWordWrap"></a>void Q3TableItem::setWordWrap ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true, the cell's text will be wrapped over multiple lines, when necessary, to fit the width of the cell; otherwise the text will be written as a single line.</p>
+<p>See also <a href="q3tableitem.html#wordWrap">wordWrap</a>(), <a href="q3table.html#adjustColumn">Q3Table::adjustColumn</a>(), and <a href="q3table.html#setColumnStretchable">Q3Table::setColumnStretchable</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> Q3TableItem::sizeHint () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function returns the size a cell needs to show its entire content.</p>
+<p>If you subclass <a href="q3tableitem.html">Q3TableItem</a> you will often need to reimplement this function.</p>
+<h3 class="fn"><a name="table"></a><a href="q3table.html">Q3Table</a> * Q3TableItem::table () const</h3>
+<p>Returns the <a href="q3table.html">Q3Table</a> the table item belongs to.</p>
+<p>See also <a href="q3table.html#setItem">Q3Table::setItem</a>() and <a href="q3tableitem.html#Q3TableItem">Q3TableItem</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3TableItem::text () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the text of the table item or an empty string if there is no text.</p>
+<p>To ensure that the current value of the editor is returned, <a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a>() is called:</p>
+<ol type="1">
+<li>if the editMode() is <tt>Always</tt>, or</li>
+<li>if editMode() is <i>not</i> <tt>Always</tt> but the editor of the cell is active and the editor is not a <a href="qlineedit.html">QLineEdit</a>.</li>
+</ol>
+<p>This means that text() returns the original text value of the item if the editor is a line edit, until the user commits an edit (e.g&#x2e; by pressing Enter or Tab) in which case the new text is returned. For other editors (e.g&#x2e; a combobox) <a href="q3tableitem.html#setContentFromEditor">setContentFromEditor</a>() is always called so the currently display value is the one returned.</p>
+<p>See also <a href="q3tableitem.html#setText">setText</a>() and <a href="q3tableitem.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="wordWrap"></a>bool Q3TableItem::wordWrap () const</h3>
+<p>Returns true if word wrap is enabled for the cell; otherwise returns false.</p>
+<p>See also <a href="q3tableitem.html#setWordWrap">setWordWrap</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

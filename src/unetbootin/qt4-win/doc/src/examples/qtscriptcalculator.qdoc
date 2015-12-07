@@ -1,0 +1,106 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example script/calculator
+    \title QtScript Calculator Example
+    \ingroup scripting
+
+    In this simple QtScript example, we show how to implement the
+    functionality of a calculator widget.
+
+    \image qtscript-calculator-example.png
+
+    The program logic in this example is a fairly straight port of the logic in the C++ \l{Calculator Example}.
+    The graphical user interface is defined in a UI file.
+
+    The C++ part of the example consists of four steps:
+    \list
+    \o Evaluate the script code that defines the \c{Calculator} class.
+
+    \snippet examples/script/calculator/main.cpp 0
+
+    \o Create a widget from the UI file using QUiLoader.
+
+    \snippet examples/script/calculator/main.cpp 1
+
+    \o Call the Calculator constructor function to create a new \c{Calculator} script object, passing the widget as argument.
+
+    \snippet examples/script/calculator/main.cpp 2
+
+    \o Show the widget and start the application event loop.
+
+    \snippet examples/script/calculator/main.cpp 3
+
+    \endlist
+
+    On the script side, the \c{Calculator} constructor function
+    initializes the instance variables of the new \c{Calculator}
+    object, and connects the clicked() signal of the form's buttons
+    to corresponding functions defined in the \c{Calculator} prototype
+    object; the effect is that when a button is clicked, the proper
+    script function will be invoked to carry out the operation.
+
+    \snippet examples/script/calculator/calculator.js 0
+
+    A \c{Calculator} object is just a plain script object; it is not
+    a widget. Instead, it stores a reference to the calculator form
+    (the widget) in an instance variable, \c{ui}. The calculator
+    script functions can access components of the form by referring
+    to the proper children of the \c{ui} member.
+
+    \snippet examples/script/calculator/calculator.js 1
+
+    The digitClicked() function uses the special local variable
+    __qt_sender__ to access the object that triggered the signal;
+    this gives us a simple way to retrieve the value of the digit
+    that was clicked.
+
+    \snippet examples/script/calculator/calculator.js 2
+
+    The changeSign() function shows how we retrieve the text property
+    of the calculator's display, change it appropriately, and write
+    back the new value.
+
+
+*/

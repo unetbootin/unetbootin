@@ -1,0 +1,66 @@
+
+qtokenautomaton is a token generator, that generates a simple, Unicode aware
+tokenizer for C++ that uses the Qt API.
+
+Introduction
+=====================
+QTokenAutomaton generates a C++ class that essentially has this interface:
+
+    class YourTokenizer
+    {
+    protected:
+        enum Token
+        {
+            A,
+            B,
+            C,
+            NoKeyword
+        };
+
+        static inline Token toToken(const QString &string);
+        static inline Token toToken(const QStringRef &string);
+        static Token toToken(const QChar *data, int length);
+        static QString toString(Token token);
+    };
+
+When calling toToken(), the tokenizer returns the enum value corresponding to
+the string. This is done with O(N) time complexity, where N is the length of
+the string. The returned value can then subsequently be efficiently switched
+over. The alternatives, either a long chain of if statements comparing one
+QString to several other QStrings; or inserting all strings first into a hash,
+are less efficient.
+
+For instance, the latter case of using a hash would involve when excluding the
+initial populating of the hash, O(N) + O(1) where 0(1) is assumed to be a
+non-conflicting hash lookup.
+
+toString(), which returns the string for the token that an enum value
+represents, is implemented to store the strings in an efficient manner.
+
+A typical usage scenario is in combination with QXmlStreamReader. When parsing
+a certain format, for instance XHTML, each element name, body, span, table and
+so forth, typically needs special treatment. QTokenAutomaton conceptually cuts
+the string comparisons down to one.
+
+Beyond efficiency, QTokenAutomaton also increases type safety, since C++
+identifiers are used instead of string literals.
+
+Usage
+=====================
+Using it is approached as follows:
+
+1. Create a token file. Use exampleFile.xml as a template.
+
+2. Make sure it is valid by validating against qtokenautomaton.xsd. On
+   Linux, this can be achieved by running `xmllint --noout
+   --schema qtokenautomaton.xsd yourFile.xml`
+
+3. Produce the C++ files by invoking the stylesheet with an XSL-T 2.0
+   processor[1]. For instance, with the implementation Saxon, this would be:
+   `java net.sf.saxon.Transform -xsl:qautomaton2cpp.xsl yourFile.xml`
+
+4. Include the produced C++ files with your build system.
+
+
+1.
+In Qt there is as of 4.4 no support for XSL-T.

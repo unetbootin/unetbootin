@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-accessibility.qdoc -->
+<head>
+  <title>Qt 4.4: Cross-Platform Accessibility Support in Qt 4</title>
+  <link rel="prev" href="qt4-designer.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link rel="next" href="qt4-sql.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-designer.html">The New Qt Designer</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-sql.html">The Qt 4 Database GUI Layer</a>]
+</p>
+<h1 class="title">Cross-Platform Accessibility Support in Qt 4<br /><span class="subtitle"></span>
+</h1>
+<p>Qt 4 allows developers to write cross-platform applications that are usable by visually impaired users as well as by users with other disabilities. Qt accessibility will make applications accessible to more users and opens the governmental market, where accessibility is often a requirement.</p>
+<a name="general-overview"></a>
+<h2>General Overview</h2>
+<p>Qt 3 already supports Microsoft Active Accessibility (MSAA) and Mac OS X Accessibility. Qt 4 closes the gap in Trolltech's accessibility offering by introducing support for AT-SPI on Unix/X11 systems.</p>
+<p>The accessibility classes themselves have been extended in various ways since Qt 3. We added new functions and new enum values, and revised the API to make it more consistent with the rest of Qt. We also added two properties to <a href="qwidget.html">QWidget</a>, <a href="qwidget.html#accessibleName-prop">accessibleName</a> and <a href="qwidget.html#accessibleDescription-prop">accessibleDescription</a>, that can be set in <i>Qt Designer</i> to provide basic help texts without having to write any code.</p>
+<p>Qt's accessibility architecture is as follows. Qt offers one generic interface, <a href="qaccessibleinterface.html">QAccessibleInterface</a>, that can be used to wrap all widgets and objects (e.g&#x2e;, <a href="qpushbutton.html">QPushButton</a>). This single interface provides all the metadata necessary for the assistive technologies. Qt provides implementations of this interface for its built-in widgets as plugins.</p>
+<p>When you develop custom widgets, you can create custom subclasses of <a href="qaccessibleinterface.html">QAccessibleInterface</a> and distribute them as plugins (using <a href="qaccessibleplugin.html">QAccessiblePlugin</a>) or compile them into the application. Likewise, Qt's predefined accessibility support can be built as plugin (the default) or directly into the Qt library. The main advantage of using plugins is that the accessibility classes are only loaded into memory if they are actually used; they don't slow down the common case where no assistive technology is being used.</p>
+<p>In addition to <a href="qaccessibleinterface.html">QAccessibleInterface</a>, Qt includes two convenience classes, <a href="qaccessibleobject.html">QAccessibleObject</a> and <a href="qaccessiblewidget.html">QAccessibleWidget</a>, that provide the lowest common denominator of metadata (e.g&#x2e;, widget geometry, window title, basic help text). You can use them as base classes when wrapping your custom <a href="qobject.html">QObject</a> or <a href="qwidget.html">QWidget</a> subclasses.</p>
+<p>Another new feature in Qt 4 is that Qt can now support other backends in addition to the predefined ones. This is done by subclassing <a href="qaccessiblebridge.html">QAccessibleBridge</a>.</p>
+<a name="example-code"></a>
+<h2>Example Code</h2>
+<p>The first example illustrates how to provide accessibility information for a custom widget. We can use <a href="qaccessiblewidget.html">QAccessibleWidget</a> as a base class and reimplement various functions:</p>
+<pre>         class MyWidgetInterface : public QAccessibleWidget
+         {
+         public:
+             MyWidgetInterface(QWidget *widget, Role role);
+
+             QString text(Text text, int child) const;
+             State state(int child) const;
+             QString actionText(int action, Text text, int child) const;
+             bool doAction(int action, int child, const QVariantList &amp;params);
+             ...
+         };</pre>
+<p>Here's how we would implement the <a href="qaccessibleinterface.html#doAction">doAction()</a> function to call a function named click() on the wrapped MyWidget object when the user invokes the object's default action or &quot;presses&quot; it.</p>
+<pre>         bool MyWidgetInterface::doAction(int action, int child,
+                                          const QVariantList &amp;params)
+         {
+             if (child || !widget()-&gt;isEnabled())
+                 return false;
+
+             switch (action) {
+             case DefaultAction:
+             case Press:
+                 {
+                     MyWidget *widget = qobject_cast&lt;MyWidget *&gt;(object());
+                     if (widget)
+                         widget-&gt;click();
+                 }
+                 return true;
+             }
+             return QAccessibleWidget::doAction(action, child, params);
+         }</pre>
+<p>To export the widget interface as a plugin, we must subclass QAccessibleFactory:</p>
+<pre>         QStringList MyFactory::keys() const
+         {
+             return QStringList() &lt;&lt; &quot;MyWidget&quot; &lt;&lt; &quot;MyOtherWidget&quot;;
+         }
+
+         QAccessibleInterface *MyFactory::create(const QString &amp;className,
+                                                 QObject *object)
+         {
+             if (classname == &quot;MyWidget&quot;)
+                 return new MyWidgetInterface(object);
+             if (classname == &quot;MyOtherWidget&quot;)
+                 return new MyOtherWidgetInterface(object);
+             return 0;
+         }
+
+         Q_EXPORT_PLUGIN2(myfactory, MyFactory)</pre>
+<p>
+[Previous: <a href="qt4-designer.html">The New Qt Designer</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-sql.html">The Qt 4 Database GUI Layer</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

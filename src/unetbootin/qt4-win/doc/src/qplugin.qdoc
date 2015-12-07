@@ -1,0 +1,137 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \headerfile <QtPlugin>
+    \title Macros for Defining Plugins
+
+    \brief The <QtPlugin> header files defines macros for defining plugins.
+
+    \sa {How to Create Qt Plugins}
+*/
+
+/*!
+    \macro Q_DECLARE_INTERFACE(ClassName, Identifier)
+    \relates <QtPlugin>
+
+    This macro associates the given \a Identifier (a string literal)
+    to the interface class called \a ClassName. The \a Identifier must
+    be unique. For example:
+
+    \snippet examples/tools/plugandpaint/interfaces.h 3
+
+    This macro is normally used right after the class definition for
+    \a ClassName, in a header file. See the
+    \l{tools/plugandpaint}{Plug & Paint} example for details.
+
+    If you want to use Q_DECLARE_INTERFACE with interface classes
+    declared in a namespace then you have to make sure the Q_DECLARE_INTERFACE
+    is not inside a namespace though. For example:
+    \snippet doc/src/snippets/code/doc.src.qplugin.qdoc 0
+
+    \sa Q_INTERFACES(), Q_EXPORT_PLUGIN2(), {How to Create Qt Plugins}
+*/
+
+/*!
+    \macro Q_EXPORT_PLUGIN(ClassName)
+    \relates <QtPlugin>
+    \obsolete
+
+    Use Q_EXPORT_PLUGIN2() instead. This macro is equivalent to
+    Q_EXPORT_PLUGIN2(\a ClassName, \a ClassName).
+*/
+
+/*!
+    \macro Q_EXPORT_PLUGIN2(PluginName, ClassName)
+    \relates <QtPlugin>
+    \since 4.1
+    \keyword Q_EXPORT_PLUGIN2
+
+    This macro exports the plugin class \a ClassName for the plugin specified
+    by \a PluginName. The value of \a PluginName should correspond to the
+    \l{qmake Variable Reference#TARGET}{TARGET} specified in the plugin's
+    project file.
+
+    There should be exactly one occurrence of this macro in the source code
+    for a Qt plugin, and it should be used where the implementation is written
+    rather than in a header file.
+
+    Example:
+
+    \snippet doc/src/snippets/code/doc.src.qplugin.qdoc 1
+
+    See the \l{tools/plugandpaint}{Plug & Paint} example for details.
+
+    \sa Q_DECLARE_INTERFACE(), {How to Create Qt Plugins}
+*/
+
+/*!
+    \macro Q_IMPORT_PLUGIN(PluginName)
+    \relates <QtPlugin>
+
+    This macro imports the plugin named \a PluginName, corresponding
+    to the \l{qmake Variable Reference#TARGET}{TARGET} specified in the
+    plugin's project file.
+
+    Inserting this macro into your application's source code will allow
+    you to make use of a static plugin.
+
+    Example:
+
+    \snippet doc/src/snippets/code/doc.src.qplugin.qdoc 2
+
+    Static plugins must also be included by the linker when your
+    application is built. For Qt's predefined plugins,
+    you can use the \c QTPLUGIN to add
+    the required plugins to your build. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qplugin.qdoc 3
+
+    \sa {Static Plugins}, {How to Create Qt Plugins}, {Using qmake}
+*/
+
+/*!
+    \macro Q_EXPORT_STATIC_PLUGIN(ClassName)
+    \relates <QtPlugin>
+    \internal
+*/

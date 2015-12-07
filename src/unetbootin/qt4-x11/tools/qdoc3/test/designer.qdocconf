@@ -1,0 +1,51 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+include(qt-cpp-ignore.qdocconf)
+include(qt-html-templates.qdocconf)
+include(qt-defines.qdocconf)
+
+project                 = Qt Designer
+description             = Qt Designer Manual
+url                     = http://doc.trolltech.com/4.5
+
+indexes                 = $QT_BUILD_TREE/doc-build/html-qt/qt.index
+
+qhp.projects            = Designer
+
+qhp.Designer.file                = designer.qhp
+qhp.Designer.namespace           = com.trolltech.designer.450
+qhp.Designer.virtualFolder       = qdoc
+qhp.Designer.indexTitle          = Qt Designer Manual
+qhp.Designer.extraFiles          = classic.css images/qt-logo.png images/trolltech-logo.png
+qhp.Designer.filterAttributes    = qt 4.5.0 tools designer
+qhp.Designer.customFilters.Designer.name = Qt Designer Manual
+qhp.Designer.customFilters.Designer.filterAttributes = qt tools designer
+qhp.Designer.subprojects         = manual examples
+qhp.Designer.subprojects.manual.title = Manual
+qhp.Designer.subprojects.manual.indexTitle = Qt Designer Manual
+qhp.Designer.subprojects.manual.selectors = fake:page
+qhp.Designer.subprojects.examples.title = Examples
+qhp.Designer.subprojects.examples.indexTitle = Qt Examples
+qhp.Designer.subprojects.examples.selectors = fake:example
+qhp.Designer.subprojects.examples.sortPages = true
+
+language                = Cpp
+
+sources                 = $QT_SOURCE_TREE/doc/src/designer-manual.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/calculatorbuilder.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/calculatorform.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/customwidgetplugin.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/taskmenuextension.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/containerextension.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/worldtimeclockbuilder.qdoc \
+                          $QT_SOURCE_TREE/doc/src/examples/worldtimeclockplugin.qdoc
+
+sources.fileextensions  = "*.cpp *.qdoc"
+
+exampledirs             = $QT_SOURCE_TREE \
+                          $QT_SOURCE_TREE/examples \
+                          $QT_SOURCE_TREE/doc/src
+
+imagedirs               = $QT_SOURCE_TREE/doc/src/images
+outputdir               = $QT_BUILD_TREE/doc-build/html-designer
+base                    = file:$QT_BUILD_TREE/doc-build/html-designer

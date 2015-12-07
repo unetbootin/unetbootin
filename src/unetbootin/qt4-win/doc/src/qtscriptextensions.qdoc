@@ -1,0 +1,118 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qtscriptextensions.html
+    \title Creating QtScript Extensions
+    \ingroup scripting
+    \brief A guide to creating and using QtScript extensions.
+
+    QtScript extensions can make additional functionality available to scripts
+    evaluated by a QScriptEngine. Extensions are imported by calling
+    the QScriptEngine::importExtension() function.
+
+    There are three ways to create an extension:
+
+    \list
+    \o Subclass QScriptExtensionPlugin and implement the desired functionality.
+    \o Implement the functionality in a script file.
+    \o Use a hybrid approach, where part of the functionality is implemented in a
+       QScriptExtensionPlugin, and part is implemented in a script file.
+    \endlist
+
+    The (dot-qualified) extension name is used to determine the path (relative to
+    the application's plugin path) where QScriptEngine will look for the script
+    file that will initialize the extension; if a file called \c{__init__.js} is
+    found in the corresponding folder, its contents will be evaluated by the engine
+    when the extension is imported.
+    As an example, if the extension is called \c{"foo.bar.baz"}, the engine will look
+    for \c{__init__.js} in \c{foo/bar/baz}. Additionally, before importing
+    \c{"foo.bar.baz"}, the engine will ensure that the extensions \c{"foo"} and \c{"foo.bar"}
+    are imported, locating and evaluating the corresponding \c{__init__.js}
+    in the same manner (in folders \c{foo} and \c{foo/bar}, respectively).
+
+    The contents of \c{__init__.js} are evaluated in a new QScriptContext,
+    as if it were the body of a function. The engine's Global Object acts as
+    the \c{this} object. The following local variables are initially available
+    to the script:
+
+    \list
+    \o \bold{__extension__}: The name of the extension (e.g. \c{"foo.bar.baz"}).
+    \o \bold{__setupPackage__}: A convenience function for setting up a "namespace" in the script environment. A typical application is to call \c{__setupPackage__()} with \c{__extension__} as argument; e.g. \c{__setupPackage__("foo.bar.baz")} would ensure that the object chain represented by the expression \c{foo.bar.baz} exists in the script environment. (This function is semantically equivalent to QScriptExtensionPlugin::setupPackage().)
+    \o \bold{__postInit__}: By default, this variable is undefined. If you assign a function to it, that function will be called \bold{after} the C++ plugin's initialize() function has been called. You can use this to perform further initialization that depends on e.g. native functions that the C++ plugin registers.
+    \endlist
+
+    An example of a simple \c{__init__.js}:
+
+    \snippet doc/src/snippets/code/doc.src.qtscriptextensions.qdoc 0
+
+    QScriptEngine will look for a QScriptExtensionPlugin that provides
+    the relevant extension by querying each plugin for its keys()
+    until a match is found. The plugin's initialize() function will be
+    called \bold{after} the relevant \c{__init__.js} (if any) has been
+    evaluated.
+
+    Continuining with the example of our imaginary extension \c{"foo.bar.baz"},
+    the following steps will be performed by QScriptEngine::importExtension():
+
+    \list
+    \o If it exists, \c{foo/__init__.js} is evaluated.
+    \o If a plugin with \c{"foo"} in its list of keys is found, its initialize() function is called with \c{"foo"} as key.
+    \o If it exists, \c{foo/bar/__init__.js} is evaluated.
+    \o If a plugin with \c{"foo.bar"} in its list of keys is found, its initialize() function is called with \c{"foo.bar"} as key.
+    \o If it exists, \c{foo/bar/baz/__init__.js} is evaluated.
+    \o If a plugin with "foo.bar.baz" in its list of keys is found, its initialize() function is called with \c{"foo.bar.baz"} as key.
+    \endlist
+*/

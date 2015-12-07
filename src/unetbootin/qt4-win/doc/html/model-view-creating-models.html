@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Creating New Models</title>
+  <link rel="prev" href="model-view-model.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-view.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-model.html">Model Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-view.html">View Classes</a>]
+</p>
+<h1 class="title">Creating New Models<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#designing-a-model">Designing a Model</a></li>
+<li><a href="#a-read-only-example-model">A Read-Only Example Model</a></li>
+<ul><li><a href="#dimensions-of-the-model">Dimensions of The Model</a></li>
+<li><a href="#model-headers-and-data">Model Headers and Data</a></li>
+</ul>
+<li><a href="#an-editable-model">An Editable Model</a></li>
+<ul><li><a href="#making-the-model-editable">Making the Model Editable</a></li>
+<li><a href="#inserting-and-removing-rows">Inserting and Removing Rows</a></li>
+</ul>
+<li><a href="#next-steps">Next Steps</a></li>
+</ul>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>The separation of functionality between the model/view components allows models to be created that can take advantage of existing views. This approach lets us present data from a variety of sources using standard graphical user interface components, such as <a href="qlistview.html">QListView</a>, <a href="qtableview.html">QTableView</a>, and <a href="qtreeview.html">QTreeView</a>.</p>
+<p>The <a href="qabstractitemmodel.html">QAbstractItemModel</a> class provides an interface that is flexible enough to support data sources that arrange information in hierarchical structures, allowing for the possibility that data will be inserted, removed, modified, or sorted in some way. It also provides support for drag and drop operations.</p>
+<p>The <a href="qabstractlistmodel.html">QAbstractListModel</a> and <a href="qabstracttablemodel.html">QAbstractTableModel</a> classes provide support for interfaces to simpler non-hierarchical data structures, and are easier to use as a starting point for simple list and table models.</p>
+<p>In this chapter, we create a simple read-only model to explore the basic principles of the model/view architecture. Later in this chapter, we will adapt this simple model so that items can be modified by the user.</p>
+<p>For an example of a more complex model, see the <a href="itemviews-simpletreemodel.html">Simple Tree Model</a> example.</p>
+<p>The requirements of <a href="qabstractitemmodel.html">QAbstractItemModel</a> subclasses is described in more detail in the <a href="model-view-model-subclassing.html">Model Subclassing Reference</a> document.</p>
+<a name="designing-a-model"></a>
+<h2>Designing a Model</h2>
+<p>When creating a new model for an existing data structure, it is important to consider which type of model should be used to provide an interface onto the data. If the data structure can be represented as a list or table of items, you can subclass <a href="qabstractlistmodel.html">QAbstractListModel</a> or <a href="qabstracttablemodel.html">QAbstractTableModel</a> since these classes provide suitable default implementations for many functions.</p>
+<p>However, if the underlying data structure can only be represented by a hierarchical tree structure, it is necessary to subclass <a href="qabstractitemmodel.html">QAbstractItemModel</a>. This approach is taken in the <a href="itemviews-simpletreemodel.html">Simple Tree Model</a> example.</p>
+<p>In this chapter, we will implement a simple model based on a list of strings, so the <a href="qabstractlistmodel.html">QAbstractListModel</a> provides an ideal base class on which to build.</p>
+<p>Whatever form the underlying data structure takes, it is usually a good idea to supplement the standard <a href="qabstractitemmodel.html">QAbstractItemModel</a> API in specialized models with one that allows more natural access to the underlying data structure. This makes it easier to populate the model with data, yet still enables other general model/view components to interact with it using the standard API. The model described below provides a custom constructor for just this purpose.</p>
+<a name="a-read-only-example-model"></a>
+<h2>A Read-Only Example Model</h2>
+<p>The model implemented here is a simple, non-hierarchical, read-only data model based on the standard <a href="qstringlistmodel.html">QStringListModel</a> class. It has a <a href="qstringlist.html">QStringList</a> as its internal data source, and implements only what is needed to make a functioning model. To make the implementation easier, we subclass <a href="qabstractlistmodel.html">QAbstractListModel</a> because it defines sensible default behavior for list models, and it exposes a simpler interface than the <a href="qabstractitemmodel.html">QAbstractItemModel</a> class.</p>
+<p>When implementing a model it is important to remember that <a href="qabstractitemmodel.html">QAbstractItemModel</a> does not store any data itself, it merely presents an interface that the views use to access the data. For a minimal read-only model it is only necessary to implement a few functions as there are default implementations for most of the interface. The class declaration is as follows:</p>
+<pre> class StringListModel : public QAbstractListModel
+ {
+     Q_OBJECT
+
+ public:
+     StringListModel(const QStringList &amp;strings, QObject *parent = 0)
+         : QAbstractListModel(parent), stringList(strings) {}
+
+     int rowCount(const QModelIndex &amp;parent = QModelIndex()) const;
+     QVariant data(const QModelIndex &amp;index, int role) const;
+     QVariant headerData(int section, Qt::Orientation orientation,
+                         int role = Qt::DisplayRole) const;
+
+ private:
+     QStringList stringList;
+ };</pre>
+<p>Apart from the model's constructor, we only need to implement two functions: <a href="qabstractitemmodel.html#rowCount">rowCount()</a> returns the number of rows in the model and <a href="qabstractitemmodel.html#data">data()</a> returns an item of data corresponding to a specified model index.</p>
+<p>Well behaved models also implement <a href="qabstractitemmodel.html#headerData">headerData()</a> to give tree and table views something to display in their headers.</p>
+<p>Note that this is a non-hierarchical model, so we don't have to worry about the parent-child relationships. If our model was hierarchical, we would also have to implement the <a href="qabstractitemmodel.html#index">index()</a> and <a href="qabstractitemmodel.html#parent">parent()</a> functions.</p>
+<p>The list of strings are stored internally in the <tt>stringList</tt> private member variable.</p>
+<a name="dimensions-of-the-model"></a>
+<h3>Dimensions of The Model</h3>
+<p>We want the number of rows in the model to be the same as the number of strings in the string list. We implement the <a href="qabstractitemmodel.html#rowCount">rowCount()</a> function with this in mind:</p>
+<pre> int StringListModel::rowCount(const QModelIndex &amp;parent) const
+ {
+     return stringList.count();
+ }</pre>
+<p>Since the model is non-hierarchical, we can safely ignore the model index corresponding to the parent item. By default, models derived from <a href="qabstractlistmodel.html">QAbstractListModel</a> only contain one column, so we do not need to reimplement the <a href="qabstractitemmodel.html#columnCount">columnCount()</a> function.</p>
+<a name="model-headers-and-data"></a>
+<h3>Model Headers and Data</h3>
+<p>For items in the view, we want to return the strings in the string list. The <a href="qabstractitemmodel.html#data">data()</a> function is responsible for returning the item of data that corresponds to the index argument:</p>
+<pre> QVariant StringListModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (!index.isValid())
+         return QVariant();
+
+     if (index.row() &gt;= stringList.size())
+         return QVariant();
+
+     if (role == Qt::DisplayRole)
+         return stringList.at(index.row());
+     else
+         return QVariant();
+ }</pre>
+<p>We only return a valid <a href="qvariant.html">QVariant</a> if the model index supplied is valid, the row number is within the range of items in the string list, and the requested role is one that we support.</p>
+<p>Some views, such as <a href="qtreeview.html">QTreeView</a> and <a href="qtableview.html">QTableView</a>, are able to display headers along with the item data. If our model is displayed in a view with headers, we want the headers to show the row and column numbers. We can provide information about the headers by subclassing the <a href="qabstractitemmodel.html#headerData">headerData()</a> function:</p>
+<pre> QVariant StringListModel::headerData(int section, Qt::Orientation orientation,
+                                      int role) const
+ {
+     if (role != Qt::DisplayRole)
+         return QVariant();
+
+     if (orientation == Qt::Horizontal)
+         return QString(&quot;Column %1&quot;).arg(section);
+     else
+         return QString(&quot;Row %1&quot;).arg(section);
+ }</pre>
+<p>Again, we return a valid <a href="qvariant.html">QVariant</a> only if the model index is valid and the role is one that we support. The orientation of the header is also taken into account when deciding the exact data to return.</p>
+<p>Not all views display headers with the item data, and those that do may be configured to hide them. Nonetheless, it is recommended that you implement the <a href="qabstractitemmodel.html#headerData">headerData()</a> function to provide relevant information about the data provided by the model.</p>
+<p>An item can have several roles, giving out different data depending on the role specified. The items in our model only have one role, <a href="qt.html#ItemDataRole-enum">DisplayRole</a>, so we return the data for items irrespective of the role specified. However, we could reuse the data we provide for the <a href="qt.html#ItemDataRole-enum">DisplayRole</a> in other roles, such as the <a href="qt.html#ItemDataRole-enum">ToolTipRole</a> that views can use to display information about items in a tooltip.</p>
+<a name="an-editable-model"></a>
+<h2>An Editable Model</h2>
+<p>The read-only model shows how simple choices could be presented to the user but, for many applications, an editable list model is much more useful. We can modify the read-only model to make the items editable by implementing two extra functions: <a href="qabstractitemmodel.html#flags">flags()</a> and <a href="qabstractitemmodel.html#setData">setData()</a>. The following function declarations are added to the class definition:</p>
+<pre>     Qt::ItemFlags flags(const QModelIndex &amp;index) const;
+     bool setData(const QModelIndex &amp;index, const QVariant &amp;value,
+                  int role = Qt::EditRole);</pre>
+<a name="making-the-model-editable"></a>
+<h3>Making the Model Editable</h3>
+<p>A delegate checks whether an item is editable before creating an editor. The model must let the delegate know that its items are editable. We do this by returning the correct flags for each item in the model; in this case, we enable all items and make them both selectable and editable:</p>
+<pre> Qt::ItemFlags StringListModel::flags(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return Qt::ItemIsEnabled;
+
+     return QAbstractItemModel::flags(index) | Qt::ItemIsEditable;
+ }</pre>
+<p>Note that we do not have to know how the delegate performs the actual editing process. We only have to provide a way for the delegate to set the data in the model. This is achieved through the <a href="qabstractitemmodel.html#setData">setData()</a> function:</p>
+<pre> bool StringListModel::setData(const QModelIndex &amp;index,
+                               const QVariant &amp;value, int role)
+ {
+     if (index.isValid() &amp;&amp; role == Qt::EditRole) {
+
+         stringList.replace(index.row(), value.toString());
+         emit dataChanged(index, index);
+         return true;
+     }
+     return false;
+ }</pre>
+<p>In this model, the item in the string list that corresponds to the model index is replaced by the value provided. However, before we can modify the string list, we must make sure that the index is valid, the item is of the correct type, and that the role is supported. By convention, we insist that the role is the <a href="qt.html#ItemDataRole-enum">EditRole</a> since this is the role used by the standard item delegate. The underlying data in this model is the same for all roles, so this detail just makes it easier to integrate the model with standard components.</p>
+<p>When the data has been set, the model must let the views know that some data has changed. This is done by emitting the <a href="qabstractitemmodel.html#dataChanged">dataChanged()</a> signal. Since only one item of data has changed, the range of items specified in the signal is limited to just one model index.</p>
+<a name="inserting-and-removing-rows"></a>
+<h3>Inserting and Removing Rows</h3>
+<p>It is possible to change the number of rows and columns in a model. In the string list model it only makes sense to change the number of rows, so we only reimplement the functions for inserting and removing rows. These are declared in the class definition:</p>
+<pre>     bool insertRows(int position, int rows, const QModelIndex &amp;index = QModelIndex());
+     bool removeRows(int position, int rows, const QModelIndex &amp;index = QModelIndex());</pre>
+<p>Since rows in this model correspond to strings in a list, the <tt>insertRows()</tt> function inserts a number of empty strings into the string list before the specified position. The number of strings inserted is equivalent to the number of rows specified.</p>
+<p>The parent index is normally used to determine where in the model the rows should be added. In this case, we only have a single top-level list of strings, so we just insert empty strings into that list.</p>
+<pre> bool StringListModel::insertRows(int position, int rows, const QModelIndex &amp;parent)
+ {
+     beginInsertRows(QModelIndex(), position, position+rows-1);
+
+     for (int row = 0; row &lt; rows; ++row) {
+         stringList.insert(position, &quot;&quot;);
+     }
+
+     endInsertRows();
+     return true;
+ }</pre>
+<p>The model first calls the <a href="qabstractitemmodel.html#beginInsertRows">beginInsertRows()</a> function to inform other components that the number of rows is about to change. The function specifies the row numbers of the first and last new rows to be inserted, and the model index for their parent item. After changing the string list, it calls <a href="qabstractitemmodel.html#endInsertRows">endInsertRows()</a> to complete the operation and inform other components that the dimensions of the model have changed, returning true to indicate success.</p>
+<p>The function to remove rows from the model is also simple to write. The rows to be removed from the model are specified by the position and the number of rows given. We ignore the parent index to simplify our implementation, and just remove the corresponding items from the string list.</p>
+<pre> bool StringListModel::removeRows(int position, int rows, const QModelIndex &amp;parent)
+ {
+     beginRemoveRows(QModelIndex(), position, position+rows-1);
+
+     for (int row = 0; row &lt; rows; ++row) {
+         stringList.removeAt(position);
+     }
+
+     endRemoveRows();
+     return true;
+ }</pre>
+<p>The <a href="qabstractitemmodel.html#beginRemoveRows">beginRemoveRows()</a> function is always called before any underlying data is removed, and specifies the first and last rows to be removed. This allows other components to access the data before it becomes unavailable. After the rows have been removed, the model emits <a href="qabstractitemmodel.html#endRemoveRows">endRemoveRows()</a> to finish the operation and let other components know that the dimensions of the model have changed.</p>
+<a name="next-steps"></a>
+<h2>Next Steps</h2>
+<p>We can display the data provided by this model, or any other model, using the <a href="qlistview.html">QListView</a> class to present the model's items in the form of a vertical list. For the string list model, this view also provides a default editor so that the items can be manipulated. We examine the possibilities made available by the standard view classes in the chapter on <a href="model-view-view.html">View Classes</a>.</p>
+<p>The <a href="model-view-model-subclassing.html">Model Subclassing Reference</a> document discusses the requirements of <a href="qabstractitemmodel.html">QAbstractItemModel</a> subclasses in more detail, and provides a guide to the virtual functions that must be implemented to enable various features in different types of models.</p>
+<p>
+[Previous: <a href="model-view-model.html">Model Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-view.html">View Classes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

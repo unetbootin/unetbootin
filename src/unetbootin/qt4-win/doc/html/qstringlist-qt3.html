@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qstringlist.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QStringList</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QStringList</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qstringlist.html">QStringList class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>Iterator <b><a href="qstringlist-qt3.html#fromLast">fromLast</a></b> ()</li>
+<li><div class="fn"/>ConstIterator <b><a href="qstringlist-qt3.html#fromLast-2">fromLast</a></b> () const</li>
+<li><div class="fn"/>QStringList <b><a href="qstringlist-qt3.html#grep">grep</a></b> ( const QString &amp; <i>str</i>, bool <i>cs</i> = true ) const</li>
+<li><div class="fn"/>QStringList <b><a href="qstringlist-qt3.html#grep-2">grep</a></b> ( const QRegExp &amp; <i>rx</i> ) const</li>
+<li><div class="fn"/>QStringList &amp; <b><a href="qstringlist-qt3.html#gres">gres</a></b> ( const QRegExp &amp; <i>rx</i>, const QString &amp; <i>after</i> )</li>
+<li><div class="fn"/>QStringList &amp; <b><a href="qstringlist-qt3.html#gres-2">gres</a></b> ( const QString &amp; <i>before</i>, const QString &amp; <i>after</i>, bool <i>cs</i> = true )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public functions inherited from <a href="qlist.html#public-functions">QList</a></li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QStringList <b><a href="qstringlist-qt3.html#split">split</a></b> ( const QRegExp &amp; <i>sep</i>, const QString &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )</li>
+<li><div class="fn"/>QStringList <b><a href="qstringlist-qt3.html#split-2">split</a></b> ( const QChar &amp; <i>sep</i>, const QString &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )</li>
+<li><div class="fn"/>QStringList <b><a href="qstringlist-qt3.html#split-3">split</a></b> ( const QString &amp; <i>sep</i>, const QString &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="fromLast"></a><a href="qlist.html#Iterator-typedef">Iterator</a> QStringList::fromLast ()</h3>
+<p>Use <a href="qlist.html#end">end</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QStringList::Iterator i = list.fromLast();</font></pre>
+<p>you can rewrite it as</p>
+<pre> QStringList::Iterator i = list.isEmpty() ? list.end() : --list.end();</pre>
+<h3 class="fn"><a name="fromLast-2"></a><a href="qlist.html#ConstIterator-typedef">ConstIterator</a> QStringList::fromLast () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qlist.html#end">end</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QStringList::ConstIterator i = list.fromLast();</font></pre>
+<p>you can rewrite it as</p>
+<pre> QStringList::ConstIterator i = list.isEmpty() ? list.end() : --list.end();</pre>
+<h3 class="fn"><a name="grep"></a>QStringList QStringList::grep ( const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>cs</i> = true ) const</h3>
+<p>Use <a href="qstringlist.html#filter">filter</a>() instead.</p>
+<h3 class="fn"><a name="grep-2"></a>QStringList QStringList::grep ( const <a href="qregexp.html">QRegExp</a> &amp; <i>rx</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstringlist.html#filter">filter</a>() instead.</p>
+<h3 class="fn"><a name="gres"></a>QStringList &amp; QStringList::gres ( const <a href="qregexp.html">QRegExp</a> &amp; <i>rx</i>, const <a href="qstring.html">QString</a> &amp; <i>after</i> )</h3>
+<p>Use <a href="qstringlist.html#replaceInStrings">replaceInStrings</a>() instead.</p>
+<h3 class="fn"><a name="gres-2"></a>QStringList &amp; QStringList::gres ( const <a href="qstring.html">QString</a> &amp; <i>before</i>, const <a href="qstring.html">QString</a> &amp; <i>after</i>, bool <i>cs</i> = true )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qstringlist.html#replaceInStrings">replaceInStrings</a>() instead.</p>
+<h3 class="fn"><a name="split"></a>QStringList QStringList::split ( const <a href="qregexp.html">QRegExp</a> &amp; <i>sep</i>, const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Use QString::split(<i>sep</i>, <a href="qstring.html#SplitBehavior-enum">QString::SkipEmptyParts</a>) or QString::split(<i>sep</i>, <a href="qstring.html#SplitBehavior-enum">QString::KeepEmptyParts</a>) instead.</p>
+<p>Be aware that the <a href="qstring.html#split">QString::split</a>()'s return value is a <a href="qstringlist.html">QStringList</a> that always contains at least one element, even if <i>str</i> is empty.</p>
+<p>See also <a href="qstringlist.html#join">join</a>() and <a href="qstring.html#section">QString::section</a>().</p>
+<h3 class="fn"><a name="split-2"></a>QStringList QStringList::split ( const <a href="qchar.html">QChar</a> &amp; <i>sep</i>, const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This version of the function uses a <a href="qchar.html">QChar</a> as separator.</p>
+<p>See also <a href="qstringlist.html#join">join</a>() and <a href="qstring.html#section">QString::section</a>().</p>
+<h3 class="fn"><a name="split-3"></a>QStringList QStringList::split ( const <a href="qstring.html">QString</a> &amp; <i>sep</i>, const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>allowEmptyEntries</i> = false )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This version of the function uses a <a href="qstring.html">QString</a> as separator.</p>
+<p>See also <a href="qstringlist.html#join">join</a>() and <a href="qstring.html#section">QString::section</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

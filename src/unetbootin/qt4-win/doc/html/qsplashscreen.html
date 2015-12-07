@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qsplashscreen.cpp -->
+<head>
+  <title>Qt 4.4: QSplashScreen Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSplashScreen Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QSplashScreen widget provides a splash screen that can be shown during application startup. <a href="#details">More...</a></p>
+<pre> #include &lt;QSplashScreen&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qsplashscreen-members.html">List of all members, including inherited members</a></li>
+<li><a href="qsplashscreen-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsplashscreen.html#QSplashScreen">QSplashScreen</a></b> ( const QPixmap &amp; <i>pixmap</i> = QPixmap(), Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsplashscreen.html#QSplashScreen-2">QSplashScreen</a></b> ( QWidget * <i>parent</i>, const QPixmap &amp; <i>pixmap</i> = QPixmap(), Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qsplashscreen.html#dtor.QSplashScreen">~QSplashScreen</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#finish">finish</a></b> ( QWidget * <i>mainWin</i> )</li>
+<li><div class="fn"/>const QPixmap <b><a href="qsplashscreen.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#repaint">repaint</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#setPixmap">setPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#clearMessage">clearMessage</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#showMessage">showMessage</a></b> ( const QString &amp; <i>message</i>, int <i>alignment</i> = Qt::AlignLeft, const QColor &amp; <i>color</i> = Qt::black )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qsplashscreen.html#messageChanged">messageChanged</a></b> ( const QString &amp; <i>message</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qsplashscreen.html#drawContents">drawContents</a></b> ( QPainter * <i>painter</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSplashScreen widget provides a splash screen that can be shown during application startup.</p>
+<p>A splash screen is a widget that is usually displayed when an application is being started. Splash screens are often used for applications that have long start up times (e.g&#x2e; database or networking applications that take time to establish connections) to provide the user with feedback that the application is loading.</p>
+<p>The splash screen appears in the center of the screen. It may be useful to add the <a href="qt.html#WindowType-enum">Qt::WindowStaysOnTopHint</a> to the splash widget's window flags if you want to keep it above all the other windows on the desktop.</p>
+<p>Some X11 window managers do not support the &quot;stays on top&quot; flag. A solution is to set up a timer that periodically calls <a href="qwidget.html#raise">raise</a>() on the splash screen to simulate the &quot;stays on top&quot; effect.</p>
+<p>The most common usage is to show a splash screen before the main widget is displayed on the screen. This is illustrated in the following code snippet in which a splash screen is displayed and some initialization tasks are performed before the application's main window is shown:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     QPixmap pixmap(&quot;:/splash.png&quot;);
+     QSplashScreen splash(pixmap);
+     splash.show();
+     app.processEvents();
+     ...
+     QMainWindow window;
+     window.show();
+     splash.finish(&amp;window);
+     return app.exec();
+ }</pre>
+<p>The user can hide the splash screen by clicking on it with the mouse. Since the splash screen is typically displayed before the event loop has started running, it is necessary to periodically call <a href="qcoreapplication.html#processEvents">QApplication::processEvents</a>() to receive the mouse clicks.</p>
+<p>It is sometimes useful to update the splash screen with messages, for example, announcing connections established or modules loaded as the application starts up:</p>
+<pre>        QPixmap pixmap(&quot;:/splash.png&quot;);
+        QSplashScreen *splash = new QSplashScreen(pixmap);
+        splash-&gt;show();
+
+        ... // Loading some items
+        splash-&gt;showMessage(&quot;Loaded modules&quot;);
+
+        qApp-&gt;processEvents();
+
+        ... // Establishing connections
+        splash-&gt;showMessage(&quot;Established connections&quot;);
+
+        qApp-&gt;processEvents();</pre>
+<p>QSplashScreen supports this with the <a href="qsplashscreen.html#showMessage">showMessage</a>() function. If you wish to do your own drawing you can get a pointer to the pixmap used in the splash screen with <a href="qsplashscreen.html#pixmap">pixmap</a>(). Alternatively, you can subclass QSplashScreen and reimplement <a href="qsplashscreen.html#drawContents">drawContents</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSplashScreen"></a>QSplashScreen::QSplashScreen ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> = QPixmap(), <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Construct a splash screen that will display the <i>pixmap</i>.</p>
+<p>There should be no need to set the widget flags, <i>f</i>, except perhaps <a href="qt.html#WindowType-enum">Qt::WindowStaysOnTopHint</a>.</p>
+<h3 class="fn"><a name="QSplashScreen-2"></a>QSplashScreen::QSplashScreen ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> = QPixmap(), <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>This function allows you to specify a parent for your splashscreen. The typical use for this constructor is if you have a multiple screens and prefer to have the splash screen on a different screen than your primary one. In that case pass the proper desktop() as the <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QSplashScreen"></a>QSplashScreen::~QSplashScreen ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="clearMessage"></a>void QSplashScreen::clearMessage ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Removes the message being displayed on the splash screen</p>
+<p>See also <a href="qsplashscreen.html#showMessage">showMessage</a>().</p>
+<h3 class="fn"><a name="drawContents"></a>void QSplashScreen::drawContents ( <a href="qpainter.html">QPainter</a> * <i>painter</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draw the contents of the splash screen using painter <i>painter</i>. The default implementation draws the message passed by <a href="qsplashscreen.html#showMessage">showMessage</a>(). Reimplement this function if you want to do your own drawing on the splash screen.</p>
+<h3 class="fn"><a name="finish"></a>void QSplashScreen::finish ( <a href="qwidget.html">QWidget</a> * <i>mainWin</i> )</h3>
+<p>Makes the splash screen wait until the widget <i>mainWin</i> is displayed before calling <a href="qwidget.html#close">close</a>() on itself.</p>
+<h3 class="fn"><a name="messageChanged"></a>void QSplashScreen::messageChanged ( const <a href="qstring.html">QString</a> &amp; <i>message</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the message on the splash screen changes. <i>message</i> is the new message and is a null-string when the message has been removed.</p>
+<p>See also <a href="qsplashscreen.html#showMessage">showMessage</a>() and <a href="qsplashscreen.html#clearMessage">clearMessage</a>().</p>
+<h3 class="fn"><a name="pixmap"></a>const <a href="qpixmap.html">QPixmap</a> QSplashScreen::pixmap () const</h3>
+<p>Returns the pixmap that is used in the splash screen. The image does not have any of the text drawn by <a href="qsplashscreen.html#showMessage">showMessage</a>() calls.</p>
+<p>See also <a href="qsplashscreen.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="repaint"></a>void QSplashScreen::repaint ()</h3>
+<p>This overrides <a href="qwidget.html#repaint">QWidget::repaint</a>(). It differs from the standard repaint function in that it also calls <a href="qcoreapplication.html#flush">QApplication::flush</a>() to ensure the updates are displayed, even when there is no event loop present.</p>
+<h3 class="fn"><a name="setPixmap"></a>void QSplashScreen::setPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Sets the pixmap that will be used as the splash screen's image to <i>pixmap</i>.</p>
+<p>See also <a href="qsplashscreen.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="showMessage"></a>void QSplashScreen::showMessage ( const <a href="qstring.html">QString</a> &amp; <i>message</i>, int <i>alignment</i> = Qt::AlignLeft, const <a href="qcolor.html">QColor</a> &amp; <i>color</i> = Qt::black )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Draws the <i>message</i> text onto the splash screen with color <i>color</i> and aligns the text according to the flags in <i>alignment</i>.</p>
+<p>See also <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> and <a href="qsplashscreen.html#clearMessage">clearMessage</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

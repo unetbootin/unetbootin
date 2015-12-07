@@ -1,0 +1,73 @@
+//! [0]
+    if (*ptr == expected) {
+        *ptr = newval;
+        return !0;
+    }
+    return 0;
+//! [0]
+
+
+//! [1]
+    if (*ptr == expected) {
+        *ptr = newval;
+        return !0;
+    }
+    return 0;
+//! [1]
+
+
+//! [2]
+    ++(*ptr);
+    return *ptr ? !0 : 0;
+//! [2]
+
+
+//! [3]
+    return ++(*ptr);
+//! [3]
+
+
+//! [4]
+    ++(*ptr);
+    return !(ControlRegister & ZeroFlag);
+//! [4]
+
+
+//! [5]
+    --(*ptr);
+    return *ptr ?  : 0;
+//! [5]
+
+
+//! [6]
+    return --(*ptr);
+//! [6]
+
+
+//! [7]
+    --(*ptr);
+    return !(ControlRegister & ZeroFlag);
+//! [7]
+
+
+//! [8]
+    tmp = *ptr;
+    *ptr = newval;
+    return tmp;
+//! [8]
+
+
+//! [9]
+    tmp = *ptr;
+    *ptr = newval;
+    return tmp;
+//! [9]
+
+
+//! [10]
+    tmp = *ptr;
+    *ptr += value;
+    return tmp;
+//! [10]
+
+

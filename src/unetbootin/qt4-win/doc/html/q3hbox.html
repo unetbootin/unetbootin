@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3hbox.cpp -->
+<head>
+  <title>Qt 4.4: Q3HBox Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3HBox Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3HBox widget provides horizontal geometry management for its child widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3HBox&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qhbox">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3frame.html">Q3Frame</a>.</p>
+<p>Inherited by <a href="q3vbox.html">Q3VBox</a>.</p>
+<ul>
+<li><a href="q3hbox-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3hbox.html#Q3HBox">Q3HBox</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="q3hbox.html#setSpacing">setSpacing</a></b> ( int <i>space</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3hbox.html#setStretchFactor">setStretchFactor</a></b> ( QWidget * <i>w</i>, int <i>stretch</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3hbox.html#Q3HBox-2">Q3HBox</a></b> ( bool <i>horizontal</i>, QWidget * <i>parent</i>, const char * <i>name</i>, Qt::WindowFlags <i>f</i> = 0 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3HBox widget provides horizontal geometry management for its child widgets.</p>
+<p>All the horizontal box's child widgets will be placed alongside each other and sized according to their <a href="qwidget.html#sizeHint-prop">sizeHint</a>()s.</p>
+<p>Use <a href="q3frame.html#margin-prop">setMargin</a>() to add space around the edges, and use <a href="q3hbox.html#setSpacing">setSpacing</a>() to add space between the widgets. Use <a href="q3hbox.html#setStretchFactor">setStretchFactor</a>() if you want the widgets to be different sizes in proportion to one another. (See <a href="layout.html">Layouts</a> for more information on stretch factors.)</p>
+<p align="center"><img src="images/qhbox-m.png" alt="Q3HBox" /></p><p>See also <a href="qhboxlayout.html">QHBoxLayout</a>, <a href="q3vbox.html">Q3VBox</a>, and <a href="q3grid.html">Q3Grid</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3HBox"></a>Q3HBox::Q3HBox ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs an hbox widget with parent <i>parent</i>, called <i>name</i>. The parent, name and widget flags, <i>f</i>, are passed to the <a href="q3frame.html">Q3Frame</a> constructor.</p>
+<h3 class="fn"><a name="Q3HBox-2"></a>Q3HBox::Q3HBox ( bool <i>horizontal</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs a horizontal hbox if <i>horizontal</i> is TRUE, otherwise constructs a vertical hbox (also known as a vbox).</p>
+<p>This constructor is provided for the <a href="porting4.html#qvbox">QVBox</a> class. You should never need to use it directly.</p>
+<p>The <i>parent</i>, <i>name</i> and widget flags, <i>f</i>, are passed to the <a href="q3frame.html">Q3Frame</a> constructor.</p>
+<h3 class="fn"><a name="setSpacing"></a>void Q3HBox::setSpacing ( int <i>space</i> )</h3>
+<p>Sets the spacing between the child widgets to <i>space</i>.</p>
+<h3 class="fn"><a name="setStretchFactor"></a>bool Q3HBox::setStretchFactor ( <a href="qwidget.html">QWidget</a> * <i>w</i>, int <i>stretch</i> )</h3>
+<p>Sets the stretch factor of widget <i>w</i> to <i>stretch</i>. Returns true if <i>w</i> is found. Otherwise returns false.</p>
+<p>See also <a href="qboxlayout.html#setStretchFactor">QBoxLayout::setStretchFactor</a>() and <a href="layout.html">Layouts</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

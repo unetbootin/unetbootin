@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/overpainting.qdoc -->
+<head>
+  <title>Qt 4.4: Overpainting Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Overpainting Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="opengl-overpainting-bubble-cpp.html">opengl/overpainting/bubble.cpp</a></li>
+<li><a href="opengl-overpainting-bubble-h.html">opengl/overpainting/bubble.h</a></li>
+<li><a href="opengl-overpainting-glwidget-cpp.html">opengl/overpainting/glwidget.cpp</a></li>
+<li><a href="opengl-overpainting-glwidget-h.html">opengl/overpainting/glwidget.h</a></li>
+<li><a href="opengl-overpainting-main-cpp.html">opengl/overpainting/main.cpp</a></li>
+<li><a href="opengl-overpainting-overpainting-pro.html">opengl/overpainting/overpainting.pro</a></li>
+</ul>
+<p>The Overpainting example shows how <a href="qpainter.html">QPainter</a> can be used to overpaint a scene rendered using OpenGL in a <a href="qglwidget.html">QGLWidget</a>.</p>
+<p align="center"><img src="images/overpainting-example.png" /></p><p><a href="qglwidget.html">QGLWidget</a> provides a widget with integrated OpenGL graphics support that enables 3D graphics to be displayed using normal OpenGL calls, yet also behaves like any other standard Qt widget with support for signals and slots, properties, and Qt's action system.</p>
+<p>Usually, <a href="qglwidget.html">QGLWidget</a> is subclassed to display a pure 3D scene; the developer reimplements <a href="qglwidget.html#initializeGL">initializeGL()</a> to initialize any required resources, <a href="qglwidget.html#resizeGL">resizeGL()</a> to set up the projection and viewport, and <a href="qglwidget.html#paintGL">paintGL()</a> to perform the OpenGL calls needed to render the scene. However, it is possible to subclass <a href="qglwidget.html">QGLWidget</a> differently to allow 2D graphics, drawn using <a href="qpainter.html">QPainter</a>, to be painted over a scene rendered using OpenGL.</p>
+<p>In this example, we demonstrate how this is done by reusing the code from the <a href="opengl-hellogl.html">Hello GL</a> example to provide a 3D scene, and painting over it with some translucent 2D graphics. Instead of examining each class in detail, we only cover the parts of the <tt>GLWidget</tt> class that enable overpainting, and provide more detailed discussion in the final section of this document.</p>
+<a name="glwidget-class-definition"></a>
+<h2>GLWidget Class Definition</h2>
+<p>The <tt>GLWidget</tt> class is a subclass of <a href="qglwidget.html">QGLWidget</a>, based on the one used in the <a href="opengl-hellogl.html">Hello GL</a> example. Rather than describe the class as a whole, we show the first few lines of the class and only discuss the changes we have made to the rest of it:</p>
+<pre> class GLWidget : public QGLWidget
+ {
+     Q_OBJECT
+
+ public:
+     GLWidget(QWidget *parent = 0);
+     ~GLWidget();
+     ...
+ protected:
+     void initializeGL();
+     void paintEvent(QPaintEvent *event);
+     void resizeGL(int width, int height);
+     void mousePressEvent(QMouseEvent *event);
+     void mouseMoveEvent(QMouseEvent *event);
+     void showEvent(QShowEvent *event);
+
+ private slots:
+     void animate();
+
+ private:
+     GLuint makeObject();
+     void createBubbles(int number);
+     void drawInstructions(QPainter *painter);
+     ...
+     QList&lt;Bubble*&gt; bubbles;
+     QTimer animationTimer;
+ };</pre>
+<p>As usual, the widget uses <a href="qglwidget.html#initializeGL">initializeGL()</a> to set up objects for our scene and perform other OpenGL initialization tasks. The <a href="qglwidget.html#resizeGL">resizeGL()</a> function is used to ensure that the 3D graphics in the scene are transformed correctly to the 2D viewport displayed in the widget.</p>
+<p>Instead of implementing <a href="qglwidget.html#paintGL">paintGL()</a> to handle updates to the widget, we implement a normal <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>(). This allows us to mix OpenGL calls and <a href="qpainter.html">QPainter</a> operations in a controlled way.</p>
+<p>In this example, we also implement <a href="qwidget.html#showEvent">QWidget::showEvent</a>() to help with the initialization of the 2D graphics used.</p>
+<p>The new private member functions and variables relate exclusively to the 2D graphics and animation. The <tt>animate()</tt> slot is called periodically by the <tt>animationTimer</tt> to update the widget; the <tt>createBubbles()</tt> function initializes the <tt>bubbles</tt> list with instances of a helper class used to draw the animation; the <tt>drawInstructions()</tt> function is responsible for a semi-transparent messages that is also overpainted onto the OpenGL scene.</p>
+<a name="glwidget-class-implementation"></a>
+<h2>GLWidget Class Implementation</h2>
+<p>Again, we only show the parts of the <tt>GLWidget</tt> implementation that are relevant to this example. In the constructor, we initialize a <a href="qtimer.html">QTimer</a> to control the animation:</p>
+<pre> GLWidget::GLWidget(QWidget *parent)
+     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent)
+ {
+     QTime midnight(0, 0, 0);
+     qsrand(midnight.secsTo(QTime::currentTime()));
+
+     object = 0;
+     xRot = 0;
+     yRot = 0;
+     zRot = 0;
+
+     trolltechGreen = QColor::fromCmykF(0.40, 0.0, 1.0, 0.0);
+     trolltechPurple = QColor::fromCmykF(0.39, 0.39, 0.0, 0.0);
+
+     animationTimer.setSingleShot(false);
+     connect(&amp;animationTimer, SIGNAL(timeout()), this, SLOT(animate()));
+     animationTimer.start(25);
+
+     setAutoFillBackground(false);
+     setMinimumSize(200, 200);
+     setWindowTitle(tr(&quot;Overpainting a Scene&quot;));
+ }</pre>
+<p>We turn off the widget's <a href="qwidget.html#autoFillBackground-prop">autoFillBackground</a> property to instruct OpenGL not to paint a background for the widget when <a href="qpainter.html#begin">QPainter::begin()</a> is called.</p>
+<p>As in the <a href="opengl-hellogl.html">Hello GL</a> example, the destructor is responsible for freeing any OpenGL-related resources:</p>
+<pre> GLWidget::~GLWidget()
+ {
+     makeCurrent();
+     glDeleteLists(object, 1);
+ }</pre>
+<p>The <tt>initializeGL()</tt> function is fairly minimal, only setting up the display list used in the scene.</p>
+<pre> void GLWidget::initializeGL()
+ {
+     object = makeObject();
+ }</pre>
+<p>To cooperate fully with <a href="qpainter.html">QPainter</a>, we defer matrix stack operations and attribute initialization until the widget needs to be updated.</p>
+<p>In this example, we implement <a href="qwidget.html#paintEvent">paintEvent()</a> rather than <a href="qglwidget.html#paintGL">paintGL()</a> to render our scene. When drawing on a <a href="qglwidget.html">QGLWidget</a>, the paint engine used by <a href="qpainter.html">QPainter</a> performs certain operations that change the states of the OpenGL implementation's matrix and property stacks. Therefore, it is necessary to make all the OpenGL calls to display the 3D graphics before we construct a <a href="qpainter.html">QPainter</a> to draw the 2D overlay.</p>
+<p>We render a 3D scene by setting up model and projection transformations and other attributes. We use an OpenGL stack operation to preserve the original matrix state, allowing us to recover it later:</p>
+<pre>     glMatrixMode(GL_MODELVIEW);
+     glPushMatrix();</pre>
+<p>We define a color to use for the widget's background, and set up various attributes that define how the scene will be rendered.</p>
+<pre>     qglClearColor(trolltechPurple.dark());
+     glShadeModel(GL_SMOOTH);
+     glEnable(GL_DEPTH_TEST);
+     glEnable(GL_CULL_FACE);
+     glEnable(GL_LIGHTING);
+     glEnable(GL_LIGHT0);
+     glEnable(GL_MULTISAMPLE);
+     static GLfloat lightPosition[4] = { 0.5, 5.0, 7.0, 1.0 };
+     glLightfv(GL_LIGHT0, GL_POSITION, lightPosition);
+
+     setupViewport(width(), height());</pre>
+<p>We call the <tt>setupViewport()</tt> private function to set up the projection used for the scene. This is unnecessary in OpenGL examples that implement the <a href="qglwidget.html#paintGL">paintGL()</a> function because the matrix stacks are usually unmodified between calls to <a href="qglwidget.html#resizeGL">resizeGL()</a> and <a href="qglwidget.html#paintGL">paintGL()</a>.</p>
+<p>Since the widget's background is not drawn by the system or by Qt, we use an OpenGL call to paint it before positioning the object defined earlier in the scene:</p>
+<pre>     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+     glLoadIdentity();
+     glTranslated(0.0, 0.0, -10.0);
+     glRotated(xRot / 16.0, 1.0, 0.0, 0.0);
+     glRotated(yRot / 16.0, 0.0, 1.0, 0.0);
+     glRotated(zRot / 16.0, 0.0, 0.0, 1.0);
+     glCallList(object);</pre>
+<p>Once the list containing the object has been executed, the matrix stack needs to be restored to its original state at the start of this function before we can begin overpainting:</p>
+<pre>     glMatrixMode(GL_MODELVIEW);
+     glPopMatrix();</pre>
+<p>With the 3D graphics done, we construct a <a href="qpainter.html">QPainter</a> for use on the widget and simply overpaint the widget with 2D graphics; in this case, using a helper class to draw a number of translucent bubbles onto the widget, and calling <tt>drawInstructions()</tt> to overlay some instructions:</p>
+<pre>     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     foreach (Bubble *bubble, bubbles) {
+         if (bubble-&gt;rect().intersects(event-&gt;rect()))
+             bubble-&gt;drawBubble(&amp;painter);
+     }
+     drawInstructions(&amp;painter);
+     painter.end();
+ }</pre>
+<p>When <a href="qpainter.html#end">QPainter::end</a>() is called, suitable OpenGL-specific calls are made to write the scene, and its additional contents, onto the widget.</p>
+<p>The implementation of the <a href="qglwidget.html#resizeGL">resizeGL()</a> function sets up the dimensions of the viewport and defines a projection transformation:</p>
+<pre> void GLWidget::resizeGL(int width, int height)
+ {
+     setupViewport(width, height);
+ }</pre>
+<p>Ideally, we want to arrange the 2D graphics to suit the widget's dimensions. To achieve this, we implement the <a href="qwidget.html#showEvent">showEvent()</a> handler, creating new graphic elements (bubbles) if necessary at appropriate positions in the widget.</p>
+<pre> void GLWidget::showEvent(QShowEvent *event)
+ {
+     Q_UNUSED(event);
+     createBubbles(20 - bubbles.count());
+ }</pre>
+<p>This function only has an effect if less than 20 bubbles have already been created.</p>
+<p>The <tt>animate()</tt> slot is called every time the widget's <tt>animationTimer</tt> emits the <a href="qtimer.html#timeout">timeout()</a> signal. This keeps the bubbles moving around.</p>
+<pre> void GLWidget::animate()
+ {
+     QMutableListIterator&lt;Bubble*&gt; iter(bubbles);
+
+     while (iter.hasNext()) {
+         Bubble *bubble = iter.next();
+         bubble-&gt;move(rect());
+     }
+     update();
+ }</pre>
+<p>We simply iterate over the bubbles in the <tt>bubbles</tt> list, updating the widget before and after each of them is moved.</p>
+<p>The <tt>setupViewport()</tt> function is called from <tt>paintEvent()</tt> and <tt>resizeGL()</tt>.</p>
+<pre> void GLWidget::setupViewport(int width, int height)
+ {
+     int side = qMin(width, height);
+     glViewport((width - side) / 2, (height - side) / 2, side, side);
+
+     glMatrixMode(GL_PROJECTION);
+     glLoadIdentity();
+     glOrtho(-0.5, +0.5, +0.5, -0.5, 4.0, 15.0);
+     glMatrixMode(GL_MODELVIEW);
+ }</pre>
+<p>The <tt>drawInstructions()</tt> function is used to prepare some basic instructions that will be painted with the other 2D graphics over the 3D scene.</p>
+<pre> void GLWidget::drawInstructions(QPainter *painter)
+ {
+     QString text = tr(&quot;Click and drag with the left mouse button &quot;
+                       &quot;to rotate the Qt logo.&quot;);
+     QFontMetrics metrics = QFontMetrics(font());
+     int border = qMax(4, metrics.leading());
+
+     QRect rect = metrics.boundingRect(0, 0, width() - 2*border, int(height()*0.125),
+                                       Qt::AlignCenter | Qt::TextWordWrap, text);
+     painter-&gt;setRenderHint(QPainter::TextAntialiasing);
+     painter-&gt;fillRect(QRect(0, 0, width(), rect.height() + 2*border),
+                      QColor(0, 0, 0, 127));
+     painter-&gt;setPen(Qt::white);
+     painter-&gt;fillRect(QRect(0, 0, width(), rect.height() + 2*border),
+                       QColor(0, 0, 0, 127));
+     painter-&gt;drawText((width() - rect.width())/2, border,
+                       rect.width(), rect.height(),
+                       Qt::AlignCenter | Qt::TextWordWrap, text);
+ }</pre>
+<a name="summary"></a>
+<h2>Summary</h2>
+<p>When overpainting 2D content onto 3D content, we need to use a <a href="qpainter.html">QPainter</a> <i>and</i> make OpenGL calls to achieve the desired effect. Since <a href="qpainter.html">QPainter</a> itself uses OpenGL calls when used on a <a href="qglwidget.html">QGLWidget</a> subclass, we need to preserve the state of various OpenGL stacks when we perform our own calls, using the following approach:</p>
+<ul>
+<li>Reimplement <a href="qglwidget.html#initializeGL">QGLWidget::initializeGL</a>(), but only perform minimal initialization. <a href="qpainter.html">QPainter</a> will perform its own initialization routines, modifying the matrix and property stacks, so it is better to defer certain initialization tasks until just before you render the 3D scene.</li>
+<li>Reimplement <a href="qglwidget.html#resizeGL">QGLWidget::resizeGL</a>() as in the pure 3D case.</li>
+<li>Reimplement <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>() to draw both 2D and 3D graphics.</li>
+</ul>
+<p>The <a href="qwidget.html#paintEvent">paintEvent()</a> implementation performs the following tasks:</p>
+<ul>
+<li>Push the current OpenGL modelview matrix onto a stack.</li>
+<li>Perform initialization tasks usually done in the <a href="qglwidget.html#initializeGL">initializeGL()</a> function.</li>
+<li>Perform code that would normally be located in the widget's <a href="qglwidget.html#resizeGL">resizeGL()</a> function to set the correct perspective transformation and set up the viewport.</li>
+<li>Render the scene using OpenGL calls.</li>
+<li>Pop the OpenGL modelview matrix off the stack.</li>
+<li>Construct a <a href="qpainter.html">QPainter</a> object.</li>
+<li>Initialize it for use on the widget with the <a href="qpainter.html#begin">QPainter::begin</a>() function.</li>
+<li>Draw primitives using <a href="qpainter.html">QPainter</a>'s member functions.</li>
+<li>Call <a href="qpainter.html#end">QPainter::end</a>() to finish painting.</li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qmenubar.cpp -->
+<head>
+  <title>Qt 4.4: QMenuBar Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMenuBar Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QMenuBar class provides a horizontal menu bar. <a href="#details">More...</a></p>
+<pre> #include &lt;QMenuBar&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qmenubar-members.html">List of all members, including inherited members</a></li>
+<li><a href="qmenubar-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmenubar.html#defaultUp-prop">defaultUp</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmenubar.html#QMenuBar">QMenuBar</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qmenubar.html#dtor.QMenuBar">~QMenuBar</a></b> ()</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#activeAction">activeAction</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#addAction">addAction</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#addAction-2">addAction</a></b> ( const QString &amp; <i>text</i>, const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#addAction-3">addAction</a></b> ( QAction * <i>action</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#addMenu">addMenu</a></b> ( QMenu * <i>menu</i> )</li>
+<li><div class="fn"/>QMenu * <b><a href="qmenubar.html#addMenu-2">addMenu</a></b> ( const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>QMenu * <b><a href="qmenubar.html#addMenu-3">addMenu</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#addSeparator">addSeparator</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#defaultAction">defaultAction</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#insertMenu">insertMenu</a></b> ( QAction * <i>before</i>, QMenu * <i>menu</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qmenubar.html#insertSeparator">insertSeparator</a></b> ( QAction * <i>before</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmenubar.html#defaultUp-prop">isDefaultUp</a></b> () const</li>
+<li><div class="fn"/>MenuRef <b><a href="qmenubar.html#macMenu">macMenu</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#setActiveAction">setActiveAction</a></b> ( QAction * <i>act</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#setDefaultAction">setDefaultAction</a></b> ( QAction * <i>act</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#defaultUp-prop">setDefaultUp</a></b> ( bool )</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qmenubar.html#hovered">hovered</a></b> ( QAction * <i>action</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#triggered">triggered</a></b> ( QAction * <i>action</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qmenubar.html#wceCommands">wceCommands</a></b> ( uint <i>command</i>, HWND <i>controlHandle</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenubar.html#wceRefresh">wceRefresh</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qmenubar.html#initStyleOption">initStyleOption</a></b> ( QStyleOptionMenuItem * <i>option</i>, const QAction * <i>action</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMenuBar class provides a horizontal menu bar.</p>
+<p>A menu bar consists of a list of pull-down menu items. You add menu items with <a href="qmenubar.html#addMenu">addMenu</a>(). For example, asuming that <tt>menubar</tt> is a pointer to a QMenuBar and <tt>fileMenu</tt> is a pointer to a <a href="qmenu.html">QMenu</a>, the following statement inserts the menu into the menu bar:</p>
+<pre>       menubar-&gt;addMenu(fileMenu);</pre>
+<p>The ampersand in the menu item's text sets Alt+F as a shortcut for this menu. (You can use &quot;&amp;&amp;&quot; to get a real ampersand in the menu bar.)</p>
+<p>There is no need to lay out a menu bar. It automatically sets its own geometry to the top of the parent widget and changes it appropriately whenever the parent is resized.</p>
+<p>In most main window style applications you would use the menuBar() provided in <a href="qmainwindow.html">QMainWindow</a>, adding <a href="qmenu.html">QMenu</a>s to the menu bar and adding <a href="qaction.html">QAction</a>s to the popup menus.</p>
+<p>Example (from the <a href="mainwindows-menus.html">Menus</a> example):</p>
+<pre>     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(newAct);</pre>
+<p>Menu items may be removed with <a href="qwidget.html#removeAction">removeAction</a>().</p>
+<a name="platform-dependent-look-and-feel"></a>
+<h3>Platform Dependent Look and Feel</h3>
+<p>Different platforms have different requirements for the appearance of menu bars and their behavior when the user interacts with them. For example, Windows systems are often configured so that the underlined character mnemonics that indicate keyboard shortcuts for items in the menu bar are only shown when the <b>Alt</b> key is pressed.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/plastique-menubar.png" alt="A menu bar shown in the Plastique widget style." /></td><td>The <a href="qplastiquestyle.html">Plastique widget style</a>, like most other styles, handles the <b>Help</b> menu in the same way as it handles any other menu.</td></tr>
+<tr valign="top" class="even"><td><img src="images/motif-menubar.png" alt="A menu bar shown in the Motif widget style." /></td><td>The <a href="qmotifstyle.html">Motif widget style</a> treats <b>Help</b> menus in a special way, placing them at right-hand end of the menu bar.</td></tr>
+</table></p>
+<a name="qmenubar-on-qt-mac"></a>
+<h3>QMenuBar on Qt/Mac</h3>
+<p>QMenuBar on Qt/Mac is a wrapper for using the system-wide menu bar. If you have multiple menu bars in one dialog the outermost menu bar (normally inside a widget with widget flag <a href="qt.html#WindowType-enum">Qt::Window</a>) will be used for the system-wide menu bar.</p>
+<p>Qt/Mac also provides a menu bar merging feature to make QMenuBar conform more closely to accepted Mac OS X menu bar layout. The merging functionality is based on string matching the title of a <a href="qmenu.html">QMenu</a> entry. These strings are translated (using <a href="qobject.html#tr">QObject::tr</a>()) in the &quot;QMenuBar&quot; context. If an entry is moved its slots will still fire as if it was in the original place. The table below outlines the strings looked for and where the entry is placed if matched:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>String matches</th><th>Placement</th><th>Notes</th></tr></thead>
+<tr valign="top" class="odd"><td>about.*</td><td>Application Menu | About &lt;application name&gt;</td><td>If this entry is not found no About item will appear in the Application Menu</td></tr>
+<tr valign="top" class="even"><td>config, options, setup, settings or preferences</td><td>Application Menu | Preferences</td><td>If this entry is not found the Settings item will be disabled</td></tr>
+<tr valign="top" class="odd"><td>quit or exit</td><td>Application Menu | Quit &lt;application name&gt;</td><td>If this entry is not found a default Quit item will be created to call <a href="qcoreapplication.html#quit">QApplication::quit</a>()</td></tr>
+</table></p>
+<p>You can override this behavior by using the <a href="qaction.html#menuRole-prop">QAction::menuRole</a>() property.</p>
+<p>If you wish to make all windows in a Mac application share the same menu bar, you need to create a menu bar that does not have a parent. The menu bar is created like this:</p>
+<pre>         QMenuBar *menuBar = new QMenuBar(0);</pre>
+<p><b>Note:</b> The text used for the application name in the menu bar is obtained from the value set in the <tt>Info.plist</tt> file in the application's bundle. See <a href="deployment-mac.html">Deploying an Application on Qt/Mac</a> for more information.</p>
+<a name="qmenubar-on-qt-ce"></a>
+<h3>QMenuBar on Qt/CE</h3>
+<p>QMenuBar on Qt/CE is a wrapper for using the system-wide menu bar, similar to the Mac. This feature is activated for Windows Mobile and integrates QMenuBar with the native soft keys. The left soft key can be controlled with <a href="qmenubar.html#setDefaultAction">QMenuBar::setDefaultAction</a>() and the right soft key can be used to access the menu bar.</p>
+<p>The <a href="qmenubar.html#hovered">hovered</a>() signal is not supported for the native menu integration. Also, it is not possible to display an icon in a native menu on Windows Mobile.</p>
+<a name="examples"></a>
+<h3>Examples</h3>
+<p>The <a href="mainwindows-menus.html">Menus</a> example shows how to use QMenuBar and <a href="qmenu.html">QMenu</a>. The other <a href="examples.html#main-windows">main window application examples</a> also provide menus using these classes.</p>
+<p>See also <a href="qmenu.html">QMenu</a>, <a href="qshortcut.html">QShortcut</a>, <a href="qaction.html">QAction</a>, <a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/index.html">Introduction to Apple Human Interface Guidelines</a>, <a href="guibooks.html#fowler">GUI Design Handbook: Menu Bar</a>, and <a href="mainwindows-menus.html">Menus Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="defaultUp-prop"></a>defaultUp : bool</h3>
+<p>This property holds the popup orientation.</p>
+<p>The default popup orientation. By default, menus pop &quot;down&quot; the screen. By setting the property to true, the menu will pop &quot;up&quot;. You might call this for menus that are <i>below</i> the document to which they refer.</p>
+<p>If the menu would not fit on the screen, the other direction is used automatically.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isDefaultUp () const</b></li>
+<li><div class="fn"/><b>void setDefaultUp ( bool )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMenuBar"></a>QMenuBar::QMenuBar ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a menu bar with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QMenuBar"></a>QMenuBar::~QMenuBar ()</h3>
+<p>Destroys the menu bar.</p>
+<h3 class="fn"><a name="activeAction"></a><a href="qaction.html">QAction</a> * QMenuBar::activeAction () const</h3>
+<p>Returns the <a href="qaction.html">QAction</a> that is currently highlighted. A null pointer will be returned if no action is currently selected.</p>
+<p>See also <a href="qmenubar.html#setActiveAction">setActiveAction</a>().</p>
+<h3 class="fn"><a name="addAction"></a><a href="qaction.html">QAction</a> * QMenuBar::addAction ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This convenience function creates a new action with <i>text</i>. The function adds the newly created action to the menu's list of actions, and returns it.</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>().</p>
+<h3 class="fn"><a name="addAction-2"></a><a href="qaction.html">QAction</a> * QMenuBar::addAction ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This convenience function creates a new action with the given <i>text</i>. The action's <a href="qmenubar.html#triggered">triggered</a>() signal is connected to the <i>receiver</i>'s <i>member</i> slot. The function adds the newly created action to the menu's list of actions and returns it.</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>().</p>
+<h3 class="fn"><a name="addAction-3"></a>void QMenuBar::addAction ( <a href="qaction.html">QAction</a> * <i>action</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Appends the action <i>action</i> to the menu bar's list of actions.</p>
+<p>See also <a href="qmenu.html#addAction">QMenu::addAction</a>() and <a href="qwidget.html#addAction">QWidget::addAction</a>().</p>
+<h3 class="fn"><a name="addMenu"></a><a href="qaction.html">QAction</a> * QMenuBar::addMenu ( <a href="qmenu.html">QMenu</a> * <i>menu</i> )</h3>
+<p>Appends <i>menu</i> to the menu bar. Returns the menu's menuAction().</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>() and <a href="qmenu.html#menuAction">QMenu::menuAction</a>().</p>
+<h3 class="fn"><a name="addMenu-2"></a><a href="qmenu.html">QMenu</a> * QMenuBar::addMenu ( const <a href="qstring.html">QString</a> &amp; <i>title</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Appends a new <a href="qmenu.html">QMenu</a> with <i>title</i> to the menu bar. The menu bar takes ownership of the menu. Returns the new menu.</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>() and <a href="qmenu.html#menuAction">QMenu::menuAction</a>().</p>
+<h3 class="fn"><a name="addMenu-3"></a><a href="qmenu.html">QMenu</a> * QMenuBar::addMenu ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>title</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Appends a new <a href="qmenu.html">QMenu</a> with <i>icon</i> and <i>title</i> to the menu bar. The menu bar takes ownership of the menu. Returns the new menu.</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>() and <a href="qmenu.html#menuAction">QMenu::menuAction</a>().</p>
+<h3 class="fn"><a name="addSeparator"></a><a href="qaction.html">QAction</a> * QMenuBar::addSeparator ()</h3>
+<p>Appends a separator to the menu.</p>
+<h3 class="fn"><a name="clear"></a>void QMenuBar::clear ()</h3>
+<p>Removes all the actions from the menu bar.</p>
+<p>See also <a href="qwidget.html#removeAction">removeAction</a>().</p>
+<h3 class="fn"><a name="defaultAction"></a><a href="qaction.html">QAction</a> * QMenuBar::defaultAction () const</h3>
+<p>Returns the current default action.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qmenubar.html#setDefaultAction">setDefaultAction</a>().</p>
+<h3 class="fn"><a name="hovered"></a>void QMenuBar::hovered ( <a href="qaction.html">QAction</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a menu action is highlighted; <i>action</i> is the action that caused the event to be sent.</p>
+<p>Often this is used to update status information.</p>
+<p>See also <a href="qmenubar.html#triggered">triggered</a>() and <a href="qaction.html#hovered">QAction::hovered</a>().</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QMenuBar::initStyleOption ( <a href="qstyleoptionmenuitem.html">QStyleOptionMenuItem</a> * <i>option</i>, const <a href="qaction.html">QAction</a> * <i>action</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from the menu bar and information from <i>action</i>. This method is useful for subclasses when they need a <a href="qstyleoptionmenuitem.html">QStyleOptionMenuItem</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>() and <a href="qmenu.html#initStyleOption">QMenu::initStyleOption</a>().</p>
+<h3 class="fn"><a name="insertMenu"></a><a href="qaction.html">QAction</a> * QMenuBar::insertMenu ( <a href="qaction.html">QAction</a> * <i>before</i>, <a href="qmenu.html">QMenu</a> * <i>menu</i> )</h3>
+<p>This convenience function inserts <i>menu</i> before action <i>before</i> and returns the menus menuAction().</p>
+<p>See also <a href="qwidget.html#insertAction">QWidget::insertAction</a>() and <a href="qmenubar.html#addMenu">addMenu</a>().</p>
+<h3 class="fn"><a name="insertSeparator"></a><a href="qaction.html">QAction</a> * QMenuBar::insertSeparator ( <a href="qaction.html">QAction</a> * <i>before</i> )</h3>
+<p>This convenience function creates a new separator action, i.e&#x2e; an action with <a href="qaction.html#isSeparator">QAction::isSeparator</a>() returning true. The function inserts the newly created action into this menu bar's list of actions before action <i>before</i> and returns it.</p>
+<p>See also <a href="qwidget.html#insertAction">QWidget::insertAction</a>() and <a href="qmenubar.html#addSeparator">addSeparator</a>().</p>
+<h3 class="fn"><a name="macMenu"></a>MenuRef QMenuBar::macMenu ()</h3>
+<h3 class="fn"><a name="setActiveAction"></a>void QMenuBar::setActiveAction ( <a href="qaction.html">QAction</a> * <i>act</i> )</h3>
+<p>Sets the currently highlighted action to <i>act</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qmenubar.html#activeAction">activeAction</a>().</p>
+<h3 class="fn"><a name="setDefaultAction"></a>void QMenuBar::setDefaultAction ( <a href="qaction.html">QAction</a> * <i>act</i> )</h3>
+<p>Sets the default action to <i>act</i>.</p>
+<p>The default action is assigned to the left soft key. The menu is assigned to the right soft key.</p>
+<p>Currently there is only support for the default action on Windows Mobile. All other platforms ignore the default action.</p>
+<p>See also <a href="qmenubar.html#defaultAction">defaultAction</a>().</p>
+<h3 class="fn"><a name="triggered"></a>void QMenuBar::triggered ( <a href="qaction.html">QAction</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an action in a menu belonging to this menubar is triggered as a result of a mouse click; <i>action</i> is the action that caused the signal to be emitted.</p>
+<p>Normally, you connect each menu action to a single slot using <a href="qaction.html#triggered">QAction::triggered</a>(), but sometimes you will want to connect several items to a single slot (most often if the user selects from an array). This signal is useful in such cases.</p>
+<p>See also <a href="qmenubar.html#hovered">hovered</a>() and <a href="qaction.html#triggered">QAction::triggered</a>().</p>
+<h3 class="fn"><a name="wceCommands"></a>void QMenuBar::wceCommands ( <a href="qtglobal.html#uint-typedef">uint</a> <i>command</i>, HWND <i>controlHandle</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="wceRefresh"></a>void QMenuBar::wceRefresh ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

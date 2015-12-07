@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasPixmapArray Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasPixmapArray Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasPixmapArray class provides an array of Q3CanvasPixmaps. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasPixmapArray&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<ul>
+<li><a href="q3canvaspixmaparray-members.html">List of all members, including inherited members</a></li>
+<li><a href="q3canvaspixmaparray-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvaspixmaparray.html#Q3CanvasPixmapArray">Q3CanvasPixmapArray</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3canvaspixmaparray.html#Q3CanvasPixmapArray-2">Q3CanvasPixmapArray</a></b> ( const QString &amp; <i>datafilenamepattern</i>, int <i>fc</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3canvaspixmaparray.html#Q3CanvasPixmapArray-4">Q3CanvasPixmapArray</a></b> ( Q3ValueList&lt;QPixmap&gt; <i>list</i>, Q3PointArray <i>hotspots</i> = Q3PointArray() )</li>
+<li><div class="fn"/><b><a href="q3canvaspixmaparray.html#dtor.Q3CanvasPixmapArray">~Q3CanvasPixmapArray</a></b> ()</li>
+<li><div class="fn"/>uint <b><a href="q3canvaspixmaparray.html#count">count</a></b> () const</li>
+<li><div class="fn"/>Q3CanvasPixmap * <b><a href="q3canvaspixmaparray.html#image">image</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3canvaspixmaparray.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3canvaspixmaparray.html#readCollisionMasks">readCollisionMasks</a></b> ( const QString &amp; <i>filename</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3canvaspixmaparray.html#readPixmaps">readPixmaps</a></b> ( const QString &amp; <i>filenamepattern</i>, int <i>fc</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="q3canvaspixmaparray.html#setImage">setImage</a></b> ( int <i>i</i>, Q3CanvasPixmap * <i>p</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasPixmapArray class provides an array of Q3CanvasPixmaps.</p>
+<p>This class is used by <a href="q3canvassprite.html">Q3CanvasSprite</a> to hold an array of pixmaps. It is used to implement animated sprites, i.e&#x2e; images that change over time, with each pixmap in the array holding one frame.</p>
+<p>Depending on the constructor you use you can load multiple pixmaps into the array either from a directory (specifying a wildcard pattern for the files), or from a list of QPixmaps. You can also read in a set of pixmaps after construction using <a href="q3canvaspixmaparray.html#readPixmaps">readPixmaps</a>().</p>
+<p>Individual pixmaps can be set with <a href="q3canvaspixmaparray.html#setImage">setImage</a>() and retrieved with <a href="q3canvaspixmaparray.html#image">image</a>(). The number of pixmaps in the array is returned by <a href="q3canvaspixmaparray.html#count">count</a>().</p>
+<p><a href="q3canvassprite.html">Q3CanvasSprite</a> uses an image's mask for collision detection. You can change this by reading in a separate set of image masks using <a href="q3canvaspixmaparray.html#readCollisionMasks">readCollisionMasks</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasPixmapArray"></a>Q3CanvasPixmapArray::Q3CanvasPixmapArray ()</h3>
+<p>Constructs an invalid array (i.e&#x2e; <a href="q3canvaspixmaparray.html#isValid">isValid</a>() will return false). You must call <a href="q3canvaspixmaparray.html#readPixmaps">readPixmaps</a>() before being able to use this <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>.</p>
+<h3 class="fn"><a name="Q3CanvasPixmapArray-2"></a>Q3CanvasPixmapArray::Q3CanvasPixmapArray ( const <a href="qstring.html">QString</a> &amp; <i>datafilenamepattern</i>, int <i>fc</i> = 0 )</h3>
+<p>Constructs a <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> from files.</p>
+<p>The <i>fc</i> parameter sets the number of frames to be loaded for this image.</p>
+<p>If <i>fc</i> is not 0, <i>datafilenamepattern</i> should contain &quot;%1&quot;, e.g&#x2e; &quot;foo%1.png&quot;. The actual filenames are formed by replacing the %1 with four-digit integers from 0 to (fc - 1), e.g&#x2e; foo0000.png, foo0001.png, foo0002.png, etc.</p>
+<p>If <i>fc</i> is 0, <i>datafilenamepattern</i> is asssumed to be a filename, and the image contained in this file will be loaded as the first (and only) frame.</p>
+<p>If <i>datafilenamepattern</i> does not exist, is not readable, isn't an image, or some other error occurs, the array ends up empty and <a href="q3canvaspixmaparray.html#isValid">isValid</a>() returns false.</p>
+<h3 class="fn"><a name="Q3CanvasPixmapArray-4"></a>Q3CanvasPixmapArray::Q3CanvasPixmapArray ( <a href="q3valuelist.html">Q3ValueList</a>&lt;<a href="qpixmap.html">QPixmap</a>&gt; <i>list</i>, <a href="q3pointarray.html">Q3PointArray</a> <i>hotspots</i> = Q3PointArray() )</h3>
+<p>Constructs a <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> from the list of QPixmaps in the <i>list</i>. Each pixmap will get a hotspot according to the <i>hotspots</i> array. If no hotspots are specified, each one is set to be at position (0, 0).</p>
+<p>If an error occurs, <a href="q3canvaspixmaparray.html#isValid">isValid</a>() will return false.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasPixmapArray"></a>Q3CanvasPixmapArray::~Q3CanvasPixmapArray ()</h3>
+<p>Destroys the pixmap array and all the pixmaps it contains.</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3CanvasPixmapArray::count () const</h3>
+<p>Returns the number of pixmaps in the array.</p>
+<h3 class="fn"><a name="image"></a><a href="q3canvaspixmap.html">Q3CanvasPixmap</a> * Q3CanvasPixmapArray::image ( int <i>i</i> ) const</h3>
+<p>Returns pixmap <i>i</i> in the array, if <i>i</i> is non-negative and less than than <a href="q3canvaspixmaparray.html#count">count</a>(), and returns an unspecified value otherwise.</p>
+<p>See also <a href="q3canvaspixmaparray.html#setImage">setImage</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool Q3CanvasPixmapArray::isValid () const</h3>
+<p>Returns true if the pixmap array is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="readCollisionMasks"></a>bool Q3CanvasPixmapArray::readCollisionMasks ( const <a href="qstring.html">QString</a> &amp; <i>filename</i> )</h3>
+<p>Reads new collision masks for the array.</p>
+<p>By default, <a href="q3canvassprite.html">Q3CanvasSprite</a> uses the image mask of a sprite to detect collisions. Use this function to set your own collision image masks.</p>
+<p>If <a href="q3canvaspixmaparray.html#count">count</a>() is 1 <i>filename</i> must specify a real filename to read the mask from. If <a href="q3canvaspixmaparray.html#count">count</a>() is greater than 1, the <i>filename</i> must contain a &quot;%1&quot; that will get replaced by the number of the mask to be loaded, just like <a href="q3canvaspixmaparray.html#readPixmaps">Q3CanvasPixmapArray::readPixmaps</a>().</p>
+<p>All collision masks must be 1-bit images or this function call will fail.</p>
+<p>If the file isn't readable, contains the wrong number of images, or there is some other error, this function will return false, and the array will be flagged as invalid; otherwise this function returns true.</p>
+<p>See also <a href="q3canvaspixmaparray.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="readPixmaps"></a>bool Q3CanvasPixmapArray::readPixmaps ( const <a href="qstring.html">QString</a> &amp; <i>filenamepattern</i>, int <i>fc</i> = 0 )</h3>
+<p>Reads one or more pixmaps into the pixmap array.</p>
+<p>If <i>fc</i> is not 0, <i>filenamepattern</i> should contain &quot;%1&quot;, e.g&#x2e; &quot;foo%1.png&quot;. The actual filenames are formed by replacing the %1 with four-digit integers from 0 to (fc - 1), e.g&#x2e; foo0000.png, foo0001.png, foo0002.png, etc.</p>
+<p>If <i>fc</i> is 0, <i>filenamepattern</i> is asssumed to be a filename, and the image contained in this file will be loaded as the first (and only) frame.</p>
+<p>If <i>filenamepattern</i> does not exist, is not readable, isn't an image, or some other error occurs, this function will return false, and <a href="q3canvaspixmaparray.html#isValid">isValid</a>() will return false; otherwise this function will return true.</p>
+<p>See also <a href="q3canvaspixmaparray.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="setImage"></a>void Q3CanvasPixmapArray::setImage ( int <i>i</i>, <a href="q3canvaspixmap.html">Q3CanvasPixmap</a> * <i>p</i> )</h3>
+<p>Replaces the pixmap at index <i>i</i> with pixmap <i>p</i>.</p>
+<p>The array takes ownership of <i>p</i> and will delete <i>p</i> when the array itself is deleted.</p>
+<p>If <i>i</i> is beyond the end of the array the array is extended to at least i+1 elements, with elements <a href="q3canvaspixmaparray.html#count">count</a>() to i-1 being initialized to 0.</p>
+<p>See also <a href="q3canvaspixmaparray.html#image">image</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

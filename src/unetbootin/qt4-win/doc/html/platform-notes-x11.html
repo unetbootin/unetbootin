@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/platform-notes.qdoc -->
+<head>
+  <title>Qt 4.4: Platform Notes - X11</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Platform Notes - X11<br /><span class="subtitle"></span>
+</h1>
+<p>This page contains information about the X11 platforms Qt is currently known to run on, with links to platform-specific notes.</p>
+<ul><li><a href="#aix-5-1-or-later">AIX - 5.1 or later</a></li>
+<li><a href="#freebsd-6-0-release">FreeBSD - 6.0-RELEASE</a></li>
+<li><a href="#hp-ux">HP-UX</a></li>
+<ul><li><a href="#pa-risc-b-11-11-or-later">PA-RISC - B.11.11 or later</a></li>
+<li><a href="#itanium-b-11-23-or-later">Itanium - B.11.23 or later</a></li>
+<li><a href="#opengl-support">OpenGL Support</a></li>
+</ul>
+<li><a href="#irix-6-5-x">IRIX - 6.5&#x2e;x</a></li>
+<li><a href="#linux">Linux</a></li>
+<ul><li><a href="#installation-problems">Installation problems</a></li>
+</ul>
+<li><a href="#solaris-9-or-later">Solaris - 9 or later</a></li>
+<ul><li><a href="#cc-on-solaris">CC on Solaris</a></li>
+<li><a href="#gcc-on-solaris">GCC on Solaris</a></li>
+<li><a href="#solaris-2-6">Solaris 2.6</a></li>
+</ul>
+</ul>
+<a name="aix"></a><a name="aix-5-1-or-later"></a>
+<h2>AIX - 5.1 or later</h2>
+<p>Qt has been built on a range of versions from 5.1 upwards, using both the <a href="compiler-notes.html#ibm-xlc-aix">AIX</a> and <a href="compiler-notes.html#gcc">GCC</a> compilers.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Compiler</th><th>Notes</th></tr></thead>
+<tr valign="top" class="odd"><td>xlC</td><td>If Qt is built correctly but all symbols are reported to be missing when you link an application, your makeC++SharedLib script might be out of date. Make sure you have the latest version from the <a href="http://www-306.ibm.com/software/awdtools/vacpp/support/">IBM website</a>.</td></tr>
+<tr valign="top" class="even"><td>GCC</td><td>We have tested Qt 4 successfully with GCC version 3.3 and above. Some versions of GCC may fail to link Qt with a &quot;TOC overflow&quot; message. Fix this by upgrading to the latest maintenance release of the dynamic linker. On AIX this is bos.rte.bind_cmds.4.1&#x2e;5&#x2e;3&#x2e; Some versions of GCC may fail to build Qt with STL and large-file support enabled, due to <a href="http://gcc.gnu.org/bugzilla/show_bug.cgi?id=9551">a bug in GCC</a>. Fix this by upgrading to the latest maintenance release of the compiler. It is also possible to work around this problem by running configure with either <tt>-no-stl</tt> or <tt>-no-largefile</tt>.</td></tr>
+</table></p>
+<a name="freebsd"></a><a name="freebsd-6-0-release"></a>
+<h2>FreeBSD - 6.0-RELEASE</h2>
+<p>The system compiler on <a href="#freebsd">FreeBSD</a> 4.x is gcc 2.95.4, which is not officially supported by Qt 4. We develop using and recommend ports/lang/gcc34. You will need to run configure with the <tt>-platform freebsd-g++34</tt> arguments. Optionally, you may use ports/lang/icc.</p>
+<p>The system compiler on <a href="#freebsd">FreeBSD</a> 5.x and 6.x is gcc 3.4&#x2e;4, which is officially supported by Qt. You do not need to add any special arguments when running configure. Optionally, you may use ports/lang/icc.</p>
+<p>Note that we do not actively test <a href="#freebsd">FreeBSD</a> 4.x and 5.x&#x2e; Our developers migrated to 6.x after the Qt 4 launch. <a href="#freebsd">FreeBSD</a>-CURRENT is not supported.</p>
+<a name="hp-ux"></a><a name="hp-ux"></a>
+<h2>HP-UX</h2>
+<p>Qt supports HP-UX on both PA-RISC and the Itanium (IA64) architectures.</p>
+<a name="pa-risc-b-11-11-or-later"></a>
+<h3>PA-RISC - B.11.11 or later</h3>
+<p>You can configure Qt for aCC in 32 and 64 bit mode (hpux-acc-64 or hpux-acc-32), or gcc in 32 bit mode (hpux-g++). The default platform is hpux-acc-32. The minimum required version for aCC (HP ANSI C++) on PA-RISC is A.03.57. The supported gcc compiler is gcc 3.4&#x2e;3&#x2e;</p>
+<a name="itanium-b-11-23-or-later"></a>
+<h3>Itanium - B.11.23 or later</h3>
+<p>You can configure Qt for aCC in 32 and 64 bit mode (hpuxi-acc-64 or hpuxi-acc-32). gcc is currently unsupported. The default platform is hpuxi-acc-64. The minimum required version for aCC (HP ANSI C++) on Itanium is A.06.12.</p>
+<a name="opengl-support"></a>
+<h3>OpenGL Support</h3>
+<p>Qt's <a href="qtopengl.html">OpenGL</a> module requires GLX 1.3 or later to be installed. This is available for HP-UX 11i - see the <a href="http://docs.hp.com/en/5992-2331/ch04s02.html">Graphics and Technical Computing Software</a> section of the release notes for more information.</p>
+<a name="irix"></a><a name="irix-6-5-x"></a>
+<h2>IRIX - 6.5&#x2e;x</h2>
+<p>Unpackaging and IRIX tar: Because of long filenames some files will be cut off incorrectly with IRIX tar. Please use GNU tar to unpack Qt packages.</p>
+<a name="linux"></a>
+<h2>Linux</h2>
+<p>There are no known problems with using Qt on production versions of Linux/x86, Linux/ppc, Linux/amd64 and Linux/ia64 (including Altix(R)). We do our Unix development mainly on Linux/x86.</p>
+<p>For the gcc/g++ compiler, please also see the relevant <a href="compiler-notes.html#gcc">compiler page</a>.</p>
+<a name="installation-problems"></a>
+<h3>Installation problems</h3>
+<p>See also the <a href="http://www.trolltech.com/developer/faqs/Qt/installation">Installation FAQ</a>.</p>
+<p>If you experience problems when installing new Qt Open Source Edition versions, try to use the Qt Open Source Edition archives (e.g&#x2e; RPM) provided by your Linux provider. If you need to install the source (.tgz) archive, be aware that you will probably end up with two different versions of the Qt library installed on your system, which will probably lead to link errors, like this:</p>
+<pre>     undefined reference to `_vt.11QPushButton'</pre>
+<p>Fix this by removing the old version of the library.</p>
+<p>If you have problems installing a Qt Open Source Edition Linux archive (e.g&#x2e; RPM), please consult your Linux provider (who made it), not us.</p>
+<p>Some RPM versions have problems installing some of the Qt RPM archives where installation stops with an error message warning about a &quot;Failed Dependency&quot;. Use the <tt>--nodeps</tt> option to <tt>rpm</tt> to workaround this problem.</p>
+<a name="solaris"></a><a name="solaris-9-or-later"></a>
+<h2>Solaris - 9 or later</h2>
+<a name="cc-on-solaris"></a>
+<h3>CC on Solaris</h3>
+<p>Be sure to check our <a href="compiler-notes.html#sun-studio">Forte Developer / Sun Studio</a> notes.</p>
+<a name="gcc-on-solaris"></a>
+<h3>GCC on Solaris</h3>
+<p>Be sure to check the installation notes for <a href="http://gcc.gnu.org/install/specific.html#x-x-solaris2">GCC on Solaris</a>. Do not use GCC with Sun's assembler/linker, this will result in link-time errors in shared libraries. Use GNU binutils instead.</p>
+<p>GCC 3.2&#x2e;* is known to miscompile Qt due to an optimizer bug that will cause the resulting binaries to hang.</p>
+<p>GCC gives compilation error</p>
+<pre>     ANSI C++ forbids declaration ... with no type</pre>
+<p>on systems with old X11 header files. This is fixed by patches <a href="http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-108652">108652-24</a> on Solaris 8, <a href="http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-108376">108376-21</a> on Solaris 7, and <a href="http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-105633">105633-56</a> on Solaris 2.6&#x2e;</p>
+<a name="solaris-2-6"></a>
+<h3>Solaris 2.6</h3>
+<p>A crash on resize of widgets example has been reported, but not reproduced. Patch <a href="http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-105633">105633-21</a> is reported to solve the problem. We are interested in hearing more details from anyone who can reproduce and track this problem closer.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,105 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page unix-signals.html
+    \title Calling Qt Functions From Unix Signal Handlers
+    \ingroup platform-notes
+    \brief You can't. But don't despair, there is a way...
+
+    You \e can't call Qt functions from Unix signal handlers. The
+    standard POSIX rule applies: You can only call async-signal-safe
+    functions from signal handlers. See \l
+    {http://www.opengroup.org/onlinepubs/000095399/functions/xsh_chap02_04.html#tag_02_04_01}
+    {Signal Actions} for the complete list of functions you can call
+    from Unix signal handlers.
+
+    But don't despair, there is a way to use Unix signal handlers with
+    Qt. The strategy is to have your Unix signal handler do something
+    that will eventually cause a Qt signal to be emitted, and then you
+    simply return from your Unix signal handler. Back in your Qt
+    program, that Qt signal gets emitted and then received by your Qt
+    slot function, where you can safely do whatever Qt stuff you
+    weren't allowed to do in the Unix signal handler.
+
+    One simple way to make this happen is to declare a socket pair in
+    your class for each Unix signal you want to handle. The socket
+    pairs are declared as static data members. You also create a
+    QSocketNotifier to monitor the \e read end of each socket pair,
+    declare your Unix signal handlers to be static class methods, and
+    declare a slot function corresponding to each of your Unix signal
+    handlers. In this example, we intend to handle both the SIGHUP and
+    SIGTERM signals. Note: You should read the socketpair(2) and the
+    sigaction(2) man pages before plowing through the following code
+    snippets.
+    
+    \snippet doc/src/snippets/code/doc.src.unix-signal-handlers.qdoc 0
+
+    In the MyDaemon constructor, use the socketpair(2) function to
+    initialize each file descriptor pair, and then create the
+    QSocketNotifier to monitor the \e read end of each pair. The
+    activated() signal of each QSocketNotifier is connected to the
+    appropriate slot function, which effectively converts the Unix
+    signal to the QSocketNotifier::activated() signal.
+
+    \snippet doc/src/snippets/code/doc.src.unix-signal-handlers.qdoc 1
+
+    Somewhere else in your startup code, you install your Unix signal
+    handlers with sigaction(2).
+
+    \snippet doc/src/snippets/code/doc.src.unix-signal-handlers.qdoc 2
+
+    In your Unix signal handlers, you write a byte to the \e write end
+    of a socket pair and return. This will cause the corresponding
+    QSocketNotifier to emit its activated() signal, which will in turn
+    cause the appropriate Qt slott function to run.
+
+    \snippet doc/src/snippets/code/doc.src.unix-signal-handlers.qdoc 3
+
+    In the slot functions connected to the
+    QSocketNotifier::activated() signals, you \e read the byte. Now
+    you are safely back in Qt with your signal, and you can do all the
+    Qt stuff you weren'tr allowed to do in the Unix signal handler.
+
+    \snippet doc/src/snippets/code/doc.src.unix-signal-handlers.qdoc 4
+*/

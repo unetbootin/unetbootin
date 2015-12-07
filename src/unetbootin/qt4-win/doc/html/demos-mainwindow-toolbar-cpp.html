@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: toolbar.cpp Example File (demos/mainwindow/toolbar.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">toolbar.cpp Example File<br /><span class="small-subtitle">demos/mainwindow/toolbar.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;toolbar.h&quot;
+
+ #include &lt;QMainWindow&gt;
+ #include &lt;QMenu&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QPainterPath&gt;
+ #include &lt;QSpinBox&gt;
+ #include &lt;QLabel&gt;
+ #include &lt;QToolTip&gt;
+
+ #include &lt;stdlib.h&gt;
+
+ static QPixmap genIcon(const QSize &amp;iconSize, const QString &amp;, const QColor &amp;color)
+ {
+     int w = iconSize.width();
+     int h = iconSize.height();
+
+     QImage image(w, h, QImage::Format_ARGB32_Premultiplied);
+     image.fill(0);
+
+     QPainter p(&amp;image);
+
+     extern void render_qt_text(QPainter *, int, int, const QColor &amp;);
+     render_qt_text(&amp;p, w, h, color);
+
+     return QPixmap::fromImage(image, Qt::DiffuseDither | Qt::DiffuseAlphaDither);
+ }
+
+ static QPixmap genIcon(const QSize &amp;iconSize, int number, const QColor &amp;color)
+ { return genIcon(iconSize, QString::number(number), color); }
+
+ ToolBar::ToolBar(const QString &amp;title, QWidget *parent)
+     : QToolBar(parent), spinbox(0), spinboxAction(0)
+ {
+     tip = 0;
+     setWindowTitle(title);
+     setObjectName(title);
+
+     setIconSize(QSize(32, 32));
+
+     QColor bg(palette().background().color());
+     menu = new QMenu(&quot;One&quot;, this);
+     menu-&gt;setIcon(genIcon(iconSize(), 1, Qt::black));
+     menu-&gt;addAction(genIcon(iconSize(), &quot;A&quot;, Qt::blue), &quot;A&quot;);
+     menu-&gt;addAction(genIcon(iconSize(), &quot;B&quot;, Qt::blue), &quot;B&quot;);
+     menu-&gt;addAction(genIcon(iconSize(), &quot;C&quot;, Qt::blue), &quot;C&quot;);
+     addAction(menu-&gt;menuAction());
+
+     QAction *two = addAction(genIcon(iconSize(), 2, Qt::white), &quot;Two&quot;);
+     QFont boldFont;
+     boldFont.setBold(true);
+     two-&gt;setFont(boldFont);
+
+     addAction(genIcon(iconSize(), 3, Qt::red), &quot;Three&quot;);
+     addAction(genIcon(iconSize(), 4, Qt::green), &quot;Four&quot;);
+     addAction(genIcon(iconSize(), 5, Qt::blue), &quot;Five&quot;);
+     addAction(genIcon(iconSize(), 6, Qt::yellow), &quot;Six&quot;);
+     orderAction = new QAction(this);
+     orderAction-&gt;setText(tr(&quot;Order Items in Tool Bar&quot;));
+     connect(orderAction, SIGNAL(triggered()), SLOT(order()));
+
+     randomizeAction = new QAction(this);
+     randomizeAction-&gt;setText(tr(&quot;Randomize Items in Tool Bar&quot;));
+     connect(randomizeAction, SIGNAL(triggered()), SLOT(randomize()));
+
+     addSpinBoxAction = new QAction(this);
+     addSpinBoxAction-&gt;setText(tr(&quot;Add Spin Box&quot;));
+     connect(addSpinBoxAction, SIGNAL(triggered()), SLOT(addSpinBox()));
+
+     removeSpinBoxAction = new QAction(this);
+     removeSpinBoxAction-&gt;setText(tr(&quot;Remove Spin Box&quot;));
+     removeSpinBoxAction-&gt;setEnabled(false);
+     connect(removeSpinBoxAction, SIGNAL(triggered()), SLOT(removeSpinBox()));
+
+     movableAction = new QAction(tr(&quot;Movable&quot;), this);
+     movableAction-&gt;setCheckable(true);
+     connect(movableAction, SIGNAL(triggered(bool)), SLOT(changeMovable(bool)));
+
+     allowedAreasActions = new QActionGroup(this);
+     allowedAreasActions-&gt;setExclusive(false);
+
+     allowLeftAction = new QAction(tr(&quot;Allow on Left&quot;), this);
+     allowLeftAction-&gt;setCheckable(true);
+     connect(allowLeftAction, SIGNAL(triggered(bool)), SLOT(allowLeft(bool)));
+
+     allowRightAction = new QAction(tr(&quot;Allow on Right&quot;), this);
+     allowRightAction-&gt;setCheckable(true);
+     connect(allowRightAction, SIGNAL(triggered(bool)), SLOT(allowRight(bool)));
+
+     allowTopAction = new QAction(tr(&quot;Allow on Top&quot;), this);
+     allowTopAction-&gt;setCheckable(true);
+     connect(allowTopAction, SIGNAL(triggered(bool)), SLOT(allowTop(bool)));
+
+     allowBottomAction = new QAction(tr(&quot;Allow on Bottom&quot;), this);
+     allowBottomAction-&gt;setCheckable(true);
+     connect(allowBottomAction, SIGNAL(triggered(bool)), SLOT(allowBottom(bool)));
+
+     allowedAreasActions-&gt;addAction(allowLeftAction);
+     allowedAreasActions-&gt;addAction(allowRightAction);
+     allowedAreasActions-&gt;addAction(allowTopAction);
+     allowedAreasActions-&gt;addAction(allowBottomAction);
+
+     areaActions = new QActionGroup(this);
+     areaActions-&gt;setExclusive(true);
+
+     leftAction = new QAction(tr(&quot;Place on Left&quot;) , this);
+     leftAction-&gt;setCheckable(true);
+     connect(leftAction, SIGNAL(triggered(bool)), SLOT(placeLeft(bool)));
+
+     rightAction = new QAction(tr(&quot;Place on Right&quot;) , this);
+     rightAction-&gt;setCheckable(true);
+     connect(rightAction, SIGNAL(triggered(bool)), SLOT(placeRight(bool)));
+
+     topAction = new QAction(tr(&quot;Place on Top&quot;) , this);
+     topAction-&gt;setCheckable(true);
+     connect(topAction, SIGNAL(triggered(bool)), SLOT(placeTop(bool)));
+
+     bottomAction = new QAction(tr(&quot;Place on Bottom&quot;) , this);
+     bottomAction-&gt;setCheckable(true);
+     connect(bottomAction, SIGNAL(triggered(bool)), SLOT(placeBottom(bool)));
+
+     areaActions-&gt;addAction(leftAction);
+     areaActions-&gt;addAction(rightAction);
+     areaActions-&gt;addAction(topAction);
+     areaActions-&gt;addAction(bottomAction);
+
+     toolBarBreakAction = new QAction(tr(&quot;Insert break&quot;), this);
+     connect(toolBarBreakAction, SIGNAL(triggered(bool)), this, SLOT(insertToolBarBreak()));
+
+     connect(movableAction, SIGNAL(triggered(bool)), areaActions, SLOT(setEnabled(bool)));
+
+     connect(movableAction, SIGNAL(triggered(bool)), allowedAreasActions, SLOT(setEnabled(bool)));
+
+     menu = new QMenu(title, this);
+     menu-&gt;addAction(toggleViewAction());
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(orderAction);
+     menu-&gt;addAction(randomizeAction);
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(addSpinBoxAction);
+     menu-&gt;addAction(removeSpinBoxAction);
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(movableAction);
+     menu-&gt;addSeparator();
+     menu-&gt;addActions(allowedAreasActions-&gt;actions());
+     menu-&gt;addSeparator();
+     menu-&gt;addActions(areaActions-&gt;actions());
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(toolBarBreakAction);
+
+     connect(menu, SIGNAL(aboutToShow()), this, SLOT(updateMenu()));
+
+     randomize();
+ }
+
+ void ToolBar::updateMenu()
+ {
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     Q_ASSERT(mainWindow != 0);
+
+     const Qt::ToolBarArea area = mainWindow-&gt;toolBarArea(this);
+     const Qt::ToolBarAreas areas = allowedAreas();
+
+     movableAction-&gt;setChecked(isMovable());
+
+     allowLeftAction-&gt;setChecked(isAreaAllowed(Qt::LeftToolBarArea));
+     allowRightAction-&gt;setChecked(isAreaAllowed(Qt::RightToolBarArea));
+     allowTopAction-&gt;setChecked(isAreaAllowed(Qt::TopToolBarArea));
+     allowBottomAction-&gt;setChecked(isAreaAllowed(Qt::BottomToolBarArea));
+
+     if (allowedAreasActions-&gt;isEnabled()) {
+         allowLeftAction-&gt;setEnabled(area != Qt::LeftToolBarArea);
+         allowRightAction-&gt;setEnabled(area != Qt::RightToolBarArea);
+         allowTopAction-&gt;setEnabled(area != Qt::TopToolBarArea);
+         allowBottomAction-&gt;setEnabled(area != Qt::BottomToolBarArea);
+     }
+
+     leftAction-&gt;setChecked(area == Qt::LeftToolBarArea);
+     rightAction-&gt;setChecked(area == Qt::RightToolBarArea);
+     topAction-&gt;setChecked(area == Qt::TopToolBarArea);
+     bottomAction-&gt;setChecked(area == Qt::BottomToolBarArea);
+
+     if (areaActions-&gt;isEnabled()) {
+         leftAction-&gt;setEnabled(areas &amp; Qt::LeftToolBarArea);
+         rightAction-&gt;setEnabled(areas &amp; Qt::RightToolBarArea);
+         topAction-&gt;setEnabled(areas &amp; Qt::TopToolBarArea);
+         bottomAction-&gt;setEnabled(areas &amp; Qt::BottomToolBarArea);
+     }
+ }
+
+ void ToolBar::order()
+ {
+     QList&lt;QAction *&gt; ordered, actions1 = actions(),
+                               actions2 = qFindChildren&lt;QAction *&gt;(this);
+     while (!actions2.isEmpty()) {
+         QAction *action = actions2.takeFirst();
+         if (!actions1.contains(action))
+             continue;
+         actions1.removeAll(action);
+         ordered.append(action);
+     }
+
+     clear();
+     addActions(ordered);
+
+     orderAction-&gt;setEnabled(false);
+ }
+
+ void ToolBar::randomize()
+ {
+     QList&lt;QAction *&gt; randomized, actions = this-&gt;actions();
+     while (!actions.isEmpty()) {
+         QAction *action = actions.takeAt(rand() % actions.size());
+         randomized.append(action);
+     }
+     clear();
+     addActions(randomized);
+
+     orderAction-&gt;setEnabled(true);
+ }
+
+ void ToolBar::addSpinBox()
+ {
+     if (!spinbox) {
+         spinbox = new QSpinBox(this);
+     }
+     if (!spinboxAction)
+         spinboxAction = addWidget(spinbox);
+     else
+         addAction(spinboxAction);
+
+     addSpinBoxAction-&gt;setEnabled(false);
+     removeSpinBoxAction-&gt;setEnabled(true);
+ }
+
+ void ToolBar::removeSpinBox()
+ {
+     if (spinboxAction)
+         removeAction(spinboxAction);
+
+     addSpinBoxAction-&gt;setEnabled(true);
+     removeSpinBoxAction-&gt;setEnabled(false);
+ }
+
+ void ToolBar::allow(Qt::ToolBarArea area, bool a)
+ {
+     Qt::ToolBarAreas areas = allowedAreas();
+     areas = a ? areas | area : areas &amp; ~area;
+     setAllowedAreas(areas);
+
+     if (areaActions-&gt;isEnabled()) {
+         leftAction-&gt;setEnabled(areas &amp; Qt::LeftToolBarArea);
+         rightAction-&gt;setEnabled(areas &amp; Qt::RightToolBarArea);
+         topAction-&gt;setEnabled(areas &amp; Qt::TopToolBarArea);
+         bottomAction-&gt;setEnabled(areas &amp; Qt::BottomToolBarArea);
+     }
+ }
+
+ void ToolBar::place(Qt::ToolBarArea area, bool p)
+ {
+     if (!p)
+         return;
+
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     Q_ASSERT(mainWindow != 0);
+
+     mainWindow-&gt;addToolBar(area, this);
+
+     if (allowedAreasActions-&gt;isEnabled()) {
+         allowLeftAction-&gt;setEnabled(area != Qt::LeftToolBarArea);
+         allowRightAction-&gt;setEnabled(area != Qt::RightToolBarArea);
+         allowTopAction-&gt;setEnabled(area != Qt::TopToolBarArea);
+         allowBottomAction-&gt;setEnabled(area != Qt::BottomToolBarArea);
+     }
+ }
+
+ void ToolBar::changeMovable(bool movable)
+ { setMovable(movable); }
+
+ void ToolBar::allowLeft(bool a)
+ { allow(Qt::LeftToolBarArea, a); }
+
+ void ToolBar::allowRight(bool a)
+ { allow(Qt::RightToolBarArea, a); }
+
+ void ToolBar::allowTop(bool a)
+ { allow(Qt::TopToolBarArea, a); }
+
+ void ToolBar::allowBottom(bool a)
+ { allow(Qt::BottomToolBarArea, a); }
+
+ void ToolBar::placeLeft(bool p)
+ { place(Qt::LeftToolBarArea, p); }
+
+ void ToolBar::placeRight(bool p)
+ { place(Qt::RightToolBarArea, p); }
+
+ void ToolBar::placeTop(bool p)
+ { place(Qt::TopToolBarArea, p); }
+
+ void ToolBar::placeBottom(bool p)
+ { place(Qt::BottomToolBarArea, p); }
+
+ void ToolBar::insertToolBarBreak()
+ {
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     Q_ASSERT(mainWindow != 0);
+
+     mainWindow-&gt;insertToolBarBreak(this);
+ }
+
+ void ToolBar::enterEvent(QEvent*)
+ {
+<span class="comment"> /*
+     These labels on top of toolbars look darn ugly
+
+     if (tip == 0) {
+         tip = new QLabel(windowTitle(), this);
+         QPalette pal = tip-&gt;palette();
+         QColor c = Qt::black;
+         c.setAlpha(100);
+         pal.setColor(QPalette::Window, c);
+         pal.setColor(QPalette::Foreground, Qt::white);
+         tip-&gt;setPalette(pal);
+         tip-&gt;setAutoFillBackground(true);
+         tip-&gt;setMargin(3);
+         tip-&gt;setText(windowTitle());
+     }
+     QPoint c = rect().center();
+     QSize hint = tip-&gt;sizeHint();
+     tip-&gt;setGeometry(c.x() - hint.width()/2, c.y() - hint.height()/2,
+                         hint.width(), hint.height());
+
+     tip-&gt;show();
+ */</span>
+ }
+
+ void ToolBar::leaveEvent(QEvent*)
+ {
+     if (tip != 0)
+         tip-&gt;hide();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

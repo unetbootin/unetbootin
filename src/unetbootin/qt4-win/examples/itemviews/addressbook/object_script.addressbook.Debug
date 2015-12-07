@@ -1,0 +1,13 @@
+INPUT(
+./tmp\obj\debug_static\adddialog.o
+./tmp\obj\debug_static\addresswidget.o
+./tmp\obj\debug_static\main.o
+./tmp\obj\debug_static\mainwindow.o
+./tmp\obj\debug_static\newaddresstab.o
+./tmp\obj\debug_static\tablemodel.o
+./tmp\obj\debug_static\moc_adddialog.o
+./tmp\obj\debug_static\moc_addresswidget.o
+./tmp\obj\debug_static\moc_mainwindow.o
+./tmp\obj\debug_static\moc_newaddresstab.o
+./tmp\obj\debug_static\moc_tablemodel.o
+);

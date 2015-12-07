@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: panel.cpp Example File (graphicsview/padnavigator/panel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">panel.cpp Example File<br /><span class="small-subtitle">graphicsview/padnavigator/panel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;panel.h&quot;
+ #include &quot;roundrectitem.h&quot;
+ #include &quot;splashitem.h&quot;
+ #include &quot;ui_backside.h&quot;
+
+ #ifndef QT_NO_OPENGL
+ #include &lt;QtOpenGL/QtOpenGL&gt;
+ #else
+ #endif
+ #include &lt;QtGui/QtGui&gt;
+
+ #include &lt;math.h&gt;
+
+ Panel::Panel(int width, int height)
+     : selectedX(0),
+       selectedY(0),
+       width(width),
+       height(height),
+       flipped(false),
+       flipLeft(true)
+ {
+     setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     setCacheMode(CacheBackground);
+     setViewportUpdateMode(FullViewportUpdate);
+     setRenderHints(QPainter::Antialiasing | QPainter::SmoothPixmapTransform);
+     setBackgroundBrush(QPixmap(&quot;:/images/blue_angle_swirl.jpg&quot;));
+ #ifndef QT_NO_OPENGL
+     setViewport(new QGLWidget(QGLFormat(QGL::SampleBuffers)));
+ #endif
+
+     selectionTimeLine = new QTimeLine(150, this);
+     flipTimeLine = new QTimeLine(500, this);
+
+     QRectF bounds((-width / 2.0) * 150, (-height / 2.0) * 150, width * 150, height * 150);
+
+     scene = new QGraphicsScene(bounds, this);
+     setScene(scene);
+
+     baseItem = new RoundRectItem(bounds, QColor(226, 255, 92, 64));
+     scene-&gt;addItem(baseItem);
+
+     QWidget *embed = new QWidget;
+     ui = new Ui_BackSide;
+     ui-&gt;setupUi(embed);
+     ui-&gt;hostName-&gt;setFocus();
+
+     backItem = new RoundRectItem(bounds, embed-&gt;palette().window(), embed);
+     backItem-&gt;setTransform(QTransform().rotate(180, Qt::YAxis));
+     backItem-&gt;setParentItem(baseItem);
+
+     selectionItem = new RoundRectItem(QRectF(-60, -60, 120, 120), Qt::gray);
+     selectionItem-&gt;setParentItem(baseItem);
+     selectionItem-&gt;setZValue(-1);
+     selectionItem-&gt;setPos(posForLocation(0, 0));
+     startPos = selectionItem-&gt;pos();
+
+     grid = new QGraphicsItem **[height];
+
+     for (int y = 0; y &lt; height; ++y) {
+         grid[y] = new QGraphicsItem *[width];
+
+         for (int x = 0; x &lt; width; ++x) {
+             RoundRectItem *item = new RoundRectItem(QRectF(-54, -54, 108, 108),
+                                                     QColor(214, 240, 110, 128));
+             item-&gt;setPos(posForLocation(x, y));
+
+             item-&gt;setParentItem(baseItem);
+             item-&gt;setFlag(QGraphicsItem::ItemIsFocusable);
+             grid[y][x] = item;
+
+             switch (qrand() % 9) {
+             case 0: item-&gt;setPixmap(QPixmap(&quot;:/images/kontact_contacts.png&quot;)); break;
+             case 1: item-&gt;setPixmap(QPixmap(&quot;:/images/kontact_journal.png&quot;)); break;
+             case 2: item-&gt;setPixmap(QPixmap(&quot;:/images/kontact_notes.png&quot;)); break;
+             case 3: item-&gt;setPixmap(QPixmap(&quot;:/images/kopeteavailable.png&quot;)); break;
+             case 4: item-&gt;setPixmap(QPixmap(&quot;:/images/metacontact_online.png&quot;)); break;
+             case 5: item-&gt;setPixmap(QPixmap(&quot;:/images/minitools.png&quot;)); break;
+             case 6: item-&gt;setPixmap(QPixmap(&quot;:/images/kontact_journal.png&quot;)); break;
+             case 7: item-&gt;setPixmap(QPixmap(&quot;:/images/kontact_contacts.png&quot;)); break;
+             case 8: item-&gt;setPixmap(QPixmap(&quot;:/images/kopeteavailable.png&quot;)); break;
+             default:
+                 break;
+             }
+
+             connect(item, SIGNAL(activated()), this, SLOT(flip()));
+         }
+     }
+
+     grid[0][0]-&gt;setFocus();
+
+     connect(backItem, SIGNAL(activated()),
+             this, SLOT(flip()));
+     connect(selectionTimeLine, SIGNAL(valueChanged(qreal)),
+             this, SLOT(updateSelectionStep(qreal)));
+     connect(flipTimeLine, SIGNAL(valueChanged(qreal)),
+             this, SLOT(updateFlipStep(qreal)));
+
+     splash = new SplashItem;
+     splash-&gt;setZValue(5);
+     splash-&gt;setPos(-splash-&gt;rect().width() / 2, scene-&gt;sceneRect().top());
+     scene-&gt;addItem(splash);
+
+     splash-&gt;grabKeyboard();
+
+     updateSelectionStep(0);
+
+     setWindowTitle(tr(&quot;Pad Navigator Example&quot;));
+ }
+
+ Panel::~Panel()
+ {
+     for (int y = 0; y &lt; height; ++y)
+         delete [] grid[y];
+     delete [] grid;
+ }
+
+ void Panel::keyPressEvent(QKeyEvent *event)
+ {
+     if (splash-&gt;isVisible() || event-&gt;key() == Qt::Key_Return || flipped) {
+         QGraphicsView::keyPressEvent(event);
+         return;
+     }
+
+     selectedX = (selectedX + width + (event-&gt;key() == Qt::Key_Right) - (event-&gt;key() == Qt::Key_Left)) % width;
+     selectedY = (selectedY + height + (event-&gt;key() == Qt::Key_Down) - (event-&gt;key() == Qt::Key_Up)) % height;
+     grid[selectedY][selectedX]-&gt;setFocus();
+
+     selectionTimeLine-&gt;stop();
+     startPos = selectionItem-&gt;pos();
+     endPos = posForLocation(selectedX, selectedY);
+     selectionTimeLine-&gt;start();
+ }
+
+ void Panel::resizeEvent(QResizeEvent *event)
+ {
+     QGraphicsView::resizeEvent(event);
+     fitInView(scene-&gt;sceneRect(), Qt::KeepAspectRatio);
+ }
+
+ void Panel::updateSelectionStep(qreal val)
+ {
+     QPointF newPos(startPos.x() + (endPos - startPos).x() * val,
+                    startPos.y() + (endPos - startPos).y() * val);
+     selectionItem-&gt;setPos(newPos);
+
+     QTransform transform;
+     yrot = newPos.x() / 6.0;
+     xrot = newPos.y() / 6.0;
+     transform.rotate(newPos.x() / 6.0, Qt::YAxis);
+     transform.rotate(newPos.y() / 6.0, Qt::XAxis);
+     baseItem-&gt;setTransform(transform);
+ }
+
+ void Panel::updateFlipStep(qreal val)
+ {
+     qreal finalxrot = xrot - xrot * val;
+     qreal finalyrot;
+     if (flipLeft)
+         finalyrot = yrot - yrot * val - 180 * val;
+     else
+         finalyrot = yrot - yrot * val + 180 * val;
+     QTransform transform;
+     transform.rotate(finalyrot, Qt::YAxis);
+     transform.rotate(finalxrot, Qt::XAxis);
+     qreal scale = 1 - sin(3.14 * val) * 0.3;
+     transform.scale(scale, scale);
+     baseItem-&gt;setTransform(transform);
+     if (val == 0)
+         grid[selectedY][selectedX]-&gt;setFocus();
+ }
+
+ void Panel::flip()
+ {
+     if (flipTimeLine-&gt;state() == QTimeLine::Running)
+         return;
+
+     if (flipTimeLine-&gt;currentValue() == 0) {
+         flipTimeLine-&gt;setDirection(QTimeLine::Forward);
+         flipTimeLine-&gt;start();
+         flipped = true;
+         flipLeft = selectionItem-&gt;pos().x() &lt; 0;
+     } else {
+         flipTimeLine-&gt;setDirection(QTimeLine::Backward);
+         flipTimeLine-&gt;start();
+         flipped = false;
+     }
+ }
+
+ QPointF Panel::posForLocation(int x, int y) const
+ {
+     return QPointF(x * 150, y * 150)
+         - QPointF((width - 1) * 75, (height - 1) * 75);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

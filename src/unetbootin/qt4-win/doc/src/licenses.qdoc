@@ -1,0 +1,473 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! 
+    \page licenses.html
+    \title Licenses for Code Used in Qt
+    \ingroup licensing
+    \brief Information about licenses of third-party code used in Qt.
+
+    Qt contains some code that is not provided under the the \l{GNU
+    General Public License (GPL)} or the
+    \l{Qt Commercial Editions}{Qt Commercial License Agreement},
+    but rather under specific licenses from the original authors.
+    This page lists the licenses used, names the authors, and links
+    to the places where it is used.
+
+    Trolltech gratefully acknowledges these and other contributions
+    to Qt. We recommend that programs that use Qt also acknowledge
+    these contributions, and quote these license statements in an
+    appendix to the documentation.
+
+    See also: \l{Licenses for Fonts Used in Qt for Embedded Linux}
+
+    \generatelist legalese
+
+    \raw HTML
+    <hr />
+    \endraw
+
+    Copyright (c) 1998 by Bjorn Reese <breese@imada.ou.dk>
+
+    Permission to use, copy, modify, and distribute this software for any
+    purpose with or without fee is hereby granted, provided that the above
+    copyright notice and this permission notice appear in all copies.
+
+    THIS SOFTWARE IS PROVIDED ``AS IS'' AND WITHOUT ANY EXPRESS OR IMPLIED
+    WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+    MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE. THE AUTHORS AND
+    CONTRIBUTORS ACCEPT NO RESPONSIBILITY IN ANY CONCEIVABLE MANNER.
+
+    \list
+    \o Parts of the QCrashHandler Class
+    \endlist
+
+    \raw HTML
+    <hr />
+    \endraw
+
+    Parts of the FreeType projects have been modified and put into Qt
+    for use in the painting subsystem. These files are ftraster.h,
+    ftraster.c, ftgrays.h and ftgrays.c. The following modifications
+    has been made to these files:
+
+    \list
+    \i Renamed FT_ and ft_ symbols to QT_FT_ and qt_ft_ to avoid name
+    conflicts in \c{qrasterdefs_p.h}.
+    \i Removed parts of code not relevant when compiled with
+    _STANDALONE_ defined.
+    \i Changed behavior in \c{ftraster.c} to follow X polygon filling
+    rules.
+    \i Implemented support in \c{ftraster.c} for winding / odd even
+    polygon fill rules.
+    \i Replaced bitmap generation with span generation in \c{ftraster.c}.
+    \i Renamed \c{ftraster.h} as \c{qblackraster_p.h}.
+    \i Renamed \c{ftraster.c} as \c{qblackraster.c}.
+    \i Renamed \c{ftgrays.h} as \c{qgrayraster_p.h}.
+    \i Renamed \c{ftgrays.c} as \c{qgrayraster.c}.
+    \endlist
+
+    See \c src/3rdparty/freetype/docs/FTL.txt and \c
+    src/3rdparty/freetype/docs/GPL.txt for license details.
+
+    \hr
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc 0
+
+    \list
+    \o Parts of the Q3PolygonScanner Class Used in Qt for Embedded Linux
+    \endlist
+*/
+
+/*!
+    \page licenses-fonts.html
+    \title Licenses for Fonts Used in Qt for Embedded Linux
+    \ingroup qt-embedded
+    \ingroup licensing
+    \brief Information about the licenses of fonts supplied with Qt for Embedded Linux.
+
+    The fonts supplied with Qt for Embedded Linux have been obtained under a
+    variety of different licenses listed below.
+
+    \tableofcontents
+
+    See also: \l{Licenses for Code Used in Qt}
+
+    \section1 Adobe Helvetica
+
+    Copyright 1984-1989, 1994 Adobe Systems Incorporated.
+    Copyright 1988, 1994 Digital Equipment Corporation.
+
+    Adobe is a trademark of Adobe Systems Incorporated which may be
+    registered in certain jurisdictions.
+    Permission to use these trademarks is hereby granted only in
+    association with the images described in this file.
+
+    Permission to use, copy, modify, distribute and sell this software
+    and its documentation for any purpose and without fee is hereby
+    granted, provided that the above copyright notices appear in all
+    copies and that both those copyright notices and this permission
+    notice appear in supporting documentation, and that the names of
+    Adobe Systems and Digital Equipment Corporation not be used in
+    advertising or publicity pertaining to distribution of the software
+    without specific, written prior permission.  Adobe Systems and
+    Digital Equipment Corporation make no representations about the
+    suitability of this software for any purpose.  It is provided "as
+    is" without express or implied warranty.
+
+    \section1 Adobe Utopia
+
+      Permission to use, reproduce, display and distribute the listed
+      typefaces is hereby granted, provided that the Adobe Copyright notice
+      appears in all whole and partial copies of the software and that the
+      following trademark symbol and attribution appear in all unmodified
+      copies of the software:
+
+            Copyright (c) 1989 Adobe Systems Incorporated
+            Utopia (R)
+            Utopia is a registered trademark of Adobe Systems Incorporated
+
+    The Utopia font
+    Copyright (c) 1989, 1991 Adobe Systems Incorporated.  All Rights
+    Reserved.Utopia is a registered trademark of Adobe Systems
+    Incorporated.
+
+    \section1 Babelfish
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc 1
+
+    \section1 Bigelow & Holmes Luxi
+
+    Luxi fonts copyright (c) 2001 by Bigelow & Holmes Inc. Luxi font 
+    instruction code copyright (c) 2001 by URW++ GmbH. All Rights 
+    Reserved. Luxi is a registered trademark of Bigelow & Holmes Inc.
+
+    Permission is hereby granted, free of charge, to any person obtaining 
+    a copy of these Fonts and associated documentation files (the "Font 
+    Software"), to deal in the Font Software, including without 
+    limitation the rights to use, copy, merge, publish, distribute, 
+    sublicense, and/or sell copies of the Font Software, and to permit 
+    persons to whom the Font Software is furnished to do so, subject to 
+    the following conditions:
+
+    The above copyright and trademark notices and this permission notice 
+    shall be included in all copies of one or more of the Font Software.
+
+    The Font Software may not be modified, altered, or added to, and in 
+    particular the designs of glyphs or characters in the Fonts may not 
+    be modified nor may additional glyphs or characters be added to the 
+    Fonts. This License becomes null and void when the Fonts or Font 
+    Software have been modified.
+
+    THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, 
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF 
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT 
+    OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT.  IN NO EVENT SHALL 
+    BIGELOW & HOLMES INC. OR URW++ GMBH. BE LIABLE FOR ANY CLAIM, DAMAGES 
+    OR OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, 
+    INCIDENTAL, OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF 
+    CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF THE USE OR 
+    INABILITY TO USE THE FONT SOFTWARE OR FROM OTHER DEALINGS IN THE FONT 
+    SOFTWARE.
+
+    Except as contained in this notice, the names of Bigelow & Holmes 
+    Inc. and URW++ GmbH. shall not be used in advertising or otherwise to 
+    promote the sale, use or other dealings in this Font Software without 
+    prior written authorization from Bigelow & Holmes Inc. and URW++ GmbH.
+
+    For further information, contact:
+
+    info@urwpp.de
+    or
+    design@bigelowandholmes.com
+
+    \section1 Bitstream Charter and Courier
+
+    (c) Copyright 1989-1992, Bitstream Inc., Cambridge, MA.
+
+    You are hereby granted permission under all Bitstream propriety rights
+    to use, copy, modify, sublicense, sell, and redistribute the 4 Bitstream
+    Charter (r) Type 1 outline fonts and the 4 Courier Type 1 outline fonts
+    for any purpose and without restriction; provided, that this notice is
+    left intact on all copies of such fonts and that Bitstream's trademark
+    is acknowledged as shown below on all unmodified copies of the 4 Charter
+    Type 1 fonts.
+
+    BITSTREAM CHARTER is a registered trademark of Bitstream Inc.
+
+    \section1 Bitstream Vera
+
+    Copyright (c) 2003 by Bitstream, Inc.
+
+    All Rights Reserved.
+
+    Bitstream Vera is a trademark of Bitstream, Inc.
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of the fonts accompanying this license ("Fonts") and associated
+    documentation files (the "Font Software"), to reproduce and distribute
+    the Font Software, including without limitation the rights to use,
+    copy, merge, publish, distribute, and/or sell copies of the Font
+    Software, and to permit persons to whom the Font Software is furnished
+    to do so, subject to the following conditions:
+
+    The above copyright and trademark notices and this permission notice
+    shall be included in all copies of one or more of the Font Software
+    typefaces.
+
+    The Font Software may be modified, altered, or added to, and in
+    particular the designs of glyphs or characters in the Fonts may be
+    modified and additional glyphs or characters may be added to the
+    Fonts, only if the fonts are renamed to names not containing either
+    the words "Bitstream" or the word "Vera".
+
+    This License becomes null and void to the extent applicable to Fonts
+    or Font Software that has been modified and is distributed under the
+    "Bitstream Vera" names.
+
+    The Font Software may be sold as part of a larger software package but
+    no copy of one or more of the Font Software typefaces may be sold by
+    itself.
+
+    THE FONT SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+    EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO ANY WARRANTIES OF
+    MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT
+    OF COPYRIGHT, PATENT, TRADEMARK, OR OTHER RIGHT. IN NO EVENT SHALL
+    BITSTREAM OR THE GNOME FOUNDATION BE LIABLE FOR ANY CLAIM, DAMAGES OR
+    OTHER LIABILITY, INCLUDING ANY GENERAL, SPECIAL, INDIRECT, INCIDENTAL,
+    OR CONSEQUENTIAL DAMAGES, WHETHER IN AN ACTION OF CONTRACT, TORT OR
+    OTHERWISE, ARISING FROM, OUT OF THE USE OR INABILITY TO USE THE FONT
+    SOFTWARE OR FROM OTHER DEALINGS IN THE FONT SOFTWARE.
+
+    Except as contained in this notice, the names of Gnome, the Gnome
+    Foundation, and Bitstream Inc., shall not be used in advertising or
+    otherwise to promote the sale, use or other dealings in this Font
+    Software without prior written authorization from the Gnome Foundation
+    or Bitstream Inc., respectively. For further information, contact:
+    fonts at gnome dot org.
+
+    \omit
+    http://www.gnome.org/fonts/#Final_Bitstream_Vera_Fonts
+    \endomit
+
+    See also:
+    \l{http://www.bitstream.com/font_rendering/products/dev_fonts/vera.html}{Vera Open Source Fonts}
+
+    \section1 Cursor
+
+    The Cursor font is distributed with the following declaration:
+
+    \e{Copyright (c) 2000 XFree86, Inc.}
+
+    \section1 DejaVu Fonts
+
+    DejaVu fonts come with the following copyright statement:
+
+    Fonts are (c) Bitstream (see below). DejaVu changes are in public domain. Glyphs imported from Arev fonts are (c) Tavmjung Bah (see below)
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc 2
+
+    \section1 Fixed Fonts
+
+    The 5x7 and 6x13 fonts each contain the following copyright notice:
+
+    \e{Public domain font.  Share and enjoy.}
+
+    \section1 IBM Courier
+
+    IBM Courier - Copyright (c) IBM Corporation 1990, 1991
+
+    You are hereby granted permission under the terms of the IBM/MIT X Consortium
+    Courier Typefont agreement to execute, reproduce, distribute, display, market,
+    sell and otherwise transfer copies of the IBM Courier font to third parties.
+
+    The font is provided "AS IS" without charge.  NO WARRANTIES OR INDEMNIFICATION
+    ARE GIVEN, WHETHER EXPRESS OR IMPLIED INCLUDING, BUT LIMITED TO THE IMPLIED
+    WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+
+    \section1 Micro
+
+    The Micro font contains the following copyright notice:
+
+    \e{Public domain font.  Share and enjoy.}
+
+    \section1 Unifont
+
+    The Unifont font was originally obtained from
+    \l{http://www.czyborra.com/}{Roman Czyborra} under the following license:
+
+    \e{All of my works you find here are freeware. You may freely copy, use, quote,
+    modify or redistribute them as long as you properly attribute my contribution
+    and have given a quick thought about whether Roman might perhaps be interested
+    to read what you did with his stuff. Horizontal rules don't apply.}
+
+    \section1 Wenquanyi
+
+    These are licensed under the GNU General Public License (version 2).
+    See the \l{http://wqy.sourceforge.net/en}{Wen Quan Yi Project} page
+    for more information.
+*/
+
+/*!
+    \if defined(opensourceedition)
+    \page license-gpl-exceptions.html
+    \title Trolltech GPL Exception Version 1.2
+    \ingroup licensing
+    \brief Additional rights granted beyond the GPL.
+
+    Additional rights granted beyond the GPL (the "Exception").
+
+    As a special exception to the terms and conditions of GPL version 2.0 or GPL
+    version 3.0, Trolltech hereby grants you the rights described below,
+    provided you agree to the terms and conditions in this Exception, including
+    its obligations and restrictions on use.
+
+    Nothing in this Exception gives you or anyone else the right to change the
+    licensing terms of the Qt Open Source Edition.
+
+    Below, "Licensed Software" shall refer to the software licensed under the
+    GPL version 2.0 or GPL version 3.0 and this exception.
+
+    1) The right to use Open Source Licenses not compatible with the GNU
+    General Public License version 2.0 or GNU General Public License version 3.0:
+    You may link software (hereafter referred to as "Your Software") against the
+    Licensed Software and/or distribute binaries of Your Software linked against
+    the Licensed Software, provided that:
+
+    A) Your Software is licensed under one of the following licenses:
+
+    \table
+    \header \o License name                 \o Version(s)/Copyright Date
+    \row \o Academic Free License           \o 2.0, 2.1, 3.0
+    \row \o Apache Software License         \o 1.0 or 1.1
+    \row \o Apache License                  \o 2.0
+    \row \o Apple Public Source License     \o 2.0
+    \row \o Artistic license                \o (as set forth in the addendum file) 
+    \row \o BSD license                     \o "July 22 1999"
+    \row \o Common Development and Distribution License (CDDL) \o 1.0
+    \row \o Common Public License           \o 1.0
+    \row \o Eclipse Public License          \o 1.0
+    \row \o GNU Library or "Lesser" General Public License (LGPL) \o 2.0, 2.1, 3.0
+    \row \o Jabber Open Source License      \o 1.0
+    \row \o MIT License                     \o (as set forth in the addendum file)       
+    \row \o Mozilla Public License (MPL)    \o 1.0 or 1.1
+    \row \o Open Software License           \o 2.0, 3.0
+    \row \o OpenSSL license (with original SSLeay license) \o "2003" ("1998")
+    \row \o PHP License                             \o 3.0
+    \row \o Python license (CNRI Python License)    \o (as set forth in the addendum file)
+    \row \o Python Software Foundation License      \o 2.1.1
+    \row \o Q Public License                        \o 1.0
+    \row \o Sleepycat License                       \o "1999"
+    \row \o W3C License                             \o "2001"
+    \row \o X11 License                             \o X11R6.6
+    \row \o Zlib/libpng License                     \o (as set forth in the addendum file)
+    \row \o Zope Public License                     \o 2.0, 2.1
+    \endtable
+
+    (Licenses without a specific version number or date are reproduced
+    in the \l{Addendum to the Trolltech GPL Exception Version 1.2}.)
+
+    and
+
+    B) You must, on request, make a complete package including
+        the complete source code of Your Software (as defined
+        in the GNU General Public License version 2, section 3,
+        but excluding anything excluded by the special
+        exception in the same section) available to Trolltech
+        under the same license as that granted to other
+        recipients of the source code of Your Software.
+
+    and
+
+    C) Your or any other contributor's rights to:
+
+              i) distribute the source code of Your Software to anyone for
+              any purpose;
+
+              and
+
+              ii) publicly discuss the development project for Your
+              Software and its goals in any form and in any forum
+
+    are not prohibited by any legal instrument, including but not limited
+    to contracts, non-disclosure agreements, and employee contracts.
+
+
+    2) The right to link non-Open Source applications with pre-installed
+    versions of the Licensed Software: You may link applications with binary
+    pre-installed versions of the Licensed Software, provided that such
+    applications have been developed and are deployed in accordance with the
+    terms and conditions of the Qt Commercial License Agreement.
+    \endif
+*/
+
+/*!
+    \if defined(opensourceedition)
+    \page licenses-gpl-exceptions-addendum.html
+    \title Addendum to the Trolltech GPL Exception Version 1.2
+    \ingroup licensing
+    \brief Additional rights granted beyond the GPL.
+
+    This document contains the full license text of those of the licenses referred to
+    in the \l{Trolltech GPL Exception Version 1.2} in which the reference does not
+    include a version number or a version date.
+
+    \tableofcontents
+
+    \section1 The "Artistic License"
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc Artistic License
+
+    \section1 MIT License
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc MIT License
+
+    \section1 Python License (CNRI Python License)
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc CNRI Python License
+
+    \section1 The zlib/libpng License
+
+    \snippet doc/src/snippets/code/doc.src.licenses.qdoc The zlib/libpng License
+    \endif
+*/

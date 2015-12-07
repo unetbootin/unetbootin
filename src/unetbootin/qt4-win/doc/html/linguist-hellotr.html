@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/hellotr.qdoc -->
+<head>
+  <title>Qt 4.4: Hello tr() Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Hello tr() Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="linguist-hellotr-main-cpp.html">linguist/hellotr/main.cpp</a></li>
+<li><a href="linguist-hellotr-hellotr-pro.html">linguist/hellotr/hellotr.pro</a></li>
+</ul>
+<p>This example is a reworking of the <a href="tutorials-tutorial-t1.html">Hello World!</a> example from the <a href="tutorials-tutorial.html">Qt Tutorial</a>, with a Latin translation. The screenshot below shows the English version.</p>
+<p align="center"><img src="images/linguist-hellotr_en.png" /></p><p>See the <a href="linguist-manual.html">Qt Linguist manual</a> for more information about translating Qt application.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> #include &lt;QTranslator&gt;</pre>
+<p>This line includes the definition of the <a href="qtranslator.html">QTranslator</a> class. Objects of this class provide translations for user-visible text.</p>
+<pre>     QTranslator translator;</pre>
+<p>Creates a <a href="qtranslator.html">QTranslator</a> object without a parent.</p>
+<pre>     translator.load(&quot;hellotr_la&quot;);</pre>
+<p>Tries to load a file called <tt>hellotr_la.qm</tt> (the <tt>.qm</tt> file extension is implicit) that contains Latin translations for the source texts used in the program. No error will occur if the file is not found.</p>
+<pre>     app.installTranslator(&amp;translator);</pre>
+<p>Adds the translations from <tt>hellotr_la.qm</tt> to the pool of translations used by the program.</p>
+<pre>     QPushButton hello(QPushButton::tr(&quot;Hello world!&quot;));</pre>
+<p>Creates a push button that displays &quot;Hello world!&quot;. If <tt>hellotr_la.qm</tt> was found and contains a translation for &quot;Hello world!&quot;, the translation appears; if not, the source text appears.</p>
+<p>All classes that inherit <a href="qobject.html">QObject</a> have a <tt>tr()</tt> function. Inside a member function of a <a href="qobject.html">QObject</a> class, we simply write <tt>tr(&quot;Hello world!&quot;)</tt> instead of <tt>QPushButton::tr(&quot;Hello world!&quot;)</tt> or <tt>QObject::tr(&quot;Hello world!&quot;)</tt>.</p>
+<a name="running-the-application-in-english"></a>
+<h2>Running the Application in English</h2>
+<p>Since we haven't made the translation file <tt>hellotr_la.qm</tt>, the source text is shown when we run the application:</p>
+<p align="center"><img src="images/linguist-hellotr_en.png" /></p><a name="creating-a-latin-message-file"></a>
+<h2>Creating a Latin Message File</h2>
+<p>The first step is to create a project file, <tt>hellotr.pro</tt>, that lists all the source files for the project. The project file can be a qmake project file, or even an ordinary makefile. Any file that contains</p>
+<pre> SOURCES      = main.cpp
+ TRANSLATIONS = hellotr_la.ts</pre>
+<p>will work. <tt>TRANSLATIONS</tt> specifies the message files we want to maintain. In this example, we just maintain one set of translations, namely Latin.</p>
+<p>Note that the file extension is <tt>.ts</tt>, not <tt>.qm</tt>. The <tt>.ts</tt> translation source format is designed for use during the application's development. Programmers or release managers run the <tt>lupdate</tt> program to generate and update <tt>.ts</tt> files with the source text that is extracted from the source code. Translators read and update the <tt>.ts</tt> files using <i>Qt Linguist</i> adding and editing their translations.</p>
+<p>The <tt>.ts</tt> format is human-readable XML that can be emailed directly and is easy to put under version control. If you edit this file manually, be aware that the default encoding for XML is UTF-8, not Latin1 (ISO 8859-1). One way to type in a Latin1 character such as '&oslash;' (Norwegian o with slash) is to use an XML entity: &quot;&amp;#xf8;&quot;. This will work for any Unicode 4.0 character.</p>
+<p>Once the translations are complete the <tt>lrelease</tt> program is used to convert the <tt>.ts</tt> files into the <tt>.qm</tt> Qt message file format. The <tt>.qm</tt> format is a compact binary format designed to deliver very fast lookup performance. Both <tt>lupdate</tt> and <tt>lrelease</tt> read all the project's source and header files (as specified in the HEADERS and SOURCES lines of the project file) and extract the strings that appear in <tt>tr()</tt> function calls.</p>
+<p><tt>lupdate</tt> is used to create and update the message files (<tt>hellotr_la.ts</tt> in this case) to keep them in sync with the source code. It is safe to run <tt>lupdate</tt> at any time, as <tt>lupdate</tt> does not remove any information. For example, you can put it in the makefile, so the <tt>.ts</tt> files are updated whenever the source changes.</p>
+<p>Try running <tt>lupdate</tt> right now, like this:</p>
+<pre>         lupdate -verbose hellotr.pro</pre>
+<p>(The <tt>-verbose</tt> option instructs <tt>lupdate</tt> to display messages that explain what it is doing.) You should now have a file <tt>hellotr_la.ts</tt> in the current directory, containing this:</p>
+<pre>         &lt;!DOCTYPE TS&gt;&lt;TS&gt;
+         &lt;context&gt;
+             &lt;name&gt;QPushButton&lt;/name&gt;
+             &lt;message&gt;
+                 &lt;source&gt;Hello world!&lt;/source&gt;
+                 &lt;translation type=&quot;unfinished&quot;&gt;&lt;/translation&gt;
+             &lt;/message&gt;
+         &lt;/context&gt;
+         &lt;/TS&gt;</pre>
+<p>You don't need to understand the file format since it is read and updated using tools (<tt>lupdate</tt>, <i>Qt Linguist</i>, <tt>lrelease</tt>).</p>
+<a name="translating-to-latin-with-qt-linguist"></a>
+<h2>Translating to Latin with Qt Linguist</h2>
+<p>We will use <i>Qt Linguist</i> to provide the translation, although you can use any XML or plain text editor to enter a translation into a <tt>.ts</tt> file.</p>
+<p>To start <i>Qt Linguist</i>, type</p>
+<pre>         linguist hellotr_la.ts</pre>
+<p>You should now see the text &quot;<a href="qpushbutton.html">QPushButton</a>&quot; in the top left pane. Double-click it, then click on &quot;Hello world!&quot; and enter &quot;Orbis, te saluto!&quot; in the <b>Translation</b> pane (the middle right of the window). Don't forget the exclamation mark!</p>
+<p>Click the <b>Done</b> checkbox and choose <b>File|Save</b> from the menu bar. The <tt>.ts</tt> file will no longer contain</p>
+<pre>         &lt;translation type='unfinished'&gt;&lt;/translation&gt;</pre>
+<p>but instead will have</p>
+<pre>         &lt;translation&gt;Orbis, te saluto!&lt;/translation&gt;</pre>
+<a name="running-the-application-in-latin"></a>
+<h2>Running the Application in Latin</h2>
+<p>To see the application running in Latin, we have to generate a <tt>.qm</tt> file from the <tt>.ts</tt> file. Generating a <tt>.qm</tt> file can be achieved either from within <i>Qt Linguist</i> (for a single <tt>.ts</tt> file), or by using the command line program <tt>lrelease</tt> which will produce one <tt>.qm</tt> file for each of the <tt>.ts</tt> files listed in the project file. Generate <tt>hellotr_la.qm</tt> from <tt>hellotr_la.ts</tt> by choosing <b>File|Release</b> from <i>Qt Linguist</i>'s menu bar and pressing <b>Save</b> in the file save dialog that pops up. Now run the <tt>hellotr</tt> program again. This time the button will be labelled &quot;Orbis, te saluto!&quot;.</p>
+<p align="center"><img src="images/linguist-hellotr_la.png" /></p><p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

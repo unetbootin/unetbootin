@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/qtscripttetrix.qdoc -->
+<head>
+  <title>Qt 4.4: QtScript Tetrix Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QtScript Tetrix Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="script-tetrix-tetrixboard-cpp.html">script/tetrix/tetrixboard.cpp</a></li>
+<li><a href="script-tetrix-tetrixboard-h.html">script/tetrix/tetrixboard.h</a></li>
+<li><a href="script-tetrix-tetrixboard-js.html">script/tetrix/tetrixboard.js</a></li>
+<li><a href="script-tetrix-tetrixpiece-js.html">script/tetrix/tetrixpiece.js</a></li>
+<li><a href="script-tetrix-tetrixwindow-js.html">script/tetrix/tetrixwindow.js</a></li>
+<li><a href="script-tetrix-tetrixwindow-ui.html">script/tetrix/tetrixwindow.ui</a></li>
+<li><a href="script-tetrix-main-cpp.html">script/tetrix/main.cpp</a></li>
+<li><a href="script-tetrix-tetrix-pro.html">script/tetrix/tetrix.pro</a></li>
+<li><a href="script-tetrix-tetrix-qrc.html">script/tetrix/tetrix.qrc</a></li>
+</ul>
+<p>The Tetrix example is a <a href="qtscript.html">QtScript</a> version of the classic Tetrix game.</p>
+<p align="center"><img src="images/tetrix-example.png" /></p><p>The program logic in this example is a fairly straight port of the logic in the C++ <a href="widgets-tetrix.html">Tetrix Example</a>. The graphical user interface is defined in a UI file.</p>
+<pre> class TetrixUiLoader : public QUiLoader
+ {
+ public:
+     TetrixUiLoader(QObject *parent = 0)
+         : QUiLoader(parent)
+         { }
+     virtual QWidget *createWidget(const QString &amp;className, QWidget *parent = 0,
+                                   const QString &amp;name = QString())
+     {
+         if (className == QLatin1String(&quot;TetrixBoard&quot;)) {
+             QWidget *board = new TetrixBoard(parent);
+             board-&gt;setObjectName(name);
+             return board;
+         }
+         return QUiLoader::createWidget(className, parent, name);
+     }
+ };</pre>
+<p>We define a custom UI loader that handles our TetrixBoard widget; the TetrixBoard is the main component of the UI (where the pieces are drawn).</p>
+<pre>     QApplication app(argc, argv);
+     QScriptEngine engine;
+
+     QScriptValue Qt = engine.newQMetaObject(QtMetaObject::get());
+     Qt.setProperty(&quot;App&quot;, engine.newQObject(&amp;app));
+     engine.globalObject().setProperty(&quot;Qt&quot;, Qt);</pre>
+<p>We initialize the script engine to have the Qt namespace, so that e.g&#x2e; Qt.Key_Left will be available to script code. We also make the application object available (for the quit() slot).</p>
+<pre>     evaluateFile(engine, &quot;:/tetrixpiece.js&quot;);
+     evaluateFile(engine, &quot;:/tetrixboard.js&quot;);
+     evaluateFile(engine, &quot;:/tetrixwindow.js&quot;);</pre>
+<p>Several scripts are evaluated as part of the engine setup process. tetrixpiece.js contains the definition of the TetrixPiece class, which is used to populate the play field. tetrixboard.js contains the definition of the TetrixBoard class, which contains the main game logic. Finally, tetrixwindow.js contains the definition of the TetrixWindow class, which wires up the top-level widget.</p>
+<pre>     TetrixUiLoader loader;
+     QFile uiFile(&quot;:/tetrixwindow.ui&quot;);
+     uiFile.open(QIODevice::ReadOnly);
+     QWidget *ui = loader.load(&amp;uiFile);
+     uiFile.close();
+
+     QScriptValue ctor = engine.evaluate(&quot;TetrixWindow&quot;);
+     QScriptValue scriptUi = engine.newQObject(ui, QScriptEngine::ScriptOwnership);
+     QScriptValue tetrix = ctor.construct(QScriptValueList() &lt;&lt; scriptUi);</pre>
+<p>A form is created from the UI file. A new TetrixWindow script object is then constructed, passing the form as argument.</p>
+<pre>     ui-&gt;resize(550, 370);
+     ui-&gt;show();
+
+     qsrand(QTime(0,0,0).secsTo(QTime::currentTime()));
+     return app.exec();</pre>
+<p>The form is shown, and the event loop is entered.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

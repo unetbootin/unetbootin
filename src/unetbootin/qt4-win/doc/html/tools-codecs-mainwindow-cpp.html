@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (tools/codecs/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">tools/codecs/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;previewform.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     textEdit = new QTextEdit;
+     textEdit-&gt;setLineWrapMode(QTextEdit::NoWrap);
+     setCentralWidget(textEdit);
+
+     findCodecs();
+
+     previewForm = new PreviewForm(this);
+     previewForm-&gt;setCodecList(codecs);
+
+     createActions();
+     createMenus();
+
+     setWindowTitle(tr(&quot;Codecs&quot;));
+     resize(500, 400);
+ }
+
+ void MainWindow::open()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this);
+     if (!fileName.isEmpty()) {
+         QFile file(fileName);
+         if (!file.open(QFile::ReadOnly)) {
+             QMessageBox::warning(this, tr(&quot;Codecs&quot;),
+                                  tr(&quot;Cannot read file %1:\n%2&quot;)
+                                  .arg(fileName)
+                                  .arg(file.errorString()));
+             return;
+         }
+
+         QByteArray data = file.readAll();
+
+         previewForm-&gt;setEncodedData(data);
+         if (previewForm-&gt;exec())
+             textEdit-&gt;setPlainText(previewForm-&gt;decodedString());
+     }
+ }
+
+ void MainWindow::save()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this);
+     if (!fileName.isEmpty()) {
+         QFile file(fileName);
+         if (!file.open(QFile::WriteOnly | QFile::Text)) {
+             QMessageBox::warning(this, tr(&quot;Codecs&quot;),
+                                  tr(&quot;Cannot write file %1:\n%2&quot;)
+                                  .arg(fileName)
+                                  .arg(file.errorString()));
+             return;
+         }
+
+         QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+         QByteArray codecName = action-&gt;data().toByteArray();
+
+         QTextStream out(&amp;file);
+         out.setCodec(codecName);
+         out &lt;&lt; textEdit-&gt;toPlainText();
+     }
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Codecs&quot;),
+             tr(&quot;The &lt;b&gt;Codecs&lt;/b&gt; example demonstrates how to read and write &quot;
+                &quot;files using various encodings.&quot;));
+ }
+
+ void MainWindow::aboutToShowSaveAsMenu()
+ {
+     QString currentText = textEdit-&gt;toPlainText();
+
+     foreach (QAction *action, saveAsActs) {
+         QByteArray codecName = action-&gt;data().toByteArray();
+         QTextCodec *codec = QTextCodec::codecForName(codecName);
+         action-&gt;setVisible(codec &amp;&amp; codec-&gt;canEncode(currentText));
+     }
+ }
+
+ void MainWindow::findCodecs()
+ {
+     QMap&lt;QString, QTextCodec *&gt; codecMap;
+     QRegExp iso8859RegExp(&quot;ISO[- ]8859-([0-9]+).*&quot;);
+
+     foreach (int mib, QTextCodec::availableMibs()) {
+         QTextCodec *codec = QTextCodec::codecForMib(mib);
+
+         QString sortKey = codec-&gt;name().toUpper();
+         int rank;
+
+         if (sortKey.startsWith(&quot;UTF-8&quot;)) {
+             rank = 1;
+         } else if (sortKey.startsWith(&quot;UTF-16&quot;)) {
+             rank = 2;
+         } else if (iso8859RegExp.exactMatch(sortKey)) {
+             if (iso8859RegExp.cap(1).size() == 1)
+                 rank = 3;
+             else
+                 rank = 4;
+         } else {
+             rank = 5;
+         }
+         sortKey.prepend(QChar('0' + rank));
+
+         codecMap.insert(sortKey, codec);
+     }
+     codecs = codecMap.values();
+ }
+
+ void MainWindow::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     foreach (QTextCodec *codec, codecs) {
+         QString text = tr(&quot;%1...&quot;).arg(QString(codec-&gt;name()));
+
+         QAction *action = new QAction(text, this);
+         action-&gt;setData(codec-&gt;name());
+         connect(action, SIGNAL(triggered()), this, SLOT(save()));
+         saveAsActs.append(action);
+     }
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     saveAsMenu = new QMenu(tr(&quot;&amp;Save As&quot;), this);
+     foreach (QAction *action, saveAsActs)
+         saveAsMenu-&gt;addAction(action);
+     connect(saveAsMenu, SIGNAL(aboutToShow()),
+             this, SLOT(aboutToShowSaveAsMenu()));
+
+     fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addMenu(saveAsMenu);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     helpMenu = new QMenu(tr(&quot;&amp;Help&quot;), this);
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+
+     menuBar()-&gt;addMenu(fileMenu);
+     menuBar()-&gt;addSeparator();
+     menuBar()-&gt;addMenu(helpMenu);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

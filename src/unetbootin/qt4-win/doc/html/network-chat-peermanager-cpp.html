@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: peermanager.cpp Example File (network/chat/peermanager.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">peermanager.cpp Example File<br /><span class="small-subtitle">network/chat/peermanager.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtNetwork&gt;
+
+ #include &quot;client.h&quot;
+ #include &quot;connection.h&quot;
+ #include &quot;peermanager.h&quot;
+
+ static const qint32 BroadcastInterval = 2000;
+ static const unsigned broadcastPort = 45000;
+
+ PeerManager::PeerManager(Client *client)
+     : QObject(client)
+ {
+     this-&gt;client = client;
+
+     QStringList envVariables;
+     envVariables &lt;&lt; &quot;USERNAME.*&quot; &lt;&lt; &quot;USER.*&quot; &lt;&lt; &quot;USERDOMAIN.*&quot;
+                  &lt;&lt; &quot;HOSTNAME.*&quot; &lt;&lt; &quot;DOMAINNAME.*&quot;;
+
+     QStringList environment = QProcess::systemEnvironment();
+     foreach (QString string, envVariables) {
+         int index = environment.indexOf(QRegExp(string));
+         if (index != -1) {
+             QStringList stringList = environment.at(index).split(&quot;=&quot;);
+             if (stringList.size() == 2) {
+                 username = stringList.at(1).toUtf8();
+                 break;
+             }
+         }
+     }
+
+     if (username.isEmpty())
+         username = &quot;unknown&quot;;
+
+     updateAddresses();
+     serverPort = 0;
+
+     broadcastSocket.bind(QHostAddress::Any, broadcastPort, QUdpSocket::ShareAddress
+                          | QUdpSocket::ReuseAddressHint);
+     connect(&amp;broadcastSocket, SIGNAL(readyRead()),
+             this, SLOT(readBroadcastDatagram()));
+
+     broadcastTimer.setInterval(BroadcastInterval);
+     connect(&amp;broadcastTimer, SIGNAL(timeout()),
+             this, SLOT(sendBroadcastDatagram()));
+ }
+
+ void PeerManager::setServerPort(int port)
+ {
+     serverPort = port;
+ }
+
+ QByteArray PeerManager::userName() const
+ {
+     return username;
+ }
+
+ void PeerManager::startBroadcasting()
+ {
+     broadcastTimer.start();
+ }
+
+ bool PeerManager::isLocalHostAddress(const QHostAddress &amp;address)
+ {
+     foreach (QHostAddress localAddress, ipAddresses) {
+         if (address == localAddress)
+             return true;
+     }
+     return false;
+ }
+
+ void PeerManager::sendBroadcastDatagram()
+ {
+     QByteArray datagram(username);
+     datagram.append('@');
+     datagram.append(QByteArray::number(serverPort));
+
+     bool validBroadcastAddresses = true;
+     foreach (QHostAddress address, broadcastAddresses) {
+         if (broadcastSocket.writeDatagram(datagram, address,
+                                           broadcastPort) == -1)
+             validBroadcastAddresses = false;
+     }
+
+     if (!validBroadcastAddresses)
+         updateAddresses();
+ }
+
+ void PeerManager::readBroadcastDatagram()
+ {
+     while (broadcastSocket.hasPendingDatagrams()) {
+         QHostAddress senderIp;
+         quint16 senderPort;
+         QByteArray datagram;
+         datagram.resize(broadcastSocket.pendingDatagramSize());
+         if (broadcastSocket.readDatagram(datagram.data(), datagram.size(),
+                                          &amp;senderIp, &amp;senderPort) == -1)
+             continue;
+
+         QList&lt;QByteArray&gt; list = datagram.split('@');
+         if (list.size() != 2)
+             continue;
+
+         int senderServerPort = list.at(1).toInt();
+         if (isLocalHostAddress(senderIp) &amp;&amp; senderServerPort == serverPort)
+             continue;
+
+         if (!client-&gt;hasConnection(senderIp)) {
+             Connection *connection = new Connection(this);
+             emit newConnection(connection);
+             connection-&gt;connectToHost(senderIp, senderServerPort);
+         }
+     }
+ }
+
+ void PeerManager::updateAddresses()
+ {
+     broadcastAddresses.clear();
+     ipAddresses.clear();
+     foreach (QNetworkInterface interface, QNetworkInterface::allInterfaces()) {
+         foreach (QNetworkAddressEntry entry, interface.addressEntries()) {
+             QHostAddress broadcastAddress = entry.broadcast();
+             if (broadcastAddress != QHostAddress::Null &amp;&amp;
+                 entry.ip() != QHostAddress::LocalHost) {
+                 broadcastAddresses &lt;&lt; broadcastAddress;
+                 ipAddresses &lt;&lt; entry.ip();
+             }
+         }
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qprintpreviewwidget.cpp -->
+<head>
+  <title>Qt 4.4: QPrintPreviewWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPrintPreviewWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPrintPreviewWidget class provides a widget for previewing page layouts for printer output. <a href="#details">More...</a></p>
+<pre> #include &lt;QPrintPreviewWidget&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qprintpreviewwidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qprintpreviewwidget.html#ViewMode-enum">ViewMode</a></b> { SinglePageView, FacingPagesView, AllPagesView }</li>
+<li><div class="fn"/>enum <b><a href="qprintpreviewwidget.html#ZoomMode-enum">ZoomMode</a></b> { CustomZoom, FitToWidth, FitInView }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprintpreviewwidget.html#QPrintPreviewWidget">QPrintPreviewWidget</a></b> ( QPrinter * <i>printer</i>, QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprintpreviewwidget.html#QPrintPreviewWidget-2">QPrintPreviewWidget</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprintpreviewwidget.html#dtor.QPrintPreviewWidget">~QPrintPreviewWidget</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qprintpreviewwidget.html#currentPage">currentPage</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprintpreviewwidget.html#numPages">numPages</a></b> () const</li>
+<li><div class="fn"/>QPrinter::Orientation <b><a href="qprintpreviewwidget.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>ViewMode <b><a href="qprintpreviewwidget.html#viewMode">viewMode</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qprintpreviewwidget.html#zoomFactor">zoomFactor</a></b> () const</li>
+<li><div class="fn"/>ZoomMode <b><a href="qprintpreviewwidget.html#zoomMode">zoomMode</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#fitInView">fitInView</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#fitToWidth">fitToWidth</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#print">print</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setAllPagesViewMode">setAllPagesViewMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setCurrentPage">setCurrentPage</a></b> ( int <i>page</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setFacingPagesViewMode">setFacingPagesViewMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setLandscapeOrientation">setLandscapeOrientation</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setOrientation">setOrientation</a></b> ( QPrinter::Orientation <i>orientation</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setPortraitOrientation">setPortraitOrientation</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setSinglePageViewMode">setSinglePageViewMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setViewMode">setViewMode</a></b> ( ViewMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setZoomFactor">setZoomFactor</a></b> ( qreal <i>factor</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#setZoomMode">setZoomMode</a></b> ( ZoomMode <i>zoomMode</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#updatePreview">updatePreview</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#zoomIn">zoomIn</a></b> ( qreal <i>factor</i> = 1.1 )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#zoomOut">zoomOut</a></b> ( qreal <i>factor</i> = 1.1 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#paintRequested">paintRequested</a></b> ( QPrinter * <i>printer</i> )</li>
+<li><div class="fn"/>void <b><a href="qprintpreviewwidget.html#previewChanged">previewChanged</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPrintPreviewWidget class provides a widget for previewing page layouts for printer output.</p>
+<p><a href="qprintpreviewdialog.html">QPrintPreviewDialog</a> uses a QPrintPreviewWidget internally, and the purpose of QPrintPreviewWidget is to make it possible to embed the preview into other widgets. It also makes it possible to build a different user interface around it than the default one provided with <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>.</p>
+<p>Using QPrintPreviewWidget is straightforward:</p>
+<ol type="1">
+<li>Create the QPrintPreviewWidget<p>Construct the QPrintPreviewWidget either by passing in an exisiting <a href="qprinter.html">QPrinter</a> object, or have QPrintPreviewWidget create a default constructed <a href="qprinter.html">QPrinter</a> object for you.</p>
+</li>
+<li>Connect the <a href="qprintpreviewwidget.html#paintRequested">paintRequested</a>() signal to a slot.<p>When the widget needs to generate a set of preview pages, a <a href="qprintpreviewwidget.html#paintRequested">paintRequested</a>() signal will be emitted from the widget. Connect a slot to this signal, and draw onto the <a href="qprinter.html">QPrinter</a> passed in as a signal parameter.</p>
+</li>
+</ol>
+<p>See also <a href="qprinter.html">QPrinter</a>, <a href="qprintdialog.html">QPrintDialog</a>, QPageSetupDialog, and <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ViewMode-enum"></a>enum QPrintPreviewWidget::ViewMode</h3>
+<p>This enum is used to describe the view mode of the preview widget.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::SinglePageView</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">A mode where single pages in the preview is viewed.</td></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::FacingPagesView</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A mode where the facing pages in the preview is viewed.</td></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::AllPagesView</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">A view mode where all the pages in the preview is viewed.</td></tr>
+</table></p>
+<h3 class="fn"><a name="ZoomMode-enum"></a>enum QPrintPreviewWidget::ZoomMode</h3>
+<p>This enum is used to describe zoom mode of the preview widget.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::CustomZoom</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The zoom is set to a custom zoom value.</td></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::FitToWidth</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">This mode fits the current page to the width of the view.</td></tr>
+<tr><td valign="top"><tt>QPrintPreviewWidget::FitInView</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">This mode fits the current page inside the view.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPrintPreviewWidget"></a>QPrintPreviewWidget::QPrintPreviewWidget ( <a href="qprinter.html">QPrinter</a> * <i>printer</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )</h3>
+<p>Constructs a <a href="qprintpreviewwidget.html">QPrintPreviewWidget</a> based on <i>printer</i> and with <i>parent</i> as the parent widget. The widget flags <i>flags</i> are passed on to the <a href="qwidget.html">QWidget</a> constructor.</p>
+<p>See also <a href="qwidget.html#windowFlags-prop">QWidget::setWindowFlags</a>().</p>
+<h3 class="fn"><a name="QPrintPreviewWidget-2"></a>QPrintPreviewWidget::QPrintPreviewWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )</h3>
+<p>This will cause <a href="qprintpreviewwidget.html">QPrintPreviewWidget</a> to create an internal, default constructed <a href="qprinter.html">QPrinter</a> object, which will be used to generate the preview.</p>
+<h3 class="fn"><a name="dtor.QPrintPreviewWidget"></a>QPrintPreviewWidget::~QPrintPreviewWidget ()</h3>
+<p>Destroys the <a href="qprintpreviewwidget.html">QPrintPreviewWidget</a>.</p>
+<h3 class="fn"><a name="currentPage"></a>int QPrintPreviewWidget::currentPage () const</h3>
+<p>Returns the currently viewed page in the preview.</p>
+<p>See also <a href="qprintpreviewwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="fitInView"></a>void QPrintPreviewWidget::fitInView ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setZoomMode(QPrintPreviewWidget::FitInView)</tt>.</p>
+<h3 class="fn"><a name="fitToWidth"></a>void QPrintPreviewWidget::fitToWidth ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setZoomMode(QPrintPreviewWidget::FitToWidth)</tt>.</p>
+<h3 class="fn"><a name="numPages"></a>int QPrintPreviewWidget::numPages () const</h3>
+<p>Returns the number of pages in the preview.</p>
+<h3 class="fn"><a name="orientation"></a><a href="qprinter.html#Orientation-enum">QPrinter::Orientation</a> QPrintPreviewWidget::orientation () const</h3>
+<p>Returns the current orientation of the preview. This value is obtained from the <a href="qprinter.html">QPrinter</a> object associated with the preview.</p>
+<p>See also <a href="qprintpreviewwidget.html#setOrientation">setOrientation</a>().</p>
+<h3 class="fn"><a name="paintRequested"></a>void QPrintPreviewWidget::paintRequested ( <a href="qprinter.html">QPrinter</a> * <i>printer</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the preview widget needs to generate a set of preview pages. <i>printer</i> is the printer associated with this preview widget.</p>
+<h3 class="fn"><a name="previewChanged"></a>void QPrintPreviewWidget::previewChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the preview widget has changed some internal state, such as the orientation.</p>
+<h3 class="fn"><a name="print"></a>void QPrintPreviewWidget::print ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Prints the preview to the printer associated with the preview.</p>
+<h3 class="fn"><a name="setAllPagesViewMode"></a>void QPrintPreviewWidget::setAllPagesViewMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setViewMode(QPrintPreviewWidget::AllPagesView)</tt>.</p>
+<h3 class="fn"><a name="setCurrentPage"></a>void QPrintPreviewWidget::setCurrentPage ( int <i>page</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the current page in the preview. This will cause the view to skip to the beginning of <i>page</i>.</p>
+<p>See also <a href="qprintpreviewwidget.html#currentPage">currentPage</a>().</p>
+<h3 class="fn"><a name="setFacingPagesViewMode"></a>void QPrintPreviewWidget::setFacingPagesViewMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setViewMode(QPrintPreviewWidget::FacingPagesView)</tt>.</p>
+<h3 class="fn"><a name="setLandscapeOrientation"></a>void QPrintPreviewWidget::setLandscapeOrientation ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setOrientation(QPrinter::Landscape)</tt>.</p>
+<h3 class="fn"><a name="setOrientation"></a>void QPrintPreviewWidget::setOrientation ( <a href="qprinter.html#Orientation-enum">QPrinter::Orientation</a> <i>orientation</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the current orientation to <i>orientation</i>. This value will be set on the <a href="qprinter.html">QPrinter</a> object associated with the preview.</p>
+<p>See also <a href="qprintpreviewwidget.html#orientation">orientation</a>().</p>
+<h3 class="fn"><a name="setPortraitOrientation"></a>void QPrintPreviewWidget::setPortraitOrientation ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setOrientation(QPrinter::Landscape)</tt>.</p>
+<h3 class="fn"><a name="setSinglePageViewMode"></a>void QPrintPreviewWidget::setSinglePageViewMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function and is the same as calling <tt>setViewMode(QPrintPreviewWidget::SinglePageView)</tt>.</p>
+<h3 class="fn"><a name="setViewMode"></a>void QPrintPreviewWidget::setViewMode ( <a href="qprintpreviewwidget.html#ViewMode-enum">ViewMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the view mode to <i>mode</i>. The default view mode is <a href="qprintpreviewwidget.html#ViewMode-enum">SinglePageView</a>.</p>
+<p>See also <a href="qprintpreviewwidget.html#viewMode">viewMode</a>().</p>
+<h3 class="fn"><a name="setZoomFactor"></a>void QPrintPreviewWidget::setZoomFactor ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the zoom factor of the view to <i>factor</i>. For example, a value of 1.0 indicates an unscaled view, which is approximately the size the view will have on paper. A value of 0.5 will halve the size of the view, while a value of 2.0 will double the size of the view.</p>
+<p>See also <a href="qprintpreviewwidget.html#zoomFactor">zoomFactor</a>().</p>
+<h3 class="fn"><a name="setZoomMode"></a>void QPrintPreviewWidget::setZoomMode ( <a href="qprintpreviewwidget.html#ZoomMode-enum">ZoomMode</a> <i>zoomMode</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the zoom mode to <i>zoomMode</i>. The default zoom mode is <a href="qprintpreviewwidget.html#ZoomMode-enum">FitInView</a>.</p>
+<p>See also <a href="qprintpreviewwidget.html#zoomMode">zoomMode</a>(), <a href="qprintpreviewwidget.html#viewMode">viewMode</a>(), and <a href="qprintpreviewwidget.html#setViewMode">setViewMode</a>().</p>
+<h3 class="fn"><a name="updatePreview"></a>void QPrintPreviewWidget::updatePreview ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This function updates the preview, which causes the <a href="qprintpreviewwidget.html#paintRequested">paintRequested</a>() signal to be emitted.</p>
+<h3 class="fn"><a name="viewMode"></a><a href="qprintpreviewwidget.html#ViewMode-enum">ViewMode</a> QPrintPreviewWidget::viewMode () const</h3>
+<p>Returns the current view mode. The default view mode is <a href="qprintpreviewwidget.html#ViewMode-enum">SinglePageView</a>.</p>
+<p>See also <a href="qprintpreviewwidget.html#setViewMode">setViewMode</a>().</p>
+<h3 class="fn"><a name="zoomFactor"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QPrintPreviewWidget::zoomFactor () const</h3>
+<p>Returns the zoom factor of the view.</p>
+<p>See also <a href="qprintpreviewwidget.html#setZoomFactor">setZoomFactor</a>().</p>
+<h3 class="fn"><a name="zoomIn"></a>void QPrintPreviewWidget::zoomIn ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i> = 1.1 )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Zooms the current view in by <i>factor</i>. The default value for <i>factor</i> is 1.1, which means the view will be scaled up by 10%.</p>
+<h3 class="fn"><a name="zoomMode"></a><a href="qprintpreviewwidget.html#ZoomMode-enum">ZoomMode</a> QPrintPreviewWidget::zoomMode () const</h3>
+<p>Returns the current zoom mode.</p>
+<p>See also <a href="qprintpreviewwidget.html#setZoomMode">setZoomMode</a>(), <a href="qprintpreviewwidget.html#viewMode">viewMode</a>(), and <a href="qprintpreviewwidget.html#setViewMode">setViewMode</a>().</p>
+<h3 class="fn"><a name="zoomOut"></a>void QPrintPreviewWidget::zoomOut ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i> = 1.1 )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Zooms the current view out by <i>factor</i>. The default value for <i>factor</i> is 1.1, which means the view will be scaled down by 10%.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

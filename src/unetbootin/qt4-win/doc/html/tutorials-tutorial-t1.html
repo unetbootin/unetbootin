@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 1 - Hello World!</title>
+  <link rel="prev" href="tutorials-tutorial.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t2.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t2.html">Chapter 2</a>]
+</p>
+<h1 class="title">Qt Tutorial 1 - Hello World!<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t1-main-cpp.html">tutorials/tutorial/t1/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t1-t1-pro.html">tutorials/tutorial/t1/t1.pro</a></li>
+</ul>
+<p>This first program is a simple &quot;Hello world&quot; example. It contains only the bare minimum you need to get a Qt application up and running. The picture below is a screenshot of this program.</p>
+<p align="center"><img src="images/t1.png" alt="Screenshot of Chapter 1" /></p><p>Here's the complete source code for the application:</p>
+<pre> #include &lt;QApplication&gt;
+ #include &lt;QPushButton&gt;
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QPushButton hello(&quot;Hello world!&quot;);
+
+     hello.show();
+     return app.exec();
+ }</pre>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> #include &lt;QApplication&gt;</pre>
+<p>This line includes the <a href="qapplication.html">QApplication</a> class definition. There has to be exactly one <a href="qapplication.html">QApplication</a> object in every GUI application that uses Qt. <a href="qapplication.html">QApplication</a> manages various application-wide resources, such as the default font and cursor.</p>
+<pre> #include &lt;QPushButton&gt;</pre>
+<p>This line includes the <a href="qpushbutton.html">QPushButton</a> class definition. For each class that's part of the public Qt API, there exists a header file of the same name that contains its definition.</p>
+<p><a href="qpushbutton.html">QPushButton</a> is a GUI push button that the user can press and release. It manages its own look and feel, like every other <a href="qwidget.html">QWidget</a>. A widget is a user interface object that can process user input and draw graphics. The programmer can change both the overall look and feel and many minor properties of it (such as color), as well as the widget's content. A <a href="qpushbutton.html">QPushButton</a> can show either a text or a <a href="qicon.html">QIcon</a>.</p>
+<pre> int main(int argc, char *argv[])
+ {</pre>
+<p>The <tt>main()</tt> function is the entry point to the program. Almost always when using Qt, <tt>main()</tt> only needs to perform some kind of initialization before passing the control to the Qt library, which then tells the program about the user's actions via events.</p>
+<p>The <tt>argc</tt> parameter is the number of command-line arguments and <tt>argv</tt> is the array of command-line arguments. This is a standard C++ feature.</p>
+<pre>     QApplication app(argc, argv);</pre>
+<p>The <tt>app</tt> object is this program's <a href="qapplication.html">QApplication</a> instance. Here it is created. We pass <tt>argc</tt> and <tt>argv</tt> to the <a href="qapplication.html">QApplication</a> constructor so that it can process certain standard command-line arguments (such as <tt>-display</tt> under X11). All command-line arguments recognized by Qt are removed from <tt>argv</tt>, and <tt>argc</tt> is decremented accordingly. See the <a href="qcoreapplication.html#arguments">QApplication::arguments</a>() documentation for details.</p>
+<p>The <a href="qapplication.html">QApplication</a> object must be created before any GUI-related features of Qt are used.</p>
+<pre>     QPushButton hello(&quot;Hello world!&quot;);</pre>
+<p>Here, after the <a href="qapplication.html">QApplication</a>, comes the first GUI-related code: A push button is created.</p>
+<p>The button is set up to display the text &quot;Hello world!&quot;. Because we don't specify a parent window (as second argument to the <a href="qpushbutton.html">QPushButton</a> constructor), the button will be a window of its own, with its own window frame and title bar.</p>
+<p>The button's size is determined by its default size hint. We could call <a href="qwidget.html#pos-prop">QWidget::move</a>() to assign a specific screen position to the widget, but instead we let the windowing system choose a position.</p>
+<pre>     hello.show();</pre>
+<p>A widget is never visible when you create it. You must call <a href="qwidget.html#show">QWidget::show</a>() to make it visible.</p>
+<pre>     return app.exec();
+ }</pre>
+<p>This is where <tt>main()</tt> passes control to Qt. <a href="qcoreapplication.html#exec">QCoreApplication::exec</a>() will return when the application exits. (<a href="qcoreapplication.html">QCoreApplication</a> is <a href="qapplication.html">QApplication</a>'s base class. It implements <a href="qapplication.html">QApplication</a>'s core, non-GUI functionality and can be used when developing non-GUI applications.)</p>
+<p>In <a href="qcoreapplication.html#exec">QCoreApplication::exec</a>(), Qt receives and processes user and system events and passes these on to the appropriate widgets.</p>
+<p>You should now try to compile and run this program.</p>
+<p>The tutorial examples are located in Qt's <tt>examples/tutorials/tutorial</tt> directory. They are automatically built when you build Qt.</p>
+<p>If you have typed in the source code manually, you will need to follow these instructions: To compile a C++ application, you need to create a makefile. The easiest way to create a makefile for Qt is to use the <a href="qmake-manual.html#qmake">qmake</a> build tool supplied with Qt. If you've saved <tt>main.cpp</tt> in its own otherwise empty directory, all you need to do is:</p>
+<pre>         qmake -project
+         qmake</pre>
+<p>The first command tells <tt>qmake</tt> to create a project file (a <tt>.pro</tt> file). The second command tells it to create a platform-specific makefile based on the project file. You should now be able to type <tt>make</tt> (or <tt>nmake</tt> if you're using Visual Studio) and then run your first Qt application!</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>When you run the application, you will see a small window filled with a single button, and on it you can read the famous words: &quot;Hello world!&quot;</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try to resize the window. Click the button. If you're running X11, try running the program with the <tt>-geometry</tt> option (for example, <tt>-geometry 100x200+10+20</tt>).</p>
+<p>
+[Previous: <a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t2.html">Chapter 2</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

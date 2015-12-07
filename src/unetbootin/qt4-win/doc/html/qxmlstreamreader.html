@@ -1,0 +1,337 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/xml/qxmlstream.cpp -->
+<head>
+  <title>Qt 4.4: QXmlStreamReader Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlStreamReader Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QXmlStreamReader class provides a fast well-formed XML parser with a simple streaming API. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlStreamReader&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qxmlstreamreader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qxmlstreamreader.html#Error-enum">Error</a></b> { NoError, CustomError, NotWellFormedError, PrematureEndOfDocumentError, UnexpectedElementError }</li>
+<li><div class="fn"/>enum <b><a href="qxmlstreamreader.html#TokenType-enum">TokenType</a></b> { NoToken, Invalid, StartDocument, EndDocument, ..., ProcessingInstruction }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#namespaceProcessing-prop">namespaceProcessing</a></b> : bool</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#QXmlStreamReader">QXmlStreamReader</a></b> ()</li>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#QXmlStreamReader-2">QXmlStreamReader</a></b> ( QIODevice * <i>device</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#QXmlStreamReader-3">QXmlStreamReader</a></b> ( const QByteArray &amp; <i>data</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#QXmlStreamReader-4">QXmlStreamReader</a></b> ( const QString &amp; <i>data</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#QXmlStreamReader-5">QXmlStreamReader</a></b> ( const char * <i>data</i> )</li>
+<li><div class="fn"/><b><a href="qxmlstreamreader.html#dtor.QXmlStreamReader">~QXmlStreamReader</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#addData">addData</a></b> ( const QByteArray &amp; <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#addData-2">addData</a></b> ( const QString &amp; <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#addData-3">addData</a></b> ( const char * <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#addExtraNamespaceDeclaration">addExtraNamespaceDeclaration</a></b> ( const QXmlStreamNamespaceDeclaration &amp; <i>extraNamespaceDeclaration</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#addExtraNamespaceDeclarations">addExtraNamespaceDeclarations</a></b> ( const QXmlStreamNamespaceDeclarations &amp; <i>extraNamespaceDeclarations</i> )</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>QXmlStreamAttributes <b><a href="qxmlstreamreader.html#attributes">attributes</a></b> () const</li>
+<li><div class="fn"/>qint64 <b><a href="qxmlstreamreader.html#characterOffset">characterOffset</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>qint64 <b><a href="qxmlstreamreader.html#columnNumber">columnNumber</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qxmlstreamreader.html#device">device</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#documentEncoding">documentEncoding</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#documentVersion">documentVersion</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#dtdName">dtdName</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#dtdPublicId">dtdPublicId</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#dtdSystemId">dtdSystemId</a></b> () const</li>
+<li><div class="fn"/>QXmlStreamEntityDeclarations <b><a href="qxmlstreamreader.html#entityDeclarations">entityDeclarations</a></b> () const</li>
+<li><div class="fn"/>QXmlStreamEntityResolver * <b><a href="qxmlstreamreader.html#entityResolver">entityResolver</a></b> () const</li>
+<li><div class="fn"/>Error <b><a href="qxmlstreamreader.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qxmlstreamreader.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#hasError">hasError</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isCDATA">isCDATA</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isCharacters">isCharacters</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isComment">isComment</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isDTD">isDTD</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isEndDocument">isEndDocument</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isEndElement">isEndElement</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isEntityReference">isEntityReference</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isProcessingInstruction">isProcessingInstruction</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isStandaloneDocument">isStandaloneDocument</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isStartDocument">isStartDocument</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isStartElement">isStartElement</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#isWhitespace">isWhitespace</a></b> () const</li>
+<li><div class="fn"/>qint64 <b><a href="qxmlstreamreader.html#lineNumber">lineNumber</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#name">name</a></b> () const</li>
+<li><div class="fn"/>QXmlStreamNamespaceDeclarations <b><a href="qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlstreamreader.html#namespaceProcessing-prop">namespaceProcessing</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a></b> () const</li>
+<li><div class="fn"/>QXmlStreamNotationDeclarations <b><a href="qxmlstreamreader.html#notationDeclarations">notationDeclarations</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#prefix">prefix</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#processingInstructionData">processingInstructionData</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#processingInstructionTarget">processingInstructionTarget</a></b> () const</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#raiseError">raiseError</a></b> ( const QString &amp; <i>message</i> = QString() )</li>
+<li><div class="fn"/>QString <b><a href="qxmlstreamreader.html#readElementText">readElementText</a></b> ()</li>
+<li><div class="fn"/>TokenType <b><a href="qxmlstreamreader.html#readNext">readNext</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#setDevice">setDevice</a></b> ( QIODevice * <i>device</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#setEntityResolver">setEntityResolver</a></b> ( QXmlStreamEntityResolver * <i>resolver</i> )</li>
+<li><div class="fn"/>void <b><a href="qxmlstreamreader.html#namespaceProcessing-prop">setNamespaceProcessing</a></b> ( bool )</li>
+<li><div class="fn"/>QStringRef <b><a href="qxmlstreamreader.html#text">text</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qxmlstreamreader.html#tokenString">tokenString</a></b> () const</li>
+<li><div class="fn"/>TokenType <b><a href="qxmlstreamreader.html#tokenType">tokenType</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlStreamReader class provides a fast well-formed XML parser with a simple streaming API.</p>
+<p>QXmlStreamReader is a faster and more convenient replacement for Qt's own SAX parser (see <a href="qxmlsimplereader.html">QXmlSimpleReader</a>), and in some cases also for applications that would previously use a DOM tree (see <a href="qdomdocument.html">QDomDocument</a>). QXmlStreamReader reads data either from a <a href="qiodevice.html">QIODevice</a> (see <a href="qxmlstreamreader.html#setDevice">setDevice</a>()), or from a raw <a href="qbytearray.html">QByteArray</a> (see <a href="qxmlstreamreader.html#addData">addData</a>()). With <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>, Qt provides a related class for writing XML.</p>
+<p>The basic concept of a stream reader is to report an XML document as a stream of tokens, similar to SAX. The main difference between QXmlStreamReader and SAX is <i>how</i> these XML tokens are reported. With SAX, the application must provide handlers that receive so-called XML <i>events</i> from the parser at the parser's convenience. With QXmlStreamReader, the application code itself drives the loop and pulls <i>tokens</i> from the reader one after another as it needs them. This is done by calling <a href="qxmlstreamreader.html#readNext">readNext</a>(), which makes the reader read from the input stream until it has completed a new token, and then returns its <a href="qxmlstreamreader.html#tokenType">tokenType</a>(). A set of convenient functions like <a href="qxmlstreamreader.html#isStartElement">isStartElement</a>() or <a href="qxmlstreamreader.html#text">text</a>() then allows to examine this token, and to obtain information about what has been read. The big advantage of the pulling approach is the possibility to build recursive descent parsers, meaning you can split your XML parsing code easily into different methods or classes. This makes it easy to keep track of the application's own state when parsing XML.</p>
+<p>A typical loop with QXmlStreamReader looks like this:</p>
+<pre>   QXmlStreamReader xml;
+   ...
+   while (!xml.atEnd()) {
+         xml.readNext();
+         ... // do processing
+   }
+   if (xml.hasError()) {
+         ... // do error handling
+   }</pre>
+<p>QXmlStreamReader is a well-formed XML 1.0 parser that does <i>not</i> include external parsed entities. As long as no error occurs, the application code can thus be assured that the data provided by the stream reader satisfies the W3C's criteria for well-formed XML. For example, you can be certain that all tags are indeed nested and closed properly, that references to internal entities have been replaced with the correct replacement text, and that attributes have been normalized or added according to the internal subset of the DTD.</p>
+<p>If an error does occur while parsing, <a href="qxmlstreamreader.html#atEnd">atEnd</a>() returns true and <a href="qxmlstreamreader.html#error">error</a>() returns the kind of error that occurred. <a href="qxmlstreamreader.html#hasError">hasError</a>() can also be used to check whether an error has occurred. The functions <a href="qxmlstreamreader.html#errorString">errorString</a>(), <a href="qxmlstreamreader.html#lineNumber">lineNumber</a>(), <a href="qxmlstreamreader.html#columnNumber">columnNumber</a>(), and <a href="qxmlstreamreader.html#characterOffset">characterOffset</a>() make it possible to generate a verbose human-understandable error or warning message. In order to simplify application code, QXmlStreamReader contains a <a href="qxmlstreamreader.html#raiseError">raiseError</a>() mechanism that makes it possible to raise custom errors that then trigger the same error handling code path.</p>
+<p>The <a href="xml-streambookmarks.html">QXmlStream Bookmarks Example</a> illustrates how to use the recursive descent technique with a subclassed stream reader to read an XML bookmark file (XBEL).</p>
+<a name="namespaces"></a>
+<h3>Namespaces</h3>
+<p>QXmlStream understands and resolves XML namespaces. E.g&#x2e; in case of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>, <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>() returns the namespace the element is in, and <a href="qxmlstreamreader.html#name">name</a>() returns the element's <i>local</i> name. The combination of namespaceUri and name uniquely identifies an element. If a namespace prefix was not declared in the XML entities parsed by the reader, the namespaceUri is empty.</p>
+<p>If you parse XML data that does not utilize namespaces according to the XML specification or doesn't use namespaces at all, you can use the element's <a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a>() instead. A qualified name is the element's <a href="qxmlstreamreader.html#prefix">prefix</a>() followed by colon followed by the element's local <a href="qxmlstreamreader.html#name">name</a>() - exactly like the element appears in the raw XML data. Since the mapping namespaceUri to prefix is neither unique nor universal, <a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a>() should be avoided for namespace-compliant XML data.</p>
+<p>In order to parse standalone documents that do use undeclared namespace prefixes, you can turn off namespace processing completely with the <a href="qxmlstreamreader.html#namespaceProcessing-prop">namespaceProcessing</a> property.</p>
+<a name="incremental-parsing"></a>
+<h3>Incremental parsing</h3>
+<p>QXmlStreamReader is an incremental parser. If you can't parse the entire input in one go (for example, it is huge, or is being delivered over a network connection), data can be fed to the parser in pieces. If the reader runs out of data before the document has been parsed completely, it reports a <a href="qxmlstreamreader.html#Error-enum">PrematureEndOfDocumentError</a>. Once more data has arrived, either through the device or because it has been added with <a href="qxmlstreamreader.html#addData">addData</a>(), it recovers from that error and continues parsing on the next call to read().</p>
+<p>For example, if you read data from the network using <a href="qhttp.html">QHttp</a>, you would connect its <a href="qhttp.html#readyRead">readyRead()</a> signal to a custom slot. In this slot, you read all available data with <a href="qhttp.html#readAll">readAll()</a> and pass it to the XML stream reader using <a href="qxmlstreamreader.html#addData">addData</a>(). Then you call your custom parsing function that reads the XML events from the reader.</p>
+<a name="performance-and-memory-consumption"></a>
+<h3>Performance and memory consumption</h3>
+<p>QXmlStreamReader is memory-conservative by design, since it doesn't store the entire XML document tree in memory, but only the current token at the time it is reported. In addition, QXmlStreamReader avoids the many small string allocations that it normally takes to map an XML document to a convenient and Qt-ish API. It does this by reporting all string data as <a href="qstringref.html">QStringRef</a> rather than real <a href="qstring.html">QString</a> objects. <a href="qstringref.html">QStringRef</a> is a thin wrapper around <a href="qstring.html">QString</a> substrings that provides a subset of the <a href="qstring.html">QString</a> API without the memory allocation and reference-counting overhead. Calling <a href="qstringref.html#toString">toString()</a> on any of those objects returns an equivalent real <a href="qstring.html">QString</a> object.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Error-enum"></a>enum QXmlStreamReader::Error</h3>
+<p>This enum specifies different error cases</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error has occurred.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::CustomError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">A custom error has been raised with <a href="qxmlstreamreader.html#raiseError">raiseError</a>()</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::NotWellFormedError</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The parser internally raised an error due to the read XML not being well-formed.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::PrematureEndOfDocumentError</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The input stream ended before the document was parsed completely. This error can be recovered from.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::UnexpectedElementError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The parser encountered an element that was different to those it expected.</td></tr>
+</table></p>
+<h3 class="fn"><a name="TokenType-enum"></a>enum QXmlStreamReader::TokenType</h3>
+<p>This enum specifies the type of token the reader just read.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::NoToken</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The reader has not yet read anything.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::Invalid</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">An error has occurred, reported in <a href="qxmlstreamreader.html#error">error</a>() and <a href="qxmlstreamreader.html#errorString">errorString</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::StartDocument</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The reader reports the XML version number in <a href="qxmlstreamreader.html#documentVersion">documentVersion</a>(), and the encoding as specified in the XML document in <a href="qxmlstreamreader.html#documentEncoding">documentEncoding</a>(). If the document is declared standalone, <a href="qxmlstreamreader.html#isStandaloneDocument">isStandaloneDocument</a>() returns true; otherwise it returns false.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::EndDocument</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The reader reports the end of the document.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::StartElement</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The reader reports the start of an element with <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and <a href="qxmlstreamreader.html#name">name</a>(). Empty elements are also reported as StartElement, followed directly by EndElement. The convenience function <a href="qxmlstreamreader.html#readElementText">readElementText</a>() can be called to concatenate all content until the corresponding EndElement. Attributes are reported in <a href="qxmlstreamreader.html#attributes">attributes</a>(), namespace declarations in <a href="qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::EndElement</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The reader reports the end of an element with <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and <a href="qxmlstreamreader.html#name">name</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::Characters</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The reader reports characters in <a href="qxmlstreamreader.html#text">text</a>(). If the characters are all white-space, <a href="qxmlstreamreader.html#isWhitespace">isWhitespace</a>() returns true. If the characters stem from a CDATA section, <a href="qxmlstreamreader.html#isCDATA">isCDATA</a>() returns true.</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::Comment</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The reader reports a comment in <a href="qxmlstreamreader.html#text">text</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::DTD</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">The reader reports a DTD in <a href="qxmlstreamreader.html#text">text</a>(), notation declarations in <a href="qxmlstreamreader.html#notationDeclarations">notationDeclarations</a>(), and entity declarations in <a href="qxmlstreamreader.html#entityDeclarations">entityDeclarations</a>(). Details of the DTD declaration are reported in in <a href="qxmlstreamreader.html#dtdName">dtdName</a>(), <a href="qxmlstreamreader.html#dtdPublicId">dtdPublicId</a>(), and <a href="qxmlstreamreader.html#dtdSystemId">dtdSystemId</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::EntityReference</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">The reader reports an entity reference that could not be resolved. The name of the reference is reported in <a href="qxmlstreamreader.html#name">name</a>(), the replacement text in <a href="qxmlstreamreader.html#text">text</a>().</td></tr>
+<tr><td valign="top"><tt>QXmlStreamReader::ProcessingInstruction</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">The reader reports a processing instruction in <a href="qxmlstreamreader.html#processingInstructionTarget">processingInstructionTarget</a>() and <a href="qxmlstreamreader.html#processingInstructionData">processingInstructionData</a>().</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="namespaceProcessing-prop"></a>namespaceProcessing : bool</h3>
+<p>the namespace-processing flag of the stream reader</p>
+<p>This property controls whether or not the stream reader processes namespaces. If enabled, the reader processes namespaces, otherwise it does not.</p>
+<p>By default, namespace-processing is enabled.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool namespaceProcessing () const</b></li>
+<li><div class="fn"/><b>void setNamespaceProcessing ( bool )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlStreamReader"></a>QXmlStreamReader::QXmlStreamReader ()</h3>
+<p>Constructs a stream reader.</p>
+<p>See also <a href="qxmlstreamreader.html#setDevice">setDevice</a>() and <a href="qxmlstreamreader.html#addData">addData</a>().</p>
+<h3 class="fn"><a name="QXmlStreamReader-2"></a>QXmlStreamReader::QXmlStreamReader ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )</h3>
+<p>Creates a new stream reader that reads from <i>device</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#setDevice">setDevice</a>() and <a href="qxmlstreamreader.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="QXmlStreamReader-3"></a>QXmlStreamReader::QXmlStreamReader ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> )</h3>
+<p>Creates a new stream reader that reads from <i>data</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#addData">addData</a>(), <a href="qxmlstreamreader.html#clear">clear</a>(), and <a href="qxmlstreamreader.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="QXmlStreamReader-4"></a>QXmlStreamReader::QXmlStreamReader ( const <a href="qstring.html">QString</a> &amp; <i>data</i> )</h3>
+<p>Creates a new stream reader that reads from <i>data</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#addData">addData</a>(), <a href="qxmlstreamreader.html#clear">clear</a>(), and <a href="qxmlstreamreader.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="QXmlStreamReader-5"></a>QXmlStreamReader::QXmlStreamReader ( const char * <i>data</i> )</h3>
+<p>Creates a new stream reader that reads from <i>data</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#addData">addData</a>(), <a href="qxmlstreamreader.html#clear">clear</a>(), and <a href="qxmlstreamreader.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="dtor.QXmlStreamReader"></a>QXmlStreamReader::~QXmlStreamReader ()</h3>
+<p>Destructs the reader.</p>
+<h3 class="fn"><a name="addData"></a>void QXmlStreamReader::addData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> )</h3>
+<p>Adds more <i>data</i> for the reader to read.</p>
+<p>This function does nothing if the reader has a <a href="qxmlstreamreader.html#device">device</a>().</p>
+<p>See also <a href="qxmlstreamreader.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="addData-2"></a>void QXmlStreamReader::addData ( const <a href="qstring.html">QString</a> &amp; <i>data</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds more <i>data</i> for the reader to read.</p>
+<p>This function does nothing if the reader has a <a href="qxmlstreamreader.html#device">device</a>().</p>
+<p>See also <a href="qxmlstreamreader.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="addData-3"></a>void QXmlStreamReader::addData ( const char * <i>data</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds more <i>data</i> for the reader to read.</p>
+<p>This function does nothing if the reader has a <a href="qxmlstreamreader.html#device">device</a>().</p>
+<p>See also <a href="qxmlstreamreader.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="addExtraNamespaceDeclaration"></a>void QXmlStreamReader::addExtraNamespaceDeclaration ( const <a href="qxmlstreamnamespacedeclaration.html">QXmlStreamNamespaceDeclaration</a> &amp; <i>extraNamespaceDeclaration</i> )</h3>
+<p>Adds an <i>extraNamespaceDeclaration</i>. The declaration will be valid for children of the current element, or - should the function be called before any elements are read - for the entire XML document.</p>
+<p>See also <a href="qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a>(), <a href="qxmlstreamreader.html#addExtraNamespaceDeclarations">addExtraNamespaceDeclarations</a>(), and <a href="qxmlstreamreader.html#namespaceProcessing-prop">setNamespaceProcessing</a>().</p>
+<h3 class="fn"><a name="addExtraNamespaceDeclarations"></a>void QXmlStreamReader::addExtraNamespaceDeclarations ( const <a href="qxmlstreamnamespacedeclaration.html#QXmlStreamNamespaceDeclarations-typedef">QXmlStreamNamespaceDeclarations</a> &amp; <i>extraNamespaceDeclarations</i> )</h3>
+<p>Adds a vector of declarations specified by <i>extraNamespaceDeclarations</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#namespaceDeclarations">namespaceDeclarations</a>() and <a href="qxmlstreamreader.html#addExtraNamespaceDeclaration">addExtraNamespaceDeclaration</a>().</p>
+<h3 class="fn"><a name="atEnd"></a>bool QXmlStreamReader::atEnd () const</h3>
+<p>Returns true if the reader has read until the end of the XML document, or an error has occurred and reading has been aborted; otherwise returns false.</p>
+<p>Has reading been aborted with a <a href="qxmlstreamreader.html#Error-enum">PrematureEndOfDocumentError</a> because the device no longer delivered data, atEnd() will return true once more data has arrived.</p>
+<p>See also <a href="qxmlstreamreader.html#device">device</a>() and <a href="qiodevice.html#atEnd">QIODevice::atEnd</a>().</p>
+<h3 class="fn"><a name="attributes"></a><a href="qxmlstreamattributes.html">QXmlStreamAttributes</a> QXmlStreamReader::attributes () const</h3>
+<p>Returns the attributes of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>.</p>
+<h3 class="fn"><a name="characterOffset"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QXmlStreamReader::characterOffset () const</h3>
+<p>Returns the current character offset, starting with 0.</p>
+<p>See also <a href="qxmlstreamreader.html#lineNumber">lineNumber</a>() and <a href="qxmlstreamreader.html#columnNumber">columnNumber</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QXmlStreamReader::clear ()</h3>
+<p>Removes any <a href="qxmlstreamreader.html#device">device</a>() or data from the reader, and resets its state to the initial state.</p>
+<p>See also <a href="qxmlstreamreader.html#addData">addData</a>().</p>
+<h3 class="fn"><a name="columnNumber"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QXmlStreamReader::columnNumber () const</h3>
+<p>Returns the current column number, starting with 0.</p>
+<p>See also <a href="qxmlstreamreader.html#lineNumber">lineNumber</a>() and <a href="qxmlstreamreader.html#characterOffset">characterOffset</a>().</p>
+<h3 class="fn"><a name="device"></a><a href="qiodevice.html">QIODevice</a> * QXmlStreamReader::device () const</h3>
+<p>Returns the current device associated with the <a href="qxmlstreamreader.html">QXmlStreamReader</a>, or 0 if no device has been assigned.</p>
+<p>See also <a href="qxmlstreamreader.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="documentEncoding"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::documentEncoding () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">StartDocument</a>, this function returns the encoding string as specified in the XML declaration. Otherwise an empty string is returned.</p>
+<h3 class="fn"><a name="documentVersion"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::documentVersion () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">StartDocument</a>, this function returns the version string as specified in the XML declaration. Otherwise an empty string is returned.</p>
+<h3 class="fn"><a name="dtdName"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::dtdName () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD's name. Otherwise an empty string is returned.</p>
+<h3 class="fn"><a name="dtdPublicId"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::dtdPublicId () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD's public identifier. Otherwise an empty string is returned.</p>
+<h3 class="fn"><a name="dtdSystemId"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::dtdSystemId () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD's system identifier. Otherwise an empty string is returned.</p>
+<h3 class="fn"><a name="entityDeclarations"></a><a href="qxmlstreamentitydeclaration.html#QXmlStreamEntityDeclarations-typedef">QXmlStreamEntityDeclarations</a> QXmlStreamReader::entityDeclarations () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD's unparsed (external) entity declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="qxmlstreamentitydeclaration.html#QXmlStreamEntityDeclarations-typedef">QXmlStreamEntityDeclarations</a> class is defined to be a <a href="qvector.html">QVector</a> of <a href="qxmlstreamentitydeclaration.html">QXmlStreamEntityDeclaration</a>.</p>
+<h3 class="fn"><a name="entityResolver"></a><a href="qxmlstreamentityresolver.html">QXmlStreamEntityResolver</a> * QXmlStreamReader::entityResolver () const</h3>
+<p>Returns the entity resolver, or 0 if there is no entity resolver.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qxmlstreamreader.html#setEntityResolver">setEntityResolver</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qxmlstreamreader.html#Error-enum">Error</a> QXmlStreamReader::error () const</h3>
+<p>Returns the type of the current error, or <a href="qxmlstreamreader.html#Error-enum">NoError</a> if no error occurred.</p>
+<p>See also <a href="qxmlstreamreader.html#errorString">errorString</a>() and <a href="qxmlstreamreader.html#raiseError">raiseError</a>().</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QXmlStreamReader::errorString () const</h3>
+<p>Returns the error message that was set with <a href="qxmlstreamreader.html#raiseError">raiseError</a>().</p>
+<p>See also <a href="qxmlstreamreader.html#error">error</a>(), <a href="qxmlstreamreader.html#lineNumber">lineNumber</a>(), <a href="qxmlstreamreader.html#columnNumber">columnNumber</a>(), and <a href="qxmlstreamreader.html#characterOffset">characterOffset</a>().</p>
+<h3 class="fn"><a name="hasError"></a>bool QXmlStreamReader::hasError () const</h3>
+<p>Returns <tt>true</tt> if an error has occurred, otherwise <tt>false</tt>.</p>
+<p>See also <a href="qxmlstreamreader.html#errorString">errorString</a>() and <a href="qxmlstreamreader.html#error">error</a>().</p>
+<h3 class="fn"><a name="isCDATA"></a>bool QXmlStreamReader::isCDATA () const</h3>
+<p>Returns true if the reader reports characters that stem from a CDATA section; otherwise returns false.</p>
+<p>See also <a href="qxmlstreamreader.html#isCharacters">isCharacters</a>() and <a href="qxmlstreamreader.html#text">text</a>().</p>
+<h3 class="fn"><a name="isCharacters"></a>bool QXmlStreamReader::isCharacters () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">Characters</a>; otherwise returns false.</p>
+<p>See also <a href="qxmlstreamreader.html#isWhitespace">isWhitespace</a>() and <a href="qxmlstreamreader.html#isCDATA">isCDATA</a>().</p>
+<h3 class="fn"><a name="isComment"></a>bool QXmlStreamReader::isComment () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">Comment</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isDTD"></a>bool QXmlStreamReader::isDTD () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isEndDocument"></a>bool QXmlStreamReader::isEndDocument () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">EndDocument</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isEndElement"></a>bool QXmlStreamReader::isEndElement () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isEntityReference"></a>bool QXmlStreamReader::isEntityReference () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">EntityReference</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isProcessingInstruction"></a>bool QXmlStreamReader::isProcessingInstruction () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isStandaloneDocument"></a>bool QXmlStreamReader::isStandaloneDocument () const</h3>
+<p>Returns true if this document has been declared standalone in the XML declaration; otherwise returns false.</p>
+<p>If no XML declaration has been parsed, this function returns false.</p>
+<h3 class="fn"><a name="isStartDocument"></a>bool QXmlStreamReader::isStartDocument () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">StartDocument</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isStartElement"></a>bool QXmlStreamReader::isStartElement () const</h3>
+<p>Returns true if <a href="qxmlstreamreader.html#tokenType">tokenType</a>() equals <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="isWhitespace"></a>bool QXmlStreamReader::isWhitespace () const</h3>
+<p>Returns true if the reader reports characters that only consist of white-space; otherwise returns false.</p>
+<p>See also <a href="qxmlstreamreader.html#isCharacters">isCharacters</a>() and <a href="qxmlstreamreader.html#text">text</a>().</p>
+<h3 class="fn"><a name="lineNumber"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QXmlStreamReader::lineNumber () const</h3>
+<p>Returns the current line number, starting with 1.</p>
+<p>See also <a href="qxmlstreamreader.html#columnNumber">columnNumber</a>() and <a href="qxmlstreamreader.html#characterOffset">characterOffset</a>().</p>
+<h3 class="fn"><a name="name"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::name () const</h3>
+<p>Returns the local name of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>, <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>, or an <a href="qxmlstreamreader.html#TokenType-enum">EntityReference</a>.</p>
+<p>See also <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and <a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p>
+<h3 class="fn"><a name="namespaceDeclarations"></a><a href="qxmlstreamnamespacedeclaration.html#QXmlStreamNamespaceDeclarations-typedef">QXmlStreamNamespaceDeclarations</a> QXmlStreamReader::namespaceDeclarations () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>, this function returns the element's namespace declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="qxmlstreamnamespacedeclaration.html">QXmlStreamNamespaceDeclaration</a> class is defined to be a <a href="qvector.html">QVector</a> of <a href="qxmlstreamnamespacedeclaration.html">QXmlStreamNamespaceDeclaration</a>.</p>
+<p>See also <a href="qxmlstreamreader.html#addExtraNamespaceDeclaration">addExtraNamespaceDeclaration</a>() and <a href="qxmlstreamreader.html#addExtraNamespaceDeclarations">addExtraNamespaceDeclarations</a>().</p>
+<h3 class="fn"><a name="namespaceUri"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::namespaceUri () const</h3>
+<p>Returns the namespaceUri of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p>See also <a href="qxmlstreamreader.html#name">name</a>() and <a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p>
+<h3 class="fn"><a name="notationDeclarations"></a><a href="qxmlstreamnotationdeclaration.html#QXmlStreamNotationDeclarations-typedef">QXmlStreamNotationDeclarations</a> QXmlStreamReader::notationDeclarations () const</h3>
+<p>If the state() is <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, this function returns the DTD's notation declarations. Otherwise an empty vector is returned.</p>
+<p>The <a href="qxmlstreamnotationdeclaration.html#QXmlStreamNotationDeclarations-typedef">QXmlStreamNotationDeclarations</a> class is defined to be a <a href="qvector.html">QVector</a> of <a href="qxmlstreamnotationdeclaration.html">QXmlStreamNotationDeclaration</a>.</p>
+<h3 class="fn"><a name="prefix"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::prefix () const</h3>
+<p>Returns the prefix of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p>See also <a href="qxmlstreamreader.html#name">name</a>() and <a href="qxmlstreamreader.html#qualifiedName">qualifiedName</a>().</p>
+<h3 class="fn"><a name="processingInstructionData"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::processingInstructionData () const</h3>
+<p>Returns the data of a <a href="qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>.</p>
+<h3 class="fn"><a name="processingInstructionTarget"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::processingInstructionTarget () const</h3>
+<p>Returns the target of a <a href="qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a>.</p>
+<h3 class="fn"><a name="qualifiedName"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::qualifiedName () const</h3>
+<p>Returns the qualified name of a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a> or <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>;</p>
+<p>A qualified name is the raw name of an element in the XML data. It consists of the namespace prefix, followed by colon, followed by the element's local name. Since the namespace prefix is not unique (the same prefix can point to different namespaces and different prefixes can point to the same namespace), you shouldn't use qualifiedName(), but the resolved <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>() and the attribute's local <a href="qxmlstreamreader.html#name">name</a>().</p>
+<p>See also <a href="qxmlstreamreader.html#name">name</a>(), <a href="qxmlstreamreader.html#prefix">prefix</a>(), and <a href="qxmlstreamreader.html#namespaceUri">namespaceUri</a>().</p>
+<h3 class="fn"><a name="raiseError"></a>void QXmlStreamReader::raiseError ( const <a href="qstring.html">QString</a> &amp; <i>message</i> = QString() )</h3>
+<p>Raises a custom error with an optional error <i>message</i>.</p>
+<p>See also <a href="qxmlstreamreader.html#error">error</a>() and <a href="qxmlstreamreader.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="readElementText"></a><a href="qstring.html">QString</a> QXmlStreamReader::readElementText ()</h3>
+<p>Convenience function to be called in case a <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a> was read. Reads until the corresponding <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a> and returns all text in-between. In case of no error, the token after having called this function is <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>.</p>
+<p>The function concatenates <a href="qxmlstreamreader.html#text">text</a>() when it reads either <a href="qxmlstreamreader.html#TokenType-enum">Characters</a> or <a href="qxmlstreamreader.html#TokenType-enum">EntityReference</a> tokens, but skips <a href="qxmlstreamreader.html#TokenType-enum">ProcessingInstruction</a> and <a href="qxmlstreamreader.html#TokenType-enum">Comment</a>. In case anything else is read before reaching <a href="qxmlstreamreader.html#TokenType-enum">EndElement</a>, the function returns what it read so far and raises an <a href="qxmlstreamreader.html#Error-enum">UnexpectedElementError</a>. If the current token is not <a href="qxmlstreamreader.html#TokenType-enum">StartElement</a>, an empty string is returned.</p>
+<h3 class="fn"><a name="readNext"></a><a href="qxmlstreamreader.html#TokenType-enum">TokenType</a> QXmlStreamReader::readNext ()</h3>
+<p>Reads the next token and returns its type.</p>
+<p>If an <a href="qxmlstreamreader.html#error">error</a>() has been reported, reading is no longer possible. In this case, <a href="qxmlstreamreader.html#atEnd">atEnd</a>() always returns true, and this function will do nothing but return Invalid.</p>
+<p>The one exception to this rule are errors of type <a href="qxmlstreamreader.html#Error-enum">PrematureEndOfDocumentError</a>. Subsequent calls to <a href="qxmlstreamreader.html#atEnd">atEnd</a>() and readNext() will resume this error type and try to read from the device again. This iterative parsing approach makes sense if you can't or don't want to read the entire data in one go, for example, if it is huge, or it is being delivered over a network connection</p>
+<p>See also <a href="qxmlstreamreader.html#tokenType">tokenType</a>() and <a href="qxmlstreamreader.html#tokenString">tokenString</a>().</p>
+<h3 class="fn"><a name="setDevice"></a>void QXmlStreamReader::setDevice ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )</h3>
+<p>Sets the current device to <i>device</i>. Setting the device resets the stream to its initial state.</p>
+<p>See also <a href="qxmlstreamreader.html#device">device</a>() and <a href="qxmlstreamreader.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="setEntityResolver"></a>void QXmlStreamReader::setEntityResolver ( <a href="qxmlstreamentityresolver.html">QXmlStreamEntityResolver</a> * <i>resolver</i> )</h3>
+<p>Makes <i>resolver</i> the new <a href="qxmlstreamreader.html#entityResolver">entityResolver</a>().</p>
+<p>The stream reader does <i>not</i> take ownership of the resolver. It's the callers responsibility to ensure that the resolver is valid during the entire life-time of the stream reader object, or until another resolver or 0 is set.</p>
+<p>See also <a href="qxmlstreamreader.html#entityResolver">entityResolver</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstringref.html">QStringRef</a> QXmlStreamReader::text () const</h3>
+<p>Returns the text of <a href="qxmlstreamreader.html#TokenType-enum">Characters</a>, <a href="qxmlstreamreader.html#TokenType-enum">Comment</a>, <a href="qxmlstreamreader.html#TokenType-enum">DTD</a>, or <a href="qxmlstreamreader.html#TokenType-enum">EntityReference</a>.</p>
+<h3 class="fn"><a name="tokenString"></a><a href="qstring.html">QString</a> QXmlStreamReader::tokenString () const</h3>
+<p>Returns the reader's current token as string.</p>
+<p>See also <a href="qxmlstreamreader.html#tokenType">tokenType</a>().</p>
+<h3 class="fn"><a name="tokenType"></a><a href="qxmlstreamreader.html#TokenType-enum">TokenType</a> QXmlStreamReader::tokenType () const</h3>
+<p>Returns the type of the current token.</p>
+<p>The current token can also be queried with the convenience functions <a href="qxmlstreamreader.html#isStartDocument">isStartDocument</a>(), <a href="qxmlstreamreader.html#isEndDocument">isEndDocument</a>(), <a href="qxmlstreamreader.html#isStartElement">isStartElement</a>(), <a href="qxmlstreamreader.html#isEndElement">isEndElement</a>(), <a href="qxmlstreamreader.html#isCharacters">isCharacters</a>(), <a href="qxmlstreamreader.html#isComment">isComment</a>(), <a href="qxmlstreamreader.html#isDTD">isDTD</a>(), <a href="qxmlstreamreader.html#isEntityReference">isEntityReference</a>(), and <a href="qxmlstreamreader.html#isProcessingInstruction">isProcessingInstruction</a>()</p>
+<p>See also <a href="qxmlstreamreader.html#tokenString">tokenString</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

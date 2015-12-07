@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionSlider Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionSlider Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionSlider class is used to describe the parameters needed for drawing a slider. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionSlider&gt;</pre><p>Inherits <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>.</p>
+<ul>
+<li><a href="qstyleoptionslider-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionslider.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionslider.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionslider.html#QStyleOptionSlider">QStyleOptionSlider</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionslider.html#QStyleOptionSlider-2">QStyleOptionSlider</a></b> ( const QStyleOptionSlider &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qstyleoptionslider.html#dialWrapping-var">dialWrapping</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#maximum-var">maximum</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#minimum-var">minimum</a></b></li>
+<li><div class="fn"/>qreal <b><a href="qstyleoptionslider.html#notchTarget-var">notchTarget</a></b></li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qstyleoptionslider.html#orientation-var">orientation</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#pageStep-var">pageStep</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#singleStep-var">singleStep</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#sliderPosition-var">sliderPosition</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#sliderValue-var">sliderValue</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionslider.html#tickInterval-var">tickInterval</a></b></li>
+<li><div class="fn"/>QSlider::TickPosition <b><a href="qstyleoptionslider.html#tickPosition-var">tickPosition</a></b></li>
+<li><div class="fn"/>bool <b><a href="qstyleoptionslider.html#upsideDown-var">upsideDown</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public variables inherited from <a href="qstyleoptioncomplex.html#public-variables">QStyleOptionComplex</a></li>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionSlider class is used to describe the parameters needed for drawing a slider.</p>
+<p>QStyleOptionSlider contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw <a href="qslider.html">QSlider</a> and <a href="qscrollbar.html">QScrollBar</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>, <a href="qslider.html">QSlider</a>, and <a href="qscrollbar.html">QScrollBar</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionSlider::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionSlider::Type</tt></td><td align="center" valign="top"><tt>SO_Slider</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_Slider</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptionslider.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionSlider::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionSlider::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionslider.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionSlider"></a>QStyleOptionSlider::QStyleOptionSlider ()</h3>
+<p>Constructs a <a href="qstyleoptionslider.html">QStyleOptionSlider</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionSlider-2"></a>QStyleOptionSlider::QStyleOptionSlider ( const QStyleOptionSlider &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="dialWrapping-var"></a>bool QStyleOptionSlider::dialWrapping</h3>
+<p>This variable holds whether the dial should wrap or not.</p>
+<p>The default value is false, i.e&#x2e; the dial is not wrapped.</p>
+<p>See also <a href="qdial.html#wrapping-prop">QDial::wrapping</a>().</p>
+<h3 class="fn"><a name="maximum-var"></a>int QStyleOptionSlider::maximum</h3>
+<p>This variable holds the maximum value for the slider.</p>
+<p>The default value is 0.</p>
+<h3 class="fn"><a name="minimum-var"></a>int QStyleOptionSlider::minimum</h3>
+<p>This variable holds the minimum value for the slider.</p>
+<p>The default value is 0.</p>
+<h3 class="fn"><a name="notchTarget-var"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QStyleOptionSlider::notchTarget</h3>
+<p>This variable holds the number of pixel between notches.</p>
+<p>The default value is 0.0&#x2e;</p>
+<p>See also <a href="qdial.html#notchTarget-prop">QDial::notchTarget</a>().</p>
+<h3 class="fn"><a name="orientation-var"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> QStyleOptionSlider::orientation</h3>
+<p>This variable holds the slider's orientation (horizontal or vertical).</p>
+<p>The default orientation is <a href="qt.html#Orientation-enum">Qt::Horizontal</a>.</p>
+<p>See also <a href="qt.html#Orientation-enum">Qt::Orientation</a>.</p>
+<h3 class="fn"><a name="pageStep-var"></a>int QStyleOptionSlider::pageStep</h3>
+<p>This variable holds the size of the page step of the slider.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="qabstractslider.html#pageStep-prop">QAbstractSlider::pageStep</a>.</p>
+<h3 class="fn"><a name="singleStep-var"></a>int QStyleOptionSlider::singleStep</h3>
+<p>This variable holds the size of the single step of the slider.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="qabstractslider.html#singleStep-prop">QAbstractSlider::singleStep</a>.</p>
+<h3 class="fn"><a name="sliderPosition-var"></a>int QStyleOptionSlider::sliderPosition</h3>
+<p>This variable holds the position of the slider handle.</p>
+<p>If the slider has active feedback (i.e&#x2e;, <a href="qabstractslider.html#tracking-prop">QAbstractSlider::tracking</a> is true), this value will be the same as <a href="qstyleoptionslider.html#sliderValue-var">sliderValue</a>. Otherwise, it will have the current position of the handle. The default value is 0.</p>
+<p>See also <a href="qabstractslider.html#tracking-prop">QAbstractSlider::tracking</a> and <a href="qstyleoptionslider.html#sliderValue-var">sliderValue</a>.</p>
+<h3 class="fn"><a name="sliderValue-var"></a>int QStyleOptionSlider::sliderValue</h3>
+<p>This variable holds the value of the slider.</p>
+<p>If the slider has active feedback (i.e&#x2e;, <a href="qabstractslider.html#tracking-prop">QAbstractSlider::tracking</a> is true), this value will be the same as <a href="qstyleoptionslider.html#sliderPosition-var">sliderPosition</a>. Otherwise, it will have the value the slider had before the mouse was pressed.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="qabstractslider.html#tracking-prop">QAbstractSlider::tracking</a> and <a href="qstyleoptionslider.html#sliderPosition-var">sliderPosition</a>.</p>
+<h3 class="fn"><a name="tickInterval-var"></a>int QStyleOptionSlider::tickInterval</h3>
+<p>This variable holds the interval that should be drawn between tick marks.</p>
+<p>The default value is 0.</p>
+<h3 class="fn"><a name="tickPosition-var"></a><a href="qslider.html#TickPosition-enum">QSlider::TickPosition</a> QStyleOptionSlider::tickPosition</h3>
+<p>This variable holds the position of the slider's tick marks, if any.</p>
+<p>The default value is <a href="qslider.html#TickPosition-enum">QSlider::NoTicks</a>.</p>
+<p>See also <a href="qslider.html#TickPosition-enum">QSlider::TickPosition</a>.</p>
+<h3 class="fn"><a name="upsideDown-var"></a>bool QStyleOptionSlider::upsideDown</h3>
+<p>This variable holds the slider control orientation.</p>
+<p>Normally a slider increases as it moves up or to the right; upsideDown indicates that it should do the opposite (increase as it moves down or to the left). The default value is false, i.e&#x2e; the slider increases as it moves up or to the right.</p>
+<p>See also <a href="qstyle.html#sliderPositionFromValue">QStyle::sliderPositionFromValue</a>(), <a href="qstyle.html#sliderValueFromPosition">QStyle::sliderValueFromPosition</a>(), and <a href="qabstractslider.html#invertedAppearance-prop">QAbstractSlider::invertedAppearance</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

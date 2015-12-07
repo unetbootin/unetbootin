@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/sdk/abstractformwindowmanager.cpp -->
+<head>
+  <title>Qt 4.4: QDesignerFormWindowManagerInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerFormWindowManagerInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerFormWindowManagerInterface class allows you to manipulate the collection of form windows in Qt Designer, and control Qt Designer's form editing actions. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerFormWindowManagerInterface&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qdesignerformwindowmanagerinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdesignerformwindowmanagerinterface.html#QDesignerFormWindowManagerInterface">QDesignerFormWindowManagerInterface</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qdesignerformwindowmanagerinterface.html#dtor.QDesignerFormWindowManagerInterface">~QDesignerFormWindowManagerInterface</a></b> ()</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionAdjustSize">actionAdjustSize</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionBreakLayout">actionBreakLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionCopy">actionCopy</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionCut">actionCut</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionDelete">actionDelete</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionFormLayout">actionFormLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionGridLayout">actionGridLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionHorizontalLayout">actionHorizontalLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionLower">actionLower</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionPaste">actionPaste</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionRaise">actionRaise</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionRedo">actionRedo</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionSelectAll">actionSelectAll</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionSimplifyLayout">actionSimplifyLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionSplitHorizontal">actionSplitHorizontal</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionSplitVertical">actionSplitVertical</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionUndo">actionUndo</a></b> () const</li>
+<li><div class="fn"/>virtual QAction * <b><a href="qdesignerformwindowmanagerinterface.html#actionVerticalLayout">actionVerticalLayout</a></b> () const</li>
+<li><div class="fn"/>virtual QDesignerFormWindowInterface * <b><a href="qdesignerformwindowmanagerinterface.html#activeFormWindow">activeFormWindow</a></b> () const</li>
+<li><div class="fn"/>virtual QDesignerFormEditorInterface * <b><a href="qdesignerformwindowmanagerinterface.html#core">core</a></b> () const</li>
+<li><div class="fn"/>virtual QDesignerFormWindowInterface * <b><a href="qdesignerformwindowmanagerinterface.html#createFormWindow">createFormWindow</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/>virtual QDesignerFormWindowInterface * <b><a href="qdesignerformwindowmanagerinterface.html#formWindow">formWindow</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerformwindowmanagerinterface.html#formWindowCount">formWindowCount</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowmanagerinterface.html#addFormWindow">addFormWindow</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowmanagerinterface.html#removeFormWindow">removeFormWindow</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerformwindowmanagerinterface.html#setActiveFormWindow">setActiveFormWindow</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdesignerformwindowmanagerinterface.html#activeFormWindowChanged">activeFormWindowChanged</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+<li><div class="fn"/>void <b><a href="qdesignerformwindowmanagerinterface.html#formWindowAdded">formWindowAdded</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+<li><div class="fn"/>void <b><a href="qdesignerformwindowmanagerinterface.html#formWindowRemoved">formWindowRemoved</a></b> ( QDesignerFormWindowInterface * <i>formWindow</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerFormWindowManagerInterface class allows you to manipulate the collection of form windows in Qt Designer, and control Qt Designer's form editing actions.</p>
+<p>QDesignerFormWindowManagerInterface is not intended to be instantiated directly. <i>Qt Designer</i> uses the form window manager to control the various form windows in its workspace. You can retrieve an interface to <i>Qt Designer</i>'s form window manager using the <a href="qdesignerformeditorinterface.html#formWindowManager">QDesignerFormEditorInterface::formWindowManager</a>() function. For example:</p>
+<pre>         QDesignerFormWindowManagerInterface *manager = 0;
+         QDesignerFormWindowInterface *formWindow = 0;
+
+         manager = formEditor-&gt;formWindowManager();
+         formWindow = manager-&gt;formWindow(0);
+
+         manager-&gt;setActiveFormWindow(formWindow);</pre>
+<p>When implementing a custom widget plugin, a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object (<tt>formEditor</tt> in the example above) is provided by the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function's parameter. You must subclass the <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> to expose your plugin to Qt Designer.</p>
+<p>The form window manager interface provides the <a href="qdesignerformwindowmanagerinterface.html#createFormWindow">createFormWindow</a>() function that enables you to create a new form window which you can add to the collection of form windows that the manager maintains, using the <a href="qdesignerformwindowmanagerinterface.html#addFormWindow">addFormWindow</a>() slot. It also provides the <a href="qdesignerformwindowmanagerinterface.html#formWindowCount">formWindowCount</a>() function returning the number of form windows currently under the manager's control, the <a href="qdesignerformwindowmanagerinterface.html#formWindow">formWindow</a>() function returning the form window associated with a given index, and the <a href="qdesignerformwindowmanagerinterface.html#activeFormWindow">activeFormWindow</a>() function returning the currently selected form window. The <a href="qdesignerformwindowmanagerinterface.html#removeFormWindow">removeFormWindow</a>() slot allows you to reduce the number of form windows the manager must maintain, and the <a href="qdesignerformwindowmanagerinterface.html#setActiveFormWindow">setActiveFormWindow</a>() slot allows you to change the form window focus in <i>Qt Designer</i>'s workspace.</p>
+<p>In addition, QDesignerFormWindowManagerInterface contains a collection of functions that enables you to intervene and control <i>Qt Designer</i>'s form editing actions. All these functions return the original action, making it possible to propagate the function further after intervention.</p>
+<p>Finally, the interface provides three signals which are emitted when a form window is added, when the currently selected form window changes, or when a form window is removed, respectively. All the signals carry the form window in question as their parameter.</p>
+<p>See also <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> and <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDesignerFormWindowManagerInterface"></a>QDesignerFormWindowManagerInterface::QDesignerFormWindowManagerInterface ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an interface with the given <i>parent</i> for the form window manager.</p>
+<h3 class="fn"><a name="dtor.QDesignerFormWindowManagerInterface"></a>QDesignerFormWindowManagerInterface::~QDesignerFormWindowManagerInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the interface for the form window manager.</p>
+<h3 class="fn"><a name="actionAdjustSize"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionAdjustSize () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;adjust size&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionBreakLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionBreakLayout () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;break layout&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionCopy"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionCopy () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;copy&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionCut"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionCut () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;cut&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionDelete"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionDelete () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;delete&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionFormLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionFormLayout () const</h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;form layout&quot; action. The function returns the original action.</p>
+<p>FormWindowManagerPrivateMap *fwmpm = g_FormWindowManagerPrivateMap();</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionGridLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionGridLayout () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control a request for grid layout for a form window in <i>Qt Designer</i>'s workspace. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionHorizontalLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionHorizontalLayout () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control a request for horizontal layout for a form window in <i>Qt Designer</i>'s workspace. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionLower"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionLower () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control the action of lowering a form window in <i>Qt Designer</i>'s workspace. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionPaste"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionPaste () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;paste&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionRaise"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionRaise () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control the action of raising of a form window in <i>Qt Designer</i>'s workspace. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionRedo"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionRedo () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;redo&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionSelectAll"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionSelectAll () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;select all&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionSimplifyLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionSimplifyLayout () const</h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;simplify layout&quot; action. The function returns the original action.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionSplitHorizontal"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionSplitHorizontal () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;split horizontal&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionSplitVertical"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionSplitVertical () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;split vertical&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionUndo"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionUndo () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control <i>Qt Designer</i>'s &quot;undo&quot; action. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="actionVerticalLayout"></a><a href="qaction.html">QAction</a> * QDesignerFormWindowManagerInterface::actionVerticalLayout () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Allows you to intervene and control a request for vertical layout for a form window in <i>Qt Designer</i>'s workspace. The function returns the original action.</p>
+<p>See also <a href="qaction.html">QAction</a>.</p>
+<h3 class="fn"><a name="activeFormWindow"></a><a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * QDesignerFormWindowManagerInterface::activeFormWindow () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the currently active form window in <i>Qt Designer</i>'s workspace.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#setActiveFormWindow">setActiveFormWindow</a>() and <a href="qdesignerformwindowmanagerinterface.html#removeFormWindow">removeFormWindow</a>().</p>
+<h3 class="fn"><a name="activeFormWindowChanged"></a>void QDesignerFormWindowManagerInterface::activeFormWindowChanged ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the contents of the currently active form window in <i>Qt Designer</i>'s workspace changed. A pointer to the currently active <i>formWindow</i> is passed as an argument.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#activeFormWindow">activeFormWindow</a>().</p>
+<h3 class="fn"><a name="addFormWindow"></a>void QDesignerFormWindowManagerInterface::addFormWindow ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Adds the given <i>formWindow</i> to the collection of windows that <i>Qt Designer</i>'s form window manager maintains.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#formWindowAdded">formWindowAdded</a>().</p>
+<h3 class="fn"><a name="core"></a><a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> * QDesignerFormWindowManagerInterface::core () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object.</p>
+<h3 class="fn"><a name="createFormWindow"></a><a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * QDesignerFormWindowManagerInterface::createFormWindow ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Creates a form window with the given <i>parent</i> and the given window <i>flags</i>.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#addFormWindow">addFormWindow</a>().</p>
+<h3 class="fn"><a name="formWindow"></a><a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * QDesignerFormWindowManagerInterface::formWindow ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the form window at the given <i>index</i>.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#setActiveFormWindow">setActiveFormWindow</a>() and <a href="qdesignerformwindowmanagerinterface.html#removeFormWindow">removeFormWindow</a>().</p>
+<h3 class="fn"><a name="formWindowAdded"></a>void QDesignerFormWindowManagerInterface::formWindowAdded ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new form window is added to the collection of windows that <i>Qt Designer</i>'s form window manager maintains. A pointer to the new <i>formWindow</i> is passed as an argument.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#addFormWindow">addFormWindow</a>() and <a href="qdesignerformwindowmanagerinterface.html#setActiveFormWindow">setActiveFormWindow</a>().</p>
+<h3 class="fn"><a name="formWindowCount"></a>int QDesignerFormWindowManagerInterface::formWindowCount () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of form windows maintained by <i>Qt Designer</i>'s form window manager.</p>
+<h3 class="fn"><a name="formWindowRemoved"></a>void QDesignerFormWindowManagerInterface::formWindowRemoved ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a form window is removed from the collection of windows that <i>Qt Designer</i>'s form window manager maintains. A pointer to the removed <i>formWindow</i> is passed as an argument.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#removeFormWindow">removeFormWindow</a>().</p>
+<h3 class="fn"><a name="removeFormWindow"></a>void QDesignerFormWindowManagerInterface::removeFormWindow ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes the given <i>formWindow</i> from the collection of windows that <i>Qt Designer</i>'s form window manager maintains.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#formWindow">formWindow</a>() and <a href="qdesignerformwindowmanagerinterface.html#formWindowRemoved">formWindowRemoved</a>().</p>
+<h3 class="fn"><a name="setActiveFormWindow"></a>void QDesignerFormWindowManagerInterface::setActiveFormWindow ( <a href="qdesignerformwindowinterface.html">QDesignerFormWindowInterface</a> * <i>formWindow</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the given <i>formWindow</i> to be the currently active form window in <i>Qt Designer</i>'s workspace.</p>
+<p>See also <a href="qdesignerformwindowmanagerinterface.html#activeFormWindow">activeFormWindow</a>() and <a href="qdesignerformwindowmanagerinterface.html#activeFormWindowChanged">activeFormWindowChanged</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

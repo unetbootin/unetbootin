@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qline.cpp -->
+<head>
+  <title>Qt 4.4: QLineF Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QLineF Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QLineF class provides a two-dimensional vector using floating point precision. <a href="#details">More...</a></p>
+<pre> #include &lt;QLineF&gt;</pre><ul>
+<li><a href="qlinef-members.html">List of all members, including inherited members</a></li>
+<li><a href="qlinef-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qlinef.html#IntersectType-enum">IntersectType</a></b> { NoIntersection, UnboundedIntersection, BoundedIntersection }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlinef.html#QLineF">QLineF</a></b> ()</li>
+<li><div class="fn"/><b><a href="qlinef.html#QLineF-2">QLineF</a></b> ( const QPointF &amp; <i>p1</i>, const QPointF &amp; <i>p2</i> )</li>
+<li><div class="fn"/><b><a href="qlinef.html#QLineF-3">QLineF</a></b> ( qreal <i>x1</i>, qreal <i>y1</i>, qreal <i>x2</i>, qreal <i>y2</i> )</li>
+<li><div class="fn"/><b><a href="qlinef.html#QLineF-4">QLineF</a></b> ( const QLine &amp; <i>line</i> )</li>
+<li><div class="fn"/>QPointF <b><a href="qlinef.html#p1">p1</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qlinef.html#p2">p2</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#x1">x1</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#x2">x2</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#y1">y1</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#y2">y2</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#angle">angle</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#angleTo">angleTo</a></b> ( const QLineF &amp; <i>line</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#dx">dx</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#dy">dy</a></b> () const</li>
+<li><div class="fn"/>IntersectType <b><a href="qlinef.html#intersect">intersect</a></b> ( const QLineF &amp; <i>line</i>, QPointF * <i>intersectionPoint</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlinef.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qlinef.html#length">length</a></b> () const</li>
+<li><div class="fn"/>QLineF <b><a href="qlinef.html#normalVector">normalVector</a></b> () const</li>
+<li><div class="fn"/>QPointF <b><a href="qlinef.html#pointAt">pointAt</a></b> ( qreal <i>t</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setP1">setP1</a></b> ( const QPointF &amp; <i>p1</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setP2">setP2</a></b> ( const QPointF &amp; <i>p2</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setAngle">setAngle</a></b> ( qreal <i>angle</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setLength">setLength</a></b> ( qreal <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setLine">setLine</a></b> ( qreal <i>x1</i>, qreal <i>y1</i>, qreal <i>x2</i>, qreal <i>y2</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#setPoints">setPoints</a></b> ( const QPointF &amp; <i>p1</i>, const QPointF &amp; <i>p2</i> )</li>
+<li><div class="fn"/>QLine <b><a href="qlinef.html#toLine">toLine</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#translate">translate</a></b> ( const QPointF &amp; <i>offset</i> )</li>
+<li><div class="fn"/>void <b><a href="qlinef.html#translate-2">translate</a></b> ( qreal <i>dx</i>, qreal <i>dy</i> )</li>
+<li><div class="fn"/>QLineF <b><a href="qlinef.html#translated">translated</a></b> ( const QPointF &amp; <i>offset</i> ) const</li>
+<li><div class="fn"/>QLineF <b><a href="qlinef.html#translated-2">translated</a></b> ( qreal <i>dx</i>, qreal <i>dy</i> ) const</li>
+<li><div class="fn"/>QLineF <b><a href="qlinef.html#unitVector">unitVector</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlinef.html#operator-not-eq">operator!=</a></b> ( const QLineF &amp; <i>line</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlinef.html#operator-eq-eq">operator==</a></b> ( const QLineF &amp; <i>line</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QLineF <b><a href="qlinef.html#fromPolar">fromPolar</a></b> ( qreal <i>length</i>, qreal <i>angle</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qlinef.html#operator-lt-lt-100">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QLineF &amp; <i>line</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qlinef.html#operator-gt-gt-61">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QLineF &amp; <i>line</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLineF class provides a two-dimensional vector using floating point precision.</p>
+<p>A QLineF describes a finite length line (or line segment) on a two-dimensional surface. QLineF defines the start and end points of the line using floating point accuracy for coordinates. Use the <a href="qlinef.html#toLine">toLine</a>() function to retrieve an integer based copy of this line.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qline-point.png" /></td><td><img src="images/qline-coordinates.png" /></td></tr>
+</table></p>
+<p>The positions of the line's start and end points can be retrieved using the <a href="qlinef.html#p1">p1</a>(), <a href="qlinef.html#x1">x1</a>(), <a href="qlinef.html#y1">y1</a>(), <a href="qlinef.html#p2">p2</a>(), <a href="qlinef.html#x2">x2</a>(), and <a href="qlinef.html#y2">y2</a>() functions. The <a href="qlinef.html#dx">dx</a>() and <a href="qlinef.html#dy">dy</a>() functions return the horizontal and vertical components of the line, respectively.</p>
+<p>The line's length can be retrieved using the <a href="qlinef.html#length">length</a>() function, and altered using the <a href="qlinef.html#setLength">setLength</a>() function. Similarly, <a href="qlinef.html#angle">angle</a>() and <a href="qlinef.html#setAngle">setAngle</a>() are respectively used for retrieving and altering the angle of the line. Use the <a href="qlinef.html#isNull">isNull</a>() function to determine whether the QLineF represents a valid line or a null line.</p>
+<p>The <a href="qlinef.html#intersect">intersect</a>() function determines the <a href="qlinef.html#IntersectType-enum">IntersectType</a> for this line and a given line, while the <a href="qlinef.html#angle">angle</a>() function returns the angle between the lines. In addition, the <a href="qlinef.html#unitVector">unitVector</a>() function returns a line that has the same starting point as this line, but with a length of only 1, while the <a href="qlinef.html#normalVector">normalVector</a>() function returns a line that is perpendicular to this line with the same starting point and length.</p>
+<p>Finally, the line can be translated a given offset using the <a href="qlinef.html#translate">translate</a>() function, and can be traversed using the <a href="qlinef.html#pointAt">pointAt</a>() function.</p>
+<p>See also <a href="qline.html">QLine</a>, <a href="qpolygonf.html">QPolygonF</a>, and <a href="qrectf.html">QRectF</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="IntersectType-enum"></a>enum QLineF::IntersectType</h3>
+<p>Describes the intersection between two lines.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qlinef-unbounded.png" /></td><td><img src="images/qlinef-bounded.png" /></td></tr>
+<tr valign="top" class="even"><td>QLineF::UnboundedIntersection</td><td>QLineF::BoundedIntersection</td></tr>
+</table></p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QLineF::NoIntersection</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Indicates that the lines do not intersect; i.e&#x2e; they are parallel.</td></tr>
+<tr><td valign="top"><tt>QLineF::UnboundedIntersection</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The two lines intersect, but not within the range defined by their lengths. This will be the case if the lines are not parallel.</td></tr>
+<tr><td valign="top"><tt>QLineF::BoundedIntersection</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The two lines intersect with each other within the start and end points of each line.</td></tr>
+</table></p>
+<p>See also <a href="qlinef.html#intersect">intersect</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLineF"></a>QLineF::QLineF ()</h3>
+<p>Constructs a null line.</p>
+<h3 class="fn"><a name="QLineF-2"></a>QLineF::QLineF ( const <a href="qpointf.html">QPointF</a> &amp; <i>p1</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>p2</i> )</h3>
+<p>Constructs a line object that represents the line between <i>p1</i> and <i>p2</i>.</p>
+<h3 class="fn"><a name="QLineF-3"></a>QLineF::QLineF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x1</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y1</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x2</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y2</i> )</h3>
+<p>Constructs a line object that represents the line between (<i>x1</i>, <i>y1</i>) and (<i>x2</i>, <i>y2</i>).</p>
+<h3 class="fn"><a name="QLineF-4"></a>QLineF::QLineF ( const <a href="qline.html">QLine</a> &amp; <i>line</i> )</h3>
+<p>Construct a <a href="qlinef.html">QLineF</a> object from the given integer-based <i>line</i>.</p>
+<p>See also <a href="qlinef.html#toLine">toLine</a>().</p>
+<h3 class="fn"><a name="p1"></a><a href="qpointf.html">QPointF</a> QLineF::p1 () const</h3>
+<p>Returns the line's start point.</p>
+<p>See also <a href="qlinef.html#setP1">setP1</a>(), <a href="qlinef.html#x1">x1</a>(), <a href="qlinef.html#y1">y1</a>(), and <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="p2"></a><a href="qpointf.html">QPointF</a> QLineF::p2 () const</h3>
+<p>Returns the line's end point.</p>
+<p>See also <a href="qlinef.html#setP2">setP2</a>(), <a href="qlinef.html#x2">x2</a>(), <a href="qlinef.html#y2">y2</a>(), and <a href="qlinef.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="x1"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::x1 () const</h3>
+<p>Returns the x-coordinate of the line's start point.</p>
+<p>See also <a href="qlinef.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="x2"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::x2 () const</h3>
+<p>Returns the x-coordinate of the line's end point.</p>
+<p>See also <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="y1"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::y1 () const</h3>
+<p>Returns the y-coordinate of the line's start point.</p>
+<p>See also <a href="qlinef.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="y2"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::y2 () const</h3>
+<p>Returns the y-coordinate of the line's end point.</p>
+<p>See also <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="angle"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::angle () const</h3>
+<p>Returns the angle of the line in degrees.</p>
+<p>Positive values for the angles mean counter-clockwise while negative values mean the clockwise direction. Zero degrees is at the 3 o'clock position.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qlinef.html#setAngle">setAngle</a>().</p>
+<h3 class="fn"><a name="angleTo"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::angleTo ( const QLineF &amp; <i>line</i> ) const</h3>
+<p>Returns the angle (in degrees) from this line to the given <i>line</i>, taking the direction of the lines into account. If the lines do not intersect within their range, it is the intersection point of the extended lines that serves as origin (see <a href="qlinef.html#IntersectType-enum">QLineF::UnboundedIntersection</a>).</p>
+<p>The returned value represents the number of degrees you need to add to this line to make it have the same angle as the given <i>line</i>, going counter-clockwise.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qlinef.html#intersect">intersect</a>().</p>
+<h3 class="fn"><a name="dx"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::dx () const</h3>
+<p>Returns the horizontal component of the line's vector.</p>
+<p>See also <a href="qlinef.html#dy">dy</a>() and <a href="qlinef.html#pointAt">pointAt</a>().</p>
+<h3 class="fn"><a name="dy"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::dy () const</h3>
+<p>Returns the vertical component of the line's vector.</p>
+<p>See also <a href="qlinef.html#dx">dx</a>() and <a href="qlinef.html#pointAt">pointAt</a>().</p>
+<h3 class="fn"><a name="fromPolar"></a>QLineF QLineF::fromPolar ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>length</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a <a href="qlinef.html">QLineF</a> with the given <i>length</i> and <i>angle</i>.</p>
+<p>The first point of the line will be on the origin.</p>
+<p>Positive values for the angles mean counter-clockwise while negative values mean the clockwise direction. Zero degrees is at the 3 o'clock position.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="intersect"></a><a href="qlinef.html#IntersectType-enum">IntersectType</a> QLineF::intersect ( const QLineF &amp; <i>line</i>, <a href="qpointf.html">QPointF</a> * <i>intersectionPoint</i> ) const</h3>
+<p>Returns a value indicating whether or not <i>this</i> line intersects with the given <i>line</i>.</p>
+<p>The actual intersection point is extracted to <i>intersectionPoint</i> (if the pointer is valid). If the lines are parallel, the intersection point is undefined.</p>
+<h3 class="fn"><a name="isNull"></a>bool QLineF::isNull () const</h3>
+<p>Returns true if the line is not set up with valid start and end point; otherwise returns false.</p>
+<h3 class="fn"><a name="length"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QLineF::length () const</h3>
+<p>Returns the length of the line.</p>
+<p>See also <a href="qlinef.html#setLength">setLength</a>().</p>
+<h3 class="fn"><a name="normalVector"></a>QLineF QLineF::normalVector () const</h3>
+<p>Returns a line that is perpendicular to this line with the same starting point and length.</p>
+<p align="center"><img src="images/qlinef-normalvector.png" /></p><p>See also <a href="qlinef.html#unitVector">unitVector</a>().</p>
+<h3 class="fn"><a name="pointAt"></a><a href="qpointf.html">QPointF</a> QLineF::pointAt ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>t</i> ) const</h3>
+<p>Returns the point at the parameterized position specified by <i>t</i>. The function returns the line's start point if t = 0, and its end point if t = 1.</p>
+<p>See also <a href="qlinef.html#dx">dx</a>() and <a href="qlinef.html#dy">dy</a>().</p>
+<h3 class="fn"><a name="setP1"></a>void QLineF::setP1 ( const <a href="qpointf.html">QPointF</a> &amp; <i>p1</i> )</h3>
+<p>Sets the starting point of this line to <i>p1</i>.</p>
+<p>See also <a href="qlinef.html#setP2">setP2</a>() and <a href="qlinef.html#p1">p1</a>().</p>
+<h3 class="fn"><a name="setP2"></a>void QLineF::setP2 ( const <a href="qpointf.html">QPointF</a> &amp; <i>p2</i> )</h3>
+<p>Sets the end point of this line to <i>p2</i>.</p>
+<p>See also <a href="qlinef.html#setP1">setP1</a>() and <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="setAngle"></a>void QLineF::setAngle ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>angle</i> )</h3>
+<p>Sets the angle of the line to the given <i>angle</i> (in degrees). This will change the position of the second point of the line such that the line has the given angle.</p>
+<p>Positive values for the angles mean counter-clockwise while negative values mean the clockwise direction. Zero degrees is at the 3 o'clock position.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qlinef.html#angle">angle</a>().</p>
+<h3 class="fn"><a name="setLength"></a>void QLineF::setLength ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>length</i> )</h3>
+<p>Sets the length of the line to the given <i>length</i>. If the line is a null line, the length will remain zero regardless of the length specified.</p>
+<p>See also <a href="qlinef.html#length">length</a>() and <a href="qlinef.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="setLine"></a>void QLineF::setLine ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x1</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y1</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>x2</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y2</i> )</h3>
+<p>Sets this line to the start in <i>x1</i>, <i>y1</i> and end in <i>x2</i>, <i>y2</i>.</p>
+<p>See also <a href="qlinef.html#setP1">setP1</a>(), <a href="qlinef.html#setP2">setP2</a>(), <a href="qlinef.html#p1">p1</a>(), and <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="setPoints"></a>void QLineF::setPoints ( const <a href="qpointf.html">QPointF</a> &amp; <i>p1</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>p2</i> )</h3>
+<p>Sets the start point of this line to <i>p1</i> and the end point of this line to <i>p2</i>.</p>
+<p>See also <a href="qlinef.html#setP1">setP1</a>(), <a href="qlinef.html#setP2">setP2</a>(), <a href="qlinef.html#p1">p1</a>(), and <a href="qlinef.html#p2">p2</a>().</p>
+<h3 class="fn"><a name="toLine"></a><a href="qline.html">QLine</a> QLineF::toLine () const</h3>
+<p>Returns an integer based copy of this line.</p>
+<p>Note that the returned line's start and end points are rounded to the nearest integer.</p>
+<p>See also <a href="qlinef.html#QLineF">QLineF</a>().</p>
+<h3 class="fn"><a name="translate"></a>void QLineF::translate ( const <a href="qpointf.html">QPointF</a> &amp; <i>offset</i> )</h3>
+<p>Translates this line by the given <i>offset</i>.</p>
+<h3 class="fn"><a name="translate-2"></a>void QLineF::translate ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Translates this line the distance specified by <i>dx</i> and <i>dy</i>.</p>
+<h3 class="fn"><a name="translated"></a>QLineF QLineF::translated ( const <a href="qpointf.html">QPointF</a> &amp; <i>offset</i> ) const</h3>
+<p>Returns this line translated by the given <i>offset</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="translated-2"></a>QLineF QLineF::translated ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dx</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>dy</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns this line translated the distance specified by <i>dx</i> and <i>dy</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="unitVector"></a>QLineF QLineF::unitVector () const</h3>
+<p>Returns the unit vector for this line, i.e a line starting at the same point as <i>this</i> line with a length of 1.0&#x2e;</p>
+<p>See also <a href="qlinef.html#normalVector">normalVector</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QLineF::operator!= ( const QLineF &amp; <i>line</i> ) const</h3>
+<p>Returns true if the given <i>line</i> is not the same as <i>this</i> line.</p>
+<p>A line is different from another line if their start or end points differ, or the internal order of the points is different.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QLineF::operator== ( const QLineF &amp; <i>line</i> ) const</h3>
+<p>Returns true if the given <i>line</i> is the same as this line.</p>
+<p>A line is identical to another line if the start and end points are identical, and the internal order of the points is the same.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-100"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QLineF &amp; <i>line</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>line</i> to the given <i>stream</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-61"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QLineF &amp; <i>line</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a line from the given <i>stream</i> into the given <i>line</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

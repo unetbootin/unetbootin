@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<GCC_XML>
+  <Namespace id="_1" name="::" members="_3 _4 _5 _6 _7 _8 _9 _10 _11 _12 _13 _14 _15 " mangled="_Z2::"/>
+  <Namespace id="_2" name="std" context="_1" members="" mangled="_Z3std"/>
+  <Function id="_3" name="_GLOBAL__D_globals.cppwVRo3a" returns="_16" context="_1" location="f0:14" file="f0" line="14" endline="14"/>
+  <Function id="_4" name="_GLOBAL__I_globals.cppwVRo3a" returns="_16" context="_1" location="f0:14" file="f0" line="14" endline="14"/>
+  <Function id="_5" name="__static_initialization_and_destruction_0" returns="_16" context="_1" mangled="_Z41__static_initialization_and_destruction_0ii" location="f0:23" file="f0" line="23" endline="14">
+    <Argument name="__initialize_p" type="_17"/>
+    <Argument name="__priority" type="_17"/>
+  </Function>
+  <Function id="_6" name="main" returns="_17" context="_1" location="f0:20" file="f0" line="20" endline="24"/>
+  <Variable id="_7" name="constComplex2" type="_11c" context="_1" location="f0:17" file="f0" line="17"/>
+  <Variable id="_8" name="constComplex1" type="_11c" context="_1" location="f0:16" file="f0" line="16"/>
+  <Variable id="_9" name="mutableComplex2" type="_11" context="_1" location="f0:15" file="f0" line="15"/>
+  <Variable id="_10" name="mutableComplex1" type="_11" context="_1" location="f0:14" file="f0" line="14"/>
+  <Class id="_11" name="ComplexClass" context="_1" mangled="12ComplexClass" location="f0:7" file="f0" line="7" members="_19 _20 _21 " bases=""/>
+  <Variable id="_12" name="constPrimitive2" type="_17c" init="3" context="_1" location="f0:4" file="f0" line="4"/>
+  <Variable id="_13" name="constPrimitive1" type="_17c" init="4" context="_1" location="f0:3" file="f0" line="3"/>
+  <Variable id="_14" name="mutablePrimitive2" type="_17" context="_1" location="f0:2" file="f0" line="2"/>
+  <Variable id="_15" name="mutablePrimitive1" type="_17" context="_1" location="f0:1" file="f0" line="1"/>
+  <FundamentalType id="_16" name="void"/>
+  <FundamentalType id="_17" name="int"/>
+  <CvQualifiedType id="_11c" type="_11" const="1"/>
+  <Constructor id="_19" name="ComplexClass" context="_11" mangled="_ZN12ComplexClassC1Ev *INTERNAL* " location="f0:9" file="f0" line="9" extern="1"/>
+  <Constructor id="_20" name="ComplexClass" context="_11" mangled="_ZN12ComplexClassC1ERKS_ *INTERNAL* " location="f0:10" file="f0" line="10" extern="1">
+    <Argument type="_23"/>
+  </Constructor>
+  <Destructor id="_21" name="ComplexClass" context="_11" mangled="_ZN12ComplexClassD1Ev *INTERNAL* " location="f0:11" file="f0" line="11" extern="1">
+  </Destructor>
+  <CvQualifiedType id="_17c" type="_17" const="1"/>
+  <ReferenceType id="_23" type="_11c"/>
+  <File id="f0" name="globals.cpp"/>
+</GCC_XML>

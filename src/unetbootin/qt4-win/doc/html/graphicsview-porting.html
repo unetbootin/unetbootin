@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/porting4-canvas.qdoc -->
+<head>
+  <title>Qt 4.4: Porting to Graphics View</title>
+  <link rel="prev" href="porting4-designer.html" />
+  <link rel="contents" href="porting.html" />
+  <link rel="next" href="qt3to4.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="porting4-designer.html">Porting .ui Files to Qt 4</a>]
+[<a href="porting.html">Contents</a>]
+[Next: <a href="qt3to4.html">qt3to4 - The Qt 3 to 4 Porting Tool</a>]
+</p>
+<h1 class="title">Porting to Graphics View<br /><span class="subtitle"></span>
+</h1>
+<a name="qgraphicsview-graphicsview-porting-graphics-canvas"></a><p>Graphics View provides a surface for managing and interacting with a large number of custom-made 2D graphical items, and a view widget for visualizing the items, with support for zooming and rotation. Graphics View was introduced in Qt 4.2, replacing its predecessor, <a href="porting4.html#qcanvas">QCanvas</a>. For more on Graphics View, see <a href="graphicsview.html">The Graphics View Framework</a>.</p>
+<p>This document walks through the steps needed, class by class and function by function, to port a <a href="porting4.html#qcanvas">QCanvas</a> application to Graphics View.</p>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#porting-from-q3canvas">Porting from Q3Canvas</a></li>
+<ul><li><a href="#porting-table">Porting table</a></li>
+<li><a href="#porting-scenes-with-tiles">Porting scenes with tiles</a></li>
+</ul>
+<li><a href="#porting-from-q3canvasview">Porting from Q3CanvasView</a></li>
+<ul><li><a href="#porting-table">Porting table</a></li>
+<li><a href="#other-differences">Other differences</a></li>
+</ul>
+<li><a href="#porting-from-q3canvasitem">Porting from Q3CanvasItem</a></li>
+<ul><li><a href="#q3canvaspolygonalitem">Q3CanvasPolygonalItem</a></li>
+<li><a href="#q3canvasellipse">Q3CanvasEllipse</a></li>
+<li><a href="#q3canvasline">Q3CanvasLine</a></li>
+<li><a href="#q3canvaspolygon">Q3CanvasPolygon</a></li>
+<li><a href="#q3canvasspline">Q3CanvasSpline</a></li>
+<li><a href="#q3canvasrectangle">Q3CanvasRectangle</a></li>
+<li><a href="#q3canvassprite">Q3CanvasSprite</a></li>
+<ul><li><a href="#q3canvaspixmap-q3canvaspixmaparray">Q3CanvasPixmap, Q3CanvasPixmapArray</a></li>
+</ul>
+<li><a href="#q3canvastext">Q3CanvasText</a></li>
+<li><a href="#q3canvasitemlist">Q3CanvasItemList</a></li>
+</ul>
+</ul>
+<p>Qt 4.2 provides two complete examples of <a href="q3canvas.html">Q3Canvas</a> applications ported to Graphics View:</p>
+<ul>
+<li><a href="graphicsview-portedcanvas.html">Ported Canvas Example</a>, the canvas example from Qt 3.</li>
+<li><a href="graphicsview-portedasteroids.html">Ported Asteroids Example</a>, the Asteroids game from the Qt 3 demo.</li>
+</ul>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+<p>Conceptually, the Graphics View classes from Qt 4 and the Canvas classes from Qt 3 provide similar functionality using a similar design. Instead of &quot;canvas&quot;, we use the term &quot;scene&quot;. Otherwise, the class names and functions are almost the same as in Qt 3. The easiest classes to port will be <a href="porting4.html#qcanvas">QCanvas</a> and QCanvasView. Experience shows that most time is spent porting the item classes, depending on the complexity of the QCanvasItem classes you have been using before.</p>
+<p>This porting guide will assume you have already ported your application to Qt 4, by making use of <a href="q3canvas.html">Q3Canvas</a>. If you have not done so already, as a first step, run the <a href="qt3to4.html#qt3to4">qt3to4</a> tool on your project. This tool will automate the most tedious part of the porting effort.</p>
+<p>Some additional steps are usually required before your application will compile and run. You can read more about the porting process in <a href="porting4.html">Porting to Qt 4</a>.</p>
+<a name="porting-from-q3canvas"></a>
+<h3>Porting from Q3Canvas</h3>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a> is the closest equivalent to <a href="q3canvas.html">Q3Canvas</a>. There are some noticable differences in this new API: Whereas the <a href="q3canvas.html">Q3Canvas</a> classes use integer precision, <a href="qgraphicsscene.html">QGraphicsScene</a> is entirely based on double coordinates, with graphical primitives such as <a href="qpointf.html">QPointF</a> instead of <a href="qpoint.html">QPoint</a>, <a href="qrectf.html">QRectF</a> instead of <a href="qrect.html">QRect</a>, and <a href="qpolygonf.html">QPolygonF</a> and <a href="qpainterpath.html">QPainterPath</a>. The canvas area is defined by a scene rectangle, allowing negative coordinates, as opposed to <a href="q3canvas.html">Q3Canvas</a>, which only defines a size (<a href="qsize.html">QSize</a>), and whose top-left corner is always (0, 0).</p>
+<p>In addition, there is no explicit support for canvas tiles anymore; see <a href="#porting-scenes-with-tiles">Porting scenes with tiles</a> for more information. The chunks-based indexing system has been replaced with an implicitly maintained internal BSP tree.</p>
+<a name="porting-table"></a>
+<h4>Porting table</h4>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvas.html">Q3Canvas</a></th><th><a href="qgraphicsscene.html">QGraphicsScene</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#Q3Canvas">Q3Canvas::Q3Canvas</a>()</td><td>There is no <a href="qpixmap.html">QPixmap</a> based constructor, and the concept of tiles is gone. You can use <a href="qgraphicsscene.html#backgroundBrush-prop">QGraphicsScene::backgroundBrush</a> to set a brush pattern for the background, or reimplement <a href="qgraphicsscene.html#drawBackground">QGraphicsScene::drawBackground</a>() in a <a href="qgraphicsscene.html">QGraphicsScene</a> subclass (see <a href="#porting-scenes-with-tiles">Porting scenes with tiles</a>). In addition, the <a href="qgraphicsscene.html">QGraphicsScene</a> geometry is provided as a full <a href="qrectf.html">QRectF</a>. Instead of <a href="q3canvas.html">Q3Canvas</a>(int width, int height), you can use <a href="qgraphicsscene.html">QGraphicsScene</a>(int top, int left, int width, int height).</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#allItems">Q3Canvas::allItems</a>()</td><td><a href="qgraphicsscene.html#items">QGraphicsScene::items</a>() returns a list of all items on the scene.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#backgroundColor">Q3Canvas::backgroundColor</a>()</td><td>You can assign a color for the background through the <a href="qgraphicsscene.html#backgroundBrush-prop">QGraphicsScene::backgroundBrush</a> or <a href="qgraphicsview.html#backgroundBrush-prop">QGraphicsView::backgroundBrush</a> properties.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#backgroundPixmap">Q3Canvas::backgroundPixmap</a>()</td><td>You can set a tiled pixmap for the background through <a href="qgraphicsscene.html#backgroundBrush-prop">QGraphicsScene::backgroundBrush</a> or <a href="qgraphicsview.html#backgroundBrush-prop">QGraphicsView::backgroundBrush</a>. For more control on the pixmap positioning, you can reimplement <a href="qgraphicsscene.html#drawBackground">QGraphicsScene::drawBackground</a>() or <a href="qgraphicsview.html#drawBackground">QGraphicsView::drawBackground</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#chunkSize">Q3Canvas::chunkSize</a>()</td><td>The closest equivalent to the chunks size in <a href="q3canvas.html">Q3Canvas</a> is the depth of <a href="qgraphicsscene.html">QGraphicsScene</a>'s BSP tree. <a href="qgraphicsscene.html">QGraphicsScene</a> assigns a depth automatically, and the size of each scene segment depends on this depth, and <a href="qgraphicsscene.html#sceneRect-prop">QGraphicsScene::sceneRect</a>(). See <a href="qgraphicsscene.html#itemIndexMethod-prop">QGraphicsScene::itemIndexMethod</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#collisions">Q3Canvas::collisions</a>()</td><td><a href="qgraphicsscene.html">QGraphicsScene</a> provides several means to detect item collisions. The <a href="qgraphicsscene.html#items">QGraphicsScene::items</a>() overloads return items that collide with a point, a rectangle, a polygon, or an arbitrary vector path (<a href="qpainterpath.html">QPainterPath</a>). You can also call <a href="qgraphicsscene.html#collidingItems">QGraphicsScene::collidingItems</a>() to determine collision with an item.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#drawArea">Q3Canvas::drawArea</a>()</td><td>The <a href="qgraphicsscene.html#render">QGraphicsScene::render</a>() function provides the original behavior <a href="q3canvas.html#drawArea">Q3Canvas::drawArea</a>(). In addition, you can pass a source rectangle for rendering only parts of the scene, and a destination rectangle for rendering onto designated area of the destination device. <a href="qgraphicsscene.html#render">QGraphicsScene::render</a>() can optionally transform the source rectangle to fit into the destination rectangle. See <a href="graphicsview.html#printing">Printing</a></td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#onCanvas">Q3Canvas::onCanvas</a>()</td><td>The is no equivalent to this function in Graphics View. However, you can combine <a href="qgraphicsscene.html#sceneRect-prop">QGraphicsScene::sceneRect</a>() and <a href="qrectf.html#intersects">QRectF::intersects</a>():<pre>         item-&gt;scene().sceneRect().intersects(item-&gt;sceneBoundingRect());</pre>
+</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#rect">Q3Canvas::rect</a>()</td><td>The equivalent, <a href="qgraphicsscene.html#sceneRect-prop">QGraphicsScene::sceneRect</a>(), returns a <a href="qrectf.html">QRectF</a> (double precision coordinates). Its top-left corner can be an arbitrary coordinate (<a href="q3canvas.html#rect">Q3Canvas::rect</a>().topLeft() is always (0, 0)).</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#resize">Q3Canvas::resize</a>()</td><td>You can call QGraphicsScene::setSceneRect(0, 0, width, height) instead.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#retune">Q3Canvas::retune</a>()</td><td>See <a href="qgraphicsscene.html#itemIndexMethod-prop">QGraphicsScene::itemIndexMethod</a>. You can tune the indexing by setting a suitable sceneRect(). The optimal depth of <a href="qgraphicsscene.html">QGraphicsScene</a>'s BSP tree is determined automatically.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#setAdvancePeriod">Q3Canvas::setAdvancePeriod</a>()</td><td>There is no concept of an advance period in the new API; instead, you can connect <a href="qtimer.html#timeout">QTimer::timeout</a>() to the <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>() slot to obtain similar functionality. This will cause all items' <a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>() function to be called. See also <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a>.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#setAllChanged">Q3Canvas::setAllChanged</a>()</td><td>You can call <a href="qgraphicsscene.html#update">QGraphicsScene::update</a>() with no arguments.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#setChanged">Q3Canvas::setChanged</a>()</td><td><a href="qgraphicsscene.html#update">QGraphicsScene::update</a>() will trigger a repaint of the whole scene, or parts of the scene.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#setDoubleBuffering">Q3Canvas::setDoubleBuffering</a>()</td><td><a href="q3canvas.html">Q3Canvas</a>' double buffering enabled cacheing of the scene contents in device (i.e&#x2e;, viewport) coordinates. This cache layer has been moved to the view instead; you can cache <a href="qgraphicsscene.html">QGraphicsScene</a>'s background through <a href="qgraphicsview.html#cacheMode-prop">QGraphicsView::setCacheMode</a>(). <a href="qgraphicsview.html#resetCachedContent">QGraphicsView::resetCachedContent</a>() will reset the areas of the cache that has changed.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#tile">Q3Canvas::tile</a>()</td><td>See <a href="#porting-scenes-with-tiles">Porting scenes with tiles</a>.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#setTiles">Q3Canvas::setTiles</a>()</td><td>See <a href="#porting-scenes-with-tiles">Porting scenes with tiles</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#setUnchanged">Q3Canvas::setUnchanged</a>()</td><td>There is no equivalent in Graphics View. This call can usually be removed with no side effects.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#setUpdatePeriod">Q3Canvas::setUpdatePeriod</a>()</td><td>There is no concept of an update period in the new API; instead, you can connect <a href="qtimer.html#timeout">QTimer::timeout</a>() to the <a href="qgraphicsscene.html#update">QGraphicsScene::update</a>() slot to obtain similar functionality. See also <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#size">Q3Canvas::size</a>()</td><td><tt><a href="qgraphicsscene.html#sceneRect-prop">QGraphicsScene::sceneRect</a>().size()</tt> returns a <a href="qsizef.html">QSizeF</a>, with double precision coordinates.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#validChunk">Q3Canvas::validChunk</a>()</td><td>To determine if an area is inside the scene area or not, you can combine <a href="qrectf.html#intersects">QRectF::intersects</a>() with <a href="qgraphicsscene.html#sceneRect-prop">QGraphicsScene::sceneRect</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#resized">Q3Canvas::resized</a>()</td><td><a href="qgraphicsscene.html">QGraphicsScene</a> emits <a href="qgraphicsscene.html#sceneRectChanged">sceneRectChanged()</a> whenever the scene rect changes.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvas.html#drawBackground">Q3Canvas::drawBackground</a>()</td><td>You can reimplement <a href="qgraphicsscene.html#drawBackground">QGraphicsScene::drawBackground</a>() to render the scene background. You can also reimplement <a href="qgraphicsview.html#drawBackground">QGraphicsView::drawBackground</a>() to override this background if you need different backgrounds for different views.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvas.html#drawForeground">Q3Canvas::drawForeground</a>()</td><td>You can reimplement <a href="qgraphicsscene.html#drawForeground">QGraphicsScene::drawForeground</a>() to render the scene foreground. You can also reimplement <a href="qgraphicsview.html#drawForeground">QGraphicsView::drawForeground</a>() to override this foreground if you need different foregrounds for different views.</td></tr>
+</table></p>
+<a name="porting-scenes-with-tiles"></a>
+<h4>Porting scenes with tiles</h4>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a> does not provide an API for tiles. However, you can achieve similar behavior by drawing pixmaps in a reimplementation of <a href="qgraphicsscene.html#drawBackground">QGraphicsScene::drawBackground</a>().</p>
+<p><a href="q3canvas.html">Q3Canvas</a>' tile support is based on providing one pixmap containing tiles of a fixed width and height, and then accessing them (reading and replacing tiles) by index. The tiles in the pixmap are arranged from the left to right, top to bottom.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+<tr valign="top" class="even"><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+</table></p>
+<p>With Graphics View, this pixmap can be stored as a member of a subclass of <a href="qgraphicsscene.html">QGraphicsScene</a>. The three main functions that make out the public tile API can then be declared as new members of this class. Here is one example of how to implement tile support:</p>
+<pre>             class TileScene : public QGraphicsScene
+             {
+             public:
+                 ...
+
+                 void setTiles(const QPixmap &amp;pixmap, int h, int v,
+                               int tileHeight, int tileWidth);
+                 void setTile(int x, int y, int tilenum);
+
+             private:
+                 QRect tileRect(int x, int y) const;
+                 QRect tileRect(int tileNum) const;
+
+                 QVector&lt;QVector&lt;int&gt; &gt; tiles;
+                 QPixmap tilePixmap;
+                 int tileW, tileH;
+                 int hTiles, vTiles;
+             };</pre>
+<p>Depending on how your scene uses tiles, you may be able to simplify this approach. In this example, we will try to mimic the behavior of the <a href="q3canvas.html">Q3Canvas</a> functions.</p>
+<p>We start by creating a subclass of <a href="qgraphicsscene.html">QGraphicsScene</a> (&quot;TileScene&quot;). In this class, we declare two of the tile functions from <a href="q3canvas.html">Q3Canvas</a>, and we then add two helper function that returns the rectangle for a certain tile in our tile pixmap. We will use a two-dimensional vector of ints to keep track of what tiles should be used at what parts of the scene.</p>
+<pre>             void TileScene::setTiles(const QPixmap &amp;pixmap, int h, int v,
+                                      int tileHeight, int tileWidth)
+             {
+                 tilePixmap = pixmap;
+                 tileW = tileWidth;
+                 tileH = tileHeight;
+                 hTiles = h;
+                 vTiles = v;
+
+                 tiles.resize(v);
+                 for (int y = 0; y &lt; v; ++y)
+                     tiles[y].resize(h);
+             }</pre>
+<p>In setTiles(), we store the pixmap and tile properties as members of the class. Then we resize the tiles vector to match the width and height of our tile grid.</p>
+<pre>             void TileScene::setTile(int x, int y, int tilenum)
+             {
+                 tiles[y][x] = tilenum;
+                 update(tileRect(x, y));
+             }</pre>
+<p>The setTile() function updates the tiles index, and then updates the corresponding rect in the scene by calling tileRect().</p>
+<pre>             QRect TileScene::tileRect(int x, int y) const
+             {
+                 return QRect(x * tileW, y * tileH, tileW, tileH);
+             }</pre>
+<p>The first tileRect() function returns a <a href="qrect.html">QRect</a> for the tile at position (x, y).</p>
+<pre>             QRect TileScene::tileRect(int tileNum) const
+             {
+                 int numHTiles = tilePixmap.width() / tileW;
+                 int numVTiles = tilePixmap.height() / tileH;
+                 return tileRect(tileNum % numHTiles, tileNum / numHTiles);
+             }</pre>
+<p>The second tileRect() function returns a <a href="qrect.html">QRect</a> for a tile number. With these functions in place, we can implement the drawBackground() function.</p>
+<pre>             void drawBackground(QPainter *painter, const QRectF &amp;exposed)
+             {
+                 for (int y = 0; y &lt; vTiles; ++y) {
+                     for (int x = 0; x &lt; hTiles; ++x) {
+                         QRect destRect = tileRect(x, y);
+                         if (exposed.intersects(destRect)) {
+                             painter-&gt;drawPixmap(destRect, tilePixmap,
+                                                 tileRect(tiles[y][x]));
+                         }
+                     }
+                 }
+             }</pre>
+<p>In drawBackground(), we redraw all tiles that have been exposed by intersecting each tile rect with the exposed background area.</p>
+<a name="porting-from-q3canvasview"></a>
+<h3>Porting from Q3CanvasView</h3>
+<p>The closest equivalent to <a href="q3canvasview.html">Q3CanvasView</a> in Graphics View is called <a href="qgraphicsview.html">QGraphicsView</a>. In most cases, this is the easiest class to port. In addition to providing all of <a href="q3canvasview.html">Q3CanvasView</a>'s functionality, <a href="qgraphicsview.html">QGraphicsView</a> includes some useful new features. You can read more about this in <a href="qgraphicsview.html">QGraphicsView</a>'s documentation.</p>
+<a name="porting-table"></a>
+<h4>Porting table</h4>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasview.html">Q3CanvasView</a></th><th><a href="qgraphicsview.html">QGraphicsView</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasview.html#Q3CanvasView">Q3CanvasView::Q3CanvasView</a>()</td><td><a href="qgraphicsview.html">QGraphicsView</a> provides the same constructors as <a href="q3canvasview.html">Q3CanvasView</a>, but without the name and flags arguments. You can set the name by calling <a href="qobject.html#objectName-prop">setObjectName()</a>, and the flags by calling <a href="qwidget.html#windowFlags-prop">setWindowFlags()</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasview.html#canvas">Q3CanvasView::canvas</a>()</td><td><a href="qgraphicsview.html#scene">QGraphicsView::scene</a>() returns the scene that is currently associated with the view. <a href="qgraphicsscene.html">QGraphicsScene</a> also provides the opposite function, <a href="qgraphicsscene.html#views">QGraphicsScene::views</a>(), which returns a list of views observing the scene.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasview.html#inverseWorldMatrix">Q3CanvasView::inverseWorldMatrix</a>()</td><td>You can call <a href="qgraphicsview.html#matrix">QGraphicsView::matrix</a>() and <a href="qmatrix.html#inverted">QMatrix::inverted</a>(). <a href="qgraphicsview.html#mapToScene">QGraphicsView::mapToScene</a>() and <a href="qgraphicsview.html#mapFromScene">QGraphicsView::mapFromScene</a>() allow transforming of viewport shapes to scene shapes, and vice versa.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasview.html#setCanvas">Q3CanvasView::setCanvas</a>()</td><td><a href="qgraphicsview.html#setScene">QGraphicsView::setScene</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasview.html#setWorldMatrix">Q3CanvasView::setWorldMatrix</a>()</td><td><a href="qgraphicsview.html#setMatrix">QGraphicsView::setMatrix</a>(), <a href="qgraphicsview.html#rotate">QGraphicsView::rotate</a>(), <a href="qgraphicsview.html#scale">QGraphicsView::scale</a>(), <a href="qgraphicsview.html#shear">QGraphicsView::shear</a>() and <a href="qgraphicsview.html#translate">QGraphicsView::translate</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasview.html#worldMatrix">Q3CanvasView::worldMatrix</a>()</td><td><a href="qgraphicsview.html#matrix">QGraphicsView::matrix</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasview.html#drawContents">Q3CanvasView::drawContents</a>()</td><td>The <a href="qgraphicsview.html#drawBackground">QGraphicsView::drawBackground</a>() function draws the background, <a href="qgraphicsview.html#drawItems">QGraphicsView::drawItems</a>() draws the items, and <a href="qgraphicsview.html#drawForeground">QGraphicsView::drawForeground</a>() draws the foreground of the scene in scene coordinates. You can also reimplement these functions in <a href="qgraphicsscene.html">QGraphicsScene</a>.</td></tr>
+</table></p>
+<a name="other-differences"></a>
+<h4>Other differences</h4>
+<p><a href="qgraphicsview.html">QGraphicsView</a> can cache the visible contents of the scene, similar to how <a href="q3canvas.html#setDoubleBuffering">Q3Canvas::setDoubleBuffering</a>() could cache the entire scene contents. You can call <a href="qgraphicsview.html#cacheMode-prop">QGraphicsView::setCacheMode</a>() to configure cacheing, and <a href="qgraphicsview.html#resetCachedContent">QGraphicsView::resetCachedContent</a>() invalidates the cache.</p>
+<p>For improved navigation support, you can set a resize or transformation anchor through <a href="qgraphicsview.html#resizeAnchor-prop">QGraphicsView::resizeAnchor</a> and <a href="qgraphicsview.html#transformationAnchor-prop">QGraphicsView::transformationAnchor</a>. This allows you to easily rotate and zoom the view while keeping the center fixed, or zooming towards the position under the mouse cursor. In addition, if you set the <a href="qgraphicsview.html#dragMode-prop">QGraphicsView::dragMode</a> of the view, <a href="qgraphicsview.html">QGraphicsView</a> will provide rubber band selection or click-and-pull navigation using the <a href="qt.html#CursorShape-enum">OpenHandCursor</a> and <a href="qt.html#CursorShape-enum">ClosedHandCursor</a> cursors.</p>
+<a name="porting-from-q3canvasitem"></a>
+<h3>Porting from Q3CanvasItem</h3>
+<p>The closest equivalent to <a href="q3canvasitem.html">Q3CanvasItem</a> in Graphics View is called <a href="qgraphicsitem.html">QGraphicsItem</a>. Deriving from this class is very common, and because of that, porting from <a href="q3canvasitem.html">Q3CanvasItem</a> often involves more work than <a href="q3canvas.html">Q3Canvas</a> and <a href="q3canvasview.html">Q3CanvasView</a>.</p>
+<p><a href="q3canvasitem.html">Q3CanvasItem</a> has become easier to use, easier to subclass, and more powerful with <a href="qgraphicsitem.html">QGraphicsItem</a>. The key difference from <a href="q3canvasitem.html">Q3CanvasItem</a> lies in event propagation and item groups, but you will also find several convenient new features, such as support for tooltips, cursors, item transformation and drag and drop. You can read all about <a href="qgraphicsitem.html">QGraphicsItem</a> in its own class documentation.</p>
+<p>This section starts with a table that shows how to port each function from <a href="q3canvasitem.html">Q3CanvasItem</a> to <a href="qgraphicsitem.html">QGraphicsItem</a>. Immediately after that, each of <a href="q3canvasitem.html">Q3CanvasItem</a>'s standard subclasses have a section of their own.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasitem.html">Q3CanvasItem</a></th><th><a href="qgraphicsitem.html">QGraphicsItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#advance">Q3CanvasItem::advance</a>()</td><td><a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>() is provided for compatibility. <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>() calls <a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>() for all items. See also <a href="qtimeline.html">QTimeLine</a> and <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#animated">Q3CanvasItem::animated</a>()</td><td>No equivalent; all items are advanced by <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#boundingRectAdvanced">Q3CanvasItem::boundingRectAdvanced</a>()</td><td>No equivalent. You can translate <a href="qgraphicsitem.html#boundingRect">QGraphicsItem::boundingRect</a>() instead (see <a href="qrectf.html#translate">QRectF::translate</a>()).</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#canvas">Q3CanvasItem::canvas</a>()</td><td><a href="qgraphicsitem.html#scene">QGraphicsItem::scene</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#collidesWith">Q3CanvasItem::collidesWith</a>()</td><td><a href="qgraphicsitem.html#collidesWithItem">QGraphicsItem::collidesWithItem</a>() and <a href="qgraphicsitem.html#collidesWithPath">QGraphicsItem::collidesWithPath</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#collisions">Q3CanvasItem::collisions</a>()</td><td><a href="qgraphicsitem.html#collidingItems">QGraphicsItem::collidingItems</a>() returns a list of all items that collide with an item. You can specify whether you want fast, rough estimate collision between bounding rectangles, or the slower, more accurate shapes.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#draw">Q3CanvasItem::draw</a>()</td><td><a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>(). See also <a href="qstyleoptiongraphicsitem.html">QStyleOptionGraphicsItem</a>, <a href="qgraphicsscene.html#drawItems">QGraphicsScene::drawItems</a>() and <a href="qgraphicsview.html#drawItems">QGraphicsView::drawItems</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#hide">Q3CanvasItem::hide</a>()</td><td><a href="qgraphicsitem.html#hide">QGraphicsItem::hide</a>() or <a href="qgraphicsitem.html#setVisible">QGraphicsItem::setVisible</a>(). <a href="qgraphicsitem.html">QGraphicsItem</a>s are <i>visible</i> by default; <a href="q3canvasitem.html">Q3CanvasItem</a>s, however, are not.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#isActive">Q3CanvasItem::isActive</a>()</td><td>No equivalent. To achieve similar behavior, you can add this property in a custom subclass of <a href="qgraphicsitem.html">QGraphicsItem</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#isVisible">Q3CanvasItem::isVisible</a>()</td><td><a href="qgraphicsitem.html#isVisible">QGraphicsItem::isVisible</a>(). <a href="qgraphicsitem.html">QGraphicsItem</a>s are <i>visible</i> by default; <a href="q3canvasitem.html">Q3CanvasItem</a>s, however, are not.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#move">Q3CanvasItem::move</a>()</td><td>You can call <a href="qgraphicsitem.html#setPos">QGraphicsItem::setPos</a>() to change the position of the item.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>()</td><td><a href="qgraphicsitem.html#type">QGraphicsItem::type</a>() and <a href="qgraphicsitem.html#qgraphicsitem_cast">qgraphicsitem_cast</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#setActive">Q3CanvasItem::setActive</a>()</td><td>No equivalent.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#setAnimated">Q3CanvasItem::setAnimated</a>()</td><td>No equivalent; all items are by default &quot;animated&quot; (i.e&#x2e;, <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>() advances all items on the scene).</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#setCanvas">Q3CanvasItem::setCanvas</a>()</td><td>You can call <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>(), or pass a pointer to the canvas to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#setVelocity">Q3CanvasItem::setVelocity</a>()</td><td>No equivalent. You can add x and y velocity as member data of your class, and call QGraphicsItem::moveBy(x, y) from inside <a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>(). See also <a href="qtimeline.html">QTimeLine</a> and <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a>.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#setVisible">Q3CanvasItem::setVisible</a>()</td><td><a href="qgraphicsitem.html#setVisible">QGraphicsItem::setVisible</a>(). <a href="qgraphicsitem.html">QGraphicsItem</a>s are <i>visible</i> by default; <a href="q3canvasitem.html">Q3CanvasItem</a>s, however, are not.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>()</td><td><a href="qgraphicsitem.html#setPos">QGraphicsItem::setPos</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>()</td><td><a href="qgraphicsitem.html#setPos">QGraphicsItem::setPos</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#setXVelocity">Q3CanvasItem::setXVelocity</a>()</td><td>No equivalent.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#setYVelocity">Q3CanvasItem::setYVelocity</a>()</td><td>No equivalent.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>()</td><td><a href="qgraphicsitem.html#setZValue">QGraphicsItem::setZValue</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#show">Q3CanvasItem::show</a>()</td><td><a href="qgraphicsitem.html#show">QGraphicsItem::show</a>() or <a href="qgraphicsitem.html#setVisible">QGraphicsItem::setVisible</a>(). <a href="qgraphicsitem.html">QGraphicsItem</a>s are <i>visible</i> by default; <a href="q3canvasitem.html">Q3CanvasItem</a>s, however, are not.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasitem.html#xVelocity">Q3CanvasItem::xVelocity</a>()</td><td>No equivalent.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasitem.html#yVelocity">Q3CanvasItem::yVelocity</a>()</td><td>No equivalent.</td></tr>
+</table></p>
+<a name="q3canvaspolygonalitem"></a>
+<h4>Q3CanvasPolygonalItem</h4>
+<p>The closest equivalent to <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a> in Graphics View is called <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>. Unlike <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a>, it does not define area points (<a href="q3canvaspolygonalitem.html#areaPoints">Q3CanvasPolygonalItem::areaPoints</a>()); instead, each item's geometry is stored as a member of the subclasses.</p>
+<p>The <a href="q3canvaspolygonalitem.html#drawShape">Q3CanvasPolygonalItem::drawShape</a>() function is no longer available; instead, you can set the brush and pen from inside <a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>().</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a></th><th><a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvaspolygonalitem.html#areaPoints">Q3CanvasPolygonalItem::areaPoints</a>()</td><td>No equivalent; each item's geometry is stored in the respective subclass.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvaspolygonalitem.html#areaPointsAdvanced">Q3CanvasPolygonalItem::areaPointsAdvanced</a>()</td><td>No equivalent; you can use <a href="qpolygonf.html#translate">QPolygonF::translate</a>() or QPainterPath::translate() instead.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvaspolygonalitem.html#drawShape">Q3CanvasPolygonalItem::drawShape</a>()</td><td><a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>(). You can set the pen and brush from inside this function.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvaspolygonalitem.html#invalidate">Q3CanvasPolygonalItem::invalidate</a>()</td><td>Call <a href="qgraphicsitem.html#prepareGeometryChange">QGraphicsItem::prepareGeometryChange</a>() before changing the item's geometry.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvaspolygonalitem.html#isValid">Q3CanvasPolygonalItem::isValid</a>()</td><td>No equivalent; items' geometry is always in a valid state.</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvaspolygonalitem.html#winding">Q3CanvasPolygonalItem::winding</a>()</td><td>This function is only useful for polygon items and path items; see <a href="qgraphicspolygonitem.html#fillRule">QGraphicsPolygonItem::fillRule</a>(), and <a href="qpainterpath.html#fillRule">QPainterPath::fillRule</a>() for <a href="qgraphicspathitem.html">QGraphicsPathItem</a>.</td></tr>
+</table></p>
+<a name="q3canvasellipse"></a>
+<h4>Q3CanvasEllipse</h4>
+<p>The closest equivalent to <a href="q3canvasellipse.html">Q3CanvasEllipse</a> in Graphics View is called <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a>. The most noticable difference to <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a> is that the ellipse is not longer drawn centered around its position; rather, it is drawn using a bounding <a href="qrectf.html">QRectF</a>, just like <a href="qpainter.html#drawEllipse">QPainter::drawEllipse</a>().</p>
+<p>For compatibility, you may want to shift the ellipse up and to the left to keep the ellipse centered. Example:</p>
+<pre>                 // Before
+                 Q3CanvasEllipse ellipse(10, 10);
+
+                 // After
+                 QGraphicsEllipseItem ellipse(-5, -5, 10, 10);</pre>
+<p>Note: <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a> uses <a href="qabstractgraphicsshapeitem.html#pen">QAbstractGraphicsShapeItem::pen</a>() for outlines, whereas <a href="q3canvasellipse.html">Q3CanvasEllipse</a> did not use <a href="q3canvaspolygonalitem.html#pen">Q3CanvasPolygonalItem::pen</a>().</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasellipse.html">Q3CanvasEllipse</a></th><th><a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasellipse.html#angleLength">Q3CanvasEllipse::angleLength</a>()</td><td><a href="qgraphicsellipseitem.html#spanAngle">QGraphicsEllipseItem::spanAngle</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasellipse.html#angleStart">Q3CanvasEllipse::angleStart</a>()</td><td><a href="qgraphicsellipseitem.html#startAngle">QGraphicsEllipseItem::startAngle</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasellipse.html#setAngles">Q3CanvasEllipse::setAngles</a>()</td><td><a href="qgraphicsellipseitem.html#setStartAngle">QGraphicsEllipseItem::setStartAngle</a>() and <a href="qgraphicsellipseitem.html#setSpanAngle">QGraphicsEllipseItem::setSpanAngle</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasellipse.html#setSize">Q3CanvasEllipse::setSize</a>()</td><td><a href="qgraphicsellipseitem.html#setRect">QGraphicsEllipseItem::setRect</a>()</td></tr>
+</table></p>
+<a name="q3canvasline"></a>
+<h4>Q3CanvasLine</h4>
+<p>The closest equivalent to <a href="q3canvasline.html">Q3CanvasLine</a> in Graphics View is called <a href="qgraphicslineitem.html">QGraphicsLineItem</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasline.html">Q3CanvasLine</a></th><th><a href="qgraphicslineitem.html">QGraphicsLineItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasline.html#endPoint">Q3CanvasLine::endPoint</a>()</td><td><a href="qgraphicslineitem.html#line">QGraphicsLineItem::line</a>() and <a href="qlinef.html#p2">QLineF::p2</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasline.html#setPoints">Q3CanvasLine::setPoints</a>()</td><td><a href="qgraphicslineitem.html#setLine">QGraphicsLineItem::setLine</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasline.html#startPoint">Q3CanvasLine::startPoint</a>()</td><td><a href="qgraphicslineitem.html#line">QGraphicsLineItem::line</a>() and <a href="qlinef.html#p1">QLineF::p1</a>()</td></tr>
+</table></p>
+<a name="q3canvaspolygon"></a>
+<h4>Q3CanvasPolygon</h4>
+<p>The closest equivalent to <a href="q3canvaspolygon.html">Q3CanvasPolygon</a> in Graphics View is called <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvaspolygon.html">Q3CanvasPolygon</a></th><th><a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvaspolygon.html#areaPoints">Q3CanvasPolygon::areaPoints</a>()</td><td><a href="qgraphicspolygonitem.html#polygon">QGraphicsPolygonItem::polygon</a>() and <a href="qgraphicsitem.html#mapToParent">QGraphicsItem::mapToParent</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvaspolygon.html#points">Q3CanvasPolygon::points</a>()</td><td><a href="qgraphicspolygonitem.html#polygon">QGraphicsPolygonItem::polygon</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvaspolygon.html#setPoints">Q3CanvasPolygon::setPoints</a>()</td><td><a href="qgraphicspolygonitem.html#setPolygon">QGraphicsPolygonItem::setPolygon</a>()</td></tr>
+</table></p>
+<a name="q3canvasspline"></a>
+<h4>Q3CanvasSpline</h4>
+<p>The closest equivalent to <a href="q3canvasspline.html">Q3CanvasSpline</a> in Graphics View is called <a href="qgraphicspathitem.html">QGraphicsPathItem</a>. This item can be used to describe any type of path supported by <a href="qpainter.html">QPainter</a>.</p>
+<p><a href="q3canvasspline.html">Q3CanvasSpline</a> takes its control points as a <a href="q3pointarray.html">Q3PointArray</a>, but <a href="qpainterpath.html">QPainterPath</a> operates on a sequence of calls to <a href="qpainterpath.html#moveTo">QPainterPath::moveTo</a>() and <a href="qpainterpath.html#cubicTo">QPainterPath::cubicTo</a>(). Here is how you can convert a bezier curve <a href="q3pointarray.html">Q3PointArray</a> to a <a href="qpainterpath.html">QPainterPath</a>:</p>
+<pre>             static QPainterPath fromControlPoints(const Q3PointArray &amp;pa)
+             {
+                 QPainterPath path;
+                 path.moveTo(pa[0]);
+                 for (int i = 1; i &lt; pa.size(); i += 3)
+                     path.cubicTo(pa[i], pa[(i + 1) % pa.size()], pa[(i + 2) % pa.size()]);
+                 return path;
+             }</pre>
+<p>Note: <a href="qgraphicspathitem.html">QGraphicsPathItem</a> uses <a href="qabstractgraphicsshapeitem.html#pen">QAbstractGraphicsShapeItem::pen</a>() for outlines, whereas <a href="q3canvasspline.html">Q3CanvasSpline</a> did not use <a href="q3canvaspolygonalitem.html#pen">Q3CanvasPolygonalItem::pen</a>().</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasspline.html">Q3CanvasSpline</a></th><th><a href="qgraphicspathitem.html">QGraphicsPathItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasspline.html#closed">Q3CanvasSpline::closed</a>()</td><td>No equivalent. You can call QPainterPath::closeSubPath() to close a subpath explicitly.</td></tr>
+</table></p>
+<a name="q3canvasrectangle"></a>
+<h4>Q3CanvasRectangle</h4>
+<p>The closest equivalent to <a href="q3canvasrectangle.html">Q3CanvasRectangle</a> in Graphics View is called <a href="qgraphicsrectitem.html">QGraphicsRectItem</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvasrectangle.html">Q3CanvasRectangle</a></th><th><a href="qgraphicsrectitem.html">QGraphicsRectItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvasrectangle.html#height">Q3CanvasRectangle::height</a>()</td><td><a href="qgraphicsrectitem.html#rect">QGraphicsRectItem::rect</a>() and <a href="qrectf.html#height">QRectF::height</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasrectangle.html#setSize">Q3CanvasRectangle::setSize</a>()</td><td><a href="qgraphicsrectitem.html#setRect">QGraphicsRectItem::setRect</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasrectangle.html#size">Q3CanvasRectangle::size</a>()</td><td><a href="qgraphicsrectitem.html#rect">QGraphicsRectItem::rect</a>() and <a href="qrectf.html#size">QRectF::size</a>()</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvasrectangle.html#width">Q3CanvasRectangle::width</a>()</td><td><a href="qgraphicsrectitem.html#rect">QGraphicsRectItem::rect</a>() and <a href="qrectf.html#width">QRectF::width</a>()</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvasrectangle.html#chunks">Q3CanvasRectangle::chunks</a>()</td><td>No equivalent.</td></tr>
+</table></p>
+<a name="q3canvassprite"></a>
+<h4>Q3CanvasSprite</h4>
+<p><a href="q3canvassprite.html">Q3CanvasSprite</a> is the item class that differs the most from its <a href="q3canvas.html">Q3Canvas</a> predecessor. The closest resemblance of <a href="q3canvassprite.html">Q3CanvasSprite</a> in Graphics View is <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>.</p>
+<p><a href="q3canvassprite.html">Q3CanvasSprite</a> supports animated pixmaps; <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>, however, is a simple single-frame pixmap item. If all you need is a pixmap item, porting is straight-forward. If you do need the animation support, extra work is required; there is no direct porting approach.</p>
+<p>For the <a href="graphicsview-portedasteroids.html">Ported Asteroids Example</a>, a subclass of <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> is used to replace <a href="q3canvassprite.html">Q3CanvasSprite</a>, storing a list of pixmaps and a frame counter. The animation is advanced in <a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>().</p>
+<a name="q3canvaspixmap-q3canvaspixmaparray"></a>
+<h5>Q3CanvasPixmap, Q3CanvasPixmapArray</h5>
+<p>These classes have been removed from the API. You can use <a href="qpixmap.html">QPixmap</a> instead of <a href="q3canvaspixmap.html">Q3CanvasPixmap</a>, and <a href="qlist.html">QList</a> instead of <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>.</p>
+<p><a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> included convenience for loading a sequence of pixmaps or masks using a path with a wildcard (see <a href="q3canvaspixmaparray.html#readPixmaps">Q3CanvasPixmapArray::readPixmaps</a>() and <a href="q3canvaspixmaparray.html#readCollisionMasks">Q3CanvasPixmapArray::readCollisionMasks</a>()). To achieve similar functionality using Graphics View, you can load the images by using <a href="qdir.html">QDir</a>:</p>
+<pre>                     wildcardPath.replace(&quot;%1&quot;, &quot;*&quot;);
+                     QFileInfo fi(wildcardPath);
+
+                     QList&lt;QPixmap&gt; frames;
+                     foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+                         frames &lt;&lt; QPixmap(fi.path() + &quot;/&quot; + entry);</pre>
+<a name="q3canvastext"></a>
+<h4>Q3CanvasText</h4>
+<p><a href="q3canvastext.html">Q3CanvasText</a> has been split into two classes in Graphics View: <a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a> and <a href="qgraphicstextitem.html">QGraphicsTextItem</a>. For porting, <a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a> should be adequate. <a href="qgraphicstextitem.html">QGraphicsTextItem</a> provides advanced document structuring features similar to that of <a href="qtextedit.html">QTextEdit</a>, and it also allows interaction (e.g&#x2e;, editing and selection).</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="q3canvastext.html">Q3CanvasText</a></th><th><a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a></th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3canvastext.html#color">Q3CanvasText::color</a>()</td><td><a href="qabstractgraphicsshapeitem.html#pen">QGraphicsSimpleTextItem::pen</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="q3canvastext.html#setColor">Q3CanvasText::setColor</a>()</td><td><a href="qabstractgraphicsshapeitem.html#setPen">QGraphicsSimpleTextItem::setPen</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="q3canvastext.html#textFlags">Q3CanvasText::textFlags</a>()</td><td>Use <a href="qgraphicstextitem.html">QGraphicsTextItem</a> instead.</td></tr>
+</table></p>
+<a name="q3canvasitemlist"></a>
+<h4>Q3CanvasItemList</h4>
+<p>Use <a href="qlist.html">QList</a> instead.</p>
+<p>
+[Previous: <a href="porting4-designer.html">Porting .ui Files to Qt 4</a>]
+[<a href="porting.html">Contents</a>]
+[Next: <a href="qt3to4.html">qt3to4 - The Qt 3 to 4 Porting Tool</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

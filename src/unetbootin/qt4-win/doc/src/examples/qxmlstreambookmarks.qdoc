@@ -1,0 +1,202 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example xml/streambookmarks
+    \title QXmlStream Bookmarks Example
+
+    The QXmlStream Bookmarks example provides a reader for XML Bookmark
+    Exchange Language (XBEL) files using Qt's QXmlStreamReader class
+    for reading, and QXmlStreamWriter class for writing the files.
+
+    \image xmlstreamexample-screenshot.png
+
+    \section1 XbelWriter Class Definition
+
+    The \c XbelWriter class is a subclass of QXmlStreamReader, which provides
+    an XML parser with a streaming API. \c XbelWriter also contains a private
+    instance of QTreeWidget in order to display the bookmarks according to
+    hierarchies.
+
+    \snippet examples/xml/streambookmarks/xbelwriter.h 0
+
+    \section1 XbelWriter Class Implementation
+
+    The \c XbelWriter constructor accepts a \a treeWidget to initialize within
+    its definition. We enable \l{QXmlStreamWriter}'s auto-formatting property
+    to ensure line-breaks and indentations are added automatically to empty
+    sections between elements, increasing readability as the data is split into
+    several lines.
+
+    \snippet examples/xml/streambookmarks/xbelwriter.cpp 0
+
+    The \c writeFile() function accepts a QIODevice object and sets it using
+    \c setDevice(). This function then writes the document type
+    definition(DTD), the start element, the version, and \c{treeWidget}'s
+    top-level items.
+
+    \snippet examples/xml/streambookmarks/xbelwriter.cpp 1
+
+    The \c writeItem() function accepts a QTreeWidget object and writes it
+    to the stream, depending on its \c tagName, which can either be a "folder",
+    "bookmark", or "separator".
+
+    \snippet examples/xml/streambookmarks/xbelwriter.cpp 2
+
+    \section1 XbelReader Class Definition
+
+    The \c XbelReader class is a subclass of QXmlStreamReader, the pendent
+    class for QXmlStreamWriter. \c XbelReader contains a private instance
+    of QTreeWidget to group bookmarks according to their hierarchies.
+
+    \snippet examples/xml/streambookmarks/xbelreader.h 0
+
+    \section1 XbelReader Class Implementation
+
+    The \c XbelReader constructor accepts a QTreeWidget to initialize the
+    \c treeWidget within its definition. A QStyle object is used to set
+    \c{treeWidget}'s style property. The \c folderIcon is set to QIcon::Normal
+    mode where the pixmap is only displayed when the user is not interacting
+    with the icon. The QStyle::SP_DirClosedIcon, QStyle::SP_DirOpenIcon, and
+    QStyle::SP_FileIcon correspond to standard pixmaps that follow the style
+    of your GUI.
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 0
+
+    The \c read() function accepts a QIODevice and sets it using
+    \l{QXmlStreamReader::setDevice()}{setDevice()}. The actual process
+    of reading only takes place in event the file is a valid XBEL 1.0
+    file. Otherwise, the \l{QXmlStreamReader::raiseError()}
+    {raiseError()} function is used to display an error message.
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 1
+
+    The \c readUnknownElement() function reads an unknown element. The
+    Q_ASSERT() macro is used to provide a pre-condition for the function.
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 2
+
+    The \c readXBEL() function reads the name of a startElement and calls
+    the appropriate function to read it, depending on whether if its a
+    "folder", "bookmark" or "separator". Otherwise, it calls
+    \c readUnknownElement().
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 3
+
+    The \c readTitle() function reads the bookmark's title.
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 4
+
+    The \c readSeparator() function creates a separator and sets its flags.
+    The text is set to 30 "0xB7", the HEX equivalent for period, and then
+    read using \c readElementText().
+
+    \snippet examples/xml/streambookmarks/xbelreader.cpp 5
+
+    \section1 MainWindow Class Definition
+
+    The \c MainWindow class is a subclass of QMainWindow, with a
+    \c File menu and a \c Help menu.
+
+    \snippet examples/xml/streambookmarks/mainwindow.h 0
+
+    \section1 MainWindow Class Implementation
+
+    The \c MainWindow constructor instantiates the QTreeWidget object, \c
+    treeWidget and sets its header with a QStringList object, \c labels.
+    The constructor also invokes \c createActions() and \c createMenus()
+    to set up the menus and their corresponding actions. The \c statusBar()
+    is used to display the message "Ready" and the window's size is fixed
+    to 480x320 pixels.
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 0
+
+    The \c open() function enables the user to open an XBEL file using
+    QFileDialog::getOpenFileName(). A warning message is displayed along
+    with the \c fileName and \c errorString if the file cannot be read or
+    if there is a parse error.
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 1
+
+    The \c saveAs() function displays a QFileDialog, prompting the user for
+    a \c fileName using QFileDialog::getSaveFileName(). Similar to the
+    \c open() function, this function also displays a warning message if
+    the file cannot be written to.
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 2
+
+    The \c about() function displays a QMessageBox with a brief description
+    of the example.
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 3
+
+    In order to implement the \c open(), \c saveAs(), \c exit(), \c about()
+    and \c aboutQt() functions, we connect them to QAction objects and
+    add them to the \c fileMenu and \c helpMenu. The connections are as shown
+    below:
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 4
+
+    The \c createMenus() function creates the \c fileMenu and \c helpMenu
+    and adds the QAction objects to them in order to create the menu shown
+    in the screenshot below:
+
+    \table
+    \row
+         \o \inlineimage xmlstreamexample-filemenu.png
+         \o \inlineimage xmlstreamexample-helpmenu.png
+    \endtable
+
+    \snippet examples/xml/streambookmarks/mainwindow.cpp 5
+
+    \section1 \c{main()} Function
+
+    The \c main() function instantiates \c MainWindow and invokes the \c show()
+    function.
+
+    \snippet examples/xml/streambookmarks/main.cpp 0
+
+    See the \l{http://pyxml.sourceforge.net/topics/xbel/}
+    {XML Bookmark Exchange Language Resource Page} for more information
+    about XBEL files.
+*/

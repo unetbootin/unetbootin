@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qtoolbutton.cpp -->
+<head>
+  <title>Qt 4.4: QToolButton Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QToolButton Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QToolButton class provides a quick-access button to commands or options, usually used inside a <a href="qtoolbar.html">QToolBar</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QToolButton&gt;</pre><p>Inherits <a href="qabstractbutton.html">QAbstractButton</a>.</p>
+<ul>
+<li><a href="qtoolbutton-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtoolbutton-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtoolbutton.html#ToolButtonPopupMode-enum">ToolButtonPopupMode</a></b> { DelayedPopup, MenuButtonPopup, InstantPopup }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtoolbutton.html#arrowType-prop">arrowType</a></b> : Qt::ArrowType</li>
+<li><div class="fn"/><b><a href="qtoolbutton.html#autoRaise-prop">autoRaise</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtoolbutton.html#popupMode-prop">popupMode</a></b> : ToolButtonPopupMode</li>
+<li><div class="fn"/><b><a href="qtoolbutton.html#toolButtonStyle-prop">toolButtonStyle</a></b> : Qt::ToolButtonStyle</li>
+</ul>
+<ul>
+<li><div class="fn"/>11 properties inherited from <a href="qabstractbutton.html#properties">QAbstractButton</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtoolbutton.html#QToolButton">QToolButton</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtoolbutton.html#dtor.QToolButton">~QToolButton</a></b> ()</li>
+<li><div class="fn"/>Qt::ArrowType <b><a href="qtoolbutton.html#arrowType-prop">arrowType</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtoolbutton.html#autoRaise-prop">autoRaise</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbutton.html#defaultAction">defaultAction</a></b> () const</li>
+<li><div class="fn"/>QMenu * <b><a href="qtoolbutton.html#menu">menu</a></b> () const</li>
+<li><div class="fn"/>ToolButtonPopupMode <b><a href="qtoolbutton.html#popupMode-prop">popupMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#arrowType-prop">setArrowType</a></b> ( Qt::ArrowType <i>type</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#autoRaise-prop">setAutoRaise</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#setMenu">setMenu</a></b> ( QMenu * <i>menu</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#popupMode-prop">setPopupMode</a></b> ( ToolButtonPopupMode <i>mode</i> )</li>
+<li><div class="fn"/>Qt::ToolButtonStyle <b><a href="qtoolbutton.html#toolButtonStyle-prop">toolButtonStyle</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>21 public functions inherited from <a href="qabstractbutton.html#public-functions">QAbstractButton</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#setDefaultAction">setDefaultAction</a></b> ( QAction * <i>action</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#toolButtonStyle-prop">setToolButtonStyle</a></b> ( Qt::ToolButtonStyle <i>style</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#showMenu">showMenu</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public slots inherited from <a href="qabstractbutton.html#public-slots">QAbstractButton</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#triggered">triggered</a></b> ( QAction * <i>action</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 signals inherited from <a href="qabstractbutton.html#signals">QAbstractButton</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbutton.html#initStyleOption">initStyleOption</a></b> ( QStyleOptionToolButton * <i>option</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qtoolbutton.html#paintEvent">paintEvent</a></b> ( QPaintEvent * <i>event</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 protected functions inherited from <a href="qabstractbutton.html#protected-functions">QAbstractButton</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QToolButton class provides a quick-access button to commands or options, usually used inside a <a href="qtoolbar.html">QToolBar</a>.</p>
+<p>A tool button is a special button that provides quick-access to specific commands or options. As opposed to a normal command button, a tool button usually doesn't show a text label, but shows an icon instead.</p>
+<p>Tool buttons are normally created when new <a href="qaction.html">QAction</a> instances are created with <a href="qtoolbar.html#addAction">QToolBar::addAction</a>() or existing actions are added to a toolbar with <a href="qtoolbar.html#addAction">QToolBar::addAction</a>(). It is also possible to construct tool buttons in the same way as any other widget, and arrange them alongside other widgets in layouts.</p>
+<p>One classic use of a tool button is to select tools; for example, the &quot;pen&quot; tool in a drawing program. This would be implemented by using a QToolButton as a toggle button (see <a href="qabstractbutton-qt3.html#setToggleButton">setToggleButton</a>()).</p>
+<p>QToolButton supports auto-raising. In auto-raise mode, the button draws a 3D frame only when the mouse points at it. The feature is automatically turned on when a button is used inside a <a href="qtoolbar.html">QToolBar</a>. Change it with <a href="qtoolbutton.html#autoRaise-prop">setAutoRaise</a>().</p>
+<p>A tool button's icon is set as <a href="qicon.html">QIcon</a>. This makes it possible to specify different pixmaps for the disabled and active state. The disabled pixmap is used when the button's functionality is not available. The active pixmap is displayed when the button is auto-raised because the mouse pointer is hovering over it.</p>
+<p>The button's look and dimension is adjustable with <a href="qtoolbutton.html#toolButtonStyle-prop">setToolButtonStyle</a>() and <a href="qabstractbutton.html#iconSize-prop">setIconSize</a>(). When used inside a <a href="qtoolbar.html">QToolBar</a> in a <a href="qmainwindow.html">QMainWindow</a>, the button automatically adjusts to <a href="qmainwindow.html">QMainWindow</a>'s settings (see <a href="qmainwindow.html#toolButtonStyle-prop">QMainWindow::setToolButtonStyle</a>() and <a href="qmainwindow.html#iconSize-prop">QMainWindow::setIconSize</a>()). Instead of an icon, a tool button can also display an arrow symbol, specified with <a href="qtoolbutton.html#arrowType-prop">arrowType</a>.</p>
+<p>A tool button can offer additional choices in a popup menu. The popup menu can be set using <a href="qtoolbutton.html#setMenu">setMenu</a>(). Use <a href="qtoolbutton.html#popupMode-prop">setPopupMode</a>() to configure the different modes available for tool buttons with a menu set. The default mode is DelayedPopupMode which is sometimes used with the &quot;Back&quot; button in a web browser. After pressing and holding the button down for a while, a menu pops up showing a list of possible pages to jump to. The default delay is 600 ms; you can adjust it with <a href="qtoolbutton-qt3.html#setPopupDelay">setPopupDelay</a>().</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><font color="red">[Missing image toolbar.png]</font></td></tr>
+<tr valign="top" class="even"><td>Qt Assistant's toolbar contains tool buttons that are associated with actions used in other parts of the main window.</td></tr>
+</table></p>
+<p>See also <a href="qpushbutton.html">QPushButton</a>, <a href="qtoolbar.html">QToolBar</a>, <a href="qmainwindow.html">QMainWindow</a>, <a href="qaction.html">QAction</a>, and <a href="guibooks.html#fowler">GUI Design Handbook: Push Button</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ToolButtonPopupMode-enum"></a>enum QToolButton::ToolButtonPopupMode</h3>
+<p>Describes how a menu should be popped up for tool buttons that has a menu set or contains a list of actions.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QToolButton::DelayedPopup</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">After pressing and holding the tool button down for a certain amount of time (the timeout is style dependant, see <a href="qstyle.html#StyleHint-enum">QStyle::SH_ToolButton_PopupDelay</a>), the menu is displayed. A typical application example is the &quot;back&quot; button in some web browsers's tool bars. If the user clicks it, the browser simply browses back to the previous page. If the user presses and holds the button down for a while, the tool button shows a menu containing the current history list</td></tr>
+<tr><td valign="top"><tt>QToolButton::MenuButtonPopup</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">In this mode the tool button displays a special arrow to indicate that a menu is present. The menu is displayed when the arrow part of the button is pressed.</td></tr>
+<tr><td valign="top"><tt>QToolButton::InstantPopup</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The menu is displayed, without delay, when the tool button is pressed. In this mode, the button's own action is not triggered.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="arrowType-prop"></a>arrowType : <a href="qt.html#ArrowType-enum">Qt::ArrowType</a></h3>
+<p>This property holds whether the button displays an arrow instead of a normal icon.</p>
+<p>This displays an arrow as the icon for the <a href="qtoolbutton.html">QToolButton</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ArrowType arrowType () const</b></li>
+<li><div class="fn"/><b>void setArrowType ( Qt::ArrowType <i>type</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="autoRaise-prop"></a>autoRaise : bool</h3>
+<p>This property holds whether auto-raising is enabled or not.</p>
+<p>The default is disabled (i.e&#x2e; false).</p>
+<p>This property is currently ignored on Mac OS X when using QMacStyle.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoRaise () const</b></li>
+<li><div class="fn"/><b>void setAutoRaise ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="popupMode-prop"></a>popupMode : <a href="qtoolbutton.html#ToolButtonPopupMode-enum">ToolButtonPopupMode</a></h3>
+<p>This property describes the way that popup menus are used with tool buttons.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ToolButtonPopupMode popupMode () const</b></li>
+<li><div class="fn"/><b>void setPopupMode ( ToolButtonPopupMode <i>mode</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="toolButtonStyle-prop"></a>toolButtonStyle : <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonStyle</a></h3>
+<p>This property holds whether the tool button displays an icon only, text only, or text beside/below the icon.</p>
+<p>The default is <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonIconOnly</a>.</p>
+<p><a href="qtoolbutton.html">QToolButton</a> automatically connects this slot to the relevant signal in the <a href="qmainwindow.html">QMainWindow</a> in which is resides.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ToolButtonStyle toolButtonStyle () const</b></li>
+<li><div class="fn"/><b>void setToolButtonStyle ( Qt::ToolButtonStyle <i>style</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QToolButton"></a>QToolButton::QToolButton ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty tool button with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QToolButton"></a>QToolButton::~QToolButton ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="defaultAction"></a><a href="qaction.html">QAction</a> * QToolButton::defaultAction () const</h3>
+<p>Returns the default action.</p>
+<p>See also <a href="qtoolbutton.html#setDefaultAction">setDefaultAction</a>().</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QToolButton::initStyleOption ( <a href="qstyleoptiontoolbutton.html">QStyleOptionToolButton</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from this <a href="qtoolbutton.html">QToolButton</a>. This method is useful for subclasses when they need a <a href="qstyleoptiontoolbutton.html">QStyleOptionToolButton</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<h3 class="fn"><a name="menu"></a><a href="qmenu.html">QMenu</a> * QToolButton::menu () const</h3>
+<p>Returns the associated menu, or 0 if no menu has been defined.</p>
+<p>See also <a href="qtoolbutton.html#setMenu">setMenu</a>().</p>
+<h3 class="fn"><a name="paintEvent"></a>void QToolButton::paintEvent ( <a href="qpaintevent.html">QPaintEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the button in response to the paint <i>event</i>.</p>
+<p>Reimplemented from <a href="qwidget.html#paintEvent">QWidget</a>.</p>
+<h3 class="fn"><a name="setDefaultAction"></a>void QToolButton::setDefaultAction ( <a href="qaction.html">QAction</a> * <i>action</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the default action to <i>action</i>.</p>
+<p>If a tool button has a default action, the action defines the button's properties like text, icon, tool tip, etc.</p>
+<p>See also <a href="qtoolbutton.html#defaultAction">defaultAction</a>().</p>
+<h3 class="fn"><a name="setMenu"></a>void QToolButton::setMenu ( <a href="qmenu.html">QMenu</a> * <i>menu</i> )</h3>
+<p>Associates the given <i>menu</i> with this tool button.</p>
+<p>The menu will be shown according to the button's <a href="qtoolbutton.html#popupMode-prop">popupMode</a>.</p>
+<p>Ownership of the menu is not transferred to the tool button.</p>
+<p>See also <a href="qtoolbutton.html#menu">menu</a>().</p>
+<h3 class="fn"><a name="showMenu"></a>void QToolButton::showMenu ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows (pops up) the associated popup menu. If there is no such menu, this function does nothing. This function does not return until the popup menu has been closed by the user.</p>
+<h3 class="fn"><a name="triggered"></a>void QToolButton::triggered ( <a href="qaction.html">QAction</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the given <i>action</i> is triggered.</p>
+<p>The action may also be associated with other parts of the user interface, such as menu items and keyboard shortcuts. Sharing actions in this way helps make the user interface more consistent and is often less work to implement.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

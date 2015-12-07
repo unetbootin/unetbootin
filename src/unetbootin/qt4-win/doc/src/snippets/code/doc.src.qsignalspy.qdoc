@@ -1,0 +1,43 @@
+//! [0]
+    QCheckBox *box = ...;
+    QSignalSpy spy(box, SIGNAL(clicked(bool)));
+
+    // do something that triggers the signal
+    box->animateClick();
+
+    QCOMPARE(spy.count(), 1); // make sure the signal was emitted exactly one time
+    QList<QVariant> arguments = spy.takeFirst(); // take the first signal
+
+    QVERIFY(arguments.at(0).toBool() == true); // verify the first argument
+//! [0]
+
+
+//! [1]
+    QSignalSpy spy(myCustomObject, SIGNAL(mySignal(int, QString, double)));
+
+    myCustomObject->doSomething(); // trigger emission of the signal
+
+    QList<QVariant> arguments = spy.takeFirst();
+    QVERIFY(arguments.at(0).type() == QVariant::Int);
+    QVERIFY(arguments.at(1).type() == QVariant::QString);
+    QVERIFY(arguments.at(2).type() == QVariant::double);
+//! [1]
+
+
+//! [2]
+    qRegisterMetaType<QModelIndex>("QModelIndex");
+    QSignalSpy spy(&model, SIGNAL(whatever(QModelIndex)));
+//! [2]
+
+
+//! [3]
+    // get the first argument from the first received signal:
+    QModelIndex result = qvariant_cast<QModelIndex>(spy.at(0).at(0));
+//! [3]
+
+
+//! [4]
+    QSignalSpy spy(myPushButton, SIGNAL(clicked(bool)));
+//! [4]
+
+

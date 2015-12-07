@@ -1,0 +1,435 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \module QtXmlPatterns
+    \since 4.4
+    \title QtXmlPatterns Module
+    \contentspage Qt's Modules
+    \previouspage QtXml
+    \nextpage Phonon Module
+    \ingroup modules
+    \ingroup scripting
+
+    \keyword Patternist
+
+    \brief An overview of Qt's XQuery support.
+
+    \tableofcontents
+
+    XQuery is a pragmatic language that allows XML to be queried and created in
+    fast, concise and safe ways.
+
+    \section1 Introduction
+
+    \quotefile snippets/patternist/introductionExample.xq
+
+    The query opens the file \c library.xml, and for each \c book element that is
+    a child of the top element \c bib, and whose attribute by name \c year is larger
+    than 1991 and has Addison-Wesley as a publisher, it constructs a \c book element
+    and attaches it to the parent element called \c bibliography.
+
+    \section1 Why use XQuery?
+
+    XQuery is tailor made for selecting and aggregating information in safe and efficient ways. Hence,
+    if an application selects and navigates data, XQuery could be a possible candidate for implementing
+    that in a quick and bug-free manner. With QAbstractXmlNodeModel, these advantages are not constrained
+    to XML files, but can be applied to other data as well.
+
+    Maybe XQuery can be summarized as follows:
+
+    \list
+        \o Pragmatic functionality: XQuery has a slew of expressions for sorting, selecting and filtering data in typically
+           one liners. Aggregation functions like \c avg(), \c abs() and \c max() helps further doing this concisely.
+        \o Development speed: pick one of the queries in this document and imagine writing the equivalent code
+           in C++ or Java. Compared to a one or two liner of XQuery, that would be quite a task to develop, test and maintain.
+        \o Type safety: in XQuery values have strong types, and the type system respect that. For instance, one cannot
+           pass the return value from \c current-time() to a function that expects \c xs:integer, and the value of an
+           attribute or element can be atomic values such as \c xs:date or \c xs:double, as opposed to only strings.
+        \o Interoperability: XML has a gazillion of rules for how things should be and not be. Adhering to these are
+           important since it ensures data is consistently interpreted and that different XML processors can handle
+           the same data. However, knowing, and keeping in mind, all these rules is a daunting task. The QtXmlPatterns
+           engine does all this checking behind the scenes. The user just writes queries, and as long as an error isn't
+           flagged, one can sleep tight, knowing ones data will be correctly processed with product XYZ, or appearing in
+           the same manner on the other side of the planet.
+    \endlist
+
+    On top of that the language is designed to be high level such that it is easy to analyze what the user is computing. With this,
+    it is easier to optimize both speed and memory use of XML operations.
+
+    \section1 Using QtXmlPatterns
+
+    Evaluating queries can be done via an ordinary Qt C++ API and using a command line interface.
+
+    \section2 C++ API
+
+    \section3 Configuring the Build Process
+
+    Applications that use QtXmlPatterns' classes need to be configured to be built against the QtXmlPatterns module. To
+    include the definitions of the module's classes, use the following directive:
+
+    \snippet doc/src/snippets/code/doc.src.qtxmlpatterns.qdoc 0
+
+    To link against the module, add this line to your qmake .pro file:
+
+    \snippet doc/src/snippets/code/doc.src.qtxmlpatterns.qdoc 1
+
+    QtXmlPatterns is part of the Qt Desktop Edition, Qt Open Source Edition and the Qt Console Edition. Note that QtXmlPatterns
+    is disabled when building Qt, if exceptions are disabled or if a compiler that doesn't support member
+    templates, such as MSVC 6, is used.
+
+    See QXmlQuery for how to use the C++ API.
+
+    \section2 Command line utility
+
+    A command line utility called \c xmlpatterns is installed and available
+    like the other command line utilities such as \c moc or \c uic. It takes
+    a single argument that is the filename of the query to execute:
+
+    \tt{xmlpatterns myQuery.xq}
+
+    The query will be run and the output written to \c stdout.
+
+    Pass in the \c -help switch to get a brief description printed to the console, such as how
+    to bind variables using the command line.
+
+    The command line utility's interface is stable for scripting, but descriptions and help messages
+    are not designed for the purpose of automatic parsing, and can change in undefined ways in a future
+    release of Qt.
+
+    \section1 XQuery Tutorial
+
+    See \l{A Short Path to XQuery} for a brief introduction to the XQuery language.
+
+    \target QtXDM
+    \section1 Qt's and XQuery's Data Model
+
+    XQuery and Qt has different data models. All data in XQuery takes the form of sequences of items,
+    where an item is either a node, or an atomic value. Atomic values are the primitives found in W3C XML Schema, and nodes
+    are usual XML nodes, although they might represent other things using QXmlNodeModelIndex and QAbstractXmlNodeModel.
+
+    Atomic values, when not being serialized, are represented with QVariant. The mappings are as follows.
+
+    \table
+    \header
+        \o From XQuery
+        \o To Qt
+    \row
+        \o \c xs:integer
+        \o QVariant::LongLong
+    \row
+        \o \c xs:string
+        \o QVariant::String
+    \row
+        \o \c xs:double
+        \o QVariant::Double
+    \row
+        \o \c xs:float
+        \o QVariant::Double
+    \row
+        \o \c xs:boolean
+        \o QVariant::Bool
+    \row
+        \o \c xs:decimal
+        \o QVariant::Double
+    \row
+        \o \c xs:hexBinary
+        \o QVariant::ByteArray
+    \row
+        \o \c xs:base64Binary
+        \o QVariant::ByteArray
+    \row
+        \o \c xs:time
+        \o Not supported because \c xs:time has a zone offset, and QTime does not. Use \c xs:dateTime, or convert the value to \c xs:string.
+    \row
+        \o \c xs:date
+        \o QVariant::DateTime
+    \row
+        \o \c xs:dateTime
+        \o QVariant::DateTime
+    \row
+        \o \c xs:gYear
+        \o QVariant::DateTime
+    \row
+        \o \c xs:gYearMonth
+        \o QVariant::DateTime
+    \row
+        \o \c xs:gMonthDay
+        \o QVariant::DateTime
+    \row
+        \o \c xs:gDay
+        \o QVariant::DateTime
+    \row
+        \o \c xs:gMonth
+        \o QVariant::DateTime
+    \row
+        \o \c xs:string*
+        \o QVariant::StringList
+    \row
+        \o \c xs:anyURI
+        \o QVariant::Url
+    \row
+        \o \c xs:untypedAtomic
+        \o QVariant::String
+    \row
+        \o \c xs:ENTITY
+        \o QVariant::String
+    \row
+        \o \c xs:QName
+        \o QXmlName. Note that the returned QXmlName can only be used with the QXmlQuery instance that it was created with.
+    \endtable
+
+    \table
+    \header
+        \o From Qt
+        \o To XQuery
+    \row
+        \o QVariant::LongLong
+        \o \c xs:integer
+    \row
+        \o QVariant::Int
+        \o \c xs:integer
+    \row
+        \o QVariant::UInt
+        \o \c xs:nonNegativeInteger
+    \row
+        \o QVariant::ULongLong
+        \o \c xs:unsignedLong
+    \row
+        \o QVariant::String
+        \o \c xs:string
+    \row
+        \o QVariant::Double
+        \o \c xs:double
+    \row
+        \o QVariant::Bool
+        \o \c xs:boolean
+    \row
+        \o QVariant::Double
+        \o \c xs:decimal
+    \row
+        \o QVariant::ByteArray
+        \o \c xs:base64Binary
+    \row
+        \o QVariant::Date
+        \o \c xs:date. The QDate is assumed to be in timezone UTC.
+    \row
+        \o QVariant::Time
+        \o \c QTime cannot properly represent \c xs:time. Convert QTime to a
+              QDateTime with a valid arbitrary date, and bind the time as a QDateTime instead.
+    \row
+        \o QVariant::DateTime
+        \o \c xs:dateTime
+    \row
+        \o QVariant::StringList
+        \o \c xs:string*
+    \row
+        \o QVariant::Url
+        \o \c xs:string
+    \row
+        \o QVariantList
+        \o A sequence of atomic values, whose type is the same as the first item in the QVariantList instance. If all
+           the items in the QVariantList is not of the same type, behavior is undefined.
+    \row
+        \o Any other type
+        \o It is not supported and will either lead to undefined behavior, or an unexisting variable binding, depending on context.
+    \endtable
+
+    \section1 Integrating with Custom Data
+
+    XQuery is a language designed for, and modeled on XML. However, it doesn't have to be constrained to that. By sub-classing
+    QAbstractXmlNodeModel one can write queries on top of any data that can be modeled as XML.
+
+    By default when QtXmlPatterns is asked to open files or to produce content, this is done using an internal representation. For
+    instance, in this query:
+
+    \quotefile snippets/patternist/introAcneRemover.xq
+
+    an efficient internal representation is used for the file \c myOrders.xml. However, by sub-classing QAbstractXmlNodeModel
+    one can write a query on any data, by mapping XML elements and attributes to the custom data model. For instance, one
+    could write a QAbstractXmlNodeModel sub-class that mirrors the file system hierarchy like this:
+
+    \quotefile snippets/patternist/introFileHierarchy.xml
+
+    and hence have a convenient way to navigate the file system:
+
+    \quotefromfile snippets/patternist/introNavigateFS.xq
+    \skipto <html>
+    \printuntil
+
+    Converting a data model to XML(text) and then read it in with an XML tool has been one approach to this, but that has disadvantages
+    such as being inefficient. The XML representation is separated from the actual data model, and that two representations needs
+    to be maintained simultaneously in memory.
+
+    With QAbstractXmlNodeModel this conversion is not necessary, nor are two representation kept at the same time, since QXmlNodeModelIndex
+    is a small, efficient, stack allocated value. Also, since the XQuery engine asks the QAbstractXmlNodeModel for the actual data, the
+    model can create elements, attributes and data on demand, depending on what the query actually requests. For instance, in the file system
+    model above, the model doesn't have to read in the whole file system or encoded the content of a file until it is actually asked for.
+
+    In other words, with QAbstractXmlNodeModel it's possible to have one data model, and then use the power of the XQuery language on top.
+
+    Some examples of possible data models could be:
+
+    \list
+        \o The internal document representation in a word processor
+        \o Dependencies within a build system
+        \o the hierarchy(or graph) that links with HTML documents forms(for a web crawler)
+        \o Images and meta data in an image collection
+        \o The D-Bus interfaces available on the system
+        \o The file system hierarchy(as seen above)
+        \o The QObject hierarchy.
+    \endlist
+
+    The documentation for QAbstractXmlNodeModel has the details for implementing this.
+
+    \section1 More on Custom Data
+
+    Since QtXmlPatterns isn't constrained to XML but can use custom data directly, it turns XQuery into a mapping
+    layer between different custom models or custom models and XML. Once QtXmlPatterns can understand the data, simple queries
+    can be used to select in it, or to simply write it out as XML using QXmlQuery::serialize().
+
+    Consider a word processor application that needs to be able to import and export different formats. Instead of having to
+    write C++ code that converts between the different formats, one writes a query that goes from on type of XML, such as MathML,
+    to another XML format: the one for the document representation that the DocumentRepresentation class below exposes.
+
+    \image patternist-wordProcessor.png
+
+    In the case of CSV files, which are text, a QAbstractXmlNodeModel sub-class is used again in order to expose the comma-separated
+    file as XML, such that a query can operate on it.
+
+    \section1 Security Considerations
+
+    \section2 Query Injection
+
+    XQuery is subject to query injection in the same
+    manner that SQL is. If a query is constructed by concatenating strings
+    where some of the strings are from user input, the query can be altered by carefully
+    crafting malicious strings, unless they are properly escaped.
+
+    The best solution against these attacks is typically to never construct queries from user-written
+    strings, but instead input the user's data using variable bindings. This
+    avoids all query injection attacks.
+
+    See \l {http://www.ibm.com/developerworks/xml/library/x-xpathinjection.html}{Avoid the dangers of XPath injection, Robi Sen} or
+        \l {http://www.packetstormsecurity.org/papers/bypass/Blind_XPath_Injection_20040518.pdf}{Blind XPath Injection, Amit Klein}
+    for deeper discussions.
+
+    \section2 Denial of Service Attacks
+
+    QtXmlPatterns has, as all other systems, limits. Generally, these are not checked. This
+    is not a problem for regular use, but it does mean that a malicious query can relatively easy
+    be constructed that causes code to crash or to exercise undefined behavior.
+
+    \section1 Features and Conformance
+
+    \section2 Conformance
+
+    QtXmlPatterns aims at being a conformant XQuery implementation. In addition to supporting
+    minimal conformance, the serialization and full-axis features are supported. 97% of the tests
+    in W3C's test suite for XQuery passes, as of this writing, and it is expected this will improve
+    over time. Areas where conformance is not tip top and where behavior changes may happen in future
+    releases are:
+
+    \list
+        \o The regular expressions support is currently not conformant but follows that of
+           Qt's QRegExp standard syntax.
+        \o Operators between \c xs:time, \c xs:date, and \c xs:dateTime are incomplete
+        \o Formatting of very large or very small \c xs:double, \c xs:float, and \c xs:decimal values may be wrong.
+        \o Some corner cases involving namespaces and element constructors are wrong.
+    \endlist
+
+    XML 1.0 and XML Namespaces 1.0 are supported, as opposed to the 1.1 versions. When strings are fed into
+    the query using QStrings, the characters must be XML 1.0 characters. Otherwise, the behavior is
+    undefined. This is not checked.
+
+    Since XPath 2.0 is a subset of XQuery 1.0, that is supported too.
+
+    The specifications discusses conformance further: \l{http://www.w3.org/TR/xquery/}{XQuery 1.0: An XML Query Language}.
+    W3C's XQuery testing effort can be of interest as well, \l{http://www.w3.org/XML/Query/test-suite/}{XML Query Test Suite}.
+
+    Currently \c fn:collection() does not access any data set, and there is no API for providing data through the
+    collection. As a result, evaluating \c fn:collection() returns the empty sequence. We hope to provide
+    functionality for this in a future release of Qt.
+
+    When opening XML files, this is done with support for \c xml:id. In practice this means elements that has an
+    attribute by name \c xml:id, can be looked up fairly quickly with the \c fn:id() function.
+    See \l{http://www.w3.org/TR/xml-id/}{xml:id Version 1.0} for details.
+
+    \note Only queries encoded in UTF-8 are supported.
+
+    \section2 Resource Loading
+
+    When QtXmlPatterns attempts to load XML resources, such as via XQuery's \c fn:doc() function, the following schemes are supported:
+
+    \table
+    \header
+        \o Scheme Name
+        \o Description
+    \row
+        \o \c file
+        \o Local files.
+    \row
+        \o \c data
+        \o The bytes are encoded in the URI itself. For instance, \c data:application/xml,%3Ce%2F%3E is \c <e/>.
+    \row
+        \o \c ftp
+        \o Resources retrieved via FTP.
+    \row
+        \o \c http
+        \o Resources retrieved via HTTP.
+    \row
+        \o \c https
+        \o Resources retrieved via HTTPS. This will succeed if no SSL errors are encountered.
+    \row
+        \o \c qrc
+        \o Qt Resource files. Expressing it as an empty scheme, :/..., is not supported.
+    \endtable
+
+    URIs are first passed to QAbstractUriResolver(see QXmlQuery::setUriResolver()) for possible rewrites.
+*/
+
+/*!
+    \namespace QPatternist
+    \brief The QPatternist namespace contains classes and functions required by the QtXmlPatterns module.
+    \internal
+*/

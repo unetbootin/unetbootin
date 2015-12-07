@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: xbelreader.cpp Example File (xml/streambookmarks/xbelreader.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">xbelreader.cpp Example File<br /><span class="small-subtitle">xml/streambookmarks/xbelreader.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;xbelreader.h&quot;
+
+ XbelReader::XbelReader(QTreeWidget *treeWidget)
+     : treeWidget(treeWidget)
+ {
+     QStyle *style = treeWidget-&gt;style();
+
+     folderIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_DirClosedIcon),
+                          QIcon::Normal, QIcon::Off);
+     folderIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_DirOpenIcon),
+                          QIcon::Normal, QIcon::On);
+     bookmarkIcon.addPixmap(style-&gt;standardPixmap(QStyle::SP_FileIcon));
+ }
+
+ bool XbelReader::read(QIODevice *device)
+ {
+     setDevice(device);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isStartElement()) {
+             if (name() == &quot;xbel&quot; &amp;&amp; attributes().value(&quot;version&quot;) == &quot;1.0&quot;)
+                 readXBEL();
+             else
+                 raiseError(QObject::tr(&quot;The file is not an XBEL version 1.0 file.&quot;));
+         }
+     }
+
+     return !error();
+ }
+
+ void XbelReader::readUnknownElement()
+ {
+     Q_ASSERT(isStartElement());
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement())
+             readUnknownElement();
+     }
+ }
+
+ void XbelReader::readXBEL()
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;xbel&quot;);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement()) {
+             if (name() == &quot;folder&quot;)
+                 readFolder(0);
+             else if (name() == &quot;bookmark&quot;)
+                 readBookmark(0);
+             else if (name() == &quot;separator&quot;)
+                 readSeparator(0);
+             else
+                 readUnknownElement();
+         }
+     }
+ }
+
+ void XbelReader::readTitle(QTreeWidgetItem *item)
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;title&quot;);
+
+     QString title = readElementText();
+     item-&gt;setText(0, title);
+ }
+
+ void XbelReader::readSeparator(QTreeWidgetItem *item)
+ {
+     QTreeWidgetItem *separator = createChildItem(item);
+     separator-&gt;setFlags(item-&gt;flags() &amp; ~Qt::ItemIsSelectable);
+     separator-&gt;setText(0, QString(30, 0xB7));
+     readElementText();
+ }
+
+ void XbelReader::readFolder(QTreeWidgetItem *item)
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;folder&quot;);
+
+     QTreeWidgetItem *folder = createChildItem(item);
+     bool folded = (attributes().value(&quot;folded&quot;) != &quot;no&quot;);
+     treeWidget-&gt;setItemExpanded(folder, !folded);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement()) {
+             if (name() == &quot;title&quot;)
+                 readTitle(folder);
+             else if (name() == &quot;folder&quot;)
+                 readFolder(folder);
+             else if (name() == &quot;bookmark&quot;)
+                 readBookmark(folder);
+             else if (name() == &quot;separator&quot;)
+                 readSeparator(folder);
+             else
+                 readUnknownElement();
+         }
+     }
+ }
+
+ void XbelReader::readBookmark(QTreeWidgetItem *item)
+ {
+     Q_ASSERT(isStartElement() &amp;&amp; name() == &quot;bookmark&quot;);
+
+     QTreeWidgetItem *bookmark = createChildItem(item);
+     bookmark-&gt;setFlags(bookmark-&gt;flags() | Qt::ItemIsEditable);
+     bookmark-&gt;setIcon(0, bookmarkIcon);
+     bookmark-&gt;setText(0, QObject::tr(&quot;Unknown title&quot;));
+     bookmark-&gt;setText(1, attributes().value(&quot;href&quot;).toString());
+     while (!atEnd()) {
+         readNext();
+
+         if (isEndElement())
+             break;
+
+         if (isStartElement()) {
+             if (name() == &quot;title&quot;)
+                 readTitle(bookmark);
+             else
+                 readUnknownElement();
+         }
+     }
+ }
+
+ QTreeWidgetItem *XbelReader::createChildItem(QTreeWidgetItem *item)
+ {
+     QTreeWidgetItem *childItem;
+     if (item) {
+         childItem = new QTreeWidgetItem(item);
+     } else {
+         childItem = new QTreeWidgetItem(treeWidget);
+     }
+     childItem-&gt;setData(0, Qt::UserRole, name().toString());
+     return childItem;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

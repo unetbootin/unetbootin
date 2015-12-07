@@ -1,0 +1,264 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class QVarLengthArray
+    \brief The QVarLengthArray class provides a low-level variable-length array.
+
+    \ingroup tools
+    \reentrant
+
+    The C++ language doesn't support variable-length arrays on the stack.
+    For example, the following code won't compile:
+
+    \snippet doc/src/snippets/code/doc.src.qvarlengtharray.qdoc 0
+
+    The alternative is to allocate the array on the heap (with
+    \c{new}):
+
+    \snippet doc/src/snippets/code/doc.src.qvarlengtharray.qdoc 1
+
+    However, if myfunc() is called very frequently from the
+    application's inner loop, heap allocation can be a major source
+    of slowdown.
+
+    QVarLengthArray is an attempt to work around this gap in the C++
+    language. It allocates a certain number of elements on the stack,
+    and if you resize the array to a larger size, it automatically
+    uses the heap instead. Stack allocation has the advantage that
+    it is much faster than heap allocation.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.qvarlengtharray.qdoc 2
+
+    In the example above, QVarLengthArray will preallocate 1024
+    elements on the stack and use them unless \c{n + 1} is greater
+    than 1024. If you omit the second template argument,
+    QVarLengthArray's default of 256 is used.
+
+    QVarLengthArray's value type must be an \l{assignable data type}.
+    This covers most data types that are commonly used, but the
+    compiler won't let you, for example, store a QWidget as a value;
+    instead, store a QWidget *.
+
+    QVarLengthArray, like QVector, provides a resizable array data
+    structure. The main differences between the two classes are:
+
+    \list
+    \o QVarLengthArray's API is much more low-level. It provides no
+       iterators and lacks much of QVector's functionality.
+
+    \o QVarLengthArray doesn't initialize the memory if the value is
+       a basic type. (QVector always does.)
+
+    \o QVector uses \l{implicit sharing} as a memory optimization.
+       QVarLengthArray doesn't provide that feature; however, it
+       usually produces slightly better performance due to reduced
+       overhead, especially in tight loops.
+    \endlist
+
+    In summary, QVarLengthArray is a low-level optimization class
+    that only makes sense in very specific cases. It is used a few
+    places inside Qt and was added to Qt's public API for the
+    convenience of advanced users.
+
+    \sa QVector, QList, QLinkedList
+*/
+
+/*! \fn QVarLengthArray::QVarLengthArray(int size)
+
+    Constructs an array with an initial size of \a size elements.
+
+    If the value type is a primitive type (e.g., char, int, float) or
+    a pointer type (e.g., QWidget *), the elements are not
+    initialized. For other types, the elements are initialized with a
+    \l{default-constructed value}.
+*/
+
+/*! \fn QVarLengthArray::~QVarLengthArray()
+
+    Destroys the array.
+*/
+
+/*! \fn int QVarLengthArray::size() const
+
+    Returns the number of elements in the array.
+
+    \sa isEmpty(), resize()
+*/
+
+/*! \fn int QVarLengthArray::count() const
+
+    Same as size().
+
+    \sa isEmpty(), resize()
+*/
+
+/*! \fn bool QVarLengthArray::isEmpty() const
+
+    Returns true if the array has size 0; otherwise returns false.
+
+    \sa size(), resize()
+*/
+
+/*! \fn void QVarLengthArray::clear()
+
+    Removes all the elements from the array.
+
+    Same as resize(0).
+*/
+
+/*! \fn void QVarLengthArray::resize(int size)
+
+    Sets the size of the array to \a size. If \a size is greater than
+    the current size, elements are added to the end. If \a size is
+    less than the current size, elements are removed from the end.
+
+    If the value type is a primitive type (e.g., char, int, float) or
+    a pointer type (e.g., QWidget *), new elements are not
+    initialized. For other types, the elements are initialized with a
+    \l{default-constructed value}.
+
+    \sa size()
+*/
+
+/*! \fn int QVarLengthArray::capacity() const
+
+    Returns the maximum number of elements that can be stored in the
+    array without forcing a reallocation.
+
+    The sole purpose of this function is to provide a means of fine
+    tuning QVarLengthArray's memory usage. In general, you will rarely ever
+    need to call this function. If you want to know how many items are
+    in the array, call size().
+
+    \sa reserve()
+*/
+
+/*! \fn void QVarLengthArray::reserve(int size)
+
+    Attempts to allocate memory for at least \a size elements. If you
+    know in advance how large the array can get, you can call this
+    function and if you call resize() often, you are likely to get
+    better performance. If \a size is an underestimate, the worst
+    that will happen is that the QVarLengthArray will be a bit
+    slower.
+
+    The sole purpose of this function is to provide a means of fine
+    tuning QVarLengthArray's memory usage. In general, you will
+    rarely ever need to call this function. If you want to change the
+    size of the array, call resize().
+
+    \sa capacity()
+*/
+
+/*! \fn T &QVarLengthArray::operator[](int i)
+
+    Returns a reference to the item at index position \a i.
+
+    \a i must be a valid index position in the array (i.e., 0 <= \a i
+    < size()).
+
+    \sa data()
+*/
+
+/*! \fn const T &QVarLengthArray::operator[](int i) const
+
+    \overload
+*/
+
+
+/*!
+    \fn void QVarLengthArray::append(const T &t)
+
+    Appends item \a t to the array, extending the array if necessary.
+*/
+
+/*!
+    \fn void QVarLengthArray::append(const T *buf, int size)
+
+    Appends \a size amount of items referenced by \a buf to this array.
+*/
+
+
+/*! \fn T *QVarLengthArray::data()
+
+    Returns a pointer to the data stored in the array. The pointer can
+    be used to access and modify the items in the array.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.qvarlengtharray.qdoc 3
+
+    The pointer remains valid as long as the array isn't reallocated.
+
+    This function is mostly useful to pass an array to a function
+    that accepts a plain C++ array.
+
+    \sa constData(), operator[]()
+*/
+
+/*! \fn const T *QVarLengthArray::data() const
+
+    \overload
+*/
+
+/*! \fn const T *QVarLengthArray::constData() const
+
+    Returns a const pointer to the data stored in the array. The
+    pointer can be used to access the items in the array. The
+    pointer remains valid as long as the array isn't reallocated.
+
+    This function is mostly useful to pass an array to a function
+    that accepts a plain C++ array.
+
+    \sa data(), operator[]()
+*/
+
+/*! \fn QVarLengthArray<T, Prealloc> &QVarLengthArray::operator=(const QVarLengthArray<T, Prealloc> &other)
+    Assigns \a other to this array and returns a reference to this array.
+ */
+
+/*! \fn QVarLengthArray::QVarLengthArray(const QVarLengthArray<T, Prealloc> &other)
+    Constructs a copy of \a other.
+ */
+

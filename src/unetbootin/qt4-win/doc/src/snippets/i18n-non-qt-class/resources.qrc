@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource>
+    <file>translations/i18n-non-qt-class_en.qm</file>
+    <file>translations/i18n-non-qt-class_fr.qm</file>
+</qresource>
+</RCC>

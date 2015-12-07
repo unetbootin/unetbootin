@@ -1,0 +1,448 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3IntCache
+    \brief The Q3IntCache class is a template class that provides a cache based on long keys.
+    \compat
+
+    Q3IntCache is implemented as a template class. Define a template
+    instance Q3IntCache\<X\> to create a cache that operates on
+    pointers to X, or X*.
+
+    A cache is a least recently used (LRU) list of cache items,
+    accessed via \c long keys. Each cache item has a cost. The sum
+    of item costs, totalCost(), will not exceed the maximum cache
+    cost, maxCost(). If inserting a new item would cause the total
+    cost to exceed the maximum cost, the least recently used items in
+    the cache are removed.
+
+    Apart from insert(), by far the most important function is find()
+    (which also exists as operator[]). This function looks up an
+    item, returns it, and by default marks it as being the most
+    recently used item.
+
+    There are also methods to remove() or take() an object from the
+    cache. Calling setAutoDelete(TRUE) for a cache tells it to delete
+    items that are removed. The default is to not delete items when
+    they are removed (i.e. remove() and take() are equivalent).
+
+    When inserting an item into the cache, only the pointer is copied,
+    not the item itself. This is called a shallow copy. It is possible
+    to make the cache copy all of the item's data (known as a deep
+    copy) when an item is inserted. insert() calls the virtual
+    function Q3PtrCollection::newItem() for the item to be inserted.
+    Inherit a dictionary and reimplement newItem() if you want deep
+    copies.
+
+    When removing a cache item, the item will be automatically
+    deleted if auto-deletion is enabled.
+
+    There is a Q3IntCacheIterator which may be used to traverse the
+    items in the cache in arbitrary order.
+
+    \sa Q3IntCacheIterator, Q3Cache, Q3AsciiCache
+*/
+
+/*!
+  \fn Q3IntCache::Q3IntCache( const Q3IntCache<type> &c )
+
+  \internal
+
+  Do not use. A Q3IntCache cannot be copied. Calls qFatal() in debug version.
+*/
+
+/*!
+    \fn Q3IntCache::Q3IntCache( int maxCost, int size  )
+
+    Constructs a cache whose contents will never have a total cost
+    greater than \a maxCost and which is expected to contain less than
+    \a size items.
+
+    \a size is actually the size of an internal hash array; it's
+    usually best to make it prime and at least 50% bigger than the
+    largest expected number of items in the cache.
+
+    Each inserted item is associated with a cost. When inserting a new
+    item, if the total cost of all items in the cache will exceed \a
+    maxCost, the cache will start throwing out the older (least
+    recently used) items until there is enough room for the new item
+    to be inserted.
+*/
+
+/*!
+    \fn Q3IntCache::~Q3IntCache()
+
+    Removes all items from the cache and then destroys the int cache.
+    If auto-deletion is enabled the cache's items are deleted. All
+    iterators that access this cache will be reset.
+*/
+
+/*!
+  \fn Q3IntCache<type>& Q3IntCache::operator=( const Q3IntCache<type> &c )
+
+  \internal
+
+  Do not use. A Q3IntCache cannot be copied. Calls qFatal() in debug version.
+*/
+
+/*!
+    \fn int Q3IntCache::maxCost() const
+
+    Returns the maximum allowed total cost of the cache.
+
+    \sa setMaxCost() totalCost()
+*/
+
+/*!
+    \fn int Q3IntCache::totalCost() const
+
+    Returns the total cost of the items in the cache. This is an
+    integer in the range 0 to maxCost().
+
+    \sa setMaxCost()
+*/
+
+/*!
+    \fn void Q3IntCache::setMaxCost( int m )
+
+    Sets the maximum allowed total cost of the cache to \a m. If the
+    current total cost is greater than \a m, some items are removed
+    immediately.
+
+    \sa maxCost() totalCost()
+*/
+
+/*!
+    \fn uint Q3IntCache::count() const
+
+    Returns the number of items in the cache.
+
+    \sa totalCost()
+*/
+
+/*!
+    \fn uint Q3IntCache::size() const
+
+    Returns the size of the hash array used to implement the cache.
+    This should be a bit larger than count() is likely to be.
+*/
+
+/*!
+    \fn bool Q3IntCache::isEmpty() const
+
+    Returns TRUE if the cache is empty; otherwise returns FALSE.
+*/
+
+/*!
+    \fn bool Q3IntCache::insert( long k, const type *d, int c, int p )
+
+    Inserts the item \a d into the cache with key \a k and assigns it
+    a cost of \a c (default 1). Returns TRUE if it succeeds; otherwise
+    returns FALSE.
+
+    The cache's size is limited, and if the total cost is too high,
+    Q3IntCache will remove old, least-used items until there is room
+    for this new item.
+
+    The parameter \a p is internal and should be left at the default
+    value (0).
+
+    \warning If this function returns FALSE (for example, the cost \c,
+    exceeds maxCost()), you must delete \a d yourself. Additionally,
+    be very careful about using \a d after calling this function. Any
+    other insertions into the cache, from anywhere in the application
+    or within Qt itself, could cause the object to be discarded from
+    the cache and the pointer to become invalid.
+*/
+
+/*!
+    \fn bool Q3IntCache::remove( long k )
+
+    Removes the item associated with \a k, and returns TRUE if the
+    item was present in the cache; otherwise returns FALSE.
+
+    The item is deleted if auto-deletion has been enabled, i.e. if you
+    have called setAutoDelete(TRUE).
+
+    If there are two or more items with equal keys, the one that was
+    inserted most recently is removed.
+
+    All iterators that refer to the removed item are set to point to
+    the next item in the cache's traversal order.
+
+    \sa take(), clear()
+*/
+
+/*!
+    \fn type * Q3IntCache::take( long k )
+
+    Takes the item associated with \a k out of the cache without
+    deleting it, and returns a pointer to the item taken out or 0 if
+    the key does not exist in the cache.
+
+    If there are two or more items with equal keys, the one that was
+    inserted most recently is taken.
+
+    All iterators that refer to the taken item are set to point to the
+    next item in the cache's traversal order.
+
+    \sa remove(), clear()
+*/
+
+/*!
+    \fn void Q3IntCache::clear()
+
+    Removes all items from the cache, and deletes them if
+    auto-deletion has been enabled.
+
+    All cache iterators that operate this on cache are reset.
+
+    \sa remove() take()
+*/
+
+/*!
+    \fn type * Q3IntCache::find( long k, bool ref ) const
+
+    Returns the item associated with \a k, or 0 if the key does not
+    exist in the cache. If \a ref is TRUE (the default), the item is
+    moved to the front of the least recently used list.
+
+    If there are two or more items with equal keys, the one that was
+    inserted most recently is returned.
+*/
+
+/*!
+    \fn type * Q3IntCache::operator[]( long k ) const
+
+    Returns the item associated with \a k, or 0 if \a k does not exist
+    in the cache, and moves the item to the front of the least
+    recently used list.
+
+    If there are two or more items with equal keys, the one that was
+    inserted most recently is returned.
+
+    This is the same as find( k, TRUE ).
+
+    \sa find()
+*/
+
+/*!
+    \fn void Q3IntCache::statistics() const
+
+    A debug-only utility function. Prints out cache usage, hit/miss,
+    and distribution information using qDebug(). This function does
+    nothing in the release library.
+*/
+
+/*!
+    \class Q3IntCacheIterator
+    \brief The Q3IntCacheIterator class provides an iterator for Q3IntCache collections.
+    \compat
+
+    Note that the traversal order is arbitrary; you are not guaranteed
+    any particular order. If new objects are inserted into the cache
+    while the iterator is active, the iterator may or may not see
+    them.
+
+    Multiple iterators are completely independent, even when they
+    operate on the same Q3IntCache. Q3IntCache updates all iterators
+    that refer an item when that item is removed.
+
+    Q3IntCacheIterator provides an operator++(), and an operator+=() to
+    traverse the cache; current() and currentKey() to access the
+    current cache item and its key; atFirst() atLast(), which return
+    TRUE if the iterator points to the first/last item in the cache;
+    isEmpty(), which returns TRUE if the cache is empty; and count(),
+    which returns the number of items in the cache.
+
+    Note that atFirst() and atLast() refer to the iterator's arbitrary
+    ordering, not to the cache's internal least recently used list.
+
+    \sa Q3IntCache
+*/
+
+/*!
+    \fn Q3IntCacheIterator::Q3IntCacheIterator( const Q3IntCache<type> &cache )
+
+    Constructs an iterator for \a cache. The current iterator item is
+    set to point to the first item in the \a cache (or rather, the
+    first item is defined to be the item at which this constructor
+    sets the iterator to point).
+*/
+
+/*!
+    \fn Q3IntCacheIterator::Q3IntCacheIterator (const Q3IntCacheIterator<type> & ci)
+
+    Constructs an iterator for the same cache as \a ci. The new
+    iterator starts at the same item as ci.current(), but moves
+    independently from there on.
+*/
+
+/*!
+    \fn Q3IntCacheIterator<type>& Q3IntCacheIterator::operator=( const Q3IntCacheIterator<type> &ci )
+
+    Makes this an iterator for the same cache as \a ci. The new
+    iterator starts at the same item as ci.current(), but moves
+    independently thereafter.
+*/
+
+/*!
+    \fn uint Q3IntCacheIterator::count() const
+
+    Returns the number of items in the cache on which this iterator
+    operates.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3IntCacheIterator::isEmpty() const
+
+    Returns TRUE if the cache is empty; otherwise returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn bool Q3IntCacheIterator::atFirst() const
+
+    Returns TRUE if the iterator points to the first item in the
+    cache; otherwise returns FALSE. Note that this refers to the
+    iterator's arbitrary ordering, not to the cache's internal least
+    recently used list.
+
+    \sa toFirst(), atLast()
+*/
+
+/*!
+    \fn bool Q3IntCacheIterator::atLast() const
+
+    Returns TRUE if the iterator points to the last item in the cache;
+    otherwise returns FALSE. Note that this refers to the iterator's
+    arbitrary ordering, not to the cache's internal least recently
+    used list.
+
+    \sa toLast(), atFirst()
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::toFirst()
+
+    Sets the iterator to point to the first item in the cache and
+    returns a pointer to the item.
+
+    Sets the iterator to 0, and returns 0, if the cache is empty.
+
+    \sa toLast() isEmpty()
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::toLast()
+
+    Sets the iterator to point to the last item in the cache and
+    returns a pointer to the item.
+
+    Sets the iterator to 0, and returns 0, if the cache is empty.
+
+    \sa toFirst() isEmpty()
+*/
+
+/*!
+    \fn Q3IntCacheIterator::operator type *() const
+
+    Cast operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::current() const
+
+    Returns a pointer to the current iterator item.
+*/
+
+/*!
+    \fn long Q3IntCacheIterator::currentKey() const
+
+    Returns the key for the current iterator item.
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::operator()()
+
+    Makes the succeeding item current and returns the original current
+    item.
+
+    If the current iterator item was the last item in the cache or if
+    it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::operator+=( uint jump )
+
+    Returns the item \a jump positions after the current item, or 0 if
+    it is beyond the last item. Makes this the current item.
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::operator-=( uint jump )
+
+    Returns the item \a jump positions before the current item, or 0
+    if it is beyond the first item. Makes this the current item.
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::operator++()
+
+    Prefix ++ makes the iterator point to the item just after
+    current(), and makes it the new current item for the iterator. If
+    current() was the last item, operator--() returns 0.
+*/
+
+/*!
+    \fn type *Q3IntCacheIterator::operator--()
+
+    Prefix -- makes the iterator point to the item just before
+    current(), and makes it the new current item for the iterator. If
+    current() was the first item, operator--() returns 0.
+*/

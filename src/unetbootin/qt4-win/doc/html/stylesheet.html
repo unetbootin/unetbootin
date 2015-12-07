@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/stylesheet.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Style Sheets</title>
+  <link rel="next" href="stylesheet-syntax.html" />
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Next: <a href="stylesheet-syntax.html">The Style Sheet Syntax</a>]
+</p>
+<h1 class="title">Qt Style Sheets<br /><span class="subtitle"></span>
+</h1>
+<a name="style-sheet"></a><a name="stylesheet"></a><p>Qt Style Sheets are a powerful mechanism that allows you to customize the appearance of widgets, in addition to what is already possible by subclassing <a href="qstyle.html">QStyle</a>. The concepts, terminology, and syntax of Qt Style Sheets are heavily inspired by HTML <a href="http://www.w3.org/Style/CSS/">Cascading Style Sheets (CSS)</a> but adapted to the world of widgets.</p>
+<p>Topics:</p>
+<ul>
+<li><a href="#overview">Overview</a></li>
+<li><a href="stylesheet-syntax.html">The Style Sheet Syntax</a> <ul><li><a href="stylesheet-syntax.html#style-rules">Style Rules</a></li>
+<li><a href="stylesheet-syntax.html#selector-types">Selector Types</a></li>
+<li><a href="stylesheet-syntax.html#sub-controls">Sub-Controls</a></li>
+<li><a href="stylesheet-syntax.html#pseudo-states">Pseudo-States</a></li>
+<li><a href="stylesheet-syntax.html#conflict-resolution">Conflict Resolution</a></li>
+<li><a href="stylesheet-syntax.html#cascading">Cascading</a></li>
+<li><a href="stylesheet-syntax.html#inheritance">Inheritance</a></li>
+<li><a href="stylesheet-syntax.html#widgets-inside-c-namespaces">Widgets inside C++ namespaces</a></li>
+<li><a href="stylesheet-syntax.html#setting-qobject-properties">Setting QObject properties</a></li>
+</ul>
+</li>
+<li><a href="stylesheet-designer.html">Qt Designer Integration</a> </li>
+<li><a href="stylesheet-customizing.html">Customizing Qt Widgets Using Style Sheets</a> <ul><li><a href="stylesheet-customizing.html#the-box-model">The Box Model</a></li>
+<li><a href="stylesheet-customizing.html#sub-controls">Sub-controls</a></li>
+</ul>
+</li>
+<li><a href="stylesheet-reference.html">Qt Style Sheets Reference</a> <ul><li><a href="stylesheet-reference.html#list-of-stylable-widgets">List of Stylable Widgets</a></li>
+<li><a href="stylesheet-reference.html#list-of-properties">List of Properties</a></li>
+<li><a href="stylesheet-reference.html#list-of-icons">List of Icons</a></li>
+<li><a href="stylesheet-reference.html#list-of-property-types">List of Property Types</a></li>
+<li><a href="stylesheet-reference.html#list-of-pseudo-states">List of Pseudo-States</a></li>
+<li><a href="stylesheet-reference.html#list-of-sub-controls">List of Sub-Controls</a></li>
+</ul>
+</li>
+<li><a href="stylesheet-examples.html">Qt Style Sheets Examples</a> <ul><li><a href="stylesheet-examples.html#style-sheet-usage">Style Sheet Usage</a></li>
+<ul><li><a href="stylesheet-examples.html#customizing-the-foreground-and-background-colors">Customizing the Foreground and Background Colors</a></li>
+<li><a href="stylesheet-examples.html#customizing-using-dynamic-properties">Customizing Using Dynamic Properties</a></li>
+<li><a href="stylesheet-examples.html#customizing-a-qpushbutton-using-the-box-model">Customizing a QPushButton Using the Box Model</a></li>
+<li><a href="stylesheet-examples.html#customizing-the-qpushbutton-s-menu-indicator-sub-control">Customizing the QPushButton's Menu Indicator Sub-Control</a></li>
+<li><a href="stylesheet-examples.html#complex-selector-example">Complex Selector Example</a></li>
+</ul>
+<li><a href="stylesheet-examples.html#customizing-specific-widgets">Customizing specific widgets</a></li>
+<ul><li><a href="stylesheet-examples.html#customizing-qabstractscrollarea">Customizing QAbstractScrollArea</a></li>
+<li><a href="stylesheet-examples.html#customizing-qcheckbox">Customizing QCheckBox</a></li>
+<li><a href="stylesheet-examples.html#customizing-qcombobox">Customizing QComboBox</a></li>
+<li><a href="stylesheet-examples.html#customizing-qdockwidget">Customizing QDockWidget</a></li>
+<li><a href="stylesheet-examples.html#customizing-qframe">Customizing QFrame</a></li>
+<li><a href="stylesheet-examples.html#customizing-qgroupbox">Customizing QGroupBox</a></li>
+<li><a href="stylesheet-examples.html#customizing-qheaderview">Customizing QHeaderView</a></li>
+<li><a href="stylesheet-examples.html#customizing-qlineedit">Customizing QLineEdit</a></li>
+<li><a href="stylesheet-examples.html#customizing-qlistview">Customizing QListView</a></li>
+<li><a href="stylesheet-examples.html#customizing-qmainwindow">Customizing QMainWindow</a></li>
+<li><a href="stylesheet-examples.html#customizing-qmenu">Customizing QMenu</a></li>
+<li><a href="stylesheet-examples.html#customizing-qmenubar">Customizing QMenuBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qprogressbar">Customizing QProgressBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qpushbutton">Customizing QPushButton</a></li>
+<li><a href="stylesheet-examples.html#customizing-qradiobutton">Customizing QRadioButton</a></li>
+<li><a href="stylesheet-examples.html#customizing-qscrollbar">Customizing QScrollBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qsizegrip">Customizing QSizeGrip</a></li>
+<li><a href="stylesheet-examples.html#customizing-qslider">Customizing QSlider</a></li>
+<li><a href="stylesheet-examples.html#customizing-qspinbox">Customizing QSpinBox</a></li>
+<li><a href="stylesheet-examples.html#customizing-qsplitter">Customizing QSplitter</a></li>
+<li><a href="stylesheet-examples.html#customizing-qstatusbar">Customizing QStatusBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtabwidget-and-qtabbar">Customizing QTabWidget and QTabBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtableview">Customizing QTableView</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtoolbar">Customizing QToolBar</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtoolbox">Customizing QToolBox</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtoolbutton">Customizing QToolButton</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtooltip">Customizing QToolTip</a></li>
+<li><a href="stylesheet-examples.html#customizing-qtreeview">Customizing QTreeView</a></li>
+</ul>
+<li><a href="stylesheet-examples.html#common-mistakes">Common mistakes</a></li>
+<ul><li><a href="stylesheet-examples.html#qpushbutton-and-images">QPushButton and images</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+<a name="overview"></a><a name="overview"></a>
+<h3>Overview</h3>
+<p>Styles sheets are textual specifications that can be set on the whole application using <a href="qapplication.html#styleSheet-prop">QApplication::setStyleSheet</a>() or on a specific widget (and its children) using <a href="qwidget.html#styleSheet-prop">QWidget::setStyleSheet</a>(). If several style sheets are set at different levels, Qt derives the effective style sheet from all of those that are set. This is called cascading.</p>
+<p>For example, the following style sheet specifies that all <a href="qlineedit.html">QLineEdit</a>s should use yellow as their background color, and all <a href="qcheckbox.html">QCheckBox</a>es should use red as the text color:</p>
+<pre>         QLineEdit { background: yellow }
+         QCheckBox { color: red }</pre>
+<p>For this kind of customization, style sheets are much more powerful than <a href="qpalette.html">QPalette</a>. For example, it might be tempting to set the <a href="qpalette.html#ColorRole-enum">QPalette::Button</a> role to red for a <a href="qpushbutton.html">QPushButton</a> to obtain a red push button. However, this wasn't guaranteed to work for all styles, because style authors are restricted by the different platforms' guidelines and (on Windows XP and Mac OS X) by the native theme engine.</p>
+<p>Style sheets let you perform all kinds of customizations that are difficult or impossible to perform using <a href="qpalette.html">QPalette</a> alone. If you want yellow backgrounds for mandatory fields, red text for potentially destructive push buttons, or fancy check boxes, style sheets are the answer.</p>
+<p>Style sheets are applied on top of the current <a href="qstyle.html">widget style</a>, meaning that your applications will look as native as possible, but any style sheet constraints will be taken into consideration. Unlike palette fiddling, style sheets offer guarantees: If you set the background color of a <a href="qpushbutton.html">QPushButton</a> to be red, you can be assured that the button will have a red background in all styles, on all platforms. In addition, <a href="designer-manual.html#qt-designer">Qt Designer</a> provides style sheet integration, making it easy to view the effects of a style sheet in different <a href="qstyle.html">widget styles</a>.</p>
+<p>In addition, style sheets can be used to provide a distinctive look and feel for your application, without having to subclass <a href="qstyle.html">QStyle</a>. For example, you can specify arbitrary images for radio buttons and check boxes to make them stand out. Using this technique, you can also achieve minor customizations that would normally require subclassing several style classes, such as specifying a <a href="qstyle.html#styleHint">style hint</a>. The <a href="widgets-stylesheet.html">Style Sheet</a> example depicted below defines two distinctive style sheets that you can try out and modify at will.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/stylesheet-coffee-xp.png" /></td><td><img src="images/stylesheet-pagefold.png" /></td></tr>
+</table></p>
+<p>When a style sheet is active, the <a href="qstyle.html">QStyle</a> returned by <a href="qwidget.html#style">QWidget::style</a>() is a wrapper &quot;style sheet&quot; style, <i>not</i> the platform-specific style. The wrapper style ensures that any active style sheet is respected and otherwise forwards the drawing operations to the underlying, platform-specific style (e.g&#x2e;, <a href="qwindowsxpstyle.html">QWindowsXPStyle</a> on Windows XP).</p>
+<p><b>Warning:</b> Qt style sheets are currently not supported for Mac OS X and custom <a href="qstyle.html">QStyle</a> subclasses. We plan to address this in some future release.</p>
+<p>
+[Next: <a href="stylesheet-syntax.html">The Style Sheet Syntax</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

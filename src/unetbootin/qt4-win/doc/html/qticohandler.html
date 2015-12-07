@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/plugins/imageformats/ico/qicohandler.cpp -->
+<head>
+  <title>Qt 4.4: QtIcoHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QtIcoHandler Class Reference</h1>
+<p>The QtIcoHandler class provides support for the ICO image format. <a href="#details">More...</a></p>
+<pre> #include &lt;QtIcoHandler&gt;</pre><p>Inherits <a href="qimageiohandler.html">QImageIOHandler</a>.</p>
+<ul>
+<li><a href="qticohandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qticohandler.html#QtIcoHandler">QtIcoHandler</a></b> ( QIODevice * <i>device</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qticohandler.html#dtor.QtIcoHandler">~QtIcoHandler</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qticohandler.html#canRead">canRead</a></b> () const</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qticohandler.html#name">name</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>18 public functions inherited from <a href="qimageiohandler.html#public-functions">QImageIOHandler</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qticohandler.html#canRead-2">canRead</a></b> ( QIODevice * <i>device</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QtIcoHandler class provides support for the ICO image format.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QtIcoHandler"></a>QtIcoHandler::QtIcoHandler ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )</h3>
+<p>Constructs an instance of <a href="qticohandler.html">QtIcoHandler</a> initialized to use <i>device</i>.</p>
+<h3 class="fn"><a name="dtor.QtIcoHandler"></a>QtIcoHandler::~QtIcoHandler ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor for <a href="qticohandler.html">QtIcoHandler</a>.</p>
+<h3 class="fn"><a name="canRead"></a>bool QtIcoHandler::canRead () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Verifies if some values (magic bytes) are set as expected in the header of the file. If the magic bytes were found, it is assumed that the <a href="qticohandler.html">QtIcoHandler</a> can read the file.</p>
+<p>Reimplemented from <a href="qimageiohandler.html#canRead">QImageIOHandler</a>.</p>
+<h3 class="fn"><a name="canRead-2"></a>bool QtIcoHandler::canRead ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This static function is used by the plugin code, and is provided for convenience only. <i>device</i> must be an opened device with pointing to the start of the header data of the ICO file.</p>
+<h3 class="fn"><a name="name"></a><a href="qbytearray.html">QByteArray</a> QtIcoHandler::name () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Return the common identifier of the format. For ICO format this will return &quot;ico&quot;.</p>
+<p>Reimplemented from <a href="qimageiohandler-obsolete.html#name" class="obsolete">QImageIOHandler</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

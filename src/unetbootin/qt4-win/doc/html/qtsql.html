@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtsql.qdoc -->
+<head>
+  <title>Qt 4.4: QtSql Module</title>
+  <link rel="prev" href="qtscript.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qtsvg.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtscript.html">QtScript Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtsvg.html">QtSvg Module</a>]
+</p>
+<h1 class="title">QtSql Module<br /><span class="subtitle"></span>
+</h1>
+<p>The QtSql module helps you provide seamless database integration to your Qt applications. <a href="#details">More...</a></p>
+<h2>Namespaces</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qsql.html">QSql</a></th><td>Contains miscellaneous identifiers used throughout the Qt SQL library</td></tr>
+</table></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qsqldatabase.html">QSqlDatabase</a></th><td>Represents a connection to a database</td></tr>
+<tr valign="top" class="even"><th><a href="qsqldriver.html">QSqlDriver</a></th><td>Abstract base class for accessing specific SQL databases</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqldrivercreator.html">QSqlDriverCreator</a></th><td>Template class that provides a SQL driver factory for a specific driver type</td></tr>
+<tr valign="top" class="even"><th><a href="qsqldrivercreatorbase.html">QSqlDriverCreatorBase</a></th><td>The base class for SQL driver factories</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqldriverplugin.html">QSqlDriverPlugin</a></th><td>Abstract base for custom QSqlDriver plugins</td></tr>
+<tr valign="top" class="even"><th><a href="qsqlerror.html">QSqlError</a></th><td>SQL database error information</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqlfield.html">QSqlField</a></th><td>Manipulates the fields in SQL database tables and views</td></tr>
+<tr valign="top" class="even"><th><a href="qsqlindex.html">QSqlIndex</a></th><td>Functions to manipulate and describe database indexes</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqlquery.html">QSqlQuery</a></th><td>Means of executing and manipulating SQL statements</td></tr>
+<tr valign="top" class="even"><th><a href="qsqlquerymodel.html">QSqlQueryModel</a></th><td>Read-only data model for SQL result sets</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqlrecord.html">QSqlRecord</a></th><td>Encapsulates a database record</td></tr>
+<tr valign="top" class="even"><th><a href="qsqlrelation.html">QSqlRelation</a></th><td>Stores information about an SQL foreign key</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a></th><td>Delegate that is used to display and edit data from a QSqlRelationalTableModel</td></tr>
+<tr valign="top" class="even"><th><a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a></th><td>Editable data model for a single database table, with foreign key support</td></tr>
+<tr valign="top" class="odd"><th><a href="qsqlresult.html">QSqlResult</a></th><td>Abstract interface for accessing data from specific SQL databases</td></tr>
+<tr valign="top" class="even"><th><a href="qsqltablemodel.html">QSqlTableModel</a></th><td>Editable data model for a single database table</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>The SQL classes are divided into three layers:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Layer</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><b>Driver Layer</b></td><td>This comprises the classes <a href="qsqldriver.html">QSqlDriver</a>, <a href="qsqldrivercreator.html">QSqlDriverCreator</a>&lt;T&gt;, <a href="qsqldrivercreatorbase.html">QSqlDriverCreatorBase</a>, <a href="qsqldriverplugin.html">QSqlDriverPlugin</a>, and <a href="qsqlresult.html">QSqlResult</a>. This layer provides the low-level bridge between the specific databases and the SQL API layer. See <a href="sql-driver.html">SQL Database Drivers</a> for more information.</td></tr>
+<tr valign="top" class="even"><td><b>SQL API Layer</b></td><td>These classes provide access to databases. Connections are made using the <a href="qsqldatabase.html">QSqlDatabase</a> class. Database interaction is achieved by using the <a href="qsqlquery.html">QSqlQuery</a> class. In addition to <a href="qsqldatabase.html">QSqlDatabase</a> and <a href="qsqlquery.html">QSqlQuery</a>, the SQL API layer is supported by <a href="qsqlerror.html">QSqlError</a>, <a href="qsqlfield.html">QSqlField</a>, <a href="qsqlindex.html">QSqlIndex</a>, and <a href="qsqlrecord.html">QSqlRecord</a>.</td></tr>
+<tr valign="top" class="odd"><td><b>User Interface Layer</b></td><td>These classes link the data from a database to data-aware widgets. They include <a href="qsqlquerymodel.html">QSqlQueryModel</a>, <a href="qsqltablemodel.html">QSqlTableModel</a>, and <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>. These classes are designed to work with Qt's model/view framework.</td></tr>
+</table></p>
+<p>Note that to use any of these classes, a <a href="qcoreapplication.html">QCoreApplication</a> object must have been instantiated first. To include the definitions of the module's classes, use the following directive:</p>
+<pre>         #include &lt;QtSql&gt;</pre>
+<p>To link against the module, add this line to your <a href="qmake-manual.html#qmake">qmake</a> <tt>.pro</tt> file:</p>
+<pre>         QT += sql</pre>
+<p>The QtSql module is part of the <a href="commercialeditions.html#qt-console-edition">Qt Console Edition</a>, the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>, and the <a href="opensourceedition.html">Qt Open Source Edition</a>.</p>
+<p>This overview assumes that you have at least a basic knowledge of SQL. You should be able to understand simple <tt>SELECT</tt>, <tt>INSERT</tt>, <tt>UPDATE</tt>, and <tt>DELETE</tt> statements. Although the <a href="qsqltablemodel.html">QSqlTableModel</a> class provides an interface to database browsing and editing that does not require a knowledge of SQL, a basic understanding of SQL is highly recommended. A standard text covering SQL databases is <i>An Introduction to Database Systems</i> (7th Ed.) by C. J. Date, ISBN 0201385902.</p>
+<p>Topics:</p>
+<ul><li><a href="#connecting-to-databases">Connecting to Databases</a></li>
+<li><a href="#executing-sql-statements">Executing SQL Statements</a></li>
+<ul><li><a href="#executing-a-query">Executing a Query</a></li>
+<li><a href="#navigating-the-result-set">Navigating the Result Set</a></li>
+<li><a href="#inserting-updating-and-deleting-records">Inserting, Updating, and Deleting Records</a></li>
+<li><a href="#transactions">Transactions</a></li>
+</ul>
+<li><a href="#using-the-sql-model-classes">Using the SQL Model Classes</a></li>
+<ul><li><a href="#the-sql-query-model">The SQL Query Model</a></li>
+<li><a href="#the-sql-table-model">The SQL Table Model</a></li>
+<li><a href="#the-sql-relational-table-model">The SQL Relational Table Model</a></li>
+</ul>
+<li><a href="#presenting-data-in-a-table-view">Presenting Data in a Table View</a></li>
+<li><a href="#creating-data-aware-forms">Creating Data-Aware Forms</a></li>
+</ul>
+<a name="connecting-to-databases"></a>
+<h3>Connecting to Databases</h3>
+<p>Before you can use <a href="qsqlquery.html">QSqlQuery</a> or <a href="qsqlquerymodel.html">QSqlQueryModel</a> to access a database, you must create at least one database connection.</p>
+<p>Database connections are identified by arbitrary strings. <a href="qsqldatabase.html">QSqlDatabase</a> also supports the concept of a <i>default connection</i>, which is used by the Qt SQL class if no other connection is specified. This mechanism is very convenient for applications that use only one database connection.</p>
+<p>The following code establishes a connection to a MySQL database called <tt>flightdb</tt> on host <tt>bigblue</tt>:</p>
+<pre>     QSqlDatabase db = QSqlDatabase::addDatabase(&quot;QMYSQL&quot;);
+     db.setHostName(&quot;bigblue&quot;);
+     db.setDatabaseName(&quot;flightdb&quot;);
+     db.setUserName(&quot;acarlson&quot;);
+     db.setPassword(&quot;1uTbSbAs&quot;);
+     bool ok = db.open();</pre>
+<p>The first argument to <a href="qsqldatabase.html#addDatabase">QSqlDatabase::addDatabase</a>() is the name of the driver. See the <a href="qsqldatabase.html#addDatabase">addDatabase()</a> documentation for a list of drivers. We call <a href="qsqldatabase.html#setHostName">setHostName()</a>, <a href="qsqldatabase.html#setDatabaseName">setDatabaseName()</a>, <a href="qsqldatabase.html#setUserName">setUserName()</a>, and <a href="qsqldatabase.html#setPassword">setPassword()</a> to initialize the connection information.</p>
+<p>Since no name was specified for the connection, the connection serves as the default connection. To specify a name, pass it as the second argument to <a href="qsqldatabase.html#addDatabase">QSqlDatabase::addDatabase</a>(). For example:</p>
+<pre>     QSqlDatabase firstDB = QSqlDatabase::addDatabase(&quot;QMYSQL&quot;, &quot;first&quot;);
+     QSqlDatabase secondDB = QSqlDatabase::addDatabase(&quot;QMYSQL&quot;, &quot;second&quot;);</pre>
+<p>Once the connection is initialized, we must call <a href="qsqldatabase.html#open">QSqlDatabase::open</a>() to open the database and give us access to the data. If this call fails it will return false; error information can be obtained from <a href="qsqldatabase.html#lastError">QSqlDatabase::lastError</a>().</p>
+<p>Once a connection is established, we can call the static function <a href="qsqldatabase.html#database">QSqlDatabase::database</a>() from anywhere to get a pointer to a database connection. If we call it without a parameter, it will return the default connection. If called with the identifier used for a connection, it will return a reference to the specified connection. For example:</p>
+<pre>     QSqlDatabase defaultDB = QSqlDatabase::database();
+     QSqlDatabase firstDB = QSqlDatabase::database(&quot;first&quot;);
+     QSqlDatabase secondDB = QSqlDatabase::database(&quot;second&quot;);</pre>
+<p>To remove a database connection, first close the database using <a href="qsqldatabase.html#close">QSqlDatabase::close</a>(), then remove it using the static method <a href="qsqldatabase.html#removeDatabase">QSqlDatabase::removeDatabase</a>().</p>
+<a name="executing-sql-statements"></a>
+<h3>Executing SQL Statements</h3>
+<p>The <a href="qsqlquery.html">QSqlQuery</a> class provides an interface for executing SQL statements and navigating through the result set of a query.</p>
+<p>The <a href="qsqlquerymodel.html">QSqlQueryModel</a> and <a href="qsqltablemodel.html">QSqlTableModel</a> classes described in the next section provide a higher-level interface for accessing databases. If you are unfamiliar with SQL, you might want to skip directly to the next section (<a href="#using-the-sql-model-classes">Using the SQL Model Classes</a>).</p>
+<a name="executing-a-query"></a>
+<h4>Executing a Query</h4>
+<p>To execute an SQL statement, simply create a <a href="qsqlquery.html">QSqlQuery</a> object and call <a href="qsqlquery.html#exec">QSqlQuery::exec</a>() like this:</p>
+<pre>     QSqlQuery query;
+     query.exec(&quot;SELECT name, salary FROM employee WHERE salary &gt; 50000&quot;);</pre>
+<p>The <a href="qsqlquery.html">QSqlQuery</a> constructor accepts an optional <a href="qsqldatabase.html">QSqlDatabase</a> object that specifies which database connection to use. In the example above, we don't specify any connection, so the default connection is used.</p>
+<p>If an error occurs, <a href="qsqlquery.html#exec">exec()</a> returns false. The error is then available as <a href="qsqlquery.html#lastError">QSqlQuery::lastError</a>().</p>
+<a name="navigating-the-result-set"></a>
+<h4>Navigating the Result Set</h4>
+<p><a href="qsqlquery.html">QSqlQuery</a> provides access to the result set one record at a time. After the call to <a href="qsqlquery.html#exec">exec()</a>, <a href="qsqlquery.html">QSqlQuery</a>'s internal pointer is located one position <i>before</i> the first record. We must call <a href="qsqlquery.html#next">QSqlQuery::next</a>() once to advance to the first record, then <a href="qsqlquery.html#next">next()</a> again repeatedly to access the other records, until it returns false. Here's a typical loop that iterates over all the records in order:</p>
+<pre>     while (query.next()) {
+         QString name = query.value(0).toString();
+         int salary = query.value(1).toInt();
+         qDebug() &lt;&lt; name &lt;&lt; salary;
+     }</pre>
+<p>The <a href="qsqlquery.html#value">QSqlQuery::value</a>() function returns the value of a field in the current record. Fields are specified as zero-based indexes. <a href="qsqlquery.html#value">QSqlQuery::value</a>() returns a <a href="qvariant.html">QVariant</a>, a type that can hold various C++ and core Qt data types such as <tt>int</tt>, <a href="qstring.html">QString</a>, and <a href="qbytearray.html">QByteArray</a>. The different database types are automatically mapped into the closest Qt equivalent. In the code snippet, we call <a href="qvariant.html#toString">QVariant::toString</a>() and <a href="qvariant.html#toInt">QVariant::toInt</a>() to convert variants to <a href="qstring.html">QString</a> and <tt>int</tt>.</p>
+<p>You can iterate back and forth using <a href="qsqlquery.html#next">QSqlQuery::next</a>(), <a href="qsqlquery.html#previous">QSqlQuery::previous</a>(), <a href="qsqlquery.html#first">QSqlQuery::first</a>(), <a href="qsqlquery.html#last">QSqlQuery::last</a>(), and <a href="qsqlquery.html#seek">QSqlQuery::seek</a>(). The current row index is returned by <a href="qsqlquery.html#at">QSqlQuery::at</a>(), and the total number of rows in the result set is avaliable as <a href="qsqlquery.html#size">QSqlQuery::size</a>() for databases that support it.</p>
+<p>To determine whether a database driver supports a given feature, use <a href="qsqldriver.html#hasFeature">QSqlDriver::hasFeature</a>(). In the following example, we call <a href="qsqlquery.html#size">QSqlQuery::size</a>() to determine the size of a result set of the underlying database supports that feature; otherwise, we navigate to the last record and use the query's position to tell us how many records there are.</p>
+<pre>     QSqlQuery query;
+     int numRows;
+     query.exec(&quot;SELECT name, salary FROM employee WHERE salary &gt; 50000&quot;);
+
+     QSqlDatabase defaultDB = QSqlDatabase::database();
+     if (defaultDB.driver()-&gt;hasFeature(QSqlDriver::QuerySize)) {
+         numRows = query.size();
+     } else {
+         <span class="comment">//</span> this can be very slow
+         query.last();
+         numRows = query.at() + 1;
+     }</pre>
+<p>If you iterate through a result set only using next() and seek() with positive values, you can call QSqlQuery::setForwardOnly(true) before calling exec(). This is an easy optimization that will speed up the query significantly when operating on large result sets.</p>
+<a name="inserting-updating-and-deleting-records"></a>
+<h4>Inserting, Updating, and Deleting Records</h4>
+<p><a href="qsqlquery.html">QSqlQuery</a> can execute arbitrary SQL statements, not just <tt>SELECT</tt>s. The following example inserts a record into a table using <tt>INSERT</tt>:</p>
+<pre>     QSqlQuery query;
+     query.exec(&quot;INSERT INTO employee (id, name, salary) &quot;
+                &quot;VALUES (1001, 'Thad Beaumont', 65000)&quot;);</pre>
+<p>If you want to insert many records at the same time, it is often more efficient to separate the query from the actual values being inserted. This can be done using placeholders. Qt supports two placeholder syntaxes: named binding and positional binding. Here's an example of named binding:</p>
+<pre>     QSqlQuery query;
+     query.prepare(&quot;INSERT INTO employee (id, name, salary) &quot;
+                   &quot;VALUES (:id, :name, :salary)&quot;);
+     query.bindValue(&quot;:id&quot;, 1001);
+     query.bindValue(&quot;:name&quot;, &quot;Thad Beaumont&quot;);
+     query.bindValue(&quot;:salary&quot;, 65000);
+     query.exec();</pre>
+<p>Here's an example of positional binding:</p>
+<pre>     QSqlQuery query;
+     query.prepare(&quot;INSERT INTO employee (id, name, salary) &quot;
+                   &quot;VALUES (?, ?, ?)&quot;);
+     query.addBindValue(1001);
+     query.addBindValue(&quot;Thad Beaumont&quot;);
+     query.addBindValue(65000);
+     query.exec();</pre>
+<p>Both syntaxes work with all database drivers provided by Qt. If the database supports the syntax natively, Qt simply forwards the query to the DBMS; otherwise, Qt simulates the placeholder syntax by preprocessing the query. The actual query that ends up being executed by the DBMS is available as <a href="qsqlquery.html#executedQuery">QSqlQuery::executedQuery</a>().</p>
+<p>When inserting multiple records, you only need to call <a href="qsqlquery.html#prepare">QSqlQuery::prepare</a>() once. Then you call <a href="qsqlquery.html#bindValue">bindValue()</a> or <a href="qsqlquery.html#addBindValue">addBindValue()</a> followed by <a href="qsqlquery.html#exec">exec()</a> as many times as necessary.</p>
+<p>Besides performance, one advantage of placeholders is that you can easily specify arbitrary values without having to worry about escaping special characters.</p>
+<p>Updating a record is similar to inserting it into a table:</p>
+<pre>     QSqlQuery query;
+     query.exec(&quot;UPDATE employee SET salary = 70000 WHERE id = 1003&quot;);</pre>
+<p>You can also use named or positional binding to associate parameters to actual values.</p>
+<p>Finally, here's an example of a <tt>DELETE</tt> statement:</p>
+<pre>     QSqlQuery query;
+     query.exec(&quot;DELETE FROM employee WHERE id = 1007&quot;);</pre>
+<a name="transactions"></a>
+<h4>Transactions</h4>
+<p>If the underlying database engine supports transactions, QSqlDriver::hasFeature(<a href="qsqldriver.html#DriverFeature-enum">QSqlDriver::Transactions</a>) will return true. You can use <a href="qsqldatabase.html#transaction">QSqlDatabase::transaction</a>() to initiate a transaction, followed by the SQL commands you want to execute within the context of the transaction, and then either <a href="qsqldatabase.html#commit">QSqlDatabase::commit</a>() or <a href="qsqldatabase.html#rollback">QSqlDatabase::rollback</a>(). When using transactions you must start the transaction before you create your query.</p>
+<p>Example:</p>
+<pre>     QSqlDatabase::database().transaction();
+     QSqlQuery query;
+     query.exec(&quot;SELECT id FROM employee WHERE name = 'Torild Halvorsen'&quot;);
+     if (query.next()) {
+         int employeeId = query.value(0).toInt();
+         query.exec(&quot;INSERT INTO project (id, name, ownerid) &quot;
+                    &quot;VALUES (201, 'Manhattan Project', &quot;
+                    + QString::number(employeeId) + &quot;)&quot;);
+     }
+     QSqlDatabase::database().commit();</pre>
+<p>Transactions can be used to ensure that a complex operation is atomic (for example, looking up a foreign key and creating a record), or to provide a means of canceling a complex change in the middle.</p>
+<a name="using-the-sql-model-classes"></a>
+<h3>Using the SQL Model Classes</h3>
+<p>In addition to <a href="qsqlquery.html">QSqlQuery</a>, Qt offers three higher-level classes for accessing databases. These classes are <a href="qsqlquerymodel.html">QSqlQueryModel</a>, <a href="qsqltablemodel.html">QSqlTableModel</a>, and <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qsqlquerymodel.html">QSqlQueryModel</a></td><td>A read-only model based on an arbitrary SQL query.</td></tr>
+<tr valign="top" class="even"><td><a href="qsqltablemodel.html">QSqlTableModel</a></td><td>A read-write model that works on a single table.</td></tr>
+<tr valign="top" class="odd"><td><a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a></td><td>A <a href="qsqltablemodel.html">QSqlTableModel</a> subclass with foreign key support.</td></tr>
+</table></p>
+<p>These classes derive from <a href="qabstracttablemodel.html">QAbstractTableModel</a> (which in turn inherits from <a href="qabstractitemmodel.html">QAbstractItemModel</a>) and make it easy to present data from a database in an item view class such as <a href="qlistview.html">QListView</a> and <a href="qtableview.html">QTableView</a>. This is explained in detail in the <a href="#presenting-data-in-a-table-view">Presenting Data in a Table View</a> section.</p>
+<p>Another advantage of using these classes is that it can make your code easier to adapt to other data sources. For example, if you use <a href="qsqltablemodel.html">QSqlTableModel</a> and later decide to use XML files to store data instead of a database, it is essentially just a matter of replacing one data model with another.</p>
+<a name="the-sql-query-model"></a>
+<h4>The SQL Query Model</h4>
+<p><a href="qsqlquerymodel.html">QSqlQueryModel</a> offers a read-only model based on an SQL query.</p>
+<p>Example:</p>
+<pre>     QSqlQueryModel model;
+     model.setQuery(&quot;SELECT * FROM employee&quot;);
+
+     for (int i = 0; i &lt; model.rowCount(); ++i) {
+         int id = model.record(i).value(&quot;id&quot;).toInt();
+         QString name = model.record(i).value(&quot;name&quot;).toString();
+         qDebug() &lt;&lt; id &lt;&lt; name;
+     }</pre>
+<p>After setting the query using <a href="qsqlquerymodel.html#setQuery">QSqlQueryModel::setQuery</a>(), you can use QSqlQueryModel::record(int) to access the individual records. You can also use <a href="qsqlquerymodel.html#data">QSqlQueryModel::data</a>() and any of the other functions inherited from <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>There's also a <a href="qsqlquerymodel.html#setQuery">setQuery()</a> overload that takes a <a href="qsqlquery.html">QSqlQuery</a> object and operates on its result set. This enables you to use any features of <a href="qsqlquery.html">QSqlQuery</a> to set up the query (e.g&#x2e;, prepared queries).</p>
+<a name="the-sql-table-model"></a>
+<h4>The SQL Table Model</h4>
+<p><a href="qsqltablemodel.html">QSqlTableModel</a> offers a read-write model that works on a single SQL table at a time.</p>
+<p>Example:</p>
+<pre>     QSqlTableModel model;
+     model.setTable(&quot;employee&quot;);
+     model.setFilter(&quot;salary &gt; 50000&quot;);
+     model.setSort(2, Qt::DescendingOrder);
+     model.select();
+
+     for (int i = 0; i &lt; model.rowCount(); ++i) {
+         QString name = model.record(i).value(&quot;name&quot;).toString();
+         int salary = model.record(i).value(&quot;salary&quot;).toInt();
+         qDebug() &lt;&lt; name &lt;&lt; salary;
+     }</pre>
+<p><a href="qsqltablemodel.html">QSqlTableModel</a> is a high-level alternative to <a href="qsqlquery.html">QSqlQuery</a> for navigating and modifying individual SQL tables. It typically results in less code and requires no knowledge of SQL syntax.</p>
+<p>Use <a href="qsqlquerymodel.html#record">QSqlTableModel::record</a>() to retrieve a row in the table, and <a href="qsqltablemodel.html#setRecord">QSqlTableModel::setRecord</a>() to modify the row. For example, the following code will increase every employee's salary by 10 per cent:</p>
+<pre>     for (int i = 0; i &lt; model.rowCount(); ++i) {
+         QSqlRecord record = model.record(i);
+         double salary = record.value(&quot;salary&quot;).toInt();
+         salary *= 1.1;
+         record.setValue(&quot;salary&quot;, salary);
+         model.setRecord(i, record);
+     }
+     model.submitAll();</pre>
+<p>You can also use <a href="qabstractitemmodel.html#data">QSqlTableModel::data</a>() and <a href="qsqltablemodel.html#setData">QSqlTableModel::setData</a>(), which are inherited from <a href="qabstractitemmodel.html">QAbstractItemModel</a>, to access the data. For example, here's how to update a record using <a href="qsqltablemodel.html#setData">setData()</a>:</p>
+<pre>     model.setData(model.index(row, column), 75000);
+     model.submitAll();</pre>
+<p>Here's how to insert a row and populate it:</p>
+<pre>     model.insertRows(row, 1);
+     model.setData(model.index(row, 0), 1013);
+     model.setData(model.index(row, 1), &quot;Peter Gordon&quot;);
+     model.setData(model.index(row, 2), 68500);
+     model.submitAll();</pre>
+<p>Here's how to delete five consecutive rows:</p>
+<pre>     model.removeRows(row, 5);
+     model.submitAll();</pre>
+<p>The first argument to <a href="qsqltablemodel.html#removeRows">QSqlTableModel::removeRows</a>() is the index of the first row to delete.</p>
+<p>When you're finished changing a record, you should always call <a href="qsqltablemodel.html#submitAll">QSqlTableModel::submitAll</a>() to ensure that the changes are written to the database.</p>
+<p>When and whether you actually <i>need</i> to call submitAll() depends on the table's <a href="qsqltablemodel.html#editStrategy">edit strategy</a>. The default strategy is <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnRowChange</a>, which specifies that pending changes are applied to the database when the user selects a different row. Other strategies are <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnManualSubmit</a> (where all changes are cached in the model until you call submitAll()) and <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnFieldChange</a> (where no changes are cached). These are mostly useful when <a href="qsqltablemodel.html">QSqlTableModel</a> is used with a view.</p>
+<p><a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnFieldChange</a> seems to deliver the promise that you never need to call submitAll() explicitly. There are two pitfalls, though:</p>
+<ul>
+<li>Without any caching, performance may drop significantly.</li>
+<li>If you modify a primary key, the record might slip through your fingers while you are trying to populate it.</li>
+</ul>
+<a name="the-sql-relational-table-model"></a>
+<h4>The SQL Relational Table Model</h4>
+<p><a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> extends <a href="qsqltablemodel.html">QSqlTableModel</a> to provide support for foreign keys. A foreign key is a 1-to-1 mapping between a field in one table and the primary key field of another table. For example, if a <tt>book</tt> table has a field called <tt>authorid</tt> that refers to the author table's <tt>id</tt> field, we say that <tt>authorid</tt> is a foreign key.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/noforeignkeys.png" /></td><td><img src="images/foreignkeys.png" /></td></tr>
+</table></p>
+<p>The screenshot on the left shows a plain <a href="qsqltablemodel.html">QSqlTableModel</a> in a <a href="qtableview.html">QTableView</a>. Foreign keys (<tt>city</tt> and <tt>country</tt>) aren't resolved to human-readable values. The screenshot on the right shows a <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>, with foreign keys resolved into human-readable text strings.</p>
+<p>The following code snippet shows how the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> was set up:</p>
+<pre>     model-&gt;setTable(&quot;employee&quot;);
+
+     model-&gt;setRelation(2, QSqlRelation(&quot;city&quot;, &quot;id&quot;, &quot;name&quot;));
+     model-&gt;setRelation(3, QSqlRelation(&quot;country&quot;, &quot;id&quot;, &quot;name&quot;));</pre>
+<p>See the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> documentation for details.</p>
+<a name="presenting-data-in-a-table-view"></a>
+<h3>Presenting Data in a Table View</h3>
+<p>The <a href="qsqlquerymodel.html">QSqlQueryModel</a>, <a href="qsqltablemodel.html">QSqlTableModel</a>, and <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> classes can be used as a data source for Qt's view classes such as <a href="qlistview.html">QListView</a>, <a href="qtableview.html">QTableView</a>, and <a href="qtreeview.html">QTreeView</a>. In practice, <a href="qtableview.html">QTableView</a> is by far the most common choice, because an SQL result set is essentially a two-dimensional data structure.</p>
+<p align="center"><img src="images/relationaltable.png" alt="A table view displaying a QSqlTableModel" /></p><p>The following example creates a view based on an SQL data model:</p>
+<pre>     QTableView *view = new QTableView;
+     view-&gt;setModel(model);
+     view-&gt;show();</pre>
+<p>If the model is a read-write model (e.g&#x2e;, <a href="qsqltablemodel.html">QSqlTableModel</a>), the view lets the user edit the fields. You can disable this by calling</p>
+<pre>     view-&gt;setEditTriggers(QAbstractItemView::NoEditTriggers);</pre>
+<p>You can use the same model as a data source for multiple views. If the user edits the model through one of the views, the other views will reflect the changes immediately. The <a href="sql-tablemodel.html">Table Model</a> example shows how it works.</p>
+<p>View classes display a header at the top to label the columns. To change the header texts, call <a href="qabstractitemmodel.html#setHeaderData">setHeaderData()</a> on the model. The header's labels default to the table's field names. For example:</p>
+<pre>     model-&gt;setHeaderData(0, Qt::Horizontal, QObject::tr(&quot;ID&quot;));
+     model-&gt;setHeaderData(1, Qt::Horizontal, QObject::tr(&quot;Name&quot;));
+     model-&gt;setHeaderData(2, Qt::Horizontal, QObject::tr(&quot;City&quot;));
+     model-&gt;setHeaderData(3, Qt::Horizontal, QObject::tr(&quot;Country&quot;));</pre>
+<p><a href="qtableview.html">QTableView</a> also has a vertical header on the left with numbers identifying the rows. If you insert rows programmatically using <a href="qsqltablemodel.html#insertRows">QSqlTableModel::insertRows</a>(), the new rows will be marked with an asterisk (*) until they are submitted using <a href="qsqltablemodel.html#submitAll">submitAll()</a> or automatically when the user moves to another record (assuming the <a href="qsqltablemodel.html#EditStrategy-enum">edit strategy</a> is <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnRowChange</a>).</p>
+<p align="center"><img src="images/insertrowinmodelview.png" alt="Inserting a row in a model" /></p><p>Likewise, if you remove rows using <a href="qsqltablemodel.html#removeRows">removeRows()</a>, the rows will be marked with an exclamation mark (!) until the change is submitted.</p>
+<p>The items in the view are rendered using a delegate. The default delegate, <a href="qitemdelegate.html">QItemDelegate</a>, handles the most common data types (<tt>int</tt>, <a href="qstring.html">QString</a>, <a href="qimage.html">QImage</a>, etc.)&#x2e; The delegate is also responsible for providing editor widgets (e.g&#x2e;, a combobox) when the user starts editing an item in the view. You can create your own delegates by subclassing <a href="qabstractitemdelegate.html">QAbstractItemDelegate</a> or <a href="qitemdelegate.html">QItemDelegate</a>. See <a href="model-view-programming.html">Model/View Programming</a> for more information.</p>
+<p><a href="qsqltablemodel.html">QSqlTableModel</a> is optimized to operate on a single table at a time. If you need a read-write model that operates on an arbitrary result set, you can subclass <a href="qsqlquerymodel.html">QSqlQueryModel</a> and reimplement <a href="qabstractitemmodel.html#flags">flags()</a> and <a href="qabstractitemmodel.html#setData">setData()</a> to make it read-write. The following two functions make fields 1 and 2 of a query model editable:</p>
+<pre> Qt::ItemFlags EditableSqlModel::flags(
+         const QModelIndex &amp;index) const
+ {
+     Qt::ItemFlags flags = QSqlQueryModel::flags(index);
+     if (index.column() == 1 || index.column() == 2)
+         flags |= Qt::ItemIsEditable;
+     return flags;
+ }
+
+ bool EditableSqlModel::setData(const QModelIndex &amp;index, const QVariant &amp;value, int <span class="comment">/* role */</span>)
+ {
+     if (index.column() &lt; 1 || index.column() &gt; 2)
+         return false;
+
+     QModelIndex primaryKeyIndex = QSqlQueryModel::index(index.row(), 0);
+     int id = data(primaryKeyIndex).toInt();
+
+     clear();
+
+     bool ok;
+     if (index.column() == 1) {
+         ok = setFirstName(id, value.toString());
+     } else {
+         ok = setLastName(id, value.toString());
+     }
+     refresh();
+     return ok;
+ }</pre>
+<p>The setFirstName() helper function is defined as follows:</p>
+<pre> bool EditableSqlModel::setFirstName(int personId, const QString &amp;firstName)
+ {
+     QSqlQuery query;
+     query.prepare(&quot;update person set firstname = ? where id = ?&quot;);
+     query.addBindValue(firstName);
+     query.addBindValue(personId);
+     return query.exec();
+ }</pre>
+<p>The setLastName() function is similar. See the <a href="sql-querymodel.html">Query Model</a> example for the complete source code.</p>
+<p>Subclassing a model makes it possible to customize it in many ways: You can provide tooltips for the items, change the background color, provide calculated values, provide different values for viewing and editing, handle null values specially, and more. See <a href="model-view-programming.html">Model/View Programming</a> as well as the <a href="qabstractitemview.html">QAbstractItemView</a> reference documentation for details.</p>
+<p>If all you need is to resolve a foreign key to a more human-friendly string, you can use <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>. For best results, you should also use <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a>, a delegate that provides combobox editors for editing foreign keys.</p>
+<p align="center"><img src="images/relationaltable.png" alt="Editing a foreign key in a relational table" /></p><p>The <a href="sql-relationaltablemodel.html">Relational Table Model</a> example illustrates how to use <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> in conjunction with <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a> to provide tables with foreign key support.</p>
+<a name="creating-data-aware-forms"></a>
+<h3>Creating Data-Aware Forms</h3>
+<p>Using the SQL models described above, the contents of a database can be presented to other model/view components. For some applications, it is sufficient to present this data using a standard item view, such as <a href="qtableview.html">QTableView</a>. However, users of record-based applications often require a form-based user interface in which data from a specific row or column in a database table is used to populate editor widgets on a form.</p>
+<p>Such data-aware forms can be created with the <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> class, a generic model/view component that is used to map data from a model to specific widgets in a user interface.</p>
+<p><a href="qdatawidgetmapper.html">QDataWidgetMapper</a> operates on a specific database table, mapping items in the table on a row-by-row or column-by-column basis. As a result, using <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> with a SQL model is as simple as using it with any other table model.</p>
+<p align="center"><img src="images/qdatawidgetmapper-simple.png" /></p><p>The <a href="demos-books.html">Books</a> demonstration shows how information can be presented for easy access by using <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> and a set of simple input widgets.</p>
+<p>
+[Previous: <a href="qtscript.html">QtScript Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtsvg.html">QtSvg Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

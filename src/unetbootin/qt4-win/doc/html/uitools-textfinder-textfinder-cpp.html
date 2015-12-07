@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: textfinder.cpp Example File (uitools/textfinder/textfinder.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">textfinder.cpp Example File<br /><span class="small-subtitle">uitools/textfinder/textfinder.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtUiTools&gt;
+ #include &lt;QtGui&gt;
+ #include &quot;textfinder.h&quot;
+
+ TextFinder::TextFinder(QWidget *parent)
+     : QWidget(parent)
+ {
+     QWidget *formWidget = loadUiFile();
+
+     ui_findButton = qFindChild&lt;QPushButton*&gt;(this, &quot;findButton&quot;);
+     ui_textEdit = qFindChild&lt;QTextEdit*&gt;(this, &quot;textEdit&quot;);
+     ui_lineEdit = qFindChild&lt;QLineEdit*&gt;(this, &quot;lineEdit&quot;);
+
+     QMetaObject::connectSlotsByName(this);
+
+     loadTextFile();
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(formWidget);
+     setLayout(layout);
+     setWindowTitle(tr(&quot;Text Finder&quot;));
+
+     isFirstTime = true;
+ }
+
+ QWidget* TextFinder::loadUiFile()
+ {
+     QUiLoader loader;
+
+     QFile file(&quot;:/forms/textfinder.ui&quot;);
+     file.open(QFile::ReadOnly);
+
+     QWidget *formWidget = loader.load(&amp;file, this);
+     file.close();
+
+     return formWidget;
+ }
+
+ void TextFinder::loadTextFile()
+ {
+     QFile inputFile(&quot;:/forms/input.txt&quot;);
+     inputFile.open(QIODevice::ReadOnly);
+     QTextStream in(&amp;inputFile);
+     QString line = in.readAll();
+     inputFile.close();
+
+     ui_textEdit-&gt;append(line);
+     ui_textEdit-&gt;setUndoRedoEnabled(false);
+     ui_textEdit-&gt;setUndoRedoEnabled(true);
+ }
+
+ void TextFinder::on_findButton_clicked()
+ {
+     QString searchString = ui_lineEdit-&gt;text();
+     QTextDocument *document = ui_textEdit-&gt;document();
+
+     bool found = false;
+
+     if (isFirstTime == false)
+         document-&gt;undo();
+
+     if (searchString == &quot;&quot;) {
+         QMessageBox::information(this, tr(&quot;Empty Search Field&quot;),
+                 &quot;The search field is empty. Please enter a word and click Find.&quot;);
+     } else {
+
+         QTextCursor highlightCursor(document);
+         QTextCursor cursor(document);
+
+         cursor.beginEditBlock();
+
+         QTextCharFormat plainFormat(highlightCursor.charFormat());
+         QTextCharFormat colorFormat = plainFormat;
+         colorFormat.setForeground(Qt::red);
+
+         while (!highlightCursor.isNull() &amp;&amp; !highlightCursor.atEnd()) {
+             highlightCursor = document-&gt;find(searchString, highlightCursor, QTextDocument::FindWholeWords);
+
+             if (!highlightCursor.isNull()) {
+                 found = true;
+                 highlightCursor.movePosition(QTextCursor::WordRight,
+                                        QTextCursor::KeepAnchor);
+                 highlightCursor.mergeCharFormat(colorFormat);
+             }
+         }
+
+         cursor.endEditBlock();
+         isFirstTime = false;
+
+         if (found == false) {
+             QMessageBox::information(this, tr(&quot;Word Not Found&quot;),
+                 &quot;Sorry, the word cannot be found.&quot;);
+         }
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

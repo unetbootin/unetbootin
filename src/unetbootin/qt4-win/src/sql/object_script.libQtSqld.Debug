@@ -1,0 +1,21 @@
+CREATE ..\..\lib\libQtSqld.a
+ADDMOD tmp\obj\debug_static\qsqlquery.o
+ADDMOD tmp\obj\debug_static\qsqldatabase.o
+ADDMOD tmp\obj\debug_static\qsqlfield.o
+ADDMOD tmp\obj\debug_static\qsqlrecord.o
+ADDMOD tmp\obj\debug_static\qsqldriver.o
+ADDMOD tmp\obj\debug_static\qsqldriverplugin.o
+ADDMOD tmp\obj\debug_static\qsqlerror.o
+ADDMOD tmp\obj\debug_static\qsqlresult.o
+ADDMOD tmp\obj\debug_static\qsqlindex.o
+ADDMOD tmp\obj\debug_static\qsqlcachedresult.o
+ADDMOD tmp\obj\debug_static\qsqlquerymodel.o
+ADDMOD tmp\obj\debug_static\qsqltablemodel.o
+ADDMOD tmp\obj\debug_static\qsqlrelationaldelegate.o
+ADDMOD tmp\obj\debug_static\qsqlrelationaltablemodel.o
+ADDMOD tmp\obj\debug_static\moc_qsqldriver.o
+ADDMOD tmp\obj\debug_static\moc_qsqldriverplugin.o
+ADDMOD tmp\obj\debug_static\moc_qsqlquerymodel.o
+ADDMOD tmp\obj\debug_static\moc_qsqltablemodel.o
+ADDMOD tmp\obj\debug_static\moc_qsqlrelationaltablemodel.o
+SAVE

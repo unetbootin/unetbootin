@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3table.cpp -->
+<head>
+  <title>Qt 4.4: Q3CheckTableItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CheckTableItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CheckTableItem class provides checkboxes in Q3Tables. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CheckTableItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3tableitem.html">Q3TableItem</a>.</p>
+<ul>
+<li><a href="q3checktableitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3checktableitem.html#Q3CheckTableItem">Q3CheckTableItem</a></b> ( Q3Table * <i>table</i>, const QString &amp; <i>txt</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3checktableitem.html#isChecked">isChecked</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3checktableitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3checktableitem.html#setChecked">setChecked</a></b> ( bool <i>b</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>26 public functions inherited from <a href="q3tableitem.html#public-functions">Q3TableItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CheckTableItem class provides checkboxes in Q3Tables.</p>
+<p>A Q3CheckTableItem is a table item which looks and behaves like a checkbox. The advantage of using Q3CheckTableItems rather than real checkboxes is that a Q3CheckTableItem uses far less resources than a real checkbox would in a <a href="q3table.html">Q3Table</a>. When the cell has the focus it displays a real checkbox which the user can interact with. When the cell does not have the focus the cell <i>looks</i> like a checkbox. Pixmaps may not be used in Q3CheckTableItems.</p>
+<p>Q3CheckTableItem items have the edit type <tt>WhenCurrent</tt> (see <a href="q3tableitem.html#EditType-enum">EditType</a>).</p>
+<p>To change the checkbox's label use <a href="q3tableitem.html#setText">setText</a>(). The checkbox can be checked and unchecked with <a href="q3checktableitem.html#setChecked">setChecked</a>() and its state retrieved using <a href="q3checktableitem.html#isChecked">isChecked</a>().</p>
+<p>To populate a table cell with a Q3CheckTableItem use <a href="q3table.html#setItem">Q3Table::setItem</a>().</p>
+<p>Q3CheckTableItems can be distinguished from <a href="q3tableitem.html">Q3TableItem</a>s and <a href="q3combotableitem.html">Q3ComboTableItem</a>s using their Run Time Type Identification (rtti) value.</p>
+<p align="center"><img src="images/qtableitems.png" alt="Table Items" /></p><p>See also <a href="q3checktableitem.html#rtti">rtti</a>(), <a href="q3tableitem.html#EditType-enum">EditType</a>, <a href="q3combotableitem.html">Q3ComboTableItem</a>, <a href="q3tableitem.html">Q3TableItem</a>, and <a href="qcheckbox.html">QCheckBox</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CheckTableItem"></a>Q3CheckTableItem::Q3CheckTableItem ( <a href="q3table.html">Q3Table</a> * <i>table</i>, const <a href="qstring.html">QString</a> &amp; <i>txt</i> )</h3>
+<p>Creates a <a href="q3checktableitem.html">Q3CheckTableItem</a> with an <a href="q3tableitem.html#EditType-enum">EditType</a> of <tt>WhenCurrent</tt> as a child of <i>table</i>. The checkbox is initially unchecked and its label is set to the string <i>txt</i>.</p>
+<h3 class="fn"><a name="isChecked"></a>bool Q3CheckTableItem::isChecked () const</h3>
+<p>Returns true if the checkbox table item is checked; otherwise returns false.</p>
+<p>See also <a href="q3checktableitem.html#setChecked">setChecked</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CheckTableItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 2.</p>
+<p>Make your derived classes return their own values for rtti()to distinguish between different table item subclasses. You should use values greater than 1000, preferably a large random number, to allow for extensions to this class.</p>
+<p>Reimplemented from <a href="q3tableitem.html#rtti">Q3TableItem</a>.</p>
+<p>See also <a href="q3tableitem.html#rtti">Q3TableItem::rtti</a>().</p>
+<h3 class="fn"><a name="setChecked"></a>void Q3CheckTableItem::setChecked ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true the checkbox is checked; if <i>b</i> is false the checkbox is unchecked.</p>
+<p>See also <a href="q3checktableitem.html#isChecked">isChecked</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

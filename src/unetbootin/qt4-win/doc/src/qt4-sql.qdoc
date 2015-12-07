@@ -1,0 +1,177 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-sql.html
+    \title The Qt 4 Database GUI Layer
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage Cross-Platform Accessibility Support in Qt 4
+    \nextpage The Network Module in Qt 4
+
+    The GUI layer of the SQL module in Qt 4 has been entirely
+    redesigned to work with \l{qt4-interview.html}{Interview} (Qt's
+    new model/view classes). It consists of three model classes
+    (QSqlQueryModel, QSqlTableModel, and QSqlRelationalTableModel)
+    that can be used with Qt's view classes, notably QTableView.
+
+    \section1 General Overview
+
+    The Qt 4 SQL classes are divided into three layers:
+
+    \list
+    \o The database drivers
+    \o The core SQL classes
+    \o The GUI classes
+    \endlist
+
+    The database drivers and the core SQL classes are mostly the same
+    as in Qt 3. The database item models are new with Qt 4; they
+    inherit from QAbstractItemModel and make it easy to present data
+    from a database in a view class such as QListView, QTableView,
+    and QTreeView.
+
+    The philosophy behind the Qt 4 SQL module is that it should be
+    possible to use database models for rendering and editing data
+    just like any other item models. By changing the model at
+    run-time, you can decide whether you want to store your data in
+    an SQL database or in, say, an XML file. This generic approach
+    has the additional benefit that you don't need to know anything
+    about SQL to display and edit data.
+
+    The Qt 4 SQL module includes three item models:
+
+    \list
+    \o QSqlQueryModel is a read-only model based on an arbitrary
+       SQL query.
+    \o QSqlTableModel is a read-write model that works on a single
+       table.
+    \o QSqlRelationalTableModel is a QSqlTableModel subclass with
+       foreign key support.
+    \endlist
+
+    Combined with Qt's view classes and Qt's default delegate class
+    (QItemDelegate), the models offer a very powerful mechanism for
+    accessing databases. For finer control on the rendering of the
+    fields, you can subclass one of the predefined models, or even
+    QAbstractItemDelegate or QItemDelegate if you need finer control.
+
+    You can also perform some customizations without subclassing. For
+    example, you can sort a table using QSqlTableModel::sort(), and
+    you can initialize new rows by connecting to the
+    QSqlTableModel::primeInsert() signal.
+
+    One nice feature supported by the read-write models is the
+    possibility to perform changes to the item model without
+    affecting the database until QSqlTableModel::submitAll() is
+    called. Changes can be dropped using QSqlTableModel::revertAll().
+
+    The new classes perform advantageously compared to the SQL
+    module's GUI layer in Qt 3. Speed and memory improvements in the
+    tool classes (especially QVariant, QString, and QMap) and in the
+    SQL drivers contribute to making Qt 4 database applications more
+    snappy.
+
+    See the \l QtSql module overview for a more complete introduction
+    to Qt's SQL classes.
+
+    \section1 Example Code
+
+    The simplest way to present data from a database is to simply
+    combine a QSqlQueryModel with a QTableView:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-sql.qdoc 0
+
+    To present the contents of a single table, we can use
+    QSqlTableModel instead:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-sql.qdoc 1
+
+    In practice, it's common that we need to customize the rendering
+    of a field in the database. In that case, we can create our own
+    model based on QSqlQueryModel. The next code snippet shows a
+    custom model that prepends '#' to the value in field 0 and
+    converts the value in field 2 to uppercase:
+
+    \snippet examples/sql/querymodel/customsqlmodel.h 0
+    \codeline
+    \snippet examples/sql/querymodel/customsqlmodel.cpp 0
+
+    It is also possible to subclass QSqlQueryModel to add support for
+    editing. This is done by reimplementing
+    QAbstractItemModel::flags() to specify which database fields are
+    editable and QAbstractItemModel::setData() to modify the
+    database. Here's an example of a setData() reimplementation that
+    changes the first or last name of a person:
+
+    \snippet examples/sql/querymodel/editablesqlmodel.cpp 1
+
+    It relies on helper functions called \c setFirstName() and
+    \c setLastName(), which execute an \c{update}. Here's
+    \c setFirstName():
+
+    \snippet examples/sql/querymodel/editablesqlmodel.cpp 2
+
+    See Qt's \c examples/sql directory for more examples.
+
+    \section1 Comparison with Qt 3
+
+    The core SQL database classes haven't changed so much since Qt 3.
+    Here's a list of the main changes:
+
+    \list
+    \o QSqlDatabase is now value-based instead of pointer-based.
+    \o QSqlFieldInfo and QSqlRecordInfo has been merged into
+       QSqlField and QSqlRecord.
+    \o The SQL query generation has been moved into the drivers. This
+       makes it possible to use non-standard SQL extensions. It also
+       opens the door to non-SQL databases.
+    \endlist
+
+    The GUI-related database classes have been entirely redesigned.
+    The QSqlCursor abstraction has been replaced with QSqlQueryModel
+    and QSqlTableModel; QSqlEditorFactory is replaced by
+    QAbstractItemDelegate; QDataTable is replaced by QTableView. The
+    old classes are part of the \l{Qt3Support} library to aid
+    porting to Qt 4.
+*/

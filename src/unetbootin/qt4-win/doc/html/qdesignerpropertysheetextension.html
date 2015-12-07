@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtdesigner.qdoc -->
+<head>
+  <title>Qt 4.4: QDesignerPropertySheetExtension Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerPropertySheetExtension Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerPropertySheetExtension class allows you to manipulate a widget's properties which is displayed in Qt Designer's property editor. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerPropertySheetExtension&gt;</pre><ul>
+<li><a href="qdesignerpropertysheetextension-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qdesignerpropertysheetextension.html#dtor.QDesignerPropertySheetExtension">~QDesignerPropertySheetExtension</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerpropertysheetextension.html#count">count</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertysheetextension.html#hasReset">hasReset</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a></b> ( const QString &amp; <i>name</i> ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertysheetextension.html#isAttribute">isAttribute</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertysheetextension.html#isChanged">isChanged</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertysheetextension.html#isVisible">isVisible</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qdesignerpropertysheetextension.html#property">property</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual QString <b><a href="qdesignerpropertysheetextension.html#propertyGroup">propertyGroup</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual QString <b><a href="qdesignerpropertysheetextension.html#propertyName">propertyName</a></b> ( int <i>index</i> ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertysheetextension.html#reset">reset</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertysheetextension.html#setAttribute">setAttribute</a></b> ( int <i>index</i>, bool <i>attribute</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertysheetextension.html#setChanged">setChanged</a></b> ( int <i>index</i>, bool <i>changed</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertysheetextension.html#setProperty">setProperty</a></b> ( int <i>index</i>, const QVariant &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertysheetextension.html#setPropertyGroup">setPropertyGroup</a></b> ( int <i>index</i>, const QString &amp; <i>group</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertysheetextension.html#setVisible">setVisible</a></b> ( int <i>index</i>, bool <i>visible</i> ) = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerPropertySheetExtension class allows you to manipulate a widget's properties which is displayed in Qt Designer's property editor.</p>
+<p>QDesignerPropertySheetExtension provides a collection of functions that are typically used to query a widget's properties, and to manipulate the properties' appearance in the property editor. For example:</p>
+<pre>         QDesignerPropertySheetExtension *propertySheet  = 0;
+         QExtensionManager manager = formEditor-&gt;extensionManager();
+
+         propertySheet = qt_extension&lt;QDesignerPropertySheetExtension*&gt;(manager, widget);
+         int index = propertySheet-&gt;indexOf(QLatin1String(&quot;margin&quot;));
+
+         propertySheet-&gt;setProperty(index, 10);
+         propertySheet-&gt;setChanged(index, true);
+
+         delete propertySheet;</pre>
+<p>Note that if you change the value of a property using the <a href="qdesignerpropertysheetextension.html#setProperty">QDesignerPropertySheetExtension::setProperty</a>() function, the undo stack is not updated. To ensure that a property's value can be reverted using the undo stack, you must use the <a href="qdesignerformwindowcursorinterface.html#setProperty">QDesignerFormWindowCursorInterface::setProperty</a>() function, or its buddy <a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty()</a>, instead.</p>
+<p>When implementing a custom widget plugin, a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object (<tt>formEditor</tt> in the example above) is provided by the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function's parameter.</p>
+<p>The property sheet, or any other extension, can be retrieved by querying <i>Qt Designer</i>'s extension manager using the <a href="qextensionmanager.html#qt_extension">qt_extension</a>() function. When you want to release the extension, you only need to delete the pointer.</p>
+<p>All widgets have a default property sheet which populates <i>Qt Designer</i>'s property editor with the widget's properties (i.e the ones defined with the <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>() macro). But QDesignerPropertySheetExtension also provides an interface for creating custom property sheet extensions.</p>
+<p><b>Warning:</b> <i>Qt Designer</i> uses the QDesignerPropertySheetExtension to feed its property editor. Whenever a widget is selected in its workspace, <i>Qt Designer</i> will query for the widget's property sheet extension. If the selected widget has an implemented property sheet extension, this extension will override the default property sheet.</p>
+<p>To create a property sheet extension, your extension class must inherit from both <a href="qobject.html">QObject</a> and QDesignerPropertySheetExtension. Then, since we are implementing an interface, we must ensure that it's made known to the meta object system using the <a href="qobject.html#Q_INTERFACES">Q_INTERFACES</a>() macro:</p>
+<pre>        class MyPropertySheetExtension : public QObject,
+                public QDesignerPropertySheetExtension
+        {
+            Q_OBJECT
+            Q_INTERFACES(QDesignerPropertySheetExtension)
+
+        public:
+            ...
+        }</pre>
+<p>This enables <i>Qt Designer</i> to use <a href="qobject.html#qobject_cast">qobject_cast</a>() to query for supported interfaces using nothing but a <a href="qobject.html">QObject</a> pointer.</p>
+<p>In <i>Qt Designer</i> the extensions are not created until they are required. For that reason, when implementing a property sheet extension, you must also create a <a href="qextensionfactory.html">QExtensionFactory</a>, i.e a class that is able to make an instance of your extension, and register it using <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a>.</p>
+<p>When a property sheet extension is required, <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a> will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until the first one that is able to create a property sheet extension for the selected widget, is found. This factory will then make an instance of the extension. If no such factory can be found, <i>Qt Designer</i> will use the default property sheet.</p>
+<p>There are four available types of extensions in <i>Qt Designer</i>: <a href="qdesignercontainerextension.html">QDesignerContainerExtension</a>, <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a>, QDesignerPropertySheetExtension and <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a>. Qt Designer's behavior is the same whether the requested extension is associated with a multi page container, a member sheet, a property sheet or a task menu.</p>
+<p>The <a href="qextensionfactory.html">QExtensionFactory</a> class provides a standard extension factory, and can also be used as an interface for custom extension factories. You can either create a new <a href="qextensionfactory.html">QExtensionFactory</a> and reimplement the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function. For example:</p>
+<pre>         QObject *ANewExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             if (iid != Q_TYPEID(QDesignerPropertySheetExtension))
+                 return 0;
+
+             if (MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;
+                    (object))
+                 return new MyPropertySheetExtension(widget, parent);
+
+             return 0;
+         }</pre>
+<p>Or you can use an existing factory, expanding the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function to make the factory able to create a property sheet extension extension as well. For example:</p>
+<pre>         QObject *AGeneralExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;(object);
+
+             if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerTaskMenuExtension))) {
+                 return new MyTaskMenuExtension(widget, parent);
+
+             } else if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerPropertySheetExtension))) {
+                 return new MyPropertySheetExtension(widget, parent);
+
+             } else {
+                 return 0;
+             }
+         }</pre>
+<p>For a complete example using an extension class, see the <a href="designer-taskmenuextension.html">Task Menu Extension example</a>. The example shows how to create a custom widget plugin for Qt Designer, and how to to use the <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a> class to add custom items to <i>Qt Designer</i>'s task menu.</p>
+<p>See also <a href="qdesignerdynamicpropertysheetextension.html">QDesignerDynamicPropertySheetExtension</a>, <a href="qextensionfactory.html">QExtensionFactory</a>, <a href="qextensionmanager.html">QExtensionManager</a>, and <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QDesignerPropertySheetExtension"></a>QDesignerPropertySheetExtension::~QDesignerPropertySheetExtension ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the property sheet extension.</p>
+<h3 class="fn"><a name="count"></a>int QDesignerPropertySheetExtension::count () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the selected widget's number of properties.</p>
+<h3 class="fn"><a name="hasReset"></a>bool QDesignerPropertySheetExtension::hasReset ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the property at the given <i>index</i> has a reset button in <i>Qt Designer</i>'s property editor, otherwise false.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="indexOf"></a>int QDesignerPropertySheetExtension::indexOf ( const <a href="qstring.html">QString</a> &amp; <i>name</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the index for a given property <i>name</i>.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#propertyName">propertyName</a>().</p>
+<h3 class="fn"><a name="isAttribute"></a>bool QDesignerPropertySheetExtension::isAttribute ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the property at the given <i>index</i> is an attribute, which will be <i>excluded</i> from the .ui file, otherwise false.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#setAttribute">setAttribute</a>().</p>
+<h3 class="fn"><a name="isChanged"></a>bool QDesignerPropertySheetExtension::isChanged ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the value of the property at the given <i>index</i> differs from the property's default value, otherwise false.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>(), <a href="qdesignerpropertysheetextension.html#setChanged">setChanged</a>(), and <a href="qdesignerpropertysheetextension.html#reset">reset</a>().</p>
+<h3 class="fn"><a name="isVisible"></a>bool QDesignerPropertySheetExtension::isVisible ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the property at the given <i>index</i> is visible in <i>Qt Designer</i>'s property editor, otherwise false.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="property"></a><a href="qvariant.html">QVariant</a> QDesignerPropertySheetExtension::property ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the value of the property at the given <i>index</i>.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>(), <a href="qdesignerpropertysheetextension.html#setProperty">setProperty</a>(), and <a href="qdesignerpropertysheetextension.html#propertyGroup">propertyGroup</a>().</p>
+<h3 class="fn"><a name="propertyGroup"></a><a href="qstring.html">QString</a> QDesignerPropertySheetExtension::propertyGroup ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the property group for the property at the given <i>index</i>.</p>
+<p><i>Qt Designer</i>'s property editor supports property groups, i.e&#x2e; sections of related properties. A property can be related to a group using the <a href="qdesignerpropertysheetextension.html#setPropertyGroup">setPropertyGroup</a>() function. The default group of any property is the name of the class that defines it. For example, the <a href="qobject.html#objectName-prop">QObject::objectName</a> property appears within the <a href="qobject.html">QObject</a> property group.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#setPropertyGroup">setPropertyGroup</a>().</p>
+<h3 class="fn"><a name="propertyName"></a><a href="qstring.html">QString</a> QDesignerPropertySheetExtension::propertyName ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the name of the property at the given <i>index</i>.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>().</p>
+<h3 class="fn"><a name="reset"></a>bool QDesignerPropertySheetExtension::reset ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Resets the value of the property at the given <i>index</i>, to the default value. Returns true if a default value could be found, otherwise false.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>(), <a href="qdesignerpropertysheetextension.html#hasReset">hasReset</a>(), and <a href="qdesignerpropertysheetextension.html#isChanged">isChanged</a>().</p>
+<h3 class="fn"><a name="setAttribute"></a>void QDesignerPropertySheetExtension::setAttribute ( int <i>index</i>, bool <i>attribute</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>If <i>attribute</i> is true, the property at the given <i>index</i> is made an attribute which will be <i>excluded</i> from the .ui file; otherwise it will be included.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#isAttribute">isAttribute</a>().</p>
+<h3 class="fn"><a name="setChanged"></a>void QDesignerPropertySheetExtension::setChanged ( int <i>index</i>, bool <i>changed</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets whether the property at the given <i>index</i> is different from its default value, or not, depending on the <i>changed</i> parameter.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#isChanged">isChanged</a>().</p>
+<h3 class="fn"><a name="setProperty"></a>void QDesignerPropertySheetExtension::setProperty ( int <i>index</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the <i>value</i> of the property at the given <i>index</i>.</p>
+<p><b>Warning:</b> If you change the value of a property using this function, the undo stack is not updated. To ensure that a property's value can be reverted using the undo stack, you must use the <a href="qdesignerformwindowcursorinterface.html#setProperty">QDesignerFormWindowCursorInterface::setProperty</a>() function, or its buddy <a href="qdesignerformwindowcursorinterface.html#setWidgetProperty">setWidgetProperty()</a>, instead.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>(), <a href="qdesignerpropertysheetextension.html#property">property</a>(), and <a href="qdesignerpropertysheetextension.html#propertyGroup">propertyGroup</a>().</p>
+<h3 class="fn"><a name="setPropertyGroup"></a>void QDesignerPropertySheetExtension::setPropertyGroup ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>group</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the property group for the property at the given <i>index</i> to <i>group</i>.</p>
+<p>Relating a property to a group makes it appear within that group's section in the property editor. The default property group of any property is the name of the class that defines it. For example, the <a href="qobject.html#objectName-prop">QObject::objectName</a> property appears within the <a href="qobject.html">QObject</a> property group.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>(), <a href="qdesignerpropertysheetextension.html#property">property</a>(), and <a href="qdesignerpropertysheetextension.html#propertyGroup">propertyGroup</a>().</p>
+<h3 class="fn"><a name="setVisible"></a>void QDesignerPropertySheetExtension::setVisible ( int <i>index</i>, bool <i>visible</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>If <i>visible</i> is true, the property at the given <i>index</i> is visible in <i>Qt Designer</i>'s property editor; otherwise the property is hidden.</p>
+<p>See also <a href="qdesignerpropertysheetextension.html#indexOf">indexOf</a>() and <a href="qdesignerpropertysheetextension.html#isVisible">isVisible</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

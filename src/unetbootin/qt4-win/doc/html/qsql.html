@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qsql.qdoc -->
+<head>
+  <title>Qt 4.4: QSql Namespace Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSql Namespace Reference<br /><span class="small-subtitle">[<a href="qtsql.html">QtSql</a> module]</span>
+</h1>
+<p>The QSql namespace contains miscellaneous identifiers used throughout the Qt SQL library. <a href="#details">More...</a></p>
+<pre> #include &lt;QSql&gt;</pre><ul>
+<li><a href="qsql-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="types"></a>
+<h3>Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qsql.html#Location-enum">Location</a></b> { BeforeFirstRow, AfterLastRow }</li>
+<li><div class="fn"/>enum <b><a href="qsql.html#NumericalPrecisionPolicy-enum">NumericalPrecisionPolicy</a></b> { LowPrecisionInt32, LowPrecisionInt64, LowPrecisionDouble, HighPrecision }</li>
+<li><div class="fn"/>flags <b><a href="qsql.html#ParamTypeFlag-enum">ParamType</a></b></li>
+<li><div class="fn"/>enum <b><a href="qsql.html#ParamTypeFlag-enum">ParamTypeFlag</a></b> { In, Out, InOut, Binary }</li>
+<li><div class="fn"/>enum <b><a href="qsql.html#TableType-enum">TableType</a></b> { Tables, SystemTables, Views, AllTables }</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSql namespace contains miscellaneous identifiers used throughout the Qt SQL library.</p>
+<p>See also <a href="qtsql.html">QtSql Module</a>.</p>
+<hr />
+<h2>Type Documentation</h2>
+<h3 class="fn"><a name="Location-enum"></a>enum QSql::Location</h3>
+<p>This enum type describes special SQL navigation locations:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSql::BeforeFirstRow</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">Before the first record.</td></tr>
+<tr><td valign="top"><tt>QSql::AfterLastRow</tt></td><td align="center" valign="top"><tt>-2</tt></td><td valign="top">After the last record.</td></tr>
+</table></p>
+<p>See also <a href="qsqlquery.html#at">QSqlQuery::at</a>().</p>
+<h3 class="fn"><a name="NumericalPrecisionPolicy-enum"></a>enum QSql::NumericalPrecisionPolicy</h3>
+<p>This enum type describes at which precision levels numercial values are read from a database.</p>
+<p>Some databases support numerical values with a precision that is not storable in a C++ basic data type. The default behavior is to bind these values as a <a href="qstring.html">QString</a>. This enum can be used to override this behavior.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSql::LowPrecisionInt32</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">Force 32bit integer values. In case of floating point numbers, the fractional part is silently discarded.</td></tr>
+<tr><td valign="top"><tt>QSql::LowPrecisionInt64</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">Force 64bit integer values. In case of floating point numbers, the fractional part is silently discarded.</td></tr>
+<tr><td valign="top"><tt>QSql::LowPrecisionDouble</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">Force <tt>double</tt> values.</td></tr>
+<tr><td valign="top"><tt>QSql::HighPrecision</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default behavior - try to preserve maximum precision.</td></tr>
+</table></p>
+<p>Note: The actual behaviour if an overflow occurs is driver specific. The Oracle database just returns an error in this case.</p>
+<h3 class="flags"><a name="ParamTypeFlag-enum"></a>enum QSql::ParamTypeFlag<br />flags QSql::ParamType</h3>
+<p>This enum is used to specify the type of a bind parameter.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSql::In</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The bind parameter is used to put data into the database.</td></tr>
+<tr><td valign="top"><tt>QSql::Out</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">The bind parameter is used to receive data from the database.</td></tr>
+<tr><td valign="top"><tt>QSql::InOut</tt></td><td align="center" valign="top"><tt>In | Out</tt></td><td valign="top">The bind parameter is used to put data into the database; it will be overwritten with output data on executing a query.</td></tr>
+<tr><td valign="top"><tt>QSql::Binary</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">This must be OR'd with one of the other flags if you want to indicate that the data being transferred is raw binary data.</td></tr>
+</table></p>
+<p>The ParamType type is a typedef for <a href="qflags.html">QFlags</a>&lt;ParamTypeFlag&gt;. It stores an OR combination of ParamTypeFlag values.</p>
+<h3 class="fn"><a name="TableType-enum"></a>enum QSql::TableType</h3>
+<p>This enum type describes types of SQL tables.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSql::Tables</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">All the tables visible to the user.</td></tr>
+<tr><td valign="top"><tt>QSql::SystemTables</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">Internal tables used by the database.</td></tr>
+<tr><td valign="top"><tt>QSql::Views</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">All the views visible to the user.</td></tr>
+<tr><td valign="top"><tt>QSql::AllTables</tt></td><td align="center" valign="top"><tt>0xff</tt></td><td valign="top">All of the above.</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

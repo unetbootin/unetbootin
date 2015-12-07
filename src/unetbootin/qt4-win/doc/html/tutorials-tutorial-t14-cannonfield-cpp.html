@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: cannonfield.cpp Example File (tutorials/tutorial/t14/cannonfield.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">cannonfield.cpp Example File<br /><span class="small-subtitle">tutorials/tutorial/t14/cannonfield.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QDateTime&gt;
+ #include &lt;QMouseEvent&gt;
+ #include &lt;QPaintEvent&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QTimer&gt;
+
+ #include &lt;math.h&gt;
+ #include &lt;stdlib.h&gt;
+
+ #include &quot;cannonfield.h&quot;
+
+ CannonField::CannonField(QWidget *parent)
+     : QWidget(parent)
+ {
+     currentAngle = 45;
+     currentForce = 0;
+     timerCount = 0;
+     autoShootTimer = new QTimer(this);
+     connect(autoShootTimer, SIGNAL(timeout()), this, SLOT(moveShot()));
+     shootAngle = 0;
+     shootForce = 0;
+     target = QPoint(0, 0);
+     gameEnded = false;
+     barrelPressed = false;
+     setPalette(QPalette(QColor(250, 250, 200)));
+     setAutoFillBackground(true);
+     newTarget();
+ }
+
+ void CannonField::setAngle(int angle)
+ {
+     if (angle &lt; 5)
+         angle = 5;
+     if (angle &gt; 70)
+         angle = 70;
+     if (currentAngle == angle)
+         return;
+     currentAngle = angle;
+     update(cannonRect());
+     emit angleChanged(currentAngle);
+ }
+
+ void CannonField::setForce(int force)
+ {
+     if (force &lt; 0)
+         force = 0;
+     if (currentForce == force)
+         return;
+     currentForce = force;
+     emit forceChanged(currentForce);
+ }
+
+ void CannonField::shoot()
+ {
+     if (isShooting())
+         return;
+     timerCount = 0;
+     shootAngle = currentAngle;
+     shootForce = currentForce;
+     autoShootTimer-&gt;start(5);
+     emit canShoot(false);
+ }
+
+ void CannonField::newTarget()
+ {
+     static bool firstTime = true;
+
+     if (firstTime) {
+         firstTime = false;
+         QTime midnight(0, 0, 0);
+         qsrand(midnight.secsTo(QTime::currentTime()));
+     }
+     target = QPoint(200 + qrand() % 190, 10 + qrand() % 255);
+     update();
+ }
+
+ void CannonField::setGameOver()
+ {
+     if (gameEnded)
+         return;
+     if (isShooting())
+         autoShootTimer-&gt;stop();
+     gameEnded = true;
+     update();
+ }
+
+ void CannonField::restartGame()
+ {
+     if (isShooting())
+         autoShootTimer-&gt;stop();
+     gameEnded = false;
+     update();
+     emit canShoot(true);
+ }
+
+ void CannonField::moveShot()
+ {
+     QRegion region = shotRect();
+     ++timerCount;
+
+     QRect shotR = shotRect();
+
+     if (shotR.intersects(targetRect())) {
+         autoShootTimer-&gt;stop();
+         emit hit();
+         emit canShoot(true);
+     } else if (shotR.x() &gt; width() || shotR.y() &gt; height()
+                || shotR.intersects(barrierRect())) {
+         autoShootTimer-&gt;stop();
+         emit missed();
+         emit canShoot(true);
+     } else {
+         region = region.unite(shotR);
+     }
+     update(region);
+ }
+
+ void CannonField::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() != Qt::LeftButton)
+         return;
+     if (barrelHit(event-&gt;pos()))
+         barrelPressed = true;
+ }
+
+ void CannonField::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (!barrelPressed)
+         return;
+     QPoint pos = event-&gt;pos();
+     if (pos.x() &lt;= 0)
+         pos.setX(1);
+     if (pos.y() &gt;= height())
+         pos.setY(height() - 1);
+     double rad = atan(((double)rect().bottom() - pos.y()) / pos.x());
+     setAngle(qRound(rad * 180 / 3.14159265));
+ }
+
+ void CannonField::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton)
+         barrelPressed = false;
+ }
+
+ void CannonField::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+
+     if (gameEnded) {
+         painter.setPen(Qt::black);
+         painter.setFont(QFont(&quot;Courier&quot;, 48, QFont::Bold));
+         painter.drawText(rect(), Qt::AlignCenter, tr(&quot;Game Over&quot;));
+     }
+     paintCannon(painter);
+     paintBarrier(painter);
+     if (isShooting())
+         paintShot(painter);
+     if (!gameEnded)
+         paintTarget(painter);
+ }
+
+ void CannonField::paintShot(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(Qt::black);
+     painter.drawRect(shotRect());
+ }
+
+ void CannonField::paintTarget(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::black);
+     painter.setBrush(Qt::red);
+     painter.drawRect(targetRect());
+ }
+
+ void CannonField::paintBarrier(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::black);
+     painter.setBrush(Qt::yellow);
+     painter.drawRect(barrierRect());
+ }
+
+ const QRect barrelRect(30, -5, 20, 10);
+
+ void CannonField::paintCannon(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(Qt::blue);
+
+     painter.save();
+     painter.translate(0, height());
+     painter.drawPie(QRect(-35, -35, 70, 70), 0, 90 * 16);
+     painter.rotate(-currentAngle);
+     painter.drawRect(barrelRect);
+     painter.restore();
+ }
+
+ QRect CannonField::cannonRect() const
+ {
+     QRect result(0, 0, 50, 50);
+     result.moveBottomLeft(rect().bottomLeft());
+     return result;
+ }
+
+ QRect CannonField::shotRect() const
+ {
+     const double gravity = 4;
+
+     double time = timerCount / 20.0;
+     double velocity = shootForce;
+     double radians = shootAngle * 3.14159265 / 180;
+
+     double velx = velocity * cos(radians);
+     double vely = velocity * sin(radians);
+     double x0 = (barrelRect.right() + 5) * cos(radians);
+     double y0 = (barrelRect.right() + 5) * sin(radians);
+     double x = x0 + velx * time;
+     double y = y0 + vely * time - 0.5 * gravity * time * time;
+
+     QRect result(0, 0, 6, 6);
+     result.moveCenter(QPoint(qRound(x), height() - 1 - qRound(y)));
+     return result;
+ }
+
+ QRect CannonField::targetRect() const
+ {
+     QRect result(0, 0, 20, 10);
+     result.moveCenter(QPoint(target.x(), height() - 1 - target.y()));
+     return result;
+ }
+
+ QRect CannonField::barrierRect() const
+ {
+     return QRect(145, height() - 100, 15, 99);
+ }
+
+ bool CannonField::barrelHit(const QPoint &amp;pos) const
+ {
+     QMatrix matrix;
+     matrix.translate(0, height());
+     matrix.rotate(-currentAngle);
+     matrix = matrix.inverted();
+     return barrelRect.contains(matrix.map(pos));
+ }
+
+ bool CannonField::isShooting() const
+ {
+     return autoShootTimer-&gt;isActive();
+ }
+
+ QSize CannonField::sizeHint() const
+ {
+     return QSize(400, 300);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

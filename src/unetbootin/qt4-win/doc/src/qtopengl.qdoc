@@ -1,0 +1,165 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \module QtOpenGL
+    \title QtOpenGL Module
+    \contentspage Qt's Modules
+    \previouspage QtNetwork
+    \nextpage QtSql
+    \ingroup modules
+
+    \brief The QtOpenGL module offers classes that make it easy to
+    use OpenGL in Qt applications.
+
+    OpenGL is a standard API for rendering 3D graphics. OpenGL only
+    deals with 3D rendering and provides little or no support for GUI
+    programming issues. The user interface for an OpenGL application
+    must be created with another toolkit, such as Motif on the X
+    platform, Microsoft Foundation Classes (MFC) under Windows, or Qt
+    on both platforms.
+
+    \bold{Note:} OpenGL is a trademark of Silicon Graphics, Inc. in
+    the United States and other countries.
+
+    The Qt OpenGL module makes it easy to use OpenGL in Qt applications.
+    It provides an OpenGL widget class that can be used just like any
+    other Qt widget, except that it opens an OpenGL display buffer where
+    you can use the OpenGL API to render the contents.
+
+    To include the definitions of the module's classes, use the
+    following directive:
+
+    \snippet doc/src/snippets/code/doc.src.qtopengl.qdoc 0
+
+    To link against the module, add this line to your \l qmake \c
+    .pro file:
+
+    \snippet doc/src/snippets/code/doc.src.qtopengl.qdoc 1
+
+    The Qt OpenGL module is implemented as a platform-independent Qt/C++
+    wrapper around the platform-dependent GLX (version 1.3 or later),
+    WGL, or AGL C APIs. Although the basic functionality provided is very
+    similar to Mark Kilgard's GLUT library, applications using the Qt
+    OpenGL module can take advantage of the whole Qt API for
+    non-OpenGL-specific GUI functionality.
+
+    \warning The QtOpenGL module is part of the \l{Qt Desktop Edition}
+    and the \l{Qt Open Source Edition}. It is available on Windows,
+    X11, and Mac OS X. \l{Qt for Embedded Linux} supports OpenGL ES (OpenGL for
+    Embedded Systems). To be able to use the OpenGL API in \l{Qt for Embedded Linux},
+    it must be integrated with the Q Window System (QWS). See the
+    \l{Qt for Embedded Linux and OpenGL} documentation for details.
+
+    \section1 Installation
+
+    When you install Qt for X11, the configure script will autodetect if
+    OpenGL headers and libraries are installed on your system, and if so,
+    it will include the QtOpenGL module in the Qt library. (If your
+    OpenGL headers or libraries are placed in a non-standard directory,
+    you may need to change the \c QMAKE_INCDIR_OPENGL and/or
+    \c QMAKE_LIBDIR_OPENGL in the config file for your system).
+
+    When you install Qt for Windows and Mac OS X, the QtOpenGL
+    module is always included. X11 users might like to read the notes
+    on overlays below.
+
+    The QGL documentation assumes that you are familiar with OpenGL
+    programming. If you're new to the subject a good starting point is
+    \l{http://www.opengl.org/}.
+
+    \section1 How to Use X11 Overlays with Qt
+
+    X11 overlays are a powerful mechanism for drawing
+    annotations etc., on top of an image without destroying it, thus saving
+    a great deal of image rendering time. For more information, see the highly
+    recommended book \e{OpenGL Programming for the X Window System} (Mark
+    Kilgard, Addison Wesley Developers Press 1996).
+
+    \warning The Qt OpenGL Extension includes direct support for the
+    use of OpenGL overlays. For many uses of overlays, this makes the
+    technique described below redundant. The following is a discussion
+    on how to use non-QGL widgets in overlay planes.
+
+    In the typical case, X11 overlays can easily be used together with the
+    current version of Qt and the Qt OpenGL Extension. The following
+    requirements apply:
+
+    \list 1
+    \i Your X server and graphics card/hardware must support overlays.
+       For many X servers, overlay support can be turned on with
+       a configuration option; consult your X server installation
+       documentation.
+
+    \i Your X server must (be configured to) use an overlay visual as the
+       default visual. Most modern X servers do this, since this has the
+       added advantage that pop-up menus, overlapping windows etc., will
+       \e not affect underlying images in the main plane, thereby
+       avoiding expensive redraws.
+
+    \i The best (deepest) visual for OpenGL rendering is in the main
+       plane. This is the normal case. Typically, X servers that support
+       overlays provide a 24-bit \c TrueColor visual in the main plane,
+       and an 8-bit \c PseudoColor (default) visual in the overlay plane.
+    \endlist
+
+    Assuming that the requirements mentioned above are met, a
+    QGLWidget will default to using the main plane visual, while all
+    other widgets will use the overlay visual. Thus, we can place a
+    normal widget on top of the QGLWidget, and do drawing on it,
+    without affecting the image in the OpenGL window. In other words,
+    we can use all the drawing capabilities of QPainter to draw
+    annotations, rubberbands, etc. For the typical use of overlays,
+    this is much easier than using OpenGL for rendering annotations.
+
+    An overlay plane has a specific color called the transparent
+    color. Pixels drawn in this color will not be visible; instead
+    the underlying OpenGL image will show through.
+
+    To use this technique, you must not use the
+    QApplication::ManyColor or QApplication::TrueColor color
+    specification for QApplication, because this will force the
+    normal Qt widgets to use a \c TrueColor visual, which will
+    typically be in the main plane, not in the overlay plane as
+    desired.
+*/

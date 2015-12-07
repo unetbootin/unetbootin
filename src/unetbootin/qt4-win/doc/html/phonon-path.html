@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: Path Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Path Class Reference<br /><span class="small-subtitle">(Phonon::Path)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The Path class describes connections between media nodes. <a href="#details">More...</a></p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-path-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-path.html#Path">Path</a></b> ()</li>
+<li><div class="fn"/><b><a href="phonon-path.html#Path-2">Path</a></b> ( const Path &amp; <i>path</i> )</li>
+<li><div class="fn"/><b><a href="phonon-path.html#dtor.Path">~Path</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#disconnect">disconnect</a></b> ()</li>
+<li><div class="fn"/>QList&lt;Effect *&gt; <b><a href="phonon-path.html#effects">effects</a></b> () const</li>
+<li><div class="fn"/>Effect * <b><a href="phonon-path.html#insertEffect">insertEffect</a></b> ( const EffectDescription &amp; <i>desc</i>, Effect * <i>insertBefore</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#insertEffect-2">insertEffect</a></b> ( Effect * <i>effect</i>, Effect * <i>insertBefore</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#reconnect">reconnect</a></b> ( MediaNode * <i>source</i>, MediaNode * <i>sink</i> )</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#removeEffect">removeEffect</a></b> ( Effect * <i>effect</i> )</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#operator-not-eq">operator!=</a></b> ( const Path &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>Path &amp; <b><a href="phonon-path.html#operator-eq">operator=</a></b> ( const Path &amp; <i>p</i> )</li>
+<li><div class="fn"/>bool <b><a href="phonon-path.html#operator-eq-eq">operator==</a></b> ( const Path &amp; <i>p</i> ) const</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>Path <b><a href="phonon-path.html#createPath">createPath</a></b> ( MediaNode * <i>source</i>, MediaNode * <i>sink</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Path class describes connections between media nodes.</p>
+<p>In a <a href="phonon-overview.html#building-graphs">media graph</a>, <a href="phonon-medianode.html">MediaNode</a>s are connected by Paths. The multimedia travels in streams over these paths.</p>
+<p>You create a path between two media nodes using the static <a href="phonon-path.html#createPath">Phonon::createPath</a>() function, which takes two nodes as arguments. The first argument will send the media stream to the second. Please refer to the class description of the individual media nodes and the Phonon <a href="phonon-overview.html">overview</a> to see which nodes can be connected to each other.</p>
+<p>Paths are also used to insert audio <a href="phonon-effect.html">Effect</a>s between two media nodes. The effect will then alter the stream on the path. Notice that <a href="phonon-effect.html">Effect</a>s also are media nodes, but that <a href="phonon-path.html#insertEffect">insertEffect</a>() - instead of <a href="phonon-path.html#createPath">Phonon::createPath</a>() - is used to insert them into the media graph.</p>
+<p>The following code example shows how create a path between two media nodes and insert an effect on that path.</p>
+<pre>     MediaObject *media = new MediaObject;
+     AudioOutput *output = new AudioOutput(Phonon::MusicCategory);
+     Path path = Phonon::createPath(media, output);
+     Q_ASSERT(path.isValid()); // for this simple case the path should always be
+                               //valid - there are unit tests to ensure it
+     // insert an effect
+     QList&lt;EffectDescription&gt; effectList = BackendCapabilities::availableAudioEffects();
+     if (!effectList.isEmpty()) {
+         Effect *effect = path.insertEffect(effectList.first());
+     }</pre>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>See also <a href="phonon-medianode.html">Phonon::MediaNode</a>, <a href="phonon-mediaobject.html">Phonon::MediaObject</a>, <a href="phonon-audiooutput.html">Phonon::AudioOutput</a>, and <a href="phonon-videowidget.html">Phonon::VideoWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Path"></a>Path::Path ()</h3>
+<p>Creates an invalid path.</p>
+<p>You can still make it a valid path by calling reconnect. It is recommended to use the <a href="phonon-path.html#createPath">Phonon::createPath</a>() function to create paths.</p>
+<p>See also <a href="phonon-path.html#createPath">Phonon::createPath</a>() and <a href="phonon-path.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="Path-2"></a>Path::Path ( const Path &amp; <i>path</i> )</h3>
+<p>Constructs a copy of the other <i>path</i> specified.</p>
+<p>This constructor is fast thanks to explicit sharing.</p>
+<h3 class="fn"><a name="dtor.Path"></a>Path::~Path ()</h3>
+<p>Destroys this reference to the Path. If the path was valid the connection is not broken as both the source and the sink MediaNodes still keep a reference to the Path.</p>
+<p>See also <a href="phonon-path.html#disconnect">disconnect</a>().</p>
+<h3 class="fn"><a name="disconnect"></a>bool Path::disconnect ()</h3>
+<p>Tries to disconnect the path from the MediaNodes it is connected to, returning true if successful or false if unsuccessful.</p>
+<p>If successful, the path is invalidated: <a href="phonon-path.html#isValid">isValid</a>() will returns false.</p>
+<h3 class="fn"><a name="effects"></a><a href="qlist.html">QList</a>&lt;<a href="phonon-effect.html">Effect</a> *&gt; Path::effects () const</h3>
+<p>Returns a list of Effect objects that are currently used as effects. The order in the list determines the order the signal is sent through the effects.</p>
+<p>Returns A list with all current effects.</p>
+<p>See also <a href="phonon-path.html#insertEffect">insertEffect</a>() and <a href="phonon-path.html#removeEffect">removeEffect</a>().</p>
+<h3 class="fn"><a name="insertEffect"></a><a href="phonon-effect.html">Effect</a> * Path::insertEffect ( const <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a> &amp; <i>desc</i>, <a href="phonon-effect.html">Effect</a> * <i>insertBefore</i> = 0 )</h3>
+<p>Creates and inserts an effect into the path.</p>
+<p>You may insert effects of the same class as often as you like, but if you insert the same object, the call will fail.</p>
+<p><i>desc</i> is the <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a> object for the effect to be inserted.</p>
+<p>If you already inserted an effect you can tell with <i>insertBefore</i> in which order the data gets processed. If this is <tt>0</tt> the effect is appended at the end of the processing list. If the effect has not been inserted before the method will do nothing and return <tt>false</tt>.</p>
+<p>Returns a pointer to the effect object if it could be inserted at the specified position. If <tt>0</tt> is returned, the effect was not inserted.</p>
+<p>Below is a code example for inserting an effect into a path:</p>
+<pre>     QList&lt;Phonon::EffectDescription&gt; effectDescriptions =
+             Phonon::BackendCapabilities::availableAudioEffects();
+     Phonon::EffectDescription effectDescription = effectDescriptions.at(4);
+
+     Phonon::Path path = Phonon::createPath(mediaObject, audioOutput);
+
+     Phonon::Effect *effect = new Phonon::Effect(effectDescription);
+     path.insertEffect(effect);</pre>
+<p>See also <a href="phonon-path.html#removeEffect">removeEffect</a>() and <a href="phonon-path.html#effects">effects</a>().</p>
+<h3 class="fn"><a name="insertEffect-2"></a>bool Path::insertEffect ( <a href="phonon-effect.html">Effect</a> * <i>effect</i>, <a href="phonon-effect.html">Effect</a> * <i>insertBefore</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the given <i>effect</i> into the path before the effect specified by <i>insertBefore</i> and returns true if successful; otherwise returns false.</p>
+<p>If <i>insertBefore</i> is zero, the effect is appended to the processing list.</p>
+<p>You may insert effects of the same class as often as you like, but if you insert the same object, the call will fail.</p>
+<p><i>effect</i> will be inserted right before <i>insertBefore</i>. If <i>insertBefore</i> is <tt>0</tt>, the effect is appended at the end of the processing list. If the effect has not been inserted before the method will do nothing and return <tt>false</tt>.</p>
+<p>Returns whether the effect could be inserted at the specified position. If <tt>false</tt> is returned the effect was not inserted.</p>
+<p>See also <a href="phonon-path.html#removeEffect">removeEffect</a>() and <a href="phonon-path.html#effects">effects</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool Path::isValid () const</h3>
+<p>A path is considered valid if it is connected to two media nodes, in which case this function returns true. If it is connected to one or no media nodes, it is consider invalid, and this function will then return false.</p>
+<h3 class="fn"><a name="reconnect"></a>bool Path::reconnect ( <a href="phonon-medianode.html">MediaNode</a> * <i>source</i>, <a href="phonon-medianode.html">MediaNode</a> * <i>sink</i> )</h3>
+<p>Changes the media nodes the path is connected to by connecting the path to the <i>source</i> and <i>sink</i> nodes specified. Returns true if successful; otherwise returns false.</p>
+<p>If unsuccessful, the path remains connected to the same nodes as before.</p>
+<p>See also <a href="phonon-path.html#createPath">Phonon::createPath</a>() and <a href="phonon-overview.html">Phonon Overview</a>.</p>
+<h3 class="fn"><a name="removeEffect"></a>bool Path::removeEffect ( <a href="phonon-effect.html">Effect</a> * <i>effect</i> )</h3>
+<p>Removes the given <i>effect</i> from the path and returns true; otherwise returns false.</p>
+<p>Removes an <i>effect</i> from the path.</p>
+<p>If the effect is deleted while it is still connected, the effect will be removed automatically.</p>
+<p>See also <a href="phonon-path.html#insertEffect">insertEffect</a>() and <a href="phonon-path.html#effects">effects</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool Path::operator!= ( const Path &amp; <i>p</i> ) const</h3>
+<p>Returns true if this Path is not equal to <i>p</i>; otherwise returns false;</p>
+<h3 class="fn"><a name="operator-eq"></a>Path &amp; Path::operator= ( const Path &amp; <i>p</i> )</h3>
+<p>Assigns <i>p</i> to this Path and returns a reference to this Path.</p>
+<p>This operation is fast thanks to explicit sharing.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool Path::operator== ( const Path &amp; <i>p</i> ) const</h3>
+<p>Returns true if this Path is equal to <i>p</i>; otherwise returns false;</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="createPath"></a>Path Phonon::createPath ( <a href="phonon-medianode.html">MediaNode</a> * <i>source</i>, <a href="phonon-medianode.html">MediaNode</a> * <i>sink</i> )</h3>
+<p>Creates a new Path connecting the two MediaNodes <i>source</i> and <i>sink</i>.</p>
+<p>The implementation will automatically select the right format and media type. E.g&#x2e; connecting a <a href="phonon-mediaobject.html">MediaObject</a> and <a href="phonon-audiooutput.html">AudioOutput</a> will create a Path object connecting the audio. This might be represented as PCM or perhaps even AC3 depending on the <a href="phonon-audiooutput.html">AudioOutput</a> object.</p>
+<p><i>source</i> The <a href="phonon-medianode.html">MediaNode</a> to connect an output from <i>sink</i> The <a href="phonon-medianode.html">MediaNode</a> to connect to.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

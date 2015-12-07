@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xmlpatterns/api/qabstractxmlreceiver.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractXmlReceiver Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractXmlReceiver Class Reference<br /><span class="small-subtitle">[<a href="qtxmlpatterns.html">QtXmlPatterns</a> module]</span>
+</h1>
+<p>The QAbstractXmlReceiver class provides a callback interface for transforming the output of a <a href="qxmlquery.html">QXmlQuery</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractXmlReceiver&gt;</pre><p>Inherited by <a href="qpatternist-documentcontentvalidator.html">QPatternist::DocumentContentValidator</a>, <a href="qpatternist-documentprojector.html">QPatternist::DocumentProjector</a>, <a href="qpatternist-nodebuilder.html">QPatternist::NodeBuilder</a>, <a href="qpatternist-outputvalidator.html">QPatternist::OutputValidator</a>, and <a href="qxmlserializer.html">QXmlSerializer</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qabstractxmlreceiver-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractxmlreceiver.html#QAbstractXmlReceiver">QAbstractXmlReceiver</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qabstractxmlreceiver.html#dtor.QAbstractXmlReceiver">~QAbstractXmlReceiver</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#atomicValue">atomicValue</a></b> ( const QVariant &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#attributex">attribute</a></b> ( const QXmlName &amp; <i>name</i>, const QStringRef &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#characters">characters</a></b> ( const QStringRef &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#comment">comment</a></b> ( const QString &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#endDocument">endDocument</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#endElement">endElement</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#endOfSequence">endOfSequence</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#namespaceBinding">namespaceBinding</a></b> ( const QXmlName &amp; <i>name</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#processingInstruction">processingInstruction</a></b> ( const QXmlName &amp; <i>target</i>, const QString &amp; <i>value</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#startDocument">startDocument</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#startElement">startElement</a></b> ( const QXmlName &amp; <i>name</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qabstractxmlreceiver.html#startOfSequence">startOfSequence</a></b> () = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractXmlReceiver class provides a callback interface for transforming the output of a <a href="qxmlquery.html">QXmlQuery</a>.</p>
+<p>QAbstractXmlReceiver is an abstract base class that provides a callback interface for receiving an <a href="#xquery-sequence">XQuery sequence</a>, usually the output of an <a href="qxmlquery.html">QXmlQuery</a>, and transforming that sequence into a structure of your choosing, usually XML. Consider the example:</p>
+<pre>   QXmlQuery query;
+   query.setQuery(&quot;doc('index.html')/html/body/p[1]&quot;);
+
+   QXmlSerializer serializer(query, myOutputDevice);
+   query.evaluateTo(&amp;serializer);</pre>
+<p>First it constructs a <a href="qxmlquery.html">query</a> that gets the first paragraph from document <tt>index.html</tt>. Then it constructs an <a href="qxmlserializer.html">XML serializer</a> with the <a href="qxmlquery.html">query</a> and <a href="qiodevice.html">myOutputDevice</a> (Note the <a href="qxmlserializer.html">serializer</a> is an <i>XML receiver</i>, ie a subclass of QAbstractXmlReceiver). Finally, it <a href="qxmlquery.html#evaluateTo">evaluates</a> the <a href="qxmlquery.html">query</a>, producing an ordered sequence of calls to the <a href="qxmlserializer.html">serializer's</a> callback functions. The sequence of callbacks transforms the query output to XML and writes it to <a href="qiodevice.html">myOutputDevice</a>.</p>
+<p>Although the example uses <a href="qxmlquery.html">QXmlQuery</a> to produce the sequence of callbacks to functions in QAbstractXmlReceiver, you can call the callback functions directly as long as your sequence of calls represents a valid <a href="#xquery-sequence">XQuery sequence</a>.</p>
+<a name="xquery-sequence"></a><a name="xquery-sequences"></a>
+<h3>XQuery Sequences</h3>
+<p>An XQuery <i>sequence</i> is an ordered collection of zero, one, or many <i>items</i>. Each <i>item</i> is either an <i>atomic value</i> or a <i>node</i>. An <i>atomic value</i> is a simple data value.</p>
+<p>There are six kinds of <i>nodes</i>.</p>
+<ul>
+<li>An <i>Element Node</i> represents an XML element.</li>
+<li>An <i>Attribute Node</i> represents an XML attribute.</li>
+<li>A <i>Document Node</i> represents an entire XML document.</li>
+<li>A <i>Text Node</i> represents character data (element content).</li>
+<li>A <i>Processing Instruction Node</i> represents an XML processing instruction, which is used in an XML document to tell the application reading the document to perform some action. A typical example is to use a processing instruction to tell the application to use a particular XSLT stylesheet to display the document.</li>
+<li>And a <i>Comment node</i> represents an XML comment.</li>
+</ul>
+<p>The <i>sequence</i> of <i>nodes</i> and <i>atomic values</i> obeys the following rules. Note that <i>Namespace Node</i> refers to a special <i>Attribute Node</i> with name <i>xmlns</i>.</p>
+<ul>
+<li>Each <i>node</i> appears in the <i>sequence</i> before its children and their descendants appear.</li>
+<li>A <i>node</i>'s descendants appear in the <i>sequence</i> before any of its siblings appear.</li>
+<li>A <i>Document Node</i> represents an entire document. Zero or more <i>Document Nodes</i> can appear in a <i>sequence</i>, but they can only be top level items (i.e&#x2e;, a <i>Document Node</i> can't be a child of another <i>node</i>.</li>
+<li><i>Namespace Nodes</i> immediately follow the <i>Element Node</i> with which they are associated.</li>
+<li><i>Attribute Nodes</i> immediately follow the <i>Namespace Nodes</i> of the element with which they are associated, or..&#x2e;</li>
+<li>If there are no <i>Namespace Nodes</i> following an element, then the <i>Attribute Nodes</i> immediately follow the element.</li>
+<li>An <i>atomic value</i> can only appear as a top level <i>item</i>, i.e&#x2e;, it can't appear as a child of a <i>node</i>.</li>
+<li><i>Processing Instruction Nodes</i> do not have children, and their parent is either a <i>Document Node</i> or an <i>Element Node</i>.</li>
+</ul>
+<p>The <i>sequence</i> of <i>nodes</i> and <i>atomic values</i> is sent to an QAbstractXmlReceiver (<a href="qxmlserializer.html">QXmlSerializer</a> in the example above) as a sequence of calls to the receiver's callback functions. The mapping of callback functions to sequence items is as follows.</p>
+<ul>
+<li><a href="qabstractxmlreceiver.html#startDocument">startDocument</a>() and <a href="qabstractxmlreceiver.html#endDocument">endDocument</a>() are called for each <i>Document Node</i> in the <i>sequence</i>. <a href="qabstractxmlreceiver.html#endDocument">endDocument</a>() is not called until all the <i>Document Node's</i> children have appeared in the <i>sequence</i>.</li>
+<li><a href="qabstractxmlreceiver.html#startElement">startElement</a>() and <a href="qabstractxmlreceiver.html#endElement">endElement</a>() are called for each <i>Element Node</i>. <a href="qabstractxmlreceiver.html#endElement">endElement</a>() is not called until all the <i>Element Node's</i> children have appeared in the <i>sequence</i>.</li>
+<li><a href="qabstractxmlreceiver.html#attributex">attribute</a>() is called for each <i>Attribute Node</i>.</li>
+<li><a href="qabstractxmlreceiver.html#comment">comment</a>() is called for each <i>Comment Node</i>.</li>
+<li><a href="qabstractxmlreceiver.html#characters">characters</a>() is called for each <i>Text Node</i>.</li>
+<li><a href="qabstractxmlreceiver.html#processingInstruction">processingInstruction</a>() is called for each <i>Processing Instruction Node</i>.</li>
+<li><a href="qabstractxmlreceiver.html#namespaceBinding">namespaceBinding</a>() is called for each <i>Namespace Node</i>.</li>
+<li><a href="qabstractxmlreceiver.html#atomicValue">atomicValue</a>() is called for each <i>atomic value</i>.</li>
+</ul>
+<p>For a complete explanation of XQuery sequences, visit <a href="http://www.w3.org/TR/xpath-datamodel/">XQuery Data Model</a>.</p>
+<p>See also <a href="http://www.w3.org/TR/xpath-datamodel/">W3C XQuery 1.0 and XPath 2.0 Data Model (XDM)</a>, <a href="qxmlserializer.html">QXmlSerializer</a>, and <a href="qxmlresultitems.html">QXmlResultItems</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractXmlReceiver"></a>QAbstractXmlReceiver::QAbstractXmlReceiver ()</h3>
+<p>The default constructor is sufficient.</p>
+<h3 class="fn"><a name="dtor.QAbstractXmlReceiver"></a>QAbstractXmlReceiver::~QAbstractXmlReceiver ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The destructor is virtual.</p>
+<h3 class="fn"><a name="atomicValue"></a>void QAbstractXmlReceiver::atomicValue ( const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when an atomic value appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. The <i>value</i> is a simple <a href="qvariant.html">value</a> {data value}. It is guaranteed to be <a href="qvariant.html#isValid">valid</a>.</p>
+<h3 class="fn"><a name="attributex"></a>void QAbstractXmlReceiver::attribute ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>name</i>, const <a href="qstringref.html">QStringRef</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when an attribute node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. <i>name</i> is the <a href="qxmlname.html">attribute name</a> and the <i>value</i> string contains the attribute value.</p>
+<h3 class="fn"><a name="characters"></a>void QAbstractXmlReceiver::characters ( const <a href="qstringref.html">QStringRef</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a text node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. The <i>value</i> contains the text. Adjacent text nodes may not occur in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>, i.e&#x2e;, this callback must not be called twice in a row.</p>
+<h3 class="fn"><a name="comment"></a>void QAbstractXmlReceiver::comment ( const <a href="qstring.html">QString</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a comment node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. The <i>value</i> is the comment text, which must not contain the string &quot;--&quot;.</p>
+<h3 class="fn"><a name="endDocument"></a>void QAbstractXmlReceiver::endDocument ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when the end of a document node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>.</p>
+<h3 class="fn"><a name="endElement"></a>void QAbstractXmlReceiver::endElement ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when the end of an element node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>.</p>
+<h3 class="fn"><a name="endOfSequence"></a>void QAbstractXmlReceiver::endOfSequence ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called once only, right after the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a> ends.</p>
+<h3 class="fn"><a name="namespaceBinding"></a>void QAbstractXmlReceiver::namespaceBinding ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a namespace binding is in scope of an element.</p>
+<p>A namespace is defined by a URI. In the <a href="qxmlname.html">QXmlName</a> <i>name</i>, the value of <a href="qxmlname.html#namespaceUri">QXmlName::namespaceUri</a>() is that URI. The value of <a href="qxmlname.html#prefix">QXmlName::prefix</a>() is the prefix that the URI is bound to. The local name is insignificant and can be an arbitrary value.</p>
+<h3 class="fn"><a name="processingInstruction"></a>void QAbstractXmlReceiver::processingInstruction ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>target</i>, const <a href="qstring.html">QString</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a processing instruction appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. A processing instruction is used in an XML document to tell the application reading the document to perform some action. A typical example is to use a processing instruction to tell the application to use a particular XSLT stylesheet to process the document.</p>
+<pre> &lt;?xml-stylesheet type=&quot;test/xsl&quot; href=&quot;formatter.xsl&quot;?&gt;</pre>
+<p><i>target</i> is the <a href="qxmlname.html">name</a> of the processing instruction. Its <i>prefix</i> and <i>namespace URI</i> must both be empty. Its <i>local name</i> is the target. In the above example, the name is <i>xml-stylesheet</i>.</p>
+<p>The <i>value</i> specifies the action to be taken. Note that the <i>value</i> must not contain the string &quot;?&gt;&quot;. In the above example, the <i>value</i> is <i>type=&quot;test/xsl&quot; href=&quot;formatter.xsl</i>.</p>
+<p>Genrally, use of processing instructions should be avoided, because they are not namespace aware and in many contexts are stripped out anyway. Processing instructions can often be replaced with elements from a custom namespace.&quot;</p>
+<h3 class="fn"><a name="startDocument"></a>void QAbstractXmlReceiver::startDocument ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a document node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>.</p>
+<h3 class="fn"><a name="startElement"></a>void QAbstractXmlReceiver::startElement ( const <a href="qxmlname.html">QXmlName</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called when a new element node appears in the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a>. <i>name</i> is the valid <a href="qxmlname.html">name</a> of the node element.</p>
+<h3 class="fn"><a name="startOfSequence"></a>void QAbstractXmlReceiver::startOfSequence ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This callback is called once only, right before the <a href="qabstractxmlreceiver.html#xquery-sequence">sequence</a> begins.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

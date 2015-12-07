@@ -1,0 +1,1 @@
+SOURCES += splitter.cpp

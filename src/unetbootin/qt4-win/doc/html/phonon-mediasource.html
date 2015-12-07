@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: MediaSource Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">MediaSource Class Reference<br /><span class="small-subtitle">(Phonon::MediaSource)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The MediaSource class provides multimedia data for media objects. <a href="#details">More...</a></p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-mediasource-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="phonon-mediasource.html#Type-enum">Type</a></b> { Invalid, LocalFile, Url, Disc, Stream }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#MediaSource">MediaSource</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#MediaSource-3">MediaSource</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#MediaSource-4">MediaSource</a></b> ( Phonon::DiscType <i>discType</i>, const QString &amp; <i>deviceName</i> = QString() )</li>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#MediaSource-6">MediaSource</a></b> ( QIODevice * <i>ioDevice</i> )</li>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#MediaSource-7">MediaSource</a></b> ( const MediaSource &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="phonon-mediasource.html#dtor.MediaSource">~MediaSource</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="phonon-mediasource.html#autoDelete">autoDelete</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="phonon-mediasource.html#deviceName">deviceName</a></b> () const</li>
+<li><div class="fn"/>Phonon::DiscType <b><a href="phonon-mediasource.html#discType">discType</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="phonon-mediasource.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="phonon-mediasource.html#setAutoDelete">setAutoDelete</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>Type <b><a href="phonon-mediasource.html#type">type</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="phonon-mediasource.html#url">url</a></b> () const</li>
+<li><div class="fn"/>MediaSource &amp; <b><a href="phonon-mediasource.html#operator-eq">operator=</a></b> ( const MediaSource &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="phonon-mediasource.html#operator-eq-eq">operator==</a></b> ( const MediaSource &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>The MediaSource class provides multimedia data for media objects.</p>
+<p>The MediaSource class manages a source of multimedia content, such as a music or video file, of which data is given to a <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<p>The media source knows how fetch its data from several sources, e.g&#x2e;, from files, a <a href="qiodevice.html">QIODevice</a>, or a CD. The possible source types are described by the Type enum. The type of the source is set by the media source itself, and is dependent on the constructor used to create it. Note that it is possible to provide data from any source by implementing a <a href="qiodevice.html">QIODevice</a>.</p>
+<p>The class has several functions to acquire information about the source it manages, e.g&#x2e;, <a href="phonon-mediasource.html#fileName">fileName</a>(), <a href="phonon-mediasource.html#url">url</a>(), and diskType(). The return from these functions are dependent on the <a href="phonon-mediasource.html#type">type</a>() of the media source.</p>
+<p>Normally, a programmer does not need to be concerned with media sources. It's constructors are implicit, so one can, for instance, send an URL or filename directly to the constructors of the <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<pre>     MediaObject m;
+     QString fileName(&quot;/home/foo/bar.ogg&quot;);
+     QUrl url(&quot;http://www.example.com/stream.mp3&quot;);
+     QBuffer *someBuffer;
+     m.setCurrentSource(fileName);
+     m.setCurrentSource(url);
+     m.setCurrentSource(someBuffer);
+     m.setCurrentSource(Phonon::Cd);</pre>
+<p>A MediaSource object cannot be reused for another multimedia source. It is possible to play the same source again, and also stop and start a non-seekable media source, such as a radio stream, with the same MediaSource object.</p>
+<a name="qt-backends"></a>
+<h3>Qt Backends</h3>
+<p>Currently, Qt's backends support files in local and remote locations. Support for other sources, such as CD/DVD, are planned for the future.</p>
+<p>See also <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Type-enum"></a>enum MediaSource::Type</h3>
+<p>Identifies the type of media described by the <a href="phonon-mediasource.html">MediaSource</a> object.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::MediaSource::Invalid</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">The <a href="phonon-mediasource.html">MediaSource</a> object does not describe any valid source.</td></tr>
+<tr><td valign="top"><tt>Phonon::MediaSource::LocalFile</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The <a href="phonon-mediasource.html">MediaSource</a> object describes a local file.</td></tr>
+<tr><td valign="top"><tt>Phonon::MediaSource::Url</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The <a href="phonon-mediasource.html">MediaSource</a> object describes a URL, which can be either a local file or a file on the network.</td></tr>
+<tr><td valign="top"><tt>Phonon::MediaSource::Disc</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The <a href="phonon-mediasource.html">MediaSource</a> object describes a disc, e.g&#x2e;, a CD.</td></tr>
+<tr><td valign="top"><tt>Phonon::MediaSource::Stream</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The <a href="phonon-mediasource.html">MediaSource</a> object describes a data stream. This is also the type used for <a href="qiodevice.html">QIODevice</a>s.</td></tr>
+</table></p>
+<p>See also <a href="phonon-mediasource.html#type">MediaSource::type</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="MediaSource"></a>MediaSource::MediaSource ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Creates a <a href="phonon-mediasource.html">MediaSource</a> object for the file specified by <i>fileName</i>. You can also use this constructor with <a href="resources.html">Qt resources</a></p>
+<h3 class="fn"><a name="MediaSource-3"></a>MediaSource::MediaSource ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )</h3>
+<p>Creates a <a href="phonon-mediasource.html">MediaSource</a> object for a the URL specified by <i>url</i>.</p>
+<p>If the multimedia content you would like to play back is on a remote network location, you should use this constructor; though, it also possible to specify an URL to a local file.</p>
+<p>See also <a href="qurl.html">QUrl</a>.</p>
+<h3 class="fn"><a name="MediaSource-4"></a>MediaSource::MediaSource ( <a href="phonon.html#DiscType-enum">Phonon::DiscType</a> <i>discType</i>, const <a href="qstring.html">QString</a> &amp; <i>deviceName</i> = QString() )</h3>
+<p>Creates a <a href="phonon-mediasource.html">MediaSource</a> object for the type of disc specified by <i>discType</i> in the named device referred to by <i>deviceName</i>.</p>
+<p><b>Note:</b> <i>deviceName</i> is a platform dependent device name. It can be useful to specify this if the computer has more than one CD drive. On KDE, it is recommended to use the Solid hardware discovery framework to retrieve the device name in a portable way.</p>
+<h3 class="fn"><a name="MediaSource-6"></a>MediaSource::MediaSource ( <a href="qiodevice.html">QIODevice</a> * <i>ioDevice</i> )</h3>
+<p>Creates a <a href="phonon-mediasource.html">MediaSource</a> object for the <a href="qiodevice.html">QIODevice</a> specified by <i>ioDevice</i>.</p>
+<p>This constructor can be very handy in the combination of <a href="qbytearray.html">QByteArray</a> and <a href="qbuffer.html">QBuffer</a>.</p>
+<p><i>ioDevice</i> is an arbitrary readable <a href="qiodevice.html">QIODevice</a> subclass. If the device is not opened <a href="phonon-mediasource.html">MediaSource</a> will open it as <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::ReadOnly</a>.</p>
+<p><b>Note:</b> Sequential devices can also be used, but <a href="phonon-mediaobject.html#isSeekable">MediaObject::isSeekable</a>() will return false as a result.</p>
+<p>See also <a href="phonon-mediasource.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="MediaSource-7"></a>MediaSource::MediaSource ( const MediaSource &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> media source.</p>
+<p>This constructor is fast thanks to explicit sharing.</p>
+<h3 class="fn"><a name="dtor.MediaSource"></a>MediaSource::~MediaSource ()</h3>
+<p>Destroys the <a href="phonon-mediasource.html">MediaSource</a> object.</p>
+<h3 class="fn"><a name="autoDelete"></a>bool MediaSource::autoDelete () const</h3>
+<p>Returns the setting of the auto-delete option. The default is false.</p>
+<p>See also <a href="phonon-mediasource.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="deviceName"></a><a href="qstring.html">QString</a> MediaSource::deviceName () const</h3>
+<p>Returns the device name of the <a href="phonon-mediasource.html">MediaSource</a> if <a href="phonon-mediasource.html#type">type</a>() == Disc; otherwise returns QString().</p>
+<p>See also <a href="phonon-mediasource.html#type">type</a>().</p>
+<h3 class="fn"><a name="discType"></a><a href="phonon.html#DiscType-enum">Phonon::DiscType</a> MediaSource::discType () const</h3>
+<p>Returns the disc type of the <a href="phonon-mediasource.html">MediaSource</a> if <a href="phonon-mediasource.html#type">type</a>() == Disc; otherwise returns <a href="phonon.html#DiscType-enum">NoDisc</a>.</p>
+<p>See also <a href="phonon-mediasource.html#type">type</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> MediaSource::fileName () const</h3>
+<p>Returns the file name of the <a href="phonon-mediasource.html">MediaSource</a> if <a href="phonon-mediasource.html#type">type</a>() == <a href="phonon-mediasource.html#Type-enum">LocalFile</a>; otherwise, returns QString().</p>
+<p>See also <a href="phonon-mediasource.html#type">type</a>().</p>
+<h3 class="fn"><a name="setAutoDelete"></a>void MediaSource::setAutoDelete ( bool <i>enable</i> )</h3>
+<p>If <i>enable</i> is true, the media source will take ownership of the object passed in the <a href="phonon-mediasource.html">MediaSource</a>'s constructor object that was passed in the constructor; otherwise, the programmer is responsible for deletion of this object.</p>
+<p>This setting is false by default. If you enable it, you should only access the stream or device as long as you keep the media source object around. As long as you keep the media source wrapping the stream or device, the object will not get deleted.</p>
+<p>See also <a href="phonon-mediasource.html#autoDelete">autoDelete</a>().</p>
+<h3 class="fn"><a name="type"></a><a href="phonon-mediasource.html#Type-enum">Type</a> MediaSource::type () const</h3>
+<p>Returns the type of the <a href="phonon-mediasource.html">MediaSource</a> (depends on the constructor that was used).</p>
+<p>See also <a href="phonon-mediasource.html#Type-enum">Type</a>.</p>
+<h3 class="fn"><a name="url"></a><a href="qurl.html">QUrl</a> MediaSource::url () const</h3>
+<p>Returns the URL of the <a href="phonon-mediasource.html">MediaSource</a> if <a href="phonon-mediasource.html#type">type</a>() == URL or <a href="phonon-mediasource.html#type">type</a>() == <a href="phonon-mediasource.html#Type-enum">LocalFile</a>; otherwise returns <a href="porting4.html#qurl">QUrl</a>().</p>
+<p>See also <a href="phonon-mediasource.html#type">type</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>MediaSource &amp; MediaSource::operator= ( const MediaSource &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> media source to this media source and returns a reference to it.</p>
+<p>This operation is fast thanks to explicit sharing.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool MediaSource::operator== ( const MediaSource &amp; <i>other</i> ) const</h3>
+<p>Returns true if this media source is equal to the <i>other</i> media source; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

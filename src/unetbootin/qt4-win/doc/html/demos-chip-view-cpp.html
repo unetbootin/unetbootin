@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: view.cpp Example File (demos/chip/view.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">view.cpp Example File<br /><span class="small-subtitle">demos/chip/view.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;view.h&quot;
+
+ #include &lt;QtGui&gt;
+ #ifndef QT_NO_OPENGL
+ #include &lt;QtOpenGL&gt;
+ #endif
+
+ #include &lt;qmath.h&gt;
+
+ View::View(const QString &amp;name, QWidget *parent)
+     : QFrame(parent)
+ {
+     setFrameStyle(Sunken | StyledPanel);
+     graphicsView = new QGraphicsView;
+     graphicsView-&gt;setRenderHint(QPainter::Antialiasing, false);
+     graphicsView-&gt;setDragMode(QGraphicsView::RubberBandDrag);
+     graphicsView-&gt;setViewportUpdateMode(QGraphicsView::SmartViewportUpdate);
+
+     int size = style()-&gt;pixelMetric(QStyle::PM_ToolBarIconSize);
+     QSize iconSize(size, size);
+
+     QToolButton *zoomInIcon = new QToolButton;
+     zoomInIcon-&gt;setAutoRepeat(true);
+     zoomInIcon-&gt;setAutoRepeatInterval(33);
+     zoomInIcon-&gt;setAutoRepeatDelay(0);
+     zoomInIcon-&gt;setIcon(QPixmap(&quot;:/zoomin.png&quot;));
+     zoomInIcon-&gt;setIconSize(iconSize);
+     QToolButton *zoomOutIcon = new QToolButton;
+     zoomOutIcon-&gt;setAutoRepeat(true);
+     zoomOutIcon-&gt;setAutoRepeatInterval(33);
+     zoomOutIcon-&gt;setAutoRepeatDelay(0);
+     zoomOutIcon-&gt;setIcon(QPixmap(&quot;:/zoomout.png&quot;));
+     zoomOutIcon-&gt;setIconSize(iconSize);
+     zoomSlider = new QSlider;
+     zoomSlider-&gt;setMinimum(0);
+     zoomSlider-&gt;setMaximum(500);
+     zoomSlider-&gt;setValue(250);
+     zoomSlider-&gt;setTickPosition(QSlider::TicksRight);
+
+     <span class="comment">//</span> Zoom slider layout
+     QVBoxLayout *zoomSliderLayout = new QVBoxLayout;
+     zoomSliderLayout-&gt;addWidget(zoomInIcon);
+     zoomSliderLayout-&gt;addWidget(zoomSlider);
+     zoomSliderLayout-&gt;addWidget(zoomOutIcon);
+
+     QToolButton *rotateLeftIcon = new QToolButton;
+     rotateLeftIcon-&gt;setIcon(QPixmap(&quot;:/rotateleft.png&quot;));
+     rotateLeftIcon-&gt;setIconSize(iconSize);
+     QToolButton *rotateRightIcon = new QToolButton;
+     rotateRightIcon-&gt;setIcon(QPixmap(&quot;:/rotateright.png&quot;));
+     rotateRightIcon-&gt;setIconSize(iconSize);
+     rotateSlider = new QSlider;
+     rotateSlider-&gt;setOrientation(Qt::Horizontal);
+     rotateSlider-&gt;setMinimum(-360);
+     rotateSlider-&gt;setMaximum(360);
+     rotateSlider-&gt;setValue(0);
+     rotateSlider-&gt;setTickPosition(QSlider::TicksBelow);
+
+     <span class="comment">//</span> Rotate slider layout
+     QHBoxLayout *rotateSliderLayout = new QHBoxLayout;
+     rotateSliderLayout-&gt;addWidget(rotateLeftIcon);
+     rotateSliderLayout-&gt;addWidget(rotateSlider);
+     rotateSliderLayout-&gt;addWidget(rotateRightIcon);
+
+     resetButton = new QToolButton;
+     resetButton-&gt;setText(tr(&quot;0&quot;));
+     resetButton-&gt;setEnabled(false);
+
+     <span class="comment">//</span> Label layout
+     QHBoxLayout *labelLayout = new QHBoxLayout;
+     label = new QLabel(name);
+     antialiasButton = new QToolButton;
+     antialiasButton-&gt;setText(tr(&quot;Antialiasing&quot;));
+     antialiasButton-&gt;setCheckable(true);
+     antialiasButton-&gt;setChecked(false);
+     openGlButton = new QToolButton;
+     openGlButton-&gt;setText(tr(&quot;OpenGL&quot;));
+     openGlButton-&gt;setCheckable(true);
+ #ifndef QT_NO_OPENGL
+     openGlButton-&gt;setEnabled(QGLFormat::hasOpenGL());
+ #else
+     openGlButton-&gt;setEnabled(false);
+ #endif
+     printButton = new QToolButton;
+     printButton-&gt;setIcon(QIcon(QPixmap(&quot;:/fileprint.png&quot;)));
+
+     labelLayout-&gt;addWidget(label);
+     labelLayout-&gt;addStretch();
+     labelLayout-&gt;addWidget(antialiasButton);
+     labelLayout-&gt;addWidget(openGlButton);
+     labelLayout-&gt;addWidget(printButton);
+
+     QGridLayout *topLayout = new QGridLayout;
+     topLayout-&gt;addLayout(labelLayout, 0, 0);
+     topLayout-&gt;addWidget(graphicsView, 1, 0);
+     topLayout-&gt;addLayout(zoomSliderLayout, 1, 1);
+     topLayout-&gt;addLayout(rotateSliderLayout, 2, 0);
+     topLayout-&gt;addWidget(resetButton, 2, 1);
+     setLayout(topLayout);
+
+     connect(resetButton, SIGNAL(clicked()), this, SLOT(resetView()));
+     connect(zoomSlider, SIGNAL(valueChanged(int)), this, SLOT(setupMatrix()));
+     connect(rotateSlider, SIGNAL(valueChanged(int)), this, SLOT(setupMatrix()));
+     connect(graphicsView-&gt;verticalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(setResetButtonEnabled()));
+     connect(graphicsView-&gt;horizontalScrollBar(), SIGNAL(valueChanged(int)), this, SLOT(setResetButtonEnabled()));
+     connect(antialiasButton, SIGNAL(toggled(bool)), this, SLOT(toggleAntialiasing()));
+     connect(openGlButton, SIGNAL(toggled(bool)), this, SLOT(toggleOpenGL()));
+     connect(rotateLeftIcon, SIGNAL(clicked()), this, SLOT(rotateLeft()));
+     connect(rotateRightIcon, SIGNAL(clicked()), this, SLOT(rotateRight()));
+     connect(zoomInIcon, SIGNAL(clicked()), this, SLOT(zoomIn()));
+     connect(zoomOutIcon, SIGNAL(clicked()), this, SLOT(zoomOut()));
+     connect(printButton, SIGNAL(clicked()), this, SLOT(print()));
+
+     setupMatrix();
+ }
+
+ QGraphicsView *View::view() const
+ {
+     return graphicsView;
+ }
+
+ void View::resetView()
+ {
+     zoomSlider-&gt;setValue(250);
+     rotateSlider-&gt;setValue(0);
+     setupMatrix();
+     graphicsView-&gt;ensureVisible(QRectF(0, 0, 0, 0));
+
+     resetButton-&gt;setEnabled(false);
+ }
+
+ void View::setResetButtonEnabled()
+ {
+     resetButton-&gt;setEnabled(true);
+ }
+
+ void View::setupMatrix()
+ {
+     qreal scale = qPow(qreal(2), (zoomSlider-&gt;value() - 250) / qreal(50));
+
+     QMatrix matrix;
+     matrix.scale(scale, scale);
+     matrix.rotate(rotateSlider-&gt;value());
+
+     graphicsView-&gt;setMatrix(matrix);
+     setResetButtonEnabled();
+ }
+
+ void View::toggleOpenGL()
+ {
+ #ifndef QT_NO_OPENGL
+     graphicsView-&gt;setViewport(openGlButton-&gt;isChecked() ? new QGLWidget(QGLFormat(QGL::SampleBuffers)) : new QWidget);
+ #endif
+ }
+
+ void View::toggleAntialiasing()
+ {
+     graphicsView-&gt;setRenderHint(QPainter::Antialiasing, antialiasButton-&gt;isChecked());
+ }
+
+ void View::print()
+ {
+ #ifndef QT_NO_PRINTER
+     QPrinter printer;
+     QPrintDialog dialog(&amp;printer, this);
+     if (dialog.exec() == QDialog::Accepted) {
+         QPainter painter(&amp;printer);
+         graphicsView-&gt;render(&amp;painter);
+     }
+ #endif
+ }
+
+ void View::zoomIn()
+ {
+     zoomSlider-&gt;setValue(zoomSlider-&gt;value() + 1);
+ }
+
+ void View::zoomOut()
+ {
+     zoomSlider-&gt;setValue(zoomSlider-&gt;value() - 1);
+ }
+
+ void View::rotateLeft()
+ {
+     rotateSlider-&gt;setValue(rotateSlider-&gt;value() - 10);
+ }
+
+ void View::rotateRight()
+ {
+     rotateSlider-&gt;setValue(rotateSlider-&gt;value() + 10);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

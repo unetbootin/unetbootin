@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtopiacore-opengl.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux and OpenGL</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux and OpenGL<br /><span class="subtitle"></span>
+</h1>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p><a href="http://www.opengl.org">OpenGL</a> is an industry standard API for 2D/3D graphics. It provides a powerful, low-level interface between software and acceleration hardware, and it is operating system and window system independent.</p>
+<p><a href="http://www.khronos.org/opengles">OpenGL ES</a> is a subset of the <a href="http://www.opengl.org">OpenGL</a> standard. Because it is meant for use in embedded systems, it has a smaller, more constrained API.</p>
+<p>For reference, Trolltech provides a plugin which integrates <a href="http://www.khronos.org/opengles">OpenGL ES</a> with Qt for Embedded Linux, but Qt for Embedded Linux can be adapted to a wide range of OpenGL versions.</p>
+<p>There are three ways to use OpenGL with Qt for Embedded Linux:</p>
+<ul>
+<li>Perform OpenGL 3D graphics operations in applications;</li>
+<li>Accelerate normal 2D painting operations;</li>
+<li>Implement window compositing and special effects.</li>
+</ul>
+<p>Qt for Embedded Linux is shipped with a reference integration example that demonstrates all three uses.</p>
+<a name="using-opengl-3d-graphics-in-applications"></a>
+<h3>Using OpenGL 3D Graphics in Applications</h3>
+<p>The <a href="qtopengl.html">QtOpenGL module</a> offers classes that make it easy to draw 3D graphics in GUI applications. The module API is cross-platform, so it is also available on Windows, X11, and Mac OS X.</p>
+<p>To use OpenGL-enabled widgets in a Qt for Embedded Linux application, all that is required is to subclass the <a href="qglwidget.html">QGLWidget</a> and draw into instances of the subclass with standard OpenGL functions.</p>
+<a name="using-opengl-to-accelerate-normal-2d-painting"></a>
+<h3>Using OpenGL to Accelerate Normal 2D Painting</h3>
+<p>Qt provides QOpenGLPaintEngine, a subclass of <a href="qpaintengine.html">QPaintEngine</a> that translates <a href="qpainter.html">QPainter</a> operations into OpenGL calls. This specialized paint engine can be used to improve 2D rendering performance on appropriate hardware. It can also overlay controls and decorations onto 3D scenes drawn using OpenGL.</p>
+<a name="using-opengl-to-implement-window-compositing-and-effects"></a>
+<h3>Using OpenGL to Implement Window Compositing and Effects</h3>
+<p>Qt for Embedded Linux includes a complete windowing system, which implements real transparency. The windowing system can be accelerated using OpenGL to implement top level window compositing. This makes it easy to add 3D effects to applications, for instance when windows are minimized or maximized.</p>
+<a name="acceleration-architecture"></a>
+<h2>Acceleration Architecture</h2>
+<p>The diagram below shows the Qt for Embedded Linux painting architecture.</p>
+<p align="center"><img src="images/qt-embedded-opengl3.png" /></p><p>A client process widget uses a paint engine to draw into a window surface. The server then combines the window surfaces and displays the composition on the screen. This architecture lets you control the steps of the painting process by subclassing.</p>
+<p>Subclassing <a href="qpaintengine.html">QPaintEngine</a> allows you to implement the <a href="qpainter.html">QPainter</a> API using accelerated hardware. Subclassing QWindowSurface lets you decide the properties of the space your widgets will draw themselves into, as well as which paint engine they should use to draw themselves into that space. Subclassing QScreen lets you control the creation of window surfaces and lets you decide how to implement window compositing. Using subclassing, your implementation work is minimized since you can reuse base class functionality you don't need to change.</p>
+<p>The elements of an accelerated Qt for Embedded Linux system are shown in the diagram below.</p>
+<p align="center"><img src="images/qt-embedded-opengl1.png" /></p><p>The applications, using the Qt API, do not depend on the presence of the acceleration plugin. The plugin uses the graphics hardware to accelerate painting primitives. Any operations not accelerated by the plugin are done in software by the software paint engine.</p>
+<p>To integrate an OpenGL implementation into Qt for Embedded Linux for a particular platform, you use the same mechanisms you would use for writing any other accelerated driver. Base classes, e.g&#x2e;, QGLScreen and QWSGLWindowSurface, are provided to minimize the need for reimplementing common functionality.</p>
+<a name="the-reference-integration"></a>
+<h2>The Reference Integration</h2>
+<p>The <a href="qws-ahigl.html">OpenGL for Embedded Systems Example</a> is the reference implementation for integrating OpenGL ES and <a href="http://www.khronos.org/egl/">EGL</a> with the graphics acceleration architecture of Qt for Embedded Linux. (<a href="http://www.khronos.org/egl/">EGL</a> is a library that binds OpenGL ES to native windowing systems.)</p>
+<p>The diagram below shows how OpenGL ES is used within the acceleration architecture:</p>
+<p align="center"><img src="images/qt-embedded-opengl2.png" /></p><p>The example implements a screen driver plugin that demonstrates all three uses of OpenGL in Qt for Embedded Linux: 2D graphics acceleration, 3D graphics operations using the <a href="qtopengl.html">QtOpenGL module</a>, and top-level window compositing and special effects. The applications still do not talk directly to the accelerated plugin.</p>
+<p>For 2D graphics, applications use the normal Qt painting API. The example accelerates 2D painting by using the QOpenGLPaintEngine, which is included in the <a href="qtopengl.html">QtOpenGL module</a>.</p>
+<p>For 3D graphics applications use the OpenGL API directly, together with the functionality in the Qt OpenGL support classes. The example supports this by creating a QWSGLWindowSurface whenever a <a href="qglwidget.html">QGLWidget</a> is instantiated.</p>
+<p>All access to the display is done through OpenGL. The example subclasses QWSGLWindowSurface implementation and uses the <a href="http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt">OpenGL Framebuffer Object extension</a> to draw windows into an offscreen buffer. This lets the example use OpenGL to implement top level window compositing of opaque and semi-transparent windows, and to provide a 3D animated transition effect as each new window is shown.</p>
+<p>The specific OpenGL library being used by the example restricts all OpenGL operations to occur in a single process. Hence the example creates instances of QWSGLWindowSurface only in the server process. Other processes then perform 2D graphics by creating instances of the standard QWindowSurface classes for client processes. The standard window surface performs software-based rendering into a shared memory segment. The server then transfers the contents of this shared memory into an OpenGL texture before they are drawn onto the screen during window compositing.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

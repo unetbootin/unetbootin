@@ -1,0 +1,236 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3SqlFieldInfo
+    \brief The Q3SqlFieldInfo class stores meta data associated with a SQL field.
+
+    \compat
+
+    Q3SqlFieldInfo objects only store meta data; field values are
+    stored in QSqlField objects.
+
+    All values must be set in the constructor, and may be retrieved
+    using isRequired(), type(), length(), precision(), defaultValue(),
+    name(), isGenerated() and typeID().
+
+    \sa Q3SqlRecordInfo
+*/
+
+/*!
+    \fn Q3SqlFieldInfo::Q3SqlFieldInfo(const QString& name,
+                                       QVariant::Type typ,
+                                       int required,
+                                       int len,
+                                       int prec,
+                                       const QVariant& defValue,
+                                       int typeID,
+                                       bool generated,
+                                       bool trim,
+                                       bool calculated)
+
+    Constructs a Q3SqlFieldInfo with the following parameters:
+    \table
+    \row \i \a name  \i the name of the field.
+    \row \i \a typ   \i the field's type in a QVariant.
+    \row \i \a required  \i greater than 0 if the field is required, 0
+    if its value can be NULL and less than 0 if it cannot be
+    determined whether the field is required or not.
+    \row \i \a len  \i the length of the field. Note that for
+    non-character types some databases return either the length in
+    bytes or the number of digits. -1 signifies that the length cannot
+    be determined.
+    \row \i \a prec  \i the precision of the field, or -1 if the field
+    has no precision or it cannot be determined.
+    \row \i \a defValue  \i the default value that is inserted into
+    the table if none is specified by the user. QVariant() if there is
+    no default value or it cannot be determined.
+    \row \i \a typeID  \i the internal typeID of the database system
+    (only useful for low-level programming). 0 if unknown.
+    \row \i \a generated  \i TRUE indicates that this field should be
+    included in auto-generated SQL statments, e.g. in Q3SqlCursor.
+    \row \i \a trim  \i TRUE indicates that widgets should remove
+    trailing whitespace from character fields. This does not affect
+    the field value but only its representation inside widgets.
+    \row \i \a calculated  \i TRUE indicates that the value of this
+    field is calculated. The value of calculated fields can by
+    modified by subclassing Q3SqlCursor and overriding
+    Q3SqlCursor::calculateField().
+    \endtable
+*/
+
+/*!
+    \fn Q3SqlFieldInfo::~Q3SqlFieldInfo()
+
+    Destroys the object and frees any allocated resources.
+*/
+
+/*!
+    \fn Q3SqlFieldInfo::Q3SqlFieldInfo(const QSqlField & other)
+
+    Creates a Q3SqlFieldInfo object with the type and the name of the
+    QSqlField \a other.
+*/
+
+/*!
+    \fn bool Q3SqlFieldInfo::operator==(const Q3SqlFieldInfo& other) const
+
+    Assigns \a other to this field info and returns a reference to it.
+*/
+
+/*!
+    \fn QSqlField Q3SqlFieldInfo::toField() const
+
+    Returns an empty QSqlField based on the information in this
+    Q3SqlFieldInfo.
+*/
+
+/*!
+    \fn int Q3SqlFieldInfo::isRequired() const
+
+    Returns a value greater than 0 if the field is required (NULL
+    values are not allowed), 0 if it isn't required (NULL values are
+    allowed) or less than 0 if it cannot be determined whether the
+    field is required or not.
+*/
+
+/*!
+    \fn QVariant::Type Q3SqlFieldInfo::type() const
+
+    Returns the field's type or QVariant::Invalid if the type is
+    unknown.
+*/
+
+/*!
+    \fn int Q3SqlFieldInfo::length() const
+
+    Returns the field's length. For fields storing text the return
+    value is the maximum number of characters the field can hold. For
+    non-character fields some database systems return the number of
+    bytes needed or the number of digits allowed. If the length cannot
+    be determined -1 is returned.
+*/
+
+/*!
+    \fn int Q3SqlFieldInfo::precision() const
+
+    Returns the field's precision or -1 if the field has no precision
+    or it cannot be determined.
+*/
+
+/*!
+    \fn QVariant Q3SqlFieldInfo::defaultValue() const
+
+    Returns the field's default value or an empty QVariant if the
+    field has no default value or the value couldn't be determined.
+    The default value is the value inserted in the database when it
+    is not explicitly specified by the user.
+*/
+
+/*!
+    \fn QString Q3SqlFieldInfo::name() const
+
+    Returns the name of the field in the SQL table.
+*/
+
+/*!
+    \fn int Q3SqlFieldInfo::typeID() const
+
+    Returns the internal type identifier as returned from the database
+    system. The return value is 0 if the type is unknown.
+*/
+
+/*!
+    \fn bool Q3SqlFieldInfo::isGenerated() const
+
+    Returns TRUE if the field should be included in auto-generated
+    SQL statments, e.g. in Q3SqlCursor; otherwise returns FALSE.
+
+    \sa setGenerated()
+*/
+
+/*!
+    \fn bool Q3SqlFieldInfo::isTrim() const
+
+    Returns TRUE if trailing whitespace should be removed from
+    character fields; otherwise returns FALSE.
+
+    \sa setTrim()
+*/
+
+/*!
+    \fn bool Q3SqlFieldInfo::isCalculated() const
+
+    Returns TRUE if the field is calculated; otherwise returns FALSE.
+
+    \sa setCalculated()
+*/
+
+/*!
+    \fn void Q3SqlFieldInfo::setTrim(bool trim)
+
+    If \a trim is TRUE widgets should remove trailing whitespace from
+    character fields. This does not affect the field value but only
+    its representation inside widgets.
+
+    \sa isTrim()
+*/
+
+/*!
+    \fn void Q3SqlFieldInfo::setGenerated(bool generated)
+
+    \a generated set to FALSE indicates that this field should not appear
+    in auto-generated SQL statements (for example in Q3SqlCursor).
+
+    \sa isGenerated()
+*/
+
+/*!
+    \fn void Q3SqlFieldInfo::setCalculated(bool calculated)
+
+    \a calculated set to TRUE indicates that this field is a calculated
+    field. The value of calculated fields can by modified by subclassing
+    Q3SqlCursor and overriding Q3SqlCursor::calculateField().
+
+    \sa isCalculated()
+*/

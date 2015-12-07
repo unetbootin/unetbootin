@@ -1,0 +1,119 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+\page objecttrees.html
+\title Object Trees and Object Ownership
+\ingroup architecture
+\brief Information about the parent-child pattern used to describe
+object ownership in Qt.
+
+\section1 Overview
+
+\link QObject QObjects\endlink organize themselves in object trees.
+When you create a QObject with another object as parent, it's added to
+the parent's \link QObject::children() children() \endlink list, and
+is deleted when the parent is. It turns out that this approach fits
+the needs of GUI objects very well. For example, a \l QShortcut
+(keyboard shortcut) is a child of the relevant window, so when the
+user closes that window, the shorcut is deleted too.
+
+\l QWidget, the base class of everything that appears on the screen,
+extends the parent-child relationship. A child normally also becomes a
+child widget, i.e. it is displayed in its parent's coordinate system
+and is graphically clipped by its parent's boundaries. For example,
+when the application deletes a message box after it has been
+closed, the message box's buttons and label are also deleted, just as
+we'd want, because the buttons and label are children of the message
+box.
+
+You can also delete child objects yourself, and they will remove
+themselves from their parents. For example, when the user removes a
+toolbar it may lead to the application deleting one of its \l QToolBar
+objects, in which case the tool bar's \l QMainWindow parent would
+detect the change and reconfigure its screen space accordingly.
+
+The debugging functions \l QObject::dumpObjectTree() and \l
+QObject::dumpObjectInfo() are often useful when an application looks or
+acts strangely.
+
+\target note on the order of construction/destruction of QObjects
+\section1 Construction/Destruction Order of QObjects
+
+When \l {QObject} {QObjects} are created on the heap (i.e., created
+with \e new), a tree can be constructed from them in any order, and
+later, the objects in the tree can be destroyed in any order. When any
+QObject in the tree is deleted, if the object has a parent, the
+destructor automatically removes the object from its parent. If the
+object has children, the destructor automatically deletes each
+child. No QObject is deleted twice, regardless of the order of
+destruction.
+
+When \l {QObject} {QObjects} are created on the stack, the same
+behavior applies. Normally, the order of destruction still doesn't
+present a problem. Consider the following snippet:
+
+\snippet doc/src/snippets/code/doc.src.objecttrees.qdoc 0
+
+The parent, \c window, and the child, \c quit, are both \l {QObject}
+{QObjects} because QPushButton inherits QWidget, and QWidget inherits
+QObject. This code is correct: the destructor of \c quit is \e not
+called twice because the C++ language standard \e {(ISO/IEC 14882:2003)}
+specifies that destructors of local objects are called in the reverse
+order of their constructors. Therefore, the destructor of
+the child, \c quit, is called first, and it removes itself from its
+parent, \c window, before the destructor of \c window is called.
+
+But now consider what happens if we swap the order of construction, as
+shown in this second snippet:
+
+\snippet doc/src/snippets/code/doc.src.objecttrees.qdoc 1
+
+In this case, the order of destruction causes a problem. The parent's
+destructor is called first because it was created last. It then calls
+the destructor of its child, \c quit, which is incorrect because \c
+quit is a local variable. When \c quit susequently goes out of scope,
+its destructor is called again, this time correctly, but the damage has
+already been done.
+
+*/

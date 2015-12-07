@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/basicgraphicslayouts.qdoc -->
+<head>
+  <title>Qt 4.4: Basic Graphics Layouts Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Basic Graphics Layouts Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="graphicsview-basicgraphicslayouts-layoutitem-cpp.html">graphicsview/basicgraphicslayouts/layoutitem.cpp</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-layoutitem-h.html">graphicsview/basicgraphicslayouts/layoutitem.h</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-window-cpp.html">graphicsview/basicgraphicslayouts/window.cpp</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-window-h.html">graphicsview/basicgraphicslayouts/window.h</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-main-cpp.html">graphicsview/basicgraphicslayouts/main.cpp</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-basicgraphicslayouts-pro.html">graphicsview/basicgraphicslayouts/basicgraphicslayouts.pro</a></li>
+<li><a href="graphicsview-basicgraphicslayouts-basicgraphicslayouts-qrc.html">graphicsview/basicgraphicslayouts/basicgraphicslayouts.qrc</a></li>
+</ul>
+<p>The Basic Graphics Layouts example shows how to use the layout classes in <a href="qgraphicsview.html">QGraphicsView</a>: <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> and <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a>.</p>
+<p align="center"><img src="images/basicgraphicslayouts-example.png" alt="Screenshot of the Basic Layouts Example" /></p><a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class is a subclass of <a href="qgraphicswidget.html">QGraphicsWidget</a>. It has a constructor with a <a href="qgraphicswidget.html">QGraphicsWidget</a> <i>parent</i> as its parameter.</p>
+<pre> class Window : public QGraphicsWidget {
+     Q_OBJECT
+
+ public:
+     Window(QGraphicsWidget *parent = 0);
+
+ };</pre>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor of <tt>Window</tt> instantiates a <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> object, <tt>windowLayout</tt>, with vertical orientation. We instantiate another <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> object, <tt>linear</tt>, whose parent is <tt>windowLayout</tt>. Next, we create a <tt>LayoutItem</tt> object, <tt>item</tt> and add it to <tt>linear</tt> with the <a href="qgraphicslinearlayout.html#addItem">addItem()</a> function. We also provide <tt>item</tt> with a <a href="qgraphicslinearlayout.html#setStretchFactor">stretchFactor</a>.</p>
+<pre>     QGraphicsLinearLayout *windowLayout = new QGraphicsLinearLayout(Qt::Vertical);
+     QGraphicsLinearLayout *linear = new QGraphicsLinearLayout(windowLayout);
+     LayoutItem *item = new LayoutItem;
+     linear-&gt;addItem(item);
+     linear-&gt;setStretchFactor(item, 1);</pre>
+<p>We repeat the process:</p>
+<ul>
+<li>create a new <tt>LayoutItem</tt>,</li>
+<li>add the item <tt>linear</tt>, and</li>
+<li>provide a stretch factor.</li>
+</ul>
+<pre>     item = new LayoutItem;
+     linear-&gt;addItem(item);
+     linear-&gt;setStretchFactor(item, 3);
+     windowLayout-&gt;addItem(linear);</pre>
+<p>We then add <tt>linear</tt> to <tt>windowLayout</tt>, nesting two <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> objects. Apart from the <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a>, we also use a <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a> object, <tt>grid</tt>, which is a 4x3 grid with some cells spanning to other rows.</p>
+<p>We create seven <tt>LayoutItem</tt> objects and place them into <tt>grid</tt> with the <a href="qgraphicsgridlayout.html#addItem">addItem()</a> function as shown in the code snippet below:</p>
+<pre>     QGraphicsGridLayout *grid = new QGraphicsGridLayout(windowLayout);
+     item = new LayoutItem;
+     grid-&gt;addItem(item, 0, 0, 4, 1);
+     item = new LayoutItem;
+     item-&gt;setMaximumHeight(item-&gt;minimumHeight());
+     grid-&gt;addItem(item, 0, 1, 2, 1, Qt::AlignVCenter);
+     item = new LayoutItem;
+     item-&gt;setMaximumHeight(item-&gt;minimumHeight());
+     grid-&gt;addItem(item, 2, 1, 2, 1, Qt::AlignVCenter);
+     item = new LayoutItem;
+     grid-&gt;addItem(item, 0, 2);
+     item = new LayoutItem;
+     grid-&gt;addItem(item, 1, 2);
+     item = new LayoutItem;
+     grid-&gt;addItem(item, 2, 2);
+     item = new LayoutItem;
+     grid-&gt;addItem(item, 3, 2);
+     windowLayout-&gt;addItem(grid);</pre>
+<p>The first item we add to <tt>grid</tt> is placed in the top left cell, spanning four rows. The next two items are placed in the second column, and they span two rows. Each item's <a href="qgraphicslayoutitem.html#maximumHeight">maximumHeight()</a> and <a href="qgraphicslayoutitem.html#minimumHeight">minimumHeight()</a> are set to be equal so that they do not expand vertically. As a result, these items will not fit vertically in their cells. So, we specify that they should be vertically aligned in the center of the cell using <a href="qt.html#AlignmentFlag-enum">Qt::AlignVCenter</a>.</p>
+<p>Finally, <tt>grid</tt> itself is added to <tt>windowLayout</tt>. Unlike <a href="qgridlayout.html#addItem">QGridLayout::addItem</a>(), <a href="qgraphicsgridlayout.html#addItem">QGraphicsGridLayout::addItem</a>() requires a row and a column for its argument, specifying which cell the item should be positioned in. Also, if the <tt>rowSpan</tt> and <tt>columnSpan</tt> arguments are omitted, they will default to 1.</p>
+<p>Note that we do not specify a parent for each <tt>LayoutItem</tt> that we construct, as all these items will be added to <tt>windowLayout</tt>. When we add an item to a layout, it will be automatically reparented to the widget on which the layout is installed.</p>
+<pre>     setLayout(windowLayout);
+     setWindowTitle(tr(&quot;Basic Graphics Layouts Example&quot;));</pre>
+<p>Now that we have set up <tt>grid</tt> and added it to <tt>windowLayout</tt>, we install <tt>windowLayout</tt> onto the window object using <a href="qgraphicswidget.html#setLayout">QGraphicsWidget::setLayout</a>() and we set the window title.</p>
+<a name="layoutitem-class-definition"></a>
+<h2>LayoutItem Class Definition</h2>
+<p>The <tt>LayoutItem</tt> class is a subclass of <a href="qgraphicswidget.html">QGraphicsWidget</a>. It has a constructor, a destructor, and a reimplementation of the {<a href="qgraphicsitem.html#paint">QGraphicsItem::paint</a>()}{paint()} function.</p>
+<pre> class LayoutItem : public QGraphicsWidget
+ {
+     Q_OBJECT
+
+ public:
+     LayoutItem(QGraphicsItem *parent = 0);
+     ~LayoutItem();
+     void paint(QPainter *painter, const QStyleOptionGraphicsItem *option,
+         QWidget *widget = 0);
+
+ private:
+     QPixmap *pix;
+ };</pre>
+<p>The <tt>LayoutItem</tt> class also has a private instance of <a href="qpixmap.html">QPixmap</a>, <tt>pix</tt>.</p>
+<p><b>Note:</b> We subclass <a href="qgraphicswidget.html">QGraphicsWidget</a> so that <tt>LayoutItem</tt> objects can be automatically plugged into a layout, as <a href="qgraphicswidget.html">QGraphicsWidget</a> is a specialization of <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a>.</p>
+<a name="layoutitem-class-implementation"></a>
+<h2>LayoutItem Class Implementation</h2>
+<p>In <tt>LayoutItem</tt>'s constructor, <tt>pix</tt> is instantiated and the <tt>QT_original_R.png</tt> image is loaded into it. We set the size of <tt>LayoutItem</tt> to be slightly larger than the size of the pixmap as we require some space around it for borders that we will paint later. Alternatively, you could scale the pixmap to prevent the item from becoming smaller than the pixmap.</p>
+<pre> LayoutItem::LayoutItem(QGraphicsItem *parent<span class="comment">/* = 0*/</span>)
+     : QGraphicsWidget(parent)
+ {
+     pix = new QPixmap(QLatin1String(&quot;:/images/QT_original_R.png&quot;));
+     <span class="comment">//</span> Do not allow a size smaller than the pixmap with two frames around it.
+     setMinimumSize(pix-&gt;size() + QSize(12, 12));
+ }</pre>
+<p>We use the <a href="qtglobal.html#Q_UNUSED">Q_UNUSED</a>() macro to prevent the compiler from generating warnings regarding unused parameters.</p>
+<pre> void LayoutItem::paint(QPainter *painter,
+     const QStyleOptionGraphicsItem *option, QWidget *widget <span class="comment">/*= 0*/</span>)
+ {
+     Q_UNUSED(widget);
+     Q_UNUSED(option);
+
+     QRectF frame(QPointF(0,0), geometry().size());
+     qreal w = pix-&gt;width();
+     qreal h = pix-&gt;height();
+     QGradientStops stops;</pre>
+<p>The idea behind the <tt>paint()</tt> function is to paint the background rect then paint a rect around the pixmap.</p>
+<pre>     <span class="comment">//</span> paint a background rect (with gradient)
+     QLinearGradient gradient(frame.topLeft(), frame.topLeft() + QPointF(200,200));
+     stops &lt;&lt; QGradientStop(0.0, QColor(60, 60,  60));
+     stops &lt;&lt; QGradientStop(frame.height()/2/frame.height(), QColor(157, 195,  55));
+
+     <span class="comment">//</span>stops &lt;&lt; QGradientStop(((frame.height() + h)/2 )/frame.height(), QColor(157, 195,  55));
+     stops &lt;&lt; QGradientStop(1.0, QColor(215, 215, 215));
+     gradient.setStops(stops);
+     painter-&gt;setBrush(QBrush(gradient));
+     painter-&gt;drawRoundedRect(frame, 10.0, 10.0);
+
+     <span class="comment">//</span> paint a rect around the pixmap (with gradient)
+     QPointF pixpos = frame.center() - (QPointF(w, h)/2);
+     QRectF innerFrame(pixpos, QSizeF(w, h));
+     innerFrame.adjust(-4, -4, +4, +4);
+     gradient.setStart(innerFrame.topLeft());
+     gradient.setFinalStop(innerFrame.bottomRight());
+     stops.clear();
+     stops &lt;&lt; QGradientStop(0.0, QColor(215, 255, 200));
+     stops &lt;&lt; QGradientStop(0.5, QColor(157, 195,  55));
+     stops &lt;&lt; QGradientStop(1.0, QColor(0, 0,  0));
+     gradient.setStops(stops);
+     painter-&gt;setBrush(QBrush(gradient));
+     painter-&gt;drawRoundedRect(innerFrame, 10.0, 10.0);
+     painter-&gt;drawPixmap(pixpos, *pix);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

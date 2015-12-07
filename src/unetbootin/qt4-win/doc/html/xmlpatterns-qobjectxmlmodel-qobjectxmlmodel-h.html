@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: qobjectxmlmodel.h Example File (xmlpatterns/qobjectxmlmodel/qobjectxmlmodel.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">qobjectxmlmodel.h Example File<br /><span class="small-subtitle">xmlpatterns/qobjectxmlmodel/qobjectxmlmodel.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef Patternist_QObjectNodeModel_H
+ #define Patternist_QObjectNodeModel_H
+
+ #include &lt;QSimpleXmlNodeModel&gt;
+
+ QT_BEGIN_HEADER
+ class QObject;
+ class PropertyToAtomicValue;
+
+<span class="comment"> /**
+  * @short Delegates QtCore's QObject into Patternist's QAbstractXmlNodeModel.
+  * known as pre/post numbering.
+  *
+  * QObjectXmlModel sets the toggle on QXmlNodeModelIndex to @c true, if it
+  * represents a property of the QObject. That is, if the QXmlNodeModelIndex is
+  * an attribute.
+  *
+  * @author Frans Englich &lt;fenglich@trolltech.com&gt;
+  */</span>
+ class QObjectXmlModel : public QSimpleXmlNodeModel
+ {
+ public:
+     QObjectXmlModel(QObject *const object,
+                     const QXmlNamePool &amp;np);
+
+     QXmlNodeModelIndex root() const;
+
+     <span class="comment">/**
+      * @short Returns the same as baseURI().
+      */</span>
+     virtual QUrl documentUri(const QXmlNodeModelIndex &amp;ni) const;
+
+     virtual QXmlNodeModelIndex::NodeKind kind(const QXmlNodeModelIndex &amp;ni) const;
+     virtual QXmlNodeModelIndex::DocumentOrder compareOrder(const QXmlNodeModelIndex &amp;ni1, const QXmlNodeModelIndex &amp;ni2) const;
+     virtual QXmlNodeModelIndex root(const QXmlNodeModelIndex &amp;n) const;
+     virtual QXmlNodeModelIndex parent(const QXmlNodeModelIndex &amp;ni) const;
+     virtual QXmlName name(const QXmlNodeModelIndex &amp;ni) const;
+     virtual QVariant typedValue(const QXmlNodeModelIndex &amp;n) const;
+     virtual QXmlNodeModelIndex nextFromSimpleAxis(SimpleAxis, const QXmlNodeModelIndex&amp;) const;
+     virtual QVector&lt;QXmlNodeModelIndex&gt; attributes(const QXmlNodeModelIndex&amp;) const;
+
+ private:
+     <span class="comment">/**
+      * The highest three bits are used to signify whether the node index
+      * is an artificial node.
+      */</span>
+     enum QObjectNodeType
+     {
+         IsQObject               = 0,
+         <span class="comment">/**
+          * @short if QXmlNodeModelIndex::additionalData() has this flag set, then
+          * the QXmlNodeModelIndex is an attribute of the QObject element, and the
+          * remaining bits forms an offset to the QObject's property
+          * that this QXmlNodeModelIndex corresponds to.
+          */</span>
+         QObjectProperty         = 1 &lt;&lt; 26,
+         MetaObjects             = 2 &lt;&lt; 26,
+         MetaObject              = 3 &lt;&lt; 26,
+
+         <span class="comment">/**
+          * metaObjects/metaObject/@superClass
+          */</span>
+         MetaObjectClassName     = 4 &lt;&lt; 26,
+         <span class="comment">/**
+          * metaObjects/metaObject/@superClass
+          */</span>
+         MetaObjectSuperClass    = 5 &lt;&lt; 26,
+         <span class="comment">/**
+          * QObject/@className
+          */</span>
+         QObjectClassName        = 6 &lt;&lt; 26
+     };
+
+     typedef QVector&lt;const QMetaObject *&gt; AllMetaObjects;
+     AllMetaObjects allMetaObjects() const;
+
+     static QObjectNodeType toNodeType(const QXmlNodeModelIndex &amp;ni);
+
+     static bool isTypeSupported(QVariant::Type type);
+     static inline QObject *asQObject(const QXmlNodeModelIndex &amp;n);
+     static inline bool isProperty(const QXmlNodeModelIndex n);
+     static inline QMetaProperty toMetaProperty(const QXmlNodeModelIndex &amp;n);
+     <span class="comment">/**
+      * Returns the ancestors of @p n. Does therefore not include
+      * @p n.
+      */</span>
+     inline QXmlNodeModelIndex::List ancestors(const QXmlNodeModelIndex n) const;
+     QXmlNodeModelIndex qObjectSibling(const int pos,
+                                       const QXmlNodeModelIndex &amp;ni) const;
+     QXmlNodeModelIndex metaObjectSibling(const int pos,
+                                          const QXmlNodeModelIndex &amp;ni) const;
+
+     const QUrl              m_baseURI;
+     QObject *const          m_root;
+     const AllMetaObjects    m_allMetaObjects;
+ };
+
+
+ QT_END_HEADER
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

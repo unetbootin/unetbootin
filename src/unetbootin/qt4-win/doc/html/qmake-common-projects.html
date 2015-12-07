@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: qmake Common Projects</title>
+  <link rel="prev" href="qmake-tutorial.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-using.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-tutorial.html">qmake Tutorial</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-using.html">Using qmake</a>]
+</p>
+<h1 class="title">qmake Common Projects<br /><span class="subtitle"></span>
+</h1>
+<p>This chapter describes how to set up <tt>qmake</tt> project files for three common project types that are based on Qt. Although all kinds of projects use many of the same variables, each of them use project-specific variables to customize output files.</p>
+<p>Platform-specific variables are not described here; we refer the reader to the <a href="deployment.html">Deploying Qt Applications</a> document for information on issues such as <a href="deployment-mac.html#architecture-dependencies">building universal binaries for Mac OS X</a> and <a href="deployment-windows.html#visual-studio-2005">handling Visual Studio manifest files</a>.</p>
+<ul><li><a href="#building-an-application">Building an Application</a></li>
+<ul><li><a href="#the-app-template">The app Template</a></li>
+</ul>
+<li><a href="#building-a-library">Building a Library</a></li>
+<ul><li><a href="#the-lib-template">The lib Template</a></li>
+</ul>
+<li><a href="#building-a-plugin">Building a Plugin</a></li>
+<ul><li><a href="#building-a-qt-designer-plugin">Building a Qt Designer Plugin</a></li>
+</ul>
+<li><a href="#building-and-installing-in-debug-and-release-modes">Building and Installing in Debug and Release Modes</a></li>
+<ul><li><a href="#building-in-both-modes">Building in Both Modes</a></li>
+<li><a href="#installing-in-both-modes">Installing in Both Modes</a></li>
+</ul>
+</ul>
+<a name="application"></a><a name="building-an-application"></a>
+<h2>Building an Application</h2>
+<a name="the-app-template"></a>
+<h3>The app Template</h3>
+<p>The <tt>app</tt> template tells <tt>qmake</tt> to generate a Makefile that will build an application. With this template, the type of application can be specified by adding one of the following options to the <tt>CONFIG</tt> variable definition:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td>windows</td><td>The application is a Windows GUI application.</td></tr>
+<tr valign="top" class="even"><td>console</td><td><tt>app</tt> template only: the application is a Windows console application.</td></tr>
+</table></p>
+<p>When using this template the following <tt>qmake</tt> system variables are recognized. You should use these in your .pro file to specify information about your application.</p>
+<ul>
+<li>HEADERS - A list of all the header files for the application.</li>
+<li>SOURCES - A list of all the source files for the application.</li>
+<li>FORMS - A list of all the .ui files (created using <tt>Qt Designer</tt>) for the application.</li>
+<li>LEXSOURCES - A list of all the lex source files for the application.</li>
+<li>YACCSOURCES - A list of all the yacc source files for the application.</li>
+<li>TARGET - Name of the executable for the application. This defaults to the name of the project file. (The extension, if any, is added automatically).</li>
+<li>DESTDIR - The directory in which the target executable is placed.</li>
+<li>DEFINES - A list of any additional pre-processor defines needed for the application.</li>
+<li>INCLUDEPATH - A list of any additional include paths needed for the application.</li>
+<li>DEPENDPATH - The dependency search path for the application.</li>
+<li>VPATH - The search path to find supplied files.</li>
+<li><a href="qmake-variable-reference.html#def-file">DEF_FILE</a> - Windows only: A .def file to be linked against for the application.</li>
+<li><a href="qmake-variable-reference.html#rc-file">RC_FILE</a> - Windows only: A resource file for the application.</li>
+<li><a href="qmake-variable-reference.html#res-file">RES_FILE</a> - Windows only: A resource file to be linked against for the application.</li>
+</ul>
+<p>You only need to use the system variables that you have values for, for instance, if you don't have any extra INCLUDEPATHs then you don't need to specify any, <tt>qmake</tt> will add in the default ones needed. For instance, an example project file might look like this:</p>
+<pre>         TEMPLATE = app
+         DESTDIR  = c:/helloapp
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp
+         DEFINES += QT_DLL
+         CONFIG  += qt warn_on release</pre>
+<p>For items that are single valued, e.g&#x2e; the template or the destination directory, we use &quot;=&quot;; but for multi-valued items we use &quot;+=&quot; to <i>add</i> to the existing items of that type. Using &quot;=&quot; replaces the item's value with the new value, for example if we wrote <tt>DEFINES=QT_DLL</tt>, all other definitions would be deleted.</p>
+<a name="library"></a><a name="building-a-library"></a>
+<h2>Building a Library</h2>
+<a name="the-lib-template"></a>
+<h3>The lib Template</h3>
+<p>The <tt>lib</tt> template tells <tt>qmake</tt> to generate a Makefile that will build a library. When using this template, in addition to the system variables mentioned above for the <tt>app</tt> template the <tt>VERSION</tt> variable is supported. You should use these in your .pro file to specify information about the library.</p>
+<p>When using the <tt>lib</tt> template, the following options can be added to the <tt>CONFIG</tt> variable to determine the type of library that is built:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td>dll</td><td>The library is a shared library (dll).</td></tr>
+<tr valign="top" class="even"><td>staticlib</td><td>The library is a static library.</td></tr>
+<tr valign="top" class="odd"><td>plugin</td><td>The library is a plugin; this also enables the dll option.</td></tr>
+</table></p>
+<ul>
+<li>VERSION - The version number of the target library, for example, 2.3&#x2e;1&#x2e;</li>
+</ul>
+<a name="plugin"></a><a name="building-a-plugin"></a>
+<h2>Building a Plugin</h2>
+<p>Plugins are built using the <tt>lib</tt> template, as described in the previous section. This tells <tt>qmake</tt> to generate a Makefile for the project that will build a plugin in a suitable form for each platform, usually in the form of a library. As with ordinary libraries, the <tt>VERSION</tt> variable is used to specify information about the plugin.</p>
+<ul>
+<li>VERSION - The version number of the target library, for example, 2.3&#x2e;1&#x2e;</li>
+</ul>
+<a name="building-a-qt-designer-plugin"></a>
+<h3>Building a Qt Designer Plugin</h3>
+<p><i>Qt Designer</i> plugins are built using a specific set of configuration settings that depend on the way Qt was configured for your system. For convenience, these settings can be enabled by adding <tt>designer</tt> to the project's <tt>CONFIG</tt> variable. For example:</p>
+<pre> CONFIG      += designer plugin debug_and_release</pre>
+<p>See the <a href="examples.html#qt-designer">Qt Designer examples</a> for more examples of plugin-based projects.</p>
+<a name="building-and-installing-in-debug-and-release-modes"></a>
+<h2>Building and Installing in Debug and Release Modes</h2>
+<p>Sometimes, it is necessary to build a project in both debug and release modes. Although the <tt>CONFIG</tt> variable can hold both <tt>debug</tt> and <tt>release</tt> options, the <tt>debug</tt> option overrides the <tt>release</tt> option.</p>
+<a name="building-in-both-modes"></a>
+<h3>Building in Both Modes</h3>
+<p>To enable a project to be built in both modes, you must add the <tt>debug_and_release</tt> option to your project's <tt>CONFIG</tt> definition:</p>
+<pre> CONFIG += debug_and_release
+
+ CONFIG(debug, debug|release) {
+     TARGET = debug_binary
+ } else {
+     TARGET = release_binary
+ }</pre>
+<p>The scope in the above snippet modifies the build target in each mode to ensure that the resulting targets have different names. Providing different names for targets ensures that one will not overwrite the other.</p>
+<p>When <tt>qmake</tt> processes the project file, it will generate a Makefile rule to allow the project to be built in both modes. This can be invoked in the following way:</p>
+<pre>         make all</pre>
+<p>The <tt>build_all</tt> option can be added to the <tt>CONFIG</tt> variable in the project file to ensure that the project is built in both modes by default:</p>
+<pre> CONFIG += build_all</pre>
+<p>This allows the Makefile to be processed using the default rule:</p>
+<pre>         make</pre>
+<a name="installing-in-both-modes"></a>
+<h3>Installing in Both Modes</h3>
+<p>The <tt>build_all</tt> option also ensures that both versions of the target will be installed when the installation rule is invoked:</p>
+<pre>         make install</pre>
+<p>It is possible to customize the names of the build targets depending on the target platform. For example, a library or plugin may be named using a different convention on Windows to the one used on Unix platforms:</p>
+<pre>     CONFIG(debug, debug|release) {
+         mac: TARGET = $$join(TARGET,,,_debug)
+         win32: TARGET = $$join(TARGET,,d)
+     }</pre>
+<p>The default behavior in the above snippet is to modify the name used for the build target when building in debug mode. An <tt>else</tt> clause could be added to the scope to do the same for release mode; left as it is, the target name remains unmodified.</p>
+<p>
+[Previous: <a href="qmake-tutorial.html">qmake Tutorial</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-using.html">Using qmake</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

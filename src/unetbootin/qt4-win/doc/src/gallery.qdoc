@@ -1,0 +1,95 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \group gallery
+  \ingroup topics
+  \title Qt Widget Gallery
+  \brief Qt widgets shown in different styles on various platforms.
+
+  Qt's support for widget styles and themes enables your application to fit in
+  with the native desktop enviroment. Below, you can find links to the various
+  widget styles that are supplied with Qt 4.
+
+  \table
+  \row \i \inlineimage plastique-treeview.png
+  \i \bold{\l{gallery-plastique.html}{Plastique Style Widget Gallery}}
+
+  The Plastique style is provided by QPlastiqueStyle.
+
+  \row \i \inlineimage cleanlooks-tabwidget.png
+  \i \bold{\l{gallery-cleanlooks.html}{Cleanlooks Style Widget Gallery}}
+
+  The Cleanlooks style is provided by QCleanlooksStyle.
+
+  \row \i \inlineimage windowsvista-tabwidget.png
+  \i \bold{\l{gallery-windowsvista.html}{Windows Vista Style Widget Gallery}}
+
+  The Windows Vista style is provided by QWindowsVistaStyle.
+
+  \row \i \inlineimage windowsxp-tabwidget.png
+  \i \bold{\l{gallery-windowsxp.html}{Windows XP Style Widget Gallery}}
+
+  The Windows XP style is provided by QWindowsXPStyle.
+
+  \row \i \inlineimage macintosh-tabwidget.png
+  \i \bold{\l{gallery-macintosh.html}{Macintosh Style Widget Gallery}}
+
+  The Macintosh style is provided by QMacStyle.
+
+  \row \i \inlineimage windows-tableview.png
+  \i \bold{\l{gallery-windows.html}{Windows Style Widget Gallery}}
+
+  The Windows style is provided by QWindowsStyle.
+
+  \row \i \inlineimage motif-tabwidget.png
+  \i \bold{\l{gallery-motif.html}{Motif Style Widget Gallery}}
+
+  The Motif style is provided by QMotifStyle.
+
+  \row \i \inlineimage cde-treeview.png
+  \i \bold{\l{gallery-cde.html}{CDE Style Widget Gallery}}
+
+  The Common Desktop Environment style is provided by QCDEStyle.
+  \endtable
+*/

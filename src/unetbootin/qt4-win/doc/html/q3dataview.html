@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/sql/q3dataview.cpp -->
+<head>
+  <title>Qt 4.4: Q3DataView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DataView Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DataView class provides read-only SQL forms. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DataView&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdataview">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="q3dataview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dataview.html#Q3DataView">Q3DataView</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>fl</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dataview.html#dtor.Q3DataView">~Q3DataView</a></b> ()</li>
+<li><div class="fn"/>Q3SqlForm * <b><a href="q3dataview.html#form">form</a></b> ()</li>
+<li><div class="fn"/>QSqlRecord * <b><a href="q3dataview.html#record">record</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#setForm">setForm</a></b> ( Q3SqlForm * <i>form</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#setRecord">setRecord</a></b> ( QSqlRecord * <i>record</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#clearValues">clearValues</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#readFields">readFields</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#refresh">refresh</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dataview.html#writeFields">writeFields</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DataView class provides read-only SQL forms.</p>
+<p>This class provides a form which displays SQL field data from a record buffer. Because Q3DataView does not support editing it uses less resources than a <a href="q3databrowser.html">Q3DataBrowser</a>. This class is well suited for displaying read-only data from a SQL database.</p>
+<p>If you want a to present your data in an editable form use <a href="q3databrowser.html">Q3DataBrowser</a>; if you want a table-based presentation of your data use <a href="q3datatable.html">Q3DataTable</a>.</p>
+<p>The form is associated with the data view with <a href="q3dataview.html#setForm">setForm</a>() and the record is associated with <a href="q3dataview.html#setRecord">setRecord</a>(). You can also pass a <a href="qsqlrecord.html">QSqlRecord</a> to the <a href="q3dataview.html#refresh">refresh</a>() function which will set the record to the given record and read the record's fields into the form.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DataView"></a>Q3DataView::Q3DataView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>fl</i> = 0 )</h3>
+<p>Constructs a data view which is a child of <i>parent</i>, called <i>name</i>, and with widget flags <i>fl</i>.</p>
+<h3 class="fn"><a name="dtor.Q3DataView"></a>Q3DataView::~Q3DataView ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="clearValues"></a>void Q3DataView::clearValues ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears the default form's values. If there is no default form, nothing happens. All the values are set to their 'zero state', e.g&#x2e; 0 for numeric fields, &quot;&quot; for string fields.</p>
+<h3 class="fn"><a name="form"></a><a href="q3sqlform.html">Q3SqlForm</a> * Q3DataView::form ()</h3>
+<p>Returns the default form used by the data view, or 0 if there is none.</p>
+<p>See also <a href="q3dataview.html#setForm">setForm</a>().</p>
+<h3 class="fn"><a name="readFields"></a>void Q3DataView::readFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Causes the default form to read its fields from the record buffer. If there is no default form, or no record, nothing happens.</p>
+<p>See also <a href="q3dataview.html#setForm">setForm</a>().</p>
+<h3 class="fn"><a name="record"></a><a href="qsqlrecord.html">QSqlRecord</a> * Q3DataView::record ()</h3>
+<p>Returns the default record used by the data view, or 0 if there is none.</p>
+<p>See also <a href="q3dataview.html#setRecord">setRecord</a>().</p>
+<h3 class="fn"><a name="refresh"></a>void Q3DataView::refresh ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Causes the default form to display the contents of <i>buf</i>. If there is no default form, nothing happens.The <i>buf</i> also becomes the default record for all subsequent calls to <a href="q3dataview.html#readFields">readFields</a>() and writefields(). This slot is equivalant to calling:</p>
+<pre>     myView.setRecord(record);
+     myView.readFields();</pre>
+<p>See also <a href="q3dataview.html#setRecord">setRecord</a>() and <a href="q3dataview.html#readFields">readFields</a>().</p>
+<h3 class="fn"><a name="setForm"></a>void Q3DataView::setForm ( <a href="q3sqlform.html">Q3SqlForm</a> * <i>form</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the form used by the data view to <i>form</i>. If a record has already been assigned to the data view, the form will display that record's data.</p>
+<p>See also <a href="q3dataview.html#form">form</a>().</p>
+<h3 class="fn"><a name="setRecord"></a>void Q3DataView::setRecord ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>record</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the record used by the data view to <i>record</i>. If a form has already been assigned to the data view, the form will display the data from <i>record</i> in that form.</p>
+<p>See also <a href="q3dataview.html#record">record</a>().</p>
+<h3 class="fn"><a name="writeFields"></a>void Q3DataView::writeFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Causes the default form to write its fields to the record buffer. If there is no default form, or no record, nothing happens.</p>
+<p>See also <a href="q3dataview.html#setForm">setForm</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Getting Started with Qt Designer</title>
+  <link rel="prev" href="designer-manual.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-designing-a-component.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-manual.html">Qt Designer Manual</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-designing-a-component.html">Designing a Component with Qt Designer</a>]
+</p>
+<h1 class="title">Getting Started with Qt Designer<br /><span class="subtitle"></span>
+</h1>
+<p>This manual covers the fundamental steps that most users will take when creating graphical user interfaces with <i>Qt Designer</i>. We will introduce the main features of the tool by creating a simple dialog that we can use in an example program.</p>
+<p align="center"><img src="images/designer-getting-started.png" alt="A simple dialog produced with \QD." /></p><a name="launchingdesigner"></a><a name="launching-designer"></a>
+<h2>Launching Designer</h2>
+<p>The way that you launch <i>Qt Designer</i> depends on your platform:</p>
+<ul>
+<li>On Windows, click the Start button, open the <i>Programs</i> submenu, open the <i>Qt 4</i> submenu, and click <i>Designer</i>.</li>
+<li>On Unix or Linux, you may find a <i>Qt Designer</i> icon on the desktop background or in the desktop start menu under the <i>Programming</i> or <i>Development</i> submenus. You can launch <i>Qt Designer</i> from this icon. Alternatively, you can enter <tt>designer</tt> in a terminal window.</li>
+<li>On Mac OS X, double click on <i>Qt Designer</i> in the Finder.</li>
+</ul>
+<a name="theuserinterface"></a><a name="the-user-interface"></a>
+<h2>The User Interface</h2>
+<p>When used as a standalone application, <i>Qt Designer</i>'s user interface can be configured to provide either a multi-window user interface (the default mode), or it can be used in docked window mode. When used from within an integrated development environment (IDE) only the multi-window user interface is available. To switch modes, open the <i>Preferences</i> dialog (<i>Edit</i> menu).</p>
+<p>In multi-window mode, you can arrange each of the tool windows to suit your working style. The main window consists of a menu bar, a tool bar, and a widget box that contains the widgets you can use to create your user interface.</p>
+<a name="mainwindow"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-main-window.png" /></td><td><b><i>Qt Designer</i>'s Main Window</b><p>The menu bar provides all the standard actions for managing forms, using the clipboard, and accessing application-specific help. The current editing mode, the tool windows, and the forms in use can also be accessed via the menu bar.</p>
+<p>The tool bar displays common actions that are used when editing a form. These are also available via the main menu.</p>
+<p>The widget box provides common widgets and layouts that are used to design components. These are grouped into categories that reflect their uses or features.</p>
+</td></tr>
+</table></p>
+<p>Since Qt 4.4, you can customize your tool bar by clicking on <i>Tools</i> and selecting <i>Configure Toolbars..&#x2e;</i> to bring up the <b>Customize Toolbars</b> dialog shown below.</p>
+<p align="center"><img src="images/designer-customize-toolbar.png" /></p><p>Use the <b>Add Button</b> <img src="images/designer-add-custom-toolbar.png" /> to add a custom tool bar and the <b>Remove Button</b> <img src="images/designer-remove-custom-toolbar.png" /> to remove a custom tool bar.</p>
+<p>Most features of <i>Qt Designer</i> are accessible via the menu bar, the tool bar, or the widget box. Some features are also available through context menus that can be opened over the form windows. On most platforms, the right mouse button is used to open context menus.</p>
+<a name="widgetbox"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-widget-box.png" /></td><td><b><i>Qt Designer</i>'s Widget Box</b><p>The widget box provides a selection of standard Qt widgets, layouts, and other objects that can be used to create user interfaces on forms. Each of the categories in the widget box contain widgets with similar uses or related features.</p>
+<p><b>Note:</b> Since Qt 4.4, there are some new widgets included, such as: <a href="qplaintextedit.html">QPlainTextEdit</a>, <a href="qcommandlinkbutton.html">QCommandLinkButton</a>, <a href="qscrollarea.html">QScrollArea</a>, <a href="qmdiarea.html">QMdiArea</a> and <a href="qwebview.html">QWebView</a>.</p>
+<p>You can display all of the available objects in a category by clicking on the handle next to the category label. When in <a href="designer-editing-mode.html">Widget Editing Mode</a>, you can add objects to a form by dragging the appropriate items from the widget box onto the form, and dropping them in the required locations.</p>
+<p><i>Qt Designer</i> provides a scratch pad feature that allows you to collect the most commonly used objects in a separate category. This category will be saved for later use when exiting <i>Qt Designer</i>. The scratch pad category can be filled with any widget currently displayed in a form by simply dragging them from the form and dropping them onto the widget box. These widgets can be used in the same way as any other widgets, but in additon they can contain child widgets. Open a context menu over a widget to change its name or remove it from the scratch pad.</p>
+</td></tr>
+</table></p>
+<p>
+[Previous: <a href="designer-manual.html">Qt Designer Manual</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-designing-a-component.html">Designing a Component with Qt Designer</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

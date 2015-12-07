@@ -1,0 +1,13 @@
+CREATE ..\..\lib\libQtTest.a
+ADDMOD tmp\obj\release_static\qtestcase.o
+ADDMOD tmp\obj\release_static\qtestlog.o
+ADDMOD tmp\obj\release_static\qtesttable.o
+ADDMOD tmp\obj\release_static\qtestdata.o
+ADDMOD tmp\obj\release_static\qtestresult.o
+ADDMOD tmp\obj\release_static\qasciikey.o
+ADDMOD tmp\obj\release_static\qplaintestlogger.o
+ADDMOD tmp\obj\release_static\qxmltestlogger.o
+ADDMOD tmp\obj\release_static\qsignaldumper.o
+ADDMOD tmp\obj\release_static\qabstracttestlogger.o
+ADDMOD tmp\obj\release_static\moc_qtesteventloop.o
+SAVE

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qaxcontainer.qdoc -->
+<head>
+  <title>Qt 4.4: QAxContainer Module</title>
+  <link rel="prev" href="qttest.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qaxserver.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qttest.html">QtTest Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qaxserver.html">QAxServer Module</a>]
+</p>
+<h1 class="title">QAxContainer Module<br /><span class="subtitle"></span>
+</h1>
+<p>The QAxContainer module is a Windows-only extension for accessing ActiveX controls and COM objects. <a href="#details">More...</a></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>The QAxContainer module is part of the <a href="activeqt.html#activeqt">ActiveQt</a> framework. It provides a library implementing a <a href="qwidget.html">QWidget</a> subclass, QAxWidget, that acts as a container for ActiveX controls, and a <a href="qobject.html">QObject</a> subclass, QAxObject, that can be used to easily access non-visual COM objects. Scripting COM objects embedded using these classes is possible through the QAxScript, QAxScriptManager and QAxScriptEngine classes, and a set of <a href="activeqt-tools.html">tools</a> makes it easy to access COM objects programmatically.</p>
+<p>The module consists of six classes</p>
+<ol type="1">
+<li>QAxBase is an abstract class that provides an API to initialize and access a COM object or ActiveX control.</li>
+<li>QAxObject provides a <a href="qobject.html">QObject</a> that wraps a COM object.</li>
+<li>QAxWidget is a <a href="qwidget.html">QWidget</a> that wraps an ActiveX control.</li>
+<li>QAxScriptManager, QAxScript and QAxScriptEngine provide an interface to the Windows Script Host.</li>
+</ol>
+<p>Some <a href="examples.html#activeqt">example applications</a> that use standard ActiveX controls to provide high-level user interface functionality are provided.</p>
+<p>The QAxContainer module is part of the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a> for Windows. It is <i>not</i> part of the <a href="opensourceedition.html">Qt Open Source Edition</a>.</p>
+<p>Topics:</p>
+<ul><li><a href="#using-the-library">Using the Library</a></li>
+<ul><li><a href="#distributing-qaxcontainer-applications">Distributing QAxContainer Applications</a></li>
+</ul>
+<li><a href="#instantiating-com-objects">Instantiating COM Objects</a></li>
+<ul><li><a href="#typical-error-messages">Typical Error Messages</a></li>
+<ul><li><a href="#requested-control-could-not-be-instantiated">Requested control could not be instantiated</a></li>
+</ul>
+</ul>
+<li><a href="#accessing-the-object-api">Accessing the Object API</a></li>
+<ul><li><a href="#generating-a-c-namespace">Generating a C++ Namespace</a></li>
+<li><a href="#call-by-name">Call-by-Name</a></li>
+<li><a href="#calling-function-through-a-script-engine">Calling Function Through a Script Engine</a></li>
+<li><a href="#calling-a-function-using-the-native-com-interfaces">Calling a Function Using the Native COM Interfaces</a></li>
+<li><a href="#typical-error-messages">Typical Error Messages</a></li>
+<ul><li><a href="#qaxbase-internalinvoke-no-such-method">QAxBase::internalInvoke: No such method</a></li>
+<li><a href="#error-calling-idispatch-member-non-optional-parameter-missing">Error calling IDispatch member: Non-optional parameter missing</a></li>
+<li><a href="#error-calling-idispatch-member-type-mismatch-in-parameter-n">Error calling IDispatch member: Type mismatch in parameter n</a></li>
+<li><a href="#qaxscriptmanager-call-no-script-provides-this-function">QAxScriptManager::call(): No script provides this function</a></li>
+</ul>
+</ul>
+</ul>
+<a name="using-the-library"></a>
+<h3>Using the Library</h3>
+<p>To build Qt applications that can host COM objects and ActiveX controls link the application against the QAxContainer module by adding</p>
+<pre>         CONFIG += qaxcontainer</pre>
+<p>to your application's <tt>.pro</tt> file.</p>
+<a name="distributing-qaxcontainer-applications"></a>
+<h4>Distributing QAxContainer Applications</h4>
+<p>The QAxContainer library is static, so there is no need to redistribute any additional files when using this module. Note however that the ActiveX server binaries you are using might not be installed on the target system, so you have to ship them with your package and register them during the installation process of your application.</p>
+<a name="instantiating-com-objects"></a>
+<h3>Instantiating COM Objects</h3>
+<p>To instantiate a COM object use the QAxBase::setControl() API, or pass the name of the object directly into the constructor of the QAxBase subclass you are using.</p>
+<p>The control can be specified in a variety of formats, but the fastest and most powerful format is to use the class ID (CLSID) of the object directly. The class ID can be prepended with information about a remote machine that the object should run on, and can include a license key for licensed controls.</p>
+<a name="typical-error-messages"></a>
+<h4>Typical Error Messages</h4>
+<p><a href="activeqt.html#activeqt">ActiveQt</a> prints error messages to the debug output when it encounters error situations at runtime. Usually you must run your program in the debugger to see these messages (e.g&#x2e; in Visual Studio's Debug output).</p>
+<a name="requested-control-could-not-be-instantiated"></a>
+<h5>Requested control could not be instantiated</h5>
+<p>The control requested in QAxBase::setControl() is not installed on this system, or is not accessible for the current user.</p>
+<p>The control might require administrator rights, or a license key. If the control is licensed, pass the license key to QAxBase::setControl as documented.</p>
+<a name="accessing-the-object-api"></a>
+<h3>Accessing the Object API</h3>
+<p><a href="activeqt.html#activeqt">ActiveQt</a> provides a Qt API to the COM object, and replaces COM datatypes with Qt equivalents.</p>
+<p>There are four ways to call APIs on the COM object:</p>
+<ul>
+<li>Generating a C++ namespace</li>
+<li>Call-by-name</li>
+<li>Through a script engine</li>
+<li>Using the native COM interfaces</li>
+</ul>
+<a name="generating-a-c-namespace"></a>
+<h4>Generating a C++ Namespace</h4>
+<p>To generate a C++ namespace for the type library you want to access, use the <a href="activeqt-dumpcpp.html#dumpcpp">dumpcpp</a> tool. Run this tool manually on the type library you want to use, or integrate it into the build system by adding the type libraries to the <tt>TYPELIBS</tt> variable in your application's <tt>.pro</tt> file:</p>
+<pre>         TYPELIBS = file.tlb</pre>
+<p>Note that <a href="activeqt-dumpcpp.html#dumpcpp">dumpcpp</a> might not be able to expose all APIs in the type library.</p>
+<p>Include the resulting header file in your code to access the object APIs through the generated C++ classes. See the Qutlook example for more information.</p>
+<a name="call-by-name"></a>
+<h4>Call-by-Name</h4>
+<p>Use QAxBase::dynamicCall() and QAxBase::querySubObject() as well as the <a href="qobject.html#setProperty">QObject::setProperty</a>() and <a href="qobject.html#property">QObject::property</a>() APIs to call the methods and properties of the COM object through their name. Use the <a href="activeqt-dumpdoc.html#dumpdoc">dumpdoc</a> tool to get the documentation of the Qt API for any COM object and its subobjects; note that not all of the COM object's APIs might be available.</p>
+<p>See the Webbrowser example for more information.</p>
+<a name="calling-function-through-a-script-engine"></a>
+<h4>Calling Function Through a Script Engine</h4>
+<p>A Qt application can host any ActiveScript engine installed on the system. The script engine can then run script code that accesses the COM objects.</p>
+<p>To instantiate a script engine, use QAxScriptManager::addObject() to register the COM objects you want to access from script, and QAxScriptManager::load() to load the script code into the engine. Then call the script functions using QAxScriptManager::call() or QAxScript::call().</p>
+<p>Which APIs of the COM object are available through scripting depends on the script language used.</p>
+<p>The <a href="activeqt-testcon.html">ActiveX Test Container</a> demonstrates loading of script files.</p>
+<a name="calling-a-function-using-the-native-com-interfaces"></a>
+<h4>Calling a Function Using the Native COM Interfaces</h4>
+<p>To call functions of the COM object that can not be accessed via any of the above methods it is possible to request the COM interface directly using QAxBase::queryInterface(). To get a C++ definition of the respective interface classes use the <tt>#import</tt> directive with the type library provided with the control; see your compiler manual for details.</p>
+<a name="typical-error-messages"></a>
+<h4>Typical Error Messages</h4>
+<p><a href="activeqt.html#activeqt">ActiveQt</a> prints error messages to the debug output when it encounters error situations at runtime. Usually you must run your program in the debugger to see these messages (e.g&#x2e; in Visual Studio's Debug output).</p>
+<a name="qaxbase-internalinvoke-no-such-method"></a>
+<h5>QAxBase::internalInvoke: No such method</h5>
+<p>A QAxBase::dynamicCall() failed - the function prototype did not match any function available in the object's API.</p>
+<a name="error-calling-idispatch-member-non-optional-parameter-missing"></a>
+<h5>Error calling IDispatch member: Non-optional parameter missing</h5>
+<p>A QAxBase::dynamicCall() failed - the function prototype was correct, but too few parameters were provided.</p>
+<a name="error-calling-idispatch-member-type-mismatch-in-parameter-n"></a>
+<h5>Error calling IDispatch member: Type mismatch in parameter n</h5>
+<p>A QAxBase::dynamicCall() failed - the function prototype was correct, but the paramter at index <tt>n</tt> was of the wrong type and could not be coerced to the correct type.</p>
+<a name="qaxscriptmanager-call-no-script-provides-this-function"></a>
+<h5>QAxScriptManager::call(): No script provides this function</h5>
+<p>You try to call a function that is provided through an engine that doesn't provide introspection (ie. ActivePython or ActivePerl). You need to call the function directly on the respective QAxScript object.</p>
+<p>See also <a href="activeqt.html">ActiveQt Framework</a>.</p>
+<p>
+[Previous: <a href="qttest.html">QtTest Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qaxserver.html">QAxServer Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

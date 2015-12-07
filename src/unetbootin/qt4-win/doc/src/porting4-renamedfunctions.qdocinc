@@ -1,0 +1,6 @@
+\row \o QRegExp::search() \o QRegExp::indexIn()
+\row \o QPixmap::convertFromImage \o QPixmap::fromImage() (static function)
+\row \o QStyle::querySubControl() \o QStyle::hitTestComplexControl()
+\row \o QStyle::querySubControlMetrics() \o QStyle::subControlRect()
+\row \o QStyle::unPolish() \o QStyle::unpolish()
+\row \o QThread::currentThread() \o QThread::currentThreadId()

@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (painting/fontsampler/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">painting/fontsampler/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;previewdialog.h&quot;
+
+ MainWindow::MainWindow(QWidget *parent)
+    : QMainWindow(parent)
+ {
+     setupUi(this);
+
+     sampleSizes &lt;&lt; 32 &lt;&lt; 24 &lt;&lt; 16 &lt;&lt; 14 &lt;&lt; 12 &lt;&lt; 8 &lt;&lt; 4 &lt;&lt; 2 &lt;&lt; 1;
+     markedCount = 0;
+     setupFontTree();
+
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(fontTree, SIGNAL(currentItemChanged(QTreeWidgetItem *, QTreeWidgetItem *)),
+             this, SLOT(showFont(QTreeWidgetItem *)));
+     connect(fontTree, SIGNAL(itemChanged(QTreeWidgetItem *, int)),
+             this, SLOT(updateStyles(QTreeWidgetItem *, int)));
+
+     fontTree-&gt;setItemSelected(fontTree-&gt;topLevelItem(0), true);
+     showFont(fontTree-&gt;topLevelItem(0));
+ }
+
+ void MainWindow::setupFontTree()
+ {
+     QFontDatabase database;
+     fontTree-&gt;setColumnCount(1);
+     fontTree-&gt;setHeaderLabels(QStringList() &lt;&lt; tr(&quot;Font&quot;));
+
+     foreach (QString family, database.families()) {
+         const QStringList styles = database.styles(family);
+         if (styles.isEmpty())
+             continue;
+
+         QTreeWidgetItem *familyItem = new QTreeWidgetItem(fontTree);
+         familyItem-&gt;setText(0, family);
+         familyItem-&gt;setCheckState(0, Qt::Unchecked);
+
+         foreach (QString style, styles) {
+             QTreeWidgetItem *styleItem = new QTreeWidgetItem(familyItem);
+             styleItem-&gt;setText(0, style);
+             styleItem-&gt;setCheckState(0, Qt::Unchecked);
+             styleItem-&gt;setData(0, Qt::UserRole,
+                 QVariant(database.weight(family, style)));
+             styleItem-&gt;setData(0, Qt::UserRole + 1,
+                 QVariant(database.italic(family, style)));
+         }
+     }
+ }
+
+ void MainWindow::on_clearAction_triggered()
+ {
+     QTreeWidgetItem *currentItem = fontTree-&gt;currentItem();
+     foreach (QTreeWidgetItem *item, fontTree-&gt;selectedItems())
+         fontTree-&gt;setItemSelected(item, false);
+     fontTree-&gt;setItemSelected(currentItem, true);
+ }
+
+ void MainWindow::on_markAction_triggered()
+ {
+     markUnmarkFonts(Qt::Checked);
+ }
+
+ void MainWindow::on_unmarkAction_triggered()
+ {
+     markUnmarkFonts(Qt::Unchecked);
+ }
+
+ void MainWindow::markUnmarkFonts(Qt::CheckState state)
+ {
+     QList&lt;QTreeWidgetItem *&gt; items = fontTree-&gt;selectedItems();
+     foreach (QTreeWidgetItem *item, items) {
+         if (item-&gt;checkState(0) != state)
+             item-&gt;setCheckState(0, state);
+     }
+ }
+
+ void MainWindow::showFont(QTreeWidgetItem *item)
+ {
+     if (!item)
+         return;
+
+     QString family;
+     QString style;
+     int weight;
+     bool italic;
+
+     if (item-&gt;parent()) {
+         family = item-&gt;parent()-&gt;text(0);
+         style = item-&gt;text(0);
+         weight = item-&gt;data(0, Qt::UserRole).toInt();
+         italic = item-&gt;data(0, Qt::UserRole + 1).toBool();
+     } else {
+         family = item-&gt;text(0);
+         style = item-&gt;child(0)-&gt;text(0);
+         weight = item-&gt;child(0)-&gt;data(0, Qt::UserRole).toInt();
+         italic = item-&gt;child(0)-&gt;data(0, Qt::UserRole + 1).toBool();
+     }
+
+     QString oldText = textEdit-&gt;toPlainText().trimmed();
+     bool modified = textEdit-&gt;document()-&gt;isModified();
+     textEdit-&gt;clear();
+     textEdit-&gt;document()-&gt;setDefaultFont(QFont(family, 32, weight, italic));
+
+     QTextCursor cursor = textEdit-&gt;textCursor();
+     QTextBlockFormat blockFormat;
+     blockFormat.setAlignment(Qt::AlignCenter);
+     cursor.insertBlock(blockFormat);
+
+     if (modified)
+         cursor.insertText(QString(oldText));
+     else
+         cursor.insertText(QString(&quot;%1 %2&quot;).arg(family).arg(style));
+
+     textEdit-&gt;document()-&gt;setModified(modified);
+ }
+
+ void MainWindow::updateStyles(QTreeWidgetItem *item, int column)
+ {
+     if (!item || column != 0)
+         return;
+
+     Qt::CheckState state = item-&gt;checkState(0);
+     QTreeWidgetItem *parent = item-&gt;parent();
+
+     if (parent) {
+
+         <span class="comment">//</span> Only count style items.
+         if (state == Qt::Checked)
+             ++markedCount;
+         else
+             --markedCount;
+
+         if (state == Qt::Checked &amp;&amp;
+             parent-&gt;checkState(0) == Qt::Unchecked) {
+             <span class="comment">//</span> Mark parent items when child items are checked.
+             parent-&gt;setCheckState(0, Qt::Checked);
+
+         } else if (state == Qt::Unchecked &amp;&amp;
+                    parent-&gt;checkState(0) == Qt::Checked) {
+
+             bool marked = false;
+             for (int row = 0; row &lt; parent-&gt;childCount(); ++row) {
+                 if (parent-&gt;child(row)-&gt;checkState(0) == Qt::Checked) {
+                     marked = true;
+                     break;
+                 }
+             }
+             <span class="comment">//</span> Unmark parent items when all child items are unchecked.
+             if (!marked)
+                 parent-&gt;setCheckState(0, Qt::Unchecked);
+         }
+     } else {
+         int row;
+         int number = 0;
+         for (row = 0; row &lt; item-&gt;childCount(); ++row) {
+             if (item-&gt;child(row)-&gt;checkState(0) == Qt::Checked)
+                 ++number;
+         }
+
+         <span class="comment">//</span> Mark/unmark all child items when marking/unmarking top-level
+         <span class="comment">//</span> items.
+         if (state == Qt::Checked &amp;&amp; number == 0) {
+             for (row = 0; row &lt; item-&gt;childCount(); ++row) {
+                 if (item-&gt;child(row)-&gt;checkState(0) == Qt::Unchecked)
+                     item-&gt;child(row)-&gt;setCheckState(0, Qt::Checked);
+             }
+         } else if (state == Qt::Unchecked &amp;&amp; number &gt; 0) {
+             for (row = 0; row &lt; item-&gt;childCount(); ++row) {
+                 if (item-&gt;child(row)-&gt;checkState(0) == Qt::Checked)
+                     item-&gt;child(row)-&gt;setCheckState(0, Qt::Unchecked);
+             }
+         }
+     }
+
+     printAction-&gt;setEnabled(markedCount &gt; 0);
+     printPreviewAction-&gt;setEnabled(markedCount &gt; 0);
+ }
+
+ void MainWindow::on_printAction_triggered()
+ {
+     pageMap = currentPageMap();
+
+     if (pageMap.count() == 0)
+         return;
+
+     QPrinter printer(QPrinter::HighResolution);
+     if (!setupPrinter(printer))
+         return;
+
+     int from = printer.fromPage();
+     int to = printer.toPage();
+     if (from &lt;= 0 &amp;&amp; to &lt;= 0) {
+         from = 1;
+         to = pageMap.keys().count();
+     }
+
+     QProgressDialog progress(tr(&quot;Printing font samples...&quot;), tr(&quot;&amp;Cancel&quot;),
+                              0, pageMap.count(), this);
+     progress.setWindowModality(Qt::ApplicationModal);
+     progress.setWindowTitle(tr(&quot;Printing&quot;));
+     progress.setMinimum(from - 1);
+     progress.setMaximum(to);
+
+     QPainter painter;
+     painter.begin(&amp;printer);
+     bool firstPage = true;
+
+     for (int index = from - 1; index &lt; to; ++index) {
+
+         if (!firstPage)
+             printer.newPage();
+
+         qApp-&gt;processEvents();
+         if (progress.wasCanceled())
+             break;
+
+         printPage(index, painter, printer);
+         progress.setValue(index + 1);
+         firstPage = false;
+     }
+
+     painter.end();
+ }
+
+ void MainWindow::on_printPreviewAction_triggered()
+ {
+     pageMap = currentPageMap();
+
+     if (pageMap.count() == 0)
+         return;
+
+     QPrinter printer;
+
+     PreviewDialog preview(printer, this);
+     connect(&amp;preview,
+         SIGNAL(pageRequested(int, QPainter &amp;, QPrinter &amp;)),
+         this, SLOT(printPage(int, QPainter &amp;, QPrinter &amp;)),
+         Qt::DirectConnection);
+
+     preview.setNumberOfPages(pageMap.keys().count());
+     preview.exec();
+ }
+
+ QMap&lt;QString, StyleItems&gt; MainWindow::currentPageMap()
+ {
+     QMap&lt;QString, StyleItems&gt; pageMap;
+
+     for (int row = 0; row &lt; fontTree-&gt;topLevelItemCount(); ++row) {
+         QTreeWidgetItem *familyItem = fontTree-&gt;topLevelItem(row);
+         QString family;
+
+         if (familyItem-&gt;checkState(0) == Qt::Checked) {
+             family = familyItem-&gt;text(0);
+             pageMap[family] = StyleItems();
+         }
+
+         for (int childRow = 0; childRow &lt; familyItem-&gt;childCount(); ++childRow) {
+             QTreeWidgetItem *styleItem = familyItem-&gt;child(childRow);
+             if (styleItem-&gt;checkState(0) == Qt::Checked)
+                 pageMap[family].append(styleItem);
+         }
+     }
+
+     return pageMap;
+ }
+
+ bool MainWindow::setupPrinter(QPrinter &amp;printer)
+ {
+     QPrintDialog dialog(&amp;printer, this);
+     if (dialog.exec() == QDialog::Accepted)
+         return true;
+     else
+         return false;
+ }
+
+ void MainWindow::printPage(int index, QPainter &amp;painter, QPrinter &amp;printer)
+ {
+     QString family = pageMap.keys()[index];
+     StyleItems items = pageMap[family];
+
+     <span class="comment">//</span> Find the dimensions of the text on each page.
+     qreal width = 0.0;
+     qreal height = 0.0;
+     foreach (QTreeWidgetItem *item, items) {
+         QString style = item-&gt;text(0);
+         int weight = item-&gt;data(0, Qt::UserRole).toInt();
+         bool italic = item-&gt;data(0, Qt::UserRole + 1).toBool();
+
+         <span class="comment">//</span> Calculate the maximum width and total height of the text.
+         foreach (int size, sampleSizes) {
+             QFont font(family, size, weight, italic);
+             font = QFont(font, painter.device());
+             QFontMetricsF fontMetrics(font);
+             QRectF rect = fontMetrics.boundingRect(
+             QString(&quot;%1 %2&quot;).arg(family).arg(style));
+             width = qMax(rect.width(), width);
+             height += rect.height();
+         }
+     }
+
+     qreal xScale = printer.pageRect().width() / width;
+     qreal yScale = printer.pageRect().height() / height;
+     qreal scale = qMin(xScale, yScale);
+
+     qreal remainingHeight = printer.pageRect().height()/scale - height;
+     qreal spaceHeight = (remainingHeight/4.0) / (items.count() + 1);
+     qreal interLineHeight = (remainingHeight/4.0) / (sampleSizes.count() * items.count());
+
+     painter.save();
+     painter.translate(printer.pageRect().width()/2.0, printer.pageRect().height()/2.0);
+     painter.scale(scale, scale);
+     painter.setBrush(QBrush(Qt::black));
+
+     qreal x = -width/2.0;
+     qreal y = -height/2.0 - remainingHeight/4.0 + spaceHeight;
+
+     foreach (QTreeWidgetItem *item, items) {
+         QString style = item-&gt;text(0);
+         int weight = item-&gt;data(0, Qt::UserRole).toInt();
+         bool italic = item-&gt;data(0, Qt::UserRole + 1).toBool();
+
+         <span class="comment">//</span> Draw each line of text.
+         foreach (int size, sampleSizes) {
+             QFont font(family, size, weight, italic);
+             font = QFont(font, painter.device());
+             QFontMetricsF fontMetrics(font);
+             QRectF rect = fontMetrics.boundingRect(QString(&quot;%1 %2&quot;).arg(
+                           font.family()).arg(style));
+             y += rect.height();
+             painter.setFont(font);
+             painter.drawText(QPointF(x, y),
+                              QString(&quot;%1 %2&quot;).arg(family).arg(style));
+             y += interLineHeight;
+         }
+         y += spaceHeight;
+     }
+
+     painter.restore();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

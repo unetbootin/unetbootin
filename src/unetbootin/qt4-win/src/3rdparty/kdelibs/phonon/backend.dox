@@ -1,0 +1,107 @@
+/**
+\page phonon_Backend The Backend Class
+\ingroup Backend
+
+\section phonon_Backend_requiredfunctions Required Functions
+\li bool \ref phonon_Backend_supportsOSD "supportsOSD()"
+\li bool \ref phonon_Backend_supportsFourcc "supportsFourcc( quint32 )"
+\li bool \ref phonon_Backend_supportsSubtitles "supportsSubtitles()"
+\li bool \ref phonon_Backend_supportsVideo "supportsVideo()"
+\li QStringList \ref phonon_Backend_availableMimeTypes "availableMimeTypes()"
+
+\section Member Function Documentation
+
+\subsection phonon_Backend_supportsFourcc bool supportsFourcc( quint32 fourcc )
+Tells whether the FOURCC (four character code) is supported for
+the \ref phonon_VideoDataOutput "VideoDataOutput" interface. If you return \c true, you have to be
+able to return VideoFrame objects accordingly from
+\ref phonon_VideoDataOutput "VideoDataOutput".
+\param fourcc A four character code defining a video frame format.
+\returns \c true if your \ref phonon_VideoDataOutput "VideoDataOutput" can
+output video frames in the requested format.
+\returns \c false if the video frames can not be converted into the requested
+format.
+
+\subsection phonon_Backend_availableMimeTypes QStringList availableMimeTypes()
+Lists the MIME types the backend can read and decode.
+
+\subsection phonon_Backend_xIndexes QSet<int> <device/codec/effect/...>Indexes()
+	Returns a set of indexes that identify the devices/codecs/effects/... the
+	backend supports. This list needs to be compiled from looking at
+	available hardware and virtual devices/plugins/... . The implementation
+	should use cached information, but you need to invalidate the cache
+	whenever the hardware configuration changes or new virtual devices come
+	available/new plugins are installed/... .
+
+	\return The indexes of the available devices/codecs/effects/...
+
+	\see \ref phonon_Backend_xName
+	\see \ref phonon_Backend_xDescription
+
+\subsection phonon_Backend_xName QString <device/codec/effect/...>Name( int index )
+	Returns the name of the given device/codec/effect/...
+
+	\param index The index of one device/codec/effect/... this is one index
+	out of \ref phonon_Backend_xIndexes
+	
+	\returns A translated user visible string to name the device.
+
+	\see \ref phonon_Backend_xIndexes
+	\see \ref phonon_Backend_xDescription
+\subsection phonon_Backend_xDescription QString <device/codec/effect/...>Description( int index )
+	Returns the description of the given device/codec/effect/...
+
+	\param index The index of one device/codec/effect/... this is one index
+	out of \ref phonon_Backend_xIndexes
+	
+	\returns A translated user visible string to describe the device.
+
+	\see \ref phonon_Backend_xIndexes
+	\see \ref phonon_Backend_xName
+
+\subsection phonon_Backend_audioCaptureDeviceVideoIndex qint32 audioCaptureDeviceVideoIndex( int index )
+	\param index The index of the device. This is one of the indexes the backend
+	returned via \ref phonon_Backend_xIndexes
+	\returns An index of a video capture device that is associated with the given
+	audio capture device. For example a webcam might have both a video and an audio
+	capture device, and in order give the user a hint that the audio and video
+	capture devices belong together this index is used.
+	\returns If there is no associated video capture device return -1.
+
+\subsection phonon_Backend_videoCaptureDeviceAudioIndex qint32 videoCaptureDeviceAudioIndex( int index )
+	\param index The index of the device. This is one of the indexes the backend
+	returned via \ref phonon_Backend_xIndexes
+	\returns An index of a audio capture device that is associated with the given
+	video capture device. For example a webcam might have both a audio and an video
+	capture device, and in order give the user a hint that the video and audio
+	capture devices belong together this index is used.
+	\returns If there is no associated audio capture device return -1.
+
+\page phonon_AudioDataOutput The AudioDataOutput Class
+\ingroup Backend
+
+\page phonon_AudioOutput The AudioOutput Class
+\ingroup Backend
+
+\page phonon_VideoDataOutput The VideoDataOutput Class
+\ingroup Backend
+
+\page phonon_VideoWidget The VideoWidget Class
+\ingroup Backend
+
+\page phonon_Effect The Effect Class
+\ingroup Backend
+
+\page phonon_BrightnessControl The BrightnessControl Class
+\ingroup Backend
+
+\page phonon_VideoEffect The VideoEffect Class
+\ingroup Backend
+
+\page phonon_Visualization The Visualization Class
+\ingroup Backend
+
+\page phonon_VolumeFaderEffect The VolumeFaderEffect Class
+\ingroup Backend
+
+*/

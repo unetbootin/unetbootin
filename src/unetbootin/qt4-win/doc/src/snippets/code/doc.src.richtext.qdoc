@@ -1,0 +1,52 @@
+//! [0]
+QTextDocument *newDocument = new QTextDocument;
+//! [0]
+
+
+//! [1]
+QTextEdit *editor = new QTextEdit;
+QTextDocument *editorDocument = editor->document();
+//! [1]
+
+
+//! [2]
+    QTextEdit *editor = new QTextEdit(parent);
+    editor->setHtml(aStringContainingHTMLtext);
+    editor->show();
+//! [2]
+
+
+//! [3]
+    QTextDocument *document = editor->document();
+//! [3]
+
+
+//! [4]
+    QTextCursor cursor = editor->textCursor();
+//! [4]
+
+
+//! [5]
+    editor->setTextCursor(cursor);
+//! [5]
+
+
+//! [6]
+    textEdit.show();
+
+    textCursor.beginEditBlock();
+
+    for (int i = 0; i < 1000; ++i) {
+        textCursor.insertBlock();
+        textCursor.insertText(paragraphText.at(i));
+    }
+
+    textCursor.endEditBlock(); 
+//! [6]
+
+
+//! [7]
+        <meta http-equiv="Content-Type" content="text/html; charset=EUC-JP" />
+//! [7]
+
+

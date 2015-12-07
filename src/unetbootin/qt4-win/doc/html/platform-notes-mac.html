@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/platform-notes.qdoc -->
+<head>
+  <title>Qt 4.4: Platform Notes - Mac OS X</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Platform Notes - Mac OS X<br /><span class="subtitle"></span>
+</h1>
+<p>This page contains information about the Mac OS X versions Qt is currently known to run on, with links to platform-specific notes.</p>
+<ul><li><a href="#general-information">General Information</a></li>
+<ul><li><a href="#required-gcc-version">Required GCC version</a></li>
+<li><a href="#binary-package">Binary Package</a></li>
+<li><a href="#mac-os-x-on-intel-hardware">Mac OS X on Intel hardware</a></li>
+<li><a href="#build-issues">Build Issues</a></li>
+<li><a href="#fink">Fink</a></li>
+<li><a href="#mysql-and-mac-os-x">MySQL and Mac OS X</a></li>
+<li><a href="#qt-and-precompiled-headers-pch">Qt and Precompiled Headers (PCH)</a></li>
+</ul>
+</ul>
+<a name="general-information"></a>
+<h2>General Information</h2>
+<p>Qt 4.3 has been tested to run on Mac OS X 10.3&#x2e;9 and up. See notes on the binary package for more information.</p>
+<p>Qt 4.1 has been tested to run on Mac OS X 10.2&#x2e;8 and up. Qt 4.1&#x2e;4 is the last release to work with Mac OS X 10.2&#x2e;</p>
+<a name="required-gcc-version"></a>
+<h3>Required GCC version</h3>
+<p>Qt can be compiled with GCC 3.3 and above. However, the version of GCC 3.3 that is included with Xcode Tools 1.5 generates incorrect code for Qt 4.1&#x2e;3&#x2e; You need the November 2004 GCC 3.3 updater, <a href="http://connect.apple.com">available from Apple</a>.</p>
+<a name="binary-package"></a>
+<h3>Binary Package</h3>
+<p>The binary package requires that you have your .qt-license file in your home directory. Installer.app cannot complete without a valid .qt-license file. Evaluation users of Qt will have information about how to create this file in the email they receive.</p>
+<p>The binary package was built on Mac OS X 10.4 with Xcode Tools 2.1 (gcc 4.0&#x2e;0) for Qt 4.1&#x2e;0, Xcode Tools 2.2 (gcc 4.0&#x2e;1) for Qt 4.1&#x2e;1-4.1&#x2e;4 and Xcode Tools 2.3 for 4.2&#x2e;0&#x2e; It will only link executables built against 10.4 (or a 10.4 SDK). You should be able to run applications linked against these frameworks on Mac OS X 10.3&#x2e;9 and Mac OS X 10.4+. If you require a different configuration, you will have to use the source package and build with GCC 3.3&#x2e;</p>
+<a name="mac-os-x-on-intel-hardware"></a>
+<h3>Mac OS X on Intel hardware</h3>
+<p>Qt 4 fully supports both the Intel and PowerPC architectures on the Mac. As of Qt 4.1 it is possible to support the Intel architecture by creating Universal Binaries with qmake. As of Qt 4.1 it is possible to build Qt as a set of universal binaries and frameworks from configure by adding these extra flags:</p>
+<pre>     -universal -sdk /Developer/SDKs/MacOSX10.4u.sdk</pre>
+<p>If you are building on Intel hardware you can omit the sdk parameter, but PowerPC hardware requires it.</p>
+<p>You can also generate universal binaries using qmake. Simply add these lines to your .pro file:</p>
+<pre>     QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.4u.sdk
+     CONFIG+=x86 ppc</pre>
+<a name="build-issues"></a>
+<h3>Build Issues</h3>
+<p>If Qt does not build upon executing make, and fails with an error message such as</p>
+<pre>     /usr/bin/ld: /System/Library/Frameworks/Carbon.framework/Carbon
+     load command 20 unknown cmd field
+     /usr/bin/ld: /usr/lib/libSystem.dylib
+     load command 6 unknown cmd field</pre>
+<p>this could be an indication you have upgraded your version of Mac OS X (e.g&#x2e; 10.3 to 10.4), without upgrading your Developer Tools (Xcode Tools). These must match in order to successfully compile files.</p>
+<p>Please be sure to upgrade both simultaneously. If problems still occur, contact support.</p>
+<a name="fink"></a>
+<h3>Fink</h3>
+<p>If you have installed the Qt/X11 package from Fink (http://fink.sf.net), it will set the QMAKESPEC environment variable to darwin-g++. This will cause problems when you build the Qt/Mac package. To fix this, simply unset your QMAKESPEC or set it to macx-g++ before you run configure. You need to have a fresh Qt distribution (make confclean).</p>
+<a name="mysql-and-mac-os-x"></a>
+<h3>MySQL and Mac OS X</h3>
+<p>There seems to be a issue when both -prebind and -multi_module are defined when linking static C libraries into dynamic library. If you get the following error message when linking Qt:</p>
+<pre>     ld: common symbols not allowed with MH_DYLIB output format with the -multi_module option
+     /usr/local/mysql/lib/libmysqlclient.a(my_error.o) definition of common _errbuff (size 512)
+     /usr/bin/libtool: internal link edit command failed</pre>
+<p>re-link Qt using -single_module. This is only a problem when building the MySQL driver into Qt. It does not affect plugins or static builds.</p>
+<a name="qt-and-precompiled-headers-pch"></a>
+<h3>Qt and Precompiled Headers (PCH)</h3>
+<p>Starting with Qt 3.3&#x2e;0 it is possible to use precompiled headers. They are not enabled by default as it appears that some versions of Apple's GCC and make have problems with this feature. If you want to use precompiled headers when building the Qt source package, specify the -pch option to configure. If, while using precompiled headers, you encounter an internal compile error, try removing the -include header statement from the compile line and trying again. If this solves the problem, it probably is a good idea to turn off precompiled headers. Also, consider filing a bug report with Apple so that they can improve support for this feature.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

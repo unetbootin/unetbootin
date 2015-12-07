@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (painting/painterpaths/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">painting/painterpaths/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;math.h&gt;
+
+ #include &quot;renderarea.h&quot;
+ #include &quot;window.h&quot;
+
+ const float Pi = 3.14159f;
+
+ Window::Window()
+ {
+     QPainterPath rectPath;
+     rectPath.moveTo(20.0, 30.0);
+     rectPath.lineTo(80.0, 30.0);
+     rectPath.lineTo(80.0, 70.0);
+     rectPath.lineTo(20.0, 70.0);
+     rectPath.closeSubpath();
+
+     QPainterPath roundRectPath;
+     roundRectPath.moveTo(80.0, 35.0);
+     roundRectPath.arcTo(70.0, 30.0, 10.0, 10.0, 0.0, 90.0);
+     roundRectPath.lineTo(25.0, 30.0);
+     roundRectPath.arcTo(20.0, 30.0, 10.0, 10.0, 90.0, 90.0);
+     roundRectPath.lineTo(20.0, 65.0);
+     roundRectPath.arcTo(20.0, 60.0, 10.0, 10.0, 180.0, 90.0);
+     roundRectPath.lineTo(75.0, 70.0);
+     roundRectPath.arcTo(70.0, 60.0, 10.0, 10.0, 270.0, 90.0);
+     roundRectPath.closeSubpath();
+
+     QPainterPath ellipsePath;
+     ellipsePath.moveTo(80.0, 50.0);
+     ellipsePath.arcTo(20.0, 30.0, 60.0, 40.0, 0.0, 360.0);
+
+     QPainterPath piePath;
+     piePath.moveTo(50.0, 50.0);
+     piePath.arcTo(20.0, 30.0, 60.0, 40.0, 60.0, 240.0);
+     piePath.closeSubpath();
+
+     QPainterPath polygonPath;
+     polygonPath.moveTo(10.0, 80.0);
+     polygonPath.lineTo(20.0, 10.0);
+     polygonPath.lineTo(80.0, 30.0);
+     polygonPath.lineTo(90.0, 70.0);
+     polygonPath.closeSubpath();
+
+     QPainterPath groupPath;
+     groupPath.moveTo(60.0, 40.0);
+     groupPath.arcTo(20.0, 20.0, 40.0, 40.0, 0.0, 360.0);
+     groupPath.moveTo(40.0, 40.0);
+     groupPath.lineTo(40.0, 80.0);
+     groupPath.lineTo(80.0, 80.0);
+     groupPath.lineTo(80.0, 40.0);
+     groupPath.closeSubpath();
+
+     QPainterPath textPath;
+     QFont timesFont(&quot;Times&quot;, 50);
+     timesFont.setStyleStrategy(QFont::ForceOutline);
+     textPath.addText(10, 70, timesFont, tr(&quot;Qt&quot;));
+
+     QPainterPath bezierPath;
+     bezierPath.moveTo(20, 30);
+     bezierPath.cubicTo(80, 0, 50, 50, 80, 80);
+
+     QPainterPath starPath;
+     starPath.moveTo(90, 50);
+     for (int i = 1; i &lt; 5; ++i) {
+         starPath.lineTo(50 + 40 * cos(0.8 * i * Pi),
+                         50 + 40 * sin(0.8 * i * Pi));
+     }
+     starPath.closeSubpath();
+
+     renderAreas[0] = new RenderArea(rectPath);
+     renderAreas[1] = new RenderArea(roundRectPath);
+     renderAreas[2] = new RenderArea(ellipsePath);
+     renderAreas[3] = new RenderArea(piePath);
+     renderAreas[4] = new RenderArea(polygonPath);
+     renderAreas[5] = new RenderArea(groupPath);
+     renderAreas[6] = new RenderArea(textPath);
+     renderAreas[7] = new RenderArea(bezierPath);
+     renderAreas[8] = new RenderArea(starPath);
+     Q_ASSERT(NumRenderAreas == 9);
+
+     fillRuleComboBox = new QComboBox;
+     fillRuleComboBox-&gt;addItem(tr(&quot;Odd Even&quot;), Qt::OddEvenFill);
+     fillRuleComboBox-&gt;addItem(tr(&quot;Winding&quot;), Qt::WindingFill);
+
+     fillRuleLabel = new QLabel(tr(&quot;Fill &amp;Rule:&quot;));
+     fillRuleLabel-&gt;setBuddy(fillRuleComboBox);
+
+     fillColor1ComboBox = new QComboBox;
+     populateWithColors(fillColor1ComboBox);
+     fillColor1ComboBox-&gt;setCurrentIndex(
+             fillColor1ComboBox-&gt;findText(&quot;mediumslateblue&quot;));
+
+     fillColor2ComboBox = new QComboBox;
+     populateWithColors(fillColor2ComboBox);
+     fillColor2ComboBox-&gt;setCurrentIndex(
+             fillColor2ComboBox-&gt;findText(&quot;cornsilk&quot;));
+
+     fillGradientLabel = new QLabel(tr(&quot;&amp;Fill Gradient:&quot;));
+     fillGradientLabel-&gt;setBuddy(fillColor1ComboBox);
+
+     fillToLabel = new QLabel(tr(&quot;to&quot;));
+     fillToLabel-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+     penWidthSpinBox = new QSpinBox;
+     penWidthSpinBox-&gt;setRange(0, 20);
+
+     penWidthLabel = new QLabel(tr(&quot;&amp;Pen Width:&quot;));
+     penWidthLabel-&gt;setBuddy(penWidthSpinBox);
+
+     penColorComboBox = new QComboBox;
+     populateWithColors(penColorComboBox);
+     penColorComboBox-&gt;setCurrentIndex(
+             penColorComboBox-&gt;findText(&quot;darkslateblue&quot;));
+
+     penColorLabel = new QLabel(tr(&quot;Pen &amp;Color:&quot;));
+     penColorLabel-&gt;setBuddy(penColorComboBox);
+
+     rotationAngleSpinBox = new QSpinBox;
+     rotationAngleSpinBox-&gt;setRange(0, 359);
+     rotationAngleSpinBox-&gt;setWrapping(true);
+     rotationAngleSpinBox-&gt;setSuffix(&quot;\xB0&quot;);
+
+     rotationAngleLabel = new QLabel(tr(&quot;&amp;Rotation Angle:&quot;));
+     rotationAngleLabel-&gt;setBuddy(rotationAngleSpinBox);
+
+     connect(fillRuleComboBox, SIGNAL(activated(int)),
+             this, SLOT(fillRuleChanged()));
+     connect(fillColor1ComboBox, SIGNAL(activated(int)),
+             this, SLOT(fillGradientChanged()));
+     connect(fillColor2ComboBox, SIGNAL(activated(int)),
+             this, SLOT(fillGradientChanged()));
+     connect(penColorComboBox, SIGNAL(activated(int)),
+             this, SLOT(penColorChanged()));
+
+     for (int i = 0; i &lt; NumRenderAreas; ++i) {
+         connect(penWidthSpinBox, SIGNAL(valueChanged(int)),
+                 renderAreas[i], SLOT(setPenWidth(int)));
+         connect(rotationAngleSpinBox, SIGNAL(valueChanged(int)),
+                 renderAreas[i], SLOT(setRotationAngle(int)));
+     }
+
+     QGridLayout *topLayout = new QGridLayout;
+     for (int i = 0; i &lt; NumRenderAreas; ++i)
+         topLayout-&gt;addWidget(renderAreas[i], i / 3, i % 3);
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addLayout(topLayout, 0, 0, 1, 4);
+     mainLayout-&gt;addWidget(fillRuleLabel, 1, 0);
+     mainLayout-&gt;addWidget(fillRuleComboBox, 1, 1, 1, 3);
+     mainLayout-&gt;addWidget(fillGradientLabel, 2, 0);
+     mainLayout-&gt;addWidget(fillColor1ComboBox, 2, 1);
+     mainLayout-&gt;addWidget(fillToLabel, 2, 2);
+     mainLayout-&gt;addWidget(fillColor2ComboBox, 2, 3);
+     mainLayout-&gt;addWidget(penWidthLabel, 3, 0);
+     mainLayout-&gt;addWidget(penWidthSpinBox, 3, 1, 1, 3);
+     mainLayout-&gt;addWidget(penColorLabel, 4, 0);
+     mainLayout-&gt;addWidget(penColorComboBox, 4, 1, 1, 3);
+     mainLayout-&gt;addWidget(rotationAngleLabel, 5, 0);
+     mainLayout-&gt;addWidget(rotationAngleSpinBox, 5, 1, 1, 3);
+     setLayout(mainLayout);
+
+     fillRuleChanged();
+     fillGradientChanged();
+     penColorChanged();
+     penWidthSpinBox-&gt;setValue(2);
+
+     setWindowTitle(tr(&quot;Painter Paths&quot;));
+ }
+
+ void Window::fillRuleChanged()
+ {
+     Qt::FillRule rule = (Qt::FillRule)currentItemData(fillRuleComboBox).toInt();
+
+     for (int i = 0; i &lt; NumRenderAreas; ++i)
+         renderAreas[i]-&gt;setFillRule(rule);
+ }
+
+ void Window::fillGradientChanged()
+ {
+     QColor color1 = qvariant_cast&lt;QColor&gt;(currentItemData(fillColor1ComboBox));
+     QColor color2 = qvariant_cast&lt;QColor&gt;(currentItemData(fillColor2ComboBox));
+
+     for (int i = 0; i &lt; NumRenderAreas; ++i)
+         renderAreas[i]-&gt;setFillGradient(color1, color2);
+ }
+
+ void Window::penColorChanged()
+ {
+     QColor color = qvariant_cast&lt;QColor&gt;(currentItemData(penColorComboBox));
+
+     for (int i = 0; i &lt; NumRenderAreas; ++i)
+         renderAreas[i]-&gt;setPenColor(color);
+ }
+
+ void Window::populateWithColors(QComboBox *comboBox)
+ {
+     QStringList colorNames = QColor::colorNames();
+     foreach (QString name, colorNames)
+         comboBox-&gt;addItem(name, QColor(name));
+ }
+
+ QVariant Window::currentItemData(QComboBox *comboBox)
+ {
+     return comboBox-&gt;itemData(comboBox-&gt;currentIndex());
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/orderform.qdoc -->
+<head>
+  <title>Qt 4.4: Order Form Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Order Form Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="richtext-orderform-detailsdialog-cpp.html">richtext/orderform/detailsdialog.cpp</a></li>
+<li><a href="richtext-orderform-detailsdialog-h.html">richtext/orderform/detailsdialog.h</a></li>
+<li><a href="richtext-orderform-mainwindow-cpp.html">richtext/orderform/mainwindow.cpp</a></li>
+<li><a href="richtext-orderform-mainwindow-h.html">richtext/orderform/mainwindow.h</a></li>
+<li><a href="richtext-orderform-main-cpp.html">richtext/orderform/main.cpp</a></li>
+<li><a href="richtext-orderform-orderform-pro.html">richtext/orderform/orderform.pro</a></li>
+</ul>
+<p>The Order Form example shows how to generate rich text documents by combining a simple template with data input by the user in a dialog. Data is extracted from a <tt>DetailsDialog</tt> object and displayed on a <a href="qtextedit.html">QTextEdit</a> with a <a href="qtextcursor.html">QTextCursor</a>, using various formats. Each form generated is added to a <a href="qtabwidget.html">QTabWidget</a> for easy access.</p>
+<p align="center"><img src="images/orderform-example.png" /></p><a name="detailsdialog-definition"></a>
+<h2>DetailsDialog Definition</h2>
+<p>The <tt>DetailsDialog</tt> class is a subclass of <a href="qdialog.html">QDialog</a>, implementing a slot <tt>verify()</tt> to allow contents of the <tt>DetailsDialog</tt> to be verified later. This is further explained in <tt>DetailsDialog</tt> Implementation.</p>
+<pre> class DetailsDialog : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     DetailsDialog(const QString &amp;title, QWidget *parent);
+
+ public slots:
+     void verify();
+
+ public:
+     QList&lt;QPair&lt;QString, int&gt; &gt; orderItems();
+     QString senderName() const;
+     QString senderAddress() const;
+     bool sendOffers();
+
+ private:
+     void setupItemsTable();
+
+     QLabel *nameLabel;
+     QLabel *addressLabel;
+     QCheckBox *offersCheckBox;
+     QLineEdit *nameEdit;
+     QStringList items;
+     QTableWidget *itemsTable;
+     QTextEdit *addressEdit;
+     QDialogButtonBox *buttonBox;
+ };</pre>
+<p>The constructor of <tt>DetailsDialog</tt> accepts parameters <i>title</i> and <i>parent</i>. The class defines four <i>getter</i> functions: <tt>orderItems()</tt>, <tt>senderName()</tt>, <tt>senderAddress()</tt>, and <tt>sendOffers()</tt> to allow data to be accessed externally.</p>
+<p>The class definition includes input widgets for the required fields, <tt>nameEdit</tt> and <tt>addressEdit</tt>. Also, a <a href="qcheckbox.html">QCheckBox</a> and a <a href="qdialogbuttonbox.html">QDialogButtonBox</a> are defined; the former to provide the user with the option to receive information on products and offers, and the latter to ensure that buttons used are arranged according to the user's native platform. In addition, a <a href="qtablewidget.html">QTableWidget</a>, <tt>itemsTable</tt>, is used to hold order details.</p>
+<p>The screenshot below shows the <tt>DetailsDialog</tt> we intend to create.</p>
+<p align="center"><img src="images/orderform-example-detailsdialog.png" /></p><a name="detailsdialog-implementation"></a>
+<h2>DetailsDialog Implementation</h2>
+<p>The constructor of <tt>DetailsDialog</tt> instantiates the earlier defined fields and their respective labels. The label for <tt>offersCheckBox</tt> is set and the <tt>setupItemsTable()</tt> function is invoked to setup and populate <tt>itemsTable</tt>. The <a href="qdialogbuttonbox.html">QDialogButtonBox</a> object, <tt>buttonBox</tt>, is instantiated with <b>OK</b> and <b>Cancel</b> buttons. This <tt>buttonBox</tt>'s <tt>accepted()</tt> and <tt>rejected()</tt> signals are connected to the <tt>verify()</tt> and <tt>reject()</tt> slots in <tt>DetailsDialog</tt>.</p>
+<pre> DetailsDialog::DetailsDialog(const QString &amp;title, QWidget *parent)
+     : QDialog(parent)
+ {
+     nameLabel = new QLabel(tr(&quot;Name:&quot;));
+     addressLabel = new QLabel(tr(&quot;Address:&quot;));
+     addressLabel-&gt;setAlignment(Qt::AlignLeft | Qt::AlignTop);
+
+     nameEdit = new QLineEdit;
+     addressEdit = new QTextEdit;
+
+     offersCheckBox = new QCheckBox(tr(&quot;Send information about products and &quot;
+                                       &quot;special offers&quot;));
+
+     setupItemsTable();
+
+     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
+                                      | QDialogButtonBox::Cancel);
+
+     connect(buttonBox, SIGNAL(accepted()), this, SLOT(verify()));
+     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));</pre>
+<p>A <a href="qgridlayout.html">QGridLayout</a> is used to place all the objects on the <tt>DetailsDialog</tt>.</p>
+<pre>     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addWidget(nameLabel, 0, 0);
+     mainLayout-&gt;addWidget(nameEdit, 0, 1);
+     mainLayout-&gt;addWidget(addressLabel, 1, 0);
+     mainLayout-&gt;addWidget(addressEdit, 1, 1);
+     mainLayout-&gt;addWidget(itemsTable, 0, 2, 2, 1);
+     mainLayout-&gt;addWidget(offersCheckBox, 2, 1, 1, 2);
+     mainLayout-&gt;addWidget(buttonBox, 3, 0, 1, 3);
+     setLayout(mainLayout);
+
+     setWindowTitle(title);
+ }</pre>
+<p>The <tt>setupItemsTable()</tt> function instantiates the <a href="qtablewidget.html">QTableWidget</a> object, <tt>itemsTable</tt>, and sets the number of rows based on the <a href="qstringlist.html">QStringList</a> object, <tt>items</tt>, which holds the type of items ordered. The number of columns is set to 2, providing a &quot;name&quot; and &quot;quantity&quot; layout. A <tt>for</tt> loop is used to populate the <tt>itemsTable</tt> and the <tt>name</tt> item's flag is set to <a href="qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a> or <a href="qt.html#ItemFlag-enum">Qt::ItemIsSelectable</a>. For demonstration purposes, the <tt>quantity</tt> item is set to a 1 and all items in the <tt>itemsTable</tt> have this value for quantity; but this can be modified by editing the contents of the cells at run time.</p>
+<pre> void DetailsDialog::setupItemsTable()
+ {
+     items &lt;&lt; tr(&quot;T-shirt&quot;) &lt;&lt; tr(&quot;Badge&quot;) &lt;&lt; tr(&quot;Reference book&quot;)
+           &lt;&lt; tr(&quot;Coffee cup&quot;);
+
+     itemsTable = new QTableWidget(items.count(), 2);
+
+     for (int row = 0; row &lt; items.count(); ++row) {
+         QTableWidgetItem *name = new QTableWidgetItem(items[row]);
+         name-&gt;setFlags(Qt::ItemIsEnabled | Qt::ItemIsSelectable);
+         itemsTable-&gt;setItem(row, 0, name);
+         QTableWidgetItem *quantity = new QTableWidgetItem(&quot;1&quot;);
+         itemsTable-&gt;setItem(row, 1, quantity);
+     }
+ }</pre>
+<p>The <tt>orderItems()</tt> function extracts data from the <tt>itemsTable</tt> and returns it in the form of a <a href="qlist.html">QList</a>&lt;<a href="qpair.html">QPair</a>&lt;<a href="qstring.html">QString</a>,int&gt;&gt; where each <a href="qpair.html">QPair</a> corresponds to an item and the quantity ordered.</p>
+<pre> QList&lt;QPair&lt;QString, int&gt; &gt; DetailsDialog::orderItems()
+ {
+     QList&lt;QPair&lt;QString, int&gt; &gt; orderList;
+
+     for (int row = 0; row &lt; items.count(); ++row) {
+         QPair&lt;QString, int&gt; item;
+         item.first = itemsTable-&gt;item(row, 0)-&gt;text();
+         int quantity = itemsTable-&gt;item(row, 1)-&gt;data(Qt::DisplayRole).toInt();
+         item.second = qMax(0, quantity);
+         orderList.append(item);
+     }
+
+     return orderList;
+ }</pre>
+<p>The <tt>senderName()</tt> function is used to return the value of the <a href="qlineedit.html">QLineEdit</a> used to store the name field for the order form.</p>
+<pre> QString DetailsDialog::senderName() const
+ {
+     return nameEdit-&gt;text();
+ }</pre>
+<p>The <tt>senderAddress()</tt> function is used to return the value of the <a href="qtextedit.html">QTextEdit</a> containing the address for the order form.</p>
+<pre> QString DetailsDialog::senderAddress() const
+ {
+     return addressEdit-&gt;toPlainText();
+ }</pre>
+<p>The <tt>sendOffers()</tt> function is used to return a <tt>true</tt> or <tt>false</tt> value that is used to determine if the customer in the order form wishes to receive more information on the company's offers and promotions.</p>
+<pre> bool DetailsDialog::sendOffers()
+ {
+     return offersCheckBox-&gt;isChecked();
+ }</pre>
+<p>The <tt>verify()</tt> function is an additionally implemented slot used to verify the details entered by the user into the <tt>DetailsDialog</tt>. If the details entered are incomplete, a <a href="qmessagebox.html">QMessageBox</a> is displayed providing the user the option to discard the <tt>DetailsDialog</tt>. Otherwise, the details are accepted and the <tt>accept()</tt> function is invoked.</p>
+<pre> void DetailsDialog::verify()
+ {
+     if (!nameEdit-&gt;text().isEmpty() &amp;&amp; !addressEdit-&gt;toPlainText().isEmpty()) {
+         accept();
+         return;
+     }
+
+     QMessageBox::StandardButton answer;
+     answer = QMessageBox::warning(this, tr(&quot;Incomplete Form&quot;),
+         tr(&quot;The form does not contain all the necessary information.\n&quot;
+            &quot;Do you want to discard it?&quot;),
+         QMessageBox::Yes | QMessageBox::No);
+
+     if (answer == QMessageBox::Yes)
+         reject();
+ }</pre>
+<a name="mainwindow-definition"></a>
+<h2>MainWindow Definition</h2>
+<p>The <tt>MainWindow</tt> class is a subclass of <a href="qmainwindow.html">QMainWindow</a>, implementing two slots - <tt>openDialog()</tt> and <tt>printFile()</tt>. It also contains a private instance of <a href="qtabwidget.html">QTabWidget</a>, <tt>letters</tt>.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+     void createSample();
+
+ public slots:
+     void openDialog();
+     void printFile();
+
+ private:
+     void createLetter(const QString &amp;name, const QString &amp;address,
+                       QList&lt;QPair&lt;QString,int&gt; &gt; orderItems,
+                       bool sendOffers);
+
+     QAction *printAction;
+     QTabWidget *letters;
+ };</pre>
+<a name="mainwindow-implementation"></a>
+<h2>MainWindow Implementation</h2>
+<p>The <tt>MainWindow</tt> constructor sets up the <tt>fileMenu</tt> and the required actions, <tt>newAction</tt> and <tt>printAction</tt>. These actions' <tt>triggered()</tt> signals are connected to the additionally implemented openDialog() slot and the default close() slot. The <a href="qtabwidget.html">QTabWidget</a>, <tt>letters</tt>, is instantiated and set as the window's central widget.</p>
+<pre> MainWindow::MainWindow()
+ {
+     QMenu *fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     QAction *newAction = fileMenu-&gt;addAction(tr(&quot;&amp;New...&quot;));
+     newAction-&gt;setShortcut(tr(&quot;Ctrl+N&quot;));
+     printAction = fileMenu-&gt;addAction(tr(&quot;&amp;Print...&quot;), this, SLOT(printFile()));
+     printAction-&gt;setShortcut(tr(&quot;Ctrl+P&quot;));
+     printAction-&gt;setEnabled(false);
+     QAction *quitAction = fileMenu-&gt;addAction(tr(&quot;E&amp;xit&quot;));
+     quitAction-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     menuBar()-&gt;addMenu(fileMenu);
+
+     letters = new QTabWidget;
+
+     connect(newAction, SIGNAL(triggered()), this, SLOT(openDialog()));
+     connect(quitAction, SIGNAL(triggered()), this, SLOT(close()));
+
+     setCentralWidget(letters);
+     setWindowTitle(tr(&quot;Order Form&quot;));
+ }</pre>
+<p>The <tt>createLetter()</tt> function creates a new <a href="qtabwidget.html">QTabWidget</a> with a <a href="qtextedit.html">QTextEdit</a>, <tt>editor</tt>, as the parent. This function accepts four parameters that correspond to we obtained through <tt>DetailsDialog</tt>, in order to &quot;fill&quot; the <tt>editor</tt>.</p>
+<pre> void MainWindow::createLetter(const QString &amp;name, const QString &amp;address,
+                               QList&lt;QPair&lt;QString,int&gt; &gt; orderItems,
+                               bool sendOffers)
+ {
+     QTextEdit *editor = new QTextEdit;
+     int tabIndex = letters-&gt;addTab(editor, name);
+     letters-&gt;setCurrentIndex(tabIndex);</pre>
+<p>We then obtain the cursor for the <tt>editor</tt> using <a href="qtextedit.html#textCursor">QTextEdit::textCursor</a>(). The <tt>cursor</tt> is then moved to the start of the document using <a href="qtextcursor.html#MoveOperation-enum">QTextCursor::Start</a>.</p>
+<pre>     QTextCursor cursor(editor-&gt;textCursor());
+     cursor.movePosition(QTextCursor::Start);</pre>
+<p>Recall the structure of a <a href="richtext-structure.html">Rich Text Document</a>, where sequences of frames and tables are always separated by text blocks, some of which may contain no information.</p>
+<p>In the case of the Order Form Example, the document structure for this portion is described by the table below:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td rowspan=" 8">frame with <i>referenceFrameFormat</i></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>A company</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>321 City Street</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Industry Park</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Another country</tt></td></tr>
+</table></p>
+<p>This is accomplished with the following code:</p>
+<pre>     QTextFrame *topFrame = cursor.currentFrame();
+     QTextFrameFormat topFrameFormat = topFrame-&gt;frameFormat();
+     topFrameFormat.setPadding(16);
+     topFrame-&gt;setFrameFormat(topFrameFormat);
+
+     QTextCharFormat textFormat;
+     QTextCharFormat boldFormat;
+     boldFormat.setFontWeight(QFont::Bold);
+
+     QTextFrameFormat referenceFrameFormat;
+     referenceFrameFormat.setBorder(1);
+     referenceFrameFormat.setPadding(8);
+     referenceFrameFormat.setPosition(QTextFrameFormat::FloatRight);
+     referenceFrameFormat.setWidth(QTextLength(QTextLength::PercentageLength, 40));
+     cursor.insertFrame(referenceFrameFormat);
+
+     cursor.insertText(&quot;A company&quot;, boldFormat);
+     cursor.insertBlock();
+     cursor.insertText(&quot;321 City Street&quot;);
+     cursor.insertBlock();
+     cursor.insertText(&quot;Industry Park&quot;);
+     cursor.insertBlock();
+     cursor.insertText(&quot;Another country&quot;);</pre>
+<p>Note that <tt>topFrame</tt> is the <tt>editor</tt>'s top-level frame and is not shown in the document structure.</p>
+<p>We then set the <tt>cursor</tt>'s position back to its last position in <tt>topFrame</tt> and fill in the customer's name (provided by the constructor) and address - using a <tt>foreach</tt> loop to traverse the <a href="qstring.html">QString</a>, <tt>address</tt>.</p>
+<pre>     cursor.setPosition(topFrame-&gt;lastPosition());
+
+     cursor.insertText(name, textFormat);
+     QString line;
+     foreach (line, address.split(&quot;\n&quot;)) {
+         cursor.insertBlock();
+         cursor.insertText(line);
+     }</pre>
+<p>The <tt>cursor</tt> is now back in <tt>topFrame</tt> and the document structure for the above portion of code is:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>block</td><td><tt>Donald</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>47338 Park Avenue</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>Big City</tt></td></tr>
+</table></p>
+<p>For spacing purposes, we invoke <a href="qtextcursor.html#insertBlock">insertBlock()</a> twice. The <a href="qdate.html#currentDate">currentDate()</a> is obtained and displayed. We use <a href="qtextframeformat.html#setWidth">setWidth()</a> to increase the width of <tt>bodyFrameFormat</tt> and we insert a new frame with that width.</p>
+<pre>     cursor.insertBlock();
+     cursor.insertBlock();
+
+     QDate date = QDate::currentDate();
+     cursor.insertText(tr(&quot;Date: %1&quot;).arg(date.toString(&quot;d MMMM yyyy&quot;)),
+                       textFormat);
+     cursor.insertBlock();
+
+     QTextFrameFormat bodyFrameFormat;
+     bodyFrameFormat.setWidth(QTextLength(QTextLength::PercentageLength, 100));
+     cursor.insertFrame(bodyFrameFormat);</pre>
+<p>The following code inserts standard text into the order form.</p>
+<pre>     cursor.insertText(tr(&quot;I would like to place an order for the following &quot;
+                          &quot;items:&quot;), textFormat);
+     cursor.insertBlock();
+     cursor.insertBlock();</pre>
+<p>This part of the document structure now contains the date, a frame with <tt>bodyFrameFormat</tt>, as well as the standard text.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>Date: 25 May 2007</tt></td></tr>
+<tr valign="top" class="even"><td>block</td></tr>
+<tr valign="top" class="odd"><td rowspan=" 4">frame with <i>bodyFrameFormat</i></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>I would like to place an order for the following items:</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td></tr>
+</table></p>
+<p>A <a href="qtexttableformat.html">QTextTableFormat</a> object, <tt>orderTableFormat</tt>, is used to hold the type of item and the quantity ordered.</p>
+<pre>     QTextTableFormat orderTableFormat;
+     orderTableFormat.setAlignment(Qt::AlignHCenter);
+     QTextTable *orderTable = cursor.insertTable(1, 2, orderTableFormat);
+
+     QTextFrameFormat orderFrameFormat = cursor.currentFrame()-&gt;frameFormat();
+     orderFrameFormat.setBorder(1);
+     cursor.currentFrame()-&gt;setFrameFormat(orderFrameFormat);</pre>
+<p>We use <a href="qtexttable.html#cellAt">cellAt()</a> to set the headers for the <tt>orderTable</tt>.</p>
+<pre>     cursor = orderTable-&gt;cellAt(0, 0).firstCursorPosition();
+     cursor.insertText(tr(&quot;Product&quot;), boldFormat);
+     cursor = orderTable-&gt;cellAt(0, 1).firstCursorPosition();
+     cursor.insertText(tr(&quot;Quantity&quot;), boldFormat);</pre>
+<p>Then, we iterate through the <a href="qlist.html">QList</a> of <a href="qpair.html">QPair</a> objects to populate <tt>orderTable</tt>.</p>
+<pre>     for (int i = 0; i &lt; orderItems.count(); ++i) {
+         QPair&lt;QString,int&gt; item = orderItems[i];
+         int row = orderTable-&gt;rows();
+
+         orderTable-&gt;insertRows(row, 1);
+         cursor = orderTable-&gt;cellAt(row, 0).firstCursorPosition();
+         cursor.insertText(item.first, textFormat);
+         cursor = orderTable-&gt;cellAt(row, 1).firstCursorPosition();
+         cursor.insertText(QString(&quot;%1&quot;).arg(item.second), textFormat);
+     }</pre>
+<p>The resulting document structure for this section is:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td rowspan=" 11"><tt>orderTable</tt> with <i>orderTableFormat</i></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Product</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>Quantity</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>T-shirt</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>4</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Badge</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>3</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Reference book</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>2</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Coffee cup</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>5</tt></td></tr>
+</table></p>
+<p>The <tt>cursor</tt> is then moved back to <tt>topFrame</tt>'s <a href="qtextframe.html#lastPosition">lastPosition()</a> and more standard text is inserted.</p>
+<pre>     cursor.setPosition(topFrame-&gt;lastPosition());
+
+     cursor.insertBlock();
+     cursor.insertText(tr(&quot;Please update my records to take account of the &quot;
+                          &quot;following privacy information:&quot;));
+     cursor.insertBlock();</pre>
+<p>Another <a href="qtexttable.html">QTextTable</a> is inserted, to display the customer's preference regarding offers.</p>
+<pre>     QTextTable *offersTable = cursor.insertTable(2, 2);
+
+     cursor = offersTable-&gt;cellAt(0, 1).firstCursorPosition();
+     cursor.insertText(tr(&quot;I want to receive more information about your &quot;
+                          &quot;company's products and special offers.&quot;), textFormat);
+     cursor = offersTable-&gt;cellAt(1, 1).firstCursorPosition();
+     cursor.insertText(tr(&quot;I do not want to receive any promotional information &quot;
+                          &quot;from your company.&quot;), textFormat);
+
+     if (sendOffers)
+         cursor = offersTable-&gt;cellAt(0, 0).firstCursorPosition();
+     else
+         cursor = offersTable-&gt;cellAt(1, 0).firstCursorPosition();
+
+     cursor.insertText(&quot;X&quot;, boldFormat);</pre>
+<p>The document structure for this portion is:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Please update my...</tt></td></tr>
+<tr valign="top" class="odd"><td rowspan=" 5">block</td></tr>
+<tr valign="top" class="even"><td rowspan=" 4"><tt>offersTable</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>I want to receive...</tt></td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>I do not want to recieve...</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td><td><tt>X</tt></td></tr>
+</table></p>
+<p>The <tt>cursor</tt> is moved to insert &quot;Sincerely&quot; along with the customer's name. More blocks are inserted for spacing purposes. The <tt>printAction</tt> is enabled to indicate that an order form can now be printed.</p>
+<pre>     cursor.setPosition(topFrame-&gt;lastPosition());
+     cursor.insertBlock();
+     cursor.insertText(tr(&quot;Sincerely,&quot;), textFormat);
+     cursor.insertBlock();
+     cursor.insertBlock();
+     cursor.insertBlock();
+     cursor.insertText(name);
+
+     printAction-&gt;setEnabled(true);
+ }</pre>
+<p>The bottom portion of the document structure is:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td rowspan=" 5">block</td><td><tt>Sincerely,</tt></td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td></tr>
+<tr valign="top" class="odd"><td>block</td></tr>
+<tr valign="top" class="even"><td>block</td><td><tt>Donald</tt></td></tr>
+</table></p>
+<p>The <tt>createSample()</tt> function is used for illustration purposes, to create a sample order form.</p>
+<pre> void MainWindow::createSample()
+ {
+     DetailsDialog dialog(&quot;Dialog with default values&quot;, this);
+     createLetter(&quot;Mr. Smith&quot;, &quot;12 High Street\nSmall Town\nThis country&quot;,
+                  dialog.orderItems(), true);
+ }</pre>
+<p>The <tt>openDialog()</tt> function opens a <tt>DetailsDialog</tt> object. If the details in <tt>dialog</tt> are accepted, the <tt>createLetter()</tt> function is invoked using the parameters extracted from <tt>dialog</tt>.</p>
+<pre> void MainWindow::openDialog()
+ {
+     DetailsDialog dialog(tr(&quot;Enter Customer Details&quot;), this);
+
+     if (dialog.exec() == QDialog::Accepted)
+         createLetter(dialog.senderName(), dialog.senderAddress(),
+                      dialog.orderItems(), dialog.sendOffers());
+ }</pre>
+<p>In order to print out the order form, a <tt>printFile()</tt> function is included, as shown below:</p>
+<pre> void MainWindow::printFile()
+ {
+ #ifndef QT_NO_PRINTER
+     QTextEdit *editor = static_cast&lt;QTextEdit*&gt;(letters-&gt;currentWidget());
+     QPrinter printer;
+
+     QPrintDialog *dialog = new QPrintDialog(&amp;printer, this);
+     dialog-&gt;setWindowTitle(tr(&quot;Print Document&quot;));
+     if (editor-&gt;textCursor().hasSelection())
+         dialog-&gt;addEnabledOption(QAbstractPrintDialog::PrintSelection);
+     if (dialog-&gt;exec() != QDialog::Accepted)
+         return;
+
+     editor-&gt;print(&amp;printer);
+ #endif
+ }</pre>
+<p>This function also allows the user to print a selected area with <a href="qtextcursor.html#hasSelection">QTextCursor::hasSelection</a>(), instead of printing the entire document.</p>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <tt>MainWindow</tt> and sets its size to 640x480 pixels before invoking the <tt>show()</tt> function and <tt>createSample()</tt> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MainWindow window;
+     window.resize(640, 480);
+     window.show();
+     window.createSample();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

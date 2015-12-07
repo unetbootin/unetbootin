@@ -1,0 +1,319 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/util/qcompleter.cpp -->
+<head>
+  <title>Qt 4.4: QCompleter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCompleter Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QCompleter class provides completions based on an item model. <a href="#details">More...</a></p>
+<pre> #include &lt;QCompleter&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qcompleter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qcompleter.html#CompletionMode-enum">CompletionMode</a></b> { PopupCompletion, InlineCompletion, UnfilteredPopupCompletion }</li>
+<li><div class="fn"/>enum <b><a href="qcompleter.html#ModelSorting-enum">ModelSorting</a></b> { UnsortedModel, CaseSensitivelySortedModel, CaseInsensitivelySortedModel }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a></b> : Qt::CaseSensitivity</li>
+<li><div class="fn"/><b><a href="qcompleter.html#completionColumn-prop">completionColumn</a></b> : int</li>
+<li><div class="fn"/><b><a href="qcompleter.html#completionMode-prop">completionMode</a></b> : CompletionMode</li>
+<li><div class="fn"/><b><a href="qcompleter.html#completionPrefix-prop">completionPrefix</a></b> : QString</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qcompleter.html#completionRole-prop">completionRole</a></b> : int</li>
+<li><div class="fn"/><b><a href="qcompleter.html#modelSorting-prop">modelSorting</a></b> : ModelSorting</li>
+<li><div class="fn"/><b><a href="qcompleter.html#wrapAround-prop">wrapAround</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcompleter.html#QCompleter">QCompleter</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qcompleter.html#QCompleter-2">QCompleter</a></b> ( QAbstractItemModel * <i>model</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qcompleter.html#QCompleter-3">QCompleter</a></b> ( const QStringList &amp; <i>list</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qcompleter.html#dtor.QCompleter">~QCompleter</a></b> ()</li>
+<li><div class="fn"/>Qt::CaseSensitivity <b><a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcompleter.html#completionColumn-prop">completionColumn</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcompleter.html#completionCount">completionCount</a></b> () const</li>
+<li><div class="fn"/>CompletionMode <b><a href="qcompleter.html#completionMode-prop">completionMode</a></b> () const</li>
+<li><div class="fn"/>QAbstractItemModel * <b><a href="qcompleter.html#completionModel">completionModel</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qcompleter.html#completionPrefix-prop">completionPrefix</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcompleter.html#completionRole-prop">completionRole</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qcompleter.html#currentCompletion">currentCompletion</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qcompleter.html#currentIndex">currentIndex</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcompleter.html#currentRow">currentRow</a></b> () const</li>
+<li><div class="fn"/>QAbstractItemModel * <b><a href="qcompleter.html#model">model</a></b> () const</li>
+<li><div class="fn"/>ModelSorting <b><a href="qcompleter.html#modelSorting-prop">modelSorting</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="qcompleter.html#pathFromIndex">pathFromIndex</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QAbstractItemView * <b><a href="qcompleter.html#popup">popup</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#caseSensitivity-prop">setCaseSensitivity</a></b> ( Qt::CaseSensitivity <i>caseSensitivity</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#completionColumn-prop">setCompletionColumn</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#completionMode-prop">setCompletionMode</a></b> ( CompletionMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#completionRole-prop">setCompletionRole</a></b> ( int <i>role</i> )</li>
+<li><div class="fn"/>bool <b><a href="qcompleter.html#setCurrentRow">setCurrentRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#setModel">setModel</a></b> ( QAbstractItemModel * <i>model</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#modelSorting-prop">setModelSorting</a></b> ( ModelSorting <i>sorting</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#setPopup">setPopup</a></b> ( QAbstractItemView * <i>popup</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#setWidget">setWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qcompleter.html#splitPath">splitPath</a></b> ( const QString &amp; <i>path</i> ) const</li>
+<li><div class="fn"/>QWidget * <b><a href="qcompleter.html#widget">widget</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcompleter.html#wrapAround-prop">wrapAround</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qcompleter.html#complete">complete</a></b> ( const QRect &amp; <i>rect</i> = QRect() )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#completionPrefix-prop">setCompletionPrefix</a></b> ( const QString &amp; <i>prefix</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#wrapAround-prop">setWrapAround</a></b> ( bool <i>wrap</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qcompleter.html#activated">activated</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#activated-2">activated</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#highlighted">highlighted</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qcompleter.html#highlighted-2">highlighted</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCompleter class provides completions based on an item model.</p>
+<p>You can use QCompleter to provide auto completions in any Qt widget, such as <a href="qlineedit.html">QLineEdit</a> and <a href="qcombobox.html">QComboBox</a>. When the user starts typing a word, QCompleter suggests possible ways of completing the word, based on a word list. The word list is provided as a <a href="qabstractitemmodel.html">QAbstractItemModel</a>. (For simple applications, where the word list is static, you can pass a <a href="qstringlist.html">QStringList</a> to QCompleter's constructor.)</p>
+<ul><li><a href="#basic-usage">Basic Usage</a></li>
+<li><a href="#iterating-through-completions">Iterating Through Completions</a></li>
+<li><a href="#the-completion-model">The Completion Model</a></li>
+<li><a href="#handling-tree-models">Handling Tree Models</a></li>
+</ul>
+<a name="basic-usage"></a>
+<h3>Basic Usage</h3>
+<p>A QCompleter is used typically with a <a href="qlineedit.html">QLineEdit</a> or <a href="qcombobox.html">QComboBox</a>. For example, here's how to provide auto completions from a simple word list in a <a href="qlineedit.html">QLineEdit</a>:</p>
+<pre>         QStringList wordList;
+         wordList &lt;&lt; &quot;alpha&quot; &lt;&lt; &quot;omega&quot; &lt;&lt; &quot;omicron&quot; &lt;&lt; &quot;zeta&quot;;
+
+         QLineEdit *lineEdit = new QLineEdit(this);
+
+         QCompleter *completer = new QCompleter(wordList, this);
+         completer-&gt;setCaseSensitivity(Qt::CaseInsensitive);
+         lineEdit-&gt;setCompleter(completer);</pre>
+<p>A <a href="qdirmodel.html">QDirModel</a> can be used to provide auto completion of file names. For example:</p>
+<pre>         QCompleter *completer = new QCompleter(this);
+         completer-&gt;setModel(new QDirModel(completer));
+         lineEdit-&gt;setCompleter(completer);</pre>
+<p>To set the model on which QCompleter should operate, call <a href="qcompleter.html#setModel">setModel</a>(). By default, QCompleter will attempt to match the <a href="qcompleter.html#completionPrefix-prop">completion prefix</a> (i.e&#x2e;, the word that the user has started typing) against the <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a> data stored in column 0 in the model case sensitively. This can be changed using <a href="qcompleter.html#completionRole-prop">setCompletionRole</a>(), <a href="qcompleter.html#completionColumn-prop">setCompletionColumn</a>(), and <a href="qcompleter.html#caseSensitivity-prop">setCaseSensitivity</a>().</p>
+<p>If the model is sorted on the column and role that are used for completion, you can call <a href="qcompleter.html#modelSorting-prop">setModelSorting</a>() with either <a href="qcompleter.html#ModelSorting-enum">QCompleter::CaseSensitivelySortedModel</a> or <a href="qcompleter.html#ModelSorting-enum">QCompleter::CaseInsensitivelySortedModel</a> as the argument. On large models, this can lead to significant performance improvements, because QCompleter can then use binary search instead of linear search.</p>
+<p>The model can be a <a href="qabstractlistmodel.html">list model</a>, a <a href="qabstracttablemodel.html">table model</a>, or a <a href="qabstractitemmodel.html">tree model</a>. Completion on tree models is slightly more involved and is covered in the <a href="#handling-tree-models">Handling Tree Models</a> section below.</p>
+<p>The <a href="qcompleter.html#completionMode-prop">completionMode</a>() determines the mode used to provide completions to the user.</p>
+<a name="iterating-through-completions"></a>
+<h3>Iterating Through Completions</h3>
+<p>To retrieve a single candidate string, call <a href="qcompleter.html#completionPrefix-prop">setCompletionPrefix</a>() with the text that needs to be completed and call <a href="qcompleter.html#currentCompletion">currentCompletion</a>(). You can iterate through the list of completions as below:</p>
+<pre>         for (int i = 0; completer-&gt;setCurrentRow(i); i++)
+             qDebug() &lt;&lt; completer-&gt;currentCompletion() &lt;&lt; &quot; is match number &quot; &lt;&lt; i;</pre>
+<p><a href="qcompleter.html#completionCount">completionCount</a>() returns the total number of completions for the current prefix. <a href="qcompleter.html#completionCount">completionCount</a>() should be avoided when possible, since it requires a scan of the entire model.</p>
+<a name="the-completion-model"></a>
+<h3>The Completion Model</h3>
+<p><a href="qcompleter.html#completionModel">completionModel</a>() return a list model that contains all possible completions for the current completion prefix, in the order in which they appear in the model. This model can be used to display the current completions in a custom view. Calling <a href="qcompleter.html#completionPrefix-prop">setCompletionPrefix</a>() automatically refreshes the completion model.</p>
+<a name="handling-tree-models"></a>
+<h3>Handling Tree Models</h3>
+<p>QCompleter can look for completions in tree models, assuming that any item (or sub-item or sub-sub-item) can be unambiguously represented as a string by specifying the path to the item. The completion is then performed one level at a time.</p>
+<p>Let's take the example of a user typing in a file system path. The model is a (hierarchical) <a href="qdirmodel.html">QDirModel</a>. The completion occurs for every element in the path. For example, if the current text is <tt>C:\Wind</tt>, QCompleter might suggest <tt>Windows</tt> to complete the current path element. Similarly, if the current text is <tt>C:\Windows\Sy</tt>, QCompleter might suggest <tt>System</tt>.</p>
+<p>For this kind of completion to work, QCompleter needs to be able to split the path into a list of strings that are matched at each level. For <tt>C:\Windows\Sy</tt>, it needs to be split as &quot;C:&quot;, &quot;Windows&quot; and &quot;Sy&quot;. The default implementation of <a href="qcompleter.html#splitPath">splitPath</a>(), splits the <a href="qcompleter.html#completionPrefix-prop">completionPrefix</a> using <a href="qdir.html#separator">QDir::separator</a>() if the model is a <a href="qdirmodel.html">QDirModel</a>.</p>
+<p>To provide completions, QCompleter needs to know the path from an index. This is provided by <a href="qcompleter.html#pathFromIndex">pathFromIndex</a>(). The default implementation of <a href="qcompleter.html#pathFromIndex">pathFromIndex</a>(), returns the data for the <a href="qcompleter.html#completionRole-prop">completionRole</a>() for list models and the absolute file path if the mode is a <a href="qdirmodel.html">QDirModel</a>.</p>
+<p>See also <a href="qabstractitemmodel.html">QAbstractItemModel</a>, <a href="qlineedit.html">QLineEdit</a>, <a href="qcombobox.html">QComboBox</a>, and <a href="tools-completer.html">Completer Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CompletionMode-enum"></a>enum QCompleter::CompletionMode</h3>
+<p>This enum specifies how completions are provided to the user.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCompleter::PopupCompletion</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Current completions are displayed in a popup window.</td></tr>
+<tr><td valign="top"><tt>QCompleter::InlineCompletion</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Completions appear inline (as selected text).</td></tr>
+<tr><td valign="top"><tt>QCompleter::UnfilteredPopupCompletion</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">All possible completions are displayed in a popup window with the most likely suggestion selected.</td></tr>
+</table></p>
+<p>See also <a href="qcompleter.html#completionMode-prop">setCompletionMode</a>().</p>
+<h3 class="fn"><a name="ModelSorting-enum"></a>enum QCompleter::ModelSorting</h3>
+<p>This enum specifies how the items in the model are sorted.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCompleter::UnsortedModel</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The model is unsorted.</td></tr>
+<tr><td valign="top"><tt>QCompleter::CaseSensitivelySortedModel</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The model is sorted case sensitively.</td></tr>
+<tr><td valign="top"><tt>QCompleter::CaseInsensitivelySortedModel</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The model is sorted case insensitively.</td></tr>
+</table></p>
+<p>See also <a href="qcompleter.html#modelSorting-prop">setModelSorting</a>().</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="caseSensitivity-prop"></a>caseSensitivity : <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitivity</a></h3>
+<p>This property holds the case sensitivity of the matching.</p>
+<p>The default is <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::CaseSensitivity caseSensitivity () const</b></li>
+<li><div class="fn"/><b>void setCaseSensitivity ( Qt::CaseSensitivity <i>caseSensitivity</i> )</b></li>
+</ul>
+<p>See also <a href="qcompleter.html#completionColumn-prop">completionColumn</a>, <a href="qcompleter.html#completionRole-prop">completionRole</a>, and <a href="qcompleter.html#modelSorting-prop">modelSorting</a>.</p>
+<h3 class="fn"><a name="completionColumn-prop"></a>completionColumn : int</h3>
+<p>This property holds the column in the model in which completions are searched for.</p>
+<p>If the <a href="qcompleter.html#popup">popup</a>() is a <a href="qlistview.html">QListView</a>, it is automatically setup to display this column.</p>
+<p>By default, the match column is 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int completionColumn () const</b></li>
+<li><div class="fn"/><b>void setCompletionColumn ( int <i>column</i> )</b></li>
+</ul>
+<p>See also <a href="qcompleter.html#completionRole-prop">completionRole</a> and <a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a>.</p>
+<h3 class="fn"><a name="completionMode-prop"></a>completionMode : <a href="qcompleter.html#CompletionMode-enum">CompletionMode</a></h3>
+<p>This property holds how the completions are provided to the user.</p>
+<p>The default value is <a href="qcompleter.html#CompletionMode-enum">QCompleter::PopupCompletion</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>CompletionMode completionMode () const</b></li>
+<li><div class="fn"/><b>void setCompletionMode ( CompletionMode <i>mode</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="completionPrefix-prop"></a>completionPrefix : <a href="qstring.html">QString</a></h3>
+<p>This property holds the completion prefix used to provide completions.</p>
+<p>The <a href="qcompleter.html#completionModel">completionModel</a>() is updated to reflect the list of possible matches for <i>prefix</i>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString completionPrefix () const</b></li>
+<li><div class="fn"/><b>void setCompletionPrefix ( const QString &amp; <i>prefix</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="completionRole-prop"></a>completionRole : int</h3>
+<p>This property holds the item role to be used to query the contents of items for matching.</p>
+<p>The default role is <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int completionRole () const</b></li>
+<li><div class="fn"/><b>void setCompletionRole ( int <i>role</i> )</b></li>
+</ul>
+<p>See also <a href="qcompleter.html#completionColumn-prop">completionColumn</a> and <a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a>.</p>
+<h3 class="fn"><a name="modelSorting-prop"></a>modelSorting : <a href="qcompleter.html#ModelSorting-enum">ModelSorting</a></h3>
+<p>This property holds the way the model is sorted.</p>
+<p>By default, no assumptions are made about the order of the items in the model that provides the completions.</p>
+<p>If the model's data for the <a href="qcompleter.html#completionColumn-prop">completionColumn</a>() and <a href="qcompleter.html#completionRole-prop">completionRole</a>() is sorted in ascending order, you can set this property to <a href="qcompleter.html#ModelSorting-enum">CaseSensitivelySortedModel</a> or <a href="qcompleter.html#ModelSorting-enum">CaseInsensitivelySortedModel</a>. On large models, this can lead to significant performance improvements because the completer object can then use a binary search algorithm instead of linear search algorithm.</p>
+<p>The sort order (i.e ascending or descending order) of the model is determined dynamically by inspecting the contents of the model.</p>
+<p><b>Note:</b> The performance improvements described above cannot take place when the completer's <a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a> is different to the case sensitivity used by the model's when sorting.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ModelSorting modelSorting () const</b></li>
+<li><div class="fn"/><b>void setModelSorting ( ModelSorting <i>sorting</i> )</b></li>
+</ul>
+<p>See also <a href="qcompleter.html#caseSensitivity-prop">setCaseSensitivity</a>() and <a href="qcompleter.html#ModelSorting-enum">QCompleter::ModelSorting</a>.</p>
+<h3 class="fn"><a name="wrapAround-prop"></a>wrapAround : bool</h3>
+<p>This property holds the completions wrap around when navigating through items.</p>
+<p>The default is true.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool wrapAround () const</b></li>
+<li><div class="fn"/><b>void setWrapAround ( bool <i>wrap</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCompleter"></a>QCompleter::QCompleter ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a completer object with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QCompleter-2"></a>QCompleter::QCompleter ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a completer object with the given <i>parent</i> that provides completions from the specified <i>model</i>.</p>
+<h3 class="fn"><a name="QCompleter-3"></a>QCompleter::QCompleter ( const <a href="qstringlist.html">QStringList</a> &amp; <i>list</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qcompleter.html">QCompleter</a> object with the given <i>parent</i> that uses the specified <i>list</i> as a source of possible completions.</p>
+<h3 class="fn"><a name="dtor.QCompleter"></a>QCompleter::~QCompleter ()</h3>
+<p>Destroys the completer object.</p>
+<h3 class="fn"><a name="activated"></a>void QCompleter::activated ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is sent when an item in the <a href="qcompleter.html#popup">popup</a>() is activated by the user (by clicking or pressing return). The item's <i>text</i> is given.</p>
+<h3 class="fn"><a name="activated-2"></a>void QCompleter::activated ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is sent when an item in the <a href="qcompleter.html#popup">popup</a>() is activated by the user. (by clicking or pressing return). The item's <i>index</i> in the <a href="qcompleter.html#completionModel">completionModel</a>() is given.</p>
+<h3 class="fn"><a name="complete"></a>void QCompleter::complete ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i> = QRect() )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>For <a href="qcompleter.html#CompletionMode-enum">QCompleter::PopupCompletion</a> and QCompletion::UnfilteredPopupCompletion modes, calling this function displays the popup displaying the current completions. By default, if <i>rect</i> is not specified, the popup is displayed on the bottom of the <a href="qcompleter.html#widget">widget</a>(). If <i>rect</i> is specified the popup is displayed on the left edge of the rectangle.</p>
+<p>For <a href="qcompleter.html#CompletionMode-enum">QCompleter::InlineCompletion</a> mode, the <a href="qcompleter.html#highlighted">highlighted</a>() signal is fired with the current completion.</p>
+<h3 class="fn"><a name="completionCount"></a>int QCompleter::completionCount () const</h3>
+<p>Returns the number of completions for the current prefix. For an unsorted model with a large number of items this can be expensive. Use <a href="qcompleter.html#setCurrentRow">setCurrentRow</a>() and <a href="qcompleter.html#currentCompletion">currentCompletion</a>() to iterate through all the completions.</p>
+<h3 class="fn"><a name="completionModel"></a><a href="qabstractitemmodel.html">QAbstractItemModel</a> * QCompleter::completionModel () const</h3>
+<p>Returns the completion model. The completion model is a read-only list model that contains all the possible matches for the current completion prefix. The completion model is auto-updated to reflect the current completions.</p>
+<p>See also <a href="qcompleter.html#completionPrefix-prop">completionPrefix</a> and <a href="qcompleter.html#model">model</a>().</p>
+<h3 class="fn"><a name="currentCompletion"></a><a href="qstring.html">QString</a> QCompleter::currentCompletion () const</h3>
+<p>Returns the current completion string. This includes the <a href="qcompleter.html#completionPrefix-prop">completionPrefix</a>. When used alongside <a href="qcompleter.html#setCurrentRow">setCurrentRow</a>(), it can be used to iterate through all the matches.</p>
+<p>See also <a href="qcompleter.html#setCurrentRow">setCurrentRow</a>() and <a href="qcompleter.html#currentIndex">currentIndex</a>().</p>
+<h3 class="fn"><a name="currentIndex"></a><a href="qmodelindex.html">QModelIndex</a> QCompleter::currentIndex () const</h3>
+<p>Returns the model index of the current completion in the <a href="qcompleter.html#completionModel">completionModel</a>().</p>
+<p>See also <a href="qcompleter.html#setCurrentRow">setCurrentRow</a>(), <a href="qcompleter.html#currentCompletion">currentCompletion</a>(), and <a href="qcompleter.html#model">model</a>().</p>
+<h3 class="fn"><a name="currentRow"></a>int QCompleter::currentRow () const</h3>
+<p>Returns the current row.</p>
+<p>See also <a href="qcompleter.html#setCurrentRow">setCurrentRow</a>().</p>
+<h3 class="fn"><a name="highlighted"></a>void QCompleter::highlighted ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is sent when an item in the <a href="qcompleter.html#popup">popup</a>() is highlighted by the user. It is also sent if <a href="qcompleter.html#complete">complete</a>() is called with the <a href="qcompleter.html#completionMode-prop">completionMode</a>() set to QCOmpleter::InlineCompletion. The item's <i>text</i> is given.</p>
+<h3 class="fn"><a name="highlighted-2"></a>void QCompleter::highlighted ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is sent when an item in the <a href="qcompleter.html#popup">popup</a>() is highlighted by the user. It is also sent if <a href="qcompleter.html#complete">complete</a>() is called with the <a href="qcompleter.html#completionMode-prop">completionMode</a>() set to <a href="qcompleter.html#CompletionMode-enum">QCompleter::InlineCompletion</a>. The item's <i>index</i> in the <a href="qcompleter.html#completionModel">completionModel</a>() is given.</p>
+<h3 class="fn"><a name="model"></a><a href="qabstractitemmodel.html">QAbstractItemModel</a> * QCompleter::model () const</h3>
+<p>Returns the model that provides completion strings.</p>
+<p>See also <a href="qcompleter.html#setModel">setModel</a>() and <a href="qcompleter.html#completionModel">completionModel</a>().</p>
+<h3 class="fn"><a name="pathFromIndex"></a><a href="qstring.html">QString</a> QCompleter::pathFromIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the path for the given <i>index</i>. The completer object uses this to obtain the completion text from the underlying model.</p>
+<p>The default implementation returns the <a href="qt.html#ItemDataRole-enum">edit role</a> of the item for list models. It returns the absolute file path if the model is a <a href="qdirmodel.html">QDirModel</a>.</p>
+<p>See also <a href="qcompleter.html#splitPath">splitPath</a>().</p>
+<h3 class="fn"><a name="popup"></a><a href="qabstractitemview.html">QAbstractItemView</a> * QCompleter::popup () const</h3>
+<p>Returns the popup used to display completions.</p>
+<p>See also <a href="qcompleter.html#setPopup">setPopup</a>().</p>
+<h3 class="fn"><a name="setCurrentRow"></a>bool QCompleter::setCurrentRow ( int <i>row</i> )</h3>
+<p>Sets the current row to the <i>row</i> specified. Returns true if successful; otherwise returns false.</p>
+<p>This function may be used along with <a href="qcompleter.html#currentCompletion">currentCompletion</a>() to iterate through all the possible completions.</p>
+<p>See also <a href="qcompleter.html#currentRow">currentRow</a>(), <a href="qcompleter.html#currentCompletion">currentCompletion</a>(), and <a href="qcompleter.html#completionCount">completionCount</a>().</p>
+<h3 class="fn"><a name="setModel"></a>void QCompleter::setModel ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i> )</h3>
+<p>Sets the model which provides completions to <i>model</i>. The <i>model</i> can be list model or a tree model. If a model has been already previously set and it has the <a href="qcompleter.html">QCompleter</a> as its parent, it is deleted.</p>
+<p>For convenience, if <i>model</i> is a <a href="qdirmodel.html">QDirModel</a>, <a href="qcompleter.html">QCompleter</a> switches its <a href="qcompleter.html#caseSensitivity-prop">caseSensitivity</a> to <a href="qt.html#CaseSensitivity-enum">Qt::CaseInsensitive</a> on Windows and <a href="qt.html#CaseSensitivity-enum">Qt::CaseSensitive</a> on other platforms.</p>
+<p>See also <a href="qcompleter.html#completionModel">completionModel</a>(), <a href="qcompleter.html#modelSorting-prop">modelSorting</a>, and <a href="qcompleter.html#handling-tree-models">Handling Tree Models</a>.</p>
+<h3 class="fn"><a name="setPopup"></a>void QCompleter::setPopup ( <a href="qabstractitemview.html">QAbstractItemView</a> * <i>popup</i> )</h3>
+<p>Sets the popup used to display completions to <i>popup</i>. <a href="qcompleter.html">QCompleter</a> takes ownership of the view.</p>
+<p>A <a href="qlistview.html">QListView</a> is automatically created when the <a href="qcompleter.html#completionMode-prop">completionMode</a>() is set to <a href="qcompleter.html#CompletionMode-enum">QCompleter::PopupCompletion</a> or <a href="qcompleter.html#CompletionMode-enum">QCompleter::UnfilteredPopupCompletion</a>. The default popup displays the <a href="qcompleter.html#completionColumn-prop">completionColumn</a>().</p>
+<p>Ensure that this function is called before the view settings are modified. This is required since view's properties may require that a model has been set on the view (for example, hiding columns in the view requires a model to be set on the view).</p>
+<p>See also <a href="qcompleter.html#popup">popup</a>().</p>
+<h3 class="fn"><a name="setWidget"></a>void QCompleter::setWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Sets the widget for which completion are provided for to <i>widget</i>. This function is automatically called when a <a href="qcompleter.html">QCompleter</a> is set on a <a href="qlineedit.html">QLineEdit</a> using <a href="qlineedit.html#setCompleter">QLineEdit::setCompleter</a>() or on a <a href="qcombobox.html">QComboBox</a> using <a href="qcombobox.html#setCompleter">QComboBox::setCompleter</a>(). The widget needs to be set explicitly when providing completions for custom widgets.</p>
+<p>See also <a href="qcompleter.html#widget">widget</a>(), <a href="qcompleter.html#setModel">setModel</a>(), and <a href="qcompleter.html#setPopup">setPopup</a>().</p>
+<h3 class="fn"><a name="splitPath"></a><a href="qstringlist.html">QStringList</a> QCompleter::splitPath ( const <a href="qstring.html">QString</a> &amp; <i>path</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Splits the given <i>path</i> into strings that are used to match at each level in the <a href="qcompleter.html#model">model</a>().</p>
+<p>The default implementation of splitPath() splits a file system path based on <a href="qdir.html#separator">QDir::separator</a>() when the sourceModel() is a <a href="qdirmodel.html">QDirModel</a>.</p>
+<p>When used with list models, the first item in the returned list is used for matching.</p>
+<p>See also <a href="qcompleter.html#pathFromIndex">pathFromIndex</a>() and <a href="qcompleter.html#handling-tree-models">Handling Tree Models</a>.</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QCompleter::widget () const</h3>
+<p>Returns the widget for which the completer object is providing completions.</p>
+<p>See also <a href="qcompleter.html#setWidget">setWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

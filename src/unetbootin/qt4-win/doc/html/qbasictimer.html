@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qbasictimer.cpp -->
+<head>
+  <title>Qt 4.4: QBasicTimer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QBasicTimer Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QBasicTimer class provides timer events for objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QBasicTimer&gt;</pre><ul>
+<li><a href="qbasictimer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qbasictimer.html#QBasicTimer">QBasicTimer</a></b> ()</li>
+<li><div class="fn"/><b><a href="qbasictimer.html#dtor.QBasicTimer">~QBasicTimer</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qbasictimer.html#isActive">isActive</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qbasictimer.html#start">start</a></b> ( int <i>msec</i>, QObject * <i>object</i> )</li>
+<li><div class="fn"/>void <b><a href="qbasictimer.html#stop">stop</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qbasictimer.html#timerId">timerId</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QBasicTimer class provides timer events for objects.</p>
+<p>This is a fast, lightweight, and low-level class used by Qt internally. We recommend using the higher-level <a href="qtimer.html">QTimer</a> class rather than this class if you want to use timers in your applications.</p>
+<p>To use this class, create a QBasicTimer, and call its <a href="qbasictimer.html#start">start</a>() function with a timeout interval and with a pointer to a <a href="qobject.html">QObject</a> subclass. When the timer times out it will send a timer event to the <a href="qobject.html">QObject</a> subclass. The timer can be stopped at any time using <a href="qbasictimer.html#stop">stop</a>(). <a href="qbasictimer.html#isActive">isActive</a>() returns true for a timer that is running; i.e&#x2e; it has been started, has not reached the timeout time, and has not been stopped. The timer's ID can be retrieved using <a href="qbasictimer.html#timerId">timerId</a>().</p>
+<p>The <a href="widgets-wiggly.html">Wiggly</a> example uses QBasicTimer to repaint a widget at regular intervals.</p>
+<p>See also <a href="qtimer.html">QTimer</a>, <a href="qtimerevent.html">QTimerEvent</a>, <a href="qobject.html#timerEvent">QObject::timerEvent</a>(), <a href="timers.html">Timers</a>, and <a href="widgets-wiggly.html">Wiggly Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QBasicTimer"></a>QBasicTimer::QBasicTimer ()</h3>
+<p>Contructs a basic timer.</p>
+<p>See also <a href="qbasictimer.html#start">start</a>().</p>
+<h3 class="fn"><a name="dtor.QBasicTimer"></a>QBasicTimer::~QBasicTimer ()</h3>
+<p>Destroys the basic timer.</p>
+<h3 class="fn"><a name="isActive"></a>bool QBasicTimer::isActive () const</h3>
+<p>Returns true if the timer is running, has not yet timed out, and has not been stopped; otherwise returns false.</p>
+<p>See also <a href="qbasictimer.html#start">start</a>() and <a href="qbasictimer.html#stop">stop</a>().</p>
+<h3 class="fn"><a name="start"></a>void QBasicTimer::start ( int <i>msec</i>, <a href="qobject.html">QObject</a> * <i>object</i> )</h3>
+<p>Starts (or restarts) the timer with a <i>msec</i> milliseconds timeout.</p>
+<p>The given <i>object</i> will receive timer events.</p>
+<p>See also <a href="qbasictimer.html#stop">stop</a>(), <a href="qbasictimer.html#isActive">isActive</a>(), and <a href="qobject.html#timerEvent">QObject::timerEvent</a>().</p>
+<h3 class="fn"><a name="stop"></a>void QBasicTimer::stop ()</h3>
+<p>Stops the timer.</p>
+<p>See also <a href="qbasictimer.html#start">start</a>() and <a href="qbasictimer.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="timerId"></a>int QBasicTimer::timerId () const</h3>
+<p>Returns the timer's ID.</p>
+<p>See also <a href="qtimerevent.html#timerId">QTimerEvent::timerId</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

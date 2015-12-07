@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicssceneevent.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsSceneEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsSceneEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsSceneEvent class provides a base class for all graphics view related events. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsSceneEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<p>Inherited by <a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a>, <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a>, <a href="qgraphicsscenehelpevent.html">QGraphicsSceneHelpEvent</a>, <a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>, <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>, <a href="qgraphicsscenemoveevent.html">QGraphicsSceneMoveEvent</a>, <a href="qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a>, and <a href="qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicssceneevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicssceneevent.html#dtor.QGraphicsSceneEvent">~QGraphicsSceneEvent</a></b> ()</li>
+<li><div class="fn"/>QWidget * <b><a href="qgraphicssceneevent.html#widget">widget</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsSceneEvent class provides a base class for all graphics view related events.</p>
+<p>When a <a href="qgraphicsview.html">QGraphicsView</a> receives Qt mouse, keyboard, and drag and drop events (<a href="qmouseevent.html">QMouseEvent</a>, <a href="qkeyevent.html">QKeyEvent</a>, QDragEvent, etc.), it translates them into instances of QGraphicsSceneEvent subclasses and forwards them to the <a href="qgraphicsscene.html">QGraphicsScene</a> it displays. The scene then forwards the events to the relevant items.</p>
+<p>For example, when a <a href="qgraphicsview.html">QGraphicsView</a> receives a <a href="qmouseevent.html">QMouseEvent</a> of type MousePress as a response to a user click, the view sends a <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> of type <a href="qevent.html#Type-enum">GraphicsSceneMousePress</a> to the underlying <a href="qgraphicsscene.html">QGraphicsScene</a> through its <a href="qgraphicsscene.html#mousePressEvent">mousePressEvent()</a> function. The default <a href="qgraphicsscene.html#mousePressEvent">QGraphicsScene::mousePressEvent</a>() implementation determines which item was clicked and forwards the event to <a href="qgraphicsitem.html#mousePressEvent">QGraphicsItem::mousePressEvent</a>().</p>
+<p>Subclasses such as <a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a> and <a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a> provide the coordinates from the original <a href="qevent.html">QEvent</a> in screen, scene, and item coordinates (see <a href="qgraphicsscenemouseevent.html#screenPos">screenPos()</a>, <a href="qgraphicsscenemouseevent.html#scenePos">scenePos()</a>, and <a href="qgraphicsscenemouseevent.html#pos">pos()</a>). The item coordinates are set by the <a href="qgraphicsscene.html">QGraphicsScene</a> before it forwards the event to the event to a <a href="qgraphicsitem.html">QGraphicsItem</a>. The mouse events also add the possibility to retrieve the coordinates from the last event received by the view (see <a href="qgraphicsscenemouseevent.html#lastScreenPos">lastScreenPos()</a>, <a href="qgraphicsscenemouseevent.html#lastScenePos">lastScenePos()</a>, and <a href="qgraphicsscenemouseevent.html#lastPos">lastPos()</a>).</p>
+<p>See also <a href="qevent.html">QEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QGraphicsSceneEvent"></a>QGraphicsSceneEvent::~QGraphicsSceneEvent ()</h3>
+<p>Destroys the event.</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QGraphicsSceneEvent::widget () const</h3>
+<p>Returns the widget where the event originated, or 0 if the event originates from another application.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

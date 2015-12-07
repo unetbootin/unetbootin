@@ -1,0 +1,361 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page credits.html
+
+    \title Thanks!
+    \ingroup licensing
+    \brief A list of contributors to Qt.
+
+    The following (and probably many others) have provided bug reports,
+    suggestions, patches, beta testing, or done us other favors.  We thank
+    you all:
+
+    Adam P. Jenkins <ajenkins at cs.umass.edu>\br
+    Ahmed Metwally <ametwaly at auc-cs28.eun.eg>\br
+    Aidas Kasparas <kaspar at soften.ktu.lt>\br
+    Alejandro Aguilar Sierra <asierra at servidor.unam.mx>\br
+    Alex <steeper at dial.pipex.com>\br
+    Alex Kambis <kambis at eos913c.gsfc.nasa.gov>\br
+    Alexander Kozlov <alex at hale.appl.sci-nnov.ru>\br
+    Alexander Sanda <alex at darkstar.ping.at>\br
+    Amos Leffler <leffler at netaxs.com>\br
+    Anders Hanson <andhan at lls.se>\br
+    Andi Peredri <andi at ukr.net>\br
+    Andreas Schlempp <schlempp at egd.igd.fhg.de>\br
+    Andrew Bell <abell at vsys.com>\br
+    Andrew Gillham <gillhaa at ghost.whirlpool.com>\br
+    Andrew J. Robinson <robinson at eclipse.net>\br
+    Andrew Pavlomanolakos <app at novanet.net.au>\br
+    Andrew R. Tefft <teffta at crypt.erie.ge.com>\br
+    Andrew Vajoczki <vajoczki at interlog.com>\br
+    Andr\eacute Johansen <Andre.Johansen at funcom.no>\br
+    Andr\eacute Kramer <Andre.Kramer at glpg.com>\br     
+    Andriy Rysin <arysin at yahoo.com>\br
+    Andy Brice <andyb at suntail.net>\br
+    Andy Shaw <andy at east.no>\br
+    Anton Keyter <ant at intekom.co.za>\br
+    Arabeyes Project (http://www.arabeyes.org) <doc at arabeyes.org> \br
+    ARISE - Marcin Giedz <giedz at arise.pl>\br
+    Arnt Gulbrandsen <arnt at gulbrandsen.priv.no>\br
+    Ashley Winters <jql at accessone.com>\br
+    Aubrey Soper <azdak at ix.netcom.com>\br
+    Axel Schwenke <schwenke at HTWM.DE>\br
+    Ben Bergen <ben at gmg.com>\br
+    Bernard Leach <B.Leach at compsoc.cs.latrobe.edu.au>\br
+    Bernd Johannes Wuebben <wuebben at math.cornell.edu>\br
+    Bernd S. Brentrup <bsb at uni-muenster.de>\br
+    Bert Haverkamp <b.r.j.haverkamp at et.tudelft.nl>\br
+    Bjorn Reese <breese at dit.ou.dk>\br
+    Bj\ouml\c{}rn Bergstr\ouml\c{}rm <bjorn.bergstrom at roguelikedevelopment.org>\br
+    Brian Beattie <beattie at drcpdx.stt3.com>\br
+    Brian P. Theodore <theodore at std.saic.com>\br
+    Brian White <bcwhite at verisim.com>\br
+    Bryan Scattergood <bryan at fsel.com>\br
+    Carsten Steckel <carsten at cs.newcastle.edu.au>\br
+    Chao-Hsin, Lin <linchao at charlie.cns.iit.edu>\br
+    Chip Salzenberg <chip at atlantic.net>\br
+    Chris Zwilling <crzwlng at cloudnet.com>\br
+    Christian Czezatke <e9025461 at student.tuwien.ac.at>\br
+    Christopher Andrew Spiking <cas at Cs.Nott.AC.UK>\br
+    Christopher J. White <cjwhite at rgit.wustl.edu>\br
+    Clarence Dang <dang at kde.org>\br
+    Claus Werner <lzu96cw at reading.ac.uk>\br
+    Cloyce D. Spradling <cloyce at austin.ibm.com>\br
+    Colin Paul Adams <colin at colina.demon.co.uk>\br
+    Cristiano Verondini <cverond at deis219.deis.unibo.it>\br
+    Damyan Pepper <damyanp at cogs.susx.ac.uk>\br
+    Dan Nickerson <nickersond at uthscsa.edu>\br
+    Daniel Brahneborg <basic at well.com>\br
+    Daniel Gruner <dgruner at tikva.chem.utoronto.ca>\br
+    Daniel J Mitchell <dan at rebellion.co.uk>\br
+    Danilo Fiorenzano <danilo at terranet.ab.ca>\br
+    Daniel M. Duley <daniel.duley at verizon.net>\br
+    Dante Profeta <profeta at neomedia.it>\br
+    Darryl Ruggles <001654r at dragon.acadiau.ca>\br
+    Dave <dave at stellacore.com>\br
+    Dave Steffen <steffend at glitch.physics.colostate.edu>\br
+    Dean Hall <dwhall at deskstation.com>\br
+    Denis Y. Pershin <dyp at isis.nsu.ru>\br
+    Diedrich Vorberg <Diedrich_Vorberg at cp.prima.ruhr.de>\br
+    Dietmar Schaefer <dietmar at cs.newcastle.edu.au>\br
+    Dimitri Papadopoulos <dpo at club-internet.fr>\br
+    Dirk Mueller <mueller at kde.org>\br
+    Dirk Schwartmann <dirk.schwartmann at dlr.de>\br
+    Dominik Jergus <djergus at ics.uci.edu>\br
+    Don Sanders <sanders at kde.org>\br
+    Donald A. Seielstad <donald at gromit.scs.uiuc.edu>\br
+    Donna J. Armijo <donna at KachinaTech.COM>\br
+    Doug Boreland <dborel at amex-trs.com>\br
+    Douglas Lenz <dlenz at spedsoft.com>\br
+    Dr Mek Buhl Nielsen <m.b.nielsen at bham.ac.uk>\br
+    Dr Willem A. Schreuder <Willem.Schreuder at prinmath.com>\br
+    E. Kevin Hall <hall at boston.sgi.com>\br
+    Ed Mackey <emackey at Early.com>\br
+    Edmund Taylor <etaylor at interaccess.com>\br
+    Enrique Mat\iacute\c{}as S\aacute\c{}nchez <cronopios at gmail.com>\br
+    Eric Bos <Eric.Bos at adelaide.maptek.com.au>\br
+    Eric Brunson <brunson at brunson.com>\br
+    Eric Jansen <jansen at photon.com>\br
+    Erik Norell <erik at Astrakan.HGS.SE>\br
+    Erik Thiele <erik at unterland.de>\br
+    Ernie Pasveer <erniep at vsl.com>\br
+    F R Ball <frb at umr.edu>\br
+    Fergal Mc Carthy <fergal at ilo.dec.com>\br
+    Frank Gockel <gockel at etecs4.uni-duisburg.de>\br
+    Frank Roscher <frank at chemnitz.abs-rz.de>\br
+    Franklin <franklin at goodhorse.idv.tw>\br
+    Fredrik Markstr\ouml\c{}m <fredrik at zod.campus.luth.se>\br
+    Fredrik Nehr <fredrik_nehr at ivab.se>\br
+    FrenzelBhv at aol.com\br
+    Frugal <frugal at wardrobe.demon.co.uk>\br
+    Frugal the Curious <Chris.Ward at softcare.co.uk>\br
+    Fujimoto Koji <kochan at mbox.kyoto-inet.or.jp>\br
+    Gabor V. Gulyas <gabor at robiomat.com>\br
+    Gary E. Sherman <sherman at mrcc.com>\br
+    Geoff Carpenter <GCC at watson.ibm.com>\br
+    Geoffrey Higginson <ghiggins at gulf.uvic.ca>\br
+    Georg Filios <Georg.Filios at post.rwth-aachen.de>\br
+    George Simunovich <george at cia-g.com>\br
+    Giovanni Bajo <giovannibajo at gmail.com>\br
+    Giovanni Carapelli <gcarapel at mbox.vol.it>\br
+    Greg Tomalesky <tomalesk at yrkpa.kias.com>\br
+    Gregg Jensen <gwj at stl.nexen.com>\br
+    Gustav "Gurre" Kalvesten <a94guska at ida.his.se>\br
+    Hal DeVore <hdevore at crow.bmc.com>\br
+    Hans Flaechsig <hans at hannes.owl.de>\br
+    Hans Schlenker <schlenkh at informatik.uni-muenchen.de>\br
+    Hardo Mueller <hardo at ipb.uni-bonn.de>\br
+    Heiko Gerdau <heiko.gerdau at t-online.de>\br
+    Helder Correia <helder.pereira.correia at gmail.com>\br
+    Henty Waker <henty at foxbat.sur.uct.ac.za>\br
+    Holger Hans Peter Freyther <zecke at selfish.org>\br
+    Hrafnkell Eiriksson <hkelle at mmedia.is>\br
+    Ildefonso Junquero Martin-Arroyo <junquero at sainsel.es>\br
+    Ingo Stapel <ingo.stapel at tu-clausthal.de>\br
+    J. Solomon Kostelnik <roz at one.net>\br
+    Jae Cho <cs184-dc at ute.CS.Berkeley.EDU>\br
+    James McIninch <james at amber.biology.gatech.edu>\br
+    Jan Aarsaether <jaa at metis.no>\br
+    Jaromir Dolecek <dolecek at ics.muni.cz>\br
+    Jasmin Blanchette <jasminb at corel.com>\br
+    Jason Evans <evans911 at cs.uidaho.edu>\br
+    Jay Painter <jay at a42.com>\br
+    Jean-Philippe Langlois <jpl at iname.com>\br
+    Jeff Harris <jharris at cis.ohio-state.edu>\br
+    Jeff Largent <jlargent at iu.net>\br
+    Jeffrey Vetter <vetter at lanl.gov>\br
+    Jeremy Wohl <jeremy at godzilli.cs.sunysb.edu>\br
+    Jesper K. Pedersen <blackie atklaralvdalens-datakonsult.se>\br
+    Jim Lauchlan <jim.lauchlan at gecm.com>\br
+    Joachim Backes <backes at rhrk.uni-kl.de>\br
+    Jochen R&ouml;mmler <jochen at concept.de>\br
+    Jochen Scharrlach <jscharrl at BA-Stuttgart.De>\br
+    Joe Croft <jcroft at swbell.net>\br
+    Joel Lindholm <wizball at kewl.campus.luth.se>\br
+    John H. Reppy <jhr at research.att.com>\br
+    John Huertas - Jourda <octarine at gte.net>\br
+    John Ouellette <ouellet at beluga.phys.UVic.CA>\br
+    John Vidar Larring <larring at weatherone.tv>\br
+    Jon Brumfitt <jbrumfit at astro.estec.esa.nl>\br
+    Jose Castro <jocastro at erols.com>\br
+    Jukka Heinonen <jhei at iki.fi>\br
+    Julian Enticknap <Julian.Enticknap at UK.Sun.COM>\br
+    Jussi-Pekka Sairanen <jussi-pekka.sairanen at research.nokia.com>\br
+    Kalle Dalheimer <kalle at dalheimer.hh.eunet.de>\br
+    Karl Robillard <karl at skygames.com>\br
+    Keith Brown <ksbrown at ix.netcom.com>\br
+    Keith Dowsett <kdowsett at rpms.ac.uk>\br
+    Ken Hollis <khollis at northwest.com>\br
+    Kirill Konyagin <kirill at asplinux.ru>\br
+    Klaus Ebner <klaus at gaspode.ndh.com>\br
+    Klaus-Georg Adams <Klaus-Georg.Adams at chemie.uni-karlsruhe.de>\br
+    Klaus Schmidinger <Klaus.Schmidinger at cadsoft.de>\br
+    Kristian Freed <d00freed at dtek.chalmers.se>\br
+    Kristof Depraetere <Kristof.Depraetere at rug.ac.be>\br
+    Kurt L Anderson <kurt+ at osu.edu>\br
+    Larry Lee <lclee at primenet.com>\br
+    Lars Knoll <knoll at mpi-hd.mpg.de>\br
+    M. G. Berberich <berberic at fmi.uni-passau.de>\br
+    Maas-Maarten Zeeman <mzeeman at cs.vu.nl>\br
+    Magnus Persson <mpersson at eritel.se>\br
+    Mario Weilguni <mweilguni at arctica.sime.com>\br
+    Marius Storm-Olsen <marius at storm-olsen.com>\br
+    Mariya <muha at iclub.nsu.ru>\br
+    Mark Summerfield <summer at perlpress.com>\br
+    Markku Hihnala <mah at ee.oulu.fi>\br
+    Marko Macek <Marko.Macek at snet.fer.uni-lj.si>\br
+    Martin Baehr <mbaehr at email.archlab.tuwien.ac.at>\br
+    Martin Mueller <mm at lunetix.de>\br
+    Martin van Velsen <vvelsen at ronix.ptf.hro.nl>\br
+    Matthias Ettrich <ettrich at fisher.informatik.uni-tuebingen.de>\br
+    Matthias Suencksen <msuencks at techfak.uni-bielefeld.de>\br
+    Mattias Engdeg\aring\c{}rd <f91-men at nada.kth.se>\br
+    Michael Doppler <m.doppler at icoserve.com>\br
+    Michael Figley <figley at ibmoto.com>\br
+    Michael George <george at quark.im4u.net>\br
+    Michael Graff <explorer at flame.org>\br
+    Michael H. Price II <price at ERC.MsState.Edu>\br
+    Michael Harnois <mharnois at sbt.net>\br
+    Michael Hohmuth <hohmuth at inf.tu-dresden.de>\br
+    Michael Leodolter <michael at lab1.psy.univie.ac.at>\br
+    Michael Roth <mroth at nessie.de>\br
+    Michael Schwendt <Michael_Schwendt at public.uni-hamburg.de>\br
+    Michal Polak <mpolak at fi.muni.cz>\br
+    Mikael Bourges-Sevenier <bourges at int-evry.fr>\br
+    Mike Fearn <hp003 at dra.hmg.gb>\br
+    Mike Perik <mikep at crt.com>\br
+    Mike Sharkey <msharkey at softarc.com>\br
+    Mikko Ala-Fossi <mikko.ala-fossi at vaisala.com>\br
+    Miroslav Flidr <flidr at kky.zcu.cz>\br
+    Miyata Shigeru <miyata at kusm.kyoto-u.ac.jp>\br
+    Myron Uecker <muecker at csd.net>\br
+    Neal Sanche <neal at nsdev.org>\br
+    Ngok Yuk Yau <zzy at compuserve.com>\br
+    Niclas Anderberg <agony at sparta.lu.se>\br
+    Nicolas Goutte <goutte at kde.org>\br
+    Oliver Eiden <o.eiden at pop.ruhr.de>\br
+    Oliver Elphick <olly at lfix.co.uk>\br
+    Olivier Verloove <overloov at ulb.ac.be>\br
+    Osku Salerma <osku at iki.fi>\br
+    P. J. Leonard <eespjl at ee.bath.ac.uk>\br
+    Paolo Galatola <paolo at iris.polito.it>\br
+    Pat Dowler <dowler at pt1B1106.FSH.UVic.CA>\br
+    Patrice Trognon <trognon at apogee-com.fr>\br
+    Patrick Voigt <Patrick.Voigt at Informatik.TU-Chemnitz.DE>\br
+    Paul Bucheit <ptb at k2.cwru.edu>\br
+    Paul Curtis <plc at rowley.co.uk>\br
+    Paul Kendall <paul at kcbbs.gen.nz>\br
+    Paul Marquis <pmarquis at iddptm.iddis.com>\br
+    Peter Bender <bender at iib.bauwesen.th-darmstadt.de>\br
+    Peter Klotz <p.klotz at icoserve.com>\br
+    Peter Pletcher <peter at delilah>\br
+    Pierre Rocque <rocque at CRHSC.Umontreal.CA>\br
+    Pohorecki Wladyslaw <pohorecki at novell.ftj.agh.edu.pl>\br
+    R.S. Mallozzi, <mallozzi at bowie.msfc.nasa.gov>\br
+    Ralf Stanke <ralf at mcshh.hanse.de>\br
+    Reginald Stadlbauer <reggie at kde.org>\br
+    Richard Fric <Richard.Fric at kdemail.net>\br
+    Richard D. Jackson <rjackson at bga.com>\br
+    Richard Keech <rkeech at colesmyer.com.au>\br
+    Richard Moore <rich at kde.org>\br
+    Rick Brohl <rbrohl at uswest.com>\br
+    Robert Anderson <Robert.E.Anderson at unh.edu>\br
+    Robert Cimrman <cimrman at marius.univ-mrs.fr>\br
+    Roberto Alsina <ralsina at ultra7.unl.edu.ar>\br
+    Robin Ericsson <robin at garcio.com>\br
+    Rohlfs Reiner <Reiner.Rohlfs at obs.unige.ch>\br
+    Salman Sheikh <salman at vdragon.gsfc.nasa.gov>\br
+    Sandro Giessl <sandro at giessl.com>\br
+    Sandro Sigala <ssigala at globalnet.it>\br
+    Scott Coppen <scoppen at emerald.tufts.edu>\br
+    Sean Echevarria <sean at beatnik.com>\br
+    Sean Vyain <svyain at mail.tds.net>\br
+    Sirtaj Singh Kang <ssk at physics.unimelb.EDU.AU>\br
+    Sivan Toledo\br
+    Stefan Cronert <d93-scr at nada.kth.se>\br
+    Stefan Taferner <taf at porsche.co.at>\br
+    Steffen Hansen <stefh at dit.ou.dk>\br
+    Stephan Pfab <pfab at mathematik.uni-ulm.de>\br
+    Stephane Zermatten <szermat at ibm.net>\br
+    Sven Fischer <sven at comnets.rwth-aachen.de>\br
+    Sven Riedel <lynx at heim8.tu-clausthal.de>\br
+    Terje Dalen <terje at norcontrol.no>\br
+    Thomas Degrange <thomas.degrange at danaher-motion.ch>\br
+    Thomas Lineal <thomas at ricci.allcon.com>\br
+    Thomas Rath <rath at mac-info-link.de>\br
+    Thorsten Ende <the at is-bremen.de>\br
+    Tiaan Wessels <tiaan at inetsys.alt.za>\br
+    Tim D. Gilman <tdgilman at best.com>\br
+    Tom Houlder <thoulder at icor.fr>\br
+    Tony Albrecht <Tony.Albrecht at adelaide.maptek.com.au>\br
+    Torgeir Hovden <hovden at akkurat.idt.ntnu.no>\br
+    Trenton W. Schulz <twschulz at cord.edu>\br
+    Trond Hellem B\oslash <s638 at ii.uib.no>\br
+    Trond Solli <Trond.Solli at marintek.sintef.no>\br
+    Ulf Stelbe <ust at egd.igd.fhg.de>\br
+    Ulrich Hertlein <uhe at cs.tu-berlin.de>\br
+    Ulrich Ring <ur at daveg.com>\br
+    Uwe Thiem <uwe at uwix.alt.na>\br
+    Vadim Zaliva <lord at crocodile.org>\br
+    Val Gough <val at stellacore.com>\br
+    Vilhelm Sj\ouml\c{}berg <ville at swipnet.se>\br
+    Vlad Karpinsky <vlad at crocodile.org>\br
+    Volker Hilsheimer <vohi at gmx.de>\br
+    Volker Poplawski <volkerp at stepnet.de>\br
+    Warwick Allison <warwick at it.uq.edu.au>\br
+    Witold Wysota <wysota at qtcentre.org>\br
+    Xiaojian Li <lixj at monte.rutgers.edu>\br
+    Ximenes <ximenes at netset.com>\br
+    Y. N. Lo <ynlo at netcom.ca>\br
+    Zyklon <zyk at dds.nl>\br
+    atsushi konno <jibe at ppp.bekkoame.or.jp>\br
+    berry at hxi.com\br
+    boris passek <boris at ice.fb12.TU-Berlin.DE>\br
+    fidaire <fidaire at bip.fr>\br
+    joeh at sugar-river.net\br
+    rinsch at aea.ruhr-uni-bochum.de\br
+    tsutsui at kekvax.kek.jp\br
+    vandevod at cs.rpi.edu\br
+    Vincent Ricard <magic at magicninja.org>\br
+    vinckeg at sebb.bel.alcatel.be\br
+    yleffler at ucis.vill.edu\br
+    Houssem BDIOUI <houssem.bdioui at gmail.com>\br
+
+    We hope there are not too many omissions from the list.
+    Please submit any corrections to the \l{Task Tracker}
+    on the Trolltech website.
+*/

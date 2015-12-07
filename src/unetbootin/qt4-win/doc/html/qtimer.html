@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qtimer.cpp -->
+<head>
+  <title>Qt 4.4: QTimer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTimer Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTimer class provides repetitive and single-shot timers. <a href="#details">More...</a></p>
+<pre> #include &lt;QTimer&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qtimer-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtimer-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtimer.html#active-prop">active</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="qtimer.html#interval-prop">interval</a></b> : int</li>
+<li><div class="fn"/><b><a href="qtimer.html#singleShot-prop">singleShot</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtimer.html#QTimer">QTimer</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtimer.html#dtor.QTimer">~QTimer</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtimer.html#interval-prop">interval</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtimer.html#active-prop">isActive</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtimer.html#singleShot-prop">isSingleShot</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtimer.html#interval-prop">setInterval</a></b> ( int <i>msec</i> )</li>
+<li><div class="fn"/>void <b><a href="qtimer.html#singleShot-prop">setSingleShot</a></b> ( bool <i>singleShot</i> )</li>
+<li><div class="fn"/>int <b><a href="qtimer.html#timerId">timerId</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtimer.html#start">start</a></b> ( int <i>msec</i> )</li>
+<li><div class="fn"/>void <b><a href="qtimer.html#start-2">start</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtimer.html#stop">stop</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtimer.html#timeout">timeout</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtimer.html#singleShot">singleShot</a></b> ( int <i>msec</i>, QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTimer class provides repetitive and single-shot timers.</p>
+<p>The QTimer class provides a high-level programming interface for timers. To use it, create a QTimer, connect its <a href="qtimer.html#timeout">timeout</a>() signal to the appropriate slots, and call <a href="qtimer.html#start">start</a>(). From then on it will emit the <a href="qtimer.html#timeout">timeout</a>() signal at constant intervals.</p>
+<p>Example for a one second (1000 millisecond) timer (from the <a href="widgets-analogclock.html">Analog Clock</a> example):</p>
+<pre>     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(update()));
+     timer-&gt;start(1000);</pre>
+<p>From then on, the <tt>update()</tt> slot is called every second.</p>
+<p>You can set a timer to time out only once by calling setSingleShot(true). You can also use the static <a href="qtimer.html#singleShot">QTimer::singleShot</a>() function to call a slot after a specified interval:</p>
+<pre>     QTimer::singleShot(200, this, SLOT(updateCaption()));</pre>
+<p>In multithreaded applications, you can use QTimer in any thread that has an event loop. To start an event loop from a non-GUI thread, use <a href="qthread.html#exec">QThread::exec</a>(). Qt uses the the timer's <a href="qobject.html#thread">thread affinity</a> to determine which thread will emit the <a href="qtimer.html#timeout">timeout()</a> signal. Because of this, you must start and stop the timer in its thread; it is not possible to start a timer from another thread.</p>
+<p>As a special case, a QTimer with a timeout of 0 will time out as soon as all the events in the window system's event queue have been processed. This can be used to do heavy work while providing a snappy user interface:</p>
+<pre>     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(processOneThing()));
+     timer-&gt;start();</pre>
+<p><tt>processOneThing()</tt> will from then on be called repeatedly. It should be written in such a way that it always returns quickly (typically after processing one data item) so that Qt can deliver events to widgets and stop the timer as soon as it has done all its work. This is the traditional way of implementing heavy work in GUI applications; multithreading is now becoming available on more and more platforms, and we expect that zero-millisecond QTimers will gradually be replaced by <a href="qthread.html">QThread</a>s.</p>
+<p>Note that QTimer's accuracy depends on the underlying operating system and hardware. Most platforms support an accuracy of 1 millisecond, but Windows 98 supports only 55. If Qt is unable to deliver the requested number of timer clicks, it will silently discard some.</p>
+<p>An alternative to using QTimer is to call <a href="qobject.html#startTimer">QObject::startTimer</a>() for your object and reimplement the <a href="qobject.html#timerEvent">QObject::timerEvent</a>() event handler in your class (which must inherit <a href="qobject.html">QObject</a>). The disadvantage is that <a href="qobject.html#timerEvent">timerEvent</a>() does not support such high-level features as single-shot timers or signals.</p>
+<p>Another alternative to using QTimer is to use <a href="qbasictimer.html">QBasicTimer</a>. It is typically less cumbersome than using <a href="qobject.html#startTimer">QObject::startTimer</a>() directly. See <a href="timers.html">Timers</a> for an overview of all three approaches.</p>
+<p>Some operating systems limit the number of timers that may be used; Qt tries to work around these limitations.</p>
+<p>See also <a href="qbasictimer.html">QBasicTimer</a>, <a href="qtimerevent.html">QTimerEvent</a>, <a href="qobject.html#timerEvent">QObject::timerEvent</a>(), <a href="timers.html">Timers</a>, <a href="widgets-analogclock.html">Analog Clock Example</a>, and <a href="widgets-wiggly.html">Wiggly Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="active-prop"></a>active : const bool</h3>
+<p>This boolean property is true if the timer is running; otherwise false.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isActive () const</b></li>
+</ul>
+<h3 class="fn"><a name="interval-prop"></a>interval : int</h3>
+<p>This property holds the timeout interval in milliseconds.</p>
+<p>The default value for this property is 0. A <a href="qtimer.html">QTimer</a> with a timeout interval of 0 will time out as soon as all the events in the window system's event queue have been processed.</p>
+<p>Setting the interval of an active timer changes its <a href="qtimer.html#timerId">timerId</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int interval () const</b></li>
+<li><div class="fn"/><b>void setInterval ( int <i>msec</i> )</b></li>
+</ul>
+<p>See also <a href="qtimer.html#singleShot-prop">singleShot</a>.</p>
+<h3 class="fn"><a name="singleShot-prop"></a>singleShot : bool</h3>
+<p>This property holds whether the timer is a single-shot timer.</p>
+<p>A single-shot timer fires only once, non-single-shot timers fire every <a href="qtimer.html#interval-prop">interval</a> milliseconds.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isSingleShot () const</b></li>
+<li><div class="fn"/><b>void setSingleShot ( bool <i>singleShot</i> )</b></li>
+</ul>
+<p>See also <a href="qtimer.html#interval-prop">interval</a> and <a href="qtimer.html#singleShot">singleShot</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTimer"></a>QTimer::QTimer ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a timer with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QTimer"></a>QTimer::~QTimer ()</h3>
+<p>Destroys the timer.</p>
+<h3 class="fn"><a name="singleShot"></a>void QTimer::singleShot ( int <i>msec</i>, <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This static function calls a slot after a given time interval.</p>
+<p>It is very convenient to use this function because you do not need to bother with a <a href="qobject.html#timerEvent">timerEvent</a> or create a local <a href="qtimer.html">QTimer</a> object.</p>
+<p>Example:</p>
+<pre>         #include &lt;QApplication&gt;
+         #include &lt;QTimer&gt;
+
+         int main(int argc, char *argv[])
+         {
+             QApplication app(argc, argv);
+             QTimer::singleShot(600000, &amp;app, SLOT(quit()));
+             ...
+             return app.exec();
+         }</pre>
+<p>This sample program automatically terminates after 10 minutes (600,000 milliseconds).</p>
+<p>The <i>receiver</i> is the receiving object and the <i>member</i> is the slot. The time interval is <i>msec</i> milliseconds.</p>
+<p><b>Note:</b> This function is <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>See also <a href="qtimer.html#singleShot-prop">setSingleShot</a>() and <a href="qtimer.html#start">start</a>().</p>
+<h3 class="fn"><a name="start"></a>void QTimer::start ( int <i>msec</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Starts or restarts the timer with a timeout interval of <i>msec</i> milliseconds.</p>
+<h3 class="fn"><a name="start-2"></a>void QTimer::start ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts or restarts the timer with the timeout specified in <a href="qtimer.html#interval-prop">interval</a>.</p>
+<p>If <a href="qtimer.html#singleShot-prop">singleShot</a> is true, the timer will be activated only once.</p>
+<h3 class="fn"><a name="stop"></a>void QTimer::stop ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Stops the timer.</p>
+<p>See also <a href="qtimer.html#start">start</a>().</p>
+<h3 class="fn"><a name="timeout"></a>void QTimer::timeout ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the timer times out.</p>
+<p>See also <a href="qtimer.html#interval-prop">interval</a>, <a href="qtimer.html#start">start</a>(), and <a href="qtimer.html#stop">stop</a>().</p>
+<h3 class="fn"><a name="timerId"></a>int QTimer::timerId () const</h3>
+<p>Returns the ID of the timer if the timer is running; otherwise returns -1.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

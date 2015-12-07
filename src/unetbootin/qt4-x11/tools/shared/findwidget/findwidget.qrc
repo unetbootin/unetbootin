@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/trolltech/shared">
+    <file>images/mac/closetab.png</file>
+    <file>images/mac/next.png</file>
+    <file>images/mac/previous.png</file>
+    <file>images/mac/searchfind.png</file>
+    <file>images/win/closetab.png</file>
+    <file>images/win/next.png</file>
+    <file>images/win/previous.png</file>
+    <file>images/win/searchfind.png</file>
+    <file>images/wrap.png</file>
+  </qresource>
+</RCC>
+

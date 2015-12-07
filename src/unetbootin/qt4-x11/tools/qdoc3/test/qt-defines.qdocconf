@@ -1,0 +1,26 @@
+defines                 = Q_QDOC \
+                          QT_.*_SUPPORT \
+                          QT_.*_LIB \
+                          QT_COMPAT \
+                          QT_KEYPAD_NAVIGATION \
+                          QT3_SUPPORT \
+                          Q_WS_.* \
+                          Q_OS_.* \
+                          Q_BYTE_ORDER \
+			  QT_DEPRECATED \
+                          Q_NO_USING_KEYWORD \
+                          __cplusplus
+
+versionsym              = QT_VERSION_STR
+
+codeindent              = 1
+
+# Files not referenced in any qdoc file (last four needed by qtdemo)
+# See also qhp.Qt.extraFiles
+extraimages.HTML        = qt-logo \
+                          trolltech-logo \
+                          taskmenuextension-example.png \
+                          coloreditorfactoryimage.png \
+                          dynamiclayouts-example.png \
+                          stylesheet-coffee-plastique.png
+                             

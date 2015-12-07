@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/files" >
+   <file>spheres.svg</file>
+</qresource>
+</RCC>

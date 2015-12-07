@@ -1,0 +1,230 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: sslclient.cpp Example File (network/securesocketclient/sslclient.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">sslclient.cpp Example File<br /><span class="small-subtitle">network/securesocketclient/sslclient.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;certificateinfo.h&quot;
+ #include &quot;sslclient.h&quot;
+ #include &quot;ui_sslclient.h&quot;
+ #include &quot;ui_sslerrors.h&quot;
+
+ #include &lt;QtGui/QScrollBar&gt;
+ #include &lt;QtGui/QStyle&gt;
+ #include &lt;QtGui/QToolButton&gt;
+ #include &lt;QtNetwork/QSslCipher&gt;
+
+ SslClient::SslClient(QWidget *parent)
+     : QWidget(parent), socket(0), padLock(0)
+ {
+     form = new Ui_Form;
+     form-&gt;setupUi(this);
+     form-&gt;hostNameEdit-&gt;setSelection(0, form-&gt;hostNameEdit-&gt;text().size());
+     form-&gt;sessionOutput-&gt;setHtml(tr(&quot;&amp;lt;not connected&amp;gt;&quot;));
+
+     connect(form-&gt;hostNameEdit, SIGNAL(textChanged(QString)),
+             this, SLOT(updateEnabledState()));
+     connect(form-&gt;connectButton, SIGNAL(clicked()),
+             this, SLOT(secureConnect()));
+     connect(form-&gt;sendButton, SIGNAL(clicked()),
+             this, SLOT(sendData()));
+ }
+
+ SslClient::~SslClient()
+ {
+     delete form;
+ }
+
+ void SslClient::updateEnabledState()
+ {
+     bool unconnected = !socket || socket-&gt;state() == QAbstractSocket::UnconnectedState;
+
+     form-&gt;hostNameEdit-&gt;setReadOnly(!unconnected);
+     form-&gt;hostNameEdit-&gt;setFocusPolicy(unconnected ? Qt::StrongFocus : Qt::NoFocus);
+
+     form-&gt;hostNameLabel-&gt;setEnabled(unconnected);
+     form-&gt;portBox-&gt;setEnabled(unconnected);
+     form-&gt;portLabel-&gt;setEnabled(unconnected);
+     form-&gt;connectButton-&gt;setEnabled(unconnected &amp;&amp; !form-&gt;hostNameEdit-&gt;text().isEmpty());
+
+     bool connected = socket &amp;&amp; socket-&gt;state() == QAbstractSocket::ConnectedState;
+     form-&gt;sessionBox-&gt;setEnabled(connected);
+     form-&gt;sessionOutput-&gt;setEnabled(connected);
+     form-&gt;sessionInput-&gt;setEnabled(connected);
+     form-&gt;sessionInputLabel-&gt;setEnabled(connected);
+     form-&gt;sendButton-&gt;setEnabled(connected);
+ }
+
+ void SslClient::secureConnect()
+ {
+     if (!socket) {
+         socket = new QSslSocket(this);
+         connect(socket, SIGNAL(stateChanged(QAbstractSocket::SocketState)),
+                 this, SLOT(socketStateChanged(QAbstractSocket::SocketState)));
+         connect(socket, SIGNAL(encrypted()),
+                 this, SLOT(socketEncrypted()));
+         connect(socket, SIGNAL(sslErrors(QList&lt;QSslError&gt;)),
+                 this, SLOT(sslErrors(QList&lt;QSslError&gt;)));
+         connect(socket, SIGNAL(readyRead()),
+                 this, SLOT(socketReadyRead()));
+     }
+
+     socket-&gt;connectToHostEncrypted(form-&gt;hostNameEdit-&gt;text(), form-&gt;portBox-&gt;value());
+     updateEnabledState();
+ }
+
+ void SslClient::socketStateChanged(QAbstractSocket::SocketState state)
+ {
+     updateEnabledState();
+     if (state == QAbstractSocket::UnconnectedState) {
+         form-&gt;hostNameEdit-&gt;setPalette(QPalette());
+         form-&gt;hostNameEdit-&gt;setFocus();
+         form-&gt;cipherLabel-&gt;setText(tr(&quot;&lt;none&gt;&quot;));
+         if (padLock)
+             padLock-&gt;hide();
+         socket-&gt;deleteLater();
+         socket = 0;
+     }
+ }
+
+ void SslClient::socketEncrypted()
+ {
+     form-&gt;sessionOutput-&gt;clear();
+     form-&gt;sessionInput-&gt;setFocus();
+
+     QPalette palette;
+     palette.setColor(QPalette::Base, QColor(255, 255, 192));
+     form-&gt;hostNameEdit-&gt;setPalette(palette);
+
+     QSslCipher ciph = socket-&gt;sessionCipher();
+     QString cipher = QString(&quot;%1, %2 (%3/%4)&quot;).arg(ciph.authenticationMethod())
+                      .arg(ciph.name()).arg(ciph.usedBits()).arg(ciph.supportedBits());;
+     form-&gt;cipherLabel-&gt;setText(cipher);
+
+     if (!padLock) {
+         padLock = new QToolButton;
+         padLock-&gt;setIcon(QIcon(&quot;:/encrypted.png&quot;));
+         padLock-&gt;setCursor(Qt::ArrowCursor);
+         padLock-&gt;setToolTip(tr(&quot;Display encryption details.&quot;));
+
+         int extent = form-&gt;hostNameEdit-&gt;height() - 2;
+         padLock-&gt;resize(extent, extent);
+         padLock-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Ignored);
+
+         QHBoxLayout *layout = new QHBoxLayout(form-&gt;hostNameEdit);
+         layout-&gt;setMargin(form-&gt;hostNameEdit-&gt;style()-&gt;pixelMetric(QStyle::PM_DefaultFrameWidth));
+         layout-&gt;setSpacing(0);
+         layout-&gt;addStretch();
+         layout-&gt;addWidget(padLock);
+
+         form-&gt;hostNameEdit-&gt;setLayout(layout);
+
+         connect(padLock, SIGNAL(clicked()),
+                 this, SLOT(displayCertificateInfo()));
+     } else {
+         padLock-&gt;show();
+     }
+ }
+
+ void SslClient::socketReadyRead()
+ {
+     appendString(QString::fromUtf8(socket-&gt;readAll()));
+ }
+
+ void SslClient::sendData()
+ {
+     QString input = form-&gt;sessionInput-&gt;text();
+     appendString(input + &quot;\n&quot;);
+     socket-&gt;write(input.toUtf8() + &quot;\r\n&quot;);
+     form-&gt;sessionInput-&gt;clear();
+ }
+
+ void SslClient::sslErrors(const QList&lt;QSslError&gt; &amp;errors)
+ {
+     QDialog errorDialog(this);
+     Ui_SslErrors ui;
+     ui.setupUi(&amp;errorDialog);
+     connect(ui.certificateChainButton, SIGNAL(clicked()),
+             this, SLOT(displayCertificateInfo()));
+
+     foreach (const QSslError &amp;error, errors)
+         ui.sslErrorList-&gt;addItem(error.errorString());
+
+     if (errorDialog.exec() == QDialog::Accepted)
+         socket-&gt;ignoreSslErrors();
+ }
+
+ void SslClient::displayCertificateInfo()
+ {
+     CertificateInfo *info = new CertificateInfo(this);
+     info-&gt;setCertificateChain(socket-&gt;peerCertificateChain());
+     info-&gt;exec();
+     info-&gt;deleteLater();
+ }
+
+ void SslClient::appendString(const QString &amp;line)
+ {
+     QTextCursor cursor(form-&gt;sessionOutput-&gt;textCursor());
+     cursor.movePosition(QTextCursor::End);
+     cursor.insertText(line);
+     form-&gt;sessionOutput-&gt;verticalScrollBar()-&gt;setValue(form-&gt;sessionOutput-&gt;verticalScrollBar()-&gt;maximum());
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

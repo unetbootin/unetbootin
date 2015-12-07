@@ -1,0 +1,21 @@
+#ifndef QT_QTDBUS_MODULE_H
+#define QT_QTDBUS_MODULE_H
+#include <QtCore/QtCore>
+#include <QtXml/QtXml>
+#include "qdbusabstractadaptor.h"
+#include "qdbusabstractinterface.h"
+#include "qdbusargument.h"
+#include "qdbusconnection.h"
+#include "qdbusconnectioninterface.h"
+#include "qdbuscontext.h"
+#include "qdbuserror.h"
+#include "qdbusextratypes.h"
+#include "qdbusinterface.h"
+#include "qdbusmacros.h"
+#include "qdbusmessage.h"
+#include "qdbusmetatype.h"
+#include "qdbuspendingcall.h"
+#include "qdbuspendingreply.h"
+#include "qdbusreply.h"
+#include "qdbusserver.h"
+#endif

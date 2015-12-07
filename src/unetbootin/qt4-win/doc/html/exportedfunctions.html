@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/exportedfunctions.qdoc -->
+<head>
+  <title>Qt 4.4: Special-Purpose Global Functions Exported by Qt</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Special-Purpose Global Functions Exported by Qt<br /><span class="subtitle"></span>
+</h1>
+<p>Qt provides a few low-level global functions for fine-tuning applications. Most of these perform very specific tasks and are platform-specific. In general, we recommend that you try using Qt's public API before resorting to using any functions mentioned here.</p>
+<p>These functions are exported by <a href="qtcore.html">QtCore</a> and <a href="qtgui.html">QtGui</a>, but most of them aren't declared in Qt's header files. To use them in your application, you must declare them before calling them. For example:</p>
+<pre>         #ifdef Q_WS_X11
+         void qt_x11_wait_for_window_manager(QWidget *widget);
+         #endif
+
+         int main(int argc, char *argv[])
+         {
+             QApplication app(argc, argv);
+             ...
+             window.show();
+         #ifdef Q_WS_X11
+             qt_x11_wait_for_window_manager(&amp;window);
+         #endif
+             ...
+             return app.exec();
+         }</pre>
+<p>These functions will remain as part of Qt for the lifetime of Qt 4.</p>
+<p>Functions:</p>
+<ul><li><a href="#void-qt-set-library-config-file-const-qstring-filename">void qt_set_library_config_file(const QString &amp;<i>fileName</i>)</a></li>
+<li><a href="#void-qt-set-sequence-auto-mnemonic-bool-enable">void qt_set_sequence_auto_mnemonic(bool <i>enable</i>)</a></li>
+<li><a href="#void-qt-x11-wait-for-window-manager-qwidget-widget">void qt_x11_wait_for_window_manager(QWidget *<i>widget</i>)</a></li>
+<li><a href="#void-qt-mac-secure-keyboard-bool-enable">void qt_mac_secure_keyboard(bool <i>enable</i>)</a></li>
+<li><a href="#void-qt-mac-set-dock-menu-qmenu-menu">void qt_mac_set_dock_menu(QMenu *<i>menu</i>)</a></li>
+<li><a href="#void-qt-mac-set-menubar-icons-bool-enable">void qt_mac_set_menubar_icons(bool <i>enable</i>)</a></li>
+<li><a href="#void-qt-mac-set-menubar-merge-bool-enable">void qt_mac_set_menubar_merge(bool <i>enable</i>)</a></li>
+<li><a href="#void-qt-mac-set-native-menubar-bool-enable">void qt_mac_set_native_menubar(bool <i>enable</i>)</a></li>
+<li><a href="#void-qt-mac-set-dock-menu-qmenu-menu">void qt_mac_set_dock_menu(QMenu *<i>menu</i>)</a></li>
+<li><a href="#void-qt-mac-set-press-and-hold-context-bool-enable">void qt_mac_set_press_and_hold_context(bool <i>enable</i>)</a></li>
+</ul>
+<a name="void-qt-set-library-config-file-const-qstring-filename"></a>
+<h2>void qt_set_library_config_file(const QString &amp;<i>fileName</i>)</h2>
+<p>Specifies the location of the Qt configuration file. You must call this function before constructing a <a href="qapplication.html">QApplication</a> or <a href="qcoreapplication.html">QCoreApplication</a> object. If no location is specified, Qt automatically finds an appropriate location.</p>
+<a name="void-qt-set-sequence-auto-mnemonic-bool-enable"></a>
+<h2>void qt_set_sequence_auto_mnemonic(bool <i>enable</i>)</h2>
+<p>Specifies whether mnemonics for menu items, labels, etc., should be honored or not. On Windows and X11, this feature is on by default; on Mac OS X, it is off. When this feature is off, the <a href="qkeysequence.html#mnemonic">QKeySequence::mnemonic</a>() function always returns an empty string. This feature is also enabled on embedded Linux.</p>
+<a name="void-qt-x11-wait-for-window-manager-qwidget-widget"></a>
+<h2>void qt_x11_wait_for_window_manager(QWidget *<i>widget</i>)</h2>
+<p>Blocks until the X11 window manager has shown the widget after a call to <a href="qwidget.html#show">QWidget::show</a>().</p>
+<a name="void-qt-mac-secure-keyboard-bool-enable"></a>
+<h2>void qt_mac_secure_keyboard(bool <i>enable</i>)</h2>
+<p>Turns the Mac OS X secure keyboard feature on or off. <a href="qlineedit.html">QLineEdit</a> uses this when the echo mode is <a href="qlineedit.html#EchoMode-enum">QLineEdit::Password</a> or <a href="qlineedit.html#EchoMode-enum">QLineEdit::NoEcho</a> to guard the editor against keyboard sniffing. If you implement your own password editor, you might want to turn on this feature in your editor's <a href="qwidget.html#focusInEvent">focusInEvent()</a> and turn it off in <a href="qwidget.html#focusOutEvent">focusOutEvent()</a>.</p>
+<a name="void-qt-mac-set-dock-menu-qmenu-menu"></a>
+<h2>void qt_mac_set_dock_menu(QMenu *<i>menu</i>)</h2>
+<p>Sets the menu to display in the Mac OS X Dock for the application. This menu is shown when the user <b>Ctrl</b>-clicks on the application's icon while it is running.</p>
+<a name="void-qt-mac-set-menubar-icons-bool-enable"></a>
+<h2>void qt_mac_set_menubar_icons(bool <i>enable</i>)</h2>
+<p>Specifies whether icons associated to menu items for the application's menu bar should be shown on Mac OS X. By default, icons are shown on Mac OS X just like on the other platforms.</p>
+<p>In Qt 4.4, this is equivalent to <tt>QApplication::instance()-&gt;setAttribute(Qt::AA_DontShowIconsInMenus);</tt>.</p>
+<a name="void-qt-mac-set-menubar-merge-bool-enable"></a>
+<h2>void qt_mac_set_menubar_merge(bool <i>enable</i>)</h2>
+<p>Specifies whether Qt should attempt to relocate standard menu items (such as <b>Quit</b>, <b>Preferences</b>, and <b>About</b>) to the application menu on Mac OS X. This feature is on by default. See <a href="mac-differences.html">Qt/Mac-Specific Issues</a> for the list of menu items for which this applies.</p>
+<a name="void-qt-mac-set-native-menubar-bool-enable"></a>
+<h2>void qt_mac_set_native_menubar(bool <i>enable</i>)</h2>
+<p>Specifies whether the application should use the native menu bar on Mac OS X or be part of the main window. This feature is on by default.</p>
+<a name="void-qt-mac-set-dock-menu-qmenu-menu"></a>
+<h2>void qt_mac_set_dock_menu(QMenu *<i>menu</i>)</h2>
+<p>Sets this menu as the menu to be shown when a press and hold is attempted on your application's dock icon. The menu will be turned into a Mac menu which will be merged with Mac OS X builtin commands.</p>
+<a name="void-qt-mac-set-press-and-hold-context-bool-enable"></a>
+<h2>void qt_mac_set_press_and_hold_context(bool <i>enable</i>)</h2>
+<p>Turns emulation of the right mouse button by clicking and holding the left mouse button on or off. This feature is off by default.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

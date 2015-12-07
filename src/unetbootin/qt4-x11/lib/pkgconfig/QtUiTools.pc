@@ -1,0 +1,14 @@
+prefix=/usr/local/Trolltech/Qt-4.5.0
+exec_prefix=${prefix}
+libdir=${prefix}/lib
+includedir=${prefix}/include/QtUiTools
+qt_config=lex yacc warn_on uic resources qt warn_on release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath fix_output_dirs QTDIR_build qt staticlib create_pc static staticlib moc thread
+
+Name: Qtuitools
+Description: Qtuitools Library
+Version: 4.5.0
+Libs: -L${libdir} -lQtUiTools 
+Libs.private: -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib  -lQtXml -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -pthread -pthread -lQtGui -L/usr/X11R6/lib -pthread -lpng -lfreetype -lSM -lICE -pthread -pthread -lXrender -lfontconfig -lXext -lX11 -lQtCore -lz -lm -pthread -lgthread-2.0 -lglib-2.0 -lrt -lpthread -ldl  
+Cflags: -I/usr/local/Trolltech/Qt-4.5.0/include -I${includedir}
+Requires: QtXml
+

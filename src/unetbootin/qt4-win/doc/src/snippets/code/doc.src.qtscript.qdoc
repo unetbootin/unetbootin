@@ -1,0 +1,831 @@
+//! [0]
+      #include <QtScript>
+//! [0]
+
+
+//! [1]
+      QT += script
+//! [1]
+
+
+//! [2]
+  function myInterestingScriptFunction() { ... }
+  ...
+  myQObject.somethingChanged.connect(myInterestingScriptFunction);
+//! [2]
+
+
+//! [3]
+  myQObject.somethingChanged.connect(myOtherQObject.doSomething);
+//! [3]
+
+
+//! [4]
+  myQObject.somethingChanged.disconnect(myInterestingFunction);
+  myQObject.somethingChanged.disconnect(myOtherQObject.doSomething);
+//! [4]
+
+
+//! [5]
+  var obj = { x: 123 };
+  var fun = function() { print(this.x); };
+  myQObject.somethingChanged.connect(obj, fun);
+//! [5]
+
+
+//! [6]
+  myQObject.somethingChanged.disconnect(obj, fun);
+//! [6]
+
+
+//! [7]
+  var obj = { x: 123, fun: function() { print(this.x); } };
+  myQObject.somethingChanged.connect(obj, "fun");
+//! [7]
+
+
+//! [8]
+  myQObject.somethingChanged.disconnect(obj, "fun");
+//! [8]
+
+
+//! [9]
+  try {
+      myQObject.somethingChanged.connect(myQObject, "slotThatDoesntExist");
+  } catch (e) {
+      print(e);
+  }
+//! [9]
+
+
+//! [10]
+  myQObject.somethingChanged("hello");
+//! [10]
+
+
+//! [11]
+  myQObject.myOverloadedSlot(10);   // will call the int overload
+  myQObject.myOverloadedSlot("10"); // will call the QString overload
+//! [11]
+
+
+//! [12]
+  myQObject['myOverloadedSlot(int)']("10");   // call int overload; the argument is converted to an int
+  myQObject['myOverloadedSlot(QString)'](10); // call QString overload; the argument is converted to a string
+//! [12]
+
+
+//! [13]
+  Q_PROPERTY(bool enabled READ enabled WRITE setEnabled)
+//! [13]
+
+
+//! [14]
+  myQObject.enabled = true;
+
+  ...
+
+  myQObject.enabled = !myQObject.enabled;
+//! [14]
+
+
+//! [15]
+  myDialog.okButton
+//! [15]
+
+
+//! [16]
+  myDialog.okButton.objectName = "cancelButton";
+  // from now on, myDialog.cancelButton references the button
+//! [16]
+
+
+//! [17]
+  var okButton = myDialog.findChild("okButton");
+  if (okButton != null) {
+     // do something with the OK button
+  }
+
+  var buttons = myDialog.findChildren(RegExp("button[0-9]+"));
+  for (var i = 0; i < buttons.length; ++i) {
+     // do something with buttons[i]
+  }
+//! [17]
+
+
+//! [18]
+  QScriptValue myQObjectConstructor(QScriptContext *context, QScriptEngine *engine)
+  {
+    // let the engine manage the new object's lifetime.
+    return engine->newQObject(new MyQObject(), QScriptEngine::ScriptOwnership);
+  }
+//! [18]
+
+
+//! [19]
+    class MyObject : public QObject
+    {
+        Q_OBJECT
+
+    public:
+        MyObject( ... );
+
+        void aNonScriptableFunction();
+
+    public slots: // these functions (slots) will be available in QtScript
+        void calculate( ... );
+        void setEnabled( bool enabled );
+        bool isEnabled() const;
+
+    private:
+       ....
+
+    };
+//! [19]
+
+
+//! [20]
+  class MyObject : public QObject
+  {
+      Q_OBJECT
+
+      public:
+      Q_INVOKABLE void thisMethodIsInvokableInQtScript();
+      void thisMethodIsNotInvokableInQtScript();
+
+      ...
+  };
+//! [20]
+
+
+//! [21]
+    var obj = new MyObject;
+    obj.setEnabled( true );
+    print( "obj is enabled: " + obj.isEnabled() );
+//! [21]
+
+
+//! [22]
+    var obj = new MyObject;
+    obj.enabled = true;
+    print( "obj is enabled: " + obj.enabled );
+//! [22]
+
+
+//! [23]
+    class MyObject : public QObject
+    {
+        Q_OBJECT
+        // define the enabled property
+        Q_PROPERTY( bool enabled WRITE setEnabled READ isEnabled )
+
+    public:
+        MyObject( ... );
+
+        void aNonScriptableFunction();
+
+    public slots: // these functions (slots) will be available in QtScript
+        void calculate( ... );
+        void setEnabled( bool enabled );
+        bool isEnabled() const;
+
+    private:
+       ....
+
+    };
+//! [23]
+
+
+//! [24]
+  Q_PROPERTY(int nonScriptableProperty READ foo WRITE bar SCRIPTABLE false)
+//! [24]
+
+
+//! [25]
+    class MyObject : public QObject
+    {
+        Q_OBJECT
+        // define the enabled property
+        Q_PROPERTY( bool enabled WRITE setEnabled READ isEnabled )
+
+    public:
+        MyObject( ... );
+
+        void aNonScriptableFunction();
+
+    public slots: // these functions (slots) will be available in QtScript
+        void calculate( ... );
+        void setEnabled( bool enabled );
+        bool isEnabled() const;
+
+    signals: // the signals
+        void enabledChanged( bool newState );
+
+    private:
+       ....
+
+    };
+//! [25]
+
+
+//! [26]
+    function enabledChangedHandler( b )
+    {
+        print( "state changed to: " + b );
+    }
+
+    function init()
+    {
+        var obj = new MyObject();
+        // connect a script function to the signal
+        obj["enabledChanged(bool)"].connect(enabledChangedHandler);
+        obj.enabled = true;
+        print( "obj is enabled: " + obj.enabled );
+    }
+//! [26]
+
+
+//! [27]
+  var o = new Object();
+  o.foo = 123;
+  print(o.hasOwnProperty('foo')); // true
+  print(o.hasOwnProperty('bar')); // false
+  print(o); // calls o.toString(), which returns "[object Object]"
+//! [27]
+
+
+//! [28]
+  function Person(name)
+  {
+    this.name = name;
+  }
+//! [28]
+
+
+//! [29]
+  Person.prototype.toString = function() { return "Person(name: " + this.name + ")"; }
+//! [29]
+
+
+//! [30]
+  var p1 = new Person("John Doe");
+  var p2 = new Person("G.I. Jane");
+  print(p1); // "Person(name: John Doe)"
+  print(p2); // "Person(name: G.I. Jane)"
+//! [30]
+
+
+//! [31]
+  print(p1.hasOwnProperty('name')); // 'name' is an instance variable, so this returns true
+  print(p1.hasOwnProperty('toString')); // returns false; inherited from prototype
+  print(p1 instanceof Person); // true
+  print(p1 instanceof Object); // true
+//! [31]
+
+
+//! [32]
+  function Employee(name, salary)
+  {
+    Person.call(this, name); // call base constructor
+
+    this.salary = salary;
+  }
+
+  // set the prototype to be an instance of the base class
+  Employee.prototype = new Person();
+
+  // initialize prototype
+  Employee.prototype.toString = function() { ... }
+//! [32]
+
+
+//! [33]
+  var e = new Employee("Johnny Bravo", 5000000);
+  print(e instanceof Employee); // true
+  print(e instanceof Person);   // true
+  print(e instanceof Object);   // true
+  print(e instanceof Array);    // false
+//! [33]
+
+
+//! [34]
+  QScriptValue Person_ctor(QScriptContext *context, QScriptEngine *engine)
+  {
+    QString name = context->argument(0).toString();
+    context->thisObject().setProperty("name", QScriptValue(engine, name));
+    return engine->undefinedValue();
+  }
+//! [34]
+
+
+//! [35]
+  QScriptValue Person_prototype_toString(QScriptContext *context, QScriptEngine *engine)
+  {
+    QString name = context->thisObject().property("name").toString();
+    QString result = QString::fromLatin1("Person(name: %0)").arg(name);
+    return QScriptValue(engine, result);
+  }
+//! [35]
+
+
+//! [36]
+  QScriptEngine engine;
+  QScriptValue ctor = engine.newFunction(Person_ctor);
+  ctor.property("prototype").setProperty("toString", engine.newFunction(Person_prototype_toString));
+  QScriptValue global = engine.globalObject();
+  global.setProperty("Person", ctor);
+//! [36]
+
+
+//! [37]
+  QScriptValue Employee_ctor(QScriptContext *context, QScriptEngine *engine)
+  {
+    QScriptValue super = context->callee().property("prototype").property("constructor");
+    super.call(context->thisObject(), QScriptValueList() << context->argument(0));
+    context->thisObject().setProperty("salary", context->argument(1));
+    return engine->undefinedValue();
+  }
+//! [37]
+
+
+//! [38]
+  QScriptValue empCtor = engine.newFunction(Employee_ctor);
+  empCtor.setProperty("prototype", global.property("Person").construct());
+  global.setProperty("Employee", empCtor);
+//! [38]
+
+
+//! [39]
+  Q_DECLARE_METATYPE(QPointF)
+  Q_DECLARE_METATYPE(QPointF*)
+
+  QScriptValue QPointF_prototype_x(QScriptContext *context, QScriptEngine *engine)
+  {
+    // Since the point is not to be modified, it's OK to cast to a value here
+      QPointF point = qscriptvalue_cast<QPointF>(context->thisObject());
+      return QScriptValue(engine, point.x());
+  }
+
+  QScriptValue QPointF_prototype_setX(QScriptContext *context, QScriptEngine *engine)
+  {
+      // Cast to a pointer to be able to modify the underlying C++ value
+      QPointF *point = qscriptvalue_cast<QPointF*>(context->thisObject());
+      if (!point)
+          return context->throwError(QScriptContext::TypeError, "QPointF.prototype.setX: this object is not a QPointF");
+      point->setX(context->argument(0).toNumber());
+      return engine->undefinedValue();
+  }
+//! [39]
+
+
+//! [40]
+    var o = new Object();
+    (o.__proto__ === Object.prototype); // this evaluates to true
+//! [40]
+
+
+//! [41]
+    var o = new Object();
+    o.__defineGetter__("x", function() { return 123; });
+    var y = o.x; // 123
+//! [41]
+
+
+//! [42]
+    var o = new Object();
+    o.__defineSetter__("x", function(v) { print("and the value is:", v); });
+    o.x = 123; // will print "and the value is: 123"
+//! [42]
+
+
+//! [43]
+    class MyObject : public QObject
+    {
+        Q_OBJECT
+        ...
+    };
+
+    Q_DECLARE_METATYPE(MyObject*)
+
+    QScriptValue myObjectToScriptValue(QScriptEngine *engine, MyObject* const &in)
+    { return engine->newQObject(in); }
+
+    void myObjectFromScriptValue(const QScriptValue &object, MyObject* &out)
+    { out = qobject_cast<MyObject*>(object.toQObject()); }
+
+    ...
+
+    qScriptRegisterMetaType(&engine, myObjectToScriptValue, myObjectFromScriptValue);
+//! [43]
+
+//! [44]
+    QScriptValue QPoint_ctor(QScriptContext *context, QScriptEngine *engine)
+    {
+        int x = context->argument(0).toInt32();
+        int y = context->argument(1).toInt32();
+        return engine->toScriptValue(QPoint(x, y));
+    }
+
+    ...
+
+    engine.globalObject().setProperty("QPoint", engine.newFunction(QPoint_ctor));
+//! [44]
+
+//! [45]
+    QScriptValue myPrintFunction(QScriptContext *context, QScriptEngine *engine)
+    {
+        QString result;
+        for (int i = 0; i < context->argumentCount(); ++i) {
+            if (i > 0)
+                result.append(" ");
+            result.append(context->argument(i).toString());
+        }
+
+        QScriptValue calleeData = context->callee().data();
+        QPlainTextEdit *edit = qobject_cast<QPlainTextEdit*>(calleeData.toQObject());
+        edit->appendPlainText(result);
+
+        return engine->undefinedValue();
+    }
+//! [45]
+
+//! [46]
+int main(int argc, char **argv)
+{
+    QApplication app(argc, argv);
+
+    QScriptEngine eng;
+    QPlainTextEdit edit;
+
+    QScriptValue fun = eng.newFunction(myPrintFunction);
+    fun.setData(eng.newQObject(&edit));
+    eng.globalObject().setProperty("print", fun);
+
+    eng.evaluate("print('hello', 'world')");
+
+    edit.show();
+    return app.exec();
+}
+//! [46]
+
+
+//! [47]
+    QScriptEngine eng;
+    QLineEdit *edit = new QLineEdit(...);
+    QScriptValue handler = eng.evaluate("function(text) { print('text was changed to', text); }");
+    qScriptConnect(edit, SIGNAL(textChanged(const QString &)), QScriptValue(), handler);
+//! [47]
+
+//! [48]
+    QLineEdit *edit1 = new QLineEdit(...);
+    QLineEdit *edit2 = new QLineEdit(...);
+
+    QScriptValue handler = eng.evaluate("function() { print('I am', this.name); }");
+    QScriptValue obj1 = eng.newObject();
+    obj1.setProperty("name", QScriptValue(&eng, "the walrus"));
+    QScriptValue obj2 = eng.newObject();
+    obj2.setProperty("name", QScriptValue(&eng, "Sam"));
+
+    qScriptConnect(edit1, SIGNAL(returnPressed()), obj1, handler);
+    qScriptConnect(edit2, SIGNAL(returnPressed()), obj2, handler);
+//! [48]
+
+//! [49]
+    var getProperty = function(name) { return this[name]; };
+
+    name = "Global Object"; // creates a global variable
+    print(getProperty("name")); // "Global Object"
+
+    var myObject = { name: 'My Object' };
+    print(getProperty.call(myObject, "name")); // "My Object"
+
+    myObject.getProperty = getProperty;
+    print(myObject.getProperty("name")); // "My Object"
+
+    getProperty.name = "The getProperty() function";
+    getProperty.getProperty = getProperty;
+    getProperty.getProperty("name"); // "The getProperty() function"
+//! [49]
+
+//! [50]
+    var o = { a: 1, b: 2, sum: function() { return a + b; } };
+    print(o.sum()); // reference error, or sum of global variables a and b!!
+//! [50]
+
+//! [51]
+    var o = { a: 1, b: 2, sum: function() { return this.a + this.b; } };
+    print(o.sum()); // 3
+//! [51]
+
+//! [52]
+    QScriptValue getProperty(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QString name = ctx->argument(0).toString();
+        return ctx->thisObject().property(name);
+    }
+//! [52]
+
+//! [53]
+    QScriptValue myCompare(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        double first = ctx->argument(0).toNumber();
+        double second = ctx->argument(1).toNumber();
+        int result;
+        if (first == second)
+            result = 0;
+        else if (first < second)
+            result = -1;
+        else
+            result = 1;
+        return QScriptValue(eng, result);
+    }
+//! [53]
+
+//! [54]
+    QScriptEngine eng;
+    QScriptValue comparefn = eng.newFunction(myCompare);
+    QScriptValue array = eng.evaluate("new Array(10, 5, 20, 15, 30)");
+    array.property("sort").call(array, QScriptValueList() << comparefn);
+
+    // prints "5,10,15,20,30"
+    qDebug() << array.toString();
+//! [54]
+
+//! [55]
+    QScriptValue rectifier(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QRectF magicRect = qscriptvalue_cast<QRectF>(ctx->callee().data());
+        QRectF sourceRect = qscriptvalue_cast<QRectF>(ctx->argument(0));
+        return eng->toScriptValue(sourceRect.intersected(magicRect));
+    }
+
+    ...
+
+    QScriptValue fun = eng.newFunction(rectifier);
+    QRectF magicRect = QRectF(10, 20, 30, 40);
+    fun.setData(eng.toScriptValue(magicRect));
+    eng.globalObject().setProperty("rectifier", fun);
+//! [55]
+
+//! [56]
+    function add(a, b) {
+        return a + b;
+    }
+//! [56]
+
+//! [57]
+    function add() {
+        return arguments[0] + arguments[1];
+    }
+//! [57]
+
+//! [58]
+    QScriptValue add(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        double a = ctx->argument(0).toNumber();
+        double b = ctx->argument(1).toNumber();
+        return QScriptValue(eng, a + b);
+    }
+//! [58]
+
+//! [59]
+    function add() {
+        if (arguments.length != 2)
+            throw Error("add() takes exactly two arguments");
+        return arguments[0] + arguments[1];
+    }
+//! [59]
+
+//! [60]
+    function add() {
+        if (arguments.length != 2)
+            throw Error("add() takes exactly two arguments");
+        if (typeof arguments[0] != "number")
+            throw TypeError("add(): first argument is not a number");
+        if (typeof arguments[1] != "number")
+            throw TypeError("add(): second argument is not a number");
+        return arguments[0] + arguments[1];
+    }
+//! [60]
+
+//! [61]
+    function add() {
+        if (arguments.length != 2)
+            throw Error("add() takes exactly two arguments");
+        return Number(arguments[0]) + Number(arguments[1]);
+    }
+//! [61]
+
+//! [62]
+    QScriptValue add(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        if (ctx->argumentCount() != 2)
+            return ctx->throwError("add() takes exactly two arguments");
+        double a = ctx->argument(0).toNumber();
+        double b = ctx->argument(1).toNumber();
+        return QScriptValue(eng, a + b);
+    }
+//! [62]
+
+//! [63]
+    QScriptValue add(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        if (ctx->argumentCount() != 2)
+            return ctx->throwError("add() takes exactly two arguments");
+        if (!ctx->argument(0).isNumber())
+            return ctx->throwError(QScriptContext::TypeError, "add(): first argument is not a number");
+        if (!ctx->argument(1).isNumber())
+            return ctx->throwError(QScriptContext::TypeError, "add(): second argument is not a number");
+        double a = ctx->argument(0).toNumber();
+        double b = ctx->argument(1).toNumber();
+        return QScriptValue(eng, a + b);
+    }
+//! [63]
+
+//! [64]
+    function concat() {
+        var result = "";
+        for (var i = 0; i < arguments.length; ++i)
+            result += String(arguments[i]);
+        return result;
+    }
+//! [64]
+
+//! [65]
+    QScriptValue concat(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QString result = "";
+        for (int i = 0; i < ctx->argumentCount(); ++i)
+            result += ctx->argument(i).toString();
+        return QScriptValue(eng, result);
+    }
+//! [65]
+
+//! [66]
+    function sort(comparefn) {
+        if (comparefn == undefined)
+            comparefn = /* the built-in comparison function */;
+        else if (typeof comparefn != "function")
+            throw TypeError("sort(): argument must be a function");
+        ...
+    }
+//! [66]
+
+//! [67]
+    QScriptValue sort(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue comparefn = ctx->argument(0);
+        if (comparefn.isUndefined())
+            comparefn = /* the built-in comparison function */;
+        else if (!comparefn.isFunction())
+            return ctx->throwError(QScriptContext::TypeError, "sort(): argument is not a function");
+        ...
+    }
+//! [67]
+
+//! [68]
+    function foo() {
+        // Let bar() take care of this.
+        print("calling bar() with " + arguments.length + "arguments");
+        var result = return bar.apply(this, arguments);
+        print("bar() returned" + result);
+        return result;
+    }
+//! [68]
+
+//! [69]
+    QScriptValue foo(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue bar = eng->globalObject().property("bar");
+        QScriptValue arguments = ctx->argumentsObject();
+        qDebug() << "calling bar() with" << arguments.property("length").toInt32() << "arguments";
+        QScriptValue result = bar.apply(ctx->thisObject(), arguments);
+        qDebug() << "bar() returned" << result.toString();
+        return result;
+    }
+//! [69]
+
+//! [70]
+    function counter() {
+        var count = 0;
+        return function() {
+            return count++;
+        }
+    }
+//! [70]
+
+//! [71]
+    var c1 = counter(); // create a new counter function
+    var c2 = counter(); // create a new counter function
+    print(c1()); // 0
+    print(c1()); // 1
+    print(c2()); // 0
+    print(c2()); // 1
+//! [71]
+
+//! [72]
+    QScriptValue counter(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue act = ctx->activationObject();
+        act.setProperty("count", QScriptValue(eng, 0));
+        QScriptValue result = eng->newFunction(counter_inner);
+        result.setScope(act);
+        return result;
+    }
+//! [72]
+
+//! [73]
+    QScriptValue counter_inner(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue outerAct = ctx->callee().scope();
+        double count = outerAct.property("count").toNumber();
+        outerAct.setProperty("count", QScriptValue(eng, count+1));
+        return QScriptValue(eng, count);
+    }
+//! [73]
+
+//! [74]
+    QScriptValue counter_hybrid(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue act = ctx->activationObject();
+        act.setProperty("count", QScriptValue(eng, 0));
+        return eng->evaluate("function() { return count++; }");
+    }
+//! [74]
+
+//! [75]
+    function Book(isbn) {
+        this.isbn = isbn;
+    }
+
+    var coolBook1 = new Book("978-0131872493");
+    var coolBook2 = new Book("978-1593271473");
+//! [75]
+
+//! [76]
+QScriptValue Person_ctor(QScriptContext *ctx, QScriptEngine *eng)
+{
+    QScriptValue object;
+    if (ctx->isCalledAsConstructor()) {
+        object = ctx->thisObject();
+    } else {
+        object = eng->newObject();
+        object.setPrototype(ctx->callee().property("prototype"));
+    }
+    object.setProperty("name", ctx->argument(0));
+    return object;
+}
+//! [76]
+
+//! [77]
+    QScriptContext *ctx = eng.pushContext();
+    QScriptValue act = ctx->activationObject();
+    act.setProperty("digit", QScriptValue(&eng, 7));
+
+    qDebug() << eng.evaluate("digit + 1").toNumber(); // 8
+
+    eng.popContext();
+//! [77]
+
+//! [78]
+    QScriptValue getSet(QScriptContext *ctx, QScriptEngine *eng)
+    {
+        QScriptValue obj = ctx->thisObject();
+        QScriptValue data = obj.data();
+        if (!data.isValid()) {
+            data = eng->newObject();
+            obj.setData(data);
+        }
+        QScriptValue result;
+        if (ctx->argumentCount() == 1) {
+            QString str = ctx->argument(0).toString();
+            str.replace("Roberta", "Ken");
+            result = QScriptValue(eng, str);
+            data.setProperty("x", result);
+        } else {
+            result = data.property("x");
+        }
+        return result;
+    }
+//! [78]
+
+//! [79]
+    QScriptEngine eng;
+    QScriptValue obj = eng.newObject();
+    obj.setProperty("x", eng.newFunction(getSet),
+                    QScriptValue::PropertyGetter|QScriptValue::PropertySetter);
+//! [79]
+
+//! [80]
+    obj.x = "Roberta sent me";
+    print(obj.x); // "Ken sent me"
+    obj.x = "I sent the bill to Roberta";
+    print(obj.x); // "I sent the bill to Ken"
+//! [80]
+
+//! [81]
+    obj = {};
+    obj.__defineGetter__("x", function() { return this._x; });
+    obj.__defineSetter__("x", function(v) { print("setting x to", v); this._x = v; });
+    obj.x = 123;
+//! [81]

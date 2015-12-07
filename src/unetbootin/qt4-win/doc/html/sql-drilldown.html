@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/drilldown.qdoc -->
+<head>
+  <title>Qt 4.4: Drill Down Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Drill Down Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="sql-drilldown-imageitem-cpp.html">sql/drilldown/imageitem.cpp</a></li>
+<li><a href="sql-drilldown-imageitem-h.html">sql/drilldown/imageitem.h</a></li>
+<li><a href="sql-drilldown-informationwindow-cpp.html">sql/drilldown/informationwindow.cpp</a></li>
+<li><a href="sql-drilldown-informationwindow-h.html">sql/drilldown/informationwindow.h</a></li>
+<li><a href="sql-drilldown-view-cpp.html">sql/drilldown/view.cpp</a></li>
+<li><a href="sql-drilldown-view-h.html">sql/drilldown/view.h</a></li>
+<li><a href="sql-drilldown-main-cpp.html">sql/drilldown/main.cpp</a></li>
+<li><a href="sql-drilldown-drilldown-pro.html">sql/drilldown/drilldown.pro</a></li>
+<li><a href="sql-drilldown-drilldown-qrc.html">sql/drilldown/drilldown.qrc</a></li>
+</ul>
+<p>The Drill Down example shows how to read data from a database as well as submit changes, using the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> and <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> classes.</p>
+<p align="center"><img src="images/drilldown-example.png" alt="Screenshot of the Drill Down Example" /></p><p>When running the example application, a user can retrieve information about each of Trolltech's offices by clicking the corresponding image. The application pops up an information window displaying the data, and allows the users to alter the location description as well as the image. The main view will be updated when the users submit their changes.</p>
+<p>The example consists of three classes:</p>
+<ul>
+<li><tt>ImageItem</tt> is a custom graphics item class used to display the office images.</li>
+<li><tt>View</tt> is the main application widget allowing the user to browse through the various locations.</li>
+<li><tt>InformationWindow</tt> displays the requested information, allowing the users to alter it and submit their changes to the database.</li>
+</ul>
+<p>We will first take a look at the <tt>InformationWindow</tt> class to see how you can read and modify data from a database. Then we will review the main application widget, i.e&#x2e;, the <tt>View</tt> class, and the associated <tt>ImageItem</tt> class.</p>
+<a name="informationwindow-class-definition"></a>
+<h2>InformationWindow Class Definition</h2>
+<p>The <tt>InformationWindow</tt> class is a custom widget inheriting <a href="qwidget.html">QWidget</a>:</p>
+<pre> class InformationWindow : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     InformationWindow(int id, QSqlRelationalTableModel *offices,
+                       QWidget *parent = 0);
+
+     int id();
+
+ signals:
+     void imageChanged(int id, const QString &amp;fileName);</pre>
+<p>When we create an information window, we pass the associated location ID, a parent, and a pointer to the database, to the constructor. We will use the database pointer to populate our window with data, while passing the parent parameter on to the base class. The ID is stored for future reference.</p>
+<p>Once a window is created, we will use the public <tt>id()</tt> function to locate it whenever information for the given location is requested. We will also use the ID to update the main application widget when the users submit their changes to the database, i.e&#x2e;, we will emit a signal carrying the ID and file name as parameters whenever the users changes the associated image.</p>
+<pre> private slots:
+     void revert();
+     void submit();
+     void enableButtons(bool enable = true);</pre>
+<p>Since we allow the users to alter some of the location data, we must provide functionality for reverting and submitting their changes. The <tt>enableButtons()</tt> slot is provided for convenience to enable and disable the various buttons when required.</p>
+<pre> private:
+     void createButtons();
+
+     int locationId;
+     QString displayedImage;
+
+     QComboBox *imageFileEditor;
+     QLabel *locationText;
+     QLabel *countryText;
+     QTextEdit *descriptionEditor;
+
+     QPushButton *closeButton;
+     QPushButton *submitButton;
+     QPushButton *revertButton;
+     QDialogButtonBox *buttonBox;
+
+     QDataWidgetMapper *mapper;
+ };</pre>
+<p>The <tt>createButtons()</tt> function is also a convenience function, provided to simplify the constructor. As mentioned above we store the location ID for future reference. We also store the name of the currently displayed image file to be able to determine when to emit the <tt>imageChanged()</tt> signal.</p>
+<p>The information window uses the <a href="qlabel.html">QLabel</a> class to display the office location and the country. The associated image file is displayed using a <a href="qcombobox.html">QComboBox</a> instance while the description is displayed using <a href="qtextedit.html">QTextEdit</a>. In addition, the window has three buttons to control the data flow and whether the window is shown or not.</p>
+<p>Finally, we declare a <i>mapper</i>. The <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> class provides mapping between a section of a data model to widgets. We will use the mapper to extract data from the given database, updating the database whenever the user modifies the data.</p>
+<a name="informationwindow-class-implementation"></a>
+<h2>InformationWindow Class Implementation</h2>
+<p>The constructor takes three arguments: a location ID, a database pointer and a parent widget. The database pointer is actually a pointer to a <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> object providing an editable data model (with foreign key support) for our database table.</p>
+<pre> InformationWindow::InformationWindow(int id, QSqlRelationalTableModel *offices,
+                                      QWidget *parent)
+     : QDialog(parent)
+ {
+     QLabel *locationLabel = new QLabel(tr(&quot;Location: &quot;));
+     QLabel *countryLabel = new QLabel(tr(&quot;Country: &quot;));
+     QLabel *descriptionLabel = new QLabel(tr(&quot;Description: &quot;));
+     QLabel *imageFileLabel = new QLabel(tr(&quot;Image file: &quot;));
+
+     createButtons();
+
+     locationText = new QLabel;
+     countryText = new QLabel;
+     descriptionEditor = new QTextEdit;</pre>
+<p>First we create the various widgets required to display the data contained in the database. Most of the widgets are created in a straight forward manner. But note the combobox displaying the name of the image file:</p>
+<pre>     imageFileEditor = new QComboBox;
+     imageFileEditor-&gt;setModel(offices-&gt;relationModel(1));
+     imageFileEditor-&gt;setModelColumn(offices-&gt;relationModel(1)-&gt;fieldIndex(&quot;file&quot;));</pre>
+<p>In this example, the information about the offices are stored in a database table called &quot;trolltechoffices&quot;. When creating the model, we will use a foreign key to establish a relation between this table and a second data base table, &quot;images&quot;, containing the names of the available image files. We will get back to how this is done when reviewing the <tt>View</tt> class. The rationale for creating such a relation though, is that we want to ensure that the user only can choose between predefined image files.</p>
+<p>The model corresponding to the &quot;images&quot; database table, is available through the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>'s <a href="qsqlrelationaltablemodel.html#relationModel">relationModel()</a> function, requiring the foreign key (in this case the &quot;imagefile&quot; column number) as argument. We use <a href="qcombobox.html">QComboBox</a>'s <a href="qcombobox.html#setModel">setModel()</a> function to make the combobox use the &quot;images&quot; model. And, since this model has two columns (&quot;locationid&quot; and &quot;file&quot;), we also specify which column we want to be visible using the <a href="qcombobox.html#modelColumn-prop">QComboBox::setModelColumn</a>() function.</p>
+<pre>     mapper = new QDataWidgetMapper(this);
+     mapper-&gt;setModel(offices);
+     mapper-&gt;setSubmitPolicy(QDataWidgetMapper::ManualSubmit);
+     mapper-&gt;setItemDelegate(new QSqlRelationalDelegate(mapper));
+     mapper-&gt;addMapping(imageFileEditor, 1);
+     mapper-&gt;addMapping(locationText, 2);
+     mapper-&gt;addMapping(countryText, 3);
+     mapper-&gt;addMapping(descriptionEditor, 4);
+     mapper-&gt;setCurrentIndex(id);</pre>
+<p>Then we create the mapper. The <a href="qdatawidgetmapper.html">QDataWidgetMapper</a> class allows us to create data-aware widgets by mapping them to sections of an item model.</p>
+<p>The <a href="qdatawidgetmapper.html#addMapping">addMapping()</a> function adds a mapping between the given widget and the specified section of the model. If the mapper's orientation is horizontal (the default) the section is a column in the model, otherwise it is a row. We call the <a href="qdatawidgetmapper.html#currentIndex-prop">setCurrentIndex()</a> function to initialize the widgets with the data associated with the given location ID. Every time the current index changes, all the widgets are updated with the contents from the model.</p>
+<p>We also set the mapper's submit policy to <a href="qdatawidgetmapper.html#SubmitPolicy-enum">QDataWidgetMapper::ManualSubmit</a>. This means that no data is submitted to the database until the user expliclity requests a submit (the alternative is <a href="qdatawidgetmapper.html#SubmitPolicy-enum">QDataWidgetMapper::AutoSubmit</a>, automatically submitting changes when the corresponding widget looses focus). Finally, we specify the item delegate the mapper view should use for its items. The <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a> class represents a delegate that unlike the default delegate, enables combobox functionality for fields that are foreign keys into other tables (like &quot;imagefile&quot; in our &quot;trolltechoffices&quot; table).</p>
+<pre>     connect(descriptionEditor, SIGNAL(textChanged()),
+             this, SLOT(enableButtons()));
+     connect(imageFileEditor, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(enableButtons()));
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(locationLabel, 0, 0, Qt::AlignLeft | Qt::AlignTop);
+     layout-&gt;addWidget(countryLabel, 1, 0, Qt::AlignLeft | Qt::AlignTop);
+     layout-&gt;addWidget(imageFileLabel, 2, 0, Qt::AlignLeft | Qt::AlignTop);
+     layout-&gt;addWidget(descriptionLabel, 3, 0, Qt::AlignLeft | Qt::AlignTop);
+     layout-&gt;addWidget(locationText, 0, 1);
+     layout-&gt;addWidget(countryText, 1, 1);
+     layout-&gt;addWidget(imageFileEditor, 2, 1);
+     layout-&gt;addWidget(descriptionEditor, 3, 1);
+     layout-&gt;addWidget(buttonBox, 4, 0, 1, 2);
+     setLayout(layout);
+
+     locationId = id;
+     displayedImage = imageFileEditor-&gt;currentText();
+
+     setWindowFlags(Qt::Window);
+     enableButtons(false);
+     setWindowTitle(tr(&quot;Trolltech Office: %1&quot;).arg(locationText-&gt;text()));
+     resize(320, sizeHint().height());
+ }</pre>
+<p>Finally, we connect the &quot;something's changed&quot; signals in the editors to our custom <tt>enableButtons()</tt> slot, enabling the users to either submit or revert their changes. We add all the widgets into a layout, store the location ID and the name of the displayed image file for future reference, and set the window title and initial size.</p>
+<p>Note that we also set the <a href="qt.html#WindowType-enum">Qt::Window</a> window flag to indicate that our widget is in fact a window, with a window system frame and a title bar.</p>
+<pre> int InformationWindow::id()
+ {
+     return locationId;
+ }</pre>
+<p>When a window is created, it is not deleted until the main application exits (i.e&#x2e;, if the user closes the information window, it is only hidden). For this reason we do not want to create more than one <tt>InformationWindow</tt> object for each location, and we provide the public <tt>id()</tt> function to be able to determine whether a window already exists for a given location when the user requests information about it.</p>
+<pre> void InformationWindow::revert()
+ {
+     mapper-&gt;revert();
+     enableButtons(false);
+ }</pre>
+<p>The <tt>revert()</tt> slot is triggered whenever the user hits the <b>Revert</b> button.</p>
+<p>Since we set the <a href="qdatawidgetmapper.html#SubmitPolicy-enum">QDataWidgetMapper::ManualSubmit</a> submit policy, none of the user's changes are written back to the model unless the user expliclity choose to submit all of them. Nevertheless, we can use the <a href="qdatawidgetmapper.html">QDataWidgetMapper</a>'s <a href="qdatawidgetmapper.html#revert">revert()</a> slot to reset the editor widgets, repopulating all widgets with the current data of the model.</p>
+<pre> void InformationWindow::submit()
+ {
+     QString newImage(imageFileEditor-&gt;currentText());
+
+     if (displayedImage != newImage) {
+         displayedImage = newImage;
+         emit imageChanged(locationId, newImage);
+     }
+
+     mapper-&gt;submit();
+     mapper-&gt;setCurrentIndex(locationId);
+
+     enableButtons(false);
+ }</pre>
+<p>Likewise, the <tt>submit()</tt> slot is triggered whenever the users decide to submit their changes by pressing the <b>Submit</b> button.</p>
+<p>We use <a href="qdatawidgetmapper.html">QDataWidgetMapper</a>'s <a href="qdatawidgetmapper.html#submit">submit()</a> slot to submit all changes from the mapped widgets to the model, i.e&#x2e; to the database. For every mapped section, the item delegate will then read the current value from the widget and set it in the model. Finally, the <i>model</i>'s <a href="qabstractitemmodel.html#submit">submit()</a> function is invoked to let the model know that it should submit whatever it has cached to the permanent storage.</p>
+<p>Note that before any data is submitted, we check if the user has chosen another image file using the previously stored <tt>displayedImage</tt> variable as reference. If the current and stored file names differ, we store the new file name and emit the <tt>imageChanged()</tt> signal.</p>
+<pre> void InformationWindow::createButtons()
+ {
+     closeButton = new QPushButton(tr(&quot;&amp;Close&quot;));
+     revertButton = new QPushButton(tr(&quot;&amp;Revert&quot;));
+     submitButton = new QPushButton(tr(&quot;&amp;Submit&quot;));
+
+     closeButton-&gt;setDefault(true);
+
+     connect(closeButton, SIGNAL(clicked()), this, SLOT(close()));
+     connect(revertButton, SIGNAL(clicked()), this, SLOT(revert()));
+     connect(submitButton, SIGNAL(clicked()), this, SLOT(submit()));</pre>
+<p>The <tt>createButtons()</tt> function is provided for convenience, i.e&#x2e;, to simplify the constructor.</p>
+<p>We make the <b>Close</b> button the default button, i.e&#x2e;, the button that is pressed when the user presses <b>Enter</b>, and connect its <a href="qabstractbutton.html#clicked">clicked()</a> signal to the widget's <a href="qwidget.html#close">close()</a> slot. As mentioned above closing the window only hides the widget; it is not deleted. We also connect the <b>Submit</b> and <b>Revert</b> buttons to the corresponding <tt>submit()</tt> and <tt>revert()</tt> slots.</p>
+<pre>     buttonBox = new QDialogButtonBox;
+     buttonBox-&gt;addButton(submitButton, QDialogButtonBox::ResetRole);
+     buttonBox-&gt;addButton(revertButton, QDialogButtonBox::ResetRole);
+     buttonBox-&gt;addButton(closeButton, QDialogButtonBox::RejectRole);
+ }</pre>
+<p>The <a href="qdialogbuttonbox.html">QDialogButtonBox</a> class is a widget that presents buttons in a layout that is appropriate to the current widget style. Dialogs like our information window, typically present buttons in a layout that conforms to the interface guidelines for that platform. Invariably, different platforms have different layouts for their dialogs. <a href="qdialogbuttonbox.html">QDialogButtonBox</a> allows us to add buttons, automatically using the appropriate layout for the user's desktop environment.</p>
+<p>Most buttons for a dialog follow certain roles. We give the <b>Submit</b> and <b>Revert</b> buttons the <a href="qdialogbuttonbox.html#ButtonRole-enum">reset</a> role, i.e&#x2e;, indicating that pressing the button resets the fields to the default values (in our case the information contained in the database). The <a href="qdialogbuttonbox.html#ButtonRole-enum">reject</a> role indicates that clicking the button causes the dialog to be rejected. On the other hand, since we only hide the information window, any changes that the user has made wil be preserved until the user expliclity revert or submit them.</p>
+<pre> void InformationWindow::enableButtons(bool enable)
+ {
+     revertButton-&gt;setEnabled(enable);
+     submitButton-&gt;setEnabled(enable);
+ }</pre>
+<p>The <tt>enableButtons()</tt> slot is called to enable the buttons whenever the user changes the presented data. Likewise, when the data the user choose to submit the changes, the buttons are disabled to indicate that the current data is stored in the database.</p>
+<p>This completes the <tt>InformationWindow</tt> class. Let's take a look at how we have used it in our example application.</p>
+<a name="view-class-definition"></a>
+<h2>View Class Definition</h2>
+<p>The <tt>View</tt> class represents the main application window and inherits <a href="qgraphicsview.html">QGraphicsView</a>:</p>
+<pre> class View : public QGraphicsView
+ {
+     Q_OBJECT
+
+ public:
+     View(const QString &amp;offices, const QString &amp;images, QWidget *parent = 0);
+
+ protected:
+     void mouseReleaseEvent(QMouseEvent *event);
+
+ private slots:
+     void updateImage(int id, const QString &amp;fileName);</pre>
+<p>The <a href="qgraphicsview.html">QGraphicsView</a> class is part of the <a href="graphicsview.html">The Graphics View Framework</a> which we will use to display the images of Trolltech's offices. To be able to respond to user interaction, i.e&#x2e;, showing the appropriate information window whenever the user clicks one of the office images, we reimplement <a href="qgraphicsview.html">QGraphicsView</a>'s <a href="qwidget.html#mouseReleaseEvent">mouseReleaseEvent()</a> function.</p>
+<p>Note that the constructor expects the names of two database tables: One containing the detailed information about the offices, and another containing the names of the available image files. We also provide a private <tt>updateImage()</tt> slot to catch <tt>InformationWindow</tt>'s <tt>imageChanged()</tt> signal that is emitted whenever the user changes a location's image.</p>
+<pre> private:
+     void addItems();
+     InformationWindow* findWindow(int id);
+     void showInformation(ImageItem *image);
+
+     QGraphicsScene *scene;
+     QList&lt;InformationWindow *&gt; informationWindows;</pre>
+<p>The <tt>addItems()</tt> function is a convenience function provided to simplify the constructor. It is called only once, creating the various items and adding them to the view.</p>
+<p>The <tt>findWindow()</tt> function, on the other hand, is frequently used. It is called from the <tt>showInformation()</tt> function to detemine whether a window is already created for the given location (whenever we create an <tt>InformationWindow</tt> object, we store a reference to it in the <tt>informationWindows</tt> list). The latter function is in turn called from our custom <tt>mouseReleaseEvent()</tt> implementation.</p>
+<pre>     QSqlRelationalTableModel *officeTable;
+ };</pre>
+<p>Finally we declare a <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> pointer. As previously mentioned, the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> class provides an editable data model with foreign key support. There are a couple of things you should keep in mind when using the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> class: The table must have a primary key declared and this key cannot contain a relation to another table, i.e&#x2e;, it cannot be a foreign key. Note also that if a relational table contains keys that refer to non-existent rows in the referenced table, the rows containing the invalid keys will not be exposed through the model. It is the user's or the database's responsibility to maintain referential integrity.</p>
+<a name="view-class-implementation"></a>
+<h2>View Class Implementation</h2>
+<p>Although the constructor requests the names of both the table containing office details as well as the table containing the names of the available image files, we only have to create a <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> object for the office table:</p>
+<pre> View::View(const QString &amp;offices, const QString &amp;images, QWidget *parent)
+     : QGraphicsView(parent)
+ {
+     officeTable = new QSqlRelationalTableModel(this);
+     officeTable-&gt;setTable(offices);
+     officeTable-&gt;setRelation(1, QSqlRelation(images, &quot;locationid&quot;, &quot;file&quot;));
+     officeTable-&gt;select();</pre>
+<p>The reason is that once we have a model with the office details, we can create a relation to the available image files using <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>'s <a href="qsqlrelationaltablemodel.html#setRelation">setRelation()</a> function. This function creates a foreign key for the given model column. The key is specified by the provided <a href="qsqlrelation.html">QSqlRelation</a> object constructed by the name of the table the key refers to, the field the key is mapping to and the field that should be presented to the user.</p>
+<p>Note that setting the table only specifies which table the model operates on, i.e&#x2e;, we must explicitly call the model's <a href="qsqltablemodel.html#select">select()</a> function to populate our model.</p>
+<pre>     scene = new QGraphicsScene(this);
+     scene-&gt;setSceneRect(0, 0, 465, 615);
+     setScene(scene);
+
+     addItems();
+
+     QGraphicsPixmapItem *logo = scene-&gt;addPixmap(QPixmap(&quot;:/logo.png&quot;));
+     logo-&gt;setPos(30, 515);
+
+     setMinimumSize(470, 620);
+     setMaximumSize(470, 620);
+     setWindowTitle(tr(&quot;Trolltech World Wide&quot;));
+ }</pre>
+<p>Then we create the contents of our view, i.e&#x2e;, the scene and its items. The location labels are regular <a href="qgraphicstextitem.html">QGraphicsTextItem</a> objects, and the &quot;Trolltech&quot; logo is represented by a <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> object. The images, on the other hand, are instances of the <tt>ImageItem</tt> class (derived from <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>). We will get back to this shortly when reviewing the <tt>addItems()</tt> function.</p>
+<p>Finally, we set the main application widget's size constraints and window title.</p>
+<pre> void View::addItems()
+ {
+     int officeCount = officeTable-&gt;rowCount();
+
+     int imageOffset = 150;
+     int leftMargin = 70;
+     int topMargin = 40;
+
+     for (int i = 0; i &lt; officeCount; i++) {
+         ImageItem *image;
+         QGraphicsTextItem *label;
+         QSqlRecord record = officeTable-&gt;record(i);
+
+         int id = record.value(&quot;id&quot;).toInt();
+         QString file = record.value(&quot;file&quot;).toString();
+         QString location = record.value(&quot;location&quot;).toString();
+
+         int columnOffset = ((i / 3) * 37);
+         int x = ((i / 3) * imageOffset) + leftMargin + columnOffset;
+         int y = ((i % 3) * imageOffset) + topMargin;
+
+         image = new ImageItem(id, QPixmap(&quot;:/&quot; + file));
+         image-&gt;setData(0, i);
+         image-&gt;setPos(x, y);
+         scene-&gt;addItem(image);
+
+         label = scene-&gt;addText(location);
+         QPointF labelOffset((150 - label-&gt;boundingRect().width()) / 2, 120.0);
+         label-&gt;setPos(QPointF(x, y) + labelOffset);
+     }
+ }</pre>
+<p>The <tt>addItems()</tt> function is called only once, i.e&#x2e;, when creating the main application window. For each row in the database table, we first extract the corresponding record using the model's <a href="qsqlquerymodel.html#record">record()</a> function. The <a href="qsqlrecord.html">QSqlRecord</a> class encapsulates both the functionality and characteristics of a database record, and supports adding and removing fields as well as setting and retrieving field values. The <a href="qsqlrecord.html#value">QSqlRecord::value</a>() function returns the value of the field with the given name or index as a <a href="qvariant.html">QVariant</a> object.</p>
+<p>For each record, we create a label item as well as an image item, calculate their position and add them to the scene. The image items are represented by instances of the <tt>ImageItem</tt> class. The reason we must create a custom item class is that we want to catch the item's hover events, animating the item when the mouse cursor is hovering over the image (by default, no items accept hover events). Please see the <a href="graphicsview.html">The Graphics View Framework</a> documentation and the <a href="examples.html#graphics-view">Graphics View examples</a> for more details.</p>
+<pre> void View::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (QGraphicsItem *item = itemAt(event-&gt;pos())) {
+         if (ImageItem *image = qgraphicsitem_cast&lt;ImageItem *&gt;(item))
+             showInformation(image);
+     }
+     QGraphicsView::mouseReleaseEvent(event);
+ }</pre>
+<p>We reimplement <a href="qgraphicsview.html">QGraphicsView</a>'s <a href="qwidget.html#mouseReleaseEvent">mouseReleaseEvent()</a> event handler to respond to user interaction. If the user clicks any of the image items, this function calls the private <tt>showInformation()</tt> function to pop up the associated information window.</p>
+<p><a href="graphicsview.html">The Graphics View Framework</a> provides the <a href="qgraphicsitem.html#qgraphicsitem_cast">qgraphicsitem_cast</a>() function to determine whether the given <a href="qgraphicsitem.html">QGraphicsItem</a> instance is of a given type. Note that if the event is not related to any of our image items, we pass it on to the base class implementation.</p>
+<pre> void View::showInformation(ImageItem *image)
+ {
+     int id = image-&gt;id();
+     if (id &lt; 0 || id &gt;= officeTable-&gt;rowCount())
+         return;
+
+     InformationWindow *window = findWindow(id);
+     if (window &amp;&amp; window-&gt;isVisible()) {
+         window-&gt;raise();
+         window-&gt;activateWindow();
+     } else if (window &amp;&amp; !window-&gt;isVisible()) {
+         window-&gt;show();
+     } else {
+         InformationWindow *window;
+         window = new InformationWindow(id, officeTable, this);
+
+         connect(window, SIGNAL(imageChanged(int, QString)),
+                 this, SLOT(updateImage(int, QString)));
+
+         window-&gt;move(pos() + QPoint(20, 40));
+         window-&gt;show();
+         informationWindows.append(window);
+     }
+ }</pre>
+<p>The <tt>showInformation()</tt> function is given an <tt>ImageItem</tt> object as argument, and starts off by extracting the item's location ID. Then it determines if there already is created an information window for this location. If it is, and the window is visible, it ensures that the window is raised to the top of the widget stack and activated. If the window exists but is hidden, calling its <a href="qwidget.html#show">show()</a> slot gives the same result.</p>
+<p>If no window for the given location exists, we create one by passing the location ID, a pointer to the model, and our view as a parent, to the <tt>InformationWindow</tt> constructor. Note that we connect the information window's <tt>imageChanged()</tt> signal to <i>this</i> widget's <tt>updateImage()</tt> slot, before we give it a suitable position and add it to the list of existing windows.</p>
+<pre> void View::updateImage(int id, const QString &amp;fileName)
+ {
+     QList&lt;QGraphicsItem *&gt; items = scene-&gt;items();
+
+     while(!items.empty()) {
+         QGraphicsItem *item = items.takeFirst();
+
+         if (ImageItem *image = qgraphicsitem_cast&lt;ImageItem *&gt;(item)) {
+             if (image-&gt;id() == id){
+                 image-&gt;setPixmap(QPixmap(&quot;:/&quot; +fileName));
+                 image-&gt;adjust();
+                 break;
+             }
+         }
+     }
+ }</pre>
+<p>The <tt>updateImage()</tt> slot takes a location ID and the name of an image files as arguments. It filters out the image items, and updates the one that correspond to the given location ID, with the provided image file.</p>
+<pre> InformationWindow* View::findWindow(int id)
+ {
+     QList&lt;InformationWindow*&gt;::iterator i, beginning, end;
+
+     beginning = informationWindows.begin();
+     end = informationWindows.end();
+
+     for (i = beginning; i != end; ++i) {
+         InformationWindow *window = (*i);
+         if (window &amp;&amp; (window-&gt;id() == id))
+             return window;
+     }
+     return 0;
+ }</pre>
+<p>The <tt>findWindow()</tt> function simply searches through the list of existing windows, returning a pointer to the window that matches the given location ID, or 0 if the window doesn't exists.</p>
+<p>Finally, let's take a quick look at our custom <tt>ImageItem</tt> class:</p>
+<a name="imageitem-class-definition"></a>
+<h2>ImageItem Class Definition</h2>
+<p>The <tt>ImageItem</tt> class is provided to facilitate animation of the image items. It inherits <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> and reimplements its hover event handlers:</p>
+<pre> class ImageItem : public QObject, public QGraphicsPixmapItem
+ {
+     Q_OBJECT
+
+ public:
+     ImageItem(int id, const QPixmap &amp;pixmap, QGraphicsItem *parent = 0,
+               QGraphicsScene *scene = 0);
+
+     void adjust();
+     int id();
+
+ protected:
+     void hoverEnterEvent(QGraphicsSceneHoverEvent *event);
+     void hoverLeaveEvent(QGraphicsSceneHoverEvent *event);
+
+ private slots:
+     void setFrame(int frame);
+     void updateItemPosition();
+
+ private:
+     QTimeLine timeLine;
+     int recordId;
+     double z;
+ };</pre>
+<p>In addition, we implement a public <tt>id()</tt> function to be able to identify the associated location and a public <tt>adjust()</tt> function that can be called to ensure that the image item is given the preferred size regardless of the original image file.</p>
+<p>The animation is implemented using the <a href="qtimeline.html">QTimeLine</a> class together with the event handlers and the private <tt>setFrame()</tt> slot: The image item will expand when the mouse cursor hovers over it, returning back to its orignal size when the cursor leaves its borders.</p>
+<p>Finally, we store the location ID that this particular record is associated with as well as a z-value. In the <a href="graphicsview.html">The Graphics View Framework</a>, an item's z-value determines its position in the item stack. An item of high Z-value will be drawn on top of an item with a lower z-value if they share the same parent item. We also provide an <tt>updateItemPosition()</tt> function to refresh the view when required.</p>
+<a name="imageitem-class-implementation"></a>
+<h2>ImageItem Class Implementation</h2>
+<p>The <tt>ImageItem</tt> class is really only a <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a> with some additional features, i.e&#x2e;, we can pass most of the constructor's arguments (the pixmap, parent and scene) on to the base class constructor:</p>
+<pre> ImageItem::ImageItem(int id, const QPixmap &amp;pixmap, QGraphicsItem *parent,
+                      QGraphicsScene *scene)
+     : QGraphicsPixmapItem(pixmap, parent, scene)
+ {
+     recordId = id;
+     setAcceptsHoverEvents(true);
+
+     timeLine.setDuration(150);
+     timeLine.setFrameRange(0, 150);
+
+     connect(&amp;timeLine, SIGNAL(frameChanged(int)), this, SLOT(setFrame(int)));
+     connect(&amp;timeLine, SIGNAL(finished()), this, SLOT(updateItemPosition()));
+
+     adjust();
+ }</pre>
+<p>Then we store the ID for future reference, and ensure that our item will accept hover events. Hover events are delivered when there is no current mouse grabber item. They are sent when the mouse cursor enters an item, when it moves around inside the item, and when the cursor leaves an item. As we mentioned earlier, none of the <a href="graphicsview.html">The Graphics View Framework</a>'s items accept hover event's by default.</p>
+<p>The <a href="qtimeline.html">QTimeLine</a> class provides a timeline for controlling animations. Its <a href="qtimeline.html#duration-prop">duration</a> property holds the total duration of the timeline in milliseconds. By default, the time line runs once from the beginning and towards the end. The <a href="qtimeline.html#setFrameRange">QTimeLine::setFrameRange</a>() function sets the timeline's frame counter; when the timeline is running, the <a href="qtimeline.html#frameChanged">frameChanged()</a> signal is emitted each time the frame changes. We set the duration and frame range for our animation, and connect the time line's <a href="qtimeline.html#frameChanged">frameChanged()</a> and <a href="qtimeline.html#finished">finished()</a> signals to our private <tt>setFrame()</tt> and <tt>updateItemPosition()</tt> slots.</p>
+<p>Finally, we call <tt>adjust()</tt> to ensure that the item is given the preferred size.</p>
+<pre> void ImageItem::hoverEnterEvent(QGraphicsSceneHoverEvent * <span class="comment">/*event*/</span>)
+ {
+     timeLine.setDirection(QTimeLine::Forward);
+
+     if (z != 1.0) {
+         z = 1.0;
+         updateItemPosition();
+     }
+
+     if (timeLine.state() == QTimeLine::NotRunning)
+         timeLine.start();
+ }
+
+ void ImageItem::hoverLeaveEvent(QGraphicsSceneHoverEvent * <span class="comment">/*event*/</span>)
+ {
+     timeLine.setDirection(QTimeLine::Backward);
+     if (z != 0.0)
+         z = 0.0;
+
+     if (timeLine.state() == QTimeLine::NotRunning)
+         timeLine.start();
+ }</pre>
+<p>Whenever the mouse cursor enters or leave the image item, the corresponding event handlers are triggered: We first set the time line's direction, making the item expand or shrink, respectively. Then we alter the item's z-value if it is not already set to the expected value.</p>
+<p>In the case of hover <i>enter</i> events, we immediately update the item's position since we want the item to appear on top of all other items as soon as it starts expanding. In the case of hover <i>leave</i> events, on the other hand, we postpone the actual update to achieve the same result. But remember that when we constructed our item, we connected the time line's <a href="qtimeline.html#finished">finished()</a> signal to the <tt>updateItemPosition()</tt> slot. In this way the item is given the correct position in the item stack once the animation is completed. Finally, if the time line is not already running, we start it.</p>
+<pre> void ImageItem::setFrame(int frame)
+ {
+     adjust();
+     QPointF center = boundingRect().center();
+
+     translate(center.x(), center.y());
+     scale(1 + frame / 330.0, 1 + frame / 330.0);
+     translate(-center.x(), -center.y());
+ }</pre>
+<p>When the time line is running, it triggers the <tt>setFrame()</tt> slot whenever the current frame changes due to the connection we created in the item constructor. It is this slot that controls the animation, expanding or shrinking the image item step by step.</p>
+<p>We first call the <tt>adjust()</tt> function to ensure that we start off with the item's original size. Then we scale the item with a factor depending on the animation's progress (using the <tt>frame</tt> parameter). Note that by default, the transformation will be relative to the item's top-left corner. Since we want the item to be transformed relative to its center, we must translate the coordinate system before we scale the item.</p>
+<p>In the end, only the following convenience functions remain:</p>
+<pre> void ImageItem::adjust()
+ {
+     QMatrix matrix;
+     matrix.scale(150/ boundingRect().width(), 120/ boundingRect().height());
+     setMatrix(matrix);
+ }
+
+ int ImageItem::id()
+ {
+     return recordId;
+ }
+
+ void ImageItem::updateItemPosition()
+ {
+     setZValue(z);
+ }</pre>
+<p>The <tt>adjust()</tt> function defines and applies a transformation matrix, ensuring that our image item appears with the preferred size regardless of the size of the source image. The <tt>id()</tt> function is trivial, and is simply provided to be able to identify the item. In the <tt>updateItemPosition()</tt> slot we call the <a href="qgraphicsitem.html#setZValue">QGraphicsItem::setZValue</a>() function, setting the elevation (i.e&#x2e;, the position) of the item.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

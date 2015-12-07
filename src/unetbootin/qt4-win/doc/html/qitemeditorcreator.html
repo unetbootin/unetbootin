@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qitemeditorfactory.cpp -->
+<head>
+  <title>Qt 4.4: QItemEditorCreator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QItemEditorCreator Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QItemEditorCreator class makes it possible to create item editor creator bases without subclassing <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QItemEditorCreator&gt;</pre><p>Inherits <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qitemeditorcreator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qitemeditorcreator.html#QItemEditorCreator">QItemEditorCreator</a></b> ( const QByteArray &amp; <i>valuePropertyName</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qitemeditorcreatorbase.html#public-functions">QItemEditorCreatorBase</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QItemEditorCreator class makes it possible to create item editor creator bases without subclassing <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>.</p>
+<p>QItemEditorCreator is a convenience template class. It uses the template class to create editors for <a href="qitemeditorfactory.html">QItemEditorFactory</a>. This way, it is not necessary to subclass <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>.</p>
+<pre>     QItemEditorCreator&lt;MyEditor&gt; *itemCreator =
+         new QItemEditorCreator&lt;MyEditor&gt;(&quot;myProperty&quot;);
+
+     QItemEditorFactory *factory = new QItemEditorFactory;</pre>
+<p>The constructor takes the name of the property that contains the editing data. <a href="qitemdelegate.html">QItemDelegate</a> can then access the property by name when it sets and retrieves editing data. Only use this class if your editor does not define a user property (using the USER keyword in the Q_PROPERTY macro). If the widget has a user property, you should use <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a> instead.</p>
+<p>See also <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>, <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a>, <a href="qitemeditorfactory.html">QItemEditorFactory</a>, and <a href="itemviews-coloreditorfactory.html">Color Editor Factory Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QItemEditorCreator"></a>QItemEditorCreator::QItemEditorCreator ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>valuePropertyName</i> )</h3>
+<p>Constructs an editor creator object using <i>valuePropertyName</i> as the name of the property to be used for editing. The property name is used by <a href="qitemdelegate.html">QItemDelegate</a> when setting and getting editor data.</p>
+<p>Note that the <i>valuePropertyName</i> is only used if the editor widget does not have a user property defined.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

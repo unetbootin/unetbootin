@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: tetrixwindow.ui Example File (script/tetrix/tetrixwindow.ui)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">tetrixwindow.ui Example File<br /><span class="small-subtitle">script/tetrix/tetrixwindow.ui</span>
+</h1>
+<pre> &lt;ui version=&quot;4.0&quot; &gt;
+  &lt;class&gt;TetrixWindow&lt;/class&gt;
+  &lt;widget class=&quot;QWidget&quot; name=&quot;TetrixWindow&quot; &gt;
+   &lt;property name=&quot;geometry&quot; &gt;
+    &lt;rect&gt;
+     &lt;x&gt;0&lt;/x&gt;
+     &lt;y&gt;0&lt;/y&gt;
+     &lt;width&gt;537&lt;/width&gt;
+     &lt;height&gt;475&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;windowTitle&quot; &gt;
+    &lt;string&gt;Tetrix&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;layout class=&quot;QVBoxLayout&quot; &gt;
+    &lt;property name=&quot;margin&quot; &gt;
+     &lt;number&gt;9&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;spacing&quot; &gt;
+     &lt;number&gt;6&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;item&gt;
+     &lt;layout class=&quot;QGridLayout&quot; &gt;
+      &lt;property name=&quot;margin&quot; &gt;
+       &lt;number&gt;0&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;spacing&quot; &gt;
+       &lt;number&gt;6&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;item row=&quot;4&quot; column=&quot;0&quot; &gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;startButton&quot; &gt;
+        &lt;property name=&quot;focusPolicy&quot; &gt;
+         &lt;enum&gt;Qt::NoFocus&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Start&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;3&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QLCDNumber&quot; name=&quot;linesLcd&quot; &gt;
+        &lt;property name=&quot;segmentStyle&quot; &gt;
+         &lt;enum&gt;QLCDNumber::Filled&lt;/enum&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;2&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;linesRemovedLabel&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;LINES REMOVED&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;alignment&quot; &gt;
+         &lt;set&gt;Qt::AlignBottom|Qt::AlignHCenter&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;5&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;pauseButton&quot; &gt;
+        &lt;property name=&quot;focusPolicy&quot; &gt;
+         &lt;enum&gt;Qt::NoFocus&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Pause&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;1&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QLCDNumber&quot; name=&quot;scoreLcd&quot; &gt;
+        &lt;property name=&quot;segmentStyle&quot; &gt;
+         &lt;enum&gt;QLCDNumber::Filled&lt;/enum&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item rowspan=&quot;6&quot; row=&quot;0&quot; column=&quot;1&quot; &gt;
+       &lt;widget class=&quot;TetrixBoard&quot; name=&quot;board&quot; &gt;
+        &lt;property name=&quot;focusPolicy&quot; &gt;
+         &lt;enum&gt;Qt::StrongFocus&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;frameShape&quot; &gt;
+         &lt;enum&gt;QFrame::Panel&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;frameShadow&quot; &gt;
+         &lt;enum&gt;QFrame::Sunken&lt;/enum&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;2&quot; column=&quot;0&quot; &gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;levelLabel&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;LEVEL&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;alignment&quot; &gt;
+         &lt;set&gt;Qt::AlignBottom|Qt::AlignHCenter&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;0&quot; column=&quot;0&quot; &gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;nextLabel&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;NEXT&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;alignment&quot; &gt;
+         &lt;set&gt;Qt::AlignBottom|Qt::AlignHCenter&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;3&quot; column=&quot;0&quot; &gt;
+       &lt;widget class=&quot;QLCDNumber&quot; name=&quot;levelLcd&quot; &gt;
+        &lt;property name=&quot;segmentStyle&quot; &gt;
+         &lt;enum&gt;QLCDNumber::Filled&lt;/enum&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;0&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;scoreLabel&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;SCORE&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;alignment&quot; &gt;
+         &lt;set&gt;Qt::AlignBottom|Qt::AlignHCenter&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;1&quot; column=&quot;0&quot; &gt;
+       &lt;widget class=&quot;QLabel&quot; name=&quot;nextPieceLabel&quot; &gt;
+        &lt;property name=&quot;frameShape&quot; &gt;
+         &lt;enum&gt;QFrame::Box&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;frameShadow&quot; &gt;
+         &lt;enum&gt;QFrame::Raised&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string/&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;alignment&quot; &gt;
+         &lt;set&gt;Qt::AlignCenter&lt;/set&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item row=&quot;4&quot; column=&quot;2&quot; &gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;quitButton&quot; &gt;
+        &lt;property name=&quot;focusPolicy&quot; &gt;
+         &lt;enum&gt;Qt::NoFocus&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Quit&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+   &lt;/layout&gt;
+  &lt;/widget&gt;
+  &lt;customwidgets&gt;
+   &lt;customwidget&gt;
+    &lt;class&gt;TetrixBoard&lt;/class&gt;
+    &lt;extends&gt;QFrame&lt;/extends&gt;
+    &lt;header&gt;tetrixboard.h&lt;/header&gt;
+    &lt;container&gt;1&lt;/container&gt;
+   &lt;/customwidget&gt;
+  &lt;/customwidgets&gt;
+  &lt;resources/&gt;
+  &lt;connections/&gt;
+ &lt;/ui&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

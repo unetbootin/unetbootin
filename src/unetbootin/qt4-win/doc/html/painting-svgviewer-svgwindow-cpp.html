@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: svgwindow.cpp Example File (painting/svgviewer/svgwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">svgwindow.cpp Example File<br /><span class="small-subtitle">painting/svgviewer/svgwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;svgview.h&quot;
+ #include &quot;svgwindow.h&quot;
+
+ SvgWindow::SvgWindow()
+     : QScrollArea(),
+       highQualityAntialiasing(false)
+ {
+     QWidget *view = new QWidget(this);
+     renderer = SvgWindow::Native;
+     setWidget(view);
+ }
+
+ void SvgWindow::openFile(const QString &amp;file)
+ {
+     currentPath = file;
+     setRenderer(renderer);
+ }
+
+ void SvgWindow::setRenderer(RendererType type)
+ {
+     renderer = type;
+     QWidget *view;
+
+     if (renderer == OpenGL) {
+         #ifndef QT_NO_OPENGL
+         view = new SvgGLView(currentPath, this);
+         qobject_cast&lt;SvgGLView *&gt;(view)-&gt;setHighQualityAntialiasing(highQualityAntialiasing);
+         #endif
+     } else if (renderer == Image) {
+         view = new SvgRasterView(currentPath, this);
+     } else {
+         view = new SvgNativeView(currentPath, this);
+     }
+
+     setWidget(view);
+     view-&gt;show();
+ }
+
+ void SvgWindow::setHighQualityAntialiasing(bool hq)
+ {
+     highQualityAntialiasing = hq;
+
+     #ifndef QT_NO_OPENGL
+     QWidget *view = widget();
+     if (renderer == OpenGL)
+         qobject_cast&lt;SvgGLView *&gt;(view)-&gt;setHighQualityAntialiasing(highQualityAntialiasing);
+     #endif
+ }
+
+ void SvgWindow::mousePressEvent(QMouseEvent *event)
+ {
+     mousePressPos = event-&gt;pos();
+     scrollBarValuesOnMousePress.rx() = horizontalScrollBar()-&gt;value();
+     scrollBarValuesOnMousePress.ry() = verticalScrollBar()-&gt;value();
+     event-&gt;accept();
+ }
+
+ void SvgWindow::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (mousePressPos.isNull()) {
+         event-&gt;ignore();
+         return;
+     }
+
+     horizontalScrollBar()-&gt;setValue(scrollBarValuesOnMousePress.x() - event-&gt;pos().x() + mousePressPos.x());
+     verticalScrollBar()-&gt;setValue(scrollBarValuesOnMousePress.y() - event-&gt;pos().y() + mousePressPos.y());
+     horizontalScrollBar()-&gt;update();
+     verticalScrollBar()-&gt;update();
+     event-&gt;accept();
+ }
+
+ void SvgWindow::mouseReleaseEvent(QMouseEvent *event)
+ {
+     mousePressPos = QPoint();
+     event-&gt;accept();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

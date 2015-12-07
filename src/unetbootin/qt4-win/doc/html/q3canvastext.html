@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasText Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasText Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasText class provides a text object on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasText&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvasitem.html">Q3CanvasItem</a>.</p>
+<ul>
+<li><a href="q3canvastext-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvastext.html#Q3CanvasText">Q3CanvasText</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvastext.html#Q3CanvasText-2">Q3CanvasText</a></b> ( const QString &amp; <i>t</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvastext.html#Q3CanvasText-3">Q3CanvasText</a></b> ( const QString &amp; <i>t</i>, QFont <i>f</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3canvastext.html#dtor.Q3CanvasText">~Q3CanvasText</a></b> ()</li>
+<li><div class="fn"/>virtual QRect <b><a href="q3canvastext.html#boundingRect">boundingRect</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="q3canvastext.html#color">color</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="q3canvastext.html#font">font</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvastext.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvastext.html#setColor">setColor</a></b> ( const QColor &amp; <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="q3canvastext.html#setFont">setFont</a></b> ( const QFont &amp; <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="q3canvastext.html#setText">setText</a></b> ( const QString &amp; <i>t</i> )</li>
+<li><div class="fn"/>void <b><a href="q3canvastext.html#setTextFlags">setTextFlags</a></b> ( int <i>f</i> )</li>
+<li><div class="fn"/>QString <b><a href="q3canvastext.html#text">text</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvastext.html#textFlags">textFlags</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3canvastext.html#draw">draw</a></b> ( QPainter &amp; <i>painter</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasText class provides a text object on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>A canvas text item has text with font, color and alignment attributes. The text and font can be set in the constructor or set or changed later with <a href="q3canvastext.html#setText">setText</a>() and <a href="q3canvastext.html#setFont">setFont</a>(). The color is set with <a href="q3canvastext.html#setColor">setColor</a>() and the alignment with <a href="q3canvastext.html#setTextFlags">setTextFlags</a>(). The text item's bounding rectangle is retrieved with <a href="q3canvastext.html#boundingRect">boundingRect</a>().</p>
+<p>The text can be drawn on a painter with <a href="q3canvastext.html#draw">draw</a>().</p>
+<p>Like any other canvas item text items can be moved with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasText"></a>Q3CanvasText::Q3CanvasText ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <a href="q3canvastext.html">Q3CanvasText</a> with the text &quot;&lt;text&gt;&quot;, on <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasText-2"></a>Q3CanvasText::Q3CanvasText ( const <a href="qstring.html">QString</a> &amp; <i>t</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <a href="q3canvastext.html">Q3CanvasText</a> with the text <i>t</i>, on canvas <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasText-3"></a>Q3CanvasText::Q3CanvasText ( const <a href="qstring.html">QString</a> &amp; <i>t</i>, <a href="qfont.html">QFont</a> <i>f</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <a href="q3canvastext.html">Q3CanvasText</a> with the text <i>t</i> and font <i>f</i>, on the canvas <i>canvas</i>.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasText"></a>Q3CanvasText::~Q3CanvasText ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the canvas text item.</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrect.html">QRect</a> Q3CanvasText::boundingRect () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the bounding rectangle of the text.</p>
+<p>Reimplemented from <a href="q3canvasitem.html#boundingRect">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="color"></a><a href="qcolor.html">QColor</a> Q3CanvasText::color () const</h3>
+<p>Returns the color of the text.</p>
+<p>See also <a href="q3canvastext.html#setColor">setColor</a>().</p>
+<h3 class="fn"><a name="draw"></a>void Q3CanvasText::draw ( <a href="qpainter.html">QPainter</a> &amp; <i>painter</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draws the text using the painter <i>painter</i>.</p>
+<p>Reimplemented from <a href="q3canvasitem.html#draw">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> Q3CanvasText::font () const</h3>
+<p>Returns the font in which the text is drawn.</p>
+<p>See also <a href="q3canvastext.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasText::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 3 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Text</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setColor"></a>void Q3CanvasText::setColor ( const <a href="qcolor.html">QColor</a> &amp; <i>c</i> )</h3>
+<p>Sets the color of the text to the color <i>c</i>.</p>
+<p>See also <a href="q3canvastext.html#color">color</a>() and <a href="q3canvastext.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="setFont"></a>void Q3CanvasText::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>f</i> )</h3>
+<p>Sets the font in which the text is drawn to font <i>f</i>.</p>
+<p>See also <a href="q3canvastext.html#font">font</a>().</p>
+<h3 class="fn"><a name="setText"></a>void Q3CanvasText::setText ( const <a href="qstring.html">QString</a> &amp; <i>t</i> )</h3>
+<p>Sets the text item's text to <i>t</i>. The text may contain newlines.</p>
+<p>See also <a href="q3canvastext.html#text">text</a>(), <a href="q3canvastext.html#setFont">setFont</a>(), <a href="q3canvastext.html#setColor">setColor</a>(), and <a href="q3canvastext.html#setTextFlags">setTextFlags</a>().</p>
+<h3 class="fn"><a name="setTextFlags"></a>void Q3CanvasText::setTextFlags ( int <i>f</i> )</h3>
+<p>Sets the alignment flags to <i>f</i>. These are a bitwise OR of the flags available to <a href="qpainter.html#drawText">QPainter::drawText</a>() -- see the <a href="qt.html#AlignmentFlag-enum">Qt::AlignmentFlag</a>s.</p>
+<p>See also <a href="q3canvastext.html#textFlags">textFlags</a>(), <a href="q3canvastext.html#setFont">setFont</a>(), and <a href="q3canvastext.html#setColor">setColor</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3CanvasText::text () const</h3>
+<p>Returns the text item's text.</p>
+<p>See also <a href="q3canvastext.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="textFlags"></a>int Q3CanvasText::textFlags () const</h3>
+<p>Returns the currently set alignment flags.</p>
+<p>See also <a href="q3canvastext.html#setTextFlags">setTextFlags</a>() and <a href="qt.html#AlignmentFlag-enum">Qt::AlignmentFlag</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

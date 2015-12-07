@@ -1,0 +1,158 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Documentation on deploying Qt.
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*
+\page distributingqt.html
+
+\title Deploying Qt Applications
+
+This document lists the platform-specific files needed to distribute
+Qt applications. We do not include any compiler-specific files that
+may also be required. (See also, \link winsystem.html Window
+System-specific Notes\endlink.)
+
+\tableofcontents
+
+Also see the "deployment" articles in
+\e{\link http://doc.trolltech.com/qq/ Qt Quarterly\endlink}:
+\list
+\i \link http://doc.trolltech.com/qq/qq09-mac-deployment.html
+Deploying Applications on Mac OS X\endlink
+\i \link http://doc.trolltech.com/qq/qq10-windows-deployment.html
+Deploying Applications on Windows\endlink
+\i \link http://doc.trolltech.com/qq/qq11-unix-deployment.html
+Deploying Applications on X11\endlink
+\endlist
+
+\section1 Static Qt Applications
+
+To distribute static Qt applications, you need the following file for
+all platforms:
+
+\list
+\i your application's executable
+\endlist
+
+\section1 Dynamic Qt Applications
+
+To distribute dynamic Qt applications, you will need the following
+files for all platforms:
+
+\list
+\i application executable
+\i the Qt library
+\endlist
+
+The Qt library must either be in the same directory as the application
+executable or in a directory which is included in the system library
+path.
+
+The library is provided by the following platform specific files:
+
+\table
+\header \i Platform \i File
+\row \i Windows \i \c qt[version].dll
+\row \i Unix/Linux \i \c libqt[version].so
+\row \i Mac \i \c libqt[version].dylib
+\endtable
+
+\e version includes the three version numbers.
+
+\section2 Distributing Plugins
+
+You must include any plugin files required by the application.
+
+Plugins must be put into a subdirectory under a directory known to
+Qt as a plugin directory. The subdirectory must have the name of the
+plugin category (e.g. \c styles, \c sqldrivers, \c designer, etc.).
+
+Qt searches in the following directories for plugin categories:
+
+\list
+\i Application specific plugin paths
+\i Build-directory of Qt
+\i The application directory
+\endlist
+
+Application specific plugin paths can be added using
+QCoreApplication::addLibraryPath(). The build-directory of Qt is hardcoded
+in the Qt library and can be changed as a part of the installation
+process.
+
+\section1 Dynamic Dialogs
+
+For dynamic dialogs if you use QWidgetFactory, you need the following
+files for all platforms:
+
+\list
+\i The same files as used for dynamic Qt applications
+\i The QUI Library
+\endlist
+
+The QUI library is provided by the following platform specific files:
+\table
+\header \i Platform \i File
+\row \i Windows  \i\c qui.lib
+\row \i Unix/Linux  \i\c libqui.so
+\row \i Mac \i \c libqui.dylib
+\endtable
+
+The QUI library must either be in the same directory as the
+application executable or in a directory which is included in the
+system library path.
+
+*/

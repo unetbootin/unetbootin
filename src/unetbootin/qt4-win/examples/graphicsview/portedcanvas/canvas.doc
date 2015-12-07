@@ -1,0 +1,29 @@
+/*!   \page canvas-example.html
+
+  \ingroup examples
+  \title Canvas Example
+
+  This example shows a QCanvas and some \l{QCanvasItem}s in action.
+  You can do a lot more with QCanvas than we show here, but the
+  example provides a taste of what can be done.
+
+  <hr>
+
+  Header file:
+
+  \include canvas/canvas.h
+
+  <hr>
+
+  Implementation:
+
+  \include canvas/canvas.cpp
+
+  <hr>
+
+  Main:
+
+  \include canvas/main.cpp
+*/
+
+

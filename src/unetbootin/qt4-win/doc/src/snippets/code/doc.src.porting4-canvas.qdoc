@@ -1,0 +1,118 @@
+//! [0]
+        item->scene().sceneRect().intersects(item->sceneBoundingRect());
+//! [0]
+
+
+//! [1]
+            class TileScene : public QGraphicsScene
+            {
+            public:
+                ...
+
+                void setTiles(const QPixmap &pixmap, int h, int v,
+                              int tileHeight, int tileWidth);
+                void setTile(int x, int y, int tilenum);
+
+            private:
+                QRect tileRect(int x, int y) const;
+                QRect tileRect(int tileNum) const;
+
+                QVector<QVector<int> > tiles;
+                QPixmap tilePixmap;
+                int tileW, tileH;
+                int hTiles, vTiles;
+            };
+//! [1]
+
+
+//! [2]
+            void TileScene::setTiles(const QPixmap &pixmap, int h, int v,
+                                     int tileHeight, int tileWidth)
+            {
+                tilePixmap = pixmap;
+                tileW = tileWidth;
+                tileH = tileHeight;
+                hTiles = h;
+                vTiles = v;
+
+                tiles.resize(v);
+                for (int y = 0; y < v; ++y)
+                    tiles[y].resize(h);
+            }
+//! [2]
+
+
+//! [3]
+            void TileScene::setTile(int x, int y, int tilenum)
+            {
+                tiles[y][x] = tilenum;
+                update(tileRect(x, y));
+            }
+//! [3]
+
+
+//! [4]
+            QRect TileScene::tileRect(int x, int y) const
+            {
+                return QRect(x * tileW, y * tileH, tileW, tileH);
+            }
+//! [4]
+
+
+//! [5]
+            QRect TileScene::tileRect(int tileNum) const
+            {
+                int numHTiles = tilePixmap.width() / tileW;
+                int numVTiles = tilePixmap.height() / tileH;
+                return tileRect(tileNum % numHTiles, tileNum / numHTiles);
+            }
+//! [5]
+
+
+//! [6]
+            void drawBackground(QPainter *painter, const QRectF &exposed)
+            {
+                for (int y = 0; y < vTiles; ++y) {
+                    for (int x = 0; x < hTiles; ++x) {
+                        QRect destRect = tileRect(x, y);
+                        if (exposed.intersects(destRect)) {
+                            painter->drawPixmap(destRect, tilePixmap,
+                                                tileRect(tiles[y][x]));
+                        }
+                    }
+                }
+            }
+//! [6]
+
+
+//! [7]
+                // Before
+                Q3CanvasEllipse ellipse(10, 10);
+
+                // After
+                QGraphicsEllipseItem ellipse(-5, -5, 10, 10);
+//! [7]
+
+
+//! [8]
+            static QPainterPath fromControlPoints(const Q3PointArray &pa)
+            {
+                QPainterPath path;
+                path.moveTo(pa[0]);
+                for (int i = 1; i < pa.size(); i += 3)
+                    path.cubicTo(pa[i], pa[(i + 1) % pa.size()], pa[(i + 2) % pa.size()]);
+                return path;
+            }
+//! [8]
+
+
+//! [9]
+                    wildcardPath.replace("%1", "*");
+                    QFileInfo fi(wildcardPath);
+
+                    QList<QPixmap> frames;
+                    foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+                        frames << QPixmap(fi.path() + "/" + entry);
+//! [9]
+
+

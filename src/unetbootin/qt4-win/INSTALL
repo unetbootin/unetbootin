@@ -1,0 +1,75 @@
+                          INSTALLING Qt/Windows Version 4.4.0
+
+Note: If you have obtained a binary package for this platform, consult the
+installation instructions provided instead of the ones in this document.
+
+1.  If you have the commercial edition of Qt, copy the license file
+    from your account on dist.trolltech.com into your home directory
+    (this may be known as the userprofile environment variable) and
+    rename it to .qt-license. For example on Windows 2000,
+    %USERPROFILE% should be something like C:\Documents and
+    Settings\username
+
+    For the open source version you do not need a license file.
+
+2.  Uncompress the files into the directory you want Qt installed,
+    e.g. C:\Qt\4.4.0.
+
+    NOTE: The install path must not contain any spaces.
+
+3. Environment variables
+
+   In order to build and use Qt, the PATH environment variable needs
+   to be extended:
+
+        PATH               - to locate qmake, moc and other Qt tools
+
+   This is done by adding c:\Qt\4.4.0\bin to the PATH variable.
+
+   For newer versions of Windows, PATH can be extended through
+   "Control Panel->System->Advanced->Environment variables" and for
+   older versions by editing c:\autoexec.bat.
+
+4.  Building
+
+    To configure the Qt library for your machine type:
+
+        C:
+        cd \Qt\4.4.0
+        configure
+
+    Type "configure -help" to get a list of all available options.
+
+    If you are using the "-direct3d" option, make sure that you have
+    the Direct3D SDK installed, and that you have run the
+    %DXSDK_DIR%\Utilities\Bin\dx_setenv.cmd command, before attempting
+    to run configure.
+
+    The actual commands needed to build Qt depends on your development
+    system. For Microsoft Visual Studio to create the library and
+    compile all the demos, examples, tools and tutorials type:
+
+        nmake
+
+    If you need to reconfigure and rebuild Qt from the same location,
+    ensure that all traces of the previous configuration are removed
+    by entering the build directory and typing
+
+        nmake confclean
+
+    before running the configure script again.
+
+5.  That's all. Qt is now installed.
+
+    If you are new to Qt, we suggest that you take a look at the demos
+    and examples to see Qt in action. Run the Qt Examples and Demos
+    either by typing 'qtdemo' on the command line or through the
+    desktop's Start menu.
+
+    You might also want to try the following links:
+
+        http://doc.trolltech.com/4.4.0/how-to-learn-qt.html
+        http://doc.trolltech.com/4.4.0/tutorial.html
+        http://www.trolltech.com/developer
+
+    We hope you will enjoy using Qt. Good luck!

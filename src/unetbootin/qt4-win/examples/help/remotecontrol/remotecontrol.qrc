@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/remotecontrol" >
+        <file>enter.png</file>
+    </qresource>
+</RCC>

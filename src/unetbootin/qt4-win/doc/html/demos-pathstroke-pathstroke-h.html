@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: pathstroke.h Example File (demos/pathstroke/pathstroke.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">pathstroke.h Example File<br /><span class="small-subtitle">demos/pathstroke/pathstroke.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef PATHSTROKE_H
+ #define PATHSTROKE_H
+
+ #include &quot;arthurwidgets.h&quot;
+ #include &lt;QtGui&gt;
+
+ class PathStrokeRenderer : public ArthurFrame
+ {
+     Q_OBJECT
+     Q_PROPERTY(bool animation READ animation WRITE setAnimation)
+     Q_PROPERTY(qreal penWidth READ realPenWidth WRITE setRealPenWidth)
+ public:
+     enum PathMode { CurveMode, LineMode };
+
+     PathStrokeRenderer(QWidget *parent, bool smallScreen = false);
+
+     void paint(QPainter *);
+     void mousePressEvent(QMouseEvent *e);
+     void mouseMoveEvent(QMouseEvent *e);
+     void mouseReleaseEvent(QMouseEvent *e);
+     void timerEvent(QTimerEvent *e);
+
+     QSize sizeHint() const { return QSize(500, 500); }
+
+     bool animation() const { return m_timer.isActive(); }
+
+     qreal realPenWidth() const { return m_penWidth; }
+     void setRealPenWidth(qreal penWidth) { m_penWidth = penWidth; update(); }
+
+ signals:
+     void clicked();
+
+ public slots:
+     void setPenWidth(int penWidth) { m_penWidth = penWidth / 10.0; update(); }
+     void setAnimation(bool animation);
+
+     void setFlatCap() { m_capStyle = Qt::FlatCap; update(); }
+     void setSquareCap() { m_capStyle = Qt::SquareCap; update(); }
+     void setRoundCap() { m_capStyle = Qt::RoundCap; update(); }
+
+     void setBevelJoin() { m_joinStyle = Qt::BevelJoin; update(); }
+     void setMiterJoin() { m_joinStyle = Qt::MiterJoin; update(); }
+     void setRoundJoin() { m_joinStyle = Qt::RoundJoin; update(); }
+
+     void setCurveMode() { m_pathMode = CurveMode; update(); }
+     void setLineMode() { m_pathMode = LineMode; update(); }
+
+     void setSolidLine() { m_penStyle = Qt::SolidLine; update(); }
+     void setDashLine() { m_penStyle = Qt::DashLine; update(); }
+     void setDotLine() { m_penStyle = Qt::DotLine; update(); }
+     void setDashDotLine() { m_penStyle = Qt::DashDotLine; update(); }
+     void setDashDotDotLine() { m_penStyle = Qt::DashDotDotLine; update(); }
+     void setCustomDashLine() { m_penStyle = Qt::NoPen; update(); }
+
+ private:
+     void initializePoints();
+     void updatePoints();
+
+     QBasicTimer m_timer;
+
+     PathMode m_pathMode;
+
+     bool m_wasAnimated;
+
+     qreal m_penWidth;
+     int m_pointCount;
+     int m_pointSize;
+     int m_activePoint;
+     QVector&lt;QPointF&gt; m_points;
+     QVector&lt;QPointF&gt; m_vectors;
+
+     Qt::PenJoinStyle m_joinStyle;
+     Qt::PenCapStyle m_capStyle;
+
+     Qt::PenStyle m_penStyle;
+
+     bool m_smallScreen;
+     QPoint m_mousePress;
+     bool m_mouseDrag;
+ };
+
+ class PathStrokeControls : public QWidget
+ {
+     Q_OBJECT
+ public:
+     PathStrokeControls(QWidget* parent, PathStrokeRenderer* renderer, bool smallScreen);
+
+ signals:
+     void okPressed();
+     void quitPressed();
+
+ private:
+     PathStrokeRenderer* m_renderer;
+
+     QGroupBox *m_capGroup;
+     QGroupBox *m_joinGroup;
+     QGroupBox *m_styleGroup;
+     QGroupBox *m_pathModeGroup;
+
+     void createCommonControls(QWidget* parent);
+     void layoutForDesktop();
+     void layoutForSmallScreens();
+
+ private slots:
+     void emitQuitSignal();
+     void emitOkSignal();
+
+ };
+
+ class PathStrokeWidget : public QWidget
+ {
+     Q_OBJECT
+ public:
+     PathStrokeWidget(bool smallScreen);
+     void setStyle ( QStyle * style );
+
+ private:
+     PathStrokeRenderer *m_renderer;
+     PathStrokeControls *m_controls;
+
+ private slots:
+     void showControls();
+     void hideControls();
+
+ };
+
+ #endif <span class="comment">//</span> PATHSTROKE_H</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/other/q3process.cpp -->
+<head>
+  <title>Qt 4.4: Q3Process Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Process Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Process class is used to start external programs and to communicate with them. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Process&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qprocess">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="q3process-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3process.html#Communication-enum">Communication</a></b> { Stdin, Stdout, Stderr, DupStderr }</li>
+<li><div class="fn"/>typedef <b><a href="q3process.html#PID-typedef">PID</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3process.html#Q3Process">Q3Process</a></b> ( QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3process.html#Q3Process-2">Q3Process</a></b> ( const QString &amp; <i>arg0</i>, QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3process.html#Q3Process-3">Q3Process</a></b> ( const QStringList &amp; <i>args</i>, QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3process.html#dtor.Q3Process">~Q3Process</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#addArgument">addArgument</a></b> ( const QString &amp; <i>arg</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="q3process.html#arguments">arguments</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3process.html#canReadLineStderr">canReadLineStderr</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3process.html#canReadLineStdout">canReadLineStdout</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3process.html#clearArguments">clearArguments</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3process.html#communication">communication</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3process.html#exitStatus">exitStatus</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3process.html#flushStdin">flushStdin</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3process.html#isRunning">isRunning</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="q3process.html#launch">launch</a></b> ( const QByteArray &amp; <i>buf</i>, QStringList * <i>env</i> = 0 )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3process.html#launch-2">launch</a></b> ( const QString &amp; <i>buf</i>, QStringList * <i>env</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3process.html#normalExit">normalExit</a></b> () const</li>
+<li><div class="fn"/>PID <b><a href="q3process.html#processIdentifier">processIdentifier</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="q3process.html#readLineStderr">readLineStderr</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="q3process.html#readLineStdout">readLineStdout</a></b> ()</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="q3process.html#readStderr">readStderr</a></b> ()</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="q3process.html#readStdout">readStdout</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#setArguments">setArguments</a></b> ( const QStringList &amp; <i>args</i> )</li>
+<li><div class="fn"/>void <b><a href="q3process.html#setCommunication">setCommunication</a></b> ( int <i>commFlags</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#setWorkingDirectory">setWorkingDirectory</a></b> ( const QDir &amp; <i>dir</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3process.html#start">start</a></b> ( QStringList * <i>env</i> = 0 )</li>
+<li><div class="fn"/>QDir <b><a href="q3process.html#workingDirectory">workingDirectory</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#closeStdin">closeStdin</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3process.html#kill">kill</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3process.html#tryTerminate">tryTerminate</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#writeToStdin">writeToStdin</a></b> ( const QByteArray &amp; <i>buf</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3process.html#writeToStdin-2">writeToStdin</a></b> ( const QString &amp; <i>buf</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3process.html#launchFinished">launchFinished</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3process.html#processExited">processExited</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3process.html#readyReadStderr">readyReadStderr</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3process.html#readyReadStdout">readyReadStdout</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3process.html#wroteToStdin">wroteToStdin</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Process class is used to start external programs and to communicate with them.</p>
+<p>You can write to the started program's standard input, and can read the program's standard output and standard error. You can pass command line arguments to the program either in the constructor or with <a href="q3process.html#setArguments">setArguments</a>() or <a href="q3process.html#addArgument">addArgument</a>(). The program's working directory can be set with <a href="q3process.html#setWorkingDirectory">setWorkingDirectory</a>(). If you need to set up environment variables pass them to the <a href="q3process.html#start">start</a>() or <a href="q3process.html#launch">launch</a>() functions (see below). The <a href="q3process.html#processExited">processExited</a>() signal is emitted if the program exits. The program's exit status is available from <a href="q3process.html#exitStatus">exitStatus</a>(), although you could simply call <a href="q3process.html#normalExit">normalExit</a>() to see if the program terminated normally.</p>
+<p>There are two different ways to start a process. If you just want to run a program, optionally passing data to its standard input at the beginning, use one of the <a href="q3process.html#launch">launch</a>() functions. If you want full control of the program's standard input (especially if you don't know all the data you want to send to standard input at the beginning), use the <a href="q3process.html#start">start</a>() function.</p>
+<p>If you use <a href="q3process.html#start">start</a>() you can write to the program's standard input using <a href="q3process.html#writeToStdin">writeToStdin</a>() and you can close the standard input with <a href="q3process.html#closeStdin">closeStdin</a>(). The <a href="q3process.html#wroteToStdin">wroteToStdin</a>() signal is emitted if the data sent to standard input has been written. You can read from the program's standard output using <a href="q3process.html#readStdout">readStdout</a>() or <a href="q3process.html#readLineStdout">readLineStdout</a>(). These functions return an empty <a href="qbytearray.html">QByteArray</a> if there is no data to read. The <a href="q3process.html#readyReadStdout">readyReadStdout</a>() signal is emitted when there is data available to be read from standard output. Standard error has a set of functions that correspond to the standard output functions, i.e&#x2e; <a href="q3process.html#readStderr">readStderr</a>(), <a href="q3process.html#readLineStderr">readLineStderr</a>() and <a href="q3process.html#readyReadStderr">readyReadStderr</a>().</p>
+<p>If you use one of the <a href="q3process.html#launch">launch</a>() functions the data you pass will be sent to the program's standard input which will be closed once all the data has been written. You should <i>not</i> use <a href="q3process.html#writeToStdin">writeToStdin</a>() or <a href="q3process.html#closeStdin">closeStdin</a>() if you use <a href="q3process.html#launch">launch</a>(). If you need to send data to the program's standard input after it has started running use <a href="q3process.html#start">start</a>() instead of <a href="q3process.html#launch">launch</a>().</p>
+<p>Both <a href="q3process.html#start">start</a>() and <a href="q3process.html#launch">launch</a>() can accept a string list of strings each of which has the format, key=value, where the keys are the names of environment variables.</p>
+<p>You can test to see if a program is running with <a href="q3process.html#isRunning">isRunning</a>(). The program's process identifier is available from <a href="q3process.html#processIdentifier">processIdentifier</a>(). If you want to terminate a running program use <a href="q3process.html#tryTerminate">tryTerminate</a>(), but note that the program may ignore this. If you <i>really</i> want to terminate the program, without it having any chance to clean up, you can use <a href="q3process.html#kill">kill</a>().</p>
+<p>Although you may need quotes for a file named on the command line (e.g&#x2e; if it contains spaces) you shouldn't use extra quotes for arguments passed to <a href="q3process.html#addArgument">addArgument</a>() or <a href="q3process.html#setArguments">setArguments</a>().</p>
+<p>The <a href="q3process.html#readyReadStdout">readyReadStdout</a>() signal is emitted when there is new data on standard output. This happens asynchronously: you don't know if more data will arrive later.</p>
+<p>In the above example you could connect the <a href="q3process.html#processExited">processExited</a>() signal to the slot UicManager::readFromStdout() instead. If you do so, you will be certain that all the data is available when the slot is called. On the other hand, you must wait until the process has finished before doing any processing.</p>
+<p>Note that if you are expecting a lot of output from the process, you may hit platform-dependent limits to the pipe buffer size. The solution is to make sure you connect to the output, e.g&#x2e; the <a href="q3process.html#readyReadStdout">readyReadStdout</a>() and <a href="q3process.html#readyReadStderr">readyReadStderr</a>() signals and read the data as soon as it becomes available.</p>
+<p>Please note that Q3Process does not emulate a shell. This means that Q3Process does not do any expansion of arguments: a '*' is passed as a '*' to the program and is <i>not</i> replaced by all the files, a '$HOME' is also passed literally and is <i>not</i> replaced by the environment variable HOME and the special characters for IO redirection ('&gt;', '|', etc.) are also passed literally and do <i>not</i> have the special meaning as they have in a shell.</p>
+<p>Also note that Q3Process does not emulate a terminal. This means that certain programs which need direct terminal control, do not work as expected with Q3Process. Such programs include console email programs (like pine and mutt) but also programs which require the user to enter a password (like su and ssh).</p>
+<a name="notes-for-windows-users"></a>
+<h3>Notes for Windows users</h3>
+<p>Some Windows commands, for example, <tt>dir</tt>, are not provided by separate applications, but by the command interpreter. If you attempt to use Q3Process to execute these commands directly it won't work. One possible solution is to execute the command interpreter itself (<tt>cmd.exe</tt> on some Windows systems), and ask the interpreter to execute the desired command.</p>
+<p>Under Windows there are certain problems starting 16-bit applications and capturing their output. Microsoft recommends using an intermediate application to start 16-bit applications.</p>
+<p>See also <a href="q3socket.html">Q3Socket</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Communication-enum"></a>enum Q3Process::Communication</h3>
+<p>This enum type defines the communication channels connected to the process.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Process::Stdin</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">Data can be written to the process's standard input.</td></tr>
+<tr><td valign="top"><tt>Q3Process::Stdout</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">Data can be read from the process's standard output.</td></tr>
+<tr><td valign="top"><tt>Q3Process::Stderr</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">Data can be read from the process's standard error.</td></tr>
+<tr><td valign="top"><tt>Q3Process::DupStderr</tt></td><td align="center" valign="top"><tt>0x08</tt></td><td valign="top">Both the process's standard error output <i>and</i> its standard output are written to its standard output. (Like Unix's dup2().) This means that nothing is sent to the standard error output. This is especially useful if your application requires that the output on standard output and on standard error must be read in the same order that they are produced. This is a flag, so to activate it you must pass <tt>Stdout|Stderr|DupStderr</tt>, or <tt>Stdin|Stdout|Stderr|DupStderr</tt> if you want to provide input, to the <a href="q3process.html#setCommunication">setCommunication</a>() call.</td></tr>
+</table></p>
+<p>See also <a href="q3process.html#setCommunication">setCommunication</a>() and <a href="q3process.html#communication">communication</a>().</p>
+<h3 class="fn"><a name="PID-typedef"></a>typedef Q3Process::PID</h3>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Process"></a>Q3Process::Q3Process ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3process.html">Q3Process</a> object. The <i>parent</i> and <i>name</i> parameters are passed to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>See also <a href="q3process.html#setArguments">setArguments</a>(), <a href="q3process.html#addArgument">addArgument</a>(), and <a href="q3process.html#start">start</a>().</p>
+<h3 class="fn"><a name="Q3Process-2"></a>Q3Process::Q3Process ( const <a href="qstring.html">QString</a> &amp; <i>arg0</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3process.html">Q3Process</a> with <i>arg0</i> as the command to be executed. The <i>parent</i> and <i>name</i> parameters are passed to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>The process is not started. You must call <a href="q3process.html#start">start</a>() or <a href="q3process.html#launch">launch</a>() to start the process.</p>
+<p>See also <a href="q3process.html#setArguments">setArguments</a>(), <a href="q3process.html#addArgument">addArgument</a>(), and <a href="q3process.html#start">start</a>().</p>
+<h3 class="fn"><a name="Q3Process-3"></a>Q3Process::Q3Process ( const <a href="qstringlist.html">QStringList</a> &amp; <i>args</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3process.html">Q3Process</a> with <i>args</i> as the arguments of the process. The first element in the list is the command to be executed. The other elements in the list are the arguments to this command. The <i>parent</i> and <i>name</i> parameters are passed to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>The process is not started. You must call <a href="q3process.html#start">start</a>() or <a href="q3process.html#launch">launch</a>() to start the process.</p>
+<p>See also <a href="q3process.html#setArguments">setArguments</a>(), <a href="q3process.html#addArgument">addArgument</a>(), and <a href="q3process.html#start">start</a>().</p>
+<h3 class="fn"><a name="dtor.Q3Process"></a>Q3Process::~Q3Process ()</h3>
+<h3 class="fn"><a name="addArgument"></a>void Q3Process::addArgument ( const <a href="qstring.html">QString</a> &amp; <i>arg</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds <i>arg</i> to the end of the list of arguments.</p>
+<p>The first element in the list of arguments is the command to be executed; the following elements are the command's arguments.</p>
+<p>See also <a href="q3process.html#arguments">arguments</a>() and <a href="q3process.html#setArguments">setArguments</a>().</p>
+<h3 class="fn"><a name="arguments"></a><a href="qstringlist.html">QStringList</a> Q3Process::arguments () const</h3>
+<p>Returns the list of arguments that are set for the process. Arguments can be specified with the constructor or with the functions <a href="q3process.html#setArguments">setArguments</a>() and <a href="q3process.html#addArgument">addArgument</a>().</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = myProcess.arguments();
+     QStringList::Iterator it = list.begin();
+     while( it != list.end() ) {
+         myProcessing( *it );
+         ++it;
+     }</pre>
+<p>See also <a href="q3process.html#setArguments">setArguments</a>() and <a href="q3process.html#addArgument">addArgument</a>().</p>
+<h3 class="fn"><a name="canReadLineStderr"></a>bool Q3Process::canReadLineStderr () const</h3>
+<h3 class="fn"><a name="canReadLineStdout"></a>bool Q3Process::canReadLineStdout () const</h3>
+<h3 class="fn"><a name="clearArguments"></a>void Q3Process::clearArguments ()</h3>
+<p>Clears the list of arguments that are set for the process.</p>
+<p>See also <a href="q3process.html#setArguments">setArguments</a>() and <a href="q3process.html#addArgument">addArgument</a>().</p>
+<h3 class="fn"><a name="closeStdin"></a>void Q3Process::closeStdin ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<h3 class="fn"><a name="communication"></a>int Q3Process::communication () const</h3>
+<p>Returns the communication required with the process, i.e&#x2e; some combination of the <tt>Communication</tt> flags.</p>
+<p>See also <a href="q3process.html#setCommunication">setCommunication</a>().</p>
+<h3 class="fn"><a name="exitStatus"></a>int Q3Process::exitStatus () const</h3>
+<p>Returns the exit status of the process or 0 if the process is still running. This function returns immediately and does not wait until the process is finished.</p>
+<p>If <a href="q3process.html#normalExit">normalExit</a>() is false (e.g&#x2e; if the program was killed or crashed), this function returns 0, so you should check the return value of <a href="q3process.html#normalExit">normalExit</a>() before relying on this value.</p>
+<p>See also <a href="q3process.html#normalExit">normalExit</a>() and <a href="q3process.html#processExited">processExited</a>().</p>
+<h3 class="fn"><a name="flushStdin"></a>void Q3Process::flushStdin ()</h3>
+<h3 class="fn"><a name="isRunning"></a>bool Q3Process::isRunning () const</h3>
+<h3 class="fn"><a name="kill"></a>void Q3Process::kill () const&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="launch"></a>bool Q3Process::launch ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>buf</i>, <a href="qstringlist.html">QStringList</a> * <i>env</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Runs the process and writes the data <i>buf</i> to the process's standard input. If all the data is written to standard input, standard input is closed. The command is searched for in the path for executable programs; you can also use an absolute path in the command itself.</p>
+<p>If <i>env</i> is null, then the process is started with the same environment as the starting process. If <i>env</i> is non-null, then the values in the string list are interpreted as environment setttings of the form <tt>key=value</tt> and the process is started with these environment settings. For convenience, there is a small exception to this rule under Unix: if <i>env</i> does not contain any settings for the environment variable <tt>LD_LIBRARY_PATH</tt>, then this variable is inherited from the starting process.</p>
+<p>Returns true if the process could be started; otherwise returns false.</p>
+<p>Note that you should not use the slots <a href="q3process.html#writeToStdin">writeToStdin</a>() and <a href="q3process.html#closeStdin">closeStdin</a>() on processes started with launch(), since the result is not well-defined. If you need these slots, use <a href="q3process.html#start">start</a>() instead.</p>
+<p>The process may or may not read the <i>buf</i> data sent to its standard input.</p>
+<p>You can call this function even when a process that was started with this instance is still running. Be aware that if you do this the standard input of the process that was launched first will be closed, with any pending data being deleted, and the process will be left to run out of your control. Similarly, if the process could not be started the standard input will be closed and the pending data deleted. (On operating systems that have zombie processes, Qt will also wait() on the old process.)</p>
+<p>The object emits the signal <a href="q3process.html#launchFinished">launchFinished</a>() when this function call is finished. If the start was successful, this signal is emitted after all the data has been written to standard input. If the start failed, then this signal is emitted immediately.</p>
+<p>See also <a href="q3process.html#start">start</a>() and <a href="q3process.html#launchFinished">launchFinished</a>().</p>
+<h3 class="fn"><a name="launch-2"></a>bool Q3Process::launch ( const <a href="qstring.html">QString</a> &amp; <i>buf</i>, <a href="qstringlist.html">QStringList</a> * <i>env</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The data <i>buf</i> is written to standard input with <a href="q3process.html#writeToStdin">writeToStdin</a>() using the <a href="qstring-qt3.html#local8Bit">QString::local8Bit</a>() representation of the strings.</p>
+<h3 class="fn"><a name="launchFinished"></a>void Q3Process::launchFinished ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process was started with <a href="q3process.html#launch">launch</a>(). If the start was successful, this signal is emitted after all the data has been written to standard input. If the start failed, then this signal is emitted immediately.</p>
+<p>This signal is especially useful if you want to know when you can safely delete the <a href="q3process.html">Q3Process</a> object when you are not interested in reading from standard output or standard error.</p>
+<p>See also <a href="q3process.html#launch">launch</a>() and <a href="qobject.html#deleteLater">QObject::deleteLater</a>().</p>
+<h3 class="fn"><a name="normalExit"></a>bool Q3Process::normalExit () const</h3>
+<p>Returns true if the process has exited normally; otherwise returns false. This implies that this function returns false if the process is still running.</p>
+<p>See also <a href="q3process.html#isRunning">isRunning</a>(), <a href="q3process.html#exitStatus">exitStatus</a>(), and <a href="q3process.html#processExited">processExited</a>().</p>
+<h3 class="fn"><a name="processExited"></a>void Q3Process::processExited ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process has exited.</p>
+<p>See also <a href="q3process.html#isRunning">isRunning</a>(), <a href="q3process.html#normalExit">normalExit</a>(), <a href="q3process.html#exitStatus">exitStatus</a>(), <a href="q3process.html#start">start</a>(), and <a href="q3process.html#launch">launch</a>().</p>
+<h3 class="fn"><a name="processIdentifier"></a><a href="q3process.html#PID-typedef">PID</a> Q3Process::processIdentifier ()</h3>
+<h3 class="fn"><a name="readLineStderr"></a><a href="qstring.html">QString</a> Q3Process::readLineStderr ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads a line of text from standard error, excluding any trailing newline or carriage return characters and returns it. Returns an empty string if <a href="q3process.html#canReadLineStderr">canReadLineStderr</a>() returns false.</p>
+<p>By default, the text is interpreted to be in Latin-1 encoding. If you need other codecs, you can set a different codec with <a href="qtextcodec.html#setCodecForCStrings">QTextCodec::setCodecForCStrings</a>().</p>
+<p>See also <a href="q3process.html#canReadLineStderr">canReadLineStderr</a>(), <a href="q3process.html#readyReadStderr">readyReadStderr</a>(), <a href="q3process.html#readStderr">readStderr</a>(), and <a href="q3process.html#readLineStdout">readLineStdout</a>().</p>
+<h3 class="fn"><a name="readLineStdout"></a><a href="qstring.html">QString</a> Q3Process::readLineStdout ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads a line of text from standard output, excluding any trailing newline or carriage return characters, and returns it. Returns an empty string if <a href="q3process.html#canReadLineStdout">canReadLineStdout</a>() returns false.</p>
+<p>By default, the text is interpreted to be in Latin-1 encoding. If you need other codecs, you can set a different codec with <a href="qtextcodec.html#setCodecForCStrings">QTextCodec::setCodecForCStrings</a>().</p>
+<p>See also <a href="q3process.html#canReadLineStdout">canReadLineStdout</a>(), <a href="q3process.html#readyReadStdout">readyReadStdout</a>(), <a href="q3process.html#readStdout">readStdout</a>(), and <a href="q3process.html#readLineStderr">readLineStderr</a>().</p>
+<h3 class="fn"><a name="readStderr"></a><a href="qbytearray.html">QByteArray</a> Q3Process::readStderr ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads the data that the process has written to standard error. When new data is written to standard error, the class emits the signal <a href="q3process.html#readyReadStderr">readyReadStderr</a>().</p>
+<p>If there is no data to read, this function returns a <a href="qbytearray.html">QByteArray</a> of size 0: it does not wait until there is something to read.</p>
+<p>See also <a href="q3process.html#readyReadStderr">readyReadStderr</a>(), <a href="q3process.html#readLineStderr">readLineStderr</a>(), <a href="q3process.html#readStdout">readStdout</a>(), and <a href="q3process.html#writeToStdin">writeToStdin</a>().</p>
+<h3 class="fn"><a name="readStdout"></a><a href="qbytearray.html">QByteArray</a> Q3Process::readStdout ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads the data that the process has written to standard output. When new data is written to standard output, the class emits the signal <a href="q3process.html#readyReadStdout">readyReadStdout</a>().</p>
+<p>If there is no data to read, this function returns a <a href="qbytearray.html">QByteArray</a> of size 0: it does not wait until there is something to read.</p>
+<p>See also <a href="q3process.html#readyReadStdout">readyReadStdout</a>(), <a href="q3process.html#readLineStdout">readLineStdout</a>(), <a href="q3process.html#readStderr">readStderr</a>(), and <a href="q3process.html#writeToStdin">writeToStdin</a>().</p>
+<h3 class="fn"><a name="readyReadStderr"></a>void Q3Process::readyReadStderr ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process has written data to standard error. You can read the data with <a href="q3process.html#readStderr">readStderr</a>().</p>
+<p>Note that this signal is only emitted when there is new data and not when there is old, but unread data. In the slot connected to this signal, you should always read everything that is available at that moment to make sure that you don't lose any data.</p>
+<p>See also <a href="q3process.html#readStderr">readStderr</a>(), <a href="q3process.html#readLineStderr">readLineStderr</a>(), and <a href="q3process.html#readyReadStdout">readyReadStdout</a>().</p>
+<h3 class="fn"><a name="readyReadStdout"></a>void Q3Process::readyReadStdout ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process has written data to standard output. You can read the data with <a href="q3process.html#readStdout">readStdout</a>().</p>
+<p>Note that this signal is only emitted when there is new data and not when there is old, but unread data. In the slot connected to this signal, you should always read everything that is available at that moment to make sure that you don't lose any data.</p>
+<p>See also <a href="q3process.html#readStdout">readStdout</a>(), <a href="q3process.html#readLineStdout">readLineStdout</a>(), and <a href="q3process.html#readyReadStderr">readyReadStderr</a>().</p>
+<h3 class="fn"><a name="setArguments"></a>void Q3Process::setArguments ( const <a href="qstringlist.html">QStringList</a> &amp; <i>args</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets <i>args</i> as the arguments for the process. The first element in the list is the command to be executed. The other elements in the list are the arguments to the command. Any previous arguments are deleted.</p>
+<p><a href="q3process.html">Q3Process</a> does not perform argument substitutions; for example, if you specify &quot;*&quot; or &quot;$DISPLAY&quot;, these values are passed to the process literally. If you want to have the same behavior as the shell provides, you must do the substitutions yourself; i.e&#x2e; instead of specifying a &quot;*&quot; you must specify the list of all the filenames in the current directory, and instead of &quot;$DISPLAY&quot; you must specify the value of the environment variable <tt>DISPLAY</tt>.</p>
+<p>Note for Windows users. The standard Windows shells, e.g&#x2e; <tt>command.com</tt> and <tt>cmd.exe</tt>, do not perform file globbing, i.e&#x2e; they do not convert a &quot;*&quot; on the command line into a list of files in the current directory. For this reason most Windows applications implement their own file globbing, and as a result of this, specifying an argument of &quot;*&quot; for a Windows application is likely to result in the application performing a file glob and ending up with a list of filenames.</p>
+<p>See also <a href="q3process.html#arguments">arguments</a>() and <a href="q3process.html#addArgument">addArgument</a>().</p>
+<h3 class="fn"><a name="setCommunication"></a>void Q3Process::setCommunication ( int <i>commFlags</i> )</h3>
+<p>Sets <i>commFlags</i> as the communication required with the process.</p>
+<p><i>commFlags</i> is a bitwise OR of the flags defined by the <tt>Communication</tt> enum.</p>
+<p>The default is <tt>Stdin|Stdout|Stderr</tt>.</p>
+<p>See also <a href="q3process.html#communication">communication</a>().</p>
+<h3 class="fn"><a name="setWorkingDirectory"></a>void Q3Process::setWorkingDirectory ( const <a href="qdir.html">QDir</a> &amp; <i>dir</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets <i>dir</i> as the working directory for processes. This does not affect running processes; only processes that are started afterwards are affected.</p>
+<p>Setting the working directory is especially useful for processes that try to access files with relative paths.</p>
+<p>See also <a href="q3process.html#workingDirectory">workingDirectory</a>() and <a href="q3process.html#start">start</a>().</p>
+<h3 class="fn"><a name="start"></a>bool Q3Process::start ( <a href="qstringlist.html">QStringList</a> * <i>env</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="tryTerminate"></a>void Q3Process::tryTerminate () const&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="workingDirectory"></a><a href="qdir.html">QDir</a> Q3Process::workingDirectory () const</h3>
+<p>Returns the working directory that was set with <a href="q3process.html#setWorkingDirectory">setWorkingDirectory</a>(), or the current directory if none has been explicitly set.</p>
+<p>See also <a href="q3process.html#setWorkingDirectory">setWorkingDirectory</a>() and <a href="qdir.html#current">QDir::current</a>().</p>
+<h3 class="fn"><a name="writeToStdin"></a>void Q3Process::writeToStdin ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>buf</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<h3 class="fn"><a name="writeToStdin-2"></a>void Q3Process::writeToStdin ( const <a href="qstring.html">QString</a> &amp; <i>buf</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The string <i>buf</i> is handled as text using the <a href="qstring-qt3.html#local8Bit">QString::local8Bit</a>() representation.</p>
+<h3 class="fn"><a name="wroteToStdin"></a>void Q3Process::wroteToStdin ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the data sent to standard input (via <a href="q3process.html#writeToStdin">writeToStdin</a>()) was actually written to the process. This does not imply that the process really read the data, since this class only detects when it was able to write the data to the operating system. But it is now safe to close standard input without losing pending data.</p>
+<p>See also <a href="q3process.html#writeToStdin">writeToStdin</a>() and <a href="q3process.html#closeStdin">closeStdin</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

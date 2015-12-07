@@ -1,0 +1,570 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \title Grouped Classes
+    \group groups
+    \ingroup classlists
+
+    This page provides a way of navigating Qt's classes by grouping
+    related classes together. Some classes may appear in more than one group.
+
+    \generatelist{related}
+
+    \omit
+    \row
+    \o \l{Component Model}
+    \o Interfaces and helper classes for the Qt Component Model.
+    \endomit
+
+*/
+
+/*!
+    \group advanced
+    \ingroup groups
+
+    \title Advanced Widgets
+    \brief Advanced GUI widgets such as tab widgets and progress bars.
+
+    These classes provide more complex user interface widgets (controls).
+
+*/
+
+/*!
+    \group abstractwidgets
+    \ingroup groups
+
+    \title Abstract Widget Classes
+    \brief Abstract widget classes usable through subclassing.
+
+    These classes are abstract widgets; they are generally not usable in
+    themselves, but provide functionality that can be used by inheriting
+    these classes.
+
+*/
+
+/*!
+    \group accessibility
+    \ingroup groups
+    \ingroup topics
+
+    \title Accessibility Classes
+    \brief Classes that provide support for accessibility.
+
+    Accessible applications are able to be used by users who cannot use
+    conventional means of interaction. These classes provide support for
+    accessible applications.
+
+*/
+
+/*!
+    \group appearance
+    \ingroup groups
+
+    \title Widget Appearance and Style
+    \brief Appearance customization with styles, fonts, colors etc.
+
+    These classes are used to customize an application's appearance and
+    style.
+
+*/
+
+/*!
+    \group application
+    \ingroup groups
+
+    \title Main Window and Related Classes
+    \brief Everything you need for a typical modern main application window,
+    including menus, toolbars, workspace, etc.
+
+    These classes provide everything you need for a typical modern main
+    application window, like the main window itself, menu and tool bars,
+    a status bar, etc.
+
+*/
+
+
+/*!
+    \group basicwidgets
+    \ingroup groups
+
+    \title Basic Widgets
+    \brief Basic GUI widgets such as buttons, comboboxes and scroll bars.
+
+    These basic widgets (controls) are designed for direct use.
+    There are also some \l{Abstract Widget Classes} that are designed for
+    subclassing, and some more complex \l{Advanced Widgets}.
+
+*/
+
+/* \group componentmodel
+
+    \title Component Model
+
+    These classes and interfaces form the basis of the \l{Qt Component Model}.
+
+*/
+
+/*!
+    \group database
+    \ingroup groups
+
+    \title Database Classes
+    \brief Database related classes, e.g. for SQL databases.
+
+    These classes provide access to SQL databases.
+*/
+
+
+/*!
+    \group dialogs
+    \ingroup groups
+
+    \title Standard Dialog Classes
+    \brief Ready-made dialogs for file, font, color selection and more.
+
+    These classes are complex widgets, composed of simpler widgets; dialog
+    boxes, generally.
+*/
+
+/*!
+    \group desktop
+    \ingroup groups
+
+    \title Desktop Environment Classes
+    \brief Classes for interacting with the user's desktop environment.
+
+    These classes provide ways to interact with the user's desktop environment and
+    take advantage of common services.
+*/
+
+/*!
+    \group draganddrop
+    \ingroup groups
+
+    \title Drag And Drop Classes
+    \brief Classes dealing with drag and drop and mime type encoding and decoding.
+
+    These classes deal with drag and drop and the necessary mime type
+    encoding and decoding. See also \link dnd.html Drag and Drop with
+    Qt. \endlink
+*/
+
+/*!
+    \group environment
+    \ingroup groups
+
+    \title Environment Classes
+    \brief Classes providing various global services such as event handling,
+    access to system settings and internationalization.
+
+    These classes providing various global services to your application such as
+    event handling, access to system settings, internationalization, etc.
+
+*/
+
+/*!
+    \group events
+    \ingroup groups
+
+    \title Event Classes
+    \brief Classes used to create and handle events.
+
+    These classes are used to create and handle events.
+
+    For more information see the \link object.html Object model\endlink
+    and \link signalsandslots.html Signals and Slots\endlink.
+*/
+
+/*!
+    \group explicitly-shared
+    \ingroup groups
+
+    \title Explicitly Shared Classes
+    \brief Classes that use explicit sharing to manage internal data.
+
+    \keyword explicit sharing
+    \keyword explicitly shared
+
+    Unlike many of Qt's data types, which use \l{implicit sharing}, these
+    classes use explicit sharing to manage internal data.
+*/
+
+/*!
+    \group geomanagement
+    \ingroup groups
+
+    \title Layout Management
+    \brief Classes handling automatic resizing and moving of widgets, for
+    composing complex dialogs.
+
+    These classes provide automatic geometry (layout) management of widgets.
+
+*/
+
+/*!
+    \group graphicsview-api
+    \ingroup groups
+
+    \title Graphics View Classes
+    \brief Classes in the Graphics View framework for interactive applications.
+
+    These classes are provided by \l{The Graphics View Framework} for interactive
+    applications and are part of a larger collection of classes related to
+    \l{Multimedia, Graphics and Printing}.
+*/
+
+/*!
+    \group helpsystem
+    \ingroup groups
+
+    \title Help System
+    \brief Classes used to provide online-help for applications.
+
+    \keyword help system
+
+    These classes provide for all forms of online-help in your application,
+    with three levels of detail:
+
+    \list 1
+        \o Tool Tips and Status Bar message - flyweight help, extremely brief,
+            entirely integrated in the user interface, requiring little
+            or no user interaction to invoke.
+        \o What's This? - lightweight, but can be
+            a three-paragraph explanation.
+        \o Online Help - can encompass any amount of information,
+            but is typically slower to call up, somewhat separated
+            from the user's work, and often users feel that using online
+            help is a digression from their real task.
+    \endlist
+
+*/
+
+
+/*!
+    \group io
+    \ingroup groups
+
+    \title Input/Output and Networking
+    \brief Classes providing file input and output along with directory and
+    network handling.
+
+    These classes are used to handle input and output to and from external
+    devices, processes, files etc. as well as manipulating files and directories.
+*/
+
+/*!
+    \group misc
+    \ingroup groups
+
+    \title Miscellaneous Classes
+    \brief Various other useful classes.
+
+    These classes are useful classes not fitting into any other category.
+
+*/
+
+
+/*!
+    \group model-view
+    \ingroup groups
+
+    \title Model/View Classes
+    \brief Classes that use the model/view design pattern.
+
+    These classes use the model/view design pattern in which the
+    underlying data (in the model) is kept separate from the way the data
+    is presented and manipulated by the user (in the view). See also
+    \link model-view-programming.html Model/View Programming\endlink.
+
+*/
+
+/*!
+    \group multimedia
+    \ingroup groups
+
+    \title Multimedia, Graphics and Printing
+    \brief Classes that provide support for graphics (2D, and with OpenGL, 3D),
+    image encoding, decoding, and manipulation, sound, animation,
+    printing, etc.
+
+    These classes provide support for graphics (2D, and with OpenGL, 3D),
+    image encoding, decoding, and manipulation, sound, animation, printing
+    etc.
+
+    See also this introduction to the \link coordsys.html Qt
+    coordinate system. \endlink
+
+*/
+
+/*!
+    \group objectmodel
+    \ingroup groups
+
+    \title Object Model
+    \brief The Qt GUI toolkit's underlying object model.
+
+    These classes form the basis of the \l{Qt Object Model}.
+
+*/
+
+/*!
+    \group organizers
+    \ingroup groups
+
+    \title Organizers
+    \brief User interface organizers such as splitters, tab bars, button groups, etc.
+
+    These classes are used to organize and group GUI primitives into more
+    complex applications or dialogs.
+
+*/
+
+
+/*!
+    \group plugins
+    \ingroup groups
+
+    \title Plugin Classes
+    \brief Plugin related classes.
+
+    These classes deal with shared libraries, (e.g. .so and DLL files),
+    and with Qt plugins.
+
+    See the \link plugins-howto.html plugins documentation\endlink.
+
+    See also the \l{ActiveQt framework} for Windows.
+
+*/
+
+/*!
+    \group qws
+    \ingroup groups
+
+    \title Qt for Embedded Linux Classes
+    \ingroup qt-embedded
+    \brief Classes that are specific to Qt for Embedded Linux.
+
+    These classes are relevant to \l{Qt for Embedded Linux} users.
+*/
+
+/*!
+    \group qtce
+    \ingroup groups
+
+    \title Qt on Windows CE
+    \brief Classes that are specific to Qt on Windows CE
+
+    These classes are relevant to Qt/Windows CE users.
+*/
+
+/*!
+    \group shared
+    \ingroup architecture
+    \ingroup groups
+
+    \title Implicitly Shared Classes
+    \brief Classes that use reference counting for fast copying.
+
+    \keyword implicit data sharing
+    \keyword implicit sharing
+    \keyword implicitly shared
+    \keyword reference counting
+    \keyword shared implicitly
+    \keyword shared classes
+
+    Many C++ classes in Qt use implicit data sharing to maximize
+    resource usage and minimize copying. Implicitly shared classes are
+    both safe and efficient when passed as arguments, because only a
+    pointer to the data is passed around, and the data is copied only
+    if and when a function writes to it, i.e., \e {copy-on-write}.
+
+    \tableofcontents
+
+    \section1 Overview
+
+    A shared class consists of a pointer to a shared data block that
+    contains a reference count and the data.
+
+    When a shared object is created, it sets the reference count to 1. The
+    reference count is incremented whenever a new object references the
+    shared data, and decremented when the object dereferences the shared
+    data. The shared data is deleted when the reference count becomes
+    zero.
+
+    \keyword deep copy
+    \keyword shallow copy
+
+    When dealing with shared objects, there are two ways of copying an
+    object. We usually speak about \e deep and \e shallow copies. A deep
+    copy implies duplicating an object. A shallow copy is a reference
+    copy, i.e. just a pointer to a shared data block. Making a deep copy
+    can be expensive in terms of memory and CPU. Making a shallow copy is
+    very fast, because it only involves setting a pointer and incrementing
+    the reference count.
+
+    Object assignment (with operator=()) for implicitly shared objects is
+    implemented using shallow copies.
+
+    The benefit of sharing is that a program does not need to duplicate
+    data unnecessarily, which results in lower memory use and less copying
+    of data. Objects can easily be assigned, sent as function arguments,
+    and returned from functions.
+
+    Implicit sharing takes place behind the scenes; the programmer
+    does not need to worry about it. Even in multithreaded
+    applications, implicit sharing takes place, as explained in
+    \l{Threads and Implicit Sharing}.
+
+    \section1 Implicit Sharing in Detail
+
+    Implicit sharing automatically detaches the object from a shared
+    block if the object is about to change and the reference count is
+    greater than one. (This is often called \e {copy-on-write} or
+    \e {value semantics}.)
+
+    An implicitly shared class has total control of its internal data. In
+    any member functions that modify its data, it automatically detaches
+    before modifying the data.
+
+    The QPen class, which uses implicit sharing, detaches from the shared
+    data in all member functions that change the internal data.
+
+    Code fragment:
+    \snippet doc/src/snippets/code/doc.src.groups.qdoc 0
+
+    \section1 List of Classes
+
+    The classes listed below automatically detach from common data if
+    an object is about to be changed. The programmer will not even
+    notice that the objects are shared. Thus you should treat
+    separate instances of them as separate objects. They will always
+    behave as separate objects but with the added benefit of sharing
+    data whenever possible. For this reason, you can pass instances
+    of these classes as arguments to functions by value without
+    concern for the copying overhead.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.groups.qdoc 1
+
+    In this example, \c p1 and \c p2 share data until QPainter::begin()
+    is called for \c p2, because painting a pixmap will modify it.
+
+    \warning Do not copy an implicitly shared container (QMap,
+    QVector, etc.) while you are iterating over it using an non-const
+    \l{STL-style iterator}.
+*/
+
+/*!
+    \group text
+    \ingroup groups
+    \ingroup text-processing
+
+    \title Text Processing Classes
+    \brief Classes for text processing. (See also \l{XML Classes}.)
+
+    These classes are relevant to text processing. See also the
+    \l{Rich Text Processing} overview and the
+    \l{XML classes}.
+*/
+
+/*!
+    \group thread
+    \ingroup groups
+
+    \title Threading Classes
+    \brief Classes that provide threading support.
+
+    These classes are relevant to threaded applications. See
+    \l{Thread Support in Qt} for an overview of the features
+    Qt provides to help with multithreaded programming.
+*/
+
+
+/*!
+    \group time
+    \ingroup groups
+
+    \title Date and Time Classes
+    \brief Classes for handling date and time.
+
+    These classes provide system-independent date and time abstractions.
+
+*/
+
+/*!
+    \group tools
+    \ingroup groups
+
+    \title Non-GUI Classes
+    \brief Collection classes such as list, queue, stack and string, along
+    with other classes that can be used without needing QApplication.
+
+    The non-GUI classes are general-purpose collection and string classes
+    that may be used independently of the GUI classes.
+
+    In particular, these classes do not depend on QApplication at all,
+    and so can be used in non-GUI programs.
+
+*/
+
+/*!
+    \group xml-tools
+    \ingroup groups
+
+    \title XML Classes
+    \brief Classes that support XML, via, for example DOM and SAX.
+
+    These classes are relevant to XML users.
+*/
+
+/*!
+    \group script
+    \ingroup groups
+    \ingroup scripting
+
+    \title Scripting Classes
+    \brief Qt Script-related classes and overviews.
+
+    These classes are relevant to Qt Script users.
+*/

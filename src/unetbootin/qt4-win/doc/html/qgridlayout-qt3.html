@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qgridlayout.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QGridLayout</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QGridLayout</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qgridlayout.html">QGridLayout class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgridlayout-qt3.html#QGridLayout-3">QGridLayout</a></b> ( QWidget * <i>parent</i>, int <i>nRows</i>, int <i>nCols</i> = 1, int <i>margin</i> = 0, int <i>space</i> = -1, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgridlayout-qt3.html#QGridLayout-4">QGridLayout</a></b> ( int <i>nRows</i>, int <i>nCols</i> = 1, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgridlayout-qt3.html#QGridLayout-5">QGridLayout</a></b> ( QLayout * <i>parentLayout</i>, int <i>nRows</i> = 1, int <i>nCols</i> = 1, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#addColSpacing">addColSpacing</a></b> ( int <i>col</i>, int <i>minsize</i> )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#addMultiCell">addMultiCell</a></b> ( QLayoutItem * <i>l</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, Qt::Alignment <i>align</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#addMultiCellLayout">addMultiCellLayout</a></b> ( QLayout * <i>layout</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, Qt::Alignment <i>align</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#addMultiCellWidget">addMultiCellWidget</a></b> ( QWidget * <i>widget</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, Qt::Alignment <i>align</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#addRowSpacing">addRowSpacing</a></b> ( int <i>row</i>, int <i>minsize</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qgridlayout-qt3.html#cellGeometry">cellGeometry</a></b> ( int <i>row</i>, int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgridlayout-qt3.html#colSpacing">colSpacing</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qgridlayout-qt3.html#colStretch">colStretch</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#expand">expand</a></b> ( int <i>nRows</i>, int <i>nCols</i> )</li>
+<li><div class="fn"/>int <b><a href="qgridlayout-qt3.html#numCols">numCols</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qgridlayout-qt3.html#numRows">numRows</a></b> () const</li>
+<li><div class="fn"/>Qt::Corner <b><a href="qgridlayout-qt3.html#origin">origin</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qgridlayout-qt3.html#rowSpacing">rowSpacing</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#setColSpacing">setColSpacing</a></b> ( int <i>col</i>, int <i>minSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#setColStretch">setColStretch</a></b> ( int <i>col</i>, int <i>stretch</i> )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#setOrigin">setOrigin</a></b> ( Qt::Corner <i>corner</i> )</li>
+<li><div class="fn"/>void <b><a href="qgridlayout-qt3.html#setRowSpacing">setRowSpacing</a></b> ( int <i>row</i>, int <i>minSize</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>11 public functions inherited from <a href="qlayout.html#public-functions">QLayout</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qgridlayout-qt3.html#findWidget">findWidget</a></b> ( QWidget * <i>w</i>, int * <i>row</i>, int * <i>column</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qlayout.html#protected-functions">QLayout</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGridLayout-3"></a>QGridLayout::QGridLayout ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, int <i>nRows</i>, int <i>nCols</i> = 1, int <i>margin</i> = 0, int <i>space</i> = -1, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new <a href="qgridlayout.html">QGridLayout</a> with <i>nRows</i> rows, <i>nCols</i> columns and parent widget, <i>parent</i>. <i>parent</i> may not be 0. The grid layout is called <i>name</i>.</p>
+<p><i>margin</i> is the number of pixels between the edge of the widget and its managed children. <i>space</i> is the default number of pixels between cells. If <i>space</i> is -1, the value of <i>margin</i> is used.</p>
+<h3 class="fn"><a name="QGridLayout-4"></a>QGridLayout::QGridLayout ( int <i>nRows</i>, int <i>nCols</i> = 1, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new grid with <i>nRows</i> rows and <i>nCols</i> columns. If <i>spacing</i> is -1, this <a href="qgridlayout.html">QGridLayout</a> inherits its parent's <a href="qgridlayout.html#spacing">spacing</a>(); otherwise <i>spacing</i> is used. The grid layout is called <i>name</i>.</p>
+<p>You must insert this grid into another layout. You can insert widgets and layouts into this layout at any time, but laying out will not be performed before this is inserted into another layout.</p>
+<h3 class="fn"><a name="QGridLayout-5"></a>QGridLayout::QGridLayout ( <a href="qlayout.html">QLayout</a> * <i>parentLayout</i>, int <i>nRows</i> = 1, int <i>nCols</i> = 1, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new grid with <i>nRows</i> rows and <i>nCols</i> columns. If <i>spacing</i> is -1, this <a href="qgridlayout.html">QGridLayout</a> inherits its parent's <a href="qgridlayout.html#spacing">spacing</a>(); otherwise <i>spacing</i> is used. The grid layout is called <i>name</i>.</p>
+<p>You must insert this grid into another layout. You can insert widgets and layouts into this layout at any time, but laying out will not be performed before this is inserted into another layout.</p>
+<h3 class="fn"><a name="addColSpacing"></a>void QGridLayout::addColSpacing ( int <i>col</i>, int <i>minsize</i> )</h3>
+<p>Use addItem(new <a href="qspaceritem.html">QSpacerItem</a>(minsize, 0), 0, col) instead.</p>
+<h3 class="fn"><a name="addMultiCell"></a>void QGridLayout::addMultiCell ( <a href="qlayoutitem.html">QLayoutItem</a> * <i>l</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>align</i> = 0 )</h3>
+<p>Use an <a href="qgridlayout.html#addItem">addItem</a>() overload that allows you to specify row and column spans instead.</p>
+<h3 class="fn"><a name="addMultiCellLayout"></a>void QGridLayout::addMultiCellLayout ( <a href="qlayout.html">QLayout</a> * <i>layout</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>align</i> = 0 )</h3>
+<p>Use an <a href="qgridlayout.html#addLayout">addLayout</a>() overload that allows you to specify row and column spans instead.</p>
+<h3 class="fn"><a name="addMultiCellWidget"></a>void QGridLayout::addMultiCellWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, int <i>fromRow</i>, int <i>toRow</i>, int <i>fromCol</i>, int <i>toCol</i>, <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>align</i> = 0 )</h3>
+<p>Use an <a href="qgridlayout.html#addWidget">addWidget</a>() overload that allows you to specify row and column spans instead.</p>
+<h3 class="fn"><a name="addRowSpacing"></a>void QGridLayout::addRowSpacing ( int <i>row</i>, int <i>minsize</i> )</h3>
+<p>Use addItem(new <a href="qspaceritem.html">QSpacerItem</a>(0, minsize), row, 0) instead.</p>
+<h3 class="fn"><a name="cellGeometry"></a><a href="qrect.html">QRect</a> QGridLayout::cellGeometry ( int <i>row</i>, int <i>column</i> ) const</h3>
+<p>Use cellRect(<i>row</i>, <i>column</i>) instead.</p>
+<h3 class="fn"><a name="colSpacing"></a>int QGridLayout::colSpacing ( int <i>col</i> ) const</h3>
+<p>Use columnSpacing() instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#setColSpacing">setColSpacing</a>().</p>
+<h3 class="fn"><a name="colStretch"></a>int QGridLayout::colStretch ( int <i>col</i> ) const</h3>
+<p>Use <a href="qgridlayout.html#columnStretch">columnStretch</a>() instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#setColStretch">setColStretch</a>().</p>
+<h3 class="fn"><a name="expand"></a>void QGridLayout::expand ( int <i>nRows</i>, int <i>nCols</i> )</h3>
+<p>Expands this grid so that it will have <i>nRows</i> rows and <i>nCols</i> columns. Will not shrink the grid. You should not need to call this function because <a href="qgridlayout.html">QGridLayout</a> expands automatically as new items are inserted.</p>
+<h3 class="fn"><a name="findWidget"></a>bool QGridLayout::findWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i>, int * <i>row</i>, int * <i>column</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Searches for widget <i>w</i> in this layout (not including child layouts). If <i>w</i> is found, it sets <tt>*</tt><i>row</i> and <tt>*</tt><i>column</i> to the row and column that the widget occupies and returns true; otherwise returns false.</p>
+<p>If the widget spans multiple rows/columns, the top-left cell is returned.</p>
+<p>Use <a href="qlayout.html#indexOf">indexOf</a>() and <a href="qgridlayout.html#getItemPosition">getItemPosition</a>() instead.</p>
+<h3 class="fn"><a name="numCols"></a>int QGridLayout::numCols () const</h3>
+<p>Use <a href="qgridlayout.html#columnCount">columnCount</a>() instead.</p>
+<h3 class="fn"><a name="numRows"></a>int QGridLayout::numRows () const</h3>
+<p>Use <a href="qgridlayout.html#rowCount">rowCount</a>() instead.</p>
+<h3 class="fn"><a name="origin"></a><a href="qt.html#Corner-enum">Qt::Corner</a> QGridLayout::origin () const</h3>
+<p>Use <a href="qgridlayout.html#originCorner">originCorner</a>() instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#setOrigin">setOrigin</a>().</p>
+<h3 class="fn"><a name="rowSpacing"></a>int QGridLayout::rowSpacing ( int <i>row</i> ) const</h3>
+<p>Use rowMinimumHeight(<i>row</i>) instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#setRowSpacing">setRowSpacing</a>().</p>
+<h3 class="fn"><a name="setColSpacing"></a>void QGridLayout::setColSpacing ( int <i>col</i>, int <i>minSize</i> )</h3>
+<p>Use <a href="qgridlayout.html#setColumnMinimumWidth">setColumnMinimumWidth</a>() instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#colSpacing">colSpacing</a>().</p>
+<h3 class="fn"><a name="setColStretch"></a>void QGridLayout::setColStretch ( int <i>col</i>, int <i>stretch</i> )</h3>
+<p>Use <a href="qgridlayout.html#setColumnStretch">setColumnStretch</a>() instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#colStretch">colStretch</a>().</p>
+<h3 class="fn"><a name="setOrigin"></a>void QGridLayout::setOrigin ( <a href="qt.html#Corner-enum">Qt::Corner</a> <i>corner</i> )</h3>
+<p>Use setOriginCorner(<i>corner</i>) instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#origin">origin</a>().</p>
+<h3 class="fn"><a name="setRowSpacing"></a>void QGridLayout::setRowSpacing ( int <i>row</i>, int <i>minSize</i> )</h3>
+<p>Use setRowMinimumHeight(<i>row</i>, <i>minSize</i>) instead.</p>
+<p>See also <a href="qgridlayout-qt3.html#rowSpacing">rowSpacing</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

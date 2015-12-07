@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-performance.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux Performance Tuning</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux Performance Tuning<br /><span class="subtitle"></span>
+</h1>
+<p>When building embedded applications on low-powered devices, <a href="qt-embedded.html">Qt for Embedded Linux</a> provides a number of options that reduce the memory and/or CPU requirements by making various trade-offs. These options range from variations in programming style, to linking and memory allocation.</p>
+<p>But note that the most direct way of saving resources, is to avoid compiling in features that are not required. See the <a href="qt-embedded-features.html">fine tuning features</a> documentation for details.</p>
+<ul><li><a href="#programming-style">Programming Style</a></li>
+<li><a href="#static-vs-dynamic-linking">Static vs. Dynamic Linking</a></li>
+<li><a href="#alternative-memory-allocation">Alternative Memory Allocation</a></li>
+<li><a href="#bypassing-the-backing-store">Bypassing the Backing Store</a></li>
+</ul>
+<a name="programming-style"></a>
+<h2>Programming Style</h2>
+<p>Rather than creating dialogs and widgets every time they are needed, and delete them when they are no longer required, create them once and use the <a href="qwidget.html#hide">QWidget::hide</a>() and <a href="qwidget.html#show">QWidget::show</a>() functions whenever appropiate. To avoid a slow startup of the application, delay the creation of dialogs and widgets until they are requested. All this will improve the CPU performance, it requires a little more memory, but will be much faster.</p>
+<a name="static-vs-dynamic-linking"></a>
+<h2>Static vs. Dynamic Linking</h2>
+<p>A lot of CPU and memory is used by the ELF (Executable and Linking Format) linking process. Significant savings can be achieved by using a static build of the application suite; rather than having a collection of executables which link dynamically to Qt's libraries, all the applications is built into into a single executable which is statically linked to Qt's libraries.</p>
+<p>This improves the start-up time and reduces memory usage at the expense of flexibility (to add a new application, you must recompile the single executable) and robustness (if one application has a bug, it might harm other applications).</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Creating a Static Build</b><p>To compile Qt as a static library, use the <tt>-static</tt> option when running configure:</p>
+<pre>         ./configure -static</pre>
+<p>To build the application suite as an all-in-one application, design each application as a stand-alone widget (or set of widgets) with only minimal code in the <tt>main()</tt> function. Then, write an application that provides a means of switching between the applications. The <a href="http://www.trolltech.com/products/qtopia/">Qtopia</a> platform is an example using this approach: It can be built either as a set of dynamically linked executables, or as a single static application.</p>
+<p>Note that the application still should link dynamically against the standard C library and any other libraries which might be used by other applications on the target device.</p>
+</td></tr>
+</table></p>
+<p>When installing end-user applications, this approach may not be an option, but when building a single application suite for a device with limited CPU power and memory, this option could be very beneficial.</p>
+<a name="alternative-memory-allocation"></a>
+<h2>Alternative Memory Allocation</h2>
+<p>The libraries shipped with some C++ compilers on some platforms have poor performance in the built-in &quot;new&quot; and &quot;delete&quot; operators. Improved memory allocation and performance may be gained by re-implementing these functions:</p>
+<pre>         void *operator new[](size_t size)
+         {
+             return malloc(size);
+         }
+
+         void *operator new(size_t size)
+         {
+             return malloc(size);
+         }
+
+         void operator delete[](void *ptr)
+         {
+             free(ptr);
+         }
+
+         void operator delete[](void *ptr, size_t)
+         {
+             free(ptr);
+         }
+
+         void operator delete(void *ptr)
+         {
+             free(ptr);
+         }
+
+         void operator delete(void *ptr, size_t)
+         {
+             free(ptr);
+         }</pre>
+<p>The example above shows the necessary code to switch to the plain C memory allocators.</p>
+<a name="bypassing-the-backing-store"></a>
+<h2>Bypassing the Backing Store</h2>
+<p>When rendering, Qt uses the concept of a backing store; i.e&#x2e;, a paint buffer, to reduce flicker and to support graphics operations such as blending.</p>
+<p>The default behavior is for each client to render its widgets into memory while the server is responsible for putting the contents of the memory onto the screen. But when the hardware is known and well defined, as is often the case with software for embedded devices, it might be useful to bypass the backing store, allowing the clients to manipulate the underlying hardware directly. There are two approaches to direct painting: The first approach is to set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> window attribute for each widget, the other is to use the QDirectPainter class to reserve a region of the framebuffer. For more information, see the <a href="qt-embedded-architecture.html#direct-painting">direct painting</a> section of the <a href="qt-embedded-architecture.html">architecture</a> documentation.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

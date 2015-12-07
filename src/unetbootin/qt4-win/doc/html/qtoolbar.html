@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qtoolbar.cpp -->
+<head>
+  <title>Qt 4.4: QToolBar Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QToolBar Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QToolBar class provides a movable panel that contains a set of controls. <a href="#details">More...</a></p>
+<pre> #include &lt;QToolBar&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qtoolbar-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtoolbar-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qtoolbar.html#allowedAreas-prop">allowedAreas</a></b> : Qt::ToolBarAreas</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#floatable-prop">floatable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#floating-prop">floating</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#iconSize-prop">iconSize</a></b> : QSize</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qtoolbar.html#movable-prop">movable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#orientation-prop">orientation</a></b> : Qt::Orientation</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#toolButtonStyle-prop">toolButtonStyle</a></b> : Qt::ToolButtonStyle</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtoolbar.html#QToolBar">QToolBar</a></b> ( const QString &amp; <i>title</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#QToolBar-2">QToolBar</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtoolbar.html#dtor.QToolBar">~QToolBar</a></b> ()</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#actionAt">actionAt</a></b> ( const QPoint &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#actionAt-2">actionAt</a></b> ( int <i>x</i>, int <i>y</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#addAction">addAction</a></b> ( QAction * <i>action</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addAction-2">addAction</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addAction-3">addAction</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addAction-4">addAction</a></b> ( const QString &amp; <i>text</i>, const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addAction-5">addAction</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addSeparator">addSeparator</a></b> ()</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#addWidget">addWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>Qt::ToolBarAreas <b><a href="qtoolbar.html#allowedAreas-prop">allowedAreas</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>QSize <b><a href="qtoolbar.html#iconSize-prop">iconSize</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#insertSeparator">insertSeparator</a></b> ( QAction * <i>before</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#insertWidget">insertWidget</a></b> ( QAction * <i>before</i>, QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtoolbar.html#isAreaAllowed">isAreaAllowed</a></b> ( Qt::ToolBarArea <i>area</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtoolbar.html#floatable-prop">isFloatable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtoolbar.html#floating-prop">isFloating</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtoolbar.html#movable-prop">isMovable</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qtoolbar.html#orientation-prop">orientation</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#allowedAreas-prop">setAllowedAreas</a></b> ( Qt::ToolBarAreas <i>areas</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#floatable-prop">setFloatable</a></b> ( bool <i>floatable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#movable-prop">setMovable</a></b> ( bool <i>movable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#orientation-prop">setOrientation</a></b> ( Qt::Orientation <i>orientation</i> )</li>
+<li><div class="fn"/>QAction * <b><a href="qtoolbar.html#toggleViewAction">toggleViewAction</a></b> () const</li>
+<li><div class="fn"/>Qt::ToolButtonStyle <b><a href="qtoolbar.html#toolButtonStyle-prop">toolButtonStyle</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qtoolbar.html#widgetForAction">widgetForAction</a></b> ( QAction * <i>action</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#iconSize-prop">setIconSize</a></b> ( const QSize &amp; <i>iconSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#toolButtonStyle-prop">setToolButtonStyle</a></b> ( Qt::ToolButtonStyle <i>toolButtonStyle</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#actionTriggered">actionTriggered</a></b> ( QAction * <i>action</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#allowedAreasChanged">allowedAreasChanged</a></b> ( Qt::ToolBarAreas <i>allowedAreas</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#iconSizeChanged">iconSizeChanged</a></b> ( const QSize &amp; <i>iconSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#movableChanged">movableChanged</a></b> ( bool <i>movable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#orientationChanged">orientationChanged</a></b> ( Qt::Orientation <i>orientation</i> )</li>
+<li><div class="fn"/>void <b><a href="qtoolbar.html#toolButtonStyleChanged">toolButtonStyleChanged</a></b> ( Qt::ToolButtonStyle <i>toolButtonStyle</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QToolBar class provides a movable panel that contains a set of controls.</p>
+<p>Toolbar buttons are added by adding <i>actions</i>, using <a href="qtoolbar.html#addAction">addAction</a>() or <a href="qwidget.html#insertAction">insertAction</a>(). Groups of buttons can be separated using <a href="qtoolbar.html#addSeparator">addSeparator</a>() or <a href="qtoolbar.html#insertSeparator">insertSeparator</a>(). If a toolbar button is not appropriate, a widget can be inserted instead using <a href="qtoolbar.html#addWidget">addWidget</a>() or <a href="qtoolbar.html#insertWidget">insertWidget</a>(); examples of suitable widgets are <a href="qspinbox.html">QSpinBox</a>, <a href="qdoublespinbox.html">QDoubleSpinBox</a>, and <a href="qcombobox.html">QComboBox</a>. When a toolbar button is pressed it emits the <a href="qtoolbar.html#actionTriggered">actionTriggered</a>() signal.</p>
+<p>A toolbar can be fixed in place in a particular area (e.g&#x2e; at the top of the window), or it can be movable (<a href="qtoolbar.html#movable-prop">isMovable</a>()) between toolbar areas; see <a href="qtoolbar.html#allowedAreas-prop">allowedAreas</a>() and <a href="qtoolbar.html#isAreaAllowed">isAreaAllowed</a>().</p>
+<p>When a toolbar is resized in such a way that it is too small to show all the items it contains, an extension button will appear as the last item in the toolbar. Pressing the extension button will pop up a menu containing the items that does not currently fit in the toolbar.</p>
+<p>When a QToolBar is not a child of a <a href="qmainwindow.html">QMainWindow</a>, it looses the ability to populate the extension pop up with widgets added to the toolbar using <a href="qtoolbar.html#addWidget">addWidget</a>(). Please use widget actions created by inheriting <a href="qwidgetaction.html">QWidgetAction</a> and implementing <a href="qwidgetaction.html#createWidget">QWidgetAction::createWidget</a>() instead. This is a known issue which will be fixed in a future release.</p>
+<p>See also <a href="qtoolbutton.html">QToolButton</a>, <a href="qmenu.html">QMenu</a>, <a href="qaction.html">QAction</a>, and <a href="mainwindows-application.html">Application Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="allowedAreas-prop"></a>allowedAreas : <a href="qt.html#ToolBarArea-enum">Qt::ToolBarAreas</a></h3>
+<p>This property holds areas where the toolbar may be placed.</p>
+<p>The default is <a href="qt.html#ToolBarArea-enum">Qt::AllToolBarAreas</a>.</p>
+<p>This property only makes sense if the toolbar is in a <a href="qmainwindow.html">QMainWindow</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ToolBarAreas allowedAreas () const</b></li>
+<li><div class="fn"/><b>void setAllowedAreas ( Qt::ToolBarAreas <i>areas</i> )</b></li>
+</ul>
+<p>See also <a href="qtoolbar.html#movable-prop">movable</a>.</p>
+<h3 class="fn"><a name="floatable-prop"></a>floatable : bool</h3>
+<p>This property holds whether the toolbar can be dragged and dropped as an independent window.</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isFloatable () const</b></li>
+<li><div class="fn"/><b>void setFloatable ( bool <i>floatable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="floating-prop"></a>floating : const bool</h3>
+<p>This property holds whether the toolbar is an independent window.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isFloating () const</b></li>
+</ul>
+<p>See also <a href="qwidget.html#isWindow">QWidget::isWindow</a>().</p>
+<h3 class="fn"><a name="iconSize-prop"></a>iconSize : <a href="qsize.html">QSize</a></h3>
+<p>This property holds size of icons in the toolbar.</p>
+<p>The default size is determined by the application's style and is derived from the <a href="qstyle.html#PixelMetric-enum">QStyle::PM_ToolBarIconSize</a> pixel metric. It is the maximum size an icon can have. Icons of smaller size will not be scaled up.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize iconSize () const</b></li>
+<li><div class="fn"/><b>void setIconSize ( const QSize &amp; <i>iconSize</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="movable-prop"></a>movable : bool</h3>
+<p>This property holds whether the user can move the toolbar within the toolbar area, or between toolbar areas.</p>
+<p>By default, this property is true.</p>
+<p>This property only makes sense if the toolbar is in a <a href="qmainwindow.html">QMainWindow</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isMovable () const</b></li>
+<li><div class="fn"/><b>void setMovable ( bool <i>movable</i> )</b></li>
+</ul>
+<p>See also <a href="qtoolbar.html#allowedAreas-prop">allowedAreas</a>.</p>
+<h3 class="fn"><a name="orientation-prop"></a>orientation : <a href="qt.html#Orientation-enum">Qt::Orientation</a></h3>
+<p>This property holds orientation of the toolbar.</p>
+<p>The default is <a href="qt.html#Orientation-enum">Qt::Horizontal</a>.</p>
+<p>This function should not be used when the toolbar is managed by <a href="qmainwindow.html">QMainWindow</a>. You can use <a href="qmainwindow.html#addToolBar">QMainWindow::addToolBar</a>() or <a href="qmainwindow.html#insertToolBar">QMainWindow::insertToolBar</a>() if you wish to move a toolbar (that is already added to a main window) to another <a href="qt.html#ToolBarArea-enum">Qt::ToolBarArea</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Orientation orientation () const</b></li>
+<li><div class="fn"/><b>void setOrientation ( Qt::Orientation <i>orientation</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="toolButtonStyle-prop"></a>toolButtonStyle : <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonStyle</a></h3>
+<p>This property holds the style of toolbar buttons.</p>
+<p>This property defines the style of all tool buttons that are added as <a href="qaction.html">QAction</a>s. Note that if you add a <a href="qtoolbutton.html">QToolButton</a> with the <a href="qtoolbar.html#addWidget">addWidget</a>() method, it will not get this button style.</p>
+<p>The default is <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonIconOnly</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ToolButtonStyle toolButtonStyle () const</b></li>
+<li><div class="fn"/><b>void setToolButtonStyle ( Qt::ToolButtonStyle <i>toolButtonStyle</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QToolBar"></a>QToolBar::QToolBar ( const <a href="qstring.html">QString</a> &amp; <i>title</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qtoolbar.html">QToolBar</a> with the given <i>parent</i>.</p>
+<p>The given window <i>title</i> identifies the toolbar and is shown in the context menu provided by <a href="qmainwindow.html">QMainWindow</a>.</p>
+<p>See also <a href="qwidget.html#windowTitle-prop">setWindowTitle</a>().</p>
+<h3 class="fn"><a name="QToolBar-2"></a>QToolBar::QToolBar ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qtoolbar.html">QToolBar</a> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QToolBar"></a>QToolBar::~QToolBar ()</h3>
+<p>Destroys the toolbar.</p>
+<h3 class="fn"><a name="actionAt"></a><a href="qaction.html">QAction</a> * QToolBar::actionAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> ) const</h3>
+<p>Returns the action at point <i>p</i>. This function returns zero if no action was found.</p>
+<p>See also <a href="qwidget.html#childAt">QWidget::childAt</a>().</p>
+<h3 class="fn"><a name="actionAt-2"></a><a href="qaction.html">QAction</a> * QToolBar::actionAt ( int <i>x</i>, int <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the action at the point <i>x</i>, <i>y</i>. This function returns zero if no action was found.</p>
+<h3 class="fn"><a name="actionTriggered"></a>void QToolBar::actionTriggered ( <a href="qaction.html">QAction</a> * <i>action</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an action in this toolbar is triggered. This happens when the action's tool button is pressed, or when the action is triggered in some other way outside the tool bar. The parameter holds the triggered <i>action</i>.</p>
+<h3 class="fn"><a name="addAction"></a>void QToolBar::addAction ( <a href="qaction.html">QAction</a> * <i>action</i> )</h3>
+<p>Appends the action <i>action</i> to the toolbar's list of actions.</p>
+<p>See also <a href="qmenu.html#addAction">QMenu::addAction</a>() and <a href="qwidget.html#addAction">QWidget::addAction</a>().</p>
+<h3 class="fn"><a name="addAction-2"></a><a href="qaction.html">QAction</a> * QToolBar::addAction ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates a new action with the given <i>text</i>. This action is added to the end of the toolbar.</p>
+<h3 class="fn"><a name="addAction-3"></a><a href="qaction.html">QAction</a> * QToolBar::addAction ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates a new action with the given <i>icon</i> and <i>text</i>. This action is added to the end of the toolbar.</p>
+<h3 class="fn"><a name="addAction-4"></a><a href="qaction.html">QAction</a> * QToolBar::addAction ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates a new action with the given <i>text</i>. This action is added to the end of the toolbar. The action's <a href="qaction.html#triggered">triggered()</a> signal is connected to <i>member</i> in <i>receiver</i>.</p>
+<h3 class="fn"><a name="addAction-5"></a><a href="qaction.html">QAction</a> * QToolBar::addAction ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Creates a new action with the icon <i>icon</i> and text <i>text</i>. This action is added to the end of the toolbar. The action's <a href="qaction.html#triggered">triggered()</a> signal is connected to <i>member</i> in <i>receiver</i>.</p>
+<h3 class="fn"><a name="addSeparator"></a><a href="qaction.html">QAction</a> * QToolBar::addSeparator ()</h3>
+<p>Adds a separator to the end of the toolbar.</p>
+<p>See also <a href="qtoolbar.html#insertSeparator">insertSeparator</a>().</p>
+<h3 class="fn"><a name="addWidget"></a><a href="qaction.html">QAction</a> * QToolBar::addWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Adds the given <i>widget</i> to the toolbar as the toolbar's last item.</p>
+<p>If you add a <a href="qtoolbutton.html">QToolButton</a> with this method, the tools bar's <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonStyle</a> will not be respected.</p>
+<p>Note: You should use <a href="qaction.html#visible-prop">QAction::setVisible</a>() to change the visibility of the widget. Using <a href="qwidget.html#visible-prop">QWidget::setVisible</a>(), <a href="qwidget.html#show">QWidget::show</a>() and <a href="qwidget.html#hide">QWidget::hide</a>() does not work.</p>
+<p>See also <a href="qtoolbar.html#insertWidget">insertWidget</a>().</p>
+<h3 class="fn"><a name="allowedAreasChanged"></a>void QToolBar::allowedAreasChanged ( <a href="qt.html#ToolBarArea-enum">Qt::ToolBarAreas</a> <i>allowedAreas</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the collection of allowed areas for the toolbar is changed. The new areas in which the toolbar can be positioned are specified by <i>allowedAreas</i>.</p>
+<p>See also <a href="qtoolbar.html#allowedAreas-prop">allowedAreas</a>.</p>
+<h3 class="fn"><a name="clear"></a>void QToolBar::clear ()</h3>
+<p>Removes all actions from the toolbar.</p>
+<p>See also <a href="qwidget.html#removeAction">removeAction</a>().</p>
+<h3 class="fn"><a name="iconSizeChanged"></a>void QToolBar::iconSizeChanged ( const <a href="qsize.html">QSize</a> &amp; <i>iconSize</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the icon size is changed. The <i>iconSize</i> parameter holds the toolbar's new icon size.</p>
+<p>See also <a href="qtoolbar.html#iconSize-prop">iconSize</a> and <a href="qmainwindow.html#iconSize-prop">QMainWindow::iconSize</a>.</p>
+<h3 class="fn"><a name="insertSeparator"></a><a href="qaction.html">QAction</a> * QToolBar::insertSeparator ( <a href="qaction.html">QAction</a> * <i>before</i> )</h3>
+<p>Inserts a separator into the toolbar in front of the toolbar item associated with the <i>before</i> action.</p>
+<p>See also <a href="qtoolbar.html#addSeparator">addSeparator</a>().</p>
+<h3 class="fn"><a name="insertWidget"></a><a href="qaction.html">QAction</a> * QToolBar::insertWidget ( <a href="qaction.html">QAction</a> * <i>before</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Inserts the given <i>widget</i> in front of the toolbar item associated with the <i>before</i> action.</p>
+<p>Note: You should use <a href="qaction.html#visible-prop">QAction::setVisible</a>() to change the visibility of the widget. Using <a href="qwidget.html#visible-prop">QWidget::setVisible</a>(), <a href="qwidget.html#show">QWidget::show</a>() and <a href="qwidget.html#hide">QWidget::hide</a>() does not work.</p>
+<p>See also <a href="qtoolbar.html#addWidget">addWidget</a>().</p>
+<h3 class="fn"><a name="isAreaAllowed"></a>bool QToolBar::isAreaAllowed ( <a href="qt.html#ToolBarArea-enum">Qt::ToolBarArea</a> <i>area</i> ) const</h3>
+<p>Returns true if this toolbar is dockable in the given <i>area</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="movableChanged"></a>void QToolBar::movableChanged ( bool <i>movable</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the toolbar becomes movable or fixed. If the toolbar can be moved, <i>movable</i> is true; otherwise it is false.</p>
+<p>See also <a href="qtoolbar.html#movable-prop">movable</a>.</p>
+<h3 class="fn"><a name="orientationChanged"></a>void QToolBar::orientationChanged ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the orientation of the toolbar changes. The new orientation is specified by the <i>orientation</i> given.</p>
+<p>See also <a href="qtoolbar.html#orientation-prop">orientation</a>.</p>
+<h3 class="fn"><a name="toggleViewAction"></a><a href="qaction.html">QAction</a> * QToolBar::toggleViewAction () const</h3>
+<p>Returns a checkable action that can be used to show or hide this toolbar.</p>
+<p>The action's text is set to the toolbar's window title.</p>
+<p>See also <a href="qaction.html#text-prop">QAction::text</a> and <a href="qwidget.html#windowTitle-prop">QWidget::windowTitle</a>.</p>
+<h3 class="fn"><a name="toolButtonStyleChanged"></a>void QToolBar::toolButtonStyleChanged ( <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonStyle</a> <i>toolButtonStyle</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the tool button style is changed. The <i>toolButtonStyle</i> parameter holds the toolbar's new tool button style.</p>
+<p>See also <a href="qtoolbar.html#toolButtonStyle-prop">toolButtonStyle</a> and <a href="qmainwindow.html#toolButtonStyle-prop">QMainWindow::toolButtonStyle</a>.</p>
+<h3 class="fn"><a name="widgetForAction"></a><a href="qwidget.html">QWidget</a> * QToolBar::widgetForAction ( <a href="qaction.html">QAction</a> * <i>action</i> ) const</h3>
+<p>Returns the widget associated with the specified <i>action</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtoolbar.html#addWidget">addWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

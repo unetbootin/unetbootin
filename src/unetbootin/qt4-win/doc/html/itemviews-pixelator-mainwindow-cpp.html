@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (itemviews/pixelator/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">itemviews/pixelator/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;imagemodel.h&quot;
+ #include &quot;mainwindow.h&quot;
+ #include &quot;pixeldelegate.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     currentPath = QDir::homePath();
+     model = new ImageModel(this);
+
+     QWidget *centralWidget = new QWidget;
+
+     view = new QTableView;
+     view-&gt;setShowGrid(false);
+     view-&gt;horizontalHeader()-&gt;hide();
+     view-&gt;verticalHeader()-&gt;hide();
+     view-&gt;horizontalHeader()-&gt;setMinimumSectionSize(1);
+     view-&gt;verticalHeader()-&gt;setMinimumSectionSize(1);
+     view-&gt;setModel(model);
+
+     PixelDelegate *delegate = new PixelDelegate(this);
+     view-&gt;setItemDelegate(delegate);
+
+     QLabel *pixelSizeLabel = new QLabel(tr(&quot;Pixel size:&quot;));
+     QSpinBox *pixelSizeSpinBox = new QSpinBox;
+     pixelSizeSpinBox-&gt;setMinimum(4);
+     pixelSizeSpinBox-&gt;setMaximum(32);
+     pixelSizeSpinBox-&gt;setValue(12);
+
+     QMenu *fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     QAction *openAction = fileMenu-&gt;addAction(tr(&quot;&amp;Open...&quot;));
+     openAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+O&quot;)));
+
+     printAction = fileMenu-&gt;addAction(tr(&quot;&amp;Print...&quot;));
+     printAction-&gt;setEnabled(false);
+     printAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+P&quot;)));
+
+     QAction *quitAction = fileMenu-&gt;addAction(tr(&quot;E&amp;xit&quot;));
+     quitAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+Q&quot;)));
+
+     QMenu *helpMenu = new QMenu(tr(&quot;&amp;Help&quot;), this);
+     QAction *aboutAction = helpMenu-&gt;addAction(tr(&quot;&amp;About&quot;));
+
+     menuBar()-&gt;addMenu(fileMenu);
+     menuBar()-&gt;addSeparator();
+     menuBar()-&gt;addMenu(helpMenu);
+
+     connect(openAction, SIGNAL(triggered()), this, SLOT(chooseImage()));
+     connect(printAction, SIGNAL(triggered()), this, SLOT(printImage()));
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(aboutAction, SIGNAL(triggered()), this, SLOT(showAboutBox()));
+     connect(pixelSizeSpinBox, SIGNAL(valueChanged(int)),
+             delegate, SLOT(setPixelSize(int)));
+     connect(pixelSizeSpinBox, SIGNAL(valueChanged(int)),
+             this, SLOT(updateView()));
+
+     QHBoxLayout *controlsLayout = new QHBoxLayout;
+     controlsLayout-&gt;addWidget(pixelSizeLabel);
+     controlsLayout-&gt;addWidget(pixelSizeSpinBox);
+     controlsLayout-&gt;addStretch(1);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(view);
+     mainLayout-&gt;addLayout(controlsLayout);
+     centralWidget-&gt;setLayout(mainLayout);
+
+     setCentralWidget(centralWidget);
+
+     setWindowTitle(tr(&quot;Pixelator&quot;));
+     resize(640, 480);
+ }
+
+ void MainWindow::chooseImage()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this,
+         tr(&quot;Choose an image&quot;), currentPath, &quot;*&quot;);
+
+     if (!fileName.isEmpty())
+         openImage(fileName);
+ }
+
+ void MainWindow::openImage(const QString &amp;fileName)
+ {
+     QImage image;
+
+     if (image.load(fileName)) {
+         model-&gt;setImage(image);
+         if (!fileName.startsWith(&quot;:/&quot;)) {
+             currentPath = fileName;
+             setWindowTitle(tr(&quot;%1 - Pixelator&quot;).arg(currentPath));
+         }
+
+         printAction-&gt;setEnabled(true);
+         updateView();
+     }
+ }
+
+ void MainWindow::printImage()
+ {
+ #ifndef QT_NO_PRINTER
+     if (model-&gt;rowCount(QModelIndex())*model-&gt;columnCount(QModelIndex())
+         &gt; 90000) {
+             QMessageBox::StandardButton answer;
+             answer = QMessageBox::question(this, tr(&quot;Large Image Size&quot;),
+             tr(&quot;The printed image may be very large. Are you sure that &quot;
+                &quot;you want to print it?&quot;),
+             QMessageBox::Yes | QMessageBox::No);
+         if (answer == QMessageBox::No)
+             return;
+     }
+
+     QPrinter printer(QPrinter::HighResolution);
+
+     QPrintDialog *dlg = new QPrintDialog(&amp;printer, this);
+     dlg-&gt;setWindowTitle(tr(&quot;Print Image&quot;));
+
+     if (dlg-&gt;exec() != QDialog::Accepted)
+         return;
+
+     QPainter painter;
+     painter.begin(&amp;printer);
+
+     int rows = model-&gt;rowCount(QModelIndex());
+     int columns = model-&gt;columnCount(QModelIndex());
+     int sourceWidth = (columns+1) * ItemSize;
+     int sourceHeight = (rows+1) * ItemSize;
+
+     painter.save();
+
+     double xscale = printer.pageRect().width()/double(sourceWidth);
+     double yscale = printer.pageRect().height()/double(sourceHeight);
+     double scale = qMin(xscale, yscale);
+
+     painter.translate(printer.paperRect().x() + printer.pageRect().width()/2,
+                       printer.paperRect().y() + printer.pageRect().height()/2);
+     painter.scale(scale, scale);
+     painter.translate(-sourceWidth/2, -sourceHeight/2);
+
+     QStyleOptionViewItem option;
+     QModelIndex parent = QModelIndex();
+
+     QProgressDialog progress(tr(&quot;Printing...&quot;), tr(&quot;Cancel&quot;), 0, rows, this);
+     progress.setWindowModality(Qt::ApplicationModal);
+     float y = ItemSize/2;
+
+     for (int row = 0; row &lt; rows; ++row) {
+         progress.setValue(row);
+         qApp-&gt;processEvents();
+         if (progress.wasCanceled())
+             break;
+
+         float x = ItemSize/2;
+
+         for (int column = 0; column &lt; columns; ++column) {
+             option.rect = QRect(int(x), int(y), ItemSize, ItemSize);
+             view-&gt;itemDelegate()-&gt;paint(&amp;painter, option,
+                                         model-&gt;index(row, column, parent));
+             x = x + ItemSize;
+         }
+         y = y + ItemSize;
+     }
+     progress.setValue(rows);
+
+     painter.restore();
+     painter.end();
+
+     if (progress.wasCanceled()) {
+         QMessageBox::information(this, tr(&quot;Printing canceled&quot;),
+             tr(&quot;The printing process was canceled.&quot;), QMessageBox::Cancel);
+     }
+ #else
+     QMessageBox::information(this, tr(&quot;Printing canceled&quot;),
+         tr(&quot;Printing is not supported on this Qt build&quot;), QMessageBox::Cancel);
+ #endif
+ }
+
+ void MainWindow::showAboutBox()
+ {
+     QMessageBox::about(this, tr(&quot;About the Pixelator example&quot;),
+         tr(&quot;This example demonstrates how a standard view and a custom\n&quot;
+            &quot;delegate can be used to produce a specialized representation\n&quot;
+            &quot;of data in a simple custom model.&quot;));
+ }
+
+ void MainWindow::updateView()
+ {
+     view-&gt;resizeColumnsToContents();
+     view-&gt;resizeRowsToContents();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

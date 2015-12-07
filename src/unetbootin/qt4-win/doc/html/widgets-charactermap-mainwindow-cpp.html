@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (widgets/charactermap/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">widgets/charactermap/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;characterwidget.h&quot;
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     QWidget *centralWidget = new QWidget;
+
+     QLabel *fontLabel = new QLabel(tr(&quot;Font:&quot;));
+     fontCombo = new QFontComboBox;
+     QLabel *sizeLabel = new QLabel(tr(&quot;Size:&quot;));
+     sizeCombo = new QComboBox;
+     QLabel *styleLabel = new QLabel(tr(&quot;Style:&quot;));
+     styleCombo = new QComboBox;
+     QLabel *fontMergingLabel = new QLabel(tr(&quot;Automatic Font Merging:&quot;));
+     fontMerging = new QCheckBox;
+     fontMerging-&gt;setChecked(true);
+
+     scrollArea = new QScrollArea;
+     characterWidget = new CharacterWidget;
+     scrollArea-&gt;setWidget(characterWidget);
+
+     findStyles(fontCombo-&gt;currentFont());
+     findSizes(fontCombo-&gt;currentFont());
+
+     lineEdit = new QLineEdit;
+     QPushButton *clipboardButton = new QPushButton(tr(&quot;&amp;To clipboard&quot;));
+
+     clipboard = QApplication::clipboard();
+
+     connect(fontCombo, SIGNAL(currentFontChanged(const QFont &amp;)),
+             this, SLOT(findStyles(const QFont &amp;)));
+     connect(fontCombo, SIGNAL(currentFontChanged(const QFont &amp;)),
+             this, SLOT(findSizes(const QFont &amp;)));
+     connect(fontCombo, SIGNAL(currentFontChanged(const QFont &amp;)),
+             characterWidget, SLOT(updateFont(const QFont &amp;)));
+     connect(sizeCombo, SIGNAL(currentIndexChanged(const QString &amp;)),
+             characterWidget, SLOT(updateSize(const QString &amp;)));
+     connect(styleCombo, SIGNAL(currentIndexChanged(const QString &amp;)),
+             characterWidget, SLOT(updateStyle(const QString &amp;)));
+     connect(characterWidget, SIGNAL(characterSelected(const QString &amp;)),
+             this, SLOT(insertCharacter(const QString &amp;)));
+     connect(clipboardButton, SIGNAL(clicked()), this, SLOT(updateClipboard()));
+     connect(fontMerging, SIGNAL(toggled(bool)), characterWidget, SLOT(updateFontMerging(bool)));
+
+     QHBoxLayout *controlsLayout = new QHBoxLayout;
+     controlsLayout-&gt;addWidget(fontLabel);
+     controlsLayout-&gt;addWidget(fontCombo, 1);
+     controlsLayout-&gt;addWidget(sizeLabel);
+     controlsLayout-&gt;addWidget(sizeCombo, 1);
+     controlsLayout-&gt;addWidget(styleLabel);
+     controlsLayout-&gt;addWidget(styleCombo, 1);
+     controlsLayout-&gt;addWidget(fontMergingLabel);
+     controlsLayout-&gt;addWidget(fontMerging, 1);
+     controlsLayout-&gt;addStretch(1);
+
+     QHBoxLayout *lineLayout = new QHBoxLayout;
+     lineLayout-&gt;addWidget(lineEdit, 1);
+     lineLayout-&gt;addSpacing(12);
+     lineLayout-&gt;addWidget(clipboardButton);
+
+     QVBoxLayout *centralLayout = new QVBoxLayout;
+     centralLayout-&gt;addLayout(controlsLayout);
+     centralLayout-&gt;addWidget(scrollArea, 1);
+     centralLayout-&gt;addSpacing(4);
+     centralLayout-&gt;addLayout(lineLayout);
+     centralWidget-&gt;setLayout(centralLayout);
+
+     setCentralWidget(centralWidget);
+     setWindowTitle(tr(&quot;Character Map&quot;));
+ }
+
+ void MainWindow::findStyles(const QFont &amp;font)
+ {
+     QFontDatabase fontDatabase;
+     QString currentItem = styleCombo-&gt;currentText();
+     styleCombo-&gt;clear();
+
+     QString style;
+     foreach (style, fontDatabase.styles(font.family()))
+         styleCombo-&gt;addItem(style);
+
+     int styleIndex = styleCombo-&gt;findText(currentItem);
+
+     if (styleIndex == -1)
+         styleCombo-&gt;setCurrentIndex(0);
+     else
+         styleCombo-&gt;setCurrentIndex(styleIndex);
+ }
+
+ void MainWindow::findSizes(const QFont &amp;font)
+ {
+     QFontDatabase fontDatabase;
+     QString currentSize = sizeCombo-&gt;currentText();
+     sizeCombo-&gt;blockSignals(true);
+     sizeCombo-&gt;clear();
+
+     int size;
+     if(fontDatabase.isSmoothlyScalable(font.family(), fontDatabase.styleString(font))) {
+         foreach(size, QFontDatabase::standardSizes()) {
+             sizeCombo-&gt;addItem(QVariant(size).toString());
+             sizeCombo-&gt;setEditable(true);
+         }
+
+     } else {
+         foreach(size, fontDatabase.smoothSizes(font.family(), fontDatabase.styleString(font))) {
+             sizeCombo-&gt;addItem(QVariant(size).toString());
+             sizeCombo-&gt;setEditable(false);
+         }
+     }
+
+     sizeCombo-&gt;blockSignals(false);
+
+     int sizeIndex = sizeCombo-&gt;findText(currentSize);
+
+     if(sizeIndex == -1)
+         sizeCombo-&gt;setCurrentIndex(qMax(0, sizeCombo-&gt;count() / 3));
+     else
+         sizeCombo-&gt;setCurrentIndex(sizeIndex);
+ }
+
+ void MainWindow::insertCharacter(const QString &amp;character)
+ {
+     lineEdit-&gt;insert(character);
+ }
+
+ void MainWindow::updateClipboard()
+ {
+     clipboard-&gt;setText(lineEdit-&gt;text(), QClipboard::Clipboard);
+     clipboard-&gt;setText(lineEdit-&gt;text(), QClipboard::Selection);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QStatusTipEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStatusTipEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStatusTipEvent class provides an event that is used to show messages in a status bar. <a href="#details">More...</a></p>
+<pre> #include &lt;QStatusTipEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qstatustipevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstatustipevent.html#QStatusTipEvent">QStatusTipEvent</a></b> ( const QString &amp; <i>tip</i> )</li>
+<li><div class="fn"/>QString <b><a href="qstatustipevent.html#tip">tip</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStatusTipEvent class provides an event that is used to show messages in a status bar.</p>
+<p>Status tips can be set on a widget using the <a href="qwidget.html#statusTip-prop">QWidget::setStatusTip</a>() function. They are shown in the status bar when the mouse cursor enters the widget. For example:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent)
+ {
+     QWidget *myWidget = new QWidget;
+     myWidget-&gt;setStatusTip(tr(&quot;This is my widget.&quot;));
+
+     setCentralWidget(myWidget);
+     ...
+ }</pre>
+</td><td><p align="center"><img src="images/qstatustipevent-widget.png" alt="Widget with status tip." /></p></td></tr>
+</table></p>
+<p>Status tips can also be set on actions using the <a href="qaction.html#statusTip-prop">QAction::setStatusTip</a>() function:</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><pre> MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent)
+ {
+     QMenu *fileMenu = menuBar()-&gt;addMenu(tr(&quot;File&quot;));
+
+     QAction *newAct = new QAction(tr(&quot;&amp;New&quot;), this);
+     newAct-&gt;setStatusTip(tr(&quot;Create a new file.&quot;));
+     fileMenu-&gt;addAction(newAct);
+     ...
+ }</pre>
+</td><td><p align="center"><img src="images/qstatustipevent-action.png" alt="Action with status tip." /></p></td></tr>
+</table></p>
+<p>Finally, status tips are supported for the item view classes through the <a href="qt.html#ItemDataRole-enum">Qt::StatusTipRole</a> enum value.</p>
+<p>See also <a href="qstatusbar.html">QStatusBar</a>, <a href="qhelpevent.html">QHelpEvent</a>, and <a href="qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStatusTipEvent"></a>QStatusTipEvent::QStatusTipEvent ( const <a href="qstring.html">QString</a> &amp; <i>tip</i> )</h3>
+<p>Constructs a status tip event with the text specified by <i>tip</i>.</p>
+<p>See also <a href="qstatustipevent.html#tip">tip</a>().</p>
+<h3 class="fn"><a name="tip"></a><a href="qstring.html">QString</a> QStatusTipEvent::tip () const</h3>
+<p>Returns the message to show in the status bar.</p>
+<p>See also <a href="qstatusbar.html#showMessage">QStatusBar::showMessage</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

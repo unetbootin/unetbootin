@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextformat.cpp -->
+<head>
+  <title>Qt 4.4: QTextTableCellFormat Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextTableCellFormat Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextTableCellFormat class provides formatting information for table cells in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextTableCellFormat&gt;</pre><p>Inherits <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qtexttablecellformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtexttablecellformat.html#QTextTableCellFormat">QTextTableCellFormat</a></b> ()</li>
+<li><div class="fn"/>qreal <b><a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtexttablecellformat.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtexttablecellformat.html#leftPadding">leftPadding</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtexttablecellformat.html#rightPadding">rightPadding</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttablecellformat.html#setPadding">setPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a></b> ( qreal <i>padding</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qtexttablecellformat.html#topPadding">topPadding</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>41 public functions inherited from <a href="qtextcharformat.html#public-functions">QTextCharFormat</a></li>
+<li><div class="fn"/>49 public functions inherited from <a href="qtextformat.html#public-functions">QTextFormat</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextTableCellFormat class provides formatting information for table cells in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>The table cell format of a table cell in a document specifies the visual properties of the table cell.</p>
+<p>The padding properties of a table cell are controlled by <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>(). All the paddings can be set at once using <a href="qtexttablecellformat.html#setPadding">setPadding</a>().</p>
+<p>See also <a href="qtextformat.html">QTextFormat</a>, <a href="qtextblockformat.html">QTextBlockFormat</a>, <a href="qtexttableformat.html">QTextTableFormat</a>, and <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextTableCellFormat"></a>QTextTableCellFormat::QTextTableCellFormat ()</h3>
+<p>Constructs a new table cell format object.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="bottomPadding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableCellFormat::bottomPadding () const</h3>
+<p>Gets the bottom padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), and <a href="qtexttablecellformat.html#topPadding">topPadding</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextTableCellFormat::isValid () const</h3>
+<p>Returns true if this table cell format is valid; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="leftPadding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableCellFormat::leftPadding () const</h3>
+<p>Gets the left padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), <a href="qtexttablecellformat.html#topPadding">topPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<h3 class="fn"><a name="rightPadding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableCellFormat::rightPadding () const</h3>
+<p>Gets the right padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#topPadding">topPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<h3 class="fn"><a name="setBottomPadding"></a>void QTextTableCellFormat::setBottomPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the bottom <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), and <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>().</p>
+<h3 class="fn"><a name="setLeftPadding"></a>void QTextTableCellFormat::setLeftPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the left <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<h3 class="fn"><a name="setPadding"></a>void QTextTableCellFormat::setPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the left, right, top, and bottom <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<h3 class="fn"><a name="setRightPadding"></a>void QTextTableCellFormat::setRightPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the right <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<h3 class="fn"><a name="setTopPadding"></a>void QTextTableCellFormat::setTopPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>padding</i> )</h3>
+<p>Sets the top <i>padding</i> of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#topPadding">topPadding</a>(), <a href="qtexttablecellformat.html#setLeftPadding">setLeftPadding</a>(), <a href="qtexttablecellformat.html#setRightPadding">setRightPadding</a>(), and <a href="qtexttablecellformat.html#setBottomPadding">setBottomPadding</a>().</p>
+<h3 class="fn"><a name="topPadding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextTableCellFormat::topPadding () const</h3>
+<p>Gets the top padding of the table cell.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtexttablecellformat.html#setTopPadding">setTopPadding</a>(), <a href="qtexttablecellformat.html#leftPadding">leftPadding</a>(), <a href="qtexttablecellformat.html#rightPadding">rightPadding</a>(), and <a href="qtexttablecellformat.html#bottomPadding">bottomPadding</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

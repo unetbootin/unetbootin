@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qstylepainter.cpp -->
+<head>
+  <title>Qt 4.4: QStylePainter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStylePainter Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStylePainter class is a convenience class for drawing <a href="qstyle.html">QStyle</a> elements inside a widget. <a href="#details">More...</a></p>
+<pre> #include &lt;QStylePainter&gt;</pre><p>Inherits <a href="qpainter.html">QPainter</a>.</p>
+<ul>
+<li><a href="qstylepainter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstylepainter.html#QStylePainter">QStylePainter</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstylepainter.html#QStylePainter-2">QStylePainter</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/><b><a href="qstylepainter.html#QStylePainter-3">QStylePainter</a></b> ( QPaintDevice * <i>pd</i>, QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstylepainter.html#begin">begin</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstylepainter.html#begin-2">begin</a></b> ( QPaintDevice * <i>pd</i>, QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>void <b><a href="qstylepainter.html#drawComplexControl">drawComplexControl</a></b> ( QStyle::ComplexControl <i>cc</i>, const QStyleOptionComplex &amp; <i>option</i> )</li>
+<li><div class="fn"/>void <b><a href="qstylepainter.html#drawControl">drawControl</a></b> ( QStyle::ControlElement <i>ce</i>, const QStyleOption &amp; <i>option</i> )</li>
+<li><div class="fn"/>void <b><a href="qstylepainter.html#drawItemPixmap">drawItemPixmap</a></b> ( const QRect &amp; <i>rect</i>, int <i>flags</i>, const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qstylepainter.html#drawItemText">drawItemText</a></b> ( const QRect &amp; <i>rect</i>, int <i>flags</i>, const QPalette &amp; <i>pal</i>, bool <i>enabled</i>, const QString &amp; <i>text</i>, QPalette::ColorRole <i>textRole</i> = QPalette::NoRole )</li>
+<li><div class="fn"/>void <b><a href="qstylepainter.html#drawPrimitive">drawPrimitive</a></b> ( QStyle::PrimitiveElement <i>pe</i>, const QStyleOption &amp; <i>option</i> )</li>
+<li><div class="fn"/>QStyle * <b><a href="qstylepainter.html#style">style</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>176 public functions inherited from <a href="qpainter.html#public-functions">QPainter</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>3 static public members inherited from <a href="qpainter.html#static-public-members">QPainter</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStylePainter class is a convenience class for drawing <a href="qstyle.html">QStyle</a> elements inside a widget.</p>
+<p>QStylePainter extends <a href="qpainter.html">QPainter</a> with a set of high-level <tt>draw...()</tt> functions implemented on top of <a href="qstyle.html">QStyle</a>'s API. The advantage of using QStylePainter is that the parameter lists get considerably shorter. Whereas a <a href="qstyle.html">QStyle</a> object must be able to draw on any widget using any painter (because the application normally has one <a href="qstyle.html">QStyle</a> object shared by all widget), a QStylePainter is initialized with a widget, eliminating the need to specify the <a href="qwidget.html">QWidget</a>, the <a href="qpainter.html">QPainter</a>, and the <a href="qstyle.html">QStyle</a> for every function call.</p>
+<p>Example using <a href="qstyle.html">QStyle</a> directly:</p>
+<pre> void MyWidget::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+
+     QStyleOptionFocusRect option;
+     option.initFrom(this);
+     option.backgroundColor = palette().color(QPalette::Background);
+
+     style()-&gt;drawPrimitive(QStyle::PE_FrameFocusRect, &amp;option, &amp;painter, this);
+ }</pre>
+<p>Example using QStylePainter:</p>
+<pre> void MyWidget::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QStylePainter painter(this);
+
+     QStyleOptionFocusRect option;
+     option.initFrom(this);
+     option.backgroundColor = palette().color(QPalette::Background);
+
+     painter.drawPrimitive(QStyle::PE_FrameFocusRect, option);
+ }</pre>
+<p>See also <a href="qstyle.html">QStyle</a> and <a href="qstyleoption.html">QStyleOption</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStylePainter"></a>QStylePainter::QStylePainter ()</h3>
+<p>Constructs a <a href="qstylepainter.html">QStylePainter</a>.</p>
+<h3 class="fn"><a name="QStylePainter-2"></a>QStylePainter::QStylePainter ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Construct a <a href="qstylepainter.html">QStylePainter</a> using widget <i>widget</i> for its paint device.</p>
+<h3 class="fn"><a name="QStylePainter-3"></a>QStylePainter::QStylePainter ( QPaintDevice * <i>pd</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Construct a <a href="qstylepainter.html">QStylePainter</a> using <i>pd</i> for its paint device, and attributes from <i>widget</i>.</p>
+<h3 class="fn"><a name="begin"></a>bool QStylePainter::begin ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Begin painting operations on the specified <i>widget</i>. Returns true if the painter is ready to use; otherwise returns false.</p>
+<p>This is automatically called by the constructor that takes a <a href="qwidget.html">QWidget</a>.</p>
+<h3 class="fn"><a name="begin-2"></a>bool QStylePainter::begin ( QPaintDevice * <i>pd</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Begin painting operations on paint device <i>pd</i> as if it was <i>widget</i>.</p>
+<p>This is automatically called by the constructor that takes a QPaintDevice and a <a href="qwidget.html">QWidget</a>.</p>
+<h3 class="fn"><a name="drawComplexControl"></a>void QStylePainter::drawComplexControl ( <a href="qstyle.html#ComplexControl-enum">QStyle::ComplexControl</a> <i>cc</i>, const <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> &amp; <i>option</i> )</h3>
+<p>Use the widget's style to draw a complex control <i>cc</i> specified by the <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a> <i>option</i>.</p>
+<p>See also <a href="qstyle.html#drawComplexControl">QStyle::drawComplexControl</a>().</p>
+<h3 class="fn"><a name="drawControl"></a>void QStylePainter::drawControl ( <a href="qstyle.html#ControlElement-enum">QStyle::ControlElement</a> <i>ce</i>, const <a href="qstyleoption.html">QStyleOption</a> &amp; <i>option</i> )</h3>
+<p>Use the widget's style to draw a control element <i>ce</i> specified by <a href="qstyleoption.html">QStyleOption</a> <i>option</i>.</p>
+<p>See also <a href="qstyle.html#drawControl">QStyle::drawControl</a>().</p>
+<h3 class="fn"><a name="drawItemPixmap"></a>void QStylePainter::drawItemPixmap ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, int <i>flags</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>Draws the <i>pixmap</i> in rectangle <i>rect</i>. The pixmap is aligned according to <i>flags</i>.</p>
+<p>See also <a href="qstyle.html#drawItemPixmap">QStyle::drawItemPixmap</a>() and <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="drawItemText"></a>void QStylePainter::drawItemText ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, int <i>flags</i>, const <a href="qpalette.html">QPalette</a> &amp; <i>pal</i>, bool <i>enabled</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qpalette.html#ColorRole-enum">QPalette::ColorRole</a> <i>textRole</i> = QPalette::NoRole )</h3>
+<p>Draws the <i>text</i> in rectangle <i>rect</i> and palette <i>pal</i>. The text is aligned and wrapped according to <i>flags</i>.</p>
+<p>The pen color is specified with <i>textRole</i>. The <i>enabled</i> bool indicates whether or not the item is enabled; when reimplementing this bool should influence how the item is drawn.</p>
+<p>See also <a href="qstyle.html#drawItemText">QStyle::drawItemText</a>() and <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="drawPrimitive"></a>void QStylePainter::drawPrimitive ( <a href="qstyle.html#PrimitiveElement-enum">QStyle::PrimitiveElement</a> <i>pe</i>, const <a href="qstyleoption.html">QStyleOption</a> &amp; <i>option</i> )</h3>
+<p>Use the widget's style to draw a primitive element <i>pe</i> specified by <a href="qstyleoption.html">QStyleOption</a> <i>option</i>.</p>
+<p>See also <a href="qstyle.html#drawPrimitive">QStyle::drawPrimitive</a>().</p>
+<h3 class="fn"><a name="style"></a><a href="qstyle.html">QStyle</a> * QStylePainter::style () const</h3>
+<p>Return the current style used by the <a href="qstylepainter.html">QStylePainter</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

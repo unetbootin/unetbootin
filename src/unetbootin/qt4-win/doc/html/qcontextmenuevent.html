@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QContextMenuEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QContextMenuEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QContextMenuEvent class contains parameters that describe a context menu event. <a href="#details">More...</a></p>
+<pre> #include &lt;QContextMenuEvent&gt;</pre><p>Inherits <a href="qinputevent.html">QInputEvent</a>.</p>
+<ul>
+<li><a href="qcontextmenuevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qcontextmenuevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qcontextmenuevent.html#Reason-enum">Reason</a></b> { Mouse, Keyboard, Other }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcontextmenuevent.html#QContextMenuEvent">QContextMenuEvent</a></b> ( Reason <i>reason</i>, const QPoint &amp; <i>pos</i>, const QPoint &amp; <i>globalPos</i>, Qt::KeyboardModifiers <i>modifiers</i> )</li>
+<li><div class="fn"/><b><a href="qcontextmenuevent.html#QContextMenuEvent-2">QContextMenuEvent</a></b> ( Reason <i>reason</i>, const QPoint &amp; <i>pos</i>, const QPoint &amp; <i>globalPos</i> )</li>
+<li><div class="fn"/><b><a href="qcontextmenuevent.html#QContextMenuEvent-3">QContextMenuEvent</a></b> ( Reason <i>reason</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qcontextmenuevent.html#globalPos">globalPos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcontextmenuevent.html#globalX">globalX</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcontextmenuevent.html#globalY">globalY</a></b> () const</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qcontextmenuevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>Reason <b><a href="qcontextmenuevent.html#reason">reason</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcontextmenuevent.html#x">x</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcontextmenuevent.html#y">y</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qinputevent.html#public-functions">QInputEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QContextMenuEvent class contains parameters that describe a context menu event.</p>
+<p>Context menu events are sent to widgets when a user performs an action associated with opening a context menu. The actions required to open context menus vary between platforms; for example, on Windows, pressing the menu button or clicking the right mouse button will cause this event to be sent.</p>
+<p>When this event occurs it is customary to show a <a href="qmenu.html">QMenu</a> with a context menu, if this is relevant to the context.</p>
+<p>Context menu events contain a special accept flag that indicates whether the receiver accepted the event. If the event handler does not accept the event then, if possible, whatever triggered the event will be handled as a regular input event.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Reason-enum"></a>enum QContextMenuEvent::Reason</h3>
+<p>This enum describes the reason why the event was sent.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QContextMenuEvent::Mouse</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The mouse caused the event to be sent. Normally this means the right mouse button was clicked, but this is platform dependent.</td></tr>
+<tr><td valign="top"><tt>QContextMenuEvent::Keyboard</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The keyboard caused this event to be sent. On Windows, this means the menu button was pressed.</td></tr>
+<tr><td valign="top"><tt>QContextMenuEvent::Other</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The event was sent by some other means (i.e&#x2e; not by the mouse or keyboard).</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QContextMenuEvent"></a>QContextMenuEvent::QContextMenuEvent ( <a href="qcontextmenuevent.html#Reason-enum">Reason</a> <i>reason</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>globalPos</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i> )</h3>
+<p>Constructs a context menu event object with the accept parameter flag set to false.</p>
+<p>The <i>reason</i> parameter must be <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Mouse</a> or <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Keyboard</a>.</p>
+<p>The <i>pos</i> parameter specifies the mouse position relative to the receiving widget. <i>globalPos</i> is the mouse position in absolute coordinates. The <i>modifiers</i> holds the keyboard modifiers.</p>
+<h3 class="fn"><a name="QContextMenuEvent-2"></a>QContextMenuEvent::QContextMenuEvent ( <a href="qcontextmenuevent.html#Reason-enum">Reason</a> <i>reason</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>globalPos</i> )</h3>
+<p>Constructs a context menu event object with the accept parameter flag set to false.</p>
+<p>The <i>reason</i> parameter must be <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Mouse</a> or <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Keyboard</a>.</p>
+<p>The <i>pos</i> parameter specifies the mouse position relative to the receiving widget. <i>globalPos</i> is the mouse position in absolute coordinates.</p>
+<h3 class="fn"><a name="QContextMenuEvent-3"></a>QContextMenuEvent::QContextMenuEvent ( <a href="qcontextmenuevent.html#Reason-enum">Reason</a> <i>reason</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )</h3>
+<p>Constructs a context menu event object with the accept parameter flag set to false.</p>
+<p>The <i>reason</i> parameter must be <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Mouse</a> or <a href="qcontextmenuevent.html#Reason-enum">QContextMenuEvent::Keyboard</a>.</p>
+<p>The <i>pos</i> parameter specifies the mouse position relative to the receiving widget.</p>
+<p>The <a href="qcontextmenuevent.html#globalPos">globalPos</a>() is initialized to <a href="qcursor.html#pos">QCursor::pos</a>(), which may not be appropriate. Use the other constructor to specify the global position explicitly.</p>
+<h3 class="fn"><a name="globalPos"></a>const <a href="qpoint.html">QPoint</a> &amp; QContextMenuEvent::globalPos () const</h3>
+<p>Returns the global position of the mouse pointer at the time of the event.</p>
+<p>See also <a href="qcontextmenuevent.html#x">x</a>(), <a href="qcontextmenuevent.html#y">y</a>(), and <a href="qcontextmenuevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="globalX"></a>int QContextMenuEvent::globalX () const</h3>
+<p>Returns the global x position of the mouse pointer at the time of the event.</p>
+<p>See also <a href="qcontextmenuevent.html#globalY">globalY</a>() and <a href="qcontextmenuevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="globalY"></a>int QContextMenuEvent::globalY () const</h3>
+<p>Returns the global y position of the mouse pointer at the time of the event.</p>
+<p>See also <a href="qcontextmenuevent.html#globalX">globalX</a>() and <a href="qcontextmenuevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="pos"></a>const <a href="qpoint.html">QPoint</a> &amp; QContextMenuEvent::pos () const</h3>
+<p>Returns the position of the mouse pointer relative to the widget that received the event.</p>
+<p>See also <a href="qcontextmenuevent.html#x">x</a>(), <a href="qcontextmenuevent.html#y">y</a>(), and <a href="qcontextmenuevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="reason"></a><a href="qcontextmenuevent.html#Reason-enum">Reason</a> QContextMenuEvent::reason () const</h3>
+<p>Returns the reason for this context event.</p>
+<h3 class="fn"><a name="x"></a>int QContextMenuEvent::x () const</h3>
+<p>Returns the x position of the mouse pointer, relative to the widget that received the event.</p>
+<p>See also <a href="qcontextmenuevent.html#y">y</a>() and <a href="qcontextmenuevent.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="y"></a>int QContextMenuEvent::y () const</h3>
+<p>Returns the y position of the mouse pointer, relative to the widget that received the event.</p>
+<p>See also <a href="qcontextmenuevent.html#x">x</a>() and <a href="qcontextmenuevent.html#pos">pos</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

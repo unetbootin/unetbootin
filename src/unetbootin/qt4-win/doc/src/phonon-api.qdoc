@@ -1,0 +1,4817 @@
+/*
+    This file is part of the KDE project
+    Copyright (C) 2005-2007 Matthias Kretz <kretz@kde.org>
+    Copyright (C) 2007-2008 Trolltech ASA.
+
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Library General Public
+    License version 2 as published by the Free Software Foundation.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+    Library General Public License for more details.
+
+    You should have received a copy of the GNU Library General Public License
+    along with this library; see the file COPYING.LIB.  If not, write to
+    the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+    Boston, MA 02110-1301, USA.
+*/
+
+
+/*!
+    \enum Phonon::DiscType
+    Enum to identify the media discs supported by MediaObject.
+
+    \value NoDisc
+    No disc was selected. This is only useful as a return value from
+    MediaSource::diskType().
+    \value Cd Identifies Audio CDs.
+    \value Dvd Identifies DVDs (not arbitrary data DVDs, only movie DVDs).
+    \value Vcd Identifies Video CDs.
+
+    \sa MediaSource, MediaObject
+*/
+
+/*!
+    \enum Phonon::MetaData
+
+    Provided as keys for Phonon::MediaObject::metaData(). The enum
+    values matches strings defined in the Ogg Vorbis specification
+
+    \value ArtistMetaData
+    \value AlbumMetaData
+    \value TitleMetaData
+    \value DateMetaData
+    \value GenreMetaData
+    \value TracknumberMetaData
+    \value DescriptionMetaData
+    \value MusicBrainzDiscIdMetaData
+*/
+
+/*!
+    \enum Phonon::State
+    \since 4.4
+
+    The state enum describes the different states a media object can
+    take. Several functions of \l{Phonon::}{MediaObject} are
+    asynchronous, so even if a you have requested a state change
+    through a function call, e.g., through
+    \l{Phonon::MediaObject::}{play()}, you cannot be sure that the
+    change has taken place before you receive the
+    \l{Phonon::MediaObject::}{stateChanged()} signal. 
+
+    A media object can at any time change into any state, regardless
+    of the state it previously had. \omit In the
+    \l{Phonon::}{MediaObject} class description explains the typical
+    state changes in the life of a media object. \endomit
+
+    \value LoadingState
+    After construction it might take a while before the media object
+    is ready to \l{Phonon::MediaObject::}{play()}. This state is
+    commonly used by backends to initialize the \l{Phonon
+    Overview}{media graph} and loading the source. When
+    the object leaves the loading state, it will enter the
+    StoppedState unless an error occurred or another state is
+    requested through a function call, e.g.,
+    \l{Phonon::}{MediaObject::play()}.
+
+    \value StoppedState
+    In the stopped state, the media object is ready to play its
+    current media source. The current
+    \l{MediaObject::seek()}{position} in the media stream is then 0.
+
+    \value PlayingState
+    The media object is playing back its media source.
+
+    \value BufferingState
+    The Player is waiting for data to be able to start or continue
+    playing. This state is commonly used to wait for media data over a
+    network connection.
+
+    \value PausedState
+    The media player has currently paused its playback, i.e., it
+    stops playing but keeps the current playback position in the
+    stream.
+
+    \value ErrorState
+    When a media object enters the error state a problem with the
+    playback has occurred. The possible errors are grouped into
+    two categories by Phonon::ErrorType, and the type can be
+    queried through \l{Phonon::MediaObject::}{errorType()}. A
+    \l{Phonon::}{FatalError} implies that the playback
+    cannot continue, but one can still try with a new media
+    source. With a \l{Phonon::}{NormalError} it might
+    be possible to continue playback, and a media object may
+    therefore change state from the ErrorState.
+
+    \sa MediaObject
+*/
+
+/*!
+    \enum Phonon::Category
+
+    Sets the category your program should be listed in in the mixer.
+
+    \value NoCategory
+    Will make use of the default device.
+    \value NotificationCategory
+    If the sounds produced are notifications (ping, beep and such) you
+    should use this category.
+    \value MusicCategory
+    If your application is a music player (like a jukebox or media player
+    playing an audio file).
+    \value VideoCategory
+    If the sound is the audio channel of a video.
+    \value CommunicationCategory
+    If your applications produces sounds from communication with somebody
+    else (VoIP, voice chat).
+    \value GameCategory
+    Sound produced by a computer game should go into this category.
+    \value AccessibilityCategory
+    Sounds produced for accessibility (e.g., Text-To-Speech)
+    \omitvalue LastCategory
+    Holds the largest value of categories.
+    \omitvalue AccessibilityCategory
+
+    A Jukebox will set this to Music, a VoIP program to Communication, a
+    DVD player to video, and so on.
+
+    \note These categories can also become useful for an application that
+    controls the volumes automatically, like turning down the music when a call
+    comes in, or turning down the notifications when the media player knows
+    it's playing classical music.
+*/
+
+/*!
+    \enum Phonon::ErrorType
+
+    This enum describes the severity when an error has occurred during
+    playback.
+
+    After a media object has entered the
+    \l{Phonon::}{ErrorState}, one can query the type of error
+    from \l{Phonon::}{MediaObject::errorType()}. Note that you should
+    query the error when receiving the
+    \l{Phonon::}{MediaObject::stateChanged()} signal, because the
+    error type will be lost if the media object leaves the error
+    state.    
+
+    \value NoError No error. MediaObject::errorType() returns this if
+    MediaObject::state() != Phonon::ErrorState.
+
+    \value NormalError An error has occurred with the playback of the current
+    source. It might be possible to continue playback, for instance, if only the
+    audio stream in a video cannot be played back. The media object will then
+    leave the error state again.
+
+    \value FatalError. Something important does not work. Your program cannot continue
+    the playback of the current source, but it might be possible to try another.
+
+    \sa MediaObject::errorType()
+*/
+
+/*!
+    \fn QString Phonon::categoryToString(Category c)
+
+    Returns a (translated) string to show to the user identifying the given
+    Category (\a c).
+*/
+
+/*!
+    \enum Phonon::ObjectDescriptionType
+    \relates Phonon::ObjectDescription
+
+    This enum defines the type of information that is contained in a
+    \l{Phonon::}{ObjectDescription} object.
+
+    \value AudioOutputDeviceType An audio output device (\l{Phonon::}{AudioOutputDevice}).
+    This can be soundcards (with different drivers),
+    sound servers, or other virtual outputs like playback on a different
+    computer on the network.
+
+    \value EffectType An audio effect (\l{Phonon::}{EffectDescription}).
+
+*/
+
+/*!
+    \typedef Phonon::AudioOutputDevice
+    \relates Phonon::ObjectDescription    
+
+    This typedef of \l{Phonon::}{ObjectDescription} describes an audio output
+    device, such as soundcards (with different drivers), sound servers, or other
+    virtual outputs like playback on a different computer on the network.
+
+    \omit
+    For Hardware devices the backend should use libkaudiodevicelist
+    (AudioDevice and AudioDeviceEnumerator) which will list removable
+    devices even when they are unplugged and provide a unique identifier
+    that can make backends use the same identifiers.
+    \endomit
+
+    A list of available devices is given by the backend with
+    Backendcapabilities::availableAudioOutputDevices()
+
+    \snippet doc/src/snippets/phononobjectdescription.cpp 1
+
+*/
+
+/*!
+    \class Phonon::ObjectDescription
+    \inmodule Phonon
+    \since 4.4
+    \brief The Phonon::ObjectDescription class provides a generic interface to information about Phonon objects.
+    \author Matthias Kretz <kretz@kde.org>
+    
+    Phonon currently uses this class to describe audio effects and
+    audio output devices - using the typedefs AudioOutputDevice and
+    EffectDescription.
+
+    The class gives a description() and a name() of the object, both
+    of which are strings appropriate for end users of a Phonon
+    application. Objects of the same
+    \l{Phonon::ObjectDescriptionType}{type} is uniquely identified by
+    an index().
+
+    You can also check whether the device or effect described is
+    \l{isValid()}{valid}. This does not guarantee that the device or
+    effect functions as expected, but that the ObjectDescription
+    describes an existing device or effect.
+
+    Audio output devices and effect descriptions are used to select
+    the audio output device to be used for playback and to create
+    effects; we show examples of this in the snippet below. The
+    available descriptions can be fetched with
+    \l{Phonon::BackendCapabilities::}{availableAudioOutputDevices()}
+    and \l{Phonon::BackendCapabilities::}{availableAudioEffects()}
+    static functions in the Phonon::BackendCapabilities namespace
+
+    \snippet doc/src/snippets/phononobjectdescription.cpp 0
+
+    Other types of ObjectDescriptions might be possible in the future,
+    e.g., descriptions of audio capture devices, such as microphones.
+
+    \omit
+    Need a new paragraph on that some descriptions 'belong
+    together', such as chained audio effects.
+
+    Some parts give the end user choices, e.g. what source to capture audio from.
+    These choices are described by the name and description methods of this class
+    and identified with the id method. Subclasses then define additional
+    information like which audio and video choices belong together.
+    \endomit
+
+    \sa Phonon::AudioOutputDevice, Phonon::EffectDescription, {Capabilities Example}
+*/
+
+/*!
+    \fn Phonon::ObjectDescription::ObjectDescription(const QExplicitlySharedDataPointer<ObjectDescriptionData> &dd)
+    \internal
+*/
+
+/*!
+    \fn static inline ObjectDescription<T> Phonon::ObjectDescription::fromIndex(int index)
+    \internal
+
+    \omit Currently indices are not unique for all ObjectDescription types, making
+    the behavior of this function undefined. \endomit
+
+    Returns a new description object that describes the
+    device/effect/codec/...  with the given \a index.
+*/
+
+/*!
+    \fn inline bool Phonon::ObjectDescription::operator==(const ObjectDescription &otherDescription) const
+
+    Returns \c true if this ObjectDescription describes the same
+    object as \a otherDescription; otherwise, returns \c false.
+*/
+
+/*!
+    \fn inline bool Phonon::ObjectDescription::operator!=(const ObjectDescription &otherDescription) const
+    Returns \c false if this ObjectDescription describes the same
+    as \a otherDescription; otherwise, returns \c true.
+*/
+
+/*!
+    \fn inline QString Phonon::ObjectDescription::name() const
+
+    Returns a string appropriate for a user to select between
+    object descriptions, e.g., from a QComboBox.
+
+    \sa description()
+*/
+
+/*!
+    \fn inline QString Phonon::ObjectDescription::description() const
+
+    Returns a more extensive description than the name() function.
+
+    For example, in the case of \l{Phonon::}{AudioOutputDevice}s, this
+    text should make clear which sound source is described; this is
+    sometimes hard to describe or understand from just the name.
+
+    The text is appropriate to present to an end user in for example
+    tool tips of items, with the name()'s as text, in a QComboBox.
+
+*/
+
+/*!
+    \fn inline QVariant Phonon::ObjectDescription::property(const char *name) const
+
+    Returns the property named \a name. A property can be used for
+    extended information, such as the manufacturer of a sound card. The
+    information will usually be given as text.
+
+    If the property is not set an invalid QVariant is returned.
+
+    Qt's backends do not use properties at the time of this writing.
+
+    \sa propertyNames()
+*/
+
+/*!
+    \fn inline QList<QByteArray> Phonon::ObjectDescription::propertyNames() const
+
+    Properties can be used for extended information about a
+    ObjectDescription, e.g., a manufacturer of a sound card. The
+    information will usually be given text.
+
+    This function returns all names that return valid data when
+    property() is called.
+
+    Currently, Qt backends do not use properties for their object
+    descriptions. 
+
+    \sa property()
+*/
+
+/*!
+    \fn inline bool Phonon::ObjectDescription::isValid() const
+
+    Returns true if the device or effect described exists. 
+
+    An ObjectDescription that is invalid, will also have an
+    index() of -1.
+
+    \sa index()
+*/
+
+/*!
+    \fn inline int Phonon::ObjectDescription::index() const
+
+    Returns a unique identifier for this ObjectDescription. Used
+    internally to distinguish between the descriptions.
+
+    Notice that the identifiers are only unique to the type of
+    description, e.g., \l{Phonon::}{AudioOutputDevice} or
+    \l{Phonon::}{EffectDescription}.
+
+    
+*/
+
+/*!
+    \class Phonon::ObjectDescriptionPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \class Phonon::StreamInterface
+    \inmodule Phonon
+    \since 4.4
+    \brief Backend interface to handle media streams (AbstractMediaStream).
+    \author Matthias Kretz <kretz@kde.org>
+    \internal
+
+*/
+
+/*!
+    \fn virtual Phonon::StreamInterface::~StreamInterface()
+*/
+
+/*!
+    \fn virtual void Phonon::StreamInterface::writeData(const QByteArray &data) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::StreamInterface::endOfData() = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::StreamInterface::setStreamSize(qint64 newSize) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::StreamInterface::setStreamSeekable(bool s) = 0
+    \internal
+*/
+
+/*!
+    \fn void Phonon::StreamInterface::connectToSource(const MediaSource &mediaSource)
+    \internal
+*/
+
+/*!
+    \fn void Phonon::StreamInterface::needData()
+    \internal
+*/
+
+/*!
+    \fn void Phonon::StreamInterface::enoughData()
+    \internal
+*/
+
+/*!
+    \fn void Phonon::StreamInterface::seekStream(qint64)
+    \internal
+*/
+
+/*!
+    \fn void Phonon::StreamInterface::reset()
+    \internal
+*/
+
+/*!
+    \fn Phonon::StreamInterface::StreamInterface()
+    \internal
+    \omit
+    For subclasses.
+    \endomit
+*/
+
+/*!
+    \class StreamInterfacePrivate
+    \inmodule Phonon
+    \internal
+*/
+
+/*!
+    \class Phonon::AbstractVideoOutput
+    \inmodule Phonon
+    \internal
+    \since 4.4
+    \brief The AbstractVideoOutput class is the common base class for all video output classes.
+
+    \sa VideoWidget
+*/
+
+/*!
+    \namespace Phonon::Experimental
+    \internal
+*/
+
+/*!
+    \fn Phonon::AbstractVideoOutput::AbstractVideoOutput(AbstractVideoOutputPrivate &d)
+    \internal
+
+    Constructor that is called from derived classes.
+
+    \param parent Standard QObject parent.
+*/
+
+/*!
+    \class Phonon::AbstractVideoOutputPrivate
+    \inmodule Phonon
+    \internal
+    \since 4.4
+*/
+
+/*!
+    \class Phonon::VolumeFaderEffect
+    \inmodule Phonon
+    \internal
+
+    \author Matthias Kretz <kretz@kde.org>
+
+    This effect differs from gradually changing the output volume in that
+    a dedicated effect can change the volume in the smallest possible
+    steps while every other volume control will make more or less
+    noticeable steps.
+
+    \sa AudioOutput::volume()
+*/
+
+/*!
+    \property Phonon::VolumeFaderEffect::volume
+
+    This is the current volume of the output as voltage factor.
+    Setting this property changes the volume immediately.
+
+    1.0 means 100%, 0.5 means 50% voltage/25% power, 0.0 means 0%
+
+    \sa volumeDecibel
+*/
+
+/*!
+    \property Phonon::VolumeFaderEffect::volumeDecibel
+
+    This is the current volume of the output in decibel.
+    Setting this property changes the volume immediately.
+
+    0 dB means no change in volume, -6dB means an attenuation of the
+    voltage to 50% and an attenuation of the power to 25%, -inf dB means
+    silence.
+
+    \sa volume
+*/
+
+/*!
+    \property Phonon::VolumeFaderEffect::fadeCurve
+
+    This property holds the fade curve to be used for the fadeIn(), fadeOut()
+    and fadeTo() slots.
+
+    Defaults to Fade3Decibel.
+
+    \sa FadeCurve
+*/
+
+/*!
+    \enum Phonon::VolumeFaderEffect::FadeCurve
+    Determines the curve of the volume change.
+
+    \value Fade3Decibel Crossfade curve/fast fade out.
+    This is the default fade curve.
+    \value Fade6Decibel Linear fade out.
+    \value Fade9Decibel Slow fade out.
+    \value Fade12Decibel A more extreme version of the -9dB fade.
+
+    \bold{Notes:}
+
+    \c Fade3Decibel is often the best fade for a crossfade, as after half
+    of the time the volume reached -3dB. This means that half the
+    possible power (which is proportional to the square of the
+    voltage) is reached. Summed, the maximum power of two audio
+    signals fading with a -3dB curve will always be equal.
+
+    For fading in or out the -3dB curve is too abrupt in the end.
+
+    With a -6dB fade curve, a volume of -6dB is reached after half of
+    the fading time. -6dB is equal to half of the voltage meaning
+    that the voltage multiplier changes linearly from the start
+    of the fade to the end.
+
+    With the \c Fade9Decibel fade, a volume of -9dB is reached after
+    half of the fade time, so the fade is fast in the beginning and
+    slow at the end. This is a good fade for ending music.
+*/
+
+/*!
+    \fn void Phonon::VolumeFaderEffect::fadeIn(int fadeTime)
+
+    Tells the Fader to change the volume from the current volume to 100%
+    in \a fadeTime milliseconds.
+
+    Short for \c fadeTo(1.0, fadeTime).
+
+    \param fadeTime the fade duration in milliseconds
+
+    \sa fadeTo(), volume
+*/
+
+/*!
+    \fn void Phonon::VolumeFaderEffect::fadeOut(int fadeTime)
+
+    Tells the Fader to change the volume from the current volume to 0%
+    in \a fadeTime milliseconds.
+    Short for \c fadeTo(0.0, fadeTime).
+
+    \param fadeTime the fade duration in milliseconds
+
+    \sa fadeTo
+*/
+
+/*!
+    \fn void Phonon::VolumeFaderEffect::fadeTo(float volume, int fadeTime)
+
+    Tells the Fader to change the volume from the current value to
+    \a volume in \a fadeTime milliseconds.
+
+    \sa fadeIn(), fadeOut()
+*/
+
+/*!
+    \class Phonon::VolumeFaderEffectPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::VolumeFaderInterface
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn virtual Phonon::VolumeFaderInterface::~VolumeFaderInterface()
+    \internal
+*/
+
+/*!
+    \fn virtual float Phonon::VolumeFaderInterface::volume() const
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VolumeFaderInterface::setVolume(float)
+    \internal
+*/
+
+/*!
+    \fn virtual Phonon::VolumeFaderEffect::FadeCurve Phonon::VolumeFaderInterface::fadeCurve() const
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VolumeFaderInterface::setFadeCurve(Phonon::VolumeFaderEffect::FadeCurve)
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VolumeFaderInterface::fadeTo(float, int)
+    \internal
+*/
+
+/*!
+    \class Phonon::AbstractMediaStream
+    \inmodule Phonon
+    \internal
+    \since 4.4
+    \internal
+    \author Matthias Kretz <kretz@kde.org>
+    \brief The AbstractMediaStream class is the base class for custom media data streams.
+
+    This class is subclassed to provide custom data streams for
+    \l{Phonon::}{MediaSource}s.
+
+    The \l{Phonon::}{MediaSource} knows how to handle the most common
+    media sources, such as files and CD. If you need to fetch
+    multimedia from other sources, you can reimplement this class,
+    which can be used by a \l{Phonon::}{MediaSource}.
+
+    When a backend needs more data from the stream, needData() will be
+    called. You must then use writeData() to write the data to the
+    backend. You can either write one time and wait for a new
+    needData() call, or continue to write data until you receive an
+    enoughData() call. When the stream is at its end, call endOfData()
+    instead of writeData().
+
+    Before the custom stream is passed to a \l{Phonon::}{MediaSource},
+    setStreamSize() needs to be called, and also setStreamSeekable()
+    (if the stream is seekable). A good place to do this work is in
+    the constructor. A seekable stream must also reimplement
+    seekStream().
+
+    We show two examples. The first writes data repeatedly until it
+    receives the enoughData() call, while the second only writes once
+    and waits for a new needData() call.
+    
+    Example where data is written repeatedly.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 0
+
+    Example where data is written once:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 1
+
+    \sa Phonon::MediaSource, Phonon::MediaObject 
+
+*/
+
+/*!
+    \fn Phonon::AbstractMediaStream::AbstractMediaStream(QObject *parent = 0)
+    \internal
+
+    Constructs an AbstractMediaStream object with the given \a parent.
+
+*/
+
+/*!
+    \fn qint64 Phonon::AbstractMediaStream::streamSize() const
+
+    Returns the stream size that was set with setStreamSize().
+
+    A negative value means that the length of the stream cannot be known.
+
+    Defaults to 0.
+
+    \sa setStreamSize()
+*/
+
+/*!
+    \fn void Phonon::AbstractMediaStream::setStreamSize(qint64 size)
+
+    Sets the \a size of the stream in number of bytes.
+
+    A negative value means that the length of the stream cannot be known.
+
+    Defaults to 0.
+
+    This function has to be called. A backend will not call needData()
+    until the stream size is set.
+
+    \sa streamSize()
+
+*/
+
+/*!
+    \fn bool Phonon::AbstractMediaStream::streamSeekable() const
+
+    Returns whether your data stream is set as seekable.
+
+    Defaults to \c false.
+
+    \sa setStreamSeekable()
+
+*/
+
+/*!
+    \fn void Phonon::AbstractMediaStream::setStreamSeekable(bool s)
+
+    Sets whether your data stream is seekable. \a s should be true if
+    the stream is seekable; otherwise false.
+
+    Defaults to \c false.
+
+    If you set this to \c true you have to implement the seekStream()
+    function.
+
+    \sa streamSeekable()
+*/
+
+/*!
+    \fn void Phonon::AbstractMediaStream::writeData(const QByteArray &data)
+
+    Sends the media \a data to the backend for decoding.
+
+    Use this function to send data to the backend after needData() has
+    been called.
+
+    If your stream is a push stream, data should be written until the
+    enoughData() function is called. For a pull stream, write data
+    once before the call to needData() function returns.
+
+    If the data is depleted, call endOfData() instead of writeData().
+
+    \warning Don't call this function before the first needData() is emitted.
+
+    \sa needData(), endOfData()
+
+*/
+
+/*!
+    \fn void Phonon::AbstractMediaStream::endOfData()
+
+    Tells the backend that the media data stream is at its end.
+
+    \warning Don't call this function before the first needData() is emitted.
+
+    \sa writeData(), needData()
+*/
+
+/*!
+    \fn void Phonon::AbstractMediaStream::error(Phonon::ErrorType errorType, const QString &errorString)
+
+    If an I/O error occurs you should call this function to make
+    MediaObject go into ErrorState. \c errorType classifies the error,
+    while \a errorString is a textual description of the error suitable
+    for users of Phonon applications.
+
+    \sa MediaObject::errorType(), MediaObject::errorString()
+*/
+
+/*!
+    \fn virtual void Phonon::AbstractMediaStream::reset() = 0
+
+    Reimplement this function to reset the stream. Subsequent calls to writeData should start
+    from the first position of the data unless a seek is requested.
+
+    The function is necessary for the case where a non-seekable MediaStream is
+    played more than once. For a seekable stream the implementation can simply call
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 2
+
+    \sa writeData(), needData()
+*/
+
+/*!
+    \fn virtual void Phonon::AbstractMediaStream::needData() = 0
+
+    Reimplement this function to be notified when the backend needs data.
+
+    When this function is called you should write data to the backend
+    (See writeData()).
+
+    \sa writeData(), endOfData(), enoughData()
+*/
+
+/*!
+    \fn virtual void Phonon::AbstractMediaStream::enoughData()
+
+    If your stream is a push stream, reimplement this function to be
+    notified when the backend has enough data and your stream object
+    may take a break.
+
+    This method is important for pushing data to the backend in order
+    to not fill the backend buffer unnecessarily.
+
+    \sa needData()
+*/
+
+/*!
+    \fn virtual void Phonon::AbstractMediaStream::seekStream(qint64 offset)
+
+    Reimplement this function if your stream is seekable.
+
+    When this function is called the next call to writeData has to be at the
+    requested \a offset.
+
+    \warning Do not call the parent implementation.
+
+    \sa setStreamSeekable(), streamSeekable(), needData()
+*/
+
+/*!
+    \class Phonon::BackendInterface
+    \inmodule Phonon
+    \since 4.4
+    \brief Main Backend class interface
+    \author Matthias Kretz <kretz@kde.org>
+    \internal
+
+    This interface defines the main factory of the backend. The createObject function creates all the
+    objects needed by the frontend.
+
+    The objectDescriptionIndexes and objectDescriptionProperties functions return information about
+    available devices, effects and codecs.
+
+    An implementation could look like this:
+    \snippet snippets/phonon/samplebackend/main.cpp snippet
+
+*/
+
+/*!
+    \fn virtual Phonon::BackendInterface::~BackendInterface()
+    \internal
+
+    Silence gcc's warning.
+*/
+
+/*!
+    \enum Phonon::BackendInterface::Class
+    \internal
+
+    Classes that the createObject() function has to handle.
+
+    \value MediaObjectClass Request to return a \c MediaObject object.
+    \value VolumeFaderEffectClass Request to return a \c VolumeFaderEffect
+    object.
+    \value AudioOutputClass Request to return an \c AudioOutput object.
+    \value AudioDataOutputClass Request to return an \c AudioDataOutput object.
+    \value VisualizationClass Request to return a \c Visualization object.
+    \value VideoDataOutputClass Request to return a \c VideoDataOutput object.
+    \value EffectClass Request to return a \c Effect object.
+    Takes an additional int that specifies the effect ID.
+    \value VideoWidgetClass Request to return a \c VideoWidget object.
+*/
+
+/*!
+    \fn virtual QObject *Phonon::BackendInterface::createObject(Class c, QObject *parent, const QList<QVariant> &args = QList<QVariant>()) = 0
+    \internal
+
+    Returns a new instance of the requested class.
+
+    \param c The requested class.
+    \param parent The parent object.
+    \param args Additional arguments (documented in Class).
+*/
+
+
+/*!
+    \fn virtual QList<int> Phonon::BackendInterface::objectDescriptionIndexes(ObjectDescriptionType type) const = 0
+    \internal
+
+    Returns the unique identifiers for the devices/effects/codecs of the given \a type.
+
+    \param type see ObjectDescriptionType
+*/
+
+/*!
+    \fn virtual QHash<QByteArray, QVariant> Phonon::BackendInterface::objectDescriptionProperties(ObjectDescriptionType type, int index) const = 0
+    \internal
+
+    Given a unique identifier that was returned from objectDescriptionIndexes this function
+    returns a hash mapping property names to values.
+
+    The property "name" must always be present. All other properties are optional.
+
+    \table
+    \header \o Property \o Description
+    \row \o name \o The name of the device/effect/codec/...
+    \row \o description \o A text explaining what this device/effect/codec/... is/can do
+    \row \o icon \o An icon name (using the freedesktop naming scheme) or a QIcon for this
+    device/effect/codec/...
+    \row \o available \o A bool telling whether the device is present or unplugged.
+    \endtable
+
+    \param type see ObjectDescriptionType
+    \param index The unique identifier that is returned from objectDescriptionIndexes
+*/
+
+/*!
+    \fn virtual bool Phonon::BackendInterface::startConnectionChange(QSet<QObject *>) = 0;
+    \internal
+
+    When this function is called the nodes given in the parameter list should
+    not lose any signal data when connections are changed.
+*/
+
+/*!
+    \fn virtual bool Phonon::BackendInterface::connectNodes(QObject *, QObject *) = 0
+    \internal
+
+    Defines a signal connection between the two given nodes.
+*/
+
+/*!
+    \fn virtual bool Phonon::BackendInterface::disconnectNodes(QObject *, QObject *) = 0
+    \internal
+
+    Cuts a signal connection between the two given nodes.
+*/
+
+/*!
+    \fn virtual bool Phonon::BackendInterface::endConnectionChange(QSet<QObject *>) = 0
+    \internal
+
+    When this function is called the nodes given in the parameter list may lose
+    signal data when a port is not connected.
+*/
+
+/*!
+    \fn virtual QStringList Phonon::BackendInterface::availableMimeTypes() const = 0
+    \internal
+
+    Returns all available MIME types.
+*/
+
+/*!
+    \class Phonon::MediaSource
+    \inmodule Phonon
+    \since 4.4
+    \author Matthias Kretz <kretz@kde.org>
+    \brief The MediaSource class provides multimedia data for media objects.
+
+    The MediaSource class manages a source of multimedia content, such
+    as a music or video file, of which data is given to a
+    \l{Phonon::}{MediaObject}.
+
+    The media source knows how fetch its data from several sources,
+    e.g., from files, a QIODevice, or a CD. The possible source types
+    are described by the Type enum. The type of the source is set by
+    the media source itself, and is dependent on the constructor used
+    to create it. Note that it is possible to provide data from any
+    source by implementing a QIODevice.
+
+    The class has several functions to acquire information about the
+    source it manages, e.g., fileName(), url(), and diskType(). The
+    return from these functions are dependent on the type() of the
+    media source.
+
+    Normally, a programmer does not need to be concerned with media
+    sources. It's constructors are implicit, so one can, for instance,
+    send an URL or filename directly to the constructors of the
+    \l{Phonon::}{MediaObject}.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 3
+
+    A MediaSource object cannot be reused for another multimedia
+    source. It is possible to play the same source again, and also
+    stop and start a non-seekable media source, such as a radio
+    stream, with the same MediaSource object.
+
+    \section1 Qt Backends
+
+    Currently, Qt's backends support files in local and remote
+    locations. Support for other sources, such as CD/DVD, are planned
+    for the future.
+
+    \sa MediaObject
+*/
+
+/*!
+    \enum Phonon::MediaSource::Type
+
+    Identifies the type of media described by the MediaSource object.
+
+    \value Invalid The MediaSource object does not describe any valid source.
+    \value LocalFile The MediaSource object describes a local file.
+    \value Url The MediaSource object describes a URL, which can be either a
+    local file or a file on the network.
+    \value Disc The MediaSource object describes a disc, e.g., a CD.
+    \value Stream The MediaSource object describes a data stream.
+                  This is also the type used for \l{QIODevice}s.
+
+    \sa MediaSource::type()
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource()
+    \internal
+
+    Creates an invalid MediaSource object.
+
+    \sa Invalid
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(const QString &fileName)
+
+    Creates a MediaSource object for the file specified by \a
+    fileName.  You can also use this constructor with \l{The Qt
+    Resource System}{Qt resources}
+
+    \omit
+    \param fileName file name of a local media file or a Qt resource that was compiled in.
+    \endomit
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(const QUrl &url)
+
+    Creates a MediaSource object for a the URL specified by \a url.
+    
+    If the multimedia content you would like to play back is on a
+    remote network location, you should use this constructor; though,
+    it also possible to specify an URL to a local file.
+
+    \sa QUrl
+*/
+
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(Phonon::DiscType discType, const QString &deviceName = QString())
+
+    Creates a MediaSource object for the type of disc specified by \a discType in the named
+    device referred to by \a deviceName.
+
+    \note \a deviceName is a platform dependent device name. It can be useful to specify this
+    if the computer has more than one CD drive. On KDE, it is recommended to use the Solid
+    hardware discovery framework to retrieve the device name in a portable way.
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(AbstractMediaStream *stream)
+    \internal
+    Creates a MediaSource object for a data stream.
+
+    Your application can provide the media data by subclassing AbstractMediaStream and
+    passing a pointer to that object. Phonon will never delete the \a stream.
+
+    \param stream The AbstractMediaStream subclass to provide the media data.
+
+    \sa setAutoDelete
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(QIODevice *ioDevice)
+
+    Creates a MediaSource object for the QIODevice specified by \a ioDevice.
+
+    This constructor can be very handy in the combination of QByteArray and QBuffer.
+
+    \a ioDevice is an arbitrary readable QIODevice subclass. If the device is not opened
+    MediaSource will open it as QIODevice::ReadOnly.
+
+    \note Sequential devices can also be used, but MediaObject::isSeekable() will
+    return false as a result.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(MediaSourcePrivate &)
+    \internal
+*/
+
+/*!
+    \fn Phonon::MediaSource::~MediaSource()
+
+    Destroys the MediaSource object.
+*/
+
+/*!
+    \fn Phonon::MediaSource::MediaSource(const MediaSource &other)
+
+    Constructs a copy of the \a other media source.
+
+    This constructor is fast thanks to explicit sharing.
+*/
+
+/*!
+    \fn MediaSource &Phonon::MediaSource::operator=(const MediaSource &other)
+
+    Assigns the \a other media source to this media source and returns a
+    reference to it.
+
+    This operation is fast thanks to explicit sharing.
+*/
+
+/*!
+    \fn bool Phonon::MediaSource::operator==(const MediaSource &other) const
+
+    Returns true if this media source is equal to the \a other media source;
+    otherwise returns false.
+*/
+
+/*!
+    \fn void Phonon::MediaSource::setAutoDelete(bool enable)
+
+    If \a enable is true, the media source will take ownership of the
+    object passed in the \l{Phonon::}{MediaSource}'s constructor
+    object that was passed in the constructor; otherwise, the
+    programmer is responsible for deletion of this object.
+
+    This setting is false by default. If you enable it, you should
+    only access the stream or device as long as you keep the media
+    source object around. As long as you keep the media source
+    wrapping the stream or device, the object will not get deleted.
+
+    \sa autoDelete()
+*/
+
+/*!
+    \fn bool Phonon::MediaSource::autoDelete() const
+
+    Returns the setting of the auto-delete option. The default is
+    false.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn Type Phonon::MediaSource::type() const
+
+    Returns the type of the MediaSource (depends on the constructor
+    that was used).
+
+    \sa Type
+*/
+
+/*!
+    \fn QString Phonon::MediaSource::fileName() const
+
+    Returns the file name of the MediaSource if type() ==
+    LocalFile; otherwise, returns QString().
+
+    \sa type()
+*/
+
+/*!
+    \fn QUrl Phonon::MediaSource::url() const
+    Returns the URL of the MediaSource if type() == URL or type() == LocalFile;
+    otherwise returns QUrl().
+
+    \sa type()
+*/
+
+/*!
+    \fn Phonon::DiscType Phonon::MediaSource::discType() const
+    Returns the disc type of the MediaSource if type() == Disc; otherwise
+    returns NoDisc.
+
+    \sa type()
+*/
+
+/*!
+    \fn QString Phonon::MediaSource::deviceName() const
+
+    Returns the device name of the MediaSource if type() == Disc; otherwise
+    returns QString().
+
+    \sa type()
+*/
+
+/*!
+    \fn AbstractMediaStream *Phonon::MediaSource::stream() const
+    \internal
+    Returns the media stream of the MediaSource if type() == Stream; otherwise
+    returns 0.
+    QIODevices are handled as streams, too.
+*/
+
+/*!
+    \class Phonon::MediaSourcePrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::SeekSlider
+    \inmodule Phonon
+    \since 4.4
+    \author Matthias Kretz <kretz@kde.org>
+    \brief The SeekSlider class provides a slider for seeking to positions in media streams.
+
+    The SeekSlider connects to a \l{Phonon::}{MediaObject}, and
+    controls the seek position in the object's media stream.
+
+    The slider will connect to the necessary signals to keep track of
+    the sliders maximum, minimum, and current values. It will also
+    disable itself for non-seekable streams, and update the media
+    object when the current value of the slider changes.
+
+    Here follows a typical example of SeekSlider usage:
+
+    \snippet doc/src/snippets/seekslider.cpp 0
+
+    \sa Phonon::VolumeSlider, Phonon::VideoWidget, {Music Player Example}
+
+*/
+
+/*!
+    \property Phonon::SeekSlider::iconVisible
+    \brief whether the icon next to the slider is visible
+
+    By default the icon is visible if the platform provides an icon; else
+    it's hidden.
+
+*/
+
+/*!
+    \property Phonon::SeekSlider::tracking
+    \brief whether slider tracking is enabled
+
+    If tracking is enabled (the default), the media seeks
+    while the slider is being dragged. If tracking is
+    disabled, the media seeks only when the user
+    releases the slider.
+*/
+
+/*!
+    \property Phonon::SeekSlider::pageStep
+    \brief the page step interval
+
+    The larger of two natural steps that a slider provides and
+    typically corresponds to the user pressing PageUp or PageDown.
+
+    Defaults to 5 seconds.
+*/
+
+/*!
+    \property Phonon::SeekSlider::singleStep
+    \brief the single step interval
+
+    The smaller of two natural steps that a slider provides and
+    typically corresponds to the user pressing an arrow key.
+
+    Defaults to 0.5 seconds.
+*/
+
+/*!
+    \property Phonon::SeekSlider::orientation
+    \brief the orientation of the slider
+
+    The orientation must be Qt::Vertical or Qt::Horizontal (the default).
+*/
+
+/*!
+    \property Phonon::SeekSlider::iconSize
+    \brief the icon size used for the mute button/icon.
+
+    The default size is defined by the GUI style.
+*/
+
+/*!
+    \fn explicit Phonon::SeekSlider::SeekSlider(QWidget *parent = 0)
+
+    Constructs a seek slider widget with the given \a parent.
+*/
+
+/*!
+    \fn explicit Phonon::SeekSlider::SeekSlider(MediaObject *media, QWidget *parent = 0)
+
+    Constructs a seek slider widget for the specified \a media with the
+    given \a parent.
+*/
+
+/*!
+    \fn Phonon::SeekSlider::~SeekSlider()
+    Destroys the seek slider.
+*/
+
+/*!
+    \fn Phonon::SeekSlider::mediaObject()
+
+    Return the media object this SeekSlider controls.
+
+/*!
+    \class Phonon::SeekSliderPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn void Phonon::SeekSlider::setMediaObject(MediaObject *media)
+
+    Sets the media object to be controlled by this slider to the \a media specified.
+*/
+
+/*!
+    \class Phonon::VideoPlayer
+    \inmodule Phonon
+    \since 4.4
+    \brief The VideoPlayer widget is used to perform playback of video.
+
+    With VideoPlayer you can get results quickly and easily. You can
+    do the standard playback tasks like play(), pause(), and stop(),
+    but also set a playback volume and seek - if the media and backend
+    supports seeking.
+
+    VideoPlayer is provided for convenience and removes the need to
+    create a media graph with a \l{Phonon::}{MediaObject},
+    \l{Phonon::}{AudioOutput}, and \l{Phonon::}{VideoWidget}. If
+    you need functionality not supported by the player, you can build
+    this \l{Building Graphs}{graph} yourself.
+
+    Keep in mind that when the VideoPlayer instance is deleted the playback will
+    stop.
+
+    A play and forget code example:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 4
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \fn Phonon::VideoPlayer::VideoPlayer(Phonon::Category category, QWidget *parent = 0)
+
+    Constructs a new VideoPlayer instance with the specified \a
+    parent.
+
+    \a category is the category used for the audio output device.
+*/
+
+/*!
+    \fn Phonon::VideoPlayer::~VideoPlayer()
+
+    On destruction the playback is stopped, also the audio output is
+    removed so that the desktop mixer will not show the application
+    anymore. If you need a persistent audio output don't use
+    VideoPlayer but MediaObject, VideoPath and VideoOutput.
+*/
+
+/*!
+    \fn qint64 Phonon::VideoPlayer::totalTime() const
+
+    Get the total time (in milliseconds) of the file currently being played.
+*/
+
+/*!
+    \fn qint64 Phonon::VideoPlayer::currentTime() const
+
+    Get the current time (in milliseconds) of the file currently being played.
+*/
+
+/*!
+    \fn float Phonon::VideoPlayer::volume() const
+
+    This is the current volume of the output as voltage factor.
+
+    1.0 means 100%, 0.5 means 50% voltage/25% power, 0.0 means 0%
+*/
+
+/*!
+    \fn bool Phonon::VideoPlayer::isPlaying() const
+
+    Returns true if it is currently playing; otherwise returns false if it
+    is currently stopped or paused
+*/
+
+/*!
+    \fn bool Phonon::VideoPlayer::isPaused() const
+
+    Returns true if it is currently paused; otherwise returns false if it
+    is currently playing or stopped
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::load(const Phonon::MediaSource &source)
+
+    Starts pre-loading the media data from the specified \a source and
+    filling audio buffers in the backend.
+
+    When there's already a media playing (or paused) it will be stopped
+    (the finished signal will not be emitted).
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::play(const Phonon::MediaSource &source)
+
+    Plays the media from the given \a source. Starts playback as fast as
+    possible.
+    This can take a considerable time depending on the URL and the
+    backend.
+
+    If you need low latency between calling play() and the sound actually
+    starting to play on your output device you need to use MediaObject
+    and be able to set the URL before calling play(). Note that
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 5
+    doesn't make a difference: the application should be idle between the
+    load and play calls so that the backend can start preloading the
+    media and fill audio buffers.
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::play()
+
+    Continues playback of paused media. Restarts playback of a stopped
+    media.
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::pause()
+
+    Pauses the playback.
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::stop()
+
+    Stops the playback.
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::seek(qint64 ms)
+
+    Seeks to the requested time. Note that the backend is free to ignore
+    the seek request if the media source isn't seekable.
+
+    The \a ms parameter is the time in milliseconds from the start of
+    the media.
+
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::setVolume(float volume)
+
+    Sets the \a volume of the output as voltage factor.
+
+    1.0 means 100%, 0.5 means 50% voltage/25% power, 0.0 means 0%
+*/
+
+/*!
+    \fn MediaObject *Phonon::VideoPlayer::mediaObject() const
+
+    Returns the media object being used by the player.
+
+    You can manipulate the object, for instance, use it for a
+    \l{Phonon::}{SeekSlider}.
+
+    \sa Phonon::SeekSlider, Phonon::MediaObject
+*/
+
+/*!
+    \fn AudioOutput *Phonon::VideoPlayer::audioOutput() const
+
+    Returns the audio output object being used by the player.
+
+*/
+
+/*!
+    \fn VideoWidget *Phonon::VideoPlayer::videoWidget() const
+
+    Returns the video widget being used by the player.
+*/
+
+/*!
+    \fn void Phonon::VideoPlayer::finished()
+
+    This signal is emitted when the playback finished.
+
+*/
+
+/*!
+    \class Phonon::VideoWidgetPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::MediaObject
+    \inmodule Phonon
+    \since 4.4
+    \brief The MediaObject class provides an interface for media playback.
+
+    \author Matthias Kretz <kretz@kde.org>
+
+    The media object manages a \l{Phonon::}{MediaSource}, which
+    supplies the media object with multimedia content, e.g., from a
+    file. A playback in Phonon is always started by calling the
+    \l{Phonon::MediaObject::}{play()} function.
+
+    The state of play (play, pause, stop, seek) is controlled by the
+    media object, and you can also query the current
+    \l{Phonon::MediaObject::}{state()}. It keeps track of the playback
+    position in the media stream, and emits the
+    \l{Phonon::MediaObject::}{tick()} signal when the current position
+    in the stream changes.
+
+    Notice that most functions of this class are asynchronous, so you
+    cannot rely on that a state is entered after a function call
+    before you receive the \l{Phonon::MediaObject::}{stateChanged()}
+    signal. The description of the \l{Phonon::}{State} enum gives a
+    description of the different states.
+
+    Before play() is called, the media object should be connected to
+    \l{Sinks}{output nodes}, which outputs the media to the
+    underlying hardware. The output nodes required are dependent on
+    the contents of the multimedia file that is played back. Phonon
+    has currently two output nodes: the \l{Phonon::}{AudioOutput} for
+    audio content and \l{Phonon::}{VideoWidget} for video content.  If
+    a \l{Phonon::}{MediaSource} contains both audio and video, both
+    nodes need to be connected to the media object.
+
+    \snippet snippets/phonon.cpp 4
+    \snippet snippets/phonon.cpp 5 
+
+    The media object can queue sources for playback. When it has
+    finished to play one source, it will start playing the next in the
+    queue; the new source is then removed from the queue. The
+    queue can be altered at any time. 
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 7
+
+    You can also make use of the
+    \l{Phonon::MediaObject::}{aboutToFinish()} signal, which is
+    guaranteed to be emitted in time for altering the queue.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 8
+
+    When playback is finishing, i.e., when a media source has been
+    played to the end and the queue is empty, several signals are
+    emitted. First, the media object will emit aboutToFinish() -
+    shortly before the playback has finished - and then finished().
+    The stateChanged() signal will also be emitted with
+    \l{Phonon::}{PausedState}, which is the state the media object
+    takes when the playback is finished. If you wish to enter another
+    state, you can connect a slot to finished() and set a new state
+    there.
+
+    The media object resolves the meta information, such as title,
+    artist, and album. The meta data is not resolved immediately after
+    a new source is provided, but will be resolved before the object
+    leaves the \l{Phonon::}{LoadingState}. The data is queried by
+    string keys - which should follow the Ogg Vorbis specification
+    \l http://xiph.org/vorbis/doc/v-comment.html - or by using the
+    \l{Phonon::}{MetaData} enum. The data available will depend on the
+    type and content of the individual media files.  metaDataChanged()
+    will be emitted when the media object has resolved new meta data.
+
+    Errors encountered during playback and loading of media sources
+    are reported by emitting a state changed signal with
+    \l{Phonon::}{ErrorState}. The severity of the error can be queried
+    by the \l{Phonon::}{ErrorType}. With a \l{Phonon::}{NormalError},
+    it might be possible to continue the playback, for instance, if
+    only audio playback fails for a media source which also has video.
+    A \l{Phonon::}{FatalError} indicates that Phonon cannot continue
+    playback of the current source, but it is possible to try with a
+    different one. A user readable error message is given by
+    errorString().
+
+    \sa Phonon::MediaSource, Phonon::AudioOutput, VideoWidget,
+    {Music Player Example}, {Phonon Overview}, Phonon::VideoPlayer,
+    Phonon::createPlayer()
+
+*/
+
+/*!
+    \property Phonon::MediaObject::transitionTime
+    \brief Defines the time between media sources.
+
+    A positive transition time defines a gap of silence between queued
+    media sources.
+
+    A transition time of 0 ms requests gapless playback (sample precise
+    queuing of the next source).
+
+    A negative transition time defines a crossfade between the queued
+    media sources.
+
+    Defaults to 0 (gapless playback).
+
+    \warning This feature might not work reliably with every
+             backend.
+*/
+
+/*!
+    \property Phonon::MediaObject::prefinishMark
+    \brief Get a signal before playback finishes.
+
+    This property specifies the time in milliseconds the
+    prefinishMarkReached() signal is
+    emitted before the playback finishes. A value of \c 0 disables the
+    signal.
+
+    Defaults to \c 0 (disabled).
+
+    \warning For some media data the total time cannot be determined
+    accurately, therefore the accuracy of the prefinishMarkReached signal
+    can be bad sometimes. Still, it is better to use this method than to
+    look at totalTime() and currentTime() to emulate the behavior
+    because the backend might have more information available than your
+    application does through totalTime() and currentTime().
+
+    \sa prefinishMarkReached()
+*/
+
+/*!
+    \property Phonon::MediaObject::tickInterval
+    \brief The time interval in milliseconds between two ticks.
+
+    The tick interval is the time that elapses between the emission of two tick signals.
+    If you set the interval to \c 0 the tick signal gets disabled.
+
+    Defaults to \c 0 (disabled).
+
+    \warning The back-end is free to choose a different tick interval close
+    to what you asked for. This means that the following code \c may fail:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 9
+    On the other hand the following is guaranteed:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 10
+
+    \sa tick()
+*/
+
+/*!
+    \fn Phonon::MediaObject::~MediaObject()
+
+    Destroys the MediaObject.
+*/
+
+/*!
+    \fn State Phonon::MediaObject::state() const
+
+    Returns the current Phonon::State of the object.
+
+    \sa Phonon::State, stateChanged()
+*/
+
+/*!
+    \fn bool Phonon::MediaObject::hasVideo() const
+
+    Check whether the current media source includes a video stream.
+
+    \warning This information is not resolved immediately after a
+    media object gets a new source. Listen to the hasVideoChanged()
+    signal instead.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 11
+
+    Returns \c true if the media contains video data; otherwise,
+    returns  \c false.
+
+    \sa hasVideoChanged()
+*/
+
+/*!
+    \fn bool Phonon::MediaObject::isSeekable() const
+
+    Check whether it is possible to seek, i.e., change the
+    playback position in the media stream.
+
+    \warning This information is not solved immediately after the
+    media object gets a new media source. The hasVideoChanged() signal
+    is emitted after this information is available.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 12
+
+    Returns \c true if the current media may be seeked; otherwise,
+    returns \c false.
+
+    \sa seekableChanged()
+*/
+
+/*!
+    \fn QStringList Phonon::MediaObject::metaData(const QString &key) const
+
+    Returns the strings associated with the given \a key.
+
+    Backends should use the keys specified in the Ogg Vorbis
+    documentation: \l http://xiph.org/vorbis/doc/v-comment.html
+
+    Therefore the following should work with every backend:
+
+    Note that meta data is not resolved before the \c
+    metaDataChanged() signal is emitted.
+
+    A typical usage looks like this:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 13
+*/
+
+/*!
+    \fn QStringList Phonon::MediaObject::metaData(Phonon::MetaData key) const
+
+    Returns the strings associated with the given \a key.
+
+    Same as above except that the keys are defined in the
+    Phonon::MetaData enum.
+
+    \sa metaDataChanged()
+*/
+
+/*!
+    \fn QMultiMap<QString, QString> Phonon::MediaObject::metaData() const
+
+    Returns all meta data in a multi map. 
+
+    \sa metaDataChanged()
+*/
+
+/*!
+    \fn QString Phonon::MediaObject::errorString() const
+
+    Returns a human-readable description of the last error that occurred.
+    The strings given may vary between backends.
+
+    The error description can be used to give a message to the user -
+    and the developer - when the stateChanged() signal is emitted with
+    \l{Phonon::}{ErrorState}.
+
+    \section1 Qt Backends
+
+    On Windows, Qt fetches its error messages from the DirectShow
+    backend.  This usually includes an error number, which can be
+    looked up in the DirectShow documentation:
+    \l{http://msdn.microsoft.com/archive/default.asp?url=/archive/en-us/dx81_c/directx_cpp/htm/errorandsuccesscodes.asp}.
+
+    On Linux and Mac, the error strings are not fetched directly from
+    the backend, but are created in the backend.
+
+    \sa Phonon::ErrorState, stateChanged()
+*/
+
+/*!
+    \fn ErrorType Phonon::MediaObject::errorType() const
+
+    Tells your program what to do about the last error that occurred.
+    Use this function after receiving a stateChanged() signal with
+    \l{Phonon::}{ErrorState}.
+
+    \sa Phonon::ErrorType, Phonon::ErrorState, stateChanged()
+*/
+
+/*!
+    \fn MediaSource Phonon::MediaObject::currentSource() const
+
+    Returns the current media source.
+
+    \sa setCurrentSource()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::setCurrentSource(const MediaSource &source)
+
+    Set the media source the MediaObject should use.
+
+    After the media object receives a new source, it will enter the
+    \l{Phonon::}{LoadingState}. When it is ready to play, it
+    enters the \l{Phonon::}{StoppedState} unless another state
+    has been requested, e.g., by calling play().
+
+    \a source is the MediaSource object to the media data. You can
+    just as well use a QUrl or QString (for a local file) here.
+
+    We show an example:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 14
+
+    \sa currentSource()
+*/
+
+/*!
+    \fn QList<MediaSource> Phonon::MediaObject::queue() const
+
+    Returns the queued media sources.
+
+    This does list does not include the current source,
+    returned by currentSource().
+
+    \sa enqueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::setQueue(const QList<MediaSource> &sources)
+
+    Set the \a sources to play when the current source has finished.
+
+    This function will overwrite the current queue.
+
+    \sa clearQueue(), enqueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::setQueue(const QList<QUrl> &urls)
+
+    Set the \a urls to play when the current media has finished.
+
+    This function overwrites the current queue.
+
+    \sa clearQueue(), enqueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::enqueue(const MediaSource &source)
+
+    Appends one \a source to the queue.
+
+    You can use this function to provide the next source after the
+    aboutToFinish() signal was emitted.
+
+    \sa aboutToFinish(), setQueue(), clearQueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::enqueue(const QList<MediaSource> &sources)
+
+    Appends multiple \a sources to the queue.
+
+    \sa setQueue(), clearQueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::enqueue(const QList<QUrl> &urls)
+
+    Appends the URLs in \a urls to the media source queue.
+
+    \sa setQueue(), clearQueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::clearQueue()
+
+    Clears the queue of sources.
+
+*/
+
+/*!
+    \fn qint64 Phonon::MediaObject::currentTime() const
+
+    Returns the current time (in milliseconds), i.e., position in the
+    media stream, of the file currently being played.
+
+    \sa tick(), totalTime(), remainingTime()
+*/
+
+/*!
+    \fn qint64 Phonon::MediaObject::totalTime() const
+
+    Get the total time (in milliseconds) of the file currently being played.
+
+    Returns the total time in milliseconds.
+
+    \warning The total time is not defined before the media object
+             enters the \l{Phonon::}{LoadingState}.
+
+    \sa totalTimeChanged()
+*/
+
+/*!
+    \fn qint64 Phonon::MediaObject::remainingTime() const
+
+    Get the remaining time (in milliseconds) of the file currently being played.
+
+    Returns the remaining time in milliseconds.
+
+    \sa totalTime(), currentTime(), totalTimeChanged()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::play()
+
+    Requests playback of the media data to start.
+
+    Playback starts when the stateChanged() signal is emitted with
+    \l{Phonon::}{PlayingState}.
+
+    If the media object is already in a
+    \l{Phonon::}{PlayingState} or in the error state, nothing
+    happens.
+
+    \sa stop(), pause(), stateChanged()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::pause()
+
+    Requests playback to pause, and the media object to enter the
+    \l{Phonon::}{PausedState}. If it was paused already, nothing
+    changes.
+
+    This function is asynchronous and the media might not be paused
+    immediately.
+
+    \sa play(), stop(), stateChanged()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::stop()
+
+    Requests playback to stop, and the media object to enter the
+    \l{Phonon::}{StoppedState}. If it was stopped before
+    nothing changes.
+
+    This function is asynchronous and the media might not be
+    stopped immediately.
+
+    \sa play(), pause(), stateChanged()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::seek(qint64 time)
+
+    Requests a seek to the \a time indicated, specified in milliseconds.
+
+    You can only seek if state() is PlayingState, BufferingState or PausedState.
+
+    The call is asynchronous, so currentTime can still be the old
+    value right after this method was called. If all you need is a
+    slider that shows the current position and allows the user to
+    seek use the class SeekSlider.
+
+    \sa SeekSlider, tick()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::stateChanged(Phonon::State newstate, Phonon::State oldstate)
+
+    This signal is emitted when the state of the MediaObject has changed.
+    The \a newstate and \a oldstate parameters indicate the previous
+    state and current state of the media object.
+
+    If you are only interested in the new state of the media object, you can
+    connect this signal to a slot that accepts only one State argument.
+   
+*/
+
+/*!
+    \fn void Phonon::MediaObject::tick(qint64 time)
+
+    This signal is emitted in intervals defined by the \l{tickInterval}
+    property. The current position of the media object in the stream is
+    given by the \a time parameter and is specified in milliseconds.
+
+    \sa tickInterval
+*/
+
+/*!
+    \fn void Phonon::MediaObject::metaDataChanged()
+
+    This signal is emitted when the media object has resolved new meta
+    data. This will happen before the media object leaves the
+    \l{Phonon::}{LoadingState} after a new source has been set.
+
+    This signal is not emitted when the media object removes the
+    current data, i.e., when a new source is set or an error has
+    occurred. If you need to know this, you can listen for the
+    \l{Phonon::}{ErrorState}, and connect to the
+    \l{Phonon::MediaObject::}{currentSourceChanged()} signal.
+
+    You can get the new meta data with the metaData methods.
+    
+    \sa metaData(), currentSourceChanged(), stateChanged(), Phonon::State
+*/
+
+/*!
+    \fn void Phonon::MediaObject::seekableChanged(bool isSeekable)
+
+    Emitted whenever the return value of isSeekable() changes.
+
+    Normally you'll check isSeekable() first and then let this signal
+    tell you whether seeking is possible now or not. That way you
+    don't have to poll isSeekable().
+
+    \a isSeekable is true  if the stream is seekable (i.e. calling
+    seek() works), and false if the stream is not seekable (i.e.  all
+    calls to seek() will be ignored).
+*/
+
+/*!
+    \fn void Phonon::MediaObject::hasVideoChanged(bool hasVideo)
+
+    Emitted whenever the return value of hasVideo() changes.
+
+    Normally you'll check hasVideo() first and then let this signal
+    tell you whether video is available now or not. That way you
+    don't have to poll hasVideo().
+
+    \a hasVideo is true  when the stream contains video and adding a
+    VideoWidget will show a video, and false if there is no video data
+    in the stream and adding a VideoWidget will show an empty (black)
+    VideoWidget.
+*/
+
+/*!
+    \fn void Phonon::MediaObject::bufferStatus(int percentFilled)
+
+    Provides information about the status of the buffer.
+
+    You can use this signal to show a progress bar to the user when
+    in BufferingState:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 15
+
+    \a percentFilled is a number between 0 and 100 telling you how
+    much the buffer is filled.
+*/
+
+/*!
+    \fn void Phonon::MediaObject::finished()
+
+    Emitted when the object has finished playback.
+    It is not emitted if you call stop(), pause() or
+    load(), but only on end-of-queue or a critical error.
+
+    \warning This signal is not emitted when the current source has
+    finished and there's another source in the queue. It is only
+    emitted when the queue is empty.
+
+    \sa currentSourceChanged(), aboutToFinish(), prefinishMarkReached()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::currentSourceChanged(const Phonon::MediaSource &newSource)
+
+    Emitted when the MediaObject makes a transition to the next
+    MediaSource in the queue.
+
+    In other words, it is emitted when an individual MediaSource is
+    finished.
+
+    \a newSource is the source that starts to play at the time the
+    signal is emitted.
+*/
+
+/*!
+    \fn void Phonon::MediaObject::aboutToFinish()
+
+    Emitted before the playback of the whole queue stops. When this
+    signal is emitted you still have time to provide the next
+    MediaSource, using enqueue(), so that playback continues.
+
+    This signal can be used to provide the next MediaSource just in
+    time for the transition still to work.
+
+    \sa enqueue()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::prefinishMarkReached(qint32 msecToEnd)
+
+    Emitted when there are only \a msecToEnd milliseconds left
+    for playback.
+
+    \param msecToEnd The remaining time until the playback queue finishes.
+
+    \warning This signal is not emitted when there is another source in the queue.
+    It is only emitted when the queue is empty.
+
+    \sa setPrefinishMark(), prefinishMark(), aboutToFinish(), finished()
+*/
+
+/*!
+    \fn void Phonon::MediaObject::totalTimeChanged(qint64 newTotalTime)
+
+    This signal is emitted as soon as the total time of the media file is
+    known or has changed. For most non-local media data the total
+    time of the media can only be known after some time. At that time the
+    totalTime function can not return useful information. You have
+    to wait for this signal to know the real total time.
+
+    \a newTotalTime is the length of the media file in milliseconds.
+
+    \sa totalTime()
+*/
+
+/*!
+    \fn MediaObject *Phonon::createPlayer(Phonon::Category category, const MediaSource &source = MediaSource())
+
+    Convenience function to create a MediaObject and AudioOutput
+    connected by a path. The \l{Phonon::}{MediaObject} return will
+    have \a source set as its current source and the specified \a
+    category.
+
+*/
+
+/*!
+    \class Phonon::MediaObjectPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \namespace Phonon::BackendCapabilities
+    \inmodule Phonon
+    \since 4.4
+    \brief The BackendCapabilities namespace contains functions to describe the capabilities of the multimedia backend.
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \class Phonon::BackendCapabilitiesPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::BackendCapabilities::Notifier
+    \since 4.4
+    \inmodule Phonon
+
+    Notifications about backend capabilities.
+*/
+
+/*!
+    \fn void Phonon::BackendCapabilities::Notifier::capabilitiesChanged()
+
+    This signal is emitted if the capabilities have changed. This can
+    happen if the user has requested a backend change.
+*/
+
+/*!
+    \fn void Phonon::BackendCapabilities::Notifier::availableAudioOutputDevicesChanged()
+
+    This signal is emitted when audio output devices were plugged or
+    unplugged.
+
+    Check BackendCapabilities::availableAudioOutputDevices to get the
+    current list of available devices.
+*/
+
+/*!
+    \fn Notifier *Phonon::BackendCapabilities::notifier()
+
+    Use this function to get a QObject pointer to connect to the capabilitiesChanged signal.
+
+    \return a pointer to a QObject.
+
+    The capabilitiesChanged signal is emitted if the capabilities have changed. This can
+    happen if the user has requested a backend change.
+
+    To connect to this signal do the following:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 16
+
+    \sa Notifier::capabilitiesChanged()
+*/
+
+/*!
+    \fn QStringList Phonon::BackendCapabilities::availableMimeTypes()
+
+    Returns a list of mime types that the Backend can decode.
+
+    \sa isMimeTypeAvailable()
+*/
+
+/*!
+    \fn bool Phonon::BackendCapabilities::isMimeTypeAvailable(const QString &mimeType)
+
+    Often all you want to know is whether one given MIME type can be
+    decoded by the backend. Use this method in favor of
+    availableMimeTypes() as it can give you a negative answer without
+    having a backend loaded.
+
+    Returns true if the given \a mimeType is supported by the backend;
+    otherwise, returns false.
+
+    \sa availableMimeTypes()
+*/
+
+/*!
+    \fn QList<AudioOutputDevice> Phonon::BackendCapabilities::availableAudioOutputDevices()
+
+    Returns the audio output devices the backend supports.
+
+    \return A list of AudioOutputDevice objects that give a name and
+            description for every supported audio output device.
+*/
+
+/*!
+    \fn QList<EffectDescription> Phonon::BackendCapabilities::availableAudioEffects()
+
+    Returns descriptions for the audio effects the backend supports.
+
+    \return A list of AudioEffectDescription objects that give a name and
+    description for every supported audio effect.
+*/
+
+/*!
+    \internal
+    \class ObjectDescriptionModelData
+    \internal
+    \inmodule Phonon
+    \author Matthias Kretz <kretz@kde.org>
+    \brief Data class for models for ObjectDescription objects.
+*/
+
+/*!
+    \typedef Phonon::EffectDescription
+    \relates Phonon::ObjectDescription
+
+    EffectDescription gives a description of an \l{Processors}{audio
+    effect}. It is a typedef of the \l{Phonon::}{ObjectDescription}
+    class. Please see its class description for details.
+
+    EffectDescription is used to create audio \l{Phonon::}{Effect}s,
+    which can be inserted into a media graph, altering an audio
+    stream.
+
+    \sa Phonon::ObjectDescription, {Capabilities Example}, {Media
+    Player}
+
+*/
+
+/*!
+    \class Phonon::ObjectDescriptionModel
+    \inmodule Phonon
+    \internal
+    \since 4.4
+    \brief The ObjectDescriptionModel class provides a model from
+    a list of ObjectDescription objects.
+
+    ObjectDescriptionModel is a read only model that supplies a list
+    using ObjectDescription::name() for the text and
+    ObjectDescription::description() for the tooltip. If set the properties
+    "icon" and "available" are used to set the decoration and disable the
+    item (disabled only visually, you can still select and drag it).
+
+    It also provides the methods moveUp() and moveDown() to order the list.
+    Additionally drag and drop is possible so that
+    QAbstractItemView::InternalMove can be used.
+    The resulting order of the ObjectDescription::index() values can then be
+    retrieved using tupleIndexOrder().
+
+    An example use case would be to give the user a QComboBox to select
+    the output device:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 17
+
+    And to retrieve the selected AudioOutputDevice:
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 18
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \fn inline int Phonon::ObjectDescriptionModel::rowCount(const QModelIndex &parent = QModelIndex()) const
+
+    Returns the number of rows in the model. This value corresponds
+    to the size of the list passed through setModelData.
+
+    \param parent The optional \a parent argument is used in most models to specify
+    the parent of the rows to be counted. Because this is a list if a
+    valid parent is specified the result will always be 0.
+
+    Reimplemented from QAbstractItemModel.
+
+    \sa QAbstractItemModel::rowCount()
+*/
+
+/*!
+    \fn inline QVariant Phonon::ObjectDescriptionModel::data(const QModelIndex &index, int role = Qt::DisplayRole) const
+
+    Returns data from the item with the given \a index for the specified
+    \a role.
+    If the view requests an invalid index, an invalid variant is
+    returned.
+
+    Reimplemented from QAbstractItemModel.
+
+    \sa QAbstractItemModel::data(), Qt::ItemDataRole
+*/
+
+/*!
+    \fn inline Qt::ItemFlags Phonon::ObjectDescriptionModel::flags(const QModelIndex &index) const
+    \internal
+
+    Reimplemented to show unavailable devices as disabled (but still
+    selectable). The \a index of the model index for which to return
+    flags.
+
+*/
+
+/*!
+    \fn inline QList<int> Phonon::ObjectDescriptionModel::tupleIndexOrder() const
+
+    Returns a list of indexes in the same order as they are in the
+    model. The indexes come from the ObjectDescription::index
+    method.
+
+    This is useful to let the user define a list of preference.
+*/
+
+/*!
+    \fn inline int Phonon::ObjectDescriptionModel::tupleIndexAtPositionIndex(int positionIndex) const
+
+    Returns the ObjectDescription::index for the tuple
+    at the given position \a positionIndex. For example a
+    QComboBox will give you the currentIndex as the
+    position in the list. But to select the according
+    AudioOutputDevice using AudioOutputDevice::fromIndex
+    you can use this method.
+
+    \param positionIndex The position in the list.
+*/
+
+/*!
+    \class Phonon::ObjectDescriptionModelDataPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn inline QMimeData *Phonon::ObjectDescriptionModel::mimeData(const QModelIndexList &indexes) const
+    \internal
+    
+    Returns the MIME data that dropMimeData() can use to create new
+    items.
+*/
+
+/*!
+    \fn inline void Phonon::ObjectDescriptionModel::moveUp(const QModelIndex &index)
+
+    Moves the item at the given \a index up. In the resulting list
+    the items at index.row() and index.row() - 1 are swapped.
+
+    Connected views are updated automatically.
+*/
+
+/*!
+    \fn inline void Phonon::ObjectDescriptionModel::moveDown(const QModelIndex &index)
+
+    Moves the item at the given \a index down. In the resulting list
+    the items at index.row() and index.row() + 1 are swapped.
+
+    Connected views are updated automatically.
+*/
+
+/*!
+    \fn explicit inline Phonon::ObjectDescriptionModel::ObjectDescriptionModel(QObject *parent = 0)
+
+    Constructs a ObjectDescription model with the
+    given \a parent.
+*/
+
+/*!
+    \fn explicit inline Phonon::ObjectDescriptionModel::ObjectDescriptionModel(const QList<ObjectDescription<type> > &data, QObject *parent = 0)
+
+    Constructs a ObjectDescription model with the
+    given \a parent and the given \a data.
+*/
+
+/*!
+    \fn inline void Phonon::ObjectDescriptionModel::setModelData(const QList<ObjectDescription<type> > &data)
+
+    Sets the model data using the list provided by \a data.
+
+    All previous model data is cleared.
+*/
+
+/*!
+    \fn inline QList<ObjectDescription<type> > Phonon::ObjectDescriptionModel::modelData() const
+
+    Returns the model data.
+
+    As the order of the list might have changed this can be different
+    to what was set using setModelData().
+*/
+
+/*!
+    \fn inline ObjectDescription<type> Phonon::ObjectDescriptionModel::modelData(const QModelIndex &index) const
+
+    Returns one ObjectDescription of the model data for the given \a index.
+*/
+
+/*!
+    \fn inline Qt::DropActions Phonon::ObjectDescriptionModel::supportedDropActions() const
+
+    This model supports drag and drop to copy or move
+    items.
+*/
+
+/*!
+    \fn inline bool Phonon::ObjectDescriptionModel::dropMimeData(const QMimeData *data, Qt::DropAction action, int row, int column, const QModelIndex &parent)
+
+    Accept drops from other models of the same ObjectDescriptionType.
+
+    The \a data is dropped at the given \a row and \a column; you
+    also receive the \a parent model index.
+
+    If a valid \a parent is given the dropped items will be inserted
+    above that item.
+*/
+
+/*!
+    \fn inline bool Phonon::ObjectDescriptionModel::removeRows(int row, int count, const QModelIndex &parent = QModelIndex())
+
+    Removes count rows starting with the given row.
+
+    If a valid \a parent is given no rows are removed since this is a
+    list model.
+
+    Returns true if the rows were successfully removed; otherwise returns false.
+*/
+
+/*!
+    \fn inline QStringList Phonon::ObjectDescriptionModel::mimeTypes() const
+
+    Returns a list of supported drag and drop MIME types. Currently
+    it only supports one type used internally.
+*/
+
+/*!
+    \class Phonon::EffectInterface
+    \inmodule Phonon
+    \since 4.4
+    \author Matthias Kretz <kretz@kde.org>
+    \internal
+*/
+
+/*!
+    \class Phonon::Effect
+    \inmodule Phonon
+    \since 4.4
+    \brief The Effect class is used to transform audio streams.
+
+    An effect is a media node which is inserted into a path between a
+    \l{Phonon::}{MediaObject} and an audio output node, for instance,
+    an \l{Phonon::}{AudioOutput}, and transforms the media stream on
+    that path.
+
+    Examples may include simple modifiers such as fading or pitch
+    shifting, or more complex mathematical transformations. You can
+    query the backend for available effects with
+    BackendCapabilities::availableAudioEffects().
+
+    In order to use an effect, insert it into the path as follows:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 19
+
+    The effect will immediately begin applying it's transformations on
+    the path. To stop it, remove the Effect from the path.
+
+    For creating an effect, you use the
+    \l{Phonon::}{EffectDescription}, which you get from
+    \l{BackendCapabilities::}{availableAudioEffects()}. We give a code
+    example below.
+
+    \snippet doc/src/snippets/audioeffects.cpp 0
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \fn explicit Phonon::Effect::Effect(const EffectDescription &description, QObject *parent = 0)
+
+    Constructs a new effect object with the given \a description and \a parent object.
+
+    The EffectDescription object determines the type of the effect.
+    See BackendCapabilities::availableAudioEffects().
+*/
+
+/*!
+    \fn Phonon::Effect::Effect(EffectPrivate &dd, QObject *parent)
+    \internal
+*/
+
+/*!
+    \fn Phonon::Effect::~Effect()
+    \internal
+*/
+
+/*!
+    \fn QVariant Phonon::Effect::parameterValue(const EffectParameter &parameter) const
+
+    Returns the value of the given effect \a parameter.
+
+    \sa setParameterValue()
+*/
+
+/*!
+    \fn void Phonon::Effect::setParameterValue(const EffectParameter &parameter, const QVariant &value)
+
+    Sets the given effect \a parameter to the specified \a value.
+
+    \sa parameterValue()
+*/
+
+/*!
+    \fn EffectDescription Phonon::Effect::description() const;
+
+    Returns the description of this effect. This is the same type as was
+    passed to the constructor.
+*/
+
+/*!
+    \fn QList<EffectParameter> Phonon::Effect::parameters() const;
+
+    Returns a list of parameters that this effect provides to control
+    its behavior.
+
+    \sa EffectParameter, EffectWidget
+*/
+
+/*!
+    \class Phonon::EffectPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::AudioOutput
+    \inmodule Phonon
+    \since 4.4
+    \brief The AudioOutput class is used to send data to audio output devices.
+
+    The AudioOutput class plays sound over a sound device. The audio
+    output needs to be connected to a \l{Phonon::}{MediaObject} using
+    \l{Phonon::}{createPath()}. To start playback, you call
+    \l{Phonon::MediaObject::}{play()} on the media object.
+
+    \snippet snippets/phonon.cpp 2
+
+    The class supports changing the volume(). It is also possible to
+    mute the sound. 
+
+    To find out what \l{Phonon::}{AudioOutputDevice}s are available
+    for AudioOutput, you can call
+    BackendCapabilities::availableAudioDevices(). A default device is
+    selected by the backend, but it is possible to set the device to
+    be used with setOutputDevice(). The outputDeviceChanged() signal
+    will be emitted if the device changes.
+
+    If an error occurs with the playback, for instance, if no valid
+    output device is found, the media object will receive a
+    stateChanged() signal with the \l{Phonon::}{ErrorState}.
+
+    \author Matthias Kretz <kretz@kde.org>
+    \sa Phonon::VolumeSlider, {Music Player Example}, BackendCapabilities
+*/
+
+/*!
+    \property Phonon::AudioOutput::name
+
+    This is the name that appears in Mixer applications that control
+    the volume of this output.
+
+*/
+
+/*!
+    \property Phonon::AudioOutput::volume
+
+    This is the current loudness of the output.  \omit The volume is a
+    real value between 0.0 (minimum) and 1.0 (maximum). The volume
+    follows the sound device used, with 1.0 being the maximum volume
+    the device can produce. \endomit
+
+    (it is using Stevens' law
+    to calculate the change in voltage internally).
+
+    \sa volumeDecibel
+*/
+
+/*!
+    \property Phonon::AudioOutput::volumeDecibel
+
+    This is the current volume of the output in decibel.
+
+    0 dB means no change in volume, -6dB means an attenuation of the
+    voltage to 50% and an attenuation of the power to 25%, -inf dB means
+    silence.
+
+    \sa volume
+*/
+
+/*!
+    \property Phonon::AudioOutput::outputDevice
+    This property holds the (hardware) destination for the output.
+
+    The default device is determined by the \l{Phonon::}{Category} and the global
+    configuration for that category. Normally you don't need
+    to override this setting - letting the user change the global
+    configuration is the right choice. You can still override the
+    device though, if you have good reasons to do so.
+
+    \sa outputDeviceChanged()
+*/
+
+/*!
+    \property Phonon::AudioOutput::muted
+    This property tells whether the output is muted.
+
+    Muting the output has the same effect as calling setVolume(0.0).
+*/
+
+/*!
+    \fn explicit Phonon::AudioOutput::AudioOutput(Phonon::Category category, QObject *parent = 0)
+
+    Creates a new AudioOutput with the given \a parent that defines
+    output to a physical device.
+
+    The \a category can be used by mixer applications to group volume
+    controls of applications into categories. That makes it easier for
+    the user to identify the programs.
+    The category is also used for the default output device that is
+    configured centrally. As an example: often users want to have the
+    audio signal of a VoIP application go to their USB headset while
+    all other sounds should go to the internal soundcard.
+
+    \sa Phonon::categoryToString(), outputDevice
+*/
+
+/*!
+    \fn explicit Phonon::AudioOutput::AudioOutput(QObject *parent = 0)
+
+    Creates a new AudioOutput that defines output to the system
+    default device with the \{Phonon::Category::}{NoCategory} category
+
+    \sa Phonon::categoryToString(), outputDevice
+*/
+
+/*!
+    \fn Phonon::Category Phonon::AudioOutput::category() const
+
+    Returns the category of this output.
+
+    \sa Phonon::AudioOutput::AudioOutput()
+*/
+
+/*!
+    \fn void Phonon::AudioOutput::volumeChanged(qreal newVolume)
+
+    This signal is emitted whenever the volume has changed. As the
+    volume can change without a call to setVolume (calls over dbus)
+    this is important to keep a widget showing the current volume up
+    to date.
+
+    \a newVolume is the new volume level.
+
+    \sa setVolume(), volume()
+*/
+
+/*!
+    \fn void Phonon::AudioOutput::mutedChanged(bool muted)
+
+    This signal is emitted when the muted property has changed. The \a muted
+    value passed by the signal indicates the state of the muted property.
+    As this property can change by IPC (DBus) calls a UI element showing
+    the muted property should listen to this signal.
+*/
+
+/*!
+    \fn void Phonon::AudioOutput::outputDeviceChanged(const Phonon::AudioOutputDevice &newAudioOutputDevice)
+
+    This signal is emitted when the (hardware) device for the output
+    has changed. \a newAudioOutputDevice is the new device.
+
+    The change can happen either through setOutputDevice or if the
+    global configuration for the used category has changed.
+
+    \sa outputDevice
+*/
+
+/*!
+    \class Phonon::AudioOutputPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::EffectParameter
+    \inmodule Phonon
+    \author Matthias Kretz <kretz@kde.org>
+    \brief The EffectParameter class describes one parameter of an effect.
+
+    You fetch the parameters of an \l{Phonon::}{Effect} with
+    \l{Phonon::}{Effect::parameters()}.
+
+    \snippet doc/src/snippets/phononeffectparameter.cpp 0
+
+    To describe itself, an effect parameter gives a name() and
+    possibly description() (depending on the backend used). These are
+    suited to present the effect parameter to the user of a Phonon
+    application.
+
+    Note that effects are created by the backend, and that
+    their name and descriptions may vary.
+
+    The value of an effect parameter is stored in a \l{QVariant},
+    of which type() is usually \c int or \c double. 
+
+    The value is retrieved with \l{Phonon::}{Effect::parameterValue()}
+    and set with \l{Phonon::Effect::}{setParameterValue()} - both of
+    which takes the EffectParameter as argument. Note that not all
+    effect parameters support setting of their value. 
+
+    You get the values a parameter can take with possibleValues(); an
+    empty list is returned if the values are continuous.
+
+    A parameter may also specify default(), minimum(), and maximum()
+    values. Values are returned as \l{QVariant}s. If the parameter
+    does not have the requested value, an \l{QVariant::Invalid}
+    invalid QVariant is returned from these functions.
+
+    The \l{Phonon::}{EffectWidget} provides a widget with which one
+    can control the parameters of an \l{Phonon::}{Effect}.
+
+    \snippet doc/src/snippets/phononeffectparameter.cpp 1
+
+    \sa Effect, EffectWidget, {Capabilities Example}
+*/
+
+/*!
+    \fn Phonon::EffectParameter::EffectParameter()
+    \internal
+
+    Creates an invalid effect parameter.
+*/
+
+/*!
+    \fn const QString &Phonon::EffectParameter::name() const
+
+    The name of the parameter. Can be used as the label.
+
+    \return A label for the parameter.
+*/
+
+/*!
+    \fn const QString &Phonon::EffectParameter::description() const
+
+    The parameter may come with a description (LADSPA doesn't have a
+    field for this, so don't expect many effects to provide a
+    description).
+
+    The description can be used for a tooltip or WhatsThis help.
+
+    \return A text describing the parameter.
+*/
+
+/*!
+    \fn QVariant::Type Phonon::EffectParameter::type() const
+
+    Returns the parameter type.
+
+    Common types are QVariant::Int, QVariant::Double, QVariant::Bool and QVariant::String. When
+    QVariant::String is returned you get the possible values from possibleValues.
+*/
+
+/*!
+    \fn bool Phonon::EffectParameter::isLogarithmicControl() const
+
+    Returns whether the parameter should be
+    displayed using a logarithmic scale. This is particularly useful for
+    frequencies and gains.
+*/
+
+/*!
+    \fn QVariant Phonon::EffectParameter::minimumValue() const
+
+    The minimum value to be used for the control to edit the parameter.
+
+    If the returned QVariant is invalid the value is not bounded from
+    below.
+*/
+
+/*!
+    \fn QVariant Phonon::EffectParameter::maximumValue() const
+
+    The maximum value to be used for the control to edit the parameter.
+
+    If the returned QVariant is invalid the value is not bounded from
+    above.
+*/
+
+/*!
+    \fn QVariant Phonon::EffectParameter::defaultValue() const
+
+    The default value.
+*/
+
+/*!
+    \fn QVariantList Phonon::EffectParameter::possibleValues() const
+
+    The possible values to be used for the control to edit the parameter.
+
+    if the value of this parameter is to be picked from predefined values
+    this returns the list (otherwise it returns an empty QVariantList).
+*/
+
+/*!
+    \fn bool Phonon::EffectParameter::operator<(const EffectParameter &rhs) const
+
+    \internal
+    compares the ids of the parameters
+*/
+
+/*!
+    \fn bool Phonon::EffectParameter::operator>(const EffectParameter &rhs) const
+
+    \internal
+    compares the ids of the parameters
+*/
+
+/*!
+    \fn bool Phonon::EffectParameter::operator==(const EffectParameter &rhs) const
+
+    \internal
+    compares the ids of the parameters
+*/
+
+/*!
+    \fn EffectParameter &EffectParameter::operator=(const EffectParameter &other)
+
+    Assigns the \a other effect parameter to this parameter and returns
+    a reference to this parameter.
+*/
+
+/*!
+    \enum Phonon::EffectParameter::Hint
+
+    Only for backend developers:
+
+    Flags to set the return values of isToggleControl(),
+    isLogarithmicControl(), isIntegerControl(), isBoundedBelow() and
+    isBoundedAbove(). The values of the flags correspond to the values
+    used for LADSPA effects.
+
+    \value ToggledHint
+    If this hint is set it means that
+    the the control has only two states: zero and non-zero
+    (see isToggleControl()).
+
+    \value LogarithmicHint
+    LADSPA's SAMPLE_RATE hint needs to be translated by the backend
+    to normal bounds, as the backend knows the sample rate - and the
+    frontend doesn't (see isLogarithmicControl()).
+
+    \value IntegerHint See isIntegerControl().
+*/
+
+/*!
+    \fn Phonon::EffectParameter::EffectParameter(int parameterId,
+        const QString &name, EffectParameter::Hints hints,
+        const QVariant &defaultValue, const QVariant &min = QVariant(),
+        const QVariant &max = QVariant(), const QVariantList &values = QVariantList(),
+        const QString &description = QString())
+
+    Only to be used by backend implementations:
+
+    Creates a new effect parameter.
+
+    \a parameterId This is a number to uniquely identify the
+    parameter. The id is used for value() and setValue().
+
+    \a name is the name/label for this parameter.
+
+    \a hints sets the hints for the type of parameter.
+
+    \a defaultValue The value that should be used as a default.
+
+    \a min is the minimum value allowed for this parameter. You only
+    need to set this if the BoundedBelowHint is set.
+
+    \a max is the maximum value allowed for this parameter. You only
+    need to set this if the BoundedAboveHint is set.
+
+    The \a values parameter is the values that the effect parameter
+    can take (only applies if non-continuous) 
+
+    \a description is a descriptive text for the parameter
+    (explaining what it controls) to be used as a tooltip or
+    WhatsThis help.
+*/
+
+/*!
+    \fn int Phonon::EffectParameter::id() const
+
+    \internal
+
+    Returns the parameter's identifier.
+*/
+
+/*!
+    \class Phonon::AudioOutputInterface
+    \inmodule Phonon
+    \since 4.4
+    \internal
+    \brief Interface for AudioOutput objects
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \fn virtual Phonon::AudioOutputInterface::~AudioOutputInterface()
+    \internal
+*/
+
+/*!
+    \fn virtual qreal Phonon::AudioOutputInterface::volume() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::AudioOutputInterface::setVolume(qreal) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual int Phonon::AudioOutputInterface::outputDevice() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual bool Phonon::AudioOutputInterface::setOutputDevice(int) = 0
+    \internal
+*/
+
+/*!
+    \class Phonon::Path
+    \inmodule Phonon
+    \since 4.4
+    \brief The Path class describes connections between media nodes.
+
+    In a \l{Building Graphs}{media graph}, \l{Phonon::}{MediaNode}s
+    are connected by Paths. The multimedia travels in streams over
+    these paths.
+
+    You create a path between two media nodes using the static
+    Phonon::createPath() function, which takes two nodes as arguments.
+    The first argument will send the media stream to the second.
+    Please refer to the class description of the individual media
+    nodes and the Phonon \l{Phonon Overview}{overview} to see which
+    nodes can be connected to each other.
+
+    Paths are also used to insert audio \l{Phonon::}{Effect}s between
+    two media nodes. The effect will then alter the stream on the
+    path. Notice that \l{Phonon::}{Effect}s also are media nodes, but
+    that insertEffect() - instead of Phonon::createPath() - is used to
+    insert them into the media graph.
+
+    The following code example shows how create a path between two
+    media nodes and insert an effect on that path.
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 20
+
+    \author Matthias Kretz <kretz@kde.org>
+
+    \sa Phonon::MediaNode, Phonon::MediaObject, Phonon::AudioOutput,
+        Phonon::VideoWidget
+
+*/
+
+/*!
+    \fn Phonon::Path::~Path();
+
+    Destroys this reference to the Path. If the path was valid the connection is not broken
+    as both the source and the sink MediaNodes still keep a reference to the Path.
+
+    \sa disconnect()
+*/
+
+/*!
+    \fn Phonon::Path::Path();
+
+    Creates an invalid path.
+
+    You can still make it a valid path by calling reconnect. It is
+    recommended to use the Phonon::createPath() function to create
+    paths.
+
+    \sa Phonon::createPath(), isValid()
+*/
+
+/*!
+    \fn Phonon::Path::Path(const Path &path);
+
+    Constructs a copy of the other \a path specified.
+
+    This constructor is fast thanks to explicit sharing.
+*/
+
+/*!
+    \fn bool Phonon::Path::isValid() const;
+
+    A path is considered valid if it is connected to two media nodes,
+    in which case this function returns true. If it is connected to
+    one or no media nodes, it is consider invalid, and this function
+    will then return false.
+*/
+
+/*!
+    \fn Effect *Phonon::Path::insertEffect(const EffectDescription &desc, Effect *insertBefore = 0);
+
+    Creates and inserts an effect into the path.
+
+    You may insert effects of the same class as often as you like,
+    but if you insert the same object, the call will fail.
+
+    \a desc is the EffectDescription object for the effect to be inserted.
+
+    If you already inserted an effect you can
+    tell with \a insertBefore in which order the data gets
+    processed. If this is \c 0 the effect is appended at the end of
+    the processing list. If the effect has not been inserted before
+    the method will do nothing and return \c false.
+
+    Returns a pointer to the effect object if it could be inserted
+    at the specified position. If \c 0 is returned, the effect was not
+    inserted.
+
+    Below is a code example for inserting an effect into a path:
+
+    \snippet doc/src/snippets/audioeffects.cpp 0
+
+    \sa removeEffect(), effects()
+*/
+
+/*!
+    \fn bool Phonon::Path::insertEffect(Effect *effect, Effect *insertBefore = 0);
+
+    Inserts the given \a effect into the path before the effect specified by \a insertBefore
+    and returns true if successful; otherwise returns false.
+
+    If \a insertBefore is zero, the effect is appended to the processing list.
+
+    You may insert effects of the same class as often as you like, but if you insert
+    the same object, the call will fail.
+
+    \a effect will be inserted right before \a insertBefore. If
+    \a insertBefore is \c 0, the effect is appended at the end of the
+    processing list. If the effect has not been inserted before the
+    method will do nothing and return \c false.
+
+    Returns whether the effect could be inserted at the specified
+    position. If \c false is returned the effect was not inserted.
+
+    \sa removeEffect(), effects()
+*/
+
+/*!
+    \fn bool Phonon::Path::removeEffect(Effect *effect);
+
+    Removes the given \a effect from the path and returns true; otherwise returns false.
+
+    Removes an \a effect from the path.
+
+    If the effect is deleted while it is still connected, the effect will be removed
+    automatically.
+
+    \omit
+    \param effect The effect to be removed.
+
+    \return Returns whether the call was successful. If it returns
+    \c false the effect could not be found in the path, meaning it
+    has not been inserted before.
+    \endomit
+
+    \sa insertEffect(), effects()
+*/
+
+/*!
+    \fn QList<Effect *> Phonon::Path::effects() const;
+
+    Returns a list of Effect objects that are currently
+    used as effects. The order in the list determines the order the
+    signal is sent through the effects.
+
+    \return A list with all current effects.
+
+    \sa insertEffect(), removeEffect()
+*/
+
+/*!
+    \fn bool Phonon::Path::reconnect(MediaNode *source, MediaNode *sink);
+
+    Changes the media nodes the path is connected to by connecting the path
+    to the \a source and \a sink nodes specified. Returns true if successful;
+    otherwise returns false.
+
+    If unsuccessful, the path remains connected to the same nodes as before.
+
+    \sa Phonon::createPath(), {Phonon Overview}
+*/
+
+/*!
+    \fn bool Phonon::Path::disconnect();
+
+    Tries to disconnect the path from the MediaNodes it is connected to, returning
+    true if successful or false if unsuccessful.
+
+    If successful, the path is invalidated: isValid() will returns false.
+*/
+
+/*!
+    \fn Path &Phonon::Path::operator=(const Path &p);
+
+    Assigns \a p to this Path and returns a reference to this Path.
+
+    This operation is fast thanks to explicit sharing.
+*/
+
+/*!
+    \fn bool Phonon::Path::operator==(const Path &p) const;
+
+    Returns true if this Path is equal to \a p; otherwise returns false;
+*/
+
+/*!
+    \fn bool Phonon::Path::operator!=(const Path &p) const;
+
+    Returns true if this Path is not equal to \a p; otherwise returns false;
+*/
+
+/*!
+    \fn Path Phonon::createPath(MediaNode *source, MediaNode *sink);
+
+    \relates Phonon::Path
+    Creates a new Path connecting the two MediaNodes \a source and \a sink.
+
+    The implementation will automatically select the right format and media type. E.g. connecting a
+    MediaObject and AudioOutput will create a Path object connecting the audio. This might be
+    represented as PCM or perhaps even AC3 depending on the AudioOutput object.
+
+    \param source The MediaNode to connect an output from
+    \param sink The MediaNode to connect to.
+*/
+
+/*!
+    \class Phonon::PathPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::MediaObjectInterface
+    \inmodule Phonon
+    \since 4.4
+    \internal
+    \brief Backend interface for media sources.
+    \author Matthias Kretz <kretz@kde.org>
+
+    The backend implementation has to provide two signals, that are not defined
+    in this interface:
+    \list
+    \o \target phonon_MediaObjectInterface_stateChanged
+    void stateChanged(Phonon::State newstate, Phonon::State oldstate)
+
+    Emitted when the state of the MediaObject has changed.
+    In case you're not interested in the old state you can also
+    connect to a slot that only has one State argument.
+
+    \param newstate The state the Player is in now.
+    \param oldstate The state the Player was in before.
+
+    \o \target phonon_MediaObjectInterface_tick
+    void tick(qint64 time)
+
+    This signal gets emitted every tickInterval milliseconds.
+
+    \param time The position of the media file in milliseconds.
+
+    \sa setTickInterval()
+    \sa tickInterval()
+    \endlist
+
+    \sa MediaObject
+*/
+
+/*!
+    \fn virtual Phonon::MediaObjectInterface::~MediaObjectInterface()
+    \internal
+*/
+
+/*!
+    \fn virtual qint64 Phonon::MediaObjectInterface::remainingTime() const
+    \internal
+*/
+
+/*!
+    \fn virtual qint32 Phonon::MediaObjectInterface::prefinishMark() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::setPrefinishMark(qint32) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual qint32 Phonon::MediaObjectInterface::transitionTime() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::setTransitionTime(qint32) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::play() = 0
+    \internal
+
+    Requests the playback to start.
+
+    This method is only called if the state transition to PlayingState is possible.
+
+    The backend should react immediately
+    by either going into PlayingState or BufferingState if the
+    former is not possible.
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::pause() = 0
+    \internal
+
+    Requests the playback to pause.
+
+    This method is only called if the state transition to PausedState is possible.
+
+    The backend should react as fast as possible. Go to PausedState
+    as soon as playback is paused.
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::stop() = 0
+    \internal
+
+    Requests the playback to be stopped.
+
+    This method is only called if the state transition to StoppedState is possible.
+
+    The backend should react as fast as possible. Go to StoppedState
+    as soon as playback is stopped.
+
+    A subsequent call to play() will start playback at the beginning of
+    the media.
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::seek(qint64 milliseconds) = 0
+    \internal
+
+    Requests the playback to be seeked to the given time.
+
+    The backend does not have to finish seeking while in this function
+    (i.e. the backend does not need to block the thread until the seek is
+    finished; even worse it might lead to deadlocks when using a
+    ByteStream which gets its data from the thread this function would
+    block).
+
+    As soon as the seek is done the currentTime() function and
+    the tick() signal will report it.
+
+    \param milliseconds The time where playback should seek to in
+    milliseconds.
+*/
+
+/*!
+    \fn virtual qint32 Phonon::MediaObjectInterface::tickInterval() const = 0
+    \internal
+
+    Return the time interval in milliseconds between two ticks.
+
+    Returns the tick interval that it was set to (might not
+    be the same as you asked for).
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::setTickInterval(qint32 interval) = 0
+    \internal
+
+    Change the interval the tick signal is emitted. Set \a interval to 0 to
+    disable the signal.
+
+    \a interval tick interval in milliseconds
+
+    Returns the tick interval that it was set to (might not be the same as you
+    asked for).
+
+*/
+
+/*!
+    \fn virtual bool Phonon::MediaObjectInterface::hasVideo() const = 0
+    \internal
+
+    Check whether the media data includes a video stream.
+
+    Returns true if the media contains video data
+*/
+
+/*!
+    \fn virtual bool Phonon::MediaObjectInterface::isSeekable() const = 0
+    \internal
+
+    If the current media may be seeked returns true.
+
+    Returns whether the current media may be seeked.
+*/
+
+/*!
+    \fn virtual qint64 Phonon::MediaObjectInterface::currentTime() const = 0
+    \internal
+
+    Get the current time (in milliseconds) of the file currently being played.
+*/
+
+/*!
+    \fn virtual Phonon::State Phonon::MediaObjectInterface::state() const = 0
+    \internal
+
+    Get the current state.
+*/
+
+/*!
+    \fn virtual QString Phonon::MediaObjectInterface::errorString() const = 0
+    \internal
+
+    A translated string describing the error.
+*/
+
+/*!
+    \fn virtual Phonon::ErrorType Phonon::MediaObjectInterface::errorType() const = 0
+    \internal
+
+    Tells your program what to do about the error.
+
+    \sa Phonon::ErrorType
+*/
+
+/*!
+    \fn virtual qint64 Phonon::MediaObjectInterface::totalTime() const = 0
+    \internal
+
+    Returns the total time of the media in milliseconds.
+
+    If the total time is not know return -1. Do not block until it is
+    known, instead emit the totalTimeChanged signal as soon as the total
+    time is known or changes.
+*/
+
+/*!
+    \fn virtual MediaSource Phonon::MediaObjectInterface::source() const = 0
+    \internal
+
+    Returns the current source.
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::setSource(const MediaSource &) = 0
+    \internal
+
+    Sets the current source. When this function is called the MediaObject is
+    expected to stop all current activity and start loading the new
+    source (i.e. go into LoadingState).
+
+    It is expected that the
+    backend now starts preloading the media data, filling the audio
+    and video buffers and making all media meta data available. It
+    will also trigger the totalTimeChanged signal.
+
+    If the backend does not know how to handle the source it needs to
+    change state to Phonon::ErrorState. Don't bother about handling KIO
+    URLs. It is enough to handle AbstractMediaStream sources correctly.
+
+    \warning Keep the MediaSource object around as long as the backend
+    uses the AbstractMediaStream returned by the MediaSource. In case
+    that no other reference to the MediaSource exists and it is set to
+    MediaSource::autoDelete, the AbstractMediaStream is deleted when the
+    last MediaSource ref is deleted.
+*/
+
+/*!
+    \fn virtual void Phonon::MediaObjectInterface::setNextSource(const MediaSource &source) = 0
+    \internal
+
+    Sets the next source to be used for transitions. When a next source
+    is set playback should continue with the new source. In that case
+    finished and prefinishMarkReached are not emitted.
+
+    \param source The source to transition to (crossfade/gapless/gap). If
+    \a source is an invalid MediaSource object then the queue is empty
+    and the playback should stop normally.
+
+    \warning Keep the MediaSource object around as long as the backend
+    uses the AbstractMediaStream returned by the MediaSource. In case
+    that no other reference to the MediaSource exists and it is set to
+    MediaSource::autoDelete, the AbstractMediaStream is deleted when the
+    last MediaSource ref is deleted.
+*/
+
+/*!
+    \class Phonon::EffectWidget effectwidget.h Phonon/EffectWidget
+    \inmodule Phonon
+    \since 4.4
+    \brief The EffectWidget class provides a widget to control the parameters of an Effect.
+
+    The EffectWidget class provides a widget, with which an effects
+    parameters can be controlled. The widget does not have an API,
+    and is constructed with the \l{Phonon::}{Effect}, of which
+    parameters should be controlled.
+
+    \snippet doc/src/snippets/audioeffects.cpp 1
+
+    The following image shows an example of an effect widget.
+
+    \image effectwidget.png
+
+    Note that some audio effects do not have parameters, and the
+    widget will then not \l{QWidget::}{show()} at all.
+
+    \sa Effect, BackendCapabilities, EffectDescription
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \class Phonon::AbstractAudioOutput
+    \inmodule Phonon
+    \internal
+    \brief Provides a common base class for all audio outputs.
+
+    \sa AudioOutput
+*/
+
+/*!
+    \fn Phonon::AbstractAudioOutput::~AbstractAudioOutput()
+    \internal
+*/
+
+/*!
+    \class Phonon::AbstractAudioOutputPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class AudioOutputAdaptor
+    \inmodule Phonon
+    \brief Provides an adaptor class for interface org.kde.Phonon.AudioOutput
+    \internal
+*/
+
+/*!
+    \class Phonon::VolumeSlider
+    \inmodule Phonon
+    \since 4.4
+    \brief The VolumeSlider widget provides a slider that is used to control the volume of an audio output device.
+
+    The slider also displays an icon indicating if the volume of the
+    \l{Phonon::}{AudioOutput} it is connected to is muted. The icon
+    can be removed with setMuteVisible().
+
+    It is possible to set the \l{maximumVolume}{maximum} value of the
+    slider. By default, the minimum and maximum values of the slider
+    are 0.0 (no sound) to 1.0 (the maximum volume the audio output can
+    produce).
+
+    Here follows a code example:
+
+    \snippet doc/src/snippets/volumeslider.cpp 0
+
+    \omit mention how to change the style of the slider. \endomit
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \property Phonon::VolumeSlider::maximumVolume
+
+    This property holds the maximum volume that can be set with this slider.
+
+    By default the maximum value is 1.0 (100%).
+*/
+
+/*!
+    \property Phonon::VolumeSlider::orientation
+    This property holds the orientation of the slider.
+
+    The orientation must be Qt::Vertical (the default) or Qt::Horizontal.
+*/
+
+/*!
+    \property Phonon::VolumeSlider::tracking
+    This property holds whether slider tracking is enabled.
+
+    If tracking is enabled (the default), the volume changes
+    while the slider is being dragged. If tracking is
+    disabled, the volume changes only when the user
+    releases the slider.
+*/
+
+/*!
+    \property Phonon::VolumeSlider::pageStep
+    This property holds the page step.
+
+    The larger of two natural steps that a slider provides and
+    typically corresponds to the user pressing PageUp or PageDown.
+
+    Defaults to 5 (5% of the voltage).
+*/
+
+/*!
+    \property Phonon::VolumeSlider::singleStep
+    This property holds the single step.
+
+    The smaller of two natural steps that a slider provides and
+    typically corresponds to the user pressing an arrow key.
+
+    Defaults to 1 (1% of the voltage).
+*/
+
+/*!
+    \property Phonon::VolumeSlider::muteVisible
+    This property holds whether the mute button/icon next to the slider is visible.
+
+    By default the mute button/icon is visible.
+*/
+
+/*!
+    \property Phonon::VolumeSlider::iconSize
+    \brief the icon size used for the mute button/icon.
+
+    The default size is defined by the GUI style.
+*/
+
+/*!
+    \fn explicit Phonon::VolumeSlider::VolumeSlider(QWidget *parent = 0)
+    Constructs a new volume slider with the given \a parent.
+*/
+
+/*!
+    \fn explicit Phonon::VolumeSlider::VolumeSlider(AudioOutput *output, QWidget *parent = 0)
+    Constructs a new volume slider with the given \a output object and \a parent.
+*/
+
+/*!
+    \fn Phonon::VolumeSlider::~VolumeSlider()
+*/
+
+/*!
+    \fn AudioOutput *Phonon::VolumeSlider::audioOutput() const
+*/
+
+/*!
+    \fn void Phonon::VolumeSlider::setAudioOutput(Phonon::AudioOutput *output)
+
+    Sets the audio output object to be controlled by this slider to the specified
+    \a output object.
+*/
+
+/*!
+    \class Phonon::VolumeSliderPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::MediaController
+    \inmodule Phonon
+    \internal
+    \since 4.4
+    \brief The MediaController class controls optional features of a media file/device.
+    
+    Some media sources have content that the \l{Phonon::}{MediaObject}
+    does not provide control over, for instance, chapters in a DVD
+    file. The functionality the media controller offers is
+    dependent on the type of media source that is played back.
+    Commonly, the media controller allows you to:
+
+    \list
+        \o Navigate between \bold chapters.
+        \o Navigate between \bold titles.
+        \o Select between \bold angles.
+    \endlist 
+    
+    The \l{Phonon::MediaController::}{Feature} enum explains these
+    terms in more detail, and their context in playback of CD and DVD. 
+
+    The media controller keeps a \l{Phonon::}{MediaObject}, of which
+    \l{Phonon::MediaObject::mediaSource()}{media source} is played
+    back. You can still call the media object's functions, e.g.,
+    \l{Phonon::MediaObject::}{stop()}; this is all handled correctly
+    by the media controller. You have the option of letting the media
+    controller play all titles of a source in sequence by setting the
+    \l{autoplayTitles()}{autoplay titles} option.
+
+    To start a playback using a media object, you call
+    \l{Phonon::mediaObject::}{play()} on the media object. To play a
+    specific title, use setCurrentTitle() and then call
+    \l{Phonon::MediaObject::}{play()}.
+
+    \warning The \l{Phonon::}{MediaController} is not yet supported by
+    Qt backends.
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \enum Phonon::MediaController::Feature
+
+    The values of this enum are interpreted differently depending on
+    the type of media source, e.g., DVD or CD. We give examples for
+    these sources.
+
+    \value Angles In the VOB (DVD) format, it is possible to to give
+    several video streams of the same scene, each of which displays
+    the scene from a different angle. The DVD viewer can then change
+    between these angles.
+
+    \value Chapters In the VOB format, chapters are points in a
+    single video stream that can be played and seeked to
+    separately. 
+
+    \value Titles On a CD, a title is a separate sound track. On DVD,
+    a title is a separate VOB file.
+
+*/
+
+/*!
+    \fn Phonon::MediaController::MediaController(MediaObject *parent)
+
+    Constructs a new MediaController with the media object (\a parent)
+    to be used by the media controller.
+
+    \sa MediaObject, Feature
+*/
+
+/*!
+    \fn Phonon::MediaController::~MediaController()
+*/
+
+/*!
+    \fn Features Phonon::MediaController::supportedFeatures() const
+*/
+
+/*!
+    \fn int Phonon::MediaController::availableAngles() const
+
+    Returns the available angles that is available for the current
+    media source.
+
+    \sa Feature
+*/
+
+/*!
+    \fn int Phonon::MediaController::currentAngle() const
+
+    Returns the angle that is currently used.
+
+    \sa Feature
+*/
+
+/*!
+    \fn int Phonon::MediaController::availableChapters() const
+
+    Returns the number of chapters the current media source
+    contains.
+
+    \sa Feature
+*/
+
+/*!
+    \fn int Phonon::MediaController::currentChapter() const
+
+    Returns the chapter that is currently being played back.
+
+    \sa Feature
+*/
+
+/*!
+    \fn int Phonon::MediaController::availableTitles() const
+
+    Returns the number of titles that the current media source
+    contains.
+
+    \sa Feature
+*/
+
+/*!
+    \fn int Phonon::MediaController::currentTitle() const
+
+    Returns the title that is currently played back.
+
+    The current title is 0 (the first) by default.
+
+    \sa Feature
+*/
+
+/*!
+    \fn bool Phonon::MediaController::autoplayTitles() const
+
+    Returns true if titles will automatically be played when the media
+    is played; otherwise returns false.
+
+    The media controller will play the titles of the media source in
+    sequence when the media object's \l{Phonon::mediaObject::}{play()}
+    function is called. If the autoplay option is disabled, the media
+    object will play the
+    \l{Phonon::}{MediaSource::currentTitle()}{current title} and then
+    finish the playback.
+
+    \sa setAutoplayTitles(), currentTitle()
+*/
+
+/*!
+    \fn void Phonon::MediaController::setAutoplayTitles(bool enable)
+
+    Sets the titles to play automatically when the media is played if
+    \a enable is true; otherwise disables this option.
+
+    The media controller will play the titles of the media source in
+    sequence when the media object's \l{Phonon::mediaObject::}{play()}
+    function is called. If the autoplay option is disabled, the media
+    object will play the
+    \l{Phonon::}{MediaSource::currentTitle()}{current title} and then
+    finish the playback.
+
+    \sa autoplayTitles(), currentTitle()
+*/
+
+/*!
+    \fn void Phonon::MediaController::setCurrentAngle(int angleNumber)
+
+    Sets the current chapter to the given \a chapterNumber if the media
+    file or device supports navigation by angle number.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::setCurrentChapter(int chapterNumber)
+
+    Sets the current chapter to the given \a chapterNumber if the media
+    file or device supports navigation by chapter number.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::setCurrentTitle(int titleNumber)
+
+    Skips to the given title \a titleNumber.
+
+    If it was playing before the title change it will start playback on the new title if
+    autoplayTitles is enabled.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::nextTitle()
+
+    Skips to the next title.
+
+    If it was playing before the title change it will start playback on the next title if
+    autoplayTitles is enabled.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::previousTitle()
+
+    Skips to the previous title.
+
+    If it was playing before the title change it will start playback on the previous title if
+    autoplayTitles is enabled.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::availableAnglesChanged(int availableAngles)
+
+    This signal is emitted whenever the number of available angles changes.
+    The new number of available angles is given by \a availableAngles.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::angleChanged(int angleNumber)
+
+    This signal is emitted whenever the current angle changes.
+    The new angle number is given by \a angleNumber.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::availableChaptersChanged(int availableChapters)
+
+    This signal is emitted whenever the number of available chapters changes.
+    The new number of available chapters is given by \a availableChapters.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::chapterChanged(int chapterNumber)
+
+    This signal is emitted whenever the current chapter changes.
+    The new chapter number is given by \a chapterNumber.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::availableTitlesChanged(int availableTitles)
+
+    This signal is emitted whenever the number of available titles changes.
+    The new number of available titles is given by \a availableTitles.
+
+    \sa Feature
+*/
+
+/*!
+    \fn void Phonon::MediaController::titleChanged(int titleNumber)
+
+    This signal is emitted whenever the current title changes.
+    The new title number is given by \a titleNumber.
+
+    \sa Feature
+*/
+
+/*!
+    \class Phonon::VideoWidget
+    \inmodule Phonon
+    \since 4.4
+    \ingroup advanced
+    \ingroup multimedia
+    \brief The VideoWidget class provides a widget that is used to display video.
+
+    The VideoWidget class renders the video of a media stream on a
+    QWidget.  It is connected to the \l{Phonon::}{MediaObject}, of
+    which video stream it should render. You connect the two objects
+    using the Phonon::createPath() function.
+
+    The widget has some possibilities to manipulate the video
+    stream. You can change the brightness(), hue(), saturation(),
+    and contrast().
+
+    The widget can resize the video to fit the widget, the AspectRatio
+    is kept during resizing. It is also possible to go to fullScreen()
+    mode. 
+
+    A typical example of usage follows below:
+
+    \snippet doc/src/snippets/code/doc.src.phonon-api.qdoc 21
+
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \enum Phonon::VideoWidget::ScaleMode
+    
+    The ScaleMode enum describes how to treat aspect ratio during
+    resizing of video. 
+    
+
+    \value FitInView    The video will be fitted to fill the view
+                        keeping aspect ratio.
+    \value ScaleAndCrop The video is scaled 
+
+    
+*/
+
+/*!
+    \property Phonon::VideoWidget::fullScreen
+    This property holds whether the video is shown using the complete
+    screen.
+
+    The property differs from QWidget::fullScreen in that it is
+    writeable.
+
+    By default the widget is not shown in fullScreen.
+
+    \warning When switching the video to fullscreen using setFullScreen
+    your application loses control over the widget that actually shows
+    the video (which is then shown as a toplevel window while your
+    application still uses this widget). If you only need to capture key
+    events the event forwarding done internally should suffice for your
+    needs. If you need to map mouse coordinates or add widgets (that are
+    not overlays) you should probably handle fullscreen yourself.
+*/
+
+/*!
+    \property Phonon::VideoWidget::aspectRatio
+    Defaults to AspectRatioAuto.
+
+    \sa AspectRatio
+*/
+
+/*!
+    \property Phonon::VideoWidget::scaleMode
+
+    If the size of the widget and the size of the video are not equal.
+    The video will be zoomed to fit the widget. The smaller zoom
+    (AddBarsScaleMode) adds black bars at the left/right or top/bottom to
+    make all of the image visible (default). The bigger zoom (ExpandMode)
+    fills the widget completely, keeping all information in one direction
+    and leaving parts of the image outside of the widget in the other
+    direction.
+*/
+
+/*!
+    \property Phonon::VideoWidget::brightness
+
+    This property holds brightness of the video.
+
+    Default is 0. Acceptable values are in range of -1, 1.
+*/
+
+/*!
+    \property Phonon::VideoWidget::contrast
+
+    This property holds the contrast of the video.
+
+    Default is 0. Acceptable values are in range of -1, 1.
+*/
+
+/*!
+    \property Phonon::VideoWidget::hue
+
+    This property holds the hue of the video.
+
+    Default is 0. Acceptable values are in range of -1, 1.
+*/
+
+/*!
+    \property Phonon::VideoWidget::saturation
+
+    This property holds saturation of the video.
+
+    Default is 0. Acceptable values are in range of -1, 1.
+*/
+
+/*!
+    \enum Phonon::VideoWidget::AspectRatio
+
+    Defines the width:height to be used for the video.
+
+    \value AspectRatioAuto
+    Let the decoder find the aspect ratio automatically from the
+    media file (this is the default).
+
+    \value AspectRatioWidget
+    Fits the video into the widget making the aspect ratio depend
+    solely on the size of the widget. This way the aspect ratio
+    is freely resizeable by the user.
+
+    \value AspectRatio4_3
+    Make width/height == 4/3, which is the old TV size and
+    monitor size (1024/768 == 4/3). (4:3)
+
+    \value AspectRatio16_9
+    Make width/height == 16/9, which is the size of most current
+    media. (16:9)
+*/
+
+/*!
+    \fn Phonon::VideoWidget::VideoWidget(QWidget *parent = 0)
+
+    Constructs a new video widget with a \a parent.
+*/
+
+/*!
+    \fn void Phonon::VideoWidget::exitFullScreen()
+
+    Convenience slot, calling setFullScreen(false)
+*/
+
+
+/*!
+    \fn void Phonon::VideoWidget::enterFullScreen()
+
+    Convenience slot, calling setFullScreen(true)
+*/
+
+/*!
+    \class Phonon::VideoWidgetInterface
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn virtual Phonon::VideoWidgetInterface::~VideoWidgetInterface()
+*/
+
+/*!
+    \fn virtual Phonon::VideoWidget::AspectRatio Phonon::VideoWidgetInterface::aspectRatio() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setAspectRatio(Phonon::VideoWidget::AspectRatio ratio) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual qreal Phonon::VideoWidgetInterface::brightness() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setBrightness(qreal) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual Phonon::VideoWidget::ScaleMode Phonon::VideoWidgetInterface::scaleMode() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setScaleMode(Phonon::VideoWidget::ScaleMode mode) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual qreal Phonon::VideoWidgetInterface::contrast() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setContrast(qreal) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual qreal Phonon::VideoWidgetInterface::hue() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setHue(qreal) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual qreal Phonon::VideoWidgetInterface::saturation() const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual void Phonon::VideoWidgetInterface::setSaturation(qreal) = 0
+    \internal
+*/
+
+/*!
+    \fn virtual QWidget *Phonon::VideoWidgetInterface::widget() = 0
+    \internal
+*/
+
+/*!
+    \class Phonon::PlatformPlugin
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn virtual AbstractMediaStream *Phonon::PlatformPlugin::createMediaStream(const QUrl &url, QObject *parent) = 0
+
+    Creates a AbstractMediaStream object with the given \a parent that provides the data
+    for the given URL specified by \a url.
+    \omit
+    On KDE this uses KIO.
+    \endomit
+*/
+
+/*!
+    \fn virtual QIcon Phonon::PlatformPlugin::icon(const QString &name) const = 0
+
+    Returns the icon for the given icon name.
+*/
+
+/*!
+    \fn virtual void Phonon::PlatformPlugin::notification(const char *notificationName, const QString &text,
+        const QStringList &actions, QObject *receiver, const char *actionSlot) const = 0
+
+    Shows a notification pop-up with the given \a notificationName and \a text.
+    Each action in the associated list of \a actions is connected to the \a actionSlot
+    of the specified \a receiver object, which is expected to act on the actions as
+    they are triggered by the user.
+*/
+
+/*!
+    \fn virtual QString Phonon::PlatformPlugin::applicationName() const = 0
+
+    Returns the name of the application. For most Qt application this is
+    QCoreApplication::applicationName(), but for KDE this is overridden by KAboutData.
+*/
+
+
+/*!
+    \fn virtual QObject *Phonon::PlatformPlugin::createBackend() = 0
+
+    Creates a backend object. This way the platform can decide the backend preference.
+*/
+
+/*!
+    \fn virtual QObject *Phonon::PlatformPlugin::createBackend(const QString &library, const QString &version) = 0
+
+    Using the library loader of the platform, loads a given backend provided the
+    specified \a library and \a version.
+*/
+
+/*!
+    \fn virtual bool Phonon::PlatformPlugin::isMimeTypeAvailable(const QString &mimeType) const = 0
+
+    Tries to check whether the default backend supports the MIME type specified by \a mimeType
+    without loading the actual backend library.
+    \omit
+    On KDE this reads the MIME type list from the .desktop file of
+    the backend.
+    \endomit
+*/
+
+/*!
+    \fn virtual void Phonon::PlatformPlugin::saveVolume(const QString &outputName, qreal volume) = 0
+
+    Saves the volume for the given output.
+*/
+
+/*!
+    \fn virtual qreal Phonon::PlatformPlugin::loadVolume(const QString &outputName) const = 0
+
+    Loads the volume for the given output.
+*/
+
+/*!
+    \class Phonon::MediaNode
+    \inmodule Phonon
+    \since 4.4
+    \brief The MediaNode class is the base class for all nodes in a media graph.
+    
+    In all phonon applications, one builds a media graph consisting of
+    MediaNodes. The graph will take multimedia content, e.g., from a
+    file, as input. After its nodes have processed the multimedia, the
+    graph will output the media again, e.g., to a sound card.
+
+    The multimedia content is streamed over \l{Phonon::}{Path}s
+    between the nodes in the graph. You can query the paths that are
+    connected to a media node with inputPaths() and outputPaths().
+
+    You can check whether the node is implemented by the current
+    backend by calling isValid(). This does not guarantee that an
+    instance of the class works as expected, but that the backend has
+    implemented functionality for the class.
+
+    Currently, Phonon has three media nodes:
+    \l{Phonon::}{MediaObject}, \l{Phonon::}{AudioOutput}, and
+    \l{Phonon::}{VideoWidget}. Please refer to their class
+    descriptions for details about their usage, and to find out which
+    nodes can be connected to each other. See also \l{Building Graphs}
+    in Phonon's \l{Phonon Overview}{overview} document. 
+
+    Two nodes are connected to each other using the
+    Phonon::createPath() function. We show a code example below,
+    in which we build a media graph for video playback and then
+    query its media nodes for their \l{Phonon::}{Path}s:
+
+    \snippet doc/src/snippets/medianodesnippet.cpp 0 
+
+    When you create a Phonon application, you will likely build the
+    graph yourself. This makes isValid() the most useful function of
+    this class. The other two functions help navigate the graph, which
+    you do not need to do as you created the nodes yourself.
+
+    \sa {Phonon Overview}, Phonon::MediaObject,
+        Phonon::AudioOutput, Phonon::VideoWidget
+*/
+
+/*!
+    \fn virtual Phonon::MediaNode::~MediaNode()
+
+    Destroys the media node and any paths connecting it to other nodes.
+*/
+
+/*!
+    \fn bool Phonon::MediaNode::isValid() const
+
+    Returns true if the backend provides an implementation of this class; otherwise
+    returns false.
+
+    This does not guarantee that instances of the class works as
+    expected, but that the backend has implemented the functionality
+    for this class. For instance, Qt's GStreamer backend will return
+    true for instances of the \l{Phonon::}{AudioOutput} class, even if
+    there is a problem with GStreamer and it could not play sound. 
+
+*/
+
+/*!
+    \fn QList<Path> Phonon::MediaNode::inputPaths() const
+
+    Returns the paths that inputs multimedia to this media node.
+
+    
+    \sa outputPaths()
+*/
+
+/*!
+    \fn QList<Path> Phonon::MediaNode::outputPaths() const
+
+    Returns the paths to which this media node output media.
+
+    \sa inputPaths()
+*/
+
+/*!
+    \fn Phonon::MediaNode::MediaNode(MediaNodePrivate &dd)
+    \internal
+*/
+
+/*!
+    \class Phonon::GlobalConfig
+    \inmodule Phonon
+    \since 4.4
+*/
+
+/*!
+    \fn Phonon::GlobalConfig::GlobalConfig(QObject *parent = 0)
+    \internal
+*/
+
+/*!
+    \fn Phonon::GlobalConfig::~GlobalConfig()
+    \internal
+*/
+
+/*!
+    \fn QList<int> Phonon::GlobalConfig::audioOutputDeviceListFor(Phonon::Category category, HideAdvancedDevicesOverride override = FromSettings) const
+    \internal
+*/
+
+/*!
+    \fn int Phonon::GlobalConfig::audioOutputDeviceFor(Phonon::Category category) const
+    \internal
+*/
+
+/*!
+    \fn void Phonon::GlobalConfig::audioOutputDeviceConfigChanged()
+    \internal
+*/
+
+/*!
+    \class Phonon::ObjectDescriptionData
+    \inmodule Phonon
+    \since 4.4
+    \internal
+    \brief Data class for objects describing devices or features of the backend.
+
+    \author Matthias Kretz <kretz@kde.org>
+    \sa Phonon::BackendCapabilities
+*/
+
+/*!
+    \fn bool Phonon::ObjectDescriptionData::operator==(const ObjectDescriptionData &otherDescription) const
+
+    Returns \c true if this ObjectDescription describes the same
+    as \a otherDescription; otherwise returns \c false.
+*/
+
+/*!
+    \fn QString Phonon::ObjectDescriptionData::name() const
+
+    Returns the name of the capture source.
+
+    \return A string that should be presented to the user to
+    choose the capture source.
+*/
+
+/*!
+    \fn QString Phonon::ObjectDescriptionData::description() const
+
+    Returns a description of the capture source. This text should
+    make clear what sound source this is, which is sometimes hard
+    to describe or understand from just the name.
+
+    \return A string describing the capture source.
+*/
+
+/*!
+    \fn QVariant Phonon::ObjectDescriptionData::property(const char *name) const
+
+    Returns a named property.
+
+    If the property is not set an invalid value is returned.
+
+    \sa propertyNames()
+*/
+
+/*!
+    \fn QList<QByteArray> Phonon::ObjectDescriptionData::propertyNames() const
+
+    Returns all names that return valid data when property() is called.
+
+    \sa property()
+*/
+
+/*!
+    \fn bool Phonon::ObjectDescriptionData::isValid() const
+
+    Returns true if the Tuple is valid (index != -1); otherwise returns
+    false.
+*/
+
+/*!
+    \fn int Phonon::ObjectDescriptionData::index() const
+
+    A unique identifier for this device/. Used internally
+    to distinguish between the devices/.
+
+    \return An integer that uniquely identifies every device.
+*/
+
+/*!
+    \fn static ObjectDescriptionData *Phonon::ObjectDescriptionData::fromIndex(ObjectDescriptionType type, int index)
+    \internal
+*/
+
+/*!
+    \fn Phonon::ObjectDescriptionData::~ObjectDescriptionData()
+    \internal
+*/
+
+/*!
+    \fn Phonon::ObjectDescriptionData::ObjectDescriptionData(ObjectDescriptionPrivate * = 0)
+    \internal
+*/
+
+/*!
+    \class Phonon::AddonInterface
+    \inmodule Phonon
+    \since 4.4
+    \internal 
+    \brief Interface for Menu, Chapter, Angle and Title/Track control.
+    \author Matthias Kretz <kretz@kde.org>
+*/
+
+/*!
+    \fn virtual Phonon::AddonInterface::~AddonInterface()
+    \internal
+*/
+
+/*!
+    \enum Phonon::AddonInterface::Interface
+
+    This enum describes the type of interface represented by an AddonInterface object.
+
+    \value NavigationInterface
+    \value ChapterInterface
+    \value AngleInterface
+    \value TitleInterface
+*/
+
+/*!
+    \enum Phonon::AddonInterface::NavigationCommand
+    \internal
+    \value Menu1Button
+*/
+
+/*!
+    \enum Phonon::AddonInterface::ChapterCommand
+    \internal
+    \value availableChapters
+    \value chapter
+    \value setChapter
+*/
+
+/*!
+    \enum Phonon::AddonInterface::AngleCommand
+    \internal
+    \value availableAngles
+    \value angle
+    \value setAngle
+*/
+
+/*!
+    \enum Phonon::AddonInterface::TitleCommand
+    \internal
+    \value availableTitles
+    \value title
+    \value setTitle
+    \value autoplayTitles
+    \value setAutoplayTitles
+*/
+
+/*!
+    \fn virtual bool Phonon::AddonInterface::hasInterface(Interface iface) const = 0
+    \internal
+*/
+
+/*!
+    \fn virtual QVariant Phonon::AddonInterface::interfaceCall(Interface iface, int command,
+            const QList<QVariant> &arguments) = 0
+    \internal
+*/
+
+/*!
+    \class Phonon::MediaNodePrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \namespace Phonon::Factory
+    \inmodule Phonon
+    \internal
+*/
+
+/*!
+    \fn Sender *Phonon::Factory::sender()
+
+    Returns a pointer to the object emitting the signals.
+
+    \sa Sender::backendChanged()
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createMediaObject(QObject *parent = 0)
+
+    Create a new backend object for a MediaObject.
+
+    \return a pointer to the MediaObject the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createEffect(int effectId, QObject *parent = 0)
+
+    Create a new backend object for a Effect.
+
+    \return a pointer to the Effect the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createVolumeFaderEffect(QObject *parent = 0)
+
+    Create a new backend object for a VolumeFaderEffect.
+
+    \return a pointer to the VolumeFaderEffect the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createAudioOutput(QObject *parent = 0)
+
+    Create a new backend object for a AudioOutput.
+
+    \return a pointer to the AudioOutput the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createAudioDataOutput(QObject *parent = 0)
+
+    Create a new backend object for a AudioDataOutput.
+
+    \return a pointer to the AudioDataOutput the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createVisualization(QObject *parent = 0)
+
+    Create a new backend object for a Visualization.
+
+    \return a pointer to the Visualization the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createVideoDataOutput(QObject *parent = 0)
+
+    Create a new backend object for a VideoDataOutput.
+
+    \return a pointer to the VideoDataOutput the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::createVideoWidget(QObject *parent = 0)
+
+    Create a new backend object for a VideoWidget.
+
+    \return a pointer to the VideoWidget the backend provides.
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::backend(bool createWhenNull = true)
+
+    \return a pointer to the backend interface.
+*/
+
+/*!
+    \fn QString Phonon::Factory::identifier()
+
+    Unique identifier for the Backend. Can be used in configuration files
+    for example.
+*/
+
+
+/*!
+    \fn QString Phonon::Factory::backendName()
+
+    Get the name of the Backend.
+    \omit
+    It's the name from the .desktop file.
+    \endomit
+*/
+
+/*!
+    \fn QString Phonon::Factory::backendComment()
+
+    Get the comment of the Backend.
+    \omit
+    It's the comment from the .desktop file.
+    \endomit
+*/
+
+/*!
+    \fn QString Phonon::Factory::backendVersion()
+
+    Get the version of the Backend.
+    \omit
+    It's the version from the .desktop file.
+    \endomit
+
+    The version is especially interesting if there are several versions
+    available for binary incompatible versions of the backend's media
+    framework.
+*/
+
+/*!
+    \fn QString Phonon::Factory::backendIcon()
+
+    Get the icon (name) of the Backend.
+    \omit
+    It's the icon from the .desktop file.
+    \endomit
+*/
+
+/*!
+    \fn QString Phonon::Factory::backendWebsite()
+
+    Get the website of the Backend.
+    \omit
+    It's the website from the .desktop file.
+    \endomit
+*/
+
+/*!
+    \fn QObject *Phonon::Factory::registerQObject(QObject *object)
+
+    Registers the given backend \a object with the factory.
+*/
+
+/*!
+    \fn bool Phonon::Factory::isMimeTypeAvailable(const QString &mimeType)
+*/
+
+/*!
+    \fn void Phonon::Factory::registerFrontendObject(MediaNodePrivate *)
+    \internal
+*/
+
+/*!
+    \fn void Phonon::Factory::deregisterFrontendObject(MediaNodePrivate *)
+    \internal
+*/
+
+/*!
+    \fn void Phonon::Factory::setBackend(QObject *)
+*/
+
+/*!
+    \fn PlatformPlugin *Phonon::Factory::platformPlugin()
+*/
+
+/*!
+    \class Phonon::FactoryPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::AbstractMediaStreamPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::FrontendInterfacePrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::EffectWidgetPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::IODeviceStream
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \fn explicit Phonon::IODeviceStream::IODeviceStream(QIODevice *ioDevice, QObject *parent = 0)
+    \internal
+
+    Creates a new IODeviceStream with the given \a ioDevice and \a
+    parent.
+
+*/
+
+/*!
+    \fn Phonon::IODeviceStream::~IODeviceStream()
+    \internal
+*/
+
+/*!
+    \fn void Phonon::IODeviceStream::reset()
+    \internal
+*/
+
+/*!
+    \fn void Phonon::IODeviceStream::needData()
+    \internal
+*/
+
+/*!
+    \fn void Phonon::IODeviceStream::seekStream(qint64)
+    \internal
+*/
+
+/*!
+    \class Phonon::IODeviceStreamPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \namespace Phonon::Platform
+    \inmodule Phonon
+    \internal
+*/
+
+/*!
+    \typedef Phonon::EffectDescriptionModel
+    \inmodule Phonon
+    \brief provides a item view model containing available audio effects.
+
+*/
+
+/*!
+    \typedef void Phonon::(*CleanUpFunction)()
+    \inmodule Phonon
+    \internal
+*/
+
+/*!
+    \typedef Phonon::QObjectPair
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \typedef Phonon::AudioOutputDeviceModel
+    \inmodule Phonon
+    \brief provides an item view model containing available audio output devices.
+
+*/
+
+/*!
+    \fn uint Phonon::qHash(const Phonon::EffectParameter &param)
+    \internal
+
+*/
+
+/*!
+    \fn Phonon::ObjectDescription::ObjectDescription()
+    \brief constructs a new object description.
+
+*/
+
+/*!
+    \fn Phonon::CleanUpGlobalStatic::~CleanUpGlobalStatic()
+    \internal
+*/
+
+/*!
+    \class Phonon::ConstIface
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::CleanUpGlobalStatic
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+
+/*!
+    \class Phonon::EffectParameterPrivate
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \class Phonon::GlobalData
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \class Phonon::QSettingsGroup
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \class Phonon::MediaNodeDestructionHandler
+    \inmodule Phonon
+    \since 4.4
+    \internal
+
+*/
+
+/*!
+    \fn Phonon::MediaNodeDestructionHandler::~MediaNodeDestructionHandler()
+    \internal
+    Called from Base::~Base if this object was registered
+    using BasePrivate::addDestructionHandler().
+*/
+
+/*!
+    \fn Phonon::MediaNodeDestructionHandler::phononObjectDestroyed(MediaNodePrivate *)
+    \internal
+*/
+
+/*!
+    \fn Phonon::EffectWidget::EffectWidget(Effect *effect, QWidget *parent = 0)
+    \internal
+*/
+
+/*!
+    \fn Phonon::EffectWidget::~EffectWidget()
+    \internal
+*/
+
+/*!
+    \fn QDebug Phonon::operator<<(QDebug s, const ObjectDescription<T> &o)
+    \internal
+*/
+
+/*!
+    \class Phonon::ListModelHelper
+    \inmodule Phonon
+    \since 4.4
+    \internal
+*/
+

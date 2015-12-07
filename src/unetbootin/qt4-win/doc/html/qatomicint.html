@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/thread/qatomic.cpp -->
+<head>
+  <title>Qt 4.4: QAtomicInt Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAtomicInt Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAtomicInt class provides platform-independent atomic operations on integers. <a href="#details">More...</a></p>
+<pre> #include &lt;QAtomicInt&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qatomicint-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qatomicint.html#QAtomicInt">QAtomicInt</a></b> ( int <i>value</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qatomicint.html#QAtomicInt-2">QAtomicInt</a></b> ( const QAtomicInt &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#deref">deref</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndAddAcquire">fetchAndAddAcquire</a></b> ( int <i>valueToAdd</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndAddOrdered">fetchAndAddOrdered</a></b> ( int <i>valueToAdd</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndAddRelaxed">fetchAndAddRelaxed</a></b> ( int <i>valueToAdd</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndAddRelease">fetchAndAddRelease</a></b> ( int <i>valueToAdd</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndStoreAcquire">fetchAndStoreAcquire</a></b> ( int <i>newValue</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndStoreOrdered">fetchAndStoreOrdered</a></b> ( int <i>newValue</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndStoreRelaxed">fetchAndStoreRelaxed</a></b> ( int <i>newValue</i> )</li>
+<li><div class="fn"/>int <b><a href="qatomicint.html#fetchAndStoreRelease">fetchAndStoreRelease</a></b> ( int <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#ref">ref</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#testAndSetAcquire">testAndSetAcquire</a></b> ( int <i>expectedValue</i>, int <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#testAndSetOrdered">testAndSetOrdered</a></b> ( int <i>expectedValue</i>, int <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#testAndSetRelaxed">testAndSetRelaxed</a></b> ( int <i>expectedValue</i>, int <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#testAndSetRelease">testAndSetRelease</a></b> ( int <i>expectedValue</i>, int <i>newValue</i> )</li>
+<li><div class="fn"/><b><a href="qatomicint.html#operator-int">operator int</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#operator-not">operator!</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#operator-not-eq">operator!=</a></b> ( int <i>value</i> ) const</li>
+<li><div class="fn"/>QAtomicInt &amp; <b><a href="qatomicint.html#operator-eq">operator=</a></b> ( int <i>value</i> )</li>
+<li><div class="fn"/>QAtomicInt &amp; <b><a href="qatomicint.html#operator-eq-2">operator=</a></b> ( const QAtomicInt &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#operator-eq-eq">operator==</a></b> ( int <i>value</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isFetchAndAddNative">isFetchAndAddNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isFetchAndAddWaitFree">isFetchAndAddWaitFree</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isFetchAndStoreNative">isFetchAndStoreNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isFetchAndStoreWaitFree">isFetchAndStoreWaitFree</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isReferenceCountingNative">isReferenceCountingNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isReferenceCountingWaitFree">isReferenceCountingWaitFree</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isTestAndSetNative">isTestAndSetNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicint.html#isTestAndSetWaitFree">isTestAndSetWaitFree</a></b> ()</li>
+</ul>
+<a name="macros"></a>
+<h3>Macros</h3>
+<ul>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE">Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAtomicInt class provides platform-independent atomic operations on integers.</p>
+<p>For atomic operations on pointers, see the <a href="qatomicpointer.html">QAtomicPointer</a> class.</p>
+<p>An complex operation that completes without interruption is said to be <i>atomic</i>. The QAtomicInt class provides atomic reference counting, test-and-set, fetch-and-store, and fetch-and-add for integers.</p>
+<a name="non-atomic-convenience-operators"></a>
+<h3>Non-atomic convenience operators</h3>
+<p>For convenience, QAtomicInt provides integer comparison, cast, and assignment operators. Note that these operators are <i>not</i> atomic.</p>
+<a name="the-atomic-api"></a>
+<h3>The Atomic API</h3>
+<a name="reference-counting"></a>
+<h4>Reference counting</h4>
+<p>The <a href="qatomicint.html#ref">ref</a>() and <a href="qatomicint.html#deref">deref</a>() functions provide an efficient reference counting API. The return value of these functions are used to indicate when the last reference has been released. These functions allow you to implement your own implicitly shared classes.</p>
+<pre>     MySharedType &amp;MySharedType::operator=(const MySharedType &amp;other)
+     {
+         (void) other.data-&gt;atomicInt.ref();
+         if (!data-&gt;atomicInt.deref()) {
+             // The last reference has been released
+             delete d;
+         }
+         d = other.d;
+         return *this;
+     }</pre>
+<a name="memory-ordering"></a>
+<h4>Memory ordering</h4>
+<p>QAtomicInt provides several implementations of the atomic test-and-set, fetch-and-store, and fetch-and-add functions. Each implementation defines a memory ordering semantic that describes how memory accesses surrounding the atomic instruction are executed by the processor. Since many modern architectures allow out-of-order execution and memory ordering, using the correct semantic is necessary to ensure that your application functions properly on all processors.</p>
+<ul>
+<li>Relaxed - memory ordering is unspecified, leaving the compiler and processor to freely reorder memory accesses.</li>
+<li>Acquire - memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</li>
+<li>Release - memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</li>
+<li>Ordered - the same Acquire and Release semantics combined.</li>
+</ul>
+<a name="test-and-set"></a>
+<h4>Test-and-set</h4>
+<p>If the current value of the QAtomicInt is an expected value, the test-and-set functions assign a new value to the QAtomicInt and return true. If values are <i>not</i> the same, these functions do nothing and return false. This operation equates to the following code:</p>
+<pre>     if (currentValue == expectedValue) {
+         currentValue = newValue;
+         return true;
+     }
+     return false;</pre>
+<p>There are 4 test-and-set functions: <a href="qatomicint.html#testAndSetRelaxed">testAndSetRelaxed</a>(), <a href="qatomicint.html#testAndSetAcquire">testAndSetAcquire</a>(), <a href="qatomicint.html#testAndSetRelease">testAndSetRelease</a>(), and <a href="qatomicint.html#testAndSetOrdered">testAndSetOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="fetch-and-store"></a>
+<h4>Fetch-and-store</h4>
+<p>The atomic fetch-and-store functions read the current value of the QAtomicInt and then assign a new value, returning the original value. This operation equates to the following code:</p>
+<pre>     int originalValue = currentValue;
+     currentValue = newValue;
+     return originalValue;</pre>
+<p>There are 4 fetch-and-store functions: <a href="qatomicint.html#fetchAndStoreRelaxed">fetchAndStoreRelaxed</a>(), <a href="qatomicint.html#fetchAndStoreAcquire">fetchAndStoreAcquire</a>(), <a href="qatomicint.html#fetchAndStoreRelease">fetchAndStoreRelease</a>(), and <a href="qatomicint.html#fetchAndStoreOrdered">fetchAndStoreOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="fetch-and-add"></a>
+<h4>Fetch-and-add</h4>
+<p>The atomic fetch-and-add functions read the current value of the QAtomicInt and then add the given value to the current value, returning the original value. This operation equates to the following code:</p>
+<pre>     int originalValue = currentValue;
+     currentValue += valueToAdd;
+     return originalValue;</pre>
+<p>There are 4 fetch-and-add functions: <a href="qatomicint.html#fetchAndAddRelaxed">fetchAndAddRelaxed</a>(), <a href="qatomicint.html#fetchAndAddAcquire">fetchAndAddAcquire</a>(), <a href="qatomicint.html#fetchAndAddRelease">fetchAndAddRelease</a>(), and <a href="qatomicint.html#fetchAndAddOrdered">fetchAndAddOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="feature-tests-for-the-atomic-api"></a>
+<h3>Feature Tests for the Atomic API</h3>
+<p>Providing a platform-independent atomic API that works on all processors is challenging. The API provided by QAtomicInt is guaranteed to work atomically on all processors. However, since not all processors implement support for every operation provided by QAtomicInt, it is necessary to expose information about the processor.</p>
+<p>You can check at compile time which features are supported on your hardware using various macros. These will tell you if your hardware always, sometimes, or does not support a particular operation. The macros have the form Q_ATOMIC_INT_<i>OPERATION</i>_IS_<i>HOW</i>_NATIVE. <i>OPERATION</i> is one of <a href="shared.html#reference-counting">REFERENCE_COUNTING</a>, <a href="#test-and-set">TEST_AND_SET</a>, <a href="#fetch-and-store">FETCH_AND_STORE</a>, or <a href="#fetch-and-add">FETCH_AND_ADD</a>, and <i>HOW</i> is one of ALWAYS, SOMETIMES, or NOT. There will always be exactly one defined macro per operation. For example, if <a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE</a> is defined, neither <a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE</a> nor <a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE</a> will be defined.</p>
+<p>An operation that completes in constant time is said to be wait-free. Such operations are not implemented using locks or loops of any kind. For atomic operations that are always supported, and that are wait-free, Qt defines the Q_ATOMIC_INT_<i>OPERATION</i>_IS_WAIT_FREE in addition to the Q_ATOMIC_INT_<i>OPERATION</i>_IS_ALWAYS_NATIVE.</p>
+<p>In cases where an atomic operation is only supported in newer generations of the processor, QAtomicInt also provides a way to check at runtime what your hardware supports with the <a href="qatomicint.html#isReferenceCountingNative">isReferenceCountingNative</a>(), <a href="qatomicint.html#isTestAndSetNative">isTestAndSetNative</a>(), <a href="qatomicint.html#isFetchAndStoreNative">isFetchAndStoreNative</a>(), and <a href="qatomicint.html#isFetchAndAddNative">isFetchAndAddNative</a>() functions. Wait-free implementations can be detected using the <a href="qatomicint.html#isReferenceCountingWaitFree">isReferenceCountingWaitFree</a>(), <a href="qatomicint.html#isTestAndSetWaitFree">isTestAndSetWaitFree</a>(), <a href="qatomicint.html#isFetchAndStoreWaitFree">isFetchAndStoreWaitFree</a>(), and <a href="qatomicint.html#isFetchAndAddWaitFree">isFetchAndAddWaitFree</a>() functions.</p>
+<p>Below is a complete list of all feature macros for QAtomicInt:</p>
+<ul>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE">Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE</a></li>
+</ul>
+<p>See also <a href="qatomicpointer.html">QAtomicPointer</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAtomicInt"></a>QAtomicInt::QAtomicInt ( int <i>value</i> = 0 )</h3>
+<p>Constructs a <a href="qatomicint.html">QAtomicInt</a> with the given <i>value</i>.</p>
+<h3 class="fn"><a name="QAtomicInt-2"></a>QAtomicInt::QAtomicInt ( const QAtomicInt &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="deref"></a>bool QAtomicInt::deref ()</h3>
+<p>Atomically decrements the value of this <a href="qatomicint.html">QAtomicInt</a>. Returns true if the new value is non-zero, false otherwise.</p>
+<p>See also <a href="qatomicint.html#ref">ref</a>().</p>
+<h3 class="fn"><a name="fetchAndAddAcquire"></a>int QAtomicInt::fetchAndAddAcquire ( int <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndAddOrdered"></a>int QAtomicInt::fetchAndAddOrdered ( int <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="fetchAndAddRelaxed"></a>int QAtomicInt::fetchAndAddRelaxed ( int <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="fetchAndAddRelease"></a>int QAtomicInt::fetchAndAddRelease ( int <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>release</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndStoreAcquire"></a>int QAtomicInt::fetchAndStoreAcquire ( int <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndStoreOrdered"></a>int QAtomicInt::fetchAndStoreOrdered ( int <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="fetchAndStoreRelaxed"></a>int QAtomicInt::fetchAndStoreRelaxed ( int <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="fetchAndStoreRelease"></a>int QAtomicInt::fetchAndStoreRelease ( int <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicint.html">QAtomicInt</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>release</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="isFetchAndAddNative"></a>bool QAtomicInt::isFetchAndAddNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if fetch-and-add is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndAddWaitFree"></a>bool QAtomicInt::isFetchAndAddWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic fetch-and-add is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndStoreNative"></a>bool QAtomicInt::isFetchAndStoreNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if fetch-and-store is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndStoreWaitFree"></a>bool QAtomicInt::isFetchAndStoreWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic fetch-and-store is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="isReferenceCountingNative"></a>bool QAtomicInt::isReferenceCountingNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if reference counting is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isReferenceCountingWaitFree"></a>bool QAtomicInt::isReferenceCountingWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic reference counting is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="isTestAndSetNative"></a>bool QAtomicInt::isTestAndSetNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if test-and-set is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isTestAndSetWaitFree"></a>bool QAtomicInt::isTestAndSetWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic test-and-set is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="ref"></a>bool QAtomicInt::ref ()</h3>
+<p>Atomically increments the value of this <a href="qatomicint.html">QAtomicInt</a>. Returns true if the new value is non-zero, false otherwise.</p>
+<p>See also <a href="qatomicint.html#deref">deref</a>().</p>
+<h3 class="fn"><a name="testAndSetAcquire"></a>bool QAtomicInt::testAndSetAcquire ( int <i>expectedValue</i>, int <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicint.html">QAtomicInt</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicint.html">QAtomicInt</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="testAndSetOrdered"></a>bool QAtomicInt::testAndSetOrdered ( int <i>expectedValue</i>, int <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicint.html">QAtomicInt</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicint.html">QAtomicInt</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="testAndSetRelaxed"></a>bool QAtomicInt::testAndSetRelaxed ( int <i>expectedValue</i>, int <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicint.html">QAtomicInt</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicint.html">QAtomicInt</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="testAndSetRelease"></a>bool QAtomicInt::testAndSetRelease ( int <i>expectedValue</i>, int <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicint.html">QAtomicInt</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicint.html">QAtomicInt</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>release</i> <a href="qatomicint.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="operator-int"></a>QAtomicInt::operator int () const</h3>
+<p>Returns the value stored by the <a href="qatomicint.html">QAtomicInt</a> object as an integer.</p>
+<h3 class="fn"><a name="operator-not"></a>bool QAtomicInt::operator! () const</h3>
+<p>Returns true is the value of this <a href="qatomicint.html">QAtomicInt</a> is zero; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QAtomicInt::operator!= ( int <i>value</i> ) const</h3>
+<p>Returns true if the value of this <a href="qatomicint.html">QAtomicInt</a> is not equal to <i>value</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QAtomicInt &amp; QAtomicInt::operator= ( int <i>value</i> )</h3>
+<p>Assigns the <i>value</i> to this <a href="qatomicint.html">QAtomicInt</a> and returns a reference to this <a href="qatomicint.html">QAtomicInt</a>.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QAtomicInt &amp; QAtomicInt::operator= ( const QAtomicInt &amp; <i>other</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns <i>other</i> to this <a href="qatomicint.html">QAtomicInt</a> and returns a reference to this <a href="qatomicint.html">QAtomicInt</a>.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QAtomicInt::operator== ( int <i>value</i> ) const</h3>
+<p>Returns true if the <i>value</i> is equal to the value in this <a href="qatomicint.html">QAtomicInt</a>; otherwise returns false.</p>
+<hr />
+<h2>Macro Documentation</h2>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic fetch-and-add on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_ADD_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic fetch-and-add on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic fetch-and-add on integers. Use the <a href="qatomicint.html#isFetchAndAddNative">QAtomicInt::isFetchAndAddNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE"></a>Q_ATOMIC_INT_FETCH_AND_ADD_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a> to indicate that the atomic fetch-and-add on integers is wait-free.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic fetch-and-store on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_STORE_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic fetch-and-store on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_INT_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic fetch-and-store on integers. Use the <a href="qatomicint.html#isFetchAndStoreNative">QAtomicInt::isFetchAndStoreNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE"></a>Q_ATOMIC_INT_FETCH_AND_STORE_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicint.html#Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a> to indicate that the atomic fetch-and-store on integers is wait-free.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if all generations of your processor support atomic reference counting.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE"></a>Q_ATOMIC_INT_REFERENCE_COUNTING_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic reference counting.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_INT_REFERENCE_COUNTING_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic reference counting. Use the <a href="qatomicint.html#isReferenceCountingNative">QAtomicInt::isReferenceCountingNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE"></a>Q_ATOMIC_INT_REFERENCE_COUNTING_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicint.html#Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_REFERENCE_COUNTING_IS_ALWAYS_NATIVE</a> to indicate that the reference counting is wait-free.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic test-and-set on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE"></a>Q_ATOMIC_INT_TEST_AND_SET_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic test-and-set on integers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_INT_TEST_AND_SET_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic test-and-set on integers. Use the <a href="qatomicint.html#isTestAndSetNative">QAtomicInt::isTestAndSetNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE"></a>Q_ATOMIC_INT_TEST_AND_SET_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicint.html#Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_INT_TEST_AND_SET_IS_ALWAYS_NATIVE</a> to indicate that the atomic test-and-set on integers is wait-free.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/dom/qdom.cpp -->
+<head>
+  <title>Qt 4.4: QDomElement Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDomElement Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QDomElement class represents one element in the DOM tree. <a href="#details">More...</a></p>
+<pre> #include &lt;QDomElement&gt;</pre><p>Inherits <a href="qdomnode.html">QDomNode</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdomelement-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdomelement.html#QDomElement">QDomElement</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdomelement.html#QDomElement-2">QDomElement</a></b> ( const QDomElement &amp; <i>x</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdomelement.html#attributex">attribute</a></b> ( const QString &amp; <i>name</i>, const QString &amp; <i>defValue</i> = QString() ) const</li>
+<li><div class="fn"/>QString <b><a href="qdomelement.html#attributeNS">attributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>localName</i>, const QString &amp; <i>defValue</i> = QString() ) const</li>
+<li><div class="fn"/>QDomAttr <b><a href="qdomelement.html#attributeNode">attributeNode</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>QDomAttr <b><a href="qdomelement.html#attributeNodeNS">attributeNodeNS</a></b> ( const QString &amp; <i>nsURI</i>, const QString &amp; <i>localName</i> )</li>
+<li><div class="fn"/>QDomNamedNodeMap <b><a href="qdomelement.html#attributes">attributes</a></b> () const</li>
+<li><div class="fn"/>QDomNodeList <b><a href="qdomelement.html#elementsByTagName">elementsByTagName</a></b> ( const QString &amp; <i>tagname</i> ) const</li>
+<li><div class="fn"/>QDomNodeList <b><a href="qdomelement.html#elementsByTagNameNS">elementsByTagNameNS</a></b> ( const QString &amp; <i>nsURI</i>, const QString &amp; <i>localName</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdomelement.html#hasAttribute">hasAttribute</a></b> ( const QString &amp; <i>name</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdomelement.html#hasAttributeNS">hasAttributeNS</a></b> ( const QString &amp; <i>nsURI</i>, const QString &amp; <i>localName</i> ) const</li>
+<li><div class="fn"/>QDomNode::NodeType <b><a href="qdomelement.html#nodeType">nodeType</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#removeAttribute">removeAttribute</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#removeAttributeNS">removeAttributeNS</a></b> ( const QString &amp; <i>nsURI</i>, const QString &amp; <i>localName</i> )</li>
+<li><div class="fn"/>QDomAttr <b><a href="qdomelement.html#removeAttributeNode">removeAttributeNode</a></b> ( const QDomAttr &amp; <i>oldAttr</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute">setAttribute</a></b> ( const QString &amp; <i>name</i>, const QString &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-2">setAttribute</a></b> ( const QString &amp; <i>name</i>, int <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-3">setAttribute</a></b> ( const QString &amp; <i>name</i>, uint <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-4">setAttribute</a></b> ( const QString &amp; <i>name</i>, qlonglong <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-5">setAttribute</a></b> ( const QString &amp; <i>name</i>, qulonglong <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-6">setAttribute</a></b> ( const QString &amp; <i>name</i>, float <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttribute-7">setAttribute</a></b> ( const QString &amp; <i>name</i>, double <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, const QString &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS-2">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, int <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS-3">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, uint <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS-4">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, qlonglong <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS-5">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, qulonglong <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setAttributeNS-6">setAttributeNS</a></b> ( const QString <i>nsURI</i>, const QString &amp; <i>qName</i>, double <i>value</i> )</li>
+<li><div class="fn"/>QDomAttr <b><a href="qdomelement.html#setAttributeNode">setAttributeNode</a></b> ( const QDomAttr &amp; <i>newAttr</i> )</li>
+<li><div class="fn"/>QDomAttr <b><a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a></b> ( const QDomAttr &amp; <i>newAttr</i> )</li>
+<li><div class="fn"/>void <b><a href="qdomelement.html#setTagName">setTagName</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdomelement.html#tagName">tagName</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdomelement.html#text">text</a></b> () const</li>
+<li><div class="fn"/>QDomElement &amp; <b><a href="qdomelement.html#operator-eq">operator=</a></b> ( const QDomElement &amp; <i>x</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>66 public functions inherited from <a href="qdomnode.html#public-functions">QDomNode</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDomElement class represents one element in the DOM tree.</p>
+<p>Elements have a <a href="qdomelement.html#tagName">tagName</a>() and zero or more attributes associated with them. The tag name can be changed with <a href="qdomelement.html#setTagName">setTagName</a>().</p>
+<p>Element attributes are represented by <a href="qdomattr.html">QDomAttr</a> objects that can be queried using the <a href="qdomelement.html#attributex">attribute</a>() and <a href="qdomelement.html#attributeNode">attributeNode</a>() functions. You can set attributes with the <a href="qdomelement.html#setAttribute">setAttribute</a>() and <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>() functions. Attributes can be removed with <a href="qdomelement.html#removeAttribute">removeAttribute</a>(). There are namespace-aware equivalents to these functions, i.e&#x2e; <a href="qdomelement.html#setAttributeNS">setAttributeNS</a>(), <a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a>() and <a href="qdomelement.html#removeAttributeNS">removeAttributeNS</a>().</p>
+<p>If you want to access the text of a node use <a href="qdomelement.html#text">text</a>(), e.g&#x2e;</p>
+<pre>     QDomElement e = //...
+     //...
+     QString s = e.text()</pre>
+<p>The <a href="qdomelement.html#text">text</a>() function operates recursively to find the text (since not all elements contain text). If you want to find all the text in all of a node's children, iterate over the children looking for <a href="qdomtext.html">QDomText</a> nodes, e.g&#x2e;</p>
+<pre>     QString text;
+     QDomElement element = doc.documentElement();
+     for(QDomNode n = element.firstChild(); !n.isNull(); n = n.nextSibling())
+     {
+         QDomText t = n.toText();
+         if (!t.isNull())
+             text += t.data();
+     }</pre>
+<p>Note that we attempt to convert each node to a text node and use <a href="qdomelement.html#text">text</a>() rather than using <a href="qdomnode.html#firstChild">firstChild</a>().<a href="qdomnode.html#toText">toText</a>().data() or n.<a href="qdomnode.html#toText">toText</a>().data() directly on the node, because the node may not be a text element.</p>
+<p>You can get a list of all the decendents of an element which have a specified tag name with <a href="qdomelement.html#elementsByTagName">elementsByTagName</a>() or <a href="qdomelement.html#elementsByTagNameNS">elementsByTagNameNS</a>().</p>
+<p>To browse the elements of a dom document use <a href="qdomnode.html#firstChildElement">firstChildElement</a>(), <a href="qdomnode.html#lastChildElement">lastChildElement</a>(), <a href="qdomnode.html#nextSiblingElement">nextSiblingElement</a>() and <a href="qdomnode.html#previousSiblingElement">previousSiblingElement</a>(). For example, to iterate over all child elements called &quot;entry&quot; in a root element called &quot;database&quot;, you can use:</p>
+<pre>     QDomDocument doc = // ...
+     QDomElement root = doc.firstChildElement(&quot;database&quot;);
+     QDomElement elt = root.firstChildElement(&quot;entry&quot;);
+     for (; !elt.isNull(); elt = elt.nextSiblingElement(&quot;entry&quot;)) {
+         // ...
+     }</pre>
+<p>For further information about the Document Object Model see <a href="http://www.w3.org/TR/REC-DOM-Level-1/">Level 1</a> and <a href="http://www.w3.org/TR/DOM-Level-2-Core/">Level 2 Core</a>. For a more general introduction of the DOM implementation see the <a href="qdomdocument.html">QDomDocument</a> documentation.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDomElement"></a>QDomElement::QDomElement ()</h3>
+<p>Constructs an empty element. Use the <a href="qdomdocument.html#createElement">QDomDocument::createElement</a>() function to construct elements with content.</p>
+<h3 class="fn"><a name="QDomElement-2"></a>QDomElement::QDomElement ( const QDomElement &amp; <i>x</i> )</h3>
+<p>Constructs a copy of <i>x</i>.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<h3 class="fn"><a name="attributex"></a><a href="qstring.html">QString</a> QDomElement::attribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qstring.html">QString</a> &amp; <i>defValue</i> = QString() ) const</h3>
+<p>Returns the attribute called <i>name</i>. If the attribute does not exist <i>defValue</i> is returned.</p>
+<p>See also <a href="qdomelement.html#setAttribute">setAttribute</a>(), <a href="qdomelement.html#attributeNode">attributeNode</a>(), <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>(), and <a href="qdomelement.html#attributeNS">attributeNS</a>().</p>
+<h3 class="fn"><a name="attributeNS"></a><a href="qstring.html">QString</a> QDomElement::attributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>localName</i>, const <a href="qstring.html">QString</a> &amp; <i>defValue</i> = QString() ) const</h3>
+<p>Returns the attribute with the local name <i>localName</i> and the namespace URI <i>nsURI</i>. If the attribute does not exist <i>defValue</i> is returned.</p>
+<p>See also <a href="qdomelement.html#setAttributeNS">setAttributeNS</a>(), <a href="qdomelement.html#attributeNodeNS">attributeNodeNS</a>(), <a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a>(), and <a href="qdomelement.html#attributex">attribute</a>().</p>
+<h3 class="fn"><a name="attributeNode"></a><a href="qdomattr.html">QDomAttr</a> QDomElement::attributeNode ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Returns the <a href="qdomattr.html">QDomAttr</a> object that corresponds to the attribute called <i>name</i>. If no such attribute exists a <a href="qdomnode.html#isNull">null attribute</a> is returned.</p>
+<p>See also <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>(), <a href="qdomelement.html#attributex">attribute</a>(), <a href="qdomelement.html#setAttribute">setAttribute</a>(), and <a href="qdomelement.html#attributeNodeNS">attributeNodeNS</a>().</p>
+<h3 class="fn"><a name="attributeNodeNS"></a><a href="qdomattr.html">QDomAttr</a> QDomElement::attributeNodeNS ( const <a href="qstring.html">QString</a> &amp; <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>localName</i> )</h3>
+<p>Returns the <a href="qdomattr.html">QDomAttr</a> object that corresponds to the attribute with the local name <i>localName</i> and the namespace URI <i>nsURI</i>. If no such attribute exists a <a href="qdomnode.html#isNull">null attribute</a> is returned.</p>
+<p>See also <a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a>(), <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>(), <a href="qdomelement.html#attributex">attribute</a>(), and <a href="qdomelement.html#setAttribute">setAttribute</a>().</p>
+<h3 class="fn"><a name="attributes"></a><a href="qdomnamednodemap.html">QDomNamedNodeMap</a> QDomElement::attributes () const</h3>
+<p>Returns a <a href="qdomnamednodemap.html">QDomNamedNodeMap</a> containing all this element's attributes.</p>
+<p>See also <a href="qdomelement.html#attributex">attribute</a>(), <a href="qdomelement.html#setAttribute">setAttribute</a>(), <a href="qdomelement.html#attributeNode">attributeNode</a>(), and <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>().</p>
+<h3 class="fn"><a name="elementsByTagName"></a><a href="qdomnodelist.html">QDomNodeList</a> QDomElement::elementsByTagName ( const <a href="qstring.html">QString</a> &amp; <i>tagname</i> ) const</h3>
+<p>Returns a <a href="qdomnodelist.html">QDomNodeList</a> containing all descendent elements of this element that are called <i>tagname</i>. The order they are in the node list is the order they are encountered in a preorder traversal of the element tree.</p>
+<p>See also <a href="qdomelement.html#elementsByTagNameNS">elementsByTagNameNS</a>() and <a href="qdomdocument.html#elementsByTagName">QDomDocument::elementsByTagName</a>().</p>
+<h3 class="fn"><a name="elementsByTagNameNS"></a><a href="qdomnodelist.html">QDomNodeList</a> QDomElement::elementsByTagNameNS ( const <a href="qstring.html">QString</a> &amp; <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>localName</i> ) const</h3>
+<p>Returns a <a href="qdomnodelist.html">QDomNodeList</a> containing all the descendent elements of this element with the local name <i>localName</i> and the namespace URI <i>nsURI</i>. The order they are in the node list is the order they are encountered in a preorder traversal of the element tree.</p>
+<p>See also <a href="qdomelement.html#elementsByTagName">elementsByTagName</a>() and <a href="qdomdocument.html#elementsByTagNameNS">QDomDocument::elementsByTagNameNS</a>().</p>
+<h3 class="fn"><a name="hasAttribute"></a>bool QDomElement::hasAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i> ) const</h3>
+<p>Returns true if this element has an attribute called <i>name</i>; otherwise returns false.</p>
+<p><b>Note:</b> This function does not take the presence of namespaces into account. As a result, the specified name will be tested against fully-qualified attribute names that include any namespace prefixes that may be present.</p>
+<p>Use <a href="qdomelement.html#hasAttributeNS">hasAttributeNS</a>() to explicitly test for attributes with specific namespaces and names.</p>
+<h3 class="fn"><a name="hasAttributeNS"></a>bool QDomElement::hasAttributeNS ( const <a href="qstring.html">QString</a> &amp; <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>localName</i> ) const</h3>
+<p>Returns true if this element has an attribute with the local name <i>localName</i> and the namespace URI <i>nsURI</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="nodeType"></a><a href="qdomnode.html#NodeType-enum">QDomNode::NodeType</a> QDomElement::nodeType () const</h3>
+<p>Returns <tt>ElementNode</tt>.</p>
+<h3 class="fn"><a name="removeAttribute"></a>void QDomElement::removeAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Removes the attribute called name <i>name</i> from this element.</p>
+<p>See also <a href="qdomelement.html#setAttribute">setAttribute</a>(), <a href="qdomelement.html#attributex">attribute</a>(), and <a href="qdomelement.html#removeAttributeNS">removeAttributeNS</a>().</p>
+<h3 class="fn"><a name="removeAttributeNS"></a>void QDomElement::removeAttributeNS ( const <a href="qstring.html">QString</a> &amp; <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>localName</i> )</h3>
+<p>Removes the attribute with the local name <i>localName</i> and the namespace URI <i>nsURI</i> from this element.</p>
+<p>See also <a href="qdomelement.html#setAttributeNS">setAttributeNS</a>(), <a href="qdomelement.html#attributeNS">attributeNS</a>(), and <a href="qdomelement.html#removeAttribute">removeAttribute</a>().</p>
+<h3 class="fn"><a name="removeAttributeNode"></a><a href="qdomattr.html">QDomAttr</a> QDomElement::removeAttributeNode ( const <a href="qdomattr.html">QDomAttr</a> &amp; <i>oldAttr</i> )</h3>
+<p>Removes the attribute <i>oldAttr</i> from the element and returns it.</p>
+<p>See also <a href="qdomelement.html#attributeNode">attributeNode</a>() and <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>().</p>
+<h3 class="fn"><a name="setAttribute"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qstring.html">QString</a> &amp; <i>value</i> )</h3>
+<p>Adds an attribute called <i>name</i> with value <i>value</i>. If an attribute with the same name exists, its value is replaced by <i>value</i>.</p>
+<p>See also <a href="qdomelement.html#attributex">attribute</a>(), <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>(), and <a href="qdomelement.html#setAttributeNS">setAttributeNS</a>().</p>
+<h3 class="fn"><a name="setAttribute-2"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, int <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttribute-3"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttribute-4"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qtglobal.html#qlonglong-typedef">qlonglong</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttribute-5"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qtglobal.html#qulonglong-typedef">qulonglong</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttribute-6"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, float <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttribute-7"></a>void QDomElement::setAttribute ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, double <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNS"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, const <a href="qstring.html">QString</a> &amp; <i>value</i> )</h3>
+<p>Adds an attribute with the qualified name <i>qName</i> and the namespace URI <i>nsURI</i> with the value <i>value</i>. If an attribute with the same local name and namespace URI exists, its prefix is replaced by the prefix of <i>qName</i> and its value is repaced by <i>value</i>.</p>
+<p>Although <i>qName</i> is the qualified name, the local name is used to decide if an existing attribute's value should be replaced.</p>
+<p>See also <a href="qdomelement.html#attributeNS">attributeNS</a>(), <a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a>(), and <a href="qdomelement.html#setAttribute">setAttribute</a>().</p>
+<h3 class="fn"><a name="setAttributeNS-2"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, int <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNS-3"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNS-4"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, <a href="qtglobal.html#qlonglong-typedef">qlonglong</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNS-5"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, <a href="qtglobal.html#qulonglong-typedef">qulonglong</a> <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNS-6"></a>void QDomElement::setAttributeNS ( const <a href="qstring.html">QString</a> <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, double <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setAttributeNode"></a><a href="qdomattr.html">QDomAttr</a> QDomElement::setAttributeNode ( const <a href="qdomattr.html">QDomAttr</a> &amp; <i>newAttr</i> )</h3>
+<p>Adds the attribute <i>newAttr</i> to this element.</p>
+<p>If the element has another attribute that has the same name as <i>newAttr</i>, this function replaces that attribute and returns it; otherwise the function returns a <a href="qdomnode.html#isNull">null attribute</a>.</p>
+<p>See also <a href="qdomelement.html#attributeNode">attributeNode</a>(), <a href="qdomelement.html#setAttribute">setAttribute</a>(), and <a href="qdomelement.html#setAttributeNodeNS">setAttributeNodeNS</a>().</p>
+<h3 class="fn"><a name="setAttributeNodeNS"></a><a href="qdomattr.html">QDomAttr</a> QDomElement::setAttributeNodeNS ( const <a href="qdomattr.html">QDomAttr</a> &amp; <i>newAttr</i> )</h3>
+<p>Adds the attribute <i>newAttr</i> to this element.</p>
+<p>If the element has another attribute that has the same local name and namespace URI as <i>newAttr</i>, this function replaces that attribute and returns it; otherwise the function returns a <a href="qdomnode.html#isNull">null attribute</a>.</p>
+<p>See also <a href="qdomelement.html#attributeNodeNS">attributeNodeNS</a>(), <a href="qdomelement.html#setAttributeNS">setAttributeNS</a>(), and <a href="qdomelement.html#setAttributeNode">setAttributeNode</a>().</p>
+<h3 class="fn"><a name="setTagName"></a>void QDomElement::setTagName ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets this element's tag name to <i>name</i>.</p>
+<p>See also <a href="qdomelement.html#tagName">tagName</a>().</p>
+<h3 class="fn"><a name="tagName"></a><a href="qstring.html">QString</a> QDomElement::tagName () const</h3>
+<p>Returns the tag name of this element. For an XML element like this:</p>
+<pre>     &lt;img src=&quot;myimg.png&quot;&gt;</pre>
+<p>the tagname would return &quot;img&quot;.</p>
+<p>See also <a href="qdomelement.html#setTagName">setTagName</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QDomElement::text () const</h3>
+<p>Returns the element's text or an empty string.</p>
+<p>Example:</p>
+<pre>     &lt;h1&gt;Hello &lt;b&gt;Qt&lt;/b&gt; &lt;![CDATA[&lt;xml is cool&gt;]]&gt;&lt;/h1&gt;</pre>
+<p>The function text() of the <a href="qdomelement.html">QDomElement</a> for the <tt>&lt;h1&gt;</tt> tag, will return the following text:</p>
+<pre>     Hello Qt &amp;lt;xml is cool&amp;gt;</pre>
+<p>Comments are ignored by this function. It only evaluates <a href="qdomtext.html">QDomText</a> and <a href="qdomcdatasection.html">QDomCDATASection</a> objects.</p>
+<h3 class="fn"><a name="operator-eq"></a>QDomElement &amp; QDomElement::operator= ( const QDomElement &amp; <i>x</i> )</h3>
+<p>Assigns <i>x</i> to this DOM element.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

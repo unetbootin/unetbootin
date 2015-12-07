@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/hellogl_es.qdoc -->
+<head>
+  <title>Qt 4.4: Hello GL ES Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Hello GL ES Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="opengl-hellogl-es-bubble-cpp.html">opengl/hellogl_es/bubble.cpp</a></li>
+<li><a href="opengl-hellogl-es-bubble-h.html">opengl/hellogl_es/bubble.h</a></li>
+<li><a href="opengl-hellogl-es-cl-helper-h.html">opengl/hellogl_es/cl_helper.h</a></li>
+<li><a href="opengl-hellogl-es-glwidget-cpp.html">opengl/hellogl_es/glwidget.cpp</a></li>
+<li><a href="opengl-hellogl-es-glwidget-h.html">opengl/hellogl_es/glwidget.h</a></li>
+<li><a href="opengl-hellogl-es-mainwindow-cpp.html">opengl/hellogl_es/mainwindow.cpp</a></li>
+<li><a href="opengl-hellogl-es-mainwindow-h.html">opengl/hellogl_es/mainwindow.h</a></li>
+<li><a href="opengl-hellogl-es-main-cpp.html">opengl/hellogl_es/main.cpp</a></li>
+<li><a href="opengl-hellogl-es-hellogl-es-pro.html">opengl/hellogl_es/hellogl_es.pro</a></li>
+<li><a href="opengl-hellogl-es-texture-qrc.html">opengl/hellogl_es/texture.qrc</a></li>
+</ul>
+<p>The Hello GL ES example is the <a href="opengl-hellogl.html">Hello GL Example</a> ported to OpenGL ES. It also included some effects from the OpenGL <a href="opengl-overpainting.html">Overpainting Example</a>.</p>
+<p align="center"><img src="images/hellogl-es-example.png" /></p><p>A complete introduction to OpenGL ES and a description of all differences between OpenGL and OpenGL ES is out of the scope of this document; but we will describe some of the major issues and differences.</p>
+<p>Since Hello GL ES is a direct port of standard OpenGL code, it is a fairly good example for porting OpenGL code to OpenGL ES.</p>
+<ul><li><a href="#using-qglwidget">Using QGLWidget</a></li>
+<li><a href="#using-opengl-es-rendering-commands">Using OpenGL ES rendering commands</a></li>
+<li><a href="#porting-opengl-to-opengl-es">Porting OpenGL to OpenGL ES</a></li>
+<li><a href="#using-qglpainter">Using QGLPainter</a></li>
+<li><a href="#summary">Summary</a></li>
+</ul>
+<a name="using-qglwidget"></a>
+<h2>Using QGLWidget</h2>
+<p><a href="qglwidget.html">QGLWidget</a> can be used for OpenGL ES similar to the way it is used with standard OpenGL; but there are some differences. We use EGL 1.0 to embedd the OpenGL ES window within the native window manager. In <a href="qglwidget.html#initializeGL">QGLWidget::initializeGL</a>() we initialize OpenGL ES.</p>
+<a name="using-opengl-es-rendering-commands"></a>
+<h2>Using OpenGL ES rendering commands</h2>
+<p>To update the scene, we reimplment <a href="qglwidget.html#paintGL">QGLWidget::paintGL</a>(). We use OpenGL ES rendering commands just like we do with standard OpenGL. Since the OpenGL ES common light profile only supports fixed point functions, we need to abstract it somehow. Hence, we define an abstraction layer in <tt>cl_helper.h</tt>.</p>
+<pre> #define FLOAT2X(f)      ((int) ( (f) * (65536)))
+ #define X2FLOAT(x)      ((float)(x) / 65536.0f)
+
+ #define f2vt(f)     FLOAT2X(f)
+ #define vt2f(x)     X2FLOAT(x)
+
+ #define q_vertexType GLfixed
+ #define q_vertexTypeEnum GL_FIXED
+
+ #define q_glFog             glFogx
+ #define q_glFogv            glFogxv</pre>
+<p>Instead of <tt>glFogxv()</tt> or <tt>glFogfv()</tt> we use <tt>q_glFogv()</tt> and to convert the coordinates of a vertice we use the macro <tt>f2vt()</tt>. That way, if QT_OPENGL_ES_CL is defined we use the fixed point functions and every float is converted to fixed point.</p>
+<p>If QT_OPENGL_ES_CL is not defined we use the floating point functions.</p>
+<pre> #else
+
+ #define f2vt(f)     (f)
+ #define vt2f(x)     (x)
+
+ #define q_vertexType GLfloat
+ #define q_vertexTypeEnum GL_FLOAT
+
+ #define q_glFog             glFogf
+ #define q_glFogv            glFogfv</pre>
+<p>This way we support OpenGL ES Common and Common Light with the same code and abstract the fact that we use either the floating point functions or otherwise the fixed point functions.</p>
+<a name="porting-opengl-to-opengl-es"></a>
+<h2>Porting OpenGL to OpenGL ES</h2>
+<p>Since OpenGL ES is missing the immediate mode and does not support quads, we have to create triangle arrays.</p>
+<p>We create a quad by adding vertices to a <a href="qlist.html">QList</a> of vertices. We create both sides of the quad and hardcode a distance of 0.05f. We also compute the correct normal for each face and store them in another <a href="qlist.html">QList</a>.</p>
+<pre> void GLWidget::quad(qreal x1, qreal y1, qreal x2, qreal y2, qreal x3, qreal y3, qreal x4, qreal y4)
+ {
+     qreal nx, ny, nz;
+
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; -0.05f;
+
+     vertices &lt;&lt; x3 &lt;&lt; y3 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; -0.05f;
+
+     CrossProduct(nx, ny, nz, x2 - x1, y2 - y1, 0, x4 - x1, y4 - y1, 0);
+     Normalize(nx, ny, nz);
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; 0.05f;
+
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x3 &lt;&lt; y3 &lt;&lt; 0.05f;
+
+     CrossProduct(nx, ny, nz, x2 - x4, y2 - y4, 0, x1 - x4, y1 - y4, 0);
+     Normalize(nx, ny, nz);
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+ }</pre>
+<p>And then we convert the complete list of vertexes and the list of normals into the native OpenGL ES format that we can use with the OpenGL ES API.</p>
+<pre>     m_vertexNumber = vertices.size();
+     createdVertices = new q_vertexType[m_vertexNumber];
+     createdNormals = new q_vertexType[m_vertexNumber];
+     for (int i = 0;i &lt; m_vertexNumber;i++) {
+       createdVertices[i] = f2vt(vertices.at(i) * 2);
+       createdNormals[i] = f2vt(normals.at(i));
+     }
+     vertices.clear();
+     normals.clear();
+ }</pre>
+<p>In <tt>paintQtLogo()</tt> we draw the triangle array using OpenGL ES. We use q_vertexTypeEnum to abstract the fact that our vertex and normal arrays are either in float or in fixed point format.</p>
+<pre> void GLWidget::paintQtLogo()
+ {
+     glDisable(GL_TEXTURE_2D);
+     glEnableClientState(GL_VERTEX_ARRAY);
+     glVertexPointer(3,q_vertexTypeEnum,0, createdVertices);
+     glEnableClientState(GL_NORMAL_ARRAY);
+     glNormalPointer(q_vertexTypeEnum,0,createdNormals);
+     glDrawArrays(GL_TRIANGLES, 0, m_vertexNumber / 3);
+ }</pre>
+<a name="using-qglpainter"></a>
+<h2>Using QGLPainter</h2>
+<p>Since the <tt>QGLPainter</tt> is slower for OpenGL ES we paint the bubbles with the rasterizer and cache them in a <a href="qimage.html">QImage</a>. This happends only once during the initialiazation.</p>
+<pre> void Bubble::updateCache()
+ {
+     if (cache)
+         delete cache;
+     cache = new QImage(qRound(radius * 2 + 2), qRound(radius * 2 + 2), QImage::Format_ARGB32);
+     cache-&gt;fill(0x00000000);
+     QPainter p(cache);
+     p.setRenderHint(QPainter::HighQualityAntialiasing);
+     QPen pen(Qt::white);
+     pen.setWidth(2);
+     p.setPen(pen);
+     p.setBrush(brush);
+     p.drawEllipse(0, 0, int(2*radius), int(2*radius));
+ }</pre>
+<p>For each bubble this <a href="qimage.html">QImage</a> is then drawn to the <a href="qglwidget.html">QGLWidget</a> by using the according <a href="qpainter.html">QPainter</a> with transparency enabled.</p>
+<pre> void Bubble::drawBubble(QPainter *painter)
+ {
+     painter-&gt;save();
+     painter-&gt;translate(position.x() - radius, position.y() - radius);
+     painter-&gt;setOpacity(0.8);
+     painter-&gt;drawImage(0, 0, *cache);
+     painter-&gt;restore();
+ }</pre>
+<p>Another difference beetwen OpenGL and OpenGL ES is that OpenGL ES does not support glPushAttrib(GL_ALL_ATTRIB_BITS). So we have to restore all the OpenGL states ourselves, after we created the <a href="qpainter.html">QPainter</a> in GLWidget::paintGL().</p>
+<pre>     QPainter painter;
+     painter.begin(this);
+
+     glMatrixMode(GL_PROJECTION);
+     glPushMatrix();
+     glLoadIdentity();</pre>
+<p>Setting up up the model view matrix and setting the right OpenGL states is done in the same way as for standard OpenGL.</p>
+<pre>     glMatrixMode(GL_MODELVIEW);
+     glPushMatrix();
+     glMatrixMode(GL_TEXTURE);
+     glPushMatrix();
+
+     <span class="comment">//</span>Since OpenGL ES does not support glPush/PopAttrib(GL_ALL_ATTRIB_BITS)
+     <span class="comment">//</span>we have to take care of the states ourselves
+
+     q_glClearColor(f2vt(0.1f), f2vt(0.1f), f2vt(0.2f), f2vt(1.0f));
+     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+     glEnable(GL_TEXTURE_2D);
+
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+     glEnable(GL_LIGHTING);
+     glEnable(GL_LIGHT0);
+
+     glShadeModel(GL_FLAT);
+     glFrontFace(GL_CW);
+     glCullFace(GL_FRONT);
+     glEnable(GL_CULL_FACE);
+     glEnable(GL_DEPTH_TEST);
+
+     glMatrixMode(GL_MODELVIEW);
+     glLoadIdentity();
+
+     q_glRotate(f2vt(m_fAngle), f2vt(0.0), f2vt(1.0), f2vt(0.0));
+     q_glRotate(f2vt(m_fAngle), f2vt(1.0), f2vt(0.0), f2vt(0.0));
+     q_glRotate(f2vt(m_fAngle), f2vt(0.0), f2vt(0.0), f2vt(1.0));
+     q_glScale(f2vt(m_fScale), f2vt(m_fScale),f2vt(m_fScale));
+     q_glTranslate(f2vt(0),f2vt(-0.2),f2vt(0));
+
+     q_vertexType matDiff[] = {f2vt(0.40), f2vt(1.0), f2vt(0.0), f2vt(1.0)};
+     q_glMaterialv(GL_FRONT_AND_BACK, GL_DIFFUSE, matDiff);
+
+     if (qtLogo)
+         paintQtLogo();
+     else
+         paintTexturedCube();</pre>
+<p>Now we have to restore the OpenGL state for the <a href="qpainter.html">QPainter</a>. This is not done automatically for OpenGL ES.</p>
+<pre>     glMatrixMode(GL_MODELVIEW);
+     glPopMatrix();
+     glMatrixMode(GL_PROJECTION);
+     glPopMatrix();
+     glMatrixMode(GL_TEXTURE);
+     glPopMatrix();
+
+     glDisable(GL_LIGHTING);
+     glDisable(GL_LIGHT0);
+
+     glDisable(GL_DEPTH_TEST);
+     glDisable(GL_CULL_FACE);</pre>
+<p>Now we use the <a href="qpainter.html">QPainter</a> to draw the transparent bubbles.</p>
+<pre>     if (m_showBubbles)
+         foreach (Bubble *bubble, bubbles) {
+             bubble-&gt;drawBubble(&amp;painter);
+     }</pre>
+<p>In the end, we calculate the framerate and display it using the <a href="qpainter.html">QPainter</a> again.</p>
+<pre>     QString framesPerSecond;
+     framesPerSecond.setNum(frames /(time.elapsed() / 1000.0), 'f', 2);
+
+     painter.setPen(Qt::white);
+
+     painter.drawText(20, 40, framesPerSecond + &quot; fps&quot;);
+
+     painter.end();</pre>
+<p>After we finished all the drawing operations we swap the screen buffer.</p>
+<pre>     swapBuffers();</pre>
+<a name="summary"></a>
+<h2>Summary</h2>
+<p>Similar to the <a href="opengl-hellogl.html">Hello GL Example</a>, we subclass <a href="qglwidget.html">QGLWidget</a> to render a 3D scene using OpenGL ES calls. <a href="qglwidget.html">QGLWidget</a> is a subclass of <a href="qwidget.html">QWidget</a>. Hence, its <a href="qglwidget.html">QGLWidget</a>'s subclasses can be placed in layouts and provided with interactive features just like normal custom widgets.</p>
+<p><a href="qglwidget.html">QGLWidget</a> allows pure OpenGL ES rendering to be mixed with <a href="qpainter.html">QPainter</a> calls, but care must be taken to maintain the state of the OpenGL ES implementation.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

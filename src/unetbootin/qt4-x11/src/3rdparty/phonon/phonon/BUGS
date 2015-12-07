@@ -1,0 +1,9 @@
+When the backend changes there's a drop in the playback. When it's in
+PlayingState it could time how long it takes until the playback resumes and add
+that time to the seek.
+
+When the backend changes the paths are not restored correctly and it crashes
+
+When a new AudioOutput is created with the same name and category it'll still cause
+a notification if a device fallback was necessary. One such notification per
+name/category or even ignoring the name sure is enough.

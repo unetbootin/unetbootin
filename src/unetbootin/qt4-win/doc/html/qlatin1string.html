@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qstring.cpp -->
+<head>
+  <title>Qt 4.4: QLatin1String Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QLatin1String Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QLatin1String class provides a thin wrapper around an ASCII/Latin-1 encoded string literal. <a href="#details">More...</a></p>
+<pre> #include &lt;QLatin1String&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qlatin1string-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlatin1string.html#QLatin1String">QLatin1String</a></b> ( const char * <i>str</i> )</li>
+<li><div class="fn"/>const char * <b><a href="qlatin1string.html#latin1">latin1</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-not-eq">operator!=</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-not-eq-2">operator!=</a></b> ( const char * <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-lt">operator&lt;</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-lt-2">operator&lt;</a></b> ( const char * <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-lt-eq">operator&lt;=</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-lt-eq-2">operator&lt;=</a></b> ( const char * <i>other</i> ) const</li>
+<li><div class="fn"/>QLatin1String &amp; <b><a href="qlatin1string.html#operator-eq">operator=</a></b> ( const QLatin1String &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-eq-eq">operator==</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-eq-eq-2">operator==</a></b> ( const char * <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-gt">operator&gt;</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-gt-2">operator&gt;</a></b> ( const char * <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-gt-eq">operator&gt;=</a></b> ( const QString &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlatin1string.html#operator-gt-eq-2">operator&gt;=</a></b> ( const char * <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLatin1String class provides a thin wrapper around an ASCII/Latin-1 encoded string literal.</p>
+<p>Many of <a href="qstring.html">QString</a>'s member functions are overloaded to accept <tt>const char *</tt> instead of <a href="qstring.html">QString</a>. This includes the copy constructor, the assignment operator, the comparison operators, and various other functions such as <a href="qstring.html#insert">insert()</a>, <a href="qstring.html#replace">replace()</a>, and <a href="qstring.html#indexOf">indexOf()</a>. These functions are usually optimized to avoid constructing a <a href="qstring.html">QString</a> object for the <tt>const char *</tt> data. For example, assuming <tt>str</tt> is a <a href="qstring.html">QString</a>,</p>
+<pre>         if (str == &quot;auto&quot; || str == &quot;extern&quot;
+                 || str == &quot;static&quot; || str == &quot;register&quot;) {
+             ...
+         }</pre>
+<p>is much faster than</p>
+<pre>         if (str == QString(&quot;auto&quot;) || str == QString(&quot;extern&quot;)
+                 || str == QString(&quot;static&quot;) || str == QString(&quot;register&quot;)) {
+             ...
+         }</pre>
+<p>because it doesn't construct four temporary <a href="qstring.html">QString</a> objects and make a deep copy of the character data.</p>
+<p>Applications that define <tt>QT_NO_CAST_FROM_ASCII</tt> (as explained in the <a href="qstring.html">QString</a> documentation) don't have access to <a href="qstring.html">QString</a>'s <tt>const char *</tt> API. To provide an efficient way of specifying constant Latin-1 strings, Qt provides the QLatin1String, which is just a very thin wrapper around a <tt>const char *</tt>. Using QLatin1String, the example code above becomes</p>
+<pre>         if (str == QLatin1String(&quot;auto&quot;)
+                 || str == QLatin1String(&quot;extern&quot;)
+                 || str == QLatin1String(&quot;static&quot;)
+                 || str == QLatin1String(&quot;register&quot;) {
+             ...
+         }</pre>
+<p>This is a bit longer to type, but it provides exactly the same benefits as the first version of the code, and is faster than converting the Latin-1 strings using <a href="qstring.html#fromLatin1">QString::fromLatin1</a>().</p>
+<p>Thanks to the <a href="qstring.html">QString</a>(const QLatin1String &amp;) constructor, QLatin1String can be used everywhere a <a href="qstring.html">QString</a> is expected. For example:</p>
+<pre>         QLabel *label = new QLabel(QLatin1String(&quot;MOD&quot;), this);</pre>
+<p>See also <a href="qstring.html">QString</a> and <a href="qlatin1char.html">QLatin1Char</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLatin1String"></a>QLatin1String::QLatin1String ( const char * <i>str</i> )</h3>
+<p>Constructs a <a href="qlatin1string.html">QLatin1String</a> object that stores <i>str</i>. Note that if <i>str</i> is 0, an empty string is created; this case is handled by <a href="qstring.html">QString</a>.</p>
+<p>The string data is <i>not</i> copied. The caller must be able to guarantee that <i>str</i> will not be deleted or modified as long as the <a href="qlatin1string.html">QLatin1String</a> object exists.</p>
+<p>See also <a href="qlatin1string.html#latin1">latin1</a>().</p>
+<h3 class="fn"><a name="latin1"></a>const char * QLatin1String::latin1 () const</h3>
+<p>Returns the Latin-1 string stored in this object.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QLatin1String::operator!= ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is not equal to string <i>other</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool QLatin1String::operator!= ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qlatin1string.html">QLatin1String</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QLatin1String::operator&lt; ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is lexically less than the <i>other</i> string; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings using the <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>() function.</p>
+<h3 class="fn"><a name="operator-lt-2"></a>bool QLatin1String::operator&lt; ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qlatin1string.html">QLatin1String</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="operator-lt-eq"></a>bool QLatin1String::operator&lt;= ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is lexically less than or equal to string <i>other</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p>
+<h3 class="fn"><a name="operator-lt-eq-2"></a>bool QLatin1String::operator&lt;= ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qstring.html">QString</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="operator-eq"></a>QLatin1String &amp; QLatin1String::operator= ( const QLatin1String &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QLatin1String::operator== ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is equal to string <i>other</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool QLatin1String::operator== ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qlatin1string.html">QLatin1String</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool QLatin1String::operator&gt; ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is lexically greater than string <i>other</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p>
+<h3 class="fn"><a name="operator-gt-2"></a>bool QLatin1String::operator&gt; ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qlatin1string.html">QLatin1String</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="operator-gt-eq"></a>bool QLatin1String::operator&gt;= ( const <a href="qstring.html">QString</a> &amp; <i>other</i> ) const</h3>
+<p>Returns true if this string is lexically greater than or equal to string <i>other</i>; otherwise returns false.</p>
+<p>The comparison is based exclusively on the numeric Unicode values of the characters and is very fast, but is not what a human would expect. Consider sorting user-interface strings with <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>().</p>
+<h3 class="fn"><a name="operator-gt-eq-2"></a>bool QLatin1String::operator&gt;= ( const char * <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The <i>other</i> const char pointer is converted to a <a href="qlatin1string.html">QLatin1String</a> using the <a href="qstring.html#fromAscii">QString::fromAscii</a>() function.</p>
+<p>You can disable this operator by defining <tt>QT_NO_CAST_FROM_ASCII</tt> when you compile your applications. This can be useful if you want to ensure that all user-visible strings go through <a href="qobject.html#tr">QObject::tr</a>(), for example.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qfontdialog.cpp -->
+<head>
+  <title>Qt 4.4: QFontDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFontDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFontDialog class provides a dialog widget for selecting a font. <a href="#details">More...</a></p>
+<pre> #include &lt;QFontDialog&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<ul>
+<li><a href="qfontdialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QFont <b><a href="qfontdialog.html#getFont">getFont</a></b> ( bool * <i>ok</i>, const QFont &amp; <i>initial</i>, QWidget * <i>parent</i>, const QString &amp; <i>caption</i> )</li>
+<li><div class="fn"/>QFont <b><a href="qfontdialog.html#getFont-2">getFont</a></b> ( bool * <i>ok</i>, const QFont &amp; <i>def</i>, QWidget * <i>parent</i>, const char * <i>name</i> )</li>
+<li><div class="fn"/>QFont <b><a href="qfontdialog.html#getFont-3">getFont</a></b> ( bool * <i>ok</i>, QWidget * <i>parent</i>, const char * <i>name</i> )</li>
+<li><div class="fn"/>QFont <b><a href="qfontdialog.html#getFont-5">getFont</a></b> ( bool * <i>ok</i>, const QFont &amp; <i>initial</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>QFont <b><a href="qfontdialog.html#getFont-6">getFont</a></b> ( bool * <i>ok</i>, QWidget * <i>parent</i> = 0 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFontDialog class provides a dialog widget for selecting a font.</p>
+<p>A font dialog is created through one of the static <a href="qfontdialog.html#getFont">getFont</a>() functions.</p>
+<p>Examples:</p>
+<pre>     bool ok;
+     QFont font = QFontDialog::getFont(
+                     &amp;ok, QFont(&quot;Helvetica [Cronyx]&quot;, 10), this);
+     if (ok) {
+         // the user clicked OK and font is set to the font the user selected
+     } else {
+         // the user canceled the dialog; font is set to the initial
+         // value, in this case Helvetica [Cronyx], 10
+     }</pre>
+<p>The dialog can also be used to set a widget's font directly:</p>
+<pre>     myWidget.setFont(QFontDialog::getFont(0, myWidget.font()));</pre>
+<p>If the user clicks OK the font they chose will be used for myWidget, and if they click Cancel the original font is used.</p>
+<p align="center"><img src="images/plastique-fontdialog.png" alt="A font dialog in the Plastique widget style." /></p><p>See also <a href="qfont.html">QFont</a>, <a href="qfontinfo.html">QFontInfo</a>, <a href="qfontmetrics.html">QFontMetrics</a>, <a href="qcolordialog.html">QColorDialog</a>, <a href="qfiledialog.html">QFileDialog</a>, <a href="qprintdialog.html">QPrintDialog</a>, and <a href="dialogs-standarddialogs.html">Standard Dialogs Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="getFont"></a><a href="qfont.html">QFont</a> QFontDialog::getFont ( bool * <i>ok</i>, const <a href="qfont.html">QFont</a> &amp; <i>initial</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>caption</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Executes a modal font dialog and returns a font.</p>
+<p>If the user clicks <b>OK</b>, the selected font is returned. If the user clicks <b>Cancel</b>, the <i>initial</i> font is returned.</p>
+<p>The dialog is constructed with the given <i>parent</i>. <i>caption</i> is shown as the window title of the dialog and <i>initial</i> is the initially selected font. If the <i>ok</i> parameter is not-null, the value it refers to is set to true if the user clicks <b>OK</b>, and set to false if the user clicks <b>Cancel</b>.</p>
+<p>Examples:</p>
+<pre>     bool ok;
+     QFont font = QFontDialog::getFont(&amp;ok, QFont(&quot;Times&quot;, 12), this);
+     if (ok) {
+         // font is set to the font the user selected
+     } else {
+         // the user canceled the dialog; font is set to the initial
+         // value, in this case Times, 12.
+     }</pre>
+<p>The dialog can also be used to set a widget's font directly:</p>
+<pre>     myWidget.setFont(QFontDialog::getFont(0, myWidget.font()));</pre>
+<p>In this example, if the user clicks OK the font they chose will be used, and if they click Cancel the original font is used.</p>
+<h3 class="fn"><a name="getFont-2"></a><a href="qfont.html">QFont</a> QFontDialog::getFont ( bool * <i>ok</i>, const <a href="qfont.html">QFont</a> &amp; <i>def</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Call getFont(<i>ok</i>, <i>def</i>, <i>parent</i>) instead.</p>
+<p>The <i>name</i> parameter is ignored.</p>
+<h3 class="fn"><a name="getFont-3"></a><a href="qfont.html">QFont</a> QFontDialog::getFont ( bool * <i>ok</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Call getFont(<i>ok</i>, <i>parent</i>) instead.</p>
+<p>The <i>name</i> parameter is ignored.</p>
+<h3 class="fn"><a name="getFont-5"></a><a href="qfont.html">QFont</a> QFontDialog::getFont ( bool * <i>ok</i>, const <a href="qfont.html">QFont</a> &amp; <i>initial</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="getFont-6"></a><a href="qfont.html">QFont</a> QFontDialog::getFont ( bool * <i>ok</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Executes a modal font dialog and returns a font.</p>
+<p>If the user clicks <b>OK</b>, the selected font is returned. If the user clicks <b>Cancel</b>, the Qt default font is returned.</p>
+<p>The dialog is constructed with the given <i>parent</i>. If the <i>ok</i> parameter is not-null, the value it refers to is set to true if the user clicks <b>OK</b>, and false if the user clicks <b>Cancel</b>.</p>
+<p>Example:</p>
+<pre>     bool ok;
+     QFont font = QFontDialog::getFont(&amp;ok, this);
+     if (ok) {
+         // font is set to the font the user selected
+     } else {
+         // the user canceled the dialog; font is set to the default
+         // application font, QApplication::font()
+     }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

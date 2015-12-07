@@ -1,0 +1,8 @@
+<RCC>
+  <qresource prefix="/trolltech/phononwidgets">
+    <file>images/videoplayer.png</file>
+    <file>images/videowidget.png</file>
+    <file>images/seekslider.png</file>
+    <file>images/volumeslider.png</file>
+  </qresource>
+</RCC>

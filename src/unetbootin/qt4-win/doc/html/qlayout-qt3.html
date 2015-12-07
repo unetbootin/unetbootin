@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qlayout.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QLayout</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QLayout</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qlayout.html">QLayout class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlayout-qt3.html#QLayout-4">QLayout</a></b> ( QWidget * <i>parent</i>, int <i>margin</i>, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlayout-qt3.html#QLayout-5">QLayout</a></b> ( QLayout * <i>parentLayout</i>, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlayout-qt3.html#QLayout-6">QLayout</a></b> ( int <i>spacing</i>, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#add">add</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>bool <b><a href="qlayout-qt3.html#autoAdd">autoAdd</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qlayout-qt3.html#defaultBorder">defaultBorder</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#freeze">freeze</a></b> ( int <i>w</i> = 0, int <i>h</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qlayout-qt3.html#isTopLevel">isTopLevel</a></b> () const</li>
+<li><div class="fn"/>QLayoutIterator <b><a href="qlayout-qt3.html#iterator">iterator</a></b> ()</li>
+<li><div class="fn"/>QWidget * <b><a href="qlayout-qt3.html#mainWidget">mainWidget</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#remove">remove</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>SizeConstraint <b><a href="qlayout-qt3.html#resizeMode">resizeMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#setAutoAdd">setAutoAdd</a></b> ( bool <i>a</i> )</li>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#setResizeMode">setResizeMode</a></b> ( SizeConstraint <i>constraint</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlayout-qt3.html#deleteAllItems">deleteAllItems</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLayout-4"></a>QLayout::QLayout ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, int <i>margin</i>, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new top-level <a href="qlayout.html">QLayout</a> called <i>name</i>, with parent widget <i>parent</i>. <i>parent</i> may not be 0.</p>
+<p>The <i>margin</i> is the number of pixels between the edge of the widget and the managed children. The <i>spacing</i> sets the value of <a href="qlayout.html#spacing-prop">spacing</a>(), which gives the spacing between the managed widgets. If <i>spacing</i> is -1 (the default), spacing is set to the value of <i>margin</i>.</p>
+<p>There can be only one top-level layout for a widget. It is returned by <a href="qwidget.html#layout">QWidget::layout</a>()</p>
+<p>See also <a href="qwidget.html#setLayout">QWidget::setLayout</a>().</p>
+<h3 class="fn"><a name="QLayout-5"></a>QLayout::QLayout ( QLayout * <i>parentLayout</i>, int <i>spacing</i> = -1, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new child <a href="qlayout.html">QLayout</a> called <i>name</i>, and places it inside <i>parentLayout</i> by using the default placement defined by <a href="qlayout.html#addItem">addItem</a>().</p>
+<p>If <i>spacing</i> is -1, this <a href="qlayout.html">QLayout</a> inherits <i>parentLayout</i>'s <a href="qlayout.html#spacing-prop">spacing</a>(), otherwise the value of <i>spacing</i> is used.</p>
+<h3 class="fn"><a name="QLayout-6"></a>QLayout::QLayout ( int <i>spacing</i>, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new child <a href="qlayout.html">QLayout</a> called <i>name</i>. If <i>spacing</i> is -1, this <a href="qlayout.html">QLayout</a> inherits its parent's <a href="qlayout.html#spacing-prop">spacing</a>(); otherwise the value of <i>spacing</i> is used.</p>
+<p>This layout has to be inserted into another layout before geometry management will work.</p>
+<h3 class="fn"><a name="add"></a>void QLayout::add ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Use addWidget(<i>widget</i>) instead.</p>
+<h3 class="fn"><a name="autoAdd"></a>bool QLayout::autoAdd () const</h3>
+<p>Automatically adding widgets is deprecated. Use <a href="qlayout.html#addWidget">addWidget</a>() or addLayout() instead.</p>
+<p>See also <a href="qlayout-qt3.html#setAutoAdd">setAutoAdd</a>().</p>
+<h3 class="fn"><a name="defaultBorder"></a>int QLayout::defaultBorder () const</h3>
+<p>Use <a href="qlayout.html#spacing-prop">spacing</a>() instead.</p>
+<h3 class="fn"><a name="deleteAllItems"></a>void QLayout::deleteAllItems ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Removes and deletes all items in this layout.</p>
+<h3 class="fn"><a name="freeze"></a>void QLayout::freeze ( int <i>w</i> = 0, int <i>h</i> = 0 )</h3>
+<p>Sets this layout's parent widget to a fixed size with width <i>w</i> and height <i>h</i>, stopping the user from resizing it, and also prevents the layout from resizing it, even if the layout's size hint should change. Does nothing if this is not a top-level layout (i.e&#x2e;, if <a href="qobject.html#parent">parent</a>()-&gt;<a href="qobject.html#isWidgetType">isWidgetType</a>()).</p>
+<p>As a special case, if both <i>w</i> and <i>h</i> are 0, then the layout's current <a href="qlayoutitem.html#sizeHint">sizeHint</a>() is used.</p>
+<p>Use <tt>setResizeMode(Fixed)</tt> to stop the widget from being resized by the user, while still allowing the layout to resize it when the <a href="qlayoutitem.html#sizeHint">sizeHint</a>() changes.</p>
+<p>Use <tt>setResizeMode(FreeResize)</tt> to allow the user to resize the widget, while preventing the layout from resizing it.</p>
+<h3 class="fn"><a name="isTopLevel"></a>bool QLayout::isTopLevel () const</h3>
+<p>Returns true if this layout is a top-level layout, i.e&#x2e; not a child of another layout; otherwise returns false.</p>
+<h3 class="fn"><a name="iterator"></a>QLayoutIterator QLayout::iterator ()</h3>
+<p>Use a <a href="porting4.html#qlayoutiterator">QLayoutIterator</a>() constructor instead.</p>
+<h3 class="fn"><a name="mainWidget"></a><a href="qwidget.html">QWidget</a> * QLayout::mainWidget () const</h3>
+<p>Use <a href="qlayout.html#parentWidget">parentWidget</a>() instead.</p>
+<h3 class="fn"><a name="remove"></a>void QLayout::remove ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Use removeWidget(<i>widget</i>) instead.</p>
+<h3 class="fn"><a name="resizeMode"></a><a href="qlayout.html#SizeConstraint-enum">SizeConstraint</a> QLayout::resizeMode () const</h3>
+<p>Use <a href="qlayout.html#sizeConstraint-prop">sizeConstraint</a>() instead.</p>
+<p>See also <a href="qlayout-qt3.html#setResizeMode">setResizeMode</a>().</p>
+<h3 class="fn"><a name="setAutoAdd"></a>void QLayout::setAutoAdd ( bool <i>a</i> )</h3>
+<p>Automatically adding widgets is deprecated. Use <a href="qlayout.html#addWidget">addWidget</a>() or addLayout() instead.</p>
+<p>See also <a href="qlayout-qt3.html#autoAdd">autoAdd</a>().</p>
+<h3 class="fn"><a name="setResizeMode"></a>void QLayout::setResizeMode ( <a href="qlayout.html#SizeConstraint-enum">SizeConstraint</a> <i>constraint</i> )</h3>
+<p>Use setSizeConstraint(<i>constraint</i>) instead.</p>
+<p>See also <a href="qlayout-qt3.html#resizeMode">resizeMode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

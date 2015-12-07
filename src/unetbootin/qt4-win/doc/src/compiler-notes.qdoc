@@ -1,0 +1,256 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page compiler-notes.html
+    \ingroup platform-notes
+    \title Compiler Notes
+    \brief Information about the C++ compilers and tools used to build Qt.
+
+    This page contains information about the C++ compilers and tools used
+    to build Qt on various platforms.
+
+    \tableofcontents
+
+    Please refer to the \l{Platform Notes} for information on the platforms
+    Qt is currently known to run on.
+
+    If you have anything to add to this list or any of the platform or
+    compiler-specific pages, please submit it via the
+    \l{Bug Report Form}.
+
+    \target GCC
+    \section1 GCC (most platforms)
+
+    Trolltech supports building Qt with gcc 3.2 and later. Older versions of
+    gcc are not recommended and not supported by Trolltech. They might or
+    might not work.
+
+    \section2 GCC on Windows (MinGW)
+
+    We have tested Qt with this compiler on Windows 2000 and Windows XP.
+    The minimal version of MinGW supported is:
+
+    \list
+    \o gcc 3.4.2
+    \o mingw runtime 3.7
+    \o win32api 3.2
+    \o binutils 2.15.91
+    \o mingw32-make 3.80.0-3
+    \endlist
+
+    \section2 gcc 4.0.0
+
+    The released package of the compiler has some bugs that lead to
+    miscompilations. We recommend using gcc 4.0.1 or later, or to use a recent
+    CVS snapshot of the gcc 4.0 branch. The version of gcc 4.0.0 that is
+    shipped with Mac OS X 10.4 "Tiger" is known to work with Qt/Mac.
+
+    \section2 HP-UX
+
+    The hpux-g++ platform is tested with gcc 3.4.3.
+
+    \section2 Solaris
+
+    Please use gcc 3.3.0 or better.
+
+    \section2 Mac OS X
+
+    Please use the latest gcc 3.3 from Apple or better. The gcc 3.3 that is
+    provided with Xcode 1.5 is known to generate bad code, use the November
+    2004 GCC 3.3 updater \l{http://connect.apple.com}{available from Apple}.
+
+    \section2 gcc (GCC) 3.4.6 (Debian 3.4.6-5) on AMD64 (x86_64)
+
+    This compiler is known to miscompile some parts of Qt when doing a
+    release build. There are several workarounds:
+
+    \list 1
+    \o Use a debug build instead.
+    \o For each miscompilation encountered, recompile the file, removing the -O2 option.
+    \o Add -fno-gcse to the QMAKE_CXXFLAGS_RELEASE.
+    \endlist
+
+    \section1 HP ANSI C++ (aCC)
+
+    The hpux-acc-32 and hpux-acc-64 platforms are tested with aCC A.03.57. The
+    hpuxi-acc-32 and hpuxi-acc-64 platforms are tested with aCC A.06.12.
+
+    \section1 Intel C++ Compiler
+
+    \section2 Intel C++ Compiler for Linux
+
+    Trolltech currently tests the following compilers:
+
+    \list
+
+    \o Intel(R) C++ Compiler for applications running on IA-32,
+    Version 10.1 Build 20080212 Package ID: l_cc_p_10.1.013
+
+    \o Intel(R) C++ Compiler for applications running on Intel(R) 64,
+    Version 10.1 Build 20080212 Package ID: l_cc_p_10.1.013
+
+    \endlist
+
+    \section2 Known Issues with Intel C++ Compiler for Linux
+
+    \list
+    \o Precompiled header support does not work prior in version
+       10.0.025 and older. For these compilers, you should configure Qt
+       with -no-pch. Precompiled header support works properly in version
+       10.0.026 and later.
+    \o Version 10.0.026 for Intel 64 is known to miscompile qmake when
+       building in release mode. For now, configure Qt with
+       -debug. Version 10.1.008 and later can compile qmake in release
+       mode.
+    \o Versions 10.1.008 to 10.1.013 for both IA-32 and Intel 64 are
+       known crash with "(0): internal error: 0_47021" when compiling
+       QtXmlPatterns, QtWebKit, and Designer in release mode. For now,
+       Qt turns off optimizations for these modules when building in
+       release mode. This issue has been reported to Intel and is
+       awaiting resolution.
+    \endlist
+
+    \section2 Intel C++ Compiler (Windows, Altix)
+
+    Qt 4 has been tested successfully with:
+
+    \list
+    \o Windows - Intel(R) C++ Compiler for 32-bit applications,
+       Version 8.1 Build 20050309Z Package ID: W_CC_PC_8.1.026
+    \o Altix - Intel(R) C++ Itanium(R) Compiler for Itanium(R)-based
+       applications Version 8.1 Build 20050406 Package ID: l_cc_pc_8.1.030
+    \endlist
+
+    We currently only test the Intel compiler on 32-bit Windows versions.
+
+    \section1 MIPSpro (IRIX)
+
+    Qt 4.x requires MIPSpro version 7.4.2m.
+
+    Note that MIPSpro version 7.4.4m is currently not supported, since it has
+    introduced a number of problems that have not yet been resolved.
+    We recommend using 7.4.2m for Qt development.
+
+    \target Sun Studio
+    \section1 Forte Developer / Sun Studio (Solaris)
+
+    \section2 Sun Studio
+
+    Qt is tested using Sun Studio 9 and Sun Studio 10. Go to
+    \l{http://developers.sun.com/prodtech/cc/downloads/patches/index.html}{Sun's website}
+    to download the latest patches for your Sun compiler.
+
+    \section2 Sun WorkShop 5.0
+
+    Sun WorkShop 5.0 is not supported with Qt 4.
+
+    \section1 Visual Studio (Windows)
+
+    We do most of our Windows development on Windows XP, using Microsoft
+    Visual Studio .NET 2003 and Visual Studio 2005 (both the 32- and 64-bit
+    versions).
+
+    Qt works with the Standard Edition, the Professional Edition and Team
+    System Edition of Visual Studio 2005.
+
+    We also test Qt 4 on Windows 98/Me, Windows NT and Windows 2000, with
+    Microsoft Visual C++ 6.0 and Visual Studio .NET.
+
+    In order to use Qt with the Visual Studio 2005 Express Edition you need
+    to download and install the platform SDK. Due to limitations in the
+    Express Edition it is not possible for us to install the Qt Visual
+    Studio Integration. You will need to use our command line tools to
+    build Qt applications with this edition.
+
+    The Visual C++ Linker doesn't understand filenames with spaces (as in
+    \c{C:\Program files\Qt\}) so you will have to move it to another place,
+    or explicitly set the path yourself; for example:
+
+    \snippet doc/src/snippets/code/doc.src.compiler-notes.qdoc 0
+
+    Visual C++ 6.0 requires Service Pack 5 to work correctly with Qt.
+    If you are using Visual C++ version 6.0 we highly recommend that you
+    update to SP5.
+
+    If you are experiencing strange problems with using special flags that
+    modify the alignment of structure and union members (such as \c{/Zp2})
+    then you will need to recompile Qt with the flags set for the
+    application as well.
+
+    If you're using Visual Studio .NET Standard Edition, you should be
+    using the Qt binary package provided, and not the source package.
+    As the Standard Edition does not optimize compiled code, your compiled
+    version of Qt would perform suboptimally with respect to speed.
+
+    With Visual Studio 2005 Service Pack 1 a bug was introduced which
+    causes Qt not to compile, this has been fixed with a hotfix available
+    from Microsoft. See this
+    \l{http://www.trolltech.com/developer/knowledgebase/faq.2006-12-18.3281869860}{Knowledge Base entry}
+    for more information.
+
+    \section1 IBM xlC (AIX)
+
+    The makeC++SharedLib utility must be in your PATH and be up to date to
+    build shared libraries. From IBM's
+    \l{http://www.redbooks.ibm.com/abstracts/sg245674.html}{C and C++ Application Development on AIX}
+    Redbook:
+
+    \list
+    \o "The second step is to use the makeC++SharedLib command to create the
+       shared object. The command has many optional arguments, but in its
+       simplest form, can be used as follows:"
+       \snippet doc/src/snippets/code/doc.src.compiler-notes.qdoc 1
+    \o "The full path name to the command is not required; however, to avoid
+       this, you will have to add the directory in which it is located to
+       your PATH environment variable. The command is located in the
+       /usr/vacpp/bin directory with the VisualAge C++ Professional for AIX,
+       Version 5 compiler."
+    \endlist
+
+    \section2 VisualAge C++ for AIX, Version 6.0
+
+    Make sure you have the
+    \l{http://www-1.ibm.com/support/search.wss?rs=32&tc=SSEP5D&dc=D400}{latest upgrades}
+    installed.
+*/

@@ -1,0 +1,4 @@
+QMAKE_TARGET_COMPANY = Trolltech ASA
+QMAKE_TARGET_PRODUCT = Qt4
+QMAKE_TARGET_DESCRIPTION = C++ application development framework.
+QMAKE_TARGET_COPYRIGHT = Copyright (C) 2003-2008 Trolltech ASA

@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/menus.qdoc -->
+<head>
+  <title>Qt 4.4: Menus Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Menus Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="mainwindows-menus-mainwindow-cpp.html">mainwindows/menus/mainwindow.cpp</a></li>
+<li><a href="mainwindows-menus-mainwindow-h.html">mainwindows/menus/mainwindow.h</a></li>
+<li><a href="mainwindows-menus-main-cpp.html">mainwindows/menus/main.cpp</a></li>
+<li><a href="mainwindows-menus-menus-pro.html">mainwindows/menus/menus.pro</a></li>
+</ul>
+<p>The Menus example demonstrates how menus can be used in a main window application.</p>
+<p>A menu widget can be either a pull-down menu in a menu bar or a standalone context menu. Pull-down menus are shown by the menu bar when the user clicks on the respective item or presses the specified shortcut key. Context menus are usually invoked by some special keyboard key or by right-clicking.</p>
+<p align="center"><img src="images/menus-example.png" /></p><p>A menu consists of a list of <i>action</i> items. In applications, many common commands can be invoked via menus, toolbar buttons as well as keyboard shortcuts. Since the user expects the commands to be performed in the same way, regardless of the user interface used, it is useful to represent each command as an action.</p>
+<p>The Menus example consists of one single class, <tt>MainWindow</tt>, derived from the <a href="qmainwindow.html">QMainWindow</a> class. When choosing one of the action items in our application, it will display the item's path in its central widget.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p><a href="qmainwindow.html">QMainWindow</a> provides a main application window, with a menu bar, tool bars, dock widgets and a status bar around a large central widget.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ protected:
+     void contextMenuEvent(QContextMenuEvent *event);</pre>
+<p>In this example, we will see how to implement pull-down menus as well as a context menu. In order to implement a custom context menu we must reimplement <a href="qwidget.html">QWidget</a>'s <a href="qwidget.html#contextMenuEvent">contextMenuEvent()</a> function to receive the context menu events for our main window.</p>
+<pre> private slots:
+     void newFile();
+     void open();
+     void save();
+     void print();
+     void undo();
+     void redo();
+     void cut();
+     void copy();
+     void paste();
+     void bold();
+     void italic();
+     void leftAlign();
+     void rightAlign();
+     void justify();
+     void center();
+     void setLineSpacing();
+     void setParagraphSpacing();
+     void about();
+     void aboutQt();</pre>
+<p>We must also implement a collection of private slots to respond to the user activating any of our menu entries. Note that these slots are left out of this documentation since they are trivial, i.e&#x2e;, most of them are only displaying the action's path in the main window's central widget.</p>
+<pre> private:
+     void createActions();
+     void createMenus();</pre>
+<p>We have chosen to simplify the constructor by implementing two private convenience functions to create the various actions, to add them to menus and to insert the menus into our main window's menu bar.</p>
+<pre>     QMenu *fileMenu;
+     QMenu *editMenu;
+     QMenu *formatMenu;
+     QMenu *helpMenu;
+     QActionGroup *alignmentGroup;
+     QAction *newAct;
+     QAction *openAct;
+     QAction *saveAct;
+     QAction *printAct;
+     QAction *exitAct;
+     QAction *undoAct;
+     QAction *redoAct;
+     QAction *cutAct;
+     QAction *copyAct;
+     QAction *pasteAct;
+     QAction *boldAct;
+     QAction *italicAct;
+     QAction *leftAlignAct;
+     QAction *rightAlignAct;
+     QAction *justifyAct;
+     QAction *centerAct;
+     QAction *setLineSpacingAct;
+     QAction *setParagraphSpacingAct;
+     QAction *aboutAct;
+     QAction *aboutQtAct;
+     QLabel *infoLabel;
+ };</pre>
+<p>Finally, we declare the various menus and actions as well as a simple information label in the application wide scope.</p>
+<p>The <a href="qmenu.html">QMenu</a> class provides a menu widget for use in menu bars, context menus, and other popup menus while the <a href="qaction.html">QAction</a> class provides an abstract user interface action that can be inserted into widgets.</p>
+<p>In some situations it is useful to group actions together, e.g&#x2e;, we have a <b>Left Align</b> action, a <b>Right Align</b> action, a <b>Justify</b> action, and a <b>Center</b> action, and we want only one of these actions to be active at any one time. One simple way of achieving this is to group the actions together in an action group using the <a href="qactiongroup.html">QActionGroup</a> class.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>In the constructor, we start off by creating a regular <a href="qwidget.html">QWidget</a> and make it our main window's central widget. Note that the main window takes ownership of the widget pointer and deletes it at the appropriate time.</p>
+<pre> MainWindow::MainWindow()
+ {
+     QWidget *widget = new QWidget;
+     setCentralWidget(widget);
+
+     QWidget *topFiller = new QWidget;
+     topFiller-&gt;setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+     infoLabel = new QLabel(tr(&quot;&lt;i&gt;Choose a menu option, or right-click to &quot;
+                               &quot;invoke a context menu&lt;/i&gt;&quot;));
+     infoLabel-&gt;setFrameStyle(QFrame::StyledPanel | QFrame::Sunken);
+     infoLabel-&gt;setAlignment(Qt::AlignCenter);
+
+     QWidget *bottomFiller = new QWidget;
+     bottomFiller-&gt;setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;setMargin(5);
+     layout-&gt;addWidget(topFiller);
+     layout-&gt;addWidget(infoLabel);
+     layout-&gt;addWidget(bottomFiller);
+     widget-&gt;setLayout(layout);</pre>
+<p>Then we create the information label as well as a top and bottom filler that we add to a layout which we install on the central widget. <a href="qmainwindow.html">QMainWindow</a> objects come with their own customized layout and setting a layout on a the actual main window, or creating a layout with a main window as a parent, is considered an error. You should always set your own layout on the central widget instead.</p>
+<pre>     createActions();
+     createMenus();
+
+     QString message = tr(&quot;A context menu is available by right-clicking&quot;);
+     statusBar()-&gt;showMessage(message);
+
+     setWindowTitle(tr(&quot;Menus&quot;));
+     setMinimumSize(160, 160);
+     resize(480, 320);
+ }</pre>
+<p>To create the actions and menus we call our two convenience functions: <tt>createActions()</tt> and <tt>createMenus()</tt>. We will get back to these shortly.</p>
+<p><a href="qmainwindow.html">QMainWindow</a>'s <a href="qmainwindow.html#statusBar">statusBar()</a> function returns the status bar for the main window (if the status bar does not exist, this function will create and return an empty status bar). We initialize the status bar and window title, resize the window to an appropriate size as well as ensure that the main window cannot be resized to a smaller size than the given one.</p>
+<p>Now, let's take a closer look at the <tt>createActions()</tt> convenience function that creates the various actions:</p>
+<pre> void MainWindow::createActions()
+ {
+     newAct = new QAction(tr(&quot;&amp;New&quot;), this);
+     newAct-&gt;setShortcut(tr(&quot;Ctrl+N&quot;));
+     newAct-&gt;setStatusTip(tr(&quot;Create a new file&quot;));
+     connect(newAct, SIGNAL(triggered()), this, SLOT(newFile()));
+     ...</pre>
+<p>A <a href="qaction.html">QAction</a> object may contain an icon, a text, a shortcut, a status tip, a &quot;What's This?&quot; text, and a tooltip. Most of these can be set in the constructor, but they can also be set independently using the provided convenience functions.</p>
+<p>In the <tt>createActions()</tt> function, we first create a <tt>newAct</tt> action. We make <b>Ctrl+N</b> its shortcut using the <a href="qaction.html#shortcut-prop">QAction::setShortcut</a>() function, and we set its status tip using the <a href="qaction.html#statusTip-prop">QAction::setStatusTip</a>() function (the status tip is displayed on all status bars provided by the action's top-level parent widget). We also connect its <a href="qaction.html#triggered">triggered()</a> signal to the <tt>newFile()</tt> slot.</p>
+<p>The rest of the actions are created in a similar manner. Please see the source code for details.</p>
+<pre>     alignmentGroup = new QActionGroup(this);
+     alignmentGroup-&gt;addAction(leftAlignAct);
+     alignmentGroup-&gt;addAction(rightAlignAct);
+     alignmentGroup-&gt;addAction(justifyAct);
+     alignmentGroup-&gt;addAction(centerAct);
+     leftAlignAct-&gt;setChecked(true);
+ }</pre>
+<p>Once we have created the <b>Left Align</b>, <b>Right Align</b>, <b>Justify</b>, and a <b>Center</b> actions, we can also create the previously mentioned action group.</p>
+<p>Each action is added to the group using <a href="qactiongroup.html">QActionGroup</a>'s <a href="qactiongroup.html#addAction">addAction()</a> function. Note that an action also can be added to a group by creating it with the group as its parent. Since an action group is exclusive by default, only one of the actions in the group is checked at any one time (this can be altered using the <a href="qactiongroup.html#exclusive-prop">QActionGroup::setExclusive</a>() function).</p>
+<p>When all the actions are created, we use the <tt>createMenus()</tt> function to add the actions to the menus and to insert the menus into the menu bar:</p>
+<pre> void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(newAct);
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(saveAct);
+     fileMenu-&gt;addAction(printAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     editMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Edit&quot;));
+     editMenu-&gt;addAction(undoAct);
+     editMenu-&gt;addAction(redoAct);
+     editMenu-&gt;addSeparator();
+     editMenu-&gt;addAction(cutAct);
+     editMenu-&gt;addAction(copyAct);
+     editMenu-&gt;addAction(pasteAct);
+     editMenu-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);</pre>
+<p><a href="qmenubar.html">QMenuBar</a>'s <a href="qmenubar.html#addMenu">addMenu()</a> function appends a new <a href="qmenu.html">QMenu</a> with the given title, to the menu bar (note that the menu bar takes ownership of the menu). We use <a href="qwidget.html">QWidget</a>'s <a href="qwidget.html#addAction">addAction()</a> function to add each action to the corresponding menu.</p>
+<p>Alternatively, the <a href="qmenu.html">QMenu</a> class provides several <a href="qmenu.html#addAction">addAction()</a> convenience functions that create and add new actions from given texts and/or icons. You can also provide a member that will automatically connect to the new action's <a href="qaction.html#triggered">triggered()</a> signal, and a shortcut represented by a <a href="qkeysequence.html">QKeySequence</a> instance.</p>
+<p>The <a href="qmenu.html#addSeparator">QMenu::addSeparator</a>() function creates and returns a new separator action, i.e&#x2e; an action for which <a href="qaction.html#isSeparator">QAction::isSeparator</a>() returns true, and adds the new action to the menu's list of actions.</p>
+<pre>     formatMenu = editMenu-&gt;addMenu(tr(&quot;&amp;Format&quot;));
+     formatMenu-&gt;addAction(boldAct);
+     formatMenu-&gt;addAction(italicAct);
+     formatMenu-&gt;addSeparator()-&gt;setText(tr(&quot;Alignment&quot;));
+     formatMenu-&gt;addAction(leftAlignAct);
+     formatMenu-&gt;addAction(rightAlignAct);
+     formatMenu-&gt;addAction(justifyAct);
+     formatMenu-&gt;addAction(centerAct);
+     formatMenu-&gt;addSeparator();
+     formatMenu-&gt;addAction(setLineSpacingAct);
+     formatMenu-&gt;addAction(setParagraphSpacingAct);
+ }</pre>
+<p>Note the <b>Format</b> menu. First of all, it is added as a submenu to the <b>Edit</b> Menu using <a href="qmenu.html">QMenu</a>'s <a href="qmenu.html#addMenu">addMenu()</a> function. Secondly, take a look at the alignment actions: In the <tt>createActions()</tt> function we added the <tt>leftAlignAct</tt>, <tt>rightAlignAct</tt>, <tt>justifyAct</tt> and <tt>centerAct</tt> actions to an action group. Nevertheless, we must add each action to the menu separately while the action group does its magic behind the scene.</p>
+<pre> void MainWindow::contextMenuEvent(QContextMenuEvent *event)
+ {
+     QMenu menu(this);
+     menu.addAction(cutAct);
+     menu.addAction(copyAct);
+     menu.addAction(pasteAct);
+     menu.exec(event-&gt;globalPos());
+ }</pre>
+<p>To provide a custom context menu, we must reimplement <a href="qwidget.html">QWidget</a>'s <a href="qwidget.html#contextMenuEvent">contextMenuEvent()</a> function to receive the widget's context menu events (note that the default implementation simply ignores these events).</p>
+<p>Whenever we receive such an event, we create a menu containing the <b>Cut</b>, <b>Copy</b> and <b>Paste</b> actions. Context menus can be executed either asynchronously using the <a href="qmenu.html#popup">popup()</a> function or synchronously using the <a href="qmenu.html#exec">exec()</a> function. In this example, we have chosen to show the menu using its <a href="qmenu.html#exec">exec()</a> function. By passing the event's position as argument we ensure that the context menu appears at the expected position.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

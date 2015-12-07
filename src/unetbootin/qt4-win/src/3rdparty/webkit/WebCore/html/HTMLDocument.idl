@@ -1,0 +1,90 @@
+/*
+ * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
+ * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module html {
+
+    interface [GenerateConstructor, HasOverridingNameGetter] HTMLDocument : Document {
+                 attribute [ConvertNullToNullString] DOMString title;
+        readonly attribute DOMString referrer;
+#if defined(LANGUAGE_JAVASCRIPT)
+                 attribute DOMString domain;
+#else
+        readonly attribute DOMString domain;
+#endif
+        readonly attribute DOMString URL;
+                
+        // FIXME: the DOM spec does NOT have this attribute
+        // raising an exception.
+                 attribute HTMLElement body
+                     setter raises (DOMException);
+                     
+        readonly attribute HTMLCollection images;
+        readonly attribute HTMLCollection applets;
+        readonly attribute HTMLCollection links;
+        readonly attribute HTMLCollection forms;
+        readonly attribute HTMLCollection anchors;
+        
+        // FIXME: the DOM spec states that this attribute can 
+        // raise an exception on setting.
+                 attribute [ConvertNullToNullString] DOMString cookie
+                     /*setter raises (DOMException)*/;
+
+        [Custom] void open();
+        void close();
+        [Custom] void write(in DOMString text);
+        [Custom] void writeln(in DOMString text);
+        NodeList getElementsByName(in DOMString elementName);
+
+        // Extensions
+        Element getElementById(in DOMString elementId);
+
+        readonly attribute HTMLCollection embeds;
+        readonly attribute HTMLCollection plugins;
+        readonly attribute HTMLCollection scripts;
+
+        readonly attribute DOMString lastModified;
+
+#if defined(LANGUAGE_JAVASCRIPT)
+        // FIXME: These should eventually be available (if they are wanted) for all languages.
+
+                 attribute [Custom, Deletable] HTMLCollection all;
+
+                 attribute [Custom] Location location;
+
+        [Custom] void clear();
+#endif
+
+        void captureEvents();
+        void releaseEvents();
+
+        readonly attribute long width;
+        readonly attribute long height;
+                 attribute [ConvertNullToNullString] DOMString dir;
+                 attribute [ConvertNullToNullString] DOMString designMode;
+
+        // Deprecated attributes
+                 attribute [ConvertNullToNullString] DOMString bgColor;
+                 attribute [ConvertNullToNullString] DOMString fgColor;
+                 attribute [ConvertNullToNullString] DOMString alinkColor;
+                 attribute [ConvertNullToNullString] DOMString linkColor;
+                 attribute [ConvertNullToNullString] DOMString vlinkColor;
+    };
+
+}

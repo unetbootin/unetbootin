@@ -1,0 +1,6 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/res">
+   <file>bubbles.svg</file>
+   <file>qt4-logo.png</file>
+</qresource>
+</RCC>

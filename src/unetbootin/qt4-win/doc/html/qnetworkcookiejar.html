@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/access/qnetworkcookie.cpp -->
+<head>
+  <title>Qt 4.4: QNetworkCookieJar Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QNetworkCookieJar Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QNetworkCookieJar class implements a simple jar of <a href="qnetworkcookie.html">QNetworkCookie</a> objects <a href="#details">More...</a></p>
+<pre> #include &lt;QNetworkCookieJar&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qnetworkcookiejar-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qnetworkcookiejar.html#QNetworkCookieJar">QNetworkCookieJar</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qnetworkcookiejar.html#dtor.QNetworkCookieJar">~QNetworkCookieJar</a></b> ()</li>
+<li><div class="fn"/>virtual QList&lt;QNetworkCookie&gt; <b><a href="qnetworkcookiejar.html#cookiesForUrl">cookiesForUrl</a></b> ( const QUrl &amp; <i>url</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qnetworkcookiejar.html#setCookiesFromUrl">setCookiesFromUrl</a></b> ( const QList&lt;QNetworkCookie&gt; &amp; <i>cookieList</i>, const QUrl &amp; <i>url</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>QList&lt;QNetworkCookie&gt; <b><a href="qnetworkcookiejar.html#allCookies">allCookies</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qnetworkcookiejar.html#setAllCookies">setAllCookies</a></b> ( const QList&lt;QNetworkCookie&gt; &amp; <i>cookieList</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QNetworkCookieJar class implements a simple jar of <a href="qnetworkcookie.html">QNetworkCookie</a> objects</p>
+<p>Cookies are small bits of information that stateless protocols like HTTP use to maintain some persistent information across requests.</p>
+<p>A cookie is set by a remote server when it replies to a request and it expects the same cookie to be sent back when further requests are sent.</p>
+<p>The cookie jar is the object that holds all cookies set in previous requests. Web browsers save their cookie jars to disk in order to conserve permanent cookies across invocations of the application.</p>
+<p>QNetworkCookieJar does not implement permanent storage: it only keeps the cookies in memory. Once the QNetworkCookieJar object is deleted, all cookies it held will be discarded as well. If you want to save the cookies, you should derive from this class and implement the saving to disk to your own storage format.</p>
+<p>This class implements only the basic security recommended by the cookie specifications and does not implement any cookie acceptance policy (it accepts all cookies set by any requests). In order to override those rules, you should reimplement the <a href="qnetworkcookiejar.html#cookiesForUrl">cookiesForUrl</a>() and <a href="qnetworkcookiejar.html#setCookiesFromUrl">setCookiesFromUrl</a>() virtual functions. They are called by <a href="qnetworkreply.html">QNetworkReply</a> and <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a> when they detect new cookies and when they require cookies.</p>
+<p>See also <a href="qnetworkcookie.html">QNetworkCookie</a>, <a href="qnetworkaccessmanager.html">QNetworkAccessManager</a>, <a href="qnetworkreply.html">QNetworkReply</a>, <a href="qnetworkrequest.html">QNetworkRequest</a>, and <a href="qnetworkaccessmanager.html#setCookieJar">QNetworkAccessManager::setCookieJar</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QNetworkCookieJar"></a>QNetworkCookieJar::QNetworkCookieJar ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> object and sets the parent object to be <i>parent</i>.</p>
+<p>The cookie jar is initialized to empty.</p>
+<h3 class="fn"><a name="dtor.QNetworkCookieJar"></a>QNetworkCookieJar::~QNetworkCookieJar ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys this cookie jar object and discards all cookies stored in it. Cookies are not saved to disk in the <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> default implementation.</p>
+<p>If you need to save the cookies to disk, you have to derive from <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> and save the cookies to disk yourself.</p>
+<h3 class="fn"><a name="allCookies"></a><a href="qlist.html">QList</a>&lt;<a href="qnetworkcookie.html">QNetworkCookie</a>&gt; QNetworkCookieJar::allCookies () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns all cookies stored in this cookie jar. This function is suitable for derived classes to save cookies to disk, as well as to implement cookie expiration and other policies.</p>
+<p>See also <a href="qnetworkcookiejar.html#setAllCookies">setAllCookies</a>() and <a href="qnetworkcookiejar.html#cookiesForUrl">cookiesForUrl</a>().</p>
+<h3 class="fn"><a name="cookiesForUrl"></a><a href="qlist.html">QList</a>&lt;<a href="qnetworkcookie.html">QNetworkCookie</a>&gt; QNetworkCookieJar::cookiesForUrl ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the cookies to be added to when a request is sent to <i>url</i>. This function is called by the default <a href="qnetworkaccessmanager.html#createRequest">QNetworkAccessManager::createRequest</a>(), which adds the cookies returned by this function to the request being sent.</p>
+<p>If more than one cookie with the same name is found, but with differing paths, the one with longer path is returned before the one with shorter path. In other words, this function returns cookies sorted by path length.</p>
+<p>The default <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> class implements only a very basic security policy (it makes sure that the cookies' domain and path match the reply's). To enhance the security policy with your own algorithms, override cookiesForUrl().</p>
+<p>See also <a href="qnetworkcookiejar.html#setCookiesFromUrl">setCookiesFromUrl</a>() and <a href="qnetworkaccessmanager.html#setCookieJar">QNetworkAccessManager::setCookieJar</a>().</p>
+<h3 class="fn"><a name="setAllCookies"></a>void QNetworkCookieJar::setAllCookies ( const <a href="qlist.html">QList</a>&lt;<a href="qnetworkcookie.html">QNetworkCookie</a>&gt; &amp; <i>cookieList</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the internal list of cookies held by this cookie jar to be <i>cookieList</i>. This function is suitable for derived classes to implement loading cookies from permanent storage, or their own cookie acceptance policies by reimplementing <a href="qnetworkcookiejar.html#setCookiesFromUrl">setCookiesFromUrl</a>().</p>
+<p>See also <a href="qnetworkcookiejar.html#allCookies">allCookies</a>() and <a href="qnetworkcookiejar.html#setCookiesFromUrl">setCookiesFromUrl</a>().</p>
+<h3 class="fn"><a name="setCookiesFromUrl"></a>bool QNetworkCookieJar::setCookiesFromUrl ( const <a href="qlist.html">QList</a>&lt;<a href="qnetworkcookie.html">QNetworkCookie</a>&gt; &amp; <i>cookieList</i>, const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds the cookies in the list <i>cookieList</i> to this cookie jar. Default values for path and domain are taken from the <i>url</i> object.</p>
+<p>Returns true if one or more cookes are set for url otherwise false.</p>
+<p>If a cookie already exists in the cookie jar, it will be overridden by those in <i>cookieList</i>.</p>
+<p>The default <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> class implements only a very basic security policy (it makes sure that the cookies' domain and path match the reply's). To enhance the security policy with your own algorithms, override setCookiesFromUrl().</p>
+<p>Also, <a href="qnetworkcookiejar.html">QNetworkCookieJar</a> does not have a maximum cookie jar size. Reimplement this function to discard older cookies to create room for new ones.</p>
+<p>See also <a href="qnetworkcookiejar.html#cookiesForUrl">cookiesForUrl</a>() and <a href="qnetworkaccessmanager.html#setCookieJar">QNetworkAccessManager::setCookieJar</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

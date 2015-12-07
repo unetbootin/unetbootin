@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (tools/plugandpaint/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">tools/plugandpaint/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;interfaces.h&quot;
+ #include &quot;mainwindow.h&quot;
+ #include &quot;paintarea.h&quot;
+ #include &quot;plugindialog.h&quot;
+
+ #include &lt;QPluginLoader&gt;
+ #include &lt;QTimer&gt;
+
+ #include &lt;QScrollArea&gt;
+ #include &lt;QMessageBox&gt;
+ #include &lt;QActionGroup&gt;
+ #include &lt;QAction&gt;
+ #include &lt;QMenu&gt;
+ #include &lt;QMenuBar&gt;
+ #include &lt;QFileDialog&gt;
+ #include &lt;QColorDialog&gt;
+ #include &lt;QInputDialog&gt;
+ #include &lt;QApplication&gt;
+
+ MainWindow::MainWindow() :
+     paintArea(new PaintArea),
+     scrollArea(new QScrollArea)
+ {
+     scrollArea-&gt;setBackgroundRole(QPalette::Dark);
+     scrollArea-&gt;setWidget(paintArea);
+     setCentralWidget(scrollArea);
+
+     createActions();
+     createMenus();
+     loadPlugins();
+
+     setWindowTitle(tr(&quot;Plug &amp; Paint&quot;));
+
+     if (!brushActionGroup-&gt;actions().isEmpty())
+         brushActionGroup-&gt;actions().first()-&gt;trigger();
+
+     QTimer::singleShot(500, this, SLOT(aboutPlugins()));
+ }
+
+ void MainWindow::open()
+ {
+     const QString fileName = QFileDialog::getOpenFileName(this,
+                                                           tr(&quot;Open File&quot;),
+                                                           QDir::currentPath());
+     if (!fileName.isEmpty()) {
+         if (!paintArea-&gt;openImage(fileName)) {
+             QMessageBox::information(this, tr(&quot;Plug &amp; Paint&quot;),
+                                      tr(&quot;Cannot load %1.&quot;).arg(fileName));
+             return;
+         }
+         paintArea-&gt;adjustSize();
+     }
+ }
+
+ bool MainWindow::saveAs()
+ {
+     const QString initialPath = QDir::currentPath() + &quot;/untitled.png&quot;;
+
+     const QString fileName = QFileDialog::getSaveFileName(this, tr(&quot;Save As&quot;),
+                                                           initialPath);
+     if (fileName.isEmpty()) {
+         return false;
+     } else {
+         return paintArea-&gt;saveImage(fileName, &quot;png&quot;);
+     }
+ }
+
+ void MainWindow::brushColor()
+ {
+     const QColor newColor = QColorDialog::getColor(paintArea-&gt;brushColor());
+     if (newColor.isValid())
+         paintArea-&gt;setBrushColor(newColor);
+ }
+
+ void MainWindow::brushWidth()
+ {
+     bool ok;
+     const int newWidth = QInputDialog::getInteger(this, tr(&quot;Plug &amp; Paint&quot;),
+                                                   tr(&quot;Select brush width:&quot;),
+                                                   paintArea-&gt;brushWidth(),
+                                                   1, 50, 1, &amp;ok);
+     if (ok)
+         paintArea-&gt;setBrushWidth(newWidth);
+ }
+
+ void MainWindow::changeBrush()
+ {
+     QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+     BrushInterface *iBrush = qobject_cast&lt;BrushInterface *&gt;(action-&gt;parent());
+     const QString brush = action-&gt;text();
+
+     paintArea-&gt;setBrush(iBrush, brush);
+ }
+
+ void MainWindow::insertShape()
+ {
+     QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+     ShapeInterface *iShape = qobject_cast&lt;ShapeInterface *&gt;(action-&gt;parent());
+
+     const QPainterPath path = iShape-&gt;generateShape(action-&gt;text(), this);
+     if (!path.isEmpty())
+         paintArea-&gt;insertShape(path);
+ }
+
+ void MainWindow::applyFilter()
+ {
+     QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+     FilterInterface *iFilter =
+             qobject_cast&lt;FilterInterface *&gt;(action-&gt;parent());
+
+     const QImage image = iFilter-&gt;filterImage(action-&gt;text(), paintArea-&gt;image(),
+                                               this);
+     paintArea-&gt;setImage(image);
+ }
+
+ void MainWindow::about()
+ {
+    QMessageBox::about(this, tr(&quot;About Plug &amp; Paint&quot;),
+             tr(&quot;The &lt;b&gt;Plug &amp; Paint&lt;/b&gt; example demonstrates how to write Qt &quot;
+                &quot;applications that can be extended through plugins.&quot;));
+ }
+
+ void MainWindow::aboutPlugins()
+ {
+     PluginDialog dialog(pluginsDir.path(), pluginFileNames, this);
+     dialog.exec();
+ }
+
+ void MainWindow::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     saveAsAct = new QAction(tr(&quot;&amp;Save As...&quot;), this);
+     saveAsAct-&gt;setShortcut(tr(&quot;Ctrl+S&quot;));
+     connect(saveAsAct, SIGNAL(triggered()), this, SLOT(saveAs()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     brushColorAct = new QAction(tr(&quot;&amp;Brush Color...&quot;), this);
+     connect(brushColorAct, SIGNAL(triggered()), this, SLOT(brushColor()));
+
+     brushWidthAct = new QAction(tr(&quot;&amp;Brush Width...&quot;), this);
+     connect(brushWidthAct, SIGNAL(triggered()), this, SLOT(brushWidth()));
+
+     brushActionGroup = new QActionGroup(this);
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     aboutPluginsAct = new QAction(tr(&quot;About &amp;Plugins&quot;), this);
+     connect(aboutPluginsAct, SIGNAL(triggered()), this, SLOT(aboutPlugins()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(saveAsAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     brushMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Brush&quot;));
+     brushMenu-&gt;addAction(brushColorAct);
+     brushMenu-&gt;addAction(brushWidthAct);
+     brushMenu-&gt;addSeparator();
+
+     shapesMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Shapes&quot;));
+
+     filterMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Filter&quot;));
+
+     menuBar()-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+     helpMenu-&gt;addAction(aboutPluginsAct);
+ }
+
+ void MainWindow::loadPlugins()
+ {
+     foreach (QObject *plugin, QPluginLoader::staticInstances())
+         populateMenus(plugin);
+
+     pluginsDir = QDir(qApp-&gt;applicationDirPath());
+
+ #if defined(Q_OS_WIN)
+     if (pluginsDir.dirName().toLower() == &quot;debug&quot; || pluginsDir.dirName().toLower() == &quot;release&quot;)
+         pluginsDir.cdUp();
+ #elif defined(Q_OS_MAC)
+     if (pluginsDir.dirName() == &quot;MacOS&quot;) {
+         pluginsDir.cdUp();
+         pluginsDir.cdUp();
+         pluginsDir.cdUp();
+     }
+ #endif
+     pluginsDir.cd(&quot;plugins&quot;);
+
+     foreach (QString fileName, pluginsDir.entryList(QDir::Files)) {
+         QPluginLoader loader(pluginsDir.absoluteFilePath(fileName));
+         QObject *plugin = loader.instance();
+         if (plugin) {
+             populateMenus(plugin);
+             pluginFileNames += fileName;
+         }
+     }
+
+     brushMenu-&gt;setEnabled(!brushActionGroup-&gt;actions().isEmpty());
+     shapesMenu-&gt;setEnabled(!shapesMenu-&gt;actions().isEmpty());
+     filterMenu-&gt;setEnabled(!filterMenu-&gt;actions().isEmpty());
+ }
+
+ void MainWindow::populateMenus(QObject *plugin)
+ {
+     BrushInterface *iBrush = qobject_cast&lt;BrushInterface *&gt;(plugin);
+     if (iBrush)
+         addToMenu(plugin, iBrush-&gt;brushes(), brushMenu, SLOT(changeBrush()),
+                   brushActionGroup);
+
+     ShapeInterface *iShape = qobject_cast&lt;ShapeInterface *&gt;(plugin);
+     if (iShape)
+         addToMenu(plugin, iShape-&gt;shapes(), shapesMenu, SLOT(insertShape()));
+
+     FilterInterface *iFilter = qobject_cast&lt;FilterInterface *&gt;(plugin);
+     if (iFilter)
+         addToMenu(plugin, iFilter-&gt;filters(), filterMenu, SLOT(applyFilter()));
+ }
+
+ void MainWindow::addToMenu(QObject *plugin, const QStringList &amp;texts,
+                            QMenu *menu, const char *member,
+                            QActionGroup *actionGroup)
+ {
+     foreach (QString text, texts) {
+         QAction *action = new QAction(text, plugin);
+         connect(action, SIGNAL(triggered()), this, member);
+         menu-&gt;addAction(action);
+
+         if (actionGroup) {
+             action-&gt;setCheckable(true);
+             actionGroup-&gt;addAction(action);
+         }
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,470 @@
+//! [0]
+        void MyButton::paintEvent(QPaintEvent *)
+        {
+            QPainter painter(this);
+            drawButton(&painter);
+        }
+//! [0]
+
+
+//! [1]
+        ba.at(0) = 'X';
+//! [1]
+
+
+//! [2]
+        ba[0] = 'X';
+//! [2]
+
+
+//! [3]
+        if (!cache.insert(key, object))
+            delete object;
+//! [3]
+
+
+//! [4]
+        cache.insert(key, object);
+//! [4]
+
+
+//! [5]
+            Q3Cache<QWidget> cache;
+            cache.insert(widget->name(), widget);
+            ...
+            QWidget *foo = cache.take("foo");
+            if (foo)
+                foo->show();
+//! [5]
+
+
+//! [6]
+            typedef QWidget *QWidgetPtr;
+            QCache<QString, QWidgetPtr> cache;
+            cache.insert(widget->name(), new QWidgetPtr(widget));
+            ...
+            QWidgetPtr *ptr = cache.take("foo");
+            if (ptr) {
+                QWidget *foo = *ptr;
+                delete ptr;
+                foo->show();
+            }
+//! [6]
+
+
+//! [7]
+        painter.setBrush(palette().brush(QPalette::Text));
+//! [7]
+
+
+//! [8]
+        QByteArray ba("Hello");
+        ba.size();             // returns 5 (the '\0' is not counted)
+        ba.length();           // returns 5
+        ba.data()[5];          // returns '\0'
+//! [8]
+
+
+//! [9]
+        dict.replace(key, value);
+//! [9]
+
+
+//! [10]
+        delete hash.take(key);
+        hash.insert(key, value);
+//! [10]
+
+
+//! [11]
+        dict.remove(key, value);
+//! [11]
+
+
+//! [12]
+        delete hash.take(key);
+//! [12]
+
+
+//! [13]
+        dict.clear();
+//! [13]
+
+
+//! [14]
+        while (!hash.isEmpty()) {
+            T *value = *hash.begin();
+            hash.erase(hash.begin());
+            delete value;
+        }
+//! [14]
+
+
+//! [15]
+        qDeleteAll(hash);
+        hash.clear();
+//! [15]
+
+
+//! [16]
+        Q3DictIterator<QWidget> i(dict);
+        while (i.current() != 0) {
+            do_something(i.currentKey(), i.current());
+            ++i;
+        }
+//! [16]
+
+
+//! [17]
+        QHashIterator<QString, QWidget *> i(hash);
+        while (i.hasNext()) {
+            i.next();                   // must come first
+            do_something(i.key(), i.value());
+        }
+//! [17]
+
+
+//! [18]
+        QList<QWidget *> myWidgets = qFindChildren<QWidget *>(myParent);
+//! [18]
+
+
+//! [19]
+        list.replace(index, value);
+//! [19]
+
+
+//! [20]
+        delete list[index];
+        list[index] = value;
+//! [20]
+
+
+//! [21]
+        list.removeFirst();
+//! [21]
+
+
+//! [22]
+        delete list.takeFirst();
+//! [22]
+
+
+//! [23]
+        list.removeLast();
+//! [23]
+
+
+//! [24]
+        delete list.takeLast();
+//! [24]
+
+
+//! [25]
+        list.remove(index);
+//! [25]
+
+
+//! [26]
+        delete list.takeAt(index);
+//! [26]
+
+
+//! [27]
+        list.remove(value);
+//! [27]
+
+
+//! [28]
+        int i = list.indexOf(value);
+        if (i != -1)
+            delete list.takeAt(i);
+//! [28]
+
+
+//! [29]
+        list.remove();
+//! [29]
+
+
+//! [30]
+        QMutableListIterator<T *> i;
+        ...
+        delete i.value();
+        i.remove();
+//! [30]
+
+
+//! [31]
+        list.clear();
+//! [31]
+
+
+//! [32]
+        while (!list.isEmpty())
+            delete list.takeFirst();
+//! [32]
+
+
+//! [33]
+        qDeleteAll(list);
+        list.clear();
+//! [33]
+
+
+//! [34]
+        QPtrList<QWidget> list;
+        ...
+        while (list.current() != 0) {
+            do_something(list.current());
+            list.next();
+        }
+//! [34]
+
+
+//! [35]
+        QList<QWidget *> list;
+        ...
+        QListIterator<QWidget *> i(list);
+        while (i.hasNext())
+            do_something(i.next());
+//! [35]
+
+
+//! [36]
+        QPtrList<QWidget> list;
+        ...
+        QPtrListIterator<QWidget> i;
+        while (i.current() != 0) {
+            do_something(i.current());
+            i.next();
+        }
+//! [36]
+
+
+//! [37]
+        QList<QWidget *> list;
+        ...
+        QListIterator<QWidget *> i(list);
+        while (i.hasNext())
+            do_something(i.next());
+//! [37]
+
+
+//! [38]
+        queue.dequeue();
+//! [38]
+
+
+//! [39]
+        delete queue.dequeue();
+//! [39]
+
+
+//! [40]
+        queue.remove();
+//! [40]
+
+
+//! [41]
+        delete queue.dequeue();
+//! [41]
+
+
+//! [42]
+        queue.clear();
+//! [42]
+
+
+//! [43]
+        while (!queue.isEmpty())
+            delete queue.dequeue();
+//! [43]
+
+
+//! [44]
+        qDeleteAll(queue);
+        queue.clear();
+//! [44]
+
+
+//! [45]
+        stack.pop();
+//! [45]
+
+
+//! [46]
+        delete stack.pop();
+//! [46]
+
+
+//! [47]
+        stack.remove();
+//! [47]
+
+
+//! [48]
+        delete stack.pop();
+//! [48]
+
+
+//! [49]
+        stack.clear();
+//! [49]
+
+
+//! [50]
+        while (!stack.isEmpty())
+            delete stack.pop();
+//! [50]
+
+
+//! [51]
+        qDeleteAll(stack);
+        stack.clear();
+//! [51]
+
+
+//! [52]
+        vect.insert(i, ptr);
+//! [52]
+
+
+//! [53]
+        delete vect[i];
+        vect[i] = ptr;
+//! [53]
+
+
+//! [54]
+        vect.remove(i);
+//! [54]
+
+
+//! [55]
+        delete vect[i];
+        vect[i] = 0;
+//! [55]
+
+
+//! [56]
+        T *ptr = vect.take(i);
+//! [56]
+
+
+//! [57]
+        T *ptr = vect[i];
+        vect[i] = 0;
+//! [57]
+
+
+//! [58]
+        vect.resize(n)
+//! [58]
+
+
+//! [59]
+        while (n > vect.size())
+            vect.append(0);
+        while (n < vect.size() {
+            T *ptr = vect.last();
+            vect.remove(vect.size() - 1);
+            delete ptr;
+        }
+//! [59]
+
+
+//! [60]
+        vect.clear();
+//! [60]
+
+
+//! [61]
+        for (int i = 0; i < vect.size(); ++i)
+            T *ptr = vect[i];
+            vect[i] = 0;
+            delete ptr;
+        }
+//! [61]
+
+
+//! [62]
+        qDeleteAll(vect);
+        vect.clear();
+//! [62]
+
+
+//! [63]
+        struct Shared
+        {
+            Shared() : count(1) {}
+            void ref() { ++count; }
+            bool deref() { return !--count; }
+            uint count;
+        };
+//! [63]
+
+//! [63a]
+// Declare the object
+QSimpleRichText richText(text, font);
+
+// Set the width of the paragraph to w
+richText.setWidth(w);
+
+// Or set a resonable default size
+richText.adjustSize();
+
+// Query for its used size
+int width = richText.widthUsed();
+int height = richText.height();
+
+// Draw
+richText.draw(painter, x, y, clipRect, colorGroup);
+//! [63a]
+
+
+//! [63b]
+// Declare the object
+QTextDocument doc;
+
+// If text is rich text, use setHtml()
+doc.setHtml(text);
+
+// Otherwise, use setPlainText()
+doc.setPlainText(text);
+
+// Set the width of the paragraph of text to w
+doc.setTextWidth(w);
+
+// Query for the used size
+int width = doc.idealWidth();
+int height = doc.size().height();
+
+// Draw
+painter.translate(x, y);
+doc.drawContents(painter, clipRect);
+
+// If you have a palette/colorgroup you can draw using lower-level functions:
+QAbstractTextDocumentLayout::PaintContext context;
+context.palette = myPalette;
+doc.documentLayout()->draw(painter, context);
+//! [63b]
+
+//! [64]
+        QString greeting = "Hello";
+        const char *badData = greeting.toAscii().constData(); // data is invalid
+        QByteArray asciiData = greeting.toAscii();
+        const char *goodData = asciiData.constData();
+//! [64]
+
+
+//! [65]
+        str.at(0) = 'X';
+//! [65]
+
+
+//! [66]
+        str[0] = 'X';
+//! [66]
+
+

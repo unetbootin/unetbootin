@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/models/qsqlrelationaltablemodel.cpp -->
+<head>
+  <title>Qt 4.4: QSqlRelationalTableModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSqlRelationalTableModel Class Reference<br /><span class="small-subtitle">[<a href="qtsql.html">QtSql</a> module]</span>
+</h1>
+<p>The QSqlRelationalTableModel class provides an editable data model for a single database table, with foreign key support. <a href="#details">More...</a></p>
+<pre> #include &lt;QSqlRelationalTableModel&gt;</pre><p>Inherits <a href="qsqltablemodel.html">QSqlTableModel</a>.</p>
+<ul>
+<li><a href="qsqlrelationaltablemodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsqlrelationaltablemodel.html#QSqlRelationalTableModel">QSqlRelationalTableModel</a></b> ( QObject * <i>parent</i> = 0, QSqlDatabase <i>db</i> = QSqlDatabase() )</li>
+<li><div class="fn"/>virtual <b><a href="qsqlrelationaltablemodel.html#dtor.QSqlRelationalTableModel">~QSqlRelationalTableModel</a></b> ()</li>
+<li><div class="fn"/>QSqlRelation <b><a href="qsqlrelationaltablemodel.html#relation">relation</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual QSqlTableModel * <b><a href="qsqlrelationaltablemodel.html#relationModel">relationModel</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qsqlrelationaltablemodel.html#setData">setData</a></b> ( const QModelIndex &amp; <i>index</i>, const QVariant &amp; <i>value</i>, int <i>role</i> = Qt::EditRole )</li>
+<li><div class="fn"/>virtual void <b><a href="qsqlrelationaltablemodel.html#setRelation">setRelation</a></b> ( int <i>column</i>, const QSqlRelation &amp; <i>relation</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>20 public functions inherited from <a href="qsqltablemodel.html#public-functions">QSqlTableModel</a></li>
+<li><div class="fn"/>15 public functions inherited from <a href="qsqlquerymodel.html#public-functions">QSqlQueryModel</a></li>
+<li><div class="fn"/>1 public function inherited from <a href="qabstracttablemodel.html#public-functions">QAbstractTableModel</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="qabstractitemmodel.html#public-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qsqltablemodel.html#public-slots">QSqlTableModel</a></li>
+<li><div class="fn"/>2 public slots inherited from <a href="qabstractitemmodel.html#public-slots">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qsqltablemodel.html#signals">QSqlTableModel</a></li>
+<li><div class="fn"/>14 signals inherited from <a href="qabstractitemmodel.html#signals">QAbstractItemModel</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>8 protected functions inherited from <a href="qsqltablemodel.html#protected-functions">QSqlTableModel</a></li>
+<li><div class="fn"/>3 protected functions inherited from <a href="qsqlquerymodel.html#protected-functions">QSqlQueryModel</a></li>
+<li><div class="fn"/>14 protected functions inherited from <a href="qabstractitemmodel.html#protected-functions">QAbstractItemModel</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSqlRelationalTableModel class provides an editable data model for a single database table, with foreign key support.</p>
+<p>QSqlRelationalTableModel acts like <a href="qsqltablemodel.html">QSqlTableModel</a>, but allows columns to be set as foreign keys into other database tables.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/noforeignkeys.png" /></td><td><img src="images/foreignkeys.png" /></td></tr>
+</table></p>
+<p>The screenshot on the left shows a plain <a href="qsqltablemodel.html">QSqlTableModel</a> in a <a href="qtableview.html">QTableView</a>. Foreign keys (<tt>city</tt> and <tt>country</tt>) aren't resolved to human-readable values. The screenshot on the right shows a QSqlRelationalTableModel, with foreign keys resolved into human-readable text strings.</p>
+<p>The following code snippet shows how the QSqlRelationalTableModel was set up:</p>
+<pre>     model-&gt;setTable(&quot;employee&quot;);
+
+     model-&gt;setRelation(2, QSqlRelation(&quot;city&quot;, &quot;id&quot;, &quot;name&quot;));
+     model-&gt;setRelation(3, QSqlRelation(&quot;country&quot;, &quot;id&quot;, &quot;name&quot;));</pre>
+<p>The <a href="qsqlrelationaltablemodel.html#setRelation">setRelation</a>() function calls establish a relationship between two tables. The first call specifies that column 2 in table <tt>employee</tt> is a foreign key that maps with field <tt>id</tt> of table <tt>city</tt>, and that the view should present the <tt>city</tt>'s <tt>name</tt> field to the user. The second call does something similar with column 3.</p>
+<p>If you use a read-write QSqlRelationalTableModel, you probably want to use <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a> on the view. Unlike the default delegate, <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a> provides a combobox for fields that are foreign keys into other tables. To use the class, simply call <a href="qabstractitemview.html#setItemDelegate">QAbstractItemView::setItemDelegate</a>() on the view with an instance of <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a>:</p>
+<pre>     QTableView *view = new QTableView;
+     view-&gt;setModel(model);
+     view-&gt;setItemDelegate(new QSqlRelationalDelegate(view));</pre>
+<p>The <a href="sql-relationaltablemodel.html">sql/relationaltablemodel</a> example illustrates how to use QSqlRelationalTableModel in conjunction with <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a> to provide tables with foreigh key support.</p>
+<p align="center"><img src="images/relationaltable.png" /></p><p>Notes:</p>
+<ul>
+<li>The table must have a primary key declared.</li>
+<li>The table's primary key may not contain a relation to another table.</li>
+<li>If a relational table contains keys that refer to non-existent rows in the referenced table, the rows containing the invalid keys will not be exposed through the model. The user or the database is responsible for keeping referential integrity.</li>
+<li>If a relation's display column name is also used as a column name in the main table, or if it is used as display column name in more than one relation it will be aliased. The alias is is the relation's table name and display column name joined by an underscore (e.g&#x2e; tablename_columnname). All occurances of the duplicate display column name are aliased when duplication is detected, but no aliasing is done to the column names in the main table. The aliasing doesn't affect <a href="qsqlrelation.html">QSqlRelation</a>, so <a href="qsqlrelation.html#displayColumn">QSqlRelation::displayColumn</a>() will return the original display column name, but <a href="qsqlrecord.html#fieldName">QSqlRecord::fieldName</a>() will return aliases.</li>
+</ul>
+<p>See also <a href="qsqlrelation.html">QSqlRelation</a>, <a href="qsqlrelationaldelegate.html">QSqlRelationalDelegate</a>, and <a href="sql-relationaltablemodel.html">Relational Table Model Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSqlRelationalTableModel"></a>QSqlRelationalTableModel::QSqlRelationalTableModel ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0, <a href="qsqldatabase.html">QSqlDatabase</a> <i>db</i> = QSqlDatabase() )</h3>
+<p>Creates an empty <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a> and sets the parent to <i>parent</i> and the database connection to <i>db</i>. If <i>db</i> is not valid, the default database connection will be used.</p>
+<h3 class="fn"><a name="dtor.QSqlRelationalTableModel"></a>QSqlRelationalTableModel::~QSqlRelationalTableModel ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="relation"></a><a href="qsqlrelation.html">QSqlRelation</a> QSqlRelationalTableModel::relation ( int <i>column</i> ) const</h3>
+<p>Returns the relation for the column <i>column</i>, or an invalid relation if no relation is set.</p>
+<p>See also <a href="qsqlrelationaltablemodel.html#setRelation">setRelation</a>() and <a href="qsqlrelation.html#isValid">QSqlRelation::isValid</a>().</p>
+<h3 class="fn"><a name="relationModel"></a><a href="qsqltablemodel.html">QSqlTableModel</a> * QSqlRelationalTableModel::relationModel ( int <i>column</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a <a href="qsqltablemodel.html">QSqlTableModel</a> object for accessing the table for which <i>column</i> is a foreign key, or 0 if there is no relation for the given <i>column</i>.</p>
+<p>The returned object is owned by the <a href="qsqlrelationaltablemodel.html">QSqlRelationalTableModel</a>.</p>
+<p>See also <a href="qsqlrelationaltablemodel.html#setRelation">setRelation</a>() and <a href="qsqlrelationaltablemodel.html#relation">relation</a>().</p>
+<h3 class="fn"><a name="setData"></a>bool QSqlRelationalTableModel::setData ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i>, int <i>role</i> = Qt::EditRole )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the data for the <i>role</i> in the item with the specified <i>index</i> to the <i>value</i> given. Depending on the edit strategy, the value might be applied to the database at once, or it may be cached in the model.</p>
+<p>Returns true if the value could be set, or false on error (for example, if <i>index</i> is out of bounds).</p>
+<p>For relational columns, <i>value</i> must be the index, not the display value.</p>
+<p>Reimplemented from <a href="qabstractitemmodel.html#setData">QAbstractItemModel</a>.</p>
+<p>See also <a href="qsqltablemodel.html#editStrategy">editStrategy</a>(), <a href="qabstractitemmodel.html#data">data</a>(), <a href="qsqltablemodel.html#submit">submit</a>(), and <a href="qsqltablemodel.html#revertRow">revertRow</a>().</p>
+<h3 class="fn"><a name="setRelation"></a>void QSqlRelationalTableModel::setRelation ( int <i>column</i>, const <a href="qsqlrelation.html">QSqlRelation</a> &amp; <i>relation</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Lets the specified <i>column</i> be a foreign index specified by <i>relation</i>.</p>
+<p>Example:</p>
+<pre>     model-&gt;setTable(&quot;employee&quot;);
+
+     model-&gt;setRelation(2, QSqlRelation(&quot;city&quot;, &quot;id&quot;, &quot;name&quot;));</pre>
+<p>The setRelation() call specifies that column 2 in table <tt>employee</tt> is a foreign key that maps with field <tt>id</tt> of table <tt>city</tt>, and that the view should present the <tt>city</tt>'s <tt>name</tt> field to the user.</p>
+<p>Note: The table's primary key may not contain a relation to another table.</p>
+<p>See also <a href="qsqlrelationaltablemodel.html#relation">relation</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

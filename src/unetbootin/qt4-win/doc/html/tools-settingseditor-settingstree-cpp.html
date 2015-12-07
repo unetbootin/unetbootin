@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: settingstree.cpp Example File (tools/settingseditor/settingstree.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">settingstree.cpp Example File<br /><span class="small-subtitle">tools/settingseditor/settingstree.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;settingstree.h&quot;
+ #include &quot;variantdelegate.h&quot;
+
+ SettingsTree::SettingsTree(QWidget *parent)
+     : QTreeWidget(parent)
+ {
+     setItemDelegate(new VariantDelegate(this));
+
+     QStringList labels;
+     labels &lt;&lt; tr(&quot;Setting&quot;) &lt;&lt; tr(&quot;Type&quot;) &lt;&lt; tr(&quot;Value&quot;);
+     setHeaderLabels(labels);
+     header()-&gt;setResizeMode(0, QHeaderView::Stretch);
+     header()-&gt;setResizeMode(2, QHeaderView::Stretch);
+
+     settings = 0;
+     refreshTimer.setInterval(2000);
+     autoRefresh = false;
+
+     groupIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_DirClosedIcon),
+                         QIcon::Normal, QIcon::Off);
+     groupIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_DirOpenIcon),
+                         QIcon::Normal, QIcon::On);
+     keyIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_FileIcon));
+
+     connect(&amp;refreshTimer, SIGNAL(timeout()), this, SLOT(maybeRefresh()));
+ }
+
+ void SettingsTree::setSettingsObject(QSettings *settings)
+ {
+     delete this-&gt;settings;
+     this-&gt;settings = settings;
+     clear();
+
+     if (settings) {
+         settings-&gt;setParent(this);
+         refresh();
+         if (autoRefresh)
+             refreshTimer.start();
+     } else {
+         refreshTimer.stop();
+     }
+ }
+
+ QSize SettingsTree::sizeHint() const
+ {
+     return QSize(800, 600);
+ }
+
+ void SettingsTree::setAutoRefresh(bool autoRefresh)
+ {
+     this-&gt;autoRefresh = autoRefresh;
+     if (settings) {
+         if (autoRefresh) {
+             maybeRefresh();
+             refreshTimer.start();
+         } else {
+             refreshTimer.stop();
+         }
+     }
+ }
+
+ void SettingsTree::setFallbacksEnabled(bool enabled)
+ {
+     if (settings) {
+         settings-&gt;setFallbacksEnabled(enabled);
+         refresh();
+     }
+ }
+
+ void SettingsTree::maybeRefresh()
+ {
+     if (state() != EditingState)
+         refresh();
+ }
+
+ void SettingsTree::refresh()
+ {
+     if (!settings)
+         return;
+
+     disconnect(this, SIGNAL(itemChanged(QTreeWidgetItem *, int)),
+                this, SLOT(updateSetting(QTreeWidgetItem *)));
+
+     settings-&gt;sync();
+     updateChildItems(0);
+
+     connect(this, SIGNAL(itemChanged(QTreeWidgetItem *, int)),
+             this, SLOT(updateSetting(QTreeWidgetItem *)));
+ }
+
+ bool SettingsTree::event(QEvent *event)
+ {
+     if (event-&gt;type() == QEvent::WindowActivate) {
+         if (isActiveWindow() &amp;&amp; autoRefresh)
+             maybeRefresh();
+     }
+     return QTreeWidget::event(event);
+ }
+
+ void SettingsTree::updateSetting(QTreeWidgetItem *item)
+ {
+     QString key = item-&gt;text(0);
+     QTreeWidgetItem *ancestor = item-&gt;parent();
+     while (ancestor) {
+         key.prepend(ancestor-&gt;text(0) + &quot;/&quot;);
+         ancestor = ancestor-&gt;parent();
+     }
+
+     settings-&gt;setValue(key, item-&gt;data(2, Qt::UserRole));
+     if (autoRefresh)
+         refresh();
+ }
+
+ void SettingsTree::updateChildItems(QTreeWidgetItem *parent)
+ {
+     int dividerIndex = 0;
+
+     foreach (QString group, settings-&gt;childGroups()) {
+         QTreeWidgetItem *child;
+         int childIndex = findChild(parent, group, dividerIndex);
+         if (childIndex != -1) {
+             child = childAt(parent, childIndex);
+             child-&gt;setText(1, &quot;&quot;);
+             child-&gt;setText(2, &quot;&quot;);
+             child-&gt;setData(2, Qt::UserRole, QVariant());
+             moveItemForward(parent, childIndex, dividerIndex);
+         } else {
+             child = createItem(group, parent, dividerIndex);
+         }
+         child-&gt;setIcon(0, groupIcon);
+         ++dividerIndex;
+
+         settings-&gt;beginGroup(group);
+         updateChildItems(child);
+         settings-&gt;endGroup();
+     }
+
+     foreach (QString key, settings-&gt;childKeys()) {
+         QTreeWidgetItem *child;
+         int childIndex = findChild(parent, key, 0);
+
+         if (childIndex == -1 || childIndex &gt;= dividerIndex) {
+             if (childIndex != -1) {
+                 child = childAt(parent, childIndex);
+                 for (int i = 0; i &lt; child-&gt;childCount(); ++i)
+                     delete childAt(child, i);
+                 moveItemForward(parent, childIndex, dividerIndex);
+             } else {
+                 child = createItem(key, parent, dividerIndex);
+             }
+             child-&gt;setIcon(0, keyIcon);
+             ++dividerIndex;
+         } else {
+             child = childAt(parent, childIndex);
+         }
+
+         QVariant value = settings-&gt;value(key);
+         if (value.type() == QVariant::Invalid) {
+             child-&gt;setText(1, &quot;Invalid&quot;);
+         } else {
+             child-&gt;setText(1, value.typeName());
+         }
+         child-&gt;setText(2, VariantDelegate::displayText(value));
+         child-&gt;setData(2, Qt::UserRole, value);
+     }
+
+     while (dividerIndex &lt; childCount(parent))
+         delete childAt(parent, dividerIndex);
+ }
+
+ QTreeWidgetItem *SettingsTree::createItem(const QString &amp;text,
+                                           QTreeWidgetItem *parent, int index)
+ {
+     QTreeWidgetItem *after = 0;
+     if (index != 0)
+         after = childAt(parent, index - 1);
+
+     QTreeWidgetItem *item;
+     if (parent)
+         item = new QTreeWidgetItem(parent, after);
+     else
+         item = new QTreeWidgetItem(this, after);
+
+     item-&gt;setText(0, text);
+     item-&gt;setFlags(item-&gt;flags() | Qt::ItemIsEditable);
+     return item;
+ }
+
+ QTreeWidgetItem *SettingsTree::childAt(QTreeWidgetItem *parent, int index)
+ {
+     if (parent)
+         return parent-&gt;child(index);
+     else
+         return topLevelItem(index);
+ }
+
+ int SettingsTree::childCount(QTreeWidgetItem *parent)
+ {
+     if (parent)
+         return parent-&gt;childCount();
+     else
+         return topLevelItemCount();
+ }
+
+ int SettingsTree::findChild(QTreeWidgetItem *parent, const QString &amp;text,
+                             int startIndex)
+ {
+     for (int i = startIndex; i &lt; childCount(parent); ++i) {
+         if (childAt(parent, i)-&gt;text(0) == text)
+             return i;
+     }
+     return -1;
+ }
+
+ void SettingsTree::moveItemForward(QTreeWidgetItem *parent, int oldIndex,
+                                    int newIndex)
+ {
+     for (int i = 0; i &lt; oldIndex - newIndex; ++i)
+         delete childAt(parent, newIndex);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

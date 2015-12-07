@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/capabilitiesexample.qdoc -->
+<head>
+  <title>Qt 4.4: Capabilities Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Capabilities Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="phonon-capabilities-window-cpp.html">phonon/capabilities/window.cpp</a></li>
+<li><a href="phonon-capabilities-window-h.html">phonon/capabilities/window.h</a></li>
+<li><a href="phonon-capabilities-main-cpp.html">phonon/capabilities/main.cpp</a></li>
+<li><a href="phonon-capabilities-capabilities-pro.html">phonon/capabilities/capabilities.pro</a></li>
+</ul>
+<p>The Backend Capabilities example shows how to check which MIME types, audio devices, and audio effects are available.</p>
+<p align="center"><img src="images/capabilitiesexample.png" /></p><p>Phonon does not implement the multimedia functionality itself, but relies on a backend to manage this. The backends do not manage the hardware directly, but use intermediate technologies: QuickTime on Mac, GStreamer on Linux, and DirectShow (which requires DirectX) on Windows.</p>
+<p>The user may add support for new MIME types and effects to these systems, and the systems abilities may also be different. The support for multimedia MIME types, and audio effects in Phonon will therefore vary from system to system.</p>
+<p>Backends informs the programmer about current capabilities through an implementation of the <a href="phonon-backendcapabilities.html">Phonon::BackendCapabilities</a> namespace. The backend reports which MIME types can be played back, which audio effects are available, and which sound devices are available on the system. When the capabilities of a backend changes, it will emit the <a href="phonon-backendcapabilities-notifier.html#capabilitiesChanged">capabilitiesChanged()</a> signal.</p>
+<p>The example consists of one class, <tt>Window</tt>, which displays capabilities information from the current backend used by Phonon.</p>
+<p>See the <a href="phonon-overview.html">Phonon Overview</a> for a high-level introduction to Phonon.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class queries the Phonon backend for its capabilities. The results are presented in a GUI consisting of standard Qt widgets. We will now take a tour of the Phonon related parts of both the definition and implementation of the <tt>Window</tt> class.</p>
+<pre> private slots:
+     void updateWidgets();
+
+ private:
+     void setupUi();
+     void setupBackendBox();
+
+     QGroupBox *backendBox;
+
+     QLabel *devicesLabel;
+     QLabel *mimeTypesLabel;
+     QLabel *effectsLabel;
+
+     QListWidget *mimeListWidget;
+     QListView *devicesListView;
+     QTreeWidget *effectsTreeWidget;</pre>
+<p>We need the slot to notice changes in the backends capabilities.</p>
+<p><tt>mimeListWidget</tt> and <tt>devicesListView</tt> lists MIME types and audio devices. The <tt>effectsTreeWidget</tt> lists audio effects, and expands to show their parameters.</p>
+<p>The <tt>setupUi()</tt> and <tt>setupBackendBox()</tt> private utility functions create the widgets and lays them out. We skip these functions while discussing the implementation because they do not contain Phonon relevant code.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>Our examination starts with a look at the constructor:</p>
+<pre> Window::Window()
+ {
+     setupUi();
+     updateWidgets();
+
+     connect(Phonon::BackendCapabilities::notifier(),
+             SIGNAL(capabilitiesChanged()), this, SLOT(updateWidgets()));
+     connect(Phonon::BackendCapabilities::notifier(),
+             SIGNAL(availableAudioOutputDevicesChanged()), SLOT(updateWidgets()));
+ }</pre>
+<p>After creating the user interface, we call <tt>updateWidgets()</tt>, which will fill the widgets with the information we get from the backend. We then connect the slot to the <a href="phonon-backendcapabilities-notifier.html#capabilitiesChanged">capabilitiesChanged()</a> and <a href="phonon-backendcapabilities-notifier.html#availableAudioOutputDevicesChanged">availableAudioOutputDevicesChanged()</a> signals in case the backend's abilities changes while the example is running. The signal is emitted by a <a href="phonon-backendcapabilities-notifier.html">Phonon::BackendCapabilities::Notifier</a> object, which listens for changes in the backend.</p>
+<p>In the <tt>updateWidgets()</tt> function, we query the backend for information it has about its abilities and present it in the GUI of <tt>Window</tt>. We dissect it here:</p>
+<pre> void Window::updateWidgets()
+ {
+     devicesListView-&gt;setModel(new QStandardItemModel());
+     Phonon::ObjectDescriptionModel&lt;Phonon::AudioOutputDeviceType&gt; *model =
+             new Phonon::ObjectDescriptionModel&lt;Phonon::AudioOutputDeviceType&gt;();
+     model-&gt;setModelData(Phonon::BackendCapabilities::availableAudioOutputDevices());
+     devicesListView-&gt;setModel(model);</pre>
+<p>The availableAudioOutputDevicesChanged() function is a member of the <a href="phonon-backendcapabilities.html">Phonon::BackendCapabilities</a> namespace. It returns a list of <a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a>s, which gives us information about a particular device, e.g&#x2e;, a sound card or a USB headset.</p>
+<p>Note that <a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a> and also <a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a>, which is described shortly, are typedefs of <a href="phonon-objectdescription.html#ObjectDescriptionType-enum">ObjectDescriptionType</a>.</p>
+<p>The ObjectDescriptionModel is a convenience model that displays the names of the devices. Their descriptions are shown as tooltips and disabled devices are shown in gray.</p>
+<pre>     mimeListWidget-&gt;clear();
+     QStringList mimeTypes =
+             Phonon::BackendCapabilities::availableMimeTypes();
+     foreach (QString mimeType, mimeTypes) {
+         QListWidgetItem *item = new QListWidgetItem(mimeListWidget);
+         item-&gt;setText(mimeType);
+     }</pre>
+<p>The MIME types supported are given as strings in a <a href="qstringlist.html">QStringList</a>. We can therefore create a list widget item with the string, and append it to the <tt>mimeListWidget</tt>, which displays the available MIME types.</p>
+<pre>     effectsTreeWidget-&gt;clear();
+     QList&lt;Phonon::EffectDescription&gt; effects =
+         Phonon::BackendCapabilities::availableAudioEffects();
+     foreach (Phonon::EffectDescription effect, effects) {
+         QTreeWidgetItem *item = new QTreeWidgetItem(effectsTreeWidget);
+         item-&gt;setText(0, tr(&quot;Effect&quot;));
+         item-&gt;setText(1, effect.name());
+         item-&gt;setText(2, effect.description());</pre>
+<p>As before we add the description and name to our widget, which in this case is a <a href="qtreewidget.html">QTreeWidget</a>. A particular effect may also have parameters, which are inserted in the tree as child nodes of their effect.</p>
+<pre>         Phonon::Effect *instance = new Phonon::Effect(effect, this);
+         QList&lt;Phonon::EffectParameter&gt; parameters = instance-&gt;parameters();
+         for (int i = 0; i &lt; parameters.size(); ++i) {
+                 Phonon::EffectParameter parameter = parameters.at(i);
+
+             QVariant defaultValue = parameter.defaultValue();
+             QVariant minimumValue = parameter.minimumValue();
+             QVariant maximumValue = parameter.maximumValue();
+
+             QString valueString = QString(&quot;%1 / %2 / %3&quot;)
+                     .arg(defaultValue.toString()).arg(minimumValue.toString())
+                     .arg(maximumValue.toString());
+
+             QTreeWidgetItem *parameterItem = new QTreeWidgetItem(item);
+             parameterItem-&gt;setText(0, tr(&quot;Parameter&quot;));
+             parameterItem-&gt;setText(1, parameter.name());
+             parameterItem-&gt;setText(2, parameter.description());
+             parameterItem-&gt;setText(3, QVariant::typeToName(parameter.type()));
+             parameterItem-&gt;setText(4, valueString);
+         }
+     }</pre>
+<p>The parameters are only accessible through an instance of the <a href="phonon-effect.html">Effect</a> class. Notice that an effect is created with the effect description.</p>
+<p>The <a href="phonon-effectparameter.html">EffectParameter</a> contains information about one of an effects parameters. We pick out some of the information to describe the parameter in the tree widget.</p>
+<a name="the-main-function"></a>
+<h2>The main() function</h2>
+<p>Because Phonon uses D-Bus on Linux, it is necessary to give the application a name. You do this with <a href="qcoreapplication.html#applicationName-prop">setApplicationName()</a>.</p>
+<pre> int main(int argv, char **args)
+ {
+     QApplication app(argv, args);
+     app.setApplicationName(&quot;Phonon Capabilities Example&quot;);
+
+     Window window;
+     window.show();
+
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

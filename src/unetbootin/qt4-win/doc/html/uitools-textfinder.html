@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/textfinder.qdoc -->
+<head>
+  <title>Qt 4.4: Text Finder Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Text Finder Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="uitools-textfinder-textfinder-cpp.html">uitools/textfinder/textfinder.cpp</a></li>
+<li><a href="uitools-textfinder-textfinder-h.html">uitools/textfinder/textfinder.h</a></li>
+<li><a href="uitools-textfinder-forms-textfinder-ui.html">uitools/textfinder/forms/textfinder.ui</a></li>
+<li><a href="uitools-textfinder-main-cpp.html">uitools/textfinder/main.cpp</a></li>
+<li><a href="uitools-textfinder-textfinder-pro.html">uitools/textfinder/textfinder.pro</a></li>
+<li><a href="uitools-textfinder-textfinder-qrc.html">uitools/textfinder/textfinder.qrc</a></li>
+</ul>
+<p>The Text Finder example demonstrates how to dynamically process forms using the <a href="qtuitools.html">QtUiTools</a> module. Dynamic form processing enables a form to be processed at run-time only by changing the .ui file for the project. The program allows the user to look up a particular word within the contents of a text file. This text file is included in the project's resource and is loaded into the display at startup.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/textfinder-example-find.png" /></td><td><img src="images/textfinder-example-find2.png" /></td></tr>
+</table></p>
+<a name="setting-up-the-resource-file"></a>
+<h2>Setting Up The Resource File</h2>
+<p>The resources required for Text Finder are:</p>
+<ul>
+<li><i>textfinder.ui</i> - the user interface file created in <a href="qtdesigner.html">QtDesigner</a></li>
+<li><i>input.txt</i> - a text file containing some text to be displayed in the <a href="qtextedit.html">QTextEdit</a></li>
+</ul>
+<p><i>textfinder.ui</i> contains all the necessary <a href="qwidget.html">QWidget</a> objects for the Text Finder. A <a href="qlineedit.html">QLineEdit</a> is used for the user input, a <a href="qtextedit.html">QTextEdit</a> is used to display the contents of <i>input.txt</i>, a <a href="qlabel.html">QLabel</a> is used to display the text &quot;Keyword&quot;, and a <a href="qpushbutton.html">QPushButton</a> is used for the &quot;Find&quot; button. The screenshot below shows the preview obtained in <a href="qtdesigner.html">QtDesigner</a>.</p>
+<p align="center"><img src="images/textfinder-example-userinterface.png" /></p><p>A <i>textfinder.qrc</i> file is used to store both the <i>textfinder.ui</i> and <i>input.txt</i> in the application's executable. The file contains the following code:</p>
+<pre> &lt;!DOCTYPE RCC&gt;&lt;RCC version=&quot;1.0&quot;&gt;
+ &lt;qresource&gt;
+     &lt;file&gt;forms/textfinder.ui&lt;/file&gt;
+     &lt;file&gt;forms/input.txt&lt;/file&gt;
+ &lt;/qresource&gt;
+ &lt;/RCC&gt;</pre>
+<p>For more information on resource files, see <a href="resources.html">The Qt Resource System</a>.</p>
+<p>To generate a form at run-time, the example is linked against the <a href="qtuitools.html">QtUiTools</a> module library. This is done in the <tt>textfinder.pro</tt> file that contains the following lines:</p>
+<pre>     CONFIG      += uitools
+     HEADERS     = textfinder.h
+     RESOURCES   = textfinder.qrc
+     SOURCES     = textfinder.cpp main.cpp</pre>
+<a name="textfinder-class-definition"></a>
+<h2>TextFinder Class Definition</h2>
+<p>The <tt>TextFinder</tt> class is a subclass of <a href="qwidget.html">QWidget</a> and it hosts the <a href="qwidget.html">QWidget</a>s we need to access in the user interface. The <a href="qlabel.html">QLabel</a> in the user interface is not declared here as we do not need to access it.</p>
+<pre> class TextFinder : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     TextFinder(QWidget *parent = 0);
+
+ private slots:
+     void on_findButton_clicked();
+
+ private:
+     QWidget* loadUiFile();
+     void loadTextFile();
+
+     QPushButton *ui_findButton;
+     QTextEdit *ui_textEdit;
+     QLineEdit *ui_lineEdit;
+     bool isFirstTime;
+ };</pre>
+<p>The slot <tt>on_find_Button_clicked()</tt> is a slot named according to the <a href="designer-using-a-component.html#automaticconnections">Automatic Connection</a> naming convention required by <tt>uic</tt>.</p>
+<a name="textfinder-class-implementation"></a>
+<h2>TextFinder Class Implementation</h2>
+<p>The <tt>TextFinder</tt> class's constructor calls the <tt>loadUiFile()</tt> function and then uses <tt>qFindChild()</tt> to access the user interface's <a href="qwidget.html">QWidget</a>s.</p>
+<pre> TextFinder::TextFinder(QWidget *parent)
+     : QWidget(parent)
+ {
+     QWidget *formWidget = loadUiFile();
+
+     ui_findButton = qFindChild&lt;QPushButton*&gt;(this, &quot;findButton&quot;);
+     ui_textEdit = qFindChild&lt;QTextEdit*&gt;(this, &quot;textEdit&quot;);
+     ui_lineEdit = qFindChild&lt;QLineEdit*&gt;(this, &quot;lineEdit&quot;);</pre>
+<p>We then use <a href="qmetaobject.html">QMetaObject</a>'s system to enable signal and slot connections.</p>
+<pre>     QMetaObject::connectSlotsByName(this);</pre>
+<p>The loadTextFile() function is called to load <i>input.txt</i> into <a href="qtextedit.html">QTextEdit</a> to displays its contents. The <tt>TextFinder</tt>'s layout and window title is set and <tt>isFirstTime</tt> is set to true.</p>
+<pre>     loadTextFile();
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(formWidget);
+     setLayout(layout);
+     setWindowTitle(tr(&quot;Text Finder&quot;));
+
+     isFirstTime = true;
+ }</pre>
+<p><tt>isFirstTime</tt> is used as a flag to indicate whether the search operation has been performed more than once. This is further explained with the <tt>on_findButton_clicked()</tt> function.</p>
+<p>The <tt>loadUiFile()</tt> function is used to load the user interface file previously created in <a href="qtdesigner.html">QtDesigner</a>. The <a href="quiloader.html">QUiLoader</a> class is instantiated and its <tt>load()</tt> function is used to load the form into <tt>formWidget</tt> that acts as a place holder for the user interface. The function then returns <tt>formWidget</tt> to its caller.</p>
+<pre> QWidget* TextFinder::loadUiFile()
+ {
+     QUiLoader loader;
+
+     QFile file(&quot;:/forms/textfinder.ui&quot;);
+     file.open(QFile::ReadOnly);
+
+     QWidget *formWidget = loader.load(&amp;file, this);
+     file.close();
+
+     return formWidget;
+ }</pre>
+<p>As mentioned earlier, the loadTextFile() function loads <i>input.txt</i> into <a href="qtextedit.html">QTextEdit</a> to display its contents. Data is read using <a href="qtextstream.html">QTextStream</a> into a <a href="qstring.html">QString</a> object, <tt>line</tt> with the <a href="qtextstream.html#readAll">QTextStream::readAll</a>() function. The contents of <tt>line</tt> are then appended to <tt>ui_textEdit</tt>.</p>
+<pre> void TextFinder::loadTextFile()
+ {
+     QFile inputFile(&quot;:/forms/input.txt&quot;);
+     inputFile.open(QIODevice::ReadOnly);
+     QTextStream in(&amp;inputFile);
+     QString line = in.readAll();
+     inputFile.close();
+
+     ui_textEdit-&gt;append(line);
+     ui_textEdit-&gt;setUndoRedoEnabled(false);
+     ui_textEdit-&gt;setUndoRedoEnabled(true);
+ }</pre>
+<p>The <tt>on_findButton_clicked()</tt> function is a slot that is connected to <tt>ui_findButton</tt>'s <tt>clicked()</tt> signal. The <tt>searchString</tt> is extracted from the <tt>ui_lineEdit</tt> and the <tt>document</tt> is extracted from <tt>textEdit</tt>. In event there is an empty <tt>searchString</tt>, a <a href="qmessagebox.html">QMessageBox</a> is used, requesting the user to enter a word. Otherwise, we traverse through the words in <tt>ui_textEdit</tt>, and highlight all ocurrences of the <tt>searchString</tt> . Two <a href="qtextcursor.html">QTextCursor</a> objects are used: One to traverse through the words in <tt>line</tt> and another to keep track of the edit blocks.</p>
+<pre> void TextFinder::on_findButton_clicked()
+ {
+     QString searchString = ui_lineEdit-&gt;text();
+     QTextDocument *document = ui_textEdit-&gt;document();
+
+     bool found = false;
+
+     if (isFirstTime == false)
+         document-&gt;undo();
+
+     if (searchString == &quot;&quot;) {
+         QMessageBox::information(this, tr(&quot;Empty Search Field&quot;),
+                 &quot;The search field is empty. Please enter a word and click Find.&quot;);
+     } else {
+
+         QTextCursor highlightCursor(document);
+         QTextCursor cursor(document);
+
+         cursor.beginEditBlock();
+
+         QTextCharFormat plainFormat(highlightCursor.charFormat());
+         QTextCharFormat colorFormat = plainFormat;
+         colorFormat.setForeground(Qt::red);
+
+         while (!highlightCursor.isNull() &amp;&amp; !highlightCursor.atEnd()) {
+             highlightCursor = document-&gt;find(searchString, highlightCursor, QTextDocument::FindWholeWords);
+
+             if (!highlightCursor.isNull()) {
+                 found = true;
+                 highlightCursor.movePosition(QTextCursor::WordRight,
+                                        QTextCursor::KeepAnchor);
+                 highlightCursor.mergeCharFormat(colorFormat);
+             }
+         }
+
+         cursor.endEditBlock();</pre>
+<p>The <tt>isFirstTime</tt> flag is set to false the moment <tt>findButton</tt> is clicked. This is necessary to undo the previous text highlight before highlighting the user's next search string. Also, the <tt>found</tt> flag is used to indicate if the <tt>searchString</tt> was found within the contents of <tt>ui_textEdit</tt>. If it was not found, a <a href="qmessagebox.html">QMessageBox</a> is used to inform the user.</p>
+<pre>         isFirstTime = false;
+
+         if (found == false) {
+             QMessageBox::information(this, tr(&quot;Word Not Found&quot;),
+                 &quot;Sorry, the word cannot be found.&quot;);
+         }
+     }
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<pre> int main(int argc, char *argv[])
+ {
+     Q_INIT_RESOURCE(textfinder);
+     QApplication app(argc, argv);
+
+     TextFinder *textFinder = new TextFinder;
+     textFinder-&gt;show();
+
+     return app.exec();
+ }</pre>
+<p>The <tt>main()</tt> function initialises the <i>textfinder.qrc</i> resource file and instantiates as well as displays <tt>TextFinder</tt>.</p>
+<p>See also <a href="designer-calculatorbuilder.html">Calculator Builder Example</a> and <a href="designer-worldtimeclockbuilder.html">World Time Clock Builder Example</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

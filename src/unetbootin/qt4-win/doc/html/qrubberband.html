@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qrubberband.cpp -->
+<head>
+  <title>Qt 4.4: QRubberBand Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QRubberBand Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QRubberBand class provides a rectangle or line that can indicate a selection or a boundary. <a href="#details">More...</a></p>
+<pre> #include &lt;QRubberBand&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qrubberband-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qrubberband.html#Shape-enum">Shape</a></b> { Line, Rectangle }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qrubberband.html#QRubberBand">QRubberBand</a></b> ( Shape <i>s</i>, QWidget * <i>p</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qrubberband.html#dtor.QRubberBand">~QRubberBand</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#move">move</a></b> ( int <i>x</i>, int <i>y</i> )</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#move-2">move</a></b> ( const QPoint &amp; <i>p</i> )</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#resize">resize</a></b> ( int <i>width</i>, int <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#resize-2">resize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#setGeometry">setGeometry</a></b> ( const QRect &amp; <i>rect</i> )</li>
+<li><div class="fn"/>void <b><a href="qrubberband.html#setGeometry-2">setGeometry</a></b> ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i> )</li>
+<li><div class="fn"/>Shape <b><a href="qrubberband.html#shape">shape</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qrubberband.html#initStyleOption">initStyleOption</a></b> ( QStyleOptionRubberBand * <i>option</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QRubberBand class provides a rectangle or line that can indicate a selection or a boundary.</p>
+<p>A rubber band is often used to show a new bounding area (as in a <a href="qsplitter.html">QSplitter</a> or a <a href="qdockwidget.html">QDockWidget</a> that is undocking). Historically this has been implemented using a <a href="qpainter.html">QPainter</a> and XOR, but this approach doesn't always work properly since rendering can happen in the window below the rubber band, but before the rubber band has been &quot;erased&quot;.</p>
+<p>You can create a QRubberBand whenever you need to render a rubber band around a given area (or to represent a single line), then call <a href="qrubberband.html#setGeometry">setGeometry</a>(), <a href="qrubberband.html#move">move</a>() or <a href="qrubberband.html#resize">resize</a>() to position and size it. A common pattern is to do this in conjunction with mouse events. For example:</p>
+<pre>         void Widget::mousePressEvent(QMouseEvent *event)
+         {
+             origin = event-&gt;pos();
+             if (!rubberBand)
+                 rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
+             rubberBand-&gt;setGeometry(QRect(origin, QSize()));
+             rubberBand-&gt;show();
+         }
+
+         void Widget::mouseMoveEvent(QMouseEvent *event)
+         {
+             rubberBand-&gt;setGeometry(QRect(origin, event-&gt;pos()).normalized());
+         }
+
+         void Widget::mouseReleaseEvent(QMouseEvent *event)
+         {
+             rubberBand-&gt;hide();
+             // determine selection, for example using QRect::intersects()
+             // and QRect::contains().
+         }</pre>
+<p>If you pass a parent to QRubberBand's constructor, the rubber band will display only inside its parent, but stays on top of other child widgets. If no parent is passed, QRubberBand will act as a top-level widget.</p>
+<p>Call <a href="qwidget.html#show">show</a>() to make the rubber band visible; also when the rubber band is not a top-level. Hiding or destroying the widget will make the rubber band disappear. The rubber band can be a <a href="qrubberband.html#Shape-enum">Rectangle</a> or a <a href="qrubberband.html#Shape-enum">Line</a> (vertical or horizontal), depending on the <a href="qrubberband.html#shape">shape</a>() it was given when constructed.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Shape-enum"></a>enum QRubberBand::Shape</h3>
+<p>This enum specifies what shape a <a href="qrubberband.html">QRubberBand</a> should have. This is a drawing hint that is passed down to the style system, and can be interpreted by each <a href="qstyle.html">QStyle</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QRubberBand::Line</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">A <a href="qrubberband.html">QRubberBand</a> can represent a vertical or horizontal line. Geometry is still given in <a href="qwidget.html#rect-prop">rect</a>() and the line will fill the given geometry on most styles.</td></tr>
+<tr><td valign="top"><tt>QRubberBand::Rectangle</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A <a href="qrubberband.html">QRubberBand</a> can represent a rectangle. Some styles will interpret this as a filled (often semi-transparent) rectangle, or a rectangular outline.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QRubberBand"></a>QRubberBand::QRubberBand ( <a href="qrubberband.html#Shape-enum">Shape</a> <i>s</i>, <a href="qwidget.html">QWidget</a> * <i>p</i> = 0 )</h3>
+<p>Constructs a rubber band of shape <i>s</i>, with parent <i>p</i>.</p>
+<p>By default a rectangular rubber band (<i>s</i> is <tt>Rectangle</tt>) will use a mask, so that a small border of the rectangle is all that is visible. Some styles (e.g&#x2e;, native Mac OS X) will change this and call <a href="qwidget.html#windowOpacity-prop">QWidget::setWindowOpacity</a>() to make a semi-transparent filled selection rectangle.</p>
+<h3 class="fn"><a name="dtor.QRubberBand"></a>QRubberBand::~QRubberBand ()</h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QRubberBand::initStyleOption ( <a href="qstyleoptionrubberband.html">QStyleOptionRubberBand</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from this <a href="qrubberband.html">QRubberBand</a>. This method is useful for subclasses when they need a <a href="qstyleoptionrubberband.html">QStyleOptionRubberBand</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<h3 class="fn"><a name="move"></a>void QRubberBand::move ( int <i>x</i>, int <i>y</i> )</h3>
+<p>Moves the rubberband to point (<i>x</i>, <i>y</i>).</p>
+<p>See also <a href="qrubberband.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="move-2"></a>void QRubberBand::move ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Moves the rubberband to point <i>p</i>.</p>
+<p>See also <a href="qrubberband.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="resize"></a>void QRubberBand::resize ( int <i>width</i>, int <i>height</i> )</h3>
+<p>Resizes the rubberband so that its width is <i>width</i>, and its height is <i>height</i>.</p>
+<p>See also <a href="qrubberband.html#move">move</a>().</p>
+<h3 class="fn"><a name="resize-2"></a>void QRubberBand::resize ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Resizes the rubberband so that its new size is <i>size</i>.</p>
+<p>See also <a href="qrubberband.html#move">move</a>().</p>
+<h3 class="fn"><a name="setGeometry"></a>void QRubberBand::setGeometry ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i> )</h3>
+<p>Sets the geometry of the rubber band to <i>rect</i>, specified in the coordinate system of its parent widget.</p>
+<p>See also <a href="qwidget.html#geometry-prop">QWidget::geometry</a>.</p>
+<h3 class="fn"><a name="setGeometry-2"></a>void QRubberBand::setGeometry ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the geometry of the rubberband to the rectangle whose top-left corner lies at the point (<i>x</i>, <i>y</i>), and with dimensions specified by <i>width</i> and <i>height</i>. The geometry is specified in the parent widget's coordinate system.</p>
+<h3 class="fn"><a name="shape"></a><a href="qrubberband.html#Shape-enum">Shape</a> QRubberBand::shape () const</h3>
+<p>Returns the shape of this rubber band. The shape can only be set upon construction.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

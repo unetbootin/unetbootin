@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: AudioOutput Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">AudioOutput Class Reference<br /><span class="small-subtitle">(Phonon::AudioOutput)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The AudioOutput class is used to send data to audio output devices. <a href="#details">More...</a></p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="phonon-audiooutput-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#muted-prop">muted</a></b> : bool</li>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#name-prop">name</a></b> : QString</li>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#outputDevice-prop">outputDevice</a></b> : AudioOutputDevice</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#volume-prop">volume</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#volumeDecibel-prop">volumeDecibel</a></b> : qreal</li>
+</ul>
+</td></tr>
+</table></p>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#AudioOutput">AudioOutput</a></b> ( Phonon::Category <i>category</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="phonon-audiooutput.html#AudioOutput-2">AudioOutput</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>Phonon::Category <b><a href="phonon-audiooutput.html#category">category</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="phonon-audiooutput.html#muted-prop">isMuted</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="phonon-audiooutput.html#name-prop">name</a></b> () const</li>
+<li><div class="fn"/>AudioOutputDevice <b><a href="phonon-audiooutput.html#outputDevice-prop">outputDevice</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-audiooutput.html#volume-prop">volume</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="phonon-audiooutput.html#volumeDecibel-prop">volumeDecibel</a></b> () const</li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#muted-prop">setMuted</a></b> ( bool <i>mute</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#name-prop">setName</a></b> ( const QString &amp; <i>newName</i> )</li>
+<li><div class="fn"/>bool <b><a href="phonon-audiooutput.html#outputDevice-prop">setOutputDevice</a></b> ( const Phonon::AudioOutputDevice &amp; <i>newAudioOutputDevice</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#volume-prop">setVolume</a></b> ( qreal <i>newVolume</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#volumeDecibel-prop">setVolumeDecibel</a></b> ( qreal <i>newVolumeDecibel</i> )</li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#mutedChanged">mutedChanged</a></b> ( bool <i>muted</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#outputDeviceChanged">outputDeviceChanged</a></b> ( const Phonon::AudioOutputDevice &amp; <i>newAudioOutputDevice</i> )</li>
+<li><div class="fn"/>void <b><a href="phonon-audiooutput.html#volumeChanged">volumeChanged</a></b> ( qreal <i>newVolume</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The AudioOutput class is used to send data to audio output devices.</p>
+<p>The AudioOutput class plays sound over a sound device. The audio output needs to be connected to a <a href="phonon-mediaobject.html">MediaObject</a> using <a href="phonon-path.html#createPath">createPath()</a>. To start playback, you call <a href="phonon-mediaobject.html#play">play()</a> on the media object.</p>
+<pre>     Phonon::MediaObject *mediaObject = new Phonon::MediaObject(this);
+     mediaObject-&gt;setCurrentSource(Phonon::MediaSource(&quot;/mymusic/barbiegirl.wav&quot;));
+     Phonon::AudioOutput *audioOutput =
+         new Phonon::AudioOutput(Phonon::MusicCategory, this);
+     Phonon::Path path = Phonon::createPath(mediaObject, audioOutput);</pre>
+<p>The class supports changing the <a href="phonon-audiooutput.html#volume-prop">volume</a>(). It is also possible to mute the sound.</p>
+<p>To find out what <a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a>s are available for AudioOutput, you can call BackendCapabilities::availableAudioDevices(). A default device is selected by the backend, but it is possible to set the device to be used with <a href="phonon-audiooutput.html#outputDevice-prop">setOutputDevice</a>(). The <a href="phonon-audiooutput.html#outputDeviceChanged">outputDeviceChanged</a>() signal will be emitted if the device changes.</p>
+<p>If an error occurs with the playback, for instance, if no valid output device is found, the media object will receive a stateChanged() signal with the <a href="phonon.html#State-enum">ErrorState</a>.</p>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>See also <a href="phonon-volumeslider.html">Phonon::VolumeSlider</a>, <a href="phonon-musicplayer.html">Music Player Example</a>, and <a href="phonon-backendcapabilities.html">BackendCapabilities</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="muted-prop"></a>muted : bool</h3>
+<p>This property tells whether the output is muted.</p>
+<p>Muting the output has the same effect as calling setVolume(0.0).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isMuted () const</b></li>
+<li><div class="fn"/><b>void setMuted ( bool <i>mute</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="name-prop"></a>name : <a href="qstring.html">QString</a></h3>
+<p>This is the name that appears in Mixer applications that control the volume of this output.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString name () const</b></li>
+<li><div class="fn"/><b>void setName ( const QString &amp; <i>newName</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="outputDevice-prop"></a>outputDevice : <a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a></h3>
+<p>This property holds the (hardware) destination for the output.</p>
+<p>The default device is determined by the <a href="phonon.html#Category-enum">Category</a> and the global configuration for that category. Normally you don't need to override this setting - letting the user change the global configuration is the right choice. You can still override the device though, if you have good reasons to do so.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>AudioOutputDevice outputDevice () const</b></li>
+<li><div class="fn"/><b>bool setOutputDevice ( const Phonon::AudioOutputDevice &amp; <i>newAudioOutputDevice</i> )</b></li>
+</ul>
+<p>See also <a href="phonon-audiooutput.html#outputDeviceChanged">outputDeviceChanged</a>().</p>
+<h3 class="fn"><a name="volume-prop"></a>volume : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This is the current loudness of the output.</p>
+<p>(it is using Stevens' law to calculate the change in voltage internally).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal volume () const</b></li>
+<li><div class="fn"/><b>void setVolume ( qreal <i>newVolume</i> )</b></li>
+</ul>
+<p>See also <a href="phonon-audiooutput.html#volumeDecibel-prop">volumeDecibel</a>.</p>
+<h3 class="fn"><a name="volumeDecibel-prop"></a>volumeDecibel : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This is the current volume of the output in decibel.</p>
+<p>0 dB means no change in volume, -6dB means an attenuation of the voltage to 50% and an attenuation of the power to 25%, -inf dB means silence.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal volumeDecibel () const</b></li>
+<li><div class="fn"/><b>void setVolumeDecibel ( qreal <i>newVolumeDecibel</i> )</b></li>
+</ul>
+<p>See also <a href="phonon-audiooutput.html#volume-prop">volume</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="AudioOutput"></a>AudioOutput::AudioOutput ( <a href="phonon.html#Category-enum">Phonon::Category</a> <i>category</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new <a href="phonon-audiooutput.html">AudioOutput</a> with the given <i>parent</i> that defines output to a physical device.</p>
+<p>The <i>category</i> can be used by mixer applications to group volume controls of applications into categories. That makes it easier for the user to identify the programs. The category is also used for the default output device that is configured centrally. As an example: often users want to have the audio signal of a VoIP application go to their USB headset while all other sounds should go to the internal soundcard.</p>
+<p>See also <a href="phonon.html#categoryToString">Phonon::categoryToString</a>() and <a href="phonon-audiooutput.html#outputDevice-prop">outputDevice</a>.</p>
+<h3 class="fn"><a name="AudioOutput-2"></a>AudioOutput::AudioOutput ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new <a href="phonon-audiooutput.html">AudioOutput</a> that defines output to the system default device with the {Phonon::Category::}{<a href="phonon.html#Category-enum">NoCategory</a>} category</p>
+<p>See also <a href="phonon.html#categoryToString">Phonon::categoryToString</a>() and <a href="phonon-audiooutput.html#outputDevice-prop">outputDevice</a>.</p>
+<h3 class="fn"><a name="category"></a><a href="phonon.html#Category-enum">Phonon::Category</a> AudioOutput::category () const</h3>
+<p>Returns the category of this output.</p>
+<p>See also <a href="phonon-audiooutput.html#AudioOutput">Phonon::AudioOutput::AudioOutput</a>().</p>
+<h3 class="fn"><a name="mutedChanged"></a>void AudioOutput::mutedChanged ( bool <i>muted</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the muted property has changed. The <i>muted</i> value passed by the signal indicates the state of the muted property. As this property can change by IPC (DBus) calls a UI element showing the muted property should listen to this signal.</p>
+<h3 class="fn"><a name="outputDeviceChanged"></a>void AudioOutput::outputDeviceChanged ( const <a href="phonon-objectdescription.html#AudioOutputDevice-typedef">Phonon::AudioOutputDevice</a> &amp; <i>newAudioOutputDevice</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the (hardware) device for the output has changed. <i>newAudioOutputDevice</i> is the new device.</p>
+<p>The change can happen either through setOutputDevice or if the global configuration for the used category has changed.</p>
+<p>See also <a href="phonon-audiooutput.html#outputDevice-prop">outputDevice</a>.</p>
+<h3 class="fn"><a name="volumeChanged"></a>void AudioOutput::volumeChanged ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>newVolume</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the volume has changed. As the volume can change without a call to setVolume (calls over dbus) this is important to keep a widget showing the current volume up to date.</p>
+<p><i>newVolume</i> is the new volume level.</p>
+<p>See also <a href="phonon-audiooutput.html#volume-prop">setVolume</a>() and <a href="phonon-audiooutput.html#volume-prop">volume</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qcache.qdoc -->
+<head>
+  <title>Qt 4.4: QCache Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCache Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QCache class is a template class that provides a cache. <a href="#details">More...</a></p>
+<pre> #include &lt;QCache&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qcache-members.html">List of all members, including inherited members</a></li>
+<li><a href="qcache-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcache.html#QCache">QCache</a></b> ( int <i>maxCost</i> = 100 )</li>
+<li><div class="fn"/><b><a href="qcache.html#dtor.QCache">~QCache</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcache.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qcache.html#contains">contains</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qcache.html#count">count</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcache.html#insert">insert</a></b> ( const Key &amp; <i>key</i>, T * <i>object</i>, int <i>cost</i> = 1 )</li>
+<li><div class="fn"/>bool <b><a href="qcache.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>QList&lt;Key&gt; <b><a href="qcache.html#keys">keys</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcache.html#maxCost">maxCost</a></b> () const</li>
+<li><div class="fn"/>T * <b><a href="qcache.html#object">object</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qcache.html#remove">remove</a></b> ( const Key &amp; <i>key</i> )</li>
+<li><div class="fn"/>void <b><a href="qcache.html#setMaxCost">setMaxCost</a></b> ( int <i>cost</i> )</li>
+<li><div class="fn"/>int <b><a href="qcache.html#size">size</a></b> () const</li>
+<li><div class="fn"/>T * <b><a href="qcache.html#take">take</a></b> ( const Key &amp; <i>key</i> )</li>
+<li><div class="fn"/>int <b><a href="qcache.html#totalCost">totalCost</a></b> () const</li>
+<li><div class="fn"/>T * <b><a href="qcache.html#operator-5b-5d">operator[]</a></b> ( const Key &amp; <i>key</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCache class is a template class that provides a cache.</p>
+<p>QCache&lt;Key, T&gt; defines a cache that stores objects of type T associated with keys of type Key. For example, here's the definition of a cache that stores objects of type Employee associated with an integer key:</p>
+<pre>         QCache&lt;int, Employee&gt; cache;</pre>
+<p>Here's how to insert an object in the cache:</p>
+<pre>         Employee *employee = new Employee;
+         employee-&gt;setId(37);
+         employee-&gt;setName(&quot;Richard Schmit&quot;);
+         ...
+         cache.insert(employee-&gt;id(), employee);</pre>
+<p>The advantage of using QCache over some other key-based data structure (such as <a href="qmap.html">QMap</a> or <a href="qhash.html">QHash</a>) is that QCache automatically takes ownership of the objects that are inserted into the cache and deletes them to make room for new objects, if necessary. When inserting an object into the cache, you can specify a <i>cost</i>, which should bear some approximate relationship to the amount of memory taken by the object. When the sum of all objects' costs (<a href="qcache.html#totalCost">totalCost</a>()) exceeds the cache's limit (<a href="qcache.html#maxCost">maxCost</a>()), QCache starts deleting objects in the cache to keep under the limit, starting with less recently accessed objects.</p>
+<p>By default, QCache's <a href="qcache.html#maxCost">maxCost</a>() is 100. You can specify a different value in the QCache constructor:</p>
+<pre>         QCache&lt;int, MyDataStructure&gt; cache(5000);</pre>
+<p>Each time you call <a href="qcache.html#insert">insert</a>(), you can specify a cost as third argument (after the key and a pointer to the object to insert). After the call, the inserted object is owned by the QCache, which may delete it at any time to make room for other objects.</p>
+<p>To look up objects in the cache, use <a href="qcache.html#object">object</a>() or operator[](). This function looks up an object by its key, and returns either a pointer to the cached object (which is owned by the cache) or 0.</p>
+<p>If you want to remove an object from the cache for a particular key, call <a href="qcache.html#remove">remove</a>(). This will also delete the object. If you want to remove an object from the cache without the QCache deleting it, use <a href="qcache.html#take">take</a>().</p>
+<p>See also <a href="qpixmapcache.html">QPixmapCache</a>, <a href="qhash.html">QHash</a>, and <a href="qmap.html">QMap</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCache"></a>QCache::QCache ( int <i>maxCost</i> = 100 )</h3>
+<p>Constructs a cache whose contents will never have a total cost greater than <i>maxCost</i>.</p>
+<h3 class="fn"><a name="dtor.QCache"></a>QCache::~QCache ()</h3>
+<p>Destroys the cache. Deletes all the objects in the cache.</p>
+<h3 class="fn"><a name="clear"></a>void QCache::clear ()</h3>
+<p>Deletes all the objects in the cache.</p>
+<p>See also <a href="qcache.html#remove">remove</a>() and <a href="qcache.html#take">take</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QCache::contains ( const Key &amp; <i>key</i> ) const</h3>
+<p>Returns true if the cache contains an object associated with key <i>key</i>; otherwise returns false.</p>
+<p>See also <a href="qcache.html#take">take</a>() and <a href="qcache.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="count"></a>int QCache::count () const</h3>
+<p>Same as <a href="qcache.html#size">size</a>().</p>
+<h3 class="fn"><a name="insert"></a>bool QCache::insert ( const Key &amp; <i>key</i>, T * <i>object</i>, int <i>cost</i> = 1 )</h3>
+<p>Inserts <i>object</i> into the cache with key <i>key</i> and associated cost <i>cost</i>. Any object with the same key already in the cache will be removed.</p>
+<p>After this call, <i>object</i> is owned by the <a href="qcache.html">QCache</a> and may be deleted at any time. In particular, if <i>cost</i> is greater than <a href="qcache.html#maxCost">maxCost</a>(), the object will be deleted immediately.</p>
+<p>The function returns true if the object was inserted into the cache; otherwise it returns false.</p>
+<p>See also <a href="qcache.html#take">take</a>() and <a href="qcache.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QCache::isEmpty () const</h3>
+<p>Returns true if the cache contains no objects; otherwise returns false.</p>
+<p>See also <a href="qcache.html#size">size</a>().</p>
+<h3 class="fn"><a name="keys"></a><a href="qlist.html">QList</a>&lt;Key&gt; QCache::keys () const</h3>
+<p>Returns a list of the keys in the cache.</p>
+<h3 class="fn"><a name="maxCost"></a>int QCache::maxCost () const</h3>
+<p>Returns the maximum allowed total cost of the cache.</p>
+<p>See also <a href="qcache.html#setMaxCost">setMaxCost</a>() and <a href="qcache.html#totalCost">totalCost</a>().</p>
+<h3 class="fn"><a name="object"></a>T * QCache::object ( const Key &amp; <i>key</i> ) const</h3>
+<p>Returns the object associated with key <i>key</i>, or 0 if the key does not exist in the cache.</p>
+<p><b>Warning:</b> The returned object is owned by <a href="qcache.html">QCache</a> and may be deleted at any time.</p>
+<p>See also <a href="qcache.html#take">take</a>() and <a href="qcache.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="remove"></a>bool QCache::remove ( const Key &amp; <i>key</i> )</h3>
+<p>Deletes the object associated with key <i>key</i>. Returns true if the object was found in the cache; otherwise returns false.</p>
+<p>See also <a href="qcache.html#take">take</a>() and <a href="qcache.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="setMaxCost"></a>void QCache::setMaxCost ( int <i>cost</i> )</h3>
+<p>Sets the maximum allowed total cost of the cache to <i>cost</i>. If the current total cost is greater than <i>cost</i>, some objects are deleted immediately.</p>
+<p>See also <a href="qcache.html#maxCost">maxCost</a>() and <a href="qcache.html#totalCost">totalCost</a>().</p>
+<h3 class="fn"><a name="size"></a>int QCache::size () const</h3>
+<p>Returns the number of objects in the cache.</p>
+<p>See also <a href="qcache.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="take"></a>T * QCache::take ( const Key &amp; <i>key</i> )</h3>
+<p>Takes the object associated with key <i>key</i> out of the cache without deleting it. Returns a pointer to the object taken out, or 0 if the key does not exist in the cache.</p>
+<p>The ownership of the returned object is passed to the caller.</p>
+<p>See also <a href="qcache.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="totalCost"></a>int QCache::totalCost () const</h3>
+<p>Returns the total cost of the objects in the cache.</p>
+<p>This value is normally below <a href="qcache.html#maxCost">maxCost</a>(), but <a href="qcache.html">QCache</a> makes an exception for Qt's <a href="shared.html#implicitly-shared">implicitly shared</a> classes. If a cached object shares its internal data with another instance, <a href="qcache.html">QCache</a> may keep the object lying around, possibly contributing to making totalCost() larger than <a href="qcache.html#maxCost">maxCost</a>().</p>
+<p>See also <a href="qcache.html#setMaxCost">setMaxCost</a>().</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>T * QCache::operator[] ( const Key &amp; <i>key</i> ) const</h3>
+<p>Returns the object associated with key <i>key</i>, or 0 if the key does not exist in the cache.</p>
+<p>This is the same as <a href="qcache.html#object">object</a>().</p>
+<p><b>Warning:</b> The returned object is owned by <a href="qcache.html">QCache</a> and may be deleted at any time.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

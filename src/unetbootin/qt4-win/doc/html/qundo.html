@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qundo.qdoc -->
+<head>
+  <title>Qt 4.4: Overview of Qt's Undo Framework</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Overview of Qt's Undo Framework<br /><span class="subtitle"></span>
+</h1>
+<a name="undo-framework"></a><a name="introduction"></a>
+<h2>Introduction</h2>
+<p>Qt's Undo Framework is an implementation of the Command pattern, for implementing undo/redo functionality in applications.</p>
+<p>The Command pattern is based on the idea that all editing in an application is done by creating instances of command objects. Command objects apply changes to the document and are stored on a command stack. Furthermore, each command knows how to undo its changes to bring the document back to its previous state. As long as the application only uses command objects to change the state of the document, it is possible to undo a sequence of commands by traversing the stack downwards and calling undo on each command in turn. It is also possible to redo a sequence of commands by traversing the stack upwards and calling redo on each command.</p>
+<a name="classes"></a>
+<h2>Classes</h2>
+<p>The framework consists of four classes:</p>
+<ul>
+<li><a href="qundocommand.html">QUndoCommand</a> is the base class of all commands stored on an undo stack. It can apply (redo) or undo a single change in the document.</li>
+<li><a href="qundostack.html">QUndoStack</a> is a list of <a href="qundocommand.html">QUndoCommand</a> objects. It contains all the commands executed on the document and can roll the document's state backwards or forwards by undoing or redoing them.</li>
+<li><a href="qundogroup.html">QUndoGroup</a> is a group of undo stacks. It is useful when an application contains more than one undo stack, typically one for each opened document. <a href="qundogroup.html">QUndoGroup</a> provides a single pair of undo/redo slots for all the stacks in the group. It forwards undo and redo requests to the active stack, which is the stack associated with the document that is currently being edited by the user.</li>
+<li><a href="qundoview.html">QUndoView</a> is a widget which shows the contents of an undo stack. Clicking on a command in the view rolls the document's state backwards or forwards to that command.</li>
+</ul>
+<a name="concepts"></a>
+<h2>Concepts</h2>
+<p>The following concepts are supported by the framework:</p>
+<ul>
+<li><b>Clean state:</b> Used to signal when the document enters and leaves a state that has been saved to disk. This is typically used to disable or enable the save actions, and to update the document's title bar.</li>
+<li><b>Command compression:</b> Used to compress sequences of commands into a single command. For example: In a text editor, the commands that insert individual characters into the document can be compressed into a single command that inserts whole sections of text. These bigger changes are more convenient for the user to undo and redo.</li>
+<li><b>Command macros:</b> A sequence of commands, all of which are undone or redone in one step. These simplify the task of writing an application, since a set of simpler commands can be composed into more complex commands. For example, a command that moves a set of selected objects in a document can be created by combining a set of commands, each of which moves a single object.</li>
+</ul>
+<p><a href="qundostack.html">QUndoStack</a> provides convenient undo and redo <a href="qaction.html">QAction</a> objects that can be inserted into a menu or a toolbar. The text properties of these actions always reflect what command will be undone or redone when they are triggered. Similarly, <a href="qundogroup.html">QUndoGroup</a> provides undo and redo actions that always behave like the undo and redo actions of the active stack.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

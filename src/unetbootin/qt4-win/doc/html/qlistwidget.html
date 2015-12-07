@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qlistwidget.cpp -->
+<head>
+  <title>Qt 4.4: QListWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QListWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QListWidget class provides an item-based list widget. <a href="#details">More...</a></p>
+<pre> #include &lt;QListWidget&gt;</pre><p>Inherits <a href="qlistview.html">QListView</a>.</p>
+<ul>
+<li><a href="qlistwidget-members.html">List of all members, including inherited members</a></li>
+<li><a href="qlistwidget-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlistwidget.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="qlistwidget.html#currentRow-prop">currentRow</a></b> : int</li>
+<li><div class="fn"/><b><a href="qlistwidget.html#sortingEnabled-prop">sortingEnabled</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 properties inherited from <a href="qlistview.html#properties">QListView</a></li>
+<li><div class="fn"/>15 properties inherited from <a href="qabstractitemview.html#properties">QAbstractItemView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="qabstractscrollarea.html#properties">QAbstractScrollArea</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlistwidget.html#QListWidget">QListWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlistwidget.html#dtor.QListWidget">~QListWidget</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#addItem">addItem</a></b> ( const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#addItem-2">addItem</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#addItems">addItems</a></b> ( const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#closePersistentEditor">closePersistentEditor</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>int <b><a href="qlistwidget.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#currentItem">currentItem</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qlistwidget.html#currentRow-prop">currentRow</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#editItem">editItem</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>QList&lt;QListWidgetItem *&gt; <b><a href="qlistwidget.html#findItems">findItems</a></b> ( const QString &amp; <i>text</i>, Qt::MatchFlags <i>flags</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#insertItem">insertItem</a></b> ( int <i>row</i>, QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#insertItem-2">insertItem</a></b> ( int <i>row</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#insertItems">insertItems</a></b> ( int <i>row</i>, const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>bool <b><a href="qlistwidget.html#sortingEnabled-prop">isSortingEnabled</a></b> () const</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#item">item</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#itemAt">itemAt</a></b> ( const QPoint &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#itemAt-2">itemAt</a></b> ( int <i>x</i>, int <i>y</i> ) const</li>
+<li><div class="fn"/>QWidget * <b><a href="qlistwidget.html#itemWidget">itemWidget</a></b> ( QListWidgetItem * <i>item</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#openPersistentEditor">openPersistentEditor</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#removeItemWidget">removeItemWidget</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>int <b><a href="qlistwidget.html#row">row</a></b> ( const QListWidgetItem * <i>item</i> ) const</li>
+<li><div class="fn"/>QList&lt;QListWidgetItem *&gt; <b><a href="qlistwidget.html#selectedItems">selectedItems</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#setCurrentItem">setCurrentItem</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#setCurrentItem-2">setCurrentItem</a></b> ( QListWidgetItem * <i>item</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#currentRow-prop">setCurrentRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#currentRow-prop">setCurrentRow</a></b> ( int <i>row</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#setItemWidget">setItemWidget</a></b> ( QListWidgetItem * <i>item</i>, QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#sortingEnabled-prop">setSortingEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#sortItems">sortItems</a></b> ( Qt::SortOrder <i>order</i> = Qt::AscendingOrder )</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#takeItem">takeItem</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qlistwidget.html#visualItemRect">visualItemRect</a></b> ( const QListWidgetItem * <i>item</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qlistview.html#public-functions">QListView</a></li>
+<li><div class="fn"/>54 public functions inherited from <a href="qabstractitemview.html#public-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractscrollarea.html#public-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#scrollToItem">scrollToItem</a></b> ( const QListWidgetItem * <i>item</i>, QAbstractItemView::ScrollHint <i>hint</i> = EnsureVisible )</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public slots inherited from <a href="qabstractitemview.html#public-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#currentItemChanged">currentItemChanged</a></b> ( QListWidgetItem * <i>current</i>, QListWidgetItem * <i>previous</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#currentRowChanged">currentRowChanged</a></b> ( int <i>currentRow</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#currentTextChanged">currentTextChanged</a></b> ( const QString &amp; <i>currentText</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemActivated">itemActivated</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemChanged">itemChanged</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemClicked">itemClicked</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemDoubleClicked">itemDoubleClicked</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemEntered">itemEntered</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemPressed">itemPressed</a></b> ( QListWidgetItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistwidget.html#itemSelectionChanged">itemSelectionChanged</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qlistview.html#signals">QListView</a></li>
+<li><div class="fn"/>6 signals inherited from <a href="qabstractitemview.html#signals">QAbstractItemView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="qlistwidget.html#dropMimeData">dropMimeData</a></b> ( int <i>index</i>, const QMimeData * <i>data</i>, Qt::DropAction <i>action</i> )</li>
+<li><div class="fn"/>QModelIndex <b><a href="qlistwidget.html#indexFromItem">indexFromItem</a></b> ( QListWidgetItem * <i>item</i> ) const</li>
+<li><div class="fn"/>QListWidgetItem * <b><a href="qlistwidget.html#itemFromIndex">itemFromIndex</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>QList&lt;QListWidgetItem *&gt; <b><a href="qlistwidget.html#items">items</a></b> ( const QMimeData * <i>data</i> ) const</li>
+<li><div class="fn"/>virtual QMimeData * <b><a href="qlistwidget.html#mimeData">mimeData</a></b> ( const QList&lt;QListWidgetItem *&gt; <i>items</i> ) const</li>
+<li><div class="fn"/>virtual QStringList <b><a href="qlistwidget.html#mimeTypes">mimeTypes</a></b> () const</li>
+<li><div class="fn"/>virtual Qt::DropActions <b><a href="qlistwidget.html#supportedDropActions">supportedDropActions</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="qlistview.html#protected-functions">QListView</a></li>
+<li><div class="fn"/>33 protected functions inherited from <a href="qabstractitemview.html#protected-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>16 protected functions inherited from <a href="qabstractscrollarea.html#protected-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>9 protected slots inherited from <a href="qabstractitemview.html#protected-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qabstractscrollarea.html#protected-slots">QAbstractScrollArea</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QListWidget class provides an item-based list widget.</p>
+<p>QListWidget is a convenience class that provides a list view similar to the one supplied by <a href="qlistview.html">QListView</a>, but with a classic item-based interface for adding and removing items. QListWidget uses an internal model to manage each <a href="qlistwidgetitem.html">QListWidgetItem</a> in the list.</p>
+<p>For a more flexible list view widget, use the <a href="qlistview.html">QListView</a> class with a standard model.</p>
+<p>List widgets are constructed in the same way as other widgets:</p>
+<pre>     QListWidget *listWidget = new QListWidget(this);</pre>
+<p>The <a href="qabstractitemview.html#selectionMode-prop">selectionMode</a>() of a list widget determines how many of the items in the list can be selected at the same time, and whether complex selections of items can be created. This can be set with the <a href="qabstractitemview.html#selectionMode-prop">setSelectionMode</a>() function.</p>
+<p>There are two ways to add items to the list: they can be constructed with the list widget as their parent widget, or they can be constructed with no parent widget and added to the list later. If a list widget already exists when the items are constructed, the first method is easier to use:</p>
+<pre>     new QListWidgetItem(tr(&quot;Oak&quot;), listWidget);
+     new QListWidgetItem(tr(&quot;Fir&quot;), listWidget);
+     new QListWidgetItem(tr(&quot;Pine&quot;), listWidget);</pre>
+<p>If you need to insert a new item into the list at a particular position, it is more required to construct the item without a parent widget and use the <a href="qlistwidget.html#insertItem">insertItem</a>() function to place it within the list. The list widget will take ownership of the item.</p>
+<pre>     QListWidgetItem *newItem = new QListWidgetItem;
+     newItem-&gt;setText(itemText);
+     listWidget-&gt;insertItem(row, newItem);</pre>
+<p>For multiple items, <a href="qlistwidget.html#insertItems">insertItems</a>() can be used instead. The number of items in the list is found with the <a href="qlistwidget.html#count-prop">count</a>() function. To remove items from the list, use <a href="qlistwidget.html#takeItem">takeItem</a>().</p>
+<p>The current item in the list can be found with <a href="qlistwidget.html#currentItem">currentItem</a>(), and changed with <a href="qlistwidget.html#setCurrentItem">setCurrentItem</a>(). The user can also change the current item by navigating with the keyboard or clicking on a different item. When the current item changes, the <a href="qlistwidget.html#currentItemChanged">currentItemChanged</a>() signal is emitted with the new current item and the item that was previously current.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/windowsxp-listview.png" alt="Screenshot of a Windows XP style list widget" /></td><td><img src="images/macintosh-listview.png" alt="Screenshot of a Macintosh style table widget" /></td><td><img src="images/plastique-listview.png" alt="Screenshot of a Plastique style table widget" /></td></tr>
+<tr valign="top" class="even"><td>A <a href="gallery-windowsxp.html">Windows XP style</a> list widget.</td><td>A <a href="gallery-macintosh.html">Macintosh style</a> list widget.</td><td>A <a href="gallery-plastique.html">Plastique style</a> list widget.</td></tr>
+</table></p>
+<p>See also <a href="qlistwidgetitem.html">QListWidgetItem</a>, <a href="qlistview.html">QListView</a>, <a href="qtreeview.html">QTreeView</a>, <a href="model-view-programming.html">Model/View Programming</a>, and <a href="dialogs-configdialog.html">Config Dialog Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of items in the list including any hidden items.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="currentRow-prop"></a>currentRow : int</h3>
+<p>This property holds the row of the current item.</p>
+<p>Depending on the current selection mode, the row may also be selected.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentRow () const</b></li>
+<li><div class="fn"/><b>void setCurrentRow ( int <i>row</i> )</b></li>
+<li><div class="fn"/><b>void setCurrentRow ( int <i>row</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="sortingEnabled-prop"></a>sortingEnabled : bool</h3>
+<p>This property holds whether sorting is enabled.</p>
+<p>If this property is true, sorting is enabled for the list; if the property is false, sorting is not enabled. The default value is false.</p>
+<p>This property was introduced in Qt Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isSortingEnabled () const</b></li>
+<li><div class="fn"/><b>void setSortingEnabled ( bool <i>enable</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QListWidget"></a>QListWidget::QListWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty <a href="qlistwidget.html">QListWidget</a> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QListWidget"></a>QListWidget::~QListWidget ()</h3>
+<p>Destroys the list widget and all its items.</p>
+<h3 class="fn"><a name="addItem"></a>void QListWidget::addItem ( const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>Inserts an item with the text <i>label</i> at the end of the list widget.</p>
+<h3 class="fn"><a name="addItem-2"></a>void QListWidget::addItem ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts the <i>item</i> at the the end of the list widget.</p>
+<p><b>Warning:</b> A <a href="qlistwidgetitem.html">QListWidgetItem</a> can only be added to a <a href="qlistwidget.html">QListWidget</a> once. Adding the same <a href="qlistwidgetitem.html">QListWidgetItem</a> multiple times to a <a href="qlistwidget.html">QListWidget</a> will result in undefined behavior.</p>
+<p>See also <a href="qlistwidget.html#insertItem">insertItem</a>().</p>
+<h3 class="fn"><a name="addItems"></a>void QListWidget::addItems ( const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )</h3>
+<p>Inserts items with the text <i>labels</i> at the end of the list widget.</p>
+<p>See also <a href="qlistwidget.html#insertItems">insertItems</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QListWidget::clear ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Removes all items and selections in the view.</p>
+<p><b>Note:</b> All items will be permanently deleted.</p>
+<h3 class="fn"><a name="closePersistentEditor"></a>void QListWidget::closePersistentEditor ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Closes the persistent editor for the given <i>item</i>.</p>
+<p>See also <a href="qlistwidget.html#openPersistentEditor">openPersistentEditor</a>().</p>
+<h3 class="fn"><a name="currentItem"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::currentItem () const</h3>
+<p>Returns the current item.</p>
+<p>See also <a href="qlistwidget.html#setCurrentItem">setCurrentItem</a>().</p>
+<h3 class="fn"><a name="currentItemChanged"></a>void QListWidget::currentItemChanged ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>current</i>, <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>previous</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current item changes. The <i>previous</i> item is the item that previously had the focus, <i>current</i> is the new current item.</p>
+<h3 class="fn"><a name="currentRowChanged"></a>void QListWidget::currentRowChanged ( int <i>currentRow</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current item changes. The <i>currentRow</i> is the row of the current item. If there is no current item, the <i>currentRow</i> is -1.</p>
+<h3 class="fn"><a name="currentTextChanged"></a>void QListWidget::currentTextChanged ( const <a href="qstring.html">QString</a> &amp; <i>currentText</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current item changes. The <i>currentText</i> is the text data in the current item. If there is no current item, the <i>currentText</i> is invalid.</p>
+<h3 class="fn"><a name="dropMimeData"></a>bool QListWidget::dropMimeData ( int <i>index</i>, const <a href="qmimedata.html">QMimeData</a> * <i>data</i>, <a href="qt.html#DropAction-enum">Qt::DropAction</a> <i>action</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Handles the <i>data</i> supplied by an external drag and drop operation that ended with the given <i>action</i> in the given <i>index</i>. Returns true if the data and action can be handled by the model; otherwise returns false.</p>
+<p>See also <a href="qlistwidget.html#supportedDropActions">supportedDropActions</a>().</p>
+<h3 class="fn"><a name="editItem"></a>void QListWidget::editItem ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Starts editing the <i>item</i> if it is editable.</p>
+<h3 class="fn"><a name="findItems"></a><a href="qlist.html">QList</a>&lt;<a href="qlistwidgetitem.html">QListWidgetItem</a> *&gt; QListWidget::findItems ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qt.html#MatchFlag-enum">Qt::MatchFlags</a> <i>flags</i> ) const</h3>
+<p>Finds items with the text that matches the string <i>text</i> using the given <i>flags</i>.</p>
+<h3 class="fn"><a name="indexFromItem"></a><a href="qmodelindex.html">QModelIndex</a> QListWidget::indexFromItem ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the <a href="qmodelindex.html">QModelIndex</a> assocated with the given <i>item</i>.</p>
+<h3 class="fn"><a name="insertItem"></a>void QListWidget::insertItem ( int <i>row</i>, <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Inserts the <i>item</i> at the position in the list given by <i>row</i>.</p>
+<p>See also <a href="qlistwidget.html#addItem">addItem</a>().</p>
+<h3 class="fn"><a name="insertItem-2"></a>void QListWidget::insertItem ( int <i>row</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts an item with the text <i>label</i> in the list widget at the position given by <i>row</i>.</p>
+<p>See also <a href="qlistwidget.html#addItem">addItem</a>().</p>
+<h3 class="fn"><a name="insertItems"></a>void QListWidget::insertItems ( int <i>row</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )</h3>
+<p>Inserts items from the list of <i>labels</i> into the list, starting at the given <i>row</i>.</p>
+<p>See also <a href="qlistwidget.html#insertItem">insertItem</a>() and <a href="qlistwidget.html#addItem">addItem</a>().</p>
+<h3 class="fn"><a name="item"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::item ( int <i>row</i> ) const</h3>
+<p>Returns the item that occupies the given <i>row</i> in the list if one has been set; otherwise returns 0.</p>
+<p>See also <a href="qlistwidget.html#row">row</a>().</p>
+<h3 class="fn"><a name="itemActivated"></a>void QListWidget::itemActivated ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the <i>item</i> is activated. The <i>item</i> is activated when the user clicks or double clicks on it, depending on the system configuration. It is also activated when the user presses the activation key (on Windows and X11 this is the <b>Return</b> key, on Mac OS X it is <b>Ctrl+0</b>).</p>
+<h3 class="fn"><a name="itemAt"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::itemAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> ) const</h3>
+<p>Returns a pointer to the item at the coordinates <i>p</i>.</p>
+<h3 class="fn"><a name="itemAt-2"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::itemAt ( int <i>x</i>, int <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a pointer to the item at the coordinates (<i>x</i>, <i>y</i>).</p>
+<h3 class="fn"><a name="itemChanged"></a>void QListWidget::itemChanged ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the data of <i>item</i> has changed.</p>
+<h3 class="fn"><a name="itemClicked"></a>void QListWidget::itemClicked ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted with the specified <i>item</i> when a mouse button is clicked on an item in the widget.</p>
+<p>See also <a href="qlistwidget.html#itemPressed">itemPressed</a>() and <a href="qlistwidget.html#itemDoubleClicked">itemDoubleClicked</a>().</p>
+<h3 class="fn"><a name="itemDoubleClicked"></a>void QListWidget::itemDoubleClicked ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted with the specified <i>item</i> when a mouse button is double clicked on an item in the widget.</p>
+<p>See also <a href="qlistwidget.html#itemClicked">itemClicked</a>() and <a href="qlistwidget.html#itemPressed">itemPressed</a>().</p>
+<h3 class="fn"><a name="itemEntered"></a>void QListWidget::itemEntered ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the mouse cursor enters an item. The <i>item</i> is the item entered. This signal is only emitted when <a href="qwidget.html#mouseTracking-prop">mouseTracking</a> is turned on, or when a mouse button is pressed while moving into an item.</p>
+<h3 class="fn"><a name="itemFromIndex"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::itemFromIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a pointer to the <a href="qlistwidgetitem.html">QListWidgetItem</a> assocated with the given <i>index</i>.</p>
+<h3 class="fn"><a name="itemPressed"></a>void QListWidget::itemPressed ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted with the specified <i>item</i> when a mouse button is pressed on an item in the widget.</p>
+<p>See also <a href="qlistwidget.html#itemClicked">itemClicked</a>() and <a href="qlistwidget.html#itemDoubleClicked">itemDoubleClicked</a>().</p>
+<h3 class="fn"><a name="itemSelectionChanged"></a>void QListWidget::itemSelectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the selection changes.</p>
+<p>See also <a href="qlistwidget.html#selectedItems">selectedItems</a>(), <a href="qlistwidget-obsolete.html#isItemSelected">isItemSelected</a>(), and <a href="qlistwidget.html#currentItemChanged">currentItemChanged</a>().</p>
+<h3 class="fn"><a name="itemWidget"></a><a href="qwidget.html">QWidget</a> * QListWidget::itemWidget ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> ) const</h3>
+<p>Returns the widget displayed in the given <i>item</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qlistwidget.html#setItemWidget">setItemWidget</a>().</p>
+<h3 class="fn"><a name="items"></a><a href="qlist.html">QList</a>&lt;<a href="qlistwidgetitem.html">QListWidgetItem</a> *&gt; QListWidget::items ( const <a href="qmimedata.html">QMimeData</a> * <i>data</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a list of pointers to the items contained in the <i>data</i> object. If the object was not created by a <a href="qlistwidget.html">QListWidget</a> in the same process, the list is empty.</p>
+<h3 class="fn"><a name="mimeData"></a><a href="qmimedata.html">QMimeData</a> * QListWidget::mimeData ( const <a href="qlist.html">QList</a>&lt;<a href="qlistwidgetitem.html">QListWidgetItem</a> *&gt; <i>items</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns an object that contains a serialized description of the specified <i>items</i>. The format used to describe the items is obtained from the <a href="qlistwidget.html#mimeTypes">mimeTypes</a>() function.</p>
+<p>If the list of items is empty, 0 is returned rather than a serialized empty list.</p>
+<h3 class="fn"><a name="mimeTypes"></a><a href="qstringlist.html">QStringList</a> QListWidget::mimeTypes () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns a list of MIME types that can be used to describe a list of listwidget items.</p>
+<p>See also <a href="qlistwidget.html#mimeData">mimeData</a>().</p>
+<h3 class="fn"><a name="openPersistentEditor"></a>void QListWidget::openPersistentEditor ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Opens an editor for the given <i>item</i>. The editor remains open after editing.</p>
+<p>See also <a href="qlistwidget.html#closePersistentEditor">closePersistentEditor</a>().</p>
+<h3 class="fn"><a name="removeItemWidget"></a>void QListWidget::removeItemWidget ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Removes the widget set on the given <i>item</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="row"></a>int QListWidget::row ( const <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> ) const</h3>
+<p>Returns the row containing the given <i>item</i>.</p>
+<p>See also <a href="qlistwidget.html#item">item</a>().</p>
+<h3 class="fn"><a name="scrollToItem"></a>void QListWidget::scrollToItem ( const <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i>, <a href="qabstractitemview.html#ScrollHint-enum">QAbstractItemView::ScrollHint</a> <i>hint</i> = EnsureVisible )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Scrolls the view if necessary to ensure that the <i>item</i> is visible. The <i>hint</i> parameter specifies more precisely where the <i>item</i> should be located after the operation.</p>
+<h3 class="fn"><a name="selectedItems"></a><a href="qlist.html">QList</a>&lt;<a href="qlistwidgetitem.html">QListWidgetItem</a> *&gt; QListWidget::selectedItems () const</h3>
+<p>Returns a list of all selected items in the list widget.</p>
+<h3 class="fn"><a name="setCurrentItem"></a>void QListWidget::setCurrentItem ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> )</h3>
+<p>Sets the current item to <i>item</i>.</p>
+<p>Depending on the current selection mode, the item may also be selected.</p>
+<p>See also <a href="qlistwidget.html#currentItem">currentItem</a>().</p>
+<h3 class="fn"><a name="setCurrentItem-2"></a>void QListWidget::setCurrentItem ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i>, <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlags</a> <i>command</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Set the current item to <i>item</i>, using the given <i>command</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="setItemWidget"></a>void QListWidget::setItemWidget ( <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Sets the <i>widget</i> to be displayed in the give <i>item</i>.</p>
+<p>This function should only be used to display static content in the place of a list widget item. If you want to display custom dynamic content or implement a custom editor widget, use <a href="qlistview.html">QListView</a> and subclass <a href="qitemdelegate.html">QItemDelegate</a> instead.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qlistwidget.html#itemWidget">itemWidget</a>() and <a href="model-view-delegate.html">Delegate Classes</a>.</p>
+<h3 class="fn"><a name="sortItems"></a>void QListWidget::sortItems ( <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> = Qt::AscendingOrder )</h3>
+<p>Sorts all the items in the list widget according to the specified <i>order</i>.</p>
+<h3 class="fn"><a name="supportedDropActions"></a><a href="qt.html#DropAction-enum">Qt::DropActions</a> QListWidget::supportedDropActions () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the drop actions supported by this view.</p>
+<p>See also <a href="qt.html#DropAction-enum">Qt::DropActions</a>.</p>
+<h3 class="fn"><a name="takeItem"></a><a href="qlistwidgetitem.html">QListWidgetItem</a> * QListWidget::takeItem ( int <i>row</i> )</h3>
+<p>Removes and returns the item from the given <i>row</i> in the list widget; otherwise returns 0.</p>
+<p>Items removed from a list widget will not be managed by Qt, and will need to be deleted manually.</p>
+<p>See also <a href="qlistwidget.html#insertItem">insertItem</a>() and <a href="qlistwidget.html#addItem">addItem</a>().</p>
+<h3 class="fn"><a name="visualItemRect"></a><a href="qrect.html">QRect</a> QListWidget::visualItemRect ( const <a href="qlistwidgetitem.html">QListWidgetItem</a> * <i>item</i> ) const</h3>
+<p>Returns the rectangle on the viewport occupied by the item at <i>item</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

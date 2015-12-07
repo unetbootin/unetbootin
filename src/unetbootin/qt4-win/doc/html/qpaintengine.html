@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qpaintengine.cpp -->
+<head>
+  <title>Qt 4.4: QPaintEngine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPaintEngine Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPaintEngine class provides an abstract definition of how <a href="qpainter.html">QPainter</a> draws to a given device on a given platform. <a href="#details">More...</a></p>
+<pre> #include &lt;QPaintEngine&gt;</pre><p>Inherited by <a href="qrasterpaintengine.html">QRasterPaintEngine</a>.</p>
+<ul>
+<li><a href="qpaintengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qpaintengine.html#DirtyFlag-enum">DirtyFlag</a></b> { DirtyPen, DirtyBrush, DirtyBrushOrigin, DirtyFont, ..., AllDirty }</li>
+<li><div class="fn"/>flags <b><a href="qpaintengine.html#DirtyFlag-enum">DirtyFlags</a></b></li>
+<li><div class="fn"/>enum <b><a href="qpaintengine.html#PaintEngineFeature-enum">PaintEngineFeature</a></b> { AlphaBlend, Antialiasing, BlendModes, BrushStroke, ..., AllFeatures }</li>
+<li><div class="fn"/>flags <b><a href="qpaintengine.html#PaintEngineFeature-enum">PaintEngineFeatures</a></b></li>
+<li><div class="fn"/>enum <b><a href="qpaintengine.html#PolygonDrawMode-enum">PolygonDrawMode</a></b> { OddEvenMode, WindingMode, ConvexMode, PolylineMode }</li>
+<li><div class="fn"/>enum <b><a href="qpaintengine.html#Type-enum">Type</a></b> { X11, Windows, MacPrinter, CoreGraphics, ..., MaxUser }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpaintengine.html#QPaintEngine">QPaintEngine</a></b> ( PaintEngineFeatures <i>caps</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qpaintengine.html#dtor.QPaintEngine">~QPaintEngine</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qpaintengine.html#begin">begin</a></b> ( QPaintDevice * <i>pdev</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawEllipse">drawEllipse</a></b> ( const QRectF &amp; <i>rect</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawEllipse-2">drawEllipse</a></b> ( const QRect &amp; <i>rect</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawImage">drawImage</a></b> ( const QRectF &amp; <i>rectangle</i>, const QImage &amp; <i>image</i>, const QRectF &amp; <i>sr</i>, Qt::ImageConversionFlags <i>flags</i> = Qt::AutoColor )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawLines">drawLines</a></b> ( const QLineF * <i>lines</i>, int <i>lineCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawLines-2">drawLines</a></b> ( const QLine * <i>lines</i>, int <i>lineCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPath">drawPath</a></b> ( const QPainterPath &amp; <i>path</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPixmap">drawPixmap</a></b> ( const QRectF &amp; <i>r</i>, const QPixmap &amp; <i>pm</i>, const QRectF &amp; <i>sr</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPoints">drawPoints</a></b> ( const QPointF * <i>points</i>, int <i>pointCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPoints-2">drawPoints</a></b> ( const QPoint * <i>points</i>, int <i>pointCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPolygon">drawPolygon</a></b> ( const QPointF * <i>points</i>, int <i>pointCount</i>, PolygonDrawMode <i>mode</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawPolygon-2">drawPolygon</a></b> ( const QPoint * <i>points</i>, int <i>pointCount</i>, PolygonDrawMode <i>mode</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawRects">drawRects</a></b> ( const QRectF * <i>rects</i>, int <i>rectCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawRects-2">drawRects</a></b> ( const QRect * <i>rects</i>, int <i>rectCount</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawTextItem">drawTextItem</a></b> ( const QPointF &amp; <i>p</i>, const QTextItem &amp; <i>textItem</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#drawTiledPixmap">drawTiledPixmap</a></b> ( const QRectF &amp; <i>rect</i>, const QPixmap &amp; <i>pixmap</i>, const QPointF &amp; <i>p</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qpaintengine.html#end">end</a></b> () = 0</li>
+<li><div class="fn"/>bool <b><a href="qpaintengine.html#hasFeature">hasFeature</a></b> ( PaintEngineFeatures <i>feature</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qpaintengine.html#isActive">isActive</a></b> () const</li>
+<li><div class="fn"/>QPaintDevice * <b><a href="qpaintengine.html#paintDevice">paintDevice</a></b> () const</li>
+<li><div class="fn"/>QPainter * <b><a href="qpaintengine.html#painter">painter</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qpaintengine.html#setActive">setActive</a></b> ( bool <i>state</i> )</li>
+<li><div class="fn"/>virtual Type <b><a href="qpaintengine.html#type">type</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qpaintengine.html#updateState">updateState</a></b> ( const QPaintEngineState &amp; <i>state</i> ) = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPaintEngine class provides an abstract definition of how <a href="qpainter.html">QPainter</a> draws to a given device on a given platform.</p>
+<p>Qt 4.0 provides several premade implementations of QPaintEngine for the different painter backends we support. We provide one paint engine for each window system and painting framework we support. This includes X11 on Unix/Linux and <a href="qpaintengine.html#Type-enum">CoreGraphics</a> on Mac OS X. In addition we provide QPaintEngine implementations for <a href="qpaintengine.html#Type-enum">OpenGL</a> (accessible through <a href="qglwidget.html">QGLWidget</a>) and <a href="qpaintengine.html#Type-enum">PostScript</a> (accessible through QPSPrinter on X11). Additionally there is a raster-based paint engine that is a fallback for when an engine does not support a certain capability.</p>
+<p>If one wants to use <a href="qpainter.html">QPainter</a> to draw to a different backend, one must subclass QPaintEngine and reimplement all its virtual functions. The QPaintEngine implementation is then made available by subclassing QPaintDevice and reimplementing the virtual function <a href="qpaintdevice.html#paintEngine">QPaintDevice::paintEngine</a>().</p>
+<p>QPaintEngine is created and owned by the QPaintDevice that created it.</p>
+<p>The big advantage of the QPaintEngine approach opposed to Qt 3's <a href="qpainter.html">QPainter</a>/QPaintDevice::cmd() approach is that it is now possible to adapt to multiple technologies on each platform and take advantage of each to the fullest.</p>
+<p>See also <a href="qpainter.html">QPainter</a>, <a href="qpaintdevice.html#paintEngine">QPaintDevice::paintEngine</a>(), and <a href="paintsystem.html">The Paint System</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="DirtyFlag-enum"></a>enum QPaintEngine::DirtyFlag<br />flags QPaintEngine::DirtyFlags</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyPen</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">The pen is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyBrush</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">The brush is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyBrushOrigin</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">The brush origin is dirty and needs to updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyFont</tt></td><td align="center" valign="top"><tt>0x0008</tt></td><td valign="top">The font is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyBackground</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">The background is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyBackgroundMode</tt></td><td align="center" valign="top"><tt>0x0020</tt></td><td valign="top">The background mode is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyTransform</tt></td><td align="center" valign="top"><tt>0x0040</tt></td><td valign="top">The transform is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyClipRegion</tt></td><td align="center" valign="top"><tt>0x0080</tt></td><td valign="top">The clip region is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyClipPath</tt></td><td align="center" valign="top"><tt>0x0100</tt></td><td valign="top">The clip path is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyHints</tt></td><td align="center" valign="top"><tt>0x0200</tt></td><td valign="top">The render hints is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyCompositionMode</tt></td><td align="center" valign="top"><tt>0x0400</tt></td><td valign="top">The composition mode is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyClipEnabled</tt></td><td align="center" valign="top"><tt>0x0800</tt></td><td valign="top">Whether clipping is enabled or not is dirty and needs to be updated.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::DirtyOpacity</tt></td><td align="center" valign="top"><tt>0x1000</tt></td><td valign="top">The constant opacity has changed and needs to be updated as part of the state change in <a href="qpaintengine.html#updateState">QPaintEngine::updateState</a>().</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::AllDirty</tt></td><td align="center" valign="top"><tt>0xffff</tt></td><td valign="top">Convenience enum used internally.</td></tr>
+</table></p>
+<p>These types are used by <a href="qpainter.html">QPainter</a> to trigger lazy updates of the various states in the <a href="qpaintengine.html">QPaintEngine</a> using <a href="qpaintengine.html#updateState">QPaintEngine::updateState</a>().</p>
+<p>A paint engine must update every dirty state.</p>
+<p>The DirtyFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;DirtyFlag&gt;. It stores an OR combination of DirtyFlag values.</p>
+<h3 class="flags"><a name="PaintEngineFeature-enum"></a>enum QPaintEngine::PaintEngineFeature<br />flags QPaintEngine::PaintEngineFeatures</h3>
+<p>This enum is used to describe the features or capabilities that the paint engine has. If a feature is not supported by the engine, <a href="qpainter.html">QPainter</a> will do a best effort to emulate that feature through other means and pass on an alpha blended <a href="qimage.html">QImage</a> to the engine with the emulated results. Some features cannot be emulated: AlphaBlend and PorterDuff.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPaintEngine::AlphaBlend</tt></td><td align="center" valign="top"><tt>0x00000080</tt></td><td valign="top">The engine can alpha blend primitives.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Antialiasing</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td><td valign="top">The engine can use antialising to improve the appearance of rendered primitives.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::BlendModes</tt></td><td align="center" valign="top"><tt>0x00008000</tt></td><td valign="top">The engine supports blending modes.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::BrushStroke</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td><td valign="top">The engine supports drawing strokes that contain brushes as fills, not just solid colors (e.g&#x2e; a dashed gradient line of width 2).</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::ConicalGradientFill</tt></td><td align="center" valign="top"><tt>0x00000040</tt></td><td valign="top">The engine supports conical gradient fills.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::ConstantOpacity</tt></td><td align="center" valign="top"><tt>0x00001000</tt></td><td valign="top">The engine supports the feature provided by <a href="qpainter.html#setOpacity">QPainter::setOpacity</a>().</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::LinearGradientFill</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td><td valign="top">The engine supports linear gradient fills.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::MaskedBrush</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td><td valign="top">The engine is capable of rendering brushes that has a texture with an alpha channel or a mask.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PainterPaths</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td><td valign="top">The engine has path support.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PaintOutsidePaintEvent</tt></td><td align="center" valign="top"><tt>0x20000000</tt></td><td valign="top">The engine is capable of painting outside of paint events.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PatternBrush</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td><td valign="top">The engine is capable of rendering brushes with the brush patterns specified in <a href="qt.html#BrushStyle-enum">Qt::BrushStyle</a>.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PatternTransform</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">The engine has support for transforming brush patterns.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PerspectiveTransform</tt></td><td align="center" valign="top"><tt>0x00004000</tt></td><td valign="top">The engine has support for performing perspective transformations on primitives.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PixmapTransform</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">The engine can transform pixmaps, including rotation and shearing.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PorterDuff</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td><td valign="top">The engine supports Porter-Duff operations</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PrimitiveTransform</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The engine has support for transforming drawing primitives.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::RadialGradientFill</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td><td valign="top">The engine supports radial gradient fills.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::AllFeatures</tt></td><td align="center" valign="top"><tt>0xffffffff</tt></td><td valign="top">All of the above features. This enum value is usually used as a bit mask.</td></tr>
+</table></p>
+<p>The PaintEngineFeatures type is a typedef for <a href="qflags.html">QFlags</a>&lt;PaintEngineFeature&gt;. It stores an OR combination of PaintEngineFeature values.</p>
+<h3 class="fn"><a name="PolygonDrawMode-enum"></a>enum QPaintEngine::PolygonDrawMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPaintEngine::OddEvenMode</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The polygon should be drawn using OddEven fill rule.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::WindingMode</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The polygon should be drawn using Winding fill rule.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::ConvexMode</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The polygon is a convex polygon and can be drawn using specialized algorithms where available.</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PolylineMode</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Only the outline of the polygon should be drawn.</td></tr>
+</table></p>
+<h3 class="fn"><a name="Type-enum"></a>enum QPaintEngine::Type</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPaintEngine::X11</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Windows</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::MacPrinter</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::CoreGraphics</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Mac OS X's Quartz2D (CoreGraphics)</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::QuickDraw</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Mac OS X's QuickDraw</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::QWindowSystem</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Qt for Embedded Linux</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::PostScript</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::OpenGL</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Picture</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top"><a href="qpicture.html">QPicture</a> format</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::SVG</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Scalable Vector Graphics XML format</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Raster</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Direct3D</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">Windows only, Direct3D based engine</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::Pdf</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">Portable Document Format</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::User</tt></td><td align="center" valign="top"><tt>50</tt></td><td valign="top">First user type ID</td></tr>
+<tr><td valign="top"><tt>QPaintEngine::MaxUser</tt></td><td align="center" valign="top"><tt>100</tt></td><td valign="top">Last user type ID</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPaintEngine"></a>QPaintEngine::QPaintEngine ( <a href="qpaintengine.html#PaintEngineFeature-enum">PaintEngineFeatures</a> <i>caps</i> = 0 )</h3>
+<p>Creates a paint engine with the featureset specified by <i>caps</i>.</p>
+<h3 class="fn"><a name="dtor.QPaintEngine"></a>QPaintEngine::~QPaintEngine ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the paint engine.</p>
+<h3 class="fn"><a name="begin"></a>bool QPaintEngine::begin ( QPaintDevice * <i>pdev</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to initialise your paint engine when painting is to start on the paint device <i>pdev</i>. Return true if the initialization was successful; otherwise return false.</p>
+<p>See also <a href="qpaintengine.html#end">end</a>() and <a href="qpaintengine.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="drawEllipse"></a>void QPaintEngine::drawEllipse ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reimplement this function to draw the largest ellipse that can be contained within rectangle <i>rect</i>.</p>
+<p>The default implementation calls <a href="qpaintengine.html#drawPolygon">drawPolygon</a>().</p>
+<h3 class="fn"><a name="drawEllipse-2"></a>void QPaintEngine::drawEllipse ( const <a href="qrect.html">QRect</a> &amp; <i>rect</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The default implementation of this function calls the floating point version of this function</p>
+<h3 class="fn"><a name="drawImage"></a>void QPaintEngine::drawImage ( const <a href="qrectf.html">QRectF</a> &amp; <i>rectangle</i>, const <a href="qimage.html">QImage</a> &amp; <i>image</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>sr</i>, <a href="qt.html#ImageConversionFlag-enum">Qt::ImageConversionFlags</a> <i>flags</i> = Qt::AutoColor )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reimplement this function to draw the part of the <i>image</i> specified by the <i>sr</i> rectangle in the given <i>rectangle</i> using the given conversion flags <i>flags</i>, to convert it to a pixmap.</p>
+<h3 class="fn"><a name="drawLines"></a>void QPaintEngine::drawLines ( const <a href="qlinef.html">QLineF</a> * <i>lines</i>, int <i>lineCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The default implementation splits the list of lines in <i>lines</i> into <i>lineCount</i> separate calls to <a href="qpaintengine.html#drawPath">drawPath</a>() or <a href="qpaintengine.html#drawPolygon">drawPolygon</a>() depending on the feature set of the paint engine.</p>
+<h3 class="fn"><a name="drawLines-2"></a>void QPaintEngine::drawLines ( const <a href="qline.html">QLine</a> * <i>lines</i>, int <i>lineCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The default implementation converts the first <i>lineCount</i> lines in <i>lines</i> to a <a href="qlinef.html">QLineF</a> and calls the floating point version of this function.</p>
+<h3 class="fn"><a name="drawPath"></a>void QPaintEngine::drawPath ( const <a href="qpainterpath.html">QPainterPath</a> &amp; <i>path</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The default implementation ignores the <i>path</i> and does nothing.</p>
+<h3 class="fn"><a name="drawPixmap"></a>void QPaintEngine::drawPixmap ( const <a href="qrectf.html">QRectF</a> &amp; <i>r</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pm</i>, const <a href="qrectf.html">QRectF</a> &amp; <i>sr</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to draw the part of the <i>pm</i> specified by the <i>sr</i> rectangle in the given <i>r</i>.</p>
+<h3 class="fn"><a name="drawPoints"></a>void QPaintEngine::drawPoints ( const <a href="qpointf.html">QPointF</a> * <i>points</i>, int <i>pointCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Draws the first <i>pointCount</i> points in the buffer <i>points</i></p>
+<h3 class="fn"><a name="drawPoints-2"></a>void QPaintEngine::drawPoints ( const <a href="qpoint.html">QPoint</a> * <i>points</i>, int <i>pointCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Draws the first <i>pointCount</i> points in the buffer <i>points</i></p>
+<p>The default implementation converts the first <i>pointCount</i> QPoints in <i>points</i> to QPointFs and calls the floating point version of drawPoints.</p>
+<h3 class="fn"><a name="drawPolygon"></a>void QPaintEngine::drawPolygon ( const <a href="qpointf.html">QPointF</a> * <i>points</i>, int <i>pointCount</i>, <a href="qpaintengine.html#PolygonDrawMode-enum">PolygonDrawMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reimplement this virtual function to draw the polygon defined by the <i>pointCount</i> first points in <i>points</i>, using mode <i>mode</i>.</p>
+<p>The default implementation of this function will try to use drawPath if the engine supports the feature <a href="qpaintengine.html#PaintEngineFeature-enum">QPaintEngine::PainterPaths</a> or try the float based drawPolygon() implementation if not.</p>
+<h3 class="fn"><a name="drawPolygon-2"></a>void QPaintEngine::drawPolygon ( const <a href="qpoint.html">QPoint</a> * <i>points</i>, int <i>pointCount</i>, <a href="qpaintengine.html#PolygonDrawMode-enum">PolygonDrawMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reimplement this virtual function to draw the polygon defined by the <i>pointCount</i> first points in <i>points</i>, using mode <i>mode</i>.</p>
+<p>The default implementation of this function will try to use <a href="qpaintengine.html#drawPath">drawPath</a>() if the engine supports the feature <a href="qpaintengine.html#PaintEngineFeature-enum">QPaintEngine::PainterPaths</a> or try the int based <a href="qpaintengine.html#drawPolygon">drawPolygon</a>() implementation if not.</p>
+<h3 class="fn"><a name="drawRects"></a>void QPaintEngine::drawRects ( const <a href="qrectf.html">QRectF</a> * <i>rects</i>, int <i>rectCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Draws the first <i>rectCount</i> rectangles in the buffer <i>rects</i>. The default implementation of this function calls <a href="qpaintengine.html#drawPath">drawPath</a>() or <a href="qpaintengine.html#drawPolygon">drawPolygon</a>() depending on the feature set of the paint engine.</p>
+<h3 class="fn"><a name="drawRects-2"></a>void QPaintEngine::drawRects ( const <a href="qrect.html">QRect</a> * <i>rects</i>, int <i>rectCount</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The default implementation converts the first <i>rectCount</i> rectangles in the buffer <i>rects</i> to a <a href="qrectf.html">QRectF</a> and calls the floating point version of this function.</p>
+<h3 class="fn"><a name="drawTextItem"></a>void QPaintEngine::drawTextItem ( const <a href="qpointf.html">QPointF</a> &amp; <i>p</i>, const QTextItem &amp; <i>textItem</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function draws the text item <i>textItem</i> at position <i>p</i>. The default implementation of this function converts the text to a <a href="qpainterpath.html">QPainterPath</a> and paints the resulting path.</p>
+<h3 class="fn"><a name="drawTiledPixmap"></a>void QPaintEngine::drawTiledPixmap ( const <a href="qrectf.html">QRectF</a> &amp; <i>rect</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, const <a href="qpointf.html">QPointF</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reimplement this function to draw the <i>pixmap</i> in the given <i>rect</i>, starting at the given <i>p</i>. The pixmap will be drawn repeatedly until the <i>rect</i> is filled.</p>
+<h3 class="fn"><a name="end"></a>bool QPaintEngine::end ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to finish painting on the current paint device. Return true if painting was finished successfully; otherwise return false.</p>
+<p>See also <a href="qpaintengine.html#begin">begin</a>() and <a href="qpaintengine.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="hasFeature"></a>bool QPaintEngine::hasFeature ( <a href="qpaintengine.html#PaintEngineFeature-enum">PaintEngineFeatures</a> <i>feature</i> ) const</h3>
+<p>Returns true if the paint engine supports the specified <i>feature</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="isActive"></a>bool QPaintEngine::isActive () const</h3>
+<p>Returns true if the paint engine is actively drawing; otherwise returns false.</p>
+<p>See also <a href="qpaintengine.html#setActive">setActive</a>().</p>
+<h3 class="fn"><a name="paintDevice"></a>QPaintDevice * QPaintEngine::paintDevice () const</h3>
+<p>Returns the device that this engine is painting on, if painting is active; otherwise returns 0.</p>
+<h3 class="fn"><a name="painter"></a><a href="qpainter.html">QPainter</a> * QPaintEngine::painter () const</h3>
+<p>Returns the paint engine's painter.</p>
+<h3 class="fn"><a name="setActive"></a>void QPaintEngine::setActive ( bool <i>state</i> )</h3>
+<p>Sets the active state of the paint engine to <i>state</i>.</p>
+<p>See also <a href="qpaintengine.html#isActive">isActive</a>().</p>
+<h3 class="fn"><a name="type"></a><a href="qpaintengine.html#Type-enum">Type</a> QPaintEngine::type () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to return the paint engine <a href="qpaintengine.html#Type-enum">Type</a>.</p>
+<h3 class="fn"><a name="updateState"></a>void QPaintEngine::updateState ( const <a href="qpaintenginestate.html">QPaintEngineState</a> &amp; <i>state</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Reimplement this function to update the state of a paint engine.</p>
+<p>When implemented, this function is responsible for checking the paint engine's current <i>state</i> and update the properties that are changed. Use the <a href="qpaintenginestate.html#state">QPaintEngineState::state</a>() function to find out which properties that must be updated, then use the corresponding <a href="qpaintenginestate.html#getfunction">get function</a> to retrieve the current values for the given properties.</p>
+<p>See also <a href="qpaintenginestate.html">QPaintEngineState</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

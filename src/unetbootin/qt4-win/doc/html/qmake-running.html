@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Running qmake</title>
+  <link rel="prev" href="qmake-project-files.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-platform-notes.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-project-files.html">qmake Project Files</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-platform-notes.html">qmake Platform Notes</a>]
+</p>
+<h1 class="title">Running qmake<br /><span class="subtitle"></span>
+</h1>
+<p>The behavior of <tt>qmake</tt> can be customized when it is run by specifying various options on the command line. These allow the build process to be fine-tuned, provide useful diagnostic information, and can be used to specify the target platform for your project.</p>
+<ul><li><a href="#command-line-options">Command-Line Options</a></li>
+<ul><li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a></li>
+<li><a href="#makefile-mode-options">Makefile Mode Options</a></li>
+<li><a href="#project-mode-options">Project Mode Options</a></li>
+</ul>
+</ul>
+<a name="commands"></a><a name="command-line-options"></a>
+<h2>Command-Line Options</h2>
+<a name="syntax"></a>
+<h3>Syntax</h3>
+<p>The syntax used to run <tt>qmake</tt> takes the following simple form:</p>
+<pre>         qmake [mode] [options] files</pre>
+<p><tt>qmake</tt> supports two different modes of operation: In the default mode, <tt>qmake</tt> will use the description in a project file to generate a Makefile, but it is also possible to use <tt>qmake</tt> to generate project files. If you want to explicitly set the mode, you must specify it before all other options. The <tt>mode</tt> can be either of the following two values:</p>
+<ul>
+<li><tt>-makefile</tt> <br /> <tt>qmake</tt> output will be a Makefile.</li>
+<li><tt>-project</tt> <br /> <tt>qmake</tt> output will be a project file.</li>
+</ul>
+<p>The following <tt>options</tt> are used to specify both general and mode-specific settings. Options that only apply to the Makefile mode are described in the <a href="#makefilemode">Makefile Mode Options</a> section; options that influence the creation of project files are described in the <a href="#projectmode">Project File Options</a> section.</p>
+<p>The <tt>files</tt> argument represents a list of one or more project files, separated by spaces.</p>
+<a name="options"></a>
+<h3>Options</h3>
+<p>A wide range of options can be specified on the command line to <tt>qmake</tt> in order to customize the build process, and to override default settings for your platform. The following basic options provide usage information, specify where <tt>qmake</tt> writes the output file, and control the level of debugging information that will be written to the console:</p>
+<ul>
+<li><tt>-help</tt> <br /> <tt>qmake</tt> will go over these features and give some useful help.</li>
+<li><tt>-o</tt> file <br /> <tt>qmake</tt> output will be directed to <i>file</i>. If this option is not specified, <tt>qmake</tt> will try to use a suitable file name for its output, depending on the mode it is running in.<br /> If '-' is specified, output is directed to stdout.</li>
+<li><tt>-d</tt> <br /> <tt>qmake</tt> will output debugging information.</li>
+</ul>
+<p>For projects that need to be built differently on each target platform, with many subdirectories, you can run <tt>qmake</tt> with each of the following options to set the corresponding platform-specific variable in each project file:</p>
+<ul>
+<li><tt>-unix</tt> <br /> <tt>qmake</tt> will run in unix mode. In this mode, Unix file naming and path conventions will be used, additionally testing for <tt>unix</tt> (as a scope) will succeed. This is the default mode on all Unices.</li>
+<li><tt>-macx</tt> <br /> <tt>qmake</tt> will run in Mac OS X mode. In this mode, Unix file naming and path conventions will be used, additionally testing for <tt>macx</tt> (as a scope) will succeed. This is the default mode on Mac OS X.</li>
+<li><tt>-win32</tt> <br /> <tt>qmake</tt> will run in win32 mode. In this mode, Windows file naming and path conventions will be used, additionally testing for <tt>win32</tt> (as a scope) will succeed. This is the default mode on Windows.</li>
+</ul>
+<p>The template used for the project is usually specified by the <tt>TEMPLATE</tt> variable in the project file. We can override or modify this by using the following options:</p>
+<ul>
+<li><tt>-t</tt> tmpl <br /> <tt>qmake</tt> will override any set <tt>TEMPLATE</tt> variables with tmpl, but only <i>after</i> the .pro file has been processed.</li>
+<li><tt>-tp</tt> prefix <br /> <tt>qmake</tt> will add the prefix to the <tt>TEMPLATE</tt> variable.</li>
+</ul>
+<p>The level of warning information can be fine-tuned to help you find problems in your project file:</p>
+<ul>
+<li><tt>-Wall</tt> <br /> <tt>qmake</tt> will report all known warnings.</li>
+<li><tt>-Wnone</tt> <br /> No warning information will be generated by <tt>qmake</tt>.</li>
+<li><tt>-Wparser</tt> <br /> <tt>qmake</tt> will only generate parser warnings. This will alert you to common pitfalls and potential problems in the parsing of your project files.</li>
+<li><tt>-Wlogic</tt> <br /> <tt>qmake</tt> will warn of common pitfalls and potential problems in your project file. For example, <tt>qmake</tt> will report whether a file is placed into a list of files multiple times, or if a file cannot be found.</li>
+</ul>
+<a name="makefilemode"></a><a name="makefile-mode-options"></a>
+<h3>Makefile Mode Options</h3>
+<pre>         qmake -makefile [options] files</pre>
+<p>In Makefile mode, <tt>qmake</tt> will generate a Makefile that is used to build the project. Additionally, the following options may be used in this mode to influence the way the project file is generated:</p>
+<ul>
+<li><tt>-after</tt> <br /> <tt>qmake</tt> will process assignments given on the command line after the specified files.</li>
+<li><tt>-nocache</tt> <br /> <tt>qmake</tt> will ignore the .qmake.cache file.</li>
+<li><tt>-nodepend</tt> <br /> <tt>qmake</tt> will not generate any dependency information.</li>
+<li><tt>-cache</tt> file <br /> <tt>qmake</tt> will use <i>file</i> as the cache file, ignoring any other .qmake.cache files found.</li>
+<li><tt>-spec</tt> spec <br /> <tt>qmake</tt> will use <i>spec</i> as a path to platform and compiler information, and the value of <tt>QMAKESPEC</tt> will be ignored.</li>
+</ul>
+<p>You may also pass <tt>qmake</tt> assignments on the command line; they will be processed before all of the files specified. For example:</p>
+<pre>         qmake -makefile -unix -o Makefile &quot;CONFIG+=test&quot; test.pro</pre>
+<p>This will generate a Makefile, from test.pro with Unix pathnames. However many of the specified options aren't necessary as they are the default. Therefore, the line can be simplified on Unix to:</p>
+<pre>         qmake &quot;CONFIG+=test&quot; test.pro</pre>
+<p>If you are certain you want your variables processed after the files specified, then you may pass the <tt>-after</tt> option. When this is specified, all assignments on the command line after the <tt>-after</tt> option will be postponed until after the specified files are parsed.</p>
+<a name="projectmode"></a><a name="project-mode-options"></a>
+<h3>Project Mode Options</h3>
+<pre>         qmake -project [options] files</pre>
+<p>In project mode, <tt>qmake</tt> will generate a project file. Additionally, you may supply the following options in this mode:</p>
+<ul>
+<li><tt>-r</tt> <br /> <tt>qmake</tt> will look through supplied directories recursively</li>
+<li><tt>-nopwd</tt> <br /> <tt>qmake</tt> will not look in your current working directory for source code and only use the specified <tt>files</tt></li>
+</ul>
+<p>In this mode, the <tt>files</tt> argument can be a list of files or directories. If a directory is specified, it will be included in the <tt>DEPENDPATH</tt> variable, and relevant code from there will be included in the generated project file. If a file is given, it will be appended to the correct variable, depending on its extension; for example, .ui files are added to <tt>FORMS</tt>, and .cpp files are added to <tt>SOURCES</tt>.</p>
+<p>You may also pass assignments on the command line in this mode. When doing so, these assignments will be placed last in the generated project file.</p>
+<p>
+[Previous: <a href="qmake-project-files.html">qmake Project Files</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-platform-notes.html">qmake Platform Notes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

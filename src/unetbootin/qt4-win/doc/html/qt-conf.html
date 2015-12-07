@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt-conf.qdoc -->
+<head>
+  <title>Qt 4.4: Using qt.conf</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Using qt.conf<br /><span class="subtitle"></span>
+</h1>
+<p>The <tt>qt.conf</tt> file overrides the hard-coded paths that are compiled into the Qt library. These paths are accessible using the <a href="qlibraryinfo.html">QLibraryInfo</a> class. Without <tt>qt.conf</tt>, the functions in <a href="qlibraryinfo.html">QLibraryInfo</a> return these hard-coded paths; otherwise they return the paths as specified in <tt>qt.conf</tt>.</p>
+<p>Without <tt>qt.conf</tt>, the Qt libraries will use the hard-coded paths to look for plugins, translations, and so on. These paths may not exist on the target system, or they may not be accesssible. Because of this, you need <tt>qt.conf</tt> to make the Qt libraries look elsewhere.</p>
+<p><a href="qlibraryinfo.html">QLibraryInfo</a> will load <tt>qt.conf</tt> from one of the following locations:</p>
+<ol type="1">
+<li><tt>:/qt/etc/qt.conf</tt> using the resource system</li>
+<li>on Mac OS X, in the Resource directory inside the appliction bundle, for example <tt>assistant.app/Contents/Resources/qt.conf</tt></li>
+<li>in the directory containing the application executable, i.e&#x2e; <a href="qcoreapplication.html#applicationDirPath">QCoreApplication::applicationDirPath</a>() + <a href="qdir.html#separator">QDir::separator</a>() + &quot;qt.conf&quot;</li>
+</ol>
+<p>The <tt>qt.conf</tt> file is an INI text file, as described in the <a href="qsettings.html#Format-enum">QSettings</a> documentation. The file should have a <tt>Paths</tt> group which contains the entries that correspond to each value of the <a href="qlibraryinfo.html#LibraryLocation-enum">QLibraryInfo::LibraryLocation</a> enum. See the <a href="qlibraryinfo.html">QLibraryInfo</a> documentation for details on the meaning of the various locations.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Entry</th><th>Default Value</th></tr></thead>
+<tr valign="top" class="odd"><td>Prefix</td><td><a href="qcoreapplication.html#applicationDirPath">QCoreApplication::applicationDirPath</a>()</td></tr>
+<tr valign="top" class="even"><td>Documentation</td><td><tt>doc</tt></td></tr>
+<tr valign="top" class="odd"><td>Headers</td><td><tt>include</tt></td></tr>
+<tr valign="top" class="even"><td>Libraries</td><td><tt>lib</tt></td></tr>
+<tr valign="top" class="odd"><td>Binaries</td><td><tt>bin</tt></td></tr>
+<tr valign="top" class="even"><td>Plugins</td><td><tt>plugins</tt></td></tr>
+<tr valign="top" class="odd"><td>Data</td><td><tt>.</tt></td></tr>
+<tr valign="top" class="even"><td>Translations</td><td><tt>translations</tt></td></tr>
+<tr valign="top" class="odd"><td>Settings</td><td><tt>.</tt></td></tr>
+<tr valign="top" class="even"><td>Examples</td><td><tt>.</tt></td></tr>
+<tr valign="top" class="odd"><td>Demos</td><td><tt>.</tt></td></tr>
+</table></p>
+<p>Absolute paths are used as specified in the <tt>qt.conf</tt> file. All paths are relative to the <tt>Prefix</tt>. On Windows and X11, the <tt>Prefix</tt> is relative to the directory containing the application executable (<a href="qcoreapplication.html#applicationDirPath">QCoreApplication::applicationDirPath</a>()). On Mac OS X, the <tt>Prefix</tt> is relative to the <tt>Contents</tt> in the application bundle. For example, <tt>application.app/Contents/plugins/</tt> is the default location for loading Qt plugins.</p>
+<p>For example, a <tt>qt.conf</tt> file could contain the following:</p>
+<pre>         [Paths]
+         Prefix = /some/path
+         Translations = i18n</pre>
+<p>Subgroups of the <tt>Paths</tt> group may be used to specify locations for specific versions of the Qt libraries. Such subgroups are of the form <tt>Paths/x.y.z</tt>, where x is the major version of the Qt libraries, y the minor, and z the patch level. The subgroup that most closely matches the current Qt version is used. If no subgroup matches, the <tt>Paths</tt> group is used as the fallback. The minor and patch level values may be omitted, in which case they default to zero.</p>
+<p>For example, given the following groups:</p>
+<pre>     Paths
+     Paths/4
+     Paths/4.1
+     Paths/4.2.5
+     Paths/6</pre>
+<p>The current version will be matched as shown:</p>
+<ul>
+<li>4.0&#x2e;1 matches <tt>Paths/4</tt></li>
+<li>4.1&#x2e;5 matches <tt>Paths/4.1</tt></li>
+<li>4.6&#x2e;3 matches <tt>Paths/4.2.5</tt></li>
+<li>5.0&#x2e;0 matches <tt>Paths</tt></li>
+<li>6.0&#x2e;2 matches <tt>Paths/6</tt></li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

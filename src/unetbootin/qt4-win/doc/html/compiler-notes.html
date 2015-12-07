@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/compiler-notes.qdoc -->
+<head>
+  <title>Qt 4.4: Compiler Notes</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Compiler Notes<br /><span class="subtitle"></span>
+</h1>
+<p>This page contains information about the C++ compilers and tools used to build Qt on various platforms.</p>
+<ul><li><a href="#gcc-most-platforms">GCC (most platforms)</a></li>
+<ul><li><a href="#gcc-on-windows-mingw">GCC on Windows (MinGW)</a></li>
+<li><a href="#gcc-4-0-0">gcc 4.0&#x2e;0</a></li>
+<li><a href="#hp-ux">HP-UX</a></li>
+<li><a href="#solaris">Solaris</a></li>
+<li><a href="#mac-os-x">Mac OS X</a></li>
+<li><a href="#gcc-gcc-3-4-6-debian-3-4-6-5-on-amd64-x86-64">gcc (GCC) 3.4&#x2e;6 (Debian 3.4&#x2e;6-5) on AMD64 (x86_64)</a></li>
+</ul>
+<li><a href="#hp-ansi-c-acc">HP ANSI C++ (aCC)</a></li>
+<li><a href="#intel-c-compiler">Intel C++ Compiler</a></li>
+<ul><li><a href="#intel-c-compiler-for-linux">Intel C++ Compiler for Linux</a></li>
+<li><a href="#known-issues-with-intel-c-compiler-for-linux">Known Issues with Intel C++ Compiler for Linux</a></li>
+<li><a href="#intel-c-compiler-windows-altix">Intel C++ Compiler (Windows, Altix)</a></li>
+</ul>
+<li><a href="#mipspro-irix">MIPSpro (IRIX)</a></li>
+<li><a href="#forte-developer-sun-studio-solaris">Forte Developer / Sun Studio (Solaris)</a></li>
+<ul><li><a href="#sun-studio">Sun Studio</a></li>
+<li><a href="#sun-workshop-5-0">Sun WorkShop 5.0</a></li>
+</ul>
+<li><a href="#visual-studio-windows">Visual Studio (Windows)</a></li>
+<li><a href="#ibm-xlc-aix">IBM xlC (AIX)</a></li>
+<ul><li><a href="#visualage-c-for-aix-version-6-0">VisualAge C++ for AIX, Version 6.0</a></li>
+</ul>
+</ul>
+<p>Please refer to the <a href="platform-notes-platforms.html">Platform Notes</a> for information on the platforms Qt is currently known to run on.</p>
+<p>If you have anything to add to this list or any of the platform or compiler-specific pages, please submit it via the <a href="http://www.trolltech.com/developer/notes/platforms/bugreport-form">Bug Report Form</a>.</p>
+<a name="gcc"></a><a name="gcc-most-platforms"></a>
+<h3>GCC (most platforms)</h3>
+<p>Trolltech supports building Qt with gcc 3.2 and later. Older versions of gcc are not recommended and not supported by Trolltech. They might or might not work.</p>
+<a name="gcc-on-windows-mingw"></a>
+<h4>GCC on Windows (MinGW)</h4>
+<p>We have tested Qt with this compiler on Windows 2000 and Windows XP. The minimal version of MinGW supported is:</p>
+<ul>
+<li>gcc 3.4&#x2e;2</li>
+<li>mingw runtime 3.7</li>
+<li>win32api 3.2</li>
+<li>binutils 2.15.91</li>
+<li>mingw32-make 3.80.0-3</li>
+</ul>
+<a name="gcc-4-0-0"></a>
+<h4>gcc 4.0&#x2e;0</h4>
+<p>The released package of the compiler has some bugs that lead to miscompilations. We recommend using gcc 4.0&#x2e;1 or later, or to use a recent CVS snapshot of the gcc 4.0 branch. The version of gcc 4.0&#x2e;0 that is shipped with Mac OS X 10.4 &quot;Tiger&quot; is known to work with Qt/Mac.</p>
+<a name="hp-ux"></a>
+<h4>HP-UX</h4>
+<p>The hpux-g++ platform is tested with gcc 3.4&#x2e;3&#x2e;</p>
+<a name="solaris"></a>
+<h4>Solaris</h4>
+<p>Please use gcc 3.3&#x2e;0 or better.</p>
+<a name="mac-os-x"></a>
+<h4>Mac OS X</h4>
+<p>Please use the latest gcc 3.3 from Apple or better. The gcc 3.3 that is provided with Xcode 1.5 is known to generate bad code, use the November 2004 GCC 3.3 updater <a href="http://connect.apple.com">available from Apple</a>.</p>
+<a name="gcc-gcc-3-4-6-debian-3-4-6-5-on-amd64-x86-64"></a>
+<h4>gcc (GCC) 3.4&#x2e;6 (Debian 3.4&#x2e;6-5) on AMD64 (x86_64)</h4>
+<p>This compiler is known to miscompile some parts of Qt when doing a release build. There are several workarounds:</p>
+<ol type="1">
+<li>Use a debug build instead.</li>
+<li>For each miscompilation encountered, recompile the file, removing the -O2 option.</li>
+<li>Add -fno-gcse to the <a href="qmake-variable-reference.html#qmake-cxxflags-release">QMAKE_CXXFLAGS_RELEASE</a>.</li>
+</ol>
+<a name="hp-ansi-c-acc"></a>
+<h3>HP ANSI C++ (aCC)</h3>
+<p>The hpux-acc-32 and hpux-acc-64 platforms are tested with aCC A.03.57. The hpuxi-acc-32 and hpuxi-acc-64 platforms are tested with aCC A.06.12.</p>
+<a name="intel-c-compiler"></a>
+<h3>Intel C++ Compiler</h3>
+<a name="intel-c-compiler-for-linux"></a>
+<h4>Intel C++ Compiler for Linux</h4>
+<p>Trolltech currently tests the following compilers:</p>
+<ul>
+<li>Intel(R) C++ Compiler for applications running on IA-32, Version 10.1 Build 20080212 Package ID: l_cc_p_10.1.013</li>
+<li>Intel(R) C++ Compiler for applications running on Intel(R) 64, Version 10.1 Build 20080212 Package ID: l_cc_p_10.1.013</li>
+</ul>
+<a name="known-issues-with-intel-c-compiler-for-linux"></a>
+<h4>Known Issues with Intel C++ Compiler for Linux</h4>
+<ul>
+<li>Precompiled header support does not work prior in version 10.0&#x2e;025 and older. For these compilers, you should configure Qt with -no-pch. Precompiled header support works properly in version 10.0&#x2e;026 and later.</li>
+<li>Version 10.0&#x2e;026 for Intel 64 is known to miscompile qmake when building in release mode. For now, configure Qt with -debug. Version 10.1&#x2e;008 and later can compile qmake in release mode.</li>
+<li>Versions 10.1&#x2e;008 to 10.1&#x2e;013 for both IA-32 and Intel 64 are known crash with &quot;(0): internal error: 0_47021&quot; when compiling <a href="qtxmlpatterns.html">QtXmlPatterns</a>, <a href="qtwebkit.html">QtWebKit</a>, and Designer in release mode. For now, Qt turns off optimizations for these modules when building in release mode. This issue has been reported to Intel and is awaiting resolution.</li>
+</ul>
+<a name="intel-c-compiler-windows-altix"></a>
+<h4>Intel C++ Compiler (Windows, Altix)</h4>
+<p>Qt 4 has been tested successfully with:</p>
+<ul>
+<li>Windows - Intel(R) C++ Compiler for 32-bit applications, Version 8.1 Build 20050309Z Package ID: W_CC_PC_8.1.026</li>
+<li>Altix - Intel(R) C++ Itanium(R) Compiler for Itanium(R)-based applications Version 8.1 Build 20050406 Package ID: l_cc_pc_8.1.030</li>
+</ul>
+<p>We currently only test the Intel compiler on 32-bit Windows versions.</p>
+<a name="mipspro-irix"></a>
+<h3>MIPSpro (IRIX)</h3>
+<p>Qt 4.x requires MIPSpro version 7.4&#x2e;2m.</p>
+<p>Note that MIPSpro version 7.4&#x2e;4m is currently not supported, since it has introduced a number of problems that have not yet been resolved. We recommend using 7.4&#x2e;2m for Qt development.</p>
+<a name="sun-studio"></a><a name="forte-developer-sun-studio-solaris"></a>
+<h3>Forte Developer / Sun Studio (Solaris)</h3>
+<a name="sun-studio"></a>
+<h4>Sun Studio</h4>
+<p>Qt is tested using Sun Studio 9 and Sun Studio 10. Go to <a href="http://developers.sun.com/prodtech/cc/downloads/patches/index.html">Sun's website</a> to download the latest patches for your Sun compiler.</p>
+<a name="sun-workshop-5-0"></a>
+<h4>Sun WorkShop 5.0</h4>
+<p>Sun WorkShop 5.0 is not supported with Qt 4.</p>
+<a name="visual-studio-windows"></a>
+<h3>Visual Studio (Windows)</h3>
+<p>We do most of our Windows development on Windows XP, using Microsoft Visual Studio .NET 2003 and Visual Studio 2005 (both the 32- and 64-bit versions).</p>
+<p>Qt works with the Standard Edition, the Professional Edition and Team System Edition of Visual Studio 2005.</p>
+<p>We also test Qt 4 on Windows 98/Me, Windows NT and Windows 2000, with Microsoft Visual C++ 6.0 and Visual Studio .NET.</p>
+<p>In order to use Qt with the Visual Studio 2005 Express Edition you need to download and install the platform SDK. Due to limitations in the Express Edition it is not possible for us to install the Qt Visual Studio Integration. You will need to use our command line tools to build Qt applications with this edition.</p>
+<p>The Visual C++ Linker doesn't understand filenames with spaces (as in <tt>C:\Program files\Qt\</tt>) so you will have to move it to another place, or explicitly set the path yourself; for example:</p>
+<pre>     QTDIR=C:\Progra~1\Qt</pre>
+<p>Visual C++ 6.0 requires Service Pack 5 to work correctly with Qt. If you are using Visual C++ version 6.0 we highly recommend that you update to SP5.</p>
+<p>If you are experiencing strange problems with using special flags that modify the alignment of structure and union members (such as <tt>/Zp2</tt>) then you will need to recompile Qt with the flags set for the application as well.</p>
+<p>If you're using Visual Studio .NET Standard Edition, you should be using the Qt binary package provided, and not the source package. As the Standard Edition does not optimize compiled code, your compiled version of Qt would perform suboptimally with respect to speed.</p>
+<p>With Visual Studio 2005 Service Pack 1 a bug was introduced which causes Qt not to compile, this has been fixed with a hotfix available from Microsoft. See this <a href="http://www.trolltech.com/developer/knowledgebase/faq.2006-12-18.3281869860">Knowledge Base entry</a> for more information.</p>
+<a name="ibm-xlc-aix"></a>
+<h3>IBM xlC (AIX)</h3>
+<p>The makeC++SharedLib utility must be in your PATH and be up to date to build shared libraries. From IBM's <a href="http://www.redbooks.ibm.com/abstracts/sg245674.html">C and C++ Application Development on AIX</a> Redbook:</p>
+<ul>
+<li>&quot;The second step is to use the makeC++SharedLib command to create the shared object. The command has many optional arguments, but in its simplest form, can be used as follows:&quot;<pre>        /usr/vacpp/bin/makeC++SharedLib -o shr1.o cplussource1.o</pre>
+</li>
+<li>&quot;The full path name to the command is not required; however, to avoid this, you will have to add the directory in which it is located to your PATH environment variable. The command is located in the /usr/vacpp/bin directory with the VisualAge C++ Professional for AIX, Version 5 compiler.&quot;</li>
+</ul>
+<a name="visualage-c-for-aix-version-6-0"></a>
+<h4>VisualAge C++ for AIX, Version 6.0</h4>
+<p>Make sure you have the <a href="http://www-1.ibm.com/support/search.wss?rs=32&tc=SSEP5D&dc=D400">latest upgrades</a> installed.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

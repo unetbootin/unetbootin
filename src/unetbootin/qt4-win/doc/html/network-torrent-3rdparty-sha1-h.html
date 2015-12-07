@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: sha1.h Example File (network/torrent/3rdparty/sha1.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">sha1.h Example File<br /><span class="small-subtitle">network/torrent/3rdparty/sha1.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file contains third party code which is not governed by the Qt
+ ** Commercial License Agreement. Please read the license headers below
+ ** for more information.
+ **
+ ** Further information about Qt licensing is available at:
+ ** http://www.trolltech.com/products/qt/licensing.html or by
+ ** contacting info@trolltech.com.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  *  sha1.h
+  *
+  *      Copyright (C) 1998
+  *      Paul E. Jones &lt;paulej@arid.us&gt;
+  *      All Rights Reserved
+  *
+  *****************************************************************************
+  *      $Id: sha1.h,v 1.2 2004/03/27 18:00:33 paulej Exp $
+  *****************************************************************************
+  *
+  *  Description:
+  *      This class implements the Secure Hashing Standard as defined
+  *      in FIPS PUB 180-1 published April 17, 1995.
+  *
+  *      Many of the variable names in the SHA1Context, especially the
+  *      single character names, were used because those were the names
+  *      used in the publication.
+  *
+  *      Please read the file sha1.c for more information.
+  *
+  */</span>
+
+ #ifndef _SHA1_H_
+ #define _SHA1_H_
+
+<span class="comment"> /*
+  *  This structure will hold context information for the hashing
+  *  operation
+  */</span>
+ typedef struct SHA1Context
+ {
+     unsigned Message_Digest[5]; <span class="comment">/* Message Digest (output)          */</span>
+
+     unsigned Length_Low;        <span class="comment">/* Message length in bits           */</span>
+     unsigned Length_High;       <span class="comment">/* Message length in bits           */</span>
+
+     unsigned char Message_Block[64]; <span class="comment">/* 512-bit message blocks      */</span>
+     int Message_Block_Index;    <span class="comment">/* Index into message block array   */</span>
+
+     int Computed;               <span class="comment">/* Is the digest computed?          */</span>
+     int Corrupted;              <span class="comment">/* Is the message digest corruped?  */</span>
+ } SHA1Context;
+
+<span class="comment"> /*
+  *  Function Prototypes
+  */</span>
+ void SHA1Reset(SHA1Context *);
+ int SHA1Result(SHA1Context *);
+ void SHA1Input( SHA1Context *,
+                 const unsigned char *,
+                 unsigned);
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

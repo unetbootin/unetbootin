@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qprinter.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QPrinter</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QPrinter</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qprinter.html">QPrinter class reference</a></li></ul></p>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qprinter-qt3.html#PrinterOption-enum">PrinterOption</a></b> { PrintToFile, PrintSelection, PrintPageRange }</li>
+</ul>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#aborted">aborted</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#collateCopiesEnabled">collateCopiesEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#isOptionEnabled">isOptionEnabled</a></b> ( PrinterOption <i>option</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qprinter-qt3.html#margins">margins</a></b> ( uint * <i>top</i>, uint * <i>left</i>, uint * <i>bottom</i>, uint * <i>right</i> ) const</li>
+<li><div class="fn"/>QSize <b><a href="qprinter-qt3.html#margins-2">margins</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter-qt3.html#maxPage">maxPage</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter-qt3.html#minPage">minPage</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#outputToFile">outputToFile</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#pageSetup">pageSetup</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#printSetup">printSetup</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qprinter-qt3.html#setCollateCopiesEnabled">setCollateCopiesEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter-qt3.html#setMinMax">setMinMax</a></b> ( int <i>minPage</i>, int <i>maxPage</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter-qt3.html#setOptionEnabled">setOptionEnabled</a></b> ( PrinterOption <i>option</i>, bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter-qt3.html#setOutputToFile">setOutputToFile</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>bool <b><a href="qprinter-qt3.html#setup">setup</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="PrinterOption-enum"></a>enum QPrinter::PrinterOption</h3>
+<p>Use <a href="qabstractprintdialog.html#PrintDialogOption-enum">QAbstractPrintDialog::PrintDialogOption</a> instead.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QPrinter::PrintToFile</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::PrintSelection</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::PrintPageRange</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="aborted"></a>bool QPrinter::aborted ()</h3>
+<p>Use <a href="qprinter.html#printerState">printerState</a>() == <a href="qprinter.html#PrinterState-enum">QPrinter::Aborted</a> instead.</p>
+<h3 class="fn"><a name="collateCopiesEnabled"></a>bool QPrinter::collateCopiesEnabled () const</h3>
+<p>Returns true if the printer is set up to collate copies of printed documents; otherwise returns false.</p>
+<p>Use QPrintDialog::isOptionEnabled(<a href="qabstractprintdialog.html#PrintDialogOption-enum">QPrintDialog::PrintCollateCopies</a>) instead.</p>
+<p>See also <a href="qprinter-qt3.html#setCollateCopiesEnabled">setCollateCopiesEnabled</a>() and <a href="qprinter.html#collateCopies">collateCopies</a>().</p>
+<h3 class="fn"><a name="isOptionEnabled"></a>bool QPrinter::isOptionEnabled ( <a href="qprinter-qt3.html#PrinterOption-enum">PrinterOption</a> <i>option</i> ) const</h3>
+<p>Use <a href="qprintdialog.html">QPrintDialog</a> instead.</p>
+<h3 class="fn"><a name="margins"></a>void QPrinter::margins ( <a href="qtglobal.html#uint-typedef">uint</a> * <i>top</i>, <a href="qtglobal.html#uint-typedef">uint</a> * <i>left</i>, <a href="qtglobal.html#uint-typedef">uint</a> * <i>bottom</i>, <a href="qtglobal.html#uint-typedef">uint</a> * <i>right</i> ) const</h3>
+<p>Sets *<i>top</i>, *<i>left</i>, *<i>bottom</i>, *<i>right</i> to be the top, left, bottom, and right margins.</p>
+<p>This function has been superseded by <a href="qprinter.html#paperRect">paperRect</a>() and <a href="qprinter.html#pageRect">pageRect</a>(). Use <a href="qprinter.html#paperRect">paperRect</a>().top() - <a href="qprinter.html#pageRect">pageRect</a>().top() for the top margin, <a href="qprinter.html#paperRect">paperRect</a>().<a href="qtextstream.html#left">left</a>() - <a href="qprinter.html#pageRect">pageRect</a>().<a href="qtextstream.html#left">left</a>() for the left margin, <a href="qprinter.html#paperRect">paperRect</a>().bottom() - <a href="qprinter.html#pageRect">pageRect</a>().bottom() for the bottom margin, and papaerRect().<a href="qtextstream.html#right">right</a>() - <a href="qprinter.html#pageRect">pageRect</a>().<a href="qtextstream.html#right">right</a>() for the right margin.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> uint rightMargin;
+ uint bottomMargin;
+ printer-&gt;margins(0, 0, &amp;bottomMargin, &amp;rightMargin);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int rightMargin = printer-&gt;paperRect().right() - printer-&gt;pageRect().right();
+ int bottomMargin = printer-&gt;paperRect().bottom() - printer-&gt;pageRect().bottom();</pre>
+<h3 class="fn"><a name="margins-2"></a><a href="qsize.html">QSize</a> QPrinter::margins () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a <a href="qsize.html">QSize</a> containing the left margin and the top margin.</p>
+<p>This function has been superseded by <a href="qprinter.html#paperRect">paperRect</a>() and <a href="qprinter.html#pageRect">pageRect</a>(). Use <a href="qprinter.html#paperRect">paperRect</a>().<a href="qtextstream.html#left">left</a>() - <a href="qprinter.html#pageRect">pageRect</a>().<a href="qtextstream.html#left">left</a>() for the left margin, and <a href="qprinter.html#paperRect">paperRect</a>().top() - <a href="qprinter.html#pageRect">pageRect</a>().top() for the top margin.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QSize margins = printer-&gt;margins();
+ int leftMargin = margins.width();
+ int topMargin = margins.height();</font></pre>
+<p>you can rewrite it as</p>
+<pre> int leftMargin = printer-&gt;paperRect().left() - printer-&gt;pageRect().left();
+ int topMargin = printer-&gt;paperRect().top() - printer-&gt;pageRect().top();</pre>
+<h3 class="fn"><a name="maxPage"></a>int QPrinter::maxPage () const</h3>
+<p>Use <a href="qabstractprintdialog.html#maxPage">QPrintDialog::maxPage</a>() instead.</p>
+<h3 class="fn"><a name="minPage"></a>int QPrinter::minPage () const</h3>
+<p>Use <a href="qabstractprintdialog.html#minPage">QPrintDialog::minPage</a>() instead.</p>
+<h3 class="fn"><a name="outputToFile"></a>bool QPrinter::outputToFile () const</h3>
+<p>Returns true if the output should be written to a file, or false if the output should be sent directly to the printer. The default setting is false.</p>
+<p>See also <a href="qprinter-qt3.html#setOutputToFile">setOutputToFile</a>() and <a href="qprinter.html#setOutputFileName">setOutputFileName</a>().</p>
+<h3 class="fn"><a name="pageSetup"></a>bool QPrinter::pageSetup ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Executes a page setup dialog so that the user can configure the type of page used for printing. Returns true if the contents of the dialog are accepted; returns false if the dialog is canceled.</p>
+<h3 class="fn"><a name="printSetup"></a>bool QPrinter::printSetup ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Executes a print setup dialog so that the user can configure the printing process. Returns true if the contents of the dialog are accepted; returns false if the dialog is canceled.</p>
+<h3 class="fn"><a name="setCollateCopiesEnabled"></a>void QPrinter::setCollateCopiesEnabled ( bool <i>enable</i> )</h3>
+<p>Use QPrintDialog::addEnabledOption(<a href="qabstractprintdialog.html#PrintDialogOption-enum">QPrintDialog::PrintCollateCopies</a>) or QPrintDialog::setEnabledOptions(<a href="qabstractprintdialog.html#enabledOptions">QPrintDialog::enabledOptions</a>() &amp; ~<a href="qabstractprintdialog.html#PrintDialogOption-enum">QPrintDialog::PrintCollateCopies</a>) instead, depending on <i>enable</i>.</p>
+<p>See also <a href="qprinter-qt3.html#collateCopiesEnabled">collateCopiesEnabled</a>().</p>
+<h3 class="fn"><a name="setMinMax"></a>void QPrinter::setMinMax ( int <i>minPage</i>, int <i>maxPage</i> )</h3>
+<p>Use <a href="qabstractprintdialog.html#setMinMax">QPrintDialog::setMinMax</a>() instead.</p>
+<h3 class="fn"><a name="setOptionEnabled"></a>void QPrinter::setOptionEnabled ( <a href="qprinter-qt3.html#PrinterOption-enum">PrinterOption</a> <i>option</i>, bool <i>enable</i> )</h3>
+<p>Use <a href="qprintdialog.html">QPrintDialog</a> instead.</p>
+<p>See also <a href="qprinter-qt3.html#isOptionEnabled">isOptionEnabled</a>().</p>
+<h3 class="fn"><a name="setOutputToFile"></a>void QPrinter::setOutputToFile ( bool <i>enable</i> )</h3>
+<p>Specifies whether the output should be written to a file or sent directly to the printer.</p>
+<p>Will output to a file if <i>enable</i> is true, or will output directly to the printer if <i>enable</i> is false.</p>
+<p>See also <a href="qprinter-qt3.html#outputToFile">outputToFile</a>() and <a href="qprinter.html#setOutputFileName">setOutputFileName</a>().</p>
+<h3 class="fn"><a name="setup"></a>bool QPrinter::setup ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Use <a href="qprintdialog.html">QPrintDialog</a> instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> if (printer-&gt;setup(parent))
+     ..&#x2e;</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPrintDialog dialog(printer, parent);
+ if (dialog.exec())
+     ...</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

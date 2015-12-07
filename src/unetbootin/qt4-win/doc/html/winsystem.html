@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/winsystem.qdoc -->
+<head>
+  <title>Qt 4.4: Window System Specific Notes</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Window System Specific Notes<br /><span class="subtitle"></span>
+</h1>
+<p>Qt is a cross-platform GUI toolkit, so almost the entire API is the same on all platforms and window systems. If you wish to use platform-specific features, and still maintain a platform-independent source tree, you should protect the platform-specific code using the appropriate <tt>#ifdef</tt> directives (see below).</p>
+<p>Qt provides a few low-level global functions for fine-tuning applications on specific platforms. See <a href="exportedfunctions.html">Special-Purpose Global Functions Exported by Qt</a> for details.</p>
+<ul><li><a href="#qt-x11">Qt/X11</a></li>
+<li><a href="#qt-windows">Qt/Windows</a></li>
+<li><a href="#qt-mac-os-x">Qt/Mac OS X</a></li>
+<li><a href="#qt-for-embedded-linux">Qt for Embedded Linux</a></li>
+</ul>
+<p>For information about which platforms are supported by Qt, see the <a href="platform-notes-platforms.html">Platform Notes</a>. For information on distributing Qt applications, see <a href="deployment.html">Deploying Qt Applications</a>.</p>
+<a name="x11"></a><a name="qt-x11"></a>
+<h2>Qt/X11</h2>
+<p>When compiling for this platform, the macro <tt>Q_WS_X11</tt> is defined.</p>
+<p><i>Not documented here. Please contact Trolltech Technical Support if you have queries.</i></p>
+<p align="center"><img src="images/dependencies.png" alt="Qt/X11 Dependencies" /></p>    <style type="text/css" id="colorstyles">
+     #QtGuiColor { background-color: #98fd00; color: black }
+     #QtCoreColor { background-color: #9c9cff; color: black }
+     #DefaultColor { background-color: #f6f6dc; color: black }
+     #FreetypeColor { background-color: #e6e6fa; color: black }
+     #GLColor { background-color: #ffc0cb; color: black }
+     #PthreadColor { background-color: #bdb76b; color: black }
+     #OptionalColor { background-color: #cae1ff; color: black }
+     #SMColor { background-color: #c2fafa; color: black }
+     #MiscColor { background-color: #f0f9ff; color: black }
+     #GlibColor { background-color: #b3b3b3; color: black }
+    </style>
+    <p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Name</th><th>Library</th><th>Notes</th><th>Configuration options    <tr id="QtGuiColor">
+    <td>QtGui</td><td>libQtGui</td><td>QtGui</td>
+    </tr><tr id="QtCoreColor">
+    <td> QtCore </td><td> libQtCore </td><td> QtCore (non-user interface features)</td>
+    </tr><tr id="OptionalColor">
+    <td> XRender </td><td> libXrender </td><td> X Rendering Extension; used for anti-aliasing</td><td><tt>-xrender</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xrandr </td><td> libXrandr </td><td> X Resize and Rotate Extension</td><td><tt>-xrandr</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xcursor </td><td> libXcursor </td><td> X Cursor Extension</td><td><tt>-xcursor</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xfixes </td><td> libXfixes </td><td> X Fixes Extension</td><td><tt>-xfixes</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xinerama </td><td> libXinerama </td><td> Multi-head support</td><td><tt>-xinerama</tt> or auto-detected</td>
+    </tr><tr id="DefaultColor">
+    <td> Xt </td><td> libXext </td><td> Xt Intrinsics</td>
+    </tr><tr id="DefaultColor">
+    <td> Xext </td><td> libXext </td><td> X Extensions</td>
+    </tr><tr id="DefaultColor">
+    <td> X11 </td><td> libX11 </td><td> X Window System</td>
+    </tr><tr id="SMColor">
+    <td> SM </td><td> libSM </td><td> X Session Management</td><td><tt>-sm</tt> or auto-detected</td>
+    </tr><tr id="SMColor">
+    <td> ICE </td><td> libICE </td><td> Inter-Client Exchange</td><td><tt>-sm</tt> or auto-detected</td>
+    </tr><tr id="GlibColor">
+    <td> glib </td><td> libglib-2.0 </td><td> Common event loop handling</td><td><tt>-glib</tt> or auto-detected</td>
+    </tr><tr id="PthreadColor">
+    <td> pthread </td><td> libpthread </td><td> Multithreading</td>
+    </tr>
+    </th></tr></thead>
+</table></p>
+<p><b>Note:</b> You must compile with XRender support to get alpha transparency support for pixmaps and images.</p>
+<a name="win"></a><a name="qt-windows"></a>
+<h2>Qt/Windows</h2>
+<p>When compiling for this platform, the macro <tt>Q_WS_WIN</tt> is defined.</p>
+<p><i>Not documented here. Please contact Trolltech Technical Support if you have queries.</i></p>
+<a name="macosx"></a><a name="qt-mac-os-x"></a>
+<h2>Qt/Mac OS X</h2>
+<p>When compiling for this platform, the macro <tt>Q_WS_MAC</tt> is defined.</p>
+<ul>
+<li><a href="mac-differences.html">Qt/Mac-Specific Issues</a></li>
+<li><a href="qtmac-as-native.html">Qt/Mac is Mac OS X Native</a></li>
+</ul>
+<a name="qws"></a><a name="qt-for-embedded-linux"></a>
+<h2>Qt for Embedded Linux</h2>
+<p>When compiling for this platform, the macro <tt>Q_WS_QWS</tt> is defined (the window system is literally the Qt Window System). See the <a href="qt-embedded.html">Qt for Embedded Linux</a> documentation for more information.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: makeimg.cpp Example File (graphicsview/portedcanvas/makeimg.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">makeimg.cpp Example File<br /><span class="small-subtitle">graphicsview/portedcanvas/makeimg.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;qimage.h&gt;
+ #include &lt;qcolor.h&gt;
+
+ static inline int blendComponent( int v, int av, int s, int as )
+ {
+     <span class="comment">//</span>shadow gets a color inversely proportional to the
+     <span class="comment">//</span>alpha value
+     s = (s*(255-as))/255;
+     <span class="comment">//</span>then do standard blending
+     return as*s + av*v -(av*as*s)/255;
+ }
+
+ static inline QRgb blendShade( QRgb v, QRgb s )
+ {
+     <span class="comment">//</span>pick a number: shadow is 1/3 of object
+     int as = qAlpha(s)/3;
+     int av = qAlpha(v);
+     if ( as == 0 || av == 255 )
+         return v;
+
+     int a = as + av -(as*av)/255;
+
+     int r = blendComponent( qRed(v),av, qRed(s), as)/a;
+     int g = blendComponent( qGreen(v),av, qGreen(s), as)/a;
+     int b = blendComponent( qBlue(v),av, qBlue(s), as)/a;
+
+     return qRgba(r,g,b,a);
+ }
+
+ int main( int*, char**)
+ {
+     QImage *img;
+
+     img = new QImage( &quot;in.png&quot; );
+     int w,h;
+     int y;
+     img-&gt;setAlphaBuffer( TRUE );
+     *img = img-&gt;convertDepth( 32 );
+     w = img-&gt;width();
+     h = img-&gt;height();
+ #if 0
+     for ( y = 0; y &lt; h; y ++ ) {
+         uint *line = (uint*)img-&gt;scanLine( y );
+         for ( int x = 0; x &lt; w; x++ ) {
+             uint pixel = line[x];
+             int r = qRed(pixel);
+             int g = qGreen(pixel);
+             int b = qBlue(pixel);
+             int min = QMIN( r, QMIN( g, b ) );
+             int max = QMAX( r, QMAX( g, b ) );
+             r -= min;
+             g -= min;
+             b -= min;
+             if ( max !=min ) {
+                 r = (r*255)/(max-min);
+                 g = (g*255)/(max-min);
+                 b = (b*255)/(max-min);
+             }
+             int a = 255-min;
+             a -=  (max-min)/3; <span class="comment">//</span>hack more transparency for colors.
+             line[x] = qRgba( r, g, b, a );
+         }
+     }
+ #endif
+     *img = img-&gt;smoothScale( w/2, h/2 );
+
+     qDebug( &quot;saving out.png&quot;);
+     img-&gt;save( &quot;out.png&quot;, &quot;PNG&quot; );
+
+     w = img-&gt;width();
+     h = img-&gt;height();
+
+     QImage *img2 = new QImage( w, h, 32 );
+     img2-&gt;setAlphaBuffer( TRUE );
+     for ( y = 0; y &lt; h; y++ ) {
+         for ( int x = 0; x &lt; w; x++ ) {
+             QRgb shader = img-&gt;pixel( x, y );
+
+             int as = qAlpha(shader)/3;
+
+             int r = (qRed(shader)*(255-as))/255;
+             int g = (qGreen(shader)*(255-as))/255;
+             int b = (qBlue(shader)*(255-as))/255;
+
+             img2-&gt;setPixel( x, y, qRgba(r,g,b,as) );
+         }
+     }
+
+     img2-&gt;save( &quot;outshade.png&quot;, &quot;PNG&quot; );
+
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

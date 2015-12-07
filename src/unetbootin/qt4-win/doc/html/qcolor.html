@@ -1,0 +1,531 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qcolor.cpp -->
+<head>
+  <title>Qt 4.4: QColor Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QColor Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QColor class provides colors based on RGB, HSV or CMYK values. <a href="#details">More...</a></p>
+<pre> #include &lt;QColor&gt;</pre><ul>
+<li><a href="qcolor-members.html">List of all members, including inherited members</a></li>
+<li><a href="qcolor-obsolete.html">Obsolete members</a></li>
+<li><a href="qcolor-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qcolor.html#Spec-enum">Spec</a></b> { Rgb, Hsv, Cmyk, Invalid }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcolor.html#QColor">QColor</a></b> ()</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-2">QColor</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-3">QColor</a></b> ( QRgb <i>color</i> )</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-4">QColor</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-5">QColor</a></b> ( const char * <i>name</i> )</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-6">QColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/><b><a href="qcolor.html#QColor-9">QColor</a></b> ( Qt::GlobalColor <i>color</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#alpha">alpha</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#alphaF">alphaF</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#black">black</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#blackF">blackF</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#blue">blue</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#blueF">blueF</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#convertTo">convertTo</a></b> ( Spec <i>colorSpec</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#cyan">cyan</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#cyanF">cyanF</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#darker">darker</a></b> ( int <i>factor</i> = 200 ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getCmyk">getCmyk</a></b> ( int * <i>c</i>, int * <i>m</i>, int * <i>y</i>, int * <i>k</i>, int * <i>a</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getCmykF">getCmykF</a></b> ( qreal * <i>c</i>, qreal * <i>m</i>, qreal * <i>y</i>, qreal * <i>k</i>, qreal * <i>a</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getHsv">getHsv</a></b> ( int * <i>h</i>, int * <i>s</i>, int * <i>v</i>, int * <i>a</i> = 0 ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getHsvF">getHsvF</a></b> ( qreal * <i>h</i>, qreal * <i>s</i>, qreal * <i>v</i>, qreal * <i>a</i> = 0 ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getRgb">getRgb</a></b> ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i>, int * <i>a</i> = 0 ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#getRgbF">getRgbF</a></b> ( qreal * <i>r</i>, qreal * <i>g</i>, qreal * <i>b</i>, qreal * <i>a</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#green">green</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#greenF">greenF</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#hue">hue</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#hueF">hueF</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcolor.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#lighter">lighter</a></b> ( int <i>factor</i> = 150 ) const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#magenta">magenta</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#magentaF">magentaF</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qcolor.html#name">name</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#red">red</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#redF">redF</a></b> () const</li>
+<li><div class="fn"/>QRgb <b><a href="qcolor.html#rgb">rgb</a></b> () const</li>
+<li><div class="fn"/>QRgb <b><a href="qcolor.html#rgba">rgba</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#saturation">saturation</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#saturationF">saturationF</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setAlpha">setAlpha</a></b> ( int <i>alpha</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setAlphaF">setAlphaF</a></b> ( qreal <i>alpha</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setBlue">setBlue</a></b> ( int <i>blue</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setBlueF">setBlueF</a></b> ( qreal <i>blue</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setCmyk">setCmyk</a></b> ( int <i>c</i>, int <i>m</i>, int <i>y</i>, int <i>k</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setCmykF">setCmykF</a></b> ( qreal <i>c</i>, qreal <i>m</i>, qreal <i>y</i>, qreal <i>k</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setGreen">setGreen</a></b> ( int <i>green</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setGreenF">setGreenF</a></b> ( qreal <i>green</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setHsv">setHsv</a></b> ( int <i>h</i>, int <i>s</i>, int <i>v</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setHsvF">setHsvF</a></b> ( qreal <i>h</i>, qreal <i>s</i>, qreal <i>v</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setNamedColor">setNamedColor</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRed">setRed</a></b> ( int <i>red</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRedF">setRedF</a></b> ( qreal <i>red</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRgb">setRgb</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRgb-2">setRgb</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRgbF">setRgbF</a></b> ( qreal <i>r</i>, qreal <i>g</i>, qreal <i>b</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setRgba">setRgba</a></b> ( QRgb <i>rgba</i> )</li>
+<li><div class="fn"/>Spec <b><a href="qcolor.html#spec">spec</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#toCmyk">toCmyk</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#toHsv">toHsv</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#toRgb">toRgb</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#value">value</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#valueF">valueF</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#yellow">yellow</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qcolor.html#yellowF">yellowF</a></b> () const</li>
+<li><div class="fn"/><b><a href="qcolor.html#operator-QVariant">operator QVariant</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcolor.html#operator-not-eq">operator!=</a></b> ( const QColor &amp; <i>color</i> ) const</li>
+<li><div class="fn"/>QColor &amp; <b><a href="qcolor.html#operator-eq">operator=</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>QColor &amp; <b><a href="qcolor.html#operator-eq-2">operator=</a></b> ( Qt::GlobalColor <i>color</i> )</li>
+<li><div class="fn"/>bool <b><a href="qcolor.html#operator-eq-eq">operator==</a></b> ( const QColor &amp; <i>color</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qcolor.html#allowX11ColorNames">allowX11ColorNames</a></b> ()</li>
+<li><div class="fn"/>QStringList <b><a href="qcolor.html#colorNames">colorNames</a></b> ()</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromCmyk">fromCmyk</a></b> ( int <i>c</i>, int <i>m</i>, int <i>y</i>, int <i>k</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromCmykF">fromCmykF</a></b> ( qreal <i>c</i>, qreal <i>m</i>, qreal <i>y</i>, qreal <i>k</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromHsv">fromHsv</a></b> ( int <i>h</i>, int <i>s</i>, int <i>v</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromHsvF">fromHsvF</a></b> ( qreal <i>h</i>, qreal <i>s</i>, qreal <i>v</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromRgb">fromRgb</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromRgb-2">fromRgb</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromRgbF">fromRgbF</a></b> ( qreal <i>r</i>, qreal <i>g</i>, qreal <i>b</i>, qreal <i>a</i> = 1.0 )</li>
+<li><div class="fn"/>QColor <b><a href="qcolor.html#fromRgba">fromRgba</a></b> ( QRgb <i>rgba</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor.html#setAllowX11ColorNames">setAllowX11ColorNames</a></b> ( bool <i>enabled</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="qcolor.html#QRgb-typedef">QRgb</a></b></li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qAlpha">qAlpha</a></b> ( QRgb <i>rgba</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qBlue">qBlue</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qGray">qGray</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qGray-2">qGray</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qGreen">qGreen</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolor.html#qRed">qRed</a></b> ( QRgb <i>rgb</i> )</li>
+<li><div class="fn"/>QRgb <b><a href="qcolor.html#qRgb">qRgb</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i> )</li>
+<li><div class="fn"/>QRgb <b><a href="qcolor.html#qRgba">qRgba</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qcolor.html#operator-lt-lt-13">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qcolor.html#operator-gt-gt-6">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QColor &amp; <i>color</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QColor class provides colors based on RGB, HSV or CMYK values.</p>
+<p>A color is normally specified in terms of RGB (red, green, and blue) components, but it is also possible to specify it in terms of HSV (hue, saturation, and value) and CMYK (cyan, magenta, yellow and black) components. In addition a color can be specified using a color name. The color name can be any of the SVG 1.0 color names.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qcolor-rgb.png" /></td><td><img src="images/qcolor-hsv.png" /></td><td><img src="images/qcolor-cmyk.png" /></td></tr>
+<thead><tr valign="top" class="qt-style"><th>RGB</th><th>HSV</th><th>CMYK</th></tr></thead>
+</table></p>
+<p>The QColor constructor creates the color based on RGB values. To create a QColor based on either HSV or CMYK values, use the <a href="qcolor.html#toHsv">toHsv</a>() and <a href="qcolor.html#toCmyk">toCmyk</a>() functions respectively. These functions return a copy of the color using the desired format. In addition the static <a href="qcolor.html#fromRgb">fromRgb</a>(), <a href="qcolor.html#fromHsv">fromHsv</a>() and <a href="qcolor.html#fromCmyk">fromCmyk</a>() functions create colors from the specified values. Alternatively, a color can be converted to any of the three formats using the <a href="qcolor.html#convertTo">convertTo</a>() function (returning a copy of the color in the desired format), or any of the <a href="qcolor.html#setRgb">setRgb</a>(), <a href="qcolor.html#setHsv">setHsv</a>() and <a href="qcolor.html#setCmyk">setCmyk</a>() functions altering <i>this</i> color's format. The <a href="qcolor.html#spec">spec</a>() function tells how the color was specified.</p>
+<p>A color can be set by passing an RGB string (such as &quot;#112233&quot;), or a color name (such as &quot;blue&quot;), to the <a href="qcolor.html#setNamedColor">setNamedColor</a>() function. The color names are taken from the SVG 1.0 color names. The <a href="qcolor.html#name">name</a>() function returns the name of the color in the format &quot;#RRGGBB&quot;. Colors can also be set using <a href="qcolor.html#setRgb">setRgb</a>(), <a href="qcolor.html#setHsv">setHsv</a>() and <a href="qcolor.html#setCmyk">setCmyk</a>(). To get a lighter or darker color use the <a href="qcolor.html#lighter">lighter</a>() and <a href="qcolor.html#darker">darker</a>() functions respectively.</p>
+<p>The <a href="qcolor.html#isValid">isValid</a>() function indicates whether a QColor is legal at all. For example, a RGB color with RGB values out of range is illegal. For performance reasons, QColor mostly disregards illegal colors, and for that reason, the result of using an invalid color is undefined.</p>
+<p>The color components can be retrieved individually, e.g with <a href="qcolor.html#red">red</a>(), <a href="qcolor.html#hue">hue</a>() and <a href="qcolor.html#cyan">cyan</a>(). The values of the color components can also be retrieved in one go using the <a href="qcolor.html#getRgb">getRgb</a>(), <a href="qcolor.html#getHsv">getHsv</a>() and <a href="qcolor.html#getCmyk">getCmyk</a>() functions. Using the RGB color model, the color components can in addition be accessed with <a href="qcolor.html#rgb">rgb</a>().</p>
+<p>There are several related non-members: <a href="qcolor.html#QRgb-typedef">QRgb</a> is a typdef for an unsigned int representing the RGB value triplet (r, g, b). Note that it also can hold a value for the alpha-channel (for more information, see the <a href="#alpha-blended-drawing">Alpha-Blended Drawing</a> section). The <a href="qcolor.html#qRed">qRed</a>(), <a href="qcolor.html#qBlue">qBlue</a>() and <a href="qcolor.html#qGreen">qGreen</a>() functions return the respective component of the given <a href="qcolor.html#QRgb-typedef">QRgb</a> value, while the <a href="qcolor.html#qRgb">qRgb</a>() and <a href="qcolor.html#qRgba">qRgba</a>() functions create and return the <a href="qcolor.html#QRgb-typedef">QRgb</a> triplet based on the given component values. Finally, the <a href="qcolor.html#qAlpha">qAlpha</a>() function returns the alpha component of the provided <a href="qcolor.html#QRgb-typedef">QRgb</a>, and the <a href="qcolor.html#qGray">qGray</a>() function calculates and return a gray value based on the given value.</p>
+<p>QColor is platform and device independent. The QColormap class maps the color to the hardware.</p>
+<p>For more information about painting in general, see <a href="paintsystem.html">The Paint System</a> documentation.</p>
+<ul><li><a href="#integer-vs-floating-point-precision">Integer vs. Floating Point Precision</a></li>
+<li><a href="#alpha-blended-drawing">Alpha-Blended Drawing</a></li>
+<li><a href="#predefined-colors">Predefined Colors</a></li>
+<li><a href="#the-hsv-color-model">The HSV Color Model</a></li>
+<li><a href="#the-cmyk-color-model">The CMYK Color Model</a></li>
+</ul>
+<a name="integer-vs-floating-point-precision"></a>
+<h3>Integer vs. Floating Point Precision</h3>
+<p>QColor supports floating point precision and provides floating point versions of all the color components functions, e.g&#x2e; <a href="qcolor.html#getRgbF">getRgbF</a>(), <a href="qcolor.html#hueF">hueF</a>() and <a href="qcolor.html#fromCmykF">fromCmykF</a>(). Note that since the components are stored using 16-bit integers, there might be minor deviations between the values set using, for example, <a href="qcolor.html#setRgbF">setRgbF</a>() and the values returned by the <a href="qcolor.html#getRgbF">getRgbF</a>() function due to rounding.</p>
+<p>While the integer based functions take values in the range 0-255 (except <a href="qcolor.html#hue">hue</a>() which must have values within the range 0-359), the floating point functions accept values in the range 0.0 - 1.0&#x2e;</p>
+<a name="alpha-blended-drawing"></a>
+<h3>Alpha-Blended Drawing</h3>
+<p>QColor also support alpha-blended outlining and filling. The alpha channel of a color specifies the transparency effect, 0 represents a fully transparent color, while 255 represents a fully opaque color. For example:</p>
+<pre>     // Specify semi-transparent red
+     painter.setBrush(QColor(255, 0, 0, 127));
+     painter.drawRect(0, 0, width()/2, height());
+
+     // Specify semi-transparent blue
+     painter.setBrush(QColor(0, 0, 255, 127));
+     painter.drawRect(0, 0, width(), height()/2);</pre>
+<p>The code above produces the following output:</p>
+<p align="center"><img src="images/alphafill.png" /></p><p>Alpha-blended drawing is supported on Windows, Mac OS X, and on X11 systems that have the X Render extension installed.</p>
+<p>The alpha channel of a color can be retrieved and set using the <a href="qcolor.html#alpha">alpha</a>() and <a href="qcolor.html#setAlpha">setAlpha</a>() functions if its value is an integer, and <a href="qcolor.html#alphaF">alphaF</a>() and <a href="qcolor.html#setAlphaF">setAlphaF</a>() if its value is qreal (double). By default, the alpha-channel is set to 255 (opaque). To retrieve and set <i>all</i> the RGB color components (including the alpha-channel) in one go, use the <a href="qcolor.html#rgba">rgba</a>() and <a href="qcolor.html#setRgba">setRgba</a>() functions.</p>
+<a name="predefined-colors"></a>
+<h3>Predefined Colors</h3>
+<p>There are 20 predefined QColors: <a href="qt.html#GlobalColor-enum">Qt::white</a>, <a href="qt.html#GlobalColor-enum">Qt::black</a>, <a href="qt.html#GlobalColor-enum">Qt::red</a>, <a href="qt.html#GlobalColor-enum">Qt::darkRed</a>, <a href="qt.html#GlobalColor-enum">Qt::green</a>, <a href="qt.html#GlobalColor-enum">Qt::darkGreen</a>, <a href="qt.html#GlobalColor-enum">Qt::blue</a>, <a href="qt.html#GlobalColor-enum">Qt::darkBlue</a>, <a href="qt.html#GlobalColor-enum">Qt::cyan</a>, <a href="qt.html#GlobalColor-enum">Qt::darkCyan</a>, <a href="qt.html#GlobalColor-enum">Qt::magenta</a>, <a href="qt.html#GlobalColor-enum">Qt::darkMagenta</a>, <a href="qt.html#GlobalColor-enum">Qt::yellow</a>, <a href="qt.html#GlobalColor-enum">Qt::darkYellow</a>, <a href="qt.html#GlobalColor-enum">Qt::gray</a>, <a href="qt.html#GlobalColor-enum">Qt::darkGray</a>, <a href="qt.html#GlobalColor-enum">Qt::lightGray</a>, <a href="qt.html#GlobalColor-enum">Qt::color0</a>, <a href="qt.html#GlobalColor-enum">Qt::color1</a>, and <a href="qt.html#GlobalColor-enum">Qt::transparent</a>.</p>
+<p align="center"><img src="images/qt-colors.png" alt="Qt Colors" /></p><p>QColor provides the static <a href="qcolor.html#colorNames">colorNames</a>() function which returns a <a href="qstringlist.html">QStringList</a> containing the color names Qt knows about.</p>
+<p>The colors <a href="qt.html#GlobalColor-enum">Qt::color0</a> (zero pixel value) and <a href="qt.html#GlobalColor-enum">Qt::color1</a> (non-zero pixel value) are special colors for drawing in QBitmaps. Painting with <a href="qt.html#GlobalColor-enum">Qt::color0</a> sets the bitmap bits to 0 (transparent, i.e&#x2e; background), and painting with <a href="qt.html#GlobalColor-enum">Qt::color1</a> sets the bits to 1 (opaque, i.e&#x2e; foreground).</p>
+<a name="the-hsv-color-model"></a>
+<h3>The HSV Color Model</h3>
+<p>The RGB model is hardware-oriented. Its representation is close to what most monitors show. In contrast, HSV represents color in a way more suited to the human perception of color. For example, the relationships &quot;stronger than&quot;, &quot;darker than&quot;, and &quot;the opposite of&quot; are easily expressed in HSV but are much harder to express in RGB.</p>
+<p>HSV, like RGB, has three components:</p>
+<ul>
+<li>H, for hue, is in the range 0 to 359 if the color is chromatic (not gray), or meaningless if it is gray. It represents degrees on the color wheel familiar to most people. Red is 0 (degrees), green is 120, and blue is 240.<p><img src="images/qcolor-hue.png" /></p>
+</li>
+<li>S, for saturation, is in the range 0 to 255, and the bigger it is, the stronger the color is. Grayish colors have saturation near 0; very strong colors have saturation near 255.<p><img src="images/qcolor-saturation.png" /></p>
+</li>
+<li>V, for value, is in the range 0 to 255 and represents lightness or brightness of the color. 0 is black; 255 is as far from black as possible.<p><img src="images/qcolor-value.png" /></p>
+</li>
+</ul>
+<p>Here are some examples: pure red is H=0, S=255, V=255; a dark red, moving slightly towards the magenta, could be H=350 (equivalent to -10), S=255, V=180; a grayish light red could have H about 0 (say 350-359 or 0-10), S about 50-100, and S=255.</p>
+<p>Qt returns a hue value of -1 for achromatic colors. If you pass a hue value that is too large, Qt forces it into range. Hue 360 or 720 is treated as 0; hue 540 is treated as 180.</p>
+<p>In addition to the standard HSV model, Qt provides an alpha-channel to feature <a href="#alpha-blended-drawing">alpha-blended drawing</a>.</p>
+<a name="the-cmyk-color-model"></a>
+<h3>The CMYK Color Model</h3>
+<p>While the RGB and HSV color models are used for display on computer monitors, the CMYK model is used in the four-color printing process of printing presses and some hard-copy devices.</p>
+<p>CMYK has four components, all in the range 0-255: cyan (C), magenta (M), yellow (Y) and black (K). Cyan, magenta and yellow are called subtractive colors; the CMYK color model creates color by starting with a white surface and then subtracting color by applying the appropriate components. While combining cyan, magenta and yellow gives the color black, subtracting one or more will yield any other color. When combined in various percentages, these three colors can create the entire spectrum of colors.</p>
+<p>Mixing 100 percent of cyan, magenta and yellow <i>does</i> produce black, but the result is unsatisfactory since it wastes ink, increases drying time, and gives a muddy colour when printing. For that reason, black is added in professional printing to provide a solid black tone; hence the term 'four color process'.</p>
+<p>In addition to the standard CMYK model, Qt provides an alpha-channel to feature <a href="#alpha-blended-drawing">alpha-blended drawing</a>.</p>
+<p>See also <a href="qpalette.html">QPalette</a>, <a href="qbrush.html">QBrush</a>, and <a href="qapplication.html#setColorSpec">QApplication::setColorSpec</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Spec-enum"></a>enum QColor::Spec</h3>
+<p>The type of color specified, either RGB, HSV or CMYK.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QColor::Rgb</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QColor::Hsv</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QColor::Cmyk</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QColor::Invalid</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+</table></p>
+<p>See also <a href="qcolor.html#spec">spec</a>() and <a href="qcolor.html#convertTo">convertTo</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QColor"></a>QColor::QColor ()</h3>
+<p>Constructs an invalid color with the RGB value (0, 0, 0). An invalid color is a color that is not properly set up for the underlying window system.</p>
+<p>The alpha value of an invalid color is unspecified.</p>
+<p>See also <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-2"></a>QColor::QColor ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )</h3>
+<p>Constructs a color with the RGB value <i>r</i>, <i>g</i>, <i>b</i>, and the alpha-channel (transparency) value of <i>a</i>.</p>
+<p>The color is left invalid if any of the arguments are invalid.</p>
+<p>See also <a href="qcolor.html#setRgba">setRgba</a>() and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-3"></a>QColor::QColor ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>color</i> )</h3>
+<p>Constructs a color with the value <i>color</i>. The alpha component is ignored and set to solid.</p>
+<p>See also <a href="qcolor.html#fromRgb">fromRgb</a>() and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-4"></a>QColor::QColor ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Constructs a named color in the same way as <a href="qcolor.html#setNamedColor">setNamedColor</a>() using the given <i>name</i>.</p>
+<p>The color is left invalid if the <i>name</i> cannot be parsed.</p>
+<p>See also <a href="qcolor.html#setNamedColor">setNamedColor</a>(), <a href="qcolor.html#name">name</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-5"></a>QColor::QColor ( const char * <i>name</i> )</h3>
+<p>Constructs a named color in the same way as <a href="qcolor.html#setNamedColor">setNamedColor</a>() using the given <i>name</i>.</p>
+<p>The color is left invalid if the <i>name</i> cannot be parsed.</p>
+<p>See also <a href="qcolor.html#setNamedColor">setNamedColor</a>(), <a href="qcolor.html#name">name</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-6"></a>QColor::QColor ( const QColor &amp; <i>color</i> )</h3>
+<p>Constructs a color that is a copy of <i>color</i>.</p>
+<p>See also <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QColor-9"></a>QColor::QColor ( <a href="qt.html#GlobalColor-enum">Qt::GlobalColor</a> <i>color</i> )</h3>
+<p>Constructs a new color with a color value of <i>color</i>.</p>
+<p>See also <a href="qcolor.html#isValid">isValid</a>() and <a href="qcolor.html#predefined-colors">Predefined Colors</a>.</p>
+<h3 class="fn"><a name="allowX11ColorNames"></a>bool QColor::allowX11ColorNames ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if <a href="qcolor.html#setNamedColor">setNamedColor</a>() is allowed to look up colors in the X11 color database. By default, this function returns false.</p>
+<p><b>Note:</b> This function is only available on the X11 platform.</p>
+<p>See also <a href="qcolor.html#setAllowX11ColorNames">setAllowX11ColorNames</a>().</p>
+<h3 class="fn"><a name="alpha"></a>int QColor::alpha () const</h3>
+<p>Returns the alpha color component of this color.</p>
+<p>See also <a href="qcolor.html#setAlpha">setAlpha</a>(), <a href="qcolor.html#alphaF">alphaF</a>(), and <a href="qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p>
+<h3 class="fn"><a name="alphaF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::alphaF () const</h3>
+<p>Returns the alpha color component of this color.</p>
+<p>See also <a href="qcolor.html#setAlphaF">setAlphaF</a>(), <a href="qcolor.html#alpha">alpha</a>(), and <a href="qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p>
+<h3 class="fn"><a name="black"></a>int QColor::black () const</h3>
+<p>Returns the black color component of this color.</p>
+<p>See also <a href="qcolor.html#blackF">blackF</a>(), <a href="qcolor.html#getCmyk">getCmyk</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="blackF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::blackF () const</h3>
+<p>Returns the black color component of this color.</p>
+<p>See also <a href="qcolor.html#black">black</a>(), <a href="qcolor.html#getCmykF">getCmykF</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="blue"></a>int QColor::blue () const</h3>
+<p>Returns the blue color component of this color.</p>
+<p>See also <a href="qcolor.html#setBlue">setBlue</a>(), <a href="qcolor.html#blueF">blueF</a>(), and <a href="qcolor.html#getRgb">getRgb</a>().</p>
+<h3 class="fn"><a name="blueF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::blueF () const</h3>
+<p>Returns the blue color component of this color.</p>
+<p>See also <a href="qcolor.html#setBlueF">setBlueF</a>(), <a href="qcolor.html#blue">blue</a>(), and <a href="qcolor.html#getRgbF">getRgbF</a>().</p>
+<h3 class="fn"><a name="colorNames"></a><a href="qstringlist.html">QStringList</a> QColor::colorNames ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a <a href="qstringlist.html">QStringList</a> containing the color names Qt knows about.</p>
+<p>See also <a href="qcolor.html#predefined-colors">Predefined Colors</a>.</p>
+<h3 class="fn"><a name="convertTo"></a>QColor QColor::convertTo ( <a href="qcolor.html#Spec-enum">Spec</a> <i>colorSpec</i> ) const</h3>
+<p>Creates a copy of <i>this</i> color in the format specified by <i>colorSpec</i>.</p>
+<p>See also <a href="qcolor.html#spec">spec</a>(), <a href="qcolor.html#toCmyk">toCmyk</a>(), <a href="qcolor.html#toHsv">toHsv</a>(), <a href="qcolor.html#toRgb">toRgb</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="cyan"></a>int QColor::cyan () const</h3>
+<p>Returns the cyan color component of this color.</p>
+<p>See also <a href="qcolor.html#cyanF">cyanF</a>(), <a href="qcolor.html#getCmyk">getCmyk</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="cyanF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::cyanF () const</h3>
+<p>Returns the cyan color component of this color.</p>
+<p>See also <a href="qcolor.html#cyan">cyan</a>(), <a href="qcolor.html#getCmykF">getCmykF</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="darker"></a>QColor QColor::darker ( int <i>factor</i> = 200 ) const</h3>
+<p>Returns a darker (or lighter) color, but does not change this object.</p>
+<p>If the <i>factor</i> is greater than 100, this functions returns a darker color. Setting <i>factor</i> to 300 returns a color that has one-third the brightness. If the <i>factor</i> is less than 100, the return color is lighter, but we recommend using the <a href="qcolor.html#lighter">lighter</a>() function for this purpose. If the <i>factor</i> is 0 or negative, the return value is unspecified.</p>
+<p>The function converts the current RGB color to HSV, divides the value (V) component by <i>factor</i> and converts the color back to RGB.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qcolor.html#lighter">lighter</a>() and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="fromCmyk"></a>QColor QColor::fromCmyk ( int <i>c</i>, int <i>m</i>, int <i>y</i>, int <i>k</i>, int <i>a</i> = 255 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the given CMYK color values: <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p>See also <a href="qcolor.html#toCmyk">toCmyk</a>(), <a href="qcolor.html#fromCmykF">fromCmykF</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="fromCmykF"></a>QColor QColor::fromCmykF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>c</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>k</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the given CMYK color values: <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#toCmyk">toCmyk</a>(), <a href="qcolor.html#fromCmyk">fromCmyk</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="fromHsv"></a>QColor QColor::fromHsv ( int <i>h</i>, int <i>s</i>, int <i>v</i>, int <i>a</i> = 255 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>v</i> (value), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>The value of <i>s</i>, <i>v</i>, and <i>a</i> must all be in the range 0-255; the value of <i>h</i> must be in the range 0-359.</p>
+<p>See also <a href="qcolor.html#toHsv">toHsv</a>(), <a href="qcolor.html#fromHsvF">fromHsvF</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="fromHsvF"></a>QColor QColor::fromHsvF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>s</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>v</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the HSV color values, <i>h</i> (hue), <i>s</i> (saturation), <i>v</i> (value), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#toHsv">toHsv</a>(), <a href="qcolor.html#fromHsv">fromHsv</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="fromRgb"></a>QColor QColor::fromRgb ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the given <a href="qcolor.html#QRgb-typedef">QRgb</a> value <i>rgb</i>.</p>
+<p>Note that the alpha component of <i>rgb</i> is ignored (i.e&#x2e; it is automatically set to 255), use the <a href="qcolor.html#fromRgba">fromRgba</a>() function to include the alpha-channel specified by the given <a href="qcolor.html#QRgb-typedef">QRgb</a> value.</p>
+<p>See also <a href="qcolor.html#fromRgba">fromRgba</a>(), <a href="qcolor.html#fromRgbF">fromRgbF</a>(), <a href="qcolor.html#toRgb">toRgb</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="fromRgb-2"></a>QColor QColor::fromRgb ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the RGB color values, <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p>See also <a href="qcolor.html#toRgb">toRgb</a>(), <a href="qcolor.html#fromRgbF">fromRgbF</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="fromRgbF"></a>QColor QColor::fromRgbF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>r</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>g</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>b</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the RGB color values, <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#fromRgb">fromRgb</a>(), <a href="qcolor.html#toRgb">toRgb</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="fromRgba"></a>QColor QColor::fromRgba ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgba</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Static convenience function that returns a <a href="qcolor.html">QColor</a> constructed from the given <a href="qcolor.html#QRgb-typedef">QRgb</a> value <i>rgba</i>.</p>
+<p>Note that unlike the <a href="qcolor.html#fromRgb">fromRgb</a>() function, the alpha-channel specified by the given <a href="qcolor.html#QRgb-typedef">QRgb</a> value is included.</p>
+<p>See also <a href="qcolor.html#fromRgb">fromRgb</a>() and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="getCmyk"></a>void QColor::getCmyk ( int * <i>c</i>, int * <i>m</i>, int * <i>y</i>, int * <i>k</i>, int * <i>a</i> = 0 )</h3>
+<p>Sets the contents pointed to by <i>c</i>, <i>m</i>, <i>y</i>, <i>k</i>, and <i>a</i>, to the cyan, magenta, yellow, black, and alpha-channel (transparency) components of the color's CMYK value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#cyan">cyan</a>(), <a href="qcolor.html#magenta">magenta</a>(), <a href="qcolor.html#yellow">yellow</a>(), <a href="qcolor.html#black">black</a>() and <a href="qcolor.html#alpha">alpha</a>() functions.</p>
+<p>See also <a href="qcolor.html#setCmyk">setCmyk</a>() and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="getCmykF"></a>void QColor::getCmykF ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>c</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>m</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>k</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>a</i> = 0 )</h3>
+<p>Sets the contents pointed to by <i>c</i>, <i>m</i>, <i>y</i>, <i>k</i>, and <i>a</i>, to the cyan, magenta, yellow, black, and alpha-channel (transparency) components of the color's CMYK value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#cyanF">cyanF</a>(), <a href="qcolor.html#magentaF">magentaF</a>(), <a href="qcolor.html#yellowF">yellowF</a>(), <a href="qcolor.html#blackF">blackF</a>() and <a href="qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p>See also <a href="qcolor.html#setCmykF">setCmykF</a>() and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="getHsv"></a>void QColor::getHsv ( int * <i>h</i>, int * <i>s</i>, int * <i>v</i>, int * <i>a</i> = 0 ) const</h3>
+<p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>v</i>, and <i>a</i>, to the hue, saturation, value, and alpha-channel (transparency) components of the color's HSV value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#hue">hue</a>(), <a href="qcolor.html#saturation">saturation</a>(), <a href="qcolor.html#value">value</a>() and <a href="qcolor.html#alpha">alpha</a>() functions.</p>
+<p>See also <a href="qcolor.html#setHsv">setHsv</a>() and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="getHsvF"></a>void QColor::getHsvF ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>h</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>s</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>v</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>a</i> = 0 ) const</h3>
+<p>Sets the contents pointed to by <i>h</i>, <i>s</i>, <i>v</i>, and <i>a</i>, to the hue, saturation, value, and alpha-channel (transparency) components of the color's HSV value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#hueF">hueF</a>(), <a href="qcolor.html#saturationF">saturationF</a>(), <a href="qcolor.html#valueF">valueF</a>() and <a href="qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p>See also <a href="qcolor.html#setHsv">setHsv</a>() and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="getRgb"></a>void QColor::getRgb ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i>, int * <i>a</i> = 0 ) const</h3>
+<p>Sets the contents pointed to by <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i>, to the red, green, blue, and alpha-channel (transparency) components of the color's RGB value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#red">red</a>(), <a href="qcolor.html#green">green</a>(), <a href="qcolor.html#blue">blue</a>() and <a href="qcolor.html#alpha">alpha</a>() functions.</p>
+<p>See also <a href="qcolor.html#rgb">rgb</a>() and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="getRgbF"></a>void QColor::getRgbF ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>r</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>g</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>b</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>a</i> = 0 ) const</h3>
+<p>Sets the contents pointed to by <i>r</i>, <i>g</i>, <i>b</i>, and <i>a</i>, to the red, green, blue, and alpha-channel (transparency) components of the color's RGB value.</p>
+<p>Note that the components can be retrieved individually using the <a href="qcolor.html#redF">redF</a>(), <a href="qcolor.html#greenF">greenF</a>(), <a href="qcolor.html#blueF">blueF</a>() and <a href="qcolor.html#alphaF">alphaF</a>() functions.</p>
+<p>See also <a href="qcolor.html#rgb">rgb</a>() and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="green"></a>int QColor::green () const</h3>
+<p>Returns the green color component of this color.</p>
+<p>See also <a href="qcolor.html#setGreen">setGreen</a>(), <a href="qcolor.html#greenF">greenF</a>(), and <a href="qcolor.html#getRgb">getRgb</a>().</p>
+<h3 class="fn"><a name="greenF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::greenF () const</h3>
+<p>Returns the green color component of this color.</p>
+<p>See also <a href="qcolor.html#setGreenF">setGreenF</a>(), <a href="qcolor.html#green">green</a>(), and <a href="qcolor.html#getRgbF">getRgbF</a>().</p>
+<h3 class="fn"><a name="hue"></a>int QColor::hue () const</h3>
+<p>Returns the hue color component of this color.</p>
+<p>See also <a href="qcolor.html#hueF">hueF</a>(), <a href="qcolor.html#getHsv">getHsv</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="hueF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::hueF () const</h3>
+<p>Returns the hue color component of this color.</p>
+<p>See also <a href="qcolor.html#hue">hue</a>(), <a href="qcolor.html#getHsvF">getHsvF</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="isValid"></a>bool QColor::isValid () const</h3>
+<p>Returns true if the color is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="lighter"></a>QColor QColor::lighter ( int <i>factor</i> = 150 ) const</h3>
+<p>Returns a lighter (or darker) color, but does not change this object.</p>
+<p>If the <i>factor</i> is greater than 100, this functions returns a lighter color. Setting <i>factor</i> to 150 returns a color that is 50% brighter. If the <i>factor</i> is less than 100, the return color is darker, but we recommend using the <a href="qcolor.html#darker">darker</a>() function for this purpose. If the <i>factor</i> is 0 or negative, the return value is unspecified.</p>
+<p>The function converts the current RGB color to HSV, multiplies the value (V) component by <i>factor</i> and converts the color back to RGB.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qcolor.html#darker">darker</a>() and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="magenta"></a>int QColor::magenta () const</h3>
+<p>Returns the magenta color component of this color.</p>
+<p>See also <a href="qcolor.html#magentaF">magentaF</a>(), <a href="qcolor.html#getCmyk">getCmyk</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="magentaF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::magentaF () const</h3>
+<p>Returns the magenta color component of this color.</p>
+<p>See also <a href="qcolor.html#magenta">magenta</a>(), <a href="qcolor.html#getCmykF">getCmykF</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="name"></a><a href="qstring.html">QString</a> QColor::name () const</h3>
+<p>Returns the name of the color in the format &quot;#RRGGBB&quot;; i.e&#x2e; a &quot;#&quot; character followed by three two-digit hexadecimal numbers.</p>
+<p>See also <a href="qcolor.html#setNamedColor">setNamedColor</a>().</p>
+<h3 class="fn"><a name="red"></a>int QColor::red () const</h3>
+<p>Returns the red color component of this color.</p>
+<p>See also <a href="qcolor.html#setRed">setRed</a>(), <a href="qcolor.html#redF">redF</a>(), and <a href="qcolor.html#getRgb">getRgb</a>().</p>
+<h3 class="fn"><a name="redF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::redF () const</h3>
+<p>Returns the red color component of this color.</p>
+<p>See also <a href="qcolor.html#setRedF">setRedF</a>(), <a href="qcolor.html#red">red</a>(), and <a href="qcolor.html#getRgbF">getRgbF</a>().</p>
+<h3 class="fn"><a name="rgb"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> QColor::rgb () const</h3>
+<p>Returns the RGB value of the color. The alpha is stripped for compatibility.</p>
+<p>See also <a href="qcolor.html#setRgb">setRgb</a>(), <a href="qcolor.html#getRgb">getRgb</a>(), and <a href="qcolor.html#rgba">rgba</a>().</p>
+<h3 class="fn"><a name="rgba"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> QColor::rgba () const</h3>
+<p>Returns the RGB value of the color. Note that unlike <a href="qcolor.html#rgb">rgb</a>(), the alpha is not stripped.</p>
+<p>For an invalid color, the alpha value of the returned color is unspecified.</p>
+<p>See also <a href="qcolor.html#setRgba">setRgba</a>() and <a href="qcolor.html#rgb">rgb</a>().</p>
+<h3 class="fn"><a name="saturation"></a>int QColor::saturation () const</h3>
+<p>Returns the saturation color component of this color.</p>
+<p>See also <a href="qcolor.html#saturationF">saturationF</a>(), <a href="qcolor.html#getHsv">getHsv</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="saturationF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::saturationF () const</h3>
+<p>Returns the saturation color component of this color.</p>
+<p>See also <a href="qcolor.html#saturation">saturation</a>(), <a href="qcolor.html#getHsvF">getHsvF</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="setAllowX11ColorNames"></a>void QColor::setAllowX11ColorNames ( bool <i>enabled</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Allow <a href="qcolor.html#setNamedColor">setNamedColor</a>() to look up colors in the X11 color database if <i>enabled</i>. By default, <a href="qcolor.html#setNamedColor">setNamedColor</a>() does <i>not</i> look up colors in the X11 color database.</p>
+<p><b>Note:</b> This function is only available on the X11 platform.</p>
+<p>See also <a href="qcolor.html#setNamedColor">setNamedColor</a>() and <a href="qcolor.html#allowX11ColorNames">allowX11ColorNames</a>().</p>
+<h3 class="fn"><a name="setAlpha"></a>void QColor::setAlpha ( int <i>alpha</i> )</h3>
+<p>Sets the alpha of this color to <i>alpha</i>. Integer alpha is specified in the range 0-255.</p>
+<p>See also <a href="qcolor.html#alpha">alpha</a>(), <a href="qcolor.html#alphaF">alphaF</a>(), and <a href="qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p>
+<h3 class="fn"><a name="setAlphaF"></a>void QColor::setAlphaF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>alpha</i> )</h3>
+<p>Sets the alpha of this color to <i>alpha</i>. qreal alpha is specified in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#alphaF">alphaF</a>(), <a href="qcolor.html#alpha">alpha</a>(), and <a href="qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a>.</p>
+<h3 class="fn"><a name="setBlue"></a>void QColor::setBlue ( int <i>blue</i> )</h3>
+<p>Sets the blue color component of this color to <i>blue</i>. Int components are specified in the range 0-255.</p>
+<p>See also <a href="qcolor.html#blue">blue</a>(), <a href="qcolor.html#blueF">blueF</a>(), and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="setBlueF"></a>void QColor::setBlueF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>blue</i> )</h3>
+<p>Sets the blue color component of this color to <i>blue</i>. Float components are specified in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#blueF">blueF</a>(), <a href="qcolor.html#blue">blue</a>(), and <a href="qcolor.html#setRgbF">setRgbF</a>().</p>
+<h3 class="fn"><a name="setCmyk"></a>void QColor::setCmyk ( int <i>c</i>, int <i>m</i>, int <i>y</i>, int <i>k</i>, int <i>a</i> = 255 )</h3>
+<p>Sets the color to CMYK values, <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0-255.</p>
+<p>See also <a href="qcolor.html#getCmyk">getCmyk</a>(), <a href="qcolor.html#setCmykF">setCmykF</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="setCmykF"></a>void QColor::setCmykF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>c</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>m</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>y</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>k</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )</h3>
+<p>Sets the color to CMYK values, <i>c</i> (cyan), <i>m</i> (magenta), <i>y</i> (yellow), <i>k</i> (black), and <i>a</i> (alpha-channel, i.e&#x2e; transparency).</p>
+<p>All the values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#getCmykF">getCmykF</a>(), <a href="qcolor.html#setCmyk">setCmyk</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="setGreen"></a>void QColor::setGreen ( int <i>green</i> )</h3>
+<p>Sets the green color component of this color to <i>green</i>. Int components are specified in the range 0-255.</p>
+<p>See also <a href="qcolor.html#green">green</a>(), <a href="qcolor.html#greenF">greenF</a>(), and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="setGreenF"></a>void QColor::setGreenF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>green</i> )</h3>
+<p>Sets the green color component of this color to <i>green</i>. Float components are specified in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#greenF">greenF</a>(), <a href="qcolor.html#green">green</a>(), and <a href="qcolor.html#setRgbF">setRgbF</a>().</p>
+<h3 class="fn"><a name="setHsv"></a>void QColor::setHsv ( int <i>h</i>, int <i>s</i>, int <i>v</i>, int <i>a</i> = 255 )</h3>
+<p>Sets a HSV color value; <i>h</i> is the hue, <i>s</i> is the saturation, <i>v</i> is the value and <i>a</i> is the alpha component of the HSV color.</p>
+<p>The saturation, value and alpha-channel values must be in the range 0-255, and the hue value must be greater than -1.</p>
+<p>See also <a href="qcolor-qt3.html#hsv">hsv</a>(), <a href="qcolor.html#getHsv">getHsv</a>(), <a href="qcolor.html#setHsvF">setHsvF</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="setHsvF"></a>void QColor::setHsvF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>h</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>s</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>v</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )</h3>
+<p>Sets a HSV color value; <i>h</i> is the hue, <i>s</i> is the saturation, <i>v</i> is the value and <i>a</i> is the alpha component of the HSV color.</p>
+<p>All the values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#getHsvF">getHsvF</a>(), <a href="qcolor.html#setHsv">setHsv</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="setNamedColor"></a>void QColor::setNamedColor ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets the RGB value of this <a href="qcolor.html">QColor</a> to <i>name</i>, which may be in one of these formats:</p>
+<ul>
+<li>#RGB (each of R, G, and B is a single hex digit)</li>
+<li>#RRGGBB</li>
+<li>#RRRGGGBBB</li>
+<li>#RRRRGGGGBBBB</li>
+<li>A name from the list of colors defined in the list of <a href="http://www.w3.org/TR/SVG/types.html#ColorKeywords">SVG color keyword names</a> provided by the World Wide Web Consortium; for example, &quot;steelblue&quot; or &quot;gainsboro&quot;. These color names work on all platforms.</li>
+<li><tt>transparent</tt> - representing the absence of a color.</li>
+<li><i>X11 only</i>: If <a href="qcolor.html#allowX11ColorNames">allowX11ColorNames</a>() returns true, any valid X11 color name. See the documentation for <tt>XParseColor()</tt> for information about valid X11 color names.</li>
+</ul>
+<p>The color is invalid if <i>name</i> cannot be parsed.</p>
+<p>See also <a href="qcolor.html#QColor">QColor</a>(), <a href="qcolor.html#name">name</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#allowX11ColorNames">allowX11ColorNames</a>().</p>
+<h3 class="fn"><a name="setRed"></a>void QColor::setRed ( int <i>red</i> )</h3>
+<p>Sets the red color component of this color to <i>red</i>. Int components are specified in the range 0-255.</p>
+<p>See also <a href="qcolor.html#red">red</a>(), <a href="qcolor.html#redF">redF</a>(), and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="setRedF"></a>void QColor::setRedF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>red</i> )</h3>
+<p>Sets the red color component of this color to <i>red</i>. Float components are specified in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#redF">redF</a>(), <a href="qcolor.html#red">red</a>(), and <a href="qcolor.html#setRgbF">setRgbF</a>().</p>
+<h3 class="fn"><a name="setRgb"></a>void QColor::setRgb ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> = 255 )</h3>
+<p>Sets the RGB value to <i>r</i>, <i>g</i>, <i>b</i> and the alpha value to <i>a</i>.</p>
+<p>All the values must be in the range 0-255.</p>
+<p>See also <a href="qcolor.html#rgb">rgb</a>(), <a href="qcolor.html#getRgb">getRgb</a>(), and <a href="qcolor.html#setRgbF">setRgbF</a>().</p>
+<h3 class="fn"><a name="setRgb-2"></a>void QColor::setRgb ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the RGB value to <i>rgb</i>, ignoring the alpha.</p>
+<h3 class="fn"><a name="setRgbF"></a>void QColor::setRgbF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>r</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>g</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>b</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>a</i> = 1.0 )</h3>
+<p>Sets the color channels of this color to <i>r</i> (red), <i>g</i> (green), <i>b</i> (blue) and <i>a</i> (alpha, transparency).</p>
+<p>All values must be in the range 0.0-1.0&#x2e;</p>
+<p>See also <a href="qcolor.html#rgb">rgb</a>(), <a href="qcolor.html#getRgbF">getRgbF</a>(), and <a href="qcolor.html#setRgb">setRgb</a>().</p>
+<h3 class="fn"><a name="setRgba"></a>void QColor::setRgba ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgba</i> )</h3>
+<p>Sets the RGBA value to <i>rgba</i>. Note that unlike setRgb(<a href="qcolor.html#QRgb-typedef">QRgb</a> rgb), this function does not ignore the alpha.</p>
+<p>See also <a href="qcolor.html#rgba">rgba</a>() and <a href="qcolor.html#rgb">rgb</a>().</p>
+<h3 class="fn"><a name="spec"></a><a href="qcolor.html#Spec-enum">Spec</a> QColor::spec () const</h3>
+<p>Returns how the color was specified.</p>
+<p>See also <a href="qcolor.html#Spec-enum">Spec</a> and <a href="qcolor.html#convertTo">convertTo</a>().</p>
+<h3 class="fn"><a name="toCmyk"></a>QColor QColor::toCmyk () const</h3>
+<p>Creates and returns a CMYK <a href="qcolor.html">QColor</a> based on this color.</p>
+<p>See also <a href="qcolor.html#fromCmyk">fromCmyk</a>(), <a href="qcolor.html#convertTo">convertTo</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="toHsv"></a>QColor QColor::toHsv () const</h3>
+<p>Creates and returns an HSV <a href="qcolor.html">QColor</a> based on this color.</p>
+<p>See also <a href="qcolor.html#fromHsv">fromHsv</a>(), <a href="qcolor.html#convertTo">convertTo</a>(), <a href="qcolor.html#isValid">isValid</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="toRgb"></a>QColor QColor::toRgb () const</h3>
+<p>Create and returns an RGB <a href="qcolor.html">QColor</a> based on this color.</p>
+<p>See also <a href="qcolor.html#fromRgb">fromRgb</a>(), <a href="qcolor.html#convertTo">convertTo</a>(), and <a href="qcolor.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="value"></a>int QColor::value () const</h3>
+<p>Returns the value color component of this color.</p>
+<p>See also <a href="qcolor.html#valueF">valueF</a>(), <a href="qcolor.html#getHsv">getHsv</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="valueF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::valueF () const</h3>
+<p>Returns the value color component of this color.</p>
+<p>See also <a href="qcolor.html#value">value</a>(), <a href="qcolor.html#getHsvF">getHsvF</a>(), and <a href="qcolor.html#the-hsv-color-model">The HSV Color Model</a>.</p>
+<h3 class="fn"><a name="yellow"></a>int QColor::yellow () const</h3>
+<p>Returns the yellow color component of this color.</p>
+<p>See also <a href="qcolor.html#yellowF">yellowF</a>(), <a href="qcolor.html#getCmyk">getCmyk</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="yellowF"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QColor::yellowF () const</h3>
+<p>Returns the yellow color component of this color.</p>
+<p>See also <a href="qcolor.html#yellow">yellow</a>(), <a href="qcolor.html#getCmykF">getCmykF</a>(), and <a href="qcolor.html#the-cmyk-color-model">The CMYK Color Model</a>.</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QColor::operator QVariant () const</h3>
+<p>Returns the color as a <a href="qvariant.html">QVariant</a></p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QColor::operator!= ( const QColor &amp; <i>color</i> ) const</h3>
+<p>Returns true if this color has a different RGB value from the color <i>color</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QColor &amp; QColor::operator= ( const QColor &amp; <i>color</i> )</h3>
+<p>Assigns a copy of the color <i>color</i> to this color, and returns a reference to it.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QColor &amp; QColor::operator= ( <a href="qt.html#GlobalColor-enum">Qt::GlobalColor</a> <i>color</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns a copy of the <i>color</i> and returns a reference to this color.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QColor::operator== ( const QColor &amp; <i>color</i> ) const</h3>
+<p>Returns true if this color has the same RGB value as the color <i>color</i>; otherwise returns false.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="QRgb-typedef"></a>typedef QRgb</h3>
+<p>An ARGB quadruplet on the format #AARRGGBB, equivalent to an unsigned int.</p>
+<p>Note that the type also holds a value for the alpha-channel. The default alpha channel is <tt>ff</tt>, i.e opaque. For more information, see the <a href="qcolor.html#alpha-blended-drawing">Alpha-Blended Drawing</a> section.</p>
+<p>See also <a href="qcolor.html#rgb">QColor::rgb</a>() and <a href="qcolor.html#rgba">QColor::rgba</a>().</p>
+<h3 class="fn"><a name="qAlpha"></a>int qAlpha ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgba</i> )</h3>
+<p>Returns the alpha component of the ARGB quadruplet <i>rgba</i>.</p>
+<p>See also <a href="qcolor.html#qRgb">qRgb</a>() and <a href="qcolor.html#alpha">QColor::alpha</a>().</p>
+<h3 class="fn"><a name="qBlue"></a>int qBlue ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )</h3>
+<p>Returns the blue component of the ARGB quadruplet <i>rgb</i>.</p>
+<p>See also <a href="qcolor.html#qRgb">qRgb</a>() and <a href="qcolor.html#blue">QColor::blue</a>().</p>
+<h3 class="fn"><a name="qGray"></a>int qGray ( int <i>r</i>, int <i>g</i>, int <i>b</i> )</h3>
+<p>Returns a gray value (0 to 255) from the (<i>r</i>, <i>g</i>, <i>b</i>) triplet.</p>
+<p>The gray value is calculated using the formula (<i>r</i> * 11 + <i>g</i> * 16 + <i>b</i> * 5)/32.</p>
+<h3 class="fn"><a name="qGray-2"></a>int qGray ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a gray value (0 to 255) from the given ARGB quadruplet <i>rgb</i>.</p>
+<p>The gray value is calculated using the formula (R * 11 + G * 16 + B * 5)/32. Note that the alpha-channel is ignored.</p>
+<h3 class="fn"><a name="qGreen"></a>int qGreen ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )</h3>
+<p>Returns the green component of the ARGB quadruplet <i>rgb</i>.</p>
+<p>See also <a href="qcolor.html#qRgb">qRgb</a>() and <a href="qcolor.html#green">QColor::green</a>().</p>
+<h3 class="fn"><a name="qRed"></a>int qRed ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>rgb</i> )</h3>
+<p>Returns the red component of the ARGB quadruplet <i>rgb</i>.</p>
+<p>See also <a href="qcolor.html#qRgb">qRgb</a>() and <a href="qcolor.html#red">QColor::red</a>().</p>
+<h3 class="fn"><a name="qRgb"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> qRgb ( int <i>r</i>, int <i>g</i>, int <i>b</i> )</h3>
+<p>Returns the ARGB quadruplet (255, <i>r</i>, <i>g</i>, <i>b</i>).</p>
+<p>See also <a href="qcolor.html#qRgba">qRgba</a>(), <a href="qcolor.html#qRed">qRed</a>(), <a href="qcolor.html#qGreen">qGreen</a>(), and <a href="qcolor.html#qBlue">qBlue</a>().</p>
+<h3 class="fn"><a name="qRgba"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> qRgba ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> )</h3>
+<p>Returns the ARGB quadruplet (<i>a</i>, <i>r</i>, <i>g</i>, <i>b</i>).</p>
+<p>See also <a href="qcolor.html#qRgb">qRgb</a>(), <a href="qcolor.html#qRed">qRed</a>(), <a href="qcolor.html#qGreen">qGreen</a>(), and <a href="qcolor.html#qBlue">qBlue</a>().</p>
+<h3 class="fn"><a name="operator-lt-lt-13"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QColor &amp; <i>color</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the <i>color</i> to the <i>stream</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-6"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QColor &amp; <i>color</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the <i>color</i> from the <i>stream</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

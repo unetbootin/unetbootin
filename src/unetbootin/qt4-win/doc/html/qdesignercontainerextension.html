@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtdesigner.qdoc -->
+<head>
+  <title>Qt 4.4: QDesignerContainerExtension Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerContainerExtension Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerContainerExtension class allows you to add pages to a custom multi-page container in Qt Designer's workspace. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerContainerExtension&gt;</pre><ul>
+<li><a href="qdesignercontainerextension-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qdesignercontainerextension.html#dtor.QDesignerContainerExtension">~QDesignerContainerExtension</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignercontainerextension.html#addWidget">addWidget</a></b> ( QWidget * <i>page</i> ) = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignercontainerextension.html#count">count</a></b> () const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qdesignercontainerextension.html#currentIndex">currentIndex</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignercontainerextension.html#insertWidget">insertWidget</a></b> ( int <i>index</i>, QWidget * <i>page</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignercontainerextension.html#remove">remove</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignercontainerextension.html#setCurrentIndex">setCurrentIndex</a></b> ( int <i>index</i> ) = 0</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qdesignercontainerextension.html#widget">widget</a></b> ( int <i>index</i> ) const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerContainerExtension class allows you to add pages to a custom multi-page container in Qt Designer's workspace.</p>
+<p>QDesignerContainerExtension provide an interface for creating custom container extensions. A container extension consists of a collection of functions that <i>Qt Designer</i> needs to manage a multi-page container plugin, and a list of the container's pages.</p>
+<p align="center"><img src="images/containerextension-example.png" /></p><p><b>Warning:</b> This is <i>not</i> an extension for container plugins in general, only custom <i>multi-page</i> containers.</p>
+<p>To create a container extension, your extension class must inherit from both <a href="qobject.html">QObject</a> and QDesignerContainerExtension. For example:</p>
+<pre>         class MyContainerExtension : public QObject,
+                public QDesignerContainerExtension
+         {
+             Q_OBJECT
+             Q_INTERFACES(QDesignerContainerExtension)
+
+         public:
+             MyContainerExtension(MyCustomWidget *widget,
+                                  QObject *parent = 0);
+             int count() const;
+             QWidget *widget(int index) const;
+             int currentIndex() const;
+             void setCurrentIndex(int index);
+             void addWidget(QWidget *widget);
+             void insertWidget(int index, QWidget *widget);
+             void remove(int index);
+
+         private:
+             MyCustomWidget *myWidget;
+         };</pre>
+<p>Since we are implementing an interface, we must ensure that it's made known to the meta object system using the <a href="qobject.html#Q_INTERFACES">Q_INTERFACES</a>() macro. This enables <i>Qt Designer</i> to use the <a href="qobject.html#qobject_cast">qobject_cast</a>() function to query for supported interfaces using nothing but a <a href="qobject.html">QObject</a> pointer.</p>
+<p>You must reimplement several functions to enable <i>Qt Designer</i> to manage a custom multi-page container widget: <i>Qt Designer</i> uses <a href="qdesignercontainerextension.html#count">count</a>() to keep track of the number pages in your container, <a href="qdesignercontainerextension.html#widget">widget</a>() to return the page at a given index in the list of the container's pages, and <a href="qdesignercontainerextension.html#currentIndex">currentIndex</a>() to return the list index of the selected page. <i>Qt Designer</i> uses the <a href="qdesignercontainerextension.html#addWidget">addWidget</a>() function to add a given page to the container, expecting it to be appended to the list of pages, while it expects the <a href="qdesignercontainerextension.html#insertWidget">insertWidget</a>() function to add a given page to the container by inserting it at a given index.</p>
+<p>In <i>Qt Designer</i> the extensions are not created until they are required. For that reason you must also create a <a href="qextensionfactory.html">QExtensionFactory</a>, i.e a class that is able to make an instance of your extension, and register it using <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a>.</p>
+<p>When a container extension is required, <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a> will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until the first one that is able to create a container extension, is found. This factory will then create the extension for the plugin.</p>
+<p>There are four available types of extensions in <i>Qt Designer</i>: QDesignerContainerExtension , <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a>, <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a> and <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a>. <i>Qt Designer</i>'s behavior is the same whether the requested extension is associated with a multi page container, a member sheet, a property sheet or a task menu.</p>
+<p>The <a href="qextensionfactory.html">QExtensionFactory</a> class provides a standard extension factory, and can also be used as an interface for custom extension factories. You can either create a new <a href="qextensionfactory.html">QExtensionFactory</a> and reimplement the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function. For example:</p>
+<pre>         QObject *ANewExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             if (iid != Q_TYPEID(QDesignerContainerExtension))
+                 return 0;
+
+             if (MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;
+                    (object))
+                 return new MyContainerExtension(widget, parent);
+
+             return 0;
+         }</pre>
+<p>Or you can use an existing factory, expanding the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function to make the factory able to create a container extension as well. For example:</p>
+<pre>         QObject *AGeneralExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;(object);
+
+             if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerTaskMenuExtension))) {
+                 return new MyTaskMenuExtension(widget, parent);
+
+             } else if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerContainerExtension))) {
+                 return new MyContainerExtension(widget, parent);
+
+             } else {
+                 return 0;
+             }
+         }</pre>
+<p>For a complete example using the QDesignerContainerExtension class, see the <a href="designer-containerextension.html">Container Extension example</a>. The example shows how to create a custom multi-page plugin for <i>Qt Designer</i>.</p>
+<p>See also <a href="qextensionfactory.html">QExtensionFactory</a>, <a href="qextensionmanager.html">QExtensionManager</a>, and <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QDesignerContainerExtension"></a>QDesignerContainerExtension::~QDesignerContainerExtension ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the extension.</p>
+<h3 class="fn"><a name="addWidget"></a>void QDesignerContainerExtension::addWidget ( <a href="qwidget.html">QWidget</a> * <i>page</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Adds the given <i>page</i> to the container by appending it to the extension's list of pages.</p>
+<p>See also <a href="qdesignercontainerextension.html#insertWidget">insertWidget</a>(), <a href="qdesignercontainerextension.html#remove">remove</a>(), and <a href="qdesignercontainerextension.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="count"></a>int QDesignerContainerExtension::count () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the number of pages in the container.</p>
+<h3 class="fn"><a name="currentIndex"></a>int QDesignerContainerExtension::currentIndex () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the index of the currently selected page in the container.</p>
+<p>See also <a href="qdesignercontainerextension.html#setCurrentIndex">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="insertWidget"></a>void QDesignerContainerExtension::insertWidget ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>page</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Adds the given <i>page</i> to the container by inserting it at the given <i>index</i> in the extension's list of pages.</p>
+<p>See also <a href="qdesignercontainerextension.html#addWidget">addWidget</a>(), <a href="qdesignercontainerextension.html#remove">remove</a>(), and <a href="qdesignercontainerextension.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="remove"></a>void QDesignerContainerExtension::remove ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Removes the page at the given <i>index</i> from the extension's list of pages.</p>
+<p>See also <a href="qdesignercontainerextension.html#addWidget">addWidget</a>() and <a href="qdesignercontainerextension.html#insertWidget">insertWidget</a>().</p>
+<h3 class="fn"><a name="setCurrentIndex"></a>void QDesignerContainerExtension::setCurrentIndex ( int <i>index</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the the currently selected page in the container to be the page at the given <i>index</i> in the extension's list of pages.</p>
+<p>See also <a href="qdesignercontainerextension.html#currentIndex">currentIndex</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QDesignerContainerExtension::widget ( int <i>index</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the page at the given <i>index</i> in the extension's list of pages.</p>
+<p>See also <a href="qdesignercontainerextension.html#addWidget">addWidget</a>() and <a href="qdesignercontainerextension.html#insertWidget">insertWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

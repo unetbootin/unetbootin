@@ -1,0 +1,338 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-arthur.html
+    \title The Arthur Paint System
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage The Interview Framework
+    \nextpage The Scribe Classes
+
+    This document describes Qt 4's painting system, providing a
+    comparison between the approaches used by Qt when rendering
+    graphics in Qt 3 and Qt 4.
+
+    \tableofcontents
+
+    \section1 Architecture
+
+    The Qt 4 Paint System is primarily based on the classes
+    QPainter, QPaintDevice, and QPaintEngine. QPainter is the
+    class used to perform drawing operations, such as drawLine()
+    and drawRect(). QPaintDevice represents a device that can be
+    painted on using a QPainter; both QWidget and QPixmap are
+    QPaintDevices. QPaintEngine provides the interface that the
+    painter uses to draw onto different types of devices.
+
+    \section2 A Look Back at Qt 3
+
+    In Qt 3, QPainter could be used to draw on widgets and pixmaps.
+    (It could also be used to draw to printers on Windows and Mac OS
+    X.) When other paint devices needed to be supported, such as
+    QPrinter on X11, this was done by deriving from QPaintDevice and
+    reimplementing the virtual function QPaintDevice::cmd(). A
+    reimplemented paint device was treated as an external device.
+
+    QPainter was capable of recognizing external devices and could
+    serialize each paint operation to the reimplemented cmd()
+    function. This allowed reimplementation of arbitrary devices, but
+    the approach has some disadvantages which we have addressed in
+    Qt 4. One of these is that an external device could not reuse any
+    functionality implemented in QPainter since QPainter was tied to
+    widget/pixmap painting on that platform. Supporting multiple
+    device backends, such as OpenGL, was therefore inconvenient and
+    not very efficient.
+
+    This has led us to devise a more convenient and intuitive API for
+    Qt 4.
+
+    \section2 How Painting is Done in Qt 4
+
+    In Qt 4 we have introduced the QPaintEngine abstract class.
+    Implementations of this class provide the concrete functionality
+    needed to draw to specific device types. The QPaintEngine class
+    is only used internally by QPainter and QPaintDevice, and it is
+    hidden from application programmers unless they reimplement their own
+    device types for their own QPaintEngine subclasses. Qt currently
+    provides paint engines for the following platforms and APIs:
+
+    \list
+    \o A pixel-based engine for the Windows platform that is
+       also used to draw onto QImages on all platforms
+    \o OpenGL on all platforms
+    \o PostScript on Linux, Unix, and Mac OS X
+    \o QuickDraw and CoreGraphics on Mac OS X
+    \o X11 and the X Render Extension on Linux and Unix systems
+    \omit
+    \o QVFb, VNC, and LinuxFb for Qt for Embedded Linux
+    \endomit
+    \endlist
+
+    To implement support for a new backend, you must derive from
+    QPaintEngine and reimplement its virtual functions. You also need
+    to derive from QPaintDevice and reimplement the virtual function
+    QPaintDevice::paintEngine() to tell QPainter which paint engine
+    should be used to draw on this particular device.
+
+    The main benefit of this approach is that all painting follows the
+    same painting pipeline. This means that adding support for new features
+    and providing default implementations for unsupported ones has
+    become much simpler.
+
+    \section1 New Features in the Qt 4 Paint System
+
+    \section2 Gradient Brushes
+
+    With Qt 4 it is possible to fill shapes using gradient
+    brushes. A gradient in this case is used to describe the transition
+    from one color at a given point to different color at another point. A
+    gradient can span from one color to another or over a
+    number of colors by specifying multiple colors at positions in the
+    gradient area. Qt 4 supports linear, radial, and conical gradients.
+
+    Linear gradients are specified using two control points.
+    Setting a linear gradient brush is done by creating a QLinearGradient
+    object and setting it as a brush.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 0
+
+    The code shown above produces a pattern as show in the following
+    pixmap:
+
+    \img diagonalGradient.png
+
+    Radial gradients are specified using a center, a radius, and a
+    focal point. Setting a radial brush is done by creating a QRadialGradient
+    object and setting it as a brush.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 1
+
+    The code shown above produces a pattern as shown in the following
+    pixmap:
+
+    \img radialGradient.png
+
+    Conical gradients are specified using a center and a start
+    angle. Setting a conical brush is done by creating a
+    QConicalGradient object and setting it as a brush.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 2
+
+    The code shown above produces a pattern as shown in the following
+    pixmap:
+
+    \img conicalGradient.png
+
+    \section2 Alpha-Blended Drawing
+
+    With Qt 4 we support alpha-blended outlining and filling. The
+    alpha channel of a color is defined through QColor. The alpha
+    channel specifies the transparency effect, 0 represents a fully
+    transparent color, while 255 represents a fully opaque color. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 3
+
+    The code shown above produces the following output:
+
+    \img alphafill.png
+
+    Alpha-blended drawing is supported on Windows, Mac OS X, and on
+    X11 systems that have the X Render extension installed.
+
+
+    \section2 QPainter and QGLWidget
+
+    It is now possible to open a QPainter on a QGLWidget as if it
+    were a normal QWidget. One huge benefit from this is that we
+    utilize the high performance of OpenGL for most drawing
+    operations, such as transformations and pixmap drawing.
+
+
+    \section2 Anti-Aliased Edges
+
+    On platforms where this is supported by the native drawing API, we
+    provide the option of turning on anti-aliased edges when drawing
+    graphics primitives.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 4
+
+    This produces the following output:
+
+    \img antialiased.png
+
+    Anti-aliasing is supported when drawing to a QImage and on all
+    systems, except on X11 when XRender is not present.
+
+
+    \section2 Extensive Use of Native Graphics Operations
+
+    Where this makes sense, Qt uses native graphics
+    operations. The benefit we gain from this is that these operations
+    can potentially be performed in hardware, giving significant
+    speed improvements over many pure-software implementations.
+
+    Among these are native transformations (Mac OS X and OpenGL),
+    making painting with a world matrix much faster. Some pixmap
+    operations have also been moved closer to the underlying
+    hardware implementations.
+
+
+    \section2 Painter Paths
+
+    A painter path is an object composed of a number of graphical
+    building blocks, such as rectangles, ellipses, lines, and curves.
+    A painter path can be used for filling, outlining, and for clipping.
+    The main advantage of painter paths over normal drawing operations
+    is that it is possible to build up non-linear shapes which can be
+    drawn later in one go.
+
+    Building blocks can be joined in closed subpaths, such as a
+    rectangle or an ellipse, or they can exist independently as unclosed
+    subpaths, although an unclosed path will not be filled.
+
+    Below is a code example on how a path can be used. The
+    painter in this case has a pen width of 3 and a light blue brush. We
+    first add a rectangle, which becomes a closed subpath.  We then add
+    two bezier curves, and finally draw the entire path.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 5
+
+    The code above produces the following output:
+
+    \img pathexample.png
+
+
+    \section2 Widget Double-Buffering
+
+    In Qt 4, all widgets are double-buffered by default.
+
+    In previous versions of Qt double-buffering was achieved by
+    painting to an off-screen pixmap then copying the pixmap to the
+    screen. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 6
+
+    Since the double-buffering is handled by QWidget internally this
+    now becomes:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 7
+
+    Double-buffering is turned on by default, but can be turned off for
+    individual widgets by setting the widget attribute
+    Qt::WA_PaintOnScreen.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 8
+
+    \section2 Pen and Brush Transformation
+
+    In Qt 3, pens and brushes weren't affected by the painter's
+    transformation matrix. For example, if you drew a rectangle with a
+    pen width of 1 using a scaled painter, the resulting line width
+    would still be 1. This made it difficult to implement features
+    such as zooming and high-resolution printing.
+
+    In Qt 4, pens and brushes honor the painter's transformation
+    matrix.
+
+    Note that this feature is still in development and not yet
+    supported on all platforms.
+
+    \section2 Custom Filled Pens
+
+    In Qt 4, it is possible to specify how an outline should be
+    filled.  It can be a solid color or a QBrush, which makes it
+    possible to specify both texture and gradient fills for both
+    text and outlines.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 9
+
+    The code above produces the following output:
+
+    \img gradientText.png
+
+    \section2 QImage as a Paint Device
+
+    A great improvement of Qt 4 over previous versions it that it now
+    provides a pixel-based raster paint engine which allows users to
+    open a painter on a QImage. The QImage paint engine supports the
+    full feature set of QPainter (paths, antialiasing, alphablending,
+    etc.) and can be used on all platforms.
+
+    One advantage of this is that it is possible to guarantee the
+    pixel exactness of any drawing operation in a platform-independent
+    way.
+
+    Painting on an image is as simple as drawing on any other paint device.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-arthur.qdoc 10
+
+    \section2 SVG Rendering Support
+
+    \l{Scalable Vector Graphics} (SVG) is an language for describing both static
+    and animated two-dimensional vector graphics. Qt includes support for the
+    \l{SVG 1.2 Tiny Static Features}{static features} of \l{SVG 1.2 Tiny}, taking
+    advantage of the improved paint system in Qt 4. SVG drawings can be rendered
+    onto any QPaintDevice subclass, such as QWidget, QImage, and QGLWidget, to
+    take advantage of specific advantages of each device. This approach gives
+    developers the flexibility to experiment, in order to find the best solution
+    for each application.
+
+    \image svg-image.png
+
+    Since SVG is an XML-based format, the QtXml module is required to read SVG
+    files. For this reason, classes for SVG handling are provided separately in
+    the QtSvg module.
+
+    Displaying an SVG drawing in an application is as simple as displaying a
+    bitmap image. QSvgWidget is a display widget that can be placed in an
+    appropriate place in a user interface, and new content can be loaded as
+    required. For example, a predetermined file can be loaded and displayed in
+    a widget with little effort:
+
+    \snippet doc/src/snippets/qsvgwidget/main.cpp 0
+
+    For applications with more specialized requirements, the QSvgRenderer class
+    provides more control over the way SVG drawings are rendered and animated.
+*/

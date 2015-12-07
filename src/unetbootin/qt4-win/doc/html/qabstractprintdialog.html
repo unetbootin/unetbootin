@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qabstractprintdialog.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractPrintDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractPrintDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAbstractPrintDialog class provides a base implementation for print dialogs used to configure printers. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractPrintDialog&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<p>Inherited by <a href="qprintdialog.html">QPrintDialog</a>.</p>
+<ul>
+<li><a href="qabstractprintdialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOption</a></b> { None, PrintToFile, PrintSelection, PrintPageRange, ..., PrintShowPageSize }</li>
+<li><div class="fn"/>flags <b><a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOptions</a></b></li>
+<li><div class="fn"/>enum <b><a href="qabstractprintdialog.html#PrintRange-enum">PrintRange</a></b> { AllPages, Selection, PageRange }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractprintdialog.html#QAbstractPrintDialog">QAbstractPrintDialog</a></b> ( QPrinter * <i>printer</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#addEnabledOption">addEnabledOption</a></b> ( PrintDialogOption <i>option</i> )</li>
+<li><div class="fn"/>PrintDialogOptions <b><a href="qabstractprintdialog.html#enabledOptions">enabledOptions</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qabstractprintdialog.html#exec">exec</a></b> () = 0</li>
+<li><div class="fn"/>int <b><a href="qabstractprintdialog.html#fromPage">fromPage</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qabstractprintdialog.html#isOptionEnabled">isOptionEnabled</a></b> ( PrintDialogOption <i>option</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qabstractprintdialog.html#maxPage">maxPage</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qabstractprintdialog.html#minPage">minPage</a></b> () const</li>
+<li><div class="fn"/>PrintRange <b><a href="qabstractprintdialog.html#printRange">printRange</a></b> () const</li>
+<li><div class="fn"/>QPrinter * <b><a href="qabstractprintdialog.html#printer">printer</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#setEnabledOptions">setEnabledOptions</a></b> ( PrintDialogOptions <i>options</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#setFromTo">setFromTo</a></b> ( int <i>from</i>, int <i>to</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#setMinMax">setMinMax</a></b> ( int <i>min</i>, int <i>max</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#setOptionTabs">setOptionTabs</a></b> ( const QList&lt;QWidget *&gt; &amp; <i>tabs</i> )</li>
+<li><div class="fn"/>void <b><a href="qabstractprintdialog.html#setPrintRange">setPrintRange</a></b> ( PrintRange <i>range</i> )</li>
+<li><div class="fn"/>int <b><a href="qabstractprintdialog.html#toPage">toPage</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractPrintDialog class provides a base implementation for print dialogs used to configure printers.</p>
+<p>This class implements getter and setter functions that are used to customize settings shown in print dialogs, but it is not used directly. Use <a href="qprintdialog.html">QPrintDialog</a> to display a print dialog in your application.</p>
+<p>See also <a href="qprintdialog.html">QPrintDialog</a>, <a href="qprinter.html">QPrinter</a>, and <a href="printing.html">Printing with Qt</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="PrintDialogOption-enum"></a>enum QAbstractPrintDialog::PrintDialogOption<br />flags QAbstractPrintDialog::PrintDialogOptions</h3>
+<p>Used to specify which parts of the print dialog should be visible.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::None</tt></td><td align="center" valign="top"><tt>0x0000</tt></td><td valign="top">None of the options are enabled.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PrintToFile</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">The print to file option is enabled.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PrintSelection</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">The print selection option is enalbed.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PrintPageRange</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">The page range selection option is enabled.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PrintCollateCopies</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::DontUseSheet</tt></td><td align="center" valign="top"><tt>0x0020</tt></td><td valign="top">Do not make the native print dialog a sheet. By default on Mac OS X, the native dialog is made a sheet if it has a parent that can accept sheets and is visible. Internally, Mac OS X tracks whether a printing <b>session</b> and not which particular dialog should be a sheet or not. Therefore, make sure this value matches between the page setup dialog and the print dialog or you can potentially end up in a modal loop that you can't break.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PrintShowPageSize</tt></td><td align="center" valign="top"><tt>0x0008</tt></td><td valign="top">Show the page size + margings page only if this is enabled.</td></tr>
+</table></p>
+<p>The PrintDialogOptions type is a typedef for <a href="qflags.html">QFlags</a>&lt;PrintDialogOption&gt;. It stores an OR combination of PrintDialogOption values.</p>
+<h3 class="fn"><a name="PrintRange-enum"></a>enum QAbstractPrintDialog::PrintRange</h3>
+<p>Used to specify the print range selection option.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::AllPages</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">All pages should be printed.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::Selection</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Only the selection should be printed.</td></tr>
+<tr><td valign="top"><tt>QAbstractPrintDialog::PageRange</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The specified page range should be printed.</td></tr>
+</table></p>
+<p>See also <a href="qprinter.html#PrintRange-enum">QPrinter::PrintRange</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractPrintDialog"></a>QAbstractPrintDialog::QAbstractPrintDialog ( <a href="qprinter.html">QPrinter</a> * <i>printer</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an abstract print dialog for <i>printer</i> with <i>parent</i> as parent widget.</p>
+<h3 class="fn"><a name="addEnabledOption"></a>void QAbstractPrintDialog::addEnabledOption ( <a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOption</a> <i>option</i> )</h3>
+<p>Adds the option <i>option</i> to the set of enabled options in this dialog.</p>
+<p>Except for the <a href="qabstractprintdialog.html#PrintDialogOption-enum">DontUseSheet</a> option, this function has no effect on Mac OS X. See the <a href="qprintdialog.html">QPrintDialog</a> documentation for more information.</p>
+<h3 class="fn"><a name="enabledOptions"></a><a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOptions</a> QAbstractPrintDialog::enabledOptions () const</h3>
+<p>Returns the set of enabled options in this dialog.</p>
+<p>See also <a href="qabstractprintdialog.html#setEnabledOptions">setEnabledOptions</a>().</p>
+<h3 class="fn"><a name="exec"></a>int QAbstractPrintDialog::exec ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This virtual function is called to pop up the dialog. It must be reimplemented in subclasses.</p>
+<h3 class="fn"><a name="fromPage"></a>int QAbstractPrintDialog::fromPage () const</h3>
+<p>Returns the first page to be printed By default, this value is set to 0.</p>
+<h3 class="fn"><a name="isOptionEnabled"></a>bool QAbstractPrintDialog::isOptionEnabled ( <a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOption</a> <i>option</i> ) const</h3>
+<p>Returns true if the specified <i>option</i> is enabled; otherwise returns false</p>
+<h3 class="fn"><a name="maxPage"></a>int QAbstractPrintDialog::maxPage () const</h3>
+<p>Returns the maximum page in the page range. As of Qt 4.4, this function returns INT_MAX by default. Previous versions returned 1 by default.</p>
+<h3 class="fn"><a name="minPage"></a>int QAbstractPrintDialog::minPage () const</h3>
+<p>Returns the minimum page in the page range. By default, this value is set to 1.</p>
+<h3 class="fn"><a name="printRange"></a><a href="qabstractprintdialog.html#PrintRange-enum">PrintRange</a> QAbstractPrintDialog::printRange () const</h3>
+<p>Returns the print range.</p>
+<p>See also <a href="qabstractprintdialog.html#setPrintRange">setPrintRange</a>().</p>
+<h3 class="fn"><a name="printer"></a><a href="qprinter.html">QPrinter</a> * QAbstractPrintDialog::printer () const</h3>
+<p>Returns the printer that this printer dialog operates on.</p>
+<h3 class="fn"><a name="setEnabledOptions"></a>void QAbstractPrintDialog::setEnabledOptions ( <a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintDialogOptions</a> <i>options</i> )</h3>
+<p>Sets the set of options that should be enabled in the print dialog to <i>options</i>.</p>
+<p>Except for the <a href="qabstractprintdialog.html#PrintDialogOption-enum">DontUseSheet</a> option, this function has no effect on Mac OS X. See the <a href="qprintdialog.html">QPrintDialog</a> documentation for more information.</p>
+<p>See also <a href="qabstractprintdialog.html#enabledOptions">enabledOptions</a>().</p>
+<h3 class="fn"><a name="setFromTo"></a>void QAbstractPrintDialog::setFromTo ( int <i>from</i>, int <i>to</i> )</h3>
+<p>Sets the range in the print dialog to be from <i>from</i> to <i>to</i>.</p>
+<h3 class="fn"><a name="setMinMax"></a>void QAbstractPrintDialog::setMinMax ( int <i>min</i>, int <i>max</i> )</h3>
+<p>Sets the page range in this dialog to be from <i>min</i> to <i>max</i>. This also enables the <a href="qabstractprintdialog.html#PrintDialogOption-enum">PrintPageRange</a> option.</p>
+<h3 class="fn"><a name="setOptionTabs"></a>void QAbstractPrintDialog::setOptionTabs ( const <a href="qlist.html">QList</a>&lt;<a href="qwidget.html">QWidget</a> *&gt; &amp; <i>tabs</i> )</h3>
+<p>Set a list of widgets as <i>tabs</i> to be shown on the print dialog, if supported.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>Setting the option tabs will transfer their ownership to the print dialog.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="setPrintRange"></a>void QAbstractPrintDialog::setPrintRange ( <a href="qabstractprintdialog.html#PrintRange-enum">PrintRange</a> <i>range</i> )</h3>
+<p>Sets the print range option in to be <i>range</i>.</p>
+<p>See also <a href="qabstractprintdialog.html#printRange">printRange</a>().</p>
+<h3 class="fn"><a name="toPage"></a>int QAbstractPrintDialog::toPage () const</h3>
+<p>Returns the last page to be printed. By default, this value is set to 0.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

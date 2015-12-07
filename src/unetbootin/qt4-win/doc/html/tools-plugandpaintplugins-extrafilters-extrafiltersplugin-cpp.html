@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: extrafiltersplugin.cpp Example File (tools/plugandpaintplugins/extrafilters/extrafiltersplugin.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">extrafiltersplugin.cpp Example File<br /><span class="small-subtitle">tools/plugandpaintplugins/extrafilters/extrafiltersplugin.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;math.h&gt;
+ #include &lt;stdlib.h&gt;
+
+ #include &quot;extrafiltersplugin.h&quot;
+
+ QStringList ExtraFiltersPlugin::filters() const
+ {
+     return QStringList() &lt;&lt; tr(&quot;Flip Horizontally&quot;) &lt;&lt; tr(&quot;Flip Vertically&quot;)
+                          &lt;&lt; tr(&quot;Smudge...&quot;) &lt;&lt; tr(&quot;Threshold...&quot;);
+ }
+
+ QImage ExtraFiltersPlugin::filterImage(const QString &amp;filter,
+                                        const QImage &amp;image, QWidget *parent)
+ {
+     QImage original = image.convertToFormat(QImage::Format_RGB32);
+     QImage result = original;
+
+     if (filter == tr(&quot;Flip Horizontally&quot;)) {
+         for (int y = 0; y &lt; original.height(); ++y) {
+             for (int x = 0; x &lt; original.width(); ++x) {
+                 int pixel = original.pixel(original.width() - x - 1, y);
+                 result.setPixel(x, y, pixel);
+             }
+         }
+     } else if (filter == tr(&quot;Flip Vertically&quot;)) {
+         for (int y = 0; y &lt; original.height(); ++y) {
+             for (int x = 0; x &lt; original.width(); ++x) {
+                 int pixel = original.pixel(x, original.height() - y - 1);
+                 result.setPixel(x, y, pixel);
+             }
+         }
+     } else if (filter == tr(&quot;Smudge...&quot;)) {
+         bool ok;
+         int numIters = QInputDialog::getInteger(parent, tr(&quot;Smudge Filter&quot;),
+                                     tr(&quot;Enter number of iterations:&quot;),
+                                     5, 1, 20, 1, &amp;ok);
+         if (ok) {
+             for (int i = 0; i &lt; numIters; ++i) {
+                 for (int y = 1; y &lt; original.height() - 1; ++y) {
+                     for (int x = 1; x &lt; original.width() - 1; ++x) {
+                         int p1 = original.pixel(x, y);
+                         int p2 = original.pixel(x, y + 1);
+                         int p3 = original.pixel(x, y - 1);
+                         int p4 = original.pixel(x + 1, y);
+                         int p5 = original.pixel(x - 1, y);
+
+                         int red = (qRed(p1) + qRed(p2) + qRed(p3) + qRed(p4)
+                                    + qRed(p5)) / 5;
+                         int green = (qGreen(p1) + qGreen(p2) + qGreen(p3)
+                                      + qGreen(p4) + qGreen(p5)) / 5;
+                         int blue = (qBlue(p1) + qBlue(p2) + qBlue(p3)
+                                     + qBlue(p4) + qBlue(p5)) / 5;
+                         int alpha = (qAlpha(p1) + qAlpha(p2) + qAlpha(p3)
+                                      + qAlpha(p4) + qAlpha(p5)) / 5;
+
+                         result.setPixel(x, y, qRgba(red, green, blue, alpha));
+                     }
+                 }
+             }
+         }
+     } else if (filter == tr(&quot;Threshold...&quot;)) {
+         bool ok;
+         int threshold = QInputDialog::getInteger(parent, tr(&quot;Threshold Filter&quot;),
+                                                  tr(&quot;Enter threshold:&quot;),
+                                                  10, 1, 256, 1, &amp;ok);
+         if (ok) {
+             int factor = 256 / threshold;
+             for (int y = 0; y &lt; original.height(); ++y) {
+                 for (int x = 0; x &lt; original.width(); ++x) {
+                     int pixel = original.pixel(x, y);
+                     result.setPixel(x, y, qRgba(qRed(pixel) / factor * factor,
+                                                 qGreen(pixel) / factor * factor,
+                                                 qBlue(pixel) / factor * factor,
+                                                 qAlpha(pixel)));
+                 }
+             }
+         }
+     }
+     return result;
+ }
+
+ Q_EXPORT_PLUGIN2(pnp_extrafilters, ExtraFiltersPlugin)</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

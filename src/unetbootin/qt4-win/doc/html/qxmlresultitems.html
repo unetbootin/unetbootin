@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xmlpatterns/api/qxmlresultitems.cpp -->
+<head>
+  <title>Qt 4.4: QXmlResultItems Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlResultItems Class Reference<br /><span class="small-subtitle">[<a href="qtxmlpatterns.html">QtXmlPatterns</a> module]</span>
+</h1>
+<p>The QXmlResultItems class iterates through the results of evaluating a query. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlResultItems&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qxmlresultitems-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlresultitems.html#QXmlResultItems">QXmlResultItems</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qxmlresultitems.html#dtor.QXmlResultItems">~QXmlResultItems</a></b> ()</li>
+<li><div class="fn"/>QXmlItem <b><a href="qxmlresultitems.html#current">current</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qxmlresultitems.html#hasError">hasError</a></b> () const</li>
+<li><div class="fn"/>QXmlItem <b><a href="qxmlresultitems.html#next">next</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlResultItems class iterates through the results of evaluating a query.</p>
+<p>QXmlResultItems presents the evaluation of an associated query as a sequence of <a href="qxmlitem.html">QXmlItems</a>. The sequence is traversed by repeatedly calling <a href="qxmlresultitems.html#next">next</a>(), which actually produces the sequence by lazy evaluation of the query.</p>
+<pre>   QXmlQuery query;
+   query.setQuery(&quot;&lt;e/&gt;, 1, 'two'&quot;);
+   QXmlResultItems result;
+
+   if (query.isValid()) {
+     query.evaluateTo(&amp;result);
+     QXmlItem item(result.next());
+     while (!item.isNull()) {
+         // use item
+         item = result.next();
+     }
+     if (result.hasError())
+         /* Runtime error! */;
+   }</pre>
+<p>An effect of letting <a href="qxmlresultitems.html#next">next</a>() produce the sequence by lazy evaluation is that a query error can occur on any call to <a href="qxmlresultitems.html#next">next</a>(). If an error occurs, both <a href="qxmlresultitems.html#next">next</a>() and <a href="qxmlresultitems.html#current">current</a>() will return the null <a href="qxmlitem.html">QXmlItem</a>, and <a href="qxmlresultitems.html#hasError">hasError</a>() will return true.</p>
+<p>QXmlResultItems can be thought of as an &quot;iterator&quot; that traverses the sequence of query results once, in the forward direction. Each call to <a href="qxmlresultitems.html#next">next</a>() advances the iterator to the next <a href="qxmlitem.html">QXmlItem</a> in the sequence and returns it, and <a href="qxmlresultitems.html#current">current</a>() always returns the <a href="qxmlitem.html">QXmlItem</a> that <a href="qxmlresultitems.html#next">next</a>() returned the last time it was called.</p>
+<p>See also <a href="qxmlitem.html#isNode">QXmlItem::isNode</a>(), <a href="qxmlitem.html#isAtomicValue">QXmlItem::isAtomicValue</a>(), and <a href="qxmlnodemodelindex.html">QXmlNodeModelIndex</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlResultItems"></a>QXmlResultItems::QXmlResultItems ()</h3>
+<p>Constructs an instance of <a href="qxmlresultitems.html">QXmlResultItems</a>.</p>
+<h3 class="fn"><a name="dtor.QXmlResultItems"></a>QXmlResultItems::~QXmlResultItems ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys this instance of <a href="qxmlresultitems.html">QXmlResultItems</a>.</p>
+<h3 class="fn"><a name="current"></a><a href="qxmlitem.html">QXmlItem</a> QXmlResultItems::current () const</h3>
+<p>Returns the current item. The current item is the last item that was produced and returned by <a href="qxmlresultitems.html#next">next</a>().</p>
+<p>Returns a null <a href="qxmlitem.html">QXmlItem</a> if there is no associated <a href="qxmlquery.html">QXmlQuery</a>.</p>
+<h3 class="fn"><a name="hasError"></a>bool QXmlResultItems::hasError () const</h3>
+<p>If an error occurred during evaluation of the query, true is returned.</p>
+<p>Returns false if query evaluation has been done.</p>
+<h3 class="fn"><a name="next"></a><a href="qxmlitem.html">QXmlItem</a> QXmlResultItems::next ()</h3>
+<p>Returns the next result in the sequence produced by lazy evaluation of the associated query. When the returned <a href="qxmlitem.html">QXmlItem</a> is null, either the evaluation terminated normally without producing another result, or an error occurred. Call <a href="qxmlresultitems.html#hasError">hasError</a>() to determine whether the null item was caused by normal termination or by an error.</p>
+<p>Returns a null <a href="qxmlitem.html">QXmlItem</a> if there is no associated <a href="qxmlquery.html">QXmlQuery</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

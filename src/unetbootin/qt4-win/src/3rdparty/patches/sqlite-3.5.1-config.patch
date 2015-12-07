@@ -1,0 +1,38 @@
+--- sqlite3.c.orig	2007-10-04 01:08:44.000000000 +0200
++++ sqlite3.c	2007-10-05 00:00:00.000000000 +0200
+@@ -14629,6 +14629,8 @@
+ */
+ #if OS_UNIX              /* This file is used on unix only */
+ 
++#include <qconfig.h>
++
+ /* #define SQLITE_ENABLE_LOCKING_STYLE 0 */
+ 
+ /*
+@@ -14671,7 +14673,7 @@
+ ** If we are to be thread-safe, include the pthreads header and define
+ ** the SQLITE_UNIX_THREADS macro.
+ */
+-#if SQLITE_THREADSAFE
++#ifndef QT_NO_THREAD
+ # define SQLITE_UNIX_THREADS 1
+ #endif
+ 
+@@ -17536,6 +17538,8 @@
+ ** desktops but not so well in embedded systems.
+ */
+ 
++#include <qconfig.h>
++
+ #include <winbase.h>
+ 
+ #ifdef __CYGWIN__
+@@ -17545,7 +17549,7 @@
+ /*
+ ** Macros used to determine whether or not to use threads.
+ */
+-#if defined(THREADSAFE) && THREADSAFE
++#ifndef QT_NO_THREAD
+ # define SQLITE_W32_THREADS 1
+ #endif
+ 

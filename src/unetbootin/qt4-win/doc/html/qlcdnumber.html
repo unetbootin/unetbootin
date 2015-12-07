@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qlcdnumber.cpp -->
+<head>
+  <title>Qt 4.4: QLCDNumber Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QLCDNumber Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QLCDNumber widget displays a number with LCD-like digits. <a href="#details">More...</a></p>
+<pre> #include &lt;QLCDNumber&gt;</pre><p>Inherits <a href="qframe.html">QFrame</a>.</p>
+<ul>
+<li><a href="qlcdnumber-members.html">List of all members, including inherited members</a></li>
+<li><a href="qlcdnumber-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qlcdnumber.html#Mode-enum">Mode</a></b> { Hex, Dec, Oct, Bin }</li>
+<li><div class="fn"/>enum <b><a href="qlcdnumber.html#SegmentStyle-enum">SegmentStyle</a></b> { Outline, Filled, Flat }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qlcdnumber.html#intValue-prop">intValue</a></b> : int</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#mode-prop">mode</a></b> : Mode</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#numDigits-prop">numDigits</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qlcdnumber.html#segmentStyle-prop">segmentStyle</a></b> : SegmentStyle</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#value-prop">value</a></b> : double</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlcdnumber.html#QLCDNumber">QLCDNumber</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#QLCDNumber-2">QLCDNumber</a></b> ( uint <i>numDigits</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlcdnumber.html#dtor.QLCDNumber">~QLCDNumber</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qlcdnumber.html#checkOverflow">checkOverflow</a></b> ( double <i>num</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlcdnumber.html#checkOverflow-2">checkOverflow</a></b> ( int <i>num</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qlcdnumber.html#intValue-prop">intValue</a></b> () const</li>
+<li><div class="fn"/>Mode <b><a href="qlcdnumber.html#mode-prop">mode</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qlcdnumber.html#numDigits-prop">numDigits</a></b> () const</li>
+<li><div class="fn"/>SegmentStyle <b><a href="qlcdnumber.html#segmentStyle-prop">segmentStyle</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#mode-prop">setMode</a></b> ( Mode )</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#numDigits-prop">setNumDigits</a></b> ( int <i>nDigits</i> )</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#segmentStyle-prop">setSegmentStyle</a></b> ( SegmentStyle )</li>
+<li><div class="fn"/>bool <b><a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a></b> () const</li>
+<li><div class="fn"/>double <b><a href="qlcdnumber.html#value-prop">value</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#intValue-prop">display</a></b> ( const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#intValue-prop">display</a></b> ( double <i>num</i> )</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#intValue-prop">display</a></b> ( int <i>num</i> )</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#setBinMode">setBinMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#setDecMode">setDecMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#setHexMode">setHexMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#setOctMode">setOctMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#smallDecimalPoint-prop">setSmallDecimalPoint</a></b> ( bool )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlcdnumber.html#overflow">overflow</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QLCDNumber widget displays a number with LCD-like digits.</p>
+<p>It can display a number in just about any size. It can display decimal, hexadecimal, octal or binary numbers. It is easy to connect to data sources using the <a href="qlcdnumber.html#intValue-prop">display</a>() slot, which is overloaded to take any of five argument types.</p>
+<p>There are also slots to change the base with <a href="qlcdnumber.html#mode-prop">setMode</a>() and the decimal point with <a href="qlcdnumber.html#smallDecimalPoint-prop">setSmallDecimalPoint</a>().</p>
+<p>QLCDNumber emits the <a href="qlcdnumber.html#overflow">overflow</a>() signal when it is asked to display something beyond its range. The range is set by <a href="qlcdnumber.html#numDigits-prop">setNumDigits</a>(), but <a href="qlcdnumber.html#smallDecimalPoint-prop">setSmallDecimalPoint</a>() also influences it. If the display is set to hexadecimal, octal or binary, the integer equivalent of the value is displayed.</p>
+<p>These digits and other symbols can be shown: 0/O, 1, 2, 3, 4, 5/S, 6, 7, 8, 9/g, minus, decimal point, A, B, C, D, E, F, h, H, L, o, P, r, u, U, Y, colon, degree sign (which is specified as single quote in the string) and space. QLCDNumber substitutes spaces for illegal characters.</p>
+<p>It is not possible to retrieve the contents of a QLCDNumber object, although you can retrieve the numeric value with <a href="qlcdnumber.html#value-prop">value</a>(). If you really need the text, we recommend that you connect the signals that feed the <a href="qlcdnumber.html#intValue-prop">display</a>() slot to another slot as well and store the value there.</p>
+<p>Incidentally, QLCDNumber is the very oldest part of Qt, tracing its roots back to a BASIC program on the <a href="http://www.nvg.ntnu.no/sinclair/computers/zxspectrum/zxspectrum.htm">Sinclair Spectrum</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/motif-lcdnumber.png" alt="Screenshot of a Motif style LCD number widget" /> <img src="images/cde-lcdnumber.png" alt="Screenshot of a CDE style LCD number widget" /> <img src="images/windows-lcdnumber.png" alt="Screenshot of a Windows style LCD number widget" /> <img src="images/windowsxp-lcdnumber.png" alt="Screenshot of a Windows XP style LCD number widget" /> <img src="images/macintosh-lcdnumber.png" alt="Screenshot of a Macintosh style LCD number widget" /> <img src="images/plastique-lcdnumber.png" alt="Screenshot of a Plastique style LCD number widget" /></td></tr>
+<tr valign="top" class="even"><td>LCD number widgets shown in various widget styles (from left to right): <a href="gallery-motif.html">Motif</a>, <a href="gallery-cde.html">CDE</a>, <a href="gallery-windows.html">Windows</a>, <a href="gallery-windowsxp.html">Windows XP</a>, <a href="gallery-macintosh.html">Macintosh</a>, <a href="gallery-plastique.html">Plastique</a>.</td></tr>
+</table></p>
+<p>See also <a href="qlabel.html">QLabel</a>, <a href="qframe.html">QFrame</a>, <a href="widgets-digitalclock.html">Digital Clock Example</a>, and <a href="widgets-tetrix.html">Tetrix Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Mode-enum"></a>enum QLCDNumber::Mode</h3>
+<p>This type determines how numbers are shown.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QLCDNumber::Hex</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Hexadecimal</td></tr>
+<tr><td valign="top"><tt>QLCDNumber::Dec</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Decimal</td></tr>
+<tr><td valign="top"><tt>QLCDNumber::Oct</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Octal</td></tr>
+<tr><td valign="top"><tt>QLCDNumber::Bin</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Binary</td></tr>
+</table></p>
+<p>If the display is set to hexadecimal, octal or binary, the integer equivalent of the value is displayed.</p>
+<h3 class="fn"><a name="SegmentStyle-enum"></a>enum QLCDNumber::SegmentStyle</h3>
+<p>This type determines the visual appearance of the <a href="qlcdnumber.html">QLCDNumber</a> widget.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QLCDNumber::Outline</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">gives raised segments filled with the background color.</td></tr>
+<tr><td valign="top"><tt>QLCDNumber::Filled</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">gives raised segments filled with the windowText color.</td></tr>
+<tr><td valign="top"><tt>QLCDNumber::Flat</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">gives flat segments filled with the windowText color.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="intValue-prop"></a>intValue : int</h3>
+<p>This property holds the displayed value rounded to the nearest integer.</p>
+<p>This property corresponds to the nearest integer to the current value displayed by the LCDNumber. This is the value used for hexadecimal, octal and binary modes.</p>
+<p>If the displayed value is not a number, the property has a value of 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int intValue () const</b></li>
+<li><div class="fn"/><b>void display ( const QString &amp; <i>s</i> )</b></li>
+<li><div class="fn"/><b>void display ( int <i>num</i> )</b></li>
+<li><div class="fn"/><b>void display ( double <i>num</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="mode-prop"></a>mode : <a href="qlcdnumber.html#Mode-enum">Mode</a></h3>
+<p>This property holds the current display mode (number base).</p>
+<p>Corresponds to the current display mode, which is one of <tt>Bin</tt>, <tt>Oct</tt>, <tt>Dec</tt> (the default) and <tt>Hex</tt>. <tt>Dec</tt> mode can display floating point values, the other modes display the integer equivalent.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Mode mode () const</b></li>
+<li><div class="fn"/><b>void setMode ( Mode )</b></li>
+</ul>
+<p>See also <a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a>(), <a href="qlcdnumber.html#setHexMode">setHexMode</a>(), <a href="qlcdnumber.html#setDecMode">setDecMode</a>(), <a href="qlcdnumber.html#setOctMode">setOctMode</a>(), and <a href="qlcdnumber.html#setBinMode">setBinMode</a>().</p>
+<h3 class="fn"><a name="numDigits-prop"></a>numDigits : int</h3>
+<p>This property holds the current number of digits displayed.</p>
+<p>Corresponds to the current number of digits. If <a href="qlcdnumber.html#smallDecimalPoint-prop">QLCDNumber::smallDecimalPoint</a> is false, the decimal point occupies one digit position.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int numDigits () const</b></li>
+<li><div class="fn"/><b>void setNumDigits ( int <i>nDigits</i> )</b></li>
+</ul>
+<p>See also <a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a>.</p>
+<h3 class="fn"><a name="segmentStyle-prop"></a>segmentStyle : <a href="qlcdnumber.html#SegmentStyle-enum">SegmentStyle</a></h3>
+<p>This property holds the style of the LCDNumber.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Style</th><th>Result</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>Outline</tt></td><td>Produces raised segments filled with the background color (this is the default).</td></tr>
+<tr valign="top" class="even"><td><tt>Filled</tt></td><td>Produces raised segments filled with the foreground color.</td></tr>
+<tr valign="top" class="odd"><td><tt>Flat</tt></td><td>Produces flat segments filled with the foreground color.</td></tr>
+</table></p>
+<p><tt>Outline</tt> and <tt>Filled</tt> will additionally use <a href="qpalette.html#light">QPalette::light</a>() and <a href="qpalette.html#dark">QPalette::dark</a>() for shadow effects.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>SegmentStyle segmentStyle () const</b></li>
+<li><div class="fn"/><b>void setSegmentStyle ( SegmentStyle )</b></li>
+</ul>
+<h3 class="fn"><a name="smallDecimalPoint-prop"></a>smallDecimalPoint : bool</h3>
+<p>This property holds the style of the decimal point.</p>
+<p>If true the decimal point is drawn between two digit positions. Otherwise it occupies a digit position of its own, i.e&#x2e; is drawn in a digit position. The default is false.</p>
+<p>The inter-digit space is made slightly wider when the decimal point is drawn between the digits.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool smallDecimalPoint () const</b></li>
+<li><div class="fn"/><b>void setSmallDecimalPoint ( bool )</b></li>
+</ul>
+<p>See also <a href="qlcdnumber.html#mode-prop">mode</a>.</p>
+<h3 class="fn"><a name="value-prop"></a>value : double</h3>
+<p>This property holds the displayed value.</p>
+<p>This property corresponds to the current value displayed by the LCDNumber.</p>
+<p>If the displayed value is not a number, the property has a value of 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>double value () const</b></li>
+<li><div class="fn"/><b>void <a href="qlcdnumber.html#intValue-prop">display</a> ( const QString &amp; <i>s</i> )</b></li>
+<li><div class="fn"/><b>void <a href="qlcdnumber.html#intValue-prop">display</a> ( int <i>num</i> )</b></li>
+<li><div class="fn"/><b>void <a href="qlcdnumber.html#intValue-prop">display</a> ( double <i>num</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QLCDNumber"></a>QLCDNumber::QLCDNumber ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an LCD number, sets the number of digits to 5, the base to decimal, the decimal point mode to 'small' and the frame style to a raised box. The <a href="qlcdnumber.html#segmentStyle-prop">segmentStyle</a>() is set to <tt>Outline</tt>.</p>
+<p>The <i>parent</i> argument is passed to the <a href="qframe.html">QFrame</a> constructor.</p>
+<p>See also <a href="qlcdnumber.html#numDigits-prop">setNumDigits</a>() and <a href="qlcdnumber.html#smallDecimalPoint-prop">setSmallDecimalPoint</a>().</p>
+<h3 class="fn"><a name="QLCDNumber-2"></a>QLCDNumber::QLCDNumber ( <a href="qtglobal.html#uint-typedef">uint</a> <i>numDigits</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an LCD number, sets the number of digits to <i>numDigits</i>, the base to decimal, the decimal point mode to 'small' and the frame style to a raised box. The <a href="qlcdnumber.html#segmentStyle-prop">segmentStyle</a>() is set to <tt>Outline</tt>.</p>
+<p>The <i>parent</i> argument is passed to the <a href="qframe.html">QFrame</a> constructor.</p>
+<p>See also <a href="qlcdnumber.html#numDigits-prop">setNumDigits</a>() and <a href="qlcdnumber.html#smallDecimalPoint-prop">setSmallDecimalPoint</a>().</p>
+<h3 class="fn"><a name="dtor.QLCDNumber"></a>QLCDNumber::~QLCDNumber ()</h3>
+<p>Destroys the LCD number.</p>
+<h3 class="fn"><a name="checkOverflow"></a>bool QLCDNumber::checkOverflow ( double <i>num</i> ) const</h3>
+<p>Returns true if <i>num</i> is too big to be displayed in its entirety; otherwise returns false.</p>
+<p>See also <a href="qlcdnumber.html#intValue-prop">display</a>(), <a href="qlcdnumber.html#numDigits-prop">numDigits</a>(), and <a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a>().</p>
+<h3 class="fn"><a name="checkOverflow-2"></a>bool QLCDNumber::checkOverflow ( int <i>num</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>num</i> is too big to be displayed in its entirety; otherwise returns false.</p>
+<p>See also <a href="qlcdnumber.html#intValue-prop">display</a>(), <a href="qlcdnumber.html#numDigits-prop">numDigits</a>(), and <a href="qlcdnumber.html#smallDecimalPoint-prop">smallDecimalPoint</a>().</p>
+<h3 class="fn"><a name="overflow"></a>void QLCDNumber::overflow ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the <a href="qlcdnumber.html">QLCDNumber</a> is asked to display a too-large number or a too-long string.</p>
+<p>It is never emitted by <a href="qlcdnumber.html#numDigits-prop">setNumDigits</a>().</p>
+<h3 class="fn"><a name="setBinMode"></a>void QLCDNumber::setBinMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls setMode(Bin). Provided for convenience (e.g&#x2e; for connecting buttons to it).</p>
+<p>See also <a href="qlcdnumber.html#mode-prop">setMode</a>(), <a href="qlcdnumber.html#setHexMode">setHexMode</a>(), <a href="qlcdnumber.html#setDecMode">setDecMode</a>(), <a href="qlcdnumber.html#setOctMode">setOctMode</a>(), and <a href="qlcdnumber.html#mode-prop">mode</a>().</p>
+<h3 class="fn"><a name="setDecMode"></a>void QLCDNumber::setDecMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls setMode(Dec). Provided for convenience (e.g&#x2e; for connecting buttons to it).</p>
+<p>See also <a href="qlcdnumber.html#mode-prop">setMode</a>(), <a href="qlcdnumber.html#setHexMode">setHexMode</a>(), <a href="qlcdnumber.html#setOctMode">setOctMode</a>(), <a href="qlcdnumber.html#setBinMode">setBinMode</a>(), and <a href="qlcdnumber.html#mode-prop">mode</a>().</p>
+<h3 class="fn"><a name="setHexMode"></a>void QLCDNumber::setHexMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls setMode(Hex). Provided for convenience (e.g&#x2e; for connecting buttons to it).</p>
+<p>See also <a href="qlcdnumber.html#mode-prop">setMode</a>(), <a href="qlcdnumber.html#setDecMode">setDecMode</a>(), <a href="qlcdnumber.html#setOctMode">setOctMode</a>(), <a href="qlcdnumber.html#setBinMode">setBinMode</a>(), and <a href="qlcdnumber.html#mode-prop">mode</a>().</p>
+<h3 class="fn"><a name="setOctMode"></a>void QLCDNumber::setOctMode ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls setMode(Oct). Provided for convenience (e.g&#x2e; for connecting buttons to it).</p>
+<p>See also <a href="qlcdnumber.html#mode-prop">setMode</a>(), <a href="qlcdnumber.html#setHexMode">setHexMode</a>(), <a href="qlcdnumber.html#setDecMode">setDecMode</a>(), <a href="qlcdnumber.html#setBinMode">setBinMode</a>(), and <a href="qlcdnumber.html#mode-prop">mode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

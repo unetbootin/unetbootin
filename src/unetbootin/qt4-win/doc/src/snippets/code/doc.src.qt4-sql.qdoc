@@ -1,0 +1,21 @@
+//! [0]
+        QSqlQueryModel model;
+        model.setQuery("select * from person");
+
+        QTableView view;
+        view.setModel(&model);
+        view.show();
+//! [0]
+
+
+//! [1]
+        QSqlTableModel model;
+        model.setTable("person");
+        model.select();
+
+        QTableView view;
+        view.setModel(&model);
+        view.show();
+//! [1]
+
+

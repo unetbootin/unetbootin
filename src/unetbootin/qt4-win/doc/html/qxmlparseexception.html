@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlParseException Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlParseException Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlParseException class is used to report errors with the <a href="qxmlerrorhandler.html">QXmlErrorHandler</a> interface. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlParseException&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmlparseexception-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlparseexception.html#QXmlParseException">QXmlParseException</a></b> ( const QString &amp; <i>name</i> = QString(), int <i>c</i> = -1, int <i>l</i> = -1, const QString &amp; <i>p</i> = QString(), const QString &amp; <i>s</i> = QString() )</li>
+<li><div class="fn"/><b><a href="qxmlparseexception.html#dtor.QXmlParseException">~QXmlParseException</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qxmlparseexception.html#columnNumber">columnNumber</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qxmlparseexception.html#lineNumber">lineNumber</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qxmlparseexception.html#message">message</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qxmlparseexception.html#publicId">publicId</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qxmlparseexception.html#systemId">systemId</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlParseException class is used to report errors with the <a href="qxmlerrorhandler.html">QXmlErrorHandler</a> interface.</p>
+<p>The XML subsystem constructs an instance of this class when it detects an error. You can retrieve the place where the error occurred using <a href="qxmlparseexception.html#systemId">systemId</a>(), <a href="qxmlparseexception.html#publicId">publicId</a>(), <a href="qxmlparseexception.html#lineNumber">lineNumber</a>() and <a href="qxmlparseexception.html#columnNumber">columnNumber</a>(), along with the error <a href="qxmlparseexception.html#message">message</a>(). The possible error messages are:</p>
+<ul>
+<li>&quot;no error occurred&quot;</li>
+<li>&quot;error triggered by consumer&quot;</li>
+<li>&quot;unexpected end of file&quot;</li>
+<li>&quot;more than one document type definition&quot;</li>
+<li>&quot;error occurred while parsing element&quot;</li>
+<li>&quot;tag mismatch&quot;</li>
+<li>&quot;error occurred while parsing content&quot;</li>
+<li>&quot;unexpected character&quot;</li>
+<li>&quot;invalid name for processing instruction&quot;</li>
+<li>&quot;version expected while reading the XML declaration&quot;</li>
+<li>&quot;wrong value for standalone declaration&quot;</li>
+<li>&quot;encoding declaration or standalone declaration expected while reading the XML declaration&quot;</li>
+<li>&quot;standalone declaration expected while reading the XML declaration&quot;</li>
+<li>&quot;error occurred while parsing document type definition&quot;</li>
+<li>&quot;letter is expected&quot;</li>
+<li>&quot;error occurred while parsing comment&quot;</li>
+<li>&quot;error occurred while parsing reference&quot;</li>
+<li>&quot;internal general entity reference not allowed in DTD&quot;</li>
+<li>&quot;external parsed general entity reference not allowed in attribute value&quot;</li>
+<li>&quot;external parsed general entity reference not allowed in DTD&quot;</li>
+<li>&quot;unparsed entity reference n wrong context&quot;</li>
+<li>&quot;recursive entities&quot;</li>
+<li>&quot;error in the text declaration of an external entity&quot;</li>
+</ul>
+<p>Note that, if you want to display these error messages to your application's users, they will be displayed in English unless they are explicitly translated.</p>
+<p>See also <a href="qxmlerrorhandler.html">QXmlErrorHandler</a> and <a href="qxmlreader.html">QXmlReader</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlParseException"></a>QXmlParseException::QXmlParseException ( const <a href="qstring.html">QString</a> &amp; <i>name</i> = QString(), int <i>c</i> = -1, int <i>l</i> = -1, const <a href="qstring.html">QString</a> &amp; <i>p</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>s</i> = QString() )</h3>
+<p>Constructs a parse exception with the error string <i>name</i> for column <i>c</i> and line <i>l</i> for the public identifier <i>p</i> and the system identifier <i>s</i>.</p>
+<h3 class="fn"><a name="dtor.QXmlParseException"></a>QXmlParseException::~QXmlParseException ()</h3>
+<p>Destroys the <a href="qxmlparseexception.html">QXmlParseException</a>.</p>
+<h3 class="fn"><a name="columnNumber"></a>int QXmlParseException::columnNumber () const</h3>
+<p>Returns the column number where the error occurred.</p>
+<h3 class="fn"><a name="lineNumber"></a>int QXmlParseException::lineNumber () const</h3>
+<p>Returns the line number where the error occurred.</p>
+<h3 class="fn"><a name="message"></a><a href="qstring.html">QString</a> QXmlParseException::message () const</h3>
+<p>Returns the error message.</p>
+<h3 class="fn"><a name="publicId"></a><a href="qstring.html">QString</a> QXmlParseException::publicId () const</h3>
+<p>Returns the public identifier where the error occurred.</p>
+<h3 class="fn"><a name="systemId"></a><a href="qstring.html">QString</a> QXmlParseException::systemId () const</h3>
+<p>Returns the system identifier where the error occurred.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

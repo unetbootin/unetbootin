@@ -1,0 +1,5 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/skins">
+    <file>SmartPhoneWithButtons.skin</file>
+</qresource>
+</RCC>

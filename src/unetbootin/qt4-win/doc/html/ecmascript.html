@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/ecmascript.qdoc -->
+<head>
+  <title>Qt 4.4: ECMAScript Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">ECMAScript Reference<br /><span class="subtitle"></span>
+</h1>
+<p>This reference contains a list of objects, functions and properties supported by <a href="qtscript.html">QtScript</a>.</p>
+<ul><li><a href="#the-global-object">The Global Object</a></li>
+<ul><li><a href="#value-properties">Value Properties</a></li>
+<li><a href="#function-properties">Function Properties</a></li>
+<li><a href="#constructor-properties">Constructor Properties</a></li>
+</ul>
+<li><a href="#object-objects">Object Objects</a></li>
+<ul><li><a href="#object-prototype-object">Object Prototype Object</a></li>
+</ul>
+<li><a href="#function-objects">Function Objects</a></li>
+<ul><li><a href="#function-prototype-object">Function Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#array-objects">Array Objects</a></li>
+<ul><li><a href="#array-prototype-object">Array Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#string-objects">String Objects</a></li>
+<ul><li><a href="#string-prototype-object">String Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#boolean-objects">Boolean Objects</a></li>
+<ul><li><a href="#boolean-prototype-object">Boolean Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#number-objects">Number Objects</a></li>
+<ul><li><a href="#number-prototype-object">Number Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#the-math-object">The Math Object</a></li>
+<ul><li><a href="#value-properties">Value Properties</a></li>
+<li><a href="#function-properties">Function Properties</a></li>
+</ul>
+<li><a href="#date-objects">Date Objects</a></li>
+<ul><li><a href="#date-prototype-object">Date Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#regexp-objects">RegExp Objects</a></li>
+<ul><li><a href="#regexp-prototype-object">RegExp Prototype Object</a></li>
+<ul><li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+<li><a href="#error-objects">Error Objects</a></li>
+<ul><li><a href="#error-prototype-object">Error Prototype Object</a></li>
+<ul><li><a href="#value-properties">Value Properties</a></li>
+<li><a href="#function-properties">Function Properties</a></li>
+</ul>
+</ul>
+</ul>
+<a name="the-global-object"></a>
+<h3>The Global Object</h3>
+<a name="value-properties"></a>
+<h4>Value Properties</h4>
+<ul>
+<li>NaN</li>
+<li>Infinity</li>
+<li>undefined</li>
+<li>Math</li>
+</ul>
+<a name="function-properties"></a>
+<h4>Function Properties</h4>
+<ul>
+<li>eval(x)</li>
+<li>parseInt(string, radix)</li>
+<li>parseFloat(string)</li>
+<li>isNaN(number)</li>
+<li>isFinite(number)</li>
+<li>decodeURI(encodedURI)</li>
+<li>decodeURIComponent(encodedURIComponent)</li>
+<li>encodeURI(uri)</li>
+<li>encodeURIComponent(uriComponent)</li>
+</ul>
+<a name="constructor-properties"></a>
+<h4>Constructor Properties</h4>
+<ul>
+<li>Object</li>
+<li>Function</li>
+<li>Array</li>
+<li>String</li>
+<li>Boolean</li>
+<li>Number</li>
+<li>Date</li>
+<li>RegExp</li>
+<li>Error</li>
+<li>EvalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+</ul>
+<a name="object-objects"></a>
+<h3>Object Objects</h3>
+<a name="object-prototype-object"></a>
+<h4>Object Prototype Object</h4>
+<ul>
+<li>toString()</li>
+<li>toLocaleString()</li>
+<li>valueOf()</li>
+<li>hasOwnProperty(V)</li>
+<li>isPrototypeOf(V)</li>
+<li>propertyIsEnumerable(V)</li>
+</ul>
+<a name="function-objects"></a>
+<h3>Function Objects</h3>
+<a name="function-prototype-object"></a>
+<h4>Function Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+<li>apply(thisArg, argArray)</li>
+<li>call(thisArg [, arg1 [, arg2, ..&#x2e;]])</li>
+</ul>
+<a name="array-objects"></a>
+<h3>Array Objects</h3>
+<a name="array-prototype-object"></a>
+<h4>Array Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+<li>toLocaleString()</li>
+<li>concat([item1 [, item2 [, ..&#x2e;]]])</li>
+<li>join(separator)</li>
+<li>pop()</li>
+<li>push([item1 [, item2 [, ..&#x2e;]]])</li>
+<li>reverse()</li>
+<li>shift()</li>
+<li>slice(start, end)</li>
+<li>sort(comparefn)</li>
+<li>splice(start, deleteCount[, item1 [, item2 [, ..&#x2e;]]])</li>
+<li>unshift([item1 [, item2 [, ..&#x2e;]]])</li>
+</ul>
+<a name="string-objects"></a>
+<h3>String Objects</h3>
+<a name="string-prototype-object"></a>
+<h4>String Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+<li>valueOf()</li>
+<li>charAt(pos)</li>
+<li>charCodeAt(pos)</li>
+<li>concat([string1 [, string2 [, ..&#x2e;]]])</li>
+<li>indexOf(searchString ,position)</li>
+<li>lastIndexOf(searchString, position)</li>
+<li>localeCompare(that)</li>
+<li>match(regexp)</li>
+<li>replace(searchValue, replaceValue)</li>
+<li>search(regexp)</li>
+<li>slice(start, end)</li>
+<li>split(separator, limit)</li>
+<li>substring(start, end)</li>
+<li>toLowerCase()</li>
+<li>toLocaleLowerCase()</li>
+<li>toUpperCase()</li>
+<li>toLocaleUpperCase()</li>
+</ul>
+<a name="boolean-objects"></a>
+<h3>Boolean Objects</h3>
+<a name="boolean-prototype-object"></a>
+<h4>Boolean Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+<li>valueOf()</li>
+</ul>
+<a name="number-objects"></a>
+<h3>Number Objects</h3>
+<a name="number-prototype-object"></a>
+<h4>Number Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString(radix)</li>
+<li>toLocaleString()</li>
+<li>toFixed(fractionDigits)</li>
+<li>toExponential(fractionDigits)</li>
+<li>toPrecision(precision)</li>
+</ul>
+<a name="the-math-object"></a>
+<h3>The Math Object</h3>
+<a name="value-properties"></a>
+<h4>Value Properties</h4>
+<ul>
+<li>E</li>
+<li>LN10</li>
+<li>LN2</li>
+<li>LOG2E</li>
+<li>LOG10E</li>
+<li>PI</li>
+<li>SQRT1_2</li>
+<li>SQRT2</li>
+</ul>
+<a name="function-properties"></a>
+<h4>Function Properties</h4>
+<ul>
+<li>abs(x)</li>
+<li>acos(x)</li>
+<li>asin(x)</li>
+<li>atan(x)</li>
+<li>atan2(y, x)</li>
+<li>ceil(x)</li>
+<li>cos(x)</li>
+<li>exp(x)</li>
+<li>floor(x)</li>
+<li>log(x)</li>
+<li>max([value1 [, value2 [, ..&#x2e;]]])</li>
+<li>min([value1 [, value2 [, ..&#x2e;]]])</li>
+<li>pow(x, y)</li>
+<li>random()</li>
+<li>round(x)</li>
+<li>sin(x)</li>
+<li>sqrt(x)</li>
+<li>tan(x)</li>
+</ul>
+<a name="date-objects"></a>
+<h3>Date Objects</h3>
+<a name="date-prototype-object"></a>
+<h4>Date Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+<li>toDateString()</li>
+<li>toTimeString()</li>
+<li>toLocaleString()</li>
+<li>toLocaleDateString()</li>
+<li>toLocaleTimeString()</li>
+<li>valueOf()</li>
+<li>getTime()</li>
+<li>getFullYear()</li>
+<li>getUTCFullYear()</li>
+<li>getMonth()</li>
+<li>getUTCMonth()</li>
+<li>getDate()</li>
+<li>getUTCDate()</li>
+<li>getDay()</li>
+<li>getUTCDay()</li>
+<li>getHours()</li>
+<li>getUTCHours()</li>
+<li>getMinutes()</li>
+<li>getUTCMinutes()</li>
+<li>getSeconds()</li>
+<li>getUTCSeconds()</li>
+<li>getMilliseconds()</li>
+<li>getUTCMilliseconds()</li>
+<li>getTimeZoneOffset()</li>
+<li>setTime(time)</li>
+<li>setMilliseconds(ms)</li>
+<li>setUTCMilliseconds(ms)</li>
+<li>setSeconds(sec [, ms])</li>
+<li>setUTCSeconds(sec [, ms])</li>
+<li>setMinutes(min [, sec [, ms]])</li>
+<li>setUTCMinutes(min [, sec [, ms]])</li>
+<li>setHours(hour [, min [, sec [, ms]]])</li>
+<li>setUTCHours(hour [, min [, sec [, ms]]])</li>
+<li>setDate(date)</li>
+<li>setUTCDate(date)</li>
+<li>setMonth(month [, date])</li>
+<li>setUTCMonth(month [, date])</li>
+<li>setFullYear(year [, month [, date]])</li>
+<li>setUTCFullYear(year [, month [, date]])</li>
+<li>toUTCString()</li>
+</ul>
+<a name="regexp-objects"></a>
+<h3>RegExp Objects</h3>
+<a name="regexp-prototype-object"></a>
+<h4>RegExp Prototype Object</h4>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>exec(string)</li>
+<li>test(string)</li>
+<li>toString()</li>
+</ul>
+<a name="error-objects"></a>
+<h3>Error Objects</h3>
+<a name="error-prototype-object"></a>
+<h4>Error Prototype Object</h4>
+<a name="value-properties"></a>
+<h5>Value Properties</h5>
+<ul>
+<li>name</li>
+<li>message</li>
+</ul>
+<a name="function-properties"></a>
+<h5>Function Properties</h5>
+<ul>
+<li>toString()</li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

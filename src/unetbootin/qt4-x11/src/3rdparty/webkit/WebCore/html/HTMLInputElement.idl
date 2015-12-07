@@ -1,0 +1,76 @@
+/*
+ * Copyright (C) 2006 Apple Computer, Inc.
+ * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module html {
+
+    interface [
+        CustomGetOwnPropertySlot,
+        GenerateConstructor,
+        InterfaceUUID=8f388ea3-1c31-4cca-8edd-449d14e222e1,
+        ImplementationUUID=aeb56b87-a90e-4d9d-a4d5-7eec3687c338
+    ] HTMLInputElement : HTMLElement {
+                 attribute [ConvertNullToNullString] DOMString defaultValue;
+                 attribute boolean         defaultChecked;
+        readonly attribute HTMLFormElement form;
+                 attribute [ConvertNullToNullString] DOMString accept;
+                 attribute [ConvertNullToNullString] DOMString accessKey;
+                 attribute [ConvertNullToNullString] DOMString align;
+                 attribute [ConvertNullToNullString] DOMString alt;
+                 attribute boolean         checked;
+                 attribute boolean         disabled;
+                 attribute boolean         autofocus;
+                 attribute long            maxLength;
+                 attribute [ConvertNullToNullString] DOMString name;
+                 attribute boolean         readOnly;
+#if defined(LANGUAGE_OBJECTIVE_C)
+                 attribute [ConvertToString] DOMString size; // DOM level 2 changed this to a long, but our existing API is a string
+#else
+                 // FIXME: the spec says this should be a long, not an unsigned long
+                 attribute unsigned long   size; // Changed string -> long as part of DOM level 2
+#endif
+                 attribute [ConvertNullToNullString] DOMString src;
+                 attribute [ConvertNullToNullString] DOMString type; // readonly dropped as part of DOM level 2
+                 attribute [ConvertNullToNullString] DOMString useMap;
+                 attribute [ConvertNullToNullString] DOMString value;
+        readonly attribute boolean         willValidate;
+        void               select();
+        void               click();
+        
+        // WinIE extension:
+                 attribute boolean         indeterminate;
+
+        // WinIE & FireFox extension:
+
+                 attribute [CustomGetter] long selectionStart;
+                 attribute [CustomGetter] long selectionEnd;
+        void               setSelectionRange(in long start, in long end);
+
+#if defined(LANGUAGE_OBJECTIVE_C)
+        // Objective-C extension:
+        readonly attribute DOMString       altDisplayString;
+        readonly attribute URL             absoluteImageURL;
+#endif
+
+#if !defined(LANGUAGE_COM)
+        readonly attribute FileList files;
+#endif
+    };
+
+}

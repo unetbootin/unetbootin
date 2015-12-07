@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/util/qundostack.cpp -->
+<head>
+  <title>Qt 4.4: QUndoStack Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QUndoStack Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QUndoStack class is a stack of <a href="qundocommand.html">QUndoCommand</a> objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QUndoStack&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qundostack-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qundostack.html#active-prop">active</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qundostack.html#undoLimit-prop">undoLimit</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qundostack.html#QUndoStack">QUndoStack</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qundostack.html#dtor.QUndoStack">~QUndoStack</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#beginMacro">beginMacro</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>bool <b><a href="qundostack.html#canRedo">canRedo</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qundostack.html#canUndo">canUndo</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qundostack.html#cleanIndex">cleanIndex</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>const QUndoCommand * <b><a href="qundostack.html#command">command</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qundostack.html#count">count</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qundostack.html#createRedoAction">createRedoAction</a></b> ( QObject * <i>parent</i>, const QString &amp; <i>prefix</i> = QString() ) const</li>
+<li><div class="fn"/>QAction * <b><a href="qundostack.html#createUndoAction">createUndoAction</a></b> ( QObject * <i>parent</i>, const QString &amp; <i>prefix</i> = QString() ) const</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#endMacro">endMacro</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qundostack.html#index">index</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qundostack.html#active-prop">isActive</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qundostack.html#isClean">isClean</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#push">push</a></b> ( QUndoCommand * <i>cmd</i> )</li>
+<li><div class="fn"/>QString <b><a href="qundostack.html#redoText">redoText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#undoLimit-prop">setUndoLimit</a></b> ( int <i>limit</i> )</li>
+<li><div class="fn"/>QString <b><a href="qundostack.html#text">text</a></b> ( int <i>idx</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qundostack.html#undoLimit-prop">undoLimit</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qundostack.html#undoText">undoText</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qundostack.html#redo">redo</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#active-prop">setActive</a></b> ( bool <i>active</i> = true )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#setClean">setClean</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#setIndex">setIndex</a></b> ( int <i>idx</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#undo">undo</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qundostack.html#canRedoChanged">canRedoChanged</a></b> ( bool <i>canUndo</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#canUndoChanged">canUndoChanged</a></b> ( bool <i>canUndo</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#cleanChanged">cleanChanged</a></b> ( bool <i>clean</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#indexChanged">indexChanged</a></b> ( int <i>idx</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#redoTextChanged">redoTextChanged</a></b> ( const QString &amp; <i>redoText</i> )</li>
+<li><div class="fn"/>void <b><a href="qundostack.html#undoTextChanged">undoTextChanged</a></b> ( const QString &amp; <i>undoText</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QUndoStack class is a stack of <a href="qundocommand.html">QUndoCommand</a> objects.</p>
+<p>For an overview of Qt's Undo Framework, see the <a href="qundo.html">overview document</a>.</p>
+<p>An undo stack maintains a stack of commands that have been applied to a document.</p>
+<p>New commands are pushed on the stack using <a href="qundostack.html#push">push</a>(). Commands can be undone and redone using <a href="qundostack.html#undo">undo</a>() and <a href="qundostack.html#redo">redo</a>(), or by triggering the actions returned by <a href="qundostack.html#createUndoAction">createUndoAction</a>() and <a href="qundostack.html#createRedoAction">createRedoAction</a>().</p>
+<p>QUndoStack keeps track of the <i>current</i> command. This is the command which will be executed by the next call to <a href="qundostack.html#redo">redo</a>(). The index of this command is returned by <a href="qundostack.html#index">index</a>(). The state of the edited object can be rolled forward or back using <a href="qundostack.html#setIndex">setIndex</a>(). If the top-most command on the stack has already been redone, <a href="qundostack.html#index">index</a>() is equal to <a href="qundostack.html#count">count</a>().</p>
+<p>QUndoStack provides support for undo and redo actions, command compression, command macros, and supports the concept of a <i>clean state</i>.</p>
+<a name="undo-and-redo-actions"></a>
+<h3>Undo and Redo Actions</h3>
+<p>QUndoStack provides convenient undo and redo <a href="qaction.html">QAction</a> objects, which can be inserted into a menu or a toolbar. When commands are undone or redone, QUndoStack updates the text properties of these actions to reflect what change they will trigger. The actions are also disabled when no command is available for undo or redo. These actions are returned by <a href="qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>() and <a href="qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p>
+<a name="command-compression-and-macros"></a>
+<h3>Command Compression and Macros</h3>
+<p>Command compression is useful when several commands can be compressed into a single command that can be undone and redone in a single operation. For example, when a user types a character in a text editor, a new command is created. This command inserts the character into the document at the cursor position. However, it is more convenient for the user to be able to undo or redo typing of whole words, sentences, or paragraphs. Command compression allows these single-character commands to be merged into a single command which inserts or deletes sections of text. For more information, see <a href="qundocommand.html#mergeWith">QUndoCommand::mergeWith</a>() and <a href="qundostack.html#push">push</a>().</p>
+<p>A command macro is a sequence of commands, all of which are undone and redone in one go. Command macros are created by giving a command a list of child commands. Undoing or redoing the parent command will cause the child commands to be undone or redone. Command macros may be created explicitly by specifying a parent in the <a href="qundocommand.html">QUndoCommand</a> constructor, or by using the convenience functions <a href="qundostack.html#beginMacro">beginMacro</a>() and <a href="qundostack.html#endMacro">endMacro</a>().</p>
+<p>Although command compression and macros appear to have the same effect to the user, they often have different uses in an application. Commands that perform small changes to a document may be usefully compressed if there is no need to individually record them, and if only larger changes are relevant to the user. However, for commands that need to be recorded individually, or those that cannot be compressed, it is useful to use macros to provide a more convenient user experience while maintaining a record of each command.</p>
+<a name="clean-state"></a>
+<h3>Clean State</h3>
+<p>QUndoStack supports the concept of a clean state. When the document is saved to disk, the stack can be marked as clean using <a href="qundostack.html#setClean">setClean</a>(). Whenever the stack returns to this state through undoing and redoing commands, it emits the signal <a href="qundostack.html#cleanChanged">cleanChanged</a>(). This signal is also emitted when the stack leaves the clean state. This signal is usually used to enable and disable the save actions in the application, and to update the document's title to reflect that it contains unsaved changes.</p>
+<p>See also <a href="qundocommand.html">QUndoCommand</a> and <a href="qundoview.html">QUndoView</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="active-prop"></a>active : bool</h3>
+<p>This property holds the active status of this stack.</p>
+<p>An application often has multiple undo stacks, one for each opened document. The active stack is the one associated with the currently active document. If the stack belongs to a <a href="qundogroup.html">QUndoGroup</a>, calls to <a href="qundogroup.html#undo">QUndoGroup::undo</a>() or <a href="qundogroup.html#redo">QUndoGroup::redo</a>() will be forwarded to this stack when it is active. If the <a href="qundogroup.html">QUndoGroup</a> is watched by a <a href="qundoview.html">QUndoView</a>, the view will display the contents of this stack when it is active. If the stack does not belong to a <a href="qundogroup.html">QUndoGroup</a>, making it active has no effect.</p>
+<p>It is the programmer's responsibility to specify which stack is active by calling setActive(), usually when the associated document window receives focus.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isActive () const</b></li>
+<li><div class="fn"/><b>void setActive ( bool <i>active</i> = true )</b></li>
+</ul>
+<p>See also <a href="qundogroup.html">QUndoGroup</a>.</p>
+<h3 class="fn"><a name="undoLimit-prop"></a>undoLimit : int</h3>
+<p>This property holds the maximum number of commands on this stack.</p>
+<p>When the number of commands on a stack exceedes the stack's undoLimit, commands are deleted from the bottom of the stack. Macro commands (commands with child commands) are treated as one command. The default value is 0, which means that there is no limit.</p>
+<p>This property may only be set when the undo stack is empty, since setting it on a non-empty stack might delete the command at the current index. Calling setUndoLimit() on a non-empty stack prints a warning and does nothing.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int undoLimit () const</b></li>
+<li><div class="fn"/><b>void setUndoLimit ( int <i>limit</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QUndoStack"></a>QUndoStack::QUndoStack ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty undo stack with the parent <i>parent</i>. The stack will initally be in the clean state. If <i>parent</i> is a <a href="qundogroup.html">QUndoGroup</a> object, the stack is automatically added to the group.</p>
+<p>See also <a href="qundostack.html#push">push</a>().</p>
+<h3 class="fn"><a name="dtor.QUndoStack"></a>QUndoStack::~QUndoStack ()</h3>
+<p>Destroys the undo stack, deleting any commands that are on it. If the stack is in a <a href="qundogroup.html">QUndoGroup</a>, the stack is automatically removed from the group.</p>
+<p>See also <a href="qundostack.html#QUndoStack">QUndoStack</a>().</p>
+<h3 class="fn"><a name="beginMacro"></a>void QUndoStack::beginMacro ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Begins composition of a macro command with the given <i>text</i> description.</p>
+<p>An empty command described by the specified <i>text</i> is pushed on the stack. Any subsequent commands pushed on the stack will be appended to the empty command's children until <a href="qundostack.html#endMacro">endMacro</a>() is called.</p>
+<p>Calls to beginMacro() and <a href="qundostack.html#endMacro">endMacro</a>() may be nested, but every call to beginMacro() must have a matching call to <a href="qundostack.html#endMacro">endMacro</a>().</p>
+<p>While a macro is composed, the stack is disabled. This means that:</p>
+<ul>
+<li><a href="qundostack.html#indexChanged">indexChanged</a>() and <a href="qundostack.html#cleanChanged">cleanChanged</a>() are not emitted,</li>
+<li><a href="qundostack.html#canUndo">canUndo</a>() and <a href="qundostack.html#canRedo">canRedo</a>() return false,</li>
+<li>calling <a href="qundostack.html#undo">undo</a>() or <a href="qundostack.html#redo">redo</a>() has no effect,</li>
+<li>the undo/redo actions are disabled.</li>
+</ul>
+<p>The stack becomes enabled and appropriate signals are emitted when <a href="qundostack.html#endMacro">endMacro</a>() is called for the outermost macro.</p>
+<pre>     stack.beginMacro(&quot;insert red text&quot;);
+     stack.push(new InsertText(document, idx, text));
+     stack.push(new SetColor(document, idx, text.length(), Qt::red));
+     stack.endMacro(); // indexChanged() is emitted</pre>
+<p>This code is equivalent to:</p>
+<pre>     QUndoCommand *insertRed = new QUndoCommand(); // an empty command
+     insertRed-&gt;setText(&quot;insert red text&quot;);
+
+     new InsertText(document, idx, text, insertRed); // becomes child of insertRed
+     new SetColor(document, idx, text.length(), Qt::red, insertRed);
+
+     stack.push(insertRed);</pre>
+<p>See also <a href="qundostack.html#endMacro">endMacro</a>().</p>
+<h3 class="fn"><a name="canRedo"></a>bool QUndoStack::canRedo () const</h3>
+<p>Returns true if there is a command available for redo; otherwise returns false.</p>
+<p>This function returns false if the stack is empty or if the top command on the stack has already been redone.</p>
+<p>Synonymous with <a href="qundostack.html#index">index</a>() == <a href="qundostack.html#count">count</a>().</p>
+<p>See also <a href="qundostack.html#index">index</a>() and <a href="qundostack.html#canUndo">canUndo</a>().</p>
+<h3 class="fn"><a name="canRedoChanged"></a>void QUndoStack::canRedoChanged ( bool <i>canUndo</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the value of <a href="qundostack.html#canRedo">canRedo</a>() changes. It is used to enable or disable the redo action returned by <a href="qundostack.html#createRedoAction">createRedoAction</a>(). <i>canUndo</i> specifies the new value.</p>
+<h3 class="fn"><a name="canUndo"></a>bool QUndoStack::canUndo () const</h3>
+<p>Returns true if there is a command available for undo; otherwise returns false.</p>
+<p>This function returns false if the stack is empty, or if the bottom command on the stack has already been undone.</p>
+<p>Synonymous with <a href="qundostack.html#index">index</a>() == 0.</p>
+<p>See also <a href="qundostack.html#index">index</a>() and <a href="qundostack.html#canRedo">canRedo</a>().</p>
+<h3 class="fn"><a name="canUndoChanged"></a>void QUndoStack::canUndoChanged ( bool <i>canUndo</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the value of <a href="qundostack.html#canUndo">canUndo</a>() changes. It is used to enable or disable the undo action returned by <a href="qundostack.html#createUndoAction">createUndoAction</a>(). <i>canUndo</i> specifies the new value.</p>
+<h3 class="fn"><a name="cleanChanged"></a>void QUndoStack::cleanChanged ( bool <i>clean</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the stack enters or leaves the clean state. If <i>clean</i> is true, the stack is in a clean state; otherwise this signal indicates that it has left the clean state.</p>
+<p>See also <a href="qundostack.html#isClean">isClean</a>() and <a href="qundostack.html#setClean">setClean</a>().</p>
+<h3 class="fn"><a name="cleanIndex"></a>int QUndoStack::cleanIndex () const</h3>
+<p>Returns the clean index. This is the index at which <a href="qundostack.html#setClean">setClean</a>() was called.</p>
+<p>A stack may not have a clean index. This happens if a document is saved, some commands are undone, then a new command is pushed. Since <a href="qundostack.html#push">push</a>() deletes all the undone commands before pushing the new command, the stack can't return to the clean state again. In this case, this function returns -1.</p>
+<p>See also <a href="qundostack.html#isClean">isClean</a>() and <a href="qundostack.html#setClean">setClean</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QUndoStack::clear ()</h3>
+<p>Clears the command stack by deleting all commands on it, and returns the stack to the clean state.</p>
+<p>Commands are not undone or redone; the state of the edited object remains unchanged.</p>
+<p>This function is usually used when the contents of the document are abandoned.</p>
+<p>See also <a href="qundostack.html#QUndoStack">QUndoStack</a>().</p>
+<h3 class="fn"><a name="command"></a>const <a href="qundocommand.html">QUndoCommand</a> * QUndoStack::command ( int <i>index</i> ) const</h3>
+<p>Returns a const pointer to the command at <i>index</i>.</p>
+<p>This function returns a const pointer, because modifying a command, once it has been pushed onto the stack and executed, almost always causes corruption of the state of the document, if the command is later undone or redone.</p>
+<p>See also <a href="qundocommand.html#child">QUndoCommand::child</a>().</p>
+<h3 class="fn"><a name="count"></a>int QUndoStack::count () const</h3>
+<p>Returns the number of commands on the stack. Macro commands are counted as one command.</p>
+<p>See also <a href="qundostack.html#index">index</a>(), <a href="qundostack.html#setIndex">setIndex</a>(), and <a href="qundostack.html#command">command</a>().</p>
+<h3 class="fn"><a name="createRedoAction"></a><a href="qaction.html">QAction</a> * QUndoStack::createRedoAction ( <a href="qobject.html">QObject</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString() ) const</h3>
+<p>Creates an redo <a href="qaction.html">QAction</a> object with the given <i>parent</i>.</p>
+<p>Triggering this action will cause a call to <a href="qundostack.html#redo">redo</a>(). The text of this action is the text of the command which will be redone in the next call to <a href="qundostack.html#redo">redo</a>(), prefixed by the specified <i>prefix</i>. If there is no command available for redo, this action will be disabled.</p>
+<p>If <i>prefix</i> is empty, the default prefix &quot;Redo&quot; is used.</p>
+<p>See also <a href="qundostack.html#createUndoAction">createUndoAction</a>(), <a href="qundostack.html#canRedo">canRedo</a>(), and <a href="qundocommand.html#text">QUndoCommand::text</a>().</p>
+<h3 class="fn"><a name="createUndoAction"></a><a href="qaction.html">QAction</a> * QUndoStack::createUndoAction ( <a href="qobject.html">QObject</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString() ) const</h3>
+<p>Creates an undo <a href="qaction.html">QAction</a> object with the given <i>parent</i>.</p>
+<p>Triggering this action will cause a call to <a href="qundostack.html#undo">undo</a>(). The text of this action is the text of the command which will be undone in the next call to <a href="qundostack.html#undo">undo</a>(), prefixed by the specified <i>prefix</i>. If there is no command available for undo, this action will be disabled.</p>
+<p>If <i>prefix</i> is empty, the default prefix &quot;Undo&quot; is used.</p>
+<p>See also <a href="qundostack.html#createRedoAction">createRedoAction</a>(), <a href="qundostack.html#canUndo">canUndo</a>(), and <a href="qundocommand.html#text">QUndoCommand::text</a>().</p>
+<h3 class="fn"><a name="endMacro"></a>void QUndoStack::endMacro ()</h3>
+<p>Ends composition of a macro command.</p>
+<p>If this is the outermost macro in a set nested macros, this function emits <a href="qundostack.html#indexChanged">indexChanged</a>() once for the entire macro command.</p>
+<p>See also <a href="qundostack.html#beginMacro">beginMacro</a>().</p>
+<h3 class="fn"><a name="index"></a>int QUndoStack::index () const</h3>
+<p>Returns the index of the current command. This is the command that will be executed on the next call to <a href="qundostack.html#redo">redo</a>(). It is not always the top-most command on the stack, since a number of commands may have been undone.</p>
+<p>See also <a href="qundostack.html#setIndex">setIndex</a>(), <a href="qundostack.html#undo">undo</a>(), <a href="qundostack.html#redo">redo</a>(), and <a href="qundostack.html#count">count</a>().</p>
+<h3 class="fn"><a name="indexChanged"></a>void QUndoStack::indexChanged ( int <i>idx</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a command modifies the state of the document. This happens when a command is undone or redone. When a macro command is undone or redone, or <a href="qundostack.html#setIndex">setIndex</a>() is called, this signal is emitted only once.</p>
+<p><i>idx</i> specifies the index of the current command, ie. the command which will be executed on the next call to <a href="qundostack.html#redo">redo</a>().</p>
+<p>See also <a href="qundostack.html#index">index</a>() and <a href="qundostack.html#setIndex">setIndex</a>().</p>
+<h3 class="fn"><a name="isClean"></a>bool QUndoStack::isClean () const</h3>
+<p>If the stack is in the clean state, returns true; otherwise returns false.</p>
+<p>See also <a href="qundostack.html#setClean">setClean</a>() and <a href="qundostack.html#cleanIndex">cleanIndex</a>().</p>
+<h3 class="fn"><a name="push"></a>void QUndoStack::push ( <a href="qundocommand.html">QUndoCommand</a> * <i>cmd</i> )</h3>
+<p>Pushes <i>cmd</i> on the stack or merges it with the most recently executed command. In either case, executes <i>cmd</i> by calling its <a href="qundostack.html#redo">redo</a>() function.</p>
+<p>If <i>cmd</i>'s id is not -1, and if the id is the same as that of the most recently executed command, <a href="qundostack.html">QUndoStack</a> will attempt to merge the two commands by calling <a href="qundocommand.html#mergeWith">QUndoCommand::mergeWith</a>() on the most recently executed command. If <a href="qundocommand.html#mergeWith">QUndoCommand::mergeWith</a>() returns true, <i>cmd</i> is deleted.</p>
+<p>In all other cases <i>cmd</i> is simply pushed on the stack.</p>
+<p>If commands were undone before <i>cmd</i> was pushed, the current command and all commands above it are deleted. Hence <i>cmd</i> always ends up being the top-most on the stack.</p>
+<p>Once a command is pushed, the stack takes ownership of it. There are no getters to return the command, since modifying it after it has been executed will almost always lead to corruption of the document's state.</p>
+<p>See also <a href="qundocommand.html#id">QUndoCommand::id</a>() and <a href="qundocommand.html#mergeWith">QUndoCommand::mergeWith</a>().</p>
+<h3 class="fn"><a name="redo"></a>void QUndoStack::redo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Redoes the current command by calling <a href="qundocommand.html#redo">QUndoCommand::redo</a>(). Increments the current command index.</p>
+<p>If the stack is empty, or if the top command on the stack has already been redone, this function does nothing.</p>
+<p>See also <a href="qundostack.html#undo">undo</a>() and <a href="qundostack.html#index">index</a>().</p>
+<h3 class="fn"><a name="redoText"></a><a href="qstring.html">QString</a> QUndoStack::redoText () const</h3>
+<p>Returns the text of the command which will be redone in the next call to <a href="qundostack.html#redo">redo</a>().</p>
+<p>See also <a href="qundocommand.html#text">QUndoCommand::text</a>() and <a href="qundostack.html#undoText">undoText</a>().</p>
+<h3 class="fn"><a name="redoTextChanged"></a>void QUndoStack::redoTextChanged ( const <a href="qstring.html">QString</a> &amp; <i>redoText</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the value of <a href="qundostack.html#redoText">redoText</a>() changes. It is used to update the text property of the redo action returned by <a href="qundostack.html#createRedoAction">createRedoAction</a>(). <i>redoText</i> specifies the new text.</p>
+<h3 class="fn"><a name="setClean"></a>void QUndoStack::setClean ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Marks the stack as clean and emits <a href="qundostack.html#cleanChanged">cleanChanged</a>() if the stack was not already clean.</p>
+<p>Whenever the stack returns to this state through the use of undo/redo commands, it emits the signal <a href="qundostack.html#cleanChanged">cleanChanged</a>(). This signal is also emitted when the stack leaves the clean state.</p>
+<p>See also <a href="qundostack.html#isClean">isClean</a>() and <a href="qundostack.html#cleanIndex">cleanIndex</a>().</p>
+<h3 class="fn"><a name="setIndex"></a>void QUndoStack::setIndex ( int <i>idx</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Repeatedly calls <a href="qundostack.html#undo">undo</a>() or <a href="qundostack.html#redo">redo</a>() until the the current command index reaches <i>idx</i>. This function can be used to roll the state of the document forwards of backwards. <a href="qundostack.html#indexChanged">indexChanged</a>() is emitted only once.</p>
+<p>See also <a href="qundostack.html#index">index</a>(), <a href="qundostack.html#count">count</a>(), <a href="qundostack.html#undo">undo</a>(), and <a href="qundostack.html#redo">redo</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QUndoStack::text ( int <i>idx</i> ) const</h3>
+<p>Returns the text of the command at index <i>idx</i>.</p>
+<p>See also <a href="qundostack.html#beginMacro">beginMacro</a>().</p>
+<h3 class="fn"><a name="undo"></a>void QUndoStack::undo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Undoes the command below the current command by calling <a href="qundocommand.html#undo">QUndoCommand::undo</a>(). Decrements the current command index.</p>
+<p>If the stack is empty, or if the bottom command on the stack has already been undone, this function does nothing.</p>
+<p>See also <a href="qundostack.html#redo">redo</a>() and <a href="qundostack.html#index">index</a>().</p>
+<h3 class="fn"><a name="undoText"></a><a href="qstring.html">QString</a> QUndoStack::undoText () const</h3>
+<p>Returns the text of the command which will be undone in the next call to <a href="qundostack.html#undo">undo</a>().</p>
+<p>See also <a href="qundocommand.html#text">QUndoCommand::text</a>() and <a href="qundostack.html#redoText">redoText</a>().</p>
+<h3 class="fn"><a name="undoTextChanged"></a>void QUndoStack::undoTextChanged ( const <a href="qstring.html">QString</a> &amp; <i>undoText</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the value of <a href="qundostack.html#undoText">undoText</a>() changes. It is used to update the text property of the undo action returned by <a href="qundostack.html#createUndoAction">createUndoAction</a>(). <i>undoText</i> specifies the new text.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

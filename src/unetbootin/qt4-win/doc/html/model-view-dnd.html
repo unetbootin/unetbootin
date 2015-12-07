@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Using Drag and Drop with Item Views</title>
+  <link rel="prev" href="model-view-convenience.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-proxy-models.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-convenience.html">Item View Convenience Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-proxy-models.html">Proxy Models</a>]
+</p>
+<h1 class="title">Using Drag and Drop with Item Views<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#overview">Overview</a></li>
+<li><a href="#using-convenience-views">Using Convenience Views</a></li>
+<li><a href="#using-model-view-classes">Using Model/View Classes</a></li>
+<ul><li><a href="#enabling-drag-and-drop-for-items">Enabling Drag and Drop for Items</a></li>
+<li><a href="#encoding-exported-data">Encoding Exported Data</a></li>
+<li><a href="#inserting-dropped-data-into-a-model">Inserting Dropped Data into a Model</a></li>
+<li><a href="#decoding-imported-data">Decoding Imported Data</a></li>
+</ul>
+</ul>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>Qt's drag and drop infrastructure is fully supported by the model/view framework. Items in lists, tables, and trees can be dragged within the views, and data can be imported and exported as MIME-encoded data.</p>
+<p>The standard views automatically support internal drag and drop, where items are moved around to change the order in which they are displayed. By default, drag and drop is not enabled for these views because they are configured for the simplest, most common uses. To allow items to be dragged around, certain properties of the view need to be enabled, and the items themselves must also allow dragging to occur.</p>
+<p>The requirements for a model that only allows items to be exported from a view, and which does not allow data to be dropped into it, are fewer than those for a fully-enabled drag and drop model.</p>
+<p>See also the <a href="model-view-model-subclassing.html">Model Subclassing Reference</a> for more information about enabling drag and drop support in new models.</p>
+<a name="using-convenience-views"></a>
+<h2>Using Convenience Views</h2>
+<p>Each of the types of item used with <a href="qlistwidget.html">QListWidget</a>, <a href="qtablewidget.html">QTableWidget</a>, and <a href="qtreewidget.html">QTreeWidget</a> is configured to use a different set of flags by default. For example, each <a href="qlistwidgetitem.html">QListWidgetItem</a> or <a href="qtreewidgetitem.html">QTreeWidgetItem</a> is initially enabled, checkable, selectable, and can be used as the source of a drag and drop operation; each <a href="qtablewidgetitem.html">QTableWidgetItem</a> can also be edited and used as the target of a drag and drop operation.</p>
+<p>Although all of the standard items have one or both flags set for drag and drop, you generally need to set various properties in the view itself to take advantage of the built-in support for drag and drop:</p>
+<ul>
+<li>To enable item dragging, set the view's <a href="qabstractitemview.html#dragEnabled-prop">dragEnabled</a> property to <tt>true</tt>.</li>
+<li>To allow the user to drop either internal or external items within the view, set the view's <a href="qabstractscrollarea.html#viewport">viewport()</a>'s <a href="qwidget.html#acceptDrops-prop">acceptDrops</a> property to <tt>true</tt>.</li>
+<li>To show the user where the item currently being dragged will be placed if dropped, set the view's <a href="qabstractitemview.html#showDropIndicator-prop">showDropIndicator</a> property. This provides the user with continuously updating information about item placement within the view.</li>
+</ul>
+<p>For example, we can enable drag and drop in a list widget with the following lines of code:</p>
+<pre> QListWidget *listWidget = new QListWidget(this);
+ listWidget-&gt;setSelectionMode(QAbstractItemView::SingleSelection);
+ listWidget-&gt;setDragEnabled(true);
+ listWidget-&gt;viewport()-&gt;setAcceptDrops(true);
+ listWidget-&gt;setDropIndicatorShown(true);</pre>
+<p>The result is a list widget which allows the items to be copied around within the view, and even lets the user drag items between views containing the same type of data. In both situations, the items are copied rather than moved.</p>
+<p>To enable the user to move the items around within the view, we must set the list widget's <a href="qabstractitemview.html#dragDropMode-prop">dragDropMode</a>:</p>
+<pre> listWidget-&gt;setDragDropMode(QAbstractItemView::InternalMove);</pre>
+<a name="using-model-view-classes"></a>
+<h2>Using Model/View Classes</h2>
+<p>Setting up a view for drag and drop follows the same pattern used with the convenience views. For example, a <a href="qlistview.html">QListView</a> can be set up in the same way as a <a href="qlistwidget.html">QListWidget</a>:</p>
+<pre> QListView *listView = new QListView(this);
+ listView-&gt;setSelectionMode(QAbstractItemView::ExtendedSelection);
+ listView-&gt;setDragEnabled(true);
+ listView-&gt;setAcceptDrops(true);
+ listView-&gt;setDropIndicatorShown(true);</pre>
+<p>Since access to the data displayed by the view is controlled by a model, the model used also has to provide support for drag and drop operations. The actions supported by a model can be specified by reimplementing the <a href="qabstractitemmodel.html#supportedDropActions">QAbstractItemModel::supportedDropActions</a>() function. For example, copy and move operations are enabled with the following code:</p>
+<pre> Qt::DropActions DragDropListModel::supportedDropActions() const
+ {
+     return Qt::CopyAction | Qt::MoveAction;
+ }</pre>
+<p>Although any combination of values from <a href="qt.html#DropAction-enum">Qt::DropActions</a> can be given, the model needs to be written to support them. For example, to allow <a href="qt.html#DropAction-enum">Qt::MoveAction</a> to be used properly with a list model, the model must provide an implementation of <a href="qabstractitemmodel.html#removeRows">QAbstractItemModel::removeRows</a>(), either directly or by inheriting the implementation from its base class.</p>
+<a name="enabling-drag-and-drop-for-items"></a>
+<h3>Enabling Drag and Drop for Items</h3>
+<p>Models indicate to views which items can be dragged, and which will accept drops, by reimplementing the <a href="qabstractitemmodel.html#flags">QAbstractItemModel::flags</a>() function to provide suitable flags.</p>
+<p>For example, a model which provides a simple list based on <a href="qabstractlistmodel.html">QAbstractListModel</a> can enable drag and drop for each of the items by ensuring that the flags returned contain the <a href="qt.html#ItemFlag-enum">Qt::ItemIsDragEnabled</a> and <a href="qt.html#ItemFlag-enum">Qt::ItemIsDropEnabled</a> values:</p>
+<pre> Qt::ItemFlags DragDropListModel::flags(const QModelIndex &amp;index) const
+ {
+     Qt::ItemFlags defaultFlags = QStringListModel::flags(index);
+
+     if (index.isValid())
+         return Qt::ItemIsDragEnabled | Qt::ItemIsDropEnabled | defaultFlags;
+     else
+         return Qt::ItemIsDropEnabled | defaultFlags;
+ }</pre>
+<p>Note that items can be dropped into the top level of the model, but dragging is only enabled for valid items.</p>
+<p>In the above code, since the model is derived from <a href="qstringlistmodel.html">QStringListModel</a>, we obtain a default set of flags by calling its implementation of the flags() function.</p>
+<a name="encoding-exported-data"></a>
+<h3>Encoding Exported Data</h3>
+<p>When items of data are exported from a model in a drag and drop operation, they are encoded into an appropriate format corresponding to one or more MIME types. Models declare the MIME types that they can use to supply items by reimplementing the <a href="qabstractitemmodel.html#mimeTypes">QAbstractItemModel::mimeTypes</a>() function, returning a list of standard MIME types.</p>
+<p>For example, a model that only provides plain text would provide the following implementation:</p>
+<pre> QStringList DragDropListModel::mimeTypes() const
+ {
+     QStringList types;
+     types &lt;&lt; &quot;application/vnd.text.list&quot;;
+     return types;
+ }</pre>
+<p>The model must also provide code to encode data in the advertised format. This is achieved by reimplementing the <a href="qabstractitemmodel.html#mimeData">QAbstractItemModel::mimeData</a>() function to provide a <a href="qmimedata.html">QMimeData</a> object, just as in any other drag and drop operation.</p>
+<p>The following code shows how each item of data, corresponding to a given list of indexes, is encoded as plain text and stored in a <a href="qmimedata.html">QMimeData</a> object.</p>
+<pre> QMimeData *DragDropListModel::mimeData(const QModelIndexList &amp;indexes) const
+ {
+     QMimeData *mimeData = new QMimeData();
+     QByteArray encodedData;
+
+     QDataStream stream(&amp;encodedData, QIODevice::WriteOnly);
+
+     foreach (QModelIndex index, indexes) {
+         if (index.isValid()) {
+             QString text = data(index, Qt::DisplayRole).toString();
+             stream &lt;&lt; text;
+         }
+     }
+
+     mimeData-&gt;setData(&quot;application/vnd.text.list&quot;, encodedData);
+     return mimeData;
+ }</pre>
+<p>Since a list of model indexes is supplied to the function, this approach is general enough to be used in both hierarchical and non-heirarchical models.</p>
+<a name="inserting-dropped-data-into-a-model"></a>
+<h3>Inserting Dropped Data into a Model</h3>
+<p>The way that any given model handles dropped data depends on both its type (list, table, or tree) and the way its contents is likely to be presented to the user. Generally, the approach taken to accommodate dropped data should be the one that most suits the model's underlying data store.</p>
+<p>Different types of model tend to handle dropped data in different ways. List and table models only provide a flat structure in which items of data are stored. As a result, they may insert new rows (and columns) when data is dropped on an existing item in a view, or they may overwrite the item's contents in the model using some of the data supplied. Tree models are often able to add child items containing new data to their underlying data stores, and will therefore behave more predictably as far as the user is concerned.</p>
+<p>Dropped data is handled by a model's reimplementation of <a href="qabstractitemmodel.html#dropMimeData">QAbstractItemModel::dropMimeData</a>(). For example, a model that handles a simple list of strings can provide an implementation that handles data dropped onto existing items separately to data dropped into the top level of the model (i.e&#x2e;, onto an invalid item).</p>
+<p>The model first has to make sure that the operation should be acted on, the data supplied is in a format that can be used, and that its destination within the model is valid:</p>
+<pre> bool DragDropListModel::dropMimeData(const QMimeData *data,
+     Qt::DropAction action, int row, int column, const QModelIndex &amp;parent)
+ {
+     if (action == Qt::IgnoreAction)
+         return true;
+
+     if (!data-&gt;hasFormat(&quot;application/vnd.text.list&quot;))
+         return false;
+
+     if (column &gt; 0)
+         return false;</pre>
+<p>A simple one column string list model can indicate failure if the data supplied is not plain text, or if the column number given for the drop is invalid.</p>
+<p>The data to be inserted into the model is treated differently depending on whether it is dropped onto an existing item or not. In this simple example, we want to allow drops between existing items, before the first item in the list, and after the last item.</p>
+<p>When a drop occurs, the model index corresponding to the parent item will either be valid, indicating that the drop occurred on an item, or it will be invalid, indicating that the drop occurred somewhere in the view that corresponds to top level of the model.</p>
+<pre>     int beginRow;
+
+     if (row != -1)
+         beginRow = row;</pre>
+<p>We initially examine the row number supplied to see if we can use it to insert items into the model, regardless of whether the parent index is valid or not.</p>
+<pre>     else if (parent.isValid())
+         beginRow = parent.row();</pre>
+<p>If the parent model index is valid, the drop occurred on an item. In this simple list model, we find out the row number of the item and use that value to insert dropped items into the top level of the model.</p>
+<pre>     else
+         beginRow = rowCount(QModelIndex());</pre>
+<p>When a drop occurs elsewhere in the view, and the row number is unusable, we append items to the top level of the model.</p>
+<p>In hierarchical models, when a drop occurs on an item, it would be better to insert new items into the model as children of that item. In the simple example shown here, the model only has one level, so this approach is not appropriate.</p>
+<a name="decoding-imported-data"></a>
+<h3>Decoding Imported Data</h3>
+<p>Each implementation of <a href="qabstractitemmodel.html#dropMimeData">dropMimeData()</a> must also decode the data and insert it into the model's underlying data structure.</p>
+<p>For a simple string list model, the encoded items can be decoded and streamed into a <a href="qstringlist.html">QStringList</a>:</p>
+<pre>     QByteArray encodedData = data-&gt;data(&quot;application/vnd.text.list&quot;);
+     QDataStream stream(&amp;encodedData, QIODevice::ReadOnly);
+     QStringList newItems;
+     int rows = 0;
+
+     while (!stream.atEnd()) {
+         QString text;
+         stream &gt;&gt; text;
+         newItems &lt;&lt; text;
+         ++rows;
+     }</pre>
+<p>The strings can then be inserted into the underlying data store. For consistency, this can be done through the model's own interface:</p>
+<pre>     insertRows(beginRow, rows, QModelIndex());
+     foreach (QString text, newItems) {
+         QModelIndex idx = index(beginRow, 0, QModelIndex());
+         setData(idx, text);
+         beginRow++;
+     }
+
+     return true;
+ }</pre>
+<p>Note that the model will typically need to provide implementations of the <a href="qabstractitemmodel.html#insertRows">QAbstractItemModel::insertRows</a>() and <a href="qabstractitemmodel.html#setData">QAbstractItemModel::setData</a>() functions.</p>
+<p>See also <a href="itemviews-puzzle.html">Item Views Puzzle Example</a>.</p>
+<p>
+[Previous: <a href="model-view-convenience.html">Item View Convenience Classes</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-proxy-models.html">Proxy Models</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

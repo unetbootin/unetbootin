@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionMenuItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionMenuItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionMenuItem class is used to describe the parameter necessary for drawing a menu item. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionMenuItem&gt;</pre><p>Inherits <a href="qstyleoption.html">QStyleOption</a>.</p>
+<ul>
+<li><a href="qstyleoptionmenuitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionmenuitem.html#CheckType-enum">CheckType</a></b> { NotCheckable, Exclusive, NonExclusive }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionmenuitem.html#MenuItemType-enum">MenuItemType</a></b> { Normal, DefaultItem, Separator, SubMenu, ..., EmptyArea }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionmenuitem.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionmenuitem.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionmenuitem.html#QStyleOptionMenuItem">QStyleOptionMenuItem</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionmenuitem.html#QStyleOptionMenuItem-2">QStyleOptionMenuItem</a></b> ( const QStyleOptionMenuItem &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>CheckType <b><a href="qstyleoptionmenuitem.html#checkType-var">checkType</a></b></li>
+<li><div class="fn"/>bool <b><a href="qstyleoptionmenuitem.html#checked-var">checked</a></b></li>
+<li><div class="fn"/>QFont <b><a href="qstyleoptionmenuitem.html#font-var">font</a></b></li>
+<li><div class="fn"/>QIcon <b><a href="qstyleoptionmenuitem.html#icon-var">icon</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionmenuitem.html#maxIconWidth-var">maxIconWidth</a></b></li>
+<li><div class="fn"/>bool <b><a href="qstyleoptionmenuitem.html#menuHasCheckableItems-var">menuHasCheckableItems</a></b></li>
+<li><div class="fn"/>MenuItemType <b><a href="qstyleoptionmenuitem.html#menuItemType-var">menuItemType</a></b></li>
+<li><div class="fn"/>QRect <b><a href="qstyleoptionmenuitem.html#menuRect-var">menuRect</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionmenuitem.html#tabWidth-var">tabWidth</a></b></li>
+<li><div class="fn"/>QString <b><a href="qstyleoptionmenuitem.html#text-var">text</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionMenuItem class is used to describe the parameter necessary for drawing a menu item.</p>
+<p>QStyleOptionMenuItem contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw the menu items from <a href="qmenu.html">QMenu</a>. It is also used for drawing other menu-related widgets.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CheckType-enum"></a>enum QStyleOptionMenuItem::CheckType</h3>
+<p>This enum is used to indicate whether or not a check mark should be drawn for the item, or even if it should be drawn at all.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::NotCheckable</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The item is not checkable.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Exclusive</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The item is an exclusive check item (like a radio button).</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::NonExclusive</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The item is a non-exclusive check item (like a check box).</td></tr>
+</table></p>
+<p>See also <a href="qstyleoptionmenuitem.html#checkType-var">checkType</a>, <a href="qaction.html#checkable-prop">QAction::checkable</a>, <a href="qaction.html#checked-prop">QAction::checked</a>, and <a href="qactiongroup.html#exclusive-prop">QActionGroup::exclusive</a>.</p>
+<h3 class="fn"><a name="MenuItemType-enum"></a>enum QStyleOptionMenuItem::MenuItemType</h3>
+<p>This enum indicates the type of menu item that the structure describes.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Normal</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">A normal menu item.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::DefaultItem</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A menu item that is the default action as specified with <a href="qmenu.html#defaultAction">QMenu::defaultAction</a>().</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Separator</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">A menu separator.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::SubMenu</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Indicates the menu item points to a sub-menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Scroller</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">A popup menu scroller (currently only used on Mac OS X).</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::TearOff</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">A tear-off handle for the menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Margin</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The margin of the menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::EmptyArea</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The empty area of the menu.</td></tr>
+</table></p>
+<p>See also <a href="qstyleoptionmenuitem.html#menuItemType-var">menuItemType</a>.</p>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionMenuItem::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Type</tt></td><td align="center" valign="top"><tt>SO_MenuItem</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_MenuItem</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptionmenuitem.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionMenuItem::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionMenuItem::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionmenuitem.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionMenuItem"></a>QStyleOptionMenuItem::QStyleOptionMenuItem ()</h3>
+<p>Constructs a <a href="qstyleoptionmenuitem.html">QStyleOptionMenuItem</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionMenuItem-2"></a>QStyleOptionMenuItem::QStyleOptionMenuItem ( const QStyleOptionMenuItem &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="checkType-var"></a><a href="qstyleoptionmenuitem.html#CheckType-enum">CheckType</a> QStyleOptionMenuItem::checkType</h3>
+<p>This variable holds the type of checkmark of the menu item.</p>
+<p>The default value is <a href="qstyleoptionmenuitem.html#CheckType-enum">NotCheckable</a>.</p>
+<p>See also <a href="qstyleoptionmenuitem.html#CheckType-enum">CheckType</a>.</p>
+<h3 class="fn"><a name="checked-var"></a>bool QStyleOptionMenuItem::checked</h3>
+<p>This variable holds whether the menu item is checked or not.</p>
+<p>The default value is false.</p>
+<h3 class="fn"><a name="font-var"></a><a href="qfont.html">QFont</a> QStyleOptionMenuItem::font</h3>
+<p>This variable holds the font used for the menu item text.</p>
+<p>This is the font that should be used for drawing the menu text minus the shortcut. The shortcut is usually drawn using the painter's font. By default, the application's default font is used.</p>
+<h3 class="fn"><a name="icon-var"></a><a href="qicon.html">QIcon</a> QStyleOptionMenuItem::icon</h3>
+<p>This variable holds the icon for the menu item.</p>
+<p>The default value is an empty icon, i.e&#x2e; an icon with neither a pixmap nor a filename.</p>
+<h3 class="fn"><a name="maxIconWidth-var"></a>int QStyleOptionMenuItem::maxIconWidth</h3>
+<p>This variable holds the maximum icon width for the icon in the menu item.</p>
+<p>This can be used for drawing the icon into the correct place or properly aligning items. The variable must be set regardless of whether or not the menu item has an icon. The default value is 0.</p>
+<h3 class="fn"><a name="menuHasCheckableItems-var"></a>bool QStyleOptionMenuItem::menuHasCheckableItems</h3>
+<p>This variable holds whether the menu as a whole has checkable items or not.</p>
+<p>The default value is true.</p>
+<p>If this option is set to false, then the menu has no checkable items. This makes it possible for GUI styles to save some horizontal space that would normally be used for the check column.</p>
+<h3 class="fn"><a name="menuItemType-var"></a><a href="qstyleoptionmenuitem.html#MenuItemType-enum">MenuItemType</a> QStyleOptionMenuItem::menuItemType</h3>
+<p>This variable holds the type of menu item.</p>
+<p>The default value is <a href="qstyleoptionmenuitem.html#MenuItemType-enum">Normal</a>.</p>
+<p>See also <a href="qstyleoptionmenuitem.html#MenuItemType-enum">MenuItemType</a>.</p>
+<h3 class="fn"><a name="menuRect-var"></a><a href="qrect.html">QRect</a> QStyleOptionMenuItem::menuRect</h3>
+<p>This variable holds the rectangle for the entire menu.</p>
+<p>The default value is a null rectangle, i.e&#x2e; a rectangle with both the width and the height set to 0.</p>
+<h3 class="fn"><a name="tabWidth-var"></a>int QStyleOptionMenuItem::tabWidth</h3>
+<p>This variable holds the tab width for the menu item.</p>
+<p>The tab width is the distance between the text of the menu item and the shortcut. The default value is 0.</p>
+<h3 class="fn"><a name="text-var"></a><a href="qstring.html">QString</a> QStyleOptionMenuItem::text</h3>
+<p>This variable holds the text for the menu item.</p>
+<p>Note that the text format is something like this &quot;Menu text<b>\t</b>Shortcut&quot;.</p>
+<p>If the menu item doesn't have a shortcut, it will just contain the menu item's text. The default value is an empty string.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

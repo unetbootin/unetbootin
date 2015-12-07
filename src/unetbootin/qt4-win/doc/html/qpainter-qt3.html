@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qpainter.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QPainter</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QPainter</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qpainter.html">QPainter class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>const QColor &amp; <b><a href="qpainter-qt3.html#backgroundColor">backgroundColor</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpainter-qt3.html#begin-2">begin</a></b> ( QPaintDevice * <i>device</i>, const QWidget * <i>init</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qpainter-qt3.html#boundingRect-2">boundingRect</a></b> ( const QRect &amp; <i>rectangle</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>length</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qpainter-qt3.html#boundingRect-3">boundingRect</a></b> ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawConvexPolygon-5">drawConvexPolygon</a></b> ( const QPolygonF &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawConvexPolygon-6">drawConvexPolygon</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawCubicBezier">drawCubicBezier</a></b> ( const QPolygon &amp; <i>controlPoints</i>, int <i>index</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawLineSegments">drawLineSegments</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawPoints-5">drawPoints</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawPolygon-3">drawPolygon</a></b> ( const QPolygonF &amp; <i>polygon</i>, bool <i>winding</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawPolygon-4">drawPolygon</a></b> ( const QPolygon &amp; <i>polygon</i>, bool <i>winding</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawPolyline-3">drawPolyline</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-3">drawText</a></b> ( int <i>x</i>, int <i>y</i>, const QString &amp; <i>text</i>, int <i>pos</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-4">drawText</a></b> ( const QPoint &amp; <i>point</i>, const QString &amp; <i>text</i>, int <i>pos</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-5">drawText</a></b> ( int <i>x</i>, int <i>y</i>, const QString &amp; <i>text</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-6">drawText</a></b> ( const QPoint &amp; <i>point</i>, const QString &amp; <i>text</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-7">drawText</a></b> ( const QRect &amp; <i>rectangle</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>length</i>, QRect * <i>br</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#drawText-8">drawText</a></b> ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const QString &amp; <i>text</i>, int <i>length</i>, QRect * <i>br</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qpainter-qt3.html#hasViewXForm">hasViewXForm</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpainter-qt3.html#hasWorldXForm">hasWorldXForm</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#resetXForm">resetXForm</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#setBackgroundColor">setBackgroundColor</a></b> ( const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#setViewXForm">setViewXForm</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#setWorldXForm">setWorldXForm</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qpainter-qt3.html#translationX">translationX</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qpainter-qt3.html#translationY">translationY</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qpainter-qt3.html#xForm">xForm</a></b> ( const QPoint &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qpainter-qt3.html#xForm-2">xForm</a></b> ( const QRect &amp; <i>rectangle</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qpainter-qt3.html#xForm-3">xForm</a></b> ( const QPolygon &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qpainter-qt3.html#xForm-4">xForm</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> ) const</li>
+<li><div class="fn"/>QPoint <b><a href="qpainter-qt3.html#xFormDev">xFormDev</a></b> ( const QPoint &amp; <i>point</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qpainter-qt3.html#xFormDev-2">xFormDev</a></b> ( const QRect &amp; <i>rectangle</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qpainter-qt3.html#xFormDev-3">xFormDev</a></b> ( const QPolygon &amp; <i>polygon</i> ) const</li>
+<li><div class="fn"/>QPolygon <b><a href="qpainter-qt3.html#xFormDev-4">xFormDev</a></b> ( const QPolygon &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> ) const</li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qpainter-qt3.html#redirect">redirect</a></b> ( QPaintDevice * <i>pdev</i>, QPaintDevice * <i>replacement</i> )</li>
+<li><div class="fn"/>QPaintDevice * <b><a href="qpainter-qt3.html#redirect-2">redirect</a></b> ( QPaintDevice * <i>pdev</i> )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="backgroundColor"></a>const <a href="qcolor.html">QColor</a> &amp; QPainter::backgroundColor () const</h3>
+<p>Use <a href="qpainter.html#background">background</a>() and <a href="qbrush.html#color">QBrush::color</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QColor myColor = backgroundColor();</font></pre>
+<p>you can rewrite it as</p>
+<pre> QColor myColor = background().color();</pre>
+<p>Note that the background can be a complex brush such as a texture or a gradient.</p>
+<p>See also <a href="qpainter-qt3.html#setBackgroundColor">setBackgroundColor</a>().</p>
+<h3 class="fn"><a name="begin-2"></a>bool QPainter::begin ( QPaintDevice * <i>device</i>, const <a href="qwidget.html">QWidget</a> * <i>init</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#begin">begin</a>() instead.</p>
+<p>If the paint <i>device</i> is a <a href="qwidget.html">QWidget</a>, <a href="qpainter.html">QPainter</a> is initialized after the widget's settings automatically. Otherwise, you must call the <a href="qpainter.html#initFrom">initFrom</a>() function to initialize the painters pen, background and font to the same as any given widget.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.begin(device, init);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.begin(device);
+ painter.initFrom(init);</pre>
+<h3 class="fn"><a name="boundingRect-2"></a><a href="qrect.html">QRect</a> QPainter::boundingRect ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the bounding rectangle for the given <i>length</i> of the <i>text</i> constrained by the provided <i>rectangle</i>.</p>
+<p>Use <a href="qpainter.html#boundingRect">boundingRect</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QRect rectangle = boundingRect(rect, flags, text, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QRect rectangle = boundingRect(rect, flags, text.left(length));</pre>
+<h3 class="fn"><a name="boundingRect-3"></a><a href="qrect.html">QRect</a> QPainter::boundingRect ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the bounding rectangle for the given <i>length</i> of the <i>text</i> constrained by the rectangle that begins at point (<i>x</i>, <i>y</i>) with the given <i>width</i> and <i>height</i>.</p>
+<p>Use <a href="qpainter.html#boundingRect">boundingRect</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QRect rectangle = boundingRect(x, y, width, height, flags, text, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QRect rectangle = boundingRect(x, y, width, height, flags, text.left(length));</pre>
+<h3 class="fn"><a name="drawConvexPolygon-5"></a>void QPainter::drawConvexPolygon ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawConvexPolygon">drawConvexPolygon</a>() combined with <a href="qvector.html#constData">QPolygonF::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawConvexPolygon(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+
+ QPainter painter(this);
+ painter.drawConvexPolygon(polygon.constData() + index, pointCount);</pre>
+<h3 class="fn"><a name="drawConvexPolygon-6"></a>void QPainter::drawConvexPolygon ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawConvexPolygon">drawConvexPolygon</a>() combined with <a href="qvector.html#constData">QPolygon::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawConvexPolygon(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+
+ QPainter painter(this);
+ painter.drawConvexPolygon(polygon.constData() + index, pointCount);</pre>
+<h3 class="fn"><a name="drawCubicBezier"></a>void QPainter::drawCubicBezier ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>controlPoints</i>, int <i>index</i> = 0 )</h3>
+<p>Draws a cubic Bezier curve defined by the <i>controlPoints</i>, starting at <i>controlPoints</i><i>[index]</i> (<i>index</i> defaults to 0). Points after <i>controlPoints</i><i>[index + 3]</i> are ignored. Nothing happens if there aren't enough control points.</p>
+<p>Use <a href="qpainter.html#strokePath">strokePath</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawCubicBezier(controlPoints, index)</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainterPath path;
+ path.moveTo(controlPoints.at(index));
+ path.cubicTo(controlPoints.at(index+1),
+                     controlPoints.at(index+2),
+                     controlPoints.at(index+3));
+
+ QPainter painter(this);
+ painter.strokePath(path, painter.pen());</pre>
+<h3 class="fn"><a name="drawLineSegments"></a>void QPainter::drawLineSegments ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</h3>
+<p>Draws <i>count</i> separate lines from points defined by the <i>polygon</i>, starting at <i>polygon</i><i>[index]</i> (<i>index</i> defaults to 0). If <i>count</i> is -1 (the default) all points until the end of the array are used.</p>
+<p>Use <a href="qpainter.html#drawLines">drawLines</a>() combined with <a href="qvector.html#constData">QPolygon::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawLineSegments(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int lineCount = (count == -1) ?  (polygon.size() - index) / 2  : count;
+
+ QPainter painter(this);
+ painter.drawLines(polygon.constData() + index * 2, lineCount);</pre>
+<h3 class="fn"><a name="drawPoints-5"></a>void QPainter::drawPoints ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Draws <i>count</i> points in the vector <i>polygon</i> starting on <i>index</i> using the current pen.</p>
+<p>Use <a href="qpainter.html#drawPoints">drawPoints</a>() combined with <a href="qvector.html#constData">QPolygon::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawPoints(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+
+ QPainter painter(this);
+ painter.drawPoints(polygon.constData() + index, pointCount);</pre>
+<h3 class="fn"><a name="drawPolygon-3"></a>void QPainter::drawPolygon ( const <a href="qpolygonf.html">QPolygonF</a> &amp; <i>polygon</i>, bool <i>winding</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawPolygon">drawPolygon</a>() combined with <a href="qvector.html#constData">QPolygonF::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawPolygon(polygon, winding, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+ int fillRule = winding ? Qt::WindingFill : Qt::OddEvenFill;
+
+ QPainter painter(this);
+ painter.drawPolygon( polygon.constData() + index, pointCount, fillRule);</pre>
+<h3 class="fn"><a name="drawPolygon-4"></a>void QPainter::drawPolygon ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, bool <i>winding</i>, int <i>index</i> = 0, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawPolygon">drawPolygon</a>() combined with <a href="qvector.html#constData">QPolygon::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawPolygon(polygon, winding, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+ int fillRule = winding ? Qt::WindingFill : Qt::OddEvenFill;
+
+ QPainter painter(this);
+ painter.drawPolygon( polygon.constData() + index, pointCount, fillRule);</pre>
+<h3 class="fn"><a name="drawPolyline-3"></a>void QPainter::drawPolyline ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Draws the polyline defined by the <i>count</i> lines of the given <i>polygon</i> starting at <i>index</i> (<i>index</i> defaults to 0).</p>
+<p>Use <a href="qpainter.html#drawPolyline">drawPolyline</a>() combined with <a href="qvector.html#constData">QPolygon::constData</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawPolyline(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> int pointCount = (count == -1) ?  polygon.size() - index : count;
+
+ QPainter painter(this);
+ painter.drawPolyline(polygon.constData() + index, pointCount);</pre>
+<h3 class="fn"><a name="drawText-3"></a>void QPainter::drawText ( int <i>x</i>, int <i>y</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>pos</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#mid">QString::mid</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(x, y, text, pos, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(x, y, text.mid(pos, length));</pre>
+<h3 class="fn"><a name="drawText-4"></a>void QPainter::drawText ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>pos</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#mid">QString::mid</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(point, text, pos, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(point, text.mid(pos, length));</pre>
+<h3 class="fn"><a name="drawText-5"></a>void QPainter::drawText ( int <i>x</i>, int <i>y</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(x, y, text, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(x, y, text.left(length));</pre>
+<h3 class="fn"><a name="drawText-6"></a>void QPainter::drawText ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(point, text, length);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(point, text.left(length));</pre>
+<h3 class="fn"><a name="drawText-7"></a>void QPainter::drawText ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i>, <a href="qrect.html">QRect</a> * <i>br</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(rectangle, flags, text, length, br );</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(rectangle, flags, text.left(length), br );</pre>
+<h3 class="fn"><a name="drawText-8"></a>void QPainter::drawText ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, int <i>flags</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>length</i>, <a href="qrect.html">QRect</a> * <i>br</i> = 0 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#drawText">drawText</a>() combined with <a href="qstring.html#left">QString::left</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ painter.drawText(x, y, width, height, flags, text, length, br );</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ painter.drawText(x, y, width, height, flags, text.left(length), br );</pre>
+<h3 class="fn"><a name="hasViewXForm"></a>bool QPainter::hasViewXForm () const</h3>
+<p>Use <a href="qpainter.html#viewTransformEnabled">viewTransformEnabled</a>() instead.</p>
+<h3 class="fn"><a name="hasWorldXForm"></a>bool QPainter::hasWorldXForm () const</h3>
+<p>Use <a href="qpainter.html#worldMatrixEnabled">worldMatrixEnabled</a>() instead.</p>
+<h3 class="fn"><a name="redirect"></a>void QPainter::redirect ( QPaintDevice * <i>pdev</i>, QPaintDevice * <i>replacement</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Use <a href="qpainter.html#setRedirected">setRedirected</a>() instead.</p>
+<h3 class="fn"><a name="redirect-2"></a>QPaintDevice * QPainter::redirect ( QPaintDevice * <i>pdev</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#redirected">redirected</a>() instead.</p>
+<h3 class="fn"><a name="resetXForm"></a>void QPainter::resetXForm ()</h3>
+<p>Use <a href="qpainter.html#resetMatrix">resetMatrix</a>() instead.</p>
+<h3 class="fn"><a name="setBackgroundColor"></a>void QPainter::setBackgroundColor ( const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Use <a href="qpainter.html#setBackground">setBackground</a>() instead.</p>
+<p>See also <a href="qpainter-qt3.html#backgroundColor">backgroundColor</a>().</p>
+<h3 class="fn"><a name="setViewXForm"></a>void QPainter::setViewXForm ( bool <i>enabled</i> )</h3>
+<p>Use <a href="qpainter.html#setViewTransformEnabled">setViewTransformEnabled</a>() instead.</p>
+<p>See also <a href="qpainter-qt3.html#hasViewXForm">hasViewXForm</a>().</p>
+<h3 class="fn"><a name="setWorldXForm"></a>void QPainter::setWorldXForm ( bool <i>enabled</i> )</h3>
+<p>Use <a href="qpainter.html#setWorldMatrixEnabled">setWorldMatrixEnabled</a>() instead.</p>
+<p>See also <a href="qpainter-qt3.html#hasWorldXForm">hasWorldXForm</a>().</p>
+<h3 class="fn"><a name="translationX"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QPainter::translationX () const</h3>
+<p>Use the <a href="qpainter.html#worldMatrix">worldMatrix</a>() combined with <a href="qmatrix.html#dx">QMatrix::dx</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ qreal x = painter.translationX();</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ qreal x = painter.worldMatrix().dx();</pre>
+<h3 class="fn"><a name="translationY"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QPainter::translationY () const</h3>
+<p>Use the <a href="qpainter.html#worldMatrix">worldMatrix</a>() combined with <a href="qmatrix.html#dy">QMatrix::dy</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ qreal y = painter.translationY();</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ qreal y = painter.worldMatrix().dy();</pre>
+<h3 class="fn"><a name="xForm"></a><a href="qpoint.html">QPoint</a> QPainter::xForm ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> ) const</h3>
+<p>Use <a href="qpainter.html#combinedTransform">combinedTransform</a>() instead.</p>
+<h3 class="fn"><a name="xForm-2"></a><a href="qrect.html">QRect</a> QPainter::xForm ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#combinedTransform">combinedTransform</a>() instead of this function and call mapRect() on the result to obtain a <a href="qrect.html">QRect</a>.</p>
+<h3 class="fn"><a name="xForm-3"></a><a href="qpolygon.html">QPolygon</a> QPainter::xForm ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#combinedTransform">combinedTransform</a>() instead.</p>
+<h3 class="fn"><a name="xForm-4"></a><a href="qpolygon.html">QPolygon</a> QPainter::xForm ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#combinedTransform">combinedTransform</a>() combined with <a href="qvector.html#mid">QPolygon::mid</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ QPolygon transformed = painter.xForm(polygon, index, count)</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ QPolygon transformed = polygon.mid(index, count) * painter.combinedMatrix();</pre>
+<h3 class="fn"><a name="xFormDev"></a><a href="qpoint.html">QPoint</a> QPainter::xFormDev ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> ) const</h3>
+<p>Use <a href="qpainter.html#combinedTransform">combinedTransform</a>() combined with <a href="qmatrix.html#inverted">QMatrix::inverted</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ QPoint transformed = painter.xFormDev(point);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ QPoint transformed = point * painter.combinedMatrix().inverted();</pre>
+<h3 class="fn"><a name="xFormDev-2"></a><a href="qrect.html">QRect</a> QPainter::xFormDev ( const <a href="qrect.html">QRect</a> &amp; <i>rectangle</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use combineMatrix() combined with <a href="qmatrix.html#inverted">QMatrix::inverted</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ QRect transformed = painter.xFormDev(rectangle);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ QRect transformed = rectangle * painter.combinedMatrix().inverted();</pre>
+<h3 class="fn"><a name="xFormDev-3"></a><a href="qpolygon.html">QPolygon</a> QPainter::xFormDev ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#combinedMatrix">combinedMatrix</a>() combined with <a href="qmatrix.html#inverted">QMatrix::inverted</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ QPolygon transformed = painter.xFormDev(rectangle);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ QPolygon transformed = polygon * painter.combinedMatrix().inverted();</pre>
+<h3 class="fn"><a name="xFormDev-4"></a><a href="qpolygon.html">QPolygon</a> QPainter::xFormDev ( const <a href="qpolygon.html">QPolygon</a> &amp; <i>polygon</i>, int <i>index</i>, int <i>count</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qpainter.html#combinedMatrix">combinedMatrix</a>() combined with <a href="qvector.html#mid">QPolygon::mid</a>() and <a href="qmatrix.html#inverted">QMatrix::inverted</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QPainter painter(this);
+ QPolygon transformed = painter.xFormDev(polygon, index, count);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QPainter painter(this);
+ QPolygon transformed = polygon.mid(index, count) * painter.combinedMatrix().inverted();</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

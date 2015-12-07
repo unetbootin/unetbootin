@@ -1,0 +1,816 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3table.cpp -->
+<head>
+  <title>Qt 4.4: Q3Table Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Table Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Table class provides a flexible editable table widget. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Table&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qtable">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3scrollview.html">Q3ScrollView</a>.</p>
+<p>Inherited by <a href="q3datatable.html">Q3DataTable</a>.</p>
+<ul>
+<li><a href="q3table-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3table.html#FocusStyle-enum">FocusStyle</a></b> { FollowStyle, SpreadSheet }</li>
+<li><div class="fn"/>enum <b><a href="q3table.html#SelectionMode-enum">SelectionMode</a></b> { NoSelection, Single, Multi, SingleRow, MultiRow }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3table.html#columnMovingEnabled-prop">columnMovingEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3table.html#focusStyle-prop">focusStyle</a></b> : FocusStyle</li>
+<li><div class="fn"/><b><a href="q3table.html#numCols-prop">numCols</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3table.html#numRows-prop">numRows</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3table.html#numSelections-prop">numSelections</a></b> : const int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3table.html#readOnly-prop">readOnly</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3table.html#rowMovingEnabled-prop">rowMovingEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3table.html#selectionMode-prop">selectionMode</a></b> : SelectionMode</li>
+<li><div class="fn"/><b><a href="q3table.html#showGrid-prop">showGrid</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3table.html#sorting-prop">sorting</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3table.html#Q3Table">Q3Table</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3table.html#Q3Table-2">Q3Table</a></b> ( int <i>numRows</i>, int <i>numCols</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3table.html#dtor.Q3Table">~Q3Table</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#addSelection">addSelection</a></b> ( const Q3TableSelection &amp; <i>s</i> )</li>
+<li><div class="fn"/>virtual QRect <b><a href="q3table.html#cellGeometry">cellGeometry</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual QRect <b><a href="q3table.html#cellRect">cellRect</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="q3table.html#cellWidget">cellWidget</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#clearCell">clearCell</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#clearCellWidget">clearCellWidget</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#columnAt">columnAt</a></b> ( int <i>x</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#columnMovingEnabled-prop">columnMovingEnabled</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#columnPos">columnPos</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#columnWidth">columnWidth</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3table.html#currentColumn">currentColumn</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3table.html#currentRow">currentRow</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#currentSelection">currentSelection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#dragEnabled">dragEnabled</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3table.html#ensureCellVisible">ensureCellVisible</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>FocusStyle <b><a href="q3table.html#focusStyle-prop">focusStyle</a></b> () const</li>
+<li><div class="fn"/>Q3Header * <b><a href="q3table.html#horizontalHeader">horizontalHeader</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isColumnHidden">isColumnHidden</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isColumnReadOnly">isColumnReadOnly</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isColumnSelected">isColumnSelected</a></b> ( int <i>col</i>, bool <i>full</i> = false ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isColumnStretchable">isColumnStretchable</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#readOnly-prop">isReadOnly</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isRowHidden">isRowHidden</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isRowReadOnly">isRowReadOnly</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isRowSelected">isRowSelected</a></b> ( int <i>row</i>, bool <i>full</i> = false ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isRowStretchable">isRowStretchable</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isSelected">isSelected</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual Q3TableItem * <b><a href="q3table.html#item">item</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#numCols-prop">numCols</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#numRows-prop">numRows</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3table.html#numSelections-prop">numSelections</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#paintCell">paintCell</a></b> ( QPainter * <i>p</i>, int <i>row</i>, int <i>col</i>, const QRect &amp; <i>cr</i>, bool <i>selected</i>, const QColorGroup &amp; <i>cg</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#paintCell-2">paintCell</a></b> ( QPainter * <i>p</i>, int <i>row</i>, int <i>col</i>, const QRect &amp; <i>cr</i>, bool <i>selected</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#paintFocus">paintFocus</a></b> ( QPainter * <i>p</i>, const QRect &amp; <i>cr</i> )</li>
+<li><div class="fn"/>virtual QPixmap <b><a href="q3table.html#pixmap">pixmap</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeSelection">removeSelection</a></b> ( const Q3TableSelection &amp; <i>s</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeSelection-2">removeSelection</a></b> ( int <i>num</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#repaintSelections">repaintSelections</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#rowAt">rowAt</a></b> ( int <i>y</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#rowHeight">rowHeight</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#rowMovingEnabled-prop">rowMovingEnabled</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3table.html#rowPos">rowPos</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3table.html#selectCells">selectCells</a></b> ( int <i>start_row</i>, int <i>start_col</i>, int <i>end_row</i>, int <i>end_col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#selectColumn">selectColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#selectRow">selectRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>Q3TableSelection <b><a href="q3table.html#selection">selection</a></b> ( int <i>num</i> ) const</li>
+<li><div class="fn"/>SelectionMode <b><a href="q3table.html#selectionMode-prop">selectionMode</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setCellWidget">setCellWidget</a></b> ( int <i>row</i>, int <i>col</i>, QWidget * <i>e</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#focusStyle-prop">setFocusStyle</a></b> ( FocusStyle <i>fs</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setItem">setItem</a></b> ( int <i>row</i>, int <i>col</i>, Q3TableItem * <i>item</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setPixmap">setPixmap</a></b> ( int <i>row</i>, int <i>col</i>, const QPixmap &amp; <i>pix</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#selectionMode-prop">setSelectionMode</a></b> ( SelectionMode <i>mode</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setText">setText</a></b> ( int <i>row</i>, int <i>col</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#showGrid-prop">showGrid</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#sortColumn">sortColumn</a></b> ( int <i>col</i>, bool <i>ascending</i> = true, bool <i>wholeRows</i> = false )</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#sorting-prop">sorting</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#takeItem">takeItem</a></b> ( Q3TableItem * <i>i</i> )</li>
+<li><div class="fn"/>virtual QString <b><a href="q3table.html#text">text</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3table.html#updateCell">updateCell</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#updateHeaderStates">updateHeaderStates</a></b> ()</li>
+<li><div class="fn"/>Q3Header * <b><a href="q3table.html#verticalHeader">verticalHeader</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#adjustColumn">adjustColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#adjustRow">adjustRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#clearSelection">clearSelection</a></b> ( bool <i>repaint</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#editCell">editCell</a></b> ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#hideColumn">hideColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#hideRow">hideRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#insertColumns">insertColumns</a></b> ( int <i>col</i>, int <i>count</i> = 1 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#insertRows">insertRows</a></b> ( int <i>row</i>, int <i>count</i> = 1 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeColumn">removeColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeColumns">removeColumns</a></b> ( const Q3MemArray&lt;int&gt; &amp; <i>cols</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeRow">removeRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#removeRows">removeRows</a></b> ( const Q3MemArray&lt;int&gt; &amp; <i>rows</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#setColumnLabels">setColumnLabels</a></b> ( const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#columnMovingEnabled-prop">setColumnMovingEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setColumnReadOnly">setColumnReadOnly</a></b> ( int <i>col</i>, bool <i>ro</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setColumnStretchable">setColumnStretchable</a></b> ( int <i>col</i>, bool <i>stretch</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setColumnWidth">setColumnWidth</a></b> ( int <i>col</i>, int <i>w</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setCurrentCell">setCurrentCell</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setDragEnabled">setDragEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setLeftMargin">setLeftMargin</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#numCols-prop">setNumCols</a></b> ( int <i>r</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#numRows-prop">setNumRows</a></b> ( int <i>r</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#readOnly-prop">setReadOnly</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setRowHeight">setRowHeight</a></b> ( int <i>row</i>, int <i>h</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#setRowLabels">setRowLabels</a></b> ( const QStringList &amp; <i>labels</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#rowMovingEnabled-prop">setRowMovingEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setRowReadOnly">setRowReadOnly</a></b> ( int <i>row</i>, bool <i>ro</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setRowStretchable">setRowStretchable</a></b> ( int <i>row</i>, bool <i>stretch</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#showGrid-prop">setShowGrid</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#sorting-prop">setSorting</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setTopMargin">setTopMargin</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#showColumn">showColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#showRow">showRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#swapCells">swapCells</a></b> ( int <i>row1</i>, int <i>col1</i>, int <i>row2</i>, int <i>col2</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#swapColumns">swapColumns</a></b> ( int <i>col1</i>, int <i>col2</i>, bool <i>swapHeader</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#swapRows">swapRows</a></b> ( int <i>row1</i>, int <i>row2</i>, bool <i>swapHeader</i> = false )</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3table.html#clicked">clicked</a></b> ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const QPoint &amp; <i>mousePos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#contextMenuRequested">contextMenuRequested</a></b> ( int <i>row</i>, int <i>col</i>, const QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#currentChanged">currentChanged</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#doubleClicked">doubleClicked</a></b> ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const QPoint &amp; <i>mousePos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#dropped">dropped</a></b> ( QDropEvent * <i>e</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#pressed">pressed</a></b> ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const QPoint &amp; <i>mousePos</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#selectionChanged">selectionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3table.html#valueChanged">valueChanged</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-types"></a>
+<h3>Protected Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3table.html#EditMode-enum">EditMode</a></b> { NotEditing, Editing, Replacing }</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#activateNextCell">activateNextCell</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="q3table.html#beginEdit">beginEdit</a></b> ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#contentsDragEnterEvent">contentsDragEnterEvent</a></b> ( QDragEnterEvent * <i>e</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#contentsDragLeaveEvent">contentsDragLeaveEvent</a></b> ( QDragLeaveEvent * <i>e</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#contentsDragMoveEvent">contentsDragMoveEvent</a></b> ( QDragMoveEvent * <i>e</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#contentsDropEvent">contentsDropEvent</a></b> ( QDropEvent * <i>e</i> )</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="q3table.html#createEditor">createEditor</a></b> ( int <i>row</i>, int <i>col</i>, bool <i>initFromCell</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3table.html#currEditCol">currEditCol</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3table.html#currEditRow">currEditRow</a></b> () const</li>
+<li><div class="fn"/>virtual Q3DragObject * <b><a href="q3table.html#dragObject">dragObject</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#drawContents">drawContents</a></b> ( QPainter * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )</li>
+<li><div class="fn"/>EditMode <b><a href="q3table.html#editMode">editMode</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#endEdit">endEdit</a></b> ( int <i>row</i>, int <i>col</i>, bool <i>accept</i>, bool <i>replace</i> )</li>
+<li><div class="fn"/>int <b><a href="q3table.html#indexOf">indexOf</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#insertWidget">insertWidget</a></b> ( int <i>row</i>, int <i>col</i>, QWidget * <i>w</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3table.html#isEditing">isEditing</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#paintEmptyArea">paintEmptyArea</a></b> ( QPainter * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#resizeData">resizeData</a></b> ( int <i>len</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#setCellContentFromEditor">setCellContentFromEditor</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>void <b><a href="q3table.html#setEditMode">setEditMode</a></b> ( EditMode <i>mode</i>, int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#startDrag">startDrag</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="protected-slots"></a>
+<h3>Protected Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#columnClicked">columnClicked</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#columnIndexChanged">columnIndexChanged</a></b> ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#columnWidthChanged">columnWidthChanged</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#rowHeightChanged">rowHeightChanged</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3table.html#rowIndexChanged">rowIndexChanged</a></b> ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Table class provides a flexible editable table widget.</p>
+<p>Q3Table is easy to use, although it does have a large API because of the comprehensive functionality that it provides. Q3Table includes functions for manipulating <a href="#headers">headers</a>, <a href="#columnsrows">rows and columns</a>, <a href="#cells">cells</a> and <a href="#selections">selections</a>. Q3Table also provides in-place editing and drag and drop, as well as a useful set of <a href="#signals">signals</a>. Q3Table efficiently supports very large tables, for example, tables one million by one million cells are perfectly possible. Q3Table is economical with memory, using none for unused cells.</p>
+<pre>     Q3Table *table = new Q3Table(100, 250, this);
+     table-&gt;setPixmap(3, 2, pix);
+     table-&gt;setText(3, 2, &quot;A pixmap&quot;);</pre>
+<p>The first line constructs the table specifying its size in rows and columns. We then insert a pixmap and some text into the <i>same</i> <a href="#cells">cell</a>, with the pixmap appearing to the left of the text. Q3Table cells can be populated with <a href="q3tableitem.html">Q3TableItem</a>s, <a href="q3combotableitem.html">Q3ComboTableItem</a>s or by <a href="q3checktableitem.html">Q3CheckTableItem</a>s. By default a vertical header appears at the left of the table showing row numbers and a horizontal header appears at the top of the table showing column numbers. (The numbers displayed start at 1, although row and column numbers within Q3Table begin at 0.)</p>
+<p>If you want to use mouse tracking call setMouseTracking(true) on the <i>viewport</i>.</p>
+<p align="center"><img src="images/qtableitems.png" alt="Table Items" /></p><a name="headers"></a><a name="headers"></a>
+<h3>Headers</h3>
+<p>Q3Table supports a header column, e.g&#x2e; to display row numbers, and a header row, e.g to display column titles. To set row or column labels use <a href="q3header.html#setLabel">Q3Header::setLabel</a>() on the pointers returned by <a href="q3table.html#verticalHeader">verticalHeader</a>() and <a href="q3table.html#horizontalHeader">horizontalHeader</a>() respectively. The vertical header is displayed within the table's left margin whose width is set with <a href="q3table.html#setLeftMargin">setLeftMargin</a>(). The horizontal header is displayed within the table's top margin whose height is set with <a href="q3table.html#setTopMargin">setTopMargin</a>(). The table's grid can be switched off with <a href="q3table.html#showGrid-prop">setShowGrid</a>(). If you want to hide a horizontal header call <a href="qwidget.html#hide">hide</a>(), and call setTopMargin(0) so that the area the header would have occupied is reduced to zero size.</p>
+<p>Header labels are indexed via their section numbers. Note that the default behavior of <a href="q3header.html">Q3Header</a> regarding section numbers is overridden for Q3Table. See the explanation below in the Rows and Columns section in the discussion of moving columns and rows.</p>
+<a name="columnsrows"></a><a name="rows-and-columns"></a>
+<h3>Rows and Columns</h3>
+<p>Row and column sizes are set with <a href="q3table.html#setRowHeight">setRowHeight</a>() and <a href="q3table.html#setColumnWidth">setColumnWidth</a>(). If you want a row high enough to show the tallest item in its entirety, use <a href="q3table.html#adjustRow">adjustRow</a>(). Similarly, to make a column wide enough to show the widest item use <a href="q3table.html#adjustColumn">adjustColumn</a>(). If you want the row height and column width to adjust automatically as the height and width of the table changes use <a href="q3table.html#setRowStretchable">setRowStretchable</a>() and <a href="q3table.html#setColumnStretchable">setColumnStretchable</a>().</p>
+<p>Rows and columns can be hidden and shown with <a href="q3table.html#hideRow">hideRow</a>(), <a href="q3table.html#hideColumn">hideColumn</a>(), <a href="q3table.html#showRow">showRow</a>() and <a href="q3table.html#showColumn">showColumn</a>(). New rows and columns are inserted using <a href="q3table.html#insertRows">insertRows</a>() and <a href="q3table.html#insertColumns">insertColumns</a>(). Additional rows and columns are added at the bottom (rows) or right (columns) if you set <a href="q3table.html#numRows-prop">setNumRows</a>() or <a href="q3table.html#numCols-prop">setNumCols</a>() to be larger than <a href="q3table.html#numRows-prop">numRows</a>() or <a href="q3table.html#numCols-prop">numCols</a>(). Existing rows and columns are removed with <a href="q3table.html#removeRow">removeRow</a>() and <a href="q3table.html#removeColumn">removeColumn</a>(). Multiple rows and columns can be removed with <a href="q3table.html#removeRows">removeRows</a>() and <a href="q3table.html#removeColumns">removeColumns</a>().</p>
+<p>Rows and columns can be set to be movable using <a href="q3table.html#rowMovingEnabled-prop">rowMovingEnabled</a>() and <a href="q3table.html#columnMovingEnabled-prop">columnMovingEnabled</a>(). The user can drag them to reorder them holding down the Ctrl key and dragging the mouse. For performance reasons, the default behavior of <a href="q3header.html">Q3Header</a> section numbers is overridden by Q3Table. Currently in Q3Table, when a row or column is dragged and reordered, the section number is also changed to its new position. Therefore, there is no difference between the section and the index fields in <a href="q3header.html">Q3Header</a>. The Q3Table <a href="q3header.html">Q3Header</a> classes do not provide a mechanism for indexing independently of the user interface ordering.</p>
+<p>The table can be sorted using <a href="q3table.html#sortColumn">sortColumn</a>(). Users can sort a column by clicking its header if <a href="q3table.html#sorting-prop">setSorting</a>() is set to true. Rows can be swapped with <a href="q3table.html#swapRows">swapRows</a>(), columns with <a href="q3table.html#swapColumns">swapColumns</a>() and cells with <a href="q3table.html#swapCells">swapCells</a>().</p>
+<p>For editable tables (see <a href="q3table.html#readOnly-prop">setReadOnly</a>()) you can set the read-only property of individual rows and columns with <a href="q3table.html#setRowReadOnly">setRowReadOnly</a>() and <a href="q3table.html#setColumnReadOnly">setColumnReadOnly</a>(). (Whether a cell is editable or read-only depends on these settings and the cell's <a href="q3tableitem.html">Q3TableItem</a>.</p>
+<p>The row and column which have the focus are returned by <a href="q3table.html#currentRow">currentRow</a>() and <a href="q3table.html#currentColumn">currentColumn</a>() respectively.</p>
+<p>Although many Q3Table functions operate in terms of rows and columns the <a href="q3table.html#indexOf">indexOf</a>() function returns a single integer identifying a particular cell.</p>
+<a name="cells"></a><a name="cells"></a>
+<h3>Cells</h3>
+<p>All of a Q3Table's cells are empty when the table is constructed.</p>
+<p>There are two approaches to populating the table's cells. The first and simplest approach is to use Q3TableItems or <a href="q3tableitem.html">Q3TableItem</a> subclasses. The second approach doesn't use Q3TableItems at all which is useful for very large sparse tables but requires you to reimplement a number of functions. We'll look at each approach in turn.</p>
+<p>To put a string in a cell use <a href="q3table.html#setText">setText</a>(). This function will create a new <a href="q3tableitem.html">Q3TableItem</a> for the cell if one doesn't already exist, and displays the text in it. By default the table item's widget will be a <a href="qlineedit.html">QLineEdit</a>. A pixmap may be put in a cell with <a href="q3table.html#setPixmap">setPixmap</a>(), which also creates a table item if required. A cell may contain <i>both</i> a pixmap and text; the pixmap is displayed to the left of the text. Another approach is to construct a <a href="q3tableitem.html">Q3TableItem</a> or <a href="q3tableitem.html">Q3TableItem</a> subclass, set its properties, then insert it into a cell with <a href="q3table.html#setItem">setItem</a>().</p>
+<p>If you want cells which contain comboboxes use the <a href="q3combotableitem.html">Q3ComboTableItem</a> class. Similarly if you require cells containing checkboxes use the <a href="q3checktableitem.html">Q3CheckTableItem</a> class. These table items look and behave just like the combobox or checkbox widgets but consume far less memory.</p>
+<p>Q3Table takes ownership of its Q3TableItems and will delete them when the table itself is destroyed. You can take ownership of a table item using <a href="q3table.html#takeItem">takeItem</a>() which you use to move a cell's contents from one cell to another, either within the same table, or from one table to another. (See also, <a href="q3table.html#swapCells">swapCells</a>()).</p>
+<p>In-place editing of the text in Q3TableItems, and the values in Q3ComboTableItems and Q3CheckTableItems works automatically. Cells may be editable or read-only, see <a href="q3tableitem.html#EditType-enum">Q3TableItem::EditType</a>. If you want fine control over editing see <a href="q3table.html#beginEdit">beginEdit</a>() and <a href="q3table.html#endEdit">endEdit</a>().</p>
+<p>The contents of a cell can be retrieved as a <a href="q3tableitem.html">Q3TableItem</a> using <a href="q3table.html#item">item</a>(), or as a string with <a href="q3table.html#text">text</a>() or as a pixmap (if there is one) with <a href="q3table.html#pixmap">pixmap</a>(). A cell's bounding rectangle is given by <a href="q3table.html#cellGeometry">cellGeometry</a>(). Use <a href="q3table.html#updateCell">updateCell</a>() to repaint a cell, for example to clear away a cell's visual representation after it has been deleted with <a href="q3table.html#clearCell">clearCell</a>(). The table can be forced to scroll to show a particular cell with <a href="q3table.html#ensureCellVisible">ensureCellVisible</a>(). The <a href="q3table.html#isSelected">isSelected</a>() function indicates if a cell is selected.</p>
+<p>It is possible to use your own widget as a cell's widget using <a href="q3table.html#setCellWidget">setCellWidget</a>(), but subclassing <a href="q3tableitem.html">Q3TableItem</a> might be a simpler approach. The cell's widget (if there is one) can be removed with <a href="q3table.html#clearCellWidget">clearCellWidget</a>().</p>
+<a name="notes-on-large-tables"></a><a name="bigtables"></a><a name="large-tables"></a>
+<h4>Large tables</h4>
+<p>For large, sparse, tables using Q3TableItems or other widgets is inefficient. The solution is to <i>draw</i> the cell as it should appear and to create and destroy cell editors on demand.</p>
+<p>This approach requires that you reimplement various functions. Reimplement <a href="q3table.html#paintCell">paintCell</a>() to display your data, and <a href="q3table.html#createEditor">createEditor</a>() and <a href="q3table.html#setCellContentFromEditor">setCellContentFromEditor</a>() to support in-place editing. It is very important to reimplement <a href="q3table.html#resizeData">resizeData</a>() to have no functionality, to prevent Q3Table from attempting to create a huge array. You will also need to reimplement <a href="q3table.html#item">item</a>(), <a href="q3table.html#setItem">setItem</a>(), <a href="q3table.html#takeItem">takeItem</a>(), <a href="q3table.html#clearCell">clearCell</a>(), and <a href="q3table.html#insertWidget">insertWidget</a>(), <a href="q3table.html#cellWidget">cellWidget</a>() and <a href="q3table.html#clearCellWidget">clearCellWidget</a>(). In almost every circumstance (for sorting, removing and inserting columns and rows, etc.), you also need to reimplement <a href="q3table.html#swapRows">swapRows</a>(), <a href="q3table.html#swapCells">swapCells</a>() and <a href="q3table.html#swapColumns">swapColumns</a>(), including header handling.</p>
+<p>If you represent active cells with a dictionary of Q3TableItems and QWidgets, i.e&#x2e; only store references to cells that are actually used, many of the functions can be implemented with a single line of code.</p>
+<p>For more information on cells see the <a href="q3tableitem.html">Q3TableItem</a> documenation.</p>
+<a name="selections"></a><a name="selections"></a>
+<h3>Selections</h3>
+<p>Q3Table's support single selection, multi-selection (multiple cells) or no selection. The selection mode is set with <a href="q3table.html#selectionMode-prop">setSelectionMode</a>(). Use <a href="q3table.html#isSelected">isSelected</a>() to determine if a particular cell is selected, and <a href="q3table.html#isRowSelected">isRowSelected</a>() and <a href="q3table.html#isColumnSelected">isColumnSelected</a>() to see if a row or column is selected.</p>
+<p>Q3Table's support many simultaneous selections. You can programmatically select cells with <a href="q3table.html#addSelection">addSelection</a>(). The number of selections is given by <a href="q3table.html#numSelections-prop">numSelections</a>(). The current selection is returned by <a href="q3table.html#currentSelection">currentSelection</a>(). You can remove a selection with <a href="q3table.html#removeSelection">removeSelection</a>() and remove all selections with <a href="q3table.html#clearSelection">clearSelection</a>(). Selections are <a href="q3tableselection.html">Q3TableSelection</a> objects.</p>
+<p>To easily add a new selection use <a href="q3table.html#selectCells">selectCells</a>(), <a href="q3table.html#selectRow">selectRow</a>() or <a href="q3table.html#selectColumn">selectColumn</a>().</p>
+<p>Alternatively, use <a href="q3table.html#addSelection">addSelection</a>() to add new selections using <a href="q3tableselection.html">Q3TableSelection</a> objects. The advantage of using <a href="q3tableselection.html">Q3TableSelection</a> objects is that you can call <a href="q3tableselection.html#expandTo">Q3TableSelection::expandTo</a>() to resize the selection and can query and compare them.</p>
+<p>The number of selections is given by <a href="q3table.html#numSelections-prop">numSelections</a>(). The current selection is returned by <a href="q3table.html#currentSelection">currentSelection</a>(). You can remove a selection with <a href="q3table.html#removeSelection">removeSelection</a>() and remove all selections with <a href="q3table.html#clearSelection">clearSelection</a>().</p>
+<a name="signals"></a><a name="signals"></a>
+<h3>Signals</h3>
+<p>When the user clicks a cell the <a href="q3table.html#currentChanged">currentChanged</a>() signal is emitted. You can also connect to the lower level <a href="q3table.html#clicked">clicked</a>(), <a href="q3table.html#doubleClicked">doubleClicked</a>() and <a href="q3table.html#pressed">pressed</a>() signals. If the user changes the selection the <a href="q3table.html#selectionChanged">selectionChanged</a>() signal is emitted; similarly if the user changes a cell's value the <a href="q3table.html#valueChanged">valueChanged</a>() signal is emitted. If the user right-clicks (or presses the appropriate platform-specific key sequence) the <a href="q3table.html#contextMenuRequested">contextMenuRequested</a>() signal is emitted. If the user drops a drag and drop object the <a href="q3table.html#dropped">dropped</a>() signal is emitted with the drop event.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="EditMode-enum"></a>enum Q3Table::EditMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Table::NotEditing</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No cell is currently being edited.</td></tr>
+<tr><td valign="top"><tt>Q3Table::Editing</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A cell is currently being edited. The editor was initialised with the cell's contents.</td></tr>
+<tr><td valign="top"><tt>Q3Table::Replacing</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">A cell is currently being edited. The editor was not initialised with the cell's contents.</td></tr>
+</table></p>
+<h3 class="fn"><a name="FocusStyle-enum"></a>enum Q3Table::FocusStyle</h3>
+<p>Specifies how the current cell (focus cell) is drawn.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Table::FollowStyle</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The current cell is drawn according to the current style and the cell's background is also drawn selected, if the current cell is within a selection</td></tr>
+<tr><td valign="top"><tt>Q3Table::SpreadSheet</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The current cell is drawn as in a spreadsheet. This means, it is signified by a black rectangle around the cell, and the background of the current cell is always drawn with the widget's base color - even when selected.</td></tr>
+</table></p>
+<h3 class="fn"><a name="SelectionMode-enum"></a>enum Q3Table::SelectionMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Table::NoSelection</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">No cell can be selected by the user.</td></tr>
+<tr><td valign="top"><tt>Q3Table::Single</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The user may only select a single range of cells.</td></tr>
+<tr><td valign="top"><tt>Q3Table::Multi</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The user may select multiple ranges of cells.</td></tr>
+<tr><td valign="top"><tt>Q3Table::SingleRow</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The user may select one row at once.</td></tr>
+<tr><td valign="top"><tt>Q3Table::MultiRow</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The user may select multiple rows.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="columnMovingEnabled-prop"></a>columnMovingEnabled : bool</h3>
+<p>This property holds whether columns can be moved by the user.</p>
+<p>The default is false. Columns are moved by dragging whilst holding down the Ctrl key.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool columnMovingEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setColumnMovingEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#rowMovingEnabled-prop">rowMovingEnabled</a>.</p>
+<h3 class="fn"><a name="focusStyle-prop"></a>focusStyle : <a href="q3table.html#FocusStyle-enum">FocusStyle</a></h3>
+<p>This property holds how the current (focus) cell is drawn.</p>
+<p>The default style is <tt>SpreadSheet</tt>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>FocusStyle focusStyle () const</b></li>
+<li><div class="fn"/><b>virtual void setFocusStyle ( FocusStyle <i>fs</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#FocusStyle-enum">Q3Table::FocusStyle</a>.</p>
+<h3 class="fn"><a name="numCols-prop"></a>numCols : int</h3>
+<p>This property holds the number of columns in the table.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>virtual int numCols () const</b></li>
+<li><div class="fn"/><b>virtual void setNumCols ( int <i>r</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#numRows-prop">numRows</a>.</p>
+<h3 class="fn"><a name="numRows-prop"></a>numRows : int</h3>
+<p>This property holds the number of rows in the table.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>virtual int numRows () const</b></li>
+<li><div class="fn"/><b>virtual void setNumRows ( int <i>r</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#numCols-prop">numCols</a>.</p>
+<h3 class="fn"><a name="numSelections-prop"></a>numSelections : const int</h3>
+<p>This property holds the number of selections.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int numSelections () const</b></li>
+</ul>
+<p>See also <a href="q3table.html#currentSelection">currentSelection</a>().</p>
+<h3 class="fn"><a name="readOnly-prop"></a>readOnly : bool</h3>
+<p>This property holds whether the table is read-only.</p>
+<p>Whether a cell in the table is editable or read-only depends on the cell's <a href="q3tableitem.html#EditType-enum">EditType</a>, and this setting.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isReadOnly () const</b></li>
+<li><div class="fn"/><b>virtual void setReadOnly ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="qwidget.html#enabled-prop">QWidget::enabled</a>, <a href="q3table.html#setColumnReadOnly">setColumnReadOnly</a>(), and <a href="q3table.html#setRowReadOnly">setRowReadOnly</a>().</p>
+<h3 class="fn"><a name="rowMovingEnabled-prop"></a>rowMovingEnabled : bool</h3>
+<p>This property holds whether rows can be moved by the user.</p>
+<p>The default is false. Rows are moved by dragging whilst holding down the Ctrl key.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool rowMovingEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setRowMovingEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#columnMovingEnabled-prop">columnMovingEnabled</a>.</p>
+<h3 class="fn"><a name="selectionMode-prop"></a>selectionMode : <a href="q3table.html#SelectionMode-enum">SelectionMode</a></h3>
+<p>This property holds the current selection mode.</p>
+<p>The default mode is <tt>Multi</tt> which allows the user to select multiple ranges of cells.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>SelectionMode selectionMode () const</b></li>
+<li><div class="fn"/><b>virtual void setSelectionMode ( SelectionMode <i>mode</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="showGrid-prop"></a>showGrid : bool</h3>
+<p>This property holds whether the table's grid is displayed.</p>
+<p>The grid is shown by default.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool showGrid () const</b></li>
+<li><div class="fn"/><b>virtual void setShowGrid ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="sorting-prop"></a>sorting : bool</h3>
+<p>This property holds whether a click on the header of a column sorts that column.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool sorting () const</b></li>
+<li><div class="fn"/><b>virtual void setSorting ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="q3table.html#sortColumn">sortColumn</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Table"></a>Q3Table::Q3Table ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Creates an empty table object called <i>name</i> as a child of <i>parent</i>.</p>
+<p>Call <a href="q3table.html#numRows-prop">setNumRows</a>() and <a href="q3table.html#numCols-prop">setNumCols</a>() to set the table size before populating the table if you're using Q3TableItems.</p>
+<h3 class="fn"><a name="Q3Table-2"></a>Q3Table::Q3Table ( int <i>numRows</i>, int <i>numCols</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs an empty table called <i>name</i> with <i>numRows</i> rows and <i>numCols</i> columns. The table is a child of <i>parent</i>.</p>
+<p>If you're using <a href="q3tableitem.html">Q3TableItem</a>s to populate the table's cells, you can create <a href="q3tableitem.html">Q3TableItem</a>, <a href="q3combotableitem.html">Q3ComboTableItem</a> and <a href="q3checktableitem.html">Q3CheckTableItem</a> items and insert them into the table using <a href="q3table.html#setItem">setItem</a>(). (See the notes on large tables for an alternative to using Q3TableItems.)</p>
+<h3 class="fn"><a name="dtor.Q3Table"></a>Q3Table::~Q3Table ()</h3>
+<p>Releases all the resources used by the <a href="q3table.html">Q3Table</a> object, including all <a href="q3tableitem.html">Q3TableItem</a>s and their widgets.</p>
+<h3 class="fn"><a name="activateNextCell"></a>void Q3Table::activateNextCell ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called to activate the next cell if in-place editing was finished by pressing the Enter key.</p>
+<p>The default behaviour is to move from top to bottom, i.e&#x2e; move to the cell beneath the cell being edited. Reimplement this function if you want different behaviour, e.g&#x2e; moving from left to right.</p>
+<h3 class="fn"><a name="addSelection"></a>int Q3Table::addSelection ( const <a href="q3tableselection.html">Q3TableSelection</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds a selection described by <i>s</i> to the table and returns its number or -1 if the selection is invalid.</p>
+<p>Remember to call <a href="q3tableselection.html#init">Q3TableSelection::init</a>() and <a href="q3tableselection.html#expandTo">Q3TableSelection::expandTo</a>() to make the selection valid (see also <a href="q3tableselection.html#isActive">Q3TableSelection::isActive</a>(), or use the <a href="q3tableselection.html">Q3TableSelection</a>(int,int,int,int) constructor).</p>
+<p>See also <a href="q3table.html#numSelections-prop">numSelections</a>(), <a href="q3table.html#removeSelection">removeSelection</a>(), and <a href="q3table.html#clearSelection">clearSelection</a>().</p>
+<h3 class="fn"><a name="adjustColumn"></a>void Q3Table::adjustColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Resizes column <i>col</i> so that the column width is wide enough to display the widest item the column contains.</p>
+<p>See also <a href="q3table.html#adjustRow">adjustRow</a>().</p>
+<h3 class="fn"><a name="adjustRow"></a>void Q3Table::adjustRow ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Resizes row <i>row</i> so that the row height is tall enough to display the tallest item the row contains.</p>
+<p>See also <a href="q3table.html#adjustColumn">adjustColumn</a>().</p>
+<h3 class="fn"><a name="beginEdit"></a><a href="qwidget.html">QWidget</a> * Q3Table::beginEdit ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called to start in-place editing of the cell at <i>row</i>, <i>col</i>. Editing is achieved by creating an editor (<a href="q3table.html#createEditor">createEditor</a>() is called) and setting the cell's editor with <a href="q3table.html#setCellWidget">setCellWidget</a>() to the newly created editor. (After editing is complete <a href="q3table.html#endEdit">endEdit</a>() will be called to replace the cell's content with the editor's content.) If <i>replace</i> is true the editor will start empty; otherwise it will be initialized with the cell's content (if any), i.e&#x2e; the user will be modifying the original cell content.</p>
+<p>See also <a href="q3table.html#endEdit">endEdit</a>().</p>
+<h3 class="fn"><a name="cellGeometry"></a><a href="qrect.html">QRect</a> Q3Table::cellGeometry ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the bounding rectangle of the cell at <i>row</i>, <i>col</i> in content coordinates.</p>
+<h3 class="fn"><a name="cellRect"></a><a href="qrect.html">QRect</a> Q3Table::cellRect ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the geometry of cell <i>row</i>, <i>col</i> in the cell's coordinate system. This is a convenience function useful in <a href="q3table.html#paintCell">paintCell</a>(). It is equivalent to <a href="qrect.html">QRect</a>(<a href="qpoint.html">QPoint</a>(0,0), cellGeometry( row, col).<a href="qwidget.html#size-prop">size</a>());</p>
+<p>See also <a href="q3table.html#cellGeometry">cellGeometry</a>().</p>
+<h3 class="fn"><a name="cellWidget"></a><a href="qwidget.html">QWidget</a> * Q3Table::cellWidget ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the widget that has been set for the cell at <i>row</i>, <i>col</i>, or 0 if no widget has been set.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<p>See also <a href="q3table.html#clearCellWidget">clearCellWidget</a>() and <a href="q3table.html#setCellWidget">setCellWidget</a>().</p>
+<h3 class="fn"><a name="clearCell"></a>void Q3Table::clearCell ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes the <a href="q3tableitem.html">Q3TableItem</a> at <i>row</i>, <i>col</i>.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<h3 class="fn"><a name="clearCellWidget"></a>void Q3Table::clearCellWidget ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes the widget (if there is one) set for the cell at <i>row</i>, <i>col</i>.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<p>This function deletes the widget at <i>row</i>, <i>col</i>. Note that the widget is not deleted immediately; instead <a href="qobject.html#deleteLater">QObject::deleteLater</a>() is called on the widget to avoid problems with timing issues.</p>
+<p>See also <a href="q3table.html#cellWidget">cellWidget</a>() and <a href="q3table.html#setCellWidget">setCellWidget</a>().</p>
+<h3 class="fn"><a name="clearSelection"></a>void Q3Table::clearSelection ( bool <i>repaint</i> = true )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Clears all selections and repaints the appropriate regions if <i>repaint</i> is true.</p>
+<p>See also <a href="q3table.html#removeSelection">removeSelection</a>().</p>
+<h3 class="fn"><a name="clicked"></a>void Q3Table::clicked ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>mousePos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when mouse button <i>button</i> is clicked. The cell where the event took place is at <i>row</i>, <i>col</i>, and the mouse's position is in <i>mousePos</i>.</p>
+<p>See also <a href="qt.html#MouseButton-enum">Qt::MouseButton</a>.</p>
+<h3 class="fn"><a name="columnAt"></a>int Q3Table::columnAt ( int <i>x</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of the column at position <i>x</i>. <i>x</i> must be given in content coordinates.</p>
+<p>See also <a href="q3table.html#columnPos">columnPos</a>() and <a href="q3table.html#rowAt">rowAt</a>().</p>
+<h3 class="fn"><a name="columnClicked"></a>void Q3Table::columnClicked ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This function is called when the column <i>col</i> has been clicked. The default implementation sorts this column if <a href="q3table.html#sorting-prop">sorting</a>() is true.</p>
+<h3 class="fn"><a name="columnIndexChanged"></a>void Q3Table::columnIndexChanged ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This function is called when column order is to be changed, i.e&#x2e; when the user moved the column header <i>section</i> from <i>fromIndex</i> to <i>toIndex</i>.</p>
+<p>If you want to change the column order programmatically, call <a href="q3table.html#swapRows">swapRows</a>() or <a href="q3table.html#swapColumns">swapColumns</a>();</p>
+<p>See also <a href="q3header.html#indexChange">Q3Header::indexChange</a>() and <a href="q3table.html#rowIndexChanged">rowIndexChanged</a>().</p>
+<h3 class="fn"><a name="columnPos"></a>int Q3Table::columnPos ( int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the x-coordinate of the column <i>col</i> in content coordinates.</p>
+<p>See also <a href="q3table.html#columnAt">columnAt</a>() and <a href="q3table.html#rowPos">rowPos</a>().</p>
+<h3 class="fn"><a name="columnWidth"></a>int Q3Table::columnWidth ( int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the width of column <i>col</i>.</p>
+<p>See also <a href="q3table.html#setColumnWidth">setColumnWidth</a>() and <a href="q3table.html#rowHeight">rowHeight</a>().</p>
+<h3 class="fn"><a name="columnWidthChanged"></a>void Q3Table::columnWidthChanged ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This function should be called whenever the column width of <i>col</i> has been changed. It updates the geometry of any affected columns and repaints the table to reflect the changes it has made.</p>
+<h3 class="fn"><a name="contentsDragEnterEvent"></a>void Q3Table::contentsDragEnterEvent ( <a href="qdragenterevent.html">QDragEnterEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler is called whenever a <a href="q3table.html">Q3Table</a> object receives a <a href="qdragenterevent.html">QDragEnterEvent</a> <i>e</i>, i.e&#x2e; when the user pressed the mouse button to drag something.</p>
+<p>The focus is moved to the cell where the <a href="qdragenterevent.html">QDragEnterEvent</a> occurred.</p>
+<p>Reimplemented from <a href="q3scrollview.html#contentsDragEnterEvent">Q3ScrollView</a>.</p>
+<h3 class="fn"><a name="contentsDragLeaveEvent"></a>void Q3Table::contentsDragLeaveEvent ( <a href="qdragleaveevent.html">QDragLeaveEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler is called when a drag activity leaves <i>this</i> <a href="q3table.html">Q3Table</a> object with event <i>e</i>.</p>
+<p>Reimplemented from <a href="q3scrollview.html#contentsDragLeaveEvent">Q3ScrollView</a>.</p>
+<h3 class="fn"><a name="contentsDragMoveEvent"></a>void Q3Table::contentsDragMoveEvent ( <a href="qdragmoveevent.html">QDragMoveEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler is called whenever a <a href="q3table.html">Q3Table</a> object receives a <a href="qdragmoveevent.html">QDragMoveEvent</a> <i>e</i>, i.e&#x2e; when the user actually drags the mouse.</p>
+<p>The focus is moved to the cell where the <a href="qdragmoveevent.html">QDragMoveEvent</a> occurred.</p>
+<p>Reimplemented from <a href="q3scrollview.html#contentsDragMoveEvent">Q3ScrollView</a>.</p>
+<h3 class="fn"><a name="contentsDropEvent"></a>void Q3Table::contentsDropEvent ( <a href="qdropevent.html">QDropEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This event handler is called when the user ends a drag and drop by dropping something onto <i>this</i> <a href="q3table.html">Q3Table</a> and thus triggers the drop event, <i>e</i>.</p>
+<p>Reimplemented from <a href="q3scrollview.html#contentsDropEvent">Q3ScrollView</a>.</p>
+<h3 class="fn"><a name="contextMenuRequested"></a>void Q3Table::contextMenuRequested ( int <i>row</i>, int <i>col</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user invokes a context menu with the right mouse button (or with a system-specific keypress). The cell where the event took place is at <i>row</i>, <i>col</i>. <i>pos</i> is the position where the context menu will appear in the global coordinate system. This signal is always emitted, even if the contents of the cell are disabled.</p>
+<h3 class="fn"><a name="createEditor"></a><a href="qwidget.html">QWidget</a> * Q3Table::createEditor ( int <i>row</i>, int <i>col</i>, bool <i>initFromCell</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function returns the widget which should be used as an editor for the contents of the cell at <i>row</i>, <i>col</i>.</p>
+<p>If <i>initFromCell</i> is true, the editor is used to edit the current contents of the cell (so the editor widget should be initialized with this content). If <i>initFromCell</i> is false, the content of the cell is replaced with the new content which the user entered into the widget created by this function.</p>
+<p>The default functionality is as follows: if <i>initFromCell</i> is true or the cell has a <a href="q3tableitem.html">Q3TableItem</a> and the table item's <a href="q3tableitem.html#isReplaceable">Q3TableItem::isReplaceable</a>() is false then the cell is asked to create an appropriate editor (using <a href="q3tableitem.html#createEditor">Q3TableItem::createEditor</a>()). Otherwise a <a href="qlineedit.html">QLineEdit</a> is used as the editor.</p>
+<p>If you want to create your own editor for certain cells, implement a custom <a href="q3tableitem.html">Q3TableItem</a> subclass and reimplement <a href="q3tableitem.html#createEditor">Q3TableItem::createEditor</a>().</p>
+<p>If you are not using <a href="q3tableitem.html">Q3TableItem</a>s and you don't want to use a <a href="qlineedit.html">QLineEdit</a> as the default editor, subclass <a href="q3table.html">Q3Table</a> and reimplement this function with code like this:</p>
+<pre>     Q3TableItem *i = item(row, col);
+     if (initFromCell || (i &amp;&amp; !i-&gt;isReplaceable()))
+         // If we had a Q3TableItem ask the base class to create the editor
+         return Q3Table::createEditor(row, col, initFromCell);
+     else
+         return ...(create your own editor)</pre>
+<p>Ownership of the editor widget is transferred to the caller.</p>
+<p>If you reimplement this function return 0 for read-only cells. You will need to reimplement <a href="q3table.html#setCellContentFromEditor">setCellContentFromEditor</a>() to retrieve the data the user entered.</p>
+<p>See also <a href="q3tableitem.html#createEditor">Q3TableItem::createEditor</a>().</p>
+<h3 class="fn"><a name="currEditCol"></a>int Q3Table::currEditCol () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current edited column</p>
+<h3 class="fn"><a name="currEditRow"></a>int Q3Table::currEditRow () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current edited row</p>
+<h3 class="fn"><a name="currentChanged"></a>void Q3Table::currentChanged ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the current cell has changed to <i>row</i>, <i>col</i>.</p>
+<h3 class="fn"><a name="currentColumn"></a>int Q3Table::currentColumn () const</h3>
+<p>Returns the current column.</p>
+<p>See also <a href="q3table.html#currentRow">currentRow</a>().</p>
+<h3 class="fn"><a name="currentRow"></a>int Q3Table::currentRow () const</h3>
+<p>Returns the current row.</p>
+<p>See also <a href="q3table.html#currentColumn">currentColumn</a>().</p>
+<h3 class="fn"><a name="currentSelection"></a>int Q3Table::currentSelection () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of the current selection or -1 if there is no current selection.</p>
+<p>See also <a href="q3table.html#numSelections-prop">numSelections</a>().</p>
+<h3 class="fn"><a name="doubleClicked"></a>void Q3Table::doubleClicked ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>mousePos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when mouse button <i>button</i> is double-clicked. The cell where the event took place is at <i>row</i>, <i>col</i>, and the mouse's position is in <i>mousePos</i>.</p>
+<p>See also <a href="qt.html#MouseButton-enum">Qt::MouseButton</a>.</p>
+<h3 class="fn"><a name="dragEnabled"></a>bool Q3Table::dragEnabled () const</h3>
+<p>If this function returns true, the table supports dragging.</p>
+<p>See also <a href="q3table.html#setDragEnabled">setDragEnabled</a>().</p>
+<h3 class="fn"><a name="dragObject"></a><a href="q3dragobject.html">Q3DragObject</a> * Q3Table::dragObject ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>If the user presses the mouse on a selected cell, starts moving (i.e&#x2e; dragging), and <a href="q3table.html#dragEnabled">dragEnabled</a>() is true, this function is called to obtain a drag object. A drag using this object begins immediately unless dragObject() returns 0.</p>
+<p>By default this function returns 0. You might reimplement it and create a <a href="q3dragobject.html">Q3DragObject</a> depending on the selected items.</p>
+<p>See also <a href="q3table.html#dropped">dropped</a>().</p>
+<h3 class="fn"><a name="drawContents"></a>void Q3Table::drawContents ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draws the table contents on the painter <i>p</i>. This function is optimized so that it only draws the cells inside the <i>cw</i> pixels wide and <i>ch</i> pixels high clipping rectangle at position <i>cx</i>, <i>cy</i>.</p>
+<p>Additionally, drawContents() highlights the current cell.</p>
+<p>Reimplemented from <a href="q3scrollview.html#drawContents">Q3ScrollView</a>.</p>
+<h3 class="fn"><a name="dropped"></a>void Q3Table::dropped ( <a href="qdropevent.html">QDropEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a drop event occurred on the table.</p>
+<p><i>e</i> contains information about the drop.</p>
+<h3 class="fn"><a name="editCell"></a>void Q3Table::editCell ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> = false )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Starts editing the cell at <i>row</i>, <i>col</i>.</p>
+<p>If <i>replace</i> is true the content of this cell will be replaced by the content of the editor when editing is finished, i.e&#x2e; the user will be entering new data; otherwise the current content of the cell (if any) will be modified in the editor.</p>
+<p>See also <a href="q3table.html#beginEdit">beginEdit</a>().</p>
+<h3 class="fn"><a name="editMode"></a><a href="q3table.html#EditMode-enum">EditMode</a> Q3Table::editMode () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current edit mode</p>
+<p>See also <a href="q3table.html#setEditMode">setEditMode</a>() and <a href="q3table.html#EditMode-enum">Q3Table::EditMode</a>.</p>
+<h3 class="fn"><a name="endEdit"></a>void Q3Table::endEdit ( int <i>row</i>, int <i>col</i>, bool <i>accept</i>, bool <i>replace</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called when in-place editing of the cell at <i>row</i>, <i>col</i> is requested to stop.</p>
+<p>If the cell is not being edited or <i>accept</i> is false the function returns and the cell's contents are left unchanged.</p>
+<p>If <i>accept</i> is true the content of the editor must be transferred to the relevant cell. If <i>replace</i> is true the current content of this cell should be replaced by the content of the editor (this means removing the current <a href="q3tableitem.html">Q3TableItem</a> of the cell and creating a new one for the cell). Otherwise (if possible) the content of the editor should just be set to the existing <a href="q3tableitem.html">Q3TableItem</a> of this cell.</p>
+<p><a href="q3table.html#setCellContentFromEditor">setCellContentFromEditor</a>() is called to replace the contents of the cell with the contents of the cell's editor.</p>
+<p>Finally <a href="q3table.html#clearCellWidget">clearCellWidget</a>() is called to remove the editor widget.</p>
+<p>See also <a href="q3table.html#setCellContentFromEditor">setCellContentFromEditor</a>() and <a href="q3table.html#beginEdit">beginEdit</a>().</p>
+<h3 class="fn"><a name="ensureCellVisible"></a>void Q3Table::ensureCellVisible ( int <i>row</i>, int <i>col</i> )</h3>
+<p>Scrolls the table until the cell at <i>row</i>, <i>col</i> becomes visible.</p>
+<h3 class="fn"><a name="hideColumn"></a>void Q3Table::hideColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Hides column <i>col</i>.</p>
+<p>See also <a href="q3table.html#showColumn">showColumn</a>() and <a href="q3table.html#hideRow">hideRow</a>().</p>
+<h3 class="fn"><a name="hideRow"></a>void Q3Table::hideRow ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Hides row <i>row</i>.</p>
+<p>See also <a href="q3table.html#showRow">showRow</a>() and <a href="q3table.html#hideColumn">hideColumn</a>().</p>
+<h3 class="fn"><a name="horizontalHeader"></a><a href="q3header.html">Q3Header</a> * Q3Table::horizontalHeader () const</h3>
+<p>Returns the table's top <a href="q3header.html">Q3Header</a>.</p>
+<p>This header contains the column labels.</p>
+<p>To modify a column label use <a href="q3header.html#setLabel">Q3Header::setLabel</a>().</p>
+<p>See also <a href="q3table.html#verticalHeader">verticalHeader</a>(), <a href="q3table.html#setTopMargin">setTopMargin</a>(), and <a href="q3header.html">Q3Header</a>.</p>
+<h3 class="fn"><a name="indexOf"></a>int Q3Table::indexOf ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a single integer which identifies a particular <i>row</i> and <i>col</i> by mapping the 2D table to a 1D array.</p>
+<p>This is useful, for example, if you have a sparse table and want to use a <a href="q3intdict.html">Q3IntDict</a> to map integers to the cells that are used.</p>
+<h3 class="fn"><a name="insertColumns"></a>void Q3Table::insertColumns ( int <i>col</i>, int <i>count</i> = 1 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Inserts <i>count</i> empty columns at column <i>col</i>. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#insertRows">insertRows</a>() and <a href="q3table.html#removeColumn">removeColumn</a>().</p>
+<h3 class="fn"><a name="insertRows"></a>void Q3Table::insertRows ( int <i>row</i>, int <i>count</i> = 1 )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Inserts <i>count</i> empty rows at row <i>row</i>. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#insertColumns">insertColumns</a>() and <a href="q3table.html#removeRow">removeRow</a>().</p>
+<h3 class="fn"><a name="insertWidget"></a>void Q3Table::insertWidget ( int <i>row</i>, int <i>col</i>, <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Inserts widget <i>w</i> at <i>row</i>, <i>col</i> into the internal data structure. See the documentation of <a href="q3table.html#setCellWidget">setCellWidget</a>() for further details.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<h3 class="fn"><a name="isColumnHidden"></a>bool Q3Table::isColumnHidden ( int <i>col</i> ) const</h3>
+<p>Returns true if column <i>col</i> is hidden; otherwise returns false.</p>
+<p>See also <a href="q3table.html#hideColumn">hideColumn</a>() and <a href="q3table.html#isRowHidden">isRowHidden</a>().</p>
+<h3 class="fn"><a name="isColumnReadOnly"></a>bool Q3Table::isColumnReadOnly ( int <i>col</i> ) const</h3>
+<p>Returns true if column <i>col</i> is read-only; otherwise returns false.</p>
+<p>Whether a cell in this column is editable or read-only depends on the cell's EditType, and this setting.</p>
+<p>See also <a href="q3table.html#setColumnReadOnly">setColumnReadOnly</a>() and <a href="q3table.html#isRowReadOnly">isRowReadOnly</a>().</p>
+<h3 class="fn"><a name="isColumnSelected"></a>bool Q3Table::isColumnSelected ( int <i>col</i>, bool <i>full</i> = false ) const</h3>
+<p>Returns true if column <i>col</i> is selected; otherwise returns false.</p>
+<p>If <i>full</i> is false (the default), 'column is selected' means that at least one cell in the column is selected. If <i>full</i> is true, then 'column is selected' means every cell in the column is selected.</p>
+<p>See also <a href="q3table.html#isRowSelected">isRowSelected</a>() and <a href="q3table.html#isSelected">isSelected</a>().</p>
+<h3 class="fn"><a name="isColumnStretchable"></a>bool Q3Table::isColumnStretchable ( int <i>col</i> ) const</h3>
+<p>Returns true if column <i>col</i> is stretchable; otherwise returns false.</p>
+<p>See also <a href="q3table.html#setColumnStretchable">setColumnStretchable</a>() and <a href="q3table.html#isRowStretchable">isRowStretchable</a>().</p>
+<h3 class="fn"><a name="isEditing"></a>bool Q3Table::isEditing () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the <a href="q3table.html#EditMode-enum">EditMode</a> is <tt>Editing</tt> or <tt>Replacing</tt>; otherwise (i.e&#x2e; the <a href="q3table.html#EditMode-enum">EditMode</a> is <tt>NotEditing</tt>) returns false.</p>
+<p>See also <a href="q3table.html#EditMode-enum">Q3Table::EditMode</a>.</p>
+<h3 class="fn"><a name="isRowHidden"></a>bool Q3Table::isRowHidden ( int <i>row</i> ) const</h3>
+<p>Returns true if row <i>row</i> is hidden; otherwise returns false.</p>
+<p>See also <a href="q3table.html#hideRow">hideRow</a>() and <a href="q3table.html#isColumnHidden">isColumnHidden</a>().</p>
+<h3 class="fn"><a name="isRowReadOnly"></a>bool Q3Table::isRowReadOnly ( int <i>row</i> ) const</h3>
+<p>Returns true if row <i>row</i> is read-only; otherwise returns false.</p>
+<p>Whether a cell in this row is editable or read-only depends on the cell's <a href="q3tableitem.html#EditType-enum">EditType</a>, and this setting.</p>
+<p>See also <a href="q3table.html#setRowReadOnly">setRowReadOnly</a>() and <a href="q3table.html#isColumnReadOnly">isColumnReadOnly</a>().</p>
+<h3 class="fn"><a name="isRowSelected"></a>bool Q3Table::isRowSelected ( int <i>row</i>, bool <i>full</i> = false ) const</h3>
+<p>Returns true if row <i>row</i> is selected; otherwise returns false.</p>
+<p>If <i>full</i> is false (the default), 'row is selected' means that at least one cell in the row is selected. If <i>full</i> is true, then 'row is selected' means every cell in the row is selected.</p>
+<p>See also <a href="q3table.html#isColumnSelected">isColumnSelected</a>() and <a href="q3table.html#isSelected">isSelected</a>().</p>
+<h3 class="fn"><a name="isRowStretchable"></a>bool Q3Table::isRowStretchable ( int <i>row</i> ) const</h3>
+<p>Returns true if row <i>row</i> is stretchable; otherwise returns false.</p>
+<p>See also <a href="q3table.html#setRowStretchable">setRowStretchable</a>() and <a href="q3table.html#isColumnStretchable">isColumnStretchable</a>().</p>
+<h3 class="fn"><a name="isSelected"></a>bool Q3Table::isSelected ( int <i>row</i>, int <i>col</i> ) const</h3>
+<p>Returns true if the cell at <i>row</i>, <i>col</i> is selected; otherwise returns false.</p>
+<p>See also <a href="q3table.html#isRowSelected">isRowSelected</a>() and <a href="q3table.html#isColumnSelected">isColumnSelected</a>().</p>
+<h3 class="fn"><a name="item"></a><a href="q3tableitem.html">Q3TableItem</a> * Q3Table::item ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the <a href="q3tableitem.html">Q3TableItem</a> representing the contents of the cell at <i>row</i>, <i>col</i>.</p>
+<p>If <i>row</i> or <i>col</i> are out of range or no content has been set for this cell, item() returns 0.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<p>See also <a href="q3table.html#setItem">setItem</a>().</p>
+<h3 class="fn"><a name="paintCell"></a>void Q3Table::paintCell ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>row</i>, int <i>col</i>, const <a href="qrect.html">QRect</a> &amp; <i>cr</i>, bool <i>selected</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Paints the cell at <i>row</i>, <i>col</i> on the painter <i>p</i>. The painter has already been translated to the cell's origin. <i>cr</i> describes the cell coordinates in the content coordinate system.</p>
+<p>If <i>selected</i> is true the cell is highlighted.</p>
+<p><i>cg</i> is the colorgroup which should be used to draw the cell content.</p>
+<p>If you want to draw custom cell content, for example right-aligned text, you must either reimplement paintCell(), or subclass <a href="q3tableitem.html">Q3TableItem</a> and reimplement <a href="q3tableitem.html#paint">Q3TableItem::paint</a>() to do the custom drawing.</p>
+<p>If you're using a <a href="q3tableitem.html">Q3TableItem</a> subclass, for example, to store a data structure, then reimplementing <a href="q3tableitem.html#paint">Q3TableItem::paint</a>() may be the best approach. For data you want to draw immediately, e.g&#x2e; data retrieved from a database, it is probably best to reimplement paintCell(). Note that if you reimplement paintCell(), i.e&#x2e; don't use <a href="q3tableitem.html">Q3TableItem</a>s, you must reimplement other functions: see the notes on large tables.</p>
+<p>Note that the painter is not clipped by default in order to get maximum efficiency. If you want clipping, use code like this:</p>
+<pre>     p-&gt;setClipRect(cellRect(row, col), QPainter::CoordPainter);
+     //... your drawing code
+     p-&gt;setClipping(false);</pre>
+<h3 class="fn"><a name="paintCell-2"></a>void Q3Table::paintCell ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>row</i>, int <i>col</i>, const <a href="qrect.html">QRect</a> &amp; <i>cr</i>, bool <i>selected</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the other <a href="q3table.html#paintCell">paintCell</a>() function. This function is only included for backwards compatibility.</p>
+<h3 class="fn"><a name="paintEmptyArea"></a>void Q3Table::paintEmptyArea ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function fills the <i>cw</i> pixels wide and <i>ch</i> pixels high rectangle starting at position <i>cx</i>, <i>cy</i> with the background color using the painter <i>p</i>.</p>
+<p>paintEmptyArea() is invoked by <a href="q3table.html#drawContents">drawContents</a>() to erase or fill unused areas.</p>
+<h3 class="fn"><a name="paintFocus"></a>void Q3Table::paintFocus ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qrect.html">QRect</a> &amp; <i>cr</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Draws the focus rectangle of the current cell (see <a href="q3table.html#currentRow">currentRow</a>(), <a href="q3table.html#currentColumn">currentColumn</a>()).</p>
+<p>The painter <i>p</i> is already translated to the cell's origin, while <i>cr</i> specifies the cell's geometry in content coordinates.</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> Q3Table::pixmap ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the pixmap set for the cell at <i>row</i>, <i>col</i>, or a null-pixmap if the cell contains no pixmap.</p>
+<p>See also <a href="q3table.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="pressed"></a>void Q3Table::pressed ( int <i>row</i>, int <i>col</i>, int <i>button</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>mousePos</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when mouse button <i>button</i> is pressed. The cell where the event took place is at <i>row</i>, <i>col</i>, and the mouse's position is in <i>mousePos</i>.</p>
+<p>See also <a href="qt.html#MouseButton-enum">Qt::MouseButton</a>.</p>
+<h3 class="fn"><a name="removeColumn"></a>void Q3Table::removeColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes column <i>col</i>, and deletes all its cells including any table items and widgets the cells may contain. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#removeColumns">removeColumns</a>(), <a href="q3table.html#hideColumn">hideColumn</a>(), <a href="q3table.html#insertColumns">insertColumns</a>(), and <a href="q3table.html#removeRow">removeRow</a>().</p>
+<h3 class="fn"><a name="removeColumns"></a>void Q3Table::removeColumns ( const <a href="q3memarray.html">Q3MemArray</a>&lt;int&gt; &amp; <i>cols</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes the columns listed in the array <i>cols</i>, and deletes all their cells including any table items and widgets the cells may contain.</p>
+<p>The array passed in must only contain valid columns (in the range from 0 to <a href="q3table.html#numCols-prop">numCols</a>() - 1) with no duplicates, and must be sorted in ascending order. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#removeColumn">removeColumn</a>(), <a href="q3table.html#insertColumns">insertColumns</a>(), and <a href="q3table.html#removeRows">removeRows</a>().</p>
+<h3 class="fn"><a name="removeRow"></a>void Q3Table::removeRow ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes row <i>row</i>, and deletes all its cells including any table items and widgets the cells may contain. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#hideRow">hideRow</a>(), <a href="q3table.html#insertRows">insertRows</a>(), <a href="q3table.html#removeColumn">removeColumn</a>(), and <a href="q3table.html#removeRows">removeRows</a>().</p>
+<h3 class="fn"><a name="removeRows"></a>void Q3Table::removeRows ( const <a href="q3memarray.html">Q3MemArray</a>&lt;int&gt; &amp; <i>rows</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes the rows listed in the array <i>rows</i>, and deletes all their cells including any table items and widgets the cells may contain.</p>
+<p>The array passed in must only contain valid rows (in the range from 0 to <a href="q3table.html#numRows-prop">numRows</a>() - 1) with no duplicates, and must be sorted in ascending order. Also clears the selection(s).</p>
+<p>See also <a href="q3table.html#removeRow">removeRow</a>(), <a href="q3table.html#insertRows">insertRows</a>(), and <a href="q3table.html#removeColumns">removeColumns</a>().</p>
+<h3 class="fn"><a name="removeSelection"></a>void Q3Table::removeSelection ( const <a href="q3tableselection.html">Q3TableSelection</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If the table has a selection, <i>s</i>, this selection is removed from the table.</p>
+<p>See also <a href="q3table.html#addSelection">addSelection</a>() and <a href="q3table.html#numSelections-prop">numSelections</a>().</p>
+<h3 class="fn"><a name="removeSelection-2"></a>void Q3Table::removeSelection ( int <i>num</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Removes selection number <i>num</i> from the table.</p>
+<p>See also <a href="q3table.html#numSelections-prop">numSelections</a>(), <a href="q3table.html#addSelection">addSelection</a>(), and <a href="q3table.html#clearSelection">clearSelection</a>().</p>
+<h3 class="fn"><a name="repaintSelections"></a>void Q3Table::repaintSelections ()</h3>
+<p>Repaints all selections</p>
+<h3 class="fn"><a name="resizeData"></a>void Q3Table::resizeData ( int <i>len</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is called when <a href="q3table.html">Q3Table</a>'s internal array needs to be resized to <i>len</i> elements.</p>
+<p>If you don't use Q3TableItems you should reimplement this as an empty method to avoid wasting memory. See the notes on large tables for further details.</p>
+<h3 class="fn"><a name="rowAt"></a>int Q3Table::rowAt ( int <i>y</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of the row at position <i>y</i>. <i>y</i> must be given in content coordinates.</p>
+<p>See also <a href="q3table.html#rowPos">rowPos</a>() and <a href="q3table.html#columnAt">columnAt</a>().</p>
+<h3 class="fn"><a name="rowHeight"></a>int Q3Table::rowHeight ( int <i>row</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the height of row <i>row</i>.</p>
+<p>See also <a href="q3table.html#setRowHeight">setRowHeight</a>() and <a href="q3table.html#columnWidth">columnWidth</a>().</p>
+<h3 class="fn"><a name="rowHeightChanged"></a>void Q3Table::rowHeightChanged ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This function should be called whenever the row height of <i>row</i> has been changed. It updates the geometry of any affected rows and repaints the table to reflect the changes it has made.</p>
+<h3 class="fn"><a name="rowIndexChanged"></a>void Q3Table::rowIndexChanged ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )&nbsp;&nbsp;<tt> [virtual protected slot]</tt></h3>
+<p>This function is called when the order of the rows is to be changed, i.e&#x2e; the user moved the row header section <i>section</i> from <i>fromIndex</i> to <i>toIndex</i>.</p>
+<p>If you want to change the order programmatically, call <a href="q3table.html#swapRows">swapRows</a>() or <a href="q3table.html#swapColumns">swapColumns</a>();</p>
+<p>See also <a href="q3header.html#indexChange">Q3Header::indexChange</a>() and <a href="q3table.html#columnIndexChanged">columnIndexChanged</a>().</p>
+<h3 class="fn"><a name="rowPos"></a>int Q3Table::rowPos ( int <i>row</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the y-coordinate of the row <i>row</i> in content coordinates.</p>
+<p>See also <a href="q3table.html#rowAt">rowAt</a>() and <a href="q3table.html#columnPos">columnPos</a>().</p>
+<h3 class="fn"><a name="selectCells"></a>void Q3Table::selectCells ( int <i>start_row</i>, int <i>start_col</i>, int <i>end_row</i>, int <i>end_col</i> )</h3>
+<p>Selects the range starting at <i>start_row</i> and <i>start_col</i> and ending at <i>end_row</i> and <i>end_col</i>.</p>
+<p>See also <a href="q3tableselection.html">Q3TableSelection</a>.</p>
+<h3 class="fn"><a name="selectColumn"></a>void Q3Table::selectColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Selects the column <i>col</i>.</p>
+<p>See also <a href="q3tableselection.html">Q3TableSelection</a>.</p>
+<h3 class="fn"><a name="selectRow"></a>void Q3Table::selectRow ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Selects the row <i>row</i>.</p>
+<p>See also <a href="q3tableselection.html">Q3TableSelection</a>.</p>
+<h3 class="fn"><a name="selection"></a><a href="q3tableselection.html">Q3TableSelection</a> Q3Table::selection ( int <i>num</i> ) const</h3>
+<p>Returns selection number <i>num</i>, or an inactive <a href="q3tableselection.html">Q3TableSelection</a> if <i>num</i> is out of range (see <a href="q3tableselection.html#isActive">Q3TableSelection::isActive</a>()).</p>
+<h3 class="fn"><a name="selectionChanged"></a>void Q3Table::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a selection changes.</p>
+<p>See also <a href="q3tableselection.html">Q3TableSelection</a>.</p>
+<h3 class="fn"><a name="setCellContentFromEditor"></a>void Q3Table::setCellContentFromEditor ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called to replace the contents of the cell at <i>row</i>, <i>col</i> with the contents of the cell's editor.</p>
+<p>If there already exists a <a href="q3tableitem.html">Q3TableItem</a> for the cell, it calls <a href="q3tableitem.html#setContentFromEditor">Q3TableItem::setContentFromEditor</a>() on this <a href="q3tableitem.html">Q3TableItem</a>.</p>
+<p>If, for example, you want to create different <a href="q3tableitem.html">Q3TableItem</a>s depending on the contents of the editor, you might reimplement this function.</p>
+<p>If you want to work without <a href="q3tableitem.html">Q3TableItem</a>s, you will need to reimplement this function to save the data the user entered into your data structure. (See the notes on large tables.)</p>
+<p>See also <a href="q3tableitem.html#setContentFromEditor">Q3TableItem::setContentFromEditor</a>() and <a href="q3table.html#createEditor">createEditor</a>().</p>
+<h3 class="fn"><a name="setCellWidget"></a>void Q3Table::setCellWidget ( int <i>row</i>, int <i>col</i>, <a href="qwidget.html">QWidget</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the widget <i>e</i> to the cell at <i>row</i>, <i>col</i> and takes care of placing and resizing the widget when the cell geometry changes.</p>
+<p>By default widgets are inserted into a vector with <a href="q3table.html#numRows-prop">numRows</a>() * <a href="q3table.html#numCols-prop">numCols</a>() elements. In very large tables you will probably want to store the widgets in a data structure that consumes less memory (see the notes on large tables). To support the use of your own data structure this function calls <a href="q3table.html#insertWidget">insertWidget</a>() to add the widget to the internal data structure. To use your own data structure reimplement <a href="q3table.html#insertWidget">insertWidget</a>(), <a href="q3table.html#cellWidget">cellWidget</a>() and <a href="q3table.html#clearCellWidget">clearCellWidget</a>().</p>
+<p>Cell widgets are created dynamically with the <tt>new</tt> operator. The cell widgets are destroyed automatically once the table is destroyed; the table takes ownership of the widget when using setCellWidget.</p>
+<p>See also <a href="q3table.html#cellWidget">cellWidget</a>().</p>
+<h3 class="fn"><a name="setColumnLabels"></a>void Q3Table::setColumnLabels ( const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the section labels of the <a href="q3table.html#horizontalHeader">horizontalHeader</a>() to <i>labels</i></p>
+<h3 class="fn"><a name="setColumnReadOnly"></a>void Q3Table::setColumnReadOnly ( int <i>col</i>, bool <i>ro</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>ro</i> is true, column <i>col</i> is set to be read-only; otherwise the column is set to be editable.</p>
+<p>Whether a cell in this column is editable or read-only depends on the cell's EditType, and this setting.</p>
+<p>See also <a href="q3table.html#isColumnReadOnly">isColumnReadOnly</a>(), <a href="q3table.html#setRowReadOnly">setRowReadOnly</a>(), and <a href="q3table.html#readOnly-prop">setReadOnly</a>().</p>
+<h3 class="fn"><a name="setColumnStretchable"></a>void Q3Table::setColumnStretchable ( int <i>col</i>, bool <i>stretch</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>stretch</i> is true, column <i>col</i> is set to be stretchable; otherwise column <i>col</i> is set to be unstretchable.</p>
+<p>If the table widget's width decreases or increases stretchable columns will grow narrower or wider to fit the space available as completely as possible. The user cannot manually resize stretchable columns.</p>
+<p>See also <a href="q3table.html#isColumnStretchable">isColumnStretchable</a>(), <a href="q3table.html#setRowStretchable">setRowStretchable</a>(), and <a href="q3table.html#adjustColumn">adjustColumn</a>().</p>
+<h3 class="fn"><a name="setColumnWidth"></a>void Q3Table::setColumnWidth ( int <i>col</i>, int <i>w</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Resizes column <i>col</i> to be <i>w</i> pixels wide.</p>
+<p>See also <a href="q3table.html#columnWidth">columnWidth</a>() and <a href="q3table.html#setRowHeight">setRowHeight</a>().</p>
+<h3 class="fn"><a name="setCurrentCell"></a>void Q3Table::setCurrentCell ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the focus to the cell at <i>row</i>, <i>col</i>.</p>
+<p>See also <a href="q3table.html#currentRow">currentRow</a>() and <a href="q3table.html#currentColumn">currentColumn</a>().</p>
+<h3 class="fn"><a name="setDragEnabled"></a>void Q3Table::setDragEnabled ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>b</i> is true, the table starts a drag (see <a href="q3table.html#dragObject">dragObject</a>()) when the user presses and moves the mouse on a selected cell.</p>
+<p>See also <a href="q3table.html#dragEnabled">dragEnabled</a>().</p>
+<h3 class="fn"><a name="setEditMode"></a>void Q3Table::setEditMode ( <a href="q3table.html#EditMode-enum">EditMode</a> <i>mode</i>, int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the current edit mode to <i>mode</i>, the current edit row to <i>row</i> and the current edit column to <i>col</i>.</p>
+<p>See also <a href="q3table.html#editMode">editMode</a>() and <a href="q3table.html#EditMode-enum">EditMode</a>.</p>
+<h3 class="fn"><a name="setItem"></a>void Q3Table::setItem ( int <i>row</i>, int <i>col</i>, <a href="q3tableitem.html">Q3TableItem</a> * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts the table item <i>item</i> into the table at row <i>row</i>, column <i>col</i>, and repaints the cell. If a table item already exists in this cell it is deleted and replaced with <i>item</i>. The table takes ownership of the table item.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s you may need to reimplement this function: see the notes on large tables.</p>
+<p>See also <a href="q3table.html#item">item</a>() and <a href="q3table.html#takeItem">takeItem</a>().</p>
+<h3 class="fn"><a name="setLeftMargin"></a>void Q3Table::setLeftMargin ( int <i>m</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the left margin to be <i>m</i> pixels wide.</p>
+<p>The <a href="q3table.html#verticalHeader">verticalHeader</a>(), which displays row labels, occupies this margin.</p>
+<p>In an Arabic or Hebrew localization, the <a href="q3table.html#verticalHeader">verticalHeader</a>() will appear on the right side of the table, and this call will set the right margin.</p>
+<p>See also <a href="q3scrollview.html#leftMargin">leftMargin</a>(), <a href="q3table.html#setTopMargin">setTopMargin</a>(), and <a href="q3table.html#verticalHeader">verticalHeader</a>().</p>
+<h3 class="fn"><a name="setPixmap"></a>void Q3Table::setPixmap ( int <i>row</i>, int <i>col</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pix</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the pixmap in the cell at <i>row</i>, <i>col</i> to <i>pix</i>.</p>
+<p>If the cell does not contain a table item a <a href="q3tableitem.html">Q3TableItem</a> is created with an <a href="q3tableitem.html#EditType-enum">EditType</a> of <tt>OnTyping</tt>, otherwise the existing table item's pixmap (if any) is replaced with <i>pix</i>.</p>
+<p>Note that <a href="q3combotableitem.html">Q3ComboTableItem</a>s and <a href="q3checktableitem.html">Q3CheckTableItem</a>s don't show pixmaps.</p>
+<p>See also <a href="q3table.html#pixmap">pixmap</a>(), <a href="q3table.html#setText">setText</a>(), <a href="q3table.html#setItem">setItem</a>(), and <a href="q3tableitem.html#setPixmap">Q3TableItem::setPixmap</a>().</p>
+<h3 class="fn"><a name="setRowHeight"></a>void Q3Table::setRowHeight ( int <i>row</i>, int <i>h</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Resizes row <i>row</i> to be <i>h</i> pixels high.</p>
+<p>See also <a href="q3table.html#rowHeight">rowHeight</a>() and <a href="q3table.html#setColumnWidth">setColumnWidth</a>().</p>
+<h3 class="fn"><a name="setRowLabels"></a>void Q3Table::setRowLabels ( const <a href="qstringlist.html">QStringList</a> &amp; <i>labels</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the section labels of the <a href="q3table.html#verticalHeader">verticalHeader</a>() to <i>labels</i></p>
+<h3 class="fn"><a name="setRowReadOnly"></a>void Q3Table::setRowReadOnly ( int <i>row</i>, bool <i>ro</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>ro</i> is true, row <i>row</i> is set to be read-only; otherwise the row is set to be editable.</p>
+<p>Whether a cell in this row is editable or read-only depends on the cell's EditType, and this setting.</p>
+<p>See also <a href="q3table.html#isRowReadOnly">isRowReadOnly</a>(), <a href="q3table.html#setColumnReadOnly">setColumnReadOnly</a>(), and <a href="q3table.html#readOnly-prop">setReadOnly</a>().</p>
+<h3 class="fn"><a name="setRowStretchable"></a>void Q3Table::setRowStretchable ( int <i>row</i>, bool <i>stretch</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>If <i>stretch</i> is true, row <i>row</i> is set to be stretchable; otherwise row <i>row</i> is set to be unstretchable.</p>
+<p>If the table widget's height decreases or increases stretchable rows will grow shorter or taller to fit the space available as completely as possible. The user cannot manually resize stretchable rows.</p>
+<p>See also <a href="q3table.html#isRowStretchable">isRowStretchable</a>() and <a href="q3table.html#setColumnStretchable">setColumnStretchable</a>().</p>
+<h3 class="fn"><a name="setText"></a>void Q3Table::setText ( int <i>row</i>, int <i>col</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the text in the cell at <i>row</i>, <i>col</i> to <i>text</i>.</p>
+<p>If the cell does not contain a table item a <a href="q3tableitem.html">Q3TableItem</a> is created with an <a href="q3tableitem.html#EditType-enum">EditType</a> of <tt>OnTyping</tt>, otherwise the existing table item's text (if any) is replaced with <i>text</i>.</p>
+<p>See also <a href="q3table.html#text">text</a>(), <a href="q3table.html#setPixmap">setPixmap</a>(), <a href="q3table.html#setItem">setItem</a>(), and <a href="q3tableitem.html#setText">Q3TableItem::setText</a>().</p>
+<h3 class="fn"><a name="setTopMargin"></a>void Q3Table::setTopMargin ( int <i>m</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the top margin to be <i>m</i> pixels high.</p>
+<p>The <a href="q3table.html#horizontalHeader">horizontalHeader</a>(), which displays column labels, occupies this margin.</p>
+<p>See also <a href="q3scrollview.html#topMargin">topMargin</a>() and <a href="q3table.html#setLeftMargin">setLeftMargin</a>().</p>
+<h3 class="fn"><a name="showColumn"></a>void Q3Table::showColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Shows column <i>col</i>.</p>
+<p>See also <a href="q3table.html#hideColumn">hideColumn</a>() and <a href="q3table.html#showRow">showRow</a>().</p>
+<h3 class="fn"><a name="showRow"></a>void Q3Table::showRow ( int <i>row</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Shows row <i>row</i>.</p>
+<p>See also <a href="q3table.html#hideRow">hideRow</a>() and <a href="q3table.html#showColumn">showColumn</a>().</p>
+<h3 class="fn"><a name="sortColumn"></a>void Q3Table::sortColumn ( int <i>col</i>, bool <i>ascending</i> = true, bool <i>wholeRows</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sorts column <i>col</i>. If <i>ascending</i> is true the sort is in ascending order, otherwise the sort is in descending order.</p>
+<p>If <i>wholeRows</i> is true, entire rows are sorted using <a href="q3table.html#swapRows">swapRows</a>(); otherwise only cells in the column are sorted using <a href="q3table.html#swapCells">swapCells</a>().</p>
+<p>Note that if you are not using Q3TableItems you will need to reimplement <a href="q3table.html#swapRows">swapRows</a>() and <a href="q3table.html#swapCells">swapCells</a>(). (See the notes on large tables.)</p>
+<p>See also <a href="q3table.html#swapRows">swapRows</a>().</p>
+<h3 class="fn"><a name="startDrag"></a>void Q3Table::startDrag ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Starts a drag.</p>
+<p>Usually you don't need to call or reimplement this function yourself.</p>
+<p>See also <a href="q3table.html#dragObject">dragObject</a>().</p>
+<h3 class="fn"><a name="swapCells"></a>void Q3Table::swapCells ( int <i>row1</i>, int <i>col1</i>, int <i>row2</i>, int <i>col2</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Swaps the contents of the cell at <i>row1</i>, <i>col1</i> with the contents of the cell at <i>row2</i>, <i>col2</i>.</p>
+<p>This function is also called when the table is sorted.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s and want your users to be able to swap cells, you will need to reimplement this function. (See the notes on large tables.)</p>
+<p>See also <a href="q3table.html#swapColumns">swapColumns</a>() and <a href="q3table.html#swapRows">swapRows</a>().</p>
+<h3 class="fn"><a name="swapColumns"></a>void Q3Table::swapColumns ( int <i>col1</i>, int <i>col2</i>, bool <i>swapHeader</i> = false )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Swaps the data in <i>col1</i> with <i>col2</i>.</p>
+<p>This function is used to swap the positions of two columns. It is called when the user changes the order of columns (see <a href="q3table.html#columnMovingEnabled-prop">setColumnMovingEnabled</a>(), and when columns are sorted.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s and want your users to be able to swap columns you will need to reimplement this function. (See the notes on large tables.)</p>
+<p>If <i>swapHeader</i> is true, the columns' header contents is also swapped.</p>
+<p>See also <a href="q3table.html#swapCells">swapCells</a>().</p>
+<h3 class="fn"><a name="swapRows"></a>void Q3Table::swapRows ( int <i>row1</i>, int <i>row2</i>, bool <i>swapHeader</i> = false )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Swaps the data in <i>row1</i> and <i>row2</i>.</p>
+<p>This function is used to swap the positions of two rows. It is called when the user changes the order of rows (see <a href="q3table.html#rowMovingEnabled-prop">setRowMovingEnabled</a>()), and when rows are sorted.</p>
+<p>If you don't use <a href="q3tableitem.html">Q3TableItem</a>s and want your users to be able to swap rows, e.g&#x2e; for sorting, you will need to reimplement this function. (See the notes on large tables.)</p>
+<p>If <i>swapHeader</i> is true, the rows' header contents is also swapped.</p>
+<p>This function will not update the <a href="q3table.html">Q3Table</a>, you will have to do this manually, e.g&#x2e; by calling <a href="q3scrollview.html#updateContents">updateContents</a>().</p>
+<p>See also <a href="q3table.html#swapColumns">swapColumns</a>() and <a href="q3table.html#swapCells">swapCells</a>().</p>
+<h3 class="fn"><a name="takeItem"></a>void Q3Table::takeItem ( <a href="q3tableitem.html">Q3TableItem</a> * <i>i</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Takes the table item <i>i</i> out of the table. This function does <i>not</i> delete the table item. You must either delete the table item yourself or put it into a table (using <a href="q3table.html#setItem">setItem</a>()) which will then take ownership of it.</p>
+<p>Use this function if you want to move an item from one cell in a table to another, or to move an item from one table to another, reinserting the item with <a href="q3table.html#setItem">setItem</a>().</p>
+<p>If you want to exchange two cells use <a href="q3table.html#swapCells">swapCells</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3Table::text ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the text in the cell at <i>row</i>, <i>col</i>, or an empty string if the relevant item does not exist or has no text.</p>
+<p>See also <a href="q3table.html#setText">setText</a>() and <a href="q3table.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="updateCell"></a>void Q3Table::updateCell ( int <i>row</i>, int <i>col</i> )</h3>
+<p>Repaints the cell at <i>row</i>, <i>col</i>.</p>
+<h3 class="fn"><a name="updateHeaderStates"></a>void Q3Table::updateHeaderStates ()</h3>
+<p>This functions updates all the header states to be in sync with the current selections. This should be called after programmatically changing, adding or removing selections, so that the headers are updated.</p>
+<h3 class="fn"><a name="valueChanged"></a>void Q3Table::valueChanged ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user changed the value in the cell at <i>row</i>, <i>col</i>.</p>
+<h3 class="fn"><a name="verticalHeader"></a><a href="q3header.html">Q3Header</a> * Q3Table::verticalHeader () const</h3>
+<p>Returns the table's vertical <a href="q3header.html">Q3Header</a>.</p>
+<p>This header contains the row labels.</p>
+<p>See also <a href="q3table.html#horizontalHeader">horizontalHeader</a>(), <a href="q3table.html#setLeftMargin">setLeftMargin</a>(), and <a href="q3header.html">Q3Header</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/tools/q3signal.cpp -->
+<head>
+  <title>Qt 4.4: Q3Signal Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Signal Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Signal class can be used to send signals for classes that don't inherit <a href="qobject.html">QObject</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Signal&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsignal">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="q3signal-members.html">List of all members, including inherited members</a></li>
+<li><a href="q3signal-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3signal.html#Q3Signal">Q3Signal</a></b> ( QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3signal.html#dtor.Q3Signal">~Q3Signal</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3signal.html#activate">activate</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3signal.html#connect">connect</a></b> ( const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3signal.html#disconnect">disconnect</a></b> ( const QObject * <i>receiver</i>, const char * <i>member</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="q3signal.html#setValue">setValue</a></b> ( const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>QVariant <b><a href="q3signal.html#value">value</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Signal class can be used to send signals for classes that don't inherit <a href="qobject.html">QObject</a>.</p>
+<p>If you want to send signals from a class that does not inherit <a href="qobject.html">QObject</a>, you can create an internal Q3Signal object to emit the signal. You must also provide a function that connects the signal to an outside object slot. This is how we used to implement signals in Qt 3's <a href="porting4.html#qmenudata">QMenuData</a> class, which was not a <a href="qobject.html">QObject</a>. In Qt 4, menus contain actions, which are QObjects.</p>
+<p>In general, we recommend inheriting <a href="qobject.html">QObject</a> instead. <a href="qobject.html">QObject</a> provides much more functionality.</p>
+<p>You can set a single <a href="qvariant.html">QVariant</a> parameter for the signal with <a href="q3signal.html#setValue">setValue</a>().</p>
+<p>Note that <a href="qobject.html">QObject</a> is a <i>private</i> base class of Q3Signal, i.e&#x2e; you cannot call any <a href="qobject.html">QObject</a> member functions from a Q3Signal object.</p>
+<p>Example:</p>
+<pre>         #include &lt;q3signal.h&gt;
+
+         class MyClass
+         {
+         public:
+             MyClass();
+             ~MyClass();
+
+             void doSomething();
+
+             void connect(QObject *receiver, const char *member);
+
+         private:
+             Q3Signal *sig;
+         };
+
+         MyClass::MyClass()
+         {
+             sig = new Q3Signal;
+         }
+
+         MyClass::~MyClass()
+         {
+             delete sig;
+         }
+
+         void MyClass::doSomething()
+         {
+             // ... does something
+             sig-&gt;activate(); // emits the signal
+         }
+
+         void MyClass::connect(QObject *receiver, const char *member)
+         {
+             sig-&gt;connect(receiver, member);
+         }</pre>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Signal"></a>Q3Signal::Q3Signal ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a signal object called <i>name</i>, with the parent object <i>parent</i>. These arguments are passed directly to <a href="qobject.html">QObject</a>.</p>
+<h3 class="fn"><a name="dtor.Q3Signal"></a>Q3Signal::~Q3Signal ()</h3>
+<p>Destroys the signal. All connections are removed, as is the case with all QObjects.</p>
+<h3 class="fn"><a name="activate"></a>void Q3Signal::activate ()</h3>
+<p>Emits the signal. If the platform supports <a href="qvariant.html">QVariant</a> and a parameter has been set with <a href="q3signal.html#setValue">setValue</a>(), this value is passed in the signal.</p>
+<h3 class="fn"><a name="connect"></a>bool Q3Signal::connect ( const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>Connects the signal to <i>member</i> in object <i>receiver</i>. Returns true if the connection is successful.</p>
+<p>See also <a href="q3signal.html#disconnect">disconnect</a>() and <a href="qobject.html#connect">QObject::connect</a>().</p>
+<h3 class="fn"><a name="disconnect"></a>bool Q3Signal::disconnect ( const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> = 0 )</h3>
+<p>Disonnects the signal from <i>member</i> in object <i>receiver</i>. Returns true if the connection existed and the disconnect was successful.</p>
+<p>See also <a href="q3signal.html#connect">connect</a>() and <a href="qobject.html#disconnect">QObject::disconnect</a>().</p>
+<h3 class="fn"><a name="setValue"></a>void Q3Signal::setValue ( const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )</h3>
+<p>Sets the signal's parameter to <i>value</i></p>
+<p>See also <a href="q3signal.html#value">value</a>().</p>
+<h3 class="fn"><a name="value"></a><a href="qvariant.html">QVariant</a> Q3Signal::value () const</h3>
+<p>Returns the signal's parameter</p>
+<p>See also <a href="q3signal.html#setValue">setValue</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

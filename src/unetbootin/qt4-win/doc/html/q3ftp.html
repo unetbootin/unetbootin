@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3ftp.cpp -->
+<head>
+  <title>Qt 4.4: Q3Ftp Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Ftp Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Ftp class provides an implementation of the FTP protocol. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Ftp&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qftp">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3networkprotocol.html">Q3NetworkProtocol</a>.</p>
+<ul>
+<li><a href="q3ftp-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3ftp.html#Command-enum">Command</a></b> { None, ConnectToHost, Login, Close, ..., RawCommand }</li>
+<li><div class="fn"/>enum <b><a href="q3ftp.html#Error-enum">Error</a></b> { NoError, HostNotFound, ConnectionRefused, NotConnected, UnknownError }</li>
+<li><div class="fn"/>enum <b><a href="q3ftp.html#State-enum">State</a></b> { Unconnected, HostLookup, Connecting, Connected, LoggedIn, Closing }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3ftp.html#Q3Ftp">Q3Ftp</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3ftp.html#Q3Ftp-2">Q3Ftp</a></b> ( QObject * <i>parent</i>, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3ftp.html#dtor.Q3Ftp">~Q3Ftp</a></b> ()</li>
+<li><div class="fn"/>Q_ULONG <b><a href="q3ftp.html#bytesAvailable">bytesAvailable</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#cd">cd</a></b> ( const QString &amp; <i>dir</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#clearPendingCommands">clearPendingCommands</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#close">close</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#connectToHost">connectToHost</a></b> ( const QString &amp; <i>host</i>, Q_UINT16 <i>port</i> = 21 )</li>
+<li><div class="fn"/>Command <b><a href="q3ftp.html#currentCommand">currentCommand</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="q3ftp.html#currentDevice">currentDevice</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#currentId">currentId</a></b> () const</li>
+<li><div class="fn"/>Error <b><a href="q3ftp.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3ftp.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#get">get</a></b> ( const QString &amp; <i>file</i>, QIODevice * <i>dev</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3ftp.html#hasPendingCommands">hasPendingCommands</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#list">list</a></b> ( const QString &amp; <i>dir</i> = QString() )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#login">login</a></b> ( const QString &amp; <i>user</i> = QString(), const QString &amp; <i>password</i> = QString() )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#mkdir">mkdir</a></b> ( const QString &amp; <i>dir</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#put">put</a></b> ( QIODevice * <i>dev</i>, const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#put-2">put</a></b> ( const QByteArray &amp; <i>data</i>, const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#rawCommand">rawCommand</a></b> ( const QString &amp; <i>command</i> )</li>
+<li><div class="fn"/>QByteArray <b><a href="q3ftp.html#readAll">readAll</a></b> ()</li>
+<li><div class="fn"/>Q_LONG <b><a href="q3ftp.html#readBlock">readBlock</a></b> ( char * <i>data</i>, Q_ULONG <i>maxlen</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#remove">remove</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#rename">rename</a></b> ( const QString &amp; <i>oldname</i>, const QString &amp; <i>newname</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ftp.html#rmdir">rmdir</a></b> ( const QString &amp; <i>dir</i> )</li>
+<li><div class="fn"/>State <b><a href="q3ftp.html#state">state</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public functions inherited from <a href="q3networkprotocol.html#public-functions">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3ftp.html#abort">abort</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3ftp.html#commandFinished">commandFinished</a></b> ( int <i>id</i>, bool <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#commandStarted">commandStarted</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#dataTransferProgress">dataTransferProgress</a></b> ( int <i>done</i>, int <i>total</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#done">done</a></b> ( bool <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#listInfo">listInfo</a></b> ( const QUrlInfo &amp; <i>i</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#rawCommandReply">rawCommandReply</a></b> ( int <i>replyCode</i>, const QString &amp; <i>detail</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#readyRead">readyRead</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ftp.html#stateChanged">stateChanged</a></b> ( int <i>state</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 signals inherited from <a href="q3networkprotocol.html#signals">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>3 static public members inherited from <a href="q3networkprotocol.html#static-public-members">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="q3networkprotocol.html#protected-functions">Q3NetworkProtocol</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Ftp class provides an implementation of the FTP protocol.</p>
+<p>This class provides two different interfaces: one is the <a href="porting4.html#qnetworkprotocol">QNetworkProtocol</a> interface that allows you to use FTP through the <a href="porting4.html#qurloperator">QUrlOperator</a> abstraction. The other is a direct interface to FTP that gives you lower-level access to the FTP protocol for finer control. Using the direct interface you can also execute arbitrary FTP commands.</p>
+<p>Don't mix the two interfaces, since the behavior is not well-defined.</p>
+<p>If you want to use Q3Ftp with the <a href="porting4.html#qnetworkprotocol">QNetworkProtocol</a> interface, you do not use it directly, but rather through a <a href="porting4.html#qurloperator">QUrlOperator</a>, for example:</p>
+<pre>     QUrlOperator op( &quot;ftp://ftp.trolltech.com&quot; );
+     op.listChildren(); // Asks the server to provide a directory listing</pre>
+<p>This code will only work if the Q3Ftp class is registered; to register the class, you must call <a href="q3urloperator.html#q3InitNetworkProtocols">q3InitNetworkProtocols</a>() before using a <a href="porting4.html#qurloperator">QUrlOperator</a> with Q3Ftp.</p>
+<p>The rest of this descrption describes the direct interface to FTP.</p>
+<p>The class works asynchronously, so there are no blocking functions. If an operation cannot be executed immediately, the function will still return straight away and the operation will be scheduled for later execution. The results of scheduled operations are reported via signals. This approach depends on the event loop being in operation.</p>
+<p>The operations that can be scheduled (they are called &quot;commands&quot; in the rest of the documentation) are the following: <a href="q3ftp.html#connectToHost">connectToHost</a>(), <a href="q3ftp.html#login">login</a>(), <a href="q3ftp.html#close">close</a>(), <a href="q3ftp.html#list">list</a>(), <a href="q3ftp.html#cd">cd</a>(), <a href="q3ftp.html#get">get</a>(), <a href="q3ftp.html#put">put</a>(), <a href="q3ftp.html#remove">remove</a>(), <a href="q3ftp.html#mkdir">mkdir</a>(), <a href="q3ftp.html#rmdir">rmdir</a>(), <a href="q3ftp.html#rename">rename</a>() and <a href="q3ftp.html#rawCommand">rawCommand</a>().</p>
+<p>All of these commands return a unique identifier that allows you to keep track of the command that is currently being executed. When the execution of a command starts, the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal with the command's identifier is emitted. When the command is finished, the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted with the command's identifier and a bool that indicates whether the command finished with an error.</p>
+<p>In some cases, you might want to execute a sequence of commands, e.g&#x2e; if you want to connect and login to a FTP server. This is simply achieved:</p>
+<pre>     Q3Ftp *ftp = new Q3Ftp( this ); // this is an optional QObject parent
+     ftp-&gt;connectToHost( &quot;ftp.trolltech.com&quot; );
+     ftp-&gt;login();</pre>
+<p>In this case two FTP commands have been scheduled. When the last scheduled command has finished, a <a href="q3ftp.html#done">done</a>() signal is emitted with a bool argument that tells you whether the sequence finished with an error.</p>
+<p>If an error occurs during the execution of one of the commands in a sequence of commands, all the pending commands (i.e&#x2e; scheduled, but not yet executed commands) are cleared and no signals are emitted for them.</p>
+<p>Some commands, e.g&#x2e; <a href="q3ftp.html#list">list</a>(), emit additional signals to report their results.</p>
+<p>Example: If you want to download the INSTALL file from Trolltech's FTP server, you would write this:</p>
+<pre>     ftp-&gt;connectToHost( &quot;ftp.trolltech.com&quot; );  // id == 1
+     ftp-&gt;login();                               // id == 2
+     ftp-&gt;cd( &quot;qt&quot; );                            // id == 3
+     ftp-&gt;get( &quot;INSTALL&quot; );                      // id == 4
+     ftp-&gt;close();                               // id == 5</pre>
+<p>For this example the following sequence of signals is emitted (with small variations, depending on network traffic, etc.):</p>
+<pre>     start( 1 )
+     stateChanged( HostLookup )
+     stateChanged( Connecting )
+     stateChanged( Connected )
+     finished( 1, false )
+
+     start( 2 )
+     stateChanged( LoggedIn )
+     finished( 2, false )
+
+     start( 3 )
+     finished( 3, false )
+
+     start( 4 )
+     dataTransferProgress( 0, 3798 )
+     dataTransferProgress( 2896, 3798 )
+     readyRead()
+     dataTransferProgress( 3798, 3798 )
+     readyRead()
+     finished( 4, false )
+
+     start( 5 )
+     stateChanged( Closing )
+     stateChanged( Unconnected )
+     finished( 5, false )
+
+     done( false )</pre>
+<p>The <a href="q3ftp.html#dataTransferProgress">dataTransferProgress</a>() signal in the above example is useful if you want to show a <a href="qprogressbar.html">progress bar</a> to inform the user about the progress of the download. The <a href="q3ftp.html#readyRead">readyRead</a>() signal tells you that there is data ready to be read. The amount of data can be queried then with the <a href="q3ftp.html#bytesAvailable">bytesAvailable</a>() function and it can be read with the <a href="q3ftp.html#readBlock">readBlock</a>() or <a href="q3ftp.html#readAll">readAll</a>() function.</p>
+<p>If the login fails for the above example, the signals would look like this:</p>
+<pre>     start( 1 )
+     stateChanged( HostLookup )
+     stateChanged( Connecting )
+     stateChanged( Connected )
+     finished( 1, false )
+
+     start( 2 )
+     finished( 2, true )
+
+     done( true )</pre>
+<p>You can then get details about the error with the <a href="q3ftp.html#error">error</a>() and <a href="q3ftp.html#errorString">errorString</a>() functions.</p>
+<p>The functions <a href="q3ftp.html#currentId">currentId</a>() and <a href="q3ftp.html#currentCommand">currentCommand</a>() provide more information about the currently executing command.</p>
+<p>The functions <a href="q3ftp.html#hasPendingCommands">hasPendingCommands</a>() and <a href="q3ftp.html#clearPendingCommands">clearPendingCommands</a>() allow you to query and clear the list of pending commands.</p>
+<p>The safest and easiest way to use the FTP protocol is to use <a href="porting4.html#qurloperator">QUrlOperator</a>() or the FTP commands described above. If you are an experienced network programmer and want to have complete control you can use <a href="q3ftp.html#rawCommand">rawCommand</a>() to execute arbitrary FTP commands.</p>
+<p>See also <a href="q3networkprotocol.html">Q3NetworkProtocol</a>, <a href="q3urloperator.html">Q3UrlOperator</a>, and <a href="q3http.html">Q3Http</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Command-enum"></a>enum Q3Ftp::Command</h3>
+<p>This enum is used as the return value for the <a href="q3ftp.html#currentCommand">currentCommand</a>() function. This allows you to perform specific actions for particular commands, e.g&#x2e; in a FTP client, you might want to clear the directory view when a <a href="q3ftp.html#list">list</a>() command is started; in this case you can simply check in the slot connected to the <a href="q3networkprotocol.html#start">start</a>() signal if the <a href="q3ftp.html#currentCommand">currentCommand</a>() is <tt>List</tt>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Ftp::None</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No command is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::ConnectToHost</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="q3ftp.html#connectToHost">connectToHost</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Login</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top"><a href="q3ftp.html#login">login</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Close</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top"><a href="q3ftp.html#close">close</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::List</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top"><a href="q3ftp.html#list">list</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Cd</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top"><a href="q3ftp.html#cd">cd</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Get</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top"><a href="q3ftp.html#get">get</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Put</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top"><a href="q3ftp.html#put">put</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Remove</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top"><a href="q3ftp.html#remove">remove</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Mkdir</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top"><a href="q3ftp.html#mkdir">mkdir</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Rmdir</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top"><a href="q3ftp.html#rmdir">rmdir</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Rename</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top"><a href="q3ftp.html#rename">rename</a>() is being executed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::RawCommand</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top"><a href="q3ftp.html#rawCommand">rawCommand</a>() is being executed.</td></tr>
+</table></p>
+<p>See also <a href="q3ftp.html#currentCommand">currentCommand</a>().</p>
+<h3 class="fn"><a name="Error-enum"></a>enum Q3Ftp::Error</h3>
+<p>This enum identifies the error that occurred.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Ftp::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error occurred.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::HostNotFound</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The host name lookup failed.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::ConnectionRefused</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The server refused the connection.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::NotConnected</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Tried to send a command, but there is no connection to a server.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::UnknownError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">An error other than those specified above occurred.</td></tr>
+</table></p>
+<p>See also <a href="q3ftp.html#error">error</a>().</p>
+<h3 class="fn"><a name="State-enum"></a>enum Q3Ftp::State</h3>
+<p>This enum defines the connection state:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Ftp::Unconnected</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">There is no connection to the host.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::HostLookup</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A host name lookup is in progress.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Connecting</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">An attempt to connect to the host is in progress.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Connected</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Connection to the host has been achieved.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::LoggedIn</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Connection and user login have been achieved.</td></tr>
+<tr><td valign="top"><tt>Q3Ftp::Closing</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The connection is closing down, but it is not yet closed. (The state will be <tt>Unconnected</tt> when the connection is closed.)</td></tr>
+</table></p>
+<p>See also <a href="q3ftp.html#stateChanged">stateChanged</a>() and <a href="q3ftp.html#state">state</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Ftp"></a>Q3Ftp::Q3Ftp ()</h3>
+<p>Constructs a <a href="q3ftp.html">Q3Ftp</a> object.</p>
+<h3 class="fn"><a name="Q3Ftp-2"></a>Q3Ftp::Q3Ftp ( <a href="qobject.html">QObject</a> * <i>parent</i>, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a <a href="q3ftp.html">Q3Ftp</a> object. The <i>parent</i> and <i>name</i> parameters are passed to the <a href="qobject.html">QObject</a> constructor.</p>
+<h3 class="fn"><a name="dtor.Q3Ftp"></a>Q3Ftp::~Q3Ftp ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="abort"></a>void Q3Ftp::abort ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Aborts the current command and deletes all scheduled commands.</p>
+<p>If there is an unfinished command (i.e&#x2e; a command for which the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal has been emitted, but for which the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal has not been emitted), this function sends an <tt>ABORT</tt> command to the server. When the server replies that the command is aborted, the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal with the <tt>error</tt> argument set to <tt>true</tt> is emitted for the command. Due to timing issues, it is possible that the command had already finished before the abort request reached the server, in which case, the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted with the <tt>error</tt> argument set to <tt>false</tt>.</p>
+<p>For all other commands that are affected by the abort(), no signals are emitted.</p>
+<p>If you don't start further FTP commands directly after the abort(), there won't be any scheduled commands and the <a href="q3ftp.html#done">done</a>() signal is emitted.</p>
+<p><b>Warning:</b> Some FTP servers, for example the BSD FTP daemon (version 0.3), wrongly return a positive reply even when an abort has occurred. For these servers the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal has its error flag set to <tt>false</tt>, even though the command did not complete successfully.</p>
+<p>See also <a href="q3ftp.html#clearPendingCommands">clearPendingCommands</a>().</p>
+<h3 class="fn"><a name="bytesAvailable"></a><a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> Q3Ftp::bytesAvailable () const</h3>
+<p>Returns the number of bytes that can be read from the data socket at the moment.</p>
+<p>See also <a href="q3ftp.html#get">get</a>(), <a href="q3ftp.html#readyRead">readyRead</a>(), <a href="q3ftp.html#readBlock">readBlock</a>(), and <a href="q3ftp.html#readAll">readAll</a>().</p>
+<h3 class="fn"><a name="cd"></a>int Q3Ftp::cd ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> )</h3>
+<p>Changes the working directory of the server to <i>dir</i>.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="clearPendingCommands"></a>void Q3Ftp::clearPendingCommands ()</h3>
+<p>Deletes all pending commands from the list of scheduled commands. This does not affect the command that is being executed. If you want to stop this this as well, use <a href="q3ftp.html#abort">abort</a>().</p>
+<p>See also <a href="q3ftp.html#hasPendingCommands">hasPendingCommands</a>() and <a href="q3ftp.html#abort">abort</a>().</p>
+<h3 class="fn"><a name="close"></a>int Q3Ftp::close ()</h3>
+<p>Closes the connection to the FTP server.</p>
+<p>The <a href="q3ftp.html#stateChanged">stateChanged</a>() signal is emitted when the state of the connecting process changes, e.g&#x2e; to <tt>Closing</tt>, then <tt>Unconnected</tt>.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#stateChanged">stateChanged</a>(), <a href="q3ftp.html#commandStarted">commandStarted</a>(), and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="commandFinished"></a>void Q3Ftp::commandFinished ( int <i>id</i>, bool <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when processing the command identified by <i>id</i> has finished. <i>error</i> is true if an error occurred during the processing; otherwise <i>error</i> is false.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>(), <a href="q3ftp.html#done">done</a>(), <a href="q3ftp.html#error">error</a>(), and <a href="q3ftp.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="commandStarted"></a>void Q3Ftp::commandStarted ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when processing the command identified by <i>id</i> starts.</p>
+<p>See also <a href="q3ftp.html#commandFinished">commandFinished</a>() and <a href="q3ftp.html#done">done</a>().</p>
+<h3 class="fn"><a name="connectToHost"></a>int Q3Ftp::connectToHost ( const <a href="qstring.html">QString</a> &amp; <i>host</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i> = 21 )</h3>
+<p>Connects to the FTP server <i>host</i> using port <i>port</i>.</p>
+<p>The <a href="q3ftp.html#stateChanged">stateChanged</a>() signal is emitted when the state of the connecting process changes, e.g&#x2e; to <tt>HostLookup</tt>, then <tt>Connecting</tt>, then <tt>Connected</tt>.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#stateChanged">stateChanged</a>(), <a href="q3ftp.html#commandStarted">commandStarted</a>(), and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="currentCommand"></a><a href="q3ftp.html#Command-enum">Command</a> Q3Ftp::currentCommand () const</h3>
+<p>Returns the command type of the FTP command being executed or <tt>None</tt> if there is no command being executed.</p>
+<p>See also <a href="q3ftp.html#currentId">currentId</a>().</p>
+<h3 class="fn"><a name="currentDevice"></a><a href="qiodevice.html">QIODevice</a> * Q3Ftp::currentDevice () const</h3>
+<p>Returns the <a href="qiodevice.html">QIODevice</a> pointer that is used by the FTP command to read data from or store data to. If there is no current FTP command being executed or if the command does not use an IO device, this function returns 0.</p>
+<p>This function can be used to delete the <a href="qiodevice.html">QIODevice</a> in the slot connected to the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal.</p>
+<p>See also <a href="q3ftp.html#get">get</a>() and <a href="q3ftp.html#put">put</a>().</p>
+<h3 class="fn"><a name="currentId"></a>int Q3Ftp::currentId () const</h3>
+<p>Returns the identifier of the FTP command that is being executed or 0 if there is no command being executed.</p>
+<p>See also <a href="q3ftp.html#currentCommand">currentCommand</a>().</p>
+<h3 class="fn"><a name="dataTransferProgress"></a>void Q3Ftp::dataTransferProgress ( int <i>done</i>, int <i>total</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted in response to a <a href="q3ftp.html#get">get</a>() or <a href="q3ftp.html#put">put</a>() request to indicate the current progress of the download or upload.</p>
+<p><i>done</i> is the amount of data that has already been transferred and <i>total</i> is the total amount of data to be read or written. It is possible that the <a href="q3ftp.html">Q3Ftp</a> class is not able to determine the total amount of data that should be transferred, in which case <i>total</i> is 0. (If you connect this signal to a <a href="qprogressbar.html">QProgressBar</a>, the progress bar shows a busy indicator if the total is 0).</p>
+<p><b>Warning:</b> <i>done</i> and <i>total</i> are not necessarily the size in bytes, since for large files these values might need to be &quot;scaled&quot; to avoid overflow.</p>
+<p>See also <a href="q3ftp.html#get">get</a>() and <a href="q3ftp.html#put">put</a>().</p>
+<h3 class="fn"><a name="done"></a>void Q3Ftp::done ( bool <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the last pending command has finished; (it is emitted after the last command's <a href="q3ftp.html#commandFinished">commandFinished</a>() signal). <i>error</i> is true if an error occurred during the processing; otherwise <i>error</i> is false.</p>
+<p>See also <a href="q3ftp.html#commandFinished">commandFinished</a>(), <a href="q3ftp.html#error">error</a>(), and <a href="q3ftp.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="q3ftp.html#Error-enum">Error</a> Q3Ftp::error () const</h3>
+<p>Returns the last error that occurred. This is useful to find out what when wrong when receiving a <a href="q3ftp.html#commandFinished">commandFinished</a>() or a <a href="q3ftp.html#done">done</a>() signal with the <tt>error</tt> argument set to <tt>true</tt>.</p>
+<p>If you start a new command, the error status is reset to <tt>NoError</tt>.</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> Q3Ftp::errorString () const</h3>
+<p>Returns a human-readable description of the last error that occurred. This is useful for presenting a error message to the user when receiving a <a href="q3ftp.html#commandFinished">commandFinished</a>() or a <a href="q3ftp.html#done">done</a>() signal with the <tt>error</tt> argument set to <tt>true</tt>.</p>
+<p>The error string is often (but not always) the reply from the server, so it is not always possible to translate the string. If the message comes from Qt, the string has already passed through <a href="qobject.html#tr">tr</a>().</p>
+<h3 class="fn"><a name="get"></a>int Q3Ftp::get ( const <a href="qstring.html">QString</a> &amp; <i>file</i>, <a href="qiodevice.html">QIODevice</a> * <i>dev</i> = 0 )</h3>
+<p>Downloads the file <i>file</i> from the server.</p>
+<p>If <i>dev</i> is 0, then the <a href="q3ftp.html#readyRead">readyRead</a>() signal is emitted when there is data available to read. You can then read the data with the <a href="q3ftp.html#readBlock">readBlock</a>() or <a href="q3ftp.html#readAll">readAll</a>() functions.</p>
+<p>If <i>dev</i> is not 0, the data is written directly to the device <i>dev</i>. Make sure that the <i>dev</i> pointer is valid for the duration of the operation (it is safe to delete it when the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted). In this case the <a href="q3ftp.html#readyRead">readyRead</a>() signal is <i>not</i> emitted and you cannot read data with the <a href="q3ftp.html#readBlock">readBlock</a>() or <a href="q3ftp.html#readAll">readAll</a>() functions.</p>
+<p>If you don't read the data immediately it becomes available, i.e&#x2e; when the <a href="q3ftp.html#readyRead">readyRead</a>() signal is emitted, it is still available until the next command is started.</p>
+<p>For example, if you want to present the data to the user as soon as there is something available, connect to the <a href="q3ftp.html#readyRead">readyRead</a>() signal and read the data immediately. On the other hand, if you only want to work with the complete data, you can connect to the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal and read the data when the get() command is finished.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p><a href="q3ftp.html#commandFinished">commandFinished</a>()</p>
+<p>See also <a href="q3ftp.html#readyRead">readyRead</a>(), <a href="q3ftp.html#dataTransferProgress">dataTransferProgress</a>(), and <a href="q3ftp.html#commandStarted">commandStarted</a>().</p>
+<h3 class="fn"><a name="hasPendingCommands"></a>bool Q3Ftp::hasPendingCommands () const</h3>
+<p>Returns true if there are any commands scheduled that have not yet been executed; otherwise returns false.</p>
+<p>The command that is being executed is <i>not</i> considered as a scheduled command.</p>
+<p>See also <a href="q3ftp.html#clearPendingCommands">clearPendingCommands</a>(), <a href="q3ftp.html#currentId">currentId</a>(), and <a href="q3ftp.html#currentCommand">currentCommand</a>().</p>
+<h3 class="fn"><a name="list"></a>int Q3Ftp::list ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> = QString() )</h3>
+<p>Lists the contents of directory <i>dir</i> on the FTP server. If <i>dir</i> is empty, it lists the contents of the current directory.</p>
+<p>The <a href="q3ftp.html#listInfo">listInfo</a>() signal is emitted for each directory entry found.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#listInfo">listInfo</a>(), <a href="q3ftp.html#commandStarted">commandStarted</a>(), and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="listInfo"></a>void Q3Ftp::listInfo ( const <a href="qurlinfo.html">QUrlInfo</a> &amp; <i>i</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted for each directory entry the <a href="q3ftp.html#list">list</a>() command finds. The details of the entry are stored in <i>i</i>.</p>
+<p>See also <a href="q3ftp.html#list">list</a>().</p>
+<h3 class="fn"><a name="login"></a>int Q3Ftp::login ( const <a href="qstring.html">QString</a> &amp; <i>user</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>password</i> = QString() )</h3>
+<p>Logs in to the FTP server with the username <i>user</i> and the password <i>password</i>.</p>
+<p>The <a href="q3ftp.html#stateChanged">stateChanged</a>() signal is emitted when the state of the connecting process changes, e.g&#x2e; to <tt>LoggedIn</tt>.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="mkdir"></a>int Q3Ftp::mkdir ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> )</h3>
+<p>Creates a directory called <i>dir</i> on the server.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="put"></a>int Q3Ftp::put ( <a href="qiodevice.html">QIODevice</a> * <i>dev</i>, const <a href="qstring.html">QString</a> &amp; <i>file</i> )</h3>
+<p>Reads the data from the IO device <i>dev</i>, and writes it to the file called <i>file</i> on the server. The data is read in chunks from the IO device, so this overload allows you to transmit large amounts of data without the need to read all the data into memory at once.</p>
+<p>Make sure that the <i>dev</i> pointer is valid for the duration of the operation (it is safe to delete it when the <a href="q3ftp.html#commandFinished">commandFinished</a>() is emitted).</p>
+<h3 class="fn"><a name="put-2"></a>int Q3Ftp::put ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, const <a href="qstring.html">QString</a> &amp; <i>file</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the data <i>data</i> to the file called <i>file</i> on the server. The progress of the upload is reported by the <a href="q3ftp.html#dataTransferProgress">dataTransferProgress</a>() signal.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#dataTransferProgress">dataTransferProgress</a>(), <a href="q3ftp.html#commandStarted">commandStarted</a>(), and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="rawCommand"></a>int Q3Ftp::rawCommand ( const <a href="qstring.html">QString</a> &amp; <i>command</i> )</h3>
+<p>Sends the raw FTP command <i>command</i> to the FTP server. This is useful for low-level FTP access. If the operation you wish to perform has an equivalent <a href="q3ftp.html">Q3Ftp</a> function, we recommend using the function instead of raw FTP commands since the functions are easier and safer.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#rawCommandReply">rawCommandReply</a>(), <a href="q3ftp.html#commandStarted">commandStarted</a>(), and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="rawCommandReply"></a>void Q3Ftp::rawCommandReply ( int <i>replyCode</i>, const <a href="qstring.html">QString</a> &amp; <i>detail</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted in response to the <a href="q3ftp.html#rawCommand">rawCommand</a>() function. <i>replyCode</i> is the 3 digit reply code and <i>detail</i> is the text that follows the reply code.</p>
+<p>See also <a href="q3ftp.html#rawCommand">rawCommand</a>().</p>
+<h3 class="fn"><a name="readAll"></a><a href="qbytearray.html">QByteArray</a> Q3Ftp::readAll ()</h3>
+<p>Reads all the bytes available from the data socket and returns them.</p>
+<p>See also <a href="q3ftp.html#get">get</a>(), <a href="q3ftp.html#readyRead">readyRead</a>(), <a href="q3ftp.html#bytesAvailable">bytesAvailable</a>(), and <a href="q3ftp.html#readBlock">readBlock</a>().</p>
+<h3 class="fn"><a name="readBlock"></a><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> Q3Ftp::readBlock ( char * <i>data</i>, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>maxlen</i> )</h3>
+<p>Reads <i>maxlen</i> bytes from the data socket into <i>data</i> and returns the number of bytes read. Returns -1 if an error occurred.</p>
+<p>See also <a href="q3ftp.html#get">get</a>(), <a href="q3ftp.html#readyRead">readyRead</a>(), <a href="q3ftp.html#bytesAvailable">bytesAvailable</a>(), and <a href="q3ftp.html#readAll">readAll</a>().</p>
+<h3 class="fn"><a name="readyRead"></a>void Q3Ftp::readyRead ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted in response to a <a href="q3ftp.html#get">get</a>() command when there is new data to read.</p>
+<p>If you specify a device as the second argument in the <a href="q3ftp.html#get">get</a>() command, this signal is <i>not</i> emitted; instead the data is written directly to the device.</p>
+<p>You can read the data with the <a href="q3ftp.html#readAll">readAll</a>() or <a href="q3ftp.html#readBlock">readBlock</a>() functions.</p>
+<p>This signal is useful if you want to process the data in chunks as soon as it becomes available. If you are only interested in the complete data, just connect to the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal and read the data then instead.</p>
+<p>See also <a href="q3ftp.html#get">get</a>(), <a href="q3ftp.html#readBlock">readBlock</a>(), <a href="q3ftp.html#readAll">readAll</a>(), and <a href="q3ftp.html#bytesAvailable">bytesAvailable</a>().</p>
+<h3 class="fn"><a name="remove"></a>int Q3Ftp::remove ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )</h3>
+<p>Deletes the file called <i>file</i> from the server.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="rename"></a>int Q3Ftp::rename ( const <a href="qstring.html">QString</a> &amp; <i>oldname</i>, const <a href="qstring.html">QString</a> &amp; <i>newname</i> )</h3>
+<p>Renames the file called <i>oldname</i> to <i>newname</i> on the server.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="rmdir"></a>int Q3Ftp::rmdir ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> )</h3>
+<p>Removes the directory called <i>dir</i> from the server.</p>
+<p>The function does not block and returns immediately. The command is scheduled, and its execution is performed asynchronously. The function returns a unique identifier which is passed by <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<p>When the command is started the <a href="q3ftp.html#commandStarted">commandStarted</a>() signal is emitted. When it is finished the <a href="q3ftp.html#commandFinished">commandFinished</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#commandStarted">commandStarted</a>() and <a href="q3ftp.html#commandFinished">commandFinished</a>().</p>
+<h3 class="fn"><a name="state"></a><a href="q3ftp.html#State-enum">State</a> Q3Ftp::state () const</h3>
+<p>Returns the current state of the object. When the state changes, the <a href="q3ftp.html#stateChanged">stateChanged</a>() signal is emitted.</p>
+<p>See also <a href="q3ftp.html#State-enum">State</a> and <a href="q3ftp.html#stateChanged">stateChanged</a>().</p>
+<h3 class="fn"><a name="stateChanged"></a>void Q3Ftp::stateChanged ( int <i>state</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the state of the connection changes. The argument <i>state</i> is the new state of the connection; it is one of the <a href="q3ftp.html#State-enum">State</a> values.</p>
+<p>It is usually emitted in response to a <a href="q3ftp.html#connectToHost">connectToHost</a>() or <a href="q3ftp.html#close">close</a>() command, but it can also be emitted &quot;spontaneously&quot;, e.g&#x2e; when the server closes the connection unexpectedly.</p>
+<p>See also <a href="q3ftp.html#connectToHost">connectToHost</a>(), <a href="q3ftp.html#close">close</a>(), <a href="q3ftp.html#state">state</a>(), and <a href="q3ftp.html#State-enum">State</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

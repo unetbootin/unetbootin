@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/concurrent/qfuturesynchronizer.cpp -->
+<head>
+  <title>Qt 4.4: QFutureSynchronizer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFutureSynchronizer Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QFutureSynchronizer class is a convenience class that simplifies <a href="qfuture.html">QFuture</a> synchronization. <a href="#details">More...</a></p>
+<pre> #include &lt;QFutureSynchronizer&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qfuturesynchronizer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfuturesynchronizer.html#QFutureSynchronizer">QFutureSynchronizer</a></b> ()</li>
+<li><div class="fn"/><b><a href="qfuturesynchronizer.html#QFutureSynchronizer-2">QFutureSynchronizer</a></b> ( const QFuture&lt;T&gt; &amp; <i>future</i> )</li>
+<li><div class="fn"/><b><a href="qfuturesynchronizer.html#dtor.QFutureSynchronizer">~QFutureSynchronizer</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qfuturesynchronizer.html#addFuture">addFuture</a></b> ( const QFuture&lt;T&gt; &amp; <i>future</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfuturesynchronizer.html#cancelOnWait">cancelOnWait</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfuturesynchronizer.html#clearFutures">clearFutures</a></b> ()</li>
+<li><div class="fn"/>QList&lt;QFuture&lt;T&gt; &gt; <b><a href="qfuturesynchronizer.html#futures">futures</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfuturesynchronizer.html#setCancelOnWait">setCancelOnWait</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qfuturesynchronizer.html#setFuture">setFuture</a></b> ( const QFuture&lt;T&gt; &amp; <i>future</i> )</li>
+<li><div class="fn"/>void <b><a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFutureSynchronizer class is a convenience class that simplifies <a href="qfuture.html">QFuture</a> synchronization.</p>
+<p>QFutureSynchronizer is a template class that simplifies synchronization of one or more <a href="qfuture.html">QFuture</a> objects. Futures are added using the <a href="qfuturesynchronizer.html#addFuture">addFuture</a>() or <a href="qfuturesynchronizer.html#setFuture">setFuture</a>() functions. The <a href="qfuturesynchronizer.html#futures">futures</a>() function returns a list of futures. Use <a href="qfuturesynchronizer.html#clearFutures">clearFutures</a>() to remove all futures from the QFutureSynchronizer.</p>
+<p>The <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() function waits for all futures to finish. The destructor of QFutureSynchronizer calls <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>(), providing an easy way to ensure that all futures have finished before returning from a function:</p>
+<pre>     void someFunction()
+     {
+         QFutureSynchronizer&lt;void&gt; synchronizer;
+
+         ...
+
+         synchronizer.addFuture(QtConcurrent::run(anotherFunction));
+         synchronizer.addFuture(QtConcurrent::map(list, mapFunction));
+
+         return; // QFutureSynchronizer waits for all futures to finish
+     }</pre>
+<p>The behavior of <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() can be changed using the <a href="qfuturesynchronizer.html#setCancelOnWait">setCancelOnWait</a>() function. Calling setCancelOnWait(true) will cause <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() to cancel all futures before waiting for them to finish. You can query the status of the cancel-on-wait feature using the <a href="qfuturesynchronizer.html#cancelOnWait">cancelOnWait</a>() function.</p>
+<p>See also <a href="qfuture.html">QFuture</a>, <a href="qfuturewatcher.html">QFutureWatcher</a>, and <a href="threads.html#qtconcurrent-intro">Qt Concurrent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFutureSynchronizer"></a>QFutureSynchronizer::QFutureSynchronizer ()</h3>
+<p>Constructs a <a href="qfuturesynchronizer.html">QFutureSynchronizer</a>.</p>
+<h3 class="fn"><a name="QFutureSynchronizer-2"></a>QFutureSynchronizer::QFutureSynchronizer ( const <a href="qfuture.html">QFuture</a>&lt;T&gt; &amp; <i>future</i> )</h3>
+<p>Constructs a <a href="qfuturesynchronizer.html">QFutureSynchronizer</a> and begins watching <i>future</i> by calling <a href="qfuturesynchronizer.html#addFuture">addFuture</a>().</p>
+<p>See also <a href="qfuturesynchronizer.html#addFuture">addFuture</a>().</p>
+<h3 class="fn"><a name="dtor.QFutureSynchronizer"></a>QFutureSynchronizer::~QFutureSynchronizer ()</h3>
+<p>Calls <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() function to ensure that all futures have finished before destroying this <a href="qfuturesynchronizer.html">QFutureSynchronizer</a>.</p>
+<p>See also <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>().</p>
+<h3 class="fn"><a name="addFuture"></a>void QFutureSynchronizer::addFuture ( const <a href="qfuture.html">QFuture</a>&lt;T&gt; &amp; <i>future</i> )</h3>
+<p>Adds <i>future</i> to the list of managed futures.</p>
+<p>See also <a href="qfuturesynchronizer.html#futures">futures</a>().</p>
+<h3 class="fn"><a name="cancelOnWait"></a>bool QFutureSynchronizer::cancelOnWait () const</h3>
+<p>Returns true if the cancel-on-wait feature is enabled; otherwise returns false. If cancel-on-wait is enabled, the <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() function will cancel all futures before waiting for them to finish.</p>
+<p>See also <a href="qfuturesynchronizer.html#setCancelOnWait">setCancelOnWait</a>() and <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>().</p>
+<h3 class="fn"><a name="clearFutures"></a>void QFutureSynchronizer::clearFutures ()</h3>
+<p>Removes all managed futures from this <a href="qfuturesynchronizer.html">QFutureSynchronizer</a>.</p>
+<p>See also <a href="qfuturesynchronizer.html#addFuture">addFuture</a>() and <a href="qfuturesynchronizer.html#setFuture">setFuture</a>().</p>
+<h3 class="fn"><a name="futures"></a><a href="qlist.html">QList</a>&lt;<a href="qfuture.html">QFuture</a>&lt;T&gt; &gt; QFutureSynchronizer::futures () const</h3>
+<p>Returns a list of all managed futures.</p>
+<p>See also <a href="qfuturesynchronizer.html#addFuture">addFuture</a>() and <a href="qfuturesynchronizer.html#setFuture">setFuture</a>().</p>
+<h3 class="fn"><a name="setCancelOnWait"></a>void QFutureSynchronizer::setCancelOnWait ( bool <i>enabled</i> )</h3>
+<p>Enables or disables the cancel-on-wait feature based on the <i>enabled</i> argument. If <i>enabled</i> is true, the <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>() function will cancel all futures before waiting for them to finish.</p>
+<p>See also <a href="qfuturesynchronizer.html#cancelOnWait">cancelOnWait</a>() and <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>().</p>
+<h3 class="fn"><a name="setFuture"></a>void QFutureSynchronizer::setFuture ( const <a href="qfuture.html">QFuture</a>&lt;T&gt; &amp; <i>future</i> )</h3>
+<p>Sets <i>future</i> to be the only future managed by this <a href="qfuturesynchronizer.html">QFutureSynchronizer</a>. This is a convenience function that calls <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>(), then <a href="qfuturesynchronizer.html#clearFutures">clearFutures</a>(), and finally passes <i>future</i> to <a href="qfuturesynchronizer.html#addFuture">addFuture</a>().</p>
+<p>See also <a href="qfuturesynchronizer.html#addFuture">addFuture</a>(), <a href="qfuturesynchronizer.html#waitForFinished">waitForFinished</a>(), and <a href="qfuturesynchronizer.html#clearFutures">clearFutures</a>().</p>
+<h3 class="fn"><a name="waitForFinished"></a>void QFutureSynchronizer::waitForFinished ()</h3>
+<p>Waits for all futures to finish. If <a href="qfuturesynchronizer.html#cancelOnWait">cancelOnWait</a>() returns true, each future is canceled before waiting for them to finish.</p>
+<p>See also <a href="qfuturesynchronizer.html#cancelOnWait">cancelOnWait</a>() and <a href="qfuturesynchronizer.html#setCancelOnWait">setCancelOnWait</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

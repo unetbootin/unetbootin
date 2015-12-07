@@ -1,0 +1,12 @@
+INPUT(
+./tmp\obj\debug_static\main.o
+./tmp\obj\debug_static\metatranslator.o
+./tmp\obj\debug_static\translator.o
+./tmp\obj\debug_static\profileevaluator.o
+./tmp\obj\debug_static\proparser.o
+./tmp\obj\debug_static\xliff.o
+./tmp\obj\debug_static\proitems.o
+./tmp\obj\debug_static\proreader.o
+./tmp\obj\debug_static\moc_translator.o
+./tmp\obj\debug_static\moc_proitems.o
+);

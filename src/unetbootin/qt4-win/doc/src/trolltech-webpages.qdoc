@@ -1,0 +1,212 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \externalpage http://www.trolltech.com/
+    \title Trolltech website
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/notes/platforms/bugreport-form
+    \title Bug Report Form
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/3rdparty/tools
+    \title Third-Party Tools
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/addon/solutions/
+    \title Qt Solutions
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/documentation/books
+    \title Books about Qt Programming
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/qt3/book
+    \title GUI Programming with Qt 3
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/
+    \title Qt Homepage
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/indepth/vs-integration
+    \title Visual Studio Integration
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/addon/solutions/catalog/4/Widgets/qtcalendarwidget/
+    \title Calendar Widget
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/addon/solutions/catalog/4/Widgets/qtwizard/
+    \title QtWizard
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/addon/solutions/catalog/4/Utilities/qtcorba/
+    \title CORBA Framework
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/addon/solutions/catalog/4/Widgets/qtwindowlistmenu/
+    \title Window Menu
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/customers/casestories
+    \title Customer Success Stories
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer
+    \title Developer Zone
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/downloads
+    \title Downloads
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/faqs/
+    \title FAQs
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/faqs/Licensing
+    \title License FAQ
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/downloads/freesoftware
+    \title Free Software and Contributions
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/licenses/licensing/
+    \title Qt Licensing Overview
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/licenses/pricing/
+    \title Qt License Pricing
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/orderform
+    \title How to Order
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/notes/supportpolicy
+    \title Platform Support Policy
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/
+    \title Product Overview
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/notes/supported_platforms/
+    \title Qt 4 Platforms Overview
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/notes/supported_platforms/
+    \title Qt 4 Supported Platforms
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qtopia/
+    \title Qtopia
+*/
+
+/*!
+    \externalpage http://doc.trolltech.com/qq/
+    \title Qt Quarterly
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/developer/task-tracker
+    \title Task Tracker
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qtopia/
+    \title Trolltech Embedded Technology
+*/
+
+/*!
+    \externalpage http://lists.trolltech.com
+    \title Trolltech Mailing Lists
+*/
+
+/*!
+    \externalpage http://www.trolltech.com/products/qt/learnmore/whitepapers
+    \title Whitepapers
+*/
+
+/*!
+    \externalpage http://doc.trolltech.com/qtcanvas
+    \title QtCanvas
+*/
+
+/*!
+    \externalpage http://labs.trolltech.com/page/Projects/Itemview/Modeltest
+    \title ModelTest
+*/
+
+/*!
+    \externalpage http://trolltech.com/products/qt/addon/qsa
+    \title Qt Script for Applications (QSA)
+*/

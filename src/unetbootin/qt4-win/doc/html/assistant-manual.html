@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/assistant-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Assistant Manual</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt Assistant Manual<br /><span class="subtitle"></span>
+</h1>
+<a name="qt-assistant"></a><a name="introduction"></a>
+<h2>Introduction</h2>
+<p>This document introduces <i>Qt Assistant</i>, a tool for presenting on-line documentation. The document is divided into the following sections:</p>
+<p>Table of contents:</p>
+<ul>
+<li><a href="qmake-precompiledheaders.html#introduction">Introduction</a></li>
+<li><a href="#the-one-minute-guide-to-using-qt-assistant">The One-Minute Guide to Using Qt Assistant</a></li>
+<li><a href="#qt-assistant-in-more-detail">Qt Assistant in More Detail</a></li>
+<li><a href="#full-text-searching">Full Text Searching</a></li>
+<li><a href="#customizing-qt-assistant">Customizing Qt Assistant</a></li>
+</ul>
+<a name="the-one-minute-guide-to-using-qt-assistant"></a>
+<h2>The One-Minute Guide to Using Qt Assistant</h2>
+<p>Under Windows, <i>Qt Assistant</i> is available as a menu option on the Qt menu. On Unix, run <tt>assistant</tt> from an xterm.</p>
+<p>When you start up <i>Qt Assistant</i>, you will be presented with a standard main-window style application, with a menu bar and toolbar. Below these, on the left hand side are navigation windows called <i>Index</i>, <i>Contents</i> and <i>Bookmarks</i>, as well on the right, taking up most of the space, is the <i>Documentation</i> window. By default, the <i>Qt Assistant</i> documentation is shown in the <i>Documentation</i> window.</p>
+<p>To be able to start using the <i>Qt Assistant</i> you have to setup one or more compressed help files. This could be done by navigating to the <b>Edit|Preferences</b> dialog and install a compressed help file (.qch) by pointing to an path containig these on your local hard drive. See <a href="#the-preferences-dialog">The Preferences Dialog</a> for how to do this.</p>
+<p><i>Qt Assistant</i> works in a similar way to a web browser. If you click underlined text (which signifies a cross-reference), the <i>Documentation</i> window will present the relevant page. You can bookmark pages of particular interest and you can click the <b>Previous</b> and <b>Next</b> toolbar buttons to navigate within the pages you've visited.</p>
+<p>Although <i>Qt Assistant</i> can be used just like a web browser to navigate through the documentation, <i>Qt Assistant</i> offers a powerful means of navigation that web browsers don't provide. <i>Qt Assistant</i> uses an advanced full text search engine to index all the pages in the compressed help file that it presents so that you can search for particular words and phrases.</p>
+<p>To perform an index search, click the <b>Index</b> tab on the Sidebar (or click <b>Ctrl+I</b>). In the 'Look For' line edit enter a word, e.g&#x2e; 'homedirpath'. As you type, words are found and highlighted in a list beneath the line edit. If the highlighted text matches what you're looking for, double click it, (or press <b>Enter</b>) and the <i>Documentation</i> window will display the relevant page. You rarely have to type in the whole word before <i>Qt Assistant</i> finds a match. Note that for some words there may be more than one possible page that is relevant.</p>
+<p><i>Qt Assistant</i> also provides full text searching for finding specific words in the documentation. Documents with the highest occurrences of the word that you are looking for appear first, and every occurrence of the word within the documentation is highlighted.</p>
+<a name="qt-assistant-in-more-detail"></a>
+<h2>Qt Assistant in More Detail</h2>
+<p align="center"><img src="images/assistant-assistant.png" /></p><a name="the-toolwindows"></a>
+<h3>The Toolwindows</h3>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/assistant-index.png" /> <img src="images/assistant-contents.png" /> <img src="images/assistant-bookmarks.png" /></td></tr>
+</table></p>
+<p>The toolwindows provide four ways of navigating documentation:</p>
+<ul>
+<li>The <b>Index</b> window is used to look up key words or phrases. See <a href="#the-one-minute-guide-to-using-qt-assistant">The One-Minute Guide to Using Qt Assistant</a> for how to use this window.</li>
+<li>The <b>Contents</b> window presents a table of contents implemented as an tree view for the documentation that is available. If you click an item, its documentation will appear in the <i>Documentation</i> window. If you double click an item or click a '+' sign to the left of an item, the item's sub-items will appear. Click a sub-item to make its page appear in the <i>Documentation</i> window. Click a '-' sign to the left of an item to hide its sub-items.</li>
+<li>Both the <b>Index</b> and <b>Contents</b> window is providing a dropdown with filtersets to specify the documentation where the search is performed on.</li>
+<li>The <b>Bookmarks</b> window lists any bookmarks you've made. Double click a bookmark to make its page appear in the <i>Documentation</i> window. The <b>Bookmarks</b> window provides a context menu with <b>Show Item</b>, <b>Delete Item</b> as well as <b>Rename Item</b>. Click in the main menu <b>Bookmark|Add Bookmark..&#x2e;</b> (or press <b>Ctrl+B</b>) to bookmark the page that is currently showing in the <i>Documentation</i> window. Right click a bookmark in the list, to rename or delete the highlighted bookmark.</li>
+</ul>
+<p>If you want the <i>Documentation</i> window to use as much space as possible, you can easily group, move or hide the toolwindows. To group the windows drag one on the other and release the mouse. If one or all toolwindows are not shown, press <b>Ctrl+T</b>, <b>Ctrl+I</b> or <b>Ctrl+O</b> to show the individual window.</p>
+<p>The toolwindows are dock windows, so you can drag them to the top, left, right or bottom of <i>Qt Assistant's</i> window, or you can drag it outside <i>Qt Assistant</i> to float it.</p>
+<a name="the-documentation-window"></a>
+<h3>The Documentation Window</h3>
+<p align="center"><img src="images/assistant-docwindow.png" /></p><p>The <b>Documentation</b> window offers a feature for viewing documentation by enabling you to create tabs for each documentation page that you view. Click the <b>Add Tab</b> button and a new tab will appear with the page name as the tab's caption. This makes it convenient to switch between pages when you are working with different documentation. You can delete a tab by clicking the <b>Close Tab</b> button located on the right side of the <b>Documentation</b> window.</p>
+<a name="the-toolbar"></a>
+<h3>The Toolbar</h3>
+<p align="center"><img src="images/assistant-toolbar.png" /></p><p>The toolbar provides fast access to the most common actions.</p>
+<ul>
+<li><b>Previous</b> takes you to the previous page. The menu option is <b>Go|Previous</b> and the keyboard shortcut is <b>Alt+Left Arrow</b>.</li>
+<li><b>Next</b> takes you to the next page. The menu option is <b>Go|Next</b> and the keyboard shortcut is <b>Alt+Right Arrow</b>.</li>
+<li><b>Home</b> takes you to the home page (normally the home page of the Qt Reference Documentation). The menu option is <b>Go|Home</b> and the keyboard shortcut is <b>Ctrl+Home</b>.</li>
+<li><b>Sync with Table of Contents</b> will sync the Contents toolwindow to the currently shown page in the <i>Documentation</i> window. The menu option is <b>Go|Sync with Table of Contents</b>.</li>
+<li><b>Copy</b> copies any selected text to the clipboard. The menu option is <b>Edit|Copy</b> and the keyboard shortcut is <b>Ctrl+C</b>.</li>
+<li><b>Print</b> invokes the <b>Print</b> dialog. The menu option is <b>File|Print</b> and the keyboard shortcut is <b>Ctrl+P</b>.</li>
+<li><b>Find in Text</b> invokes the <b>Find Text</b> dialog. The menu option is <b>Edit|Find in Text</b> and the keyboard shortcut is <b>Ctrl+F</b>.</li>
+<li><b>Zoom in</b> increases the font size. The menu option is <b>View|Zoom in</b> and the keyboard shortcut is <b>Ctrl++</b>.</li>
+<li><b>Zoom out</b> decreases the font size. The menu option is <b>View|Zoom out</b> and the keyboard shortcut is <b>Ctrl+-</b>.</li>
+</ul>
+<p>The address toolbar will be the fast way to enter a specific url for a documentation file.</p>
+<a name="the-menus"></a>
+<h3>The Menus</h3>
+<a name="the-file-menu"></a>
+<h4>The File Menu</h4>
+<ul>
+<li><b>File|Print</b> invokes the <b>Print</b> dialog.</li>
+<li><b>File|Exit</b> terminates <i>Qt Assistant</i>.</li>
+</ul>
+<a name="the-edit-menu"></a>
+<h4>The Edit Menu</h4>
+<ul>
+<li><b>Edit|Copy</b> copies any selected text to the clipboard.</li>
+<li><b>Edit|Find in Text</b> invokes the <b>Find Text</b> dialog.</li>
+<li><b>Edit|Preferences</b> invokes the Preferences dialog.</li>
+</ul>
+<a name="the-view-menu"></a>
+<h4>The View Menu</h4>
+<ul>
+<li><b>View|Zoom in</b> increases the font size.</li>
+<li><b>View|Zoom out</b> decreases the font size.</li>
+<li><b>View|Index</b> toggles the display of the <i>Index</i> toolwindow.</li>
+<li><b>View|Contents</b> toggles the display of the <i>Contents</i> toolwindow.</li>
+<li><b>View|Bookmarks</b> toggles the display of the <i>Bookmarks</i> toolwindow.</li>
+<li><b>View|Search</b> toggles the display of the Search in the <i>Documentation</i> window.</li>
+</ul>
+<a name="the-go-menu"></a>
+<h4>The Go Menu</h4>
+<ul>
+<li><b>Go|Home</b> goes to the home page.</li>
+<li><b>Go|Back</b> displays the previous page.</li>
+<li><b>Go|Forward</b> displays the next page.</li>
+<li><b>Go|Sync with Table of Contents</b> syncs the <i>Contents</i> toolwindow to the currently shown page.</li>
+<li><b>Go|Next Page</b> selects the next page in the <i>Documentation</i> window.</li>
+<li><b>Go|Previous Page</b> selects the previous page in the <i>Documentation</i> window.</li>
+</ul>
+<a name="the-bookmarks-menu"></a>
+<h4>The Bookmarks Menu</h4>
+<ul>
+<li><b>Bookmarks|Add</b> adds the current page to the list of bookmarks.</li>
+</ul>
+<a name="the-dialogs"></a>
+<h3>The Dialogs</h3>
+<a name="the-print-dialog"></a>
+<h4>The Print Dialog</h4>
+<p>This dialog is platform-specific. It gives access to various printer options and can be used to print the current page.</p>
+<a name="the-preferences-dialog"></a>
+<h4>The Preferences Dialog</h4>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/assistant-preferencesdialog.png" /> <img src="images/assistant-preferencesdialog1.png" /></td></tr>
+</table></p>
+<p>The <b>Filters</b> page offers a feature for setting documentation filters for each compressed help file that is installed. Click the <b>Add</b> button to add new filter and specify the attributes on what help file the filter should work. You can delete a filter by clicking the <b>Remove</b> button.</p>
+<p>The <b>Documentation</b> page will provide you a way to install and remove compressed help files. Click the <b>Install</b> button and choose the path on your hard drive from from where you would like to install your compressed help file (.qch). To delete a help file select a documentation in the list and click <b>Remove</b>.</p>
+<a name="the-find-text-control"></a>
+<h4>The Find Text Control</h4>
+<p>This Control is used to find text in the current page. Enter the text you want to find in the Find line edit. If you check the 'Whole words only' checkbox, the search will only consider whole words, i.e&#x2e; if you search for 'spin' with this checkbox checked it will not match 'spinbox', but will match 'spin'. If you check the 'Case sensitive' check box then, for example, 'spin' will match 'spin' but not 'Spin'. You can search Forward or Backward from your current position in the page by clicking one of the Direction radio buttons. Click the <b>Find</b> button to search (or search again), and click the <b>Close</b> button to finish.</p>
+<a name="full-text-searching"></a>
+<h2>Full Text Searching</h2>
+<p align="center"><img src="images/assistant-search.png" /></p><p><i>Qt Assistant</i> provides a powerful full text search engine. To search for certain words or text, click the 'Search' tab in the Documentation window. Then enter the text you want to look for and press <b>Enter</b> or click <b>Search</b>. The search is not case sensitive, so Foo, fOo and FOO are all treated as the same. The following are examples of common search patterns:</p>
+<ul>
+<li><tt>deep</tt> -- lists all the documents that contain the word 'deep'</li>
+<li><tt>deep*</tt> -- lists all the documents that contain a word beginning with 'deep'</li>
+<li><tt>deep copy</tt> -- lists all documents that contain both 'deep' <i>and</i> 'copy'</li>
+<li><tt>&quot;deep copy&quot;</tt> -- list all documents that contain the phrase 'deep copy'</li>
+</ul>
+<p>It is also possible to use the <b>Advanced search</b> to get more flexibility. You can specify some words so that hits containing these are excluded from the result or search for an exact phrase of words. Search for similar words will look like this:</p>
+<ul>
+<li><tt>QStin</tt> -- lists all the documents that that are similar like '<a href="qstring.html">QString</a>'</li>
+<li><tt>QSting</tt> -- lists all the documents that that are similar like '<a href="qstring.html">QString</a>'</li>
+<li><tt>QStrin</tt> -- lists all the documents that that are similar like '<a href="qstring.html">QString</a>'</li>
+</ul>
+<p>All options can be combined to enhance your search options.</p>
+<p>The list of documents found is ordered according to the number of occurrences of the search text they contain, therefore those with the highest number of occurrences appearing first. Simply click any document in the list to display it in the document window.</p>
+<p>If the documentation has changed, i.e&#x2e; if documents have been added or removed, <i>Qt Assistant</i> will reindex.</p>
+<a name="using-qt-assistant-as-custom-help-browser"></a>
+<h2>Using <i>Qt Assistant</i> as custom help browser</h2>
+<p>Using <i>Qt Assistant</i> as custom help browser requires more than just being able to display any kind of documentation, i.e&#x2e; displaying also documentation not related to Qt. It is equally important that the appearance of <i>Qt Assistant</i> can be customized so that it is seen as a homemade help browser rather than <i>Qt Assistant</i>. This is achieved by changing the window title or icon as well as some application name specific menu texts and actions. The complete list of possible customizations can be found in the <a href="#customizing-qt-assistant">Customizing Qt Assistant</a> section.</p>
+<p>The third requirement needed to use <i>Qt Assistant</i> as a custom help browser is the ability to receive actions or commands from the application it provides help for. This is especially important when the application offers context sensitive help. Then, the help browser should change its contents depending on the state the application is currently in. This means that the application has to communicate the current state to the help browser. The section about <a href="#using-qt-assistant-remotely">using <i>Qt Assistant</i> remotely</a> explains how this can be done.</p>
+<a name="customizing-qt-assistant"></a>
+<h3>Customizing Qt Assistant</h3>
+<p><i>Qt Assistant</i> can be customized by using different command line options passed on startup. In addition, <i>Qt Assistant</i> introduces also some special help collection tags, which enables its properties to change, for example the default startup page, the about dialog text or the general look.</p>
+<p>Note that all <i>Qt Assistant</i> settings are stored in the used help collection file and <i>Qt Assistant</i> operates entirely on this collection. That means while changing or removing the current help collection, <i>Qt Assistant</i> will behave totally different according to the used collection file and it's stored settings.</p>
+<a name="modifying-the-qt-assistant-with-command-line-options"></a>
+<h4>Modifying the <i>Qt Assistant</i> with command line options</h4>
+<p>Different help collections can be shown by simply passing the help collection path to <i>Qt Assistant</i>. For example:</p>
+<pre>     1: &gt; assistant -collectionFile file</pre>
+<p>Other available options the can be passed on the command line.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Command Line Option</th><th>Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td>-collectionFile &lt;file.qhc&gt;</td><td>Uses the specified collection file instead of the default one.</td></tr>
+<tr valign="top" class="even"><td>-showUrl URL</td><td>Shows the document referenced by URL.</td></tr>
+<tr valign="top" class="odd"><td>-enableRemoteControl</td><td>Enables <i>Qt Assistant</i> to be remotly controlled.</td></tr>
+<tr valign="top" class="even"><td>-show &lt;widget&gt;</td><td>Shows the specified dockwidget which can be &quot;contents&quot;, &quot;index&quot;, &quot;bookmarks&quot; or &quot;search&quot;.</td></tr>
+<tr valign="top" class="odd"><td>-hide &lt;widget&gt;</td><td>Hides the specified dockwidget which can be &quot;contents&quot;, &quot;index&quot;, &quot;bookmarks&quot; or &quot;search.</td></tr>
+<tr valign="top" class="even"><td>-activate &lt;widget&gt;</td><td>Activates the specified dockwidget which can be &quot;contents&quot;, &quot;index&quot;, &quot;bookmarks&quot; or &quot;search.</td></tr>
+<tr valign="top" class="odd"><td>-register &lt;doc.qch&gt;</td><td>Registers the specified compressed help file in the given help collection.</td></tr>
+<tr valign="top" class="even"><td>-unregister &lt;doc.qch&gt;</td><td>Unregisters the specified compressed help file from the given collection file.</td></tr>
+<tr valign="top" class="odd"><td>-quiet</td><td>Doesn't show any error, warning or success messages.</td></tr>
+</table></p>
+<a name="documentation-help-collection-tags"></a>
+<h4>Documentation Help collection tags</h4>
+<p>Help collection tags enable <i>Qt Assistant</i> to act as a specialized help tool for displaying documentation for any application. With help of these tags, the documentation writer can change properties such as <i>Qt Assistant</i>'s title, application icons, 'about' dialog text and others. <i>Qt Assistant</i> can be customized by specifying the following tags:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Tag name</th><th>Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td>&lt;title&gt;</td><td>This property is used to specify a window title for <i>Qt Assistant</i>.</td></tr>
+<tr valign="top" class="even"><td>&lt;startPage&gt;</td><td>This tag specifies which page <i>Qt Assistant</i> should initially display when the help collection is used. This property also describes the default location to go to when pressing the home button in <i>Qt Assistant</i>'s main user interface.</td></tr>
+<tr valign="top" class="odd"><td>&lt;currentFilter&gt;</td><td>This tag specifies the current filter that is initialy set. If this filter is not specified, the documentation will not be filtered. This has no impact if only one documentation is installed.</td></tr>
+<tr valign="top" class="even"><td>&lt;applicationIcon&gt;</td><td>This tag describes an icon that will be used as <i>Qt Assistant</i> application icon. The path needs to be relativ to the collection file.</td></tr>
+<tr valign="top" class="odd"><td>&lt;enableFilterFunctionality&gt;</td><td>This tag is used to enable or disable user accessible filter functionality, i.e&#x2e; the user cannot change any filter when running <i>Qt Assistant</i>. It does not mean that the internal filter functionality is completely disabled. Set the value to <tt>false</tt> if you want to disable the filtering. If the filter toolbar should be shown by default, set the attribute <tt>visible</tt> to <tt>true</tt>.</td></tr>
+<tr valign="top" class="even"><td>&lt;enableDocumentationManager&gt;</td><td>This tag describes if the documentation manager in the preferences dialog is shown or not. Disabling the Documentation Manager allows you to limit <i>Qt Assistant</i> to display a specific documentation or make it impossible to accidentally remove or install documentation by the end user. To hide the documentation manager set the tag value to <tt>false</tt>.</td></tr>
+<tr valign="top" class="odd"><td>&lt;enableAddressBar&gt;</td><td>This tag describes if the address bar exists at all or not. By default it is enabled, if you want to disable it set the tag value to <tt>false</tt>. If the address bar functionality is enabled, the address bar can be shown by setting the tag attribute <tt>visible</tt> to <tt>true</tt>.</td></tr>
+<tr valign="top" class="even"><td>&lt;aboutMenuText&gt;, &lt;text&gt;</td><td>The <tt>aboutMenuText</tt> tag lists texts for different languages, e.g&#x2e; &quot;About Application&quot;, which will later appear in the <b>Help</b> menu. A text is specified within the <tt>text</tt> tags, the <tt>language</tt> attribute takes the two letter language name. The text is taken as the default text if no language attribute is specified.</td></tr>
+<tr valign="top" class="odd"><td>&lt;aboutDialog&gt;, &lt;file&gt;, &lt;icon&gt;</td><td>The <tt>aboutDialog</tt> tag can be used to specify the text for the About dialog that is opened for the <b>Help</b> menu. The text is taken from the file in the <tt>file</tt> tags. It is possible to specify a different file or any language. The icon defined by the <tt>icon</tt> tags is applied to any language.</td></tr>
+<tr valign="top" class="even"><td>&lt;cacheDirectory&gt;</td><td>Path relative to the user's home directory. The cache path is used to store index files needed for the fulltext search and a copy of the collection file. The copy is needed because <i>Qt Assistant</i> stores all its settings in the collection file, i.e&#x2e; it must be writable for the user.</td></tr>
+</table></p>
+<p>An example of a help collection file that uses all the available tags is shown below:</p>
+<pre>     &lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot; ?&gt;
+     &lt;QHelpCollectionProject version=&quot;1.0&quot;&gt;
+         &lt;assistant&gt;
+             &lt;title&gt;My Application Help&lt;/title&gt;
+             &lt;startPage&gt;qthelp://com.mycompany.1_0_0/doc/index.html&lt;/startPage&gt;
+             &lt;currentFilter&gt;myfilter&lt;/currentFilter&gt;
+             &lt;applicationIcon&gt;application.png&lt;/applicationIcon&gt;
+             &lt;enableFilterFunctionality&gt;false&lt;/enableFilterFunctionality&gt;
+             &lt;enableDocumentationManager&gt;false&lt;/enableDocumentationManager&gt;
+             &lt;enableAddressBar visible=&quot;true&quot;&gt;true&lt;/enableAddressBar&gt;
+             &lt;cacheDirectory&gt;mycompany&lt;/cacheDirectory&gt;
+             &lt;aboutMenuText&gt;
+                 &lt;text&gt;About My Application&lt;/text&gt;
+                 &lt;text language=&quot;de&quot;&gt;ber meine Applikation...&lt;/text&gt;
+             &lt;/aboutMenuText&gt;
+             &lt;aboutDialog&gt;
+                 &lt;file&gt;about.txt&lt;/file&gt;
+                 &lt;file language=&quot;de&quot;&gt;ueber.txt&lt;/file&gt;
+                 &lt;icon&gt;about.png&lt;/icon&gt;
+             &lt;/aboutDialog&gt;
+         &lt;/assistant&gt;
+         &lt;docFiles&gt;
+             &lt;generate&gt;
+                 &lt;file&gt;
+                     &lt;input&gt;myapplication.qhp&lt;/input&gt;
+                     &lt;output&gt;myapplication.qch&lt;/output&gt;
+                 &lt;/file&gt;
+             &lt;/generate&gt;
+             &lt;register&gt;
+                 &lt;file&gt;myapplication.qch&lt;/file&gt;
+             &lt;/register&gt;
+         &lt;/docFiles&gt;
+     &lt;/QHelpCollectionProject&gt;</pre>
+<a name="using-qt-assistant-remotely"></a>
+<h4>Using Qt Assistant remotely</h4>
+<p>Even though the help browser is a stand alone application, it will mostly be launched from within the application it provides help for. This approach gives the application the possibility to ask for specific help contents to be displayed as soon as the help browser is started. Another advantage with this approach is that the application can communicate with the help browser process and can therefore request other help contents to be shown depending on the current state of the application.</p>
+<p>So, to use <i>Qt Assistant</i> as the custom help browser of your application, simply create a <a href="qprocess.html">QProcess</a> and specify the path to the Assistant executable. In order to make Assistant listening to your application, turn on its remote control functionality by passing the &quot;-enableRemoteControl&quot; command line option.</p>
+<pre>     QProcess *p = new QProcess;
+     QStringList args;
+     args &lt;&lt; QLatin1String(&quot;-collectionFile&quot;)
+         &lt;&lt; QLatin1String(&quot;mycollection.qhc&quot;)
+         &lt;&lt; QLatin1String(&quot;-enableRemoteControl&quot;);
+     p-&gt;start(QLatin1String(&quot;assistant&quot;), args);
+     if (!p-&gt;waitForStarted())
+         return;</pre>
+<p>Once <i>Qt Assistant</i> is running, you can send commands by using the process' stdin channel. The code snippet below shows how to tell <i>Qt Assistant</i> to show a certain page of documentation.</p>
+<pre>     QTextStream str(p);
+     str &lt;&lt; QLatin1String(&quot;setSource qthelp://com.mycompany.1_0_0/doc/index.html\0&quot;) &lt;&lt; endl;</pre>
+<p>The following commands are possible:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Command</th><th>Brief Description</th></tr></thead>
+<tr valign="top" class="odd"><td>show &lt;Widget&gt;</td><td>Shows the specified dock widget &lt;Widget&gt;. If the widget is already shown and this command is sent again, the widget will be activated, meaning it will be raised and receives the focus. Possible values for &lt;Widget&gt; are &quot;contents&quot;, &quot;index&quot;, &quot;bookmarks&quot; or &quot;search&quot;.</td></tr>
+<tr valign="top" class="even"><td>hide &lt;Widget&gt;</td><td>Hides the specified dock widget &lt;Widget&gt;. Possible values for &lt;Widget&gt; are &quot;contents&quot;, &quot;index&quot;, &quot;bookmarks&quot; or &quot;search&quot;.</td></tr>
+<tr valign="top" class="odd"><td>setSource &lt;Url&gt;</td><td>Displays the given &lt;Url&gt;. The url can be absolute or relative to the currently displayed page. If the url is absolute, it has to be a valid qt help url, i.e&#x2e; starting with &quot;qthelp://&quot;.</td></tr>
+<tr valign="top" class="even"><td>activateKeyword &lt;Keyword&gt;</td><td>Inserts the specified &lt;Keyword&gt; into the line edit of the index dock widget and activates the corresponding item in the index list. If such an item has more than one link associated with it, a topic chooser will be shown.</td></tr>
+<tr valign="top" class="odd"><td>activateIdentifier &lt;Id&gt;</td><td>Displays the help contents for the given &lt;Id&gt;. An id is unique in at least one namespace and has only one link associated to it, so the topic chooser will never pop up.</td></tr>
+<tr valign="top" class="even"><td>syncContents</td><td>Selects the item in the contents widget which corresponds to the currently displayed page.</td></tr>
+<tr valign="top" class="odd"><td>expandToc &lt;Depth&gt;</td><td>Expands the table of contents tree to the given depth. If depth is less than 1, the tree will be collapsed.</td></tr>
+</table></p>
+<p>If you want to send several commands within a short period of time it is recommended that you write only a single line to the process' stdin instead of one line for every command. The commands have to be separated by a simicolon.</p>
+<pre>     QTextStream str(p);
+     str &lt;&lt; QLatin1String(&quot;hide bookmarks;&quot;)
+         &lt;&lt; QLatin1String(&quot;hide index;&quot;)
+         &lt;&lt; QLatin1String(&quot;setSource qthelp://com.mycompany.1_0_0/doc/index.html\0&quot;)
+         &lt;&lt; endl;</pre>
+<a name="compatibility-with-old-formats"></a>
+<h4>Compatibility with Old Formats</h4>
+<p>In older versions of Qt, the help system was based on Document Content File (DCF) and Qt Assistant Documentation Profile (ADP) formats. In contrast, Qt Assistant and the help system used in Qt 4.4 use the formats described earlier in this manual.</p>
+<p>Unfortunately, the old file formats are not compatible with the new ones. In general, the differences are not that big - in most cases is the old format is just a subset of the new one. One example is the <tt>namespace</tt> tag in the Qt Help Project format, which was not part of the old format, but plays a vital role in the new one. To help you to move to the new file format, we have created a conversion wizard.</p>
+<p>The wizard is started by executing <tt>qhelpconverter</tt>. It guides you through the conversion of different parts of the file and generates a new <tt>qch</tt> or <tt>qhcp</tt> file.</p>
+<p>Once the wizard is finished and the files created, run the <tt>qhelpgenerator</tt> or the <tt>qcollectiongenerator</tt> tool to generate the binary help files used by <i>Qt Assistant</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

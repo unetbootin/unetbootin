@@ -1,0 +1,226 @@
+//! [0]
+    PushStream::PushStream(QObject *parent)
+      : AbstractMediaStream(parent), m_timer(new QTimer(this))
+    {
+      setStreamSize(getMediaStreamSize());
+
+      connect(m_timer, SIGNAL(timeout()), SLOT(moreData()));
+      m_timer->setInterval(0);
+    }
+
+    void PushStream::moreData()
+    {
+      const QByteArray data = getMediaData();
+      if (data.isEmpty()) {
+        endOfData();
+      } else {
+        writeData(data);
+      }
+    }
+
+    void PushStream::needData()
+    {
+      m_timer->start();
+      moreData();
+    }
+
+    void PushStream::enoughData()
+    {
+      m_timer->stop();
+    }
+//! [0]
+
+
+//! [1]
+    PullStream::PullStream(QObject *parent)
+      : AbstractMediaStream(parent)
+    {
+      setStreamSize(getMediaStreamSize());
+    }
+
+    void PullStream::needData()
+    {
+      const QByteArray data = getMediaData();
+      if (data.isEmpty()) {
+        endOfData();
+      } else {
+        writeData(data);
+      }
+    }
+//! [1]
+
+
+//! [2]
+    seekStream(0);
+//! [2]
+
+
+//! [3]
+    MediaObject m;
+    QString fileName("/home/foo/bar.ogg");
+    QUrl url("http://www.example.com/stream.mp3");
+    QBuffer *someBuffer;
+    m.setCurrentSource(fileName);
+    m.setCurrentSource(url);
+    m.setCurrentSource(someBuffer);
+    m.setCurrentSource(Phonon::Cd);
+//! [3]
+
+
+//! [4]
+    VideoPlayer *player = new VideoPlayer(Phonon::VideoCategory, parentWidget);
+    connect(player, SIGNAL(finished()), player, SLOT(deleteLater()));
+    player->play(url);
+//! [4]
+
+
+//! [5]
+    audioPlayer->load(url);
+    audioPlayer->play();
+//! [5]
+
+
+//! [6]
+    media = new MediaObject(this);
+    connect(media, SIGNAL(finished()), SLOT(slotFinished());
+    media->setCurrentSource("/home/username/music/filename.ogg");
+
+    ...
+
+    media->play();
+//! [6]
+
+
+//! [7]
+    media->setCurrentSource(":/sounds/startsound.ogg");
+    media->enqueue("/home/username/music/song.mp3");
+    media->enqueue(":/sounds/endsound.ogg");
+//! [7]
+
+
+//! [8]
+      media->setCurrentSource(":/sounds/startsound.ogg");
+      connect(media, SIGNAL(aboutToFinish()), SLOT(enqueueNextSource()));
+    }
+
+    void enqueueNextSource()
+    {
+      media->enqueue("/home/username/music/song.mp3");
+    }
+//! [8]
+
+
+//! [9]
+    int x = 200;
+    media->setTickInterval(x);
+    Q_ASSERT(x == producer->tickInterval());
+//! [9]
+
+
+//! [10]
+    int x = 200;
+    media->setTickInterval(x);
+    Q_ASSERT(x >= producer->tickInterval() &&
+             x <= 2producer->tickInterval());
+//! [10]
+
+
+//! [11]
+      connect(media, SIGNAL(hasVideoChanged(bool)), hasVideoChanged(bool));
+      media->setCurrentSource("somevideo.avi");
+      media->hasVideo(); // returns false;
+    }
+
+    void hasVideoChanged(bool b)
+    {
+      // b == true
+      media->hasVideo(); // returns true;
+    }
+//! [11]
+
+
+//! [12]
+      connect(media, SIGNAL(hasVideoChanged(bool)), hasVideoChanged(bool));
+      media->setCurrentSource("somevideo.avi");
+      media->hasVideo(); // returns false;
+    }
+
+    void hasVideoChanged(bool b)
+    {
+      // b == true
+      media->hasVideo(); // returns true;
+    }
+//! [12]
+
+
+//! [13]
+    setMetaArtist (media->metaData("ARTIST"     ));
+    setMetaAlbum  (media->metaData("ALBUM"      ));
+    setMetaTitle  (media->metaData("TITLE"      ));
+    setMetaDate   (media->metaData("DATE"       ));
+    setMetaGenre  (media->metaData("GENRE"      ));
+    setMetaTrack  (media->metaData("TRACKNUMBER"));
+    setMetaComment(media->metaData("DESCRIPTION"));
+//! [13]
+
+
+//! [14]
+    QUrl url("http://www.example.com/music.ogg");
+    media->setCurrentSource(url);
+//! [14]
+
+
+//! [15]
+    progressBar->setRange(0, 100); // this is the default
+    connect(media, SIGNAL(bufferStatus(int)), progressBar, SLOT(setValue(int)));
+//! [15]
+
+
+//! [16]
+    QObject::connect(BackendCapabilities::notifier(), SIGNAL(capabilitiesChanged()), ...
+//! [16]
+
+
+//! [17]
+    QComboBox *cb = new QComboBox(parentWidget);
+    ObjectDescriptionModel *model = new ObjectDescriptionModel(cb);
+    model->setModelData(BackendCapabilities::availableAudioOutputDevices());
+    cb->setModel(model);
+    cb->setCurrentIndex(0); // select first entry
+//! [17]
+
+
+//! [18]
+    int cbIndex = cb->currentIndex();
+    AudioOutputDevice selectedDevice = model->modelData(cbIndex);
+//! [18]
+
+
+//! [19]
+    Path path = Phonon::createPath(...);
+    Effect *effect = new Effect(this);
+    path.insertEffect(effect);
+//! [19]
+
+
+//! [20]
+    MediaObject *media = new MediaObject;
+    AudioOutput *output = new AudioOutput(Phonon::MusicCategory);
+    Path path = Phonon::createPath(media, output);
+    Q_ASSERT(path.isValid()); // for this simple case the path should always be
+                              //valid - there are unit tests to ensure it
+    // insert an effect
+    QList<EffectDescription> effectList = BackendCapabilities::availableAudioEffects();
+    if (!effectList.isEmpty()) {
+        Effect *effect = path.insertEffect(effectList.first());
+    }
+//! [20]
+
+
+//! [21]
+    MediaObject *media = new MediaObject(parent);
+    VideoWidget *vwidget = new VideoWidget(parent);
+    Phonon::createPath(media, vwidget);
+//! [21]
+
+

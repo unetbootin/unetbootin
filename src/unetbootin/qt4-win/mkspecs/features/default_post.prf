@@ -1,0 +1,10 @@
+CONFIG(debug, debug|release):load(debug)
+else:load(release)
+debug_and_release:load(debug_and_release)
+incredibuild_xge {
+    CONFIG -= incredibuild_xge
+    CONFIG = incredibuild_xge $$CONFIG
+}
+
+QMAKE_INCDIR += $$QMAKE_INCDIR_POST
+QMAKE_LIBDIR += $$QMAKE_LIBDIR_POST

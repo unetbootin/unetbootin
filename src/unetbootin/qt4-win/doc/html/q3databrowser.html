@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/sql/q3databrowser.cpp -->
+<head>
+  <title>Qt 4.4: Q3DataBrowser Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DataBrowser Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DataBrowser class provides data manipulation and navigation for data entry forms. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DataBrowser&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdatabrowser">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="q3databrowser-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3databrowser.html#Boundary-enum">Boundary</a></b> { Unknown, None, BeforeBeginning, Beginning, End, AfterEnd }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3databrowser.html#autoEdit-prop">autoEdit</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#boundaryChecking-prop">boundaryChecking</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#confirmDelete-prop">confirmDelete</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3databrowser.html#confirmInsert-prop">confirmInsert</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#confirmUpdate-prop">confirmUpdate</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#filter-prop">filter</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#readOnly-prop">readOnly</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#sort-prop">sort</a></b> : QStringList</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3databrowser.html#Q3DataBrowser">Q3DataBrowser</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>fl</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3databrowser.html#dtor.Q3DataBrowser">~Q3DataBrowser</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#autoEdit-prop">autoEdit</a></b> () const</li>
+<li><div class="fn"/>Boundary <b><a href="q3databrowser.html#boundary">boundary</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#boundaryChecking-prop">boundaryChecking</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#confirmDelete-prop">confirmDelete</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#confirmInsert-prop">confirmInsert</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#confirmUpdate-prop">confirmUpdate</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3databrowser.html#filter-prop">filter</a></b> () const</li>
+<li><div class="fn"/>Q3SqlForm * <b><a href="q3databrowser.html#form">form</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3databrowser.html#readOnly-prop">isReadOnly</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="q3databrowser.html#seek">seek</a></b> ( int <i>i</i>, bool <i>relative</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#autoEdit-prop">setAutoEdit</a></b> ( bool <i>autoEdit</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#boundaryChecking-prop">setBoundaryChecking</a></b> ( bool <i>active</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#confirmCancels-prop">setConfirmCancels</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#confirmDelete-prop">setConfirmDelete</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#confirmEdits-prop">setConfirmEdits</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#confirmInsert-prop">setConfirmInsert</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#confirmUpdate-prop">setConfirmUpdate</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#filter-prop">setFilter</a></b> ( const QString &amp; <i>filter</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#setForm">setForm</a></b> ( Q3SqlForm * <i>form</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#readOnly-prop">setReadOnly</a></b> ( bool <i>active</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#sort-prop">setSort</a></b> ( const QStringList &amp; <i>sort</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#sort-prop">setSort</a></b> ( const QSqlIndex &amp; <i>sort</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#setSqlCursor">setSqlCursor</a></b> ( Q3SqlCursor * <i>cursor</i>, bool <i>autoDelete</i> = false )</li>
+<li><div class="fn"/>QStringList <b><a href="q3databrowser.html#sort-prop">sort</a></b> () const</li>
+<li><div class="fn"/>Q3SqlCursor * <b><a href="q3databrowser.html#sqlCursor">sqlCursor</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#clearValues">clearValues</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#del">del</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#first">first</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#insert">insert</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#last">last</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#next">next</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#prev">prev</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#readFields">readFields</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#refresh">refresh</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#update">update</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#updateBoundary">updateBoundary</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#writeFields">writeFields</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#beforeDelete">beforeDelete</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#beforeInsert">beforeInsert</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#beforeUpdate">beforeUpdate</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#currentChanged">currentChanged</a></b> ( const QSqlRecord * <i>record</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#cursorChanged">cursorChanged</a></b> ( Q3SqlCursor::Mode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#firstRecordAvailable">firstRecordAvailable</a></b> ( bool <i>available</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#lastRecordAvailable">lastRecordAvailable</a></b> ( bool <i>available</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#nextRecordAvailable">nextRecordAvailable</a></b> ( bool <i>available</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#prevRecordAvailable">prevRecordAvailable</a></b> ( bool <i>available</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#primeDelete">primeDelete</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#primeInsert">primeInsert</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3databrowser.html#primeUpdate">primeUpdate</a></b> ( QSqlRecord * <i>buf</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QSql::Confirm <b><a href="q3databrowser.html#confirmCancel">confirmCancel</a></b> ( QSql::Op <i>m</i> )</li>
+<li><div class="fn"/>virtual QSql::Confirm <b><a href="q3databrowser.html#confirmEdit">confirmEdit</a></b> ( QSql::Op <i>m</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3databrowser.html#currentEdited">currentEdited</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3databrowser.html#deleteCurrent">deleteCurrent</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3databrowser.html#handleError">handleError</a></b> ( const QSqlError &amp; <i>error</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3databrowser.html#insertCurrent">insertCurrent</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3databrowser.html#updateCurrent">updateCurrent</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DataBrowser class provides data manipulation and navigation for data entry forms.</p>
+<p>A high-level API is provided for navigating through data records in a cursor, for inserting, updating and deleting records, and for refreshing data in the display.</p>
+<p>If you want a read-only form to present database data use <a href="q3dataview.html">Q3DataView</a>; if you want a table-based presentation of your data use <a href="q3datatable.html">Q3DataTable</a>.</p>
+<p>A Q3DataBrowser is used to associate a dataset with a form in much the same way as a <a href="q3datatable.html">Q3DataTable</a> associates a dataset with a table. Once the data browser has been constructed it can be associated with a dataset with <a href="q3databrowser.html#setSqlCursor">setSqlCursor</a>(), and with a form with <a href="q3databrowser.html#setForm">setForm</a>(). Boundary checking, sorting and filtering can be set with <a href="q3databrowser.html#boundaryChecking-prop">setBoundaryChecking</a>(), <a href="q3databrowser.html#sort-prop">setSort</a>() and <a href="q3databrowser.html#filter-prop">setFilter</a>(), respectively.</p>
+<p>The <a href="q3databrowser.html#insertCurrent">insertCurrent</a>() function reads the fields from the default form into the default cursor and performs the insert. The <a href="q3databrowser.html#updateCurrent">updateCurrent</a>() and <a href="q3databrowser.html#deleteCurrent">deleteCurrent</a>() functions perform similarly to update and delete the current record respectively.</p>
+<p>The user can be asked to confirm all edits with <a href="q3databrowser.html#confirmEdits-prop">setConfirmEdits</a>(). For more precise control use <a href="q3databrowser.html#confirmInsert-prop">setConfirmInsert</a>(), <a href="q3databrowser.html#confirmUpdate-prop">setConfirmUpdate</a>(), <a href="q3databrowser.html#confirmDelete-prop">setConfirmDelete</a>() and <a href="q3databrowser.html#confirmCancels-prop">setConfirmCancels</a>(). Use <a href="q3databrowser.html#autoEdit-prop">setAutoEdit</a>() to control the behavior of the form when the user edits a record and then navigates.</p>
+<p>The record set is navigated using <a href="q3databrowser.html#first">first</a>(), <a href="q3databrowser.html#next">next</a>(), <a href="q3databrowser.html#prev">prev</a>(), <a href="q3databrowser.html#last">last</a>() and <a href="q3databrowser.html#seek">seek</a>(). The form's display is updated with <a href="q3databrowser.html#refresh">refresh</a>(). When navigation takes place the <a href="q3databrowser.html#firstRecordAvailable">firstRecordAvailable</a>(), <a href="q3databrowser.html#lastRecordAvailable">lastRecordAvailable</a>(), <a href="q3databrowser.html#nextRecordAvailable">nextRecordAvailable</a>() and <a href="q3databrowser.html#prevRecordAvailable">prevRecordAvailable</a>() signals are emitted. When the cursor record is changed due to navigation the <a href="q3databrowser.html#cursorChanged">cursorChanged</a>() signal is emitted.</p>
+<p>If you want finer control of the insert, update and delete processes then you can use the lower level functions to perform these operations as described below.</p>
+<p>The form is populated with data from the database with <a href="q3databrowser.html#readFields">readFields</a>(). If the user is allowed to edit, (see <a href="q3databrowser.html#readOnly-prop">setReadOnly</a>()), write the form's data back to the cursor's edit buffer with <a href="q3databrowser.html#writeFields">writeFields</a>(). You can clear the values in the form with <a href="q3databrowser.html#clearValues">clearValues</a>(). Editing is performed as follows:</p>
+<ul>
+<li><i>insert</i> When the data browser enters insertion mode it emits the <a href="q3databrowser.html#primeInsert">primeInsert</a>() signal which you can connect to, for example to pre-populate fields. Call <a href="q3databrowser.html#writeFields">writeFields</a>() to write the user's edits to the cursor's edit buffer then call <a href="q3databrowser.html#insert">insert</a>() to insert the record into the database. The <a href="q3databrowser.html#beforeInsert">beforeInsert</a>() signal is emitted just before the cursor's edit buffer is inserted into the database; connect to this for example, to populate fields such as an auto-generated primary key.</li>
+<li><i>update</i> For updates the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted when the data browser enters update mode. After calling <a href="q3databrowser.html#writeFields">writeFields</a>() call <a href="q3databrowser.html#update">update</a>() to update the record and connect to the <a href="q3databrowser.html#beforeUpdate">beforeUpdate</a>() signal to manipulate the user's data before the update takes place.</li>
+<li><i>delete</i> For deletion the <a href="q3databrowser.html#primeDelete">primeDelete</a>() signal is emitted when the data browser enters deletion mode. After calling <a href="q3databrowser.html#writeFields">writeFields</a>() call <a href="q3databrowser.html#del">del</a>() to delete the record and connect to the <a href="q3databrowser.html#beforeDelete">beforeDelete</a>() signal, for example to record an audit of the deleted record.</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Boundary-enum"></a>enum Q3DataBrowser::Boundary</h3>
+<p>This enum describes where the data browser is positioned.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::Unknown</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">the boundary cannot be determined (usually because there is no default cursor, or the default cursor is not active).</td></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::None</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">the browser is not positioned on a boundary, but it is positioned on a record somewhere in the middle.</td></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::BeforeBeginning</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">the browser is positioned before the first available record.</td></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::Beginning</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">the browser is positioned at the first record.</td></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::End</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">the browser is positioned at the last record.</td></tr>
+<tr><td valign="top"><tt>Q3DataBrowser::AfterEnd</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">the browser is positioned after the last available record.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoEdit-prop"></a>autoEdit : bool</h3>
+<p>This property holds whether the browser automatically applies edits.</p>
+<p>The default value for this property is true. When the user begins an insertion or an update on a form there are two possible outcomes when they navigate to another record:</p>
+<ul>
+<li>the insert or update is is performed -- this occurs if autoEdit is true</li>
+<li>the insert or update is discarded -- this occurs if autoEdit is false</li>
+</ul>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoEdit () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoEdit ( bool <i>autoEdit</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="boundaryChecking-prop"></a>boundaryChecking : bool</h3>
+<p>This property holds whether boundary checking is active.</p>
+<p>When boundary checking is active (the default), signals are emitted indicating the current position of the default cursor.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool boundaryChecking () const</b></li>
+<li><div class="fn"/><b>void setBoundaryChecking ( bool <i>active</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#boundary">boundary</a>().</p>
+<h3 class="fn"><a name="confirmCancels-prop"></a>confirmCancels : bool</h3>
+<p>This property holds whether the browser confirms cancel operations.</p>
+<p>If this property is true, all cancels must be confirmed by the user through a message box (this behavior can be changed by overriding the <a href="q3databrowser.html#confirmCancel">confirmCancel</a>() function), otherwise all cancels occur immediately. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmCancels () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmCancels ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a>() and <a href="q3databrowser.html#confirmCancel">confirmCancel</a>().</p>
+<h3 class="fn"><a name="confirmDelete-prop"></a>confirmDelete : bool</h3>
+<p>This property holds whether the browser confirms deletions.</p>
+<p>If this property is true, the browser confirms deletions, otherwise deletions happen immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmDelete () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmDelete ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3databrowser.html#confirmUpdate-prop">confirmUpdate</a>(), <a href="q3databrowser.html#confirmInsert-prop">confirmInsert</a>(), and <a href="q3databrowser.html#confirmEdit">confirmEdit</a>().</p>
+<h3 class="fn"><a name="confirmEdits-prop"></a>confirmEdits : bool</h3>
+<p>This property holds whether the browser confirms edits.</p>
+<p>If this property is true, the browser confirms all edit operations (insertions, updates and deletions), otherwise all edit operations happen immediately. Confirmation is achieved by presenting the user with a message box -- this behavior can be changed by reimplementing the <a href="q3databrowser.html#confirmEdit">confirmEdit</a>() function,</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmEdits () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmEdits ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#confirmEdit">confirmEdit</a>(), <a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3databrowser.html#confirmInsert-prop">confirmInsert</a>(), <a href="q3databrowser.html#confirmUpdate-prop">confirmUpdate</a>(), and <a href="q3databrowser.html#confirmDelete-prop">confirmDelete</a>().</p>
+<h3 class="fn"><a name="confirmInsert-prop"></a>confirmInsert : bool</h3>
+<p>This property holds whether the data browser confirms insertions.</p>
+<p>If this property is true, the browser confirms insertions, otherwise insertions happen immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmInsert () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmInsert ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3databrowser.html#confirmUpdate-prop">confirmUpdate</a>(), <a href="q3databrowser.html#confirmDelete-prop">confirmDelete</a>(), and <a href="q3databrowser.html#confirmEdit">confirmEdit</a>().</p>
+<h3 class="fn"><a name="confirmUpdate-prop"></a>confirmUpdate : bool</h3>
+<p>This property holds whether the browser confirms updates.</p>
+<p>If this property is true, the browser confirms updates, otherwise updates happen immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmUpdate () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmUpdate ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3databrowser.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3databrowser.html#confirmInsert-prop">confirmInsert</a>(), <a href="q3databrowser.html#confirmDelete-prop">confirmDelete</a>(), and <a href="q3databrowser.html#confirmEdit">confirmEdit</a>().</p>
+<h3 class="fn"><a name="filter-prop"></a>filter : <a href="qstring.html">QString</a></h3>
+<p>This property holds the data browser's filter.</p>
+<p>The filter applies to the data shown in the browser. Call <a href="q3databrowser.html#refresh">refresh</a>() to apply the new filter. A filter is a string containing a SQL WHERE clause without the WHERE keyword, e.g&#x2e; &quot;id&gt;1000&quot;, &quot;name LIKE 'A%'&quot;, etc.</p>
+<p>There is no default filter.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString filter () const</b></li>
+<li><div class="fn"/><b>void setFilter ( const QString &amp; <i>filter</i> )</b></li>
+</ul>
+<p>See also <a href="q3databrowser.html#sort-prop">sort</a>().</p>
+<h3 class="fn"><a name="readOnly-prop"></a>readOnly : bool</h3>
+<p>This property holds whether the browser is read-only.</p>
+<p>The default is false, i.e&#x2e; data can be edited. If the data browser is read-only, no database edits will be allowed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isReadOnly () const</b></li>
+<li><div class="fn"/><b>virtual void setReadOnly ( bool <i>active</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="sort-prop"></a>sort : <a href="qstringlist.html">QStringList</a></h3>
+<p>This property holds the data browser's sort.</p>
+<p>The data browser's sort affects the order in which records are viewed in the browser. Call <a href="q3databrowser.html#refresh">refresh</a>() to apply the new sort.</p>
+<p>When retrieving the sort property, a string list is returned in the form 'fieldname order', e.g&#x2e; 'id ASC', 'surname DESC'.</p>
+<p>There is no default sort.</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = myDataBrowser.sort();
+     QStringList::Iterator it = list.begin();
+     while(it != list.end()) {
+         myProcessing(*it);
+         ++it;
+     }</pre>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QStringList sort () const</b></li>
+<li><div class="fn"/><b>void setSort ( const QSqlIndex &amp; <i>sort</i> )</b></li>
+<li><div class="fn"/><b>void setSort ( const QStringList &amp; <i>sort</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DataBrowser"></a>Q3DataBrowser::Q3DataBrowser ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>fl</i> = 0 )</h3>
+<p>Constructs a data browser which is a child of <i>parent</i>, with the name <i>name</i> and widget flags set to <i>fl</i>.</p>
+<h3 class="fn"><a name="dtor.Q3DataBrowser"></a>Q3DataBrowser::~Q3DataBrowser ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="beforeDelete"></a>void Q3DataBrowser::beforeDelete ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the cursor's edit buffer is deleted from the database. The <i>buf</i> parameter points to the edit buffer being deleted. You might connect to this signal to capture some auditing information about the deletion.</p>
+<h3 class="fn"><a name="beforeInsert"></a>void Q3DataBrowser::beforeInsert ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the cursor's edit buffer is inserted into the database. The <i>buf</i> parameter points to the edit buffer being inserted. You might connect to this signal to populate a generated primary key for example.</p>
+<h3 class="fn"><a name="beforeUpdate"></a>void Q3DataBrowser::beforeUpdate ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the cursor's edit buffer is updated in the database. The <i>buf</i> parameter points to the edit buffer being updated. You might connect to this signal to capture some auditing information about the update.</p>
+<h3 class="fn"><a name="boundary"></a><a href="q3databrowser.html#Boundary-enum">Boundary</a> Q3DataBrowser::boundary ()</h3>
+<p>Returns an enum indicating the boundary status of the browser.</p>
+<p>This is achieved by moving the default cursor and checking the position, however the current default form values will not be altered. After checking for the boundary, the cursor is moved back to its former position. See <a href="q3databrowser.html#Boundary-enum">Q3DataBrowser::Boundary</a>.</p>
+<p>See also <a href="q3databrowser.html#Boundary-enum">Boundary</a>.</p>
+<h3 class="fn"><a name="clearValues"></a>void Q3DataBrowser::clearValues ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears all the values in the form.</p>
+<p>All the edit buffer field values are set to their 'zero state', e.g&#x2e; 0 for numeric fields and &quot;&quot; for string fields. Then the widgets are updated using the property map. For example, a combobox that is property-mapped to integers would scroll to the first item. See the <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a> constructor for the default mappings of widgets to properties.</p>
+<h3 class="fn"><a name="confirmCancel"></a><a href="qsql-qt3.html#Confirm-enum">QSql::Confirm</a> Q3DataBrowser::confirmCancel ( <a href="qsql-qt3.html#Op-enum">QSql::Op</a> <i>m</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function which returns a confirmation for canceling an edit mode <i>m</i>. Derived classes can reimplement this function and provide their own confirmation dialog. The default implementation uses a message box which prompts the user to confirm the edit action.</p>
+<h3 class="fn"><a name="confirmEdit"></a><a href="qsql-qt3.html#Confirm-enum">QSql::Confirm</a> Q3DataBrowser::confirmEdit ( <a href="qsql-qt3.html#Op-enum">QSql::Op</a> <i>m</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function which returns a confirmation for an edit of mode <i>m</i>. Derived classes can reimplement this function and provide their own confirmation dialog. The default implementation uses a message box which prompts the user to confirm the edit action.</p>
+<h3 class="fn"><a name="currentChanged"></a>void Q3DataBrowser::currentChanged ( const <a href="qsqlrecord.html">QSqlRecord</a> * <i>record</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current cursor position changes. The <i>record</i> parameter points to the contents of the current cursor's record.</p>
+<h3 class="fn"><a name="currentEdited"></a>bool Q3DataBrowser::currentEdited ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns true if the form's edit buffer differs from the current cursor buffer; otherwise returns false.</p>
+<h3 class="fn"><a name="cursorChanged"></a>void Q3DataBrowser::cursorChanged ( <a href="q3sqlcursor.html#Mode-enum">Q3SqlCursor::Mode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the cursor record was changed due to navigation. The <i>mode</i> parameter is the edit that just took place, e.g&#x2e; Insert, Update or Delete. See <a href="q3sqlcursor.html#Mode-enum">Q3SqlCursor::Mode</a>.</p>
+<h3 class="fn"><a name="del"></a>void Q3DataBrowser::del ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Performs a delete operation on the data browser's cursor. If there is no default cursor or no default form, nothing happens.</p>
+<p>Otherwise, the following happens:</p>
+<p>The current form's record is deleted from the database, providing that the data browser is not in insert mode. If the data browser is actively inserting a record (see <a href="q3databrowser.html#insert">insert</a>()), the insert action is canceled, and the browser navigates to the last valid record that was current. If there is an error, <a href="q3databrowser.html#handleError">handleError</a>() is called.</p>
+<h3 class="fn"><a name="deleteCurrent"></a>bool Q3DataBrowser::deleteCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Performs a delete on the default cursor using the values from the default form and updates the default form. If there is no default form or no default cursor, nothing happens. If the deletion was successful, the cursor is repositioned to the nearest record and true is returned. The nearest record is the next record if there is one otherwise the previous record if there is one. If an error occurred during the deletion from the database, <a href="q3databrowser.html#handleError">handleError</a>() is called and false is returned.</p>
+<p>See also <a href="qwidget.html#cursor-prop">cursor</a>(), <a href="q3databrowser.html#form">form</a>(), and <a href="q3databrowser.html#handleError">handleError</a>().</p>
+<h3 class="fn"><a name="first"></a>void Q3DataBrowser::first ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the default cursor to the first record and refreshes the default form to display this record. If there is no default form or no default cursor, nothing happens. If the data browser successfully navigated to the first record, the default cursor is primed for update and the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted.</p>
+<p>If the browser is already positioned on the first record nothing happens.</p>
+<h3 class="fn"><a name="firstRecordAvailable"></a>void Q3DataBrowser::firstRecordAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the position of the cursor changes. The <i>available</i> parameter indicates whether or not the first record in the default cursor is available.</p>
+<h3 class="fn"><a name="form"></a><a href="q3sqlform.html">Q3SqlForm</a> * Q3DataBrowser::form ()</h3>
+<p>Returns the data browser's default form or 0 if no form has been set.</p>
+<p>See also <a href="q3databrowser.html#setForm">setForm</a>().</p>
+<h3 class="fn"><a name="handleError"></a>void Q3DataBrowser::handleError ( const <a href="qsqlerror.html">QSqlError</a> &amp; <i>error</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Virtual function which handles the error <i>error</i>. The default implementation warns the user with a message box.</p>
+<h3 class="fn"><a name="insert"></a>void Q3DataBrowser::insert ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Performs an insert operation on the data browser's cursor. If there is no default cursor or no default form, nothing happens.</p>
+<p>If auto-editing is on (see <a href="q3databrowser.html#autoEdit-prop">setAutoEdit</a>()), the following happens:</p>
+<ul>
+<li>If the browser is already actively inserting a record, the current form's data is inserted into the database.</li>
+<li>If the browser is not inserting a record, but the current record was changed by the user, the record is updated in the database with the current form's data (i.e&#x2e; with the changes).</li>
+</ul>
+<p>If there is an error handling any of the above auto-edit actions, <a href="q3databrowser.html#handleError">handleError</a>() is called and no insert or update is performed.</p>
+<p>If no error occurred, or auto-editing is not enabled, the data browser begins actively inserting a record into the database by performing the following actions:</p>
+<ul>
+<li>The default cursor is primed for insert using <a href="q3sqlcursor.html#primeInsert">Q3SqlCursor::primeInsert</a>().</li>
+<li>The <a href="q3databrowser.html#primeInsert">primeInsert</a>() signal is emitted.</li>
+<li>The form is updated with the values in the default cursor's. edit buffer so that the user can fill in the values to be inserted.</li>
+</ul>
+<h3 class="fn"><a name="insertCurrent"></a>bool Q3DataBrowser::insertCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads the fields from the default form into the default cursor and performs an insert on the default cursor. If there is no default form or no default cursor, nothing happens. If an error occurred during the insert into the database, <a href="q3databrowser.html#handleError">handleError</a>() is called and false is returned. If the insert was successful, the cursor is refreshed and relocated to the newly inserted record, the <a href="q3databrowser.html#cursorChanged">cursorChanged</a>() signal is emitted, and true is returned.</p>
+<p>See also <a href="q3databrowser.html#cursorChanged">cursorChanged</a>(), <a href="q3databrowser.html#sqlCursor">sqlCursor</a>(), <a href="q3databrowser.html#form">form</a>(), and <a href="q3databrowser.html#handleError">handleError</a>().</p>
+<h3 class="fn"><a name="last"></a>void Q3DataBrowser::last ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the default cursor to the last record and refreshes the default form to display this record. If there is no default form or no default cursor, nothing happens. If the data browser successfully navigated to the last record, the default cursor is primed for update and the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted.</p>
+<p>If the browser is already positioned on the last record nothing happens.</p>
+<h3 class="fn"><a name="lastRecordAvailable"></a>void Q3DataBrowser::lastRecordAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the position of the cursor changes. The <i>available</i> parameter indicates whether or not the last record in the default cursor is available.</p>
+<h3 class="fn"><a name="next"></a>void Q3DataBrowser::next ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the default cursor to the next record and refreshes the default form to display this record. If there is no default form or no default cursor, nothing happens. If the data browser successfully navigated to the next record, the default cursor is primed for update and the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted.</p>
+<p>If the browser is positioned on the last record nothing happens.</p>
+<h3 class="fn"><a name="nextRecordAvailable"></a>void Q3DataBrowser::nextRecordAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the position of the cursor changes. The <i>available</i> parameter indicates whether or not the next record in the default cursor is available.</p>
+<h3 class="fn"><a name="prev"></a>void Q3DataBrowser::prev ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Moves the default cursor to the previous record and refreshes the default form to display this record. If there is no default form or no default cursor, nothing happens. If the data browser successfully navigated to the previous record, the default cursor is primed for update and the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted.</p>
+<p>If the browser is positioned on the first record nothing happens.</p>
+<h3 class="fn"><a name="prevRecordAvailable"></a>void Q3DataBrowser::prevRecordAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the position of the cursor changes. The <i>available</i> parameter indicates whether or not the previous record in the default cursor is available.</p>
+<h3 class="fn"><a name="primeDelete"></a>void Q3DataBrowser::primeDelete ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the data browser enters deletion mode. The <i>buf</i> parameter points to the record buffer being deleted. (Note that <a href="q3sqlcursor.html#primeDelete">Q3SqlCursor::primeDelete</a>() is <i>not</i> called on the default cursor, as this would corrupt values in the form.) Connect to this signal in order to, for example, save a copy of the deleted record for auditing purposes.</p>
+<p>See also <a href="q3databrowser.html#del">del</a>().</p>
+<h3 class="fn"><a name="primeInsert"></a>void Q3DataBrowser::primeInsert ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the data browser enters insertion mode. The <i>buf</i> parameter points to the record buffer that is to be inserted. Connect to this signal to, for example, prime the record buffer with default data values, auto-numbered fields etc. (Note that <a href="q3sqlcursor.html#primeInsert">Q3SqlCursor::primeInsert</a>() is <i>not</i> called on the default cursor, as this would corrupt values in the form.)</p>
+<p>See also <a href="q3databrowser.html#insert">insert</a>().</p>
+<h3 class="fn"><a name="primeUpdate"></a>void Q3DataBrowser::primeUpdate ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the data browser enters update mode. Note that during navigation (<a href="q3databrowser.html#first">first</a>(), <a href="q3databrowser.html#last">last</a>(), <a href="q3databrowser.html#next">next</a>(), <a href="q3databrowser.html#prev">prev</a>()), each record that is shown in the default form is primed for update. The <i>buf</i> parameter points to the record buffer being updated. (Note that <a href="q3sqlcursor.html#primeUpdate">Q3SqlCursor::primeUpdate</a>() is <i>not</i> called on the default cursor, as this would corrupt values in the form.) Connect to this signal in order to, for example, keep track of which records have been updated, perhaps for auditing purposes.</p>
+<p>See also <a href="q3databrowser.html#update">update</a>().</p>
+<h3 class="fn"><a name="readFields"></a>void Q3DataBrowser::readFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Reads the fields from the default cursor's edit buffer and displays them in the form. If there is no default cursor or no default form, nothing happens.</p>
+<h3 class="fn"><a name="refresh"></a>void Q3DataBrowser::refresh ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Refreshes the data browser's data using the default cursor. The browser's current filter and sort are applied if they have been set.</p>
+<p>See also <a href="q3databrowser.html#filter-prop">setFilter</a>() and <a href="q3databrowser.html#sort-prop">setSort</a>().</p>
+<h3 class="fn"><a name="seek"></a>bool Q3DataBrowser::seek ( int <i>i</i>, bool <i>relative</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Moves the default cursor to the record specified by index <i>i</i> and refreshes the default form to display that record. If there is no default form or no default cursor, nothing happens. If <i>relative</i> is true (the default is false), the cursor is moved relative to its current position. If the data browser successfully navigated to the desired record, the default cursor is primed for update and the <a href="q3databrowser.html#primeUpdate">primeUpdate</a>() signal is emitted.</p>
+<p>If the browser is already positioned on the desired record nothing happens. Returns false if there is no cursor. Otherwise returns true.</p>
+<h3 class="fn"><a name="setForm"></a>void Q3DataBrowser::setForm ( <a href="q3sqlform.html">Q3SqlForm</a> * <i>form</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the browser's default form to <i>form</i>. The cursor and all navigation and data manipulation functions that the browser provides become available to the <i>form</i>.</p>
+<p>See also <a href="q3databrowser.html#form">form</a>().</p>
+<h3 class="fn"><a name="setSqlCursor"></a>void Q3DataBrowser::setSqlCursor ( <a href="q3sqlcursor.html">Q3SqlCursor</a> * <i>cursor</i>, bool <i>autoDelete</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the default cursor used by the data browser to <i>cursor</i>. If <i>autoDelete</i> is true (the default is false), the data browser takes ownership of the <i>cursor</i> pointer, which will be deleted when the browser is destroyed, or when setSqlCursor() is called again. To activate the <i>cursor</i> use <a href="q3databrowser.html#refresh">refresh</a>(). The cursor's edit buffer is used in the default form to browse and edit records.</p>
+<p>See also <a href="q3databrowser.html#sqlCursor">sqlCursor</a>(), <a href="q3databrowser.html#form">form</a>(), and <a href="q3databrowser.html#setForm">setForm</a>().</p>
+<h3 class="fn"><a name="sqlCursor"></a><a href="q3sqlcursor.html">Q3SqlCursor</a> * Q3DataBrowser::sqlCursor () const</h3>
+<p>Returns the default cursor used for navigation, or 0 if there is no default cursor.</p>
+<p>See also <a href="q3databrowser.html#setSqlCursor">setSqlCursor</a>().</p>
+<h3 class="fn"><a name="update"></a>void Q3DataBrowser::update ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Performs an update operation on the data browser's cursor.</p>
+<p>If there is no default cursor or no default form, nothing happens. Otherwise, the following happens:</p>
+<p>If the data browser is actively inserting a record (see <a href="q3databrowser.html#insert">insert</a>()), that record is inserted into the database using <a href="q3databrowser.html#insertCurrent">insertCurrent</a>(). Otherwise, the database is updated with the current form's data using <a href="q3databrowser.html#updateCurrent">updateCurrent</a>(). If there is an error handling either action, <a href="q3databrowser.html#handleError">handleError</a>() is called.</p>
+<h3 class="fn"><a name="updateBoundary"></a>void Q3DataBrowser::updateBoundary ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>If <a href="q3databrowser.html#boundaryChecking-prop">boundaryChecking</a>() is true, checks the boundary of the current default cursor and emits signals which indicate the position of the cursor.</p>
+<h3 class="fn"><a name="updateCurrent"></a>bool Q3DataBrowser::updateCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads the fields from the default form into the default cursor and performs an update on the default cursor. If there is no default form or no default cursor, nothing happens. If an error occurred during the update on the database, <a href="q3databrowser.html#handleError">handleError</a>() is called and false is returned. If the update was successful, the cursor is refreshed and relocated to the updated record, the <a href="q3databrowser.html#cursorChanged">cursorChanged</a>() signal is emitted, and true is returned.</p>
+<p>See also <a href="qwidget.html#cursor-prop">cursor</a>(), <a href="q3databrowser.html#form">form</a>(), and <a href="q3databrowser.html#handleError">handleError</a>().</p>
+<h3 class="fn"><a name="writeFields"></a>void Q3DataBrowser::writeFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Writes the form's data to the default cursor's edit buffer. If there is no default cursor or no default form, nothing happens.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

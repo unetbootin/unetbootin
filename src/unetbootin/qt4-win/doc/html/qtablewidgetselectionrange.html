@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qtablewidget.cpp -->
+<head>
+  <title>Qt 4.4: QTableWidgetSelectionRange Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTableWidgetSelectionRange Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTableWidgetSelectionRange class provides a container for storing a selection range in a <a href="qtablewidget.html">QTableWidget</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTableWidgetSelectionRange&gt;</pre><ul>
+<li><a href="qtablewidgetselectionrange-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtablewidgetselectionrange.html#QTableWidgetSelectionRange">QTableWidgetSelectionRange</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtablewidgetselectionrange.html#QTableWidgetSelectionRange-2">QTableWidgetSelectionRange</a></b> ( int <i>top</i>, int <i>left</i>, int <i>bottom</i>, int <i>right</i> )</li>
+<li><div class="fn"/><b><a href="qtablewidgetselectionrange.html#QTableWidgetSelectionRange-3">QTableWidgetSelectionRange</a></b> ( const QTableWidgetSelectionRange &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qtablewidgetselectionrange.html#dtor.QTableWidgetSelectionRange">~QTableWidgetSelectionRange</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#columnCount">columnCount</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#rowCount">rowCount</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetselectionrange.html#topRow">topRow</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTableWidgetSelectionRange class provides a container for storing a selection range in a <a href="qtablewidget.html">QTableWidget</a>.</p>
+<p>The QTableWidgetSelectionRange class stores the top left and bottom right rows and columns of a selection range in a table. The selections in the table may consist of several selection ranges.</p>
+<p>See also <a href="qtablewidget.html">QTableWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTableWidgetSelectionRange"></a>QTableWidgetSelectionRange::QTableWidgetSelectionRange ()</h3>
+<p>Constructs an table selection range, i.e&#x2e; a range whose <a href="qtablewidgetselectionrange.html#rowCount">rowCount</a>() and <a href="qtablewidgetselectionrange.html#columnCount">columnCount</a>() are 0.</p>
+<h3 class="fn"><a name="QTableWidgetSelectionRange-2"></a>QTableWidgetSelectionRange::QTableWidgetSelectionRange ( int <i>top</i>, int <i>left</i>, int <i>bottom</i>, int <i>right</i> )</h3>
+<p>Constructs the table selection range from the given <i>top</i>, <i>left</i>, <i>bottom</i> and <i>right</i> table rows and columns.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#topRow">topRow</a>(), <a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a>(), <a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a>(), and <a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a>().</p>
+<h3 class="fn"><a name="QTableWidgetSelectionRange-3"></a>QTableWidgetSelectionRange::QTableWidgetSelectionRange ( const QTableWidgetSelectionRange &amp; <i>other</i> )</h3>
+<p>Constructs a the table selection range by copying the given <i>other</i> table selection range.</p>
+<h3 class="fn"><a name="dtor.QTableWidgetSelectionRange"></a>QTableWidgetSelectionRange::~QTableWidgetSelectionRange ()</h3>
+<p>Destroys the table selection range.</p>
+<h3 class="fn"><a name="bottomRow"></a>int QTableWidgetSelectionRange::bottomRow () const</h3>
+<p>Returns the bottom row of the range.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#topRow">topRow</a>(), <a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a>(), and <a href="qtablewidgetselectionrange.html#rowCount">rowCount</a>().</p>
+<h3 class="fn"><a name="columnCount"></a>int QTableWidgetSelectionRange::columnCount () const</h3>
+<p>Returns the number of columns in the range.</p>
+<p>This is equivalent to <a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a>() - <a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a>() + 1.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#rowCount">rowCount</a>(), <a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a>(), and <a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a>().</p>
+<h3 class="fn"><a name="leftColumn"></a>int QTableWidgetSelectionRange::leftColumn () const</h3>
+<p>Returns the left column of the range.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#rightColumn">rightColumn</a>(), <a href="qtablewidgetselectionrange.html#topRow">topRow</a>(), and <a href="qtablewidgetselectionrange.html#columnCount">columnCount</a>().</p>
+<h3 class="fn"><a name="rightColumn"></a>int QTableWidgetSelectionRange::rightColumn () const</h3>
+<p>Returns the right column of the range.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a>(), <a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a>(), and <a href="qtablewidgetselectionrange.html#columnCount">columnCount</a>().</p>
+<h3 class="fn"><a name="rowCount"></a>int QTableWidgetSelectionRange::rowCount () const</h3>
+<p>Returns the number of rows in the range.</p>
+<p>This is equivalent to <a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a>() - <a href="qtablewidgetselectionrange.html#topRow">topRow</a>() + 1.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#columnCount">columnCount</a>(), <a href="qtablewidgetselectionrange.html#topRow">topRow</a>(), and <a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a>().</p>
+<h3 class="fn"><a name="topRow"></a>int QTableWidgetSelectionRange::topRow () const</h3>
+<p>Returns the top row of the range.</p>
+<p>See also <a href="qtablewidgetselectionrange.html#bottomRow">bottomRow</a>(), <a href="qtablewidgetselectionrange.html#leftColumn">leftColumn</a>(), and <a href="qtablewidgetselectionrange.html#rowCount">rowCount</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

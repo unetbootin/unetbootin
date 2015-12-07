@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: edge.cpp Example File (graphicsview/elasticnodes/edge.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">edge.cpp Example File<br /><span class="small-subtitle">graphicsview/elasticnodes/edge.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QPainter&gt;
+
+ #include &quot;edge.h&quot;
+ #include &quot;node.h&quot;
+
+ #include &lt;math.h&gt;
+
+ static const double Pi = 3.14159265358979323846264338327950288419717;
+ static double TwoPi = 2.0 * Pi;
+
+ Edge::Edge(Node *sourceNode, Node *destNode)
+     : arrowSize(10)
+ {
+     setAcceptedMouseButtons(0);
+     source = sourceNode;
+     dest = destNode;
+     source-&gt;addEdge(this);
+     dest-&gt;addEdge(this);
+     adjust();
+ }
+
+ Edge::~Edge()
+ {
+ }
+
+ Node *Edge::sourceNode() const
+ {
+     return source;
+ }
+
+ void Edge::setSourceNode(Node *node)
+ {
+     source = node;
+     adjust();
+ }
+
+ Node *Edge::destNode() const
+ {
+     return dest;
+ }
+
+ void Edge::setDestNode(Node *node)
+ {
+     dest = node;
+     adjust();
+ }
+
+ void Edge::adjust()
+ {
+     if (!source || !dest)
+         return;
+
+     QLineF line(mapFromItem(source, 0, 0), mapFromItem(dest, 0, 0));
+     qreal length = line.length();
+     QPointF edgeOffset((line.dx() * 10) / length, (line.dy() * 10) / length);
+
+     prepareGeometryChange();
+     sourcePoint = line.p1() + edgeOffset;
+     destPoint = line.p2() - edgeOffset;
+ }
+
+ QRectF Edge::boundingRect() const
+ {
+     if (!source || !dest)
+         return QRectF();
+
+     qreal penWidth = 1;
+     qreal extra = (penWidth + arrowSize) / 2.0;
+
+     return QRectF(sourcePoint, QSizeF(destPoint.x() - sourcePoint.x(),
+                                       destPoint.y() - sourcePoint.y()))
+         .normalized()
+         .adjusted(-extra, -extra, extra, extra);
+ }
+
+ void Edge::paint(QPainter *painter, const QStyleOptionGraphicsItem *, QWidget *)
+ {
+     if (!source || !dest)
+         return;
+
+     <span class="comment">//</span> Draw the line itself
+     QLineF line(sourcePoint, destPoint);
+     painter-&gt;setPen(QPen(Qt::black, 1, Qt::SolidLine, Qt::RoundCap, Qt::RoundJoin));
+     painter-&gt;drawLine(line);
+
+     <span class="comment">//</span> Draw the arrows if there's enough room
+     double angle = ::acos(line.dx() / line.length());
+     if (line.dy() &gt;= 0)
+         angle = TwoPi - angle;
+
+     QPointF sourceArrowP1 = sourcePoint + QPointF(sin(angle + Pi / 3) * arrowSize,
+                                                   cos(angle + Pi / 3) * arrowSize);
+     QPointF sourceArrowP2 = sourcePoint + QPointF(sin(angle + Pi - Pi / 3) * arrowSize,
+                                                   cos(angle + Pi - Pi / 3) * arrowSize);
+     QPointF destArrowP1 = destPoint + QPointF(sin(angle - Pi / 3) * arrowSize,
+                                               cos(angle - Pi / 3) * arrowSize);
+     QPointF destArrowP2 = destPoint + QPointF(sin(angle - Pi + Pi / 3) * arrowSize,
+                                               cos(angle - Pi + Pi / 3) * arrowSize);
+
+     painter-&gt;setBrush(Qt::black);
+     painter-&gt;drawPolygon(QPolygonF() &lt;&lt; line.p1() &lt;&lt; sourceArrowP1 &lt;&lt; sourceArrowP2);
+     painter-&gt;drawPolygon(QPolygonF() &lt;&lt; line.p2() &lt;&lt; destArrowP1 &lt;&lt; destArrowP2);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

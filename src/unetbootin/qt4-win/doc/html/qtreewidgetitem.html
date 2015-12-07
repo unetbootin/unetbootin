@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qtreewidget.cpp -->
+<head>
+  <title>Qt 4.4: QTreeWidgetItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTreeWidgetItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTreeWidgetItem class provides an item for use with the <a href="qtreewidget.html">QTreeWidget</a> convenience class. <a href="#details">More...</a></p>
+<pre> #include &lt;QTreeWidgetItem&gt;</pre><ul>
+<li><a href="qtreewidgetitem-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtreewidgetitem-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtreewidgetitem.html#ChildIndicatorPolicy-enum">ChildIndicatorPolicy</a></b> { ShowIndicator, DontShowIndicator, DontShowIndicatorWhenChildless }</li>
+<li><div class="fn"/>enum <b><a href="qtreewidgetitem.html#ItemType-enum">ItemType</a></b> { Type, UserType }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem">QTreeWidgetItem</a></b> ( int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-2">QTreeWidgetItem</a></b> ( const QStringList &amp; <i>strings</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-3">QTreeWidgetItem</a></b> ( QTreeWidget * <i>parent</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-4">QTreeWidgetItem</a></b> ( QTreeWidget * <i>parent</i>, const QStringList &amp; <i>strings</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-5">QTreeWidgetItem</a></b> ( QTreeWidget * <i>parent</i>, QTreeWidgetItem * <i>preceding</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-6">QTreeWidgetItem</a></b> ( QTreeWidgetItem * <i>parent</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-7">QTreeWidgetItem</a></b> ( QTreeWidgetItem * <i>parent</i>, const QStringList &amp; <i>strings</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-8">QTreeWidgetItem</a></b> ( QTreeWidgetItem * <i>parent</i>, QTreeWidgetItem * <i>preceding</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtreewidgetitem.html#QTreeWidgetItem-9">QTreeWidgetItem</a></b> ( const QTreeWidgetItem &amp; <i>other</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qtreewidgetitem.html#dtor.QTreeWidgetItem">~QTreeWidgetItem</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#addChild">addChild</a></b> ( QTreeWidgetItem * <i>child</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#addChildren">addChildren</a></b> ( const QList&lt;QTreeWidgetItem *&gt; &amp; <i>children</i> )</li>
+<li><div class="fn"/>QBrush <b><a href="qtreewidgetitem.html#background">background</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>Qt::CheckState <b><a href="qtreewidgetitem.html#checkState">checkState</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QTreeWidgetItem * <b><a href="qtreewidgetitem.html#child">child</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtreewidgetitem.html#childCount">childCount</a></b> () const</li>
+<li><div class="fn"/>QTreeWidgetItem::ChildIndicatorPolicy <b><a href="qtreewidgetitem.html#childIndicatorPolicy">childIndicatorPolicy</a></b> () const</li>
+<li><div class="fn"/>virtual QTreeWidgetItem * <b><a href="qtreewidgetitem.html#clone">clone</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtreewidgetitem.html#columnCount">columnCount</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qtreewidgetitem.html#data">data</a></b> ( int <i>column</i>, int <i>role</i> ) const</li>
+<li><div class="fn"/>Qt::ItemFlags <b><a href="qtreewidgetitem.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qtreewidgetitem.html#font">font</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QBrush <b><a href="qtreewidgetitem.html#foreground">foreground</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QIcon <b><a href="qtreewidgetitem.html#icon">icon</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtreewidgetitem.html#indexOfChild">indexOfChild</a></b> ( QTreeWidgetItem * <i>child</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#insertChild">insertChild</a></b> ( int <i>index</i>, QTreeWidgetItem * <i>child</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#insertChildren">insertChildren</a></b> ( int <i>index</i>, const QList&lt;QTreeWidgetItem *&gt; &amp; <i>children</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtreewidgetitem.html#isDisabled">isDisabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtreewidgetitem.html#isExpanded">isExpanded</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtreewidgetitem.html#isFirstColumnSpanned">isFirstColumnSpanned</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtreewidgetitem.html#isHidden">isHidden</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtreewidgetitem.html#isSelected">isSelected</a></b> () const</li>
+<li><div class="fn"/>QTreeWidgetItem * <b><a href="qtreewidgetitem.html#parent">parent</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qtreewidgetitem.html#read">read</a></b> ( QDataStream &amp; <i>in</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#removeChild">removeChild</a></b> ( QTreeWidgetItem * <i>child</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setBackground">setBackground</a></b> ( int <i>column</i>, const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setCheckState">setCheckState</a></b> ( int <i>column</i>, Qt::CheckState <i>state</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setChildIndicatorPolicy">setChildIndicatorPolicy</a></b> ( QTreeWidgetItem::ChildIndicatorPolicy <i>policy</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qtreewidgetitem.html#setData">setData</a></b> ( int <i>column</i>, int <i>role</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setDisabled">setDisabled</a></b> ( bool <i>disabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setExpanded">setExpanded</a></b> ( bool <i>expand</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setFirstColumnSpanned">setFirstColumnSpanned</a></b> ( bool <i>span</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setFlags">setFlags</a></b> ( Qt::ItemFlags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setFont">setFont</a></b> ( int <i>column</i>, const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setForeground">setForeground</a></b> ( int <i>column</i>, const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setHidden">setHidden</a></b> ( bool <i>hide</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setIcon">setIcon</a></b> ( int <i>column</i>, const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setSelected">setSelected</a></b> ( bool <i>select</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setSizeHint">setSizeHint</a></b> ( int <i>column</i>, const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setStatusTip">setStatusTip</a></b> ( int <i>column</i>, const QString &amp; <i>statusTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setText">setText</a></b> ( int <i>column</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setTextAlignment">setTextAlignment</a></b> ( int <i>column</i>, int <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setToolTip">setToolTip</a></b> ( int <i>column</i>, const QString &amp; <i>toolTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#setWhatsThis">setWhatsThis</a></b> ( int <i>column</i>, const QString &amp; <i>whatsThis</i> )</li>
+<li><div class="fn"/>QSize <b><a href="qtreewidgetitem.html#sizeHint">sizeHint</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtreewidgetitem.html#sortChildren">sortChildren</a></b> ( int <i>column</i>, Qt::SortOrder <i>order</i> )</li>
+<li><div class="fn"/>QString <b><a href="qtreewidgetitem.html#statusTip">statusTip</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QTreeWidgetItem * <b><a href="qtreewidgetitem.html#takeChild">takeChild</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>QList&lt;QTreeWidgetItem *&gt; <b><a href="qtreewidgetitem.html#takeChildren">takeChildren</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qtreewidgetitem.html#text">text</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtreewidgetitem.html#textAlignment">textAlignment</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtreewidgetitem.html#toolTip">toolTip</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>QTreeWidget * <b><a href="qtreewidgetitem.html#treeWidget">treeWidget</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtreewidgetitem.html#type">type</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtreewidgetitem.html#whatsThis">whatsThis</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qtreewidgetitem.html#write">write</a></b> ( QDataStream &amp; <i>out</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qtreewidgetitem.html#operator-lt">operator&lt;</a></b> ( const QTreeWidgetItem &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTreeWidgetItem &amp; <b><a href="qtreewidgetitem.html#operator-eq">operator=</a></b> ( const QTreeWidgetItem &amp; <i>other</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtreewidgetitem.html#operator-lt-lt-56">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>out</i>, const QTreeWidgetItem &amp; <i>item</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtreewidgetitem.html#operator-gt-gt-30">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>in</i>, QTreeWidgetItem &amp; <i>item</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTreeWidgetItem class provides an item for use with the <a href="qtreewidget.html">QTreeWidget</a> convenience class.</p>
+<p>Tree widget items are used to hold rows of information for tree widgets. Rows usually contain several columns of data, each of which can contain a text label and an icon.</p>
+<p>The QTreeWidgetItem class is a convenience class that replaces the QListViewItem class in Qt 3. It provides an item for use with the <a href="qtreewidget.html">QTreeWidget</a> class.</p>
+<p>Items are usually constructed with a parent that is either a <a href="qtreewidget.html">QTreeWidget</a> (for top-level items) or a QTreeWidgetItem (for items on lower levels of the tree). For example, the following code constructs a top-level item to represent cities of the world, and adds a entry for Oslo as a child item:</p>
+<pre>     QTreeWidgetItem *cities = new QTreeWidgetItem(treeWidget);
+     cities-&gt;setText(0, tr(&quot;Cities&quot;));
+     QTreeWidgetItem *osloItem = new QTreeWidgetItem(cities);
+     osloItem-&gt;setText(0, tr(&quot;Oslo&quot;));
+     osloItem-&gt;setText(1, tr(&quot;Yes&quot;));</pre>
+<p>Items can be added in a particular order by specifying the item they follow when they are constructed:</p>
+<pre>     QTreeWidgetItem *planets = new QTreeWidgetItem(treeWidget, cities);
+     planets-&gt;setText(0, tr(&quot;Planets&quot;));</pre>
+<p>Each column in an item can have its own background brush which is set with the <a href="qtreewidgetitem.html#setBackground">setBackground</a>() function. The current background brush can be found with <a href="qtreewidgetitem.html#background">background</a>(). The text label for each column can be rendered with its own font and brush. These are specified with the <a href="qtreewidgetitem.html#setFont">setFont</a>() and <a href="qtreewidgetitem.html#setForeground">setForeground</a>() functions, and read with <a href="qtreewidgetitem.html#font">font</a>() and <a href="qtreewidgetitem.html#foreground">foreground</a>().</p>
+<p>The main difference between top-level items and those in lower levels of the tree is that a top-level item has no <a href="qtreewidgetitem.html#parent">parent</a>(). This information can be used to tell the difference between items, and is useful to know when inserting and removing items from the tree. Children of an item can be removed with <a href="qtreewidgetitem.html#takeChild">takeChild</a>() and inserted at a given index in the list of children with the <a href="qtreewidgetitem.html#insertChild">insertChild</a>() function.</p>
+<p>By default, items are enabled, selectable, checkable, and can be the source of a drag and drop operation. Each item's flags can be changed by calling <a href="qtreewidgetitem.html#setFlags">setFlags</a>() with the appropriate value (see <a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a>). Checkable items can be checked and unchecked with the <a href="qtreewidgetitem.html#setCheckState">setCheckState</a>() function. The corresponding <a href="qtreewidgetitem.html#checkState">checkState</a>() function indicates whether the item is currently checked.</p>
+<a name="subclassing"></a>
+<h3>Subclassing</h3>
+<p>When subclassing QTreeWidgetItem to provide custom items, it is possible to define new types for them so that they can be distinguished from standard items. The constructors for subclasses that require this feature need to call the base class constructor with a new type value equal to or greater than <a href="qtreewidgetitem.html#ItemType-enum">UserType</a>.</p>
+<p>See also <a href="qtreewidget.html">QTreeWidget</a>, <a href="qtreewidgetitemiterator.html">QTreeWidgetItemIterator</a>, <a href="model-view-programming.html">Model/View Programming</a>, <a href="qlistwidgetitem.html">QListWidgetItem</a>, and <a href="qtablewidgetitem.html">QTableWidgetItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ChildIndicatorPolicy-enum"></a>enum QTreeWidgetItem::ChildIndicatorPolicy</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTreeWidgetItem::ShowIndicator</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItem::DontShowIndicator</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItem::DontShowIndicatorWhenChildless</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="ItemType-enum"></a>enum QTreeWidgetItem::ItemType</h3>
+<p>This enum describes the types that are used to describe tree widget items.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTreeWidgetItem::Type</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default type for tree widget items.</td></tr>
+<tr><td valign="top"><tt>QTreeWidgetItem::UserType</tt></td><td align="center" valign="top"><tt>1000</tt></td><td valign="top">The minimum value for custom types. Values below UserType are reserved by Qt.</td></tr>
+</table></p>
+<p>You can define new user types in <a href="qtreewidgetitem.html">QTreeWidgetItem</a> subclasses to ensure that custom items are treated specially; for example, when items are sorted.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTreeWidgetItem"></a>QTreeWidgetItem::QTreeWidgetItem ( int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i>. The item must be inserted into a tree widget.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-2"></a>QTreeWidgetItem::QTreeWidgetItem ( const <a href="qstringlist.html">QStringList</a> &amp; <i>strings</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i>. The item must be inserted into a tree widget. The given list of <i>strings</i> will be set as the item text for each column in the item.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-3"></a>QTreeWidgetItem::QTreeWidgetItem ( <a href="qtreewidget.html">QTreeWidget</a> * <i>parent</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i> and appends it to the items in the given <i>parent</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-4"></a>QTreeWidgetItem::QTreeWidgetItem ( <a href="qtreewidget.html">QTreeWidget</a> * <i>parent</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>strings</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i> and appends it to the items in the given <i>parent</i>. The given list of <i>strings</i> will be set as the item text for each column in the item.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-5"></a>QTreeWidgetItem::QTreeWidgetItem ( <a href="qtreewidget.html">QTreeWidget</a> * <i>parent</i>, QTreeWidgetItem * <i>preceding</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i> and inserts it into the given <i>parent</i> after the <i>preceding</i> item.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-6"></a>QTreeWidgetItem::QTreeWidgetItem ( QTreeWidgetItem * <i>parent</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item and append it to the given <i>parent</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-7"></a>QTreeWidgetItem::QTreeWidgetItem ( QTreeWidgetItem * <i>parent</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>strings</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item and append it to the given <i>parent</i>. The given list of <i>strings</i> will be set as the item text for each column in the item.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-8"></a>QTreeWidgetItem::QTreeWidgetItem ( QTreeWidgetItem * <i>parent</i>, QTreeWidgetItem * <i>preceding</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a tree widget item of the specified <i>type</i> that is inserted into the <i>parent</i> after the <i>preceding</i> child item.</p>
+<p>See also <a href="qtreewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTreeWidgetItem-9"></a>QTreeWidgetItem::QTreeWidgetItem ( const QTreeWidgetItem &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>. Note that <a href="qtreewidgetitem.html#type">type</a>() and <a href="qtreewidgetitem.html#treeWidget">treeWidget</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="qtreewidgetitem.html#clone">clone</a>().</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtreewidgetitem.html#data">data</a>() and <a href="qtreewidgetitem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="dtor.QTreeWidgetItem"></a>QTreeWidgetItem::~QTreeWidgetItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys this tree widget item.</p>
+<h3 class="fn"><a name="addChild"></a>void QTreeWidgetItem::addChild ( QTreeWidgetItem * <i>child</i> )</h3>
+<p>Appends the <i>child</i> item to the list of children.</p>
+<p>See also <a href="qtreewidgetitem.html#insertChild">insertChild</a>() and <a href="qtreewidgetitem.html#takeChild">takeChild</a>().</p>
+<h3 class="fn"><a name="addChildren"></a>void QTreeWidgetItem::addChildren ( const <a href="qlist.html">QList</a>&lt;QTreeWidgetItem *&gt; &amp; <i>children</i> )</h3>
+<p>Appends the given list of <i>children</i> to the item.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtreewidgetitem.html#insertChildren">insertChildren</a>() and <a href="qtreewidgetitem.html#takeChildren">takeChildren</a>().</p>
+<h3 class="fn"><a name="background"></a><a href="qbrush.html">QBrush</a> QTreeWidgetItem::background ( int <i>column</i> ) const</h3>
+<p>Returns the brush used to render the background of the specified <i>column</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#setBackground">setBackground</a>() and <a href="qtreewidgetitem.html#foreground">foreground</a>().</p>
+<h3 class="fn"><a name="checkState"></a><a href="qt.html#CheckState-enum">Qt::CheckState</a> QTreeWidgetItem::checkState ( int <i>column</i> ) const</h3>
+<p>Returns the check state of the label in the given <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setCheckState">setCheckState</a>() and <a href="qt.html#CheckState-enum">Qt::CheckState</a>.</p>
+<h3 class="fn"><a name="child"></a>QTreeWidgetItem * QTreeWidgetItem::child ( int <i>index</i> ) const</h3>
+<p>Returns the item at the given <i>index</i> in the list of the item's children.</p>
+<p>See also <a href="qtreewidgetitem.html#parent">parent</a>().</p>
+<h3 class="fn"><a name="childCount"></a>int QTreeWidgetItem::childCount () const</h3>
+<p>Returns the number of child items.</p>
+<h3 class="fn"><a name="childIndicatorPolicy"></a><a href="qtreewidgetitem.html#ChildIndicatorPolicy-enum">QTreeWidgetItem::ChildIndicatorPolicy</a> QTreeWidgetItem::childIndicatorPolicy () const</h3>
+<p>Returns the item indicator policy. This policy decides when the tree branch expand/collapse indicator is shown.</p>
+<p>See also <a href="qtreewidgetitem.html#setChildIndicatorPolicy">setChildIndicatorPolicy</a>().</p>
+<h3 class="fn"><a name="clone"></a>QTreeWidgetItem * QTreeWidgetItem::clone () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Creates a deep copy of the item and of its children.</p>
+<h3 class="fn"><a name="columnCount"></a>int QTreeWidgetItem::columnCount () const</h3>
+<p>Returns the number of columns in the item.</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QTreeWidgetItem::data ( int <i>column</i>, int <i>role</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the value for the item's <i>column</i> and <i>role</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="flags"></a><a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> QTreeWidgetItem::flags () const</h3>
+<p>Returns the flags used to describe the item. These determine whether the item can be checked, edited, and selected.</p>
+<p>The default value for flags is <a href="qt.html#ItemFlag-enum">Qt::ItemIsSelectable</a> | <a href="qt.html#ItemFlag-enum">Qt::ItemIsUserCheckable</a> | <a href="qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a> | <a href="qt.html#ItemFlag-enum">Qt::ItemIsDragEnabled</a>. If the item was constructed with a parent, flags will in addition contain <a href="qt.html#ItemFlag-enum">Qt::ItemIsDropEnabled</a>.</p>
+<p>See also <a href="qtreewidgetitem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> QTreeWidgetItem::font ( int <i>column</i> ) const</h3>
+<p>Returns the font used to render the text in the specified <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="foreground"></a><a href="qbrush.html">QBrush</a> QTreeWidgetItem::foreground ( int <i>column</i> ) const</h3>
+<p>Returns the brush used to render the foreground (e.g&#x2e; text) of the specified <i>column</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#setForeground">setForeground</a>() and <a href="qtreewidgetitem.html#background">background</a>().</p>
+<h3 class="fn"><a name="icon"></a><a href="qicon.html">QIcon</a> QTreeWidgetItem::icon ( int <i>column</i> ) const</h3>
+<p>Returns the icon that is displayed in the specified <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setIcon">setIcon</a>() and <a href="qabstractitemview.html#iconSize-prop">iconSize</a>.</p>
+<h3 class="fn"><a name="indexOfChild"></a>int QTreeWidgetItem::indexOfChild ( QTreeWidgetItem * <i>child</i> ) const</h3>
+<p>Returns the index of the given <i>child</i> in the item's list of children.</p>
+<h3 class="fn"><a name="insertChild"></a>void QTreeWidgetItem::insertChild ( int <i>index</i>, QTreeWidgetItem * <i>child</i> )</h3>
+<p>Inserts the <i>child</i> item at <i>index</i> in the list of children.</p>
+<p>If the child has already been inserted somewhere else it wont be inserted again.</p>
+<h3 class="fn"><a name="insertChildren"></a>void QTreeWidgetItem::insertChildren ( int <i>index</i>, const <a href="qlist.html">QList</a>&lt;QTreeWidgetItem *&gt; &amp; <i>children</i> )</h3>
+<p>Inserts the given list of <i>children</i> into the list of the item children at <i>index</i> .</p>
+<p>Children that have already been inserted somewhere else wont be inserted.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="isDisabled"></a>bool QTreeWidgetItem::isDisabled () const</h3>
+<p>Returns true if the item is disabled; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtreewidgetitem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="isExpanded"></a>bool QTreeWidgetItem::isExpanded () const</h3>
+<p>Returns true if the item is expanded, otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#setExpanded">setExpanded</a>().</p>
+<h3 class="fn"><a name="isFirstColumnSpanned"></a>bool QTreeWidgetItem::isFirstColumnSpanned () const</h3>
+<p>Returns true if the item is spanning all the columns in a row; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtreewidgetitem.html#setFirstColumnSpanned">setFirstColumnSpanned</a>().</p>
+<h3 class="fn"><a name="isHidden"></a>bool QTreeWidgetItem::isHidden () const</h3>
+<p>Returns true if the item is hidden, otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#setHidden">setHidden</a>().</p>
+<h3 class="fn"><a name="isSelected"></a>bool QTreeWidgetItem::isSelected () const</h3>
+<p>Returns true if the item is selected, otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#setSelected">setSelected</a>().</p>
+<h3 class="fn"><a name="parent"></a>QTreeWidgetItem * QTreeWidgetItem::parent () const</h3>
+<p>Returns the item's parent.</p>
+<p>See also <a href="qtreewidgetitem.html#child">child</a>().</p>
+<h3 class="fn"><a name="read"></a>void QTreeWidgetItem::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads the item from stream <i>in</i>. This only reads data into a single item.</p>
+<p>See also <a href="qtreewidgetitem.html#write">write</a>().</p>
+<h3 class="fn"><a name="removeChild"></a>void QTreeWidgetItem::removeChild ( QTreeWidgetItem * <i>child</i> )</h3>
+<p>Removes the given item indicated by <i>child</i>. The removed item will not be deleted.</p>
+<h3 class="fn"><a name="setBackground"></a>void QTreeWidgetItem::setBackground ( int <i>column</i>, const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the background brush of the label in the given <i>column</i> to the specified <i>brush</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#background">background</a>() and <a href="qtreewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setCheckState"></a>void QTreeWidgetItem::setCheckState ( int <i>column</i>, <a href="qt.html#CheckState-enum">Qt::CheckState</a> <i>state</i> )</h3>
+<p>Sets the item in the given <i>column</i> check state to be <i>state</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#checkState">checkState</a>().</p>
+<h3 class="fn"><a name="setChildIndicatorPolicy"></a>void QTreeWidgetItem::setChildIndicatorPolicy ( <a href="qtreewidgetitem.html#ChildIndicatorPolicy-enum">QTreeWidgetItem::ChildIndicatorPolicy</a> <i>policy</i> )</h3>
+<p>Sets the item indicator <i>policy</i>. This policy decides when the tree branch expand/collapse indicator is shown. The default value is ShowForChildren.</p>
+<p>See also <a href="qtreewidgetitem.html#childIndicatorPolicy">childIndicatorPolicy</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QTreeWidgetItem::setData ( int <i>column</i>, int <i>role</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the value for the item's <i>column</i> and <i>role</i> to the given <i>value</i>.</p>
+<p>The <i>role</i> describes the type of data specified by <i>value</i>, and is defined by the <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> enum.</p>
+<p>See also <a href="qtreewidgetitem.html#data">data</a>().</p>
+<h3 class="fn"><a name="setDisabled"></a>void QTreeWidgetItem::setDisabled ( bool <i>disabled</i> )</h3>
+<p>Disables the item if <i>disabled</i> is true; otherwise enables the item.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtreewidgetitem.html#isDisabled">isDisabled</a>() and <a href="qtreewidgetitem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setExpanded"></a>void QTreeWidgetItem::setExpanded ( bool <i>expand</i> )</h3>
+<p>Expands the item if <i>expand</i> is true, otherwise collapses the item.</p>
+<p><b>Warning:</b> The <a href="qtreewidgetitem.html">QTreeWidgetItem</a> must be added to the <a href="qtreewidget.html">QTreeWidget</a> before calling this function.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#isExpanded">isExpanded</a>().</p>
+<h3 class="fn"><a name="setFirstColumnSpanned"></a>void QTreeWidgetItem::setFirstColumnSpanned ( bool <i>span</i> )</h3>
+<p>Sets the first section to span all columns if <i>span</i> is true; otherwise all item sections are shown.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtreewidgetitem.html#isFirstColumnSpanned">isFirstColumnSpanned</a>().</p>
+<h3 class="fn"><a name="setFlags"></a>void QTreeWidgetItem::setFlags ( <a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> <i>flags</i> )</h3>
+<p>Sets the flags for the item to the given <i>flags</i>. These determine whether the item can be selected or modified. This is often used to disable an item.</p>
+<p>See also <a href="qtreewidgetitem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="setFont"></a>void QTreeWidgetItem::setFont ( int <i>column</i>, const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Sets the font used to display the text in the given <i>column</i> to the given <i>font</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#font">font</a>(), <a href="qtreewidgetitem.html#setText">setText</a>(), and <a href="qtreewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setForeground"></a>void QTreeWidgetItem::setForeground ( int <i>column</i>, const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the foreground brush of the label in the given <i>column</i> to the specified <i>brush</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#foreground">foreground</a>() and <a href="qtreewidgetitem.html#setBackground">setBackground</a>().</p>
+<h3 class="fn"><a name="setHidden"></a>void QTreeWidgetItem::setHidden ( bool <i>hide</i> )</h3>
+<p>Hides the item if <i>hide</i> is true, otherwise shows the item.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#isHidden">isHidden</a>().</p>
+<h3 class="fn"><a name="setIcon"></a>void QTreeWidgetItem::setIcon ( int <i>column</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i> )</h3>
+<p>Sets the icon to be displayed in the given <i>column</i> to <i>icon</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#icon">icon</a>(), <a href="qtreewidgetitem.html#setText">setText</a>(), and <a href="qabstractitemview.html#iconSize-prop">iconSize</a>.</p>
+<h3 class="fn"><a name="setSelected"></a>void QTreeWidgetItem::setSelected ( bool <i>select</i> )</h3>
+<p>Sets the selected state of the item to <i>select</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtreewidgetitem.html#isSelected">isSelected</a>().</p>
+<h3 class="fn"><a name="setSizeHint"></a>void QTreeWidgetItem::setSizeHint ( int <i>column</i>, const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the size hint for the tree item in the given <i>column</i> to be <i>size</i>. If no size hint is set, the item delegate will compute the size hint based on the item data.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtreewidgetitem.html#sizeHint">sizeHint</a>().</p>
+<h3 class="fn"><a name="setStatusTip"></a>void QTreeWidgetItem::setStatusTip ( int <i>column</i>, const <a href="qstring.html">QString</a> &amp; <i>statusTip</i> )</h3>
+<p>Sets the status tip for the given <i>column</i> to the given <i>statusTip</i>. <a href="qtreewidget.html">QTreeWidget</a> mouse tracking needs to be enabled for this feature to work.</p>
+<p>See also <a href="qtreewidgetitem.html#statusTip">statusTip</a>(), <a href="qtreewidgetitem.html#setToolTip">setToolTip</a>(), and <a href="qtreewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QTreeWidgetItem::setText ( int <i>column</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the text to be displayed in the given <i>column</i> to the given <i>text</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#text">text</a>(), <a href="qtreewidgetitem.html#setFont">setFont</a>(), and <a href="qtreewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setTextAlignment"></a>void QTreeWidgetItem::setTextAlignment ( int <i>column</i>, int <i>alignment</i> )</h3>
+<p>Sets the text alignment for the label in the given <i>column</i> to the <i>alignment</i> specified (see <a href="qt.html#AlignmentFlag-enum">Qt::AlignmentFlag</a>).</p>
+<p>See also <a href="qtreewidgetitem.html#textAlignment">textAlignment</a>().</p>
+<h3 class="fn"><a name="setToolTip"></a>void QTreeWidgetItem::setToolTip ( int <i>column</i>, const <a href="qstring.html">QString</a> &amp; <i>toolTip</i> )</h3>
+<p>Sets the tooltip for the given <i>column</i> to <i>toolTip</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#toolTip">toolTip</a>(), <a href="qtreewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="qtreewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setWhatsThis"></a>void QTreeWidgetItem::setWhatsThis ( int <i>column</i>, const <a href="qstring.html">QString</a> &amp; <i>whatsThis</i> )</h3>
+<p>Sets the &quot;What's This?&quot; help for the given <i>column</i> to <i>whatsThis</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#whatsThis">whatsThis</a>(), <a href="qtreewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="qtreewidgetitem.html#setToolTip">setToolTip</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QTreeWidgetItem::sizeHint ( int <i>column</i> ) const</h3>
+<p>Returns the size hint set for the tree item in the given <i>column</i> (see <a href="qsize.html">QSize</a>).</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtreewidgetitem.html#setSizeHint">setSizeHint</a>().</p>
+<h3 class="fn"><a name="sortChildren"></a>void QTreeWidgetItem::sortChildren ( int <i>column</i>, <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> )</h3>
+<p>Sorts the children of the item using the given <i>order</i>, by the values in the given <i>column</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="statusTip"></a><a href="qstring.html">QString</a> QTreeWidgetItem::statusTip ( int <i>column</i> ) const</h3>
+<p>Returns the status tip for the contents of the given <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setStatusTip">setStatusTip</a>().</p>
+<h3 class="fn"><a name="takeChild"></a>QTreeWidgetItem * QTreeWidgetItem::takeChild ( int <i>index</i> )</h3>
+<p>Removes the item at <i>index</i> and returns it, otherwise return 0.</p>
+<h3 class="fn"><a name="takeChildren"></a><a href="qlist.html">QList</a>&lt;QTreeWidgetItem *&gt; QTreeWidgetItem::takeChildren ()</h3>
+<p>Removes the list of children and returns it, otherwise returns an empty list.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QTreeWidgetItem::text ( int <i>column</i> ) const</h3>
+<p>Returns the text in the specified <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="textAlignment"></a>int QTreeWidgetItem::textAlignment ( int <i>column</i> ) const</h3>
+<p>Returns the text alignment for the label in the given <i>column</i> (see <a href="qt.html#AlignmentFlag-enum">Qt::AlignmentFlag</a>).</p>
+<p>See also <a href="qtreewidgetitem.html#setTextAlignment">setTextAlignment</a>().</p>
+<h3 class="fn"><a name="toolTip"></a><a href="qstring.html">QString</a> QTreeWidgetItem::toolTip ( int <i>column</i> ) const</h3>
+<p>Returns the tool tip for the given <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setToolTip">setToolTip</a>().</p>
+<h3 class="fn"><a name="treeWidget"></a><a href="qtreewidget.html">QTreeWidget</a> * QTreeWidgetItem::treeWidget () const</h3>
+<p>Returns the tree widget that contains the item.</p>
+<h3 class="fn"><a name="type"></a>int QTreeWidgetItem::type () const</h3>
+<p>Returns the type passed to the <a href="qtreewidgetitem.html">QTreeWidgetItem</a> constructor.</p>
+<h3 class="fn"><a name="whatsThis"></a><a href="qstring.html">QString</a> QTreeWidgetItem::whatsThis ( int <i>column</i> ) const</h3>
+<p>Returns the &quot;What's This?&quot; help for the contents of the given <i>column</i>.</p>
+<p>See also <a href="qtreewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="write"></a>void QTreeWidgetItem::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Writes the item to stream <i>out</i>. This only writes data from one single item.</p>
+<p>See also <a href="qtreewidgetitem.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QTreeWidgetItem::operator&lt; ( const QTreeWidgetItem &amp; <i>other</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the text in the item is less than the text in the <i>other</i> item, otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTreeWidgetItem &amp; QTreeWidgetItem::operator= ( const QTreeWidgetItem &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i>'s data and flags to this item. Note that <a href="qtreewidgetitem.html#type">type</a>() and <a href="qtreewidgetitem.html#treeWidget">treeWidget</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="qtreewidgetitem.html#clone">clone</a>().</p>
+<p>See also <a href="qtreewidgetitem.html#data">data</a>() and <a href="qtreewidgetitem.html#flags">flags</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-56"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i>, const QTreeWidgetItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the tree widget item <i>item</i> to stream <i>out</i>.</p>
+<p>This operator uses <a href="qtreewidgetitem.html#write">QTreeWidgetItem::write</a>().</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-30"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i>, QTreeWidgetItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a tree widget item from stream <i>in</i> into <i>item</i>.</p>
+<p>This operator uses <a href="qtreewidgetitem.html#read">QTreeWidgetItem::read</a>().</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

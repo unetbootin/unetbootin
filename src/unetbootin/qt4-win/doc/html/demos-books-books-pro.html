@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: books.pro Example File (demos/books/books.pro)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">books.pro Example File<br /><span class="small-subtitle">demos/books/books.pro</span>
+</h1>
+<pre> TEMPLATE = app
+ INCLUDEPATH += .
+
+ HEADERS     = bookdelegate.h bookwindow.h initdb.h
+ RESOURCES   = books.qrc
+ SOURCES     = bookdelegate.cpp main.cpp bookwindow.cpp
+ FORMS       = bookwindow.ui
+
+ QT += sql
+
+ target.path = $$[QT_INSTALL_DEMOS]/books
+ sources.files = $$SOURCES $$HEADERS $$RESOURCES $$FORMS *.pro images
+ sources.path = $$[QT_INSTALL_DEMOS]/books
+ INSTALLS += target sources
+
+ wince*: {
+     CONFIG(debug, debug|release):sqlPlugins.sources = $$QT_BUILD_TREE/plugins/sqldrivers/*d4.dll
+     CONFIG(release, debug|release):sqlPlugins.sources = $$QT_BUILD_TREE/plugins/sqldrivers/*[^d]4.dll
+     sqlPlugins.path = sqldrivers
+     DEPLOYMENT += sqlPlugins
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

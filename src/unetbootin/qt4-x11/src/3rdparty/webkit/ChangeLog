@@ -1,0 +1,3103 @@
+2008-12-19  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Holger Freyther.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16562
+        [gtk] Implement WebPolicyDelegate methods
+
+        Original work by Pierre-Luc Beaudoin. Final touches by Gustavo
+        Noronha.
+
+        This implements the delegates methods of WebPolicyDelegate.
+        Since Gtk+/C doesn't have delegate methods, they are replaced with
+        signals.
+
+        A new object WebKitWebPolicyDecision allows the browser to delay its
+        response in certain cases. WebKitWebNavigationAction contains the
+        information about what caused a navigation request.
+
+        * GNUmakefile.am: Add new files
+
+2008-12-19  Gustavo Noronha Silva  <gns@gnome.org>
+
+        Reviewed by Holger Freyther.
+
+        Use ustar tar format for WebKit/GTK+'s make dist target, so that
+        storing files whose filenames are > 99 is possible.
+
+        * configure.ac:
+
+2008-12-19  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        [GTK] Build fix by defining WTF_USE_JIT_STUB_ARGUMENT_VA_LIST
+
+        Fix the jit compilation on i*686 on Linux by using the va_list
+        to pass arguments to the CTI. This is done on the MAC as well
+        and sunspider and javascriptcore seem to work with that.
+
+        * configure.ac:
+
+2008-12-18  Pamela Greene  <pam@chromium.org>
+
+        Submitted without review.
+        Right, remove the whole misplaced directory, not just the tests.
+
+        * fast: Removed.
+        * fast/dom: Removed.
+
+2008-12-18  Pamela Greene  <pam@chromium.org>
+
+        Submitted without review.
+        Moving layout test into LayoutTests where it belongs.
+
+        * fast/dom/setter-type-enforcement-expected.txt: Removed.
+        * fast/dom/setter-type-enforcement.html: Removed.
+
+2008-12-15  Daniel Macks  <dmacks@netspace.org>
+
+        Reviewed by Darin Adler.
+
+        Default to use external libicu-config if avail on all platforms.
+        https://bugs.webkit.org/show_bug.cgi?id=22713
+
+        * configure.ac:
+
+2008-12-12  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Back out r39222 as this is breaking the build on Gentoo (aclocal-1.10)
+
+        The m4 directory does not exist and we now have a compile issue on
+        Gentoo systems.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-12-11  Daniel Macks  <dmacks@netspace.org>
+
+        Reviewed by Darin Adler.
+
+        https://bugs.webkit.org/show_bug.cgi?id=22714
+
+        Put libtool macro files in subdir that it wants.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-12-07  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Eric Seidel.
+
+        [Gtk+] Use glib's unit test facilities to test the WebKit/Gtk+ API
+
+        https://bugs.webkit.org/show_bug.cgi?id=22491
+
+        Add the skeleton to WebKit/gtk/tests and integrate that into the
+        buildsystem. Testing support was added in glib 2.16. For versions
+        using glib < 2.16 we compile an empty application.
+
+        * GNUmakefile.am:
+
+2008-12-07  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Cameron Zwarich.
+
+        [GTK] Define ENABLE_JIT_OPTIMIZE_CALL, ENABLE_JIT_OPTIMIZE_PROPERTY_ACCESS, ENABLE_JIT_OPTIMIZE_ARITHMETIC
+
+        When building the jit on i*86 also enable the above optimizations.
+
+        * configure.ac:
+
+2008-12-03  Simon Hausmann  <hausmann@webkit.org>
+
+        Reviewed by Tor Arne Vestbø.
+
+        Fix the build of WebKit inside Qt by making sure that qmake generators
+        that do not produce generated sources (i.e. cpp files) are not
+        included in SOURCES.
+
+        * WebKit.pri:
+
+2008-12-02  Simon Hausmann  <hausmann@webkit.org>
+
+        Reviewed by Tor Arne Vestbø.
+
+        Removed JavaScriptCore from SUBDIRS as it's not built separately
+        anymore.
+
+        * WebKit.pro:
+
+2008-11-28  Gustavo Noronha Silva  <gns@gnome.org>
+
+        Reviewed and slightly modified by Holger Freyther.
+
+        https://bugs.webkit.org/show_bug.cgi?id=19130
+
+        Added the new WebKitGtk files to be built:
+        WebKit/gtk/webkit/webkitwebwindowfeatures.{cpp,h}
+
+        * GNUmakefile.am:
+
+2008-11-26  Kalle Vahlman  <kalle.vahlman@movial.com>
+
+        Reviewed by Darin Adler. Landed by Jan Alonzo.
+
+        Bison versions under 2.2 produce crashing CSSGrammar code for ARM
+        https://bugs.webkit.org/show_bug.cgi?id=22456
+
+        Check for bison version 2.2 or greater on ARM. Earlier versions produce
+        code that crashes on ARM devices.
+
+        * configure.ac:
+
+2008-11-25  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by David Kilzer.
+
+        https://bugs.webkit.org/show_bug.cgi?id=22022
+
+        Add Geolocation support to the configure.ac
+
+        Add an option to build WebKit/Gtk+ with Geolocation. The
+        implementation will be using Gypsy.
+
+        * configure.ac:
+
+2008-11-24  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Mark Rowe.
+
+        [Gtk+] Add configure option to enable Web Workers and enable it by default
+
+        Add --enable-workers to the buildsystem (used by build-webkit) add
+        the to be build files to the GNUmakefile.am and change build-webkit
+        to enable Web Workers by default.
+
+        * configure.ac:
+
+2008-09-09  Joerg Bornemann  <joerg.bornemann@trolltech.com>
+
+        Reviewed by Simon Hausmann.
+
+        Steps towards making the Qt port of WebKit compile on Windows CE
+
+        https://bugs.webkit.org/show_bug.cgi?id=20746
+
+        * WebKit.pro: don't build DumpRenderTree on all Win32 platforms
+
+2008-11-17  Nikolas Zimmermann  <nikolas.zimmermann@torchmobile.com>
+
+        Reviewed by George Staikos.
+
+        Add WML build support for Gtk as well.
+
+        * configure.ac:
+
+2008-11-16  Geoffrey Garen  <ggaren@apple.com>
+
+        Not reviewed.
+        
+        Try to fix gtk build.
+
+        * configure.ac:
+
+2008-11-10  Tor Arne Vestbø  <tavestbo@trolltech.com>
+
+        Rubber-stamped by Simon Hausmann.
+
+        Distinguish between building from trunk and as part of Qt
+
+        * WebKit.pri:
+
+2008-11-10  Morten Sørvig  <msorvig@trolltech.com>
+
+        Reviewed by Simon Hausmann.
+
+        Make tests/auto/qwebframe compile on Qt/Mac.
+
+        * WebKit.pri: Fix linkage against QtWebKit when compiled as framework.
+
+2008-11-06  Cameron Zwarich  <zwarich@apple.com>
+
+        Not reviewed.
+
+        Speculatively fix the GTK build.
+
+        * GNUmakefile.am:
+
+2008-11-06  Alp Toker  <alp@nuanti.com>
+
+        GTK build fix for r38155. create_hash_table was moved out of kjs/
+
+        * GNUmakefile.am:
+
+2008-11-06  Cameron Zwarich  <zwarich@apple.com>
+
+        Rubber-stamped by Sam Weinig.
+
+        Correct the reference to jsc.pro in WebKit.pro to match its new
+        location in the root directory of JavaScriptCore.
+
+        * WebKit.pro:
+
+2008-11-03  Alp Toker  <alp@nuanti.com>
+
+        autotools distcleancheck fix. Add dolt-generated files and
+        webkitenumtypes.h to the list of files that need to be cleaned.
+        Unreviewed.
+
+        * GNUmakefile.am:
+
+2008-11-03  Alp Toker  <alp@nuanti.com>
+
+        Rubber-stamped by Holger Freyther.
+
+        Do not enable RTTI or exceptions in debug builds, matching release
+        builds. They don't help much with debugging and significantly slow
+        down and increase the size of the debug build.
+
+        * GNUmakefile.am:
+
+2008-11-03  Alp Toker  <alp@nuanti.com>
+
+        Rubber-stamped by Holger Freyther.
+
+        Add mingw32 case to dolt for faster GTK+ Windows builds.
+
+        * acinclude.m4:
+
+2008-11-02  Xan Lopez  <xan@gnome.org>
+
+        Reviewed by Holger Freyther
+
+        https://bugs.webkit.org/show_bug.cgi?id=22009
+        HTML5 Video with GStreamer pulls gnome-vfs without using it.
+
+        * configure.ac:
+        Remove gnome-vfs from configure.ac, it's unused.
+
+2008-10-30  Alp Toker  <alp@nuanti.com>
+
+        https://bugs.webkit.org/show_bug.cgi?id=19395
+        doltlibtool bug with bash 3.0
+
+        autotools dolt build fix for bash version 3.0 and older. Remove
+        concatenation syntax from doltlibtool to support the older versions
+        which don't have '+='.
+
+        * acinclude.m4:
+
+2008-10-30  Alp Toker  <alp@nuanti.com>
+
+        Rubber-stamped by Oliver Hunt.
+
+        autotools build system change to enable JIT features by default. Can
+        be disabled with --disable-jit (and is disabled automatically on
+        unsupported platforms).
+
+        * configure.ac:
+
+2008-10-30  Alp Toker  <alp@nuanti.com>
+
+        Bump WebKit GTK+ version to 1.0.3.
+
+        * configure.ac:
+
+2008-10-29  Gustavo Noronha Silva  <gns@gnome.org>
+
+        Reviewed by Holger Freyther.
+
+        Added all the files that need to be installed for the Inspector to
+        work.
+
+2008-10-29  Mike Hommey  <glandium@debian.org>
+
+        Reviewed by Holger Freyther.
+
+        https://bugs.webkit.org/show_bug.cgi?id=21884
+        Test presence and link against libpng.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-10-29  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Holger Freyther.
+
+        Add --enable-optimizations to enable optimized builds. The default
+        is to enable it for release builds, and disabled for debug builds.
+        This option will allow builders to have a debug as well as
+        optimized builds.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-10-28  Mike Hommey  <glandium@debian.org>
+
+        Reviewed by Alp Toker.
+
+        https://bugs.webkit.org/show_bug.cgi?id=21885
+        [GTK] libwebkit doesn't link against libpangoft2
+
+        Add pkg-config check for pangoft2 which provides
+        pango_fc_font_description_from_pattern() used in the FreeType font
+        backend.
+
+        * configure.ac:
+
+2008-10-28  Alp Toker  <alp@nuanti.com>
+
+        Include copyright license files in the autotools dist target.
+
+        Change suggested by Mike Hommey.
+
+        * GNUmakefile.am:
+
+2008-10-25  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Gtk build fix: add '-' to Wl which was missed in r36845
+
+        * GNUmakefile.am:
+
+2008-10-22  Alp Toker  <alp@nuanti.com>
+
+        Fix build for Cairo 1.2.
+
+        * configure.ac:
+
+2008-10-20  Alp Toker  <alp@nuanti.com>
+
+        Partial GTK+/Win32 build fix. Lowercase library name to enable linking
+        when cross-compiling Windows binaries from Linux: -lWs2_32 -> -lws2_32
+
+        * configure.ac:
+
+2008-10-13  Alp Toker  <alp@nuanti.com>
+
+        GTK+ build fix: Ensure correct builds when debugging is
+        enabled/disabled by defining NDEBUG in autotoolsconfig.h as needed.
+        It's still passed as a compiler flag since some sources (DRT) don't
+        use config.h yet.
+
+        * configure.ac:
+
+2008-10-09  Alp Toker  <alp@nuanti.com>
+
+        Reviewed by Mark Rowe.
+
+        https://bugs.webkit.org/show_bug.cgi?id=20760
+        Implement support for x86 Linux in CTI
+
+        Prepare to enable CTI/WREC on supported architectures. Will be
+        switched on when the crasher introduced in r37386 is resolved.
+
+        * configure.ac:
+
+2008-10-07  Alp Toker  <alp@nuanti.com>
+
+        GTK+ build fix for older automake versions (1.7). Discussed in bug
+        #21392.
+
+        * GNUmakefile.am:
+
+2008-10-07  Alp Toker  <alp@nuanti.com>
+
+        Reviewed by Mark Rowe.
+
+        https://bugs.webkit.org/show_bug.cgi?id=21392
+        [GTK] Auto-generate JS DOM binding sources list
+
+        Remove the huge lists of generated DOM binding sources and headers in
+        the build system. These are difficult to maintain and can be derived
+        automatically.
+
+        The new strategy is to re-use the existing lists of IDL sources (which
+        are needed for dist support anyway). This will also ease the addition
+        of new language bindings.
+
+        * GNUmakefile.am:
+
+2008-09-27  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Holger Freyther.
+
+        https://bugs.webkit.org/show_bug.cgi?id=20287
+        [Gtk] disable plugins for gtk/directfb target
+
+        Introduce WTF_PLATFORM_X11 for X11 builds.
+        Also use target-specific packages when building the port
+
+        * configure.ac: Do not check for cairo-ft for directfb builds.
+
+2008-09-27  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Holger Freyther.
+
+        http://bugs.webkit.org/show_bug.cgi?id=21174
+        [GTK][AUTOTOOLS] Enable large file support at configure time
+
+        * configure.ac: Enable large file support with AC_SYS_LARGEFILE.
+
+2008-09-23  Richard Hult  <richard@imendio.com>
+
+        Reviewed by Alp Toker. Landed by Jan Alonzo.
+
+        http://bugs.webkit.org/show_bug.cgi?id=20582
+        [Gtk] Link error on Mac OS X
+
+        * GNUmakefile.am: Only use the -version-script flag for the gnu
+        linker.
+        * configure.ac: Check for GNU OSes.
+
+2008-09-19  Alp Toker  <alp@nuanti.com>
+
+        Build fix for the 'gold' linker and recent binutils. New behaviour
+        requires that we link to used libraries explicitly.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-09-04  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Eric Seidel.
+
+        http://bugs.webkit.org/show_bug.cgi?id=20380
+        [GTK][AUTOTOOLS] Include autotoolsconfig.h from config.h
+
+        * configure.ac: Rename the configuration header from aconfig.h to autotoolsconfig.h.
+
+2008-08-28  Alp Toker  <alp@nuanti.com>
+
+        GTK+ dist/build fix. List newly added header files.
+
+        * GNUmakefile.am:
+
+2008-08-27  Mike Hommey <glandium@debian.org>
+
+        Reviewed by Holger.
+
+        * GNUmakefile.am:
+        * symbols.filter: Added.
+
+2008-08-10  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed (and updated) by Alp Toker.
+
+        https://bugs.webkit.org/show_bug.cgi?id=16620
+        [GTK] Autotools make dist and make check support
+
+        Get make dist working.
+
+        Note that not all possible configurations have been tested yet.
+
+        * GNUmakefile.am:
+
+2008-08-09  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=19045
+        [gtk] ./configure doesn't check for x toolkit availability
+
+        Some old versions of Xt do not provide xt.pc, in this case use
+        AC_CHECK_LIB to check if the library is installed and then fall back
+        to using just -lXt.
+
+        * configure.ac:
+
+2008-08-09  Alp Toker  <alp@nuanti.com>
+
+        GTK+ build fixes.
+
+        Back out r20338 libxslt check (conditional check already exists and
+        this broke the build).
+
+        Make the flex version check a warning rather than fatal to fix the
+        build bot.
+
+        * configure.ac:
+
+2008-08-08  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Mark Rowe.
+
+        http://bugs.webkit.org/show_bug.cgi?id=20338
+        [Gtk] Autotools should check for libxslt
+
+        Autotools check for libxslt
+
+        * configure.ac:
+
+2008-08-07  Kalle Vahlman  <zuh@iki.fi>
+
+        Reviewed by David Kilzer.
+
+        Check for correct flex version to avoid faulty builds
+
+        A correct Webkit build requires flex 2.5.33 but autotools build doesn't check for it
+        https://bugs.webkit.org/show_bug.cgi?id=20253
+
+        acinclude.m4: Import AX_COMPARE_VERSION macro
+        configure.ac: Check for flex version
+
+        * acinclude.m4:
+        * configure.ac:
+
+2008-08-07  Simon Hausmann  <hausmann@webkit.org>
+
+        Rubber-stamped by Lars.
+
+        Added API tests for QWebPage/QWebFrame based on QTestLib.
+
+        * WebKit.pro: Add WebKit/qt/tests to the build.
+
+2008-08-06  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Eric Seidel.
+
+        http://bugs.webkit.org/show_bug.cgi?id=20276
+        [GTK] Makefile rules for the enum GTypes files depend on Makefile
+        instead of GNUmakefile
+
+        The patch committed in revision 34649 added the code needed to
+        generate GTypes for enums but the makefile rules for
+        stamp-webkitenumtypes.h and webkitenumtypes.cpp were depending on
+        Makefile (used by other ports) instead of GNUmakefile.
+
+        * GNUmakefile.am: Depend on GNUmakefile instead of Makefile.
+
+2008-08-05  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=19045
+        [gtk] ./configure doesn't check for x toolkit availability
+
+        Check for the .pc file for Xt instead of hard coding -lXt in the
+        GNUmakefile.am.
+
+        Thanks to Dominik Röttsches for the initial patch.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-07-30  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Holger.
+
+        http://bugs.webkit.org/show_bug.cgi?id=19742
+        [GTK] Auto generate webkitmarshal.list
+
+        Auto generate webkitmarshal.list from source files to reduce the
+        number of conflicts when merging git branches or when applying
+        patches.
+        Also rename webkit-marshal.* to webkitmarshal.* for consistency.
+
+        * GNUmakefile.am:
+
+2008-07-25  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Mark Rowe.
+
+        Copy the way Gtk detects jpeglib. Hinted by Wouter Bolsterlee.
+
+        [Gtk] Improve detection jpeglib
+        https://bugs.webkit.org/show_bug.cgi?id=17865
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-07-25  Simon Hausmann  <hausmann@webkit.org>
+
+        Discussed with and rubber-stamped by Lars.
+
+        Fix the build system for the Qt port.
+
+        Recent JavaScriptCore changes require the addition of JavaScriptCore/API to the
+        include search path. With a build process that combines JavaScriptCore and
+        WebCore in one build process/Makefile the existance of
+        JavaScriptCore/API/Node.h and WebCore/dom/Node.h causes include conflicts.
+
+        This commit solves this by introducing a separate build of JavaScriptCore into
+        a static library.
+
+        As a result of the split-up a race-condition due to broken dependencies of
+        regular source files to header files of generated sources showed up very
+        frequently when doing parallel builds (which the buildbot does). This commit at
+        the same time tries to address the dependency problem by making the
+        addExtraCompiler() function also generate a pseudo extra compiler that
+        represents the header file output, so that qmake is aware of the creation of
+        the header file for dependency calculation.
+
+        At the same time I removed a lot of cruft from the pro files to ease maintenance.
+
+        * WebKit.pri:
+        * WebKit.pro:
+
+2008-06-18  Marco Barisione  <marco.barisione@collabora.co.uk>
+
+        Reviewed by Alp Toker.
+
+        https://bugs.webkit.org/show_bug.cgi?id=19171
+        [GTK] GTypes for enumerations
+
+        Generate GTypes for public enumerations so they can be used as
+        properties.
+
+        * GNUmakefile.am: Generate webkit-enum-types.cpp and
+        webkit-enum-types.h.
+
+2008-06-16  Simon Hausmann  <hausmann@webkit.org>
+
+        Fix the Qt build. testkjs.pro is now called jsc.pro.
+
+        * WebKit.pro:
+
+2008-06-15  Alp Toker  <alp@nuanti.com>
+
+        Rubber-stamped by Maciej.
+
+        Install 'jsc' application by default.
+
+        * GNUmakefile.am:
+
+2008-06-08  Alp Toker  <alp@nuanti.com>
+
+        autotools/GTK+ build system cleanup. Don't include WebKit API in the
+        WebCore build as it's no longer needed since r34426.
+
+        * GNUmakefile.am:
+
+2008-06-08  Alp Toker  <alp@nuanti.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Bring back -fstrict-aliasing for JavaScriptCore which was removed in
+        r31821, since aliasing issues have now been fixed.
+
+        Use -O3, not -O2 for the JavaScriptCore build.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-06-05  Christian Dywan  <christian@twotoasts.de>
+
+        Reviewed by Alp Toker.
+
+        https://bugs.webkit.org/show_bug.cgi?id=14141
+        Please add a version to the Gtk port
+
+        * GNUmakefile.am:
+
+2008-06-02  Alp Toker  <alp@nuanti.com>
+
+        GTK+/autotools Windows build system fixes.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-06-02  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Alp Toker.
+
+        Build WebCore GTK+ sources as part of WebCore, not WebKit.
+        Split common and GTK+-specific sources into separate file lists.
+
+        * GNUmakefile.am:
+
+2008-06-01  Josh Triplett  <josh@freedesktop.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16891
+        [GTK] autotools build is slow
+
+        Add dolt revision 5e9eef10 to the autotools build system. Speeds up
+        the build, often by a factor of two or more on supported platforms,
+        otherwise falls back to libtool.
+
+        See http://dolt.freedesktop.org for details.
+
+        * acinclude.m4: Added.
+        * configure.ac:
+
+2008-05-25  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=19142
+        [Gtk] Remove build options --svg-experimental and --cross-document-messaging
+
+        * configure.ac:
+
+2008-05-24  Alp Toker  <alp@nuanti.com>
+
+        GTK+/Win32 build fixes. Link against Windows ICU without using
+        icu-config since it's not available on that platform.
+
+        Link against Ws2_32 when the curl http backend is chosen since we
+        use select() directly.
+
+        * configure.ac:
+
+2008-05-23  Alp Toker  <alp@nuanti.com>
+
+        GTK+ fixes for building without database support.
+
+        * configure.ac:
+
+2008-05-20  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Alp Toker.
+
+        Fix for previous autotools change.
+
+        * configure.ac:
+
+2008-05-20  Jan Michael Alonzo  <jmalonzo@webkit.org>
+
+        Reviewed by Alp.
+
+        http://bugs.webkit.org/show_bug.cgi?id=18483
+        [Gtk] Autotools should match build-webkit default flags
+
+        * configure.ac:
+
+2008-05-19  Alp Toker  <alp@nuanti.com>
+
+        GTK+ build fix for Mac/Win. Don't check for FreeType/FontConfig when
+        the Pango font backend is selected.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-05-16  Julien Chaffraix  <jchaffraix@webkit.org>
+
+        Reviewed by Eric.
+
+        Preparatory work for bug 9191: JS*ElementWrapperFactory should be autogenerated
+
+        * configure.ac: Add HTML_FLAGS and set it when video is enabled.
+
+2008-05-15  Ariya Hidayat  <ariya.hidayat@trolltech.com>
+
+        Reviewed by Simon.
+
+        Since WebKitGtk is fully using autotools now, clean-up the .pro/.pri files
+        from gtk-port.
+
+        * WebKit.pri:
+        * WebKit.pro:
+
+2008-05-09  Anders Carlsson  <andersca@apple.com>
+
+        Reviewed by Mark.
+
+        Add x86_64 rule.
+        
+        * Makefile:
+
+2008-05-09  Simon Hausmann  <hausmann@webkit.org>
+
+        Reviewed by Holger.
+
+        Removed explicit linkage against libxml and libxslt on Qt/Mac builds.
+        
+        This dependency is completely unnecessary here and creates only problems by
+        propagating through WebCore.pro over libQtWebKit.prl right now customer
+        applications.
+        
+
+        * WebKit.pri:
+
+2008-05-02  Anders Carlsson  <andersca@apple.com>
+
+        Reviewed by Mark.
+
+        Add an "x86_64" make rule.
+        
+        * Makefile.shared:
+
+2008-05-02  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Eric.
+
+        https://bugs.webkit.org/show_bug.cgi?id=18811
+        Enable dashboard and offline web apps in autotools
+
+        * configure.ac:
+
+2008-05-01  Marc Ordinas i Llopis  <marc.ordinasillopis@collabora.co.uk>
+
+        Reviewed by Alp Toker.
+
+        https://bugs.webkit.org/show_bug.cgi?id=14750
+        Added support for NPAPI plugins on Gtk and Qt-x11 ports.
+
+        * GNUmakefile.am: Added Xt library.
+
+2008-04-29  David Kilzer  <ddkilzer@apple.com>
+
+        BUILD FIX for ENABLE(DASHBOARD_SUPPORT)
+
+        * configure.ac: Added conditional for ENABLE_DASHBOARD_SUPPORT.
+
+2008-04-22  Alp Toker  <alp@nuanti.com>
+
+        GTK+ debug build fix for changes in r32257.
+
+        * GNUmakefile.am:
+
+2008-04-18  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16620
+        [GTK] Autotools make dist and make check support
+
+        Cleanups.
+
+        * GNUmakefile.am:
+
+2008-04-11  Mark Rowe  <mrowe@apple.com>
+
+        Rubber-stamped by Antti Koivisto.
+
+        * GNUmakefile.am: Disable a warning that GCC 4.3 triggers all over the show.
+
+2008-04-17  Alp Toker  <alp@atoker.com>
+
+        GTK+ build fix. Back out the libjpeg check part of r32008 from bug
+        #17865 (reopened).
+
+        * configure.ac:
+
+2008-04-17  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=17865
+        [Gtk] Improve detection of jpeglib and glib tools
+
+        Improve detecting jpeglib and glib tools
+
+        * configure.ac: Throw an error if the dependencies above are
+        currently not installed
+
+2008-04-14  Xan Lopez  <xan@gnome.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=17917
+        Bug 17917: Cookie support for HTTP soup backend
+
+        Bumped the libsoup required version to 2.23 for cookie support.
+
+        * configure.ac:
+
+2008-04-11  Mark Rowe  <mrowe@apple.com>
+
+        Rubber-stamped by Anders Carlsson.
+
+        Fix https://bugs.webkit.org/show_bug.cgi?id=18430
+        Bug 18430: SIGSEGV on amd64 when built with gcc 4.3
+
+        GCC 4.3 generates bad code in some instances when working with our HashTables
+        as some of the HashTable code violates the strict aliasing requirements.  Since
+        GCC 4.2 this code has generated warnings when -fstrict-aliasing is enabled. Until
+        the code can be fixed to be safe with strict aliasing enabled, we will disable
+        strict aliasing.
+
+        * GNUmakefile.am:
+
+2008-03-12  Michael Emmel  <mike.emmel@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=18397
+        Fix leaving spaces before parens in functions
+
+        * WebKitTools/Scripts/wkstyle:
+
+2008-04-07  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Build fix, rubber-stamped and landed by ap.
+
+        * configure.ac: Add autoconf flag for HTML5 client-side session and persistent storage support.
+
+2008-03-21  Rodney Dawes  <dobey@wayofthemonkey.com>
+
+        Reviewed by Holger.
+
+        Remove the JSCore include path options from global_cppflags.
+        Place JSCore include path options in javascriptcore_cppflags.
+        Add javascriptcore_cppflags to libWebCore_la_CPPFLAGS.
+
+        * GNUmakefile.am:
+
+2008-03-20  Jasper Bryant-Greene  <jasper@unix.geek.nz>
+
+        Reviewed by Anders.
+
+        Resolves http://bugs.webkit.org/show_bug.cgi?id=16092
+        "[GTK] Middle-mouse click should allow opening a URL in a new tab"
+
+        Added WebKitNavigationAction object to GTK API
+
+        * GNUmakefile.am:
+
+2008-03-12  Xan Lopez  <xan@gnome.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=15229
+
+        Add optional font backend support with freetype and pango
+        backends. Default is freetype for now.
+
+        Original patch by Sven Herzberg <sven@imendio.com>
+
+        * configure.ac:
+
+2008-03-11  Xan Lopez  <xan@gnome.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16476
+
+        Add support for multiple http backends, and add soup backend (off by default).
+        
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-03-07  Simon Hausmann  <hausmann@webkit.org>
+
+        Reviewed by Darin Adler.
+
+        Done with Lars.
+
+        Added plugins subdirectory to the include path.
+
+        * WebKit.pri:
+
+2008-03-09  Alp Toker  <alp@atoker.com>
+
+        GTK+ build fix for r30913.
+
+        Use UNICODE_CFLAGS for C++ sources as well as C sources.
+
+        * GNUmakefile.am:
+
+2008-03-09  Jörg Billeter  <j@bitron.ch>
+
+        Reviewed by Alp Toker.
+
+        Conditionalise ICU for Unicode in the GTK+ port.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-03-03  Brent Fulgham  <bfulgham@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=17644
+        Build GTK on Mac OS X using native ICU library
+
+        Use Apple native ICU libraries when building GTK
+        webkit on Mac OS.
+
+        * configure.ac:
+
+2008-03-02  Brent Fulgham  <bfulgham@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        Add ICU_CPPFLAGS earlier in include path for WebCore
+        so that we find $(icu_cppflags)/unicode/utf8.h, rather than
+        the wtf/unicode/UTF8.h on case-insensitive file systems.
+
+        * GNUmakefile.am:
+
+2008-03-02  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Mark Rowe.
+
+        Split the WebKit GTK+ build out of the WebCore build and change the
+        shared object name to match the package name.
+
+        * GNUmakefile.am:
+
+2008-02-28  Alp Toker  <alp@atoker.com>
+
+        Fix a configure script typo spotted by Kalle Vahlman.
+
+        * configure.ac:
+
+2008-02-26  Timothy Hatcher  <timothy@apple.com>
+
+        Reviewed by Darin Adler.
+
+        Add "64" and "64u" make rules to allow easy building of 64-bit versions.
+
+        make 64: will build Intel-only 64-bit.
+        make 64u: will build 4-way universal for PPC and Intel.
+
+        * Makefile:
+        * Makefile.shared:
+
+2008-02-23  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Rubber stamped by Darin Adler.
+
+        Add separator '\' after libJavaScriptCore_la_LIBADD and cleanup
+        whitespaces introduced in the previous commit.
+
+        * GNUmakefile.am: 
+
+2008-02-23  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Rubber-stamped by Darin Adler.
+
+        * GNUmakefile.am: Add both GLOBALDEPS and WEBKITDEPS instead of DEPENDENCIES.
+        * configure.ac: Break dependent modules into GLOBALDEPS and WEBKITDEPS.
+
+2008-02-21  Alp Toker  <alp@atoker.com>
+
+        Fix a configure script typo.
+
+        * configure.ac:
+
+2008-02-21  Alp Toker  <alp@atoker.com>
+
+        GTK+/autotools SVG experimental build fix
+
+        Don't enable SVG filters in --enable-svg-experimental.
+
+        This feature isn't supported at all yet. Developers can enable it
+        explicitly by passing --enable-svg-filters if needed.
+
+        * configure.ac:
+
+2008-02-21  Mike Auty  <mike.auty@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=17445
+        [GTK] WebKit doesn't compile with LDFLAGS="-Wl,--as-needed"
+
+        The GNUmakefile.am files make use of the LDFLAGS variable to include library
+        additions such as -ljpeg etc.  Unfortunately, if these inclusions aren't made
+        in LIBADD/LDADD variables, then they are mis-ordered during the linking.
+
+        The as-needed flag discards libraries whose functions have not been needed by
+        earlier libraries, which therefore makes the ordering important.
+
+        This moves all -l library inclusion statements from LDFLAGS variables to
+        LIBADD/LDADD variables.
+
+        * GNUmakefile.am:
+
+2008-02-15  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Holger.
+
+        GTK+ configure script cleanups
+
+        Categorize the configuration summary printout.
+        Bump GTK+ requirement to 2.8.
+        Rename 'webkit_target' to just 'target'.
+        Don't check for pthread on Win32.
+
+        * configure.ac:
+
+2008-02-14  Adam Roben  <aroben@apple.com>
+
+        Turn on cross-document messaging support by default
+
+        Reviewed by Darin Adler.
+
+        * configure.ac:
+
+2008-02-14  Adam Roben  <aroben@apple.com>
+
+        Conditionalize cross-document messaging support
+
+        The cross-document messaging parts of HTML 5 are in flux and we want
+        ports to be able to turn off the support as needed.
+
+        Note that the support is turned off by default right now. A subsequent
+        commit will turn it on by default.
+
+        Reviewed by Darin Adler.
+
+        * configure.ac:
+
+2008-02-12  Rodney Dawes  <dobey@wayofthemonkey.com>
+
+        Reviewed by Alp Toker.
+
+        Add a --with-hildon argument to configure.ac for adding MAEMO_CHANGES
+        to the CPPFLAGS for WebCore and WebKit
+        Add a pkgconfig check for hildon-1 when --with-hildon specified
+        Output the use of Hildon support in the summary
+        Add HILDON_CPPFLAGS to webkitgtk_cppflags
+        Add HILDON_CFLAGS to libWebKitGtk_la_CFLAGS
+        Add HILDON_LIBS to libWebKitGtk_la_LDFLAGS
+
+        * configure.ac:
+        * GNUmakefile.am:
+
+2008-02-08  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Maciej.
+
+        Bump autoconf CAIRO_REQUIRED_VERSION up to 1.4.
+
+        * configure.ac:
+
+2008-02-06  Timothy Hatcher  <timothy@apple.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Dump of bugs.webkit.org's Bugzilla instance.
+
+        * BugsSite: Added.
+        * BugsSite/.htaccess: Added.
+        * BugsSite/Bugzilla: Added.
+        * BugsSite/Bugzilla.pm: Added.
+        * BugsSite/Bugzilla/.cvsignore: Added.
+        * BugsSite/Bugzilla/.htaccess: Added.
+        * BugsSite/Bugzilla/Attachment.pm: Added.
+        * BugsSite/Bugzilla/Auth: Added.
+        * BugsSite/Bugzilla/Auth.pm: Added.
+        * BugsSite/Bugzilla/Auth/Login: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW.pm: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW/CGI: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW/CGI.pm: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW/CGI/Cookie.pm: Added.
+        * BugsSite/Bugzilla/Auth/Login/WWW/Env.pm: Added.
+        * BugsSite/Bugzilla/Auth/README: Added.
+        * BugsSite/Bugzilla/Auth/Verify: Added.
+        * BugsSite/Bugzilla/Auth/Verify/DB.pm: Added.
+        * BugsSite/Bugzilla/Auth/Verify/LDAP.pm: Added.
+        * BugsSite/Bugzilla/Bug.pm: Added.
+        * BugsSite/Bugzilla/BugMail.pm: Added.
+        * BugsSite/Bugzilla/CGI.pm: Added.
+        * BugsSite/Bugzilla/Chart.pm: Added.
+        * BugsSite/Bugzilla/Config.pm: Added.
+        * BugsSite/Bugzilla/Constants.pm: Added.
+        * BugsSite/Bugzilla/DB: Added.
+        * BugsSite/Bugzilla/DB.pm: Added.
+        * BugsSite/Bugzilla/DB/Mysql.pm: Added.
+        * BugsSite/Bugzilla/DB/Pg.pm: Added.
+        * BugsSite/Bugzilla/DB/Schema: Added.
+        * BugsSite/Bugzilla/DB/Schema.pm: Added.
+        * BugsSite/Bugzilla/DB/Schema/Mysql.pm: Added.
+        * BugsSite/Bugzilla/DB/Schema/Pg.pm: Added.
+        * BugsSite/Bugzilla/Error.pm: Added.
+        * BugsSite/Bugzilla/Flag.pm: Added.
+        * BugsSite/Bugzilla/FlagType.pm: Added.
+        * BugsSite/Bugzilla/Group.pm: Added.
+        * BugsSite/Bugzilla/Search.pm: Added.
+        * BugsSite/Bugzilla/Series.pm: Added.
+        * BugsSite/Bugzilla/Template: Added.
+        * BugsSite/Bugzilla/Template.pm: Added.
+        * BugsSite/Bugzilla/Template/Plugin: Added.
+        * BugsSite/Bugzilla/Template/Plugin/Bugzilla.pm: Added.
+        * BugsSite/Bugzilla/Template/Plugin/Hook.pm: Added.
+        * BugsSite/Bugzilla/Template/Plugin/User.pm: Added.
+        * BugsSite/Bugzilla/Token.pm: Added.
+        * BugsSite/Bugzilla/User: Added.
+        * BugsSite/Bugzilla/User.pm: Added.
+        * BugsSite/Bugzilla/User/Setting.pm: Added.
+        * BugsSite/Bugzilla/Util.pm: Added.
+        * BugsSite/CGI.pl: Added.
+        * BugsSite/PrettyPatch: Added.
+        * BugsSite/PrettyPatch/PrettyPatch.rb: Added.
+        * BugsSite/PrettyPatch/prettify.rb: Added.
+        * BugsSite/QUICKSTART: Added.
+        * BugsSite/README: Added.
+        * BugsSite/UPGRADING: Added.
+        * BugsSite/UPGRADING-pre-2.8: Added.
+        * BugsSite/ant.jpg: Added.
+        * BugsSite/attachment-aroben.cgi: Added.
+        * BugsSite/attachment.cgi: Added.
+        * BugsSite/buglist.cgi: Added.
+        * BugsSite/bugzilla.dtd: Added.
+        * BugsSite/chart.cgi: Added.
+        * BugsSite/checksetup.pl: Added.
+        * BugsSite/colchange.cgi: Added.
+        * BugsSite/collectstats.pl: Added.
+        * BugsSite/config.cgi: Added.
+        * BugsSite/contrib: Added.
+        * BugsSite/contrib/BugzillaEmail.pm: Added.
+        * BugsSite/contrib/README: Added.
+        * BugsSite/contrib/README.Mailif: Added.
+        * BugsSite/contrib/bug_email.pl: Added.
+        * BugsSite/contrib/bugmail_help.html: Added.
+        * BugsSite/contrib/bugzilla-submit: Added.
+        * BugsSite/contrib/bugzilla-submit/README: Added.
+        * BugsSite/contrib/bugzilla-submit/bugdata.txt: Added.
+        * BugsSite/contrib/bugzilla-submit/bugzilla-submit: Added.
+        * BugsSite/contrib/bugzilla-submit/bugzilla-submit.xml: Added.
+        * BugsSite/contrib/bugzilla.procmailrc: Added.
+        * BugsSite/contrib/bugzilla_email_append.pl: Added.
+        * BugsSite/contrib/bugzilla_ldapsync.rb: Added.
+        * BugsSite/contrib/bzdbcopy.pl: Added.
+        * BugsSite/contrib/cmdline: Added.
+        * BugsSite/contrib/cmdline/bugcount: Added.
+        * BugsSite/contrib/cmdline/bugids: Added.
+        * BugsSite/contrib/cmdline/buglist: Added.
+        * BugsSite/contrib/cmdline/bugs: Added.
+        * BugsSite/contrib/cmdline/bugslink: Added.
+        * BugsSite/contrib/cmdline/makequery: Added.
+        * BugsSite/contrib/cmdline/query.conf: Added.
+        * BugsSite/contrib/cvs-update.pl: Added.
+        * BugsSite/contrib/gnats2bz.pl: Added.
+        * BugsSite/contrib/gnatsparse: Added.
+        * BugsSite/contrib/gnatsparse/README: Added.
+        * BugsSite/contrib/gnatsparse/gnatsparse.py: Added.
+        * BugsSite/contrib/gnatsparse/magic.py: Added.
+        * BugsSite/contrib/gnatsparse/specialuu.py: Added.
+        * BugsSite/contrib/jb2bz.py: Added.
+        * BugsSite/contrib/mysqld-watcher.pl: Added.
+        * BugsSite/contrib/sendbugmail.pl: Added.
+        * BugsSite/contrib/sendunsentbugmail.pl: Added.
+        * BugsSite/contrib/syncLDAP.pl: Added.
+        * BugsSite/contrib/yp_nomail.sh: Added.
+        * BugsSite/createaccount.cgi: Added.
+        * BugsSite/data: Added.
+        * BugsSite/data/.htaccess: Added.
+        * BugsSite/data/attachments: Added.
+        * BugsSite/data/attachments/.htaccess: Added.
+        * BugsSite/data/duplicates: Added.
+        * BugsSite/data/mail: Added.
+        * BugsSite/data/mimedump-tmp: Added.
+        * BugsSite/data/mining: Added.
+        * BugsSite/data/nomail: Added.
+        * BugsSite/data/params: Added.
+        * BugsSite/data/template: Added.
+        * BugsSite/data/template/template: Added.
+        * BugsSite/data/template/template/en: Added.
+        * BugsSite/data/template/template/en/custom: Added.
+        * BugsSite/data/template/template/en/custom/account: Added.
+        * BugsSite/data/template/template/en/custom/account/auth: Added.
+        * BugsSite/data/template/template/en/custom/account/auth/ldap-error.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/auth/login-small.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/auth/login.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/cancel-token.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/email: Added.
+        * BugsSite/data/template/template/en/custom/account/email/change-new.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/email/change-old.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/email/confirm.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/exists.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/password: Added.
+        * BugsSite/data/template/template/en/custom/account/password/forgotten-password.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/password/set-forgotten-password.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/account.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/email.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/permissions.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/prefs.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/saved-searches.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/account/prefs/settings.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/add.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/del.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/new.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/reclassify.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/select.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/classifications/update.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/select-product.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/components/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/select-field.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/fieldvalues/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/flag-type: Added.
+        * BugsSite/data/template/template/en/custom/admin/flag-type/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/flag-type/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/flag-type/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/change.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/groups/remove.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/keywords/rebuild-cache.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/select-product.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/milestones/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/groupcontrol: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/groupcontrol/confirm-edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/groupcontrol/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/list-classifications.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/products/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/settings: Added.
+        * BugsSite/data/template/template/en/custom/admin/settings/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/settings/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/listselectvars.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/search.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/users/userdata.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/confirm-delete.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/deleted.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/select-product.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/admin/versions/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment: Added.
+        * BugsSite/data/template/template/en/custom/attachment/choose.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/content-types.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/diff-file.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/diff-footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/diff-header.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/show-multiple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/attachment/updated.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug: Added.
+        * BugsSite/data/template/template/en/custom/bug/activity: Added.
+        * BugsSite/data/template/template/en/custom/bug/activity/show.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/activity/table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/choose.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/comments.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/comment-guided.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/comment.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/create-guided.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/create.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/created.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/make-template.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/create/user-message.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/dependency-graph.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/dependency-tree.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/edit.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/knob.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/navigate.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/bugmail.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/confirm-duplicate.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/header.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/midair.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/next.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/results.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/process/verify-new-product.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/show-multiple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/show.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/show.xml.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/summarize-time.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/time.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/votes: Added.
+        * BugsSite/data/template/template/en/custom/bug/votes/delete-all.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/votes/list-for-bug.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/bug/votes/list-for-user.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/config.js.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/config.rdf.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/flag: Added.
+        * BugsSite/data/template/template/en/custom/flag/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global: Added.
+        * BugsSite/data/template/template/en/custom/global/banner.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/choose-classification.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/choose-product.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/code-error.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/confirm-user-match.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/field-descs.none.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/footer.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/header.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/help-header.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/help.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/hidden-fields.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/initialize.none.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/message.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/messages.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/select-menu.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/setting-descs.none.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/site-navigation.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/useful-links.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/user-error.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/userselect.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/global/variables.none.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/index.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list: Added.
+        * BugsSite/data/template/template/en/custom/list/change-columns.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/edit-multiple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list-simple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.csv.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.ics.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.js.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.rdf.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/list.rss.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/quips.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/server-push.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/list/table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/pages: Added.
+        * BugsSite/data/template/template/en/custom/pages/bug-writing.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/pages/fields.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/pages/linked.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/pages/linkify.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/pages/voting.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports: Added.
+        * BugsSite/data/template/template/en/custom/reports/chart.csv.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/chart.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/chart.png.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/components.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/create-chart.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/duplicates-simple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/duplicates-table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/duplicates.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/duplicates.rdf.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/edit-series.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/keywords.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/menu.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-bar.png.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-line.png.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-pie.png.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-simple.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-table.csv.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report-table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report.csv.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/report.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/series-common.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/reports/series.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/request: Added.
+        * BugsSite/data/template/template/en/custom/request/email.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/request/queue.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search: Added.
+        * BugsSite/data/template/template/en/custom/search/boolean-charts.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/form.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/knob.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-advanced.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-create-series.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-help.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-report-graph.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-report-select.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-report-table.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/search-specific.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/search/tabs.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/sidebar.xul.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/whine: Added.
+        * BugsSite/data/template/template/en/custom/whine/mail.html.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/whine/mail.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/whine/multipart-mime.txt.tmpl: Added.
+        * BugsSite/data/template/template/en/custom/whine/schedule.html.tmpl: Added.
+        * BugsSite/data/template/template/en/default: Added.
+        * BugsSite/data/template/template/en/default/attachment: Added.
+        * BugsSite/data/template/template/en/default/attachment/edit-aroben.html.tmpl: Added.
+        * BugsSite/data/template/template/en/default/list: Added.
+        * BugsSite/data/template/template/en/default/list/list.atom.tmpl: Added.
+        * BugsSite/data/versioncache: Added.
+        * BugsSite/data/versioncache.13P9L: Added.
+        * BugsSite/data/versioncache.1lH1E: Added.
+        * BugsSite/data/versioncache.3AnHd: Added.
+        * BugsSite/data/versioncache.3Jmjt: Added.
+        * BugsSite/data/versioncache.3JzIL: Added.
+        * BugsSite/data/versioncache.77b4y: Added.
+        * BugsSite/data/versioncache.7VzyU: Added.
+        * BugsSite/data/versioncache.EQdAm: Added.
+        * BugsSite/data/versioncache.EouAG: Added.
+        * BugsSite/data/versioncache.LJ5n1: Added.
+        * BugsSite/data/versioncache.Lb0fW: Added.
+        * BugsSite/data/versioncache.PyAd8: Added.
+        * BugsSite/data/versioncache.SFyse: Added.
+        * BugsSite/data/versioncache.SkTTg: Added.
+        * BugsSite/data/versioncache.VVO7E: Added.
+        * BugsSite/data/versioncache.XbxgU: Added.
+        * BugsSite/data/versioncache.Yezqr: Added.
+        * BugsSite/data/versioncache.dtzIv: Added.
+        * BugsSite/data/versioncache.jzpeh: Added.
+        * BugsSite/data/versioncache.pbn6U: Added.
+        * BugsSite/data/versioncache.qyixS: Added.
+        * BugsSite/data/versioncache.sBMdb: Added.
+        * BugsSite/data/versioncache.xNi34: Added.
+        * BugsSite/data/webdot: Added.
+        * BugsSite/data/webdot/.htaccess: Added.
+        * BugsSite/data/webdot/0ZLH3QpFd8.dot: Added.
+        * BugsSite/data/webdot/3s6e7eC2Dy.dot: Added.
+        * BugsSite/data/webdot/6MW0q54cyY.dot: Added.
+        * BugsSite/data/webdot/A2RlhPdO2Q.dot: Added.
+        * BugsSite/data/webdot/DuBX4I4946.dot: Added.
+        * BugsSite/data/webdot/GudTgvrKBX.dot: Added.
+        * BugsSite/data/webdot/I1mCbLtAzQ.dot: Added.
+        * BugsSite/data/webdot/JtKgvWGVb4.dot: Added.
+        * BugsSite/data/webdot/RFk4bjAwYc.dot: Added.
+        * BugsSite/data/webdot/YQ1pWFVfqt.dot: Added.
+        * BugsSite/data/webdot/YcFUepShZI.dot: Added.
+        * BugsSite/data/webdot/a9i00KgTQk.dot: Added.
+        * BugsSite/data/webdot/c412GYaHch.dot: Added.
+        * BugsSite/data/webdot/hjYnYr3tV1.dot: Added.
+        * BugsSite/data/webdot/pq3Qw7wynI.dot: Added.
+        * BugsSite/data/webdot/tL7GjA7bqH.dot: Added.
+        * BugsSite/defparams.pl: Added.
+        * BugsSite/describecomponents.cgi: Added.
+        * BugsSite/describekeywords.cgi: Added.
+        * BugsSite/describekeywords.cgi.bak: Added.
+        * BugsSite/docs: Added.
+        * BugsSite/docs/.cvsignore: Added.
+        * BugsSite/docs/README.docs: Added.
+        * BugsSite/docs/html: Added.
+        * BugsSite/docs/html/Bugzilla-Guide.html: Added.
+        * BugsSite/docs/html/about.html: Added.
+        * BugsSite/docs/html/administration.html: Added.
+        * BugsSite/docs/html/bug_page.html: Added.
+        * BugsSite/docs/html/bugreports.html: Added.
+        * BugsSite/docs/html/cmdline-bugmail.html: Added.
+        * BugsSite/docs/html/cmdline.html: Added.
+        * BugsSite/docs/html/components.html: Added.
+        * BugsSite/docs/html/configuration.html: Added.
+        * BugsSite/docs/html/conventions.html: Added.
+        * BugsSite/docs/html/copyright.html: Added.
+        * BugsSite/docs/html/credits.html: Added.
+        * BugsSite/docs/html/cust-change-permissions.html: Added.
+        * BugsSite/docs/html/cust-hooks.html: Added.
+        * BugsSite/docs/html/cust-templates.html: Added.
+        * BugsSite/docs/html/customization.html: Added.
+        * BugsSite/docs/html/dbdoc.html: Added.
+        * BugsSite/docs/html/dbmodify.html: Added.
+        * BugsSite/docs/html/disclaimer.html: Added.
+        * BugsSite/docs/html/extraconfig.html: Added.
+        * BugsSite/docs/html/faq.html: Added.
+        * BugsSite/docs/html/flags-overview.html: Added.
+        * BugsSite/docs/html/flags.html: Added.
+        * BugsSite/docs/html/general-advice.html: Added.
+        * BugsSite/docs/html/gfdl-0.html: Added.
+        * BugsSite/docs/html/gfdl-1.html: Added.
+        * BugsSite/docs/html/gfdl-10.html: Added.
+        * BugsSite/docs/html/gfdl-2.html: Added.
+        * BugsSite/docs/html/gfdl-3.html: Added.
+        * BugsSite/docs/html/gfdl-4.html: Added.
+        * BugsSite/docs/html/gfdl-5.html: Added.
+        * BugsSite/docs/html/gfdl-6.html: Added.
+        * BugsSite/docs/html/gfdl-7.html: Added.
+        * BugsSite/docs/html/gfdl-8.html: Added.
+        * BugsSite/docs/html/gfdl-9.html: Added.
+        * BugsSite/docs/html/gfdl-howto.html: Added.
+        * BugsSite/docs/html/gfdl.html: Added.
+        * BugsSite/docs/html/glossary.html: Added.
+        * BugsSite/docs/html/groups.html: Added.
+        * BugsSite/docs/html/hintsandtips.html: Added.
+        * BugsSite/docs/html/index.html: Added.
+        * BugsSite/docs/html/install-perlmodules-manual.html: Added.
+        * BugsSite/docs/html/installation.html: Added.
+        * BugsSite/docs/html/installing-bugzilla.html: Added.
+        * BugsSite/docs/html/integration.html: Added.
+        * BugsSite/docs/html/lifecycle.html: Added.
+        * BugsSite/docs/html/list.html: Added.
+        * BugsSite/docs/html/milestones.html: Added.
+        * BugsSite/docs/html/modules-manual-download.html: Added.
+        * BugsSite/docs/html/modules-manual-instructions.html: Added.
+        * BugsSite/docs/html/modules-manual-optional.html: Added.
+        * BugsSite/docs/html/myaccount.html: Added.
+        * BugsSite/docs/html/newversions.html: Added.
+        * BugsSite/docs/html/nonroot.html: Added.
+        * BugsSite/docs/html/os-specific.html: Added.
+        * BugsSite/docs/html/parameters.html: Added.
+        * BugsSite/docs/html/paranoid-security.html: Added.
+        * BugsSite/docs/html/patches.html: Added.
+        * BugsSite/docs/html/patchviewer.html: Added.
+        * BugsSite/docs/html/products.html: Added.
+        * BugsSite/docs/html/query.html: Added.
+        * BugsSite/docs/html/quips.html: Added.
+        * BugsSite/docs/html/reporting.html: Added.
+        * BugsSite/docs/html/security-bugzilla.html: Added.
+        * BugsSite/docs/html/security-mysql.html: Added.
+        * BugsSite/docs/html/security-os.html: Added.
+        * BugsSite/docs/html/security-webserver.html: Added.
+        * BugsSite/docs/html/security.html: Added.
+        * BugsSite/docs/html/trbl-bundlebugzilla.html: Added.
+        * BugsSite/docs/html/trbl-dbdsponge.html: Added.
+        * BugsSite/docs/html/trbl-index.html: Added.
+        * BugsSite/docs/html/trbl-passwd-encryption.html: Added.
+        * BugsSite/docs/html/trbl-perlmodule.html: Added.
+        * BugsSite/docs/html/trbl-relogin-everyone.html: Added.
+        * BugsSite/docs/html/trbl-testserver.html: Added.
+        * BugsSite/docs/html/trouble-filetemp.html: Added.
+        * BugsSite/docs/html/troubleshooting.html: Added.
+        * BugsSite/docs/html/upgrading.html: Added.
+        * BugsSite/docs/html/useradmin.html: Added.
+        * BugsSite/docs/html/userpreferences.html: Added.
+        * BugsSite/docs/html/using-intro.html: Added.
+        * BugsSite/docs/html/using.html: Added.
+        * BugsSite/docs/html/versions.html: Added.
+        * BugsSite/docs/html/voting.html: Added.
+        * BugsSite/docs/html/whining.html: Added.
+        * BugsSite/docs/html/x3190.html: Added.
+        * BugsSite/docs/images: Added.
+        * BugsSite/docs/images/bzLifecycle.png: Added.
+        * BugsSite/docs/images/bzLifecycle.xml: Added.
+        * BugsSite/docs/images/callouts: Added.
+        * BugsSite/docs/images/callouts/1.gif: Added.
+        * BugsSite/docs/images/callouts/2.gif: Added.
+        * BugsSite/docs/images/callouts/3.gif: Added.
+        * BugsSite/docs/images/caution.gif: Added.
+        * BugsSite/docs/images/note.gif: Added.
+        * BugsSite/docs/images/tip.gif: Added.
+        * BugsSite/docs/images/warning.gif: Added.
+        * BugsSite/docs/makedocs.pl: Added.
+        * BugsSite/docs/pdf: Added.
+        * BugsSite/docs/pdf/Bugzilla-Guide.pdf: Added.
+        * BugsSite/docs/rel_notes.txt: Added.
+        * BugsSite/docs/txt: Added.
+        * BugsSite/docs/txt/Bugzilla-Guide.txt: Added.
+        * BugsSite/docs/xml: Added.
+        * BugsSite/docs/xml/Bugzilla-Guide.xml: Added.
+        * BugsSite/docs/xml/about.xml: Added.
+        * BugsSite/docs/xml/administration.xml: Added.
+        * BugsSite/docs/xml/conventions.xml: Added.
+        * BugsSite/docs/xml/customization.xml: Added.
+        * BugsSite/docs/xml/dbschema.mysql: Added.
+        * BugsSite/docs/xml/faq.xml: Added.
+        * BugsSite/docs/xml/filetemp.patch: Added.
+        * BugsSite/docs/xml/gfdl.xml: Added.
+        * BugsSite/docs/xml/glossary.xml: Added.
+        * BugsSite/docs/xml/index.xml: Added.
+        * BugsSite/docs/xml/installation.xml: Added.
+        * BugsSite/docs/xml/integration.xml: Added.
+        * BugsSite/docs/xml/introduction.xml: Added.
+        * BugsSite/docs/xml/modules.xml: Added.
+        * BugsSite/docs/xml/patches.xml: Added.
+        * BugsSite/docs/xml/requiredsoftware.xml: Added.
+        * BugsSite/docs/xml/security.xml: Added.
+        * BugsSite/docs/xml/troubleshooting.xml: Added.
+        * BugsSite/docs/xml/using.xml: Added.
+        * BugsSite/doeditparams.cgi: Added.
+        * BugsSite/duplicates.cgi: Added.
+        * BugsSite/duplicates.xul: Added.
+        * BugsSite/editclassifications.cgi: Added.
+        * BugsSite/editcomponents.cgi: Added.
+        * BugsSite/editflagtypes.cgi: Added.
+        * BugsSite/editgroups.cgi: Added.
+        * BugsSite/editkeywords.cgi: Added.
+        * BugsSite/editmilestones.cgi: Added.
+        * BugsSite/editparams.cgi: Added.
+        * BugsSite/editproducts.cgi: Added.
+        * BugsSite/editsettings.cgi: Added.
+        * BugsSite/editusers.cgi: Added.
+        * BugsSite/editvalues.cgi: Added.
+        * BugsSite/editversions.cgi: Added.
+        * BugsSite/editwhines.cgi: Added.
+        * BugsSite/enter_bug.cgi: Added.
+        * BugsSite/favicon.ico: Added.
+        * BugsSite/globals.pl: Added.
+        * BugsSite/graphs: Added.
+        * BugsSite/images: Added.
+        * BugsSite/images/padlock.png: Added.
+        * BugsSite/importxml.pl: Added.
+        * BugsSite/index.cgi: Added.
+        * BugsSite/js: Added.
+        * BugsSite/js/duplicates.js: Added.
+        * BugsSite/js/productform.js: Added.
+        * BugsSite/localconfig.js: Added.
+        * BugsSite/long_list.cgi: Added.
+        * BugsSite/move.pl: Added.
+        * BugsSite/page.cgi: Added.
+        * BugsSite/post_bug.cgi: Added.
+        * BugsSite/process_bug.cgi: Added.
+        * BugsSite/productmenu.js: Added.
+        * BugsSite/query.cgi: Added.
+        * BugsSite/quicksearch.html: Added.
+        * BugsSite/quicksearch.js: Added.
+        * BugsSite/quicksearchhack.html: Added.
+        * BugsSite/quips.cgi: Added.
+        * BugsSite/relogin.cgi: Added.
+        * BugsSite/report.cgi: Added.
+        * BugsSite/reports.cgi: Added.
+        * BugsSite/request.cgi: Added.
+        * BugsSite/robots.txt: Added.
+        * BugsSite/runtests.pl: Added.
+        * BugsSite/sanitycheck.cgi: Added.
+        * BugsSite/show_activity.cgi: Added.
+        * BugsSite/show_bug.cgi: Added.
+        * BugsSite/showattachment.cgi: Added.
+        * BugsSite/showdependencygraph.cgi: Added.
+        * BugsSite/showdependencytree.cgi: Added.
+        * BugsSite/sidebar.cgi: Added.
+        * BugsSite/skins: Added.
+        * BugsSite/skins/.cvsignore: Added.
+        * BugsSite/skins/custom: Added.
+        * BugsSite/skins/custom/admin.css: Added.
+        * BugsSite/skins/custom/buglist.css: Added.
+        * BugsSite/skins/custom/duplicates.css: Added.
+        * BugsSite/skins/custom/editusers.css: Added.
+        * BugsSite/skins/custom/global.css: Added.
+        * BugsSite/skins/custom/index.css: Added.
+        * BugsSite/skins/custom/opendarwin.gif: Added.
+        * BugsSite/skins/custom/panel.css: Added.
+        * BugsSite/skins/custom/show_multiple.css: Added.
+        * BugsSite/skins/custom/summarize-time.css: Added.
+        * BugsSite/skins/custom/voting.css: Added.
+        * BugsSite/skins/standard: Added.
+        * BugsSite/skins/standard/admin.css: Added.
+        * BugsSite/skins/standard/buglist.css: Added.
+        * BugsSite/skins/standard/duplicates.css: Added.
+        * BugsSite/skins/standard/editusers.css: Added.
+        * BugsSite/skins/standard/global: Added.
+        * BugsSite/skins/standard/global.css: Added.
+        * BugsSite/skins/standard/global/body-back.gif: Added.
+        * BugsSite/skins/standard/global/header.png: Added.
+        * BugsSite/skins/standard/index: Added.
+        * BugsSite/skins/standard/index.css: Added.
+        * BugsSite/skins/standard/index/front.jpg: Added.
+        * BugsSite/skins/standard/index/front.png: Added.
+        * BugsSite/skins/standard/panel.css: Added.
+        * BugsSite/skins/standard/show_multiple.css: Added.
+        * BugsSite/skins/standard/summarize-time.css: Added.
+        * BugsSite/skins/standard/voting.css: Added.
+        * BugsSite/summarize_time.cgi: Added.
+        * BugsSite/t: Added.
+        * BugsSite/t/001compile.t: Added.
+        * BugsSite/t/002goodperl.t: Added.
+        * BugsSite/t/003safesys.t: Added.
+        * BugsSite/t/004template.t: Added.
+        * BugsSite/t/005no_tabs.t: Added.
+        * BugsSite/t/006spellcheck.t: Added.
+        * BugsSite/t/007util.t: Added.
+        * BugsSite/t/008filter.t: Added.
+        * BugsSite/t/009bugwords.t: Added.
+        * BugsSite/t/011pod.t: Added.
+        * BugsSite/t/Support: Added.
+        * BugsSite/t/Support/Files.pm: Added.
+        * BugsSite/t/Support/Systemexec.pm: Added.
+        * BugsSite/t/Support/Templates.pm: Added.
+        * BugsSite/t/testchart.gif: Added.
+        * BugsSite/t/testchart.png: Added.
+        * BugsSite/t/testgd.png: Added.
+        * BugsSite/template: Added.
+        * BugsSite/template/.cvsignore: Added.
+        * BugsSite/template/.htaccess: Added.
+        * BugsSite/template/en: Added.
+        * BugsSite/template/en/.cvsignore: Added.
+        * BugsSite/template/en/custom: Added.
+        * BugsSite/template/en/custom/account: Added.
+        * BugsSite/template/en/custom/account/auth: Added.
+        * BugsSite/template/en/custom/account/auth/ldap-error.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/auth/login-small.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/auth/login.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/cancel-token.txt.tmpl: Added.
+        * BugsSite/template/en/custom/account/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/email: Added.
+        * BugsSite/template/en/custom/account/email/change-new.txt.tmpl: Added.
+        * BugsSite/template/en/custom/account/email/change-old.txt.tmpl: Added.
+        * BugsSite/template/en/custom/account/email/confirm.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/exists.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/password: Added.
+        * BugsSite/template/en/custom/account/password/forgotten-password.txt.tmpl: Added.
+        * BugsSite/template/en/custom/account/password/set-forgotten-password.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs: Added.
+        * BugsSite/template/en/custom/account/prefs/account.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/email.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/permissions.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/prefs.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/saved-searches.html.tmpl: Added.
+        * BugsSite/template/en/custom/account/prefs/settings.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin: Added.
+        * BugsSite/template/en/custom/admin/classifications: Added.
+        * BugsSite/template/en/custom/admin/classifications/add.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/del.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/new.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/reclassify.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/select.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/classifications/update.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components: Added.
+        * BugsSite/template/en/custom/admin/components/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/select-product.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/components/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/select-field.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/fieldvalues/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/flag-type: Added.
+        * BugsSite/template/en/custom/admin/flag-type/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/flag-type/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/flag-type/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups: Added.
+        * BugsSite/template/en/custom/admin/groups/change.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/groups/remove.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords: Added.
+        * BugsSite/template/en/custom/admin/keywords/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/keywords/rebuild-cache.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones: Added.
+        * BugsSite/template/en/custom/admin/milestones/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/select-product.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/milestones/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products: Added.
+        * BugsSite/template/en/custom/admin/products/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/groupcontrol: Added.
+        * BugsSite/template/en/custom/admin/products/groupcontrol/confirm-edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/groupcontrol/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/list-classifications.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/products/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/settings: Added.
+        * BugsSite/template/en/custom/admin/settings/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/settings/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/table.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users: Added.
+        * BugsSite/template/en/custom/admin/users/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/listselectvars.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/search.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/users/userdata.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions: Added.
+        * BugsSite/template/en/custom/admin/versions/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/deleted.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/select-product.html.tmpl: Added.
+        * BugsSite/template/en/custom/admin/versions/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment: Added.
+        * BugsSite/template/en/custom/attachment/choose.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/content-types.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/diff-file.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/diff-footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/diff-header.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/show-multiple.html.tmpl: Added.
+        * BugsSite/template/en/custom/attachment/updated.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug: Added.
+        * BugsSite/template/en/custom/bug/activity: Added.
+        * BugsSite/template/en/custom/bug/activity/show.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/activity/table.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/choose.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/comments.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create: Added.
+        * BugsSite/template/en/custom/bug/create/comment-guided.txt.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/comment.txt.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/create-guided.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/create.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/created.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/make-template.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/create/user-message.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/dependency-graph.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/dependency-tree.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/edit.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/knob.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/navigate.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process: Added.
+        * BugsSite/template/en/custom/bug/process/bugmail.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/confirm-duplicate.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/header.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/midair.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/next.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/results.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/process/verify-new-product.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/show-multiple.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/show.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/show.xml.tmpl: Added.
+        * BugsSite/template/en/custom/bug/summarize-time.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/time.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/votes: Added.
+        * BugsSite/template/en/custom/bug/votes/delete-all.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/votes/list-for-bug.html.tmpl: Added.
+        * BugsSite/template/en/custom/bug/votes/list-for-user.html.tmpl: Added.
+        * BugsSite/template/en/custom/config.js.tmpl: Added.
+        * BugsSite/template/en/custom/config.rdf.tmpl: Added.
+        * BugsSite/template/en/custom/filterexceptions.pl: Added.
+        * BugsSite/template/en/custom/flag: Added.
+        * BugsSite/template/en/custom/flag/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/global: Added.
+        * BugsSite/template/en/custom/global/banner.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/choose-classification.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/choose-product.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/code-error.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/confirm-user-match.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/field-descs.none.tmpl: Added.
+        * BugsSite/template/en/custom/global/footer.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/header.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/help-header.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/help.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/hidden-fields.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/initialize.none.tmpl: Added.
+        * BugsSite/template/en/custom/global/message.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/messages.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/select-menu.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/setting-descs.none.tmpl: Added.
+        * BugsSite/template/en/custom/global/site-navigation.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/useful-links.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/user-error.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/userselect.html.tmpl: Added.
+        * BugsSite/template/en/custom/global/variables.none.tmpl: Added.
+        * BugsSite/template/en/custom/index.html.tmpl: Added.
+        * BugsSite/template/en/custom/list: Added.
+        * BugsSite/template/en/custom/list/change-columns.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/edit-multiple.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/list-simple.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.csv.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.ics.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.js.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.rdf.tmpl: Added.
+        * BugsSite/template/en/custom/list/list.rss.tmpl: Added.
+        * BugsSite/template/en/custom/list/quips.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/server-push.html.tmpl: Added.
+        * BugsSite/template/en/custom/list/table.html.tmpl: Added.
+        * BugsSite/template/en/custom/pages: Added.
+        * BugsSite/template/en/custom/pages/bug-writing.html.tmpl: Added.
+        * BugsSite/template/en/custom/pages/fields.html.tmpl: Added.
+        * BugsSite/template/en/custom/pages/linked.html.tmpl: Added.
+        * BugsSite/template/en/custom/pages/linkify.html.tmpl: Added.
+        * BugsSite/template/en/custom/pages/voting.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports: Added.
+        * BugsSite/template/en/custom/reports/chart.csv.tmpl: Added.
+        * BugsSite/template/en/custom/reports/chart.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/chart.png.tmpl: Added.
+        * BugsSite/template/en/custom/reports/components.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/create-chart.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/duplicates-simple.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/duplicates-table.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/duplicates.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/duplicates.rdf.tmpl: Added.
+        * BugsSite/template/en/custom/reports/edit-series.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/keywords.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/menu.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-bar.png.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-line.png.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-pie.png.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-simple.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-table.csv.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report-table.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report.csv.tmpl: Added.
+        * BugsSite/template/en/custom/reports/report.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/series-common.html.tmpl: Added.
+        * BugsSite/template/en/custom/reports/series.html.tmpl: Added.
+        * BugsSite/template/en/custom/request: Added.
+        * BugsSite/template/en/custom/request/email.txt.tmpl: Added.
+        * BugsSite/template/en/custom/request/queue.html.tmpl: Added.
+        * BugsSite/template/en/custom/search: Added.
+        * BugsSite/template/en/custom/search/boolean-charts.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/form.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/knob.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-advanced.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-create-series.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-help.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-report-graph.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-report-select.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-report-table.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/search-specific.html.tmpl: Added.
+        * BugsSite/template/en/custom/search/tabs.html.tmpl: Added.
+        * BugsSite/template/en/custom/sidebar.xul.tmpl: Added.
+        * BugsSite/template/en/custom/whine: Added.
+        * BugsSite/template/en/custom/whine/mail.html.tmpl: Added.
+        * BugsSite/template/en/custom/whine/mail.txt.tmpl: Added.
+        * BugsSite/template/en/custom/whine/multipart-mime.txt.tmpl: Added.
+        * BugsSite/template/en/custom/whine/schedule.html.tmpl: Added.
+        * BugsSite/template/en/default: Added.
+        * BugsSite/template/en/default/account: Added.
+        * BugsSite/template/en/default/account/auth: Added.
+        * BugsSite/template/en/default/account/auth/ldap-error.html.tmpl: Added.
+        * BugsSite/template/en/default/account/auth/login-small.html.tmpl: Added.
+        * BugsSite/template/en/default/account/auth/login.html.tmpl: Added.
+        * BugsSite/template/en/default/account/cancel-token.txt.tmpl: Added.
+        * BugsSite/template/en/default/account/create.html.tmpl: Added.
+        * BugsSite/template/en/default/account/created.html.tmpl: Added.
+        * BugsSite/template/en/default/account/email: Added.
+        * BugsSite/template/en/default/account/email/change-new.txt.tmpl: Added.
+        * BugsSite/template/en/default/account/email/change-old.txt.tmpl: Added.
+        * BugsSite/template/en/default/account/email/confirm.html.tmpl: Added.
+        * BugsSite/template/en/default/account/exists.html.tmpl: Added.
+        * BugsSite/template/en/default/account/password: Added.
+        * BugsSite/template/en/default/account/password/forgotten-password.txt.tmpl: Added.
+        * BugsSite/template/en/default/account/password/set-forgotten-password.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs: Added.
+        * BugsSite/template/en/default/account/prefs/account.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/email.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/permissions.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/prefs.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/saved-searches.html.tmpl: Added.
+        * BugsSite/template/en/default/account/prefs/settings.html.tmpl: Added.
+        * BugsSite/template/en/default/admin: Added.
+        * BugsSite/template/en/default/admin/classifications: Added.
+        * BugsSite/template/en/default/admin/classifications/add.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/del.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/new.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/reclassify.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/select.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/classifications/update.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components: Added.
+        * BugsSite/template/en/default/admin/components/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/select-product.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/components/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/select-field.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/fieldvalues/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/flag-type: Added.
+        * BugsSite/template/en/default/admin/flag-type/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/flag-type/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/flag-type/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups: Added.
+        * BugsSite/template/en/default/admin/groups/change.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/groups/remove.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords: Added.
+        * BugsSite/template/en/default/admin/keywords/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/keywords/rebuild-cache.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones: Added.
+        * BugsSite/template/en/default/admin/milestones/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/select-product.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/milestones/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products: Added.
+        * BugsSite/template/en/default/admin/products/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/groupcontrol: Added.
+        * BugsSite/template/en/default/admin/products/groupcontrol/confirm-edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/groupcontrol/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/list-classifications.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/products/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/settings: Added.
+        * BugsSite/template/en/default/admin/settings/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/settings/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/table.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users: Added.
+        * BugsSite/template/en/default/admin/users/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/listselectvars.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/search.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/users/userdata.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions: Added.
+        * BugsSite/template/en/default/admin/versions/confirm-delete.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/create.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/created.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/deleted.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/list.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/select-product.html.tmpl: Added.
+        * BugsSite/template/en/default/admin/versions/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment: Added.
+        * BugsSite/template/en/default/attachment/choose.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/content-types.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/create.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/created.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/diff-file.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/diff-footer.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/diff-header.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/edit-aroben.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/list.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/show-multiple.html.tmpl: Added.
+        * BugsSite/template/en/default/attachment/updated.html.tmpl: Added.
+        * BugsSite/template/en/default/bug: Added.
+        * BugsSite/template/en/default/bug/activity: Added.
+        * BugsSite/template/en/default/bug/activity/show.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/activity/table.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/choose.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/comments.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/create: Added.
+        * BugsSite/template/en/default/bug/create/comment-guided.txt.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/comment.txt.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/create-guided.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/create.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/created.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/make-template.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/create/user-message.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/dependency-graph.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/dependency-tree.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/edit.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/knob.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/navigate.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process: Added.
+        * BugsSite/template/en/default/bug/process/bugmail.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/confirm-duplicate.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/header.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/midair.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/next.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/results.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/process/verify-new-product.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/show-multiple.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/show.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/show.xml.tmpl: Added.
+        * BugsSite/template/en/default/bug/summarize-time.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/time.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/votes: Added.
+        * BugsSite/template/en/default/bug/votes/delete-all.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/votes/list-for-bug.html.tmpl: Added.
+        * BugsSite/template/en/default/bug/votes/list-for-user.html.tmpl: Added.
+        * BugsSite/template/en/default/config.js.tmpl: Added.
+        * BugsSite/template/en/default/config.rdf.tmpl: Added.
+        * BugsSite/template/en/default/filterexceptions.pl: Added.
+        * BugsSite/template/en/default/flag: Added.
+        * BugsSite/template/en/default/flag/list.html.tmpl: Added.
+        * BugsSite/template/en/default/global: Added.
+        * BugsSite/template/en/default/global/banner.html.tmpl: Added.
+        * BugsSite/template/en/default/global/choose-classification.html.tmpl: Added.
+        * BugsSite/template/en/default/global/choose-product.html.tmpl: Added.
+        * BugsSite/template/en/default/global/code-error.html.tmpl: Added.
+        * BugsSite/template/en/default/global/confirm-user-match.html.tmpl: Added.
+        * BugsSite/template/en/default/global/field-descs.none.tmpl: Added.
+        * BugsSite/template/en/default/global/footer.html.tmpl: Added.
+        * BugsSite/template/en/default/global/header.html.tmpl: Added.
+        * BugsSite/template/en/default/global/help-header.html.tmpl: Added.
+        * BugsSite/template/en/default/global/help.html.tmpl: Added.
+        * BugsSite/template/en/default/global/hidden-fields.html.tmpl: Added.
+        * BugsSite/template/en/default/global/initialize.none.tmpl: Added.
+        * BugsSite/template/en/default/global/message.html.tmpl: Added.
+        * BugsSite/template/en/default/global/messages.html.tmpl: Added.
+        * BugsSite/template/en/default/global/select-menu.html.tmpl: Added.
+        * BugsSite/template/en/default/global/setting-descs.none.tmpl: Added.
+        * BugsSite/template/en/default/global/site-navigation.html.tmpl: Added.
+        * BugsSite/template/en/default/global/useful-links.html.tmpl: Added.
+        * BugsSite/template/en/default/global/user-error.html.tmpl: Added.
+        * BugsSite/template/en/default/global/userselect.html.tmpl: Added.
+        * BugsSite/template/en/default/global/variables.none.tmpl: Added.
+        * BugsSite/template/en/default/index.html.tmpl: Added.
+        * BugsSite/template/en/default/list: Added.
+        * BugsSite/template/en/default/list/change-columns.html.tmpl: Added.
+        * BugsSite/template/en/default/list/edit-multiple.html.tmpl: Added.
+        * BugsSite/template/en/default/list/list-simple.html.tmpl: Added.
+        * BugsSite/template/en/default/list/list.atom.tmpl: Added.
+        * BugsSite/template/en/default/list/list.csv.tmpl: Added.
+        * BugsSite/template/en/default/list/list.html.tmpl: Added.
+        * BugsSite/template/en/default/list/list.ics.tmpl: Added.
+        * BugsSite/template/en/default/list/list.js.tmpl: Added.
+        * BugsSite/template/en/default/list/list.rdf.tmpl: Added.
+        * BugsSite/template/en/default/list/quips.html.tmpl: Added.
+        * BugsSite/template/en/default/list/server-push.html.tmpl: Added.
+        * BugsSite/template/en/default/list/table.html.tmpl: Added.
+        * BugsSite/template/en/default/pages: Added.
+        * BugsSite/template/en/default/pages/bug-writing.html.tmpl: Added.
+        * BugsSite/template/en/default/pages/fields.html.tmpl: Added.
+        * BugsSite/template/en/default/pages/linked.html.tmpl: Added.
+        * BugsSite/template/en/default/pages/linkify.html.tmpl: Added.
+        * BugsSite/template/en/default/pages/voting.html.tmpl: Added.
+        * BugsSite/template/en/default/reports: Added.
+        * BugsSite/template/en/default/reports/chart.csv.tmpl: Added.
+        * BugsSite/template/en/default/reports/chart.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/chart.png.tmpl: Added.
+        * BugsSite/template/en/default/reports/components.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/create-chart.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/duplicates-simple.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/duplicates-table.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/duplicates.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/duplicates.rdf.tmpl: Added.
+        * BugsSite/template/en/default/reports/edit-series.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/keywords.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/menu.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-bar.png.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-line.png.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-pie.png.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-simple.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-table.csv.tmpl: Added.
+        * BugsSite/template/en/default/reports/report-table.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/report.csv.tmpl: Added.
+        * BugsSite/template/en/default/reports/report.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/series-common.html.tmpl: Added.
+        * BugsSite/template/en/default/reports/series.html.tmpl: Added.
+        * BugsSite/template/en/default/request: Added.
+        * BugsSite/template/en/default/request/email.txt.tmpl: Added.
+        * BugsSite/template/en/default/request/queue.html.tmpl: Added.
+        * BugsSite/template/en/default/search: Added.
+        * BugsSite/template/en/default/search/boolean-charts.html.tmpl: Added.
+        * BugsSite/template/en/default/search/form.html.tmpl: Added.
+        * BugsSite/template/en/default/search/knob.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-advanced.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-create-series.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-help.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-report-graph.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-report-select.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-report-table.html.tmpl: Added.
+        * BugsSite/template/en/default/search/search-specific.html.tmpl: Added.
+        * BugsSite/template/en/default/search/tabs.html.tmpl: Added.
+        * BugsSite/template/en/default/sidebar.xul.tmpl: Added.
+        * BugsSite/template/en/default/whine: Added.
+        * BugsSite/template/en/default/whine/mail.html.tmpl: Added.
+        * BugsSite/template/en/default/whine/mail.txt.tmpl: Added.
+        * BugsSite/template/en/default/whine/multipart-mime.txt.tmpl: Added.
+        * BugsSite/template/en/default/whine/schedule.html.tmpl: Added.
+        * BugsSite/template/en/extension: Added.
+        * BugsSite/template/en/extension/filterexceptions.pl: Added.
+        * BugsSite/testagent.cgi: Added.
+        * BugsSite/testserver.pl: Added.
+        * BugsSite/token.cgi: Added.
+        * BugsSite/userprefs.cgi: Added.
+        * BugsSite/votes.cgi: Added.
+        * BugsSite/whine.pl: Added.
+        * BugsSite/whineatnews.pl: Added.
+        * BugsSite/xml.cgi: Added.
+
+2008-02-04  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker and Mark Rowe.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16618
+        [GTK] build-webkit and run-webkit-tests autootools support
+
+        Add support for the autotools build to the WebKit build and test
+        scripts.
+
+2008-02-04  Rodney Dawes  <dobey@wayofthemonkey.com>
+
+        Reviewed by Alp Toker and Mark Rowe.
+
+        Fix http://bugs.webkit.org/show_bug.cgi?id=17175.
+        Bug 17175: Use of C++ compiler flags in CFLAGS
+
+        Add global_cxxflags definition for inclusion in CXXFLAGS variables.
+        Only use -fno-rtti and $(SYMBOL_VISIBILITY_INLINES) with global_cxxflags as gcc complains they aren't valid for C.
+
+        * GNUmakefile.am:
+
+2008-02-04  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Remove all trailing whitespace in the GTK+ port and related
+        components.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-01-31  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Mark Rowe.
+
+        Fix the pkg-config file to follow GTK+ package naming and versioning
+        conventions.
+
+        Remove unneeded dependency listings.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-01-31  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Adam Roben.
+
+        http://bugs.webkit.org/show_bug.cgi?id=17006
+        [GTK] Header path should be webkit/webkit.h
+
+        Move the GTK+ API sources as needed and update the build systems.
+
+        * GNUmakefile.am:
+        * WebKit.pri:
+
+2008-01-27  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=14811
+        [gtk] [request] add a webkit_gtk_page_go_to_history_item function
+
+        * GNUmakefile.am: Added webkitwebbackforwardlist and webkitwebhistoryitem
+
+2008-01-26  Mark Rowe  <mrowe@apple.com>
+
+        Reviewed by Alp Toker.
+
+        Fix http://bugs.webkit.org/show_bug.cgi?id=17007.
+        Bug 17007: [GTK] autogen.sh attempts to use "libtoolize" on the Mac
+
+        libtoolize is installed as glibtoolize on Mac OS X to avoid naming conflicts
+        with other system commands.  Check for the presence of glibtoolize if libtoolize
+        cannot be found.
+
+        * autogen.sh:
+
+2008-01-23  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Remove whitespace after -I in automake include lists.
+
+        * GNUmakefile.am:
+
+2008-01-22  Christian Dywan  <christian@imendio.com>
+
+        Reviewed by Alp Toker.
+
+        [GTK] API: WebKitWebSettings is not usable
+        http://bugs.webkit.org/show_bug.cgi?id=16219
+
+        Implement WebKitWebSettings.
+
+        * GNUmakefile.am:
+
+2008-01-22  Simon Hausmann  <hausmann@webkit.org>
+
+        Reviewed by Lars.
+
+        Don't compile the ICO plugin when building against Qt >= 4.4
+        
+
+        * WebKit.pro:
+
+2008-01-21  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16955
+        Get errors when cross-compile webkit-gtk
+
+        * GNUmakefile.am: added ICU_CPPFLAGS
+        * configure.ac: added ICU_CPPFLAGS, removed ICU_CFLAGS
+
+2008-01-19  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        Add svg foreign object and svg experimental to the GTK+/autotools
+        build system.
+
+        * configure.ac:
+
+2008-01-15  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Anders.
+
+        Make the HTTP backend configurable in the GTK+ port. curl is currently
+        the only option.
+
+        * GNUmakefile.am:
+        * WebKit.pri:
+        * configure.ac:
+
+2008-01-15  Alp Toker  <alp@atoker.com>
+
+        GTK+/autotools build fix for GCC < 4. Use the -fvisibility compiler
+        flags only when they're available.
+
+        Additionally, use -fvisibility-inlines-hidden in both debug and
+        release builds when available to match the Mac build.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-01-12  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Mark Rowe.
+
+        Hide non-public symbols in GTK+/autotools release builds.
+
+        * GNUmakefile.am:
+
+2008-01-11  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Oliver Hunt.
+
+        Enable FastMalloc by default in GTK+/autotools and add a configure
+        switch.
+
+        * GNUmakefile.am:
+        * configure.ac:
+
+2008-01-11  Luca Bruno  <lethalman88@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16838
+        [GTK] Bad autotools debug and video options
+
+        Fix some configure options.
+
+        * configure.ac:
+
+2008-01-11  Mark Rowe  <mrowe@apple.com>
+
+        Attempt to fix the GTK+ and Qt builds.
+
+        * WebKit.pro:
+
+2008-01-10  Alp Toker  <alp@atoker.com>
+
+        SVG font build fix for GTK+/autotools.
+
+        * configure.ac:
+
+2008-01-05  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Fix configure script output with correct descriptions of the default
+        configuration options.
+
+        * configure.ac:
+
+2008-01-05  Sylvain Pasche  <sylvain.pasche@gmail.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16736
+        Allow autogen.sh invocation from a separate build directory.
+
+        * autogen.sh:
+
+2008-01-04  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Mark Rowe.
+
+        Remove AM_MAINTAINER_MODE, as recommended by the automake manual. The
+        "rebuild rules" will now be enabled by default.
+
+        This obviates the need to pass '--enable-maintainer-mode' to
+        configure.
+
+        * configure.ac:
+
+2008-01-02  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Rubber stamped by Alp.
+
+        Remove GDK_MULTIHEAD_SAFE and GTK_MULTIHEAD_SAFE because they break
+        the build. At least people doing a debug build on Ubuntu Hardy will see
+        the breakage. I was asked to leave the flags inside the files to ease future
+        debugging.
+
+        * GNUmakefile.am:
+        * WebKit.pri:
+
+2008-01-01  Alp Toker  <alp@atoker.com>
+
+        GTK+ autotools build fix. Track changes in r29051, r29058 and pass the
+        correct parameter to AM_INIT_AUTOMAKE.
+
+        * configure.ac:
+
+2007-12-30  Alp Toker  <alp@atoker.com>
+
+        Build fix for older autoconf versions.
+
+        * configure.ac:
+
+2007-12-29  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        Enable Database, XPath and XSLT features by default
+
+        * configure.ac:
+
+2007-12-29  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16669
+        autotools update and fixes
+
+        Various fixes to the autotools build
+
+        * GNUmakefile.am:
+          - Remove ICU_FLAGS because it adds -g in the CFLAGS/CXXFLAGS
+          - Fix clean rules (Rodney Dawes)
+          - Added webcore specific variables, remove STDINT_H and
+            PTHREAD_NP_H checks (already included in config.h)
+        * autogen.sh:
+          - Loosen automake and aclocal requirement
+        * configure.ac:
+          - Workaround AC_PROG_CXX putting -g in CXXFLAGS. Only use -g
+            when doing a debug build (Rodney Dawes)
+          - Fix webkit target and remove traces of XBL
+
+2007-12-27  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16353
+        [GTK] Check for deprecated API use (G_DISABLE_DEPRECATED etc.)
+
+        Added the flags mentioned in the bug only when doing 'debug'
+        builds. -DGST_DISABLE_DEPRECATED only added when video is enabled.
+
+        * GNUmakefile.am:
+        * WebKit.pri:
+
+2007-12-26  Jan Michael Alonzo  <jmalonzo@unpluggable.com>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16390
+        Use autotools or GNU make as the build system for the GTK port
+
+        * GNUmakefile.am: Added.
+        * autogen.sh: Added.
+        * configure.ac: Added.
+
+2007-12-20  Alp Toker  <alp@atoker.com>
+
+        Rubber-stamped by Maciej.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16542
+        [GTK] Text is missing with old Pango version
+
+        Back out commits r28880, r28876, r28865, r28864 which added Pango font
+        selection support. These changes caused a regression where no text was
+        displayed with older Pango versions.
+
+        * WebKit.pri:
+
+2007-12-19  Alp Toker  <alp@atoker.com>
+
+        Remove the cairo-ft pkg-config check. The GTK+ port doesn't use
+        cairo-ft directly following changes in r28864.
+
+        * WebKit.pri:
+
+2007-12-12  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Mark Rowe.
+
+        http://bugs.webkit.org/show_bug.cgi?id=16302
+        [GTK] Compiler flags for optimization
+
+        Use the compiler flags -fno-exceptions -fno-rtti.
+
+        This patch does not add all the flags discussed in the bug report,
+        only these two.
+
+        * WebKit.pri:
+
+2007-12-04  Xan Lopez  <xan@gnome.org>
+
+        Reviewed by Alp Toker.
+
+        http://bugs.webkit.org/show_bug.cgi?id=15561
+        GTK port needs DumpRenderTree implementation
+
+        Start work on the GTK+ DRT.
+
+        * WebKit.pro:
+
+2007-11-30  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Adam Roben.
+
+        http://bugs.webkit.org/show_bug.cgi?id=15691
+        [GTK] Public API does not follow GTK+ conventions
+
+        Refactor the WebKit/GTK+ public API. Changes:
+          WebKitPage -> WebKitWebView
+          WebKitFrame -> WebKitWebFrame
+
+        Public API source and header names have been updated to mirror the API
+        changes.
+
+        The API is now kept in WebKit/gtk/WebView to match other ports in the
+        same class such as Mac and Win.
+
+        * WebKit.pri:
+
+2007-11-26  Rodney Dawes  <dobey@wayofthemonkey.com>
+
+        Reviewed by Mark Rowe.
+
+        Set CONFIG option for the window system GTK+ is using
+
+        * WebKit.pri:
+
+2007-11-22  Alp Toker  <alp@atoker.com>
+
+        GTK+ build fix. Pass a correct LIBDIR value.
+
+        * WebKit.pri:
+
+2007-11-20  Mark Rowe  <mrowe@apple.com>
+
+        Reviewed by Alp Toker.
+
+        * WebKit.pri: Add in -Wno-unused-parameter to silence warnings in WebCore.
+
+2007-11-20  Alp Toker  <alp@atoker.com>
+
+        Reviewed by Simon Hausmann.
+
+        Clean up GTK+ port configuration.
+
+        Use similar compiler warning flags to the Mac build.
+
+        Add the qmake changes needed for DirectFB support.
+
+        * WebKit.pri:
+
+2007-11-07  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Mark.
+
+        Add WebKit/qt/Api to the dependency path when building QtLauncher and DumpRenderTree.
+        That means that changes to the public API of the Qt port also trigger a rebuild of the tools.
+
+        * WebKit.pri:
+
+2007-10-03  Lars Knoll  <lars@trolltech.com>
+
+        Signed off by olliej.
+
+        move WebKitQt to WebKit/qt for consistency with the other ports.
+
+        * WebKit.pri:
+        * WebKit.pro:
+
+2007-10-03  Lars Knoll  <lars@trolltech.com>
+
+        Reviewed by olliej.
+
+        Move the Qt version of DRT into the correct place and put the binary into BUILDDIR/bin.
+
+        * WebKit.pro:
+
+2007-09-29  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Mark.
+
+        -Fix http://bugs.webkit.org/show_bug.cgi?id=13226.
+        Remove Bakefiles from svn.
+
+        * Bakefiles/Bakefiles.bkgen: Removed.
+        * Bakefiles/ChangeLog: Removed.
+        * Bakefiles/Readme.txt: Removed.
+        * Bakefiles/presets.bkl: Removed.
+        * Bakefiles/update-file-lists.py: Removed.
+
+2007-09-20  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Rubber stamped by Adam.
+
+        Renamed files from *Gdk to *Gtk (see #14732) using the
+        work of Juan A. Suarez Romero as a base.
+
+        GDK -> GTK
+
+        * WebKit.pri:
+        * WebKit.pro:
+
+2007-07-29  Brian Mastenbrook  <brian@mastenbrook.net>
+
+        Build fix for WebKit/Gtk to compile on Fedora 7 as described in
+        http://bugs.webkit.org/show_bug.cgi?id=14557
+
+        * WebKit.pri: cairo-ft is used by the WebKit/Gtk port
+
+2007-07-27  Simon Hausmann  <hausmann@kde.org>
+
+        Done with and reviewed by Lars and Zack.
+
+        Exclude DumpRenderTree from the Qt build on Windows for now.
+
+        * WebKit.pro:
+
+2007-07-27  Simon Hausmann  <hausmann@kde.org>
+
+        Done with and reviewed by Lars and Zack.
+
+        Temporarily disable the ICO support for the Qt build on Windows.
+
+        * WebKit.pro:
+
+2007-07-26  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        Use QMAKE_LIBDIR instead of QMAKE_LFLAGS to specify the library search path for QtWebKit, as the former is portable and correctly transformed to /LIBPATH: with msvc for example.
+
+        * WebKit.pri:
+
+2007-07-22  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Adam.
+
+        Add WebKit/gtk/Api and WebCoreSupport API to the INCLUDEPATH to allow GdkLauncher to be
+        build against it.
+
+        * WebKit.pri:
+
+2007-07-18  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        Don't call gcc directly when building the dftables tool but use a separate .pro file for the Qt build.
+
+        * WebKit.pro:
+
+2007-07-18  Timothy Hatcher  <timothy@apple.com>
+
+        Add a SCRIPTS_PATH variable so Makefiles of differnet nested directories can
+        still use this one Makefile.shared as an include.
+
+        * Makefile.shared:
+
+2007-07-12  George Staikos  <staikos@kde.org>
+
+        Fix build in debug mode.
+
+        * WebKit.pri:
+
+2007-07-11  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Darin Adler.
+
+        As of http://bugs.webkit.org/show_bug.cgi?id=14527 move the
+        WebCore/ForwardingHeader/JavaScriptCore to JavaScriptCore
+
+        * WebKit.pri: Adjust INCLUDEPATH
+
+2007-06-25  Adam Roben  <aroben@apple.com>
+
+        Really remove LayoutTestResults.
+
+        * LayoutTestResults: Removed.
+
+2007-06-25  Adam Roben  <aroben@apple.com>
+
+        Fix Bug 14405: LayoutTestResults/qt should be in LayoutTests/qt
+        http://bugs.webkit.org/show_bug.cgi?id=14405
+
+        Reviewed by Anders.
+
+        * LayoutTestResults: Removed.
+
+2007-06-25  Alp Toker  <alp.toker@collabora.co.uk>
+
+        Reviewed by Mark.
+
+        http://bugs.webkit.org/show_bug.cgi?id=13975
+        Use system-provided libjpeg and libpng
+
+        * WebKit.pri: Link against external libjpeg and libpng.
+
+2007-06-20  Adam Roben  <aroben@apple.com>
+
+        Reviewed by Simon Hausmann.
+
+        More Gdk build fixing.
+
+        * WebKit.pro:
+
+2007-06-15  Adam Treat  <adam@staikos.net>
+
+        Reviewed by George Staikos.
+
+        Add ICO support to the Qt build.
+
+        * WebKit.pro:
+
+2007-06-13  George Staikos  <staikos@kde.org>
+
+        Reviewed by Lars.
+
+        Compile without self-linking.
+
+        * WebKit.pri:
+
+2007-06-13  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Lars.
+
+        * WebKit.pri: WebKitQt is now called QtWebKit.
+
+2007-05-31  Alp Toker  <alp.toker@collabora.co.uk>
+
+        Reviewed by Eric Seidel.
+
+        http://bugs.webkit.org/show_bug.cgi?id=13941
+        Rename WebCore/platform/network/gdk to WebCore/platform/network/curl
+
+        * WebKit.pri:
+
+2007-05-18  Holger Hans Peter Freyther  <zecke@selfish.org>
+
+        Reviewed by Mark Rowe.
+
+        * WebKit.pro: Build testkjs for Gdk and Qt
+
+2007-05-11  Holger Freyther <freyther@kde.org>
+
+        Reviewed by Mark Rowe.
+
+        Move libcurl configuration into WebKit.pri so it will be used by GdkLauncher,
+        and add ICU configuration to QMAKE_CXXFLAGS.
+
+        * WebKit.pri:
+
+2007-05-06  Erik Bunce  <kde@bunce.us>
+
+        Reviewed by Mark Rowe.
+
+        * WebKit.pri:
+        Removed unnecessary dependency on MacPorts (/opt/local)
+
+2007-05-03  Holger Freyther <freyther@kde.org>
+
+        Reviewed by Zack, landed by Simon.
+        This is bugzilla bug 13499.
+
+        * WebKit.pri: Place Qt into a scope, start sharing qmake with the Gdk
+        port
+        * WebKit.pro: Place Qt into a scope, start sharing qmake with the Gdk
+        port
+
+2007-04-27  Holger Freyther <freyther@kde.org>
+
+        Reviewed by Maciej.
+
+        Remove unmaintained CMake build system.
+
+        * CMakeLists.txt: Removed.
+
+2007-01-30  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        * WebKit.pri: libJavaScriptCore is gone with the Qt build
+        * WebKit.pro:
+
+2007-01-26  George Staikos  <staikos@kde.org>
+
+        Remove headers - not needed now.
+
+        * WebKit.pri:
+
+2007-01-23  George Staikos <staikos@kde.org>
+
+        Put everything back since we can't build everything without it yet.
+
+        * WebKit.pri:
+
+2007-01-16  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Remove everything but the new public API from
+        the include path.
+
+        * WebKit.pri:
+
+2007-01-11  George Staikos  <staikos@kde.org>
+
+        Fix the Qt build
+
+        * WebKit.pri:
+
+2007-01-03  Lars Knoll <lars@trolltech.com>
+
+        Fix the Qt build
+
+        * WebKit.pri:
+
+2006-12-17  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Rob Buis.
+
+        * WebKit.pro: Build testkjs.
+
+2006-12-14  Timothy Hatcher  <timothy@apple.com>
+
+        Reviewed by Brady.
+
+        * Makefile.shared: use $PIPESTATUS[0] and a sub-shell to exit with xcodebuild's exit status
+
+2006-12-13  Maciej Stachowiak  <mjs@apple.com>
+
+        Reviewed by Brady and Anders.
+
+        * Makefile.shared: Stop spewing the environment all the time, at least for command-line builds.
+
+2006-12-10  Zack Rusin  <zack@kde.org>
+
+        Client classes have been moved to WebKitQt/WebCoreSupport so
+        adjusting the pri file.
+
+        * WebKit.pri:
+
+2006-12-10  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Add WebKitBuild/Release back to the output dir for external build cases.
+
+        * WebKit.pri:
+
+2006-12-10  Zack Rusin  <zack@kde.org>
+
+        Fix the link directory location.
+
+        * WebKit.pri:
+
+2006-12-10  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Include DumpRenderTree in the Qt build
+
+        * WebKit.pro:
+
+2006-12-09  George Staikos  <staikos@kde.org>
+
+        Reviewed by Zack.
+
+        Correct the path to the libraries for QMake.
+
+        * WebKit.pri:
+
+2006-12-09  Lars Knoll <lars@trolltech.com>
+
+        Reviewed by Zack
+
+        Make it possible to build WebKit with qmake.
+
+        * WebKit.pri: Added.
+        * WebKit.pro: Added.
+
+2006-11-19  Simon Hausmann  <hausmann@kde.org>
+
+        Reviewed by Zack.
+
+        http://bugs.webkit.org/show_bug.cgi?id=11649
+
+        * CMakeLists.txt: Fix Qt-only build without KDE cmake files
+
+2006-10-30  Timothy Hatcher  <timothy@apple.com>
+
+        Reviewed by Brady.
+
+        Make the universal build return non-zero when module make fails.
+
+        * Makefile:
+
+2006-10-30  Stephanie Lewis  <slewis@apple.com>
+
+        Reviewed by Darin Adler.
+
+        Change Makefiles to return non-zero when module make fails.
+
+        * Makefile:
+
+2006-10-27  Brady Eidson  <beidson@apple.com>
+
+        Rubber stamped by Tim Hatcher
+
+        Added "make universal" to build universal binaries
+
+        * Makefile:
+        * Makefile.shared:
+
+2006-10-01  Nikolas Zimmermann  <zimmermann@kde.org>
+
+        Reviewed by eseidel.
+
+        * CMakeLists.txt: add option to disable colored output when building on the buildbot
+

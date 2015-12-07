@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3cache.qdoc -->
+<head>
+  <title>Qt 4.4: Q3CacheIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CacheIterator Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CacheIterator class provides an iterator for <a href="q3cache.html">Q3Cache</a> collections. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CacheIterator&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3cacheiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3cacheiterator.html#Q3CacheIterator">Q3CacheIterator</a></b> ( const Q3Cache&lt;type&gt; &amp; <i>cache</i> )</li>
+<li><div class="fn"/><b><a href="q3cacheiterator.html#Q3CacheIterator-2">Q3CacheIterator</a></b> ( const Q3CacheIterator&lt;type&gt; &amp; <i>ci</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cacheiterator.html#atFirst">atFirst</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3cacheiterator.html#atLast">atLast</a></b> () const</li>
+<li><div class="fn"/>uint <b><a href="q3cacheiterator.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#current">current</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3cacheiterator.html#currentKey">currentKey</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3cacheiterator.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#toFirst">toFirst</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#toLast">toLast</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3cacheiterator.html#operator-type--2a">operator type *</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#operator-28-29">operator()</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#operator-2b-eq">operator+=</a></b> ( uint <i>jump</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3cacheiterator.html#operator--eq">operator-=</a></b> ( uint <i>jump</i> )</li>
+<li><div class="fn"/>Q3CacheIterator&lt;type&gt; &amp; <b><a href="q3cacheiterator.html#operator-eq">operator=</a></b> ( const Q3CacheIterator&lt;type&gt; &amp; <i>ci</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CacheIterator class provides an iterator for <a href="q3cache.html">Q3Cache</a> collections.</p>
+<p>Note that the traversal order is arbitrary; you are not guaranteed any particular order. If new objects are inserted into the cache while the iterator is active, the iterator may or may not see them.</p>
+<p>Multiple iterators are completely independent, even when they operate on the same <a href="q3cache.html">Q3Cache</a>. <a href="q3cache.html">Q3Cache</a> updates all iterators that refer an item when that item is removed.</p>
+<p>Q3CacheIterator provides an operator++(), and an operator+=() to traverse the cache. The <a href="q3cacheiterator.html#current">current</a>() and <a href="q3cacheiterator.html#currentKey">currentKey</a>() functions are used to access the current cache item and its key. The <a href="q3cacheiterator.html#atFirst">atFirst</a>() and <a href="q3cacheiterator.html#atLast">atLast</a>() return TRUE if the iterator points to the first or last item in the cache respectively. The <a href="q3cacheiterator.html#isEmpty">isEmpty</a>() function returns TRUE if the cache is empty, and <a href="q3cacheiterator.html#count">count</a>() returns the number of items in the cache.</p>
+<p>Note that <a href="q3cacheiterator.html#atFirst">atFirst</a>() and <a href="q3cacheiterator.html#atLast">atLast</a>() refer to the iterator's arbitrary ordering, not to the cache's internal least recently used list.</p>
+<p>See also <a href="q3cache.html">Q3Cache</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CacheIterator"></a>Q3CacheIterator::Q3CacheIterator ( const <a href="q3cache.html">Q3Cache</a>&lt;type&gt; &amp; <i>cache</i> )</h3>
+<p>Constructs an iterator for <i>cache</i>. The current iterator item is set to point to the first item in the <i>cache</i>.</p>
+<h3 class="fn"><a name="Q3CacheIterator-2"></a>Q3CacheIterator::Q3CacheIterator ( const Q3CacheIterator&lt;type&gt; &amp; <i>ci</i> )</h3>
+<p>Constructs an iterator for the same cache as <i>ci</i>. The new iterator starts at the same item as ci.<a href="q3cacheiterator.html#current">current</a>(), but moves independently from there on.</p>
+<h3 class="fn"><a name="atFirst"></a>bool Q3CacheIterator::atFirst () const</h3>
+<p>Returns TRUE if the iterator points to the first item in the cache; otherwise returns FALSE. Note that this refers to the iterator's arbitrary ordering, not to the cache's internal least recently used list.</p>
+<p>See also <a href="q3cacheiterator.html#toFirst">toFirst</a>() and <a href="q3cacheiterator.html#atLast">atLast</a>().</p>
+<h3 class="fn"><a name="atLast"></a>bool Q3CacheIterator::atLast () const</h3>
+<p>Returns TRUE if the iterator points to the last item in the cache; otherwise returns FALSE. Note that this refers to the iterator's arbitrary ordering, not to the cache's internal least recently used list.</p>
+<p>See also <a href="q3cacheiterator.html#toLast">toLast</a>() and <a href="q3cacheiterator.html#atFirst">atFirst</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3CacheIterator::count () const</h3>
+<p>Returns the number of items in the cache on which this iterator operates.</p>
+<p>See also <a href="q3cacheiterator.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="current"></a>type * Q3CacheIterator::current () const</h3>
+<p>Returns a pointer to the current iterator item.</p>
+<h3 class="fn"><a name="currentKey"></a><a href="qstring.html">QString</a> Q3CacheIterator::currentKey () const</h3>
+<p>Returns the key for the current iterator item.</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3CacheIterator::isEmpty () const</h3>
+<p>Returns TRUE if the cache is empty, i.e&#x2e; <a href="q3cacheiterator.html#count">count</a>() == 0; otherwise it returns FALSE.</p>
+<p>See also <a href="q3cacheiterator.html#count">count</a>().</p>
+<h3 class="fn"><a name="toFirst"></a>type * Q3CacheIterator::toFirst ()</h3>
+<p>Sets the iterator to point to the first item in the cache and returns a pointer to the item.</p>
+<p>Sets the iterator to 0 and returns 0 if the cache is empty.</p>
+<p>See also <a href="q3cacheiterator.html#toLast">toLast</a>() and <a href="q3cacheiterator.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="toLast"></a>type * Q3CacheIterator::toLast ()</h3>
+<p>Sets the iterator to point to the last item in the cache and returns a pointer to the item.</p>
+<p>Sets the iterator to 0 and returns 0 if the cache is empty.</p>
+<p>See also <a href="q3cacheiterator.html#toFirst">toFirst</a>() and <a href="q3cacheiterator.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="operator-type--2a"></a>Q3CacheIterator::operator type * () const</h3>
+<p>Cast operator. Returns a pointer to the current iterator item. Same as <a href="q3cacheiterator.html#current">current</a>().</p>
+<h3 class="fn"><a name="operator-28-29"></a>type * Q3CacheIterator::operator() ()</h3>
+<p>Makes the succeeding item current and returns the original current item.</p>
+<p>If the current iterator item was the last item in the cache or if it was 0, 0 is returned.</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>type * Q3CacheIterator::operator++ ()</h3>
+<p>Prefix++ makes the iterator point to the item just after <a href="q3cacheiterator.html#current">current</a>() and makes that the new current item for the iterator. If <a href="q3cacheiterator.html#current">current</a>() was the last item, operator++() returns 0.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>type * Q3CacheIterator::operator+= ( <a href="qtglobal.html#uint-typedef">uint</a> <i>jump</i> )</h3>
+<p>Returns the item <i>jump</i> positions after the current item, or 0 if it is beyond the last item. Makes this the current item.</p>
+<h3 class="fn"><a name="operator--"></a>type * Q3CacheIterator::operator-- ()</h3>
+<p>Prefix-- makes the iterator point to the item just before <a href="q3cacheiterator.html#current">current</a>() and makes that the new current item for the iterator. If <a href="q3cacheiterator.html#current">current</a>() was the first item, operator--() returns 0.</p>
+<h3 class="fn"><a name="operator--eq"></a>type * Q3CacheIterator::operator-= ( <a href="qtglobal.html#uint-typedef">uint</a> <i>jump</i> )</h3>
+<p>Returns the item <i>jump</i> positions before the current item, or 0 if it is before the first item. Makes this the current item.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3CacheIterator&lt;type&gt; &amp; Q3CacheIterator::operator= ( const Q3CacheIterator&lt;type&gt; &amp; <i>ci</i> )</h3>
+<p>Makes this an iterator for the same cache as <i>ci</i>. The new iterator starts at the same item as ci.<a href="q3cacheiterator.html#current">current</a>(), but moves independently thereafter.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

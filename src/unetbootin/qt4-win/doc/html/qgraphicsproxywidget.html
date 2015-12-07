@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsproxywidget.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsProxyWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsProxyWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsProxyWidget class provides a proxy layer for embedding a <a href="qwidget.html">QWidget</a> in a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsProxyWidget&gt;</pre><p>Inherits <a href="qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qgraphicsproxywidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicsproxywidget.html#QGraphicsProxyWidget">QGraphicsProxyWidget</a></b> ( QGraphicsItem * <i>parent</i> = 0, Qt::WindowFlags <i>wFlags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicsproxywidget.html#dtor.QGraphicsProxyWidget">~QGraphicsProxyWidget</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qgraphicsproxywidget.html#setWidget">setWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>QRectF <b><a href="qgraphicsproxywidget.html#subWidgetRect">subWidgetRect</a></b> ( const QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>QWidget * <b><a href="qgraphicsproxywidget.html#widget">widget</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 public functions inherited from <a href="qgraphicswidget.html#public-functions">QGraphicsWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+<li><div class="fn"/>33 public functions inherited from <a href="qgraphicslayoutitem.html#public-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>9 properties inherited from <a href="qgraphicswidget.html#properties">QGraphicsWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qgraphicswidget.html#public-slots">QGraphicsWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicswidget.html#static-public-members">QGraphicsWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+<li><div class="fn"/>17 protected functions inherited from <a href="qgraphicswidget.html#protected-functions">QGraphicsWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qgraphicslayoutitem.html#protected-functions">QGraphicsLayoutItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsProxyWidget class provides a proxy layer for embedding a <a href="qwidget.html">QWidget</a> in a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>QGraphicsProxyWidget embeds any <a href="qwidget.html">QWidget</a>-based widget, for example, a <a href="qpushbutton.html">QPushButton</a>, <a href="qfontcombobox.html">QFontComboBox</a>, or even <a href="qfiledialog.html">QFileDialog</a>, into <a href="qgraphicsscene.html">QGraphicsScene</a>. It forwards events between the two objects and translates between <a href="qwidget.html">QWidget</a>'s integer-based geometry and <a href="qgraphicswidget.html">QGraphicsWidget</a>'s qreal-based geometry. QGraphicsProxyWidget supports all core features of <a href="qwidget.html">QWidget</a>, including tab focus, keyboard input, Drag &amp; Drop, and popups. You can also embed complex widgets, e.g&#x2e;, widgets with subwidgets.</p>
+<p>Example:</p>
+<pre>     int main(int argc, char **argv)
+     {
+         QApplication app(argc, argv);
+
+         QTabWidget *tabWidget = new QTabWidget;
+
+         QGraphicsScene scene;
+         QGraphicsProxyWidget *proxy = scene.addWidget(tabWidget);
+
+         QGraphicsView view(&amp;scene);
+         view.show();
+
+         return app.exec();
+     }</pre>
+<p>QGraphicsProxyWidget takes care of automatically embedding popup children of embedded widgets through creating a child proxy for each popup. This means that when an embedded <a href="qcombobox.html">QComboBox</a> shows its popup list, a new QGraphicsProxyWidget is created automatically, embedding the popup, and positioning it correctly.</p>
+<a name="embedding-a-widget-with-qgraphicsproxywidget"></a>
+<h3>Embedding a Widget with QGraphicsProxyWidget</h3>
+<p>There are two ways to embed a widget using QGraphicsProxyWidget. The most common way is to pass a widget pointer to <a href="qgraphicsscene.html#addWidget">QGraphicsScene::addWidget</a>() together with any relevant <a href="qt.html#WindowType-enum">Qt::WindowFlags</a>. This function returns a pointer to a QGraphicsProxyWidget. You can then choose to reparent or position either the proxy, or the embedded widget itself.</p>
+<p>For example, in the code snippet below, we embed a group box into the proxy:</p>
+<pre>     QGroupBox *groupBox = new QGroupBox(&quot;Contact Details&quot;);
+     QLabel *numberLabel = new QLabel(&quot;Telephone number&quot;);
+     QLineEdit *numberEdit = new QLineEdit;
+
+     QFormLayout *layout = new QFormLayout;
+     layout-&gt;addRow(numberLabel, numberEdit);
+     groupBox-&gt;setLayout(layout);
+
+     QGraphicsScene scene;
+     QGraphicsProxyWidget *proxy = scene.addWidget(groupBox);
+
+     QGraphicsView view(&amp;scene);
+     view.show();</pre>
+<p>The image below is the output obtained with its contents margin and contents rect labeled.</p>
+<p align="center"><img src="images/qgraphicsproxywidget-embed.png" /></p><p>Alternatively, you can start by creating a new QGraphicsProxyWidget item, and then call <a href="qgraphicsproxywidget.html#setWidget">setWidget</a>() to embed a <a href="qwidget.html">QWidget</a> later. The <a href="qgraphicsproxywidget.html#widget">widget</a>() function returns a pointer to the embedded widget. QGraphicsProxyWidget shares ownership with <a href="qwidget.html">QWidget</a>, so if either of the two widgets are destroyed, the other widget will be automatically destroyed as well.</p>
+<a name="synchronizing-widget-states"></a>
+<h3>Synchronizing Widget States</h3>
+<p>QGraphicsProxyWidget keeps its state in sync with the embedded widget. For example, if the proxy is hidden or disabled, the embedded widget will be hidden or disabled as well, and vice versa. When the widget is embedded by calling addWidget(), QGraphicsProxyWidget copies the state from the widget into the proxy, and after that, the two will stay synchronized where possible. By default, when you embed a widget into a proxy, both the widget and the proxy will be visible because a <a href="qgraphicswidget.html">QGraphicsWidget</a> is visible when created (you do not have to call <a href="qgraphicsitem.html#show">show</a>()). If you explicitly hide the embedded widget, the proxy will also become invisible.</p>
+<p>Example:</p>
+<pre>         QGraphicsScene scene;
+
+         QLineEdit *edit = new QLineEdit;
+         QGraphicsProxyWidget *proxy = scene.addWidget(edit);
+
+         edit-&gt;isVisible();  // returns true
+         proxy-&gt;isVisible(); // also returns true
+
+         edit-&gt;hide();
+
+         edit-&gt;isVisible();  // returns false
+         proxy-&gt;isVisible(); // also returns false
+     }</pre>
+<p>QGraphicsProxyWidget maintains symmetry for the following states:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="qwidget.html">QWidget</a> state</th><th>QGraphicsProxyWidget state</th><th>Notes</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qwidget.html#enabled-prop">QWidget::enabled</a></td><td><a href="qgraphicswidget.html#enabled-prop">QGraphicsProxyWidget::enabled</a></td><td></td></tr>
+<tr valign="top" class="even"><td><a href="qwidget.html#visible-prop">QWidget::visible</a></td><td><a href="qgraphicswidget.html#visible-prop">QGraphicsProxyWidget::visible</a></td><td>The explicit state is also symmetric.</td></tr>
+<tr valign="top" class="odd"><td><a href="qwidget.html#geometry-prop">QWidget::geometry</a></td><td>QGraphicsProxyWidget::geometry</td><td>Geometry is only guaranteed to be symmetric while the embedded widget is visible.</td></tr>
+<tr valign="top" class="even"><td><a href="qwidget.html#layoutDirection-prop">QWidget::layoutDirection</a></td><td><a href="qgraphicswidget.html#layoutDirection-prop">QGraphicsProxyWidget::layoutDirection</a></td><td></td></tr>
+<tr valign="top" class="odd"><td>QWidget::style</td><td>QGraphicsProxyWidget::style</td><td></td></tr>
+<tr valign="top" class="even"><td><a href="qwidget.html#palette-prop">QWidget::palette</a></td><td><a href="qgraphicswidget.html#palette-prop">QGraphicsProxyWidget::palette</a></td><td></td></tr>
+<tr valign="top" class="odd"><td><a href="qwidget.html#font-prop">QWidget::font</a></td><td><a href="qgraphicswidget.html#font-prop">QGraphicsProxyWidget::font</a></td><td></td></tr>
+<tr valign="top" class="even"><td><a href="qwidget.html#cursor-prop">QWidget::cursor</a></td><td>QGraphicsProxyWidget::cursor</td><td>The embedded widget overrides the proxy widget cursor. The proxy cursor changes depending on which embedded subwidget is currently under the mouse.</td></tr>
+<tr valign="top" class="odd"><td><a href="qwidget.html#sizeHint-prop">QWidget::sizeHint</a>()</td><td><a href="qgraphicslayoutitem.html#sizeHint">QGraphicsProxyWidget::sizeHint</a>()</td><td>All size hint functionality from the embedded widget is forwarded by the proxy.</td></tr>
+<tr valign="top" class="even"><td><a href="qwidget.html#getContentsMargins">QWidget::getContentsMargins</a>()</td><td><a href="qgraphicswidget.html#getContentsMargins">QGraphicsProxyWidget::getContentsMargins</a>()</td><td>Updated once by <a href="qgraphicsproxywidget.html#setWidget">setWidget</a>().</td></tr>
+<tr valign="top" class="odd"><td><a href="qwidget.html#windowTitle-prop">QWidget::windowTitle</a></td><td><a href="qgraphicswidget.html#windowTitle-prop">QGraphicsProxyWidget::windowTitle</a></td><td>Updated once by <a href="qgraphicsproxywidget.html#setWidget">setWidget</a>().</td></tr>
+</table></p>
+<p><b>Note:</b> <a href="qgraphicsscene.html">QGraphicsScene</a> keeps the embedded widget in a special state that prevents it from disturbing other widgets (both embedded and not embedded) while the widget is embedded. In this state, the widget may differ slightly in behavior from when it is not embedded.</p>
+<p>See also <a href="qgraphicsscene.html#addWidget">QGraphicsScene::addWidget</a>() and <a href="qgraphicswidget.html">QGraphicsWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsProxyWidget"></a>QGraphicsProxyWidget::QGraphicsProxyWidget ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>wFlags</i> = 0 )</h3>
+<p>Constructs a new QGraphicsProxy widget. <i>parent</i> and <i>wFlags</i> are passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</p>
+<h3 class="fn"><a name="dtor.QGraphicsProxyWidget"></a>QGraphicsProxyWidget::~QGraphicsProxyWidget ()</h3>
+<p>Destroys the proxy widget and any embedded widget.</p>
+<h3 class="fn"><a name="setWidget"></a>void QGraphicsProxyWidget::setWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Embeds <i>widget</i> into this proxy widget. The embedded widget must reside exclusively either inside or outside of Graphics View. You cannot embed a widget as long as it is is visible elsewhere in the UI, at the same time.</p>
+<p><i>widget</i> must be a top-level widget whose parent is 0.</p>
+<p>When the widget is embedded, its state (e.g&#x2e;, visible, enabled, geometry, size hints) is copied into the proxy widget. If the embedded widget is explicitly hidden or disabled, the proxy widget will become explicitly hidden or disabled after embedding is complete. The class documentation has a full overview over the shared state.</p>
+<p>After this function returns, <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a> will keep its state synchronized with that of <i>widget</i> whenever possible.</p>
+<p>If a widget is already embedded by this proxy when this function is called, that widget will first be automatically unembedded. Passing 0 for the <i>widget</i> argument will only unembed the widget, and the ownership of the currently embedded widget will be passed on to the caller.</p>
+<p>See also <a href="qgraphicsproxywidget.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="subWidgetRect"></a><a href="qrectf.html">QRectF</a> QGraphicsProxyWidget::subWidgetRect ( const <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the rectangle for <i>widget</i>, which must be a descendant of <a href="qgraphicsproxywidget.html#widget">widget</a>(), or <a href="qgraphicsproxywidget.html#widget">widget</a>() itself, in this proxy item's local coordinates.</p>
+<p>If no widget is embedded, <i>widget</i> is 0, or <i>widget</i> is not a descendant of the embedded widget, this function returns an empty <a href="qrectf.html">QRectF</a>.</p>
+<p>See also <a href="qgraphicsproxywidget.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QGraphicsProxyWidget::widget () const</h3>
+<p>Returns a pointer to the embedded widget.</p>
+<p>See also <a href="qgraphicsproxywidget.html#setWidget">setWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

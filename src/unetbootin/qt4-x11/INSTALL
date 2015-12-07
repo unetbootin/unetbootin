@@ -1,0 +1,99 @@
+                          INSTALLING Qt/X11 Version 4.5.0.
+
+1.  If you have the commercial edition of Qt, install your license
+    file as $HOME/.qt-license.
+
+    For the open source version you do not need a license file.
+
+2.  Unpack the archive if you have not done so already:
+
+        cd /tmp
+        gunzip %DISTNAME%.tar.gz        # uncompress the archive
+        tar xvf %DISTNAME%.tar          # unpack it
+
+    This creates the directory /tmp/%DISTNAME% containing the files
+    from the archive. We only support the GNU version of the tar
+    archiving utility. Note that on some systems it is called gtar.
+
+3.  Building
+
+    To configure the Qt library for your machine type, run the
+    ./configure script in the package directory.
+
+    By default, Qt is configured for installation in the
+    /usr/local/Trolltech/Qt-4.5.0 directory, but this can be
+    changed by using the -prefix option. Alternatively, the
+    -prefix-install option can be used to specify a "local"
+    installation within the source directory.
+
+        cd /tmp/%DISTNAME%
+        ./configure
+
+    Type "./configure -help" to get a list of all available options.
+
+    To create the library and compile all the demos, examples, tools,
+    and tutorials, type:
+
+        make
+
+    If you did not configure Qt using the -prefix-install option,
+    you need to install the library, demos, examples, tools, and
+    tutorials in the appropriate place. To do this, type:
+
+        su -c "make install"
+
+    and enter the root password.
+
+    Note that on some systems the make utility is named differently,
+    e.g. gmake. The configure script tells you which make utility to
+    use.
+
+    If you need to reconfigure and rebuild Qt from the same location,
+    ensure that all traces of the previous configuration are removed
+    by entering the build directory and typing
+
+        make confclean
+
+    before running the configure script again.
+
+4.  Environment variables
+
+    In order to use Qt, some environment variables needs to be
+    extended.
+
+        PATH               - to locate qmake, moc and other Qt tools
+
+    This is done like this:
+
+    In .profile (if your shell is bash, ksh, zsh or sh), add the
+    following lines:
+
+        PATH=/usr/local/Trolltech/Qt-4.5.0/bin:$PATH
+        export PATH
+
+    In .login (in case your shell is csh or tcsh), add the following line:
+
+        setenv PATH /usr/local/Trolltech/Qt-4.5.0/bin:$PATH
+
+    If you use a different shell, please modify your environment
+    variables accordingly.
+
+    For compilers that do not support rpath you must also extended the
+    LD_LIBRARY_PATH environment variable to include
+    /usr/local/Trolltech/Qt-4.5.0/lib. On Linux with GCC this step
+    is not needed.
+
+5.  That's all. Qt is now installed.
+
+    If you are new to Qt, we suggest that you take a look at the demos
+    and examples to see Qt in action. Run the Qt Examples and Demos
+    either by typing 'qtdemo' on the command line or through the
+    desktop's Start menu.
+
+    You might also want to try the following links:
+
+        http://doc.trolltech.com/4.5.0/how-to-learn-qt.html
+        http://doc.trolltech.com/4.5.0/tutorial.html
+        http://qtsoftware.com/developer
+
+    We hope you will enjoy using Qt. Good luck!

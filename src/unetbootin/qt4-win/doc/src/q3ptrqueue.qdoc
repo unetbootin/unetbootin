@@ -1,0 +1,232 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3PtrQueue
+    \brief The Q3PtrQueue class is a template class that provides a queue.
+    \compat
+
+    Q3ValueVector can be used as an STL-compatible alternative to this
+    class.
+
+    A template instance Q3PtrQueue\<X\> is a queue that operates on
+    pointers to X (X*).
+
+    A queue is a first in, first out structure. Items are added to the
+    tail of the queue with enqueue() and retrieved from the head with
+    dequeue(). You can peek at the head item without dequeing it using
+    head().
+
+    You can control the queue's deletion policy with setAutoDelete().
+
+    For compatibility with the Q3PtrCollection classes, current() and
+    remove() are provided; both operate on the head().
+
+    \sa Q3PtrList Q3PtrStack
+*/
+
+/*!
+    \fn Q3PtrQueue::Q3PtrQueue ()
+
+    Creates an empty queue with autoDelete() set to FALSE.
+*/
+
+/*!
+    \fn Q3PtrQueue::Q3PtrQueue( const Q3PtrQueue<type>& queue )
+
+    Creates a queue from \a queue.
+
+    Only the pointers are copied; the items are not. The autoDelete()
+    flag is set to FALSE.
+*/
+
+/*!
+    \fn Q3PtrQueue::~Q3PtrQueue()
+
+    Destroys the queue. Items in the queue are deleted if autoDelete()
+    is TRUE.
+*/
+
+/*!
+    \fn Q3PtrQueue<type>& Q3PtrQueue::operator= (const Q3PtrQueue<type>& queue)
+
+    Assigns \a queue to this queue and returns a reference to this
+    queue.
+
+    This queue is first cleared and then each item in \a queue is
+    enqueued to this queue. Only the pointers are copied.
+
+    \warning The autoDelete() flag is not modified. If it is TRUE for
+    both \a queue and this queue, deleting the two lists will cause \e
+    double-deletion of the items.
+*/
+
+/*!
+    \fn bool Q3PtrQueue::isEmpty() const
+
+    Returns TRUE if the queue is empty; otherwise returns FALSE.
+
+    \sa count() dequeue() head()
+*/
+
+/*!
+    \fn void Q3PtrQueue::enqueue (const type* d)
+
+    Adds item \a d to the tail of the queue.
+
+    \sa count() dequeue()
+*/
+
+/*!
+    \fn type* Q3PtrQueue::dequeue ()
+
+    Takes the head item from the queue and returns a pointer to it.
+    Returns 0 if the queue is empty.
+
+    \sa enqueue() count()
+*/
+
+/*!
+    \fn bool Q3PtrQueue::remove()
+
+    Removes the head item from the queue, and returns TRUE if there
+    was an item, i.e. the queue wasn't empty; otherwise returns FALSE.
+
+    The item is deleted if autoDelete() is TRUE.
+
+    \sa head() isEmpty() dequeue()
+*/
+
+/*!
+    \fn void Q3PtrQueue::clear()
+
+    Removes all items from the queue, and deletes them if autoDelete()
+    is TRUE.
+
+    \sa remove()
+*/
+
+/*!
+    \fn uint Q3PtrQueue::count() const
+
+    Returns the number of items in the queue.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn type* Q3PtrQueue::head() const
+
+    Returns a pointer to the head item in the queue. The queue is not
+    changed. Returns 0 if the queue is empty.
+
+    \sa dequeue() isEmpty()
+*/
+
+/*!
+    \fn Q3PtrQueue::operator type*() const
+
+    Returns a pointer to the head item in the queue. The queue is not
+    changed. Returns 0 if the queue is empty.
+
+    \sa dequeue() isEmpty()
+*/
+
+/*!
+    \fn type* Q3PtrQueue::current() const
+
+    Returns a pointer to the head item in the queue. The queue is not
+    changed. Returns 0 if the queue is empty.
+
+    \sa dequeue() isEmpty()
+*/
+
+/*!
+    \fn bool Q3PtrQueue::autoDelete() const
+    
+    Returns the setting of the auto-delete option. The default is
+    FALSE.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn void Q3PtrQueue::setAutoDelete( bool enable )
+
+    Sets the queue to auto-delete its contents if \a enable is TRUE
+    and not to delete them if \a enable is FALSE.
+
+    If auto-deleting is turned on, all the items in a queue are
+    deleted when the queue itself is deleted. This can be quite
+    convenient if the queue has the only pointer to the items.
+    
+    The default setting is FALSE, for safety. If you turn it on, be
+    careful about copying the queue: you might find yourself with two
+    queues deleting the same items.
+
+    \sa autoDelete()
+*/
+
+/*!
+    \fn QDataStream& Q3PtrQueue::read( QDataStream& s,
+					Q3PtrCollection::Item& item )
+
+    Reads a queue item, \a item, from the stream \a s and returns a
+    reference to the stream.
+
+    The default implementation sets \a item to 0.
+
+    \sa write()
+*/
+
+/*!
+    \fn QDataStream& Q3PtrQueue::write( QDataStream& s,
+					Q3PtrCollection::Item item ) const
+
+    Writes a queue item, \a item, to the stream \a s and returns a
+    reference to the stream.
+
+    The default implementation does nothing.
+
+    \sa read()
+*/

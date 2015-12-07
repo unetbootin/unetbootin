@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QDropEvent</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QDropEvent</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qdropevent.html">QDropEvent class reference</a></li></ul></p>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdropevent-qt3.html#Action-enum">Action</a></b> { Copy, Link, Move, Private, UserAction }</li>
+</ul>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdropevent-qt3.html#accept-2">accept</a></b> ( bool <i>accept</i> )</li>
+<li><div class="fn"/>void <b><a href="qdropevent-qt3.html#acceptAction">acceptAction</a></b> ( bool <i>accept</i> = true )</li>
+<li><div class="fn"/>Action <b><a href="qdropevent-qt3.html#action">action</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qdropevent-qt3.html#data">data</a></b> ( const char * <i>f</i> ) const</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qdropevent-qt3.html#encodedData">encodedData</a></b> ( const char * <i>format</i> ) const</li>
+<li><div class="fn"/>virtual const char * <b><a href="qdropevent-qt3.html#format">format</a></b> ( int <i>n</i> = 0 ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qdropevent-qt3.html#provides">provides</a></b> ( const char * <i>mimeType</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qdropevent-qt3.html#setPoint">setPoint</a></b> ( const QPoint &amp; <i>point</i> )</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Action-enum"></a>enum QDropEvent::Action</h3>
+<p>When a drag and drop action is completed, the target is expected to perform an action on the data provided by the source. This will be one of the following:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDropEvent::Copy</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default action. The source simply uses the data provided in the operation.</td></tr>
+<tr><td valign="top"><tt>QDropEvent::Link</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The source should somehow create a link to the location specified by the data.</td></tr>
+<tr><td valign="top"><tt>QDropEvent::Move</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The source should somehow move the object from the location specified by the data to a new location.</td></tr>
+<tr><td valign="top"><tt>QDropEvent::Private</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The target has special knowledge of the MIME type, which the source should respond to in a similar way to a Copy.</td></tr>
+<tr><td valign="top"><tt>QDropEvent::UserAction</tt></td><td align="center" valign="top"><tt>Private</tt></td><td valign="top">The source and target can co-operate using special actions. This feature is not currently supported.</td></tr>
+</table></p>
+<p>The Link and Move actions only makes sense if the data is a reference, for example, text/uri-list file lists (see <a href="porting4.html#quridrag">QUriDrag</a>).</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="accept-2"></a>void QDropEvent::accept ( bool <i>accept</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Call setAccepted(<i>accept</i>) instead.</p>
+<h3 class="fn"><a name="acceptAction"></a>void QDropEvent::acceptAction ( bool <i>accept</i> = true )</h3>
+<p>Call this to indicate that the action described by <a href="qdropevent-qt3.html#action">action</a>() is accepted (i.e&#x2e; if <i>accept</i> is true, which is the default), not merely the default copy action. If you call acceptAction(true), there is no need to also call accept(true).</p>
+<h3 class="fn"><a name="action"></a><a href="qdropevent-qt3.html#Action-enum">Action</a> QDropEvent::action () const</h3>
+<p>Use <a href="qdropevent.html#dropAction">dropAction</a>() instead.</p>
+<p>The table below shows the correspondance between the return type of action() and the return type of <a href="qdropevent.html#dropAction">dropAction</a>().</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Old enum value</th><th>New enum value</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qdropevent-qt3.html#Action-enum">QDropEvent::Copy</a></td><td><a href="qt.html#DropAction-enum">Qt::CopyAction</a></td></tr>
+<tr valign="top" class="even"><td><a href="qdropevent-qt3.html#Action-enum">QDropEvent::Move</a></td><td><a href="qt.html#DropAction-enum">Qt::MoveAction</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qdropevent-qt3.html#Action-enum">QDropEvent::Link</a></td><td><a href="qt.html#DropAction-enum">Qt::LinkAction</a></td></tr>
+<tr valign="top" class="even"><td>other</td><td><a href="qt.html#DropAction-enum">Qt::CopyAction</a></td></tr>
+</table></p>
+<h3 class="fn"><a name="data"></a><a href="qbytearray.html">QByteArray</a> QDropEvent::data ( const char * <i>f</i> ) const</h3>
+<p>The encoded data is in <i>f</i>. Use <a href="qdropevent-qt3.html#encodedData">QDropEvent::encodedData</a>().</p>
+<h3 class="fn"><a name="encodedData"></a><a href="qbytearray.html">QByteArray</a> QDropEvent::encodedData ( const char * <i>format</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a byte array containing the drag's data, in <i>format</i>.</p>
+<p><a href="qdropevent-qt3.html#data">data</a>() normally needs to get the data from the drag source, which is potentially very slow, so it's advisable to call this function only if you're sure that you will need the data in that particular <i>format</i>.</p>
+<p>The resulting data will have a size of 0 if the format was not available.</p>
+<p>Reimplemented from <a href="qmimesource.html#encodedData">QMimeSource</a>.</p>
+<p>See also <a href="qdropevent-qt3.html#format">format</a>() and <a href="qbytearray.html#size">QByteArray::size</a>().</p>
+<h3 class="fn"><a name="format"></a>const char * QDropEvent::format ( int <i>n</i> = 0 ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a string describing one of the available data types for this drag. Common examples are &quot;text/plain&quot; and &quot;image/gif&quot;. If <i>n</i> is less than zero or greater than the number of available data types, format() returns 0.</p>
+<p>This function is provided mainly for debugging. Most drop targets will use <a href="qdropevent-qt3.html#provides">provides</a>().</p>
+<p>Reimplemented from <a href="qmimesource.html#format">QMimeSource</a>.</p>
+<p>See also <a href="qdropevent-qt3.html#data">data</a>() and <a href="qdropevent-qt3.html#provides">provides</a>().</p>
+<h3 class="fn"><a name="provides"></a>bool QDropEvent::provides ( const char * <i>mimeType</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this event provides format <i>mimeType</i>; otherwise returns false.</p>
+<p>Reimplemented from <a href="qmimesource.html#provides">QMimeSource</a>.</p>
+<p>See also <a href="qdropevent-qt3.html#data">data</a>().</p>
+<h3 class="fn"><a name="setPoint"></a>void QDropEvent::setPoint ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> )</h3>
+<p>Sets the drop to happen at the given <i>point</i>. You do not normally need to use this as it will be set internally before your widget receives the drop event.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

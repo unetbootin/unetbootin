@@ -1,0 +1,448 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3Dict
+    \brief The Q3Dict class is a template class that provides a
+    dictionary based on QString keys.
+    \compat
+
+    Q3Dict is implemented as a template class. Define a template
+    instance Q3Dict\<X\> to create a dictionary that operates on
+    pointers to X (X *).
+
+    A dictionary is a collection of key-value pairs. The key is a
+    QString used for insertion, removal and lookup. The value is a
+    pointer. Dictionaries provide very fast insertion and lookup.
+
+    If you want to use non-Unicode, plain 8-bit \c char* keys, use the
+    Q3AsciiDict template. A Q3Dict has the same performance as a
+    Q3AsciiDict. If you want to have a dictionary that maps QStrings to
+    QStrings use QMap.
+
+    The size() of the dictionary is very important. In order to get
+    good performance, you should use a suitably large prime number.
+    Suitable means equal to or larger than the maximum expected number
+    of dictionary items. Size is set in the constructor but may be
+    changed with resize().
+
+    Items are inserted with insert(); 0 pointers cannot be inserted.
+    Items are removed with remove(). All the items in a dictionary can
+    be removed with clear(). The number of items in the dictionary is
+    returned by count(). If the dictionary contains no items isEmpty()
+    returns TRUE. You can change an item's value with replace(). Items
+    are looked up with operator[](), or with find() which return a
+    pointer to the value or 0 if the given key does not exist. You can
+    take an item out of the dictionary with take().
+
+    Calling setAutoDelete(TRUE) for a dictionary tells it to delete
+    items that are removed. The default behavior is not to delete
+    items when they are removed.
+   
+    When an item is inserted, the key is converted (hashed) to an
+    integer index into an internal hash array. This makes lookup very
+    fast.
+
+    Items with equal keys are allowed. When inserting two items with
+    the same key, only the last inserted item will be accessible (last
+    in, first out) until it is removed.
+
+    The Q3DictIterator class can traverse the dictionary, but only in
+    an arbitrary order. Multiple iterators may independently traverse
+    the same dictionary.
+
+    When inserting an item into a dictionary, only the pointer is
+    copied, not the item itself, i.e. a shallow copy is made. It is
+    possible to make the dictionary copy all of the item's data (a
+    deep copy) when an item is inserted. insert() calls the virtual
+    function Q3PtrCollection::newItem() for the item to be inserted.
+    Inherit a dictionary and reimplement newItem() if you want deep
+    copies.
+
+    When removing a dictionary item, the virtual function
+    Q3PtrCollection::deleteItem() is called. Q3Dict's default
+    implementation is to delete the item if auto-deletion is enabled.
+
+    \sa Q3DictIterator, Q3AsciiDict, Q3IntDict, Q3PtrDict
+*/
+
+
+/*!
+    \fn Q3Dict::Q3Dict( int size, bool caseSensitive )
+
+    Constructs a dictionary optimized for less than \a size entries.
+
+    We recommend setting \a size to a suitably large prime number
+    (e.g. a prime that's slightly larger than the expected number of
+    entries). This makes the hash distribution better which will lead
+    to faster lookup.
+
+    If \a caseSensitive is TRUE (the default), keys which differ only
+    by case are considered different.
+*/
+
+/*!
+    \fn Q3Dict::Q3Dict( const Q3Dict<type> &dict )
+
+    Constructs a copy of \a dict.
+
+    Each item in \a dict is inserted into this dictionary. Only the
+    pointers are copied (shallow copy).
+*/
+
+/*!
+    \fn Q3Dict::~Q3Dict()
+
+    Removes all items from the dictionary and destroys it. If
+    setAutoDelete() is TRUE, each value is deleted. All iterators that
+    access this dictionary will be reset.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn Q3Dict<type> &Q3Dict::operator=(const Q3Dict<type> &dict)
+
+    Assigns \a dict to this dictionary and returns a reference to this
+    dictionary.
+
+    This dictionary is first cleared, then each item in \a dict is
+    inserted into this dictionary. Only the pointers are copied
+    (shallow copy), unless newItem() has been reimplemented.
+*/
+
+/*!
+    \fn uint Q3Dict::count() const
+
+    Returns the number of items in the dictionary.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn uint Q3Dict::size() const
+
+    Returns the size of the internal hash array (as specified in the
+    constructor).
+
+    \sa count()
+*/
+
+/*!
+    \fn void Q3Dict::resize( uint newsize )
+
+    Changes the size of the hash table to \a newsize. The contents of
+    the dictionary are preserved, but all iterators on the dictionary
+    become invalid.
+*/
+
+/*!
+    \fn bool Q3Dict::isEmpty() const
+
+    Returns TRUE if the dictionary is empty, i.e. count() == 0;
+    otherwise returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn void Q3Dict::insert( const QString &key, const type *item )
+
+    Inserts the key \a key with value \a item into the dictionary.
+
+    Multiple items can have the same key, in which case only the last
+    item will be accessible using \l operator[]().
+
+    \a item may not be 0.
+
+    \sa replace()
+*/
+
+/*!
+    \fn void Q3Dict::replace( const QString &key, const type *item )
+
+    Replaces the value of the key, \a key with \a item.
+
+    If the item does not already exist, it will be inserted.
+
+    \a item may not be 0.
+
+    Equivalent to:
+    \snippet doc/src/snippets/code/doc.src.q3dict.qdoc 0
+
+    If there are two or more items with equal keys, then the last item
+    that was inserted will be replaced.
+
+    \sa insert()
+*/
+
+/*!
+    \fn bool Q3Dict::remove( const QString &key )
+
+    Removes the item with \a key from the dictionary. Returns TRUE if
+    successful, i.e. if the item is in the dictionary; otherwise
+    returns FALSE.
+
+    If there are two or more items with equal keys, then the last item
+    that was inserted will be removed.
+
+    The removed item is deleted if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink is enabled.
+
+    All dictionary iterators that refer to the removed item will be
+    set to point to the next item in the dictionary's traversal order.
+
+    \sa take(), clear(), setAutoDelete()
+*/
+
+/*!
+    \fn type *Q3Dict::take( const QString &key )
+
+    Takes the item with \a key out of the dictionary without deleting
+    it (even if \link Q3PtrCollection::setAutoDelete()
+    auto-deletion\endlink is enabled).
+
+    If there are two or more items with equal keys, then the last item
+    that was inserted will be taken.
+
+    Returns a pointer to the item taken out, or 0 if the key does not
+    exist in the dictionary.
+
+    All dictionary iterators that refer to the taken item will be set
+    to point to the next item in the dictionary traversal order.
+
+    \sa remove(), clear(), setAutoDelete()
+*/
+
+/*!
+    \fn void Q3Dict::clear()
+
+    Removes all items from the dictionary.
+
+    The removed items are deleted if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink is enabled.
+
+    All dictionary iterators that operate on the dictionary are reset.
+
+    \sa remove(), take(), setAutoDelete()
+*/
+
+/*!
+    \fn type *Q3Dict::find( const QString &key ) const
+
+    Returns the item with key \a key, or 0 if the key does not exist
+    in the dictionary.
+
+    If there are two or more items with equal keys, then the most
+    recently inserted item will be found.
+
+    Equivalent to the [] operator.
+
+    \sa operator[]()
+*/
+
+/*!
+    \fn type *Q3Dict::operator[]( const QString &key ) const
+
+    Returns the item with key \a key, or 0 if the key does not
+    exist in the dictionary.
+
+    If there are two or more items with equal keys, then the most
+    recently inserted item will be found.
+
+    Equivalent to the find() function.
+
+    \sa find()
+*/
+
+/*!
+    \fn void Q3Dict::statistics() const
+
+    Debugging-only function that prints out the dictionary
+    distribution using qDebug().
+*/
+
+/*!
+    \fn QDataStream& Q3Dict::read( QDataStream &s, Q3PtrCollection::Item &item )
+
+    Reads a dictionary item from the stream \a s and returns a
+    reference to the stream.
+
+    The default implementation sets \a item to 0.
+
+    \sa write()
+*/
+
+/*!
+    \fn QDataStream& Q3Dict::write( QDataStream &s, Q3PtrCollection::Item item ) const
+
+    Writes a dictionary \a item to the stream \a s and returns a
+    reference to the stream.
+
+    \sa read()
+*/
+
+/*!
+    \class Q3DictIterator
+    \brief The Q3DictIterator class provides an iterator for Q3Dict collections.
+    \compat
+
+    Q3DictIterator is implemented as a template class. Define a
+    template instance Q3DictIterator\<X\> to create a dictionary
+    iterator that operates on Q3Dict\<X\> (dictionary of X*).
+
+    The traversal order is arbitrary; when we speak of the "first",
+    "last" and "next" item we are talking in terms of this arbitrary
+    order.
+
+    Multiple iterators may independently traverse the same dictionary.
+    A Q3Dict knows about all the iterators that are operating on the
+    dictionary. When an item is removed from the dictionary, Q3Dict
+    updates all iterators that are referring to the removed item to
+    point to the next item in the (arbitrary) traversal order.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3dict.qdoc 1
+    In the example we insert some pointers to line edits into a
+    dictionary, then iterate over the dictionary printing the strings
+    associated with the line edits.
+
+    \sa Q3Dict
+*/
+
+/*!
+    \fn Q3DictIterator::Q3DictIterator( const Q3Dict<type> &dict )
+
+    Constructs an iterator for \a dict. The current iterator item is
+    set to point to the first item in the dictionary, \a dict. First
+    in this context means first in the arbitrary traversal order.
+*/
+
+/*!
+    \fn Q3DictIterator::~Q3DictIterator()
+
+    Destroys the iterator.
+*/
+
+/*!
+    \fn uint Q3DictIterator::count() const
+
+    Returns the number of items in the dictionary over which the
+    iterator is operating.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3DictIterator::isEmpty() const
+
+    Returns TRUE if the dictionary is empty, i.e. count() == 0;
+    otherwise returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn type *Q3DictIterator::toFirst()
+
+    Resets the iterator, making the first item the first current item.
+    First in this context means first in the arbitrary traversal
+    order. Returns a pointer to this item.
+
+    If the dictionary is empty it sets the current item to 0 and
+    returns 0.
+*/
+
+/*!
+  \fn type *Q3DictIterator::operator*()
+  \internal
+*/
+
+/*!
+    \fn Q3DictIterator::operator type*() const
+
+    Cast operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+
+/*!
+    \fn type *Q3DictIterator::current() const
+
+    Returns a pointer to the current iterator item's value.
+*/
+
+/*!
+    \fn QString Q3DictIterator::currentKey() const
+
+    Returns the current iterator item's key.
+*/
+
+/*!
+    \fn type *Q3DictIterator::operator()()
+
+    Makes the next item current and returns the original current item.
+
+    If the current iterator item was the last item in the dictionary
+    or if it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3DictIterator::operator++()
+
+    Prefix ++ makes the next item current and returns the new current
+    item.
+
+    If the current iterator item was the last item in the dictionary
+    or if it was 0, 0 is returned.
+*/
+
+/*!
+  \fn type *Q3DictIterator::operator+=( uint jump )
+  \internal
+  Sets the current item to the item \a jump positions after the current item,
+  and returns a pointer to that item.
+
+  If that item is beyond the last item or if the dictionary is empty,
+  it sets the current item to 0 and returns 0.
+*/

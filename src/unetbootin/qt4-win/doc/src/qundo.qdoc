@@ -1,0 +1,115 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+\page qundo.html
+\title Overview of Qt's Undo Framework
+\keyword Undo framework
+\ingroup architecture
+
+\section1 Introduction
+
+Qt's Undo Framework is an implementation of the Command pattern, for
+implementing undo/redo functionality in applications.
+
+The Command pattern is based on the idea that all editing in
+an application is done by creating instances of command objects.
+Command objects apply changes to the document and are stored
+on a command stack. Furthermore, each command knows how to undo its
+changes to bring the document back to its previous state. As long
+as the application only uses command objects to change the state of
+the document, it is possible to undo a sequence of commands by
+traversing the stack downwards and calling undo
+on each command in turn. It is also possible to redo a sequence of
+commands by traversing the stack upwards and calling
+redo on each command.
+
+\section1 Classes
+
+The framework consists of four classes:
+
+\list
+\i \l QUndoCommand is the base class of all commands stored on an
+        undo stack. It can apply (redo) or undo a single change in the document.
+\i \l QUndoStack is a list of QUndoCommand objects. It contains all the
+        commands executed on the document and can roll the document's state
+        backwards or forwards by undoing or redoing them.
+\i \l QUndoGroup is a group of undo stacks. It is useful when an application
+        contains more than one undo stack, typically one for each opened
+        document. QUndoGroup provides a single pair of undo/redo slots for all
+        the stacks in the group. It forwards undo and redo requests to
+        the active stack, which is the stack associated with the document that
+        is currently being edited by the user.
+\i \l QUndoView is a widget which shows the contents of an undo stack. Clicking
+        on a command in the view rolls the document's state backwards or
+        forwards to that command.
+\endlist
+
+\section1 Concepts
+
+The following concepts are supported by the framework:
+
+\list
+\i \bold{Clean state:} Used to signal when the document enters and leaves a
+    state that has been saved to disk. This is typically used to disable or
+    enable the save actions, and to update the document's title bar.
+\i \bold{Command compression:} Used to compress sequences of commands into a
+    single command.
+    For example: In a text editor, the commands that insert individual
+    characters into the document can be compressed into a single command that
+    inserts whole sections of text. These bigger changes are more convenient
+    for the user to undo and redo.
+\i \bold{Command macros:} A sequence of commands, all of which are undone or
+    redone in one step.
+    These simplify the task of writing an application, since a set of simpler
+    commands can be composed into more complex commands. For example, a command
+    that moves a set of selected objects in a document can be created by
+    combining a set of commands, each of which moves a single object.
+\endlist
+
+QUndoStack provides convenient undo and redo QAction objects that
+can be inserted into a menu or a toolbar. The text properties of these
+actions always reflect what command will be undone or redone when
+they are triggered. Similarly, QUndoGroup provides undo and redo actions
+that always behave like the undo and redo actions of the active stack.
+*/

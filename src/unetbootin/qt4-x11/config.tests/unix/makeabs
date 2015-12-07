@@ -1,0 +1,19 @@
+#!/bin/sh
+
+FILE="$1"
+RES="$FILE"
+
+if [ `echo $FILE | cut -b1` = "/" ]; then
+    true
+else
+    RES="$PWD/$FILE"
+    test -d "$RES" && RES="$RES/"
+    RES=`echo "$RES" | sed "s,/\(\./\)*,/,g"`
+
+# note: this will only strip 1 /path/../ from RES, i.e. given /a/b/c/../../../, it returns /a/b/../../
+    RES=`echo "$RES" | sed "s,\(/[^/]*/\)\.\./,/,g"` 
+
+    RES=`echo "$RES" | sed "s,//,/,g" | sed "s,/$,,"`
+fi
+echo $RES #return
+

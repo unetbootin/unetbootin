@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qmetaobject.cpp -->
+<head>
+  <title>Qt 4.4: QMetaMethod Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMetaMethod Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QMetaMethod class provides meta-data about a member function. <a href="#details">More...</a></p>
+<pre> #include &lt;QMetaMethod&gt;</pre><ul>
+<li><a href="qmetamethod-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qmetamethod.html#Access-enum">Access</a></b> { Private, Protected, Public }</li>
+<li><div class="fn"/>enum <b><a href="qmetamethod.html#MethodType-enum">MethodType</a></b> { Method, Signal, Slot }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>Access <b><a href="qmetamethod.html#access">access</a></b> () const</li>
+<li><div class="fn"/>MethodType <b><a href="qmetamethod.html#methodType">methodType</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qmetamethod.html#parameterNames">parameterNames</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qmetamethod.html#parameterTypes">parameterTypes</a></b> () const</li>
+<li><div class="fn"/>const char * <b><a href="qmetamethod.html#signature">signature</a></b> () const</li>
+<li><div class="fn"/>const char * <b><a href="qmetamethod.html#tag">tag</a></b> () const</li>
+<li><div class="fn"/>const char * <b><a href="qmetamethod.html#typeName">typeName</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMetaMethod class provides meta-data about a member function.</p>
+<p>A QMetaMethod has a <a href="qmetamethod.html#methodType">methodType</a>(), a <a href="qmetamethod.html#signature">signature</a>(), a list of <a href="qmetamethod.html#parameterTypes">parameterTypes</a>() and <a href="qmetamethod.html#parameterNames">parameterNames</a>(), a return <a href="qmetamethod.html#typeName">typeName</a>(), a <a href="qmetamethod.html#tag">tag</a>(), and an <a href="qmetamethod.html#access">access</a>() specifier.</p>
+<p>See also <a href="qmetaobject.html">QMetaObject</a>, <a href="qmetaenum.html">QMetaEnum</a>, <a href="qmetaproperty.html">QMetaProperty</a>, and <a href="properties.html">Qt's Property System</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Access-enum"></a>enum QMetaMethod::Access</h3>
+<p>This enum describes the access level of a method, following the conventions used in C++.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QMetaMethod::Private</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QMetaMethod::Protected</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QMetaMethod::Public</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="MethodType-enum"></a>enum QMetaMethod::MethodType</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QMetaMethod::Method</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The function is a plain member function.</td></tr>
+<tr><td valign="top"><tt>QMetaMethod::Signal</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The function is a signal.</td></tr>
+<tr><td valign="top"><tt>QMetaMethod::Slot</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The function is a slot.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="access"></a><a href="qmetamethod.html#Access-enum">Access</a> QMetaMethod::access () const</h3>
+<p>Returns the access specification of this method (private, protected, or public).</p>
+<p>Signals are always protected, meaning that you can only emit them from the class or from a subclass.</p>
+<p>See also <a href="qmetamethod.html#methodType">methodType</a>().</p>
+<h3 class="fn"><a name="methodType"></a><a href="qmetamethod.html#MethodType-enum">MethodType</a> QMetaMethod::methodType () const</h3>
+<p>Returns the type of this method (signal, slot, or method).</p>
+<p>See also <a href="qmetamethod.html#access">access</a>().</p>
+<h3 class="fn"><a name="parameterNames"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QMetaMethod::parameterNames () const</h3>
+<p>Returns a list of parameter names.</p>
+<p>See also <a href="qmetamethod.html#parameterTypes">parameterTypes</a>() and <a href="qmetamethod.html#signature">signature</a>().</p>
+<h3 class="fn"><a name="parameterTypes"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QMetaMethod::parameterTypes () const</h3>
+<p>Returns a list of parameter types.</p>
+<p>See also <a href="qmetamethod.html#parameterNames">parameterNames</a>() and <a href="qmetamethod.html#signature">signature</a>().</p>
+<h3 class="fn"><a name="signature"></a>const char * QMetaMethod::signature () const</h3>
+<p>Returns the signature of this method (e.g&#x2e;, <tt>setValue(double)</tt>).</p>
+<p>See also <a href="qmetamethod.html#parameterTypes">parameterTypes</a>() and <a href="qmetamethod.html#parameterNames">parameterNames</a>().</p>
+<h3 class="fn"><a name="tag"></a>const char * QMetaMethod::tag () const</h3>
+<p>Returns the tag associated with this method.</p>
+<p>Tags are special macros recognized by <tt>moc</tt> that make it possible to add extra information about a method. For the moment, <tt>moc</tt> doesn't support any special tags.</p>
+<h3 class="fn"><a name="typeName"></a>const char * QMetaMethod::typeName () const</h3>
+<p>Returns the return type of this method, or an empty string if the return type is <i>void</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

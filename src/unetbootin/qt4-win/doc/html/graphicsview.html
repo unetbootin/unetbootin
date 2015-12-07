@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/graphicsview.qdoc -->
+<head>
+  <title>Qt 4.4: The Graphics View Framework</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The Graphics View Framework<br /><span class="subtitle"></span>
+</h1>
+<a name="graphics-view"></a><a name="graphicsview"></a><a name="graphics"></a><a name="canvas"></a><p>Graphics View provides a surface for managing and interacting with a large number of custom-made 2D graphical items, and a view widget for visualizing the items, with support for zooming and rotation.</p>
+<p>The framework includes an event propagation architecture that allows precise double-precision interaction capabilities for the items on the scene. Items can handle key events, mouse press, move, release and double click events, and they can also track mouse movement.</p>
+<p>Graphics View uses a BSP (Binary Space Partitioning) tree to provide very fast item discovery, and as a result of this, it can visualize large scenes in real-time, even with millions of items.</p>
+<p>Graphics View was introduced in Qt 4.2, replacing its predecessor, <a href="porting4.html#qcanvas">QCanvas</a>. If you are porting from <a href="porting4.html#qcanvas">QCanvas</a>, see <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<p>Topics:</p>
+<ul><li><a href="#the-graphics-view-architecture">The Graphics View Architecture</a></li>
+<ul><li><a href="#the-scene">The Scene</a></li>
+<li><a href="#the-view">The View</a></li>
+<li><a href="#the-item">The Item</a></li>
+</ul>
+<li><a href="#the-graphics-view-coordinate-system">The Graphics View Coordinate System</a></li>
+<ul><li><a href="#item-coordinates">Item Coordinates</a></li>
+<li><a href="#scene-coordinates">Scene Coordinates</a></li>
+<li><a href="#view-coordinates">View Coordinates</a></li>
+<li><a href="#coordinate-mapping">Coordinate Mapping</a></li>
+</ul>
+<li><a href="#key-features">Key Features</a></li>
+<ul><li><a href="#zooming-and-rotating">Zooming and rotating</a></li>
+<li><a href="#printing">Printing</a></li>
+<li><a href="#drag-and-drop">Drag and Drop</a></li>
+<li><a href="#cursors-and-tooltips">Cursors and Tooltips</a></li>
+<li><a href="#animation">Animation</a></li>
+<li><a href="#opengl-rendering">OpenGL Rendering</a></li>
+<li><a href="#item-groups">Item Groups</a></li>
+<li><a href="#widgets-and-layouts">Widgets and Layouts</a></li>
+<ul><li><a href="#qgraphicswidget">QGraphicsWidget</a></li>
+<li><a href="#qgraphicslayout">QGraphicsLayout</a></li>
+</ul>
+<li><a href="#embedded-widget-support">Embedded Widget Support</a></li>
+</ul>
+</ul>
+<a name="the-graphics-view-architecture"></a>
+<h3>The Graphics View Architecture</h3>
+<p>Graphics View provides an item-based approach to model-view programming, much like <a href="demos-interview.html">InterView</a>'s convenience classes <a href="qtablewidget.html">QTableWidget</a>, <a href="qtreewidget.html">QTreeWidget</a> and <a href="qlistwidget.html">QListWidget</a>. Several views can observe a single scene, and the scene contains items of varying geometric shapes.</p>
+<a name="the-scene"></a>
+<h4>The Scene</h4>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a> provides the Graphics View scene. The scene has the following responsibilities:</p>
+<ul>
+<li>Providing a fast interface for managing a large number of items</li>
+<li>Propagating events to each item</li>
+<li>Managing item state, such as selection and focus handling</li>
+<li>Providing untransformed rendering functionality; mainly for printing</li>
+</ul>
+<p>The scene serves as a container for <a href="qgraphicsitem.html">QGraphicsItem</a> objects. Items are added to the scene by calling <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>(), and then retrieved by calling one of the many item discovery functions. <a href="qgraphicsscene.html#items">QGraphicsScene::items</a>() and its overloads return all items contained by or intersecting with a point, a rectangle, a polygon or a general vector path. <a href="qgraphicsscene.html#itemAt">QGraphicsScene::itemAt</a>() returns the topmost item at a particular point. All item discovery functions return the items in descending stacking order (i.e&#x2e;, the first returned item is topmost, and the last item is bottom-most).</p>
+<pre>             QGraphicsScene scene;
+             QGraphicsRectItem *rect = scene.addRect(QRectF(0, 0, 100, 100));
+
+             QGraphicsItem *item = scene.itemAt(50, 50);
+             // item == rect</pre>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a>'s event propagation architecture schedules scene events for delivery to items, and also manages propagation between items. If the scene receives a mouse press event at a certain position, the scene passes the event on to whichever item is at that position.</p>
+<p><a href="qgraphicsscene.html">QGraphicsScene</a> also manages certain item states, such as item selection and focus. You can select items on the scene by calling <a href="qgraphicsscene.html#setSelectionArea">QGraphicsScene::setSelectionArea</a>(), passing an arbitrary shape. This functionality is also used as a basis for rubberband selection in <a href="qgraphicsview.html">QGraphicsView</a>. To get the list of all currently selected items, call <a href="qgraphicsscene.html#selectedItems">QGraphicsScene::selectedItems</a>(). Another state handled by <a href="qgraphicsscene.html">QGraphicsScene</a> is whether or not an item has keyboard input focus. You can set focus on an item by calling <a href="qgraphicsscene.html#setFocusItem">QGraphicsScene::setFocusItem</a>() or <a href="qgraphicsitem.html#setFocus">QGraphicsItem::setFocus</a>(), or get the current focus item by calling <a href="qgraphicsscene.html#focusItem">QGraphicsScene::focusItem</a>().</p>
+<p>Finally, <a href="qgraphicsscene.html">QGraphicsScene</a> allows you to render parts of the scene into a paint device through the <a href="qgraphicsscene.html#render">QGraphicsScene::render</a>() function. You can read more about this in the Printing section later in this document.</p>
+<a name="the-view"></a>
+<h4>The View</h4>
+<p><a href="qgraphicsview.html">QGraphicsView</a> provides the view widget, which visualizes the contents of a scene. You can attach several views to the same scene, to provide several viewports into the same data set. The view widget is a scroll area, and provides scroll bars for navigating through large scenes. To enable OpenGL support, you can set a <a href="qglwidget.html">QGLWidget</a> as the viewport by calling <a href="qabstractscrollarea.html#setViewport">QGraphicsView::setViewport</a>().</p>
+<pre>             QGraphicsScene scene;
+             myPopulateScene(&amp;scene);
+
+             QGraphicsView view(&amp;scene);
+             view.show();</pre>
+<p>The view receives input events from the keyboard and mouse, and translates these to scene events (converting the coordinates used to scene coordinates where appropriate), before sending the events to the visualized scene.</p>
+<p>Using its transformation matrix, <a href="qgraphicsview.html#matrix">QGraphicsView::matrix</a>(), the view can <i>transform</i> the scene's coordinate system. This allows advanced navigation features such as zooming and rotation. For convenience, <a href="qgraphicsview.html">QGraphicsView</a> also provides functions for translating between view and scene coordinates: <a href="qgraphicsview.html#mapToScene">QGraphicsView::mapToScene</a>() and <a href="qgraphicsview.html#mapFromScene">QGraphicsView::mapFromScene</a>().</p>
+<p align="center"><img src="images/graphicsview-view.png" /></p><a name="the-item"></a>
+<h4>The Item</h4>
+<p><a href="qgraphicsitem.html">QGraphicsItem</a> is the base class for graphical items in a scene. Graphics View provides several standard items for typical shapes, such as rectangles (<a href="qgraphicsrectitem.html">QGraphicsRectItem</a>), ellipses (<a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a>) and text items (<a href="qgraphicstextitem.html">QGraphicsTextItem</a>), but the most powerful <a href="qgraphicsitem.html">QGraphicsItem</a> features are available when you write a custom item. Among other things, <a href="qgraphicsitem.html">QGraphicsItem</a> supports the following features:</p>
+<ul>
+<li>Mouse press, move, release and double click events, as well as mouse hover events, wheel events, and context menu events.</li>
+<li>Keyboard input focus, and key events</li>
+<li>Drag and drop</li>
+<li>Grouping, both through parent-child relationships, and with <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a></li>
+<li>Collision detection</li>
+</ul>
+<p>Items live in a local coordinate system, and like <a href="qgraphicsview.html">QGraphicsView</a>, it also provides many functions for mapping coordinates between the item and the scene, and from item to item. Also, like <a href="qgraphicsview.html">QGraphicsView</a>, it can transform its coordinate system using a matrix: <a href="qgraphicsitem-obsolete.html#matrix">QGraphicsItem::matrix</a>(). This is useful for rotating and scaling individual items.</p>
+<p>Items can contain other items (children). Parent items' transformations are inherited by all its children. Regardless of an item's accumulated transformation, though, all its functions (e.g&#x2e;, <a href="qgraphicsitem.html#contains">QGraphicsItem::contains</a>(), <a href="qgraphicsitem.html#boundingRect">QGraphicsItem::boundingRect</a>(), QGraphicsItem::collidesWith()) still operate in local coordinates.</p>
+<p><a href="qgraphicsitem.html">QGraphicsItem</a> supports collision detection through the <a href="qgraphicsitem.html#shape">QGraphicsItem::shape</a>() function, and QGraphicsItem::collidesWith(), which are both virtual functions. By returning your item's shape as a local coordinate <a href="qpainterpath.html">QPainterPath</a> from <a href="qgraphicsitem.html#shape">QGraphicsItem::shape</a>(), <a href="qgraphicsitem.html">QGraphicsItem</a> will handle all collision detection for you. If you want to provide your own collision detection, however, you can reimplement QGraphicsItem::collidesWith().</p>
+<p align="center"><img src="images/graphicsview-items.png" /></p><a name="the-graphics-view-coordinate-system"></a>
+<h3>The Graphics View Coordinate System</h3>
+<p>Graphics View is based on the Cartesian coordinate system; items' position and geometry on the scene are represented by sets of two numbers: the x-coordinate, and the y-coordinate. When observing a scene using an untransformed view, one unit on the scene is represented by one pixel on the screen.</p>
+<p>There are three effective coordinate systems in play in Graphics View: Item coordinates, scene coordinates, and view coordinates. To simplify your implementation, Graphics View provides convenience functions that allow you to map between the three coordinate systems.</p>
+<p>When rendering, Graphics View's scene coordinates correspond to <a href="qpainter.html">QPainter</a>'s <i>logical</i> coordinates, and view coordinates are the same as <i>device</i> coordinates. In <a href="coordsys.html">The Coordinate System</a>, you can read about the relationship between logical coordinates and device coordinates.</p>
+<p align="center"><img src="images/graphicsview-parentchild.png" /></p><a name="item-coordinates"></a>
+<h4>Item Coordinates</h4>
+<p>Items live in their own local coordinate system. Their coordinates are usually centered around its center point (0, 0), and this is also the center for all transformations. Geometric primitives in the item coordinate system are often referred to as item points, item lines, or item rectangles.</p>
+<p>When creating a custom item, item coordinates are all you need to worry about; <a href="qgraphicsscene.html">QGraphicsScene</a> and <a href="qgraphicsview.html">QGraphicsView</a> will perform all transformations for you. This makes it very easy to implement custom items. For example, if you receive a mouse press or a drag enter event, the event position is given in item coordinates. The <a href="qgraphicsitem.html#contains">QGraphicsItem::contains</a>() virtual function, which returns true if a certain point is inside your item, and false otherwise, takes a point argument in item coordinates. Similarly, an item's bounding rect and shape are in item coordinates.</p>
+<p>At item's <i>position</i> is the coordinate of the item's center point in its parent's coordinate system; sometimes referred to as <i>parent</i> coordinates. The scene is in this sense regarded as all parent-less items' &quot;parent&quot;. Top level items' position are in scene coordinates.</p>
+<p>Child coordinates are relative to the parent's coordinates. If the child is untransformed, the difference between a child coordinate and a parent coordinate is the same as the distance between the items in parent coordinates. For example: If an untransformed child item is positioned precisely in its parent's center point, then the two items' coordinate systems will be identical. If the child's position is (10, 0), however, the child's (0, 10) point will correspond to its parent's (10, 10) point.</p>
+<p>Because items' position and transformation are relative to the parent, child items' coordinates are unaffected by the parent's transformation, although the parent's transformation implicitly transforms the child. In the above example, even if the parent is rotated and scaled, the child's (0, 10) point will still correspond to the parent's (10, 10) point. Relative to the scene, however, the child will follow the parent's transformation and position. If the parent is scaled (2x, 2x), the child's position will be at scene coordinate (20, 0), and its (10, 0) point will correspond to the point (40, 0) on the scene.</p>
+<p>With <a href="qgraphicsitem.html#pos">QGraphicsItem::pos</a>() being one of the few exceptions, <a href="qgraphicsitem.html">QGraphicsItem</a>'s functions operate in item coordinates, regardless of the item, or any of its parents' transformation. For example, an item's bounding rect (i.e&#x2e; <a href="qgraphicsitem.html#boundingRect">QGraphicsItem::boundingRect</a>()) is always given in item coordinates.</p>
+<a name="scene-coordinates"></a>
+<h4>Scene Coordinates</h4>
+<p>The scene represents the base coordinate system for all its items. The scene coordinate system describes the position of each top-level item, and also forms the basis for all scene events delivered to the scene from the view. Each item on the scene has a scene position and bounding rectangle (<a href="qgraphicsitem.html#scenePos">QGraphicsItem::scenePos</a>(), <a href="qgraphicsitem.html#sceneBoundingRect">QGraphicsItem::sceneBoundingRect</a>()), in addition to its local item pos and bounding rectangle. The scene position describes the item's position in scene coordinates, and its scene bounding rect forms the basis for how <a href="qgraphicsscene.html">QGraphicsScene</a> determines what areas of the scene have changed. Changes in the scene are communicated through the <a href="qgraphicsscene.html#changed">QGraphicsScene::changed</a>() signal, and the argument is a list of scene rectangles.</p>
+<a name="view-coordinates"></a>
+<h4>View Coordinates</h4>
+<p>View coordinates are the coordinates of the widget. Each unit in view coordinates corresponds to one pixel. What's special about this coordinate system is that it is relative to the widget, or viewport, and unaffected by the observed scene. The top left corner of <a href="qgraphicsview.html">QGraphicsView</a>'s viewport is always (0, 0), and the bottom right corner is always (viewport width, viewport height). All mouse events and drag and drop events are originally received as view coordinates, and you need to map these coordinates to the scene in order to interact with items.</p>
+<a name="coordinate-mapping"></a>
+<h4>Coordinate Mapping</h4>
+<p>Often when dealing with items in a scene, it can be useful to map coordinates and arbitrary shapes from the scene to an item, from item to item, or from the view to the scene. For example, when you click your mouse in <a href="qgraphicsview.html">QGraphicsView</a>'s viewport, you can ask the scene what item is under the cursor by calling <a href="qgraphicsview.html#mapToScene">QGraphicsView::mapToScene</a>(), followed by <a href="qgraphicsscene.html#itemAt">QGraphicsScene::itemAt</a>(). If you want to know where in the viewport an item is located, you can call <a href="qgraphicsitem.html#mapToScene">QGraphicsItem::mapToScene</a>() on the item, then <a href="qgraphicsview.html#mapFromScene">QGraphicsView::mapFromScene</a>() on the view. Finally, if you use want to find what items are inside a view ellipse, you can pass a <a href="qpainterpath.html">QPainterPath</a> to mapToScene(), and then pass the mapped path to <a href="qgraphicsscene.html#items">QGraphicsScene::items</a>().</p>
+<p>You can map coordinates and shapes to and from and item's scene by calling <a href="qgraphicsitem.html#mapToScene">QGraphicsItem::mapToScene</a>() and <a href="qgraphicsitem.html#mapFromScene">QGraphicsItem::mapFromScene</a>(). You can also map to an item's parent item by calling <a href="qgraphicsitem.html#mapToParent">QGraphicsItem::mapToParent</a>() and <a href="qgraphicsitem.html#mapFromParent">QGraphicsItem::mapFromParent</a>(), or between items by calling <a href="qgraphicsitem.html#mapToItem">QGraphicsItem::mapToItem</a>() and <a href="qgraphicsitem.html#mapFromItem">QGraphicsItem::mapFromItem</a>(). All mapping functions can map both points, rectangles, polygons and paths.</p>
+<p>The same mapping functions are available in the view, for mapping to and from the scene. <a href="qgraphicsview.html#mapFromScene">QGraphicsView::mapFromScene</a>() and <a href="qgraphicsview.html#mapToScene">QGraphicsView::mapToScene</a>(). To map from a view to an item, you first map to the scene, and then map from the scene to the item.</p>
+<a name="key-features"></a>
+<h3>Key Features</h3>
+<a name="zooming-and-rotating"></a>
+<h4>Zooming and rotating</h4>
+<p><a href="qgraphicsview.html">QGraphicsView</a> supports the same affine transformations as <a href="qpainter.html">QPainter</a> does through <a href="qgraphicsview.html#setMatrix">QGraphicsView::setMatrix</a>(). By applying a transformation to the view, you can easily add support for common navigation features such as zooming and rotating.</p>
+<p>Here is an example of how to implement zoom and rotate slots in a subclass of <a href="qgraphicsview.html">QGraphicsView</a>:</p>
+<pre>             class View : public QGraphicsView
+             {
+             Q_OBJECT
+                 ...
+             public slots:
+                 void zoomIn() { scale(1.2, 1.2); }
+                 void zoomOut() { scale(1 / 1.2, 1 / 1.2); }
+                 void rotateLeft() { rotate(-10); }
+                 void rotateRight() { rotate(10); }
+                 ...
+             };</pre>
+<p>The slots could be connected to <a href="qtoolbutton.html">QToolButtons</a> with <a href="qabstractbutton.html#autoRepeat-prop">autoRepeat</a> enabled.</p>
+<p><a href="qgraphicsview.html">QGraphicsView</a> keeps the center of the view aligned when you transform the view.</p>
+<p>See also the <a href="graphicsview-elasticnodes.html">Elastic Nodes</a> example for code that shows how to implement basic zooming features.</p>
+<a name="printing"></a>
+<h4>Printing</h4>
+<p>Graphics View provides single-line printing through its rendering functions, <a href="qgraphicsscene.html#render">QGraphicsScene::render</a>() and <a href="qgraphicsview.html#render">QGraphicsView::render</a>(). The functions provide the same API: You can have the scene or the view render all or parts of their contents into any paint device by passing a <a href="qpainter.html">QPainter</a> to either of the rendering functions. This example shows how to print the whole scene into a full page, using <a href="qprinter.html">QPrinter</a>.</p>
+<pre>             QGraphicsScene scene;
+             scene.addRect(QRectF(0, 0, 100, 200), Qt::black, QBrush(Qt::green));
+
+             QPrinter printer;
+             if (QPrintDialog(&amp;printer).exec() == QDialog::Accepted) {
+                 QPainter painter(&amp;printer);
+                 painter.setRenderHint(QPainter::Antialiasing);
+                 scene.render(&amp;painter);
+             }</pre>
+<p>The difference between the scene and view rendering functions is that one operates in scene coordinates, and the other in view coordinates. <a href="qgraphicsscene.html#render">QGraphicsScene::render</a>() is often preferred for printing whole segments of a scene untransformed, such as for plotting geometrical data, or for printing a text document. <a href="qgraphicsview.html#render">QGraphicsView::render</a>(), on the other hand, is suitable for taking screenshots; its default behavior is to render the exact contents of the viewport using the provided painter.</p>
+<pre>             QGraphicsScene scene;
+             scene.addRect(QRectF(0, 0, 100, 200), Qt::black, QBrush(Qt::green));
+
+             QPixmap pixmap;
+             QPainter painter(&amp;pixmap);
+             painter.setRenderHint(QPainter::Antialiasing);
+             scene.render(&amp;painter);
+             painter.end();
+
+             pixmap.save(&quot;scene.png&quot;);</pre>
+<p>When the source and target areas' sizes do not match, the source contents are stretched to fit into the target area. By passing a <a href="qt.html#AspectRatioMode-enum">Qt::AspectRatioMode</a> to the rendering function you are using, you can choose to maintain or ignore the aspect ratio of the scene when the contents are stretched.</p>
+<a name="drag-and-drop"></a>
+<h4>Drag and Drop</h4>
+<p>Because <a href="qgraphicsview.html">QGraphicsView</a> inherits <a href="qwidget.html">QWidget</a> indirectly, it already provides the same drag and drop functionality that <a href="qwidget.html">QWidget</a> provides. In addition, as a convenience, the Graphics View framework provides drag and drop support for the scene, and for each and every item. As the view receives a drag, it translates the drag and drop events into a <a href="qgraphicsscenedragdropevent.html">QGraphicsSceneDragDropEvent</a>, which is then forwarded to the scene. The scene takes over scheduling of this event, and sends it to the first item under the mouse cursor that accepts drops.</p>
+<p>To start a drag from an item, create a <a href="qdrag.html">QDrag</a> object, passing a pointer to the widget that starts the drag. Items can be observed by many views at the same time, but only one view can start the drag. Drags are in most cases started as a result of pressing or moving the mouse, so in mousePressEvent() or mouseMoveEvent(), you can get the originating widget pointer from the event. For example:</p>
+<pre>             void CustomItem::mousePressEvent(QGraphicsSceneMouseEvent *event)
+             {
+                 QMimeData *data = new QMimeData;
+                 data-&gt;setColor(Qt::green);
+
+                 QDrag *drag = new QDrag(event-&gt;widget());
+                 drag-&gt;setMimeData(data);
+                 drag-&gt;start();
+             }</pre>
+<p>To intercept drag and drop events for the scene, you reimplement <a href="qgraphicsscene.html#dragEnterEvent">QGraphicsScene::dragEnterEvent</a>() and whichever event handlers your particular scene needs, in a <a href="qgraphicsitem.html">QGraphicsItem</a> subclass. You can read more about drag and drop in Graphics View in the documentation for each of <a href="qgraphicsscene.html">QGraphicsScene</a>'s event handlers.</p>
+<p>Items can enable drag and drop support by calling <a href="qgraphicsitem.html#setAcceptDrops">QGraphicsItem::setAcceptDrops</a>(). To handle the incoming drag, reimplement <a href="qgraphicsitem.html#dragEnterEvent">QGraphicsItem::dragEnterEvent</a>(), <a href="qgraphicsitem.html#dragMoveEvent">QGraphicsItem::dragMoveEvent</a>(), <a href="qgraphicsitem.html#dragLeaveEvent">QGraphicsItem::dragLeaveEvent</a>(), and <a href="qgraphicsitem.html#dropEvent">QGraphicsItem::dropEvent</a>().</p>
+<p>See also the <a href="graphicsview-dragdroprobot.html">Drag and Drop Robot</a> example for a demonstration of Graphics View's support for drag and drop operations.</p>
+<a name="cursors-and-tooltips"></a>
+<h4>Cursors and Tooltips</h4>
+<p>Like <a href="qwidget.html">QWidget</a>, <a href="qgraphicsitem.html">QGraphicsItem</a> also supports cursors (<a href="qgraphicsitem.html#setCursor">QGraphicsItem::setCursor</a>()), and tooltips (<a href="qgraphicsitem.html#setToolTip">QGraphicsItem::setToolTip</a>()). The cursors and tooltips are activated by <a href="qgraphicsview.html">QGraphicsView</a> as the mouse cursor enters the item's area (detected by calling <a href="qgraphicsitem.html#contains">QGraphicsItem::contains</a>()).</p>
+<p>You can also set a default cursor directly on the view by calling <a href="qwidget.html#cursor-prop">QGraphicsView::setCursor</a>().</p>
+<p>See also the <a href="graphicsview-dragdroprobot.html">Drag and Drop Robot</a> example for code that implements tooltips and cursor shape handling.</p>
+<a name="animation"></a>
+<h4>Animation</h4>
+<p>Graphics View supports animation at several levels. You can easily assemble animation paths by associating a <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a> with your item. This allows timeline controlled animations that operate at a steady speed on all platforms (although the frame rate may vary depending on the platform's performance). <a href="qgraphicsitemanimation.html">QGraphicsItemAnimation</a> allows you to create a path for an item's position, rotation, scale, shear and translation. The animation can be controlled by a <a href="qslider.html">QSlider</a>, or more commonly by <a href="qtimeline.html">QTimeLine</a>.</p>
+<p>Another option is to create a custom item that inherits from <a href="qobject.html">QObject</a> and <a href="qgraphicsitem.html">QGraphicsItem</a>. The item can the set up its own timers, and control animations with incremental steps in <a href="qobject.html#timerEvent">QObject::timerEvent</a>().</p>
+<p>A third option, which is mostly available for compatibility with <a href="porting4.html#qcanvas">QCanvas</a> in Qt 3, is to <i>advance</i> the scene by calling <a href="qgraphicsscene.html#advance">QGraphicsScene::advance</a>(), which in turn calls <a href="qgraphicsitem.html#advance">QGraphicsItem::advance</a>().</p>
+<p>See also the <a href="graphicsview-dragdroprobot.html">Drag and Drop Robot</a> example for an illustration of timeline-based animation techniques.</p>
+<a name="opengl-rendering"></a>
+<h4>OpenGL Rendering</h4>
+<p>To enable OpenGL rendering, you simply set a new <a href="qglwidget.html">QGLWidget</a> as the viewport of <a href="qgraphicsview.html">QGraphicsView</a> by calling <a href="qabstractscrollarea.html#setViewport">QGraphicsView::setViewport</a>(). If you want OpenGL with antialiasing, you need OpenGL sample buffer support (see <a href="qglformat.html#sampleBuffers">QGLFormat::sampleBuffers</a>()).</p>
+<p>Example:</p>
+<pre>             QGraphicsView view(&amp;scene);
+             view.setViewport(new QGLWidget(QGLFormat(QGL::SampleBuffers)));</pre>
+<a name="item-groups"></a>
+<h4>Item Groups</h4>
+<p>By making an item a child of another, you can achieve the most essential feature of item grouping: the items will move together, and all transformations are propagated from parent to child. <a href="qgraphicsitem.html">QGraphicsItem</a> can also handle all events for its children (see <a href="qgraphicsitem.html#setHandlesChildEvents">QGraphicsItem::setHandlesChildEvents</a>()). This allows the parent item to act on behalf of its children, effectively treating all items as one.</p>
+<p>In addition, <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a> is a special item that combines child event handling with a useful interface for adding and removing items to and from a group. Adding an item to a <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a> will keep the item's original position and transformation, whereas reparenting items in general will cause the child to reposition itself relative to its new parent. For convenience, you can create <a href="qgraphicsitemgroup.html">QGraphicsItemGroup</a>s through the scene by calling <a href="qgraphicsscene.html#createItemGroup">QGraphicsScene::createItemGroup</a>().</p>
+<a name="widgets-and-layouts"></a>
+<h4>Widgets and Layouts</h4>
+<p>Qt 4.4 introduced support for geometry and layout-aware items through <a href="qgraphicswidget.html">QGraphicsWidget</a>. This special base item is similar to <a href="qwidget.html">QWidget</a>, but unlike <a href="qwidget.html">QWidget</a>, it doesn't inherit from QPaintDevice; rather from <a href="qgraphicsitem.html">QGraphicsItem</a> instead. This allows you to write complete widgets with events, signals &amp; slots, size hints and policies, and you can also manage your widgets geometries in layouts through <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> and <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a>.</p>
+<a name="qgraphicswidget"></a>
+<h5>QGraphicsWidget</h5>
+<p>Building on top of <a href="qgraphicsitem.html">QGraphicsItem</a>'s capabilities and lean footprint, <a href="qgraphicswidget.html">QGraphicsWidget</a> provides the best of both worlds: extra functionality from <a href="qwidget.html">QWidget</a>, such as the style, font, palette, layout direction, and its geometry, and resolution independence and transformation support from <a href="qgraphicsitem.html">QGraphicsItem</a>. Because Graphics View uses real coordinates instead of integers, <a href="qgraphicswidget.html">QGraphicsWidget</a>'s geometry functions also operate on <a href="qrectf.html">QRectF</a> and <a href="qpointf.html">QPointF</a>. This also applies to frame rects, margins and spacing. With <a href="qgraphicswidget.html">QGraphicsWidget</a> it's not uncommon to specify contents margins of (0.5, 0.5, 0.5, 0.5), for example. You can create both subwidgets and &quot;top-level&quot; windows; in some cases you can now use Graphics View for advanced MDI applications.</p>
+<p>Some of <a href="qwidget.html">QWidget</a>'s properties are supported, including window flags and attributes, but not all. You should refer to <a href="qgraphicswidget.html">QGraphicsWidget</a>'s class documentation for a complete overview of what is and what is not supported. For example, you can create decorated windows by passing the <a href="qt.html#WindowType-enum">Qt::Window</a> window flag to <a href="qgraphicswidget.html">QGraphicsWidget</a>'s constructor, but Graphics View currently doesn't support the <a href="qt.html#WindowType-enum">Qt::Sheet</a> and <a href="qt.html#WindowType-enum">Qt::Drawer</a> flags that are common on Mac OS X.</p>
+<p>The capabilities of <a href="qgraphicswidget.html">QGraphicsWidget</a> are expected to grow depending on community feedback.</p>
+<a name="qgraphicslayout"></a>
+<h5>QGraphicsLayout</h5>
+<p><a href="qgraphicslayout.html">QGraphicsLayout</a> is part of a second-generation layout framework designed specifically for <a href="qgraphicswidget.html">QGraphicsWidget</a>. Its API is very similar to that of <a href="qlayout.html">QLayout</a>. You can manage widgets and sublayouts inside either <a href="qgraphicslinearlayout.html">QGraphicsLinearLayout</a> and <a href="qgraphicsgridlayout.html">QGraphicsGridLayout</a>. You can also easily write your own layout by subclassing <a href="qgraphicslayout.html">QGraphicsLayout</a> yourself, or add your own <a href="qgraphicsitem.html">QGraphicsItem</a> items to the layout by writing an adaptor subclass of <a href="qgraphicslayoutitem.html">QGraphicsLayoutItem</a>.</p>
+<a name="embedded-widget-support"></a>
+<h4>Embedded Widget Support</h4>
+<p>Graphics View provides seamless support for embedding any widget into the scene. You can embed simple widgets, such as <a href="qlineedit.html">QLineEdit</a> or <a href="qpushbutton.html">QPushButton</a>, complex widgets such as <a href="qtabwidget.html">QTabWidget</a>, and even complete main windows. To embed your widget to the scene, simply call <a href="qgraphicsscene.html#addWidget">QGraphicsScene::addWidget</a>(), or create an instance of <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a> to embed your widget manually.</p>
+<p>Through <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a>, Graphics View is able to deeply integrate the client widget features including its cursors, tooltips, mouse, tablet and keyboard events, child widgets, animations, pop-ups (e.g&#x2e;, <a href="qcombobox.html">QComboBox</a> or <a href="qcompleter.html">QCompleter</a>), and the widget's input focus and activation. <a href="qgraphicsproxywidget.html">QGraphicsProxyWidget</a> even integrates the embedded widget's tab order so that you can tab in and out of embedded widgets. You can even embed a new <a href="qgraphicsview.html">QGraphicsView</a> into your scene to provide complex nested scenes.</p>
+<p>When transforming an embedded widget, Graphics View makes sure that the widget is transformed resolution independently, allowing the fonts and style to stay crisp when zoomed in. (Note that the effect of resolution independence depends on the style.)</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

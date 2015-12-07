@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3gridview.cpp -->
+<head>
+  <title>Qt 4.4: Q3GridView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3GridView Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3GridView class provides an abstract base for fixed-size grids. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3GridView&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qgridview">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3scrollview.html">Q3ScrollView</a>.</p>
+<ul>
+<li><a href="q3gridview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3gridview.html#cellHeight-prop">cellHeight</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3gridview.html#cellWidth-prop">cellWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3gridview.html#numCols-prop">numCols</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3gridview.html#numRows-prop">numRows</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3gridview.html#Q3GridView">Q3GridView</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3gridview.html#dtor.Q3GridView">~Q3GridView</a></b> ()</li>
+<li><div class="fn"/>QRect <b><a href="q3gridview.html#cellGeometry">cellGeometry</a></b> ( int <i>row</i>, int <i>column</i> )</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#cellHeight-prop">cellHeight</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="q3gridview.html#cellRect">cellRect</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#cellWidth-prop">cellWidth</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#columnAt">columnAt</a></b> ( int <i>x</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3gridview.html#ensureCellVisible">ensureCellVisible</a></b> ( int <i>row</i>, int <i>column</i> )</li>
+<li><div class="fn"/>QSize <b><a href="q3gridview.html#gridSize">gridSize</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#numCols-prop">numCols</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#numRows-prop">numRows</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3gridview.html#repaintCell">repaintCell</a></b> ( int <i>row</i>, int <i>column</i>, bool <i>erase</i> = true )</li>
+<li><div class="fn"/>int <b><a href="q3gridview.html#rowAt">rowAt</a></b> ( int <i>y</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#cellHeight-prop">setCellHeight</a></b> ( int )</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#cellWidth-prop">setCellWidth</a></b> ( int )</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#numCols-prop">setNumCols</a></b> ( int )</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#numRows-prop">setNumRows</a></b> ( int )</li>
+<li><div class="fn"/>void <b><a href="q3gridview.html#updateCell">updateCell</a></b> ( int <i>row</i>, int <i>column</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#dimensionChange">dimensionChange</a></b> ( int <i>oldNumRows</i>, int <i>oldNumCols</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#paintCell">paintCell</a></b> ( QPainter * <i>p</i>, int <i>row</i>, int <i>col</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="q3gridview.html#paintEmptyArea">paintEmptyArea</a></b> ( QPainter * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3GridView class provides an abstract base for fixed-size grids.</p>
+<p>A grid view consists of a number of abstract cells organized in rows and columns. The cells have a fixed size and are identified with a row index and a column index. The top-left cell is in row 0, column 0. The bottom-right cell is in row <a href="q3gridview.html#numRows-prop">numRows</a>()-1, column <a href="q3gridview.html#numCols-prop">numCols</a>()-1.</p>
+<p>You can define <a href="q3gridview.html#numRows-prop">numRows</a>, <a href="q3gridview.html#numCols-prop">numCols</a>, <a href="q3gridview.html#cellWidth-prop">cellWidth</a> and <a href="q3gridview.html#cellHeight-prop">cellHeight</a>. Reimplement the pure virtual function <a href="q3gridview.html#paintCell">paintCell</a>() to draw the contents of a cell.</p>
+<p>With <a href="q3gridview.html#ensureCellVisible">ensureCellVisible</a>(), you can ensure a certain cell is visible. With <a href="q3gridview.html#rowAt">rowAt</a>() and <a href="q3gridview.html#columnAt">columnAt</a>() you can find a cell based on the given x- and y-coordinates.</p>
+<p>If you need to monitor changes to the grid's dimensions (i.e&#x2e; when <a href="q3gridview.html#numRows-prop">numRows</a> or <a href="q3gridview.html#numCols-prop">numCols</a> is changed), reimplement the <a href="q3gridview.html#dimensionChange">dimensionChange</a>() change handler.</p>
+<p>Note: the row and column indices are always given in the order, row (vertical offset) then column (horizontal offset). This order is the opposite of all pixel operations, which are given in the order x (horizontal offset), y (vertical offset).</p>
+<p>Q3GridView is a very simple abstract class based on <a href="q3scrollview.html">Q3ScrollView</a>. It is designed to simplify the task of drawing many cells of the same size in a potentially scrollable canvas. If you need rows and columns with different sizes, use a <a href="q3table.html">Q3Table</a> instead. If you need a simple list of items, use a <a href="q3listbox.html">Q3ListBox</a>. If you need to present hierachical data use a <a href="q3listview.html">Q3ListView</a>, and if you need random objects at random positions, consider using either a <a href="q3iconview.html">Q3IconView</a> or a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="cellHeight-prop"></a>cellHeight : int</h3>
+<p>This property holds the height of a grid row.</p>
+<p>All rows in a grid view have the same height.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int cellHeight () const</b></li>
+<li><div class="fn"/><b>virtual void setCellHeight ( int )</b></li>
+</ul>
+<p>See also <a href="q3gridview.html#cellWidth-prop">cellWidth</a>.</p>
+<h3 class="fn"><a name="cellWidth-prop"></a>cellWidth : int</h3>
+<p>This property holds the width of a grid column.</p>
+<p>All columns in a grid view have the same width.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int cellWidth () const</b></li>
+<li><div class="fn"/><b>virtual void setCellWidth ( int )</b></li>
+</ul>
+<p>See also <a href="q3gridview.html#cellHeight-prop">cellHeight</a>.</p>
+<h3 class="fn"><a name="numCols-prop"></a>numCols : int</h3>
+<p>This property holds the number of columns in the grid.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int numCols () const</b></li>
+<li><div class="fn"/><b>virtual void setNumCols ( int )</b></li>
+</ul>
+<p>See also <a href="q3gridview.html#numRows-prop">numRows</a>.</p>
+<h3 class="fn"><a name="numRows-prop"></a>numRows : int</h3>
+<p>This property holds the number of rows in the grid.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int numRows () const</b></li>
+<li><div class="fn"/><b>virtual void setNumRows ( int )</b></li>
+</ul>
+<p>See also <a href="q3gridview.html#numCols-prop">numCols</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3GridView"></a>Q3GridView::Q3GridView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a grid view.</p>
+<p>The <i>parent</i>, <i>name</i> and widget flag, <i>f</i>, arguments are passed to the <a href="q3scrollview.html">Q3ScrollView</a> constructor.</p>
+<h3 class="fn"><a name="dtor.Q3GridView"></a>Q3GridView::~Q3GridView ()</h3>
+<p>Destroys the grid view.</p>
+<h3 class="fn"><a name="cellGeometry"></a><a href="qrect.html">QRect</a> Q3GridView::cellGeometry ( int <i>row</i>, int <i>column</i> )</h3>
+<p>Returns the geometry of cell (<i>row</i>, <i>column</i>) in the content coordinate system.</p>
+<p>See also <a href="q3gridview.html#cellRect">cellRect</a>().</p>
+<h3 class="fn"><a name="cellRect"></a><a href="qrect.html">QRect</a> Q3GridView::cellRect () const</h3>
+<p>Returns the geometry of a cell in a cell's coordinate system. This is a convenience function useful in <a href="q3gridview.html#paintCell">paintCell</a>(). It is equivalent to <a href="qrect.html">QRect</a>(0, 0, <a href="q3gridview.html#cellWidth-prop">cellWidth</a>(), <a href="q3gridview.html#cellHeight-prop">cellHeight</a>()).</p>
+<p>See also <a href="q3gridview.html#cellGeometry">cellGeometry</a>().</p>
+<h3 class="fn"><a name="columnAt"></a>int Q3GridView::columnAt ( int <i>x</i> ) const</h3>
+<p>Returns the number of the column at position <i>x</i>. <i>x</i> must be given in content coordinates.</p>
+<p>See also <a href="q3gridview.html#rowAt">rowAt</a>().</p>
+<h3 class="fn"><a name="dimensionChange"></a>void Q3GridView::dimensionChange ( int <i>oldNumRows</i>, int <i>oldNumCols</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This change handler is called whenever any of the grid's dimensions change. <i>oldNumRows</i> and <i>oldNumCols</i> contain the old dimensions, <a href="q3gridview.html#numRows-prop">numRows</a>() and <a href="q3gridview.html#numCols-prop">numCols</a>() contain the new dimensions.</p>
+<h3 class="fn"><a name="ensureCellVisible"></a>void Q3GridView::ensureCellVisible ( int <i>row</i>, int <i>column</i> )</h3>
+<p>Ensures cell (<i>row</i>, <i>column</i>) is visible, scrolling the grid view if necessary.</p>
+<h3 class="fn"><a name="gridSize"></a><a href="qsize.html">QSize</a> Q3GridView::gridSize () const</h3>
+<p>Returns the size of the grid in pixels.</p>
+<h3 class="fn"><a name="paintCell"></a>void Q3GridView::paintCell ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>This pure virtual function is called to paint the single cell at (<i>row</i>, <i>col</i>) using painter <i>p</i>. The painter must be open when paintCell() is called and must remain open.</p>
+<p>The coordinate system is <a href="qpainter.html#translate">translated</a> so that the origin is at the top-left corner of the cell to be painted, i.e&#x2e; <i>cell</i> coordinates. Do not scale or shear the coordinate system (or if you do, restore the transformation matrix before you return).</p>
+<p>The painter is not clipped by default in order to get maximum efficiency. If you want clipping, use</p>
+<pre>   p-&gt;setClipRect(cellRect(), QPainter::CoordPainter);
+   //... your drawing code
+   p-&gt;setClipping(false);</pre>
+<h3 class="fn"><a name="paintEmptyArea"></a>void Q3GridView::paintEmptyArea ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>cx</i>, int <i>cy</i>, int <i>cw</i>, int <i>ch</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function fills the <i>cw</i> pixels wide and <i>ch</i> pixels high rectangle starting at position (<i>cx</i>, <i>cy</i>) with the background color using the painter <i>p</i>.</p>
+<p>paintEmptyArea() is invoked by <a href="q3scrollview.html#drawContents">drawContents</a>() to erase or fill unused areas.</p>
+<h3 class="fn"><a name="repaintCell"></a>void Q3GridView::repaintCell ( int <i>row</i>, int <i>column</i>, bool <i>erase</i> = true )</h3>
+<p>Repaints cell (<i>row</i>, <i>column</i>).</p>
+<p>If <i>erase</i> is true, Qt erases the area of the cell before the <a href="q3gridview.html#paintCell">paintCell</a>() call; otherwise no erasing takes place.</p>
+<p>See also <a href="qwidget.html#repaint">QWidget::repaint</a>().</p>
+<h3 class="fn"><a name="rowAt"></a>int Q3GridView::rowAt ( int <i>y</i> ) const</h3>
+<p>Returns the number of the row at position <i>y</i>. <i>y</i> must be given in content coordinates.</p>
+<p>See also <a href="q3gridview.html#columnAt">columnAt</a>().</p>
+<h3 class="fn"><a name="updateCell"></a>void Q3GridView::updateCell ( int <i>row</i>, int <i>column</i> )</h3>
+<p>Updates cell (<i>row</i>, <i>column</i>).</p>
+<p>See also <a href="qwidget.html#update">QWidget::update</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

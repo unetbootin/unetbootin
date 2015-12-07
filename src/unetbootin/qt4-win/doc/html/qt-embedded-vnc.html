@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-vnc.qdoc -->
+<head>
+  <title>Qt 4.4: The VNC Protocol and Qt for Embedded Linux</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The VNC Protocol and Qt for Embedded Linux<br /><span class="subtitle"></span>
+</h1>
+<p>VNC (Virtual Network Computing) software makes it possible to view and interact with one computer (the &quot;server&quot;) from any other computer or mobile device (the &quot;viewer&quot;) anywhere on a network.</p>
+<p>To run a <a href="qt-embedded.html">Qt for Embedded Linux</a> application using the VNC protocol, the <a href="qt-embedded.html">Qt for Embedded Linux</a> library must be configured and compiled with the <tt>-qt-gfx-vnc</tt> option:</p>
+<pre>         cd path/to/QtEmbedded
+         ./configure -qt-gfx-vnc
+         make</pre>
+<p>Then start a server application (i.e&#x2e; construct a <a href="qapplication.html">QApplication</a> object with the <a href="qapplication.html#Type-enum">QApplication::GuiServer</a> flag or use the -qws command line parameter. See the <a href="qt-embedded-running.html">running applications</a> documentation for details). When runnng the application, use the <tt>-display</tt> option to specify the VNC server's driver. For example:</p>
+<pre>         cd path/to/QtEmbedded/examples/widgets/analogclock
+         ./analogclock -qws -display VNC:0</pre>
+<p>To interact with the application over the network, run a VNC client pointing to the machine that is running the server application. VNC clients are available for a vast array of display systems: X11, Windows, Amiga, DOS, VMS, and dozens of others. For example, using the X11 VNC client to view the application from the same machine:</p>
+<pre>         vncviewer localhost:0</pre>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> will create a 640 by 480 pixel display by default. Alternatively, the <a href="qt-embedded-envvars.html#qws-size">QWS_SIZE</a> environment variable can be used to set another size, e.g&#x2e; <tt>QWS_SIZE=240x320</tt>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>The Virtual Framebuffer</b><p>The <a href="qvfb.html">virtual framebuffer</a> is an alternative technique recommended for development and debugging purposes.</p>
+<p>The virtual framebuffer emulates a framebuffer using a shared memory region and the <tt>qvfb</tt> tool to display the framebuffer in a window.</p>
+<p>Its use of shared memory makes the virtual framebuffer much faster and smoother than using the VNC protocol, but it does not operate over a network.</p>
+</td><td><img src="images/qt-embedded-virtualframebuffer.png" /></td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

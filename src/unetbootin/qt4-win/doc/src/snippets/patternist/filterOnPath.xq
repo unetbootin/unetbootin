@@ -1,0 +1,10 @@
+(<doc>
+    <p>
+        <span/>
+        <span/>
+    </p>
+    <p>
+        <span/>
+        <span/>
+    </p>
+</doc>/p/span)[1]

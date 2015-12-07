@@ -1,0 +1,19 @@
+//! [0]
+        #ifdef Q_WS_X11
+        void qt_x11_wait_for_window_manager(QWidget *widget);
+        #endif
+
+        int main(int argc, char *argv[])
+        {
+            QApplication app(argc, argv);
+            ...
+            window.show();
+        #ifdef Q_WS_X11
+            qt_x11_wait_for_window_manager(&window);
+        #endif
+            ...
+            return app.exec();
+        }
+//! [0]
+
+

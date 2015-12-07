@@ -1,0 +1,1159 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3PtrList
+    \brief The Q3PtrList class is a template class that provides a list.
+    \compat
+
+    Q3ValueList is an STL-compatible alternative to this class.
+
+    Define a template instance Q3PtrList\<X\> to create a list that
+    operates on pointers to X (X*).
+
+    The list class is indexable and has a \link at() current
+    index\endlink and a \link current() current item\endlink. The
+    first item corresponds to index position 0. The current index is
+    -1 if the current item is 0.
+
+    Items are inserted with prepend(), insert() or append(). Items are
+    removed with remove(), removeRef(), removeFirst() and
+    removeLast(). You can search for an item using find(), findNext(),
+    findRef() or findNextRef(). The list can be sorted with sort().
+    You can count the number of occurrences of an item with contains()
+    or containsRef(). You can get a pointer to the current item with
+    current(), to an item at a particular index position in the list
+    with at() or to the first or last item with getFirst() and
+    getLast(). You can also iterate over the list with first(),
+    last(), next() and prev() (which all update current()). The list's
+    deletion property is set with setAutoDelete().
+
+    \target example
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3ptrlist.qdoc 0
+
+    The output is
+    \snippet doc/src/snippets/code/doc.src.q3ptrlist.qdoc 1
+
+    Q3PtrList has several member functions for traversing the list, but
+    using a Q3PtrListIterator can be more practical. Multiple list
+    iterators may traverse the same list, independently of each other
+    and of the current list item.
+
+    In the example above we make the call setAutoDelete(true).
+    Enabling auto-deletion tells the list to delete items that are
+    removed. The default is to not delete items when they are removed
+    but this would cause a memory leak in the example because there
+    are no other references to the list items.
+
+    When inserting an item into a list only the pointer is copied, not
+    the item itself, i.e. a shallow copy. It is possible to make the
+    list copy all of the item's data (deep copy) when an item is
+    inserted. insert(), inSort() and append() call the virtual
+    function Q3PtrCollection::newItem() for the item to be inserted.
+    Inherit a list and reimplement newItem() to have deep copies.
+
+    When removing an item from a list, the virtual function
+    Q3PtrCollection::deleteItem() is called. Q3PtrList's default
+    implementation is to delete the item if auto-deletion is enabled.
+
+    The virtual function compareItems() can be reimplemented to
+    compare two list items. This function is called from all list
+    functions that need to compare list items, for instance
+    remove(const type*). If you only want to deal with pointers, there
+    are functions that compare pointers instead, for instance
+    removeRef(const type*). These functions are somewhat faster than
+    those that call compareItems().
+
+    List items are stored as \c void* in an internal Q3LNode, which
+    also holds pointers to the next and previous list items. The
+    functions currentNode(), removeNode(), and takeNode() operate
+    directly on the Q3LNode, but they should be used with care. The
+    data component of the node is available through Q3LNode::getData().
+
+    The Q3StrList class is a list of \c char*.
+    It reimplements newItem(), deleteItem() and compareItems(). (But
+    see QStringList for a list of Unicode QStrings.)
+
+    \sa Q3PtrListIterator
+*/
+
+
+/*!
+    \fn Q3PtrList::Q3PtrList()
+
+    Constructs an empty list.
+*/
+
+/*!
+    \fn Q3PtrList::Q3PtrList( const Q3PtrList<type> &list )
+
+    Constructs a copy of \a list.
+
+    Each item in \a list is \link append() appended\endlink to this
+    list. Only the pointers are copied (shallow copy).
+*/
+
+/*!
+    \fn Q3PtrList::~Q3PtrList()
+
+    Removes all items from the list and destroys the list.
+
+    All list iterators that access this list will be reset.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn Q3PtrList<type> &Q3PtrList::operator=(const Q3PtrList<type> &list)
+
+    Assigns \a list to this list and returns a reference to this list.
+
+    This list is first cleared and then each item in \a list is \link
+    append() appended\endlink to this list. Only the pointers are
+    copied (shallow copy) unless newItem() has been reimplemented.
+*/
+
+/*!
+    \fn bool Q3PtrList::operator==(const Q3PtrList<type> &list ) const
+
+    Compares this list with \a list. Returns TRUE if the lists contain
+    the same data; otherwise returns FALSE.
+*/
+
+/*!
+    \fn uint Q3PtrList::count() const
+
+    Returns the number of items in the list.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3PtrList::operator!=(const Q3PtrList<type> &list ) const
+
+    Compares this list with \a list. Returns TRUE if the lists contain
+    different data; otherwise returns FALSE.
+*/
+
+
+/*!
+    \fn void Q3PtrList::sort()
+
+    Sorts the list by the result of the virtual compareItems()
+    function.
+
+    The heap sort algorithm is used for sorting. It sorts n items with
+    O(n*log n) comparisons. This is the asymptotic optimal solution of
+    the sorting problem.
+
+    If the items in your list support operator<() and operator==(),
+    you might be better off with Q3SortedList because it implements the
+    compareItems() function for you using these two operators.
+
+    \sa inSort()
+*/
+
+/*!
+    \fn bool Q3PtrList::isEmpty() const
+
+    Returns TRUE if the list is empty; otherwise returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn bool Q3PtrList::insert( uint index, const type *item )
+
+    Inserts the \a item at position \a index in the list.
+
+    Returns TRUE if successful, i.e. if \a index is in range;
+    otherwise returns FALSE. The valid range is 0 to count()
+    (inclusively). The item is appended if \a index == count().
+
+    The inserted item becomes the current list item.
+
+    \a item must not be 0.
+
+    \sa append(), current(), replace()
+*/
+
+/*!
+    \fn bool Q3PtrList::replace( uint index, const type *item )
+
+    Replaces the item at position \a index with the new \a item. 
+
+    Returns TRUE if successful, i.e. \a index is in the range 0 to
+    count()-1.
+
+    \sa append(), current(), insert()
+*/
+
+/*!
+    \fn void Q3PtrList::inSort( const type *item )
+
+    Inserts the \a item at its sorted position in the list.
+
+    The sort order depends on the virtual compareItems() function. All
+    items must be inserted with inSort() to maintain the sorting
+    order.
+
+    The inserted item becomes the current list item.
+
+    \a item must not be 0.
+
+    \warning Using inSort() is slow. An alternative, especially if you
+    have lots of items, is to simply append() or insert() them and
+    then use sort(). inSort() takes up to O(n) compares. That means
+    inserting n items in your list will need O(n^2) compares whereas
+    sort() only needs O(n*log n) for the same task. So use inSort()
+    only if you already have a presorted list and want to insert just
+    a few additional items.
+
+    \sa insert(), compareItems(), current(), sort()
+*/
+
+/*!
+    \fn void Q3PtrList::append( const type *item )
+
+    Inserts the \a item at the end of the list.
+
+    The inserted item becomes the current list item. This is
+    equivalent to \c{insert( count(), item )}.
+
+    \a item must not be 0.
+
+    \sa insert(), current(), prepend()
+*/
+
+/*!
+    \fn void Q3PtrList::prepend( const type *item )
+
+    Inserts the \a item at the start of the list.
+
+    The inserted item becomes the current list item. This is
+    equivalent to \c{insert( 0, item )}.
+
+    \a item must not be 0.
+
+    \sa append(), insert(), current()
+*/
+
+/*!
+    \fn bool Q3PtrList::remove( uint index )
+
+    Removes the item at position \a index in the list.
+
+    Returns TRUE if successful, i.e. if \a index is in range;
+    otherwise returns FALSE. The valid range is \c{0..(count() - 1)}
+    inclusive.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa take(), clear(), setAutoDelete(), current() removeRef()
+*/
+
+/*!
+    \fn bool Q3PtrList::remove()
+
+    \overload
+
+    Removes the current list item.
+
+    Returns TRUE if successful, i.e. if the current item isn't 0;
+    otherwise returns FALSE.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa take(), clear(), setAutoDelete(), current() removeRef()
+*/
+
+/*!
+    \fn bool Q3PtrList::remove( const type *item )
+
+    \overload
+
+    Removes the first occurrence of \a item from the list.
+
+    Returns TRUE if successful, i.e. if \a item is in the list;
+    otherwise returns FALSE.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The compareItems() function is called when searching for the item
+    in the list. If compareItems() is not reimplemented, it is more
+    efficient to call removeRef().
+
+    If \a item is NULL then the current item is removed from the list.
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa removeRef(), take(), clear(), setAutoDelete(), compareItems(),
+    current()
+*/
+
+/*!
+    \fn bool Q3PtrList::removeRef( const type *item )
+
+    Removes the first occurrence of \a item from the list.
+
+    Returns TRUE if successful, i.e. if \a item is in the list;
+    otherwise returns FALSE.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    Equivalent to:
+    \snippet doc/src/snippets/code/doc.src.q3ptrlist.qdoc 2
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa remove(), clear(), setAutoDelete(), current()
+*/
+
+/*!
+    \fn void Q3PtrList::removeNode( Q3LNode *node )
+
+    Removes the \a node from the list.
+
+    This node must exist in the list, otherwise the program may crash.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The first item in the list will become the new current list item.
+    The current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the item succeeding this item or to the preceding item if
+    the removed item was the last item.
+
+    \warning Do not call this function unless you are an expert.
+
+    \sa takeNode(), currentNode() remove() removeRef()
+*/
+
+/*!
+    \fn bool Q3PtrList::removeFirst()
+
+    Removes the first item from the list. Returns TRUE if successful,
+    i.e. if the list isn't empty; otherwise returns FALSE.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The first item in the list becomes the new current list item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa removeLast(), setAutoDelete(), current() remove()
+*/
+
+/*!
+    \fn bool Q3PtrList::removeLast()
+
+    Removes the last item from the list. Returns TRUE if successful,
+    i.e. if the list isn't empty; otherwise returns FALSE.
+
+    The removed item is deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    The last item in the list becomes the new current list item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the removed item will be set to
+    point to the new current item.
+
+    \sa removeFirst(), setAutoDelete(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::take( uint index )
+
+    Takes the item at position \a index out of the list without
+    deleting it (even if \link setAutoDelete() auto-deletion\endlink
+    is enabled).
+
+    Returns a pointer to the item taken out of the list, or 0 if the
+    index is out of range. The valid range is \c{0..(count() - 1)}
+    inclusive.
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the taken item will be set to
+    point to the new current item.
+
+    \sa remove(), clear(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::take()
+
+    \overload
+
+    Takes the current item out of the list without deleting it (even
+    if \link setAutoDelete() auto-deletion\endlink is enabled).
+
+    Returns a pointer to the item taken out of the list, or 0 if
+    the current item is 0.
+
+    The item after the removed item becomes the new current list item
+    if the removed item is not the last item in the list. If the last
+    item is removed, the new last item becomes the current item. The
+    current item is set to 0 if the list becomes empty.
+
+    All list iterators that refer to the taken item will be set to
+    point to the new current item.
+
+    \sa remove(), clear(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::takeNode( Q3LNode *node )
+
+    Takes the \a node out of the list without deleting its item (even
+    if \link setAutoDelete() auto-deletion\endlink is enabled).
+    Returns a pointer to the item taken out of the list.
+
+    This node must exist in the list, otherwise the program may crash.
+
+    The first item in the list becomes the new current list item.
+
+    All list iterators that refer to the taken item will be set to
+    point to the item succeeding this item or to the preceding item if
+    the taken item was the last item.
+
+    \warning Do not call this function unless you are an expert.
+
+    \sa removeNode(), currentNode()
+*/
+
+/*!
+    \fn void Q3PtrList::clear()
+
+    Removes all items from the list.
+
+    The removed items are deleted if \link setAutoDelete()
+    auto-deletion\endlink is enabled.
+
+    All list iterators that access this list will be reset.
+
+    \sa remove(), take(), setAutoDelete()
+*/
+
+/*!
+    \fn int Q3PtrList::find( const type *item )
+
+    Finds the first occurrence of \a item in the list.
+
+    If the item is found, the list sets the current item to point to
+    the found item and returns the index of this item. If the item is
+    not found, the list sets the current item to 0, the current
+    index to -1, and returns -1.
+
+    The compareItems() function is called when searching for the item
+    in the list. If compareItems() is not reimplemented, it is more
+    efficient to call findRef().
+
+    \sa findNext(), findRef(), compareItems(), current()
+*/
+
+/*!
+    \fn int Q3PtrList::findNext( const type *item )
+
+    Finds the next occurrence of \a item in the list, starting from
+    the current list item.
+
+    If the item is found, the list sets the current item to point to
+    the found item and returns the index of this item. If the item is
+    not found, the list sets the current item to 0, the current
+    index to -1, and returns -1.
+
+    The compareItems() function is called when searching for the item
+    in the list. If compareItems() is not reimplemented, it is more
+    efficient to call findNextRef().
+
+    \sa find(), findNextRef(), compareItems(), current()
+*/
+
+/*!
+    \fn int Q3PtrList::findRef( const type *item )
+
+    Finds the first occurrence of \a item in the list.
+
+    If the item is found, the list sets the current item to point to
+    the found item and returns the index of this item. If the item is
+    not found, the list sets the current item to 0, the current
+    index to -1, and returns -1.
+
+    Calling this function is much faster than find() because find()
+    compares \a item with each list item using compareItems(), whereas
+    this function only compares the pointers.
+
+    \sa findNextRef(), find(), current()
+*/
+
+/*!
+    \fn int Q3PtrList::findNextRef( const type *item )
+
+    Finds the next occurrence of \a item in the list, starting from
+    the current list item.
+
+    If the item is found, the list sets the current item to point to
+    the found item and returns the index of this item. If the item is
+    not found, the list sets the current item to 0, the current
+    index to -1, and returns -1.
+
+    Calling this function is much faster than findNext() because
+    findNext() compares \a item with each list item using
+    compareItems(), whereas this function only compares the pointers.
+
+    \sa findRef(), findNext(), current()
+*/
+
+/*!
+    \fn uint Q3PtrList::contains( const type *item ) const
+
+    Returns the number of occurrences of \a item in the list.
+
+    The compareItems() function is called when looking for the \a item
+    in the list. If compareItems() is not reimplemented, it is more
+    efficient to call containsRef().
+
+    This function does not affect the current list item.
+
+    \sa containsRef(), compareItems()
+*/
+
+/*!
+    \fn uint Q3PtrList::containsRef( const type *item ) const
+
+    Returns the number of occurrences of \a item in the list.
+
+    Calling this function is much faster than contains() because
+    contains() compares \a item with each list item using
+    compareItems(), whereas his function only compares the pointers.
+
+    This function does not affect the current list item.
+
+    \sa contains()
+*/
+
+/*!
+    \fn type *Q3PtrList::at( uint index )
+
+    Returns a pointer to the item at position \a index in the list, or
+    0 if the index is out of range.
+
+    Sets the current list item to this item if \a index is valid. The
+    valid range is \c{0..(count() - 1)} inclusive.
+
+    This function is very efficient. It starts scanning from the first
+    item, last item, or current item, whichever is closest to \a
+    index.
+
+    \sa current()
+*/
+
+/*!
+    \fn int Q3PtrList::at() const
+
+    \overload
+
+    Returns the index of the current list item. The returned value is
+    -1 if the current item is 0.
+
+    \sa current()
+*/
+
+/*!
+    \fn type *Q3PtrList::current() const
+
+    Returns a pointer to the current list item. The current item may
+    be 0 (implies that the current index is -1). 
+
+    \sa at()
+*/
+
+/*!
+    \fn Q3LNode *Q3PtrList::currentNode() const
+
+    Returns a pointer to the current list node.
+
+    The node can be kept and removed later using removeNode(). The
+    advantage is that the item can be removed directly without
+    searching the list.
+
+    \warning Do not call this function unless you are an expert.
+
+    \sa removeNode(), takeNode(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::getFirst() const
+
+    Returns a pointer to the first item in the list, or 0 if the list
+    is empty.
+
+    This function does not affect the current list item.
+
+    \sa first(), getLast()
+*/
+
+/*!
+    \fn type *Q3PtrList::getLast() const
+
+    Returns a pointer to the last item in the list, or 0 if the list
+    is empty.
+
+    This function does not affect the current list item.
+
+    \sa last(), getFirst()
+*/
+
+/*!
+    \fn type *Q3PtrList::first()
+
+    Returns a pointer to the first item in the list and makes this the
+    current list item; returns 0 if the list is empty.
+
+    \sa getFirst(), last(), next(), prev(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::last()
+
+    Returns a pointer to the last item in the list and makes this the
+    current list item; returns 0 if the list is empty.
+
+    \sa getLast(), first(), next(), prev(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::next()
+
+    Returns a pointer to the item succeeding the current item. Returns
+    0 if the current item is 0 or equal to the last item.
+
+    Makes the succeeding item current. If the current item before this
+    function call was the last item, the current item will be set to
+    0. If the current item was 0, this function does nothing.
+
+    \sa first(), last(), prev(), current()
+*/
+
+/*!
+    \fn type *Q3PtrList::prev()
+
+    Returns a pointer to the item preceding the current item. Returns
+    0 if the current item is 0 or equal to the first item.
+
+    Makes the preceding item current. If the current item before this
+    function call was the first item, the current item will be set to
+    0. If the current item was 0, this function does nothing.
+
+    \sa first(), last(), next(), current()
+*/
+
+/*!
+    \fn void Q3PtrList::toVector( Q3GVector *vec ) const
+
+    Stores all list items in the vector \a vec.
+
+    The vector must be of the same item type, otherwise the result
+    will be undefined.
+*/
+
+/*!
+    \typedef Q3PtrList::iterator
+
+    \internal
+*/
+
+/*!
+    \typedef Q3PtrList::Iterator
+
+    \internal
+*/
+
+/*!
+    \typedef Q3PtrList::ConstIterator
+
+    \internal
+*/
+
+/*!
+    \typedef Q3PtrList::const_iterator
+
+    \internal
+*/
+
+/*!
+    \fn Q3PtrList::constBegin() const
+
+    \internal
+*/
+
+/*!
+    \fn Q3PtrList::constEnd() const
+
+    \internal
+*/
+
+/*!
+    \fn Q3PtrList::erase(Iterator)
+
+    \internal
+*/
+
+
+/*****************************************************************************
+  Q3PtrListIterator documentation
+ *****************************************************************************/
+
+/*!
+    \class Q3PtrListIterator
+    \brief The Q3PtrListIterator class provides an iterator for
+    Q3PtrList collections.
+    \compat
+
+    Define a template instance Q3PtrListIterator\<X\> to create a list
+    iterator that operates on Q3PtrList\<X\> (list of X*).
+
+    The following example is similar to the
+    example in the Q3PtrList class documentation,
+    but it uses Q3PtrListIterator. The class Employee is
+    defined there.
+
+    \snippet doc/src/snippets/code/doc.src.q3ptrlist.qdoc 3
+
+    The output is
+    \snippet doc/src/snippets/code/doc.src.q3ptrlist.qdoc 4
+
+    Using a list iterator is a more robust way of traversing the list
+    than using the Q3PtrList member functions \link Q3PtrList::first()
+    first\endlink(), \link Q3PtrList::next() next\endlink(), \link
+    Q3PtrList::current() current\endlink(), etc., as many iterators can
+    traverse the same list independently.
+
+    An iterator has its own current list item and can get the next and
+    previous list items. It doesn't modify the list in any way.
+
+    When an item is removed from the list, all iterators that point to
+    that item are updated to point to Q3PtrList::current() instead to
+    avoid dangling references.
+
+    \sa Q3PtrList
+*/
+
+/*!
+    \fn Q3PtrListIterator::Q3PtrListIterator( const Q3PtrList<type> &list )
+
+    Constructs an iterator for \a list. The current iterator item is
+    set to point on the first item in the \a list.
+*/
+
+/*!
+    \fn Q3PtrListIterator::~Q3PtrListIterator()
+
+    Destroys the iterator.
+*/
+
+/*!
+    \fn uint Q3PtrListIterator::count() const
+
+    Returns the number of items in the list this iterator operates on.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3PtrListIterator::isEmpty() const
+
+    Returns TRUE if the list is empty; otherwise returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn bool Q3PtrListIterator::atFirst() const
+
+    Returns TRUE if the current iterator item is the first list item;
+    otherwise returns FALSE.
+
+    \sa toFirst(), atLast()
+*/
+
+/*!
+    \fn bool Q3PtrListIterator::atLast() const
+
+    Returns TRUE if the current iterator item is the last list item;
+    otherwise returns FALSE.
+
+    \sa toLast(), atFirst()
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::toFirst()
+
+    Sets the current iterator item to point to the first list item and
+    returns a pointer to the item. Sets the current item to 0 and
+    returns 0 if the list is empty.
+
+    \sa toLast(), atFirst()
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::toLast()
+
+    Sets the current iterator item to point to the last list item and
+    returns a pointer to the item. Sets the current item to 0 and
+    returns 0 if the list is empty.
+
+    \sa toFirst(), atLast()
+*/
+
+/*!
+    \fn Q3PtrListIterator::operator type *() const
+
+    Cast operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator*()
+
+    Asterisk operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::current() const
+
+    Returns a pointer to the current iterator item. If the iterator is
+    positioned before the first item in the list or after the last
+    item in the list, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator()()
+
+    Makes the succeeding item current and returns the original current
+    item.
+
+    If the current iterator item was the last item in the list or if
+    it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator++()
+
+    Prefix ++ makes the succeeding item current and returns the new
+    current item.
+
+    If the current iterator item was the last item in the list or if
+    it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator+=( uint jump )
+
+    Sets the current item to the item \a jump positions after the
+    current item and returns a pointer to that item.
+
+    If that item is beyond the last item or if the list is empty, it
+    sets the current item to 0 and returns 0
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator--()
+
+    Prefix - makes the preceding item current and returns the new
+    current item.
+
+    If the current iterator item was the first item in the list or if
+    it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3PtrListIterator::operator-=( uint jump )
+
+    Returns the item \a jump positions before the current item or 0
+    if it is beyond the first item. Makes this the current item.
+*/
+
+/*!
+    \fn Q3PtrListIterator<type>& Q3PtrListIterator::operator=( const Q3PtrListIterator<type> &it )
+
+    Assignment. Makes a copy of the iterator \a it and returns a
+    reference to this iterator.
+*/
+
+/*!
+    \class Q3StrList
+    \brief The Q3StrList class provides a doubly-linked list of char*.
+    \compat
+
+    If you want a string list of \l{QString}s use QStringList.
+
+    This class is a Q3PtrList\<char\> instance (a list of char*).
+
+    Q3StrList can make deep or shallow copies of the strings that are
+    inserted.
+
+    A deep copy means that memory is allocated for the string and then
+    the string data is copied into that memory. A shallow copy is just
+    a copy of the pointer value and not of the string data itself.
+
+    The disadvantage of shallow copies is that because a pointer can
+    be deleted only once, the program must put all strings in a
+    central place and know when it is safe to delete them (i.e. when
+    the strings are no longer referenced by other parts of the
+    program). This can make the program more complex. The advantage of
+    shallow copies is that they consume far less memory than deep
+    copies. It is also much faster to copy a pointer (typically 4 or 8
+    bytes) than to copy string data.
+
+    A Q3StrList that operates on deep copies will, by default, turn on
+    auto-deletion (see setAutoDelete()). Thus, by default Q3StrList
+    will deallocate any string copies it allocates.
+
+    The virtual compareItems() function is reimplemented and does a
+    case-sensitive string comparison. The inSort() function will
+    insert strings in sorted order. In general it is fastest to insert
+    the strings as they come and sort() at the end; inSort() is useful
+    when you just have to add a few extra strings to an already sorted
+    list.
+
+    The Q3StrListIterator class is an iterator for Q3StrList.
+*/
+
+/*!
+    \fn Q3StrList::operator QList<QByteArray>() const
+
+    Automatically converts a Q3StrList into a QList<QByteArray>.
+*/
+
+/*!
+    \fn Q3StrList::Q3StrList( bool deepCopies )
+
+    Constructs an empty list of strings. Will make deep copies of all
+    inserted strings if \a deepCopies is TRUE, or use shallow copies
+    if \a deepCopies is FALSE.
+*/
+
+/*!
+    \fn Q3StrList::Q3StrList(const Q3StrList &list)
+    \fn Q3StrList::Q3StrList(const QList<QByteArray> &list)
+
+    Constructs a copy of \a list.
+*/
+
+/*!
+    \fn Q3StrList::~Q3StrList()
+
+    Destroys the list. All strings are removed.
+*/
+
+/*!
+    \fn Q3StrList& Q3StrList::operator=(const Q3StrList& list)
+    \fn Q3StrList &Q3StrList::operator=(const QList<QByteArray> &list)
+
+    Assigns \a list to this list and returns a reference to this list.
+*/
+
+/*!
+    \class Q3StrIList
+    \brief The Q3StrIList class provides a doubly-linked list of char*
+    with case-insensitive comparison.
+    \compat
+
+    This class is a Q3PtrList\<char\> instance (a list of char*).
+
+    Q3StrIList is identical to Q3StrList except that the virtual
+    compareItems() function is reimplemented to compare strings
+    case-insensitively. The inSort() function inserts strings in a
+    sorted order. In general it is fastest to insert the strings as
+    they come and sort() at the end; inSort() is useful when you just
+    have to add a few extra strings to an already sorted list.
+
+    The Q3StrListIterator class works for Q3StrIList.
+
+    \sa QStringList
+*/
+
+/*!
+    \fn Q3StrIList::Q3StrIList( bool deepCopies )
+
+    Constructs a list of strings. Will make deep copies of all
+    inserted strings if \a deepCopies is TRUE, or use shallow copies
+    if \a deepCopies is FALSE.
+*/
+
+/*!
+    \fn Q3StrIList::~Q3StrIList()
+
+    Destroys the list. All strings are removed.
+*/
+
+/*!
+    \fn int Q3PtrList::compareItems( Q3PtrCollection::Item item1,
+				    Q3PtrCollection::Item item2 )
+
+    This virtual function compares two list items.
+
+    Returns:
+    \list
+    \i zero if \a item1 == \a item2
+    \i nonzero if \a item1 != \a item2
+    \endlist
+
+    This function returns \e int rather than \e bool so that
+    reimplementations can return three values and use it to sort by:
+
+    \list
+    \i 0 if \a item1 == \a item2
+    \i \> 0 (positive integer) if \a item1 \> \a item2
+    \i \< 0 (negative integer) if \a item1 \< \a item2
+    \endlist
+
+    inSort() requires that compareItems() is implemented as described
+    here.
+
+    This function should not modify the list because some const
+    functions call compareItems().
+
+    The default implementation compares the pointers.
+*/
+
+/*!
+    \fn QDataStream& Q3PtrList::read( QDataStream& s,
+				    Q3PtrCollection::Item& item )
+
+    Reads a list item from the stream \a s and returns a reference to
+    the stream.
+
+    The default implementation sets \a item to 0.
+
+    \sa write()
+*/
+
+/*!
+    \fn QDataStream& Q3PtrList::write( QDataStream& s,
+					Q3PtrCollection::Item item ) const
+
+    Writes a list item, \a item to the stream \a s and returns a
+    reference to the stream.
+
+    The default implementation does nothing.
+
+    \sa read()
+*/
+
+/*! \fn iterator Q3PtrList::begin() 
+\internal
+*/
+/*! \fn const_iterator Q3PtrList::begin() const
+\internal
+*/
+/*! \fn iterator Q3PtrList::end() 
+\internal
+*/
+/*! \fn const_iterator Q3PtrList::end() const
+\internal
+*/
+
+/*!
+    \class Q3StrListIterator
+    \brief The Q3StrListIterator class is an iterator for the Q3StrList
+    and Q3StrIList classes.
+    \compat
+
+    This class is a Q3PtrListIterator\<char\> instance. It can traverse
+    the strings in the Q3StrList and Q3StrIList classes.
+*/
+
+
+/*
+    \class Q3PtrListAutoDelete
+    \brief The Q3PtrListAutoDelete class is a template class that provides a list that auto-deletes its data.
+    \compat
+
+    A Q3PtrListAutoDelete is identical to a Q3PtrList with
+    setAutoDelete(TRUE).
+*/

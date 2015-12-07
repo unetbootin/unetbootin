@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: controllerwindow.cpp Example File (widgets/windowflags/controllerwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">controllerwindow.cpp Example File<br /><span class="small-subtitle">widgets/windowflags/controllerwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;controllerwindow.h&quot;
+
+ ControllerWindow::ControllerWindow()
+ {
+     previewWindow = new PreviewWindow(this);
+
+     createTypeGroupBox();
+     createHintsGroupBox();
+
+     quitButton = new QPushButton(tr(&quot;&amp;Quit&quot;));
+     connect(quitButton, SIGNAL(clicked()), qApp, SLOT(quit()));
+
+     QHBoxLayout *bottomLayout = new QHBoxLayout;
+     bottomLayout-&gt;addStretch();
+     bottomLayout-&gt;addWidget(quitButton);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(typeGroupBox);
+     mainLayout-&gt;addWidget(hintsGroupBox);
+     mainLayout-&gt;addLayout(bottomLayout);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Window Flags&quot;));
+     updatePreview();
+ }
+
+ void ControllerWindow::updatePreview()
+ {
+     Qt::WindowFlags flags = 0;
+
+     if (windowRadioButton-&gt;isChecked()) {
+         flags = Qt::Window;
+     } else if (dialogRadioButton-&gt;isChecked()) {
+         flags = Qt::Dialog;
+     } else if (sheetRadioButton-&gt;isChecked()) {
+         flags = Qt::Sheet;
+     } else if (drawerRadioButton-&gt;isChecked()) {
+         flags = Qt::Drawer;
+     } else if (popupRadioButton-&gt;isChecked()) {
+         flags = Qt::Popup;
+     } else if (toolRadioButton-&gt;isChecked()) {
+         flags = Qt::Tool;
+     } else if (toolTipRadioButton-&gt;isChecked()) {
+         flags = Qt::ToolTip;
+     } else if (splashScreenRadioButton-&gt;isChecked()) {
+         flags = Qt::SplashScreen;
+     }
+
+     if (msWindowsFixedSizeDialogCheckBox-&gt;isChecked())
+         flags |= Qt::MSWindowsFixedSizeDialogHint;
+     if (x11BypassWindowManagerCheckBox-&gt;isChecked())
+         flags |= Qt::X11BypassWindowManagerHint;
+     if (framelessWindowCheckBox-&gt;isChecked())
+         flags |= Qt::FramelessWindowHint;
+     if (windowTitleCheckBox-&gt;isChecked())
+         flags |= Qt::WindowTitleHint;
+     if (windowSystemMenuCheckBox-&gt;isChecked())
+         flags |= Qt::WindowSystemMenuHint;
+     if (windowMinimizeButtonCheckBox-&gt;isChecked())
+         flags |= Qt::WindowMinimizeButtonHint;
+     if (windowMaximizeButtonCheckBox-&gt;isChecked())
+         flags |= Qt::WindowMaximizeButtonHint;
+     if (windowContextHelpButtonCheckBox-&gt;isChecked())
+         flags |= Qt::WindowContextHelpButtonHint;
+     if (windowShadeButtonCheckBox-&gt;isChecked())
+         flags |= Qt::WindowShadeButtonHint;
+     if (windowStaysOnTopCheckBox-&gt;isChecked())
+         flags |= Qt::WindowStaysOnTopHint;
+     if (customizeWindowHintCheckBox-&gt;isChecked())
+         flags |= Qt::CustomizeWindowHint;
+
+     previewWindow-&gt;setWindowFlags(flags);
+
+     QPoint pos = previewWindow-&gt;pos();
+     if (pos.x() &lt; 0)
+         pos.setX(0);
+     if (pos.y() &lt; 0)
+         pos.setY(0);
+     previewWindow-&gt;move(pos);
+     previewWindow-&gt;show();
+ }
+
+ void ControllerWindow::createTypeGroupBox()
+ {
+     typeGroupBox = new QGroupBox(tr(&quot;Type&quot;));
+
+     windowRadioButton = createRadioButton(tr(&quot;Window&quot;));
+     dialogRadioButton = createRadioButton(tr(&quot;Dialog&quot;));
+     sheetRadioButton = createRadioButton(tr(&quot;Sheet&quot;));
+     drawerRadioButton = createRadioButton(tr(&quot;Drawer&quot;));
+     popupRadioButton = createRadioButton(tr(&quot;Popup&quot;));
+     toolRadioButton = createRadioButton(tr(&quot;Tool&quot;));
+     toolTipRadioButton = createRadioButton(tr(&quot;Tooltip&quot;));
+     splashScreenRadioButton = createRadioButton(tr(&quot;Splash screen&quot;));
+     windowRadioButton-&gt;setChecked(true);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(windowRadioButton, 0, 0);
+     layout-&gt;addWidget(dialogRadioButton, 1, 0);
+     layout-&gt;addWidget(sheetRadioButton, 2, 0);
+     layout-&gt;addWidget(drawerRadioButton, 3, 0);
+     layout-&gt;addWidget(popupRadioButton, 0, 1);
+     layout-&gt;addWidget(toolRadioButton, 1, 1);
+     layout-&gt;addWidget(toolTipRadioButton, 2, 1);
+     layout-&gt;addWidget(splashScreenRadioButton, 3, 1);
+     typeGroupBox-&gt;setLayout(layout);
+ }
+
+ void ControllerWindow::createHintsGroupBox()
+ {
+     hintsGroupBox = new QGroupBox(tr(&quot;Hints&quot;));
+
+     msWindowsFixedSizeDialogCheckBox =
+             createCheckBox(tr(&quot;MS Windows fixed size dialog&quot;));
+     x11BypassWindowManagerCheckBox =
+             createCheckBox(tr(&quot;X11 bypass window manager&quot;));
+     framelessWindowCheckBox = createCheckBox(tr(&quot;Frameless window&quot;));
+     windowTitleCheckBox = createCheckBox(tr(&quot;Window title&quot;));
+     windowSystemMenuCheckBox = createCheckBox(tr(&quot;Window system menu&quot;));
+     windowMinimizeButtonCheckBox = createCheckBox(tr(&quot;Window minimize button&quot;));
+     windowMaximizeButtonCheckBox = createCheckBox(tr(&quot;Window maximize button&quot;));
+     windowContextHelpButtonCheckBox =
+             createCheckBox(tr(&quot;Window context help button&quot;));
+     windowShadeButtonCheckBox = createCheckBox(tr(&quot;Window shade button&quot;));
+     windowStaysOnTopCheckBox = createCheckBox(tr(&quot;Window stays on top&quot;));
+     customizeWindowHintCheckBox= createCheckBox(tr(&quot;Customize window&quot;));
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(msWindowsFixedSizeDialogCheckBox, 0, 0);
+     layout-&gt;addWidget(x11BypassWindowManagerCheckBox, 1, 0);
+     layout-&gt;addWidget(framelessWindowCheckBox, 2, 0);
+     layout-&gt;addWidget(windowTitleCheckBox, 3, 0);
+     layout-&gt;addWidget(windowSystemMenuCheckBox, 4, 0);
+     layout-&gt;addWidget(windowMinimizeButtonCheckBox, 0, 1);
+     layout-&gt;addWidget(windowMaximizeButtonCheckBox, 1, 1);
+     layout-&gt;addWidget(windowContextHelpButtonCheckBox, 2, 1);
+     layout-&gt;addWidget(windowShadeButtonCheckBox, 3, 1);
+     layout-&gt;addWidget(windowStaysOnTopCheckBox, 4, 1);
+     layout-&gt;addWidget(customizeWindowHintCheckBox, 5, 0);
+     hintsGroupBox-&gt;setLayout(layout);
+ }
+
+ QCheckBox *ControllerWindow::createCheckBox(const QString &amp;text)
+ {
+     QCheckBox *checkBox = new QCheckBox(text);
+     connect(checkBox, SIGNAL(clicked()), this, SLOT(updatePreview()));
+     return checkBox;
+ }
+
+ QRadioButton *ControllerWindow::createRadioButton(const QString &amp;text)
+ {
+     QRadioButton *button = new QRadioButton(text);
+     connect(button, SIGNAL(clicked()), this, SLOT(updatePreview()));
+     return button;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

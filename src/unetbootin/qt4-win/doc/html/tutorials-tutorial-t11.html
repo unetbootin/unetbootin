@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 11 - Giving It a Shot</title>
+  <link rel="prev" href="tutorials-tutorial-t10.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t12.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t10.html">Chapter 10</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t12.html">Chapter 12</a>]
+</p>
+<h1 class="title">Qt Tutorial 11 - Giving It a Shot<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t11-cannonfield-cpp.html">tutorials/tutorial/t11/cannonfield.cpp</a></li>
+<li><a href="tutorials-tutorial-t11-cannonfield-h.html">tutorials/tutorial/t11/cannonfield.h</a></li>
+<li><a href="tutorials-tutorial-t11-lcdrange-cpp.html">tutorials/tutorial/t11/lcdrange.cpp</a></li>
+<li><a href="tutorials-tutorial-t11-lcdrange-h.html">tutorials/tutorial/t11/lcdrange.h</a></li>
+<li><a href="tutorials-tutorial-t11-main-cpp.html">tutorials/tutorial/t11/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t11-t11-pro.html">tutorials/tutorial/t11/t11.pro</a></li>
+</ul>
+<p align="center"><img src="images/t11.png" alt="Screenshot of Chapter 11" /></p><p>In this example we introduce a timer to implement animated shooting.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<a name="t11-cannonfield-h"></a>
+<h3><a href="tutorials-tutorial-t11-cannonfield-h.html">t11/cannonfield.h</a></h3>
+<p>The <tt>CannonField</tt> now has shooting capabilities.</p>
+<pre>     void shoot();</pre>
+<p>Calling this slot will make the cannon shoot if a shot is not in the air.</p>
+<pre> private slots:
+     void moveShot();</pre>
+<p>This private slot is used to move the shot while it is in the air, using a <a href="qtimer.html">QTimer</a>.</p>
+<pre> private:
+     void paintShot(QPainter &amp;painter);</pre>
+<p>This private function paints the shot.</p>
+<pre>     QRect shotRect() const;</pre>
+<p>This private function returns the shot's enclosing rectangle if one is in the air; otherwise the returned rectangle is undefined.</p>
+<pre>     int timerCount;
+     QTimer *autoShootTimer;
+     float shootAngle;
+     float shootForce;
+ };</pre>
+<p>These private variables contain information that describes the shot. The <tt>timerCount</tt> keeps track of the time passed since the shot was fired. The <tt>shootAngle</tt> is the cannon angle and <tt>shootForce</tt> is the cannon force when the shot was fired.</p>
+<a name="t11-cannonfield-cpp"></a>
+<h3><a href="tutorials-tutorial-t11-cannonfield-cpp.html">t11/cannonfield.cpp</a></h3>
+<pre> #include &lt;math.h&gt;</pre>
+<p>We include <tt>&lt;math.h&gt;</tt> because we need the <tt>sin()</tt> and <tt>cos()</tt> functions. (An alternative would be to include the more modern <tt>&lt;cmath&gt;</tt> header file. Unfortunately, some Unix platforms still don't support these properly.)</p>
+<pre> CannonField::CannonField(QWidget *parent)
+     : QWidget(parent)
+ {
+     currentAngle = 45;
+     currentForce = 0;
+     timerCount = 0;
+     autoShootTimer = new QTimer(this);
+     connect(autoShootTimer, SIGNAL(timeout()), this, SLOT(moveShot()));
+     shootAngle = 0;
+     shootForce = 0;
+     setPalette(QPalette(QColor(250, 250, 200)));
+     setAutoFillBackground(true);
+ }</pre>
+<p>We initialize our new private variables and connect the <a href="qtimer.html#timeout">QTimer::timeout</a>() signal to our <tt>moveShot()</tt> slot. We'll move the shot every time the timer times out.</p>
+<pre> void CannonField::shoot()
+ {
+     if (autoShootTimer-&gt;isActive())
+         return;
+     timerCount = 0;
+     shootAngle = currentAngle;
+     shootForce = currentForce;
+     autoShootTimer-&gt;start(5);
+ }</pre>
+<p>This function shoots a shot unless a shot is in the air. The <tt>timerCount</tt> is reset to zero. The <tt>shootAngle</tt> and <tt>shootForce</tt> variables are set to the current cannon angle and force. Finally, we start the timer.</p>
+<pre> void CannonField::moveShot()
+ {
+     QRegion region = shotRect();
+     ++timerCount;
+
+     QRect shotR = shotRect();
+
+     if (shotR.x() &gt; width() || shotR.y() &gt; height()) {
+         autoShootTimer-&gt;stop();
+     } else {
+         region = region.unite(shotR);
+     }
+     update(region);
+ }</pre>
+<p><tt>moveShot()</tt> is the slot that moves the shot, called every 5 milliseconds when the <a href="qtimer.html">QTimer</a> fires.</p>
+<p>Its tasks are to compute the new position, update the screen with the shot in the new position, and if necessary, stop the timer.</p>
+<p>First we make a <a href="qregion.html">QRegion</a> that holds the old <tt>shotRect()</tt>. A <a href="qregion.html">QRegion</a> is capable of holding any sort of region, and we'll use it here to simplify the painting. <tt>shotRect()</tt> returns the rectangle where the shot is now. It is explained in detail later.</p>
+<p>Then we increment the <tt>timerCount</tt>, which has the effect of moving the shot one step along its trajectory.</p>
+<p>Next we fetch the new shot rectangle.</p>
+<p>If the shot has moved beyond the right or bottom edge of the widget we stop the timer, or we add the new <tt>shotRect()</tt> to the <a href="qregion.html">QRegion</a>.</p>
+<p>Finally, we repaint the <a href="qregion.html">QRegion</a>. This will send a single paint event for just the one or two rectangles that need updating.</p>
+<pre> void CannonField::paintEvent(QPaintEvent * <span class="comment">/* event */</span>)
+ {
+     QPainter painter(this);
+
+     paintCannon(painter);
+     if (autoShootTimer-&gt;isActive())
+         paintShot(painter);
+ }</pre>
+<p>The paint event function has been simplified since the previous chapter. Most of the logic has been moved to the new <tt>paintShot()</tt> and <tt>paintCannon()</tt> functions.</p>
+<pre> void CannonField::paintShot(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::NoPen);
+     painter.setBrush(Qt::black);
+     painter.drawRect(shotRect());
+ }</pre>
+<p>This private function paints the shot by drawing a black filled rectangle.</p>
+<p>We leave out the implementation of <tt>paintCannon()</tt>; it is the same as the <a href="qwidget.html#paintEvent">QWidget::paintEvent</a>() reimplementation from the previous chapter.</p>
+<pre> QRect CannonField::shotRect() const
+ {
+     const double gravity = 4;
+
+     double time = timerCount / 20.0;
+     double velocity = shootForce;
+     double radians = shootAngle * 3.14159265 / 180;
+
+     double velx = velocity * cos(radians);
+     double vely = velocity * sin(radians);
+     double x0 = (barrelRect.right() + 5) * cos(radians);
+     double y0 = (barrelRect.right() + 5) * sin(radians);
+     double x = x0 + velx * time;
+     double y = y0 + vely * time - 0.5 * gravity * time * time;
+
+     QRect result(0, 0, 6, 6);
+     result.moveCenter(QPoint(qRound(x), height() - 1 - qRound(y)));
+     return result;
+ }</pre>
+<p>This private function calculates the center point of the shot and returns the enclosing rectangle of the shot. It uses the initial cannon force and angle in addition to <tt>timerCount</tt>, which increases as time passes.</p>
+<p>The formula used is the standard Newtonian formula for frictionless movement in a gravity field. For simplicity, we've chosen to disregard any Einsteinian effects.</p>
+<p>We calculate the center point in a coordinate system where <i>y</i> coordinates increase upward. After we have calculated the center point, we construct a <a href="qrect.html">QRect</a> with size 6 x 6 and move its center point to the point calculated above. In the same operation we convert the point into the widget's coordinate system (see <a href="coordsys.html">The Coordinate System</a>).</p>
+<p>The <a href="qtglobal.html#qRound">qRound</a>() function is an inline function defined in <tt>&lt;QtGlobal&gt;</tt> (included by all other Qt header files). <a href="qtglobal.html#qRound">qRound</a>() rounds a double to the closest integer.</p>
+<a name="t11-main-cpp"></a>
+<h3><a href="tutorials-tutorial-t11-main-cpp.html">t11/main.cpp</a></h3>
+<pre> class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };</pre>
+<p>The only addition is the <b>Shoot</b> button.</p>
+<pre>     QPushButton *shoot = new QPushButton(tr(&quot;&amp;Shoot&quot;));
+     shoot-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));</pre>
+<p>In the constructor we create and set up the <b>Shoot</b> button exactly like we did with the <b>Quit</b> button.</p>
+<pre>     connect(shoot, SIGNAL(clicked()), cannonField, SLOT(shoot()));</pre>
+<p>Connects the <a href="qabstractbutton.html#clicked">clicked()</a> signal of the <b>Shoot</b> button to the <tt>shoot()</tt> slot of the <tt>CannonField</tt>.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>The cannon can shoot, but there's nothing to shoot at.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Make the shot a filled circle. [Hint: <a href="qpainter.html#drawEllipse">QPainter::drawEllipse</a>() may help.]</p>
+<p>Change the color of the cannon when a shot is in the air.</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t10.html">Chapter 10</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t12.html">Chapter 12</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

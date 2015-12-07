@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qmenu.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QMenu</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QMenu</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qmenu.html">QMenu class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QKeySequence <b><a href="qmenu-qt3.html#accel">accel</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#activateItemAt">activateItemAt</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#changeItem">changeItem</a></b> ( int <i>id</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#changeItem-2">changeItem</a></b> ( int <i>id</i>, const QPixmap &amp; <i>pixmap</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#changeItem-3">changeItem</a></b> ( int <i>id</i>, const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#connectItem">connectItem</a></b> ( int <i>id</i>, const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>uint <b><a href="qmenu-qt3.html#count">count</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#disconnectItem">disconnectItem</a></b> ( int <i>id</i>, const QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+<li><div class="fn"/>QMenuItem * <b><a href="qmenu-qt3.html#findItem">findItem</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QMenuItem * <b><a href="qmenu-qt3.html#findPopup">findPopup</a></b> ( QMenu * <i>popup</i>, int * <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#frameWidth">frameWidth</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qmenu-qt3.html#iconSet">iconSet</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#idAt">idAt</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#indexOf">indexOf</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem">insertItem</a></b> ( const QString &amp; <i>text</i>, const QObject * <i>receiver</i>, const char * <i>member</i>, const QKeySequence &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-2">insertItem</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, const QObject * <i>receiver</i>, const char * <i>member</i>, const QKeySequence &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-3">insertItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, const QObject * <i>receiver</i>, const char * <i>member</i>, const QKeySequence &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-4">insertItem</a></b> ( const QString &amp; <i>text</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-5">insertItem</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-6">insertItem</a></b> ( const QString &amp; <i>text</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-7">insertItem</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-8">insertItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-9">insertItem</a></b> ( const QPixmap &amp; <i>pixmap</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertItem-10">insertItem</a></b> ( QMenuItem * <i>item</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertSeparator-2">insertSeparator</a></b> ( int <i>index</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#insertTearOffHandle">insertTearOffHandle</a></b> ( int <i>a</i> = 0, int <i>b</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#isCheckable">isCheckable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#isItemActive">isItemActive</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#isItemChecked">isItemChecked</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#isItemEnabled">isItemEnabled</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#isItemVisible">isItemVisible</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QFont <b><a href="qmenu-qt3.html#itemFont">itemFont</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qmenu-qt3.html#itemGeometry">itemGeometry</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#itemParameter">itemParameter</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qmenu-qt3.html#pixmap">pixmap</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#popup-2">popup</a></b> ( const QPoint &amp; <i>pos</i>, int <i>indexAtPoint</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#removeItem">removeItem</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#removeItemAt">removeItemAt</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setAccel">setAccel</a></b> ( const QKeySequence &amp; <i>key</i>, int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setActiveItem">setActiveItem</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setCheckable">setCheckable</a></b> ( bool <i>checkable</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setId">setId</a></b> ( int <i>index</i>, int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setItemChecked">setItemChecked</a></b> ( int <i>id</i>, bool <i>check</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setItemEnabled">setItemEnabled</a></b> ( int <i>id</i>, bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setItemFont">setItemFont</a></b> ( int <i>id</i>, const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmenu-qt3.html#setItemParameter">setItemParameter</a></b> ( int <i>id</i>, int <i>param</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setItemVisible">setItemVisible</a></b> ( int <i>id</i>, bool <i>visible</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#setWhatsThis">setWhatsThis</a></b> ( int <i>id</i>, const QString &amp; <i>w</i> )</li>
+<li><div class="fn"/>QString <b><a href="qmenu-qt3.html#text">text</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qmenu-qt3.html#whatsThis">whatsThis</a></b> ( int <i>id</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>60 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#activated">activated</a></b> ( int <i>itemId</i> )</li>
+<li><div class="fn"/>void <b><a href="qmenu-qt3.html#highlighted">highlighted</a></b> ( int <i>itemId</i> )</li>
+</ul>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#columns">columns</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#itemAtPos">itemAtPos</a></b> ( const QPoint &amp; <i>p</i>, bool <i>ignoreSeparator</i> = true )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#itemHeight">itemHeight</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="qmenu-qt3.html#itemHeight-2">itemHeight</a></b> ( QMenuItem * <i>mi</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="accel"></a><a href="qkeysequence.html">QKeySequence</a> QMenu::accel ( int <i>id</i> ) const</h3>
+<p>Use shortcut() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#setAccel">setAccel</a>().</p>
+<h3 class="fn"><a name="activateItemAt"></a>void QMenu::activateItemAt ( int <i>index</i> )</h3>
+<p>Use activate() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="activated"></a>void QMenu::activated ( int <i>itemId</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>Use <a href="qmenu.html#triggered">triggered</a>() instead.</p>
+<h3 class="fn"><a name="changeItem"></a>void QMenu::changeItem ( int <i>id</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Use setText() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="changeItem-2"></a>void QMenu::changeItem ( int <i>id</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use setText() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="changeItem-3"></a>void QMenu::changeItem ( int <i>id</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#icon-prop">setIcon</a>() and setText() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="columns"></a>int QMenu::columns () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Use <a href="qmenu.html#columnCount">columnCount</a>() instead.</p>
+<h3 class="fn"><a name="connectItem"></a>bool QMenu::connectItem ( int <i>id</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>Use <a href="qobject.html#connect">connect</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> QMenu::count () const</h3>
+<p>Use <a href="qwidget.html#actions">actions</a>().count() instead.</p>
+<h3 class="fn"><a name="disconnectItem"></a>bool QMenu::disconnectItem ( int <i>id</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )</h3>
+<p>Use <a href="qobject.html#disconnect">disconnect</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="findItem"></a><a href="qmenuitem.html">QMenuItem</a> * QMenu::findItem ( int <i>id</i> ) const</h3>
+<p>Use actions instead.</p>
+<h3 class="fn"><a name="findPopup"></a><a href="qmenuitem.html">QMenuItem</a> * QMenu::findPopup ( QMenu * <i>popup</i>, int * <i>index</i> )</h3>
+<p>Use <a href="qaction.html">QAction</a> and <a href="qwidget.html#actions">actions</a>() instead.</p>
+<h3 class="fn"><a name="frameWidth"></a>int QMenu::frameWidth () const</h3>
+<p>Use <a href="qwidget.html#style">style</a>()-&gt;pixelMetric(<a href="qstyle.html#PixelMetric-enum">QStyle::PM_MenuPanelWidth</a>, this) instead.</p>
+<h3 class="fn"><a name="highlighted"></a>void QMenu::highlighted ( int <i>itemId</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>Use <a href="qmenu.html#hovered">hovered</a>() instead.</p>
+<h3 class="fn"><a name="iconSet"></a><a href="qicon.html">QIcon</a> QMenu::iconSet ( int <i>id</i> ) const</h3>
+<p>Use <a href="qmenu.html#icon-prop">icon</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="idAt"></a>int QMenu::idAt ( int <i>index</i> ) const</h3>
+<p>Use actions instead.</p>
+<h3 class="fn"><a name="indexOf"></a>int QMenu::indexOf ( int <i>id</i> ) const</h3>
+<p>Use <a href="qwidget.html#actions">actions</a>().indexOf(action) on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="insertItem"></a>int QMenu::insertItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i>, const <a href="qkeysequence.html">QKeySequence</a> &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-2"></a>int QMenu::insertItem ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i>, const <a href="qkeysequence.html">QKeySequence</a> &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-3"></a>int QMenu::insertItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, const <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i>, const <a href="qkeysequence.html">QKeySequence</a> &amp; <i>shortcut</i> = 0, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-4"></a>int QMenu::insertItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-5"></a>int QMenu::insertItem ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-6"></a>int QMenu::insertItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#insertMenu">insertMenu</a>() or one of the <a href="qmenu.html#addMenu">addMenu</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-7"></a>int QMenu::insertItem ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#insertMenu">insertMenu</a>() or one of the <a href="qmenu.html#addMenu">addMenu</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-8"></a>int QMenu::insertItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-9"></a>int QMenu::insertItem ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, QMenu * <i>popup</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#insertMenu">insertMenu</a>() or one of the <a href="qmenu.html#addMenu">addMenu</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertItem-10"></a>int QMenu::insertItem ( <a href="qmenuitem.html">QMenuItem</a> * <i>item</i>, int <i>id</i> = -1, int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qwidget.html#insertAction">insertAction</a>() or one of the <a href="qmenu.html#addAction">addAction</a>() overloads instead.</p>
+<h3 class="fn"><a name="insertSeparator-2"></a>int QMenu::insertSeparator ( int <i>index</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qmenu.html#insertSeparator">insertSeparator</a>() overload that takes a <a href="qaction.html">QAction</a> * parameter instead.</p>
+<h3 class="fn"><a name="insertTearOffHandle"></a>int QMenu::insertTearOffHandle ( int <i>a</i> = 0, int <i>b</i> = 0 )</h3>
+<p>Use <a href="qmenu.html#tearOffEnabled-prop">setTearOffEnabled</a>() instead.</p>
+<h3 class="fn"><a name="isCheckable"></a>bool QMenu::isCheckable () const</h3>
+<p>Not necessary anymore. Always returns true.</p>
+<h3 class="fn"><a name="isItemActive"></a>bool QMenu::isItemActive ( int <i>id</i> ) const</h3>
+<p>Use <a href="qmenu.html#activeAction">activeAction</a>() instead.</p>
+<h3 class="fn"><a name="isItemChecked"></a>bool QMenu::isItemChecked ( int <i>id</i> ) const</h3>
+<p>Use isChecked() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="isItemEnabled"></a>bool QMenu::isItemEnabled ( int <i>id</i> ) const</h3>
+<p>Use <a href="qwidget.html#enabled-prop">isEnabled</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="isItemVisible"></a>bool QMenu::isItemVisible ( int <i>id</i> ) const</h3>
+<p>Use <a href="qwidget.html#visible-prop">isVisible</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="itemAtPos"></a>int QMenu::itemAtPos ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i>, bool <i>ignoreSeparator</i> = true )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Use actions instead.</p>
+<h3 class="fn"><a name="itemFont"></a><a href="qfont.html">QFont</a> QMenu::itemFont ( int <i>id</i> ) const</h3>
+<p>Use <a href="qwidget.html#font-prop">font</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#setItemFont">setItemFont</a>().</p>
+<h3 class="fn"><a name="itemGeometry"></a><a href="qrect.html">QRect</a> QMenu::itemGeometry ( int <i>index</i> )</h3>
+<p>Use <a href="qmenu.html#actionGeometry">actionGeometry</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="itemHeight"></a>int QMenu::itemHeight ( int <i>index</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Use actionGeometry(<a href="qwidget.html#actions">actions</a>().value(index)).<a href="qwidget.html#height-prop">height</a>() instead.</p>
+<h3 class="fn"><a name="itemHeight-2"></a>int QMenu::itemHeight ( <a href="qmenuitem.html">QMenuItem</a> * <i>mi</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#actionGeometry">actionGeometry</a>() instead.</p>
+<h3 class="fn"><a name="itemParameter"></a>int QMenu::itemParameter ( int <i>id</i> ) const</h3>
+<p>Use <a href="qaction.html#data">QAction::data</a>() instead.</p>
+<p>See also <a href="qmenu-qt3.html#setItemParameter">setItemParameter</a>().</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QMenu::pixmap ( int <i>id</i> ) const</h3>
+<p>Use <a href="qpixmap.html">QPixmap</a>(<a href="qmenu.html#icon-prop">icon</a>()) on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="popup-2"></a>void QMenu::popup ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, int <i>indexAtPoint</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qmenu.html#popup">popup</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="removeItem"></a>void QMenu::removeItem ( int <i>id</i> )</h3>
+<p>Use <a href="qwidget.html#removeAction">removeAction</a>() instead.</p>
+<h3 class="fn"><a name="removeItemAt"></a>void QMenu::removeItemAt ( int <i>index</i> )</h3>
+<p>Use <a href="qwidget.html#removeAction">removeAction</a>() instead.</p>
+<h3 class="fn"><a name="setAccel"></a>void QMenu::setAccel ( const <a href="qkeysequence.html">QKeySequence</a> &amp; <i>key</i>, int <i>id</i> )</h3>
+<p>Use setShortcut() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#accel">accel</a>().</p>
+<h3 class="fn"><a name="setActiveItem"></a>void QMenu::setActiveItem ( int <i>id</i> )</h3>
+<p>Use <a href="qmenu.html#setActiveAction">setActiveAction</a>() instead.</p>
+<h3 class="fn"><a name="setCheckable"></a>void QMenu::setCheckable ( bool <i>checkable</i> )</h3>
+<p>Not necessary anymore. The <i>checkable</i> parameter is ignored.</p>
+<p>See also <a href="qmenu-qt3.html#isCheckable">isCheckable</a>().</p>
+<h3 class="fn"><a name="setId"></a>void QMenu::setId ( int <i>index</i>, int <i>id</i> )</h3>
+<p>Use actions instead.</p>
+<h3 class="fn"><a name="setItemChecked"></a>void QMenu::setItemChecked ( int <i>id</i>, bool <i>check</i> )</h3>
+<p>Use setChecked() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#isItemChecked">isItemChecked</a>().</p>
+<h3 class="fn"><a name="setItemEnabled"></a>void QMenu::setItemEnabled ( int <i>id</i>, bool <i>enable</i> )</h3>
+<p>Use <a href="qwidget.html#enabled-prop">setEnabled</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#isItemEnabled">isItemEnabled</a>().</p>
+<h3 class="fn"><a name="setItemFont"></a>void QMenu::setItemFont ( int <i>id</i>, const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Use <a href="qwidget.html#font-prop">setFont</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#itemFont">itemFont</a>().</p>
+<h3 class="fn"><a name="setItemParameter"></a>bool QMenu::setItemParameter ( int <i>id</i>, int <i>param</i> )</h3>
+<p>Use <a href="qaction.html#setData">QAction::setData</a>() instead.</p>
+<p>See also <a href="qmenu-qt3.html#itemParameter">itemParameter</a>().</p>
+<h3 class="fn"><a name="setItemVisible"></a>void QMenu::setItemVisible ( int <i>id</i>, bool <i>visible</i> )</h3>
+<p>Use <a href="qwidget.html#visible-prop">setVisible</a>() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#isItemVisible">isItemVisible</a>().</p>
+<h3 class="fn"><a name="setWhatsThis"></a>void QMenu::setWhatsThis ( int <i>id</i>, const <a href="qstring.html">QString</a> &amp; <i>w</i> )</h3>
+<p>Use setWhatsThis() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#whatsThis">whatsThis</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QMenu::text ( int <i>id</i> ) const</h3>
+<p>Use text() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<h3 class="fn"><a name="whatsThis"></a><a href="qstring.html">QString</a> QMenu::whatsThis ( int <i>id</i> ) const</h3>
+<p>Use whatsThis() on the relevant <a href="qaction.html">QAction</a> instead.</p>
+<p>See also <a href="qmenu-qt3.html#setWhatsThis">setWhatsThis</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

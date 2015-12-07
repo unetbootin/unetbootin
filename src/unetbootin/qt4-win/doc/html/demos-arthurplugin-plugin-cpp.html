@@ -1,0 +1,265 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: plugin.cpp Example File (demos/arthurplugin/plugin.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">plugin.cpp Example File<br /><span class="small-subtitle">demos/arthurplugin/plugin.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtDesigner/QDesignerContainerExtension&gt;
+ #include &lt;QtDesigner/QDesignerCustomWidgetInterface&gt;
+
+ #include &lt;QtCore/qplugin.h&gt;
+ #include &lt;QtGui/QIcon&gt;
+ #include &lt;QtGui/QLineEdit&gt;
+
+ #include &quot;xform.h&quot;
+ #include &quot;pathdeform.h&quot;
+ #include &quot;gradients.h&quot;
+ #include &quot;pathstroke.h&quot;
+ #include &quot;hoverpoints.h&quot;
+ #include &quot;composition.h&quot;
+
+ QT_FORWARD_DECLARE_CLASS(QDesignerFormEditorInterface)
+
+ class PathDeformRendererEx : public PathDeformRenderer
+ {
+     Q_OBJECT
+ public:
+     PathDeformRendererEx(QWidget *parent) : PathDeformRenderer(parent) { }
+     QSize sizeHint() const { return QSize(300, 200); }
+ };
+
+ class DemoPlugin : public QDesignerCustomWidgetInterface
+ {
+     Q_INTERFACES(QDesignerCustomWidgetInterface)
+         public:
+     DemoPlugin() : m_initialized(false) { }
+     bool isContainer() const { return false; }
+     bool isInitialized() const { return m_initialized; }
+     QIcon icon() const { return QIcon(); }
+     QString codeTemplate() const { return QString(); }
+     QString whatsThis() const { return QString(); }
+     QString toolTip() const { return QString(); }
+     QString group() const { return &quot;Arthur Widgets [Demo]&quot;; }
+     void initialize(QDesignerFormEditorInterface *)
+     {
+         if (m_initialized)
+             return;
+         m_initialized = true;
+     }
+ private:
+     bool m_initialized;
+ };
+
+ class DeformPlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     DeformPlugin(QObject *parent = 0) : QObject(parent) { }
+
+     QString includeFile() const { return &quot;deform.h&quot;; }
+     QString name() const { return &quot;PathDeformRendererEx&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         PathDeformRenderer *deform = new PathDeformRendererEx(parent);
+         deform-&gt;setRadius(70);
+         deform-&gt;setAnimated(false);
+         deform-&gt;setFontSize(20);
+         deform-&gt;setText(&quot;Arthur Widgets Demo&quot;);
+
+         return deform;
+     }
+
+ };
+
+ class XFormRendererEx : public XFormView
+ {
+     Q_OBJECT
+ public:
+     XFormRendererEx(QWidget *parent) : XFormView(parent) { textEditor = new QLineEdit; }
+     QSize sizeHint() const { return QSize(300, 200); }
+
+ public slots:
+ void setText(const QString &amp;text) { textEditor-&gt;setText(text); }
+ };
+
+ class XFormPlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     XFormPlugin(QObject *parent = 0) : QObject(parent) { }
+     QString includeFile() const { return &quot;xform.h&quot;; }
+     QString name() const { return &quot;XFormRendererEx&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         XFormRendererEx *xform = new XFormRendererEx(parent);
+         xform-&gt;setText(&quot;Qt - Hello World!!&quot;);
+         return xform;
+     }
+ };
+
+ class GradientEditorPlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     GradientEditorPlugin(QObject *parent = 0) : QObject(parent) { }
+     QString includeFile() const { return &quot;gradients.h&quot;; }
+     QString name() const { return &quot;GradientEditor&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         GradientEditor *editor = new GradientEditor(parent);
+         return editor;
+     }
+ };
+
+ class GradientRendererEx : public GradientRenderer
+ {
+     Q_OBJECT
+ public:
+     GradientRendererEx(QWidget *p) : GradientRenderer(p) { }
+     QSize sizeHint() const { return QSize(300, 200); }
+ };
+
+ class GradientRendererPlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     GradientRendererPlugin(QObject *parent = 0) : QObject(parent) { }
+     QString includeFile() const { return &quot;gradients.h&quot;; }
+     QString name() const { return &quot;GradientRendererEx&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         GradientRenderer *renderer = new GradientRendererEx(parent);
+         renderer-&gt;setConicalGradient();
+         return renderer;
+     }
+ };
+
+ class PathStrokeRendererEx : public PathStrokeRenderer
+ {
+     Q_OBJECT
+ public:
+     PathStrokeRendererEx(QWidget *p) : PathStrokeRenderer(p) { }
+     QSize sizeHint() const { return QSize(300, 200); }
+ };
+
+ class StrokeRenderPlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     StrokeRenderPlugin(QObject *parent = 0) : QObject(parent) { }
+     QString includeFile() const { return &quot;pathstroke.h&quot;; }
+     QString name() const { return &quot;PathStrokeRendererEx&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         PathStrokeRenderer *stroke = new PathStrokeRendererEx(parent);
+         return stroke;
+     }
+ };
+
+ class CompositionModePlugin : public QObject, public DemoPlugin
+ {
+     Q_OBJECT
+ public:
+     CompositionModePlugin(QObject *parent = 0) : QObject(parent) { }
+     QString includeFile() const { return &quot;composition.h&quot;; }
+     QString name() const { return &quot;CompositionRenderer&quot;; }
+
+     QWidget *createWidget(QWidget *parent)
+     {
+         CompositionRenderer *renderer = new CompositionRenderer(parent);
+         renderer-&gt;setAnimationEnabled(false);
+         return renderer;
+     }
+ };
+
+ class ArthurPlugins : public QObject, public QDesignerCustomWidgetCollectionInterface
+ {
+     Q_OBJECT
+     Q_INTERFACES(QDesignerCustomWidgetCollectionInterface)
+
+ public:
+     ArthurPlugins(QObject *parent = 0);
+     QList&lt;QDesignerCustomWidgetInterface*&gt; customWidgets() const { return m_plugins; }
+
+ private:
+     QList&lt;QDesignerCustomWidgetInterface *&gt; m_plugins;
+ };
+
+ ArthurPlugins::ArthurPlugins(QObject *parent) :
+     QObject(parent)
+ {
+     m_plugins &lt;&lt; new DeformPlugin(this)
+               &lt;&lt; new XFormPlugin(this)
+               &lt;&lt; new GradientEditorPlugin(this)
+               &lt;&lt; new GradientRendererPlugin(this)
+               &lt;&lt; new StrokeRenderPlugin(this)
+               &lt;&lt; new CompositionModePlugin(this);
+ }
+
+ #include &quot;plugin.moc&quot;
+
+ Q_EXPORT_PLUGIN(ArthurPlugins)</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/multipleinheritance.qdoc -->
+<head>
+  <title>Qt 4.4: Multiple Inheritance Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Multiple Inheritance Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="uitools-multipleinheritance-calculatorform-cpp.html">uitools/multipleinheritance/calculatorform.cpp</a></li>
+<li><a href="uitools-multipleinheritance-calculatorform-h.html">uitools/multipleinheritance/calculatorform.h</a></li>
+<li><a href="uitools-multipleinheritance-calculatorform-ui.html">uitools/multipleinheritance/calculatorform.ui</a></li>
+<li><a href="uitools-multipleinheritance-main-cpp.html">uitools/multipleinheritance/main.cpp</a></li>
+<li><a href="uitools-multipleinheritance-multipleinheritance-pro.html">uitools/multipleinheritance/multipleinheritance.pro</a></li>
+</ul>
+<p>The Multiple Inheritance Example shows how to use a form created with <i>Qt Designer</i> in an application by subclassing both <a href="qwidget.html">QWidget</a> and the user interface class, which is <tt>Ui::CalculatorForm</tt>.</p>
+<p align="center"><img src="images/multipleinheritance-example.png" /></p><p>To subclass the <tt>calculatorform.ui</tt> file and ensure that <tt>qmake</tt> processes it with the <tt>uic</tt>, we have to include <tt>calculatorform.ui</tt> in the <tt>.pro</tt> file, as shown below:</p>
+<pre> SOURCES = calculatorform.cpp main.cpp
+ HEADERS = calculatorform.h
+ FORMS = calculatorform.ui</pre>
+<p>When the project is compiled, the <tt>uic</tt> will generate a corresponding <tt>ui_calculatorform.h</tt>.</p>
+<a name="calculatorform-definition"></a>
+<h2>CalculatorForm Definition</h2>
+<p>In the <tt>CalculatorForm</tt> definition, we include the <tt>ui_calculatorform.h</tt> that was generated earlier.</p>
+<pre> #include &quot;ui_calculatorform.h&quot;</pre>
+<p>As mentioned earlier, the class is a subclass of both <a href="qwidget.html">QWidget</a> and <tt>Ui::CalculatorForm</tt>.</p>
+<pre> class CalculatorForm : public QWidget, private Ui::CalculatorForm
+ {
+     Q_OBJECT
+
+ public:
+     CalculatorForm(QWidget *parent = 0);
+
+ private slots:
+     void on_inputSpinBox1_valueChanged(int value);
+     void on_inputSpinBox2_valueChanged(int value);
+ };</pre>
+<p>Two slots are defined according to the <a href="designer-using-a-component.html#automatic-connections">automatic connection</a> naming convention required by <tt>uic</tt>. This is to ensure that <a href="qmetaobject.html">QMetaObject</a>'s auto-connection facilities connect all the signals and slots involved automatically.</p>
+<a name="calculatorform-implementation"></a>
+<h2>CalculatorForm Implementation</h2>
+<p>In the constructor, we call <tt>setupUi()</tt> to load the user interface file. Note that we do not need the <tt>ui</tt> prefix as <tt>CalculatorForm</tt> is a subclass of the user interface class.</p>
+<pre> CalculatorForm::CalculatorForm(QWidget *parent)
+     : QWidget(parent)
+ {
+     setupUi(this);
+ }</pre>
+<p>We include two slots, <tt>on_inputSpinBox1_valueChanged()</tt> and <tt>on_inputSpinBox2_valueChanged()</tt>. These slots respond to the <a href="qspinbox.html#valueChanged">valueChanged()</a> signal that both spin boxes emit. Whenever there is a change in one spin box's value, we take that value and add it to whatever value the other spin box has.</p>
+<pre> void CalculatorForm::on_inputSpinBox1_valueChanged(int value)
+ {
+     outputWidget-&gt;setText(QString::number(value + inputSpinBox2-&gt;value()));
+ }
+
+ void CalculatorForm::on_inputSpinBox2_valueChanged(int value)
+ {
+     outputWidget-&gt;setText(QString::number(value + inputSpinBox1-&gt;value()));
+ }</pre>
+<a name="function"></a>
+<h2><tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates <a href="qapplication.html">QApplication</a> and <tt>CalculatorForm</tt>. The <tt>calculator</tt> object is displayed by invoking the <a href="qwidget.html#show">show()</a> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     CalculatorForm calculator;
+     calculator.show();
+     return app.exec();
+ }</pre>
+<p>There are various approaches to include forms into applications. The Multiple Inheritance approach is just one of them. See <a href="designer-using-a-component.html">Using a Component in Your Application</a> for more information on the other approaches available.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

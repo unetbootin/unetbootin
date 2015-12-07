@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/dropsite.qdoc -->
+<head>
+  <title>Qt 4.4: Drop Site Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Drop Site Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="draganddrop-dropsite-droparea-cpp.html">draganddrop/dropsite/droparea.cpp</a></li>
+<li><a href="draganddrop-dropsite-droparea-h.html">draganddrop/dropsite/droparea.h</a></li>
+<li><a href="draganddrop-dropsite-dropsitewindow-cpp.html">draganddrop/dropsite/dropsitewindow.cpp</a></li>
+<li><a href="draganddrop-dropsite-dropsitewindow-h.html">draganddrop/dropsite/dropsitewindow.h</a></li>
+<li><a href="draganddrop-dropsite-main-cpp.html">draganddrop/dropsite/main.cpp</a></li>
+<li><a href="draganddrop-dropsite-dropsite-pro.html">draganddrop/dropsite/dropsite.pro</a></li>
+</ul>
+<p>The example shows how to distinguish the various MIME formats available in a drag and drop operation.</p>
+<p align="center"><img src="images/dropsite-example.png" alt="Screenshot of the Drop Site example" /></p><p>The Drop Site example accepts drops from other applications, and displays the MIME formats provided by the drag object.</p>
+<p>There are two classes, <tt>DropArea</tt> and <tt>DropSiteWindow</tt>, and a <tt>main()</tt> function in this example. A <tt>DropArea</tt> object is instantiated in <tt>DropSiteWindow</tt>; a <tt>DropSiteWindow</tt> object is then invoked in the <tt>main()</tt> function.</p>
+<a name="droparea-class-definition"></a>
+<h2>DropArea Class Definition</h2>
+<p>The <tt>DropArea</tt> class is a subclass of <a href="qlabel.html">QLabel</a> with a public slot, <tt>clear()</tt>, and a <tt>changed()</tt> signal.</p>
+<pre> class DropArea : public QLabel
+ {
+     Q_OBJECT
+
+ public:
+     DropArea(QWidget *parent = 0);
+
+ public slots:
+     void clear();
+
+ signals:
+     void changed(const QMimeData *mimeData = 0);</pre>
+<p>In addition, <tt>DropArea</tt> also contains a private instance of <a href="qlabel.html">QLabel</a> and reimplementations of four <a href="qwidget.html">QWidget</a> event handlers:</p>
+<ol type="1">
+<li><a href="qwidget.html#dragEnterEvent">dragEnterEvent()</a></li>
+<li><a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a></li>
+<li><a href="qwidget.html#dragLeaveEvent">dragLeaveEvent()</a></li>
+<li><a href="qwidget.html#dropEvent">dropEvent()</a></li>
+</ol>
+<p>These event handlers are further explained in the implementation of the <tt>DropArea</tt> class.</p>
+<pre> protected:
+     void dragEnterEvent(QDragEnterEvent *event);
+     void dragMoveEvent(QDragMoveEvent *event);
+     void dragLeaveEvent(QDragLeaveEvent *event);
+     void dropEvent(QDropEvent *event);
+
+ private:
+     QLabel *label;
+ };</pre>
+<a name="droparea-class-implementation"></a>
+<h2>DropArea Class Implementation</h2>
+<p>In the <tt>DropArea</tt> constructor, we set the <a href="qwidget.html#minimumSize-prop">minimum size</a> to 200x200 pixels, the <a href="qframe.html#setFrameStyle">frame style</a> to both <a href="qframe.html#Shadow-enum">QFrame::Sunken</a> and <a href="qframe.html#Shape-enum">QFrame::StyledPanel</a>, and we align its contents to the center.</p>
+<pre> DropArea::DropArea(QWidget *parent)
+     : QLabel(parent)
+ {
+     setMinimumSize(200, 200);
+     setFrameStyle(QFrame::Sunken | QFrame::StyledPanel);
+     setAlignment(Qt::AlignCenter);
+     setAcceptDrops(true);
+     setAutoFillBackground(true);
+     clear();
+ }</pre>
+<p>Also, we enable drop events in <tt>DropArea</tt> by setting the <a href="qwidget.html#acceptDrops-prop">acceptDrops</a> property to <tt>true</tt>. Then, we enable the <a href="qwidget.html#autoFillBackground-prop">autoFillBackground</a> property and invoke the <tt>clear()</tt> function.</p>
+<p>The <a href="qwidget.html#dragEnterEvent">dragEnterEvent()</a> event handler is called when a drag is in progress and the mouse enters the <tt>DropArea</tt> object. For the <tt>DropSite</tt> example, when the mouse enters <tt>DropArea</tt>, we set its text to &quot;&lt;drop content&gt;&quot; and highlight its background.</p>
+<pre> void DropArea::dragEnterEvent(QDragEnterEvent *event)
+ {
+     setText(tr(&quot;&lt;drop content&gt;&quot;));
+     setBackgroundRole(QPalette::Highlight);
+
+     event-&gt;acceptProposedAction();
+     emit changed(event-&gt;mimeData());
+ }</pre>
+<p>Then, we invoke <a href="qdropevent.html#acceptProposedAction">acceptProposedAction()</a> on <i>event</i>, setting the drop action to the one proposed. Lastly, we emit the <tt>changed()</tt> signal, with the data that was dropped and its MIME type information as a parameter.</p>
+<p>For <a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a>, we just accept the proposed <a href="qdragmoveevent.html">QDragMoveEvent</a> object, <i>event</i>, with <a href="qdropevent.html#acceptProposedAction">acceptProposedAction()</a>.</p>
+<pre> void DropArea::dragMoveEvent(QDragMoveEvent *event)
+ {
+     event-&gt;acceptProposedAction();
+ }</pre>
+<p>The <tt>DropArea</tt> class's implementation of <a href="qwidget.html#dropEvent">dropEvent()</a> extracts the <i>event</i>'s mime data and displays it accordingly.</p>
+<pre> void DropArea::dropEvent(QDropEvent *event)
+ {
+     const QMimeData *mimeData = event-&gt;mimeData();</pre>
+<p>The <tt>mimeData</tt> object can contain one of the following objects: an image, HTML text, plain text, or a list of URLs.</p>
+<pre>     if (mimeData-&gt;hasImage()) {
+         setPixmap(qvariant_cast&lt;QPixmap&gt;(mimeData-&gt;imageData()));
+     } else if (mimeData-&gt;hasHtml()) {
+         setText(mimeData-&gt;html());
+         setTextFormat(Qt::RichText);
+     } else if (mimeData-&gt;hasText()) {
+         setText(mimeData-&gt;text());
+         setTextFormat(Qt::PlainText);
+     } else if (mimeData-&gt;hasUrls()) {
+         QList&lt;QUrl&gt; urlList = mimeData-&gt;urls();
+         QString text;
+         for (int i = 0; i &lt; urlList.size() &amp;&amp; i &lt; 32; ++i) {
+             QString url = urlList.at(i).path();
+             text += url + QString(&quot;\n&quot;);
+         }
+         setText(text);
+     } else {
+         setText(tr(&quot;Cannot display data&quot;));
+     }</pre>
+<ul>
+<li>If <tt>mimeData</tt> contains an image, we display it in <tt>DropArea</tt> with <a href="qlabel.html#pixmap-prop">setPixmap()</a>.</li>
+<li>If <tt>mimeData</tt> contains HTML, we display it with <a href="qlabel.html#text-prop">setText()</a> and set <tt>DropArea</tt>'s text format as <a href="qt.html#TextFormat-enum">Qt::RichText</a>.</li>
+<li>If <tt>mimeData</tt> contains plain text, we display it with <a href="qlabel.html#text-prop">setText()</a> and set <tt>DropArea</tt>'s text format as <a href="qt.html#TextFormat-enum">Qt::PlainText</a>. In the event that <tt>mimeData</tt> contains URLs, we iterate through the list of URLs to display them on individual lines.</li>
+<li>If <tt>mimeData</tt> contains other types of objects, we set <tt>DropArea</tt>'s text, with <a href="qlabel.html#text-prop">setText()</a> to &quot;Cannot display data&quot; to inform the user.</li>
+</ul>
+<p>We then set <tt>DropArea</tt>'s <a href="qwidget.html#backgroundRole">backgroundRole</a> to <a href="qpalette.html#ColorRole-enum">QPalette::Dark</a> and we accept <tt>event</tt>'s proposed action.</p>
+<pre>     setBackgroundRole(QPalette::Dark);
+     event-&gt;acceptProposedAction();
+ }</pre>
+<p>The <a href="qwidget.html#dragLeaveEvent">dragLeaveEvent()</a> event handler is called when a drag is in progress and the mouse leaves the widget.</p>
+<pre> void DropArea::dragLeaveEvent(QDragLeaveEvent *event)
+ {
+     clear();
+     event-&gt;accept();
+ }</pre>
+<p>For <tt>DropArea</tt>'s implementation, we clear invoke <tt>clear()</tt> and then accept the proposed event.</p>
+<p>The <tt>clear()</tt> function sets the text in <tt>DropArea</tt> to &quot;&lt;drop content&gt;&quot; and sets the <a href="qwidget.html#backgroundRole">backgroundRole</a> to <a href="qpalette.html#ColorRole-enum">QPalette::Dark</a>. Lastly, it emits the <tt>changed()</tt> signal.</p>
+<pre> void DropArea::clear()
+ {
+     setText(tr(&quot;&lt;drop content&gt;&quot;));
+     setBackgroundRole(QPalette::Dark);
+
+     emit changed();
+ }</pre>
+<a name="dropsitewindow-class-definition"></a>
+<h2>DropSiteWindow Class Definition</h2>
+<p>The <tt>DropSiteWindow</tt> class contains a constructor and a public slot, <tt>updateFormatsTable()</tt>.</p>
+<pre> class DropSiteWindow : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     DropSiteWindow();
+
+ public slots:
+     void updateFormatsTable(const QMimeData *mimeData);
+
+ private:
+     DropArea *dropArea;
+     QLabel *abstractLabel;
+     QTableWidget *formatsTable;
+
+     QPushButton *clearButton;
+     QPushButton *quitButton;
+     QDialogButtonBox *buttonBox;
+ };</pre>
+<p>The class also contains a private instance of <tt>DropArea</tt>, <tt>dropArea</tt>, <a href="qlabel.html">QLabel</a>, <tt>abstractLabel</tt>, <a href="qtablewidget.html">QTableWidget</a>, <tt>formatsTable</tt>, <a href="qdialogbuttonbox.html">QDialogButtonBox</a>, <tt>buttonBox</tt>, and two <a href="qpushbutton.html">QPushButton</a> objects, <tt>clearButton</tt> and <tt>quitButton</tt>.</p>
+<a name="dropsitewindow-class-implementation"></a>
+<h2>DropSiteWindow Class Implementation</h2>
+<p>In the constructor of <tt>DropSiteWindow</tt>, we instantiate <tt>abstractLabel</tt> and set its <a href="qlabel.html#wordWrap-prop">wordWrap</a> property to <tt>true</tt>. We also call the <a href="qwidget.html#adjustSize">adjustSize()</a> function to adjust <tt>abstractLabel</tt>'s size according to its contents.</p>
+<pre> DropSiteWindow::DropSiteWindow()
+ {
+     abstractLabel = new QLabel(tr(&quot;This example accepts drags from other &quot;
+                                   &quot;applications and displays the MIME types &quot;
+                                   &quot;provided by the drag object.&quot;));
+     abstractLabel-&gt;setWordWrap(true);
+     abstractLabel-&gt;adjustSize();</pre>
+<p>Then we instantiate <tt>dropArea</tt> and connect its <tt>changed()</tt> signal to <tt>DropSiteWindow</tt>'s <tt>updateFormatsTable()</tt> slot.</p>
+<pre>     dropArea = new DropArea;
+     connect(dropArea, SIGNAL(changed(const QMimeData *)),
+             this, SLOT(updateFormatsTable(const QMimeData *)));</pre>
+<p>We now set up the <a href="qtablewidget.html">QTableWidget</a> object, <tt>formatsTable</tt>. Its horizontal header is set using a <a href="qstringlist.html">QStringList</a> object, <tt>labels</tt>. The number of columms are set to two and the table is not editable. Also, the <tt>formatTable</tt>'s horizontal header is formatted to ensure that its second column stretches to occupy additional space available.</p>
+<pre>     QStringList labels;
+     labels &lt;&lt; tr(&quot;Format&quot;) &lt;&lt; tr(&quot;Content&quot;);
+
+     formatsTable = new QTableWidget;
+     formatsTable-&gt;setColumnCount(2);
+     formatsTable-&gt;setEditTriggers(QAbstractItemView::NoEditTriggers);
+     formatsTable-&gt;setHorizontalHeaderLabels(labels);
+     formatsTable-&gt;horizontalHeader()-&gt;setStretchLastSection(true);</pre>
+<p>Two <a href="qpushbutton.html">QPushButton</a> objects, <tt>clearButton</tt> and <tt>quitButton</tt>, are instantiated and added to <tt>buttonBox</tt> - a <a href="qdialogbuttonbox.html">QDialogButtonBox</a> object. We use <a href="qdialogbuttonbox.html">QDialogButtonBox</a> here to ensure that the push buttons are presented in a layout that conforms to the platform's style.</p>
+<pre>     clearButton = new QPushButton(tr(&quot;Clear&quot;));
+     quitButton = new QPushButton(tr(&quot;Quit&quot;));
+
+     buttonBox = new QDialogButtonBox;
+     buttonBox-&gt;addButton(clearButton, QDialogButtonBox::ActionRole);
+     buttonBox-&gt;addButton(quitButton, QDialogButtonBox::RejectRole);
+
+     connect(quitButton, SIGNAL(pressed()), this, SLOT(close()));
+     connect(clearButton, SIGNAL(pressed()), dropArea, SLOT(clear()));</pre>
+<p>The <a href="qabstractbutton.html#clicked">clicked()</a> signals for <tt>quitButton</tt> and <tt>clearButton</tt> are connected to <a href="qwidget.html#close">close()</a> and <tt>clear()</tt>, respectively.</p>
+<p>For the layout, we use a <a href="qvboxlayout.html">QVBoxLayout</a>, <tt>mainLayout</tt>, to arrange our widgets vertically. We also set the window title to &quot;Drop Site&quot; and the minimum size to 350x500 pixels.</p>
+<pre>     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(abstractLabel);
+     mainLayout-&gt;addWidget(dropArea);
+     mainLayout-&gt;addWidget(formatsTable);
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Drop Site&quot;));
+     setMinimumSize(350, 500);
+ }</pre>
+<p>We move on to the <tt>updateFormatsTable()</tt> function. This function updates the <tt>formatsTable</tt>, displaying the MIME formats of the object dropped onto the <tt>DropArea</tt> object. First, we set <a href="qtablewidget.html">QTableWidget</a>'s <a href="qtablewidget.html#rowCount-prop">rowCount</a> property to 0. Then, we validate to ensure that the <a href="qmimedata.html">QMimeData</a> object passed in is a valid object.</p>
+<pre> void DropSiteWindow::updateFormatsTable(const QMimeData *mimeData)
+ {
+     formatsTable-&gt;setRowCount(0);
+     if (!mimeData)
+         return;</pre>
+<p>Once we are sure that <tt>mimeData</tt> is valid, we iterate through its supported formats using the <a href="containers.html#the-foreach-keyword">foreach keyword</a>. This keyword has the following format:</p>
+<pre>         foreach(variable, container)</pre>
+<p>In our example, <tt>format</tt> is the <i>variable</i> and the <i>container</i> is a <a href="qstringlist.html">QStringList</a>, obtained from <tt>mimeData-&gt;formats()</tt>.</p>
+<p><b>Note:</b> The <a href="qmimedata.html#formats">formats()</a> function returns a <a href="qstringlist.html">QStringList</a> object, containing all the formats supported by the <tt>mimeData</tt>.</p>
+<pre>     foreach (QString format, mimeData-&gt;formats()) {
+         QTableWidgetItem *formatItem = new QTableWidgetItem(format);
+         formatItem-&gt;setFlags(Qt::ItemIsEnabled);
+         formatItem-&gt;setTextAlignment(Qt::AlignTop | Qt::AlignLeft);</pre>
+<p>Within each iteration, we create a <a href="qtablewidgetitem.html">QTableWidgetItem</a>, <tt>formatItem</tt> and we set its <a href="qtablewidgetitem.html#setFlags">flags</a> to <a href="qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a>, and its <a href="qtablewidgetitem.html#setTextAlignment">text alignment</a> to <a href="qt.html#AlignmentFlag-enum">Qt::AlignTop</a> and <a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a>.</p>
+<p>A <a href="qstring.html">QString</a> object, <tt>text</tt>, is customized to display data according to the contents of <tt>format</tt>. We invoke {<a href="qstring.html">QString</a>}'s <a href="qstring.html#simplified">simplified()</a> function on <tt>text</tt>, to obtain a string that has no additional space before, after or in between words.</p>
+<pre>         QString text;
+         if (format == &quot;text/plain&quot;) {
+             text = mimeData-&gt;text().simplified();
+         } else if (format == &quot;text/html&quot;) {
+             text = mimeData-&gt;html().simplified();
+         } else if (format == &quot;text/uri-list&quot;) {
+             QList&lt;QUrl&gt; urlList = mimeData-&gt;urls();
+             for (int i = 0; i &lt; urlList.size() &amp;&amp; i &lt; 32; ++i) {
+                 QString url = urlList.at(i).path();
+                 text.append(url + &quot; &quot;);
+             }
+         } else {
+             QByteArray data = mimeData-&gt;data(format);
+             for (int i = 0; i &lt; data.size() &amp;&amp; i &lt; 32; ++i) {
+                 QString hex = QString(&quot;%1&quot;).arg(uchar(data[i]), 2, 16,
+                                                 QChar('0'))
+                                            .toUpper();
+                 text.append(hex + &quot; &quot;);
+             }
+         }</pre>
+<p>If <tt>format</tt> contains a list of URLs, we iterate through them, using spaces to separate them. On the other hand, if <tt>format</tt> contains an image, we display the data by converting the text to hexadecimal.</p>
+<pre>         int row = formatsTable-&gt;rowCount();
+         formatsTable-&gt;insertRow(row);
+         formatsTable-&gt;setItem(row, 0, new QTableWidgetItem(format));
+         formatsTable-&gt;setItem(row, 1, new QTableWidgetItem(text));
+     }
+
+     formatsTable-&gt;resizeColumnToContents(0);
+ }</pre>
+<p>Once <tt>text</tt> has been customized to contain the appropriate data, we insert both <tt>format</tt> and <tt>text</tt> into <tt>formatsTable</tt> with <a href="qtablewidget.html#setItem">setItem()</a>. Lastly, we invoke <a href="qtableview.html#resizeColumnToContents">resizeColumnToContents()</a> on <tt>formatsTable</tt>'s first column.</p>
+<a name="the-main-function"></a>
+<h2>The main() Function</h2>
+<p>Within the <tt>main()</tt> function, we instantiate <tt>DropSiteWindow</tt> and invoke its <a href="qwidget.html#show">show()</a> function.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     DropSiteWindow window;
+     window.show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

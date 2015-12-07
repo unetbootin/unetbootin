@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: connectionwidget.cpp Example File (demos/sqlbrowser/connectionwidget.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">connectionwidget.cpp Example File<br /><span class="small-subtitle">demos/sqlbrowser/connectionwidget.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;connectionwidget.h&quot;
+
+ #include &lt;QtGui&gt;
+ #include &lt;QtSql&gt;
+
+ ConnectionWidget::ConnectionWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     QVBoxLayout *layout = new QVBoxLayout(this);
+     tree = new QTreeWidget(this);
+     tree-&gt;setObjectName(QLatin1String(&quot;tree&quot;));
+     tree-&gt;setHeaderLabels(QStringList(tr(&quot;database&quot;)));
+     tree-&gt;header()-&gt;setResizeMode(QHeaderView::Stretch);
+     QAction *refreshAction = new QAction(tr(&quot;Refresh&quot;), tree);
+     metaDataAction = new QAction(tr(&quot;Show Schema&quot;), tree);
+     connect(refreshAction, SIGNAL(triggered()), SLOT(refresh()));
+     connect(metaDataAction, SIGNAL(triggered()), SLOT(showMetaData()));
+     tree-&gt;addAction(refreshAction);
+     tree-&gt;addAction(metaDataAction);
+     tree-&gt;setContextMenuPolicy(Qt::ActionsContextMenu);
+
+     layout-&gt;addWidget(tree);
+
+     QMetaObject::connectSlotsByName(this);
+ }
+
+ ConnectionWidget::~ConnectionWidget()
+ {
+ }
+
+ static QString qDBCaption(const QSqlDatabase &amp;db)
+ {
+     QString nm = db.driverName();
+     nm.append(QLatin1Char(':'));
+     if (!db.userName().isEmpty())
+         nm.append(db.userName()).append(QLatin1Char('@'));
+     nm.append(db.databaseName());
+     return nm;
+ }
+
+ void ConnectionWidget::refresh()
+ {
+     tree-&gt;clear();
+     QStringList connectionNames = QSqlDatabase::connectionNames();
+
+     bool gotActiveDb = false;
+     for (int i = 0; i &lt; connectionNames.count(); ++i) {
+         QTreeWidgetItem *root = new QTreeWidgetItem(tree);
+         QSqlDatabase db = QSqlDatabase::database(connectionNames.at(i), false);
+         root-&gt;setText(0, qDBCaption(db));
+         if (connectionNames.at(i) == activeDb) {
+             gotActiveDb = true;
+             setActive(root);
+         }
+         if (db.isOpen()) {
+             QStringList tables = db.tables();
+             for (int t = 0; t &lt; tables.count(); ++t) {
+                 QTreeWidgetItem *table = new QTreeWidgetItem(root);
+                 table-&gt;setText(0, tables.at(t));
+             }
+         }
+     }
+     if (!gotActiveDb) {
+         activeDb = connectionNames.value(0);
+         setActive(tree-&gt;topLevelItem(0));
+     }
+
+     tree-&gt;doItemsLayout(); <span class="comment">//</span> HACK
+ }
+
+ QSqlDatabase ConnectionWidget::currentDatabase() const
+ {
+     return QSqlDatabase::database(activeDb);
+ }
+
+ static void qSetBold(QTreeWidgetItem *item, bool bold)
+ {
+     QFont font = item-&gt;font(0);
+     font.setBold(bold);
+     item-&gt;setFont(0, font);
+ }
+
+ void ConnectionWidget::setActive(QTreeWidgetItem *item)
+ {
+     for (int i = 0; i &lt; tree-&gt;topLevelItemCount(); ++i) {
+         if (tree-&gt;topLevelItem(i)-&gt;font(0).bold())
+             qSetBold(tree-&gt;topLevelItem(i), false);
+     }
+
+     if (!item)
+         return;
+
+     qSetBold(item, true);
+     activeDb = QSqlDatabase::connectionNames().value(tree-&gt;indexOfTopLevelItem(item));
+ }
+
+ void ConnectionWidget::on_tree_itemActivated(QTreeWidgetItem *item, int <span class="comment">/* column */</span>)
+ {
+
+     if (!item)
+         return;
+
+     if (!item-&gt;parent()) {
+         setActive(item);
+     } else {
+         setActive(item-&gt;parent());
+         emit tableActivated(item-&gt;text(0));
+     }
+ }
+
+ void ConnectionWidget::showMetaData()
+ {
+     QTreeWidgetItem *cItem = tree-&gt;currentItem();
+     if (!cItem || !cItem-&gt;parent())
+         return;
+     setActive(cItem-&gt;parent());
+     emit metaDataRequested(cItem-&gt;text(0));
+ }
+
+ void ConnectionWidget::on_tree_currentItemChanged(QTreeWidgetItem *current, QTreeWidgetItem *)
+ {
+     metaDataAction-&gt;setEnabled(current &amp;&amp; current-&gt;parent());
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

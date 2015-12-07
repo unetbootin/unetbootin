@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (itemviews/chart/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">itemviews/chart/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;pieview.h&quot;
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     QMenu *fileMenu = new QMenu(tr(&quot;&amp;File&quot;), this);
+     QAction *openAction = fileMenu-&gt;addAction(tr(&quot;&amp;Open...&quot;));
+     openAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+O&quot;)));
+     QAction *saveAction = fileMenu-&gt;addAction(tr(&quot;&amp;Save As...&quot;));
+     saveAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+S&quot;)));
+     QAction *quitAction = fileMenu-&gt;addAction(tr(&quot;E&amp;xit&quot;));
+     quitAction-&gt;setShortcut(QKeySequence(tr(&quot;Ctrl+Q&quot;)));
+
+     setupModel();
+     setupViews();
+
+     connect(openAction, SIGNAL(triggered()), this, SLOT(openFile()));
+     connect(saveAction, SIGNAL(triggered()), this, SLOT(saveFile()));
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+
+     menuBar()-&gt;addMenu(fileMenu);
+     statusBar();
+
+     openFile(&quot;:/Charts/qtdata.cht&quot;);
+
+     setWindowTitle(tr(&quot;Chart&quot;));
+     resize(640, 480);
+ }
+
+ void MainWindow::setupModel()
+ {
+     model = new QStandardItemModel(8, 2, this);
+     model-&gt;setHeaderData(0, Qt::Horizontal, tr(&quot;Label&quot;));
+     model-&gt;setHeaderData(1, Qt::Horizontal, tr(&quot;Quantity&quot;));
+ }
+
+ void MainWindow::setupViews()
+ {
+     QSplitter *splitter = new QSplitter;
+     QTableView *table = new QTableView;
+     pieChart = new PieView;
+     splitter-&gt;addWidget(table);
+     splitter-&gt;addWidget(pieChart);
+     splitter-&gt;setStretchFactor(0, 0);
+     splitter-&gt;setStretchFactor(1, 1);
+
+     table-&gt;setModel(model);
+     pieChart-&gt;setModel(model);
+
+     QItemSelectionModel *selectionModel = new QItemSelectionModel(model);
+     table-&gt;setSelectionModel(selectionModel);
+     pieChart-&gt;setSelectionModel(selectionModel);
+
+     setCentralWidget(splitter);
+ }
+
+ void MainWindow::openFile(const QString &amp;path)
+ {
+     QString fileName;
+     if (path.isNull())
+         fileName = QFileDialog::getOpenFileName(this, tr(&quot;Choose a data file&quot;),
+                                                 &quot;&quot;, &quot;*.cht&quot;);
+     else
+         fileName = path;
+
+     if (!fileName.isEmpty()) {
+         QFile file(fileName);
+
+         if (file.open(QFile::ReadOnly | QFile::Text)) {
+             QTextStream stream(&amp;file);
+             QString line;
+
+             model-&gt;removeRows(0, model-&gt;rowCount(QModelIndex()), QModelIndex());
+
+             int row = 0;
+             do {
+                 line = stream.readLine();
+                 if (!line.isEmpty()) {
+
+                     model-&gt;insertRows(row, 1, QModelIndex());
+
+                     QStringList pieces = line.split(&quot;,&quot;, QString::SkipEmptyParts);
+                     model-&gt;setData(model-&gt;index(row, 0, QModelIndex()),
+                                    pieces.value(0));
+                     model-&gt;setData(model-&gt;index(row, 1, QModelIndex()),
+                                    pieces.value(1));
+                     model-&gt;setData(model-&gt;index(row, 0, QModelIndex()),
+                                    QColor(pieces.value(2)), Qt::DecorationRole);
+                     row++;
+                 }
+             } while (!line.isEmpty());
+
+             file.close();
+             statusBar()-&gt;showMessage(tr(&quot;Loaded %1&quot;).arg(fileName), 2000);
+         }
+     }
+ }
+
+ void MainWindow::saveFile()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this,
+         tr(&quot;Save file as&quot;), &quot;&quot;, &quot;*.cht&quot;);
+
+     if (!fileName.isEmpty()) {
+         QFile file(fileName);
+         QTextStream stream(&amp;file);
+
+         if (file.open(QFile::WriteOnly | QFile::Text)) {
+             for (int row = 0; row &lt; model-&gt;rowCount(QModelIndex()); ++row) {
+
+                 QStringList pieces;
+
+                 pieces.append(model-&gt;data(model-&gt;index(row, 0, QModelIndex()),
+                                           Qt::DisplayRole).toString());
+                 pieces.append(model-&gt;data(model-&gt;index(row, 1, QModelIndex()),
+                                           Qt::DisplayRole).toString());
+                 pieces.append(model-&gt;data(model-&gt;index(row, 0, QModelIndex()),
+                                           Qt::DecorationRole).toString());
+
+                 stream &lt;&lt; pieces.join(&quot;,&quot;) &lt;&lt; &quot;\n&quot;;
+             }
+         }
+
+         file.close();
+         statusBar()-&gt;showMessage(tr(&quot;Saved %1&quot;).arg(fileName), 2000);
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

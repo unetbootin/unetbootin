@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QtHelpProject version="1.0">
+	<virtualFolder>assistant</virtualFolder>
+	<namespace>com.trolltech.com.assistantinternal_1.0.0</namespace>
+      <filterSection>
+	    <files>
+		<file>assistant.html</file>
+		<file>images/helpviewer-bookmarks.png</file>
+		<file>images/helpviewer-contents.png</file>
+		<file>images/helpviewer-docwindow.png</file>
+		<file>images/helpviewer-helpviewer.png</file>
+                <file>images/helpviewer-index.png</file>
+                <file>images/helpviewer-search.png</file>
+                <file>images/helpviewer-preferencesdialog1.png</file>
+                <file>images/helpviewer-preferencesdialog.png</file>
+		<file>images/helpviewer-toolbar.png</file>		
+	    </files>
+      </filterSection>
+</QtHelpProject>

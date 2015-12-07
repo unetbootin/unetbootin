@@ -1,0 +1,385 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page examples.html
+    \title Qt Examples
+    \brief Information about the example programs provided with Qt.
+    \ingroup howto
+
+    This is the list of examples in Qt's \c examples directory. The
+    examples demonstrate Qt features in small, self-contained
+    programs. They are not all designed to be impressive when you run
+    them, but their source code is carefully written to show good Qt
+    programming practices. You can launch any of these programs from the
+    \l{Examples and Demos Launcher} application.
+
+    If you are new to Qt, you should probably start by going through
+    the \l{Tutorials} before you have a look at the
+    \l{mainwindows/application}{Application} example.
+
+    In addition to the examples and the tutorial, Qt includes a
+    \l{Qt Demonstrations}{selection of demos} that deliberately show off
+    Qt's features. You might want to look at these as well.
+
+    One more valuable source for examples and explanations of Qt
+    features is the archive of the \l {http://doc.trolltech.com/qq}
+    {Qt Quarterly}.
+
+    In the list below, examples marked with an asterisk (*) are fully
+    documented. Eventually, all the examples will be fully documented,
+    but sometimes we include an example before we have time to write
+    about it, because someone might need it right now.
+
+    Categories:
+
+    \tableofcontents
+
+    \section1 ActiveQt
+
+    \list
+    \o \l{activeqt/comapp}{COM App}\raisedaster
+    \o \l{Dot Net Example (ActiveQt)}{Dot Net}\raisedaster
+    \o \l{activeqt/hierarchy}{Hierarchy}\raisedaster
+    \o \l{activeqt/menus}{Menus}\raisedaster
+    \o \l{activeqt/multiple}{Multiple}\raisedaster
+    \o \l{activeqt/opengl}{OpenGL}\raisedaster
+    \o \l{activeqt/qutlook}{Qutlook}\raisedaster
+    \o \l{activeqt/simple}{Simple}\raisedaster
+    \o \l{activeqt/webbrowser}{Web Browser}\raisedaster
+    \o \l{activeqt/wrapper}{Wrapper}\raisedaster
+    \endlist
+
+    \section1 Concurrent Programming
+
+    \list
+    \o \l{qtconcurrent/map}{QtConcurrent Map}
+    \o \l{qtconcurrent/progressdialog}{QtConcurrent Progress Dialog}
+    \o \l{qtconcurrent/runfunction}{QtConcurrent Run Function}
+    \o \l{qtconcurrent/wordcount}{QtConcurrent Word Count}
+    \endlist
+
+    \section1 Desktop
+
+    \list
+    \o \l{desktop/screenshot}{Screenshot}\raisedaster
+    \o \l{desktop/systray}{System Tray}\raisedaster
+    \endlist
+
+    \section1 Dialogs
+
+    \list
+    \o \l{dialogs/classwizard}{Class Wizard}\raisedaster
+    \o \l{dialogs/configdialog}{Config Dialog}
+    \o \l{dialogs/extension}{Extension}\raisedaster
+    \o \l{dialogs/findfiles}{Find Files}\raisedaster
+    \o \l{dialogs/licensewizard}{License Wizard}\raisedaster
+    \o \l{dialogs/standarddialogs}{Standard Dialogs}
+    \o \l{dialogs/tabdialog}{Tab Dialog}\raisedaster
+    \o \l{dialogs/trivialwizard}{Trivial Wizard}
+    \endlist
+
+    \section1 Drag and Drop
+
+    \list
+    \o \l{draganddrop/draggableicons}{Draggable Icons}
+    \o \l{draganddrop/draggabletext}{Draggable Text}
+    \o \l{draganddrop/dropsite}{Drop Site}
+    \o \l{draganddrop/fridgemagnets}{Fridge Magnets}\raisedaster
+    \o \l{draganddrop/puzzle}{Drag and Drop Puzzle}
+    \endlist
+
+    \section1 Graphics View
+
+    \list
+    \o \l{graphicsview/collidingmice}{Colliding Mice}\raisedaster
+    \o \l{graphicsview/diagramscene}{Diagram Scene}\raisedaster
+    \o \l{graphicsview/dragdroprobot}{Drag and Drop Robot}
+    \o \l{graphicsview/elasticnodes}{Elastic Nodes}
+    \o \l{graphicsview/portedasteroids}{Ported Asteroids}
+    \o \l{graphicsview/portedcanvas}{Ported Canvas}
+    \endlist
+
+    \section1 Item Views
+
+    \list
+    \o \l{itemviews/addressbook}{Address Book}
+    \o \l{itemviews/basicsortfiltermodel}{Basic Sort/Filter Model}
+    \o \l{itemviews/chart}{Chart}
+    \o \l{itemviews/coloreditorfactory}{Color Editor Factory}\raisedaster
+    \o \l{itemviews/customsortfiltermodel}{Custom Sort/Filter Model}\raisedaster
+    \o \l{itemviews/dirview}{Dir View}
+    \o \l{itemviews/editabletreemodel}{Editable Tree Model}\raisedaster
+    \o \l{itemviews/pixelator}{Pixelator}\raisedaster
+    \o \l{itemviews/puzzle}{Puzzle}
+    \o \l{itemviews/simpledommodel}{Simple DOM Model}\raisedaster
+    \o \l{itemviews/simpletreemodel}{Simple Tree Model}\raisedaster
+    \o \l{itemviews/simplewidgetmapper}{Simple Widget Mapper}
+    \o \l{itemviews/spinboxdelegate}{Spin Box Delegate}\raisedaster
+    \o \l{itemviews/stardelegate}{Star Delegate}\raisedaster
+    \endlist
+
+    \section1 Layouts
+
+    \list
+    \o \l{layouts/basiclayouts}{Basic Layouts}\raisedaster
+    \o \l{layouts/borderlayout}{Border Layout}
+    \o \l{layouts/dynamiclayouts}{Dynamic Layouts}
+    \o \l{layouts/flowlayout}{Flow Layout}
+    \endlist
+
+    \section1 Main Windows
+
+    \list
+    \o \l{mainwindows/application}{Application}\raisedaster
+    \o \l{mainwindows/dockwidgets}{Dock Widgets}\raisedaster
+    \o \l{mainwindows/mdi}{MDI}
+    \o \l{mainwindows/menus}{Menus}\raisedaster
+    \o \l{mainwindows/recentfiles}{Recent Files}
+    \o \l{mainwindows/sdi}{SDI}
+    \endlist
+
+    \section1 Network
+
+    \list
+    \o \l{network/blockingfortuneclient}{Blocking Fortune Client}\raisedaster
+    \o \l{network/broadcastreceiver}{Broadcast Receiver}
+    \o \l{network/broadcastsender}{Broadcast Sender}
+    \o \l{network/fortuneclient}{Fortune Client}\raisedaster
+    \o \l{network/fortuneserver}{Fortune Server}\raisedaster
+    \o \l{network/ftp}{FTP}
+    \o \l{network/http}{HTTP}
+    \o \l{network/loopback}{Loopback}
+    \o \l{network/threadedfortuneserver}{Threaded Fortune Server}\raisedaster
+    \o \l{network/torrent}{Torrent}
+    \endlist
+
+    \section1 OpenGL
+
+    \list
+    \o \l{opengl/2dpainting}{2D Painting}\raisedaster
+    \o \l{opengl/framebufferobject}{Framebuffer Object}
+    \o \l{opengl/framebufferobject2}{Framebuffer Object 2}
+    \o \l{opengl/grabber}{Grabber}
+    \o \l{opengl/hellogl}{Hello GL}\raisedaster
+    \o \l{opengl/overpainting}{Overpainting}\raisedaster
+    \o \l{opengl/pbuffers}{Pixel Buffers}
+    \o \l{opengl/pbuffers2}{Pixel Buffers 2}
+    \o \l{opengl/samplebuffers}{Sample Buffers}
+    \o \l{opengl/textures}{Textures}
+    \endlist
+
+    \section1 Painting
+
+    \list
+    \o \l{painting/basicdrawing}{Basic Drawing}\raisedaster
+    \o \l{painting/concentriccircles}{Concentric Circles}\raisedaster
+    \o \l{painting/fontsampler}{Font Sampler}
+    \o \l{painting/imagecomposition}{Image Composition}\raisedaster
+    \o \l{painting/painterpaths}{Painter Paths}\raisedaster
+    \o \l{painting/svgviewer}{SVG Viewer}
+    \o \l{painting/transformations}{Transformations}\raisedaster
+    \endlist
+
+    \section1 Phonon Multimedia Framework
+
+    \list
+    \o \l{phonon/capabilities}{Capabilities}\raisedaster
+    \o \l{phonon/musicplayer}{Music Player}\raisedaster
+    \endlist
+
+    \section1 Qt Assistant
+
+    \list
+    \o \l{assistant/simpletextviewer}{Simple Text Viewer}\raisedaster
+    \endlist
+
+    \section1 Qt Designer
+
+    \list
+    \o \l{designer/calculatorbuilder}{Calculator Builder}\raisedaster
+    \o \l{designer/calculatorform}{Calculator Form}\raisedaster
+    \o \l{designer/customwidgetplugin}{Custom Widget Plugin}\raisedaster
+    \o \l{designer/taskmenuextension}{Task Menu Extension}\raisedaster
+    \o \l{designer/containerextension}{Container Extension}\raisedaster
+    \o \l{designer/worldtimeclockbuilder}{World Time Clock Builder}\raisedaster
+    \o \l{designer/worldtimeclockplugin}{World Time Clock Plugin}\raisedaster
+    \endlist
+
+    \section1 Qt Linguist
+
+    \list
+    \o \l{linguist/hellotr}{Hello tr()}\raisedaster
+    \o \l{linguist/arrowpad}{Arrow Pad}\raisedaster
+    \o \l{linguist/trollprint}{Troll Print}\raisedaster
+    \endlist
+
+    \section1 Qt for Embedded Linux
+
+    \list
+    \o \l{qws/mousecalibration}{Mouse Calibration}\raisedaster
+    \o \l{qws/svgalib}{Accelerated Graphics Driver}\raisedaster
+    \o \l{qws/ahigl}{OpenGL for Embedded Systems}\raisedaster
+    \o \l{qws/dbscreen}{Double Buffered Graphics Driver}\raisedaster
+    \endlist
+
+    \section1 Qt Script
+
+    \list
+    \o \l{script/calculator}{Calculator}
+    \o \l{script/context2d}{Context2D}
+    \o \l{script/defaultprototypes}{Default Prototypes}
+    \o \l{script/helloscript}{Hello Script}
+    \o \l{script/tetrix}{Tetrix}
+    \o \l{script/customclass}{Custom Script Class}
+    \endlist
+
+    \section1 Rich Text
+
+    \list
+    \o \l{richtext/calendar}{Calendar}\raisedaster
+    \o \l{richtext/orderform}{Order Form}\raisedaster
+    \o \l{richtext/syntaxhighlighter}{Syntax Highlighter}\raisedaster
+    \endlist
+
+    \section1 SQL
+
+    \list
+    \o \l{sql/cachedtable}{Cached Table}\raisedaster
+    \o \l{sql/drilldown}{Drill Down}\raisedaster
+    \o \l{sql/querymodel}{Query Model}
+    \o \l{sql/relationaltablemodel}{Relational Table Model}
+    \o \l{sql/tablemodel}{Table Model}
+    \endlist
+
+    \section1 Threads
+
+    \list
+    \o \l{threads/mandelbrot}{Mandelbrot}\raisedaster
+    \o \l{threads/semaphores}{Semaphores}\raisedaster
+    \o \l{threads/waitconditions}{Wait Conditions}\raisedaster
+    \endlist
+
+    \section1 Tools
+
+    \list
+    \o \l{tools/codecs}{Codecs}
+    \o \l{tools/completer}{Completer}\raisedaster
+    \o \l{tools/customcompleter}{Custom Completer}\raisedaster
+    \o \l{tools/echoplugin}{Echo Plugin}\raisedaster
+    \o \l{tools/i18n}{I18N}
+    \o \l{tools/plugandpaint}{Plug & Paint}\raisedaster
+    \o Plug & Paint Plugins: \l{tools/plugandpaintplugins/basictools}{Basic Tools}\raisedaster
+       and \l{tools/plugandpaintplugins/extrafilters}{Extra Filters}\raisedaster
+    \o \l{tools/regexp}{RegExp}
+    \o \l{tools/settingseditor}{Settings Editor}
+    \o \l{tools/styleplugin}{Style Plugin}\raisedaster
+    \o \l{tools/treemodelcompleter}{Tree Model Completer}\raisedaster
+    \o \l{tools/undoframework}{Undo Framework}\raisedaster
+    \endlist
+
+    \section1 UiTools
+
+    \list
+    \o \l{uitools/multipleinheritance}{Multiple Inheritance}\raisedaster
+    \o \l{uitools/textfinder}{Text Finder}\raisedaster
+    \endlist
+
+    \section1 WebKit
+
+    \list
+    \o \l{webkit/previewer}{Previewer}
+    \endlist
+
+    \section1 Widgets
+
+    \list
+    \o \l{widgets/analogclock}{Analog Clock}\raisedaster
+    \o \l{widgets/calculator}{Calculator}\raisedaster
+    \o \l{widgets/calendarwidget}{Calendar Widget}\raisedaster
+    \o \l{widgets/charactermap}{Character Map}\raisedaster
+    \o \l{widgets/digitalclock}{Digital Clock}\raisedaster
+    \o \l{widgets/groupbox}{Group Box}\raisedaster
+    \o \l{widgets/icons}{Icons}\raisedaster
+    \o \l{widgets/imageviewer}{Image Viewer}\raisedaster
+    \o \l{widgets/lineedits}{Line Edits}\raisedaster
+    \o \l{widgets/movie}{Movie}
+    \o \l{widgets/scribble}{Scribble}\raisedaster
+    \o \l{widgets/shapedclock}{Shaped Clock}\raisedaster
+    \o \l{widgets/sliders}{Sliders}\raisedaster
+    \o \l{widgets/spinboxes}{Spin Boxes}\raisedaster
+    \o \l{widgets/styles}{Styles}\raisedaster
+    \o \l{widgets/stylesheet}{Style Sheet}\raisedaster
+    \o \l{widgets/tablet}{Tablet}\raisedaster
+    \o \l{widgets/tetrix}{Tetrix}\raisedaster
+    \o \l{widgets/tooltips}{Tooltips}\raisedaster
+    \o \l{widgets/wiggly}{Wiggly}\raisedaster
+    \o \l{widgets/windowflags}{Window Flags}\raisedaster
+    \endlist
+
+    \section1 XML
+
+    \list
+    \o \l{xml/dombookmarks}{DOM Bookmarks}
+    \o \l{xml/saxbookmarks}{SAX Bookmarks}
+    \o \l{xml/streambookmarks}{QXmlStream Bookmarks}\raisedaster
+    \o \l{xml/rsslisting}{RSS-Listing}
+    \o \l{xml/xmlstreamlint}{XML Stream Lint Example}\raisedaster
+    \endlist
+
+    \section1 XML Patterns: XQuery & XPath
+
+    \list
+    \o \l{xmlpatterns/xquery/globalVariables}{C++ Source Code Analyzer Example}
+    \o \l{xmlpatterns/filetree}{File System Example}
+    \o \l{xmlpatterns/qobjectxmlmodel}{QObject XML Model Example}
+    \o \l{xmlpatterns/recipes}{Recipes}
+    \endlist
+
+    \section1 Inter-Process Communication
+    \list
+    \o \l{ipc/localfortuneclient}{Local Fortune Client}\raisedaster
+    \o \l{ipc/localfortuneserver}{Local Fortune Server}\raisedaster
+    \o \l{ipc/sharedmemory}{Shared Memory}\raisedaster
+    \endlist
+*/

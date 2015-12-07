@@ -1,0 +1,252 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt4-mainwindow.html
+    \title The Qt 4 Main Window Classes
+
+    \contentspage {What's New in Qt 4}{Home}
+    \previouspage The Scribe Classes
+    \nextpage The New Qt Designer
+
+    Qt 4 introduces a new set of main window classes that supersede the
+    Qt 3 main window classes, providing a more efficient implementation
+    while remaining easy to use.
+
+    \tableofcontents
+
+    \section1 Overview of the Main Window Classes
+
+    The main window-related classes have been redesigned to satisfy a
+    number of requirements, addressing issues raised by our customers and
+    internal developers. The aim of this redesign is to provide a more
+    consistent and efficient framework for main window management.
+
+    \section1 The Main Window Classes
+
+    Qt 4 provides the following classes for managing main windows and
+    associated user interface components:
+
+    \list
+    \o QMainWindow remains the central class around which applications
+       can be built. The interface to this class has been simplified, and
+       much of the functionality previously included in this class is now
+       present in the companion QDockWidget and QToolBar classes.
+
+    \o QDockWidget provides a widget that can be used to create
+       detachable tool palettes or helper windows. Dock widgets keep track
+       of their own properties, and they can be moved, closed, and floated
+       as external windows.
+
+    \o QToolBar provides a generic toolbar widget that can hold a
+       number of different action-related widgets, such as buttons,
+       drop-down menus, comboboxes, and spin boxes. The emphasis on a
+       unified action model in Qt 4 means that toolbars cooperate well
+       with menus and keyboard shortcuts.
+    \endlist
+
+    \section1 Example Code
+
+    Using QMainWindow is straightforward. Generally, we subclass
+    QMainWindow and set up menus, toolbars, and dock widgets inside
+    the QMainWindow constructor.
+
+    To add a menu bar to the main window, we simply create the menus, and
+    add them to the main window's menu bar. Note that the
+    QMainWindow::menuBar() function will automatically create the menu bar
+    the first time it is called. You can also call
+    QMainWindow::setMenuBar() to use a custom menu bar in the main window.
+
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 0
+    \dots
+    \snippet examples/mainwindows/menus/mainwindow.cpp 5
+    \dots
+
+    Once actions have been created, we can add them to the main window
+    components. To begin with, we add them to the pop-up menus:
+
+    \snippet examples/mainwindows/menus/mainwindow.cpp 10
+    \dots
+    \snippet examples/mainwindows/menus/mainwindow.cpp 11
+    \dots
+
+    The QToolBar and QMenu classes use Qt's action system to provide a
+    consistent API. In the above code, some existing actions were added to
+    the file menu with the QMenu::addAction() function. QToolBar also
+    provides this function, making it easy to reuse actions in different
+    parts of the main window. This avoids unnecessary duplication of work.
+
+    We create a toolbar as a child of the main window, and add the desired
+    actions to it:
+
+    \snippet examples/mainwindows/sdi/mainwindow.cpp 0
+    \dots
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 1
+
+    In this example, the toolbar is restricted to the top and bottom
+    toolbar areas of the main window, and is initially placed in the
+    top tool bar area. We can see that the actions specified by \c
+    newAct and \c openAct will be displayed both on the toolbar and in
+    the file menu.
+
+    QDockWidget is used in a similar way to QToolBar. We create a
+    dock widget as a child of the main window, and add widgets as children
+    of the dock widget:
+
+    \snippet doc/src/snippets/dockwidgets/mainwindow.cpp 0
+
+    In this example, the dock widget can only be placed in the left and
+    right dock areas, and it is initially placed in the left dock area. 
+
+    The QMainWindow API allows the programmer to customize which dock
+    widget areas occupy the four corners of the dock widget area. If
+    required, the default can be changed with the
+    QMainWindow::setCorner() function:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 2
+
+    The following diagram shows the configuration produced by the above code.
+    Note that the left and right dock widgets will occupy the top and bottom
+    corners of the main window in this layout.
+
+    \image mainwindow-docks-example.png
+
+    Once all of the main window components have been set up, the central widget
+    is created and installed by using code similar to the following:
+
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 3
+
+    The central widget can be any subclass of QWidget.
+
+    \section1 What's Changed since Qt 3?
+
+    The main window classes in Qt 4 adds new functionality, mainly to
+    the dock widgets and toolbars. We have also made changes to the
+    design of the framework.
+
+    Although the QMainWindow class in Qt 3 provided support for
+    toolbars, dock widgets, and other standard user interface
+    components, its design meant that these items were managed
+    through a large number of QMainWindow member functions. In Qt 4,
+    the QMainWindow class delegates many of the management tasks to
+    QDockWidget and QToolBar (allowing more consistent behavior to be
+    defined and implemented).
+
+    The dock widget and toolbar classes are now separated into
+    independent classes. (write some more here)
+
+    (It is intended that these changes allow more consistent behavior 
+    to be defined and implemented (which? example). In
+    response to feedback from customers, we hope to improve these classes 
+    even further.)
+
+    \section2 New Functionality
+
+    Dock widgets are animated when docking or
+    detaching from a dock area. The dock areas will also adjust their
+    size to show where the dock widget will dock when it hovers over
+    it. This animation can be turned off with \c setAnimated(). 
+
+    By default, dock widgets are added to the dock areas in a single
+    row. By setting nesting enabled with \c setDockNestingEnabled(),
+    the widgets can be added both vertically and horizontally.
+
+    Two dock widgets can occupy the same space in a dock area. The user
+    can then choose which widget that is visible with a tab bar that
+    is located below the widgets. The QMainWindow::tabifyDockWidget() 
+    joins two tab widgets in such a tabbed dock area. (revise the
+    entire paragraph)
+
+    \section2 Independent QDockWidget And QToolBar Classes
+
+    Toolbar and dock window functionality is provided by two independent
+    classes: QToolBar and QDockWidget. Toolbars and dock widgets
+    reside in separate areas, with toolbars outside the dock widget
+    area. This behavior differs from the Qt 3 behavior, where
+    QToolBar inherited functionality from QDockWidget, and both types of
+    component shared the same areas. The result is a more consistent
+    and predictable experience for users. Toolbars and dock widgets
+    provide feedback while being dragged into their new positions.
+
+    \image mainwindow-docks.png
+
+    The diagram above shows the layout of a main window that contains both
+    toolbars and dock widgets. Each corner area can be used by either
+    of the adjacent dock widget areas, allowing dock widget behavior and
+    main window layout to be specified precisely.
+
+    Toolbars and dock widgets are child widgets of the main window. They
+    are no longer reparented into a dock area widget by the main window.
+    Instead, layouts are used to manage the placement of toolbars and dock
+    widgets. One consequence is that the old QDockArea class is no
+    longer required in Qt 4.
+
+    \section2 Code Change Examples
+
+    QMainWindow retains the menuBar() function, but menus are always
+    constructed using QAction objects. All kinds of menus are
+    constructed using the general QMenu class.
+
+    Qt 3:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 4
+    Qt 4:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 5
+
+    Toolbars follow the same pattern as menus, with the new, more
+    consistent behavior:
+
+    Qt 3:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 6
+    Qt 4:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 7
+
+    The behavior of dock widgets is now configured through the member
+    functions of QDockWidget. For example, compare the old and new ways
+    of creating a dock widget in the dock area on the left hand side of the
+    main window.
+
+    In Qt 3:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 8
+    In Qt 4:
+    \snippet doc/src/snippets/code/doc.src.qt4-mainwindow.qdoc 9
+*/

@@ -1,0 +1,51 @@
+Qt for Embedded Linux Virtual Framebuffer
+===============================
+
+The virtual frame buffer allows a Qt for Embedded Linux program to be developed
+on your desktop machine, without switching between consoles and X11.  The virtual
+framebuffer consists of a shared memory region (the virtual frame buffer)
+and a utility to display the framebuffer in a window.  The display is updated
+periodically, so you will see discrete snapshots of the framebuffer rather
+than each individual drawing operation.  For this reason drawing problems
+such as flickering may not be apparent until the program is run using a real
+framebuffer.
+
+To use the virtual framebuffer:
+
+1. Ensure QT_NO_QWS_VFB is not set in qconfig.h (when you configure Qt,
+    add the -qvfb option).
+2. Start qvfb (qvfb should be compiled as a normal Qt for X11 application,
+    NOT as a Qt for Embedded Linux application!).
+3. Start a Qt for Embedded Linux server (i.e. construct QApplication with
+   QApplication::GuiServer flag, or run a client with the -qws option).
+
+qvfb supports the following command line options:
+
+[-width width]   the width of the virtual framebuffer (default: 240).
+[-height height] the height of the virtual framebuffer (default: 320).
+[-depth depth]   the depth of the virtual framebuffer (1,4,8 or 32, default: 8).
+[-nocursor]      do not display the X11 cursor in the framebuffer window.
+[-qwsdisplay]    the Qt for Embedded Linux display ID, e.g. -qwsdisplay :1 (default :0).
+[-skin skinfile] tells qvfb to load a skin file, e.g. -skin pda.skin
+
+Please refer to the file "pda.skin" as an example of what a skin file looks like.
+The format for skin files is:
+    Image filename of skin with buttons in their up positions
+    Image filename of skin with buttons in their down positions
+    X offset of top left corner of the virtual screen on the skin image
+    Y offset of top left corner of the virtual screen on the skin image
+    Width of the virtual screen on the skin image
+    Height of the virtual screen on the skin image
+    Number of defined button regions
+Then for each button region the format is:
+    Button identifier
+    Qt scan codes to generate for the button
+    Top left X coordinate of the button region
+    Top left Y coordinate of the button region
+    Bottom right X coordinate of the button region
+    Bottom right Y coordinate of the button region
+
+The virtual framebuffer is a development tool only.  No security issues have
+been considered in the virtual framebuffer design.  It should not be used
+in a production environment and QT_NO_QWS_VFB should always be in force
+in production libraries.

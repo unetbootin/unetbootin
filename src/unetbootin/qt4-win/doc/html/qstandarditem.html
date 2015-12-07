@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qstandarditemmodel.cpp -->
+<head>
+  <title>Qt 4.4: QStandardItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStandardItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStandardItem class provides an item for use with the <a href="qstandarditemmodel.html">QStandardItemModel</a> class. <a href="#details">More...</a></p>
+<pre> #include &lt;QStandardItem&gt;</pre><p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qstandarditem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstandarditem.html#ItemType-enum">ItemType</a></b> { Type, UserType }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstandarditem.html#QStandardItem">QStandardItem</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstandarditem.html#QStandardItem-2">QStandardItem</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/><b><a href="qstandarditem.html#QStandardItem-3">QStandardItem</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/><b><a href="qstandarditem.html#QStandardItem-4">QStandardItem</a></b> ( int <i>rows</i>, int <i>columns</i> = 1 )</li>
+<li><div class="fn"/>virtual <b><a href="qstandarditem.html#dtor.QStandardItem">~QStandardItem</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#accessibleDescription">accessibleDescription</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#accessibleText">accessibleText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#appendColumn">appendColumn</a></b> ( const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#appendRow">appendRow</a></b> ( const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#appendRow-2">appendRow</a></b> ( QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#appendRows">appendRows</a></b> ( const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>QBrush <b><a href="qstandarditem.html#background">background</a></b> () const</li>
+<li><div class="fn"/>Qt::CheckState <b><a href="qstandarditem.html#checkState">checkState</a></b> () const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditem.html#child">child</a></b> ( int <i>row</i>, int <i>column</i> = 0 ) const</li>
+<li><div class="fn"/>virtual QStandardItem * <b><a href="qstandarditem.html#clone">clone</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstandarditem.html#column">column</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstandarditem.html#columnCount">columnCount</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qstandarditem.html#data">data</a></b> ( int <i>role</i> = Qt::UserRole + 1 ) const</li>
+<li><div class="fn"/>Qt::ItemFlags <b><a href="qstandarditem.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qstandarditem.html#font">font</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="qstandarditem.html#foreground">foreground</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#hasChildren">hasChildren</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qstandarditem.html#icon">icon</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qstandarditem.html#index">index</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertColumn">insertColumn</a></b> ( int <i>column</i>, const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertColumns">insertColumns</a></b> ( int <i>column</i>, int <i>count</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertRow">insertRow</a></b> ( int <i>row</i>, const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertRow-2">insertRow</a></b> ( int <i>row</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertRows">insertRows</a></b> ( int <i>row</i>, const QList&lt;QStandardItem *&gt; &amp; <i>items</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#insertRows-2">insertRows</a></b> ( int <i>row</i>, int <i>count</i> )</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isCheckable">isCheckable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isDragEnabled">isDragEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isDropEnabled">isDropEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isEditable">isEditable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isEnabled">isEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isSelectable">isSelectable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qstandarditem.html#isTristate">isTristate</a></b> () const</li>
+<li><div class="fn"/>QStandardItemModel * <b><a href="qstandarditem.html#model">model</a></b> () const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditem.html#parent">parent</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qstandarditem.html#read">read</a></b> ( QDataStream &amp; <i>in</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#removeColumn">removeColumn</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#removeColumns">removeColumns</a></b> ( int <i>column</i>, int <i>count</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#removeRow">removeRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#removeRows">removeRows</a></b> ( int <i>row</i>, int <i>count</i> )</li>
+<li><div class="fn"/>int <b><a href="qstandarditem.html#row">row</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstandarditem.html#rowCount">rowCount</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setAccessibleDescription">setAccessibleDescription</a></b> ( const QString &amp; <i>accessibleDescription</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setAccessibleText">setAccessibleText</a></b> ( const QString &amp; <i>accessibleText</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setBackground">setBackground</a></b> ( const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setCheckState">setCheckState</a></b> ( Qt::CheckState <i>state</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setCheckable">setCheckable</a></b> ( bool <i>checkable</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setChild">setChild</a></b> ( int <i>row</i>, int <i>column</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setChild-2">setChild</a></b> ( int <i>row</i>, QStandardItem * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setColumnCount">setColumnCount</a></b> ( int <i>columns</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qstandarditem.html#setData">setData</a></b> ( const QVariant &amp; <i>value</i>, int <i>role</i> = Qt::UserRole + 1 )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setDragEnabled">setDragEnabled</a></b> ( bool <i>dragEnabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setDropEnabled">setDropEnabled</a></b> ( bool <i>dropEnabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setEditable">setEditable</a></b> ( bool <i>editable</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setEnabled">setEnabled</a></b> ( bool <i>enabled</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setFlags">setFlags</a></b> ( Qt::ItemFlags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setFont">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setForeground">setForeground</a></b> ( const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setIcon">setIcon</a></b> ( const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setRowCount">setRowCount</a></b> ( int <i>rows</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setSelectable">setSelectable</a></b> ( bool <i>selectable</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setSizeHint">setSizeHint</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setStatusTip">setStatusTip</a></b> ( const QString &amp; <i>statusTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setTextAlignment">setTextAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setToolTip">setToolTip</a></b> ( const QString &amp; <i>toolTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setTristate">setTristate</a></b> ( bool <i>tristate</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#setWhatsThis">setWhatsThis</a></b> ( const QString &amp; <i>whatsThis</i> )</li>
+<li><div class="fn"/>QSize <b><a href="qstandarditem.html#sizeHint">sizeHint</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#sortChildren">sortChildren</a></b> ( int <i>column</i>, Qt::SortOrder <i>order</i> = Qt::AscendingOrder )</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#statusTip">statusTip</a></b> () const</li>
+<li><div class="fn"/>QStandardItem * <b><a href="qstandarditem.html#takeChild">takeChild</a></b> ( int <i>row</i>, int <i>column</i> = 0 )</li>
+<li><div class="fn"/>QList&lt;QStandardItem *&gt; <b><a href="qstandarditem.html#takeColumn">takeColumn</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>QList&lt;QStandardItem *&gt; <b><a href="qstandarditem.html#takeRow">takeRow</a></b> ( int <i>row</i> )</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#text">text</a></b> () const</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qstandarditem.html#textAlignment">textAlignment</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#toolTip">toolTip</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qstandarditem.html#type">type</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qstandarditem.html#whatsThis">whatsThis</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qstandarditem.html#write">write</a></b> ( QDataStream &amp; <i>out</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qstandarditem.html#operator-lt">operator&lt;</a></b> ( const QStandardItem &amp; <i>other</i> ) const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstandarditem.html#QStandardItem-5">QStandardItem</a></b> ( const QStandardItem &amp; <i>other</i> )</li>
+<li><div class="fn"/>void <b><a href="qstandarditem.html#emitDataChanged">emitDataChanged</a></b> ()</li>
+<li><div class="fn"/>QStandardItem &amp; <b><a href="qstandarditem.html#operator-eq">operator=</a></b> ( const QStandardItem &amp; <i>other</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qstandarditem.html#operator-lt-lt-92">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>out</i>, const QStandardItem &amp; <i>item</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qstandarditem.html#operator-gt-gt-56">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>in</i>, QStandardItem &amp; <i>item</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStandardItem class provides an item for use with the <a href="qstandarditemmodel.html">QStandardItemModel</a> class.</p>
+<p>Items usually contain text, icons, or checkboxes.</p>
+<p>Each item can have its own background brush which is set with the <a href="qstandarditem.html#setBackground">setBackground</a>() function. The current background brush can be found with <a href="qstandarditem.html#background">background</a>(). The text label for each item can be rendered with its own font and brush. These are specified with the <a href="qstandarditem.html#setFont">setFont</a>() and <a href="qstandarditem.html#setForeground">setForeground</a>() functions, and read with <a href="qstandarditem.html#font">font</a>() and <a href="qstandarditem.html#foreground">foreground</a>().</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target. Each item's flags can be changed by calling <a href="qstandarditem.html#setFlags">setFlags</a>(). Checkable items can be checked and unchecked with the <a href="qstandarditem.html#setCheckState">setCheckState</a>() function. The corresponding <a href="qstandarditem.html#checkState">checkState</a>() function indicates whether the item is currently checked.</p>
+<p>You can store application-specific data in an item by calling <a href="qstandarditem.html#setData">setData</a>().</p>
+<p>Each item can have a two-dimensional table of child items. This makes it possible to build hierarchies of items. The typical hierarchy is the tree, in which case the child table is a table with a single column (a list).</p>
+<p>The dimensions of the child table can be set with <a href="qstandarditem.html#setRowCount">setRowCount</a>() and <a href="qstandarditem.html#setColumnCount">setColumnCount</a>(). Items can be positioned in the child table with <a href="qstandarditem.html#setChild">setChild</a>(). Get a pointer to a child item with <a href="qstandarditem.html#child">child</a>(). New rows and columns of children can also be inserted with <a href="qstandarditem.html#insertRow">insertRow</a>() and <a href="qstandarditem.html#insertColumn">insertColumn</a>(), or appended with <a href="qstandarditem.html#appendRow">appendRow</a>() and <a href="qstandarditem.html#appendColumn">appendColumn</a>(). When using the append and insert functions, the dimensions of the child table will grow as needed.</p>
+<p>An existing row of children can be removed with <a href="qstandarditem.html#removeRow">removeRow</a>() or <a href="qstandarditem.html#takeRow">takeRow</a>(); correspondingly, a column can be removed with <a href="qstandarditem.html#removeColumn">removeColumn</a>() or <a href="qstandarditem.html#takeColumn">takeColumn</a>().</p>
+<p>An item's children can be sorted by calling <a href="qstandarditem.html#sortChildren">sortChildren</a>().</p>
+<a name="subclassing"></a>
+<h3>Subclassing</h3>
+<p>When subclassing QStandardItem to provide custom items, it is possible to define new types for them so that they can be distinguished from the base class. The <a href="qstandarditem.html#type">type</a>() function should be reimplemented to return a new type value equal to or greater than <a href="qstandarditem.html#ItemType-enum">UserType</a>.</p>
+<p>Reimplement <a href="qstandarditem.html#data">data</a>() and <a href="qstandarditem.html#setData">setData</a>() if you want to perform custom handling of data queries and/or control how an item's data is represented.</p>
+<p>Reimplement <a href="qstandarditem.html#clone">clone</a>() if you want <a href="qstandarditemmodel.html">QStandardItemModel</a> to be able to create instances of your custom item class on demand (see <a href="qstandarditemmodel.html#setItemPrototype">QStandardItemModel::setItemPrototype</a>()).</p>
+<p>Reimplement <a href="qstandarditem.html#read">read</a>() and <a href="qstandarditem.html#write">write</a>() if you want to control how items are represented in their serialized form.</p>
+<p>Reimplement <a href="qstandarditem.html#operator-lt">operator&lt;</a>() if you want to control the semantics of item comparison. <a href="qstandarditem.html#operator-lt">operator&lt;</a>() determines the sorted order when sorting items with <a href="qstandarditem.html#sortChildren">sortChildren</a>() or with <a href="qabstractitemmodel.html#sort">QStandardItemModel::sort</a>().</p>
+<p>See also <a href="qstandarditemmodel.html">QStandardItemModel</a>, <a href="model-view-convenience.html">Item View Convenience Classes</a>, and <a href="model-view-programming.html">Model/View Programming</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ItemType-enum"></a>enum QStandardItem::ItemType</h3>
+<p>This enum describes the types that are used to describe standard items.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStandardItem::Type</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default type for standard items.</td></tr>
+<tr><td valign="top"><tt>QStandardItem::UserType</tt></td><td align="center" valign="top"><tt>1000</tt></td><td valign="top">The minimum value for custom types. Values below UserType are reserved by Qt.</td></tr>
+</table></p>
+<p>You can define new user types in <a href="qstandarditem.html">QStandardItem</a> subclasses to ensure that custom items are treated specially; for example, when items are sorted.</p>
+<p>See also <a href="qstandarditem.html#type">type</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStandardItem"></a>QStandardItem::QStandardItem ()</h3>
+<p>Constructs an item.</p>
+<h3 class="fn"><a name="QStandardItem-2"></a>QStandardItem::QStandardItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Constructs an item with the given <i>text</i>.</p>
+<h3 class="fn"><a name="QStandardItem-3"></a>QStandardItem::QStandardItem ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Constructs an item with the given <i>icon</i> and <i>text</i>.</p>
+<h3 class="fn"><a name="QStandardItem-4"></a>QStandardItem::QStandardItem ( int <i>rows</i>, int <i>columns</i> = 1 )</h3>
+<p>Constructs an item with <i>rows</i> rows and <i>columns</i> columns of child items.</p>
+<h3 class="fn"><a name="QStandardItem-5"></a>QStandardItem::QStandardItem ( const QStandardItem &amp; <i>other</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs a copy of <i>other</i>. Note that <a href="qstandarditem.html#model">model</a>() is not copied.</p>
+<p>This function is useful when reimplementing <a href="qstandarditem.html#clone">clone</a>().</p>
+<h3 class="fn"><a name="dtor.QStandardItem"></a>QStandardItem::~QStandardItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructs the item. This causes the item's children to be destructed as well.</p>
+<h3 class="fn"><a name="accessibleDescription"></a><a href="qstring.html">QString</a> QStandardItem::accessibleDescription () const</h3>
+<p>Returns the item's accessible description.</p>
+<p>The accessible description is used by assistive technologies (i.e&#x2e; for users who cannot use conventional means of interaction).</p>
+<p>See also <a href="qstandarditem.html#setAccessibleDescription">setAccessibleDescription</a>() and <a href="qstandarditem.html#accessibleText">accessibleText</a>().</p>
+<h3 class="fn"><a name="accessibleText"></a><a href="qstring.html">QString</a> QStandardItem::accessibleText () const</h3>
+<p>Returns the item's accessible text.</p>
+<p>The accessible text is used by assistive technologies (i.e&#x2e; for users who cannot use conventional means of interaction).</p>
+<p>See also <a href="qstandarditem.html#setAccessibleText">setAccessibleText</a>() and <a href="qstandarditem.html#accessibleDescription">accessibleDescription</a>().</p>
+<h3 class="fn"><a name="appendColumn"></a>void QStandardItem::appendColumn ( const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Appends a column containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p>See also <a href="qstandarditem.html#insertColumn">insertColumn</a>().</p>
+<h3 class="fn"><a name="appendRow"></a>void QStandardItem::appendRow ( const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Appends a row containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p>See also <a href="qstandarditem.html#insertRow">insertRow</a>().</p>
+<h3 class="fn"><a name="appendRow-2"></a>void QStandardItem::appendRow ( QStandardItem * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Appends a row containing <i>item</i>.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to append a single new item.</p>
+<h3 class="fn"><a name="appendRows"></a>void QStandardItem::appendRows ( const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Appends rows containing <i>items</i>. The column count will not change.</p>
+<p>See also <a href="qstandarditem.html#insertRow">insertRow</a>().</p>
+<h3 class="fn"><a name="background"></a><a href="qbrush.html">QBrush</a> QStandardItem::background () const</h3>
+<p>Returns the brush used to render the item's background.</p>
+<p>See also <a href="qstandarditem.html#foreground">foreground</a>() and <a href="qstandarditem.html#setBackground">setBackground</a>().</p>
+<h3 class="fn"><a name="checkState"></a><a href="qt.html#CheckState-enum">Qt::CheckState</a> QStandardItem::checkState () const</h3>
+<p>Returns the checked state of the item.</p>
+<p>See also <a href="qstandarditem.html#setCheckState">setCheckState</a>() and <a href="qstandarditem.html#isCheckable">isCheckable</a>().</p>
+<h3 class="fn"><a name="child"></a>QStandardItem * QStandardItem::child ( int <i>row</i>, int <i>column</i> = 0 ) const</h3>
+<p>Returns the child item at (<i>row</i>, <i>column</i>) if one has been set; otherwise returns 0.</p>
+<p>See also <a href="qstandarditem.html#setChild">setChild</a>(), <a href="qstandarditem.html#takeChild">takeChild</a>(), and <a href="qstandarditem.html#parent">parent</a>().</p>
+<h3 class="fn"><a name="clone"></a>QStandardItem * QStandardItem::clone () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a copy of this item. The item's children are not copied.</p>
+<p>When subclassing <a href="qstandarditem.html">QStandardItem</a>, you can reimplement this function to provide <a href="qstandarditemmodel.html">QStandardItemModel</a> with a factory that it can use to create new items on demand.</p>
+<p>See also <a href="qstandarditemmodel.html#setItemPrototype">QStandardItemModel::setItemPrototype</a>() and <a href="qstandarditem.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="column"></a>int QStandardItem::column () const</h3>
+<p>Returns the column where the item is located in its parent's child table, or -1 if the item has no parent.</p>
+<p>See also <a href="qstandarditem.html#row">row</a>() and <a href="qstandarditem.html#parent">parent</a>().</p>
+<h3 class="fn"><a name="columnCount"></a>int QStandardItem::columnCount () const</h3>
+<p>Returns the number of child item columns that the item has.</p>
+<p>See also <a href="qstandarditem.html#setColumnCount">setColumnCount</a>() and <a href="qstandarditem.html#rowCount">rowCount</a>().</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QStandardItem::data ( int <i>role</i> = Qt::UserRole + 1 ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the item's data for the given <i>role</i>, or an invalid <a href="qvariant.html">QVariant</a> if there is no data for the role.</p>
+<p><b>Note:</b> The default implementation treats <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a> and <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a> as referring to the same data.</p>
+<p>See also <a href="qstandarditem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="emitDataChanged"></a>void QStandardItem::emitDataChanged ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Causes the model associated with this item to emit a <a href="qabstractitemmodel.html#dataChanged">dataChanged</a>() signal for this item.</p>
+<p>You normally only need to call this function if you have subclassed <a href="qstandarditem.html">QStandardItem</a> and reimplemented <a href="qstandarditem.html#data">data</a>() and/or <a href="qstandarditem.html#setData">setData</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qstandarditem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="flags"></a><a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> QStandardItem::flags () const</h3>
+<p>Returns the item flags for the item.</p>
+<p>The item flags determine how the user can interact with the item.</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target.</p>
+<p>See also <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> QStandardItem::font () const</h3>
+<p>Returns the font used to render the item's text.</p>
+<p>See also <a href="qstandarditem.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="foreground"></a><a href="qbrush.html">QBrush</a> QStandardItem::foreground () const</h3>
+<p>Returns the brush used to render the item's foreground (e.g&#x2e; text).</p>
+<p>See also <a href="qstandarditem.html#setForeground">setForeground</a>() and <a href="qstandarditem.html#background">background</a>().</p>
+<h3 class="fn"><a name="hasChildren"></a>bool QStandardItem::hasChildren () const</h3>
+<p>Returns true if this item has any children; otherwise returns false.</p>
+<p>See also <a href="qstandarditem.html#rowCount">rowCount</a>(), <a href="qstandarditem.html#columnCount">columnCount</a>(), and <a href="qstandarditem.html#child">child</a>().</p>
+<h3 class="fn"><a name="icon"></a><a href="qicon.html">QIcon</a> QStandardItem::icon () const</h3>
+<p>Returns the item's icon.</p>
+<p>See also <a href="qstandarditem.html#setIcon">setIcon</a>() and <a href="qabstractitemview.html#iconSize-prop">iconSize</a>.</p>
+<h3 class="fn"><a name="index"></a><a href="qmodelindex.html">QModelIndex</a> QStandardItem::index () const</h3>
+<p>Returns the <a href="qmodelindex.html">QModelIndex</a> associated with this item.</p>
+<p>When you need to invoke item functionality in a <a href="qmodelindex.html">QModelIndex</a>-based API (e.g&#x2e; <a href="qabstractitemview.html">QAbstractItemView</a>), you can call this function to obtain an index that corresponds to the item's location in the model.</p>
+<p>If the item is not associated with a model, an invalid <a href="qmodelindex.html">QModelIndex</a> is returned.</p>
+<p>See also <a href="qstandarditem.html#model">model</a>() and <a href="qstandarditemmodel.html#itemFromIndex">QStandardItemModel::itemFromIndex</a>().</p>
+<h3 class="fn"><a name="insertColumn"></a>void QStandardItem::insertColumn ( int <i>column</i>, const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Inserts a column at <i>column</i> containing <i>items</i>. If necessary, the row count is increased to the size of <i>items</i>.</p>
+<p>See also <a href="qstandarditem.html#insertColumns">insertColumns</a>() and <a href="qstandarditem.html#insertRow">insertRow</a>().</p>
+<h3 class="fn"><a name="insertColumns"></a>void QStandardItem::insertColumns ( int <i>column</i>, int <i>count</i> )</h3>
+<p>Inserts <i>count</i> columns of child items at column <i>column</i>.</p>
+<p>See also <a href="qstandarditem.html#insertColumn">insertColumn</a>() and <a href="qstandarditem.html#insertRows">insertRows</a>().</p>
+<h3 class="fn"><a name="insertRow"></a>void QStandardItem::insertRow ( int <i>row</i>, const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Inserts a row at <i>row</i> containing <i>items</i>. If necessary, the column count is increased to the size of <i>items</i>.</p>
+<p>See also <a href="qstandarditem.html#insertRows">insertRows</a>() and <a href="qstandarditem.html#insertColumn">insertColumn</a>().</p>
+<h3 class="fn"><a name="insertRow-2"></a>void QStandardItem::insertRow ( int <i>row</i>, QStandardItem * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a row at <i>row</i> containing <i>item</i>.</p>
+<p>When building a list or a tree that has only one column, this function provides a convenient way to insert a single new item.</p>
+<h3 class="fn"><a name="insertRows"></a>void QStandardItem::insertRows ( int <i>row</i>, const <a href="qlist.html">QList</a>&lt;QStandardItem *&gt; &amp; <i>items</i> )</h3>
+<p>Inserts <i>items</i> at <i>row</i>. The column count wont be changed.</p>
+<p>See also <a href="qstandarditem.html#insertRow">insertRow</a>() and <a href="qstandarditem.html#insertColumn">insertColumn</a>().</p>
+<h3 class="fn"><a name="insertRows-2"></a>void QStandardItem::insertRows ( int <i>row</i>, int <i>count</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts <i>count</i> rows of child items at row <i>row</i>.</p>
+<p>See also <a href="qstandarditem.html#insertRow">insertRow</a>() and <a href="qstandarditem.html#insertColumns">insertColumns</a>().</p>
+<h3 class="fn"><a name="isCheckable"></a>bool QStandardItem::isCheckable () const</h3>
+<p>Returns whether the item is user-checkable.</p>
+<p>The default value is false.</p>
+<p>See also <a href="qstandarditem.html#setCheckable">setCheckable</a>(), <a href="qstandarditem.html#checkState">checkState</a>(), and <a href="qstandarditem.html#isTristate">isTristate</a>().</p>
+<h3 class="fn"><a name="isDragEnabled"></a>bool QStandardItem::isDragEnabled () const</h3>
+<p>Returns whether the item is drag enabled. An item that is drag enabled can be dragged by the user.</p>
+<p>The default value is true.</p>
+<p>Note that item dragging must be enabled in the view for dragging to work; see <a href="qabstractitemview.html#dragEnabled-prop">QAbstractItemView::dragEnabled</a>.</p>
+<p>See also <a href="qstandarditem.html#setDragEnabled">setDragEnabled</a>(), <a href="qstandarditem.html#isDropEnabled">isDropEnabled</a>(), and <a href="qstandarditem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="isDropEnabled"></a>bool QStandardItem::isDropEnabled () const</h3>
+<p>Returns whether the item is drop enabled. When an item is drop enabled, it can be used as a drop target.</p>
+<p>The default value is true.</p>
+<p>See also <a href="qstandarditem.html#setDropEnabled">setDropEnabled</a>(), <a href="qstandarditem.html#isDragEnabled">isDragEnabled</a>(), and <a href="qstandarditem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="isEditable"></a>bool QStandardItem::isEditable () const</h3>
+<p>Returns whether the item can be edited by the user.</p>
+<p>When an item is editable (and enabled), the user can edit the item by invoking one of the view's edit triggers; see <a href="qabstractitemview.html#editTriggers-prop">QAbstractItemView::editTriggers</a>.</p>
+<p>The default value is true.</p>
+<p>See also <a href="qstandarditem.html#setEditable">setEditable</a>() and <a href="qstandarditem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="isEnabled"></a>bool QStandardItem::isEnabled () const</h3>
+<p>Returns whether the item is enabled.</p>
+<p>When an item is enabled, the user can interact with it. The possible types of interaction are specified by the other item flags, such as <a href="qstandarditem.html#isEditable">isEditable</a>() and <a href="qstandarditem.html#isSelectable">isSelectable</a>().</p>
+<p>The default value is true.</p>
+<p>See also <a href="qstandarditem.html#setEnabled">setEnabled</a>() and <a href="qstandarditem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="isSelectable"></a>bool QStandardItem::isSelectable () const</h3>
+<p>Returns whether the item is selectable by the user.</p>
+<p>The default value is true.</p>
+<p>See also <a href="qstandarditem.html#setSelectable">setSelectable</a>() and <a href="qstandarditem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="isTristate"></a>bool QStandardItem::isTristate () const</h3>
+<p>Returns whether the item is tristate; that is, if it's checkable with three separate states.</p>
+<p>The default value is false.</p>
+<p>See also <a href="qstandarditem.html#setTristate">setTristate</a>(), <a href="qstandarditem.html#isCheckable">isCheckable</a>(), and <a href="qstandarditem.html#checkState">checkState</a>().</p>
+<h3 class="fn"><a name="model"></a><a href="qstandarditemmodel.html">QStandardItemModel</a> * QStandardItem::model () const</h3>
+<p>Returns the <a href="qstandarditemmodel.html">QStandardItemModel</a> that this item belongs to.</p>
+<p>If the item is not a child of another item that belongs to the model, this function returns 0.</p>
+<p>See also <a href="qstandarditem.html#index">index</a>().</p>
+<h3 class="fn"><a name="parent"></a>QStandardItem * QStandardItem::parent () const</h3>
+<p>Returns the item's parent item, or 0 if the item has no parent.</p>
+<p>See also <a href="qstandarditem.html#child">child</a>().</p>
+<h3 class="fn"><a name="read"></a>void QStandardItem::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads the item from stream <i>in</i>. Only the data and flags of the item are read, not the child items.</p>
+<p>See also <a href="qstandarditem.html#write">write</a>().</p>
+<h3 class="fn"><a name="removeColumn"></a>void QStandardItem::removeColumn ( int <i>column</i> )</h3>
+<p>Removes the given <i>column</i>. The items that were in the column are deleted.</p>
+<p>See also <a href="qstandarditem.html#takeColumn">takeColumn</a>(), <a href="qstandarditem.html#removeColumns">removeColumns</a>(), and <a href="qstandarditem.html#removeRow">removeRow</a>().</p>
+<h3 class="fn"><a name="removeColumns"></a>void QStandardItem::removeColumns ( int <i>column</i>, int <i>count</i> )</h3>
+<p>Removes <i>count</i> columns at column <i>column</i>. The items that were in those columns are deleted.</p>
+<p>See also <a href="qstandarditem.html#removeColumn">removeColumn</a>() and <a href="qstandarditem.html#removeRows">removeRows</a>().</p>
+<h3 class="fn"><a name="removeRow"></a>void QStandardItem::removeRow ( int <i>row</i> )</h3>
+<p>Removes the given <i>row</i>. The items that were in the row are deleted.</p>
+<p>See also <a href="qstandarditem.html#takeRow">takeRow</a>(), <a href="qstandarditem.html#removeRows">removeRows</a>(), and <a href="qstandarditem.html#removeColumn">removeColumn</a>().</p>
+<h3 class="fn"><a name="removeRows"></a>void QStandardItem::removeRows ( int <i>row</i>, int <i>count</i> )</h3>
+<p>Removes <i>count</i> rows at row <i>row</i>. The items that were in those rows are deleted.</p>
+<p>See also <a href="qstandarditem.html#removeRow">removeRow</a>() and <a href="qstandarditem.html#removeColumn">removeColumn</a>().</p>
+<h3 class="fn"><a name="row"></a>int QStandardItem::row () const</h3>
+<p>Returns the row where the item is located in its parent's child table, or -1 if the item has no parent.</p>
+<p>See also <a href="qstandarditem.html#column">column</a>() and <a href="qstandarditem.html#parent">parent</a>().</p>
+<h3 class="fn"><a name="rowCount"></a>int QStandardItem::rowCount () const</h3>
+<p>Returns the number of child item rows that the item has.</p>
+<p>See also <a href="qstandarditem.html#setRowCount">setRowCount</a>() and <a href="qstandarditem.html#columnCount">columnCount</a>().</p>
+<h3 class="fn"><a name="setAccessibleDescription"></a>void QStandardItem::setAccessibleDescription ( const <a href="qstring.html">QString</a> &amp; <i>accessibleDescription</i> )</h3>
+<p>Sets the item's accessible description to the string specified by <i>accessibleDescription</i>.</p>
+<p>The accessible description is used by assistive technologies (i.e&#x2e; for users who cannot use conventional means of interaction).</p>
+<p>See also <a href="qstandarditem.html#accessibleDescription">accessibleDescription</a>() and <a href="qstandarditem.html#setAccessibleText">setAccessibleText</a>().</p>
+<h3 class="fn"><a name="setAccessibleText"></a>void QStandardItem::setAccessibleText ( const <a href="qstring.html">QString</a> &amp; <i>accessibleText</i> )</h3>
+<p>Sets the item's accessible text to the string specified by <i>accessibleText</i>.</p>
+<p>The accessible text is used by assistive technologies (i.e&#x2e; for users who cannot use conventional means of interaction).</p>
+<p>See also <a href="qstandarditem.html#accessibleText">accessibleText</a>() and <a href="qstandarditem.html#setAccessibleDescription">setAccessibleDescription</a>().</p>
+<h3 class="fn"><a name="setBackground"></a>void QStandardItem::setBackground ( const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the item's background brush to the specified <i>brush</i>.</p>
+<p>See also <a href="qstandarditem.html#background">background</a>() and <a href="qstandarditem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setCheckState"></a>void QStandardItem::setCheckState ( <a href="qt.html#CheckState-enum">Qt::CheckState</a> <i>state</i> )</h3>
+<p>Sets the check state of the item to be <i>state</i>.</p>
+<p>See also <a href="qstandarditem.html#checkState">checkState</a>() and <a href="qstandarditem.html#setCheckable">setCheckable</a>().</p>
+<h3 class="fn"><a name="setCheckable"></a>void QStandardItem::setCheckable ( bool <i>checkable</i> )</h3>
+<p>Sets whether the item is user-checkable. If <i>checkable</i> is true, the item can be checked by the user; otherwise, the user cannot check the item.</p>
+<p>The item delegate will render a checkable item with a check box next to the item's text.</p>
+<p>See also <a href="qstandarditem.html#isCheckable">isCheckable</a>(), <a href="qstandarditem.html#setCheckState">setCheckState</a>(), and <a href="qstandarditem.html#setTristate">setTristate</a>().</p>
+<h3 class="fn"><a name="setChild"></a>void QStandardItem::setChild ( int <i>row</i>, int <i>column</i>, QStandardItem * <i>item</i> )</h3>
+<p>Sets the child item at (<i>row</i>, <i>column</i>) to <i>item</i>. This item (the parent item) takes ownership of <i>item</i>. If necessary, the row count and column count are increased to fit the item.</p>
+<p>See also <a href="qstandarditem.html#child">child</a>().</p>
+<h3 class="fn"><a name="setChild-2"></a>void QStandardItem::setChild ( int <i>row</i>, QStandardItem * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the child at <i>row</i> to <i>item</i>.</p>
+<h3 class="fn"><a name="setColumnCount"></a>void QStandardItem::setColumnCount ( int <i>columns</i> )</h3>
+<p>Sets the number of child item columns to <i>columns</i>. If this is less than <a href="qstandarditem.html#columnCount">columnCount</a>(), the data in the unwanted columns is discarded.</p>
+<p>See also <a href="qstandarditem.html#columnCount">columnCount</a>() and <a href="qstandarditem.html#setRowCount">setRowCount</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QStandardItem::setData ( const <a href="qvariant.html">QVariant</a> &amp; <i>value</i>, int <i>role</i> = Qt::UserRole + 1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the item's data for the given <i>role</i> to the specified <i>value</i>.</p>
+<p>If you subclass <a href="qstandarditem.html">QStandardItem</a> and reimplement this function, your reimplementation should call <a href="qstandarditem.html#emitDataChanged">emitDataChanged</a>() if you do not call the base implementation of setData(). This will ensure that e.g&#x2e; views using the model are notified of the changes.</p>
+<p><b>Note:</b> The default implementation treats <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a> and <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a> as referring to the same data.</p>
+<p>See also <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>, <a href="qstandarditem.html#data">data</a>(), and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setDragEnabled"></a>void QStandardItem::setDragEnabled ( bool <i>dragEnabled</i> )</h3>
+<p>Sets whether the item is drag enabled. If <i>dragEnabled</i> is true, the item can be dragged by the user; otherwise, the user cannot drag the item.</p>
+<p>Note that you also need to ensure that item dragging is enabled in the view; see <a href="qabstractitemview.html#dragEnabled-prop">QAbstractItemView::dragEnabled</a>.</p>
+<p>See also <a href="qstandarditem.html#isDragEnabled">isDragEnabled</a>(), <a href="qstandarditem.html#setDropEnabled">setDropEnabled</a>(), and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setDropEnabled"></a>void QStandardItem::setDropEnabled ( bool <i>dropEnabled</i> )</h3>
+<p>Sets whether the item is drop enabled. If <i>dropEnabled</i> is true, the item can be used as a drop target; otherwise, it cannot.</p>
+<p>Note that you also need to ensure that drops are enabled in the view; see <a href="qwidget.html#acceptDrops-prop">QWidget::acceptDrops</a>(); and that the model supports the desired drop actions; see <a href="qabstractitemmodel.html#supportedDropActions">QAbstractItemModel::supportedDropActions</a>().</p>
+<p>See also <a href="qstandarditem.html#isDropEnabled">isDropEnabled</a>(), <a href="qstandarditem.html#setDragEnabled">setDragEnabled</a>(), and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setEditable"></a>void QStandardItem::setEditable ( bool <i>editable</i> )</h3>
+<p>Sets whether the item is editable. If <i>editable</i> is true, the item can be edited by the user; otherwise, the user cannot edit the item.</p>
+<p>How the user can edit items in a view is determined by the view's edit triggers; see <a href="qabstractitemview.html#editTriggers-prop">QAbstractItemView::editTriggers</a>.</p>
+<p>See also <a href="qstandarditem.html#isEditable">isEditable</a>() and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setEnabled"></a>void QStandardItem::setEnabled ( bool <i>enabled</i> )</h3>
+<p>Sets whether the item is enabled. If <i>enabled</i> is true, the item is enabled, meaning that the user can interact with the item; if <i>enabled</i> is false, the user cannot interact with the item.</p>
+<p>This flag takes presedence over the other item flags; e.g&#x2e; if an item is not enabled, it cannot be selected by the user, even if the <a href="qt.html#ItemFlag-enum">Qt::ItemIsSelectable</a> flag has been set.</p>
+<p>See also <a href="qstandarditem.html#isEnabled">isEnabled</a>(), <a href="qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a>, and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setFlags"></a>void QStandardItem::setFlags ( <a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> <i>flags</i> )</h3>
+<p>Sets the item flags for the item to <i>flags</i>.</p>
+<p>The item flags determine how the user can interact with the item. This is often used to disable an item.</p>
+<p>See also <a href="qstandarditem.html#flags">flags</a>() and <a href="qstandarditem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="setFont"></a>void QStandardItem::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Sets the font used to display the item's text to the given <i>font</i>.</p>
+<p>See also <a href="qstandarditem.html#font">font</a>(), <a href="qstandarditem.html#setText">setText</a>(), and <a href="qstandarditem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setForeground"></a>void QStandardItem::setForeground ( const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the brush used to display the item's foreground (e.g&#x2e; text) to the given <i>brush</i>.</p>
+<p>See also <a href="qstandarditem.html#foreground">foreground</a>(), <a href="qstandarditem.html#setBackground">setBackground</a>(), and <a href="qstandarditem.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="setIcon"></a>void QStandardItem::setIcon ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i> )</h3>
+<p>Sets the item's icon to the <i>icon</i> specified.</p>
+<p>See also <a href="qstandarditem.html#icon">icon</a>().</p>
+<h3 class="fn"><a name="setRowCount"></a>void QStandardItem::setRowCount ( int <i>rows</i> )</h3>
+<p>Sets the number of child item rows to <i>rows</i>. If this is less than <a href="qstandarditem.html#rowCount">rowCount</a>(), the data in the unwanted rows is discarded.</p>
+<p>See also <a href="qstandarditem.html#rowCount">rowCount</a>() and <a href="qstandarditem.html#setColumnCount">setColumnCount</a>().</p>
+<h3 class="fn"><a name="setSelectable"></a>void QStandardItem::setSelectable ( bool <i>selectable</i> )</h3>
+<p>Sets whether the item is selectable. If <i>selectable</i> is true, the item can be selected by the user; otherwise, the user cannot select the item.</p>
+<p>You can control the selection behavior and mode by manipulating their view properties; see <a href="qabstractitemview.html#selectionMode-prop">QAbstractItemView::selectionMode</a> and <a href="qabstractitemview.html#selectionBehavior-prop">QAbstractItemView::selectionBehavior</a>.</p>
+<p>See also <a href="qstandarditem.html#isSelectable">isSelectable</a>() and <a href="qstandarditem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="setSizeHint"></a>void QStandardItem::setSizeHint ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the size hint for the item to be <i>size</i>. If no size hint is set, the item delegate will compute the size hint based on the item data.</p>
+<p>See also <a href="qstandarditem.html#sizeHint">sizeHint</a>().</p>
+<h3 class="fn"><a name="setStatusTip"></a>void QStandardItem::setStatusTip ( const <a href="qstring.html">QString</a> &amp; <i>statusTip</i> )</h3>
+<p>Sets the item's status tip to the string specified by <i>statusTip</i>.</p>
+<p>See also <a href="qstandarditem.html#statusTip">statusTip</a>(), <a href="qstandarditem.html#setToolTip">setToolTip</a>(), and <a href="qstandarditem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QStandardItem::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the item's text to the <i>text</i> specified.</p>
+<p>See also <a href="qstandarditem.html#text">text</a>(), <a href="qstandarditem.html#setFont">setFont</a>(), and <a href="qstandarditem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setTextAlignment"></a>void QStandardItem::setTextAlignment ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>alignment</i> )</h3>
+<p>Sets the text alignment for the item's text to the <i>alignment</i> specified.</p>
+<p>See also <a href="qstandarditem.html#textAlignment">textAlignment</a>().</p>
+<h3 class="fn"><a name="setToolTip"></a>void QStandardItem::setToolTip ( const <a href="qstring.html">QString</a> &amp; <i>toolTip</i> )</h3>
+<p>Sets the item's tooltip to the string specified by <i>toolTip</i>.</p>
+<p>See also <a href="qstandarditem.html#toolTip">toolTip</a>(), <a href="qstandarditem.html#setStatusTip">setStatusTip</a>(), and <a href="qstandarditem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setTristate"></a>void QStandardItem::setTristate ( bool <i>tristate</i> )</h3>
+<p>Sets whether the item is tristate. If <i>tristate</i> is true, the item is checkable with three separate states; otherwise, the item is checkable with two states. (Note that this also requires that the item is checkable; see <a href="qstandarditem.html#isCheckable">isCheckable</a>().)</p>
+<p>See also <a href="qstandarditem.html#isTristate">isTristate</a>(), <a href="qstandarditem.html#setCheckable">setCheckable</a>(), and <a href="qstandarditem.html#setCheckState">setCheckState</a>().</p>
+<h3 class="fn"><a name="setWhatsThis"></a>void QStandardItem::setWhatsThis ( const <a href="qstring.html">QString</a> &amp; <i>whatsThis</i> )</h3>
+<p>Sets the item's &quot;What's This?&quot; help to the string specified by <i>whatsThis</i>.</p>
+<p>See also <a href="qstandarditem.html#whatsThis">whatsThis</a>(), <a href="qstandarditem.html#setStatusTip">setStatusTip</a>(), and <a href="qstandarditem.html#setToolTip">setToolTip</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QStandardItem::sizeHint () const</h3>
+<p>Returns the size hint set for the item, or an invalid <a href="qsize.html">QSize</a> if no size hint has been set.</p>
+<p>If no size hint has been set, the item delegate will compute the size hint based on the item data.</p>
+<p>See also <a href="qstandarditem.html#setSizeHint">setSizeHint</a>().</p>
+<h3 class="fn"><a name="sortChildren"></a>void QStandardItem::sortChildren ( int <i>column</i>, <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> = Qt::AscendingOrder )</h3>
+<p>Sorts the children of the item using the given <i>order</i>, by the values in the given <i>column</i>.</p>
+<p><b>Note:</b> This function is recursive, therefore it sorts the children of the item, its grandchildren, etc.</p>
+<p>See also <a href="qstandarditem.html#operator-lt">operator&lt;</a>().</p>
+<h3 class="fn"><a name="statusTip"></a><a href="qstring.html">QString</a> QStandardItem::statusTip () const</h3>
+<p>Returns the item's status tip.</p>
+<p>See also <a href="qstandarditem.html#setStatusTip">setStatusTip</a>(), <a href="qstandarditem.html#toolTip">toolTip</a>(), and <a href="qstandarditem.html#whatsThis">whatsThis</a>().</p>
+<h3 class="fn"><a name="takeChild"></a>QStandardItem * QStandardItem::takeChild ( int <i>row</i>, int <i>column</i> = 0 )</h3>
+<p>Removes the child item at (<i>row</i>, <i>column</i>) without deleting it, and returns a pointer to the item. If there was no child at the given location, then this function returns 0.</p>
+<p>Note that this function, unlike <a href="qstandarditem.html#takeRow">takeRow</a>() and <a href="qstandarditem.html#takeColumn">takeColumn</a>(), does not affect the dimensions of the child table.</p>
+<p>See also <a href="qstandarditem.html#child">child</a>(), <a href="qstandarditem.html#takeRow">takeRow</a>(), and <a href="qstandarditem.html#takeColumn">takeColumn</a>().</p>
+<h3 class="fn"><a name="takeColumn"></a><a href="qlist.html">QList</a>&lt;QStandardItem *&gt; QStandardItem::takeColumn ( int <i>column</i> )</h3>
+<p>Removes <i>column</i> without deleting the column items, and returns a list of pointers to the removed items. For items in the column that have not been set, the corresponding pointers in the list will be 0.</p>
+<p>See also <a href="qstandarditem.html#removeColumn">removeColumn</a>(), <a href="qstandarditem.html#insertColumn">insertColumn</a>(), and <a href="qstandarditem.html#takeRow">takeRow</a>().</p>
+<h3 class="fn"><a name="takeRow"></a><a href="qlist.html">QList</a>&lt;QStandardItem *&gt; QStandardItem::takeRow ( int <i>row</i> )</h3>
+<p>Removes <i>row</i> without deleting the row items, and returns a list of pointers to the removed items. For items in the row that have not been set, the corresponding pointers in the list will be 0.</p>
+<p>See also <a href="qstandarditem.html#removeRow">removeRow</a>(), <a href="qstandarditem.html#insertRow">insertRow</a>(), and <a href="qstandarditem.html#takeColumn">takeColumn</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QStandardItem::text () const</h3>
+<p>Returns the item's text. This is the text that's presented to the user in a view.</p>
+<p>See also <a href="qstandarditem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="textAlignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QStandardItem::textAlignment () const</h3>
+<p>Returns the text alignment for the item's text.</p>
+<p>See also <a href="qstandarditem.html#setTextAlignment">setTextAlignment</a>().</p>
+<h3 class="fn"><a name="toolTip"></a><a href="qstring.html">QString</a> QStandardItem::toolTip () const</h3>
+<p>Returns the item's tooltip.</p>
+<p>See also <a href="qstandarditem.html#setToolTip">setToolTip</a>(), <a href="qstandarditem.html#statusTip">statusTip</a>(), and <a href="qstandarditem.html#whatsThis">whatsThis</a>().</p>
+<h3 class="fn"><a name="type"></a>int QStandardItem::type () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the type of this item. The type is used to distinguish custom items from the base class. When subclassing <a href="qstandarditem.html">QStandardItem</a>, you should reimplement this function and return a new value greater than or equal to <a href="qstandarditem.html#ItemType-enum">UserType</a>.</p>
+<p>See also <a href="qstandarditem.html#ItemType-enum">QStandardItem::Type</a>.</p>
+<h3 class="fn"><a name="whatsThis"></a><a href="qstring.html">QString</a> QStandardItem::whatsThis () const</h3>
+<p>Returns the item's &quot;What's This?&quot; help.</p>
+<p>See also <a href="qstandarditem.html#setWhatsThis">setWhatsThis</a>(), <a href="qstandarditem.html#toolTip">toolTip</a>(), and <a href="qstandarditem.html#statusTip">statusTip</a>().</p>
+<h3 class="fn"><a name="write"></a>void QStandardItem::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Writes the item to stream <i>out</i>. Only the data and flags of the item are written, not the child items.</p>
+<p>See also <a href="qstandarditem.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QStandardItem::operator&lt; ( const QStandardItem &amp; <i>other</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if this item is less than <i>other</i>; otherwise returns false.</p>
+<p>The default implementation uses the data for the item's sort role (see <a href="qstandarditemmodel.html#sortRole-prop">QStandardItemModel::sortRole</a>) to perform the comparison if the item belongs to a model; otherwise, the data for the item's <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a> (<a href="qstandarditem.html#text">text</a>()) is used to perform the comparison.</p>
+<p><a href="qstandarditem.html#sortChildren">sortChildren</a>() and <a href="qabstractitemmodel.html#sort">QStandardItemModel::sort</a>() use this function when sorting items. If you want custom sorting, you can subclass <a href="qstandarditem.html">QStandardItem</a> and reimplement this function.</p>
+<h3 class="fn"><a name="operator-eq"></a>QStandardItem &amp; QStandardItem::operator= ( const QStandardItem &amp; <i>other</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Assigns <i>other</i>'s data and flags to this item. Note that <a href="qstandarditem.html#type">type</a>() and <a href="qstandarditem.html#model">model</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="qstandarditem.html#clone">clone</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-92"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i>, const QStandardItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the <a href="qstandarditem.html">QStandardItem</a> <i>item</i> to stream <i>out</i>.</p>
+<p>This operator uses <a href="qstandarditem.html#write">QStandardItem::write</a>().</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-56"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i>, QStandardItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a <a href="qstandarditem.html">QStandardItem</a> from stream <i>in</i> into <i>item</i>.</p>
+<p>This operator uses <a href="qstandarditem.html#read">QStandardItem::read</a>().</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

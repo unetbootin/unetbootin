@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/dbus/qdbusserver.cpp -->
+<head>
+  <title>Qt 4.4: QDBusServer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDBusServer Class Reference<br /><span class="small-subtitle">[<a href="qtdbus.html">QtDBus</a> module]</span>
+</h1>
+<p>The QDBusServer class provides peer-to-peer communication between processes on the same computer. <a href="#details">More...</a></p>
+<pre> #include &lt;QDBusServer&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdbusserver-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusserver.html#QDBusServer">QDBusServer</a></b> ( const QString &amp; <i>address</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>QString <b><a href="qdbusserver.html#address">address</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdbusserver.html#isConnected">isConnected</a></b> () const</li>
+<li><div class="fn"/>QDBusError <b><a href="qdbusserver.html#lastError">lastError</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdbusserver.html#newConnection">newConnection</a></b> ( const QDBusConnection &amp; <i>connection</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDBusServer class provides peer-to-peer communication between processes on the same computer.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDBusServer"></a>QDBusServer::QDBusServer ( const <a href="qstring.html">QString</a> &amp; <i>address</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qdbusserver.html">QDBusServer</a> with the given <i>address</i>, and the given <i>parent</i>.</p>
+<h3 class="fn"><a name="address"></a><a href="qstring.html">QString</a> QDBusServer::address () const</h3>
+<p>Returns the address this server is assosiated with.</p>
+<h3 class="fn"><a name="isConnected"></a>bool QDBusServer::isConnected () const</h3>
+<p>Returns true if this <a href="qdbusserver.html">QDBusServer</a> object is connected.</p>
+<p>If it isn't connected, you need to call the constructor again.</p>
+<h3 class="fn"><a name="lastError"></a><a href="qdbuserror.html">QDBusError</a> QDBusServer::lastError () const</h3>
+<p>Returns the last error that happened in this server.</p>
+<p>This function is provided for low-level code.</p>
+<h3 class="fn"><a name="newConnection"></a>void QDBusServer::newConnection ( const <a href="qdbusconnection.html">QDBusConnection</a> &amp; <i>connection</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is currently not used, but if and when it is used, <i>connection</i> will be the new connection.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3datetimeedit.cpp -->
+<head>
+  <title>Qt 4.4: Q3DateEdit Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DateEdit Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DateEdit class provides a date editor. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DateEdit&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdateedit">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3datetimeeditbase.html">Q3DateTimeEditBase</a>.</p>
+<ul>
+<li><a href="q3dateedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3dateedit.html#Order-enum">Order</a></b> { MDY, DMY, YMD }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3dateedit.html#autoAdvance-prop">autoAdvance</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3dateedit.html#date-prop">date</a></b> : QDate</li>
+<li><div class="fn"/><b><a href="q3dateedit.html#maxValue-prop">maxValue</a></b> : QDate</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3dateedit.html#minValue-prop">minValue</a></b> : QDate</li>
+<li><div class="fn"/><b><a href="q3dateedit.html#order-prop">order</a></b> : Order</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dateedit.html#Q3DateEdit">Q3DateEdit</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dateedit.html#Q3DateEdit-2">Q3DateEdit</a></b> ( const QDate &amp; <i>date</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3dateedit.html#dtor.Q3DateEdit">~Q3DateEdit</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3dateedit.html#autoAdvance-prop">autoAdvance</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="q3dateedit.html#date-prop">date</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="q3dateedit.html#maxValue-prop">maxValue</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="q3dateedit.html#minValue-prop">minValue</a></b> () const</li>
+<li><div class="fn"/>Order <b><a href="q3dateedit.html#order-prop">order</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3dateedit.html#separator">separator</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#autoAdvance-prop">setAutoAdvance</a></b> ( bool <i>advance</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#maxValue-prop">setMaxValue</a></b> ( const QDate &amp; <i>d</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#minValue-prop">setMinValue</a></b> ( const QDate &amp; <i>d</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#order-prop">setOrder</a></b> ( Order <i>order</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#setRange">setRange</a></b> ( const QDate &amp; <i>min</i>, const QDate &amp; <i>max</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#setSeparator">setSeparator</a></b> ( const QString &amp; <i>s</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#date-prop">setDate</a></b> ( const QDate &amp; <i>date</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3dateedit.html#valueChanged">valueChanged</a></b> ( const QDate &amp; <i>date</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#fix">fix</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="q3dateedit.html#sectionFormattedText">sectionFormattedText</a></b> ( int <i>sec</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#setDay">setDay</a></b> ( int <i>day</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#setMonth">setMonth</a></b> ( int <i>month</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dateedit.html#setYear">setYear</a></b> ( int <i>year</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="protected-slots"></a>
+<h3>Protected Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3dateedit.html#updateButtons">updateButtons</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DateEdit class provides a date editor.</p>
+<p>Q3DateEdit allows the user to edit dates by using the keyboard or the arrow keys to increase/decrease date values. The arrow keys can be used to move from section to section within the Q3DateEdit box. Dates appear in accordance with the local date/time settings or in year, month, day order if the system doesn't provide this information. It is recommended that the Q3DateEdit be initialised with a date, e.g&#x2e;</p>
+<pre>     Q3DateEdit *dateEdit = new Q3DateEdit(QDate::currentDate(), this);
+     dateEdit-&gt;setRange(QDate::currentDate().addDays(-365),
+                         QDate::currentDate().addDays( 365));
+     dateEdit-&gt;setOrder(Q3DateEdit::MDY);
+     dateEdit-&gt;setAutoAdvance(true);</pre>
+<p>Here we've created a new Q3DateEdit object initialised with today's date and restricted the valid date range to today plus or minus 365 days. We've set the order to month, day, year. If the auto advance property is true (as we've set it here) when the user completes a section of the date, e.g&#x2e; enters two digits for the month, they are automatically taken to the next section.</p>
+<p>The maximum and minimum values for a date value in the date editor default to the maximum and minimum values for a <a href="qdate.html">QDate</a>. You can change this by calling <a href="q3dateedit.html#minValue-prop">setMinValue</a>(), <a href="q3dateedit.html#maxValue-prop">setMaxValue</a>() or <a href="q3dateedit.html#setRange">setRange</a>().</p>
+<p>Terminology: A Q3DateEdit widget comprises three 'sections', one each for the year, month and day. You can change the separator character using Q3DateTimeEditor::setSeparator(), by default the separator will be taken from the systems settings. If that is not possible, it defaults to &quot;-&quot;.</p>
+<p align="center"><img src="images/datetimewidgets.png" alt="Date Time Widgets" /></p><p>See also <a href="qdate.html">QDate</a>, <a href="q3timeedit.html">Q3TimeEdit</a>, and <a href="q3datetimeedit.html">Q3DateTimeEdit</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Order-enum"></a>enum Q3DateEdit::Order</h3>
+<p>This enum defines the order in which the sections that comprise a date appear.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DateEdit::MDY</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">month-day-year</td></tr>
+<tr><td valign="top"><tt>Q3DateEdit::DMY</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">day-month-year</td></tr>
+<tr><td valign="top"><tt>Q3DateEdit::YMD</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">year-month-day (the default)</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoAdvance-prop"></a>autoAdvance : bool</h3>
+<p>This property holds whether the editor automatically advances to the next section.</p>
+<p>If autoAdvance is true, the editor will automatically advance focus to the next date section if a user has completed a section. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoAdvance () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoAdvance ( bool <i>advance</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="date-prop"></a>date : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the editor's date value.</p>
+<p>If the date property is not valid, the editor displays all zeroes and Q3DateEdit::date() will return an invalid date. It is strongly recommended that the editor is given a default date value (e.g&#x2e; currentDate()). That way, attempts to set the date property to an invalid date will fail.</p>
+<p>When changing the date property, if the date is less than <a href="q3dateedit.html#minValue-prop">minValue</a>(), or is greater than <a href="q3dateedit.html#maxValue-prop">maxValue</a>(), nothing happens.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate date () const</b></li>
+<li><div class="fn"/><b>virtual void setDate ( const QDate &amp; <i>date</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maxValue-prop"></a>maxValue : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the editor's maximum value.</p>
+<p>Setting the maximum date value for the editor is equivalent to calling Q3DateEdit::setRange(<a href="q3dateedit.html#minValue-prop">minValue</a>(), <i>d</i>), where <i>d</i> is the maximum date. The default maximum date is 8000-12-31.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate maxValue () const</b></li>
+<li><div class="fn"/><b>virtual void setMaxValue ( const QDate &amp; <i>d</i> )</b></li>
+</ul>
+<p>See also <a href="q3dateedit.html#minValue-prop">minValue</a> and <a href="q3dateedit.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="minValue-prop"></a>minValue : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the editor's minimum value.</p>
+<p>Setting the minimum date value is equivalent to calling Q3DateEdit::setRange(<i>d</i>, <a href="q3dateedit.html#maxValue-prop">maxValue</a>()), where <i>d</i> is the minimum date. The default minimum date is 1752-09-14.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate minValue () const</b></li>
+<li><div class="fn"/><b>virtual void setMinValue ( const QDate &amp; <i>d</i> )</b></li>
+</ul>
+<p>See also <a href="q3dateedit.html#maxValue-prop">maxValue</a> and <a href="q3dateedit.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="order-prop"></a>order : <a href="q3dateedit.html#Order-enum">Order</a></h3>
+<p>This property holds the order in which the year, month and day appear.</p>
+<p>The default order is locale dependent.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Order order () const</b></li>
+<li><div class="fn"/><b>virtual void setOrder ( Order <i>order</i> )</b></li>
+</ul>
+<p>See also <a href="q3dateedit.html#Order-enum">Order</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DateEdit"></a>Q3DateEdit::Q3DateEdit ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs an empty date editor which is a child of <i>parent</i> and called name <i>name</i>.</p>
+<h3 class="fn"><a name="Q3DateEdit-2"></a>Q3DateEdit::Q3DateEdit ( const <a href="qdate.html">QDate</a> &amp; <i>date</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a date editor with the initial value <i>date</i>, parent <i>parent</i> and called <i>name</i>.</p>
+<p>The date editor is initialized with <i>date</i>.</p>
+<h3 class="fn"><a name="dtor.Q3DateEdit"></a>Q3DateEdit::~Q3DateEdit ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="fix"></a>void Q3DateEdit::fix ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Attempts to fix any invalid date entries.</p>
+<p>The rules applied are as follows:</p>
+<ul>
+<li>If the year has four digits it is left unchanged.</li>
+<li>If the year has two digits, the year will be changed to four digits in the range current year - 70 to current year + 29.</li>
+<li>If the year has three digits in the range 100..999, the current millennium, i.e&#x2e; 2000, will be added giving a year in the range 2100..2999.</li>
+<li>If the day or month is 0 then it will be set to 1 or the minimum valid day/month in the range.</li>
+</ul>
+<h3 class="fn"><a name="sectionFormattedText"></a><a href="qstring.html">QString</a> Q3DateEdit::sectionFormattedText ( int <i>sec</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the formatted number for section <i>sec</i>. This will correspond to either the year, month or day section, depending on the current display order.</p>
+<p>See also <a href="q3dateedit.html#order-prop">setOrder</a>().</p>
+<h3 class="fn"><a name="separator"></a><a href="qstring.html">QString</a> Q3DateEdit::separator () const</h3>
+<p>Returns the editor's separator.</p>
+<p>See also <a href="q3dateedit.html#setSeparator">setSeparator</a>().</p>
+<h3 class="fn"><a name="setDay"></a>void Q3DateEdit::setDay ( int <i>day</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the day to <i>day</i>, which must be a valid day. The function will ensure that the <i>day</i> set is valid for the month and year.</p>
+<h3 class="fn"><a name="setMonth"></a>void Q3DateEdit::setMonth ( int <i>month</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the month to <i>month</i>, which must be a valid month, i.e&#x2e; between 1 and 12.</p>
+<h3 class="fn"><a name="setRange"></a>void Q3DateEdit::setRange ( const <a href="qdate.html">QDate</a> &amp; <i>min</i>, const <a href="qdate.html">QDate</a> &amp; <i>max</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the valid input range for the editor to be from <i>min</i> to <i>max</i> inclusive. If <i>min</i> is invalid no minimum date will be set. Similarly, if <i>max</i> is invalid no maximum date will be set.</p>
+<h3 class="fn"><a name="setSeparator"></a>void Q3DateEdit::setSeparator ( const <a href="qstring.html">QString</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the separator to <i>s</i>. Note that currently only the first character of <i>s</i> is used.</p>
+<p>See also <a href="q3dateedit.html#separator">separator</a>().</p>
+<h3 class="fn"><a name="setYear"></a>void Q3DateEdit::setYear ( int <i>year</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the year to <i>year</i>, which must be a valid year. The range currently supported is from 1752 to 8000.</p>
+<p>See also <a href="qdate.html">QDate</a>.</p>
+<h3 class="fn"><a name="updateButtons"></a>void Q3DateEdit::updateButtons ()&nbsp;&nbsp;<tt> [protected slot]</tt></h3>
+<p>Enables/disables the push buttons according to the min/max date for this widget.</p>
+<h3 class="fn"><a name="valueChanged"></a>void Q3DateEdit::valueChanged ( const <a href="qdate.html">QDate</a> &amp; <i>date</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the editor's value changes. The <i>date</i> parameter is the new value.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

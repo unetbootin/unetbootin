@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/wince-opengl.qdoc -->
+<head>
+  <title>Qt 4.4: Windows CE OpenGL ES</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Windows CE OpenGL ES<br /><span class="subtitle"></span>
+</h1>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p><a href="http://www.opengl.org">OpenGL</a> is an industry standard API for 2D/3D graphics. It provides a powerful, low-level interface between software and acceleration hardware, and it is operating system and window system independent.</p>
+<p><a href="http://www.khronos.org/opengles">OpenGL ES</a> is a subset of the <a href="http://www.opengl.org">OpenGL</a> standard. It is meant for use in embedded systems. Hence, it has a smaller, more constrained API.</p>
+<p>Qt for Windows CE uses EGL 1.1 to embed OpenGL ES windows within the Windows CE window manager.</p>
+<p>To use OpenGL ES enabled widgets in a Qt/WindowsCE application, you only need to subclass <a href="qglwidget.html">QGLWidget</a> and draw on instances of the subclass with OpenGL ES functions.</p>
+<p>OpenGL ES includes profiles for floating-point and fixed-point arithmetic. The floating point profile is called OpenGL ES CM (Common) and the fixed-point profile is called OpenGL ES CL (Common Lite).</p>
+<p>You can run <tt>configure</tt> with the <tt>-opengl-es-cm</tt> option for the Common profile or <tt>-opengl-es-cl</tt> for the Common Lite profile. In both cases, ensure that the <tt>lib</tt> and <tt>includes</tt> paths include the OpenGL ES headers and libararies from your SDK. The OpenGL ES lib should be called either <tt>libGLES_CM.lib</tt> for the Common profile or <tt>libGLES_CL.lib</tt> for the Common Lite profile.</p>
+<p>To configure Qt for Windows Mobile 5.0 and OpenGL ES Common Lite support you can run <tt>configure</tt> like this:</p>
+<pre>     configure -platform win32-msvc2005 -xplatform wincewm50pocket-msvc2005 -opengl-es-cl</pre>
+<p>The distinction between the Common and Common Lite profiles is important, because the Common Lite profile has less functionality and only supports a fixed-point vertex format.</p>
+<p>To start programming with Qt and OpenGL ES on Windows CE, you can start with the <a href="opengl-hellogl-es.html">Hello GL ES Example</a>. This example shows how to use <a href="qglwidget.html">QGLWidget</a> and QGLPainter with OpenGL ES. It also provides some hints on how to port OpenGL code to OpenGL ES.</p>
+<a name="using-opengl-to-accelerate-normal-2d-painting"></a>
+<h3>Using OpenGL to Accelerate Normal 2D Painting</h3>
+<p>Qt provides QOpenGLPaintEngine, a subclass of <a href="qpaintengine.html">QPaintEngine</a> that translates <a href="qpainter.html">QPainter</a> operations into OpenGL calls. This is especially convenient for drawing text or <a href="qimage.html">QImage</a> objects in an OpenGL ES context. For further details, refer to the <a href="opengl-hellogl-es.html">Hello GL ES Example</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

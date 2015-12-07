@@ -1,0 +1,150 @@
+/****************************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Contact: Qt Software Information (qt-info@nokia.com)
+**
+** This file is part of the QtXMLPatterns module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail.  This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+
+/**
+ * @file
+ * @short Contains Doxygen documentation for groups.
+ */
+
+namespace QPatternist
+{
+    /**
+     * @short The abstract syntax tree nodes that implements the builtin
+     * functions, such as @c fn:concat().
+     *
+     * @defgroup Patternist_functions Function Implementations
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+
+    /**
+     * @short The abstract syntax tree nodes that is generated for XPath,
+     * XQuery, and XSL-T code.
+     *
+     * XPath's approach of compilation is traditional. An Abstract Syntax
+     * Tree(AST) is built, where the Expression class is the abstract base
+     * class for all kinds of implementations of expressions.
+     *
+     * What perhaps can be said to be characteristic for Patternist is that the
+     * base class, Expression, performs a lot of work, and that sub-classes
+     * declares what specific behaviors they need, which the Expression's
+     * functions then bring into action.
+     *
+     * XPath expressions often have different amount of operands. For example,
+     * the 'and' expression takes two, the context item(".") none, and the
+     * if-expression three. To help expression implementations with that, there
+     * exist the abstract EmptyContainer, SingleContainer, PairContainer,
+     * TripleContainer, and UnlimitedContainer classes for avoiding duplicating
+     * code.
+     *
+     * @defgroup Patternist_expressions Expressions
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+
+    /**
+     * @short Various classes that contains small utility functions.
+     *
+     * @defgroup Patternist Utility Classes
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+
+    /**
+     * @short Classes for the type system in the XQuery & XSL-T language.
+     *
+     * @defgroup Patternist_types Type system
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+
+    /**
+     * @defgroup Patternist_xdm XQuery/XPath Data Model
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+
+    /**
+     * @short Patternist's family of iterators in one of the most central parts
+     * of Patternist's API, and are responsible for carrying, and typically
+     * also creating, data.
+     *
+     * An iterator, which always is an Iterator sub-class, is similar to a
+     * Java-style iterator. What signifies Patternist's iterators is that they
+     * almost always contains business logic(which is the cause to their
+     * efficiency).
+     *
+     * An example which illustrates this principle is the RangeIterator. When
+     * the RangeExpression is told to create a sequence of integers between 1
+     * and 1000, it doesn't enter a loop that allocates 1000 Integer instances,
+     * but instead return an RangeIterator that incrementally creates the
+     * numbers when asked to do so via its RangeIterator::next() function. If
+     * it turns out that the expression that has the range expression as
+     * operand only needs three items from it, that is what gets created, not
+     * 1000.
+     *
+     * All iterators operates by that principle, perhaps suitably labeled as
+     * "pull-based", "lazy loaded" or "serialized". Central for the XPath
+     * language is that it filters and selects data, and the iterators supports
+     * this well by letting the demand of the filter expressions(the callees)
+     * decide how "much" source that gets computed. In this way the evaluation
+     * of an expression tree can lead to a chain of pipelined iterators, where
+     * the first asks the second for data and then performs its specific
+     * operations, the second subsequently asks the third, and so forth.
+     *
+     * However, the iterators are not limited to be used for representing
+     * sequences of items in the XPath Data Model. The Iterator is
+     * parameterized on one argument, meaning any type of "units" can be
+     * iterated, be it Item or any other. One use of this is in the
+     * ExpressionSequence(which implements the comma operator) where it creates
+     * Iterator instances over Expression instances -- its operands. The
+     * parameterization is often used in combination with the MappingIterator
+     * and the MappingCallback.
+     *
+     * @defgroup Patternist_iterators Iterators
+     * @author Frans Englich <fenglich@trolltech.com>
+     */
+}

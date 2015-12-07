@@ -1,0 +1,137 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page timers.html
+    \title Timers
+    \ingroup architecture
+    \brief How to use timers in your application.
+
+    QObject, the base class of all Qt objects, provides the basic
+    timer support in Qt. With QObject::startTimer(), you start a
+    timer with an interval in milliseconds as argument. The function
+    returns a unique integer timer ID. The timer will now fire at
+    regular intervals until you explicitly call QObject::killTimer()
+    with the timer ID.
+
+    For this mechanism to work, the application must run in an event
+    loop. You start an event loop with QApplication::exec(). When a
+    timer fires, the application sends a QTimerEvent, and the flow of
+    control leaves the event loop until the timer event is processed.
+    This implies that a timer cannot fire while your application is
+    busy doing something else. In other words: the accuracy of timers
+    depends on the granularity of your application.
+
+    In multithreaded applications, you can use the timer mechanism in
+    any thread that has an event loop. To start an event loop from a
+    non-GUI thread, use QThread::exec(). Qt uses the the object's
+    \l{QObject::thread()}{thread affinity} to determine which thread
+    will deliver the QTimerEvent. Because of this, you must start and
+    stop all timers in the object's thread; it is not possible to
+    start timers for objects in another thread.
+
+    There is practically no upper limit for the interval value (more
+    than one year is possible). The accuracy depends on the
+    underlying operating system. Windows 98 has 55 millisecond
+    accuracy; other systems that we have tested can handle 1
+    millisecond intervals.
+
+    The main API for the timer functionality is QTimer. That class
+    provides regular timers that emit a signal when the timer fires, and
+    inherits QObject so that it fits well into the ownership structure
+    of most GUI programs. The normal way of using it is like this:
+
+    \snippet doc/src/snippets/timers/timers.cpp 0
+    \snippet doc/src/snippets/timers/timers.cpp 1
+    \snippet doc/src/snippets/timers/timers.cpp 2
+
+    The QTimer object is made into a child of this widget so that,
+    when this widget is deleted, the timer is deleted too.
+    Next, its \l{QTimer::}{timeout()} signal is connected to the slot
+    that will do the work, it is started with a value of 1000
+    milliseconds, indicating that it will time out every second.
+
+    QTimer also provides a static function for single-shot timers.
+    For example:
+
+    \snippet doc/src/snippets/timers/timers.cpp 3
+
+    200 milliseconds (0.2 seconds) after this line of code is
+    executed, the \c updateCaption() slot will be called.
+
+    For QTimer to work, you must have an event loop in your
+    application; that is, you must call QCoreApplication::exec()
+    somewhere. Timer events will be delivered only while the event
+    loop is running.
+
+    In multithreaded applications, you can use QTimer in any thread
+    that has an event loop. To start an event loop from a non-GUI
+    thread, use QThread::exec(). Qt uses the the timer's
+    \l{QObject::thread()}{thread affinity} to determine which thread
+    will emit the \l{QTimer::}{timeout()} signal. Because of this, you
+    must start and stop the timer in its thread; it is not possible to
+    start a timer from another thread.
+
+    The \l{widgets/analogclock}{Analog Clock} example shows how to use
+    QTimer to redraw a widget at regular intervals. From \c{AnalogClock}'s
+    implementation:
+
+    \snippet examples/widgets/analogclock/analogclock.cpp 0
+    \snippet examples/widgets/analogclock/analogclock.cpp 2
+    \snippet examples/widgets/analogclock/analogclock.cpp 3
+    \snippet examples/widgets/analogclock/analogclock.cpp 4
+    \snippet examples/widgets/analogclock/analogclock.cpp 5
+    \snippet examples/widgets/analogclock/analogclock.cpp 6
+    \dots
+    \snippet examples/widgets/analogclock/analogclock.cpp 7
+
+    Every second, QTimer will call the QWidget::update() slot to
+    refresh the clock's display.
+
+    If you already have a QObject subclass and want an easy
+    optimization, you can use QBasicTimer instead of QTimer. With
+    QBasicTimer, you must reimplement
+    \l{QObject::timerEvent()}{timerEvent()} in your QObject subclass
+    and handle the timeout there. The \l{widgets/wiggly}{Wiggly}
+    example shows how to use QBasicTimer.
+*/

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Creating Custom Widgets for Qt Designer</title>
+  <link rel="prev" href="designer-using-a-component.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-creating-custom-widgets-extensions.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-using-a-component.html">Using a Component in Your Application</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>]
+</p>
+<h1 class="title">Creating Custom Widgets for Qt Designer<br /><span class="subtitle"></span>
+</h1>
+<p><i>Qt Designer</i>'s plugin-based architecture allows user-defined and third party custom widgets to be edited in the same way as standard Qt widgets. All the features of the custom widgets are made available to <i>Qt Designer</i>, including widget properties, signals, and slots. Since <i>Qt Designer</i> uses real widgets during the form design process, custom widgets will appear the same as they do when previewed.</p>
+<p align="center"><img src="images/worldtimeclockplugin-example.png" /></p><p>The ability to create custom widgets in <i>Qt Designer</i> is one of the features provided by the <a href="qtdesigner.html">QtDesigner</a> module.</p>
+<ul><li><a href="#getting-started">Getting Started</a></li>
+<li><a href="#providing-an-interface-description">Providing an Interface Description</a></li>
+<li><a href="#plugin-requirements">Plugin Requirements</a></li>
+<li><a href="#creating-well-behaved-widgets">Creating Well Behaved Widgets</a></li>
+<li><a href="#building-and-installing-the-plugin">Building and Installing the Plugin</a></li>
+<li><a href="#related-examples">Related Examples</a></li>
+</ul>
+<a name="getting-started"></a>
+<h2>Getting Started</h2>
+<p>The process of integrating an existing custom widget with <i>Qt Designer</i> usually just requires a suitable description for the widget and an appropriate project file.</p>
+<a name="providing-an-interface-description"></a>
+<h2>Providing an Interface Description</h2>
+<p>To inform <i>Qt Designer</i> about the type of widget we want to provide, we must create a subclass of <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> that describes the various properties it exposes. Most of these are supplied by functions that are pure virtual in the base class because it only makes sense for the author of the plugin to provide this information.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Function</th><th>Description of the return value</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>name()</tt></td><td>The name of the class that provides the widget.</td></tr>
+<tr valign="top" class="even"><td><tt>group()</tt></td><td>The group in <i>Qt Designer</i>'s widget box that the widget belongs to.</td></tr>
+<tr valign="top" class="odd"><td><tt>toolTip()</tt></td><td>A short description to help users identify the widget in <i>Qt Designer</i>.</td></tr>
+<tr valign="top" class="even"><td><tt>whatsThis()</tt></td><td>A longer description of the widget for users of <i>Qt Designer</i>.</td></tr>
+<tr valign="top" class="odd"><td><tt>includeFile()</tt></td><td>The header file that must be included in applications that use this widget. This information is stored in .ui files and will be used by <tt>uic</tt> to create a suitable <tt>#includes</tt> statement in the code it generates for the form containing the custom widget.</td></tr>
+<tr valign="top" class="even"><td><tt>icon()</tt></td><td>An icon that can be used to represent the widget in <i>Qt Designer</i>'s widget box.</td></tr>
+<tr valign="top" class="odd"><td><tt>isContainer()</tt></td><td>True if the widget will be used to hold child widgets; otherwise false.</td></tr>
+<tr valign="top" class="even"><td><tt>createWidget()</tt></td><td>A <a href="qwidget.html">QWidget</a> pointer to an instance of the custom widget, constructed with the parent supplied.</td></tr>
+<tr valign="top" class="odd"><td><tt>domXml()</tt></td><td>A description of the widget's properties, such as its object name, size hint, and other standard <a href="qwidget.html">QWidget</a> properties.</td></tr>
+<tr valign="top" class="even"><td><tt>codeTemplate()</tt></td><td>This function is reserved for future use by <i>Qt Designer</i>.</td></tr>
+</table></p>
+<p>Two other virtual functions can also be reimplemented:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><tt>initialize()</tt></td><td>Sets up extensions and other features for custom widgets. Custom container extensions (see <a href="qdesignercontainerextension.html">QDesignerContainerExtension</a>) and task menu extensions (see <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a>) should be set up in this function.</td></tr>
+<tr valign="top" class="even"><td><tt>isInitialized()</tt></td><td>Returns true if the widget has been initialized; otherwise returns false. Reimplementations usually check whether the initialize() function has been called and return the result of this test.</td></tr>
+</table></p>
+<p>If the custom widget does not provide a reasonable size hint, it is necessary to specify a default geometry in the string returned by the <tt>domXml()</tt> function in your subclass. For example, the <tt>AnalogClockPlugin</tt> provided by the <a href="designer-customwidgetplugin.html">Custom Widget Plugin</a> example, defines a default widgetgeometry in the following way:</p>
+<pre>     ...
+            &quot; &lt;property name=\&quot;geometry\&quot;&gt;\n&quot;
+            &quot;  &lt;rect&gt;\n&quot;
+            &quot;   &lt;x&gt;0&lt;/x&gt;\n&quot;
+            &quot;   &lt;y&gt;0&lt;/y&gt;\n&quot;
+            &quot;   &lt;width&gt;100&lt;/width&gt;\n&quot;
+            &quot;   &lt;height&gt;100&lt;/height&gt;\n&quot;
+            &quot;  &lt;/rect&gt;\n&quot;
+            &quot; &lt;/property&gt;\n&quot;
+     ...</pre>
+<p>An additional feature of the <tt>domXml()</tt> function is that, if it returns an empty string, the widget will not be installed in <i>Qt Designer</i>'s widget box, but it can still be used by other widgets in the form. This feature is used to hide widgets that should not be explicitly created by the user, but which are required by other widgets.</p>
+<a name="plugin-requirements"></a>
+<h2>Plugin Requirements</h2>
+<p>In order for plugins to work correctly on all platforms, you need to ensure that they export the symbols that are needed by <i>Qt Designer</i>.</p>
+<p>First of all, the plugin class must be exported in order for the plugin to be loaded by <i>Qt Designer</i>. Use the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro to do this.</p>
+<p>Additionally, each custom widget class in a plugin that you want to be instantiated by <i>Qt Designer</i> must be defined using the <a href="qdesignercustomwidgetinterface.html#QDESIGNER_WIDGET_EXPORT">QDESIGNER_WIDGET_EXPORT</a> macro.</p>
+<a name="creating-well-behaved-widgets"></a>
+<h2>Creating Well Behaved Widgets</h2>
+<p>Some custom widgets have special user interface features that may make them behave differently to many of the standard widgets found in <i>Qt Designer</i>. Specifically, if a custom widget grabs the keyboard as a result of a call to <a href="qwidget.html#grabKeyboard">QWidget::grabKeyboard</a>(), the operation of <i>Qt Designer</i> will be affected.</p>
+<p>To give custom widgets special behavior in <i>Qt Designer</i>, provide an implementation of the initialize() function to configure the widget construction process for <i>Qt Designer</i> specific behavior. This function will be called for the first time before any calls to createWidget() and could perhaps set an internal flag that can be tested later when <i>Qt Designer</i> calls the plugin's createWidget() function.</p>
+<a name="buildingandinstallingtheplugin"></a><a name="building-and-installing-the-plugin"></a>
+<h2>Building and Installing the Plugin</h2>
+<p>The project file for a plugin must specify the headers and sources for both the custom widget and the plugin interface. Typically, the project file only needs to specify that the plugin's project is to be built as a library, but with specific plugin support for <i>Qt Designer</i>. This is done with the following declarations:</p>
+<pre> CONFIG      += designer plugin debug_and_release
+ TARGET      = $$qtLibraryTarget($$TARGET)
+ TEMPLATE    = lib</pre>
+<p>When Qt is configured to build in both debug and release modes, <i>Qt Designer</i> will be built in release mode. When this occurs, it is necessary to ensure that plugins are also built in release mode. To do this, include the following declaration in the plugin's project file:</p>
+<pre>     CONFIG += release</pre>
+<p>If plugins are built in a mode that is incompatible with <i>Qt Designer</i>, they won't be loaded and installed. For more information about plugins, see the <a href="plugins-howto.html">Plugins HOWTO</a> document.</p>
+<p>It is also necessary to ensure that the plugin is installed alongside the other <i>Qt Designer</i> widget plugins:</p>
+<pre>     target.path = $$[QT_INSTALL_PLUGINS]/designer
+     INSTALLS += target</pre>
+<p>The <tt>$[QT_INSTALL_PLUGINS]</tt> variable is a placeholder to the location of the installed Qt plugins. You can configure <i>Qt Designer</i> to look for plugins in other locations by setting the <tt>QT_PLUGIN_PATH</tt> environment variable before running the application. Note that <i>Qt Designer</i> will look for a <tt>designer</tt> subdirectory on each path supplied.</p>
+<p>See <a href="qcoreapplication.html#libraryPaths">QCoreApplication::libraryPaths</a>() for more information about customizing paths for libraries and plugins with Qt applications.</p>
+<a name="related-examples"></a>
+<h2>Related Examples</h2>
+<p>Please see the <a href="designer-customwidgetplugin.html">Custom Widget Plugin</a> and <a href="designer-worldtimeclockplugin.html">World Time Clock Plugin</a> examples for more information about using custom widgets in <i>Qt Designer</i>.</p>
+<p>
+[Previous: <a href="designer-using-a-component.html">Using a Component in Your Application</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-custom-widgets-extensions.html">Creating Custom Widget Extensions</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

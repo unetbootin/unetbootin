@@ -1,0 +1,608 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: colorswatch.cpp Example File (demos/mainwindow/colorswatch.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">colorswatch.cpp Example File<br /><span class="small-subtitle">demos/mainwindow/colorswatch.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;colorswatch.h&quot;
+
+ #include &lt;QAction&gt;
+ #include &lt;QtEvents&gt;
+ #include &lt;QFrame&gt;
+ #include &lt;QMainWindow&gt;
+ #include &lt;QMenu&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QImage&gt;
+ #include &lt;QColor&gt;
+ #include &lt;QDialog&gt;
+ #include &lt;QGridLayout&gt;
+ #include &lt;QSpinBox&gt;
+ #include &lt;QLabel&gt;
+ #include &lt;QPainterPath&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QHBoxLayout&gt;
+ #include &lt;QtDebug&gt;
+
+ #undef DEBUG_SIZEHINTS
+
+ QColor bgColorForName(const QString &amp;name)
+ {
+     if (name == &quot;Black&quot;)
+         return QColor(&quot;#D8D8D8&quot;);
+     else if (name == &quot;White&quot;)
+         return QColor(&quot;#F1F1F1&quot;);
+     else if (name == &quot;Red&quot;)
+         return QColor(&quot;#F1D8D8&quot;);
+     else if (name == &quot;Green&quot;)
+         return QColor(&quot;#D8E4D8&quot;);
+     else if (name == &quot;Blue&quot;)
+         return QColor(&quot;#D8D8F1&quot;);
+     else if (name == &quot;Yellow&quot;)
+         return QColor(&quot;#F1F0D8&quot;);
+     return QColor(name).light(110);
+ }
+
+ QColor fgColorForName(const QString &amp;name)
+ {
+     if (name == &quot;Black&quot;)
+         return QColor(&quot;#6C6C6C&quot;);
+     else if (name == &quot;White&quot;)
+         return QColor(&quot;#F8F8F8&quot;);
+     else if (name == &quot;Red&quot;)
+         return QColor(&quot;#F86C6C&quot;);
+     else if (name == &quot;Green&quot;)
+         return QColor(&quot;#6CB26C&quot;);
+     else if (name == &quot;Blue&quot;)
+         return QColor(&quot;#6C6CF8&quot;);
+     else if (name == &quot;Yellow&quot;)
+         return QColor(&quot;#F8F76C&quot;);
+     return QColor(name);
+ }
+
+ class ColorDock : public QFrame
+ {
+     Q_OBJECT
+ public:
+     ColorDock(const QString &amp;c, QWidget *parent);
+
+     virtual QSize sizeHint() const;
+     virtual QSize minimumSizeHint() const;
+
+     void setCustomSizeHint(const QSize &amp;size);
+
+ public slots:
+     void changeSizeHints();
+
+ protected:
+     void paintEvent(QPaintEvent *);
+     QString color;
+     QSize szHint, minSzHint;
+ };
+
+ ColorDock::ColorDock(const QString &amp;c, QWidget *parent)
+     : QFrame(parent) , color(c)
+ {
+     QFont font = this-&gt;font();
+     font.setPointSize(8);
+     setFont(font);
+     szHint = QSize(-1, -1);
+     minSzHint = QSize(125, 75);
+ }
+
+ QSize ColorDock::sizeHint() const
+ {
+     return szHint;
+ }
+
+ QSize ColorDock::minimumSizeHint() const
+ {
+     return minSzHint;
+ }
+
+ void ColorDock::paintEvent(QPaintEvent *)
+ {
+     QPainter p(this);
+     p.setRenderHint(QPainter::Antialiasing);
+     p.fillRect(rect(), bgColorForName(color));
+
+     p.save();
+
+     extern void render_qt_text(QPainter *, int, int, const QColor &amp;);
+     render_qt_text(&amp;p, width(), height(), fgColorForName(color));
+
+     p.restore();
+
+ #ifdef DEBUG_SIZEHINTS
+     p.setRenderHint(QPainter::Antialiasing, false);
+
+     QSize sz = size();
+     QSize szHint = sizeHint();
+     QSize minSzHint = minimumSizeHint();
+     QSize maxSz = maximumSize();
+     QString text = QString::fromLatin1(&quot;sz: %1x%2\nszHint: %3x%4\nminSzHint: %5x%6\n&quot;
+                                         &quot;maxSz: %8x%9&quot;)
+                     .arg(sz.width()).arg(sz.height())
+                     .arg(szHint.width()).arg(szHint.height())
+                     .arg(minSzHint.width()).arg(minSzHint.height())
+                     .arg(maxSz.width()).arg(maxSz.height());
+
+     QRect r = fontMetrics().boundingRect(rect(), Qt::AlignLeft|Qt::AlignTop, text);
+     r.adjust(-2, -2, 1, 1);
+     p.translate(4, 4);
+     QColor bg = Qt::yellow;
+     bg.setAlpha(120);
+     p.setBrush(bg);
+     p.setPen(Qt::black);
+     p.drawRect(r);
+     p.drawText(rect(), Qt::AlignLeft|Qt::AlignTop, text);
+ #endif <span class="comment">//</span> DEBUG_SIZEHINTS
+ }
+
+ static QSpinBox *createSpinBox(int value, QWidget *parent, int max = 1000)
+ {
+     QSpinBox *result = new QSpinBox(parent);
+     result-&gt;setMinimum(-1);
+     result-&gt;setMaximum(max);
+     result-&gt;setValue(value);
+     return result;
+ }
+
+ void ColorDock::changeSizeHints()
+ {
+     QDialog dialog(this);
+     dialog.setWindowTitle(color);
+
+     QVBoxLayout *topLayout = new QVBoxLayout(&amp;dialog);
+
+     QGridLayout *inputLayout = new QGridLayout();
+     topLayout-&gt;addLayout(inputLayout);
+
+     inputLayout-&gt;addWidget(new QLabel(tr(&quot;Size Hint:&quot;), &amp;dialog), 0, 0);
+     inputLayout-&gt;addWidget(new QLabel(tr(&quot;Min Size Hint:&quot;), &amp;dialog), 1, 0);
+     inputLayout-&gt;addWidget(new QLabel(tr(&quot;Max Size:&quot;), &amp;dialog), 2, 0);
+     inputLayout-&gt;addWidget(new QLabel(tr(&quot;Dockwgt Max Size:&quot;), &amp;dialog), 3, 0);
+
+     QSpinBox *szHintW = createSpinBox(szHint.width(), &amp;dialog);
+     inputLayout-&gt;addWidget(szHintW, 0, 1);
+     QSpinBox *szHintH = createSpinBox(szHint.height(), &amp;dialog);
+     inputLayout-&gt;addWidget(szHintH, 0, 2);
+
+     QSpinBox *minSzHintW = createSpinBox(minSzHint.width(), &amp;dialog);
+     inputLayout-&gt;addWidget(minSzHintW, 1, 1);
+     QSpinBox *minSzHintH = createSpinBox(minSzHint.height(), &amp;dialog);
+     inputLayout-&gt;addWidget(minSzHintH, 1, 2);
+
+     QSize maxSz = maximumSize();
+     QSpinBox *maxSzW = createSpinBox(maxSz.width(), &amp;dialog, QWIDGETSIZE_MAX);
+     inputLayout-&gt;addWidget(maxSzW, 2, 1);
+     QSpinBox *maxSzH = createSpinBox(maxSz.height(), &amp;dialog, QWIDGETSIZE_MAX);
+     inputLayout-&gt;addWidget(maxSzH, 2, 2);
+
+     QSize dwMaxSz = parentWidget()-&gt;maximumSize();
+     QSpinBox *dwMaxSzW = createSpinBox(dwMaxSz.width(), &amp;dialog, QWIDGETSIZE_MAX);
+     inputLayout-&gt;addWidget(dwMaxSzW, 3, 1);
+     QSpinBox *dwMaxSzH = createSpinBox(dwMaxSz.height(), &amp;dialog, QWIDGETSIZE_MAX);
+     inputLayout-&gt;addWidget(dwMaxSzH, 3, 2);
+
+     inputLayout-&gt;setColumnStretch(1, 1);
+     inputLayout-&gt;setColumnStretch(2, 1);
+
+     topLayout-&gt;addStretch();
+
+     QHBoxLayout *buttonBox = new QHBoxLayout();
+     topLayout-&gt;addLayout(buttonBox);
+
+     QPushButton *okButton = new QPushButton(tr(&quot;Ok&quot;), &amp;dialog);
+     QPushButton *cancelButton = new QPushButton(tr(&quot;Cancel&quot;), &amp;dialog);
+     connect(okButton, SIGNAL(clicked()), &amp;dialog, SLOT(accept()));
+     connect(cancelButton, SIGNAL(clicked()), &amp;dialog, SLOT(reject()));
+     buttonBox-&gt;addStretch();
+     buttonBox-&gt;addWidget(cancelButton);
+     buttonBox-&gt;addWidget(okButton);
+
+     if (!dialog.exec())
+         return;
+
+     szHint = QSize(szHintW-&gt;value(), szHintH-&gt;value());
+     minSzHint = QSize(minSzHintW-&gt;value(), minSzHintH-&gt;value());
+     maxSz = QSize(maxSzW-&gt;value(), maxSzH-&gt;value());
+     setMaximumSize(maxSz);
+     dwMaxSz = QSize(dwMaxSzW-&gt;value(), dwMaxSzH-&gt;value());
+     parentWidget()-&gt;setMaximumSize(dwMaxSz);
+     updateGeometry();
+     update();
+ }
+
+ void ColorDock::setCustomSizeHint(const QSize &amp;size)
+ {
+     szHint = size;
+     updateGeometry();
+ }
+
+ ColorSwatch::ColorSwatch(const QString &amp;colorName, QWidget *parent, Qt::WindowFlags flags)
+     : QDockWidget(parent, flags)
+ {
+     setObjectName(colorName + QLatin1String(&quot; Dock Widget&quot;));
+     setWindowTitle(objectName() + QLatin1String(&quot; [*]&quot;));
+
+     QFrame *swatch = new ColorDock(colorName, this);
+     swatch-&gt;setFrameStyle(QFrame::Box | QFrame::Sunken);
+
+     setWidget(swatch);
+
+     changeSizeHintsAction = new QAction(tr(&quot;Change Size Hints&quot;), this);
+     connect(changeSizeHintsAction, SIGNAL(triggered()), swatch, SLOT(changeSizeHints()));
+
+     closableAction = new QAction(tr(&quot;Closable&quot;), this);
+     closableAction-&gt;setCheckable(true);
+     connect(closableAction, SIGNAL(triggered(bool)), SLOT(changeClosable(bool)));
+
+     movableAction = new QAction(tr(&quot;Movable&quot;), this);
+     movableAction-&gt;setCheckable(true);
+     connect(movableAction, SIGNAL(triggered(bool)), SLOT(changeMovable(bool)));
+
+     floatableAction = new QAction(tr(&quot;Floatable&quot;), this);
+     floatableAction-&gt;setCheckable(true);
+     connect(floatableAction, SIGNAL(triggered(bool)), SLOT(changeFloatable(bool)));
+
+     verticalTitleBarAction = new QAction(tr(&quot;Vertical title bar&quot;), this);
+     verticalTitleBarAction-&gt;setCheckable(true);
+     connect(verticalTitleBarAction, SIGNAL(triggered(bool)),
+             SLOT(changeVerticalTitleBar(bool)));
+
+     floatingAction = new QAction(tr(&quot;Floating&quot;), this);
+     floatingAction-&gt;setCheckable(true);
+     connect(floatingAction, SIGNAL(triggered(bool)), SLOT(changeFloating(bool)));
+
+     allowedAreasActions = new QActionGroup(this);
+     allowedAreasActions-&gt;setExclusive(false);
+
+     allowLeftAction = new QAction(tr(&quot;Allow on Left&quot;), this);
+     allowLeftAction-&gt;setCheckable(true);
+     connect(allowLeftAction, SIGNAL(triggered(bool)), SLOT(allowLeft(bool)));
+
+     allowRightAction = new QAction(tr(&quot;Allow on Right&quot;), this);
+     allowRightAction-&gt;setCheckable(true);
+     connect(allowRightAction, SIGNAL(triggered(bool)), SLOT(allowRight(bool)));
+
+     allowTopAction = new QAction(tr(&quot;Allow on Top&quot;), this);
+     allowTopAction-&gt;setCheckable(true);
+     connect(allowTopAction, SIGNAL(triggered(bool)), SLOT(allowTop(bool)));
+
+     allowBottomAction = new QAction(tr(&quot;Allow on Bottom&quot;), this);
+     allowBottomAction-&gt;setCheckable(true);
+     connect(allowBottomAction, SIGNAL(triggered(bool)), SLOT(allowBottom(bool)));
+
+     allowedAreasActions-&gt;addAction(allowLeftAction);
+     allowedAreasActions-&gt;addAction(allowRightAction);
+     allowedAreasActions-&gt;addAction(allowTopAction);
+     allowedAreasActions-&gt;addAction(allowBottomAction);
+
+     areaActions = new QActionGroup(this);
+     areaActions-&gt;setExclusive(true);
+
+     leftAction = new QAction(tr(&quot;Place on Left&quot;) , this);
+     leftAction-&gt;setCheckable(true);
+     connect(leftAction, SIGNAL(triggered(bool)), SLOT(placeLeft(bool)));
+
+     rightAction = new QAction(tr(&quot;Place on Right&quot;) , this);
+     rightAction-&gt;setCheckable(true);
+     connect(rightAction, SIGNAL(triggered(bool)), SLOT(placeRight(bool)));
+
+     topAction = new QAction(tr(&quot;Place on Top&quot;) , this);
+     topAction-&gt;setCheckable(true);
+     connect(topAction, SIGNAL(triggered(bool)), SLOT(placeTop(bool)));
+
+     bottomAction = new QAction(tr(&quot;Place on Bottom&quot;) , this);
+     bottomAction-&gt;setCheckable(true);
+     connect(bottomAction, SIGNAL(triggered(bool)), SLOT(placeBottom(bool)));
+
+     areaActions-&gt;addAction(leftAction);
+     areaActions-&gt;addAction(rightAction);
+     areaActions-&gt;addAction(topAction);
+     areaActions-&gt;addAction(bottomAction);
+
+     connect(movableAction, SIGNAL(triggered(bool)), areaActions, SLOT(setEnabled(bool)));
+
+     connect(movableAction, SIGNAL(triggered(bool)), allowedAreasActions, SLOT(setEnabled(bool)));
+
+     connect(floatableAction, SIGNAL(triggered(bool)), floatingAction, SLOT(setEnabled(bool)));
+
+     connect(floatingAction, SIGNAL(triggered(bool)), floatableAction, SLOT(setDisabled(bool)));
+     connect(movableAction, SIGNAL(triggered(bool)), floatableAction, SLOT(setEnabled(bool)));
+
+     tabMenu = new QMenu(this);
+     tabMenu-&gt;setTitle(tr(&quot;Tab into&quot;));
+     connect(tabMenu, SIGNAL(triggered(QAction*)), this, SLOT(tabInto(QAction*)));
+
+     splitHMenu = new QMenu(this);
+     splitHMenu-&gt;setTitle(tr(&quot;Split horizontally into&quot;));
+     connect(splitHMenu, SIGNAL(triggered(QAction*)), this, SLOT(splitInto(QAction*)));
+
+     splitVMenu = new QMenu(this);
+     splitVMenu-&gt;setTitle(tr(&quot;Split vertically into&quot;));
+     connect(splitVMenu, SIGNAL(triggered(QAction*)), this, SLOT(splitInto(QAction*)));
+
+     windowModifiedAction = new QAction(tr(&quot;Modified&quot;), this);
+     windowModifiedAction-&gt;setCheckable(true);
+     windowModifiedAction-&gt;setChecked(false);
+     connect(windowModifiedAction, SIGNAL(toggled(bool)), this, SLOT(setWindowModified(bool)));
+
+     menu = new QMenu(colorName, this);
+     menu-&gt;addAction(toggleViewAction());
+     QAction *action = menu-&gt;addAction(tr(&quot;Raise&quot;));
+     connect(action, SIGNAL(triggered()), this, SLOT(raise()));
+     menu-&gt;addAction(changeSizeHintsAction);
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(closableAction);
+     menu-&gt;addAction(movableAction);
+     menu-&gt;addAction(floatableAction);
+     menu-&gt;addAction(floatingAction);
+     menu-&gt;addAction(verticalTitleBarAction);
+     menu-&gt;addSeparator();
+     menu-&gt;addActions(allowedAreasActions-&gt;actions());
+     menu-&gt;addSeparator();
+     menu-&gt;addActions(areaActions-&gt;actions());
+     menu-&gt;addSeparator();
+     menu-&gt;addMenu(splitHMenu);
+     menu-&gt;addMenu(splitVMenu);
+     menu-&gt;addMenu(tabMenu);
+     menu-&gt;addSeparator();
+     menu-&gt;addAction(windowModifiedAction);
+
+     connect(menu, SIGNAL(aboutToShow()), this, SLOT(updateContextMenu()));
+
+     if(colorName == &quot;Black&quot;) {
+         leftAction-&gt;setShortcut(Qt::CTRL|Qt::Key_W);
+         rightAction-&gt;setShortcut(Qt::CTRL|Qt::Key_E);
+         toggleViewAction()-&gt;setShortcut(Qt::CTRL|Qt::Key_R);
+     }
+ }
+
+ void ColorSwatch::updateContextMenu()
+ {
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     const Qt::DockWidgetArea area = mainWindow-&gt;dockWidgetArea(this);
+     const Qt::DockWidgetAreas areas = allowedAreas();
+
+     closableAction-&gt;setChecked(features() &amp; QDockWidget::DockWidgetClosable);
+     if (windowType() == Qt::Drawer) {
+         floatableAction-&gt;setEnabled(false);
+         floatingAction-&gt;setEnabled(false);
+         movableAction-&gt;setEnabled(false);
+         verticalTitleBarAction-&gt;setChecked(false);
+     } else {
+         floatableAction-&gt;setChecked(features() &amp; QDockWidget::DockWidgetFloatable);
+         floatingAction-&gt;setChecked(isWindow());
+         <span class="comment">//</span> done after floating, to get 'floatable' correctly initialized
+         movableAction-&gt;setChecked(features() &amp; QDockWidget::DockWidgetMovable);
+         verticalTitleBarAction
+             -&gt;setChecked(features() &amp; QDockWidget::DockWidgetVerticalTitleBar);
+     }
+
+     allowLeftAction-&gt;setChecked(isAreaAllowed(Qt::LeftDockWidgetArea));
+     allowRightAction-&gt;setChecked(isAreaAllowed(Qt::RightDockWidgetArea));
+     allowTopAction-&gt;setChecked(isAreaAllowed(Qt::TopDockWidgetArea));
+     allowBottomAction-&gt;setChecked(isAreaAllowed(Qt::BottomDockWidgetArea));
+
+     if (allowedAreasActions-&gt;isEnabled()) {
+         allowLeftAction-&gt;setEnabled(area != Qt::LeftDockWidgetArea);
+         allowRightAction-&gt;setEnabled(area != Qt::RightDockWidgetArea);
+         allowTopAction-&gt;setEnabled(area != Qt::TopDockWidgetArea);
+         allowBottomAction-&gt;setEnabled(area != Qt::BottomDockWidgetArea);
+     }
+
+     leftAction-&gt;blockSignals(true);
+     rightAction-&gt;blockSignals(true);
+     topAction-&gt;blockSignals(true);
+     bottomAction-&gt;blockSignals(true);
+
+     leftAction-&gt;setChecked(area == Qt::LeftDockWidgetArea);
+     rightAction-&gt;setChecked(area == Qt::RightDockWidgetArea);
+     topAction-&gt;setChecked(area == Qt::TopDockWidgetArea);
+     bottomAction-&gt;setChecked(area == Qt::BottomDockWidgetArea);
+
+     leftAction-&gt;blockSignals(false);
+     rightAction-&gt;blockSignals(false);
+     topAction-&gt;blockSignals(false);
+     bottomAction-&gt;blockSignals(false);
+
+     if (areaActions-&gt;isEnabled()) {
+         leftAction-&gt;setEnabled(areas &amp; Qt::LeftDockWidgetArea);
+         rightAction-&gt;setEnabled(areas &amp; Qt::RightDockWidgetArea);
+         topAction-&gt;setEnabled(areas &amp; Qt::TopDockWidgetArea);
+         bottomAction-&gt;setEnabled(areas &amp; Qt::BottomDockWidgetArea);
+     }
+
+     tabMenu-&gt;clear();
+     splitHMenu-&gt;clear();
+     splitVMenu-&gt;clear();
+     QList&lt;ColorSwatch*&gt; dock_list = qFindChildren&lt;ColorSwatch*&gt;(mainWindow);
+     foreach (ColorSwatch *dock, dock_list) {
+<span class="comment"> //</span>        if (!dock-&gt;isVisible() || dock-&gt;isFloating())
+<span class="comment"> //</span>            continue;
+         tabMenu-&gt;addAction(dock-&gt;objectName());
+         splitHMenu-&gt;addAction(dock-&gt;objectName());
+         splitVMenu-&gt;addAction(dock-&gt;objectName());
+     }
+ }
+
+ void ColorSwatch::splitInto(QAction *action)
+ {
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     QList&lt;ColorSwatch*&gt; dock_list = qFindChildren&lt;ColorSwatch*&gt;(mainWindow);
+     ColorSwatch *target = 0;
+     foreach (ColorSwatch *dock, dock_list) {
+         if (action-&gt;text() == dock-&gt;objectName()) {
+             target = dock;
+             break;
+         }
+     }
+     if (target == 0)
+         return;
+
+     Qt::Orientation o = action-&gt;parent() == splitHMenu
+                         ? Qt::Horizontal : Qt::Vertical;
+     mainWindow-&gt;splitDockWidget(target, this, o);
+ }
+
+ void ColorSwatch::tabInto(QAction *action)
+ {
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     QList&lt;ColorSwatch*&gt; dock_list = qFindChildren&lt;ColorSwatch*&gt;(mainWindow);
+     ColorSwatch *target = 0;
+     foreach (ColorSwatch *dock, dock_list) {
+         if (action-&gt;text() == dock-&gt;objectName()) {
+             target = dock;
+             break;
+         }
+     }
+     if (target == 0)
+         return;
+
+     mainWindow-&gt;tabifyDockWidget(target, this);
+ }
+
+ void ColorSwatch::contextMenuEvent(QContextMenuEvent *event)
+ {
+     event-&gt;accept();
+     menu-&gt;exec(event-&gt;globalPos());
+ }
+
+ void ColorSwatch::allow(Qt::DockWidgetArea area, bool a)
+ {
+     Qt::DockWidgetAreas areas = allowedAreas();
+     areas = a ? areas | area : areas &amp; ~area;
+     setAllowedAreas(areas);
+
+     if (areaActions-&gt;isEnabled()) {
+         leftAction-&gt;setEnabled(areas &amp; Qt::LeftDockWidgetArea);
+         rightAction-&gt;setEnabled(areas &amp; Qt::RightDockWidgetArea);
+         topAction-&gt;setEnabled(areas &amp; Qt::TopDockWidgetArea);
+         bottomAction-&gt;setEnabled(areas &amp; Qt::BottomDockWidgetArea);
+     }
+ }
+
+ void ColorSwatch::place(Qt::DockWidgetArea area, bool p)
+ {
+     if (!p) return;
+
+     QMainWindow *mainWindow = qobject_cast&lt;QMainWindow *&gt;(parentWidget());
+     mainWindow-&gt;addDockWidget(area, this);
+
+     if (allowedAreasActions-&gt;isEnabled()) {
+         allowLeftAction-&gt;setEnabled(area != Qt::LeftDockWidgetArea);
+         allowRightAction-&gt;setEnabled(area != Qt::RightDockWidgetArea);
+         allowTopAction-&gt;setEnabled(area != Qt::TopDockWidgetArea);
+         allowBottomAction-&gt;setEnabled(area != Qt::BottomDockWidgetArea);
+     }
+ }
+
+ void ColorSwatch::setCustomSizeHint(const QSize &amp;size)
+ {
+     if (ColorDock *dock = qobject_cast&lt;ColorDock*&gt;(widget()))
+         dock-&gt;setCustomSizeHint(size);
+ }
+
+ void ColorSwatch::changeClosable(bool on)
+ { setFeatures(on ? features() | DockWidgetClosable : features() &amp; ~DockWidgetClosable); }
+
+ void ColorSwatch::changeMovable(bool on)
+ { setFeatures(on ? features() | DockWidgetMovable : features() &amp; ~DockWidgetMovable); }
+
+ void ColorSwatch::changeFloatable(bool on)
+ { setFeatures(on ? features() | DockWidgetFloatable : features() &amp; ~DockWidgetFloatable); }
+
+ void ColorSwatch::changeFloating(bool floating)
+ { setFloating(floating); }
+
+ void ColorSwatch::allowLeft(bool a)
+ { allow(Qt::LeftDockWidgetArea, a); }
+
+ void ColorSwatch::allowRight(bool a)
+ { allow(Qt::RightDockWidgetArea, a); }
+
+ void ColorSwatch::allowTop(bool a)
+ { allow(Qt::TopDockWidgetArea, a); }
+
+ void ColorSwatch::allowBottom(bool a)
+ { allow(Qt::BottomDockWidgetArea, a); }
+
+ void ColorSwatch::placeLeft(bool p)
+ { place(Qt::LeftDockWidgetArea, p); }
+
+ void ColorSwatch::placeRight(bool p)
+ { place(Qt::RightDockWidgetArea, p); }
+
+ void ColorSwatch::placeTop(bool p)
+ { place(Qt::TopDockWidgetArea, p); }
+
+ void ColorSwatch::placeBottom(bool p)
+ { place(Qt::BottomDockWidgetArea, p); }
+
+ void ColorSwatch::changeVerticalTitleBar(bool on)
+ {
+     setFeatures(on ? features() | DockWidgetVerticalTitleBar
+                     : features() &amp; ~DockWidgetVerticalTitleBar);
+ }
+
+ #include &quot;colorswatch.moc&quot;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

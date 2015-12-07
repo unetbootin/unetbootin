@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/stylesheet.qdoc -->
+<head>
+  <title>Qt 4.4: Customizing Qt Widgets Using Style Sheets</title>
+  <link rel="prev" href="stylesheet-designer.html" />
+  <link rel="contents" href="stylesheet.html" />
+  <link rel="next" href="stylesheet-reference.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="stylesheet-designer.html">Qt Designer Integration</a>]
+[<a href="stylesheet.html">Contents</a>]
+[Next: <a href="stylesheet-reference.html">Qt Style Sheets Reference</a>]
+</p>
+<h1 class="title">Customizing Qt Widgets Using Style Sheets<br /><span class="subtitle"></span>
+</h1>
+<p>When using style sheets, every widget is treated as a box with four concentric rectangles: the margin rectangle, the border rectangle, the padding rectangle, and the content rectangle. The box model describes this in further detail.</p>
+<a name="box-model"></a><a name="the-box-model"></a>
+<h2>The Box Model</h2>
+<p>The four concentric rectangles appear conceptually as below:</p>
+<p align="center"><img src="images/stylesheet-boxmodel.png" /></p><ul>
+<li>The margin falls outside the border.</li>
+<li>The border is drawn between the margin and the padding.</li>
+<li>The padding falls inside the border, between the border and the actual contents.</li>
+<li>The content is what is left from the original widget or subcontrol once we have removed the margin, the border, and the padding.</li>
+</ul>
+<p>The <a href="stylesheet-reference.html#margin-prop">margin</a>, <a href="stylesheet-reference.html#border-width-prop">border-width</a>, and <a href="stylesheet-reference.html#padding-prop">padding</a> properties all default to zero. In that case, all four rectangles (<tt>margin</tt>, <tt>border</tt>, <tt>padding</tt>, and <tt>content</tt>) coincide exactly.</p>
+<p>You can specify a background for the widget using the <a href="stylesheet-reference.html#background-image-prop">background-image</a> property. By default, the background-image is drawn only for the area inside the border. This can be changed using the <a href="stylesheet-reference.html#background-clip-prop">background-clip</a> property. You can use <a href="stylesheet-reference.html#background-repeat-prop">background-repeat</a> and <a href="stylesheet-reference.html#background-origin-prop">background-origin</a> to control the repetition and origin of the background image.</p>
+<p>A background-image does not scale with the size of the widget. To provide a &quot;skin&quot; or background that scales along with the widget size, one must use <a href="stylesheet-reference.html#border-image-prop">border-image</a>. Since the border-image property provides an alternate background, it is not required to specify a background-image when border-image is specified. In the case, when both of them are specified, the border-image draws over the background-image.</p>
+<p>In addition, the <a href="stylesheet-reference.html#image-prop">image</a> property may be used to draw an image over the border-image. The image specified does not tile or stretch and when its size does not match the size of the widget, it's alignment is specified using the <a href="stylesheet-reference.html#image-position-prop">image-position</a> property. Unlike background-image and border-image, one may specify a SVG in the image property, in which case the image is scaled automatically according to the widget size.</p>
+<p>The steps to render a rule are as follows:</p>
+<ul>
+<li>Set clip for entire rendering operation (border-radius)</li>
+<li>Draw the background (background-image)</li>
+<li>Draw the border (border-image, border)</li>
+<li>Draw overlay image (image)</li>
+</ul>
+<a name="sub-controls"></a><a name="sub-controls"></a>
+<h2>Sub-controls</h2>
+<p>A widget is considered as a heirarchy (tree) of subcontrols drawn on top of each other. For example, the <a href="qcombobox.html">QComboBox</a> draws the drop-down sub-control followed by the down-arrow sub-control. A <a href="qcombobox.html">QComboBox</a> is thus rendered as follows:</p>
+<ul>
+<li>Render the <a href="qcombobox.html">QComboBox</a> { } rule</li>
+<li>Render the QComboBox::drop-down { } rule</li>
+<li>Render the QComboBox::down-arrow { } rule</li>
+</ul>
+<p>Sub-controls share a parent-child relationship. In the case of <a href="qcombobox.html">QComboBox</a>, the parent of down-arrow is the drop-down and the parent of drop-down is the widget itself. Sub-controls are positioned within their parent using the <a href="stylesheet-reference.html#subcontrol-position-prop">subcontrol-position</a> and <a href="stylesheet-reference.html#subcontrol-origin-prop">subcontrol-origin</a> properties.</p>
+<p>Once positioned, sub-controls can be styled using the the <a href="#box-model">box model</a>.</p>
+<p>
+[Previous: <a href="stylesheet-designer.html">Qt Designer Integration</a>]
+[<a href="stylesheet.html">Contents</a>]
+[Next: <a href="stylesheet-reference.html">Qt Style Sheets Reference</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

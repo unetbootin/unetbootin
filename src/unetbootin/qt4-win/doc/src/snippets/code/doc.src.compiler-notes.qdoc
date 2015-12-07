@@ -1,0 +1,10 @@
+//! [0]
+    QTDIR=C:\Progra~1\Qt
+//! [0]
+
+
+//! [1]
+       /usr/vacpp/bin/makeC++SharedLib -o shr1.o cplussource1.o
+//! [1]
+
+

@@ -1,0 +1,66 @@
+//! [0]
+    Q3PtrDict<char> fields; // void* keys, char* values
+
+    QLineEdit *le1 = new QLineEdit( this );
+    le1->setText( "Simpson" );
+    QLineEdit *le2 = new QLineEdit( this );
+    le2->setText( "Homer" );
+    QLineEdit *le3 = new QLineEdit( this );
+    le3->setText( "45" );
+
+    fields.insert( le1, "Surname" );
+    fields.insert( le2, "Forename" );
+    fields.insert( le3, "Age" );
+
+    Q3PtrDictIterator<char> it( fields );
+    for( ; it.current(); ++it )
+	cout << it.current() << endl;
+    cout << endl;
+
+    if ( fields[le1] ) // Prints "Surname: Simpson"
+	cout << fields[le1] << ": " << le1->text() << endl; 
+    if ( fields[le2] ) // Prints "Forename: Homer"
+	cout << fields[le2] << ": " << le2->text() << endl; 
+
+    fields.remove( le1 ); // Removes le1 from the dictionary
+    cout << le1->text() << endl; // Prints "Simpson"
+//! [0]
+
+
+//! [1]
+	Q3PtrDict<ItemType> dict;
+	    ...
+	if ( dict.find( key ) )
+	    dict.remove( key );
+	dict.insert( key, item );
+//! [1]
+
+
+//! [2]
+    Q3PtrDict<char> fields;
+
+    QLineEdit *le1 = new QLineEdit( this );
+    le1->setText( "Simpson" );
+    QLineEdit *le2 = new QLineEdit( this );
+    le2->setText( "Homer" );
+    QLineEdit *le3 = new QLineEdit( this );
+    le3->setText( "45" );
+
+    fields.insert( le1, "Surname" );
+    fields.insert( le2, "Forename" );
+    fields.insert( le3, "Age" );
+
+    Q3PtrDictIterator<char> it( fields );
+    for( ; it.current(); ++it ) {
+	QLineEdit *le = (QLineEdit)it.currentKey();
+	cout << it.current() << ": " << le->text() << endl;
+    }
+    cout << endl;
+
+    // Output (random order):
+    //	Forename: Homer
+    //	Age: 45
+    //	Surname: Simpson
+//! [2]
+
+

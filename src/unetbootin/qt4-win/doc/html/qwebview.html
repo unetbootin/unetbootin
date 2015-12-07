@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/3rdparty/webkit/WebKit/qt/Api/qwebview.cpp -->
+<head>
+  <title>Qt 4.4: QWebView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWebView Class Reference<br /><span class="small-subtitle">[<a href="qtwebkit.html">QtWebKit</a> module]</span>
+</h1>
+<p>The QWebView class provides a widget that is used to view and edit web documents. <a href="#details">More...</a></p>
+<pre> #include &lt;QWebView&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qwebview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qwebview.html#icon-prop">icon</a></b> : const QIcon</li>
+<li><div class="fn"/><b><a href="qwebview.html#modified-prop">modified</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="qwebview.html#selectedText-prop">selectedText</a></b> : const QString</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qwebview.html#textSizeMultiplier-prop">textSizeMultiplier</a></b> : qreal</li>
+<li><div class="fn"/><b><a href="qwebview.html#title-prop">title</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="qwebview.html#url-prop">url</a></b> : QUrl</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwebview.html#QWebView">QWebView</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qwebview.html#dtor.QWebView">~QWebView</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qwebview.html#findText">findText</a></b> ( const QString &amp; <i>subString</i>, QWebPage::FindFlags <i>options</i> = 0 )</li>
+<li><div class="fn"/>QWebHistory * <b><a href="qwebview.html#history">history</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qwebview.html#icon-prop">icon</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwebview.html#modified-prop">isModified</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#load">load</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#load-2">load</a></b> ( const QNetworkRequest &amp; <i>request</i>, QNetworkAccessManager::Operation <i>operation</i> = QNetworkAccessManager::GetOperation, const QByteArray &amp; <i>body</i> = QByteArray() )</li>
+<li><div class="fn"/>QWebPage * <b><a href="qwebview.html#page">page</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qwebview.html#pageAction">pageAction</a></b> ( QWebPage::WebAction <i>action</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qwebview.html#selectedText-prop">selectedText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#setContent">setContent</a></b> ( const QByteArray &amp; <i>data</i>, const QString &amp; <i>mimeType</i> = QString(), const QUrl &amp; <i>baseUrl</i> = QUrl() )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#setHtml">setHtml</a></b> ( const QString &amp; <i>html</i>, const QUrl &amp; <i>baseUrl</i> = QUrl() )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#setPage">setPage</a></b> ( QWebPage * <i>page</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#textSizeMultiplier-prop">setTextSizeMultiplier</a></b> ( qreal <i>factor</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#url-prop">setUrl</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>QWebSettings * <b><a href="qwebview.html#settings">settings</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qwebview.html#textSizeMultiplier-prop">textSizeMultiplier</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebview.html#title-prop">title</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#triggerPageAction">triggerPageAction</a></b> ( QWebPage::WebAction <i>action</i>, bool <i>checked</i> = false )</li>
+<li><div class="fn"/>QUrl <b><a href="qwebview.html#url-prop">url</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwebview.html#back">back</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#forward">forward</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#print">print</a></b> ( QPrinter * <i>printer</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#reload">reload</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#stop">stop</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwebview.html#iconChanged">iconChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#linkClicked">linkClicked</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#loadFinished">loadFinished</a></b> ( bool <i>ok</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#loadProgress">loadProgress</a></b> ( int <i>progress</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#loadStarted">loadStarted</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#selectionChanged">selectionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#statusBarMessage">statusBarMessage</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#titleChanged">titleChanged</a></b> ( const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebview.html#urlChanged">urlChanged</a></b> ( const QUrl &amp; <i>url</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QWebView * <b><a href="qwebview.html#createWindow">createWindow</a></b> ( QWebPage::WebWindowType <i>type</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWebView class provides a widget that is used to view and edit web documents.</p>
+<p>QWebView is the main widget component of the <a href="qtwebkit.html">QtWebKit</a> web browsing module. It can be used in various applications to display web content live from the Internet.</p>
+<p>The image below shows QWebView previewed in <i>Qt Designer</i> with the Trolltech website.</p>
+<p align="center"><img src="images/qwebview-url.png" /></p><p>A web site can be loaded onto QWebView with the <a href="qwebview.html#load">load</a>() function. Like all Qt Widgets, the <a href="qwidget.html#show">show</a>() function must be invoked in order to display QWebView. The snippet below illustrates this:</p>
+<pre>     QWebView *view = new QWebView(parent);
+     view-&gt;load(QUrl(&quot;http:<span class="comment">//</span>www.trolltech.com/&quot;));
+     view-&gt;show();</pre>
+<p>Alternatively, <a href="qwebview.html#url-prop">setUrl</a>() can also be used to load a web site. If you have the HTML content readily available, you can use <a href="qwebview.html#setHtml">setHtml</a>() instead.</p>
+<p>The <a href="qwebview.html#loadStarted">loadStarted</a>() signal is emitted when the view begins loading. The <a href="qwebview.html#loadProgress">loadProgress</a>() signal, on the other hand, is emitted whenever an element of the web view completes loading, such as an embedded image, a script, etc. Finally, the <a href="qwebview.html#loadFinished">loadFinished</a>() signal is emitted when the view has loaded completely. It's argument - either <tt>true</tt> or <tt>false</tt> - indicates load success or failure.</p>
+<p>The <a href="qwebview.html#page">page</a>() function returns a pointer to the web page object. See <a href="#elements-of-qwebview">Elements of QWebView</a> for an explanation of how the web page is related to the view. To modify your web view's settings, you can access the <a href="qwebsettings.html">QWebSettings</a> object with the <a href="qwebview.html#settings">settings</a>() function. With <a href="qwebsettings.html">QWebSettings</a>, you can change the default fonts, enable or disable features such as JavaScript and plugins.</p>
+<p>The title of an HTML document can be accessed with the <a href="qwebview.html#title-prop">title</a>() property. Additionally, a web site may also specify an icon, which can be accessed using the <a href="qwebview.html#icon-prop">icon</a>() property. If the title or the icon changes, the corresponding <a href="qwebview.html#titleChanged">titleChanged</a>() and <a href="qwebview.html#iconChanged">iconChanged</a>() signals will be emitted. The <a href="qwebview.html#textSizeMultiplier-prop">textSizeMultiplier</a>() property can be used to change the overall size of the text displayed in the web view.</p>
+<p>If you require a custom context menu, you can implement it by reimplementing <a href="qwidget.html#contextMenuEvent">contextMenuEvent()</a> and populating your <a href="qmenu.html">QMenu</a> with the actions obtained from <a href="qwebview.html#pageAction">pageAction</a>(). More functionality such as reloading the view, copying selected text to the clipboard, or pasting into the view, is also encapsulated within the <a href="qaction.html">QAction</a> objects returned by <a href="qwebview.html#pageAction">pageAction</a>(). These actions can be programmatically triggered using <a href="qwebview.html#triggerPageAction">triggerPageAction</a>(). Alternatively, the actions can be added to a toolbar or a menu directly. QWebView maintains the state of the returned actions but allows modification of action properties such as <a href="qaction.html#text-prop">text</a> or <a href="qaction.html#icon-prop">icon</a>.</p>
+<p>A QWebView can be printed onto a <a href="qprinter.html">QPrinter</a> using the <a href="qwebview.html#print">print</a>() function. This function is marked as a slot and can be conveniently connected to <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>'s <a href="qprintpreviewdialog.html#paintRequested">paintRequested()</a> signal.</p>
+<p>If you want to provide support for web sites that allow the user to open new windows, such as pop-up windows, you can subclass QWebView and reimplement the <a href="qwebview.html#createWindow">createWindow</a>() function.</p>
+<a name="elements-of-qwebview"></a>
+<h3>Elements of QWebView</h3>
+<p>QWebView consists of other objects such as <a href="qwebframe.html">QWebFrame</a> and <a href="qwebpage.html">QWebPage</a>. The flowchart below shows these elements are related.</p>
+<p align="center"><img src="images/qwebview-diagram.png" /></p><p><b>Note:</b> It is possible to use <a href="qwebpage.html">QWebPage</a> and <a href="qwebframe.html">QWebFrame</a>, without using QWebView, if you do not require <a href="qwidget.html">QWidget</a> attributes.</p>
+<p>See also <a href="webkit-previewer.html">Previewer Example</a> and <a href="demos-browser.html">Browser</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="icon-prop"></a>icon : const <a href="qicon.html">QIcon</a></h3>
+<p>This property holds the icon associated with the web page currently viewed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QIcon icon () const</b></li>
+</ul>
+<p>See also <a href="qwebview.html#iconChanged">iconChanged</a>().</p>
+<h3 class="fn"><a name="modified-prop"></a>modified : const bool</h3>
+<p>This property holds whether the document was modified by the user.</p>
+<p>Parts of HTML documents can be editable for example through the <tt>contenteditable</tt> attribute on HTML elements.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isModified () const</b></li>
+</ul>
+<h3 class="fn"><a name="selectedText-prop"></a>selectedText : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the text currently selected.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString selectedText () const</b></li>
+</ul>
+<p>See also <a href="qwebview.html#findText">findText</a>() and <a href="qwebview.html#selectionChanged">selectionChanged</a>().</p>
+<h3 class="fn"><a name="textSizeMultiplier-prop"></a>textSizeMultiplier : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the scaling factor for all text in the frame.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal textSizeMultiplier () const</b></li>
+<li><div class="fn"/><b>void setTextSizeMultiplier ( qreal <i>factor</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="title-prop"></a>title : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the title of the web page currently viewed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString title () const</b></li>
+</ul>
+<p>See also <a href="qwebview.html#titleChanged">titleChanged</a>().</p>
+<h3 class="fn"><a name="url-prop"></a>url : <a href="qurl.html">QUrl</a></h3>
+<p>This property holds the url of the web page currently viewed.</p>
+<p>Setting this property clears the view and loads the url.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QUrl url () const</b></li>
+<li><div class="fn"/><b>void setUrl ( const QUrl &amp; <i>url</i> )</b></li>
+</ul>
+<p>See also <a href="qwebview.html#load">load</a>() and <a href="qwebview.html#urlChanged">urlChanged</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWebView"></a>QWebView::QWebView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty <a href="qwebview.html">QWebView</a> with parent <i>parent</i>.</p>
+<p>See also <a href="qwebview.html#load">load</a>().</p>
+<h3 class="fn"><a name="dtor.QWebView"></a>QWebView::~QWebView ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the web view.</p>
+<h3 class="fn"><a name="back"></a>void QWebView::back ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot that loads the previous document in the list of documents built by navigating links. Does nothing if there is no previous document.</p>
+<p>It is equivalent to</p>
+<pre>     view-&gt;page()-&gt;triggerAction(QWebPage::GoBack);</pre>
+<p>See also <a href="qwebview.html#forward">forward</a>() and <a href="qwebview.html#pageAction">pageAction</a>().</p>
+<h3 class="fn"><a name="createWindow"></a>QWebView * QWebView::createWindow ( <a href="qwebpage.html#WebWindowType-enum">QWebPage::WebWindowType</a> <i>type</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called whenever <a href="examples.html#webkit">WebKit</a> wants to create a new window of the given <i>type</i>, for example as a result of a JavaScript request to open a document in a new window.</p>
+<p>See also <a href="qwebpage.html#createWindow">QWebPage::createWindow</a>().</p>
+<h3 class="fn"><a name="findText"></a>bool QWebView::findText ( const <a href="qstring.html">QString</a> &amp; <i>subString</i>, <a href="qwebpage.html#FindFlag-enum">QWebPage::FindFlags</a> <i>options</i> = 0 )</h3>
+<p>Finds the next occurrence of the string, <i>subString</i>, in the page, using the given <i>options</i>. Returns true of <i>subString</i> was found and selects the match visually; otherwise returns false.</p>
+<p>See also <a href="qwebview.html#selectedText-prop">selectedText</a>() and <a href="qwebview.html#selectionChanged">selectionChanged</a>().</p>
+<h3 class="fn"><a name="forward"></a>void QWebView::forward ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot that loads the next document in the list of documents built by navigating links. Does nothing if there is no next document.</p>
+<p>It is equivalent to</p>
+<pre>     view-&gt;page()-&gt;triggerAction(QWebPage::GoForward);</pre>
+<p>See also <a href="qwebview.html#back">back</a>() and <a href="qwebview.html#pageAction">pageAction</a>().</p>
+<h3 class="fn"><a name="history"></a><a href="qwebhistory.html">QWebHistory</a> * QWebView::history () const</h3>
+<p>Returns a pointer to the view's history of navigated web pages.</p>
+<p>It is equivalent to</p>
+<pre>     view-&gt;page()-&gt;history();</pre>
+<h3 class="fn"><a name="iconChanged"></a>void QWebView::iconChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the icon of the page is loaded or changes.</p>
+<p>See also <a href="qwebview.html#icon-prop">icon</a>().</p>
+<h3 class="fn"><a name="linkClicked"></a>void QWebView::linkClicked ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the user clicks on a link and the page's linkDelegationPolicy property is set to delegate the link handling for the specified <i>url</i>.</p>
+<p>See also <a href="qwebpage.html#linkDelegationPolicy-prop">QWebPage::linkDelegationPolicy</a>().</p>
+<h3 class="fn"><a name="load"></a>void QWebView::load ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )</h3>
+<p>Loads the specified <i>url</i> and displays it.</p>
+<p><b>Note:</b> The view remains the same until enough data has arrived to display the new <i>url</i>.</p>
+<p>See also <a href="qwebview.html#url-prop">setUrl</a>(), <a href="qwebview.html#url-prop">url</a>(), and <a href="qwebview.html#urlChanged">urlChanged</a>().</p>
+<h3 class="fn"><a name="load-2"></a>void QWebView::load ( const <a href="qnetworkrequest.html">QNetworkRequest</a> &amp; <i>request</i>, <a href="qnetworkaccessmanager.html#Operation-enum">QNetworkAccessManager::Operation</a> <i>operation</i> = QNetworkAccessManager::GetOperation, const <a href="qbytearray.html">QByteArray</a> &amp; <i>body</i> = QByteArray() )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Loads a network request, <i>request</i>, using the method specified in <i>operation</i>.</p>
+<p><i>body</i> is optional and is only used for POST operations.</p>
+<p><b>Note:</b> The view remains the same until enough data has arrived to display the new url.</p>
+<p>See also <a href="qwebview.html#url-prop">url</a>() and <a href="qwebview.html#urlChanged">urlChanged</a>().</p>
+<h3 class="fn"><a name="loadFinished"></a>void QWebView::loadFinished ( bool <i>ok</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a load of the page is finished. <i>ok</i> will indicate whether the load was successful or any error occurred.</p>
+<p>See also <a href="qwebview.html#loadStarted">loadStarted</a>().</p>
+<h3 class="fn"><a name="loadProgress"></a>void QWebView::loadProgress ( int <i>progress</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted every time an element in the web page completes loading and the overall loading progress advances.</p>
+<p>This signal tracks the progress of all child frames.</p>
+<p>The current value is provided by <i>progress</i> and scales from 0 to 100, which is the default range of <a href="qprogressbar.html">QProgressBar</a>.</p>
+<p>See also <a href="qwebview.html#loadStarted">loadStarted</a>() and <a href="qwebview.html#loadFinished">loadFinished</a>().</p>
+<h3 class="fn"><a name="loadStarted"></a>void QWebView::loadStarted ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a new load of the page is started.</p>
+<p>See also <a href="qwebview.html#loadProgress">loadProgress</a>() and <a href="qwebview.html#loadFinished">loadFinished</a>().</p>
+<h3 class="fn"><a name="page"></a><a href="qwebpage.html">QWebPage</a> * QWebView::page () const</h3>
+<p>Returns a pointer to the underlying web page.</p>
+<p>See also <a href="qwebview.html#setPage">setPage</a>().</p>
+<h3 class="fn"><a name="pageAction"></a><a href="qaction.html">QAction</a> * QWebView::pageAction ( <a href="qwebpage.html#WebAction-enum">QWebPage::WebAction</a> <i>action</i> ) const</h3>
+<p>Returns a pointer to a <a href="qaction.html">QAction</a> that encapsulates the specified web action <i>action</i>.</p>
+<h3 class="fn"><a name="print"></a>void QWebView::print ( <a href="qprinter.html">QPrinter</a> * <i>printer</i> ) const&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Prints the main frame to the given <i>printer</i>.</p>
+<p>See also <a href="qwebframe.html#print">QWebFrame::print</a>() and <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>.</p>
+<h3 class="fn"><a name="reload"></a>void QWebView::reload ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Reloads the current document.</p>
+<p>See also <a href="qwebview.html#stop">stop</a>(), <a href="qwebview.html#pageAction">pageAction</a>(), and <a href="qwebview.html#loadStarted">loadStarted</a>().</p>
+<h3 class="fn"><a name="selectionChanged"></a>void QWebView::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the selection changes.</p>
+<p>See also <a href="qwebview.html#selectedText-prop">selectedText</a>().</p>
+<h3 class="fn"><a name="setContent"></a>void QWebView::setContent ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, const <a href="qstring.html">QString</a> &amp; <i>mimeType</i> = QString(), const <a href="qurl.html">QUrl</a> &amp; <i>baseUrl</i> = QUrl() )</h3>
+<p>Sets the content of the web view to the specified content <i>data</i>. If the <i>mimeType</i> argument is empty it is currently assumed that the content is HTML but in future versions we may introduce auto-detection.</p>
+<p>External objects referenced in the content are located relative to <i>baseUrl</i>.</p>
+<p>See also <a href="qwebview.html#load">load</a>(), <a href="qwebview.html#setHtml">setHtml</a>(), and <a href="qwebframe.html#toHtml">QWebFrame::toHtml</a>().</p>
+<h3 class="fn"><a name="setHtml"></a>void QWebView::setHtml ( const <a href="qstring.html">QString</a> &amp; <i>html</i>, const <a href="qurl.html">QUrl</a> &amp; <i>baseUrl</i> = QUrl() )</h3>
+<p>Sets the content of the web view to the specified <i>html</i>.</p>
+<p>External objects referenced in the HTML document are located relative to <i>baseUrl</i>.</p>
+<p>When using this method, <a href="examples.html#webkit">WebKit</a> assumes that external resources such as JavaScript programs or style sheets are encoded in UTF-8 unless otherwise specified. For example, the encoding of an external script can be specified through the charset attribute of the HTML script tag. Alternatively, the encoding can also be specified by the web server.</p>
+<p>See also <a href="qwebview.html#load">load</a>(), <a href="qwebview.html#setContent">setContent</a>(), and <a href="qwebframe.html#toHtml">QWebFrame::toHtml</a>().</p>
+<h3 class="fn"><a name="setPage"></a>void QWebView::setPage ( <a href="qwebpage.html">QWebPage</a> * <i>page</i> )</h3>
+<p>Makes <i>page</i> the new web page of the web view.</p>
+<p>The parent <a href="qobject.html">QObject</a> of the provided page remains the owner of the object. If the current document is a child of the web view, it will be deleted.</p>
+<p>See also <a href="qwebview.html#page">page</a>().</p>
+<h3 class="fn"><a name="settings"></a><a href="qwebsettings.html">QWebSettings</a> * QWebView::settings () const</h3>
+<p>Returns a pointer to the view/page specific settings object.</p>
+<p>It is equivalent to</p>
+<pre>     view-&gt;page()-&gt;settings();</pre>
+<p>See also <a href="qwebsettings.html#globalSettings">QWebSettings::globalSettings</a>().</p>
+<h3 class="fn"><a name="statusBarMessage"></a>void QWebView::statusBarMessage ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the statusbar <i>text</i> is changed by the page.</p>
+<h3 class="fn"><a name="stop"></a>void QWebView::stop ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot that stops loading the document.</p>
+<p>It is equivalent to</p>
+<pre>     view-&gt;page()-&gt;triggerAction(QWebPage::Stop);</pre>
+<p>See also <a href="qwebview.html#reload">reload</a>(), <a href="qwebview.html#pageAction">pageAction</a>(), and <a href="qwebview.html#loadFinished">loadFinished</a>().</p>
+<h3 class="fn"><a name="titleChanged"></a>void QWebView::titleChanged ( const <a href="qstring.html">QString</a> &amp; <i>title</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the <i>title</i> of the main frame changes.</p>
+<p>See also <a href="qwebview.html#title-prop">title</a>().</p>
+<h3 class="fn"><a name="triggerPageAction"></a>void QWebView::triggerPageAction ( <a href="qwebpage.html#WebAction-enum">QWebPage::WebAction</a> <i>action</i>, bool <i>checked</i> = false )</h3>
+<p>Triggers the specified <i>action</i>. If it is a checkable action the specified <i>checked</i> state is assumed.</p>
+<p>The following example triggers the copy action and therefore copies any selected text to the clipboard.</p>
+<pre>     view-&gt;triggerAction(QWebPage::Copy);</pre>
+<p>See also <a href="qwebview.html#pageAction">pageAction</a>().</p>
+<h3 class="fn"><a name="urlChanged"></a>void QWebView::urlChanged ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the <i>url</i> of the view changes.</p>
+<p>See also <a href="qwebview.html#url-prop">url</a>() and <a href="qwebview.html#load">load</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

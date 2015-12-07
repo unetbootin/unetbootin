@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3listview.cpp -->
+<head>
+  <title>Qt 4.4: Q3CheckListItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CheckListItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CheckListItem class provides checkable list view items. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CheckListItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3listviewitem.html">Q3ListViewItem</a>.</p>
+<ul>
+<li><a href="q3checklistitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3checklistitem.html#ToggleState-enum">ToggleState</a></b> { Off, NoChange, On }</li>
+<li><div class="fn"/>enum <b><a href="q3checklistitem.html#Type-enum">Type</a></b> { RadioButton, CheckBox, RadioButtonController, CheckBoxController }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem">Q3CheckListItem</a></b> ( Q3CheckListItem * <i>parent</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-2">Q3CheckListItem</a></b> ( Q3CheckListItem * <i>parent</i>, Q3ListViewItem * <i>after</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-3">Q3CheckListItem</a></b> ( Q3ListViewItem * <i>parent</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-4">Q3CheckListItem</a></b> ( Q3ListViewItem * <i>parent</i>, Q3ListViewItem * <i>after</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-5">Q3CheckListItem</a></b> ( Q3ListView * <i>parent</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-6">Q3CheckListItem</a></b> ( Q3ListView * <i>parent</i>, Q3ListViewItem * <i>after</i>, const QString &amp; <i>text</i>, Type <i>tt</i> = RadioButtonController )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-7">Q3CheckListItem</a></b> ( Q3ListViewItem * <i>parent</i>, const QString &amp; <i>text</i>, const QPixmap &amp; <i>p</i> )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#Q3CheckListItem-8">Q3CheckListItem</a></b> ( Q3ListView * <i>parent</i>, const QString &amp; <i>text</i>, const QPixmap &amp; <i>p</i> )</li>
+<li><div class="fn"/><b><a href="q3checklistitem.html#dtor.Q3CheckListItem">~Q3CheckListItem</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3checklistitem.html#isOn">isOn</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3checklistitem.html#isTristate">isTristate</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3checklistitem.html#paintCell">paintCell</a></b> ( QPainter * <i>p</i>, const QColorGroup &amp; <i>cg</i>, int <i>column</i>, int <i>width</i>, int <i>align</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3checklistitem.html#paintFocus">paintFocus</a></b> ( QPainter * <i>p</i>, const QColorGroup &amp; <i>cg</i>, const QRect &amp; <i>r</i> )</li>
+<li><div class="fn"/>virtual int <b><a href="q3checklistitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3checklistitem.html#setOn">setOn</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="q3checklistitem.html#setState">setState</a></b> ( ToggleState <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="q3checklistitem.html#setTristate">setTristate</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>ToggleState <b><a href="q3checklistitem.html#state">state</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3checklistitem.html#text">text</a></b> () const</li>
+<li><div class="fn"/>Type <b><a href="q3checklistitem.html#type">type</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>54 public functions inherited from <a href="q3listviewitem.html#public-functions">Q3ListViewItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3checklistitem.html#activate">activate</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3checklistitem.html#stateChange">stateChange</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="q3checklistitem.html#turnOffChild">turnOffChild</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 protected functions inherited from <a href="q3listviewitem.html#protected-functions">Q3ListViewItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CheckListItem class provides checkable list view items.</p>
+<p>Q3CheckListItems are used in <a href="q3listview.html">Q3ListView</a>s to provide <a href="q3listviewitem.html">Q3ListViewItem</a>s that are checkboxes, radio buttons or controllers.</p>
+<p>Checkbox and controller check list items may be inserted at any level in a list view. Radio button check list items must be children of a controller check list item.</p>
+<p>The item can be checked or unchecked with <a href="q3checklistitem.html#setOn">setOn</a>(). Its type can be retrieved with <a href="q3checklistitem.html#type">type</a>() and its text retrieved with <a href="q3checklistitem.html#text">text</a>().</p>
+<p align="center"><img src="images/qlistviewitems.png" alt="List View Items" /></p><p>See also <a href="q3listviewitem.html">Q3ListViewItem</a> and <a href="q3listview.html">Q3ListView</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ToggleState-enum"></a>enum Q3CheckListItem::ToggleState</h3>
+<p>This enum specifies a <a href="q3checklistitem.html">Q3CheckListItem</a>'s toggle state.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::Off</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::NoChange</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::On</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="Type-enum"></a>enum Q3CheckListItem::Type</h3>
+<p>This enum type specifies a <a href="q3checklistitem.html">Q3CheckListItem</a>'s type:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::RadioButton</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::CheckBox</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::RadioButtonController</tt></td><td align="center" valign="top"><tt>Controller</tt></td></tr>
+<tr><td valign="top"><tt>Q3CheckListItem::CheckBoxController</tt></td><td align="center" valign="top">?</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CheckListItem"></a>Q3CheckListItem::Q3CheckListItem ( Q3CheckListItem * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, text <i>text</i> and of type <i>tt</i>. Note that a <tt>RadioButton</tt> must be the child of a <tt>RadioButtonController</tt>, otherwise it will not toggle.</p>
+<h3 class="fn"><a name="Q3CheckListItem-2"></a>Q3CheckListItem::Q3CheckListItem ( Q3CheckListItem * <i>parent</i>, <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>after</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, which is after <i>after</i> in the parent's list of children, and with text <i>text</i> and of type <i>tt</i>. Note that a <tt>RadioButton</tt> must be the child of a <tt>RadioButtonController</tt>, otherwise it will not toggle.</p>
+<h3 class="fn"><a name="Q3CheckListItem-3"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, text <i>text</i> and of type <i>tt</i>. Note that this item must <i>not</i> be a <tt>RadioButton</tt>. Radio buttons must be children of a <tt>RadioButtonController</tt>.</p>
+<h3 class="fn"><a name="Q3CheckListItem-4"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>parent</i>, <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>after</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, which is after <i>after</i> in the parent's list of children, with text <i>text</i> and of type <i>tt</i>. Note that this item must <i>not</i> be a <tt>RadioButton</tt>. Radio buttons must be children of a <tt>RadioButtonController</tt>.</p>
+<h3 class="fn"><a name="Q3CheckListItem-5"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, text <i>text</i> and of type <i>tt</i>. Note that <i>tt</i> must <i>not</i> be <tt>RadioButton</tt>. Radio buttons must be children of a <tt>RadioButtonController</tt>.</p>
+<h3 class="fn"><a name="Q3CheckListItem-6"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>after</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="q3checklistitem.html#Type-enum">Type</a> <i>tt</i> = RadioButtonController )</h3>
+<p>Constructs a checkable item with parent <i>parent</i>, which is after <i>after</i> in the parent's list of children, with text <i>text</i> and of type <i>tt</i>. Note that <i>tt</i> must <i>not</i> be <tt>RadioButton</tt>. Radio buttons must be children of a <tt>RadioButtonController</tt>.</p>
+<h3 class="fn"><a name="Q3CheckListItem-7"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>p</i> )</h3>
+<p>Constructs a <tt>RadioButtonController</tt> item with parent <i>parent</i>, text <i>text</i> and pixmap <i>p</i>.</p>
+<h3 class="fn"><a name="Q3CheckListItem-8"></a>Q3CheckListItem::Q3CheckListItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>p</i> )</h3>
+<p>Constructs a <tt>RadioButtonController</tt> item with parent <i>parent</i>, text <i>text</i> and pixmap <i>p</i>.</p>
+<h3 class="fn"><a name="dtor.Q3CheckListItem"></a>Q3CheckListItem::~Q3CheckListItem ()</h3>
+<p>Destroys the item, and all its children to any depth, freeing up all allocated resources.</p>
+<h3 class="fn"><a name="activate"></a>void Q3CheckListItem::activate ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Toggle check box or set radio button to on.</p>
+<p>Reimplemented from <a href="q3listviewitem.html#activate">Q3ListViewItem</a>.</p>
+<h3 class="fn"><a name="isOn"></a>bool Q3CheckListItem::isOn () const</h3>
+<p>Returns true if the item is toggled on; otherwise returns false.</p>
+<h3 class="fn"><a name="isTristate"></a>bool Q3CheckListItem::isTristate () const</h3>
+<p>Returns true if the item is tristate; otherwise returns false.</p>
+<p>See also <a href="q3checklistitem.html#setTristate">setTristate</a>().</p>
+<h3 class="fn"><a name="paintCell"></a>void Q3CheckListItem::paintCell ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, int <i>column</i>, int <i>width</i>, int <i>align</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Paints the item using the painter <i>p</i> and the color group <i>cg</i>. The item is in column <i>column</i>, has width <i>width</i> and has alignment <i>align</i>. (See <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> for valid alignments.)</p>
+<p>Reimplemented from <a href="q3listviewitem.html#paintCell">Q3ListViewItem</a>.</p>
+<h3 class="fn"><a name="paintFocus"></a>void Q3CheckListItem::paintFocus ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, const <a href="qrect.html">QRect</a> &amp; <i>r</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Draws the focus rectangle <i>r</i> using the color group <i>cg</i> on the painter <i>p</i>.</p>
+<p>Reimplemented from <a href="q3listviewitem.html#paintFocus">Q3ListViewItem</a>.</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CheckListItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 1.</p>
+<p>Make your derived classes return their own values for rtti(), and you can distinguish between list view items. You should use values greater than 1000, to allow for extensions to this class.</p>
+<p>Reimplemented from <a href="q3listviewitem.html#rtti">Q3ListViewItem</a>.</p>
+<h3 class="fn"><a name="setOn"></a>void Q3CheckListItem::setOn ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the button on if <i>b</i> is true, otherwise sets it off. Maintains radio button exclusivity.</p>
+<p>See also <a href="q3checklistitem.html#isOn">isOn</a>().</p>
+<h3 class="fn"><a name="setState"></a>void Q3CheckListItem::setState ( <a href="q3checklistitem.html#ToggleState-enum">ToggleState</a> <i>s</i> )</h3>
+<p>Sets the toggle state of the checklistitem to <i>s</i>. <i>s</i> can be <tt>Off</tt>, <tt>NoChange</tt> or <tt>On</tt>.</p>
+<p>Tristate can only be enabled for <tt>CheckBox</tt> or <tt>CheckBoxController</tt>, therefore the <tt>NoChange</tt> only applies to them.</p>
+<p>Setting the state to <tt>On</tt> or <tt>Off</tt> on a <tt>CheckBoxController</tt> will recursivly set the states of its children to the same state.</p>
+<p>Setting the state to <tt>NoChange</tt> on a <tt>CheckBoxController</tt> will make it recursivly recall the previous stored state of its children. If there was no previous stored state the children are all set to <tt>On</tt>.</p>
+<p>See also <a href="q3checklistitem.html#state">state</a>().</p>
+<h3 class="fn"><a name="setTristate"></a>void Q3CheckListItem::setTristate ( bool <i>b</i> )</h3>
+<p>Sets tristate to <i>b</i> if the <tt>Type</tt> is either a <tt>CheckBoxController</tt> or a <tt>CheckBox</tt>.</p>
+<p><tt>CheckBoxControllers</tt> are tristate by default.</p>
+<p>See also <a href="q3checklistitem.html#state">state</a>() and <a href="q3checklistitem.html#isTristate">isTristate</a>().</p>
+<h3 class="fn"><a name="state"></a><a href="q3checklistitem.html#ToggleState-enum">ToggleState</a> Q3CheckListItem::state () const</h3>
+<p>Returns the state of the item.</p>
+<p>See also <a href="q3checklistitem.html#setState">setState</a>() and <a href="q3checklistitem.html#ToggleState-enum">Q3CheckListItem::ToggleState</a>.</p>
+<h3 class="fn"><a name="stateChange"></a>void Q3CheckListItem::stateChange ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called when the item changes its state. <i>b</i> is true if the state is <tt>On</tt>; otherwise the state is <tt>Off</tt>. <tt>NoChange</tt> (if tristate is enabled and the type is either <tt>CheckBox</tt> or <tt>CheckBoxController</tt>) reports the same as <tt>Off</tt>, so use <a href="q3checklistitem.html#state">state</a>() to determine if the state is actually <tt>Off</tt> or <tt>NoChange</tt>.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3CheckListItem::text () const</h3>
+<p>Returns the item's text.</p>
+<h3 class="fn"><a name="turnOffChild"></a>void Q3CheckListItem::turnOffChild ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>If this is a <tt>RadioButtonController</tt> that has <tt>RadioButton</tt> children, turn off the child that is on.</p>
+<h3 class="fn"><a name="type"></a><a href="q3checklistitem.html#Type-enum">Type</a> Q3CheckListItem::type () const</h3>
+<p>Returns the type of this item.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

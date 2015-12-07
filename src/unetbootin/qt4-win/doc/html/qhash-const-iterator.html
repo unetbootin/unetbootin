@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qhash.cpp -->
+<head>
+  <title>Qt 4.4: const_iterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">const_iterator Class Reference<br /><span class="small-subtitle">(QHash::const_iterator)<br />[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QHash::const_iterator class provides an STL-style const iterator for <a href="qhash.html">QHash</a> and <a href="qmultihash.html">QMultiHash</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;<a href="qhash.html">QHash</a>&gt;</pre><ul>
+<li><a href="qhash-const-iterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qhash-const-iterator.html#const_iterator">const_iterator</a></b> ()</li>
+<li><div class="fn"/><b><a href="qhash-const-iterator.html#const_iterator-3">const_iterator</a></b> ( const iterator &amp; <i>other</i> )</li>
+<li><div class="fn"/>const Key &amp; <b><a href="qhash-const-iterator.html#key">key</a></b> () const</li>
+<li><div class="fn"/>const T &amp; <b><a href="qhash-const-iterator.html#value">value</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qhash-const-iterator.html#operator-not-eq">operator!=</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>const T &amp; <b><a href="qhash-const-iterator.html#operator-2a">operator*</a></b> () const</li>
+<li><div class="fn"/>const_iterator <b><a href="qhash-const-iterator.html#operator-2b">operator+</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>const_iterator &amp; <b><a href="qhash-const-iterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>const_iterator <b><a href="qhash-const-iterator.html#operator-2b-2b-2">operator++</a></b> ( int )</li>
+<li><div class="fn"/>const_iterator &amp; <b><a href="qhash-const-iterator.html#operator-2b-eq">operator+=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>const_iterator <b><a href="qhash-const-iterator.html#operator-">operator-</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>const_iterator &amp; <b><a href="qhash-const-iterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>const_iterator <b><a href="qhash-const-iterator.html#operator---2">operator--</a></b> ( int )</li>
+<li><div class="fn"/>const_iterator &amp; <b><a href="qhash-const-iterator.html#operator--eq">operator-=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>const T * <b><a href="qhash-const-iterator.html#operator--gt">operator-&gt;</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qhash-const-iterator.html#operator-eq-eq">operator==</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHash::const_iterator class provides an STL-style const iterator for <a href="qhash.html">QHash</a> and <a href="qmultihash.html">QMultiHash</a>.</p>
+<p><a href="qhash.html">QHash</a> features both <a href="containers.html#stl-style-iterators">STL-style iterators</a> and <a href="containers.html#java-style-iterators">Java-style iterators</a>. The STL-style iterators are more low-level and more cumbersome to use; on the other hand, they are slightly faster and, for developers who already know STL, have the advantage of familiarity.</p>
+<p><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator allows you to iterate over a <a href="qhash.html">QHash</a> (or a <a href="qmultihash.html">QMultiHash</a>). If you want to modify the <a href="qhash.html">QHash</a> as you iterate over it, you must use <a href="qhash-iterator.html">QHash::iterator</a> instead. It is generally good practice to use QHash::const_iterator on a non-const <a href="qhash.html">QHash</a> as well, unless you need to change the <a href="qhash.html">QHash</a> through the iterator. Const iterators are slightly faster, and can improve code readability.</p>
+<p>The default QHash::const_iterator constructor creates an uninitialized iterator. You must initialize it using a <a href="qhash.html">QHash</a> function like <a href="qhash.html#constBegin">QHash::constBegin</a>(), <a href="qhash.html#constEnd">QHash::constEnd</a>(), or <a href="qhash.html#find">QHash::find</a>() before you can start iterating. Here's a typical loop that prints all the (key, value) pairs stored in a hash:</p>
+<pre>         QHash&lt;QString, int&gt; hash;
+         hash.insert(&quot;January&quot;, 1);
+         hash.insert(&quot;February&quot;, 2);
+         ...
+         hash.insert(&quot;December&quot;, 12);
+
+         QHash&lt;QString, int&gt;::const_iterator i;
+         for (i = hash.constBegin(); i != hash.constEnd(); ++i)
+             cout &lt;&lt; i.key() &lt;&lt; &quot;: &quot; &lt;&lt; i.value() &lt;&lt; endl;</pre>
+<p>Unlike <a href="qmap.html">QMap</a>, which orders its items by key, <a href="qhash.html">QHash</a> stores its items in an arbitrary order. The only guarantee is that items that share the same key (because they were inserted using <a href="qhash.html#insertMulti">QHash::insertMulti</a>()) will appear consecutively, from the most recently to the least recently inserted value.</p>
+<p>Multiple iterators can be used on the same hash. However, be aware that any modification performed directly on the <a href="qhash.html">QHash</a> has the potential of dramatically changing the order in which the items are stored in the hash, as they might cause <a href="qhash.html">QHash</a> to rehash its internal data structure. If you need to keep iterators over a long period of time, we recommend that you use <a href="qmap.html">QMap</a> rather than <a href="qhash.html">QHash</a>.</p>
+<p>See also <a href="qhash-iterator.html">QHash::iterator</a> and <a href="qhashiterator.html">QHashIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="const_iterator"></a>const_iterator::const_iterator ()</h3>
+<p>Constructs an uninitialized iterator.</p>
+<p>Functions like <a href="qhash-const-iterator.html#key">key</a>(), <a href="qhash-const-iterator.html#value">value</a>(), and operator++() must not be called on an uninitialized iterator. Use operator=() to assign a value to it before using it.</p>
+<p>See also <a href="qhash.html#constBegin">QHash::constBegin</a>() and <a href="qhash.html#constEnd">QHash::constEnd</a>().</p>
+<h3 class="fn"><a name="const_iterator-3"></a>const_iterator::const_iterator ( const <a href="qhash-iterator.html">iterator</a> &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="key"></a>const Key &amp; const_iterator::key () const</h3>
+<p>Returns the current item's key.</p>
+<p>See also <a href="qhash-const-iterator.html#value">value</a>().</p>
+<h3 class="fn"><a name="value"></a>const T &amp; const_iterator::value () const</h3>
+<p>Returns the current item's value.</p>
+<p>See also <a href="qhash-const-iterator.html#key">key</a>() and <a href="qhash-const-iterator.html#operator-2a">operator*</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool const_iterator::operator!= ( const const_iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to a different item than this iterator; otherwise returns false.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-2a"></a>const T &amp; const_iterator::operator* () const</h3>
+<p>Returns the current item's value.</p>
+<p>Same as <a href="qhash-const-iterator.html#value">value</a>().</p>
+<p>See also <a href="qhash-const-iterator.html#key">key</a>().</p>
+<h3 class="fn"><a name="operator-2b"></a>const_iterator const_iterator::operator+ ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions forward from this iterator. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>const_iterator &amp; const_iterator::operator++ ()</h3>
+<p>The prefix ++ operator (<tt>++i</tt>) advances the iterator to the next item in the hash and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="qhash.html#end">QHash::end</a>() leads to undefined results.</p>
+<p>See also <a href="qhash-const-iterator.html#operator--">operator--</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b-2"></a>const_iterator const_iterator::operator++ ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix ++ operator (<tt>i++</tt>) advances the iterator to the next item in the hash and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>const_iterator &amp; const_iterator::operator+= ( int <i>j</i> )</h3>
+<p>Advances the iterator by <i>j</i> items. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qhash-const-iterator.html#operator--eq">operator-=</a>() and <a href="qhash-const-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator-"></a>const_iterator const_iterator::operator- ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions backward from this iterator. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator--"></a>const_iterator &amp; const_iterator::operator-- ()</h3>
+<p>The prefix -- operator (<tt>--i</tt>) makes the preceding item current and returns an iterator pointing to the new current item.</p>
+<p>Calling this function on <a href="qhash.html#begin">QHash::begin</a>() leads to undefined results.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-2b-2b">operator++</a>().</p>
+<h3 class="fn"><a name="operator---2"></a>const_iterator const_iterator::operator-- ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix -- operator (<tt>i--</tt>) makes the preceding item current and returns an iterator pointing to the previously current item.</p>
+<h3 class="fn"><a name="operator--eq"></a>const_iterator &amp; const_iterator::operator-= ( int <i>j</i> )</h3>
+<p>Makes the iterator go back by <i>j</i> items. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-2b-eq">operator+=</a>() and <a href="qhash-const-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator--gt"></a>const T * const_iterator::operator-&gt; () const</h3>
+<p>Returns a pointer to the current item's value.</p>
+<p>See also <a href="qhash-const-iterator.html#value">value</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool const_iterator::operator== ( const const_iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to the same item as this iterator; otherwise returns false.</p>
+<p>See also <a href="qhash-const-iterator.html#operator-not-eq">operator!=</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

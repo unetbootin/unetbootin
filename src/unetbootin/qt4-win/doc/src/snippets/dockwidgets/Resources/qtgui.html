@@ -1,0 +1,276 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /home/dboddie/dev/qt-4.0/doc/src/classes.qdoc -->
+<head>
+    <title>Qt 4.0: QtGui Classes</title>
+    <style>h3.fn,span.fn { margin-left: 1cm; text-indent: -1cm; }
+a:link { color: #004faf; text-decoration: none }
+a:visited { color: #672967; text-decoration: none }
+td.postheader { font-family: sans-serif }
+tr.address { font-family: sans-serif }
+body { background: #ffffff; color: black; }</style>
+    <link rel="prev" href="qtcore.html" />
+    <link rel="contents" href="modules.html" />
+    <link rel="next" href="qtnetwork.html" />
+</head>
+<body>
+<h1 align="center">QtGui Classes</h1>
+<p><table width="100%">
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractButton</b></td><td>The abstract base class of button widgets, providing functionality common to buttons</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractItemDelegate</b></td><td>Used to display and edit data items from a model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractItemView</b></td><td>The basic functionality for item view classes</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractScrollArea</b></td><td>Scrolling area with on-demand scroll bars</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractSlider</b></td><td>Integer value within a range</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractSpinBox</b></td><td>Spinwidget and a line edit to display values</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAbstractTextDocumentLayout</b></td><td>Abstract base class used to implement custom layouts for QTextDocuments</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAccessible</b></td><td>Enums and static functions relating to accessibility</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAccessibleInterface</b></td><td>Defines an interface that exposes information about accessible objects</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAccessibleObject</b></td><td>Implements parts of the QAccessibleInterface for QObjects</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAccessiblePlugin</b></td><td>Abstract base for accessibility plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAccessibleWidget</b></td><td>Implements the QAccessibleInterface for QWidgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QAction</b></td><td>Abstract user interface action that can be inserted into widgets with QWidget::addAction()</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QActionGroup</b></td><td>Groups actions together</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QApplication</b></td><td>Manages the GUI application's control flow and main settings</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QBitmap</b></td><td>Monochrome (1-bit depth) pixmaps</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QBoxLayout</b></td><td>Lines up child widgets horizontally or vertically</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QBrush</b></td><td>Defines the fill pattern of shapes drawn by a QPainter</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QButtonGroup</b></td><td>Container to organize groups of button widgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCDEStyle</b></td><td>CDE look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCheckBox</b></td><td>Checkbox with a text label</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QClipboard</b></td><td>Access to the window system clipboard</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCloseEvent</b></td><td>Parameters that describe a close event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QColor</b></td><td>Colors based on RGB or HSV values</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QColorDialog</b></td><td>Dialog widget for specifying colors</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QColorGroup</b></td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QComboBox</b></td><td>Combined button and popup list</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCommonStyle</b></td><td>Encapsulates the common Look and Feel of a GUI</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QConicalGradient</b></td><td>Used in combination with QBrush to specify a conical gradient brush</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QContextMenuEvent</b></td><td>Parameters that describe a context menu event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCopChannel</b></td><td>Communication capabilities between several clients</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QCursor</b></td><td>Mouse cursor with an arbitrary shape</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDateTimeEdit</b></td><td>Widget for editing dates and times</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDecoration</b></td><td>Allows the appearance of the Qtopia Core Window Manager to be customized</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDecorationFactory</b></td><td>Creates QDecoration objects</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDecorationPlugin</b></td><td>Abstract base for custom QDecoration plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDesktopWidget</b></td><td>Access to screen information on multi-head systems</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDial</b></td><td>Rounded range control (like a speedometer or potentiometer)</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDialog</b></td><td>The base class of dialog windows</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDirModel</b></td><td>Data model for the local filesystem</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDirectPainter</b></td><td>Direct access to the video hardware</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDockWidget</b></td><td>Widget that can be docked inside a QMainWindow or floated as a top-level window on the desktop</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDoubleSpinBox</b></td><td>Spin box widget that takes doubles</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDoubleValidator</b></td><td>Range checking of floating-point numbers</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDrag</b></td><td>Support for MIME-based drag and drop data transfer</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDragEnterEvent</b></td><td>Event which is sent to a widget when a drag and drop action enters it</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDragLeaveEvent</b></td><td>Event that is sent to a widget when a drag and drop action leaves it</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDragMoveEvent</b></td><td>Event which is sent while a drag and drop action is in progress</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QDropEvent</b></td><td>Event which is sent when a drag and drop action is completed</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QErrorMessage</b></td><td>Error message display dialog</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFileDialog</b></td><td>Dialog that allow users to select files or directories</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFileIconProvider</b></td><td>File icon for the QDirModel class</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFileOpenEvent</b></td><td>Event that will be sent when there is a request to open a file</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFocusEvent</b></td><td>Event parameters for widget focus events</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFocusFrame</b></td><td>Focus frame which can be outside of a widget's normal paintable area</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFont</b></td><td>Font used for drawing text</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFontDatabase</b></td><td>Information about the fonts available in the underlying window system</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFontDialog</b></td><td>Dialog widget for selecting a font</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFontInfo</b></td><td>General information about fonts</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFontMetrics</b></td><td>Font metrics information</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFontMetricsF</b></td><td>Font metrics information</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QFrame</b></td><td>The base class of widgets that can have a frame</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGfxDriverFactory</b></td><td>Creates QScreen objects for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGfxDriverPlugin</b></td><td>Abstract base for Qtopia Core graphics driver plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGradient</b></td><td>Used in combination with QBrush to specify gradient fills</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGridLayout</b></td><td>Lays out widgets in a grid</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGridWidget</b></td><td>Simple geometry management of its children</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QGroupBox</b></td><td>Group box frame with a title</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QHBoxLayout</b></td><td>Lines up widgets horizontally</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QHBoxWidget</b></td><td>Horizontal geometry management for its child widgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QHeaderView</b></td><td>Header row or header column for item views</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QHideEvent</b></td><td>Event which is sent after a widget is hidden</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QHoverEvent</b></td><td>Parameters that describe a mouse event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QIcon</b></td><td>Scalable icons in different modes and states</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QIconDragEvent</b></td><td>Indicates that a main icon drag has begun</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QIconEngine</b></td><td>Abstract base class for QIcon renderers</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QIconEnginePlugin</b></td><td>Abstract base for custom QIconEngine plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImage</b></td><td>Hardware-independent pixmap that allows direct access to the pixel data, and can be used as a paint device</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImageIOHandler</b></td><td>Defines the common image I/O interface for all image formats in Qt</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImageIOHandlerFactoryInterface</b></td><td>The factory interface for QImageIOPlugin</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImageIOPlugin</b></td><td>Defines an interface for writing an image format plugin</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImageReader</b></td><td>Format independent interface for reading images from files or other devices</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QImageWriter</b></td><td>Format independent interface for writing images to files or other devices</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QInputContext</b></td><td>Abstracts the input method dependent data and composing state</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QInputContextPlugin</b></td><td>Abstract base for custom QInputContext plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QInputDialog</b></td><td>Simple convenience dialog to get a single value from the user</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QInputEvent</b></td><td>The base class for events that describe user input</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QInputMethodEvent</b></td><td>Parameters for input method events</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QIntValidator</b></td><td>Validator that ensures a string contains a valid integer within a specified range</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QItemDelegate</b></td><td>Display and editing facilities for data items from a model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QItemSelection</b></td><td>Manages information about selected items in a model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QItemSelectionModel</b></td><td>Keeps track of a view's selected items</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QItemSelectionRange</b></td><td>Manages information about a range of selected items in a model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QKbdDriverFactory</b></td><td>Creates QWSKeyboardHandler objects for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QKbdDriverPlugin</b></td><td>Abstract base for Qtopia Core keyboard driver plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QKeyEvent</b></td><td>Describes a key event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QKeySequence</b></td><td>Encapsulates a key sequence as used by shortcuts</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLCDNumber</b></td><td>Displays a number with LCD-like digits</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLabel</b></td><td>Text or image display</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLayout</b></td><td>The base class of geometry managers</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLayoutItem</b></td><td>Abstract item that a QLayout manipulates</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLineEdit</b></td><td>One-line text editor</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QLinearGradient</b></td><td>Used in combination with QBrush to specify a linear gradient brush</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QListView</b></td><td>Default model/view implementation of a list, and of an icon view</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QListWidget</b></td><td>Item-based list widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QListWidgetItem</b></td><td>Item for use with the QListWidget item view class</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMacMime</b></td><td>Maps open-standard MIME to Mac flavors</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMacStyle</b></td><td>Implements an Appearance Manager style</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMainWindow</b></td><td>Main application window</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMatrix</b></td><td>2D transformations of a coordinate system</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMenu</b></td><td>Menu widget for use in menu bars, context menus, and other popup menus</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMenuBar</b></td><td>Horizontal menu bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMenuItem</b></td><td>Represents an item in a menu</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMessageBox</b></td><td>Modal dialog with a short message, an icon, and some buttons</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMotifPlusStyle</b></td><td>More sophisticated Motif-ish look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMotifStyle</b></td><td>Motif look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMouseDriverFactory</b></td><td>Creates QWSMouseHandler objects for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMouseDriverPlugin</b></td><td>Abstract base for Qtopia Core mouse driver plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMouseEvent</b></td><td>Parameters that describe a mouse event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMoveEvent</b></td><td>Event parameters for move events</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QMovie</b></td><td>Convenience class for playing movies with QImageReader</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPaintDevice</b></td><td>The base class of objects that can be painted</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPaintEngine</b></td><td>Abstract definition of how QPainter draws to a given device on a given platform</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPaintEvent</b></td><td>Event parameters for paint events</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPainter</b></td><td>Does low-level painting e.g. on widgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPainterPath</b></td><td>Container for painting operations, enabling graphical shapes to be constructed and reused</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPalette</b></td><td>Color groups for each widget state</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPen</b></td><td>Defines how a QPainter should draw lines and outlines of shapes</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPicture</b></td><td>Paint device that records and replays QPainter commands</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPictureFormatPlugin</b></td><td>Abstract base for custom picture format plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPictureIO</b></td><td>Parameters for loading and saving pictures</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPixmap</b></td><td>Off-screen, pixel-based paint device</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPixmapCache</b></td><td>Application-wide cache for pixmaps</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPlatinumStyle</b></td><td>Mac/Platinum look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPolygon</b></td><td>Vector of points</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPolygonF</b></td><td>Vector of points</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPrintEngine</b></td><td>Defines an interface for how QPrinter interacts with a given printing subsystem</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPrinter</b></td><td>Paint device that paints on a printer</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QProgressBar</b></td><td>Horizontal progress bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QProgressDialog</b></td><td>Feedback on the progress of a slow operation</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QProxyModel</b></td><td>Support for filtering and sorting data that is passed between another model and a view</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QPushButton</b></td><td>Command button</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QRadialGradient</b></td><td>Used in combination with QBrush to specify a radial gradient brush</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QRadioButton</b></td><td>Radio button with a text label</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QRegExpValidator</b></td><td>Used to check a string against a regular expression</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QRegion</b></td><td>Clip region for a painter</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QResizeEvent</b></td><td>Event parameters for resize events</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QRubberBand</b></td><td>Rectangle or line that can indicate a selection or a boundary</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSGIStyle</b></td><td>SGI/Irix look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QScreen</b></td><td>And its descendants manage the framebuffer and palette</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QScrollArea</b></td><td>Scrolling view onto another widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QScrollBar</b></td><td>Vertical or horizontal scroll bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSessionManager</b></td><td>Access to the session manager</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QShortcut</b></td><td>Used to create keyboard shortcuts</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QShowEvent</b></td><td>Event that is sent when a widget is shown</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSizeGrip</b></td><td>Corner-grip for resizing a top-level window</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSizePolicy</b></td><td>Layout attribute describing horizontal and vertical resizing policy</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSlider</b></td><td>Vertical or horizontal slider</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSound</b></td><td>Access to the platform audio facilities</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSpacerItem</b></td><td>Blank space in a layout</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSpinBox</b></td><td>Spin box widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSplashScreen</b></td><td>Splash screen that can be shown during application startup</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSplitter</b></td><td>Implements a splitter widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QSplitterHandle</b></td><td>Handle functionality of the splitter</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStackedLayout</b></td><td>Stack of widgets where only one widget is visible at a time</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStackedWidget</b></td><td>Stack of widgets where only one widget is visible at a time</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStandardItemModel</b></td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStatusBar</b></td><td>Horizontal bar suitable for presenting status information</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyle</b></td><td>Abstract base class that encapsulates the look and feel of a GUI</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleFactory</b></td><td>Creates QStyle objects</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleHintReturn</b></td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOption</b></td><td>Stores the parameters used by QStyle functions</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionButton</b></td><td>Used to describe the parameters for drawing buttons</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionComboBox</b></td><td>Used to describe the parameter for drawing a combobox</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionComplex</b></td><td>Used to hold parameters that are common to all complex controls</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionDockWidget</b></td><td>Used to describe the parameters for drawing a dock window</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionFocusRect</b></td><td>Used to describe the parameters for drawing a focus rectangle with QStyle</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionFrame</b></td><td>Used to describe the parameters for drawing a frame</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionHeader</b></td><td>Used to describe the parameters for drawing a header</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionMenuItem</b></td><td>Used to describe the parameter necessary for drawing a menu item</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionProgressBar</b></td><td>Used to describe the parameters necessary for drawing a progress bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionQ3DockWindow</b></td><td>Used to describe the parameters for drawing various parts of a </td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionQ3ListView</b></td><td>Used to describe the parameters for drawing a Q3ListView</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionQ3ListViewItem</b></td><td>Used to describe an item drawn in a Q3ListView</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionSlider</b></td><td>Used to describe the parameters needed for drawing a slider</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionSpinBox</b></td><td>Used to describe the parameters necessary for drawing a spin box</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionTab</b></td><td>Used to describe the parameters for drawing a tab bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionTitleBar</b></td><td>Used to describe the parameters for drawing a title bar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionToolBox</b></td><td>Used to describe the parameters needed for drawing a tool box</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionToolButton</b></td><td>Used to describe the parameters for drawing a tool button</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStyleOptionViewItem</b></td><td>Used to describe the parameters used to draw an item in a view widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStylePainter</b></td><td>Convenience class for drawing QStyle elements inside a widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QStylePlugin</b></td><td>Abstract base for custom QStyle plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTabBar</b></td><td>Tab bar, e.g. for use in tabbed dialogs</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTabWidget</b></td><td>Stack of tabbed widgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTableView</b></td><td>Default model/view implementation of a table view</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTableWidget</b></td><td>Item-based table view with a default model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTableWidgetItem</b></td><td>Item for use with the QTableWidget class</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTableWidgetSelectionRange</b></td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTabletEvent</b></td><td>Parameters that describe a Tablet event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextBlock</b></td><td>Container for text fragments in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextBlockFormat</b></td><td>Formatting information for blocks of text in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextBlockGroup</b></td><td>Container for text blocks within a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextBrowser</b></td><td>Rich text browser with hypertext navigation</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextCharFormat</b></td><td>Formatting information for characters in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextCursor</b></td><td>Offers an API to access and modify QTextDocuments</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextDocument</b></td><td>Holds formatted text that can be viewed and edited using a QTextEdit</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextDocumentFragment</b></td><td>Represents a piece of formatted text from a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextEdit</b></td><td>Widget that is used to edit and display both plain and rich text</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextFormat</b></td><td>Formatting information for a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextFragment</b></td><td>Holds a piece of text in a QTextDocument with a single QTextCharFormat</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextFrame</b></td><td>Represents a frame in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextFrameFormat</b></td><td>Formatting information for frames in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextImageFormat</b></td><td>Formatting information for images in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextInlineObject</b></td><td>Represents an inline object in a QTextLayout</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextLayout</b></td><td>Used to lay out and paint a single paragraph of text</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextLength</b></td><td>Encapsulates the different types of length used in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextLine</b></td><td>Represents a line of text inside a QTextLayout</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextList</b></td><td>Decorated list of items in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextListFormat</b></td><td>Formatting information for lists in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextObject</b></td><td>Base class for different kinds of objects that can group parts of a QTextDocument together</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextOption</b></td><td>Description of general rich text properties</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextTable</b></td><td>Represents a table in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextTableCell</b></td><td>Represents the properties of a cell in a QTextTable</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTextTableFormat</b></td><td>Formatting information for tables in a QTextDocument</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QToolBar</b></td><td>Movable panel that contains a set of controls</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QToolBarChangeEvent</b></td><td>Event that is sent whenever a the toolbar button is clicked on Mac OS X</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QToolBox</b></td><td>Column of tabbed widget items</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QToolButton</b></td><td>Quick-access button to commands or options, usually used inside a QToolBar</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QToolTip</b></td><td>Tool tips (balloon help) for any widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTreeView</b></td><td>Default model/view implementation of a tree view</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTreeWidget</b></td><td>Tree view that uses a predefined tree model</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QTreeWidgetItem</b></td><td>Item for use with the QTreeWidget convenience class</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QVBoxLayout</b></td><td>Lines up widgets vertically</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QVBoxWidget</b></td><td>Vertical geometry management of its child widgets</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QValidator</b></td><td>Validation of input text</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWSInputMethod</b></td><td>International input methods for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWSKeyboardHandler</b></td><td>Implements the keyboard driver for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWSMouseHandler</b></td><td>Mouse driver for Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWSServer</b></td><td>Server-specific functionality in Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWSWindow</b></td><td>Server-specific functionality in Qtopia Core</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWhatsThis</b></td><td>Simple description of any widget, i.e. answering the question &quot;What's this?&quot;</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWhatsThisAction</b></td><td>Ready-made action to invoke &quot;What's This&quot; context help</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWheelEvent</b></td><td>Parameters that describe a wheel event</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWidget</b></td><td>The base class of all user interface objects</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWidgetContainerPlugin</b></td><td>Abstract base for complex custom container QWidget plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWidgetItem</b></td><td>Layout item that represents a widget</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWidgetPlugin</b></td><td>Abstract base for custom QWidget plugins</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWindowsMime</b></td><td>Maps open-standard MIME to Window Clipboard formats</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWindowsStyle</b></td><td>Microsoft Windows-like look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWindowsXPStyle</b></td><td>Microsoft WindowsXP-like look and feel</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QWorkspace</b></td><td>Workspace window that be used in an MDI application</td></tr>
+<tr valign="top" bgcolor="#f0f0f0"><td><b>QX11Info</b></td><td>Information about the X display configuration</td></tr>
+</table></p>
+</body>
+</html>

@@ -1,0 +1,100 @@
+<ui version="4.0" >
+ <class>DeviceProfileDialog</class>
+ <widget class="QDialog" name="dialog" >
+  <property name="geometry" >
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>348</width>
+    <height>209</height>
+   </rect>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout" >
+   <item>
+    <widget class="QWidget" native="1" name="SystemSettingsWidget" >
+     <layout class="QFormLayout" name="formLayout" >
+      <item row="1" column="0" >
+       <widget class="QLabel" name="m_systemFontFamilyLabel" >
+        <property name="text" >
+         <string>&amp;Family</string>
+        </property>
+        <property name="buddy" >
+         <cstring>m_systemFontComboBox</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1" >
+       <widget class="QFontComboBox" name="m_systemFontComboBox" />
+      </item>
+      <item row="2" column="0" >
+       <widget class="QLabel" name="m_systemFontSizeLabel" >
+        <property name="text" >
+         <string>&amp;Point Size</string>
+        </property>
+        <property name="buddy" >
+         <cstring>m_systemFontSizeCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="2" column="1" >
+       <widget class="QComboBox" name="m_systemFontSizeCombo" />
+      </item>
+      <item row="3" column="0" >
+       <widget class="QLabel" name="m_styleLabel" >
+        <property name="text" >
+         <string>Style</string>
+        </property>
+        <property name="buddy" >
+         <cstring>m_styleCombo</cstring>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="1" >
+       <widget class="QComboBox" name="m_styleCombo" />
+      </item>
+      <item row="4" column="0" >
+       <widget class="QLabel" name="m_systemDPILabel" >
+        <property name="text" >
+         <string>Device DPI</string>
+        </property>
+       </widget>
+      </item>
+      <item row="4" column="1" >
+       <widget class="qdesigner_internal::DPI_Chooser" native="1" name="m_dpiChooser" />
+      </item>
+      <item row="0" column="0" >
+       <widget class="QLabel" name="m_nameLabel" >
+        <property name="text" >
+         <string>Name</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1" >
+       <widget class="QLineEdit" name="m_nameLineEdit" />
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox" >
+     <property name="orientation" >
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="standardButtons" >
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok|QDialogButtonBox::Open|QDialogButtonBox::Save</set>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>qdesigner_internal::DPI_Chooser</class>
+   <extends>QWidget</extends>
+   <header>dpi_chooser.h</header>
+   <container>1</container>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>

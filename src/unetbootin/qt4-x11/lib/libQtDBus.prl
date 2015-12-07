@@ -1,0 +1,6 @@
+QMAKE_PRL_BUILD_DIR = /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/src/dbus
+QMAKE_PRO_INPUT = dbus.pro
+QMAKE_PRL_TARGET = libQtDBus.a
+QMAKE_PRL_CONFIG = lex yacc warn_on uic resources qt warn_on release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath QTDIR_build link_pkgconfig qt_install_headers qt warn_on depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib moc thread staticlib static
+QMAKE_PRL_VERSION = 4.5.0
+QMAKE_PRL_LIBS = -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib  -lQtXml -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -pthread -pthread -lQtCore -lz -lm -pthread -lgthread-2.0 -lglib-2.0 -lrt -lpthread -ldl 

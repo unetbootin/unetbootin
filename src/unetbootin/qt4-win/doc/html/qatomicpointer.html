@@ -1,0 +1,250 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/thread/qatomic.cpp -->
+<head>
+  <title>Qt 4.4: QAtomicPointer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAtomicPointer Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAtomicPointer class is a template class that provides platform-independent atomic operations on pointers. <a href="#details">More...</a></p>
+<pre> #include &lt;QAtomicPointer&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qatomicpointer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qatomicpointer.html#QAtomicPointer">QAtomicPointer</a></b> ( T * <i>value</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#QAtomicPointer-2">QAtomicPointer</a></b> ( const QAtomicPointer&lt;T&gt; &amp; <i>other</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndAddAcquire">fetchAndAddAcquire</a></b> ( qptrdiff <i>valueToAdd</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndAddOrdered">fetchAndAddOrdered</a></b> ( qptrdiff <i>valueToAdd</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndAddRelaxed">fetchAndAddRelaxed</a></b> ( qptrdiff <i>valueToAdd</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndAddRelease">fetchAndAddRelease</a></b> ( qptrdiff <i>valueToAdd</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndStoreAcquire">fetchAndStoreAcquire</a></b> ( T * <i>newValue</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndStoreOrdered">fetchAndStoreOrdered</a></b> ( T * <i>newValue</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndStoreRelaxed">fetchAndStoreRelaxed</a></b> ( T * <i>newValue</i> )</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#fetchAndStoreRelease">fetchAndStoreRelease</a></b> ( T * <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#testAndSetAcquire">testAndSetAcquire</a></b> ( T * <i>expectedValue</i>, T * <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#testAndSetOrdered">testAndSetOrdered</a></b> ( T * <i>expectedValue</i>, T * <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#testAndSetRelaxed">testAndSetRelaxed</a></b> ( T * <i>expectedValue</i>, T * <i>newValue</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#testAndSetRelease">testAndSetRelease</a></b> ( T * <i>expectedValue</i>, T * <i>newValue</i> )</li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#operator-T--2a">operator T *</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#operator-not">operator!</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#operator-not-eq">operator!=</a></b> ( T * <i>value</i> ) const</li>
+<li><div class="fn"/>T * <b><a href="qatomicpointer.html#operator--gt">operator-&gt;</a></b> () const</li>
+<li><div class="fn"/>QAtomicPointer&lt;T&gt; &amp; <b><a href="qatomicpointer.html#operator-eq">operator=</a></b> ( T * <i>value</i> )</li>
+<li><div class="fn"/>QAtomicPointer&lt;T&gt; &amp; <b><a href="qatomicpointer.html#operator-eq-2">operator=</a></b> ( const QAtomicPointer&lt;T&gt; &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#operator-eq-eq">operator==</a></b> ( T * <i>value</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isFetchAndAddNative">isFetchAndAddNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isFetchAndAddWaitFree">isFetchAndAddWaitFree</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isFetchAndStoreNative">isFetchAndStoreNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isFetchAndStoreWaitFree">isFetchAndStoreWaitFree</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isTestAndSetNative">isTestAndSetNative</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qatomicpointer.html#isTestAndSetWaitFree">isTestAndSetWaitFree</a></b> ()</li>
+</ul>
+<a name="macros"></a>
+<h3>Macros</h3>
+<ul>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE</a></b></li>
+<li><div class="fn"/><b><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAtomicPointer class is a template class that provides platform-independent atomic operations on pointers.</p>
+<p>For atomic operations on integers, see the <a href="qatomicint.html">QAtomicInt</a> class.</p>
+<p>An complex operation that completes without interruption is said to be <i>atomic</i>. The QAtomicPointer class provides atomic test-and-set, fetch-and-store, and fetch-and-add for pointers.</p>
+<a name="non-atomic-convenience-operators"></a>
+<h3>Non-atomic convenience operators</h3>
+<p>For convenience, QAtomicPointer provides pointer comparison, cast, dereference, and assignment operators. Note that these operators are <i>not</i> atomic.</p>
+<a name="the-atomic-api"></a>
+<h3>The Atomic API</h3>
+<a name="memory-ordering"></a>
+<h4>Memory ordering</h4>
+<p>QAtomicPointer provides several implementations of the atomic test-and-set, fetch-and-store, and fetch-and-add functions. Each implementation defines a memory ordering semantic that describes how memory accesses surrounding the atomic instruction are executed by the processor. Since many modern architectures allow out-of-order execution and memory ordering, using the correct semantic is necessary to ensure that your application functions properly on all processors.</p>
+<ul>
+<li>Relaxed - memory ordering is unspecified, leaving the compiler and processor to freely reorder memory accesses.</li>
+<li>Acquire - memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</li>
+<li>Release - memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</li>
+<li>Ordered - the same Acquire and Release semantics combined.</li>
+</ul>
+<a name="test-and-set"></a>
+<h4>Test-and-set</h4>
+<p>If the current value of the QAtomicPointer is an expected value, the test-and-set functions assign a new value to the QAtomicPointer and return true. If values are <i>not</i> the same, these functions do nothing and return false. This operation equates to the following code:</p>
+<pre>     if (currentValue == expectedValue) {
+         currentValue = newValue;
+         return true;
+     }
+     return false;</pre>
+<p>There are 4 test-and-set functions: <a href="qatomicpointer.html#testAndSetRelaxed">testAndSetRelaxed</a>(), <a href="qatomicpointer.html#testAndSetAcquire">testAndSetAcquire</a>(), <a href="qatomicpointer.html#testAndSetRelease">testAndSetRelease</a>(), and <a href="qatomicpointer.html#testAndSetOrdered">testAndSetOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="fetch-and-store"></a>
+<h4>Fetch-and-store</h4>
+<p>The atomic fetch-and-store functions read the current value of the QAtomicPointer and then assign a new value, returning the original value. This operation equates to the following code:</p>
+<pre>     T *originalValue = currentValue;
+     currentValue = newValue;
+     return originalValue;</pre>
+<p>There are 4 fetch-and-store functions: <a href="qatomicpointer.html#fetchAndStoreRelaxed">fetchAndStoreRelaxed</a>(), <a href="qatomicpointer.html#fetchAndStoreAcquire">fetchAndStoreAcquire</a>(), <a href="qatomicpointer.html#fetchAndStoreRelease">fetchAndStoreRelease</a>(), and <a href="qatomicpointer.html#fetchAndStoreOrdered">fetchAndStoreOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="fetch-and-add"></a>
+<h4>Fetch-and-add</h4>
+<p>The atomic fetch-and-add functions read the current value of the QAtomicPointer and then add the given value to the current value, returning the original value. This operation equates to the following code:</p>
+<pre>     T *originalValue = currentValue;
+     currentValue += valueToAdd;
+     return originalValue;</pre>
+<p>There are 4 fetch-and-add functions: <a href="qatomicpointer.html#fetchAndAddRelaxed">fetchAndAddRelaxed</a>(), <a href="qatomicpointer.html#fetchAndAddAcquire">fetchAndAddAcquire</a>(), <a href="qatomicpointer.html#fetchAndAddRelease">fetchAndAddRelease</a>(), and <a href="qatomicpointer.html#fetchAndAddOrdered">fetchAndAddOrdered</a>(). See above for an explanation of the different memory ordering semantics.</p>
+<a name="feature-tests-for-the-atomic-api"></a>
+<h3>Feature Tests for the Atomic API</h3>
+<p>Providing a platform-independent atomic API that works on all processors is challenging. The API provided by QAtomicPointer is guaranteed to work atomically on all processors. However, since not all processors implement support for every operation provided by QAtomicPointer, it is necessary to expose information about the processor.</p>
+<p>You can check at compile time which features are supported on your hardware using various macros. These will tell you if your hardware always, sometimes, or does not support a particular operation. The macros have the form Q_ATOMIC_POINTER_<i>OPERATION</i>_IS_<i>HOW</i>_NATIVE. <i>OPERATION</i> is one of <a href="#test-and-set">TEST_AND_SET</a>, <a href="#fetch-and-store">FETCH_AND_STORE</a>, or <a href="#fetch-and-add">FETCH_AND_ADD</a>, and <i>HOW</i> is one of ALWAYS, SOMETIMES, or NOT. There will always be exactly one defined macro per operation. For example, if <a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE</a> is defined, neither <a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE</a> nor <a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE</a> will be defined.</p>
+<p>An operation that completes in constant time is said to be wait-free. Such operations are not implemented using locks or loops of any kind. For atomic operations that are always supported, and that are wait-free, Qt defines the Q_ATOMIC_POINTER_<i>OPERATION</i>_IS_WAIT_FREE in addition to the Q_ATOMIC_POINTER_<i>OPERATION</i>_IS_ALWAYS_NATIVE.</p>
+<p>In cases where an atomic operation is only supported in newer generations of the processor, QAtomicPointer also provides a way to check at runtime what your hardware supports with the <a href="qatomicpointer.html#isTestAndSetNative">isTestAndSetNative</a>(), <a href="qatomicpointer.html#isFetchAndStoreNative">isFetchAndStoreNative</a>(), and <a href="qatomicpointer.html#isFetchAndAddNative">isFetchAndAddNative</a>() functions. Wait-free implementations can be detected using the <a href="qatomicpointer.html#isTestAndSetWaitFree">isTestAndSetWaitFree</a>(), <a href="qatomicpointer.html#isFetchAndStoreWaitFree">isFetchAndStoreWaitFree</a>(), and <a href="qatomicpointer.html#isFetchAndAddWaitFree">isFetchAndAddWaitFree</a>() functions.</p>
+<p>Below is a complete list of all feature macros for QAtomicPointer:</p>
+<ul>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE</a></li>
+<li><a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE</a></li>
+</ul>
+<p>See also <a href="qatomicint.html">QAtomicInt</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAtomicPointer"></a>QAtomicPointer::QAtomicPointer ( T * <i>value</i> = 0 )</h3>
+<p>Constructs a <a href="qatomicpointer.html">QAtomicPointer</a> with the given <i>value</i>.</p>
+<h3 class="fn"><a name="QAtomicPointer-2"></a>QAtomicPointer::QAtomicPointer ( const QAtomicPointer&lt;T&gt; &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="fetchAndAddAcquire"></a>T * QAtomicPointer::fetchAndAddAcquire ( <a href="qtglobal.html#qptrdiff-typedef">qptrdiff</a> <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndAddOrdered"></a>T * QAtomicPointer::fetchAndAddOrdered ( <a href="qtglobal.html#qptrdiff-typedef">qptrdiff</a> <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="fetchAndAddRelaxed"></a>T * QAtomicPointer::fetchAndAddRelaxed ( <a href="qtglobal.html#qptrdiff-typedef">qptrdiff</a> <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="fetchAndAddRelease"></a>T * QAtomicPointer::fetchAndAddRelease ( <a href="qtglobal.html#qptrdiff-typedef">qptrdiff</a> <i>valueToAdd</i> )</h3>
+<p>Atomic fetch-and-add.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then adds <i>valueToAdd</i> to the current value, returning the original value.</p>
+<p>This function uses <i>release</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndStoreAcquire"></a>T * QAtomicPointer::fetchAndStoreAcquire ( T * <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="fetchAndStoreOrdered"></a>T * QAtomicPointer::fetchAndStoreOrdered ( T * <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="fetchAndStoreRelaxed"></a>T * QAtomicPointer::fetchAndStoreRelaxed ( T * <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="fetchAndStoreRelease"></a>T * QAtomicPointer::fetchAndStoreRelease ( T * <i>newValue</i> )</h3>
+<p>Atomic fetch-and-store.</p>
+<p>Reads the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> and then assigns it the <i>newValue</i>, returning the original value.</p>
+<p>This function uses <i>release</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="isFetchAndAddNative"></a>bool QAtomicPointer::isFetchAndAddNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if fetch-and-add is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndAddWaitFree"></a>bool QAtomicPointer::isFetchAndAddWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic fetch-and-add is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndStoreNative"></a>bool QAtomicPointer::isFetchAndStoreNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if fetch-and-store is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isFetchAndStoreWaitFree"></a>bool QAtomicPointer::isFetchAndStoreWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic fetch-and-store is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="isTestAndSetNative"></a>bool QAtomicPointer::isTestAndSetNative ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if test-and-set is implemented using atomic processor instructions, false otherwise.</p>
+<h3 class="fn"><a name="isTestAndSetWaitFree"></a>bool QAtomicPointer::isTestAndSetWaitFree ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if atomic test-and-set is wait-free, false otherwise.</p>
+<h3 class="fn"><a name="testAndSetAcquire"></a>bool QAtomicPointer::testAndSetAcquire ( T * <i>expectedValue</i>, T * <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>acquire</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access following the atomic operation (in program order) may not be re-ordered before the atomic operation.</p>
+<h3 class="fn"><a name="testAndSetOrdered"></a>bool QAtomicPointer::testAndSetOrdered ( T * <i>expectedValue</i>, T * <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>ordered</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before and after the atomic operation (in program order) may not be re-ordered.</p>
+<h3 class="fn"><a name="testAndSetRelaxed"></a>bool QAtomicPointer::testAndSetRelaxed ( T * <i>expectedValue</i>, T * <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>relaxed</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, leaving the compiler and processor to freely reorder memory accesses.</p>
+<h3 class="fn"><a name="testAndSetRelease"></a>bool QAtomicPointer::testAndSetRelease ( T * <i>expectedValue</i>, T * <i>newValue</i> )</h3>
+<p>Atomic test-and-set.</p>
+<p>If the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> is the <i>expectedValue</i>, the test-and-set functions assign the <i>newValue</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and return true. If the values are <i>not</i> the same, this function does nothing and returns false.</p>
+<p>This function uses <i>release</i> <a href="qatomicpointer.html#memory-ordering">memory ordering</a> semantics, which ensures that memory access before the atomic operation (in program order) may not be re-ordered after the atomic operation.</p>
+<h3 class="fn"><a name="operator-T--2a"></a>QAtomicPointer::operator T * () const</h3>
+<p>Returns the current pointer value stored by this <a href="qatomicpointer.html">QAtomicPointer</a> object.</p>
+<h3 class="fn"><a name="operator-not"></a>bool QAtomicPointer::operator! () const</h3>
+<p>Returns true is the current value of this <a href="qatomicpointer.html">QAtomicPointer</a> is zero; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QAtomicPointer::operator!= ( T * <i>value</i> ) const</h3>
+<p>Returns true if the value of this <a href="qatomicpointer.html">QAtomicPointer</a> is not equal to <i>value</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator--gt"></a>T * QAtomicPointer::operator-&gt; () const</h3>
+<h3 class="fn"><a name="operator-eq"></a>QAtomicPointer&lt;T&gt; &amp; QAtomicPointer::operator= ( T * <i>value</i> )</h3>
+<p>Assigns the <i>value</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and returns a reference to this <a href="qatomicpointer.html">QAtomicPointer</a>.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QAtomicPointer&lt;T&gt; &amp; QAtomicPointer::operator= ( const QAtomicPointer&lt;T&gt; &amp; <i>other</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns <i>other</i> to this <a href="qatomicpointer.html">QAtomicPointer</a> and returns a reference to this <a href="qatomicpointer.html">QAtomicPointer</a>.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QAtomicPointer::operator== ( T * <i>value</i> ) const</h3>
+<p>Returns true if the <i>value</i> is equal to the value in this <a href="qatomicpointer.html">QAtomicPointer</a>; otherwise returns false.</p>
+<hr />
+<h2>Macro Documentation</h2>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic fetch-and-add on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic fetch-and-add on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic fetch-and-add on pointers. Use the <a href="qatomicpointer.html#isFetchAndAddNative">QAtomicPointer::isFetchAndAddNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE"></a>Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_ADD_IS_ALWAYS_NATIVE</a> to indicate that the atomic fetch-and-add on pointers is wait-free.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic fetch-and-store on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic fetch-and-store on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic fetch-and-store on pointers. Use the <a href="qatomicpointer.html#isFetchAndStoreNative">QAtomicPointer::isFetchAndStoreNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE"></a>Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicpointer.html#Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_FETCH_AND_STORE_IS_ALWAYS_NATIVE</a> to indicate that the atomic fetch-and-store on pointers is wait-free.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE"></a>Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE</h3>
+<p>This macro is defined if and only if your processor supports atomic test-and-set on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE"></a>Q_ATOMIC_POINTER_TEST_AND_SET_IS_NOT_NATIVE</h3>
+<p>This macro is defined when the hardware does not support atomic test-and-set on pointers.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE"></a>Q_ATOMIC_POINTER_TEST_AND_SET_IS_SOMETIMES_NATIVE</h3>
+<p>This macro is defined when only certain generations of the processor support atomic test-and-set on pointers. Use the <a href="qatomicpointer.html#isTestAndSetNative">QAtomicPointer::isTestAndSetNative</a>() function to check what your processor supports.</p>
+<h3 class="fn"><a name="Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE"></a>Q_ATOMIC_POINTER_TEST_AND_SET_IS_WAIT_FREE</h3>
+<p>This macro is defined together with <a href="qatomicpointer.html#Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE">Q_ATOMIC_POINTER_TEST_AND_SET_IS_ALWAYS_NATIVE</a> to indicate that the atomic test-and-set on pointers is wait-free.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,26 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+include(qt-cpp-ignore.qdocconf)
+include(qt-html-templates.qdocconf)
+include(qt-defines.qdocconf)
+
+indexes = $QTDIR/doc/html/qt.index
+
+headerdirs = 
+sourcedirs = $QTDIR/../qtvstools/main/Qt4VS2003/Doc
+sources.fileextensions  = "*.cpp *.qdoc"
+imagedirs = $QTDIR/../qtvstools/main/Qt4VS2003/Doc
+outputdir = $QTDIR/../qtvstools/main/Qt4VS2003/Doc/html
+
+project = vs-integration
+version = 1.4
+description = "Qt Visual Studio Integration"
+url = http://doc.trolltech.com/vs-integration-1.4
+
+HTML.{postheader,address} = ""
+HTML.footer = "<p /><address><hr /><div align=\"center\">\n" \
+              "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+              "<td width=\"30%\">Copyright &copy; \$THISYEAR\$ <a href=\"http://doc.trolltech.com/trolltech.html\">Nokia</a></td>\n" \
+              "<td width=\"40%\" align=\"center\"><a href=\"http://doc.trolltech.com/trademarks.html\">Trademarks</a></td>\n" \
+              "<td width=\"30%\" align=\"right\"><div align=\"right\">Qt</div></td>\n" \
+              "</tr></table></div></address>"

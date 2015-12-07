@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/text/q3multilineedit.cpp -->
+<head>
+  <title>Qt 4.4: Q3MultiLineEdit Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3MultiLineEdit Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3MultiLineEdit widget is a simple editor for inputting text. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3MultiLineEdit&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qmultilineedit">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3textedit.html">Q3TextEdit</a>.</p>
+<ul>
+<li><a href="q3multilineedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3multilineedit.html#alignment-prop">alignment</a></b> : Qt::Alignment</li>
+<li><div class="fn"/><b><a href="q3multilineedit.html#atBeginning-prop">atBeginning</a></b> : const bool</li>
+<li><div class="fn"/><b><a href="q3multilineedit.html#atEnd-prop">atEnd</a></b> : const bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3multilineedit.html#edited-prop">edited</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3multilineedit.html#numLines-prop">numLines</a></b> : const int</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>19 properties inherited from <a href="q3textedit.html#properties">Q3TextEdit</a></li>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3multilineedit.html#Q3MultiLineEdit">Q3MultiLineEdit</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3multilineedit.html#dtor.Q3MultiLineEdit">~Q3MultiLineEdit</a></b> ()</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="q3multilineedit.html#alignment-prop">alignment</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#atBeginning-prop">atBeginning</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#atEnd-prop">atEnd</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#autoUpdate">autoUpdate</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#cursorWordBackward">cursorWordBackward</a></b> ( bool <i>mark</i> )</li>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#cursorWordForward">cursorWordForward</a></b> ( bool <i>mark</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#edited-prop">edited</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#hasMarkedText">hasMarkedText</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#insertAt">insertAt</a></b> ( const QString &amp; <i>s</i>, int <i>line</i>, int <i>col</i>, bool <i>mark</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#insertLine">insertLine</a></b> ( const QString &amp; <i>txt</i>, int <i>line</i> = -1 )</li>
+<li><div class="fn"/>QString <b><a href="q3multilineedit.html#markedText">markedText</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3multilineedit.html#maxLines">maxLines</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3multilineedit.html#numLines-prop">numLines</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#removeLine">removeLine</a></b> ( int <i>paragraph</i> )</li>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#alignment-prop">setAlignment</a></b> ( Qt::Alignment <i>flags</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#setCursorPosition">setCursorPosition</a></b> ( int <i>line</i>, int <i>col</i>, bool <i>mark</i> )</li>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#edited-prop">setEdited</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#setMaxLines">setMaxLines</a></b> ( int <i>max</i> )</li>
+<li><div class="fn"/>QString <b><a href="q3multilineedit.html#textLine">textLine</a></b> ( int <i>line</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3multilineedit.html#totalHeight">totalHeight</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3multilineedit.html#totalWidth">totalWidth</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>51 public functions inherited from <a href="q3textedit.html#public-functions">Q3TextEdit</a></li>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3multilineedit.html#deselect">deselect</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>60 public slots inherited from <a href="q3textedit.html#public-slots">Q3TextEdit</a></li>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#backspace">backspace</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#cursorDown">cursorDown</a></b> ( bool <i>mark</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#cursorLeft">cursorLeft</a></b> ( bool <i>mark</i> = false, bool <i>wrap</i> = true )</li>
+<li><div class="fn"/>QPoint <b><a href="q3multilineedit.html#cursorPoint">cursorPoint</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#cursorRight">cursorRight</a></b> ( bool <i>mark</i> = false, bool <i>wrap</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#cursorUp">cursorUp</a></b> ( bool <i>mark</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#end">end</a></b> ( bool <i>mark</i> = false )</li>
+<li><div class="fn"/>bool <b><a href="q3multilineedit.html#getMarkedRegion">getMarkedRegion</a></b> ( int * <i>line1</i>, int * <i>col1</i>, int * <i>line2</i>, int * <i>col2</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#home">home</a></b> ( bool <i>mark</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#insertAndMark">insertAndMark</a></b> ( const QString &amp; <i>str</i>, bool <i>mark</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#killLine">killLine</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3multilineedit.html#lineLength">lineLength</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#newLine">newLine</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#pageDown">pageDown</a></b> ( bool <i>mark</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3multilineedit.html#pageUp">pageUp</a></b> ( bool <i>mark</i> = false )</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 protected functions inherited from <a href="q3textedit.html#protected-functions">Q3TextEdit</a></li>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>14 signals inherited from <a href="q3textedit.html#signals">Q3TextEdit</a></li>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3MultiLineEdit widget is a simple editor for inputting text.</p>
+<p>The Q3MultiLineEdit was a simple editor widget in former Qt versions. Qt 3.0 includes a new richtext engine which obsoletes Q3MultiLineEdit. It is still included for compatibility reasons. It is now a subclass of <a href="q3textedit.html">Q3TextEdit</a>, and provides enough of the old Q3MultiLineEdit API to keep old applications working.</p>
+<p>If you implement something new with Q3MultiLineEdit, we suggest using <a href="q3textedit.html">Q3TextEdit</a> instead and call Q3TextEdit::setTextFormat(<a href="qt.html#TextFormat-enum">Qt::PlainText</a>).</p>
+<p>Although most of the old Q3MultiLineEdit API is still available, there is a few difference. The old Q3MultiLineEdit operated on lines, not on paragraphs. As lines change all the time during wordwrap, the new richtext engine uses paragraphs as basic elements in the data structure. All functions (<a href="q3multilineedit.html#numLines-prop">numLines</a>(), <a href="q3multilineedit.html#textLine">textLine</a>(), etc.) that operated on lines, now operate on paragraphs. Further, getString() has been removed completely. It revealed too much of the internal data structure.</p>
+<p>Applications which made normal and reasonable use of Q3MultiLineEdit should still work without problems. Some odd usage will require some porting. In these cases, it may be better to use <a href="q3textedit.html">Q3TextEdit</a> now.</p>
+<p>See also <a href="q3textedit.html">Q3TextEdit</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="alignment-prop"></a>alignment : <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a></h3>
+<p>This property holds the editor's paragraph alignment.</p>
+<p>Sets the alignment to flag, which must be <a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a>, <a href="qt.html#AlignmentFlag-enum">Qt::AlignHCenter</a>, or <tt>Qt::AlignRight</tt>.</p>
+<p>If flag is an illegal flag, nothing happens.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Alignment alignment () const</b></li>
+<li><div class="fn"/><b>void setAlignment ( Qt::Alignment <i>flags</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="atBeginning-prop"></a>atBeginning : const bool</h3>
+<p>This property holds whether the cursor is placed at the beginning of the text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool atBeginning () const</b></li>
+</ul>
+<p>See also <a href="q3multilineedit.html#atEnd-prop">atEnd</a>.</p>
+<h3 class="fn"><a name="atEnd-prop"></a>atEnd : const bool</h3>
+<p>This property holds whether the cursor is placed at the end of the text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool atEnd () const</b></li>
+</ul>
+<p>See also <a href="q3multilineedit.html#atBeginning-prop">atBeginning</a>.</p>
+<h3 class="fn"><a name="edited-prop"></a>edited : bool</h3>
+<p>This property holds whether the document has been edited by the user.</p>
+<p>This is the same as <a href="q3textedit.html">Q3TextEdit</a>'s &quot;modifed&quot; property.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool edited () const</b></li>
+<li><div class="fn"/><b>void setEdited ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="numLines-prop"></a>numLines : const int</h3>
+<p>This property holds the number of paragraphs in the editor.</p>
+<p>The count includes any empty paragraph at top and bottom, so for an empty editor this method returns 1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int numLines () const</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3MultiLineEdit"></a>Q3MultiLineEdit::Q3MultiLineEdit ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a new, empty, <a href="q3multilineedit.html">Q3MultiLineEdit</a> with parent <i>parent</i> called <i>name</i>.</p>
+<h3 class="fn"><a name="dtor.Q3MultiLineEdit"></a>Q3MultiLineEdit::~Q3MultiLineEdit ()</h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="autoUpdate"></a>bool Q3MultiLineEdit::autoUpdate () const</h3>
+<p>This function is a noop that always returns true.</p>
+<h3 class="fn"><a name="backspace"></a>void Q3MultiLineEdit::backspace ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Deletes the character on the left side of the text cursor and moves the cursor one position to the left. If a text has been selected by the user (e.g&#x2e; by clicking and dragging) the cursor is put at the beginning of the selected text and the selected text is removed.</p>
+<p><a href="q3textedit.html#del">del</a>()</p>
+<h3 class="fn"><a name="cursorDown"></a>void Q3MultiLineEdit::cursorDown ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor one line down. If <i>mark</i> is true, the text is selected.</p>
+<p>See also <a href="q3multilineedit.html#cursorUp">cursorUp</a>(), <a href="q3multilineedit.html#cursorLeft">cursorLeft</a>(), and <a href="q3multilineedit.html#cursorRight">cursorRight</a>().</p>
+<h3 class="fn"><a name="cursorLeft"></a>void Q3MultiLineEdit::cursorLeft ( bool <i>mark</i> = false, bool <i>wrap</i> = true )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor one character to the left. If <i>mark</i> is true, the text is selected. The <i>wrap</i> parameter is currently ignored.</p>
+<p>See also <a href="q3multilineedit.html#cursorRight">cursorRight</a>(), <a href="q3multilineedit.html#cursorUp">cursorUp</a>(), and <a href="q3multilineedit.html#cursorDown">cursorDown</a>().</p>
+<h3 class="fn"><a name="cursorPoint"></a><a href="qpoint.html">QPoint</a> Q3MultiLineEdit::cursorPoint () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the top center point where the cursor is drawn.</p>
+<h3 class="fn"><a name="cursorRight"></a>void Q3MultiLineEdit::cursorRight ( bool <i>mark</i> = false, bool <i>wrap</i> = true )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor one character to the right. If <i>mark</i> is true, the text is selected. The <i>wrap</i> parameter is currently ignored.</p>
+<p>See also <a href="q3multilineedit.html#cursorLeft">cursorLeft</a>(), <a href="q3multilineedit.html#cursorUp">cursorUp</a>(), and <a href="q3multilineedit.html#cursorDown">cursorDown</a>().</p>
+<h3 class="fn"><a name="cursorUp"></a>void Q3MultiLineEdit::cursorUp ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor up one line. If <i>mark</i> is true, the text is selected.</p>
+<p>See also <a href="q3multilineedit.html#cursorDown">cursorDown</a>(), <a href="q3multilineedit.html#cursorLeft">cursorLeft</a>(), and <a href="q3multilineedit.html#cursorRight">cursorRight</a>().</p>
+<h3 class="fn"><a name="cursorWordBackward"></a>void Q3MultiLineEdit::cursorWordBackward ( bool <i>mark</i> )</h3>
+<p>Moves the cursor one word to the left. If <i>mark</i> is true, the text is selected.</p>
+<p>See also <a href="q3multilineedit.html#cursorWordForward">cursorWordForward</a>().</p>
+<h3 class="fn"><a name="cursorWordForward"></a>void Q3MultiLineEdit::cursorWordForward ( bool <i>mark</i> )</h3>
+<p>Moves the cursor one word to the right. If <i>mark</i> is true, the text is selected.</p>
+<p>See also <a href="q3multilineedit.html#cursorWordBackward">cursorWordBackward</a>().</p>
+<h3 class="fn"><a name="deselect"></a>void Q3MultiLineEdit::deselect ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<h3 class="fn"><a name="end"></a>void Q3MultiLineEdit::end ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the text cursor to the right end of the line. If <i>mark</i> is true, text is selected toward the last position. If it is false and the cursor is moved, all selected text is unselected.</p>
+<p>See also <a href="q3multilineedit.html#home">home</a>().</p>
+<h3 class="fn"><a name="getMarkedRegion"></a>bool Q3MultiLineEdit::getMarkedRegion ( int * <i>line1</i>, int * <i>col1</i>, int * <i>line2</i>, int * <i>col2</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>If there is selected text, sets <i>line1</i>, <i>col1</i>, <i>line2</i> and <i>col2</i> to the start and end of the selected region and returns true. Returns false if there is no selected text.</p>
+<h3 class="fn"><a name="hasMarkedText"></a>bool Q3MultiLineEdit::hasMarkedText () const</h3>
+<p>Returns true if there is selected text.</p>
+<h3 class="fn"><a name="home"></a>void Q3MultiLineEdit::home ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the text cursor to the left end of the line. If <i>mark</i> is true, text is selected toward the first position. If it is false and the cursor is moved, all selected text is unselected.</p>
+<p>See also <a href="q3multilineedit.html#end">end</a>().</p>
+<h3 class="fn"><a name="insertAndMark"></a>void Q3MultiLineEdit::insertAndMark ( const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>mark</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Inserts <i>str</i> at the current cursor position and selects the text if <i>mark</i> is true.</p>
+<h3 class="fn"><a name="insertAt"></a>void Q3MultiLineEdit::insertAt ( const <a href="qstring.html">QString</a> &amp; <i>s</i>, int <i>line</i>, int <i>col</i>, bool <i>mark</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts string <i>s</i> at paragraph number <i>line</i>, after character number <i>col</i> in the paragraph. If <i>s</i> contains newline characters, new lines are inserted. If <i>mark</i> is true the inserted string will be selected.</p>
+<p>The cursor position is adjusted.</p>
+<h3 class="fn"><a name="insertLine"></a>void Q3MultiLineEdit::insertLine ( const <a href="qstring.html">QString</a> &amp; <i>txt</i>, int <i>line</i> = -1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts <i>txt</i> at paragraph number <i>line</i>. If <i>line</i> is less than zero, or larger than the number of paragraphs, the new text is put at the end. If <i>txt</i> contains newline characters, several paragraphs are inserted.</p>
+<p>The cursor position is not changed.</p>
+<h3 class="fn"><a name="killLine"></a>void Q3MultiLineEdit::killLine ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Deletes text from the current cursor position to the end of the line. (Note that this function still operates on lines, not paragraphs.)</p>
+<h3 class="fn"><a name="lineLength"></a>int Q3MultiLineEdit::lineLength ( int <i>row</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the number of characters at paragraph number <i>row</i>. If <i>row</i> is out of range, -1 is returned.</p>
+<h3 class="fn"><a name="markedText"></a><a href="qstring.html">QString</a> Q3MultiLineEdit::markedText () const</h3>
+<p>Returns a copy of the selected text.</p>
+<h3 class="fn"><a name="maxLines"></a>int Q3MultiLineEdit::maxLines () const</h3>
+<p>See also <a href="q3multilineedit.html#setMaxLines">setMaxLines</a>().</p>
+<h3 class="fn"><a name="newLine"></a>void Q3MultiLineEdit::newLine ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Splits the paragraph at the current cursor position.</p>
+<h3 class="fn"><a name="pageDown"></a>void Q3MultiLineEdit::pageDown ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor one page down. If <i>mark</i> is true, the text is selected.</p>
+<h3 class="fn"><a name="pageUp"></a>void Q3MultiLineEdit::pageUp ( bool <i>mark</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Moves the cursor one page up. If <i>mark</i> is true, the text is selected.</p>
+<h3 class="fn"><a name="removeLine"></a>void Q3MultiLineEdit::removeLine ( int <i>paragraph</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Deletes the paragraph at paragraph number <i>paragraph</i>. If <i>paragraph</i> is less than zero or larger than the number of paragraphs, nothing is deleted.</p>
+<h3 class="fn"><a name="setCursorPosition"></a>void Q3MultiLineEdit::setCursorPosition ( int <i>line</i>, int <i>col</i>, bool <i>mark</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the cursor position to character number <i>col</i> in paragraph number <i>line</i>. The parameters are adjusted to lie within the legal range.</p>
+<p>If <i>mark</i> is false, the selection is cleared. otherwise it is extended.</p>
+<h3 class="fn"><a name="setMaxLines"></a>void Q3MultiLineEdit::setMaxLines ( int <i>max</i> )</h3>
+<p>Sets the maximum number of lines this <a href="q3multilineedit.html">Q3MultiLineEdit</a> will hold to <i>max</i>.</p>
+<p>See also <a href="q3multilineedit.html#maxLines">maxLines</a>().</p>
+<h3 class="fn"><a name="textLine"></a><a href="qstring.html">QString</a> Q3MultiLineEdit::textLine ( int <i>line</i> ) const</h3>
+<p>Returns the text at line number <i>line</i> (possibly the empty string), or a null if <i>line</i> is invalid.</p>
+<h3 class="fn"><a name="totalHeight"></a>int Q3MultiLineEdit::totalHeight () const</h3>
+<h3 class="fn"><a name="totalWidth"></a>int Q3MultiLineEdit::totalWidth () const</h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

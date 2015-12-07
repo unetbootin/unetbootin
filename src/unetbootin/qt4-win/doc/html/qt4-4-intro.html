@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-intro.qdoc -->
+<head>
+  <title>Qt 4.4: What's New in Qt 4.4</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">What's New in Qt 4.4<br /><span class="subtitle"></span>
+</h1>
+<p>Qt 4.4 provides many improvements and enhancements over the previous releases in the Qt 4 series. This documents covers the most important features in this release, separated by category.</p>
+<p>A comprehensive list of changes between Qt 4.3 and Qt 4.4 is included in the <tt>changes-4.4.0</tt> file <a href="http://www.trolltech.com/developer/notes/changes/changes-4.4.0">available online</a>.</p>
+<p>A list of other Qt 4 features can be found on the <b><a href="qt4-intro.html">What's New in Qt 4</a></b> page.</p>
+<p><b>Highlights</b></p>
+<ul><li><a href="#qt-webkit-integration">Qt WebKit Integration</a></li>
+<li><a href="#multimedia-api">Multimedia API</a></li>
+<li><a href="#xquery-and-xpath-support">XQuery and XPath Support</a></li>
+<li><a href="#widgets-in-graphics-view">Widgets in Graphics View</a></li>
+<li><a href="#concurrent-programming">Concurrent Programming</a></li>
+<li><a href="#improved-help-system">Improved Help System</a></li>
+<li><a href="#printing-system-improvements">Printing System Improvements</a></li>
+<li><a href="#qt-for-windows-ce">Qt for Windows CE</a></li>
+<li><a href="#qt-for-embedded-linux">Qt for Embedded Linux</a></li>
+</ul>
+<a name="qt-webkit-integration"></a>
+<h2>Qt WebKit Integration</h2>
+<p>As Web-based technologies and services become more important to users, access to an integrated browser component has become a requirement for application developers.</p>
+<p>Qt 4.4 includes the <a href="qtwebkit.html">QtWebKit</a> module which provides a Qt-style API for the open source <a href="examples.html#webkit">WebKit</a> browser engine, making it possible for developers to use a fully-featured Web browser to display documents and access online services. The module also provides a level of integration beyond support for simple Web browsing tasks, enabling other application components to communicate with the browser via Qt's <a href="signalsandslots.html">signals and slots</a> inter-object communication mechanism.</p>
+<p align="center"><img src="images/browser-demo.png" /></p><p>A <a href="demos-browser.html">Web browser demo application</a> is provided as a proof of concept to show what can be achieved with Qt and <a href="examples.html#webkit">WebKit</a>.</p>
+<a name="multimedia-api"></a>
+<h2>Multimedia API</h2>
+<p>Long-awaited multimedia support for Qt applications has arrived in the form of the <a href="phonon-overview.html">Phonon Multimedia Framework</a>, created in partnership with the KDE community. This allows developers to write cross-platform code for playing audio and video streams from files or over the network.</p>
+<p>A graph-based architecture provides an intuitive, extensible way to configure Phonon for playback. The use of native multimedia backends for each platform enables applications to support platform-specific media formats in addition to those commonly used on multiple platforms.</p>
+<p align="center"><img src="images/mediaplayer-demo.png" /></p><p><a href="examples.html#phonon-multimedia-framework">Examples and demonstrations</a> provided with Qt show how to use Phonon for your multimedia applications.</p>
+<a name="xquery-and-xpath-support"></a>
+<h2>XQuery and XPath Support</h2>
+<p>The new <a href="qtxmlpatterns.html">QtXmlPatterns</a> module provides facilities for XML processing beyond that supported by the <a href="qtxml.html">QtXml</a> module. Support for XQuery 1.0 and XPath 2.0 are provided in a way that integrates use of the query language and its data types with standard features in Qt, such as <a href="qabstractxmlnodemodel.html">data models</a> and <a href="signalsandslots.html">signals and slots</a>.</p>
+<a name="widgets-in-graphics-view"></a>
+<h2>Widgets in Graphics View</h2>
+<p>Many applications that use the interactive features provided by the <a href="graphicsview.html#graphics-view">Graphics View</a> framework also use separate Qt widgets to control the way scenes are displayed to the user, often providing controls to allow zooming and rotation. Other specialized applications need to provide standard Qt widgets alongside graphics items within graphics scenes themselves.</p>
+<p align="center"><img src="images/embeddeddialogs-demo.png" /></p><p>Qt 4.4 provides a set of classes to allow standard Qt widgets to be added to graphics scenes, augmenting the collection of <a href="graphicsview-api.html">Graphics View classes</a>. Widgets used in this way remain just as functional and responsive as normal widgets</p>
+<a name="concurrent-programming"></a>
+<h2>Concurrent Programming</h2>
+<p>The <a href="qtconcurrent.html">QtConcurrent</a> framework builds on Qt's threading features to make it easier to write certain kinds of multi-threaded application by integrating implementations of the well-known map-reduce and filter-reduce algorithms with Qt's container classes and object model.</p>
+<p>A synchonous (blocking) API is supplemented with an asynchronous (non-blocking) APIs which uses the concept of <a href="qfuture.html">futures</a> to handle synchronization between a main thread and several worker threads, simplifying the delivery of results.</p>
+<a name="improved-help-system"></a>
+<h2>Improved Help System</h2>
+<p>Qt Assistant has been redesigned to use a self-contained help format for documentation packages that makes it easier to maintain collections of documents. The indexing facilities provided by Qt Assistant have been improved to allow multiple co-existing collections of documents to be searched, and results from advanced searches are presented in a familiar webpage-style result page.</p>
+<p>With the arrival of the new help formats, the way Qt applications provide online help has also been updated. Qt Assistant has been improved to support automation as a child process of any Qt application, allowing applications to request specific items of documentation, perform searches, and even customize the user interface of Qt Assistant itself.</p>
+<a name="printing-system-improvements"></a>
+<h2>Printing System Improvements</h2>
+<p>Improvements to printing in Qt 4.4 include support for custom page sizes and custom margins, as well as the ability to programatically enumerate printers via the new QPrinterInfo class.</p>
+<p align="center"><img src="images/qprintpreviewdialog.png" /></p><p>A couple of new classes, <a href="qprintpreviewwidget.html">QPrintPreviewWidget</a> and <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>, have been added to make it easy to add a print preview to an application. The <a href="qprintdialog.html">QPrintDialog</a> and QPageSetupDialog classes for X11 have been redesigned to be easier to use.</p>
+<a name="qt-for-windows-ce"></a>
+<h2>Qt for Windows CE</h2>
+<p>Qt 4.4 is the first release to include provision for Windows CE as a supported platform. Qt for Windows CE contains all functions necessary to develop end-to-end applications, as well as integrated developer tools, such as powerful graphical user interface (GUI) and forms builder and robust features for translation of applications into new languages.</p>
+<p align="center"><img src="images/qt-for-wince-landscape.png" /></p><a name="qt-for-embedded-linux"></a>
+<h2>Qt for Embedded Linux</h2>
+<p>Qt 4.4 contains a number of improvements specifically for the Embedded Linux platform, many of which are related to performance and extending the range of supported display hardware. These include a screen driver DirectFB and a driver that uses the ATI Handheld Interface library.</p>
+<p align="center"><img src="images/embedded-demo-launcher.png" /></p><p>In addition, a new selection of demonstrations and examples has been included to showcase the graphical features of Qt for Embedded Linux.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

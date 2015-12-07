@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtopengl.qdoc -->
+<head>
+  <title>Qt 4.4: QtOpenGL Module</title>
+  <link rel="prev" href="qtnetwork.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qtsql.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtnetwork.html">QtNetwork Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtsql.html">QtSql Module</a>]
+</p>
+<h1 class="title">QtOpenGL Module<br /><span class="subtitle"></span>
+</h1>
+<p>The QtOpenGL module offers classes that make it easy to use OpenGL in Qt applications. <a href="#details">More...</a></p>
+<h2>Namespaces</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qgl.html">QGL</a></th><td>Specifies miscellaneous identifiers used in the Qt OpenGL module</td></tr>
+</table></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qglcolormap.html">QGLColormap</a></th><td>Used for installing custom colormaps into QGLWidgets</td></tr>
+<tr valign="top" class="even"><th><a href="qglcontext.html">QGLContext</a></th><td>Encapsulates an OpenGL rendering context</td></tr>
+<tr valign="top" class="odd"><th><a href="qglformat.html">QGLFormat</a></th><td>Specifies the display format of an OpenGL rendering context</td></tr>
+<tr valign="top" class="even"><th><a href="qglframebufferobject.html">QGLFramebufferObject</a></th><td>Encapsulates an OpenGL framebuffer object</td></tr>
+<tr valign="top" class="odd"><th><a href="qglpixelbuffer.html">QGLPixelBuffer</a></th><td>Encapsulates an OpenGL pbuffer</td></tr>
+<tr valign="top" class="even"><th><a href="qglwidget.html">QGLWidget</a></th><td>Widget for rendering OpenGL graphics</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>OpenGL is a standard API for rendering 3D graphics. OpenGL only deals with 3D rendering and provides little or no support for GUI programming issues. The user interface for an OpenGL application must be created with another toolkit, such as Motif on the X platform, Microsoft Foundation Classes (MFC) under Windows, or Qt on both platforms.</p>
+<p><b>Note:</b> OpenGL is a trademark of Silicon Graphics, Inc. in the United States and other countries.</p>
+<p>The Qt OpenGL module makes it easy to use OpenGL in Qt applications. It provides an OpenGL widget class that can be used just like any other Qt widget, except that it opens an OpenGL display buffer where you can use the OpenGL API to render the contents.</p>
+<p>To include the definitions of the module's classes, use the following directive:</p>
+<pre>         #include &lt;QtOpenGL&gt;</pre>
+<p>To link against the module, add this line to your <a href="qmake-manual.html#qmake">qmake</a> <tt>.pro</tt> file:</p>
+<pre>         QT += opengl</pre>
+<p>The Qt OpenGL module is implemented as a platform-independent Qt/C++ wrapper around the platform-dependent GLX (version 1.3 or later), WGL, or AGL C APIs. Although the basic functionality provided is very similar to Mark Kilgard's GLUT library, applications using the Qt OpenGL module can take advantage of the whole Qt API for non-OpenGL-specific GUI functionality.</p>
+<p><b>Warning:</b> The QtOpenGL module is part of the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a> and the <a href="opensourceedition.html">Qt Open Source Edition</a>. It is available on Windows, X11, and Mac OS X. <a href="qt-embedded.html">Qt for Embedded Linux</a> supports OpenGL ES (OpenGL for Embedded Systems). To be able to use the OpenGL API in <a href="qt-embedded.html">Qt for Embedded Linux</a>, it must be integrated with the Q Window System (QWS). See the <a href="qt-embedded-opengl.html">Qt for Embedded Linux and OpenGL</a> documentation for details.</p>
+<a name="installation"></a>
+<h3>Installation</h3>
+<p>When you install Qt for X11, the configure script will autodetect if OpenGL headers and libraries are installed on your system, and if so, it will include the QtOpenGL module in the Qt library. (If your OpenGL headers or libraries are placed in a non-standard directory, you may need to change the <tt>QMAKE_INCDIR_OPENGL</tt> and/or <tt>QMAKE_LIBDIR_OPENGL</tt> in the config file for your system).</p>
+<p>When you install Qt for Windows and Mac OS X, the QtOpenGL module is always included. X11 users might like to read the notes on overlays below.</p>
+<p>The QGL documentation assumes that you are familiar with OpenGL programming. If you're new to the subject a good starting point is <a href="http://www.opengl.org/">http://www.opengl.org/</a>.</p>
+<a name="how-to-use-x11-overlays-with-qt"></a>
+<h3>How to Use X11 Overlays with Qt</h3>
+<p>X11 overlays are a powerful mechanism for drawing annotations etc., on top of an image without destroying it, thus saving a great deal of image rendering time. For more information, see the highly recommended book <i>OpenGL Programming for the X Window System</i> (Mark Kilgard, Addison Wesley Developers Press 1996).</p>
+<p><b>Warning:</b> The Qt OpenGL Extension includes direct support for the use of OpenGL overlays. For many uses of overlays, this makes the technique described below redundant. The following is a discussion on how to use non-QGL widgets in overlay planes.</p>
+<p>In the typical case, X11 overlays can easily be used together with the current version of Qt and the Qt OpenGL Extension. The following requirements apply:</p>
+<ol type="1">
+<li>Your X server and graphics card/hardware must support overlays. For many X servers, overlay support can be turned on with a configuration option; consult your X server installation documentation.</li>
+<li>Your X server must (be configured to) use an overlay visual as the default visual. Most modern X servers do this, since this has the added advantage that pop-up menus, overlapping windows etc., will <i>not</i> affect underlying images in the main plane, thereby avoiding expensive redraws.</li>
+<li>The best (deepest) visual for OpenGL rendering is in the main plane. This is the normal case. Typically, X servers that support overlays provide a 24-bit <tt>TrueColor</tt> visual in the main plane, and an 8-bit <tt>PseudoColor</tt> (default) visual in the overlay plane.</li>
+</ol>
+<p>Assuming that the requirements mentioned above are met, a <a href="qglwidget.html">QGLWidget</a> will default to using the main plane visual, while all other widgets will use the overlay visual. Thus, we can place a normal widget on top of the <a href="qglwidget.html">QGLWidget</a>, and do drawing on it, without affecting the image in the OpenGL window. In other words, we can use all the drawing capabilities of <a href="qpainter.html">QPainter</a> to draw annotations, rubberbands, etc. For the typical use of overlays, this is much easier than using OpenGL for rendering annotations.</p>
+<p>An overlay plane has a specific color called the transparent color. Pixels drawn in this color will not be visible; instead the underlying OpenGL image will show through.</p>
+<p>To use this technique, you must not use the <a href="qapplication.html#ColorSpec-enum">QApplication::ManyColor</a> or QApplication::TrueColor color specification for <a href="qapplication.html">QApplication</a>, because this will force the normal Qt widgets to use a <tt>TrueColor</tt> visual, which will typically be in the main plane, not in the overlay plane as desired.</p>
+<p>
+[Previous: <a href="qtnetwork.html">QtNetwork Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtsql.html">QtSql Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

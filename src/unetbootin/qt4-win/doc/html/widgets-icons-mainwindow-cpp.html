@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (widgets/icons/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">widgets/icons/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;iconpreviewarea.h&quot;
+ #include &quot;iconsizespinbox.h&quot;
+ #include &quot;imagedelegate.h&quot;
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     centralWidget = new QWidget;
+     setCentralWidget(centralWidget);
+
+     createPreviewGroupBox();
+     createImagesGroupBox();
+     createIconSizeGroupBox();
+
+     createActions();
+     createMenus();
+     createContextMenu();
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addWidget(previewGroupBox, 0, 0, 1, 2);
+     mainLayout-&gt;addWidget(imagesGroupBox, 1, 0);
+     mainLayout-&gt;addWidget(iconSizeGroupBox, 1, 1);
+     centralWidget-&gt;setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Icons&quot;));
+     checkCurrentStyle();
+     otherRadioButton-&gt;click();
+
+     resize(minimumSizeHint());
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Icons&quot;),
+             tr(&quot;The &lt;b&gt;Icons&lt;/b&gt; example illustrates how Qt renders an icon in &quot;
+                &quot;different modes (active, normal, disabled, and selected) and &quot;
+                &quot;states (on and off) based on a set of images.&quot;));
+ }
+
+ void MainWindow::changeStyle(bool checked)
+ {
+     if (!checked)
+         return;
+
+     QAction *action = qobject_cast&lt;QAction *&gt;(sender());
+     QStyle *style = QStyleFactory::create(action-&gt;data().toString());
+     Q_ASSERT(style);
+     QApplication::setStyle(style);
+
+     smallRadioButton-&gt;setText(tr(&quot;Small (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_SmallIconSize)));
+     largeRadioButton-&gt;setText(tr(&quot;Large (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_LargeIconSize)));
+     toolBarRadioButton-&gt;setText(tr(&quot;Toolbars (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_ToolBarIconSize)));
+     listViewRadioButton-&gt;setText(tr(&quot;List views (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_ListViewIconSize)));
+     iconViewRadioButton-&gt;setText(tr(&quot;Icon views (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_IconViewIconSize)));
+     tabBarRadioButton-&gt;setText(tr(&quot;Tab bars (%1 x %1)&quot;)
+             .arg(style-&gt;pixelMetric(QStyle::PM_TabBarIconSize)));
+
+     changeSize();
+ }
+
+ void MainWindow::changeSize(bool checked)
+ {
+     if (!checked)
+         return;
+
+     int extent;
+
+     if (otherRadioButton-&gt;isChecked()) {
+         extent = otherSpinBox-&gt;value();
+     } else {
+         QStyle::PixelMetric metric;
+
+         if (smallRadioButton-&gt;isChecked()) {
+             metric = QStyle::PM_SmallIconSize;
+         } else if (largeRadioButton-&gt;isChecked()) {
+             metric = QStyle::PM_LargeIconSize;
+         } else if (toolBarRadioButton-&gt;isChecked()) {
+             metric = QStyle::PM_ToolBarIconSize;
+         } else if (listViewRadioButton-&gt;isChecked()) {
+             metric = QStyle::PM_ListViewIconSize;
+         } else if (iconViewRadioButton-&gt;isChecked()) {
+             metric = QStyle::PM_IconViewIconSize;
+         } else {
+             metric = QStyle::PM_TabBarIconSize;
+         }
+         extent = QApplication::style()-&gt;pixelMetric(metric);
+     }
+     previewArea-&gt;setSize(QSize(extent, extent));
+     otherSpinBox-&gt;setEnabled(otherRadioButton-&gt;isChecked());
+ }
+
+ void MainWindow::changeIcon()
+ {
+     QIcon icon;
+
+     for (int row = 0; row &lt; imagesTable-&gt;rowCount(); ++row) {
+         QTableWidgetItem *item0 = imagesTable-&gt;item(row, 0);
+         QTableWidgetItem *item1 = imagesTable-&gt;item(row, 1);
+         QTableWidgetItem *item2 = imagesTable-&gt;item(row, 2);
+
+         if (item0-&gt;checkState() == Qt::Checked) {
+             QIcon::Mode mode;
+             if (item1-&gt;text() == tr(&quot;Normal&quot;)) {
+                 mode = QIcon::Normal;
+             } else if (item1-&gt;text() == tr(&quot;Active&quot;)) {
+                 mode = QIcon::Active;
+             } else if (item1-&gt;text() == tr(&quot;Disabled&quot;)) {
+                 mode = QIcon::Disabled;
+             } else {
+                 mode = QIcon::Selected;
+             }
+
+             QIcon::State state;
+             if (item2-&gt;text() == tr(&quot;On&quot;)) {
+                 state = QIcon::On;
+             } else {
+                 state = QIcon::Off;
+             }
+
+             QString fileName = item0-&gt;data(Qt::UserRole).toString();
+             QImage image(fileName);
+             if (!image.isNull())
+                 icon.addPixmap(QPixmap::fromImage(image), mode, state);
+         }
+     }
+
+     previewArea-&gt;setIcon(icon);
+ }
+
+ void MainWindow::addImages()
+ {
+     QStringList fileNames = QFileDialog::getOpenFileNames(this,
+                                     tr(&quot;Open Images&quot;), &quot;&quot;,
+                                     tr(&quot;Images (*.png *.xpm *.jpg);;&quot;
+                                        &quot;All Files (*)&quot;));
+     if (!fileNames.isEmpty()) {
+         foreach (QString fileName, fileNames) {
+             int row = imagesTable-&gt;rowCount();
+             imagesTable-&gt;setRowCount(row + 1);
+
+             QString imageName = QFileInfo(fileName).baseName();
+             QTableWidgetItem *item0 = new QTableWidgetItem(imageName);
+             item0-&gt;setData(Qt::UserRole, fileName);
+             item0-&gt;setFlags(item0-&gt;flags() &amp; ~Qt::ItemIsEditable);
+
+             QTableWidgetItem *item1 = new QTableWidgetItem(tr(&quot;Normal&quot;));
+             QTableWidgetItem *item2 = new QTableWidgetItem(tr(&quot;Off&quot;));
+
+             if (guessModeStateAct-&gt;isChecked()) {
+                 if (fileName.contains(&quot;_act&quot;)) {
+                     item1-&gt;setText(tr(&quot;Active&quot;));
+                 } else if (fileName.contains(&quot;_dis&quot;)) {
+                     item1-&gt;setText(tr(&quot;Disabled&quot;));
+                 } else if (fileName.contains(&quot;_sel&quot;)) {
+                     item1-&gt;setText(tr(&quot;Selected&quot;));
+                 }
+
+                 if (fileName.contains(&quot;_on&quot;))
+                     item2-&gt;setText(tr(&quot;On&quot;));
+             }
+
+             imagesTable-&gt;setItem(row, 0, item0);
+             imagesTable-&gt;setItem(row, 1, item1);
+             imagesTable-&gt;setItem(row, 2, item2);
+             imagesTable-&gt;openPersistentEditor(item1);
+             imagesTable-&gt;openPersistentEditor(item2);
+
+             item0-&gt;setCheckState(Qt::Checked);
+         }
+     }
+ }
+
+ void MainWindow::removeAllImages()
+ {
+     imagesTable-&gt;setRowCount(0);
+     changeIcon();
+ }
+
+ void MainWindow::createPreviewGroupBox()
+ {
+     previewGroupBox = new QGroupBox(tr(&quot;Preview&quot;));
+
+     previewArea = new IconPreviewArea;
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(previewArea);
+     previewGroupBox-&gt;setLayout(layout);
+ }
+
+ void MainWindow::createImagesGroupBox()
+ {
+     imagesGroupBox = new QGroupBox(tr(&quot;Images&quot;));
+
+     imagesTable = new QTableWidget;
+     imagesTable-&gt;setSelectionMode(QAbstractItemView::NoSelection);
+     imagesTable-&gt;setItemDelegate(new ImageDelegate(this));
+
+     QStringList labels;
+     labels &lt;&lt; tr(&quot;Image&quot;) &lt;&lt; tr(&quot;Mode&quot;) &lt;&lt; tr(&quot;State&quot;);
+
+     imagesTable-&gt;horizontalHeader()-&gt;setDefaultSectionSize(90);
+     imagesTable-&gt;setColumnCount(3);
+     imagesTable-&gt;setHorizontalHeaderLabels(labels);
+     imagesTable-&gt;horizontalHeader()-&gt;setResizeMode(0, QHeaderView::Stretch);
+     imagesTable-&gt;horizontalHeader()-&gt;setResizeMode(1, QHeaderView::Fixed);
+     imagesTable-&gt;horizontalHeader()-&gt;setResizeMode(2, QHeaderView::Fixed);
+     imagesTable-&gt;verticalHeader()-&gt;hide();
+
+     connect(imagesTable, SIGNAL(itemChanged(QTableWidgetItem *)),
+             this, SLOT(changeIcon()));
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(imagesTable);
+     imagesGroupBox-&gt;setLayout(layout);
+ }
+
+ void MainWindow::createIconSizeGroupBox()
+ {
+     iconSizeGroupBox = new QGroupBox(tr(&quot;Icon Size&quot;));
+
+     smallRadioButton = new QRadioButton;
+     largeRadioButton = new QRadioButton;
+     toolBarRadioButton = new QRadioButton;
+     listViewRadioButton = new QRadioButton;
+     iconViewRadioButton = new QRadioButton;
+     tabBarRadioButton = new QRadioButton;
+     otherRadioButton = new QRadioButton(tr(&quot;Other:&quot;));
+
+     otherSpinBox = new IconSizeSpinBox;
+     otherSpinBox-&gt;setRange(8, 128);
+     otherSpinBox-&gt;setValue(64);
+
+     connect(smallRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(largeRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(toolBarRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(listViewRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(iconViewRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(tabBarRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(otherRadioButton, SIGNAL(toggled(bool)),
+             this, SLOT(changeSize(bool)));
+     connect(otherSpinBox, SIGNAL(valueChanged(int)), this, SLOT(changeSize()));
+
+     QHBoxLayout *otherSizeLayout = new QHBoxLayout;
+     otherSizeLayout-&gt;addWidget(otherRadioButton);
+     otherSizeLayout-&gt;addWidget(otherSpinBox);
+     otherSizeLayout-&gt;addStretch();
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(smallRadioButton, 0, 0);
+     layout-&gt;addWidget(largeRadioButton, 1, 0);
+     layout-&gt;addWidget(toolBarRadioButton, 2, 0);
+     layout-&gt;addWidget(listViewRadioButton, 0, 1);
+     layout-&gt;addWidget(iconViewRadioButton, 1, 1);
+     layout-&gt;addWidget(tabBarRadioButton, 2, 1);
+     layout-&gt;addLayout(otherSizeLayout, 3, 0, 1, 2);
+     layout-&gt;setRowStretch(4, 1);
+     iconSizeGroupBox-&gt;setLayout(layout);
+ }
+
+ void MainWindow::createActions()
+ {
+     addImagesAct = new QAction(tr(&quot;&amp;Add Images...&quot;), this);
+     addImagesAct-&gt;setShortcut(tr(&quot;Ctrl+A&quot;));
+     connect(addImagesAct, SIGNAL(triggered()), this, SLOT(addImages()));
+
+     removeAllImagesAct = new QAction(tr(&quot;&amp;Remove All Images&quot;), this);
+     removeAllImagesAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));
+     connect(removeAllImagesAct, SIGNAL(triggered()),
+             this, SLOT(removeAllImages()));
+
+     exitAct = new QAction(tr(&quot;&amp;Quit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     styleActionGroup = new QActionGroup(this);
+     foreach (QString styleName, QStyleFactory::keys()) {
+         QAction *action = new QAction(styleActionGroup);
+         action-&gt;setText(tr(&quot;%1 Style&quot;).arg(styleName));
+         action-&gt;setData(styleName);
+         action-&gt;setCheckable(true);
+         connect(action, SIGNAL(triggered(bool)), this, SLOT(changeStyle(bool)));
+     }
+
+     guessModeStateAct = new QAction(tr(&quot;&amp;Guess Image Mode/State&quot;), this);
+     guessModeStateAct-&gt;setCheckable(true);
+     guessModeStateAct-&gt;setChecked(true);
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(addImagesAct);
+     fileMenu-&gt;addAction(removeAllImagesAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     viewMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;View&quot;));
+     foreach (QAction *action, styleActionGroup-&gt;actions())
+         viewMenu-&gt;addAction(action);
+     viewMenu-&gt;addSeparator();
+     viewMenu-&gt;addAction(guessModeStateAct);
+
+     menuBar()-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }
+
+ void MainWindow::createContextMenu()
+ {
+     imagesTable-&gt;setContextMenuPolicy(Qt::ActionsContextMenu);
+     imagesTable-&gt;addAction(addImagesAct);
+     imagesTable-&gt;addAction(removeAllImagesAct);
+ }
+
+ void MainWindow::checkCurrentStyle()
+ {
+     foreach (QAction *action, styleActionGroup-&gt;actions()) {
+         QString styleName = action-&gt;data().toString();
+         QStyle *candidate = QStyleFactory::create(styleName);
+         Q_ASSERT(candidate);
+         if (candidate-&gt;metaObject()-&gt;className()
+                 == QApplication::style()-&gt;metaObject()-&gt;className()) {
+             action-&gt;trigger();
+             return;
+         }
+         delete candidate;
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

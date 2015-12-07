@@ -1,0 +1,23 @@
+CREATE ..\..\..\..\plugins\imageformats\libqmng.a
+ADDMOD tmp\obj\release_static\main.o
+ADDMOD tmp\obj\release_static\qmnghandler.o
+ADDMOD tmp\obj\release_static\libmng_callback_xs.o
+ADDMOD tmp\obj\release_static\libmng_chunk_io.o
+ADDMOD tmp\obj\release_static\libmng_chunk_descr.o
+ADDMOD tmp\obj\release_static\libmng_chunk_prc.o
+ADDMOD tmp\obj\release_static\libmng_chunk_xs.o
+ADDMOD tmp\obj\release_static\libmng_cms.o
+ADDMOD tmp\obj\release_static\libmng_display.o
+ADDMOD tmp\obj\release_static\libmng_dither.o
+ADDMOD tmp\obj\release_static\libmng_error.o
+ADDMOD tmp\obj\release_static\libmng_filter.o
+ADDMOD tmp\obj\release_static\libmng_hlapi.o
+ADDMOD tmp\obj\release_static\libmng_jpeg.o
+ADDMOD tmp\obj\release_static\libmng_object_prc.o
+ADDMOD tmp\obj\release_static\libmng_pixels.o
+ADDMOD tmp\obj\release_static\libmng_prop_xs.o
+ADDMOD tmp\obj\release_static\libmng_read.o
+ADDMOD tmp\obj\release_static\libmng_trace.o
+ADDMOD tmp\obj\release_static\libmng_write.o
+ADDMOD tmp\obj\release_static\libmng_zlib.o
+SAVE

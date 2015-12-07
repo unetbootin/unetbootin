@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qbuttongroup.cpp -->
+<head>
+  <title>Qt 4.4: QButtonGroup Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QButtonGroup Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QButtonGroup class provides a container to organize groups of button widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QButtonGroup&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qbuttongroup-members.html">List of all members, including inherited members</a></li>
+<li><a href="qbuttongroup-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qbuttongroup.html#exclusive-prop">exclusive</a></b> : bool</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qbuttongroup.html#QButtonGroup">QButtonGroup</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qbuttongroup.html#dtor.QButtonGroup">~QButtonGroup</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#addButton">addButton</a></b> ( QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#addButton-2">addButton</a></b> ( QAbstractButton * <i>button</i>, int <i>id</i> )</li>
+<li><div class="fn"/>QAbstractButton * <b><a href="qbuttongroup.html#button">button</a></b> ( int <i>id</i> ) const</li>
+<li><div class="fn"/>QList&lt;QAbstractButton *&gt; <b><a href="qbuttongroup.html#buttons">buttons</a></b> () const</li>
+<li><div class="fn"/>QAbstractButton * <b><a href="qbuttongroup.html#checkedButton">checkedButton</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qbuttongroup.html#checkedId">checkedId</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qbuttongroup.html#exclusive-prop">exclusive</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qbuttongroup.html#id">id</a></b> ( QAbstractButton * <i>button</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#removeButton">removeButton</a></b> ( QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#exclusive-prop">setExclusive</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#setId">setId</a></b> ( QAbstractButton * <i>button</i>, int <i>id</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonClicked">buttonClicked</a></b> ( QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonClicked-2">buttonClicked</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonPressed">buttonPressed</a></b> ( QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonPressed-2">buttonPressed</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonReleased">buttonReleased</a></b> ( QAbstractButton * <i>button</i> )</li>
+<li><div class="fn"/>void <b><a href="qbuttongroup.html#buttonReleased-2">buttonReleased</a></b> ( int <i>id</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QButtonGroup class provides a container to organize groups of button widgets.</p>
+<p>QButtonGroup provides an abstract container into which button widgets can be placed. It does not provide a visual representation of this container (see <a href="qgroupbox.html">QGroupBox</a> for a container widget), but instead manages the states of each of the buttons in the group.</p>
+<p>An <a href="qbuttongroup.html#exclusive-prop">exclusive</a> button group switches off all checkable (toggle) buttons except the one that was clicked. By default, a button group is exclusive. The buttons in a button group are usually checkable <a href="qpushbutton.html">QPushButton</a>'s, <a href="qcheckbox.html">QCheckBox</a>es (normally for non-exclusive button groups), or <a href="qradiobutton.html">QRadioButton</a>s. If you create an exclusive button group, you should ensure that one of the buttons in the group is initially checked; otherwise, the group will initially be in a state where no buttons are checked.</p>
+<p>A button is added to the group with <a href="qbuttongroup.html#addButton">addButton</a>(). It can be removed from the group with <a href="qbuttongroup.html#removeButton">removeButton</a>(). If the group is exclusive, the currently checked button is available as <a href="qbuttongroup.html#checkedButton">checkedButton</a>(). If a button is clicked the <a href="qbuttongroup.html#buttonClicked">buttonClicked</a>() signal is emitted. For a checkable button in an exclusive group this means that the button was checked. The list of buttons in the group is returned by <a href="qbuttongroup.html#buttons">buttons</a>().</p>
+<p>In addition, QButtonGroup can map between integers and buttons. You can assign an integer id to a button with <a href="qbuttongroup.html#setId">setId</a>(), and retrieve it with <a href="qbuttongroup.html#id">id</a>(). The id of the currently checked button is available with <a href="qbuttongroup.html#checkedId">checkedId</a>(), and there is an overloaded signal <a href="qbuttongroup.html#buttonClicked">buttonClicked</a>() which emits the id of the button. The purpose of the mapping mechanism is to simplify the representation of enum values in a user interface.</p>
+<p>See also <a href="qgroupbox.html">QGroupBox</a>, <a href="qpushbutton.html">QPushButton</a>, <a href="qcheckbox.html">QCheckBox</a>, and <a href="qradiobutton.html">QRadioButton</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="exclusive-prop"></a>exclusive : bool</h3>
+<p>This property holds whether the button group is exclusive.</p>
+<p>If this property is true then only one button in the group can be checked at any given time. The user can click on any button to check it, and that button will replace the existing one as the checked button in the group.</p>
+<p>In an exclusive group, the user cannot uncheck the currently checked button by clicking on it; instead, another button in the group must be clicked to set the new checked button for that group.</p>
+<p>By default, this property is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool exclusive () const</b></li>
+<li><div class="fn"/><b>void setExclusive ( bool )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QButtonGroup"></a>QButtonGroup::QButtonGroup ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new, empty button group with the given <i>parent</i>.</p>
+<p>See also <a href="qbuttongroup.html#addButton">addButton</a>() and <a href="qbuttongroup.html#exclusive-prop">setExclusive</a>().</p>
+<h3 class="fn"><a name="dtor.QButtonGroup"></a>QButtonGroup::~QButtonGroup ()</h3>
+<p>Destroys the button group.</p>
+<h3 class="fn"><a name="addButton"></a>void QButtonGroup::addButton ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )</h3>
+<p>Adds the given <i>button</i> to the end of the group's internal list of buttons.</p>
+<p>See also <a href="qbuttongroup.html#removeButton">removeButton</a>().</p>
+<h3 class="fn"><a name="addButton-2"></a>void QButtonGroup::addButton ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i>, int <i>id</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds the given <i>button</i> to the button group, with the given <i>id</i>.</p>
+<p>See also <a href="qbuttongroup.html#removeButton">removeButton</a>() and <a href="qbuttongroup.html#buttons">buttons</a>().</p>
+<h3 class="fn"><a name="button"></a><a href="qabstractbutton.html">QAbstractButton</a> * QButtonGroup::button ( int <i>id</i> ) const</h3>
+<p>Returns the button with the specified <i>id</i>, or 0 if no such button exists.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="buttonClicked"></a>void QButtonGroup::buttonClicked ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the given <i>button</i> is clicked. A button is clicked when it is first pressed and then released, when its shortcut key is typed, or programmatically when <a href="qabstractbutton.html#click">QAbstractButton::click</a>() or <a href="qabstractbutton.html#animateClick">QAbstractButton::animateClick</a>() is called.</p>
+<p>See also <a href="qbuttongroup.html#checkedButton">checkedButton</a>() and <a href="qabstractbutton.html#clicked">QAbstractButton::clicked</a>().</p>
+<h3 class="fn"><a name="buttonClicked-2"></a>void QButtonGroup::buttonClicked ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when a button with the given <i>id</i> is clicked.</p>
+<p>See also <a href="qbuttongroup.html#checkedButton">checkedButton</a>() and <a href="qabstractbutton.html#clicked">QAbstractButton::clicked</a>().</p>
+<h3 class="fn"><a name="buttonPressed"></a>void QButtonGroup::buttonPressed ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the given <i>button</i> is pressed down.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qabstractbutton.html#pressed">QAbstractButton::pressed</a>().</p>
+<h3 class="fn"><a name="buttonPressed-2"></a>void QButtonGroup::buttonPressed ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when a button with the given <i>id</i> is pressed down.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qabstractbutton.html#pressed">QAbstractButton::pressed</a>().</p>
+<h3 class="fn"><a name="buttonReleased"></a>void QButtonGroup::buttonReleased ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the given <i>button</i> is released.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qabstractbutton.html#released">QAbstractButton::released</a>().</p>
+<h3 class="fn"><a name="buttonReleased-2"></a>void QButtonGroup::buttonReleased ( int <i>id</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when a button with the given <i>id</i> is released.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qabstractbutton.html#released">QAbstractButton::released</a>().</p>
+<h3 class="fn"><a name="buttons"></a><a href="qlist.html">QList</a>&lt;<a href="qabstractbutton.html">QAbstractButton</a> *&gt; QButtonGroup::buttons () const</h3>
+<p>Returns the list of this groups's buttons. This may be empty.</p>
+<p>See also <a href="qbuttongroup.html#addButton">addButton</a>() and <a href="qbuttongroup.html#removeButton">removeButton</a>().</p>
+<h3 class="fn"><a name="checkedButton"></a><a href="qabstractbutton.html">QAbstractButton</a> * QButtonGroup::checkedButton () const</h3>
+<p>Returns the button group's checked button, or 0 if no buttons are checked.</p>
+<p>See also <a href="qbuttongroup.html#buttonClicked">buttonClicked</a>().</p>
+<h3 class="fn"><a name="checkedId"></a>int QButtonGroup::checkedId () const</h3>
+<p>Returns the id of the <a href="qbuttongroup.html#checkedButton">checkedButton</a>(), or -1 if no button is checked.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qbuttongroup.html#setId">setId</a>().</p>
+<h3 class="fn"><a name="id"></a>int QButtonGroup::id ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> ) const</h3>
+<p>Returns the id for the specified <i>button</i>, or -1 if no such button exists.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qbuttongroup.html#setId">setId</a>().</p>
+<h3 class="fn"><a name="removeButton"></a>void QButtonGroup::removeButton ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i> )</h3>
+<p>Removes the given <i>button</i> from the button group.</p>
+<p>See also <a href="qbuttongroup.html#addButton">addButton</a>() and <a href="qbuttongroup.html#buttons">buttons</a>().</p>
+<h3 class="fn"><a name="setId"></a>void QButtonGroup::setId ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>button</i>, int <i>id</i> )</h3>
+<p>Sets the <i>id</i> for the specified <i>button</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qbuttongroup.html#id">id</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

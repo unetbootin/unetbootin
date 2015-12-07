@@ -1,0 +1,28 @@
+  * index page on "O" and downwards?
+  * flag types, e.g. QTextStream::NumberFlags
+  * example references doc.trolltech.com etc.
+
+  * fix enum value table (e.g. QCoreApplication.Encoding.html)
+  * check reimplementation of interface functions (e.g. QWidget::widthMM())
+  * handle '::' in doc, e.g. in QAbstractEventDispatcher's detailed desc
+  * make sure default constructor logic doesn't interfere with default params (e.g. QAbstractEventDispatcher ctors)
+  * document default constructor provided for Java (e.g.?)
+  * document "protected QAbstractEventDispatcher(QtObject.QPrivateConstructor p)" and the like
+  * memory-managed, type
+
+  * replace QString with String, etc.
+  * nested classes
+  * enum_1
+
+  * fix stylesheet
+  * no link to class itself
+  * support \ifjava
+  * add // C++
+  * support Java-only /*! ... */ comments
+
+  * links to property names have to be fixed
+        * example: version 1 in QStyleOptionFrame
+        * example: foo -> isFoo()
+
+  * lowercase, and remove final stop, in \brief texts for variables and properties
+  * omit "see alsos" that don't work instead of showing them as broken links

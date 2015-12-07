@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/3rdparty/webkit/WebKit/qt/Api/qwebframe.cpp -->
+<head>
+  <title>Qt 4.4: QWebHitTestResult Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWebHitTestResult Class Reference<br /><span class="small-subtitle">[<a href="qtwebkit.html">QtWebKit</a> module]</span>
+</h1>
+<p>The QWebHitTestResult class provides information about the web page content after a hit test. <a href="#details">More...</a></p>
+<pre> #include &lt;QWebHitTestResult&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qwebhittestresult-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwebhittestresult.html#QWebHitTestResult">QWebHitTestResult</a></b> ()</li>
+<li><div class="fn"/><b><a href="qwebhittestresult.html#QWebHitTestResult-2">QWebHitTestResult</a></b> ( const QWebHitTestResult &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qwebhittestresult.html#dtor.QWebHitTestResult">~QWebHitTestResult</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qwebhittestresult.html#alternateText">alternateText</a></b> () const</li>
+<li><div class="fn"/>QWebFrame * <b><a href="qwebhittestresult.html#frame">frame</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="qwebhittestresult.html#imageUrl">imageUrl</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwebhittestresult.html#isContentEditable">isContentEditable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwebhittestresult.html#isContentSelected">isContentSelected</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwebhittestresult.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>QWebFrame * <b><a href="qwebhittestresult.html#linkTargetFrame">linkTargetFrame</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebhittestresult.html#linkText">linkText</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="qwebhittestresult.html#linkTitle">linkTitle</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="qwebhittestresult.html#linkUrl">linkUrl</a></b> () const</li>
+<li><div class="fn"/>QPixmap <b><a href="qwebhittestresult.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qwebhittestresult.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebhittestresult.html#title">title</a></b> () const</li>
+<li><div class="fn"/>QWebHitTestResult &amp; <b><a href="qwebhittestresult.html#operator-eq">operator=</a></b> ( const QWebHitTestResult &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWebHitTestResult class provides information about the web page content after a hit test.</p>
+<p>QWebHitTestResult is returned by <a href="qwebframe.html#hitTestContent">QWebFrame::hitTestContent</a>() to provide information about the content of the web page at the specified position.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWebHitTestResult"></a>QWebHitTestResult::QWebHitTestResult ()</h3>
+<p>Constructs a null hit test result.</p>
+<h3 class="fn"><a name="QWebHitTestResult-2"></a>QWebHitTestResult::QWebHitTestResult ( const QWebHitTestResult &amp; <i>other</i> )</h3>
+<p>Constructs a hit test result from <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QWebHitTestResult"></a>QWebHitTestResult::~QWebHitTestResult ()</h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="alternateText"></a><a href="qstring.html">QString</a> QWebHitTestResult::alternateText () const</h3>
+<p>Returns the alternate text of the element. This corresponds to the HTML alt attribute.</p>
+<h3 class="fn"><a name="frame"></a><a href="qwebframe.html">QWebFrame</a> * QWebHitTestResult::frame () const</h3>
+<p>Returns the frame the hit test was executed in.</p>
+<h3 class="fn"><a name="imageUrl"></a><a href="qurl.html">QUrl</a> QWebHitTestResult::imageUrl () const</h3>
+<p>Returns the url of the image.</p>
+<h3 class="fn"><a name="isContentEditable"></a>bool QWebHitTestResult::isContentEditable () const</h3>
+<p>Returns true if the content is editable by the user; otherwise returns false.</p>
+<h3 class="fn"><a name="isContentSelected"></a>bool QWebHitTestResult::isContentSelected () const</h3>
+<p>Returns true if the content tested is part of the selection; otherwise returns false.</p>
+<h3 class="fn"><a name="isNull"></a>bool QWebHitTestResult::isNull () const</h3>
+<p>Returns true if the hit test result is null; otherwise returns false.</p>
+<h3 class="fn"><a name="linkTargetFrame"></a><a href="qwebframe.html">QWebFrame</a> * QWebHitTestResult::linkTargetFrame () const</h3>
+<p>Returns the frame that will load the link if it is activated.</p>
+<h3 class="fn"><a name="linkText"></a><a href="qstring.html">QString</a> QWebHitTestResult::linkText () const</h3>
+<p>Returns the text of the link.</p>
+<h3 class="fn"><a name="linkTitle"></a><a href="qurl.html">QUrl</a> QWebHitTestResult::linkTitle () const</h3>
+<p>Returns the title of the link.</p>
+<h3 class="fn"><a name="linkUrl"></a><a href="qurl.html">QUrl</a> QWebHitTestResult::linkUrl () const</h3>
+<p>Returns the url to which the link points to.</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QWebHitTestResult::pixmap () const</h3>
+<p>Returns a <a href="qpixmap.html">QPixmap</a> containing the image. A null pixmap is returned if the element being tested is not an image.</p>
+<h3 class="fn"><a name="pos"></a><a href="qpoint.html">QPoint</a> QWebHitTestResult::pos () const</h3>
+<p>Returns the position where the hit test occured.</p>
+<h3 class="fn"><a name="title"></a><a href="qstring.html">QString</a> QWebHitTestResult::title () const</h3>
+<p>Returns the title of the nearest enclosing HTML element.</p>
+<h3 class="fn"><a name="operator-eq"></a>QWebHitTestResult &amp; QWebHitTestResult::operator= ( const QWebHitTestResult &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> hit test result to this.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

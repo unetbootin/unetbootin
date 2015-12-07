@@ -1,0 +1,4572 @@
+/****************************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Contact: Qt Software Information (qt-info@nokia.com)
+**
+** This file is part of the QtXMLPatterns module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail.  This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+
+%{
+/****************************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Contact: Qt Software Information (qt-info@nokia.com)
+**
+** This file is part of the QtXMLPatterns module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail.  This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+
+#include <limits>
+
+#include <QUrl>
+
+#include "qabstractfloat_p.h"
+#include "qandexpression_p.h"
+#include "qanyuri_p.h"
+#include "qapplytemplate_p.h"
+#include "qargumentreference_p.h"
+#include "qarithmeticexpression_p.h"
+#include "qatomicstring_p.h"
+#include "qattributeconstructor_p.h"
+#include "qattributenamevalidator_p.h"
+#include "qaxisstep_p.h"
+#include "qbuiltintypes_p.h"
+#include "qcalltemplate_p.h"
+#include "qcastableas_p.h"
+#include "qcastas_p.h"
+#include "qcombinenodes_p.h"
+#include "qcommentconstructor_p.h"
+#include "qcommonnamespaces_p.h"
+#include "qcommonsequencetypes_p.h"
+#include "qcommonvalues_p.h"
+#include "qcomputednamespaceconstructor_p.h"
+#include "qcontextitem_p.h"
+#include "qcopyof_p.h"
+#include "qcurrentitemstore_p.h"
+#include "qdebug_p.h"
+#include "qdelegatingnamespaceresolver_p.h"
+#include "qdocumentconstructor_p.h"
+#include "qelementconstructor_p.h"
+#include "qemptysequence_p.h"
+#include "qemptysequencetype_p.h"
+#include "qevaluationcache_p.h"
+#include "qexpressionfactory_p.h"
+#include "qexpressionsequence_p.h"
+#include "qexpressionvariablereference_p.h"
+#include "qexternalvariablereference_p.h"
+#include "qforclause_p.h"
+#include "qfunctioncall_p.h"
+#include "qfunctionfactory_p.h"
+#include "qfunctionsignature_p.h"
+#include "qgeneralcomparison_p.h"
+#include "qgenericpredicate_p.h"
+#include "qgenericsequencetype_p.h"
+#include "qifthenclause_p.h"
+#include "qinstanceof_p.h"
+#include "qletclause_p.h"
+#include "qliteral_p.h"
+#include "qlocalnametest_p.h"
+#include "qnamespaceconstructor_p.h"
+#include "qnamespacenametest_p.h"
+#include "qncnameconstructor_p.h"
+#include "qnodecomparison_p.h"
+#include "qnodesort_p.h"
+#include "qorderby_p.h"
+#include "qorexpression_p.h"
+#include "qparsercontext_p.h"
+#include "qpath_p.h"
+#include "qpatternistlocale_p.h"
+#include "qpositionalvariablereference_p.h"
+#include "qprocessinginstructionconstructor_p.h"
+#include "qqnameconstructor_p.h"
+#include "qqnametest_p.h"
+#include "qqnamevalue_p.h"
+#include "qquantifiedexpression_p.h"
+#include "qrangeexpression_p.h"
+#include "qrangevariablereference_p.h"
+#include "qreturnorderby_p.h"
+#include "qschemanumeric_p.h"
+#include "qschematypefactory_p.h"
+#include "qsimplecontentconstructor_p.h"
+#include "qstaticbaseuristore_p.h"
+#include "qstaticcompatibilitystore_p.h"
+#include "qtemplateparameterreference_p.h"
+#include "qtemplate_p.h"
+#include "qtextnodeconstructor_p.h"
+#include "qtokenizer_p.h"
+#include "qtreatas_p.h"
+#include "qtypechecker_p.h"
+#include "qunaryexpression_p.h"
+#include "qunresolvedvariablereference_p.h"
+#include "quserfunctioncallsite_p.h"
+#include "qvaluecomparison_p.h"
+#include "qxpathhelper_p.h"
+#include "qxsltsimplecontentconstructor_p.h"
+
+/*
+ * The cpp generated with bison 2.1 wants to
+ * redeclare the C-like prototypes of 'malloc' and 'free', so we avoid that.
+ */
+#define YYMALLOC malloc
+#define YYFREE free
+
+QT_BEGIN_NAMESPACE
+
+/* Due to Qt's QT_BEGIN_NAMESPACE magic, we can't use `using namespace', for some
+ * undocumented reason. */
+namespace QPatternist
+{
+
+/**
+ * "Macro that you define with #define in the Bison declarations
+ * section to request verbose, specific error message strings when
+ * yyerror is called."
+ */
+#define YYERROR_VERBOSE 1
+
+#undef YYLTYPE_IS_TRIVIAL
+#define YYLTYPE_IS_TRIVIAL 0
+
+/* Suppresses `warning: "YYENABLE_NLS" is not defined`
+ * @c YYENABLE_NLS enables Bison internationalization, and we don't
+ * use that, so disable it. See the Bison Manual, section 4.5 Parser Internationalization.
+ */
+#define YYENABLE_NLS 0
+
+static inline QSourceLocation fromYYLTYPE(const YYLTYPE &sourceLocator,
+                                          const ParserContext *const parseInfo)
+{
+    return QSourceLocation(parseInfo->tokenizer->queryURI(),
+                           sourceLocator.first_line,
+                           sourceLocator.first_column);
+}
+
+/**
+ * @short Flags invalid expressions and declarations in the currently
+ * parsed language.
+ *
+ * Since this grammar is used for several languages: XQuery 1.0, XSL-T 2.0 and
+ * XPath 2.0 inside XSL-T, it is the union of all the constructs in these
+ * languages. However, when dealing with each language individually, we
+ * regularly need to disallow some expressions, such as direct element
+ * constructors when parsing XSL-T, or the typeswitch when parsing XPath.
+ *
+ * This is further complicated by that XSLTTokenizer sometimes generates code
+ * which is allowed in XQuery but not in XPath. For that reason the token
+ * INTERNAL is sometimes generated, which signals that an expression, for
+ * instance the @c let clause, should not be flagged as an error, because it's
+ * used for internal purposes.
+ *
+ * Hence, this function is called from each expression and declaration which is
+ * unavailable in XPath.
+ *
+ * If @p isInternal is @c true, no error is raised. Otherwise, if the current
+ * language is not XQuery, an error is raised.
+ */
+static void disallowedConstruct(const ParserContext *const parseInfo,
+                                const YYLTYPE &sourceLocator,
+                                const bool isInternal = false)
+{
+    if(!isInternal && parseInfo->languageAccent != QXmlQuery::XQuery10)
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("A construct was encountered which only is allowed in XQuery."),
+                                        ReportContext::XPST0003,
+                                        fromYYLTYPE(sourceLocator, parseInfo));
+
+    }
+}
+
+static inline bool isVariableReference(const Expression::ID id)
+{
+    return    id == Expression::IDExpressionVariableReference
+           || id == Expression::IDRangeVariableReference
+           || id == Expression::IDArgumentReference;
+}
+
+class ReflectYYLTYPE : public SourceLocationReflection
+{
+public:
+    inline ReflectYYLTYPE(const YYLTYPE &sourceLocator,
+                          const ParserContext *const pi) : m_sl(sourceLocator)
+                                                         , m_parseInfo(pi)
+    {
+    }
+
+    virtual const SourceLocationReflection *actualReflection() const
+    {
+        return this;
+    }
+
+    virtual QSourceLocation sourceLocation() const
+    {
+        return fromYYLTYPE(m_sl, m_parseInfo);
+    }
+
+    virtual QString description() const
+    {
+        Q_ASSERT(false);
+        return QString();
+    }
+
+private:
+    const YYLTYPE &m_sl;
+    const ParserContext *const m_parseInfo;
+};
+
+/**
+ * @short Centralizes a translation string for the purpose of increasing consistency.
+ */
+static inline QString unknownType()
+{
+    return QtXmlPatterns::tr("%1 is an unknown schema type.");
+}
+
+static inline Expression::Ptr create(Expression *const expr,
+                                     const YYLTYPE &sourceLocator,
+                                     const ParserContext *const parseInfo)
+{
+    parseInfo->staticContext->addLocation(expr, fromYYLTYPE(sourceLocator, parseInfo));
+    return Expression::Ptr(expr);
+}
+
+static inline Template::Ptr create(Template *const expr,
+                                   const YYLTYPE &sourceLocator,
+                                   const ParserContext *const parseInfo)
+{
+    parseInfo->staticContext->addLocation(expr, fromYYLTYPE(sourceLocator, parseInfo));
+    return Template::Ptr(expr);
+}
+
+static inline Expression::Ptr create(const Expression::Ptr &expr,
+                                     const YYLTYPE &sourceLocator,
+                                     const ParserContext *const parseInfo)
+{
+    parseInfo->staticContext->addLocation(expr.data(), fromYYLTYPE(sourceLocator, parseInfo));
+    return expr;
+}
+
+static Expression::Ptr createSimpleContent(const Expression::Ptr &source,
+                                           const YYLTYPE &sourceLocator,
+                                           const ParserContext *const parseInfo)
+{
+    return create(parseInfo->isXSLT() ? new XSLTSimpleContentConstructor(source) : new SimpleContentConstructor(source),
+                  sourceLocator,
+                  parseInfo);
+}
+
+static void loadPattern(const Expression::Ptr &matchPattern,
+                        TemplatePattern::Vector &ourPatterns,
+                        const TemplatePattern::ID id,
+                        const PatternPriority priority,
+                        const Template::Ptr &temp)
+{
+    Q_ASSERT(temp);
+
+    const PatternPriority effectivePriority = qIsNaN(priority) ? matchPattern->patternPriority() : priority;
+
+    ourPatterns.append(TemplatePattern::Ptr(new TemplatePattern(matchPattern, effectivePriority, id, temp)));
+}
+
+static Expression::Ptr typeCheckTemplateBody(const Expression::Ptr &body,
+                                             const SequenceType::Ptr &reqType,
+                                             const ParserContext *const parseInfo)
+{
+    return TypeChecker::applyFunctionConversion(body, reqType,
+                                                parseInfo->staticContext,
+                                                ReportContext::XTTE0505,
+                                                TypeChecker::Options(TypeChecker::AutomaticallyConvert | TypeChecker::GeneratePromotion));
+}
+
+static void registerNamedTemplate(const QXmlName &name,
+                                  const Expression::Ptr &body,
+                                  ParserContext *const parseInfo,
+                                  const YYLTYPE &sourceLocator,
+                                  const Template::Ptr &temp)
+{
+    Template::Ptr &e = parseInfo->namedTemplates[name];
+
+    if(e)
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("A template by name %1 "
+                                                          "has already been declared.")
+                                        .arg(formatKeyword(parseInfo->staticContext->namePool(),
+                                                                         name)),
+                                        ReportContext::XTSE0660,
+                                        fromYYLTYPE(sourceLocator, parseInfo));
+    }
+    else
+    {
+        e = temp;
+        e->body = body;
+    }
+}
+
+/**
+ * @short Centralizes code for creating numeric literals.
+ */
+template<typename TNumberClass>
+Expression::Ptr createNumericLiteral(const QString &in,
+                                     const YYLTYPE &sl,
+                                     const ParserContext *const parseInfo)
+{
+    const Item num(TNumberClass::fromLexical(in));
+
+    if(num.template as<AtomicValue>()->hasError())
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not a valid numeric literal.")
+                                           .arg(formatData(in)),
+                                        ReportContext::XPST0003, fromYYLTYPE(sl, parseInfo));
+        return Expression::Ptr(); /* Avoid compiler warning. */
+    }
+    else
+        return create(new Literal(num), sl, parseInfo);
+}
+
+/**
+ * @short The generated Bison parser calls this function when there is a parse error.
+ *
+ * It is not called, nor should be, for logical errors(which the Bison not know about). For those,
+ * ReportContext::error() is called.
+ */
+static int XPatherror(YYLTYPE *sourceLocator, const ParserContext *const parseInfo, const char *const msg)
+{
+    Q_UNUSED(sourceLocator);
+    Q_ASSERT(parseInfo);
+
+    parseInfo->staticContext->error(escape(QLatin1String(msg)), ReportContext::XPST0003, fromYYLTYPE(*sourceLocator, parseInfo));
+    return 1;
+}
+
+/**
+ * When we want to connect the OrderBy and ReturnOrderBy, it might be that we have other expressions, such
+ * as @c where and @c let inbetween. We need to continue through them. This function does that.
+ */
+static ReturnOrderBy *locateReturnClause(const Expression::Ptr &expr)
+{
+    Q_ASSERT(expr);
+
+    const Expression::ID id = expr->id();
+    if(id == Expression::IDLetClause || id == Expression::IDIfThenClause || id == Expression::IDForClause)
+        return locateReturnClause(expr->operands()[1]);
+    else if(id == Expression::IDReturnOrderBy)
+        return expr->as<ReturnOrderBy>();
+    else
+        return 0;
+}
+
+static inline bool isPredicate(const Expression::ID id)
+{
+    return id == Expression::IDGenericPredicate ||
+           id == Expression::IDFirstItemPredicate;
+}
+
+/**
+ * Assumes expr is an AxisStep wrapped in some kind of predicates or paths. Filters
+ * through the predicates and returns the AxisStep.
+ */
+static Expression::Ptr findAxisStep(const Expression::Ptr &expr,
+                                    const bool throughStructures = true)
+{
+    Q_ASSERT(expr);
+
+    if(!throughStructures)
+        return expr;
+
+    Expression *candidate = expr.data();
+    Expression::ID id = candidate->id();
+
+    while(isPredicate(id) || id == Expression::IDPath)
+    {
+        const Expression::List &children = candidate->operands();
+        if(children.isEmpty())
+            return Expression::Ptr();
+        else
+        {
+            candidate = children.first().data();
+            id = candidate->id();
+        }
+    }
+
+    if(id == Expression::IDEmptySequence)
+        return Expression::Ptr();
+    else
+    {
+        Q_ASSERT(candidate->is(Expression::IDAxisStep));
+        return Expression::Ptr(candidate);
+    }
+}
+
+static void changeToTopAxis(const Expression::Ptr &op)
+{
+    /* This axis must have been written away by now. */
+    Q_ASSERT(op->as<AxisStep>()->axis() != QXmlNodeModelIndex::AxisChild);
+
+    if(op->as<AxisStep>()->axis() != QXmlNodeModelIndex::AxisSelf)
+        op->as<AxisStep>()->setAxis(QXmlNodeModelIndex::AxisAttributeOrTop);
+}
+
+/**
+ * @short Writes @p operand1 and @p operand2, two operands in an XSL-T pattern,
+ * into an equivalent XPath expression.
+ *
+ * Essentially, the following rewrite is done:
+ *
+ * <tt>
+ * axis1::test1(a)/axis2::test2(b)
+ *              =>
+ * child-or-top::test2(b)[parent::test1(a)]
+ * </tt>
+ *
+ * Section 5.5.3 The Meaning of a Pattern talks about rewrites that are applied to
+ * only the first step in a pattern, but since we're doing rewrites more radically,
+ * its line of reasoning cannot be followed.
+ *
+ * Keep in mind the rewrites that non-terminal PatternStep do.
+ *
+ * @see createIdPatternPath()
+ */
+static inline Expression::Ptr createPatternPath(const Expression::Ptr &operand1,
+                                                const Expression::Ptr &operand2,
+                                                const QXmlNodeModelIndex::Axis axis,
+                                                const YYLTYPE &sl,
+                                                const ParserContext *const parseInfo)
+{
+    const Expression::Ptr operandL(findAxisStep(operand1, false));
+
+    if(operandL->is(Expression::IDAxisStep))
+        operandL->as<AxisStep>()->setAxis(axis);
+    else
+        findAxisStep(operand1)->as<AxisStep>()->setAxis(axis);
+
+    return create(GenericPredicate::create(operand2, operandL,
+                                           parseInfo->staticContext, fromYYLTYPE(sl, parseInfo)), sl, parseInfo);
+}
+
+/**
+ * @short Performs the same role as createPatternPath(), but is tailored
+ * for @c fn:key() and @c fn:id().
+ *
+ * @c fn:key() and @c fn:id() can be part of path patterns(only as the first step,
+ * to be precise) and that poses a challenge to rewriting because what
+ * createPatternPath() is not possible to express, since the functions cannot be
+ * node tests. E.g, this rewrite is not possible:
+ *
+ * <tt>
+ * id-or-key/abc
+ *  =>
+ * child-or-top::abc[parent::id-or-key]
+ * </tt>
+ *
+ * Our approach is to rewrite like this:
+ *
+ * <tt>
+ * id-or-key/abc
+ * =>
+ * child-or-top::abc[parent::node is id-or-key]
+ * </tt>
+ *
+ * @p operand1 is the call to @c fn:key() or @c fn:id(), @p operand2
+ * the right operand, and @p axis the target axis to rewrite to.
+ *
+ * @see createPatternPath()
+ */
+static inline Expression::Ptr createIdPatternPath(const Expression::Ptr &operand1,
+                                                  const Expression::Ptr &operand2,
+                                                  const QXmlNodeModelIndex::Axis axis,
+                                                  const YYLTYPE &sl,
+                                                  const ParserContext *const parseInfo)
+{
+    const Expression::Ptr operandR(findAxisStep(operand2));
+    Q_ASSERT(operandR);
+    changeToTopAxis(operandR);
+
+    const Expression::Ptr parentStep(create(new AxisStep(axis, BuiltinTypes::node),
+                                            sl,
+                                            parseInfo));
+    const Expression::Ptr isComp(create(new NodeComparison(parentStep,
+                                                           QXmlNodeModelIndex::Is,
+                                                           operand1),
+                                         sl,
+                                         parseInfo));
+
+    return create(GenericPredicate::create(operandR, isComp,
+                                           parseInfo->staticContext, fromYYLTYPE(sl, parseInfo)), sl, parseInfo);
+}
+
+/**
+ * @short Centralizes a translation message, for the
+ * purpose of consistency and modularization.
+ */
+static inline QString prologMessage(const char *const msg)
+{
+    Q_ASSERT(msg);
+    return QtXmlPatterns::tr("Only one %1 declaration can occur in the query prolog.").arg(formatKeyword(msg));
+}
+
+/**
+ * @short Resolves against the static base URI and checks that @p collation
+ * is a supported Unicode Collation.
+ *
+ * "If a default collation declaration specifies a collation by a
+ *  relative URI, that relative URI is resolved to an absolute
+ *  URI using the base URI in the static context."
+ *
+ * @returns the Unicode Collation properly resolved, if @p collation is a valid collation
+ */
+template<const ReportContext::ErrorCode errorCode>
+static QUrl resolveAndCheckCollation(const QString &collation,
+                                     const ParserContext *const parseInfo,
+                                     const YYLTYPE &sl)
+{
+    Q_ASSERT(parseInfo);
+    const ReflectYYLTYPE ryy(sl, parseInfo);
+
+    QUrl uri(AnyURI::toQUrl<ReportContext::XQST0046>(collation, parseInfo->staticContext, &ryy));
+
+    if(uri.isRelative())
+        uri = parseInfo->staticContext->baseURI().resolved(uri);
+
+    XPathHelper::checkCollationSupport<errorCode>(uri.toString(), parseInfo->staticContext, &ryy);
+
+    return uri;
+}
+
+/* The Bison generated parser declares macros that aren't used
+ * so suppress the warnings by fake usage of them.
+ *
+ * We do the same for some more defines in the first action. */
+#if    defined(YYLSP_NEEDED)    \
+    || defined(YYBISON)         \
+    || defined(YYBISON_VERSION) \
+    || defined(YYPURE)          \
+    || defined(yydebug)         \
+    || defined(YYSKELETON_NAME)
+#endif
+
+/**
+ * Wraps @p operand with a CopyOf in case it makes any difference.
+ *
+ * There is no need to wrap the return value in a call to create(), it's
+ * already done.
+ */
+static Expression::Ptr createCopyOf(const Expression::Ptr &operand,
+                                    const ParserContext *const parseInfo,
+                                    const YYLTYPE &sl)
+{
+    return create(new CopyOf(operand, parseInfo->inheritNamespacesMode,
+                             parseInfo->preserveNamespacesMode), sl, parseInfo);
+}
+
+static Expression::Ptr createCompatStore(const Expression::Ptr &expr,
+                                         const YYLTYPE &sourceLocator,
+                                         const ParserContext *const parseInfo)
+{
+    return create(new StaticCompatibilityStore(expr), sourceLocator, parseInfo);
+}
+
+/**
+ * @short Creates an Expression that corresponds to <tt>/</tt>. This is literally
+ * <tt>fn:root(self::node()) treat as document-node()</tt>.
+ */
+static Expression::Ptr createRootExpression(const ParserContext *const parseInfo,
+                                            const YYLTYPE &sl)
+{
+    Q_ASSERT(parseInfo);
+    const QXmlName name(StandardNamespaces::fn, StandardLocalNames::root);
+
+    Expression::List args;
+    args.append(create(new ContextItem(), sl, parseInfo));
+
+    const ReflectYYLTYPE ryy(sl, parseInfo);
+
+    const Expression::Ptr fnRoot(parseInfo->staticContext->functionSignatures()
+                                 ->createFunctionCall(name, args, parseInfo->staticContext, &ryy));
+    Q_ASSERT(fnRoot);
+
+    return create(new TreatAs(create(fnRoot, sl, parseInfo), CommonSequenceTypes::ExactlyOneDocumentNode), sl, parseInfo);
+}
+
+static int XPathlex(YYSTYPE *lexVal, YYLTYPE *sourceLocator, const ParserContext *const parseInfo)
+{
+#ifdef Patternist_DEBUG_PARSER
+    /**
+     * "External integer variable set to zero by default. If yydebug
+     *  is given a nonzero value, the parser will output information on
+     *  input symbols and parser action. See section Debugging Your Parser."
+     */
+#   define YYDEBUG 1
+
+    extern int XPathdebug;
+    XPathdebug = 1;
+#endif
+
+    Q_ASSERT(parseInfo);
+
+    const Tokenizer::Token tok(parseInfo->tokenizer->nextToken(sourceLocator));
+
+    (*lexVal).sval = tok.value;
+
+    return static_cast<int>(tok.type);
+}
+
+/**
+ * @short Creates a path expression which contains the step <tt>//</tt> between
+ * @p begin and and @p end.
+ *
+ * <tt>begin//end</tt> is a short form for: <tt>begin/descendant-or-self::node()/end</tt>
+ *
+ * This will be compiled as two-path expression: <tt>(/)/(//.)/step/</tt>
+ */
+static Expression::Ptr createSlashSlashPath(const Expression::Ptr &begin,
+                                            const Expression::Ptr &end,
+                                            const YYLTYPE &sourceLocator,
+                                            const ParserContext *const parseInfo)
+{
+    const Expression::Ptr twoSlash(create(new AxisStep(QXmlNodeModelIndex::AxisDescendantOrSelf, BuiltinTypes::node), sourceLocator, parseInfo));
+    const Expression::Ptr p1(create(new Path(begin, twoSlash), sourceLocator, parseInfo));
+
+    return create(new Path(p1, end), sourceLocator, parseInfo);
+}
+
+/**
+ * @short Creates a call to <tt>fn:concat()</tt> with @p args as the arguments.
+ */
+static inline Expression::Ptr createConcatFN(const ParserContext *const parseInfo,
+                                             const Expression::List &args,
+                                             const YYLTYPE &sourceLocator)
+{
+    Q_ASSERT(parseInfo);
+    const QXmlName name(StandardNamespaces::fn, StandardLocalNames::concat);
+    const ReflectYYLTYPE ryy(sourceLocator, parseInfo);
+
+    return create(parseInfo->staticContext->functionSignatures()->createFunctionCall(name, args, parseInfo->staticContext, &ryy),
+                  sourceLocator, parseInfo);
+}
+
+static inline Expression::Ptr createDirAttributeValue(const Expression::List &content,
+                                                      const ParserContext *const parseInfo,
+                                                      const YYLTYPE &sourceLocator)
+{
+    if(content.isEmpty())
+        return create(new EmptySequence(), sourceLocator, parseInfo);
+    else if(content.size() == 1)
+        return content.first();
+    else
+        return createConcatFN(parseInfo, content, sourceLocator);
+}
+
+/**
+ * @short Checks for variable initialization circularity.
+ *
+ * "A recursive function that checks for recursion is full of ironies."
+ *
+ *      -- The Salsa Master
+ *
+ * Issues an error via @p parseInfo's StaticContext if the initialization
+ * expression @p checkee for the global variable @p var, contains a variable
+ * reference to @p var. That is, if there's a circularity.
+ *
+ * @see <a href="http://www.w3.org/TR/xquery/#ERRXQST0054">XQuery 1.0: An XML
+ * Query Language, err:XQST0054</a>
+ */
+static void checkVariableCircularity(const VariableDeclaration::Ptr &var,
+                                     const Expression::Ptr &checkee,
+                                     const VariableDeclaration::Type type,
+                                     FunctionSignature::List &signList,
+                                     const ParserContext *const parseInfo)
+{
+    Q_ASSERT(var);
+    Q_ASSERT(checkee);
+    Q_ASSERT(parseInfo);
+
+    const Expression::ID id = checkee->id();
+
+    if(id == Expression::IDExpressionVariableReference)
+    {
+        const ExpressionVariableReference *const ref =
+                    static_cast<const ExpressionVariableReference *>(checkee.data());
+
+        if(var->slot == ref->slot() && type == ref->variableDeclaration()->type)
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The initialization of variable %1 "
+                                                              "depends on itself").arg(formatKeyword(var, parseInfo->staticContext->namePool())),
+                                            parseInfo->isXSLT() ? ReportContext::XTDE0640 : ReportContext::XQST0054, ref);
+            return;
+        }
+        else
+        {
+            /* If the variable we're checking is below another variable, it can be a recursive
+             * dependency through functions, so we need to check variable references too. */
+            checkVariableCircularity(var, ref->sourceExpression(), type, signList, parseInfo);
+            return;
+        }
+    }
+    else if(id == Expression::IDUserFunctionCallsite)
+    {
+        const UserFunctionCallsite::Ptr callsite(checkee);
+        const FunctionSignature::Ptr sign(callsite->callTargetDescription());
+        const FunctionSignature::List::const_iterator end(signList.constEnd());
+        FunctionSignature::List::const_iterator it(signList.constBegin());
+        bool noMatch = true;
+
+        for(; it != end; ++it)
+        {
+            if(*it == sign)
+            {
+                /* The variable we're checking is depending on a function that's recursive. The
+                 * user has written a weird query, in other words. Since it's the second time
+                 * we've encountered a callsite, we now skip it. */
+                noMatch = false;
+                break;
+            }
+        }
+
+        if(noMatch)
+        {
+            signList.append(sign);
+            /* Check the body of the function being called. */
+            checkVariableCircularity(var, callsite->body(), type, signList, parseInfo);
+        }
+        /* Continue with the operands, such that we also check the arguments of the callsite. */
+    }
+    else if(id == Expression::IDUnresolvedVariableReference)
+    {
+        /* We're called before it has rewritten itself. */
+        checkVariableCircularity(var, checkee->as<UnresolvedVariableReference>()->replacement(), type, signList, parseInfo);
+    }
+
+    /* Check the operands. */
+    const Expression::List ops(checkee->operands());
+    if(ops.isEmpty())
+        return;
+
+    const Expression::List::const_iterator end(ops.constEnd());
+    Expression::List::const_iterator it(ops.constBegin());
+
+    for(; it != end; ++it)
+        checkVariableCircularity(var, *it, type, signList, parseInfo);
+}
+
+static void variableUnavailable(const QXmlName &variableName,
+                                const ParserContext *const parseInfo,
+                                const YYLTYPE &location)
+{
+    parseInfo->staticContext->error(QtXmlPatterns::tr("No variable by name %1 exists")
+                                       .arg(formatKeyword(parseInfo->staticContext->namePool(), variableName)),
+                                    ReportContext::XPST0008, fromYYLTYPE(location, parseInfo));
+}
+
+/**
+ * The Cardinality in a TypeDeclaration for a variable in a quantification has no effect,
+ * and this function ensures this by changing @p type to Cardinality Cardinality::zeroOrMore().
+ *
+ * @see <a href="http://www.w3.org/Bugs/Public/show_bug.cgi?id=3305">Bugzilla Bug 3305
+ * Cardinality + on range variables</a>
+ * @see ParserContext::finalizePushedVariable()
+ */
+static inline SequenceType::Ptr quantificationType(const SequenceType::Ptr &type)
+{
+    Q_ASSERT(type);
+    return makeGenericSequenceType(type->itemType(), Cardinality::zeroOrMore());
+}
+
+/**
+ * @p seqType and @p expr may be @c null.
+ */
+static Expression::Ptr pushVariable(const QXmlName name,
+                                    const SequenceType::Ptr &seqType,
+                                    const Expression::Ptr &expr,
+                                    const VariableDeclaration::Type type,
+                                    const YYLTYPE &sourceLocator,
+                                    ParserContext *const parseInfo,
+                                    const bool checkSource = true)
+{
+    Q_ASSERT(!name.isNull());
+    Q_ASSERT(parseInfo);
+
+    /* -2 will cause Q_ASSERTs to trigger if it isn't changed. */
+    VariableSlotID slot = -2;
+
+    switch(type)
+    {
+        case VariableDeclaration::FunctionArgument:
+        /* Fallthrough. */
+        case VariableDeclaration::ExpressionVariable:
+        {
+            slot = parseInfo->allocateExpressionSlot();
+            break;
+        }
+        case VariableDeclaration::GlobalVariable:
+        {
+            slot = parseInfo->allocateGlobalVariableSlot();
+            break;
+        }
+        case VariableDeclaration::RangeVariable:
+        {
+            slot = parseInfo->staticContext->allocateRangeSlot();
+            break;
+        }
+        case VariableDeclaration::PositionalVariable:
+        {
+            slot = parseInfo->allocatePositionalSlot();
+            break;
+        }
+        case VariableDeclaration::TemplateParameter:
+            /* Fallthrough. We do nothing, template parameters
+             * doesn't use context slots at all, they're hashed
+             * on the name. */
+        case VariableDeclaration::ExternalVariable:
+            /* We do nothing, external variables doesn't use
+             *context slots/stack frames at all. */
+            ;
+    }
+
+    const VariableDeclaration::Ptr var(new VariableDeclaration(name, slot, type, seqType));
+
+    Expression::Ptr checked;
+
+    if(checkSource && seqType)
+    {
+        if(expr)
+        {
+            /* We only want to add conversion for function arguments, and variables
+             * if we're XSL-T.
+             *
+             * We unconditionally skip TypeChecker::CheckFocus because the StaticContext we
+             * pass hasn't set up the focus yet, since that's the parent's responsibility. */
+            const TypeChecker::Options options((   type == VariableDeclaration::FunctionArgument
+                                                || type == VariableDeclaration::TemplateParameter
+                                                || parseInfo->isXSLT())
+                                               ? TypeChecker::AutomaticallyConvert : TypeChecker::Options());
+
+            checked = TypeChecker::applyFunctionConversion(expr, seqType, parseInfo->staticContext,
+                                                           parseInfo->isXSLT() ? ReportContext::XTTE0570 : ReportContext::XPTY0004,
+                                                           options);
+        }
+    }
+    else
+        checked = expr;
+
+    /* Add an evaluation cache for all expression variables. No EvaluationCache is needed for
+     * positional variables because in the end they are calls to Iterator::position(). Similarly,
+     * no need to cache range variables either because they are calls to DynamicContext::rangeVariable().
+     *
+     * We don't do it for function arguments because the Expression being cached depends -- it depends
+     * on the callsite. UserFunctionCallsite is responsible for the evaluation caches in that case.
+     *
+     * In some cases the EvaluationCache instance isn't necessary, but in those cases EvaluationCache
+     * optimizes itself away. */
+    if(type == VariableDeclaration::ExpressionVariable)
+        checked = create(new EvaluationCache<false>(checked, var, parseInfo->allocateCacheSlot()), sourceLocator, parseInfo);
+    else if(type == VariableDeclaration::GlobalVariable)
+        checked = create(new EvaluationCache<true>(checked, var, parseInfo->allocateCacheSlot()), sourceLocator, parseInfo);
+
+    var->setExpression(checked);
+
+    parseInfo->variables.push(var);
+    return checked;
+}
+
+static inline VariableDeclaration::Ptr variableByName(const QXmlName name,
+                                                      const ParserContext *const parseInfo)
+{
+    Q_ASSERT(!name.isNull());
+    Q_ASSERT(parseInfo);
+
+    /* We walk the list backwards. */
+    const VariableDeclaration::Stack::const_iterator start(parseInfo->variables.constBegin());
+    VariableDeclaration::Stack::const_iterator it(parseInfo->variables.constEnd());
+
+    while(it != start)
+    {
+        --it;
+        Q_ASSERT(*it);
+        if((*it)->name == name)
+            return *it;
+    }
+
+    return VariableDeclaration::Ptr();
+}
+
+static Expression::Ptr resolveVariable(const QXmlName &name,
+                                       const YYLTYPE &sourceLocator,
+                                       ParserContext *const parseInfo,
+                                       const bool raiseErrorOnUnavailability)
+{
+    const VariableDeclaration::Ptr var(variableByName(name, parseInfo));
+    Expression::Ptr retval;
+
+    if(var && var->type != VariableDeclaration::ExternalVariable)
+    {
+        switch(var->type)
+        {
+            case VariableDeclaration::RangeVariable:
+            {
+                retval = create(new RangeVariableReference(var->expression(), var->slot), sourceLocator, parseInfo);
+                break;
+            }
+            case VariableDeclaration::GlobalVariable:
+            /* Fallthrough. From the perspective of an ExpressionVariableReference, it can't tell
+             * a difference between a global and a local expression variable. However, the cache
+             * mechanism must. */
+            case VariableDeclaration::ExpressionVariable:
+            {
+                retval = create(new ExpressionVariableReference(var->slot, var), sourceLocator, parseInfo);
+                break;
+            }
+            case VariableDeclaration::FunctionArgument:
+            {
+                retval = create(new ArgumentReference(var->sequenceType, var->slot), sourceLocator, parseInfo);
+                break;
+            }
+            case VariableDeclaration::PositionalVariable:
+            {
+                retval = create(new PositionalVariableReference(var->slot), sourceLocator, parseInfo);
+                break;
+            }
+            case VariableDeclaration::TemplateParameter:
+            {
+                retval = create(new TemplateParameterReference(var), sourceLocator, parseInfo);
+                break;
+            }
+            case VariableDeclaration::ExternalVariable:
+                /* This code path will never be hit, but the case
+                 * label silences a warning. See above. */
+                ;
+        }
+        Q_ASSERT(retval);
+        var->references.append(retval);
+    }
+    else
+    {
+        /* Let's see if your external variable loader can provide us with one. */
+        const SequenceType::Ptr varType(parseInfo->staticContext->
+                                        externalVariableLoader()->announceExternalVariable(name, CommonSequenceTypes::ZeroOrMoreItems));
+
+        if(varType)
+        {
+            const Expression::Ptr extRef(create(new ExternalVariableReference(name, varType), sourceLocator, parseInfo));
+            const Expression::Ptr checked(TypeChecker::applyFunctionConversion(extRef, varType, parseInfo->staticContext));
+            retval = checked;
+        }
+        else if(!raiseErrorOnUnavailability && parseInfo->isXSLT())
+        {
+            /* In XSL-T, global variables are in scope for the whole
+             * stylesheet, so we must resolve this first at the end. */
+            retval = create(new UnresolvedVariableReference(name), sourceLocator, parseInfo);
+            parseInfo->unresolvedVariableReferences.insert(name, retval);
+        }
+        else
+            variableUnavailable(name, parseInfo, sourceLocator);
+    }
+
+    return retval;
+}
+
+static Expression::Ptr createReturnOrderBy(const OrderSpecTransfer::List &orderSpecTransfer,
+                                           const Expression::Ptr &returnExpr,
+                                           const OrderBy::Stability stability,
+                                           const YYLTYPE &sourceLocator,
+                                           const ParserContext *const parseInfo)
+{
+    // TODO do resize(orderSpec.size() + 1)
+    Expression::List exprs;
+    OrderBy::OrderSpec::Vector orderSpecs;
+
+    exprs.append(returnExpr);
+
+    const int len = orderSpecTransfer.size();
+
+    for(int i = 0; i < len; ++i)
+    {
+        exprs.append(orderSpecTransfer.at(i).expression);
+        orderSpecs.append(orderSpecTransfer.at(i).orderSpec);
+    }
+
+    return create(new ReturnOrderBy(stability, orderSpecs, exprs), sourceLocator, parseInfo);
+}
+
+%}
+
+/* This grammar shouldn't be compiled with anything older than the Bison version
+ * specified below. This '%require' directive was introduced in Bison 2.2. */
+%require "2.3a"
+
+%name-prefix="XPath"
+
+/* Specifies the name of the generated parser. */
+%output="qquerytransformparser.cpp"
+
+/* Output the .output file. */
+%verbose
+
+/* Yes, we want descriptive error messages. */
+%error-verbose
+
+/* We'd like to be reentrant/thread-safe */
+%pure-parser
+
+/* We want code for line/columns to be generated. */
+%locations
+
+/* Create a header file and put declarations there. */
+%defines
+
+%parse-param    {ParserContext *const parseInfo}
+%lex-param      {ParserContext *const parseInfo}
+
+%expect 4
+/* Silences the following:
+
+state 327
+
+  293 SequenceType: ItemType . OccurrenceIndicator
+
+    "+"  shift, and go to state 379
+    "*"  shift, and go to state 380
+    "?"  shift, and go to state 381
+
+    "+"       [reduce using rule 295 (OccurrenceIndicator)]
+    "*"       [reduce using rule 295 (OccurrenceIndicator)]
+    $default  reduce using rule 295 (OccurrenceIndicator)
+
+    OccurrenceIndicator  go to state 382
+
+state 45
+
+  200 PathExpr: "/" . RelativePathExpr
+  203         | "/" .
+
+    [...]
+
+    "<"       [reduce using rule 203 (PathExpr)]
+    "*"       [reduce using rule 203 (PathExpr)]
+    $default  reduce using rule 203 (PathExpr)
+*/
+
+%token <sval> STRING_LITERAL                "<string literal>"
+
+/**
+ * This token is only used in element content and signals content that
+ * is not Boundary whitespace. Nevertheless, the token value can be all whitespace,
+ * but it was specified using character references or CDATA sections by the user. */
+%token <sval> NON_BOUNDARY_WS               "<non-boundary text node>"
+
+/* XPath 2.0 allows quotes and apostrophes to be escaped with "" and ''; this token is
+   is used for XPath 2.0 literals such that we can flag syntax errors if running in
+   1.0 mode. */
+%token <sval> XPATH2_STRING_LITERAL         "<string literal(XPath 2.0)>"
+%token <sval> QNAME                         "QName"
+%token <sval> NCNAME                        "NCName"
+
+/* A QName as a clark name. See QXmlName::toClarkName(). */
+%token <sval> CLARK_NAME                    "ClarkName"
+
+/**
+ * Is "ncname:*". The token value does not include the colon and the star.
+ */
+%token <sval> ANY_LOCAL_NAME
+
+/**
+ * Is "*:ncname". The token value does not include the colon and the star.
+ */
+%token <sval> ANY_PREFIX
+
+/**
+ * An XPath 1.0 number literal. It is a string value because
+ * Numeric::fromLexical() does the tokenization.
+ */
+%token <sval> NUMBER                        "<number literal>"
+
+/**
+ * XPath 2.0 number literal. It includes the use of 'e'/'E'
+ */
+%token <sval> XPATH2_NUMBER                 "<number literal(XPath 2.0)>"
+
+%token ANCESTOR                             "ancestor"
+%token ANCESTOR_OR_SELF                     "ancestor-or-self"
+%token AND                                  "and"
+%token APOS                                 "'"
+%token APPLY_TEMPLATE                       "apply-template"
+%token AS                                   "as"
+%token ASCENDING                            "ascending"
+%token ASSIGN                               ":="
+%token AT                                   "at"
+%token AT_SIGN                              "@"
+%token ATTRIBUTE                            "attribute"
+%token AVT                                  /* Synthetic token. Signals an attribute value template. */
+%token BAR                                  "|"
+%token BASEURI                              "base-uri"
+%token BEGIN_END_TAG                        "</"
+%token BOUNDARY_SPACE                       "boundary-space"
+%token BY                                   "by"
+%token CALL_TEMPLATE                        "call-template"
+%token CASE                                 "case"
+%token CASTABLE                             "castable"
+%token CAST                                 "cast"
+%token CHILD                                "child"
+%token COLLATION                            "collation"
+%token COLONCOLON                           "::"
+%token COMMA                                ","
+%token COMMENT                              "comment"
+%token COMMENT_START                        "<!--"
+%token CONSTRUCTION                         "construction"
+%token COPY_NAMESPACES                      "copy-namespaces"
+%token CURLY_LBRACE                         "{"
+%token CURLY_RBRACE                         "}"
+%token DECLARE                              "declare"
+%token DEFAULT                              "default"
+%token DESCENDANT                           "descendant"
+%token DESCENDANT_OR_SELF                   "descendant-or-self"
+%token DESCENDING                           "descending"
+%token DIV                                  "div"
+%token DOCUMENT                             "document"
+%token DOCUMENT_NODE                        "document-node"
+%token DOLLAR                               "$"
+%token DOT                                  "."
+%token DOTDOT                               ".."
+%token ELEMENT                              "element"
+%token ELSE                                 "else"
+%token EMPTY                                "empty"
+%token EMPTY_SEQUENCE                       "empty-sequence"
+%token ENCODING                             "encoding"
+%token END_OF_FILE 0                        "end of file"
+%token END_SORT                             "end_sort"
+%token EQ                                   "eq"
+%token ERROR                                "unknown keyword" /* Used by the Tokenizer. We use the phrase "keyword" instead of "token" to be less pointy.  */
+%token EVERY                                "every"
+%token EXCEPT                               "except"
+%token EXTERNAL                             "external"
+%token FOLLOWING                            "following"
+%token FOLLOWING_SIBLING                    "following-sibling"
+%token FOLLOWS                              ">>"
+%token FOR_APPLY_TEMPLATE                   "for-apply-template" /* Synthetic token, used in XSL-T. */
+%token FOR                                  "for"
+%token FUNCTION                             "function"
+%token GE                                   "ge"
+%token G_EQ                                 "="
+%token G_GE                                 ">="
+%token G_GT                                 ">"
+%token G_LE                                 "<="
+%token G_LT                                 "<"
+%token G_NE                                 "!="
+%token GREATEST                             "greatest"
+%token GT                                   "gt"
+%token IDIV                                 "idiv"
+%token IF                                   "if"
+%token IMPORT                               "import"
+%token INHERIT                              "inherit"
+%token IN                                   "in"
+%token INSTANCE                             "instance"
+%token INTERSECT                            "intersect"
+%token IS                                   "is"
+%token ITEM                                 "item"
+%token LAX                                  "lax"
+%token LBRACKET                             "["
+%token LEAST                                "least"
+%token LE                                   "le"
+%token LET                                  "let"
+%token LPAREN                               "("
+%token LT                                   "lt"
+%token MAP                                  "map" /* Synthetic token, used in XSL-T. */
+%token MATCHES                              "matches"
+%token MINUS                                "-"
+%token MODE                                 "mode" /* Synthetic token, used in XSL-T. */
+%token MOD                                  "mod"
+%token MODULE                               "module"
+%token NAME                                 "name"
+%token NAMESPACE                            "namespace"
+%token NE                                   "ne"
+%token NODE                                 "node"
+%token NO_INHERIT                           "no-inherit"
+%token NO_PRESERVE                          "no-preserve"
+%token OF                                   "of"
+%token OPTION                               "option"
+%token ORDERED                              "ordered"
+%token ORDERING                             "ordering"
+%token ORDER                                "order"
+%token OR                                   "or"
+%token PARENT                               "parent"
+%token PI_START                             "<?"
+%token PLUS                                 "+"
+%token POSITION_SET                         /* Synthetic token. */
+%token PRAGMA_END                           "#)"
+%token PRAGMA_START                         "(#"
+%token PRECEDES                             "<<"
+%token PRECEDING                            "preceding"
+%token PRECEDING_SIBLING                    "preceding-sibling"
+%token PRESERVE                             "preserve"
+%token PRIORITY                             "priority"
+%token PROCESSING_INSTRUCTION               "processing-instruction"
+%token QUESTION                             "?"
+%token QUICK_TAG_END                        "/>"
+%token QUOTE                                "\""
+%token RBRACKET                             "]"
+%token RETURN                               "return"
+%token RPAREN                               ")"
+%token SATISFIES                            "satisfies"
+%token SCHEMA_ATTRIBUTE                     "schema-attribute"
+%token SCHEMA_ELEMENT                       "schema-element"
+%token SCHEMA                               "schema"
+%token SELF                                 "self"
+%token SEMI_COLON                           ";"
+%token SLASH                                "/"
+%token SLASHSLASH                           "//"
+%token SOME                                 "some"
+%token SORT                                 "sort" /* Synthetic token, used in XSL-T. */
+%token STABLE                               "stable"
+%token STAR                                 "*"
+%token STRICT                               "strict"
+%token STRIP                                "strip"
+%token SUCCESS                              /* Synthetic token, used by the Tokenizer. */
+%token <sval> COMMENT_CONTENT
+%token <sval> PI_CONTENT
+%token <sval> PI_TARGET
+%token <sval> XSLT_VERSION                  /* Synthetic token, used in XSL-T. */
+%token TEMPLATE                             "template"
+%token TEXT                                 "text"
+%token THEN                                 "then"
+%token TO                                   "to"
+%token TREAT                                "treat"
+%token TUNNEL                               "tunnel" /* Synthetic token, used in XSL-T. */
+%token TYPESWITCH                           "typeswitch"
+%token UNION                                "union"
+%token UNORDERED                            "unordered"
+%token VALIDATE                             "validate"
+%token VARIABLE                             "variable"
+%token VERSION                              "version"
+%token WHERE                                "where"
+%token XQUERY                               "xquery"
+%token INTERNAL                             "internal" /* Synthetic token, used in XSL-T. */
+%token INTERNAL_NAME                        "internal-name" /* Synthetic token, used in XSL-T. */
+%token CURRENT                              "current" /* Synthetic token, used in XSL-T. */
+
+/* Alphabetically. */
+%type <attributeHolder>             Attribute
+%type <attributeHolders>            DirAttributeList
+%type <cardinality>                 OccurrenceIndicator
+%type <enums.axis>                  Axis AxisToken
+%type <enums.boundarySpacePolicy>   BoundarySpacePolicy
+%type <enums.combinedNodeOp>        IntersectOperator
+%type <enums.constructionMode>      ConstructionMode
+%type <enums.mathOperator>          MultiplyOperator AdditiveOperator UnaryOperator
+%type <enums.nodeOperator>          NodeOperator
+%type <enums.orderingEmptySequence> OrderingEmptySequence EmptynessModifier
+%type <enums.sortDirection>         DirectionModifier
+
+%type <enums.orderingMode>          OrderingMode
+%type <enums.slot>                  PositionalVar
+%type <enums.validationMode>        ValidationMode
+%type <enums.valueOperator>         ValueComparisonOperator GeneralComparisonOperator
+%type <expr>                        OrExpr AndExpr ComparisonExpr UnionExpr Literal
+                                    AdditiveExpr MultiplicativeExpr PrimaryExpr FilterExpr
+                                    StepExpr PathExpr RelativePathExpr Expr ExprSingle
+                                    VarRef ContextItemExpr IfExpr CastExpr CastableExpr
+                                    TreatExpr InstanceOfExpr ValueExpr UnaryExpr NodeComp
+                                    IntersectExceptExpr RangeExpr ParenthesizedExpr
+                                    ValueComp FunctionCallExpr GeneralComp ForClause
+                                    WhereClause FLWORExpr ForTail QuantifiedExpr QueryBody
+                                    SomeQuantificationExpr SomeQuantificationTail
+                                    EveryQuantificationExpr EveryQuantificationTail
+                                    ExtensionExpr EnclosedOptionalExpr VariableValue
+                                    EnclosedExpr FunctionBody ValidateExpr NumericLiteral
+                                    OrderingExpr TypeswitchExpr LetClause LetTail
+                                    Constructor DirectConstructor DirElemConstructor
+                                    ComputedConstructor CompDocConstructor CompElemConstructor
+                                    CompTextConstructor CompCommentConstructor CompPIConstructor
+                                    DirPIConstructor CompAttrConstructor DirElemConstructorTail
+                                    AxisStep ForwardStep ReverseStep AbbrevForwardStep
+                                    CaseDefault CaseClause CaseTail CompAttributeName
+                                    FilteredAxisStep DirCommentConstructor CompPIName
+                                    DirAttributeValue AbbrevReverseStep CompNamespaceConstructor
+                                    CompElementName CompNameExpr SatisfiesClause Pattern PathPattern
+                                    PatternStep RelativePathPattern IdKeyPattern OptionalAssign
+                                    OptionalDefaultValue
+
+%type <orderSpec>                   OrderSpec
+%type <expressionList>              ExpressionSequence FunctionArguments
+                                    DirElemContent AttrValueContent
+%type <orderSpecs>                  OrderSpecList OrderByClause MandatoryOrderByClause
+%type <functionArgument>            Param
+%type <functionArguments>           ParamList
+%type <itemType>                    KindTest ItemType AtomicType NodeTest NameTest WildCard NodeTestInAxisStep
+                                    ElementTest AttributeTest SchemaElementTest SchemaAttributeTest
+                                    TextTest CommentTest PITest DocumentTest AnyKindTest AnyAttributeTest
+%type <qName>                       ElementName QName VarName FunctionName PragmaName TypeName NCName
+                                    CaseVariable AttributeName OptionalTemplateName
+                                    TemplateName Mode OptionalMode
+%type <qNameVector>                 Modes OptionalModes
+%type <sequenceType>                SequenceType SingleType TypeDeclaration
+%type <sval>                        URILiteral StringLiteral LexicalName
+%type <enums.Bool>                  IsInternal IsTunnel
+%type <enums.Double>                OptionalPriority
+%type <enums.pathKind>              MapOrSlash
+
+/* Operator Precendence
+ * See: http://www.w3.org/TR/xpath20/#parse-note-occurrence-indicators */
+%left STAR DIV
+%left PLUS MINUS
+
+%%
+
+/* Here, the grammar starts. In the brackets on the right you
+ * find the number of corresponding EBNF rule in the XQuery 1.0 specification. If it
+ * contains an X, it means the non-terminal has no counter part in the grammar, but
+ * exists for implementation purposes. */
+Module: VersionDecl LibraryModule                                                   /* [1] */
+| VersionDecl MainModule
+
+VersionDecl: /* empty */                                                            /* [2] */
+| XQUERY VERSION StringLiteral Encoding Separator
+    {
+
+/* Suppress more compiler warnings about unused defines. */
+#if    defined(YYNNTS)              \
+    || defined(yyerrok)             \
+    || defined(YYNSTATES)           \
+    || defined(YYRHSLOC)            \
+    || defined(YYRECOVERING)        \
+    || defined(YYFAIL)              \
+    || defined(YYERROR)             \
+    || defined(YYNRULES)            \
+    || defined(YYBACKUP)            \
+    || defined(YYMAXDEPTH)          \
+    || defined(yyclearin)           \
+    || defined(YYERRCODE)           \
+    || defined(YY_LOCATION_PRINT)   \
+    || defined(YYLLOC_DEFAULT)
+#endif
+
+        if($3 != QLatin1String("1.0"))
+        {
+            const ReflectYYLTYPE ryy(@$, parseInfo);
+
+            parseInfo->staticContext->error(QtXmlPatterns::tr("Version %1 is not supported. The supported "
+                                               "XQuery version is 1.0.")
+                                               .arg(formatData($3)),
+                                            ReportContext::XQST0031, &ryy);
+        }
+    }
+
+Encoding: /* empty */                                                               /* [X] */
+| ENCODING StringLiteral
+    {
+        const QRegExp encNameRegExp(QLatin1String("[A-Za-z][A-Za-z0-9._\\-]*"));
+
+        if(!encNameRegExp.exactMatch($2))
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The encoding %1 is invalid. "
+                                               "It must contain Latin characters only, "
+                                               "must not contain whitespace, and must match "
+                                               "the regular expression %2.")
+                                            .arg(formatKeyword((yyvsp[(2) - (2)].sval)),
+                                                 formatExpression(encNameRegExp.pattern())),
+                                            ReportContext::XQST0087, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+MainModule: Prolog QueryBody                                                        /* [3] */
+    {
+        /* In XSL-T, we can have dangling variable references, so resolve them
+         * before we proceed with other steps, such as checking circularity. */
+        if(parseInfo->isXSLT())
+        {
+            typedef QHash<QXmlName, Expression::Ptr> Hash;
+            const Hash::const_iterator end(parseInfo->unresolvedVariableReferences.constEnd());
+
+            for(Hash::const_iterator it(parseInfo->unresolvedVariableReferences.constBegin()); it != end; ++it)
+            {
+                const Expression::Ptr body(resolveVariable(it.key(), @$, parseInfo, true)); // TODO source locations vaise
+                Q_ASSERT(body);
+                it.value()->as<UnresolvedVariableReference>()->bindTo(body);
+            }
+        }
+
+        /* The UserFunction callsites aren't bound yet, so bind them(if possible!). */
+        {
+            const UserFunctionCallsite::List::const_iterator cend(parseInfo->userFunctionCallsites.constEnd());
+            UserFunctionCallsite::List::const_iterator cit(parseInfo->userFunctionCallsites.constBegin());
+            for(; cit != cend; ++cit) /* For each callsite. */
+            {
+                const UserFunctionCallsite::Ptr callsite(*cit);
+                Q_ASSERT(callsite);
+                const UserFunction::List::const_iterator end(parseInfo->userFunctions.constEnd());
+                UserFunction::List::const_iterator it(parseInfo->userFunctions.constBegin());
+
+                for(; it != end; ++it) /* For each UserFunction. */
+                {
+                    const FunctionSignature::Ptr sign((*it)->signature());
+                    Q_ASSERT(sign);
+
+                    if(callsite->isSignatureValid(sign))
+                    {
+                        callsite->setSource((*it),
+                                            parseInfo->allocateCacheSlots((*it)->argumentDeclarations().count()));
+                        break;
+                    }
+                }
+                if(it == end)
+                {
+                    parseInfo->staticContext->error(QtXmlPatterns::tr("No function with signature %1 is available")
+                                                       .arg(formatFunction(callsite)),
+                                                    ReportContext::XPST0017, fromYYLTYPE(@$, parseInfo));
+                }
+            }
+        }
+
+        /* Mark callsites in UserFunction bodies as recursive, if they are. */
+        {
+            const UserFunction::List::const_iterator fend(parseInfo->userFunctions.constEnd());
+            UserFunction::List::const_iterator fit(parseInfo->userFunctions.constBegin());
+            for(; fit != fend; ++fit)
+            {
+                CallTargetDescription::List signList;
+                signList.append((*fit)->signature());
+                CallTargetDescription::checkCallsiteCircularity(signList, (*fit)->body());
+            }
+        }
+
+        /* Now, check all global variables for circularity.  This is done
+         * backwards because global variables are only in scope below them,
+         * in XQuery. */
+        {
+            const VariableDeclaration::List::const_iterator start(parseInfo->declaredVariables.constBegin());
+            VariableDeclaration::List::const_iterator it(parseInfo->declaredVariables.constEnd());
+
+            while(it != start)
+            {
+                --it;
+                if((*it)->type != VariableDeclaration::ExpressionVariable && (*it)->type != VariableDeclaration::GlobalVariable)
+                    continue; /* We want to ignore 'external' variables. */
+
+                FunctionSignature::List signList;
+                checkVariableCircularity(*it, (*it)->expression(), (*it)->type, signList, parseInfo);
+                ExpressionFactory::registerLastPath((*it)->expression());
+                parseInfo->finalizePushedVariable(1, false); /* Warn if it's unused. */
+            }
+        }
+
+        /* Generate code for doing initial template name calling. One problem
+         * is that we compilation in the initial template name, since we throw away the
+         * code if we don't have the requested template. */
+        if(parseInfo->languageAccent == QXmlQuery::XSLT20
+           && !parseInfo->initialTemplateName.isNull()
+           && parseInfo->namedTemplates.contains(parseInfo->initialTemplateName))
+        {
+            parseInfo->queryBody = create(new CallTemplate(parseInfo->initialTemplateName,
+                                                           WithParam::Hash()),
+                                          @$, parseInfo);
+            parseInfo->templateCalls.append(parseInfo->queryBody);
+            /* We just discard the template body that XSLTTokenizer generated. */
+        }
+        else
+            parseInfo->queryBody = $2;
+    }
+
+LibraryModule: ModuleDecl Prolog                                                    /* [4] */
+
+ModuleDecl: MODULE NAMESPACE NCNAME G_EQ URILiteral Separator                       /* [5] */
+    {
+        // TODO add to namespace context
+        parseInfo->moduleNamespace = parseInfo->staticContext->namePool()->allocateNamespace($3);
+    }
+
+Prolog: /* Empty. */                                                                /* [6] */
+/* First part. */
+| Prolog DefaultNamespaceDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+        if(parseInfo->hasSecondPrologPart)
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A default namespace declaration must occur before function, "
+                                               "variable, and option declarations."), ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+    }
+| Prolog Setter
+    {
+        if(parseInfo->hasSecondPrologPart)
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A default namespace declaration must occur before function, "
+                                               "variable, and option declarations."), ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+    }
+| Prolog NamespaceDecl
+    {
+        if(parseInfo->hasSecondPrologPart)
+            parseInfo->staticContext->error(QtXmlPatterns::tr("Namespace declarations must occur before function, "
+                                               "variable, and option declarations."), ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+    }
+| Prolog Import
+    {
+        disallowedConstruct(parseInfo, @$);
+        if(parseInfo->hasSecondPrologPart)
+            parseInfo->staticContext->error(QtXmlPatterns::tr("Module imports must occur before function, "
+                                               "variable, and option declarations."), ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+    }
+| Prolog TemplateDecl
+
+/* Second part. */
+| Prolog VarDecl
+    {
+        parseInfo->hasSecondPrologPart = true;
+    }
+| Prolog FunctionDecl
+    {
+        parseInfo->hasSecondPrologPart = true;
+    }
+| Prolog OptionDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+        parseInfo->hasSecondPrologPart = true;
+    }
+
+/*
+ * declare template name theName
+ * {
+ *     "expression"
+ * };
+ *
+ * or
+ *
+ * declare template name theName matches (pattern) mode modeName priority 123
+ * {
+ *     "expression"
+ * };
+ *
+ */
+TemplateDecl: DECLARE TEMPLATE TemplateName
+              OptionalTemplateParameters
+              TypeDeclaration
+              EnclosedOptionalExpr Separator                                        /* [X] */
+    {
+        Template::Ptr temp(create(new Template(parseInfo->currentImportPrecedence, $5), @$, parseInfo));
+
+        registerNamedTemplate($3, typeCheckTemplateBody($6, $5, parseInfo),
+                              parseInfo, @1, temp);
+        temp->templateParameters = parseInfo->templateParameters;
+        parseInfo->templateParametersHandled();
+    }
+| DECLARE TEMPLATE OptionalTemplateName
+  MATCHES LPAREN
+  {
+    parseInfo->isParsingPattern = true;
+  }
+  Pattern
+  {
+    parseInfo->isParsingPattern = false;
+  }
+  RPAREN
+  OptionalModes
+  OptionalPriority
+  OptionalTemplateParameters
+  TypeDeclaration
+  EnclosedOptionalExpr Separator                                                    /* [X] */
+    {
+        /* In this grammar branch, we're guaranteed to be a template rule, but
+         * may also be a named template. */
+
+        const ImportPrecedence ip = parseInfo->isFirstTemplate() ? 0 : parseInfo->currentImportPrecedence;
+        Expression::Ptr pattern($7);
+        const TemplatePattern::ID templateID = parseInfo->allocateTemplateID();
+
+        Template::Ptr templ(create(new Template(ip, $13), @$, parseInfo));
+        templ->body = typeCheckTemplateBody($14, $13, parseInfo);
+        templ->templateParameters = parseInfo->templateParameters;
+        parseInfo->templateParametersHandled();
+
+        TemplatePattern::Vector ourPatterns;
+        /* We do it as per 6.4 Conflict Resolution for Template Rules:
+         *
+         * "If the pattern contains multiple alternatives separated by |, then
+         * the template rule is treated equivalently to a set of template
+         * rules, one for each alternative. However, it is not an error if a
+         * node matches more than one of the alternatives." */
+        while(pattern->is(Expression::IDCombineNodes))
+        {
+            const Expression::List operands(pattern->operands());
+            pattern = operands.first();
+
+            loadPattern(operands.at(1), ourPatterns, templateID, $11, templ);
+        }
+
+        loadPattern(pattern, ourPatterns, templateID, $11, templ);
+
+        if(!$3.isNull())
+            registerNamedTemplate($3, $14, parseInfo, @1, templ);
+
+        /* Now, let's add it to all the relevant templates. */
+        for(int i = 0; i < $10.count(); ++i) /* For each mode. */
+        {
+            const QXmlName &modeName = $10.at(i);
+
+            if(modeName == QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::all) && $10.count() > 1)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("The keyword %1 cannot occur with any other mode name.")
+                                                                 .arg(formatKeyword(QLatin1String("#all"))),
+                                                ReportContext::XTSE0530,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+
+            /* For each pattern the template use. */
+            const TemplateMode::Ptr mode(parseInfo->modeFor(modeName));
+            for(int t = 0; t < ourPatterns.count(); ++t)
+                mode->templatePatterns.append(ourPatterns.at(t));
+        }
+    }
+
+OptionalPriority: /* Empty. */                                                      /* [X] */
+    {
+        $$ = std::numeric_limits<xsDouble>::quiet_NaN();
+    }
+
+| PRIORITY StringLiteral
+    {
+        const AtomicValue::Ptr val(Decimal::fromLexical($2));
+        if(val->hasError())
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The value of attribute %1 must of type %2, which %3 isn't.")
+                                                             .arg(formatKeyword(QLatin1String("priority")),
+                                                                  formatType(parseInfo->staticContext->namePool(), BuiltinTypes::xsDecimal),
+                                                                  formatData($2)),
+                                            ReportContext::XTSE0530,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+        else
+            $$ = val->as<Numeric>()->toDouble();
+    }
+
+OptionalTemplateName: /* Empty. */                                                  /* [X] */
+    {
+        $$ = QXmlName();
+    }
+| TemplateName
+
+TemplateName: NAME ElementName
+    {
+        $$ = $2;
+    }
+
+Setter: BoundarySpaceDecl                                                           /* [7] */
+| DefaultCollationDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+| BaseURIDecl
+| ConstructionDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+| OrderingModeDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+| EmptyOrderDecl
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+| CopyNamespacesDecl
+
+Import: SchemaImport                                                                /* [8] */
+| ModuleImport
+
+Separator: SEMI_COLON                                                               /* [9] */
+
+NamespaceDecl: DECLARE NAMESPACE NCNAME G_EQ URILiteral IsInternal Separator        /* [10] */
+    {
+        if(!$6)
+            disallowedConstruct(parseInfo, @$);
+
+        if($3 == QLatin1String("xmlns"))
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("It is not possible to redeclare prefix %1.")
+                                               .arg(formatKeyword(QLatin1String("xmlns"))),
+                                            ReportContext::XQST0070, fromYYLTYPE(@$, parseInfo));
+        }
+        else if ($5 == CommonNamespaces::XML || $3 == QLatin1String("xml"))
+        {
+             parseInfo->staticContext->error(QtXmlPatterns::tr(
+                                            "The prefix %1 can not be bound. By default, it is already bound "
+                                            "to the namespace %2.")
+                                             .arg(formatKeyword("xml"))
+                                             .arg(formatURI(CommonNamespaces::XML)),
+                                             ReportContext::XQST0070,
+                                             fromYYLTYPE(@$, parseInfo));
+        }
+        else if(parseInfo->declaredPrefixes.contains($3))
+        {
+            /* This includes the case where the user has bound a default prefix(such
+             * as 'local') and now tries to do it again. */
+            parseInfo->staticContext->error(QtXmlPatterns::tr("Prefix %1 is already declared in the prolog.")
+                                               .arg(formatKeyword($3)),
+                                            ReportContext::XQST0033, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->declaredPrefixes.append($3);
+
+            if($5.isEmpty())
+            {
+                parseInfo->staticContext->namespaceBindings()->addBinding(QXmlName(StandardNamespaces::UndeclarePrefix,
+                                                                                   StandardLocalNames::empty,
+                                                                                   parseInfo->staticContext->namePool()->allocatePrefix($3)));
+            }
+            else
+            {
+                parseInfo->staticContext->namespaceBindings()->addBinding(parseInfo->staticContext->namePool()->allocateBinding($3, $5));
+            }
+        }
+    }
+
+BoundarySpaceDecl: DECLARE BOUNDARY_SPACE BoundarySpacePolicy Separator             /* [11] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::BoundarySpaceDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare boundary-space"),
+                                            ReportContext::XQST0068, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->staticContext->setBoundarySpacePolicy($3);
+            parseInfo->registerDeclaration(ParserContext::BoundarySpaceDecl);
+        }
+    }
+
+BoundarySpacePolicy: STRIP                                                          /* [X] */
+    {
+        $$ = StaticContext::BSPStrip;
+    }
+
+| PRESERVE
+    {
+        $$ = StaticContext::BSPPreserve;
+    }
+
+DefaultNamespaceDecl: DeclareDefaultElementNamespace                                /* [12] */
+| DeclareDefaultFunctionNamespace
+
+DeclareDefaultElementNamespace: DECLARE DEFAULT ELEMENT NAMESPACE
+                                URILiteral Separator                                /* [X] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::DeclareDefaultElementNamespace))
+        {
+            parseInfo->staticContext->error(prologMessage("declare default element namespace"),
+                                            ReportContext::XQST0066, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->staticContext->namespaceBindings()->addBinding(QXmlName(parseInfo->staticContext->namePool()->allocateNamespace($5), StandardLocalNames::empty));
+            parseInfo->registerDeclaration(ParserContext::DeclareDefaultElementNamespace);
+        }
+    }
+
+DeclareDefaultFunctionNamespace: DECLARE DEFAULT FUNCTION NAMESPACE
+                                 URILiteral Separator                               /* [X] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::DeclareDefaultFunctionNamespace))
+        {
+            parseInfo->staticContext->error(prologMessage("declare default function namespace"),
+                                            ReportContext::XQST0066, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->staticContext->setDefaultFunctionNamespace($5);
+            parseInfo->registerDeclaration(ParserContext::DeclareDefaultFunctionNamespace);
+        }
+    }
+
+OptionDecl: DECLARE OPTION ElementName StringLiteral Separator                     /* [13] */
+    {
+        if($3.prefix() == StandardPrefixes::empty)
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The name of an option must have a prefix. "
+                                               "There is no default namespace for options."),
+                                            ReportContext::XPST0081, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+OrderingModeDecl: DECLARE ORDERING OrderingMode Separator                           /* [14] */
+    {
+        disallowedConstruct(parseInfo, @$);
+        if(parseInfo->hasDeclaration(ParserContext::OrderingModeDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare ordering"),
+                                            ReportContext::XQST0065, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->registerDeclaration(ParserContext::OrderingModeDecl);
+            parseInfo->staticContext->setOrderingMode($3);
+        }
+    }
+
+OrderingMode: ORDERED
+    {
+        $$ = StaticContext::Ordered;
+    }
+| UNORDERED
+    {
+        $$ = StaticContext::Unordered;
+    }
+
+EmptyOrderDecl: DECLARE DEFAULT ORDER OrderingEmptySequence Separator               /* [15] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::EmptyOrderDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare default order"),
+                                            ReportContext::XQST0069, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->registerDeclaration(ParserContext::EmptyOrderDecl);
+            parseInfo->staticContext->setOrderingEmptySequence($4);
+        }
+    }
+
+OrderingEmptySequence: EMPTY LEAST                                                  /* [X] */
+    {
+        $$ = StaticContext::Least;
+    }
+| EMPTY GREATEST
+    {
+        $$ = StaticContext::Greatest;
+    }
+
+CopyNamespacesDecl: DECLARE COPY_NAMESPACES PreserveMode COMMA
+                    InheritMode Separator                                           /* [16] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::CopyNamespacesDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare copy-namespaces"),
+                                            ReportContext::XQST0055, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->registerDeclaration(ParserContext::CopyNamespacesDecl);
+        }
+    }
+
+PreserveMode: PRESERVE                                                              /* [17] */
+    {
+        parseInfo->preserveNamespacesMode = true;
+    }
+
+| NO_PRESERVE
+    {
+        parseInfo->preserveNamespacesMode = false;
+    }
+
+InheritMode: INHERIT                                                                /* [18] */
+    {
+        parseInfo->inheritNamespacesMode = true;
+    }
+
+| NO_INHERIT
+    {
+        parseInfo->inheritNamespacesMode = false;
+    }
+
+DefaultCollationDecl: DECLARE DEFAULT COLLATION StringLiteral Separator             /* [19] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::DefaultCollationDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare default collation"),
+                                            ReportContext::XQST0038, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            const QUrl coll(resolveAndCheckCollation<ReportContext::XQST0038>($4, parseInfo, @$));
+
+            parseInfo->registerDeclaration(ParserContext::DefaultCollationDecl);
+            parseInfo->staticContext->setDefaultCollation(coll);
+        }
+    }
+
+BaseURIDecl: DECLARE BASEURI IsInternal URILiteral Separator                        /* [20] */
+    {
+        disallowedConstruct(parseInfo, @$, $3);
+        if(parseInfo->hasDeclaration(ParserContext::BaseURIDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare base-uri"),
+                                            ReportContext::XQST0032, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->registerDeclaration(ParserContext::BaseURIDecl);
+            const ReflectYYLTYPE ryy(@$, parseInfo);
+
+            QUrl toBeBase(AnyURI::toQUrl<ReportContext::XQST0046>($4, parseInfo->staticContext, &ryy));
+            /* Now we're guaranteed that base is a valid lexical representation, but it can still be relative. */
+
+            if(toBeBase.isRelative())
+                toBeBase = parseInfo->staticContext->baseURI().resolved(toBeBase);
+
+            parseInfo->staticContext->setBaseURI(toBeBase);
+        }
+    }
+
+SchemaImport: IMPORT SCHEMA SchemaPrefix URILiteral FileLocations Separator         /* [21] */
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("The Schema Import feature is not supported, "
+                                           "and therefore %1 declarations cannot occur.")
+                                           .arg(formatKeyword("import schema")),
+                                        ReportContext::XQST0009, fromYYLTYPE(@$, parseInfo));
+    }
+
+SchemaPrefix: /* empty */                                                           /* [22] */
+| DEFAULT ELEMENT NAMESPACE
+| NAMESPACE NCNAME G_EQ
+
+ModuleImport: IMPORT MODULE ModuleNamespaceDecl URILiteral FileLocations Separator  /* [23] */
+    {
+        if($4.isEmpty())
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The target namespace of a %1 cannot be empty.")
+                                               .arg(formatKeyword("module import")),
+                                           ReportContext::XQST0088, fromYYLTYPE(@$, parseInfo));
+
+        }
+        else
+        {
+            /* This is temporary until we have implemented it. */
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The module import feature is not supported"),
+                                            ReportContext::XQST0016, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+ModuleNamespaceDecl: /* empty */                                                    /* [X] */
+| NAMESPACE NCNAME G_EQ
+
+FileLocations: /* empty */                                                          /* [X] */
+| AT FileLocation
+
+FileLocation: URILiteral                                                            /* [X] */
+| FileLocation COMMA URILiteral
+
+VarDecl: DECLARE VARIABLE IsInternal DOLLAR VarName TypeDeclaration
+         VariableValue OptionalDefaultValue Separator                               /* [24] */
+    {
+        disallowedConstruct(parseInfo, @$, $3);
+        if(variableByName($5, parseInfo))
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A variable by name %1 has already "
+                                                              "been declared.")
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool()->toLexical($5))),
+                                            parseInfo->isXSLT() ? ReportContext::XTSE0630 : ReportContext::XQST0049,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            if($7) /* We got a value assigned. */
+            {
+                const Expression::Ptr checked
+                        (TypeChecker::applyFunctionConversion($7, $6, parseInfo->staticContext,
+                                                              $3 ? ReportContext::XTTE0570 : ReportContext::XPTY0004,
+                                                              $3 ? TypeChecker::Options(TypeChecker::CheckFocus | TypeChecker::AutomaticallyConvert) : TypeChecker::CheckFocus));
+
+                pushVariable($5, $6, checked, VariableDeclaration::GlobalVariable, @$, parseInfo);
+                parseInfo->declaredVariables.append(parseInfo->variables.last());
+            }
+            else /* We got an 'external' declaration. */
+            {
+                const SequenceType::Ptr varType(parseInfo->staticContext->
+                                                externalVariableLoader()->announceExternalVariable($5, $6));
+
+                if(varType)
+                {
+                    /* We push the declaration such that we can see name clashes and so on, but we don't use it for tying
+                     * any references to it. */
+                    pushVariable($5, varType, Expression::Ptr(), VariableDeclaration::ExternalVariable, @$, parseInfo);
+                }
+                else if($8)
+                {
+                    /* Ok, the xsl:param got a default value, we make it
+                     * available as a regular variable declaration. */
+                    // TODO turn into checked
+                    pushVariable($5, $6, $8, VariableDeclaration::GlobalVariable, @$, parseInfo);
+                    // TODO ensure that duplicates are trapped.
+                }
+                else
+                {
+                    parseInfo->staticContext->error(QtXmlPatterns::tr("No value is available for the external "
+                                                                      "variable by name %1.")
+                                                       .arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
+                                                    parseInfo->isXSLT() ? ReportContext::XTDE0050 : ReportContext::XPDY0002,
+                                                    fromYYLTYPE(@$, parseInfo));
+                }
+            }
+        }
+    }
+
+VariableValue: EXTERNAL                                                             /* [X] */
+    {
+        $$.reset();
+    }
+| ASSIGN ExprSingle
+    {
+        $$ = $2;
+    }
+
+OptionalDefaultValue: /* Empty. */                                                  /* [X] */
+    {
+        $$.reset();
+    }
+| ASSIGN ExprSingle
+    {
+        $$ = $2;
+    }
+
+ConstructionDecl: DECLARE CONSTRUCTION ConstructionMode Separator                   /* [25] */
+    {
+        if(parseInfo->hasDeclaration(ParserContext::ConstructionDecl))
+        {
+            parseInfo->staticContext->error(prologMessage("declare ordering"),
+                                            ReportContext::XQST0067, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+        {
+            parseInfo->registerDeclaration(ParserContext::ConstructionDecl);
+            parseInfo->staticContext->setConstructionMode($3);
+        }
+    }
+
+ConstructionMode: STRIP                                                             /* [X] */
+    {
+        $$ = StaticContext::CMStrip;
+    }
+| PRESERVE
+    {
+        $$ = StaticContext::CMPreserve;
+    }
+
+FunctionDecl: DECLARE FUNCTION IsInternal FunctionName LPAREN ParamList RPAREN
+              {
+                $<enums.slot>$ = parseInfo->currentExpressionSlot() - $6.count();
+              }
+              TypeDeclaration FunctionBody Separator                                /* [26] */
+    {
+        if(!$3)
+            disallowedConstruct(parseInfo, @$, $3);
+
+        /* If FunctionBody is null, it is 'external', otherwise the value is the body. */
+        const QXmlName::NamespaceCode ns($4.namespaceURI());
+
+        if(parseInfo->isXSLT() && !$4.hasPrefix())
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A stylesheet function must have a prefixed name."),
+                                            ReportContext::XTSE0740,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+
+        if($10) /* We got a function body. */
+        {
+            if(ns == StandardNamespaces::empty)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("The namespace for a user defined function "
+                                                   "cannot be empty (try the predefined "
+                                                   "prefix %1 which exists for cases "
+                                                   "like this)")
+                                                   .arg(formatKeyword("local")),
+                                                ReportContext::XQST0060, fromYYLTYPE(@$, parseInfo));
+            }
+            else if(XPathHelper::isReservedNamespace(ns))
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr(
+                                                   "The namespace %1 is reserved; therefore "
+                                                   "user defined functions may not use it. "
+                                                   "Try the predefined prefix %2, which "
+                                                   "exists for these cases.")
+                                                .arg(formatURI(parseInfo->staticContext->namePool(), ns), formatKeyword("local")),
+                                                parseInfo->isXSLT() ? ReportContext::XTSE0080 : ReportContext::XQST0045,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+            else if(parseInfo->moduleNamespace != StandardNamespaces::empty &&
+                    ns != parseInfo->moduleNamespace)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr(
+                                                   "The namespace of a user defined "
+                                                   "function in a library module must be "
+                                                   "equivalent to the module namespace. "
+                                                   "In other words, it should be %1 instead "
+                                                   "of %2")
+                                                .arg(formatURI(parseInfo->staticContext->namePool(), parseInfo->moduleNamespace),
+                                                     formatURI(parseInfo->staticContext->namePool(), ns)),
+                                                ReportContext::XQST0048, fromYYLTYPE(@$, parseInfo));
+            }
+            else
+            {
+                /* Apply function conversion such that the body matches the declared
+                 * return type. */
+                const Expression::Ptr checked(TypeChecker::applyFunctionConversion($10, $9,
+                                                                                   parseInfo->staticContext,
+                                                                                   ReportContext::XPTY0004,
+                                                                                   TypeChecker::Options(TypeChecker::AutomaticallyConvert |
+                                                                                                        TypeChecker::CheckFocus |
+                                                                                                        TypeChecker::GeneratePromotion)));
+
+                const int argCount = $6.count();
+                const FunctionSignature::Ptr sign(new FunctionSignature($4 /* name */,
+                                                                        argCount /* minArgs */,
+                                                                        argCount /* maxArgs */,
+                                                                        $9 /* returnType */));
+                sign->setArguments($6);
+                const UserFunction::List::const_iterator end(parseInfo->userFunctions.constEnd());
+                UserFunction::List::const_iterator it(parseInfo->userFunctions.constBegin());
+
+                for(; it != end; ++it)
+                {
+                    if(*(*it)->signature() == *sign)
+                    {
+                        parseInfo->staticContext->error(QtXmlPatterns::tr("A function already exists with "
+                                                           "the signature %1.")
+                                                           .arg(formatFunction(parseInfo->staticContext->namePool(), sign)),
+                                                        parseInfo->isXSLT() ? ReportContext::XTSE0770 : ReportContext::XQST0034, fromYYLTYPE(@$, parseInfo));
+                    }
+                }
+
+                VariableDeclaration::List argDecls;
+
+                for(int i = 0; i < argCount; ++i)
+                    argDecls.append(parseInfo->variables.at(i));
+
+                if($<enums.slot>8 > -1)
+                {
+                    /* We have allocated slots, so now push them out of scope. */
+                    parseInfo->finalizePushedVariable(argCount);
+                }
+
+                parseInfo->userFunctions.append(UserFunction::Ptr(new UserFunction(sign, checked, $<enums.slot>8, argDecls)));
+            }
+        }
+        else /* We got an 'external' declaration. */
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("No external functions are supported. "
+                                               "All supported functions can be used directly, "
+                                               "without first declaring them as external"),
+                                            ReportContext::XPST0017, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+ParamList: /* empty */                                                              /* [27] */
+    {
+        $$ = FunctionArgument::List();
+    }
+| Param
+    {
+        FunctionArgument::List l;
+        l.append($1);
+        $$ = l;
+    }
+| ParamList COMMA Param
+    {
+        FunctionArgument::List::const_iterator it($1.constBegin());
+        const FunctionArgument::List::const_iterator end($1.constEnd());
+
+        for(; it != end; ++it)
+        {
+            if((*it)->name() == $3->name())
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("An argument by name %1 has already "
+                                                   "been declared. Every argument name "
+                                                   "must be unique.")
+                                                   .arg(formatKeyword(parseInfo->staticContext->namePool(), $3->name())),
+                                                ReportContext::XQST0039, fromYYLTYPE(@$, parseInfo));
+            }
+        }
+
+        $1.append($3);
+        $$ = $1;
+    }
+
+Param: DOLLAR VarName TypeDeclaration                                               /* [28] */
+    {
+        pushVariable($2, $3, Expression::Ptr(), VariableDeclaration::FunctionArgument, @$, parseInfo);
+        $$ = FunctionArgument::Ptr(new FunctionArgument($2, $3));
+    }
+
+FunctionBody: EXTERNAL                                                              /* [X] */
+    {
+        $$.reset();
+    }
+| EnclosedExpr
+
+EnclosedExpr: CURLY_LBRACE Expr CURLY_RBRACE                                        /* [29] */
+    {
+        $$ = $2;
+    }
+
+QueryBody: Expr                                                                     /* [30] */
+
+/**
+ * A pattern as found in for instance xsl:template/@match.
+ *
+ * @note When using this pattern, remember to set ParserContext::isParsingPattern.
+ *
+ * @see <a href="http://www.w3.org/TR/xslt20/#dt-pattern">XSL Transformations
+ * (XSLT) Version 2.0, 5.5.2 Syntax of Patterns</a>
+ */
+Pattern: PathPattern                                                                /* [XSLT20-1] */
+| Pattern BAR PathPattern
+    {
+        $$ = create(new CombineNodes($1, CombineNodes::Union, $3), @$, parseInfo);
+    }
+
+PathPattern: RelativePathPattern                                                    /* [XSLT20-2] */
+| SLASH
+    {
+        /* We write this into a node test. The spec says, 5.5.3 The Meaning of a Pattern:
+         * "Similarly, / matches a document node, and only a document node,
+         * because the result of the expression root(.)//(/) returns the root
+         * node of the tree containing the context node if and only if it is a
+         * document node." */
+        $$ = create(new AxisStep(QXmlNodeModelIndex::AxisSelf, BuiltinTypes::document), @$, parseInfo);
+    }
+| SLASH RelativePathPattern
+    {
+        /* /axis::node-test
+         *       =>
+         * axis::node-test[parent::document-node()]
+         *
+         * In practice it looks like this. $2 is:
+         *
+         *     TruthPredicate
+         *          AxisStep    self::element(c)
+         *          TruthPredicate
+         *              AxisStep    parent::element(b)
+         *              AxisStep    parent::element(a)
+         *
+         * and we want this:
+         *
+         *      TruthPredicate
+         *          AxisStep    self::element(c)
+         *          TruthPredicate
+         *              AxisStep    self::element(b)
+         *              TruthPredicate
+         *                  AxisStep    parent::element(a)
+         *                  AxisStep    parent::document()
+         *
+         * So we want to rewrite the predicate deepest down into a
+         * another TruthPredicate containing the AxisStep.
+         *
+         * The simplest case where $2 is only an axis step is special. When $2 is:
+         *
+         *  AxisStep self::element(a)
+         *
+         * we want:
+         *
+         *  TruthPredicate
+         *      AxisStep self::element(a)
+         *      AxisStep parent::document()
+         */
+
+        /* First, find the target. */
+        Expression::Ptr target($2);
+
+        while(isPredicate(target->id()))
+        {
+            const Expression::Ptr candidate(target->operands().at(1));
+
+            if(isPredicate(candidate->id()))
+                target = candidate;
+            else
+                break; /* target is now the last predicate. */
+        }
+
+        if(target->is(Expression::IDAxisStep))
+        {
+            $$ = create(GenericPredicate::create($2, create(new AxisStep(QXmlNodeModelIndex::AxisParent, BuiltinTypes::document), @$, parseInfo),
+                                                 parseInfo->staticContext, fromYYLTYPE(@1, parseInfo)), @1, parseInfo);
+        }
+        else
+        {
+            const Expression::List targetOperands(target->operands());
+            Expression::List newOps;
+            newOps.append(targetOperands.at(0));
+
+            newOps.append(create(GenericPredicate::create(targetOperands.at(1),
+                                                          create(new AxisStep(QXmlNodeModelIndex::AxisParent, BuiltinTypes::document), @$, parseInfo),
+                                                          parseInfo->staticContext, fromYYLTYPE(@1, parseInfo)), @1, parseInfo));
+
+            target->setOperands(newOps);
+            $$ = $2;
+        }
+    }
+| SLASHSLASH RelativePathPattern
+    {
+        /* //axis::node-test
+         *        =>
+         * axis::node-test[parent::node()]
+         *
+         * Spec says: "//para matches any para element that has a parent node."
+         */
+        $$ = create(GenericPredicate::create($2, create(new AxisStep(QXmlNodeModelIndex::AxisParent, BuiltinTypes::node), @$, parseInfo),
+                                             parseInfo->staticContext, fromYYLTYPE(@1, parseInfo)), @1, parseInfo);
+    }
+| IdKeyPattern
+| IdKeyPattern SLASH RelativePathPattern
+    {
+        createIdPatternPath($1, $3, QXmlNodeModelIndex::AxisParent, @2, parseInfo);
+    }
+| IdKeyPattern SLASHSLASH RelativePathPattern
+    {
+        createIdPatternPath($1, $3, QXmlNodeModelIndex::AxisAncestor, @2, parseInfo);
+    }
+
+IdKeyPattern: FunctionCallExpr
+    {
+        const Expression::List ands($1->operands());
+        const FunctionSignature::Ptr signature($1->as<FunctionCall>()->signature());
+        const QXmlName name(signature->name());
+        const QXmlName key(StandardNamespaces::fn, StandardLocalNames::key);
+        const QXmlName id(StandardNamespaces::fn, StandardLocalNames::id);
+
+        if(name == id)
+        {
+            const Expression::ID id = ands.first()->id();
+            if(!isVariableReference(id) && id != Expression::IDStringValue)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("When function %1 is used for matching inside a pattern, "
+                                                                  "the argument must be a variable reference or a string literal.")
+                                                                  .arg(formatFunction(parseInfo->staticContext->namePool(), signature)),
+                                                ReportContext::XPST0003,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+        }
+        else if(name == key)
+        {
+            if(ands.first()->id() != Expression::IDStringValue)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("In an XSL-T pattern, the first argument to function %1 "
+                                                                  "must be a string literal, when used for matching.")
+                                                                  .arg(formatFunction(parseInfo->staticContext->namePool(), signature)),
+                                                ReportContext::XPST0003,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+
+            const Expression::ID id2 = ands.at(1)->id();
+            if(!isVariableReference(id2) &&
+               id2 != Expression::IDStringValue &&
+               id2 != Expression::IDIntegerValue &&
+               id2 != Expression::IDBooleanValue &&
+               id2 != Expression::IDFloat)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("In an XSL-T pattern, the first argument to function %1 "
+                                                                  "must be a literal or a variable reference, when used for matching.")
+                                                                  .arg(formatFunction(parseInfo->staticContext->namePool(), signature)),
+                                                ReportContext::XPST0003,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+
+            if(ands.count() == 3)
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("In an XSL-T pattern, function %1 cannot have a third argument.")
+                                                                  .arg(formatFunction(parseInfo->staticContext->namePool(), signature)),
+                                                ReportContext::XPST0003,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+
+        }
+        else
+        {
+            const FunctionSignature::Hash signs(parseInfo->staticContext->functionSignatures()->functionSignatures());
+            parseInfo->staticContext->error(QtXmlPatterns::tr("In an XSL-T pattern, only function %1 "
+                                                              "and %2, not %3, can be used for matching.")
+                                                              .arg(formatFunction(parseInfo->staticContext->namePool(), signs.value(id)),
+                                                                   formatFunction(parseInfo->staticContext->namePool(), signs.value(key)),
+                                                                   formatFunction(parseInfo->staticContext->namePool(), signature)),
+                                            ReportContext::XPST0003,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+
+        $$ = $1;
+    }
+
+RelativePathPattern: PatternStep                                                    /* [XSLT20-3] */
+| RelativePathPattern SLASH PatternStep
+    {
+        $$ = createPatternPath($1, $3, QXmlNodeModelIndex::AxisParent, @2, parseInfo);
+    }
+| RelativePathPattern SLASHSLASH PatternStep
+    {
+        $$ = createPatternPath($1, $3, QXmlNodeModelIndex::AxisAncestor, @2, parseInfo);
+    }
+
+PatternStep: FilteredAxisStep
+    {
+        const Expression::Ptr expr(findAxisStep($1));
+
+        const QXmlNodeModelIndex::Axis axis = expr->as<AxisStep>()->axis();
+        AxisStep *const axisStep = expr->as<AxisStep>();
+
+        /* Here we constrain the possible axes, and we rewrite the axes as according
+         * to 5.5.3 The Meaning of a Pattern.
+         *
+         * However, we also rewrite axis child and attribute to axis self. The
+         * reason for this is that if we don't, we will match the children of
+         * the context node, instead of the context node itself. The formal
+         * definition of a pattern, root(.)//EE is insensitive to context,
+         * while the way we implement pattern, "the other way of seeing it",
+         * e.g from right to left, are very much. */
+
+        if(axisStep->nodeTest() == BuiltinTypes::document
+           || axis == QXmlNodeModelIndex::AxisChild)
+            axisStep->setAxis(QXmlNodeModelIndex::AxisSelf);
+        else if(axis == QXmlNodeModelIndex::AxisAttribute)
+        {
+            axisStep->setAxis(QXmlNodeModelIndex::AxisSelf);
+            /* Consider that the user write attribute::node().  This is
+             * semantically equivalent to attribute::attribute(), but since we have changed
+             * the axis to axis self, we also need to change the node test, such that we
+             * have self::attribute(). */
+            if(*axisStep->nodeTest() == *BuiltinTypes::node)
+                axisStep->setNodeTest(BuiltinTypes::attribute);
+        }
+        else
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("In an XSL-T pattern, axis %1 cannot be used, "
+                                                              "only axis %2 or %3 can.")
+                                            .arg(formatKeyword(AxisStep::axisName(axis)),
+                                                 formatKeyword(AxisStep::axisName(QXmlNodeModelIndex::AxisChild)),
+                                                 formatKeyword(AxisStep::axisName(QXmlNodeModelIndex::AxisAttribute))),
+                                            ReportContext::XPST0003,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+
+        $$ = $1;
+    }
+
+Expr: ExprSingle                                                                    /* [31] */
+| ExpressionSequence
+    {
+        $$ = create(new ExpressionSequence($1), @$, parseInfo);
+    }
+
+ExpressionSequence: ExprSingle COMMA ExprSingle                                     /* [X] */
+    {
+        Expression::List l;
+        l.append($1);
+        l.append($3);
+        $$ = l;
+    }
+| ExpressionSequence COMMA ExprSingle
+    {
+        $1.append($3);
+        $$ = $1;
+    }
+
+ExprSingle: OrExpr                                                                  /* [32] */
+| FLWORExpr
+| QuantifiedExpr
+| TypeswitchExpr
+| IfExpr
+| AVT LPAREN AttrValueContent RPAREN
+    {
+        $$ = createDirAttributeValue($3, parseInfo, @$);
+    }
+
+OptionalModes: /* Empty. */                                                         /* [X] */
+    {
+        QVector<QXmlName> result;
+        result.append(QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::Default));
+        $$ = result;
+    }
+| MODE Modes
+    {
+        $$ = $2;
+    }
+
+OptionalMode: /* Empty. */                                                          /* [X] */
+    {
+            $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::Default);
+    }
+| MODE Mode
+    {
+        $$ = $2;
+    }
+
+Modes: Mode
+    {
+        QVector<QXmlName> result;
+        result.append($1);
+        $$ = result;
+    }
+| Modes COMMA Mode
+    {
+        $1.append($3);
+        $$ = $1;
+    }
+
+Mode: QName                                                                         /* [X] */
+    {
+        $$ = $1;
+    }
+| NCNAME
+    {
+        if($1 == QLatin1String("#current"))
+            $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::current);
+        else if($1 == QLatin1String("#default"))
+            $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::Default);
+        else if($1 == QLatin1String("#all"))
+            $$ = QXmlName(StandardNamespaces::InternalXSLT, StandardLocalNames::all);
+        else
+        {
+            const ReflectYYLTYPE ryy(@$, parseInfo);
+
+            if(!QXmlUtils::isNCName($1))
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is an invalid template mode name.")
+                                                                  .arg(formatKeyword($1)),
+                                                ReportContext::XTSE0550,
+                                                fromYYLTYPE(@$, parseInfo));
+            }
+
+            $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::empty, $1);
+        }
+    }
+
+
+FLWORExpr: ForClause                                                                /* [33] */
+| LetClause
+
+ForClause: FOR DOLLAR VarName TypeDeclaration
+           PositionalVar IN ExprSingle
+           {
+               /* We're pushing the range variable here, not the positional. */
+               $<expr>$ = pushVariable($3, quantificationType($4), $7, VariableDeclaration::RangeVariable, @$, parseInfo);
+           }
+           {
+               /* It is ok this appears after PositionalVar, because currentRangeSlot()
+                * uses a different "channel" than currentPositionSlot(), so they can't trash
+                * each other. */
+               $<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();
+           }
+           ForTail                                                                  /* [34] */
+    {
+        Q_ASSERT($7);
+        Q_ASSERT($10);
+
+        /* We want the next last pushed variable, since we push the range variable after the
+         * positional variable. */
+        if($5 != -1 && parseInfo->variables.at(parseInfo->variables.count() -2)->name == $3)
+        {
+            /* Ok, a positional variable is used since its slot is not -1, and its name is equal
+             * to our range variable. This is an error. */
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The name of a variable bound in a for-expression must be different "
+                                               "from the positional variable. Hence, the two variables named %1 collide.")
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool(), $3)),
+                                            ReportContext::XQST0089,
+                                            fromYYLTYPE(@$, parseInfo));
+
+        }
+
+        const Expression::Ptr retBody(create(new ForClause($<enums.slot>9, $<expr>8, $10, $5), @$, parseInfo));
+        ReturnOrderBy *const rob = locateReturnClause($10);
+
+        if(rob)
+            $$ = create(new OrderBy(rob->stability(), rob->orderSpecs(), retBody, rob), @$, parseInfo);
+        else
+            $$ = retBody;
+
+        parseInfo->finalizePushedVariable();
+
+        if($5 != -1) /* We also have a positional variable to remove from the scope. */
+            parseInfo->finalizePushedVariable();
+    }
+
+ForTail: COMMA DOLLAR VarName TypeDeclaration
+         PositionalVar IN ExprSingle
+         {
+             pushVariable($3, quantificationType($4), $7, VariableDeclaration::RangeVariable, @$, parseInfo);
+         }
+         {
+             /* It is ok this appears after PositionalVar, because currentRangeSlot()
+              * uses a different "channel" than currentPositionSlot(), so they can't trash
+              * each other. */
+             $<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();
+         }
+         ForTail                                                                    /* [X] */
+    {
+        $$ = create(new ForClause($<enums.slot>9, $<expr>7, $10, $5), @$, parseInfo);
+
+        parseInfo->finalizePushedVariable();
+
+        if($5 != -1) /* We also have a positional variable to remove from the scope. */
+            parseInfo->finalizePushedVariable();
+    }
+
+| WhereClause
+| ForClause
+| LetClause
+
+PositionalVar: /* empty */                                                          /* [35] */
+    {
+        $$ = -1;
+    }
+
+| AT DOLLAR VarName
+    {
+        pushVariable($3, CommonSequenceTypes::ExactlyOneInteger, Expression::Ptr(),
+                     VariableDeclaration::PositionalVariable, @$, parseInfo);
+        $$ = parseInfo->currentPositionSlot();
+    }
+
+LetClause: LET IsInternal DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
+           {
+                $<expr>$ = pushVariable($4, quantificationType($5), $7, VariableDeclaration::ExpressionVariable, @$, parseInfo);
+           }
+           LetTail                                                                  /* [36] */
+    {
+        disallowedConstruct(parseInfo, @$, $2);
+
+        Q_ASSERT(parseInfo->variables.top()->name == $4);
+        $$ = create(new LetClause($<expr>8, $9, parseInfo->variables.top()), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+LetTail: COMMA DOLLAR VarName TypeDeclaration ASSIGN ExprSingle
+         { $<expr>$ = pushVariable($3, quantificationType($4), $6, VariableDeclaration::ExpressionVariable, @$, parseInfo);}
+         LetTail                                                                    /* [X] */
+    {
+        Q_ASSERT(parseInfo->variables.top()->name == $3);
+        $$ = create(new LetClause($<expr>7, $8, parseInfo->variables.top()), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+| WhereClause
+| ForClause
+| LetClause
+
+WhereClause: OrderByClause RETURN ExprSingle                                        /* [37] */
+    {
+        if($1.isEmpty())
+            $$ = $3;
+        else
+            $$ = createReturnOrderBy($1, $3, parseInfo->orderStability.pop(), @$, parseInfo);
+    }
+
+| WHERE ExprSingle OrderByClause RETURN ExprSingle
+    {
+        if($3.isEmpty())
+            $$ = create(new IfThenClause($2, $5, create(new EmptySequence, @$, parseInfo)), @$, parseInfo);
+        else
+            $$ = create(new IfThenClause($2, createReturnOrderBy($3, $5, parseInfo->orderStability.pop(), @$, parseInfo),
+                                         create(new EmptySequence, @$, parseInfo)),
+                        @$, parseInfo);
+    }
+
+OrderByClause: /* Empty. */                                                         /* [38] */
+    {
+        $$ = OrderSpecTransfer::List();
+    }
+| MandatoryOrderByClause
+
+MandatoryOrderByClause: OrderByInputOrder OrderSpecList
+    {
+        $$ = $2;
+    }
+
+OrderSpecList: OrderSpecList COMMA OrderSpec                                        /* [39] */
+    {
+        OrderSpecTransfer::List list;
+        list += $1;
+        list.append($3);
+        $$ = list;
+    }
+| OrderSpec
+    {
+        OrderSpecTransfer::List list;
+        list.append($1);
+        $$ = list;
+    }
+
+OrderSpec: ExprSingle DirectionModifier EmptynessModifier CollationModifier         /* [40] */
+    {
+        $$ = OrderSpecTransfer($1, OrderBy::OrderSpec($2, $3));
+    }
+
+DirectionModifier: /* Empty. */                                                     /* [X] */
+    {
+        /* Where does the specification state the default value is ascending?
+         *
+         * It is implicit, in the first enumerated list in 3.8.3 Order By and Return Clauses:
+         *
+         * "If T1 and T2 are two tuples in the tuple stream, and V1 and V2 are the first pair
+         *  of values encountered when evaluating their orderspecs from left to right for
+         *  which one value is greater-than the other (as defined above), then:
+         *
+         *      1. If V1 is greater-than V2: If the orderspec specifies descending,
+         *         then T1 precedes T2 in the tuple stream; otherwise, T2 precedes T1 in the tuple stream.
+         *      2. If V2 is greater-than V1: If the orderspec specifies descending,
+         *         then T2 precedes T1 in the tuple stream; otherwise, T1 precedes T2 in the tuple stream."
+         *
+         * which means that if you don't specify anything, or you
+         * specify ascending, you get the same result.
+         */
+        $$ = OrderBy::OrderSpec::Ascending;
+    }
+
+| ASCENDING
+    {
+        $$ = OrderBy::OrderSpec::Ascending;
+    }
+
+| DESCENDING
+    {
+        $$ = OrderBy::OrderSpec::Descending;
+    }
+
+EmptynessModifier: /* Empty. */                                                     /* [X] */
+    {
+        $$ = parseInfo->staticContext->orderingEmptySequence();
+    }
+| OrderingEmptySequence
+
+CollationModifier: /* Empty. */                                                     /* [X] */
+| COLLATION URILiteral
+    {
+        if(parseInfo->isXSLT())
+            resolveAndCheckCollation<ReportContext::XTDE1035>($2, parseInfo, @$);
+        else
+            resolveAndCheckCollation<ReportContext::XQST0076>($2, parseInfo, @$);
+    }
+| INTERNAL COLLATION ExprSingle
+    {
+        /* We do nothing. We don't use collations, and we have this non-terminal
+         * in order to accept expressions. */
+    }
+
+OrderByInputOrder: STABLE ORDER BY                                                  /* [X] */
+    {
+        parseInfo->orderStability.push(OrderBy::StableOrder);
+    }
+| ORDER BY
+    {
+        parseInfo->orderStability.push(OrderBy::UnstableOrder);
+    }
+
+QuantifiedExpr: SomeQuantificationExpr                                              /* [42] */
+| EveryQuantificationExpr
+
+SomeQuantificationExpr: SOME DOLLAR VarName TypeDeclaration IN ExprSingle
+                        {
+                            pushVariable($3, quantificationType($4), $6,
+                                         VariableDeclaration::RangeVariable, @$, parseInfo);
+                        }
+                        {$<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();}
+                        SomeQuantificationTail                                      /* [X] */
+    {
+        $$ = create(new QuantifiedExpression($<enums.slot>8,
+                                             QuantifiedExpression::Some, $<expr>6, $9), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+SomeQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
+                        {
+                            $<expr>$ = pushVariable($3, quantificationType($4), $6,
+                                                    VariableDeclaration::RangeVariable, @$, parseInfo);
+                        }
+                        {$<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();}
+                        SomeQuantificationTail                                      /* [X] */
+    {
+        $$ = create(new QuantifiedExpression($<enums.slot>8,
+                                             QuantifiedExpression::Some, $<expr>7, $9), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+| SatisfiesClause
+
+EveryQuantificationExpr: EVERY DOLLAR VarName TypeDeclaration IN ExprSingle
+                         {
+                            pushVariable($3, quantificationType($4), $6,
+                                         VariableDeclaration::RangeVariable, @$, parseInfo);
+                         }
+                         {$<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();}
+                         EveryQuantificationTail                                    /* [X] */
+    {
+        $$ = create(new QuantifiedExpression($<enums.slot>8,
+                                             QuantifiedExpression::Every, $<expr>6, $9), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+EveryQuantificationTail: COMMA DOLLAR VarName TypeDeclaration IN ExprSingle
+                         {
+                            $<expr>$ = pushVariable($3, quantificationType($4), $6,
+                                                    VariableDeclaration::RangeVariable, @$, parseInfo);
+                         }
+                         {$<enums.slot>$ = parseInfo->staticContext->currentRangeSlot();}
+                         EveryQuantificationTail                                    /* [X] */
+    {
+        $$ = create(new QuantifiedExpression($<enums.slot>8,
+                                             QuantifiedExpression::Every, $<expr>7, $9), @$, parseInfo);
+        parseInfo->finalizePushedVariable();
+    }
+
+| SatisfiesClause
+
+SatisfiesClause: SATISFIES ExprSingle                                               /* [X] */
+    {
+        $$ = $2;
+    }
+
+/*
+ * Typeswitches are re-written to a combination between @c if clauses, <tt>instance of</tt>, and
+ * @c let bindings. For example, the query:
+ *
+ * @code
+ * typeswitch(input)
+ * case element()             return <!-- a comment -->
+ * case $i as attribute(name) return name($i)
+ * default                    return "Didn't match"
+ * @endcode
+ *
+ * becomes:
+ *
+ * @code
+ * if(input instance of element())
+ * then <!-- a comment -->
+ * else if(input instance of attribute(name))
+ *      then let $i as attribute(name) := input return name($i)
+ *      else "Didn't match"
+ * @endcode
+ */
+
+TypeswitchExpr: TYPESWITCH LPAREN Expr RPAREN
+                {
+                    parseInfo->typeswitchSource.push($3);
+                }
+                CaseClause                                                          /* [43] */
+    {
+        disallowedConstruct(parseInfo, @$);
+        parseInfo->typeswitchSource.pop();
+        $$ = $6;
+    }
+
+CaseClause: CASE CaseVariable SequenceType                                          /* [44] */
+    {
+        if(!$2.isNull())
+        {
+            pushVariable($2, $3, parseInfo->typeswitchSource.top(),
+                         VariableDeclaration::ExpressionVariable, @$, parseInfo, false);
+        }
+    }
+    RETURN ExprSingle
+    {
+        /* The variable shouldn't be in-scope for other case branches. */
+        if(!$2.isNull())
+            parseInfo->finalizePushedVariable();
+    }
+    CaseTail
+    {
+        const Expression::Ptr instanceOf(create(new InstanceOf(parseInfo->typeswitchSource.top(), $3), @$, parseInfo));
+        $$ = create(new IfThenClause(instanceOf, $6, $8), @$, parseInfo);
+    }
+
+CaseTail: CaseClause                                                                /* [X] */
+| CaseDefault
+
+CaseVariable: /* Empty. */                                                          /* [X] */
+    {
+        $$ = QXmlName();
+    }
+
+| DOLLAR ElementName AS
+    {
+        $$ = $2;
+    }
+
+CaseDefault: DEFAULT RETURN ExprSingle                                              /* [X] */
+    {
+        $$ = $3;
+    }
+| DEFAULT DOLLAR ElementName
+    {
+        if(!$3.isNull())
+        {
+            pushVariable($3, parseInfo->typeswitchSource.top()->staticType(),
+                         parseInfo->typeswitchSource.top(),
+                         VariableDeclaration::ExpressionVariable, @$, parseInfo, false);
+        }
+    }
+  RETURN ExprSingle
+    {
+        if(!$3.isNull())
+            parseInfo->finalizePushedVariable();
+        $$ = $6;
+    }
+
+IfExpr: IF LPAREN Expr RPAREN THEN ExprSingle ELSE ExprSingle                       /* [45] */
+    {
+        $$ = create(new IfThenClause($3, $6, $8), @$, parseInfo);
+    }
+
+OrExpr: AndExpr                                                                     /* [46] */
+| OrExpr OR AndExpr
+    {
+        $$ = create(new OrExpression($1, $3), @$, parseInfo);
+    }
+
+AndExpr: ComparisonExpr                                                             /* [47] */
+| AndExpr AND ComparisonExpr
+    {
+        $$ = create(new AndExpression($1, $3), @$, parseInfo);
+    }
+
+ComparisonExpr: RangeExpr                                                           /* [48] */
+| ValueComp
+| GeneralComp
+| NodeComp
+
+RangeExpr: AdditiveExpr                                                             /* [49] */
+| AdditiveExpr TO AdditiveExpr
+    {
+        $$ = create(new RangeExpression($1, $3), @$, parseInfo);
+    }
+
+AdditiveExpr: MultiplicativeExpr                                                    /* [50] */
+| AdditiveExpr AdditiveOperator MultiplicativeExpr
+    {
+        $$ = create(new ArithmeticExpression($1, $2, $3), @$, parseInfo);
+    }
+
+AdditiveOperator: PLUS  {$$ = AtomicMathematician::Add;}                            /* [X] */
+| MINUS                 {$$ = AtomicMathematician::Substract;}
+
+MultiplicativeExpr: UnionExpr                                                       /* [51] */
+| MultiplicativeExpr MultiplyOperator UnionExpr
+    {
+        $$ = create(new ArithmeticExpression($1, $2, $3), @$, parseInfo);
+    }
+
+MultiplyOperator: STAR  {$$ = AtomicMathematician::Multiply;}                       /* [X] */
+| DIV                   {$$ = AtomicMathematician::Div;}
+| IDIV                  {$$ = AtomicMathematician::IDiv;}
+| MOD                   {$$ = AtomicMathematician::Mod;}
+
+UnionExpr: IntersectExceptExpr                                                      /* [52] */
+| UnionExpr UnionOperator IntersectExceptExpr
+    {
+        $$ = create(new CombineNodes($1, CombineNodes::Union, $3), @$, parseInfo);
+    }
+
+IntersectExceptExpr: InstanceOfExpr                                                 /* [53] */
+| IntersectExceptExpr IntersectOperator InstanceOfExpr
+    {
+        $$ = create(new CombineNodes($1, $2, $3), @$, parseInfo);
+    }
+
+UnionOperator: UNION                                                                /* [X] */
+| BAR
+
+IntersectOperator: INTERSECT                                                        /* [X] */
+    {
+        $$ = CombineNodes::Intersect;
+    }
+| EXCEPT
+    {
+        $$ = CombineNodes::Except;
+    }
+
+InstanceOfExpr: TreatExpr                                                           /* [54] */
+| TreatExpr INSTANCE OF SequenceType
+    {
+        $$ = create(new InstanceOf($1,
+        SequenceType::Ptr($4)), @$, parseInfo);
+    }
+
+TreatExpr: CastableExpr                                                             /* [55] */
+| CastableExpr TREAT AS SequenceType
+    {
+        $$ = create(new TreatAs($1, $4), @$, parseInfo);
+    }
+
+CastableExpr: CastExpr                                                              /* [56] */
+| CastExpr CASTABLE AS SingleType
+    {
+        $$ = create(new CastableAs($1, $4), @$, parseInfo);
+    }
+
+CastExpr: UnaryExpr                                                                 /* [57] */
+| UnaryExpr CAST AS SingleType
+    {
+        $$ = create(new CastAs($1, $4), @$, parseInfo);
+    }
+
+UnaryExpr: ValueExpr                                                                /* [58] */
+| UnaryOperator UnaryExpr
+    {
+        $$ = create(new UnaryExpression($1, $2, parseInfo->staticContext), @$, parseInfo);
+    }
+
+UnaryOperator: PLUS                                                                 /* [X] */
+    {
+        $$ = AtomicMathematician::Add;
+    }
+| MINUS
+    {
+        $$ = AtomicMathematician::Substract;
+    }
+
+ValueExpr: ValidateExpr                                                             /* [59] */
+| PathExpr
+| ExtensionExpr
+
+GeneralComp: RangeExpr GeneralComparisonOperator RangeExpr                          /* [60] */
+    {
+        $$ = create(new GeneralComparison($1, $2, $3, parseInfo->isBackwardsCompat.top()), @$, parseInfo);
+    }
+
+GeneralComparisonOperator: G_EQ {$$ = AtomicComparator::OperatorEqual;}             /* [X] */
+| G_NE                          {$$ = AtomicComparator::OperatorNotEqual;}
+| G_GE                          {$$ = AtomicComparator::OperatorGreaterOrEqual;}
+| G_GT                          {$$ = AtomicComparator::OperatorGreaterThan;}
+| G_LE                          {$$ = AtomicComparator::OperatorLessOrEqual;}
+| G_LT                          {$$ = AtomicComparator::OperatorLessThan;}
+
+ValueComp: RangeExpr ValueComparisonOperator RangeExpr                              /* [61] */
+    {
+        $$ = create(new ValueComparison($1, $2, $3), @$, parseInfo);
+    }
+
+ValueComparisonOperator: EQ {$$ = AtomicComparator::OperatorEqual;}
+| NE                        {$$ = AtomicComparator::OperatorNotEqual;}
+| GE                        {$$ = AtomicComparator::OperatorGreaterOrEqual;}
+| GT                        {$$ = AtomicComparator::OperatorGreaterThan;}
+| LE                        {$$ = AtomicComparator::OperatorLessOrEqual;}
+| LT                        {$$ = AtomicComparator::OperatorLessThan;}
+
+NodeComp: RangeExpr NodeOperator RangeExpr                                          /* [62] */
+    {
+        $$ = create(new NodeComparison($1, $2, $3), @$, parseInfo);
+    }
+
+NodeOperator: IS    {$$ = QXmlNodeModelIndex::Is;}                                  /* [X] */
+| PRECEDES          {$$ = QXmlNodeModelIndex::Precedes;}
+| FOLLOWS           {$$ = QXmlNodeModelIndex::Follows;}
+
+ValidateExpr: ValidationMode EnclosedExpr                                           /* [63] */
+    {
+        disallowedConstruct(parseInfo, @$);
+        parseInfo->staticContext->error(QtXmlPatterns::tr("The Schema Validation Feature is not supported. "
+                                                          "Hence, %1-expressions may not be used.")
+                                           .arg(formatKeyword("validate")),
+                                        ReportContext::XQST0075, fromYYLTYPE(@$, parseInfo));
+        /*
+        $$ = Validate::create($2, $1, parseInfo->staticContext);
+        */
+    }
+
+/* "A validate expression may optionally specify a validation mode. The
+    default validation mode is strict." */
+ValidationMode: VALIDATE    {$$ = Validate::Strict;}                                /* [64] */
+| VALIDATE STRICT           {$$ = Validate::Strict;}
+| VALIDATE LAX              {$$ = Validate::Lax;}
+
+ExtensionExpr: Pragmas EnclosedOptionalExpr                                         /* [65] */
+    {
+        /* We don't support any pragmas, so we only do the
+         * necessary validation and use the fallback expression. */
+
+        if($2)
+            $$ = $2;
+        else
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("None of the pragma expressions are supported. "
+                                               "Therefore, a fallback expression "
+                                               "must be present"),
+                                            ReportContext::XQST0079, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+EnclosedOptionalExpr: CURLY_LBRACE /* empty */ CURLY_RBRACE                         /* [X] */
+    {
+        $$.reset();
+    }
+| CURLY_LBRACE Expr CURLY_RBRACE
+    {
+        $$ = $2;
+    }
+
+Pragmas: Pragmas Pragma                                                             /* [X] */
+| Pragma
+
+Pragma: PRAGMA_START PragmaName PragmaContents PRAGMA_END                           /* [66] */
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+
+PragmaContents: /* empty */                                                         /* [67] */
+| StringLiteral
+
+PathExpr: SLASH RelativePathExpr                                                    /* [68] */
+    {
+        /* This is "/step". That is, fn:root(self::node()) treat as document-node()/RelativePathExpr. */
+        $$ = create(new Path(createRootExpression(parseInfo, @$), $2), @$, parseInfo);
+    }
+
+| SLASHSLASH RelativePathExpr
+    {
+        $$ = createSlashSlashPath(createRootExpression(parseInfo, @$), $2, @$, parseInfo);
+    }
+| SLASH
+    {
+        /* This is "/". That is, fn:root(self::node()) treat as document-node(). */
+        $$ = createRootExpression(parseInfo, @$);
+    }
+
+| RelativePathExpr
+    /* This is "step", simply. We let bison generate "$$ = $1". */
+
+RelativePathExpr: StepExpr                                                          /* [69] */
+| RelativePathExpr MapOrSlash StepExpr
+    {
+        $$ = create(new Path($1, $3, $2), @$, parseInfo);
+    }
+| RelativePathExpr MapOrSlash SORT MandatoryOrderByClause RETURN StepExpr END_SORT
+    {
+        const Expression::Ptr orderBy(createReturnOrderBy($4, $6, parseInfo->orderStability.pop(), @$, parseInfo));
+
+        ReturnOrderBy *const rob = orderBy->as<ReturnOrderBy>();
+        const Expression::Ptr path(create(new Path($1, orderBy, $2), @$, parseInfo));
+
+        $$ = create(new OrderBy(rob->stability(), rob->orderSpecs(), path, rob), @$, parseInfo);
+    }
+| RelativePathExpr SLASHSLASH StepExpr
+    {
+        $$ = createSlashSlashPath($1, $3, @$, parseInfo);
+    }
+
+StepExpr: FilteredAxisStep                                                          /* [70] */
+    {
+        $$ = NodeSortExpression::wrapAround($1, parseInfo->staticContext);
+    }
+| FilterExpr
+| CURRENT EnclosedExpr
+    {
+        $$ = create(new CurrentItemStore($2), @$, parseInfo);
+    }
+| XSLT_VERSION
+    {
+        const xsDouble version = $1.toDouble();
+
+        parseInfo->isBackwardsCompat.push(version != 2);
+
+        $<enums.Double>$ = version;
+    }
+    EnclosedExpr
+    {
+        if($<enums.Double>2 < 2)
+            $$ = createCompatStore($3, @$, parseInfo);
+        else
+            $$ = $3;
+    }
+| BASEURI StringLiteral CURLY_LBRACE Expr CURLY_RBRACE                              /* [X] */
+{
+    Q_ASSERT(!$2.isEmpty());
+    $$ = create(new StaticBaseURIStore($2, $4), @$, parseInfo);
+}
+
+| DECLARE NAMESPACE NCNAME G_EQ STRING_LITERAL CURLY_LBRACE                         /* [X] */
+    {
+        parseInfo->resolvers.push(parseInfo->staticContext->namespaceBindings());
+        const NamespaceResolver::Ptr resolver(new DelegatingNamespaceResolver(parseInfo->staticContext->namespaceBindings()));
+        resolver->addBinding(QXmlName(parseInfo->staticContext->namePool()->allocateNamespace($5),
+                                      StandardLocalNames::empty,
+                                      parseInfo->staticContext->namePool()->allocatePrefix($3)));
+        parseInfo->staticContext->setNamespaceBindings(resolver);
+    }
+    Expr
+    CURLY_RBRACE
+    {
+        parseInfo->staticContext->setNamespaceBindings(parseInfo->resolvers.pop());
+        $$ = $8;
+    }
+| CALL_TEMPLATE ElementName LPAREN TemplateWithParameters RPAREN
+    {
+        $$ = create(new CallTemplate($2, parseInfo->templateWithParams), @$, parseInfo);
+        parseInfo->templateWithParametersHandled();
+        parseInfo->templateCalls.append($$);
+    }
+
+TemplateWithParameters:
+    {
+        parseInfo->startParsingWithParam();
+    }
+    TemplateParameters
+    {
+        parseInfo->endParsingWithParam();
+    }
+
+TemplateParameters: /* Empty. */                                                    /* [X] */
+    {
+    }
+| TemplateParameter
+    {
+    }
+| TemplateParameters COMMA TemplateParameter
+    {
+    }
+
+OptionalTemplateParameters: /* Empty. */                                            /* [X] */
+    {
+    }
+| LPAREN TemplateParameters RPAREN
+    {
+    }
+
+TemplateParameter: IsTunnel DOLLAR VarName TypeDeclaration OptionalAssign
+    {
+        /* Note, this grammar rule is invoked for @c xsl:param @em and @c
+         * xsl:with-param. */
+        const bool isParsingWithParam = parseInfo->isParsingWithParam();
+
+        /**
+         * @c xsl:param doesn't make life easy:
+         *
+         * If it only has @c name, it's default value is an empty
+         * string(hence has type @c xs:string), but the value that
+         * (maybe) is supplied can be anything, typically a node.
+         *
+         * Therefore, for that very common case we can't rely on
+         * the Expression's type, but have to force it to item()*.
+         *
+         * So if we're supplied the type item()*, we pass a null
+         * SequenceType. TemplateParameterReference recognizes this
+         * and has item()* as its static type, regardless of if the
+         * expression has a more specific type.
+         */
+        SequenceType::Ptr type;
+
+        if(!$4->is(CommonSequenceTypes::ZeroOrMoreItems))
+            type = $4;
+
+        Expression::Ptr expr;
+
+        /* The default value is an empty sequence. */
+        if(!$5 && ((type && $4->cardinality().allowsEmpty())
+                   || isParsingWithParam))
+            expr = create(new EmptySequence, @$, parseInfo);
+        else
+            expr = $5;
+
+        /* We ensure we have some type, so CallTemplate, Template and friends
+         * are happy. */
+        if(!isParsingWithParam && !type)
+            type = CommonSequenceTypes::ZeroOrMoreItems;
+
+        if($1)
+            /* TODO, handle tunnel parameters. */;
+        else
+        {
+            if((!isParsingWithParam && VariableDeclaration::contains(parseInfo->templateParameters, $3)) ||
+               (isParsingWithParam && parseInfo->templateWithParams.contains($3)))
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("Each name of a template parameter must be unique; %1 is duplicated.")
+                                                                 .arg(formatKeyword(parseInfo->staticContext->namePool(), $3)),
+                                                isParsingWithParam ? ReportContext::XTSE0670 : ReportContext::XTSE0580, fromYYLTYPE(@$, parseInfo));
+            }
+            else
+            {
+                if(isParsingWithParam)
+                    parseInfo->templateWithParams[$3] = WithParam::Ptr(new WithParam($3, $4, expr));
+                else
+                {
+                    Q_ASSERT(type);
+                    pushVariable($3, type, expr, VariableDeclaration::TemplateParameter, @$, parseInfo);
+                    parseInfo->templateParameters.append(parseInfo->variables.top());
+                }
+            }
+        }
+    }
+
+IsTunnel: /* Empty. */
+    {
+        $$ = false;
+    }
+| TUNNEL
+    {
+        $$ = true;
+    }
+
+OptionalAssign: /* Empty. */                                                        /* [X] */
+    {
+        $$ = Expression::Ptr();
+    }
+| ASSIGN ExprSingle
+    {
+        $$ = $2;
+    }
+
+/**
+ * Controls whethers a path expression should sort its result. Used for
+ * implementing XSL-T's for-each.
+ */
+MapOrSlash: SLASH                                                                   /* [X] */
+    {
+        $$ = Path::RegularPath;
+    }
+| MAP
+    {
+        $$ = Path::XSLTForEach;
+    }
+| FOR_APPLY_TEMPLATE
+    {
+        $$ = Path::ForApplyTemplate;
+    }
+
+FilteredAxisStep: AxisStep                                                          /* [X] */
+| FilteredAxisStep LBRACKET Expr RBRACKET
+    {
+        $$ = create(GenericPredicate::create($1, $3, parseInfo->staticContext, fromYYLTYPE(@$, parseInfo)), @$, parseInfo);
+    }
+
+AxisStep: ForwardStep                                                               /* [71] */
+| ReverseStep
+
+ForwardStep: Axis
+             {
+                if($1 == QXmlNodeModelIndex::AxisAttribute)
+                    parseInfo->nodeTestSource = BuiltinTypes::attribute;
+             }
+             NodeTestInAxisStep                                                     /* [72] */
+    {
+        if($3)
+        {
+            /* A node test was explicitly specified. The un-abbreviated syntax was used. */
+            $$ = create(new AxisStep($1, $3), @$, parseInfo);
+        }
+        else
+        {
+            /* Quote from 3.2.1.1 Axes
+             *
+             * [Definition: Every axis has a principal node kind. If an axis
+             *  can contain elements, then the principal node kind is element;
+             *  otherwise, it is the kind of nodes that the axis can contain.] Thus:
+             * - For the attribute axis, the principal node kind is attribute.
+             * - For all other axes, the principal node kind is element. */
+
+            if($1 == QXmlNodeModelIndex::AxisAttribute)
+                $$ = create(new AxisStep(QXmlNodeModelIndex::AxisAttribute, BuiltinTypes::attribute), @$, parseInfo);
+            else
+                $$ = create(new AxisStep($1, BuiltinTypes::element), @$, parseInfo);
+        }
+
+        parseInfo->restoreNodeTestSource();
+    }
+| AbbrevForwardStep
+
+NodeTestInAxisStep: NodeTest
+| AnyAttributeTest
+
+Axis: AxisToken COLONCOLON                                                          /* [73] */
+    {
+        if($1 == QXmlNodeModelIndex::AxisNamespace)
+        {
+            /* We don't raise XPST0010 here because the namespace axis isn't an optional
+             * axis. It simply is not part of the XQuery grammar. */
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The %1-axis is unsupported in XQuery")
+                                               .arg(formatKeyword("namespace")),
+                                            ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+        }
+        else
+            $$ = $1;
+    }
+
+AxisToken: ANCESTOR_OR_SELF {$$ = QXmlNodeModelIndex::AxisAncestorOrSelf  ;}
+| ANCESTOR                  {$$ = QXmlNodeModelIndex::AxisAncestor        ;}
+| ATTRIBUTE                 {$$ = QXmlNodeModelIndex::AxisAttribute       ;}
+| CHILD                     {$$ = QXmlNodeModelIndex::AxisChild           ;}
+| DESCENDANT_OR_SELF        {$$ = QXmlNodeModelIndex::AxisDescendantOrSelf;}
+| DESCENDANT                {$$ = QXmlNodeModelIndex::AxisDescendant      ;}
+| FOLLOWING                 {$$ = QXmlNodeModelIndex::AxisFollowing       ;}
+| PRECEDING                 {$$ = QXmlNodeModelIndex::AxisPreceding       ;}
+| FOLLOWING_SIBLING         {$$ = QXmlNodeModelIndex::AxisFollowingSibling;}
+| PRECEDING_SIBLING         {$$ = QXmlNodeModelIndex::AxisPrecedingSibling;}
+| PARENT                    {$$ = QXmlNodeModelIndex::AxisParent          ;}
+| SELF                      {$$ = QXmlNodeModelIndex::AxisSelf            ;}
+
+AbbrevForwardStep: AT_SIGN
+                   {
+                        parseInfo->nodeTestSource = BuiltinTypes::attribute;
+                   }
+                   NodeTest                                                         /* [72] */
+    {
+        $$ = create(new AxisStep(QXmlNodeModelIndex::AxisAttribute, $3), @$, parseInfo);
+
+        parseInfo->restoreNodeTestSource();
+    }
+| NodeTest
+    {
+        ItemType::Ptr nodeTest;
+
+        if(parseInfo->isParsingPattern && *$1 == *BuiltinTypes::node)
+            nodeTest = BuiltinTypes::xsltNodeTest;
+        else
+            nodeTest = $1;
+
+        $$ = create(new AxisStep(QXmlNodeModelIndex::AxisChild, nodeTest), @$, parseInfo);
+    }
+| AnyAttributeTest
+    {
+        $$ = create(new AxisStep(QXmlNodeModelIndex::AxisAttribute, $1), @$, parseInfo);
+    }
+
+ReverseStep: AbbrevReverseStep                                                      /* [75] */
+
+AbbrevReverseStep: DOTDOT                                                           /* [77] */
+    {
+        $$ = create(new AxisStep(QXmlNodeModelIndex::AxisParent, BuiltinTypes::node), @$, parseInfo);
+    }
+
+NodeTest: NameTest                                                                  /* [78] */
+| KindTest
+
+NameTest: ElementName                                                               /* [79] */
+    {
+        $$ = QNameTest::create(parseInfo->nodeTestSource, $1);
+    }
+| WildCard
+
+WildCard: STAR                                                                      /* [80] */
+    {
+        $$ = parseInfo->nodeTestSource;
+    }
+| ANY_LOCAL_NAME
+    {
+        const NamePool::Ptr np(parseInfo->staticContext->namePool());
+        const ReflectYYLTYPE ryy(@$, parseInfo);
+
+        const QXmlName::NamespaceCode ns(QNameConstructor::namespaceForPrefix(np->allocatePrefix($1), parseInfo->staticContext, &ryy));
+
+        $$ = NamespaceNameTest::create(parseInfo->nodeTestSource, ns);
+    }
+| ANY_PREFIX
+    {
+        const QXmlName::LocalNameCode c = parseInfo->staticContext->namePool()->allocateLocalName($1);
+        $$ = LocalNameTest::create(parseInfo->nodeTestSource, c);
+    }
+
+FilterExpr: PrimaryExpr                                                             /* [81] */
+| FilterExpr LBRACKET Expr RBRACKET
+    {
+        $$ = create(GenericPredicate::create($1, $3, parseInfo->staticContext, fromYYLTYPE(@4, parseInfo)), @$, parseInfo);
+    }
+
+PrimaryExpr: Literal                                                                /* [84] */
+| VarRef
+| ParenthesizedExpr
+| ContextItemExpr
+| FunctionCallExpr
+| OrderingExpr
+| Constructor
+| APPLY_TEMPLATE OptionalMode LPAREN TemplateWithParameters RPAREN
+    {
+        $$ = create(new ApplyTemplate(parseInfo->modeFor($2),
+                                      parseInfo->templateWithParams,
+                                      parseInfo->modeFor(QXmlName(StandardNamespaces::InternalXSLT,
+                                                                  StandardLocalNames::Default))),
+                    @1, parseInfo);
+        parseInfo->templateWithParametersHandled();
+    }
+
+Literal: NumericLiteral                                                             /* [85] */
+| StringLiteral
+    {
+        $$ = create(new Literal(AtomicString::fromValue($1)), @$, parseInfo);
+    }
+
+NumericLiteral: XPATH2_NUMBER                                                       /* [86] */
+    {
+        $$ = createNumericLiteral<Double>($1, @$, parseInfo);
+    }
+| NUMBER
+    {
+        $$ = createNumericLiteral<Numeric>($1, @$, parseInfo);
+    }
+
+VarRef: DOLLAR VarName                                                              /* [87] */
+    {
+        $$ = resolveVariable($2, @$, parseInfo, false);
+    }
+
+VarName: NCNAME                                                                     /* [88] */
+    {
+        /* See: http://www.w3.org/TR/xpath20/#id-variables */
+        $$ = parseInfo->staticContext->namePool()->allocateQName(QString(), $1);
+    }
+| QName
+    {
+        $$ = $1;
+    }
+
+ParenthesizedExpr: LPAREN Expr RPAREN                                               /* [89] */
+    {
+        $$ = $2;
+    }
+| LPAREN RPAREN
+    {
+        $$ = create(new EmptySequence, @$, parseInfo);
+    }
+
+ContextItemExpr: DOT                                                                /* [90] */
+    {
+        $$ = create(new ContextItem(), @$, parseInfo);
+    }
+
+OrderingExpr: OrderingMode EnclosedExpr                                             /* [X] */
+    {
+        $$ = $2;
+    }
+
+FunctionCallExpr: FunctionName LPAREN FunctionArguments RPAREN                      /* [93] */
+    {
+        if(XPathHelper::isReservedNamespace($1.namespaceURI()) || $1.namespaceURI() == StandardNamespaces::InternalXSLT)
+        { /* We got a call to a builtin function. */
+            const ReflectYYLTYPE ryy(@$, parseInfo);
+
+            const Expression::Ptr
+                func(parseInfo->staticContext->
+                functionSignatures()->createFunctionCall($1, $3, parseInfo->staticContext, &ryy));
+
+            if(func)
+                $$ = create(func, @$, parseInfo);
+            else
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("No function by name %1 is available.")
+                                                   .arg(formatKeyword(parseInfo->staticContext->namePool(), $1)),
+                                                ReportContext::XPST0017, fromYYLTYPE(@$, parseInfo));
+            }
+        }
+        else /* It's a call to a function created with 'declare function'.*/
+        {
+            $$ = create(new UserFunctionCallsite($1, $3.count()), @$, parseInfo);
+
+            $$->setOperands($3);
+            parseInfo->userFunctionCallsites.append($$);
+        }
+    }
+
+FunctionArguments: /* empty */                                                      /* [X] */
+    {
+        $$ = Expression::List();
+    }
+
+| ExprSingle
+    {
+        Expression::List list;
+        list.append($1);
+        $$ = list;
+    }
+
+| ExpressionSequence
+
+Constructor: DirectConstructor                                                      /* [94] */
+    {
+        disallowedConstruct(parseInfo, @$);
+    }
+| ComputedConstructor
+
+DirectConstructor: DirElemConstructor                                               /* [95] */
+| DirCommentConstructor
+| DirPIConstructor
+
+/*
+ * Direct attribute constructors can contain embedded expressions, and for those namespace bindings
+ * on the same element needs to be in scope. For example:
+ *
+ * @code
+ * <element attribute="{prefix:nameTest}" xmlns:prefix="http://example.com/"/>
+ * @endcode
+ *
+ * Patternist is designed to do all name resolution at parse time so the subsequent code only has to
+ * deal with expanded QNames(which the QName class represents), and this presents a problem since
+ * the parser haven't even encountered the @c xmlns:prefix when resolving @c prefix in the name test.
+ *
+ * This is solved as follows:
+ *
+ * <ol>
+ *  <li>Just before starting parsing the attributes, we call Tokenizer::commenceScanOnly().
+ *      This switches the tokenizer to not tokenize embedded expressions in attributes,
+ *      but to return them as strings, token type STRING_LITERAL.</li>
+ *  <li>We parse all the attributes, and iterates over them, only caring about
+ *      namespace bindings, and validates and adds them to the context.</li>
+ *  <li>We call Tokenizer::resumeTokenizationFrom() from the previous position
+ *      returned from Tokenizer::commenceScanOnly() and parses the attributes once more,
+ *      but this time with tokenization of embedded expressions. Since we this time
+ *      have the namespace bindings in place, everything resolves.</li>
+ * </ol>
+ *
+ * Saxon does this in a similar way. Study net.sf.saxon.expr.QueryParser::parseDirectElementConstructor().
+ *
+ * @see XQueryTokenizer::attributeAsRaw()
+ */
+DirElemConstructor: G_LT
+                    LexicalName
+                    {
+                        $<enums.tokenizerPosition>$ = parseInfo->tokenizer->commenceScanOnly();
+                        parseInfo->scanOnlyStack.push(true);
+                    }
+
+                    /* This list contains name/string pairs. No embedded
+                     * expressions has been parsed. */
+                    DirAttributeList
+
+                    {
+                        ++parseInfo->elementConstructorDepth;
+                        Expression::List constructors;
+
+                        parseInfo->resolvers.push(parseInfo->staticContext->namespaceBindings());
+
+                        /* Fix up attributes and namespace declarations. */
+                        const NamespaceResolver::Ptr resolver(new DelegatingNamespaceResolver(parseInfo->staticContext->namespaceBindings()));
+                        const NamePool::Ptr namePool(parseInfo->staticContext->namePool());
+                        const int len = $4.size();
+                        QSet<QXmlName::PrefixCode> usedDeclarations;
+
+                        /* Whether xmlns="" has been encountered. */
+                        bool hasDefaultDeclaration = false;
+
+                        /* For each attribute & namespace declaration, do: */
+                        for(int i = 0; i < len; ++i)
+                        {
+                            QString strLocalName;
+                            QString strPrefix;
+
+                            XPathHelper::splitQName($4.at(i).first, strPrefix, strLocalName);
+                            const QXmlName::PrefixCode prefix = namePool->allocatePrefix(strPrefix);
+
+                            /* This can seem a bit weird. However, this name is ending up in a QXmlName
+                             * which consider its prefix a... prefix. So, a namespace binding name can in some cases
+                             * be a local name, but that's just as the initial syntactical construct. */
+                            const QXmlName::LocalNameCode localName = namePool->allocatePrefix(strLocalName);
+
+                            /* Not that localName is "foo" in "xmlns:foo" and that prefix is "xmlns". */
+
+                            if(prefix == StandardPrefixes::xmlns ||
+                               (prefix == StandardPrefixes::empty && localName == StandardPrefixes::xmlns))
+                            {
+                                if(localName == StandardPrefixes::xmlns)
+                                    hasDefaultDeclaration = true;
+
+                                /* We have a namespace declaration. */
+
+                                const Expression::Ptr nsExpr($4.at(i).second);
+
+                                const QString strNamespace(nsExpr->is(Expression::IDEmptySequence) ? QString() : nsExpr->as<Literal>()->item().stringValue());
+
+                                const QXmlName::NamespaceCode ns = namePool->allocateNamespace(strNamespace);
+
+                                if(ns == StandardNamespaces::empty)
+                                {
+                                    if(localName != StandardPrefixes::xmlns)
+                                    {
+                                        parseInfo->staticContext->error(QtXmlPatterns::tr("The namespace URI cannot be the empty string when binding to a prefix, %1.")
+                                                                           .arg(formatURI(strPrefix)),
+                                                                        ReportContext::XQST0085, fromYYLTYPE(@$, parseInfo));
+                                    }
+                                }
+                                else if(!AnyURI::isValid(strNamespace))
+                                {
+                                    parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is an invalid namespace URI.").arg(formatURI(strNamespace)),
+                                                                    ReportContext::XQST0022, fromYYLTYPE(@$, parseInfo));
+                                }
+
+                                if(prefix == StandardPrefixes::xmlns && localName == StandardPrefixes::xmlns)
+                                {
+                                    parseInfo->staticContext->error(QtXmlPatterns::tr("It is not possible to bind to the prefix %1")
+                                                                       .arg(formatKeyword("xmlns")),
+                                                                    ReportContext::XQST0070, fromYYLTYPE(@$, parseInfo));
+                                }
+
+                                if(ns == StandardNamespaces::xml && localName != StandardPrefixes::xml)
+                                {
+                                    parseInfo->staticContext->error(QtXmlPatterns::tr("Namespace %1 can only be bound to %2 (and it is, in either case, pre-declared).")
+                                                                       .arg(formatURI(namePool->stringForNamespace(StandardNamespaces::xml)))
+                                                                       .arg(formatKeyword("xml")),
+                                                                    ReportContext::XQST0070, fromYYLTYPE(@$, parseInfo));
+                                }
+
+                                if(localName == StandardPrefixes::xml && ns != StandardNamespaces::xml)
+                                {
+                                    parseInfo->staticContext->error(QtXmlPatterns::tr("Prefix %1 can only be bound to %2 (and it is, in either case, pre-declared).")
+                                                                       .arg(formatKeyword("xml"))
+                                                                       .arg(formatURI(namePool->stringForNamespace(StandardNamespaces::xml))),
+                                                                    ReportContext::XQST0070, fromYYLTYPE(@$, parseInfo));
+                                }
+
+                                QXmlName nb;
+
+                                if(localName == StandardPrefixes::xmlns)
+                                    nb = QXmlName(ns, StandardLocalNames::empty);
+                                else
+                                    nb = QXmlName(ns, StandardLocalNames::empty, localName);
+
+                                if(usedDeclarations.contains(nb.prefix()))
+                                {
+                                    parseInfo->staticContext->error(QtXmlPatterns::tr("Two namespace declaration attributes have the same name: %1.")
+                                                                       .arg(formatKeyword(namePool->stringForPrefix(nb.prefix()))),
+                                                                    ReportContext::XQST0071, fromYYLTYPE(@$, parseInfo));
+
+                                }
+                                else
+                                    usedDeclarations.insert(nb.prefix());
+
+                                /* If the user has bound the XML namespace correctly, we in either
+                                 * case don't want to output it.
+                                 *
+                                 * We only have to check the namespace parts since the above checks has ensured
+                                 * consistency in the prefix parts. */
+                                if(ns != StandardNamespaces::xml)
+                                {
+                                    /* We don't want default namespace declarations when the
+                                     * default namespace already is empty. */
+                                    if(!(ns == StandardNamespaces::empty          &&
+                                         localName == StandardNamespaces::xmlns   &&
+                                         resolver->lookupNamespaceURI(StandardPrefixes::empty) == StandardNamespaces::empty))
+                                    {
+                                        constructors.append(create(new NamespaceConstructor(nb), @$, parseInfo));
+                                        resolver->addBinding(nb);
+                                    }
+                                }
+                            }
+                        }
+
+                        if(parseInfo->elementConstructorDepth == 1 && !hasDefaultDeclaration)
+                        {
+                            /* TODO But mostly this isn't needed, since the default element
+                             * namespace is empty? How does this at all work? */
+                            const QXmlName def(resolver->lookupNamespaceURI(StandardPrefixes::empty), StandardLocalNames::empty);
+                            constructors.append(create(new NamespaceConstructor(def), @$, parseInfo));
+                        }
+
+                        parseInfo->staticContext->setNamespaceBindings(resolver);
+                        $<expressionList>$ = constructors;
+
+                        /* Resolve the name of the element, now that the namespace attributes are read. */
+                        {
+                            const ReflectYYLTYPE ryy(@$, parseInfo);
+
+                            const QXmlName ele = QNameConstructor::expandQName<StaticContext::Ptr,
+                                                                               ReportContext::XPST0081,
+                                                                               ReportContext::XPST0081>($2, parseInfo->staticContext, resolver, &ryy);
+                            parseInfo->tagStack.push(ele);
+                        }
+
+                        parseInfo->tokenizer->resumeTokenizationFrom($<enums.tokenizerPosition>3);
+                    }
+                    POSITION_SET
+                    DirAttributeList
+                    DirElemConstructorTail                         /* [96] */
+    {
+        /* We add the content constructor after the attribute constructors. This might result
+         * in nested ExpressionSequences, but it will be optimized away later on. */
+
+        Expression::List attributes($<expressionList>5);
+        const NamePool::Ptr namePool(parseInfo->staticContext->namePool());
+        const int len = $7.size();
+        QSet<QXmlName> declaredAttributes;
+        declaredAttributes.reserve(len);
+
+        /* For each namespace, resolve its name(now that we have resolved the namespace declarations) and
+         * turn it into an attribute constructor. */
+        for(int i = 0; i < len; ++i)
+        {
+            QString strLocalName;
+            QString strPrefix;
+
+            XPathHelper::splitQName($7.at(i).first, strPrefix, strLocalName);
+            const QXmlName::PrefixCode prefix = namePool->allocatePrefix(strPrefix);
+            const QXmlName::LocalNameCode localName = namePool->allocateLocalName(strLocalName);
+
+            if(prefix == StandardPrefixes::xmlns ||
+               (prefix == StandardPrefixes::empty && localName == StandardLocalNames::xmlns))
+            {
+                const Expression::ID id = $7.at(i).second->id();
+
+                if(id == Expression::IDStringValue || id == Expression::IDEmptySequence)
+                {
+                    /* It's a namespace declaration, and we've already handled those above. */
+                    continue;
+                }
+                else
+                {
+                    parseInfo->staticContext->error(QtXmlPatterns::tr("The namespace URI must be a constant and cannot "
+                                                       "use enclosed expressions."),
+                                                    ReportContext::XQST0022, fromYYLTYPE(@$, parseInfo));
+                }
+
+            }
+            else
+            {
+                const ReflectYYLTYPE ryy(@$, parseInfo);
+                const QXmlName att = QNameConstructor::expandQName<StaticContext::Ptr,
+                                                                   ReportContext::XPST0081,
+                                                                   ReportContext::XPST0081>($7.at(i).first, parseInfo->staticContext,
+                                                                                            parseInfo->staticContext->namespaceBindings(),
+                                                                                            &ryy, true);
+                if(declaredAttributes.contains(att))
+                {
+                    parseInfo->staticContext->error(QtXmlPatterns::tr("An attribute by name %1 has already appeared on this element.")
+                                                      .arg(formatKeyword(parseInfo->staticContext->namePool(), att)),
+                                            ReportContext::XQST0040, fromYYLTYPE(@$, parseInfo));
+
+                }
+                else
+                    declaredAttributes.insert(att);
+
+                /* wrapLiteral() needs the SourceLocationReflection of the AttributeConstructor, but
+                 * it's unknown inside the arguments to its constructor. Hence we have to do this workaround of setting
+                 * it twice.
+                 *
+                 * The AttributeConstructor's arguments are just dummies. */
+                const Expression::Ptr ctor(create(new AttributeConstructor($7.at(i).second, $7.at(i).second), @$, parseInfo));
+
+                Expression::List ops;
+                ops.append(wrapLiteral(toItem(QNameValue::fromValue(namePool, att)), parseInfo->staticContext, ctor.data()));
+                ops.append($7.at(i).second);
+                ctor->setOperands(ops);
+
+                attributes.append(ctor);
+            }
+        }
+
+        Expression::Ptr contentOp;
+
+        if(attributes.isEmpty())
+            contentOp = $8;
+        else
+        {
+            attributes.append($8);
+            contentOp = create(new ExpressionSequence(attributes), @$, parseInfo);
+        }
+
+        const Expression::Ptr name(create(new Literal(toItem(QNameValue::fromValue(parseInfo->staticContext->namePool(), parseInfo->tagStack.top()))), @$, parseInfo));
+        $$ = create(new ElementConstructor(name, contentOp, parseInfo->isXSLT()), @$, parseInfo);
+
+        /* Restore the old context. We don't want the namespaces
+         * to be in-scope for expressions appearing after the
+         * element they appeared on. */
+        parseInfo->staticContext->setNamespaceBindings(parseInfo->resolvers.pop());
+        parseInfo->tagStack.pop();
+
+        --parseInfo->elementConstructorDepth;
+    }
+
+DirElemConstructorTail: QUICK_TAG_END
+    {
+        $$ = create(new EmptySequence(), @$, parseInfo);
+    }
+| G_GT DirElemContent BEGIN_END_TAG ElementName G_GT
+    {
+        if(!$4.isLexicallyEqual(parseInfo->tagStack.top()))
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("A direct element constructor is not "
+                                               "well-formed. %1 is ended with %2.")
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool()->toLexical(parseInfo->tagStack.top())),
+                                                    formatKeyword(parseInfo->staticContext->namePool()->toLexical($4))),
+                                            ReportContext::XPST0003, fromYYLTYPE(@$, parseInfo));
+        }
+
+        if($2.isEmpty())
+            $$ = create(new EmptySequence(), @$, parseInfo);
+        else if($2.size() == 1)
+            $$ = $2.first();
+        else
+            $$ = create(new ExpressionSequence($2), @$, parseInfo);
+    }
+
+DirAttributeList: /* empty */                                                       /* [97] */
+    {
+        $$ = AttributeHolderVector();
+    }
+| DirAttributeList Attribute
+    {
+        $1.append($2);
+        $$ = $1;
+    }
+
+Attribute: LexicalName G_EQ DirAttributeValue                                       /* [X] */
+    {
+        $$ = qMakePair($1, $3);
+    }
+
+DirAttributeValue: QUOTE AttrValueContent QUOTE                                     /* [98] */
+    {
+        $$ = createDirAttributeValue($2, parseInfo, @$);
+    }
+
+| APOS AttrValueContent APOS
+    {
+        $$ = createDirAttributeValue($2, parseInfo, @$);
+    }
+
+AttrValueContent: /* Empty. */                                                      /* [X] */
+    {
+        $$ = Expression::List();
+    }
+| EnclosedExpr AttrValueContent
+    {
+        Expression::Ptr content($1);
+
+        if(parseInfo->isBackwardsCompat.top())
+            content = create(GenericPredicate::createFirstItem(content), @$, parseInfo);
+
+        $2.prepend(createSimpleContent(content, @$, parseInfo));
+        $$ = $2;
+    }
+| StringLiteral AttrValueContent
+    {
+        $2.prepend(create(new Literal(AtomicString::fromValue($1)), @$, parseInfo));
+        $$ = $2;
+    }
+
+DirElemContent: /* empty */                                                         /* [101] */
+    {
+        $$ = Expression::List();
+        parseInfo->isPreviousEnclosedExpr = false;
+    }
+| DirElemContent DirectConstructor
+    {
+        $1.append($2);
+        $$ = $1;
+        parseInfo->isPreviousEnclosedExpr = false;
+    }
+| DirElemContent StringLiteral
+    {
+        if(parseInfo->staticContext->boundarySpacePolicy() == StaticContext::BSPStrip &&
+           XPathHelper::isWhitespaceOnly($2))
+        {
+            $$ = $1;
+        }
+        else
+        {
+            $1.append(create(new TextNodeConstructor(create(new Literal(AtomicString::fromValue($2)), @$, parseInfo)), @$, parseInfo));
+            $$ = $1;
+            parseInfo->isPreviousEnclosedExpr = false;
+        }
+    }
+| DirElemContent NON_BOUNDARY_WS
+    {
+        $1.append(create(new TextNodeConstructor(create(new Literal(AtomicString::fromValue($2)), @$, parseInfo)), @$, parseInfo));
+        $$ = $1;
+        parseInfo->isPreviousEnclosedExpr = false;
+    }
+| DirElemContent EnclosedExpr
+    {
+        /* We insert a text node constructor that send an empty text node between
+         * the two enclosed expressions, in order to ensure that no space is inserted.
+         *
+         * However, we only do it when we have no node constructors. */
+        if(parseInfo->isPreviousEnclosedExpr &&
+           BuiltinTypes::xsAnyAtomicType->xdtTypeMatches($2->staticType()->itemType()) &&
+           BuiltinTypes::xsAnyAtomicType->xdtTypeMatches($1.last()->staticType()->itemType()))
+            $1.append(create(new TextNodeConstructor(create(new Literal(AtomicString::fromValue(QString())), @$, parseInfo)), @$, parseInfo));
+        else
+            parseInfo->isPreviousEnclosedExpr = true;
+
+        $1.append(createCopyOf($2, parseInfo, @$));
+        $$ = $1;
+    }
+
+DirCommentConstructor: COMMENT_START COMMENT_CONTENT                                /* [103] */
+    {
+        $$ = create(new CommentConstructor(create(new Literal(AtomicString::fromValue($2)), @$, parseInfo)), @$, parseInfo);
+    }
+
+DirPIConstructor: PI_START PI_TARGET PI_CONTENT                                     /* [105] */
+    {
+        const ReflectYYLTYPE ryy(@$, parseInfo);
+        NCNameConstructor::validateTargetName<StaticContext::Ptr,
+                                              ReportContext::XPST0003,
+                                              ReportContext::XPST0003>($2,
+                                                                       parseInfo->staticContext, &ryy);
+
+        $$ = create(new ProcessingInstructionConstructor(
+                             create(new Literal(AtomicString::fromValue($2)), @$, parseInfo),
+                             create(new Literal(AtomicString::fromValue($3)), @$, parseInfo)), @$, parseInfo);
+    }
+
+ComputedConstructor: CompDocConstructor                                             /* [109] */
+| CompElemConstructor
+| CompAttrConstructor
+| CompTextConstructor
+| CompCommentConstructor
+| CompPIConstructor
+| CompNamespaceConstructor
+
+CompDocConstructor: DOCUMENT IsInternal EnclosedExpr                                /* [110] */
+    {
+        disallowedConstruct(parseInfo, @$, $2);
+
+        $$ = create(new DocumentConstructor($3), @$, parseInfo);
+    }
+
+CompElemConstructor: ELEMENT IsInternal CompElementName
+                     {
+                        /* This value is incremented before the action below is executed. */
+                        ++parseInfo->elementConstructorDepth;
+                     }
+                     EnclosedOptionalExpr                                           /* [111] */
+    {
+        Q_ASSERT(5);
+        disallowedConstruct(parseInfo, @$, $2);
+
+        Expression::Ptr effExpr;
+
+        if($5)
+            effExpr = createCopyOf($5, parseInfo, @$);
+        else
+            effExpr = create(new EmptySequence(), @$, parseInfo);
+
+        const QXmlName::NamespaceCode ns = parseInfo->resolvers.top()->lookupNamespaceURI(StandardPrefixes::empty);
+
+        /* Ensure the default namespace gets counted as an in-scope binding, if such a one exists. If we're
+         * a child of another constructor, it has already been done. */
+        if(parseInfo->elementConstructorDepth == 1 && ns != StandardNamespaces::empty)
+        {
+            Expression::List exprList;
+
+            /* We append the namespace constructor before the body, in order to
+             * comply with QAbstractXmlPushHandler's contract. */
+            const QXmlName def(parseInfo->resolvers.top()->lookupNamespaceURI(StandardPrefixes::empty), StandardLocalNames::empty);
+            exprList.append(create(new NamespaceConstructor(def), @$, parseInfo));
+
+            exprList.append(effExpr);
+
+            effExpr = create(new ExpressionSequence(exprList), @$, parseInfo);
+        }
+
+        --parseInfo->elementConstructorDepth;
+        $$ = create(new ElementConstructor($3, effExpr, parseInfo->isXSLT()), @$, parseInfo);
+    }
+
+IsInternal: /* Empty. */                                                          /* [X] */
+    {
+        $$ = false;
+    }
+| INTERNAL
+    {
+        $$ = true;
+    }
+
+CompAttrConstructor: ATTRIBUTE
+                     IsInternal
+                     CompAttributeName
+                     EnclosedOptionalExpr                                           /* [113] */
+    {
+        disallowedConstruct(parseInfo, @$, $2);
+
+        const Expression::Ptr name(create(new AttributeNameValidator($3), @$, parseInfo));
+
+        if($4)
+            $$ = create(new AttributeConstructor(name, createSimpleContent($4, @$, parseInfo)), @$, parseInfo);
+        else
+            $$ = create(new AttributeConstructor(name, create(new EmptySequence(), @$, parseInfo)), @$, parseInfo);
+    }
+
+CompTextConstructor: TEXT IsInternal EnclosedExpr                                 /* [114] */
+    {
+        $$ = create(new TextNodeConstructor(createSimpleContent($3, @$, parseInfo)), @$, parseInfo);
+    }
+
+CompCommentConstructor: COMMENT IsInternal EnclosedExpr                           /* [115] */
+    {
+        disallowedConstruct(parseInfo, @$, $2);
+
+        $$ = create(new CommentConstructor(createSimpleContent($3, @$, parseInfo)), @$, parseInfo);
+    }
+
+CompPIConstructor: PROCESSING_INSTRUCTION CompPIName EnclosedOptionalExpr           /* [116] */
+    {
+        disallowedConstruct(parseInfo, @$, $2);
+
+        if($3)
+        {
+            $$ = create(new ProcessingInstructionConstructor($2, createSimpleContent($3, @$, parseInfo)), @$, parseInfo);
+        }
+        else
+            $$ = create(new ProcessingInstructionConstructor($2, create(new EmptySequence(), @$, parseInfo)), @$, parseInfo);
+    }
+
+CompAttributeName: {
+                        parseInfo->nodeTestSource = BuiltinTypes::attribute;
+                   }
+                   ElementName
+                   {
+                        parseInfo->restoreNodeTestSource();
+                   }                                                                /* [X] */
+    {
+        $$ = create(new Literal(toItem(QNameValue::fromValue(parseInfo->staticContext->namePool(), $2))), @$, parseInfo);
+    }
+| CompNameExpr
+
+CompElementName: ElementName                                                        /* [X] */
+    {
+        $$ = create(new Literal(toItem(QNameValue::fromValue(parseInfo->staticContext->namePool(), $1))), @$, parseInfo);
+    }
+| CompNameExpr
+
+CompNameExpr: EnclosedExpr
+    {
+        if(BuiltinTypes::xsQName->xdtTypeMatches($1->staticType()->itemType()))
+            $$ = $1;
+        else
+        {
+            $$ = create(new QNameConstructor($1,
+                                             parseInfo->staticContext->namespaceBindings()),
+                        @$, parseInfo);
+        }
+    }
+
+/*
+ * We always create an NCNameConstructor here. If will be rewritten away if not needed.
+ */
+CompPIName: NCNAME
+    {
+        $$ = create(new NCNameConstructor(create(new Literal(AtomicString::fromValue($1)), @$, parseInfo)), @$, parseInfo);
+    }
+| EnclosedExpr
+    {
+        $$ = create(new NCNameConstructor($1), @$, parseInfo);
+    }
+
+/*
+ * This expression is used for implementing XSL-T 2.0's xsl:namespace
+ * instruction.
+ */
+CompNamespaceConstructor: NAMESPACE EnclosedExpr EnclosedExpr                       /* [X] */
+{
+    $$ = create(new ComputedNamespaceConstructor($2, $3), @$, parseInfo);
+}
+
+SingleType: AtomicType                                                              /* [117] */
+    {
+        $$ = makeGenericSequenceType($1, Cardinality::exactlyOne());
+    }
+| AtomicType QUESTION
+    {
+        $$ = makeGenericSequenceType($1, Cardinality::zeroOrOne());
+    }
+
+TypeDeclaration: /* empty */                                                        /* [118] */
+    {
+        $$ = CommonSequenceTypes::ZeroOrMoreItems;
+    }
+| AS SequenceType
+    {
+        $$ = $2;
+    }
+
+SequenceType: ItemType OccurrenceIndicator                                          /* [119] */
+    {
+        $$ = makeGenericSequenceType($1, $2);
+    }
+
+| EMPTY_SEQUENCE EmptyParanteses
+    {
+        $$ = CommonSequenceTypes::Empty;
+    }
+
+OccurrenceIndicator: /* empty */    {$$ = Cardinality::exactlyOne();}               /* [120] */
+| PLUS                              {$$ = Cardinality::oneOrMore();}
+| STAR                              {$$ = Cardinality::zeroOrMore();}
+| QUESTION                          {$$ = Cardinality::zeroOrOne();}
+
+ItemType: AtomicType                                                                /* [121] */
+| KindTest
+| AnyAttributeTest
+| ITEM EmptyParanteses
+    {
+        $$ = BuiltinTypes::item;
+    }
+
+AtomicType: ElementName                                                             /* [122] */
+    {
+        const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($1));
+
+        if(!t)
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("The name %1 does not refer to any schema type.")
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool(), $1)), ReportContext::XPST0051, fromYYLTYPE(@$, parseInfo));
+        }
+        else if(BuiltinTypes::xsAnyAtomicType->wxsTypeMatches(t))
+            $$ = AtomicType::Ptr(t);
+        else
+        {
+            /* Try to give an intelligent message. */
+            if(t->isComplexType())
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is an complex type. Casting to complex "
+                                                   "types is not possible. However, casting "
+                                                   "to atomic types such as %2 works.")
+                                                   .arg(formatType(parseInfo->staticContext->namePool(), t))
+                                                   .arg(formatType(parseInfo->staticContext->namePool(), BuiltinTypes::xsInteger)),
+                                                ReportContext::XPST0051, fromYYLTYPE(@$, parseInfo));
+            }
+            else
+            {
+                parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not an atomic type. Casting "
+                                                   "is only possible to atomic types.")
+                                                   .arg(formatType(parseInfo->staticContext->namePool(), t)),
+                                                ReportContext::XPST0051, fromYYLTYPE(@$, parseInfo));
+            }
+        }
+    }
+
+/* This non-terminal does not contain SchemaAttributeTest and AttributeTest.
+   Those are in the AnyAttributeTest non-terminal. This is in order to get the axis
+   right for attribute tests in the abbreviated syntax. */
+KindTest: DocumentTest                                                          /* [123] */
+| ElementTest
+| SchemaElementTest
+| PITest
+| CommentTest
+| TextTest
+| AnyKindTest
+
+AnyKindTest: NODE EmptyParanteses                                               /* [124] */
+    {
+        $$ = BuiltinTypes::node;
+    }
+
+DocumentTest: DOCUMENT_NODE EmptyParanteses                                     /* [125] */
+    {
+        $$ = BuiltinTypes::document;
+    }
+
+| DOCUMENT_NODE LPAREN AnyElementTest RPAREN
+    {
+        // TODO support for document element testing
+        $$ = BuiltinTypes::document;
+    }
+
+AnyElementTest: ElementTest                                                     /* [X] */
+| SchemaElementTest
+
+TextTest: TEXT EmptyParanteses                                                  /* [126] */
+    {
+        $$ = BuiltinTypes::text;
+    }
+
+CommentTest: COMMENT EmptyParanteses                                            /* [127] */
+    {
+        $$ = BuiltinTypes::comment;
+    }
+
+PITest: PROCESSING_INSTRUCTION EmptyParanteses                                  /* [128] */
+    {
+        $$ = BuiltinTypes::pi;
+    }
+
+| PROCESSING_INSTRUCTION LPAREN NCNAME RPAREN
+    {
+        $$ = LocalNameTest::create(BuiltinTypes::pi, parseInfo->staticContext->namePool()->allocateLocalName($3));
+    }
+
+| PROCESSING_INSTRUCTION LPAREN StringLiteral RPAREN
+    {
+        if(QXmlUtils::isNCName($3))
+        {
+            $$ = LocalNameTest::create(BuiltinTypes::pi, parseInfo->staticContext->namePool()->allocateLocalName($3));
+        }
+        else
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not a valid name for a "
+                                                              "processing-instruction.")
+                                                 .arg(formatKeyword($3)),
+                                            ReportContext::XPTY0004,
+                                            fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+AnyAttributeTest: AttributeTest
+| SchemaAttributeTest
+
+AttributeTest: ATTRIBUTE EmptyParanteses                                            /* [129] */
+    {
+        $$ = BuiltinTypes::attribute;
+    }
+
+| ATTRIBUTE LPAREN STAR RPAREN
+    {
+        $$ = BuiltinTypes::attribute;
+    }
+
+| ATTRIBUTE LPAREN AttributeName RPAREN
+    {
+        $$ = QNameTest::create(BuiltinTypes::attribute, $3);
+    }
+| ATTRIBUTE LPAREN AttributeName COMMA TypeName RPAREN
+    {
+        const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
+
+        if(t)
+            $$ = BuiltinTypes::attribute;
+        else
+        {
+            parseInfo->staticContext->error(unknownType().arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
+                                            ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+| ATTRIBUTE LPAREN STAR COMMA TypeName RPAREN
+    {
+        const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
+
+        if(t)
+            $$ = BuiltinTypes::attribute;
+        else
+        {
+            parseInfo->staticContext->error(unknownType().arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
+                                            ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+SchemaAttributeTest: SCHEMA_ATTRIBUTE LPAREN ElementName RPAREN                     /* [131] */
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not in the in-scope attribute "
+                                           "declarations. Note that the schema import "
+                                           "feature is not supported.")
+                                           .arg(formatKeyword(parseInfo->staticContext->namePool(), $3)),
+                                        ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        $$.reset();
+    }
+
+ElementTest: ELEMENT EmptyParanteses                                                /* [133] */
+    {
+        $$ = BuiltinTypes::element;
+    }
+
+| ELEMENT LPAREN STAR RPAREN
+    {
+        $$ = BuiltinTypes::element;
+    }
+
+| ELEMENT LPAREN ElementName RPAREN
+    {
+        $$ = QNameTest::create(BuiltinTypes::element, $3);
+    }
+
+| ELEMENT LPAREN ElementName COMMA TypeName OptionalQuestionMark RPAREN
+    {
+        const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
+
+        if(t)
+            $$ = BuiltinTypes::element;
+        else
+        {
+            parseInfo->staticContext->error(unknownType()
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
+                                            ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+| ELEMENT LPAREN STAR COMMA TypeName OptionalQuestionMark RPAREN
+    {
+        const SchemaType::Ptr t(parseInfo->staticContext->schemaDefinitions()->createSchemaType($5));
+
+        if(t)
+            $$ = BuiltinTypes::element;
+        else
+        {
+            parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is an unknown schema type.")
+                                               .arg(formatKeyword(parseInfo->staticContext->namePool(), $5)),
+                                            ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        }
+    }
+
+OptionalQuestionMark: /* Empty. */
+| QUESTION
+
+SchemaElementTest: SCHEMA_ELEMENT LPAREN ElementName RPAREN                         /* [135] */
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("%1 is not in the in-scope attribute "
+                                           "declarations. Note that the schema import "
+                                           "feature is not supported.")
+                                           .arg(formatKeyword(parseInfo->staticContext->namePool(), $3)),
+                                        ReportContext::XPST0008, fromYYLTYPE(@$, parseInfo));
+        $$.reset();
+    }
+
+EmptyParanteses: LPAREN RPAREN                                                      /* [X] */
+
+AttributeName: NCNAME                                                               /* [137] */
+    {
+        $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::empty, $1);
+    }
+
+| QName
+
+/*
+ * When a QName appear with no prefix, it uses a certain default namespace
+ * depending on where the QName occurs. These two rules, invoked in the appropriate
+ * contexts, performs this distinction.
+ */
+ElementName: NCNAME                                                                 /* [138] */
+    {
+        if(parseInfo->nodeTestSource == BuiltinTypes::element)
+            $$ = parseInfo->staticContext->namePool()->allocateQName(parseInfo->staticContext->namespaceBindings()->lookupNamespaceURI(StandardPrefixes::empty), $1);
+        else
+            $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::empty, $1);
+    }
+| QName
+
+TypeName: ElementName                                                               /* [139] */
+
+FunctionName: NCName                                                                /* [X] */
+| QName
+
+NCName: NCNAME
+    {
+        $$ = parseInfo->staticContext->namePool()->allocateQName(parseInfo->staticContext->defaultFunctionNamespace(), $1);
+    }
+| INTERNAL_NAME NCNAME
+    {
+        $$ = parseInfo->staticContext->namePool()->allocateQName(StandardNamespaces::InternalXSLT, $2);
+    }
+
+LexicalName: NCNAME
+| QNAME
+
+PragmaName: NCNAME                                                                  /* [X] */
+    {
+        parseInfo->staticContext->error(QtXmlPatterns::tr("The name of an extension expression must be in "
+                                                          "a namespace."),
+                                        ReportContext::XPST0081, fromYYLTYPE(@$, parseInfo));
+    }
+| QName
+
+URILiteral: StringLiteral                                                           /* [140] */
+
+StringLiteral: STRING_LITERAL                                                       /* [144] */
+| XPATH2_STRING_LITERAL
+
+QName: QNAME                                                      /* [154] */
+    {
+
+        const ReflectYYLTYPE ryy(@$, parseInfo);
+
+        $$ = QNameConstructor::
+             expandQName<StaticContext::Ptr,
+                         ReportContext::XPST0081,
+                         ReportContext::XPST0081>($1, parseInfo->staticContext,
+                                                  parseInfo->staticContext->namespaceBindings(), &ryy);
+
+    }
+| CLARK_NAME
+    {
+        $$ = parseInfo->staticContext->namePool()->fromClarkName($1);
+    }
+
+%%
+
+QString Tokenizer::tokenToString(const Token &token)
+{
+    switch(token.type)
+    {
+        case NCNAME:
+        /* Fallthrough. */
+        case QNAME:
+        /* Fallthrough. */
+        case NUMBER:
+        /* Fallthrough. */
+        case XPATH2_NUMBER:
+            return token.value;
+        case STRING_LITERAL:
+            return QLatin1Char('"') + token.value + QLatin1Char('"');
+        default:
+        {
+            const QString raw(QString::fromLatin1(yytname[YYTRANSLATE(token.type)]));
+
+            /* Remove the quotes. */
+            if(raw.at(0) == QLatin1Char('"') && raw.length() > 1)
+                return raw.mid(1, raw.length() - 2);
+            else
+                return raw;
+        }
+    }
+}
+
+} /* namespace Patternist */
+
+QT_END_NAMESPACE
+
+// vim: et:ts=4:sw=4:sts=4:syntax=yacc

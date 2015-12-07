@@ -1,0 +1,69 @@
+//! [0]
+    1: > assistant -collectionFile file
+//! [0]
+
+
+//! [1]
+    <?xml version="1.0" encoding="utf-8" ?> 
+    <QHelpCollectionProject version="1.0">
+        <assistant>
+            <title>My Application Help</title>
+            <startPage>qthelp://com.mycompany.1_0_0/doc/index.html</startPage>
+            <currentFilter>myfilter</currentFilter>
+            <applicationIcon>application.png</applicationIcon>
+            <enableFilterFunctionality>false</enableFilterFunctionality>
+            <enableDocumentationManager>false</enableDocumentationManager>
+            <enableAddressBar visible="true">true</enableAddressBar>
+            <cacheDirectory>mycompany</cacheDirectory>
+            <aboutMenuText>
+                <text>About My Application</text>
+                <text language="de">ber meine Applikation...</text>
+            </aboutMenuText>
+            <aboutDialog>
+                <file>about.txt</file>
+                <file language="de">ueber.txt</file>
+                <icon>about.png</icon>
+            </aboutDialog>
+        </assistant>
+        <docFiles>
+            <generate>
+                <file>
+                    <input>myapplication.qhp</input>
+                    <output>myapplication.qch</output>
+                </file>
+            </generate>
+            <register>
+                <file>myapplication.qch</file>
+            </register>
+        </docFiles>
+    </QHelpCollectionProject>
+//! [1]
+
+
+//! [2]
+    QProcess *p = new QProcess;
+    QStringList args;
+    args << QLatin1String("-collectionFile")
+        << QLatin1String("mycollection.qhc")
+        << QLatin1String("-enableRemoteControl");
+    p->start(QLatin1String("assistant"), args);
+    if (!p->waitForStarted())
+        return;
+//! [2]
+
+
+//! [3]
+    QTextStream str(p);
+    str << QLatin1String("setSource qthelp://com.mycompany.1_0_0/doc/index.html\0") << endl;
+//! [3]
+
+
+//! [4]
+    QTextStream str(p);
+    str << QLatin1String("hide bookmarks;")
+        << QLatin1String("hide index;")
+        << QLatin1String("setSource qthelp://com.mycompany.1_0_0/doc/index.html\0")
+        << endl;
+//! [4]
+
+

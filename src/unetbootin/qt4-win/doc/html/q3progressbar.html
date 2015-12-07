@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3progressbar.cpp -->
+<head>
+  <title>Qt 4.4: Q3ProgressBar Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ProgressBar Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ProgressBar widget provides a horizontal progress bar. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ProgressBar&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qprogressbar">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qframe.html">QFrame</a>.</p>
+<ul>
+<li><a href="q3progressbar-members.html">List of all members, including inherited members</a></li>
+<li><a href="q3progressbar-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3progressbar.html#centerIndicator-prop">centerIndicator</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3progressbar.html#percentageVisible-prop">percentageVisible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3progressbar.html#progress-prop">progress</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3progressbar.html#progressString-prop">progressString</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="q3progressbar.html#totalSteps-prop">totalSteps</a></b> : int</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3progressbar.html#Q3ProgressBar">Q3ProgressBar</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3progressbar.html#Q3ProgressBar-4">Q3ProgressBar</a></b> ( int <i>totalSteps</i>, QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="q3progressbar.html#centerIndicator-prop">centerIndicator</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3progressbar.html#margin">margin</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3progressbar.html#percentageVisible-prop">percentageVisible</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3progressbar.html#progress-prop">progress</a></b> () const</li>
+<li><div class="fn"/>const QString &amp; <b><a href="q3progressbar.html#progressString-prop">progressString</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3progressbar.html#centerIndicator-prop">setCenterIndicator</a></b> ( bool <i>on</i> )</li>
+<li><div class="fn"/>void <b><a href="q3progressbar.html#setMargin">setMargin</a></b> ( int <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="q3progressbar.html#percentageVisible-prop">setPercentageVisible</a></b> ( bool )</li>
+<li><div class="fn"/>int <b><a href="q3progressbar.html#totalSteps-prop">totalSteps</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3progressbar.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3progressbar.html#progress-prop">setProgress</a></b> ( int <i>progress</i> )</li>
+<li><div class="fn"/>void <b><a href="q3progressbar.html#progress-prop">setProgress</a></b> ( int <i>progress</i>, int <i>totalSteps</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3progressbar.html#totalSteps-prop">setTotalSteps</a></b> ( int <i>totalSteps</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="q3progressbar.html#setIndicator">setIndicator</a></b> ( QString &amp; <i>indicator</i>, int <i>progress</i>, int <i>totalSteps</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ProgressBar widget provides a horizontal progress bar.</p>
+<p>A progress bar is used to give the user an indication of the progress of an operation and to reassure them that the application is still running.</p>
+<p>The progress bar uses the concept of <i>steps</i>; you give it the total number of steps and the number of steps completed so far and it will display the percentage of steps that have been completed. You can specify the total number of steps in the constructor or later with <a href="q3progressbar.html#totalSteps-prop">setTotalSteps</a>(). The current number of steps is set with <a href="q3progressbar.html#progress-prop">setProgress</a>(). The progress bar can be rewound to the beginning with <a href="q3progressbar.html#reset">reset</a>().</p>
+<p>If the total is given as 0 the progress bar shows a busy indicator instead of a percentage of steps. This is useful, for example, when using <a href="qftp.html">QFtp</a> or <a href="qhttp.html">QHttp</a> to download items when they are unable to determine the size of the item being downloaded.</p>
+<p><img src="images/qprogbar-m.png" alt="Screenshot in Motif style" /> <img src="images/qprogbar-w.png" alt="Screenshot in Windows style" /></p>
+<p>See also <a href="qprogressdialog.html">QProgressDialog</a> and <a href="qprogressdialog.html">QProgressDialog</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="centerIndicator-prop"></a>centerIndicator : bool</h3>
+<p>This property holds whether the indicator string should be centered.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool centerIndicator () const</b></li>
+<li><div class="fn"/><b>void setCenterIndicator ( bool <i>on</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="percentageVisible-prop"></a>percentageVisible : bool</h3>
+<p>This property holds whether the current progress value is displayed.</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool percentageVisible () const</b></li>
+<li><div class="fn"/><b>void setPercentageVisible ( bool )</b></li>
+</ul>
+<p>See also <a href="q3progressbar.html#centerIndicator-prop">centerIndicator</a>.</p>
+<h3 class="fn"><a name="progress-prop"></a>progress : int</h3>
+<p>This property holds the current amount of progress.</p>
+<p>This property is -1 if progress counting has not started.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int progress () const</b></li>
+<li><div class="fn"/><b>virtual void setProgress ( int <i>progress</i> )</b></li>
+<li><div class="fn"/><b>void setProgress ( int <i>progress</i>, int <i>totalSteps</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="progressString-prop"></a>progressString : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the amount of progress as a string.</p>
+<p>This property is an empty string if progress counting has not started.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>const QString &amp; progressString () const</b></li>
+</ul>
+<h3 class="fn"><a name="totalSteps-prop"></a>totalSteps : int</h3>
+<p>This property holds the total number of steps.</p>
+<p>If totalSteps is 0, the progress bar will display a busy indicator.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int totalSteps () const</b></li>
+<li><div class="fn"/><b>virtual void setTotalSteps ( int <i>totalSteps</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ProgressBar"></a>Q3ProgressBar::Q3ProgressBar ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a progress bar.</p>
+<p>The total number of steps is set to 100 by default.</p>
+<p>The <i>parent</i>, and widget flags, <i>f</i>, are passed on to the <a href="qframe.html#QFrame">QFrame::QFrame</a>() constructor.</p>
+<p>See also <a href="q3progressbar.html#totalSteps-prop">setTotalSteps</a>().</p>
+<h3 class="fn"><a name="Q3ProgressBar-4"></a>Q3ProgressBar::Q3ProgressBar ( int <i>totalSteps</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a progress bar.</p>
+<p>The <i>totalSteps</i> is the total number of steps that need to be completed for the operation which this progress bar represents. For example, if the operation is to examine 50 files, this value would be 50. Before examining the first file, call setProgress(0); call setProgress(50) after examining the last file.</p>
+<p>The <i>parent</i>, and widget flags, <i>f</i>, are passed to the <a href="qframe.html#QFrame">QFrame::QFrame</a>() constructor.</p>
+<p>See also <a href="q3progressbar.html#totalSteps-prop">setTotalSteps</a>() and <a href="q3progressbar.html#progress-prop">setProgress</a>().</p>
+<h3 class="fn"><a name="margin"></a>int Q3ProgressBar::margin () const</h3>
+<p>Returns the with of the the margin around the contents of the widget.</p>
+<p>This function uses <a href="qwidget.html#getContentsMargins">QWidget::getContentsMargins</a>() to get the margin.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3progressbar.html#setMargin">setMargin</a>() and <a href="qwidget.html#getContentsMargins">QWidget::getContentsMargins</a>().</p>
+<h3 class="fn"><a name="reset"></a>void Q3ProgressBar::reset ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Reset the progress bar. The progress bar &quot;rewinds&quot; and shows no progress.</p>
+<h3 class="fn"><a name="setIndicator"></a>bool Q3ProgressBar::setIndicator ( <a href="qstring.html">QString</a> &amp; <i>indicator</i>, int <i>progress</i>, int <i>totalSteps</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This method is called to generate the text displayed in the center (or in some styles, to the left) of the progress bar.</p>
+<p>The <i>progress</i> may be negative, indicating that the progress bar is in the &quot;reset&quot; state before any progress is set.</p>
+<p>The default implementation is the percentage of completion or blank in the reset state. The percentage is calculated based on the <i>progress</i> and <i>totalSteps</i>. You can set the <i>indicator</i> text if you wish.</p>
+<p>To allow efficient repainting of the progress bar, this method should return false if the string is unchanged from the last call to this function.</p>
+<h3 class="fn"><a name="setMargin"></a>void Q3ProgressBar::setMargin ( int <i>margin</i> )</h3>
+<p>Sets the width of the margin around the contents of the widget to <i>margin</i>.</p>
+<p>This function uses <a href="qwidget.html#setContentsMargins">QWidget::setContentsMargins</a>() to set the margin.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="q3progressbar.html#margin">margin</a>() and <a href="qwidget.html#setContentsMargins">QWidget::setContentsMargins</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

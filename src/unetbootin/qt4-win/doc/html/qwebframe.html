@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/3rdparty/webkit/WebKit/qt/Api/qwebframe.cpp -->
+<head>
+  <title>Qt 4.4: QWebFrame Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWebFrame Class Reference<br /><span class="small-subtitle">[<a href="qtwebkit.html">QtWebKit</a> module]</span>
+</h1>
+<p>The QWebFrame class represents a frame in a web page. <a href="#details">More...</a></p>
+<pre> #include &lt;QWebFrame&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qwebframe-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qwebframe.html#contentsSize-prop">contentsSize</a></b> : const QSize</li>
+<li><div class="fn"/><b><a href="qwebframe.html#icon-prop">icon</a></b> : const QIcon</li>
+<li><div class="fn"/><b><a href="qwebframe.html#textSizeMultiplier-prop">textSizeMultiplier</a></b> : qreal</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qwebframe.html#title-prop">title</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="qwebframe.html#url-prop">url</a></b> : QUrl</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwebframe.html#addToJavaScriptWindowObject">addToJavaScriptWindowObject</a></b> ( const QString &amp; <i>name</i>, QObject * <i>object</i> )</li>
+<li><div class="fn"/>QList&lt;QWebFrame *&gt; <b><a href="qwebframe.html#childFrames">childFrames</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="qwebframe.html#contentsSize-prop">contentsSize</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebframe.html#frameName">frameName</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="qwebframe.html#geometry">geometry</a></b> () const</li>
+<li><div class="fn"/>QWebHitTestResult <b><a href="qwebframe.html#hitTestContent">hitTestContent</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>QIcon <b><a href="qwebframe.html#icon-prop">icon</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#load">load</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#load-2">load</a></b> ( const QWebNetworkRequest &amp; <i>req</i> )</li>
+<li><div class="fn"/>QWebPage * <b><a href="qwebframe.html#page">page</a></b> () const</li>
+<li><div class="fn"/>QWebFrame * <b><a href="qwebframe.html#parentFrame">parentFrame</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qwebframe.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#render">render</a></b> ( QPainter * <i>painter</i>, const QRegion &amp; <i>clip</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#render-2">render</a></b> ( QPainter * <i>painter</i> )</li>
+<li><div class="fn"/>QString <b><a href="qwebframe.html#renderTreeDump">renderTreeDump</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qwebframe.html#scrollBarMaximum">scrollBarMaximum</a></b> ( Qt::Orientation <i>orientation</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qwebframe.html#scrollBarMinimum">scrollBarMinimum</a></b> ( Qt::Orientation <i>orientation</i> ) const</li>
+<li><div class="fn"/>Qt::ScrollBarPolicy <b><a href="qwebframe.html#scrollBarPolicy">scrollBarPolicy</a></b> ( Qt::Orientation <i>orientation</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qwebframe.html#scrollBarValue">scrollBarValue</a></b> ( Qt::Orientation <i>orientation</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#setContent">setContent</a></b> ( const QByteArray &amp; <i>data</i>, const QString &amp; <i>mimeType</i> = QString(), const QUrl &amp; <i>baseUrl</i> = QUrl() )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#setHtml">setHtml</a></b> ( const QString &amp; <i>html</i>, const QUrl &amp; <i>baseUrl</i> = QUrl() )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#setScrollBarPolicy">setScrollBarPolicy</a></b> ( Qt::Orientation <i>orientation</i>, Qt::ScrollBarPolicy <i>policy</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#setScrollBarValue">setScrollBarValue</a></b> ( Qt::Orientation <i>orientation</i>, int <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#textSizeMultiplier-prop">setTextSizeMultiplier</a></b> ( qreal <i>factor</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#url-prop">setUrl</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qwebframe.html#textSizeMultiplier-prop">textSizeMultiplier</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebframe.html#title-prop">title</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebframe.html#toHtml">toHtml</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qwebframe.html#toPlainText">toPlainText</a></b> () const</li>
+<li><div class="fn"/>QUrl <b><a href="qwebframe.html#url-prop">url</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>QVariant <b><a href="qwebframe.html#evaluateJavaScript">evaluateJavaScript</a></b> ( const QString &amp; <i>scriptSource</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#print">print</a></b> ( QPrinter * <i>printer</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwebframe.html#iconChanged">iconChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#initialLayoutCompleted">initialLayoutCompleted</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#javaScriptWindowObjectCleared">javaScriptWindowObjectCleared</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#titleChanged">titleChanged</a></b> ( const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>void <b><a href="qwebframe.html#urlChanged">urlChanged</a></b> ( const QUrl &amp; <i>url</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWebFrame class represents a frame in a web page.</p>
+<p>QWebFrame represents a frame inside a web page. Each <a href="qwebpage.html">QWebPage</a> object contains at least one frame, the main frame, obtained using <a href="qwebpage.html#mainFrame">QWebPage::mainFrame</a>(). Additional frames will be created for HTML <tt>&lt;frame&gt;</tt> or <tt>&lt;iframe&gt;</tt> elements.</p>
+<p>A frame can be loaded using <a href="qwebframe.html#load">load</a>() or <a href="qwebframe.html#url-prop">setUrl</a>(). Alternatively, if you have the HTML content readily available, you can use <a href="qwebframe.html#setHtml">setHtml</a>() instead.</p>
+<p>The <a href="qwebframe.html#page">page</a>() function returns a pointer to the web page object. See <a href="qwebview.html#elements-of-qwebview">Elements of QWebView</a> for an explanation of how web frames are related to a web page and web view.</p>
+<p>The title of an HTML frame can be accessed with the <a href="qwebframe.html#title-prop">title</a>() property. Additionally, a frame may also specify an icon, which can be accessed using the <a href="qwebframe.html#icon-prop">icon</a>() property. If the title or the icon changes, the corresponding <a href="qwebframe.html#titleChanged">titleChanged</a>() and <a href="qwebframe.html#iconChanged">iconChanged</a>() signals will be emitted. The <a href="qwebframe.html#textSizeMultiplier-prop">textSizeMultiplier</a>() property can be used to change the overall size of the text displayed in the frame.</p>
+<p>QWebFrame objects are created and controlled by the web page. You can connect to the web page's <a href="qwebpage.html#frameCreated">frameCreated()</a> signal to be notified when a new frame is created.</p>
+<p>The <a href="qwebframe.html#hitTestContent">hitTestContent</a>() function can be used to programmatically examine the contents of a frame.</p>
+<p>A QWebFrame can be printed onto a <a href="qprinter.html">QPrinter</a> using the <a href="qwebframe.html#print">print</a>() function. This function is marked as a slot and can be conveniently connected to <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>'s <a href="qprintpreviewdialog.html#paintRequested">paintRequested()</a> signal.</p>
+<p>See also <a href="qwebpage.html">QWebPage</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="contentsSize-prop"></a>contentsSize : const <a href="qsize.html">QSize</a></h3>
+<p>This property holds the size of the contents in this frame.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize contentsSize () const</b></li>
+</ul>
+<h3 class="fn"><a name="icon-prop"></a>icon : const <a href="qicon.html">QIcon</a></h3>
+<p>This property holds the icon associated with this frame.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QIcon icon () const</b></li>
+</ul>
+<p>See also <a href="qwebframe.html#iconChanged">iconChanged</a>().</p>
+<h3 class="fn"><a name="textSizeMultiplier-prop"></a>textSizeMultiplier : <a href="qtglobal.html#qreal-typedef">qreal</a></h3>
+<p>This property holds the scaling factor for all text in the frame.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>qreal textSizeMultiplier () const</b></li>
+<li><div class="fn"/><b>void setTextSizeMultiplier ( qreal <i>factor</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="title-prop"></a>title : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the title of the frame as defined by the HTML &lt;title&gt; element.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString title () const</b></li>
+</ul>
+<p>See also <a href="qwebframe.html#titleChanged">titleChanged</a>().</p>
+<h3 class="fn"><a name="url-prop"></a>url : <a href="qurl.html">QUrl</a></h3>
+<p>This property holds the url of the frame currently viewed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QUrl url () const</b></li>
+<li><div class="fn"/><b>void setUrl ( const QUrl &amp; <i>url</i> )</b></li>
+</ul>
+<p>See also <a href="qwebframe.html#urlChanged">urlChanged</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="addToJavaScriptWindowObject"></a>void QWebFrame::addToJavaScriptWindowObject ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qobject.html">QObject</a> * <i>object</i> )</h3>
+<p>Make <i>object</i> available under <i>name</i> from within the frame's JavaScript context. The <i>object</i> will be inserted as a child of the frame's window object.</p>
+<p>Qt properties will be exposed as JavaScript properties and slots as JavaScript methods.</p>
+<p>If you want to ensure that your QObjects remain accessible after loading a new URL, you should add them in a slot connected to the <a href="qwebframe.html#javaScriptWindowObjectCleared">javaScriptWindowObjectCleared</a>() signal.</p>
+<h3 class="fn"><a name="childFrames"></a><a href="qlist.html">QList</a>&lt;QWebFrame *&gt; QWebFrame::childFrames () const</h3>
+<p>Returns a list of all frames that are direct children of this frame.</p>
+<p>See also <a href="qwebframe.html#parentFrame">parentFrame</a>().</p>
+<h3 class="fn"><a name="evaluateJavaScript"></a><a href="qvariant.html">QVariant</a> QWebFrame::evaluateJavaScript ( const <a href="qstring.html">QString</a> &amp; <i>scriptSource</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Evaluate JavaScript defined by <i>scriptSource</i> using this frame as context.</p>
+<p>See also <a href="qwebframe.html#addToJavaScriptWindowObject">addToJavaScriptWindowObject</a>() and <a href="qwebframe.html#javaScriptWindowObjectCleared">javaScriptWindowObjectCleared</a>().</p>
+<h3 class="fn"><a name="frameName"></a><a href="qstring.html">QString</a> QWebFrame::frameName () const</h3>
+<p>The name of this frame as defined by the parent frame.</p>
+<h3 class="fn"><a name="geometry"></a><a href="qrect.html">QRect</a> QWebFrame::geometry () const</h3>
+<p>Return the geometry of the frame relative to it's parent frame.</p>
+<h3 class="fn"><a name="hitTestContent"></a><a href="qwebhittestresult.html">QWebHitTestResult</a> QWebFrame::hitTestContent ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Performs a hit test on the frame contents at the given position <i>pos</i> and returns the hit test result.</p>
+<h3 class="fn"><a name="iconChanged"></a>void QWebFrame::iconChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the icon (&quot;favicon&quot;) associated with the frame has been loaded.</p>
+<p>See also <a href="qwebframe.html#icon-prop">icon</a>().</p>
+<h3 class="fn"><a name="initialLayoutCompleted"></a>void QWebFrame::initialLayoutCompleted ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the frame is laid out the first time. This is the first time you will see contents displayed on the frame.</p>
+<p><b>Note:</b> A frame can be laid out multiple times.</p>
+<h3 class="fn"><a name="javaScriptWindowObjectCleared"></a>void QWebFrame::javaScriptWindowObjectCleared ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the global window object of the JavaScript environment is cleared, e.g&#x2e;, before starting a new load.</p>
+<p>If you intend to add QObjects to a <a href="qwebframe.html">QWebFrame</a> using <a href="qwebframe.html#addToJavaScriptWindowObject">addToJavaScriptWindowObject</a>(), you should add them in a slot connected to this signal. This ensures that your objects remain accessible when loading new URLs.</p>
+<h3 class="fn"><a name="load"></a>void QWebFrame::load ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )</h3>
+<p>Loads <i>url</i> into this frame.</p>
+<p><b>Note:</b> The view remains the same until enough data has arrived to display the new <i>url</i>.</p>
+<p>See also <a href="qwebframe.html#url-prop">setUrl</a>(), <a href="qwebframe.html#setHtml">setHtml</a>(), and <a href="qwebframe.html#setContent">setContent</a>().</p>
+<h3 class="fn"><a name="load-2"></a>void QWebFrame::load ( const QWebNetworkRequest &amp; <i>req</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Loads a network request, <i>req</i>, into this frame.</p>
+<p><b>Note:</b> The view remains the same until enough data has arrived to display the new url.</p>
+<h3 class="fn"><a name="page"></a><a href="qwebpage.html">QWebPage</a> * QWebFrame::page () const</h3>
+<p>The web page that contains this frame.</p>
+<h3 class="fn"><a name="parentFrame"></a>QWebFrame * QWebFrame::parentFrame () const</h3>
+<p>Returns the parent frame of this frame, or 0 if the frame is the web pages main frame.</p>
+<p>This is equivalent to qobject_cast&lt;<a href="qwebframe.html">QWebFrame</a>*&gt;(frame-&gt;<a href="qobject.html#parent">parent</a>()).</p>
+<p>See also <a href="qwebframe.html#childFrames">childFrames</a>().</p>
+<h3 class="fn"><a name="pos"></a><a href="qpoint.html">QPoint</a> QWebFrame::pos () const</h3>
+<p>Returns the position of the frame relative to it's parent frame.</p>
+<h3 class="fn"><a name="print"></a>void QWebFrame::print ( <a href="qprinter.html">QPrinter</a> * <i>printer</i> ) const&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Prints the frame to the given <i>printer</i>.</p>
+<p>See also <a href="qwebframe.html#render">render</a>().</p>
+<h3 class="fn"><a name="render"></a>void QWebFrame::render ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qregion.html">QRegion</a> &amp; <i>clip</i> )</h3>
+<p>Render the frame into <i>painter</i> clipping to <i>clip</i>.</p>
+<p>See also <a href="qwebframe.html#print">print</a>().</p>
+<h3 class="fn"><a name="render-2"></a>void QWebFrame::render ( <a href="qpainter.html">QPainter</a> * <i>painter</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Render the frame into <i>painter</i>.</p>
+<h3 class="fn"><a name="renderTreeDump"></a><a href="qstring.html">QString</a> QWebFrame::renderTreeDump () const</h3>
+<p>Returns a dump of the rendering tree. This is mainly useful for debugging html.</p>
+<h3 class="fn"><a name="scrollBarMaximum"></a>int QWebFrame::scrollBarMaximum ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> ) const</h3>
+<p>Returns the maximum value for the scrollbar with orientation <i>orientation</i>, or 0 if no scrollbar is found for <i>orientation</i>.</p>
+<p>See also <a href="qwebframe.html#scrollBarMinimum">scrollBarMinimum</a>().</p>
+<h3 class="fn"><a name="scrollBarMinimum"></a>int QWebFrame::scrollBarMinimum ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> ) const</h3>
+<p>Returns the minimum value for the scrollbar with orientation <i>orientation</i>.</p>
+<p>The minimum value is always 0.</p>
+<p>See also <a href="qwebframe.html#scrollBarMaximum">scrollBarMaximum</a>().</p>
+<h3 class="fn"><a name="scrollBarPolicy"></a><a href="qt.html#ScrollBarPolicy-enum">Qt::ScrollBarPolicy</a> QWebFrame::scrollBarPolicy ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> ) const</h3>
+<p>Returns the scrollbar policy for the scrollbar defined by <i>orientation</i>.</p>
+<p>See also <a href="qwebframe.html#setScrollBarPolicy">setScrollBarPolicy</a>().</p>
+<h3 class="fn"><a name="scrollBarValue"></a>int QWebFrame::scrollBarValue ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> ) const</h3>
+<p>Returns the current value for the scrollbar with orientation <i>orientation</i>, or 0 if no scrollbar is found for <i>orientation</i>.</p>
+<p>See also <a href="qwebframe.html#setScrollBarValue">setScrollBarValue</a>(), <a href="qwebframe.html#scrollBarMinimum">scrollBarMinimum</a>(), and <a href="qwebframe.html#scrollBarMaximum">scrollBarMaximum</a>().</p>
+<h3 class="fn"><a name="setContent"></a>void QWebFrame::setContent ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, const <a href="qstring.html">QString</a> &amp; <i>mimeType</i> = QString(), const <a href="qurl.html">QUrl</a> &amp; <i>baseUrl</i> = QUrl() )</h3>
+<p>Sets the content of this frame to the specified content <i>data</i>. If the <i>mimeType</i> argument is empty it is currently assumed that the content is HTML but in future versions we may introduce auto-detection.</p>
+<p>External objects referenced in the content are located relative to <i>baseUrl</i>.</p>
+<p>See also <a href="qwebframe.html#toHtml">toHtml</a>().</p>
+<h3 class="fn"><a name="setHtml"></a>void QWebFrame::setHtml ( const <a href="qstring.html">QString</a> &amp; <i>html</i>, const <a href="qurl.html">QUrl</a> &amp; <i>baseUrl</i> = QUrl() )</h3>
+<p>Sets the content of this frame to <i>html</i>. <i>baseUrl</i> is optional and used to resolve relative URLs in the document.</p>
+<p>When using this method <a href="examples.html#webkit">WebKit</a> assumes that external resources such as JavaScript programs or style sheets are encoded in UTF-8 unless otherwise specified. For example, the encoding of an external script can be specified through the charset attribute of the HTML script tag. It is also possible for the encoding to be specified by web server.</p>
+<p>See also <a href="qwebframe.html#toHtml">toHtml</a>().</p>
+<h3 class="fn"><a name="setScrollBarPolicy"></a>void QWebFrame::setScrollBarPolicy ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i>, <a href="qt.html#ScrollBarPolicy-enum">Qt::ScrollBarPolicy</a> <i>policy</i> )</h3>
+<p>Sets the scrollbar policy for the scrollbar defined by <i>orientation</i> to <i>policy</i>.</p>
+<p>See also <a href="qwebframe.html#scrollBarPolicy">scrollBarPolicy</a>().</p>
+<h3 class="fn"><a name="setScrollBarValue"></a>void QWebFrame::setScrollBarValue ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i>, int <i>value</i> )</h3>
+<p>Sets the current <i>value</i> for the scrollbar with orientation <i>orientation</i>.</p>
+<p>The scrollbar forces the <i>value</i> to be within the legal range: minimum &lt;= value &lt;= maximum.</p>
+<p>Changing the value also updates the thumb position.</p>
+<p>See also <a href="qwebframe.html#scrollBarValue">scrollBarValue</a>(), <a href="qwebframe.html#scrollBarMinimum">scrollBarMinimum</a>(), and <a href="qwebframe.html#scrollBarMaximum">scrollBarMaximum</a>().</p>
+<h3 class="fn"><a name="titleChanged"></a>void QWebFrame::titleChanged ( const <a href="qstring.html">QString</a> &amp; <i>title</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the title of the frame changes. The <i>title</i> string specifies the new title.</p>
+<p>See also <a href="qwebframe.html#title-prop">title</a>().</p>
+<h3 class="fn"><a name="toHtml"></a><a href="qstring.html">QString</a> QWebFrame::toHtml () const</h3>
+<p>Returns the frame's content, converted to HTML.</p>
+<p>See also <a href="qwebframe.html#setHtml">setHtml</a>() and <a href="qwebframe.html#toPlainText">toPlainText</a>().</p>
+<h3 class="fn"><a name="toPlainText"></a><a href="qstring.html">QString</a> QWebFrame::toPlainText () const</h3>
+<p>Returns the content of this frame converted to plain text.</p>
+<p>See also <a href="qwebframe.html#toHtml">toHtml</a>().</p>
+<h3 class="fn"><a name="urlChanged"></a>void QWebFrame::urlChanged ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the <i>url</i> of the frame changes.</p>
+<p>See also <a href="qwebframe.html#url-prop">url</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

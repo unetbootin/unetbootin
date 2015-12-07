@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionQ3ListView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionQ3ListView Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionQ3ListView class is used to describe the parameters for drawing a <a href="q3listview.html">Q3ListView</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionQ3ListView&gt;</pre><p>Inherits <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>.</p>
+<ul>
+<li><a href="qstyleoptionq3listview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionq3listview.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionq3listview.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionq3listview.html#QStyleOptionQ3ListView">QStyleOptionQ3ListView</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionq3listview.html#QStyleOptionQ3ListView-2">QStyleOptionQ3ListView</a></b> ( const QStyleOptionQ3ListView &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listview.html#itemMargin-var">itemMargin</a></b></li>
+<li><div class="fn"/>QList&lt;QStyleOptionQ3ListViewItem&gt; <b><a href="qstyleoptionq3listview.html#items-var">items</a></b></li>
+<li><div class="fn"/>bool <b><a href="qstyleoptionq3listview.html#rootIsDecorated-var">rootIsDecorated</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listview.html#sortColumn-var">sortColumn</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listview.html#treeStepSize-var">treeStepSize</a></b></li>
+<li><div class="fn"/>QPalette::ColorRole <b><a href="qstyleoptionq3listview.html#viewportBGRole-var">viewportBGRole</a></b></li>
+<li><div class="fn"/>QPalette <b><a href="qstyleoptionq3listview.html#viewportPalette-var">viewportPalette</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public variables inherited from <a href="qstyleoptioncomplex.html#public-variables">QStyleOptionComplex</a></li>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionQ3ListView class is used to describe the parameters for drawing a <a href="q3listview.html">Q3ListView</a>.</p>
+<p>This class is used for drawing the compatibility <a href="q3listview.html">Q3ListView</a>. <b>It is not recommended for new classes</b>.</p>
+<p>QStyleOptionQ3ListView contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw <a href="q3listview.html">Q3ListView</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>, <a href="q3listview.html">Q3ListView</a>, and <a href="qstyleoptionq3listviewitem.html">QStyleOptionQ3ListViewItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionQ3ListView::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListView::Type</tt></td><td align="center" valign="top"><tt>SO_Q3ListView</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_Q3ListView</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptionq3listview.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionQ3ListView::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListView::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionq3listview.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionQ3ListView"></a>QStyleOptionQ3ListView::QStyleOptionQ3ListView ()</h3>
+<p>Creates a <a href="qstyleoptionq3listview.html">QStyleOptionQ3ListView</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionQ3ListView-2"></a>QStyleOptionQ3ListView::QStyleOptionQ3ListView ( const QStyleOptionQ3ListView &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="itemMargin-var"></a>int QStyleOptionQ3ListView::itemMargin</h3>
+<p>This variable holds the margin for items in the list view.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="q3listview.html#itemMargin-prop">Q3ListView::itemMargin</a>().</p>
+<h3 class="fn"><a name="items-var"></a><a href="qlist.html">QList</a>&lt;<a href="qstyleoptionq3listviewitem.html">QStyleOptionQ3ListViewItem</a>&gt; QStyleOptionQ3ListView::items</h3>
+<p>This variable holds a list of items in the Q3ListView.</p>
+<p>This is a list of <a href="qstyleoptionq3listviewitem.html">QStyleOptionQ3ListViewItem</a>s. The first item can be used for most of the calculation that are needed for drawing a list view. Any additional items are the children of this first item, which may be used for additional information.</p>
+<p>See also <a href="qstyleoptionq3listviewitem.html">QStyleOptionQ3ListViewItem</a>.</p>
+<h3 class="fn"><a name="rootIsDecorated-var"></a>bool QStyleOptionQ3ListView::rootIsDecorated</h3>
+<p>This variable holds whether root items are decorated.</p>
+<p>The default value is false.</p>
+<p>See also <a href="q3listview.html#rootIsDecorated-prop">Q3ListView::rootIsDecorated</a>().</p>
+<h3 class="fn"><a name="sortColumn-var"></a>int QStyleOptionQ3ListView::sortColumn</h3>
+<p>This variable holds the sort column of the list view.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="q3listview.html#sortColumn">Q3ListView::sortColumn</a>().</p>
+<h3 class="fn"><a name="treeStepSize-var"></a>int QStyleOptionQ3ListView::treeStepSize</h3>
+<p>This variable holds the number of pixel to offset children items from their parents.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="q3listview.html#treeStepSize-prop">Q3ListView::treeStepSize</a>().</p>
+<h3 class="fn"><a name="viewportBGRole-var"></a><a href="qpalette.html#ColorRole-enum">QPalette::ColorRole</a> QStyleOptionQ3ListView::viewportBGRole</h3>
+<p>This variable holds the background role of Q3ListView's viewport.</p>
+<p>The default value is <a href="qpalette.html#ColorRole-enum">QPalette::Base</a>.</p>
+<p>See also <a href="qwidget.html#backgroundRole">QWidget::backgroundRole</a>().</p>
+<h3 class="fn"><a name="viewportPalette-var"></a><a href="qpalette.html">QPalette</a> QStyleOptionQ3ListView::viewportPalette</h3>
+<p>This variable holds the palette of Q3ListView's viewport.</p>
+<p>By default, the application's default palette is used.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

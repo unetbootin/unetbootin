@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlInputSource Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlInputSource Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlInputSource class provides the input data for the <a href="qxmlreader.html">QXmlReader</a> subclasses. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlInputSource&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmlinputsource-members.html">List of all members, including inherited members</a></li>
+<li><a href="qxmlinputsource-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlinputsource.html#QXmlInputSource">QXmlInputSource</a></b> ()</li>
+<li><div class="fn"/><b><a href="qxmlinputsource.html#QXmlInputSource-2">QXmlInputSource</a></b> ( QIODevice * <i>dev</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qxmlinputsource.html#dtor.QXmlInputSource">~QXmlInputSource</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="qxmlinputsource.html#data">data</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qxmlinputsource.html#fetchData">fetchData</a></b> ()</li>
+<li><div class="fn"/>virtual QChar <b><a href="qxmlinputsource.html#next">next</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qxmlinputsource.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qxmlinputsource.html#setData">setData</a></b> ( const QString &amp; <i>dat</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qxmlinputsource.html#setData-2">setData</a></b> ( const QByteArray &amp; <i>dat</i> )</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QString <b><a href="qxmlinputsource.html#fromRawData">fromRawData</a></b> ( const QByteArray &amp; <i>data</i>, bool <i>beginning</i> = false )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlInputSource class provides the input data for the <a href="qxmlreader.html">QXmlReader</a> subclasses.</p>
+<p>All subclasses of <a href="qxmlreader.html">QXmlReader</a> read the input XML document from this class.</p>
+<p>This class recognizes the encoding of the data by reading the encoding declaration in the XML file if it finds one, and reading the data using the corresponding encoding. If it does not find an encoding declaration, then it assumes that the data is either in UTF-8 or UTF-16, depending on whether it can find a byte-order mark.</p>
+<p>There are two ways to populate the input source with data: you can construct it with a <a href="qiodevice.html">QIODevice</a>* so that the input source reads the data from that device. Or you can set the data explicitly with one of the <a href="qxmlinputsource.html#setData">setData</a>() functions.</p>
+<p>Usually you either construct a QXmlInputSource that works on a <a href="qiodevice.html">QIODevice</a>* or you construct an empty QXmlInputSource and set the data with <a href="qxmlinputsource.html#setData">setData</a>(). There are only rare occasions where you would want to mix both methods.</p>
+<p>The <a href="qxmlreader.html">QXmlReader</a> subclasses use the <a href="qxmlinputsource.html#next">next</a>() function to read the input character by character. If you want to start from the beginning again, use <a href="qxmlinputsource.html#reset">reset</a>().</p>
+<p>The functions <a href="qxmlinputsource.html#data">data</a>() and <a href="qxmlinputsource.html#fetchData">fetchData</a>() are useful if you want to do something with the data other than parsing, e.g&#x2e; displaying the raw XML file. The benefit of using the QXmlInputClass in such cases is that it tries to use the correct encoding.</p>
+<p>See also <a href="qxmlreader.html">QXmlReader</a> and <a href="qxmlsimplereader.html">QXmlSimpleReader</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlInputSource"></a>QXmlInputSource::QXmlInputSource ()</h3>
+<p>Constructs an input source which contains no data.</p>
+<p>See also <a href="qxmlinputsource.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="QXmlInputSource-2"></a>QXmlInputSource::QXmlInputSource ( <a href="qiodevice.html">QIODevice</a> * <i>dev</i> )</h3>
+<p>Constructs an input source and gets the data from device <i>dev</i>. If <i>dev</i> is not open, it is opened in read-only mode. If <i>dev</i> is 0 or it is not possible to read from the device, the input source will contain no data.</p>
+<p>See also <a href="qxmlinputsource.html#setData">setData</a>(), <a href="qxmlinputsource.html#fetchData">fetchData</a>(), and <a href="qiodevice.html">QIODevice</a>.</p>
+<h3 class="fn"><a name="dtor.QXmlInputSource"></a>QXmlInputSource::~QXmlInputSource ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="data"></a><a href="qstring.html">QString</a> QXmlInputSource::data () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the data the input source contains or an empty string if the input source does not contain any data.</p>
+<p>See also <a href="qxmlinputsource.html#setData">setData</a>(), <a href="qxmlinputsource.html#QXmlInputSource">QXmlInputSource</a>(), and <a href="qxmlinputsource.html#fetchData">fetchData</a>().</p>
+<h3 class="fn"><a name="fetchData"></a>void QXmlInputSource::fetchData ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function reads more data from the device that was set during construction. If the input source already contained data, this function deletes that data first.</p>
+<p>This object contains no data after a call to this function if the object was constructed without a device to read data from or if this function was not able to get more data from the device.</p>
+<p>There are two occasions where a fetch is done implicitly by another function call: during construction (so that the object starts out with some initial data where available), and during a call to <a href="qxmlinputsource.html#next">next</a>() (if the data had run out).</p>
+<p>You don't normally need to use this function if you use <a href="qxmlinputsource.html#next">next</a>().</p>
+<p>See also <a href="qxmlinputsource.html#data">data</a>(), <a href="qxmlinputsource.html#next">next</a>(), and <a href="qxmlinputsource.html#QXmlInputSource">QXmlInputSource</a>().</p>
+<h3 class="fn"><a name="fromRawData"></a><a href="qstring.html">QString</a> QXmlInputSource::fromRawData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, bool <i>beginning</i> = false )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function reads the XML file from <i>data</i> and tries to recognize the encoding. It converts the raw data <i>data</i> into a <a href="qstring.html">QString</a> and returns it. It tries its best to get the correct encoding for the XML file.</p>
+<p>If <i>beginning</i> is true, this function assumes that the data starts at the beginning of a new XML document and looks for an encoding declaration. If <i>beginning</i> is false, it converts the raw data using the encoding determined from prior calls.</p>
+<h3 class="fn"><a name="next"></a><a href="qchar.html">QChar</a> QXmlInputSource::next ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the next character of the input source. If this function reaches the end of available data, it returns <a href="qxmlinputsource.html#EndOfData-var">QXmlInputSource::EndOfData</a>. If you call next() after that, it tries to fetch more data by calling <a href="qxmlinputsource.html#fetchData">fetchData</a>(). If the <a href="qxmlinputsource.html#fetchData">fetchData</a>() call results in new data, this function returns the first character of that data; otherwise it returns <a href="qxmlinputsource.html#EndOfDocument-var">QXmlInputSource::EndOfDocument</a>.</p>
+<p>Readers, such as <a href="qxmlsimplereader.html">QXmlSimpleReader</a>, will assume that the end of the XML document has been reached if the this function returns <a href="qxmlinputsource.html#EndOfDocument-var">QXmlInputSource::EndOfDocument</a>, and will check that the supplied input is well-formed. Therefore, when reimplementing this function, it is important to ensure that this behavior is duplicated.</p>
+<p>See also <a href="qxmlinputsource.html#reset">reset</a>(), <a href="qxmlinputsource.html#fetchData">fetchData</a>(), <a href="qxmlsimplereader.html#parse">QXmlSimpleReader::parse</a>(), and <a href="qxmlsimplereader.html#parseContinue">QXmlSimpleReader::parseContinue</a>().</p>
+<h3 class="fn"><a name="reset"></a>void QXmlInputSource::reset ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function sets the position used by <a href="qxmlinputsource.html#next">next</a>() to the beginning of the data returned by <a href="qxmlinputsource.html#data">data</a>(). This is useful if you want to use the input source for more than one parse.</p>
+<p>In the case that the underlying data source is a <a href="qiodevice.html">QIODevice</a>, it is not seeked to the beginning. Call QIODevice::seek(0) on the device to reverse it to the beginning.</p>
+<p>See also <a href="qxmlinputsource.html#next">next</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QXmlInputSource::setData ( const <a href="qstring.html">QString</a> &amp; <i>dat</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the data of the input source to <i>dat</i>.</p>
+<p>If the input source already contains data, this function deletes that data first.</p>
+<p>See also <a href="qxmlinputsource.html#data">data</a>().</p>
+<h3 class="fn"><a name="setData-2"></a>void QXmlInputSource::setData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>dat</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The data <i>dat</i> is passed through the correct text-codec, before it is set.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

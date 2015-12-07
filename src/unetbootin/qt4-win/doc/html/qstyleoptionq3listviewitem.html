@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionQ3ListViewItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionQ3ListViewItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionQ3ListViewItem class is used to describe an item drawn in a <a href="q3listview.html">Q3ListView</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionQ3ListViewItem&gt;</pre><p>Inherits <a href="qstyleoption.html">QStyleOption</a>.</p>
+<ul>
+<li><a href="qstyleoptionq3listviewitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionq3listviewitem.html#Q3ListViewItemFeature-enum">Q3ListViewItemFeature</a></b> { None, Expandable, MultiLine, Visible, ParentControl }</li>
+<li><div class="fn"/>flags <b><a href="qstyleoptionq3listviewitem.html#Q3ListViewItemFeature-enum">Q3ListViewItemFeatures</a></b></li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionq3listviewitem.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionq3listviewitem.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionq3listviewitem.html#QStyleOptionQ3ListViewItem">QStyleOptionQ3ListViewItem</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionq3listviewitem.html#QStyleOptionQ3ListViewItem-2">QStyleOptionQ3ListViewItem</a></b> ( const QStyleOptionQ3ListViewItem &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listviewitem.html#childCount-var">childCount</a></b></li>
+<li><div class="fn"/>Q3ListViewItemFeatures <b><a href="qstyleoptionq3listviewitem.html#features-var">features</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listviewitem.html#height-var">height</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listviewitem.html#itemY-var">itemY</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptionq3listviewitem.html#totalHeight-var">totalHeight</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionQ3ListViewItem class is used to describe an item drawn in a <a href="q3listview.html">Q3ListView</a>.</p>
+<p>This class is used for drawing the compatibility <a href="q3listview.html">Q3ListView</a>'s items. <b>It is not recommended for new classes</b>.</p>
+<p>QStyleOptionQ3ListViewItem contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw the <a href="q3listview.html">Q3ListView</a> items.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a>, <a href="qstyleoptionq3listview.html">QStyleOptionQ3ListView</a>, and <a href="q3listviewitem.html">Q3ListViewItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="Q3ListViewItemFeature-enum"></a>enum QStyleOptionQ3ListViewItem::Q3ListViewItemFeature<br />flags QStyleOptionQ3ListViewItem::Q3ListViewItemFeatures</h3>
+<p>This enum describes the features a list view item can have.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::None</tt></td><td align="center" valign="top"><tt>0x00</tt></td><td valign="top">A standard item.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::Expandable</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">The item has children that can be shown.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::MultiLine</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">The item is more than one line tall.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::Visible</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">The item is visible.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::ParentControl</tt></td><td align="center" valign="top"><tt>0x08</tt></td><td valign="top">The item's parent is a type of item control (<a href="q3checklistitem.html#Type-enum">Q3CheckListItem::Controller</a>).</td></tr>
+</table></p>
+<p>The Q3ListViewItemFeatures type is a typedef for <a href="qflags.html">QFlags</a>&lt;Q3ListViewItemFeature&gt;. It stores an OR combination of Q3ListViewItemFeature values.</p>
+<p>See also <a href="qstyleoptionq3listviewitem.html#features-var">features</a>, <a href="q3listviewitem.html#isVisible">Q3ListViewItem::isVisible</a>(), <a href="q3listviewitem.html#multiLinesEnabled">Q3ListViewItem::multiLinesEnabled</a>(), and <a href="q3listviewitem.html#isExpandable">Q3ListViewItem::isExpandable</a>().</p>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionQ3ListViewItem::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::Type</tt></td><td align="center" valign="top"><tt>SO_Q3ListViewItem</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_Q3ListViewItem</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptionq3listviewitem.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionQ3ListViewItem::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionQ3ListViewItem::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionq3listviewitem.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionQ3ListViewItem"></a>QStyleOptionQ3ListViewItem::QStyleOptionQ3ListViewItem ()</h3>
+<p>Constructs a <a href="qstyleoptionq3listviewitem.html">QStyleOptionQ3ListViewItem</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionQ3ListViewItem-2"></a>QStyleOptionQ3ListViewItem::QStyleOptionQ3ListViewItem ( const QStyleOptionQ3ListViewItem &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="childCount-var"></a>int QStyleOptionQ3ListViewItem::childCount</h3>
+<p>This variable holds the number of children the item has.</p>
+<h3 class="fn"><a name="features-var"></a><a href="qstyleoptionq3listviewitem.html#Q3ListViewItemFeature-enum">Q3ListViewItemFeatures</a> QStyleOptionQ3ListViewItem::features</h3>
+<p>This variable holds the features for this item.</p>
+<p>This variable is a bitwise OR of the features of the item. The deafult value is <a href="qstyleoptionq3listviewitem.html#Q3ListViewItemFeature-enum">None</a>.</p>
+<p>See also <a href="qstyleoptionq3listviewitem.html#Q3ListViewItemFeature-enum">Q3ListViewItemFeature</a>.</p>
+<h3 class="fn"><a name="height-var"></a>int QStyleOptionQ3ListViewItem::height</h3>
+<p>This variable holds the height of the item.</p>
+<p>This doesn't include the height of the item's children. The default height is 0.</p>
+<p>See also <a href="q3listviewitem.html#height">Q3ListViewItem::height</a>().</p>
+<h3 class="fn"><a name="itemY-var"></a>int QStyleOptionQ3ListViewItem::itemY</h3>
+<p>This variable holds the Y-coordinate for the item.</p>
+<p>The default value is 0.</p>
+<p>See also <a href="q3listviewitem.html#itemPos">Q3ListViewItem::itemPos</a>().</p>
+<h3 class="fn"><a name="totalHeight-var"></a>int QStyleOptionQ3ListViewItem::totalHeight</h3>
+<p>This variable holds the total height of the item, including its children.</p>
+<p>The default total height is 0.</p>
+<p>See also <a href="q3listviewitem.html#totalHeight">Q3ListViewItem::totalHeight</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

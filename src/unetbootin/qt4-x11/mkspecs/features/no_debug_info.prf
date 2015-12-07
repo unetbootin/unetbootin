@@ -1,0 +1,5 @@
+
+QMAKE_CFLAGS -= -g -ggdb3
+QMAKE_CXXFLAGS -= -g -ggdb3
+QMAKE_LFLAGS -= -g -ggdb3
+QMAKE_LIBFLAGS -= -g -ggdb3

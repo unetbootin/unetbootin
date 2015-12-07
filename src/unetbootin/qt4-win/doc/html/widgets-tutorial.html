@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/widgets-tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Widgets Tutorial</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Widgets Tutorial<br /><span class="subtitle"></span>
+</h1>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+<p>Widgets are the basic building blocks of graphical user interface (GUI) applications made with Qt. Each GUI component, such as a button, label or text editor, is a widget and can be placed within an existing user interface or displayed as an independent window. Each type of component is provided by a particular subclass of <a href="qwidget.html">QWidget</a>, which is itself a subclass of <a href="qobject.html">QObject</a>.</p>
+<p><a href="qwidget.html">QWidget</a> is not an abstract class; it can be used as a container for other widgets, and can be subclassed with minimal effort to create custom widgets. It is most often used to create windows in which other widgets are placed.</p>
+<p>As with <a href="qobject.html">QObject</a>s, widgets can be created with parent objects to indicate ownership, ensuring that objects are deleted when they are no longer used. With widgets, these parent-child relationships have an additional meaning: each child is displayed within the screen area occupied by its parent. This means that, when a window is deleted, all the widgets it contains are automatically deleted.</p>
+<a name="creating-a-window"></a>
+<h3>Creating a Window</h3>
+<p>If a widget is created without a parent, it is treated as a window, or <i>top-level widget</i>, when it is shown. Since it has no parent object to ensure that it is deleted when no longer needed, it is up to the developer to keep track of the top-level widgets in an application.</p>
+<p>In the following example, we use <a href="qwidget.html">QWidget</a> to create and show a window with a default size:</p>
+    <table align="left" width="100%">
+    <tr><td>
+    <pre>     QWidget *window = new QWidget();
+     window-&gt;resize(320, 240);
+     window-&gt;show();</pre>
+    </td><td align="right">
+    <p><font color="red">[Missing image widgets-tutorial-toplevel.png]</font></p>
+    </td></tr>
+    </table>
+    <p>We can add a child widget to this window by passing <tt>window</tt> as the parent to its constructor. In this case, we add a button to the window and place it in a specific location:</p>
+    <table align="left" width="100%">
+    <tr><td>
+    <pre>     QPushButton *button = new QPushButton(tr(&quot;Press me&quot;), window);
+     button-&gt;move(100, 100);
+     button-&gt;show();</pre>
+    </td><td align="right">
+    <p><font color="red">[Missing image widgets-tutorial-childwidget.png]</font></p>
+    </td></tr>
+    </table>
+    <p>The button is now a child of the window and will be deleted when the window is destroyed. Note that hiding or closing the window does not automatically destroy it.</p>
+<a name="using-layouts"></a>
+<h3>Using Layouts</h3>
+<p>Usually, child widgets are arranged inside a window using layout objects rather than by specifying positions and sizes explicitly. Here, we construct a label and line edit widget that we would like to arrange side-by-side.</p>
+    <table align="left" width="100%">
+    <tr><td>
+    <pre>     QLabel *label = new QLabel(tr(&quot;Name:&quot;));
+     QLineEdit *lineEdit = new QLineEdit();
+
+     QHBoxLayout *layout = new QHBoxLayout();
+     layout-&gt;addWidget(label);
+     layout-&gt;addWidget(lineEdit);
+     window-&gt;setLayout(layout);</pre>
+    </td><td align="right">
+    <p><font color="red">[Missing image widgets-tutorial-windowlayout.png]</font></p>
+    </td></tr>
+    </table>
+    <p>The <tt>layout</tt> object we construct manages the positions and sizes of widgets supplied to it with the <a href="qboxlayout.html#addWidget">addWidget()</a> function. The layout itself is supplied to the window itself in the call to <a href="qwidget.html#setLayout">setLayout()</a>. Layouts are only visible through the effects they have on the widgets (and other layouts) they are responsible for managing.</p>
+<p>In the example above, the ownership of each widget is not immediately clear. Since we construct the widgets and the layout without parent objects, we would expect to see an empty window and two separate windows containing a label and a line edit. However, when we tell the layout to manage the label and line edit and set the layout on the window, both the widgets and the layout itself are ''reparented'' to become children of the window.</p>
+<p>Just as widgets can contain other widgets, layouts can be used to provide different levels of grouping for widgets. Here, we want to display a label alongside a line edit at the top of a window, above a table view showing the results of a query.</p>
+    <table align="left" width="100%">
+    <tr><td>
+    <pre>     QLabel *queryLabel = new QLabel(tr(&quot;Query:&quot;));
+     QLineEdit *queryEdit = new QLineEdit();
+     QTableView *resultView = new QTableView();
+
+     QHBoxLayout *queryLayout = new QHBoxLayout();
+     queryLayout-&gt;addWidget(queryLabel);
+     queryLayout-&gt;addWidget(queryEdit);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout();
+     mainLayout-&gt;addLayout(queryLayout);
+     mainLayout-&gt;addWidget(resultView);
+     window-&gt;setLayout(mainLayout);</pre>
+    </td><td align="right">
+    <p><font color="red">[Missing image widgets-tutorial-nestedlayouts.png]</font></p>
+    </td></tr>
+    </table>
+    <p>As well as <a href="qhboxlayout.html">QHBoxLayout</a> and <a href="qvboxlayout.html">QVBoxLayout</a>, Qt also provides <a href="qgridlayout.html">QGridLayout</a> and <a href="qformlayout.html">QFormLayout</a> classes to help with more complex user interfaces.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

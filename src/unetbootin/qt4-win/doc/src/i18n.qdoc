@@ -1,0 +1,498 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \group i18n
+    \ingroup topics
+
+    \title Internationalization with Qt
+    \brief Information about Qt's support for internationalization and multiple languages.
+
+    \keyword internationalization
+    \keyword i18n
+
+    The internationalization of an application is the process of making
+    the application usable by people in countries other than one's own.
+
+    \tableofcontents
+
+    In some cases internationalization is simple, for example, making a US
+    application accessible to Australian or British users may require
+    little more than a few spelling corrections. But to make a US
+    application usable by Japanese users, or a Korean application usable
+    by German users, will require that the software operate not only in
+    different languages, but use different input techniques, character
+    encodings and presentation conventions.
+
+    Qt tries to make internationalization as painless as possible for
+    developers. All input widgets and text drawing methods in Qt offer
+    built-in support for all supported languages. The built-in font engine
+    is capable of correctly and attractively rendering text that contains
+    characters from a variety of different writing systems at the same
+    time.
+
+    Qt supports most languages in use today, in particular:
+    \list
+    \o All East Asian languages (Chinese, Japanese and Korean)
+    \o All Western languages (using Latin script)
+    \o Arabic
+    \o Cyrillic languages (Russian, Ukrainian, etc.)
+    \o Greek
+    \o Hebrew
+    \o Thai and Lao
+    \o All scripts in Unicode 4.0 that do not require special processing
+    \endlist
+
+    On Windows, Unix/X11 with FontConfig (client side font support)
+    and Qt for Embedded Linux the following languages are also supported:
+    \list
+    \o Bengali
+    \o Devanagari
+    \o Dhivehi (Thaana)
+    \o Gujarati
+    \o Gurmukhi
+    \o Kannada
+    \o Khmer
+    \o Malayalam
+    \o Myanmar
+    \o Syriac
+    \o Tamil
+    \o Telugu
+    \o Tibetan
+    \endlist
+
+    Many of these writing systems exhibit special features:
+
+    \list
+
+    \o \bold{Special line breaking behavior.} Some of the Asian languages are
+    written without spaces between words. Line breaking can occur either
+    after every character (with exceptions) as in Chinese, Japanese and
+    Korean, or after logical word boundaries as in Thai.
+
+    \o \bold{Bidirectional writing.} Arabic and Hebrew are written from right to
+    left, except for numbers and embedded English text which is written
+    left to right. The exact behavior is defined in the
+    \l{http://www.unicode.org/unicode/reports/tr9/}{Unicode Technical Annex #9}.
+
+    \o \bold{Non-spacing or diacritical marks (accents or umlauts in European
+    languages).} Some languages such as Vietnamese make extensive use of
+    these marks and some characters can have more than one mark at the
+    same time to clarify pronunciation.
+
+    \o \bold{Ligatures.} In special contexts, some pairs of characters get
+    replaced by a combined glyph forming a ligature. Common examples are
+    the fl and fi ligatures used in typesetting US and European books.
+
+    \endlist
+
+    Qt tries to take care of all the special features listed above. You
+    usually don't have to worry about these features so long as you use
+    Qt's input widgets (e.g. QLineEdit, QTextEdit, and derived classes)
+    and Qt's display widgets (e.g. QLabel).
+
+    Support for these writing systems is transparent to the
+    programmer and completely encapsulated in \l{rich text
+    processing}{Qt's text engine}. This means that you don't need to
+    have any knowledge about the writing system used in a particular
+    language, except for the following small points:
+
+    \list
+
+    \o QPainter::drawText(int x, int y, const QString &str) will always
+    draw the string with its left edge at the position specified with
+    the x, y parameters. This will usually give you left aligned strings.
+    Arabic and Hebrew application strings are usually right
+    aligned, so for these languages use the version of drawText() that
+    takes a QRect since this will align in accordance with the language.
+
+    \o When you write your own text input controls, use \l
+    QFontMetrics::charWidth() to determine the width of a character in a
+    string. In some languages (e.g. Arabic or languages from the Indian
+    subcontinent), the width and shape of a glyph changes depending on the
+    surrounding characters. Writing input controls usually requires a
+    certain knowledge of the scripts it is going to be used in. Usually
+    the easiest way is to subclass QLineEdit or QTextEdit.
+
+    \endlist
+
+    The following sections give some information on the status of the
+    internationalization (i18n) support in Qt. See also the \l{Qt
+    Linguist manual}.
+
+    \section1 Step by Step
+
+    Writing cross-platform international software with Qt is a gentle,
+    incremental process. Your software can become internationalized in
+    the following stages:
+
+    \section2 Use QString for All User-Visible Text
+
+    Since QString uses the Unicode 4.0 encoding internally, every
+    language in the world can be processed transparently using
+    familiar text processing operations. Also, since all Qt functions
+    that present text to the user take a QString as a parameter,
+    there is no \c{char *} to QString conversion overhead.
+
+    Strings that are in "programmer space" (such as QObject names
+    and file format texts) need not use QString; the traditional
+    \c{char *} or the QByteArray class will suffice.
+
+    You're unlikely to notice that you are using Unicode;
+    QString, and QChar are just like easier versions of the crude
+    \c{const char *} and char from traditional C.
+
+    \section2 Use tr() for All Literal Text
+
+    Wherever your program uses "quoted text" for text that will
+    be presented to the user, ensure that it is processed by the \l
+    QCoreApplication::translate() function. Essentially all that is necessary
+    to achieve this is to use QObject::tr(). For example, assuming the
+    \c LoginWidget is a subclass of QWidget:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 0
+
+    This accounts for 99% of the user-visible strings you're likely to
+    write.
+
+    If the quoted text is not in a member function of a
+    QObject subclass, use either the tr() function of an
+    appropriate class, or the QCoreApplication::translate() function
+    directly:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 1
+
+    If you need to have translatable text completely
+    outside a function, there are two macros to help: QT_TR_NOOP()
+    and QT_TRANSLATE_NOOP(). They merely mark the text for
+    extraction by the \c lupdate utility described below.
+    The macros expand to just the text (without the context).
+
+    Example of QT_TR_NOOP():
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 2
+
+    Example of QT_TRANSLATE_NOOP():
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 3
+
+    If you disable the \c{const char *} to QString automatic
+    conversion by compiling your software with the macro \c
+    QT_NO_CAST_FROM_ASCII defined, you'll be very likely to catch any
+    strings you are missing. See QString::fromLatin1() for more
+    information. Disabling the conversion can make programming a bit
+    cumbersome.
+
+    If your source language uses characters outside Latin1, you
+    might find QObject::trUtf8() more convenient than
+    QObject::tr(), as tr() depends on the
+    QTextCodec::codecForTr(), which makes it more fragile than
+    QObject::trUtf8().
+
+    \section2 Use QKeySequence() for Accelerator Values
+
+    Accelerator values such as Ctrl+Q or Alt+F need to be translated
+    too. If you hardcode Qt::CTRL + Qt::Key_Q for "quit" in your
+    application, translators won't be able to override it. The
+    correct idiom is
+
+    \snippet examples/mainwindows/application/mainwindow.cpp 20
+
+    \section2 Use QString::arg() for Dynamic Text
+
+    The QString::arg() functions offer a simple means for substituting
+    arguments:
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 4
+
+    In some languages the order of arguments may need to change, and this
+    can easily be achieved by changing the order of the % arguments. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 5
+
+    produces the correct output in English and Norwegian:
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 6
+
+    \section2 Produce Translations
+
+    Once you are using tr() throughout an application, you can start
+    producing translations of the user-visible text in your program.
+
+    The \l{Qt Linguist manual} provides further information about
+    Qt's translation tools, \e{Qt Linguist}, \c lupdate and \c
+    lrelease.
+
+    Translation of a Qt application is a three-step process:
+
+    \list 1
+
+    \o Run \c lupdate to extract translatable text from the C++
+    source code of the Qt application, resulting in a message file
+    for translators (a \c .ts file). The utility recognizes the tr()
+    construct and the \c{QT_TR*_NOOP()} macros described above and
+    produces \c .ts files (usually one per language).
+
+    \o Provide translations for the source texts in the \c .ts file, using
+    \e{Qt Linguist}. Since \c .ts files are in XML format, you can also
+    edit them by hand.
+
+    \o Run \c lrelease to obtain a light-weight message file (a \c .qm
+    file) from the \c .ts file, suitable only for end use. Think of the \c
+    .ts files as "source files", and \c .qm files as "object files". The
+    translator edits the \c .ts files, but the users of your application
+    only need the \c .qm files. Both kinds of files are platform and
+    locale independent.
+
+    \endlist
+
+    Typically, you will repeat these steps for every release of your
+    application. The \c lupdate utility does its best to reuse the
+    translations from previous releases.
+
+    Before you run \c lupdate, you should prepare a project file. Here's
+    an example project file (\c .pro file):
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 7
+
+    When you run \c lupdate or \c lrelease, you must give the name of the
+    project file as a command-line argument.
+
+    In this example, four exotic languages are supported: Danish,
+    Finnish, Norwegian and Swedish. If you use \l{qmake}, you usually
+    don't need an extra project file for \c lupdate; your \c qmake
+    project file will work fine once you add the \c TRANSLATIONS
+    entry.
+
+    In your application, you must \l QTranslator::load() the translation
+    files appropriate for the user's language, and install them using \l
+    QCoreApplication::installTranslator().
+
+    \c linguist, \c lupdate and \c lrelease are installed in the \c bin
+    subdirectory of the base directory Qt is installed into. Click Help|Manual
+    in \e{Qt Linguist} to access the user's manual; it contains a tutorial
+    to get you started.
+
+    \target qt-itself
+    Qt itself contains over 400 strings that will also need to be
+    translated into the languages that you are targeting. You will find
+    translation files for French and German in \c $QTDIR/translations as
+    well as a template for translating to other languages. (This directory
+    also contains some additional unsupported translations which may be
+    useful.)
+
+    Typically, your application's \c main() function will look like
+    this:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 8
+
+    \section2 Support for Encodings
+
+    The QTextCodec class and the facilities in QTextStream make it easy to
+    support many input and output encodings for your users' data. When an
+    application starts, the locale of the machine will determine the 8-bit
+    encoding used when dealing with 8-bit data: such as for font
+    selection, text display, 8-bit text I/O, and character input.
+
+    The application may occasionally require encodings other than the
+    default local 8-bit encoding. For example, an application in a
+    Cyrillic KOI8-R locale (the de-facto standard locale in Russia) might
+    need to output Cyrillic in the ISO 8859-5 encoding. Code for this
+    would be:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 9
+
+    For converting Unicode to local 8-bit encodings, a shortcut is
+    available: the QString::toLocal8Bit() function returns such 8-bit
+    data. Another useful shortcut is QString::toUtf8(), which returns
+    text in the 8-bit UTF-8 encoding: this perfectly preserves
+    Unicode information while looking like plain ASCII if the text is
+    wholly ASCII.
+
+    For converting the other way, there are the QString::fromUtf8() and
+    QString::fromLocal8Bit() convenience functions, or the general code,
+    demonstrated by this conversion from ISO 8859-5 Cyrillic to Unicode
+    conversion:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 10
+
+    Ideally Unicode I/O should be used as this maximizes the portability
+    of documents between users around the world, but in reality it is
+    useful to support all the appropriate encodings that your users will
+    need to process existing documents. In general, Unicode (UTF-16 or
+    UTF-8) is best for information transferred between arbitrary people,
+    while within a language or national group, a local standard is often
+    more appropriate. The most important encoding to support is the one
+    returned by QTextCodec::codecForLocale(), as this is the one the user
+    is most likely to need for communicating with other people and
+    applications (this is the codec used by local8Bit()).
+
+    Qt supports most of the more frequently used encodings natively. For a
+    complete list of supported encodings see the \l QTextCodec
+    documentation.
+
+    In some cases and for less frequently used encodings it may be
+    necessary to write your own QTextCodec subclass. Depending on the
+    urgency, it may be useful to contact Trolltech technical support or
+    ask on the \c qt-interest mailing list to see if someone else is
+    already working on supporting the encoding.
+
+    \keyword localization
+
+    \section2 Localize
+
+    Localization is the process of adapting to local conventions, for
+    example presenting dates and times using the locally preferred
+    formats. Such localizations can be accomplished using appropriate tr()
+    strings.
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 11
+
+    In the example, for the US we would leave the translation of
+    "AMPM" as it is and thereby use the 12-hour clock branch; but in
+    Europe we would translate it as something else and this will make
+    the code use the 24-hour clock branch.
+
+    For localized numbers use the QLocale class.
+
+    Localizing images is not recommended. Choose clear icons that are
+    appropriate for all localities, rather than relying on local puns or
+    stretched metaphors. The exception is for images of left and right
+    pointing arrows which may need to be reversed for Arabic and Hebrew
+    locales.
+
+    \section1 Dynamic Translation
+
+    Some applications, such as Qt Linguist, must be able to support changes
+    to the user's language settings while they are still running. To make
+    widgets aware of changes to the system language, reimplement the widget's
+    \l{QWidget::changeEvent()}{changeEvent()} function to check whether the
+    event is a \l{QEvent::LanguageChange}{LanguageChange} event, and update
+    the text displayed by widgets using the \l{QObject::tr()}{tr()} function
+    in the usual way. For example:
+
+    \snippet doc/src/snippets/code/doc.src.i18n.qdoc 12
+
+    All other change events should be passed on by calling the default
+    implementation of the function.
+
+    The default event handler for QWidget subclasses responds to the
+    QEvent::LanguageChange event, and will call this function when necessary;
+    other application components can also force widgets to update themselves
+    by posting the \l{QEvent::LanguageChange}{LanguageChange} event to them.
+
+    \section1 Translating Non-Qt Classes
+
+    It is sometimes necessary to provide internationalization support for
+    strings used in classes that do not inherit QObject or use the Q_OBJECT
+    macro to enable translation features. Since Qt translates strings at
+    run-time based on the class they are associated with and \c lupdate
+    looks for translatable strings in the source code, non-Qt classes must
+    use mechanisms that also provide this information.
+
+    One way to do this is to add translation support to a non-Qt class
+    using the Q_DECLARE_TR_FUNCTIONS() macro; for example:
+
+    \snippet doc/src/snippets/i18n-non-qt-class/myclass.h 0
+    \dots
+    \snippet doc/src/snippets/i18n-non-qt-class/myclass.h 1
+
+    This provides the class with \l{QObject::}{tr()} functions that can
+    be used to translate strings associated with the class, and makes it
+    possible for \c lupdate to find translatable strings in the source
+    code.
+
+    Alternatively, the QCoreApplication::translate() function can be called
+    with a specific context, and this will be recognized by \c lupdate and
+    Qt Linguist.
+
+    \section1 System Support
+
+    Some of the operating systems and windowing systems that Qt runs on
+    only have limited support for Unicode. The level of support available
+    in the underlying system has some influence on the support that Qt can
+    provide on those platforms, although in general Qt applications need
+    not be too concerned with platform-specific limitations.
+
+    \section2 Unix/X11
+
+    \list
+    \o  Locale-oriented fonts and input methods. Qt hides these and
+        provides Unicode input and output.
+    \o  Filesystem conventions such as
+        \l{http://www.ietf.org/rfc/rfc2279.txt}{UTF-8}
+        are under development in some Unix variants. All Qt file
+        functions allow Unicode, but convert filenames to the local
+        8-bit encoding, as this is the Unix convention (see
+        QFile::setEncodingFunction() to explore alternative
+        encodings).
+    \o  File I/O defaults to the local 8-bit encoding,
+        with Unicode options in QTextStream.
+    \endlist
+
+    \section2 Windows
+
+    \list
+    \o  Qt provides full Unicode support, including input methods, fonts,
+        clipboard, drag-and-drop and file names.
+    \o  File I/O defaults to Latin1, with Unicode options in QTextStream.
+        Note that some Windows programs do not understand big-endian
+        Unicode text files even though that is the order prescribed by
+        the Unicode Standard in the absence of higher-level protocols.
+    \o  Unlike programs written with MFC or plain winlib, Qt programs
+        are portable between Windows 98 and Windows NT.
+        \e {You do not need different binaries to support Unicode.}
+    \endlist
+
+    \section1 Note about Locales on X11
+
+    Many Unix distributions contain only partial support for some locales.
+    For example, if you have a \c /usr/share/locale/ja_JP.EUC directory,
+    this does not necessarily mean you can display Japanese text; you also
+    need JIS encoded fonts (or Unicode fonts), and the \c
+    /usr/share/locale/ja_JP.EUC directory needs to be complete. For best
+    results, use complete locales from your system vendor.
+
+    \section1 Relevant Qt Classes
+
+    These classes are relevant to internationalizing Qt applications.
+*/

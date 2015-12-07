@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3listview.cpp -->
+<head>
+  <title>Qt 4.4: Q3ListViewItemIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ListViewItemIterator Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ListViewItemIterator class provides an iterator for collections of Q3ListViewItems. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ListViewItemIterator&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3listviewitemiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3listviewitemiterator.html#IteratorFlag-enum">IteratorFlag</a></b> { Visible, Invisible, Selected, Unselected, ..., NotChecked }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator">Q3ListViewItemIterator</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator-2">Q3ListViewItemIterator</a></b> ( Q3ListViewItem * <i>item</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator-3">Q3ListViewItemIterator</a></b> ( Q3ListViewItem * <i>item</i>, int <i>iteratorFlags</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator-4">Q3ListViewItemIterator</a></b> ( const Q3ListViewItemIterator &amp; <i>it</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator-5">Q3ListViewItemIterator</a></b> ( Q3ListView * <i>lv</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#Q3ListViewItemIterator-6">Q3ListViewItemIterator</a></b> ( Q3ListView * <i>lv</i>, int <i>iteratorFlags</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitemiterator.html#dtor.Q3ListViewItemIterator">~Q3ListViewItemIterator</a></b> ()</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitemiterator.html#current">current</a></b> () const</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitemiterator.html#operator-2a">operator*</a></b> ()</li>
+<li><div class="fn"/>Q3ListViewItemIterator &amp; <b><a href="q3listviewitemiterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>const Q3ListViewItemIterator <b><a href="q3listviewitemiterator.html#operator-2b-2b-2">operator++</a></b> ( int )</li>
+<li><div class="fn"/>Q3ListViewItemIterator &amp; <b><a href="q3listviewitemiterator.html#operator-2b-eq">operator+=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>Q3ListViewItemIterator &amp; <b><a href="q3listviewitemiterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>const Q3ListViewItemIterator <b><a href="q3listviewitemiterator.html#operator---2">operator--</a></b> ( int )</li>
+<li><div class="fn"/>Q3ListViewItemIterator &amp; <b><a href="q3listviewitemiterator.html#operator--eq">operator-=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>Q3ListViewItemIterator &amp; <b><a href="q3listviewitemiterator.html#operator-eq">operator=</a></b> ( const Q3ListViewItemIterator &amp; <i>it</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ListViewItemIterator class provides an iterator for collections of Q3ListViewItems.</p>
+<p>Construct an instance of a Q3ListViewItemIterator, with either a <a href="q3listview.html">Q3ListView</a>* or a <a href="q3listviewitem.html">Q3ListViewItem</a>* as argument, to operate on the tree of Q3ListViewItems, starting from the argument.</p>
+<p>A Q3ListViewItemIterator iterates over all the items from its starting point. This means that it always makes the first child of the current item the new current item. If there is no child, the next sibling becomes the new current item; and if there is no next sibling, the next sibling of the parent becomes current.</p>
+<p>The following example creates a list of all the items that have been selected by the user, storing pointers to the items in a <a href="qlist.html">QList</a>:</p>
+<pre>     QList&lt;Q3ListViewItem *&gt; lst;
+     Q3ListViewItemIterator it(myListView);
+     while (it.current()) {
+         if (it.current()-&gt;isSelected())
+             lst.append(it.current());
+         ++it;
+     }</pre>
+<p>An alternative approach is to use an <tt>IteratorFlag</tt>:</p>
+<pre>     QList&lt;Q3ListViewItem *&gt; lst;
+     Q3ListViewItemIterator it(myListView, Selected);
+     while (it.current()) {
+         lst.append(it.current());
+         ++it;
+     }</pre>
+<p>A Q3ListViewItemIterator provides a convenient and easy way to traverse a hierarchical <a href="q3listview.html">Q3ListView</a>.</p>
+<p>Multiple Q3ListViewItemIterators can operate on the tree of Q3ListViewItems. A <a href="q3listview.html">Q3ListView</a> knows about all iterators operating on its Q3ListViewItems. So when a <a href="q3listviewitem.html">Q3ListViewItem</a> gets removed all iterators that point to this item are updated and point to the following item if possible, otherwise to a valid item before the current one or to 0. Note however that deleting the parent item of an item that an iterator points to is not safe.</p>
+<p>See also <a href="q3listview.html">Q3ListView</a> and <a href="q3listviewitem.html">Q3ListViewItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="IteratorFlag-enum"></a>enum Q3ListViewItemIterator::IteratorFlag</h3>
+<p>These flags can be passed to a <a href="q3listviewitemiterator.html">Q3ListViewItemIterator</a> constructor (OR-ed together if more than one is used), so that the iterator will only iterate over items that match the given flags.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Visible</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Invisible</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Selected</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Unselected</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Selectable</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::NotSelectable</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::DragEnabled</tt></td><td align="center" valign="top"><tt>0x00000040</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::DragDisabled</tt></td><td align="center" valign="top"><tt>0x00000080</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::DropEnabled</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::DropDisabled</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Expandable</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::NotExpandable</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::Checked</tt></td><td align="center" valign="top"><tt>0x00001000</tt></td></tr>
+<tr><td valign="top"><tt>Q3ListViewItemIterator::NotChecked</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ListViewItemIterator"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ()</h3>
+<p>Constructs an empty iterator.</p>
+<h3 class="fn"><a name="Q3ListViewItemIterator-2"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ( <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>item</i> )</h3>
+<p>Constructs an iterator for the <a href="q3listview.html">Q3ListView</a> that contains the <i>item</i>. The current iterator item is set to point to the <i>item</i>.</p>
+<h3 class="fn"><a name="Q3ListViewItemIterator-3"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ( <a href="q3listviewitem.html">Q3ListViewItem</a> * <i>item</i>, int <i>iteratorFlags</i> )</h3>
+<p>Constructs an iterator for the <a href="q3listview.html">Q3ListView</a> that contains the <i>item</i> using the flags <i>iteratorFlags</i>. The current iterator item is set to point to <i>item</i> or the next matching item if <i>item</i> doesn't match the flags.</p>
+<p>See also <a href="q3listviewitemiterator.html#IteratorFlag-enum">Q3ListViewItemIterator::IteratorFlag</a>.</p>
+<h3 class="fn"><a name="Q3ListViewItemIterator-4"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ( const Q3ListViewItemIterator &amp; <i>it</i> )</h3>
+<p>Constructs an iterator for the same <a href="q3listview.html">Q3ListView</a> as <i>it</i>. The current iterator item is set to point on the current item of <i>it</i>.</p>
+<h3 class="fn"><a name="Q3ListViewItemIterator-5"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ( <a href="q3listview.html">Q3ListView</a> * <i>lv</i> )</h3>
+<p>Constructs an iterator for the <a href="q3listview.html">Q3ListView</a> <i>lv</i>. The current iterator item is set to point on the first child (<a href="q3listviewitem.html">Q3ListViewItem</a>) of <i>lv</i>.</p>
+<h3 class="fn"><a name="Q3ListViewItemIterator-6"></a>Q3ListViewItemIterator::Q3ListViewItemIterator ( <a href="q3listview.html">Q3ListView</a> * <i>lv</i>, int <i>iteratorFlags</i> )</h3>
+<p>Constructs an iterator for the <a href="q3listview.html">Q3ListView</a> <i>lv</i> with the flags <i>iteratorFlags</i>. The current iterator item is set to point on the first child (<a href="q3listviewitem.html">Q3ListViewItem</a>) of <i>lv</i> that matches the flags.</p>
+<p>See also <a href="q3listviewitemiterator.html#IteratorFlag-enum">Q3ListViewItemIterator::IteratorFlag</a>.</p>
+<h3 class="fn"><a name="dtor.Q3ListViewItemIterator"></a>Q3ListViewItemIterator::~Q3ListViewItemIterator ()</h3>
+<p>Destroys the iterator.</p>
+<h3 class="fn"><a name="current"></a><a href="q3listviewitem.html">Q3ListViewItem</a> * Q3ListViewItemIterator::current () const</h3>
+<p>Returns iterator's current item.</p>
+<h3 class="fn"><a name="operator-2a"></a><a href="q3listviewitem.html">Q3ListViewItem</a> * Q3ListViewItemIterator::operator* ()</h3>
+<p>Dereference operator. Returns a reference to the current item. The same as <a href="q3listviewitemiterator.html#current">current</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>Q3ListViewItemIterator &amp; Q3ListViewItemIterator::operator++ ()</h3>
+<p>Prefix ++. Makes the next item the new current item and returns it. Returns 0 if the current item is the last item or the <a href="q3listview.html">Q3ListView</a> is 0.</p>
+<h3 class="fn"><a name="operator-2b-2b-2"></a>const Q3ListViewItemIterator Q3ListViewItemIterator::operator++ ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Postfix ++. Makes the next item the new current item and returns the item that <i>was</i> the current item.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>Q3ListViewItemIterator &amp; Q3ListViewItemIterator::operator+= ( int <i>j</i> )</h3>
+<p>Sets the current item to the item <i>j</i> positions after the current item. If that item is beyond the last item, the current item is set to 0. Returns the current item.</p>
+<h3 class="fn"><a name="operator--"></a>Q3ListViewItemIterator &amp; Q3ListViewItemIterator::operator-- ()</h3>
+<p>Prefix --. Makes the previous item the new current item and returns it. Returns 0 if the current item is the first item or the <a href="q3listview.html">Q3ListView</a> is 0.</p>
+<h3 class="fn"><a name="operator---2"></a>const Q3ListViewItemIterator Q3ListViewItemIterator::operator-- ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Postfix --. Makes the previous item the new current item and returns the item that <i>was</i> the current item.</p>
+<h3 class="fn"><a name="operator--eq"></a>Q3ListViewItemIterator &amp; Q3ListViewItemIterator::operator-= ( int <i>j</i> )</h3>
+<p>Sets the current item to the item <i>j</i> positions before the current item. If that item is before the first item, the current item is set to 0. Returns the current item.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3ListViewItemIterator &amp; Q3ListViewItemIterator::operator= ( const Q3ListViewItemIterator &amp; <i>it</i> )</h3>
+<p>Assignment. Makes a copy of <i>it</i> and returns a reference to its iterator.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

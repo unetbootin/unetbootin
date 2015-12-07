@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-envvars.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux Environment Variables</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux Environment Variables<br /><span class="subtitle"></span>
+</h1>
+<p>These environment variables are relevant to <a href="qt-embedded.html">Qt for Embedded Linux</a> users.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Variable</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><b>POINTERCAL_FILE</b> <a name="pointercal-file"></a></td><td>Specifies the file containing the data used to calibrate the pointer device.<p>See also QWSCalibratedMouseHandler and <a href="qt-embedded-pointer.html">Qt for Embedded Linux Pointer Handling</a>.</p>
+</td></tr>
+<tr valign="top" class="even"><td><b>QT_ONSCREEN_PAINT</b> <a name="qt-onscreen-paint"></a></td><td>If defined, the application will render its widgets directly on screen. The affected regions of the screen will not be modified by the screen driver unless another window with a higher focus requests (parts of) the same region.<p>Setting this environment variable is equivalent to setting the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> attribute for all the widgets in the application.</p>
+<p>See also the Qt for Embedded Linux <a href="qt-embedded-architecture.html#graphics-rendering">graphics rendering</a> documentation.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>QWS_SW_CURSOR</b> <a name="qws-sw-cursor"></a></td><td>If defined, the software mouse cursor is always used (even when using an accelerated driver that supports a hardware cursor).</td></tr>
+<tr valign="top" class="even"><td><b>QWS_DISPLAY</b> <a name="qws-display"></a></td><td>Specifies the display type and framebuffer. For example, if the current shell is bash, ksh, zsh or sh:<pre>          export QWS_DISPLAY=&lt;driver&gt;[:&lt;driver specific options&gt;]...
+                  [:&lt;display num&gt;]</pre>
+<p>The valid values for the <tt>&lt;driver&gt;</tt> argument are <tt>LinuxFb</tt>, <tt>QVFb</tt>, <tt>VNC</tt>, <tt>Transformed</tt>, <tt>Multi</tt> and keys identifying custom drivers, and the <tt>&lt;display num&gt;</tt> argument is used to separate screens that are using the same screen driver and to enable multiple displays (see the <a href="qt-embedded-running.html">Running Qt for Embedded Linux Applications</a> documentation for more details).</p>
+<p>The driver specific options are described in the <a href="qt-embedded-displaymanagement.html">display management</a> documentation.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>QWS_SIZE</b> <a name="qws-size"></a></td><td>Specifies the size of the <a href="qt-embedded.html">Qt for Embedded Linux</a> window which is centered within the screen. For example, if the current shell is bash, ksh, zsh or sh:<pre>         export QWS_SIZE=&lt;width&gt;x&lt;height&gt;</pre>
+</td></tr>
+<tr valign="top" class="even"><td><b>QWS_MOUSE_PROTO</b> <a name="qws-mouse-proto"></a></td><td>Specifies the driver for pointer handling. For example, if the current shell is bash, ksh, zsh or sh:<pre>         export QWS_MOUSE_PROTO=&lt;driver&gt;[:&lt;driver specific options&gt;]</pre>
+<p>The valid values for the <tt>&lt;driver&gt;</tt> argument are <tt>MouseMan</tt>, <tt>IntelliMouse</tt>, <tt>Microsoft</tt>, <tt>VR41xx</tt>, <tt>LinuxTP</tt>, <tt>Yopy</tt>. <tt>Tslib</tt> and keys identifying custom drivers, and the driver specific options are typically a device, e.g&#x2e;, <tt>/dev/mouse</tt> for mouse devices and <tt>/dev/ts</tt> for touch panels.</p>
+<p>Multiple keyboard drivers can be specified in one go:</p>
+<pre>          export QWS_MOUSE_PROTO=&quot;&lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]&quot;</pre>
+<p>Input will be read from all specified drivers. Note that the <tt>Vr41xx</tt> driver also accepts two optional arguments: <tt>press=&lt;value&gt;</tt> defining a mouseclick (the default value is 750) and <tt>filter=&lt;value&gt;</tt> specifying the length of the filter used to eliminate noise (the default length is 3). For example:</p>
+<pre>         export QWS_MOUSE_PROTO=&quot;Vr41xx:press=500:/dev/misc/ts&quot;</pre>
+<p>See also <a href="qt-embedded-pointer.html">Qt for Embedded Linux Pointer Handling</a>.</p>
+</td></tr>
+<tr valign="top" class="odd"><td><b>QWS_KEYBOARD</b> <a name="qws-keyboard"></a></td><td>Specifies the driver and device for character input. For example, if the current shell is bash, ksh, zsh or sh:<pre>          export QWS_KEYBOARD=&lt;driver&gt;[:&lt;driver specific options&gt;]</pre>
+<p>The valid values for the <tt>&lt;driver&gt;</tt> argument are <tt>SL5000</tt>, <tt>Yopy</tt>, <tt>VR41xx</tt>, <tt>TTY</tt>, <tt>USB</tt> and keys identifying custom drivers, and the driver specific options are typically a device, e.g&#x2e;, <tt>/dev/tty0</tt>.</p>
+<p>Multiple keyboard drivers can be specified in one go:</p>
+<pre>          export QWS_KEYBOARD=&quot;&lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]&quot;</pre>
+<p>Input will be read from all specified drivers.</p>
+<p>See also <a href="qt-embedded-charinput.html">Qt for Embedded Linux Character Input</a>.</p>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

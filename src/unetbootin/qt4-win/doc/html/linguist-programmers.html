@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/linguist-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Linguist Manual: Programmers</title>
+  <link rel="prev" href="linguist-translators.html" />
+  <link rel="contents" href="linguist-manual.html" />
+  <link rel="next" href="linguist-ts-file-format.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="linguist-translators.html">Qt Linguist Manual: Translators</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-ts-file-format.html">Qt Linguist Manual: TS File Format</a>]
+</p>
+<h1 class="title">Qt Linguist Manual: Programmers<br /><span class="subtitle"></span>
+</h1>
+<p>Support for multiple languages is extremely simple in Qt applications, and adds little overhead to the programmer's workload.</p>
+<p>Qt minimizes the performance cost of using translations by translating the phrases for each window as they are created. In most applications the main window is created just once. Dialogs are often created once and then shown and hidden as required. Once the initial translation has taken place there is no further runtime overhead for the translated windows. Only those windows that are created, destroyed and subsequently created will have a translation performance cost.</p>
+<p>Creating applications that can switch language at runtime is possible with Qt, but requires a certain amount of programmer intervention and will of course incur some runtime performance cost.</p>
+<a name="making-the-application-translation-aware"></a>
+<h2>Making the Application Translation-Aware</h2>
+<p>Programmers should make their application look for and load the appropriate translation file and mark user-visible text and Ctrl keyboard accelerators as targets for translation.</p>
+<p>Each piece of text that requires translating requires context to help the translator identify where in the program the text occurs. In the case of multiple identical texts that require different translations, the translator also requires some information to disambiguate the source texts. Marking text for translation will automatically cause the class name to be used as basic context information. In some cases the programmer may be required to add additional information to help the translator.</p>
+<a name="creating-translation-files"></a>
+<h3>Creating Translation Files</h3>
+<p>Translation files consist of all the user-visible text and Ctrl key accelerators in an application and translations of that text. Translation files are created as follows:</p>
+<ol type="1">
+<li>Run <a href="linguist-manager.html#lupdate">lupdate</a> initially to generate the first set of <tt>.ts</tt> translation source files with all the user-visible text but no translations.</li>
+<li>The <tt>.ts</tt> files are given to the translator who adds translations using <i>Qt Linguist</i>. <i>Qt Linguist</i> takes care of any changed or deleted source text.</li>
+<li>Run <a href="linguist-manager.html#lupdate">lupdate</a> to incorporate any new text added to the application. <a href="linguist-manager.html#lupdate">lupdate</a> synchronizes the user-visible text from the application with the translations; it does not destroy any data.</li>
+<li>Steps 2 and 3 are repeated as often as necessary.</li>
+<li>When a release of the application is needed <a href="linguist-manager.html#lrelease">lrelease</a> is run to read the <tt>.ts</tt> files and produce the <tt>.qm</tt> files used by the application at runtime.</li>
+</ol>
+<p>For <a href="linguist-manager.html#lupdate">lupdate</a> to work successfully, it must know which translation files to produce. The files are simply listed in the application's <tt>.pro</tt> Qt project file, for example:</p>
+<pre> TRANSLATIONS = arrowpad_fr.ts \
+                arrowpad_nl.ts</pre>
+<p>See the <a href="linguist-manager.html#lupdate">lupdate</a> and <a href="linguist-manager.html#lrelease">lrelease</a> sections.</p>
+<a name="loading-translations"></a>
+<h3>Loading Translations</h3>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);</pre>
+<p>This is how a simple <tt>main()</tt> function of a Qt application begins.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QTranslator translator;
+     translator.load(&quot;hellotr_la&quot;);
+     app.installTranslator(&amp;translator);</pre>
+<p>For a translation-aware application a translator object is created, a translation is loaded and the translator object installed into the application.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QString locale = QLocale::system().name();
+
+     QTranslator translator;
+     translator.load(QString(&quot;arrowpad_&quot;) + locale);
+     app.installTranslator(&amp;translator);</pre>
+<p>In production applications a more flexible approach, for example, loading translations according to locale, might be more appropriate. If the <tt>.ts</tt> files are all named according to a convention such as <i>appname_locale</i>, e.g&#x2e; <tt>tt2_fr</tt>, <tt>tt2_de</tt> etc, then the code above will load the current locale's translation at runtime.</p>
+<p>If there is no translation file for the current locale the application will fall back to using the original source text.</p>
+<p>Note that if you need to programmatically add translations at runtime, you can reimplement <a href="qtranslator.html#translate">QTranslator::translate</a>().</p>
+<a name="making-the-application-translate-user-visible-strings"></a>
+<h3>Making the Application Translate User-Visible Strings</h3>
+<p>User-visible strings are marked as translation targets by wrapping them in a <tt>tr()</tt> call, for example:</p>
+<pre>         button = new QPushButton(&quot;&amp;Quit&quot;, this);</pre>
+<p>would become</p>
+<pre>         button = new QPushButton(tr(&quot;&amp;Quit&quot;), this);</pre>
+<p>All <a href="qobject.html">QObject</a> subclasses that use the <tt>Q_OBJECT</tt> macro implement the <tt>tr()</tt> function.</p>
+<p>Although the <tt>tr()</tt> call is normally made directly since it is usually called as a member function of a <a href="qobject.html">QObject</a> subclass, in other cases an explicit class name can be supplied, for example:</p>
+<pre>             QPushButton::tr(&quot;&amp;Quit&quot;)</pre>
+<p>or</p>
+<pre>             QObject::tr(&quot;&amp;Quit&quot;)</pre>
+<a name="distinguishing-identical-strings-that-require-different-translations"></a>
+<h3>Distinguishing Identical Strings That Require Different Translations</h3>
+<p>The <a href="linguist-manager.html#lupdate">lupdate</a> program automatically provides a <i>context</i> for every source text. This context is the class name of the class that contains the <tt>tr()</tt> call. This is sufficient in the vast majority of cases. Sometimes however, the translator will need further information to uniquely identify a source text; for example, a dialog that contained two separate frames, each of which contained an &quot;Enabled&quot; option would need each identified because in some languages the translation would differ between the two. This is easily achieved using the two argument form of the <tt>tr()</tt> call, e.g&#x2e;</p>
+<pre>            rbc = new QRadioButton(tr(&quot;Enabled&quot;, &quot;Color frame&quot;), this);</pre>
+<p>and</p>
+<pre>            rbh = new QRadioButton(tr(&quot;Enabled&quot;, &quot;Hue frame&quot;), this);</pre>
+<p>Ctrl key accelerators are also translatable:</p>
+<pre>     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;, &quot;Quit&quot;));</pre>
+<p>It is strongly recommended that the two argument form of <tt>tr()</tt> is used for Ctrl key accelerators. The second argument is the only clue the translator has as to the function performed by the accelerator.</p>
+<a name="helping-the-translator-with-navigation-information"></a>
+<h3>Helping the Translator with Navigation Information</h3>
+<p>In large complex applications it may be difficult for the translator to see where a particular source text comes from. This problem can be solved by adding a comment using the keyword <i>TRANSLATOR</i> which describes the navigation steps to reach the text in question; e.g&#x2e;</p>
+<pre>         /*
+             TRANSLATOR FindDialog
+
+             Choose Edit|Find from the menu bar or press Ctrl+F to pop up the
+             Find dialog.
+
+             ...</pre>
+<p>These comments are particularly useful for widget classes.</p>
+<a name="handling-plural-forms"></a>
+<h3>Handling Plural Forms</h3>
+<p>Qt includes a <tt>tr()</tt> overload that will make it very easy to write &quot;plural-aware&quot; internationalized applications. This overload has the following signature:</p>
+<pre>     QString tr(const char *text, const char *comment, int n);</pre>
+<p>Depending on the value of <tt>n</tt>, the <tt>tr()</tt> function will return a different translation, with the correct grammatical number for the target language. Also, any occurrence of <tt>%n</tt> is replaced with <tt>n</tt>'s value. For example:</p>
+<pre>     tr(&quot;%n item(s) replaced&quot;, &quot;&quot;, count);</pre>
+<p>If a French translation is loaded, this will expand to &quot;0 item remplacé&quot;, &quot;1 item remplacé&quot;, &quot;2 items remplacés&quot;, etc., depending on <tt>n</tt>'s value. And if no translation is loaded, the orignal string is used, with <tt>%n</tt> replaced with count's value (e.g&#x2e;, &quot;6 item(s) replaced&quot;).</p>
+<p>To handle plural forms in the native language, you need to load a translation file for this language, too. <a href="linguist-manager.html#lupdate">lupdate</a> has the <tt>-pluralonly</tt> command line option, which allows the creation of <tt>.ts</tt> files containing only entries with plural forms.</p>
+<p>See the <a href="http://doc.trolltech.com/qq/">Qt Quarterly</a> Article <a href="http://doc.trolltech.com/qq/qq19-plurals.html">Plural Forms in Translations</a> for further details on this issue.</p>
+<a name="coping-with-c-namespaces"></a>
+<h3>Coping With C++ Namespaces</h3>
+<p>C++ namespaces and the <tt>using namespace</tt> statement can confuse <a href="linguist-manager.html#lupdate">lupdate</a>. It will interpret <tt>MyClass::tr()</tt> as meaning just that, not as <tt>MyNamespace::MyClass::tr()</tt>, even if <tt>MyClass</tt> is defined in the <tt>MyNamespace</tt> namespace. Runtime translation of these strings will fail because of that.</p>
+<p>You can work around this limitation by putting a <i>TRANSLATOR</i> comment at the beginning of the source files that use <tt>MyClass::tr()</tt>:</p>
+<pre>         /*
+             TRANSLATOR MyNamespace::MyClass
+
+             Necessary for lupdate.
+
+             ...</pre>
+<p>After the comment, all references to <tt>MyClass::tr()</tt> will be understood as meaning <tt>MyNamespace::MyClass::tr()</tt>.</p>
+<a name="translating-text-that-is-outside-of-a-qobject-subclass"></a>
+<h3>Translating Text That is Outside of a QObject Subclass</h3>
+<a name="using-qcoreapplication-translate"></a>
+<h4>Using QCoreApplication::translate()</h4>
+<p>If the quoted text is not in a member function of a <a href="qobject.html">QObject</a> subclass, use either the tr() function of an appropriate class, or the <a href="qcoreapplication.html#translate">QCoreApplication::translate</a>() function directly:</p>
+<pre>         void some_global_function(LoginWidget *logwid)
+         {
+             QLabel *label = new QLabel(
+                     LoginWidget::tr(&quot;Password:&quot;), logwid);
+         }
+
+         void same_global_function(LoginWidget *logwid)
+         {
+             QLabel *label = new QLabel(
+                     qApp-&gt;translate(&quot;LoginWidget&quot;, &quot;Password:&quot;),
+                     logwid);
+         }</pre>
+<a name="using-qt-tr-noop-and-qt-translate-noop"></a>
+<h4>Using QT_TR_NOOP() and QT_TRANSLATE_NOOP()</h4>
+<p>If you need to have translatable text completely outside a function, there are two macros to help: <a href="qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>() and <a href="qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>(). These macros merely mark the text for extraction by <a href="linguist-manager.html#lupdate">lupdate</a>. The macros expand to just the text (without the context).</p>
+<p>Example of <a href="qtglobal.html#QT_TR_NOOP">QT_TR_NOOP</a>():</p>
+<pre>         QString FriendlyConversation::greeting(int greet_type)
+         {
+             static const char* greeting_strings[] = {
+                 QT_TR_NOOP(&quot;Hello&quot;),
+                 QT_TR_NOOP(&quot;Goodbye&quot;)
+             };
+             return tr(greeting_strings[greet_type]);
+         }</pre>
+<p>Example of <a href="qtglobal.html#QT_TRANSLATE_NOOP">QT_TRANSLATE_NOOP</a>():</p>
+<pre>         static const char* greeting_strings[] = {
+             QT_TRANSLATE_NOOP(&quot;FriendlyConversation&quot;, &quot;Hello&quot;),
+             QT_TRANSLATE_NOOP(&quot;FriendlyConversation&quot;, &quot;Goodbye&quot;)
+         };
+
+         QString FriendlyConversation::greeting(int greet_type)
+         {
+             return tr(greeting_strings[greet_type]);
+         }
+
+         QString global_greeting(int greet_type)
+         {
+             return qApp-&gt;translate(&quot;FriendlyConversation&quot;,
+                                     greeting_strings[greet_type]);
+         }</pre>
+<a name="tutorials"></a>
+<h2>Tutorials</h2>
+<p>Three tutorials are presented:</p>
+<ol type="1">
+<li><a href="linguist-hellotr.html">Hello tr()</a> demonstrates the creation of a <a href="qtranslator.html">QTranslator</a> object. It also shows the simplest use of the <tt>tr()</tt> function to mark user-visible source text for translation.</li>
+<li><a href="linguist-arrowpad.html">Arrow Pad</a> explains how to make the application load the translation file applicable to the current locale. It also shows the use of the two-argument form of <tt>tr()</tt> which provides additional information to the translator.</li>
+<li><a href="linguist-trollprint.html">Troll Print</a> explains how identical source texts can be distinguished even when they occur in the same context. This tutorial also discusses how the translation tools help minimize the translator's work when an application is upgraded.</li>
+</ol>
+<p>These tutorials cover all that you need to know to prepare your Qt applications for translation.</p>
+<p>At the beginning of a project add the translation source files to be used to the project file and add calls to <a href="linguist-manager.html#lupdate">lupdate</a> and <a href="linguist-manager.html#lrelease">lrelease</a> to the makefile.</p>
+<p>During the project all the programmer must do is wrap any user-visible text in <tt>tr()</tt> calls. They should also use the two argument form for Ctrl key accelerators, or when asked by the translator for the cases where the same text translates into two different forms in the same context. The programmer should also include <tt>TRANSLATION</tt> comments to help the translator navigate the application.</p>
+<p>
+[Previous: <a href="linguist-translators.html">Qt Linguist Manual: Translators</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-ts-file-format.html">Qt Linguist Manual: TS File Format</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

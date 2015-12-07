@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qmotifstyle.cpp -->
+<head>
+  <title>Qt 4.4: QMotifStyle Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMotifStyle Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QMotifStyle class provides Motif look and feel. <a href="#details">More...</a></p>
+<pre> #include &lt;QMotifStyle&gt;</pre><p>Inherits <a href="qcommonstyle.html">QCommonStyle</a>.</p>
+<p>Inherited by <a href="qcdestyle.html">QCDEStyle</a>.</p>
+<ul>
+<li><a href="qmotifstyle-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmotifstyle.html#QMotifStyle">QMotifStyle</a></b> ( bool <i>useHighlightCols</i> = false )</li>
+<li><div class="fn"/>virtual <b><a href="qmotifstyle.html#dtor.QMotifStyle">~QMotifStyle</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qmotifstyle.html#setUseHighlightColors">setUseHighlightColors</a></b> ( bool <i>arg</i> )</li>
+<li><div class="fn"/>bool <b><a href="qmotifstyle.html#useHighlightColors">useHighlightColors</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>23 public functions inherited from <a href="qstyle.html#public-functions">QStyle</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>6 static public members inherited from <a href="qstyle.html#static-public-members">QStyle</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>2 protected slots inherited from <a href="qstyle.html#protected-slots">QStyle</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMotifStyle class provides Motif look and feel.</p>
+<p>This class implements the Motif look and feel. It closely resembles the original Motif look as defined by the Open Group, but with some minor improvements. The Motif style is Qt's default GUI style on Unix platforms.</p>
+<p align="center"><img src="images/qmotifstyle.png" /></p><p>See also <a href="qwindowsxpstyle.html">QWindowsXPStyle</a>, QMacStyle, <a href="qwindowsstyle.html">QWindowsStyle</a>, <a href="qplastiquestyle.html">QPlastiqueStyle</a>, and <a href="qcdestyle.html">QCDEStyle</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMotifStyle"></a>QMotifStyle::QMotifStyle ( bool <i>useHighlightCols</i> = false )</h3>
+<p>Constructs a <a href="qmotifstyle.html">QMotifStyle</a>.</p>
+<p>If <i>useHighlightCols</i> is false (the default), the style will polish the application's color palette to emulate the Motif way of highlighting, which is a simple inversion between the base and the text color.</p>
+<h3 class="fn"><a name="dtor.QMotifStyle"></a>QMotifStyle::~QMotifStyle ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the style.</p>
+<h3 class="fn"><a name="setUseHighlightColors"></a>void QMotifStyle::setUseHighlightColors ( bool <i>arg</i> )</h3>
+<p>If <i>arg</i> is false, the style will polish the application's color palette to emulate the Motif way of highlighting, which is a simple inversion between the base and the text color.</p>
+<p>The effect will show up the next time an application palette is set via <a href="qapplication.html#setPalette">QApplication::setPalette</a>(). The current color palette of the application remains unchanged.</p>
+<p>See also <a href="qmotifstyle.html#useHighlightColors">useHighlightColors</a>() and <a href="qstyle.html#polish">QStyle::polish</a>().</p>
+<h3 class="fn"><a name="useHighlightColors"></a>bool QMotifStyle::useHighlightColors () const</h3>
+<p>Returns true if the style treats the highlight colors of the palette in a Motif-like manner, which is a simple inversion between the base and the text color; otherwise returns false. The default is false.</p>
+<p>See also <a href="qmotifstyle.html#setUseHighlightColors">setUseHighlightColors</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

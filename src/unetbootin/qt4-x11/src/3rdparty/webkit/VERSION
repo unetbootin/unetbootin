@@ -1,0 +1,11 @@
+This is a snapshot of the Qt port of WebKit from
+
+        git://code.staikos.net/webkit
+
+The commit imported was from the
+
+        origin/qtwebkit-4.5 branch/tag
+
+and has the sha1 checksum
+
+        f4e8c655a868c8b2fcc16dc2f809ea4948a9574b

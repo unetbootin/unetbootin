@@ -1,0 +1,17 @@
+<html>
+<body>
+<p><b>Identifiers</b> are mostly used to make keywords unique, but they can also
+be used to specify keywords which should not be shown in the index. Identifiers
+are especially help full when using context sensitive help and one keyword has
+more links assigned to it.</p>
+<p>E.g. consider the keyword "replace" in Qt. It is 
+included, among others, in QString and QList. To be able to retrieve the proper
+documentation, there is an identifier "QString::replace" and one
+"QList::replace".</p>
+<p>A <b>global prefix</b>, e.g. "MyApp::" is set for all keywords independent
+where they are located. When <b>inheriting</b> the prefix from the file name,
+the keywords get the prefix "[filename]::" where the file name is taken from the
+reference of the keyword. The file name is just the base name, i.e. without any
+directory or extension.</p>
+</body>
+</html>

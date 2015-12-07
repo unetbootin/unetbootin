@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/mac-differences.qdoc -->
+<head>
+  <title>Qt 4.4: Qt/Mac-Specific Issues</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt/Mac-Specific Issues<br /><span class="subtitle"></span>
+</h1>
+<p>This file outlines known issues and possible workarounds for limitations on Mac OS X with Qt. Contact Trolltech support if you find additional issues which are not covered here.</p>
+<p>See also the document <a href="qtmac-as-native.html">Qt/Mac is Mac OS X Native</a>.</p>
+<ul><li><a href="#gui-applications">GUI Applications</a></li>
+<li><a href="#painting">Painting</a></li>
+<li><a href="#library-support">Library Support</a></li>
+<ul><li><a href="#qt-libraries-as-frameworks">Qt libraries as frameworks</a></li>
+<li><a href="#bundle-based-libraries">Bundle-Based Libraries</a></li>
+<li><a href="#combining-libraries">Combining Libraries</a></li>
+<li><a href="#initialization-order">Initialization Order</a></li>
+</ul>
+<li><a href="#compiler-settings">Compiler Settings</a></li>
+<ul><li><a href="#compile-time-flags">Compile-Time Flags</a></li>
+</ul>
+<li><a href="#mac-os-x-native-api-access">Mac OS X Native API Access</a></li>
+<ul><li><a href="#accessing-the-bundle-path">Accessing the Bundle Path</a></li>
+<li><a href="#translating-the-application-menu-and-native-dialogs">Translating the Application Menu and Native Dialogs</a></li>
+</ul>
+<li><a href="#user-interface">User Interface</a></li>
+<ul><li><a href="#right-mouse-clicks">Right-Mouse Clicks</a></li>
+<li><a href="#menu-bar">Menu Bar</a></li>
+<li><a href="#special-keys">Special Keys</a></li>
+</ul>
+<li><a href="#limitations">Limitations</a></li>
+<ul><li><a href="#menu-actions">Menu Actions</a></li>
+<li><a href="#native-widgets">Native Widgets</a></li>
+</ul>
+</ul>
+<a name="gui-applications"></a>
+<h3>GUI Applications</h3>
+<p>GUI Applications must be run out of a bundle (something like widgets.app/) or using the open(1) command. Mac OS X needs this to dispatch events correctly, as well as gaining access to the menu bar.</p>
+<p>If you are using older versions of GDB you must run with the full path to the executable. Later versions allow you to pass the bundle name on the command line.</p>
+<a name="painting"></a>
+<h3>Painting</h3>
+<p>Mac OS X always double buffers the screen so the <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a> attribute has no effect. Also it is impossible to paint outside of a paint event so <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOutsidePaintEvent</a> has no effect either.</p>
+<a name="library-support"></a>
+<h3>Library Support</h3>
+<a name="qt-libraries-as-frameworks"></a>
+<h4>Qt libraries as frameworks</h4>
+<p>By default, Qt is built as a set of frameworks. This is the Mac OS X &quot;preferred&quot; way of distributing libraries (and there are some definite advantages to using them) see <a href="http://developer.apple.com/documentation/MacOSX/Conceptual/BPFrameworks/index.html">Apple's Framework Programming Guide</a> for more info.</p>
+<p>In general, this shouldn't be an issue as qmake will take care of the specifics for you. However, there are a couple of things you need to keep in mind when using frameworks over normal dynamic libraries. Most are included in the Framework Programming Guide, but one that you may not be aware of is that:</p>
+<p><b>frameworks will always link with the &quot;release&quot; version of a library</b>.</p>
+<p>This means that if you want to actually use a &quot;debug&quot; version of a Qt framework, you must make sure that the application actually loads the debug version. This is usually done by using the DYLD_IMAGE_SUFFIX environment variables. However, for several reasons, this typically doesn't work so well. Instead, you can temporarily swap your debug and release versions. This is documented in <a href="http://developer.apple.com/technotes/tn2004/tn2124.html#SECJUSTONELIB">Apple's &quot;Debugging Magic&quot; technical note</a>.</p>
+<p>If you do not wish to use frameworks simply configure Qt with <tt>-no-framework</tt>.</p>
+<a name="bundle-based-libraries"></a>
+<h4>Bundle-Based Libraries</h4>
+<p>If you want to incorporate dynamic libraries as part of your Mac OS X application bundle (the application directory), then you place these into a directory called Frameworks, a subdirectory of the application bundle.</p>
+<p>The application finds these dynamic libraries if the libraries have an install name of &quot;@executable_path/../Frameworks/libname.dylib.</p>
+<p>If you use <tt>qmake</tt> and Makefiles, use the <tt>QMAKE_LFLAGS_SONAME</tt> setting:</p>
+<pre>         QMAKE_LFLAGS_SONAME  = -Wl,-install_name,@executable_path/../Frameworks/</pre>
+<p>Alternatively you can modify the intall name using the install_name_tool(1) command line tool. See its manpage for more information.</p>
+<p>Note that the <tt>DYLD_LIBRARY_PATH</tt> environment variable will override these settings, and any other default paths such as a lookup of dynamic libraries inside <tt>/usr/lib</tt> and similar default locations.</p>
+<a name="combining-libraries"></a>
+<h4>Combining Libraries</h4>
+<p>If you want to build a new dynamic library combining the Qt 4 dynamic libraries, you need to introduce the <tt>ld -r</tt> flag. Then relocation information is stored in the the output file, so that this file could be the subject of another <tt>ld</tt> run. This is done by setting the <tt>-r</tt> flag in the <tt>.pro</tt> file, and the <tt>LFLAGS</tt> settings.</p>
+<a name="initialization-order"></a>
+<h4>Initialization Order</h4>
+<p>dyld(1) will call global static initializers in the order in which they are linked into your application. If a library links against Qt and references globals in Qt (from global initializers in your own library) you should be sure to link against Qt before your library, otherwise the result will be undefined (as Qt's global initializers have not been called yet).</p>
+<a name="compiler-settings"></a>
+<h3>Compiler Settings</h3>
+<a name="compile-time-flags"></a>
+<h4>Compile-Time Flags</h4>
+<p>There are two flags that are helpful when wanting to define Mac OS X specific code:</p>
+<ul>
+<li><a href="qtglobal.html#Q_OS_DARWIN">Q_OS_DARWIN</a> is defined when Qt detects you are on a Darwin-based system (including the Open Source version)</li>
+<li><a href="qtglobal.html#Q_WS_MAC">Q_WS_MAC</a> is defined when we the Mac OS X GUI is present.</li>
+</ul>
+<p>Q_OS_MAC is defined as a convenience and is available whenever <a href="qtglobal.html#Q_OS_DARWIN">Q_OS_DARWIN</a> is defined.</p>
+<p>If you desire to define for specific versions of Mac OS X, use the availability macros defined in /usr/include/AvailabilityMacros.h.</p>
+<p>See <a href="qsysinfo.html">QSysInfo</a> for information on runtime version checking.</p>
+<a name="mac-os-x-native-api-access"></a>
+<h3>Mac OS X Native API Access</h3>
+<a name="accessing-the-bundle-path"></a>
+<h4>Accessing the Bundle Path</h4>
+<p>The Mac OS X application is actually a directory (ending with <tt>.app</tt>). This directory has various sub-directories and sources. It may be useful to place items (e.g&#x2e; plugins, online-documentation, etc.) inside this bundle. You will then you need to find out where the bundle resides on the disk. The following code will return the path of the application bundle:</p>
+<pre>     #ifdef Q_WS_MAC
+         CFURLRef appUrlRef = CFBundleCopyBundleURL(CFBundleGetMainBundle());
+         CFStringRef macPath = CFURLCopyFileSystemPath(appUrlRef,
+                                                kCFURLPOSIXPathStyle);
+         const char *pathPtr = CFStringGetCStringPtr(macPath,
+                                                CFStringGetSystemEncoding());
+         qDebug(&quot;Path = %s&quot;, pathPtr);
+         CFRelease(appUrlRef);
+         CFRelease(macPath);
+     #endif</pre>
+<p>More information about using the CFBundle API is available on <a href="http://developer.apple.com/documentation/CoreFoundation/Reference/CFBundleRef/index.html">Apple's Developer Website</a>.</p>
+<a name="translating-the-application-menu-and-native-dialogs"></a>
+<h4>Translating the Application Menu and Native Dialogs</h4>
+<p>The items in the Application Menu will be merged correctly for your localized application, but they will not show up translated until you add a localized resource folder <a href="http://developer.apple.com/documentation/CoreFoundation/Conceptual/CFBundles/Concepts/BundleAnatomy.html">inside the Bundle</a>:</p>
+<p>And look for the heading: Adding Localized Resources</p>
+<p>The main thing you need to do is create a file called locversion.plist. Here is an example one for Norwegian:</p>
+<pre>         &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+         &lt;!DOCTYPE plist PUBLIC &quot;-//Apple Computer//DTD PLIST 1.0//EN&quot;
+         &quot;http://www.apple.com/DTDs/PropertyList-1.0.dtd&quot;&gt;
+         &lt;plist version=&quot;1.0&quot;&gt;
+         &lt;dict&gt;
+             &lt;key&gt;LprojCompatibleVersion&lt;/key&gt;
+             &lt;string&gt;123&lt;/string&gt;
+             &lt;key&gt;LprojLocale&lt;/key&gt;
+             &lt;string&gt;no&lt;/string&gt;
+             &lt;key&gt;LprojRevisionLevel&lt;/key&gt;
+             &lt;string&gt;1&lt;/string&gt;
+             &lt;key&gt;LprojVersion&lt;/key&gt;
+             &lt;string&gt;123&lt;/string&gt;
+         &lt;/dict&gt;
+         &lt;/plist&gt;</pre>
+<p>Then when you run the application with your preferred language set to Norwegian you should see menu items like &quot;Avslutt&quot; instead of &quot;Quit&quot;.</p>
+<a name="user-interface"></a>
+<h3>User Interface</h3>
+<a name="right-mouse-clicks"></a>
+<h4>Right-Mouse Clicks</h4>
+<p>If you want to provide right-mouse click support for Mac OS X, use the <a href="qcontextmenuevent.html">QContextMenuEvent</a> class. This will map to a context menu event, in other words a menu that will display a pop-up selection. This is the most common use of right-mouse clicks, and maps to a control-click with the Mac OS X one-button mouse support.</p>
+<a name="menu-bar"></a>
+<h4>Menu Bar</h4>
+<p>Qt/Mac will automatically detect your menu bars for you and turn them into Mac native menu bars. Fitting this into your existing Qt application will normally be automatic, however, if you have special needs the Qt/Mac implementation currently selects a menu bar by starting at the active window (i.e&#x2e; <a href="qapplication.html#activeWindow">QApplication::activeWindow</a>()), and applying the following tests:</p>
+<ol type="1">
+<li>If the window has a <a href="qmenubar.html">QMenuBar</a> then it is used.</li>
+<li>If the window is a modal then its menu bar is used. If no menu bar is specified then a default menu bar is used (as documented below).</li>
+<li>If the window has no parent then the default menu bar is used (as documented below).</li>
+</ol>
+<p>These tests are followed all the way up the parent window chain until one of the above is satisifed. If all else fails a default menu bar will be created, the default menu bar on Qt/Mac is an empty menu bar, however you can create a different default menu bar by creating a parentless <a href="qmenubar.html">QMenuBar</a>; the first one created will be designated the default menu bar, and will be used whenever a default menu bar is needed.</p>
+<p>Note that using native menu bars introduces certain limitations on Qt classes. See the <a href="#limitations">list of limitations</a> below for more information about these.</p>
+<a name="special-keys"></a>
+<h4>Special Keys</h4>
+<p>To provide the expected behavior for Qt applications on Mac OS X, the Qt::Meta, <a href="qt.html#KeyboardModifier-enum">Qt::MetaModifier</a>, and <a href="qt.html#Modifier-enum">Qt::META</a> enum values correspond to the Control keys on the standard Macintosh keyboard, and the Qt::Control, <a href="qt.html#KeyboardModifier-enum">Qt::ControlModifier</a>, and <a href="qt.html#Modifier-enum">Qt::CTRL</a> enum values correspond to the Command keys.</p>
+<a name="limitations"></a>
+<h3>Limitations</h3>
+<a name="menu-actions"></a>
+<h4>Menu Actions</h4>
+<ul>
+<li>Actions in into a <a href="qmenu.html">QMenu</a> with accelerators that have more than one keystroke (<a href="qkeysequence.html">QKeySequence</a>) will not display correctly when the <a href="qmenu.html">QMenu</a> is translated into a Mac native menu bar. The first key will be displayed, however the shortcut will still be activated as on all other platforms.</li>
+<li><a href="qmenu.html">QMenu</a> objects used in the native menu bar are not able to handle &quot;show&quot;, &quot;hide&quot;, and &quot;mouse move&quot; events. Reimplementations of <a href="qwidget.html#showEvent">showEvent()</a>, <a href="qwidget.html#hideEvent">hideEvent()</a>, and <a href="qwidget.html#mouseMoveEvent">mouseMoveEvent()</a> in <a href="qmenu.html">QMenu</a> subclasses will not be called for menus used in this way.</li>
+</ul>
+<a name="native-widgets"></a>
+<h4>Native Widgets</h4>
+<p>Qt/Mac has support for sheets and drawers, represented in the window flags by <a href="qt.html#WindowType-enum">Qt::Sheet</a> and <a href="qt.html#WindowType-enum">Qt::Drawer</a> respectiviely. Brushed metal windows can also be created by using the <a href="qt.html#WidgetAttribute-enum">Qt::WA_MacMetalStyle</a> window attribute.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

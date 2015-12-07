@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qicon.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QIcon</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QIcon</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qicon.html">QIcon class reference</a></li></ul></p>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qicon-qt3.html#Size-enum">Size</a></b> { Small, Large, Automatic }</li>
+</ul>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QPixmap <b><a href="qicon-qt3.html#pixmap-2">pixmap</a></b> ( Size <i>size</i>, Mode <i>mode</i>, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qicon-qt3.html#pixmap-3">pixmap</a></b> ( Size <i>size</i>, bool <i>enabled</i>, State <i>state</i> = Off ) const</li>
+<li><div class="fn"/>QPixmap <b><a href="qicon-qt3.html#pixmap-4">pixmap</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qicon-qt3.html#reset">reset</a></b> ( const QPixmap &amp; <i>pixmap</i>, Size <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qicon-qt3.html#setPixmap">setPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i>, Size <i>size</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off )</li>
+<li><div class="fn"/>void <b><a href="qicon-qt3.html#setPixmap-2">setPixmap</a></b> ( const QString &amp; <i>fileName</i>, Size <i>size</i>, Mode <i>mode</i> = Normal, State <i>state</i> = Off )</li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QSize <b><a href="qicon-qt3.html#pixmapSize">pixmapSize</a></b> ( Size <i>which</i> )</li>
+<li><div class="fn"/>void <b><a href="qicon-qt3.html#setPixmapSize">setPixmapSize</a></b> ( Size <i>which</i>, const QSize &amp; <i>size</i> )</li>
+</ul>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Size-enum"></a>enum QIcon::Size</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QIcon::Small</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Use QStyle::pixelMetric(<a href="qstyle.html#PixelMetric-enum">QStyle::PM_SmallIconSize</a>) instead.</td></tr>
+<tr><td valign="top"><tt>QIcon::Large</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Use QStyle::pixelMetric(<a href="qstyle.html#PixelMetric-enum">QStyle::PM_LargeIconSize</a>) instead.</td></tr>
+<tr><td valign="top"><tt>QIcon::Automatic</tt></td><td align="center" valign="top"><tt>Small</tt></td><td valign="top">N/A.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="pixmap-2"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap ( <a href="qicon-qt3.html#Size-enum">Size</a> <i>size</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use pixmap(<a href="qsize.html">QSize</a>(..&#x2e;), <i>mode</i>, <i>state</i>), where the first argument is an appropriate <a href="qsize.html">QSize</a> instead of a <a href="qicon-qt3.html#Size-enum">Size</a> value.</p>
+<p>See also <a href="qicon-qt3.html#pixmapSize">pixmapSize</a>().</p>
+<h3 class="fn"><a name="pixmap-3"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap ( <a href="qicon-qt3.html#Size-enum">Size</a> <i>size</i>, bool <i>enabled</i>, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use pixmap(<a href="qsize.html">QSize</a>(..&#x2e;), mode, <i>state</i>), where the first argument is an appropriate <a href="qsize.html">QSize</a> instead of a <a href="qicon-qt3.html#Size-enum">Size</a> value, and the second argument is <a href="qicon.html#Mode-enum">QIcon::Normal</a> or <a href="qicon.html#Mode-enum">QIcon::Disabled</a>, depending on the value of <i>enabled</i>.</p>
+<p>See also <a href="qicon-qt3.html#pixmapSize">pixmapSize</a>().</p>
+<h3 class="fn"><a name="pixmap-4"></a><a href="qpixmap.html">QPixmap</a> QIcon::pixmap () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use one of the other <a href="qicon.html#pixmap">pixmap</a>() overloads.</p>
+<h3 class="fn"><a name="pixmapSize"></a><a href="qsize.html">QSize</a> QIcon::pixmapSize ( <a href="qicon-qt3.html#Size-enum">Size</a> <i>which</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Use <a href="qstyle.html#pixelMetric">QStyle::pixelMetric</a>() with <a href="qstyle.html#PixelMetric-enum">QStyle::PM_SmallIconSize</a> or <a href="qstyle.html#PixelMetric-enum">QStyle::PM_LargeIconSize</a> as the first argument, depending on <i>which</i>.</p>
+<p>See also <a href="qicon-qt3.html#setPixmapSize">setPixmapSize</a>().</p>
+<h3 class="fn"><a name="reset"></a>void QIcon::reset ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, <a href="qicon-qt3.html#Size-enum">Size</a> <i>size</i> )</h3>
+<p>Use the constructor that takes a <a href="qpixmap.html">QPixmap</a> and operator=().</p>
+<h3 class="fn"><a name="setPixmap"></a>void QIcon::setPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, <a href="qicon-qt3.html#Size-enum">Size</a> <i>size</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off )</h3>
+<p>Use addPixmap(<i>pixmap</i>, <i>mode</i>, <i>state</i>) instead. The <i>size</i> parameter is ignored.</p>
+<p>See also <a href="qicon.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="setPixmap-2"></a>void QIcon::setPixmap ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, <a href="qicon-qt3.html#Size-enum">Size</a> <i>size</i>, <a href="qicon.html#Mode-enum">Mode</a> <i>mode</i> = Normal, <a href="qicon.html#State-enum">State</a> <i>state</i> = Off )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use addFile(<i>fileName</i>, <i>mode</i>, <i>state</i>) instead. The <i>size</i> parameter is ignored.</p>
+<h3 class="fn"><a name="setPixmapSize"></a>void QIcon::setPixmapSize ( <a href="qicon-qt3.html#Size-enum">Size</a> <i>which</i>, const <a href="qsize.html">QSize</a> &amp; <i>size</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>The <a href="qicon.html#pixmap">pixmap</a>() function now takes a <a href="qsize.html">QSize</a> instead of a <a href="qicon-qt3.html#Size-enum">QIcon::Size</a>, so there is no need for this function in new code.</p>
+<p>See also <a href="qicon-qt3.html#pixmapSize">pixmapSize</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

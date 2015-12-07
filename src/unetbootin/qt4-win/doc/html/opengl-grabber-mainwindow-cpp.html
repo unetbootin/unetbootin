@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (opengl/grabber/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">opengl/grabber/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &lt;QtOpenGL&gt;
+
+ #include &quot;glwidget.h&quot;
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     centralWidget = new QWidget;
+     setCentralWidget(centralWidget);
+
+     glWidget = new GLWidget;
+     pixmapLabel = new QLabel;
+
+     glWidgetArea = new QScrollArea;
+     glWidgetArea-&gt;setWidget(glWidget);
+     glWidgetArea-&gt;setWidgetResizable(true);
+     glWidgetArea-&gt;setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     glWidgetArea-&gt;setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
+     glWidgetArea-&gt;setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+     glWidgetArea-&gt;setMinimumSize(50, 50);
+
+     pixmapLabelArea = new QScrollArea;
+     pixmapLabelArea-&gt;setWidget(pixmapLabel);
+     pixmapLabelArea-&gt;setSizePolicy(QSizePolicy::Ignored, QSizePolicy::Ignored);
+     pixmapLabelArea-&gt;setMinimumSize(50, 50);
+
+     xSlider = createSlider(SIGNAL(xRotationChanged(int)),
+                            SLOT(setXRotation(int)));
+     ySlider = createSlider(SIGNAL(yRotationChanged(int)),
+                            SLOT(setYRotation(int)));
+     zSlider = createSlider(SIGNAL(zRotationChanged(int)),
+                            SLOT(setZRotation(int)));
+
+     createActions();
+     createMenus();
+
+     QGridLayout *centralLayout = new QGridLayout;
+     centralLayout-&gt;addWidget(glWidgetArea, 0, 0);
+     centralLayout-&gt;addWidget(pixmapLabelArea, 0, 1);
+     centralLayout-&gt;addWidget(xSlider, 1, 0, 1, 2);
+     centralLayout-&gt;addWidget(ySlider, 2, 0, 1, 2);
+     centralLayout-&gt;addWidget(zSlider, 3, 0, 1, 2);
+     centralWidget-&gt;setLayout(centralLayout);
+
+     xSlider-&gt;setValue(15 * 16);
+     ySlider-&gt;setValue(345 * 16);
+     zSlider-&gt;setValue(0 * 16);
+
+     setWindowTitle(tr(&quot;Grabber&quot;));
+     resize(400, 300);
+ }
+
+ void MainWindow::renderIntoPixmap()
+ {
+     QSize size = getSize();
+     if (size.isValid()) {
+         QPixmap pixmap = glWidget-&gt;renderPixmap(size.width(), size.height());
+         setPixmap(pixmap);
+     }
+ }
+
+ void MainWindow::grabFrameBuffer()
+ {
+     QImage image = glWidget-&gt;grabFrameBuffer();
+     setPixmap(QPixmap::fromImage(image));
+ }
+
+ void MainWindow::clearPixmap()
+ {
+     setPixmap(QPixmap());
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Grabber&quot;),
+             tr(&quot;The &lt;b&gt;Grabber&lt;/b&gt; example demonstrates two approaches for &quot;
+                &quot;rendering OpenGL into a Qt pixmap.&quot;));
+ }
+
+ void MainWindow::createActions()
+ {
+     renderIntoPixmapAct = new QAction(tr(&quot;&amp;Render into Pixmap...&quot;), this);
+     renderIntoPixmapAct-&gt;setShortcut(tr(&quot;Ctrl+R&quot;));
+     connect(renderIntoPixmapAct, SIGNAL(triggered()),
+             this, SLOT(renderIntoPixmap()));
+
+     grabFrameBufferAct = new QAction(tr(&quot;&amp;Grab Frame Buffer&quot;), this);
+     grabFrameBufferAct-&gt;setShortcut(tr(&quot;Ctrl+G&quot;));
+     connect(grabFrameBufferAct, SIGNAL(triggered()),
+             this, SLOT(grabFrameBuffer()));
+
+     clearPixmapAct = new QAction(tr(&quot;&amp;Clear Pixmap&quot;), this);
+     clearPixmapAct-&gt;setShortcut(tr(&quot;Ctrl+L&quot;));
+     connect(clearPixmapAct, SIGNAL(triggered()), this, SLOT(clearPixmap()));
+
+     exitAct = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAct-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAct, SIGNAL(triggered()), this, SLOT(close()));
+
+     aboutAct = new QAction(tr(&quot;&amp;About&quot;), this);
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+
+     aboutQtAct = new QAction(tr(&quot;About &amp;Qt&quot;), this);
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(renderIntoPixmapAct);
+     fileMenu-&gt;addAction(grabFrameBufferAct);
+     fileMenu-&gt;addAction(clearPixmapAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }
+
+ QSlider *MainWindow::createSlider(const char *changedSignal,
+                                   const char *setterSlot)
+ {
+     QSlider *slider = new QSlider(Qt::Horizontal);
+     slider-&gt;setRange(0, 360 * 16);
+     slider-&gt;setSingleStep(16);
+     slider-&gt;setPageStep(15 * 16);
+     slider-&gt;setTickInterval(15 * 16);
+     slider-&gt;setTickPosition(QSlider::TicksRight);
+     connect(slider, SIGNAL(valueChanged(int)), glWidget, setterSlot);
+     connect(glWidget, changedSignal, slider, SLOT(setValue(int)));
+     return slider;
+ }
+
+ void MainWindow::setPixmap(const QPixmap &amp;pixmap)
+ {
+     pixmapLabel-&gt;setPixmap(pixmap);
+     QSize size = pixmap.size();
+     if (size - QSize(1, 0) == pixmapLabelArea-&gt;maximumViewportSize())
+         size -= QSize(1, 0);
+     pixmapLabel-&gt;resize(size);
+ }
+
+ QSize MainWindow::getSize()
+ {
+     bool ok;
+     QString text = QInputDialog::getText(this, tr(&quot;Grabber&quot;),
+                                          tr(&quot;Enter pixmap size:&quot;),
+                                          QLineEdit::Normal,
+                                          tr(&quot;%1 x %2&quot;).arg(glWidget-&gt;width())
+                                                       .arg(glWidget-&gt;height()),
+                                          &amp;ok);
+     if (!ok)
+         return QSize();
+
+     QRegExp regExp(tr(&quot;([0-9]+) *x *([0-9]+)&quot;));
+     if (regExp.exactMatch(text)) {
+         int width = regExp.cap(1).toInt();
+         int height = regExp.cap(2).toInt();
+         if (width &gt; 0 &amp;&amp; width &lt; 2048 &amp;&amp; height &gt; 0 &amp;&amp; height &lt; 2048)
+             return QSize(width, height);
+     }
+
+     return glWidget-&gt;size();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

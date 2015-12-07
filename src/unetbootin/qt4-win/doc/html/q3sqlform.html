@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/sql/q3sqlform.cpp -->
+<head>
+  <title>Qt 4.4: Q3SqlForm Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3SqlForm Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3SqlForm class creates and manages data entry forms tied to SQL databases. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3SqlForm&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsqlform">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="q3sqlform-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3sqlform.html#Q3SqlForm">Q3SqlForm</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3sqlform.html#dtor.Q3SqlForm">~Q3SqlForm</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3sqlform.html#count">count</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="q3sqlform.html#fieldToWidget">fieldToWidget</a></b> ( QSqlField * <i>field</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#insert">insert</a></b> ( QWidget * <i>widget</i>, const QString &amp; <i>field</i> )</li>
+<li><div class="fn"/>void <b><a href="q3sqlform.html#installPropertyMap">installPropertyMap</a></b> ( Q3SqlPropertyMap * <i>pmap</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#remove-2">remove</a></b> ( const QString &amp; <i>field</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#setRecord">setRecord</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="q3sqlform.html#widget">widget</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>QSqlField * <b><a href="q3sqlform.html#widgetToField">widgetToField</a></b> ( QWidget * <i>widget</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#clearValues">clearValues</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#readField">readField</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#readFields">readFields</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#writeField">writeField</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#writeFields">writeFields</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#insert-2">insert</a></b> ( QWidget * <i>widget</i>, QSqlField * <i>field</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3sqlform.html#remove">remove</a></b> ( QWidget * <i>widget</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3SqlForm class creates and manages data entry forms tied to SQL databases.</p>
+<p>Typical use of a Q3SqlForm consists of the following steps:</p>
+<ul>
+<li>Create the widgets you want to appear in the form.</li>
+<li>Create a cursor and navigate to the record to be edited.</li>
+<li>Create the Q3SqlForm.</li>
+<li>Set the form's record buffer to the cursor's update buffer.</li>
+<li>Insert each widget and the field it is to edit into the form.</li>
+<li>Use <a href="q3sqlform.html#readFields">readFields</a>() to update the editor widgets with values from the database's fields.</li>
+<li>Display the form and let the user edit values etc.</li>
+<li>Use <a href="q3sqlform.html#writeFields">writeFields</a>() to update the database's field values with the values in the editor widgets.</li>
+</ul>
+<p>Note that a Q3SqlForm does not access the database directly, but most often via QSqlFields which are part of a <a href="q3sqlcursor.html">Q3SqlCursor</a>. A <a href="q3sqlcursor.html#insert">Q3SqlCursor::insert</a>(), <a href="q3sqlcursor.html#update">Q3SqlCursor::update</a>() or <a href="q3sqlcursor.html#del">Q3SqlCursor::del</a>() call is needed to actually write values to the database.</p>
+<p>Some sample code to initialize a form successfully:</p>
+<pre>     QLineEdit  myEditor(this);
+     Q3SqlForm   myForm(this);
+     Q3SqlCursor myCursor(&quot;mytable&quot;);
+
+     // Execute a query to make the cursor valid
+     myCursor.select();
+     // Move the cursor to a valid record (the first record)
+     myCursor.next();
+     // Set the form's record pointer to the cursor's edit buffer (which
+     // contains the current record's values)
+     myForm.setRecord(myCursor.primeUpdate());
+
+     // Insert a field into the form that uses myEditor to edit the
+     // field 'somefield' in 'mytable'
+     myForm.insert(&amp;myEditor, &quot;somefield&quot;);
+
+     // Update myEditor with the value from the mapped database field
+     myForm.readFields();
+     ...
+     // Let the user edit the form
+     ...
+     // Update the database
+     myForm.writeFields();  // Update the cursor's edit buffer from the form
+     myCursor.update();        // Update the database from the cursor's buffer</pre>
+<p>If you want to use custom editors for displaying and editing data fields, you must install a custom <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a>. The form uses this object to get or set the value of a widget.</p>
+<p>See also <a href="q3sqlform.html#installPropertyMap">installPropertyMap</a>() and <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3SqlForm"></a>Q3SqlForm::Q3SqlForm ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="q3sqlform.html">Q3SqlForm</a> with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.Q3SqlForm"></a>Q3SqlForm::~Q3SqlForm ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="clear"></a>void Q3SqlForm::clear ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Removes every widget, and the fields they're mapped to, from the form.</p>
+<h3 class="fn"><a name="clearValues"></a>void Q3SqlForm::clearValues ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears the values in all the widgets, and the fields they are mapped to, in the form, and sets them to NULL.</p>
+<h3 class="fn"><a name="count"></a>int Q3SqlForm::count () const</h3>
+<p>Returns the number of widgets in the form.</p>
+<h3 class="fn"><a name="fieldToWidget"></a><a href="qwidget.html">QWidget</a> * Q3SqlForm::fieldToWidget ( <a href="qsqlfield.html">QSqlField</a> * <i>field</i> ) const</h3>
+<p>Returns the widget that field <i>field</i> is mapped to.</p>
+<h3 class="fn"><a name="insert"></a>void Q3SqlForm::insert ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, const <a href="qstring.html">QString</a> &amp; <i>field</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts a <i>widget</i>, and the name of the <i>field</i> it is to be mapped to, into the form. To actually associate inserted widgets with an edit buffer, use <a href="q3sqlform.html#setRecord">setRecord</a>().</p>
+<p>See also <a href="q3sqlform.html#setRecord">setRecord</a>().</p>
+<h3 class="fn"><a name="insert-2"></a>void Q3SqlForm::insert ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, <a href="qsqlfield.html">QSqlField</a> * <i>field</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a <i>widget</i>, and the <i>field</i> it is to be mapped to, into the form.</p>
+<h3 class="fn"><a name="installPropertyMap"></a>void Q3SqlForm::installPropertyMap ( <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a> * <i>pmap</i> )</h3>
+<p>Installs a custom <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a>. This is useful if you plan to create your own custom editor widgets.</p>
+<p><a href="q3sqlform.html">Q3SqlForm</a> takes ownership of <i>pmap</i>, so <i>pmap</i> is deleted when <a href="q3sqlform.html">Q3SqlForm</a> goes out of scope.</p>
+<p>See also <a href="q3datatable.html#installEditorFactory">Q3DataTable::installEditorFactory</a>().</p>
+<h3 class="fn"><a name="readField"></a>void Q3SqlForm::readField ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Updates the widget <i>widget</i> with the value from the SQL field it is mapped to. Nothing happens if no SQL field is mapped to the <i>widget</i>.</p>
+<h3 class="fn"><a name="readFields"></a>void Q3SqlForm::readFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Updates the widgets in the form with current values from the SQL fields they are mapped to.</p>
+<h3 class="fn"><a name="remove"></a>void Q3SqlForm::remove ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Removes a <i>widget</i>, and hence the field it's mapped to, from the form.</p>
+<h3 class="fn"><a name="remove-2"></a>void Q3SqlForm::remove ( const <a href="qstring.html">QString</a> &amp; <i>field</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Removes <i>field</i> from the form.</p>
+<h3 class="fn"><a name="setRecord"></a>void Q3SqlForm::setRecord ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets <i>buf</i> as the record buffer for the form. To force the display of the data from <i>buf</i>, use <a href="q3sqlform.html#readFields">readFields</a>().</p>
+<p>See also <a href="q3sqlform.html#readFields">readFields</a>() and <a href="q3sqlform.html#writeFields">writeFields</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * Q3SqlForm::widget ( int <i>i</i> ) const</h3>
+<p>Returns the <i>i</i>-th widget in the form. Useful for traversing the widgets in the form.</p>
+<h3 class="fn"><a name="widgetToField"></a><a href="qsqlfield.html">QSqlField</a> * Q3SqlForm::widgetToField ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the SQL field that widget <i>widget</i> is mapped to.</p>
+<h3 class="fn"><a name="writeField"></a>void Q3SqlForm::writeField ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Updates the SQL field with the value from the <i>widget</i> it is mapped to. Nothing happens if no SQL field is mapped to the <i>widget</i>.</p>
+<h3 class="fn"><a name="writeFields"></a>void Q3SqlForm::writeFields ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Updates the SQL fields with values from the widgets they are mapped to. To actually update the database with the contents of the record buffer, use <a href="q3sqlcursor.html#insert">Q3SqlCursor::insert</a>(), <a href="q3sqlcursor.html#update">Q3SqlCursor::update</a>() or <a href="q3sqlcursor.html#del">Q3SqlCursor::del</a>() as appropriate.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

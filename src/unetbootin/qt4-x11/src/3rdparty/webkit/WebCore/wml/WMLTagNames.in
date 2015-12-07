@@ -1,0 +1,34 @@
+namespace="WML"
+namespaceURI="http://www.wapforum.org/DTD/wml_1.1.xml"
+guardFactoryWith="ENABLE(WML)"
+
+a
+access
+anchor
+br interfaceName=WMLBRElement
+card
+do
+fieldset interfaceName=WMLFieldSetElement
+go
+head interfaceName=WMLElement
+img interfaceName=WMLImageElement
+# Note: 'insertedLegend' is not an official WML element - internal purpose only!
+insertedLegend interfaceName=WMLInsertedLegendElement
+meta
+noop
+onevent interfaceName=WMLOnEventElement
+p
+postfield
+prev
+refresh
+setvar
+table
+td interfaceName=WMLElement
+template
+timer
+tr interfaceName=WMLElement
+
+#if 0
+# These elements have a corresponding HTML*Element class, that we want to share code with.
+# input, optgroup, option, select
+#endif

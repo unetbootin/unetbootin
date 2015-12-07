@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qstackedwidget.cpp -->
+<head>
+  <title>Qt 4.4: QStackedWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStackedWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStackedWidget class provides a stack of widgets where only one widget is visible at a time. <a href="#details">More...</a></p>
+<pre> #include &lt;QStackedWidget&gt;</pre><p>Inherits <a href="qframe.html">QFrame</a>.</p>
+<ul>
+<li><a href="qstackedwidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstackedwidget.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="qstackedwidget.html#currentIndex-prop">currentIndex</a></b> : int</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstackedwidget.html#QStackedWidget">QStackedWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qstackedwidget.html#dtor.QStackedWidget">~QStackedWidget</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qstackedwidget.html#addWidget">addWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>int <b><a href="qstackedwidget.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstackedwidget.html#currentIndex-prop">currentIndex</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qstackedwidget.html#currentWidget">currentWidget</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qstackedwidget.html#indexOf">indexOf</a></b> ( QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qstackedwidget.html#insertWidget">insertWidget</a></b> ( int <i>index</i>, QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>void <b><a href="qstackedwidget.html#removeWidget">removeWidget</a></b> ( QWidget * <i>widget</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="qstackedwidget.html#widget">widget</a></b> ( int <i>index</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qstackedwidget.html#currentIndex-prop">setCurrentIndex</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a></b> ( QWidget * <i>widget</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qstackedwidget.html#currentChanged">currentChanged</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qstackedwidget.html#widgetRemoved">widgetRemoved</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStackedWidget class provides a stack of widgets where only one widget is visible at a time.</p>
+<p>QStackedWidget can be used to create a user interface similar to the one provided by <a href="qtabwidget.html">QTabWidget</a>. It is a convenience layout widget built on top of the <a href="qstackedlayout.html">QStackedLayout</a> class.</p>
+<p>Like <a href="qstackedlayout.html">QStackedLayout</a>, QStackedWidget can be constructed and populated with a number of child widgets (&quot;pages&quot;):</p>
+<pre>     QWidget *firstPageWidget = new QWidget;
+     QWidget *secondPageWidget = new QWidget;
+     QWidget *thirdPageWidget = new QWidget;
+
+     QStackedWidget *stackedWidget = new QStackedWidget;
+     stackedWidget-&gt;addWidget(firstPageWidget);
+     stackedWidget-&gt;addWidget(secondPageWidget);
+     stackedWidget-&gt;addWidget(thirdPageWidget);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(stackedWidget);
+     setLayout(layout);</pre>
+<p>QStackedWidget provides no intrinsic means for the user to switch page. This is typically done through a <a href="qcombobox.html">QComboBox</a> or a <a href="qlistwidget.html">QListWidget</a> that stores the titles of the QStackedWidget's pages. For example:</p>
+<pre>     QComboBox *pageComboBox = new QComboBox;
+     pageComboBox-&gt;addItem(tr(&quot;Page 1&quot;));
+     pageComboBox-&gt;addItem(tr(&quot;Page 2&quot;));
+     pageComboBox-&gt;addItem(tr(&quot;Page 3&quot;));
+     connect(pageComboBox, SIGNAL(activated(int)),
+             stackedWidget, SLOT(setCurrentIndex(int)));</pre>
+<p>When populating a stacked widget, the widgets are added to an internal list. The <a href="qstackedwidget.html#indexOf">indexOf</a>() function returns the index of a widget in that list. The widgets can either be added to the end of the list using the <a href="qstackedwidget.html#addWidget">addWidget</a>() function, or inserted at a given index using the <a href="qstackedwidget.html#insertWidget">insertWidget</a>() function. The <a href="qstackedwidget.html#removeWidget">removeWidget</a>() function removes the widget at the given index from the stacked widget. The number of widgets contained in the stacked widget, can be obtained using the <a href="qstackedwidget.html#count-prop">count</a>() function.</p>
+<p>The <a href="qstackedwidget.html#widget">widget</a>() function returns the widget at a given index position. The index of the widget that is shown on screen is given by <a href="qstackedwidget.html#currentIndex-prop">currentIndex</a>() and can be changed using <a href="qstackedwidget.html#currentIndex-prop">setCurrentIndex</a>(). In a similar manner, the currently shown widget can be retrieved using the <a href="qstackedwidget.html#currentWidget">currentWidget</a>() function, and altered using the <a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a>() function.</p>
+<p>Whenever the current widget in the stacked widget changes or a widget is removed from the stacked widget, the <a href="qstackedwidget.html#currentChanged">currentChanged</a>() and <a href="qstackedwidget.html#widgetRemoved">widgetRemoved</a>() signals are emitted respectively.</p>
+<p>See also <a href="qstackedlayout.html">QStackedLayout</a>, <a href="qtabwidget.html">QTabWidget</a>, and <a href="dialogs-configdialog.html">Config Dialog Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of widgets contained by this stacked widget.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<p>See also <a href="qstackedwidget.html#currentIndex-prop">currentIndex</a>() and <a href="qstackedwidget.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="currentIndex-prop"></a>currentIndex : int</h3>
+<p>This property holds the index position of the widget that is visible.</p>
+<p>The current index is -1 if there is no current widget.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentIndex () const</b></li>
+<li><div class="fn"/><b>void setCurrentIndex ( int <i>index</i> )</b></li>
+</ul>
+<p>See also <a href="qstackedwidget.html#currentWidget">currentWidget</a>() and <a href="qstackedwidget.html#indexOf">indexOf</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStackedWidget"></a>QStackedWidget::QStackedWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qstackedwidget.html">QStackedWidget</a> with the given <i>parent</i>.</p>
+<p>See also <a href="qstackedwidget.html#addWidget">addWidget</a>() and <a href="qstackedwidget.html#insertWidget">insertWidget</a>().</p>
+<h3 class="fn"><a name="dtor.QStackedWidget"></a>QStackedWidget::~QStackedWidget ()</h3>
+<p>Destroys this stacked widget, and frees any allocated resources.</p>
+<h3 class="fn"><a name="addWidget"></a>int QStackedWidget::addWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Appends the given <i>widget</i> to this <a href="qstackedwidget.html">QStackedWidget</a> and returns the index position.</p>
+<p>If the <a href="qstackedwidget.html">QStackedWidget</a> is empty before this function is called, <i>widget</i> becomes the current widget.</p>
+<p>See also <a href="qstackedwidget.html#insertWidget">insertWidget</a>(), <a href="qstackedwidget.html#removeWidget">removeWidget</a>(), and <a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="currentChanged"></a>void QStackedWidget::currentChanged ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current widget changes.</p>
+<p>The parameter holds the <i>index</i> of the new current widget, or -1 if there isn't a new one (for example, if there are no widgets in the <a href="qstackedwidget.html">QStackedWidget</a>).</p>
+<p>See also <a href="qstackedwidget.html#currentWidget">currentWidget</a>() and <a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="currentWidget"></a><a href="qwidget.html">QWidget</a> * QStackedWidget::currentWidget () const</h3>
+<p>Returns the current widget, or 0 if there are no child widgets.</p>
+<p>See also <a href="qstackedwidget.html#currentIndex-prop">currentIndex</a>() and <a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="indexOf"></a>int QStackedWidget::indexOf ( <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>Returns the index of the given <i>widget</i>, or -1 if the given <i>widget</i> is not a child of this <a href="qstackedwidget.html">QStackedWidget</a>.</p>
+<p>See also <a href="qstackedwidget.html#currentIndex-prop">currentIndex</a>() and <a href="qstackedwidget.html#widget">widget</a>().</p>
+<h3 class="fn"><a name="insertWidget"></a>int QStackedWidget::insertWidget ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Inserts the given <i>widget</i> at the given <i>index</i> in this <a href="qstackedwidget.html">QStackedWidget</a>. If <i>index</i> is out of range, the <i>widget</i> is appended (in which case it is the actual index of the <i>widget</i> that is returned).</p>
+<p>If the <a href="qstackedwidget.html">QStackedWidget</a> was empty before this function is called, the given <i>widget</i> becomes the current widget.</p>
+<p>Inserting a new widget at an index less than or equal to the current index will increment the current index, but keep the current widget.</p>
+<p>See also <a href="qstackedwidget.html#addWidget">addWidget</a>(), <a href="qstackedwidget.html#removeWidget">removeWidget</a>(), and <a href="qstackedwidget.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="removeWidget"></a>void QStackedWidget::removeWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )</h3>
+<p>Removes the given <i>widget</i> from this <a href="qstackedwidget.html">QStackedWidget</a>. The widget is <i>not</i> deleted.</p>
+<p>See also <a href="qstackedwidget.html#addWidget">addWidget</a>(), <a href="qstackedwidget.html#insertWidget">insertWidget</a>(), and <a href="qstackedwidget.html#currentWidget">currentWidget</a>().</p>
+<h3 class="fn"><a name="setCurrentWidget"></a>void QStackedWidget::setCurrentWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the current widget to be the specified <i>widget</i>. The new current widget must already be contained in this stacked widget.</p>
+<p>See also <a href="qstackedwidget.html#currentWidget">currentWidget</a>() and <a href="qstackedwidget.html#currentIndex-prop">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QStackedWidget::widget ( int <i>index</i> ) const</h3>
+<p>Returns the widget at the given <i>index</i>, or 0 if there is no such widget.</p>
+<p>See also <a href="qstackedwidget.html#currentWidget">currentWidget</a>() and <a href="qstackedwidget.html#indexOf">indexOf</a>().</p>
+<h3 class="fn"><a name="widgetRemoved"></a>void QStackedWidget::widgetRemoved ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a widget is removed. The widget's <i>index</i> is passed as parameter.</p>
+<p>See also <a href="qstackedwidget.html#removeWidget">removeWidget</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

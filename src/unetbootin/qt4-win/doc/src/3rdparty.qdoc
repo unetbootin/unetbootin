@@ -1,0 +1,186 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page 3rdparty.html
+
+    \title Third-Party Licenses Used in Qt
+    \ingroup licensing
+    \brief License information for third-party libraries supplied with Qt.
+
+    Qt includes a number of third-party libraries that are used to provide
+    certain features. Unlike other
+    \l{Licenses for Code Used in Qt}{third-party code used in Qt}, these
+    libraries are supplied alongside the Qt modules.
+
+    Run \c{configure -help} to see any options that may be available for
+    controlling the use of these libraries.
+
+    \tableofcontents
+
+    \section1 FreeType 2 (\c freetype) version 2.3.5
+
+    \e{The FreeType project is a team of volunteers who develop free, portable
+    and high-quality software solutions for digital typography. We specifically
+    target embedded systems and focus on bringing small, efficient and
+    ubiquitous products.} -- quoted from \c 3rdparty/freetype/docs/freetype2.html.
+
+    See \c src/3rdparty/freetype/docs/FTL.txt and \c
+    src/3rdparty/freetype/docs/GPL.txt for license details.
+
+    See also the files in \c src/3rdparty/opentype, which are used by
+    FreeType.
+
+    Parts of the FreeType projects have been modified and put into Qt
+    for use in the painting subsystem. These files are ftraster.h,
+    ftraster.c, ftgrays.h and ftgrays.c. The following modifications
+    has been made to these files:
+
+    \list
+    \i Renamed FT_ and ft_ symbols to QT_FT_ and qt_ft_ to avoid name
+    conflicts.
+    \i Removed parts of code not relevant when compiled with
+    _STANDALONE_ defined.
+    \i Changed behavior in ftraster.c to follow X polygon filling
+    rules.
+    \i Implemented support in ftraster.c for winding / odd even
+    polygon fill rules.
+    \i Replaced bitmap generation with span generation in ftraster.c
+    \i Renamed: ftraster.h to qblackraster_p.h
+    \i Renamed: ftraster.c to qblackraster.c
+    \i Renamed: ftgrays.h to qgrayraster_p.h
+    \i Renamed: ftgrays.c to qgrayraster.c
+    \endlist
+
+    \section1 HarfBuzz (\c harfbuzz)
+
+    \e{This is HarfBuzz, an OpenType Layout engine.}
+
+    \e{It was derived originally from the OpenType code in FreeType-1.x, ported to
+    FreeType2.  (This code has been abandoned for FreeType2, but until something
+    better comes along, should serve our purposes.) In addition to porting to
+    FreeType-2, it has been modified in various other ways.} -- quoted from
+    \c src/3rdparty/harfbuzz/README.
+
+    See \c src/3rdparty/harfbuzz/COPYING.FTL and src/3rdparty/harfbuzz/COPYING.GPL
+    for license details.
+
+    \section1 MD5 (\c md5.cpp and \c md5.h)
+
+    \e{This code implements the MD5 message-digest algorithm.
+    The algorithm is due to Ron Rivest.  This code was
+    written by Colin Plumb in 1993, no copyright is claimed.
+    This code is in the public domain; do with it what you wish.} -- quoted from
+    \c src/3rdparty/md5/md5.h
+
+    See \c src/3rdparty/md5/md5.cpp and \c src/3rdparty/md5/md5.h for more
+    information about the terms and conditions under which the code is
+    supplied.
+
+    \section1 The Independent JPEG Group's JPEG Software (\c libjpeg) version 6b
+
+    \e{This package contains C software to implement JPEG image compression and
+    decompression.  JPEG (pronounced "jay-peg") is a standardized compression
+    method for full-color and gray-scale images.  JPEG is intended for compressing
+    "real-world" scenes; line drawings, cartoons and other non-realistic images
+    are not its strong suit.  JPEG is lossy, meaning that the output image is not
+    exactly identical to the input image.} -- quoted from \c
+    src/3rdparty/libjpeg/README.
+
+    See \c src/3rdparty/libjpeg/README for license details.
+
+    \section1 MNG Library (\c libmng) version 1.0.10
+
+    \e{The libmng library supports decoding, displaying, encoding, and various
+    other manipulations of the Multiple-image Network Graphics (MNG) format
+    image files. It uses the zlib compression library, and optionally the
+    JPEG library by the Independant JPEG Group (IJG) and/or
+    lcms (little cms), a color-management library by Marti Maria Saguer.}
+    -- quoted from \c src/3rdparty/libmng/doc/libmng.txt
+
+    See \c src/3rdparty/libmng/LICENSE for license details.
+
+    \section1 PNG Reference Library (\c libpng) version 1.2.25
+
+    \e{Libpng was written as a companion to the PNG specification, as a way
+    of reducing the amount of time and effort it takes to support the PNG
+    file format in application programs.} -- quoted from \c
+    src/3rdparty/libpng/libpng.txt.
+
+    See \c src/3rdparty/libpng/LICENSE for license details.
+
+    \section1 TIFF Software Distribution (\c libtiff) version 3.8.2
+
+    \e {libtiff is a set of C functions (a library) that support the
+    manipulation of TIFF image files.} -- quoted from \c
+    src/libtiff/html/libtiff.html
+
+    See \c src/3rdparty/libtiff/COPYRIGHT for license details.
+
+    \section1 SQLite (\c sqlite) version 3.5.4
+
+    \e{SQLite is a small C library that implements a
+    self-contained, embeddable, zero-configuration SQL database engine.}
+    -- quoted from \l{http://www.sqlite.org/}{www.sqlite.org}.
+
+    According to the comments in the source files, the code is in the public
+    domain. See the
+    \l{http://www.sqlite.org/copyright.html}{SQLite Copyright} page on the
+    SQLite web site for further information.
+
+    \section1 Wintab API (\c wintab)
+
+    Wintab is a de facto API for pointing devices on Windows. The
+    wintab code is from \l{http://www.pointing.com/WINTAB.HTM}.
+
+    See \c src/3rdparty/wintab/wintab.h for license details.
+
+    \section1 Data Compression Library (\c zlib) version 1.2.3
+
+    \e{zlib is a general purpose data compression library.  All the code
+    is thread safe.  The data format used by the zlib library is described
+    by RFCs (Request for Comments) 1950 to 1952} -- quoted from \c
+    src/3rdparty/zlib/README.
+
+    See \c src/3rdparty/zlib/README for license details.
+*/

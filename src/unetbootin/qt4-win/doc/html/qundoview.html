@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/util/qundoview.cpp -->
+<head>
+  <title>Qt 4.4: QUndoView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QUndoView Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QUndoView class displays the contents of a <a href="qundostack.html">QUndoStack</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QUndoView&gt;</pre><p>Inherits <a href="qlistview.html">QListView</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qundoview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qundoview.html#cleanIcon-prop">cleanIcon</a></b> : QIcon</li>
+<li><div class="fn"/><b><a href="qundoview.html#emptyLabel-prop">emptyLabel</a></b> : QString</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 properties inherited from <a href="qlistview.html#properties">QListView</a></li>
+<li><div class="fn"/>15 properties inherited from <a href="qabstractitemview.html#properties">QAbstractItemView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="qabstractscrollarea.html#properties">QAbstractScrollArea</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qundoview.html#QUndoView">QUndoView</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qundoview.html#QUndoView-2">QUndoView</a></b> ( QUndoStack * <i>stack</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qundoview.html#QUndoView-3">QUndoView</a></b> ( QUndoGroup * <i>group</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qundoview.html#dtor.QUndoView">~QUndoView</a></b> ()</li>
+<li><div class="fn"/>QIcon <b><a href="qundoview.html#cleanIcon-prop">cleanIcon</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qundoview.html#emptyLabel-prop">emptyLabel</a></b> () const</li>
+<li><div class="fn"/>QUndoGroup * <b><a href="qundoview.html#group">group</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundoview.html#cleanIcon-prop">setCleanIcon</a></b> ( const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qundoview.html#emptyLabel-prop">setEmptyLabel</a></b> ( const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>QUndoStack * <b><a href="qundoview.html#stack">stack</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qlistview.html#public-functions">QListView</a></li>
+<li><div class="fn"/>54 public functions inherited from <a href="qabstractitemview.html#public-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractscrollarea.html#public-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qundoview.html#setGroup">setGroup</a></b> ( QUndoGroup * <i>group</i> )</li>
+<li><div class="fn"/>void <b><a href="qundoview.html#setStack">setStack</a></b> ( QUndoStack * <i>stack</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public slots inherited from <a href="qabstractitemview.html#public-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qlistview.html#signals">QListView</a></li>
+<li><div class="fn"/>6 signals inherited from <a href="qabstractitemview.html#signals">QAbstractItemView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>2 protected functions inherited from <a href="qlistview.html#protected-functions">QListView</a></li>
+<li><div class="fn"/>33 protected functions inherited from <a href="qabstractitemview.html#protected-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>16 protected functions inherited from <a href="qabstractscrollarea.html#protected-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>9 protected slots inherited from <a href="qabstractitemview.html#protected-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qabstractscrollarea.html#protected-slots">QAbstractScrollArea</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QUndoView class displays the contents of a <a href="qundostack.html">QUndoStack</a>.</p>
+<p>QUndoView is a <a href="qlistview.html">QListView</a> which displays the list of commands pushed on an undo stack. The most recently executed command is always selected. Selecting a different command results in a call to <a href="qundostack.html#setIndex">QUndoStack::setIndex</a>(), rolling the state of the document backwards or forward to the new command.</p>
+<p>The stack can be set explicitly with <a href="qundoview.html#setStack">setStack</a>(). Alternatively, a <a href="qundogroup.html">QUndoGroup</a> object can be set with <a href="qundoview.html#setGroup">setGroup</a>(). The view will then update itself automatically whenever the active stack of the group changes.</p>
+<p align="center"><img src="images/qundoview.png" /></p><hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="cleanIcon-prop"></a>cleanIcon : <a href="qicon.html">QIcon</a></h3>
+<p>This property holds the icon used to represent the clean state.</p>
+<p>A stack may have a clean state set with <a href="qundostack.html#setClean">QUndoStack::setClean</a>(). This is usually the state of the document at the point it was saved. <a href="qundoview.html">QUndoView</a> can display an icon in the list of commands to show the clean state. If this proprety is a null icon, no icon is shown. The default value is the null icon.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QIcon cleanIcon () const</b></li>
+<li><div class="fn"/><b>void setCleanIcon ( const QIcon &amp; <i>icon</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="emptyLabel-prop"></a>emptyLabel : <a href="qstring.html">QString</a></h3>
+<p>This property holds the label used for the empty state.</p>
+<p>The empty label is the topmost element in the list of commands, which represents the state of the document before any commands were pushed on the stack. The default is the string &quot;&lt;empty&gt;&quot;.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString emptyLabel () const</b></li>
+<li><div class="fn"/><b>void setEmptyLabel ( const QString &amp; <i>label</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QUndoView"></a>QUndoView::QUndoView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new view with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="QUndoView-2"></a>QUndoView::QUndoView ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new view with parent <i>parent</i> and sets the observed stack to <i>stack</i>.</p>
+<h3 class="fn"><a name="QUndoView-3"></a>QUndoView::QUndoView ( <a href="qundogroup.html">QUndoGroup</a> * <i>group</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new view with parent <i>parent</i> and sets the observed group to <i>group</i>.</p>
+<p>The view will update itself autmiatically whenever the active stack of the group changes.</p>
+<h3 class="fn"><a name="dtor.QUndoView"></a>QUndoView::~QUndoView ()</h3>
+<p>Destroys this view.</p>
+<h3 class="fn"><a name="group"></a><a href="qundogroup.html">QUndoGroup</a> * QUndoView::group () const</h3>
+<p>Returns the group displayed by this view.</p>
+<p>If the view is not looking at group, this function returns 0.</p>
+<p>See also <a href="qundoview.html#setGroup">setGroup</a>() and <a href="qundoview.html#setStack">setStack</a>().</p>
+<h3 class="fn"><a name="setGroup"></a>void QUndoView::setGroup ( <a href="qundogroup.html">QUndoGroup</a> * <i>group</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the group displayed by this view to <i>group</i>. If <i>group</i> is 0, the view will be empty.</p>
+<p>The view will update itself autmiatically whenever the active stack of the group changes.</p>
+<p>See also <a href="qundoview.html#group">group</a>() and <a href="qundoview.html#setStack">setStack</a>().</p>
+<h3 class="fn"><a name="setStack"></a>void QUndoView::setStack ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the stack displayed by this view to <i>stack</i>. If <i>stack</i> is 0, the view will be empty.</p>
+<p>If the view was previously looking at a <a href="qundogroup.html">QUndoGroup</a>, the group is set to 0.</p>
+<p>See also <a href="qundoview.html#stack">stack</a>() and <a href="qundoview.html#setGroup">setGroup</a>().</p>
+<h3 class="fn"><a name="stack"></a><a href="qundostack.html">QUndoStack</a> * QUndoView::stack () const</h3>
+<p>Returns the stack currently displayed by this view. If the view is looking at a <a href="qundogroup.html">QUndoGroup</a>, this the group's active stack.</p>
+<p>See also <a href="qundoview.html#setStack">setStack</a>() and <a href="qundoview.html#setGroup">setGroup</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

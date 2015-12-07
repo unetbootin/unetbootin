@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtestlib.qdoc -->
+<head>
+  <title>Qt 4.4: QTestLib Manual</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTestLib Manual<br /><span class="subtitle"></span>
+</h1>
+<a name="qtestlib"></a><p>The <a href="#qtestlib">QTestLib</a> framework, provided by Trolltech, is a tool for unit testing Qt based applications and libraries. <a href="#qtestlib">QTestLib</a> provides all the functionality commonly found in unit testing frameworks as well as extensions for testing graphical user interfaces.</p>
+<p>Table of contents:</p>
+<ul><li><a href="#qtestlib-features">QTestLib Features</a></li>
+<li><a href="#qtestlib-api">QTestLib API</a></li>
+<li><a href="#using-qtestlib">Using QTestLib</a></li>
+<ul><li><a href="#creating-a-test">Creating a test</a></li>
+<li><a href="#building-a-test">Building a Test</a></li>
+<li><a href="#qtestlib-command-line-arguments">QTestLib Command Line Arguments</a></li>
+<ul><li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a></li>
+</ul>
+</ul>
+<li><a href="#using-qtestlib-remotely-on-windows-ce">Using QTestLib remotely on Windows CE</a></li>
+<ul><li><a href="#using">Using <tt>cetest</tt></a></li>
+<ul><li><a href="#syntax">Syntax</a></li>
+<li><a href="#options">Options</a></li>
+</ul>
+<li><a href="#qtremote">QtRemote</a></li>
+<li><a href="#requirements">Requirements</a></li>
+</ul>
+</ul>
+<a name="qtestlib-features"></a>
+<h3>QTestLib Features</h3>
+<p><a href="#qtestlib">QTestLib</a> is designed to ease the writing of unit tests for Qt based applications and libraries:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Feature</th><th>Details</th></tr></thead>
+<tr valign="top" class="odd"><td><b>Lightweight</b></td><td><a href="#qtestlib">QTestLib</a> consists of about 6000 lines of code and 60 exported symbols.</td></tr>
+<tr valign="top" class="even"><td><b>Self-contained</b></td><td><a href="#qtestlib">QTestLib</a> requires only a few symbols from the Qt Core library for non-gui testing.</td></tr>
+<tr valign="top" class="odd"><td><b>Rapid testing</b></td><td><a href="#qtestlib">QTestLib</a> needs no special test-runners; no special registration for tests.</td></tr>
+<tr valign="top" class="even"><td><b>Data-driven testing</b></td><td>A test can be executed multiple times with different test data.</td></tr>
+<tr valign="top" class="odd"><td><b>Basic GUI testing</b></td><td><a href="#qtestlib">QTestLib</a> offers functionality for mouse and keyboard simulation.</td></tr>
+<tr valign="top" class="even"><td><b>IDE friendly</b></td><td><a href="#qtestlib">QTestLib</a> outputs messages that can be interpreted by Visual Studio and KDevelop.</td></tr>
+<tr valign="top" class="odd"><td><b>Thread-safety</b></td><td>The error reporting is thread safe and atomic.</td></tr>
+<tr valign="top" class="even"><td><b>Type-safety</b></td><td>Extensive use of templates prevent errors introduced by implicit type casting.</td></tr>
+<tr valign="top" class="odd"><td><b>Easily extendable</b></td><td>Custom types can easily be added to the test data and test output.</td></tr>
+</table></p>
+<p>Note: For higher-level GUI and application testing needs, please see the <a href="http://www.trolltech.com/products/qt/3rdparty/tools">Qt testing products provided by Trolltech partners</a>.</p>
+<a name="qtestlib-api"></a>
+<h3>QTestLib API</h3>
+<p>All public methods are in the <a href="qtest.html">QTest</a> namespace. In addition, the <a href="qsignalspy.html">QSignalSpy</a> class provides easy introspection for Qt's signals and slots.</p>
+<a name="using-qtestlib"></a>
+<h3>Using QTestLib</h3>
+<a name="creating-a-test"></a>
+<h4>Creating a test</h4>
+<p>To create a test, subclass <a href="qobject.html">QObject</a> and add one or more private slots to it. Each private slot is a testfunction in your test. <a href="qtest.html#qExec">QTest::qExec</a>() can be used to execute all testfunctions in the test object.</p>
+<p>In addition, there are four private slots that are <i>not</i> treated as testfunctions. They will be executed by the testing framework and can be used to initialize and clean up either the entire test or the current test function.</p>
+<ul>
+<li><tt>initTestCase()</tt> will be called before the first testfunction is executed.</li>
+<li><tt>cleanupTestCase()</tt> will be called after the last testfunction was executed.</li>
+<li><tt>init()</tt> will be called before each testfunction is executed.</li>
+<li><tt>cleanup()</tt> will be called after every testfunction.</li>
+</ul>
+<p>If <tt>initTestCase()</tt> fails, no testfunction will be executed. If <tt>init()</tt> fails, the following testfunction will not be executed, the test will proceed to the next testfunction.</p>
+<p>Example:</p>
+<pre>     class MyFirstTest: public QObject
+     {
+         Q_OBJECT
+     private slots:
+         void initTestCase()
+         { qDebug(&quot;called before everything else&quot;); }
+         void myFirstTest()
+         { QVERIFY(1 == 1); }
+         void mySecondTest()
+         { QVERIFY(1 != 2); }
+         void cleanupTestCase()
+         { qDebug(&quot;called after myFirstTest and mySecondTest&quot;); }
+     };</pre>
+<p>For more examples, refer to the <a href="qtestlib-tutorial.html">QTestLib Tutorial</a>.</p>
+<a name="building-a-test"></a>
+<h4>Building a Test</h4>
+<p>If you are using <tt>qmake</tt> as your build tool, just add the following to your project file:</p>
+<pre>     QT += testlib</pre>
+<p>If you are using other buildtools, make sure that you add the location of the <a href="#qtestlib">QTestLib</a> header files to your include path (usually <tt>include/QtTest</tt> under your Qt installation directory). If you are using a release build of Qt, link your test to the <tt>QtTest</tt> library. For debug builds, use <tt>QtTest_debug</tt>.</p>
+<p>See <a href="qtestlib-tutorial1.html">Writing a Unit Test</a> for a step by step explanation.</p>
+<a name="qtestlib-command-line-arguments"></a>
+<h4>QTestLib Command Line Arguments</h4>
+<a name="syntax"></a>
+<h5>Syntax</h5>
+<p>The syntax to execute an autotest takes the following simple form:</p>
+<pre>     testname [options] [testfunctions[:testdata]]...</pre>
+<p>Substitute <tt>testname</tt> with the name of your executable. <tt>testfunctions</tt> can contain names of test functions to be executed. If no <tt>testfunctions</tt> are passed, all tests are run. If you append the name of an entry in <tt>testdata</tt>, the test function will be run only with that test data.</p>
+<p>For example:</p>
+<pre>         /myTestDirectory$ testQString toUpper</pre>
+<p>Runs the test function called <tt>toUpper</tt> with all available test data.</p>
+<pre>         /myTestDirectory$ testQString toUpper toInt:zero</pre>
+<p>Runs the <tt>toUpper</tt> test function with all available test data, and the <tt>toInt</tt> test function with the testdata called <tt>zero</tt> (if the specified test data doesn't exist, the associated test will fail).</p>
+<pre>         /myTestDirectory$ testMyWidget -vs -eventdelay 500</pre>
+<p>Runs the testMyWidget function test, outputs every signal emission and waits 500 milliseconds after each simulated mouse/keyboard event.</p>
+<a name="options"></a>
+<h5>Options</h5>
+<p>The following command line arguments are understood:</p>
+<ul>
+<li><tt>-help</tt> <br /> outputs the possible command line arguments and give some useful help.</li>
+<li><tt>-functions</tt> <br /> outputs all test functions available in the test.</li>
+<li><tt>-o</tt> <i>filename</i> <br /> write output to the specified file, rather than to standard output</li>
+<li><tt>-silent</tt> <br /> silent output, only shows warnings, failures and minimal status messages</li>
+<li><tt>-v1</tt> <br /> verbose output; outputs information on entering and exiting test functions.</li>
+<li><tt>-v2</tt> <br /> extended verbose output; also outputs each <a href="qtest.html#QCOMPARE">QCOMPARE</a>() and <a href="qtest.html#QVERIFY">QVERIFY</a>()</li>
+<li><tt>-vs</tt> <br /> outputs every signal that gets emitted</li>
+<li><tt>-xml</tt> <br /> outputs XML formatted results instead of plain text</li>
+<li><tt>-lightxml</tt> <br /> outputs results as a stream of XML tags</li>
+<li><tt>-eventdelay</tt> <i>ms</i> <br /> if no delay is specified for keyboard or mouse simulation (<a href="qtest.html#keyClick">QTest::keyClick</a>(), <a href="qtest.html#mouseClick">QTest::mouseClick</a>() etc.), the value from this parameter (in milliseconds) is substituted.</li>
+<li><tt>-keydelay</tt> <i>ms</i> <br /> like -eventdelay, but only influences keyboard simulation and not mouse simulation.</li>
+<li><tt>-mousedelay</tt> <i>ms</i> <br /> like -eventdelay, but only influences mouse simulation and not keyboard simulation.</li>
+<li><tt>-keyevent-verbose</tt> <br /> output more verbose output for keyboard simulation</li>
+<li><tt>-maxwarnings</tt> <i>numberBR</i> sets the maximum number of warnings to output. 0 for unlimited, defaults to 2000.</li>
+</ul>
+<a name="using-qtestlib-remotely-on-windows-ce"></a>
+<h3>Using QTestLib remotely on Windows CE</h3>
+<p><tt>cetest</tt> is a convenience application which helps the user to launch an application remotely on a Windows CE device or emulator.</p>
+<p>It needs to be executed after the unit test has been successfully compiled.</p>
+<p>Prior to launching, the following files are copied to the device:</p>
+<ul>
+<li>all Qt libraries the project links to</li>
+<li><a href="#qtremote">QtRemote.dll</a></li>
+<li>the c runtime library specified during installation</li>
+<li>all files specified in the <tt>.pro</tt> file following the <a href="qmake-variable-reference.html#deployment">DEPLOYMENT</a> rules.</li>
+</ul>
+<a name="using"></a>
+<h4>Using <tt>cetest</tt></h4>
+<a name="syntax"></a>
+<h5>Syntax</h5>
+<p>The syntax to execute an autotest takes the following simple form:</p>
+<pre>     cetest [options] ...</pre>
+<a name="options"></a>
+<h5>Options</h5>
+<p><tt>cetest</tt> provides the same options as those for unit-testing on non cross-compiled platforms. See <a href="#qtestlib-command-line-arguments">Command Line Arguments</a> for more information.</p>
+<p>The following commands are also included:</p>
+<ul>
+<li><tt>-debug</tt> <br /> Test version compiled in debug mode.</li>
+<li><tt>-release</tt> <br /> Test version compiled in release mode.</li>
+<li><tt>-libpath</tt> <i>path</i> <br /> Target path to copy Qt libraries to.</li>
+<li><tt>-qt-delete</tt> <br /> Delete Qt libraries after execution.</li>
+<li><tt>-project-delete</tt> <br /> Delete project files after execution.</li>
+<li><tt>-delete</tt> <br /> Delete project and Qt libraries after execution.</li>
+<li><tt>-conf</tt> <br /> Specifies a qt.conf file to be deployed to remote directory.</li>
+</ul>
+<p><b>Note:</b> <tt>debug</tt> is the default build option.</p>
+<a name="qtremote"></a>
+<h4>QtRemote</h4>
+<p><tt>QtRemote</tt> is a small library which is build after <a href="#qtestlib">QTestLib</a>. It allows the host system to create a process on a remote device and waits until its execution has been finished.</p>
+<a name="requirements"></a>
+<h4>Requirements</h4>
+<p><tt>cetest</tt> uses Microsoft ActiveSync to establish a remote connection between the host computer and the device. Thus header files and libraries are needed to compile cetest and <a href="#qtremote">QtRemote</a> successfully.</p>
+<p>Prior to <a href="install-wince.html">installation</a> of Qt, you need to set your <tt>INCLUDE</tt> and <tt>LIB</tt> environment variables properly.</p>
+<p>A default installation of Windows Mobile 5 for Pocket PC can be obtained by:</p>
+<pre>     set INCLUDE=C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Activesync\Inc;%INCLUDE%
+     set LIB=C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Activesync\Lib;%LIB%</pre>
+<p>Note that Qt will remember the path, so you do not need to set it again after switching the environments for cross-compilation.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

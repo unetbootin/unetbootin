@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/styles.qdoc -->
+<head>
+  <title>Qt 4.4: Styles Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Styles Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-styles-norwegianwoodstyle-cpp.html">widgets/styles/norwegianwoodstyle.cpp</a></li>
+<li><a href="widgets-styles-norwegianwoodstyle-h.html">widgets/styles/norwegianwoodstyle.h</a></li>
+<li><a href="widgets-styles-widgetgallery-cpp.html">widgets/styles/widgetgallery.cpp</a></li>
+<li><a href="widgets-styles-widgetgallery-h.html">widgets/styles/widgetgallery.h</a></li>
+<li><a href="widgets-styles-main-cpp.html">widgets/styles/main.cpp</a></li>
+<li><a href="widgets-styles-styles-pro.html">widgets/styles/styles.pro</a></li>
+<li><a href="widgets-styles-styles-qrc.html">widgets/styles/styles.qrc</a></li>
+</ul>
+<p>The Styles example illustrates how to create custom widget drawing styles using Qt, and demonstrates Qt's predefined styles.</p>
+<p align="center"><img src="images/styles-enabledwood.png" alt="Screenshot of the Styles example" /></p><p>A style in Qt is a subclass of <a href="qstyle.html">QStyle</a> or of one of its subclasses. Styles perform drawing on behalf of widgets. Qt provides a whole range of predefined styles, either built into the <a href="qtgui.html">QtGui</a> library or found in plugins. Custom styles are usually created by subclassing one of Qt's existing style and reimplementing a few virtual functions.</p>
+<p>In this example, the custom style is called <tt>NorwegianWoodStyle</tt> and derives from <a href="qmotifstyle.html">QMotifStyle</a>. Its main features are the wooden textures used for filling most of the widgets and its round buttons and comboboxes.</p>
+<p>To implement the style, we use some advanced features provided by <a href="qpainter.html">QPainter</a>, such as <a href="qpainter.html#RenderHint-enum">antialiasing</a> (to obtain smoother button edges), <a href="qcolor.html#alpha">alpha blending</a> (to make the buttons appeared raised or sunken), and <a href="qpainterpath.html">painter paths</a> (to fill the buttons and draw the outline). We also use many features of <a href="qbrush.html">QBrush</a> and <a href="qpalette.html">QPalette</a>.</p>
+<p>The example consists of the following classes:</p>
+<ul>
+<li><tt>NorwegianWoodStyle</tt> inherits from <a href="qmotifstyle.html">QMotifStyle</a> and implements the Norwegian Wood style.</li>
+<li><tt>WidgetGallery</tt> is a <tt>QDialog</tt> subclass that shows the most common widgets and allows the user to switch style dynamically.</li>
+</ul>
+<a name="norwegianwoodstyle-class-definition"></a>
+<h2>NorwegianWoodStyle Class Definition</h2>
+<p>Here's the definition of the <tt>NorwegianWoodStyle</tt> class:</p>
+<pre> class NorwegianWoodStyle : public QMotifStyle
+ {
+     Q_OBJECT
+
+ public:
+     NorwegianWoodStyle() {}
+
+     void polish(QPalette &amp;palette);
+     void polish(QWidget *widget);
+     void unpolish(QWidget *widget);
+     int pixelMetric(PixelMetric metric, const QStyleOption *option,
+                     const QWidget *widget) const;
+     int styleHint(StyleHint hint, const QStyleOption *option,
+                   const QWidget *widget, QStyleHintReturn *returnData) const;
+     void drawPrimitive(PrimitiveElement element, const QStyleOption *option,
+                        QPainter *painter, const QWidget *widget) const;
+     void drawControl(ControlElement control, const QStyleOption *option,
+                      QPainter *painter, const QWidget *widget) const;
+
+ private:
+     static void setTexture(QPalette &amp;palette, QPalette::ColorRole role,
+                            const QPixmap &amp;pixmap);
+     static QPainterPath roundRectPath(const QRect &amp;rect);
+ };</pre>
+<p>The public functions are all declared in <a href="qstyle.html">QStyle</a> (<a href="qmotifstyle.html">QMotifStyle</a>'s grandparent class) and reimplemented here to override the Motif look and feel. The private functions are helper functions.</p>
+<a name="norwegianwoodstyle-class-implementation"></a>
+<h2>NorwegianWoodStyle Class Implementation</h2>
+<p>We will now review the implementation of the <tt>NorwegianWoodStyle</tt> class.</p>
+<pre> void NorwegianWoodStyle::polish(QPalette &amp;palette)
+ {
+     QColor brown(212, 140, 95);
+     QColor beige(236, 182, 120);
+     QColor slightlyOpaqueBlack(0, 0, 0, 63);
+
+     QPixmap backgroundImage(&quot;:/images/woodbackground.png&quot;);
+     QPixmap buttonImage(&quot;:/images/woodbutton.png&quot;);
+     QPixmap midImage = buttonImage;
+
+     QPainter painter;
+     painter.begin(&amp;midImage);
+     painter.setPen(Qt::NoPen);
+     painter.fillRect(midImage.rect(), slightlyOpaqueBlack);
+     painter.end();</pre>
+<p>The <tt>polish()</tt> function is reimplemented from <a href="qstyle.html">QStyle</a>. It takes a <a href="qpalette.html">QPalette</a> as a reference and adapts the palette to fit the style. Most styles don't need to reimplement that function. The Norwegian Wood style reimplements it to set a &quot;wooden&quot; palette.</p>
+<p>We start by defining a few <a href="qcolor.html">QColor</a>s that we'll need. Then we load two PNG images. The <tt>:</tt> prefix in the file path indicates that the PNG files are <a href="resources.html">embedded resources</a>.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images//woodbackground.png" /></td><td><b>woodbackground.png</b><p>This texture is used as the background of most widgets. The wood pattern is horizontal.</p>
+</td></tr>
+<tr valign="top" class="even"><td><img src="images//woodbutton.png" /></td><td><b>woodbutton.png</b><p>This texture is used for filling push buttons and comboboxes. The wood pattern is vertical and more reddish than the texture used for the background.</p>
+</td></tr>
+</table></p>
+<p>The <tt>midImage</tt> variable is initialized to be the same as <tt>buttonImage</tt>, but then we use a <a href="qpainter.html">QPainter</a> and fill it with a 25% opaque black color (a black with an <a href="qcolor.html#alpha">alpha channel</a> of 63). The result is a somewhat darker image than <tt>buttonImage</tt>. This image will be used for filling buttons that the user is holding down.</p>
+<pre>     palette = QPalette(brown);
+
+     palette.setBrush(QPalette::BrightText, Qt::white);
+     palette.setBrush(QPalette::Base, beige);
+     palette.setBrush(QPalette::Highlight, Qt::darkGreen);
+     setTexture(palette, QPalette::Button, buttonImage);
+     setTexture(palette, QPalette::Mid, midImage);
+     setTexture(palette, QPalette::Window, backgroundImage);
+
+     QBrush brush = palette.background();
+     brush.setColor(brush.color().dark());
+
+     palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Mid, brush);
+ }</pre>
+<p>We initialize the palette. Palettes have various <a href="qpalette.html#ColorRole-enum">color roles</a>, such as <a href="qpalette.html#ColorRole-enum">QPalette::Base</a> (used for filling text editors, item views, etc.), <a href="qpalette.html#ColorRole-enum">QPalette::Text</a> (used for foreground text), and <a href="qpalette.html#ColorRole-enum">QPalette::Background</a> (used for the background of most widgets). Each role has its own <a href="qbrush.html">QBrush</a>, which usually is a plain color but can also be a brush pattern or even a texture (a <a href="qpixmap.html">QPixmap</a>).</p>
+<p>In addition to the roles, palettes have several <a href="qpalette.html#ColorGroup-enum">color groups</a>: active, disabled, and inactive. The active color group is used for painting widgets in the active window. The disabled group is used for disabled widgets. The inactive group is used for all other widgets. Most palettes have identical active and inactive groups, while the disabled group uses darker shades.</p>
+<p>We initialize the <a href="qpalette.html">QPalette</a> object with a brown color. Qt automatically derivates all color roles for all color groups from that single color. We then override some of the default values. For example, we use <a href="qt.html#GlobalColor-enum">Qt::darkGreen</a> instead of the default (<a href="qt.html#GlobalColor-enum">Qt::darkBlue</a>) for the <a href="qpalette.html#ColorRole-enum">QPalette::Highlight</a> role. The <a href="qpalette.html#setBrush">QPalette::setBrush</a>() overload that we use here sets the same color or brush for all three color groups.</p>
+<p>The <tt>setTexture()</tt> function is a private function that sets the texture for a certain color role, while preserving the existing color in the <a href="qbrush.html">QBrush</a>. A <a href="qbrush.html">QBrush</a> can hold both a solid color and a texture at the same time. The solid color is used for drawing text and other graphical elements where textures don't look good.</p>
+<p>At the end, we set the brush for the disabled color group of the palette. We use <tt>woodbackground.png</tt> as the texture for all disabled widgets, including buttons, and use a darker color to accompany the texture.</p>
+<p align="center"><img src="images/styles-disabledwood.png" alt="The Norwegian Wood style with disabled widgets" /></p><p>Let's move on to the other functions reimplemented from <a href="qmotifstyle.html">QMotifStyle</a>:</p>
+<pre> void NorwegianWoodStyle::polish(QWidget *widget)
+ {
+     if (qobject_cast&lt;QPushButton *&gt;(widget)
+             || qobject_cast&lt;QComboBox *&gt;(widget))
+         widget-&gt;setAttribute(Qt::WA_Hover, true);
+ }</pre>
+<p>This <a href="qstyle.html#polish">QStyle::polish</a>() overload is called once on every widget drawn using the style. We reimplement it to set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_Hover</a> attribute on <a href="qpushbutton.html">QPushButton</a>s and <a href="qcombobox.html">QComboBox</a>es. When this attribute is set, Qt generates paint events when the mouse pointer enters or leaves the widget. This makes it possible to render push buttons and comboboxes differently when the mouse pointer is over them.</p>
+<pre> void NorwegianWoodStyle::unpolish(QWidget *widget)
+ {
+     if (qobject_cast&lt;QPushButton *&gt;(widget)
+             || qobject_cast&lt;QComboBox *&gt;(widget))
+         widget-&gt;setAttribute(Qt::WA_Hover, false);
+ }</pre>
+<p>This <a href="qstyle.html#unpolish">QStyle::unpolish</a>() overload is called to undo any modification done to the widget in <tt>polish()</tt>. For simplicity, we assume that the flag wasn't set before <tt>polish()</tt> was called. In an ideal world, we would remember the original state for each widgets (e.g&#x2e;, using a <a href="qmap.html">QMap</a>&lt;<a href="qwidget.html">QWidget</a> *, bool&gt;) and restore it in <tt>unpolish()</tt>.</p>
+<pre> int NorwegianWoodStyle::pixelMetric(PixelMetric metric,
+                                     const QStyleOption *option,
+                                     const QWidget *widget) const
+ {
+     switch (metric) {
+     case PM_ComboBoxFrameWidth:
+         return 8;
+     case PM_ScrollBarExtent:
+         return QMotifStyle::pixelMetric(metric, option, widget) + 4;
+     default:
+         return QMotifStyle::pixelMetric(metric, option, widget);
+     }
+ }</pre>
+<p>The <a href="qstyle.html#pixelMetric">pixelMetric()</a> function returns the size in pixels for a certain user interface element. By reimplementing this function, we can affect the way certain widgets are drawn and their size hint. Here, we return 8 as the width around a shown in a <a href="qcombobox.html">QComboBox</a>, ensuring that there is enough place around the text and the arrow for the Norwegian Wood round corners. The default value for this setting in the Motif style is 2.</p>
+<p>We also change the extent of <a href="qscrollbar.html">QScrollBar</a>s, i.e&#x2e;, the height for a horizontal scroll bar and the width for a vertical scroll bar, to be 4 pixels more than in the Motif style. This makes the style a bit more distinctive.</p>
+<p>For all other <a href="qstyle.html#PixelMetric-enum">QStyle::PixelMetric</a> elements, we use the Motif settings.</p>
+<pre> int NorwegianWoodStyle::styleHint(StyleHint hint, const QStyleOption *option,
+                                   const QWidget *widget,
+                                   QStyleHintReturn *returnData) const
+ {
+     switch (hint) {
+     case SH_DitherDisabledText:
+         return int(false);
+     case SH_EtchDisabledText:
+         return int(true);
+     default:
+         return QMotifStyle::styleHint(hint, option, widget, returnData);
+     }
+ }</pre>
+<p>The <a href="qstyle.html#styleHint">styleHint()</a> function returns some hints to widgets or to the base style (in our case <a href="qmotifstyle.html">QMotifStyle</a>) about how to draw the widgets. The Motif style returns <tt>true</tt> for the <a href="qstyle.html#StyleHint-enum">QStyle::SH_DitherDisabledText</a> hint, resulting in a most unpleasing visual effect. We override this behavior and return <tt>false</tt> instead. We also return <tt>true</tt> for the <a href="qstyle.html#StyleHint-enum">QStyle::SH_EtchDisabledText</a> hint, meaning that disabled text is rendered with an embossed look (as <a href="qwindowsstyle.html">QWindowsStyle</a> does).</p>
+<pre> void NorwegianWoodStyle::drawPrimitive(PrimitiveElement element,
+                                        const QStyleOption *option,
+                                        QPainter *painter,
+                                        const QWidget *widget) const
+ {
+     switch (element) {
+     case PE_PanelButtonCommand:
+         {
+             int delta = (option-&gt;state &amp; State_MouseOver) ? 64 : 0;
+             QColor slightlyOpaqueBlack(0, 0, 0, 63);
+             QColor semiTransparentWhite(255, 255, 255, 127 + delta);
+             QColor semiTransparentBlack(0, 0, 0, 127 - delta);
+
+             int x, y, width, height;
+             option-&gt;rect.getRect(&amp;x, &amp;y, &amp;width, &amp;height);</pre>
+<p>The <a href="qstyle.html#drawPrimitive">drawPrimitive()</a> function is called by Qt widgets to draw various fundamental graphical elements. Here we reimplement it to draw <a href="qpushbutton.html">QPushButton</a> and <a href="qcombobox.html">QComboBox</a> with round corners. The button part of these widgets is drawn using the <a href="qstyle.html#PrimitiveElement-enum">QStyle::PE_PanelButtonCommand</a> primitive element.</p>
+<p>The <tt>option</tt> parameter, of type <a href="qstyleoption.html">QStyleOption</a>, contains everything we need to know about the widget we want to draw on. In particular, <tt>option-&gt;rect</tt> gives the rectangle within which to draw the primitive element. The <tt>painter</tt> parameter is a <a href="qpainter.html">QPainter</a> object that we can use to draw on the widget.</p>
+<p>The <tt>widget</tt> parameter is the widget itself. Normally, all the information we need is available in <tt>option</tt> and <tt>painter</tt>, so we don't need <tt>widget</tt>. We can use it to perform special effects; for example, QMacStyle uses it to animate default buttons. If you use it, be aware that the caller is allowed to pass a null pointer.</p>
+<p>We start by defining three <a href="qcolor.html">QColor</a>s that we'll need later on. We also put the x, y, width, and height components of the widget's rectangle in local variables. The value used for the <tt>semiTransparentWhite</tt> and for the <tt>semiTransparentBlack</tt> color's alpha channel depends on whether the mouse cursor is over the widget or not. Since we set the <a href="qt.html#WidgetAttribute-enum">Qt::WA_Hover</a> attribute on <a href="qpushbutton.html">QPushButton</a>s and <a href="qcombobox.html">QComboBox</a>es, we can rely on the <a href="qstyle.html#StateFlag-enum">QStyle::State_MouseOver</a> flag to be set when the mouse is over the widget.</p>
+<pre>             QPainterPath roundRect = roundRectPath(option-&gt;rect);
+             int radius = qMin(width, height) / 2;</pre>
+<p>The <tt>roundRect</tt> variable is a <a href="qpainterpath.html">QPainterPath</a>. A <a href="qpainterpath.html">QPainterPath</a> is is a vectorial specification of a shape. Any shape (rectangle, ellipse, spline, etc.) or combination of shapes can be expressed as a path. We will use <tt>roundRect</tt> both for filling the button background with a wooden texture and for drawing the outline. The <tt>roundRectPath()</tt> function is a private function; we will come back to it later.</p>
+<pre>             QBrush brush;
+             bool darker;
+
+             const QStyleOptionButton *buttonOption =
+                     qstyleoption_cast&lt;const QStyleOptionButton *&gt;(option);
+             if (buttonOption
+                     &amp;&amp; (buttonOption-&gt;features &amp; QStyleOptionButton::Flat)) {
+                 brush = option-&gt;palette.background();
+                 darker = (option-&gt;state &amp; (State_Sunken | State_On));
+             } else {
+                 if (option-&gt;state &amp; (State_Sunken | State_On)) {
+                     brush = option-&gt;palette.mid();
+                     darker = !(option-&gt;state &amp; State_Sunken);
+                 } else {
+                     brush = option-&gt;palette.button();
+                     darker = false;
+                 }
+             }</pre>
+<p>We define two variables, <tt>brush</tt> and <tt>darker</tt>, and initialize them based on the state of the button:</p>
+<ul>
+<li>If the button is a <a href="qpushbutton.html#flat-prop">flat button</a>, we use the <a href="qpalette.html#ColorRole-enum">Background</a> brush. We set <tt>darker</tt> to <tt>true</tt> if the button is <a href="qabstractbutton.html#down-prop">down</a> or <a href="qabstractbutton.html#checked-prop">checked</a>.</li>
+<li>If the button is currently held down by the user or in the <a href="qabstractbutton.html#checked-prop">checked</a> state, we use the <a href="qpalette.html#ColorRole-enum">Mid</a> component of the palette. We set <tt>darker</tt> to <tt>true</tt> if the button is <a href="qabstractbutton.html#checked-prop">checked</a>.</li>
+<li>Otherwise, we use the <a href="qpalette.html#ColorRole-enum">Button</a> component of the palette.</li>
+</ul>
+<p>The screenshot below illustrates how <a href="qpushbutton.html">QPushButton</a>s are rendered based on their state:</p>
+<p align="center"><img src="images/styles-woodbuttons.png" alt="Norwegian Wood buttons in different states" /></p><p>To discover whether the button is flat or not, we need to cast the <tt>option</tt> parameter to <a href="qstyleoptionbutton.html">QStyleOptionButton</a> and check if the <a href="qstyleoptionbutton.html#features-var">features</a> member specifies the <a href="qstyleoptionbutton.html#ButtonFeature-enum">QStyleOptionButton::Flat</a> flag. The <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() function performs a dynamic cast; if <tt>option</tt> is not a <a href="qstyleoptionbutton.html">QStyleOptionButton</a>, <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() returns a null pointer.</p>
+<pre>             painter-&gt;save();
+             painter-&gt;setRenderHint(QPainter::Antialiasing, true);
+             painter-&gt;fillPath(roundRect, brush);
+             if (darker)
+                 painter-&gt;fillPath(roundRect, slightlyOpaqueBlack);</pre>
+<p>We turn on antialiasing on <a href="qpainter.html">QPainter</a>. Antialiasing is a technique that reduces the visual distortion that occurs when the edges of a shape are converted into pixels. For the Norwegian Wood style, we use it to obtain smoother edges for the round buttons.</p>
+<p align="center"><img src="images/styles-aliasing.png" alt="Norwegian wood buttons with and without antialiasing" /></p><p>The first call to <a href="qpainter.html#fillPath">QPainter::fillPath</a>() draws the background of the button with a wooden texture. The second call to <a href="qpainter.html#fillPath">fillPath()</a> paints the same area with a semi-transparent black color (a black color with an alpha channel of 63) to make the area darker if <tt>darker</tt> is true.</p>
+<pre>             int penWidth;
+             if (radius &lt; 10)
+                 penWidth = 3;
+             else if (radius &lt; 20)
+                 penWidth = 5;
+             else
+                 penWidth = 7;
+
+             QPen topPen(semiTransparentWhite, penWidth);
+             QPen bottomPen(semiTransparentBlack, penWidth);
+
+             if (option-&gt;state &amp; (State_Sunken | State_On))
+                 qSwap(topPen, bottomPen);</pre>
+<p>Next, we draw the outline. The top-left half of the outline and the bottom-right half of the outline are drawn using different <a href="qpen.html">QPen</a>s to produce a 3D effect. Normally, the top-left half of the outline is drawn lighter whereas the bottom-right half is drawn darker, but if the button is <a href="qabstractbutton.html#down-prop">down</a> or <a href="qabstractbutton.html#checked-prop">checked</a>, we invert the two <a href="qpen.html">QPen</a>s to give a sunken look to the button.</p>
+<pre>             int x1 = x;
+             int x2 = x + radius;
+             int x3 = x + width - radius;
+             int x4 = x + width;
+
+             if (option-&gt;direction == Qt::RightToLeft) {
+                 qSwap(x1, x4);
+                 qSwap(x2, x3);
+             }
+
+             QPolygon topHalf;
+             topHalf &lt;&lt; QPoint(x1, y)
+                     &lt;&lt; QPoint(x4, y)
+                     &lt;&lt; QPoint(x3, y + radius)
+                     &lt;&lt; QPoint(x2, y + height - radius)
+                     &lt;&lt; QPoint(x1, y + height);
+
+             painter-&gt;setClipPath(roundRect);
+             painter-&gt;setClipRegion(topHalf, Qt::IntersectClip);
+             painter-&gt;setPen(topPen);
+             painter-&gt;drawPath(roundRect);</pre>
+<p>We draw the top-left part of the outline by calling <a href="qpainter.html#drawPath">QPainter::drawPath</a>() with an appropriate <a href="qpainter.html#setClipRegion">clip region</a>. If the <a href="qstyleoption.html#direction-var">layout direction</a> is right-to-left instead of left-to-right, we swap the <tt>x1</tt>, <tt>x2</tt>, <tt>x3</tt>, and <tt>x4</tt> variables to obtain correct results. On right-to-left desktop, the &quot;light&quot; comes from the top-right corner of the screen instead of the top-left corner; raised and sunken widgets must be drawn accordingly.</p>
+<p>The diagram below illustrates how 3D effects are drawn according to the layout direction. The area in red on the diagram corresponds to the <tt>topHalf</tt> polygon:</p>
+<p align="center"><img src="images/styles-3d.png" /></p><p>An easy way to test how a style looks in right-to-left mode is to pass the <tt>-reverse</tt> command-line option to the application. This option is recognized by the <a href="qapplication.html">QApplication</a> constructor.</p>
+<pre>             QPolygon bottomHalf = topHalf;
+             bottomHalf[0] = QPoint(x4, y + height);
+
+             painter-&gt;setClipPath(roundRect);
+             painter-&gt;setClipRegion(bottomHalf, Qt::IntersectClip);
+             painter-&gt;setPen(bottomPen);
+             painter-&gt;drawPath(roundRect);
+
+             painter-&gt;setPen(option-&gt;palette.foreground().color());
+             painter-&gt;setClipping(false);
+             painter-&gt;drawPath(roundRect);
+
+             painter-&gt;restore();
+         }
+         break;
+     default:
+         QMotifStyle::drawPrimitive(element, option, painter, widget);
+     }
+ }</pre>
+<p>The bottom-right part of the outline is drawn in a similar fashion. Then we draw a one-pixel wide outline around the entire button, using the <a href="qpalette.html#ColorRole-enum">Foreground</a> component of the <a href="qpalette.html">QPalette</a>.</p>
+<p>This completes the <a href="qstyle.html#PrimitiveElement-enum">QStyle::PE_PanelButtonCommand</a> case of the <tt>switch</tt> statement. Other primitive elements are handled by the base style. Let's now turn to the other <tt>NorwegianWoodStyle</tt> member functions:</p>
+<pre> void NorwegianWoodStyle::drawControl(ControlElement element,
+                                      const QStyleOption *option,
+                                      QPainter *painter,
+                                      const QWidget *widget) const
+ {
+     switch (element) {
+     case CE_PushButtonLabel:
+         {
+             QStyleOptionButton myButtonOption;
+             const QStyleOptionButton *buttonOption =
+                     qstyleoption_cast&lt;const QStyleOptionButton *&gt;(option);
+             if (buttonOption) {
+                 myButtonOption = *buttonOption;
+                 if (myButtonOption.palette.currentColorGroup()
+                         != QPalette::Disabled) {
+                     if (myButtonOption.state &amp; (State_Sunken | State_On)) {
+                         myButtonOption.palette.setBrush(QPalette::ButtonText,
+                                 myButtonOption.palette.brightText());
+                     }
+                 }
+             }
+             QMotifStyle::drawControl(element, &amp;myButtonOption, painter, widget);
+         }
+         break;
+     default:
+         QMotifStyle::drawControl(element, option, painter, widget);
+     }
+ }</pre>
+<p>We reimplement <a href="qstyle.html#drawControl">QStyle::drawControl</a>() to draw the text on a <a href="qpushbutton.html">QPushButton</a> in a bright color when the button is <a href="qabstractbutton.html#down-prop">down</a> or <a href="qabstractbutton.html#checked-prop">checked</a>.</p>
+<p>If the <tt>option</tt> parameter points to a <a href="qstyleoptionbutton.html">QStyleOptionButton</a> object (it normally should), we take a copy of the object and modify its <a href="qstyleoption.html#palette-var">palette</a> member to make the <a href="qpalette.html#ColorRole-enum">QPalette::ButtonText</a> be the same as the <a href="qpalette.html#ColorRole-enum">QPalette::BrightText</a> component (unless the widget is disabled).</p>
+<pre> void NorwegianWoodStyle::setTexture(QPalette &amp;palette, QPalette::ColorRole role,
+                                     const QPixmap &amp;pixmap)
+ {
+     for (int i = 0; i &lt; QPalette::NColorGroups; ++i) {
+         QColor color = palette.brush(QPalette::ColorGroup(i), role).color();
+         palette.setBrush(QPalette::ColorGroup(i), role, QBrush(color, pixmap));
+     }
+ }</pre>
+<p>The <tt>setTexture()</tt> function is a private function that sets the <a href="qbrush.html#texture">texture</a> component of the <a href="qbrush.html">QBrush</a>es for a certain <a href="qpalette.html#ColorRole-enum">color role</a>, for all three <a href="qpalette.html#ColorGroup-enum">color groups</a> (active, disabled, inactive). We used it to initialize the Norwegian Wood palette in <tt>polish(QPalette &amp;)</tt>.</p>
+<pre> QPainterPath NorwegianWoodStyle::roundRectPath(const QRect &amp;rect)
+ {
+     int radius = qMin(rect.width(), rect.height()) / 2;
+     int diam = 2 * radius;
+
+     int x1, y1, x2, y2;
+     rect.getCoords(&amp;x1, &amp;y1, &amp;x2, &amp;y2);
+
+     QPainterPath path;
+     path.moveTo(x2, y1 + radius);
+     path.arcTo(QRect(x2 - diam, y1, diam, diam), 0.0, +90.0);
+     path.lineTo(x1 + radius, y1);
+     path.arcTo(QRect(x1, y1, diam, diam), 90.0, +90.0);
+     path.lineTo(x1, y2 - radius);
+     path.arcTo(QRect(x1, y2 - diam, diam, diam), 180.0, +90.0);
+     path.lineTo(x1 + radius, y2);
+     path.arcTo(QRect(x2 - diam, y2 - diam, diam, diam), 270.0, +90.0);
+     path.closeSubpath();
+     return path;
+ }</pre>
+<p>The <tt>roundRectPath()</tt> function is a private function that constructs a <a href="qpainterpath.html">QPainterPath</a> object for round buttons. The path consists of eight segments: four arc segments for the corners and four lines for the sides.</p>
+<p>With around 250 lines of code, we have a fully functional custom style based on one of the predefined styles. Custom styles can be used to provide a distinct look to an application or family of applications.</p>
+<a name="widgetgallery-class"></a>
+<h2>WidgetGallery Class</h2>
+<p>For completeness, we will quickly review the <tt>WidgetGallery</tt> class, which contains the most common Qt widgets and allows the user to change style dynamically. Here's the class definition:</p>
+<pre> class WidgetGallery : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     WidgetGallery(QWidget *parent = 0);
+
+ private slots:
+     void changeStyle(const QString &amp;styleName);
+     void changePalette();
+     void advanceProgressBar();
+
+ private:
+     void createTopLeftGroupBox();
+     void createTopRightGroupBox();
+     void createBottomLeftTabWidget();
+     void createBottomRightGroupBox();
+     void createProgressBar();
+
+     QPalette originalPalette;
+
+     QLabel *styleLabel;
+     QComboBox *styleComboBox;
+     QCheckBox *useStylePaletteCheckBox;
+     QCheckBox *disableWidgetsCheckBox;
+     ...
+ };</pre>
+<p>Here's the <tt>WidgetGallery</tt> constructor:</p>
+<pre> WidgetGallery::WidgetGallery(QWidget *parent)
+     : QDialog(parent)
+ {
+     originalPalette = QApplication::palette();
+
+     styleComboBox = new QComboBox;
+     styleComboBox-&gt;addItem(&quot;NorwegianWood&quot;);
+     styleComboBox-&gt;addItems(QStyleFactory::keys());
+
+     styleLabel = new QLabel(tr(&quot;&amp;Style:&quot;));
+     styleLabel-&gt;setBuddy(styleComboBox);
+
+     useStylePaletteCheckBox = new QCheckBox(tr(&quot;&amp;Use style's standard palette&quot;));
+     useStylePaletteCheckBox-&gt;setChecked(true);
+
+     disableWidgetsCheckBox = new QCheckBox(tr(&quot;&amp;Disable widgets&quot;));
+
+     createTopLeftGroupBox();
+     createTopRightGroupBox();
+     createBottomLeftTabWidget();
+     createBottomRightGroupBox();
+     createProgressBar();</pre>
+<p>We start by creating child widgets. The <b>Style</b> combobox is initialized with all the styles known to <a href="qstylefactory.html">QStyleFactory</a>, in addition to <tt>NorwegianWood</tt>. The <tt>create...()</tt> functions are private functions that set up the various parts of the <tt>WidgetGallery</tt>.</p>
+<pre>     connect(styleComboBox, SIGNAL(activated(const QString &amp;)),
+             this, SLOT(changeStyle(const QString &amp;)));
+     connect(useStylePaletteCheckBox, SIGNAL(toggled(bool)),
+             this, SLOT(changePalette()));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             topLeftGroupBox, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             topRightGroupBox, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             bottomLeftTabWidget, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             bottomRightGroupBox, SLOT(setDisabled(bool)));</pre>
+<p>We connect the <b>Style</b> combobox to the <tt>changeStyle()</tt> private slot, the <b>Use style's standard palette</b> check box to the <tt>changePalette()</tt> slot, and the <b>Disable widgets</b> check box to the child widgets' <a href="qwidget.html#setDisabled">setDisabled()</a> slot.</p>
+<pre>     QHBoxLayout *topLayout = new QHBoxLayout;
+     topLayout-&gt;addWidget(styleLabel);
+     topLayout-&gt;addWidget(styleComboBox);
+     topLayout-&gt;addStretch(1);
+     topLayout-&gt;addWidget(useStylePaletteCheckBox);
+     topLayout-&gt;addWidget(disableWidgetsCheckBox);
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addLayout(topLayout, 0, 0, 1, 2);
+     mainLayout-&gt;addWidget(topLeftGroupBox, 1, 0);
+     mainLayout-&gt;addWidget(topRightGroupBox, 1, 1);
+     mainLayout-&gt;addWidget(bottomLeftTabWidget, 2, 0);
+     mainLayout-&gt;addWidget(bottomRightGroupBox, 2, 1);
+     mainLayout-&gt;addWidget(progressBar, 3, 0, 1, 2);
+     mainLayout-&gt;setRowStretch(1, 1);
+     mainLayout-&gt;setRowStretch(2, 1);
+     mainLayout-&gt;setColumnStretch(0, 1);
+     mainLayout-&gt;setColumnStretch(1, 1);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Styles&quot;));
+     changeStyle(&quot;NorwegianWood&quot;);
+ }</pre>
+<p>Finally, we put the child widgets in layouts.</p>
+<pre> void WidgetGallery::changeStyle(const QString &amp;styleName)
+ {
+     if (styleName == &quot;NorwegianWood&quot;) {
+         QApplication::setStyle(new NorwegianWoodStyle);
+     } else {
+         QApplication::setStyle(QStyleFactory::create(styleName));
+     }
+     changePalette();
+ }</pre>
+<p>When the user changes the style in the combobox, we call <a href="qapplication.html#setStyle">QApplication::setStyle</a>() to dynamically change the style of the application.</p>
+<pre> void WidgetGallery::changePalette()
+ {
+     if (useStylePaletteCheckBox-&gt;isChecked())
+         QApplication::setPalette(QApplication::style()-&gt;standardPalette());
+     else
+         QApplication::setPalette(originalPalette);
+ }</pre>
+<p>If the user turns the <b>Use style's standard palette</b> on, the current style's <a href="qstyle.html#standardPalette">standard palette</a> is used; otherwise, the system's default palette is honored.</p>
+<p>For the Norwegian Wood style, this makes no difference because we always override the palette with our own palette in <tt>NorwegianWoodStyle::polish()</tt>.</p>
+<pre> void WidgetGallery::advanceProgressBar()
+ {
+     int curVal = progressBar-&gt;value();
+     int maxVal = progressBar-&gt;maximum();
+     progressBar-&gt;setValue(curVal + (maxVal - curVal) / 100);
+ }</pre>
+<p>The <tt>advanceProgressBar()</tt> slot is called at regular intervals to advance the progress bar. Since we don't know how long the user will keep the Styles application running, we use a logarithmic formula: The closer the progress bar gets to 100%, the slower it advances.</p>
+<p>We will review <tt>createProgressBar()</tt> in a moment.</p>
+<pre> void WidgetGallery::createTopLeftGroupBox()
+ {
+     topLeftGroupBox = new QGroupBox(tr(&quot;Group 1&quot;));
+
+     radioButton1 = new QRadioButton(tr(&quot;Radio button 1&quot;));
+     radioButton2 = new QRadioButton(tr(&quot;Radio button 2&quot;));
+     radioButton3 = new QRadioButton(tr(&quot;Radio button 3&quot;));
+     radioButton1-&gt;setChecked(true);
+
+     checkBox = new QCheckBox(tr(&quot;Tri-state check box&quot;));
+     checkBox-&gt;setTristate(true);
+     checkBox-&gt;setCheckState(Qt::PartiallyChecked);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(radioButton1);
+     layout-&gt;addWidget(radioButton2);
+     layout-&gt;addWidget(radioButton3);
+     layout-&gt;addWidget(checkBox);
+     layout-&gt;addStretch(1);
+     topLeftGroupBox-&gt;setLayout(layout);
+ }</pre>
+<p>The <tt>createTopLeftGroupBox()</tt> function creates the <a href="qgroupbox.html">QGroupBox</a> that occupies the top-left corner of the <tt>WidgetGallery</tt>. We skip the <tt>createTopRightGroupBox()</tt>, <tt>createBottomLeftTabWidget()</tt>, and <tt>createBottomRightGroupBox()</tt> functions, which are very similar.</p>
+<pre> void WidgetGallery::createProgressBar()
+ {
+     progressBar = new QProgressBar;
+     progressBar-&gt;setRange(0, 10000);
+     progressBar-&gt;setValue(0);
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(advanceProgressBar()));
+     timer-&gt;start(1000);
+ }</pre>
+<p>In <tt>createProgressBar()</tt>, we create a <a href="qprogressbar.html">QProgressBar</a> at the bottom of the <tt>WidgetGallery</tt> and connect its <a href="qtimer.html#timeout">timeout()</a> signal to the <tt>advanceProgressBar()</tt> slot.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

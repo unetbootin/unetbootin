@@ -1,0 +1,6 @@
+//! [0]
+    ' VB is case insensitive, but our C++ controls are not.
+    ' Me.resetButton.enabled = True
+//! [0]
+
+

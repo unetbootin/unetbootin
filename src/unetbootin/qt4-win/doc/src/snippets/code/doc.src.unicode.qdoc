@@ -1,0 +1,20 @@
+//! [0]
+        label->setText("Password:");
+//! [0]
+
+
+//! [1]
+        label->setText(tr("Password:"));
+//! [1]
+
+
+//! [2]
+        QFile file(QString::fromLatin1("appicon.png"));
+//! [2]
+
+
+//! [3]
+        QFile file(QLatin1String("appicon.png"));
+//! [3]
+
+

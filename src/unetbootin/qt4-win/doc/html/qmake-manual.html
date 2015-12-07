@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: qmake Manual</title>
+  <link rel="next" href="qmake-tutorial.html" />
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Next: <a href="qmake-tutorial.html">qmake Tutorial</a>]
+</p>
+<h1 class="title">qmake Manual<br /><span class="subtitle"></span>
+</h1>
+<a name="qmake"></a><p><tt>qmake</tt> is a tool from Trolltech that helps simplify the build process for development project across different platforms. <tt>qmake</tt> automates the generation of Makefiles so that only a few lines of information are needed to create each Makefile. <tt>qmake</tt> can be used for any software project, whether it is written in Qt or not.</p>
+<p><tt>qmake</tt> generates a Makefile based on the information in a project file. Project files are created by the developer, and are usually simple, but more sophisticated project files can be created for complex projects. <tt>qmake</tt> contains additional features to support development with Qt, automatically including build rules for <a href="moc.html">moc</a> and <a href="uic.html">uic</a>. <tt>qmake</tt> can also generate projects for Microsoft Visual studio without requiring the developer to change the project file.</p>
+<a name="getting-started"></a>
+<h2>Getting Started</h2>
+<p>The <a href="qmake-tutorial.html">qmake Tutorial</a> and guide to <a href="qmake-common-projects.html">qmake Common Projects</a> provide overviews that aim to help new users get started with <tt>qmake</tt>.</p>
+<ul>
+<li><a href="qmake-tutorial.html">qmake Tutorial</a> <ul><li><a href="qmake-tutorial.html#starting-off-simple">Starting off Simple</a></li>
+<li><a href="qmake-tutorial.html#making-an-application-debuggable">Making an Application Debuggable</a></li>
+<li><a href="qmake-tutorial.html#adding-platform-specific-source-files">Adding Platform-Specific Source Files</a></li>
+<li><a href="qmake-tutorial.html#stopping-qmake-if-a-file-doesn-t-exist">Stopping qmake If a File Doesn't Exist</a></li>
+<li><a href="qmake-tutorial.html#checking-for-more-than-one-condition">Checking for More than One Condition</a></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="qmake-common-projects.html">qmake Common Projects</a> <ul><li><a href="qmake-common-projects.html#building-an-application">Building an Application</a></li>
+<ul><li><a href="qmake-common-projects.html#the-app-template">The app Template</a></li>
+</ul>
+<li><a href="qmake-common-projects.html#building-a-library">Building a Library</a></li>
+<ul><li><a href="qmake-common-projects.html#the-lib-template">The lib Template</a></li>
+</ul>
+<li><a href="qmake-common-projects.html#building-a-plugin">Building a Plugin</a></li>
+<ul><li><a href="qmake-common-projects.html#building-a-qt-designer-plugin">Building a Qt Designer Plugin</a></li>
+</ul>
+<li><a href="qmake-common-projects.html#building-and-installing-in-debug-and-release-modes">Building and Installing in Debug and Release Modes</a></li>
+<ul><li><a href="qmake-common-projects.html#building-in-both-modes">Building in Both Modes</a></li>
+<li><a href="qmake-common-projects.html#installing-in-both-modes">Installing in Both Modes</a></li>
+</ul>
+</ul>
+</li>
+</ul>
+<a name="table-of-contents"></a>
+<h2>Table of Contents</h2>
+<ul>
+<li><a href="qmake-using.html">Using qmake</a> <ul><li><a href="qmake-using.html#describing-a-project">Describing a Project</a></li>
+<li><a href="qmake-using.html#building-a-project">Building a Project</a></li>
+<li><a href="qmake-using.html#using-precompiled-headers">Using Precompiled Headers</a></li>
+</ul>
+</li>
+<li><a href="qmake-project-files.html">qmake Project Files</a> <ul><li><a href="qmake-project-files.html#project-file-elements">Project File Elements</a></li>
+<ul><li><a href="qmake-project-files.html#variables">Variables</a></li>
+<li><a href="qmake-project-files.html#comments">Comments</a></li>
+<li><a href="qmake-project-files.html#built-in-functions-and-control-flow">Built-in Functions and Control Flow</a></li>
+</ul>
+<li><a href="qmake-project-files.html#project-templates">Project Templates</a></li>
+<li><a href="qmake-project-files.html#general-configuration">General Configuration</a></li>
+<li><a href="qmake-project-files.html#declaring-qt-libraries">Declaring Qt Libraries</a></li>
+<li><a href="qmake-project-files.html#configuration-features">Configuration Features</a></li>
+<li><a href="qmake-project-files.html#declaring-other-libraries">Declaring Other Libraries</a></li>
+</ul>
+</li>
+<li><a href="qmake-running.html">Running qmake</a> <ul><li><a href="qmake-running.html#command-line-options">Command-Line Options</a></li>
+<ul><li><a href="qmake-running.html#syntax">Syntax</a></li>
+<li><a href="qmake-running.html#options">Options</a></li>
+<li><a href="qmake-running.html#makefile-mode-options">Makefile Mode Options</a></li>
+<li><a href="qmake-running.html#project-mode-options">Project Mode Options</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="qmake-platform-notes.html">qmake Platform Notes</a> <ul><li><a href="qmake-platform-notes.html#mac-os-x">Mac OS X</a></li>
+<ul><li><a href="qmake-platform-notes.html#source-and-binary-packages">Source and Binary Packages</a></li>
+<li><a href="qmake-platform-notes.html#using-frameworks">Using Frameworks</a></li>
+<li><a href="qmake-platform-notes.html#creating-frameworks">Creating Frameworks</a></li>
+<li><a href="qmake-platform-notes.html#creating-universal-binaries">Creating Universal Binaries</a></li>
+<li><a href="qmake-platform-notes.html#creating-and-moving-xcode-projects">Creating and Moving Xcode Projects</a></li>
+</ul>
+<li><a href="qmake-platform-notes.html#windows">Windows</a></li>
+<ul><li><a href="qmake-platform-notes.html#creating-visual-studio-project-files">Creating Visual Studio Project Files</a></li>
+<li><a href="qmake-platform-notes.html#visual-studio-2005-manifest-files">Visual Studio 2005 Manifest Files</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="qmake-advanced-usage.html">qmake Advanced Usage</a> <ul><li><a href="qmake-advanced-usage.html#operators">Operators</a></li>
+<li><a href="qmake-advanced-usage.html#scopes">Scopes</a></li>
+<ul><li><a href="qmake-advanced-usage.html#scopes-and-conditions">Scopes and Conditions</a></li>
+<li><a href="qmake-advanced-usage.html#configuration-and-scopes">Configuration and Scopes</a></li>
+<li><a href="qmake-advanced-usage.html#platform-scope-values">Platform Scope Values</a></li>
+</ul>
+<li><a href="qmake-advanced-usage.html#variables">Variables</a></li>
+<li><a href="qmake-advanced-usage.html#variable-processing-functions">Variable Processing Functions</a></li>
+<li><a href="qmake-advanced-usage.html#conditional-functions">Conditional Functions</a></li>
+<li><a href="qmake-advanced-usage.html#adding-new-configuration-features">Adding New Configuration Features</a></li>
+</ul>
+</li>
+<li><a href="qmake-precompiledheaders.html">Using Precompiled Headers</a> <ul><li><a href="qmake-precompiledheaders.html#adding-precompiled-headers-to-your-project">Adding Precompiled Headers to Your Project</a></li>
+<ul><li><a href="qmake-precompiledheaders.html#contents-of-the-precompiled-header-file">Contents of the Precompiled Header File</a></li>
+<ul><li><a href="qmake-precompiledheaders.html#example">Example: <tt>stable.h</tt></a></li>
+</ul>
+<li><a href="qmake-precompiledheaders.html#project-options">Project Options</a></li>
+</ul>
+<li><a href="qmake-precompiledheaders.html#notes-on-possible-issues">Notes on Possible Issues</a></li>
+<li><a href="qmake-precompiledheaders.html#example-project">Example Project</a></li>
+<ul><li><a href="qmake-precompiledheaders.html#"><tt>mydialog.ui</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>stable.h</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>myobject.h</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>myobject.cpp</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>util.cpp</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>main.cpp</tt></a></li>
+<li><a href="qmake-precompiledheaders.html#"><tt>precompile.pro</tt></a></li>
+</ul>
+</ul>
+</li>
+<li><a href="qmake-reference.html">qmake Reference</a> <ul><li><a href="qmake-reference.html#variable-reference">Variable Reference</a></li>
+<li><a href="qmake-reference.html#function-reference">Function Reference</a></li>
+<li><a href="qmake-reference.html#frequently-used-variables">Frequently Used Variables</a></li>
+<li><a href="qmake-reference.html#environment-variables-and-configuration">Environment Variables and Configuration</a></li>
+</ul>
+</li>
+<li><a href="qmake-variable-reference.html">qmake Variable Reference</a> <ul><li><a href="qmake-variable-reference.html#config">CONFIG</a></li>
+<li><a href="qmake-variable-reference.html#defines">DEFINES</a></li>
+<li><a href="qmake-variable-reference.html#def-file">DEF_FILE</a></li>
+<li><a href="qmake-variable-reference.html#dependpath">DEPENDPATH</a></li>
+<li><a href="qmake-variable-reference.html#deployment">DEPLOYMENT</a></li>
+<li><a href="qmake-variable-reference.html#destdir">DESTDIR</a></li>
+<li><a href="qmake-variable-reference.html#destdir-target">DESTDIR_TARGET</a></li>
+<li><a href="qmake-variable-reference.html#dlldestdir">DLLDESTDIR</a></li>
+<li><a href="qmake-variable-reference.html#distfiles">DISTFILES</a></li>
+<li><a href="qmake-variable-reference.html#dsp-template">DSP_TEMPLATE</a></li>
+<li><a href="qmake-variable-reference.html#forms">FORMS</a></li>
+<li><a href="qmake-variable-reference.html#forms3">FORMS3</a></li>
+<li><a href="qmake-variable-reference.html#headers">HEADERS</a></li>
+<li><a href="qmake-variable-reference.html#includepath">INCLUDEPATH</a></li>
+<li><a href="qmake-variable-reference.html#installs">INSTALLS</a></li>
+<li><a href="qmake-variable-reference.html#leximpls">LEXIMPLS</a></li>
+<li><a href="qmake-variable-reference.html#lexobjects">LEXOBJECTS</a></li>
+<li><a href="qmake-variable-reference.html#lexsources">LEXSOURCES</a></li>
+<li><a href="qmake-variable-reference.html#libs">LIBS</a></li>
+<li><a href="qmake-variable-reference.html#literal-hash">LITERAL_HASH</a></li>
+<li><a href="qmake-variable-reference.html#makefile">MAKEFILE</a></li>
+<li><a href="qmake-variable-reference.html#makefile-generator">MAKEFILE_GENERATOR</a></li>
+<li><a href="qmake-variable-reference.html#moc-dir">MOC_DIR</a></li>
+<li><a href="qmake-variable-reference.html#objects">OBJECTS</a></li>
+<li><a href="qmake-variable-reference.html#objects-dir">OBJECTS_DIR</a></li>
+<li><a href="qmake-variable-reference.html#objmoc">OBJMOC</a></li>
+<li><a href="qmake-variable-reference.html#post-targetdeps">POST_TARGETDEPS</a></li>
+<li><a href="qmake-variable-reference.html#pre-targetdeps">PRE_TARGETDEPS</a></li>
+<li><a href="qmake-variable-reference.html#precompiled-header">PRECOMPILED_HEADER</a></li>
+<li><a href="qmake-variable-reference.html#qmake">QMAKE</a></li>
+<li><a href="qmake-variable-reference.html#qmakespec">QMAKESPEC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-app-flag">QMAKE_APP_FLAG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-app-or-dll">QMAKE_APP_OR_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ar-cmd">QMAKE_AR_CMD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-bundle-data">QMAKE_BUNDLE_DATA</a></li>
+<li><a href="qmake-variable-reference.html#qmake-bundle-extension">QMAKE_BUNDLE_EXTENSION</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cc">QMAKE_CC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-debug">QMAKE_CFLAGS_DEBUG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-mt">QMAKE_CFLAGS_MT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-mt-dbg">QMAKE_CFLAGS_MT_DBG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-mt-dll">QMAKE_CFLAGS_MT_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-mt-dlldbg">QMAKE_CFLAGS_MT_DLLDBG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-release">QMAKE_CFLAGS_RELEASE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-shlib">QMAKE_CFLAGS_SHLIB</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-thread">QMAKE_CFLAGS_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-warn-off">QMAKE_CFLAGS_WARN_OFF</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cflags-warn-on">QMAKE_CFLAGS_WARN_ON</a></li>
+<li><a href="qmake-variable-reference.html#qmake-clean">QMAKE_CLEAN</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxx">QMAKE_CXX</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags">QMAKE_CXXFLAGS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-debug">QMAKE_CXXFLAGS_DEBUG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-mt">QMAKE_CXXFLAGS_MT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-mt-dbg">QMAKE_CXXFLAGS_MT_DBG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-mt-dll">QMAKE_CXXFLAGS_MT_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-mt-dlldbg">QMAKE_CXXFLAGS_MT_DLLDBG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-release">QMAKE_CXXFLAGS_RELEASE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-shlib">QMAKE_CXXFLAGS_SHLIB</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-thread">QMAKE_CXXFLAGS_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-warn-off">QMAKE_CXXFLAGS_WARN_OFF</a></li>
+<li><a href="qmake-variable-reference.html#qmake-cxxflags-warn-on">QMAKE_CXXFLAGS_WARN_ON</a></li>
+<li><a href="qmake-variable-reference.html#qmake-distclean">QMAKE_DISTCLEAN</a></li>
+<li><a href="qmake-variable-reference.html#qmake-extension-shlib">QMAKE_EXTENSION_SHLIB</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-moc">QMAKE_EXT_MOC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-ui">QMAKE_EXT_UI</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-prl">QMAKE_EXT_PRL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-lex">QMAKE_EXT_LEX</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-yacc">QMAKE_EXT_YACC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-obj">QMAKE_EXT_OBJ</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-cpp">QMAKE_EXT_CPP</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ext-h">QMAKE_EXT_H</a></li>
+<li><a href="qmake-variable-reference.html#qmake-failed-requirements">QMAKE_FAILED_REQUIREMENTS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-filetags">QMAKE_FILETAGS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-framework-bundle-name">QMAKE_FRAMEWORK_BUNDLE_NAME</a></li>
+<li><a href="qmake-variable-reference.html#qmake-framework-version">QMAKE_FRAMEWORK_VERSION</a></li>
+<li><a href="qmake-variable-reference.html#qmake-incdir">QMAKE_INCDIR</a></li>
+<li><a href="qmake-variable-reference.html#qmake-incdir-opengl">QMAKE_INCDIR_OPENGL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-incdir-qt">QMAKE_INCDIR_QT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-incdir-thread">QMAKE_INCDIR_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-incdir-x11">QMAKE_INCDIR_X11</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags">QMAKE_LFLAGS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-console">QMAKE_LFLAGS_CONSOLE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-console-dll">QMAKE_LFLAGS_CONSOLE_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-debug">QMAKE_LFLAGS_DEBUG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-plugin">QMAKE_LFLAGS_PLUGIN</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-qt-dll">QMAKE_LFLAGS_QT_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-release">QMAKE_LFLAGS_RELEASE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-shapp">QMAKE_LFLAGS_SHAPP</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-shlib">QMAKE_LFLAGS_SHLIB</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-soname">QMAKE_LFLAGS_SONAME</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-thread">QMAKE_LFLAGS_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-windows">QMAKE_LFLAGS_WINDOWS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lflags-windows-dll">QMAKE_LFLAGS_WINDOWS_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libdir">QMAKE_LIBDIR</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libdir-flags">QMAKE_LIBDIR_FLAGS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libdir-opengl">QMAKE_LIBDIR_OPENGL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libdir-qt">QMAKE_LIBDIR_QT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libdir-x11">QMAKE_LIBDIR_X11</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs">QMAKE_LIBS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-console">QMAKE_LIBS_CONSOLE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-opengl">QMAKE_LIBS_OPENGL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-opengl-qt">QMAKE_LIBS_OPENGL_QT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-qt">QMAKE_LIBS_QT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-qt-dll">QMAKE_LIBS_QT_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-qt-opengl">QMAKE_LIBS_QT_OPENGL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-qt-thread">QMAKE_LIBS_QT_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-rt">QMAKE_LIBS_RT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-rtmt">QMAKE_LIBS_RTMT</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-thread">QMAKE_LIBS_THREAD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-windows">QMAKE_LIBS_WINDOWS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-x11">QMAKE_LIBS_X11</a></li>
+<li><a href="qmake-variable-reference.html#qmake-libs-x11sm">QMAKE_LIBS_X11SM</a></li>
+<li><a href="qmake-variable-reference.html#qmake-lib-flag">QMAKE_LIB_FLAG</a></li>
+<li><a href="qmake-variable-reference.html#qmake-link-shlib-cmd">QMAKE_LINK_SHLIB_CMD</a></li>
+<li><a href="qmake-variable-reference.html#qmake-post-link">QMAKE_POST_LINK</a></li>
+<li><a href="qmake-variable-reference.html#qmake-pre-link">QMAKE_PRE_LINK</a></li>
+<li><a href="qmake-variable-reference.html#qmake-ln-shlib">QMAKE_LN_SHLIB</a></li>
+<li><a href="qmake-variable-reference.html#qmake-mac-sdk">QMAKE_MAC_SDK</a></li>
+<li><a href="qmake-variable-reference.html#qmake-macosx-deployment-target">QMAKE_MACOSX_DEPLOYMENT_TARGET</a></li>
+<li><a href="qmake-variable-reference.html#qmake-makefile">QMAKE_MAKEFILE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-moc-src">QMAKE_MOC_SRC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-qmake">QMAKE_QMAKE</a></li>
+<li><a href="qmake-variable-reference.html#qmake-qt-dll">QMAKE_QT_DLL</a></li>
+<li><a href="qmake-variable-reference.html#qmake-resource-flags">QMAKE_RESOURCE_FLAGS</a></li>
+<li><a href="qmake-variable-reference.html#qmake-run-cc">QMAKE_RUN_CC</a></li>
+<li><a href="qmake-variable-reference.html#qmake-run-cc-imp">QMAKE_RUN_CC_IMP</a></li>
+<li><a href="qmake-variable-reference.html#qmake-run-cxx">QMAKE_RUN_CXX</a></li>
+<li><a href="qmake-variable-reference.html#qmake-run-cxx-imp">QMAKE_RUN_CXX_IMP</a></li>
+<li><a href="qmake-variable-reference.html#qmake-target">QMAKE_TARGET</a></li>
+<li><a href="qmake-variable-reference.html#qmake-uic">QMAKE_UIC</a></li>
+<li><a href="qmake-variable-reference.html#qt">QT</a></li>
+<li><a href="qmake-variable-reference.html#qtplugin">QTPLUGIN</a></li>
+<li><a href="qmake-variable-reference.html#qt-version">QT_VERSION</a></li>
+<li><a href="qmake-variable-reference.html#qt-major-version">QT_MAJOR_VERSION</a></li>
+<li><a href="qmake-variable-reference.html#qt-minor-version">QT_MINOR_VERSION</a></li>
+<li><a href="qmake-variable-reference.html#qt-patch-version">QT_PATCH_VERSION</a></li>
+<li><a href="qmake-variable-reference.html#rc-file">RC_FILE</a></li>
+<li><a href="qmake-variable-reference.html#rcc-dir">RCC_DIR</a></li>
+<li><a href="qmake-variable-reference.html#requires">REQUIRES</a></li>
+<li><a href="qmake-variable-reference.html#res-file">RES_FILE</a></li>
+<li><a href="qmake-variable-reference.html#signature-file">SIGNATURE_FILE</a></li>
+<li><a href="qmake-variable-reference.html#sources">SOURCES</a></li>
+<li><a href="qmake-variable-reference.html#srcmoc">SRCMOC</a></li>
+<li><a href="qmake-variable-reference.html#subdirs">SUBDIRS</a></li>
+<li><a href="qmake-variable-reference.html#target">TARGET</a></li>
+<li><a href="qmake-variable-reference.html#target-ext">TARGET_EXT</a></li>
+<li><a href="qmake-variable-reference.html#target-x">TARGET_x</a></li>
+<li><a href="qmake-variable-reference.html#target-x-y-z">TARGET_x.y.z</a></li>
+<li><a href="qmake-variable-reference.html#template">TEMPLATE</a></li>
+<li><a href="qmake-variable-reference.html#translations">TRANSLATIONS</a></li>
+<li><a href="qmake-variable-reference.html#uicimpls">UICIMPLS</a></li>
+<li><a href="qmake-variable-reference.html#uicobjects">UICOBJECTS</a></li>
+<li><a href="qmake-variable-reference.html#ui-dir">UI_DIR</a></li>
+<li><a href="qmake-variable-reference.html#ui-headers-dir">UI_HEADERS_DIR</a></li>
+<li><a href="qmake-variable-reference.html#ui-sources-dir">UI_SOURCES_DIR</a></li>
+<li><a href="qmake-variable-reference.html#version">VERSION</a></li>
+<li><a href="qmake-variable-reference.html#ver-maj">VER_MAJ</a></li>
+<li><a href="qmake-variable-reference.html#ver-min">VER_MIN</a></li>
+<li><a href="qmake-variable-reference.html#ver-pat">VER_PAT</a></li>
+<li><a href="qmake-variable-reference.html#vpath">VPATH</a></li>
+<li><a href="qmake-variable-reference.html#yaccimpls">YACCIMPLS</a></li>
+<li><a href="qmake-variable-reference.html#yaccobjects">YACCOBJECTS</a></li>
+<li><a href="qmake-variable-reference.html#yaccsources">YACCSOURCES</a></li>
+</ul>
+</li>
+<li><a href="qmake-function-reference.html">qmake Function Reference</a> <ul><li><a href="qmake-function-reference.html#basename-variablename">basename(variablename)</a></li>
+<li><a href="qmake-function-reference.html#config-config">CONFIG(config)</a></li>
+<li><a href="qmake-function-reference.html#contains-variablename-value">contains(variablename, value)</a></li>
+<li><a href="qmake-function-reference.html#count-variablename-number">count(variablename, number)</a></li>
+<li><a href="qmake-function-reference.html#dirname-file">dirname(file)</a></li>
+<li><a href="qmake-function-reference.html#error-string">error(string)</a></li>
+<li><a href="qmake-function-reference.html#eval-string">eval(string)</a></li>
+<li><a href="qmake-function-reference.html#exists-filename">exists(filename)</a></li>
+<li><a href="qmake-function-reference.html#find-variablename-substr">find(variablename, substr)</a></li>
+<li><a href="qmake-function-reference.html#for-iterate-list">for(iterate, list)</a></li>
+<li><a href="qmake-function-reference.html#include-filename">include(filename)</a></li>
+<li><a href="qmake-function-reference.html#infile-filename-var-val">infile(filename, var, val)</a></li>
+<li><a href="qmake-function-reference.html#isempty-variablename">isEmpty(variablename)</a></li>
+<li><a href="qmake-function-reference.html#join-variablename-glue-before-after">join(variablename, glue, before, after)</a></li>
+<li><a href="qmake-function-reference.html#member-variablename-position">member(variablename, position)</a></li>
+<li><a href="qmake-function-reference.html#message-string">message(string)</a></li>
+<li><a href="qmake-function-reference.html#prompt-question">prompt(question)</a></li>
+<li><a href="qmake-function-reference.html#quote-string">quote(string)</a></li>
+<li><a href="qmake-function-reference.html#replace-string-old-string-new-string">replace(string, old_string, new_string)</a></li>
+<li><a href="qmake-function-reference.html#sprintf-string-arguments">sprintf(string, arguments..&#x2e;)</a></li>
+<li><a href="qmake-function-reference.html#system-command">system(command)</a></li>
+<li><a href="qmake-function-reference.html#unique-variablename">unique(variablename)</a></li>
+<li><a href="qmake-function-reference.html#warning-string">warning(string)</a></li>
+</ul>
+</li>
+<li><a href="qmake-environment-reference.html">Configuring qmake's Environment</a> <ul><li><a href="qmake-environment-reference.html#properties">Properties</a></li>
+<li><a href="qmake-environment-reference.html#qmakespec">QMAKESPEC</a></li>
+<li><a href="qmake-environment-reference.html#installs">INSTALLS</a></li>
+<li><a href="qmake-environment-reference.html#cache-file">Cache File</a></li>
+<li><a href="qmake-environment-reference.html#library-dependencies">Library Dependencies</a></li>
+<li><a href="qmake-environment-reference.html#file-extensions">File Extensions</a></li>
+<li><a href="qmake-environment-reference.html#customizing-makefile-output">Customizing Makefile Output</a></li>
+</ul>
+</li>
+</ul>
+<p>
+[Next: <a href="qmake-tutorial.html">qmake Tutorial</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

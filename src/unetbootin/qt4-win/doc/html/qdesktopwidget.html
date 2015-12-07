@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qdesktopwidget_win.cpp -->
+<head>
+  <title>Qt 4.4: QDesktopWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesktopWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QDesktopWidget class provides access to screen information on multi-head systems. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesktopWidget&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qdesktopwidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdesktopwidget.html#QDesktopWidget">QDesktopWidget</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdesktopwidget.html#dtor.QDesktopWidget">~QDesktopWidget</a></b> ()</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#availableGeometry">availableGeometry</a></b> ( int <i>screen</i> = -1 ) const</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#availableGeometry-2">availableGeometry</a></b> ( const QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#availableGeometry-3">availableGeometry</a></b> ( const QPoint &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdesktopwidget.html#isVirtualDesktop">isVirtualDesktop</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdesktopwidget.html#numScreens">numScreens</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qdesktopwidget.html#primaryScreen">primaryScreen</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qdesktopwidget.html#screen">screen</a></b> ( int <i>screen</i> = -1 )</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#screenGeometry">screenGeometry</a></b> ( int <i>screen</i> = -1 ) const</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#screenGeometry-2">screenGeometry</a></b> ( const QWidget * <i>widget</i> ) const</li>
+<li><div class="fn"/>const QRect <b><a href="qdesktopwidget.html#screenGeometry-3">screenGeometry</a></b> ( const QPoint &amp; <i>p</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qdesktopwidget.html#screenNumber">screenNumber</a></b> ( const QWidget * <i>widget</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="qdesktopwidget.html#screenNumber-2">screenNumber</a></b> ( const QPoint &amp; <i>point</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdesktopwidget.html#resized">resized</a></b> ( int <i>screen</i> )</li>
+<li><div class="fn"/>void <b><a href="qdesktopwidget.html#workAreaResized">workAreaResized</a></b> ( int <i>screen</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesktopWidget class provides access to screen information on multi-head systems.</p>
+<p>Systems with more than one graphics card and monitor can manage the physical screen space available either as multiple desktops, or as a large virtual desktop, which usually has the size of the bounding rectangle of all the screens (see <a href="qdesktopwidget.html#isVirtualDesktop">isVirtualDesktop</a>()). For an application, one of the available screens is the primary screen, i.e&#x2e; the screen where the main widget resides (see <a href="qdesktopwidget.html#primaryScreen">primaryScreen</a>()). All windows opened in the context of the application should be constrained to the boundaries of the primary screen; for example, it would be inconvenient if a dialog box popped up on a different screen, or split over two screens.</p>
+<p>The QDesktopWidget provides information about the geometry of the available screens with <a href="qdesktopwidget.html#screenGeometry">screenGeometry</a>(). The number of screens available is returned by <a href="qdesktopwidget.html#numScreens">numScreens</a>(). The screen number that a particular point or widget is located in is returned by <a href="qdesktopwidget.html#screenNumber">screenNumber</a>().</p>
+<p>Widgets provided by Qt use this class, for example, to place tooltips, menus and dialog boxes according to the parent or application widget.</p>
+<p>Applications can use this class to save window positions, or to place child widgets on one screen.</p>
+<p align="center"><img src="images/qdesktopwidget.png" alt="Managing Multiple Screens" /></p><p>In the illustration above, Application One's primary screen is screen 0, and App Two's primary screen is screen 1.</p>
+<p>See also <a href="qapplication.html">QApplication</a> and QX11Info::appRootWindow().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDesktopWidget"></a>QDesktopWidget::QDesktopWidget ()</h3>
+<p>Creates the desktop widget.</p>
+<p>If the system supports a virtual desktop, this widget will have the size of the virtual desktop; otherwise this widget will have the size of the primary screen.</p>
+<p>Instead of using <a href="qdesktopwidget.html">QDesktopWidget</a> directly, use <a href="qapplication.html#desktop">QApplication::desktop</a>().</p>
+<h3 class="fn"><a name="dtor.QDesktopWidget"></a>QDesktopWidget::~QDesktopWidget ()</h3>
+<p>Destroy the object and free allocated resources.</p>
+<h3 class="fn"><a name="availableGeometry"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::availableGeometry ( int <i>screen</i> = -1 ) const</h3>
+<p>Returns the available geometry of the screen with index <i>screen</i>. What is available will be subrect of <a href="qdesktopwidget.html#screenGeometry">screenGeometry</a>() based on what the platform decides is available (for example excludes the dock and menu bar on Mac OS X, or the task bar on Windows).</p>
+<p>See also <a href="qdesktopwidget.html#screenNumber">screenNumber</a>() and <a href="qdesktopwidget.html#screenGeometry">screenGeometry</a>().</p>
+<h3 class="fn"><a name="availableGeometry-2"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::availableGeometry ( const <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the available geometry of the screen which contains <i>widget</i>.</p>
+<p>See also <a href="qdesktopwidget.html#screenGeometry">screenGeometry</a>().</p>
+<h3 class="fn"><a name="availableGeometry-3"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::availableGeometry ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the available geometry of the screen which contains <i>p</i>.</p>
+<p>See also <a href="qdesktopwidget.html#screenGeometry">screenGeometry</a>().</p>
+<h3 class="fn"><a name="isVirtualDesktop"></a>bool QDesktopWidget::isVirtualDesktop () const</h3>
+<p>Returns true if the system manages the available screens in a virtual desktop; otherwise returns false.</p>
+<p>For virtual desktops, <a href="qdesktopwidget.html#screen">screen</a>() will always return the same widget. The size of the virtual desktop is the size of this desktop widget.</p>
+<h3 class="fn"><a name="numScreens"></a>int QDesktopWidget::numScreens () const</h3>
+<p>Returns the number of available screens.</p>
+<p>See also <a href="qdesktopwidget.html#primaryScreen">primaryScreen</a>().</p>
+<h3 class="fn"><a name="primaryScreen"></a>int QDesktopWidget::primaryScreen () const</h3>
+<p>Returns the index of the primary screen.</p>
+<p>See also <a href="qdesktopwidget.html#numScreens">numScreens</a>().</p>
+<h3 class="fn"><a name="resized"></a>void QDesktopWidget::resized ( int <i>screen</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the size of <i>screen</i> changes.</p>
+<h3 class="fn"><a name="screen"></a><a href="qwidget.html">QWidget</a> * QDesktopWidget::screen ( int <i>screen</i> = -1 )</h3>
+<p>Returns a widget that represents the screen with index <i>screen</i>.</p>
+<p>If the system uses a virtual desktop, the returned widget will have the geometry of the entire virtual desktop; i.e&#x2e;, bounding every <i>screen</i>.</p>
+<p>See also <a href="qdesktopwidget.html#primaryScreen">primaryScreen</a>(), <a href="qdesktopwidget.html#numScreens">numScreens</a>(), and <a href="qdesktopwidget.html#isVirtualDesktop">isVirtualDesktop</a>().</p>
+<h3 class="fn"><a name="screenGeometry"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::screenGeometry ( int <i>screen</i> = -1 ) const</h3>
+<p>Returns the geometry of the screen with index <i>screen</i>.</p>
+<p>See also <a href="qdesktopwidget.html#screenNumber">screenNumber</a>().</p>
+<h3 class="fn"><a name="screenGeometry-2"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::screenGeometry ( const <a href="qwidget.html">QWidget</a> * <i>widget</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the geometry of the screen which contains <i>widget</i>.</p>
+<h3 class="fn"><a name="screenGeometry-3"></a>const <a href="qrect.html">QRect</a> QDesktopWidget::screenGeometry ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the geometry of the screen which contains <i>p</i>.</p>
+<h3 class="fn"><a name="screenNumber"></a>int QDesktopWidget::screenNumber ( const <a href="qwidget.html">QWidget</a> * <i>widget</i> = 0 ) const</h3>
+<p>Returns the index of the screen that contains the largest part of <i>widget</i>, or -1 if the widget not on a screen.</p>
+<p>See also <a href="qdesktopwidget.html#primaryScreen">primaryScreen</a>().</p>
+<h3 class="fn"><a name="screenNumber-2"></a>int QDesktopWidget::screenNumber ( const <a href="qpoint.html">QPoint</a> &amp; <i>point</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the index of the screen that contains the <i>point</i>, or the screen which is the shortest distance from the <i>point</i>.</p>
+<p>See also <a href="qdesktopwidget.html#primaryScreen">primaryScreen</a>().</p>
+<h3 class="fn"><a name="workAreaResized"></a>void QDesktopWidget::workAreaResized ( int <i>screen</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the work area available on <i>screen</i> changes.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

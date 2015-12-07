@@ -1,0 +1,166 @@
+/** \mainpage Phonon - Multimedia API for KDE
+
+<p><b>
+Overview |
+\ref phonon_tut1 "Application Example" |
+\ref phonon_backend_development_page "Backend Development"
+</b></p>
+
+%Phonon is the Multimedia API for %KDE. You should evaluate whether %Phonon
+supplies all you need before looking at frameworks like GStreamer, NMM or Helix.
+The range of applications goes from full featured media players and capture
+applications to voice/video chats.
+
+\section phonon_overview A Basic Overview
+In %Phonon there are three main concepts: MediaObjects, Paths and Outputs. The
+MediaObjects control the playback/capture and provide the media data.
+MediaObjects can be connected to Outputs using Path objects which also allow the insertion of Effect objects
+between MediaObject and Output.
+
+\section phonon_tutorial Tutorial
+\li \ref phonon_tut1 "a simple audio player"
+
+\section phonon_frontend The Frontend API
+\li for simple playback tasks use \ref Phonon::createPlayer or \ref Phonon::VideoPlayer
+\li \ref Frontend
+
+\section phonon_backend_development Backend Development
+If you want to write a new backend for %Phonon this is for you:
+\li \ref phonon_backend_development_page "Phonon Backend Development"
+\li \ref Backend
+
+\authors
+Matthias Kretz \<kretz@kde.org\>
+
+\maintainers
+Matthias Kretz \<kretz@kde.org\>
+
+\licenses
+\lgpl
+
+
+
+
+
+
+
+
+
+
+\page phonon_tut1 Phonon Tutorial Part 1: a simple audio player
+
+<p><b>
+\ref index "Overview" |
+Application Example |
+\ref phonon_backend_development_page "Backend Development"
+</b></p>
+
+\includelineno tutorial2.cpp
+
+
+
+
+
+
+
+
+\page phonon_backend_development_page Phonon Backend Development
+
+<p><b>
+\ref index "Overview" |
+\ref phonon_tut1 "Application Example" |
+Backend Development
+</b></p>
+
+The backend is the most important part in %Phonon to provide functionality. This
+document will get you started how backends work, how to start development of a
+new backend and how to understand existing backend code.
+
+\section phonon_backend_introduction Introduction
+
+The first step is to understand how the %Phonon frontend calls the backend: In
+the frontend objects all backend objects are "only" QObjects. But QObject has
+powerful introspection capabilities that %Phonon uses to call methods in the
+backend. If you're interested look at \ref QMetaObject::invokeMethod. In order
+to make sure that a backend is fully operational (there are no abstract classes
+that tell the backend developer what method signatures are wrong or what
+methods are missing) there are two test programs compiled with kdelibs (if
+KDE4_BUILD_TESTS is set in cmake) that inspects the backend.
+
+In short that requires the backend classes to inherit from QObject and to make
+all methods that are to be called from the frontend slots or prefixed with
+Q_INVOKABLE (the latter doesn't work reliable with Qt 4.1.3 at least, so you
+should simply make those methods slots).
+
+\section phonon_backend_classes The Backend Classes
+
+The central class that needs to be implemented is the backend factory class,
+throughout this documentation simply called Backend:
+
+\li \ref phonon_Backend "Backend"
+
+\subsection phonon_mediaproducingclasses The classes producing media data (sources)
+
+\li \ref Phonon::MediaObjectInterface "common methods/signals for media producing classes"
+\li \ref phonon_MediaObject "MediaObject"
+
+\subsection phonon_pathclass The path class
+
+\li \ref phonon_Path "Path"
+
+\subsection phonon_outputclasses The output classes
+\li \ref phonon_AudioDataOutput "AudioDataOutput"
+\li \ref phonon_AudioOutput "AudioOutput"
+\li \ref phonon_VideoDataOutput "VideoDataOutput"
+\li \ref phonon_VideoWidget "VideoWidget"
+
+\subsection phonon_EffectClasses The effect classes
+
+\li \ref phonon_Effect "Effect"
+\li \ref phonon_Visualization "Visualization"
+\li \ref phonon_VolumeFaderEffect "VolumeFaderEffect"
+
+\defgroup Frontend Classes for applications using Phonon
+Here you find all classes that are available to application developers using
+%Phonon.
+
+\defgroup Playback Playback
+The most important classes to control playback.
+\ingroup Frontend
+
+\defgroup Recording Recording
+The most important classes to control recording.
+\ingroup Frontend
+
+\defgroup BackendInformation Information about the backend
+Get information about available devices, effects and changes in backend
+capabilities.
+\ingroup Frontend
+
+\defgroup PhononWidgets Widgets
+Convenience widgets and the \ref Phonon::VideoWidget
+\ingroup Frontend
+
+\defgroup PhononEffects Effects
+The classes for audio and video effects.
+\ingroup Frontend
+
+\defgroup PhononVideo Video
+The most important classes for video.
+\ingroup Frontend
+
+\defgroup Backend Backend classes and interfaces
+In this group you can find all classes and interfaces relevant for backend
+development. As an application developer you can safely ignore these classes.
+
+*/
+// DOXYGEN_SET_EXPAND_AS_DEFINED = PHONON_OBJECT PHONON_HEIR PHONON_INTERFACE_GETTER
+// DOXYGEN_SET_HIDE_SCOPE_NAMES = YES
+// DOXYGEN_SET_HIDE_FRIEND_COMPOUNDS = YES
+// DOXYGEN_SET_PROJECT_NAME = Phonon
+// DOXYGEN_EXCLUDE += examples kcm DESIGN experimental *_p.h kdepluginfactory.h kiomediastream.h pluginfactory.h *.cpp libkaudiodevicelist *interface.h backend
+// DOXYGEN_SET_EXAMPLE_PATH += @topdir@/phonon/examples
+// DOXYGEN_SET_EXTRACT_ALL = NO
+// DOXYGEN_SET_HIDE_UNDOC_MEMBERS = YES
+// DOXYGEN_SET_SOURCE_BROWSER = NO
+// vim: tw=100 ts=4 sw=4 expandtab filetype=doxygen

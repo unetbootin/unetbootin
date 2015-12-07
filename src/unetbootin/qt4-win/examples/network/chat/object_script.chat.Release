@@ -1,0 +1,13 @@
+INPUT(
+./tmp\obj\release_static\chatdialog.o
+./tmp\obj\release_static\client.o
+./tmp\obj\release_static\connection.o
+./tmp\obj\release_static\main.o
+./tmp\obj\release_static\peermanager.o
+./tmp\obj\release_static\server.o
+./tmp\obj\release_static\moc_chatdialog.o
+./tmp\obj\release_static\moc_client.o
+./tmp\obj\release_static\moc_connection.o
+./tmp\obj\release_static\moc_peermanager.o
+./tmp\obj\release_static\moc_server.o
+);

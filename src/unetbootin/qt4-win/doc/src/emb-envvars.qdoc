@@ -1,0 +1,170 @@
+/****************************************************************************
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-envvars.html
+
+    \title Qt for Embedded Linux Environment Variables
+    \ingroup qt-embedded
+
+    These environment variables are relevant to \l{Qt for Embedded Linux}
+    users.
+
+    \table
+    \header \o Variable \o Description
+
+    \row
+    \o \bold POINTERCAL_FILE \target POINTERCAL_FILE
+
+    \o Specifies the file containing the data used to calibrate the
+    pointer device.
+
+    See also QWSCalibratedMouseHandler and \l{Qt for Embedded Linux Pointer
+    Handling}.
+
+    \row
+    \o \bold QT_ONSCREEN_PAINT \target QT_ONSCREEN_PAINT
+
+    \o If defined, the application will render its widgets directly on
+    screen. The affected regions of the screen will not be modified by
+    the screen driver unless another window with a higher focus
+    requests (parts of) the same region.
+
+    Setting this environment variable is equivalent to setting the
+    Qt::WA_PaintOnScreen attribute for all the widgets in the
+    application.
+
+    See also the Qt for Embedded Linux \l{Qt for Embedded Linux Architecture#Graphics
+    Rendering}{graphics rendering} documentation.
+
+    \row
+    \o \bold QWS_SW_CURSOR \target QWS_SW_CURSOR
+    \o If defined, the software mouse cursor is always used (even when using an
+    accelerated driver that supports a hardware cursor).
+
+    \row
+    \o \bold QWS_DISPLAY \target QWS_DISPLAY
+    \o
+
+    Specifies the display type and framebuffer. For example, if the
+    current shell is bash, ksh, zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 0
+
+    The valid values for the \c <driver> argument are \c LinuxFb, \c
+    QVFb, \c VNC, \c Transformed, \c Multi and \l
+    {QScreenDriverPlugin::keys()}{keys} identifying custom drivers,
+    and the \c {<display num>} argument is used to separate screens
+    that are using the same screen driver and to enable multiple
+    displays (see the \l {Running Qt for Embedded Linux Applications}
+    documentation for more details).
+
+    The driver specific options are described in the \l{Qt for Embedded Linux
+    Display Management}{display management} documentation.
+
+    \row
+    \o \bold QWS_SIZE \target QWS_SIZE
+    \o
+
+    Specifies the size of the \l{Qt for Embedded Linux} window which is centered
+    within the screen. For example, if the current shell is bash, ksh,
+    zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 1
+
+    \row
+    \o \bold QWS_MOUSE_PROTO \target QWS_MOUSE_PROTO
+    \o
+
+    Specifies the driver for pointer handling. For example, if the
+    current shell is bash, ksh, zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 2
+
+    The valid values for the \c <driver> argument are \c MouseMan, \c
+    IntelliMouse, \c Microsoft, \c VR41xx, \c LinuxTP, \c Yopy. \c
+    Tslib and \l {QMouseDriverPlugin::keys()}{keys} identifying
+    custom drivers, and the driver specific options are typically a
+    device, e.g., \c /dev/mouse for mouse devices and \c /dev/ts for
+    touch panels.
+
+    Multiple keyboard drivers can be specified in one go:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 3
+
+    Input will be read from all specified drivers.
+    Note that the \c Vr41xx driver also accepts two optional
+    arguments: \c press=<value> defining a mouseclick (the default
+    value is 750) and \c filter=<value> specifying the length of the
+    filter used to eliminate noise (the default length is 3). For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 4
+
+    See also \l {Qt for Embedded Linux Pointer Handling}.
+
+    \row
+    \o \bold QWS_KEYBOARD \target QWS_KEYBOARD
+    \o
+
+    Specifies the driver and device for character input. For example, if the
+    current shell is bash, ksh, zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 5
+
+    The valid values for the \c <driver> argument are \c SL5000, \c
+    Yopy, \c VR41xx, \c TTY, \c USB and \l
+    {QKbdDriverPlugin::keys()}{keys} identifying custom drivers,
+    and the driver specific options are typically a device, e.g., \c
+    /dev/tty0.
+
+    Multiple keyboard drivers can be specified in one go:
+
+    \snippet doc/src/snippets/code/doc.src.emb-envvars.qdoc 6
+
+    Input will be read from all specified drivers.
+
+    See also \l {Qt for Embedded Linux Character Input}.
+
+    \endtable
+*/

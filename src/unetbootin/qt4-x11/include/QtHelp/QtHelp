@@ -1,0 +1,13 @@
+#ifndef QT_QTHELP_MODULE_H
+#define QT_QTHELP_MODULE_H
+#include <QtSql/QtSql>
+#include <QtXml/QtXml>
+#include <QtNetwork/QtNetwork>
+#include "qhelpcontentwidget.h"
+#include "qhelpengine.h"
+#include "qhelpenginecore.h"
+#include "qhelpindexwidget.h"
+#include "qhelpsearchengine.h"
+#include "qhelpsearchquerywidget.h"
+#include "qhelpsearchresultwidget.h"
+#endif

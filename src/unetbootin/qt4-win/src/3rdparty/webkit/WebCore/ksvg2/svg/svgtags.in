@@ -1,0 +1,107 @@
+a
+#if 0
+altGlyph
+altGlyphDef
+altGlyphItem
+#endif
+#ifdef ENABLE_SVG_EXPERIMENTAL_FEATURES
+animate
+animateColor
+animateMotion
+animateTransform
+#endif
+circle
+clipPath
+#if 0
+color_profile
+#endif
+cursor
+#if 0
+definition_src
+#endif
+defs
+desc
+ellipse
+#ifdef ENABLE_SVG_EXPERIMENTAL_FEATURES
+feBlend
+feColorMatrix
+feComponentTransfer
+feComposite
+#if 0
+feConvolveMatrix
+#endif
+feDiffuseLighting
+feDisplacementMap
+feDistantLight
+feFlood
+feFuncA
+feFuncB
+feFuncG
+feFuncR
+feGaussianBlur
+feImage
+feMerge
+feMergeNode
+#if 0
+feMorphology
+#endif
+feOffset
+fePointLight
+feSpecularLighting
+feSpotLight
+feTile
+feTurbulence
+filter
+#endif
+#if 0
+font
+font_face
+font_face_format
+font_face_name
+font_face_src
+font_face_uri
+#endif
+#ifdef ENABLE_SVG_EXPERIMENTAL_FEATURES
+foreignObject
+#endif
+g
+#if 0
+glyph
+glyphRef
+hkern
+#endif
+image
+line
+linearGradient
+marker
+mask
+metadata
+#if 0
+missing_glyph
+#endif
+mpath
+path
+pattern
+polygon
+polyline
+radialGradient
+rect
+script
+set
+stop
+style
+svg
+switch
+symbol
+text
+#if 0
+textPath
+#endif
+title
+tref
+tspan
+use
+view
+#if 0
+vkern
+#endif

@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/util/qdesktopservices.cpp -->
+<head>
+  <title>Qt 4.4: QDesktopServices Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesktopServices Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QDesktopServices class provides methods for accessing common desktop services. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesktopServices&gt;</pre><p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdesktopservices-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdesktopservices.html#StandardLocation-enum">StandardLocation</a></b> { DesktopLocation, DocumentsLocation, FontsLocation, ApplicationsLocation, ..., DataLocation }</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qdesktopservices.html#displayName">displayName</a></b> ( StandardLocation <i>type</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdesktopservices.html#openUrl">openUrl</a></b> ( const QUrl &amp; <i>url</i> )</li>
+<li><div class="fn"/>void <b><a href="qdesktopservices.html#setUrlHandler">setUrlHandler</a></b> ( const QString &amp; <i>scheme</i>, QObject * <i>receiver</i>, const char * <i>method</i> )</li>
+<li><div class="fn"/>QString <b><a href="qdesktopservices.html#storageLocation">storageLocation</a></b> ( StandardLocation <i>type</i> )</li>
+<li><div class="fn"/>void <b><a href="qdesktopservices.html#unsetUrlHandler">unsetUrlHandler</a></b> ( const QString &amp; <i>scheme</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesktopServices class provides methods for accessing common desktop services.</p>
+<p>Many desktop environments provide services that can be used by applications to perform common tasks, such as opening a web page, in a way that is both consistent and takes into account the user's application preferences.</p>
+<p>This class contains functions that provide simple interfaces to these services that indicate whether they succeeded or failed.</p>
+<p>The <a href="qdesktopservices.html#openUrl">openUrl</a>() function is used to open files located at arbitrary URLs in external applications. For URLs that correspond to resources on the local filing system (where the URL scheme is &quot;file&quot;), a suitable application will be used to open the file; otherwise, a web browser will be used to fetch and display the file.</p>
+<p>The user's desktop settings control whether certain executable file types are opened for browsing, or if they are executed instead. Some desktop environments are configured to prevent users from executing files obtained from non-local URLs, or to ask the user's permission before doing so.</p>
+<a name="url-handlers"></a>
+<h3>URL Handlers</h3>
+<p>The behavior of the <a href="qdesktopservices.html#openUrl">openUrl</a>() function can be customized for individual URL schemes to allow applications to override the default handling behavior for certain types of URLs.</p>
+<p>The dispatch mechanism allows only one custom handler to be used for each URL scheme; this is set using the <a href="qdesktopservices.html#setUrlHandler">setUrlHandler</a>() function. Each handler is implemented as a slot which accepts only a single <a href="qurl.html">QUrl</a> argument.</p>
+<p>The existing handlers for each scheme can be removed with the <a href="qdesktopservices.html#unsetUrlHandler">unsetUrlHandler</a>() function. This returns the handling behavior for the given scheme to the default behavior.</p>
+<p>This system makes it easy to implement a help system, for example. Help could be provided in labels and text browsers using <b>help://myapplication/mytopic</b> URLs, and by registering a handler it becomes possible to display the help text inside the application:</p>
+<pre>     class MyHelpHandler : public QObject
+     {
+         Q_OBJECT
+     public:
+         ...
+     public slots:
+         void showHelp(const QUrl &amp;url);
+     };
+
+     QDesktopServices::setUrlHandler(&quot;help&quot;, helpInstance, &quot;showHelp&quot;);</pre>
+<p>If inside the handler you decide that you can't open the requested URL, you can just call <a href="qdesktopservices.html#openUrl">QDesktopServices::openUrl</a>() again with the same argument, and it will try to open the URL using the appropriate mechanism for the user's desktop environment.</p>
+<p>See also <a href="qsystemtrayicon.html">QSystemTrayIcon</a> and <a href="qprocess.html">QProcess</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StandardLocation-enum"></a>enum QDesktopServices::StandardLocation</h3>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="displayName"></a><a href="qstring.html">QString</a> QDesktopServices::displayName ( <a href="qdesktopservices.html#StandardLocation-enum">StandardLocation</a> <i>type</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="openUrl"></a>bool QDesktopServices::openUrl ( const <a href="qurl.html">QUrl</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Opens the given <i>url</i> in the appropriate web browser for the user's desktop environment, and returns true if successful; otherwise returns false.</p>
+<p>If the URL is a reference to a local file (i.e&#x2e; the URL scheme is &quot;file&quot;) then it will be opened with a suitable application instead of a web browser.</p>
+<p>If a <tt>mailto</tt> URL is specified, the user's e-mail client will be used to open a composer window containing the options specified in the URL, similar to the way <tt>mailto</tt> links are handled by a web browser.</p>
+<p>For example, the following URL contains a recipient (<tt>user@foo.com</tt>), a subject (<tt>Test</tt>), and a message body (<tt>Just a test</tt>):</p>
+<pre>     mailto:user@foo.com?subject=Test&amp;body=Just a test</pre>
+<p><b>Warning:</b> Although many e-mail clients can send attachments and are Unicode-aware, the user may have configured their client without these features. Also, certain e-mail clients (e.g&#x2e;, Lotus Notes) have problems with long URLs.</p>
+<p>See also <a href="qdesktopservices.html#setUrlHandler">setUrlHandler</a>().</p>
+<h3 class="fn"><a name="setUrlHandler"></a>void QDesktopServices::setUrlHandler ( const <a href="qstring.html">QString</a> &amp; <i>scheme</i>, <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>method</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the handler for the given <i>scheme</i> to be the handler <i>method</i> provided by the <i>receiver</i> object.</p>
+<p>This function provides a way to customize the behavior of <a href="qdesktopservices.html#openUrl">openUrl</a>(). If <a href="qdesktopservices.html#openUrl">openUrl</a>() is called with a URL with the specified <i>scheme</i> then the given <i>method</i> on the <i>receiver</i> object is called instead of <a href="qdesktopservices.html">QDesktopServices</a> launching an external application.</p>
+<p>The provided method must be implemented as a slot that only accepts a single <a href="qurl.html">QUrl</a> argument.</p>
+<p>If setUrlHandler() is used to set a new handler for a scheme which already has a handler, the existing handler is simply replaced with the new one. Since <a href="qdesktopservices.html">QDesktopServices</a> does not take ownership of handlers, no objects are deleted when a handler is replaced.</p>
+<p>Note that the handler will always be called from within the same thread that calls <a href="qdesktopservices.html#openUrl">QDesktopServices::openUrl</a>().</p>
+<p>See also <a href="qdesktopservices.html#openUrl">openUrl</a>().</p>
+<h3 class="fn"><a name="storageLocation"></a><a href="qstring.html">QString</a> QDesktopServices::storageLocation ( <a href="qdesktopservices.html#StandardLocation-enum">StandardLocation</a> <i>type</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<h3 class="fn"><a name="unsetUrlHandler"></a>void QDesktopServices::unsetUrlHandler ( const <a href="qstring.html">QString</a> &amp; <i>scheme</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Removes a previously set url handler for the specified <i>scheme</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

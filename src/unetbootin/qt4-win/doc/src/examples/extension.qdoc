@@ -1,0 +1,155 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example dialogs/extension
+    \title Extension Example
+
+    The Extension example shows how to add an extension to a QDialog
+    using the QAbstractButton::toggled() signal and the
+    QWidget::setVisible() slot.
+
+    \image extension-example.png Screenshot of the Extension example
+
+    The Extension application is a dialog that allows the user to
+    perform a simple search as well as a more advanced search.
+
+    The simple search has two options: \gui {Match case} and \gui
+    {Search from start}. The advanced search options include the
+    possibilities to search for \gui {Whole words}, \gui {Search
+    backward} and \gui {Search selection}. Only the simple search is
+    visible when the application starts. The advanced search options
+    are located in the application's extension part, and can be made
+    visible by pressing the \gui More button:
+
+    \image extension_more.png Screenshot of the Extension example
+
+    \section1 FindDialog Class Definition
+
+    The \c FindDialog class inherits QDialog. The QDialog class is the
+    base class of dialog windows. A dialog window is a top-level
+    window mostly used for short-term tasks and brief communications
+    with the user.
+
+    \snippet examples/dialogs/extension/finddialog.h 0
+
+    The \c FindDialog widget is the main application widget, and
+    displays the application's search options and controlling
+    buttons.
+
+    In addition to a constructor, we declare the several child
+    widgets: We need a QLineEdit with an associated QLabel to let the
+    user type a word to search for, we need several  \l
+    {QCheckBox}{QCheckBox}es to facilitate the search options, and we
+    need three \l {QPushButton}{QPushButton}s: the \gui Find button to
+    start a search, the \gui More button to enable an advanced search,
+    and the \gui Close button to exit the application. Finally, we
+    need a QWidget representing the application's extension part.
+
+    \section1 FindDialog Class Implementation
+
+    In the constructor we first create the standard child widgets for
+    the simple search: the QLineEdit with the associated QLabel, two
+    of the \l {QCheckBox}{QCheckBox}es and all the \l
+    {QPushButton}{QPushButton}s.
+
+    \snippet examples/dialogs/extension/finddialog.cpp 0
+
+    We give the options and buttons a shortcut key using the &
+    character. In the \gui {Find what} option's case, we also need to
+    use the QLabel::setBuddy() function to make the shortcut key work
+    as expected; then, when the user presses the shortcut key
+    indicated by the label, the keyboard focus is transferred to the
+    label's buddy widget, the QLineEdit.
+
+    We set the \gui Find button's default property to true, using the
+    QPushButton::setDefault() function. Then the push button will be
+    pressed if the user presses the Enter (or Return) key. Note that a
+    QDialog can only have one default button.
+
+    \snippet examples/dialogs/extension/finddialog.cpp 2
+
+    Then we create the extension widget, and the \l
+    {QCheckBox}{QCheckBox}es associated with the advanced search
+    options.
+
+    \snippet examples/dialogs/extension/finddialog.cpp 3
+
+    Now that the extension widget is created, we can connect the \gui
+    More button's \l{QAbstractButton::toggled()}{toggled()} signal to
+    the extension widget's \l{QWidget::setVisible()}{setVisible()} slot.
+
+    The QAbstractButton::toggled() signal is emitted whenever a
+    checkable button changes its state. The signal's argument is true
+    if the button is checked, or false if the button is unchecked. The
+    QWidget::setVisible() slot sets the widget's visible status. If
+    the status is true the widget is shown, otherwise the widget is
+    hidden.
+
+    Since we made the \gui More button checkable when we created it,
+    the connection makes sure that the extension widget is shown
+    depending on the state of \gui More button.
+
+    We also connect the \gui Close button to the QWidget::close()
+    slot, and we put the checkboxes associated with the advanced
+    search options into a layout we install on the extension widget.
+
+    \snippet examples/dialogs/extension/finddialog.cpp 4
+
+    Before we create the main layout, we create several child layouts
+    for the widgets: First we allign the QLabel ans its buddy, the
+    QLineEdit, using a QHBoxLayout. Then we vertically allign the
+    QLabel and QLineEdit with the checkboxes associated with the
+    simple search, using a QVBoxLayout. We also create a QVBoxLayout
+    for the buttons. In the end we lay out the two latter layouts and
+    the extension widget using a QGridLayout.
+
+    \snippet examples/dialogs/extension/finddialog.cpp 5
+
+    Finally, we hide the extension widget using the QWidget::hide()
+    function, making the application only show the simple search
+    options when it starts. When the user wants to access the advanced
+    search options, the dialog only needs to change the visibility of
+    the extension widget. Qt's layout management takes care of the
+    dialog's appearance.
+*/

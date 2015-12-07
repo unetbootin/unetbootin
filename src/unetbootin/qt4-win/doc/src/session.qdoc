@@ -1,0 +1,179 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page session.html
+    \title Session Management
+    \ingroup gui-programming
+
+    A \e session is a group of running applications, each of which has a
+    particular state. The session is controlled by a service called the \e
+    session \e manager. The applications participating in the session are
+    called \e{session clients}.
+
+    The session manager issues commands to its clients on behalf of the
+    user. These commands may cause clients to commit unsaved changes (for
+    example by saving open files), to preserve their state for future
+    sessions, or to terminate gracefully. The set of these operations is
+    called \e session \e management.
+
+    In the common case, a session consists of all applications that a
+    user runs on their desktop at a time. Under Unix/X11, however, a
+    session may include applications running on different computers and
+    may span multiple displays.
+
+    \section1 Shutting a Session Down 
+
+    A session is shut down by the session manager, usually on behalf of
+    the user when they want to log out. A system might also perform an
+    automatic shutdown in an emergency situation, for example, if power is
+    about to be lost. Clearly there is a significant difference between
+    these types of shutdown. During the first, the user may want to
+    interact with the application, specifying exactly which files should
+    be saved and which should be discarded. In the latter case, there's no
+    time for interaction. There may not even be a user sitting in front of
+    the machine!
+
+
+    \section1 Protocols and Support on Different Platforms
+
+    On Mac OS X, and Microsoft Windows versions prior to Windows 2000,
+    there is nothing like complete session management for applications
+    yet, i.e. no restoring of previous sessions. (Windows 2000 and XP
+    provide "hibernation" where the entire memory is saved to disk and
+    restored when the machine is restarted.) They do support graceful
+    logouts where applications have the opportunity to cancel the process
+    after getting confirmation from the user. This is the functionality
+    that corresponds to the QApplication::commitData() method.
+
+    X11 has supported complete session management since X11R6.
+
+    \section1 Getting Session Management to Work with Qt 
+
+    Start by reimplementing QApplication::commitData() to
+    enable your application to take part in the graceful logout process. If
+    you are only targeting the Microsoft Windows platform, this is all you can
+    and must provide. Ideally, your application should provide a shutdown
+    dialog similar to the following:
+
+    \img session.png A typical dialog on shutdown
+
+    Example code for this dialog can be found in the documentation of
+    QSessionManager::allowsInteraction().
+
+    For complete session management (only supported on X11R6 at present),
+    you must also take care of saving the application's state, and
+    potentially of restoring the state in the next life cycle of the
+    session. This saving is done by reimplementing
+    QApplication::saveState(). All state data you are saving in this
+    function, should be marked with the session identifier
+    QApplication::sessionId(). This application specific identifier is
+    globally unique, so no clashes will occur. (See QSessionManager for
+    information on saving/restoring the state of a particular Qt
+    application.)
+
+    Restoration is usually done in the application's main()
+    function. Check if QApplication::isSessionRestored() is \c true. If
+    that's the case, use the session identifier
+    QApplication::sessionId() again to access your state data and restore
+    the state of the application.
+
+    \bold{Important:} In order to allow the window manager to
+    restore window attributes such as stacking order or geometry
+    information, you must identify your top level widgets with 
+    unique application-wide object names (see QObject::setObjectName()). When
+    restoring the application, you must ensure that all restored
+    top level widgets are given the same unique names they had before.
+
+    \section1 Testing and Debugging Session Management 
+
+    Session management support on Mac OS X and Windows is fairly limited
+    due to the lack of this functionality in the operating system
+    itself. Simply shut the session down and verify that your application
+    behaves as expected. It may be useful to launch another application,
+    usually the integrated development environment, before starting your
+    application. This other application will get the shutdown message
+    afterwards, thus permitting you to cancel the shutdown. Otherwise you
+    would have to log in again after each test run, which is not a problem
+    per se, but is time consuming.
+
+    On Unix you can either use a desktop environment that supports
+    standard X11R6 session management or, the recommended method, use the
+    session manager reference implementation provided by the X Consortium.
+    This sample manager is called \c xsm and is part of a standard X11R6
+    installation. As always with X11, a useful and informative manual page
+    is provided. Using \c xsm is straightforward (apart from the clumsy
+    Athena-based user interface). Here's a simple approach:
+
+    \list
+    \i Run X11R6.
+    \i Create a dot file \c .xsmstartup in your home directory which
+    contains the single line
+    \snippet doc/src/snippets/code/doc.src.session.qdoc 0
+    This tells \c xsm that the default/failsafe session is just an xterm
+    and nothing else. Otherwise \c xsm would try to invoke lots of
+    clients including the windowmanager \c twm, which isn't very helpful.
+    \i Now launch \c xsm from another terminal window. Both a session
+    manager window and the xterm will appear. The xterm has a nice
+    property that sets it apart from all the other shells you are
+    currently running: within its shell, the \c SESSION_MANAGER
+    environment variable points to the session manager you just started.
+    \i Launch your application from the new xterm window. It will connect
+    itself automatically to the session manager. You can check with the \e
+    ClientList push button whether the connect was successful.
+
+    \bold{Note:} Never keep the \e ClientList open when you
+    start or end session managed clients! Otherwise \c xsm is likely to
+    crash.
+    \i Use the session manager's \e Checkpoint and \e Shutdown buttons
+    with different settings and see how your application behaves. The save
+    type \e local means that the clients should save their state. It
+    corresponds to the QApplication::saveState() function. The \e
+    global save type asks applications to save their unsaved changes in
+    permanent, globally accessible storage. It invokes
+    QApplication::commitData().
+    \i Whenever something crashes, blame \c xsm and not Qt. \c xsm is far
+    from being a usable session manager on a user's desktop. It is,
+    however, stable and useful enough to serve as testing environment.
+    \endlist
+*/

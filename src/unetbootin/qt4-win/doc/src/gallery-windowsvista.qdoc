@@ -1,0 +1,394 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \page gallery-windowsvista.html
+
+  \title Windows Vista Style Widget Gallery
+  \ingroup gallery
+
+  This page shows some of the widgets available in Qt
+  when configured to use the "windowsvista" style.
+
+\raw HTML
+<h2 align="center">Buttons</h2>
+
+<table align="center" cellspacing="20%" width="100%">
+<colgroup span="2">
+  <col width="40%" />
+  <col width="40%" />
+</colgroup>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-pushbutton.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-toolbutton.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QPushButton widget provides a command button.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QToolButton class provides a quick-access button to commands
+       or options, usually used inside a QToolBar.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-checkbox.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-radiobutton.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QCheckBox widget provides a checkbox with a text label.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QRadioButton widget provides a radio button with a text or pixmap label.\raw HTML
+</td>
+</tr>
+</table>
+\endraw
+\raw HTML
+<h2 align="center">Containers</h2>
+
+<table align="center" cellspacing="20%" width="100%">
+<colgroup span="2">
+  <col width="40%" />
+  <col width="40%" />
+</colgroup>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-groupbox.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-tabwidget.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QGroupBox widget provides a group box frame with a title.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QTabWidget class provides a stack of tabbed widgets.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-frame.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-toolbox.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QFrame widget provides a simple decorated container for other widgets.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QToolBox class provides a column of tabbed widget items.\raw HTML
+</td>
+</tr>
+</table>
+\endraw
+\raw HTML
+<h2 align="center">Item Views</h2>
+
+<table align="center" cellspacing="20%" width="100%">
+<colgroup span="2">
+  <col width="40%" />
+  <col width="40%" />
+</colgroup>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-listview.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-treeview.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QListView class provides a default model/view implementation of a list/icon view. The QListWidget class provides a classic item-based list/icon view.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QTreeView class provides a default model/view implementation of a tree view. The QTreeWidget class provides a classic item-based tree view.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-tableview.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QTableView class provides a default model/view implementation of a table view. The QTableWidget class provides a classic item-based table view.\raw HTML
+</td>
+</tr>
+</table>
+\endraw
+\raw HTML
+<h2 align="center">Display Widgets</h2>
+
+<table align="center" cellspacing="20%" width="100%">
+<colgroup span="2">
+  <col width="40%" />
+  <col width="40%" />
+</colgroup>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-progressbar.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-lcdnumber.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QProgressBar widget provides a horizontal progress bar.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QLCDNumber widget displays a number with LCD-like digits.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-label.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QLabel widget provides a text or image display.\raw HTML
+</td>
+</tr>
+</table>
+\endraw
+\raw HTML
+<h2 align="center">Input Widgets</h2>
+
+<table align="center" cellspacing="20%" width="100%">
+<colgroup span="2">
+  <col width="40%" />
+  <col width="40%" />
+</colgroup>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-slider.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-lineedit.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QSlider widget provides a vertical or horizontal slider.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QLineEdit widget is a one-line text editor.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-combobox.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-doublespinbox.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QComboBox widget is a combined button and pop-up list.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QDoubleSpinBox class provides a spin box widget that allows double precision floating point numbers to be entered.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-spinbox.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-timeedit.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QSpinBox class provides a spin box widget.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QTimeEdit class provides a widget for editing times.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-dateedit.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-datetimeedit.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QDateEdit class provides a widget for editing dates.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QDateTimeEdit class provides a widget for editing dates and times.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-textedit.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-horizontalscrollbar.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QTextEdit class provides a widget that is used to edit and
+     display both plain and rich text.\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QScrollBar widget provides a vertical or horizontal scroll bar. Here, we show a scroll bar with horizontal orientation.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-dial.png
+\raw HTML
+</td>
+<td align="center">
+\endraw
+\inlineimage windowsvista-calendarwidget.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QDial class provides a rounded range control (like a
+       speedometer or potentiometer).\raw HTML
+</td>
+<td halign="justify" valign="top">
+\endraw
+The QCalendarWidget class provides a monthly calendar widget that can be used to select dates.\raw HTML
+</td>
+</tr>
+<tr>
+<td align="center">
+\endraw
+\inlineimage windowsvista-fontcombobox.png
+\raw HTML
+</td>
+</tr><tr>
+<td halign="justify" valign="top">
+\endraw
+The QFontComboBox widget is a specialized combobox that enables fonts to be selected from a pop-up list containing previews of available fonts.\raw HTML
+</td>
+</tr>
+</table>
+\endraw
+*/

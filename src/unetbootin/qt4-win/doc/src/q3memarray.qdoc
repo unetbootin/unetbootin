@@ -1,0 +1,525 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3MemArray
+    \brief The Q3MemArray class is a template class that provides arrays of simple types.
+    \compat
+
+    Q3MemArray is implemented as a template class. Define a template
+    instance Q3MemArray\<X\> to create an array that contains X items.
+
+    Q3MemArray stores the array elements directly in the array. It can
+    only deal with simple types (i.e. C++ types, structs, and classes
+    that have no constructors, destructors, or virtual functions).
+    Q3MemArray uses bitwise operations to copy and compare array
+    elements. 
+
+    The Q3PtrVector collection class is also a kind of array. Like most
+    old Qt collection classes, it uses pointers to the contained items.
+
+    Q3MemArray uses explicit sharing with a
+    reference count. If more than one array shares common data and one
+    of the arrays is modified, all the arrays are modified.
+
+    The benefit of sharing is that a program does not need to duplicate
+    data when it is not required, which results in lower memory use
+    and less copying of data.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3memarray.qdoc 0
+
+    Program output:
+    \snippet doc/src/snippets/code/doc.src.q3memarray.qdoc 1
+
+    Note concerning the use of Q3MemArray for manipulating structs or
+    classes: Compilers will often pad the size of structs of odd sizes
+    up to the nearest word boundary. This will then be the size
+    Q3MemArray will use for its bitwise element comparisons. Because
+    the remaining bytes will typically be uninitialized, this can
+    cause find() etc. to fail to find the element. Example:
+
+    \snippet doc/src/snippets/code/doc.src.q3memarray.qdoc 2
+
+    To work around this, make sure that you use a struct where
+    sizeof() returns the same as the sum of the sizes of the members
+    either by changing the types of the struct members or by adding
+    dummy members.
+
+    Q3MemArray data can be traversed by iterators (see begin() and
+    end()). The number of items is returned by count(). The array can
+    be resized with resize() and filled using fill().
+
+    You can make a shallow copy of the array with assign() (or
+    operator=()) and a deep copy with duplicate().
+
+    Search for values in the array with find() and contains(). For
+    sorted arrays (see sort()) you can search using bsearch().
+
+    You can set the data directly using setRawData() and
+    resetRawData(), although this requires care.
+*/
+
+/*! \fn Q3MemArray::operator QVector<type>() const
+
+    Automatically converts the Q3MemArray<type> into a QVector<type>.
+*/
+
+/*! \typedef Q3MemArray::Iterator
+    A Q3MemArray iterator.
+    \sa begin() end()
+*/
+/*! \typedef Q3MemArray::ConstIterator
+    A const Q3MemArray iterator.
+    \sa begin() end()
+*/
+/*! \typedef Q3MemArray::ValueType
+    \internal
+*/
+
+/*!
+    \fn Q3MemArray::Q3MemArray()
+
+    Constructs a null array.
+
+    \sa isNull()
+*/
+
+/*!
+    \fn Q3MemArray::Q3MemArray( int size )
+
+    Constructs an array with room for \a size elements. Makes a null
+    array if \a size == 0.
+
+    The elements are left uninitialized.
+
+    \sa resize(), isNull()
+*/
+
+/*!
+    \fn Q3MemArray::Q3MemArray( const Q3MemArray<type> &a )
+
+    Constructs a shallow copy of \a a.
+
+    \sa assign()
+*/
+
+/*!
+    \fn Q3MemArray::Q3MemArray(const QVector<type> &vector)
+
+    Constructs a copy of \a vector.
+*/
+
+/*!
+    \fn Q3MemArray::Q3MemArray(int arg1, int arg2)
+
+    Constructs an array \e{without allocating} array space. The
+    arguments \a arg1 and \a arg2 should be zero. Use at your own
+    risk.
+*/
+
+/*!
+    \fn Q3MemArray::~Q3MemArray()
+
+    Dereferences the array data and deletes it if this was the last
+    reference.
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::operator=( const Q3MemArray<type> &a )
+
+    Assigns a shallow copy of \a a to this array and returns a
+    reference to this array.
+
+    Equivalent to assign( a ).
+*/
+
+/*!
+    \fn type *Q3MemArray::data() const
+
+    Returns a pointer to the actual array data.
+
+    The array is a null array if data() == 0 (null pointer).
+
+    \sa isNull()
+*/
+
+/*!
+    \fn uint Q3MemArray::nrefs() const
+
+    Returns the reference count for the shared array data. This
+    reference count is always greater than zero.
+*/
+
+/*!
+    \fn uint Q3MemArray::size() const
+
+    Returns the size of the array (maximum number of elements).
+
+    The array is a null array if size() == 0.
+
+    \sa isNull(), resize()
+*/
+
+/*!
+    \fn uint Q3MemArray::count() const
+
+    Returns the same as size().
+
+    \sa size()
+*/
+
+/*!
+    \fn bool Q3MemArray::isEmpty() const
+
+    Returns TRUE if the array is empty; otherwise returns FALSE.
+
+    isEmpty() is equivalent to isNull() for Q3MemArray (unlike
+    QString).
+*/
+
+/*!
+    \fn bool Q3MemArray::isNull() const
+
+    Returns TRUE if the array is null; otherwise returns FALSE.
+
+    A null array has size() == 0 and data() == 0.
+*/
+
+/*!
+    \fn bool Q3MemArray::resize( uint size, Optimization optim )
+
+    Resizes (expands or shrinks) the array to \a size elements. The
+    array becomes a null array if \a size == 0.
+
+    Returns TRUE if successful, or FALSE if the memory cannot be
+    allocated.
+
+    New elements are not initialized.
+
+    \a optim is either Q3GArray::MemOptim (the default) or
+    Q3GArray::SpeedOptim. When optimizing for speed rather than memory
+    consumption, the array uses a smart grow and shrink algorithm that
+    might allocate more memory than is actually needed for \a size
+    elements. This speeds up subsequent resize operations, for example
+    when appending many elements to an array, since the space has
+    already been allocated.
+
+    \sa size()
+*/
+
+/*!
+    \fn bool Q3MemArray::resize( uint size )
+
+    \overload
+
+    Resizes (expands or shrinks) the array to \a size elements. The
+    array becomes a null array if \a size == 0.
+
+    Returns TRUE if successful, i.e. if the memory can be allocated;
+    otherwise returns FALSE.
+
+    New elements are not initialized.
+
+    \sa size()
+*/
+
+/*!
+    \fn bool Q3MemArray::truncate( uint pos )
+
+    Truncates the array at position \a pos.
+
+    Returns TRUE if successful, i.e. if the memory can be allocated;
+    otherwise returns FALSE.
+
+    Equivalent to resize(\a pos).
+
+    \sa resize()
+*/
+
+/*!
+    \fn bool Q3MemArray::fill( const type &v, int size )
+
+    Fills the array with the value \a v. If \a size is specified as
+    different from -1, then the array will be resized before being
+    filled.
+
+    Returns TRUE if successful, i.e. if \a size is -1, or \a size is
+    != -1 and the memory can be allocated; otherwise returns FALSE.
+
+    \sa resize()
+*/
+
+/*!
+    \fn void Q3MemArray::detach()
+
+    Detaches this array from shared array data; i.e. it makes a
+    private, deep copy of the data.
+
+    Copying will be performed only if the \link nrefs() reference
+    count\endlink is greater than one.
+
+    \sa copy()
+*/
+
+/*!
+    \fn Q3MemArray<type> Q3MemArray::copy() const
+
+    Returns a deep copy of this array.
+
+    \sa detach(), duplicate()
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::assign( const Q3MemArray<type> &a )
+
+    Shallow copy. Dereferences the current array and references the
+    data contained in \a a instead. Returns a reference to this array.
+
+    \sa operator=()
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::assign( const type *data, uint size )
+
+    \overload
+
+    Shallow copy. Dereferences the current array and references the
+    array data \a data, which contains \a size elements. Returns a
+    reference to this array.
+
+    Do not delete \a data later; Q3MemArray will call free() on it
+    at the right time.
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::duplicate( const Q3MemArray<type> &a )
+
+    Deep copy. Dereferences the current array and obtains a copy of
+    the data contained in \a a instead. Returns a reference to this
+    array.
+
+    \sa copy()
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::duplicate( const type *data, uint size )
+
+    \overload
+
+    Deep copy. Dereferences the current array and obtains a copy of
+    the array data \a data instead. Returns a reference to this array.
+    The size of the array is given by \a size.
+
+    \sa copy()
+*/
+
+/*!
+    \fn Q3MemArray<type> &Q3MemArray::setRawData( const type *data, uint size )
+
+    Sets raw data and returns a reference to the array.
+
+    Dereferences the current array and sets the new array data to \a
+    data and the new array size to \a size. Do not attempt to resize
+    or re-assign the array data when raw data has been set. Call
+    resetRawData(\a data, \a size) to reset the array.
+
+    Setting raw data is useful because it sets Q3MemArray data without
+    allocating memory or copying data.
+
+    Example I (intended use):
+    \snippet doc/src/snippets/code/doc.src.q3memarray.qdoc 3
+
+    Example II (you don't want to do this):
+    \snippet doc/src/snippets/code/doc.src.q3memarray.qdoc 4
+
+    \warning If you do not call resetRawData(), Q3MemArray will attempt
+    to deallocate or reallocate the raw data, which might not be too
+    good. Be careful.
+
+    \sa resetRawData()
+*/
+
+/*!
+    \fn void Q3MemArray::resetRawData( const type *data, uint size )
+
+    Removes internal references to the raw data that was set using
+    setRawData(). This means that Q3MemArray no longer has access to
+    the \a data, so you are free to manipulate \a data as you wish.
+    You can now use the Q3MemArray without affecting the original \a
+    data, for example by calling setRawData() with a pointer to some
+    other data.
+
+    The arguments must be the \a data and length, \a size, that were
+    passed to setRawData(). This is for consistency checking.
+
+    \sa setRawData()
+*/
+
+/*!
+    \fn int Q3MemArray::find( const type &v, uint index ) const
+
+    Finds the first occurrence of \a v, starting at position \a index.
+
+    Returns the position of \a v, or -1 if \a v could not be found.
+
+    \sa contains()
+*/
+
+/*!
+    \fn int Q3MemArray::contains( const type &v ) const
+
+    Returns the number of times \a v occurs in the array.
+
+    \sa find()
+*/
+
+/*!
+    \fn void Q3MemArray::sort()
+
+    Sorts the array elements in ascending order, using bitwise
+    comparison (memcmp()).
+
+    \sa bsearch()
+*/
+
+/*!
+    \fn int Q3MemArray::bsearch( const type &v ) const
+
+    In a sorted array (as sorted by sort()), finds the first
+    occurrence of \a v by using a binary search. For a sorted
+    array this is generally much faster than find(), which does
+    a linear search.
+
+    Returns the position of \a v, or -1 if \a v could not be found.
+
+    \sa sort(), find()
+*/
+
+/*!
+    \fn type &Q3MemArray::operator[]( int index ) const
+
+    Returns a reference to the element at position \a index in the
+    array.
+
+    This can be used to both read and set an element. Equivalent to
+    at().
+
+    \sa at()
+*/
+
+/*!
+    \fn type &Q3MemArray::at( uint index ) const
+
+    Returns a reference to the element at position \a index in the array.
+
+    This can be used to both read and set an element.
+
+    \sa operator[]()
+*/
+
+/*!
+    \fn Q3MemArray::operator const type *() const
+
+    Cast operator. Returns a pointer to the array.
+
+    \sa data()
+*/
+
+/*!
+    \fn bool Q3MemArray::operator==( const Q3MemArray<type> &a ) const
+
+    Returns TRUE if this array is equal to \a a; otherwise returns
+    FALSE.
+
+    The two arrays are compared bitwise.
+
+    \sa operator!=()
+*/
+
+/*!
+    \fn bool Q3MemArray::operator!=( const Q3MemArray<type> &a ) const
+
+    Returns TRUE if this array is different from \a a; otherwise
+    returns FALSE.
+
+    The two arrays are compared bitwise.
+
+    \sa operator==()
+*/
+
+/*!
+    \fn Iterator Q3MemArray::begin()
+
+    Returns an iterator pointing at the beginning of this array. This
+    iterator can be used in the same way as the iterators of
+    Q3ValueList and QMap, for example.
+*/
+
+/*!
+    \fn Iterator Q3MemArray::end()
+
+    Returns an iterator pointing behind the last element of this
+    array. This iterator can be used in the same way as the iterators
+    of Q3ValueList and QMap, for example.
+*/
+
+/*!
+    \fn ConstIterator Q3MemArray::begin() const
+
+    \overload
+
+    Returns a const iterator pointing at the beginning of this array.
+    This iterator can be used in the same way as the iterators of
+    Q3ValueList and QMap, for example.
+*/
+
+/*!
+    \fn ConstIterator Q3MemArray::end() const
+
+    \overload
+
+    Returns a const iterator pointing behind the last element of this
+    array. This iterator can be used in the same way as the iterators
+    of Q3ValueList and QMap, for example. 
+*/

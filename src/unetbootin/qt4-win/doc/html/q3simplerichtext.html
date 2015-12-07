@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/text/q3simplerichtext.cpp -->
+<head>
+  <title>Qt 4.4: Q3SimpleRichText Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3SimpleRichText Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3SimpleRichText class provides a small displayable piece of rich text. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3SimpleRichText&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsimplerichtext">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3simplerichtext-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3simplerichtext.html#Q3SimpleRichText">Q3SimpleRichText</a></b> ( const QString &amp; <i>text</i>, const QFont &amp; <i>fnt</i>, const QString &amp; <i>context</i> = QString(), const Q3StyleSheet * <i>sheet</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3simplerichtext.html#Q3SimpleRichText-2">Q3SimpleRichText</a></b> ( const QString &amp; <i>text</i>, const QFont &amp; <i>fnt</i>, const QString &amp; <i>context</i>, const Q3StyleSheet * <i>sheet</i>, const Q3MimeSourceFactory * <i>factory</i>, int <i>pageBreak</i> = -1, const QColor &amp; <i>linkColor</i> = Qt::blue, bool <i>linkUnderline</i> = true )</li>
+<li><div class="fn"/><b><a href="q3simplerichtext.html#dtor.Q3SimpleRichText">~Q3SimpleRichText</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#adjustSize">adjustSize</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="q3simplerichtext.html#anchorAt">anchorAt</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="q3simplerichtext.html#context">context</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#draw">draw</a></b> ( QPainter * <i>p</i>, int <i>x</i>, int <i>y</i>, const QRect &amp; <i>clipRect</i>, const QColorGroup &amp; <i>cg</i>, const QBrush * <i>paper</i> = 0 ) const</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#draw-2">draw</a></b> ( QPainter * <i>p</i>, int <i>x</i>, int <i>y</i>, const QRegion &amp; <i>clipRegion</i>, const QColorGroup &amp; <i>cg</i>, const QBrush * <i>paper</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="q3simplerichtext.html#height">height</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3simplerichtext.html#inText">inText</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#setDefaultFont">setDefaultFont</a></b> ( const QFont &amp; <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#setWidth">setWidth</a></b> ( QPainter * <i>p</i>, int <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="q3simplerichtext.html#setWidth-2">setWidth</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>int <b><a href="q3simplerichtext.html#width">width</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3simplerichtext.html#widthUsed">widthUsed</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3SimpleRichText class provides a small displayable piece of rich text.</p>
+<p>This class encapsulates simple rich text usage in which a string is interpreted as rich text and can be drawn. This is particularly useful if you want to display some rich text in a custom widget. A <a href="q3stylesheet.html">Q3StyleSheet</a> is needed to interpret the tags and format the rich text. Qt provides a default HTML-like style sheet, but you may define custom style sheets.</p>
+<p>Once created, the rich text object can be queried for its <a href="q3simplerichtext.html#width">width</a>(), <a href="q3simplerichtext.html#height">height</a>(), and the actual width used (see <a href="q3simplerichtext.html#widthUsed">widthUsed</a>()). Most importantly, it can be drawn on any given <a href="qpainter.html">QPainter</a> with <a href="q3simplerichtext.html#draw">draw</a>(). Q3SimpleRichText can also be used to implement hypertext or active text facilities by using <a href="q3simplerichtext.html#anchorAt">anchorAt</a>(). A hit test through <a href="q3simplerichtext.html#inText">inText</a>() makes it possible to use simple rich text for text objects in editable drawing canvases.</p>
+<p>Once constructed from a string the contents cannot be changed, only resized. If the contents change, just throw the rich text object away and make a new one with the new contents.</p>
+<p>For large documents use <a href="qtextedit.html">QTextEdit</a> or <a href="qtextbrowser.html">QTextBrowser</a>. For very small items of rich text you can use a <a href="qlabel.html">QLabel</a>.</p>
+<p>If you are using Q3SimpleRichText to print in high resolution you should call setWidth(<a href="qpainter.html">QPainter</a>, int) so that the content will be laid out properly on the page.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3SimpleRichText"></a>Q3SimpleRichText::Q3SimpleRichText ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qfont.html">QFont</a> &amp; <i>fnt</i>, const <a href="qstring.html">QString</a> &amp; <i>context</i> = QString(), const <a href="q3stylesheet.html">Q3StyleSheet</a> * <i>sheet</i> = 0 )</h3>
+<p>Constructs a <a href="q3simplerichtext.html">Q3SimpleRichText</a> from the rich text string <i>text</i> and the font <i>fnt</i>.</p>
+<p>The font is used as a basis for the text rendering. When using rich text rendering on a widget <i>w</i>, you would normally specify the widget's font, for example:</p>
+<pre>     Q3SimpleRichText myrichtext(contents, mywidget-&gt;font());</pre>
+<p><i>context</i> is the optional context of the rich text object. This becomes important if <i>text</i> contains relative references, for example within image tags. <a href="q3simplerichtext.html">Q3SimpleRichText</a> always uses the default mime source factory (see <a href="q3mimesourcefactory.html#defaultFactory">Q3MimeSourceFactory::defaultFactory</a>()) to resolve those references. The context will then be used to calculate the absolute path. See <a href="q3mimesourcefactory.html#makeAbsolute">Q3MimeSourceFactory::makeAbsolute</a>() for details.</p>
+<p>The <i>sheet</i> is an optional style sheet. If it is 0, the default style sheet will be used (see <a href="q3stylesheet.html#defaultSheet">Q3StyleSheet::defaultSheet</a>()).</p>
+<h3 class="fn"><a name="Q3SimpleRichText-2"></a>Q3SimpleRichText::Q3SimpleRichText ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qfont.html">QFont</a> &amp; <i>fnt</i>, const <a href="qstring.html">QString</a> &amp; <i>context</i>, const <a href="q3stylesheet.html">Q3StyleSheet</a> * <i>sheet</i>, const <a href="q3mimesourcefactory.html">Q3MimeSourceFactory</a> * <i>factory</i>, int <i>pageBreak</i> = -1, const <a href="qcolor.html">QColor</a> &amp; <i>linkColor</i> = Qt::blue, bool <i>linkUnderline</i> = true )</h3>
+<p>Constructs a <a href="q3simplerichtext.html">Q3SimpleRichText</a> from the rich text string <i>text</i> and the font <i>fnt</i>.</p>
+<p>This is a slightly more complex constructor for <a href="q3simplerichtext.html">Q3SimpleRichText</a> that takes an additional mime source factory <i>factory</i>, a page break parameter <i>pageBreak</i> and a bool <i>linkUnderline</i>. <i>linkColor</i> is only provided for compatibility, but has no effect, as <a href="qpalette.html#link">QPalette::link</a>() color is used now.</p>
+<p><i>context</i> is the optional context of the rich text object. This becomes important if <i>text</i> contains relative references, for example within image tags. <a href="q3simplerichtext.html">Q3SimpleRichText</a> always uses the default mime source factory (see <a href="q3mimesourcefactory.html#defaultFactory">Q3MimeSourceFactory::defaultFactory</a>()) to resolve those references. The context will then be used to calculate the absolute path. See <a href="q3mimesourcefactory.html#makeAbsolute">Q3MimeSourceFactory::makeAbsolute</a>() for details.</p>
+<p>The <i>sheet</i> is an optional style sheet. If it is 0, the default style sheet will be used (see <a href="q3stylesheet.html#defaultSheet">Q3StyleSheet::defaultSheet</a>()).</p>
+<p>This constructor is useful for creating a <a href="q3simplerichtext.html">Q3SimpleRichText</a> object suitable for printing. Set <i>pageBreak</i> to be the height of the contents area of the pages.</p>
+<h3 class="fn"><a name="dtor.Q3SimpleRichText"></a>Q3SimpleRichText::~Q3SimpleRichText ()</h3>
+<p>Destroys the rich text object, freeing memory.</p>
+<h3 class="fn"><a name="adjustSize"></a>void Q3SimpleRichText::adjustSize ()</h3>
+<p>Adjusts the rich text object to a reasonable size.</p>
+<p>See also <a href="q3simplerichtext.html#setWidth">setWidth</a>().</p>
+<h3 class="fn"><a name="anchorAt"></a><a href="qstring.html">QString</a> Q3SimpleRichText::anchorAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Returns the anchor at the requested position, <i>pos</i>. An empty string is returned if no anchor is specified for this position.</p>
+<h3 class="fn"><a name="context"></a><a href="qstring.html">QString</a> Q3SimpleRichText::context () const</h3>
+<p>Returns the context of the rich text object. If no context has been specified in the constructor, an empty string is returned. The context is the path to use to look up relative links, such as image tags and anchor references.</p>
+<h3 class="fn"><a name="draw"></a>void Q3SimpleRichText::draw ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>x</i>, int <i>y</i>, const <a href="qrect.html">QRect</a> &amp; <i>clipRect</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, const <a href="qbrush.html">QBrush</a> * <i>paper</i> = 0 ) const</h3>
+<p>Draws the formatted text with painter <i>p</i>, at position (<i>x</i>, <i>y</i>), clipped to <i>clipRect</i>. The clipping rectangle is given in the rich text object's coordinates translated by (<i>x</i>, <i>y</i>). Passing an null rectangle results in no clipping. Colors from the color group <i>cg</i> are used as needed, and if not 0, *<i>paper</i> is used as the background brush.</p>
+<p>Note that the display code is highly optimized to reduce flicker, so passing a brush for <i>paper</i> is preferable to simply clearing the area to be painted and then calling this without a brush.</p>
+<h3 class="fn"><a name="draw-2"></a>void Q3SimpleRichText::draw ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>x</i>, int <i>y</i>, const <a href="qregion.html">QRegion</a> &amp; <i>clipRegion</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, const <a href="qbrush.html">QBrush</a> * <i>paper</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the version with clipRect instead of this <i>clipRegion</i> version, since this region version has problems with larger documents on some platforms (on X11 regions internally are represented with 16-bit coordinates).</p>
+<h3 class="fn"><a name="height"></a>int Q3SimpleRichText::height () const</h3>
+<p>Returns the height of the rich text object in pixels.</p>
+<p>See also <a href="q3simplerichtext.html#setWidth">setWidth</a>().</p>
+<h3 class="fn"><a name="inText"></a>bool Q3SimpleRichText::inText ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Returns true if <i>pos</i> is within a text line of the rich text object; otherwise returns false.</p>
+<h3 class="fn"><a name="setDefaultFont"></a>void Q3SimpleRichText::setDefaultFont ( const <a href="qfont.html">QFont</a> &amp; <i>f</i> )</h3>
+<p>Sets the default font for the rich text object to <i>f</i></p>
+<h3 class="fn"><a name="setWidth"></a>void Q3SimpleRichText::setWidth ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>w</i> )</h3>
+<p>Sets the width of the rich text object to <i>w</i> pixels, recalculating the layout as if it were to be drawn with painter <i>p</i>.</p>
+<p>Passing a painter is useful when you intend drawing on devices other than the screen, for example a <a href="qprinter.html">QPrinter</a>.</p>
+<p>See also <a href="q3simplerichtext.html#width">width</a>(), <a href="q3simplerichtext.html#height">height</a>(), and <a href="q3simplerichtext.html#adjustSize">adjustSize</a>().</p>
+<h3 class="fn"><a name="setWidth-2"></a>void Q3SimpleRichText::setWidth ( int <i>w</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the width of the rich text object to <i>w</i> pixels.</p>
+<p>See also <a href="q3simplerichtext.html#height">height</a>() and <a href="q3simplerichtext.html#adjustSize">adjustSize</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3SimpleRichText::width () const</h3>
+<p>Returns the set width of the rich text object in pixels.</p>
+<p>See also <a href="q3simplerichtext.html#setWidth">setWidth</a>() and <a href="q3simplerichtext.html#widthUsed">widthUsed</a>().</p>
+<h3 class="fn"><a name="widthUsed"></a>int Q3SimpleRichText::widthUsed () const</h3>
+<p>Returns the width in pixels that is actually used by the rich text object. This can be smaller or wider than the set width.</p>
+<p>It may be wider, for example, if the text contains images or non-breakable words that are already wider than the available space. It's smaller when the object only consists of lines that do not fill the width completely.</p>
+<p>See also <a href="q3simplerichtext.html#width">width</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

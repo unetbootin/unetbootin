@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: stylesheeteditor.ui Example File (widgets/stylesheet/stylesheeteditor.ui)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">stylesheeteditor.ui Example File<br /><span class="small-subtitle">widgets/stylesheet/stylesheeteditor.ui</span>
+</h1>
+<pre> &lt;ui version=&quot;4.0&quot; &gt;
+  &lt;class&gt;StyleSheetEditor&lt;/class&gt;
+  &lt;widget class=&quot;QWidget&quot; name=&quot;StyleSheetEditor&quot; &gt;
+   &lt;property name=&quot;geometry&quot; &gt;
+    &lt;rect&gt;
+     &lt;x&gt;0&lt;/x&gt;
+     &lt;y&gt;0&lt;/y&gt;
+     &lt;width&gt;445&lt;/width&gt;
+     &lt;height&gt;289&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;windowTitle&quot; &gt;
+    &lt;string&gt;Style Editor&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;layout class=&quot;QGridLayout&quot; &gt;
+    &lt;property name=&quot;margin&quot; &gt;
+     &lt;number&gt;9&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;property name=&quot;spacing&quot; &gt;
+     &lt;number&gt;6&lt;/number&gt;
+    &lt;/property&gt;
+    &lt;item row=&quot;0&quot; column=&quot;6&quot; &gt;
+     &lt;spacer&gt;
+      &lt;property name=&quot;orientation&quot; &gt;
+       &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeType&quot; &gt;
+       &lt;enum&gt;QSizePolicy::MinimumExpanding&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeHint&quot; &gt;
+       &lt;size&gt;
+        &lt;width&gt;32&lt;/width&gt;
+        &lt;height&gt;20&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+     &lt;/spacer&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;0&quot; &gt;
+     &lt;spacer&gt;
+      &lt;property name=&quot;orientation&quot; &gt;
+       &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeType&quot; &gt;
+       &lt;enum&gt;QSizePolicy::MinimumExpanding&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeHint&quot; &gt;
+       &lt;size&gt;
+        &lt;width&gt;32&lt;/width&gt;
+        &lt;height&gt;20&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+     &lt;/spacer&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;5&quot; &gt;
+     &lt;widget class=&quot;QComboBox&quot; name=&quot;styleSheetCombo&quot; &gt;
+      &lt;item&gt;
+       &lt;property name=&quot;text&quot; &gt;
+        &lt;string&gt;Default&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;property name=&quot;text&quot; &gt;
+        &lt;string&gt;Coffee&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;property name=&quot;text&quot; &gt;
+        &lt;string&gt;Pagefold&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/item&gt;
+     &lt;/widget&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;3&quot; &gt;
+     &lt;spacer&gt;
+      &lt;property name=&quot;orientation&quot; &gt;
+       &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeType&quot; &gt;
+       &lt;enum&gt;QSizePolicy::Fixed&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;sizeHint&quot; &gt;
+       &lt;size&gt;
+        &lt;width&gt;10&lt;/width&gt;
+        &lt;height&gt;16&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+     &lt;/spacer&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;2&quot; &gt;
+     &lt;widget class=&quot;QComboBox&quot; name=&quot;styleCombo&quot; &gt;
+      &lt;property name=&quot;sizePolicy&quot; &gt;
+       &lt;sizepolicy&gt;
+        &lt;hsizetype&gt;5&lt;/hsizetype&gt;
+        &lt;vsizetype&gt;0&lt;/vsizetype&gt;
+        &lt;horstretch&gt;0&lt;/horstretch&gt;
+        &lt;verstretch&gt;0&lt;/verstretch&gt;
+       &lt;/sizepolicy&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;1&quot; &gt;
+     &lt;widget class=&quot;QLabel&quot; name=&quot;label_7&quot; &gt;
+      &lt;property name=&quot;sizePolicy&quot; &gt;
+       &lt;sizepolicy&gt;
+        &lt;hsizetype&gt;0&lt;/hsizetype&gt;
+        &lt;vsizetype&gt;5&lt;/vsizetype&gt;
+        &lt;horstretch&gt;0&lt;/horstretch&gt;
+        &lt;verstretch&gt;0&lt;/verstretch&gt;
+       &lt;/sizepolicy&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;text&quot; &gt;
+       &lt;string&gt;Style:&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;2&quot; column=&quot;0&quot; colspan=&quot;7&quot; &gt;
+     &lt;layout class=&quot;QHBoxLayout&quot; &gt;
+      &lt;property name=&quot;margin&quot; &gt;
+       &lt;number&gt;0&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;spacing&quot; &gt;
+       &lt;number&gt;6&lt;/number&gt;
+      &lt;/property&gt;
+      &lt;item&gt;
+       &lt;spacer&gt;
+        &lt;property name=&quot;orientation&quot; &gt;
+         &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;sizeHint&quot; &gt;
+         &lt;size&gt;
+          &lt;width&gt;321&lt;/width&gt;
+          &lt;height&gt;20&lt;/height&gt;
+         &lt;/size&gt;
+        &lt;/property&gt;
+       &lt;/spacer&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;applyButton&quot; &gt;
+        &lt;property name=&quot;enabled&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;&amp;amp;Apply&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;1&quot; column=&quot;0&quot; colspan=&quot;7&quot; &gt;
+     &lt;widget class=&quot;QTextEdit&quot; name=&quot;styleTextEdit&quot; /&gt;
+    &lt;/item&gt;
+    &lt;item row=&quot;0&quot; column=&quot;4&quot; &gt;
+     &lt;widget class=&quot;QLabel&quot; name=&quot;label_8&quot; &gt;
+      &lt;property name=&quot;sizePolicy&quot; &gt;
+       &lt;sizepolicy&gt;
+        &lt;hsizetype&gt;0&lt;/hsizetype&gt;
+        &lt;vsizetype&gt;5&lt;/vsizetype&gt;
+        &lt;horstretch&gt;0&lt;/horstretch&gt;
+        &lt;verstretch&gt;0&lt;/verstretch&gt;
+       &lt;/sizepolicy&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;text&quot; &gt;
+       &lt;string&gt;Style Sheet:&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+    &lt;/item&gt;
+   &lt;/layout&gt;
+  &lt;/widget&gt;
+  &lt;resources/&gt;
+  &lt;connections/&gt;
+ &lt;/ui&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

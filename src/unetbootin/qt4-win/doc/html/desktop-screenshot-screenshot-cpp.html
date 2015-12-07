@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: screenshot.cpp Example File (desktop/screenshot/screenshot.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">screenshot.cpp Example File<br /><span class="small-subtitle">desktop/screenshot/screenshot.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;screenshot.h&quot;
+
+ Screenshot::Screenshot()
+ {
+     screenshotLabel = new QLabel;
+     screenshotLabel-&gt;setSizePolicy(QSizePolicy::Expanding,
+                                    QSizePolicy::Expanding);
+     screenshotLabel-&gt;setAlignment(Qt::AlignCenter);
+     screenshotLabel-&gt;setMinimumSize(240, 160);
+
+     createOptionsGroupBox();
+     createButtonsLayout();
+
+     mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(screenshotLabel);
+     mainLayout-&gt;addWidget(optionsGroupBox);
+     mainLayout-&gt;addLayout(buttonsLayout);
+     setLayout(mainLayout);
+
+     shootScreen();
+     delaySpinBox-&gt;setValue(5);
+
+     setWindowTitle(tr(&quot;Screenshot&quot;));
+     resize(300, 200);
+ }
+
+ void Screenshot::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     QSize scaledSize = originalPixmap.size();
+     scaledSize.scale(screenshotLabel-&gt;size(), Qt::KeepAspectRatio);
+     if (!screenshotLabel-&gt;pixmap()
+             || scaledSize != screenshotLabel-&gt;pixmap()-&gt;size())
+         updateScreenshotLabel();
+ }
+
+ void Screenshot::newScreenshot()
+ {
+     if (hideThisWindowCheckBox-&gt;isChecked())
+         hide();
+     newScreenshotButton-&gt;setDisabled(true);
+
+     QTimer::singleShot(delaySpinBox-&gt;value() * 1000, this, SLOT(shootScreen()));
+ }
+
+ void Screenshot::saveScreenshot()
+ {
+     QString format = &quot;png&quot;;
+     QString initialPath = QDir::currentPath() + tr(&quot;/untitled.&quot;) + format;
+
+     QString fileName = QFileDialog::getSaveFileName(this, tr(&quot;Save As&quot;),
+                                initialPath,
+                                tr(&quot;%1 Files (*.%2);;All Files (*)&quot;)
+                                .arg(format.toUpper())
+                                .arg(format));
+     if (!fileName.isEmpty())
+         originalPixmap.save(fileName, format.toAscii());
+ }
+
+ void Screenshot::shootScreen()
+ {
+     if (delaySpinBox-&gt;value() != 0)
+         qApp-&gt;beep();
+     originalPixmap = QPixmap(); <span class="comment">//</span> clear image for low memory situations
+                                 <span class="comment">//</span> on embedded devices.
+     originalPixmap = QPixmap::grabWindow(QApplication::desktop()-&gt;winId());
+     updateScreenshotLabel();
+
+     newScreenshotButton-&gt;setDisabled(false);
+     if (hideThisWindowCheckBox-&gt;isChecked())
+         show();
+ }
+
+ void Screenshot::updateCheckBox()
+ {
+     if (delaySpinBox-&gt;value() == 0)
+         hideThisWindowCheckBox-&gt;setDisabled(true);
+     else
+         hideThisWindowCheckBox-&gt;setDisabled(false);
+ }
+
+ void Screenshot::createOptionsGroupBox()
+ {
+     optionsGroupBox = new QGroupBox(tr(&quot;Options&quot;));
+
+     delaySpinBox = new QSpinBox;
+     delaySpinBox-&gt;setSuffix(tr(&quot; s&quot;));
+     delaySpinBox-&gt;setMaximum(60);
+     connect(delaySpinBox, SIGNAL(valueChanged(int)), this, SLOT(updateCheckBox()));
+
+     delaySpinBoxLabel = new QLabel(tr(&quot;Screenshot Delay:&quot;));
+
+     hideThisWindowCheckBox = new QCheckBox(tr(&quot;Hide This Window&quot;));
+
+     optionsGroupBoxLayout = new QGridLayout;
+     optionsGroupBoxLayout-&gt;addWidget(delaySpinBoxLabel, 0, 0);
+     optionsGroupBoxLayout-&gt;addWidget(delaySpinBox, 0, 1);
+     optionsGroupBoxLayout-&gt;addWidget(hideThisWindowCheckBox, 1, 0, 1, 2);
+     optionsGroupBox-&gt;setLayout(optionsGroupBoxLayout);
+ }
+
+ void Screenshot::createButtonsLayout()
+ {
+     newScreenshotButton = createButton(tr(&quot;New Screenshot&quot;),
+                                        this, SLOT(newScreenshot()));
+
+     saveScreenshotButton = createButton(tr(&quot;Save Screenshot&quot;),
+                                         this, SLOT(saveScreenshot()));
+
+     quitScreenshotButton = createButton(tr(&quot;Quit&quot;), this, SLOT(close()));
+
+     buttonsLayout = new QHBoxLayout;
+     buttonsLayout-&gt;addStretch();
+     buttonsLayout-&gt;addWidget(newScreenshotButton);
+     buttonsLayout-&gt;addWidget(saveScreenshotButton);
+     buttonsLayout-&gt;addWidget(quitScreenshotButton);
+ }
+
+ QPushButton *Screenshot::createButton(const QString &amp;text, QWidget *receiver,
+                                       const char *member)
+ {
+     QPushButton *button = new QPushButton(text);
+     button-&gt;connect(button, SIGNAL(clicked()), receiver, member);
+     return button;
+ }
+
+ void Screenshot::updateScreenshotLabel()
+ {
+     screenshotLabel-&gt;setPixmap(originalPixmap.scaled(screenshotLabel-&gt;size(),
+                                                      Qt::KeepAspectRatio,
+                                                      Qt::SmoothTransformation));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

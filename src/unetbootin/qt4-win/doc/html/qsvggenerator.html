@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/svg/qsvggenerator.cpp -->
+<head>
+  <title>Qt 4.4: QSvgGenerator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSvgGenerator Class Reference<br /><span class="small-subtitle">[<a href="qtsvg.html">QtSvg</a> module]</span>
+</h1>
+<p>The QSvgGenerator class provides a paint device that is used to create SVG drawings. <a href="#details">More...</a></p>
+<pre> #include &lt;QSvgGenerator&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qsvggenerator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsvggenerator.html#QSvgGenerator">QSvgGenerator</a></b> ()</li>
+<li><div class="fn"/><b><a href="qsvggenerator.html#dtor.QSvgGenerator">~QSvgGenerator</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qsvggenerator.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qsvggenerator.html#outputDevice">outputDevice</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qsvggenerator.html#resolution">resolution</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsvggenerator.html#setFileName">setFileName</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvggenerator.html#setOutputDevice">setOutputDevice</a></b> ( QIODevice * <i>outputDevice</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvggenerator.html#setResolution">setResolution</a></b> ( int <i>resolution</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvggenerator.html#setSize">setSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>QSize <b><a href="qsvggenerator.html#size">size</a></b> () const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QPaintEngine * <b><a href="qsvggenerator.html#paintEngine">paintEngine</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSvgGenerator class provides a paint device that is used to create SVG drawings.</p>
+<p>See also <a href="qsvgrenderer.html">QSvgRenderer</a> and <a href="qsvgwidget.html">QSvgWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSvgGenerator"></a>QSvgGenerator::QSvgGenerator ()</h3>
+<p>Constructs a new generator.</p>
+<h3 class="fn"><a name="dtor.QSvgGenerator"></a>QSvgGenerator::~QSvgGenerator ()</h3>
+<p>Destroys the generator.</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QSvgGenerator::fileName () const</h3>
+<p>Returns the name of the file to be created by the generator.</p>
+<p>See also <a href="qsvggenerator.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="outputDevice"></a><a href="qiodevice.html">QIODevice</a> * QSvgGenerator::outputDevice () const</h3>
+<p>Returns the target output device for generated SVGs.</p>
+<p>See also <a href="qsvggenerator.html#setOutputDevice">setOutputDevice</a>().</p>
+<h3 class="fn"><a name="paintEngine"></a><a href="qpaintengine.html">QPaintEngine</a> * QSvgGenerator::paintEngine () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the paint engine used to render graphics to be converted to SVG format information.</p>
+<h3 class="fn"><a name="resolution"></a>int QSvgGenerator::resolution () const</h3>
+<p>Returns the resolution of the generated output in dots per inch.</p>
+<p>See also <a href="qsvggenerator.html#setResolution">setResolution</a>().</p>
+<h3 class="fn"><a name="setFileName"></a>void QSvgGenerator::setFileName ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Sets the target filename for generated SVGs to <i>fileName</i>.</p>
+<p>See also <a href="qsvggenerator.html#fileName">fileName</a>() and <a href="qsvggenerator.html#setOutputDevice">setOutputDevice</a>().</p>
+<h3 class="fn"><a name="setOutputDevice"></a>void QSvgGenerator::setOutputDevice ( <a href="qiodevice.html">QIODevice</a> * <i>outputDevice</i> )</h3>
+<p>Sets the output device for generated SVGs to <i>outputDevice</i>.</p>
+<p>If both output device and file name are specified, the output device will have precedence.</p>
+<p>See also <a href="qsvggenerator.html#outputDevice">outputDevice</a>().</p>
+<h3 class="fn"><a name="setResolution"></a>void QSvgGenerator::setResolution ( int <i>resolution</i> )</h3>
+<p>Sets the resolution of the generated output to <i>resolution</i>. The argument is specified in dots per inch.</p>
+<p>The resolution is used to calculate the physical size of an SVG drawing.</p>
+<p>See also <a href="qsvggenerator.html#resolution">resolution</a>().</p>
+<h3 class="fn"><a name="setSize"></a>void QSvgGenerator::setSize ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the size of the generated SVG to <i>size</i>.</p>
+<p>It is not possible to set the size while the SVG is being generated.</p>
+<p>See also <a href="qsvggenerator.html#size">size</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qsize.html">QSize</a> QSvgGenerator::size () const</h3>
+<p>Returns the size of the generated SVG.</p>
+<p>See also <a href="qsvggenerator.html#setSize">setSize</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

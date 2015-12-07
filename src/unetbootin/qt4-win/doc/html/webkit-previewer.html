@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/previewer.qdoc -->
+<head>
+  <title>Qt 4.4: Previewer Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Previewer Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="webkit-previewer-mainwindow-cpp.html">webkit/previewer/mainwindow.cpp</a></li>
+<li><a href="webkit-previewer-mainwindow-h.html">webkit/previewer/mainwindow.h</a></li>
+<li><a href="webkit-previewer-previewer-cpp.html">webkit/previewer/previewer.cpp</a></li>
+<li><a href="webkit-previewer-previewer-h.html">webkit/previewer/previewer.h</a></li>
+<li><a href="webkit-previewer-previewer-ui.html">webkit/previewer/previewer.ui</a></li>
+<li><a href="webkit-previewer-main-cpp.html">webkit/previewer/main.cpp</a></li>
+<li><a href="webkit-previewer-previewer-pro.html">webkit/previewer/previewer.pro</a></li>
+</ul>
+<p>The Previewer example shows how to use <a href="qtwebkit.html">QtWebKit</a>'s <a href="qwebview.html">QWebView</a> to preview HTML data written in a <a href="qplaintextedit.html">QPlainTextEdit</a>.</p>
+<p align="center"><img src="images/previewer-example.png" /></p><a name="the-user-interface"></a>
+<h2>The User Interface</h2>
+<p>Before we begin, we create a user interface using <i>Qt Designer</i>. Two <a href="qgroupbox.html">QGroupBox</a> objects - the editor group box and the previewer group box are separated by a <a href="qsplitter.html">QSplitter</a>. In the editor group box, we have a <a href="qplaintextedit.html">QPlainTextEdit</a> object, <tt>plainTextEdit</tt>, and two <a href="qpushbutton.html">QPushButton</a> objects. In the previewer group box, we have a <a href="qwebview.html">QWebView</a> object, <tt>webView</tt>.</p>
+<p align="center"><img src="images/previewer-ui.png" /></p><a name="previewer-class-definition"></a>
+<h2>Previewer Class Definition</h2>
+<p>The <tt>Previewer</tt> class is a subclass of both <a href="qwidget.html">QWidget</a> and Ui::Form. We subclass Ui::Form in order to embed the <i>Qt Designer</i> user interface form created earlier. This method of embedding forms is known as the <a href="designer-using-a-component.html#the-multiple-inheritance-approach">multiple inheritance approach</a>.</p>
+<p>In our <tt>previewer.h</tt> file, we have a constructor and a slot, <tt>on_previewButton_clicked()</tt>.</p>
+<pre> class Previewer : public QWidget, public Ui::Form
+ {
+     Q_OBJECT
+
+ public:
+     Previewer(QWidget *parent = 0);
+
+ public slots:
+     void on_previewButton_clicked();
+
+ };</pre>
+<a name="previewer-class-implementation"></a>
+<h2>Previewer Class Implementation</h2>
+<p>The <tt>Previewer</tt>'s constructor is only responsible for setting up the user interface.</p>
+<pre> Previewer::Previewer(QWidget *parent)
+     : QWidget(parent)
+ {
+     setupUi(this);
+ }</pre>
+<p>The <tt>on_previewButton_clicked()</tt> is a slot corresponding to the <tt>previewButton</tt>'s <a href="qabstractbutton.html#clicked">clicked()</a> signal. When the <tt>previewButton</tt> is clicked, we extract the contents of <tt>plainTextEdit</tt>, and then invoke the <a href="qwebview.html#setHtml">setHtml()</a> function to display our contents as HTML.</p>
+<pre> void Previewer::on_previewButton_clicked()
+ {
+     <span class="comment">//</span> Update the contents in web viewer
+     QString text = plainTextEdit-&gt;toPlainText();
+     webView-&gt;setHtml(text);
+ }</pre>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>The <tt>MainWindow</tt> class for the Previewer example is a subclass of <a href="qmainwindow.html">QMainWindow</a> with a constructor and five private slots: <tt>open()</tt>, <tt>openUrl()</tt>, <tt>save()</tt>, <tt>about()</tt> and <tt>updateTextEdit()</tt>.</p>
+<pre> class MainWindow : public QMainWindow
+ {
+     Q_OBJECT
+
+ public:
+     MainWindow();
+
+ private slots:
+     void open();
+     void openUrl();
+     void save();
+     void about();
+     void updateTextEdit();</pre>
+<p>The private objects in <tt>MainWindow</tt> are <tt>centralWidget</tt>, which is a <tt>Previewer</tt> object, <tt>fileMenu</tt>, <tt>helpMenu</tt> and the <a href="qaction.html">QAction</a> objects <tt>openAct</tt>, <tt>openUrlAct</tt>, <tt>saveAct</tt>, <tt>exitAct</tt>, <tt>aboutAct</tt> and <tt>aboutQtAct</tt>.</p>
+<pre> private:
+     Previewer *centralWidget;
+     QMenu *fileMenu;
+     QMenu *helpMenu;
+     QAction *openAct;
+     QAction *openUrlAct;
+     QAction *saveAct;
+     QAction *exitAct;
+     QAction *aboutAct;
+     QAction *aboutQtAct;
+
+     void createActions();
+     void createMenus();
+     void setStartupText();
+ };</pre>
+<p>There are three private functions: <tt>createActions()</tt>, <tt>createMenus()</tt> and <tt>setStartupText()</tt>. The <tt>createActions()</tt> and <tt>createMenus()</tt> functions are necessary to set up the main window's actions and assign them to the <b>File</b> and <b>Help</b> menus. The <tt>setStartupText()</tt> function, on the other hand, displays a description about the example in its HTML Previewer window.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt>'s constructor invokes <tt>createActions()</tt> and <tt>createMenus()</tt> to set up the <b>File</b> menu and <b>Help</b> menu. Then, the <tt>Previewer</tt> object, <tt>centralWidget</tt>, is set to the main window's central widget. Also, we connect <tt>webView</tt>'s <a href="qwebview.html#loadFinished">loadFinished()</a> signal to our <tt>updateTextEdit()</tt> slot. Finally, we call the <tt>setStartupText()</tt> function to display the description of the example.</p>
+<pre> MainWindow::MainWindow()
+ {
+     createActions();
+     createMenus();
+     centralWidget = new Previewer(this);
+     setCentralWidget(centralWidget);
+
+     connect(centralWidget-&gt;webView, SIGNAL(loadFinished(bool)),
+         this, SLOT(updateTextEdit()));
+     setStartupText();
+ }</pre>
+<p>Within the <tt>createActions()</tt> function, we instantiate all our private <a href="qaction.html">QAction</a> objects which we declared in <tt>mainwindow.h</tt>. We set the short cut and status tip for these actions and connect their <a href="qaction.html#triggered">triggered()</a> signal to appropriate slots.</p>
+<pre> void MainWindow::createActions()
+ {
+     openAct = new QAction(tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     openAct-&gt;setStatusTip(tr(&quot;Open an existing HTML file&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     openUrlAct = new QAction(tr(&quot;&amp;Open URL...&quot;), this);
+     openUrlAct-&gt;setShortcut(tr(&quot;Ctrl+U&quot;));
+     openUrlAct-&gt;setStatusTip(tr(&quot;Open a URL&quot;));
+     connect(openUrlAct, SIGNAL(triggered()), this, SLOT(openUrl()));
+     ...</pre>
+<p>The <tt>createMenus()</tt> function instantiates the <a href="qmenu.html">QMenu</a> items, <tt>fileMenu</tt> and <tt>helpMenu</tt> and adds them to the main window's <a href="qmainwindow.html#menuBar">menu bar</a>.</p>
+<pre> void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(openAct);
+     fileMenu-&gt;addAction(openUrlAct);
+     fileMenu-&gt;addAction(saveAct);
+     fileMenu-&gt;addSeparator();
+     fileMenu-&gt;addAction(exitAct);
+
+     menuBar()-&gt;addSeparator();
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Help&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }</pre>
+<p>The example also provides an <tt>about()</tt> slot to describe its purpose.</p>
+<pre> void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Application&quot;),
+         tr(&quot;The &lt;b&gt;Application&lt;/b&gt; example demonstrates how to &quot;
+            &quot;view HTML documents using a QWebView.&quot;));
+ }</pre>
+<p>The <tt>MainWindow</tt> class provides two types of <b>Open</b> functions: <tt>open()</tt> and <tt>openUrl()</tt>. The <tt>open()</tt> function opens an HTML file with <tt>fileName</tt>, and reads it with <a href="qtextstream.html">QTextStream</a>. The function then displays the output on <tt>plainTextEdit</tt>. The file's name is obtained using <a href="qfiledialog.html">QFileDialog</a>'s <a href="qfiledialog.html#getOpenFileName">getOpenFileName()</a> function.</p>
+<pre> void MainWindow::open()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this);
+     if (!fileName.isEmpty()) {
+         <span class="comment">//</span> read from file
+         QFile file(fileName);
+
+         if (!file.open(QIODevice::ReadOnly)) {
+             QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+                 file.errorString());
+             return;
+         }
+
+         QTextStream out(&amp;file);
+         QString output = out.readAll();
+
+         <span class="comment">//</span> display contents
+         centralWidget-&gt;plainTextEdit-&gt;setPlainText(output);
+     }
+ }</pre>
+<p>The <tt>openUrl()</tt> function, on the other hand, displays a <a href="qinputdialog.html">QInputDialog</a> to obtain a URL, and displays it on <tt>webView</tt>.</p>
+<pre> void MainWindow::openUrl()
+ {
+     bool ok;
+     QString url = QInputDialog::getText(this, tr(&quot;Enter a URL&quot;),
+                   tr(&quot;URL:&quot;), QLineEdit::Normal, &quot;http:<span class="comment">//</span>&quot;, &amp;ok);
+
+     if (ok &amp;&amp; !url.isEmpty()) {
+         centralWidget-&gt;webView-&gt;setUrl(url);
+     }
+ }</pre>
+<p>In order to save a HTML file, the <tt>save()</tt> function first extracts the contents of <tt>plainTextEdit</tt> and displays a <a href="qfiledialog.html">QFileDialog</a> to obtain <tt>fileName</tt>. Then, we use a <a href="qtextstream.html">QTextStream</a> object, <tt>in</tt>, to write to <tt>file</tt>.</p>
+<pre> void MainWindow::save()
+ {
+     QString content = centralWidget-&gt;plainTextEdit-&gt;toPlainText();
+     QString fileName = QFileDialog::getSaveFileName(this);
+
+     if (!fileName.isEmpty()) {
+         <span class="comment">//</span> save to file
+         QFile file(fileName);
+
+         if (!file.open(QIODevice::WriteOnly)) {
+             QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+                 file.errorString());
+             return;
+         }
+
+         QTextStream in(&amp;file);
+         in &lt;&lt; content;
+     }
+ }</pre>
+<p>Earlier, in <tt>MainWindow</tt>'s constructor, we connected <tt>webView</tt>'s <a href="qwebview.html#loadFinished">loadFinished()</a> signal to our private <tt>updateTextEdit()</tt> slot. This slot updates the contents of <tt>plainTextEdit</tt> with the HTML source of the web page's main frame, obtained using <a href="qwebframe.html">QWebFrame</a>'s <a href="qwebframe.html#toHtml">toHtml()</a> function.</p>
+<pre> void MainWindow::updateTextEdit()
+ {
+     QWebFrame *mainFrame = centralWidget-&gt;webView-&gt;page()-&gt;mainFrame();
+     QString frameText = mainFrame-&gt;toHtml();
+     centralWidget-&gt;plainTextEdit-&gt;setPlainText(frameText);
+ }</pre>
+<p>To provide a description about the Previewer example, when it starts up, we use the <tt>setStartupText()</tt> function, as shown below:</p>
+<pre> void MainWindow::setStartupText()
+ {
+     QString string = &quot;&lt;html&gt;&lt;body&gt;&lt;h1&gt;HTML Previewer&lt;/h1&gt;&quot;
+                      &quot; &lt;p&gt;This example shows you how to use QWebView to&quot;
+                      &quot; preview HTML data written in a QPlainTextEdit.&lt;/p&gt;&quot;
+                      &quot; &lt;/body&gt;&lt;/html&gt;&quot;;
+     centralWidget-&gt;webView-&gt;setHtml(string);
+ }</pre>
+<a name="the-function"></a>
+<h2>The <tt>main()</tt> Function</h2>
+<p>The <tt>main()</tt> function instantiates a <tt>MainWindow</tt> object, <tt>mainWindow</tt>, and displays it with the <a href="qwidget.html#show">show()</a> function.</p>
+<pre> int main(int argc, char * argv[])
+ {
+     QApplication app(argc, argv);
+     MainWindow *mainWindow = new MainWindow;
+     mainWindow-&gt;show();
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

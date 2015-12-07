@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/resources.qdoc -->
+<head>
+  <title>Qt 4.4: The Qt Resource System</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The Qt Resource System<br /><span class="subtitle"></span>
+</h1>
+<a name="resource-system"></a><p>The Qt resource system is a platform-independent mechanism for storing binary files in the application's executable. This is useful if your application always needs a certain set of files (icons, translation files, etc.) and you don't want to run the risk of losing the files.</p>
+<p>The resource system is based on tight cooperation between <a href="qmake-manual.html#qmake">qmake</a>, <a href="rcc.html#rcc">rcc</a> (Qt's resource compiler), and <a href="qfile.html">QFile</a>. It obsoletes Qt 3's <tt>qembed</tt> tool and the <a href="http://doc.trolltech.com/qq/qq05-iconography.html#imagestorage">image collection</a> mechanism.</p>
+<a name="resource-collection-files"></a>
+<h2>Resource Collection Files (<tt>.qrc</tt>)</h2>
+<p>The resources associated with an application are specified in a <tt>.qrc</tt> file, an XML-based file format that lists files on the disk and optionally assigns them a resource name that the application must use to access the resource.</p>
+<p>Here's an example <tt>.qrc</tt> file:</p>
+<pre> &lt;!DOCTYPE RCC&gt;&lt;RCC version=&quot;1.0&quot;&gt;
+ &lt;qresource&gt;
+     &lt;file&gt;images/copy.png&lt;/file&gt;
+     &lt;file&gt;images/cut.png&lt;/file&gt;
+     &lt;file&gt;images/new.png&lt;/file&gt;
+     &lt;file&gt;images/open.png&lt;/file&gt;
+     &lt;file&gt;images/paste.png&lt;/file&gt;
+     &lt;file&gt;images/save.png&lt;/file&gt;
+ &lt;/qresource&gt;
+ &lt;/RCC&gt;</pre>
+<p>The resource files listed in the <tt>.qrc</tt> file are files that are part of the application's source tree. The specified paths are relative to the directory containing the <tt>.qrc</tt> file. Note that the listed resource files must be located in the same directory as the <tt>.qrc</tt> file, or one of its subdirectories.</p>
+<p>Resource data can either be compiled into the binary and thus accessed immediately in application code, or a binary resource can be created and at a later point in application code registered with the resource system.</p>
+<p>By default, resources are accessible in the application under the same name as they have in the source tree, with a <tt>:/</tt> prefix. For example, the path <tt>:/images/cut.png</tt> would give access to the <tt>cut.png</tt> file, whose location in the application's source tree is <tt>images/cut.png</tt>. This can be changed using the <tt>file</tt> tag's <tt>alias</tt> attribute:</p>
+<pre>         &lt;file alias=&quot;cut-img.png&quot;&gt;images/cut.png&lt;/file&gt;</pre>
+<p>The file is then accessible as <tt>:/cut-img.png</tt> from the application. It is also possible to specify a path prefix for all files in the <tt>.qrc</tt> file using the <tt>qresource</tt> tag's <tt>prefix</tt> attribute:</p>
+<pre>         &lt;qresource prefix=&quot;/myresources&quot;&gt;
+             &lt;file alias=&quot;cut-img.png&quot;&gt;images/cut.png&lt;/file&gt;
+         &lt;/qresource&gt;</pre>
+<p>In this case, the file is accessible as <tt>:/myresources/cut-img.png</tt>.</p>
+<p>Some resources, such as translation files and icons, many need to change based on the user's locale. This is done by adding a <tt>lang</tt> attribute to the <tt>qresource</tt> tag, specifying a suitable locale string. For example:</p>
+<pre>         &lt;qresource&gt;
+             &lt;file&gt;cut.jpg&lt;/file&gt;
+         &lt;/qresource&gt;
+         &lt;qresource lang=&quot;fr&quot;&gt;
+             &lt;file alias=&quot;cut.jpg&quot;&gt;cut_fr.jpg&lt;/file&gt;
+         &lt;/qresource&gt;</pre>
+<p>If the user's locale is French (i.e&#x2e;, <a href="qlocale.html#system">QLocale::system</a>().name() returns &quot;fr_FR&quot;), <tt>:/cut.jpg</tt> becomes a reference to the <tt>cut_fr.jpg</tt> image. For other locales, <tt>cut.jpg</tt> is used.</p>
+<p>See the <a href="qlocale.html">QLocale</a> documentation for a description of the format to use for locale strings.</p>
+<a name="external-binary-resources"></a>
+<h3>External Binary Resources</h3>
+<p>For an external binary resource to be created you must create the resource data (commonly given the <tt>.rcc</tt> extension) by passing the -binary switch to <a href="rcc.html#rcc">rcc</a>. Once the binary resource is created you can register the resource with the <a href="qresource.html">QResource</a> API.</p>
+<p>For example, a set of resource data specified in a <tt>.qrc</tt> file can be compiled in the following way:</p>
+<pre>     rcc -binary myresource.qrc -o myresource.rcc</pre>
+<p>In the application, this resource would be registered with code like this:</p>
+<pre>     QResource::registerResource(&quot;/path/to/myresource.rcc&quot;);</pre>
+<a name="compiled-in-resources"></a>
+<h3>Compiled-In Resources</h3>
+<p>For a resource to be compiled into the binary the <tt>.qrc</tt> file must be mentioned in the application's <tt>.pro</tt> file so that <tt>qmake</tt> knows about it. For example:</p>
+<pre> RESOURCES     = application.qrc</pre>
+<p><tt>qmake</tt> will produce make rules to generate a file called <tt>qrc_application.cpp</tt> that is linked into the application. This file contains all the data for the images and other resources as static C++ arrays of compressed binary data. The <tt>qrc_application.cpp</tt> file is automatically regenerated whenever the <tt>.qrc</tt> file changes or one of the files that it refers to changes. If you don't use <tt>.pro</tt> files, you can either invoke <tt>rcc</tt> manually or add build rules to your build system.</p>
+<p align="center"><img src="images/resources.png" alt="Building resources into an application" /></p><p>Currently, Qt always stores the data directly in the executable, even on Windows and Mac OS X, where the operating system provides native support for resources. This might change in a future Qt release.</p>
+<a name="using-resources-in-the-application"></a>
+<h2>Using Resources in the Application</h2>
+<p>In the application, resource paths can be used in most places instead of ordinary file system paths. In particular, you can pass a resource path instead of a file name to the <a href="qicon.html">QIcon</a>, <a href="qimage.html">QImage</a>, or <a href="qpixmap.html">QPixmap</a> constructor:</p>
+<pre>     cutAct = new QAction(QIcon(&quot;:/images/cut.png&quot;), tr(&quot;Cu&amp;t&quot;), this);</pre>
+<p>See the <a href="mainwindows-application.html">Application</a> example for an actual application that uses Qt's resource system to store its icons.</p>
+<p>In memory, resources are represented by a tree of resource objects. The tree is automatically built at startup and used by <a href="qfile.html">QFile</a> for resolving paths to resources. You can use a <a href="qdir.html">QDir</a> initialized with &quot;:/&quot; to navigate through the resource tree from the root.</p>
+<p>Qt's resources support the concept of a search path list. If you then refer to a resource with <tt>:</tt> instead of <tt>:/</tt> as the prefix, the resource will be looked up using the search path list. The search path list is empty at startup; call <a href="qdir-obsolete.html#addResourceSearchPath">QDir::addResourceSearchPath</a>() to add paths to it.</p>
+<p>If you have resources in a static library, you might need to force initialization of your resources by calling <a href="qdir.html#Q_INIT_RESOURCE">Q_INIT_RESOURCE</a>() with the base name of the <tt>.qrc</tt> file. For example:</p>
+<pre>         int main(int argc, char *argv[])
+         {
+             QApplication app(argc, argv);
+             Q_INIT_RESOURCE(graphlib);
+             ...
+             return app.exec();
+         }</pre>
+<p>Similarly, if you must unload a set of resources explicitly (because a plugin is being unloaded or the resources are not valid any longer), you can force removal of your resources by calling <a href="qdir.html#Q_CLEANUP_RESOURCE">Q_CLEANUP_RESOURCE</a>() with the same base name as above.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

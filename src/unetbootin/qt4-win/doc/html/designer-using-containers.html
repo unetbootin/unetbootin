@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Using Containers in Qt Designer</title>
+  <link rel="prev" href="designer-editing-mode.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-creating-mainwindows.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-editing-mode.html">Qt Designer's Widget Editing Mode</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-mainwindows.html">Creating Main Windows in Qt Designer</a>]
+</p>
+<h1 class="title">Using Containers in Qt Designer<br /><span class="subtitle"></span>
+</h1>
+<p>Container widgets provide high level control over groups of objects on a form. They can be used to perform a variety of functions, such as managing input widgets, providing paged and tabbed layouts, or just acting as decorative containers for other objects.</p>
+<p>Since many containers offer specialized functionality, they require a little more explanation than ordinary widgets in order to make the most of them.</p>
+<ul><li><a href="#general-features">General Features</a></li>
+<li><a href="#frames">Frames</a></li>
+<li><a href="#group-boxes">Group Boxes</a></li>
+<li><a href="#stacked-widgets">Stacked Widgets</a></li>
+<li><a href="#tab-widgets">Tab Widgets</a></li>
+<li><a href="#toolbox-widgets">Toolbox Widgets</a></li>
+<li><a href="#dock-widgets">Dock Widgets</a></li>
+</ul>
+<a name="general-features"></a>
+<h2>General Features</h2>
+<p>Since containers are designed to hold other objects, <i>Qt Designer</i> provides visual feedback to help you place objects inside them. When dragging an object from the widget box or from elsewhere on the form, each container will become highlighted as the cursor is positioned over it. This indicates that you can drop the object inside, and that it will become a child object of the container. This feedback is important because it is easy to place objects close to containers without actually placing them inside. Both widgets and spacers can be used inside containers.</p>
+<p>Stacked widgets, tab widgets, and toolboxes are handled specially in <i>Qt Designer</i>. Normally, when adding pages (tabs, pages, compartments) to these containers in your own code, you need to supply existing widgets, either as placeholders or containing child widgets. In <i>Qt Designer</i>, these are automatically created for you, so you can add child objects to each page straight away. New pages are added to each of these containers in the same way: Select the container on the form, open the context menu, and select <b>Insert Page</b>. Then you are given the option of inserting the page before or after the current page. To delete the current page, select the container widget then select the <b>Delete Page</b> from the context menu.</p>
+<p>Each container typically allows its child objects to be arranged in one or more layouts. The type of layout management provided depends on each container, although setting the layout is usually just a matter of selecting the container by clicking it, and applying a layout.</p>
+<a name="frames"></a>
+<h2>Frames</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-frame.png" /></td><td><b>Frames</b><p>Frames are used to enclose and group widgets, and to provide decoration. They are used as the foundation for more complex containers, but they can also be used as placeholders in forms.</p>
+</td></tr>
+</table></p>
+<p>The most important properties of frames are <tt>frameShape</tt>, <tt>frameShadow</tt>, <tt>lineWidth</tt>, and <tt>midLineWidth</tt>. These are described in more detail in the <a href="qframe.html">QFrame</a> class description.</p>
+<p>Each frame can contain its own layout. Select the frame and apply the layout as usual.</p>
+<a name="group-boxes"></a>
+<h2>Group Boxes</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-groupbox.png" /></td><td><b>Group Boxes</b><p>Group boxes are usually used to group together collections of checkboxes and radio buttons with similar purposes.</p>
+</td></tr>
+</table></p>
+<p>The most important properties of group boxes are <tt>title</tt>, <tt>flat</tt>, <tt>checkable</tt>, and <tt>checked</tt>. These are demonstrated in the <a href="widgets-groupbox.html">Group Box</a> example, and described in the <a href="qgroupbox.html">QGroupBox</a> class documentation.</p>
+<p>Each group box can contain its own layout, and this is necessary if it contains other widgets. To add a layout to the group box, click inside it and apply the layout as usual.</p>
+<a name="stacked-widgets"></a>
+<h2>Stacked Widgets</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-stackedwidget.png" /></td><td><b>Stacked Widgets</b><p>Stacked widgets are collections of widgets in which only the topmost layer is visible. Control over the visible layer is usually managed by another widget, such as a combobox, using signals and slots.</p>
+</td></tr>
+</table></p>
+<p><i>Qt Designer</i> shows arrows in the top-right corner of the stack to allow you to see all the widgets in the stack; these do not appear in either the preview or in the final component. To navigate between pages in the stack, select the stacked widget and use the <b>Next Page</b> and <b>Previous Page</b> entries from the context menu. The <b>Insert Page</b> and <b>Delete Page</b> context menu options allow you add and remove pages.</p>
+<p>Each page in the stack can be given its own layout, and this is necessary if the page contains other objects. To add a layout to a page, click inside the widget and apply the layout as usual.</p>
+<a name="tab-widgets"></a>
+<h2>Tab Widgets</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-tabwidget.png" /></td><td><b>Tab Widgets</b><p>Tab widgets allow the developer to split up the contents of a widget into different labelled sections, only one of which is displayed at any given time. By default, the tab widget contains two tabs, and these can be deleted or renamed as required. You can also add additional tabs.</p>
+</td></tr>
+</table></p>
+<p>To delete a tab, make it the current tab by clicking on its label, select the tab widget, open the context menu over the tab, and select <b>Delete Page</b>. To add a new tab, select the tab widget, open the context menu, and select <b>Insert Page</b>. Then you are given the option of adding the page either before or after the <i>current</i> page. <i>Qt Designer</i> will create a new widget for that tab, and insert it into the tab widget. The title of the current tab can be set by selecting the tab widget, and changing the <tt>currentTabText</tt> property in the Property Editor.</p>
+<p>Each tab can be given its own layout, and one must be defined for each tab that contains other objects. To add a layout to a tab, click inside it and apply the layout as usual.</p>
+<a name="toolbox-widgets"></a>
+<h2>Toolbox Widgets</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-toolbox.png" /></td><td><b>ToolBox Widgets</b><p>Toolbox widgets provide a series of pages or compartments in a toolbox, much like the toolbox used in Qt 3's <i>Qt Designer</i>. Toolboxes are handled in much the same way as stacked widgets.</p>
+<p>To rename a page in a toolbox, make it the current page, open the Property Editor, and change the <tt>currentItemText</tt> property. To add a new page, select the toolbox widget, open the context menu, and select <b>Insert Page</b>. Then you are given the option of adding the page either before or after the current page. To delete the current page, select the toolbox widget, open the context menu, and select <b>Delete Page</b>.</p>
+</td></tr>
+</table></p>
+<p>Each page in the toolbox can be given its own layout, and this is necessary if it contains other objects. To add a layout to a page, click inside it and apply the layout as usual.</p>
+<a name="dock-widgets"></a>
+<h2>Dock Widgets</h2>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-containers-dockwidget.png" /></td><td><b>Dock Widgets</b><p>Dock widgets are floating panels, often containing input widgets and more complex controls, that are either attached to the edges of the main window in &quot;dock areas&quot; or floated as independent tool windows.</p>
+<p>Although dock widgets can be added to any type of form, they are typically used with forms created from the <a href="designer-creating-mainwindows.html">main window template</a>.</p>
+</td></tr>
+</table></p>
+<p>
+[Previous: <a href="designer-editing-mode.html">Qt Designer's Widget Editing Mode</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-creating-mainwindows.html">Creating Main Windows in Qt Designer</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

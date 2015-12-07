@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/activeqt-idc.qdoc -->
+<head>
+  <title>Qt 4.4: IDC - The Interface Description Compiler (ActiveQt)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">IDC - The Interface Description Compiler (ActiveQt)<br /><span class="subtitle"></span>
+</h1>
+<a name="idc"></a><p>The IDC tool is part of the <a href="activeqt.html#activeqt">ActiveQt</a> build system and makes it possible to turn any Qt binary into a full COM object server with only a few lines of code.</p>
+<p>IDC understands the following command line parameters:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Result</th></tr></thead>
+<tr valign="top" class="odd"><td>dll -idl idl -version x.y</td><td>Writes the IDL of the server <i>dll</i> to the file <i>idl</i>. The type library wll have version x.y&#x2e;</td></tr>
+<tr valign="top" class="even"><td>dll -tlb tlb</td><td>Replaces the type library in <i>dll</i> with <i>tlb</i></td></tr>
+<tr valign="top" class="odd"><td>-v</td><td>Print version information</td></tr>
+<tr valign="top" class="even"><td>-regserver dll</td><td>Register the COM server <i>dll</i></td></tr>
+<tr valign="top" class="odd"><td>-unregserver</td><td>Unregister the COM server <i>dll</i></td></tr>
+</table></p>
+<p>It is usually never necessary to invoke IDC manually, as the <tt>qmake</tt> build system takes care of adding the required post processing steps to the build process. See the <a href="activeqt.html#activeqt">ActiveQt</a> documentation for details.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

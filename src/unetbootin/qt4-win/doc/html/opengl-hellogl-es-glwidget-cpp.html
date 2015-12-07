@@ -1,0 +1,462 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: glwidget.cpp Example File (opengl/hellogl_es/glwidget.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">glwidget.cpp Example File<br /><span class="small-subtitle">opengl/hellogl_es/glwidget.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;glwidget.h&quot;
+ #include &lt;QPainter&gt;
+ #include &lt;math.h&gt;
+
+ #include &quot;bubble.h&quot;
+ #include &quot;cl_helper.h&quot;
+
+ const int bubbleNum = 8;
+
+ inline void CrossProduct(qreal &amp;xOut, qreal &amp;yOut, qreal &amp;zOut, qreal x1, qreal y1, qreal z1, qreal x2, qreal y2, qreal z2)
+ {
+    xOut = y1 * z2 - z1 * y2;
+    yOut = z1 * x2 - x1 * z2;
+    zOut = x1 * y2 - y1 * x2;
+ }
+
+ inline void Normalize(qreal &amp;x, qreal &amp;y, qreal &amp;z)
+ {
+     qreal l = sqrt(x*x + y*y + z*z);
+     x = x / l;
+     y = y / l;
+     z = z / l;
+ }
+
+ GLWidget::GLWidget(QWidget *parent)
+     : QGLWidget(parent)
+ {
+     qtLogo = true;
+     createdVertices = 0;
+     createdNormals = 0;
+     m_vertexNumber = 0;
+     frames = 0;
+     setAttribute(Qt::WA_PaintOnScreen);
+     setAttribute(Qt::WA_NoSystemBackground);
+     setAutoBufferSwap(false);
+     m_showBubbles = true;
+ }
+
+ GLWidget::~GLWidget()
+ {
+   if (createdVertices)
+       delete[] createdVertices;
+   if (createdNormals)
+       delete[] createdNormals;
+ }
+
+ void GLWidget::setScaling(int scale) {
+
+     if (scale &gt; 50)
+         m_fScale = 1 + qreal(scale -50) / 50 * 0.5;
+     else if (scale &lt; 50)
+         m_fScale =  1- (qreal(50 - scale) / 50 * 1/2);
+     else
+       m_fScale = 1;
+ }
+
+ void GLWidget::setLogo() {
+     qtLogo = true;
+ }
+
+ void GLWidget::setTexture() {
+     qtLogo = false;
+ }
+
+ void GLWidget::showBubbles(bool bubbles)
+ {
+    m_showBubbles = bubbles;
+ }
+
+ void GLWidget::paintQtLogo()
+ {
+     glDisable(GL_TEXTURE_2D);
+     glEnableClientState(GL_VERTEX_ARRAY);
+     glVertexPointer(3,q_vertexTypeEnum,0, createdVertices);
+     glEnableClientState(GL_NORMAL_ARRAY);
+     glNormalPointer(q_vertexTypeEnum,0,createdNormals);
+     glDrawArrays(GL_TRIANGLES, 0, m_vertexNumber / 3);
+ }
+
+ void GLWidget::paintTexturedCube()
+ {
+     glEnable(GL_TEXTURE_2D);
+     glBindTexture(GL_TEXTURE_2D, m_uiTexture);
+     q_vertexType afVertices[] = {
+         f2vt(-0.5), f2vt(0.5), f2vt(0.5), f2vt(0.5),f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(-0.5),f2vt(0.5),
+         f2vt(0.5), f2vt(-0.5), f2vt(0.5), f2vt(-0.5),f2vt(0.5),f2vt(0.5),f2vt(0.5),f2vt(0.5),f2vt(0.5),
+         f2vt(-0.5), f2vt(-0.5), f2vt(-0.5), f2vt(0.5),f2vt(-0.5),f2vt(-0.5),f2vt(-0.5),f2vt(0.5),f2vt(-0.5),
+         f2vt(0.5), f2vt(0.5), f2vt(-0.5), f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(-0.5),
+
+         f2vt(0.5), f2vt(-0.5), f2vt(-0.5), f2vt(0.5),f2vt(-0.5),f2vt(0.5),f2vt(0.5),f2vt(0.5),f2vt(-0.5),
+         f2vt(0.5), f2vt(0.5), f2vt(0.5), f2vt(0.5),f2vt(0.5),f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(0.5),
+         f2vt(-0.5), f2vt(0.5), f2vt(-0.5), f2vt(-0.5),f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(-0.5),f2vt(-0.5),
+         f2vt(-0.5), f2vt(-0.5), f2vt(0.5), f2vt(-0.5),f2vt(0.5),f2vt(-0.5),f2vt(-0.5),f2vt(0.5),f2vt(0.5),
+
+         f2vt(0.5), f2vt(0.5),  f2vt(-0.5), f2vt(-0.5), f2vt(0.5),  f2vt(0.5),  f2vt(-0.5),  f2vt(0.5),  f2vt(-0.5),
+         f2vt(-0.5),  f2vt(0.5),  f2vt(0.5),  f2vt(0.5),  f2vt(0.5),  f2vt(-0.5), f2vt(0.5), f2vt(0.5),  f2vt(0.5),
+         f2vt(-0.5),  f2vt(-0.5), f2vt(-0.5), f2vt(-0.5), f2vt(-0.5), f2vt(0.5),  f2vt(0.5), f2vt(-0.5), f2vt(-0.5),
+         f2vt(0.5), f2vt(-0.5), f2vt(0.5),  f2vt(0.5),  f2vt(-0.5), f2vt(-0.5), f2vt(-0.5),  f2vt(-0.5), f2vt(0.5)
+     };
+     glEnableClientState(GL_VERTEX_ARRAY);
+     glVertexPointer(3,q_vertexTypeEnum,0,afVertices);
+
+     q_vertexType afTexCoord[] = {
+         f2vt(0.0f),f2vt(0.0f), f2vt(1.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f),
+         f2vt(1.0f),f2vt(1.0f), f2vt(0.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f),
+         f2vt(1.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f),
+         f2vt(0.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f),
+
+         f2vt(1.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f),
+         f2vt(0.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f),
+         f2vt(0.0f),f2vt(0.0f), f2vt(1.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f),
+         f2vt(1.0f),f2vt(1.0f), f2vt(0.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f),
+
+         f2vt(0.0f),f2vt(1.0f), f2vt(1.0f),f2vt(0.0f), f2vt(1.0f),f2vt(1.0f),
+         f2vt(1.0f),f2vt(0.0f), f2vt(0.0f),f2vt(1.0f), f2vt(0.0f),f2vt(0.0f),
+         f2vt(1.0f),f2vt(0.0f), f2vt(1.0f),f2vt(1.0f), f2vt(0.0f),f2vt(0.0f),
+         f2vt(0.0f),f2vt(1.0f), f2vt(0.0f),f2vt(0.0f), f2vt(1.0f),f2vt(1.0f)
+     };
+     glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+     glTexCoordPointer(2,q_vertexTypeEnum,0,afTexCoord);
+
+     q_vertexType afNormals[] = {
+
+         f2vt(0),f2vt(0),f2vt(-1), f2vt(0),f2vt(0),f2vt(-1), f2vt(0),f2vt(0),f2vt(-1),
+         f2vt(0),f2vt(0),f2vt(-1), f2vt(0),f2vt(0),f2vt(-1), f2vt(0),f2vt(0),f2vt(-1),
+         f2vt(0),f2vt(0),f2vt(1), f2vt(0),f2vt(0),f2vt(1), f2vt(0),f2vt(0),f2vt(1),
+         f2vt(0),f2vt(0),f2vt(1), f2vt(0),f2vt(0),f2vt(1), f2vt(0),f2vt(0),f2vt(1),
+
+         f2vt(-1),f2vt(0),f2vt(0), f2vt(-1),f2vt(0),f2vt(0), f2vt(-1),f2vt(0),f2vt(0),
+         f2vt(-1),f2vt(0),f2vt(0), f2vt(-1),f2vt(0),f2vt(0), f2vt(-1),f2vt(0),f2vt(0),
+         f2vt(1),f2vt(0),f2vt(0), f2vt(1),f2vt(0),f2vt(0), f2vt(1),f2vt(0),f2vt(0),
+         f2vt(1),f2vt(0),f2vt(0), f2vt(1),f2vt(0),f2vt(0), f2vt(1),f2vt(0),f2vt(0),
+
+         f2vt(0),f2vt(-1),f2vt(0), f2vt(0),f2vt(-1),f2vt(0), f2vt(0),f2vt(-1),f2vt(0),
+         f2vt(0),f2vt(-1),f2vt(0), f2vt(0),f2vt(-1),f2vt(0), f2vt(0),f2vt(-1),f2vt(0),
+         f2vt(0),f2vt(1),f2vt(0), f2vt(0),f2vt(1),f2vt(0), f2vt(0),f2vt(1),f2vt(0),
+         f2vt(0),f2vt(1),f2vt(0), f2vt(0),f2vt(1),f2vt(0), f2vt(0),f2vt(1),f2vt(0)
+     };
+     glEnableClientState(GL_NORMAL_ARRAY);
+     glNormalPointer(q_vertexTypeEnum,0,afNormals);
+
+     glDrawArrays(GL_TRIANGLES, 0, 36);
+ }
+
+ void GLWidget::initializeGL ()
+ {
+     q_glClearColor(f2vt(0.1f), f2vt(0.1f), f2vt(0.2f), f2vt(1.0f));
+
+     glEnable(GL_TEXTURE_2D);
+     glGenTextures(1, &amp;m_uiTexture);
+     m_uiTexture = bindTexture(QImage(&quot;:/qt.png&quot;));
+
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+     glEnable(GL_LIGHTING);
+     glEnable(GL_LIGHT0);
+
+     q_vertexType aLightPosition[] = {f2vt(0.0f),f2vt(0.3f),f2vt(1.0f),f2vt(0.0f)};
+
+     q_glLightv(GL_LIGHT0, GL_SPOT_DIRECTION, aLightPosition);
+     m_fAngle = 0;
+     m_fScale = 1;
+     createGeometry();
+     createBubbles(bubbleNum - bubbles.count());
+ }
+
+ void GLWidget::paintGL()
+ {
+     createBubbles(bubbleNum - bubbles.count());
+
+     QPainter painter;
+     painter.begin(this);
+
+     glMatrixMode(GL_PROJECTION);
+     glPushMatrix();
+     glLoadIdentity();
+
+     glMatrixMode(GL_MODELVIEW);
+     glPushMatrix();
+     glMatrixMode(GL_TEXTURE);
+     glPushMatrix();
+
+     <span class="comment">//</span>Since OpenGL ES does not support glPush/PopAttrib(GL_ALL_ATTRIB_BITS)
+     <span class="comment">//</span>we have to take care of the states ourselves
+
+     q_glClearColor(f2vt(0.1f), f2vt(0.1f), f2vt(0.2f), f2vt(1.0f));
+     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+     glEnable(GL_TEXTURE_2D);
+
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
+     q_glTexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
+     glEnable(GL_LIGHTING);
+     glEnable(GL_LIGHT0);
+
+     glShadeModel(GL_FLAT);
+     glFrontFace(GL_CW);
+     glCullFace(GL_FRONT);
+     glEnable(GL_CULL_FACE);
+     glEnable(GL_DEPTH_TEST);
+
+     glMatrixMode(GL_MODELVIEW);
+     glLoadIdentity();
+
+     q_glRotate(f2vt(m_fAngle), f2vt(0.0), f2vt(1.0), f2vt(0.0));
+     q_glRotate(f2vt(m_fAngle), f2vt(1.0), f2vt(0.0), f2vt(0.0));
+     q_glRotate(f2vt(m_fAngle), f2vt(0.0), f2vt(0.0), f2vt(1.0));
+     q_glScale(f2vt(m_fScale), f2vt(m_fScale),f2vt(m_fScale));
+     q_glTranslate(f2vt(0),f2vt(-0.2),f2vt(0));
+
+     q_vertexType matDiff[] = {f2vt(0.40), f2vt(1.0), f2vt(0.0), f2vt(1.0)};
+     q_glMaterialv(GL_FRONT_AND_BACK, GL_DIFFUSE, matDiff);
+
+     if (qtLogo)
+         paintQtLogo();
+     else
+         paintTexturedCube();
+
+     glMatrixMode(GL_MODELVIEW);
+     glPopMatrix();
+     glMatrixMode(GL_PROJECTION);
+     glPopMatrix();
+     glMatrixMode(GL_TEXTURE);
+     glPopMatrix();
+
+     glDisable(GL_LIGHTING);
+     glDisable(GL_LIGHT0);
+
+     glDisable(GL_DEPTH_TEST);
+     glDisable(GL_CULL_FACE);
+
+     if (m_showBubbles)
+         foreach (Bubble *bubble, bubbles) {
+             bubble-&gt;drawBubble(&amp;painter);
+     }
+
+     QString framesPerSecond;
+     framesPerSecond.setNum(frames /(time.elapsed() / 1000.0), 'f', 2);
+
+     painter.setPen(Qt::white);
+
+     painter.drawText(20, 40, framesPerSecond + &quot; fps&quot;);
+
+     painter.end();
+
+     swapBuffers();
+
+     QMutableListIterator&lt;Bubble*&gt; iter(bubbles);
+
+     while (iter.hasNext()) {
+         Bubble *bubble = iter.next();
+         bubble-&gt;move(rect());
+     }
+     if (!(frames % 100)) {
+         time.start();
+         frames = 0;
+     }
+     m_fAngle += 1.0f;
+     frames ++;
+ }
+
+ void GLWidget::createBubbles(int number)
+ {
+     for (int i = 0; i &lt; number; ++i) {
+         QPointF position(width()*(0.1 + (0.8*qrand()/(RAND_MAX+1.0))),
+                         height()*(0.1 + (0.8*qrand()/(RAND_MAX+1.0))));
+         qreal radius = qMin(width(), height())*(0.0175 + 0.0875*qrand()/(RAND_MAX+1.0));
+         QPointF velocity(width()*0.0175*(-0.5 + qrand()/(RAND_MAX+1.0)),
+                         height()*0.0175*(-0.5 + qrand()/(RAND_MAX+1.0)));
+
+         bubbles.append(new Bubble(position, radius, velocity));
+     }
+ }
+
+ void GLWidget::createGeometry()
+ {
+     vertices.clear();
+     normals.clear();
+
+     qreal x1 = +0.06f;
+     qreal y1 = -0.14f;
+     qreal x2 = +0.14f;
+     qreal y2 = -0.06f;
+     qreal x3 = +0.08f;
+     qreal y3 = +0.00f;
+     qreal x4 = +0.30f;
+     qreal y4 = +0.22f;
+
+     quad(x1, y1, x2, y2, y2, x2, y1, x1);
+     quad(x3, y3, x4, y4, y4, x4, y3, x3);
+
+     extrude(x1, y1, x2, y2);
+     extrude(x2, y2, y2, x2);
+     extrude(y2, x2, y1, x1);
+     extrude(y1, x1, x1, y1);
+     extrude(x3, y3, x4, y4);
+     extrude(x4, y4, y4, x4);
+     extrude(y4, x4, y3, x3);
+
+     const qreal Pi = 3.14159f;
+     const int NumSectors = 100;
+
+     for (int i = 0; i &lt; NumSectors; ++i) {
+         qreal angle1 = (i * 2 * Pi) / NumSectors;
+         qreal x5 = 0.30 * sin(angle1);
+         qreal y5 = 0.30 * cos(angle1);
+         qreal x6 = 0.20 * sin(angle1);
+         qreal y6 = 0.20 * cos(angle1);
+
+         qreal angle2 = ((i + 1) * 2 * Pi) / NumSectors;
+         qreal x7 = 0.20 * sin(angle2);
+         qreal y7 = 0.20 * cos(angle2);
+         qreal x8 = 0.30 * sin(angle2);
+         qreal y8 = 0.30 * cos(angle2);
+
+         quad(x5, y5, x6, y6, x7, y7, x8, y8);
+
+         extrude(x6, y6, x7, y7);
+         extrude(x8, y8, x5, y5);
+     }
+
+     m_vertexNumber = vertices.size();
+     createdVertices = new q_vertexType[m_vertexNumber];
+     createdNormals = new q_vertexType[m_vertexNumber];
+     for (int i = 0;i &lt; m_vertexNumber;i++) {
+       createdVertices[i] = f2vt(vertices.at(i) * 2);
+       createdNormals[i] = f2vt(normals.at(i));
+     }
+     vertices.clear();
+     normals.clear();
+ }
+
+ void GLWidget::quad(qreal x1, qreal y1, qreal x2, qreal y2, qreal x3, qreal y3, qreal x4, qreal y4)
+ {
+     qreal nx, ny, nz;
+
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; -0.05f;
+
+     vertices &lt;&lt; x3 &lt;&lt; y3 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; -0.05f;
+
+     CrossProduct(nx, ny, nz, x2 - x1, y2 - y1, 0, x4 - x1, y4 - y1, 0);
+     Normalize(nx, ny, nz);
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; 0.05f;
+
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x4 &lt;&lt; y4 &lt;&lt; 0.05f;
+     vertices &lt;&lt; x3 &lt;&lt; y3 &lt;&lt; 0.05f;
+
+     CrossProduct(nx, ny, nz, x2 - x4, y2 - y4, 0, x1 - x4, y1 - y4, 0);
+     Normalize(nx, ny, nz);
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+ }
+
+ void GLWidget::extrude(qreal x1, qreal y1, qreal x2, qreal y2)
+ {
+     qreal nx, ny, nz;
+
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; +0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; +0.05f;
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; -0.05f;
+
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x1 &lt;&lt; y1 &lt;&lt; -0.05f;
+     vertices &lt;&lt; x2 &lt;&lt; y2 &lt;&lt; +0.05f;
+
+     CrossProduct(nx, ny, nz, x2 - x1, y2 - y1, 0.0f, 0.0f, 0.0f, -0.1f);
+     Normalize(nx, ny, nz);
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+     normals &lt;&lt; nx &lt;&lt; ny &lt;&lt; nz;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

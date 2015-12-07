@@ -1,0 +1,429 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \class Q3PtrVector
+  \brief The Q3PtrVector class is a template collection class that
+  provides a vector (array).
+  \compat
+
+  Q3ValueVector is an STL-compatible alternative to this class.
+
+  Q3PtrVector is implemented as a template class. Defines a template
+  instance Q3PtrVector\<X\> to create a vector that contains pointers
+  to X (X*).
+
+  A vector is the same as an array. The main difference between
+  Q3PtrVector and Q3MemArray is that Q3PtrVector stores pointers to the
+  elements, whereas Q3MemArray stores the elements themselves (i.e.
+  Q3MemArray is value-based and Q3PtrVector is pointer-based).
+
+  Items are added to the vector using insert() or fill(). Items are
+  removed with remove(). You can get a pointer to an item at a
+  particular index position using at().
+
+  Unless otherwise stated, all functions that remove items from the
+  vector will also delete the element pointed to if \link
+  setAutoDelete() auto-deletion\endlink is enabled. By default,
+  auto-deletion is disabled; see setAutoDelete(). This behavior can
+  be changed in a subclass by reimplementing the virtual function
+  deleteItem().
+
+  Functions that compare items (find() and sort() for example) will
+  do so using the virtual function compareItems(). The default
+  implementation of this function only compares the pointer values.
+  Reimplement compareItems() in a subclass to get searching and
+  sorting based on the item contents. You can perform a linear
+  search for a pointer in the vector using findRef(), or a binary
+  search (of a sorted vector) using bsearch(). You can count the
+  number of times an item appears in the vector with contains() or
+  containsRef().
+
+  \sa Q3MemArray
+*/
+
+/*!
+  \fn Q3PtrVector::Q3PtrVector()
+
+  Constructs a null vector.
+
+  \sa isNull()
+*/
+
+/*!
+  \fn Q3PtrVector::Q3PtrVector(uint size)
+
+  Constructs an vector with room for \a size items. Makes a null
+  vector if \a size == 0.
+
+  All \a size positions in the vector are initialized to 0.
+
+  \sa size(), resize(), isNull()
+*/
+
+/*!
+  \fn Q3PtrVector::Q3PtrVector(const Q3PtrVector<type> &v)
+
+  Constructs a copy of \a v. Only the pointers are copied (i.e.
+  shallow copy).
+*/
+
+/*!
+  \fn Q3PtrVector::~Q3PtrVector()
+
+  Removes all items from the vector, and destroys the vector itself.
+
+  \sa clear()
+*/
+
+/*!
+  \fn Q3PtrVector<type> &Q3PtrVector::operator=(const Q3PtrVector<type> &v)
+
+  Assigns \a v to this vector and returns a reference to this
+  vector.
+
+  This vector is first cleared and then all the items from \a v are
+  copied into the vector. Only the pointers are copied (i.e. shallow
+  copy).
+
+  \sa clear()
+*/
+
+/*!
+  \fn type **Q3PtrVector::data() const
+
+  Returns a pointer to the actual vector data, which is an array of
+  type*.
+
+  The vector is a null vector if data() == 0 (null pointer).
+
+  \sa isNull()
+*/
+
+/*!
+  \fn uint Q3PtrVector::size() const
+
+  Returns the size of the vector, i.e. the number of vector
+  positions. This is also the maximum number of items the vector can
+  hold.
+
+  The vector is a null vector if size() == 0.
+
+  \sa isNull(), resize(), count()
+*/
+
+/*!
+  \fn uint Q3PtrVector::count() const 
+
+  Returns the number of items in the vector. The vector is empty if
+  count() == 0.
+
+  \sa isEmpty(), size(), isNull()
+*/
+
+/*!
+  \fn bool Q3PtrVector::isEmpty() const
+
+  Returns true if the vector is empty; otherwise returns false.
+
+  \sa count()
+*/
+
+/*!
+  \fn bool Q3PtrVector::isNull() const
+
+  Returns true if the vector is null; otherwise returns false.
+
+  A null vector has size() == 0 and data() == 0.
+
+  \sa size()
+*/
+
+/*!
+  \fn bool Q3PtrVector::resize(uint size)
+
+  Resizes (expands or shrinks) the vector to \a size elements. The
+  vector becomes a null vector if \a size == 0.
+
+  Any items at position \a size or beyond in the vector are removed.
+  New positions are initialized to 0.
+
+  Returns true if successful, i.e. if the memory was successfully
+  allocated; otherwise returns false.
+
+  \sa size(), isNull()
+*/
+
+/*!
+  \fn bool Q3PtrVector::insert(uint i, const type *d)
+
+  Sets position \a i in the vector to contain the item \a d. \a i
+  must be less than size(). Any previous element in position \a i is
+  removed.
+
+  Returns true if \a i is within range; otherwise returns false.
+
+  \sa at()
+*/
+
+/*!
+  \fn bool Q3PtrVector::remove(uint i)
+
+  Removes the item at position \a i in the vector, if there is one.
+  \a i must be less than size().
+
+  Returns true if \a i is within range; otherwise returns false.
+
+  \sa take(), at()
+*/
+
+/*!
+  \fn type* Q3PtrVector::take(uint i)
+
+  Returns the item at position \a i in the vector, and removes that
+  item from the vector. \a i must be less than size(). If there is
+  no item at position \a i, 0 is returned.
+
+  Unlike remove(), this function does \e not call deleteItem() for
+  the removed item.
+
+  \sa remove(), at()
+*/
+
+/*!
+  \fn void Q3PtrVector::clear()
+
+  Removes all items from the vector, and destroys the vector itself.
+
+  The vector becomes a null vector.
+
+  \sa isNull()
+*/
+
+/*!
+  \fn bool Q3PtrVector::fill(const type *d, int size)
+
+  Inserts item \a d in all positions in the vector. Any existing
+  items are removed. If \a d is 0, the vector becomes empty.
+
+  If \a size >= 0, the vector is first resized to \a size. By
+  default, \a size is -1.
+
+  Returns true if successful, i.e. \a size is the same as the
+  current size, or \a size is larger and the memory has successfully
+  been allocated; otherwise returns false.
+
+  \sa resize(), insert(), isEmpty()
+*/
+
+/*!
+  \fn void Q3PtrVector::sort()
+
+  Sorts the items in ascending order. Any empty positions will be
+  put last.
+
+  Compares items using the virtual function compareItems().
+
+  \sa bsearch()
+*/
+
+/*!
+  \fn int Q3PtrVector::bsearch(const type* d) const
+
+  In a sorted array, finds the first occurrence of \a d using a
+  binary search. For a sorted array, this is generally much faster
+  than find(), which performs a linear search.
+
+  Returns the position of \a d, or -1 if \a d could not be found. \a
+  d must not be 0.
+
+  Compares items using the virtual function compareItems().
+
+  \sa sort(), find()
+*/
+
+
+/*!
+  \fn int Q3PtrVector::findRef(const type *d, uint i) const
+
+  Finds the first occurrence of the item pointer \a d in the vector
+  using a linear search. The search starts at position \a i, which
+  must be less than size(). \a i is by default 0; i.e. the search
+  starts at the start of the vector.
+
+  Returns the position of \a d, or -1 if \a d could not be found.
+
+  This function does \e not use compareItems() to compare items.
+
+  Use the much faster bsearch() to search a sorted vector.
+
+  \sa find(), bsearch()
+*/
+
+/*!
+  \fn int Q3PtrVector::find(const type *d, uint i) const
+
+  Finds the first occurrence of item \a d in the vector using a
+  linear search. The search starts at position \a i, which must be
+  less than size(). \a i is by default 0; i.e. the search starts at
+  the start of the vector.
+
+  Returns the position of \a d, or -1 if \a d could not be found.
+
+  Compares items using the virtual function compareItems().
+
+  Use the much faster bsearch() to search a sorted vector.
+
+  \sa findRef(), bsearch()
+*/
+
+
+/*!
+  \fn uint Q3PtrVector::containsRef(const type *d) const
+
+  Returns the number of occurrences of the item pointer \a d in the
+  vector.
+
+  This function does \e not use compareItems() to compare items.
+
+  \sa findRef()
+*/
+
+/*!
+  \fn uint Q3PtrVector::contains(const type *d) const
+
+  Returns the number of occurrences of item \a d in the vector.
+
+  Compares items using the virtual function compareItems().
+
+  \sa containsRef()
+*/
+
+/*!
+  \fn type *Q3PtrVector::operator[](int i) const
+
+  Returns the item at position \a i, or 0 if there is no item at
+  that position. \a i must be less than size().
+
+  Equivalent to at(\a i).
+
+  \sa at()
+*/
+
+/*!
+  \fn type *Q3PtrVector::at(uint i) const
+
+  Returns the item at position \a i, or 0 if there is no item at
+  that position. \a i must be less than size().
+*/
+
+
+/*!
+  \fn void Q3PtrVector::toList(Q3GList *list) const
+
+  \internal
+
+  Copies all items in this vector to the list \a list. \a list is
+  first cleared and then all items are appended to \a list.
+
+  \sa Q3PtrList, Q3PtrStack, Q3PtrQueue
+*/
+
+/*!
+  \fn int Q3PtrVector::compareItems(Q3PtrCollection::Item d1,
+				    Q3PtrCollection::Item d2)
+
+  This virtual function compares two list items.
+
+  Returns:
+  \list
+  \i zero if \a d1 == \a d2
+  \i nonzero if \a d1 != \a d2
+  \endlist
+
+  This function returns \e int rather than \e bool so that
+  reimplementations can return one of three values and use it to
+  sort by:
+  \list
+  \i 0 if \a d1 == \a d2
+  \i \> 0 (positive integer) if \a d1 \> \a d2
+  \i \< 0 (negative integer) if \a d1 \< \a d2
+  \endlist
+
+  The sort() and bsearch() functions require compareItems() to be
+  implemented as described here.
+
+  This function should not modify the vector because some const
+  functions call compareItems().
+*/
+
+/*!
+  \fn QDataStream& Q3PtrVector::read(QDataStream &s,
+				     Q3PtrCollection::Item &item)
+
+  Reads a vector item, \a item, from the stream \a s and returns a
+  reference to the stream.
+
+  The default implementation sets \a item to 0.
+
+  \sa write()
+*/
+
+/*!
+  \fn QDataStream& Q3PtrVector::write(QDataStream &s,
+			 	      Q3PtrCollection::Item item) const
+
+  Writes a vector item, \a item, to the stream \a s and returns a
+  reference to the stream.
+
+  The default implementation does nothing.
+
+  \sa read()
+*/
+  
+/*!
+  \fn bool Q3PtrVector::operator==(const Q3PtrVector<type> &v) const
+
+  Returns true if this vector and \a v are equal; otherwise returns
+  false.
+*/

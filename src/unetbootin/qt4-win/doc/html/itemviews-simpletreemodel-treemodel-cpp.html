@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: treemodel.cpp Example File (itemviews/simpletreemodel/treemodel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">treemodel.cpp Example File<br /><span class="small-subtitle">itemviews/simpletreemodel/treemodel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+     treemodel.cpp
+
+     Provides a simple tree model to show how to create and use hierarchical
+     models.
+ */</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;treeitem.h&quot;
+ #include &quot;treemodel.h&quot;
+
+ TreeModel::TreeModel(const QString &amp;data, QObject *parent)
+     : QAbstractItemModel(parent)
+ {
+     QList&lt;QVariant&gt; rootData;
+     rootData &lt;&lt; &quot;Title&quot; &lt;&lt; &quot;Summary&quot;;
+     rootItem = new TreeItem(rootData);
+     setupModelData(data.split(QString(&quot;\n&quot;)), rootItem);
+ }
+
+ TreeModel::~TreeModel()
+ {
+     delete rootItem;
+ }
+
+ int TreeModel::columnCount(const QModelIndex &amp;parent) const
+ {
+     if (parent.isValid())
+         return static_cast&lt;TreeItem*&gt;(parent.internalPointer())-&gt;columnCount();
+     else
+         return rootItem-&gt;columnCount();
+ }
+
+ QVariant TreeModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (!index.isValid())
+         return QVariant();
+
+     if (role != Qt::DisplayRole)
+         return QVariant();
+
+     TreeItem *item = static_cast&lt;TreeItem*&gt;(index.internalPointer());
+
+     return item-&gt;data(index.column());
+ }
+
+ Qt::ItemFlags TreeModel::flags(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return 0;
+
+     return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+ }
+
+ QVariant TreeModel::headerData(int section, Qt::Orientation orientation,
+                                int role) const
+ {
+     if (orientation == Qt::Horizontal &amp;&amp; role == Qt::DisplayRole)
+         return rootItem-&gt;data(section);
+
+     return QVariant();
+ }
+
+ QModelIndex TreeModel::index(int row, int column, const QModelIndex &amp;parent)
+             const
+ {
+     if (!hasIndex(row, column, parent))
+         return QModelIndex();
+
+     TreeItem *parentItem;
+
+     if (!parent.isValid())
+         parentItem = rootItem;
+     else
+         parentItem = static_cast&lt;TreeItem*&gt;(parent.internalPointer());
+
+     TreeItem *childItem = parentItem-&gt;child(row);
+     if (childItem)
+         return createIndex(row, column, childItem);
+     else
+         return QModelIndex();
+ }
+
+ QModelIndex TreeModel::parent(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return QModelIndex();
+
+     TreeItem *childItem = static_cast&lt;TreeItem*&gt;(index.internalPointer());
+     TreeItem *parentItem = childItem-&gt;parent();
+
+     if (parentItem == rootItem)
+         return QModelIndex();
+
+     return createIndex(parentItem-&gt;row(), 0, parentItem);
+ }
+
+ int TreeModel::rowCount(const QModelIndex &amp;parent) const
+ {
+     TreeItem *parentItem;
+     if (parent.column() &gt; 0)
+         return 0;
+
+     if (!parent.isValid())
+         parentItem = rootItem;
+     else
+         parentItem = static_cast&lt;TreeItem*&gt;(parent.internalPointer());
+
+     return parentItem-&gt;childCount();
+ }
+
+ void TreeModel::setupModelData(const QStringList &amp;lines, TreeItem *parent)
+ {
+     QList&lt;TreeItem*&gt; parents;
+     QList&lt;int&gt; indentations;
+     parents &lt;&lt; parent;
+     indentations &lt;&lt; 0;
+
+     int number = 0;
+
+     while (number &lt; lines.count()) {
+         int position = 0;
+         while (position &lt; lines[number].length()) {
+             if (lines[number].mid(position, 1) != &quot; &quot;)
+                 break;
+             position++;
+         }
+
+         QString lineData = lines[number].mid(position).trimmed();
+
+         if (!lineData.isEmpty()) {
+             <span class="comment">//</span> Read the column data from the rest of the line.
+             QStringList columnStrings = lineData.split(&quot;\t&quot;, QString::SkipEmptyParts);
+             QList&lt;QVariant&gt; columnData;
+             for (int column = 0; column &lt; columnStrings.count(); ++column)
+                 columnData &lt;&lt; columnStrings[column];
+
+             if (position &gt; indentations.last()) {
+                 <span class="comment">//</span> The last child of the current parent is now the new parent
+                 <span class="comment">//</span> unless the current parent has no children.
+
+                 if (parents.last()-&gt;childCount() &gt; 0) {
+                     parents &lt;&lt; parents.last()-&gt;child(parents.last()-&gt;childCount()-1);
+                     indentations &lt;&lt; position;
+                 }
+             } else {
+                 while (position &lt; indentations.last() &amp;&amp; parents.count() &gt; 0) {
+                     parents.pop_back();
+                     indentations.pop_back();
+                 }
+             }
+
+             <span class="comment">//</span> Append a new item to the current parent's list of children.
+             parents.last()-&gt;appendChild(new TreeItem(columnData, parents.last()));
+         }
+
+         number++;
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tokenAutomaton scope="public"
+                className="XSLTTokenLookup"
+                headerFile="qxslttokenlookup_p.h"
+                sourceFile="qxslttokenlookup.cpp"
+                namespace="QPatternist"
+                defaultToken="NoKeyword"
+                hasToString="true"
+                tokenEnum="NodeName"
+                includeGuardName="qxslttokenlookup_p_H">
+    <tokens>
+        <token>analyze-string</token>
+        <token>apply-templates</token>
+        <token>as</token>
+        <token>attribute-set</token>
+        <token>attribute</token>
+        <token>byte-order-mark</token>
+        <token>call-template</token>
+        <token>case-order</token>
+        <token>cdata-section-elements</token>
+        <token>choose</token>
+        <token>collation</token>
+        <token>comment</token>
+        <token>copy-namespaces</token>
+        <token>copy-of</token>
+        <token>copy</token>
+        <token>data-type</token>
+        <token>default-collation</token>
+        <token>default-validation</token>
+        <token>doctype-public</token>
+        <token>doctype-system</token>
+        <token>document</token>
+        <token>elements</token>
+        <token>element</token>
+        <token>encoding</token>
+        <token>escape-uri-attributes</token>
+        <token>exclude-result-prefixes</token>
+        <token>extension-element-prefixes</token>
+        <token>flags</token>
+        <token>for-each</token>
+        <token>format</token>
+        <token>function</token>
+        <token>href</token>
+        <token>id</token>
+        <token>if</token>
+        <token>import-schema</token>
+        <token>import</token>
+        <token>include-content-type</token>
+        <token>include</token>
+        <token>indent</token>
+        <token>inherit-namespaces</token>
+        <token>input-type-annotations</token>
+        <token>key</token>
+        <token>lang</token>
+        <token>matching-substring</token>
+        <token>match</token>
+        <token>media-type</token>
+        <token>message</token>
+        <token>method</token>
+        <token>mode</token>
+        <token>namespace</token>
+        <token>name</token>
+        <token>non-matching-substring</token>
+        <token>normalization-form</token>
+        <token>omit-xml-declaration</token>
+        <token>order</token>
+        <token>otherwise</token>
+        <token>output</token>
+        <token>output-version</token>
+        <token>override</token>
+        <token>param</token>
+        <token>perform-sort</token>
+        <token>preserve-space</token>
+        <token>priority</token>
+        <token>processing-instruction</token>
+        <token>regex</token>
+        <token>required</token>
+        <token>result-document</token>
+        <token>schema-location</token>
+        <token>select</token>
+        <token>separator</token>
+        <token>sequence</token>
+        <token>sort</token>
+        <token>stable</token>
+        <token>standalone</token>
+        <token>strip-space</token>
+        <token>stylesheet</token>
+        <token>template</token>
+        <token>terminate</token>
+        <token>test</token>
+        <token>text</token>
+        <token>transform</token>
+        <token>tunnel</token>
+        <token>type</token>
+        <token>undeclare-prefixes</token>
+        <token>use-attribute-sets</token>
+        <token>use-character-maps</token>
+        <token>use</token>
+        <token>use-when</token>
+        <token>validation</token>
+        <token>value-of</token>
+        <token>variable</token>
+        <token>version</token>
+        <token>when</token>
+        <token>with-param</token>
+        <token>xpath-default-namespace</token>
+    </tokens>
+
+    <boilerplate>
+
+        <prolog>/****************************************************************************
+**
+** Copyright (C) 2009 Nokia Corporation and/or its subsidiary(-ies).
+** Contact: Qt Software Information (qt-info@nokia.com)
+**
+** This file is part of the QtXMLPatterns module of the Qt Toolkit.
+**
+** $QT_BEGIN_LICENSE:LGPL$
+** Commercial Usage
+** Licensees holding valid Qt Commercial licenses may use this file in
+** accordance with the Qt Commercial License Agreement provided with the
+** Software or, alternatively, in accordance with the terms contained in
+** a written agreement between you and Nokia.
+**
+** GNU Lesser General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU Lesser
+** General Public License version 2.1 as published by the Free Software
+** Foundation and appearing in the file LICENSE.LGPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU Lesser General Public License version 2.1 requirements
+** will be met: http://www.gnu.org/licenses/old-licenses/lgpl-2.1.html.
+**
+** In addition, as a special exception, Nokia gives you certain
+** additional rights. These rights are described in the Nokia Qt LGPL
+** Exception version 1.0, included in the file LGPL_EXCEPTION.txt in this
+** package.
+**
+** GNU General Public License Usage
+** Alternatively, this file may be used under the terms of the GNU
+** General Public License version 3.0 as published by the Free Software
+** Foundation and appearing in the file LICENSE.GPL included in the
+** packaging of this file.  Please review the following information to
+** ensure the GNU General Public License version 3.0 requirements will be
+** met: http://www.gnu.org/copyleft/gpl.html.
+**
+** If you are unsure which license is appropriate for your use, please
+** contact the sales department at qt-sales@nokia.com.
+** $QT_END_LICENSE$
+**
+****************************************************************************/
+
+//
+//  W A R N I N G
+//  -------------
+//
+// This file is not part of the Qt API.  It exists purely as an
+// implementation detail.  This header file may change from version to
+// version without notice, or even be removed.
+//
+// We mean it.
+//
+
+</prolog>
+
+    </boilerplate>
+
+</tokenAutomaton>

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/plugin/quuid.cpp -->
+<head>
+  <title>Qt 4.4: QUuid Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QUuid Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QUuid class stores a Universally Unique Identifier (UUID). <a href="#details">More...</a></p>
+<pre> #include &lt;QUuid&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="quuid-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="quuid.html#Variant-enum">Variant</a></b> { VarUnknown, NCS, DCE, Microsoft, Reserved }</li>
+<li><div class="fn"/>enum <b><a href="quuid.html#Version-enum">Version</a></b> { VerUnknown, Time, EmbeddedPOSIX, Name, Random }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="quuid.html#QUuid">QUuid</a></b> ()</li>
+<li><div class="fn"/><b><a href="quuid.html#QUuid-2">QUuid</a></b> ( uint <i>l</i>, ushort <i>w1</i>, ushort <i>w2</i>, uchar <i>b1</i>, uchar <i>b2</i>, uchar <i>b3</i>, uchar <i>b4</i>, uchar <i>b5</i>, uchar <i>b6</i>, uchar <i>b7</i>, uchar <i>b8</i> )</li>
+<li><div class="fn"/><b><a href="quuid.html#QUuid-3">QUuid</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/><b><a href="quuid.html#QUuid-5">QUuid</a></b> ( const GUID &amp; <i>guid</i> )</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="quuid.html#toString">toString</a></b> () const</li>
+<li><div class="fn"/>QUuid::Variant <b><a href="quuid.html#variant">variant</a></b> () const</li>
+<li><div class="fn"/>QUuid::Version <b><a href="quuid.html#version">version</a></b> () const</li>
+<li><div class="fn"/><b><a href="quuid.html#operator-GUID">operator GUID</a></b> () const</li>
+<li><div class="fn"/><b><a href="quuid.html#operator-QString">operator QString</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-not-eq">operator!=</a></b> ( const QUuid &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-not-eq-2">operator!=</a></b> ( const GUID &amp; <i>guid</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-lt">operator&lt;</a></b> ( const QUuid &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QUuid &amp; <b><a href="quuid.html#operator-eq">operator=</a></b> ( const GUID &amp; <i>guid</i> )</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-eq-eq">operator==</a></b> ( const QUuid &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-eq-eq-2">operator==</a></b> ( const GUID &amp; <i>guid</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="quuid.html#operator-gt">operator&gt;</a></b> ( const QUuid &amp; <i>other</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QUuid <b><a href="quuid.html#createUuid">createUuid</a></b> ()</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="quuid.html#operator-lt-lt-88">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>s</i>, const QUuid &amp; <i>id</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="quuid.html#operator-gt-gt-52">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>s</i>, QUuid &amp; <i>id</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QUuid class stores a Universally Unique Identifier (UUID).</p>
+<p>For objects or declarations that must be uniquely identified, UUIDs (also known as GUIDs) are widely used in order to assign a fixed and easy to compare value to the object or declaration. The 128-bit value of a UUID is generated by an algorithm that guarantees that the value is unique.</p>
+<p>In Qt, UUIDs are wrapped by the QUuid struct which provides convenience functions for handling UUIDs. Most platforms provide a tool to generate new UUIDs, for example, <tt>uuidgen</tt> and <tt>guidgen</tt>.</p>
+<p>UUIDs generated by QUuid, are based on the <tt>Random</tt> version of the <tt>DCE</tt> (Distributed Computing Environment) standard.</p>
+<p>UUIDs can be constructed from numeric values or from strings, or using the static <a href="quuid.html#createUuid">createUuid</a>() function. They can be converted to a string with <a href="quuid.html#toString">toString</a>(). UUIDs have a <a href="quuid.html#variant">variant</a>() and a <a href="quuid.html#version">version</a>(), and null UUIDs return true from <a href="quuid.html#isNull">isNull</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Variant-enum"></a>enum QUuid::Variant</h3>
+<p>This enum defines the variant of the UUID, which is the scheme which defines the layout of the 128-bits value.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QUuid::VarUnknown</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">Variant is unknown</td></tr>
+<tr><td valign="top"><tt>QUuid::NCS</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Reserved for NCS (Network Computing System) backward compatibility</td></tr>
+<tr><td valign="top"><tt>QUuid::DCE</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Distributed Computing Environment, the scheme used by <a href="quuid.html">QUuid</a></td></tr>
+<tr><td valign="top"><tt>QUuid::Microsoft</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Reserved for Microsoft backward compatibility (GUID)</td></tr>
+<tr><td valign="top"><tt>QUuid::Reserved</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Reserved for future definition</td></tr>
+</table></p>
+<h3 class="fn"><a name="Version-enum"></a>enum QUuid::Version</h3>
+<p>This enum defines the version of the UUID.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QUuid::VerUnknown</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">Version is unknown</td></tr>
+<tr><td valign="top"><tt>QUuid::Time</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Time-based, by using timestamp, clock sequence, and MAC network card address (if available) for the node sections</td></tr>
+<tr><td valign="top"><tt>QUuid::EmbeddedPOSIX</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">DCE Security version, with embedded POSIX UUIDs</td></tr>
+<tr><td valign="top"><tt>QUuid::Name</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Name-based, by using values from a name for all sections</td></tr>
+<tr><td valign="top"><tt>QUuid::Random</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Random-based, by using random numbers for all sections</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QUuid"></a>QUuid::QUuid ()</h3>
+<p>Creates the null UUID {00000000-0000-0000-0000-000000000000}.</p>
+<h3 class="fn"><a name="QUuid-2"></a>QUuid::QUuid ( <a href="qtglobal.html#uint-typedef">uint</a> <i>l</i>, <a href="qtglobal.html#ushort-typedef">ushort</a> <i>w1</i>, <a href="qtglobal.html#ushort-typedef">ushort</a> <i>w2</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b1</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b2</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b3</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b4</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b5</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b6</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b7</i>, <a href="qtglobal.html#uchar-typedef">uchar</a> <i>b8</i> )</h3>
+<p>Creates a UUID with the value specified by the parameters, <i>l</i>, <i>w1</i>, <i>w2</i>, <i>b1</i>, <i>b2</i>, <i>b3</i>, <i>b4</i>, <i>b5</i>, <i>b6</i>, <i>b7</i>, <i>b8</i>.</p>
+<p>Example:</p>
+<pre>     // {67C8770B-44F1-410A-AB9A-F9B5446F13EE}
+     QUuid IID_MyInterface(0x67c8770b, 0x44f1, 0x410a, 0xab, 0x9a, 0xf9, 0xb5, 0x44, 0x6f, 0x13, 0xee)</pre>
+<h3 class="fn"><a name="QUuid-3"></a>QUuid::QUuid ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Creates a <a href="quuid.html">QUuid</a> object from the string <i>text</i>. The function can only convert a string in the format {HHHHHHHH-HHHH-HHHH-HHHH-HHHHHHHHHHHH} (where 'H' stands for a hex digit). If the conversion fails a null UUID is created.</p>
+<h3 class="fn"><a name="QUuid-5"></a>QUuid::QUuid ( const GUID &amp; <i>guid</i> )</h3>
+<p>Casts a Windows <i>guid</i> to a Qt <a href="quuid.html">QUuid</a>.</p>
+<p><b>Warning:</b> This function is only for Windows platforms.</p>
+<h3 class="fn"><a name="createUuid"></a>QUuid QUuid::createUuid ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a new UUID of <tt>DCE</tt> variant, and <tt>Random</tt> type. The UUIDs generated are based on the platform specific pseudo-random generator, which is usually not a cryptographic-quality random number generator. Therefore, a UUID is not guaranteed to be unique cross application instances.</p>
+<p>On Windows, the new UUID is extremely likely to be unique on the same or any other system, networked or not.</p>
+<p>See also <a href="quuid.html#variant">variant</a>() and <a href="quuid.html#version">version</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QUuid::isNull () const</h3>
+<p>Returns true if this is the null UUID {00000000-0000-0000-0000-000000000000}; otherwise returns false.</p>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QUuid::toString () const</h3>
+<p>Returns the string representation of the uuid.</p>
+<h3 class="fn"><a name="variant"></a><a href="quuid.html#Variant-enum">QUuid::Variant</a> QUuid::variant () const</h3>
+<p>Returns the variant of the UUID. The null UUID is considered to be of an unknown variant.</p>
+<p>See also <a href="quuid.html#version">version</a>().</p>
+<h3 class="fn"><a name="version"></a><a href="quuid.html#Version-enum">QUuid::Version</a> QUuid::version () const</h3>
+<p>Returns the version of the UUID, if the UUID is of the DCE variant; otherwise returns <a href="quuid.html#Version-enum">VerUnknown</a>.</p>
+<p>See also <a href="quuid.html#variant">variant</a>().</p>
+<h3 class="fn"><a name="operator-GUID"></a>QUuid::operator GUID () const</h3>
+<p>Returns a Windows GUID from a <a href="quuid.html">QUuid</a>.</p>
+<p><b>Warning:</b> This function is only for Windows platforms.</p>
+<h3 class="fn"><a name="operator-QString"></a>QUuid::operator QString () const</h3>
+<p>Returns the string representation of the uuid.</p>
+<p>See also <a href="quuid.html#toString">toString</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QUuid::operator!= ( const QUuid &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="quuid.html">QUuid</a> and the <i>other</i> <a href="quuid.html">QUuid</a> are different; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool QUuid::operator!= ( const GUID &amp; <i>guid</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this UUID is not equal to the Windows GUID <i>guid</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QUuid::operator&lt; ( const QUuid &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="quuid.html">QUuid</a> is of the same variant, and lexicographically before the <i>other</i> <a href="quuid.html">QUuid</a>; otherwise returns false. If it is a different variant, return is based on a comparison of those two variants.</p>
+<p>See also <a href="quuid.html#variant">variant</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QUuid &amp; QUuid::operator= ( const GUID &amp; <i>guid</i> )</h3>
+<p>Assigns a Windows <i>guid</i> to a Qt <a href="quuid.html">QUuid</a>.</p>
+<p><b>Warning:</b> This function is only for Windows platforms.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QUuid::operator== ( const QUuid &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="quuid.html">QUuid</a> and the <i>other</i> <a href="quuid.html">QUuid</a> are identical; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool QUuid::operator== ( const GUID &amp; <i>guid</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if this UUID is equal to the Windows GUID <i>guid</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool QUuid::operator&gt; ( const QUuid &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="quuid.html">QUuid</a> is of the same variant, and lexicographically after the <i>other</i> <a href="quuid.html">QUuid</a>; otherwise returns false. If it is a different variant, return is based on a comparison of those two variants.</p>
+<p>See also <a href="quuid.html#variant">variant</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-88"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, const QUuid &amp; <i>id</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the uuid <i>id</i> to the datastream <i>s</i>.</p>
+<h3 class="fn"><a name="operator-gt-gt-52"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, QUuid &amp; <i>id</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads uuid from from the stream <i>s</i> into <i>id</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

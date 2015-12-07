@@ -1,0 +1,68 @@
+//! [0]
+            <qtopia-root-dir>/qtopiacore/qt/configure -embedded -help |grep -a1 mouse
+//! [0]
+
+
+//! [1]
+            ./configure -extra-qtopiacore-config -qt-mouse-tslib
+//! [1]
+
+
+//! [2]
+            ./configure -help
+//! [2]
+
+
+//! [3]
+            configure -qt-mouse-tslib
+//! [3]
+
+
+//! [4]
+        export QWS_MOUSE_PROTO=<driver>[:<driver specific options>]
+//! [4]
+
+
+//! [5]
+         export QWS_MOUSE_PROTO="<driver>[:<driver specific options>]
+                 <driver>[:<driver specific options>]
+                 <driver>[:<driver specific options>]"
+//! [5]
+
+
+//! [6]
+        export QWS_MOUSE_PROTO="Vr41xx:press=500:/dev/misc/ts"
+//! [6]
+
+
+//! [7]
+        ./configure  -L <path to tslib library> -I <path to tslib headers>
+//! [7]
+
+
+//! [8]
+         module_raw input
+         module linear
+//! [8]
+
+
+//! [9]
+    QWS_MOUSE_PROTO=IntelliMouse:/dev/input/mouse0}
+//! [9]
+
+
+//! [10]
+    cat /dev/input/mouse0 | hexdump
+//! [10]
+
+
+//! [11]
+    QWS_MOUSE_PROTO=IntelliMouse:/dev/input/mouse0
+//! [11]
+
+
+//! [12]
+        chmod a+rw /dev/input/mouse0
+//! [12]
+
+

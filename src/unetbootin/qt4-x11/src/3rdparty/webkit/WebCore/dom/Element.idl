@@ -1,0 +1,128 @@
+/*
+ * Copyright (C) 2006, 2007 Apple Inc. All rights reserved.
+ * Copyright (C) 2006 Samuel Weinig <sam.weinig@gmail.com>
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module core {
+
+    interface [
+        GenerateConstructor,
+        GenerateNativeConverter,
+        InlineGetOwnPropertySlot,
+        InterfaceUUID=FEFE9C21-E58C-4b5b-821A-61A514613763,
+        ImplementationUUID=12E5B08E-A680-4baf-9D1E-108AEF7ABBFB
+    ] Element : EventTargetNode {
+
+        // DOM Level 1 Core
+
+        readonly attribute [ConvertNullStringTo=Null] DOMString tagName;
+
+        [ConvertNullStringTo=Null] DOMString getAttribute(in DOMString name);
+        [OldStyleObjC, Custom] void setAttribute(in DOMString name,
+                                                 in DOMString value)
+            raises(DOMException);
+        void removeAttribute(in DOMString name)
+            raises(DOMException);
+        Attr getAttributeNode(in DOMString name);
+        [Custom] Attr setAttributeNode(in Attr newAttr)
+            raises(DOMException);
+        Attr removeAttributeNode(in Attr oldAttr)
+            raises(DOMException);
+        NodeList getElementsByTagName(in DOMString name);
+
+        // DOM Level 2 Core
+
+        [OldStyleObjC] DOMString getAttributeNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                                in DOMString localName);
+        [OldStyleObjC, Custom] void setAttributeNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                                   in DOMString qualifiedName, 
+                                                   in DOMString value)
+            raises(DOMException);
+        [OldStyleObjC] void removeAttributeNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                              in DOMString localName)
+            raises(DOMException);
+        [OldStyleObjC] NodeList getElementsByTagNameNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                                       in DOMString localName);
+        [OldStyleObjC] Attr getAttributeNodeNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                               in DOMString localName);
+        [Custom] Attr setAttributeNodeNS(in Attr newAttr)
+            raises(DOMException);
+        boolean hasAttribute(in DOMString name);
+        [OldStyleObjC] boolean hasAttributeNS(in [ConvertNullToNullString] DOMString namespaceURI,
+                                              in DOMString localName);
+
+#if !defined(LANGUAGE_COM)
+        readonly attribute CSSStyleDeclaration style;
+#endif
+
+        // Common extensions
+
+        readonly attribute long offsetLeft;
+        readonly attribute long offsetTop;
+        readonly attribute long offsetWidth;
+        readonly attribute long offsetHeight;
+        readonly attribute Element offsetParent;
+        readonly attribute long clientLeft;
+        readonly attribute long clientTop;
+        readonly attribute long clientWidth;
+        readonly attribute long clientHeight;
+                 attribute long scrollLeft;
+                 attribute long scrollTop;
+        readonly attribute long scrollWidth;
+        readonly attribute long scrollHeight;
+
+        void focus();
+        void blur();
+        void scrollIntoView(in [Optional] boolean alignWithTop);
+
+        // IE extensions
+
+        boolean contains(in Element element);
+
+        // WebKit extensions
+
+        void scrollIntoViewIfNeeded(in [Optional] boolean centerIfNeeded);
+        void scrollByLines(in long lines);
+        void scrollByPages(in long pages);
+
+        // HTML 5
+        NodeList getElementsByClassName(in DOMString name);
+
+        // NodeSelector - Selector API
+        Element querySelector(in [ConvertUndefinedOrNullToNullString] DOMString selectors)
+            raises(DOMException);
+        NodeList querySelectorAll(in [ConvertUndefinedOrNullToNullString] DOMString selectors)
+            raises(DOMException);
+
+        // ElementTraversal API
+#if !defined(LANGUAGE_COM)
+        readonly attribute Element firstElementChild;
+        readonly attribute Element lastElementChild;
+        readonly attribute Element previousElementSibling;
+        readonly attribute Element nextElementSibling;
+        readonly attribute unsigned long childElementCount;
+#endif
+
+#if defined(LANGUAGE_OBJECTIVE_C)
+        // Objective-C extensions
+        readonly attribute DOMString innerText;
+#endif
+
+    };
+
+}

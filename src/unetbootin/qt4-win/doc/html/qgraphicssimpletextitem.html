@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/graphicsview/qgraphicsitem.cpp -->
+<head>
+  <title>Qt 4.4: QGraphicsSimpleTextItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGraphicsSimpleTextItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGraphicsSimpleTextItem class provides a simple text path item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QGraphicsSimpleTextItem&gt;</pre><p>Inherits <a href="qabstractgraphicsshapeitem.html">QAbstractGraphicsShapeItem</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qgraphicssimpletextitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qgraphicssimpletextitem.html#QGraphicsSimpleTextItem">QGraphicsSimpleTextItem</a></b> ( QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicssimpletextitem.html#QGraphicsSimpleTextItem-2">QGraphicsSimpleTextItem</a></b> ( const QString &amp; <i>text</i>, QGraphicsItem * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qgraphicssimpletextitem.html#dtor.QGraphicsSimpleTextItem">~QGraphicsSimpleTextItem</a></b> ()</li>
+<li><div class="fn"/>QFont <b><a href="qgraphicssimpletextitem.html#font">font</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgraphicssimpletextitem.html#setFont">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>void <b><a href="qgraphicssimpletextitem.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QString <b><a href="qgraphicssimpletextitem.html#text">text</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="qabstractgraphicsshapeitem.html#public-functions">QAbstractGraphicsShapeItem</a></li>
+<li><div class="fn"/>132 public functions inherited from <a href="qgraphicsitem.html#public-functions">QGraphicsItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qgraphicsitem.html#static-public-members">QGraphicsItem</a></li>
+<li><div class="fn"/>23 protected functions inherited from <a href="qgraphicsitem.html#protected-functions">QGraphicsItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGraphicsSimpleTextItem class provides a simple text path item that you can add to a <a href="qgraphicsscene.html">QGraphicsScene</a>.</p>
+<p>To set the item's text, you can either pass a <a href="qstring.html">QString</a> to QGraphicsSimpleTextItem's constructor, or call <a href="qgraphicssimpletextitem.html#setText">setText</a>() to change the text later. To set the text fill color, call <a href="qabstractgraphicsshapeitem.html#setBrush">setBrush</a>().</p>
+<p>The simple text item can have both a fill and an outline; <a href="qabstractgraphicsshapeitem.html#setBrush">setBrush</a>() will set the text fill (i.e&#x2e;, text color), and <a href="qabstractgraphicsshapeitem.html#setPen">setPen</a>() sets the pen that will be used to draw the text outline. (The latter can be slow, especially for complex pens, and items with long text content.) If all you want is to draw a simple line of text, you should call <a href="qabstractgraphicsshapeitem.html#setBrush">setBrush</a>() only, and leave the pen unset; QGraphicsSimpleTextItem's pen is by default <a href="qt.html#PenStyle-enum">Qt::NoPen</a>.</p>
+<p>QGraphicsSimpleTextItem uses the text's formatted size and the associated font to provide a reasonable implementation of <a href="qgraphicsitem.html#boundingRect">boundingRect</a>(), <a href="qgraphicsitem.html#shape">shape</a>(), and <a href="qgraphicsitem.html#contains">contains</a>(). You can set the font by calling <a href="qgraphicssimpletextitem.html#setFont">setFont</a>().</p>
+<p>QGraphicsSimpleText does not display rich text; instead, you can use <a href="qgraphicstextitem.html">QGraphicsTextItem</a>, which provides full text control capabilities.</p>
+<p align="center"><img src="images/graphicsview-simpletextitem.png" /></p><p>See also <a href="qgraphicstextitem.html">QGraphicsTextItem</a>, <a href="qgraphicspathitem.html">QGraphicsPathItem</a>, <a href="qgraphicsrectitem.html">QGraphicsRectItem</a>, <a href="qgraphicsellipseitem.html">QGraphicsEllipseItem</a>, <a href="qgraphicspixmapitem.html">QGraphicsPixmapItem</a>, <a href="qgraphicspolygonitem.html">QGraphicsPolygonItem</a>, <a href="qgraphicslineitem.html">QGraphicsLineItem</a>, and <a href="graphicsview.html">The Graphics View Framework</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGraphicsSimpleTextItem"></a>QGraphicsSimpleTextItem::QGraphicsSimpleTextItem ( <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a>.</p>
+<p><i>parent</i> is passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="QGraphicsSimpleTextItem-2"></a>QGraphicsSimpleTextItem::QGraphicsSimpleTextItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qgraphicsitem.html">QGraphicsItem</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a>, using <i>text</i> as the default plain text.</p>
+<p><i>parent</i> is passed to <a href="qgraphicsitem.html">QGraphicsItem</a>'s constructor.</p>
+<p>See also <a href="qgraphicsscene.html#addItem">QGraphicsScene::addItem</a>().</p>
+<h3 class="fn"><a name="dtor.QGraphicsSimpleTextItem"></a>QGraphicsSimpleTextItem::~QGraphicsSimpleTextItem ()</h3>
+<p>Destroys the <a href="qgraphicssimpletextitem.html">QGraphicsSimpleTextItem</a>.</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> QGraphicsSimpleTextItem::font () const</h3>
+<p>Returns the font that is used to draw the item's text.</p>
+<p>See also <a href="qgraphicssimpletextitem.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="setFont"></a>void QGraphicsSimpleTextItem::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Sets the font that is used to draw the item's text to <i>font</i>.</p>
+<p>See also <a href="qgraphicssimpletextitem.html#font">font</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QGraphicsSimpleTextItem::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the item's text to <i>text</i>. The text will be displayed as plain text. Newline characters ('\n') as well as characters of type <a href="qchar.html#SpecialCharacter-enum">QChar::LineSeparator</a> will cause item to break the text into multiple lines.</p>
+<p>See also <a href="qgraphicssimpletextitem.html#text">text</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QGraphicsSimpleTextItem::text () const</h3>
+<p>Returns the item's text.</p>
+<p>See also <a href="qgraphicssimpletextitem.html#setText">setText</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

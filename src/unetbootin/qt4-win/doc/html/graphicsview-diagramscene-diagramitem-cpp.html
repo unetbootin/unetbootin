@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: diagramitem.cpp Example File (graphicsview/diagramscene/diagramitem.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">diagramitem.cpp Example File<br /><span class="small-subtitle">graphicsview/diagramscene/diagramitem.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;diagramitem.h&quot;
+ #include &quot;arrow.h&quot;
+
+ DiagramItem::DiagramItem(DiagramType diagramType, QMenu *contextMenu,
+              QGraphicsItem *parent, QGraphicsScene *scene)
+     : QGraphicsPolygonItem(parent, scene)
+ {
+     myDiagramType = diagramType;
+     myContextMenu = contextMenu;
+
+     QPainterPath path;
+     switch (myDiagramType) {
+         case StartEnd:
+             path.moveTo(200, 50);
+             path.arcTo(150, 0, 50, 50, 0, 90);
+             path.arcTo(50, 0, 50, 50, 90, 90);
+             path.arcTo(50, 50, 50, 50, 180, 90);
+             path.arcTo(150, 50, 50, 50, 270, 90);
+             path.lineTo(200, 25);
+             myPolygon = path.toFillPolygon();
+             break;
+         case Conditional:
+             myPolygon &lt;&lt; QPointF(-100, 0) &lt;&lt; QPointF(0, 100)
+                       &lt;&lt; QPointF(100, 0) &lt;&lt; QPointF(0, -100)
+                       &lt;&lt; QPointF(-100, 0);
+             break;
+         case Step:
+             myPolygon &lt;&lt; QPointF(-100, -100) &lt;&lt; QPointF(100, -100)
+                       &lt;&lt; QPointF(100, 100) &lt;&lt; QPointF(-100, 100)
+                       &lt;&lt; QPointF(-100, -100);
+             break;
+         default:
+             myPolygon &lt;&lt; QPointF(-120, -80) &lt;&lt; QPointF(-70, 80)
+                       &lt;&lt; QPointF(120, 80) &lt;&lt; QPointF(70, -80)
+                       &lt;&lt; QPointF(-120, -80);
+             break;
+     }
+     setPolygon(myPolygon);
+     setFlag(QGraphicsItem::ItemIsMovable, true);
+     setFlag(QGraphicsItem::ItemIsSelectable, true);
+ }
+
+ void DiagramItem::removeArrow(Arrow *arrow)
+ {
+     int index = arrows.indexOf(arrow);
+
+     if (index != -1)
+         arrows.removeAt(index);
+ }
+
+ void DiagramItem::removeArrows()
+ {
+     foreach (Arrow *arrow, arrows) {
+         arrow-&gt;startItem()-&gt;removeArrow(arrow);
+         arrow-&gt;endItem()-&gt;removeArrow(arrow);
+         scene()-&gt;removeItem(arrow);
+         delete arrow;
+     }
+ }
+
+ void DiagramItem::addArrow(Arrow *arrow)
+ {
+     arrows.append(arrow);
+ }
+
+ QPixmap DiagramItem::image() const
+ {
+     QPixmap pixmap(250, 250);
+     pixmap.fill(Qt::transparent);
+     QPainter painter(&amp;pixmap);
+     painter.setPen(QPen(Qt::black, 8));
+     painter.translate(125, 125);
+     painter.drawPolyline(myPolygon);
+
+     return pixmap;
+ }
+
+ void DiagramItem::contextMenuEvent(QGraphicsSceneContextMenuEvent *event)
+ {
+     scene()-&gt;clearSelection();
+     setSelected(true);
+     myContextMenu-&gt;exec(event-&gt;screenPos());
+ }
+
+ QVariant DiagramItem::itemChange(GraphicsItemChange change,
+                      const QVariant &amp;value)
+ {
+     if (change == QGraphicsItem::ItemPositionChange) {
+         foreach (Arrow *arrow, arrows) {
+             arrow-&gt;updatePosition();
+         }
+     }
+
+     return value;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

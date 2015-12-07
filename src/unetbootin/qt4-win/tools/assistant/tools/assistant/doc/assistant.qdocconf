@@ -1,0 +1,14 @@
+include(../../../../qdoc3/test/qt.qdocconf)
+
+sourcedirs = $QTDIR/tools/assistant/tools/assistant/doc
+imagedirs = $QTDIR/tools/assistant/tools/assistant/doc/images
+outputdir = $QTDIR/tools/assistant/tools/assistant/doc/html
+project = assistant
+description = "Qt Assistant"
+HTML.{postheader,address} = ""
+HTML.footer = "<p /><address><hr /><div align=\"center\">\n" \
+              "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+              "<td width=\"30%\">Copyright &copy; \$THISYEAR\$ <a href=\"http://doc.trolltech.com/trolltech.html\">Trolltech</a></td>\n" \
+              "<td width=\"40%\" align=\"center\"><a href=\"http://doc.trolltech.com/trademarks.html\">Trademarks</a></td>\n" \
+              "<td width=\"30%\" align=\"right\"><div align=\"right\">Qt \\version</div></td>\n" \
+              "</tr></table></div></address>"

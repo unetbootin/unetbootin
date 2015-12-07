@@ -1,0 +1,10 @@
+<RCC version="1.0">
+    <qresource prefix="/trolltech/qttoolbardialog">
+        <file>images/up.png</file>
+        <file>images/down.png</file>
+        <file>images/forward.png</file>
+        <file>images/back.png</file>
+        <file>images/plus.png</file>
+        <file>images/minus.png</file>
+    </qresource>
+</RCC>

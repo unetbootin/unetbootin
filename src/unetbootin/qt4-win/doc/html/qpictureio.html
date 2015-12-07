@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qpicture.cpp -->
+<head>
+  <title>Qt 4.4: QPictureIO Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPictureIO Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPictureIO class contains parameters for loading and saving pictures. <a href="#details">More...</a></p>
+<pre> #include &lt;QPictureIO&gt;</pre><p><b>This class is obsolete.</b> It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<ul>
+<li><a href="qpictureio-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpictureio.html#QPictureIO">QPictureIO</a></b> ()</li>
+<li><div class="fn"/><b><a href="qpictureio.html#QPictureIO-2">QPictureIO</a></b> ( QIODevice * <i>ioDevice</i>, const char * <i>format</i> )</li>
+<li><div class="fn"/><b><a href="qpictureio.html#QPictureIO-3">QPictureIO</a></b> ( const QString &amp; <i>fileName</i>, const char * <i>format</i> )</li>
+<li><div class="fn"/><b><a href="qpictureio.html#dtor.QPictureIO">~QPictureIO</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qpictureio.html#description">description</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qpictureio.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>const char * <b><a href="qpictureio.html#format">format</a></b> () const</li>
+<li><div class="fn"/>float <b><a href="qpictureio.html#gamma">gamma</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qpictureio.html#ioDevice">ioDevice</a></b> () const</li>
+<li><div class="fn"/>const char * <b><a href="qpictureio.html#parameters">parameters</a></b> () const</li>
+<li><div class="fn"/>const QPicture &amp; <b><a href="qpictureio.html#picture">picture</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qpictureio.html#quality">quality</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpictureio.html#read">read</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setDescription">setDescription</a></b> ( const QString &amp; <i>description</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setFileName">setFileName</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setFormat">setFormat</a></b> ( const char * <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setGamma">setGamma</a></b> ( float <i>gamma</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setIODevice">setIODevice</a></b> ( QIODevice * <i>ioDevice</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setParameters">setParameters</a></b> ( const char * <i>parameters</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setPicture">setPicture</a></b> ( const QPicture &amp; <i>picture</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setQuality">setQuality</a></b> ( int <i>q</i> )</li>
+<li><div class="fn"/>void <b><a href="qpictureio.html#setStatus">setStatus</a></b> ( int <i>status</i> )</li>
+<li><div class="fn"/>int <b><a href="qpictureio.html#status">status</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qpictureio.html#write">write</a></b> ()</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qpictureio.html#defineIOHandler">defineIOHandler</a></b> ( const char * <i>format</i>, const char * <i>header</i>, const char * <i>flags</i>, picture_io_handler <i>readPicture</i>, picture_io_handler <i>writePicture</i> )</li>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qpictureio.html#inputFormats">inputFormats</a></b> ()</li>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qpictureio.html#outputFormats">outputFormats</a></b> ()</li>
+<li><div class="fn"/>QByteArray <b><a href="qpictureio.html#pictureFormat">pictureFormat</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>QByteArray <b><a href="qpictureio.html#pictureFormat-2">pictureFormat</a></b> ( QIODevice * <i>d</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPictureIO class contains parameters for loading and saving pictures.</p>
+<p>QPictureIO contains a <a href="qiodevice.html">QIODevice</a> object that is used for picture data I/O. The programmer can install new picture file formats in addition to those that Qt provides.</p>
+<p>You don't normally need to use this class; <a href="qpicture.html#load">QPicture::load</a>(), <a href="qpicture.html#save">QPicture::save</a>().</p>
+<p>See also <a href="qpicture.html">QPicture</a>, <a href="qpixmap.html">QPixmap</a>, and <a href="qfile.html">QFile</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPictureIO"></a>QPictureIO::QPictureIO ()</h3>
+<p>Constructs a <a href="qpictureio.html">QPictureIO</a> object with all parameters set to zero.</p>
+<h3 class="fn"><a name="QPictureIO-2"></a>QPictureIO::QPictureIO ( <a href="qiodevice.html">QIODevice</a> * <i>ioDevice</i>, const char * <i>format</i> )</h3>
+<p>Constructs a <a href="qpictureio.html">QPictureIO</a> object with the I/O device <i>ioDevice</i> and a <i>format</i> tag.</p>
+<h3 class="fn"><a name="QPictureIO-3"></a>QPictureIO::QPictureIO ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, const char * <i>format</i> )</h3>
+<p>Constructs a <a href="qpictureio.html">QPictureIO</a> object with the file name <i>fileName</i> and a <i>format</i> tag.</p>
+<h3 class="fn"><a name="dtor.QPictureIO"></a>QPictureIO::~QPictureIO ()</h3>
+<p>Destroys the object and all related data.</p>
+<h3 class="fn"><a name="defineIOHandler"></a>void QPictureIO::defineIOHandler ( const char * <i>format</i>, const char * <i>header</i>, const char * <i>flags</i>, picture_io_handler <i>readPicture</i>, picture_io_handler <i>writePicture</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Defines a picture I/O handler for the picture format called <i>format</i>, which is recognized using the regular expression defined in <i>header</i>, read using <i>readPicture</i> and written using <i>writePicture</i>.</p>
+<p><i>flags</i> is a string of single-character flags for this format. The only flag defined currently is T (upper case), so the only legal value for <i>flags</i> are &quot;T&quot; and the empty string. The &quot;T&quot; flag means that the picture file is a text file, and Qt should treat all newline conventions as equivalent. (XPM files and some PPM files are text files for example.)</p>
+<p><i>format</i> is used to select a handler to write a <a href="qpicture.html">QPicture</a>; <i>header</i> is used to select a handler to read an picture file.</p>
+<p>If <i>readPicture</i> is a null pointer, the <a href="qpictureio.html">QPictureIO</a> will not be able to read pictures in <i>format</i>. If <i>writePicture</i> is a null pointer, the <a href="qpictureio.html">QPictureIO</a> will not be able to write pictures in <i>format</i>. If both are null, the <a href="qpictureio.html">QPictureIO</a> object is valid but useless.</p>
+<p>Example:</p>
+<pre> void readSVG(QPictureIO *picture)
+ {
+     <span class="comment">//</span> read the picture using the picture-&gt;ioDevice()
+ }
+
+ void writeSVG(QPictureIO *picture)
+ {
+     <span class="comment">//</span> write the picture using the picture-&gt;ioDevice()
+ }
+
+     <span class="comment">//</span> add the SVG picture handler
+     <span class="comment">//</span> ...</pre>
+<p>Before the regular expression test, all the 0 bytes in the file header are converted to 1 bytes. This is done because when Qt was ASCII-based, <a href="qregexp.html">QRegExp</a> could not handle 0 bytes in strings.</p>
+<p>The regexp is only applied on the first 14 bytes of the file.</p>
+<p>(Note that if one handlerIO supports writing a format and another supports reading it, Qt supports both reading and writing. If two handlers support the same operation, Qt chooses one arbitrarily.)</p>
+<h3 class="fn"><a name="description"></a><a href="qstring.html">QString</a> QPictureIO::description () const</h3>
+<p>Returns the picture description string.</p>
+<p>See also <a href="qpictureio.html#setDescription">setDescription</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QPictureIO::fileName () const</h3>
+<p>Returns the file name currently set.</p>
+<p>See also <a href="qpictureio.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="format"></a>const char * QPictureIO::format () const</h3>
+<p>Returns the picture format string or 0 if no format has been explicitly set.</p>
+<p>See also <a href="qpictureio.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="gamma"></a>float QPictureIO::gamma () const</h3>
+<p>Returns the gamma value at which the picture will be viewed.</p>
+<p>See also <a href="qpictureio.html#setGamma">setGamma</a>().</p>
+<h3 class="fn"><a name="inputFormats"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QPictureIO::inputFormats ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a sorted list of picture formats that are supported for picture input.</p>
+<h3 class="fn"><a name="ioDevice"></a><a href="qiodevice.html">QIODevice</a> * QPictureIO::ioDevice () const</h3>
+<p>Returns the IO device currently set.</p>
+<p>See also <a href="qpictureio.html#setIODevice">setIODevice</a>().</p>
+<h3 class="fn"><a name="outputFormats"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QPictureIO::outputFormats ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a sorted list of picture formats that are supported for picture output.</p>
+<h3 class="fn"><a name="parameters"></a>const char * QPictureIO::parameters () const</h3>
+<p>Returns the picture's parameters string.</p>
+<p>See also <a href="qpictureio.html#setParameters">setParameters</a>().</p>
+<h3 class="fn"><a name="picture"></a>const <a href="qpicture.html">QPicture</a> &amp; QPictureIO::picture () const</h3>
+<p>Returns the picture currently set.</p>
+<p>See also <a href="qpictureio.html#setPicture">setPicture</a>().</p>
+<h3 class="fn"><a name="pictureFormat"></a><a href="qbytearray.html">QByteArray</a> QPictureIO::pictureFormat ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a string that specifies the picture format of the file <i>fileName</i>, or null if the file cannot be read or if the format is not recognized.</p>
+<h3 class="fn"><a name="pictureFormat-2"></a><a href="qbytearray.html">QByteArray</a> QPictureIO::pictureFormat ( <a href="qiodevice.html">QIODevice</a> * <i>d</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string that specifies the picture format of the picture read from IO device <i>d</i>, or 0 if the device cannot be read or if the format is not recognized.</p>
+<p>Make sure that <i>d</i> is at the right position in the device (for example, at the beginning of the file).</p>
+<p>See also <a href="qiodevice-qt3.html#at">QIODevice::at</a>().</p>
+<h3 class="fn"><a name="quality"></a>int QPictureIO::quality () const</h3>
+<p>Returns the quality of the written picture, related to the compression ratio.</p>
+<p>See also <a href="qpictureio.html#setQuality">setQuality</a>() and <a href="qpicture.html#save">QPicture::save</a>().</p>
+<h3 class="fn"><a name="read"></a>bool QPictureIO::read ()</h3>
+<p>Reads an picture into memory and returns true if the picture was successfully read; otherwise returns false.</p>
+<p>Before reading an picture you must set an IO device or a file name. If both an IO device and a file name have been set, the IO device will be used.</p>
+<p>Setting the picture file format string is optional.</p>
+<p>Note that this function does <i>not</i> set the <a href="qpictureio.html#format">format</a> used to read the picture. If you need that information, use the <a href="qpictureio.html#pictureFormat">pictureFormat</a>() static functions.</p>
+<p>Example:</p>
+<pre>         QPictureIO iio;
+         QPixmap  pixmap;
+         iio.setFileName(&quot;vegeburger.pic&quot;);
+         if (iio.read()) {        <span class="comment">//</span> OK
+             QPicture picture = iio.picture();
+             QPainter painter(&amp;pixmap);
+             painter.drawPicture(0, 0, picture);
+         }</pre>
+<p>See also <a href="qpictureio.html#setIODevice">setIODevice</a>(), <a href="qpictureio.html#setFileName">setFileName</a>(), <a href="qpictureio.html#setFormat">setFormat</a>(), <a href="qpictureio.html#write">write</a>(), and <a href="qpixmap.html#load">QPixmap::load</a>().</p>
+<h3 class="fn"><a name="setDescription"></a>void QPictureIO::setDescription ( const <a href="qstring.html">QString</a> &amp; <i>description</i> )</h3>
+<p>Sets the picture description string for picture handlers that support picture descriptions to <i>description</i>.</p>
+<p>Currently, no picture format supported by Qt uses the description string.</p>
+<p>See also <a href="qpictureio.html#description">description</a>().</p>
+<h3 class="fn"><a name="setFileName"></a>void QPictureIO::setFileName ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Sets the name of the file to read or write an picture from to <i>fileName</i>.</p>
+<p>See also <a href="qpictureio.html#fileName">fileName</a>() and <a href="qpictureio.html#setIODevice">setIODevice</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QPictureIO::setFormat ( const char * <i>format</i> )</h3>
+<p>Sets the picture format to <i>format</i> for the picture to be read or written.</p>
+<p>It is necessary to specify a format before writing an picture, but it is not necessary to specify a format before reading an picture.</p>
+<p>If no format has been set, Qt guesses the picture format before reading it. If a format is set the picture will only be read if it has that format.</p>
+<p>See also <a href="qpictureio.html#read">read</a>(), <a href="qpictureio.html#write">write</a>(), and <a href="qpictureio.html#format">format</a>().</p>
+<h3 class="fn"><a name="setGamma"></a>void QPictureIO::setGamma ( float <i>gamma</i> )</h3>
+<p>Sets the gamma value at which the picture will be viewed to <i>gamma</i>. If the picture format stores a gamma value for which the picture is intended to be used, then this setting will be used to modify the picture. Setting to 0.0 will disable gamma correction (i.e&#x2e; any specification in the file will be ignored).</p>
+<p>The default value is 0.0&#x2e;</p>
+<p>See also <a href="qpictureio.html#gamma">gamma</a>().</p>
+<h3 class="fn"><a name="setIODevice"></a>void QPictureIO::setIODevice ( <a href="qiodevice.html">QIODevice</a> * <i>ioDevice</i> )</h3>
+<p>Sets the IO device to be used for reading or writing an picture.</p>
+<p>Setting the IO device allows pictures to be read/written to any block-oriented <a href="qiodevice.html">QIODevice</a>.</p>
+<p>If <i>ioDevice</i> is not null, this IO device will override file name settings.</p>
+<p>See also <a href="qpictureio.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="setParameters"></a>void QPictureIO::setParameters ( const char * <i>parameters</i> )</h3>
+<p>Sets the picture's parameter string to <i>parameters</i>. This is for picture handlers that require special parameters.</p>
+<p>Although the current picture formats supported by Qt ignore the parameters string, it may be used in future extensions or by contributions (for example, JPEG).</p>
+<p>See also <a href="qpictureio.html#parameters">parameters</a>().</p>
+<h3 class="fn"><a name="setPicture"></a>void QPictureIO::setPicture ( const <a href="qpicture.html">QPicture</a> &amp; <i>picture</i> )</h3>
+<p>Sets the picture to <i>picture</i>.</p>
+<p>See also <a href="qpictureio.html#picture">picture</a>().</p>
+<h3 class="fn"><a name="setQuality"></a>void QPictureIO::setQuality ( int <i>q</i> )</h3>
+<p>Sets the quality of the written picture to <i>q</i>, related to the compression ratio.</p>
+<p><i>q</i> must be in the range -1..100. Specify 0 to obtain small compressed files, 100 for large uncompressed files. (-1 signifies the default compression.)</p>
+<p>See also <a href="qpictureio.html#quality">quality</a>() and <a href="qpicture.html#save">QPicture::save</a>().</p>
+<h3 class="fn"><a name="setStatus"></a>void QPictureIO::setStatus ( int <i>status</i> )</h3>
+<p>Sets the picture IO status to <i>status</i>. A non-zero value indicates an error, whereas 0 means that the IO operation was successful.</p>
+<p>See also <a href="qpictureio.html#status">status</a>().</p>
+<h3 class="fn"><a name="status"></a>int QPictureIO::status () const</h3>
+<p>Returns the picture's IO status. A non-zero value indicates an error, whereas 0 means that the IO operation was successful.</p>
+<p>See also <a href="qpictureio.html#setStatus">setStatus</a>().</p>
+<h3 class="fn"><a name="write"></a>bool QPictureIO::write ()</h3>
+<p>Writes an picture to an IO device and returns true if the picture was successfully written; otherwise returns false.</p>
+<p>Before writing an picture you must set an IO device or a file name. If both an IO device and a file name have been set, the IO device will be used.</p>
+<p>The picture will be written using the specified picture format.</p>
+<p>Example:</p>
+<pre>         QPictureIO iio;
+         QPicture   picture;
+         QPainter painter(&amp;picture);
+         painter.drawPixmap(0, 0, pixmap);
+         iio.setPicture(picture);
+         iio.setFileName(&quot;vegeburger.pic&quot;);
+         iio.setFormat(&quot;PIC&quot;);
+         if (iio.write())
+             return true; <span class="comment">//</span> returned true if written successfully</pre>
+<p>See also <a href="qpictureio.html#setIODevice">setIODevice</a>(), <a href="qpictureio.html#setFileName">setFileName</a>(), <a href="qpictureio.html#setFormat">setFormat</a>(), <a href="qpictureio.html#read">read</a>(), and <a href="qpixmap.html#save">QPixmap::save</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

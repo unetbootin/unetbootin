@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xmlpatterns/api/qxmlformatter.cpp -->
+<head>
+  <title>Qt 4.4: QXmlFormatter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlFormatter Class Reference<br /><span class="small-subtitle">[<a href="qtxmlpatterns.html">QtXmlPatterns</a> module]</span>
+</h1>
+<p>The QXmlFormatter class receives an XQuery Sequence and translates it into human-readable XML. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlFormatter&gt;</pre><p>Inherits <a href="qxmlserializer.html">QXmlSerializer</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qxmlformatter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmlformatter.html#QXmlFormatter">QXmlFormatter</a></b> ( const QXmlQuery &amp; <i>query</i>, QIODevice * <i>outputDevice</i> )</li>
+<li><div class="fn"/>int <b><a href="qxmlformatter.html#indentationDepth">indentationDepth</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qxmlformatter.html#setIndentationDepth">setIndentationDepth</a></b> ( int <i>depth</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 public functions inherited from <a href="qxmlserializer.html#public-functions">QXmlSerializer</a></li>
+<li><div class="fn"/>12 public functions inherited from <a href="qabstractxmlreceiver.html#public-functions">QAbstractXmlReceiver</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlFormatter class receives an XQuery Sequence and translates it into human-readable XML.</p>
+<p>QXmlFormatter is a subclass of <a href="qxmlserializer.html">QXmlSerializer</a> that formats the XML output to make it easier for humans to read.</p>
+<p><a href="qxmlserializer.html">QXmlSerializer</a> outputs XML without adding unnecessary whitespace. In particular, it does not add <i>newlines</i> and indentation. To make the XML output easier to read, QXmlFormatter adds <i>newlines</i> and indentation by adding, removing, and modifying <a href="qabstractxmlreceiver.html#xquery-sequence">sequence nodes</a> that only consist of whitespace. It also modifies whitespace in other places where it is not significant; e.g&#x2e;, between attributes and in the document prologue.</p>
+<p>For example, where the base class <a href="qxmlserializer.html">QXmlSerializer</a> would output this:</p>
+<pre> &lt;a&gt;&lt;b/&gt;&lt;c/&gt;&lt;p&gt;Some Text&lt;/p&gt;&lt;/a&gt;</pre>
+<p>QXmlFormatter outputs this:</p>
+<pre> &lt;a&gt;
+    &lt;b/&gt;
+    &lt;c/&gt;
+    &lt;p&gt;Some Text&lt;/p&gt;
+ &lt;/a&gt;</pre>
+<p>If you just want to serialize your XML in a human-readable format, use QXmlFormatter as it is. The default indentation level is 4 spaces, but you can set your own indentation value <a href="qxmlformatter.html#setIndentationDepth">setIndentationDepth</a>().</p>
+<p>The <i>newlines</i> and indentation added by QXmlFormatter are suitable for common formats, such as XHTML, SVG, or Docbook, where whitespace is not significant. However, if your XML will be used as input where whitespace is significant, then you must write your own subclass of <a href="qxmlserializer.html">QXmlSerializer</a> or <a href="qabstractxmlreceiver.html">QAbstractXmlReceiver</a>.</p>
+<p>Note that using QXmlFormatter instead of <a href="qxmlserializer.html">QXmlSerializer</a> will increase computational overhead and document storage size due to the insertion of whitespace.</p>
+<p>Note also that the indentation style used by QXmlFormatter remains loosely defined and may change in future versions of Qt. If a specific indentation style is required then either use the base class <a href="qxmlserializer.html">QXmlSerializer</a> directly, or write your own subclass of <a href="qxmlserializer.html">QXmlSerializer</a> or <a href="qabstractxmlreceiver.html">QAbstractXmlReceiver</a>. Alternatively, you can subclass QXmlFormatter and reimplement the callbacks there.</p>
+<pre>    QXmlQuery query;
+    query.setQuery(&quot;doc('index.html')/html/body/p[1]&quot;);
+
+    QXmlFormatter formatter(query, myOutputDevice);
+    formatter.setIndentationDepth(2);
+    query.evaluateTo(&amp;formatter);</pre>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlFormatter"></a>QXmlFormatter::QXmlFormatter ( const <a href="qxmlquery.html">QXmlQuery</a> &amp; <i>query</i>, <a href="qiodevice.html">QIODevice</a> * <i>outputDevice</i> )</h3>
+<p>Constructs a formatter that uses the name pool and message handler in <i>query</i>, and writes the result to <i>outputDevice</i>.</p>
+<p><i>outputDevice</i> is passed directly to <a href="qxmlserializer.html">QXmlSerializer</a>'s constructor, and the same semantics and expectations applies, as documented in <a href="qxmlserializer.html">QXmlSerializer</a>'s constructor.</p>
+<h3 class="fn"><a name="indentationDepth"></a>int QXmlFormatter::indentationDepth () const</h3>
+<p>Returns the amount of spaces <a href="qxmlformatter.html">QXmlFormatter</a> will output for each indentation level.</p>
+<p>The default is four.</p>
+<p>See also <a href="qxmlformatter.html#setIndentationDepth">setIndentationDepth</a>().</p>
+<h3 class="fn"><a name="setIndentationDepth"></a>void QXmlFormatter::setIndentationDepth ( int <i>depth</i> )</h3>
+<p>Sets the amount of spaces <a href="qxmlformatter.html">QXmlFormatter</a> writes out for each indentation level to <i>depth</i>.</p>
+<p>See also <a href="qxmlformatter.html#indentationDepth">indentationDepth</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

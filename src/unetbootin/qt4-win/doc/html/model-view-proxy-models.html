@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Proxy Models</title>
+  <link rel="prev" href="model-view-dnd.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link rel="next" href="model-view-model-subclassing.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-model-subclassing.html">Model Subclassing Reference</a>]
+</p>
+<h1 class="title">Proxy Models<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#overview">Overview</a></li>
+<li><a href="#using-proxy-models">Using Proxy Models</a></li>
+<li><a href="#customizing-proxy-models">Customizing Proxy Models</a></li>
+<ul><li><a href="#custom-filtering-models">Custom Filtering Models</a></li>
+<li><a href="#custom-sorting-models">Custom Sorting Models</a></li>
+</ul>
+</ul>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>In the model/view framework, items of data supplied by a single model can be shared by any number of views, and each of these can possibly represent the same information in completely different ways. Custom views and delegates are effective ways to provide radically different representations of the same data. However, applications often need to provide conventional views onto processed versions of the same data, such as differently-sorted views onto a list of items.</p>
+<p>Although it seems appropriate to perform sorting and filtering operations as internal functions of views, this approach does not allow multiple views to share the results of such potentially costly operations. The alternative approach, involving sorting within the model itself, leads to the similar problem where each view has to display items of data that are organized according to the most recent processing operation.</p>
+<p>To solve this problem, the model/view framework uses proxy models to manage the information supplied between individual models and views. Proxy models are components that behave like ordinary models from the perspective of a view, and access data from source models on behalf of that view. The signals and slots used by the model/view framework ensure that each view is updated appropriately no matter how many proxy models are placed between itself and the source model.</p>
+<a name="using-proxy-models"></a>
+<h2>Using Proxy Models</h2>
+<p>Proxy models can be inserted between an existing model and any number of views. Qt is supplied with a standard proxy model, <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a>, that is usually instantiated and used directly, but can also be subclassed to provide custom filtering and sorting behavior. The <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> class can be used in the following way:</p>
+<pre>     QSortFilterProxyModel *filterModel = new QSortFilterProxyModel(parent);
+     filterModel-&gt;setSourceModel(stringListModel);
+
+     QListView *filteredView = new QListView;
+     filteredView-&gt;setModel(filterModel);</pre>
+<p>Since proxy models are inherit from <a href="qabstractitemmodel.html">QAbstractItemModel</a>, they can be connected to any kind of view, and can be shared between views. They can be also be used to process the information obtained from other proxy models in a pipeline arrangement.</p>
+<p>The <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> class is designed to be instantiated and used directly in applications. More specialized proxy models can be created by subclassing this classes and implementing the required comparison operations.</p>
+<a name="customizing-proxy-models"></a>
+<h2>Customizing Proxy Models</h2>
+<p>Generally, the type of processing used in a proxy model involves mapping each item of data from its original location in the source model to either a different location in the proxy model. In some models, some items may have no corresponding location in the proxy model; these models are <i>filtering</i> proxy models. Views access items using model indexes provided by the proxy model, and these contain no information about the source model or the locations of the original items in that model.</p>
+<p><a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> enables data from a source model to be filtered before being supplied to views, and also allows the contents of a source model to be supplied to views as pre-sorted data.</p>
+<a name="custom-filtering-models"></a>
+<h3>Custom Filtering Models</h3>
+<p>The <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> class provides a filtering model that is fairly versatile, and which can be used in a variety of common situations. For advanced users, <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> can be subclassed, providing a mechanism that enables custom filters to be implemented.</p>
+<p>Subclasses of <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> can reimplement two virtual functions that are called whenever a model index from the proxy model is requested or used:</p>
+<ul>
+<li><a href="qsortfilterproxymodel.html#filterAcceptsColumn">filterAcceptsColumn()</a> is used to filter specific columns from part of the source model.</li>
+<li><a href="qsortfilterproxymodel.html#filterAcceptsRow">filterAcceptsRow()</a> is used to filter specific rows from part of the source model.</li>
+</ul>
+<p>The default implementations of the above functions in <a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> return true to ensure that all items are passed through to views; reimplementations of these functions should return false to filter out individual rows and columns.</p>
+<a name="custom-sorting-models"></a>
+<h3>Custom Sorting Models</h3>
+<p><a href="qsortfilterproxymodel.html">QSortFilterProxyModel</a> instances use Qt's built-in <a href="qtalgorithms.html#qStableSort">qStableSort</a>() function to set up mappings between items in the source model and those in the proxy model, allowing a sorted hierarchy of items to be exposed to views without modifying the structure of the source model. To provide custom sorting behavior, reimplement the <a href="qsortfilterproxymodel.html#lessThan">lessThan()</a> function to perform custom comparisons.</p>
+<p>
+[Previous: <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>]
+[<a href="model-view-programming.html">Contents</a>]
+[Next: <a href="model-view-model-subclassing.html">Model Subclassing Reference</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

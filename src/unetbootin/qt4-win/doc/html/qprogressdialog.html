@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qprogressdialog.cpp -->
+<head>
+  <title>Qt 4.4: QProgressDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QProgressDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QProgressDialog class provides feedback on the progress of a slow operation. <a href="#details">More...</a></p>
+<pre> #include &lt;QProgressDialog&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<ul>
+<li><a href="qprogressdialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qprogressdialog.html#autoClose-prop">autoClose</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#autoReset-prop">autoReset</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#labelText-prop">labelText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#maximum-prop">maximum</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qprogressdialog.html#minimum-prop">minimum</a></b> : int</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#minimumDuration-prop">minimumDuration</a></b> : int</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#value-prop">value</a></b> : int</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#wasCanceled-prop">wasCanceled</a></b> : const bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprogressdialog.html#QProgressDialog">QProgressDialog</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#QProgressDialog-2">QProgressDialog</a></b> ( const QString &amp; <i>labelText</i>, const QString &amp; <i>cancelButtonText</i>, int <i>minimum</i>, int <i>maximum</i>, QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprogressdialog.html#dtor.QProgressDialog">~QProgressDialog</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qprogressdialog.html#autoClose-prop">autoClose</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprogressdialog.html#autoReset-prop">autoReset</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprogressdialog.html#labelText-prop">labelText</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprogressdialog.html#maximum-prop">maximum</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprogressdialog.html#minimum-prop">minimum</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprogressdialog.html#minimumDuration-prop">minimumDuration</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#autoClose-prop">setAutoClose</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#autoReset-prop">setAutoReset</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#setBar">setBar</a></b> ( QProgressBar * <i>bar</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#setCancelButton">setCancelButton</a></b> ( QPushButton * <i>cancelButton</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#setLabel">setLabel</a></b> ( QLabel * <i>label</i> )</li>
+<li><div class="fn"/>virtual QSize <b><a href="qprogressdialog.html#sizeHint">sizeHint</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprogressdialog.html#value-prop">value</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprogressdialog.html#wasCanceled-prop">wasCanceled</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#cancel">cancel</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#setCancelButtonText">setCancelButtonText</a></b> ( const QString &amp; <i>cancelButtonText</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#labelText-prop">setLabelText</a></b> ( const QString &amp; )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#maximum-prop">setMaximum</a></b> ( int <i>maximum</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#minimum-prop">setMinimum</a></b> ( int <i>minimum</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#minimumDuration-prop">setMinimumDuration</a></b> ( int <i>ms</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#setRange">setRange</a></b> ( int <i>minimum</i>, int <i>maximum</i> )</li>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#value-prop">setValue</a></b> ( int <i>progress</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#canceled">canceled</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-slots"></a>
+<h3>Protected Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprogressdialog.html#forceShow">forceShow</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QProgressDialog class provides feedback on the progress of a slow operation.</p>
+<p>A progress dialog is used to give the user an indication of how long an operation is going to take, and to demonstrate that the application has not frozen. It can also give the user an opportunity to abort the operation.</p>
+<p>A common problem with progress dialogs is that it is difficult to know when to use them; operations take different amounts of time on different hardware. QProgressDialog offers a solution to this problem: it estimates the time the operation will take (based on time for steps), and only shows itself if that estimate is beyond <a href="qprogressdialog.html#minimumDuration-prop">minimumDuration</a>() (4 seconds by default).</p>
+<p>Use <a href="qprogressdialog.html#minimum-prop">setMinimum</a>() and <a href="qprogressdialog.html#maximum-prop">setMaximum</a>() or the constructor to set the number of &quot;steps&quot; in the operation and call <a href="qprogressdialog.html#value-prop">setValue</a>() as the operation progresses. The number of steps can be chosen arbitrarily. It can be the number of files copied, the number of bytes received, the number of iterations through the main loop of your algorithm, or some other suitable unit. Progress starts at the value set by <a href="qprogressdialog.html#minimum-prop">setMinimum</a>(), and the progress dialog shows that the operation has finished when you call <a href="qprogressdialog.html#value-prop">setValue</a>() with the value set by <a href="qprogressdialog.html#maximum-prop">setMaximum</a>() as its argument.</p>
+<p>The dialog automatically resets and hides itself at the end of the operation. Use <a href="qprogressdialog.html#autoReset-prop">setAutoReset</a>() and <a href="qprogressdialog.html#autoClose-prop">setAutoClose</a>() to change this behavior.</p>
+<p>There are two ways of using QProgressDialog: modal and modeless.</p>
+<p>Compared to a modeless QProgressDialog, a modal QProgressDialog is simpler to use for the programmer. Do the operation in a loop, call <a href="qprogressdialog.html#value-prop">setValue</a>() at intervals, and check for cancellation with <a href="qprogressdialog.html#wasCanceled-prop">wasCanceled</a>(). For example:</p>
+<pre>     QProgressDialog progress(&quot;Copying files...&quot;, &quot;Abort Copy&quot;, 0, numFiles, this);
+     progress.setWindowModality(Qt::WindowModal);
+
+     for (int i = 0; i &lt; numFiles; i++) {
+         progress.setValue(i);
+
+         if (progress.wasCanceled())
+             break;
+         <span class="comment">//</span>... copy one file
+     }
+     progress.setValue(numFiles);</pre>
+<p>A modeless progress dialog is suitable for operations that take place in the background, where the user is able to interact with the application. Such operations are typically based on <a href="qtimer.html">QTimer</a> (or <a href="qobject.html#timerEvent">QObject::timerEvent</a>()), <a href="qsocketnotifier.html">QSocketNotifier</a>, or <a href="porting4.html#qurloperator">QUrlOperator</a>; or performed in a separate thread. A <a href="qprogressbar.html">QProgressBar</a> in the status bar of your main window is often an alternative to a modeless progress dialog.</p>
+<p>You need to have an event loop to be running, connect the <a href="qprogressdialog.html#canceled">canceled</a>() signal to a slot that stops the operation, and call <a href="qprogressdialog.html#value-prop">setValue</a>() at intervals. For example:</p>
+<pre><span class="comment"> //</span> Operation constructor
+ Operation::Operation(QObject *parent)
+     : QObject(parent), steps(0)
+ {
+     pd = new QProgressDialog(&quot;Operation in progress.&quot;, &quot;Cancel&quot;, 0, 100);
+     connect(pd, SIGNAL(canceled()), this, SLOT(cancel()));
+     t = new QTimer(this);
+     connect(t, SIGNAL(timeout()), this, SLOT(perform()));
+     t-&gt;start(0);
+ }
+
+ void Operation::perform()
+ {
+     pd-&gt;setValue(steps);
+     <span class="comment">//</span>... perform one percent of the operation
+     steps++;
+     if (steps &gt; pd-&gt;maximum())
+         t-&gt;stop();
+ }
+
+ void Operation::cancel()
+ {
+     t-&gt;stop();
+     <span class="comment">//</span>... cleanup
+ }</pre>
+<p>In both modes the progress dialog may be customized by replacing the child widgets with custom widgets by using <a href="qprogressdialog.html#setLabel">setLabel</a>(), <a href="qprogressdialog.html#setBar">setBar</a>(), and <a href="qprogressdialog.html#setCancelButton">setCancelButton</a>(). The functions <a href="qprogressdialog.html#labelText-prop">setLabelText</a>() and <a href="qprogressdialog.html#setCancelButtonText">setCancelButtonText</a>() set the texts shown.</p>
+<p align="center"><img src="images/plastique-progressdialog.png" alt="A progress dialog shown in the Plastique widget style." /></p><p>See also <a href="qdialog.html">QDialog</a>, <a href="qprogressbar.html">QProgressBar</a>, <a href="guibooks.html#fowler">GUI Design Handbook: Progress Indicator</a>, <a href="dialogs-findfiles.html">Find Files Example</a>, and <a href="itemviews-pixelator.html">Pixelator Example</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoClose-prop"></a>autoClose : bool</h3>
+<p>This property holds whether the dialog gets hidden by reset().</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoClose () const</b></li>
+<li><div class="fn"/><b>void setAutoClose ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="qprogressdialog.html#autoReset-prop">setAutoReset</a>().</p>
+<h3 class="fn"><a name="autoReset-prop"></a>autoReset : bool</h3>
+<p>This property holds whether the progress dialog calls reset() as soon as progress() equals totalSteps().</p>
+<p>The default is true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoReset () const</b></li>
+<li><div class="fn"/><b>void setAutoReset ( bool <i>b</i> )</b></li>
+</ul>
+<p>See also <a href="qprogressdialog.html#autoClose-prop">setAutoClose</a>().</p>
+<h3 class="fn"><a name="labelText-prop"></a>labelText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the label's text.</p>
+<p>The default text is an empty string.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString labelText () const</b></li>
+<li><div class="fn"/><b>void setLabelText ( const QString &amp; )</b></li>
+</ul>
+<h3 class="fn"><a name="maximum-prop"></a>maximum : int</h3>
+<p>This property holds the highest value represented by the progress bar.</p>
+<p>The default is 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int maximum () const</b></li>
+<li><div class="fn"/><b>void setMaximum ( int <i>maximum</i> )</b></li>
+</ul>
+<p>See also <a href="qprogressdialog.html#minimum-prop">minimum</a> and <a href="qprogressdialog.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="minimum-prop"></a>minimum : int</h3>
+<p>This property holds the lowest value represented by the progress bar.</p>
+<p>The default is 0.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int minimum () const</b></li>
+<li><div class="fn"/><b>void setMinimum ( int <i>minimum</i> )</b></li>
+</ul>
+<p>See also <a href="qprogressdialog.html#maximum-prop">maximum</a> and <a href="qprogressdialog.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="minimumDuration-prop"></a>minimumDuration : int</h3>
+<p>This property holds the time that must pass before the dialog appears.</p>
+<p>If the expected duration of the task is less than the minimumDuration, the dialog will not appear at all. This prevents the dialog popping up for tasks that are quickly over. For tasks that are expected to exceed the minimumDuration, the dialog will pop up after the minimumDuration time or as soon as any progress is set.</p>
+<p>If set to 0, the dialog is always shown as soon as any progress is set. The default is 4000 milliseconds.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int minimumDuration () const</b></li>
+<li><div class="fn"/><b>void setMinimumDuration ( int <i>ms</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="value-prop"></a>value : int</h3>
+<p>This property holds the current amount of progress made.</p>
+<p>For the progress dialog to work as expected, you should initially set this property to 0 and finally set it to <a href="qprogressdialog.html#maximum-prop">QProgressDialog::maximum</a>(); you can call setValue() any number of times in-between.</p>
+<p><b>Warning:</b> If the progress dialog is modal (see <a href="qprogressdialog.html#QProgressDialog">QProgressDialog::QProgressDialog</a>()), this function calls <a href="qcoreapplication.html#processEvents">QApplication::processEvents</a>(), so take care that this does not cause undesirable re-entrancy in your code. For example, don't use a <a href="qprogressdialog.html">QProgressDialog</a> inside a <a href="qwidget.html#paintEvent">paintEvent</a>()!</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int value () const</b></li>
+<li><div class="fn"/><b>void setValue ( int <i>progress</i> )</b></li>
+</ul>
+<p>See also <a href="qprogressdialog.html#minimum-prop">minimum</a> and <a href="qprogressdialog.html#maximum-prop">maximum</a>.</p>
+<h3 class="fn"><a name="wasCanceled-prop"></a>wasCanceled : const bool</h3>
+<p>This property holds whether the dialog was canceled.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool wasCanceled () const</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QProgressDialog"></a>QProgressDialog::QProgressDialog ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a progress dialog.</p>
+<p>Default settings:</p>
+<ul>
+<li>The label text is empty.</li>
+<li>The cancel button text is (translated) &quot;Cancel&quot;.</li>
+<li>minimum is 0;</li>
+<li>maximum is 100</li>
+</ul>
+<p>The <i>parent</i> argument is dialog's parent widget. The widget flags, <i>f</i>, are passed to the <a href="qdialog.html#QDialog">QDialog::QDialog</a>() constructor.</p>
+<p>See also <a href="qprogressdialog.html#labelText-prop">setLabelText</a>(), <a href="qprogressdialog.html#setCancelButtonText">setCancelButtonText</a>(), <a href="qprogressdialog.html#setCancelButton">setCancelButton</a>(), <a href="qprogressdialog.html#minimum-prop">setMinimum</a>(), and <a href="qprogressdialog.html#maximum-prop">setMaximum</a>().</p>
+<h3 class="fn"><a name="QProgressDialog-2"></a>QProgressDialog::QProgressDialog ( const <a href="qstring.html">QString</a> &amp; <i>labelText</i>, const <a href="qstring.html">QString</a> &amp; <i>cancelButtonText</i>, int <i>minimum</i>, int <i>maximum</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>Constructs a progress dialog.</p>
+<p>The <i>labelText</i> is the text used to remind the user what is progressing.</p>
+<p>The <i>cancelButtonText</i> is the text to display on the cancel button, or 0 if no cancel button is to be shown.</p>
+<p>The <i>minimum</i> and <i>maximum</i> is the number of steps in the operation for which this progress dialog shows progress. For example, if the operation is to examine 50 files, this value minimum value would be 0, and the maximum would be 50. Before examining the first file, call setValue(0). As each file is processed call setValue(1), setValue(2), etc., finally calling setValue(50) after examining the last file.</p>
+<p>The <i>parent</i> argument is the dialog's parent widget. The parent, <i>parent</i>, and widget flags, <i>f</i>, are passed to the <a href="qdialog.html#QDialog">QDialog::QDialog</a>() constructor.</p>
+<p>See also <a href="qprogressdialog.html#labelText-prop">setLabelText</a>(), <a href="qprogressdialog.html#setLabel">setLabel</a>(), <a href="qprogressdialog.html#setCancelButtonText">setCancelButtonText</a>(), <a href="qprogressdialog.html#setCancelButton">setCancelButton</a>(), <a href="qprogressdialog.html#minimum-prop">setMinimum</a>(), and <a href="qprogressdialog.html#maximum-prop">setMaximum</a>().</p>
+<h3 class="fn"><a name="dtor.QProgressDialog"></a>QProgressDialog::~QProgressDialog ()</h3>
+<p>Destroys the progress dialog.</p>
+<h3 class="fn"><a name="cancel"></a>void QProgressDialog::cancel ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Resets the progress dialog. <a href="qprogressdialog.html#wasCanceled-prop">wasCanceled</a>() becomes true until the progress dialog is reset. The progress dialog becomes hidden.</p>
+<h3 class="fn"><a name="canceled"></a>void QProgressDialog::canceled ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the cancel button is clicked. It is connected to the <a href="qprogressdialog.html#cancel">cancel</a>() slot by default.</p>
+<p>See also <a href="qprogressdialog.html#wasCanceled-prop">wasCanceled</a>().</p>
+<h3 class="fn"><a name="forceShow"></a>void QProgressDialog::forceShow ()&nbsp;&nbsp;<tt> [protected slot]</tt></h3>
+<p>Shows the dialog if it is still hidden after the algorithm has been started and <a href="qprogressdialog.html#minimumDuration-prop">minimumDuration</a> milliseconds have passed.</p>
+<p>See also <a href="qprogressdialog.html#minimumDuration-prop">setMinimumDuration</a>().</p>
+<h3 class="fn"><a name="reset"></a>void QProgressDialog::reset ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Resets the progress dialog. The progress dialog becomes hidden if <a href="qprogressdialog.html#autoClose-prop">autoClose</a>() is true.</p>
+<p>See also <a href="qprogressdialog.html#autoClose-prop">setAutoClose</a>() and <a href="qprogressdialog.html#autoReset-prop">setAutoReset</a>().</p>
+<h3 class="fn"><a name="setBar"></a>void QProgressDialog::setBar ( <a href="qprogressbar.html">QProgressBar</a> * <i>bar</i> )</h3>
+<p>Sets the progress bar widget to <i>bar</i>. The progress dialog resizes to fit. The progress dialog takes ownership of the progress <i>bar</i> which will be deleted when necessary, so do not use a progress bar allocated on the stack.</p>
+<h3 class="fn"><a name="setCancelButton"></a>void QProgressDialog::setCancelButton ( <a href="qpushbutton.html">QPushButton</a> * <i>cancelButton</i> )</h3>
+<p>Sets the cancel button to the push button, <i>cancelButton</i>. The progress dialog takes ownership of this button which will be deleted when necessary, so do not pass the address of an object that is on the stack, i.e&#x2e; use new() to create the button.</p>
+<p>See also <a href="qprogressdialog.html#setCancelButtonText">setCancelButtonText</a>().</p>
+<h3 class="fn"><a name="setCancelButtonText"></a>void QProgressDialog::setCancelButtonText ( const <a href="qstring.html">QString</a> &amp; <i>cancelButtonText</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the cancel button's text to <i>cancelButtonText</i>.</p>
+<p>See also <a href="qprogressdialog.html#setCancelButton">setCancelButton</a>().</p>
+<h3 class="fn"><a name="setLabel"></a>void QProgressDialog::setLabel ( <a href="qlabel.html">QLabel</a> * <i>label</i> )</h3>
+<p>Sets the label to <i>label</i>. The progress dialog resizes to fit. The label becomes owned by the progress dialog and will be deleted when necessary, so do not pass the address of an object on the stack.</p>
+<p>See also <a href="qprogressdialog.html#labelText-prop">setLabelText</a>().</p>
+<h3 class="fn"><a name="setRange"></a>void QProgressDialog::setRange ( int <i>minimum</i>, int <i>maximum</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the progress dialog's minimum and maximum values to <i>minimum</i> and <i>maximum</i>, respectively.</p>
+<p>If <i>maximum</i> is smaller than <i>minimum</i>, <i>minimum</i> becomes the only legal value.</p>
+<p>If the current value falls outside the new range, the progress dialog is reset with <a href="qprogressdialog.html#reset">reset</a>().</p>
+<p>See also <a href="qprogressdialog.html#minimum-prop">minimum</a> and <a href="qprogressdialog.html#maximum-prop">maximum</a>.</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QProgressDialog::sizeHint () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a size that fits the contents of the progress dialog. The progress dialog resizes itself as required, so you should not need to call this yourself.</p>
+<p>Reimplemented from <a href="qwidget.html#sizeHint-prop">QWidget</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

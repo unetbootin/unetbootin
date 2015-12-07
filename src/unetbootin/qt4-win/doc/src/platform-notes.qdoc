@@ -1,0 +1,508 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page platform-notes-platforms.html
+    \ingroup platform-notes
+    \title Platform Notes
+    \brief Information about the platforms on which Qt can be used.
+
+    This page contains information about the platforms Qt is currently known
+    to run on, with links to platform-specific notes, including any known bugs
+    or incompatibilities.
+
+    \list
+    \o \l{Platform Notes - X11}
+    \tableofcontents{1 Platform Notes - X11}
+    \o \l{Platform Notes - Windows}
+    \tableofcontents{1 Platform Notes - Windows}
+    \o \l{Platform Notes - Mac OS X}
+    \tableofcontents{1 Platform Notes - Mac OS X}
+    \endlist
+
+    See also the \l{Compiler Notes} for information about compiler-specific
+    build issues.
+
+    If you have anything to add to this list or any of the platform or
+    compiler-specific pages, please submit it via the \l{Bug Report Form}.
+*/
+
+/*!
+    \page platform-notes-x11.html
+    \title Platform Notes - X11
+
+    This page contains information about the X11 platforms Qt is currently
+    known to run on, with links to platform-specific notes.
+
+    \tableofcontents
+
+    \target AIX
+    \section1 AIX - 5.1 or later
+
+    Qt has been built on a range of versions from 5.1 upwards, using both
+    the \l{Compiler Notes#IBM xlC (AIX)}{AIX} and 
+    \l{Compiler Notes#GCC}{GCC} compilers.
+
+    \table
+    \header \o Compiler \o Notes
+    \row    \o xlC
+    \o If Qt is built correctly but all symbols are reported to be missing
+    when you link an application, your makeC++SharedLib script might be out
+    of date. Make sure you have the latest version from the
+    \l{http://www-306.ibm.com/software/awdtools/vacpp/support/}{IBM website}.
+    \row    \o GCC
+    \o We have tested Qt 4 successfully with GCC version 3.3 and above.
+    Some versions of GCC may fail to link Qt with a "TOC overflow" message.
+    Fix this by upgrading to the latest maintenance release of the dynamic
+    linker. On AIX this is bos.rte.bind_cmds.4.1.5.3.
+    Some versions of GCC may fail to build Qt with STL and large-file support
+    enabled, due to
+    \l{http://gcc.gnu.org/bugzilla/show_bug.cgi?id=9551}{a bug in GCC}.
+    Fix this by upgrading to the latest maintenance release of the compiler.
+    It is also possible to work around this problem by running configure with
+    either \c{-no-stl} or \c{-no-largefile}.
+    \endtable
+
+    \target FreeBSD
+    \section1 FreeBSD - 6.0-RELEASE
+
+    The system compiler on FreeBSD 4.x is gcc 2.95.4, which is not
+    officially supported by Qt 4. We develop using and recommend
+    ports/lang/gcc34. You will need to run configure with the
+    \c{-platform freebsd-g++34} arguments. Optionally, you may use
+    ports/lang/icc.
+
+    The system compiler on FreeBSD 5.x and 6.x is gcc 3.4.4, which is
+    officially supported by Qt. You do not need to add any special
+    arguments when running configure. Optionally, you may use ports/lang/icc.
+
+    Note that we do not actively test FreeBSD 4.x and 5.x. Our developers
+    migrated to 6.x after the Qt 4 launch. FreeBSD-CURRENT is not supported.
+
+    \target HP-UX
+    \section1 HP-UX
+
+    Qt supports HP-UX on both PA-RISC and the Itanium (IA64) architectures.
+
+    \section2 PA-RISC - B.11.11 or later
+
+    You can configure Qt for aCC in 32 and 64 bit mode (hpux-acc-64 or
+    hpux-acc-32), or gcc in 32 bit mode (hpux-g++).  The default platform is
+    hpux-acc-32. The minimum required version for aCC (HP ANSI C++) on PA-RISC
+    is A.03.57. The supported gcc compiler is gcc 3.4.3.
+
+    \section2 Itanium - B.11.23 or later
+
+    You can configure Qt for aCC in 32 and 64 bit mode (hpuxi-acc-64 or
+    hpuxi-acc-32). gcc is currently unsupported.  The default platform is
+    hpuxi-acc-64. The minimum required version for aCC (HP ANSI C++) on
+    Itanium is A.06.12.
+
+    \section2 OpenGL Support
+
+    Qt's \l{QtOpenGL}{OpenGL} module requires GLX 1.3 or later to be installed.
+    This is available for HP-UX 11i - see the
+    \l{http://docs.hp.com/en/5992-2331/ch04s02.html}{Graphics and Technical Computing Software}
+    section of the release notes for more information.
+
+    \target IRIX
+    \section1 IRIX - 6.5.x
+
+    Unpackaging and IRIX tar:
+    Because of long filenames some files will be cut off incorrectly with IRIX
+    tar. Please use GNU tar to unpack Qt packages.
+
+    \section1 Linux
+
+    There are no known problems with using Qt on production versions of
+    Linux/x86, Linux/ppc, Linux/amd64 and Linux/ia64 (including Altix(R)).
+    We do our Unix development mainly on Linux/x86.
+
+    For the gcc/g++ compiler, please also see the relevant
+    \l{Compiler Notes#GCC}{compiler page}.
+
+    \section2 Installation problems
+
+    See also the
+    \l{http://www.trolltech.com/developer/faqs/Qt/installation}{Installation FAQ}.
+
+    If you experience problems when installing new Qt Open Source Edition
+    versions, try to use the Qt Open Source Edition archives (e.g. RPM)
+    provided by your Linux provider. If you need to install the source (.tgz)
+    archive, be aware that you will probably end up with two different
+    versions of the Qt library installed on your system, which will probably
+    lead to link errors, like this:
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 0
+    Fix this by removing the old version of the library.
+
+    If you have problems installing a Qt Open Source Edition Linux archive
+    (e.g. RPM), please consult your Linux provider (who made it), not us.
+
+    Some RPM versions have problems installing some of the Qt RPM archives
+    where installation stops with an error message warning about a
+    "Failed Dependency". Use the \c{--nodeps} option to \c rpm to workaround
+    this problem.
+
+    \target Solaris
+    \section1 Solaris - 9 or later
+
+    \section2 CC on Solaris
+
+    Be sure to check our \l{Compiler Notes#Sun Studio}{Forte Developer / Sun Studio}
+    notes.
+
+    \section2 GCC on Solaris
+
+    Be sure to check the installation notes for
+    \l{http://gcc.gnu.org/install/specific.html#x-x-solaris2}{GCC on Solaris}.
+    Do not use GCC with Sun's assembler/linker, this will result in link-time
+    errors in shared libraries. Use GNU binutils instead. 
+
+    GCC 3.2.* is known to miscompile Qt due to an optimizer bug that will
+    cause the resulting binaries to hang.
+
+    GCC gives compilation error
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 1
+    on systems with old X11 header files. This is fixed by patches
+    \l{http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-108652}{108652-24}
+    on Solaris 8,
+    \l{http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-108376}{108376-21}
+    on Solaris 7, and
+    \l{http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-105633}{105633-56}
+    on Solaris 2.6.
+
+    \section2 Solaris 2.6
+
+    A crash on resize of widgets example has been reported, but not reproduced.
+    Patch \l{http://sunsolve.sun.com/search/document.do?assetkey=urn:cds:docid:1-21-105633}{105633-21}
+    is reported to solve the problem. We are interested in hearing more details
+    from anyone who can reproduce and track this problem closer.
+*/
+
+/*!
+    \page platform-notes-windows.html
+    \title Platform Notes - Windows
+
+    This page contains information about the Windows platforms Qt is currently
+    known to run on, with links to platform-specific notes.
+
+    \tableofcontents
+    
+    \section1 Windows Vista
+
+    Known issues for Qt on Vista will be listed here.
+
+    As of Qt 4.2.0 no Vista-specific issues are known.
+
+    \target Windows NT
+    \section1 Windows XP, Windows 2000 and Windows NT
+
+    \section2 Installation location
+
+    Installing Qt into a directory with spaces, e.g. C:\\Program Files, may
+    cause linker errors like the following:
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 2
+
+    Install Qt into a subdirectory without spaces to avoid this problem.
+
+    \section2 AccelGALAXY graphic card
+
+    When you use a NT 4.0 machine with the driver number
+    4,00,1381,1000,021,4.0.0 there is a problem with drag an drop and icons.
+    The computer freezes, and you have to reset. The problem disappears with
+    the newest version of the driver, available at
+    \l{http://www.es.com/}{www.es.com}.
+
+    \section2 Possible GL conflict
+
+    There is a known issue with running Microsoft NetMeeting, Lotus SameTime
+    and other applications that require screen grabbing while direct
+    rendering is enabled. Other GL-applications may not work as expected,
+    unless direct rendering is disabled.
+
+    \section1 Windows 98 and Me
+
+    As for \l{#Windows NT}{Windows NT}, with the following exceptions:
+
+    \section2 Unicode support
+
+    Since Windows 98 does not implement much Unicode, Qt's Unicode support
+    on Windows 98 is lacking. Note that Qt attempts to hide these
+    differences - application programs can see that the fonts available are
+    rather incomplete, but there is generally no need for programs to care.
+    With other toolkits such as MFC, you often need to recompile. With Qt,
+    your programs simply detect and use the capabilities of the Windows
+    version they run on.
+
+    \section2 COMCTL32 problems
+
+    If you are experiencing a crash in comctl32.dll after debugging your Qt
+    application then this is not a problem with Qt, see MSDN Knowledge Base
+    article
+    \l{http://support.microsoft.com/support/kb/articles/Q255/6/07.ASP}{Q255607}
+    for more information.
+*/
+
+/*!
+    \page platform-notes-mac.html
+    \title Platform Notes - Mac OS X
+
+    This page contains information about the Mac OS X versions Qt is currently
+    known to run on, with links to platform-specific notes.
+
+    \tableofcontents
+
+    \section1 General Information
+
+    Qt 4.3 has been tested to run on Mac OS X 10.3.9 and up. See notes on
+    the binary package for more information.
+
+    Qt 4.1 has been tested to run on Mac OS X 10.2.8 and up. Qt 4.1.4 is the
+    last release to work with Mac OS X 10.2.
+
+    \section2 Required GCC version
+
+    Qt can be compiled with GCC 3.3 and above. However, the version of
+    GCC 3.3 that is included with Xcode Tools 1.5 generates incorrect code
+    for Qt 4.1.3. You need the November 2004 GCC 3.3 updater,
+    \l{http://connect.apple.com}{available from Apple}.
+
+    \section2 Binary Package
+
+    The binary package requires that you have your .qt-license file in your
+    home directory. Installer.app cannot complete without a valid .qt-license
+    file. Evaluation users of Qt will have information about how to create
+    this file in the email they receive.
+
+    The binary package was built on Mac OS X 10.4 with Xcode Tools 2.1
+    (gcc 4.0.0) for Qt 4.1.0, Xcode Tools 2.2 (gcc 4.0.1) for Qt 4.1.1-4.1.4
+    and Xcode Tools 2.3 for 4.2.0. It will only link executables built
+    against 10.4 (or a 10.4 SDK). You should be able to run applications
+    linked against these frameworks on Mac OS X 10.3.9 and Mac OS X 10.4+.
+    If you require a different configuration, you will have to use the
+    source package and build with GCC 3.3.
+
+    \section2 Mac OS X on Intel hardware
+
+    Qt 4 fully supports both the Intel and PowerPC architectures on the Mac.
+    As of Qt 4.1 it is possible to support the Intel architecture by
+    creating Universal Binaries with qmake. As of Qt 4.1 it is possible to
+    build Qt as a set of universal binaries and frameworks from configure by
+    adding these extra flags:
+
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 3
+
+    If you are building on Intel hardware you can omit the sdk parameter, but
+    PowerPC hardware requires it.
+
+    You can also generate universal binaries using qmake. Simply add these
+    lines to your .pro file:
+
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 4
+
+    \section2 Build Issues
+
+    If Qt does not build upon executing make, and fails with an error message
+    such as
+
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 5
+
+    this could be an indication you have upgraded your version of Mac OS X
+    (e.g. 10.3 to 10.4), without upgrading your Developer Tools (Xcode Tools).
+    These must match in order to successfully compile files.
+
+    Please be sure to upgrade both simultaneously. If problems still occur,
+    contact support.
+
+    \section2 Fink
+
+    If you have installed the Qt/X11 package from Fink (http://fink.sf.net),
+    it will set the QMAKESPEC environment variable to darwin-g++. This will
+    cause problems when you build the Qt/Mac package. To fix this, simply
+    unset your QMAKESPEC or set it to macx-g++ before you run configure.
+    You need to have a fresh Qt distribution (make confclean).
+
+    \section2 MySQL and Mac OS X
+
+    There seems to be a issue when both -prebind and -multi_module are
+    defined when linking static C libraries into dynamic library. If you
+    get the following error message when linking Qt:
+
+    \snippet doc/src/snippets/code/doc.src.platform-notes.qdoc 6
+
+    re-link Qt using -single_module. This is only a problem when building the
+    MySQL driver into Qt. It does not affect plugins or static builds.
+
+    \section2 Qt and Precompiled Headers (PCH)
+
+    Starting with Qt 3.3.0 it is possible to use precompiled headers. They
+    are not enabled by default as it appears that some versions of Apple's
+    GCC and make have problems with this feature. If you want to use
+    precompiled headers when building the Qt source package, specify the
+    -pch option to configure. If, while using precompiled headers, you
+    encounter an internal compile error, try removing the -include header
+    statement from the compile line and trying again. If this solves the
+    problem, it probably is a good idea to turn off precompiled headers.
+    Also, consider filing a bug report with Apple so that they can
+    improve support for this feature.
+*/
+
+/*!
+    \page supported-platforms.html
+    \title Supported Platforms
+    \brief The platforms supported by Trolltech for Qt.
+    \ingroup platform-notes
+
+    Qt is supported on a variety of 32-bit and 64-bit platforms, and can
+    usually be built on each platform with GCC, a vendor-supplied compiler, or
+    a third party compiler. Although Qt may be built on a range of platform-compiler
+    combinations, only a subset of these are actively supported by Trolltech:
+
+    \section1 Actively Supported Platforms 
+
+    \table
+    \header \o Platform                \o Compilers
+    \row    \o Apple Mac OS X (32-bit) \o gcc 4.0.1
+    \row    \o Linux (32 and 64-bit)   \o gcc 4.1, 4.2
+    \row    \o Microsoft Windows       \o gcc 4.3 (MinGW) (32-bit), MSVC 2003, 2005 (32 and 64-bit), Intel icc
+    \endtable
+
+    Other platform-compiler combinations are either community supported or unsupported.
+    See the Makespec Support section further down for a complete list of platform-compiler
+    combinations that ship with Qt and their support levels.
+
+    Trolltech's online \l{Platform Support Policy} describes the level of
+    support you should expect for these platforms.
+
+    \section1 Supported Features
+
+    \table
+    \header \o Compiler \o{5,1} Features
+    \header \o                  \o Concurrent \o XmlPatterns \o WebKit   \o CLucene  \o Phonon
+    \row    \o g++ 3.3          \o \bold{X}   \o \bold{X}    \o          \o \bold{X} \o \bold{X}
+    \row    \o g++ 3.4 and up   \o \bold{X}   \o \bold{X}    \o \bold{X} \o \bold{X} \o \bold{X}
+    \row
+    \row    \o SunCC <= 5.6     \o \bold{X}   \o             \o          \o \bold{X} \o \bold{X}
+    \row    \o SunCC 5.7 & 5.8  \o \bold{X}   \o \bold{X}    \o          \o \bold{X} \o \bold{X}
+    \row    \o SunCC 5.9 and up \o \bold{X}   \o \bold{X}    \o \bold{X} \o \bold{X} \o \bold{X}
+    \row
+    \row    \o aCC series 3     \o            \o             \o          \o \bold{X} \o \bold{X}
+    \row    \o aCC series 6     \o \bold{X}   \o \bold{X}    \o \bold{X} \o \bold{X} \o \bold{X}
+    \row    \o MIPSpro 7.4.2m   \o            \o \bold{X}    \o          \o \bold{X} \o \bold{X}
+    \row    \o xlC 6            \o            \o             \o          \o \bold{X} \o \bold{X}
+    \row    \o Intel CC 10      \o \bold{X}   \o \bold{X}    \o \bold{X} \o \bold{X} \o \bold{X}
+    \row
+    \row    \o MSVC 6.0         \o            \o             \o          \o \bold{X} \o \bold{X}
+    \row    \o MSVC 2002        \o            \o             \o          \o \bold{X} \o \bold{X}
+    \row    \o MSVC 2003        \o \bold{X}   \o \bold{X}    \o          \o \bold{X} \o \bold{X}
+    \row    \o MSVC 2005 and up \o \bold{X}   \o \bold{X}    \o \bold{X} \o \bold{X} \o \bold{X}
+    \endtable
+
+    \section1 Makespec Support
+
+    Note that any platform-compiler combinations not listed here should be considered unsupported.
+
+    \table
+    \header \o Makespec            \o Architecture  \o Compiler version(s) \o Support Level
+    \row    \o aix-g++             \o -             \o -                   \o -
+    \row    \o aix-g++-64          \o -             \o -                   \o -
+    \row    \o aix-xlc             \o PowerPC       \o 6                   \o Active
+    \row    \o aix-xlc-64          \o -             \o -                   \o -
+    \row    \o cygwin-g++          \o -             \o -                   \o Unsupported
+    \row    \o darwin-g++          \o -             \o -                   \o Community
+    \row    \o freebsd-g++         \o -             \o -                   \o Community
+    \row    \o freebsd-g++34       \o -             \o -                   \o Community
+    \row    \o freebsd-g++40       \o -             \o -                   \o Community
+    \row    \o freebsd-icc         \o -             \o -                   \o Community
+    \row    \o hpux-acc*           \o PA/RISC       \o A.03.57             \o Active
+    \row    \o hpux-g++            \o PA/RISC       \o 3.4                 \o Active
+    \row    \o hpux-g++-64         \o -             \o -                   \o Active
+    \row    \o hpuxi-acc*          \o Itanium       \o A.06.10             \o Active
+    \row    \o hpuxi-g++*          \o Itanium       \o 4.1                 \o Active
+    \row    \o hurd-g++            \o -             \o -                   \o Community
+    \row    \o irix-cc*            \o MIPS          \o MIPS Pro            \o Active
+    \row    \o irix-g++*           \o MIPS          \o 3.3                 \o Active
+    \row    \o linux-cxx           \o -             \o -                   \o Community
+    \row    \o linux-ecc-64        \o -             \o -                   \o Community
+    \row    \o linux-g++           \o Itanium       \o 3.4                 \o Community
+    \row    \o linux-g++           \o x86, x86-64   \o 3.3, 3.4            \o Community
+    \row    \o linux-g++           \o x86, x86-64   \o 4.1, 4.2            \o Active
+    \row    \o linux-icc           \o x86, x86-64   \o 10.1                \o Active
+    \row    \o linux-icc-32        \o -             \o -                   \o Active
+    \row    \o linux-icc-64        \o -             \o -                   \o Active
+    \row    \o linux-kcc           \o -             \o -                   \o Community
+    \row    \o linux-llvm          \o -             \o -                   \o Community
+    \row    \o linux-lsb-g++       \o -             \o -                   \o Community
+    \row    \o linux-pgcc          \o -             \o -                   \o Unsupported
+    \row    \o lynxos-g++          \o -             \o -                   \o Community
+    \row    \o macx-icc            \o -             \o -                   \o -
+    \row    \o macx-g++            \o ppc           \o 3.3                 \o Unsupported
+    \row    \o macx-g++            \o x86*, ppc*    \o 4.0.1               \o Active
+    \row    \o macx-llvm           \o -             \o -                   \o Community
+    \row    \o macx-pbuilder       \o -             \o -                   \o -
+    \row    \o macx-xcode          \o -             \o -                   \o Active
+    \row    \o macx-xlc            \o -             \o -                   \o -
+    \row    \o netbsd-g++          \o -             \o -                   \o Community
+    \row    \o openbsd-g++         \o -             \o -                   \o Community
+    \row    \o qws/linux-g++       \o MIPS, PowerPC \o 3.4, 4.1, 4.2       \o Community
+    \row    \o qws/linux-g++       \o x86, ARM      \o 3.4, 4.1, 4.2       \o Active
+    \row    \o sco-cc              \o -             \o -                   \o Unsupported
+    \row    \o sco-g++             \o -             \o -                   \o Unsupported
+    \row    \o solaris-cc*         \o sparc, x86    \o 5.5                 \o Active
+    \row    \o solaris-g++*        \o sparc, x86    \o 3.4.2               \o Active
+    \row    \o unixware-cc         \o -             \o -                   \o Unsupported
+    \row    \o unixware-g++        \o -             \o -                   \o Unsupported
+    \row    \o win32-borland       \o -             \o -                   \o Unsupported
+    \row    \o win32-g++           \o x86           \o 3.4                 \o Active
+    \row    \o win32-icc           \o x86           \o 9.1                 \o Active
+    \row    \o win32-msvc          \o x86           \o 6.0                 \o Active
+    \row    \o win32-msvc2002      \o -             \o 2002                \o Active
+    \row    \o win32-msvc2003      \o x86           \o 2003                \o Active
+    \row    \o win32-msvc2005      \o x86           \o 2005                \o Active
+    \row    \o win32-msvc2008      \o -             \o 2008                \o Active
+    \row    \o win32-msvc.net      \o x86           \o 2002                \o Active
+    \row    \o wince*-msvc.net2005 \o x86, ARMv4i   \o 2005                \o Active
+    \row    \o tru64-cxx           \o -             \o -                   \o Unsupported
+    \row    \o tru64-g++           \o -             \o -                   \o Unsupported
+    \endtable
+*/

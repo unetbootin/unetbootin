@@ -1,0 +1,990 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: view.cpp Example File (graphicsview/portedasteroids/view.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">view.cpp Example File<br /><span class="small-subtitle">graphicsview/portedasteroids/view.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  * KAsteroids - Copyright (c) Martin R. Jones 1997
+  *
+  * Part of the KDE project
+  */</span>
+
+ #include &lt;stdlib.h&gt;
+ #include &lt;math.h&gt;
+ #include &lt;qapplication.h&gt;
+ #include &lt;qnamespace.h&gt;
+ #include &lt;q3accel.h&gt;
+ #include &lt;qmessagebox.h&gt;
+ #include &lt;q3scrollview.h&gt;
+ #include &lt;qdir.h&gt;
+ #include &lt;QGraphicsItem&gt;
+<span class="comment"> //</span>Added by qt3to4:
+ #include &lt;QTimerEvent&gt;
+ #include &lt;QPixmap&gt;
+ #include &lt;QResizeEvent&gt;
+ #include &lt;QShowEvent&gt;
+
+ #include &quot;view.h&quot;
+
+ #define IMG_BACKGROUND &quot;:/trolltech/examples/graphicsview/portedasteroids/bg.png&quot;
+
+ #define REFRESH_DELAY           33
+ #define SHIP_SPEED              0.3
+ #define MISSILE_SPEED           10.0
+ #define SHIP_STEPS              64
+ #define ROTATE_RATE             2
+ #define SHIELD_ON_COST          1
+ #define SHIELD_HIT_COST         30
+ #define BRAKE_ON_COST           4
+
+ #define MAX_ROCK_SPEED          2.5
+ #define MAX_POWERUP_SPEED       1.5
+ #define MAX_SHIP_SPEED          12
+ #define MAX_BRAKES              5
+ #define MAX_SHIELDS             5
+ #define MAX_FIREPOWER           5
+
+ #define TEXT_SPEED              4
+
+ #define PI_X_2                  6.283185307
+ #ifndef M_PI
+ #define M_PI 3.141592654
+ #endif
+
+ static struct
+ {
+     int id;
+     const char *path;
+     int frames;
+ }
+ kas_animations [] =
+ {
+     { ID_ROCK_LARGE,       &quot;rock1/rock1%1.png&quot;,       32 },
+     { ID_ROCK_MEDIUM,      &quot;rock2/rock2%1.png&quot;,       32 },
+     { ID_ROCK_SMALL,       &quot;rock3/rock3%1.png&quot;,       32 },
+     { ID_SHIP,             &quot;ship/ship%1.png&quot;,         32 },
+     { ID_MISSILE,          &quot;missile/missile.png&quot;,      1 },
+     { ID_BIT,              &quot;bits/bits%1.png&quot;,         16 },
+     { ID_EXHAUST,          &quot;exhaust/exhaust.png&quot;,      1 },
+     { ID_ENERGY_POWERUP,   &quot;powerups/energy.png&quot;,      1 },
+<span class="comment"> //</span>    { ID_TELEPORT_POWERUP, &quot;powerups/teleport%1.png&quot;, 12 },
+     { ID_BRAKE_POWERUP,    &quot;powerups/brake.png&quot;,       1 },
+     { ID_SHIELD_POWERUP,   &quot;powerups/shield.png&quot;,      1 },
+     { ID_SHOOT_POWERUP,    &quot;powerups/shoot.png&quot;,       1 },
+     { ID_SHIELD,           &quot;shield/shield%1.png&quot;,      6 },
+     { 0,                   0,                          0 }
+ };
+
+ KAsteroidsView::KAsteroidsView( QWidget *parent, const char *name )
+     : QWidget( parent, name ),
+       field(0, 0, 640, 440),
+       view(&amp;field,this)
+ {
+     view.setVerticalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+     view.setHorizontalScrollBarPolicy( Qt::ScrollBarAlwaysOff );
+     view.setCacheMode(QGraphicsView::CacheBackground);
+     view.setViewportUpdateMode(QGraphicsView::BoundingRectViewportUpdate);
+     view.setOptimizationFlags(QGraphicsView::DontClipPainter
+                               | QGraphicsView::DontSavePainterState
+                               | QGraphicsView::DontAdjustForAntialiasing);
+     view.viewport()-&gt;setFocusProxy( this );
+     rocks.setAutoDelete( TRUE );
+     missiles.setAutoDelete( TRUE );
+     bits.setAutoDelete( TRUE );
+     powerups.setAutoDelete( TRUE );
+     exhaust.setAutoDelete( TRUE );
+
+     QPixmap pm( IMG_BACKGROUND );
+     field.setBackgroundBrush( pm );
+
+     textSprite = new QGraphicsTextItem( 0, &amp;field );
+     QFont font( &quot;helvetica&quot;, 18 );
+     textSprite-&gt;setFont( font );
+     textSprite-&gt;setCacheMode(QGraphicsItem::DeviceCoordinateCache);
+
+     shield = 0;
+     shieldOn = FALSE;
+     refreshRate = REFRESH_DELAY;
+
+     initialized = readSprites();
+
+     shieldTimer = new QTimer( this );
+     connect( shieldTimer, SIGNAL(timeout()), this, SLOT(hideShield()) );
+     mTimerId = -1;
+
+     shipPower = MAX_POWER_LEVEL;
+     vitalsChanged = TRUE;
+     can_destroy_powerups = FALSE;
+
+     mPaused = TRUE;
+
+     if ( !initialized ) {
+         textSprite-&gt;setHtml( tr(&quot;&lt;font color=red&gt;Error: Cannot read sprite images&lt;/font&gt;&quot;) );
+         textSprite-&gt;setPos( (field.width()-textSprite-&gt;boundingRect().width()) / 2,
+                             (field.height()-textSprite-&gt;boundingRect().height()) / 2 );
+     }
+ }
+
+<span class="comment"> //</span> - - -
+
+ KAsteroidsView::~KAsteroidsView()
+ {
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::reset()
+ {
+     if ( !initialized )
+         return;
+     rocks.clear();
+     missiles.clear();
+     bits.clear();
+     powerups.clear();
+     exhaust.clear();
+
+     shotsFired = 0;
+     shotsHit = 0;
+
+     rockSpeed = 1.0;
+     powerupSpeed = 1.0;
+     mFrameNum = 0;
+     mPaused = FALSE;
+
+     ship-&gt;hide();
+     shield-&gt;hide();
+<span class="comment"> /*
+     if ( mTimerId &gt;= 0 ) {
+         killTimer( mTimerId );
+         mTimerId = -1;
+     }
+ */</span>
+ }
+
+<span class="comment"> //</span> - --
+
+ void KAsteroidsView::newGame()
+ {
+     if ( !initialized )
+         return;
+     if ( shieldOn )
+     {
+       shield-&gt;hide();
+       shieldOn = FALSE;
+     }
+     reset();
+     if ( mTimerId &lt; 0 )
+         mTimerId = startTimer( REFRESH_DELAY );
+     emit updateVitals();
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::endGame()
+ {
+ }
+
+ void KAsteroidsView::pause( bool p )
+ {
+     if ( !initialized )
+         return;
+     if ( !mPaused &amp;&amp; p ) {
+         if ( mTimerId &gt;= 0 ) {
+             killTimer( mTimerId );
+             mTimerId = -1;
+         }
+     } else if ( mPaused &amp;&amp; !p )
+         mTimerId = startTimer( REFRESH_DELAY );
+     mPaused = p;
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::newShip()
+ {
+     if ( !initialized )
+         return;
+     ship-&gt;setPos( width()/2, height()/2 );
+     ship-&gt;setFrame( 0 );
+     shield-&gt;setPos( width()/2, height()/2 );
+     shield-&gt;setFrame( 0 );
+     ship-&gt;setVelocity( 0.0, 0.0 );
+     shipDx = 0;
+     shipDy = 0;
+     shipAngle = 0;
+     rotateL = FALSE;
+     rotateR = FALSE;
+     thrustShip = FALSE;
+     shootShip = FALSE;
+     brakeShip = FALSE;
+     teleportShip = FALSE;
+     shieldOn = TRUE;
+     shootDelay = 0;
+     shipPower = MAX_POWER_LEVEL;
+     rotateRate = ROTATE_RATE;
+     rotateSlow = 0;
+
+     mBrakeCount = 0;
+     mTeleportCount = 0;
+     mShootCount = 0;
+
+     ship-&gt;show();
+     shield-&gt;show();
+     mShieldCount = 1;   <span class="comment">//</span> just in case the ship appears on a rock.
+     shieldTimer-&gt;start( 1000, TRUE );
+ }
+
+ void KAsteroidsView::setShield( bool s )
+ {
+     if ( !initialized )
+         return;
+     if ( shieldTimer-&gt;isActive() &amp;&amp; !s ) {
+         shieldTimer-&gt;stop();
+         hideShield();
+     } else {
+         shieldOn = s &amp;&amp; mShieldCount;
+     }
+ }
+
+ void KAsteroidsView::brake( bool b )
+ {
+     if ( !initialized )
+         return;
+     if ( mBrakeCount )
+     {
+         if ( brakeShip &amp;&amp; !b )
+         {
+             rotateL = FALSE;
+             rotateR = FALSE;
+             thrustShip = FALSE;
+             rotateRate = ROTATE_RATE;
+         }
+
+         brakeShip = b;
+     }
+ }
+
+<span class="comment"> //</span> - - -
+
+ bool KAsteroidsView::readSprites()
+ {
+     QString sprites_prefix = &quot;:/trolltech/examples/graphicsview/portedasteroids/sprites/&quot;;
+
+     int i = 0;
+     while ( kas_animations[i].id )
+     {
+         QList&lt;QPixmap&gt; anim;
+         QString wildcard = sprites_prefix + kas_animations[i].path;
+         wildcard.replace(&quot;%1&quot;, &quot;*&quot;);
+         QFileInfo fi(wildcard);
+         foreach (QString entry, QDir(fi.path(), fi.fileName()).entryList())
+             anim &lt;&lt; QPixmap(fi.path() + &quot;/&quot; + entry);
+         animation.insert( kas_animations[i].id, anim );
+         i++;
+     }
+
+     ship = new AnimatedPixmapItem( animation[ID_SHIP], &amp;field );
+     ship-&gt;hide();
+
+     shield = new KShield( animation[ID_SHIELD], &amp;field );
+     shield-&gt;hide();
+
+     return (!ship-&gt;image(0).isNull() &amp;&amp; !shield-&gt;image(0).isNull());
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::addRocks( int num )
+ {
+     if ( !initialized )
+         return;
+     for ( int i = 0; i &lt; num; i++ )
+     {
+         KRock *rock = new KRock( animation[ID_ROCK_LARGE], &amp;field,
+                              ID_ROCK_LARGE, randInt(2), randInt(2) ? -1 : 1 );
+         double dx = (2.0 - randDouble()*4.0) * rockSpeed;
+         double dy = (2.0 - randDouble()*4.0) * rockSpeed;
+         rock-&gt;setVelocity( dx, dy );
+         rock-&gt;setFrame( randInt( rock-&gt;frameCount() ) );
+         if ( dx &gt; 0 )
+         {
+             if ( dy &gt; 0 )
+                 rock-&gt;setPos( 5, 5 );
+             else
+                 rock-&gt;setPos( 5, field.height() - 25 );
+             rock-&gt;setFrame( 0 );
+         }
+         else
+         {
+             if ( dy &gt; 0 )
+                 rock-&gt;setPos( field.width() - 25, 5 );
+             else
+                 rock-&gt;setPos( field.width() - 25, field.height() - 25 );
+             rock-&gt;setFrame( 0 );
+         }
+         rock-&gt;show();
+         rocks.append( rock );
+     }
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::showText( const QString &amp;text, const QColor &amp;color, bool scroll )
+ {
+     if ( !initialized )
+         return;
+     textSprite-&gt;setHtml( QString(&quot;&lt;font color=#%1%2%3&gt;%4&lt;/font&gt;&quot;)
+                          .arg(color.red(), 2, 16, QLatin1Char('0'))
+                          .arg(color.green(), 2, 16, QLatin1Char('0'))
+                          .arg(color.blue(), 2, 16, QLatin1Char('0'))
+                          .arg(text) );
+     Q_UNUSED(color);
+     <span class="comment">//</span> ### Porting: no such thing textSprite-&gt;setColor( color );
+
+     if ( scroll ) {
+         textSprite-&gt;setPos( (field.width()-textSprite-&gt;boundingRect().width()) / 2,
+                             -textSprite-&gt;boundingRect().height() );
+         textDy = TEXT_SPEED;
+     } else {
+         textSprite-&gt;setPos( (field.width()-textSprite-&gt;boundingRect().width()) / 2,
+                             (field.height()-textSprite-&gt;boundingRect().height()) / 2 );
+         textDy = 0;
+     }
+     textSprite-&gt;show();
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::hideText()
+ {
+     textDy = -TEXT_SPEED;
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::resizeEvent(QResizeEvent* event)
+ {
+     QWidget::resizeEvent(event);
+     field.setSceneRect(0, 0, width()-4, height()-4);
+     view.resize(width(),height());
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::timerEvent( QTimerEvent * )
+ {
+     field.advance();
+
+     AnimatedPixmapItem *rock;
+
+     <span class="comment">//</span> move rocks forward
+     for ( rock = rocks.first(); rock; rock = rocks.next() ) {
+         ((KRock *)rock)-&gt;nextFrame();
+         wrapSprite( rock );
+     }
+
+     wrapSprite( ship );
+
+     <span class="comment">//</span> check for missile collision with rocks.
+     processMissiles();
+
+     <span class="comment">//</span> these are generated when a ship explodes
+     for ( KBit *bit = bits.first(); bit; bit = bits.next() )
+     {
+         if ( bit-&gt;expired() )
+         {
+             bits.removeRef( bit );
+         }
+         else
+         {
+             bit-&gt;growOlder();
+             bit-&gt;setFrame( ( bit-&gt;frame()+1 ) % bit-&gt;frameCount() );
+         }
+     }
+
+     for ( KExhaust *e = exhaust.first(); e; e = exhaust.next() )
+         exhaust.removeRef( e );
+
+     <span class="comment">//</span> move / rotate ship.
+     <span class="comment">//</span> check for collision with a rock.
+     processShip();
+
+     <span class="comment">//</span> move powerups and check for collision with player and missiles
+     processPowerups();
+
+     if ( textSprite-&gt;isVisible() )
+     {
+         if ( textDy &lt; 0 &amp;&amp;
+              textSprite-&gt;boundingRect().y() &lt;= -textSprite-&gt;boundingRect().height() ) {
+             textSprite-&gt;hide();
+         } else {
+             textSprite-&gt;moveBy( 0, textDy );
+         }
+
+         if ( textSprite-&gt;sceneBoundingRect().y() &gt; (field.height()-textSprite-&gt;boundingRect().height())/2 )
+             textDy = 0;
+     }
+
+     if ( vitalsChanged &amp;&amp; !(mFrameNum % 10) ) {
+         emit updateVitals();
+         vitalsChanged = FALSE;
+     }
+
+     mFrameNum++;
+ }
+
+ void KAsteroidsView::wrapSprite( QGraphicsItem *s )
+ {
+     int x = int(s-&gt;x() + s-&gt;boundingRect().width() / 2);
+     int y = int(s-&gt;y() + s-&gt;boundingRect().height() / 2);
+
+     if ( x &gt; field.width() )
+         s-&gt;setPos( s-&gt;x() - field.width(), s-&gt;y() );
+     else if ( x &lt; 0 )
+         s-&gt;setPos( field.width() + s-&gt;x(), s-&gt;y() );
+
+     if ( y &gt; field.height() )
+         s-&gt;setPos( s-&gt;x(), s-&gt;y() - field.height() );
+     else if ( y &lt; 0 )
+         s-&gt;setPos( s-&gt;x(), field.height() + s-&gt;y() );
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::rockHit( AnimatedPixmapItem *hit )
+ {
+     KPowerup *nPup = 0;
+     int rnd = int(randDouble()*30.0) % 30;
+     switch( rnd )
+     {
+       case 4:
+       case 5:
+           nPup = new KPowerup( animation[ID_ENERGY_POWERUP], &amp;field,
+                                ID_ENERGY_POWERUP );
+         break;
+       case 10:
+<span class="comment"> //</span>        nPup = new KPowerup( animation[ID_TELEPORT_POWERUP], &amp;field,
+<span class="comment"> //</span>                             ID_TELEPORT_POWERUP );
+         break;
+       case 15:
+           nPup = new KPowerup( animation[ID_BRAKE_POWERUP], &amp;field,
+                                ID_BRAKE_POWERUP );
+         break;
+       case 20:
+           nPup = new KPowerup( animation[ID_SHIELD_POWERUP], &amp;field,
+                                ID_SHIELD_POWERUP );
+         break;
+       case 24:
+       case 25:
+           nPup = new KPowerup( animation[ID_SHOOT_POWERUP], &amp;field,
+                                ID_SHOOT_POWERUP );
+         break;
+     }
+     if ( nPup )
+     {
+         double r = 0.5 - randDouble();
+         nPup-&gt;setPos( hit-&gt;x(), hit-&gt;y() );
+         nPup-&gt;setFrame( 0 );
+         nPup-&gt;setVelocity( hit-&gt;xVelocity() + r, hit-&gt;yVelocity() + r );
+         powerups.append( nPup );
+     }
+
+     if ( hit-&gt;type() == ID_ROCK_LARGE || hit-&gt;type() == ID_ROCK_MEDIUM )
+     {
+         <span class="comment">//</span> break into smaller rocks
+         double addx[4] = { 1.0, 1.0, -1.0, -1.0 };
+         double addy[4] = { -1.0, 1.0, -1.0, 1.0 };
+
+         double dx = hit-&gt;xVelocity();
+         double dy = hit-&gt;yVelocity();
+
+         double maxRockSpeed = MAX_ROCK_SPEED * rockSpeed;
+         if ( dx &gt; maxRockSpeed )
+             dx = maxRockSpeed;
+         else if ( dx &lt; -maxRockSpeed )
+             dx = -maxRockSpeed;
+         if ( dy &gt; maxRockSpeed )
+             dy = maxRockSpeed;
+         else if ( dy &lt; -maxRockSpeed )
+             dy = -maxRockSpeed;
+
+         AnimatedPixmapItem *nrock;
+
+         for ( int i = 0; i &lt; 4; i++ )
+         {
+             double r = rockSpeed/2 - randDouble()*rockSpeed;
+             if ( hit-&gt;type() == ID_ROCK_LARGE )
+             {
+                 nrock = new KRock( animation[ID_ROCK_MEDIUM], &amp;field,
+                                    ID_ROCK_MEDIUM, randInt(2), randInt(2) ? -1 : 1 );
+                 emit rockHit( 0 );
+             }
+             else
+             {
+                 nrock = new KRock( animation[ID_ROCK_SMALL], &amp;field,
+                                    ID_ROCK_SMALL, randInt(2), randInt(2) ? -1 : 1 );
+                 emit rockHit( 1 );
+             }
+
+             nrock-&gt;setPos( hit-&gt;x(), hit-&gt;y() );
+             nrock-&gt;setFrame( 0 );
+             nrock-&gt;setVelocity( dx+addx[i]*rockSpeed+r, dy+addy[i]*rockSpeed+r );
+             nrock-&gt;setFrame( randInt( nrock-&gt;frameCount() ) );
+             rocks.append( nrock );
+         }
+     }
+     else if ( hit-&gt;type() == ID_ROCK_SMALL )
+         emit rockHit( 2 );
+     rocks.removeRef( hit );
+     if ( rocks.count() == 0 )
+         emit rocksRemoved();
+ }
+
+ void KAsteroidsView::reducePower( int val )
+ {
+     shipPower -= val;
+     if ( shipPower &lt;= 0 )
+     {
+         shipPower = 0;
+         thrustShip = FALSE;
+         if ( shieldOn )
+         {
+             shieldOn = FALSE;
+             shield-&gt;hide();
+         }
+     }
+     vitalsChanged = TRUE;
+ }
+
+ void KAsteroidsView::addExhaust( double x, double y, double dx,
+                                  double dy, int count )
+ {
+     for ( int i = 0; i &lt; count; i++ )
+     {
+         KExhaust *e = new KExhaust( animation[ID_EXHAUST], &amp;field );
+         e-&gt;setPos( x + 2 - randDouble()*4, y + 2 - randDouble()*4 );
+         e-&gt;setVelocity( dx, dy );
+         exhaust.append( e );
+     }
+ }
+
+ void KAsteroidsView::processMissiles()
+ {
+     KMissile *missile;
+
+     <span class="comment">//</span> if a missile has hit a rock, remove missile and break rock into smaller
+     <span class="comment">//</span> rocks or remove completely.
+     Q3PtrListIterator&lt;KMissile&gt; it(missiles);
+
+     for ( ; it.current(); ++it )
+     {
+         missile = it.current();
+         missile-&gt;growOlder();
+
+         if ( missile-&gt;expired() )
+         {
+             missiles.removeRef( missile );
+             continue;
+         }
+
+         wrapSprite( missile );
+
+         QList&lt;QGraphicsItem *&gt; hits = missile-&gt;collidingItems(Qt::IntersectsItemBoundingRect);
+         QList&lt;QGraphicsItem *&gt;::Iterator hit;
+         for ( hit = hits.begin(); hit != hits.end(); ++hit )
+         {
+             if ( (*hit)-&gt;type() &gt;= ID_ROCK_LARGE &amp;&amp;
+                  (*hit)-&gt;type() &lt;= ID_ROCK_SMALL &amp;&amp; (*hit)-&gt;collidesWithItem(missile) )
+             {
+                 shotsHit++;
+                 rockHit( static_cast&lt;AnimatedPixmapItem *&gt;(*hit) );
+                 missiles.removeRef( missile );
+                 break;
+             }
+         }
+     }
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::processShip()
+ {
+     if ( ship-&gt;isVisible() )
+     {
+         if ( shieldOn )
+         {
+             shield-&gt;show();
+             reducePower( SHIELD_ON_COST );
+             static int sf = 0;
+             sf++;
+
+             if ( sf % 2 )
+                 shield-&gt;setFrame( (shield-&gt;frame()+1) % shield-&gt;frameCount() );
+             shield-&gt;setPos( ship-&gt;x() - 9, ship-&gt;y() - 9 );
+
+             QList&lt;QGraphicsItem *&gt; hits = shield-&gt;collidingItems(Qt::IntersectsItemBoundingRect);
+             QList&lt;QGraphicsItem *&gt;::Iterator it;
+             for ( it = hits.begin(); it != hits.end(); ++it )
+             {
+                 if ( (*it)-&gt;type() &gt;= ID_ROCK_LARGE &amp;&amp;
+                      (*it)-&gt;type() &lt;= ID_ROCK_SMALL &amp;&amp; (*it)-&gt;collidesWithItem(shield) )
+                 {
+                     int factor;
+                     switch ( (*it)-&gt;type() )
+                     {
+                         case ID_ROCK_LARGE:
+                             factor = 3;
+                             break;
+
+                         case ID_ROCK_MEDIUM:
+                             factor = 2;
+                             break;
+
+                         default:
+                             factor = 1;
+                     }
+
+                     if ( factor &gt; mShieldCount )
+                     {
+                         <span class="comment">//</span> shield not strong enough
+                         shieldOn = FALSE;
+                         break;
+                     }
+                     rockHit( static_cast&lt;AnimatedPixmapItem *&gt;(*it) );
+                     <span class="comment">//</span> the more shields we have the less costly
+                     reducePower( factor * (SHIELD_HIT_COST - mShieldCount*2) );
+                 }
+             }
+         }
+
+         if ( !shieldOn )
+         {
+             shield-&gt;hide();
+             QList&lt;QGraphicsItem *&gt; hits = ship-&gt;collidingItems(Qt::IntersectsItemBoundingRect);
+             QList&lt;QGraphicsItem *&gt;::Iterator it;
+             for ( it = hits.begin(); it != hits.end(); ++it )
+             {
+                 if ( (*it)-&gt;type() &gt;= ID_ROCK_LARGE &amp;&amp;
+                      (*it)-&gt;type() &lt;= ID_ROCK_SMALL &amp;&amp; (*it)-&gt;collidesWithItem(ship))
+                 {
+                     KBit *bit;
+                     for ( int i = 0; i &lt; 12; i++ )
+                     {
+                       bit = new KBit( animation[ID_BIT], &amp;field );
+                       bit-&gt;setPos( ship-&gt;x() + 5 - randDouble() * 10,
+                                    ship-&gt;y() + 5 - randDouble() * 10 );
+                       bit-&gt;setFrame( randInt(bit-&gt;frameCount()) );
+                       bit-&gt;setVelocity( 1-randDouble()*2,
+                                         1-randDouble()*2 );
+                       bit-&gt;setDeath( 60 + randInt(60) );
+                       bits.append( bit );
+                     }
+                     ship-&gt;hide();
+                     shield-&gt;hide();
+                     emit shipKilled();
+                     break;
+                 }
+             }
+         }
+
+         if ( rotateSlow )
+             rotateSlow--;
+
+         if ( rotateL )
+         {
+             shipAngle -= rotateSlow ? 1 : rotateRate;
+             if ( shipAngle &lt; 0 )
+                 shipAngle += SHIP_STEPS;
+         }
+
+         if ( rotateR )
+         {
+             shipAngle += rotateSlow ? 1 : rotateRate;
+             if ( shipAngle &gt;= SHIP_STEPS )
+                 shipAngle -= SHIP_STEPS;
+         }
+
+         double angle = shipAngle * PI_X_2 / SHIP_STEPS;
+         double cosangle = cos( angle );
+         double sinangle = sin( angle );
+
+         if ( brakeShip )
+         {
+             thrustShip = FALSE;
+             rotateL = FALSE;
+             rotateR = FALSE;
+             rotateRate = ROTATE_RATE;
+             if ( fabs(shipDx) &lt; 2.5 &amp;&amp; fabs(shipDy) &lt; 2.5 )
+             {
+                 shipDx = 0.0;
+                 shipDy = 0.0;
+                 ship-&gt;setVelocity( shipDx, shipDy );
+                 brakeShip = FALSE;
+             }
+             else
+             {
+                 double motionAngle = atan2( -shipDy, -shipDx );
+                 if ( angle &gt; M_PI )
+                     angle -= PI_X_2;
+                 double angleDiff = angle - motionAngle;
+                 if ( angleDiff &gt; M_PI )
+                     angleDiff = PI_X_2 - angleDiff;
+                 else if ( angleDiff &lt; -M_PI )
+                     angleDiff = PI_X_2 + angleDiff;
+                 double fdiff = fabs( angleDiff );
+                 if ( fdiff &gt; 0.08 )
+                 {
+                     if ( angleDiff &gt; 0 )
+                         rotateL = TRUE;
+                     else if ( angleDiff &lt; 0 )
+                         rotateR = TRUE;
+                     if ( fdiff &gt; 0.6 )
+                         rotateRate = mBrakeCount + 1;
+                     else if ( fdiff &gt; 0.4 )
+                         rotateRate = 2;
+                     else
+                         rotateRate = 1;
+
+                     if ( rotateRate &gt; 5 )
+                         rotateRate = 5;
+                 }
+                 else if ( fabs(shipDx) &gt; 1 || fabs(shipDy) &gt; 1 )
+                 {
+                     thrustShip = TRUE;
+                     <span class="comment">//</span> we'll make braking a bit faster
+                     shipDx += cosangle/6 * (mBrakeCount - 1);
+                     shipDy += sinangle/6 * (mBrakeCount - 1);
+                     reducePower( BRAKE_ON_COST );
+                     addExhaust( ship-&gt;x() + 20 - cosangle*22,
+                                 ship-&gt;y() + 20 - sinangle*22,
+                                 shipDx-cosangle, shipDy-sinangle,
+                                 mBrakeCount+1 );
+                 }
+             }
+         }
+
+         if ( thrustShip )
+         {
+             <span class="comment">//</span> The ship has a terminal velocity, but trying to go faster
+             <span class="comment">//</span> still uses fuel (can go faster diagonally - don't care).
+             double thrustx = cosangle/4;
+             double thrusty = sinangle/4;
+             if ( fabs(shipDx + thrustx) &lt; MAX_SHIP_SPEED )
+                 shipDx += thrustx;
+             if ( fabs(shipDy + thrusty) &lt; MAX_SHIP_SPEED )
+                 shipDy += thrusty;
+             ship-&gt;setVelocity( shipDx, shipDy );
+             reducePower( 1 );
+             addExhaust( ship-&gt;x() + 20 - cosangle*20,
+                         ship-&gt;y() + 20 - sinangle*20,
+                         shipDx-cosangle, shipDy-sinangle, 3 );
+         }
+
+         ship-&gt;setFrame( shipAngle &gt;&gt; 1 );
+
+         if ( shootShip )
+         {
+             if ( !shootDelay &amp;&amp; (int)missiles.count() &lt; mShootCount + 2 )
+             {
+               KMissile *missile = new KMissile( animation[ID_MISSILE], &amp;field );
+               missile-&gt;setPos( 21+ship-&gt;x()+cosangle*21,
+                              21+ship-&gt;y()+sinangle*21 );
+               missile-&gt;setFrame( 0 );
+               missile-&gt;setVelocity( shipDx + cosangle*MISSILE_SPEED,
+                                     shipDy + sinangle*MISSILE_SPEED );
+               missiles.append( missile );
+               shotsFired++;
+               reducePower( 1 );
+
+               shootDelay = 5;
+             }
+
+             if ( shootDelay )
+               shootDelay--;
+         }
+
+         if ( teleportShip )
+         {
+             int ra = qrand() % 10;
+             if( ra == 0 )
+             ra += qrand() % 20;
+             int xra = ra * 60 + ( (qrand() % 20) * (qrand() % 20) );
+             int yra = ra * 50 - ( (qrand() % 20) * (qrand() % 20) );
+             ship-&gt;setPos( xra, yra );
+         }
+
+         vitalsChanged = TRUE;
+     }
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::processPowerups()
+ {
+     if ( !powerups.isEmpty() )
+     {
+         <span class="comment">//</span> if player gets the powerup remove it from the screen, if option
+         <span class="comment">//</span> &quot;Can destroy powerups&quot; is enabled and a missile hits the powerup
+         <span class="comment">//</span> destroy it
+
+         KPowerup *pup;
+         Q3PtrListIterator&lt;KPowerup&gt; it( powerups );
+
+         for( ; it.current(); ++it )
+         {
+             pup = it.current();
+             pup-&gt;growOlder();
+
+             if( pup-&gt;expired() )
+             {
+                 powerups.removeRef( pup );
+                 continue;
+             }
+
+             wrapSprite( pup );
+
+             QList&lt;QGraphicsItem *&gt; hits = pup-&gt;collidingItems();
+             QList&lt;QGraphicsItem *&gt;::Iterator it;
+             for ( it = hits.begin(); it != hits.end(); ++it )
+             {
+                 if ( (*it) == ship )
+                 {
+                     switch( pup-&gt;type() )
+                     {
+                       case ID_ENERGY_POWERUP:
+                         shipPower += 150;
+                         if ( shipPower &gt; MAX_POWER_LEVEL )
+                             shipPower = MAX_POWER_LEVEL;
+                         break;
+                       case ID_TELEPORT_POWERUP:
+                         mTeleportCount++;
+                         break;
+                       case ID_BRAKE_POWERUP:
+                         if ( mBrakeCount &lt; MAX_BRAKES )
+                             mBrakeCount++;
+                         break;
+                       case ID_SHIELD_POWERUP:
+                         if ( mShieldCount &lt; MAX_SHIELDS )
+                             mShieldCount++;
+                         break;
+                       case ID_SHOOT_POWERUP:
+                         if ( mShootCount &lt; MAX_FIREPOWER )
+                             mShootCount++;
+                         break;
+                     }
+
+                     powerups.removeRef( pup );
+                     vitalsChanged = TRUE;
+                 }
+                 else if ( (*it) == shield )
+                 {
+                     powerups.removeRef( pup );
+                 }
+                 else if ( (*it)-&gt;type() == ID_MISSILE )
+                 {
+                     if ( can_destroy_powerups )
+                     {
+                         powerups.removeRef( pup );
+                     }
+                 }
+             }
+         }
+     }         <span class="comment">//</span> -- if( powerups.isEmpty() )
+ }
+
+<span class="comment"> //</span> - - -
+
+ void KAsteroidsView::hideShield()
+ {
+     shield-&gt;hide();
+     mShieldCount = 0;
+     shieldOn = FALSE;
+ }
+
+ double KAsteroidsView::randDouble()
+ {
+     int v = qrand();
+     return (double)v / (double)RAND_MAX;
+ }
+
+ int KAsteroidsView::randInt( int range )
+ {
+     return qrand() % range;
+ }
+
+ void KAsteroidsView::showEvent( QShowEvent *e )
+ {
+ #if defined( QT_LICENSE_PROFESSIONAL )
+     static bool wasThere = FALSE;
+
+     if ( !wasThere ) {
+         wasThere = TRUE;
+         QMessageBox::information( this, tr(&quot;QCanvas demo&quot;),
+                                   tr(&quot;This game has been implemented using the QCanvas class.\n&quot;
+                                      &quot;The QCanvas class is not part of the Professional Edition. Please \n&quot;
+                                      &quot;contact Trolltech if you want to upgrade to the Enterprise Edition.&quot;) );
+     }
+ #endif
+
+     QWidget::showEvent( e );
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

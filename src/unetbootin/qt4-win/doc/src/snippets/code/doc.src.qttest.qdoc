@@ -1,0 +1,10 @@
+//! [0]
+        #include <QtTest>
+//! [0]
+
+
+//! [1]
+        CONFIG += qtestlib
+//! [1]
+
+

@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: filetree.cpp Example File (xmlpatterns/filetree/filetree.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">filetree.cpp Example File<br /><span class="small-subtitle">xmlpatterns/filetree/filetree.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtCore/QUrl&gt;
+ #include &lt;QtCore/QVariant&gt;
+ #include &lt;QtXmlPatterns/QXmlNamePool&gt;
+ #include &quot;filetree.h&quot;
+
+<span class="comment"> /*
+ The model has two types of nodes: elements &amp; attributes.
+
+     &lt;directory name=&quot;&quot;&gt;
+         &lt;file name=&quot;&quot;&gt;
+         &lt;/file&gt;
+     &lt;/directory&gt;
+
+   In QXmlNodeModelIndex we store two values. QXmlNodeIndex::data()
+   is treated as a signed int, and it is an index into m_fileInfos
+   unless it is -1, in which case it has no meaning and the value
+   of QXmlNodeModelIndex::additionalData() is a Type name instead.
+  */</span>
+
+<span class="comment"> /*!
+   The constructor passes \a pool to the base class, then loads an
+   internal vector with an instance of QXmlName for each of the
+   strings &quot;file&quot;, &quot;directory&quot;, &quot;fileName&quot;, &quot;filePath&quot;, &quot;size&quot;,
+   &quot;mimeType&quot;, and &quot;suffix&quot;.
+  */</span>
+ FileTree::FileTree(const QXmlNamePool&amp; pool) : QSimpleXmlNodeModel(pool)
+                                              , m_filterAllowAll(QDir::AllEntries
+                                                                 | QDir::AllDirs
+                                                                 | QDir::NoDotAndDotDot
+                                                                 | QDir::Hidden)
+                                              , m_sortFlags(QDir::Name)
+ {
+     QXmlNamePool np = namePool();
+     m_names.resize(7);
+     m_names[File]               = QXmlName(np, QLatin1String(&quot;file&quot;));
+     m_names[Directory]          = QXmlName(np, QLatin1String(&quot;directory&quot;));
+     m_names[AttributeFileName]  = QXmlName(np, QLatin1String(&quot;fileName&quot;));
+     m_names[AttributeFilePath]  = QXmlName(np, QLatin1String(&quot;filePath&quot;));
+     m_names[AttributeSize]      = QXmlName(np, QLatin1String(&quot;size&quot;));
+     m_names[AttributeMIMEType]  = QXmlName(np, QLatin1String(&quot;mimeType&quot;));
+     m_names[AttributeSuffix]    = QXmlName(np, QLatin1String(&quot;suffix&quot;));
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex FileTree::nodeFor(const QString&amp; dirName) const
+ {
+     <span class="comment">/* We call QDir::cleanPath() because a QFileInfo constructed on a
+      * path ending with a slash, will return the empty string in fileName(),
+      * instead of the directory name. */</span>
+     QFileInfo dirInfo(QDir::cleanPath(dirName));
+     Q_ASSERT(dirInfo.exists());
+     return toNodeIndex(dirInfo);
+ }
+
+<span class="comment"> /*!
+   Since the value will always be in m_fileInfos, it is safe for
+   us to return a const reference to it.
+  */</span>
+ const QFileInfo&amp;
+ FileTree::toFileInfo(const QXmlNodeModelIndex &amp;nodeIndex) const
+ {
+     return m_fileInfos.at(nodeIndex.data());
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex
+ FileTree::toNodeIndex(const QFileInfo &amp;fileInfo, Type attributeName) const
+ {
+     const int indexOf = m_fileInfos.indexOf(fileInfo);
+
+     if (indexOf == -1) {
+         m_fileInfos.append(fileInfo);
+         return createIndex(m_fileInfos.count()-1, attributeName);
+     }
+     else
+         return createIndex(indexOf, attributeName);
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex FileTree::toNodeIndex(const QFileInfo &amp;fileInfo) const
+ {
+     return toNodeIndex(fileInfo, fileInfo.isDir() ? Directory : File);
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex FileTree::nextSibling(const QXmlNodeModelIndex &amp;nodeIndex,
+                                          const QFileInfo &amp;fileInfo,
+                                          qint8 offset) const
+ {
+     Q_ASSERT(offset == -1 || offset == 1);
+
+     <span class="comment">/* First, get our parent. */</span>
+     const QXmlNodeModelIndex parent(nextFromSimpleAxis(Parent, nodeIndex));
+
+     if (parent.isNull())
+         return QXmlNodeModelIndex();
+
+     <span class="comment">/* Now, get all the parent's children. That is, all our siblings. */</span>
+     const QFileInfo parentFI(toFileInfo(parent));
+     Q_ASSERT(Type(parent.additionalData()) == Directory);
+     const QFileInfoList
+     siblings(QDir(parentFI.absoluteFilePath()).entryInfoList(QStringList(), m_filterAllowAll, m_sortFlags));
+     Q_ASSERT_X(!siblings.isEmpty(),
+                Q_FUNC_INFO,
+                &quot;This would be a contradiction, there's at least one.&quot;);
+
+     const int indexOfMe = siblings.indexOf(fileInfo);
+     Q_ASSERT_X(indexOfMe != -1, Q_FUNC_INFO, &quot;We're there, somewhere.&quot;);
+
+     const int siblingIndex = indexOfMe + offset;
+     if (siblingIndex &lt; 0 || siblingIndex &gt; siblings.count() - 1)
+         return QXmlNodeModelIndex();
+     else
+         return toNodeIndex(siblings.at(siblingIndex));
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex
+ FileTree::nextFromSimpleAxis(QSimpleXmlNodeModel::SimpleAxis axis,
+                              const QXmlNodeModelIndex &amp;nodeIndex) const
+ {
+     const QFileInfo fi(toFileInfo(nodeIndex));
+     const Type type = Type(nodeIndex.additionalData());
+
+     if (type != File &amp;&amp; type != Directory) {
+         <span class="comment">/* We're an attribute. */</span>
+         Q_ASSERT_X(axis == Parent,
+                    Q_FUNC_INFO,
+                    &quot;QSimpleXmlNodeModel guarantees that it only &quot;
+                    &quot;asks for Parent for attributes.&quot;);
+         return toNodeIndex(fi, Directory);
+     }
+
+     switch(axis) {
+         case Parent:
+             return toNodeIndex(QFileInfo(fi.path()), Directory);
+         case FirstChild:
+         {
+             if (type == File) {
+                 <span class="comment">/* This guy doesn't have children. */</span>
+                 return QXmlNodeModelIndex();
+             }
+             else {
+                 Q_ASSERT(type == Directory);
+                 Q_ASSERT_X(fi.isDir(),
+                            Q_FUNC_INFO,
+                            &quot;If we're a directory, we really should be one!&quot;);
+
+                 const QDir dir(fi.absoluteFilePath());
+                 Q_ASSERT(dir.exists());
+
+                 const QFileInfoList children(dir.entryInfoList(QStringList(), m_filterAllowAll, m_sortFlags));
+
+                 if (children.isEmpty())
+                     return QXmlNodeModelIndex();
+
+                 const QFileInfo firstChild(children.first());
+                 return toNodeIndex(firstChild);
+             }
+         }
+         case PreviousSibling:
+             return nextSibling(nodeIndex, fi, -1);
+         case NextSibling:
+             return nextSibling(nodeIndex, fi, 1);
+     }
+
+     Q_ASSERT_X(false, Q_FUNC_INFO, &quot;This line should never be reached.&quot;);
+     return QXmlNodeModelIndex();
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QUrl FileTree::documentUri(const QXmlNodeModelIndex &amp;node) const
+ {
+     <span class="comment">/*
+       We always have the same document URI,
+       regardless of what node it is.
+     */</span>
+     Q_UNUSED(node);
+
+     <span class="comment">/*
+       No matter what instance this FileTree represents, it will always
+      have file:/// as the root.
+     */</span>
+     return QUrl(&quot;file:<span class="comment">//</span>/&quot;);
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex::NodeKind
+ FileTree::kind(const QXmlNodeModelIndex &amp;node) const
+ {
+     switch(Type(node.additionalData())) {
+         case Directory:
+         <span class="comment">/* Fallthrough. */</span>
+         case File:
+             return QXmlNodeModelIndex::Element;
+         default:
+             return QXmlNodeModelIndex::Attribute;
+     }
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex::DocumentOrder
+ FileTree::compareOrder(const QXmlNodeModelIndex&amp;,
+                        const QXmlNodeModelIndex&amp;) const
+ {
+     <span class="comment">/* There is no order between files, so just return an arbitrary value. */</span>
+     return QXmlNodeModelIndex::Precedes;
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlName FileTree::name(const QXmlNodeModelIndex &amp;node) const
+ {
+     return m_names.at(node.additionalData());
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QXmlNodeModelIndex FileTree::root(const QXmlNodeModelIndex &amp;node) const
+ {
+     <span class="comment">/* We always have the same root. */</span>
+     Q_UNUSED(node);
+
+     return toNodeIndex(QFileInfo(QLatin1String(&quot;/&quot;)));
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QVariant FileTree::typedValue(const QXmlNodeModelIndex &amp;node) const
+ {
+     const QFileInfo &amp;fi = toFileInfo(node);
+
+     switch(Type(node.additionalData())) {
+         case Directory:
+         <span class="comment">/* Fallthrough. */</span>
+         case File:
+             return QString();
+         case AttributeFileName:
+             return fi.fileName();
+         case AttributeFilePath:
+             return fi.filePath();
+         case AttributeSize:
+             return fi.size();
+         case AttributeMIMEType:
+         {
+             <span class="comment">/* We don't have any MIME detection code currently, so return
+              * the most generic one. */</span>
+             return QLatin1String(&quot;application/octet-stream&quot;);
+         }
+         case AttributeSuffix:
+             return fi.suffix();
+     }
+
+     Q_ASSERT_X(false, Q_FUNC_INFO, &quot;This line should never be reached.&quot;);
+     return QString();
+ }
+
+<span class="comment"> /*!
+  */</span>
+ QVector&lt;QXmlNodeModelIndex&gt;
+ FileTree::attributes(const QXmlNodeModelIndex &amp;element) const
+ {
+     QVector&lt;QXmlNodeModelIndex&gt; result;
+
+     <span class="comment">/* Both elements has this attribute. */</span>
+     const QFileInfo &amp;forElement = toFileInfo(element);
+     result.append(toNodeIndex(forElement, AttributeFilePath));
+     result.append(toNodeIndex(forElement, AttributeFileName));
+
+     if (Type(element.additionalData() == File)) {
+         result.append(toNodeIndex(forElement, AttributeSize));
+         result.append(toNodeIndex(forElement, AttributeSuffix));
+         result.append(toNodeIndex(forElement, AttributeMIMEType));
+     }
+     else {
+         Q_ASSERT(element.additionalData() == Directory);
+     }
+
+     return result;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

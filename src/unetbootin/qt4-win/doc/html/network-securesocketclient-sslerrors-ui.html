@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: sslerrors.ui Example File (network/securesocketclient/sslerrors.ui)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">sslerrors.ui Example File<br /><span class="small-subtitle">network/securesocketclient/sslerrors.ui</span>
+</h1>
+<pre> &lt;ui version=&quot;4.0&quot; &gt;
+  &lt;class&gt;SslErrors&lt;/class&gt;
+  &lt;widget class=&quot;QDialog&quot; name=&quot;SslErrors&quot; &gt;
+   &lt;property name=&quot;geometry&quot; &gt;
+    &lt;rect&gt;
+     &lt;x&gt;0&lt;/x&gt;
+     &lt;y&gt;0&lt;/y&gt;
+     &lt;width&gt;371&lt;/width&gt;
+     &lt;height&gt;216&lt;/height&gt;
+    &lt;/rect&gt;
+   &lt;/property&gt;
+   &lt;property name=&quot;windowTitle&quot; &gt;
+    &lt;string&gt;Unable To Validate The Connection&lt;/string&gt;
+   &lt;/property&gt;
+   &lt;layout class=&quot;QVBoxLayout&quot; &gt;
+    &lt;item&gt;
+     &lt;widget class=&quot;QLabel&quot; name=&quot;label&quot; &gt;
+      &lt;property name=&quot;text&quot; &gt;
+       &lt;string&gt;&amp;lt;html&gt;&amp;lt;head&gt;&amp;lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&amp;lt;style type=&quot;text/css&quot;&gt;
+ p, li { white-space: pre-wrap; }
+ &amp;lt;/style&gt;&amp;lt;/head&gt;&amp;lt;body style=&quot; font-family:'Sans Serif'; font-size:9pt; font-weight:400; font-style:normal;&quot;&gt;
+ &amp;lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&amp;lt;span style=&quot; font-weight:600; color:#ff0000;&quot;&gt;Warning&amp;lt;/span&gt;&amp;lt;span style=&quot; color:#ff0000;&quot;&gt;:&amp;lt;/span&gt;&amp;lt;span style=&quot; color:#000000;&quot;&gt; One or more errors with this connection prevent validating the authenticity of the host you are connecting to. Please review the following list of errors, and click &amp;lt;/span&gt;&amp;lt;span style=&quot; color:#000000;&quot;&gt;Ignore&amp;lt;/span&gt;&amp;lt;span style=&quot; color:#000000;&quot;&gt; to continue, or &amp;lt;/span&gt;&amp;lt;span style=&quot; color:#000000;&quot;&gt;Cancel&amp;lt;/span&gt;&amp;lt;span style=&quot; color:#000000;&quot;&gt; to abort the connection.&amp;lt;/span&gt;&amp;lt;/p&gt;&amp;lt;/body&gt;&amp;lt;/html&gt;&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=&quot;wordWrap&quot; &gt;
+       &lt;bool&gt;true&lt;/bool&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+     &lt;widget class=&quot;QListWidget&quot; name=&quot;sslErrorList&quot; /&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+     &lt;layout class=&quot;QHBoxLayout&quot; &gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;certificateChainButton&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;View Certificate Chain&lt;/string&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;autoDefault&quot; &gt;
+         &lt;bool&gt;false&lt;/bool&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;spacer&gt;
+        &lt;property name=&quot;orientation&quot; &gt;
+         &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+        &lt;/property&gt;
+        &lt;property name=&quot;sizeHint&quot; &gt;
+         &lt;size&gt;
+          &lt;width&gt;40&lt;/width&gt;
+          &lt;height&gt;20&lt;/height&gt;
+         &lt;/size&gt;
+        &lt;/property&gt;
+       &lt;/spacer&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;pushButton&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;Ignore&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+      &lt;item&gt;
+       &lt;widget class=&quot;QPushButton&quot; name=&quot;pushButton_2&quot; &gt;
+        &lt;property name=&quot;text&quot; &gt;
+         &lt;string&gt;Cancel&lt;/string&gt;
+        &lt;/property&gt;
+       &lt;/widget&gt;
+      &lt;/item&gt;
+     &lt;/layout&gt;
+    &lt;/item&gt;
+   &lt;/layout&gt;
+  &lt;/widget&gt;
+  &lt;resources/&gt;
+  &lt;connections&gt;
+   &lt;connection&gt;
+    &lt;sender&gt;pushButton&lt;/sender&gt;
+    &lt;signal&gt;clicked()&lt;/signal&gt;
+    &lt;receiver&gt;SslErrors&lt;/receiver&gt;
+    &lt;slot&gt;accept()&lt;/slot&gt;
+    &lt;hints&gt;
+     &lt;hint type=&quot;sourcelabel&quot; &gt;
+      &lt;x&gt;235&lt;/x&gt;
+      &lt;y&gt;185&lt;/y&gt;
+     &lt;/hint&gt;
+     &lt;hint type=&quot;destinationlabel&quot; &gt;
+      &lt;x&gt;228&lt;/x&gt;
+      &lt;y&gt;287&lt;/y&gt;
+     &lt;/hint&gt;
+    &lt;/hints&gt;
+   &lt;/connection&gt;
+   &lt;connection&gt;
+    &lt;sender&gt;pushButton_2&lt;/sender&gt;
+    &lt;signal&gt;clicked()&lt;/signal&gt;
+    &lt;receiver&gt;SslErrors&lt;/receiver&gt;
+    &lt;slot&gt;reject()&lt;/slot&gt;
+    &lt;hints&gt;
+     &lt;hint type=&quot;sourcelabel&quot; &gt;
+      &lt;x&gt;325&lt;/x&gt;
+      &lt;y&gt;192&lt;/y&gt;
+     &lt;/hint&gt;
+     &lt;hint type=&quot;destinationlabel&quot; &gt;
+      &lt;x&gt;333&lt;/x&gt;
+      &lt;y&gt;231&lt;/y&gt;
+     &lt;/hint&gt;
+    &lt;/hints&gt;
+   &lt;/connection&gt;
+  &lt;/connections&gt;
+ &lt;/ui&gt;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

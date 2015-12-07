@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/dom/qdom.cpp -->
+<head>
+  <title>Qt 4.4: QDomImplementation Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDomImplementation Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QDomImplementation class provides information about the features of the DOM implementation. <a href="#details">More...</a></p>
+<pre> #include &lt;QDomImplementation&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdomimplementation-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qdomimplementation.html#InvalidDataPolicy-enum">InvalidDataPolicy</a></b> { AcceptInvalidChars, DropInvalidChars, ReturnNullNode }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdomimplementation.html#QDomImplementation">QDomImplementation</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdomimplementation.html#QDomImplementation-2">QDomImplementation</a></b> ( const QDomImplementation &amp; <i>x</i> )</li>
+<li><div class="fn"/><b><a href="qdomimplementation.html#dtor.QDomImplementation">~QDomImplementation</a></b> ()</li>
+<li><div class="fn"/>QDomDocument <b><a href="qdomimplementation.html#createDocument">createDocument</a></b> ( const QString &amp; <i>nsURI</i>, const QString &amp; <i>qName</i>, const QDomDocumentType &amp; <i>doctype</i> )</li>
+<li><div class="fn"/>QDomDocumentType <b><a href="qdomimplementation.html#createDocumentType">createDocumentType</a></b> ( const QString &amp; <i>qName</i>, const QString &amp; <i>publicId</i>, const QString &amp; <i>systemId</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdomimplementation.html#hasFeature">hasFeature</a></b> ( const QString &amp; <i>feature</i>, const QString &amp; <i>version</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qdomimplementation.html#isNull">isNull</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qdomimplementation.html#operator-not-eq">operator!=</a></b> ( const QDomImplementation &amp; <i>x</i> ) const</li>
+<li><div class="fn"/>QDomImplementation &amp; <b><a href="qdomimplementation.html#operator-eq">operator=</a></b> ( const QDomImplementation &amp; <i>x</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdomimplementation.html#operator-eq-eq">operator==</a></b> ( const QDomImplementation &amp; <i>x</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>InvalidDataPolicy <b><a href="qdomimplementation.html#invalidDataPolicy">invalidDataPolicy</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qdomimplementation.html#setInvalidDataPolicy">setInvalidDataPolicy</a></b> ( InvalidDataPolicy <i>policy</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDomImplementation class provides information about the features of the DOM implementation.</p>
+<p>This class describes the features that are supported by the DOM implementation. Currently the XML subset of DOM Level 1 and DOM Level 2 Core are supported.</p>
+<p>Normally you will use the function <a href="qdomdocument.html#implementation">QDomDocument::implementation</a>() to get the implementation object.</p>
+<p>You can create a new document type with <a href="qdomimplementation.html#createDocumentType">createDocumentType</a>() and a new document with <a href="qdomimplementation.html#createDocument">createDocument</a>().</p>
+<p>For further information about the Document Object Model see <a href="http://www.w3.org/TR/REC-DOM-Level-1/">Level 1</a> and <a href="http://www.w3.org/TR/DOM-Level-2-Core/">Level 2 Core</a>. For a more general introduction of the DOM implementation see the <a href="qdomdocument.html">QDomDocument</a> documentation.</p>
+<p>The QDom classes have a few issues of nonconformance with the XML specifications that cannot be fixed in Qt 4 without breaking backward Â compatibility. The <a href="qtxmlpatterns.html">QtXmlPatterns</a> module and the <a href="qxmlstreamreader.html">QXmlStreamReader</a> and Â <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> classes have a higher degree of a conformance.</p>
+<p>See also <a href="qdomimplementation.html#hasFeature">hasFeature</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="InvalidDataPolicy-enum"></a>enum QDomImplementation::InvalidDataPolicy</h3>
+<p>This enum specifies what should be done when a factory function in <a href="qdomdocument.html">QDomDocument</a> is called with invalid data.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QDomImplementation::AcceptInvalidChars</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The data should be stored in the DOM object anyway. In this case the resulting XML document might not be well-formed. This is the default value and QDom's behavior in Qt &lt; 4.1&#x2e;</td></tr>
+<tr><td valign="top"><tt>QDomImplementation::DropInvalidChars</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The invalid characters should be removed from the data.</td></tr>
+<tr><td valign="top"><tt>QDomImplementation::ReturnNullNode</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The factory function should return a null node.</td></tr>
+</table></p>
+<p>See also <a href="qdomimplementation.html#setInvalidDataPolicy">setInvalidDataPolicy</a>() and <a href="qdomimplementation.html#invalidDataPolicy">invalidDataPolicy</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDomImplementation"></a>QDomImplementation::QDomImplementation ()</h3>
+<p>Constructs a <a href="qdomimplementation.html">QDomImplementation</a> object.</p>
+<h3 class="fn"><a name="QDomImplementation-2"></a>QDomImplementation::QDomImplementation ( const QDomImplementation &amp; <i>x</i> )</h3>
+<p>Constructs a copy of <i>x</i>.</p>
+<h3 class="fn"><a name="dtor.QDomImplementation"></a>QDomImplementation::~QDomImplementation ()</h3>
+<p>Destroys the object and frees its resources.</p>
+<h3 class="fn"><a name="createDocument"></a><a href="qdomdocument.html">QDomDocument</a> QDomImplementation::createDocument ( const <a href="qstring.html">QString</a> &amp; <i>nsURI</i>, const <a href="qstring.html">QString</a> &amp; <i>qName</i>, const <a href="qdomdocumenttype.html">QDomDocumentType</a> &amp; <i>doctype</i> )</h3>
+<p>Creates a DOM document with the document type <i>doctype</i>. This function also adds a root element node with the qualified name <i>qName</i> and the namespace URI <i>nsURI</i>.</p>
+<h3 class="fn"><a name="createDocumentType"></a><a href="qdomdocumenttype.html">QDomDocumentType</a> QDomImplementation::createDocumentType ( const <a href="qstring.html">QString</a> &amp; <i>qName</i>, const <a href="qstring.html">QString</a> &amp; <i>publicId</i>, const <a href="qstring.html">QString</a> &amp; <i>systemId</i> )</h3>
+<p>Creates a document type node for the name <i>qName</i>.</p>
+<p><i>publicId</i> specifies the public identifier of the external subset. If you specify an empty string (QString()) as the <i>publicId</i>, this means that the document type has no public identifier.</p>
+<p><i>systemId</i> specifies the system identifier of the external subset. If you specify an empty string as the <i>systemId</i>, this means that the document type has no system identifier.</p>
+<p>Since you cannot have a public identifier without a system identifier, the public identifier is set to an empty string if there is no system identifier.</p>
+<p>DOM level 2 does not support any other document type declaration features.</p>
+<p>The only way you can use a document type that was created this way, is in combination with the <a href="qdomimplementation.html#createDocument">createDocument</a>() function to create a <a href="qdomdocument.html">QDomDocument</a> with this document type.</p>
+<p>In the DOM specification, this is the only way to create a non-null document. For historical reasons, Qt also allows to create the document using the default empty constructor. The resulting document is null, but becomes non-null when a factory function, for example <a href="qdomdocument.html#createElement">QDomDocument::createElement</a>(), is called. The document also becomes non-null when setContent() is called.</p>
+<p>See also <a href="qdomimplementation.html#createDocument">createDocument</a>().</p>
+<h3 class="fn"><a name="hasFeature"></a>bool QDomImplementation::hasFeature ( const <a href="qstring.html">QString</a> &amp; <i>feature</i>, const <a href="qstring.html">QString</a> &amp; <i>version</i> ) const</h3>
+<p>The function returns true if QDom implements the requested <i>version</i> of a <i>feature</i>; otherwise returns false.</p>
+<p>The currently supported features and their versions:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Feature</th><th>Version</th></tr></thead>
+<tr valign="top" class="odd"><td>XML</td><td>1.0</td></tr>
+</table></p>
+<h3 class="fn"><a name="invalidDataPolicy"></a><a href="qdomimplementation.html#InvalidDataPolicy-enum">InvalidDataPolicy</a> QDomImplementation::invalidDataPolicy ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the invalid data policy, which specifies what should be done when a factory function in <a href="qdomdocument.html">QDomDocument</a> is passed invalid data.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qdomimplementation.html#setInvalidDataPolicy">setInvalidDataPolicy</a>() and <a href="qdomimplementation.html#InvalidDataPolicy-enum">InvalidDataPolicy</a>.</p>
+<h3 class="fn"><a name="isNull"></a>bool QDomImplementation::isNull ()</h3>
+<p>Returns false if the object was created by <a href="qdomdocument.html#implementation">QDomDocument::implementation</a>(); otherwise returns true.</p>
+<h3 class="fn"><a name="setInvalidDataPolicy"></a>void QDomImplementation::setInvalidDataPolicy ( <a href="qdomimplementation.html#InvalidDataPolicy-enum">InvalidDataPolicy</a> <i>policy</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the invalid data policy, which specifies what should be done when a factory function in <a href="qdomdocument.html">QDomDocument</a> is passed invalid data.</p>
+<p>The <i>policy</i> is set for all instances of <a href="qdomdocument.html">QDomDocument</a> which already exist and which will be created in the future.</p>
+<pre>         QDomDocument doc;
+         QDomImplementation impl;
+
+         // This will create the element, but the resulting XML document will
+         // be invalid, because '~' is not a valid character in a tag name.
+         impl.setInvalidDataPolicy(QDomImplementation::AcceptInvalidData);
+         QDomElement elt1 = doc.createElement(&quot;foo~bar&quot;);
+
+         // This will create an element with the tag name &quot;foobar&quot;.
+         impl.setInvalidDataPolicy(QDomImplementation::DropInvalidData);
+         QDomElement elt2 = doc.createElement(&quot;foo~bar&quot;);
+
+         // This will create a null element.
+         impl.setInvalidDataPolicy(QDomImplementation::ReturnNullNode);
+         QDomElement elt3 = doc.createElement(&quot;foo~bar&quot;);</pre>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qdomimplementation.html#invalidDataPolicy">invalidDataPolicy</a>() and <a href="qdomimplementation.html#InvalidDataPolicy-enum">InvalidDataPolicy</a>.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QDomImplementation::operator!= ( const QDomImplementation &amp; <i>x</i> ) const</h3>
+<p>Returns true if <i>x</i> and this DOM implementation object were created from different QDomDocuments; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QDomImplementation &amp; QDomImplementation::operator= ( const QDomImplementation &amp; <i>x</i> )</h3>
+<p>Assigns <i>x</i> to this DOM implementation.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QDomImplementation::operator== ( const QDomImplementation &amp; <i>x</i> ) const</h3>
+<p>Returns true if <i>x</i> and this DOM implementation object were created from the same <a href="qdomdocument.html">QDomDocument</a>; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

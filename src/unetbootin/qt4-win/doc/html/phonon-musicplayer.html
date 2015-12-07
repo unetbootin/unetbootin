@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/musicplayerexample.qdoc -->
+<head>
+  <title>Qt 4.4: Music Player Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Music Player Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="phonon-musicplayer-mainwindow-cpp.html">phonon/musicplayer/mainwindow.cpp</a></li>
+<li><a href="phonon-musicplayer-mainwindow-h.html">phonon/musicplayer/mainwindow.h</a></li>
+<li><a href="phonon-musicplayer-main-cpp.html">phonon/musicplayer/main.cpp</a></li>
+<li><a href="phonon-musicplayer-musicplayer-pro.html">phonon/musicplayer/musicplayer.pro</a></li>
+</ul>
+<p>The Music Player Example shows how to use Phonon - the multimedia framework that comes with Qt - to create a simple music player. The player can play music files, and provides simple playback control, such as pausing, stopping, and resuming the music.</p>
+<p align="center"><img src="images/musicplayer.png" /></p><p>The player has a button group with the play, pause, and stop buttons familiar from most music players. The top-most slider controls the position in the media stream, and the bottom slider allows adjusting the sound volume.</p>
+<p>The user can use a file dialog to add music files to a table, which displays meta information about the music - such as the title, album, and artist. Each row contains information about a single music file; to play it, the user selects that row and presses the play button. Also, when a row is selected, the files in the table are queued for playback.</p>
+<p>Phonon offers playback of sound using an available audio device, e.g&#x2e;, a sound card or an USB headset. For the implementation, we use two objects: a <a href="phonon-mediaobject.html">MediaObject</a>, which controls the playback, and an <a href="phonon-audiooutput.html">AudioOutput</a>, which can output the audio to a sound device. We will explain how they cooperate when we encounter them in the code. For a high-level introduction to Phonon, see its <a href="phonon-overview.html">overview</a>.</p>
+<p>The API of Phonon is implemented through an intermediate technology on each supported platform: DirectShow, QuickTime, and GStreamer. The sound formats supported may therefore vary from system to system. We do not in this example try to determine which formats are supported, but let Phonon report an error if the user tries to play an unsupported sound file.</p>
+<p>Our player consists of one class, <tt>MainWindow</tt>, which both constructs the GUI and handles the playback. We will now go through the parts of its definition and implementation that concerns Phonon.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p>Most of the API in <tt>MainWindow</tt> is private, as is often the case for classes that represent self-contained windows. We list Phonon objects and slots we connect to their signals; we take a closer look at them when we walk through the <tt>MainWindow</tt> implementation.</p>
+<pre>     Phonon::SeekSlider *seekSlider;
+     Phonon::MediaObject *mediaObject;
+     Phonon::MediaObject *metaInformationResolver;
+     Phonon::AudioOutput *audioOutput;
+     Phonon::VolumeSlider *volumeSlider;
+     QList&lt;Phonon::MediaSource&gt; sources;</pre>
+<p>We use the <a href="phonon-seekslider.html">SeekSlider</a> to move the current playback position in the media stream, and the <a href="phonon-volumeslider.html">VolumeSlider</a> controls the sound volume. Both of these widgets come ready made with Phonon. We use another <a href="phonon-mediaobject.html">MediaObject</a>, metaInformationProvider, to get the meta information from the music files. More on this later.</p>
+<pre>     void stateChanged(Phonon::State newState, Phonon::State oldState);
+     void tick(qint64 time);
+     void sourceChanged(const Phonon::MediaSource &amp;source);
+     void metaStateChanged(Phonon::State newState, Phonon::State oldState);
+     void aboutToFinish();
+     void tableClicked(int row, int column);</pre>
+<p>The <a href="phonon-mediaobject.html">MediaObject</a> informs us of the state of the playback and properties of the media it is playing back through a series of signals. We connect the signals we need to slots in <tt>MainWindow</tt>. The <tt>tableClicked()</tt> slot is connected to the table, so that we know when the user requests playback of a new music file, by clicking on the table.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt> class handles both the user interface and Phonon. We will now take a look at the code relevant for Phonon. The code required for setting up the GUI is explained elsewhere.</p>
+<p>We start with the constructor:</p>
+<pre> MainWindow::MainWindow()
+ {
+     audioOutput = new Phonon::AudioOutput(Phonon::MusicCategory, this);
+     mediaObject = new Phonon::MediaObject(this);
+     metaInformationResolver = new Phonon::MediaObject(this);
+
+     mediaObject-&gt;setTickInterval(1000);</pre>
+<p>We start by instantiating our media and audio output objects. As mentioned, the media object knows how to playback multimedia (in our case sound files) while the audio output can send it to a sound device.</p>
+<p>For the playback to work, the media and audio output objects need to get in contact with each other, so that the media object can send the sound to the audio output. Phonon is a graph based framework, i.e&#x2e;, its objects are nodes that can be connected by paths. Objects are connected using the <tt>createPath()</tt> function, which is part of the Phonon namespace.</p>
+<pre>     Phonon::createPath(mediaObject, audioOutput);</pre>
+<p>We also connect signals of the media object to slots in our <tt>MainWindow</tt>. We will examine them shortly.</p>
+<pre>     connect(mediaObject, SIGNAL(tick(qint64)), this, SLOT(tick(qint64)));
+     connect(mediaObject, SIGNAL(stateChanged(Phonon::State, Phonon::State)),
+             this, SLOT(stateChanged(Phonon::State, Phonon::State)));
+     connect(metaInformationResolver, SIGNAL(stateChanged(Phonon::State,Phonon::State)),
+             this, SLOT(metaStateChanged(Phonon::State, Phonon::State)));
+     connect(mediaObject, SIGNAL(currentSourceChanged(const Phonon::MediaSource &amp;)),
+             this, SLOT(sourceChanged(const Phonon::MediaSource &amp;)));
+     connect(mediaObject, SIGNAL(aboutToFinish()), this, SLOT(aboutToFinish()));</pre>
+<p>Finally, we call private helper functions to set up the GUI. The <tt>setupUi()</tt> function contains code for setting up the seek , and volume slider. We move on to <tt>setupUi()</tt>:</p>
+<pre> void MainWindow::setupUi()
+ {
+     ...
+     seekSlider = new Phonon::SeekSlider(this);
+     seekSlider-&gt;setMediaObject(mediaObject);
+
+     volumeSlider = new Phonon::VolumeSlider(this);
+     volumeSlider-&gt;setAudioOutput(audioOutput);</pre>
+<p>After creating the widgets, they must be supplied with the <a href="phonon-mediaobject.html">MediaObject</a> and <a href="phonon-audiooutput.html">AudioOutput</a> objects they should control.</p>
+<p>In the <tt>setupActions()</tt>, we connect the actions for the play, pause, and stop tool buttons, to slots of the media object.</p>
+<pre>     connect(playAction, SIGNAL(triggered()), mediaObject, SLOT(play()));
+     connect(pauseAction, SIGNAL(triggered()), mediaObject, SLOT(pause()) );
+     connect(stopAction, SIGNAL(triggered()), mediaObject, SLOT(stop()));</pre>
+<p>We move on to the the slots of <tt>MainWindow</tt>, starting with <tt>addFiles()</tt>:</p>
+<pre> void MainWindow::addFiles()
+ {
+     QStringList files = QFileDialog::getOpenFileNames(this, tr(&quot;Select Music Files&quot;),
+         QDesktopServices::storageLocation(QDesktopServices::MusicLocation));
+
+     if (files.isEmpty())
+         return;
+
+     int index = sources.size();
+     foreach (QString string, files) {
+             Phonon::MediaSource source(string);
+
+         sources.append(source);
+     }
+     if (!sources.isEmpty())
+         metaInformationResolver-&gt;setCurrentSource(sources.at(index));
+
+ }</pre>
+<p>In the <tt>addFiles()</tt> slot, we add files selected by the user to the <tt>sources</tt> list. We then set the first source selected on the <tt>metaInformationProvider</tt> <a href="phonon-mediaobject.html">MediaObject</a>, which will send a state changed signal when the meta information is resolved; we have this signal connected to the <tt>metaStateChanged()</tt> slot.</p>
+<p>The media object informs us of state changes by sending the <tt>stateChanged()</tt> signal. The <tt>stateChanged()</tt> slot is connected to this signal.</p>
+<pre> void MainWindow::stateChanged(Phonon::State newState, Phonon::State <span class="comment">/* oldState */</span>)
+ {
+     switch (newState) {
+         case Phonon::ErrorState:
+             if (mediaObject-&gt;errorType() == Phonon::FatalError) {
+                 QMessageBox::warning(this, tr(&quot;Fatal Error&quot;),
+                 mediaObject-&gt;errorString());
+             } else {
+                 QMessageBox::warning(this, tr(&quot;Error&quot;),
+                 mediaObject-&gt;errorString());
+             }
+             break;</pre>
+<p>The <a href="phonon-mediaobject.html#errorString">errorString()</a> function gives a description of the error that is suitable for users of a Phonon application. The two values of the <a href="phonon.html#State-enum">ErrorState</a> enum helps us determine whether it is possible to try to play the same file again.</p>
+<pre>         case Phonon::PlayingState:
+                 playAction-&gt;setEnabled(false);
+                 pauseAction-&gt;setEnabled(true);
+                 stopAction-&gt;setEnabled(true);
+                 break;
+         case Phonon::StoppedState:
+                 stopAction-&gt;setEnabled(false);
+                 playAction-&gt;setEnabled(true);
+                 pauseAction-&gt;setEnabled(false);
+                 timeLcd-&gt;display(&quot;00:00&quot;);
+                 break;
+         case Phonon::PausedState:
+                 pauseAction-&gt;setEnabled(false);
+                 stopAction-&gt;setEnabled(true);
+                 playAction-&gt;setEnabled(true);
+                 break;</pre>
+<p>We update the GUI when the playback state changes, i.e&#x2e;, when it starts, pauses, stops, or resumes.</p>
+<p>The media object will report other state changes, as defined by the <a href="phonon.html#State-enum">State</a> enum.</p>
+<p>The <tt>tick()</tt> slot is connected to a <a href="phonon-mediaobject.html">MediaObject</a> signal which is emitted when the playback position changes:</p>
+<pre> void MainWindow::tick(qint64 time)
+ {
+     QTime displayTime(0, (time / 60000) % 60, (time / 1000) % 60);
+
+     timeLcd-&gt;display(displayTime.toString(&quot;mm:ss&quot;));
+ }</pre>
+<p>The <tt>time</tt> is given in milliseconds.</p>
+<p>When the table is clicked on with the mouse, <tt>tableClick()</tt> is invoked:</p>
+<pre> void MainWindow::tableClicked(int row, int <span class="comment">/* column */</span>)
+ {
+     bool wasPlaying = mediaObject-&gt;state() == Phonon::PlayingState;
+
+     mediaObject-&gt;stop();
+     mediaObject-&gt;clearQueue();
+
+     mediaObject-&gt;setCurrentSource(sources[row]);
+
+     if (wasPlaying)
+         mediaObject-&gt;play();
+     else
+         mediaObject-&gt;stop();
+ }</pre>
+<p>Since we stop the media object, we first check whether it is currently playing. <tt>row</tt> contains the row in the table that was clicked upon; the indices of <tt>sources</tt> follows the table, so we can simply use <tt>row</tt> to find the new source.</p>
+<pre> void MainWindow::sourceChanged(const Phonon::MediaSource &amp;source)
+ {
+     musicTable-&gt;selectRow(sources.indexOf(source));
+     timeLcd-&gt;display(&quot;00:00&quot;);
+ }</pre>
+<p>When the media source changes, we simply need to select the corresponding row in the table.</p>
+<pre> void MainWindow::metaStateChanged(Phonon::State newState, Phonon::State <span class="comment">/* oldState */</span>)
+ {
+     if (newState == Phonon::ErrorState) {
+         QMessageBox::warning(this, tr(&quot;Error opening files&quot;),
+             metaInformationResolver-&gt;errorString());
+         while (!sources.isEmpty() &amp;&amp;
+                !(sources.takeLast() == metaInformationResolver-&gt;currentSource()));
+         return;
+     }
+
+     if (newState != Phonon::StoppedState &amp;&amp; newState != Phonon::PausedState)
+         return;
+
+     if (metaInformationResolver-&gt;currentSource().type() == Phonon::MediaSource::Invalid)
+             return;
+
+     QMap&lt;QString, QString&gt; metaData = metaInformationResolver-&gt;metaData();
+
+     QString title = metaData.value(&quot;TITLE&quot;);
+     if (title == &quot;&quot;)
+         title = metaInformationResolver-&gt;currentSource().fileName();
+
+     QTableWidgetItem *titleItem = new QTableWidgetItem(title);
+     titleItem-&gt;setFlags(titleItem-&gt;flags() ^ Qt::ItemIsEditable);
+     QTableWidgetItem *artistItem = new QTableWidgetItem(metaData.value(&quot;ARTIST&quot;));
+     artistItem-&gt;setFlags(artistItem-&gt;flags() ^ Qt::ItemIsEditable);
+     QTableWidgetItem *albumItem = new QTableWidgetItem(metaData.value(&quot;ALBUM&quot;));
+     albumItem-&gt;setFlags(albumItem-&gt;flags() ^ Qt::ItemIsEditable);
+     QTableWidgetItem *yearItem = new QTableWidgetItem(metaData.value(&quot;DATE&quot;));
+     yearItem-&gt;setFlags(yearItem-&gt;flags() ^ Qt::ItemIsEditable);</pre>
+<p>When <tt>metaStateChanged()</tt> is invoked, <tt>metaInformationProvider</tt> has resolved the meta data for its current source. A <a href="phonon-mediaobject.html">MediaObject</a> will do this before entering <a href="phonon.html#State-enum">StoppedState</a>. Note that we could also have used the metaDataChanged() signal for this purpose.</p>
+<p>Some of the meta data is then chosen to be displayed in the music table. A file might not contain the meta data requested, in which case an empty string is returned.</p>
+<pre>     if (musicTable-&gt;selectedItems().isEmpty()) {
+         musicTable-&gt;selectRow(0);
+         mediaObject-&gt;setCurrentSource(metaInformationResolver-&gt;currentSource());
+     }
+
+     Phonon::MediaSource source = metaInformationResolver-&gt;currentSource();
+     int index = sources.indexOf(metaInformationResolver-&gt;currentSource()) + 1;
+     if (sources.size() &gt; index) {
+         metaInformationResolver-&gt;setCurrentSource(sources.at(index));
+     }
+     else {
+         musicTable-&gt;resizeColumnsToContents();
+         if (musicTable-&gt;columnWidth(0) &gt; 300)
+             musicTable-&gt;setColumnWidth(0, 300);
+     }
+ }</pre>
+<p>If we have media sources in <tt>sources</tt> of which meta information is not resolved, we set a new source on the <tt>metaInformationProvider</tt>, which will invoke <tt>metaStateChanged()</tt> again.</p>
+<p>We move on to the <tt>aboutToFinish()</tt> slot:</p>
+<pre> void MainWindow::aboutToFinish()
+ {
+     int index = sources.indexOf(mediaObject-&gt;currentSource()) + 1;
+     if (sources.size() &gt; index) {
+         mediaObject-&gt;enqueue(sources.at(index));
+     }
+ }</pre>
+<p>When a file is finished playing, the Music Player will move on and play the next file in the table. This slot is connected to the <a href="phonon-mediaobject.html">MediaObject</a>'s <a href="phonon-mediaobject.html#aboutToFinish">aboutToFinish()</a> signal, which is guaranteed to be emitted while there is still time to enqueue another file for playback.</p>
+<a name="the-main-function"></a>
+<h2>The main() function.</h2>
+<p>Phonon requires that the application has a name; it is set with <a href="qcoreapplication.html#applicationName-prop">setApplicationName()</a>. This is because D-Bus, which is used by Phonon on Linux systems, demands this.</p>
+<pre> int main(int argv, char **args)
+ {
+     QApplication app(argv, args);
+     app.setApplicationName(&quot;Music Player&quot;);
+     app.setQuitOnLastWindowClosed(true);
+
+     MainWindow window;
+     window.show();
+
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

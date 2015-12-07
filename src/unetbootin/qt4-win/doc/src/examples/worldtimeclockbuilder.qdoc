@@ -1,0 +1,113 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \example designer/worldtimeclockbuilder
+  \title World Time Clock Builder Example
+
+  The World Time Clock Builder example shows how forms created with Qt
+  Designer that contain custom widgets can be dynamically generated at
+  run-time.
+
+  \image worldtimeclockbuilder-example.png
+
+  This example uses a form containing the custom widget plugin described in the
+  \l{designer/worldtimeclockplugin}{World Time Clock Plugin} example, and
+  dynamically generates a user interface using the QUiLoader class, part of
+  the QtUiTools module.
+
+  \section1 Preparation
+
+  As with the \l{designer/calculatorbuilder}{Calculator Builder} example, the
+  project file for this example needs to include the appropriate definitions
+  to ensure that it is built against the required Qt modules.
+
+  \snippet examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.pro 0
+
+  By appending \c form to the \c CONFIG declaration, we instruct \c qmake to
+  generate a dependency on the \c libQtUiTools library containing the QtUiTools
+  classes.
+
+  Note that we do not inform \c qmake about any .ui files, and so none will
+  be processed and built into the application. The resource file contains
+  an entry for the particular form that we wish to use:
+
+  \quotefile examples/designer/worldtimeclockbuilder/worldtimeclockbuilder.qrc
+
+  Forms do not need to be included with the application in this way. We only
+  include a form in the application's resources for convenience, and to keep
+  the example short.
+
+  \section1 Loading and Building the Form
+
+  Since this example only loads and displays a pre-prepared form, all of the
+  work can be done in the main() function. We are using a class from the
+  QtUiTools library so, in addition to any other Qt classes that are normally
+  required to write an application, we must include the appropriate header
+  file:
+
+  \snippet examples/designer/worldtimeclockbuilder/main.cpp 0
+
+  The main function initializes the resource system with the Q_INIT_RESOURCE()
+  macro and constructs an QApplication instance in the usual way:
+
+  \snippet examples/designer/worldtimeclockbuilder/main.cpp 1
+
+  We construct a QUiLoader object to handle the form we want to use.
+
+  The form itself is obtained from the resource file system using the path
+  defined in the resource file. We use the form loader to load and construct
+  the form:
+
+  \snippet examples/designer/worldtimeclockbuilder/main.cpp 2
+
+  Once the form has been loaded, the resource file can be closed and the
+  widget is shown.
+
+  \snippet examples/designer/worldtimeclockbuilder/main.cpp 3
+
+  The form loader ensures that all the signal and slot connections between
+  objects in the form are set up correctly when the form is loaded. As a
+  result, the time is updated by the World Time Clock widget, and the time
+  zone spin box can be used to change the position of the hour hand.
+*/

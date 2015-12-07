@@ -1,0 +1,36 @@
+//! [0]
+        export PATH=path/to/cross/compiler:$PATH
+//! [0]
+
+
+//! [1]
+        ./configure -embedded arm -xplatform qws/linux-arm-g++ <other options>
+//! [1]
+
+
+//! [2]
+        cp path/to/QtEmbedded/mkspecs/qws/linux-mips-g++/...
+           path/to/QtEmbedded/mkspecs/qws/linux-myarchitecture-g++/...
+//! [2]
+
+
+//! [3]
+        cd path/to/QtEmbedded
+        ./configure -embedded <architecture> -qt-kbd-<keyboarddriver>
+                    -qt-mouse-<mousedriver> -qt-gfx-<screendriver>
+//! [3]
+
+
+//! [4]
+        cd path/to/QtEmbedded
+        ./configure  <other options>
+                     -L /path/to/libjpeg/libraries -I /path/to/libjpeg/headers
+//! [4]
+
+
+//! [5]
+        cd path/to/myApplication
+        qmake -project
+        qmake
+        make
+//! [5]

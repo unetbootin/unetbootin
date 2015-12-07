@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3socketdevice.cpp -->
+<head>
+  <title>Qt 4.4: Q3SocketDevice Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3SocketDevice Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3SocketDevice class provides a platform-independent low-level socket API. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3SocketDevice&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsocketdevice">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qiodevice.html">QIODevice</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="q3socketdevice-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3socketdevice.html#Error-enum">Error</a></b> { NoError, AlreadyBound, Inaccessible, NoResources, ..., UnknownError }</li>
+<li><div class="fn"/>enum <b><a href="q3socketdevice.html#Protocol-enum">Protocol</a></b> { IPv4, IPv6, Unknown }</li>
+<li><div class="fn"/>enum <b><a href="q3socketdevice.html#Type-enum">Type</a></b> { Stream, Datagram }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3socketdevice.html#Q3SocketDevice">Q3SocketDevice</a></b> ( Type <i>type</i> = Stream )</li>
+<li><div class="fn"/><b><a href="q3socketdevice.html#Q3SocketDevice-2">Q3SocketDevice</a></b> ( Type <i>type</i>, Protocol <i>protocol</i>, int <i>dummy</i> )</li>
+<li><div class="fn"/><b><a href="q3socketdevice.html#Q3SocketDevice-3">Q3SocketDevice</a></b> ( int <i>socket</i>, Type <i>type</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3socketdevice.html#dtor.Q3SocketDevice">~Q3SocketDevice</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3socketdevice.html#accept">accept</a></b> ()</li>
+<li><div class="fn"/>QHostAddress <b><a href="q3socketdevice.html#address">address</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#addressReusable">addressReusable</a></b> () const</li>
+<li><div class="fn"/>Offset <b><a href="q3socketdevice.html#at">at</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#at-2">at</a></b> ( Offset <i>offset</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socketdevice.html#bind">bind</a></b> ( const QHostAddress &amp;, Q_UINT16 )</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#blocking">blocking</a></b> () const</li>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socketdevice.html#bytesAvailable">bytesAvailable</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#close">close</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socketdevice.html#connect">connect</a></b> ( const QHostAddress &amp;, Q_UINT16 )</li>
+<li><div class="fn"/>Error <b><a href="q3socketdevice.html#error">error</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#flush">flush</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socketdevice.html#listen">listen</a></b> ( int <i>backlog</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socketdevice.html#open">open</a></b> ( OpenMode <i>mode</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3socketdevice.html#open-2">open</a></b> ( int <i>mode</i> )</li>
+<li><div class="fn"/>QHostAddress <b><a href="q3socketdevice.html#peerAddress">peerAddress</a></b> () const</li>
+<li><div class="fn"/>Q_UINT16 <b><a href="q3socketdevice.html#peerPort">peerPort</a></b> () const</li>
+<li><div class="fn"/>Q_UINT16 <b><a href="q3socketdevice.html#port">port</a></b> () const</li>
+<li><div class="fn"/>Protocol <b><a href="q3socketdevice.html#protocol">protocol</a></b> () const</li>
+<li><div class="fn"/>qint64 <b><a href="q3socketdevice.html#readBlock">readBlock</a></b> ( char * <i>data</i>, Q_ULONG <i>maxlen</i> )</li>
+<li><div class="fn"/>int <b><a href="q3socketdevice.html#receiveBufferSize">receiveBufferSize</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3socketdevice.html#sendBufferSize">sendBufferSize</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#setAddressReusable">setAddressReusable</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#setBlocking">setBlocking</a></b> ( bool )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#setReceiveBufferSize">setReceiveBufferSize</a></b> ( uint <i>size</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#setSendBufferSize">setSendBufferSize</a></b> ( uint <i>size</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socketdevice.html#setSocket">setSocket</a></b> ( int <i>socket</i>, Type <i>type</i> )</li>
+<li><div class="fn"/>int <b><a href="q3socketdevice.html#socket">socket</a></b> () const</li>
+<li><div class="fn"/>Type <b><a href="q3socketdevice.html#type">type</a></b> () const</li>
+<li><div class="fn"/>Q_LONG <b><a href="q3socketdevice.html#waitForMore">waitForMore</a></b> ( int <i>msecs</i>, bool * <i>timeout</i> = 0 ) const</li>
+<li><div class="fn"/>virtual Q_LONG <b><a href="q3socketdevice.html#writeBlock">writeBlock</a></b> ( const char * <i>data</i>, Q_ULONG <i>len</i>, const QHostAddress &amp; <i>host</i>, Q_UINT16 <i>port</i> )</li>
+<li><div class="fn"/>Q_LONG <b><a href="q3socketdevice.html#writeBlock-2">writeBlock</a></b> ( const char * <i>data</i>, Q_ULONG <i>len</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socketdevice.html#readData">readData</a></b> ( char * <i>data</i>, qint64 <i>maxlen</i> )</li>
+<li><div class="fn"/>void <b><a href="q3socketdevice.html#setError">setError</a></b> ( Error <i>err</i> )</li>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socketdevice.html#writeData">writeData</a></b> ( const char * <i>data</i>, qint64 <i>len</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3SocketDevice class provides a platform-independent low-level socket API.</p>
+<p>This class provides a low level API for working with sockets. Users of this class are assumed to have networking experience. For most users the <a href="q3socket.html">Q3Socket</a> class provides a much easier and high level alternative, but certain things (like UDP) can't be done with <a href="q3socket.html">Q3Socket</a> and if you need a platform-independent API for those, Q3SocketDevice is the right choice.</p>
+<p>The essential purpose of the class is to provide a <a href="qiodevice.html">QIODevice</a> that works on sockets, wrapped in a platform-independent API.</p>
+<p>When calling <a href="q3socketdevice.html#connect">connect</a>() or <a href="q3socketdevice.html#bind">bind</a>(), Q3SocketDevice detects the protocol family (IPv4, IPv6) automatically. Passing the protocol family to Q3SocketDevice's constructor or to <a href="q3socketdevice.html#setSocket">setSocket</a>() forces creation of a socket device of a specific protocol. If not set, the protocol will be detected at the first call to <a href="q3socketdevice.html#connect">connect</a>() or <a href="q3socketdevice.html#bind">bind</a>().</p>
+<p>See also <a href="q3socket.html">Q3Socket</a>, <a href="qsocketnotifier.html">QSocketNotifier</a>, and <a href="qhostaddress.html">QHostAddress</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Error-enum"></a>enum Q3SocketDevice::Error</h3>
+<p>This enum type describes the error states of <a href="q3socketdevice.html">Q3SocketDevice</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error has occurred.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::AlreadyBound</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The device is already bound, according to <a href="q3socketdevice.html#bind">bind</a>().</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::Inaccessible</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The operating system or firewall prohibited the action.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::NoResources</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The operating system ran out of a resource.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::InternalError</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">An internal error occurred in <a href="q3socketdevice.html">Q3SocketDevice</a>.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::Impossible</tt></td><td align="center" valign="top">?</td><td valign="top">An attempt was made to do something which makes no sense. For example:<pre>     ::close( sd-&gt;socket() );
+     sd-&gt;writeBlock( someData, 42 );</pre>
+</td></tr>
+</table></p>
+<p>The libc ::close() closes the socket, but <a href="q3socketdevice.html">Q3SocketDevice</a> is not aware of this. So when you call <a href="q3socketdevice.html#writeBlock">writeBlock</a>(), the impossible happens.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::NoFiles</tt></td><td align="center" valign="top">?</td><td valign="top">The operating system will not let <a href="q3socketdevice.html">Q3SocketDevice</a> open another file.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::ConnectionRefused</tt></td><td align="center" valign="top">?</td><td valign="top">A connection attempt was rejected by the peer.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::NetworkFailure</tt></td><td align="center" valign="top">?</td><td valign="top">There is a network failure.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::UnknownError</tt></td><td align="center" valign="top">?</td><td valign="top">The operating system did something unexpected.</td></tr>
+</table></p>
+<h3 class="fn"><a name="Protocol-enum"></a>enum Q3SocketDevice::Protocol</h3>
+<p>This enum type describes the protocol family of the socket. Possible values are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::IPv4</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The socket is an IPv4 socket.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::IPv6</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The socket is an IPv6 socket.</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::Unknown</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The protocol family of the socket is not known. This can happen if you use <a href="q3socketdevice.html">Q3SocketDevice</a> with an already existing socket; it tries to determine the protocol family, but this can fail if the protocol family is not known to <a href="q3socketdevice.html">Q3SocketDevice</a>.</td></tr>
+</table></p>
+<p>See also <a href="q3socketdevice.html#protocol">protocol</a>() and <a href="q3socketdevice.html#setSocket">setSocket</a>().</p>
+<h3 class="fn"><a name="Type-enum"></a>enum Q3SocketDevice::Type</h3>
+<p>This enum type describes the type of the socket:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::Stream</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">a stream socket (TCP, usually)</td></tr>
+<tr><td valign="top"><tt>Q3SocketDevice::Datagram</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">a datagram socket (UDP, usually)</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3SocketDevice"></a>Q3SocketDevice::Q3SocketDevice ( <a href="q3socketdevice.html#Type-enum">Type</a> <i>type</i> = Stream )</h3>
+<p>Creates a <a href="q3socketdevice.html">Q3SocketDevice</a> object for a stream or datagram socket.</p>
+<p>The <i>type</i> argument must be either <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Stream</a> for a reliable, connection-oriented TCP socket, or <tt>Q3SocketDevice::Datagram</tt> for an unreliable UDP socket.</p>
+<p>The socket is created as an IPv4 socket.</p>
+<p>See also <a href="q3socketdevice.html#blocking">blocking</a>() and <a href="q3socketdevice.html#protocol">protocol</a>().</p>
+<h3 class="fn"><a name="Q3SocketDevice-2"></a>Q3SocketDevice::Q3SocketDevice ( <a href="q3socketdevice.html#Type-enum">Type</a> <i>type</i>, <a href="q3socketdevice.html#Protocol-enum">Protocol</a> <i>protocol</i>, int <i>dummy</i> )</h3>
+<p>Creates a <a href="q3socketdevice.html">Q3SocketDevice</a> object for a stream or datagram socket.</p>
+<p>The <i>type</i> argument must be either <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Stream</a> for a reliable, connection-oriented TCP socket, or <tt>Q3SocketDevice::Datagram</tt> for an unreliable UDP socket.</p>
+<p>The <i>protocol</i> indicates whether the socket should be of type IPv4 or IPv6. Passing <tt>Unknown</tt> is not meaningful in this context and you should avoid using (it creates an IPv4 socket, but your code is not easily readable).</p>
+<p>The argument <i>dummy</i> is necessary for compatibility with some compilers.</p>
+<p>See also <a href="q3socketdevice.html#blocking">blocking</a>() and <a href="q3socketdevice.html#protocol">protocol</a>().</p>
+<h3 class="fn"><a name="Q3SocketDevice-3"></a>Q3SocketDevice::Q3SocketDevice ( int <i>socket</i>, <a href="q3socketdevice.html#Type-enum">Type</a> <i>type</i> )</h3>
+<p>Creates a <a href="q3socketdevice.html">Q3SocketDevice</a> object for the existing socket <i>socket</i>.</p>
+<p>The <i>type</i> argument must match the actual socket type; use <tt>Q3SocketDevice::Stream</tt> for a reliable, connection-oriented TCP socket, or <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Datagram</a> for an unreliable, connectionless UDP socket.</p>
+<h3 class="fn"><a name="dtor.Q3SocketDevice"></a>Q3SocketDevice::~Q3SocketDevice ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the socket device and closes the socket if it is open.</p>
+<h3 class="fn"><a name="accept"></a>int Q3SocketDevice::accept ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="address"></a><a href="qhostaddress.html">QHostAddress</a> Q3SocketDevice::address () const</h3>
+<p>Returns the address of this socket device. This may be 0.0&#x2e;0&#x2e;0 for a while, but is set to something sensible as soon as a sensible value is available.</p>
+<h3 class="fn"><a name="addressReusable"></a>bool Q3SocketDevice::addressReusable () const</h3>
+<p>Returns true if the address of this socket can be used by other sockets at the same time, and false if this socket claims exclusive ownership.</p>
+<p>See also <a href="q3socketdevice.html#setAddressReusable">setAddressReusable</a>().</p>
+<h3 class="fn"><a name="at"></a><a href="qiodevice-qt3.html#Offset-typedef">Offset</a> Q3SocketDevice::at () const</h3>
+<p>The read/write index is meaningless for a socket, therefore this function returns 0.</p>
+<h3 class="fn"><a name="at-2"></a>bool Q3SocketDevice::at ( <a href="qiodevice-qt3.html#Offset-typedef">Offset</a> <i>offset</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The read/write index is meaningless for a socket, therefore this function does nothing and returns true.</p>
+<p>The <i>offset</i> parameter is ignored.</p>
+<h3 class="fn"><a name="bind"></a>bool Q3SocketDevice::bind ( const <a href="qhostaddress.html">QHostAddress</a> &amp;, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="blocking"></a>bool Q3SocketDevice::blocking () const</h3>
+<p>See also <a href="q3socketdevice.html#setBlocking">setBlocking</a>().</p>
+<h3 class="fn"><a name="bytesAvailable"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3SocketDevice::bytesAvailable () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="close"></a>void Q3SocketDevice::close ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="connect"></a>bool Q3SocketDevice::connect ( const <a href="qhostaddress.html">QHostAddress</a> &amp;, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="error"></a><a href="q3socketdevice.html#Error-enum">Error</a> Q3SocketDevice::error () const</h3>
+<p>Returns the first error seen.</p>
+<p>See also <a href="q3socketdevice.html#setError">setError</a>().</p>
+<h3 class="fn"><a name="flush"></a>bool Q3SocketDevice::flush ()</h3>
+<p>The current <a href="q3socketdevice.html">Q3SocketDevice</a> implementation does not buffer at all, so this is a no-op. This function always returns true.</p>
+<h3 class="fn"><a name="isValid"></a>bool Q3SocketDevice::isValid () const</h3>
+<p>Returns true if this is a valid socket; otherwise returns false.</p>
+<p>See also <a href="q3socketdevice.html#socket">socket</a>().</p>
+<h3 class="fn"><a name="listen"></a>bool Q3SocketDevice::listen ( int <i>backlog</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="open"></a>bool Q3SocketDevice::open ( <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Opens the socket using the specified <a href="qiodevice.html">QIODevice</a> file <i>mode</i>. This function is called from the <a href="q3socketdevice.html">Q3SocketDevice</a> constructors and from the <a href="q3socketdevice.html#setSocket">setSocket</a>() function. You should not call it yourself.</p>
+<p>Reimplemented from <a href="qiodevice.html#open">QIODevice</a>.</p>
+<p>See also <a href="q3socketdevice.html#close">close</a>().</p>
+<h3 class="fn"><a name="open-2"></a>bool Q3SocketDevice::open ( int <i>mode</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="peerAddress"></a><a href="qhostaddress.html">QHostAddress</a> Q3SocketDevice::peerAddress () const</h3>
+<h3 class="fn"><a name="peerPort"></a><a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> Q3SocketDevice::peerPort () const</h3>
+<h3 class="fn"><a name="port"></a><a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> Q3SocketDevice::port () const</h3>
+<p>Returns the port number of this socket device. This may be 0 for a while, but is set to something sensible as soon as a sensible value is available.</p>
+<p>Note that Qt always uses native byte order, i.e&#x2e; 67 is 67 in Qt; there is no need to call htons().</p>
+<h3 class="fn"><a name="protocol"></a><a href="q3socketdevice.html#Protocol-enum">Protocol</a> Q3SocketDevice::protocol () const</h3>
+<p>Returns the socket's protocol family, which is one of <tt>Unknown</tt>, <tt>IPv4</tt>, or <tt>IPv6</tt>.</p>
+<p><a href="q3socketdevice.html">Q3SocketDevice</a> either creates a socket with a well known protocol family or it uses an already existing socket. In the first case, this function returns the protocol family it was constructed with. In the second case, it tries to determine the protocol family of the socket; if this fails, it returns <tt>Unknown</tt>.</p>
+<p>See also <a href="q3socketdevice.html#Protocol-enum">Protocol</a> and <a href="q3socketdevice.html#setSocket">setSocket</a>().</p>
+<h3 class="fn"><a name="readBlock"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3SocketDevice::readBlock ( char * <i>data</i>, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>maxlen</i> )</h3>
+<p>Reads <i>maxlen</i> bytes from the socket into <i>data</i> and returns the number of bytes read. Returns -1 if an error occurred. Returning 0 is not an error. For Stream sockets, 0 is returned when the remote host closes the connection. For Datagram sockets, 0 is a valid datagram size.</p>
+<h3 class="fn"><a name="readData"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3SocketDevice::readData ( char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>maxlen</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<h3 class="fn"><a name="receiveBufferSize"></a>int Q3SocketDevice::receiveBufferSize () const</h3>
+<p>Returns the size of the operating system receive buffer.</p>
+<p>See also <a href="q3socketdevice.html#setReceiveBufferSize">setReceiveBufferSize</a>().</p>
+<h3 class="fn"><a name="sendBufferSize"></a>int Q3SocketDevice::sendBufferSize () const</h3>
+<p>Returns the size of the operating system send buffer.</p>
+<p>See also <a href="q3socketdevice.html#setSendBufferSize">setSendBufferSize</a>().</p>
+<h3 class="fn"><a name="setAddressReusable"></a>void Q3SocketDevice::setAddressReusable ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the address of this socket to be usable by other sockets too if <i>enable</i> is true, and to be used exclusively by this socket if <i>enable</i> is false.</p>
+<p>When a socket is reusable, other sockets can use the same port number (and IP address), which is generally useful. Of course other sockets cannot use the same (address,port,peer-address,peer-port) 4-tuple as this socket, so there is no risk of confusing the two TCP connections.</p>
+<p>See also <a href="q3socketdevice.html#addressReusable">addressReusable</a>().</p>
+<h3 class="fn"><a name="setBlocking"></a>void Q3SocketDevice::setBlocking ( bool )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>See also <a href="q3socketdevice.html#blocking">blocking</a>().</p>
+<h3 class="fn"><a name="setError"></a>void Q3SocketDevice::setError ( <a href="q3socketdevice.html#Error-enum">Error</a> <i>err</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Allows subclasses to set the error state to <i>err</i>.</p>
+<p>See also <a href="q3socketdevice.html#error">error</a>().</p>
+<h3 class="fn"><a name="setReceiveBufferSize"></a>void Q3SocketDevice::setReceiveBufferSize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the size of the operating system receive buffer to <i>size</i>.</p>
+<p>The operating system receive buffer size effectively limits two things: how much data can be in transit at any one moment, and how much data can be received in one iteration of the main event loop.</p>
+<p>The default is operating system-dependent. A socket that receives large amounts of data is probably best with a buffer size of 49152.</p>
+<p>See also <a href="q3socketdevice.html#receiveBufferSize">receiveBufferSize</a>().</p>
+<h3 class="fn"><a name="setSendBufferSize"></a>void Q3SocketDevice::setSendBufferSize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the size of the operating system send buffer to <i>size</i>.</p>
+<p>The operating system send buffer size effectively limits how much data can be in transit at any one moment.</p>
+<p>The default is operating system-dependent. A socket that sends large amounts of data is probably best with a buffer size of 49152.</p>
+<p>See also <a href="q3socketdevice.html#sendBufferSize">sendBufferSize</a>().</p>
+<h3 class="fn"><a name="setSocket"></a>void Q3SocketDevice::setSocket ( int <i>socket</i>, <a href="q3socketdevice.html#Type-enum">Type</a> <i>type</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the socket device to operate on the existing socket <i>socket</i>.</p>
+<p>The <i>type</i> argument must match the actual socket type; use <tt>Q3SocketDevice::Stream</tt> for a reliable, connection-oriented TCP socket, or <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Datagram</a> for an unreliable, connectionless UDP socket.</p>
+<p>Any existing socket is closed.</p>
+<p>See also <a href="q3socketdevice.html#socket">socket</a>(), <a href="q3socketdevice.html#isValid">isValid</a>(), and <a href="q3socketdevice.html#close">close</a>().</p>
+<h3 class="fn"><a name="socket"></a>int Q3SocketDevice::socket () const</h3>
+<p>Returns the socket number, or -1 if it is an invalid socket.</p>
+<p>See also <a href="q3socketdevice.html#setSocket">setSocket</a>(), <a href="q3socketdevice.html#isValid">isValid</a>(), and <a href="q3socketdevice.html#type">type</a>().</p>
+<h3 class="fn"><a name="type"></a><a href="q3socketdevice.html#Type-enum">Type</a> Q3SocketDevice::type () const</h3>
+<p>Returns the socket type which is either <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Stream</a> or <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Datagram</a>.</p>
+<p>See also <a href="q3socketdevice.html#socket">socket</a>().</p>
+<h3 class="fn"><a name="waitForMore"></a><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> Q3SocketDevice::waitForMore ( int <i>msecs</i>, bool * <i>timeout</i> = 0 ) const</h3>
+<h3 class="fn"><a name="writeBlock"></a><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> Q3SocketDevice::writeBlock ( const char * <i>data</i>, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>len</i>, const <a href="qhostaddress.html">QHostAddress</a> &amp; <i>host</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="writeBlock-2"></a><a href="qtglobal-qt3.html#Q_LONG-typedef">Q_LONG</a> Q3SocketDevice::writeBlock ( const char * <i>data</i>, <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>len</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes <i>len</i> bytes to the socket from <i>data</i> and returns the number of bytes written. Returns -1 if an error occurred.</p>
+<p>This is used for <a href="q3socketdevice.html#Type-enum">Q3SocketDevice::Stream</a> sockets.</p>
+<h3 class="fn"><a name="writeData"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3SocketDevice::writeData ( const char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>len</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qdbusadaptors.qdoc -->
+<head>
+  <title>Qt 4.4: Using QtDBus Adaptors</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Using QtDBus Adaptors<br /><span class="subtitle"></span>
+</h1>
+<p>Adaptors are special classes that are attached to any <a href="qobject.html">QObject</a>-derived class and provide the interface to the external world using D-Bus. Adaptors are intended to be lightweight classes whose main purpose is to relay calls to and from the real object, possibly validating or converting the input from the external world and, thus, protecting the real object.</p>
+<p>Unlike multiple inheritance, adaptors can be added at any time to any object (but not removed), which allows for greater flexibility when exporting existing classes. Another advantage of adaptors is to provide similar but not identical functionality in methods of the same name in different interfaces, a case which can be quite common when adding a new version of a standard interface to an object.</p>
+<p>In order to use an adaptor, one must create a class which inherits <a href="qdbusabstractadaptor.html">QDBusAbstractAdaptor</a>. Since that is a standard <a href="qobject.html">QObject</a>-derived class, the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro must appear in the declaration and the source file must be processed with the <a href="moc.html#moc">moc</a> tool. The class must also contain one or more Q_CLASSINFO entries with the <tt>&quot;D-Bus Interface&quot;</tt> name, declaring which interfaces it is exporting.</p>
+<p>Any public slot in the class will be accessible through the bus over messages of the MethodCall type. (See <a href="qdbusdeclaringslots.html">Declaring Slots in D-Bus Adaptors</a> for more information). Signals in the class will be automatically relayed over D-Bus. However, not all types are allowed signals or slots' parameter lists: see <a href="qdbustypesystem.html">The QtDBus Type System</a> for more information.</p>
+<p>Also, any property declared with Q_PROPERTY will be automatically exposed over the Properties interface on D-Bus. Since the <a href="qobject.html">QObject</a> property system does not allow for non-readable properties, it is not possible to declare write-only properties using adaptors.</p>
+<p>More information:</p>
+<ul>
+<li><a href="qdbusdeclaringslots.html">Declaring Slots in D-Bus Adaptors</a></li>
+<li><a href="qdbusdeclaringsignals.html">Declaring Signals in D-Bus Adaptors</a></li>
+<li><a href="qdbustypesystem.html">The QtDBus Type System</a></li>
+<li><a href="qdbusadaptorexample.html">D-Bus Adaptor Example</a></li>
+</ul>
+<p>See also <a href="qdbusabstractadaptor.html">QDBusAbstractAdaptor</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

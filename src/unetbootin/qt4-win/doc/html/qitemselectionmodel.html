@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qitemselectionmodel.cpp -->
+<head>
+  <title>Qt 4.4: QItemSelectionModel Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QItemSelectionModel Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QItemSelectionModel class keeps track of a view's selected items. <a href="#details">More...</a></p>
+<pre> #include &lt;QItemSelectionModel&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qitemselectionmodel-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qitemselectionmodel.html#SelectionFlag-enum">SelectionFlag</a></b> { NoUpdate, Clear, Select, Deselect, ..., ClearAndSelect }</li>
+<li><div class="fn"/>flags <b><a href="qitemselectionmodel.html#SelectionFlag-enum">SelectionFlags</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qitemselectionmodel.html#QItemSelectionModel">QItemSelectionModel</a></b> ( QAbstractItemModel * <i>model</i> )</li>
+<li><div class="fn"/><b><a href="qitemselectionmodel.html#QItemSelectionModel-2">QItemSelectionModel</a></b> ( QAbstractItemModel * <i>model</i>, QObject * <i>parent</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qitemselectionmodel.html#dtor.QItemSelectionModel">~QItemSelectionModel</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#columnIntersectsSelection">columnIntersectsSelection</a></b> ( int <i>column</i>, const QModelIndex &amp; <i>parent</i> ) const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qitemselectionmodel.html#currentIndex">currentIndex</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#hasSelection">hasSelection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#isColumnSelected">isColumnSelected</a></b> ( int <i>column</i>, const QModelIndex &amp; <i>parent</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#isRowSelected">isRowSelected</a></b> ( int <i>row</i>, const QModelIndex &amp; <i>parent</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#isSelected">isSelected</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>const QAbstractItemModel * <b><a href="qitemselectionmodel.html#model">model</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionmodel.html#rowIntersectsSelection">rowIntersectsSelection</a></b> ( int <i>row</i>, const QModelIndex &amp; <i>parent</i> ) const</li>
+<li><div class="fn"/>QModelIndexList <b><a href="qitemselectionmodel.html#selectedColumns">selectedColumns</a></b> ( int <i>row</i> = 0 ) const</li>
+<li><div class="fn"/>QModelIndexList <b><a href="qitemselectionmodel.html#selectedIndexes">selectedIndexes</a></b> () const</li>
+<li><div class="fn"/>QModelIndexList <b><a href="qitemselectionmodel.html#selectedRows">selectedRows</a></b> ( int <i>column</i> = 0 ) const</li>
+<li><div class="fn"/>const QItemSelection <b><a href="qitemselectionmodel.html#selection">selection</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qitemselectionmodel.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#clearSelection">clearSelection</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qitemselectionmodel.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qitemselectionmodel.html#select">select</a></b> ( const QModelIndex &amp; <i>index</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qitemselectionmodel.html#select-2">select</a></b> ( const QItemSelection &amp; <i>selection</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</li>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#setCurrentIndex">setCurrentIndex</a></b> ( const QModelIndex &amp; <i>index</i>, QItemSelectionModel::SelectionFlags <i>command</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#currentChanged">currentChanged</a></b> ( const QModelIndex &amp; <i>current</i>, const QModelIndex &amp; <i>previous</i> )</li>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#currentColumnChanged">currentColumnChanged</a></b> ( const QModelIndex &amp; <i>current</i>, const QModelIndex &amp; <i>previous</i> )</li>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#currentRowChanged">currentRowChanged</a></b> ( const QModelIndex &amp; <i>current</i>, const QModelIndex &amp; <i>previous</i> )</li>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a></b> ( const QItemSelection &amp; <i>selected</i>, const QItemSelection &amp; <i>deselected</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qitemselectionmodel.html#emitSelectionChanged">emitSelectionChanged</a></b> ( const QItemSelection &amp; <i>newSelection</i>, const QItemSelection &amp; <i>oldSelection</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QItemSelectionModel class keeps track of a view's selected items.</p>
+<p>A QItemSelectionModel keeps track of the selected items in a view, or in several views onto the same model. It also keeps track of the currently selected item in a view.</p>
+<p>The QItemSelectionModel class is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view framework</a>.</p>
+<p>The selected items are stored using ranges. Whenever you want to modify the selected items use <a href="qitemselectionmodel.html#select">select</a>() and provide either a <a href="qitemselection.html">QItemSelection</a>, or a <a href="qmodelindex.html">QModelIndex</a> and a <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlag</a>.</p>
+<p>The QItemSelectionModel takes a two layer approach to selection management, dealing with both selected items that have been committed and items that are part of the current selection. The current selected items are part of the current interactive selection (for example with rubber-band selection or keyboard-shift selections).</p>
+<p>To update the currently selected items, use the bitwise OR of <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::Current</a> and any of the other <a href="qitemselectionmodel.html#SelectionFlag-enum">SelectionFlags</a>. If you omit the <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::Current</a> command, a new current selection will be created, and the previous one added to the whole selection. All functions operate on both layers; for example, selectedItems() will return items from both layers.</p>
+<p>See also <a href="model-view-programming.html">Model/View Programming</a>, <a href="qabstractitemmodel.html">QAbstractItemModel</a>, and <a href="itemviews-chart.html">Chart Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="SelectionFlag-enum"></a>enum QItemSelectionModel::SelectionFlag<br />flags QItemSelectionModel::SelectionFlags</h3>
+<p>This enum describes the way the selection model will be updated.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::NoUpdate</tt></td><td align="center" valign="top"><tt>0x0000</tt></td><td valign="top">No selection will be made.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Clear</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">The complete selection will be cleared.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Select</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">All specified indexes will be selected.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Deselect</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">All specified indexes will be deselected.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Toggle</tt></td><td align="center" valign="top"><tt>0x0008</tt></td><td valign="top">All specified indexes will be selected or deselected depending on their current state.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Current</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">The current selection will be updated.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Rows</tt></td><td align="center" valign="top"><tt>0x0020</tt></td><td valign="top">All indexes will be expanded to span rows.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::Columns</tt></td><td align="center" valign="top"><tt>0x0040</tt></td><td valign="top">All indexes will be expanded to span columns.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::SelectCurrent</tt></td><td align="center" valign="top"><tt>Select | Current</tt></td><td valign="top">A combination of Select and Current, provided for convenience.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::ToggleCurrent</tt></td><td align="center" valign="top"><tt>Toggle | Current</tt></td><td valign="top">A combination of Toggle and Current, provided for convenience.</td></tr>
+<tr><td valign="top"><tt>QItemSelectionModel::ClearAndSelect</tt></td><td align="center" valign="top"><tt>Clear | Select</tt></td><td valign="top">A combination of Clear and Select, provided for convenience.</td></tr>
+</table></p>
+<p>The SelectionFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;SelectionFlag&gt;. It stores an OR combination of SelectionFlag values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QItemSelectionModel"></a>QItemSelectionModel::QItemSelectionModel ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i> )</h3>
+<p>Constructs a selection model that operates on the specified item <i>model</i>.</p>
+<h3 class="fn"><a name="QItemSelectionModel-2"></a>QItemSelectionModel::QItemSelectionModel ( <a href="qabstractitemmodel.html">QAbstractItemModel</a> * <i>model</i>, <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs a selection model that operates on the specified item <i>model</i> with <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QItemSelectionModel"></a>QItemSelectionModel::~QItemSelectionModel ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the selection model.</p>
+<h3 class="fn"><a name="clear"></a>void QItemSelectionModel::clear ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears the selection model. Emits <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>() and <a href="qitemselectionmodel.html#currentChanged">currentChanged</a>().</p>
+<h3 class="fn"><a name="clearSelection"></a>void QItemSelectionModel::clearSelection ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Clears the selection in the selection model. Emits <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>().</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="columnIntersectsSelection"></a>bool QItemSelectionModel::columnIntersectsSelection ( int <i>column</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> ) const</h3>
+<p>Returns true if there are any items selected in the <i>column</i> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="currentChanged"></a>void QItemSelectionModel::currentChanged ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>current</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>previous</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current item changes. The <i>previous</i> model item index is replaced by the <i>current</i> index as the selection's current item.</p>
+<p>Note that this signal will not be emitted when the item model is reset.</p>
+<p>See also <a href="qitemselectionmodel.html#currentIndex">currentIndex</a>(), <a href="qitemselectionmodel.html#setCurrentIndex">setCurrentIndex</a>(), and <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>().</p>
+<h3 class="fn"><a name="currentColumnChanged"></a>void QItemSelectionModel::currentColumnChanged ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>current</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>previous</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the <i>current</i> item changes and its column is different to the column of the <i>previous</i> current item.</p>
+<p>Note that this signal will not be emitted when the item model is reset.</p>
+<p>See also <a href="qitemselectionmodel.html#currentChanged">currentChanged</a>(), <a href="qitemselectionmodel.html#currentRowChanged">currentRowChanged</a>(), <a href="qitemselectionmodel.html#currentIndex">currentIndex</a>(), and <a href="qitemselectionmodel.html#setCurrentIndex">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="currentIndex"></a><a href="qmodelindex.html">QModelIndex</a> QItemSelectionModel::currentIndex () const</h3>
+<p>Returns the model item index for the current item, or an invalid index if there is no current item.</p>
+<p>See also <a href="qitemselectionmodel.html#setCurrentIndex">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="currentRowChanged"></a>void QItemSelectionModel::currentRowChanged ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>current</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>previous</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the <i>current</i> item changes and its row is different to the row of the <i>previous</i> current item.</p>
+<p>Note that this signal will not be emitted when the item model is reset.</p>
+<p>See also <a href="qitemselectionmodel.html#currentChanged">currentChanged</a>(), <a href="qitemselectionmodel.html#currentColumnChanged">currentColumnChanged</a>(), <a href="qitemselectionmodel.html#currentIndex">currentIndex</a>(), and <a href="qitemselectionmodel.html#setCurrentIndex">setCurrentIndex</a>().</p>
+<h3 class="fn"><a name="emitSelectionChanged"></a>void QItemSelectionModel::emitSelectionChanged ( const <a href="qitemselection.html">QItemSelection</a> &amp; <i>newSelection</i>, const <a href="qitemselection.html">QItemSelection</a> &amp; <i>oldSelection</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Compares the two selections <i>newSelection</i> and <i>oldSelection</i> and emits <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>() with the deselected and selected items.</p>
+<h3 class="fn"><a name="hasSelection"></a>bool QItemSelectionModel::hasSelection () const</h3>
+<p>Returns true if the selection model contains any selection ranges; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="isColumnSelected"></a>bool QItemSelectionModel::isColumnSelected ( int <i>column</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> ) const</h3>
+<p>Returns true if all items are selected in the <i>column</i> with the given <i>parent</i>.</p>
+<p>Note that this function is usually faster than calling <a href="qitemselectionmodel.html#isSelected">isSelected</a>() on all items in the same column and that unselectable items are ignored.</p>
+<h3 class="fn"><a name="isRowSelected"></a>bool QItemSelectionModel::isRowSelected ( int <i>row</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> ) const</h3>
+<p>Returns true if all items are selected in the <i>row</i> with the given <i>parent</i>.</p>
+<p>Note that this function is usually faster than calling <a href="qitemselectionmodel.html#isSelected">isSelected</a>() on all items in the same row and that unselectable items are ignored.</p>
+<h3 class="fn"><a name="isSelected"></a>bool QItemSelectionModel::isSelected ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns true if the given model item <i>index</i> is selected.</p>
+<h3 class="fn"><a name="model"></a>const <a href="qabstractitemmodel.html">QAbstractItemModel</a> * QItemSelectionModel::model () const</h3>
+<p>Returns the item model operated on by the selection model.</p>
+<h3 class="fn"><a name="reset"></a>void QItemSelectionModel::reset ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Clears the selection model. Does not emit any signals.</p>
+<h3 class="fn"><a name="rowIntersectsSelection"></a>bool QItemSelectionModel::rowIntersectsSelection ( int <i>row</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i> ) const</h3>
+<p>Returns true if there are any items selected in the <i>row</i> with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="select"></a>void QItemSelectionModel::select ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i>, <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlags</a> <i>command</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Selects the model item <i>index</i> using the specified <i>command</i>, and emits <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>().</p>
+<p>See also <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlags</a>.</p>
+<h3 class="fn"><a name="select-2"></a>void QItemSelectionModel::select ( const <a href="qitemselection.html">QItemSelection</a> &amp; <i>selection</i>, <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlags</a> <i>command</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Selects the item <i>selection</i> using the specified <i>command</i>, and emits <a href="qitemselectionmodel.html#selectionChanged">selectionChanged</a>().</p>
+<p>See also <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlag</a>.</p>
+<h3 class="fn"><a name="selectedColumns"></a><a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> QItemSelectionModel::selectedColumns ( int <i>row</i> = 0 ) const</h3>
+<p>Returns the indexes in the given <i>row</i> for columns where all rows are selected.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qitemselectionmodel.html#selectedIndexes">selectedIndexes</a>() and <a href="qitemselectionmodel.html#selectedRows">selectedRows</a>().</p>
+<h3 class="fn"><a name="selectedIndexes"></a><a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> QItemSelectionModel::selectedIndexes () const</h3>
+<p>Returns a list of all selected model item indexes. The list contains no duplicates, and is not sorted.</p>
+<h3 class="fn"><a name="selectedRows"></a><a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> QItemSelectionModel::selectedRows ( int <i>column</i> = 0 ) const</h3>
+<p>Returns the indexes in the given <i>column</i> for the rows where all columns are selected.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qitemselectionmodel.html#selectedIndexes">selectedIndexes</a>() and <a href="qitemselectionmodel.html#selectedColumns">selectedColumns</a>().</p>
+<h3 class="fn"><a name="selection"></a>const <a href="qitemselection.html">QItemSelection</a> QItemSelectionModel::selection () const</h3>
+<p>Returns the selection ranges stored in the selection model.</p>
+<h3 class="fn"><a name="selectionChanged"></a>void QItemSelectionModel::selectionChanged ( const <a href="qitemselection.html">QItemSelection</a> &amp; <i>selected</i>, const <a href="qitemselection.html">QItemSelection</a> &amp; <i>deselected</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the selection changes. The change in the selection is represented as an item selection of <i>deselected</i> items and an item selection of <i>selected</i> items.</p>
+<p>Note the that the current index changes independently from the selection. Also note that this signal will not be emitted when the item model is reset.</p>
+<p>See also <a href="qitemselectionmodel.html#select">select</a>() and <a href="qitemselectionmodel.html#currentChanged">currentChanged</a>().</p>
+<h3 class="fn"><a name="setCurrentIndex"></a>void QItemSelectionModel::setCurrentIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i>, <a href="qitemselectionmodel.html#SelectionFlag-enum">QItemSelectionModel::SelectionFlags</a> <i>command</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the model item <i>index</i> to be the current item, and emits <a href="qitemselectionmodel.html#currentChanged">currentChanged</a>(). The current item is used for keyboard navigation and focus indication; it is independent of any selected items, although a selected item can also be the current item.</p>
+<p>Depending on the specified <i>command</i>, the <i>index</i> can also become part of the current selection.</p>
+<p>See also <a href="qitemselectionmodel.html#currentIndex">currentIndex</a>() and <a href="qitemselectionmodel.html#select">select</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

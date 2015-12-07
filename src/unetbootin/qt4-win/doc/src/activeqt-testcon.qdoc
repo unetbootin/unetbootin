@@ -1,0 +1,79 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! 
+    \page activeqt-testcon.html
+    \title testcon - An ActiveX Test Container (ActiveQt)
+
+    \ingroup activeqt-tools
+
+    \keyword testcon
+
+    This application implements a generic test container for ActiveX
+    controls. You can insert ActiveX controls installed on your
+    system, and execute methods and modify properties. The container
+    will log information about events and property changes as well
+    as debug output in the log window.
+
+    Parts of the code use internals of the Qt meta object and ActiveQt 
+    framework and are not recommended to be used in application code.
+
+    Use the application to view the slots, signals and porperties 
+    available through the QAxWidget class when instantiated with a 
+    certain ActiveX, and to test ActiveX controls you implement or
+    want to use in your Qt application.
+
+    The application can load and execute script files in JavaScript, 
+    VBScript, Perl and Python (if installed) to automate the controls 
+    loaded. Example script files using the QAxWidget2 class are available 
+    in the \c scripts subdirectory.
+
+    Note that the qmake project of this example includes a resource file
+    \c testcon.rc with a version resource. This is required by some
+    ActiveX controls (ie. Shockwave ActiveX Controls), which might crash
+    or misbehave otherwise if such version information is missing.
+
+    To build the tool you must first build the QAxContainer and the
+    QAxServer libraries. Then run your make  tool in \c tools/testcon
+    and run the resulting \c testcon.exe.
+*/

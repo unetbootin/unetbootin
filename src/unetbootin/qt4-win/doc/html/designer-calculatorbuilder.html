@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/calculatorbuilder.qdoc -->
+<head>
+  <title>Qt 4.4: Calculator Builder Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Calculator Builder Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="designer-calculatorbuilder-calculatorform-cpp.html">designer/calculatorbuilder/calculatorform.cpp</a></li>
+<li><a href="designer-calculatorbuilder-calculatorform-h.html">designer/calculatorbuilder/calculatorform.h</a></li>
+<li><a href="designer-calculatorbuilder-calculatorform-ui.html">designer/calculatorbuilder/calculatorform.ui</a></li>
+<li><a href="designer-calculatorbuilder-main-cpp.html">designer/calculatorbuilder/main.cpp</a></li>
+<li><a href="designer-calculatorbuilder-calculatorbuilder-pro.html">designer/calculatorbuilder/calculatorbuilder.pro</a></li>
+<li><a href="designer-calculatorbuilder-calculatorbuilder-qrc.html">designer/calculatorbuilder/calculatorbuilder.qrc</a></li>
+</ul>
+<p>The Calculator Builder example shows how to create a user interface from a <i>Qt Designer</i> form at run-time, using the <a href="quiloader.html">QUiLoader</a> class.</p>
+<p align="center"><img src="images/calculatorbuilder-example.png" /></p><p>We use the form created in the <a href="designer-calculatorform.html">Calculator Form</a> example to show that the same user interface can be generated when the application is executed or defined when the application is built.</p>
+<a name="preparation"></a>
+<h2>Preparation</h2>
+<p>The <a href="designer-calculatorform.html">Calculator Form</a> example defines a user interface that we can use without modification. In this example, we use a <a href="resources.html">resource file</a> to contain the <tt>calculatorform.ui</tt> file created in the previous example, but it could be stored on disk instead.</p>
+<p>To generate a form at run time, we need to link the example against the <tt>QtUiTools</tt> module library. The project file we use contains all the necessary information to do this:</p>
+<pre> CONFIG      += uitools
+
+ HEADERS     = calculatorform.h
+ RESOURCES   = calculatorbuilder.qrc
+ SOURCES     = calculatorform.cpp \
+               main.cpp</pre>
+<p>All the other necessary files are declared as usual.</p>
+<a name="calculatorform-class-definition"></a>
+<h2>CalculatorForm Class Definition</h2>
+<p>The <tt>CalculatorForm</tt> class defines the widget used to host the form's user interface:</p>
+<pre> class CalculatorForm : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     CalculatorForm(QWidget *parent = 0);
+
+ private slots:
+     void on_inputSpinBox1_valueChanged(int value);
+     void on_inputSpinBox2_valueChanged(int value);
+
+ private:
+     QSpinBox *ui_inputSpinBox1;
+     QSpinBox *ui_inputSpinBox2;
+     QLabel *ui_outputWidget;
+ };</pre>
+<p>Note that we do not need to include a header file to describe the user interface. We only define two public slots, using the auto-connection naming convention required by <tt>uic</tt>, and declare private variables that we will use to access widgets provided by the form after they are constructed.</p>
+<a name="calculatorform-class-implementation"></a>
+<h2>CalculatorForm Class Implementation</h2>
+<p>We will need to use the <a href="quiloader.html">QUiLoader</a> class that is provided by the <tt>libQtUiTools</tt> library, so we first ensure that we include the header file for the module:</p>
+<pre> #include &lt;QtUiTools&gt;</pre>
+<p>The constructor uses a form loader object to construct the user interface that we retrieve, via a <a href="qfile.html">QFile</a> object, from the example's resources:</p>
+<pre> CalculatorForm::CalculatorForm(QWidget *parent)
+     : QWidget(parent)
+ {
+     QUiLoader loader;
+
+     QFile file(&quot;:/forms/calculatorform.ui&quot;);
+     file.open(QFile::ReadOnly);
+     QWidget *formWidget = loader.load(&amp;file, this);
+     file.close();</pre>
+<p>By including the user interface in the example's resources, we ensure that it will be present when the example is run. The <tt>loader.load()</tt> function takes the user interface description contained in the file and constructs the form widget as a child widget of the <tt>CalculatorForm</tt>.</p>
+<p>We are interested in three widgets in the generated user interface: two spin boxes and a label. For convenience, we retrieve pointers to these widgets from the widget that was constructed by the <tt>FormBuilder</tt>, and we record them for later use. The <tt>qFindChild()</tt> template function allows us to query widgets in order to find named child widgets.</p>
+<pre>     ui_inputSpinBox1 = qFindChild&lt;QSpinBox*&gt;(this, &quot;inputSpinBox1&quot;);
+     ui_inputSpinBox2 = qFindChild&lt;QSpinBox*&gt;(this, &quot;inputSpinBox2&quot;);
+     ui_outputWidget = qFindChild&lt;QLabel*&gt;(this, &quot;outputWidget&quot;);</pre>
+<p>The widgets created by the form loader need to be connected to the specially-named slots in the <tt>CalculatorForm</tt> object. We use Qt's meta-object system to enable these connections:</p>
+<pre>     QMetaObject::connectSlotsByName(this);</pre>
+<p>The form widget is added to a layout, and the window title is set:</p>
+<pre>     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(formWidget);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Calculator Builder&quot;));
+ }</pre>
+<p>The two slots that modify widgets provided by the form are defined in a similar way to those in the <a href="designer-calculatorform.html">Calculator Form</a> example, except that we read the values from the spin boxes and write the result to the output widget via the pointers we recorded in the constructor:</p>
+<pre> void CalculatorForm::on_inputSpinBox1_valueChanged(int value)
+ {
+     ui_outputWidget-&gt;setText(QString::number(value + ui_inputSpinBox2-&gt;value()));
+ }
+
+ void CalculatorForm::on_inputSpinBox2_valueChanged(int value)
+ {
+     ui_outputWidget-&gt;setText(QString::number(value + ui_inputSpinBox1-&gt;value()));
+ }</pre>
+<p>The advantage of this approach is that we can replace the form when the application is run, but we can still manipulate the widgets it contains as long as they are given appropriate names.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

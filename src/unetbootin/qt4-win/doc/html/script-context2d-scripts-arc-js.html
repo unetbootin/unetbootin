@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: arc.js Example File (script/context2d/scripts/arc.js)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">arc.js Example File<br /><span class="small-subtitle">script/context2d/scripts/arc.js</span>
+</h1>
+<pre> var canvas = document.getElementById('tutorial');
+
+   // Make sure we don't execute when canvas isn't supported
+   if (canvas.getContext){
+
+     // use getContext to use the canvas for drawing
+     var ctx = canvas.getContext('2d');
+
+     // Draw shapes
+     for (i=0;i&lt;4;i++){
+       for(j=0;j&lt;3;j++){
+         ctx.beginPath();
+         var x          = 25+j*50;               // x coordinate
+         var y          = 25+i*50;               // y coordinate
+         var radius     = 20;                    // Arc radius
+         var startAngle = 0;                     // Starting point on circle
+         var endAngle   = Math.PI+(Math.PI*j)/2; // End point on circle
+         var clockwise  = i%2==0 ? false : true; // clockwise or anticlockwise
+
+         ctx.arc(x,y,radius,startAngle,endAngle, clockwise);
+
+         if (i&gt;1){
+           ctx.fill();
+         } else {
+           ctx.stroke();
+         }
+       }
+     }
+
+   }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

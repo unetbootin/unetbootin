@@ -1,0 +1,88 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \group qttools
+
+    \title Qt's Tools
+    \ingroup buildsystem
+
+    Qt is supplied with several command line and graphical tools to
+    ease and speed the development process. Each tool is listed here
+    with a link to its documentation.
+
+    \table
+    \header \o Tool \o Description
+    \row \o \l{Qt Designer Manual}{Qt Designer}
+         \o Create forms visually.
+    \row \o \l{Qt Assistant Manual}{Qt Assistant}
+         \o Quickly find the help you need.
+    \row \o \l{Qt Linguist Manual}{Qt Linguist, lupdate, lrelease}
+         \o Translate applications to reach international markets.
+    \row \o \l{qmake Manual}{qmake}
+         \o Create makefiles from simple platform-independent project files (\c .pro files).
+    \omit
+    \row \o \l{emb-qvfb.html}{qvfb}
+         \o Run and test embedded applications on the desktop.
+    \row \o \l{emb-makeqpf.html}{makeqpf}
+         \o Create pre-rendered fonts for embedded devices.
+    \endomit
+    \row \o \l{moc}{Meta-Object Compiler (moc)}
+         \o Generate meta-object information for QObject subclasses.
+    \row \o \l{User Interface Compiler (uic)}
+         \o Generate C++ code from user interface files.
+    \row \o \l{Resource Compiler (rcc)}
+         \o Embed resources into Qt applications during the build process.
+    \row \o \l{Configuring Qt}{Configuring Qt (qtconfig)}
+         \o X11-based Qt configuration tool with online help.
+    \row \o \l{Examples and Demos Launcher}
+         \o A launcher for Qt's Examples and Demonstration programs.
+    \row \o \l{qt3to4 - The Qt 3 to 4 Porting Tool}
+         \o A tool to assist in porting applications from Qt 3 to Qt 4.
+    \row \o \l{QtDBus XML compiler (qdbusxml2cpp)}
+         \o A tool to convert D-Bus interface descriptions to C++ source code.
+    \row \o \l{D-Bus Viewer}
+         \o A tool to introspect D-Bus objects and messages.
+    \endtable
+
+*/

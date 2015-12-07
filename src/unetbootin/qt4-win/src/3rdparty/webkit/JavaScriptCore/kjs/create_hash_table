@@ -1,0 +1,271 @@
+#! /usr/bin/perl -w
+#
+# Static Hashtable Generator
+#
+# (c) 2000-2002 by Harri Porten <porten@kde.org> and
+#                  David Faure <faure@kde.org>
+# Modified (c) 2004 by Nikolas Zimmermann <wildfox@kde.org>
+#
+# Part of the KJS library.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301  USA
+#
+
+use strict;
+
+my $file = $ARGV[0];
+shift;
+my $findSize = 0;
+my $includelookup = 0;
+
+# Use -s as second argument to make it try many hash sizes
+$findSize = 1 if (defined($ARGV[0]) && $ARGV[0] eq "-s");
+
+# Use -i as second argument to make it include "lookup.h"
+$includelookup = 1 if (defined($ARGV[0]) && $ARGV[0] eq "-i");
+
+# Use -n as second argument to make it use the third argument as namespace parameter ie. -n KDOM
+my $useNameSpace = $ARGV[1] if (defined($ARGV[0]) && $ARGV[0] eq "-n");
+
+print STDERR "Creating hashtable for $file\n";
+open(IN, $file) or die "No such file $file";
+
+my @keys = ();
+my @values = ();
+my @attrs = ();
+my @params = ();
+my @hashes = ();
+my @table = ();
+my @links = ();
+
+my $inside = 0;
+my $name;
+my $size;
+my $hashsize;
+my $banner = 0;
+sub calcTable();
+sub output();
+sub hashValue($);
+
+while (<IN>) {
+  chop;
+  s/^\s*//g;
+  if (/^\#|^$/) {
+      # comment. do nothing
+    } elsif (/^\@begin/ && !$inside) {
+      if (/^\@begin\s*([:_\w]+)\s*(\d+)\s*$/) {
+        $inside = 1;
+        $name = $1;
+        $hashsize = $2;
+      } else {
+         printf STDERR "WARNING: \@begin without table name and hashsize, skipping $_\n";
+      }
+    } elsif (/^\@end\s*$/ && $inside) {
+
+      if($findSize) {
+	my $entriesnum=@keys;
+        print STDERR "Table: $name   $entriesnum entries\n";
+	for( my $i=3 ; $i<79 ; ++$i) { $hashsize=$i ; calcTable(); }
+      } else {
+        calcTable();
+      }
+
+      output();
+      @keys = ();
+      @values = ();
+      @attrs = ();
+      @params = ();
+      @table = ();
+      @links = ();
+      @hashes = ();
+      $inside = 0;
+    } elsif (/^(\S+)\s*(\S+)\s*([\w\|]*)\s*(\w*)\s*$/ && $inside) {
+      my $key = $1;
+      my $val = $2;
+      my $att = $3;
+      my $param = $4;
+      push(@keys, $key);
+      push(@values, $val);
+      push(@hashes, hashValue($key));
+      printf STDERR "WARNING: Number of arguments missing for $key/$val\n"
+        if ( $att =~ m/Function/ && length($param) == 0);
+      push(@attrs, length($att) > 0 ? $att : "0");
+      push(@params, length($param) > 0 ? $param : "0");
+    } elsif ($inside) {
+      die "invalid data {" . $_ . "}";
+    }
+}
+
+die "missing closing \@end" if ($inside);
+
+sub calcTable() {
+  $size = $hashsize;
+  my $collisions = 0;
+  my $maxdepth = 0;
+  my $i = 0;
+  foreach my $key (@keys) {
+    my $depth = 0;
+    my $h = hashValue($key) % $hashsize;
+    while (defined($table[$h])) {
+      if (defined($links[$h])) {
+	$h = $links[$h];
+	$depth++;
+      } else {
+	$collisions++;
+	$links[$h] = $size;
+	$h = $size;
+	$size++;
+      }
+    }
+    #print STDERR "table[$h] = $i\n";
+    $table[$h] = $i;
+    $i++;
+    $maxdepth = $depth if ( $depth > $maxdepth);
+  }
+
+  # Ensure table is big enough (in case of undef entries at the end)
+  if ( $#table+1 < $size ) {
+    $#table = $size-1;
+  }
+  #print STDERR "After loop: size=$size table=".($#table+1)."\n";
+
+  if ($findSize) {
+    my $emptycount = 0;
+    foreach my $entry (@table) {
+      $emptycount++ if (!defined($entry));
+    }
+    print STDERR "Hashsize: $hashsize  Total Size: $size Empty: $emptycount MaxDepth: $maxdepth Collisions: $collisions\n";
+  }
+#  my $debugtable = 0;
+#  foreach my $entry (@table) {
+#    print STDERR "$debugtable " . (defined $entry ? $entry : '<undefined>');
+#    print STDERR " -> " . $links[$debugtable] if (defined($links[$debugtable]));
+#    print STDERR "\n";
+#    $debugtable++;
+#  }
+}
+
+sub leftShift($$) {
+    my ($value, $distance) = @_;
+    return (($value << $distance) & 0xFFFFFFFF);
+}
+
+# Paul Hsieh's SuperFastHash
+# http://www.azillionmonkeys.com/qed/hash.html
+# Ported from UString..
+sub hashValue($) {
+  my @chars = split(/ */, $_[0]);
+
+  # This hash is designed to work on 16-bit chunks at a time. But since the normal case
+  # (above) is to hash UTF-16 characters, we just treat the 8-bit chars as if they
+  # were 16-bit chunks, which should give matching results
+
+  my $EXP2_32 = 4294967296;
+
+  my $hash = 0x9e3779b9;
+  my $l    = scalar @chars; #I wish this was in Ruby --- Maks
+  my $rem  = $l & 1;
+  $l = $l >> 1;
+
+  my $s = 0;
+
+  # Main loop
+  for (; $l > 0; $l--) {
+    $hash   += ord($chars[$s]);
+    my $tmp = leftShift(ord($chars[$s+1]), 11) ^ $hash;
+    $hash   = (leftShift($hash, 16)% $EXP2_32) ^ $tmp;
+    $s += 2;
+    $hash += $hash >> 11;
+    $hash %= $EXP2_32;
+  }
+
+  # Handle end case
+  if ($rem !=0) {
+    $hash += ord($chars[$s]);
+    $hash ^= (leftShift($hash, 11)% $EXP2_32);
+    $hash += $hash >> 17;
+  }
+
+  # Force "avalanching" of final 127 bits
+  $hash ^= leftShift($hash, 3);
+  $hash += ($hash >> 5);
+  $hash = ($hash% $EXP2_32);
+  $hash ^= (leftShift($hash, 2)% $EXP2_32);
+  $hash += ($hash >> 15);
+  $hash = $hash% $EXP2_32;
+  $hash ^= (leftShift($hash, 10)% $EXP2_32);
+  
+  # this avoids ever returning a hash code of 0, since that is used to
+  # signal "hash not computed yet", using a value that is likely to be
+  # effectively the same as 0 when the low bits are masked
+  $hash = 0x80000000  if ($hash == 0);
+
+  return $hash;
+}
+
+sub output() {
+  if (!$banner) {
+    $banner = 1;
+    print "/* Automatically generated from $file using $0. DO NOT EDIT ! */\n";
+  }
+
+  my $nameEntries = "${name}Entries";
+  $nameEntries =~ s/:/_/g;
+
+  print "\n#include \"lookup.h\"\n" if ($includelookup);
+  if ($useNameSpace) {
+    print "\nnamespace ${useNameSpace}\n{\n";
+    print "\nusing namespace KJS;";
+  } else {
+    print "\nnamespace KJS {\n";
+  }
+  print "\nstatic const struct HashEntry ".$nameEntries."[] = {\n";
+  my $i = 0;
+  #print STDERR "writing out table with ".($#table+1)." entries\n";
+  
+  if ($hashsize eq 0) {
+    # To make the hash table lookup code fast, we don't allow tables of size 0.
+    # That way it can do a modulo by the size without a special case to avoid division by 0.
+    print "   \{ 0, 0, 0, 0, 0 \}\n";
+    $hashsize = 1;
+    $size = 1;
+  } else {
+    foreach my $entry (@table) {
+      if (defined($entry)) {
+        my $key = $keys[$entry];
+        print "   \{ \"" . $key . "\"";
+        print ", " . $values[$entry];
+        print ", " . $attrs[$entry];
+        print ", " . $params[$entry];
+        print ", ";
+        if (defined($links[$i])) {
+          print "&" . $nameEntries . "[" . $links[$i] . "]" . " \}";
+        } else {
+          print "0 \}"
+        }
+        print "/* " . $hashes[$entry] . " */ ";
+      } else {
+        print "   \{ 0, 0, 0, 0, 0 \}";
+      }    
+      print "," unless ($i == $size - 1);
+      print "\n";
+      $i++;
+    }
+  }
+  print "};\n\n";
+  print "const struct HashTable $name = ";
+  print "\{ 2, $size, ".$nameEntries.", $hashsize \};\n\n";
+  print "} // namespace\n";
+}

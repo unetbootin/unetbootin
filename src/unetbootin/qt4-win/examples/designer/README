@@ -1,0 +1,37 @@
+Qt Designer is a capable graphical user interface designer that lets you
+create and configure forms without writing code. GUIs created with
+Qt Designer can be compiled into an application or created at run-time.
+
+
+Some of the examples in this directory can be run from the example launcher;
+others can only be used from within Qt Designer.
+
+Documentation for these examples can be found via the "Tutorial and Examples"
+link in the main Qt documentation.
+
+Finding the Qt Examples and Demos launcher
+==========================================
+
+On Windows:
+
+The launcher can be accessed via the Windows Start menu. Select the menu
+entry entitled "Qt Examples and Demos" entry in the submenu containing
+the Qt tools.
+
+On Mac OS X:
+
+For the binary distribution, the qtdemo executable is installed in the
+/Developer/Applications/Qt directory. For the source distribution, it is
+installed alongside the other Qt tools on the path specified when Qt is
+configured.
+
+On Unix/Linux:
+
+The qtdemo executable is installed alongside the other Qt tools on the path
+specified when Qt is configured.
+
+On all platforms:
+
+The source code for the launcher can be found in the examples/tools/qtdemo
+directory in the Qt package. This example is built at the same time as the
+Qt libraries, tools, examples, and demonstrations.

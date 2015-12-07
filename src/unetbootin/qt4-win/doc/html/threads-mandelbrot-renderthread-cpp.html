@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: renderthread.cpp Example File (threads/mandelbrot/renderthread.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">renderthread.cpp Example File<br /><span class="small-subtitle">threads/mandelbrot/renderthread.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;math.h&gt;
+
+ #include &quot;renderthread.h&quot;
+
+ RenderThread::RenderThread(QObject *parent)
+     : QThread(parent)
+ {
+     restart = false;
+     abort = false;
+
+     for (int i = 0; i &lt; ColormapSize; ++i)
+         colormap[i] = rgbFromWaveLength(380.0 + (i * 400.0 / ColormapSize));
+ }
+
+ RenderThread::~RenderThread()
+ {
+     mutex.lock();
+     abort = true;
+     condition.wakeOne();
+     mutex.unlock();
+
+     wait();
+ }
+
+ void RenderThread::render(double centerX, double centerY, double scaleFactor,
+                           QSize resultSize)
+ {
+     QMutexLocker locker(&amp;mutex);
+
+     this-&gt;centerX = centerX;
+     this-&gt;centerY = centerY;
+     this-&gt;scaleFactor = scaleFactor;
+     this-&gt;resultSize = resultSize;
+
+     if (!isRunning()) {
+         start(LowPriority);
+     } else {
+         restart = true;
+         condition.wakeOne();
+     }
+ }
+
+ void RenderThread::run()
+ {
+     forever {
+         mutex.lock();
+         QSize resultSize = this-&gt;resultSize;
+         double scaleFactor = this-&gt;scaleFactor;
+         double centerX = this-&gt;centerX;
+         double centerY = this-&gt;centerY;
+         mutex.unlock();
+
+         int halfWidth = resultSize.width() / 2;
+         int halfHeight = resultSize.height() / 2;
+         QImage image(resultSize, QImage::Format_RGB32);
+
+         const int NumPasses = 8;
+         int pass = 0;
+         while (pass &lt; NumPasses) {
+             const int MaxIterations = (1 &lt;&lt; (2 * pass + 6)) + 32;
+             const int Limit = 4;
+             bool allBlack = true;
+
+             for (int y = -halfHeight; y &lt; halfHeight; ++y) {
+                 if (restart)
+                     break;
+                 if (abort)
+                     return;
+
+                 uint *scanLine =
+                         reinterpret_cast&lt;uint *&gt;(image.scanLine(y + halfHeight));
+                 double ay = centerY + (y * scaleFactor);
+
+                 for (int x = -halfWidth; x &lt; halfWidth; ++x) {
+                     double ax = centerX + (x * scaleFactor);
+                     double a1 = ax;
+                     double b1 = ay;
+                     int numIterations = 0;
+
+                     do {
+                         ++numIterations;
+                         double a2 = (a1 * a1) - (b1 * b1) + ax;
+                         double b2 = (2 * a1 * b1) + ay;
+                         if ((a2 * a2) + (b2 * b2) &gt; Limit)
+                             break;
+
+                         ++numIterations;
+                         a1 = (a2 * a2) - (b2 * b2) + ax;
+                         b1 = (2 * a2 * b2) + ay;
+                         if ((a1 * a1) + (b1 * b1) &gt; Limit)
+                             break;
+                     } while (numIterations &lt; MaxIterations);
+
+                     if (numIterations &lt; MaxIterations) {
+                         *scanLine++ = colormap[numIterations % ColormapSize];
+                         allBlack = false;
+                     } else {
+                         *scanLine++ = qRgb(0, 0, 0);
+                     }
+                 }
+             }
+
+             if (allBlack &amp;&amp; pass == 0) {
+                 pass = 4;
+             } else {
+                 if (!restart)
+                     emit renderedImage(image, scaleFactor);
+                 ++pass;
+             }
+         }
+
+         mutex.lock();
+         if (!restart)
+             condition.wait(&amp;mutex);
+         restart = false;
+         mutex.unlock();
+     }
+ }
+
+ uint RenderThread::rgbFromWaveLength(double wave)
+ {
+     double r = 0.0;
+     double g = 0.0;
+     double b = 0.0;
+
+     if (wave &gt;= 380.0 &amp;&amp; wave &lt;= 440.0) {
+         r = -1.0 * (wave - 440.0) / (440.0 - 380.0);
+         b = 1.0;
+     } else if (wave &gt;= 440.0 &amp;&amp; wave &lt;= 490.0) {
+         g = (wave - 440.0) / (490.0 - 440.0);
+         b = 1.0;
+     } else if (wave &gt;= 490.0 &amp;&amp; wave &lt;= 510.0) {
+         g = 1.0;
+         b = -1.0 * (wave - 510.0) / (510.0 - 490.0);
+     } else if (wave &gt;= 510.0 &amp;&amp; wave &lt;= 580.0) {
+         r = (wave - 510.0) / (580.0 - 510.0);
+         g = 1.0;
+     } else if (wave &gt;= 580.0 &amp;&amp; wave &lt;= 645.0) {
+         r = 1.0;
+         g = -1.0 * (wave - 645.0) / (645.0 - 580.0);
+     } else if (wave &gt;= 645.0 &amp;&amp; wave &lt;= 780.0) {
+         r = 1.0;
+     }
+
+     double s = 1.0;
+     if (wave &gt; 700.0)
+         s = 0.3 + 0.7 * (780.0 - wave) / (780.0 - 700.0);
+     else if (wave &lt;  420.0)
+         s = 0.3 + 0.7 * (wave - 380.0) / (420.0 - 380.0);
+
+     r = pow(r * s, 0.8);
+     g = pow(g * s, 0.8);
+     b = pow(b * s, 0.8);
+     return qRgb(int(r * 255), int(g * 255), int(b * 255));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

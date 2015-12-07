@@ -1,0 +1,11 @@
+include(qt.qdocconf)
+
+quotinginformation      = true
+imagedirs               = $QTDIR/doc/src/images \
+                          $QTDIR/examples
+
+outputdir               = $QTDIR/doc/webxml
+outputformats           = WebXML
+
+generateindex           = true
+url                     = .

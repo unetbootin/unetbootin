@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/codecs/qtextcodec.cpp -->
+<head>
+  <title>Qt 4.4: QTextCodec Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextCodec Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTextCodec class provides conversions between text encodings. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextCodec&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>, except <a href="qtextcodec.html#setCodecForTr">setCodecForTr</a>(), <a href="qtextcodec.html#setCodecForCStrings">setCodecForCStrings</a>(), <a href="qtextcodec.html#QTextCodec">QTextCodec</a>(), and <a href="qtextcodec.html#dtor.QTextCodec">~QTextCodec</a>().</p>
+<ul>
+<li><a href="qtextcodec-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtextcodec-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qtextcodec-converterstate.html">ConverterState</a></b></li>
+<li><div class="fn"/>enum <b><a href="qtextcodec.html#ConversionFlag-enum">ConversionFlag</a></b> { DefaultConversion, ConvertInvalidToNull, IgnoreHeader }</li>
+<li><div class="fn"/>flags <b><a href="qtextcodec.html#ConversionFlag-enum">ConversionFlags</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QList&lt;QByteArray&gt; <b><a href="qtextcodec.html#aliases">aliases</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextcodec.html#canEncode">canEncode</a></b> ( QChar <i>ch</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextcodec.html#canEncode-2">canEncode</a></b> ( const QString &amp; <i>s</i> ) const</li>
+<li><div class="fn"/>QByteArray <b><a href="qtextcodec.html#fromUnicode">fromUnicode</a></b> ( const QString &amp; <i>str</i> ) const</li>
+<li><div class="fn"/>QByteArray <b><a href="qtextcodec.html#fromUnicode-2">fromUnicode</a></b> ( const QChar * <i>input</i>, int <i>number</i>, ConverterState * <i>state</i> = 0 ) const</li>
+<li><div class="fn"/>QTextDecoder * <b><a href="qtextcodec.html#makeDecoder">makeDecoder</a></b> () const</li>
+<li><div class="fn"/>QTextEncoder * <b><a href="qtextcodec.html#makeEncoder">makeEncoder</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qtextcodec.html#mibEnum">mibEnum</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qtextcodec.html#name">name</a></b> () const = 0</li>
+<li><div class="fn"/>QString <b><a href="qtextcodec.html#toUnicode">toUnicode</a></b> ( const QByteArray &amp; <i>a</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtextcodec.html#toUnicode-2">toUnicode</a></b> ( const char * <i>input</i>, int <i>size</i>, ConverterState * <i>state</i> = 0 ) const</li>
+<li><div class="fn"/>QString <b><a href="qtextcodec.html#toUnicode-4">toUnicode</a></b> ( const char * <i>chars</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qtextcodec.html#availableCodecs">availableCodecs</a></b> ()</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qtextcodec.html#availableMibs">availableMibs</a></b> ()</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForCStrings">codecForCStrings</a></b> ()</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForHtml">codecForHtml</a></b> ( const QByteArray &amp; <i>ba</i>, QTextCodec * <i>defaultCodec</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForHtml-2">codecForHtml</a></b> ( const QByteArray &amp; <i>ba</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForLocale">codecForLocale</a></b> ()</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForMib">codecForMib</a></b> ( int <i>mib</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForName">codecForName</a></b> ( const QByteArray &amp; <i>name</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForName-2">codecForName</a></b> ( const char * <i>name</i> )</li>
+<li><div class="fn"/>QTextCodec * <b><a href="qtextcodec.html#codecForTr">codecForTr</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextcodec.html#setCodecForCStrings">setCodecForCStrings</a></b> ( QTextCodec * <i>codec</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcodec.html#setCodecForLocale">setCodecForLocale</a></b> ( QTextCodec * <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextcodec.html#setCodecForTr">setCodecForTr</a></b> ( QTextCodec * <i>c</i> )</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextcodec.html#QTextCodec">QTextCodec</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qtextcodec.html#dtor.QTextCodec">~QTextCodec</a></b> ()</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qtextcodec.html#convertFromUnicode">convertFromUnicode</a></b> ( const QChar * <i>input</i>, int <i>number</i>, ConverterState * <i>state</i> ) const = 0</li>
+<li><div class="fn"/>virtual QString <b><a href="qtextcodec.html#convertToUnicode">convertToUnicode</a></b> ( const char * <i>chars</i>, int <i>len</i>, ConverterState * <i>state</i> ) const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextCodec class provides conversions between text encodings.</p>
+<p>Qt uses Unicode to store, draw and manipulate strings. In many situations you may wish to deal with data that uses a different encoding. For example, most Japanese documents are still stored in Shift-JIS or ISO 2022-JP, while Russian users often have their documents in KOI8-R or Windows-1251.</p>
+<p>Qt provides a set of QTextCodec classes to help with converting non-Unicode formats to and from Unicode. You can also create your own codec classes.</p>
+<p>The supported encodings are:</p>
+<ul>
+<li>Apple Roman</li>
+<li><a href="codec-big5.html">Big5</a></li>
+<li><a href="codec-big5hkscs.html">Big5-HKSCS</a></li>
+<li><a href="codec-eucjp.html">EUC-JP</a></li>
+<li><a href="codec-euckr.html">EUC-KR</a></li>
+<li><a href="codec-gbk.html">GB18030-0</a></li>
+<li>IBM 850</li>
+<li>IBM 866</li>
+<li>IBM 874</li>
+<li><a href="codecs-jis.html">ISO 2022-JP</a></li>
+<li>ISO 8859-1 to 10</li>
+<li>ISO 8859-13 to 16</li>
+<li>Iscii-Bng, Dev, Gjr, Knd, Mlm, Ori, Pnj, Tlg, and Tml</li>
+<li>JIS X 0201</li>
+<li>JIS X 0208</li>
+<li>KOI8-R</li>
+<li>KOI8-U</li>
+<li>MuleLao-1</li>
+<li>ROMAN8</li>
+<li><a href="codec-sjis.html">Shift-JIS</a></li>
+<li>TIS-620</li>
+<li><a href="codec-tscii.html">TSCII</a></li>
+<li>UTF-8</li>
+<li>UTF-16</li>
+<li>UTF-16BE</li>
+<li>UTF-16LE</li>
+<li>UTF-32</li>
+<li>UTF-32BE</li>
+<li>UTF-32LE</li>
+<li>Windows-1250 to 1258</li>
+<li>WINSAMI2</li>
+</ul>
+<p>QTextCodecs can be used as follows to convert some locally encoded string to Unicode. Suppose you have some string encoded in Russian KOI8-R encoding, and want to convert it to Unicode. The simple way to do it is like this:</p>
+<pre>         QByteArray encodedString = &quot;...&quot;;
+         QTextCodec *codec = QTextCodec::codecForName(&quot;KOI8-R&quot;);
+         QString string = codec-&gt;toUnicode(encodedString);</pre>
+<p>After this, <tt>string</tt> holds the text converted to Unicode. Converting a string from Unicode to the local encoding is just as easy:</p>
+<pre>         QString string = &quot;...&quot;;
+         QTextCodec *codec = QTextCodec::codecForName(&quot;KOI8-R&quot;);
+         QByteArray encodedString = codec-&gt;fromUnicode(string);</pre>
+<p>To read or write files in various encodings, use <a href="qtextstream.html">QTextStream</a> and its <a href="qtextstream.html#setCodec">setCodec()</a> function. See the <a href="tools-codecs.html">Codecs</a> example for an application of QTextCodec to file I/O.</p>
+<p>Some care must be taken when trying to convert the data in chunks, for example, when receiving it over a network. In such cases it is possible that a multi-byte character will be split over two chunks. At best this might result in the loss of a character and at worst cause the entire conversion to fail.</p>
+<p>The approach to use in these situations is to create a <a href="qtextdecoder.html">QTextDecoder</a> object for the codec and use this <a href="qtextdecoder.html">QTextDecoder</a> for the whole decoding process, as shown below:</p>
+<pre>         QTextCodec *codec = QTextCodec::codecForName(&quot;Shift-JIS&quot;);
+         QTextDecoder *decoder = codec-&gt;makeDecoder();
+
+         QString string;
+         while (new_data_available()) {
+             QByteArray chunk = get_new_data();
+             string += decoder-&gt;toUnicode(chunk);
+         }</pre>
+<p>The <a href="qtextdecoder.html">QTextDecoder</a> object maintains state between chunks and therefore works correctly even if a multi-byte character is split between chunks.</p>
+<a name="creating-your-own-codec-class"></a>
+<h3>Creating Your Own Codec Class</h3>
+<p>Support for new text encodings can be added to Qt by creating QTextCodec subclasses.</p>
+<p>The pure virtual functions describe the encoder to the system and the coder is used as required in the different text file formats supported by <a href="qtextstream.html">QTextStream</a>, and under X11, for the locale-specific character input and output.</p>
+<p>To add support for another encoding to Qt, make a subclass of QTextCodec and implement the functions listed in the table below.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Function</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qtextcodec.html#name">name</a>()</td><td>Returns the official name for the encoding. If the ncoding is listed in the <a href="http://www.iana.org/assignments/character-sets">IANA character-sets encoding file</a>, the name should be the preferred MIME name for the encoding.</td></tr>
+<tr valign="top" class="even"><td><a href="qtextcodec.html#aliases">aliases</a>()</td><td>Returns a list of alternative names for the encoding. QTextCodec provides a default implementation that returns an empty list. For example, &quot;ISO-8859-1&quot; has &quot;latin1&quot;, &quot;CP819&quot;, &quot;IBM819&quot;, and &quot;iso-ir-100&quot; as aliases.</td></tr>
+<tr valign="top" class="odd"><td><a href="qtextcodec.html#mibEnum">mibEnum</a>()</td><td>Return the MIB enum for the encoding if it is listed in the <a href="http://www.iana.org/assignments/character-sets">IANA character-sets encoding file</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="qtextcodec.html#convertToUnicode">convertToUnicode</a>()</td><td>Converts an 8-bit character string to Unicode.</td></tr>
+<tr valign="top" class="odd"><td><a href="qtextcodec.html#convertFromUnicode">convertFromUnicode</a>()</td><td>Converts a Unicode string to an 8-bit character string.</td></tr>
+</table></p>
+<p>You may find it more convenient to make your codec class available as a plugin; see <a href="plugins-howto.html">How to Create Qt Plugins</a> for details.</p>
+<p>See also <a href="qtextstream.html">QTextStream</a>, <a href="qtextdecoder.html">QTextDecoder</a>, <a href="qtextencoder.html">QTextEncoder</a>, and <a href="tools-codecs.html">Codecs Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="ConversionFlag-enum"></a>enum QTextCodec::ConversionFlag<br />flags QTextCodec::ConversionFlags</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextCodec::DefaultConversion</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No flag is set.</td></tr>
+<tr><td valign="top"><tt>QTextCodec::ConvertInvalidToNull</tt></td><td align="center" valign="top"><tt>0x80000000</tt></td><td valign="top">If this flag is set, invalid input results in an empty string.</td></tr>
+<tr><td valign="top"><tt>QTextCodec::IgnoreHeader</tt></td><td align="center" valign="top"><tt>0x1</tt></td><td valign="top">Ignore any Unicode byte-order mark and don't generate any.</td></tr>
+</table></p>
+<p>The ConversionFlags type is a typedef for <a href="qflags.html">QFlags</a>&lt;ConversionFlag&gt;. It stores an OR combination of ConversionFlag values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextCodec"></a>QTextCodec::QTextCodec ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs a <a href="qtextcodec.html">QTextCodec</a>, and gives it the highest precedence. The <a href="qtextcodec.html">QTextCodec</a> should always be constructed on the heap (i.e&#x2e; with <tt>new</tt>). Qt takes ownership and will delete it when the application terminates.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<h3 class="fn"><a name="dtor.QTextCodec"></a>QTextCodec::~QTextCodec ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Destroys the <a href="qtextcodec.html">QTextCodec</a>. Note that you should not delete codecs yourself: once created they become Qt's responsibility.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<h3 class="fn"><a name="aliases"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QTextCodec::aliases () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Subclasses can return a number of aliases for the codec in question.</p>
+<p>Standard aliases for codecs can be found in the <a href="http://www.iana.org/assignments/character-sets">IANA character-sets encoding file</a>.</p>
+<h3 class="fn"><a name="availableCodecs"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QTextCodec::availableCodecs ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the list of all available codecs, by name. Call <a href="qtextcodec.html#codecForName">QTextCodec::codecForName</a>() to obtain the <a href="qtextcodec.html">QTextCodec</a> for the name.</p>
+<p>The list may contain many mentions of the same codec if the codec has aliases.</p>
+<p>See also <a href="qtextcodec.html#availableMibs">availableMibs</a>(), <a href="qtextcodec.html#name">name</a>(), and <a href="qtextcodec.html#aliases">aliases</a>().</p>
+<h3 class="fn"><a name="availableMibs"></a><a href="qlist.html">QList</a>&lt;int&gt; QTextCodec::availableMibs ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the list of MIBs for all available codecs. Call <a href="qtextcodec.html#codecForMib">QTextCodec::codecForMib</a>() to obtain the <a href="qtextcodec.html">QTextCodec</a> for the MIB.</p>
+<p>See also <a href="qtextcodec.html#availableCodecs">availableCodecs</a>() and <a href="qtextcodec.html#mibEnum">mibEnum</a>().</p>
+<h3 class="fn"><a name="canEncode"></a>bool QTextCodec::canEncode ( <a href="qchar.html">QChar</a> <i>ch</i> ) const</h3>
+<p>Returns true if the Unicode character <i>ch</i> can be fully encoded with this codec; otherwise returns false.</p>
+<h3 class="fn"><a name="canEncode-2"></a>bool QTextCodec::canEncode ( const <a href="qstring.html">QString</a> &amp; <i>s</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>s</i> contains the string being tested for encode-ability.</p>
+<h3 class="fn"><a name="codecForCStrings"></a>QTextCodec * QTextCodec::codecForCStrings ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the codec used by <a href="qstring.html">QString</a> to convert to and from <tt>const char *</tt> and QByteArrays. If this function returns 0 (the default), <a href="qstring.html">QString</a> assumes Latin-1.</p>
+<p>See also <a href="qtextcodec.html#setCodecForCStrings">setCodecForCStrings</a>().</p>
+<h3 class="fn"><a name="codecForHtml"></a>QTextCodec * QTextCodec::codecForHtml ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>ba</i>, QTextCodec * <i>defaultCodec</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Tries to detect the encoding of the provided snippet of html in the given byte array, <i>ba</i>, and returns a <a href="qtextcodec.html">QTextCodec</a> instance that is capable of decoding the html to unicode. If the codec cannot be detected from the content provided, <i>defaultCodec</i> is returned.</p>
+<h3 class="fn"><a name="codecForHtml-2"></a>QTextCodec * QTextCodec::codecForHtml ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>ba</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>If the codec cannot be detected, this overload returns a Latin-1 <a href="qtextcodec.html">QTextCodec</a>.</p>
+<h3 class="fn"><a name="codecForLocale"></a>QTextCodec * QTextCodec::codecForLocale ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a pointer to the codec most suitable for this locale.</p>
+<p>On Windows, the codec will be based on a system locale. On Unix systems, starting with Qt 4.2, the codec will be using the <i>iconv</i> library. Note that in both cases the codec's name will be &quot;System&quot;.</p>
+<p>See also <a href="qtextcodec.html#setCodecForLocale">setCodecForLocale</a>().</p>
+<h3 class="fn"><a name="codecForMib"></a>QTextCodec * QTextCodec::codecForMib ( int <i>mib</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the <a href="qtextcodec.html">QTextCodec</a> which matches the <a href="qtextcodec.html#mibEnum">MIBenum</a> <i>mib</i>.</p>
+<h3 class="fn"><a name="codecForName"></a>QTextCodec * QTextCodec::codecForName ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Searches all installed <a href="qtextcodec.html">QTextCodec</a> objects and returns the one which best matches <i>name</i>; the match is case-insensitive. Returns 0 if no codec matching the name <i>name</i> could be found.</p>
+<h3 class="fn"><a name="codecForName-2"></a>QTextCodec * QTextCodec::codecForName ( const char * <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Searches all installed <a href="qtextcodec.html">QTextCodec</a> objects and returns the one which best matches <i>name</i>; the match is case-insensitive. Returns 0 if no codec matching the name <i>name</i> could be found.</p>
+<h3 class="fn"><a name="codecForTr"></a>QTextCodec * QTextCodec::codecForTr ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the codec used by <a href="qobject.html#tr">QObject::tr</a>() on its argument. If this function returns 0 (the default), tr() assumes Latin-1.</p>
+<p>See also <a href="qtextcodec.html#setCodecForTr">setCodecForTr</a>().</p>
+<h3 class="fn"><a name="convertFromUnicode"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::convertFromUnicode ( const <a href="qchar.html">QChar</a> * <i>input</i>, int <i>number</i>, <a href="qtextcodec-converterstate.html">ConverterState</a> * <i>state</i> ) const&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p><a href="qtextcodec.html">QTextCodec</a> subclasses must reimplement this function.</p>
+<p>Converts the first <i>number</i> of characters from the <i>input</i> array from Unicode to the encoding of the subclass, and returns the result in a <a href="qbytearray.html">QByteArray</a>.</p>
+<p><i>state</i> can be 0 in which case the conversion is stateless and default conversion rules should be used. If state is not 0, the codec should save the state after the conversion in <i>state</i>, and adjust the remainingChars and invalidChars members of the struct.</p>
+<h3 class="fn"><a name="convertToUnicode"></a><a href="qstring.html">QString</a> QTextCodec::convertToUnicode ( const char * <i>chars</i>, int <i>len</i>, <a href="qtextcodec-converterstate.html">ConverterState</a> * <i>state</i> ) const&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p><a href="qtextcodec.html">QTextCodec</a> subclasses must reimplement this function.</p>
+<p>Converts the first <i>len</i> characters of <i>chars</i> from the encoding of the subclass to Unicode, and returns the result in a <a href="qstring.html">QString</a>.</p>
+<p><i>state</i> can be 0, in which case the conversion is stateless and default conversion rules should be used. If state is not 0, the codec should save the state after the conversion in <i>state</i>, and adjust the remainingChars and invalidChars members of the struct.</p>
+<h3 class="fn"><a name="fromUnicode"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::fromUnicode ( const <a href="qstring.html">QString</a> &amp; <i>str</i> ) const</h3>
+<p>Converts <i>str</i> from Unicode to the encoding of this codec, and returns the result in a <a href="qbytearray.html">QByteArray</a>.</p>
+<h3 class="fn"><a name="fromUnicode-2"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::fromUnicode ( const <a href="qchar.html">QChar</a> * <i>input</i>, int <i>number</i>, <a href="qtextcodec-converterstate.html">ConverterState</a> * <i>state</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Converts the first <i>number</i> of characters from the <i>input</i> array from Unicode to the encoding of this codec, and returns the result in a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>The <i>state</i> of the convertor used is updated.</p>
+<h3 class="fn"><a name="makeDecoder"></a><a href="qtextdecoder.html">QTextDecoder</a> * QTextCodec::makeDecoder () const</h3>
+<p>Creates a <a href="qtextdecoder.html">QTextDecoder</a> which stores enough state to decode chunks of <tt>char *</tt> data to create chunks of Unicode data.</p>
+<p>The caller is responsible for deleting the returned object.</p>
+<h3 class="fn"><a name="makeEncoder"></a><a href="qtextencoder.html">QTextEncoder</a> * QTextCodec::makeEncoder () const</h3>
+<p>Creates a <a href="qtextencoder.html">QTextEncoder</a> which stores enough state to encode chunks of Unicode data as <tt>char *</tt> data.</p>
+<p>The caller is responsible for deleting the returned object.</p>
+<h3 class="fn"><a name="mibEnum"></a>int QTextCodec::mibEnum () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Subclasses of <a href="qtextcodec.html">QTextCodec</a> must reimplement this function. It returns the MIBenum (see <a href="http://www.iana.org/assignments/character-sets">the IANA character-sets encoding file</a> for more information). It is important that each <a href="qtextcodec.html">QTextCodec</a> subclass returns the correct unique value for this function.</p>
+<h3 class="fn"><a name="name"></a><a href="qbytearray.html">QByteArray</a> QTextCodec::name () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p><a href="qtextcodec.html">QTextCodec</a> subclasses must reimplement this function. It returns the name of the encoding supported by the subclass.</p>
+<p>If the codec is registered as a character set in the <a href="http://www.iana.org/assignments/character-sets">IANA character-sets encoding file</a> this method should return the preferred mime name for the codec if defined, otherwise its name.</p>
+<h3 class="fn"><a name="setCodecForCStrings"></a>void QTextCodec::setCodecForCStrings ( QTextCodec * <i>codec</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the codec used by <a href="qstring.html">QString</a> to convert to and from <tt>const char *</tt> and QByteArrays. If the <i>codec</i> is 0 (the default), <a href="qstring.html">QString</a> assumes Latin-1.</p>
+<p><b>Warning:</b> Some codecs do not preserve the characters in the ASCII range (0x00 to 0x7F). For example, the Japanese Shift-JIS encoding maps the backslash character (0x5A) to the Yen character. To avoid undesirable side-effects, we recommend avoiding such codecs with setCodecsForCString().</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>See also <a href="qtextcodec.html#codecForCStrings">codecForCStrings</a>() and <a href="qtextcodec.html#setCodecForTr">setCodecForTr</a>().</p>
+<h3 class="fn"><a name="setCodecForLocale"></a>void QTextCodec::setCodecForLocale ( QTextCodec * <i>c</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Set the codec to <i>c</i>; this will be returned by <a href="qtextcodec.html#codecForLocale">codecForLocale</a>(). If <tt>is</tt> a null pointer, the codec is reset to the default.</p>
+<p>This might be needed for some applications that want to use their own mechanism for setting the locale.</p>
+<p>Setting this codec is not supported on DOS based Windows.</p>
+<p>See also <a href="qtextcodec.html#codecForLocale">codecForLocale</a>().</p>
+<h3 class="fn"><a name="setCodecForTr"></a>void QTextCodec::setCodecForTr ( QTextCodec * <i>c</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the codec used by <a href="qobject.html#tr">QObject::tr</a>() on its argument to <i>c</i>. If <i>c</i> is 0 (the default), tr() assumes Latin-1.</p>
+<p>If the literal quoted text in the program is not in the Latin-1 encoding, this function can be used to set the appropriate encoding. For example, software developed by Korean programmers might use eucKR for all the text in the program, in which case the main() function might look like this:</p>
+<pre>         int main(int argc, char *argv[])
+         {
+             QApplication app(argc, argv);
+             QTextCodec::setCodecForTr(QTextCodec::codecForName(&quot;eucKR&quot;));
+             ...
+         }</pre>
+<p>Note that this is not the way to select the encoding that the <i>user</i> has chosen. For example, to convert an application containing literal English strings to Korean, all that is needed is for the English strings to be passed through tr() and for translation files to be loaded. For details of internationalization, see <a href="i18n.html">Internationalization with Qt</a>.</p>
+<p><b>Warning:</b> This function is not <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>See also <a href="qtextcodec.html#codecForTr">codecForTr</a>() and <a href="qtextcodec.html#setCodecForCStrings">setCodecForCStrings</a>().</p>
+<h3 class="fn"><a name="toUnicode"></a><a href="qstring.html">QString</a> QTextCodec::toUnicode ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>a</i> ) const</h3>
+<p>Converts <i>a</i> from the encoding of this codec to Unicode, and returns the result in a <a href="qstring.html">QString</a>.</p>
+<h3 class="fn"><a name="toUnicode-2"></a><a href="qstring.html">QString</a> QTextCodec::toUnicode ( const char * <i>input</i>, int <i>size</i>, <a href="qtextcodec-converterstate.html">ConverterState</a> * <i>state</i> = 0 ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Converts the first <i>size</i> characters from the <i>input</i> from the encoding of this codec to Unicode, and returns the result in a <a href="qstring.html">QString</a>.</p>
+<p>The <i>state</i> of the convertor used is updated.</p>
+<h3 class="fn"><a name="toUnicode-4"></a><a href="qstring.html">QString</a> QTextCodec::toUnicode ( const char * <i>chars</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>chars</i> contains the source characters.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

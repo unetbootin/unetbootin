@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/thread/qreadwritelock.cpp -->
+<head>
+  <title>Qt 4.4: QWriteLocker Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWriteLocker Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QWriteLocker class is a convenience class that simplifies locking and unlocking read-write locks for write access. <a href="#details">More...</a></p>
+<pre> #include &lt;QWriteLocker&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#thread-safe">thread-safe</a>.</p>
+<ul>
+<li><a href="qwritelocker-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwritelocker.html#QWriteLocker">QWriteLocker</a></b> ( QReadWriteLock * <i>lock</i> )</li>
+<li><div class="fn"/><b><a href="qwritelocker.html#dtor.QWriteLocker">~QWriteLocker</a></b> ()</li>
+<li><div class="fn"/>QReadWriteLock * <b><a href="qwritelocker.html#readWriteLock">readWriteLock</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwritelocker.html#relock">relock</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwritelocker.html#unlock">unlock</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWriteLocker class is a convenience class that simplifies locking and unlocking read-write locks for write access.</p>
+<p>The purpose of QWriteLocker (and <a href="qreadlocker.html">QReadLocker</a> is to simplify <a href="qreadwritelock.html">QReadWriteLock</a> locking and unlocking. Locking and unlocking statements or in exception handling code is error-prone and difficult to debug. QWriteLocker can be used in such situations to ensure that the state of the lock is always well-defined.</p>
+<p>Here's an example that uses QWriteLocker to lock and unlock a read-write lock for writing:</p>
+<pre>         QReadWriteLock lock;
+
+         void writeData(const QByteArray &amp;data)
+         {
+             QWriteLocker locker(&amp;lock);
+             ...
+         }</pre>
+<p>It is equivalent to the following code:</p>
+<pre>         QReadWriteLock lock;
+
+         void writeData(const QByteArray &amp;data)
+         {
+             locker.lockForWrite();
+             ...
+             locker.unlock();
+         }</pre>
+<p>The <a href="qmutexlocker.html">QMutexLocker</a> documentation shows examples where the use of a locker object greatly simplifies programming.</p>
+<p>See also <a href="qreadlocker.html">QReadLocker</a> and <a href="qreadwritelock.html">QReadWriteLock</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWriteLocker"></a>QWriteLocker::QWriteLocker ( <a href="qreadwritelock.html">QReadWriteLock</a> * <i>lock</i> )</h3>
+<p>Constructs a <a href="qwritelocker.html">QWriteLocker</a> and locks <i>lock</i> for writing. The lock will be unlocked when the <a href="qwritelocker.html">QWriteLocker</a> is destroyed. If <tt>lock</tt> is zero, <a href="qwritelocker.html">QWriteLocker</a> does nothing.</p>
+<p>See also <a href="qreadwritelock.html#lockForWrite">QReadWriteLock::lockForWrite</a>().</p>
+<h3 class="fn"><a name="dtor.QWriteLocker"></a>QWriteLocker::~QWriteLocker ()</h3>
+<p>Destroys the <a href="qwritelocker.html">QWriteLocker</a> and unlocks the lock that was passed to the constructor.</p>
+<p>See also <a href="qreadwritelock.html#unlock">QReadWriteLock::unlock</a>().</p>
+<h3 class="fn"><a name="readWriteLock"></a><a href="qreadwritelock.html">QReadWriteLock</a> * QWriteLocker::readWriteLock () const</h3>
+<p>Returns a pointer to the read-write lock that was passed to the constructor.</p>
+<h3 class="fn"><a name="relock"></a>void QWriteLocker::relock ()</h3>
+<p>Relocks an unlocked lock.</p>
+<p>See also <a href="qwritelocker.html#unlock">unlock</a>().</p>
+<h3 class="fn"><a name="unlock"></a>void QWriteLocker::unlock ()</h3>
+<p>Unlocks the lock associated with this locker.</p>
+<p>See also <a href="qreadwritelock.html#unlock">QReadWriteLock::unlock</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

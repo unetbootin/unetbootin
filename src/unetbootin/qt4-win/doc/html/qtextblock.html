@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextobject.cpp -->
+<head>
+  <title>Qt 4.4: QTextBlock Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextBlock Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextBlock class provides a container for text fragments in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextBlock&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextblock-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qtextblock-iterator.html">iterator</a></b></li>
+<li><div class="fn"/>typedef <b><a href="qtextblock.html#Iterator-typedef">Iterator</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextblock.html#QTextBlock">QTextBlock</a></b> ( const QTextBlock &amp; <i>other</i> )</li>
+<li><div class="fn"/>iterator <b><a href="qtextblock.html#begin">begin</a></b> () const</li>
+<li><div class="fn"/>QTextBlockFormat <b><a href="qtextblock.html#blockFormat">blockFormat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#blockFormatIndex">blockFormatIndex</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#blockNumber">blockNumber</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtextblock.html#charFormat">charFormat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#charFormatIndex">charFormatIndex</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextblock.html#clearLayout">clearLayout</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#contains">contains</a></b> ( int <i>position</i> ) const</li>
+<li><div class="fn"/>const QTextDocument * <b><a href="qtextblock.html#document">document</a></b> () const</li>
+<li><div class="fn"/>iterator <b><a href="qtextblock.html#end">end</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#isVisible">isVisible</a></b> () const</li>
+<li><div class="fn"/>QTextLayout * <b><a href="qtextblock.html#layout">layout</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#length">length</a></b> () const</li>
+<li><div class="fn"/>QTextBlock <b><a href="qtextblock.html#next">next</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#position">position</a></b> () const</li>
+<li><div class="fn"/>QTextBlock <b><a href="qtextblock.html#previous">previous</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#revision">revision</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextblock.html#setRevision">setRevision</a></b> ( int <i>rev</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblock.html#setUserData">setUserData</a></b> ( QTextBlockUserData * <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblock.html#setUserState">setUserState</a></b> ( int <i>state</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextblock.html#setVisible">setVisible</a></b> ( bool <i>visible</i> )</li>
+<li><div class="fn"/>QString <b><a href="qtextblock.html#text">text</a></b> () const</li>
+<li><div class="fn"/>QTextList * <b><a href="qtextblock.html#textList">textList</a></b> () const</li>
+<li><div class="fn"/>QTextBlockUserData * <b><a href="qtextblock.html#userData">userData</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextblock.html#userState">userState</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#operator-not-eq">operator!=</a></b> ( const QTextBlock &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#operator-lt">operator&lt;</a></b> ( const QTextBlock &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTextBlock &amp; <b><a href="qtextblock.html#operator-eq">operator=</a></b> ( const QTextBlock &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextblock.html#operator-eq-eq">operator==</a></b> ( const QTextBlock &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextBlock class provides a container for text fragments in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A text block encapsulates a block or paragraph of text in a <a href="qtextdocument.html">QTextDocument</a>. QTextBlock provides read-only access to the block/paragraph structure of QTextDocuments. It is mainly of use if you want to implement your own layouts for the visual representation of a <a href="qtextdocument.html">QTextDocument</a>, or if you want to iterate over a document and write out the contents in your own custom format.</p>
+<p>Text blocks are created by their parent documents. If you need to create a new text block, or modify the contents of a document while examining its contents, use the cursor-based interface provided by <a href="qtextcursor.html">QTextCursor</a> instead.</p>
+<p>Each text block is located at a specific <a href="qtextblock.html#position">position</a>() in a <a href="qtextblock.html#document">document</a>(). The contents of the block can be obtained by using the <a href="qtextblock.html#text">text</a>() function. The <a href="qtextblock.html#length">length</a>() function determines the block's size within the document (including formatting characters). The visual properties of the block are determined by its text <a href="qtextblock.html#layout">layout</a>(), its <a href="qtextblock.html#charFormat">charFormat</a>(), and its <a href="qtextblock.html#blockFormat">blockFormat</a>().</p>
+<p>The <a href="qtextblock.html#next">next</a>() and <a href="qtextblock.html#previous">previous</a>() functions enable iteration over consecutive valid blocks in a document under the condition that the document is not modified by other means during the iteration process. Note that, although blocks are returned in sequence, adjacent blocks may come from different places in the document structure. The validity of a block can be determined by calling <a href="qtextblock.html#isValid">isValid</a>().</p>
+<p>QTextBlock provides comparison operators to make it easier to work with blocks: <a href="qtextblock.html#operator-eq-eq">operator==</a>() compares two block for equality, <a href="qtextblock.html#operator-not-eq">operator!=</a>() compares two blocks for inequality, and <a href="qtextblock.html#operator-lt">operator&lt;</a>() determines whether a block precedes another in the same document.</p>
+<p align="center"><img src="images/qtextblock-sequence.png" /></p><p>See also <a href="qtextblockformat.html">QTextBlockFormat</a>, <a href="qtextcharformat.html">QTextCharFormat</a>, and <a href="qtextfragment.html">QTextFragment</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Iterator-typedef"></a>typedef QTextBlock::Iterator</h3>
+<p>Qt-style synonym for <a href="qtextblock-iterator.html">QTextBlock::iterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextBlock"></a>QTextBlock::QTextBlock ( const QTextBlock &amp; <i>other</i> )</h3>
+<p>Copies the <i>other</i> text block's attributes to this text block.</p>
+<h3 class="fn"><a name="begin"></a><a href="qtextblock-iterator.html">iterator</a> QTextBlock::begin () const</h3>
+<p>Returns a text block iterator pointing to the beginning of the text block.</p>
+<p>See also <a href="qtextblock.html#end">end</a>().</p>
+<h3 class="fn"><a name="blockFormat"></a><a href="qtextblockformat.html">QTextBlockFormat</a> QTextBlock::blockFormat () const</h3>
+<p>Returns the <a href="qtextblockformat.html">QTextBlockFormat</a> that describes block-specific properties.</p>
+<p>See also <a href="qtextblock.html#charFormat">charFormat</a>().</p>
+<h3 class="fn"><a name="blockFormatIndex"></a>int QTextBlock::blockFormatIndex () const</h3>
+<p>Returns an index into the document's internal list of block formats for the text block's format.</p>
+<p>See also <a href="qtextdocument.html#object">QTextDocument::object</a>().</p>
+<h3 class="fn"><a name="blockNumber"></a>int QTextBlock::blockNumber () const</h3>
+<p>Returns the number of this block, or -1 if the block is invalid.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextcursor.html#blockNumber">QTextCursor::blockNumber</a>().</p>
+<h3 class="fn"><a name="charFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextBlock::charFormat () const</h3>
+<p>Returns the <a href="qtextcharformat.html">QTextCharFormat</a> that describes the block's character format. The block's character format is used when inserting text into an empty block.</p>
+<p>See also <a href="qtextblock.html#blockFormat">blockFormat</a>().</p>
+<h3 class="fn"><a name="charFormatIndex"></a>int QTextBlock::charFormatIndex () const</h3>
+<p>Returns an index into the document's internal list of character formats for the text block's character format.</p>
+<p>See also <a href="qtextdocument.html#object">QTextDocument::object</a>().</p>
+<h3 class="fn"><a name="clearLayout"></a>void QTextBlock::clearLayout ()</h3>
+<p>Clears the <a href="qtextlayout.html">QTextLayout</a> that is used to lay out and display the block's contents.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblock.html#layout">layout</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QTextBlock::contains ( int <i>position</i> ) const</h3>
+<p>Returns true if the given <i>position</i> is located within the text block; otherwise returns false.</p>
+<h3 class="fn"><a name="document"></a>const <a href="qtextdocument.html">QTextDocument</a> * QTextBlock::document () const</h3>
+<p>Returns the text document this text block belongs to, or 0 if the text block does not belong to any document.</p>
+<h3 class="fn"><a name="end"></a><a href="qtextblock-iterator.html">iterator</a> QTextBlock::end () const</h3>
+<p>Returns a text block iterator pointing to the end of the text block.</p>
+<p>See also <a href="qtextblock.html#begin">begin</a>(), <a href="qtextblock.html#next">next</a>(), and <a href="qtextblock.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextBlock::isValid () const</h3>
+<p>Returns true if this text block is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="isVisible"></a>bool QTextBlock::isVisible () const</h3>
+<p>Returns true if the block is visible; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblock.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="layout"></a><a href="qtextlayout.html">QTextLayout</a> * QTextBlock::layout () const</h3>
+<p>Returns the <a href="qtextlayout.html">QTextLayout</a> that is used to lay out and display the block's contents.</p>
+<p>Note that the returned <a href="qtextlayout.html">QTextLayout</a> object can only be modified from the documentChanged implementation of a <a href="qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a> subclass. Any changes applied from the outside cause undefined behavior.</p>
+<p>See also <a href="qtextblock.html#clearLayout">clearLayout</a>().</p>
+<h3 class="fn"><a name="length"></a>int QTextBlock::length () const</h3>
+<p>Returns the length of the block in characters.</p>
+<p><b>Note:</b> The length returned includes all formatting characters, for example, newline.</p>
+<p>See also <a href="qtextblock.html#text">text</a>(), <a href="qtextblock.html#charFormat">charFormat</a>(), and <a href="qtextblock.html#blockFormat">blockFormat</a>().</p>
+<h3 class="fn"><a name="next"></a>QTextBlock QTextBlock::next () const</h3>
+<p>Returns the text block in the document after this block, or an empty text block if this is the last one.</p>
+<p>Note that the next block may be in a different frame or table to this block.</p>
+<p>See also <a href="qtextblock.html#previous">previous</a>(), <a href="qtextblock.html#begin">begin</a>(), and <a href="qtextblock.html#end">end</a>().</p>
+<h3 class="fn"><a name="position"></a>int QTextBlock::position () const</h3>
+<p>Returns the index of the block's first character within the document.</p>
+<h3 class="fn"><a name="previous"></a>QTextBlock QTextBlock::previous () const</h3>
+<p>Returns the text block in the document before this block, or an empty text block if this is the first one.</p>
+<p>Note that the next block may be in a different frame or table to this block.</p>
+<p>See also <a href="qtextblock.html#next">next</a>(), <a href="qtextblock.html#begin">begin</a>(), and <a href="qtextblock.html#end">end</a>().</p>
+<h3 class="fn"><a name="revision"></a>int QTextBlock::revision () const</h3>
+<p>Returns the blocks revision.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblock.html#setRevision">setRevision</a>() and <a href="qtextdocument.html#revision">QTextDocument::revision</a>().</p>
+<h3 class="fn"><a name="setRevision"></a>void QTextBlock::setRevision ( int <i>rev</i> )</h3>
+<p>Sets a blocks revision to <i>rev</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblock.html#revision">revision</a>() and <a href="qtextdocument.html#revision">QTextDocument::revision</a>().</p>
+<h3 class="fn"><a name="setUserData"></a>void QTextBlock::setUserData ( <a href="qtextblockuserdata.html">QTextBlockUserData</a> * <i>data</i> )</h3>
+<p>Attaches the given <i>data</i> object to the text block.</p>
+<p><a href="qtextblockuserdata.html">QTextBlockUserData</a> can be used to store custom settings. The ownership is passed to the underlying text document, i.e&#x2e; the provided <a href="qtextblockuserdata.html">QTextBlockUserData</a> object will be deleted if the corresponding text block gets deleted. The user data object is not stored in the undo history, so it will not be available after undoing the deletion of a text block.</p>
+<p>For example, if you write a programming editor in an IDE, you may want to let your user set breakpoints visually in your code for an integrated debugger. In a programming editor a line of text usually corresponds to one <a href="qtextblock.html">QTextBlock</a>. The <a href="qtextblockuserdata.html">QTextBlockUserData</a> interface allows the developer to store data for each <a href="qtextblock.html">QTextBlock</a>, like for example in which lines of the source code the user has a breakpoint set. Of course this could also be stored externally, but by storing it inside the <a href="qtextdocument.html">QTextDocument</a>, it will for example be automatically deleted when the user deletes the associated line. It's really just a way to store custom information in the <a href="qtextdocument.html">QTextDocument</a> without using custom properties in <a href="qtextformat.html">QTextFormat</a> which would affect the undo/redo stack.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtextblock.html#userData">userData</a>().</p>
+<h3 class="fn"><a name="setUserState"></a>void QTextBlock::setUserState ( int <i>state</i> )</h3>
+<p>Stores the specified <i>state</i> integer value in the text block. This may be useful for example in a syntax highlighter to store a text parsing state.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtextblock.html#userState">userState</a>().</p>
+<h3 class="fn"><a name="setVisible"></a>void QTextBlock::setVisible ( bool <i>visible</i> )</h3>
+<p>Sets the block's visibility to <i>visible</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextblock.html#isVisible">isVisible</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QTextBlock::text () const</h3>
+<p>Returns the block's contents as plain text.</p>
+<p>See also <a href="qtextblock.html#length">length</a>(), <a href="qtextblock.html#charFormat">charFormat</a>(), and <a href="qtextblock.html#blockFormat">blockFormat</a>().</p>
+<h3 class="fn"><a name="textList"></a><a href="qtextlist.html">QTextList</a> * QTextBlock::textList () const</h3>
+<p>If the block represents a list item, returns the list that the item belongs to; otherwise returns 0.</p>
+<h3 class="fn"><a name="userData"></a><a href="qtextblockuserdata.html">QTextBlockUserData</a> * QTextBlock::userData () const</h3>
+<p>Returns a pointer to a <a href="qtextblockuserdata.html">QTextBlockUserData</a> object if previously set with <a href="qtextblock.html#setUserData">setUserData</a>() or a null pointer.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtextblock.html#setUserData">setUserData</a>().</p>
+<h3 class="fn"><a name="userState"></a>int QTextBlock::userState () const</h3>
+<p>Returns the integer value previously set with <a href="qtextblock.html#setUserState">setUserState</a>() or -1.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtextblock.html#setUserState">setUserState</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QTextBlock::operator!= ( const QTextBlock &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text block is different from the <i>other</i> text block.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QTextBlock::operator&lt; ( const QTextBlock &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text block occurs before the <i>other</i> text block in the document.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTextBlock &amp; QTextBlock::operator= ( const QTextBlock &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> text block to this text block.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QTextBlock::operator== ( const QTextBlock &amp; <i>other</i> ) const</h3>
+<p>Returns true if this text block is the same as the <i>other</i> text block.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

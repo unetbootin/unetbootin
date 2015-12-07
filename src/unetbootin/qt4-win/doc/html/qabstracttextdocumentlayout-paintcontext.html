@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qabstracttextdocumentlayout.cpp -->
+<head>
+  <title>Qt 4.4: PaintContext Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">PaintContext Class Reference<br /><span class="small-subtitle">(QAbstractTextDocumentLayout::PaintContext)<br />[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAbstractTextDocumentLayout::PaintContext class is a convenience class defining the parameters of a painter context. <a href="#details">More...</a></p>
+<pre> #include &lt;<a href="qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a>&gt;</pre><ul>
+<li><a href="qabstracttextdocumentlayout-paintcontext-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>QRectF <b><a href="qabstracttextdocumentlayout-paintcontext.html#clip-var">clip</a></b></li>
+<li><div class="fn"/>int <b><a href="qabstracttextdocumentlayout-paintcontext.html#cursorPosition-var">cursorPosition</a></b></li>
+<li><div class="fn"/>QPalette <b><a href="qabstracttextdocumentlayout-paintcontext.html#palette-var">palette</a></b></li>
+<li><div class="fn"/>QVector&lt;Selection&gt; <b><a href="qabstracttextdocumentlayout-paintcontext.html#selections-var">selections</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractTextDocumentLayout::PaintContext class is a convenience class defining the parameters of a painter context.</p>
+<p>A painter context is used when rendering custom layouts for QTextDocuments with the <a href="qabstracttextdocumentlayout.html#draw">QAbstractTextDocumentLayout::draw</a>() function, and is specified by a <a href="qabstracttextdocumentlayout-paintcontext.html#cursorPosition-var">cursor position</a>, a <a href="qabstracttextdocumentlayout-paintcontext.html#palette-var">default text color</a>, a <a href="qabstracttextdocumentlayout-paintcontext.html#clip-var">clip</a> rectangle and a collection of <a href="qabstracttextdocumentlayout-paintcontext.html#selections-var">selections</a>.</p>
+<p>See also <a href="qabstracttextdocumentlayout.html">QAbstractTextDocumentLayout</a>.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="clip-var"></a><a href="qrectf.html">QRectF</a> PaintContext::clip</h3>
+<p>This variable holds a hint to the layout avoiding that paragraphs, frames or text that are clearly outside the specified rectangle, are drawn.</p>
+<p>Specifying a clip rectangle can speed up drawing of large documents significantly. Note that the clip rectangle is in document coordinates (i.e&#x2e;, not in viewport coordinates), and that it is not a substitute for a clip region set on the painter.</p>
+<p>The default value is a null rectangle.</p>
+<h3 class="fn"><a name="cursorPosition-var"></a>int PaintContext::cursorPosition</h3>
+<p>This variable holds the position within the document, where the cursor line should be drawn.</p>
+<p>The default value is -1.</p>
+<h3 class="fn"><a name="palette-var"></a><a href="qpalette.html">QPalette</a> PaintContext::palette</h3>
+<p>This variable holds the default color that is used for the text, when no color is specified in the text.</p>
+<p>The default value of this variable uses the application's default palette.</p>
+<h3 class="fn"><a name="selections-var"></a><a href="qvector.html">QVector</a>&lt;<a href="qabstracttextdocumentlayout-selection.html">Selection</a>&gt; PaintContext::selections</h3>
+<p>This variable holds the collection of selections that will be rendered when passing this painter context to QAbstractTextDocumentLayout's draw() function.</p>
+<p>The default value of this variable is an empty vector.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: gameboard.cpp Example File (tutorials/tutorial/t14/gameboard.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">gameboard.cpp Example File<br /><span class="small-subtitle">tutorials/tutorial/t14/gameboard.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QApplication&gt;
+ #include &lt;QFont&gt;
+ #include &lt;QGridLayout&gt;
+ #include &lt;QHBoxLayout&gt;
+ #include &lt;QLCDNumber&gt;
+ #include &lt;QLabel&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QShortcut&gt;
+ #include &lt;QVBoxLayout&gt;
+ #include &lt;QWidget&gt;
+
+ #include &quot;cannonfield.h&quot;
+ #include &quot;gameboard.h&quot;
+ #include &quot;lcdrange.h&quot;
+
+ GameBoard::GameBoard(QWidget *parent)
+     : QWidget(parent)
+ {
+     QPushButton *quit = new QPushButton(tr(&quot;&amp;Quit&quot;));
+     quit-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
+
+     LCDRange *angle = new LCDRange(tr(&quot;ANGLE&quot;));
+     angle-&gt;setRange(5, 70);
+
+     LCDRange *force = new LCDRange(tr(&quot;FORCE&quot;));
+     force-&gt;setRange(10, 50);
+
+     QFrame *cannonBox = new QFrame;
+     cannonBox-&gt;setFrameStyle(QFrame::WinPanel | QFrame::Sunken);
+
+     cannonField = new CannonField;
+
+     connect(angle, SIGNAL(valueChanged(int)),
+             cannonField, SLOT(setAngle(int)));
+     connect(cannonField, SIGNAL(angleChanged(int)),
+             angle, SLOT(setValue(int)));
+
+     connect(force, SIGNAL(valueChanged(int)),
+             cannonField, SLOT(setForce(int)));
+     connect(cannonField, SIGNAL(forceChanged(int)),
+             force, SLOT(setValue(int)));
+
+     connect(cannonField, SIGNAL(hit()),
+             this, SLOT(hit()));
+     connect(cannonField, SIGNAL(missed()),
+             this, SLOT(missed()));
+
+     QPushButton *shoot = new QPushButton(tr(&quot;&amp;Shoot&quot;));
+     shoot-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     connect(shoot, SIGNAL(clicked()),
+             this, SLOT(fire()));
+     connect(cannonField, SIGNAL(canShoot(bool)),
+             shoot, SLOT(setEnabled(bool)));
+
+     QPushButton *restart = new QPushButton(tr(&quot;&amp;New Game&quot;));
+     restart-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     connect(restart, SIGNAL(clicked()), this, SLOT(newGame()));
+
+     hits = new QLCDNumber(2);
+     hits-&gt;setSegmentStyle(QLCDNumber::Filled);
+
+     shotsLeft = new QLCDNumber(2);
+     shotsLeft-&gt;setSegmentStyle(QLCDNumber::Filled);
+
+     QLabel *hitsLabel = new QLabel(tr(&quot;HITS&quot;));
+     QLabel *shotsLeftLabel = new QLabel(tr(&quot;SHOTS LEFT&quot;));
+
+     (void) new QShortcut(Qt::Key_Enter, this, SLOT(fire()));
+     (void) new QShortcut(Qt::Key_Return, this, SLOT(fire()));
+     (void) new QShortcut(Qt::CTRL + Qt::Key_Q, this, SLOT(close()));
+
+     QHBoxLayout *topLayout = new QHBoxLayout;
+     topLayout-&gt;addWidget(shoot);
+     topLayout-&gt;addWidget(hits);
+     topLayout-&gt;addWidget(hitsLabel);
+     topLayout-&gt;addWidget(shotsLeft);
+     topLayout-&gt;addWidget(shotsLeftLabel);
+     topLayout-&gt;addStretch(1);
+     topLayout-&gt;addWidget(restart);
+
+     QVBoxLayout *leftLayout = new QVBoxLayout;
+     leftLayout-&gt;addWidget(angle);
+     leftLayout-&gt;addWidget(force);
+
+     QVBoxLayout *cannonLayout = new QVBoxLayout;
+     cannonLayout-&gt;addWidget(cannonField);
+     cannonBox-&gt;setLayout(cannonLayout);
+
+     QGridLayout *gridLayout = new QGridLayout;
+     gridLayout-&gt;addWidget(quit, 0, 0);
+     gridLayout-&gt;addLayout(topLayout, 0, 1);
+     gridLayout-&gt;addLayout(leftLayout, 1, 0);
+     gridLayout-&gt;addWidget(cannonBox, 1, 1, 2, 1);
+     gridLayout-&gt;setColumnStretch(1, 10);
+     setLayout(gridLayout);
+
+     angle-&gt;setValue(60);
+     force-&gt;setValue(25);
+     angle-&gt;setFocus();
+
+     newGame();
+ }
+
+ void GameBoard::fire()
+ {
+     if (cannonField-&gt;gameOver() || cannonField-&gt;isShooting())
+         return;
+     shotsLeft-&gt;display(shotsLeft-&gt;intValue() - 1);
+     cannonField-&gt;shoot();
+ }
+
+ void GameBoard::hit()
+ {
+     hits-&gt;display(hits-&gt;intValue() + 1);
+     if (shotsLeft-&gt;intValue() == 0)
+         cannonField-&gt;setGameOver();
+     else
+         cannonField-&gt;newTarget();
+ }
+
+ void GameBoard::missed()
+ {
+     if (shotsLeft-&gt;intValue() == 0)
+         cannonField-&gt;setGameOver();
+ }
+
+ void GameBoard::newGame()
+ {
+     shotsLeft-&gt;display(15);
+     hits-&gt;display(0);
+     cannonField-&gt;restartGame();
+     cannonField-&gt;newTarget();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

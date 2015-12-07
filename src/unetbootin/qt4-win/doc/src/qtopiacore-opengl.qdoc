@@ -1,0 +1,229 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+\page qt-embedded-opengl.html
+
+\title Qt for Embedded Linux and OpenGL
+\ingroup qt-embedded
+
+\section1 Introduction
+
+\l {http://www.opengl.org}{OpenGL} is an industry standard API for
+2D/3D graphics. It provides a powerful, low-level interface between
+software and acceleration hardware, and it is operating system and
+window system independent.
+
+\l {http://www.khronos.org/opengles}{OpenGL ES} is a subset
+of the \l {http://www.opengl.org}{OpenGL} standard.
+Because it is meant for use in embedded systems, it has a smaller,
+more constrained API. 
+
+For reference, Trolltech provides a plugin which integrates \l
+{http://www.khronos.org/opengles}{OpenGL ES} with Qt for Embedded Linux,
+but Qt for Embedded Linux can be adapted to a wide range of OpenGL
+versions.
+
+There are three ways to use OpenGL with Qt for Embedded Linux:
+\list
+  \o Perform OpenGL 3D graphics operations in applications;
+  \o Accelerate normal 2D painting operations; 
+  \o Implement window compositing and special effects.
+\endlist
+
+Qt for Embedded Linux is shipped with a reference integration example
+that demonstrates all three uses.
+
+\section2 Using OpenGL 3D Graphics in Applications
+
+The \l {QtOpenGL module} offers classes that make it easy to draw 3D
+graphics in GUI applications. The module API is cross-platform, so it
+is also available on Windows, X11, and Mac OS X.
+
+To use OpenGL-enabled widgets in a Qt for Embedded Linux application,
+all that is required is to subclass the QGLWidget and draw into instances of
+the subclass with standard OpenGL functions. 
+
+\section2 Using OpenGL to Accelerate Normal 2D Painting
+
+Qt provides QOpenGLPaintEngine, a subclass of QPaintEngine that
+translates QPainter operations into OpenGL calls. This specialized
+paint engine can be used to improve 2D rendering performance on
+appropriate hardware. It can also overlay controls and decorations
+onto 3D scenes drawn using OpenGL.
+
+\section2 Using OpenGL to Implement Window Compositing and Effects
+
+Qt for Embedded Linux includes a complete windowing system, which implements
+real transparency. The windowing system can be accelerated using
+OpenGL to implement top level window compositing. This makes it easy
+to add 3D effects to applications, for instance when windows are
+minimized or maximized.
+
+\section1 Acceleration Architecture
+
+The diagram below shows the Qt for Embedded Linux painting architecture.
+
+\image qt-embedded-opengl3.png
+
+A client process widget uses a paint engine to draw into a window
+surface. The server then combines the window surfaces and displays the
+composition on the screen. This architecture lets you
+control the steps of the painting process by subclassing. 
+
+Subclassing QPaintEngine allows you to implement the QPainter API
+using accelerated hardware.  Subclassing QWindowSurface lets you
+decide the properties of the space your widgets will draw themselves
+into, as well as which paint engine they should use to draw themselves
+into that space.  Subclassing QScreen lets you control the creation of
+window surfaces and lets you decide how to implement window
+compositing.  Using subclassing, your implementation work is minimized
+since you can reuse base class functionality you don't need to change.
+
+The elements of an accelerated Qt for Embedded Linux system are shown in the
+diagram below.
+
+\image qt-embedded-opengl1.png
+
+The applications, using the Qt API, do not depend on the presence of
+the acceleration plugin. The plugin uses the graphics hardware to
+accelerate painting primitives. Any operations not accelerated by the
+plugin are done in software by the software paint engine.
+
+To integrate an OpenGL implementation into Qt for Embedded Linux for a
+particular platform, you use the same mechanisms you would use for
+writing any other accelerated driver. Base classes, e.g., QGLScreen
+and QWSGLWindowSurface, are provided to minimize the need for
+reimplementing common functionality.
+
+\section1 The Reference Integration
+
+The \l{OpenGL for Embedded Systems Example} is the reference implementation
+for integrating OpenGL ES and \l{http://www.khronos.org/egl/}{EGL} with
+the graphics acceleration architecture of Qt for Embedded Linux.
+(\l{http://www.khronos.org/egl/}{EGL} is a library that binds OpenGL ES to
+native windowing systems.)
+
+The diagram below shows how OpenGL ES is used within the acceleration architecture:
+
+\image qt-embedded-opengl2.png
+
+The example implements a screen driver plugin that demonstrates all
+three uses of OpenGL in Qt for Embedded Linux: 2D graphics acceleration, 3D
+graphics operations using the \l {QtOpenGL module}, and top-level
+window compositing and special effects. The applications still do
+not talk directly to the accelerated plugin. 
+
+For 2D graphics, applications use the normal Qt painting API. The example accelerates 2D
+painting by using the QOpenGLPaintEngine, which is included in the \l {QtOpenGL module}.
+
+For 3D graphics applications use the OpenGL API directly, together with the functionality
+in the Qt OpenGL support classes. The example supports this by creating a
+QWSGLWindowSurface whenever a QGLWidget is instantiated.
+
+All access to the display is done through OpenGL. The example subclasses
+QWSGLWindowSurface implementation and uses the \l
+{http://oss.sgi.com/projects/ogl-sample/registry/EXT/framebuffer_object.txt} 
+{OpenGL Framebuffer Object extension} to draw windows into an offscreen buffer. This
+lets the example use OpenGL to implement top level window compositing of opaque and
+semi-transparent windows, and to provide a 3D animated transition effect as each new
+window is shown.
+
+The specific OpenGL library being used by the example restricts all
+OpenGL operations to occur in a single process. Hence the example
+creates instances of QWSGLWindowSurface only in the server process.
+Other processes then perform 2D graphics by creating instances
+of the standard QWindowSurface classes for client processes.  The
+standard window surface performs software-based rendering into a
+shared memory segment. The server then transfers the contents of this
+shared memory into an OpenGL texture before they are drawn onto the
+screen during window compositing.
+
+\omit
+
+\section1 Future Directions
+
+\section2 API Improvements
+
+Trolltech is now working on enhancing the API for integrating OpenGL
+with Qt for Embedded Linux. The current design plan includes the following
+features:
+
+\list
+
+  \o Provide convenience classes, e.g., QEGLScreen and
+  QWSEGLWindowSurface, which implement common uses of the EGL
+  API. These classes will simplify implementing an OpenGL ES 
+  integration.
+
+  \o Extend the screen driver API to provide more control over window
+  properties and animations, and provide a software-based integration
+  to enable testing on the desktop.
+
+  \o Improve performance as opportunities arise.
+
+\endlist
+
+\section2 OpenVG Support
+
+\l {http://www.khronos.org/openvg} {OpenVG} is a dedicated API for 2D
+graphics on mobile devices. It is therefore more likely to be a better
+alternative for 2D acceleration than OpenGL. Until recently, no
+OpenVG-capable hardware has been available, so Trolltech has not yet
+included an OpenVG solution in Qt for Embedded Linux.
+
+However, Trolltech has done a feasibility study, implementing an
+OpenVG paint engine on top of a software OpenVG implementation.
+Assuming availability of the appropriate hardware, this OpenVG paint
+engine can easily be completed and integrated using the existing
+acceleration architecture. Since OpenVG shares the same EGL layer as
+OpenGL ES, the work already done on the OpenGL integration can be
+reused.
+
+Related technologies included in the \l
+{http://www.khronos.org/openkode} {OpenKODE} API set will also be
+considered.
+
+\endomit
+
+*/

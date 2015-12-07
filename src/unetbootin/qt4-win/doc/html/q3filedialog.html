@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/dialogs/q3filedialog.cpp -->
+<head>
+  <title>Qt 4.4: Q3FileDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3FileDialog Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3FileDialog class provides dialogs that allow users to select files or directories. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3FileDialog&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qfiledialog">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<ul>
+<li><a href="q3filedialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3filedialog.html#Mode-enum">Mode</a></b> { AnyFile, ExistingFile, Directory, DirectoryOnly, ExistingFiles }</li>
+<li><div class="fn"/>enum <b><a href="q3filedialog.html#PreviewMode-enum">PreviewMode</a></b> { NoPreview, Contents, Info }</li>
+<li><div class="fn"/>enum <b><a href="q3filedialog.html#ViewMode-enum">ViewMode</a></b> { List, Detail }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3filedialog.html#contentsPreview-prop">contentsPreview</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#dirPath-prop">dirPath</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#infoPreview-prop">infoPreview</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#mode-prop">mode</a></b> : Mode</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#previewMode-prop">previewMode</a></b> : PreviewMode</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3filedialog.html#selectedFile-prop">selectedFile</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a></b> : const QStringList</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a></b> : const QString</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#showHiddenFiles-prop">showHiddenFiles</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#viewMode-prop">viewMode</a></b> : ViewMode</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3filedialog.html#Q3FileDialog">Q3FileDialog</a></b> ( const QString &amp; <i>dirName</i>, const QString &amp; <i>filter</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, bool <i>modal</i> = false )</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#Q3FileDialog-2">Q3FileDialog</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, bool <i>modal</i> = false )</li>
+<li><div class="fn"/><b><a href="q3filedialog.html#dtor.Q3FileDialog">~Q3FileDialog</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#addFilter">addFilter</a></b> ( const QString &amp; <i>filter</i> )</li>
+<li><div class="fn"/>const QDir * <b><a href="q3filedialog.html#dir">dir</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#dirPath-prop">dirPath</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3filedialog.html#contentsPreview-prop">isContentsPreviewEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3filedialog.html#infoPreview-prop">isInfoPreviewEnabled</a></b> () const</li>
+<li><div class="fn"/>Mode <b><a href="q3filedialog.html#mode-prop">mode</a></b> () const</li>
+<li><div class="fn"/>PreviewMode <b><a href="q3filedialog.html#previewMode-prop">previewMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#rereadDir">rereadDir</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#resortDir">resortDir</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#selectAll">selectAll</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#selectedFile-prop">selectedFile</a></b> () const</li>
+<li><div class="fn"/>QStringList <b><a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setContentsPreview">setContentsPreview</a></b> ( QWidget * <i>w</i>, Q3FilePreview * <i>preview</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#contentsPreview-prop">setContentsPreviewEnabled</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setDir">setDir</a></b> ( const QDir &amp; <i>dir</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setInfoPreview">setInfoPreview</a></b> ( QWidget * <i>w</i>, Q3FilePreview * <i>preview</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#infoPreview-prop">setInfoPreviewEnabled</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#mode-prop">setMode</a></b> ( Mode )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#previewMode-prop">setPreviewMode</a></b> ( PreviewMode <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3filedialog.html#setSelectedFilter">setSelectedFilter</a></b> ( const QString &amp; <i>mask</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3filedialog.html#setSelectedFilter-2">setSelectedFilter</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setSelection">setSelection</a></b> ( const QString &amp; <i>filename</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#showHiddenFiles-prop">setShowHiddenFiles</a></b> ( bool <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#viewMode-prop">setViewMode</a></b> ( ViewMode <i>m</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3filedialog.html#showHiddenFiles-prop">showHiddenFiles</a></b> () const</li>
+<li><div class="fn"/>Q3Url <b><a href="q3filedialog.html#url">url</a></b> () const</li>
+<li><div class="fn"/>ViewMode <b><a href="q3filedialog.html#viewMode-prop">viewMode</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setDir-2">setDir</a></b> ( const QString &amp; <i>pathstr</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setFilter">setFilter</a></b> ( const QString &amp; <i>newFilter</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setFilters">setFilters</a></b> ( const QString &amp; <i>filters</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setFilters-2">setFilters</a></b> ( const char ** <i>types</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setFilters-3">setFilters</a></b> ( const QStringList &amp; <i>types</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setUrl">setUrl</a></b> ( const Q3UrlOperator &amp; <i>url</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#dirEntered">dirEntered</a></b> ( const QString &amp; <i>directory</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#fileHighlighted">fileHighlighted</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#fileSelected">fileSelected</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#filesSelected">filesSelected</a></b> ( const QStringList &amp; <i>files</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#filterSelected">filterSelected</a></b> ( const QString &amp; <i>filter</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#getExistingDirectory">getExistingDirectory</a></b> ( const QString &amp; <i>dir</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), bool <i>dirOnly</i> = true, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#getOpenFileName">getOpenFileName</a></b> ( const QString &amp; <i>startWith</i> = QString(), const QString &amp; <i>filter</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QStringList <b><a href="q3filedialog.html#getOpenFileNames">getOpenFileNames</a></b> ( const QString &amp; <i>filter</i> = QString(), const QString &amp; <i>dir</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QString <b><a href="q3filedialog.html#getSaveFileName">getSaveFileName</a></b> ( const QString &amp; <i>startWith</i> = QString(), const QString &amp; <i>filter</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>Q3FileIconProvider * <b><a href="q3filedialog.html#iconProvider">iconProvider</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#setIconProvider">setIconProvider</a></b> ( Q3FileIconProvider * <i>provider</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#addLeftWidget">addLeftWidget</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#addRightWidget">addRightWidget</a></b> ( QWidget * <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#addToolButton">addToolButton</a></b> ( QAbstractButton * <i>b</i>, bool <i>separator</i> = false )</li>
+<li><div class="fn"/>void <b><a href="q3filedialog.html#addWidgets">addWidgets</a></b> ( QLabel * <i>l</i>, QWidget * <i>w</i>, QPushButton * <i>b</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3FileDialog class provides dialogs that allow users to select files or directories.</p>
+<p>The Q3FileDialog class enables a user to traverse their file system in order to select one or many files or a directory.</p>
+<p>The easiest way to create a Q3FileDialog is to use the static functions. On Windows, these static functions will call the native Windows file dialog and on Mac OS X, these static function will call the native Mac OS X file dialog.</p>
+<pre>     QString s = Q3FileDialog::getOpenFileName(
+                     &quot;/home&quot;,
+                     &quot;Images (*.png *.xpm *.jpg)&quot;,
+                     this,
+                     &quot;open file dialog&quot;,
+                     &quot;Choose a file&quot;);</pre>
+<p>In the above example, a modal Q3FileDialog is created using a static function. The startup directory is set to &quot;/home&quot;. The file filter is set to &quot;Images (*.png *.xpm *.jpg)&quot;. The parent of the file dialog is set to <i>this</i> and it is given the identification name - &quot;open file dialog&quot;. The caption at the top of file dialog is set to &quot;Choose a file&quot;. If you want to use multiple filters, separate each one with <i>two</i> semicolons, e.g&#x2e;</p>
+<pre>   &quot;Images (*.png *.xpm *.jpg);;Text files (*.txt);;XML files (*.xml)&quot;</pre>
+<p>You can create your own Q3FileDialog without using the static functions. By calling <a href="q3filedialog.html#mode-prop">setMode</a>(), you can set what can be returned by the Q3FileDialog.</p>
+<pre>     Q3FileDialog* fd = new Q3FileDialog(this, &quot;file dialog&quot;, true);
+     fd-&gt;setMode(Q3FileDialog::AnyFile);</pre>
+<p>In the above example, the mode of the file dialog is set to <a href="q3filedialog.html#Mode-enum">AnyFile</a>, meaning that the user can select any file, or even specify a file that doesn't exist. This mode is useful for creating a &quot;File Save As&quot; file dialog. Use <a href="q3filedialog.html#Mode-enum">ExistingFile</a> if the user must select an existing file or <a href="q3filedialog.html#Mode-enum">Directory</a> if only a directory may be selected. (See the <a href="q3filedialog.html#Mode-enum">Q3FileDialog::Mode</a> enum for the complete list of modes.)</p>
+<p>You can retrieve the dialog's mode with <a href="q3filedialog.html#mode-prop">mode</a>(). Use <a href="q3filedialog.html#setFilter">setFilter</a>() to set the dialog's file filter, e.g&#x2e;</p>
+<pre>     fd-&gt;setFilter(&quot;Images (*.png *.xpm *.jpg)&quot;);</pre>
+<p>In the above example, the filter is set to &quot;Images (*.png *.xpm *.jpg)&quot;, this means that only files with the extension <tt>png</tt>, <tt>xpm</tt> or <tt>jpg</tt> will be shown in the Q3FileDialog. You can apply several filters by using <a href="q3filedialog.html#setFilters">setFilters</a>() and add additional filters with <a href="q3filedialog.html#addFilter">addFilter</a>(). Use <a href="q3filedialog.html#setSelectedFilter">setSelectedFilter</a>() to select one of the filters you've given as the file dialog's default filter. Whenever the user changes the filter the <a href="q3filedialog.html#filterSelected">filterSelected</a>() signal is emitted.</p>
+<p>The file dialog has two view modes, <a href="q3filedialog.html#ViewMode-enum">Q3FileDialog::List</a> which simply lists file and directory names and <a href="q3filedialog.html#ViewMode-enum">Q3FileDialog::Detail</a> which displays additional information alongside each name, e.g&#x2e; file size, modification date, etc. Set the mode with <a href="q3filedialog.html#viewMode-prop">setViewMode</a>().</p>
+<pre>     fd-&gt;setViewMode(Q3FileDialog::Detail);</pre>
+<p>The last important function you will need to use when creating your own file dialog is <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>().</p>
+<pre>     QString fileName;
+     if (fd-&gt;exec() == QDialog::Accepted)
+         fileName = fd-&gt;selectedFile();</pre>
+<p>In the above example, a modal file dialog is created and shown. If the user clicked OK, then the file they selected is put in <tt>fileName</tt>.</p>
+<p>If you are using the <a href="q3filedialog.html#Mode-enum">ExistingFiles</a> mode then you will need to use <a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a>() which will return the selected files in a <a href="qstringlist.html">QStringList</a>.</p>
+<p>The dialog's working directory can be set with <a href="q3filedialog.html#setDir">setDir</a>(). The display of hidden files is controlled with <a href="q3filedialog.html#showHiddenFiles-prop">setShowHiddenFiles</a>(). The dialog can be forced to re-read the directory with <a href="q3filedialog.html#rereadDir">rereadDir</a>() and re-sort the directory with <a href="q3filedialog.html#resortDir">resortDir</a>(). All the files in the current directory can be selected with <a href="q3filedialog.html#selectAll">selectAll</a>().</p>
+<a name="creating-and-using-preview-widgets"></a>
+<h3>Creating and using preview widgets</h3>
+<p>There are two kinds of preview widgets that can be used with Q3FileDialogs: <i>content</i> preview widgets and <i>information</i> preview widgets. They are created and used in the same way except that the function names differ, e.g&#x2e; <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>() and <a href="q3filedialog.html#setInfoPreview">setInfoPreview</a>().</p>
+<p>A preview widget is a widget that is placed inside a Q3FileDialog so that the user can see either the contents of the file, or information about the file.</p>
+<pre>     class Preview : public QLabel, public Q3FilePreview
+     {
+     public:
+         Preview(QWidget *parent=0) : QLabel(parent) {}
+
+         void previewUrl(const Q3Url &amp;u)
+         {
+             QString path = u.path();
+             QPixmap pix(path);
+             if (pix.isNull())
+                 setText(&quot;This is not a pixmap&quot;);
+             else
+                 setPixmap(pix);
+         }
+     };</pre>
+<p>In the above snippet, we create a preview widget which inherits from <a href="qlabel.html">QLabel</a> and <a href="q3filepreview.html">Q3FilePreview</a>. File preview widgets <i>must</i> inherit from <a href="q3filepreview.html">Q3FilePreview</a>.</p>
+<p>Inside the class we reimplement <a href="q3filepreview.html#previewUrl">Q3FilePreview::previewUrl</a>(), this is where we determine what happens when a file is selected. In the above example we only show a preview of the file if it is a valid pixmap. Here's how to make a file dialog use a preview widget:</p>
+<pre>     Preview* p = new Preview;
+
+     Q3FileDialog* fd = new Q3FileDialog(this);
+     fd-&gt;setContentsPreviewEnabled(true);
+     fd-&gt;setContentsPreview(p, p);
+     fd-&gt;setPreviewMode(Q3FileDialog::Contents);
+     fd-&gt;show();</pre>
+<p>The first line creates an instance of our preview widget. We then create our file dialog and call setContentsPreviewEnabled(true), this tell the file dialog to preview the contents of the currently selected file. We then call <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>() -- note that we pass the same preview widget twice. Finally, before showing the file dialog, we call <a href="q3filedialog.html#previewMode-prop">setPreviewMode</a>() setting the mode to <i>Contents</i> which will show the contents preview of the file that the user has selected.</p>
+<p>If you create another preview widget that is used for displaying information about a file, create it in the same way as the contents preview widget and call <a href="q3filedialog.html#infoPreview-prop">setInfoPreviewEnabled</a>(), and <a href="q3filedialog.html#setInfoPreview">setInfoPreview</a>(). Then the user will be able to switch between the two preview modes.</p>
+<p>For more information about creating a <a href="q3filepreview.html">Q3FilePreview</a> widget see <a href="q3filepreview.html">Q3FilePreview</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Mode-enum"></a>enum Q3FileDialog::Mode</h3>
+<p>This enum is used to indicate what the user may select in the file dialog, i.e&#x2e; what the dialog will return if the user clicks OK.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3FileDialog::AnyFile</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The name of a file, whether it exists or not.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::ExistingFile</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The name of a single existing file.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::Directory</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The name of a directory. Both files and directories are displayed.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::DirectoryOnly</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The name of a directory. The file dialog will only display directories.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::ExistingFiles</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The names of zero or more existing files.</td></tr>
+</table></p>
+<p>See <a href="q3filedialog.html#mode-prop">setMode</a>().</p>
+<h3 class="fn"><a name="PreviewMode-enum"></a>enum Q3FileDialog::PreviewMode</h3>
+<p>This enum describes the preview mode of the file dialog.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3FileDialog::NoPreview</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No preview is shown at all.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::Contents</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Show a preview of the contents of the current file using the contents preview widget.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::Info</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Show information about the current file using the info preview widget.</td></tr>
+</table></p>
+<p>See <a href="q3filedialog.html#previewMode-prop">setPreviewMode</a>(), <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>() and <a href="q3filedialog.html#setInfoPreview">setInfoPreview</a>().</p>
+<h3 class="fn"><a name="ViewMode-enum"></a>enum Q3FileDialog::ViewMode</h3>
+<p>This enum describes the view mode of the file dialog, i.e&#x2e; what information about each file will be displayed.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3FileDialog::List</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Display file and directory names with icons.</td></tr>
+<tr><td valign="top"><tt>Q3FileDialog::Detail</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Display file and directory names with icons plus additional information, such as file size and modification date.</td></tr>
+</table></p>
+<p>See <a href="q3filedialog.html#viewMode-prop">setViewMode</a>().</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="contentsPreview-prop"></a>contentsPreview : bool</h3>
+<p>This property holds whether the file dialog can provide a contents preview of the currently selected file.</p>
+<p>The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isContentsPreviewEnabled () const</b></li>
+<li><div class="fn"/><b>void setContentsPreviewEnabled ( bool )</b></li>
+</ul>
+<p>See also <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>() and <a href="q3filedialog.html#infoPreview-prop">setInfoPreviewEnabled</a>().</p>
+<h3 class="fn"><a name="dirPath-prop"></a>dirPath : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the file dialog's working directory.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString dirPath () const</b></li>
+</ul>
+<p>See also <a href="q3filedialog.html#dir">dir</a>() and <a href="q3filedialog.html#setDir">setDir</a>().</p>
+<h3 class="fn"><a name="infoPreview-prop"></a>infoPreview : bool</h3>
+<p>This property holds whether the file dialog can provide preview information about the currently selected file.</p>
+<p>The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isInfoPreviewEnabled () const</b></li>
+<li><div class="fn"/><b>void setInfoPreviewEnabled ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="mode-prop"></a>mode : <a href="q3filedialog.html#Mode-enum">Mode</a></h3>
+<p>This property holds the file dialog's mode.</p>
+<p>The default mode is <a href="q3filedialog.html#Mode-enum">ExistingFile</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Mode mode () const</b></li>
+<li><div class="fn"/><b>void setMode ( Mode )</b></li>
+</ul>
+<h3 class="fn"><a name="previewMode-prop"></a>previewMode : <a href="q3filedialog.html#PreviewMode-enum">PreviewMode</a></h3>
+<p>This property holds the preview mode for the file dialog.</p>
+<p>If you set the mode to be a mode other than <i>NoPreview</i>, you must use <a href="q3filedialog.html#setInfoPreview">setInfoPreview</a>() or <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>() to set the dialog's preview widget to your preview widget and enable the preview widget(s) with <a href="q3filedialog.html#infoPreview-prop">setInfoPreviewEnabled</a>() or <a href="q3filedialog.html#contentsPreview-prop">setContentsPreviewEnabled</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>PreviewMode previewMode () const</b></li>
+<li><div class="fn"/><b>void setPreviewMode ( PreviewMode <i>m</i> )</b></li>
+</ul>
+<p>See also <a href="q3filedialog.html#infoPreview-prop">infoPreview</a>, <a href="q3filedialog.html#contentsPreview-prop">contentsPreview</a>, and <a href="q3filedialog.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="selectedFile-prop"></a>selectedFile : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the name of the selected file.</p>
+<p>If a file was selected selectedFile contains the file's name including its absolute path; otherwise selectedFile is empty.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString selectedFile () const</b></li>
+</ul>
+<p>See also <a href="qstring.html#isEmpty">QString::isEmpty</a>(), <a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a>, and <a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a>.</p>
+<h3 class="fn"><a name="selectedFiles-prop"></a>selectedFiles : const <a href="qstringlist.html">QStringList</a></h3>
+<p>This property holds the list of selected files.</p>
+<p>If one or more files are selected, selectedFiles contains their names including their absolute paths. If no files are selected or the mode isn't <a href="q3filedialog.html#Mode-enum">ExistingFiles</a> selectedFiles is an empty list.</p>
+<p>It is more convenient to use <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>() if the mode is <a href="q3filedialog.html#Mode-enum">ExistingFile</a>, <tt>Directory</tt> or <tt>DirectoryOnly</tt>.</p>
+<p>Note that if you want to iterate over the list, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = myFileDialog.selectedFiles();
+     QStringList::Iterator it = list.begin();
+     while(it != list.end()) {
+         myProcessing(*it);
+         ++it;
+     }</pre>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QStringList selectedFiles () const</b></li>
+</ul>
+<p>See also <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>, <a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a>, and <a href="qlist.html#isEmpty">QList::isEmpty</a>().</p>
+<h3 class="fn"><a name="selectedFilter-prop"></a>selectedFilter : const <a href="qstring.html">QString</a></h3>
+<p>This property holds the filter which the user has selected in the file dialog.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString selectedFilter () const</b></li>
+</ul>
+<p>See also <a href="q3filedialog.html#filterSelected">filterSelected</a>(), <a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a>, and <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>.</p>
+<h3 class="fn"><a name="showHiddenFiles-prop"></a>showHiddenFiles : bool</h3>
+<p>This property holds whether hidden files are shown in the file dialog.</p>
+<p>The default is false, i.e&#x2e; don't show hidden files.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool showHiddenFiles () const</b></li>
+<li><div class="fn"/><b>void setShowHiddenFiles ( bool <i>s</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="viewMode-prop"></a>viewMode : <a href="q3filedialog.html#ViewMode-enum">ViewMode</a></h3>
+<p>This property holds the file dialog's view mode.</p>
+<p>If you set the view mode to be <i>Detail</i> (the default), then you will see the file's details, such as the size of the file and the date the file was last modified in addition to the file's name.</p>
+<p>If you set the view mode to be <i>List</i>, then you will just see a list of the files and folders.</p>
+<p>See <a href="q3filedialog.html#ViewMode-enum">Q3FileDialog::ViewMode</a></p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ViewMode viewMode () const</b></li>
+<li><div class="fn"/><b>void setViewMode ( ViewMode <i>m</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3FileDialog"></a>Q3FileDialog::Q3FileDialog ( const <a href="qstring.html">QString</a> &amp; <i>dirName</i>, const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, bool <i>modal</i> = false )</h3>
+<p>Constructs a file dialog called <i>name</i> with the parent, <i>parent</i>. If <i>modal</i> is true then the file dialog is modal; otherwise it is modeless.</p>
+<p>If <i>dirName</i> is specified then it will be used as the dialog's working directory, i.e&#x2e; it will be the directory that is shown when the dialog appears. If <i>filter</i> is specified it will be used as the dialog's file filter.</p>
+<h3 class="fn"><a name="Q3FileDialog-2"></a>Q3FileDialog::Q3FileDialog ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, bool <i>modal</i> = false )</h3>
+<p>Constructs a file dialog called <i>name</i>, with the parent, <i>parent</i>. If <i>modal</i> is true then the file dialog is modal; otherwise it is modeless.</p>
+<h3 class="fn"><a name="dtor.Q3FileDialog"></a>Q3FileDialog::~Q3FileDialog ()</h3>
+<p>Destroys the file dialog.</p>
+<h3 class="fn"><a name="addFilter"></a>void Q3FileDialog::addFilter ( const <a href="qstring.html">QString</a> &amp; <i>filter</i> )</h3>
+<p>Adds the filter <i>filter</i> to the list of filters and makes it the current filter.</p>
+<pre>     Q3FileDialog* fd = new Q3FileDialog(this);
+     fd-&gt;addFilter(&quot;Images (*.png *.jpg *.xpm)&quot;);
+     fd-&gt;show();</pre>
+<p>In the above example, a file dialog is created, and the file filter &quot;Images (*.png *.jpg *.xpm)&quot; is added and is set as the current filter. The original filter, &quot;All Files (*)&quot;, is still available.</p>
+<p>See also <a href="q3filedialog.html#setFilter">setFilter</a>() and <a href="q3filedialog.html#setFilters">setFilters</a>().</p>
+<h3 class="fn"><a name="addLeftWidget"></a>void Q3FileDialog::addLeftWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Adds the widget <i>w</i> to the left-hand side of the file dialog.</p>
+<p>See also <a href="q3filedialog.html#addRightWidget">addRightWidget</a>(), <a href="q3filedialog.html#addWidgets">addWidgets</a>(), and <a href="q3filedialog.html#addToolButton">addToolButton</a>().</p>
+<h3 class="fn"><a name="addRightWidget"></a>void Q3FileDialog::addRightWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Adds the widget <i>w</i> to the right-hand side of the file dialog.</p>
+<p>See also <a href="q3filedialog.html#addLeftWidget">addLeftWidget</a>(), <a href="q3filedialog.html#addWidgets">addWidgets</a>(), and <a href="q3filedialog.html#addToolButton">addToolButton</a>().</p>
+<h3 class="fn"><a name="addToolButton"></a>void Q3FileDialog::addToolButton ( <a href="qabstractbutton.html">QAbstractButton</a> * <i>b</i>, bool <i>separator</i> = false )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Adds the tool button <i>b</i> to the row of tool buttons at the top of the file dialog. The button is appended to the right of this row. If <i>separator</i> is true, a small space is inserted between the last button of the row and the new button <i>b</i>.</p>
+<p>See also <a href="q3filedialog.html#addWidgets">addWidgets</a>(), <a href="q3filedialog.html#addLeftWidget">addLeftWidget</a>(), and <a href="q3filedialog.html#addRightWidget">addRightWidget</a>().</p>
+<h3 class="fn"><a name="addWidgets"></a>void Q3FileDialog::addWidgets ( <a href="qlabel.html">QLabel</a> * <i>l</i>, <a href="qwidget.html">QWidget</a> * <i>w</i>, <a href="qpushbutton.html">QPushButton</a> * <i>b</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Adds the specified widgets to the bottom of the file dialog. The label <i>l</i> is placed underneath the &quot;file name&quot; and the &quot;file types&quot; labels. The widget <i>w</i> is placed underneath the file types combobox. The button <i>b</i> is placed underneath the Cancel push button.</p>
+<pre>     MyFileDialog::MyFileDialog(QWidget* parent, const char* name) :
+         Q3FileDialog(parent, name)
+     {
+         QLabel* label = new QLabel(&quot;Added widgets&quot;, this);
+         QLineEdit* lineedit = new QLineEdit(this);
+         QPushButton* pushbutton = new QPushButton(this);
+
+         addWidgets(label, lineedit, pushbutton);
+     }</pre>
+<p>If you don't want to have one of the widgets added, pass 0 in that widget's position.</p>
+<p>Every time you call this function, a new row of widgets will be added to the bottom of the file dialog.</p>
+<p>See also <a href="q3filedialog.html#addToolButton">addToolButton</a>(), <a href="q3filedialog.html#addLeftWidget">addLeftWidget</a>(), and <a href="q3filedialog.html#addRightWidget">addRightWidget</a>().</p>
+<h3 class="fn"><a name="dir"></a>const <a href="qdir.html">QDir</a> * Q3FileDialog::dir () const</h3>
+<p>Returns the current directory shown in the file dialog.</p>
+<p>The ownership of the <a href="qdir.html">QDir</a> pointer is transferred to the caller, so it must be deleted by the caller when no longer required.</p>
+<p>See also <a href="q3filedialog.html#setDir">setDir</a>().</p>
+<h3 class="fn"><a name="dirEntered"></a>void Q3FileDialog::dirEntered ( const <a href="qstring.html">QString</a> &amp; <i>directory</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user enters the given <i>directory</i>.</p>
+<p>See also <a href="q3filedialog.html#dir">dir</a>().</p>
+<h3 class="fn"><a name="fileHighlighted"></a>void Q3FileDialog::fileHighlighted ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user highlights the given <i>file</i>, i.e&#x2e; makes it the current file.</p>
+<p>See also <a href="q3filedialog.html#fileSelected">fileSelected</a>() and <a href="q3filedialog.html#filesSelected">filesSelected</a>().</p>
+<h3 class="fn"><a name="fileSelected"></a>void Q3FileDialog::fileSelected ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user selects the given <i>file</i>.</p>
+<p>See also <a href="q3filedialog.html#filesSelected">filesSelected</a>(), <a href="q3filedialog.html#fileHighlighted">fileHighlighted</a>(), and <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>().</p>
+<h3 class="fn"><a name="filesSelected"></a>void Q3FileDialog::filesSelected ( const <a href="qstringlist.html">QStringList</a> &amp; <i>files</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user selects the given <i>files</i> in <i>ExistingFiles</i> mode.</p>
+<p>See also <a href="q3filedialog.html#fileSelected">fileSelected</a>(), <a href="q3filedialog.html#fileHighlighted">fileHighlighted</a>(), and <a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a>().</p>
+<h3 class="fn"><a name="filterSelected"></a>void Q3FileDialog::filterSelected ( const <a href="qstring.html">QString</a> &amp; <i>filter</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user selects the given <i>filter</i>.</p>
+<p>See also <a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a>().</p>
+<h3 class="fn"><a name="getExistingDirectory"></a><a href="qstring.html">QString</a> Q3FileDialog::getExistingDirectory ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), bool <i>dirOnly</i> = true, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is a convenience static function that will return an existing directory selected by the user.</p>
+<pre>     QString s = Q3FileDialog::getExistingDirectory(
+                     &quot;/home&quot;,
+                     this,
+                     &quot;get existing directory&quot;,
+                     &quot;Choose a directory&quot;,
+                     true);</pre>
+<p>This function creates a modal file dialog called <i>name</i>, with parent, <i>parent</i>. If parent is not 0, the dialog will be shown centered over the parent.</p>
+<p>The dialog's working directory is set to <i>dir</i>, and the caption is set to <i>caption</i>. Either of these may be an empty string in which case the current directory and a default caption will be used respectively.</p>
+<p>If <i>dirOnly</i> is true, then only directories will be shown in the file dialog; otherwise both directories and files will be shown.</p>
+<p>Under Unix/X11, the normal behavior of the file dialog is to resolve and follow symlinks. For example, if /usr/tmp is a symlink to /var/tmp, the file dialog will change to /var/tmp after entering /usr/tmp. If <i>resolveSymlinks</i> is false, the file dialog will treat symlinks as regular directories.</p>
+<p>Note that on Windows the dialog will spin a blocking modal event loop that will not dispatch any QTimers and if parent is not 0 then it will position the dialog just under the parent's title bar.</p>
+<p>See also <a href="q3filedialog.html#getOpenFileName">getOpenFileName</a>(), <a href="q3filedialog.html#getOpenFileNames">getOpenFileNames</a>(), and <a href="q3filedialog.html#getSaveFileName">getSaveFileName</a>().</p>
+<h3 class="fn"><a name="getOpenFileName"></a><a href="qstring.html">QString</a> Q3FileDialog::getOpenFileName ( const <a href="qstring.html">QString</a> &amp; <i>startWith</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is a convenience static function that returns an existing file selected by the user. If the user pressed Cancel, it returns a null string.</p>
+<pre>     QString s = Q3FileDialog::getOpenFileName(
+                     &quot;/home&quot;,
+                     &quot;Images (*.png *.xpm *.jpg)&quot;,
+                     this,
+                     &quot;open file dialog&quot;,
+                     &quot;Choose a file to open&quot;);</pre>
+<p>The function creates a modal file dialog called <i>name</i>, with parent, <i>parent</i>. If a parent is not 0, the dialog will be shown centered over the parent.</p>
+<p>The file dialog's working directory will be set to <i>startWith</i>. If <i>startWith</i> includes a file name, the file will be selected. The filter is set to <i>filter</i> so that only those files which match the filter are shown. The filter selected is set to <i>selectedFilter</i>. The parameters <i>startWith</i>, <i>selectedFilter</i> and <i>filter</i> may be an empty string.</p>
+<p>The dialog's caption is set to <i>caption</i>. If <i>caption</i> is not specified then a default caption will be used.</p>
+<p>Under Windows and Mac OS X, this static function will use the native file dialog and not a <a href="q3filedialog.html">Q3FileDialog</a>, unless the style of the application is set to something other than the native style (Note that on Windows the dialog will spin a blocking modal event loop that will not dispatch any QTimers and if parent is not 0 then it will position the dialog just under the parent's title bar).</p>
+<p>Under Unix/X11, the normal behavior of the file dialog is to resolve and follow symlinks. For example, if /usr/tmp is a symlink to /var/tmp, the file dialog will change to /var/tmp after entering /usr/tmp. If <i>resolveSymlinks</i> is false, the file dialog will treat symlinks as regular directories.</p>
+<p>See also <a href="q3filedialog.html#getOpenFileNames">getOpenFileNames</a>(), <a href="q3filedialog.html#getSaveFileName">getSaveFileName</a>(), and <a href="q3filedialog.html#getExistingDirectory">getExistingDirectory</a>().</p>
+<h3 class="fn"><a name="getOpenFileNames"></a><a href="qstringlist.html">QStringList</a> Q3FileDialog::getOpenFileNames ( const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>dir</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is a convenience static function that will return one or more existing files selected by the user.</p>
+<pre>     QStringList files = Q3FileDialog::getOpenFileNames(
+                             &quot;Images (*.png *.xpm *.jpg)&quot;,
+                             &quot;/home&quot;,
+                             this,
+                             &quot;open files dialog&quot;,
+                             &quot;Select one or more files to open&quot;);</pre>
+<p>This function creates a modal file dialog called <i>name</i>, with parent <i>parent</i>. If <i>parent</i> is not 0, the dialog will be shown centered over the parent.</p>
+<p>The file dialog's working directory will be set to <i>dir</i>. If <i>dir</i> includes a file name, the file will be selected. The filter is set to <i>filter</i> so that only those files which match the filter are shown. The filter selected is set to <i>selectedFilter</i>. The parameters <i>dir</i>, <i>selectedFilter</i> and <i>filter</i> may be empty strings.</p>
+<p>The dialog's caption is set to <i>caption</i>. If <i>caption</i> is not specified then a default caption will be used.</p>
+<p>Under Windows and Mac OS X, this static function will use the native file dialog and not a <a href="q3filedialog.html">Q3FileDialog</a>, unless the style of the application is set to something other than the native style. (Note that on Windows the dialog will spin a blocking modal event loop that will not dispatch any QTimers and if parent is not 0 then it will position the dialog just under the parent's title bar).</p>
+<p>Under Unix/X11, the normal behavior of the file dialog is to resolve and follow symlinks. For example, if /usr/tmp is a symlink to /var/tmp, the file dialog will change to /var/tmp after entering /usr/tmp. If <i>resolveSymlinks</i> is false, the file dialog will treat symlinks as regular directories.</p>
+<p>Note that if you want to iterate over the list of files, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = files;
+     QStringList::Iterator it = list.begin();
+     while(it != list.end()) {
+         myProcessing(*it);
+         ++it;
+     }</pre>
+<p>See also <a href="q3filedialog.html#getOpenFileName">getOpenFileName</a>(), <a href="q3filedialog.html#getSaveFileName">getSaveFileName</a>(), and <a href="q3filedialog.html#getExistingDirectory">getExistingDirectory</a>().</p>
+<h3 class="fn"><a name="getSaveFileName"></a><a href="qstring.html">QString</a> Q3FileDialog::getSaveFileName ( const <a href="qstring.html">QString</a> &amp; <i>startWith</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is a convenience static function that will return a file name selected by the user. The file does not have to exist.</p>
+<p>It creates a modal file dialog called <i>name</i>, with parent, <i>parent</i>. If a parent is not 0, the dialog will be shown centered over the parent.</p>
+<pre>     QString s = Q3FileDialog::getSaveFileName(
+                     &quot;/home&quot;,
+                     &quot;Images (*.png *.xpm *.jpg)&quot;,
+                     this,
+                     &quot;save file dialog&quot;,
+                     &quot;Choose a filename to save under&quot;);</pre>
+<p>The file dialog's working directory will be set to <i>startWith</i>. If <i>startWith</i> includes a file name, the file will be selected. The filter is set to <i>filter</i> so that only those files which match the filter are shown. The filter selected is set to <i>selectedFilter</i>. The parameters <i>startWith</i>, <i>selectedFilter</i> and <i>filter</i> may be an empty string.</p>
+<p>The dialog's caption is set to <i>caption</i>. If <i>caption</i> is not specified then a default caption will be used.</p>
+<p>Under Windows and Mac OS X, this static function will use the native file dialog and not a <a href="q3filedialog.html">Q3FileDialog</a>, unless the style of the application is set to something other than the native style. (Note that on Windows the dialog will spin a blocking modal event loop that will not dispatch any QTimers and if parent is not 0 then it will position the dialog just under the parent's title bar. And on the Mac the filter argument is ignored).</p>
+<p>Under Unix/X11, the normal behavior of the file dialog is to resolve and follow symlinks. For example, if /usr/tmp is a symlink to /var/tmp, the file dialog will change to /var/tmp after entering /usr/tmp. If <i>resolveSymlinks</i> is false, the file dialog will treat symlinks as regular directories.</p>
+<p>See also <a href="q3filedialog.html#getOpenFileName">getOpenFileName</a>(), <a href="q3filedialog.html#getOpenFileNames">getOpenFileNames</a>(), and <a href="q3filedialog.html#getExistingDirectory">getExistingDirectory</a>().</p>
+<h3 class="fn"><a name="iconProvider"></a><a href="q3fileiconprovider.html">Q3FileIconProvider</a> * Q3FileDialog::iconProvider ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a pointer to the icon provider currently set on the file dialog. By default there is no icon provider, and this function returns 0.</p>
+<p>See also <a href="q3filedialog.html#setIconProvider">setIconProvider</a>() and <a href="q3fileiconprovider.html">Q3FileIconProvider</a>.</p>
+<h3 class="fn"><a name="rereadDir"></a>void Q3FileDialog::rereadDir ()</h3>
+<p>Rereads the current directory shown in the file dialog.</p>
+<p>The only time you will need to call this function is if the contents of the directory change and you wish to refresh the file dialog to reflect the change.</p>
+<p>See also <a href="q3filedialog.html#resortDir">resortDir</a>().</p>
+<h3 class="fn"><a name="resortDir"></a>void Q3FileDialog::resortDir ()</h3>
+<p>Re-sorts the displayed directory.</p>
+<p>See also <a href="q3filedialog.html#rereadDir">rereadDir</a>().</p>
+<h3 class="fn"><a name="selectAll"></a>void Q3FileDialog::selectAll ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true then all the files in the current directory are selected; otherwise, they are deselected.</p>
+<h3 class="fn"><a name="setContentsPreview"></a>void Q3FileDialog::setContentsPreview ( <a href="qwidget.html">QWidget</a> * <i>w</i>, <a href="q3filepreview.html">Q3FilePreview</a> * <i>preview</i> )</h3>
+<p>Sets the widget to be used for displaying the contents of the file to the widget <i>w</i> and a preview of those contents to the <a href="q3filepreview.html">Q3FilePreview</a> <i>preview</i>.</p>
+<p>Normally you would create a preview widget that derives from both <a href="qwidget.html">QWidget</a> and <a href="q3filepreview.html">Q3FilePreview</a>, so you should pass the same widget twice.</p>
+<pre>     class Preview : public QLabel, public Q3FilePreview
+     {
+     public:
+         Preview(QWidget *parent=0) : QLabel(parent) {}
+
+         void previewUrl(const Q3Url &amp;u)
+         {
+             QString path = u.path();
+             QPixmap pix(path);
+             if (pix.isNull())
+                 setText(&quot;This is not a pixmap&quot;);
+             else
+                 setPixmap(pix);
+         }
+     };
+
+   //...
+
+   int main(int argc, char** argv)
+   {
+     Preview* p = new Preview;
+
+     Q3FileDialog* fd = new Q3FileDialog(this);
+     fd-&gt;setContentsPreviewEnabled(true);
+     fd-&gt;setContentsPreview(p, p);
+     fd-&gt;setPreviewMode(Q3FileDialog::Contents);
+     fd-&gt;show();
+   }</pre>
+<p>See also <a href="q3filedialog.html#contentsPreview-prop">setContentsPreviewEnabled</a>(), <a href="q3filedialog.html#setInfoPreview">setInfoPreview</a>(), and <a href="q3filedialog.html#previewMode-prop">setPreviewMode</a>().</p>
+<h3 class="fn"><a name="setDir"></a>void Q3FileDialog::setDir ( const <a href="qdir.html">QDir</a> &amp; <i>dir</i> )</h3>
+<p>Sets the file dialog's working directory to <i>dir</i>.</p>
+<p>See also <a href="q3filedialog.html#dir">dir</a>().</p>
+<h3 class="fn"><a name="setDir-2"></a>void Q3FileDialog::setDir ( const <a href="qstring.html">QString</a> &amp; <i>pathstr</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the file dialog's working directory to <i>pathstr</i>.</p>
+<p>See also <a href="q3filedialog.html#dir">dir</a>().</p>
+<h3 class="fn"><a name="setFilter"></a>void Q3FileDialog::setFilter ( const <a href="qstring.html">QString</a> &amp; <i>newFilter</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the filter used in the file dialog to <i>newFilter</i>.</p>
+<p>If <i>newFilter</i> contains a pair of parentheses containing one or more of &quot;anything*something&quot; separated by spaces or by semicolons then only the text contained in the parentheses is used as the filter. This means that these calls are all equivalent:</p>
+<pre>      fd-&gt;setFilter(&quot;All C++ files (*.cpp *.cc *.C *.cxx *.c++)&quot;);
+      fd-&gt;setFilter(&quot;*.cpp *.cc *.C *.cxx *.c++&quot;);
+      fd-&gt;setFilter(&quot;All C++ files (*.cpp;*.cc;*.C;*.cxx;*.c++)&quot;);
+      fd-&gt;setFilter(&quot;*.cpp;*.cc;*.C;*.cxx;*.c++&quot;);</pre>
+<p>See also <a href="q3filedialog.html#setFilters">setFilters</a>().</p>
+<h3 class="fn"><a name="setFilters"></a>void Q3FileDialog::setFilters ( const <a href="qstring.html">QString</a> &amp; <i>filters</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the filters used in the file dialog to <i>filters</i>. Each group of filters must be separated by <tt>;;</tt> (<i>two</i> semicolons).</p>
+<pre>     QString types(&quot;Image files (*.png *.xpm *.jpg);;&quot;
+                   &quot;Text files (*.txt);;&quot;
+                   &quot;Any files (*)&quot;);
+     Q3FileDialog fd = new Q3FileDialog(this);
+     fd-&gt;setFilters(types);
+     fd-&gt;show();</pre>
+<h3 class="fn"><a name="setFilters-2"></a>void Q3FileDialog::setFilters ( const char ** <i>types</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>types</i> must be a null-terminated list of strings.</p>
+<h3 class="fn"><a name="setFilters-3"></a>void Q3FileDialog::setFilters ( const <a href="qstringlist.html">QStringList</a> &amp; <i>types</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p><i>types</i> is a list of filter strings.</p>
+<h3 class="fn"><a name="setIconProvider"></a>void Q3FileDialog::setIconProvider ( <a href="q3fileiconprovider.html">Q3FileIconProvider</a> * <i>provider</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the <a href="q3fileiconprovider.html">Q3FileIconProvider</a> used by the file dialog to <i>provider</i>.</p>
+<p>The default is that there is no <a href="q3fileiconprovider.html">Q3FileIconProvider</a> and <a href="q3filedialog.html">Q3FileDialog</a> just draws a folder icon next to each directory and nothing next to files.</p>
+<p>See also <a href="q3fileiconprovider.html">Q3FileIconProvider</a> and <a href="q3filedialog.html#iconProvider">iconProvider</a>().</p>
+<h3 class="fn"><a name="setInfoPreview"></a>void Q3FileDialog::setInfoPreview ( <a href="qwidget.html">QWidget</a> * <i>w</i>, <a href="q3filepreview.html">Q3FilePreview</a> * <i>preview</i> )</h3>
+<p>Sets the widget to be used for displaying information about the file to the widget <i>w</i> and a preview of that information to the <a href="q3filepreview.html">Q3FilePreview</a> <i>preview</i>.</p>
+<p>Normally you would create a preview widget that derives from both <a href="qwidget.html">QWidget</a> and <a href="q3filepreview.html">Q3FilePreview</a>, so you should pass the same widget twice.</p>
+<pre>     class Preview : public QLabel, public Q3FilePreview
+     {
+     public:
+         Preview(QWidget *parent=0) : QLabel(parent) {}
+
+         void previewUrl(const Q3Url &amp;u)
+         {
+             QString path = u.path();
+             QPixmap pix(path);
+             if (pix.isNull())
+                 setText(&quot;This is not a pixmap&quot;);
+             else
+                 setText(&quot;This is a pixmap&quot;);
+         }
+     };
+
+   //...
+
+   int main(int argc, char** argv)
+   {
+     Preview* p = new Preview;
+
+     Q3FileDialog* fd = new Q3FileDialog(this);
+     fd-&gt;setInfoPreviewEnabled(true);
+     fd-&gt;setInfoPreview(p, p);
+     fd-&gt;setPreviewMode(Q3FileDialog::Info);
+     fd-&gt;show();
+   }</pre>
+<p>See also <a href="q3filedialog.html#setContentsPreview">setContentsPreview</a>(), <a href="q3filedialog.html#infoPreview-prop">setInfoPreviewEnabled</a>(), and <a href="q3filedialog.html#previewMode-prop">setPreviewMode</a>().</p>
+<h3 class="fn"><a name="setSelectedFilter"></a>void Q3FileDialog::setSelectedFilter ( const <a href="qstring.html">QString</a> &amp; <i>mask</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the current filter selected in the file dialog to the first one that contains the text <i>mask</i>.</p>
+<p>See also <a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a>().</p>
+<h3 class="fn"><a name="setSelectedFilter-2"></a>void Q3FileDialog::setSelectedFilter ( int <i>n</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the current filter selected in the file dialog to the <i>n</i>-th filter in the filter list.</p>
+<p>See also <a href="q3filedialog.html#filterSelected">filterSelected</a>(), <a href="q3filedialog.html#selectedFilter-prop">selectedFilter</a>(), <a href="q3filedialog.html#selectedFiles-prop">selectedFiles</a>(), and <a href="q3filedialog.html#selectedFile-prop">selectedFile</a>().</p>
+<h3 class="fn"><a name="setSelection"></a>void Q3FileDialog::setSelection ( const <a href="qstring.html">QString</a> &amp; <i>filename</i> )</h3>
+<p>Sets the default selection to <i>filename</i>. If <i>filename</i> is absolute, <a href="q3filedialog.html#setDir">setDir</a>() is also called to set the file dialog's working directory to the filename's directory.</p>
+<h3 class="fn"><a name="setUrl"></a>void Q3FileDialog::setUrl ( const <a href="q3urloperator.html">Q3UrlOperator</a> &amp; <i>url</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the file dialog's working directory to the directory specified at <i>url</i>.</p>
+<p>See also <a href="q3filedialog.html#url">url</a>().</p>
+<h3 class="fn"><a name="url"></a><a href="q3url.html">Q3Url</a> Q3FileDialog::url () const</h3>
+<p>Returns the URL of the current working directory in the file dialog.</p>
+<p>See also <a href="q3filedialog.html#setUrl">setUrl</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

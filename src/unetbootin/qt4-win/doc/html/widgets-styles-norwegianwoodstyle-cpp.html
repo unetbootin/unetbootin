@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: norwegianwoodstyle.cpp Example File (widgets/styles/norwegianwoodstyle.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">norwegianwoodstyle.cpp Example File<br /><span class="small-subtitle">widgets/styles/norwegianwoodstyle.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;norwegianwoodstyle.h&quot;
+
+ void NorwegianWoodStyle::polish(QPalette &amp;palette)
+ {
+     QColor brown(212, 140, 95);
+     QColor beige(236, 182, 120);
+     QColor slightlyOpaqueBlack(0, 0, 0, 63);
+
+     QPixmap backgroundImage(&quot;:/images/woodbackground.png&quot;);
+     QPixmap buttonImage(&quot;:/images/woodbutton.png&quot;);
+     QPixmap midImage = buttonImage;
+
+     QPainter painter;
+     painter.begin(&amp;midImage);
+     painter.setPen(Qt::NoPen);
+     painter.fillRect(midImage.rect(), slightlyOpaqueBlack);
+     painter.end();
+
+     palette = QPalette(brown);
+
+     palette.setBrush(QPalette::BrightText, Qt::white);
+     palette.setBrush(QPalette::Base, beige);
+     palette.setBrush(QPalette::Highlight, Qt::darkGreen);
+     setTexture(palette, QPalette::Button, buttonImage);
+     setTexture(palette, QPalette::Mid, midImage);
+     setTexture(palette, QPalette::Window, backgroundImage);
+
+     QBrush brush = palette.background();
+     brush.setColor(brush.color().dark());
+
+     palette.setBrush(QPalette::Disabled, QPalette::WindowText, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Text, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::ButtonText, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Base, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Button, brush);
+     palette.setBrush(QPalette::Disabled, QPalette::Mid, brush);
+ }
+
+ void NorwegianWoodStyle::polish(QWidget *widget)
+ {
+     if (qobject_cast&lt;QPushButton *&gt;(widget)
+             || qobject_cast&lt;QComboBox *&gt;(widget))
+         widget-&gt;setAttribute(Qt::WA_Hover, true);
+ }
+
+ void NorwegianWoodStyle::unpolish(QWidget *widget)
+ {
+     if (qobject_cast&lt;QPushButton *&gt;(widget)
+             || qobject_cast&lt;QComboBox *&gt;(widget))
+         widget-&gt;setAttribute(Qt::WA_Hover, false);
+ }
+
+ int NorwegianWoodStyle::pixelMetric(PixelMetric metric,
+                                     const QStyleOption *option,
+                                     const QWidget *widget) const
+ {
+     switch (metric) {
+     case PM_ComboBoxFrameWidth:
+         return 8;
+     case PM_ScrollBarExtent:
+         return QMotifStyle::pixelMetric(metric, option, widget) + 4;
+     default:
+         return QMotifStyle::pixelMetric(metric, option, widget);
+     }
+ }
+
+ int NorwegianWoodStyle::styleHint(StyleHint hint, const QStyleOption *option,
+                                   const QWidget *widget,
+                                   QStyleHintReturn *returnData) const
+ {
+     switch (hint) {
+     case SH_DitherDisabledText:
+         return int(false);
+     case SH_EtchDisabledText:
+         return int(true);
+     default:
+         return QMotifStyle::styleHint(hint, option, widget, returnData);
+     }
+ }
+
+ void NorwegianWoodStyle::drawPrimitive(PrimitiveElement element,
+                                        const QStyleOption *option,
+                                        QPainter *painter,
+                                        const QWidget *widget) const
+ {
+     switch (element) {
+     case PE_PanelButtonCommand:
+         {
+             int delta = (option-&gt;state &amp; State_MouseOver) ? 64 : 0;
+             QColor slightlyOpaqueBlack(0, 0, 0, 63);
+             QColor semiTransparentWhite(255, 255, 255, 127 + delta);
+             QColor semiTransparentBlack(0, 0, 0, 127 - delta);
+
+             int x, y, width, height;
+             option-&gt;rect.getRect(&amp;x, &amp;y, &amp;width, &amp;height);
+
+             QPainterPath roundRect = roundRectPath(option-&gt;rect);
+             int radius = qMin(width, height) / 2;
+
+             QBrush brush;
+             bool darker;
+
+             const QStyleOptionButton *buttonOption =
+                     qstyleoption_cast&lt;const QStyleOptionButton *&gt;(option);
+             if (buttonOption
+                     &amp;&amp; (buttonOption-&gt;features &amp; QStyleOptionButton::Flat)) {
+                 brush = option-&gt;palette.background();
+                 darker = (option-&gt;state &amp; (State_Sunken | State_On));
+             } else {
+                 if (option-&gt;state &amp; (State_Sunken | State_On)) {
+                     brush = option-&gt;palette.mid();
+                     darker = !(option-&gt;state &amp; State_Sunken);
+                 } else {
+                     brush = option-&gt;palette.button();
+                     darker = false;
+                 }
+             }
+
+             painter-&gt;save();
+             painter-&gt;setRenderHint(QPainter::Antialiasing, true);
+             painter-&gt;fillPath(roundRect, brush);
+             if (darker)
+                 painter-&gt;fillPath(roundRect, slightlyOpaqueBlack);
+
+             int penWidth;
+             if (radius &lt; 10)
+                 penWidth = 3;
+             else if (radius &lt; 20)
+                 penWidth = 5;
+             else
+                 penWidth = 7;
+
+             QPen topPen(semiTransparentWhite, penWidth);
+             QPen bottomPen(semiTransparentBlack, penWidth);
+
+             if (option-&gt;state &amp; (State_Sunken | State_On))
+                 qSwap(topPen, bottomPen);
+
+             int x1 = x;
+             int x2 = x + radius;
+             int x3 = x + width - radius;
+             int x4 = x + width;
+
+             if (option-&gt;direction == Qt::RightToLeft) {
+                 qSwap(x1, x4);
+                 qSwap(x2, x3);
+             }
+
+             QPolygon topHalf;
+             topHalf &lt;&lt; QPoint(x1, y)
+                     &lt;&lt; QPoint(x4, y)
+                     &lt;&lt; QPoint(x3, y + radius)
+                     &lt;&lt; QPoint(x2, y + height - radius)
+                     &lt;&lt; QPoint(x1, y + height);
+
+             painter-&gt;setClipPath(roundRect);
+             painter-&gt;setClipRegion(topHalf, Qt::IntersectClip);
+             painter-&gt;setPen(topPen);
+             painter-&gt;drawPath(roundRect);
+
+             QPolygon bottomHalf = topHalf;
+             bottomHalf[0] = QPoint(x4, y + height);
+
+             painter-&gt;setClipPath(roundRect);
+             painter-&gt;setClipRegion(bottomHalf, Qt::IntersectClip);
+             painter-&gt;setPen(bottomPen);
+             painter-&gt;drawPath(roundRect);
+
+             painter-&gt;setPen(option-&gt;palette.foreground().color());
+             painter-&gt;setClipping(false);
+             painter-&gt;drawPath(roundRect);
+
+             painter-&gt;restore();
+         }
+         break;
+     default:
+         QMotifStyle::drawPrimitive(element, option, painter, widget);
+     }
+ }
+
+ void NorwegianWoodStyle::drawControl(ControlElement element,
+                                      const QStyleOption *option,
+                                      QPainter *painter,
+                                      const QWidget *widget) const
+ {
+     switch (element) {
+     case CE_PushButtonLabel:
+         {
+             QStyleOptionButton myButtonOption;
+             const QStyleOptionButton *buttonOption =
+                     qstyleoption_cast&lt;const QStyleOptionButton *&gt;(option);
+             if (buttonOption) {
+                 myButtonOption = *buttonOption;
+                 if (myButtonOption.palette.currentColorGroup()
+                         != QPalette::Disabled) {
+                     if (myButtonOption.state &amp; (State_Sunken | State_On)) {
+                         myButtonOption.palette.setBrush(QPalette::ButtonText,
+                                 myButtonOption.palette.brightText());
+                     }
+                 }
+             }
+             QMotifStyle::drawControl(element, &amp;myButtonOption, painter, widget);
+         }
+         break;
+     default:
+         QMotifStyle::drawControl(element, option, painter, widget);
+     }
+ }
+
+ void NorwegianWoodStyle::setTexture(QPalette &amp;palette, QPalette::ColorRole role,
+                                     const QPixmap &amp;pixmap)
+ {
+     for (int i = 0; i &lt; QPalette::NColorGroups; ++i) {
+         QColor color = palette.brush(QPalette::ColorGroup(i), role).color();
+         palette.setBrush(QPalette::ColorGroup(i), role, QBrush(color, pixmap));
+     }
+ }
+
+ QPainterPath NorwegianWoodStyle::roundRectPath(const QRect &amp;rect)
+ {
+     int radius = qMin(rect.width(), rect.height()) / 2;
+     int diam = 2 * radius;
+
+     int x1, y1, x2, y2;
+     rect.getCoords(&amp;x1, &amp;y1, &amp;x2, &amp;y2);
+
+     QPainterPath path;
+     path.moveTo(x2, y1 + radius);
+     path.arcTo(QRect(x2 - diam, y1, diam, diam), 0.0, +90.0);
+     path.lineTo(x1 + radius, y1);
+     path.arcTo(QRect(x1, y1, diam, diam), 90.0, +90.0);
+     path.lineTo(x1, y2 - radius);
+     path.arcTo(QRect(x1, y2 - diam, diam, diam), 180.0, +90.0);
+     path.lineTo(x1 + radius, y2);
+     path.arcTo(QRect(x2 - diam, y2 - diam, diam, diam), 270.0, +90.0);
+     path.closeSubpath();
+     return path;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (phonon/capabilities/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">phonon/capabilities/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;window.h&quot;
+
+ Window::Window()
+ {
+     setupUi();
+     updateWidgets();
+
+     connect(Phonon::BackendCapabilities::notifier(),
+             SIGNAL(capabilitiesChanged()), this, SLOT(updateWidgets()));
+     connect(Phonon::BackendCapabilities::notifier(),
+             SIGNAL(availableAudioOutputDevicesChanged()), SLOT(updateWidgets()));
+ }
+
+ void Window::updateWidgets()
+ {
+     devicesListView-&gt;setModel(new QStandardItemModel());
+     Phonon::ObjectDescriptionModel&lt;Phonon::AudioOutputDeviceType&gt; *model =
+             new Phonon::ObjectDescriptionModel&lt;Phonon::AudioOutputDeviceType&gt;();
+     model-&gt;setModelData(Phonon::BackendCapabilities::availableAudioOutputDevices());
+     devicesListView-&gt;setModel(model);
+
+     mimeListWidget-&gt;clear();
+     QStringList mimeTypes =
+             Phonon::BackendCapabilities::availableMimeTypes();
+     foreach (QString mimeType, mimeTypes) {
+         QListWidgetItem *item = new QListWidgetItem(mimeListWidget);
+         item-&gt;setText(mimeType);
+     }
+
+     effectsTreeWidget-&gt;clear();
+     QList&lt;Phonon::EffectDescription&gt; effects =
+         Phonon::BackendCapabilities::availableAudioEffects();
+     foreach (Phonon::EffectDescription effect, effects) {
+         QTreeWidgetItem *item = new QTreeWidgetItem(effectsTreeWidget);
+         item-&gt;setText(0, tr(&quot;Effect&quot;));
+         item-&gt;setText(1, effect.name());
+         item-&gt;setText(2, effect.description());
+
+         Phonon::Effect *instance = new Phonon::Effect(effect, this);
+         QList&lt;Phonon::EffectParameter&gt; parameters = instance-&gt;parameters();
+         for (int i = 0; i &lt; parameters.size(); ++i) {
+                 Phonon::EffectParameter parameter = parameters.at(i);
+
+             QVariant defaultValue = parameter.defaultValue();
+             QVariant minimumValue = parameter.minimumValue();
+             QVariant maximumValue = parameter.maximumValue();
+
+             QString valueString = QString(&quot;%1 / %2 / %3&quot;)
+                     .arg(defaultValue.toString()).arg(minimumValue.toString())
+                     .arg(maximumValue.toString());
+
+             QTreeWidgetItem *parameterItem = new QTreeWidgetItem(item);
+             parameterItem-&gt;setText(0, tr(&quot;Parameter&quot;));
+             parameterItem-&gt;setText(1, parameter.name());
+             parameterItem-&gt;setText(2, parameter.description());
+             parameterItem-&gt;setText(3, QVariant::typeToName(parameter.type()));
+             parameterItem-&gt;setText(4, valueString);
+         }
+     }
+     for (int i = 0; i &lt; effectsTreeWidget-&gt;columnCount(); ++i) {
+         if (i == 0)
+             effectsTreeWidget-&gt;setColumnWidth(0, 150);
+         else if (i == 2)
+             effectsTreeWidget-&gt;setColumnWidth(2, 350);
+         else
+             effectsTreeWidget-&gt;resizeColumnToContents(i);
+     }
+ }
+
+ void Window::setupUi()
+ {
+     setupBackendBox();
+
+     QLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(backendBox);
+
+     setLayout(layout);
+     setWindowTitle(tr(&quot;Backend Capabilities Example&quot;));
+ }
+
+ void Window::setupBackendBox()
+ {
+     backendBox = new QGroupBox(tr(&quot;Backend Capabilities&quot;));
+
+     devicesLabel = new QLabel(tr(&quot;Available Audio Devices:&quot;));
+     devicesListView = new QListView;
+
+     mimeTypesLabel = new QLabel(tr(&quot;Supported MIME Types:&quot;));
+     mimeListWidget = new QListWidget;
+
+     effectsLabel = new QLabel(tr(&quot;Available Audio Effects:&quot;));
+
+     QStringList headerLabels;
+     headerLabels &lt;&lt; tr(&quot;Type&quot;) &lt;&lt; tr(&quot;Name&quot;) &lt;&lt; tr(&quot;Description&quot;) &lt;&lt;
+                     tr(&quot;Value Type&quot;) &lt;&lt; tr(&quot;Default/Min/Max Values&quot;);
+
+     effectsTreeWidget = new QTreeWidget;
+     effectsTreeWidget-&gt;setHeaderLabels(headerLabels);
+     effectsTreeWidget-&gt;setColumnCount(5);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(devicesLabel, 0, 0);
+     layout-&gt;addWidget(devicesListView, 1, 0);
+     layout-&gt;addWidget(mimeTypesLabel, 0, 1);
+     layout-&gt;addWidget(mimeListWidget, 1, 1);
+     layout-&gt;addWidget(effectsLabel, 2, 0);
+     layout-&gt;addWidget(effectsTreeWidget, 3, 0, 2, 2);
+     layout-&gt;setRowStretch(3, 100);
+
+     backendBox = new QGroupBox(tr(&quot;Backend Capabilities&quot;));
+     backendBox-&gt;setLayout(layout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

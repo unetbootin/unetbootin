@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--
+TODO docs
+-->
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           elementFormDefault="qualified">
+
+    <xs:element name="tokenAutomaton" type="tokenAutomatonElementType"/>
+
+    <xs:simpleType name="cppIdentifierType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="[a-zA-Z_][a-zA-Z0-9_]*"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="filenameType">
+        <xs:restriction base="xs:string">
+            <!-- At least one character. -->
+            <xs:pattern value=".+"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="scopeType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="protected"/>
+            <xs:enumeration value="public"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="tokenAutomatonElementType">
+        <xs:sequence>
+            <xs:element name="tokens" minOccurs="1" maxOccurs="1" type="tokensElementType">
+                <!-- Each token name (the enum name), must be unique. -->
+                <xs:unique name="tokenNames">
+                    <xs:selector xpath="token"/>
+                    <xs:field xpath="@name"/>
+                </xs:unique>
+                <!-- Each string must be unique, otherwise one string can map to two or
+                     more enums. -->
+                <xs:unique name="tokenValues">
+                    <xs:selector xpath="token"/>
+                    <xs:field xpath="."/>
+                </xs:unique>
+            </xs:element>
+            <xs:element name="boilerplate" minOccurs="0" maxOccurs="1" type="boilerplateElementType"/>
+
+        </xs:sequence>
+        <xs:attribute name="className" type="cppIdentifierType"/>
+        <xs:attribute name="includeGuardName" type="cppIdentifierType"/>
+        <xs:attribute name="headerFile" type="filenameType" use="required"/>
+        <xs:attribute name="namespace" type="cppIdentifierType" use="optional"/>
+        <xs:attribute name="sourceFile" type="filenameType" use="required"/>
+        <xs:attribute name="scope" type="scopeType"    use="required"/>
+        <xs:attribute name="defaultToken" type="cppIdentifierType" use="required"/>
+        <xs:attribute name="hasToString" type="xs:boolean" use="required"/>
+        <xs:attribute name="tokenEnum" type="cppIdentifierType" use="required"/>
+    </xs:complexType>
+
+    <xs:complexType name="tokensElementType">
+        <xs:sequence>
+            <xs:element name="token" maxOccurs="unbounded" type="tokenElementType" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="tokenElementType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string">
+                <xs:attribute name="name" use="optional" type="cppIdentifierType"/>
+            </xs:extension>
+        </xs:simpleContent>
+    </xs:complexType>
+
+    <xs:complexType name="boilerplateElementType">
+        <xs:sequence>
+            <xs:element name="prolog" maxOccurs="1" type="prologElementType" minOccurs="1"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="prologElementType">
+        <xs:simpleContent>
+            <xs:extension base="xs:string"/>
+        </xs:simpleContent>
+    </xs:complexType>
+
+</xs:schema>
+<!--
+vim: et:ts=4:sw=4:sts=4
+-->

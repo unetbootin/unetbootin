@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3datetimeedit.cpp -->
+<head>
+  <title>Qt 4.4: Q3TimeEdit Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3TimeEdit Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3TimeEdit class provides a time editor. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3TimeEdit&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qtimeedit">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3datetimeeditbase.html">Q3DateTimeEditBase</a>.</p>
+<ul>
+<li><a href="q3timeedit-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3timeedit.html#Display-enum">Display</a></b> { Hours, Minutes, Seconds, AMPM }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3timeedit.html#autoAdvance-prop">autoAdvance</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3timeedit.html#display-prop">display</a></b> : Display</li>
+<li><div class="fn"/><b><a href="q3timeedit.html#maxValue-prop">maxValue</a></b> : QTime</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3timeedit.html#minValue-prop">minValue</a></b> : QTime</li>
+<li><div class="fn"/><b><a href="q3timeedit.html#time-prop">time</a></b> : QTime</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3timeedit.html#Q3TimeEdit">Q3TimeEdit</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3timeedit.html#Q3TimeEdit-2">Q3TimeEdit</a></b> ( const QTime &amp; <i>time</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3timeedit.html#dtor.Q3TimeEdit">~Q3TimeEdit</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3timeedit.html#autoAdvance-prop">autoAdvance</a></b> () const</li>
+<li><div class="fn"/>uint <b><a href="q3timeedit.html#display-prop">display</a></b> () const</li>
+<li><div class="fn"/>QTime <b><a href="q3timeedit.html#maxValue-prop">maxValue</a></b> () const</li>
+<li><div class="fn"/>QTime <b><a href="q3timeedit.html#minValue-prop">minValue</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3timeedit.html#separator">separator</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#autoAdvance-prop">setAutoAdvance</a></b> ( bool <i>advance</i> )</li>
+<li><div class="fn"/>void <b><a href="q3timeedit.html#display-prop">setDisplay</a></b> ( uint <i>disp</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#maxValue-prop">setMaxValue</a></b> ( const QTime &amp; <i>d</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#minValue-prop">setMinValue</a></b> ( const QTime &amp; <i>d</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#setRange">setRange</a></b> ( const QTime &amp; <i>min</i>, const QTime &amp; <i>max</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#setSeparator">setSeparator</a></b> ( const QString &amp; <i>s</i> )</li>
+<li><div class="fn"/>QTime <b><a href="q3timeedit.html#time-prop">time</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#time-prop">setTime</a></b> ( const QTime &amp; <i>time</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3timeedit.html#valueChanged">valueChanged</a></b> ( const QTime &amp; <i>time</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QString <b><a href="q3timeedit.html#sectionFormattedText">sectionFormattedText</a></b> ( int <i>sec</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#setHour">setHour</a></b> ( int <i>h</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#setMinute">setMinute</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3timeedit.html#setSecond">setSecond</a></b> ( int <i>s</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3TimeEdit class provides a time editor.</p>
+<p>Q3TimeEdit allows the user to edit times by using the keyboard or the arrow keys to increase/decrease time values. The arrow keys can be used to move from section to section within the Q3TimeEdit box. The user can automatically be moved to the next section once they complete a section using <a href="q3timeedit.html#autoAdvance-prop">setAutoAdvance</a>(). Times appear in hour, minute, second order. It is recommended that the Q3TimeEdit is initialised with a time, e.g&#x2e;</p>
+<pre>     QTime timeNow = QTime::currentTime();
+     Q3TimeEdit *timeEdit = new Q3TimeEdit(timeNow, this);
+     timeEdit-&gt;setRange(timeNow, timeNow.addSecs(60 * 60));</pre>
+<p>Here we've created a Q3TimeEdit widget set to the current time. We've also set the minimum value to the current time and the maximum time to one hour from now.</p>
+<p>The maximum and minimum values for a time value in the time editor default to the maximum and minimum values for a <a href="qtime.html">QTime</a>. You can change this by calling <a href="q3timeedit.html#minValue-prop">setMinValue</a>(), <a href="q3timeedit.html#maxValue-prop">setMaxValue</a>() or <a href="q3timeedit.html#setRange">setRange</a>().</p>
+<p>Terminology: A QTimeWidget consists of three sections, one each for the hour, minute and second. You can change the separator character using <a href="q3timeedit.html#setSeparator">setSeparator</a>(), by default the separator is read from the system's settings.</p>
+<p align="center"><img src="images/datetimewidgets.png" alt="Date Time Widgets" /></p><p>See also <a href="qtime.html">QTime</a>, <a href="q3dateedit.html">Q3DateEdit</a>, and <a href="q3datetimeedit.html">Q3DateTimeEdit</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Display-enum"></a>enum Q3TimeEdit::Display</h3>
+<p>This enum defines the sections that comprise a time</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3TimeEdit::Hours</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">The hours section</td></tr>
+<tr><td valign="top"><tt>Q3TimeEdit::Minutes</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">The minutes section</td></tr>
+<tr><td valign="top"><tt>Q3TimeEdit::Seconds</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">The seconds section</td></tr>
+<tr><td valign="top"><tt>Q3TimeEdit::AMPM</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">The AM/PM section</td></tr>
+</table></p>
+<p>The values can be or'ed together to show any combination.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoAdvance-prop"></a>autoAdvance : bool</h3>
+<p>This property holds whether the editor automatically advances to the next section.</p>
+<p>If autoAdvance is true, the editor will automatically advance focus to the next time section if a user has completed a section. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoAdvance () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoAdvance ( bool <i>advance</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="display-prop"></a>display : <a href="q3timeedit.html#Display-enum">Display</a></h3>
+<p>This property holds the sections that are displayed in the time edit.</p>
+<p>The value can be any combination of the values in the Display enum. By default, the widget displays hours, minutes and seconds.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>uint display () const</b></li>
+<li><div class="fn"/><b>void setDisplay ( uint <i>disp</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maxValue-prop"></a>maxValue : <a href="qtime.html">QTime</a></h3>
+<p>This property holds the maximum time value.</p>
+<p>Setting the maximum time value is equivalent to calling Q3TimeEdit::setRange(<a href="q3timeedit.html#minValue-prop">minValue</a>(), <i>t</i>), where <i>t</i> is the maximum time. The default maximum time is 23:59:59.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QTime maxValue () const</b></li>
+<li><div class="fn"/><b>virtual void setMaxValue ( const QTime &amp; <i>d</i> )</b></li>
+</ul>
+<p>See also <a href="q3timeedit.html#minValue-prop">minValue</a> and <a href="q3timeedit.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="minValue-prop"></a>minValue : <a href="qtime.html">QTime</a></h3>
+<p>This property holds the minimum time value.</p>
+<p>Setting the minimum time value is equivalent to calling Q3TimeEdit::setRange(<i>t</i>, <a href="q3timeedit.html#maxValue-prop">maxValue</a>()), where <i>t</i> is the minimum time. The default minimum time is 00:00:00.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QTime minValue () const</b></li>
+<li><div class="fn"/><b>virtual void setMinValue ( const QTime &amp; <i>d</i> )</b></li>
+</ul>
+<p>See also <a href="q3timeedit.html#maxValue-prop">maxValue</a> and <a href="q3timeedit.html#setRange">setRange</a>().</p>
+<h3 class="fn"><a name="time-prop"></a>time : <a href="qtime.html">QTime</a></h3>
+<p>This property holds the editor's time value.</p>
+<p>When changing the time property, if the time is less than <a href="q3timeedit.html#minValue-prop">minValue</a>(), or is greater than <a href="q3timeedit.html#maxValue-prop">maxValue</a>(), nothing happens.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QTime time () const</b></li>
+<li><div class="fn"/><b>virtual void setTime ( const QTime &amp; <i>time</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3TimeEdit"></a>Q3TimeEdit::Q3TimeEdit ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs an empty time edit with parent <i>parent</i> and called <i>name</i>.</p>
+<h3 class="fn"><a name="Q3TimeEdit-2"></a>Q3TimeEdit::Q3TimeEdit ( const <a href="qtime.html">QTime</a> &amp; <i>time</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a time edit with the initial time value, <i>time</i>, parent <i>parent</i> and called <i>name</i>.</p>
+<h3 class="fn"><a name="dtor.Q3TimeEdit"></a>Q3TimeEdit::~Q3TimeEdit ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="sectionFormattedText"></a><a href="qstring.html">QString</a> Q3TimeEdit::sectionFormattedText ( int <i>sec</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the formatted number for section <i>sec</i>. This will correspond to either the hour, minute or second section, depending on <i>sec</i>.</p>
+<h3 class="fn"><a name="separator"></a><a href="qstring.html">QString</a> Q3TimeEdit::separator () const</h3>
+<p>Returns the editor's separator.</p>
+<p>See also <a href="q3timeedit.html#setSeparator">setSeparator</a>().</p>
+<h3 class="fn"><a name="setHour"></a>void Q3TimeEdit::setHour ( int <i>h</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the hour to <i>h</i>, which must be a valid hour, i.e&#x2e; in the range 0..24.</p>
+<h3 class="fn"><a name="setMinute"></a>void Q3TimeEdit::setMinute ( int <i>m</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the minute to <i>m</i>, which must be a valid minute, i.e&#x2e; in the range 0..59.</p>
+<h3 class="fn"><a name="setRange"></a>void Q3TimeEdit::setRange ( const <a href="qtime.html">QTime</a> &amp; <i>min</i>, const <a href="qtime.html">QTime</a> &amp; <i>max</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the valid input range for the editor to be from <i>min</i> to <i>max</i> inclusive. If <i>min</i> is invalid no minimum time is set. Similarly, if <i>max</i> is invalid no maximum time is set.</p>
+<h3 class="fn"><a name="setSecond"></a>void Q3TimeEdit::setSecond ( int <i>s</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets the second to <i>s</i>, which must be a valid second, i.e&#x2e; in the range 0..59.</p>
+<h3 class="fn"><a name="setSeparator"></a>void Q3TimeEdit::setSeparator ( const <a href="qstring.html">QString</a> &amp; <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the separator to <i>s</i>. Note that currently only the first character of <i>s</i> is used.</p>
+<p>See also <a href="q3timeedit.html#separator">separator</a>().</p>
+<h3 class="fn"><a name="valueChanged"></a>void Q3TimeEdit::valueChanged ( const <a href="qtime.html">QTime</a> &amp; <i>time</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the editor's value changes. The <i>time</i> parameter is the new value.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

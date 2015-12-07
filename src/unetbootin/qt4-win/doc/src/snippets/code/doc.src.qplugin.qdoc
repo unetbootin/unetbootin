@@ -1,0 +1,26 @@
+//! [0]
+        namespace Foo
+        {
+            struct MyInterface { ... };
+        }
+
+        Q_DECLARE_INTERFACE(Foo::MyInterface, "org.examples.MyInterface")
+//! [0]
+
+
+//! [1]
+        Q_EXPORT_PLUGIN2(pnp_extrafilters, ExtraFiltersPlugin)
+//! [1]
+
+
+//! [2]
+        Q_IMPORT_PLUGIN(qjpeg)
+//! [2]
+
+
+//! [3]
+        TEMPLATE      = app
+        QTPLUGIN     += qjpeg qgif qmng    # image formats
+//! [3]
+
+

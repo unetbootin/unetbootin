@@ -1,0 +1,17 @@
+How to build/ update a new assistant.qch for Assistant internal help
+
+- in case of update:
+    - open assistant.qdocconf, update year and qt version
+
+- all other cases:
+    - ..\..\..\..\qdoc3\debug\qdoc3.exe assistant.qdocconf
+        will generate an folder html containing all required stuff
+
+    - cp assistant.qhp to generated html folder
+    - run qhelpgenerator html\assistant.qhp -o ..\assistant.qch
+
+    - rebuild assistant
+
+- to test you changes:
+    - remove assistant.qch in your cache directory
+    - restart assistant

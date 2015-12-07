@@ -1,0 +1,268 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'qtresourceeditordialog.cpp'
+**
+** Created: Thu Mar 5 20:46:07 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'qtresourceeditordialog.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_QtQrcManager[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      29,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      22,   14,   13,   13, 0x05,
+      75,   50,   13,   13, 0x05,
+     111,   14,   13,   13, 0x05,
+     153,  138,   13,   13, 0x05,
+     234,  195,   13,   13, 0x05,
+     316,  291,   13,   13, 0x05,
+     392,  365,   13,   13, 0x05,
+     443,  138,   13,   13, 0x05,
+     497,  484,   13,   13, 0x05,
+     570,  535,   13,   13, 0x05,
+     643,  621,   13,   13, 0x05,
+     689,  484,   13,   13, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     764,  737,  726,   13, 0x0a,
+     822,  803,  726,   13, 0x2a,
+     861,  856,  726,   13, 0x2a,
+     906,  884,   13,   13, 0x0a,
+     962,  941,   13,   13, 0x0a,
+    1004,   14,   13,   13, 0x0a,
+    1093, 1048, 1030,   13, 0x0a,
+    1184, 1160, 1030,   13, 0x2a,
+    1269, 1233,   13,   13, 0x0a,
+    1350, 1325,   13,   13, 0x0a,
+    1425, 1398,   13,   13, 0x0a,
+    1475,  138,   13,   13, 0x0a,
+    1576, 1531, 1515,   13, 0x0a,
+    1672, 1646, 1515,   13, 0x2a,
+    1758, 1726,   13,   13, 0x0a,
+    1830, 1808,   13,   13, 0x0a,
+    1875,  484,   13,   13, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QtQrcManager[] = {
+    "QtQrcManager\0\0qrcFile\0qrcFileInserted(QtQrcFile*)\0"
+    "qrcFile,oldBeforeQrcFile\0"
+    "qrcFileMoved(QtQrcFile*,QtQrcFile*)\0"
+    "qrcFileRemoved(QtQrcFile*)\0resourcePrefix\0"
+    "resourcePrefixInserted(QtResourcePrefix*)\0"
+    "resourcePrefix,oldBeforeResourcePrefix\0"
+    "resourcePrefixMoved(QtResourcePrefix*,QtResourcePrefix*)\0"
+    "resourcePrefix,oldPrefix\0"
+    "resourcePrefixChanged(QtResourcePrefix*,QString)\0"
+    "resourcePrefix,oldLanguage\0"
+    "resourceLanguageChanged(QtResourcePrefix*,QString)\0"
+    "resourcePrefixRemoved(QtResourcePrefix*)\0"
+    "resourceFile\0resourceFileInserted(QtResourceFile*)\0"
+    "resourceFile,oldBeforeResourceFile\0"
+    "resourceFileMoved(QtResourceFile*,QtResourceFile*)\0"
+    "resourceFile,oldAlias\0"
+    "resourceAliasChanged(QtResourceFile*,QString)\0"
+    "resourceFileRemoved(QtResourceFile*)\0"
+    "QtQrcFile*\0path,beforeQrcFile,newFile\0"
+    "insertQrcFile(QString,QtQrcFile*,bool)\0"
+    "path,beforeQrcFile\0insertQrcFile(QString,QtQrcFile*)\0"
+    "path\0insertQrcFile(QString)\0"
+    "qrcFile,beforeQrcFile\0"
+    "moveQrcFile(QtQrcFile*,QtQrcFile*)\0"
+    "qrcFile,initialState\0"
+    "setInitialState(QtQrcFile*,QtQrcFileData)\0"
+    "removeQrcFile(QtQrcFile*)\0QtResourcePrefix*\0"
+    "qrcFile,prefix,language,beforeResourcePrefix\0"
+    "insertResourcePrefix(QtQrcFile*,QString,QString,QtResourcePrefix*)\0"
+    "qrcFile,prefix,language\0"
+    "insertResourcePrefix(QtQrcFile*,QString,QString)\0"
+    "resourcePrefix,beforeResourcePrefix\0"
+    "moveResourcePrefix(QtResourcePrefix*,QtResourcePrefix*)\0"
+    "resourcePrefix,newPrefix\0"
+    "changeResourcePrefix(QtResourcePrefix*,QString)\0"
+    "resourcePrefix,newLanguage\0"
+    "changeResourceLanguage(QtResourcePrefix*,QString)\0"
+    "removeResourcePrefix(QtResourcePrefix*)\0"
+    "QtResourceFile*\0"
+    "resourcePrefix,path,alias,beforeResourceFile\0"
+    "insertResourceFile(QtResourcePrefix*,QString,QString,QtResourceFile*)\0"
+    "resourcePrefix,path,alias\0"
+    "insertResourceFile(QtResourcePrefix*,QString,QString)\0"
+    "resourceFile,beforeResourceFile\0"
+    "moveResourceFile(QtResourceFile*,QtResourceFile*)\0"
+    "resourceFile,newAlias\0"
+    "changeResourceAlias(QtResourceFile*,QString)\0"
+    "removeResourceFile(QtResourceFile*)\0"
+};
+
+const QMetaObject QtQrcManager::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_QtQrcManager,
+      qt_meta_data_QtQrcManager, 0 }
+};
+
+const QMetaObject *QtQrcManager::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QtQrcManager::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QtQrcManager))
+        return static_cast<void*>(const_cast< QtQrcManager*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int QtQrcManager::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: qrcFileInserted((*reinterpret_cast< QtQrcFile*(*)>(_a[1]))); break;
+        case 1: qrcFileMoved((*reinterpret_cast< QtQrcFile*(*)>(_a[1])),(*reinterpret_cast< QtQrcFile*(*)>(_a[2]))); break;
+        case 2: qrcFileRemoved((*reinterpret_cast< QtQrcFile*(*)>(_a[1]))); break;
+        case 3: resourcePrefixInserted((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1]))); break;
+        case 4: resourcePrefixMoved((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< QtResourcePrefix*(*)>(_a[2]))); break;
+        case 5: resourcePrefixChanged((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 6: resourceLanguageChanged((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 7: resourcePrefixRemoved((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1]))); break;
+        case 8: resourceFileInserted((*reinterpret_cast< QtResourceFile*(*)>(_a[1]))); break;
+        case 9: resourceFileMoved((*reinterpret_cast< QtResourceFile*(*)>(_a[1])),(*reinterpret_cast< QtResourceFile*(*)>(_a[2]))); break;
+        case 10: resourceAliasChanged((*reinterpret_cast< QtResourceFile*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 11: resourceFileRemoved((*reinterpret_cast< QtResourceFile*(*)>(_a[1]))); break;
+        case 12: { QtQrcFile* _r = insertQrcFile((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< QtQrcFile*(*)>(_a[2])),(*reinterpret_cast< bool(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QtQrcFile**>(_a[0]) = _r; }  break;
+        case 13: { QtQrcFile* _r = insertQrcFile((*reinterpret_cast< const QString(*)>(_a[1])),(*reinterpret_cast< QtQrcFile*(*)>(_a[2])));
+            if (_a[0]) *reinterpret_cast< QtQrcFile**>(_a[0]) = _r; }  break;
+        case 14: { QtQrcFile* _r = insertQrcFile((*reinterpret_cast< const QString(*)>(_a[1])));
+            if (_a[0]) *reinterpret_cast< QtQrcFile**>(_a[0]) = _r; }  break;
+        case 15: moveQrcFile((*reinterpret_cast< QtQrcFile*(*)>(_a[1])),(*reinterpret_cast< QtQrcFile*(*)>(_a[2]))); break;
+        case 16: setInitialState((*reinterpret_cast< QtQrcFile*(*)>(_a[1])),(*reinterpret_cast< const QtQrcFileData(*)>(_a[2]))); break;
+        case 17: removeQrcFile((*reinterpret_cast< QtQrcFile*(*)>(_a[1]))); break;
+        case 18: { QtResourcePrefix* _r = insertResourcePrefix((*reinterpret_cast< QtQrcFile*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< QtResourcePrefix*(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QtResourcePrefix**>(_a[0]) = _r; }  break;
+        case 19: { QtResourcePrefix* _r = insertResourcePrefix((*reinterpret_cast< QtQrcFile*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QtResourcePrefix**>(_a[0]) = _r; }  break;
+        case 20: moveResourcePrefix((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< QtResourcePrefix*(*)>(_a[2]))); break;
+        case 21: changeResourcePrefix((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 22: changeResourceLanguage((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 23: removeResourcePrefix((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1]))); break;
+        case 24: { QtResourceFile* _r = insertResourceFile((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])),(*reinterpret_cast< QtResourceFile*(*)>(_a[4])));
+            if (_a[0]) *reinterpret_cast< QtResourceFile**>(_a[0]) = _r; }  break;
+        case 25: { QtResourceFile* _r = insertResourceFile((*reinterpret_cast< QtResourcePrefix*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2])),(*reinterpret_cast< const QString(*)>(_a[3])));
+            if (_a[0]) *reinterpret_cast< QtResourceFile**>(_a[0]) = _r; }  break;
+        case 26: moveResourceFile((*reinterpret_cast< QtResourceFile*(*)>(_a[1])),(*reinterpret_cast< QtResourceFile*(*)>(_a[2]))); break;
+        case 27: changeResourceAlias((*reinterpret_cast< QtResourceFile*(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 28: removeResourceFile((*reinterpret_cast< QtResourceFile*(*)>(_a[1]))); break;
+        default: ;
+        }
+        _id -= 29;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QtQrcManager::qrcFileInserted(QtQrcFile * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void QtQrcManager::qrcFileMoved(QtQrcFile * _t1, QtQrcFile * _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void QtQrcManager::qrcFileRemoved(QtQrcFile * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void QtQrcManager::resourcePrefixInserted(QtResourcePrefix * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+
+// SIGNAL 4
+void QtQrcManager::resourcePrefixMoved(QtResourcePrefix * _t1, QtResourcePrefix * _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 4, _a);
+}
+
+// SIGNAL 5
+void QtQrcManager::resourcePrefixChanged(QtResourcePrefix * _t1, const QString & _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 5, _a);
+}
+
+// SIGNAL 6
+void QtQrcManager::resourceLanguageChanged(QtResourcePrefix * _t1, const QString & _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 6, _a);
+}
+
+// SIGNAL 7
+void QtQrcManager::resourcePrefixRemoved(QtResourcePrefix * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 7, _a);
+}
+
+// SIGNAL 8
+void QtQrcManager::resourceFileInserted(QtResourceFile * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 8, _a);
+}
+
+// SIGNAL 9
+void QtQrcManager::resourceFileMoved(QtResourceFile * _t1, QtResourceFile * _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 9, _a);
+}
+
+// SIGNAL 10
+void QtQrcManager::resourceAliasChanged(QtResourceFile * _t1, const QString & _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 10, _a);
+}
+
+// SIGNAL 11
+void QtQrcManager::resourceFileRemoved(QtResourceFile * _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 11, _a);
+}
+QT_END_MOC_NAMESPACE

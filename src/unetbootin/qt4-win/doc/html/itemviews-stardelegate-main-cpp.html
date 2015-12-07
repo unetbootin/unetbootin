@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: main.cpp Example File (itemviews/stardelegate/main.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">main.cpp Example File<br /><span class="small-subtitle">itemviews/stardelegate/main.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;stardelegate.h&quot;
+ #include &quot;stareditor.h&quot;
+ #include &quot;starrating.h&quot;
+
+ void populateTableWidget(QTableWidget *tableWidget)
+ {
+     static const struct {
+         const char *title;
+         const char *genre;
+         const char *artist;
+         int rating;
+     } staticData[] = {
+         { &quot;Mass in B-Minor&quot;, &quot;Baroque&quot;, &quot;J.S. Bach&quot;, 5 },
+         { &quot;Three More Foxes&quot;, &quot;Jazz&quot;, &quot;Maynard Ferguson&quot;, 4 },
+         { &quot;Sex Bomb&quot;, &quot;Pop&quot;, &quot;Tom Jones&quot;, 3 },
+         { &quot;Barbie Girl&quot;, &quot;Pop&quot;, &quot;Aqua&quot;, 5 },
+         { 0, 0, 0, 0 }
+     };
+
+     for (int row = 0; staticData[row].title != 0; ++row) {
+         QTableWidgetItem *item0 = new QTableWidgetItem(staticData[row].title);
+         QTableWidgetItem *item1 = new QTableWidgetItem(staticData[row].genre);
+         QTableWidgetItem *item2 = new QTableWidgetItem(staticData[row].artist);
+         QTableWidgetItem *item3 = new QTableWidgetItem;
+         item3-&gt;setData(0,
+                        qVariantFromValue(StarRating(staticData[row].rating)));
+
+         tableWidget-&gt;setItem(row, 0, item0);
+         tableWidget-&gt;setItem(row, 1, item1);
+         tableWidget-&gt;setItem(row, 2, item2);
+         tableWidget-&gt;setItem(row, 3, item3);
+     }
+ }
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QTableWidget tableWidget(4, 4);
+     tableWidget.setItemDelegate(new StarDelegate);
+     tableWidget.setEditTriggers(QAbstractItemView::DoubleClicked
+                                 | QAbstractItemView::SelectedClicked);
+     tableWidget.setSelectionBehavior(QAbstractItemView::SelectRows);
+
+     QStringList headerLabels;
+     headerLabels &lt;&lt; &quot;Title&quot; &lt;&lt; &quot;Genre&quot; &lt;&lt; &quot;Artist&quot; &lt;&lt; &quot;Rating&quot;;
+     tableWidget.setHorizontalHeaderLabels(headerLabels);
+
+     populateTableWidget(&amp;tableWidget);
+
+     tableWidget.resizeColumnsToContents();
+     tableWidget.resize(500, 300);
+     tableWidget.show();
+
+     return app.exec();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

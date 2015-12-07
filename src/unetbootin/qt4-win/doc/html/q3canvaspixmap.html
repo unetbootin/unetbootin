@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasPixmap Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasPixmap Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasPixmap class provides pixmaps for Q3CanvasSprites. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasPixmap&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qpixmap.html">QPixmap</a>.</p>
+<ul>
+<li><a href="q3canvaspixmap-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvaspixmap.html#Q3CanvasPixmap">Q3CanvasPixmap</a></b> ( const QString &amp; <i>datafilename</i> )</li>
+<li><div class="fn"/><b><a href="q3canvaspixmap.html#Q3CanvasPixmap-2">Q3CanvasPixmap</a></b> ( const QImage &amp; <i>image</i> )</li>
+<li><div class="fn"/><b><a href="q3canvaspixmap.html#Q3CanvasPixmap-3">Q3CanvasPixmap</a></b> ( const QPixmap &amp; <i>pm</i>, const QPoint &amp; <i>offset</i> )</li>
+<li><div class="fn"/><b><a href="q3canvaspixmap.html#dtor.Q3CanvasPixmap">~Q3CanvasPixmap</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3canvaspixmap.html#offsetX">offsetX</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvaspixmap.html#offsetY">offsetY</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvaspixmap.html#setOffset">setOffset</a></b> ( int <i>x</i>, int <i>y</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>48 public functions inherited from <a href="qpixmap.html#public-functions">QPixmap</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>10 static public members inherited from <a href="qpixmap.html#static-public-members">QPixmap</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasPixmap class provides pixmaps for Q3CanvasSprites.</p>
+<p>If you want to show a single pixmap on a <a href="q3canvas.html">Q3Canvas</a> use a <a href="q3canvassprite.html">Q3CanvasSprite</a> with just one pixmap.</p>
+<p>When pixmaps are inserted into a <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a> they are held as Q3CanvasPixmaps. <a href="q3canvassprite.html">Q3CanvasSprite</a>s are used to show pixmaps on <a href="q3canvas.html">Q3Canvas</a>es and hold their pixmaps in a <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>. If you retrieve a frame (pixmap) from a <a href="q3canvassprite.html">Q3CanvasSprite</a> it will be returned as a Q3CanvasPixmap.</p>
+<p>The pixmap is a <a href="qpixmap.html">QPixmap</a> and can only be set in the constructor. There are three different constructors, one taking a <a href="qpixmap.html">QPixmap</a>, one a <a href="qimage.html">QImage</a> and one a file name that refers to a file in any supported file format (see <a href="qimagereader.html">QImageReader</a>).</p>
+<p>Q3CanvasPixmap can have a hotspot which is defined in terms of an (x, y) offset. When you create a Q3CanvasPixmap from a PNG file or from a <a href="qimage.html">QImage</a> that has a <a href="qimage.html#offset">QImage::offset</a>(), the offset() is initialized appropriately, otherwise the constructor leaves it at (0, 0). You can set it later using <a href="q3canvaspixmap.html#setOffset">setOffset</a>(). When the Q3CanvasPixmap is used in a <a href="q3canvassprite.html">Q3CanvasSprite</a>, the offset position is the point at <a href="q3canvasitem.html#x">Q3CanvasItem::x</a>() and <a href="q3canvasitem.html#y">Q3CanvasItem::y</a>(), not the top-left corner of the pixmap.</p>
+<p>Note that for Q3CanvasPixmap objects created by a <a href="q3canvassprite.html">Q3CanvasSprite</a>, the position of each Q3CanvasPixmap object is set so that the hotspot stays in the same position.</p>
+<p>See also <a href="q3canvaspixmaparray.html">Q3CanvasPixmapArray</a>, <a href="q3canvasitem.html">Q3CanvasItem</a>, <a href="q3canvassprite.html">Q3CanvasSprite</a>, <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a>, and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasPixmap"></a>Q3CanvasPixmap::Q3CanvasPixmap ( const <a href="qstring.html">QString</a> &amp; <i>datafilename</i> )</h3>
+<p>Constructs a <a href="q3canvaspixmap.html">Q3CanvasPixmap</a> that uses the image stored in <i>datafilename</i>.</p>
+<h3 class="fn"><a name="Q3CanvasPixmap-2"></a>Q3CanvasPixmap::Q3CanvasPixmap ( const <a href="qimage.html">QImage</a> &amp; <i>image</i> )</h3>
+<p>Constructs a <a href="q3canvaspixmap.html">Q3CanvasPixmap</a> from the image <i>image</i>.</p>
+<h3 class="fn"><a name="Q3CanvasPixmap-3"></a>Q3CanvasPixmap::Q3CanvasPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pm</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>offset</i> )</h3>
+<p>Constructs a <a href="q3canvaspixmap.html">Q3CanvasPixmap</a> from the pixmap <i>pm</i> using the offset <i>offset</i>.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasPixmap"></a>Q3CanvasPixmap::~Q3CanvasPixmap ()</h3>
+<p>Destroys the pixmap.</p>
+<h3 class="fn"><a name="offsetX"></a>int Q3CanvasPixmap::offsetX () const</h3>
+<p>Returns the x-offset of the pixmap's hotspot.</p>
+<p>See also <a href="q3canvaspixmap.html#setOffset">setOffset</a>().</p>
+<h3 class="fn"><a name="offsetY"></a>int Q3CanvasPixmap::offsetY () const</h3>
+<p>Returns the y-offset of the pixmap's hotspot.</p>
+<p>See also <a href="q3canvaspixmap.html#setOffset">setOffset</a>().</p>
+<h3 class="fn"><a name="setOffset"></a>void Q3CanvasPixmap::setOffset ( int <i>x</i>, int <i>y</i> )</h3>
+<p>Sets the offset of the pixmap's hotspot to (<i>x</i>, <i>y</i>).</p>
+<p><b>Warning:</b> Do not call this function if any Q3CanvasSprites are currently showing this pixmap.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

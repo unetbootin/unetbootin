@@ -1,0 +1,2686 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+\page designer-manual.html
+\startpage index.html Qt Reference Documentation
+\nextpage Getting Started with Qt Designer
+
+\title Qt Designer Manual
+\ingroup qttools
+
+\keyword Qt Designer
+
+\QD is Trolltech's tool for designing and building graphical user
+interfaces (GUIs) from Qt components. It allows you to design and build
+widgets and dialogs using on-screen forms using the same widgets that
+will be used in your application.
+Components created with \QD can also take advantage of Qt's
+signals and slots, and they can be previewed so that you can ensure
+that they will look and feel exactly as you intended.
+
+\section1 Using Qt Designer
+
+\list
+\i \l{Getting Started with Qt Designer}
+  \tableofcontents{1 Getting Started with Qt Designer}
+\i \l{Designing a Component with Qt Designer}
+ \tableofcontents{1 Designing a Component with Qt Designer}
+\i \l{Qt Designer's Widget Editing Mode}
+ \tableofcontents{1 Qt Designer's Widget Editing Mode}
+\i \l{Using Containers in Qt Designer}
+ \tableofcontents{1 Using Containers in Qt Designer}
+\i \l{Creating Main Windows in Qt Designer}
+ \tableofcontents{1 Creating Main Windows in Qt Designer}
+\i \l{Qt Designer's Signals and Slots Editing Mode}
+ \tableofcontents{1 Qt Designer's Signals and Slots Editing Mode}
+\i \l{Qt Designer's Buddy Editing Mode}
+ \tableofcontents{1 Qt Designer's Buddy Editing Mode}
+\i \l{Qt Designer's Tab Order Editing Mode}
+ \tableofcontents{1 Qt Designer's Tab Order Editing Mode}
+\i \l{Editing Resources with Qt Designer}
+ \tableofcontents{1 Editing Resources with Qt Designer}
+\i \l{Customizing Qt Designer Forms}
+ \tableofcontents{1 Modifying the Form Settings}
+\i \l{Using Custom Widgets with Qt Designer}
+ \tableofcontents{1 Using Custom Widgets with Qt Designer}
+\endlist
+
+\section1 Using Forms and Components
+
+\list
+\i \l{Using a Component in Your Application}
+ \tableofcontents{1 Using a Component in Your Application}
+\endlist
+
+\section1 Customizing Qt Designer
+\list
+\i \l{Creating Custom Widgets for Qt Designer}
+ \tableofcontents{1 Creating Custom Widgets for Qt Designer}
+\i \l{Creating Custom Widget Extensions}
+ \tableofcontents{1 Creating Custom Widget Extensions}
+\i \l{Qt Designer's UI File Format}
+ \tableofcontents{1 Qt Designer's UI File Format}
+\endlist
+
+\section1 Figures and Hints
+
+\list
+\i \l{Creating Main Windows in Qt Designer#AddingADockWidget}{Adding a Dock Widget}
+\i \l{Creating Main Windows in Qt Designer#AddingAnAction}{Adding an Action}
+\i \l{Designing a Component with Qt Designer#AddingWidgetsToAForm}{Adding Widgets to a Form}
+\i \l{Designing a Component with Qt Designer#ChoosingAForm}{Choosing a Form}
+\i \l{Qt Designer's Signals and Slots Editing Mode#ChoosingSignalsAndSlots}{Choosing Signals and Slots}
+\i \l{Qt Designer's Signals and Slots Editing Mode#ConnectingToTheForm}{Connecting to a Form}
+\i \l{Designing a Component with Qt Designer#ConnectingWidgets}{Connecting Widgets}
+\i \l{Creating Main Windows in Qt Designer#CreatingAMenu}{Creating a Menu}
+\i \l{Creating Main Windows in Qt Designer#CreatingAMenuEntry}{Creating a Menu Entry}
+\i \l{Qt Designer's Signals and Slots Editing Mode#DeletingConnections}{Deleting Connections}
+\i \l{Using Containers in Qt Designer#Dock Widgets}{Dock Widgets}
+\i \l{Qt Designer's Widget Editing Mode#DragAndDrop}{Drag and drop}
+\i \l{Designing a Component with Qt Designer#EditingModes}{Editing Modes}
+\i \l{Qt Designer's Widget Editing Mode#EditingProperties}{Editing Properties}
+\i \l{Editing Resources with Qt Designer#EditResource}{Editing Resource Files}
+\i \l{Using Containers in Qt Designer#Frames}{Frames}
+\i \l{Using Containers in Qt Designer#Group Boxes}{Group Boxes}
+\i \l{Qt Designer's Signals and Slots Editing Mode#HighlightedObjects}{Highlighted Objects}
+\i \l{Qt Designer's Widget Editing Mode#InsertingObjectsIntoALayout}{Inserting Objects into a Layout}
+\i \l{Customizing Qt Designer Forms#LayoutFunction}{Layout Function}
+\i \l{Qt Designer's Signals and Slots Editing Mode#MakingAConnection}{Making a Connection}
+\i \l{Qt Designer's Buddy Editing Mode#MakingBuddies}{Making Buddies}
+\i \l{Designing a Component with Qt Designer#PlacingWidgetsInLayouts}{Placing Widgets in Layouts}
+\i \l{Designing a Component with Qt Designer#PreviewingAForm}{Previewing a Form}
+\i \l{Getting Started with Qt Designer#MainWindow}{\QD's Main Window}
+\i \l{Getting Started with Qt Designer#WidgetBox}{\QD's Widget Box}
+\i \l{Editing Resources with Qt Designer#ResourceFiles}{Resource Files}
+\i \l{Qt Designer's Widget Editing Mode#SelectingObjects}{Selecting Objects}
+\i \l{Using Containers in Qt Designer#Stacked Widgets}{Stacked Widgets}
+\i \l{Using Containers in Qt Designer#Tab Widgets}{Tab Widgets}
+\i \l{Creating Main Windows in Qt Designer#TheActionEditor}{The Action Editor}
+\i \l{Qt Designer's Widget Editing Mode#TheObjectInspector}{The Object Inspector}
+\i \l{Designing a Component with Qt Designer#ThePropertyEditor}{The Property Editor}
+\i \l{Qt Designer's Signals and Slots Editing Mode#ConnectionEditor}{The Signal/Slot Editor}
+\i \l{Using Containers in Qt Designer#Toolbox Widgets}{Toolbox Widgets}
+\i \l{Editing Resources with Qt Designer#UsingResources}{Using Resources}
+\endlist
+
+\section1 Legal Notices
+
+Some source code in \QD is licensed under specific highly
+permissive licenses from the original authors. Trolltech gratefully
+acknowledges these contributions to \QD and all uses of \QD should
+also acknowledge these contributions and quote the following license
+statements in an appendix to the documentation.
+
+\list
+\i \l{Implementation of the Recursive Shadow Casting Algorithm in Qt Designer}
+\endlist
+*/
+
+/*!
+\page designer-getting-started.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Qt Designer Manual
+\nextpage Designing a Component with Qt Designer
+
+\title Getting Started with Qt Designer
+
+This manual covers the fundamental steps that most users will take when
+creating graphical user interfaces with \QD. We will introduce the
+main features of the tool by creating a simple dialog that we can use
+in an example program.
+
+\image designer-getting-started.png A simple dialog produced with \QD.
+
+\target LaunchingDesigner
+\section1 Launching Designer
+
+The way that you launch \QD depends on your platform:
+
+\list
+\i On Windows, click the Start button, open the \e Programs submenu, open
+the \e{Qt 4} submenu, and click \e Designer.
+\i On Unix or Linux, you may find a \QD icon on the desktop background or
+in the desktop start menu under the \e Programming or \e Development
+submenus. You can launch \QD from this icon. Alternatively, you can
+enter \c{designer} in a terminal window.
+\i On Mac OS X, double click on \QD in the Finder.
+\endlist
+
+\target TheUserInterface
+\section1 The User Interface
+
+When used as a standalone application, \QD's user interface can be
+configured to provide either a multi-window user interface (the default
+mode), or it can be used in docked window mode. When used from within
+an integrated development environment (IDE) only the multi-window user
+interface is available. To switch modes, open the \e Preferences dialog
+(\e Edit menu).
+
+In multi-window mode, you can arrange each of the tool windows to suit
+your working style. The main window consists of a menu bar, a tool bar,
+and a widget box that contains the widgets you can use to create your
+user interface.
+
+\target MainWindow
+\table
+\row
+\i \inlineimage designer-main-window.png
+\i \bold{\QD's Main Window}
+
+The menu bar provides all the standard actions for managing forms,
+using the clipboard, and accessing application-specific help.
+The current editing mode, the tool windows, and the forms in use can
+also be accessed via the menu bar.
+
+The tool bar displays common actions that are used when editing a form.
+These are also available via the main menu.
+
+The widget box provides common widgets and layouts that are used to design
+components. These are grouped into categories that reflect their uses or
+features.
+\endtable
+
+Since Qt 4.4, you can customize your tool bar by clicking on \e Tools
+and selecting \e{Configure Toolbars...} to bring up the
+\gui{Customize Toolbars} dialog shown below.
+
+\image designer-customize-toolbar.png
+
+Use the \gui{Add Button} 
+\inlineimage designer-add-custom-toolbar.png
+ to add a custom tool bar and the \gui{Remove Button} 
+\inlineimage designer-remove-custom-toolbar.png
+ to remove a custom tool bar.
+
+Most features of \QD are accessible via the menu bar, the tool bar, or the
+widget box. Some features are also available through context menus that
+can be opened over the form windows. On most platforms, the right mouse
+button is used to open context menus.
+
+\target WidgetBox
+\table
+\row
+\i \inlineimage designer-widget-box.png
+\i \bold{\QD's Widget Box}
+
+The widget box provides a selection of standard Qt widgets, layouts, and
+other objects that can be used to create user interfaces on forms. Each
+of the categories in the widget box contain widgets with similar uses or
+related features.
+
+\note Since Qt 4.4, there are some new widgets included, such as:
+QPlainTextEdit, QCommandLinkButton, QScrollArea, QMdiArea and QWebView.
+
+You can display all of the available objects in a category by clicking
+on the handle next to the category label. When in \l{Qt Designer's
+Widget Editing Mode}{Widget Editing Mode}, you can add objects to a
+form by dragging the appropriate items from the widget box onto the
+form, and dropping them in the required locations.
+
+\QD provides a scratch pad feature that allows you to collect the most
+commonly used objects in a separate category. This category will be
+saved for later use when exiting \QD. The scratch pad category can be
+filled with any widget currently displayed in a form by simply
+dragging them from the form and dropping them onto the widget
+box. These widgets can be used in the same way as any other widgets,
+but in additon they can contain child widgets. Open a context menu
+over a widget to change its name or remove it from the scratch pad.
+
+\endtable
+
+*/
+
+/*!
+\page designer-designing-a-component.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Getting Started with Qt Designer
+\nextpage Qt Designer's Widget Editing Mode
+
+\title Designing a Component with Qt Designer
+
+\tableofcontents
+
+In this chapter we will look at the main steps that users will take
+when creating new graphical user interfaces with \QD. Usually,
+creating a new component for an application will involve various
+activities:
+
+\list
+\i Deciding which kind of component to use.
+\i Composing the user interface by adding widgets from the widget box to
+   the form.
+\i Laying out the contents of the form.
+\omit \i Setting the tab order of the widgets. \endomit
+\i Connecting widgets together using their signals and slots.
+\i Previewing the form.
+\endlist
+
+Users may find that they prefer to perform these activities in a
+different order, and we expect that for complex widgets the design
+process may involve many iterations of these steps. However, we present
+each of the activities in the above order, and leave it up to the user
+to find the approach that suits them best.
+
+To demonstrate the processes used to create a new component, we will take
+a look at the steps needed to create a simple widget with \QD. We use the
+widget to illustrate certain features of the tool. General concepts are
+explained in the gray boxes in each section, and you can follow links
+from some of these to read more about the features being discussed.
+
+
+\target CreatingAForm
+\section1 Creating a Form
+
+\QD can be used to create user interfaces for different purposes,
+and it provides different kinds of form templates for each interface. The
+first choice that you face when creating a new user interface is to decide
+which kind of form you will be using; for example, you may require a group
+of widgets instead of a dialog. New forms can be created by opening the
+\gui File menu and selecting the \gui{New Form...} option, or by pressing
+\key{Ctrl+N}.
+
+
+\target ChoosingAForm
+\table
+\row
+\i \inlineimage designer-choosing-form.png
+\i \bold{Choosing a Form}
+
+\QD provides a number of template forms that are
+suitable for different kinds of components. You can either choose one of
+these templates or open a form that was saved earlier.
+
+\note Since Qt 4.4, new base classes are provided for forms. Among them
+are QDockWidget, QFrame, QGroupBox, QScrollArea, QMdiArea, QTabWidget,
+QToolBox and QStackedWidget.
+
+\endtable
+
+If your requirements later change so that you need to supply a
+different type of component, you can easily reuse the contents of your
+existing form. For our example, we select the \gui{Widget} template,
+and a form is created ready for use.
+
+
+\target ComposingADialog
+\section1 Composing a Dialog
+
+The empty form is displayed as an empty dialog with a grid pattern overlayed
+on the widget area in a style similar to many drawing packages.
+\QD provides four different editing modes:
+
+\target EditingModes
+\table
+\header \i \i \bold{Editing Modes}
+\row \i \inlineimage designer-widget-tool.png
+\i In \l{Qt Designer's Widget Editing Mode}{Widget Editing Mode},
+we can change the appearance of the form, add layouts, and edit the
+properties of each widget.
+\row \i \inlineimage designer-connection-tool.png
+\i In \l{Qt Designer's Signals and Slots Editing Mode}{Signals and Slots
+Editing Mode}, we can connect widgets together using Qt's signals and slots
+mechanism.
+\row \i \inlineimage designer-buddy-tool.png
+\i In \l{Qt Designer's Buddy Editing Mode}{Buddy Editing Mode}, buddy
+widgets can be assigned to label widgets to help them handle keyboard
+focus correctly.
+\row \i \inlineimage designer-tab-order-tool.png
+\i In \l{Qt Designer's Tab Order Editing Mode}{Tab Order Editing Mode},
+we can set the order in which widgets receive the keyboard focus.
+\endtable
+
+We ensure that \QD is in widget editing mode by opening the \gui Edit menu
+and selecting \gui{Edit Widgets}. This makes it possible for widgets to be
+dragged from the widget box onto the form.
+
+For our example, we will develop a widget that contains the controls
+needed to manipulate Red, Green and Blue (RGB) values, a type of
+widget can be seen everywhere in image manipulation programs.
+
+Before we begin adding widgets to the form, it is useful to resize
+it to give us the required amount of space to work with. We can make
+the form larger than necessary because it can be resized later.
+
+We start composing the dialog by placing some text labels onto the
+form. This is achieved by dragging each \gui Label from the \gui
+{Display Widgets} section of the widget box onto the form. We add three
+\gui{Spin Boxes} and three \gui Sliders from the \gui{Input Widgets}
+section.
+
+Widgets can be moved around on the form by dragging them, or by using
+the cursort keys. A widget can be resized by dragging the resize handles
+that appear when it is selected - click the left mouse button over the
+widget to select it. It can be helpful to resize \gui Label widgets so
+that all of their text is displayed, but this is not necessary as they
+will be displayed fully when we add them to a layout. It is useful to
+place the widgets where they are needed on the form because it helps
+you to visualize how it will appear when it is finished, but we do not
+need to fine tune the positions of widgets - this task is the
+responsibility of the form's layout objects which we will add later.
+
+
+\target AddingWidgetsToAForm
+\table
+\row \i
+\inlineimage designer-widget-initial.png
+\i \bold{Adding Widgets to a Form}
+
+The widget initially contains other standard widgets, such as labels,
+spin boxes and sliders. All the objects on the form can be freely
+positioned.
+\endtable
+
+The sliders' and spin boxes' initial values and ranges can be changed
+in the property editor, which can be accessed by opening the \gui Tools
+menu in \QD's main window and selecting \gui{Property Editor}, or by
+pressing \key{Ctrl+I}. The property editor always shows the properties
+of the currently selected object, so we just need to select each of the
+widgets in turn to access their properties.
+
+Since RGB values range from 0 to 255, we change the \c minimum and
+\c maximum values for the slider and spin boxes to 0 and 255
+respectively. We also have to change the \c text property for each
+label. The widget's window title can also be changed using the
+property editor - click on the form itself to access the widget's
+properties.
+
+It is usually a good idea to give meaningful names to widgets in case
+you want to connect their signals to slots in other components, or
+refer to the widgets by name in your application.
+
+
+\target ThePropertyEditor
+\table
+\row \i
+\inlineimage designer-property-editor-link.png
+\i \bold{The Property Editor}
+
+All designable widget properties can be edited in the
+\l{designer-editing-mode.html#the-property-editor}{Property Editor}
+window.
+
+The properties can be edited by using the controls provided; the type of
+control supplied for each property depends on the type of data it contains.
+Any changes made to the widget's properties cause it to be updated
+immediately.
+\endtable
+
+Once all the widgets are in position, they need to be placed into one or
+more layouts. Layouts ensure that the widgets are the correct size, and
+are correctly positioned on the form. This means that when the form is
+resized, layouts will automatically shrink or enlarge its widgets
+accordingly.
+
+\target CreatingALayout
+\section1 Creating a Layout
+
+In Qt, widget positions and sizes are organized by layout managers. Before a
+form can be used, it is necessary to put each of the widgets into layouts,
+and then set the form's overall layout. \QD provides all the standard types
+of layout, making it simple to experiment with different ways of arranging
+components.
+
+At any point during editing, we can experiment with the layout of widgets
+on the form by selecting a group of objects and applying a layout to them.
+Any of the standard Qt layouts (horizontal, vertical, grid, and form)
+can be used. To apply a layout to a selection of objects, click the
+appropriate icon in \QD's tool bar, or select the layout from the form's
+context menu.
+
+We begin laying out our RGB Controller widget by putting all the labels
+along with their associated spin boxes and sliders into a
+\gui{Grid Layout}. This layout divides available space into rows and
+columns and puts widgets into its cells.
+
+
+\target PlacingWidgetsInLayouts
+\table
+\row \i
+\inlineimage designer-widget-layout.png
+\i \bold{Placing Widgets in Layouts}
+
+The widgets are placed in the layout using as little space as
+possible.
+
+We will examine the use of layouts in more detail in
+\l{designer-editing-mode.html}{Widget Editing Mode}.
+\endtable
+
+The property editor can also be used to change the appearance of
+layouts on the form. To access the properties of a layout, we click
+inside the layout, taking care not to click any of the widgets. The
+\c layoutLeftMargin, \c layoutTopMargin, \c layoutRightMargin and
+\c layoutBottomMargin properties control the thickness of the margin
+around the edges of the layout, and \c layoutSpacing determines the
+space between widgets. If the selected layout is of grid or form type
+we can alter horizontal and vertical spacing independently using
+\c layoutHorizontalSpacing and layoutVerticalSpacing properties.
+By default, layout margins and spacings are not marked as changed.
+In that case while using the component in a real application, the
+values of those properties can differ from those used in \QD and
+will depend on the application's QStyle.
+
+We can create more complex layouts by selecting the layouts and
+placing them into other layouts. But, in our example, we really only
+need a top-level vertical layout to ensure that the dialog will appear
+correctly. To do this, we click the form to ensure that no objects are
+selected and then apply the vertical layout. The form may now be larger
+than necessary, but we can resize it to make it smaller.
+
+\image designer-widget-final.png
+
+Once all the objects on the form have been placed in layouts, we can
+concentrate on connecting them together using Qt's signals and slots
+mechanism.
+
+\target ConfiguringConnections
+\section1 Configuring Connections
+
+Objects on the form can be connected together using their signals and
+slots, making it unnecessary to write code in your application to
+connect many standard widgets together. In addition, \QD's signal and slot
+editor provides a visual representation of the signal and slot
+connections in the form that can help other developers understand how
+the final component will behave.
+
+We will show how to configure a connection by connecting the
+\l{QSpinBox::valueChanged()}{valueChanged()} signal of the spin box
+to its corresponding slider's
+\l{QAbstractSlider::setValue()}{setValue()} slot.
+
+We switch to signals and slots editing mode by opening the \gui Edit
+menu and selecting \gui{Edit Signals/Slots}. The objects in the form will
+now become highlighted as the cursor passes over them.
+
+
+\target ConnectingWidgets
+\table
+\row \i
+\inlineimage designer-making-connection.png
+\i \bold{Connecting Widgets}
+
+To connect the spin box to the slider, we click on the spin box
+and drag the cursor toward the slider; a line extends from the
+spin box to the slider.
+\endtable
+
+When the cursor is over the slider, we release the mouse button
+to complete the connection, and a dialog opens to allow us to choose
+compatible signals and slots. Since the
+\l{QSpinBox::valueChanged()}{valueChanged()} signal
+and the \l{QAbstractSlider::setValue()}{setValue()} slot have
+compatible signatures, we can use them together to update the slider
+whenever the value in the spin box changes. To try this out, we can
+open a preview of the widget by pressing \key{Ctrl+R} or by opening the
+\gui Form menu and selecting \gui Preview.
+
+For a reverse connection - updating the spin box when the slider handle
+is moved, we have to connect the
+\l{QAbstractSlider::valueChanged()}{valueChanged()} signal to the
+\l{QSpinBox::setValue()}{setValue()} slot. This ensure that both widgets
+update each other's values when either of their value changes.
+
+\target PreviewingAForm
+\table
+\row \i
+\inlineimage designer-widget-preview.png
+\i \bold{Previewing a Form}
+
+When you preview a form, it appears just as it would in your application.
+You can resize it to see how the layouts used to manage the child widgets
+respond to different window sizes, and use this information to fine tune
+the form's design.
+\endtable
+
+*/
+
+/*!
+\page designer-editing-mode.html
+\previouspage Designing a Component with Qt Designer
+\contentspage {Qt Designer Manual}{Contents}
+\nextpage Using Containers in Qt Designer
+
+\title Qt Designer's Widget Editing Mode
+
+\image designer-editing-mode.png
+
+In \QD's Widget Editing Mode, objects can be dragged from the main window's
+widget box to a form, edited, resized, dragged around on the form, and even
+dragged between forms. Their properties can be modified interactively, so
+that changes can be seen immediately.
+The editing interface is intuitive for simple operations, yet it still
+supports Qt's powerful layout facilities.
+
+\tableofcontents
+
+\target ManagingForms
+\section1 Managing Forms
+
+\QD allows you to create and edit new forms (open the \gui File menu and
+select \gui{New Form...} or press \key{Ctrl N}). Existing forms can also
+be edited (open the \gui File menu and select \gui{Open Form...} or press
+\key{Ctrl O}).
+
+At any point, it is possible to save a form by selecting the
+\gui {Save Form As...} option from the \gui {File} menu. The \c .ui files saved
+by \QD contain information about the objects used, and record the details
+of any signal and slot connections between them.
+
+\target EditingAForm
+\section1 Editing a Form
+
+By default, new forms are opened in widget editing mode. If \QD is in another mode,
+you can enter widget editing mode by opening the \gui Edit menu and selecting
+\gui{Edit Widgets}, or by pressing the \key F3 key.
+
+Objects are added to the form by dragging them from the main widget box
+and dropping them in the desired location on the form. Once there,
+they can be moved around simply by dragging them, or by using the
+cursor keys. Pressing the \key Ctrl key at the same time moves the
+selected widget pixel by pixel, while using the cursor keys alone
+make the selected widget snap to the grid when it is moved. Objects
+can be selected by clicking on them using the left mouse button. You
+can also use the \key Tab key to change the selection.
+
+The widget box contains objects in a number of different categories, all of
+which can be simply placed on the form as required. The only objects that
+require a little more preparation are the \gui Container widgets.
+These are described in more detail in the \l{Using Containers in Qt Designer}
+chapter.
+
+\target SelectingObjects
+\table
+\row \i
+\inlineimage designer-selecting-widget.png
+\i \bold{Selecting Objects}
+
+Objects on the form are selected by clicking on them with the left mouse
+button. When an object is selected, resize handles are shown at each corner
+and at the midpoint of each side, indicating that it can be resized.
+
+To select additional objects, hold down the \key Shift key and click on
+them. If more than one object is selected, the current object will be
+displayed with resize handles that are colored differently to the others.
+
+If you would like to move a widget that is within a layout, holding down
+\key Shift and \key Control while dragging the widget extends the
+selection to its parent layout.
+
+Alternatively, objects can be selected in the \l {The Object
+Inspector}{Object Inspector}.
+\endtable
+
+When selected, the normal clipboard operations can be performed on a widget
+to cut, copy, and paste it. All of these operations are recorded in an undo
+buffer to enable changes to be undone and redone as necessary. The
+shortcuts used to perform all of these actions are described in the table
+below.
+
+\target ShortcutsForEditing
+\table
+\header \i Action       \i Shortcut     \i Description
+\row    \i Cut          \i \key{Ctrl+X} \i Cuts the selected objects to the
+clipboard.
+\row    \i Copy         \i \key{Ctrl+C} \i Copies the selected objects
+to the clipboard.
+\row    \i Paste        \i \key{Ctrl+V} \i Pastes the objects
+in the clipboard onto the form.
+\row    \i Delete       \i \key Delete  \i Deletes the selected objects.
+\row    \i Clone object \i \key{Ctrl+drag} (leftmouse button)        \i Makes a copy of the selected object or group of objects.
+\row    \i Preview      \i \key{Ctrl+R} \i Shows a preview of the form.
+\endtable
+
+All the above actions (apart from cloning) can be accessed via both the
+\gui Edit menu and the form's context menu. These menus also provide a
+\gui{Select All} function to select all the objects on the form. They also
+provide functions for laying out objects.
+
+Widgets are not unique objects; you can make as many copies of them as you
+need. To quickly duplicate a widget, you can clone it by holding down the
+\key Ctrl key and dragging it. This allows widgets to be copied and placed
+on the form much more quickly than with clipboard operations.
+
+\target DragAndDrop
+\table
+\row \i
+\inlineimage designer-dragging-onto-form.png
+\i \bold{Drag and Drop}
+
+\QD makes extensive use of the drag and drop
+facilities provided by Qt. Widgets can be dragged from the widget box and dropped
+onto the form.
+
+Widgets can also be "cloned" on the form: Holding down \key Ctrl and dragging
+the widget creates a copy of the widget that can be dragged to a new position.
+
+It is also possible to drop Widgets onto the
+\l {The Object Inspector}{Object Inspector} to ease handling of
+nested layouts.
+\endtable
+
+\QD allows selections of objects to be copied, pasted, and dragged between
+forms. You can use this feature to create more than one copy of the same
+form, and experiment with different layouts in each of them.
+
+\target ThePropertyEditor
+\section1 The Property Editor
+
+The Property Editor always displays the properties of
+the currently selected object on the form. The properties available depend
+on the object being edited, but all of the widgets provided have common
+properties such as \l{QObject::}{objectName} (the object's internal name) and
+\l{QWidget::}{enabled} (whether it can be interacted with).
+
+\target EditingProperties
+\table
+\row \i
+\inlineimage designer-property-editor.png
+\i \bold{Editing Properties}
+
+The property editor uses standard Qt input widgets to manage the properties
+of objects on the form. Textual properties are shown in line edits,
+integer properties are displayed in spinboxes, boolean properties are
+displayed in check boxes, and compound properties such as colors and sizes
+are presented in drop-down lists of input widgets.
+
+Modified properties are indicated by bold labels. To reset, click the arrow
+button on the right-hand side.
+
+Changes in properties are applied to all selected objects that have a
+matching property.
+\endtable
+
+Certain properties are treated specially by the property editor:
+
+\list
+\o Compound properties - properties that are made up of more than one
+value - are represented as nodes that can be expanded, enabling their
+values to be edited.
+\o Properties that contain a choice or selection of flags are edited
+via combo boxes whose items can be checked.
+\o Properties that allow access to rich data types, such as QPalette,
+are modified using dialogs that open when the properties are edited.
+QLabel and the widgets in the \gui Buttons section of the widget box
+have a \c text property that can also be edited by double clicking on
+the widget or by pressing \gui F2. \QD interprets the backslash (\\)
+character specially, enabling newline (\\n) characters to be inserted
+into the text; the \\\\ character sequence is used to insert a single
+backslash into the text. A context menu can also be opened while editing,
+providing another way to insert special characters and newlines into the
+text.
+\endlist
+
+\section2 Dynamic Properties
+
+The property editor can also be used to add new
+\l{QObject#Dynamic Properties}{dynamic properties} to both standard
+Qt widgets and to forms themselves. Since Qt 4.4, dynamic properties
+are added and removed via the property editor's toolbar, shown below.
+
+\image designer-property-editor-toolbar.png
+
+To add a dynamic property, click on the \gui{Add Button}
+\inlineimage designer-property-editor-add-dynamic.png
+. To remove it, click on the \gui{Remove Button}
+\inlineimage designer-property-editor-remove-dynamic.png
+ instead. You can also sort the properties alphabetically and change
+the colour groups by clicking on the \gui{Configure Button}
+\inlineimage designer-property-editor-configure.png
+.
+
+\section1 The Object Inspector
+
+The Object Inspector shows an up-to-date hierarchical list of the objects
+(widgets, layouts, spacers, and other objects) on the form that is currently
+being edited.
+
+\target TheObjectInspector
+\table
+\row \i
+\inlineimage designer-object-inspector.png
+\i \bold{The Object Inspector}
+
+The Object Inspector displays a hierarchical list of all the objects on the
+form that is currently being edited. To show the child objects of a container
+widget or a layout, click the handle next to the object label.
+
+Each object on a form can be selected by clicking on the corresponding
+item in the Object Inspector. Right-clicking opens the form's context menu.
+These features can be useful if you have many overlapping objects.
+
+Since Qt 4.4, double-clicking on the object's name allows you to change the
+object's name with the in-place editor.
+\endtable
+
+\target Layouts
+\section1 Layouts
+
+Before the form can be used the objects on the form need to be placed into
+layouts. This ensures that they will be displayed properly when the form is
+previewed or deployed in an application. Placing objects in a layout also
+ensures that they will be resized correctly when the form is resized.
+
+\section2 Applying and Breaking Layouts
+
+The simplest way to manage objects is to apply a layout to a group of
+existing objects. This is achieved by selecting the objects that you
+need to manage and applying one of the standard layouts using the main
+toolbar, the \gui Form menu, or the form's context menu.
+
+Once widgets have been inserted into a layout, it is not possible to
+move and resize them individually because the layout itself controls
+the geometry of each widget within it, taking account of the hints
+provided by spacers. Instead, you must either break the layout and adjust
+each object's geometry manually, or you can influence the widget's geometry
+by resizing the layout. To break the layout you can press \key{Ctrl+0} or
+choose \gui{Break Layout} from the form's context menu, the \gui Form menu
+or the main toolbar. You can also add and remove spacers from the layout to
+influence the geometries of the widgets.
+
+\target InsertingObjectsIntoALayout
+\table
+\row
+\i \inlineimage designer-layout-inserting.png
+\i \bold{Inserting Objects into a Layout}
+
+Objects can be inserted into an existing layout by dragging them from
+their current positions and dropping them at the required location.
+A blue cursor is displayed in the layout as an object is dragged over it
+to indicate where the object will be added.
+\endtable
+
+\section3 Setting A Top Level Layout
+
+The form's top level layout can be set by clearing the selection (click
+the left mouse button on the form itself) and applying a layout. A top
+level layout is necessary to ensure that your widgets will resize correctly
+when its window is resized. To check if you have set a top level layout,
+preview your widget and attempt to resize the window by dragging the
+size grip.
+
+To apply a layout, you can select your choice of layout from the toolbar
+\inlineimage designer-set-layout.png
+ or you can use the context menu by clicking the left mouse button.
+The context menu is shown below.
+
+\image designer-set-layout2.png
+
+\target HorizontalAndVerticalLayouts
+\section2 Horizontal and Vertical Layouts
+
+The simplest way to arrange objects on a form is to place them in a
+horizontal or vertical layout. For example, the dialog shown at the
+beginning of this chapter contains two push buttons and a spacer that
+are placed in a horizontal layout; this makes sure that the buttons
+remain next to each other when more layouts are added to the dialog.
+In the same way, vertical layouts ensure that each of the widgets
+within are aligned vertically.
+
+Horizontal and vertical layouts can be combined, and nested to any depth.
+However, if you need more control over the placement of objects, you
+should consider using the grid layout.
+
+\target TheGridLayout
+\section2 The Grid Layout
+
+Complex form layouts can be created by placed objects in a grid layout.
+This kind of layout gives the form designer much more freedom to arrange
+widgets on the form, but can result in a much less flexible layout.
+However, for some kinds of form layout, a grid arrangement is much more
+suitable than a nested arrangement of horizontal and vertical layouts.
+
+\section2 Splitter Layouts
+
+Another common way to manage the layout of objects on a form is to place
+them in a splitter. These arrange the objects horizontally or vertically
+in the same way as normal layouts, but also allow the user to adjust the
+amount of space allocated to each object.
+
+\image designer-splitter-layout.png Applying a splitter layout to selected widgets.
+
+Although QSplitter is a container widget, \QD treats them as layouts that
+are applied to existing widgets. To place a group of widgets into a
+splitter, select them \l{#SelectingObjects}{as described above} then
+apply the splitter layout by using the appropriate toolbar button,
+keyboard shortcut, or \gui{Lay out} context menu entry.
+
+\section2 The Form Layout
+
+Since Qt 4.4, another layout class has been included - QFormLayout. This
+class manages widgets in a two-column form; the left column holds labels
+and the right column holds field widgets such as line edits, spin boxes,
+etc. The QFormLayout class adheres to various platform look and feel
+guidelines and supports wrapping for long rows.
+
+\image designer-form-layout.png
+
+The \c{.ui} file above results in the previews shown below.
+
+\table
+\header
+    \o WindowsXP
+    \o Mac OSX
+    \o Cleanlooks
+\row
+    \o \inlineimage designer-form-layout-windowsXP.png
+    \o \inlineimage designer-form-layout-macintosh.png
+    \o \inlineimage designer-form-layout-cleanlooks.png
+
+\endtable
+
+\section2 Shortcut Keys
+
+In addition to the standard toolbar and context menu entries, \QD defines a
+set of keyboard shortcuts for applying layouts to widgets.
+
+\target LayoutShortcuts
+\table
+\header \i Layout       \i Shortcut     \i Description
+\row    \i Horizontal   \i \key{Ctrl+1} \i Places the selected objects in a
+horizontal layout.
+\row    \i Vertical     \i \key{Ctrl+2} \i Places the selected objects in a
+vertical layout.
+\row    \i Grid         \i \key{Ctrl+5} \i Places the selected objects in a
+grid layout.
+\row    \i Form         \i \key{Ctrl+6} \i Places the selected objects in a
+form layout.
+\row    \i Horizontal splitter \i \key{Ctrl+3} \i Creates a horizontal splitter
+and places the selected objects inside it.
+\row    \i Vertical splitter \i \key{Ctrl+4} \i Creates a vertical splitter
+and places the selected objects inside it.
+\row    \i Adjust size  \i \key{Ctrl+J} \i Adjusts the size of the layout
+to ensure that each child object has sufficient space to display its contents.
+See QWidget::adjustSize() for more information.
+\endtable
+
+\note \key{Ctrl+0} is used to break a layout.
+
+\target PreviewingForms
+\section1 Previewing Forms
+
+Although \QD's forms are accurate representations of the components
+being edited, it is useful to preview the final appearance while editing.
+This feature can be activated by opening the \gui Form menu and selecting
+\gui Preview, or by pressing \key{Ctrl+R} when in the form.
+
+\image designer-dialog-preview.png
+
+The preview shows exactly what the final component will look like when
+used in an application.
+
+Since Qt 4.4, it is possible to preview forms with various skins - default
+skins, skins created with Qt Style Sheets or device skins. This feature
+simulates the effect of calling \c{QApplication::setStyleSheet()} in the
+application.
+
+To preview your form with skins, open the \gui Edit menu and select
+\gui Preferences...
+
+You will see the dialog shown below:
+
+\image designer-preview-style.png
+
+The \gui{Print/Preview Configuration} checkbox must be checked to activate
+previews of skins. You can select the styles provided from the \gui{Style}
+drop-down box.
+
+\image designer-preview-style-selection.png
+
+Alternatively, you can preview custom style sheet created with Qt Style
+Sheets. The figure below shows an example of Qt Style Sheet syntax and the
+corresponding output.
+
+\image designer-preview-stylesheet.png
+
+Another option would be to preview your form with device skins. A list of
+generic device skins are available in \QD, however, you may also use
+other QVFB skins with the \gui{Browse...} option.
+
+\image designer-preview-deviceskin-selection.png
+
+The Trolltech-touchscreen device skin is shown below.
+
+\image designer-preview-device-skin.png
+
+\section1 Viewing the Form's Code
+
+Since Qt 4.4, it is possible to view code generated by the User Interface
+Compiler (uic) for the \QD form.
+
+\image designer-form-viewcode.png
+
+Select \e{View Code...} from the \e{Form} menu and a dialog with the generated
+code will be displayed. The screenshot below is an example of code generated
+by the uic.
+
+\image designer-code-viewer.png
+
+\section1 Saving and Printing the Form
+
+Since Qt 4.4, forms created in \QD can be saved to an image or printed.
+
+\table
+\row
+\i \inlineimage designer-file-menu.png
+\i \bold{Saving Forms}
+
+To save a form as an image, choose the \gui{Save Image...} option. The
+file will be saved in \c{.png} format.
+
+\bold{Printing Forms}
+
+To print a form, select the \gui{Print...} option.
+
+\endtable
+
+*/
+
+/*!
+\page designer-using-containers.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Qt Designer's Widget Editing Mode
+\nextpage Creating Main Windows in Qt Designer
+
+\title Using Containers in Qt Designer
+
+Container widgets provide high level control over groups of objects on a form.
+They can be used to perform a variety of functions, such as managing input
+widgets, providing paged and tabbed layouts, or just acting as decorative
+containers for other objects.
+
+Since many containers offer specialized functionality, they require a little
+more explanation than ordinary widgets in order to make the most of them.
+
+\tableofcontents
+
+\section1 General Features
+
+Since containers are designed to hold other objects, \QD provides visual
+feedback to help you place objects inside them. When dragging an object
+from the widget box or from elsewhere on the form, each container will become
+highlighted as the cursor is positioned over it. This indicates that you
+can drop the object inside, and that it will become a child object of the
+container. This feedback is important because it is easy to place objects
+close to containers without actually placing them inside. Both widgets
+and spacers can be used inside containers.
+
+Stacked widgets, tab widgets, and toolboxes are handled specially in
+\QD. Normally, when adding pages (tabs, pages, compartments) to these
+containers in your own code, you need to supply existing widgets, either
+as placeholders or containing child widgets. In \QD, these are
+automatically created for you, so you can add child objects to each page
+straight away. New pages are added to each of these containers in the
+same way: Select the container on the form, open the context menu, and
+select \gui{Insert Page}. Then you are given the option of inserting the page
+before or after the current page. To delete the current page, select the
+container widget then select the \gui{Delete Page} from the context menu.
+
+Each container typically allows its child objects to be arranged in
+one or more layouts. The type of layout management provided depends on
+each container, although setting the layout is usually just a matter of
+selecting the container by clicking it, and applying a layout.
+
+\section1 Frames
+
+\table
+\row
+\i \inlineimage designer-containers-frame.png
+\i \bold{Frames}
+
+Frames are used to enclose and group widgets, and to provide decoration.
+They are used as the foundation for more complex containers, but they
+can also be used as placeholders in forms.
+
+\endtable
+
+The most important properties of frames are \c frameShape,
+\c frameShadow, \c lineWidth, and \c midLineWidth. These are described
+in more detail in the QFrame class description.
+
+Each frame can contain its own layout. Select the frame and apply the
+layout as usual.
+
+\section1 Group Boxes
+
+\table
+\row
+\i \inlineimage designer-containers-groupbox.png
+\i \bold{Group Boxes}
+
+Group boxes are usually used to group together collections of checkboxes
+and radio buttons with similar purposes.
+
+\endtable
+
+The most important properties of group boxes are \c title, \c flat,
+\c checkable, and \c checked. These are demonstrated in the
+\l{widgets/groupbox}{Group Box} example, and described in the
+QGroupBox class documentation.
+
+Each group box can contain its own layout, and this is necessary if it
+contains other widgets. To add a layout to the group box, click inside
+it and apply the layout as usual.
+
+\section1 Stacked Widgets
+
+\table
+\row
+\i \inlineimage designer-containers-stackedwidget.png
+\i \bold{Stacked Widgets}
+
+Stacked widgets are collections of widgets in which only the topmost
+layer is visible. Control over the visible layer is usually managed by
+another widget, such as a combobox, using signals and slots.
+
+\endtable
+
+\QD shows arrows in the top-right corner of the stack to allow you to
+see all the widgets in the stack; these do not appear in either the
+preview or in the final component. To navigate between pages in the
+stack, select the stacked widget and use the \gui{Next Page} and
+\gui{Previous Page} entries from the context menu. The \gui{Insert Page}
+and \gui{Delete Page} context menu options allow you add and remove
+pages.
+
+Each page in the stack can be given its own layout, and this is
+necessary if the page contains other objects. To add a layout to
+a page, click inside the widget and apply the layout as usual.
+
+\section1 Tab Widgets
+
+\table
+\row
+\i \inlineimage designer-containers-tabwidget.png
+\i \bold{Tab Widgets}
+
+Tab widgets allow the developer to split up the contents of a widget
+into different labelled sections, only one of which is displayed at
+any given time. By default, the tab widget contains two tabs, and
+these can be deleted or renamed as required. You can also add additional
+tabs.
+
+\endtable
+
+To delete a tab, make it the current tab by clicking on its label,
+select the tab widget, open the context menu over the tab, and select
+\gui{Delete Page}. To add a new tab, select the tab widget, open the
+context menu, and select \gui{Insert Page}. Then you are given the
+option of adding the page either before or after the \e current page.
+\QD will create a new widget for that tab, and insert it into the tab
+widget. The title of the current tab can be set by selecting the tab
+widget, and changing the \c currentTabText property in the Property
+Editor.
+
+Each tab can be given its own layout, and one must be defined for each
+tab that contains other objects. To add a layout to a tab, click inside
+it and apply the layout as usual.
+
+\section1 Toolbox Widgets
+
+\table
+\row
+\i \inlineimage designer-containers-toolbox.png
+\i \bold{ToolBox Widgets}
+
+Toolbox widgets provide a series of pages or compartments in a toolbox,
+much like the toolbox used in Qt 3's \QD. Toolboxes are handled in
+much the same way as stacked widgets.
+
+To rename a page in a toolbox, make it the current page, open the
+Property Editor, and change the \c currentItemText property.
+To add a new page, select the toolbox widget, open the context menu,
+and select \gui{Insert Page}. Then you are given the option of adding
+the page either before or after the current page.
+To delete the current page, select the toolbox widget, open the context
+menu, and select \gui{Delete Page}.
+\endtable
+
+Each page in the toolbox can be given its own layout, and this is
+necessary if it contains other objects. To add a layout to a page,
+click inside it and apply the layout as usual.
+
+\section1 Dock Widgets
+
+\table
+\row
+\i \inlineimage designer-containers-dockwidget.png
+\i \bold{Dock Widgets}
+
+Dock widgets are floating panels, often containing input widgets and more
+complex controls, that are either attached to the edges of the main window
+in "dock areas" or floated as independent tool windows.
+
+Although dock widgets can be added to any type of form, they are typically
+used with forms created from the
+\l{Creating Main Windows in Qt Designer}{main window template}.
+\endtable
+*/
+
+/*!
+\page designer-creating-mainwindows.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Using Containers in Qt Designer
+\nextpage Qt Designer's Signals and Slots Editing Mode
+
+\title Creating Main Windows in Qt Designer
+
+\omit
+\image designer-mainwindow-template.png
+\endomit
+
+\QD can be used to create user interfaces for different purposes, and provides
+different kinds of form templates for each of these. The main window template
+is used to create application windows with menu bars, toolbars, and dock
+widgets.
+
+\tableofcontents
+
+\section1 The Main Window Template
+
+Create a new main window by opening the \gui File menu and select
+the \gui {New Form...} option, or by pressing \key Ctrl+N.. Then select
+the \gui {Main Window} template.
+
+The template provides a main application window which contains
+a menu bar and a toolbar by default; these can be removed if they are
+not required.
+
+If you remove the menu bar, a new one can be created by selecting the
+\gui {Create Menu Bar} option from the context menu, obtained by
+right-clicking within the main window form.
+
+An application can only have one menu bar, but several toolbars can be
+added.
+
+\section1 Menus
+
+Menus are added to the menu bar by modifying the \gui{Type Here} placeholders.
+One of these is always present for editing purposes, and will not be
+displayed in the preview or in the finished window.
+
+Once created, the properties of a menu can be accessed using the
+\l{Qt Designer's Widget Editing Mode#The Property Editor}{Property Editor},
+and each menu can be accessed for this purpose via the
+\l{Qt Designer's Widget Editing Mode#The Object Inspector}{The Object Inspector}.
+
+Existing menus can be removed by opening a context menu over the
+label in the menu bar, and selecting \gui{Remove Menu 'menu_name'}.
+
+\target CreatingAMenu
+\table
+\row
+\o \inlineimage designer-creating-menu1.png
+\o \inlineimage designer-creating-menu2.png
+\o \bold{Creating a Menu}
+
+Double-click the placeholder item to start the editing process.
+
+The menu text is displayed using a line edit, and can be modified.
+
+\row
+\o \inlineimage designer-creating-menu3.png
+\o \inlineimage designer-creating-menu4.png
+\o Insert the required text for the new menu. Inserting an ampersand
+   character (&) causes the letter following it to be used as a
+   mnemonic for the menu.
+
+Press \key{Return} or \key{Enter} to accept the new text, or press
+\key{Escape} to reject it. You can undo the editing operation later if
+required.
+\endtable
+
+Menus can also be rearranged in the menu bar with simple drag and drop
+operations. Simply click and drag the menu you want to move, and drop
+it in the required location. A vertical red line indicates the position
+where the menu will be inserted.
+
+Menus can contain any number of entries and separators, and can be
+nested to the required depth. Adding new entries to menus can be
+achieved by navigating the menu structure in the usual way.
+
+\target CreatingAMenuEntry
+\table
+\row
+\o \inlineimage designer-creating-menu-entry1.png
+\o \inlineimage designer-creating-menu-entry2.png
+\o \bold{Creating a Menu Entry}
+
+Double-click the \gui{new action} placeholder to start the editing process,
+or double-click \gui{new separator} to insert a new separator line
+after the last entry in the menu.
+
+The menu entry's text is displayed using a line edit, and can be modified.
+
+\row
+\o \inlineimage designer-creating-menu-entry3.png
+\o \inlineimage designer-creating-menu-entry4.png
+\o Insert the required text for the new entry, optionally using the
+   ampersand character (&) to mark the letter to use as a mnemonic for
+   the entry.
+
+Press \key{Return} or \key{Enter} to accept the new text, or press
+\key{Escape} to reject it. The action created for this menu entry will
+be accessible via the \l{#TheActionEditor}{Action Editor}, and any
+associated keyboard shortcut can be set there.
+\endtable
+
+Just as with menus, entries can be moved around using drag and drop
+operations. When an entry is dragged over a closed menu, the menu will
+open to allow it to be inserted there. Since menu entries are based on
+actions, they can also be dropped onto toolbars, where they will be
+displayed as toolbar buttons.
+
+\section1 Toolbars
+
+Toolbars are added to a main window in a similar way to the menu bar:
+Select the \gui {Add Tool Bar} option from the form's context menu.
+Alternatively, if there is an existing toolbar in the main window, you
+can click the arrow at its right-hand end to create a new toolbar.
+
+Toolbar buttons are created by using the action system to populate each
+toolbar, rather than by using specific button widgets from the widget box.
+Since actions can be represented by menu entries and toolbar buttons, they
+can be moved between menus and toolbars. To share an action between a
+menu and a toolbar, drag its icon from the
+\l{#TheActionEditor}{Action Editor} to the toolbar rather than from the
+menu where its entry is located.
+
+New actions for menus and toolbars can be created in the Action Editor.
+
+\section1 Actions
+
+With the menu bar and the toolbars in place, it's time to populate them with
+actions: \QD provides an action editor to simplify the creation and management
+of actions.
+
+\target TheActionEditor
+\table
+\row
+\i \inlineimage designer-action-editor.png
+\i \bold{The Action Editor}
+
+Enable the action editor by opening the \gui Tools menu, and switching
+on the \gui {Action Editor} option.
+
+The action editor allows the user to create \gui New actions, as well as
+deleting (\gui Delete) actions. It also provides a search facility
+(\gui Filter) using the action's text.
+
+Since Qt 4.4, \QD's action editor can be viewed in the classic Icon View
+as well as Detailed View (\e{see screenshot}). You can also copy and paste
+actions between menus, toolbars and forms.
+
+\endtable
+
+To create an action, use the action editor's \gui New button which will pop up
+an input dialog. Provide the new action with a \gui Text. This is the text that
+will appear in a menu entry and as the actions tooltip. The text is also automatically
+added to an "action" prefix creating the action's \gui {Object Name}.
+
+In addition, the dialog provides the option of selecting an \gui Icon for
+the action, as well as removing the current icon.
+
+Once the action is created, it can be used wherever actions are applicable.
+
+\target AddingAnAction
+\table
+\row
+\o \inlineimage designer-adding-menu-action.png
+\o \inlineimage designer-adding-toolbar-action.png
+\o \bold{Adding an Action}
+
+To add an action to a menu or a toolbar, simply press the left mouse button over
+the action in the action editor, and drag it to where it is required.
+
+\QD provides highlighted guide lines that tell you where the action will be added.
+Release the mouse button to add the action when you have found the right spot.
+\endtable
+
+\section1 Dock Widgets
+
+Since dock widgets are \l{Using Containers in Qt Designer}{container widgets},
+they can be added to a form in the usual way. When added to a form, dock widgets
+are not placed in any particular dock area by default; you need to set the
+\gui{docked} property to true for each widget and choose an appropriate value for
+its \gui{dockWidgetArea} property.
+
+\target AddingADockWidget
+\table
+\row
+\o \inlineimage designer-adding-dockwidget.png
+\o \bold{Adding a Dock Widget}
+
+To add a dock widget, simply drag one from the \gui{Containers} section of the
+widget box, and drop it onto the main form area. Just as with other widgets, its
+properties can be modified with the Property Editor.
+
+Since dock widgets can be optionally floated as independent tool windows, it is
+useful to give them window titles by setting their \gui{windowTitle} properties.
+This also helps to identify them on the form.
+\endtable
+*/
+
+
+/*!
+\page designer-connection-mode.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Creating Main Windows in Qt Designer
+\nextpage Qt Designer's Buddy Editing Mode
+
+\title Qt Designer's Signals and Slots Editing Mode
+
+\image designer-connection-mode.png
+
+\QD's signals and slots editing mode allows objects in a form to be connected
+together using Qt's signals and slots mechanism. Both widgets and layout
+objects can be connected via an intuitive connection interface, and \QD
+will present a menu of compatible signals and slots to use for each
+connection made. When the form is saved, the connections are preserved
+so that they will be ready for use when your project is built.
+
+\tableofcontents
+
+\target ConnectingObjects
+\section1 Connecting Objects
+
+To begin connecting objects, enter the signals and slots editing mode by opening the
+\gui Edit menu and selecting \gui{Edit Signals/Slots}, or by pressing
+the \key F4 key.
+All widgets and layout objects on the form can be connected together.
+Spacers just provide spacing hints to layouts, so they cannot be connected
+to other objects.
+
+\target HighlightedObjects
+\table
+\row
+\i \inlineimage designer-connection-highlight.png
+\i \bold{Highlighted Objects}
+
+When the cursor is over an object that can be used in a
+connection, the object will be highlighted. To make a connection, press
+the left mouse button, and drag the cursor towards the object you want to
+connect it to.
+
+\endtable
+
+To make a connection, hold down the left mouse button over a highlighted
+object, and drag the cursor towards the object you want to connect it to.
+As you do this, a line will extend from the source object to the cursor.
+If the cursor is over another object on the form, the line will end with
+an arrow head that points to the destination object, indicating that a
+connection will be made between the two objects when you release the
+mouse button.
+
+You can abandon the connection at any point while you are dragging the
+connection path by pressing \key{Esc}.
+
+\target MakingAConnection
+\table
+\row
+\i \inlineimage designer-connection-making.png
+\i \bold{Making a Connection}
+
+The connection path changes shape as the cursor moves around the form.
+As it passes over objects, they are highlighted, indicating that they
+can be used in a signal and slot connection. Release the mouse button
+to make the connection.
+\endtable
+
+When you are satisfied that the correct objects will be connected, release
+the mouse button to make the connection. A dialog displays the signals
+from the source object and the slots from the destination object that
+can be used to connect the two objects.
+
+To complete the connection, select a signal from the source object and a
+slot from the destination object, then click the \gui OK button. Click
+\gui Cancel if you wish to abandon the connection.
+
+\target ChoosingSignalsAndSlots
+\table
+\row
+\i \inlineimage designer-connection-dialog.png
+\i \bold{Choosing Signals and Slots}
+
+The \bold{Configure Connection} dialog presents the signals that can be
+emitted by the source object alongside a list of compatible slots in the
+destination object. When you select a signal, the dialog automatically
+updates the list of compatible slots to ensure that a valid connection
+is made.
+
+If the \bold{Show all signals and slots} checkbox is selected, all
+available signals from the source object are shown. Otherwise the
+signals and slots inherited from QWidget is hidden.
+\endtable
+
+You can make as many connections as you like between objects on the form,
+and it is possible to connect signals from objects to slots in the form
+itself. As a result, the signal and slot connections in many dialogs can
+be completely configured from within \QD.
+
+\target ConnectingToTheForm
+\table
+\row
+\i \inlineimage designer-connection-to-form.png
+\i \bold{Connecting to a Form}
+
+Connections can be made between objects on the form and the form itself.
+Instead of dragging a connection path to another object, position the
+cursor over the form and release the mouse button.
+
+To make it clear that the connection will be made with the form itself,
+the end point of the connection changes to an electrical "ground" symbol.
+\endtable
+
+\target EditingConnections
+\section1 Editing and Deleting Connections
+
+By default, connection paths are created with two labels that show
+the signal and slot involved in the connection. These labels are usually
+oriented along the line of the connection, and they can be moved around
+inside their host widgets by dragging the red square at each end of the
+connection path.
+
+\target ConnectionEditor
+\table
+\row
+\i \inlineimage designer-connection-editor.png
+\i \bold{The Signal/Slot Editor}
+
+The signal and slot used in a connection can be changed after it has
+been set up. When a connection is configured, it becomes visible in
+\QD's signal and slot editor where it can be further edited.
+
+\endtable
+
+In addition to using the signal and slot editor, you can edit the
+connection by simply double clicking on the connection path or one
+of its labels, and select the signal and slot to be used in the
+connection dialog.
+
+\target DeletingConnections
+\table
+\row
+\i \inlineimage designer-connection-editing.png
+\i \bold{Deleting Connections}
+
+The whole connection can be selected by clicking on any of the path
+segments. Once selected, connections can be deleted with the \key Delete
+key, and they will not be set up in the .ui file.
+\endtable
+*/
+
+/*!
+\page designer-buddy-mode.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Qt Designer's Signals and Slots Editing Mode
+\nextpage Qt Designer's Tab Order Editing Mode
+
+\title Qt Designer's Buddy Editing Mode
+
+\image designer-buddy-mode.png
+
+One of the most useful basic features of Qt is the support for buddy widgets.
+At the simplest level, a buddy widget accepts the input focus on behalf on
+a QLabel when the user types the label's shortcut key combination. The buddy
+concept is also used in Qt's \l{Model/View Programming}{model/view} framework.
+
+\tableofcontents
+
+\section1 Linking Labels to Buddy Widgets
+
+To enter buddy editing mode, open the \gui Edit menu and select \gui{Edit Buddies}.
+This mode presents the widgets on the form in a similar way to the
+\l{Qt Designer's Signals and Slots Editing Mode}{signals and slots editing mode}
+except that, in this mode, connections must start at label widgets. Ideally, you
+should connect each label widget that provides a shortcut with a suitable input
+widget, such as a QLineEdit.
+
+\target MakingBuddies
+\table
+\row
+\i \inlineimage designer-buddy-making.png
+\i \bold{Making Buddies}
+
+To define a buddy widget for a label, click on the label, drag the
+connection to another widget on the form, and release the mouse button.
+The connection shown indicates how the input focus is passed to the
+buddy widget.
+
+You can use the \l{Designing a Component with Qt Designer#PreviewingAForm}{form
+preview} to test the connections between each label and its buddy.
+\endtable
+
+\section1 Removing Buddy Connections
+
+Only one buddy widget can be defined for each label. To change the buddy
+used, it is therefore necessary to delete any existing buddy connection and
+create a new one.
+
+Connections between labels and their buddy widgets can be deleted in the
+same way as signal-slot connections in signals and slots editing mode: Select the buddy
+connection by clicking on it, and press the \key Delete key. This
+operation does not modify either the label or its buddy in any way.
+*/
+
+/*!
+\page designer-tab-order.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Qt Designer's Buddy Editing Mode
+\nextpage Editing Resources with Qt Designer
+
+\title Qt Designer's Tab Order Editing Mode
+
+\image designer-tab-order-mode.png
+
+Many users expect to be able to navigate between widgets and controls using only
+the keyboard. Qt lets the user navigate between input widgets with the \key Tab
+and \key{Shift-Tab} keyboard shortcuts. The default \e{tab order} is based on
+the order in which widgets are constructed and, although this order may be
+sufficient for many users, it is often better to explictly specify the tab order
+to make your application easier to use.
+
+\section1 Setting the Tab Order
+
+To enter tab order editing mode, open the \gui Edit menu and select \gui{Edit Tab
+Order}. In this mode, each input widget in the form is shown with a number
+indicating its position in the tab order. So, if the user gives the first input
+widget the input focus then presses the tab key, the focus will move to the
+second input widget, and so on.
+
+The tab order is defined by clicking on each of the numbers in the correct
+order. The first number you click will change to red, indicating the currently
+edited position in tab order chain, and the widget associated
+with the number will become the first one in the tab order chain.
+Clicking on another widget will make it the second in the tab order, and so on.
+You can continue this process until you are satisfied with the tab order in
+the form - you do not need to click every input widget if you see that the
+remaining widget are already in the correct order. Numbers, for which you
+already set the order, change to green, while those which were not clicked yet,
+remain blue.
+
+If you make a mistake, simply double click outside of any number or choose
+"Restart" action from the form's context menu to start again. If you have many
+widgets on your form and want to change the order in the middle or by the end of
+tab order chain, you can start edit tab order chain at any position you wish.
+Just press the control modifier and click the number from which
+you want to start, or alternatively choose "Start from Here" action from
+context menu.
+*/
+
+/*!
+\page designer-resources.html
+\contentspage {Qt Designer Manual}{Contents}
+\previouspage Qt Designer's Tab Order Editing Mode
+\nextpage Using Stylesheets with Qt Designer
+
+\title Editing Resources with Qt Designer
+
+\image designer-resources-editing.png
+
+\QD fully supports the \l{The Qt Resource System}{Qt Resource System},
+allowing resources to be specified alongside forms as they are designed.
+To help designers and developers manage the resources that are needed by
+applications, \QD's resource editor allows resources to be defined on a
+per-form basis.
+
+\section1 Defining a Resource File
+
+To specify a resource file you must enable the resorce editor by
+opening the \gui Tools menu, and switching on the
+\gui{Resource Browser} option.
+
+\target ResourceFiles
+\table
+\row
+\i \inlineimage designer-resource-browser.png
+\i \bold{Resource Files}
+
+Using the resource browser, you can either open existing resource files or
+create new ones. Click the \gui {Edit Resources} button
+\inlineimage designer-edit-resources-button.png
+ to edit your resources. You can also reload resources by clicking on
+the \gui {Reload} button
+\inlineimage designer-reload-resources-button.png
+.
+
+\endtable
+
+Once a resource file is loaded, you can create or remove entries in the
+file using the provided  \gui {Add Files}
+\inlineimage designer-add-resource-entry-button.png
+ and \gui {Remove Files}
+\inlineimage designer-remove-resource-entry-button.png
+ buttons, and specify resources
+(for example images) using the \gui {Add Files} button
+\inlineimage designer-add-files-button.png
+. Note that these resources must reside within the current resource
+file's directory or one of its subdirectories.
+
+\target EditResource
+\table
+\row
+\i \inlineimage designer-edit-resource.png
+\i \bold{Editing Resource Files}
+
+Press the
+\inlineimage designer-add-resource-entry-button.png
+ button to add a new resource entry to the file. Then use the
+\gui {Add Files} button
+\inlineimage designer-add-files-button.png
+ to specify the resource.
+
+You can remove resources by selecting the corresponding entry in the resource
+editor, and press the
+\inlineimage designer-remove-resource-entry-button.png
+ button.
+
+\endtable
+
+\section1 Using the Resources
+
+When the resources are defined you can use them actively when composing your
+form. For example, you might want to create a tool button using an icon
+specified in the resource file.
+
+\target UsingResources
+\table
+\row
+\i \inlineimage designer-resources-using.png
+\i \bold{Using Resources}
+
+When changing properties which have values that may be defined within a
+resource file, \QD's property editor allows you to specify a resource in
+addition to the option of selecting a source file in the ordinary way.
+
+\row
+\i \inlineimage designer-resource-selector.png
+\i \bold{Selecting a Resource}
+
+You can open the resource selector by clicking \gui{Choose Resource...} to
+add resources any time in the design process.
+
+\omit
+... check with Friedemann
+To quickly assign icon pixmaps to actions or pixmap properties, you may
+drag the pixmap from the resource editor to the action editor, or to the
+pixmap property in the property editor.
+\endomit
+
+\endtable
+*/
+
+/*!
+    \page designer-stylesheet.html
+    \contentspage {Qt Designer Manual}{Contents}
+    \previouspage Editing Resources with Qt Designer
+    \nextpage Using Custom Widgets with Qt Designer
+
+    \title Using Stylesheets with Qt Designer
+
+    Since Qt 4.2, it is possible to edit stylesheets in \QD with
+    the stylesheet editor.
+
+    \target UsingStylesheets
+    \table
+    \row
+    \i \inlineimage designer-stylesheet-options.png
+    \bold{Setting a Stylesheet}
+
+    The stylesheet editor can be accessed by right-clicking a widget
+    and selecting \gui{Change styleSheet...}
+
+    \row
+    \i \inlineimage designer-stylesheet-usage.png
+
+    \endtable
+
+
+
+*/
+
+/*!
+    \page designer-customizing-forms.html
+    \contentspage {Qt Designer Manual}{Contents}
+    \previouspage Using Stylesheets with Qt Designer
+    \nextpage Using Custom Widgets with Qt Designer
+
+    \title Customizing Qt Designer Forms
+
+    \image designer-form-settings.png
+
+    When saving a form in \QD, it is stored as an \c .ui file. Several form
+    settings, for example the grid settings or the margin and spacing for the default layout,
+    are stored along with the form's components. These settings are used when the
+    \l uic generates the form's C++ code.
+    For more information on how to use forms in your application, see
+    the \l {Using Forms and Components} section.
+
+    \section1 Modifying the Form Settings
+
+    To modify the form settings, open the \gui Form menu and select \gui
+    {Form Settings...}
+
+    In the forms settings dialog you can specify the \gui Author of
+    the form.
+
+    You can also alter the margin and spacing
+    properties for the form's default layout (\gui {Layout Default}).
+    These default layout properties will be replaced by the corresponding
+    \gui {Layout Function}, if the function is specified, when \c uic
+    generates code for the form. The form settings dialog
+    lets you specify functions for both the margin and the spacing.
+
+    \target LayoutFunction
+    \table
+    \row
+    \i \inlineimage designer-form-layoutfunction.png
+    \i \bold{Layout Function}
+
+    The default layout properties will be replaced by the corresponding
+    \gui {Layout Function}, when \c uic generates code for the form.
+
+    This is useful when different environments requires different layouts for the same form.
+
+    To specify layout functions for the form's margin and spacing, check the \gui {Layout
+    Function} group box to enable the line edits.
+
+    \endtable
+
+    You can also specify the form's \gui {Include Hints}; i.e. provide a list
+    of the header files which then will be included in the form window's
+    associated \c .ui file. Header files may be local, i.e. relative
+    to the project's directory, \c "mywidget.h", or global, i.e. part of
+    Qt or the compilers standard libraries: \c <QtGui/QWidget>.
+
+    Finally, you can specify the function used to
+    load pixmaps into the form window (the \gui {Pixmap Function}).
+*/
+
+/*!
+    \page designer-using-custom-widgets.html
+    \contentspage {Qt Designer Manual}{Contents}
+    \previouspage Customizing Qt Designer Forms
+    \nextpage Using a Component in Your Application
+
+    \title Using Custom Widgets with Qt Designer
+
+    \QD can display custom widgets through its extensible plugin
+    mechanism, allowing the range of designable widgets to be
+    extended by the user and third parties. This feature also allows
+    \QD to optionally support \l{Qt3Support}{Qt 3 compatibility
+    widgets}. Alternatively, it is possible to use existing widgets
+    as placeholders for widget classes that provide similar APIs.
+
+    \tableofcontents
+
+    Widgets from the Qt3Support library are made available via in \QD's
+    support for custom widgets.
+
+    \section1 Handling Custom Widgets
+
+    Although \QD supports all of the standard Qt widgets, and can be configured
+    to handle widgets supplied in the Qt3Support library, some specialized
+    widgets may not be available as standard for a number of reasons:
+
+    \list
+    \i Custom widgets may not be available at the time the user interface is being designed.
+    \i Custom widgets may be platform-specific, and designers may be developing
+       the user interface on a different platform to end users.
+    \i The source code for a custom widget is not available, or the user interface
+       designers are unable to use the widget for non-technical
+       reasons.
+    \endlist
+
+    In the above situations, it is still possible to design forms with the aim
+    of using custom widgets in the application. To achieve this, we can use
+    the widget promotion feature of \QD.
+
+    In all other cases, where the source code to the custom widgets is
+    available, we can adapt the custom widget for use with \QD.
+
+    \section2 Promoting Widgets
+
+    \image designer-promoting-widgets.png
+
+    In the case where forms must be designed, but where certain custom
+    widgets are unavailable to the designer, we can substitute similar
+    widgets to represent the missing widgets. For example, we might
+    represent instances of a custom push button class, \c
+    MyPushButton, with instances of QPushButton and promote these to
+    \c MyPushButton so that \l{uic.html}{uic} generates suitable code
+    for this missing class.
+
+    When choosing a widget to use as a placeholder, it is useful to compare the
+    API of the missing widget with those of standard Qt widgets. For specialized
+    widgets that subclass standard classes, the obvious choice of placeholder
+    is the base class of the custom widget; for example, QSlider might be
+    used for specialized QSlider subclasses.
+
+    For specialized widgets that do not share a common API with standard Qt
+    widgets, it is worth considering adapting a custom widget for use in \QD.
+    If this is not possible then QWidget is the obvious choice for a placeholder
+    widget since it is the lowest common denominator for all widgets.
+
+    To add a placeholder, select an object of a suitable base class
+    and choose \gui{Promote to ...} from the form's context menu.
+    After entering the class name and header file in the lower part
+    of the dialog, choose \gui{Add}. The placeholder class will
+    now appear along with the base class in the upper list.
+    Click the \gui{Promote} button to accept this choice.
+
+    Now, when the form's context menu is opened over objects of the base class,
+    the placeholder class will appear in the \gui{Promote to} submenu,
+    allowing for convenient promotion of objects to that class.
+
+    A promoted widget can be reverted to its base class by choosing
+    \gui{Demote to} from the form's context menu.
+
+    \section2 User Defined Custom Widgets
+
+    \image worldtimeclockplugin-example.png
+
+    Custom widgets can be adapted for use with \QD, giving designers the
+    opportunity to configure the user interface using the actual widgets
+    that will be used in an application rather than placeholder widgets.
+
+    The process of creating a custom widget plugin is described in the
+    \l{Creating Custom Widgets for Qt Designer} chapter of this manual.
+
+    To use a plugin created in this way, it is necessary to ensure that
+    it is located on a path that \QD searches for plugins. Generally,
+    plugins stored in \c{$QTDIR/plugins/designer} will be loaded when
+    \QD starts. Further information on building and installing plugins
+    can be found
+    \l{Creating Custom Widgets for Qt Designer#BuildingandInstallingthePlugin}{here}.
+    You can also refer to the \l{How to Create Qt Plugins}{Plugins HOWTO}
+    document for information about creating plugins.
+*/
+
+/*!
+\page designer-using-a-component.html
+\previouspage Using Custom Widgets with Qt Designer
+\contentspage {Qt Designer Manual}{Contents}
+\nextpage Creating Custom Widgets for Qt Designer
+
+\title Using a Component in Your Application
+
+\tableofcontents
+
+With Qt's integrated build tools, \l{qmake-manual.html}{qmake} and
+\l uic, the code for user interface components created
+with \QD is automatically generated when the rest of your
+application is built. Forms can be included and used directly from
+your application, or you can use them to extend subclasses of
+standard widgets. These forms can be processed at compile time or
+at run time, depending on the approach used.
+
+\target CompileTimeFormProcessing
+\section1 Compile Time Form Processing
+
+A compile time processed form can be used in your application with
+any of the following approaches:
+
+\list
+\o In the direct approach, you simply construct a widget to use as a
+placeholder for the component, and set up the user interface inside it.
+\o In the single inheritance approach, you subclass the form's base class
+(QWidget or QDialog, for example), and include a private instance of
+the form's user interface object.
+\o In the multiple inheritance approach, you subclass from both the
+form's base class and the form's user interface object. This allows the
+widgets defined in the form to be used directly from within the scope of
+the subclass.
+\endlist
+
+\target TheDirectApproach
+\section2 The Direct Approach
+
+To demonstrate how user interface components can be used straight from
+\QD, we create a simple Calculator Form application, based on the original
+\l{Calculator Form Example}{Calculator Form} example.
+
+The application consists of one source file, \c main.cpp, and a \c{.ui} file.
+
+The \c{calculatorform.ui} file designed with \QD is shown below:
+
+\image directapproach-calculatorform.png
+
+We will use \c qmake to build the executable, so we need to write a \c .pro
+file:
+
+\snippet doc/src/snippets/uitools/calculatorform/calculatorform.pro 0
+
+The special feature of this file is the \c FORMS declaration that tells
+\c qmake which files it needs to process with \c uic. In this case,
+the \c calculatorform.ui file is used to create a \c ui_calculatorform.h
+file that can be used by any files listed in the \c SOURCES declaration.
+To ensure that \c qmake generates the \c ui_calculatorform.h file, we need
+to include it in a file listed in \c SOURCES. Since we only have
+\c main.cpp, we include it there:
+
+\snippet doc/src/snippets/uitools/calculatorform/main.cpp 0
+
+This additional check ensures that we do not generate code for \e .ui
+files that are not used.
+
+The \c main function creates the calculator widget by constructing a standard
+QWidget that we use to host the user interface described by the
+\c calculatorform.ui file.
+
+\snippet doc/src/snippets/uitools/calculatorform/main.cpp 1
+
+In this case, the \c{Ui::CalculatorForm} is an interface description object
+from the \c ui_calculatorform.h file that sets up all the dialog's widgets
+and the connections between its signals and slots.
+
+This approach provides a quick and easy way to use simple, self-contained
+components in your applications, but many components created with \QD
+will need to be integrated more closely with the rest of the application
+code. For instance, the \c CalculatorForm code provided above will compile
+and run, but the QSpinBox objects will not interact with the QLabel as
+we require a custom slot to carry out the add operation and display the
+result in the QLabel. To achieve this, we need to subclass a standard
+Qt widget.
+
+\target TheSingleInheritanceApproach
+\section2 The Single Inheritance Approach
+
+In this approach, we subclass a Qt widget and set up the user interface from
+within the constructor. Components used in this way expose the widgets and
+layouts used in the form to the Qt widget subclass, and provide a standard
+system for making signal and slot connections between the user interface and
+other objects in your application.
+
+This approach is used in the \l{Calculator Form Example}{Calculator Form}
+example.
+
+To ensure that we can use the user interface, we need to include the
+header file that \c uic generates before referring to \c{Ui::CalculatorForm}:
+
+\snippet examples/designer/calculatorform/calculatorform.h 0
+
+This means that the \c{.pro} file must be updated to include
+\c{calculatorform.h}:
+
+\snippet examples/designer/calculatorform/calculatorform.pro 0
+
+The subclass is defined in the following way:
+
+\snippet examples/designer/calculatorform/calculatorform.h 1
+
+The important feature of the class is the private \c ui object
+which provides the code for setting up and managing the user
+interface.
+
+The constructor for the subclass constructs and configures all the
+widgets and layouts for the dialog just by calling the \c ui object's
+\c setupUi() function. Once this has been done, it is possible to modify
+the user interface as needed.
+
+\snippet examples/designer/calculatorform/calculatorform.cpp 0
+
+We can connect signals from the user interface widgets to slots in the
+widget in the usual way, taking care to prefix the \c ui object to
+each widget used.
+
+The main advantages of this approach are its simple use of inheritance
+to provide a QWidget-based interface, and its encapsulation of the
+user interface widget variables within the \c ui data member.
+We can use this method to define a number of user interfaces within the
+same widget, each of which is contained within its own namespace,
+and overlay (or "compose") them. This approach can be used to create
+individual tabs from existing forms, for example.
+
+\target TheMultipleInheritanceApproach
+\section2 The Multiple Inheritance Approach
+
+Forms created with \QD can be subclassed along with a standard
+QWidget-based class. This approach makes all the user interface
+components defined in the form directly accessible within the scope of
+the subclass, and enables signal and slot connections to be made in
+the usual way with the \l{QObject::connect()}{connect()} function.
+
+This approach is used in the \l{Multiple Inheritance Example}
+{Multiple Inheritance} example.
+
+We need to include the header file that \c uic generates from the
+\c calculatorform.ui file:
+
+\snippet examples/uitools/multipleinheritance/calculatorform.h 0
+
+The class is defined in a similar way to the one used in the private
+interface approach, except that this time we inherit from both QWidget
+and \c{Ui::CalculatorForm}:
+
+\snippet examples/uitools/multipleinheritance/calculatorform.h 1
+
+We inherit \c{Ui::CalculatorForm} privately to ensure that the user
+interface objects are private in our subclass. We can also inherit
+it with the \c public or \c protected keywords in the same way that
+we could have made \c ui public or protected in the previous case.
+
+The constructor for the subclass performs many of the same tasks as
+the constructor used in the private interface example:
+
+\snippet examples/uitools/multipleinheritance/calculatorform.cpp 0
+
+In this case, the widgets used in the user interface can be accessed
+in the same way as a widget created in code by hand. We no longer require
+the \c{ui} prefix to access them.
+
+Subclassing using multiple inheritance gives us more direct access
+to the contents of the form, is slightly cleaner than the single
+inheritance approach, but does not conveniently support composition of
+multiple user interfaces.
+
+\target RunTimeFormProcessing
+\section1 Run Time Form Processing
+
+Alternatively, forms can be processed at run time, producing
+dynamically-generated user interfaces. This can be done using the QtUiTools
+module, which provides the QUiLoader class to handle forms created with \QD.
+
+\section2 The UiTools Approach
+
+A resource file containing a \c{.ui} file is required to process forms at
+run time. Also, the application needs to be configured to use the
+QtUiTools module. This is done by including the following
+declaration in a qmake project file, ensuring that the application is
+compiled and linked appropriately.
+
+\snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 0
+
+The QUiLoader class provides a form loader object to construct the user
+interface. This user interface can be retrieved from any QIODevice
+(a QFile object for example) to obtain a form stored in a project's
+resources. The QUiLoader::load() function constructs the form widget using
+the user interface description contained in the file.
+
+The QtUiTools module classes can be included using the following directive:
+
+\snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 1
+
+The QUiLoader::load() function is invoked as shown in this code from the
+\l{Text Finder Example}{Text Finder} example:
+
+\snippet examples/uitools/textfinder/textfinder.cpp 4
+
+In a class that uses QtUiTools to build its user interface at run time,
+we can locate objects in the form using qFindChild(). For example, in
+the following code, we locate some components based on their object
+names and widget types:
+
+\snippet examples/uitools/textfinder/textfinder.cpp 1
+
+Processing forms at run-time gives the user the freedom to change a
+program's user interface, just by changing the \c{.ui} file. This is
+useful when customizing programs to suit various user needs.
+
+\target AutomaticConnections
+\section1 Automatic Connections
+
+The signals and slots connections defined for compile time or run time
+forms can either be set up manually or automatically, using QMetaObject's
+ability to make connections between signals and suitably-named slots.
+
+Generally, in a QDialog, if we want to process the information entered
+by the user before accepting it, we need to connect the clicked()
+signal from the \gui OK button to a custom slot in our dialog.
+We will first show an example of the dialog in which the slot is
+connected by hand then compare it with a dialog that uses automatic
+connection.
+
+\target ADialogWithoutAutoConnect
+\section2 A Dialog Without Auto-Connect
+
+We define the dialog in the same way as before, but now include a
+slot in addition to the constructor:
+
+\snippet doc/src/snippets/designer/noautoconnection/imagedialog.h 0
+
+The \c checkValues() slot will be used to validate the values provided
+by the user.
+
+In the dialog's constructor we set up the widgets as before, and connect
+the \gui Cancel button's \l{QPushButton::clicked()}{clicked()} signal to the
+dialog's reject() slot. We also disable the \l{QPushButton::autoDefault}
+{autoDefault} property in both buttons to ensure that the dialog does not
+interfere with the way that the line edit handles return key events:
+
+\snippet doc/src/snippets/designer/noautoconnection/imagedialog.cpp 0
+\dots
+\snippet doc/src/snippets/designer/noautoconnection/imagedialog.cpp 1
+
+We connect the \gui OK button's \l{QPushButton::clicked()}{clicked()} signal
+to the dialog's checkValues() slot which we implement as follows:
+
+\snippet doc/src/snippets/designer/noautoconnection/imagedialog.cpp 2
+
+This custom slot does the minimum necessary to ensure that the data
+entered by the user is valid - it only accepts the input if a name
+was given for the image.
+
+\target WidgetsAndDialogsWithAutoConnect
+\section2 Widgets and Dialogs with Auto-Connect
+
+Although it is easy to implement a custom slot in the dialog and
+connect it in the constructor, we could instead use QMetaObject's
+auto-connection facilities to connect the \gui OK button's clicked()
+signal to a slot in our subclass. \c{uic} automatically generates
+code in the dialog's \c setupUi() function to do this, so we only need
+to declare and implement a slot with a name that follows a standard
+convention:
+
+\snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 2
+
+Using this convention, we can define and implement a slot that responds
+to mouse clicks on the \gui OK button:
+
+\snippet doc/src/snippets/designer/autoconnection/imagedialog.h 0
+
+Another example of automatic signal and slot connection would be the
+\l{Text Finder Example}{Text Finder} with its \c{on_findButton_clicked()}
+slot.
+
+We use QMetaObject's system to enable signal and slot connections:
+
+\snippet examples/uitools/textfinder/textfinder.cpp 2
+
+This enables us to implement the slot, as shown below:
+
+\snippet examples/uitools/textfinder/textfinder.cpp 6
+
+\dots
+
+\snippet examples/uitools/textfinder/textfinder.cpp 8
+
+Automatic connection of signals and slots provides both a standard
+naming convention and an explicit interface for widget designers to
+work to. By providing source code that implements a given interface,
+user interface designers can check that their designs actually work
+without having to write code themselves.
+
+*/
+
+/*!
+    \page designer-creating-custom-widgets.html
+    \previouspage Using a Component in Your Application
+    \contentspage {Qt Designer Manual}{Contents}
+    \nextpage Creating Custom Widget Extensions
+
+    \title Creating Custom Widgets for Qt Designer
+
+    \QD's plugin-based architecture allows user-defined and third party custom
+    widgets to be edited in the same way as standard Qt widgets. All the features
+    of the custom widgets are made available to \QD, including widget properties,
+    signals, and slots. Since \QD uses real widgets during the form design process,
+    custom widgets will appear the same as they do when previewed.
+
+    \image worldtimeclockplugin-example.png
+
+    The ability to create custom widgets in \QD is one of the features provided
+    by the \l QtDesigner module.
+
+    \tableofcontents
+
+    \section1 Getting Started
+
+    The process of integrating an existing custom widget with \QD usually
+    just requires a suitable description for the widget and an appropriate
+    project file.
+
+    \section1 Providing an Interface Description
+
+    To inform \QD about the type of widget we want to provide, we must create
+    a subclass of QDesignerCustomWidgetInterface that describes the various
+    properties it exposes. Most of these are supplied by functions that are
+    pure virtual in the base class because it only makes sense for the author
+    of the plugin to provide this information.
+
+    \table
+    \header
+    \o Function
+    \o Description of the return value
+    \row \o \c name()
+         \o The name of the class that provides the widget.
+    \row \o \c group()
+         \o The group in \QD's widget box that the widget belongs to.
+    \row \o \c toolTip()
+         \o A short description to help users identify the  widget in \QD.
+    \row \o \c whatsThis()
+         \o A longer description of the widget for users of \QD.
+    \row \o \c includeFile()
+         \o The header file that must be included in applications
+            that use this widget. This information is stored in .ui files
+            and will be used by \c uic to create a suitable \c{#includes}
+            statement in the code it generates for the
+            form containing the custom widget.
+    \row \o \c icon()
+         \o An icon that can be used to represent the widget in \QD's widget
+            box.
+    \row \o \c isContainer()
+         \o True if the widget will be used to hold child widgets; otherwise
+            false.
+    \row \o \c createWidget()
+         \o A QWidget pointer to an instance of the custom widget, constructed
+            with the parent supplied.
+    \row \o \c domXml()
+         \o A description of the widget's properties, such as its object
+            name, size hint, and other standard QWidget properties.
+    \row \o \c codeTemplate()
+         \o This function is reserved for future use by \QD.
+    \endtable
+
+    Two other virtual functions can also be reimplemented:
+
+    \table
+    \row    \o \c initialize()    \o Sets up extensions and other features for custom
+                                     widgets. Custom container extensions (see
+                                     QDesignerContainerExtension) and task menu extensions
+                                     (see QDesignerTaskMenuExtension) should be set up in
+                                     this function.
+    \row    \o \c isInitialized() \o Returns true if the widget has been initialized;
+                                     otherwise returns false. Reimplementations usually
+                                     check whether the initialize() function has been
+                                     called and return the result of this test.
+    \endtable
+
+    If the custom widget does not provide a reasonable size hint, it is necessary
+    to specify a default geometry in the string returned by the \c domXml() function
+    in your subclass. For example, the \c AnalogClockPlugin
+    provided by the \l{designer/customwidgetplugin}{Custom Widget Plugin} example,
+    defines a default widgetgeometry in the following way:
+
+    \dots
+    \snippet examples/designer/customwidgetplugin/customwidgetplugin.cpp 11
+    \dots
+
+    An additional feature of the \c domXml() function is that, if it returns an
+    empty string, the widget will not be installed in \QD's widget box, but it
+    can still be used by other widgets in the form. This feature is used to hide
+    widgets that should not be explicitly created by the user, but which are
+    required by other widgets.
+
+    \section1 Plugin Requirements
+
+    In order for plugins to work correctly on all platforms, you need to ensure
+    that they export the symbols that are needed by \QD.
+
+    First of all, the plugin class must be exported in order for the plugin to
+    be loaded by \QD. Use the Q_EXPORT_PLUGIN2() macro to do this.
+
+    Additionally, each custom widget class in a plugin that you want to be
+    instantiated by \QD must be defined using the QDESIGNER_WIDGET_EXPORT
+    macro.
+
+    \section1 Creating Well Behaved Widgets
+
+    Some custom widgets have special user interface features that may make them
+    behave differently to many of the standard widgets found in \QD. Specifically,
+    if a custom widget grabs the keyboard as a result of a call to
+    QWidget::grabKeyboard(), the operation of \QD will be affected.
+
+    To give custom widgets special behavior in \QD, provide an implementation of
+    the initialize() function to configure the widget construction process for
+    \QD specific behavior. This function will be called for the first time before
+    any calls to createWidget() and could perhaps set an internal flag that can be
+    tested later when \QD calls the plugin's createWidget() function.
+
+    \target BuildingandInstallingthePlugin
+    \section1 Building and Installing the Plugin
+
+    The project file for a plugin must specify the headers and sources for both
+    the custom widget and the plugin interface. Typically, the project file only
+    needs to specify that the plugin's project is to be built as a library, but
+    with specific plugin support for \QD. This is done with the following
+    declarations:
+
+    \snippet examples/designer/customwidgetplugin/customwidgetplugin.pro 1
+
+    When Qt is configured to build in both debug and release modes, \QD will be
+    built in release mode. When this occurs, it is necessary to ensure that
+    plugins are also built in release mode. To do this, include the following
+    declaration in the plugin's project file:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 3
+
+    If plugins are built in a mode that is incompatible with \QD, they won't be
+    loaded and installed. For more information about plugins, see the
+    \l{plugins-howto.html}{Plugins HOWTO} document.
+
+    It is also necessary to ensure that the plugin is installed alongside the other
+    \QD widget plugins:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 4
+
+    The \c $[QT_INSTALL_PLUGINS] variable is a placeholder to the location of the
+    installed Qt plugins. You can configure \QD to look for plugins in other
+    locations by setting the \c QT_PLUGIN_PATH environment variable before running
+    the application. Note that \QD will look for a \c designer subdirectory on each
+    path supplied.
+
+    See QCoreApplication::libraryPaths() for more information about customizing
+    paths for libraries and plugins with Qt applications.
+
+    \omit
+    \section1 Using Qt Script to Aid in Building Forms
+
+    Starting with Qt 4.3, \c .ui files may contain
+    \l{QtScript}{Qt Script} snippets that are executed by \l uic or QUiLoader
+    when building forms.
+
+    The snippets are executed per widget. The snippet may modify properties
+    or invoke slots on the widget.
+
+    Special variables are used to access the widget:
+
+    \table
+    \header
+    \o Name
+    \o Value
+    \row \o \c  widget
+         \o The widget being built.
+    \row \o \c  childWidgets
+         \o An array containing the child widgets. This is useful
+         for QDesignerContainerExtension subclasses.
+    \endtable
+
+    If scripts are present in an \c {uic}-generated form, the application
+    must be configured with Qt Script support.
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 5
+
+    For security reasons, the execution of scripts is disabled
+    by default in QUiLoader. You can enable it by
+    calling the QUiLoader::setScriptingEnabled() method.
+
+    The resulting script snippet is concatenated from snippets occurring in
+    several places:
+
+    \table
+    \header
+    \o Source
+    \o Usage
+    \row \o The \c codeTemplate() function of QDesignerCustomWidgetInterface
+         \o Allows snippets to be run on a per-class basis; for example, to set up a
+            container using the QDesignerContainerExtension.
+    \row \o The \c script() method of QDesignerScriptExtension
+         \o Allows snippets to be run on a per-widget basis; for example,
+            to set up the internal state of a custom widget.
+
+            Such an internal state might be, for example, the contents of
+            a custom item view container widget, for which an editor
+            is provided by an QDesignerTaskMenuExtension object.
+
+    \row \o Snippets entered at run-time using the \gui{Change script...}
+            option of the form's context menu
+         \o Fast prototyping. To get an idea,
+            drag a QLineEdit onto the form, enter the script
+            \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 6
+            and preview the form.
+    \endtable
+    \endomit
+
+    \section1 Related Examples
+
+    Please see the \l{designer/customwidgetplugin}{Custom Widget Plugin} and
+    \l{designer/worldtimeclockplugin}{World Time Clock Plugin} examples for more
+    information about using custom widgets in \QD.
+*/
+
+/*!
+    \page designer-creating-custom-widgets-extensions.html
+    \previouspage Creating Custom Widgets for Qt Designer
+    \nextpage Qt Designer's UI File Format
+    \contentspage {Qt Designer Manual}{Contents}
+
+    \title Creating Custom Widget Extensions
+
+    Once you have a custom widget plugin for \QD, you can provide it
+    with the expected behavior and functionality within \QD's
+    workspace, using custom widget extensions.
+
+    \tableofcontents
+
+    \section1 Extension Types
+
+    There are several available types of extensions in \QD. You can use
+    all the extensions following the same pattern, only replacing the
+    respective extension base class.
+
+    QDesignerTaskMenuExtension is useful for custom widgets while
+    QDesignerContainerExtension is necessary when implementing a custom
+    multi-page container.
+
+    \table 100%
+    \row
+        \o \inlineimage designer-manual-taskmenuextension.png
+        \o \bold {QDesignerTaskMenuExtension}
+
+           QDesignerTaskMenuExtension provides an extension that allows
+           you to add custom menu entries to \QD's task menu.
+
+           See also the \l {designer/taskmenuextension}{Task Menu
+           Extension} example.
+
+    \row
+        \o \inlineimage designer-manual-containerextension.png
+        \o \bold {QDesignerContainerExtension}
+
+           QDesignerContainerExtension provides an extension that allows
+           you to add (and delete) pages to a multi-page container plugin
+           in \QD.
+
+           See also the \l {designer/containerextension}{Container
+           Extension} example.
+
+           \note It is not possible to add custom per-page properties to
+           certain widgets (e.g., QTabWidget) due to the way they are
+           implemented. This limitation will be addressed in future
+           versions of Qt.
+
+    \endtable
+
+    The usage of QDesignerMemberSheetExtension and QDesignerPropertySheetExtension
+    is more rare, but the classes enables you to manipulate the appearance of class
+    members within \QD's workspace.
+
+    \table 100 %
+    \row
+        \o \inlineimage designer-manual-membersheetextension.png
+        \o \bold {QDesignerMemberSheetExtension}
+
+           The QDesignerMemberSheetExtension class allows you to
+           manipulate a widget's member functions displayed when
+           connecting signals and slots.
+
+    \row
+        \o \inlineimage designer-manual-propertysheetextension.png
+        \o \bold {QDesignerPropertySheetExtension, QDesignerDynamicPropertySheetExtension}
+
+           These extension classes allow you to
+           manipulate a widget's properties displayed in \QD's
+           property editor.
+
+     \row
+        \o
+        \o \bold {QDesignerScriptExtension}
+
+         The QDesignerScriptExtension class allows you to define script
+         snippets that are executed when a form is loaded. The extension
+         is primarily intended to be used to set up the internal states
+         of custom widgets.
+
+    \endtable
+
+    \QD uses the QDesignerPropertySheetExtension and the
+    QDesignerMemberSheetExtension classes to feed its property and signal and
+    slot editors. Whenever a widget is selected in its workspace, \QD
+    will query for the widget's property sheet extension, and whenever
+    a connection between two widgets is requested, \QD will query for
+    the widgets' member sheet extensions.
+
+    \warning All widgets have default property and member sheets. But
+    if you implement custom property sheet or member sheet extensions,
+    these extensions will override the default sheets.
+
+    \section1 Creating an Extension
+
+    To create an extension you must inherit both QObject and the
+    appropriate base class, and reimplement its functions.
+    Since we are implementing an interface, we must ensure that it's
+    made known to the meta object system using the Q_INTERFACES()
+    macro in the extension class's definition. For example:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 7
+
+    This enables \QD to use the qobject_cast() function
+    to query for supported interfaces using nothing but a QObject
+    pointer.
+
+    \section1 Exposing an Extension to Qt Designer
+
+    In \QD the extensions are not created until they are
+    required. For that reason, when implementing extensions, you must
+    subclass QExtensionFactory to create a class that is able to
+    make instances of your extensions. In addition you must register
+    your factory with \QD's extension manager; the extension
+    manager controls the construction of extensions as they are
+    required.
+
+    When an extension is requested, \QD's extension manager will run
+    through all its registered factories calling
+    QExtensionFactory::createExtension() for each until it finds one
+    that is able to create the requested extension for the selected
+    widget. This factory will then make an instance of the extension.
+
+    \image qtdesignerextensions.png
+
+    \section2 Creating an Extension Factory
+
+    The QExtensionFactory class provides a standard extension factory,
+    but can also be used as an interface for custom extension
+    factories. The purpose is to reimplement the
+    QExtensionFactory::createExtension() function, making it able to
+    create your extension, such as a
+    \l{designer/containerextension}{MultiPageWidget} container
+    extension.
+
+    You can either create a new QExtensionFactory and
+    reimplement the QExtensionFactory::createExtension() function:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 8
+
+    or you can use an existing factory, expanding the
+    QExtensionFactory::createExtension() function to enable the factory
+    to create your custom extension as well:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 9
+
+    \section2 Accessing Qt Designer's Extension Manager
+
+    When implementing a custom widget plugin, you must subclass the
+    QDesignerCustomWidgetInterface to expose your plugin to Qt
+    Designer. This is covered in more detail in the \l {Creating
+    Custom Widgets for Qt Designer} section. The registration of an
+    extension factory is typically made in the
+    QDesignerCustomWidgetInterface::initialize() function:
+
+    \snippet doc/src/snippets/code/doc.src.designer-manual.qdoc 10
+
+    The \c formEditor parameter in the
+    QDesignerCustomWidgetInterface::initialize() function is a pointer to
+    \QD's current QDesignerFormEditorInterface object. You must use the
+    QDesignerFormEditorInterface::extensionManager() function to
+    retrieve an interface to \QD's extension manager. Then you use the
+    QExtensionManager::registerExtensions() function to register your
+    custom extension factory.
+
+    \section1 Related Examples
+
+    Please see the \l {designer/taskmenuextension}{Task Menu
+    Extension} and \l {designer/containerextension}{Container Extension}
+    examples for more information about creating custom widget extensions
+    in \QD.
+*/
+
+/*!
+    \page designer-ui-file-format.html
+    \previouspage Creating Custom Widget Extensions
+    \contentspage {Qt Designer Manual}{Contents}
+
+    \title Qt Designer's UI File Format
+
+    The \c .ui file format used by \QD is described by the
+    \l{http://www.w3.org/XML/Schema}{XML schema} presented below,
+    which we include for your convenience. Be aware that the format
+    may change in future Qt releases.
+
+    \quotefile tools/designer/data/ui4.xsd
+*/
+
+/*!
+    \page designer-recursive-shadow-casting.html
+    \title Implementation of the Recursive Shadow Casting Algorithm in Qt Designer
+    \contentspage {Qt Designer Manual}{Contents}
+
+    \ingroup licensing
+    \brief License information for contributions to specific parts of the Qt Designer source code.
+
+    \legalese
+    Copyright (C) 2005-2008 Trolltech ASA. All rights reserved. \BR
+    Copyright (C) 2005 Bjoern Bergstroem
+
+    Permission is hereby granted, free of charge, to any person obtaining
+    a copy of this software and associated documentation files (the
+    "Software"), to deal in the Software without restriction, including
+    without limitation the rights to use, modify, market, reproduce,
+    grant sublicenses and distribute subject to the following conditions:
+    The above copyright notice and this permission notice shall be
+    included in all copies or substantial portions of the Software. These
+    files are provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+    WARRANTY OF DESIGN, MERCHANTIBILITY AND FITNESS FOR A PARTICULAR
+    PURPOSE.
+    \endlegalese
+*/

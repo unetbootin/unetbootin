@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: torrentclient.h Example File (network/torrent/torrentclient.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">torrentclient.h Example File<br /><span class="small-subtitle">network/torrent/torrentclient.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef TORRENTCLIENT_H
+ #define TORRENTCLIENT_H
+
+ #include &lt;QBitArray&gt;
+ #include &lt;QHostAddress&gt;
+ #include &lt;QList&gt;
+
+ class MetaInfo;
+ class PeerWireClient;
+ class TorrentClientPrivate;
+ class TorrentPeer;
+ class TorrentPiece;
+ class QTimerEvent;
+
+ class TorrentPeer {
+ public:
+     QHostAddress address;
+     quint16 port;
+     QString id;
+     bool interesting;
+     bool seed;
+     uint lastVisited;
+     uint connectStart;
+     uint connectTime;
+     QBitArray pieces;
+     int numCompletedPieces;
+
+     inline bool operator==(const TorrentPeer &amp;other)
+     {
+         return port == other.port
+             &amp;&amp; address == other.address
+             &amp;&amp; id == other.id;
+     }
+ };
+
+ class TorrentClient : public QObject
+ {
+     Q_OBJECT
+
+ public:
+     enum State {
+         Idle,
+         Paused,
+         Stopping,
+         Preparing,
+         Searching,
+         Connecting,
+         WarmingUp,
+         Downloading,
+         Endgame,
+         Seeding
+     };
+     enum Error {
+         UnknownError,
+         TorrentParseError,
+         InvalidTrackerError,
+         FileError,
+         ServerError
+     };
+
+     TorrentClient(QObject *parent = 0);
+     ~TorrentClient();
+
+     bool setTorrent(const QString &amp;fileName);
+     bool setTorrent(const QByteArray &amp;torrentData);
+     MetaInfo metaInfo() const;
+
+     void setMaxConnections(int connections);
+     int maxConnections() const;
+
+     void setDestinationFolder(const QString &amp;directory);
+     QString destinationFolder() const;
+
+     void setDumpedState(const QByteArray &amp;dumpedState);
+     QByteArray dumpedState() const;
+
+     <span class="comment">//</span> Progress and stats for download feedback.
+     qint64 progress() const;
+     void setDownloadedBytes(qint64 bytes);
+     qint64 downloadedBytes() const;
+     void setUploadedBytes(qint64 bytes);
+     qint64 uploadedBytes() const;
+     int connectedPeerCount() const;
+     int seedCount() const;
+
+     <span class="comment">//</span> Accessors for the tracker
+     QByteArray peerId() const;
+     QByteArray infoHash() const;
+     quint16 serverPort() const;
+
+     <span class="comment">//</span> State and error.
+     State state() const;
+     QString stateString() const;
+     Error error() const;
+     QString errorString() const;
+
+ signals:
+     void stateChanged(TorrentClient::State state);
+     void error(TorrentClient::Error error);
+
+     void downloadCompleted();
+     void peerInfoUpdated();
+
+     void dataSent(int uploadedBytes);
+     void dataReceived(int downloadedBytes);
+     void progressUpdated(int percentProgress);
+     void downloadRateUpdated(int bytesPerSecond);
+     void uploadRateUpdated(int bytesPerSecond);
+
+     void stopped();
+
+ public slots:
+     void start();
+     void stop();
+     void setPaused(bool paused);
+     void setupIncomingConnection(PeerWireClient *client);
+
+ protected slots:
+     void timerEvent(QTimerEvent *event);
+
+ private slots:
+     <span class="comment">//</span> File management
+     void sendToPeer(int readId, int pieceIndex, int begin, const QByteArray &amp;data);
+     void fullVerificationDone();
+     void pieceVerified(int pieceIndex, bool ok);
+     void handleFileError();
+
+     <span class="comment">//</span> Connection handling
+     void connectToPeers();
+     QList&lt;TorrentPeer *&gt; weighedFreePeers() const;
+     void setupOutgoingConnection();
+     void initializeConnection(PeerWireClient *client);
+     void removeClient();
+     void peerPiecesAvailable(const QBitArray &amp;pieces);
+     void peerRequestsBlock(int pieceIndex, int begin, int length);
+     void blockReceived(int pieceIndex, int begin, const QByteArray &amp;data);
+     void peerWireBytesWritten(qint64 bytes);
+     void peerWireBytesReceived(qint64 bytes);
+     int blocksLeftForPiece(const TorrentPiece *piece) const;
+
+     <span class="comment">//</span> Scheduling
+     void scheduleUploads();
+     void scheduleDownloads();
+     void schedulePieceForClient(PeerWireClient *client);
+     void requestMore(PeerWireClient *client);
+     int requestBlocks(PeerWireClient *client, TorrentPiece *piece, int maxBlocks);
+     void peerChoked();
+     void peerUnchoked();
+
+     <span class="comment">//</span> Tracker handling
+     void addToPeerList(const QList&lt;TorrentPeer&gt; &amp;peerList);
+     void trackerStopped();
+
+     <span class="comment">//</span> Progress
+     void updateProgress(int progress = -1);
+
+ private:
+     TorrentClientPrivate *d;
+     friend class TorrentClientPrivate;
+ };
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

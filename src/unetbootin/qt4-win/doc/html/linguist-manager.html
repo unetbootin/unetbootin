@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/linguist-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Linguist Manual: Release Manager</title>
+  <link rel="prev" href="linguist-manual.html" />
+  <link rel="contents" href="linguist-manual.html" />
+  <link rel="next" href="linguist-translators.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="linguist-manual.html">Qt Linguist Manual</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-translators.html">Qt Linguist Manual: Translators</a>]
+</p>
+<h1 class="title">Qt Linguist Manual: Release Manager<br /><span class="subtitle"></span>
+</h1>
+<a name="lupdate"></a><a name="lrelease"></a><p>Two tools are provided for the release manager, <a href="#lupdate">lupdate</a> and <a href="#lrelease">lrelease</a>. These tools can process <a href="qmake-manual.html#qmake">qmake</a> project files, or operate directly on the file system.</p>
+<a name="qt-project-files"></a>
+<h2>Qt Project Files</h2>
+<p>The easiest method to use <a href="#lupdate">lupdate</a> and <a href="#lrelease">lrelease</a> is by specifing a <tt>.pro</tt> Qt project file. There must be an entry in the <tt>TRANSLATIONS</tt> section of the project file for each language that is additional to the native language. A typical entry looks like this:</p>
+<pre> TRANSLATIONS = arrowpad_fr.ts \
+                arrowpad_nl.ts</pre>
+<p>Using a locale within the translation file name is useful for determining which language to load at runtime. This is explained in the <a href="linguist-programmers.html">Programmers</a> chapter.</p>
+<p>An example of a complete <tt>.pro</tt> file with four translation source files:</p>
+<pre>         HEADERS         = main-dlg.h \
+                           options-dlg.h
+         SOURCES         = main-dlg.cpp \
+                           options-dlg.cpp \
+                           main.cpp
+         FORMS           = search-dlg.ui
+         TRANSLATIONS    = superapp_dk.ts \
+                           superapp_fi.ts \
+                           superapp_no.ts \
+                           superapp_se.ts
+         CODECFORTR      = ISO-8859-5</pre>
+<p><a href="qtextcodec.html#setCodecForTr">QTextCodec::setCodecForTr</a>() makes it possible to choose a 8-bit encoding for literal strings that appear within <tt>tr()</tt> calls. This is useful for applications whose source language is, for example, Chinese or Japanese. If no encoding is set, <tt>tr()</tt> uses Latin1.</p>
+<p>If you do use the <a href="qtextcodec.html#codecForTr">QTextCodec::codecForTr</a>() mechanism in your application, <i>Qt Linguist</i> needs you to set the <tt>CODECFORTR</tt> entry in the <tt>.pro</tt> file as well. For example:</p>
+<pre>         CODECFORTR      = ISO-8859-5</pre>
+<p>Also, if your compiler uses a different encoding for its runtime system as for its source code and you want to use non-ASCII characters in string literals, you will need to set the <tt>CODECFORSRC</tt>. For example:</p>
+<pre>         CODECFORSRC     = UTF-8</pre>
+<p>Microsoft Visual Studio 2005 .NET appears to be the only compiler for which this is necessary. However, if you want to write portable code, we recommend that you avoid non-ASCII characters in your source files. You can still specify non-ASCII characters portably using escape sequences, for example:</p>
+<pre>         label-&gt;setText(tr(&quot;F\374r \310lise&quot;));</pre>
+<a name="lupdate"></a>
+<h2>lupdate</h2>
+<p>Usage: <tt>lupdate myproject.pro</tt></p>
+<p><a href="#lupdate">lupdate</a> is a command line tool that finds the translatable strings in the specified source, header and <i>Qt Designer</i> interface files, and produces or updates <tt>.ts</tt> translation files. The files to process and the files to update can be set at the command line, or provided in a <tt>.pro</tt> file specified as an command line argument. The produced translation files are given to the translator who uses <i>Qt Linguist</i> to read the files and insert the translations.</p>
+<p>Companies that have their own translators in-house may find it useful to run <a href="#lupdate">lupdate</a> regularly, perhaps monthly, as the application develops. This will lead to a fairly low volume of translation work spread evenly over the life of the project and will allow the translators to support a number of projects simultaneously.</p>
+<p>Companies that hire in translators as required may prefer to run <a href="#lupdate">lupdate</a> only a few times in the application's life cycle, the first time might be just before the first test phase. This will provide the translator with a substantial single block of work and any bugs that the translator detects may easily be included with those found during the initial test phase. The second and any subsequent <a href="#lupdate">lupdate</a> runs would probably take place during the final beta phase.</p>
+<p>The <tt>.ts</tt> file format is a simple human-readable XML format that can be used with version control systems if required. <tt>lupdate</tt> can also process Localization Interchange File Format (XLIFF) format files; file in this format typically have file names that end with the <tt>.xlf</tt> suffix.</p>
+<p>Pass the <tt>-help</tt> option to <tt>lupdate</tt> to obtain the list of supported options:</p>
+<pre>         Usage:
+             lupdate [options] [project-file]
+             lupdate [options] [source-file|path]... -ts ts-files
+         Options:
+             -help  Display this information and exit.
+             -noobsolete
+                    Drop all obsolete strings.
+             -extensions &lt;ext&gt;[,&lt;ext&gt;]...
+                    Process files with the given extensions only.
+                    The extension list must be separated with commas, not with whitespace.
+                    Default: 'ui,c,c++,cc,cpp,cxx,ch,h,h++,hh,hpp,hxx'.
+             -pluralonly
+                    Only include plural form messages.
+             -silent
+                    Don't explain what is being done.
+             -version
+                    Display the version of lupdate and exit.</pre>
+<p><i>Qt Linguist</i> is also able to import and export XLIFF files. See the <a href="linguist-translators.html">Translators</a> section for more information.</p>
+<a name="lrelease"></a>
+<h2>lrelease</h2>
+<p>Usage: <tt>lrelease myproject.pro</tt></p>
+<p><a href="#lrelease">lrelease</a> is a command line tool that produces <tt>.qm</tt> files out of <tt>.ts</tt> files. The <tt>.qm</tt> file format is a compact binary format that is used by the localized application. It provides extremely fast lookups for translations. The <tt>.ts</tt> files <a href="#lrelease">lrelease</a> processes can be specified at the command line, or given indirectly by a Qt <tt>.pro</tt> project file.</p>
+<p>This tool is run whenever a release of the application is to be made, from initial test version through to final release version. If the <tt>.qm</tt> files are not created, e.g&#x2e; because an alpha release is required before any translation has been undertaken, the application will run perfectly well using the text the programmers placed in the source files. Once the <tt>.qm</tt> files are available the application will detect them and use them automatically.</p>
+<p>Note that lrelease will only incorporate translations that are marked as &quot;finished&quot;. Otherwise the original text will be used instead.</p>
+<p>Pass the <tt>-help</tt> option to <tt>lrelease</tt> to obtain the list of supported options:</p>
+<pre>         Usage:
+             lrelease [options] project-file
+             lrelease [options] ts-files [-qm qm-file]
+         Options:
+             -help  Display this information and exit
+             -compress
+                    Compress the .qm files
+             -nounfinished
+                    Do not include unfinished translations
+             -removeidentical
+                    If the translated text is the same as
+                    the source text, do not include the message
+             -silent
+                    Don't explain what is being done
+             -version
+                    Display the version of lrelease and exit</pre>
+<a name="missing-translations"></a>
+<h2>Missing Translations</h2>
+<p>Both <a href="#lupdate">lupdate</a> and <a href="#lrelease">lrelease</a> may be used with <tt>.ts</tt> translation source files which are incomplete. Missing translations will be replaced with the native language phrases at runtime.</p>
+<p>
+[Previous: <a href="linguist-manual.html">Qt Linguist Manual</a>]
+[<a href="linguist-manual.html">Contents</a>]
+[Next: <a href="linguist-translators.html">Qt Linguist Manual: Translators</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

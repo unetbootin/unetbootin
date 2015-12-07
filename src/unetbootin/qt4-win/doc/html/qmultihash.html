@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qhash.cpp -->
+<head>
+  <title>Qt 4.4: QMultiHash Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMultiHash Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QMultiHash class is a convenience <a href="qhash.html">QHash</a> subclass that provides multi-valued hashes. <a href="#details">More...</a></p>
+<pre> #include &lt;QMultiHash&gt;</pre><p>Inherits <a href="qhash.html">QHash&lt;Key, T&gt;</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qmultihash-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmultihash.html#QMultiHash">QMultiHash</a></b> ()</li>
+<li><div class="fn"/><b><a href="qmultihash.html#QMultiHash-2">QMultiHash</a></b> ( const QHash&lt;Key, T&gt; &amp; <i>other</i> )</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::const_iterator <b><a href="qmultihash.html#constFind">constFind</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::const_iterator <b><a href="qmultihash.html#constFind-2">constFind</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmultihash.html#contains">contains</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmultihash.html#contains-2">contains</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmultihash.html#count">count</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmultihash.html#count-2">count</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qmultihash.html#count-3">count</a></b> () const</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::iterator <b><a href="qmultihash.html#find">find</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::iterator <b><a href="qmultihash.html#find-2">find</a></b> ( const Key &amp; <i>key</i> )</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::const_iterator <b><a href="qmultihash.html#find-3">find</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::const_iterator <b><a href="qmultihash.html#find-4">find</a></b> ( const Key &amp; <i>key</i> ) const</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::iterator <b><a href="qmultihash.html#insert">insert</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>int <b><a href="qmultihash.html#remove">remove</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>int <b><a href="qmultihash.html#remove-2">remove</a></b> ( const Key &amp; <i>key</i> )</li>
+<li><div class="fn"/>QHash&lt;Key, T&gt;::iterator <b><a href="qmultihash.html#replace">replace</a></b> ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>QMultiHash <b><a href="qmultihash.html#operator-2b">operator+</a></b> ( const QMultiHash &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QMultiHash &amp; <b><a href="qmultihash.html#operator-2b-eq">operator+=</a></b> ( const QMultiHash &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>39 public functions inherited from <a href="qhash.html#public-functions">QHash</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMultiHash class is a convenience <a href="qhash.html">QHash</a> subclass that provides multi-valued hashes.</p>
+<p>QMultiHash&lt;Key, T&gt; is one of Qt's generic <a href="containers.html#container-classes">container classes</a>. It inherits <a href="qhash.html">QHash</a> and extends it with a few convenience functions that make it more suitable than <a href="qhash.html">QHash</a> for storing multi-valued hashes. A multi-valued hash is a hash that allows multiple values with the same key; <a href="qhash.html">QHash</a> normally doesn't allow that, unless you call <a href="qhash.html#insertMulti">QHash::insertMulti</a>().</p>
+<p>Because QMultiHash inherits <a href="qhash.html">QHash</a>, all of <a href="qhash.html">QHash</a>'s functionality also applies to QMultiHash. For example, you can use <a href="qhash.html#isEmpty">isEmpty</a>() to test whether the hash is empty, and you can traverse a QMultiHash using <a href="qhash.html">QHash</a>'s iterator classes (for example, <a href="qhashiterator.html">QHashIterator</a>). But in addition, it provides an <a href="qmultihash.html#insert">insert</a>() function that corresponds to <a href="qhash.html#insertMulti">QHash::insertMulti</a>(), and a <a href="qmultihash.html#replace">replace</a>() function that corresponds to <a href="qhash.html#insert">QHash::insert</a>(). It also provides convenient operator+() and operator+=().</p>
+<p>Example:</p>
+<pre>         QMultiHash&lt;QString, int&gt; hash1, hash2, hash3;
+
+         hash1.insert(&quot;plenty&quot;, 100);
+         hash1.insert(&quot;plenty&quot;, 2000);
+         // hash1.size() == 2
+
+         hash2.insert(&quot;plenty&quot;, 5000);
+         // hash2.size() == 1
+
+         hash3 = hash1 + hash2;
+         // hash3.size() == 3</pre>
+<p>Unlike <a href="qhash.html">QHash</a>, QMultiHash provides no operator[]. Use <a href="qhash.html#value">value</a>() or <a href="qmultihash.html#replace">replace</a>() if you want to access the most recently inserted item with a certain key.</p>
+<p>If you want to retrieve all the values for a single key, you can use values(const Key &amp;key), which returns a <a href="qlist.html">QList</a>&lt;T&gt;:</p>
+<pre>         QList&lt;int&gt; values = hash.values(&quot;plenty&quot;);
+         for (int i = 0; i &lt; values.size(); ++i)
+             cout &lt;&lt; values.at(i) &lt;&lt; endl;</pre>
+<p>The items that share the same key are available from most recently to least recently inserted.</p>
+<p>A more efficient approach is to call <a href="qmultihash.html#find">find</a>() to get the STL-style iterator for the first item with a key and iterate from there:</p>
+<pre>         QMultiHash&lt;QString, int&gt;::iterator i = hash.find(&quot;plenty&quot;);
+         while (i != hash.end() &amp;&amp; i.key() == &quot;plenty&quot;) {
+             cout &lt;&lt; i.value() &lt;&lt; endl;
+             ++i;
+         }</pre>
+<p>QMultiHash's key and value data types must be <a href="containers.html#assignable-data-types">assignable data types</a>. You cannot, for example, store a <a href="qwidget.html">QWidget</a> as a value; instead, store a <a href="qwidget.html">QWidget</a> *. In addition, QMultiHash's key type must provide operator==(), and there must also be a global <a href="qxmlname.html#qHash">qHash</a>() function that returns a hash value for an argument of the key's type. See the <a href="qhash.html">QHash</a> documentation for details.</p>
+<p>See also <a href="qhash.html">QHash</a>, <a href="qhashiterator.html">QHashIterator</a>, <a href="qmutablehashiterator.html">QMutableHashIterator</a>, and <a href="qmultimap.html">QMultiMap</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMultiHash"></a>QMultiHash::QMultiHash ()</h3>
+<p>Constructs an empty hash.</p>
+<h3 class="fn"><a name="QMultiHash-2"></a>QMultiHash::QMultiHash ( const <a href="qhash.html">QHash</a>&lt;Key, T&gt; &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i> (which can be a <a href="qhash.html">QHash</a> or a <a href="qmultihash.html">QMultiHash</a>).</p>
+<p>See also <a href="qhash.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="constFind"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator QMultiHash::constFind ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</h3>
+<p>Returns an iterator pointing to the item with key <i>key</i> and the value <i>value</i> in the hash.</p>
+<p>If the hash contains no such item, the function returns <a href="qhash.html#constEnd">constEnd</a>().</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhash.html#constFind">QHash::constFind</a>().</p>
+<h3 class="fn"><a name="constFind-2"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator QMultiHash::constFind ( const Key &amp; <i>key</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#constFind">QHash::constFind</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QMultiHash::contains ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</h3>
+<p>Returns true if the hash contains an item with key <i>key</i> and value <i>value</i>; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhash.html#contains">QHash::contains</a>().</p>
+<h3 class="fn"><a name="contains-2"></a>bool QMultiHash::contains ( const Key &amp; <i>key</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#contains">QHash::contains</a>().</p>
+<h3 class="fn"><a name="count"></a>int QMultiHash::count ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</h3>
+<p>Returns the number of items with key <i>key</i> and value <i>value</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhash.html#count">QHash::count</a>().</p>
+<h3 class="fn"><a name="count-2"></a>int QMultiHash::count ( const Key &amp; <i>key</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#count">QHash::count</a>().</p>
+<h3 class="fn"><a name="count-3"></a>int QMultiHash::count () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#count">QHash::count</a>().</p>
+<h3 class="fn"><a name="find"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::iterator QMultiHash::find ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</h3>
+<p>Returns an iterator pointing to the item with key <i>key</i> and value <i>value</i> in the hash.</p>
+<p>If the hash contains no such item, the function returns <a href="qhash.html#end">end</a>().</p>
+<p>If the hash contains multiple items with key <i>key</i>, this function returns an iterator that points to the most recently inserted value.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhash.html#find">QHash::find</a>().</p>
+<h3 class="fn"><a name="find-2"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::iterator QMultiHash::find ( const Key &amp; <i>key</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#find">QHash::find</a>().</p>
+<h3 class="fn"><a name="find-3"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator QMultiHash::find ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="find-4"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::const_iterator QMultiHash::find ( const Key &amp; <i>key</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#find">QHash::find</a>().</p>
+<h3 class="fn"><a name="insert"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::iterator QMultiHash::insert ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</h3>
+<p>Inserts a new item with the key <i>key</i> and a value of <i>value</i>.</p>
+<p>If there is already an item with the same key in the hash, this function will simply create a new one. (This behavior is different from <a href="qmultihash.html#replace">replace</a>(), which overwrites the value of an existing item.)</p>
+<p>See also <a href="qmultihash.html#replace">replace</a>().</p>
+<h3 class="fn"><a name="remove"></a>int QMultiHash::remove ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</h3>
+<p>Removes all the items that have the key <i>key</i> and the value <i>value</i> from the hash. Returns the number of items removed.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qhash.html#remove">QHash::remove</a>().</p>
+<h3 class="fn"><a name="remove-2"></a>int QMultiHash::remove ( const Key &amp; <i>key</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>See also <a href="qhash.html#remove">QHash::remove</a>().</p>
+<h3 class="fn"><a name="replace"></a><a href="qhash.html">QHash</a>&lt;Key, T&gt;::iterator QMultiHash::replace ( const Key &amp; <i>key</i>, const T &amp; <i>value</i> )</h3>
+<p>Inserts a new item with the key <i>key</i> and a value of <i>value</i>.</p>
+<p>If there is already an item with the key <i>key</i>, that item's value is replaced with <i>value</i>.</p>
+<p>If there are multiple items with the key <i>key</i>, the most recently inserted item's value is replaced with <i>value</i>.</p>
+<p>See also <a href="qmultihash.html#insert">insert</a>().</p>
+<h3 class="fn"><a name="operator-2b"></a>QMultiHash QMultiHash::operator+ ( const QMultiHash &amp; <i>other</i> ) const</h3>
+<p>Returns a hash that contains all the items in this hash in addition to all the items in <i>other</i>. If a key is common to both hashes, the resulting hash will contain the key multiple times.</p>
+<p>See also <a href="qmultihash.html#operator-2b-eq">operator+=</a>().</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>QMultiHash &amp; QMultiHash::operator+= ( const QMultiHash &amp; <i>other</i> )</h3>
+<p>Inserts all the items in the <i>other</i> hash into this hash and returns a reference to this hash.</p>
+<p>See also <a href="qmultihash.html#insert">insert</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtexttable.cpp -->
+<head>
+  <title>Qt 4.4: QTextTable Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextTable Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextTable class represents a table in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextTable&gt;</pre><p>Inherits <a href="qtextframe.html">QTextFrame</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtexttable-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QTextTableCell <b><a href="qtexttable.html#cellAt">cellAt</a></b> ( int <i>row</i>, int <i>column</i> ) const</li>
+<li><div class="fn"/>QTextTableCell <b><a href="qtexttable.html#cellAt-2">cellAt</a></b> ( int <i>position</i> ) const</li>
+<li><div class="fn"/>QTextTableCell <b><a href="qtexttable.html#cellAt-3">cellAt</a></b> ( const QTextCursor &amp; <i>cursor</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtexttable.html#columns">columns</a></b> () const</li>
+<li><div class="fn"/>QTextTableFormat <b><a href="qtexttable.html#format">format</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#insertColumns">insertColumns</a></b> ( int <i>index</i>, int <i>columns</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#insertRows">insertRows</a></b> ( int <i>index</i>, int <i>rows</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#mergeCells">mergeCells</a></b> ( int <i>row</i>, int <i>column</i>, int <i>numRows</i>, int <i>numCols</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#mergeCells-2">mergeCells</a></b> ( const QTextCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#removeColumns">removeColumns</a></b> ( int <i>index</i>, int <i>columns</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#removeRows">removeRows</a></b> ( int <i>index</i>, int <i>rows</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#resize">resize</a></b> ( int <i>rows</i>, int <i>columns</i> )</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtexttable.html#rowEnd">rowEnd</a></b> ( const QTextCursor &amp; <i>cursor</i> ) const</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtexttable.html#rowStart">rowStart</a></b> ( const QTextCursor &amp; <i>cursor</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtexttable.html#rows">rows</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#setFormat">setFormat</a></b> ( const QTextTableFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtexttable.html#splitCell">splitCell</a></b> ( int <i>row</i>, int <i>column</i>, int <i>numRows</i>, int <i>numCols</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>10 public functions inherited from <a href="qtextframe.html#public-functions">QTextFrame</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="qtextobject.html#public-functions">QTextObject</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qtextobject.html#protected-functions">QTextObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextTable class represents a table in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A table is a group of cells ordered into rows and columns. Each table contains at least one row and one column. Each cell contains a block, and is surrounded by a frame.</p>
+<p>Tables are usually created and inserted into a document with the <a href="qtextcursor.html#insertTable">QTextCursor::insertTable</a>() function. For example, we can insert a table with three rows and two columns at the current cursor position in an editor using the following lines of code:</p>
+<pre>     QTextCursor cursor(editor-&gt;textCursor());
+     cursor.movePosition(QTextCursor::Start);
+
+     QTextTable *table = cursor.insertTable(rows, columns, tableFormat);</pre>
+<p>The table format is either defined when the table is created or changed later with <a href="qtexttable.html#setFormat">setFormat</a>().</p>
+<p>The table currently being edited by the cursor is found with <a href="qtextcursor.html#currentTable">QTextCursor::currentTable</a>(). This allows its format or dimensions to be changed after it has been inserted into a document.</p>
+<p>A table's size can be changed with <a href="qtexttable.html#resize">resize</a>(), or by using <a href="qtexttable.html#insertRows">insertRows</a>(), <a href="qtexttable.html#insertColumns">insertColumns</a>(), <a href="qtexttable.html#removeRows">removeRows</a>(), or <a href="qtexttable.html#removeColumns">removeColumns</a>(). Use <a href="qtexttable.html#cellAt">cellAt</a>() to retrieve table cells.</p>
+<p>The starting and ending positions of table rows can be found by moving a cursor within a table, and using the <a href="qtexttable.html#rowStart">rowStart</a>() and <a href="qtexttable.html#rowEnd">rowEnd</a>() functions to obtain cursors at the start and end of each row.</p>
+<p>Rows and columns within a QTextTable can be merged and split using the <a href="qtexttable.html#mergeCells">mergeCells</a>() and <a href="qtexttable.html#splitCell">splitCell</a>() functions. However, only cells that span multiple rows or columns can be split. (Merging or splitting does not increase or decrease the number of rows and columns.)</p>
+<p><table width="80%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/texttable-split.png" alt="Original Table" /></td><td>Suppose we have a 2x3 table of names and addresses. To merge both columns in the first row we invoke <a href="qtexttable.html#mergeCells">mergeCells</a>() with <i>row</i> = 0, <i>column</i> = 0, <i>numRows</i> = 1 and <i>numColumns</i> = 2.<pre>     table-&gt;mergeCells(0, 0, 1, 2);</pre>
+</td></tr>
+<tr valign="top" class="even"><td><img src="images/texttable-merge.png" /></td><td>This gives us the following table. To split the first row of the table back into two cells, we invoke the <a href="qtexttable.html#splitCell">splitCell</a>() function with <i>numRows</i> and <i>numCols</i> = 1.<pre>     table-&gt;splitCell(0, 0, 1, 1);</pre>
+</td></tr>
+<tr valign="top" class="odd"><td><img src="images/texttable-split.png" alt="Split Table" /></td><td>This results in the original table.</td></tr>
+</table></p>
+<p>See also <a href="qtexttableformat.html">QTextTableFormat</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="cellAt"></a><a href="qtexttablecell.html">QTextTableCell</a> QTextTable::cellAt ( int <i>row</i>, int <i>column</i> ) const</h3>
+<p>Returns the table cell at the given <i>row</i> and <i>column</i> in the table.</p>
+<p>See also <a href="qtexttable.html#columns">columns</a>() and <a href="qtexttable.html#rows">rows</a>().</p>
+<h3 class="fn"><a name="cellAt-2"></a><a href="qtexttablecell.html">QTextTableCell</a> QTextTable::cellAt ( int <i>position</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the table cell that contains the character at the given <i>position</i> in the document.</p>
+<h3 class="fn"><a name="cellAt-3"></a><a href="qtexttablecell.html">QTextTableCell</a> QTextTable::cellAt ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the table cell containing the given <i>cursor</i>.</p>
+<h3 class="fn"><a name="columns"></a>int QTextTable::columns () const</h3>
+<p>Returns the number of columns in the table.</p>
+<p>See also <a href="qtexttable.html#rows">rows</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qtexttableformat.html">QTextTableFormat</a> QTextTable::format () const</h3>
+<p>Returns the table's format.</p>
+<p>See also <a href="qtexttable.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="insertColumns"></a>void QTextTable::insertColumns ( int <i>index</i>, int <i>columns</i> )</h3>
+<p>Inserts a number of <i>columns</i> before the column with the specified <i>index</i>.</p>
+<p>See also <a href="qtexttable.html#insertRows">insertRows</a>(), <a href="qtexttable.html#resize">resize</a>(), <a href="qtexttable.html#removeRows">removeRows</a>(), and <a href="qtexttable.html#removeColumns">removeColumns</a>().</p>
+<h3 class="fn"><a name="insertRows"></a>void QTextTable::insertRows ( int <i>index</i>, int <i>rows</i> )</h3>
+<p>Inserts a number of <i>rows</i> before the row with the specified <i>index</i>.</p>
+<p>See also <a href="qtexttable.html#resize">resize</a>(), <a href="qtexttable.html#insertColumns">insertColumns</a>(), <a href="qtexttable.html#removeRows">removeRows</a>(), and <a href="qtexttable.html#removeColumns">removeColumns</a>().</p>
+<h3 class="fn"><a name="mergeCells"></a>void QTextTable::mergeCells ( int <i>row</i>, int <i>column</i>, int <i>numRows</i>, int <i>numCols</i> )</h3>
+<p>Merges the cell at the specified <i>row</i> and <i>column</i> with the adjacent cells into one cell. The new cell will span <i>numRows</i> rows and <i>numCols</i> columns. If <i>numRows</i> or <i>numCols</i> is less than the current number of rows or columns the cell spans then this method does nothing.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtexttable.html#splitCell">splitCell</a>().</p>
+<h3 class="fn"><a name="mergeCells-2"></a>void QTextTable::mergeCells ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Merges the cells selected by the provided <i>cursor</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtexttable.html#splitCell">splitCell</a>().</p>
+<h3 class="fn"><a name="removeColumns"></a>void QTextTable::removeColumns ( int <i>index</i>, int <i>columns</i> )</h3>
+<p>Removes a number of <i>columns</i> starting with the column at the specified <i>index</i>.</p>
+<p>See also <a href="qtexttable.html#insertRows">insertRows</a>(), <a href="qtexttable.html#insertColumns">insertColumns</a>(), <a href="qtexttable.html#removeRows">removeRows</a>(), and <a href="qtexttable.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="removeRows"></a>void QTextTable::removeRows ( int <i>index</i>, int <i>rows</i> )</h3>
+<p>Removes a number of <i>rows</i> starting with the row at the specified <i>index</i>.</p>
+<p>See also <a href="qtexttable.html#insertRows">insertRows</a>(), <a href="qtexttable.html#insertColumns">insertColumns</a>(), <a href="qtexttable.html#resize">resize</a>(), and <a href="qtexttable.html#removeColumns">removeColumns</a>().</p>
+<h3 class="fn"><a name="resize"></a>void QTextTable::resize ( int <i>rows</i>, int <i>columns</i> )</h3>
+<p>Resizes the table to contain the required number of <i>rows</i> and <i>columns</i>.</p>
+<p>See also <a href="qtexttable.html#insertRows">insertRows</a>(), <a href="qtexttable.html#insertColumns">insertColumns</a>(), <a href="qtexttable.html#removeRows">removeRows</a>(), and <a href="qtexttable.html#removeColumns">removeColumns</a>().</p>
+<h3 class="fn"><a name="rowEnd"></a><a href="qtextcursor.html">QTextCursor</a> QTextTable::rowEnd ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> ) const</h3>
+<p>Returns a cursor pointing to the end of the row that contains the given <i>cursor</i>.</p>
+<p>See also <a href="qtexttable.html#rowStart">rowStart</a>().</p>
+<h3 class="fn"><a name="rowStart"></a><a href="qtextcursor.html">QTextCursor</a> QTextTable::rowStart ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> ) const</h3>
+<p>Returns a cursor pointing to the start of the row that contains the given <i>cursor</i>.</p>
+<p>See also <a href="qtexttable.html#rowEnd">rowEnd</a>().</p>
+<h3 class="fn"><a name="rows"></a>int QTextTable::rows () const</h3>
+<p>Returns the number of rows in the table.</p>
+<p>See also <a href="qtexttable.html#columns">columns</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QTextTable::setFormat ( const <a href="qtexttableformat.html">QTextTableFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the table's <i>format</i>.</p>
+<p>See also <a href="qtexttable.html#format">format</a>().</p>
+<h3 class="fn"><a name="splitCell"></a>void QTextTable::splitCell ( int <i>row</i>, int <i>column</i>, int <i>numRows</i>, int <i>numCols</i> )</h3>
+<p>Splits the specified cell at <i>row</i> and <i>column</i> into an array of multiple cells with dimensions specified by <i>numRows</i> and <i>numCols</i>.</p>
+<p><b>Note:</b> It is only possible to split cells that span multiple rows or columns, such as rows that have been merged using <a href="qtexttable.html#mergeCells">mergeCells</a>().</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtexttable.html#mergeCells">mergeCells</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

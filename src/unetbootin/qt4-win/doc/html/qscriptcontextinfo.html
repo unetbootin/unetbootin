@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/script/qscriptcontextinfo.cpp -->
+<head>
+  <title>Qt 4.4: QScriptContextInfo Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QScriptContextInfo Class Reference<br /><span class="small-subtitle">[<a href="qtscript.html">QtScript</a> module]</span>
+</h1>
+<p>The QScriptContextInfo class provides additional information about a <a href="qscriptcontext.html">QScriptContext</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QScriptContextInfo&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qscriptcontextinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qscriptcontextinfo.html#FunctionType-enum">FunctionType</a></b> { ScriptFunction, QtFunction, QtPropertyFunction, NativeFunction }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qscriptcontextinfo.html#QScriptContextInfo">QScriptContextInfo</a></b> ( const QScriptContext * <i>context</i> )</li>
+<li><div class="fn"/><b><a href="qscriptcontextinfo.html#QScriptContextInfo-2">QScriptContextInfo</a></b> ( const QScriptContextInfo &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qscriptcontextinfo.html#QScriptContextInfo-3">QScriptContextInfo</a></b> ()</li>
+<li><div class="fn"/><b><a href="qscriptcontextinfo.html#dtor.QScriptContextInfo">~QScriptContextInfo</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qscriptcontextinfo.html#columnNumber">columnNumber</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qscriptcontextinfo.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qscriptcontextinfo.html#functionEndLineNumber">functionEndLineNumber</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qscriptcontextinfo.html#functionMetaIndex">functionMetaIndex</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qscriptcontextinfo.html#functionName">functionName</a></b> () const</li>
+<li><div class="fn"/>QStringList <b><a href="qscriptcontextinfo.html#functionParameterNames">functionParameterNames</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qscriptcontextinfo.html#functionStartLineNumber">functionStartLineNumber</a></b> () const</li>
+<li><div class="fn"/>FunctionType <b><a href="qscriptcontextinfo.html#functionType">functionType</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qscriptcontextinfo.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qscriptcontextinfo.html#lineNumber">lineNumber</a></b> () const</li>
+<li><div class="fn"/>qint64 <b><a href="qscriptcontextinfo.html#scriptId">scriptId</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qscriptcontextinfo.html#operator-not-eq">operator!=</a></b> ( const QScriptContextInfo &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QScriptContextInfo &amp; <b><a href="qscriptcontextinfo.html#operator-eq">operator=</a></b> ( const QScriptContextInfo &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qscriptcontextinfo.html#operator-eq-eq">operator==</a></b> ( const QScriptContextInfo &amp; <i>other</i> ) const</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qscriptcontextinfo.html#operator-lt-lt-37">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QScriptContextInfo &amp; <i>info</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qscriptcontextinfo.html#operator-gt-gt-22">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QScriptContextInfo &amp; <i>info</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QScriptContextInfo class provides additional information about a <a href="qscriptcontext.html">QScriptContext</a>.</p>
+<p>QScriptContextInfo is typically used for debugging purposes. It can provide information about the code being executed, such as the type of the called function, and the original source code location of the current statement.</p>
+<p>If the called function is executing Qt Script code, you can obtain the script location with the functions <a href="qscriptcontextinfo.html#fileName">fileName</a>(), <a href="qscriptcontextinfo.html#lineNumber">lineNumber</a>() and <a href="qscriptcontextinfo.html#columnNumber">columnNumber</a>().</p>
+<p>You can obtain the starting line number and ending line number of a Qt Script function definition with <a href="qscriptcontextinfo.html#functionStartLineNumber">functionStartLineNumber</a>() and <a href="qscriptcontextinfo.html#functionEndLineNumber">functionEndLineNumber</a>(), respectively.</p>
+<p>For Qt Script functions and Qt methods (e.g&#x2e; slots), you can call <a href="qscriptcontextinfo.html#functionParameterNames">functionParameterNames</a>() to get the names of the formal parameters of the function.</p>
+<p>For Qt methods and Qt property accessors, you can obtain the index of the underlying <a href="qmetamethod.html">QMetaMethod</a> or <a href="qmetaproperty.html">QMetaProperty</a> by calling <a href="qscriptcontextinfo.html#functionMetaIndex">functionMetaIndex</a>().</p>
+<p>See also <a href="qscriptcontext.html">QScriptContext</a> and <a href="qscriptengineagent.html">QScriptEngineAgent</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="FunctionType-enum"></a>enum QScriptContextInfo::FunctionType</h3>
+<p>This enum specifies the type of function being called.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QScriptContextInfo::ScriptFunction</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The function is a Qt Script function, i.e&#x2e; it was defined through a call to <a href="qscriptengine.html#evaluate">QScriptEngine::evaluate</a>().</td></tr>
+<tr><td valign="top"><tt>QScriptContextInfo::QtFunction</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The function is a Qt function (a signal, slot or method).</td></tr>
+<tr><td valign="top"><tt>QScriptContextInfo::QtPropertyFunction</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The function is a Qt property getter or setter.</td></tr>
+<tr><td valign="top"><tt>QScriptContextInfo::NativeFunction</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The function is a built-in Qt Script function, or it was defined through a call to <a href="qscriptengine.html#newFunction">QScriptEngine::newFunction</a>().</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QScriptContextInfo"></a>QScriptContextInfo::QScriptContextInfo ( const <a href="qscriptcontext.html">QScriptContext</a> * <i>context</i> )</h3>
+<p>Constructs a new <a href="qscriptcontextinfo.html">QScriptContextInfo</a> from the given <i>context</i>.</p>
+<p>The relevant information is extracted from the <i>context</i> at construction time; i.e&#x2e; if you continue script execution in the <i>context</i>, the new state of the context will not be reflected in a previously created <a href="qscriptcontextinfo.html">QScriptContextInfo</a>.</p>
+<h3 class="fn"><a name="QScriptContextInfo-2"></a>QScriptContextInfo::QScriptContextInfo ( const QScriptContextInfo &amp; <i>other</i> )</h3>
+<p>Constructs a new <a href="qscriptcontextinfo.html">QScriptContextInfo</a> from the <i>other</i> info.</p>
+<h3 class="fn"><a name="QScriptContextInfo-3"></a>QScriptContextInfo::QScriptContextInfo ()</h3>
+<p>Constructs a null <a href="qscriptcontextinfo.html">QScriptContextInfo</a>.</p>
+<p>See also <a href="qscriptcontextinfo.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="dtor.QScriptContextInfo"></a>QScriptContextInfo::~QScriptContextInfo ()</h3>
+<p>Destroys the <a href="qscriptcontextinfo.html">QScriptContextInfo</a>.</p>
+<h3 class="fn"><a name="columnNumber"></a>int QScriptContextInfo::columnNumber () const</h3>
+<p>Returns the column number corresponding to the statement being executed, or -1 if the column number is not available.</p>
+<p>The column number is only available if Qt Script code is being executed.</p>
+<p>See also <a href="qscriptcontextinfo.html#lineNumber">lineNumber</a>() and <a href="qscriptcontextinfo.html#fileName">fileName</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QScriptContextInfo::fileName () const</h3>
+<p>Returns the name of the file where the code being executed was defined, if available; otherwise returns an empty string.</p>
+<p>For Qt Script code, this function returns the fileName argument that was passed to <a href="qscriptengine.html#evaluate">QScriptEngine::evaluate</a>().</p>
+<p>See also <a href="qscriptcontextinfo.html#lineNumber">lineNumber</a>() and <a href="qscriptcontextinfo.html#functionName">functionName</a>().</p>
+<h3 class="fn"><a name="functionEndLineNumber"></a>int QScriptContextInfo::functionEndLineNumber () const</h3>
+<p>Returns the line number where the definition of the called function ends, or -1 if the line number is not available.</p>
+<p>The ending line number is only available if the <a href="qscriptcontextinfo.html#functionType">functionType</a>() is <a href="qscriptcontextinfo.html#FunctionType-enum">ScriptFunction</a>.</p>
+<p>See also <a href="qscriptcontextinfo.html#functionStartLineNumber">functionStartLineNumber</a>().</p>
+<h3 class="fn"><a name="functionMetaIndex"></a>int QScriptContextInfo::functionMetaIndex () const</h3>
+<p>Returns the meta index of the called function, or -1 if the meta index is not available.</p>
+<p>The meta index is only available if the <a href="qscriptcontextinfo.html#functionType">functionType</a>() is <a href="qscriptcontextinfo.html#FunctionType-enum">QtFunction</a> or <a href="qscriptcontextinfo.html#FunctionType-enum">QtPropertyFunction</a>. For <a href="qscriptcontextinfo.html#FunctionType-enum">QtFunction</a>, the meta index can be passed to <a href="qmetaobject.html#method">QMetaObject::method</a>() to obtain the corresponding method definition; for <a href="qscriptcontextinfo.html#FunctionType-enum">QtPropertyFunction</a>, the meta index can be passed to <a href="qmetaobject.html#property">QMetaObject::property</a>() to obtain the corresponding property definition.</p>
+<p>See also <a href="qscriptcontext.html#thisObject">QScriptContext::thisObject</a>().</p>
+<h3 class="fn"><a name="functionName"></a><a href="qstring.html">QString</a> QScriptContextInfo::functionName () const</h3>
+<p>Returns the name of the called function, or an empty string if the name is not available.</p>
+<p>For script functions of type <a href="qscriptcontextinfo.html#FunctionType-enum">QtPropertyFunction</a>, this function always returns the name of the property; you can use <a href="qscriptcontext.html#argumentCount">QScriptContext::argumentCount</a>() to differentiate between reads and writes.</p>
+<p>See also <a href="qscriptcontextinfo.html#fileName">fileName</a>() and <a href="qscriptcontextinfo.html#functionType">functionType</a>().</p>
+<h3 class="fn"><a name="functionParameterNames"></a><a href="qstringlist.html">QStringList</a> QScriptContextInfo::functionParameterNames () const</h3>
+<p>Returns the names of the formal parameters of the called function, or an empty <a href="qstringlist.html">QStringList</a> if the parameter names are not available.</p>
+<p>See also <a href="qscriptcontext.html#argument">QScriptContext::argument</a>().</p>
+<h3 class="fn"><a name="functionStartLineNumber"></a>int QScriptContextInfo::functionStartLineNumber () const</h3>
+<p>Returns the line number where the definition of the called function starts, or -1 if the line number is not available.</p>
+<p>The starting line number is only available if the <a href="qscriptcontextinfo.html#functionType">functionType</a>() is <a href="qscriptcontextinfo.html#FunctionType-enum">ScriptFunction</a>.</p>
+<p>See also <a href="qscriptcontextinfo.html#functionEndLineNumber">functionEndLineNumber</a>() and <a href="qscriptcontextinfo.html#fileName">fileName</a>().</p>
+<h3 class="fn"><a name="functionType"></a><a href="qscriptcontextinfo.html#FunctionType-enum">FunctionType</a> QScriptContextInfo::functionType () const</h3>
+<p>Returns the type of the called function.</p>
+<p>See also <a href="qscriptcontextinfo.html#functionName">functionName</a>() and <a href="qscriptcontext.html#callee">QScriptContext::callee</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QScriptContextInfo::isNull () const</h3>
+<p>Returns true if this <a href="qscriptcontextinfo.html">QScriptContextInfo</a> is null, i.e&#x2e; does not contain any information.</p>
+<h3 class="fn"><a name="lineNumber"></a>int QScriptContextInfo::lineNumber () const</h3>
+<p>Returns the line number corresponding to the statement being executed, or -1 if the line number is not available.</p>
+<p>The line number is only available if Qt Script code is being executed.</p>
+<p>See also <a href="qscriptcontextinfo.html#columnNumber">columnNumber</a>() and <a href="qscriptcontextinfo.html#fileName">fileName</a>().</p>
+<h3 class="fn"><a name="scriptId"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QScriptContextInfo::scriptId () const</h3>
+<p>Returns the ID of the script where the code being executed was defined, or -1 if the ID is not available (i.e&#x2e; a native function is being executed).</p>
+<p>See also <a href="qscriptengineagent.html#scriptLoad">QScriptEngineAgent::scriptLoad</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QScriptContextInfo::operator!= ( const QScriptContextInfo &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="qscriptcontextinfo.html">QScriptContextInfo</a> is not equal to the <i>other</i> info, otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QScriptContextInfo &amp; QScriptContextInfo::operator= ( const QScriptContextInfo &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> info to this <a href="qscriptcontextinfo.html">QScriptContextInfo</a>, and returns a reference to this <a href="qscriptcontextinfo.html">QScriptContextInfo</a>.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QScriptContextInfo::operator== ( const QScriptContextInfo &amp; <i>other</i> ) const</h3>
+<p>Returns true if this <a href="qscriptcontextinfo.html">QScriptContextInfo</a> is equal to the <i>other</i> info, otherwise returns false.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-37"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QScriptContextInfo &amp; <i>info</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the given <i>info</i> to the specified <i>stream</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="operator-gt-gt-22"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QScriptContextInfo &amp; <i>info</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a <a href="qscriptcontextinfo.html">QScriptContextInfo</a> from the specified <i>stream</i> into the given <i>info</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

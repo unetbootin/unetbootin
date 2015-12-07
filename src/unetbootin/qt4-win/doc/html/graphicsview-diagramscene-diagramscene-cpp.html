@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: diagramscene.cpp Example File (graphicsview/diagramscene/diagramscene.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">diagramscene.cpp Example File<br /><span class="small-subtitle">graphicsview/diagramscene/diagramscene.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;diagramscene.h&quot;
+ #include &quot;arrow.h&quot;
+
+ DiagramScene::DiagramScene(QMenu *itemMenu, QObject *parent)
+     : QGraphicsScene(parent)
+ {
+     myItemMenu = itemMenu;
+     myMode = MoveItem;
+     myItemType = DiagramItem::Step;
+     line = 0;
+     textItem = 0;
+     myItemColor = Qt::white;
+     myTextColor = Qt::black;
+     myLineColor = Qt::black;
+ }
+
+ void DiagramScene::setLineColor(const QColor &amp;color)
+ {
+     myLineColor = color;
+     if (isItemChange(Arrow::Type)) {
+         Arrow *item =
+             qgraphicsitem_cast&lt;Arrow *&gt;(selectedItems().first());
+         item-&gt;setColor(myLineColor);
+         update();
+     }
+ }
+
+ void DiagramScene::setTextColor(const QColor &amp;color)
+ {
+     myTextColor = color;
+     if (isItemChange(DiagramTextItem::Type)) {
+         DiagramTextItem *item =
+             qgraphicsitem_cast&lt;DiagramTextItem *&gt;(selectedItems().first());
+         item-&gt;setDefaultTextColor(myTextColor);
+     }
+ }
+
+ void DiagramScene::setItemColor(const QColor &amp;color)
+ {
+     myItemColor = color;
+     if (isItemChange(DiagramItem::Type)) {
+         DiagramItem *item =
+             qgraphicsitem_cast&lt;DiagramItem *&gt;(selectedItems().first());
+         item-&gt;setBrush(myItemColor);
+     }
+ }
+
+ void DiagramScene::setFont(const QFont &amp;font)
+ {
+     myFont = font;
+
+     if (isItemChange(DiagramTextItem::Type)) {
+         QGraphicsTextItem *item =
+             qgraphicsitem_cast&lt;DiagramTextItem *&gt;(selectedItems().first());
+         item-&gt;setFont(myFont);
+     }
+ }
+
+ void DiagramScene::setMode(Mode mode)
+ {
+     myMode = mode;
+ }
+
+ void DiagramScene::setItemType(DiagramItem::DiagramType type)
+ {
+     myItemType = type;
+ }
+
+ void DiagramScene::editorLostFocus(DiagramTextItem *item)
+ {
+     QTextCursor cursor = item-&gt;textCursor();
+     cursor.clearSelection();
+     item-&gt;setTextCursor(cursor);
+
+     if (item-&gt;toPlainText().isEmpty()) {
+         removeItem(item);
+         item-&gt;deleteLater();
+     }
+ }
+
+ void DiagramScene::mousePressEvent(QGraphicsSceneMouseEvent *mouseEvent)
+ {
+     if (mouseEvent-&gt;button() != Qt::LeftButton)
+         return;
+
+     DiagramItem *item;
+     switch (myMode) {
+         case InsertItem:
+             item = new DiagramItem(myItemType, myItemMenu);
+             item-&gt;setBrush(myItemColor);
+             addItem(item);
+             item-&gt;setPos(mouseEvent-&gt;scenePos());
+             emit itemInserted(item);
+             break;
+         case InsertLine:
+             line = new QGraphicsLineItem(QLineF(mouseEvent-&gt;scenePos(),
+                                         mouseEvent-&gt;scenePos()));
+             line-&gt;setPen(QPen(myLineColor, 2));
+             addItem(line);
+             break;
+         case InsertText:
+             textItem = new DiagramTextItem();
+             textItem-&gt;setFont(myFont);
+             textItem-&gt;setTextInteractionFlags(Qt::TextEditorInteraction);
+             textItem-&gt;setZValue(1000.0);
+             connect(textItem, SIGNAL(lostFocus(DiagramTextItem *)),
+                     this, SLOT(editorLostFocus(DiagramTextItem *)));
+             connect(textItem, SIGNAL(selectedChange(QGraphicsItem *)),
+                     this, SIGNAL(itemSelected(QGraphicsItem *)));
+             addItem(textItem);
+             textItem-&gt;setDefaultTextColor(myTextColor);
+             textItem-&gt;setPos(mouseEvent-&gt;scenePos());
+             emit textInserted(textItem);
+     default:
+         ;
+     }
+     QGraphicsScene::mousePressEvent(mouseEvent);
+ }
+
+ void DiagramScene::mouseMoveEvent(QGraphicsSceneMouseEvent *mouseEvent)
+ {
+     if (myMode == InsertLine &amp;&amp; line != 0) {
+         QLineF newLine(line-&gt;line().p1(), mouseEvent-&gt;scenePos());
+         line-&gt;setLine(newLine);
+     } else if (myMode == MoveItem) {
+         QGraphicsScene::mouseMoveEvent(mouseEvent);
+     }
+ }
+
+ void DiagramScene::mouseReleaseEvent(QGraphicsSceneMouseEvent *mouseEvent)
+ {
+     if (line != 0 &amp;&amp; myMode == InsertLine) {
+         QList&lt;QGraphicsItem *&gt; startItems = items(line-&gt;line().p1());
+         if (startItems.count() &amp;&amp; startItems.first() == line)
+             startItems.removeFirst();
+         QList&lt;QGraphicsItem *&gt; endItems = items(line-&gt;line().p2());
+         if (endItems.count() &amp;&amp; endItems.first() == line)
+             endItems.removeFirst();
+
+         removeItem(line);
+         delete line;
+
+         if (startItems.count() &gt; 0 &amp;&amp; endItems.count() &gt; 0 &amp;&amp;
+             startItems.first()-&gt;type() == DiagramItem::Type &amp;&amp;
+             endItems.first()-&gt;type() == DiagramItem::Type &amp;&amp;
+             startItems.first() != endItems.first()) {
+             DiagramItem *startItem =
+                 qgraphicsitem_cast&lt;DiagramItem *&gt;(startItems.first());
+             DiagramItem *endItem =
+                 qgraphicsitem_cast&lt;DiagramItem *&gt;(endItems.first());
+             Arrow *arrow = new Arrow(startItem, endItem);
+             arrow-&gt;setColor(myLineColor);
+             startItem-&gt;addArrow(arrow);
+             endItem-&gt;addArrow(arrow);
+             arrow-&gt;setZValue(-1000.0);
+             addItem(arrow);
+             arrow-&gt;updatePosition();
+         }
+     }
+     line = 0;
+     QGraphicsScene::mouseReleaseEvent(mouseEvent);
+ }
+
+ bool DiagramScene::isItemChange(int type)
+ {
+     foreach (QGraphicsItem *item, selectedItems()) {
+         if (item-&gt;type() == type)
+             return true;
+     }
+     return false;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

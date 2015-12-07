@@ -1,0 +1,92 @@
+include(compat.qdocconf)
+include(macros.qdocconf)
+include(qt-cpp-ignore.qdocconf)
+include(qt-html-templates.qdocconf)
+include(qt-defines.qdocconf)
+
+project                 = Qt
+description             = Qt Reference Documentation
+url                     = http://doc.trolltech.com/4.4
+
+edition.Console         = QtCore QtNetwork QtSql QtXml QtScript QtTest
+edition.Desktop         = QtCore QtGui QtNetwork QtOpenGL QtSql QtSvg QtXml QtScript \
+                          QtDesigner QtAssistant Qt3Support QAxContainer \
+                          QAxServer QtUiTools QtTest QtDBus
+edition.DesktopLight    = QtCore QtGui Qt3SupportLight QtTest
+
+qhp.projects            = Qt
+
+qhp.Qt.file                = qt.qhp
+qhp.Qt.namespace           = com.trolltech.qt.440
+qhp.Qt.virtualFolder       = qdoc
+qhp.Qt.indexTitle          = Qt Reference Documentation
+qhp.Qt.indexRoot           = 
+qhp.Qt.extraFiles          = classic.css images/qt-logo.png images/trolltech-logo.png
+qhp.Qt.filterAttributes    = qt 4.4.0 qtrefdoc
+qhp.Qt.customFilters.Qt.name = Qt 4.4.0
+qhp.Qt.customFilters.Qt.filterAttributes = qt 4.4.0
+qhp.Qt.subprojects         = classes overviews examples
+qhp.Qt.subprojects.classes.title = Classes
+qhp.Qt.subprojects.classes.indexTitle = Qt's Classes
+qhp.Qt.subprojects.classes.selectors = class
+qhp.Qt.subprojects.overviews.title = Overviews
+qhp.Qt.subprojects.overviews.indexTitle = All Overviews and HOWTOs
+qhp.Qt.subprojects.overviews.selectors = fake:page,group,module
+qhp.Qt.subprojects.examples.title = Tutorials and Examples
+qhp.Qt.subprojects.examples.indexTitle = Qt Examples
+qhp.Qt.subprojects.examples.selectors = fake:example
+
+language                = Cpp
+
+headerdirs              = $QTDIR/src \
+                          $QTDIR/extensions/activeqt \
+                          $QTDIR/tools/assistant/lib \
+                          $QTDIR/tools/assistant/compat/lib \
+                          $QTDIR/tools/designer/src/uitools \
+                          $QTDIR/tools/designer/src/lib/extension \
+                          $QTDIR/tools/designer/src/lib/sdk \
+                          $QTDIR/tools/designer/src/lib/uilib \
+                          $QTDIR/tools/qtestlib/src \
+                          $QTDIR/tools/qdbus/src
+sourcedirs              = $QTDIR/src \
+                          $QTDIR/doc/src \
+                          $QTDIR/extensions/activeqt \
+                          $QTDIR/tools/assistant/lib \
+                          $QTDIR/tools/assistant/compat/lib \
+                          $QTDIR/tools/designer/src/uitools \
+                          $QTDIR/tools/designer/src/lib/extension \
+                          $QTDIR/tools/designer/src/lib/sdk \
+                          $QTDIR/tools/designer/src/lib/uilib \
+                          $QTDIR/tools/qtestlib/src \
+                          $QTDIR/tools/qdbus
+
+excludedirs             = $QTDIR/src/3rdparty/clucene \
+                          $QTDIR/src/3rdparty/des \
+                          $QTDIR/src/3rdparty/freetype \
+                          $QTDIR/src/3rdparty/harfbuzz \
+                          $QTDIR/src/3rdparty/kdebase \
+                          $QTDIR/src/3rdparty/libjpeg \
+                          $QTDIR/src/3rdparty/libmng \
+                          $QTDIR/src/3rdparty/libpng \
+                          $QTDIR/src/3rdparty/libtiff \
+                          $QTDIR/src/3rdparty/md4 \
+                          $QTDIR/src/3rdparty/md5 \
+                          $QTDIR/src/3rdparty/patches \
+                          $QTDIR/src/3rdparty/sha1 \
+                          $QTDIR/src/3rdparty/sqlite \
+                          $QTDIR/src/3rdparty/webkit/JavaScriptCore \
+                          $QTDIR/src/3rdparty/webkit/WebCore \
+                          $QTDIR/src/3rdparty/wintab \
+                          $QTDIR/src/3rdparty/zlib
+
+sources.fileextensions  = "*.cpp *.qdoc"
+exampledirs             = $QTDIR/doc/src \
+                          $QTDIR/examples \
+                          $QTDIR/examples/tutorials \
+                          $QTDIR \
+                          $QTDIR/qmake/examples
+imagedirs               = $QTDIR/doc/src/images \
+                          $QTDIR/examples
+outputdir               = $QTDIR/doc/html
+tagfile                 = $QTDIR/doc/indexes/qt.tags
+base                    = file:$QTDIR/doc/html

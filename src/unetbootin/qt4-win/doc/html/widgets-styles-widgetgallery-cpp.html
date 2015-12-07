@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: widgetgallery.cpp Example File (widgets/styles/widgetgallery.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">widgetgallery.cpp Example File<br /><span class="small-subtitle">widgets/styles/widgetgallery.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;norwegianwoodstyle.h&quot;
+ #include &quot;widgetgallery.h&quot;
+
+ WidgetGallery::WidgetGallery(QWidget *parent)
+     : QDialog(parent)
+ {
+     originalPalette = QApplication::palette();
+
+     styleComboBox = new QComboBox;
+     styleComboBox-&gt;addItem(&quot;NorwegianWood&quot;);
+     styleComboBox-&gt;addItems(QStyleFactory::keys());
+
+     styleLabel = new QLabel(tr(&quot;&amp;Style:&quot;));
+     styleLabel-&gt;setBuddy(styleComboBox);
+
+     useStylePaletteCheckBox = new QCheckBox(tr(&quot;&amp;Use style's standard palette&quot;));
+     useStylePaletteCheckBox-&gt;setChecked(true);
+
+     disableWidgetsCheckBox = new QCheckBox(tr(&quot;&amp;Disable widgets&quot;));
+
+     createTopLeftGroupBox();
+     createTopRightGroupBox();
+     createBottomLeftTabWidget();
+     createBottomRightGroupBox();
+     createProgressBar();
+
+     connect(styleComboBox, SIGNAL(activated(const QString &amp;)),
+             this, SLOT(changeStyle(const QString &amp;)));
+     connect(useStylePaletteCheckBox, SIGNAL(toggled(bool)),
+             this, SLOT(changePalette()));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             topLeftGroupBox, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             topRightGroupBox, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             bottomLeftTabWidget, SLOT(setDisabled(bool)));
+     connect(disableWidgetsCheckBox, SIGNAL(toggled(bool)),
+             bottomRightGroupBox, SLOT(setDisabled(bool)));
+
+     QHBoxLayout *topLayout = new QHBoxLayout;
+     topLayout-&gt;addWidget(styleLabel);
+     topLayout-&gt;addWidget(styleComboBox);
+     topLayout-&gt;addStretch(1);
+     topLayout-&gt;addWidget(useStylePaletteCheckBox);
+     topLayout-&gt;addWidget(disableWidgetsCheckBox);
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addLayout(topLayout, 0, 0, 1, 2);
+     mainLayout-&gt;addWidget(topLeftGroupBox, 1, 0);
+     mainLayout-&gt;addWidget(topRightGroupBox, 1, 1);
+     mainLayout-&gt;addWidget(bottomLeftTabWidget, 2, 0);
+     mainLayout-&gt;addWidget(bottomRightGroupBox, 2, 1);
+     mainLayout-&gt;addWidget(progressBar, 3, 0, 1, 2);
+     mainLayout-&gt;setRowStretch(1, 1);
+     mainLayout-&gt;setRowStretch(2, 1);
+     mainLayout-&gt;setColumnStretch(0, 1);
+     mainLayout-&gt;setColumnStretch(1, 1);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Styles&quot;));
+     changeStyle(&quot;NorwegianWood&quot;);
+ }
+
+ void WidgetGallery::changeStyle(const QString &amp;styleName)
+ {
+     if (styleName == &quot;NorwegianWood&quot;) {
+         QApplication::setStyle(new NorwegianWoodStyle);
+     } else {
+         QApplication::setStyle(QStyleFactory::create(styleName));
+     }
+     changePalette();
+ }
+
+ void WidgetGallery::changePalette()
+ {
+     if (useStylePaletteCheckBox-&gt;isChecked())
+         QApplication::setPalette(QApplication::style()-&gt;standardPalette());
+     else
+         QApplication::setPalette(originalPalette);
+ }
+
+ void WidgetGallery::advanceProgressBar()
+ {
+     int curVal = progressBar-&gt;value();
+     int maxVal = progressBar-&gt;maximum();
+     progressBar-&gt;setValue(curVal + (maxVal - curVal) / 100);
+ }
+
+ void WidgetGallery::createTopLeftGroupBox()
+ {
+     topLeftGroupBox = new QGroupBox(tr(&quot;Group 1&quot;));
+
+     radioButton1 = new QRadioButton(tr(&quot;Radio button 1&quot;));
+     radioButton2 = new QRadioButton(tr(&quot;Radio button 2&quot;));
+     radioButton3 = new QRadioButton(tr(&quot;Radio button 3&quot;));
+     radioButton1-&gt;setChecked(true);
+
+     checkBox = new QCheckBox(tr(&quot;Tri-state check box&quot;));
+     checkBox-&gt;setTristate(true);
+     checkBox-&gt;setCheckState(Qt::PartiallyChecked);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(radioButton1);
+     layout-&gt;addWidget(radioButton2);
+     layout-&gt;addWidget(radioButton3);
+     layout-&gt;addWidget(checkBox);
+     layout-&gt;addStretch(1);
+     topLeftGroupBox-&gt;setLayout(layout);
+ }
+
+ void WidgetGallery::createTopRightGroupBox()
+ {
+     topRightGroupBox = new QGroupBox(tr(&quot;Group 2&quot;));
+
+     defaultPushButton = new QPushButton(tr(&quot;Default Push Button&quot;));
+     defaultPushButton-&gt;setDefault(true);
+
+     togglePushButton = new QPushButton(tr(&quot;Toggle Push Button&quot;));
+     togglePushButton-&gt;setCheckable(true);
+     togglePushButton-&gt;setChecked(true);
+
+     flatPushButton = new QPushButton(tr(&quot;Flat Push Button&quot;));
+     flatPushButton-&gt;setFlat(true);
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(defaultPushButton);
+     layout-&gt;addWidget(togglePushButton);
+     layout-&gt;addWidget(flatPushButton);
+     layout-&gt;addStretch(1);
+     topRightGroupBox-&gt;setLayout(layout);
+ }
+
+ void WidgetGallery::createBottomLeftTabWidget()
+ {
+     bottomLeftTabWidget = new QTabWidget;
+     bottomLeftTabWidget-&gt;setSizePolicy(QSizePolicy::Preferred,
+                                        QSizePolicy::Ignored);
+
+     QWidget *tab1 = new QWidget;
+     tableWidget = new QTableWidget(10, 10);
+
+     QHBoxLayout *tab1hbox = new QHBoxLayout;
+     tab1hbox-&gt;setMargin(5);
+     tab1hbox-&gt;addWidget(tableWidget);
+     tab1-&gt;setLayout(tab1hbox);
+
+     QWidget *tab2 = new QWidget;
+     textEdit = new QTextEdit;
+
+     textEdit-&gt;setPlainText(tr(&quot;Twinkle, twinkle, little star,\n&quot;
+                               &quot;How I wonder what you are.\n&quot;
+                               &quot;Up above the world so high,\n&quot;
+                               &quot;Like a diamond in the sky.\n&quot;
+                               &quot;Twinkle, twinkle, little star,\n&quot;
+                               &quot;How I wonder what you are!\n&quot;));
+
+     QHBoxLayout *tab2hbox = new QHBoxLayout;
+     tab2hbox-&gt;setMargin(5);
+     tab2hbox-&gt;addWidget(textEdit);
+     tab2-&gt;setLayout(tab2hbox);
+
+     bottomLeftTabWidget-&gt;addTab(tab1, tr(&quot;&amp;Table&quot;));
+     bottomLeftTabWidget-&gt;addTab(tab2, tr(&quot;Text &amp;Edit&quot;));
+ }
+
+ void WidgetGallery::createBottomRightGroupBox()
+ {
+     bottomRightGroupBox = new QGroupBox(tr(&quot;Group 3&quot;));
+     bottomRightGroupBox-&gt;setCheckable(true);
+     bottomRightGroupBox-&gt;setChecked(true);
+
+     lineEdit = new QLineEdit(&quot;s3cRe7&quot;);
+     lineEdit-&gt;setEchoMode(QLineEdit::Password);
+
+     spinBox = new QSpinBox(bottomRightGroupBox);
+     spinBox-&gt;setValue(50);
+
+     dateTimeEdit = new QDateTimeEdit(bottomRightGroupBox);
+     dateTimeEdit-&gt;setDateTime(QDateTime::currentDateTime());
+
+     slider = new QSlider(Qt::Horizontal, bottomRightGroupBox);
+     slider-&gt;setValue(40);
+
+     scrollBar = new QScrollBar(Qt::Horizontal, bottomRightGroupBox);
+     scrollBar-&gt;setValue(60);
+
+     dial = new QDial(bottomRightGroupBox);
+     dial-&gt;setValue(30);
+     dial-&gt;setNotchesVisible(true);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(lineEdit, 0, 0, 1, 2);
+     layout-&gt;addWidget(spinBox, 1, 0, 1, 2);
+     layout-&gt;addWidget(dateTimeEdit, 2, 0, 1, 2);
+     layout-&gt;addWidget(slider, 3, 0);
+     layout-&gt;addWidget(scrollBar, 4, 0);
+     layout-&gt;addWidget(dial, 3, 1, 2, 1);
+     layout-&gt;setRowStretch(5, 1);
+     bottomRightGroupBox-&gt;setLayout(layout);
+ }
+
+ void WidgetGallery::createProgressBar()
+ {
+     progressBar = new QProgressBar;
+     progressBar-&gt;setRange(0, 10000);
+     progressBar-&gt;setValue(0);
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), this, SLOT(advanceProgressBar()));
+     timer-&gt;start(1000);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

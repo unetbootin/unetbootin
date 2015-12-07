@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/groupbox.qdoc -->
+<head>
+  <title>Qt 4.4: Group Box Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Group Box Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-groupbox-window-cpp.html">widgets/groupbox/window.cpp</a></li>
+<li><a href="widgets-groupbox-window-h.html">widgets/groupbox/window.h</a></li>
+<li><a href="widgets-groupbox-main-cpp.html">widgets/groupbox/main.cpp</a></li>
+<li><a href="widgets-groupbox-groupbox-pro.html">widgets/groupbox/groupbox.pro</a></li>
+</ul>
+<p>The Group Box example shows how to use the different kinds of group boxes in Qt.</p>
+<p>Group boxes are container widgets that organize buttons into groups, both logically and on screen. They manage the interactions between the user and the application so that you do not have to enforce simple constraints.</p>
+<p>Group boxes are usually used to organize check boxes and radio buttons into exclusive groups.</p>
+<p align="center"><img src="images/groupbox-example.png" /></p><p>The Group Boxes example consists of a single <tt>Window</tt> class that is used to show four group boxes: an exclusive radio button group, a non-exclusive checkbox group, an exclusive radio button group with an enabling checkbox, and a group box with normal push buttons.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class is a subclass of <tt>QWidget</tt> that is used to display a number of group boxes. The class definition contains functions to construct each group box and populate it with different selections of button widgets:</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window(QWidget *parent = 0);
+
+ private:
+     QGroupBox *createFirstExclusiveGroup();
+     QGroupBox *createSecondExclusiveGroup();
+     QGroupBox *createNonExclusiveGroup();
+     QGroupBox *createPushButtonGroup();
+ };</pre>
+<p>In the example, the widget will be used as a top-level window, so the constructor is defined so that we do not have to specify a parent widget.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor creates a grid layout and fills it with each of the group boxes that are to be displayed:</p>
+<pre> Window::Window(QWidget *parent)
+     : QWidget(parent)
+ {
+     QGridLayout *grid = new QGridLayout;
+     grid-&gt;addWidget(createFirstExclusiveGroup(), 0, 0);
+     grid-&gt;addWidget(createSecondExclusiveGroup(), 1, 0);
+     grid-&gt;addWidget(createNonExclusiveGroup(), 0, 1);
+     grid-&gt;addWidget(createPushButtonGroup(), 1, 1);
+     setLayout(grid);
+
+     setWindowTitle(tr(&quot;Group Boxes&quot;));
+     resize(480, 320);
+ }</pre>
+<p>The functions used to create each group box each return a <a href="qgroupbox.html">QGroupBox</a> to be inserted into the grid layout.</p>
+<pre> QGroupBox *Window::createFirstExclusiveGroup()
+ {
+     QGroupBox *groupBox = new QGroupBox(tr(&quot;Exclusive Radio Buttons&quot;));
+
+     QRadioButton *radio1 = new QRadioButton(tr(&quot;&amp;Radio button 1&quot;));
+     QRadioButton *radio2 = new QRadioButton(tr(&quot;R&amp;adio button 2&quot;));
+     QRadioButton *radio3 = new QRadioButton(tr(&quot;Ra&amp;dio button 3&quot;));
+
+     radio1-&gt;setChecked(true);</pre>
+<p>The first group box contains and manages three radio buttons. Since the group box contains only radio buttons, it is exclusive by default, so only one radio button can be checked at any given time. We check the first radio button to ensure that the button group contains one checked button.</p>
+<pre>     QVBoxLayout *vbox = new QVBoxLayout;
+     vbox-&gt;addWidget(radio1);
+     vbox-&gt;addWidget(radio2);
+     vbox-&gt;addWidget(radio3);
+     vbox-&gt;addStretch(1);
+     groupBox-&gt;setLayout(vbox);
+
+     return groupBox;
+ }</pre>
+<p>We use a vertical layout within the group box to present the buttons in the form of a vertical list, and return the group box to the constructor.</p>
+<p>The second group box is itself checkable, providing a convenient way to disable all the buttons inside it. Initially, it is unchecked, so the group box itself must be checked before any of the radio buttons inside can be checked.</p>
+<pre> QGroupBox *Window::createSecondExclusiveGroup()
+ {
+     QGroupBox *groupBox = new QGroupBox(tr(&quot;E&amp;xclusive Radio Buttons&quot;));
+     groupBox-&gt;setCheckable(true);
+     groupBox-&gt;setChecked(false);</pre>
+<p>The group box contains three exclusive radio buttons, and an independent checkbox. For consistency, one radio button must be checked at all times, so we ensure that the first one is initially checked.</p>
+<pre>     QRadioButton *radio1 = new QRadioButton(tr(&quot;Rad&amp;io button 1&quot;));
+     QRadioButton *radio2 = new QRadioButton(tr(&quot;Radi&amp;o button 2&quot;));
+     QRadioButton *radio3 = new QRadioButton(tr(&quot;Radio &amp;button 3&quot;));
+     radio1-&gt;setChecked(true);
+     QCheckBox *checkBox = new QCheckBox(tr(&quot;Ind&amp;ependent checkbox&quot;));
+     checkBox-&gt;setChecked(true);</pre>
+<p>The buttons are arranged in the same way as those in the first group box.</p>
+<pre>     QVBoxLayout *vbox = new QVBoxLayout;
+     vbox-&gt;addWidget(radio1);
+     vbox-&gt;addWidget(radio2);
+     vbox-&gt;addWidget(radio3);
+     vbox-&gt;addWidget(checkBox);
+     vbox-&gt;addStretch(1);
+     groupBox-&gt;setLayout(vbox);
+
+     return groupBox;
+ }</pre>
+<p>The third group box is constructed with a &quot;flat&quot; style that is better suited to certain types of dialog.</p>
+<pre> QGroupBox *Window::createNonExclusiveGroup()
+ {
+     QGroupBox *groupBox = new QGroupBox(tr(&quot;Non-Exclusive Checkboxes&quot;));
+     groupBox-&gt;setFlat(true);</pre>
+<p>This group box contains only checkboxes, so it is non-exclusive by default. This means that each checkbox can be checked independently of the others.</p>
+<pre>     QCheckBox *checkBox1 = new QCheckBox(tr(&quot;&amp;Checkbox 1&quot;));
+     QCheckBox *checkBox2 = new QCheckBox(tr(&quot;C&amp;heckbox 2&quot;));
+     checkBox2-&gt;setChecked(true);
+     QCheckBox *tristateBox = new QCheckBox(tr(&quot;Tri-&amp;state button&quot;));
+     tristateBox-&gt;setTristate(true);</pre>
+<p>Again, we use a vertical layout within the group box to present the buttons in the form of a vertical list.</p>
+<pre>     QVBoxLayout *vbox = new QVBoxLayout;
+     vbox-&gt;addWidget(checkBox1);
+     vbox-&gt;addWidget(checkBox2);
+     vbox-&gt;addWidget(tristateBox);
+     vbox-&gt;addStretch(1);
+     groupBox-&gt;setLayout(vbox);
+
+     return groupBox;
+ }</pre>
+<p>The final group box contains only push buttons and, like the second group box, it is checkable.</p>
+<pre> QGroupBox *Window::createPushButtonGroup()
+ {
+     QGroupBox *groupBox = new QGroupBox(tr(&quot;&amp;Push Buttons&quot;));
+     groupBox-&gt;setCheckable(true);
+     groupBox-&gt;setChecked(true);</pre>
+<p>We create a normal button, a toggle button, and a flat push button:</p>
+<pre>     QPushButton *pushButton = new QPushButton(tr(&quot;&amp;Normal Button&quot;));
+     QPushButton *toggleButton = new QPushButton(tr(&quot;&amp;Toggle Button&quot;));
+     toggleButton-&gt;setCheckable(true);
+     toggleButton-&gt;setChecked(true);
+     QPushButton *flatButton = new QPushButton(tr(&quot;&amp;Flat Button&quot;));
+     flatButton-&gt;setFlat(true);</pre>
+<p>Push buttons can be used to display popup menus. We create one, and attach a simple menu to it:</p>
+<pre>     QPushButton *popupButton = new QPushButton(tr(&quot;Pop&amp;up Button&quot;));
+     QMenu *menu = new QMenu(this);
+     menu-&gt;addAction(tr(&quot;&amp;First Item&quot;));
+     menu-&gt;addAction(tr(&quot;&amp;Second Item&quot;));
+     menu-&gt;addAction(tr(&quot;&amp;Third Item&quot;));
+     menu-&gt;addAction(tr(&quot;F&amp;ourth Item&quot;));
+     popupButton-&gt;setMenu(menu);</pre>
+<p>Finally, we lay out the widgets vertically, and return the group box that we created:</p>
+<pre>     QVBoxLayout *vbox = new QVBoxLayout;
+     vbox-&gt;addWidget(pushButton);
+     vbox-&gt;addWidget(toggleButton);
+     vbox-&gt;addWidget(flatButton);
+     vbox-&gt;addWidget(popupButton);
+     vbox-&gt;addStretch(1);
+     groupBox-&gt;setLayout(vbox);
+
+     return groupBox;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

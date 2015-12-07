@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qcryptographichash.cpp -->
+<head>
+  <title>Qt 4.4: QCryptographicHash Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCryptographicHash Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QCryptographicHash class provides a way to generate cryptographic hashes. <a href="#details">More...</a></p>
+<pre> #include &lt;QCryptographicHash&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qcryptographichash-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qcryptographichash.html#Algorithm-enum">Algorithm</a></b> { Md4, Md5, Sha1 }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcryptographichash.html#QCryptographicHash">QCryptographicHash</a></b> ( Algorithm <i>method</i> )</li>
+<li><div class="fn"/><b><a href="qcryptographichash.html#dtor.QCryptographicHash">~QCryptographicHash</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcryptographichash.html#addData">addData</a></b> ( const char * <i>data</i>, int <i>length</i> )</li>
+<li><div class="fn"/>void <b><a href="qcryptographichash.html#addData-2">addData</a></b> ( const QByteArray &amp; <i>data</i> )</li>
+<li><div class="fn"/>void <b><a href="qcryptographichash.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>QByteArray <b><a href="qcryptographichash.html#result">result</a></b> () const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QByteArray <b><a href="qcryptographichash.html#hash">hash</a></b> ( const QByteArray &amp; <i>data</i>, Algorithm <i>method</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCryptographicHash class provides a way to generate cryptographic hashes.</p>
+<p>QCryptographicHash can be used to generate cryptographic hashes of binary or text data.</p>
+<p>Currently Md4, Md5, and Sha1 are supported.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Algorithm-enum"></a>enum QCryptographicHash::Algorithm</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCryptographicHash::Md4</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Generate an Md4 hash sum</td></tr>
+<tr><td valign="top"><tt>QCryptographicHash::Md5</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Generate an Md5 hash sum</td></tr>
+<tr><td valign="top"><tt>QCryptographicHash::Sha1</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Generate an Sha1 hash sum</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCryptographicHash"></a>QCryptographicHash::QCryptographicHash ( <a href="qcryptographichash.html#Algorithm-enum">Algorithm</a> <i>method</i> )</h3>
+<p>Constructs an object that can be used to create a cryptographic hash from data using <i>method</i>.</p>
+<h3 class="fn"><a name="dtor.QCryptographicHash"></a>QCryptographicHash::~QCryptographicHash ()</h3>
+<p>Destroys the object.</p>
+<h3 class="fn"><a name="addData"></a>void QCryptographicHash::addData ( const char * <i>data</i>, int <i>length</i> )</h3>
+<p>Adds the first <i>length</i> chars of <i>data</i> to the cryptographic hash.</p>
+<h3 class="fn"><a name="addData-2"></a>void QCryptographicHash::addData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>/overload</p>
+<h3 class="fn"><a name="hash"></a><a href="qbytearray.html">QByteArray</a> QCryptographicHash::hash ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, <a href="qcryptographichash.html#Algorithm-enum">Algorithm</a> <i>method</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the hash of <i>data</i> using <i>method</i>.</p>
+<h3 class="fn"><a name="reset"></a>void QCryptographicHash::reset ()</h3>
+<p>Resets the object.</p>
+<h3 class="fn"><a name="result"></a><a href="qbytearray.html">QByteArray</a> QCryptographicHash::result () const</h3>
+<p>Returns the final hash value.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

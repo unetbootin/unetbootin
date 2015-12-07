@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: composition.cpp Example File (demos/composition/composition.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">composition.cpp Example File<br /><span class="small-subtitle">demos/composition/composition.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;composition.h&quot;
+ #include &lt;QBoxLayout&gt;
+ #include &lt;QRadioButton&gt;
+ #include &lt;QTimer&gt;
+ #include &lt;QDateTime&gt;
+ #include &lt;QSlider&gt;
+ #include &lt;QMouseEvent&gt;
+ #include &lt;qmath.h&gt;
+
+ CompositionWidget::CompositionWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     CompositionRenderer *view = new CompositionRenderer(this);
+
+     QGroupBox *mainGroup = new QGroupBox(parent);
+     mainGroup-&gt;setAttribute(Qt::WA_ContentsPropagated);
+     mainGroup-&gt;setTitle(&quot;Composition Modes&quot;);
+
+     QGroupBox *modesGroup = new QGroupBox(mainGroup);
+     modesGroup-&gt;setAttribute(Qt::WA_ContentsPropagated);
+     modesGroup-&gt;setTitle(&quot;Mode&quot;);
+
+     rbClear = new QRadioButton(&quot;Clear&quot;, modesGroup);
+     connect(rbClear, SIGNAL(clicked()), view, SLOT(setClearMode()));
+     rbSource = new QRadioButton(&quot;Source&quot;, modesGroup);
+     connect(rbSource, SIGNAL(clicked()), view, SLOT(setSourceMode()));
+     rbDest = new QRadioButton(&quot;Destination&quot;, modesGroup);
+     connect(rbDest, SIGNAL(clicked()), view, SLOT(setDestMode()));
+     rbSourceOver = new QRadioButton(&quot;Source Over&quot;, modesGroup);
+     connect(rbSourceOver, SIGNAL(clicked()), view, SLOT(setSourceOverMode()));
+     rbDestOver = new QRadioButton(&quot;Destination Over&quot;, modesGroup);
+     connect(rbDestOver, SIGNAL(clicked()), view, SLOT(setDestOverMode()));
+     rbSourceIn = new QRadioButton(&quot;Source In&quot;, modesGroup);
+     connect(rbSourceIn, SIGNAL(clicked()), view, SLOT(setSourceInMode()));
+     rbDestIn = new QRadioButton(&quot;Dest In&quot;, modesGroup);
+     connect(rbDestIn, SIGNAL(clicked()), view, SLOT(setDestInMode()));
+     rbSourceOut = new QRadioButton(&quot;Source Out&quot;, modesGroup);
+     connect(rbSourceOut, SIGNAL(clicked()), view, SLOT(setSourceOutMode()));
+     rbDestOut = new QRadioButton(&quot;Dest Out&quot;, modesGroup);
+     connect(rbDestOut, SIGNAL(clicked()), view, SLOT(setDestOutMode()));
+     rbSourceAtop = new QRadioButton(&quot;Source Atop&quot;, modesGroup);
+     connect(rbSourceAtop, SIGNAL(clicked()), view, SLOT(setSourceAtopMode()));
+     rbDestAtop = new QRadioButton(&quot;Dest Atop&quot;, modesGroup);
+     connect(rbDestAtop, SIGNAL(clicked()), view, SLOT(setDestAtopMode()));
+     rbXor = new QRadioButton(&quot;Xor&quot;, modesGroup);
+     connect(rbXor, SIGNAL(clicked()), view, SLOT(setXorMode()));
+
+     rbPlus = new QRadioButton(&quot;Plus&quot;, modesGroup);
+     connect(rbPlus, SIGNAL(clicked()), view, SLOT(setPlusMode()));
+     rbMultiply = new QRadioButton(&quot;Multiply&quot;, modesGroup);
+     connect(rbMultiply, SIGNAL(clicked()), view, SLOT(setMultiplyMode()));
+     rbScreen = new QRadioButton(&quot;Screen&quot;, modesGroup);
+     connect(rbScreen, SIGNAL(clicked()), view, SLOT(setScreenMode()));
+     rbOverlay = new QRadioButton(&quot;Overlay&quot;, modesGroup);
+     connect(rbOverlay, SIGNAL(clicked()), view, SLOT(setOverlayMode()));
+     rbDarken = new QRadioButton(&quot;Darken&quot;, modesGroup);
+     connect(rbDarken, SIGNAL(clicked()), view, SLOT(setDarkenMode()));
+     rbLighten = new QRadioButton(&quot;Lighten&quot;, modesGroup);
+     connect(rbLighten, SIGNAL(clicked()), view, SLOT(setLightenMode()));
+     rbColorDodge = new QRadioButton(&quot;Color Dodge&quot;, modesGroup);
+     connect(rbColorDodge, SIGNAL(clicked()), view, SLOT(setColorDodgeMode()));
+     rbColorBurn = new QRadioButton(&quot;Color Burn&quot;, modesGroup);
+     connect(rbColorBurn, SIGNAL(clicked()), view, SLOT(setColorBurnMode()));
+     rbHardLight = new QRadioButton(&quot;Hard Light&quot;, modesGroup);
+     connect(rbHardLight, SIGNAL(clicked()), view, SLOT(setHardLightMode()));
+     rbSoftLight = new QRadioButton(&quot;Soft Light&quot;, modesGroup);
+     connect(rbSoftLight, SIGNAL(clicked()), view, SLOT(setSoftLightMode()));
+     rbDifference = new QRadioButton(&quot;Difference&quot;, modesGroup);
+     connect(rbDifference, SIGNAL(clicked()), view, SLOT(setDifferenceMode()));
+     rbExclusion = new QRadioButton(&quot;Exclusion&quot;, modesGroup);
+     connect(rbExclusion, SIGNAL(clicked()), view, SLOT(setExclusionMode()));
+
+     QGroupBox *circleColorGroup = new QGroupBox(mainGroup);
+     circleColorGroup-&gt;setAttribute(Qt::WA_ContentsPropagated);
+     circleColorGroup-&gt;setTitle(&quot;Circle color&quot;);
+     QSlider *circleColorSlider = new QSlider(Qt::Horizontal, circleColorGroup);
+     circleColorSlider-&gt;setRange(0, 359);
+     circleColorSlider-&gt;setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+     connect(circleColorSlider, SIGNAL(valueChanged(int)), view, SLOT(setCircleColor(int)));
+
+     QGroupBox *circleAlphaGroup = new QGroupBox(mainGroup);
+     circleAlphaGroup-&gt;setAttribute(Qt::WA_ContentsPropagated);
+     circleAlphaGroup-&gt;setTitle(&quot;Circle alpha&quot;);
+     QSlider *circleAlphaSlider = new QSlider(Qt::Horizontal, circleAlphaGroup);
+     circleAlphaSlider-&gt;setRange(0, 255);
+     circleAlphaSlider-&gt;setSizePolicy(QSizePolicy::Preferred, QSizePolicy::Fixed);
+     connect(circleAlphaSlider, SIGNAL(valueChanged(int)), view, SLOT(setCircleAlpha(int)));
+
+     QPushButton *showSourceButton = new QPushButton(mainGroup);
+     showSourceButton-&gt;setText(&quot;Show Source&quot;);
+ #ifdef QT_OPENGL_SUPPORT
+     QPushButton *enableOpenGLButton = new QPushButton(mainGroup);
+     enableOpenGLButton-&gt;setText(&quot;Use OpenGL&quot;);
+     enableOpenGLButton-&gt;setCheckable(true);
+     enableOpenGLButton-&gt;setChecked(view-&gt;usesOpenGL());
+
+     if (!QGLFormat::hasOpenGL() || !QGLPixelBuffer::hasOpenGLPbuffers())
+         enableOpenGLButton-&gt;hide();
+ #endif
+     QPushButton *whatsThisButton = new QPushButton(mainGroup);
+     whatsThisButton-&gt;setText(&quot;What's This?&quot;);
+     whatsThisButton-&gt;setCheckable(true);
+
+     QPushButton *animateButton = new QPushButton(mainGroup);
+     animateButton-&gt;setText(&quot;Animated&quot;);
+     animateButton-&gt;setCheckable(true);
+     animateButton-&gt;setChecked(true);
+
+     QHBoxLayout *viewLayout = new QHBoxLayout(this);
+     viewLayout-&gt;addWidget(view);
+     viewLayout-&gt;addWidget(mainGroup);
+
+     QVBoxLayout *mainGroupLayout = new QVBoxLayout(mainGroup);
+     mainGroupLayout-&gt;addWidget(circleColorGroup);
+     mainGroupLayout-&gt;addWidget(circleAlphaGroup);
+     mainGroupLayout-&gt;addWidget(modesGroup);
+     mainGroupLayout-&gt;addStretch();
+     mainGroupLayout-&gt;addWidget(animateButton);
+     mainGroupLayout-&gt;addWidget(whatsThisButton);
+     mainGroupLayout-&gt;addWidget(showSourceButton);
+ #ifdef QT_OPENGL_SUPPORT
+     mainGroupLayout-&gt;addWidget(enableOpenGLButton);
+ #endif
+
+     QGridLayout *modesLayout = new QGridLayout(modesGroup);
+     modesLayout-&gt;addWidget(rbClear,             0,      0);
+     modesLayout-&gt;addWidget(rbSource,            1,      0);
+     modesLayout-&gt;addWidget(rbDest,              2,      0);
+     modesLayout-&gt;addWidget(rbSourceOver,        3,      0);
+     modesLayout-&gt;addWidget(rbDestOver,          4,      0);
+     modesLayout-&gt;addWidget(rbSourceIn,          5,      0);
+     modesLayout-&gt;addWidget(rbDestIn,            6,      0);
+     modesLayout-&gt;addWidget(rbSourceOut,         7,      0);
+     modesLayout-&gt;addWidget(rbDestOut,           8,      0);
+     modesLayout-&gt;addWidget(rbSourceAtop,        9,      0);
+     modesLayout-&gt;addWidget(rbDestAtop,         10,      0);
+     modesLayout-&gt;addWidget(rbXor,              11,      0);
+
+     modesLayout-&gt;addWidget(rbPlus,              0,      1);
+     modesLayout-&gt;addWidget(rbMultiply,          1,      1);
+     modesLayout-&gt;addWidget(rbScreen,            2,      1);
+     modesLayout-&gt;addWidget(rbOverlay,           3,      1);
+     modesLayout-&gt;addWidget(rbDarken,            4,      1);
+     modesLayout-&gt;addWidget(rbLighten,           5,      1);
+     modesLayout-&gt;addWidget(rbColorDodge,        6,      1);
+     modesLayout-&gt;addWidget(rbColorBurn,         7,      1);
+     modesLayout-&gt;addWidget(rbHardLight,         8,      1);
+     modesLayout-&gt;addWidget(rbSoftLight,         9,      1);
+     modesLayout-&gt;addWidget(rbDifference,       10,      1);
+     modesLayout-&gt;addWidget(rbExclusion,        11,      1);
+
+     QVBoxLayout *circleColorLayout = new QVBoxLayout(circleColorGroup);
+     circleColorLayout-&gt;addWidget(circleColorSlider);
+
+     QVBoxLayout *circleAlphaLayout = new QVBoxLayout(circleAlphaGroup);
+     circleAlphaLayout-&gt;addWidget(circleAlphaSlider);
+
+     view-&gt;loadDescription(&quot;:/trolltech/arthurplugin/composition.html&quot;);
+     view-&gt;loadSourceFile(&quot;:/trolltech/arthurplugin/composition.cpp&quot;);
+
+     connect(whatsThisButton, SIGNAL(clicked(bool)), view, SLOT(setDescriptionEnabled(bool)));
+     connect(view, SIGNAL(descriptionEnabledChanged(bool)), whatsThisButton, SLOT(setChecked(bool)));
+     connect(showSourceButton, SIGNAL(clicked()), view, SLOT(showSource()));
+ #ifdef QT_OPENGL_SUPPORT
+     connect(enableOpenGLButton, SIGNAL(clicked(bool)), view, SLOT(enableOpenGL(bool)));
+ #endif
+     connect(animateButton, SIGNAL(toggled(bool)), view, SLOT(setAnimationEnabled(bool)));
+
+     circleColorSlider-&gt;setValue(270);
+     circleAlphaSlider-&gt;setValue(200);
+     rbSourceOut-&gt;animateClick();
+
+     setWindowTitle(tr(&quot;Composition Modes&quot;));
+ }
+
+ void CompositionWidget::nextMode()
+ {
+     <span class="comment">/*
+       if (!m_animation_enabled)
+       return;
+       if (rbClear-&gt;isChecked()) rbSource-&gt;animateClick();
+       if (rbSource-&gt;isChecked()) rbDest-&gt;animateClick();
+       if (rbDest-&gt;isChecked()) rbSourceOver-&gt;animateClick();
+       if (rbSourceOver-&gt;isChecked()) rbDestOver-&gt;animateClick();
+       if (rbDestOver-&gt;isChecked()) rbSourceIn-&gt;animateClick();
+       if (rbSourceIn-&gt;isChecked()) rbDestIn-&gt;animateClick();
+       if (rbDestIn-&gt;isChecked()) rbSourceOut-&gt;animateClick();
+       if (rbSourceOut-&gt;isChecked()) rbDestOut-&gt;animateClick();
+       if (rbDestOut-&gt;isChecked()) rbSourceAtop-&gt;animateClick();
+       if (rbSourceAtop-&gt;isChecked()) rbDestAtop-&gt;animateClick();
+       if (rbDestAtop-&gt;isChecked()) rbXor-&gt;animateClick();
+       if (rbXor-&gt;isChecked()) rbClear-&gt;animateClick();
+     */</span>
+ }
+
+ CompositionRenderer::CompositionRenderer(QWidget *parent)
+     : ArthurFrame(parent)
+ {
+     m_animation_enabled = true;
+ #ifdef Q_WS_QWS
+     m_image = QPixmap(&quot;:/trolltech/arthurplugin/flower.jpg&quot;);
+     m_image.setAlphaChannel(QPixmap(&quot;:/trolltech/arthurplugin/flower_alpha.jpg&quot;));
+ #else
+     m_image = QImage(&quot;:/trolltech/arthurplugin/flower.jpg&quot;);
+     m_image.setAlphaChannel(QImage(&quot;:/trolltech/arthurplugin/flower_alpha.jpg&quot;));
+ #endif
+     m_circle_alpha = 127;
+     m_circle_hue = 255;
+     m_current_object = NoObject;
+     m_composition_mode = QPainter::CompositionMode_SourceOut;
+
+     m_circle_pos = QPoint(200, 100);
+
+     setSizePolicy(QSizePolicy::Expanding, QSizePolicy::Expanding);
+ #ifdef QT_OPENGL_SUPPORT
+     m_pbuffer = 0;
+     m_pbuffer_size = 1024;
+ #endif
+ }
+
+ QRectF rectangle_around(const QPointF &amp;p, const QSizeF &amp;size = QSize(250, 200))
+ {
+     QRectF rect(p, size);
+     rect.translate(-size.width()/2, -size.height()/2);
+     return rect;
+ }
+
+ void CompositionRenderer::updateCirclePos()
+ {
+     if (m_current_object != NoObject)
+         return;
+     QDateTime dt = QDateTime::currentDateTime();
+     qreal t = (dt.toTime_t() * 1000 + dt.time().msec()) / 1000.0;
+
+     qreal x = width() / qreal(2) + (qCos(t*8/11) + qSin(-t)) * width() / qreal(4);
+     qreal y = height() / qreal(2) + (qSin(t*6/7) + qCos(t * qreal(1.5))) * height() / qreal(4);
+
+     setCirclePos(QLineF(m_circle_pos, QPointF(x, y)).pointAt(0.02));
+ }
+
+ void CompositionRenderer::drawBase(QPainter &amp;p)
+ {
+     p.setPen(Qt::NoPen);
+
+     QLinearGradient rect_gradient(0, 0, 0, height());
+     rect_gradient.setColorAt(0, Qt::red);
+     rect_gradient.setColorAt(.17, Qt::yellow);
+     rect_gradient.setColorAt(.33, Qt::green);
+     rect_gradient.setColorAt(.50, Qt::cyan);
+     rect_gradient.setColorAt(.66, Qt::blue);
+     rect_gradient.setColorAt(.81, Qt::magenta);
+     rect_gradient.setColorAt(1, Qt::red);
+     p.setBrush(rect_gradient);
+     p.drawRect(width() / 2, 0, width() / 2, height());
+
+     QLinearGradient alpha_gradient(0, 0, width(), 0);
+     alpha_gradient.setColorAt(0, Qt::white);
+     alpha_gradient.setColorAt(0.2, Qt::white);
+     alpha_gradient.setColorAt(0.5, Qt::transparent);
+     alpha_gradient.setColorAt(0.8, Qt::white);
+     alpha_gradient.setColorAt(1, Qt::white);
+
+     p.setCompositionMode(QPainter::CompositionMode_DestinationIn);
+     p.setBrush(alpha_gradient);
+     p.drawRect(0, 0, width(), height());
+
+     p.setCompositionMode(QPainter::CompositionMode_DestinationOver);
+
+     p.setPen(Qt::NoPen);
+     p.setRenderHint(QPainter::SmoothPixmapTransform);
+ #ifdef Q_WS_QWS
+     p.drawPixmap(rect(), m_image);
+ #else
+     p.drawImage(rect(), m_image);
+ #endif
+ }
+
+ void CompositionRenderer::drawSource(QPainter &amp;p)
+ {
+     p.setPen(Qt::NoPen);
+     p.setRenderHint(QPainter::Antialiasing);
+     p.setCompositionMode(m_composition_mode);
+
+     QRectF circle_rect = rectangle_around(m_circle_pos);
+     QColor color = QColor::fromHsvF(m_circle_hue / 360.0, 1, 1, m_circle_alpha / 255.0);
+     QLinearGradient circle_gradient(circle_rect.topLeft(), circle_rect.bottomRight());
+     circle_gradient.setColorAt(0, color.light());
+     circle_gradient.setColorAt(0.5, color);
+     circle_gradient.setColorAt(1, color.dark());
+     p.setBrush(circle_gradient);
+
+     p.drawEllipse(circle_rect);
+ }
+
+ void CompositionRenderer::paint(QPainter *painter)
+ {
+ #ifdef QT_OPENGL_SUPPORT
+     if (usesOpenGL()) {
+
+         int new_pbuf_size = m_pbuffer_size;
+         if (size().width() &gt; m_pbuffer_size ||
+             size().height() &gt; m_pbuffer_size)
+             new_pbuf_size *= 2;
+
+         if (size().width() &lt; m_pbuffer_size/2 &amp;&amp;
+             size().height() &lt; m_pbuffer_size/2)
+             new_pbuf_size /= 2;
+
+         if (!m_pbuffer || new_pbuf_size != m_pbuffer_size) {
+             if (m_pbuffer) {
+                 m_pbuffer-&gt;deleteTexture(m_base_tex);
+                 m_pbuffer-&gt;deleteTexture(m_compositing_tex);
+                 delete m_pbuffer;
+             }
+
+             m_pbuffer = new QGLPixelBuffer(QSize(new_pbuf_size, new_pbuf_size), QGLFormat::defaultFormat(), glWidget());
+             m_pbuffer-&gt;makeCurrent();
+             m_base_tex = m_pbuffer-&gt;generateDynamicTexture();
+             m_compositing_tex = m_pbuffer-&gt;generateDynamicTexture();
+             m_pbuffer_size = new_pbuf_size;
+         }
+
+         if (size() != m_previous_size) {
+             m_previous_size = size();
+             QPainter p(m_pbuffer);
+             p.setCompositionMode(QPainter::CompositionMode_Source);
+             p.fillRect(QRect(0, 0, m_pbuffer-&gt;width(), m_pbuffer-&gt;height()), Qt::transparent);
+             drawBase(p);
+             p.end();
+             m_pbuffer-&gt;updateDynamicTexture(m_base_tex);
+         }
+
+         qreal x_fraction = width()/float(m_pbuffer-&gt;width());
+         qreal y_fraction = height()/float(m_pbuffer-&gt;height());
+
+         {
+             QPainter p(m_pbuffer);
+             p.setCompositionMode(QPainter::CompositionMode_Source);
+             p.fillRect(QRect(0, 0, m_pbuffer-&gt;width(), m_pbuffer-&gt;height()), Qt::transparent);
+
+             p.save();
+             glBindTexture(GL_TEXTURE_2D, m_base_tex);
+             glEnable(GL_TEXTURE_2D);
+             glColor4f(1.,1.,1.,1.);
+
+             glBegin(GL_QUADS);
+             {
+                 glTexCoord2f(0, 1.0);
+                 glVertex2f(0, 0);
+
+                 glTexCoord2f(x_fraction, 1.0);
+                 glVertex2f(width(), 0);
+
+                 glTexCoord2f(x_fraction, 1.0-y_fraction);
+                 glVertex2f(width(), height());
+
+                 glTexCoord2f(0, 1.0-y_fraction);
+                 glVertex2f(0, height());
+             }
+             glEnd();
+
+             glDisable(GL_TEXTURE_2D);
+             p.restore();
+
+             drawSource(p);
+             p.end();
+             m_pbuffer-&gt;updateDynamicTexture(m_compositing_tex);
+         }
+
+         glWidget()-&gt;makeCurrent();
+         glBindTexture(GL_TEXTURE_2D, m_compositing_tex);
+         glEnable(GL_TEXTURE_2D);
+         glColor4f(1.,1.,1.,1.);
+         glBegin(GL_QUADS);
+         {
+             glTexCoord2f(0, 1.0);
+             glVertex2f(0, 0);
+
+             glTexCoord2f(x_fraction, 1.0);
+             glVertex2f(width(), 0);
+
+             glTexCoord2f(x_fraction, 1.0-y_fraction);
+             glVertex2f(width(), height());
+
+             glTexCoord2f(0, 1.0-y_fraction);
+             glVertex2f(0, height());
+         }
+         glEnd();
+         glDisable(GL_TEXTURE_2D);
+     } else
+ #endif
+     {
+         <span class="comment">//</span> using a QImage
+         if (m_buffer.size() != size()) {
+ #ifdef Q_WS_QWS
+             m_base_buffer = QPixmap(size());
+             m_base_buffer.fill(Qt::transparent);
+ #else
+             m_buffer = QImage(size(), QImage::Format_ARGB32_Premultiplied);
+             m_base_buffer = QImage(size(), QImage::Format_ARGB32_Premultiplied);
+
+             m_base_buffer.fill(0);
+ #endif
+
+             QPainter p(&amp;m_base_buffer);
+
+             drawBase(p);
+         }
+
+ #ifdef Q_WS_QWS
+         m_buffer = m_base_buffer;
+ #else
+         memcpy(m_buffer.bits(), m_base_buffer.bits(), m_buffer.numBytes());
+ #endif
+
+         {
+             QPainter p(&amp;m_buffer);
+             drawSource(p);
+         }
+
+ #ifdef Q_WS_QWS
+         painter-&gt;drawPixmap(0, 0, m_buffer);
+ #else
+         painter-&gt;drawImage(0, 0, m_buffer);
+ #endif
+     }
+
+     if (m_animation_enabled &amp;&amp; m_current_object == NoObject) {
+         updateCirclePos();
+     }
+ }
+
+ void CompositionRenderer::mousePressEvent(QMouseEvent *e)
+ {
+     setDescriptionEnabled(false);
+
+     QRectF circle = rectangle_around(m_circle_pos);
+
+     if (circle.contains(e-&gt;pos())) {
+         m_current_object = Circle;
+         m_offset = circle.center() - e-&gt;pos();
+     } else {
+         m_current_object = NoObject;
+     }
+ }
+
+ void CompositionRenderer::mouseMoveEvent(QMouseEvent *e)
+ {
+     if (m_current_object == Circle) setCirclePos(e-&gt;pos() + m_offset);
+ }
+
+ void CompositionRenderer::mouseReleaseEvent(QMouseEvent *)
+ {
+     m_current_object = NoObject;
+
+     if (m_animation_enabled)
+         updateCirclePos();
+ }
+
+ void CompositionRenderer::setCirclePos(const QPointF &amp;pos)
+ {
+     const QRect oldRect = rectangle_around(m_circle_pos).toAlignedRect();
+     m_circle_pos = pos;
+     const QRect newRect = rectangle_around(m_circle_pos).toAlignedRect();
+ #ifdef QT_OPENGL_SUPPORT
+     if (usesOpenGL())
+         update();
+     else
+ #endif
+         update(oldRect | newRect);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

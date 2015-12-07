@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qsplitter.cpp -->
+<head>
+  <title>Qt 4.4: QSplitterHandle Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSplitterHandle Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QSplitterHandle class provides handle functionality of the splitter. <a href="#details">More...</a></p>
+<pre> #include &lt;QSplitterHandle&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qsplitterhandle-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsplitterhandle.html#QSplitterHandle">QSplitterHandle</a></b> ( Qt::Orientation <i>orientation</i>, QSplitter * <i>parent</i> )</li>
+<li><div class="fn"/>bool <b><a href="qsplitterhandle.html#opaqueResize">opaqueResize</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qsplitterhandle.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsplitterhandle.html#setOrientation">setOrientation</a></b> ( Qt::Orientation <i>orientation</i> )</li>
+<li><div class="fn"/>QSplitter * <b><a href="qsplitterhandle.html#splitter">splitter</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qsplitterhandle.html#closestLegalPosition">closestLegalPosition</a></b> ( int <i>pos</i> )</li>
+<li><div class="fn"/>void <b><a href="qsplitterhandle.html#moveSplitter">moveSplitter</a></b> ( int <i>pos</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSplitterHandle class provides handle functionality of the splitter.</p>
+<p>QSplitterHandle is typically what people think about when they think about a splitter. It is the handle that is used to resize the widgets.</p>
+<p>A typical developer using <a href="qsplitter.html">QSplitter</a> will never have to worry about QSplitterHandle. It is provided for developers who want splitter handles that provide extra features, such as popup menus.</p>
+<p>The typical way one would create splitter handles is to subclass <a href="qsplitter.html">QSplitter</a> then reimplement <a href="qsplitter.html#createHandle">QSplitter::createHandle</a>() to instantiate the custom splitter handle. For example, a minimum <a href="qsplitter.html">QSplitter</a> subclass might look like this:</p>
+<pre> class Splitter : public QSplitter
+ {
+ public:
+     Splitter(Qt::Orientation orientation, QWidget *parent = 0);
+
+ protected:
+     QSplitterHandle *createHandle();
+ };</pre>
+<p>The <a href="qsplitter.html#createHandle">createHandle()</a> implementation simply constructs a custom splitter handle, called <tt>Splitter</tt> in this example:</p>
+<pre> QSplitterHandle *Splitter::createHandle()
+ {
+     return new SplitterHandle(orientation(), this);
+ }</pre>
+<p>Information about a given handle can be obtained using functions like <a href="qsplitterhandle.html#orientation">orientation</a>() and <a href="qsplitterhandle.html#opaqueResize">opaqueResize</a>(), and is retrieved from its parent splitter. Details like these can be used to give custom handles different appearances depending on the splitter's orientation.</p>
+<p>The complexity of a custom handle subclass depends on the tasks that it needs to perform. A simple subclass might only provide a <a href="qwidget.html#paintEvent">paintEvent</a>() implementation:</p>
+<pre> void SplitterHandle::paintEvent(QPaintEvent *event)
+ {
+     QPainter painter(this);
+     if (orientation() == Qt::Horizontal) {
+         gradient.setStart(rect().left(), rect().height()/2);
+         gradient.setFinalStop(rect().right(), rect().height()/2);
+     } else {
+         gradient.setStart(rect().width()/2, rect().top());
+         gradient.setFinalStop(rect().width()/2, rect().bottom());
+     }
+     painter.fillRect(event-&gt;rect(), QBrush(gradient));
+ }</pre>
+<p>In this example, a predefined gradient is set up differently depending on the orientation of the handle. QSplitterHandle provides a reasonable size hint for the handle, so the subclass does not need to provide a reimplementation of <a href="qwidget.html#sizeHint-prop">sizeHint</a>() unless the handle has special size requirements.</p>
+<p>See also <a href="qsplitter.html">QSplitter</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSplitterHandle"></a>QSplitterHandle::QSplitterHandle ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i>, <a href="qsplitter.html">QSplitter</a> * <i>parent</i> )</h3>
+<p>Creates a <a href="qsplitter.html">QSplitter</a> handle with the given <i>orientation</i> and <a href="qsplitter.html">QSplitter</a> <i>parent</i>.</p>
+<h3 class="fn"><a name="closestLegalPosition"></a>int QSplitterHandle::closestLegalPosition ( int <i>pos</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the closest legal position to <i>pos</i> of the splitter handle. The positions are measured from the left or top edge of the splitter, even for right-to-left languages.</p>
+<p>See also <a href="qsplitter.html#closestLegalPosition">QSplitter::closestLegalPosition</a>() and <a href="qsplitterhandle.html#moveSplitter">moveSplitter</a>().</p>
+<h3 class="fn"><a name="moveSplitter"></a>void QSplitterHandle::moveSplitter ( int <i>pos</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Tells the splitter to move this handle to position <i>pos</i>, which is the distance from the left or top edge of the widget.</p>
+<p>Note that <i>pos</i> is also measured from the left (or top) for right-to-left languages. This function will map <i>pos</i> to the appropriate position before calling <a href="qsplitter.html#moveSplitter">QSplitter::moveSplitter</a>().</p>
+<p>See also <a href="qsplitter.html#moveSplitter">QSplitter::moveSplitter</a>() and <a href="qsplitterhandle.html#closestLegalPosition">closestLegalPosition</a>().</p>
+<h3 class="fn"><a name="opaqueResize"></a>bool QSplitterHandle::opaqueResize () const</h3>
+<p>Returns true if widgets are resized dynamically (opaquely), otherwise returns false. This value is controlled by the <a href="qsplitter.html">QSplitter</a>.</p>
+<p>See also <a href="qsplitter.html#opaqueResize-prop">QSplitter::opaqueResize</a>().</p>
+<h3 class="fn"><a name="orientation"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> QSplitterHandle::orientation () const</h3>
+<p>Returns the handle's orientation. This is usually propagated from the <a href="qsplitter.html">QSplitter</a>.</p>
+<p>See also <a href="qsplitterhandle.html#setOrientation">setOrientation</a>() and <a href="qsplitter.html#orientation-prop">QSplitter::orientation</a>().</p>
+<h3 class="fn"><a name="setOrientation"></a>void QSplitterHandle::setOrientation ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> )</h3>
+<p>Sets the orientation of the splitter handle to <i>orientation</i>. This is usually propogated from the <a href="qsplitter.html">QSplitter</a>.</p>
+<p>See also <a href="qsplitterhandle.html#orientation">orientation</a>() and <a href="qsplitter.html#orientation-prop">QSplitter::setOrientation</a>().</p>
+<h3 class="fn"><a name="splitter"></a><a href="qsplitter.html">QSplitter</a> * QSplitterHandle::splitter () const</h3>
+<p>Returns the splitter associated with this splitter handle.</p>
+<p>See also <a href="qsplitter.html#handle">QSplitter::handle</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

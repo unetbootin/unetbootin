@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/concurrent/qfuture.cpp -->
+<head>
+  <title>Qt 4.4: QFuture Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFuture Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QFuture class represents the result of an asynchronous computation. <a href="#details">More...</a></p>
+<pre> #include &lt;QFuture&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#thread-safe">thread-safe</a>, except <a href="qfuture-const-iterator.html">const_iterator</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qfuture-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qfuture-const-iterator.html">const_iterator</a></b></li>
+<li><div class="fn"/>typedef <b><a href="qfuture.html#ConstIterator-typedef">ConstIterator</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfuture.html#QFuture">QFuture</a></b> ()</li>
+<li><div class="fn"/><b><a href="qfuture.html#QFuture-3">QFuture</a></b> ( const QFuture &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qfuture.html#dtor.QFuture">~QFuture</a></b> ()</li>
+<li><div class="fn"/>const_iterator <b><a href="qfuture.html#begin">begin</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#cancel">cancel</a></b> ()</li>
+<li><div class="fn"/>const_iterator <b><a href="qfuture.html#constBegin">constBegin</a></b> () const</li>
+<li><div class="fn"/>const_iterator <b><a href="qfuture.html#constEnd">constEnd</a></b> () const</li>
+<li><div class="fn"/>const_iterator <b><a href="qfuture.html#end">end</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isCanceled">isCanceled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isFinished">isFinished</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isPaused">isPaused</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isResultReadyAt">isResultReadyAt</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isRunning">isRunning</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#isStarted">isStarted</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#pause">pause</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qfuture.html#progressMaximum">progressMaximum</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfuture.html#progressMinimum">progressMinimum</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qfuture.html#progressText">progressText</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qfuture.html#progressValue">progressValue</a></b> () const</li>
+<li><div class="fn"/>T <b><a href="qfuture.html#result">result</a></b> () const</li>
+<li><div class="fn"/>T <b><a href="qfuture.html#resultAt">resultAt</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qfuture.html#resultCount">resultCount</a></b> () const</li>
+<li><div class="fn"/>QList&lt;T&gt; <b><a href="qfuture.html#results">results</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#resume">resume</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#setPaused">setPaused</a></b> ( bool <i>paused</i> )</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#togglePaused">togglePaused</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qfuture.html#waitForFinished">waitForFinished</a></b> ()</li>
+<li><div class="fn"/><b><a href="qfuture.html#operator-T">operator T</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#operator-not-eq">operator!=</a></b> ( const QFuture &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QFuture &amp; <b><a href="qfuture.html#operator-eq">operator=</a></b> ( const QFuture &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfuture.html#operator-eq-eq">operator==</a></b> ( const QFuture &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFuture class represents the result of an asynchronous computation.</p>
+<p>To start a computation, use one of the APIs in the <a href="threads.html#qtconcurrent-intro">Qt Concurrent</a> framework.</p>
+<p>QFuture allows threads to be synchronized against one or more results which will be ready at a later point in time. The result can be of any type that has a default constructor and a copy constructor. If a result is not available at the time of calling the <a href="qfuture.html#result">result</a>(), <a href="qfuture.html#resultAt">resultAt</a>(), or <a href="qfuture.html#results">results</a>() functions, QFuture will wait until the result becomes available. You can use the <a href="qfuture.html#isResultReadyAt">isResultReadyAt</a>() function to determine if a result is ready or not. For QFuture objects that report more than one result, the <a href="qfuture.html#resultCount">resultCount</a>() function returns the number of continuous results. This means that it is always safe to iterate through the results from 0 to <a href="qfuture.html#resultCount">resultCount</a>().</p>
+<p>QFuture provides a <a href="containers.html#java-style-iterators">Java-style iterator</a> (<a href="qfutureiterator.html">QFutureIterator</a>) and an <a href="containers.html#stl-style-iterators">STL-style iterator</a> (<a href="qfuture-const-iterator.html">QFuture::const_iterator</a>). Using these iterators is another way to access results in the future.</p>
+<p>QFuture also offers ways to interact with a runnning computation. For instance, the computation can be canceled with the <a href="qfuture.html#cancel">cancel</a>() function. To pause the computation, use the <a href="qfuture.html#setPaused">setPaused</a>() function or one of the <a href="qfuture.html#pause">pause</a>(), <a href="qfuture.html#resume">resume</a>(), or <a href="qfuture.html#togglePaused">togglePaused</a>() convenience functions. Be aware that not all asynchronous computations can be canceled or paused. For example, the future returned by <a href="qtconcurrentrun.html#run">QtConcurrent::run</a>() cannot be canceled; but the future returned by <a href="qtconcurrentmap.html#mappedReduced">QtConcurrent::mappedReduced</a>() can.</p>
+<p>Progress information is provided by the <a href="qfuture.html#progressValue">progressValue</a>(), <a href="qfuture.html#progressMinimum">progressMinimum</a>(), <a href="qfuture.html#progressMaximum">progressMaximum</a>(), and <a href="qfuture.html#progressText">progressText</a>() functions. The <a href="qfuture.html#waitForFinished">waitForFinished</a>() function causes the calling thread to block and wait for the computation to finish, ensuring that all results are available.</p>
+<p>The state of the computation represented by a QFuture can be queried using the <a href="qfuture.html#isCanceled">isCanceled</a>(), <a href="qfuture.html#isStarted">isStarted</a>(), <a href="qfuture.html#isFinished">isFinished</a>(), <a href="qfuture.html#isRunning">isRunning</a>(), or <a href="qfuture.html#isPaused">isPaused</a>() functions.</p>
+<p>QFuture is a lightweight reference counted class that can be passed by value.</p>
+<p>QFuture&lt;void&gt; is specialized to not contain any of the result fetching functions. Any QFuture&lt;T&gt; can be assigned or copied into a QFuture&lt;void&gt; as well. This is useful if only status or progress information is needed - not the actual result data.</p>
+<p>To interact with running tasks using signals and slots, use <a href="qfuturewatcher.html">QFutureWatcher</a>.</p>
+<p>See also <a href="qfuturewatcher.html">QFutureWatcher</a> and <a href="threads.html#qtconcurrent-intro">Qt Concurrent</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ConstIterator-typedef"></a>typedef QFuture::ConstIterator</h3>
+<p>Qt-style synonym for <a href="qfuture-const-iterator.html">QFuture::const_iterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFuture"></a>QFuture::QFuture ()</h3>
+<p>Constructs an empty future.</p>
+<h3 class="fn"><a name="QFuture-3"></a>QFuture::QFuture ( const QFuture &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<p>See also <a href="qfuture.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="dtor.QFuture"></a>QFuture::~QFuture ()</h3>
+<p>Destroys the future.</p>
+<p>Note that this neither waits nor cancels the asynchronous computation. Use <a href="qfuture.html#waitForFinished">waitForFinished</a>() or <a href="qfuturesynchronizer.html">QFutureSynchronizer</a> when you need to ensure that the computation is completed before the future is destroyed.</p>
+<h3 class="fn"><a name="begin"></a><a href="qfuture-const-iterator.html">const_iterator</a> QFuture::begin () const</h3>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style iterator</a> pointing to the first result in the future.</p>
+<p>See also <a href="qfuture.html#constBegin">constBegin</a>() and <a href="qfuture.html#end">end</a>().</p>
+<h3 class="fn"><a name="cancel"></a>void QFuture::cancel ()</h3>
+<p>Cancels the asynchronous computation represented by this future. Note that the cancelation is asynchronous. Use <a href="qfuture.html#waitForFinished">waitForFinished</a>() after calling cancel() when you need synchronous cancelation.</p>
+<p>Results currently available may still be accessed on a canceled future, but new results will <i>not</i> become available after calling this function. Any <a href="qfuturewatcher.html">QFutureWatcher</a> object that is watching this future will not deliver progress and result ready signals on a canceled future.</p>
+<p>Be aware that not all asynchronous computations can be canceled. For example, the future returned by <a href="qtconcurrentrun.html#run">QtConcurrent::run</a>() cannot be canceled; but the future returned by <a href="qtconcurrentmap.html#mappedReduced">QtConcurrent::mappedReduced</a>() can.</p>
+<h3 class="fn"><a name="constBegin"></a><a href="qfuture-const-iterator.html">const_iterator</a> QFuture::constBegin () const</h3>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style iterator</a> pointing to the first result in the future.</p>
+<p>See also <a href="qfuture.html#begin">begin</a>() and <a href="qfuture.html#constEnd">constEnd</a>().</p>
+<h3 class="fn"><a name="constEnd"></a><a href="qfuture-const-iterator.html">const_iterator</a> QFuture::constEnd () const</h3>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style iterator</a> pointing to the imaginary result after the last result in the future.</p>
+<p>See also <a href="qfuture.html#constBegin">constBegin</a>() and <a href="qfuture.html#end">end</a>().</p>
+<h3 class="fn"><a name="end"></a><a href="qfuture-const-iterator.html">const_iterator</a> QFuture::end () const</h3>
+<p>Returns a const <a href="containers.html#stl-style-iterators">STL-style iterator</a> pointing to the imaginary result after the last result in the future.</p>
+<p>See also <a href="qfuture.html#begin">begin</a>() and <a href="qfuture.html#constEnd">constEnd</a>().</p>
+<h3 class="fn"><a name="isCanceled"></a>bool QFuture::isCanceled () const</h3>
+<p>Returns true if the asynchronous computation has been canceled with the <a href="qfuture.html#cancel">cancel</a>() function; otherwise returns false.</p>
+<p>Be aware that the computation may still be running even though this function returns true. See <a href="qfuture.html#cancel">cancel</a>() for more details.</p>
+<h3 class="fn"><a name="isFinished"></a>bool QFuture::isFinished () const</h3>
+<p>Returns true if the asynchronous computation represented by this future has finished; otherwise returns false.</p>
+<h3 class="fn"><a name="isPaused"></a>bool QFuture::isPaused () const</h3>
+<p>Returns true if the asynchronous computation has been paused with the <a href="qfuture.html#pause">pause</a>() function; otherwise returns false.</p>
+<p>Be aware that the computation may still be running even though this function returns true. See <a href="qfuture.html#setPaused">setPaused</a>() for more details.</p>
+<p>See also <a href="qfuture.html#setPaused">setPaused</a>() and <a href="qfuture.html#togglePaused">togglePaused</a>().</p>
+<h3 class="fn"><a name="isResultReadyAt"></a>bool QFuture::isResultReadyAt ( int <i>index</i> ) const</h3>
+<p>Returns true if the result at <i>index</i> is immediately available; otherwise returns false.</p>
+<p>See also <a href="qfuture.html#resultAt">resultAt</a>() and <a href="qfuture.html#resultCount">resultCount</a>().</p>
+<h3 class="fn"><a name="isRunning"></a>bool QFuture::isRunning () const</h3>
+<p>Returns true if the asynchronous computation represented by this future is currently running; otherwise returns false.</p>
+<h3 class="fn"><a name="isStarted"></a>bool QFuture::isStarted () const</h3>
+<p>Returns true if the asynchronous computation represented by this future has been started; otherwise returns false.</p>
+<h3 class="fn"><a name="pause"></a>void QFuture::pause ()</h3>
+<p>Pauses the asynchronous computation represented by this future. This is a convenience method that simply calls setPaused(true).</p>
+<p>See also <a href="qfuture.html#resume">resume</a>().</p>
+<h3 class="fn"><a name="progressMaximum"></a>int QFuture::progressMaximum () const</h3>
+<p>Returns the maximum <a href="qfuture.html#progressValue">progressValue</a>().</p>
+<p>See also <a href="qfuture.html#progressValue">progressValue</a>() and <a href="qfuture.html#progressMinimum">progressMinimum</a>().</p>
+<h3 class="fn"><a name="progressMinimum"></a>int QFuture::progressMinimum () const</h3>
+<p>Returns the minimum <a href="qfuture.html#progressValue">progressValue</a>().</p>
+<p>See also <a href="qfuture.html#progressValue">progressValue</a>() and <a href="qfuture.html#progressMaximum">progressMaximum</a>().</p>
+<h3 class="fn"><a name="progressText"></a><a href="qstring.html">QString</a> QFuture::progressText () const</h3>
+<p>Returns the (optional) textual representation of the progress as reported by the asynchronous computation.</p>
+<p>Be aware that not all computations provide a textual representation of the progress, and as such, this function may return an empty string.</p>
+<h3 class="fn"><a name="progressValue"></a>int QFuture::progressValue () const</h3>
+<p>Returns the current progress value, which is between the <a href="qfuture.html#progressMinimum">progressMinimum</a>() and <a href="qfuture.html#progressMaximum">progressMaximum</a>().</p>
+<p>See also <a href="qfuture.html#progressMinimum">progressMinimum</a>() and <a href="qfuture.html#progressMaximum">progressMaximum</a>().</p>
+<h3 class="fn"><a name="result"></a>T QFuture::result () const</h3>
+<p>Returns the first result in the future. If the result is not immediately available, this function will block and wait for the result to become available. This is a convenience method for calling resultAt(0).</p>
+<p>See also <a href="qfuture.html#resultAt">resultAt</a>() and <a href="qfuture.html#results">results</a>().</p>
+<h3 class="fn"><a name="resultAt"></a>T QFuture::resultAt ( int <i>index</i> ) const</h3>
+<p>Returns the result at <i>index</i> in the future. If the result is not immediately available, this function will block and wait for the result to become available.</p>
+<p>See also <a href="qfuture.html#result">result</a>(), <a href="qfuture.html#results">results</a>(), and <a href="qfuture.html#resultCount">resultCount</a>().</p>
+<h3 class="fn"><a name="resultCount"></a>int QFuture::resultCount () const</h3>
+<p>Returns the number of continuous results available in this future. The real number of results stored might be different from this value, due to gaps in the result set. It is always safe to iterate through the results from 0 to resultCount().</p>
+<p>See also <a href="qfuture.html#result">result</a>(), <a href="qfuture.html#resultAt">resultAt</a>(), and <a href="qfuture.html#results">results</a>().</p>
+<h3 class="fn"><a name="results"></a><a href="qlist.html">QList</a>&lt;T&gt; QFuture::results () const</h3>
+<p>Returns all results from the future. If the results are not immediately available, this function will block and wait for them to become available.</p>
+<p>See also <a href="qfuture.html#result">result</a>(), <a href="qfuture.html#resultAt">resultAt</a>(), and <a href="qfuture.html#resultCount">resultCount</a>().</p>
+<h3 class="fn"><a name="resume"></a>void QFuture::resume ()</h3>
+<p>Resumes the asynchronous computation represented by this future. This is a convenience method that simply calls setPaused(false).</p>
+<p>See also <a href="qfuture.html#pause">pause</a>().</p>
+<h3 class="fn"><a name="setPaused"></a>void QFuture::setPaused ( bool <i>paused</i> )</h3>
+<p>If <i>paused</i> is true, this function pauses the asynchronous computation represented by the future. If the computation is already paused, this function does nothing. Any <a href="qfuturewatcher.html">QFutureWatcher</a> object that is watching this future will stop delivering progress and result ready signals while the future is paused. Signal delivery will continue once the future is resumed.</p>
+<p>If <i>paused</i> is false, this function resumes the asynchronous computation. If the computation was not previously paused, this function does nothing.</p>
+<p>Be aware that not all computations can be paused. For example, the future returned by <a href="qtconcurrentrun.html#run">QtConcurrent::run</a>() cannot be paused; but the future returned by <a href="qtconcurrentmap.html#mappedReduced">QtConcurrent::mappedReduced</a>() can.</p>
+<p>See also <a href="qfuture.html#isPaused">isPaused</a>(), <a href="qfuture.html#pause">pause</a>(), <a href="qfuture.html#resume">resume</a>(), and <a href="qfuture.html#togglePaused">togglePaused</a>().</p>
+<h3 class="fn"><a name="togglePaused"></a>void QFuture::togglePaused ()</h3>
+<p>Toggles the paused state of the asynchronous computation. In other words, if the computation is currently paused, calling this function resumes it; if the computation is running, it is paused. This is a convenience method for calling setPaused(!<a href="qfuture.html#isPaused">isPaused</a>()).</p>
+<p>See also <a href="qfuture.html#setPaused">setPaused</a>(), <a href="qfuture.html#pause">pause</a>(), and <a href="qfuture.html#resume">resume</a>().</p>
+<h3 class="fn"><a name="waitForFinished"></a>void QFuture::waitForFinished ()</h3>
+<p>Waits for the asynchronous computation to finish (including <a href="qfuture.html#cancel">cancel</a>()ed computations).</p>
+<h3 class="fn"><a name="operator-T"></a>QFuture::operator T () const</h3>
+<p>Returns the first result in the future. If the result is not immediately available, this function will block and wait for the result to become available. This is a convenience method for calling <a href="qfuture.html#result">result</a>() or resultAt(0).</p>
+<p>See also <a href="qfuture.html#result">result</a>(), <a href="qfuture.html#resultAt">resultAt</a>(), and <a href="qfuture.html#results">results</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QFuture::operator!= ( const QFuture &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> is <i>not</i> a copy of this future; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QFuture &amp; QFuture::operator= ( const QFuture &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i> to this future and returns a reference to this future.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QFuture::operator== ( const QFuture &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> is a copy of this future; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

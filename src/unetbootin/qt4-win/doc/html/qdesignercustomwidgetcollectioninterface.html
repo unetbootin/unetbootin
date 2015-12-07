@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtdesigner.qdoc -->
+<head>
+  <title>Qt 4.4: QDesignerCustomWidgetCollectionInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerCustomWidgetCollectionInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerCustomWidgetCollectionInterface class allows you to include several custom widgets in one single library. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerCustomWidgetCollectionInterface&gt;</pre><ul>
+<li><a href="qdesignercustomwidgetcollectioninterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qdesignercustomwidgetcollectioninterface.html#dtor.QDesignerCustomWidgetCollectionInterface">~QDesignerCustomWidgetCollectionInterface</a></b> ()</li>
+<li><div class="fn"/>virtual QList&lt;QDesignerCustomWidgetInterface *&gt; <b><a href="qdesignercustomwidgetcollectioninterface.html#customWidgets">customWidgets</a></b> () const = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerCustomWidgetCollectionInterface class allows you to include several custom widgets in one single library.</p>
+<p>When implementing a custom widget plugin, you build it as a separate library. If you want to include several custom widget plugins in the same library, you must in addition subclass QDesignerCustomWidgetCollectionInterface.</p>
+<p>QDesignerCustomWidgetCollectionInterface contains one single function returning a list of the collection's <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> objects. For example, if you have several custom widgets <tt>CustomWidgetOne</tt>, <tt>CustomWidgetTwo</tt> and <tt>CustomWidgetThree</tt>, the class definition may look like this:</p>
+<pre>     #include customwidgetoneinterface.h
+     #include customwidgettwointerface.h
+     #include customwidgetthreeinterface.h
+
+     #include &lt;QtDesigner/QtDesigner&gt;
+     #include &lt;QtCore/qplugin.h&gt;
+
+     class MyCustomWidgets: public QObject, public QDesignerCustomWidgetCollectionInterface
+     {
+         Q_OBJECT
+         Q_INTERFACES(QDesignerCustomWidgetCollectionInterface)
+
+     public:
+         MyCustomWidgets(QObject *parent = 0);
+
+         virtual QList&lt;QDesignerCustomWidgetInterface*&gt; customWidgets() const;
+
+     private:
+         QList&lt;QDesignerCustomWidgetInterface*&gt; widgets;
+     };</pre>
+<p>In the class constructor you add the interfaces to your custom widgets to the list which you return in the <a href="qdesignercustomwidgetcollectioninterface.html#customWidgets">customWidgets</a>() function:</p>
+<pre>     MyCustomWidgets::MyCustomWidgets(QObject *parent)
+             : QObject(parent)
+     {
+         widgets.append(new CustomWidgetOneInterface(this));
+         widgets.append(new CustomWidgetTwoInterface(this));
+         widgets.append(new CustomWidgetThreeInterface(this));
+     }
+
+     QList&lt;QDesignerCustomWidgetInterface*&gt; MyCustomWidgets::customWidgets() const
+     {
+         return widgets;
+     }
+
+     Q_EXPORT_PLUGIN2(customwidgetsplugin, MyCustomWidgets)</pre>
+<p>Note that instead of exporting each custom widget plugin using the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro, you export the entire collection. The <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro ensures that <i>Qt Designer</i> can access and construct the custom widgets. Without this macro, there is no way for <i>Qt Designer</i> to use them.</p>
+<p>See also <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> and <a href="designer-creating-custom-widgets.html">Creating Custom Widgets for Qt Designer</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QDesignerCustomWidgetCollectionInterface"></a>QDesignerCustomWidgetCollectionInterface::~QDesignerCustomWidgetCollectionInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the custom widget collection interface.</p>
+<h3 class="fn"><a name="customWidgets"></a><a href="qlist.html">QList</a>&lt;<a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> *&gt; QDesignerCustomWidgetCollectionInterface::customWidgets () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns a list of interfaces to the collection's custom widgets.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

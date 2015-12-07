@@ -1,0 +1,5 @@
+//! [0]
+    configure -platform win32-msvc2005 -xplatform wincewm50pocket-msvc2005 -opengl-es-cl
+//! [0]
+
+

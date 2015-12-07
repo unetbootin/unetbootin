@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QHelpEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHelpEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QHelpEvent class provides an event that is used to request helpful information about a particular point in a widget. <a href="#details">More...</a></p>
+<pre> #include &lt;QHelpEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qhelpevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qhelpevent.html#QHelpEvent">QHelpEvent</a></b> ( Type <i>type</i>, const QPoint &amp; <i>pos</i>, const QPoint &amp; <i>globalPos</i> )</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qhelpevent.html#globalPos">globalPos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qhelpevent.html#globalX">globalX</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qhelpevent.html#globalY">globalY</a></b> () const</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qhelpevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qhelpevent.html#x">x</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qhelpevent.html#y">y</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHelpEvent class provides an event that is used to request helpful information about a particular point in a widget.</p>
+<p>This event can be intercepted in applications to provide tooltips or &quot;What's This?&quot; help for custom widgets. The <a href="qevent.html#type">type</a>() can be either <a href="qevent.html#Type-enum">QEvent::ToolTip</a> or <a href="qevent.html#Type-enum">QEvent::WhatsThis</a>.</p>
+<p>See also <a href="qtooltip.html">QToolTip</a>, <a href="qwhatsthis.html">QWhatsThis</a>, <a href="qstatustipevent.html">QStatusTipEvent</a>, and <a href="qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QHelpEvent"></a>QHelpEvent::QHelpEvent ( <a href="qevent.html#Type-enum">Type</a> <i>type</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>globalPos</i> )</h3>
+<p>Constructs a help event with the given <i>type</i> corresponding to the widget-relative position specified by <i>pos</i> and the global position specified by <i>globalPos</i>.</p>
+<p><i>type</i> must be either <a href="qevent.html#Type-enum">QEvent::ToolTip</a> or <a href="qevent.html#Type-enum">QEvent::WhatsThis</a>.</p>
+<p>See also <a href="qhelpevent.html#pos">pos</a>() and <a href="qhelpevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="globalPos"></a>const <a href="qpoint.html">QPoint</a> &amp; QHelpEvent::globalPos () const</h3>
+<p>Returns the mouse cursor position when the event was generated in global coordinates.</p>
+<p>See also <a href="qhelpevent.html#pos">pos</a>(), <a href="qhelpevent.html#globalX">globalX</a>(), and <a href="qhelpevent.html#globalY">globalY</a>().</p>
+<h3 class="fn"><a name="globalX"></a>int QHelpEvent::globalX () const</h3>
+<p>Same as <a href="qhelpevent.html#globalPos">globalPos</a>().<a href="qhelpevent.html#x">x</a>().</p>
+<p>See also <a href="qhelpevent.html#x">x</a>(), <a href="qhelpevent.html#globalY">globalY</a>(), and <a href="qhelpevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="globalY"></a>int QHelpEvent::globalY () const</h3>
+<p>Same as <a href="qhelpevent.html#globalPos">globalPos</a>().<a href="qhelpevent.html#y">y</a>().</p>
+<p>See also <a href="qhelpevent.html#y">y</a>(), <a href="qhelpevent.html#globalX">globalX</a>(), and <a href="qhelpevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="pos"></a>const <a href="qpoint.html">QPoint</a> &amp; QHelpEvent::pos () const</h3>
+<p>Returns the mouse cursor position when the event was generated, relative to the widget to which the event is dispatched.</p>
+<p>See also <a href="qhelpevent.html#globalPos">globalPos</a>(), <a href="qhelpevent.html#x">x</a>(), and <a href="qhelpevent.html#y">y</a>().</p>
+<h3 class="fn"><a name="x"></a>int QHelpEvent::x () const</h3>
+<p>Same as <a href="qhelpevent.html#pos">pos</a>().x().</p>
+<p>See also <a href="qhelpevent.html#y">y</a>(), <a href="qhelpevent.html#pos">pos</a>(), and <a href="qhelpevent.html#globalPos">globalPos</a>().</p>
+<h3 class="fn"><a name="y"></a>int QHelpEvent::y () const</h3>
+<p>Same as <a href="qhelpevent.html#pos">pos</a>().y().</p>
+<p>See also <a href="qhelpevent.html#x">x</a>(), <a href="qhelpevent.html#pos">pos</a>(), and <a href="qhelpevent.html#globalPos">globalPos</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

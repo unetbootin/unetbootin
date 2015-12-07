@@ -1,0 +1,167 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*! 
+    \page unicode.html
+    \title Unicode
+    \ingroup architecture
+    \ingroup text-processing
+    \brief Information about support for Unicode in Qt.
+
+    Unicode is a multi-byte character set, portable across all major
+    computing platforms and with decent coverage over most of the world.
+    It is also single-locale; it includes no code pages or other
+    complexities that make software harder to write and test. There is no
+    competing character set that's reasonably cross-platform. For these
+    reasons, Trolltech uses Unicode 4.0 as the native character set for Qt.
+
+
+    \section1 Information about Unicode on the Web
+
+    The \l{http://www.unicode.org/}{Unicode Consortium} has a number
+    of documents available, including
+
+    \list
+
+    \i \l{http://www.unicode.org/unicode/standard/principles.html}{A
+    technical introduction to Unicode}
+    \i \l{http://www.unicode.org/unicode/standard/standard.html}{The
+    home page for the standard}
+
+    \endlist
+
+
+    \section1 The Standard
+
+    The current version of the standard is 4.0.0.
+
+    \list
+
+    \i \link http://www.amazon.com/exec/obidos/ASIN/0321185781/trolltech/t
+    The Unicode Standard, version 4.0.\endlink  See also
+    \link http://www.unicode.org/unicode/standard/versions/
+    its home page.\endlink
+    \i \link http://www.amazon.com/exec/obidos/ASIN/0201616335/trolltech/t
+    The Unicode Standard, version 3.2.\endlink 
+    \i \link http://www.amazon.com/exec/obidos/ASIN/0201473459/trolltech/t
+    The Unicode Standard, version 2.0.\endlink  See also the
+    \link http://www.unicode.org/unicode/reports/tr8.html 2.1
+    update\endlink and
+    \link http://www.unicode.org/unicode/standard/versions/enumeratedversions.html#Unicode 2.1.9 the 2.1.9 data files\endlink at www.unicode.org.
+
+    \endlist
+
+    \section1 Unicode in Qt
+
+    In Qt, and in most applications that use Qt, most or all user-visible
+    strings are stored using Unicode. Qt provides:
+
+    \list
+
+    \i Translation to/from legacy encodings for file I/O: see
+    QTextCodec and QTextStream.
+    \i Translation from Input Methods and 8-bit keyboard input.
+    \i Translation to legacy character sets for on-screen display.
+    \i A string class, QString, that stores Unicode characters, with
+    support for migrating from C strings including fast (cached)
+    translation to and from US-ASCII, and all the usual string
+    operations.
+    \i Unicode-aware widgets where appropriate.
+    \i Unicode support detection on Windows, so that Qt provides Unicode
+    even on Windows platforms that do not support it natively.
+
+    \endlist
+
+    To fully benefit from Unicode, we recommend using QString for storing
+    all user-visible strings, and performing all text file I/O using
+    QTextStream. Use QKeyEvent::text() for keyboard input in any custom
+    widgets you write; it does not make much difference for slow typists
+    in Western Europe or North America, but for fast typists or people
+    using special input methods using text() is beneficial.
+
+    All the function arguments in Qt that may be user-visible strings,
+    QLabel::setText() and a many others, take \c{const QString &}s.
+    QString provides implicit casting from \c{const char *}
+    so that things like
+
+    \snippet doc/src/snippets/code/doc.src.unicode.qdoc 0
+
+    will work. There is also a function, QObject::tr(), that provides
+    translation support, like this:
+
+    \snippet doc/src/snippets/code/doc.src.unicode.qdoc 1
+
+    QObject::tr() maps from \c{const char *} to a Unicode string, and
+    uses installable QTranslator objects to do the mapping.
+
+    Qt provides a number of built-in QTextCodec classes, that is,
+    classes that know how to translate between Unicode and legacy
+    encodings to support programs that must talk to other programs or
+    read/write files in legacy file formats.
+
+    By default, conversion to/from \c{const char *} uses a
+    locale-dependent codec. However, applications can easily find codecs
+    for other locales, and set any open file or network connection to use
+    a special codec. It is also possible to install new codecs, for
+    encodings that the built-in ones do not support. (At the time of
+    writing, Vietnamese/VISCII is one such example.)
+
+    Since US-ASCII and ISO-8859-1 are so common, there are also especially
+    fast functions for mapping to and from them. For example, to open an
+    application's icon one might do this:
+
+    \snippet doc/src/snippets/code/doc.src.unicode.qdoc 2
+
+    or
+
+    \snippet doc/src/snippets/code/doc.src.unicode.qdoc 3
+
+    Regarding output, Qt will do a best-effort conversion from
+    Unicode to whatever encoding the system and fonts provide.
+    Depending on operating system, locale, font availability, and Qt's
+    support for the characters used, this conversion may be good or bad.
+    We will extend this in upcoming versions, with emphasis on the most
+    common locales first.
+
+    \sa {Internationalization with Qt}
+*/

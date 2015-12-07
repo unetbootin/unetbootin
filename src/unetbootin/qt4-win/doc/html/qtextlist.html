@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextlist.cpp -->
+<head>
+  <title>Qt 4.4: QTextList Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextList Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextList class provides a decorated list of items in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextList&gt;</pre><p>Inherits <a href="qtextblockgroup.html">QTextBlockGroup</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextlist-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtextlist-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtextlist.html#add">add</a></b> ( const QTextBlock &amp; <i>block</i> )</li>
+<li><div class="fn"/>int <b><a href="qtextlist.html#count">count</a></b> () const</li>
+<li><div class="fn"/>QTextListFormat <b><a href="qtextlist.html#format">format</a></b> () const</li>
+<li><div class="fn"/>QTextBlock <b><a href="qtextlist.html#item">item</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtextlist.html#itemNumber">itemNumber</a></b> ( const QTextBlock &amp; <i>block</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtextlist.html#itemText">itemText</a></b> ( const QTextBlock &amp; <i>block</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtextlist.html#remove">remove</a></b> ( const QTextBlock &amp; <i>block</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextlist.html#removeItem">removeItem</a></b> ( int <i>i</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextlist.html#setFormat">setFormat</a></b> ( const QTextListFormat &amp; <i>format</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="qtextobject.html#public-functions">QTextObject</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>4 protected functions inherited from <a href="qtextblockgroup.html#protected-functions">QTextBlockGroup</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qtextobject.html#protected-functions">QTextObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextList class provides a decorated list of items in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A list contains a sequence of text blocks, each of which is marked with a bullet point or other symbol. Multiple levels of lists can be used, and the automatic numbering feature provides support for ordered numeric and alphabetical lists.</p>
+<p>Lists are created by using a text cursor to insert an empty list at the current position or by moving existing text into a new list. The <a href="qtextcursor.html#insertList">QTextCursor::insertList</a>() function inserts an empty block into the document at the cursor position, and makes it the first item in a list.</p>
+<pre>     QTextListFormat listFormat;
+     if (list) {
+         listFormat = list-&gt;format();
+         listFormat.setIndent(listFormat.indent() + 1);
+     }
+
+     listFormat.setStyle(QTextListFormat::ListDisc);
+     cursor.insertList(listFormat);</pre>
+<p>The <a href="qtextcursor.html#createList">QTextCursor::createList</a>() function takes the contents of the cursor's current block and turns it into the first item of a new list.</p>
+<p>The cursor's current list is found with <a href="qtextcursor.html#currentList">QTextCursor::currentList</a>().</p>
+<p>The number of items in a list is given by <a href="qtextlist.html#count">count</a>(). Each item can be obtained by its index in the list with the <a href="qtextlist.html#item">item</a>() function. Similarly, the index of a given item can be found with <a href="qtextlist.html#itemNumber">itemNumber</a>(). The text of each item can be found with the <a href="qtextlist.html#itemText">itemText</a>() function.</p>
+<p>Note that the items in the list may not be adjacent elements in the document. For example, the top-level items in a multi-level list will be separated by the items in lower levels of the list.</p>
+<p>List items can be deleted by index with the <a href="qtextlist.html#removeItem">removeItem</a>() function. <a href="qtextlist.html#remove">remove</a>() deletes the specified item in the list.</p>
+<p>The list's format is set with <a href="qtextlist.html#setFormat">setFormat</a>() and read with <a href="qtextlist.html#format">format</a>(). The format describes the decoration of the list itself, and not the individual items.</p>
+<p>See also <a href="qtextblock.html">QTextBlock</a>, <a href="qtextlistformat.html">QTextListFormat</a>, and <a href="qtextcursor.html">QTextCursor</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="add"></a>void QTextList::add ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> )</h3>
+<p>Makes the given <i>block</i> part of the list.</p>
+<p>See also <a href="qtextlist.html#remove">remove</a>() and <a href="qtextlist.html#removeItem">removeItem</a>().</p>
+<h3 class="fn"><a name="count"></a>int QTextList::count () const</h3>
+<p>Returns the number of items in the list.</p>
+<p>See also <a href="qtextlist-obsolete.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qtextlistformat.html">QTextListFormat</a> QTextList::format () const</h3>
+<p>Returns the list's format.</p>
+<p>See also <a href="qtextlist.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="item"></a><a href="qtextblock.html">QTextBlock</a> QTextList::item ( int <i>i</i> ) const</h3>
+<p>Returns the <i>i</i>-th text block in the list.</p>
+<p>See also <a href="qtextlist.html#count">count</a>() and <a href="qtextlist.html#itemText">itemText</a>().</p>
+<h3 class="fn"><a name="itemNumber"></a>int QTextList::itemNumber ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> ) const</h3>
+<p>Returns the index of the list item that corresponds to the given <i>block</i>. Returns -1 if the block was not present in the list.</p>
+<h3 class="fn"><a name="itemText"></a><a href="qstring.html">QString</a> QTextList::itemText ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> ) const</h3>
+<p>Returns the text of the list item that corresponds to the given <i>block</i>.</p>
+<h3 class="fn"><a name="remove"></a>void QTextList::remove ( const <a href="qtextblock.html">QTextBlock</a> &amp; <i>block</i> )</h3>
+<p>Removes the given <i>block</i> from the list.</p>
+<p>See also <a href="qtextlist.html#add">add</a>() and <a href="qtextlist.html#removeItem">removeItem</a>().</p>
+<h3 class="fn"><a name="removeItem"></a>void QTextList::removeItem ( int <i>i</i> )</h3>
+<p>Removes the item at item position <i>i</i> from the list. When the last item in the list is removed, the list is automatically deleted by the <a href="qtextdocument.html">QTextDocument</a> that owns it.</p>
+<p>See also <a href="qtextlist.html#add">add</a>() and <a href="qtextlist.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QTextList::setFormat ( const <a href="qtextlistformat.html">QTextListFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the list's format to <i>format</i>.</p>
+<p>See also <a href="qtextlist.html#format">format</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/opengl/qgl.cpp -->
+<head>
+  <title>Qt 4.4: Obsolete Members for QGLWidget</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Obsolete Members for QGLWidget</h1>
+<p><b>The following class members are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<p><ul><li><a href="qglwidget.html">QGLWidget class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qglwidget-obsolete.html#setFormat">setFormat</a></b> ( const QGLFormat &amp; <i>format</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<ul>
+<li><div class="fn"/>3 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+</ul>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qglwidget-obsolete.html#fontDisplayListBase">fontDisplayListBase</a></b> ( const QFont &amp; <i>font</i>, int <i>listBase</i> = 2000 )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="fontDisplayListBase"></a>int QGLWidget::fontDisplayListBase ( const <a href="qfont.html">QFont</a> &amp; <i>font</i>, int <i>listBase</i> = 2000 )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the value of the first display list that is generated for the characters in the given <i>font</i>. <i>listBase</i> indicates the base value used when generating the display lists for the font. The default value is 2000.</p>
+<h3 class="fn"><a name="setFormat"></a>void QGLWidget::setFormat ( const <a href="qglformat.html">QGLFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets a new format for this widget.</p>
+<p>If the underlying OpenGL/Window system cannot satisfy all the features requested in <i>format</i>, the nearest subset of features will be used. After creation, the <a href="qglwidget.html#format">format</a>() method will return the actual rendering context format obtained.</p>
+<p>The widget will be assigned a new <a href="qglcontext.html">QGLContext</a>, and the <a href="qglwidget.html#initializeGL">initializeGL</a>() function will be executed for this new context before the first <a href="qglwidget.html#resizeGL">resizeGL</a>() or <a href="qglwidget.html#paintGL">paintGL</a>().</p>
+<p>This method will try to keep display list and texture object sharing in effect with other QGLWidgets, but changing the format might make sharing impossible. Use <a href="qglwidget.html#isSharing">isSharing</a>() to see if sharing is still in effect.</p>
+<p>See also <a href="qglwidget.html#format">format</a>(), <a href="qglwidget.html#isSharing">isSharing</a>(), and <a href="qglwidget.html#isValid">isValid</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

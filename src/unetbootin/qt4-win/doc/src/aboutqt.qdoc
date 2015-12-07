@@ -1,0 +1,104 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page aboutqt.html
+    \title About Qt
+
+    Qt by \l{About Trolltech}{Trolltech} is the standard framework
+    for developing high-performance cross-platform applications. Qt
+    provides single-source portability across Microsoft Windows, Mac
+    OS X, Linux, all major commercial Unix variants, and embedded
+    Linux. On embedded Linux, the Qt API is available as
+    \l{Qt for Embedded Linux}.
+
+    Qt provides application developers with all the functionality
+    needed to build complex, high-performance GUI and console
+    applications. Qt is fully object-oriented, easily extensible, and
+    allows true component programming. Read the \l{Whitepapers}{Whitepaper}
+    for a comprehensive technical overview.
+
+    Since its commercial introduction in early 1996, Qt has formed
+    the basis of many thousands of successful applications worldwide,
+    including Google Earth, Adobe Photoshop Elements, and Skype. Qt
+    is also the basis of the popular \link http://www.kde.org/ KDE
+    \endlink Linux desktop environment, a standard component of all
+    major Linux distributions. See our \l{Customer Success Stories}
+    for some examples of commercial Qt development.
+
+    Qt is supported on the following platforms:
+    \list
+     \o \bold{Microsoft Windows} -- 98, NT 4.0, ME, 2000, and XP
+     \o \bold{Unix/X11} -- Linux, Sun Solaris, HP-UX, HP Tru64 UNIX,
+         IBM AIX, SGI IRIX and many others
+     \o \bold{Mac OS X} -- Mac OS X 10.3+
+     \o \bold{Embedded Linux} -- Linux platforms with framebuffer support
+    \endlist
+
+    See \l{Qt 4 Platforms Overview}{Trolltech's web site} for the
+    complete list of supported platform and compilers.
+
+    Qt is released in different editions:
+
+    \list
+    \i The \bold{\l{Qt Commercial Editions}} are used for commercial software
+    development. They permit traditional commercial software distribution
+    and include free upgrades and technical support. For the latest
+    prices, see the online
+    \l{Qt License Pricing}{Pricing Information} page or contact
+    \l{mailto:sales@trolltech.com}{sales@trolltech.com}.
+    \endlist
+
+    \list
+    \i The \bold{\l{Qt Open Source Edition}} is for the development of
+    Free and Open Source software only. It is provided free of charge
+    under the terms of both the
+    \l{qpl.html}{Q Public License} and the \link gpl.html GNU General
+    Public License\endlink.
+    \endlist
+
+    Trolltech also provides \l{Qt Solutions}, a growing range of
+    industry and platform specific components that complement Qt.
+    Some of these are only available to commercial customers, others
+    are available to all Qt users.
+*/

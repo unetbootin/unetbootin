@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qalgorithms.qdoc -->
+<head>
+  <title>Qt 4.4: &lt;QtAlgorithms&gt; - Generic Algorithms</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">&lt;QtAlgorithms&gt; - Generic Algorithms<br /><span class="subtitle"></span>
+</h1>
+<a name="Functionsx"></a>
+<h3>Functions</h3>
+<ul>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qBinaryFind-2">qBinaryFind</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</li>
+<li><div class="fn"/>Container::const_iterator <b><a href="qtalgorithms.html#qBinaryFind-3">qBinaryFind</a></b> ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>OutputIterator <b><a href="qtalgorithms.html#qCopy">qCopy</a></b> ( InputIterator <i>begin1</i>, InputIterator <i>end1</i>, OutputIterator <i>begin2</i> )</li>
+<li><div class="fn"/>BiIterator2 <b><a href="qtalgorithms.html#qCopyBackward">qCopyBackward</a></b> ( BiIterator1 <i>begin1</i>, BiIterator1 <i>end1</i>, BiIterator2 <i>end2</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qCount">qCount</a></b> ( InputIterator <i>begin</i>, InputIterator <i>end</i>, const T &amp; <i>value</i>, Size &amp; <i>n</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qCount-2">qCount</a></b> ( const Container &amp; <i>container</i>, const T &amp; <i>value</i>, Size &amp; <i>n</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qDeleteAll">qDeleteAll</a></b> ( ForwardIterator <i>begin</i>, ForwardIterator <i>end</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qDeleteAll-2">qDeleteAll</a></b> ( const Container &amp; <i>c</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtalgorithms.html#qEqual">qEqual</a></b> ( InputIterator1 <i>begin1</i>, InputIterator1 <i>end1</i>, InputIterator2 <i>begin2</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qFill">qFill</a></b> ( ForwardIterator <i>begin</i>, ForwardIterator <i>end</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qFill-2">qFill</a></b> ( Container &amp; <i>container</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>InputIterator <b><a href="qtalgorithms.html#qFind">qFind</a></b> ( InputIterator <i>begin</i>, InputIterator <i>end</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>Container::const_iterator <b><a href="qtalgorithms.html#qFind-2">qFind</a></b> ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>LessThan <b><a href="qtalgorithms.html#qGreater">qGreater</a></b> ()</li>
+<li><div class="fn"/>LessThan <b><a href="qtalgorithms.html#qLess">qLess</a></b> ()</li>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qLowerBound">qLowerBound</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qLowerBound-2">qLowerBound</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</li>
+<li><div class="fn"/>Container::const_iterator <b><a href="qtalgorithms.html#qLowerBound-3">qLowerBound</a></b> ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qSort">qSort</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qSort-2">qSort</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, LessThan <i>lessThan</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qSort-3">qSort</a></b> ( Container &amp; <i>container</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qStableSort">qStableSort</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qStableSort-2">qStableSort</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, LessThan <i>lessThan</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qStableSort-3">qStableSort</a></b> ( Container &amp; <i>container</i> )</li>
+<li><div class="fn"/>void <b><a href="qtalgorithms.html#qSwap">qSwap</a></b> ( T &amp; <i>var1</i>, T &amp; <i>var2</i> )</li>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qUpperBound">qUpperBound</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</li>
+<li><div class="fn"/>RandomAccessIterator <b><a href="qtalgorithms.html#qUpperBound-2">qUpperBound</a></b> ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</li>
+<li><div class="fn"/>Container::const_iterator <b><a href="qtalgorithms.html#qUpperBound-3">qUpperBound</a></b> ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</li>
+</ul>
+<p>Qt provides a number of global template functions in <tt>&lt;QtAlgorithms&gt;</tt> that work on containers and perform well-know algorithms. You can use these algorithms with any <a href="containers.html#container-class">container class</a> that provides STL-style iterators, including Qt's <a href="qlist.html">QList</a>, <a href="qlinkedlist.html">QLinkedList</a>, <a href="qvector.html">QVector</a>, <a href="qmap.html">QMap</a>, and <a href="qhash.html">QHash</a> classes.</p>
+<p>These functions have taken their inspiration from similar functions available in the STL <tt>&lt;algorithm&gt;</tt> header. Most of them have a direct STL equivalent; for example, <a href="qtalgorithms.html#qCopyBackward">qCopyBackward</a>() is the same as STL's copy_backward() algorithm.</p>
+<p>If STL is available on all your target platforms, you can use the STL algorithms instead of their Qt counterparts. One reason why you might want to use the the STL algorithms is that STL provides dozens and dozens of algorithms, whereas Qt only provides the most important ones, making no attempt to duplicate functionality that is already provided by the C++ standard.</p>
+<p>Most algorithms take <a href="containers.html#stl-style-iterators">STL-style iterators</a> as parameters. The algorithms are generic in the sense that they aren't bound to a specific iterator class; you can use them with any iterators that meet a certain set of requirements.</p>
+<p>Let's take the <a href="qtalgorithms.html#qFill">qFill</a>() algorithm as an example. Unlike <a href="qvector.html">QVector</a>, <a href="qlist.html">QList</a> has no fill() function that can be used to fill a list with a particular value. If you need that functionality, you can use <a href="qtalgorithms.html#qFill">qFill</a>():</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two&quot; &lt;&lt; &quot;three&quot;;
+
+         qFill(list.begin(), list.end(), &quot;eleven&quot;);
+         // list: [ &quot;eleven&quot;, &quot;eleven&quot;, &quot;eleven&quot; ]</pre>
+<p><a href="qtalgorithms.html#qFill">qFill</a>() takes a begin iterator, an end iterator, and a value. In the example above, we pass <tt>list.begin()</tt> and <tt>list.end()</tt> as the begin and end iterators, but this doesn't have to be the case:</p>
+<pre>         qFill(list.begin() + 1, list.end(), &quot;six&quot;);
+         // list: [ &quot;eleven&quot;, &quot;six&quot;, &quot;six&quot; ]</pre>
+<p>Different algorithms can have different requirements for the iterators they accept. For example, <a href="qtalgorithms.html#qFill">qFill</a>() accepts two <a href="#forward-iterators">forward iterators</a>. The iterator types required are specified for each algorithm. If an iterator of the wrong type is passed (for example, if <a href="qlist.html#ConstIterator-typedef">QList::ConstIterator</a> is passed as an <a href="#output-iterators">output iterator</a>), you will always get a compiler error, although not necessarily a very informative one.</p>
+<p>Some algorithms have special requirements on the value type stored in the containers. For example, <a href="qtalgorithms.html#qEqual">qEqual</a>() requires that the value type supports operator==(), which it uses to compare items. Similarly, <a href="qtalgorithms.html#qDeleteAll">qDeleteAll</a>() requires that the value type is a non-const pointer type (for example, <a href="qwidget.html">QWidget</a> *). The value type requirements are specified for each algorithm, and the compiler will produce an error if a requirement isn't met.</p>
+<a name="binaryfind-example"></a><p>The generic algorithms can be used on other container classes than those provided by Qt and STL. The syntax of STL-style iterators is modeled after C++ pointers, so it's possible to use plain arrays as containers and plain pointers as iterators. A common idiom is to use <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>() together with two static arrays: one that contains a list of keys, and another that contains a list of associated values. For example, the following code will look up an HTML entity (e.g&#x2e;, <tt>&amp;amp</tt>;) in the <tt>name_table</tt> array and return the corresponding Unicode value from the <tt>value_table</tt> if the entity is recognized:</p>
+<pre>         QChar resolveEntity(const QString &amp;entity)
+         {
+             static const QLatin1String name_table[] = {
+                 &quot;AElig&quot;, &quot;Aacute&quot;, ..., &quot;zwnj&quot;
+             };
+             static const ushort value_table[] = {
+                 0x0061, 0x00c1, ..., 0x200c
+             };
+             int N = sizeof(name_table) / sizeof(name_table[0]);
+
+             const QLatin1String *name = qBinaryFind(name_table, name_table + N,
+                                                     entity);
+             int index = name - name_table;
+             if (index == N)
+                 return QChar();
+
+             return QChar(value_table[index]);
+         }</pre>
+<p>This kind of code is for advanced users only; for most applications, a <a href="qmap.html">QMap</a>- or <a href="qhash.html">QHash</a>-based approach would work just as well:</p>
+<pre>         QChar resolveEntity(const QString &amp;entity)
+         {
+             static QMap&lt;QString, int&gt; entityMap;
+
+             if (!entityMap) {
+                 entityMap.insert(&quot;AElig&quot;, 0x0061);
+                 entityMap.insert(&quot;Aacute&quot;, 0x00c1);
+                 ...
+                 entityMap.insert(&quot;zwnj&quot;, 0x200c);
+             }
+             return QChar(entityMap.value(entity));
+         }</pre>
+<a name="types-of-iterators"></a>
+<h3>Types of Iterators</h3>
+<p>The algorithms have certain requirements on the iterator types they accept, and these are specified individually for each function. The compiler will produce an error if a requirement isn't met.</p>
+<a name="input-iterators"></a>
+<h4>Input Iterators</h4>
+<p>An <i>input iterator</i> is an iterator that can be used for reading data sequentially from a container. It must provide the following operators: <tt>==</tt> and <tt>!=</tt> for comparing two iterators, unary <tt>*</tt> for retrieving the value stored in the item, and prefix <tt>++</tt> for advancing to the next item.</p>
+<p>The Qt containers' iterator types (const and non-const) are all input iterators.</p>
+<a name="output-iterators"></a>
+<h4>Output Iterators</h4>
+<p>An <i>output iterator</i> is an iterator that can be used for writing data sequentially to a container or to some output stream. It must provide the following operators: unary <tt>*</tt> for writing a value (i.e&#x2e;, <tt>*it = val</tt>) and prefix <tt>++</tt> for advancing to the next item.</p>
+<p>The Qt containers' non-const iterator types are all output iterators.</p>
+<a name="forward-iterators"></a>
+<h4>Forward Iterators</h4>
+<p>A <i>forward iterator</i> is an iterator that meets the requirements of both input iterators and output iterators.</p>
+<p>The Qt containers' non-const iterator types are all forward iterators.</p>
+<a name="bidirectional-iterators"></a>
+<h4>Bidirectional Iterators</h4>
+<p>A <i>bidirectional iterator</i> is an iterator that meets the requirements of forward iterators but that in addition supports prefix <tt>--</tt> for iterating backward.</p>
+<p>The Qt containers' non-const iterator types are all bidirectional iterators.</p>
+<a name="random-access-iterators"></a>
+<h4>Random Access Iterators</h4>
+<p>The last category, <i>random access iterators</i>, is the most powerful type of iterator. It supports all the requirements of a bidirectional iterator, and supports the following operations:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><tt>i += n</tt></td><td>advances iterator <tt>i</tt> by <tt>n</tt> positions</td></tr>
+<tr valign="top" class="even"><td><tt>i -= n</tt></td><td>moves iterator <tt>i</tt> back by <tt>n</tt> positions</td></tr>
+<tr valign="top" class="odd"><td><tt>i + n</tt> or <tt>n + i</tt></td><td>returns the iterator for the item <tt>n</tt> positions ahead of iterator <tt>i</tt></td></tr>
+<tr valign="top" class="even"><td><tt>i - n</tt></td><td>returns the iterator for the item <tt>n</tt> positions behind of iterator <tt>i</tt></td></tr>
+<tr valign="top" class="odd"><td><tt>i - j</tt></td><td>returns the number of items between iterators <tt>i</tt> and <tt>j</tt></td></tr>
+<tr valign="top" class="even"><td><tt>i[n]</tt></td><td>same as <tt>*(i + n)</tt></td></tr>
+<tr valign="top" class="odd"><td><tt>i &lt; j</tt></td><td>returns true if iterator <tt>j</tt> comes after iterator <tt>i</tt></td></tr>
+</table></p>
+<p><a href="qlist.html">QList</a> and <a href="qvector.html">QVector</a>'s non-const iterator types are random access iterators.</p>
+<p>See also <a href="containers.html#container-classes">container classes</a> and <a href="qtglobal.html">&lt;QtGlobal&gt;</a>.</p>
+<hr />
+<h2>Function Documentation</h2>
+<h3 class="fn"><a name="qBinaryFind"></a>RandomAccessIterator qBinaryFind ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</h3>
+<p>Performs a binary search of the range [<i>begin</i>, <i>end</i>) and returns the position of an occurrence of <i>value</i>. If there are no occurrences of <i>value</i>, returns <i>end</i>.</p>
+<p>The items in the range [<i>begin</i>, <i>end</i>) must be sorted in ascending order; see <a href="qtalgorithms.html#qSort">qSort</a>().</p>
+<p>If there are many occurrences of the same value, any one of them could be returned. Use <a href="qtalgorithms.html#qLowerBound">qLowerBound</a>() or <a href="qtalgorithms.html#qUpperBound">qUpperBound</a>() if you need finer control.</p>
+<p>Example:</p>
+<pre>         QVector&lt;int&gt; vect;
+         vect &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+
+         QVector&lt;int&gt;::iterator i =
+                 qBinaryFind(vect.begin(), vect.end(), 6);
+         // i == vect.begin() + 2 (or 3 or 4)</pre>
+<p>This function requires the item type (in the example above, <a href="qstring.html">QString</a>) to implement <tt>operator&lt;()</tt>.</p>
+<p>See the <a href="qtalgorithms.html#binaryfind-example">detailed description</a> for an example usage.</p>
+<p>See also <a href="qtalgorithms.html#qLowerBound">qLowerBound</a>(), <a href="qtalgorithms.html#qUpperBound">qUpperBound</a>(), and <a href="qtalgorithms.html#random-access-iterators">random access iterators</a>.</p>
+<h3 class="fn"><a name="qBinaryFind-2"></a>RandomAccessIterator qBinaryFind ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses the <i>lessThan</i> function instead of <tt>operator&lt;()</tt> to compare the items.</p>
+<p>Note that the items in the range must be sorted according to the order specified by the <i>lessThan</i> object.</p>
+<h3 class="fn"><a name="qBinaryFind-3"></a>Container::const_iterator qBinaryFind ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qBinaryFind(<i>container</i>.begin(), <i>container</i>.end(), value);</p>
+<h3 class="fn"><a name="qCopy"></a>OutputIterator qCopy ( InputIterator <i>begin1</i>, InputIterator <i>end1</i>, OutputIterator <i>begin2</i> )</h3>
+<p>Copies the items from range [<i>begin1</i>, <i>end1</i>) to range [<i>begin2</i>, ..&#x2e;), in the order in which they appear.</p>
+<p>The item at position <i>begin1</i> is assigned to that at position <i>begin2</i>; the item at position <i>begin1</i> + 1 is assigned to that at position <i>begin2</i> + 1; and so on.</p>
+<p>Example:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two&quot; &lt;&lt; &quot;three&quot;;
+
+         QVector&lt;QString&gt; vect1(3);
+         qCopy(list.begin(), list.end(), vect1.begin());
+         // vect: [ &quot;one&quot;, &quot;two&quot;, &quot;three&quot; ]
+
+         QVector&lt;QString&gt; vect2(8);
+         qCopy(list.begin(), list.end(), vect2.begin() + 2);
+         // vect: [ &quot;&quot;, &quot;&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot;, &quot;&quot;, &quot;&quot;, &quot;&quot; ]</pre>
+<p>See also <a href="qtalgorithms.html#qCopyBackward">qCopyBackward</a>(), <a href="qtalgorithms.html#input-iterators">input iterators</a>, and <a href="qtalgorithms.html#output-iterators">output iterators</a>.</p>
+<h3 class="fn"><a name="qCopyBackward"></a>BiIterator2 qCopyBackward ( BiIterator1 <i>begin1</i>, BiIterator1 <i>end1</i>, BiIterator2 <i>end2</i> )</h3>
+<p>Copies the items from range [<i>begin1</i>, <i>end1</i>) to range [..&#x2e;, <i>end2</i>).</p>
+<p>The item at position <i>end1</i> - 1 is assigned to that at position <i>end2</i> - 1; the item at position <i>end1</i> - 2 is assigned to that at position <i>end2</i> - 2; and so on.</p>
+<p>Example:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two&quot; &lt;&lt; &quot;three&quot;;
+
+         QVector&lt;QString&gt; vect(5);
+         qCopyBackward(list.begin(), list.end(), vect.end());
+         // vect: [ &quot;&quot;, &quot;&quot;, &quot;one&quot;, &quot;two&quot;, &quot;three&quot; ]</pre>
+<p>See also <a href="qtalgorithms.html#qCopy">qCopy</a>() and <a href="qtalgorithms.html#bidirectional-iterators">bidirectional iterators</a>.</p>
+<h3 class="fn"><a name="qCount"></a>void qCount ( InputIterator <i>begin</i>, InputIterator <i>end</i>, const T &amp; <i>value</i>, Size &amp; <i>n</i> )</h3>
+<p>Returns the number of occurrences of <i>value</i> in the range [<i>begin</i>, <i>end</i>), which is returned in <i>n</i>. <i>n</i> is never initialized, the count is added to <i>n</i>. It is the caller's responsibility to initialize <i>n</i>.</p>
+<p>Example:</p>
+<pre>        QList&lt;int&gt; list;
+        list &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+
+        int countOf6;
+        qCount(list.begin(), list.end(), 6, countOf6);
+        // countOf6 == 3
+
+        int countOf7;
+        qCount(list.begin(), list.end(), 7, countOf7);
+        // countOf7 == 0</pre>
+<p>This function requires the item type (in the example above, <tt>int</tt>) to implement <tt>operator==()</tt>.</p>
+<p>See also <a href="qtalgorithms.html#input-iterators">input iterators</a>.</p>
+<h3 class="fn"><a name="qCount-2"></a>void qCount ( const Container &amp; <i>container</i>, const T &amp; <i>value</i>, Size &amp; <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Instead of operating on iterators, as in the other overload, this function operates on the specified <i>container</i> to obtain the number of instances of <i>value</i> in the variable passed as a reference in argument <i>n</i>.</p>
+<h3 class="fn"><a name="qDeleteAll"></a>void qDeleteAll ( ForwardIterator <i>begin</i>, ForwardIterator <i>end</i> )</h3>
+<p>Deletes all the items in the range [<i>begin</i>, <i>end</i>) using the C++ <tt>delete</tt> operator. The item type must be a pointer type (for example, <tt>QWidget *</tt>).</p>
+<p>Example:</p>
+<pre>         QList&lt;Employee *&gt; list;
+         list.append(new Employee(&quot;Blackpool&quot;, &quot;Stephen&quot;));
+         list.append(new Employee(&quot;Twist&quot;, &quot;Oliver&quot;));
+
+         qDeleteAll(list.begin(), list.end());
+         list.clear();</pre>
+<p>Notice that qDeleteAll() doesn't remove the items from the container; it merely calls <tt>delete</tt> on them. In the example above, we call clear() on the container to remove the items.</p>
+<p>See also <a href="qtalgorithms.html#forward-iterators">forward iterators</a>.</p>
+<h3 class="fn"><a name="qDeleteAll-2"></a>void qDeleteAll ( const Container &amp; <i>c</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qDeleteAll(<i>c</i>.begin(), <i>c</i>.end()).</p>
+<h3 class="fn"><a name="qEqual"></a>bool qEqual ( InputIterator1 <i>begin1</i>, InputIterator1 <i>end1</i>, InputIterator2 <i>begin2</i> )</h3>
+<p>Compares the items in the range [<i>begin1</i>, <i>end1</i>) with the items in the range [<i>begin2</i>, ..&#x2e;)&#x2e; Returns true if all the items compare equal; otherwise returns false.</p>
+<p>Example:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two &lt;&lt; &quot;three&quot;;
+
+         QVector&lt;QString&gt; vect[3];
+         vect[0] = &quot;one&quot;;
+         vect[1] = &quot;two&quot;;
+         vect[2] = &quot;three&quot;;
+
+         bool ret1 = qEqual(list.begin(), list.end(), vect.begin());
+         // ret1 == true
+
+         vect[2] = &quot;seven&quot;;
+         bool rec2 = qEqual(list.begin(), list.end(), vect.begin());
+         // ret2 == false</pre>
+<p>This function requires the item type (in the example above, <a href="qstring.html">QString</a>) to implement <tt>operator==()</tt>.</p>
+<p>See also <a href="qtalgorithms.html#input-iterators">input iterators</a>.</p>
+<h3 class="fn"><a name="qFill"></a>void qFill ( ForwardIterator <i>begin</i>, ForwardIterator <i>end</i>, const T &amp; <i>value</i> )</h3>
+<p>Fills the range [<i>begin</i>, <i>end</i>) with <i>value</i>.</p>
+<p>Example:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two&quot; &lt;&lt; &quot;three&quot;;
+
+         qFill(list.begin(), list.end(), &quot;eleven&quot;);
+         // list: [ &quot;eleven&quot;, &quot;eleven&quot;, &quot;eleven&quot; ]
+
+         qFill(list.begin() + 1, list.end(), &quot;six&quot;);
+         // list: [ &quot;eleven&quot;, &quot;six&quot;, &quot;six&quot; ]</pre>
+<p>See also <a href="qtalgorithms.html#qCopy">qCopy</a>() and <a href="qtalgorithms.html#forward-iterators">forward iterators</a>.</p>
+<h3 class="fn"><a name="qFill-2"></a>void qFill ( Container &amp; <i>container</i>, const T &amp; <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qFill(<i>container</i>.begin(), <i>container</i>.end(), <i>value</i>);</p>
+<h3 class="fn"><a name="qFind"></a>InputIterator qFind ( InputIterator <i>begin</i>, InputIterator <i>end</i>, const T &amp; <i>value</i> )</h3>
+<p>Returns an iterator to the first occurrence of <i>value</i> in a container in the range [<i>begin</i>, <i>end</i>). Returns <i>end</i> if <i>value</i> isn't found.</p>
+<p>Example:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;one&quot; &lt;&lt; &quot;two&quot; &lt;&lt; &quot;three&quot;;
+
+         QStringList::iterator i1 = qFind(list.begin(), list.end(), &quot;two&quot;);
+         // i1 == list.begin() + 1
+
+         QStringList::iterator i2 = qFind(list.begin(), list.end(), &quot;seventy&quot;);
+         // i2 == list.end()</pre>
+<p>This function requires the item type (in the example above, <a href="qstring.html">QString</a>) to implement <tt>operator==()</tt>.</p>
+<p>If the items in the range are in ascending order, you can get faster results by using <a href="qtalgorithms.html#qLowerBound">qLowerBound</a>() or <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>() instead of qFind().</p>
+<p>See also <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>() and <a href="qtalgorithms.html#input-iterators">input iterators</a>.</p>
+<h3 class="fn"><a name="qFind-2"></a>Container::const_iterator qFind ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qFind(<i>container</i>.begin(), <i>container</i>.end(), value);</p>
+<h3 class="fn"><a name="qGreater"></a>LessThan qGreater ()</h3>
+<p>Returns a functional object, or functor, that can be passed to <a href="qtalgorithms.html#qSort">qSort</a>() or <a href="qtalgorithms.html#qStableSort">qStableSort</a>().</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qSort(list.begin(), list.end(), qGreater&lt;int&gt;());
+         // list: [ 68, 33, 12, 12, 6 ]</pre>
+<p>See also <a href="qtalgorithms.html#qLess">qLess&lt;T&gt;</a>().</p>
+<h3 class="fn"><a name="qLess"></a>LessThan qLess ()</h3>
+<p>Returns a functional object, or functor, that can be passed to <a href="qtalgorithms.html#qSort">qSort</a>() or <a href="qtalgorithms.html#qStableSort">qStableSort</a>().</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qSort(list.begin(), list.end(), qLess&lt;int&gt;());
+         // list: [ 68, 33, 12, 12, 6 ]</pre>
+<p>See also <a href="qtalgorithms.html#qGreater">qGreater&lt;T&gt;</a>().</p>
+<h3 class="fn"><a name="qLowerBound"></a>RandomAccessIterator qLowerBound ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</h3>
+<p>Performs a binary search of the range [<i>begin</i>, <i>end</i>) and returns the position of the first ocurrence of <i>value</i>. If no such item is found, returns the position where it should be inserted.</p>
+<p>The items in the range [<i>begin</i>, <i>end</i>) must be sorted in ascending order; see <a href="qtalgorithms.html#qSort">qSort</a>().</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+
+         QList&lt;int&gt;::iterator i = qLowerBound(list.begin(), list.end(), 5);
+         list.insert(i, 5);
+         // list: [ 3, 3, 5, 6, 6, 6, 8 ]
+
+         i = qLowerBound(list.begin(), list.end(), 12);
+         list.insert(i, 12);
+         // list: [ 3, 3, 5, 6, 6, 6, 8, 12 ]</pre>
+<p>This function requires the item type (in the example above, <tt>int</tt>) to implement <tt>operator&lt;()</tt>.</p>
+<p>qLowerBound() can be used in conjunction with <a href="qtalgorithms.html#qUpperBound">qUpperBound</a>() to iterate over all occurrences of the same value:</p>
+<pre>         QVector&lt;int&gt; vect;
+         vect &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+         QVector&lt;int&gt;::iterator begin6 =
+                 qLowerBound(vect.begin(), vect.end(), 6);
+         QVector&lt;int&gt;::iterator end6 =
+                 qUpperBound(begin6, vect.end(), 6);
+
+         QVector&lt;int&gt;::iterator i = begin6;
+         while (i != end6) {
+             *i = 7;
+             ++i;
+         }
+         // vect: [ 3, 3, 7, 7, 7, 8 ]</pre>
+<p>See also <a href="qtalgorithms.html#qUpperBound">qUpperBound</a>() and <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>().</p>
+<h3 class="fn"><a name="qLowerBound-2"></a>RandomAccessIterator qLowerBound ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses the <i>lessThan</i> function instead of <tt>operator&lt;()</tt> to compare the items.</p>
+<p>Note that the items in the range must be sorted according to the order specified by the <i>lessThan</i> object.</p>
+<h3 class="fn"><a name="qLowerBound-3"></a>Container::const_iterator qLowerBound ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qLowerBound(<i>container</i>.begin(), <i>container</i>.end(), value);</p>
+<h3 class="fn"><a name="qSort"></a>void qSort ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i> )</h3>
+<p>Sorts the items in range [<i>begin</i>, <i>end</i>) in ascending order using the quicksort algorithm.</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qSort(list.begin(), list.end());
+         // list: [ 6, 12, 12, 33, 68 ]</pre>
+<p>The sort algorithm is efficient on large data sets. It operates in <a href="containers.html#linear-logarithmic-time">linear-logarithmic time</a>, O(<i>n</i> log <i>n</i>).</p>
+<p>This function requires the item type (in the example above, <tt>int</tt>) to implement <tt>operator&lt;()</tt>.</p>
+<p>If of two items neither is less than the other, the items are taken to be equal. It is then undefined which one of the two items will appear before the other after the sort.</p>
+<p>See also <a href="qtalgorithms.html#qStableSort">qStableSort</a>() and <a href="qtalgorithms.html#random-access-iterators">random access iterators</a>.</p>
+<h3 class="fn"><a name="qSort-2"></a>void qSort ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, LessThan <i>lessThan</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses the <i>lessThan</i> function instead of <tt>operator&lt;()</tt> to compare the items.</p>
+<p>For example, here's how to sort the strings in a <a href="qstringlist.html">QStringList</a> in case-insensitive alphabetical order:</p>
+<pre>         bool caseInsensitiveLessThan(const QString &amp;s1, const QString &amp;s2)
+         {
+             return s1.toLower() &lt; s2.toLower();
+         }
+
+         int doSomething()
+         {
+             QStringList list;
+             list &lt;&lt; &quot;AlPha&quot; &lt;&lt; &quot;beTA&quot; &lt;&lt; &quot;gamma&quot; &lt;&lt; &quot;DELTA&quot;;
+             qSort(list.begin(), list.end(), caseInsensitiveLessThan);
+             // list: [ &quot;AlPha&quot;, &quot;beTA&quot;, &quot;DELTA&quot;, &quot;gamma&quot; ]
+         }</pre>
+<p>To sort values in reverse order, pass <a href="qtalgorithms.html#qGreater">qGreater&lt;T&gt;</a>() as the <i>lessThan</i> parameter. For example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qSort(list.begin(), list.end(), qGreater&lt;int&gt;());
+         // list: [ 68, 33, 12, 12, 6 ]</pre>
+<p>If of two items neither is &quot;less than&quot; the other, the items are taken to be equal. It is then undefined which one of the two items will appear before the other after the sort.</p>
+<p>An alternative to using <a href="qtalgorithms.html#qSort">qSort</a>() is to put the items to sort in a <a href="qmap.html">QMap</a>, using the sort key as the <a href="qmap.html">QMap</a> key. This is often more convenient than defining a <i>lessThan</i> function. For example, the following code shows how to sort a list of strings case insensitively using <a href="qmap.html">QMap</a>:</p>
+<pre>         QStringList list;
+         list &lt;&lt; &quot;AlPha&quot; &lt;&lt; &quot;beTA&quot; &lt;&lt; &quot;gamma&quot; &lt;&lt; &quot;DELTA&quot;;
+
+         QMap&lt;QString, QString&gt; map;
+         foreach (QString str, list)
+             map.insert(str.toLower(), str);
+
+         list = map.values();</pre>
+<p>See also <a href="qmap.html">QMap</a>.</p>
+<h3 class="fn"><a name="qSort-3"></a>void qSort ( Container &amp; <i>container</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qSort(<i>container</i>.begin(), <i>container</i>.end());</p>
+<h3 class="fn"><a name="qStableSort"></a>void qStableSort ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i> )</h3>
+<p>Sorts the items in range [<i>begin</i>, <i>end</i>) in ascending order using a stable sorting algorithm.</p>
+<p>If of two items neither is less than the other, the items are taken to be equal. The item that appeared before the other in the original container will still appear first after the sort. This property is often useful when sorting user-visible data.</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qStableSort(list.begin(), list.end());
+         // list: [ 6, 12, 12, 33, 68 ]</pre>
+<p>The sort algorithm is efficient on large data sets. It operates in <a href="containers.html#linear-logarithmic-time">linear-logarithmic time</a>, O(<i>n</i> log <i>n</i>).</p>
+<p>This function requires the item type (in the example above, <tt>int</tt>) to implement <tt>operator&lt;()</tt>.</p>
+<p>See also <a href="qtalgorithms.html#qSort">qSort</a>() and <a href="qtalgorithms.html#random-access-iterators">random access iterators</a>.</p>
+<h3 class="fn"><a name="qStableSort-2"></a>void qStableSort ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, LessThan <i>lessThan</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses the <i>lessThan</i> function instead of <tt>operator&lt;()</tt> to compare the items.</p>
+<p>For example, here's how to sort the strings in a <a href="qstringlist.html">QStringList</a> in case-insensitive alphabetical order:</p>
+<pre>         bool caseInsensitiveLessThan(const QString &amp;s1, const QString &amp;s2)
+         {
+             return s1.toLower() &lt; s2.toLower();
+         }
+
+         int doSomething()
+         {
+             QStringList list;
+             list &lt;&lt; &quot;AlPha&quot; &lt;&lt; &quot;beTA&quot; &lt;&lt; &quot;gamma&quot; &lt;&lt; &quot;DELTA&quot;;
+             qStableSort(list.begin(), list.end(), caseInsensitiveLessThan);
+             // list: [ &quot;AlPha&quot;, &quot;beTA&quot;, &quot;DELTA&quot;, &quot;gamma&quot; ]
+         }</pre>
+<p>Note that earlier versions of Qt allowed using a lessThan function that took its arguments by non-const reference. From 4.3 and on this is no longer possible, the arguments has to be passed by const reference or value.</p>
+<p>To sort values in reverse order, pass <a href="qtalgorithms.html#qGreater">qGreater&lt;T&gt;</a>() as the <i>lessThan</i> parameter. For example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 33 &lt;&lt; 12 &lt;&lt; 68 &lt;&lt; 6 &lt;&lt; 12;
+         qStableSort(list.begin(), list.end(), qGreater&lt;int&gt;());
+         // list: [ 68, 33, 12, 12, 6 ]</pre>
+<p>If of two items neither is &quot;less than&quot; the other, the items are taken to be equal. The item that appeared before the other in the original container will still appear first after the sort. This property is often useful when sorting user-visible data.</p>
+<h3 class="fn"><a name="qStableSort-3"></a>void qStableSort ( Container &amp; <i>container</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qStableSort(<i>container</i>.begin(), <i>container</i>.end());</p>
+<h3 class="fn"><a name="qSwap"></a>void qSwap ( T &amp; <i>var1</i>, T &amp; <i>var2</i> )</h3>
+<p>Exchanges the values of variables <i>var1</i> and <i>var2</i>.</p>
+<p>Example:</p>
+<pre>         double pi = 3.14;
+         double e = 2.71;
+
+         qSwap(pi, e);
+         // pi == 2.71, e == 3.14</pre>
+<h3 class="fn"><a name="qUpperBound"></a>RandomAccessIterator qUpperBound ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i> )</h3>
+<p>Performs a binary search of the range [<i>begin</i>, <i>end</i>) and returns the position of the one-past-the-last occurrence of <i>value</i>. If no such item is found, returns the position where the item should be inserted.</p>
+<p>The items in the range [<i>begin</i>, <i>end</i>) must be sorted in ascending order; see <a href="qtalgorithms.html#qSort">qSort</a>().</p>
+<p>Example:</p>
+<pre>         QList&lt;int&gt; list;
+         list &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+
+         QList&lt;int&gt;::iterator i = qUpperBound(list.begin(), list.end(), 5);
+         list.insert(i, 5);
+         // list: [ 3, 3, 5, 6, 6, 6, 8 ]
+
+         i = qUpperBound(list.begin(), list.end(), 12);
+         list.insert(i, 12);
+         // list: [ 3, 3, 5, 6, 6, 6, 8, 12 ]</pre>
+<p>This function requires the item type (in the example above, <tt>int</tt>) to implement <tt>operator&lt;()</tt>.</p>
+<p>qUpperBound() can be used in conjunction with <a href="qtalgorithms.html#qLowerBound">qLowerBound</a>() to iterate over all occurrences of the same value:</p>
+<pre>         QVector&lt;int&gt; vect;
+         vect &lt;&lt; 3 &lt;&lt; 3 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 6 &lt;&lt; 8;
+         QVector&lt;int&gt;::iterator begin6 =
+                 qLowerBound(vect.begin(), vect.end(), 6);
+         QVector&lt;int&gt;::iterator end6 =
+                 qUpperBound(vect.begin(), vect.end(), 6);
+
+         QVector&lt;int&gt;::iterator i = begin6;
+         while (i != end6) {
+             *i = 7;
+             ++i;
+         }
+         // vect: [ 3, 3, 7, 7, 7, 8 ]</pre>
+<p>See also <a href="qtalgorithms.html#qLowerBound">qLowerBound</a>() and <a href="qtalgorithms.html#qBinaryFind">qBinaryFind</a>().</p>
+<h3 class="fn"><a name="qUpperBound-2"></a>RandomAccessIterator qUpperBound ( RandomAccessIterator <i>begin</i>, RandomAccessIterator <i>end</i>, const T &amp; <i>value</i>, LessThan <i>lessThan</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses the <i>lessThan</i> function instead of <tt>operator&lt;()</tt> to compare the items.</p>
+<p>Note that the items in the range must be sorted according to the order specified by the <i>lessThan</i> object.</p>
+<h3 class="fn"><a name="qUpperBound-3"></a>Container::const_iterator qUpperBound ( const Container &amp; <i>container</i>, const T &amp; <i>value</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This is the same as qUpperBound(<i>container</i>.begin(), <i>container</i>.end(), value);</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

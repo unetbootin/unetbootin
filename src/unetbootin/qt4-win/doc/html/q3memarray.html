@@ -1,0 +1,307 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3memarray.qdoc -->
+<head>
+  <title>Qt 4.4: Q3MemArray Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3MemArray Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3MemArray class is a template class that provides arrays of simple types. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3MemArray&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<ul>
+<li><a href="q3memarray-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="q3memarray.html#ConstIterator-typedef">ConstIterator</a></b></li>
+<li><div class="fn"/>typedef <b><a href="q3memarray.html#Iterator-typedef">Iterator</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3memarray.html#Q3MemArray-2">Q3MemArray</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3memarray.html#Q3MemArray-3">Q3MemArray</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/><b><a href="q3memarray.html#Q3MemArray-4">Q3MemArray</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</li>
+<li><div class="fn"/><b><a href="q3memarray.html#Q3MemArray-5">Q3MemArray</a></b> ( const QVector&lt;type&gt; &amp; <i>vector</i> )</li>
+<li><div class="fn"/><b><a href="q3memarray.html#dtor.Q3MemArray">~Q3MemArray</a></b> ()</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#assign">assign</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#assign-2">assign</a></b> ( const type * <i>data</i>, uint <i>size</i> )</li>
+<li><div class="fn"/>type &amp; <b><a href="q3memarray.html#at">at</a></b> ( uint <i>index</i> ) const</li>
+<li><div class="fn"/>Iterator <b><a href="q3memarray.html#begin">begin</a></b> ()</li>
+<li><div class="fn"/>ConstIterator <b><a href="q3memarray.html#begin-2">begin</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3memarray.html#bsearch">bsearch</a></b> ( const type &amp; <i>v</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3memarray.html#contains">contains</a></b> ( const type &amp; <i>v</i> ) const</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; <b><a href="q3memarray.html#copy">copy</a></b> () const</li>
+<li><div class="fn"/>uint <b><a href="q3memarray.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3memarray.html#data">data</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3memarray.html#detach">detach</a></b> ()</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#duplicate">duplicate</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#duplicate-2">duplicate</a></b> ( const type * <i>data</i>, uint <i>size</i> )</li>
+<li><div class="fn"/>Iterator <b><a href="q3memarray.html#end">end</a></b> ()</li>
+<li><div class="fn"/>ConstIterator <b><a href="q3memarray.html#end-2">end</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#fill">fill</a></b> ( const type &amp; <i>v</i>, int <i>size</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="q3memarray.html#find">find</a></b> ( const type &amp; <i>v</i>, uint <i>index</i> = 0 ) const</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>uint <b><a href="q3memarray.html#nrefs">nrefs</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3memarray.html#resetRawData">resetRawData</a></b> ( const type * <i>data</i>, uint <i>size</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#resize">resize</a></b> ( uint <i>size</i>, Optimization <i>optim</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#resize-2">resize</a></b> ( uint <i>size</i> )</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#setRawData">setRawData</a></b> ( const type * <i>data</i>, uint <i>size</i> )</li>
+<li><div class="fn"/>uint <b><a href="q3memarray.html#size">size</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3memarray.html#sort">sort</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#truncate">truncate</a></b> ( uint <i>pos</i> )</li>
+<li><div class="fn"/><b><a href="q3memarray.html#operator-QVector-lttype-gt">operator QVector&lt;type&gt;</a></b> () const</li>
+<li><div class="fn"/><b><a href="q3memarray.html#operator-const-type--2a">operator const type *</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#operator-not-eq">operator!=</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> ) const</li>
+<li><div class="fn"/>Q3MemArray&lt;type&gt; &amp; <b><a href="q3memarray.html#operator-eq">operator=</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3memarray.html#operator-eq-eq">operator==</a></b> ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> ) const</li>
+<li><div class="fn"/>type &amp; <b><a href="q3memarray.html#operator-5b-5d">operator[]</a></b> ( int <i>index</i> ) const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3memarray.html#Q3MemArray">Q3MemArray</a></b> ( int <i>arg1</i>, int <i>arg2</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3MemArray class is a template class that provides arrays of simple types.</p>
+<p>Q3MemArray is implemented as a template class. Define a template instance Q3MemArray&lt;X&gt; to create an array that contains X items.</p>
+<p>Q3MemArray stores the array elements directly in the array. It can only deal with simple types (i.e&#x2e; C++ types, structs, and classes that have no constructors, destructors, or virtual functions). Q3MemArray uses bitwise operations to copy and compare array elements.</p>
+<p>The <a href="q3ptrvector.html">Q3PtrVector</a> collection class is also a kind of array. Like most old Qt collection classes, it uses pointers to the contained items.</p>
+<p>Q3MemArray uses explicit sharing with a reference count. If more than one array shares common data and one of the arrays is modified, all the arrays are modified.</p>
+<p>The benefit of sharing is that a program does not need to duplicate data when it is not required, which results in lower memory use and less copying of data.</p>
+<p>Example:</p>
+<pre>     #include &lt;q3memarray.h&gt;
+     #include &lt;stdio.h&gt;
+
+     Q3MemArray&lt;int&gt; fib( int num ) // returns fibonacci array
+     {
+         Q_ASSERT( num &gt; 2 );
+         Q3MemArray&lt;int&gt; f( num ); // array of ints
+
+         f[0] = f[1] = 1;
+         for ( int i = 2; i &lt; num; i++ )
+             f[i] = f[i-1] + f[i-2];
+
+         return f;
+     }
+
+     int main()
+     {
+         Q3MemArray&lt;int&gt; a = fib( 6 ); // get first 6 fibonaccis
+         for ( int i = 0; i &lt; a.size(); i++ )
+             qDebug( &quot;%d: %d&quot;, i, a[i] );
+
+         qDebug( &quot;1 is found %d times&quot;, a.contains(1) );
+         qDebug( &quot;5 is found at index %d&quot;, a.find(5) );
+
+         return 0;
+     }</pre>
+<p>Program output:</p>
+<pre>     0: 1
+     1: 1
+     2: 2
+     3: 3
+     4: 5
+     5: 8
+     1 is found 2 times
+     5 is found at index 4</pre>
+<p>Note concerning the use of Q3MemArray for manipulating structs or classes: Compilers will often pad the size of structs of odd sizes up to the nearest word boundary. This will then be the size Q3MemArray will use for its bitwise element comparisons. Because the remaining bytes will typically be uninitialized, this can cause <a href="q3memarray.html#find">find</a>() etc. to fail to find the element. Example:</p>
+<pre>     // MyStruct may be padded to 4 or 8 bytes
+     struct MyStruct
+     {
+         short i; // 2 bytes
+         char c;  // 1 byte
+     };
+
+     Q3MemArray&lt;MyStruct&gt; a(1);
+     a[0].i = 5;
+     a[0].c = 't';
+
+     MyStruct x;
+     x.i = '5';
+     x.c = 't';
+     int i = a.find( x ); // may return -1 if the pad bytes differ</pre>
+<p>To work around this, make sure that you use a struct where sizeof() returns the same as the sum of the sizes of the members either by changing the types of the struct members or by adding dummy members.</p>
+<p>Q3MemArray data can be traversed by iterators (see <a href="q3memarray.html#begin">begin</a>() and <a href="q3memarray.html#end">end</a>()). The number of items is returned by <a href="q3memarray.html#count">count</a>(). The array can be resized with <a href="q3memarray.html#resize">resize</a>() and filled using <a href="q3memarray.html#fill">fill</a>().</p>
+<p>You can make a shallow copy of the array with <a href="q3memarray.html#assign">assign</a>() (or operator=()) and a deep copy with <a href="q3memarray.html#duplicate">duplicate</a>().</p>
+<p>Search for values in the array with <a href="q3memarray.html#find">find</a>() and <a href="q3memarray.html#contains">contains</a>(). For sorted arrays (see <a href="q3memarray.html#sort">sort</a>()) you can search using <a href="q3memarray.html#bsearch">bsearch</a>().</p>
+<p>You can set the data directly using <a href="q3memarray.html#setRawData">setRawData</a>() and <a href="q3memarray.html#resetRawData">resetRawData</a>(), although this requires care.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ConstIterator-typedef"></a>typedef Q3MemArray::ConstIterator</h3>
+<p>A const <a href="q3memarray.html">Q3MemArray</a> iterator.</p>
+<p>See also <a href="q3memarray.html#begin">begin</a>() and <a href="q3memarray.html#end">end</a>().</p>
+<h3 class="fn"><a name="Iterator-typedef"></a>typedef Q3MemArray::Iterator</h3>
+<p>A <a href="q3memarray.html">Q3MemArray</a> iterator.</p>
+<p>See also <a href="q3memarray.html#begin">begin</a>() and <a href="q3memarray.html#end">end</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3MemArray"></a>Q3MemArray::Q3MemArray ( int <i>arg1</i>, int <i>arg2</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs an array <i>without allocating</i> array space. The arguments <i>arg1</i> and <i>arg2</i> should be zero. Use at your own risk.</p>
+<h3 class="fn"><a name="Q3MemArray-2"></a>Q3MemArray::Q3MemArray ()</h3>
+<p>Constructs a null array.</p>
+<p>See also <a href="q3memarray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="Q3MemArray-3"></a>Q3MemArray::Q3MemArray ( int <i>size</i> )</h3>
+<p>Constructs an array with room for <i>size</i> elements. Makes a null array if <i>size</i> == 0.</p>
+<p>The elements are left uninitialized.</p>
+<p>See also <a href="q3memarray.html#resize">resize</a>() and <a href="q3memarray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="Q3MemArray-4"></a>Q3MemArray::Q3MemArray ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</h3>
+<p>Constructs a shallow copy of <i>a</i>.</p>
+<p>See also <a href="q3memarray.html#assign">assign</a>().</p>
+<h3 class="fn"><a name="Q3MemArray-5"></a>Q3MemArray::Q3MemArray ( const <a href="qvector.html">QVector</a>&lt;type&gt; &amp; <i>vector</i> )</h3>
+<p>Constructs a copy of <i>vector</i>.</p>
+<h3 class="fn"><a name="dtor.Q3MemArray"></a>Q3MemArray::~Q3MemArray ()</h3>
+<p>Dereferences the array data and deletes it if this was the last reference.</p>
+<h3 class="fn"><a name="assign"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::assign ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</h3>
+<p>Shallow copy. Dereferences the current array and references the data contained in <i>a</i> instead. Returns a reference to this array.</p>
+<p>See also <a href="q3memarray.html#operator-eq">operator=</a>().</p>
+<h3 class="fn"><a name="assign-2"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::assign ( const type * <i>data</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Shallow copy. Dereferences the current array and references the array data <i>data</i>, which contains <i>size</i> elements. Returns a reference to this array.</p>
+<p>Do not delete <i>data</i> later; <a href="q3memarray.html">Q3MemArray</a> will call free() on it at the right time.</p>
+<h3 class="fn"><a name="at"></a>type &amp; Q3MemArray::at ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> ) const</h3>
+<p>Returns a reference to the element at position <i>index</i> in the array.</p>
+<p>This can be used to both read and set an element.</p>
+<p>See also <a href="q3memarray.html#operator-5b-5d">operator[]</a>().</p>
+<h3 class="fn"><a name="begin"></a><a href="q3memarray.html#Iterator-typedef">Iterator</a> Q3MemArray::begin ()</h3>
+<p>Returns an iterator pointing at the beginning of this array. This iterator can be used in the same way as the iterators of <a href="q3valuelist.html">Q3ValueList</a> and <a href="qmap.html">QMap</a>, for example.</p>
+<h3 class="fn"><a name="begin-2"></a><a href="q3memarray.html#ConstIterator-typedef">ConstIterator</a> Q3MemArray::begin () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a const iterator pointing at the beginning of this array. This iterator can be used in the same way as the iterators of <a href="q3valuelist.html">Q3ValueList</a> and <a href="qmap.html">QMap</a>, for example.</p>
+<h3 class="fn"><a name="bsearch"></a>int Q3MemArray::bsearch ( const type &amp; <i>v</i> ) const</h3>
+<p>In a sorted array (as sorted by <a href="q3memarray.html#sort">sort</a>()), finds the first occurrence of <i>v</i> by using a binary search. For a sorted array this is generally much faster than <a href="q3memarray.html#find">find</a>(), which does a linear search.</p>
+<p>Returns the position of <i>v</i>, or -1 if <i>v</i> could not be found.</p>
+<p>See also <a href="q3memarray.html#sort">sort</a>() and <a href="q3memarray.html#find">find</a>().</p>
+<h3 class="fn"><a name="contains"></a>int Q3MemArray::contains ( const type &amp; <i>v</i> ) const</h3>
+<p>Returns the number of times <i>v</i> occurs in the array.</p>
+<p>See also <a href="q3memarray.html#find">find</a>().</p>
+<h3 class="fn"><a name="copy"></a>Q3MemArray&lt;type&gt; Q3MemArray::copy () const</h3>
+<p>Returns a deep copy of this array.</p>
+<p>See also <a href="q3memarray.html#detach">detach</a>() and <a href="q3memarray.html#duplicate">duplicate</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3MemArray::count () const</h3>
+<p>Returns the same as <a href="q3memarray.html#size">size</a>().</p>
+<p>See also <a href="q3memarray.html#size">size</a>().</p>
+<h3 class="fn"><a name="data"></a>type * Q3MemArray::data () const</h3>
+<p>Returns a pointer to the actual array data.</p>
+<p>The array is a null array if data() == 0 (null pointer).</p>
+<p>See also <a href="q3memarray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="detach"></a>void Q3MemArray::detach ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Detaches this array from shared array data; i.e&#x2e; it makes a private, deep copy of the data.</p>
+<p>Copying will be performed only if the <a href="q3memarray.html#nrefs">reference count</a> is greater than one.</p>
+<p>See also <a href="q3memarray.html#copy">copy</a>().</p>
+<h3 class="fn"><a name="duplicate"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::duplicate ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</h3>
+<p>Deep copy. Dereferences the current array and obtains a copy of the data contained in <i>a</i> instead. Returns a reference to this array.</p>
+<p>See also <a href="q3memarray.html#copy">copy</a>().</p>
+<h3 class="fn"><a name="duplicate-2"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::duplicate ( const type * <i>data</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Deep copy. Dereferences the current array and obtains a copy of the array data <i>data</i> instead. Returns a reference to this array. The size of the array is given by <i>size</i>.</p>
+<p>See also <a href="q3memarray.html#copy">copy</a>().</p>
+<h3 class="fn"><a name="end"></a><a href="q3memarray.html#Iterator-typedef">Iterator</a> Q3MemArray::end ()</h3>
+<p>Returns an iterator pointing behind the last element of this array. This iterator can be used in the same way as the iterators of <a href="q3valuelist.html">Q3ValueList</a> and <a href="qmap.html">QMap</a>, for example.</p>
+<h3 class="fn"><a name="end-2"></a><a href="q3memarray.html#ConstIterator-typedef">ConstIterator</a> Q3MemArray::end () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a const iterator pointing behind the last element of this array. This iterator can be used in the same way as the iterators of <a href="q3valuelist.html">Q3ValueList</a> and <a href="qmap.html">QMap</a>, for example.</p>
+<h3 class="fn"><a name="fill"></a>bool Q3MemArray::fill ( const type &amp; <i>v</i>, int <i>size</i> = -1 )</h3>
+<p>Fills the array with the value <i>v</i>. If <i>size</i> is specified as different from -1, then the array will be resized before being filled.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if <i>size</i> is -1, or <i>size</i> is != -1 and the memory can be allocated; otherwise returns FALSE.</p>
+<p>See also <a href="q3memarray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="find"></a>int Q3MemArray::find ( const type &amp; <i>v</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> = 0 ) const</h3>
+<p>Finds the first occurrence of <i>v</i>, starting at position <i>index</i>.</p>
+<p>Returns the position of <i>v</i>, or -1 if <i>v</i> could not be found.</p>
+<p>See also <a href="q3memarray.html#contains">contains</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3MemArray::isEmpty () const</h3>
+<p>Returns TRUE if the array is empty; otherwise returns FALSE.</p>
+<p>isEmpty() is equivalent to <a href="q3memarray.html#isNull">isNull</a>() for <a href="q3memarray.html">Q3MemArray</a> (unlike <a href="qstring.html">QString</a>).</p>
+<h3 class="fn"><a name="isNull"></a>bool Q3MemArray::isNull () const</h3>
+<p>Returns TRUE if the array is null; otherwise returns FALSE.</p>
+<p>A null array has <a href="q3memarray.html#size">size</a>() == 0 and <a href="q3memarray.html#data">data</a>() == 0.</p>
+<h3 class="fn"><a name="nrefs"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3MemArray::nrefs () const</h3>
+<p>Returns the reference count for the shared array data. This reference count is always greater than zero.</p>
+<h3 class="fn"><a name="resetRawData"></a>void Q3MemArray::resetRawData ( const type * <i>data</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )</h3>
+<p>Removes internal references to the raw data that was set using <a href="q3memarray.html#setRawData">setRawData</a>(). This means that <a href="q3memarray.html">Q3MemArray</a> no longer has access to the <i>data</i>, so you are free to manipulate <i>data</i> as you wish. You can now use the <a href="q3memarray.html">Q3MemArray</a> without affecting the original <i>data</i>, for example by calling <a href="q3memarray.html#setRawData">setRawData</a>() with a pointer to some other data.</p>
+<p>The arguments must be the <i>data</i> and length, <i>size</i>, that were passed to <a href="q3memarray.html#setRawData">setRawData</a>(). This is for consistency checking.</p>
+<p>See also <a href="q3memarray.html#setRawData">setRawData</a>().</p>
+<h3 class="fn"><a name="resize"></a>bool Q3MemArray::resize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i>, Optimization <i>optim</i> )</h3>
+<p>Resizes (expands or shrinks) the array to <i>size</i> elements. The array becomes a null array if <i>size</i> == 0.</p>
+<p>Returns TRUE if successful, or FALSE if the memory cannot be allocated.</p>
+<p>New elements are not initialized.</p>
+<p><i>optim</i> is either <a href="q3garray.html#Optimization-enum">Q3GArray::MemOptim</a> (the default) or <a href="q3garray.html#Optimization-enum">Q3GArray::SpeedOptim</a>. When optimizing for speed rather than memory consumption, the array uses a smart grow and shrink algorithm that might allocate more memory than is actually needed for <i>size</i> elements. This speeds up subsequent resize operations, for example when appending many elements to an array, since the space has already been allocated.</p>
+<p>See also <a href="q3memarray.html#size">size</a>().</p>
+<h3 class="fn"><a name="resize-2"></a>bool Q3MemArray::resize ( <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Resizes (expands or shrinks) the array to <i>size</i> elements. The array becomes a null array if <i>size</i> == 0.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if the memory can be allocated; otherwise returns FALSE.</p>
+<p>New elements are not initialized.</p>
+<p>See also <a href="q3memarray.html#size">size</a>().</p>
+<h3 class="fn"><a name="setRawData"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::setRawData ( const type * <i>data</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>size</i> )</h3>
+<p>Sets raw data and returns a reference to the array.</p>
+<p>Dereferences the current array and sets the new array data to <i>data</i> and the new array size to <i>size</i>. Do not attempt to resize or re-assign the array data when raw data has been set. Call resetRawData(<i>data</i>, <i>size</i>) to reset the array.</p>
+<p>Setting raw data is useful because it sets <a href="q3memarray.html">Q3MemArray</a> data without allocating memory or copying data.</p>
+<p>Example I (intended use):</p>
+<pre>     static char bindata[] = { 231, 1, 44, ... };
+     QByteArray  a;
+     a.setRawData( bindata, sizeof(bindata) );   // a points to bindata
+     QDataStream s( a, IO_ReadOnly );            // open on a's data
+     s &gt;&gt; &lt;something&gt;;                           // read raw bindata
+     a.resetRawData( bindata, sizeof(bindata) ); // finished</pre>
+<p>Example II (you don't want to do this):</p>
+<pre>     static char bindata[] = { 231, 1, 44, ... };
+     QByteArray  a, b;
+     a.setRawData( bindata, sizeof(bindata) );   // a points to bindata
+     a.resize( 8 );                              // will crash
+     b = a;                                      // will crash
+     a[2] = 123;                                 // might crash
+     // forget to resetRawData: will crash</pre>
+<p><b>Warning:</b> If you do not call <a href="q3memarray.html#resetRawData">resetRawData</a>(), <a href="q3memarray.html">Q3MemArray</a> will attempt to deallocate or reallocate the raw data, which might not be too good. Be careful.</p>
+<p>See also <a href="q3memarray.html#resetRawData">resetRawData</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3MemArray::size () const</h3>
+<p>Returns the size of the array (maximum number of elements).</p>
+<p>The array is a null array if size() == 0.</p>
+<p>See also <a href="q3memarray.html#isNull">isNull</a>() and <a href="q3memarray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="sort"></a>void Q3MemArray::sort ()</h3>
+<p>Sorts the array elements in ascending order, using bitwise comparison (memcmp()).</p>
+<p>See also <a href="q3memarray.html#bsearch">bsearch</a>().</p>
+<h3 class="fn"><a name="truncate"></a>bool Q3MemArray::truncate ( <a href="qtglobal.html#uint-typedef">uint</a> <i>pos</i> )</h3>
+<p>Truncates the array at position <i>pos</i>.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if the memory can be allocated; otherwise returns FALSE.</p>
+<p>Equivalent to resize(<i>pos</i>).</p>
+<p>See also <a href="q3memarray.html#resize">resize</a>().</p>
+<h3 class="fn"><a name="operator-QVector-lttype-gt"></a>Q3MemArray::operator QVector&lt;type&gt; () const</h3>
+<p>Automatically converts the <a href="q3memarray.html">Q3MemArray</a>&lt;type&gt; into a <a href="qvector.html">QVector</a>&lt;type&gt;.</p>
+<h3 class="fn"><a name="operator-const-type--2a"></a>Q3MemArray::operator const type * () const</h3>
+<p>Cast operator. Returns a pointer to the array.</p>
+<p>See also <a href="q3memarray.html#data">data</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool Q3MemArray::operator!= ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> ) const</h3>
+<p>Returns TRUE if this array is different from <i>a</i>; otherwise returns FALSE.</p>
+<p>The two arrays are compared bitwise.</p>
+<p>See also <a href="q3memarray.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3MemArray&lt;type&gt; &amp; Q3MemArray::operator= ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> )</h3>
+<p>Assigns a shallow copy of <i>a</i> to this array and returns a reference to this array.</p>
+<p>Equivalent to assign( a ).</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool Q3MemArray::operator== ( const Q3MemArray&lt;type&gt; &amp; <i>a</i> ) const</h3>
+<p>Returns TRUE if this array is equal to <i>a</i>; otherwise returns FALSE.</p>
+<p>The two arrays are compared bitwise.</p>
+<p>See also <a href="q3memarray.html#operator-not-eq">operator!=</a>().</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>type &amp; Q3MemArray::operator[] ( int <i>index</i> ) const</h3>
+<p>Returns a reference to the element at position <i>index</i> in the array.</p>
+<p>This can be used to both read and set an element. Equivalent to <a href="q3memarray.html#at">at</a>().</p>
+<p>See also <a href="q3memarray.html#at">at</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

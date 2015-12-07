@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/activeqt-dumpcpp.qdoc -->
+<head>
+  <title>Qt 4.4: The dumpcpp Tool (ActiveQt)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The dumpcpp Tool (ActiveQt)<br /><span class="subtitle"></span>
+</h1>
+<a name="dumpcpp"></a><p>The <tt>dumpcpp</tt> tool generates a C++ namespace for a type library.</p>
+<p>To generate a C++ namespace for a type library, call <tt>dumpcpp</tt> with the following command line parameters:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Option</th><th>Result</th></tr></thead>
+<tr valign="top" class="odd"><td>input</td><td>Generate documentation for <i>input</i>. <i>input</i> can specify a type library file or a type library ID, or a CLSID or ProgID for an object</td></tr>
+<tr valign="top" class="even"><td>-o file</td><td>Writes the class declaration to <i>file</i>.h and meta object infomation to <i>file</i>.cpp</td></tr>
+<tr valign="top" class="odd"><td>-n namespace</td><td>Generate a C++ namespace <i>namespace</i></td></tr>
+<tr valign="top" class="even"><td>-nometaobject</td><td>Do not generate a .cpp file with the meta object information. The meta object is then generated in runtime.</td></tr>
+<tr valign="top" class="odd"><td>-getfile libid</td><td>Print the filename for the typelibrary <i>libid</i> to stdout</td></tr>
+<tr valign="top" class="even"><td>-compat</td><td>Generate namespace with dynamicCall-compatible API</td></tr>
+<tr valign="top" class="odd"><td>-v</td><td>Print version information</td></tr>
+<tr valign="top" class="even"><td>-h</td><td>Print help</td></tr>
+</table></p>
+<p><tt>dumpcpp</tt> can be integrated into the <tt>qmake</tt> build system. In your .pro file, list the type libraries you want to use in the TYPELIBS variable:</p>
+<pre></pre>
+<p>The generated namespace will declare all enumerations, as well as one QAxObject subclass for each <tt>coclass</tt> and <tt>interface</tt> declared in the type library. coclasses marked with the <tt>control</tt> attribute will be wrapped by a QAxWidget subclass.</p>
+<p>Those classes that wrap creatable coclasses (i.e&#x2e; coclasses that are not marked as <tt>noncreatable</tt>) have a default constructor; this is typically a single class of type <tt>Application</tt>.</p>
+<pre>     Outlook::Application *outlook = new Outlook::Application;</pre>
+<p>All other classes can only be created by passing an IDispatch interface pointer to the constructor; those classes should however not be created explicitly. Instead, use the appropriate API of already created objects.</p>
+<pre>     Outlook::_NameSpace *session = outlook-&gt;Session();</pre>
+<p>All coclass wrappers also have one constructors taking an interface wrapper class for each interface implemented.</p>
+<pre>     Outlook::NameSpace *session = outlook-&gt;Session();</pre>
+<p>You have to create coclasses to be able to connect to signals of the subobject. Note that the constructor deletes the interface object, so the following will cause a segmentation fault:</p>
+<pre>     Outlook::_NameSpace *tmp = outlook-&gt;Session();
+     Outlook::NameSpace *session = new Outlook::NameSpace(tmp);
+     delete tmp; // or any other use of tmp: segfault</pre>
+<p>If the return type is of a coclass or interface type declared in another type library you have to include the namespace header for that other type library before including the header for the namespace you want to use (both header have to be generated with this tool).</p>
+<p>By default, methods and property returning subobjects will use the type as in the type library. The caller of the function is responsible for deleting or reparenting the object returned. If the <tt>-compat</tt> switch is set, properties and method returning a COM object have the return type <tt>IDispatch*</tt>, and the namespace will not declare wrapper classes for interfaces.</p>
+<p>In this case, create the correct wrapper class explicitly:</p>
+<pre>     Outlook::NameSpace *session = new Outlook::NameSpace(outlook-&gt;Session());</pre>
+<p>You can of course use the IDispatch* returned directly, in which case you have to call <tt>Release()</tt> when finished with the interface.</p>
+<p>All classes in the namespace are tagged with a macro that allows you to export or import them from a DLL. To do that, declare the macro to expand to <tt>__declspec(dllimport/export)</tt> before including the header file.</p>
+<p>To build the tool you must first build the <a href="qaxcontainer.html">QAxContainer</a> library. Then run your make tool in <tt>tools/dumpcpp</tt>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

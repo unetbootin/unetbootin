@@ -1,0 +1,18 @@
+//! [0]
+        cd path/to/QtEmbedded
+        ./configure -qt-gfx-vnc
+        make
+//! [0]
+
+
+//! [1]
+        cd path/to/QtEmbedded/examples/widgets/analogclock
+        ./analogclock -qws -display VNC:0
+//! [1]
+
+
+//! [2]
+        vncviewer localhost:0
+//! [2]
+
+

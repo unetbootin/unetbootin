@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/">
+    <file>files/v-slider-handle.svg</file>
+    <file>files/default.svg</file>
+</qresource>
+</RCC>
+

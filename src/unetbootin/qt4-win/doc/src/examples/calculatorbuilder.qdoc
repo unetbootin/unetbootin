@@ -1,0 +1,135 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example designer/calculatorbuilder
+    \title Calculator Builder Example
+
+    The Calculator Builder example shows how to create a user interface from
+    a \QD form at run-time, using the QUiLoader class.
+
+    \image calculatorbuilder-example.png
+
+    We use the form created in the \l{designer/calculatorform}{Calculator Form}
+    example to show that the same user interface can be generated when the
+    application is executed or defined when the application is built.
+
+    \section1 Preparation
+
+    The \l{designer/calculatorform}{Calculator Form} example defines a user
+    interface that we can use without modification. In this example, we use a
+    \l{The Qt Resource System}{resource file} to contain the \c{calculatorform.ui}
+    file created in the previous example, but it could be stored on disk instead.
+
+    To generate a form at run time, we need to link the example against the
+    \c QtUiTools module library. The project file we use contains all the
+    necessary information to do this:
+
+    \snippet examples/designer/calculatorbuilder/calculatorbuilder.pro 0
+
+    All the other necessary files are declared as usual.
+
+    \section1 CalculatorForm Class Definition
+
+    The \c CalculatorForm class defines the widget used to host the form's
+    user interface:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.h 0
+
+    Note that we do not need to include a header file to describe the user
+    interface. We only define two public slots, using the auto-connection
+    naming convention required by \c uic, and declare private variables
+    that we will use to access widgets provided by the form after they are
+    constructed.
+
+    \section1 CalculatorForm Class Implementation
+
+    We will need to use the QUiLoader class that is provided by the
+    \c libQtUiTools library, so we first ensure that we include the header
+    file for the module:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 0
+
+    The constructor uses a form loader object to construct the user
+    interface that we retrieve, via a QFile object, from the example's
+    resources:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 1
+
+    By including the user interface in the example's resources, we ensure
+    that it will be present when the example is run. The \c{loader.load()}
+    function takes the user interface description contained in the file
+    and constructs the form widget as a child widget of the \c{CalculatorForm}.
+
+    We are interested in three widgets in the generated user interface:
+    two spin boxes and a label. For convenience, we retrieve pointers to
+    these widgets from the widget that was constructed by the \c FormBuilder,
+    and we record them for later use. The \c qFindChild() template function
+    allows us to query widgets in order to find named child widgets.
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 2
+
+    The widgets created by the form loader need to be connected to the
+    specially-named slots in the \c CalculatorForm object. We use Qt's
+    meta-object system to enable these connections:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 3
+
+    The form widget is added to a layout, and the window title is set:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 4
+
+    The two slots that modify widgets provided by the form are defined
+    in a similar way to those in the \l{designer/calculatorform}{Calculator
+    Form} example, except that we read the values from the spin boxes and
+    write the result to the output widget via the pointers we recorded in
+    the constructor:
+
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 5
+    \codeline
+    \snippet examples/designer/calculatorbuilder/calculatorform.cpp 7
+
+    The advantage of this approach is that we can replace the form when the
+    application is run, but we can still manipulate the widgets it contains
+    as long as they are given appropriate names.
+*/

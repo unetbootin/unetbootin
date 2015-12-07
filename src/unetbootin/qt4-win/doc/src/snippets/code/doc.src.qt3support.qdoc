@@ -1,0 +1,10 @@
+//! [0]
+        #include <Qt3Support>
+//! [0]
+
+
+//! [1]
+        QT += qt3support
+//! [1]
+
+

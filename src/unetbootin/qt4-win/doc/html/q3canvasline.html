@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasLine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasLine Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasLine class provides a line on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasLine&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a>.</p>
+<ul>
+<li><a href="q3canvasline-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvasline.html#Q3CanvasLine">Q3CanvasLine</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasline.html#dtor.Q3CanvasLine">~Q3CanvasLine</a></b> ()</li>
+<li><div class="fn"/>QPoint <b><a href="q3canvasline.html#endPoint">endPoint</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvasline.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvasline.html#setPoints">setPoints</a></b> ( int <i>xa</i>, int <i>ya</i>, int <i>xb</i>, int <i>yb</i> )</li>
+<li><div class="fn"/>QPoint <b><a href="q3canvasline.html#startPoint">startPoint</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="q3canvaspolygonalitem.html#public-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>6 protected functions inherited from <a href="q3canvaspolygonalitem.html#protected-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasLine class provides a line on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>The line inherits functionality from <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a>, for example the <a href="q3canvaspolygonalitem.html#setPen">setPen</a>() function. The start and end points of the line are set with <a href="q3canvasline.html#setPoints">setPoints</a>().</p>
+<p>Like any other canvas item lines can be moved with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasLine"></a>Q3CanvasLine::Q3CanvasLine ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a line from (0,0) to (0,0) on <i>canvas</i>.</p>
+<p>See also <a href="q3canvasline.html#setPoints">setPoints</a>().</p>
+<h3 class="fn"><a name="dtor.Q3CanvasLine"></a>Q3CanvasLine::~Q3CanvasLine ()</h3>
+<p>Destroys the line.</p>
+<h3 class="fn"><a name="endPoint"></a><a href="qpoint.html">QPoint</a> Q3CanvasLine::endPoint () const</h3>
+<p>Returns the end point of the line.</p>
+<p>See also <a href="q3canvasline.html#setPoints">setPoints</a>() and <a href="q3canvasline.html#startPoint">startPoint</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasLine::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 7 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Line</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setPoints"></a>void Q3CanvasLine::setPoints ( int <i>xa</i>, int <i>ya</i>, int <i>xb</i>, int <i>yb</i> )</h3>
+<p>Sets the line's start point to (<i>xa</i>, <i>ya</i>) and its end point to (<i>xb</i>, <i>yb</i>).</p>
+<h3 class="fn"><a name="startPoint"></a><a href="qpoint.html">QPoint</a> Q3CanvasLine::startPoint () const</h3>
+<p>Returns the start point of the line.</p>
+<p>See also <a href="q3canvasline.html#setPoints">setPoints</a>() and <a href="q3canvasline.html#endPoint">endPoint</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

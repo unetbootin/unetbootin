@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qcolor.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QColor</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QColor</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qcolor.html">QColor class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcolor-qt3.html#QColor-8">QColor</a></b> ( int <i>x</i>, int <i>y</i>, int <i>z</i>, Spec <i>colorSpec</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolor-qt3.html#getRgba">getRgba</a></b> ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i>, int * <i>a</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor-qt3.html#hsv">hsv</a></b> ( int * <i>h</i>, int * <i>s</i>, int * <i>v</i> ) const</li>
+<li><div class="fn"/>uint <b><a href="qcolor-qt3.html#pixel">pixel</a></b> ( int <i>screen</i> = -1 ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor-qt3.html#rgb-2">rgb</a></b> ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qcolor-qt3.html#setRgba-2">setRgba</a></b> ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> )</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QColor-8"></a>QColor::QColor ( int <i>x</i>, int <i>y</i>, int <i>z</i>, <a href="qcolor.html#Spec-enum">Spec</a> <i>colorSpec</i> )</h3>
+<p>Use one of the other <a href="qcolor.html">QColor</a> constructors, or one of the static convenience functions, instead.</p>
+<h3 class="fn"><a name="getRgba"></a>void QColor::getRgba ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i>, int * <i>a</i> ) const</h3>
+<p>Use <a href="qcolor.html#getRgb">getRgb</a>() instead.</p>
+<h3 class="fn"><a name="hsv"></a>void QColor::hsv ( int * <i>h</i>, int * <i>s</i>, int * <i>v</i> ) const</h3>
+<p>Use <a href="qcolor.html#getHsv">getHsv</a>() instead.</p>
+<p>See also <a href="qcolor.html#setHsv">setHsv</a>().</p>
+<h3 class="fn"><a name="pixel"></a><a href="qtglobal.html#uint-typedef">uint</a> QColor::pixel ( int <i>screen</i> = -1 ) const</h3>
+<p>Returns the pixel value used by the underlying window system to refer to a color.</p>
+<p>Use <a href="qcolormap.html#pixel">QColormap::pixel</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QColor myColor;
+ uint pixel = myColor.pixel(screen);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QColormap cmap = QColormap::instance(screen);
+ uint pixel  = cmap.pixel(*this);</pre>
+<h3 class="fn"><a name="rgb-2"></a>void QColor::rgb ( int * <i>r</i>, int * <i>g</i>, int * <i>b</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qcolor.html#getRgb">getRgb</a>() instead.</p>
+<h3 class="fn"><a name="setRgba-2"></a>void QColor::setRgba ( int <i>r</i>, int <i>g</i>, int <i>b</i>, int <i>a</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qcolor.html#setRgb">setRgb</a>() instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

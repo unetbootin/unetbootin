@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionViewItemV4 Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionViewItemV4 Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionViewItemV4 class is used to describe the parameters necessary for drawing a frame in Qt 4.4 or above. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionViewItemV4&gt;</pre><p>Inherits <a href="qstyleoptionviewitemv2.html">QStyleOptionViewItemV2</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qstyleoptionviewitemv4-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionviewitemv4.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionviewitemv4.html#ViewItemPosition-enum">ViewItemPosition</a></b> { Invalid, Beginning, Middle, End, OnlyOne }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionviewitemv4.html#QStyleOptionViewItemV4">QStyleOptionViewItemV4</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionviewitemv4.html#QStyleOptionViewItemV4-2">QStyleOptionViewItemV4</a></b> ( const QStyleOptionViewItemV4 &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qstyleoptionviewitemv4.html#QStyleOptionViewItemV4-3">QStyleOptionViewItemV4</a></b> ( const QStyleOptionViewItem &amp; <i>other</i> )</li>
+<li><div class="fn"/>QStyleOptionViewItemV4 &amp; <b><a href="qstyleoptionviewitemv4.html#operator-eq">operator=</a></b> ( const QStyleOptionViewItem &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qstyleoptionviewitemv2.html#public-functions">QStyleOptionViewItemV2</a></li>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 public type inherited from <a href="qstyleoptionviewitemv2.html#public-variables">QStyleOptionViewItemV2</a></li>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoptionviewitem.html#public-variables">QStyleOptionViewItem</a></li>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionViewItemV4 class is used to describe the parameters necessary for drawing a frame in Qt 4.4 or above.</p>
+<p>QStyleOptionViewItemV4 inherits QStyleOptionViewItemV3.</p>
+<p>An instance of the QStyleOptionViewItemV4 class has <a href="qstyleoption.html#type-var">type</a> <a href="qstyleoption.html#OptionType-enum">SO_ViewItem</a> and <a href="qstyleoption.html#version-var">version</a> 4. The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles. The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See QStyleOptionViewItemV3's detailed description for a discussion of how to handle &quot;V3&quot; classes.</p>
+<p>See also <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> and <a href="qstyleoption.html">QStyleOption</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionViewItemV4::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::Version</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">4</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionviewitem.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<h3 class="fn"><a name="ViewItemPosition-enum"></a>enum QStyleOptionViewItemV4::ViewItemPosition</h3>
+<p>This enum is used to represent the placement of the item on a row. This can be used to draw items differently depending on their placement, for example by putting rounded edges at the beginning and end, and straight edges in between.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::Invalid</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The ViewItemPosition is unknown and should be disregarded.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::Beginning</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The item appears at the beginning of the row.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::Middle</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The item appears in the middle of the row.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::End</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The item appears at the end of the row.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionViewItemV4::OnlyOne</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The item is the only one on the row, and is therefore both at the beginning and the end.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionViewItemV4"></a>QStyleOptionViewItemV4::QStyleOptionViewItemV4 ()</h3>
+<p>Constructs a <a href="qstyleoptionviewitemv4.html">QStyleOptionViewItemV4</a> object.</p>
+<h3 class="fn"><a name="QStyleOptionViewItemV4-2"></a>QStyleOptionViewItemV4::QStyleOptionViewItemV4 ( const QStyleOptionViewItemV4 &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="QStyleOptionViewItemV4-3"></a>QStyleOptionViewItemV4::QStyleOptionViewItemV4 ( const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>other</i> )</h3>
+<p>Constructs a <a href="qstyleoptionviewitemv4.html">QStyleOptionViewItemV4</a> copy of the <i>other</i> style option which can be either of the QStyleOptionViewItemV3 or <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> types.</p>
+<p>See also <a href="qstyleoption.html#version-var">version</a>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QStyleOptionViewItemV4 &amp; QStyleOptionViewItemV4::operator= ( const <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> style option to this style option. The <i>other</i> style option can be either of the QStyleOptionViewItemV3 or <a href="qstyleoptionviewitem.html">QStyleOptionViewItem</a> types.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

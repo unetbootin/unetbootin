@@ -1,0 +1,11 @@
+if(win32-msvc2005|win32-msvc2008):!equals(TEMPLATE_PREFIX, "vc"):equals(TEMPLATE, "app") {
+    NOPATH_TARGET = $$TARGET
+    NOPATH_TARGET ~= s,\\ , ,q      # Remove space escaping (NOPATH_TARGET is quoted)
+    NOPATH_TARGET ~= s,\\,/,g       # Change to single type separators
+    NOPATH_TARGET ~= s,^(.*/)+,,    # Remove all paths
+    QMAKE_LFLAGS += /MANIFEST $$quote(/MANIFESTFILE:\"$${OBJECTS_DIR}\\$${NOPATH_TARGET}.intermediate.manifest\")
+    QMAKE_PREV_POST_LINK = $$QMAKE_POST_LINK
+    QMAKE_POST_LINK = $$quote(mt.exe -nologo -manifest \"$$replace(OBJECTS_DIR,/,\\)\\$${NOPATH_TARGET}.intermediate.manifest\" -outputresource:$(DESTDIR_TARGET);1$$escape_expand(\n\t))
+    QMAKE_POST_LINK += $$QMAKE_PREV_POST_LINK
+    QMAKE_CLEAN += \"$$replace(OBJECTS_DIR,/,\\)\\$${NOPATH_TARGET}.intermediate.manifest\"
+}

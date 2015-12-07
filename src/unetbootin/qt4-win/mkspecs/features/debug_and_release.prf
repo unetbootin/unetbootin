@@ -1,0 +1,1 @@
+!macx-xcode:addExclusiveBuilds(debug, Debug, release, Release)

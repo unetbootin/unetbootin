@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/tools/q3semaphore.cpp -->
+<head>
+  <title>Qt 4.4: Q3Semaphore Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Semaphore Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Semaphore class provides a robust integer semaphore. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Semaphore&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#thread-safe">thread-safe</a>.</p>
+<ul>
+<li><a href="q3semaphore-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3semaphore.html#Q3Semaphore">Q3Semaphore</a></b> ( int <i>maxcount</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3semaphore.html#dtor.Q3Semaphore">~Q3Semaphore</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#available">available</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#total">total</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3semaphore.html#tryAccess">tryAccess</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#operator-2b-2b">operator++</a></b> ( int )</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#operator-2b-eq">operator+=</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#operator--">operator--</a></b> ( int )</li>
+<li><div class="fn"/>int <b><a href="q3semaphore.html#operator--eq">operator-=</a></b> ( int <i>n</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Semaphore class provides a robust integer semaphore.</p>
+<p>A Q3Semaphore can be used to serialize thread execution, in a similar way to a <a href="qmutex.html">QMutex</a>. A semaphore differs from a mutex, in that a semaphore can be accessed by more than one thread at a time.</p>
+<p>For example, suppose we have an application that stores data in a large tree structure. The application creates 10 threads (commonly called a thread pool) to perform searches on the tree. When the application searches the tree for some piece of data, it uses one thread per base node to do the searching. A semaphore could be used to make sure that two threads don't try to search the same branch of the tree at the same time.</p>
+<p>A non-computing example of a semaphore would be dining at a restaurant. A semaphore is initialized to have a maximum count equal to the number of chairs in the restaurant. As people arrive, they want a seat. As seats are filled, the semaphore is accessed, once per person. As people leave, the access is released, allowing more people to enter. If a party of 10 people want to be seated, but there are only 9 seats, those 10 people will wait, but a party of 4 people would be seated (taking the available seats to 5, making the party of 10 people wait longer).</p>
+<p>When a semaphore is created it is given a number which is the maximum number of concurrent accesses it will permit. This amount may be changed using operator++(), operator--(), operator+=() and operator-=(). The number of accesses allowed is retrieved with <a href="q3semaphore.html#available">available</a>(), and the total number with <a href="q3semaphore.html#total">total</a>(). Note that the incrementing functions will block if there aren't enough available accesses. Use <a href="q3semaphore.html#tryAccess">tryAccess</a>() if you want to acquire accesses without blocking.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Semaphore"></a>Q3Semaphore::Q3Semaphore ( int <i>maxcount</i> )</h3>
+<p>Creates a new semaphore. The semaphore can be concurrently accessed at most <i>maxcount</i> times.</p>
+<h3 class="fn"><a name="dtor.Q3Semaphore"></a>Q3Semaphore::~Q3Semaphore ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the semaphore.</p>
+<p><b>Warning:</b> If you destroy a semaphore that has accesses in use the resultant behavior is undefined.</p>
+<h3 class="fn"><a name="available"></a>int Q3Semaphore::available () const</h3>
+<p>Returns the number of accesses currently available to the semaphore.</p>
+<h3 class="fn"><a name="total"></a>int Q3Semaphore::total () const</h3>
+<p>Returns the total number of accesses to the semaphore.</p>
+<h3 class="fn"><a name="tryAccess"></a>bool Q3Semaphore::tryAccess ( int <i>n</i> )</h3>
+<p>Try to get access to the semaphore. If <a href="q3semaphore.html#available">available</a>() &lt; <i>n</i>, this function will return false immediately. If <a href="q3semaphore.html#available">available</a>() &gt;= <i>n</i>, this function will take <i>n</i> accesses and return true. This function does <i>not</i> block.</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>int Q3Semaphore::operator++ ( int )</h3>
+<p>Postfix ++ operator.</p>
+<p>Try to get access to the semaphore. If <a href="q3semaphore.html#available">available</a>() == 0, this call will block until it can get access, i.e&#x2e; until <a href="q3semaphore.html#available">available</a>() &gt; 0.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>int Q3Semaphore::operator+= ( int <i>n</i> )</h3>
+<p>Try to get access to the semaphore. If <a href="q3semaphore.html#available">available</a>() &lt; <i>n</i>, this call will block until it can get all the accesses it wants, i.e&#x2e; until <a href="q3semaphore.html#available">available</a>() &gt;= <i>n</i>.</p>
+<h3 class="fn"><a name="operator--"></a>int Q3Semaphore::operator-- ( int )</h3>
+<p>Postfix -- operator.</p>
+<p>Release access of the semaphore. This wakes all threads waiting for access to the semaphore.</p>
+<h3 class="fn"><a name="operator--eq"></a>int Q3Semaphore::operator-= ( int <i>n</i> )</h3>
+<p>Release <i>n</i> accesses to the semaphore.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QDropEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDropEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QDropEvent class provides an event which is sent when a drag and drop action is completed. <a href="#details">More...</a></p>
+<pre> #include &lt;QDropEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a> and <a href="qmimesource.html" class="obsolete">QMimeSource</a>.</p>
+<p>Inherited by <a href="qdragmoveevent.html">QDragMoveEvent</a>.</p>
+<ul>
+<li><a href="qdropevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qdropevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdropevent.html#QDropEvent">QDropEvent</a></b> ( const QPoint &amp; <i>pos</i>, Qt::DropActions <i>actions</i>, const QMimeData * <i>data</i>, Qt::MouseButtons <i>buttons</i>, Qt::KeyboardModifiers <i>modifiers</i>, Type <i>type</i> = Drop )</li>
+<li><div class="fn"/>void <b><a href="qdropevent.html#acceptProposedAction">acceptProposedAction</a></b> ()</li>
+<li><div class="fn"/>Qt::DropAction <b><a href="qdropevent.html#dropAction">dropAction</a></b> () const</li>
+<li><div class="fn"/>Qt::KeyboardModifiers <b><a href="qdropevent.html#keyboardModifiers">keyboardModifiers</a></b> () const</li>
+<li><div class="fn"/>const QMimeData * <b><a href="qdropevent.html#mimeData">mimeData</a></b> () const</li>
+<li><div class="fn"/>Qt::MouseButtons <b><a href="qdropevent.html#mouseButtons">mouseButtons</a></b> () const</li>
+<li><div class="fn"/>const QPoint &amp; <b><a href="qdropevent.html#pos">pos</a></b> () const</li>
+<li><div class="fn"/>Qt::DropActions <b><a href="qdropevent.html#possibleActions">possibleActions</a></b> () const</li>
+<li><div class="fn"/>Qt::DropAction <b><a href="qdropevent.html#proposedAction">proposedAction</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qdropevent.html#setDropAction">setDropAction</a></b> ( Qt::DropAction <i>action</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="qdropevent.html#source">source</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qmimesource.html#public-functions">QMimeSource</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDropEvent class provides an event which is sent when a drag and drop action is completed.</p>
+<p>When a widget <a href="qwidget.html#acceptDrops-prop">accepts drop events</a>, it will receive this event if it has accepted the most recent <a href="qdragenterevent.html">QDragEnterEvent</a> or <a href="qdragmoveevent.html">QDragMoveEvent</a> sent to it.</p>
+<p>The drop event contains a proposed action, available from <a href="qdropevent.html#proposedAction">proposedAction</a>(), for the widget to either accept or ignore. If the action can be handled by the widget, you should call the <a href="qdropevent.html#acceptProposedAction">acceptProposedAction</a>() function. Since the proposed action can be a combination of <a href="qt.html#DropAction-enum">Qt::DropAction</a> values, it may be useful to either select one of these values as a default action or ask the user to select their preferred action.</p>
+<p>If the proposed drop action is not suitable, perhaps because your custom widget does not support that action, you can replace it with any of the <a href="qdropevent.html#possibleActions">possible drop actions</a> by calling <a href="qdropevent.html#setDropAction">setDropAction</a>() with your preferred action. If you set a value that is not present in the bitwise OR combination of values returned by <a href="qdropevent.html#possibleActions">possibleActions</a>(), the default copy action will be used. Once a replacement drop action has been set, call accept() instead of <a href="qdropevent.html#acceptProposedAction">acceptProposedAction</a>() to complete the drop operation.</p>
+<p>The <a href="qdropevent.html#mimeData">mimeData</a>() function provides the data dropped on the widget in a <a href="qmimedata.html">QMimeData</a> object. This contains information about the MIME type of the data in addition to the data itself.</p>
+<p>See also <a href="qmimedata.html">QMimeData</a>, <a href="qdrag.html">QDrag</a>, and <a href="dnd.html">Drag and Drop</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDropEvent"></a>QDropEvent::QDropEvent ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, <a href="qt.html#DropAction-enum">Qt::DropActions</a> <i>actions</i>, const <a href="qmimedata.html">QMimeData</a> * <i>data</i>, <a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> <i>buttons</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i>, <a href="qevent.html#Type-enum">Type</a> <i>type</i> = Drop )</h3>
+<p>Constructs a drop event of a certain <i>type</i> corresponding to a drop at the point specified by <i>pos</i> in the destination widget's coordinate system.</p>
+<p>The <i>actions</i> indicate which types of drag and drop operation can be performed, and the drag data is stored as MIME-encoded data in <i>data</i>.</p>
+<p>The states of the mouse buttons and keyboard modifiers at the time of the drop are specified by <i>buttons</i> and <i>modifiers</i>.</p>
+<h3 class="fn"><a name="acceptProposedAction"></a>void QDropEvent::acceptProposedAction ()</h3>
+<p>Sets the drop action to be the proposed action.</p>
+<p>See also <a href="qdropevent.html#setDropAction">setDropAction</a>(), <a href="qdropevent.html#proposedAction">proposedAction</a>(), and <a href="qevent.html#accept">accept</a>().</p>
+<h3 class="fn"><a name="dropAction"></a><a href="qt.html#DropAction-enum">Qt::DropAction</a> QDropEvent::dropAction () const</h3>
+<p>Returns the action to be performed on the data by the target. This may be different from the action supplied in <a href="qdropevent.html#proposedAction">proposedAction</a>() if you have called <a href="qdropevent.html#setDropAction">setDropAction</a>() to explicitly choose a drop action.</p>
+<p>See also <a href="qdropevent.html#setDropAction">setDropAction</a>().</p>
+<h3 class="fn"><a name="keyboardModifiers"></a><a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> QDropEvent::keyboardModifiers () const</h3>
+<p>Returns the modifier keys that are pressed.</p>
+<h3 class="fn"><a name="mimeData"></a>const <a href="qmimedata.html">QMimeData</a> * QDropEvent::mimeData () const</h3>
+<p>Returns the data that was dropped on the widget and its associated MIME type information.</p>
+<h3 class="fn"><a name="mouseButtons"></a><a href="qt.html#MouseButton-enum">Qt::MouseButtons</a> QDropEvent::mouseButtons () const</h3>
+<p>Returns the mouse buttons that are pressed..</p>
+<h3 class="fn"><a name="pos"></a>const <a href="qpoint.html">QPoint</a> &amp; QDropEvent::pos () const</h3>
+<p>Returns the position where the drop was made.</p>
+<h3 class="fn"><a name="possibleActions"></a><a href="qt.html#DropAction-enum">Qt::DropActions</a> QDropEvent::possibleActions () const</h3>
+<p>Returns an OR-combination of possible drop actions.</p>
+<p>See also <a href="qdropevent.html#dropAction">dropAction</a>().</p>
+<h3 class="fn"><a name="proposedAction"></a><a href="qt.html#DropAction-enum">Qt::DropAction</a> QDropEvent::proposedAction () const</h3>
+<p>Returns the proposed drop action.</p>
+<p>See also <a href="qdropevent.html#dropAction">dropAction</a>().</p>
+<h3 class="fn"><a name="setDropAction"></a>void QDropEvent::setDropAction ( <a href="qt.html#DropAction-enum">Qt::DropAction</a> <i>action</i> )</h3>
+<p>Sets the <i>action</i> to be performed on the data by the target. Use this to override the <a href="qdropevent.html#proposedAction">proposed action</a> with one of the <a href="qdropevent.html#possibleActions">possible actions</a>.</p>
+<p>If you set a drop action that is not one of the possible actions, the drag and drop operation will default to a copy operation.</p>
+<p>Once you have supplied a replacement drop action, call accept() instead of <a href="qdropevent.html#acceptProposedAction">acceptProposedAction</a>().</p>
+<p>See also <a href="qdropevent.html#dropAction">dropAction</a>().</p>
+<h3 class="fn"><a name="source"></a><a href="qwidget.html">QWidget</a> * QDropEvent::source () const</h3>
+<p>If the source of the drag operation is a widget in this application, this function returns that source; otherwise it returns 0. The source of the operation is the first parameter to the <a href="qdrag.html">QDrag</a> object used instantiate the drag.</p>
+<p>This is useful if your widget needs special behavior when dragging to itself.</p>
+<p>See also <a href="qdrag.html#QDrag">QDrag::QDrag</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

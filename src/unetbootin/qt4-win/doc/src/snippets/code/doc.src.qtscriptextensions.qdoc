@@ -1,0 +1,9 @@
+//! [0]
+        print("importing " + __extension__);
+        __setupPackage__("cool.stuff");
+
+        cool.stuff.add = function(a, b) { return a + b; }
+        cool.stuff.subtract = function(a, b) { return a - b; }
+//! [0]
+
+

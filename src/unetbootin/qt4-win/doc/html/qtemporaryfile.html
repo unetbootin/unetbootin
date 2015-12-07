@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qtemporaryfile.cpp -->
+<head>
+  <title>Qt 4.4: QTemporaryFile Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTemporaryFile Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTemporaryFile class is an I/O device that operates on temporary files. <a href="#details">More...</a></p>
+<pre> #include &lt;QTemporaryFile&gt;</pre><p>Inherits <a href="qfile.html">QFile</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtemporaryfile-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtemporaryfile.html#QTemporaryFile">QTemporaryFile</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtemporaryfile.html#QTemporaryFile-2">QTemporaryFile</a></b> ( const QString &amp; <i>templateName</i> )</li>
+<li><div class="fn"/><b><a href="qtemporaryfile.html#QTemporaryFile-3">QTemporaryFile</a></b> ( QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qtemporaryfile.html#QTemporaryFile-4">QTemporaryFile</a></b> ( const QString &amp; <i>templateName</i>, QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qtemporaryfile.html#dtor.QTemporaryFile">~QTemporaryFile</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qtemporaryfile.html#autoRemove">autoRemove</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtemporaryfile.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtemporaryfile.html#fileTemplate">fileTemplate</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtemporaryfile.html#open">open</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtemporaryfile.html#setAutoRemove">setAutoRemove</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qtemporaryfile.html#setFileTemplate">setFileTemplate</a></b> ( const QString &amp; <i>name</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>23 public functions inherited from <a href="qfile.html#public-functions">QFile</a></li>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QTemporaryFile * <b><a href="qtemporaryfile.html#createLocalFile">createLocalFile</a></b> ( QFile &amp; <i>file</i> )</li>
+<li><div class="fn"/>QTemporaryFile * <b><a href="qtemporaryfile.html#createLocalFile-2">createLocalFile</a></b> ( const QString &amp; <i>fileName</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>14 static public members inherited from <a href="qfile.html#static-public-members">QFile</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTemporaryFile class is an I/O device that operates on temporary files.</p>
+<p>QTemporaryFile is used to create unique temporary files safely. The file itself is created by calling <a href="qtemporaryfile.html#open">open</a>(). The name of the temporary file is guaranteed to be unique (i.e&#x2e;, you are guaranteed to not overwrite an existing file), and the file will subsequently be removed upon destruction of the QTemporaryFile object. This is an important technique that avoids data corruption for applications that store data in temporary files. The file name is either auto-generated, or created based on a template, which is passed to QTemporaryFile's constructor.</p>
+<p>Example:</p>
+<pre>         {
+             QTemporaryFile file;
+             if (file.open()) {
+                 // file.fileName() returns the unique file name
+             }
+
+             // the QTemporaryFile destructor removes the temporary file
+         }</pre>
+<p>Reopening a QTemporaryFile after calling <a href="qiodevice.html#close">close</a>() is safe. For as long as the QTemporaryFile object itself is not destroyed, the unique temporary file will exist and be kept open internally by QTemporaryFile.</p>
+<p>A temporary file will have some static part of the name and some part that is calculated to be unique. The default filename qt_temp will be placed into the temporary path as returned by <a href="qdir.html#tempPath">QDir::tempPath</a>().</p>
+<p>See also <a href="qdir.html#tempPath">QDir::tempPath</a>() and <a href="qfile.html">QFile</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTemporaryFile"></a>QTemporaryFile::QTemporaryFile ()</h3>
+<p>Constructs a <a href="qtemporaryfile.html">QTemporaryFile</a> in <a href="qdir.html#tempPath">QDir::tempPath</a>(), using the file template &quot;qt_temp.XXXXXX&quot;. The file is stored in the system's temporary directory.</p>
+<p>See also <a href="qtemporaryfile.html#setFileTemplate">setFileTemplate</a>() and <a href="qdir.html#tempPath">QDir::tempPath</a>().</p>
+<h3 class="fn"><a name="QTemporaryFile-2"></a>QTemporaryFile::QTemporaryFile ( const <a href="qstring.html">QString</a> &amp; <i>templateName</i> )</h3>
+<p>Constructs a <a href="qtemporaryfile.html">QTemporaryFile</a> with a template filename of <i>templateName</i>. Upon opening the temporary file this will be used to create a unique filename. If the <i>templateName</i> does not contain XXXXXX it will automatically be appended and used as the dynamic portion of the filename.</p>
+<p>If <i>templateName</i> is a relative path, the path will be relative to the current working directory. You can use <a href="qdir.html#tempPath">QDir::tempPath</a>() to construct <i>templateName</i> if you want use the system's temporary directory.</p>
+<p>See also <a href="qtemporaryfile.html#open">open</a>() and <a href="qtemporaryfile.html#fileTemplate">fileTemplate</a>().</p>
+<h3 class="fn"><a name="QTemporaryFile-3"></a>QTemporaryFile::QTemporaryFile ( <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs a <a href="qtemporaryfile.html">QTemporaryFile</a> (with the given <i>parent</i>) in <a href="qdir.html#tempPath">QDir::tempPath</a>(), using the file template &quot;qt_temp.XXXXXX&quot;.</p>
+<p>See also <a href="qtemporaryfile.html#setFileTemplate">setFileTemplate</a>().</p>
+<h3 class="fn"><a name="QTemporaryFile-4"></a>QTemporaryFile::QTemporaryFile ( const <a href="qstring.html">QString</a> &amp; <i>templateName</i>, <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs a <a href="qtemporaryfile.html">QTemporaryFile</a> with a template filename of <i>templateName</i> and the specified <i>parent</i>. Upon opening the temporary file this will be used to create a unique filename. If the <i>templateName</i> does end in XXXXXX it will automatically be appended and used as the dynamic portion of the filename.</p>
+<p>If <i>templateName</i> is a relative path, the path will be relative to the current working directory. You can use <a href="qdir.html#tempPath">QDir::tempPath</a>() to construct <i>templateName</i> if you want use the system's temporary directory.</p>
+<p>See also <a href="qtemporaryfile.html#open">open</a>() and <a href="qtemporaryfile.html#fileTemplate">fileTemplate</a>().</p>
+<h3 class="fn"><a name="dtor.QTemporaryFile"></a>QTemporaryFile::~QTemporaryFile ()</h3>
+<p>Destroys the temporary file object, the file is automatically closed if necessary and if in auto remove mode it will automatically delete the file.</p>
+<p>See also <a href="qtemporaryfile.html#autoRemove">autoRemove</a>().</p>
+<h3 class="fn"><a name="autoRemove"></a>bool QTemporaryFile::autoRemove () const</h3>
+<p>Returns true if the <a href="qtemporaryfile.html">QTemporaryFile</a> is in auto remove mode. Auto-remove mode will automatically delete the filename from disk upon destruction. This makes it very easy to create your <a href="qtemporaryfile.html">QTemporaryFile</a> object on the stack, fill it with data, read from it, and finally on function return it will automatically clean up after itself.</p>
+<p>Auto-remove is on by default.</p>
+<p>See also <a href="qtemporaryfile.html#setAutoRemove">setAutoRemove</a>() and <a href="qfile.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="createLocalFile"></a>QTemporaryFile * QTemporaryFile::createLocalFile ( <a href="qfile.html">QFile</a> &amp; <i>file</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>If <i>file</i> is not on a local disk, a temporary file is created on a local disk, <i>file</i> is copied into the temporary local file, and a pointer to the temporary local file is returned. If <i>file</i> is already on a local disk, a copy is not created and 0 is returned.</p>
+<h3 class="fn"><a name="createLocalFile-2"></a>QTemporaryFile * QTemporaryFile::createLocalFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Works on the given <i>fileName</i> rather than an existing <a href="qfile.html">QFile</a> object.</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QTemporaryFile::fileName () const</h3>
+<p>Returns the complete unique filename backing the <a href="qtemporaryfile.html">QTemporaryFile</a> object. This string is null before the <a href="qtemporaryfile.html">QTemporaryFile</a> is opened, afterwards it will contain the <a href="qtemporaryfile.html#fileTemplate">fileTemplate</a>() plus additional characters to make it unique.</p>
+<p>See also <a href="qtemporaryfile.html#fileTemplate">fileTemplate</a>().</p>
+<h3 class="fn"><a name="fileTemplate"></a><a href="qstring.html">QString</a> QTemporaryFile::fileTemplate () const</h3>
+<p>Returns the set file template. The default file template will be called qt_temp and be placed in <a href="qdir.html#tempPath">QDir::tempPath</a>().</p>
+<p>See also <a href="qtemporaryfile.html#setFileTemplate">setFileTemplate</a>().</p>
+<h3 class="fn"><a name="open"></a>bool QTemporaryFile::open ()</h3>
+<p>A <a href="qtemporaryfile.html">QTemporaryFile</a> will always be opened in <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::ReadWrite</a> mode, this allows easy access to the data in the file. This function will return true upon success and will set the <a href="qtemporaryfile.html#fileName">fileName</a>() to the unique filename used.</p>
+<p>See also <a href="qtemporaryfile.html#fileName">fileName</a>().</p>
+<h3 class="fn"><a name="setAutoRemove"></a>void QTemporaryFile::setAutoRemove ( bool <i>b</i> )</h3>
+<p>Sets the <a href="qtemporaryfile.html">QTemporaryFile</a> into auto-remove mode if <i>b</i> is true.</p>
+<p>Auto-remove is on by default.</p>
+<p>See also <a href="qtemporaryfile.html#autoRemove">autoRemove</a>() and <a href="qfile.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="setFileTemplate"></a>void QTemporaryFile::setFileTemplate ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets the static portion of the file name to <i>name</i>. If the file template ends in XXXXXX that will automatically be replaced with the unique part of the filename, otherwise a filename will be determined automatically based on the static portion specified.</p>
+<p>If <i>name</i> contains a relative file path, the path will be relative to the current working directory. You can use <a href="qdir.html#tempPath">QDir::tempPath</a>() to construct <i>name</i> if you want use the system's temporary directory.</p>
+<p>See also <a href="qtemporaryfile.html#fileTemplate">fileTemplate</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

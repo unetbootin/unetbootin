@@ -1,0 +1,262 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/qtscriptcustomclass.qdoc -->
+<head>
+  <title>Qt 4.4: Custom Script Class Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Custom Script Class Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="script-customclass-bytearrayclass-cpp.html">script/customclass/bytearrayclass.cpp</a></li>
+<li><a href="script-customclass-bytearrayclass-h.html">script/customclass/bytearrayclass.h</a></li>
+<li><a href="script-customclass-bytearrayprototype-cpp.html">script/customclass/bytearrayprototype.cpp</a></li>
+<li><a href="script-customclass-bytearrayprototype-h.html">script/customclass/bytearrayprototype.h</a></li>
+<li><a href="script-customclass-main-cpp.html">script/customclass/main.cpp</a></li>
+<li><a href="script-customclass-customclass-pro.html">script/customclass/customclass.pro</a></li>
+</ul>
+<p>The Custom Script Class example shows how to use <a href="qscriptclass.html">QScriptClass</a> and <a href="qscriptclasspropertyiterator.html">QScriptClassPropertyIterator</a> to implement a custom script class.</p>
+<p>The script class we are going to implement is called <tt>ByteArray</tt>. It provides a wrapper around the <a href="qbytearray.html">QByteArray</a> class in Qt, with a simplified API. Why do we need such a class? Well, neither the ECMAScript <tt>Array</tt> class or <tt>String</tt> class is appropriate to use when working with arrays of bytes. Our <tt>ByteArray</tt> class will have the right semantics; objects will use only the amount of memory that is really needed (a byte is stored as a byte, not as a floating-point number or a Unicode character) and can be passed directly to C++ slots taking <a href="qbytearray.html">QByteArray</a> arguments (no costly conversion necessary).</p>
+<a name="bytearray-class-in-use"></a>
+<h2>ByteArray Class In Use</h2>
+<p>When the <tt>ByteArray</tt> class has been made available to the scripting environment, <tt>ByteArray</tt> objects can be constructed like so:</p>
+<pre>     var ba = new ByteArray();    // constructs an empty ByteArray
+     var ba2 = new ByteArray(10); // constructs a ByteArray of length 10 (all bytes initialized to 0)</pre>
+<p><tt>ByteArray</tt> objects behave similar to normal <tt>Array</tt> objects. Every <tt>ByteArray</tt> object has a <tt>length</tt> property, that holds the length of the array. If a new value is assigned to the <tt>length</tt> property, the array is resized. If the array is enlarged, the new bytes are initialized to 0. (This is a difference from normal <tt>Array</tt> objects; <tt>ByteArray</tt> objects are always dense arrays.) Use normal array operations to read or write bytes in the array. The following code sets all the bytes of an array to a certain value:</p>
+<pre>     for (var i = 0; i &lt; ba.length; ++i)
+         ba[i] = 123;</pre>
+<p>When assigning a value to an array element, the value is truncated to eight bits:</p>
+<pre>     ba[0] = 257;
+     print(ba[0]);  // 1</pre>
+<p>Like normal <tt>Array</tt> objects, if the array index is greater than the current length of the array, the array is resized accordingly:</p>
+<pre>     var ba3 = new ByteArray();
+     print(ba3.length); // 0
+     ba[0] = 64;
+     print(ba3.length); // 1</pre>
+<p>Property names that aren't valid array indexes are treated like normal object properties (again, the same is the case for normal <tt>Array</tt> objects); in other words, it's perfectly fine to do something like this:</p>
+<pre>     ba[&quot;foo&quot;] = &quot;Hello&quot;;</pre>
+<p>The above assignment won't affect the contents of the array, but will rather assign a value to the object property named &quot;foo&quot;.</p>
+<p><tt>ByteArray</tt> objects have a set of methods: chop(), equals(), <a href="qtextstream.html#left">left</a>(), mid(), toBase64() and so on. These map directly onto the corresponding methods in <a href="qbytearray.html">QByteArray</a>.</p>
+<pre>     var ba64 = ba.toBase64();
+     print(ba64.toLatin1String());</pre>
+<a name="bytearray-class-implementation"></a>
+<h2>ByteArray Class Implementation</h2>
+<p>To implement the <tt>ByteArray</tt> script class in C++, we create a subclass of <a href="qscriptclass.html">QScriptClass</a>, called ByteArrayClass, and reimplement the virtual functions from <a href="qscriptclass.html">QScriptClass</a>. We also provide a Qt Script constructor function suitable for being added to a <a href="qscriptengine.html">QScriptEngine</a>'s environment.</p>
+<p>The ByteArrayClass constructor prepares the script class:</p>
+<pre> ByteArrayClass::ByteArrayClass(QScriptEngine *engine)
+     : QObject(engine), QScriptClass(engine)
+ {
+     qScriptRegisterMetaType&lt;QByteArray&gt;(engine, toScriptValue, fromScriptValue);
+
+     length = engine-&gt;toStringHandle(QLatin1String(&quot;length&quot;));
+
+     proto = engine-&gt;newQObject(new ByteArrayPrototype(this),
+                                QScriptEngine::QtOwnership,
+                                QScriptEngine::SkipMethodsInEnumeration
+                                | QScriptEngine::ExcludeSuperClassMethods
+                                | QScriptEngine::ExcludeSuperClassProperties);
+     QScriptValue global = engine-&gt;globalObject();
+     proto.setPrototype(global.property(&quot;Object&quot;).property(&quot;prototype&quot;));
+
+     ctor = engine-&gt;newFunction(construct);
+     ctor.setData(qScriptValueFromValue(engine, this));
+ }</pre>
+<p>First, the constructor registers a pair of conversion functions, so that C++ <a href="qbytearray.html">QByteArray</a> objects and Qt Script <tt>ByteArray</tt> objects can move seamlessly between the C++ side and the script side. For example, if a <tt>ByteArray</tt> object is passed to a C++ slot that takes a <a href="qbytearray.html">QByteArray</a> argument, the actual <a href="qbytearray.html">QByteArray</a> that the <tt>ByteArray</tt> object wraps will be passed correctly.</p>
+<p>Second, we store a handle to the string &quot;length&quot;, so that we can quickly compare a given property name to &quot;length&quot; later on.</p>
+<p>Third, we initialize the standard <tt>ByteArray</tt> prototype, to be returned by our prototype() reimplementation later on. (The implementation of the prototype is discussed later.)</p>
+<p>Fourth, we initialize a constructor function for <tt>ByteArray</tt>, to be returned by the constructor() function. We set the internal data of the constructor to be a pointer to this ByteArrayClass object, so that the constructor, when it is invoked, can extract the pointer and use it to create a new <tt>ByteArray</tt> object.</p>
+<pre> QScriptValue ByteArrayClass::newInstance(const QByteArray &amp;ba)
+ {
+     QScriptValue data = engine()-&gt;newVariant(qVariantFromValue(ba));
+     return engine()-&gt;newObject(this, data);
+ }</pre>
+<p>The newInstance() function isn't part of the <a href="qscriptclass.html">QScriptClass</a> API; its purpose is to offer a convenient way to construct a <tt>ByteArray</tt> object from an existing <a href="qbytearray.html">QByteArray</a>. We store the <a href="qbytearray.html">QByteArray</a> as the internal data of the new object, and return the new object. <a href="qscriptengine.html#newObject">QScriptEngine::newObject</a>() will call the prototype() function of our class, ensuring that the prototype of the new object will be the standard <tt>ByteArray</tt> prototype.</p>
+<pre> QScriptValue ByteArrayClass::construct(QScriptContext *ctx, QScriptEngine *)
+ {
+     ByteArrayClass *cls = qscriptvalue_cast&lt;ByteArrayClass*&gt;(ctx-&gt;callee().data());
+     if (!cls)
+         return QScriptValue();
+     int size = ctx-&gt;argument(0).toInt32();
+     return cls-&gt;newInstance(size);
+ }</pre>
+<p>construct() is the native function that will act as a constructor for <tt>ByteArray</tt> in scripts. We extract the pointer to the class, then call a newInstance() overload that takes an initial size as argument, and return the new script object.</p>
+<pre> QScriptClass::QueryFlags ByteArrayClass::queryProperty(const QScriptValue &amp;object,
+                                                        const QScriptString &amp;name,
+                                                        QueryFlags flags, uint *id)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return 0;
+     if (name == length) {
+         return flags;
+     } else {
+         qint32 pos = toArrayIndex(name);
+         if (pos == -1)
+             return 0;
+         *id = pos;
+         if ((flags &amp; HandlesReadAccess) &amp;&amp; (pos &gt;= ba-&gt;size()))
+             flags &amp;= ~HandlesReadAccess;
+         return flags;
+     }
+ }</pre>
+<p>queryProperty() is the function that Qt Script will call whenever someone tries to access a property of a <tt>ByteArray</tt> object. We first get a pointer to the underlying <a href="qbytearray.html">QByteArray</a>. We check if the property being accessed is the special <tt>length</tt> property; if so, we return, indicating that we will handle every kind of access to this property (e.g&#x2e; both read and write). Otherwise, we attempt to convert the property name to an array index. If this fails, we return, indicating that we don't want to handle this property. Otherwise, we have a valid array index, and store it in the <tt>id</tt> argument, so that we don't have to recompute it in e.g&#x2e; property() or setProperty(). If the index is greater than or equal to the <a href="qbytearray.html">QByteArray</a>'s size, we indicate that we don't want to handle read access (but we still want to handle writes, if requested).</p>
+<pre> QScriptValue ByteArrayClass::property(const QScriptValue &amp;object,
+                                       const QScriptString &amp;name, uint id)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return QScriptValue();
+     if (name == length) {
+         return QScriptValue(engine(), ba-&gt;length());
+     } else {
+         qint32 pos = id;
+         if ((pos &lt; 0) || (pos &gt;= ba-&gt;size()))
+             return QScriptValue();
+         return QScriptValue(engine(), uint(ba-&gt;at(pos)) &amp; 255);
+     }
+     return QScriptValue();
+ }</pre>
+<p>In the property() reimplementation, we do similar checks as in queryProperty() to find out which property is being requested, and then return the value of that property.</p>
+<pre> void ByteArrayClass::setProperty(QScriptValue &amp;object,
+                                  const QScriptString &amp;name,
+                                  uint id, const QScriptValue &amp;value)
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object.data());
+     if (!ba)
+         return;
+     if (name == length) {
+         ba-&gt;resize(value.toInt32());
+     } else {
+         qint32 pos = id;
+         if (pos &lt; 0)
+             return;
+         if (ba-&gt;size() &lt;= pos)
+             ba-&gt;resize(pos + 1);
+         (*ba)[pos] = char(value.toInt32());
+     }
+ }</pre>
+<p>The setProperty() reimplementation has a structure that is similar to property(). If the <tt>length</tt> property is being set, we resize the underlying <a href="qbytearray.html">QByteArray</a> to the given length. Otherwise, we grab the array index that was calculated in the queryProperty() function, enlarge the array if necessary, and write the given value to the array.</p>
+<pre> QScriptValue::PropertyFlags ByteArrayClass::propertyFlags(
+     const QScriptValue &amp;<span class="comment">/*object*/</span>, const QScriptString &amp;name, uint <span class="comment">/*id*/</span>)
+ {
+     if (name == length) {
+         return QScriptValue::Undeletable
+             | QScriptValue::SkipInEnumeration;
+     }
+     return QScriptValue::Undeletable;
+ }</pre>
+<p>The propertyFlags() reimplementation specifies that the <tt>length</tt> property can't be deleted, and that it is not enumerable. Array elements can't be deleted.</p>
+<pre> QScriptClassPropertyIterator *ByteArrayClass::newIterator(const QScriptValue &amp;object)
+ {
+     return new ByteArrayClassPropertyIterator(object);
+ }</pre>
+<p>We want the array elements to show up when a <tt>ByteArray</tt> object is used in for-in statements and together with <a href="qscriptvalueiterator.html">QScriptValueIterator</a>. Therefore, we reimplement the newIterator() function and have it return a new iterator for a given <tt>ByteArray</tt>.</p>
+<a name="bytearray-iterator-implementation"></a>
+<h2>ByteArray Iterator Implementation</h2>
+<pre> bool ByteArrayClassPropertyIterator::hasNext() const
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object().data());
+     return m_index &lt; ba-&gt;size();
+ }
+
+ void ByteArrayClassPropertyIterator::next()
+ {
+     m_last = m_index;
+     ++m_index;
+ }
+
+ bool ByteArrayClassPropertyIterator::hasPrevious() const
+ {
+     return (m_index &gt; 0);
+ }
+
+ void ByteArrayClassPropertyIterator::previous()
+ {
+     --m_index;
+     m_last = m_index;
+ }
+
+ void ByteArrayClassPropertyIterator::toFront()
+ {
+     m_index = 0;
+     m_last = -1;
+ }
+
+ void ByteArrayClassPropertyIterator::toBack()
+ {
+     QByteArray *ba = qscriptvalue_cast&lt;QByteArray*&gt;(object().data());
+     m_index = ba-&gt;size();
+     m_last = -1;
+ }
+
+ QScriptString ByteArrayClassPropertyIterator::name() const
+ {
+     return QScriptString();
+ }
+
+ uint ByteArrayClassPropertyIterator::id() const
+ {
+     return m_last;
+ }</pre>
+<p>The <tt>ByteArrayClassPropertyIterator</tt> class is simple. It maintains an index into the underlying <a href="qbytearray.html">QByteArray</a>, and checks and updates the index in hasNext(), next() and so on.</p>
+<a name="bytearray-prototype-implementation"></a>
+<h2>ByteArray Prototype Implementation</h2>
+<p>The prototype class, ByteArrayPrototype, implements the <tt>ByteArray</tt> functions as slots.</p>
+<pre> class ByteArrayPrototype : public QObject, public QScriptable
+ {
+ Q_OBJECT
+ public:
+     ByteArrayPrototype(QObject *parent = 0);
+     ~ByteArrayPrototype();
+
+ public slots:
+     void chop(int n);
+     bool equals(const QByteArray &amp;other);
+     QByteArray left(int len) const;
+     QByteArray mid(int pos, int len = -1) const;
+     QScriptValue remove(int pos, int len);
+     QByteArray right(int len) const;
+     QByteArray simplified() const;
+     QByteArray toBase64() const;
+     QByteArray toLower() const;
+     QByteArray toUpper() const;
+     QByteArray trimmed() const;
+     void truncate(int pos);
+     QString toLatin1String() const;
+     QScriptValue valueOf() const;
+
+ private:
+     QByteArray *thisByteArray() const;
+ };</pre>
+<p>There is a small helper function, thisByteArray(), that returns a pointer to the <a href="qbytearray.html">QByteArray</a> being operated upon:</p>
+<pre> QByteArray *ByteArrayPrototype::thisByteArray() const
+ {
+     return qscriptvalue_cast&lt;QByteArray*&gt;(thisObject().data());
+ }</pre>
+<p>The slots simply forward the calls to the <a href="qbytearray.html">QByteArray</a>. Examples:</p>
+<pre> QByteArray ByteArrayPrototype::mid(int pos, int len) const
+ {
+     return thisByteArray()-&gt;mid(pos, len);
+ }
+
+ QScriptValue ByteArrayPrototype::remove(int pos, int len)
+ {
+     thisByteArray()-&gt;remove(pos, len);
+     return thisObject();
+ }</pre>
+<p>The remove() function is noteworthy; if we look at <a href="qbytearray.html#remove">QByteArray::remove</a>(), we see that it should return a reference to the <a href="qbytearray.html">QByteArray</a> itself (i.e&#x2e; not a copy). To get the same behavior in scripts, we return the script object (thisObject()).</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

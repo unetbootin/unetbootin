@@ -1,0 +1,386 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/q3ptrlist.qdoc -->
+<head>
+  <title>Qt 4.4: Q3PtrList Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3PtrList Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3PtrList class is a template class that provides a list. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3PtrList&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="q3ptrcollection.html">Q3PtrCollection</a>.</p>
+<p>Inherited by <a href="q3strlist.html">Q3StrList</a>.</p>
+<ul>
+<li><a href="q3ptrlist-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3ptrlist.html#Q3PtrList">Q3PtrList</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3ptrlist.html#Q3PtrList-2">Q3PtrList</a></b> ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> )</li>
+<li><div class="fn"/><b><a href="q3ptrlist.html#dtor.Q3PtrList">~Q3PtrList</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#append">append</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#at">at</a></b> ( uint <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ptrlist.html#at-2">at</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3ptrlist.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>uint <b><a href="q3ptrlist.html#contains">contains</a></b> ( const type * <i>item</i> ) const</li>
+<li><div class="fn"/>uint <b><a href="q3ptrlist.html#containsRef">containsRef</a></b> ( const type * <i>item</i> ) const</li>
+<li><div class="fn"/>virtual uint <b><a href="q3ptrlist.html#count">count</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#current">current</a></b> () const</li>
+<li><div class="fn"/>Q3LNode * <b><a href="q3ptrlist.html#currentNode">currentNode</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3ptrlist.html#find">find</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ptrlist.html#findNext">findNext</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ptrlist.html#findNextRef">findNextRef</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>int <b><a href="q3ptrlist.html#findRef">findRef</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#first">first</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#getFirst">getFirst</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#getLast">getLast</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#inSort">inSort</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#insert">insert</a></b> ( uint <i>index</i>, const type * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#last">last</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#next">next</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#prepend">prepend</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#prev">prev</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#remove">remove</a></b> ( uint <i>index</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#remove-2">remove</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#remove-3">remove</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#removeFirst">removeFirst</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#removeLast">removeLast</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#removeNode">removeNode</a></b> ( Q3LNode * <i>node</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#removeRef">removeRef</a></b> ( const type * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#replace">replace</a></b> ( uint <i>index</i>, const type * <i>item</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#sort">sort</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#take">take</a></b> ( uint <i>index</i> )</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#take-2">take</a></b> ()</li>
+<li><div class="fn"/>type * <b><a href="q3ptrlist.html#takeNode">takeNode</a></b> ( Q3LNode * <i>node</i> )</li>
+<li><div class="fn"/>void <b><a href="q3ptrlist.html#toVector">toVector</a></b> ( Q3GVector * <i>vec</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#operator-not-eq">operator!=</a></b> ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> ) const</li>
+<li><div class="fn"/>Q3PtrList&lt;type&gt; &amp; <b><a href="q3ptrlist.html#operator-eq">operator=</a></b> ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3ptrlist.html#operator-eq-eq">operator==</a></b> ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public functions inherited from <a href="q3ptrcollection.html#public-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual int <b><a href="q3ptrlist.html#compareItems">compareItems</a></b> ( Q3PtrCollection::Item <i>item1</i>, Q3PtrCollection::Item <i>item2</i> )</li>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3ptrlist.html#read">read</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item &amp; <i>item</i> )</li>
+<li><div class="fn"/>virtual QDataStream &amp; <b><a href="q3ptrlist.html#write">write</a></b> ( QDataStream &amp; <i>s</i>, Q3PtrCollection::Item <i>item</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 protected functions inherited from <a href="q3ptrcollection.html#protected-functions">Q3PtrCollection</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3PtrList class is a template class that provides a list.</p>
+<p><a href="q3valuelist.html">Q3ValueList</a> is an STL-compatible alternative to this class.</p>
+<p>Define a template instance Q3PtrList&lt;X&gt; to create a list that operates on pointers to X (X*).</p>
+<p>The list class is indexable and has a <a href="q3ptrlist.html#at">current index</a> and a <a href="q3ptrlist.html#current">current item</a>. The first item corresponds to index position 0. The current index is -1 if the current item is 0.</p>
+<p>Items are inserted with <a href="q3ptrlist.html#prepend">prepend</a>(), <a href="q3ptrlist.html#insert">insert</a>() or <a href="q3ptrlist.html#append">append</a>(). Items are removed with <a href="q3ptrlist.html#remove">remove</a>(), <a href="q3ptrlist.html#removeRef">removeRef</a>(), <a href="q3ptrlist.html#removeFirst">removeFirst</a>() and <a href="q3ptrlist.html#removeLast">removeLast</a>(). You can search for an item using <a href="q3ptrlist.html#find">find</a>(), <a href="q3ptrlist.html#findNext">findNext</a>(), <a href="q3ptrlist.html#findRef">findRef</a>() or <a href="q3ptrlist.html#findNextRef">findNextRef</a>(). The list can be sorted with <a href="q3ptrlist.html#sort">sort</a>(). You can count the number of occurrences of an item with <a href="q3ptrlist.html#contains">contains</a>() or <a href="q3ptrlist.html#containsRef">containsRef</a>(). You can get a pointer to the current item with <a href="q3ptrlist.html#current">current</a>(), to an item at a particular index position in the list with <a href="q3ptrlist.html#at">at</a>() or to the first or last item with <a href="q3ptrlist.html#getFirst">getFirst</a>() and <a href="q3ptrlist.html#getLast">getLast</a>(). You can also iterate over the list with <a href="q3ptrlist.html#first">first</a>(), <a href="q3ptrlist.html#last">last</a>(), <a href="q3ptrlist.html#next">next</a>() and <a href="q3ptrlist.html#prev">prev</a>() (which all update <a href="q3ptrlist.html#current">current</a>()). The list's deletion property is set with <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<a name="example"></a><p>Example:</p>
+<pre>     class Employee
+     {
+     public:
+         Employee() : sn( 0 ) { }
+         Employee( const QString&amp; forename, const QString&amp; surname, int salary )
+             : fn( forename ), sn( surname ), sal( salary )
+         { }
+
+         void setSalary( int salary ) { sal = salary; }
+
+         QString forename() const { return fn; }
+         QString surname() const { return sn; }
+         int salary() const { return sal; }
+
+     private:
+         QString fn;
+         QString sn;
+         int sal;
+     };
+
+     Q3PtrList&lt;Employee&gt; list;
+     list.setAutoDelete( TRUE ); // the list owns the objects
+
+     list.append( new Employee(&quot;John&quot;, &quot;Doe&quot;, 50000) );
+     list.append( new Employee(&quot;Jane&quot;, &quot;Williams&quot;, 80000) );
+     list.append( new Employee(&quot;Tom&quot;, &quot;Jones&quot;, 60000) );
+
+     Employee *employee;
+     for ( employee = list.first(); employee; employee = list.next() )
+         cout &lt;&lt; employee-&gt;surname().latin1() &lt;&lt; &quot;, &quot; &lt;&lt;
+                 employee-&gt;forename().latin1() &lt;&lt; &quot; earns &quot; &lt;&lt;
+                 employee-&gt;salary() &lt;&lt; endl;
+     cout &lt;&lt; endl;
+
+     // very inefficient for big lists
+     for ( uint i = 0; i &lt; list.count(); ++i )
+         if ( list.at(i) )
+             cout &lt;&lt; list.at( i )-&gt;surname().latin1() &lt;&lt; endl;</pre>
+<p>The output is</p>
+<pre>     Doe, John earns 50000
+     Williams, Jane earns 80000
+     Jones, Tom earns 60000
+
+     Doe
+     Williams
+     Jones</pre>
+<p>Q3PtrList has several member functions for traversing the list, but using a <a href="q3ptrlistiterator.html">Q3PtrListIterator</a> can be more practical. Multiple list iterators may traverse the same list, independently of each other and of the current list item.</p>
+<p>In the example above we make the call setAutoDelete(true). Enabling auto-deletion tells the list to delete items that are removed. The default is to not delete items when they are removed but this would cause a memory leak in the example because there are no other references to the list items.</p>
+<p>When inserting an item into a list only the pointer is copied, not the item itself, i.e&#x2e; a shallow copy. It is possible to make the list copy all of the item's data (deep copy) when an item is inserted. <a href="q3ptrlist.html#insert">insert</a>(), <a href="q3ptrlist.html#inSort">inSort</a>() and <a href="q3ptrlist.html#append">append</a>() call the virtual function <a href="q3ptrcollection.html#newItem">Q3PtrCollection::newItem</a>() for the item to be inserted. Inherit a list and reimplement <a href="q3ptrcollection.html#newItem">newItem</a>() to have deep copies.</p>
+<p>When removing an item from a list, the virtual function <a href="q3ptrcollection.html#deleteItem">Q3PtrCollection::deleteItem</a>() is called. Q3PtrList's default implementation is to delete the item if auto-deletion is enabled.</p>
+<p>The virtual function <a href="q3ptrlist.html#compareItems">compareItems</a>() can be reimplemented to compare two list items. This function is called from all list functions that need to compare list items, for instance remove(const type*). If you only want to deal with pointers, there are functions that compare pointers instead, for instance removeRef(const type*). These functions are somewhat faster than those that call <a href="q3ptrlist.html#compareItems">compareItems</a>().</p>
+<p>List items are stored as <tt>void*</tt> in an internal Q3LNode, which also holds pointers to the next and previous list items. The functions <a href="q3ptrlist.html#currentNode">currentNode</a>(), <a href="q3ptrlist.html#removeNode">removeNode</a>(), and <a href="q3ptrlist.html#takeNode">takeNode</a>() operate directly on the Q3LNode, but they should be used with care. The data component of the node is available through <a href="q3lnode.html#getData">Q3LNode::getData</a>().</p>
+<p>The <a href="q3strlist.html">Q3StrList</a> class is a list of <tt>char*</tt>. It reimplements <a href="q3ptrcollection.html#newItem">newItem</a>(), <a href="q3ptrcollection.html#deleteItem">deleteItem</a>() and <a href="q3ptrlist.html#compareItems">compareItems</a>(). (But see <a href="qstringlist.html">QStringList</a> for a list of Unicode QStrings.)</p>
+<p>See also <a href="q3ptrlistiterator.html">Q3PtrListIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3PtrList"></a>Q3PtrList::Q3PtrList ()</h3>
+<p>Constructs an empty list.</p>
+<h3 class="fn"><a name="Q3PtrList-2"></a>Q3PtrList::Q3PtrList ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> )</h3>
+<p>Constructs a copy of <i>list</i>.</p>
+<p>Each item in <i>list</i> is <a href="q3ptrlist.html#append">appended</a> to this list. Only the pointers are copied (shallow copy).</p>
+<h3 class="fn"><a name="dtor.Q3PtrList"></a>Q3PtrList::~Q3PtrList ()</h3>
+<p>Removes all items from the list and destroys the list.</p>
+<p>All list iterators that access this list will be reset.</p>
+<p>See also <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="append"></a>void Q3PtrList::append ( const type * <i>item</i> )</h3>
+<p>Inserts the <i>item</i> at the end of the list.</p>
+<p>The inserted item becomes the current list item. This is equivalent to <tt>insert( count(), item )</tt>.</p>
+<p><i>item</i> must not be 0.</p>
+<p>See also <a href="q3ptrlist.html#insert">insert</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#prepend">prepend</a>().</p>
+<h3 class="fn"><a name="at"></a>type * Q3PtrList::at ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> )</h3>
+<p>Returns a pointer to the item at position <i>index</i> in the list, or 0 if the index is out of range.</p>
+<p>Sets the current list item to this item if <i>index</i> is valid. The valid range is <tt>0..(count() - 1)</tt> inclusive.</p>
+<p>This function is very efficient. It starts scanning from the first item, last item, or current item, whichever is closest to <i>index</i>.</p>
+<p>See also <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="at-2"></a>int Q3PtrList::at () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the index of the current list item. The returned value is -1 if the current item is 0.</p>
+<p>See also <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="clear"></a>void Q3PtrList::clear ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes all items from the list.</p>
+<p>The removed items are deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>All list iterators that access this list will be reset.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#clear">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3ptrlist.html#remove">remove</a>(), <a href="q3ptrlist.html#take">take</a>(), and <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="compareItems"></a>int Q3PtrList::compareItems ( <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> <i>item1</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> <i>item2</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function compares two list items.</p>
+<p>Returns:</p>
+<ul>
+<li>zero if <i>item1</i> == <i>item2</i></li>
+<li>nonzero if <i>item1</i> != <i>item2</i></li>
+</ul>
+<p>This function returns <i>int</i> rather than <i>bool</i> so that reimplementations can return three values and use it to sort by:</p>
+<ul>
+<li>0 if <i>item1</i> == <i>item2</i></li>
+<li>&gt; 0 (positive integer) if <i>item1</i> &gt; <i>item2</i></li>
+<li>&lt; 0 (negative integer) if <i>item1</i> &lt; <i>item2</i></li>
+</ul>
+<p><a href="q3ptrlist.html#inSort">inSort</a>() requires that compareItems() is implemented as described here.</p>
+<p>This function should not modify the list because some const functions call compareItems().</p>
+<p>The default implementation compares the pointers.</p>
+<h3 class="fn"><a name="contains"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3PtrList::contains ( const type * <i>item</i> ) const</h3>
+<p>Returns the number of occurrences of <i>item</i> in the list.</p>
+<p>The <a href="q3ptrlist.html#compareItems">compareItems</a>() function is called when looking for the <i>item</i> in the list. If <a href="q3ptrlist.html#compareItems">compareItems</a>() is not reimplemented, it is more efficient to call <a href="q3ptrlist.html#containsRef">containsRef</a>().</p>
+<p>This function does not affect the current list item.</p>
+<p>See also <a href="q3ptrlist.html#containsRef">containsRef</a>() and <a href="q3ptrlist.html#compareItems">compareItems</a>().</p>
+<h3 class="fn"><a name="containsRef"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3PtrList::containsRef ( const type * <i>item</i> ) const</h3>
+<p>Returns the number of occurrences of <i>item</i> in the list.</p>
+<p>Calling this function is much faster than <a href="q3ptrlist.html#contains">contains</a>() because <a href="q3ptrlist.html#contains">contains</a>() compares <i>item</i> with each list item using <a href="q3ptrlist.html#compareItems">compareItems</a>(), whereas his function only compares the pointers.</p>
+<p>This function does not affect the current list item.</p>
+<p>See also <a href="q3ptrlist.html#contains">contains</a>().</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3PtrList::count () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of items in the list.</p>
+<p>Reimplemented from <a href="q3ptrcollection.html#count">Q3PtrCollection</a>.</p>
+<p>See also <a href="q3ptrlist.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="current"></a>type * Q3PtrList::current () const</h3>
+<p>Returns a pointer to the current list item. The current item may be 0 (implies that the current index is -1).</p>
+<p>See also <a href="q3ptrlist.html#at">at</a>().</p>
+<h3 class="fn"><a name="currentNode"></a>Q3LNode * Q3PtrList::currentNode () const</h3>
+<p>Returns a pointer to the current list node.</p>
+<p>The node can be kept and removed later using <a href="q3ptrlist.html#removeNode">removeNode</a>(). The advantage is that the item can be removed directly without searching the list.</p>
+<p><b>Warning:</b> Do not call this function unless you are an expert.</p>
+<p>See also <a href="q3ptrlist.html#removeNode">removeNode</a>(), <a href="q3ptrlist.html#takeNode">takeNode</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="find"></a>int Q3PtrList::find ( const type * <i>item</i> )</h3>
+<p>Finds the first occurrence of <i>item</i> in the list.</p>
+<p>If the item is found, the list sets the current item to point to the found item and returns the index of this item. If the item is not found, the list sets the current item to 0, the current index to -1, and returns -1.</p>
+<p>The <a href="q3ptrlist.html#compareItems">compareItems</a>() function is called when searching for the item in the list. If <a href="q3ptrlist.html#compareItems">compareItems</a>() is not reimplemented, it is more efficient to call <a href="q3ptrlist.html#findRef">findRef</a>().</p>
+<p>See also <a href="q3ptrlist.html#findNext">findNext</a>(), <a href="q3ptrlist.html#findRef">findRef</a>(), <a href="q3ptrlist.html#compareItems">compareItems</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="findNext"></a>int Q3PtrList::findNext ( const type * <i>item</i> )</h3>
+<p>Finds the next occurrence of <i>item</i> in the list, starting from the current list item.</p>
+<p>If the item is found, the list sets the current item to point to the found item and returns the index of this item. If the item is not found, the list sets the current item to 0, the current index to -1, and returns -1.</p>
+<p>The <a href="q3ptrlist.html#compareItems">compareItems</a>() function is called when searching for the item in the list. If <a href="q3ptrlist.html#compareItems">compareItems</a>() is not reimplemented, it is more efficient to call <a href="q3ptrlist.html#findNextRef">findNextRef</a>().</p>
+<p>See also <a href="q3ptrlist.html#find">find</a>(), <a href="q3ptrlist.html#findNextRef">findNextRef</a>(), <a href="q3ptrlist.html#compareItems">compareItems</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="findNextRef"></a>int Q3PtrList::findNextRef ( const type * <i>item</i> )</h3>
+<p>Finds the next occurrence of <i>item</i> in the list, starting from the current list item.</p>
+<p>If the item is found, the list sets the current item to point to the found item and returns the index of this item. If the item is not found, the list sets the current item to 0, the current index to -1, and returns -1.</p>
+<p>Calling this function is much faster than <a href="q3ptrlist.html#findNext">findNext</a>() because <a href="q3ptrlist.html#findNext">findNext</a>() compares <i>item</i> with each list item using <a href="q3ptrlist.html#compareItems">compareItems</a>(), whereas this function only compares the pointers.</p>
+<p>See also <a href="q3ptrlist.html#findRef">findRef</a>(), <a href="q3ptrlist.html#findNext">findNext</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="findRef"></a>int Q3PtrList::findRef ( const type * <i>item</i> )</h3>
+<p>Finds the first occurrence of <i>item</i> in the list.</p>
+<p>If the item is found, the list sets the current item to point to the found item and returns the index of this item. If the item is not found, the list sets the current item to 0, the current index to -1, and returns -1.</p>
+<p>Calling this function is much faster than <a href="q3ptrlist.html#find">find</a>() because <a href="q3ptrlist.html#find">find</a>() compares <i>item</i> with each list item using <a href="q3ptrlist.html#compareItems">compareItems</a>(), whereas this function only compares the pointers.</p>
+<p>See also <a href="q3ptrlist.html#findNextRef">findNextRef</a>(), <a href="q3ptrlist.html#find">find</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="first"></a>type * Q3PtrList::first ()</h3>
+<p>Returns a pointer to the first item in the list and makes this the current list item; returns 0 if the list is empty.</p>
+<p>See also <a href="q3ptrlist.html#getFirst">getFirst</a>(), <a href="q3ptrlist.html#last">last</a>(), <a href="q3ptrlist.html#next">next</a>(), <a href="q3ptrlist.html#prev">prev</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="getFirst"></a>type * Q3PtrList::getFirst () const</h3>
+<p>Returns a pointer to the first item in the list, or 0 if the list is empty.</p>
+<p>This function does not affect the current list item.</p>
+<p>See also <a href="q3ptrlist.html#first">first</a>() and <a href="q3ptrlist.html#getLast">getLast</a>().</p>
+<h3 class="fn"><a name="getLast"></a>type * Q3PtrList::getLast () const</h3>
+<p>Returns a pointer to the last item in the list, or 0 if the list is empty.</p>
+<p>This function does not affect the current list item.</p>
+<p>See also <a href="q3ptrlist.html#last">last</a>() and <a href="q3ptrlist.html#getFirst">getFirst</a>().</p>
+<h3 class="fn"><a name="inSort"></a>void Q3PtrList::inSort ( const type * <i>item</i> )</h3>
+<p>Inserts the <i>item</i> at its sorted position in the list.</p>
+<p>The sort order depends on the virtual <a href="q3ptrlist.html#compareItems">compareItems</a>() function. All items must be inserted with inSort() to maintain the sorting order.</p>
+<p>The inserted item becomes the current list item.</p>
+<p><i>item</i> must not be 0.</p>
+<p><b>Warning:</b> Using inSort() is slow. An alternative, especially if you have lots of items, is to simply <a href="q3ptrlist.html#append">append</a>() or <a href="q3ptrlist.html#insert">insert</a>() them and then use <a href="q3ptrlist.html#sort">sort</a>(). inSort() takes up to O(n) compares. That means inserting n items in your list will need O(n^2) compares whereas <a href="q3ptrlist.html#sort">sort</a>() only needs O(n*log n) for the same task. So use inSort() only if you already have a presorted list and want to insert just a few additional items.</p>
+<p>See also <a href="q3ptrlist.html#insert">insert</a>(), <a href="q3ptrlist.html#compareItems">compareItems</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#sort">sort</a>().</p>
+<h3 class="fn"><a name="insert"></a>bool Q3PtrList::insert ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i>, const type * <i>item</i> )</h3>
+<p>Inserts the <i>item</i> at position <i>index</i> in the list.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if <i>index</i> is in range; otherwise returns FALSE. The valid range is 0 to <a href="q3ptrlist.html#count">count</a>() (inclusively). The item is appended if <i>index</i> == <a href="q3ptrlist.html#count">count</a>().</p>
+<p>The inserted item becomes the current list item.</p>
+<p><i>item</i> must not be 0.</p>
+<p>See also <a href="q3ptrlist.html#append">append</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#replace">replace</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool Q3PtrList::isEmpty () const</h3>
+<p>Returns TRUE if the list is empty; otherwise returns FALSE.</p>
+<p>See also <a href="q3ptrlist.html#count">count</a>().</p>
+<h3 class="fn"><a name="last"></a>type * Q3PtrList::last ()</h3>
+<p>Returns a pointer to the last item in the list and makes this the current list item; returns 0 if the list is empty.</p>
+<p>See also <a href="q3ptrlist.html#getLast">getLast</a>(), <a href="q3ptrlist.html#first">first</a>(), <a href="q3ptrlist.html#next">next</a>(), <a href="q3ptrlist.html#prev">prev</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="next"></a>type * Q3PtrList::next ()</h3>
+<p>Returns a pointer to the item succeeding the current item. Returns 0 if the current item is 0 or equal to the last item.</p>
+<p>Makes the succeeding item current. If the current item before this function call was the last item, the current item will be set to 0. If the current item was 0, this function does nothing.</p>
+<p>See also <a href="q3ptrlist.html#first">first</a>(), <a href="q3ptrlist.html#last">last</a>(), <a href="q3ptrlist.html#prev">prev</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="prepend"></a>void Q3PtrList::prepend ( const type * <i>item</i> )</h3>
+<p>Inserts the <i>item</i> at the start of the list.</p>
+<p>The inserted item becomes the current list item. This is equivalent to <tt>insert( 0, item )</tt>.</p>
+<p><i>item</i> must not be 0.</p>
+<p>See also <a href="q3ptrlist.html#append">append</a>(), <a href="q3ptrlist.html#insert">insert</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="prev"></a>type * Q3PtrList::prev ()</h3>
+<p>Returns a pointer to the item preceding the current item. Returns 0 if the current item is 0 or equal to the first item.</p>
+<p>Makes the preceding item current. If the current item before this function call was the first item, the current item will be set to 0. If the current item was 0, this function does nothing.</p>
+<p>See also <a href="q3ptrlist.html#first">first</a>(), <a href="q3ptrlist.html#last">last</a>(), <a href="q3ptrlist.html#next">next</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="read"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3PtrList::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> &amp; <i>item</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads a list item from the stream <i>s</i> and returns a reference to the stream.</p>
+<p>The default implementation sets <i>item</i> to 0.</p>
+<p>See also <a href="q3ptrlist.html#write">write</a>().</p>
+<h3 class="fn"><a name="remove"></a>bool Q3PtrList::remove ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> )</h3>
+<p>Removes the item at position <i>index</i> in the list.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if <i>index</i> is in range; otherwise returns FALSE. The valid range is <tt>0..(count() - 1)</tt> inclusive.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#take">take</a>(), <a href="q3ptrlist.html#clear">clear</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#removeRef">removeRef</a>().</p>
+<h3 class="fn"><a name="remove-2"></a>bool Q3PtrList::remove ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Removes the current list item.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if the current item isn't 0; otherwise returns FALSE.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#take">take</a>(), <a href="q3ptrlist.html#clear">clear</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#removeRef">removeRef</a>().</p>
+<h3 class="fn"><a name="remove-3"></a>bool Q3PtrList::remove ( const type * <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Removes the first occurrence of <i>item</i> from the list.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if <i>item</i> is in the list; otherwise returns FALSE.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The <a href="q3ptrlist.html#compareItems">compareItems</a>() function is called when searching for the item in the list. If <a href="q3ptrlist.html#compareItems">compareItems</a>() is not reimplemented, it is more efficient to call <a href="q3ptrlist.html#removeRef">removeRef</a>().</p>
+<p>If <i>item</i> is NULL then the current item is removed from the list.</p>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#removeRef">removeRef</a>(), <a href="q3ptrlist.html#take">take</a>(), <a href="q3ptrlist.html#clear">clear</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), <a href="q3ptrlist.html#compareItems">compareItems</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="removeFirst"></a>bool Q3PtrList::removeFirst ()</h3>
+<p>Removes the first item from the list. Returns TRUE if successful, i.e&#x2e; if the list isn't empty; otherwise returns FALSE.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The first item in the list becomes the new current list item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#removeLast">removeLast</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#remove">remove</a>().</p>
+<h3 class="fn"><a name="removeLast"></a>bool Q3PtrList::removeLast ()</h3>
+<p>Removes the last item from the list. Returns TRUE if successful, i.e&#x2e; if the list isn't empty; otherwise returns FALSE.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The last item in the list becomes the new current list item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#removeFirst">removeFirst</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="removeNode"></a>void Q3PtrList::removeNode ( Q3LNode * <i>node</i> )</h3>
+<p>Removes the <i>node</i> from the list.</p>
+<p>This node must exist in the list, otherwise the program may crash.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>The first item in the list will become the new current list item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the item succeeding this item or to the preceding item if the removed item was the last item.</p>
+<p><b>Warning:</b> Do not call this function unless you are an expert.</p>
+<p>See also <a href="q3ptrlist.html#takeNode">takeNode</a>(), <a href="q3ptrlist.html#currentNode">currentNode</a>(), <a href="q3ptrlist.html#remove">remove</a>(), and <a href="q3ptrlist.html#removeRef">removeRef</a>().</p>
+<h3 class="fn"><a name="removeRef"></a>bool Q3PtrList::removeRef ( const type * <i>item</i> )</h3>
+<p>Removes the first occurrence of <i>item</i> from the list.</p>
+<p>Returns TRUE if successful, i.e&#x2e; if <i>item</i> is in the list; otherwise returns FALSE.</p>
+<p>The removed item is deleted if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled.</p>
+<p>Equivalent to:</p>
+<pre>         if ( list.findRef( item ) != -1 )
+             list.remove();</pre>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the removed item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#remove">remove</a>(), <a href="q3ptrlist.html#clear">clear</a>(), <a href="q3ptrcollection.html#setAutoDelete">setAutoDelete</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="replace"></a>bool Q3PtrList::replace ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i>, const type * <i>item</i> )</h3>
+<p>Replaces the item at position <i>index</i> with the new <i>item</i>.</p>
+<p>Returns TRUE if successful, i.e&#x2e; <i>index</i> is in the range 0 to <a href="q3ptrlist.html#count">count</a>()-1.</p>
+<p>See also <a href="q3ptrlist.html#append">append</a>(), <a href="q3ptrlist.html#current">current</a>(), and <a href="q3ptrlist.html#insert">insert</a>().</p>
+<h3 class="fn"><a name="sort"></a>void Q3PtrList::sort ()</h3>
+<p>Sorts the list by the result of the virtual <a href="q3ptrlist.html#compareItems">compareItems</a>() function.</p>
+<p>The heap sort algorithm is used for sorting. It sorts n items with O(n*log n) comparisons. This is the asymptotic optimal solution of the sorting problem.</p>
+<p>If the items in your list support operator&lt;() and operator==(), you might be better off with Q3SortedList because it implements the <a href="q3ptrlist.html#compareItems">compareItems</a>() function for you using these two operators.</p>
+<p>See also <a href="q3ptrlist.html#inSort">inSort</a>().</p>
+<h3 class="fn"><a name="take"></a>type * Q3PtrList::take ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> )</h3>
+<p>Takes the item at position <i>index</i> out of the list without deleting it (even if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled).</p>
+<p>Returns a pointer to the item taken out of the list, or 0 if the index is out of range. The valid range is <tt>0..(count() - 1)</tt> inclusive.</p>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the taken item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#remove">remove</a>(), <a href="q3ptrlist.html#clear">clear</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="take-2"></a>type * Q3PtrList::take ()</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Takes the current item out of the list without deleting it (even if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled).</p>
+<p>Returns a pointer to the item taken out of the list, or 0 if the current item is 0.</p>
+<p>The item after the removed item becomes the new current list item if the removed item is not the last item in the list. If the last item is removed, the new last item becomes the current item. The current item is set to 0 if the list becomes empty.</p>
+<p>All list iterators that refer to the taken item will be set to point to the new current item.</p>
+<p>See also <a href="q3ptrlist.html#remove">remove</a>(), <a href="q3ptrlist.html#clear">clear</a>(), and <a href="q3ptrlist.html#current">current</a>().</p>
+<h3 class="fn"><a name="takeNode"></a>type * Q3PtrList::takeNode ( Q3LNode * <i>node</i> )</h3>
+<p>Takes the <i>node</i> out of the list without deleting its item (even if <a href="q3ptrcollection.html#setAutoDelete">auto-deletion</a> is enabled). Returns a pointer to the item taken out of the list.</p>
+<p>This node must exist in the list, otherwise the program may crash.</p>
+<p>The first item in the list becomes the new current list item.</p>
+<p>All list iterators that refer to the taken item will be set to point to the item succeeding this item or to the preceding item if the taken item was the last item.</p>
+<p><b>Warning:</b> Do not call this function unless you are an expert.</p>
+<p>See also <a href="q3ptrlist.html#removeNode">removeNode</a>() and <a href="q3ptrlist.html#currentNode">currentNode</a>().</p>
+<h3 class="fn"><a name="toVector"></a>void Q3PtrList::toVector ( Q3GVector * <i>vec</i> ) const</h3>
+<p>Stores all list items in the vector <i>vec</i>.</p>
+<p>The vector must be of the same item type, otherwise the result will be undefined.</p>
+<h3 class="fn"><a name="write"></a><a href="qdatastream.html">QDataStream</a> &amp; Q3PtrList::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, <a href="q3ptrcollection.html#Item-typedef">Q3PtrCollection::Item</a> <i>item</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Writes a list item, <i>item</i> to the stream <i>s</i> and returns a reference to the stream.</p>
+<p>The default implementation does nothing.</p>
+<p>See also <a href="q3ptrlist.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool Q3PtrList::operator!= ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> ) const</h3>
+<p>Compares this list with <i>list</i>. Returns TRUE if the lists contain different data; otherwise returns FALSE.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3PtrList&lt;type&gt; &amp; Q3PtrList::operator= ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> )</h3>
+<p>Assigns <i>list</i> to this list and returns a reference to this list.</p>
+<p>This list is first cleared and then each item in <i>list</i> is <a href="q3ptrlist.html#append">appended</a> to this list. Only the pointers are copied (shallow copy) unless <a href="q3ptrcollection.html#newItem">newItem</a>() has been reimplemented.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool Q3PtrList::operator== ( const Q3PtrList&lt;type&gt; &amp; <i>list</i> ) const</h3>
+<p>Compares this list with <i>list</i>. Returns TRUE if the lists contain the same data; otherwise returns FALSE.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

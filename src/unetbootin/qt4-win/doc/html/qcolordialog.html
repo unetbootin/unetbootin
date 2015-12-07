@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qcolordialog.cpp -->
+<head>
+  <title>Qt 4.4: QColorDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QColorDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QColorDialog class provides a dialog widget for specifying colors. <a href="#details">More...</a></p>
+<pre> #include &lt;QColorDialog&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<ul>
+<li><a href="qcolordialog-members.html">List of all members, including inherited members</a></li>
+<li><a href="qcolordialog-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QRgb <b><a href="qcolordialog.html#customColor">customColor</a></b> ( int <i>i</i> )</li>
+<li><div class="fn"/>int <b><a href="qcolordialog.html#customCount">customCount</a></b> ()</li>
+<li><div class="fn"/>QColor <b><a href="qcolordialog.html#getColor">getColor</a></b> ( const QColor &amp; <i>initial</i> = Qt::white, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>QRgb <b><a href="qcolordialog.html#getRgba">getRgba</a></b> ( QRgb <i>initial</i> = 0xffffffff, bool * <i>ok</i> = 0, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qcolordialog.html#setCustomColor">setCustomColor</a></b> ( int <i>number</i>, QRgb <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qcolordialog.html#setStandardColor">setStandardColor</a></b> ( int <i>number</i>, QRgb <i>color</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QColorDialog class provides a dialog widget for specifying colors.</p>
+<p>The color dialog's function is to allow users to choose colors. For example, you might use this in a drawing program to allow the user to set the brush color.</p>
+<p>The static functions provide modal color dialogs.</p>
+<p>The static <a href="qcolordialog.html#getColor">getColor</a>() function shows the dialog, and allows the user to specify a color. The <a href="qcolordialog.html#getRgba">getRgba</a>() function does the same, but also allows the user to specify a color with an alpha channel (transparency) value.</p>
+<p>The user can store <a href="qcolordialog.html#customCount">customCount</a>() different custom colors. The custom colors are shared by all color dialogs, and remembered during the execution of the program. Use <a href="qcolordialog.html#setCustomColor">setCustomColor</a>() to set the custom colors, and use <a href="qcolordialog.html#customColor">customColor</a>() to get them.</p>
+<p>Additional widgets that allow users to pick colors are available as <a href="http://www.trolltech.com/products/qt/addon/solutions/">Qt Solutions</a>.</p>
+<p>The <a href="dialogs-standarddialogs.html">Standard Dialogs</a> example shows how to use QColorDialog as well as other built-in Qt dialogs.</p>
+<p align="center"><img src="images/plastique-colordialog.png" alt="A color dialog in the Plastique widget style." /></p><p>See also <a href="qcolor.html">QColor</a>, <a href="qfiledialog.html">QFileDialog</a>, <a href="qprintdialog.html">QPrintDialog</a>, <a href="qfontdialog.html">QFontDialog</a>, and <a href="dialogs-standarddialogs.html">Standard Dialogs Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="customColor"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> QColorDialog::customColor ( int <i>i</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns custom color number <i>i</i> as a <a href="qcolor.html#QRgb-typedef">QRgb</a> value.</p>
+<p>See also <a href="qcolordialog.html#setCustomColor">setCustomColor</a>().</p>
+<h3 class="fn"><a name="customCount"></a>int QColorDialog::customCount ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the number of custom colors supported by <a href="qcolordialog.html">QColorDialog</a>. All color dialogs share the same custom colors.</p>
+<h3 class="fn"><a name="getColor"></a><a href="qcolor.html">QColor</a> QColorDialog::getColor ( const <a href="qcolor.html">QColor</a> &amp; <i>initial</i> = Qt::white, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Pops up a modal color dialog, lets the user choose a color, and returns that color. The color is initially set to <i>initial</i>. The dialog is a child of <i>parent</i>. It returns an invalid (see <a href="qcolor.html#isValid">QColor::isValid</a>()) color if the user cancels the dialog. All colors allocated by the dialog will be deallocated before this function returns.</p>
+<h3 class="fn"><a name="getRgba"></a><a href="qcolor.html#QRgb-typedef">QRgb</a> QColorDialog::getRgba ( <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>initial</i> = 0xffffffff, bool * <i>ok</i> = 0, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Pops up a modal color dialog to allow the user to choose a color and an alpha channel (transparency) value. The color+alpha is initially set to <i>initial</i>. The dialog is a child of <i>parent</i>.</p>
+<p>If <i>ok</i> is non-null, <i>*a</i> ok is set to true if the user clicked OK, and to false if the user clicked Cancel.</p>
+<p>If the user clicks Cancel, the <i>initial</i> value is returned.</p>
+<h3 class="fn"><a name="setCustomColor"></a>void QColorDialog::setCustomColor ( int <i>number</i>, <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>color</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the custom color <i>number</i> to the <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>color</i> value.</p>
+<p>See also <a href="qcolordialog.html#customColor">customColor</a>().</p>
+<h3 class="fn"><a name="setStandardColor"></a>void QColorDialog::setStandardColor ( int <i>number</i>, <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>color</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the standard color <i>number</i> to the <a href="qcolor.html#QRgb-typedef">QRgb</a> <i>color</i> value given.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

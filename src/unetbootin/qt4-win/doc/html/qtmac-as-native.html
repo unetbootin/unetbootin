@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtmac-as-native.qdoc -->
+<head>
+  <title>Qt 4.4: Qt/Mac is Mac OS X Native</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt/Mac is Mac OS X Native<br /><span class="subtitle"></span>
+</h1>
+<p>This document explains what makes an application native on Mac OS X. It shows the areas where Qt/Mac is compliant, and the grey areas where compliance is more questionable. (See also the document <a href="mac-differences.html">Qt/Mac-Specific Issues</a>.)</p>
+<p>Normally when referring to a native Mac application, one really means an application that talks directly to the underlying window system, rather than one that uses some intermediary (for example Apple's X11 server, or a web browser). Qt/Mac applications run as first class citizens, just like Cocoa, and Carbon applications. In fact, we use Carbon and HIView internally to communicate with OS X.</p>
+<p>When an application is running as a first class citizen, it means that it can interact with specific components of the Mac OS X experience:</p>
+<ul><li><a href="#the-global-menu-bar">The Global Menu Bar</a></li>
+<li><a href="#aqua">Aqua</a></li>
+<li><a href="#dock">Dock</a></li>
+<li><a href="#accessiblity">Accessiblity</a></li>
+<li><a href="#development-tools">Development Tools</a></li>
+</ul>
+<a name="the-global-menu-bar"></a>
+<h3>The Global Menu Bar</h3>
+<p>Qt/Mac does this via the <a href="qmenubar.html">QMenuBar</a> abstraction. Mac users expect to have a menu bar at the top of the screen and Qt/Mac honors this.</p>
+<p>Additionally, users expect certain conventions to be respected, for example the application menu should contain About, Preferences, Quit, etc. Qt/Mac handles this automatically, although it does not provide a means of interacting directly with the application menu. (By doing this automatically, Qt/Mac makes it easier to port Qt/Mac applications to other platforms.)</p>
+<a name="aqua"></a>
+<h3>Aqua</h3>
+<p>This is a critical piece of Mac OS X (documentation can be found at <a href="http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/index.html">http://developer.apple.com/documentation/UserExperience/Conceptual/OSXHIGuidelines/index.html</a>). It is a huge topic, but the most important guidelines for GUI design are probably these:</p>
+<ul>
+<li><i>Aqua look</i><p>As with Cocoa/Carbon, Qt/Mac provides widgets that look like those described in the Human Interface Descriptions. Qt/Mac's widgets use Appearance Manager on Mac OS X 10.2 and the new HIThemes on Mac OS X 10.3 and higher to implement the look, in other words we use Apple's own API's for doing the rendering.</p>
+</li>
+<li><i>Aqua feel</i><p>This is a bit more subjective, but certainly Qt/Mac strives to provide the same feel as any Mac OS X application (and we consider situations where it doesn't achieve this to be bugs). Of course Qt has other concerns to bear in mind, especially remaining cross-platform. Some &quot;baggage&quot; that Qt carries is in an effort to provide a widget on a platform for which an equivelant doesn't exist, or so that a single API can be used to do something, even if the API doesn't make entire sense for a specific widget.</p>
+</li>
+<li><i>Aqua guides</i><p>This is the most subjective, but there are many suggestions and guidelines in the Aqua style guidelines. This is the area where Qt/Mac is of least assistance. The decisions that must be made to conform (widget sizes, widget layouts with respect to other widgets, window margins, placement of OK and Cancel, etc) must be made based on the user experience demanded by your application. If your user base is small or mostly comes from the Windows or Unix worlds, these are minor issues much less important than trying to make a mass market product. Qt/Mac is fully API compatible with Qt/Windows and Qt/X11, but Mac OS X is a significantly different platform to Windows and some special considerations must be made based on your audience.</p>
+</li>
+</ul>
+<a name="dock"></a>
+<h3>Dock</h3>
+<p>Interaction with the dock is possible. The icon can be set by calling <a href="qwidget.html#windowIcon-prop">QWidget::setWindowIcon</a>() on the main window in your application. The setWindowIcon() call can be made as often as necessary, providing an icon that can be easily updated.</p>
+<a name="accessiblity"></a>
+<h3>Accessiblity</h3>
+<p>Although many users never use this, some users will only interact with your applications via assistive devices. With Qt the aim is to make this automatic in your application so that it conforms to accepted practice on its platform. Qt/Mac uses Apple's accessibility framework to provide access to users with diabilities.</p>
+<a name="development-tools"></a>
+<h3>Development Tools</h3>
+<p>Mac OS X developers expect a certain level of interopability between their development toolkit and the platform's developer tools (for example Visual Studio, gmake, etc). Qt/Mac supports both Unix style Makefiles, and ProjectBuilder/Xcode project files by using the <a href="qmake-manual.html#qmake">qmake</a> tool. For example:</p>
+<pre>         qmake -spec macx-xcode project.pro</pre>
+<p>will generate an Xcode project file from project.pro. With <a href="qmake-manual.html#qmake">qmake</a> you do not have to worry about rules for Qt's preprocessors (<a href="moc.html#moc">moc</a> and <a href="uic.html#uic">uic</a>) since <a href="qmake-manual.html#qmake">qmake</a> automatically handles them and ensures that everything necessary is linked into your application.</p>
+<p>Qt does not entirely interact with the development environment (for example plugins to set a file to &quot;mocable&quot; from within the Xcode user interface). Trolltech is actively working on improving Qt's interoperability with various IDEs.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

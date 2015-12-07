@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/stylesheet.qdoc -->
+<head>
+  <title>Qt 4.4: The Style Sheet Syntax</title>
+  <link rel="prev" href="stylesheet.html" />
+  <link rel="contents" href="stylesheet.html" />
+  <link rel="next" href="stylesheet-designer.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="stylesheet.html">Qt Style Sheets</a>]
+[<a href="stylesheet.html">Contents</a>]
+[Next: <a href="stylesheet-designer.html">Qt Designer Integration</a>]
+</p>
+<h1 class="title">The Style Sheet Syntax<br /><span class="subtitle"></span>
+</h1>
+<p>Qt Style Sheet terminology and syntactic rules are almost identical to those of HTML CSS. If you already know CSS, you can probably skim quickly through this section.</p>
+<a name="style-rules"></a>
+<h2>Style Rules</h2>
+<p>Style sheets consist of a sequence of style rules. A <i>style rule</i> is made up of a selector and a declaration. The <i>selector</i> specifies which widgets are affected by the rule; the <i>declaration</i> specifies which properties should be set on the widget. For example:</p>
+<pre>         QPushButton { color: red }</pre>
+<p>In the above style rule, <tt>QPushButton</tt> is the selector and <tt>{ color: red }</tt> is the declaration. The rule specifies that <a href="qpushbutton.html">QPushButton</a> and its subclasses (e.g&#x2e;, <tt>MyPushButton</tt>) should use red as their foreground color.</p>
+<p>Qt Style Sheet is generally case insensitive (i.e&#x2e;, <tt>color</tt>, <tt>Color</tt>, <tt>COLOR</tt>, and <tt>cOloR</tt> refer to the same property). The only exceptions are class names, <a href="qobject.html#objectName-prop">object names</a>, and Qt property names, which are case sensitive.</p>
+<p>Several selectors can be specified for the same declaration, using commas (<tt>,</tt>) to separate the selectors. For example, the rule</p>
+<pre>         QPushButton, QLineEdit, QComboBox { color: red }</pre>
+<p>is equivalent to this sequence of three rules:</p>
+<pre>         QPushButton { color: red }
+         QLineEdit { color: red }
+         QComboBox { color: red }</pre>
+<p>The declaration part of a style rule is a list of <tt><i>property</i>: <i>value</i></tt> pairs, enclosed in braces (<tt>{}</tt>) and separated with semicolons. For example:</p>
+<pre>         QPushButton { color: red; background-color: white }</pre>
+<p>See the <a href="stylesheet-reference.html#list-of-properties">List of Properties</a> section below for the list of properties provided by Qt widgets.</p>
+<a name="selector-types"></a>
+<h2>Selector Types</h2>
+<p>All the examples so far used the simplest type of selector, the Type Selector. Qt Style Sheets support all the <a href="http://www.w3.org/TR/REC-CSS2/selector.html#q1">selectors defined in CSS2</a>. The table below summarizes the most useful types of selectors.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Selector</th><th>Example</th><th>Explanation</th></tr></thead>
+<tr valign="top" class="odd"><td>Universal Selector</td><td><tt>*</tt></td><td>Matches all widgets.</td></tr>
+<tr valign="top" class="even"><td>Type Selector</td><td><tt>QPushButton</tt></td><td>Matches instances of <a href="qpushbutton.html">QPushButton</a> and of its subclasses.</td></tr>
+<tr valign="top" class="odd"><td>Property Selector</td><td><tt>QPushButton[flat=&quot;false&quot;]</tt></td><td>Matches instances of <a href="qpushbutton.html">QPushButton</a> that are not <a href="qpushbutton.html#flat-prop">flat</a>. You may use this selector to test for any Qt property specified using <a href="qobject.html#Q_PROPERTY">Q_PROPERTY</a>(). In addition, the special <tt>class</tt> property is supported, for the name of the class.<p>This selector may also be used to test dynamic properties. For more information on customization using dynamic properties, refer to {Customizing Using Dynamic Properties}.</p>
+<p>Instead of <tt>=</tt>, you can also use <tt>~=</tt> to test whether a Qt property of type <a href="qstringlist.html">QStringList</a> contains a given <a href="qstring.html">QString</a>.</p>
+<p><b>Warning:</b> If the value of the Qt property changes after the style sheet has been set, it might be necessary to force a style sheet recomputation. One way to achieve this is to unset the style sheet and set it again.</p>
+</td></tr>
+<tr valign="top" class="even"><td>Class Selector</td><td><tt>.QPushButton</tt></td><td>Matches instances of <a href="qpushbutton.html">QPushButton</a>, but not of its subclasses.<p>This is equivalent to <tt>*[class~=&quot;QPushButton&quot;]</tt>.</p>
+</td></tr>
+<tr valign="top" class="odd"><td>ID <a name="id-selector"></a> Selector</td><td><tt>QPushButton#okButton</tt></td><td>Matches all <a href="qpushbutton.html">QPushButton</a> instances whose <a href="qobject.html#objectName-prop">object name</a> is <tt>okButton</tt>.</td></tr>
+<tr valign="top" class="even"><td>Descendant Selector</td><td><tt>QDialog QPushButton</tt></td><td>Matches all instances of <a href="qpushbutton.html">QPushButton</a> that are descendants (children, grandchildren, etc.) of a <a href="qdialog.html">QDialog</a>.</td></tr>
+<tr valign="top" class="odd"><td>Child Selector</td><td><tt>QDialog &gt; QPushButton</tt></td><td>Matches all instances of <a href="qpushbutton.html">QPushButton</a> that are direct children of a <a href="qdialog.html">QDialog</a>.</td></tr>
+</table></p>
+<a name="sub-controls"></a>
+<h2>Sub-Controls</h2>
+<p>For styling complex widgets, it is necessary to access subcontrols of the widget, such as the drop-down button of a <a href="qcombobox.html">QComboBox</a> or the up and down arrows of a <a href="qspinbox.html">QSpinBox</a>. Selectors may contain <i>subcontrols</i> that make it possible to restrict the application of a rule to specific widget subcontrols. For example:</p>
+<pre>         QComboBox::drop-down { image: url(dropdown.png) }</pre>
+<p>The above rule styles the drop-down button of all <a href="qcombobox.html">QComboBox</a>es. Although the double-colon (<tt>::</tt>) syntax is reminiscent of CSS3 Pseudo-Elements, Qt Sub-Controls differ conceptually from these and have different cascading semantics.</p>
+<p>Sub-controls are always positioned with respect to another element (a reference element). This reference element could be the widget or another Sub-control. For example, the <a href="stylesheet-reference.html#drop-down-sub">::drop-down</a> of a <a href="qcombobox.html">QComboBox</a> is placed, by default, in the top right corner of the Padding rectangle of the <a href="qcombobox.html">QComboBox</a>. The <a href="stylesheet-reference.html#drop-down-sub">::drop-down</a> is placed, by default, in the Center of the Contents rectangle of the <a href="stylesheet-reference.html#drop-down-sub">::drop-down</a> Sub-control. See the <a href="stylesheet-reference.html#list-of-stylable-widgets">List of Stylable Widgets</a> below for the Sub-controls to use to style a widget and their default positions.</p>
+<p>The origin rectangle to be used is changed using the <a href="stylesheet-reference.html#subcontrol-origin-prop">subcontrol-origin</a> property. For example, if we want to place the drop-down in the margin rectangle of the <a href="qcombobox.html">QComboBox</a> instead of the default Padding rectangle, we can specify:</p>
+<pre>         QComboBox {
+             margin-right: 20px;
+         }
+         QComboBox::drop-down {
+             subcontrol-origin: margin;
+         }</pre>
+<p>The alignment of the drop-down within the Margin rectangle is changed using <a href="stylesheet-reference.html#subcontrol-position-prop">subcontrol-position</a> property.</p>
+<p>The <a href="stylesheet-reference.html#width-prop">width</a> and <a href="stylesheet-reference.html#height-prop">height</a> properties can be used to control the size of the Sub-control. Note that setting a <a href="stylesheet-reference.html#image-prop">image</a> implicitly sets the size of a Sub-control.</p>
+<p>The relative positioning scheme (<a href="stylesheet-reference.html#position-prop">position</a> : relative), allows the position of the Sub-Control to be offset from its initial position. For example, when the <a href="qcombobox.html">QComboBox</a>'s drop-down button is pressed, we may desire the arrow inside to be offset to give a &quot;pressed&quot; effect. To achieve this, we can specify:</p>
+<pre>         QComboBox::down-arrow {
+             image: url(down_arrow.png);
+         }
+         QComboBox::down-arrow:pressed {
+             position: relative;
+             top: 1px; left: 1px;
+         }</pre>
+<p>The absolute positioning scheme (<a href="stylesheet-reference.html#position-prop">position</a> : absolute), allows the position and size of the Sub-control to be changed with respect to the reference element.</p>
+<p>Once positioned, they are treated the same as widgets and can be styled using the the <a href="stylesheet-customizing.html#box-model">box model</a>.</p>
+<p>See the <a href="stylesheet-reference.html#list-of-sub-controls">List of Sub-Controls</a> below for a list of supported subcontrols, and <a href="stylesheet-examples.html#customizing-the-qpushbutton-s-menu-indicator-sub-control">Customizing the QPushButton's Menu Indicator Sub-Control</a> for a realistic example.</p>
+<a name="pseudo-states"></a>
+<h2>Pseudo-States</h2>
+<p>Selectors may contain <i>pseudo-states</i> that denote that restrict the application of the rule based on the widget's state. Pseudo-states appear at the end of the selector, with a colon (<tt>:</tt>) in between. For example, the following rule applies when the mouse hovers over a <a href="qpushbutton.html">QPushButton</a>:</p>
+<pre>         QPushButton:hover { color: white }</pre>
+<p>Pseudo-states can be negated using the exclamation operator. For example, the following rule applies when the mouse does not hover over a <a href="qradiobutton.html">QRadioButton</a>:</p>
+<pre>         QRadioButton:!hover { color: red }</pre>
+<p>Pseudo-states can be chained, in which case a logical AND is implied. For example, the following rule applies to when the mouse hovers over a checked <a href="qcheckbox.html">QCheckBox</a>:</p>
+<pre>         QCheckBox:hover:checked { color: white }</pre>
+<p>Negated Pseudo-states may appear in Pseudo-state chains. For example, the following rule applies when the mouse hovers over a <a href="qpushbutton.html">QPushButton</a> that is not pressed:</p>
+<pre>         QPushButton:hover:!pressed { color: blue; }</pre>
+<p>If needed, logical OR can be expressed using the comma operator:</p>
+<pre>         QCheckBox:hover, QCheckBox:checked { color: white }</pre>
+<p>Pseudo-states can appear in combination with subcontrols. For example:</p>
+<pre>         QComboBox::drop-down:hover { image: url(dropdown_bright.png) }</pre>
+<p>See the <a href="stylesheet-reference.html#list-of-pseudo-states">List of Pseudo-States</a> section below for the list of pseudo-states provided by Qt widgets.</p>
+<a name="conflict-resolution"></a>
+<h2>Conflict Resolution</h2>
+<p>Conflicts arise when several style rules specify the same properties with different values. Consider the following style sheet:</p>
+<pre>         QPushButton#okButton { color: gray }
+         QPushButton { color: red }</pre>
+<p>Both rules match <a href="qpushbutton.html">QPushButton</a> instances called <tt>okButton</tt> and there is a conflict for the <tt>color</tt> property. To resolve this conflict, we must take into account the <i>specificity</i> of the selectors. In the above example, <tt>QPushButton#okButton</tt> is considered more specific than <tt>QPushButton</tt>, because it (usually) refers to a single object, not to all instances of a class.</p>
+<p>Similarly, selectors with pseudo-states are more specific that ones that do not specify pseudo-states. Thus, the following style sheet specifies that a <a href="qpushbutton.html">QPushButton</a> should have white text when the mouse is hovering over it, otherwise red text:</p>
+<pre>         QPushButton:hover { color: white }
+         QPushButton { color: red }</pre>
+<p>Here's a tricky one:</p>
+<pre>         QPushButton:hover { color: white }
+         QPushButton:enabled { color: red }</pre>
+<p>Here, both selectors have the same specificity, so if the mouse hovers over the button while it is enabled, the second rule takes precedence. If we want the text to be white in that case, we can reorder the rules like this:</p>
+<pre>         QPushButton:enabled { color: red }
+         QPushButton:hover { color: white }</pre>
+<p>Alternatively, we can make the first rule more specific:</p>
+<pre>         QPushButton:hover:enabled { color: white }
+         QPushButton:enabled { color: red }</pre>
+<p>A similar issue arises in conjunction with Type Selectors. Consider the following example:</p>
+<pre>         QPushButton { color: red }
+         QAbstractButton { color: gray }</pre>
+<p>Both rules apply to <a href="qpushbutton.html">QPushButton</a> instances (since <a href="qpushbutton.html">QPushButton</a> inherits <a href="qabstractbutton.html">QAbstractButton</a>) and there is a conflict for the <a href="stylesheet-reference.html#color-prop">color</a> property. Because <a href="qpushbutton.html">QPushButton</a> inherits <a href="qabstractbutton.html">QAbstractButton</a>, it might be tempting to assume that <tt>QPushButton</tt> is more specific than <tt>QAbstractButton</tt>. However, for style sheet computations, all Type Selectors have the same specificity, and the rule that appears last takes precedence. In other words, <a href="stylesheet-reference.html#color-prop">color</a> is set to <tt>gray</tt> for all <a href="qabstractbutton.html">QAbstractButton</a>s, including <a href="qpushbutton.html">QPushButton</a>s. If we really want <a href="qpushbutton.html">QPushButton</a>s to have red text, we can always reorder the rules.</p>
+<p>For determining the specificity of a rule, Qt Style Sheets follow the <a href="http://www.w3.org/TR/REC-CSS2/cascade.html#specificity">CSS2 Specification</a>:</p>
+<blockquote><p><i>A selector's specificity is calculated as follows:</i></p>
+<ul>
+<li><i>count the number of ID attributes in the selector (= a)</i></li>
+<li><i>count the number of other attributes and pseudo-classes in the selector (= b)</i></li>
+<li><i>count the number of element names in the selector (= c)</i></li>
+<li><i>ignore pseudo-elements [i.e&#x2e;, <a href="stylesheet-reference.html#subcontrols">subcontrols</a>].</i></li>
+</ul>
+<p><i>Concatenating the three numbers a-b-c (in a number system with a large base) gives the specificity.</i></p>
+<p><i>Some examples:</i></p>
+<pre>         *             {}  / * a=0 b=0 c=0 -&gt; specificity =   0 * /
+         LI            {}  / * a=0 b=0 c=1 -&gt; specificity =   1 * /
+         UL LI         {}  / * a=0 b=0 c=2 -&gt; specificity =   2 * /
+         UL OL+LI      {}  / * a=0 b=0 c=3 -&gt; specificity =   3 * /
+         H1 + *[REL=up]{}  / * a=0 b=1 c=1 -&gt; specificity =  11 * /
+         UL OL LI.red  {}  / * a=0 b=1 c=3 -&gt; specificity =  13 * /
+         LI.red.level  {}  / * a=0 b=2 c=1 -&gt; specificity =  21 * /
+         #x34y         {}  / * a=1 b=0 c=0 -&gt; specificity = 100 * /</pre>
+</blockquote>
+<a name="cascading"></a>
+<h2>Cascading</h2>
+<p>Style sheets can be set on the <a href="qapplication.html">QApplication</a>, on parent widgets, and on child widgets. An arbitrary widget's effective style sheet is obtained by merging the style sheets set on the widget's ancestors (parent, grandparent, etc.), as well as any style sheet set on the <a href="qapplication.html">QApplication</a>.</p>
+<p>When conflicts arise, the widget's own style sheet is always preferred to any inherited style sheet, irrespective of the specificity of the conflicting rules. Likewise, the parent widget's style sheet is preferred to the grandparent's, etc.</p>
+<p>One consequence of this is that setting a style rule on a widget automatically gives it precedence over other rules specified in the ancestor widgets' style sheets or the <a href="qapplication.html">QApplication</a> style sheet. Consider the following example. First, we set a style sheet on the <a href="qapplication.html">QApplication</a>:</p>
+<pre>         qApp-&gt;setStyleSheet(&quot;QPushButton { color: white }&quot;);</pre>
+<p>Then we set a style sheet on a <a href="qpushbutton.html">QPushButton</a> object:</p>
+<pre>         myPushButton-&gt;setStyleSheet(&quot;* { color: blue }&quot;);</pre>
+<p>The style sheet on the <a href="qpushbutton.html">QPushButton</a> forces the <a href="qpushbutton.html">QPushButton</a> (and any child widget) to have blue text, in spite of the more specific rule set provided by the application-wide style sheet.</p>
+<p>The result would have been the same if we had written</p>
+<pre>         myPushButton-&gt;setStyleSheet(&quot;color: blue&quot;);</pre>
+<p>except that if the <a href="qpushbutton.html">QPushButton</a> had children (which is unlikely), the style sheet would have no impact on them.</p>
+<p>Style sheet cascading is a complex topic. Refer to the <a href="http://www.w3.org/TR/CSS2/cascade.html#cascade">CSS2 Specification</a> for the gory details. Be aware that Qt currently doesn't implement <tt>!important</tt>.</p>
+<a name="inheritance"></a>
+<h2>Inheritance</h2>
+<p>In classic CSS, when font and color of an item is not explicitly set, it gets automatically inherited from the parent. When using Qt Style Sheets, a widget does <b>not</b> automatically inherit its font and color setting from its parent widget.</p>
+<p>For example, consider a <a href="qpushbutton.html">QPushButton</a> inside a <a href="qgroupbox.html">QGroupBox</a>:</p>
+<pre>         qApp-&gt;setStyleSheet(&quot;QGroupBox { color: red; } &quot;);</pre>
+<p>The <a href="qpushbutton.html">QPushButton</a> does not have an explicit color set. Hence, instead of inheriting color of its parent <a href="qgroupbox.html">QGroupBox</a>, it has the sytem color. If we want to set the color on a <a href="qgroupbox.html">QGroupBox</a> and its children, we can write:</p>
+<pre>         qApp-&gt;setStyleSheet(&quot;QGroupBox, QGroupBox * { color: red; }&quot;);</pre>
+<p>In contrast, setting a font and propagate using <a href="qwidget.html#font-prop">QWidget::setFont</a>() and <a href="qwidget.html#palette-prop">QWidget::setPalette</a>() propagates to child widgets.</p>
+<a name="widgets-inside-c-namespaces"></a>
+<h2>Widgets inside C++ namespaces</h2>
+<p>The Type Selector can be used to style widgets of a particular type. For example,</p>
+<pre>         class MyPushButton : public QPushButton {
+             // ...
+         }
+
+         // ...
+         qApp-&gt;setStyleSheet(&quot;MyPushButton { background: yellow; }&quot;);</pre>
+<p>Qt Style Sheet uses <a href="qobject-qt3.html#className">QObject::className</a>() of the widget to determine when to apply the Type Selector. When custom widgets are inside namespaces, the <a href="qobject-qt3.html#className">QObject::className</a>() returns &lt;namespace&gt;::&lt;classname&gt;. This conflicts with the syntax for <a href="stylesheet-customizing.html#sub-controls">Sub-Controls</a>. To overcome this problem, when using the Type Selector for widgets inside namespaces, we must replace the &quot;::&quot; with &quot;--&quot;. For example,</p>
+<pre>         namespace ns {
+             class MyPushButton : public QPushButton {
+                 // ...
+             }
+         }
+
+         // ...
+         qApp-&gt;setSytleSheet(&quot;ns--MyPushButton { background: yellow; }&quot;);</pre>
+<a name="setting-qobject-properties"></a>
+<h2>Setting QObject properties</h2>
+<p>From 4.3 and above, any designable Q_PROPERTY can be set using the qproperty-&lt;property name&gt; syntax.</p>
+<p>For example,</p>
+<pre>         MyLabel { qproperty-pixmap: url(pixmap.png); }
+         MyGroupBox { qproperty-titleColor: rgb(100, 200, 100); }
+         QPushButton { qproperty-iconSize: 20px 20px; }</pre>
+<p>
+[Previous: <a href="stylesheet.html">Qt Style Sheets</a>]
+[<a href="stylesheet.html">Contents</a>]
+[Next: <a href="stylesheet-designer.html">Qt Designer Integration</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

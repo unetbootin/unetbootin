@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/svg/qsvgwidget.cpp -->
+<head>
+  <title>Qt 4.4: QSvgWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSvgWidget Class Reference<br /><span class="small-subtitle">[<a href="qtsvg.html">QtSvg</a> module]</span>
+</h1>
+<p>The QSvgWidget class provides a widget that is used to display the contents of Scalable Vector Graphics (SVG) files. <a href="#details">More...</a></p>
+<pre> #include &lt;QSvgWidget&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qsvgwidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsvgwidget.html#QSvgWidget">QSvgWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsvgwidget.html#QSvgWidget-2">QSvgWidget</a></b> ( const QString &amp; <i>file</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qsvgwidget.html#dtor.QSvgWidget">~QSvgWidget</a></b> ()</li>
+<li><div class="fn"/>QSvgRenderer * <b><a href="qsvgwidget.html#renderer">renderer</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qsvgwidget.html#load">load</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>void <b><a href="qsvgwidget.html#load-2">load</a></b> ( const QByteArray &amp; <i>contents</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSvgWidget class provides a widget that is used to display the contents of Scalable Vector Graphics (SVG) files.</p>
+<p>This class enables developers to display SVG drawings alongside standard widgets, and is used in much the same way as <a href="qlabel.html">QLabel</a> is used for displaying text and bitmap images.</p>
+<p>Since QSvgWidget is a subclass of <a href="qwidget.html">QWidget</a>, SVG drawings are rendered using the properties of the display. More control can be exercised over the rendering process with the <a href="qsvgrenderer.html">QSvgRenderer</a> class, as this can be used to paint onto other paint devices, such as <a href="qimage.html">QImage</a> and <a href="qglwidget.html">QGLWidget</a>. The renderer used by the widget can be obtained with the <a href="qsvgwidget.html#renderer">renderer</a>() function.</p>
+<p>Each QSvgWidget can be constructed with the file name of a SVG file, or they can be constructed without a specific file to render and one can be supplied later. The <a href="qsvgwidget.html#load">load</a>() functions provide two different ways to load an SVG file: they accept either the file name of an SVG file or a <a href="qbytearray.html">QByteArray</a> containing the serialized XML representation of an SVG file.</p>
+<p>By default, the widget provides a size hint to reflect the size of the drawing that it displays. If no data has been loaded, the widget provides the default <a href="qwidget.html">QWidget</a> size hint. Subclass this class and reimplement <a href="qwidget.html#sizeHint-prop">sizeHint</a>() if you need to customize this behavior.</p>
+<p>See also <a href="qsvgrenderer.html">QSvgRenderer</a>, <a href="qtsvg.html">QtSvg Module</a>, and <a href="qpicture.html">QPicture</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSvgWidget"></a>QSvgWidget::QSvgWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new SVG display widget with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QSvgWidget-2"></a>QSvgWidget::QSvgWidget ( const <a href="qstring.html">QString</a> &amp; <i>file</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new SVG display widget with the given <i>parent</i> and loads the contents of the specified <i>file</i>.</p>
+<h3 class="fn"><a name="dtor.QSvgWidget"></a>QSvgWidget::~QSvgWidget ()</h3>
+<p>Destroys the widget.</p>
+<h3 class="fn"><a name="load"></a>void QSvgWidget::load ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Loads the contents of the specified SVG <i>file</i> and updates the widget.</p>
+<h3 class="fn"><a name="load-2"></a>void QSvgWidget::load ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>contents</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Loads the specified SVG format <i>contents</i> and updates the widget.</p>
+<h3 class="fn"><a name="renderer"></a><a href="qsvgrenderer.html">QSvgRenderer</a> * QSvgWidget::renderer () const</h3>
+<p>Returns the renderer used to display the contents of the widget.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

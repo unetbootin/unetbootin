@@ -1,0 +1,109 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'qhelpsearchengine.cpp'
+**
+** Created: Thu Mar 5 20:32:00 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'qhelpsearchengine.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_QHelpSearchEnginePrivate[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       5,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      26,   25,   25,   25, 0x05,
+      44,   25,   25,   25, 0x05,
+      63,   25,   25,   25, 0x05,
+      87,   82,   25,   25, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     110,   25,   25,   25, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QHelpSearchEnginePrivate[] = {
+    "QHelpSearchEnginePrivate\0\0indexingStarted()\0"
+    "indexingFinished()\0searchingStarted()\0"
+    "hits\0searchingFinished(int)\0optimizeIndex()\0"
+};
+
+const QMetaObject QHelpSearchEnginePrivate::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_QHelpSearchEnginePrivate,
+      qt_meta_data_QHelpSearchEnginePrivate, 0 }
+};
+
+const QMetaObject *QHelpSearchEnginePrivate::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QHelpSearchEnginePrivate::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QHelpSearchEnginePrivate))
+        return static_cast<void*>(const_cast< QHelpSearchEnginePrivate*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int QHelpSearchEnginePrivate::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: indexingStarted(); break;
+        case 1: indexingFinished(); break;
+        case 2: searchingStarted(); break;
+        case 3: searchingFinished((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: optimizeIndex(); break;
+        default: ;
+        }
+        _id -= 5;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QHelpSearchEnginePrivate::indexingStarted()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void QHelpSearchEnginePrivate::indexingFinished()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+
+// SIGNAL 2
+void QHelpSearchEnginePrivate::searchingStarted()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, 0);
+}
+
+// SIGNAL 3
+void QHelpSearchEnginePrivate::searchingFinished(int _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+QT_END_MOC_NAMESPACE

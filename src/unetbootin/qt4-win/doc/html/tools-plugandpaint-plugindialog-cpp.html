@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: plugindialog.cpp Example File (tools/plugandpaint/plugindialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">plugindialog.cpp Example File<br /><span class="small-subtitle">tools/plugandpaint/plugindialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;interfaces.h&quot;
+ #include &quot;plugindialog.h&quot;
+
+ #include &lt;QPluginLoader&gt;
+ #include &lt;QStringList&gt;
+ #include &lt;QDir&gt;
+
+ #include &lt;QLabel&gt;
+ #include &lt;QGridLayout&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QTreeWidget&gt;
+ #include &lt;QTreeWidgetItem&gt;
+ #include &lt;QHeaderView&gt;
+
+ PluginDialog::PluginDialog(const QString &amp;path, const QStringList &amp;fileNames,
+                            QWidget *parent) :
+     QDialog(parent),
+     label(new QLabel),
+     treeWidget(new QTreeWidget),
+     okButton(new QPushButton(tr(&quot;OK&quot;)))
+ {
+     treeWidget-&gt;setAlternatingRowColors(false);
+     treeWidget-&gt;setSelectionMode(QAbstractItemView::NoSelection);
+     treeWidget-&gt;setColumnCount(1);
+     treeWidget-&gt;header()-&gt;hide();
+
+     okButton-&gt;setDefault(true);
+
+     connect(okButton, SIGNAL(clicked()), this, SLOT(close()));
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;setColumnStretch(0, 1);
+     mainLayout-&gt;setColumnStretch(2, 1);
+     mainLayout-&gt;addWidget(label, 0, 0, 1, 3);
+     mainLayout-&gt;addWidget(treeWidget, 1, 0, 1, 3);
+     mainLayout-&gt;addWidget(okButton, 2, 1);
+     setLayout(mainLayout);
+
+     interfaceIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_DirOpenIcon),
+                             QIcon::Normal, QIcon::On);
+     interfaceIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_DirClosedIcon),
+                             QIcon::Normal, QIcon::Off);
+     featureIcon.addPixmap(style()-&gt;standardPixmap(QStyle::SP_FileIcon));
+
+     setWindowTitle(tr(&quot;Plugin Information&quot;));
+     findPlugins(path, fileNames);
+ }
+
+ void PluginDialog::findPlugins(const QString &amp;path,
+                                const QStringList &amp;fileNames)
+ {
+     label-&gt;setText(tr(&quot;Plug &amp; Paint found the following plugins\n&quot;
+                       &quot;(looked in %1):&quot;)
+                    .arg(QDir::toNativeSeparators(path)));
+
+     const QDir dir(path);
+
+     foreach (QObject *plugin, QPluginLoader::staticInstances())
+         populateTreeWidget(plugin, tr(&quot;%1 (Static Plugin)&quot;)
+                                    .arg(plugin-&gt;metaObject()-&gt;className()));
+
+     foreach (QString fileName, fileNames) {
+         QPluginLoader loader(dir.absoluteFilePath(fileName));
+         QObject *plugin = loader.instance();
+         if (plugin)
+             populateTreeWidget(plugin, fileName);
+     }
+ }
+
+ void PluginDialog::populateTreeWidget(QObject *plugin, const QString &amp;text)
+ {
+     QTreeWidgetItem *pluginItem = new QTreeWidgetItem(treeWidget);
+     pluginItem-&gt;setText(0, text);
+     treeWidget-&gt;setItemExpanded(pluginItem, true);
+
+     QFont boldFont = pluginItem-&gt;font(0);
+     boldFont.setBold(true);
+     pluginItem-&gt;setFont(0, boldFont);
+
+     if (plugin) {
+         BrushInterface *iBrush = qobject_cast&lt;BrushInterface *&gt;(plugin);
+         if (iBrush)
+             addItems(pluginItem, &quot;BrushInterface&quot;, iBrush-&gt;brushes());
+
+         ShapeInterface *iShape = qobject_cast&lt;ShapeInterface *&gt;(plugin);
+         if (iShape)
+             addItems(pluginItem, &quot;ShapeInterface&quot;, iShape-&gt;shapes());
+
+         FilterInterface *iFilter =
+                 qobject_cast&lt;FilterInterface *&gt;(plugin);
+         if (iFilter)
+             addItems(pluginItem, &quot;FilterInterface&quot;, iFilter-&gt;filters());
+     }
+ }
+
+ void PluginDialog::addItems(QTreeWidgetItem *pluginItem,
+                             const char *interfaceName,
+                             const QStringList &amp;features)
+ {
+     QTreeWidgetItem *interfaceItem = new QTreeWidgetItem(pluginItem);
+     interfaceItem-&gt;setText(0, interfaceName);
+     interfaceItem-&gt;setIcon(0, interfaceIcon);
+
+     foreach (QString feature, features) {
+         if (feature.endsWith(&quot;...&quot;))
+             feature.chop(3);
+         QTreeWidgetItem *featureItem = new QTreeWidgetItem(interfaceItem);
+         featureItem-&gt;setText(0, feature);
+         featureItem-&gt;setIcon(0, featureIcon);
+     }
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

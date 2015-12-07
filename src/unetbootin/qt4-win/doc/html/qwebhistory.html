@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/3rdparty/webkit/WebKit/qt/Api/qwebhistory.cpp -->
+<head>
+  <title>Qt 4.4: QWebHistory Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWebHistory Class Reference<br /><span class="small-subtitle">[<a href="qtwebkit.html">QtWebKit</a> module]</span>
+</h1>
+<p>The QWebHistory class represents the history of a <a href="qwebpage.html">QWebPage</a> <a href="#details">More...</a></p>
+<pre> #include &lt;QWebHistory&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qwebhistory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qwebhistory.html#back">back</a></b> ()</li>
+<li><div class="fn"/>QWebHistoryItem <b><a href="qwebhistory.html#backItem">backItem</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QWebHistoryItem&gt; <b><a href="qwebhistory.html#backItems">backItems</a></b> ( int <i>maxItems</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qwebhistory.html#canGoBack">canGoBack</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qwebhistory.html#canGoForward">canGoForward</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebhistory.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qwebhistory.html#count">count</a></b> () const</li>
+<li><div class="fn"/>QWebHistoryItem <b><a href="qwebhistory.html#currentItem">currentItem</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qwebhistory.html#forward">forward</a></b> ()</li>
+<li><div class="fn"/>QWebHistoryItem <b><a href="qwebhistory.html#forwardItem">forwardItem</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QWebHistoryItem&gt; <b><a href="qwebhistory.html#forwardItems">forwardItems</a></b> ( int <i>maxItems</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qwebhistory.html#goToItem">goToItem</a></b> ( const QWebHistoryItem &amp; <i>item</i> )</li>
+<li><div class="fn"/>QWebHistoryItem <b><a href="qwebhistory.html#itemAt">itemAt</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>QList&lt;QWebHistoryItem&gt; <b><a href="qwebhistory.html#items">items</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWebHistory class represents the history of a <a href="qwebpage.html">QWebPage</a></p>
+<p>Each <a href="qwebpage.html">QWebPage</a> instance contains a history of visited pages that can be accessed by <a href="qwebpage.html#history">QWebPage::history</a>(). QWebHistory represents this history and makes it possible to navigate it.</p>
+<p>The history uses the concept of a <i>current item</i>, dividing the pages visited into those that can be visited by navigating <i>back</i> and <i>forward</i> using the <a href="qwebhistory.html#back">back</a>() and <a href="qwebhistory.html#forward">forward</a>() functions. The current item can be obtained by calling <a href="qwebhistory.html#currentItem">currentItem</a>(), and an arbitrary item in the history can be made the current item by passing it to <a href="qwebhistory.html#goToItem">goToItem</a>().</p>
+<p>A list of items describing the pages that can be visited by going back can be obtained by calling the <a href="qwebhistory.html#backItems">backItems</a>() function; similarly, items describing the pages ahead of the current page can be obtained with the <a href="qwebhistory.html#forwardItems">forwardItems</a>() function. The total list of items is obtained with the <a href="qwebhistory.html#items">items</a>() function.</p>
+<p>Just as with containers, functions are available to examine the history in terms of a list. Arbitrary items in the history can be obtained with <a href="qwebhistory.html#itemAt">itemAt</a>(), the total number of items is given by <a href="qwebhistory.html#count">count</a>(), and the history can be cleared with the <a href="qwebhistory.html#clear">clear</a>() function.</p>
+<p>See also <a href="qwebhistoryitem.html">QWebHistoryItem</a>, <a href="qwebhistoryinterface.html">QWebHistoryInterface</a>, and <a href="qwebpage.html">QWebPage</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="back"></a>void QWebHistory::back ()</h3>
+<p>Set the current item to be the previous item in the history and goes to the corresponding page; i.e&#x2e;, goes back one history item.</p>
+<p>See also <a href="qwebhistory.html#forward">forward</a>() and <a href="qwebhistory.html#goToItem">goToItem</a>().</p>
+<h3 class="fn"><a name="backItem"></a><a href="qwebhistoryitem.html">QWebHistoryItem</a> QWebHistory::backItem () const</h3>
+<p>Returns the item before the current item in the history.</p>
+<h3 class="fn"><a name="backItems"></a><a href="qlist.html">QList</a>&lt;<a href="qwebhistoryitem.html">QWebHistoryItem</a>&gt; QWebHistory::backItems ( int <i>maxItems</i> ) const</h3>
+<p>Returns the list of items in the backwards history list. At most <i>maxItems</i> entries are returned.</p>
+<p>See also <a href="qwebhistory.html#forwardItems">forwardItems</a>().</p>
+<h3 class="fn"><a name="canGoBack"></a>bool QWebHistory::canGoBack () const</h3>
+<p>Returns true if there is an item preceding the current item in the history; otherwise returns false.</p>
+<p>See also <a href="qwebhistory.html#canGoForward">canGoForward</a>().</p>
+<h3 class="fn"><a name="canGoForward"></a>bool QWebHistory::canGoForward () const</h3>
+<p>Returns true if we have an item to go forward to; otherwise returns false.</p>
+<p>See also <a href="qwebhistory.html#canGoBack">canGoBack</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QWebHistory::clear ()</h3>
+<p>Clears the history.</p>
+<p>See also <a href="qwebhistory.html#count">count</a>() and <a href="qwebhistory.html#items">items</a>().</p>
+<h3 class="fn"><a name="count"></a>int QWebHistory::count () const</h3>
+<p>Returns the total number of items in the history.</p>
+<h3 class="fn"><a name="currentItem"></a><a href="qwebhistoryitem.html">QWebHistoryItem</a> QWebHistory::currentItem () const</h3>
+<p>Returns the current item in the history.</p>
+<h3 class="fn"><a name="forward"></a>void QWebHistory::forward ()</h3>
+<p>Sets the current item to be the next item in the history and goes to the corresponding page; i.e&#x2e;, goes forward one history item.</p>
+<p>See also <a href="qwebhistory.html#back">back</a>() and <a href="qwebhistory.html#goToItem">goToItem</a>().</p>
+<h3 class="fn"><a name="forwardItem"></a><a href="qwebhistoryitem.html">QWebHistoryItem</a> QWebHistory::forwardItem () const</h3>
+<p>Returns the item after the current item in the history.</p>
+<h3 class="fn"><a name="forwardItems"></a><a href="qlist.html">QList</a>&lt;<a href="qwebhistoryitem.html">QWebHistoryItem</a>&gt; QWebHistory::forwardItems ( int <i>maxItems</i> ) const</h3>
+<p>Returns the list of items in the forward history list. At most <i>maxItems</i> entries are returned.</p>
+<p>See also <a href="qwebhistory.html#backItems">backItems</a>().</p>
+<h3 class="fn"><a name="goToItem"></a>void QWebHistory::goToItem ( const <a href="qwebhistoryitem.html">QWebHistoryItem</a> &amp; <i>item</i> )</h3>
+<p>Sets the current item to be the specified <i>item</i> in the history and goes to the page.</p>
+<p>See also <a href="qwebhistory.html#back">back</a>() and <a href="qwebhistory.html#forward">forward</a>().</p>
+<h3 class="fn"><a name="itemAt"></a><a href="qwebhistoryitem.html">QWebHistoryItem</a> QWebHistory::itemAt ( int <i>i</i> ) const</h3>
+<p>Returns the item at index <i>i</i> in the history.</p>
+<h3 class="fn"><a name="items"></a><a href="qlist.html">QList</a>&lt;<a href="qwebhistoryitem.html">QWebHistoryItem</a>&gt; QWebHistory::items () const</h3>
+<p>Returns a list of all items currently in the history.</p>
+<p>See also <a href="qwebhistory.html#count">count</a>() and <a href="qwebhistory.html#clear">clear</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

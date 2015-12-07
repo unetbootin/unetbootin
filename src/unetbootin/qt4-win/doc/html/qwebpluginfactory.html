@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/3rdparty/webkit/WebKit/qt/Api/qwebpluginfactory.cpp -->
+<head>
+  <title>Qt 4.4: QWebPluginFactory Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWebPluginFactory Class Reference<br /><span class="small-subtitle">[<a href="qtwebkit.html">QtWebKit</a> module]</span>
+</h1>
+<p>The QWebPluginFactory class creates plugins to be embedded into web pages. <a href="#details">More...</a></p>
+<pre> #include &lt;QWebPluginFactory&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qwebpluginfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qwebpluginfactory-extensionoption.html">ExtensionOption</a></b></li>
+<li><div class="fn"/>class <b><a href="qwebpluginfactory-extensionreturn.html">ExtensionReturn</a></b></li>
+<li><div class="fn"/>class <b><a href="qwebpluginfactory-mimetype.html">MimeType</a></b></li>
+<li><div class="fn"/>class <b><a href="qwebpluginfactory-plugin.html">Plugin</a></b></li>
+<li><div class="fn"/>enum <b><a href="qwebpluginfactory.html#Extension-enum">Extension</a></b> { }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qwebpluginfactory.html#QWebPluginFactory">QWebPluginFactory</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qwebpluginfactory.html#dtor.QWebPluginFactory">~QWebPluginFactory</a></b> ()</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qwebpluginfactory.html#create">create</a></b> ( const QString &amp; <i>mimeType</i>, const QUrl &amp; <i>url</i>, const QStringList &amp; <i>argumentNames</i>, const QStringList &amp; <i>argumentValues</i> ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qwebpluginfactory.html#extension">extension</a></b> ( Extension <i>extension</i>, const ExtensionOption * <i>option</i> = 0, ExtensionReturn * <i>output</i> = 0 )</li>
+<li><div class="fn"/>virtual QList&lt;Plugin&gt; <b><a href="qwebpluginfactory.html#plugins">plugins</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qwebpluginfactory.html#refreshPlugins">refreshPlugins</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qwebpluginfactory.html#supportsExtension">supportsExtension</a></b> ( Extension <i>extension</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWebPluginFactory class creates plugins to be embedded into web pages.</p>
+<p>QWebPluginFactory is a factory for creating plugins for <a href="qwebpage.html">QWebPage</a>. A plugin factory can be installed on a <a href="qwebpage.html">QWebPage</a> using <a href="qwebpage.html#setPluginFactory">QWebPage::setPluginFactory</a>().</p>
+<p>You can provide a QWebPluginFactory by implementing the <a href="qwebpluginfactory.html#plugins">plugins</a>() and the <a href="qwebpluginfactory.html#create">create</a>() method. For <a href="qwebpluginfactory.html#plugins">plugins</a>() it is necessary to describe the plugins the factory can create, including a description and the supported mime types. The mime types are matched with the mime type specified in the HTML object tag. The <a href="qwebpluginfactory.html#create">create</a>() method is called if the requested mime type is supported. The implementation has to return a new instance of the plugin requested for the given mime type and the specified url.</p>
+<p><b>Note:</b> The plugin factory is only used if plugins are enabled through <a href="qwebsettings.html">QWebSettings</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Extension-enum"></a>enum QWebPluginFactory::Extension</h3>
+<p>This enum describes the types of extensions that the plugin factory can support. Before using these extensions, you should verify that the extension is supported by calling <a href="qwebpluginfactory.html#supportsExtension">supportsExtension</a>().</p>
+<p>Currently there are no extensions.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QWebPluginFactory"></a>QWebPluginFactory::QWebPluginFactory ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qwebpluginfactory.html">QWebPluginFactory</a> with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QWebPluginFactory"></a>QWebPluginFactory::~QWebPluginFactory ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="create"></a><a href="qobject.html">QObject</a> * QWebPluginFactory::create ( const <a href="qstring.html">QString</a> &amp; <i>mimeType</i>, const <a href="qurl.html">QUrl</a> &amp; <i>url</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>argumentNames</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>argumentValues</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Implemented in subclasses to create a new plugin that can display content of type <i>mimeType</i>. The url of the content is provided in <i>url</i>.</p>
+<p>The HTML object element can provide parameters through the param tag. The name and the value attributes of these tags are provided in the <i>argumentNames</i> and <i>argumentValues</i> string lists.</p>
+<p>For example:</p>
+<pre> &lt;object type=&quot;application/x-pdf&quot; data=&quot;http:<span class="comment">//</span>www.trolltech.com/document.pdf&quot; width=&quot;500&quot; height=&quot;400&quot;&gt;
+     &lt;param name=&quot;showTableOfContents&quot; value=&quot;true&quot; /&gt;
+     &lt;param name=&quot;hideThumbnails&quot; value=&quot;false&quot; /&gt;
+ &lt;/object&gt;</pre>
+<p>The above object element will result in a call to create() with the following arguments:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Parameter</th><th>Value</th></tr></thead>
+<tr valign="top" class="odd"><td>mimeType</td><td>&quot;application/x-pdf&quot;</td></tr>
+<tr valign="top" class="even"><td>url</td><td>&quot;http://www.trolltech.com/document.pdf&quot;</td></tr>
+<tr valign="top" class="odd"><td>argumentNames</td><td>&quot;showTableOfContents&quot; &quot;hideThumbnails&quot;</td></tr>
+<tr valign="top" class="even"><td>argumentVaues</td><td>&quot;true&quot; &quot;false&quot;</td></tr>
+</table></p>
+<p>The returned object should be a <a href="qwidget.html">QWidget</a>.</p>
+<p><b>Note:</b> Ownership of the returned object will be transferred to the caller.</p>
+<h3 class="fn"><a name="extension"></a>bool QWebPluginFactory::extension ( <a href="qwebpluginfactory.html#Extension-enum">Extension</a> <i>extension</i>, const <a href="qwebpluginfactory-extensionoption.html">ExtensionOption</a> * <i>option</i> = 0, <a href="qwebpluginfactory-extensionreturn.html">ExtensionReturn</a> * <i>output</i> = 0 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function can be reimplemented in a <a href="qwebpluginfactory.html">QWebPluginFactory</a> subclass to provide support for extensions. The <i>option</i> argument is provided as input to the extension; the output results can be stored in <i>output</i>.</p>
+<p>The behaviour of this function is determined by <i>extension</i>.</p>
+<p>You can call <a href="qwebpluginfactory.html#supportsExtension">supportsExtension</a>() to check if an extension is supported by the factory.</p>
+<p>By default, no extensions are supported, and this function returns false.</p>
+<p>See also <a href="qwebpluginfactory.html#supportsExtension">supportsExtension</a>() and <a href="qwebpluginfactory.html#Extension-enum">Extension</a>.</p>
+<h3 class="fn"><a name="plugins"></a><a href="qlist.html">QList</a>&lt;<a href="qwebpluginfactory-plugin.html">Plugin</a>&gt; QWebPluginFactory::plugins () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This function is reimplemented in subclasses to return a list of supported plugins the factory can create.</p>
+<p><b>Note:</b> Currently, this function is only called when JavaScript programs access the global <tt>plugins</tt> or <tt>mimetypes</tt> objects.</p>
+<h3 class="fn"><a name="refreshPlugins"></a>void QWebPluginFactory::refreshPlugins ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function is called to refresh the list of supported plugins. It may be called after a new plugin has been installed in the system.</p>
+<h3 class="fn"><a name="supportsExtension"></a>bool QWebPluginFactory::supportsExtension ( <a href="qwebpluginfactory.html#Extension-enum">Extension</a> <i>extension</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function returns true if the plugin factory supports <i>extension</i>; otherwise false is returned.</p>
+<p>See also <a href="qwebpluginfactory.html#extension">extension</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

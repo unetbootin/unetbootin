@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/trolltech/designer">
+<file>images/designer.png</file>
+<file>templates/forms/Dialog_with_Buttons_Bottom.ui</file>
+<file>templates/forms/Dialog_with_Buttons_Right.ui</file>
+<file>templates/forms/Dialog_without_Buttons.ui</file>
+<file>templates/forms/Widget.ui</file>
+<file>templates/forms/Main_Window.ui</file>
+</qresource>
+</RCC>

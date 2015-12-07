@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: addresswidget.cpp Example File (itemviews/addressbook/addresswidget.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">addresswidget.cpp Example File<br /><span class="small-subtitle">itemviews/addressbook/addresswidget.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2008-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &quot;addresswidget.h&quot;
+ #include &quot;adddialog.h&quot;
+
+ AddressWidget::AddressWidget(QWidget *parent)
+     : QTabWidget(parent)
+ {
+     table = new TableModel(this);
+     newAddressTab = new NewAddressTab(this);
+     connect(newAddressTab, SIGNAL(sendDetails(QString, QString)),
+         this, SLOT(addEntry(QString, QString)));
+
+     addTab(newAddressTab, &quot;Address Book&quot;);
+
+     setupTabs();
+ }
+
+ void AddressWidget::addEntry()
+ {
+     AddDialog aDialog;
+
+     if (aDialog.exec()) {
+         QString name = aDialog.nameText-&gt;text();
+         QString address = aDialog.addressText-&gt;toPlainText();
+
+         addEntry(name, address);
+     }
+ }
+
+ void AddressWidget::addEntry(QString name, QString address)
+ {
+     QList&lt; QPair&lt;QString, QString&gt; &gt;list = table-&gt;getList();
+     QPair&lt;QString, QString&gt; pair(name, address);
+
+     if (!list.contains(pair)) {
+         table-&gt;insertRows(0, 1, QModelIndex());
+
+         QModelIndex index = table-&gt;index(0, 0, QModelIndex());
+         table-&gt;setData(index, name, Qt::EditRole);
+         index = table-&gt;index(0, 1, QModelIndex());
+         table-&gt;setData(index, address, Qt::EditRole);
+         removeTab(indexOf(newAddressTab));
+     } else {
+         QMessageBox::information(this, tr(&quot;Duplicate Name&quot;),
+             tr(&quot;The name \&quot;%1\&quot; already exists.&quot;).arg(name));
+     }
+ }
+
+ void AddressWidget::editEntry()
+ {
+     QTableView *temp = static_cast&lt;QTableView*&gt;(currentWidget());
+     QItemSelectionModel *selectionModel = temp-&gt;selectionModel();
+
+     QModelIndexList indexes = selectionModel-&gt;selectedRows();
+     QModelIndex index, i;
+     QString name;
+     QString address;
+     int row;
+
+     foreach (index, indexes) {
+         row = index.row();
+         i = table-&gt;index(row, 0, QModelIndex());
+         QVariant varName = table-&gt;data(i, Qt::DisplayRole);
+         name = varName.toString();
+
+         i = table-&gt;index(row, 1, QModelIndex());
+         QVariant varAddr = table-&gt;data(i, Qt::DisplayRole);
+         address = varAddr.toString();
+     }
+
+     AddDialog aDialog;
+     aDialog.setWindowTitle(tr(&quot;Edit a Contact&quot;));
+
+     aDialog.nameText-&gt;setReadOnly(true);
+     aDialog.nameText-&gt;setText(name);
+     aDialog.addressText-&gt;setText(address);
+
+     if (aDialog.exec()) {
+         QString newAddress = aDialog.addressText-&gt;toPlainText();
+         if (newAddress != address) {
+             i = table-&gt;index(row, 1, QModelIndex());
+             table-&gt;setData(i, newAddress, Qt::EditRole);
+         }
+     }
+ }
+
+ void AddressWidget::removeEntry()
+ {
+     QTableView *temp = static_cast&lt;QTableView*&gt;(currentWidget());
+     QItemSelectionModel *selectionModel = temp-&gt;selectionModel();
+
+     QModelIndexList indexes = selectionModel-&gt;selectedRows();
+     QModelIndex index;
+
+     foreach (index, indexes) {
+         int row = index.row();
+         table-&gt;removeRows(row, 1, QModelIndex());
+     }
+
+     if (table-&gt;rowCount(QModelIndex()) == 0) {
+         insertTab(0, newAddressTab, &quot;Address Book&quot;);
+     }
+ }
+
+ void AddressWidget::setupTabs()
+ {
+     QStringList groups;
+     groups &lt;&lt; &quot;ABC&quot; &lt;&lt; &quot;DEF&quot; &lt;&lt; &quot;GHI&quot; &lt;&lt; &quot;JKL&quot; &lt;&lt; &quot;MNO&quot; &lt;&lt; &quot;PQR&quot; &lt;&lt; &quot;STU&quot; &lt;&lt; &quot;VW&quot; &lt;&lt; &quot;XYZ&quot;;
+
+     for (int i = 0; i &lt; groups.size(); ++i) {
+         QString str = groups.at(i);
+
+         proxyModel = new QSortFilterProxyModel(this);
+         proxyModel-&gt;setSourceModel(table);
+         proxyModel-&gt;setDynamicSortFilter(true);
+
+         QTableView *tableView = new QTableView;
+         tableView-&gt;setModel(proxyModel);
+         tableView-&gt;setSortingEnabled(true);
+         tableView-&gt;setSelectionBehavior(QAbstractItemView::SelectRows);
+         tableView-&gt;horizontalHeader()-&gt;setStretchLastSection(true);
+         tableView-&gt;verticalHeader()-&gt;hide();
+         tableView-&gt;setEditTriggers(QAbstractItemView::NoEditTriggers);
+         tableView-&gt;setSelectionMode(QAbstractItemView::SingleSelection);
+
+         QString newStr = QString(&quot;^[%1].*&quot;).arg(str);
+
+         proxyModel-&gt;setFilterRegExp(QRegExp(newStr, Qt::CaseInsensitive));
+         proxyModel-&gt;setFilterKeyColumn(0);
+         proxyModel-&gt;sort(0, Qt::AscendingOrder);
+
+         connect(tableView-&gt;selectionModel(),
+             SIGNAL(selectionChanged(const QItemSelection &amp;, const QItemSelection &amp;)),
+             this, SIGNAL(selectionChanged(const QItemSelection &amp;)));
+
+         addTab(tableView, str);
+     }
+ }
+
+ void AddressWidget::readFromFile(QString fileName)
+ {
+     QFile file(fileName);
+
+     if (!file.open(QIODevice::ReadOnly)) {
+         QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+             file.errorString());
+         return;
+     }
+
+     QList&lt; QPair&lt;QString, QString&gt; &gt; pairs = table-&gt;getList();
+     QDataStream in(&amp;file);
+     in &gt;&gt; pairs;
+
+     if (pairs.isEmpty()) {
+         QMessageBox::information(this, tr(&quot;No contacts in file&quot;),
+             tr(&quot;The file you are attempting to open contains no contacts.&quot;));
+     } else {
+         for (int i=0; i&lt;pairs.size(); ++i) {
+             QPair&lt;QString, QString&gt; p = pairs.at(i);
+             addEntry(p.first, p.second);
+         }
+     }
+ }
+
+ void AddressWidget::writeToFile(QString fileName)
+ {
+     QFile file(fileName);
+
+     if (!file.open(QIODevice::WriteOnly)) {
+         QMessageBox::information(this, tr(&quot;Unable to open file&quot;), file.errorString());
+         return;
+     }
+
+     QList&lt; QPair&lt;QString, QString&gt; &gt; pairs = table-&gt;getList();
+     QDataStream out(&amp;file);
+     out &lt;&lt; pairs;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

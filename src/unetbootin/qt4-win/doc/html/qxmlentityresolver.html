@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlEntityResolver Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlEntityResolver Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlEntityResolver class provides an interface to resolve external entities contained in XML data. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlEntityResolver&gt;</pre><p>Inherited by <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmlentityresolver-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qxmlentityresolver.html#dtor.QXmlEntityResolver">~QXmlEntityResolver</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="qxmlentityresolver.html#errorString">errorString</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlentityresolver.html#resolveEntity">resolveEntity</a></b> ( const QString &amp; <i>publicId</i>, const QString &amp; <i>systemId</i>, QXmlInputSource *&amp; <i>ret</i> ) = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlEntityResolver class provides an interface to resolve external entities contained in XML data.</p>
+<p>If an application needs to implement customized handling for external entities, it must implement this interface, i.e&#x2e; <a href="qxmlentityresolver.html#resolveEntity">resolveEntity</a>(), and register it with <a href="qxmlreader.html#setEntityResolver">QXmlReader::setEntityResolver</a>().</p>
+<p>See also <a href="qxmldtdhandler.html">QXmlDTDHandler</a>, <a href="qxmldeclhandler.html">QXmlDeclHandler</a>, <a href="qxmlcontenthandler.html">QXmlContentHandler</a>, <a href="qxmlerrorhandler.html">QXmlErrorHandler</a>, <a href="qxmllexicalhandler.html">QXmlLexicalHandler</a>, and <a href="qtxml.html#introduction-to-sax2">Introduction to SAX2</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QXmlEntityResolver"></a>QXmlEntityResolver::~QXmlEntityResolver ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the entity resolver.</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QXmlEntityResolver::errorString () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>The reader calls this function to get an error string if any of the handler functions returns false.</p>
+<h3 class="fn"><a name="resolveEntity"></a>bool QXmlEntityResolver::resolveEntity ( const <a href="qstring.html">QString</a> &amp; <i>publicId</i>, const <a href="qstring.html">QString</a> &amp; <i>systemId</i>, <a href="qxmlinputsource.html">QXmlInputSource</a> *&amp; <i>ret</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>The reader calls this function before it opens any external entity, except the top-level document entity. The application may request the reader to resolve the entity itself (<i>ret</i> is 0) or to use an entirely different input source (<i>ret</i> points to the input source).</p>
+<p>The reader deletes the input source <i>ret</i> when it no longer needs it, so you should allocate it on the heap with <tt>new</tt>.</p>
+<p>The argument <i>publicId</i> is the public identifier of the external entity, <i>systemId</i> is the system identifier of the external entity and <i>ret</i> is the return value of this function. If <i>ret</i> is 0 the reader should resolve the entity itself, if it is non-zero it must point to an input source which the reader uses instead.</p>
+<p>If this function returns false the reader stops parsing and reports an error. The reader uses the function <a href="qxmlentityresolver.html#errorString">errorString</a>() to get the error message.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

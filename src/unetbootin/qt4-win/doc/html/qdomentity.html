@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/dom/qdom.cpp -->
+<head>
+  <title>Qt 4.4: QDomEntity Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDomEntity Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QDomEntity class represents an XML entity. <a href="#details">More...</a></p>
+<pre> #include &lt;QDomEntity&gt;</pre><p>Inherits <a href="qdomnode.html">QDomNode</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qdomentity-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdomentity.html#QDomEntity">QDomEntity</a></b> ()</li>
+<li><div class="fn"/><b><a href="qdomentity.html#QDomEntity-2">QDomEntity</a></b> ( const QDomEntity &amp; <i>x</i> )</li>
+<li><div class="fn"/>QDomNode::NodeType <b><a href="qdomentity.html#nodeType">nodeType</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdomentity.html#notationName">notationName</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdomentity.html#publicId">publicId</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdomentity.html#systemId">systemId</a></b> () const</li>
+<li><div class="fn"/>QDomEntity &amp; <b><a href="qdomentity.html#operator-eq">operator=</a></b> ( const QDomEntity &amp; <i>x</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>66 public functions inherited from <a href="qdomnode.html#public-functions">QDomNode</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDomEntity class represents an XML entity.</p>
+<p>This class represents an entity in an XML document, either parsed or unparsed. Note that this models the entity itself not the entity declaration.</p>
+<p>DOM does not support editing entity nodes; if a user wants to make changes to the contents of an entity, every related <a href="qdomentityreference.html">QDomEntityReference</a> node must be replaced in the DOM tree by a clone of the entity's contents, and then the desired changes must be made to each of the clones instead. All the descendents of an entity node are read-only.</p>
+<p>An entity node does not have any parent.</p>
+<p>You can access the entity's <a href="qdomentity.html#publicId">publicId</a>(), <a href="qdomentity.html#systemId">systemId</a>() and <a href="qdomentity.html#notationName">notationName</a>() when available.</p>
+<p>For further information about the Document Object Model see <a href="http://www.w3.org/TR/REC-DOM-Level-1/">Level 1</a> and <a href="http://www.w3.org/TR/DOM-Level-2-Core/">Level 2 Core</a>. For a more general introduction of the DOM implementation see the <a href="qdomdocument.html">QDomDocument</a> documentation.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDomEntity"></a>QDomEntity::QDomEntity ()</h3>
+<p>Constructs an empty entity.</p>
+<h3 class="fn"><a name="QDomEntity-2"></a>QDomEntity::QDomEntity ( const QDomEntity &amp; <i>x</i> )</h3>
+<p>Constructs a copy of <i>x</i>.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<h3 class="fn"><a name="nodeType"></a><a href="qdomnode.html#NodeType-enum">QDomNode::NodeType</a> QDomEntity::nodeType () const</h3>
+<p>Returns <tt>EntityNode</tt>.</p>
+<h3 class="fn"><a name="notationName"></a><a href="qstring.html">QString</a> QDomEntity::notationName () const</h3>
+<p>For unparsed entities this function returns the name of the notation for the entity. For parsed entities this function returns an empty string.</p>
+<h3 class="fn"><a name="publicId"></a><a href="qstring.html">QString</a> QDomEntity::publicId () const</h3>
+<p>Returns the public identifier associated with this entity. If the public identifier was not specified an empty string is returned.</p>
+<h3 class="fn"><a name="systemId"></a><a href="qstring.html">QString</a> QDomEntity::systemId () const</h3>
+<p>Returns the system identifier associated with this entity. If the system identifier was not specified an empty string is returned.</p>
+<h3 class="fn"><a name="operator-eq"></a>QDomEntity &amp; QDomEntity::operator= ( const QDomEntity &amp; <i>x</i> )</h3>
+<p>Assigns <i>x</i> to this DOM entity.</p>
+<p>The data of the copy is shared (shallow copy): modifying one node will also change the other. If you want to make a deep copy, use <a href="qdomnode.html#cloneNode">cloneNode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

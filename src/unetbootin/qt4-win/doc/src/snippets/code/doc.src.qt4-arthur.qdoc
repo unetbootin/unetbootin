@@ -1,0 +1,106 @@
+//! [0]
+    QLinearGradient gradient(0, 0, 100, 100);
+    gradient.setColorAt(0, Qt::red);
+    gradient.setColorAt(0.5, Qt::green);
+    gradient.setColorAt(1, Qt::blue);
+    painter.setBrush(gradient);
+    painter.drawRect(0, 0, 100, 100);
+//! [0]
+
+
+//! [1]
+    QRadialGradient gradient(50, 50, 50, 30, 30);
+    gradient.setColorAt(0.2, Qt::white);
+    gradient.setColorAt(0.8, Qt::green);
+    gradient.setColorAt(1, Qt::black);
+    painter.setBrush(gradient);
+    painter.drawEllipse(0, 0, 100, 100);
+//! [1]
+
+
+//! [2]
+    QConicalGradient gradient(60, 40, 0);
+    gradient.setColorAt(0, Qt::black);
+    gradient.setColorAt(0.4, Qt::green);
+    gradient.setColorAt(0.6, Qt::white);
+    gradient.setColorAt(1, Qt::black);
+    painter.setBrush(gradient);
+    painter.drawEllipse(0, 0, 100, 100);
+//! [2]
+
+
+//! [3]
+    // Specfiy semi-transparent red
+    painter.setBrush(QColor(255, 0, 0, 127));
+    painter.drawRect(0, 0, width()/2, height());
+
+    // Specify semi-transparend blue
+    painter.setBrush(QColor(0, 0, 255, 127));
+    painter.drawRect(0, 0, width(), height()/2);
+//! [3]
+
+
+//! [4]
+    // One line without anti-aliasing
+    painter.drawLine(0, 0, width()/2, height());
+
+    // One line with anti-aliasing
+    painter.setRenderHint(QPainter::Antialiasing);
+    painter.drawLine(width()/2, 0, width()/2, height());
+//! [4]
+
+
+//! [5]
+    QPainterPath path;
+    path.addRect(20, 20, 60, 60);
+    path.addBezier(0, 0,  99, 0,  50, 50,  99, 99);
+    path.addBezier(99, 99,  0, 99,  50, 50,  0, 0);
+    painter.drawPath(path);
+//! [5]
+
+
+//! [6]
+    QPixmap buffer(size());
+    QPainter painter(&buffer);
+
+    // Paint code here
+
+    painter.end();
+    bitBlt(this, 0, 0, &buffer);
+//! [6]
+
+
+//! [7]
+    QPainter painter(this);
+
+    // Paint code here
+
+    painter.end();
+//! [7]
+
+
+//! [8]
+    unbufferedWidget->setAttribute(Qt::WA_PaintOnScreen);
+//! [8]
+
+
+//! [9]
+    QLinearGradient gradient(0, 0, 100, 100);
+    gradient.setColorAt(0, Qt::blue);
+    gradient.setColorAt(1, Qt::red);
+    painter.setPen(QPen(gradient, 0));
+    for (int y=fontSize; y<100; y+=fontSize)
+        drawText(0, y, text);
+//! [9]
+
+
+//! [10]
+    QImage image(100, 100, 32);
+    QPainter painter(&image);
+
+    // painter commands.
+
+    painter.end();
+//! [10]
+
+

@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: view.cpp Example File (sql/drilldown/view.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">view.cpp Example File<br /><span class="small-subtitle">sql/drilldown/view.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;informationwindow.h&quot;
+ #include &quot;imageitem.h&quot;
+ #include &quot;view.h&quot;
+
+ View::View(const QString &amp;offices, const QString &amp;images, QWidget *parent)
+     : QGraphicsView(parent)
+ {
+     officeTable = new QSqlRelationalTableModel(this);
+     officeTable-&gt;setTable(offices);
+     officeTable-&gt;setRelation(1, QSqlRelation(images, &quot;locationid&quot;, &quot;file&quot;));
+     officeTable-&gt;select();
+
+     scene = new QGraphicsScene(this);
+     scene-&gt;setSceneRect(0, 0, 465, 615);
+     setScene(scene);
+
+     addItems();
+
+     QGraphicsPixmapItem *logo = scene-&gt;addPixmap(QPixmap(&quot;:/logo.png&quot;));
+     logo-&gt;setPos(30, 515);
+
+     setMinimumSize(470, 620);
+     setMaximumSize(470, 620);
+     setWindowTitle(tr(&quot;Trolltech World Wide&quot;));
+ }
+
+ void View::addItems()
+ {
+     int officeCount = officeTable-&gt;rowCount();
+
+     int imageOffset = 150;
+     int leftMargin = 70;
+     int topMargin = 40;
+
+     for (int i = 0; i &lt; officeCount; i++) {
+         ImageItem *image;
+         QGraphicsTextItem *label;
+         QSqlRecord record = officeTable-&gt;record(i);
+
+         int id = record.value(&quot;id&quot;).toInt();
+         QString file = record.value(&quot;file&quot;).toString();
+         QString location = record.value(&quot;location&quot;).toString();
+
+         int columnOffset = ((i / 3) * 37);
+         int x = ((i / 3) * imageOffset) + leftMargin + columnOffset;
+         int y = ((i % 3) * imageOffset) + topMargin;
+
+         image = new ImageItem(id, QPixmap(&quot;:/&quot; + file));
+         image-&gt;setData(0, i);
+         image-&gt;setPos(x, y);
+         scene-&gt;addItem(image);
+
+         label = scene-&gt;addText(location);
+         QPointF labelOffset((150 - label-&gt;boundingRect().width()) / 2, 120.0);
+         label-&gt;setPos(QPointF(x, y) + labelOffset);
+     }
+ }
+
+ void View::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (QGraphicsItem *item = itemAt(event-&gt;pos())) {
+         if (ImageItem *image = qgraphicsitem_cast&lt;ImageItem *&gt;(item))
+             showInformation(image);
+     }
+     QGraphicsView::mouseReleaseEvent(event);
+ }
+
+ void View::showInformation(ImageItem *image)
+ {
+     int id = image-&gt;id();
+     if (id &lt; 0 || id &gt;= officeTable-&gt;rowCount())
+         return;
+
+     InformationWindow *window = findWindow(id);
+     if (window &amp;&amp; window-&gt;isVisible()) {
+         window-&gt;raise();
+         window-&gt;activateWindow();
+     } else if (window &amp;&amp; !window-&gt;isVisible()) {
+         window-&gt;show();
+     } else {
+         InformationWindow *window;
+         window = new InformationWindow(id, officeTable, this);
+
+         connect(window, SIGNAL(imageChanged(int, QString)),
+                 this, SLOT(updateImage(int, QString)));
+
+         window-&gt;move(pos() + QPoint(20, 40));
+         window-&gt;show();
+         informationWindows.append(window);
+     }
+ }
+
+ void View::updateImage(int id, const QString &amp;fileName)
+ {
+     QList&lt;QGraphicsItem *&gt; items = scene-&gt;items();
+
+     while(!items.empty()) {
+         QGraphicsItem *item = items.takeFirst();
+
+         if (ImageItem *image = qgraphicsitem_cast&lt;ImageItem *&gt;(item)) {
+             if (image-&gt;id() == id){
+                 image-&gt;setPixmap(QPixmap(&quot;:/&quot; +fileName));
+                 image-&gt;adjust();
+                 break;
+             }
+         }
+     }
+ }
+
+ InformationWindow* View::findWindow(int id)
+ {
+     QList&lt;InformationWindow*&gt;::iterator i, beginning, end;
+
+     beginning = informationWindows.begin();
+     end = informationWindows.end();
+
+     for (i = beginning; i != end; ++i) {
+         InformationWindow *window = (*i);
+         if (window &amp;&amp; (window-&gt;id() == id))
+             return window;
+     }
+     return 0;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

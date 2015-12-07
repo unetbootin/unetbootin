@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: qmake Advanced Usage</title>
+  <link rel="prev" href="qmake-platform-notes.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-precompiledheaders.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-platform-notes.html">qmake Platform Notes</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-precompiledheaders.html">Using Precompiled Headers</a>]
+</p>
+<h1 class="title">qmake Advanced Usage<br /><span class="subtitle"></span>
+</h1>
+<p>Many <tt>qmake</tt> project files simply describe the sources and header files used by the project, using a list of <tt>name = value</tt> and <tt>name += value</tt> definitions. <tt>qmake</tt> also provides other operators, functions, and scopes that can be used to process the information supplied in variable declarations. These advanced features allow Makefiles to be generated for multiple platforms from a single project file.</p>
+<ul><li><a href="#operators">Operators</a></li>
+<li><a href="#scopes">Scopes</a></li>
+<ul><li><a href="#scopes-and-conditions">Scopes and Conditions</a></li>
+<li><a href="#configuration-and-scopes">Configuration and Scopes</a></li>
+<li><a href="#platform-scope-values">Platform Scope Values</a></li>
+</ul>
+<li><a href="#variables">Variables</a></li>
+<li><a href="#variable-processing-functions">Variable Processing Functions</a></li>
+<li><a href="#conditional-functions">Conditional Functions</a></li>
+<li><a href="#adding-new-configuration-features">Adding New Configuration Features</a></li>
+</ul>
+<a name="operators"></a>
+<h2>Operators</h2>
+<p>In many project files, the assignment (<tt>=</tt>) and append (<tt>+=</tt>) operators can be used to include all the information about a project. The typical pattern of use is to assign a list of values to a variable, and append more values depending on the result of various tests. Since <tt>qmake</tt> defines certain variables using default values, it is sometimes necessary to use the removal (<tt>-=</tt>) operator to filter out values that are not required. The following operators can be used to manipulate the contents of variables.</p>
+<p>The <tt>=</tt> operator assigns a value to a variable:</p>
+<pre>         TARGET = myapp</pre>
+<p>The above line sets the <tt>TARGET</tt> variable to <tt>myapp</tt>. This will overwrite any values previously set for <tt>TARGET</tt> with <tt>myapp</tt>.</p>
+<p>The <tt>+=</tt> operator appends a new value to the list of values in a variable:</p>
+<pre>         DEFINES += QT_DLL</pre>
+<p>The above line appends <tt>QT_DLL</tt> to the list of pre-processor defines to be put in the generated Makefile.</p>
+<p>The <tt>-=</tt> operator removes a value from the list of values in a variable:</p>
+<pre>         DEFINES -= QT_DLL</pre>
+<p>The above line removes <tt>QT_DLL</tt> from the list of pre-processor defines to be put in the generated Makefile.</p>
+<p>The <tt>*=</tt> operator adds a value to the list of values in a variable, but only if it is not already present. This prevents values from being included many times in a variable. For example:</p>
+<pre>         DEFINES *= QT_DLL</pre>
+<p>In the above line, <tt>QT_DLL</tt> will only be added to the list of pre-processor defines if it is not already defined. Note that the <a href="qmake-function-reference.html#unique">unique()</a> function can also be used to ensure that a variables only contains one instance of each value.</p>
+<p>The <tt>~=</tt> operator replaces any values that match a regular expression with the specified value:</p>
+<pre>         DEFINES ~= s/QT_[DT].+/QT</pre>
+<p>In the above line, any values in the list that start with <tt>QT_D</tt> or <tt>QT_T</tt> are replaced with <tt>QT</tt>.</p>
+<p>The <tt>$$</tt> operator is used to extract the contents of a variable, and can be used to pass values between variables or supply them to functions:</p>
+<pre>         EVERYTHING = $$SOURCES $$HEADERS
+         message(&quot;The project contains the following files:&quot;)
+         message($$EVERYTHING)</pre>
+<a name="scopes"></a><a name="scopes"></a>
+<h2>Scopes</h2>
+<p>Scopes are similar to <tt>if</tt> statements in procedural programming languages. If a certain condition is true, the declarations inside the scope are processed.</p>
+<a name="scopes-and-conditions"></a>
+<h3>Scopes and Conditions</h3>
+<p>A scope is written as a condition followed by a series of declarations contained within a pair of braces; for example:</p>
+<pre> win32 {
+     SOURCES += paintwidget_win.cpp
+ }</pre>
+<p>The above code will add the <tt>paintwidget_win.cpp</tt> file to the sources listed in the generated Makefile if <tt>qmake</tt> is used on a Windows platform. If <tt>qmake</tt> is used on a platform other than Windows, the define will be ignored.</p>
+<p>The conditions used in a given scope can also be negated to provide an alternative set of declarations that will be processed only if the original condition is false. For example, suppose we want to process something on all platforms <i>except</i> for Windows. We can achieve this by negating the scope like this:</p>
+<pre> !win32 {
+     SOURCES -= paintwidget_win.cpp
+ }</pre>
+<p>Scopes can be nested to combine more than one condition. For instance, if you want to include a particular file for a certain platform only if debugging is enabled then you write the following:</p>
+<pre> macx {
+     debug {
+         HEADERS += debugging.h
+     }
+ }</pre>
+<p>To save writing many nested scopes, you can nest scopes using the <tt>:</tt> operator. The nested scopes in the above example can be rewritten in the following way:</p>
+<pre> macx:debug {
+     HEADERS += debugging.h
+ }</pre>
+<p>You may also use the <tt>:</tt> operator to perform single line conditional assignments; for example:</p>
+<pre>         win32:DEFINES += QT_DLL</pre>
+<p>The above line adds <tt>QT_DLL</tt> to the <tt>DEFINES</tt> variable only on the Windows platform. Generally, the <tt>:</tt> operator behaves like a logical AND operator, joining together a number of conditions, and requiring all of them to be true.</p>
+<p>You can also provide alternative declarations to those within a scope by using an <tt>else</tt> scope. Each <tt>else</tt> scope is processed if the conditions for the preceding scopes are false. This allows you to write complex tests when combined with other scopes (separated by the <tt>:</tt> operator as above). For example:</p>
+<pre>         win32:xml {
+             message(Building for Windows)
+             SOURCES += xmlhandler_win.cpp
+         } else:xml {
+             SOURCES += xmlhandler.cpp
+         } else {
+             message(&quot;Unknown configuration&quot;)
+         }</pre>
+<a name="configuration-and-scopes"></a>
+<h3>Configuration and Scopes</h3>
+<p>The values stored in the <a href="qmake-project-files.html#generalconfiguration"><tt>CONFIG</tt> variable</a> are treated specially by <tt>qmake</tt>. Each of the possible values can be used as the condition for a scope. For example, the list of values held by <tt>CONFIG</tt> can be extended with the <tt>opengl</tt> value:</p>
+<pre> CONFIG += opengl</pre>
+<p>As a result of this operation, any scopes that test for <tt>opengl</tt> will be processed. We can use this feature to give the final executable an appropriate name:</p>
+<pre> opengl {
+     TARGET = application-gl
+ } else {
+     TARGET = application
+ }</pre>
+<p>This feature makes it easy to change the configuration for a project without losing all the custom settings that might be needed for a specific configuration. In the above code, the declarations in the first scope are processed, and the final executable will be called <tt>application-gl</tt>. However, if <tt>opengl</tt> is not specified, the declarations in the second scope are processed instead, and the final executable will be called <tt>application</tt>.</p>
+<p>Since it is possible to put your own values on the <tt>CONFIG</tt> line, this provides you with a convenient way to customize project files and fine-tune the generated Makefiles.</p>
+<a name="platform-scope-values"></a>
+<h3>Platform Scope Values</h3>
+<p>In addition to the <tt>win32</tt>, <tt>macx</tt>, and <tt>unix</tt> values used in many scope conditions, various other built-in platform and compiler-specific values can be tested with scopes. These are based on platform specifications provided in Qt's <tt>mkspecs</tt> directory. For example, the following lines from a project file show the current specification in use and test for the <tt>linux-g++</tt> specification:</p>
+<pre> message($$QMAKESPEC)
+
+ linux-g++ {
+     message(Linux)
+ }</pre>
+<p>You can test for any other platform-compiler combination as long as a specification exists for it in the <tt>mkspecs</tt> directory.</p>
+<a name="variables"></a>
+<h2>Variables</h2>
+<p>Many of the variables used in project files are special variables that <tt>qmake</tt> uses when generating Makefiles, such as <tt>DEFINES</tt>, <tt>SOURCES</tt>, and <tt>HEADERS</tt>. It is possible for you to create variables for your own use; <tt>qmake</tt> creates new variables with a given name when it encounters an assignment to that name. For example:</p>
+<pre>         MY_VARIABLE = value</pre>
+<p>There are no restricitions on what you do to your own variables, as <tt>qmake</tt> will ignore them unless it needs to evaluate them when processing a scope.</p>
+<p>You can also assign the value of a current variable to another variable by prefixing $$ to the variable name. For example:</p>
+<pre>         MY_DEFINES = $$DEFINES</pre>
+<p>Now the MY_DEFINES variable contains what is in the DEFINES variable at this point in the project file. This is also equivalent to:</p>
+<pre>         MY_DEFINES = $${DEFINES}</pre>
+<p>The second notation allows you to append the contents of the variable to another value without separating the two with a space. For example, the following will ensure that the final executable will be given a name that includes the project template being used:</p>
+<pre>         TARGET = myproject_$${TEMPLATE}</pre>
+<p>Variables can be used to store the contents of environment variables. These can be evaluated at the time that <tt>qmake</tt> is run, or included in the generated Makefile for evaluation when the project is built.</p>
+<p>To obtain the contents of an environment value when <tt>qmake</tt> is run, use the <tt>$$(...)</tt> operator:</p>
+<pre> DESTDIR = $$(PWD)
+ message(The project will be installed in $$DESTDIR)</pre>
+<p>In the above assignment, the value of the <tt>PWD</tt> environment variable is read when the project file is processed.</p>
+<p>To obtain the contents of an environment value at the time when the generated Makefile is processed, use the <tt>$(...)</tt> operator:</p>
+<pre> DESTDIR = $$(PWD)
+ message(The project will be installed in $$DESTDIR)
+
+ DESTDIR = $(PWD)
+ message(The project will be installed in the value of PWD)
+ message(when the Makefile is processed.)</pre>
+<p>In the above assignment, the value of <tt>PWD</tt> is read immediately when the project file is processed, but <tt>$(PWD)</tt> is assigned to <tt>DESTDIR</tt> in the generated Makefile. This makes the build process more flexible as long as the environment variable is set correctly when the Makefile is processed.</p>
+<p>The special <tt>$$[...]</tt> operator can be used to access various configuration options that were set when Qt was built:</p>
+<pre> message(Qt version: $$[QT_VERSION])
+ message(Qt is installed in $$[QT_INSTALL_PREFIX])
+ message(Qt resources can be found in the following locations:)
+ message(Documentation: $$[QT_INSTALL_DOCS])
+ message(Header files: $$[QT_INSTALL_HEADERS])
+ message(Libraries: $$[QT_INSTALL_LIBS])
+ message(Binary files (executables): $$[QT_INSTALL_BINS])
+ message(Plugins: $$[QT_INSTALL_PLUGINS])
+ message(Data files: $$[QT_INSTALL_DATA])
+ message(Translation files: $$[QT_INSTALL_TRANSLATIONS])
+ message(Settings: $$[QT_INSTALL_SETTINGS])
+ message(Examples: $$[QT_INSTALL_EXAMPLES])
+ message(Demonstrations: $$[QT_INSTALL_DEMOS])</pre>
+<p>The variables accessible with this operator are typically used to enable third party plugins and components to be integrated with Qt. For example, a <i>Qt Designer</i> plugin can be installed alongside <i>Qt Designer</i>'s built-in plugins if the following declaration is made in its project file:</p>
+<pre>         target.path = $$[QT_INSTALL_PLUGINS]/designer
+         INSTALLS += target</pre>
+<a name="variableprocessingfunctions"></a><a name="variable-processing-functions"></a>
+<h2>Variable Processing Functions</h2>
+<p><tt>qmake</tt> provides a selection of built-in functions to allow the contents of variables to be processed. These functions process the arguments supplied to them and return a value, or list of values, as a result. In order to assign a result to a variable, it is necessary to use the <tt>$$</tt> operator with this type of function in the same way used to assign contents of one variable to another:</p>
+<pre> HEADERS = model.h
+ HEADERS += $$OTHER_HEADERS
+ HEADERS = $$unique(HEADERS)</pre>
+<p>This type of function should be used on the right-hand side of assignments (i.e, as an operand).</p>
+<p>It is possible to define your own functions for processing the contents of variables. These functions can be defined in the following way:</p>
+<pre>         defineReplace(functionName){
+             #function code
+         }</pre>
+<p>The following example function takes a variable name as its only argument, extracts a list of values from the variable with the <a href="qmake-function-reference.html">eval()</a> built-in function, and compiles a list of files:</p>
+<pre> defineReplace(headersAndSources) {
+     variable = $$1
+     names = $$eval($$variable)
+     headers =
+     sources =
+
+     for(name, names) {
+         header = $${name}.h
+         exists($$header) {
+             headers += $$header
+         }
+         source = $${name}.cpp
+         exists($$source) {
+             sources += $$source
+         }
+     }
+     return($$headers $$sources)
+ }</pre>
+<a name="conditionalfunctions"></a><a name="conditional-functions"></a>
+<h2>Conditional Functions</h2>
+<p><tt>qmake</tt> provides built-in functions that can be used as conditions when writing scopes. These functions do not return a value, but instead indicate &quot;success&quot; or &quot;failure&quot;:</p>
+<pre> count(options, 2) {
+     message(Both release and debug specified.)
+ }
+ #! [2]</pre>
+<p>This type of function should be used in conditional expressions only.</p>
+<p>It is possible to define your own functions to provide conditions for scopes. The following example tests whether each file in a list exists and returns true if they all exist, or false if not:</p>
+<pre> defineTest(allFiles) {
+     files = $$ARGS
+
+     for(file, files) {
+         !exists($$file) {
+             return(false)
+         }
+     }
+     return(true)
+ }</pre>
+<a name="adding-new-configuration-features"></a>
+<h2>Adding New Configuration Features</h2>
+<p><tt>qmake</tt> lets you create your own <i>features</i> that can be included in project files by adding their names to the list of values specified by the <tt>CONFIG</tt> variable. Features are collections of custom functions and definitions in <tt>.prf</tt> files that can reside in one of many standard directories. The locations of these directories are defined in a number of places, and <tt>qmake</tt> checks each of them in the following order when it looks for <tt>.prf</tt> files:</p>
+<ol type="1">
+<li>In a directory listed in the <tt>QMAKEFEATURES</tt> environment variable; this contains a colon-separated list of directories.</li>
+<li>In a directory listed in the <tt>QMAKEFEATURES</tt> property variable; this contains a colon-spearated list of directories.</li>
+<li>In a features directory residing within a <tt>mkspecs</tt> directory. <tt>mkspecs</tt> directories can be located beneath any of the directories listed in the <tt>QMAKEPATH</tt> environment variable (a colon-separated list of directories). (<tt>$QMAKEPATH/mkspecs/&lt;features&gt;</tt>)</li>
+<li>In a features directory residing beneath the directory provided by the <tt>QMAKESPEC</tt> environment variable. (<tt>$QMAKESPEC/&lt;features&gt;</tt>)</li>
+<li>In a features directory residing in the <tt>data_install/mkspecs</tt> directory. (<tt>data_install/mkspecs/&lt;features&gt;</tt>)</li>
+<li>In a features directory that exists as a sibling of the directory specified by the <tt>QMAKESPEC</tt> environment variable. (<tt>$QMAKESPEC/../&lt;features&gt;</tt>)</li>
+</ol>
+<p>The following features directories are searched for features files:</p>
+<ol type="1">
+<li><tt>features/unix</tt>, <tt>features/win32</tt>, or <tt>features/macx</tt>, depending on the platform in use</li>
+<li><tt>features/</tt></li>
+</ol>
+<p>For example, consider the following assignment in a project file:</p>
+<pre>         CONFIG += myfeatures</pre>
+<p>With this addition to the <tt>CONFIG</tt> variable, <tt>qmake</tt> will search the locations listed above for the <tt>myfeatures.prf</tt> file after it has finished parsing your project file. On Unix systems, it will look for the following file:</p>
+<ol type="1">
+<li><tt>$QMAKEFEATURES/myfeatures.prf</tt> (for each directory listed in the <tt>QMAKEFEATURES</tt> environment variable)</li>
+<li><tt>$$QMAKEFEATURES/myfeatures.prf</tt> (for each directory listed in the <tt>QMAKEFEATURES</tt> property variable)</li>
+<li><tt>myfeatures.prf</tt> (in the project's root directory)</li>
+<li><tt>$QMAKEPATH/mkspecs/features/unix/myfeatures.prf</tt> and <tt>$QMAKEPATH/mkspecs/features/myfeatures.prf</tt> (for each directory listed in the <tt>QMAKEPATH</tt> environment variable)</li>
+<li><tt>$QMAKESPEC/features/unix/myfeatures.prf</tt> and <tt>$QMAKESPEC/features/myfeatures.prf</tt></li>
+<li><tt>data_install/mkspecs/features/unix/myfeatures.prf</tt> and <tt>data_install/mkspecs/features/myfeatures.prf</tt></li>
+<li><tt>$QMAKESPEC/../features/unix/myfeatures.prf</tt> and <tt>$QMAKESPEC/../features/myfeatures.prf</tt></li>
+</ol>
+<p><b>Note:</b> The <tt>.prf</tt> files must have names in lower case.</p>
+<p>
+[Previous: <a href="qmake-platform-notes.html">qmake Platform Notes</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-precompiledheaders.html">Using Precompiled Headers</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

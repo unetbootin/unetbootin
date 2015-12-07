@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Model/View Programming</title>
+  <link rel="next" href="model-view-introduction.html" />
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Next: <a href="model-view-introduction.html">An Introduction to Model/View Programming</a>]
+</p>
+<h1 class="title">Model/View Programming<br /><span class="subtitle"></span>
+</h1>
+<ul>
+<li><a href="model-view-introduction.html">An Introduction to Model/View Programming</a> <ul><li><a href="model-view-introduction.html#the-model-view-architecture">The Model/View Architecture</a></li>
+<ul><li><a href="model-view-introduction.html#models">Models</a></li>
+<li><a href="model-view-introduction.html#views">Views</a></li>
+<li><a href="model-view-introduction.html#delegates">Delegates</a></li>
+<li><a href="model-view-introduction.html#sorting">Sorting</a></li>
+<li><a href="model-view-introduction.html#convenience-classes">Convenience Classes</a></li>
+</ul>
+<li><a href="model-view-introduction.html#the-model-view-components">The Model/View Components</a></li>
+</ul>
+</li>
+<li><a href="model-view-using.html">Using Models and Views</a> <ul><li><a href="model-view-using.html#introduction">Introduction</a></li>
+<li><a href="model-view-using.html#using-views-with-an-existing-model">Using Views with an Existing Model</a></li>
+</ul>
+</li>
+<li><a href="model-view-model.html">Model Classes</a> <ul><li><a href="model-view-model.html#basic-concepts">Basic Concepts</a></li>
+<ul><li><a href="model-view-model.html#model-indexes">Model Indexes</a></li>
+<li><a href="model-view-model.html#rows-and-columns">Rows and Columns</a></li>
+<li><a href="model-view-model.html#parents-of-items">Parents of Items</a></li>
+<li><a href="model-view-model.html#item-roles">Item Roles</a></li>
+<li><a href="model-view-model.html#summary-of-concepts">Summary of Concepts</a></li>
+<li><a href="model-view-model.html#using-model-indexes">Using Model Indexes</a></li>
+</ul>
+<li><a href="model-view-model.html#further-reading">Further Reading</a></li>
+</ul>
+</li>
+<li><a href="model-view-creating-models.html">Creating New Models</a> <ul><li><a href="model-view-creating-models.html#introduction">Introduction</a></li>
+<li><a href="model-view-creating-models.html#designing-a-model">Designing a Model</a></li>
+<li><a href="model-view-creating-models.html#a-read-only-example-model">A Read-Only Example Model</a></li>
+<ul><li><a href="model-view-creating-models.html#dimensions-of-the-model">Dimensions of The Model</a></li>
+<li><a href="model-view-creating-models.html#model-headers-and-data">Model Headers and Data</a></li>
+</ul>
+<li><a href="model-view-creating-models.html#an-editable-model">An Editable Model</a></li>
+<ul><li><a href="model-view-creating-models.html#making-the-model-editable">Making the Model Editable</a></li>
+<li><a href="model-view-creating-models.html#inserting-and-removing-rows">Inserting and Removing Rows</a></li>
+</ul>
+<li><a href="model-view-creating-models.html#next-steps">Next Steps</a></li>
+</ul>
+</li>
+<li><a href="model-view-view.html">View Classes</a> <ul><li><a href="model-view-view.html#concepts">Concepts</a></li>
+<li><a href="model-view-view.html#using-an-existing-view">Using an Existing View</a></li>
+<ul><li><a href="model-view-view.html#using-a-model">Using a Model</a></li>
+<li><a href="model-view-view.html#using-multiple-views-onto-the-same-model">Using Multiple Views onto the Same Model</a></li>
+</ul>
+<li><a href="model-view-view.html#handling-selections-of-items">Handling Selections of Items</a></li>
+<ul><li><a href="model-view-view.html#sharing-selections-between-views">Sharing Selections Between Views</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-selection.html">Handling Selections in Item Views</a> <ul><li><a href="model-view-selection.html#concepts">Concepts</a></li>
+<li><a href="model-view-selection.html#using-a-selection-model">Using a Selection Model</a></li>
+<ul><li><a href="model-view-selection.html#selecting-items">Selecting Items</a></li>
+<li><a href="model-view-selection.html#reading-the-selection-state">Reading the Selection State</a></li>
+<li><a href="model-view-selection.html#updating-a-selection">Updating a Selection</a></li>
+<li><a href="model-view-selection.html#selecting-all-items-in-a-model">Selecting All Items in a Model</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-delegate.html">Delegate Classes</a> <ul><li><a href="model-view-delegate.html#concepts">Concepts</a></li>
+<li><a href="model-view-delegate.html#using-an-existing-delegate">Using an Existing Delegate</a></li>
+<li><a href="model-view-delegate.html#a-simple-delegate">A Simple Delegate</a></li>
+<ul><li><a href="model-view-delegate.html#providing-an-editor">Providing an Editor</a></li>
+<li><a href="model-view-delegate.html#submitting-data-to-the-model">Submitting Data to the Model</a></li>
+<li><a href="model-view-delegate.html#updating-the-editor-s-geometry">Updating the Editor's Geometry</a></li>
+<li><a href="model-view-delegate.html#editing-hints">Editing Hints</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-convenience.html">Item View Convenience Classes</a> <ul><li><a href="model-view-convenience.html#overview">Overview</a></li>
+<li><a href="model-view-convenience.html#list-widgets">List Widgets</a></li>
+<li><a href="model-view-convenience.html#tree-widgets">Tree Widgets</a></li>
+<li><a href="model-view-convenience.html#table-widgets">Table Widgets</a></li>
+<li><a href="model-view-convenience.html#common-features">Common Features</a></li>
+<ul><li><a href="model-view-convenience.html#hidden-items">Hidden Items</a></li>
+<li><a href="model-view-convenience.html#selections">Selections</a></li>
+<li><a href="model-view-convenience.html#searching">Searching</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-dnd.html">Using Drag and Drop with Item Views</a> <ul><li><a href="model-view-dnd.html#overview">Overview</a></li>
+<li><a href="model-view-dnd.html#using-convenience-views">Using Convenience Views</a></li>
+<li><a href="model-view-dnd.html#using-model-view-classes">Using Model/View Classes</a></li>
+<ul><li><a href="model-view-dnd.html#enabling-drag-and-drop-for-items">Enabling Drag and Drop for Items</a></li>
+<li><a href="model-view-dnd.html#encoding-exported-data">Encoding Exported Data</a></li>
+<li><a href="model-view-dnd.html#inserting-dropped-data-into-a-model">Inserting Dropped Data into a Model</a></li>
+<li><a href="model-view-dnd.html#decoding-imported-data">Decoding Imported Data</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-proxy-models.html">Proxy Models</a> <ul><li><a href="model-view-proxy-models.html#overview">Overview</a></li>
+<li><a href="model-view-proxy-models.html#using-proxy-models">Using Proxy Models</a></li>
+<li><a href="model-view-proxy-models.html#customizing-proxy-models">Customizing Proxy Models</a></li>
+<ul><li><a href="model-view-proxy-models.html#custom-filtering-models">Custom Filtering Models</a></li>
+<li><a href="model-view-proxy-models.html#custom-sorting-models">Custom Sorting Models</a></li>
+</ul>
+</ul>
+</li>
+<li><a href="model-view-model-subclassing.html">Model Subclassing Reference</a> <ul><li><a href="model-view-model-subclassing.html#introduction">Introduction</a></li>
+<li><a href="model-view-model-subclassing.html#item-data-handling">Item Data Handling</a></li>
+<ul><li><a href="model-view-model-subclassing.html#read-only-access">Read-Only Access</a></li>
+<li><a href="model-view-model-subclassing.html#editable-items">Editable Items</a></li>
+<li><a href="model-view-model-subclassing.html#resizable-models">Resizable Models</a></li>
+<li><a href="model-view-model-subclassing.html#lazy-population-of-model-data">Lazy Population of Model Data</a></li>
+</ul>
+<li><a href="model-view-model-subclassing.html#navigation-and-model-index-creation">Navigation and Model Index Creation</a></li>
+<ul><li><a href="model-view-model-subclassing.html#parents-and-children">Parents and Children</a></li>
+</ul>
+<li><a href="model-view-model-subclassing.html#drag-and-drop-support-and-mime-type-handling">Drag and Drop Support and MIME Type Handling</a></li>
+<ul><li><a href="model-view-model-subclassing.html#mime-data">MIME Data</a></li>
+<li><a href="model-view-model-subclassing.html#accepting-dropped-data">Accepting Dropped Data</a></li>
+<li><a href="model-view-model-subclassing.html#convenience-views">Convenience Views</a></li>
+</ul>
+<li><a href="model-view-model-subclassing.html#performance-optimization-for-large-amounts-of-data">Performance Optimization for Large Amounts of Data</a></li>
+</ul>
+</li>
+</ul>
+<p>See also the list of <a href="model-view.html">Model/View Classes</a>.</p>
+<a name="related-examples"></a>
+<h3>Related Examples</h3>
+<ul>
+<li><a href="itemviews-dirview.html">Dir View</a></li>
+<li><a href="itemviews-spinboxdelegate.html">Spin Box Delegate</a></li>
+<li><a href="itemviews-pixelator.html">Pixelator</a></li>
+<li><a href="itemviews-simpletreemodel.html">Simple Tree Model</a></li>
+<li><a href="itemviews-chart.html">Chart</a></li>
+</ul>
+<p>
+[Next: <a href="model-view-introduction.html">An Introduction to Model/View Programming</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

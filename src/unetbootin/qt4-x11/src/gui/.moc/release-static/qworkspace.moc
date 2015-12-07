@@ -1,0 +1,348 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'qworkspace.cpp'
+**
+** Created: Thu Mar 5 18:53:03 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'qworkspace.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_QMDIControl[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       3,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      13,   12,   12,   12, 0x05,
+      27,   12,   12,   12, 0x05,
+      40,   12,   12,   12, 0x05,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QMDIControl[] = {
+    "QMDIControl\0\0_q_minimize()\0_q_restore()\0"
+    "_q_close()\0"
+};
+
+const QMetaObject QMDIControl::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_QMDIControl,
+      qt_meta_data_QMDIControl, 0 }
+};
+
+const QMetaObject *QMDIControl::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QMDIControl::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QMDIControl))
+        return static_cast<void*>(const_cast< QMDIControl*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int QMDIControl::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: _q_minimize(); break;
+        case 1: _q_restore(); break;
+        case 2: _q_close(); break;
+        default: ;
+        }
+        _id -= 3;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QMDIControl::_q_minimize()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void QMDIControl::_q_restore()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+
+// SIGNAL 2
+void QMDIControl::_q_close()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, 0);
+}
+static const uint qt_meta_data_QWorkspaceTitleBar[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      10,   12, // methods
+       2,   62, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      20,   19,   19,   19, 0x05,
+      33,   19,   19,   19, 0x05,
+      44,   19,   19,   19, 0x05,
+      54,   19,   19,   19, 0x05,
+      67,   19,   19,   19, 0x05,
+      80,   19,   19,   19, 0x05,
+      90,   19,   19,   19, 0x05,
+     110,   19,   19,   19, 0x05,
+     137,   19,   19,   19, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+     153,   19,   19,   19, 0x0a,
+
+ // properties: name, type, flags
+     174,  169, 0x01095103,
+     184,  169, 0x01095103,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QWorkspaceTitleBar[] = {
+    "QWorkspaceTitleBar\0\0doActivate()\0"
+    "doNormal()\0doClose()\0doMaximize()\0"
+    "doMinimize()\0doShade()\0showOperationMenu()\0"
+    "popupOperationMenu(QPoint)\0doubleClicked()\0"
+    "setActive(bool)\0bool\0autoRaise\0movable\0"
+};
+
+const QMetaObject QWorkspaceTitleBar::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_QWorkspaceTitleBar,
+      qt_meta_data_QWorkspaceTitleBar, 0 }
+};
+
+const QMetaObject *QWorkspaceTitleBar::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QWorkspaceTitleBar::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QWorkspaceTitleBar))
+        return static_cast<void*>(const_cast< QWorkspaceTitleBar*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int QWorkspaceTitleBar::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: doActivate(); break;
+        case 1: doNormal(); break;
+        case 2: doClose(); break;
+        case 3: doMaximize(); break;
+        case 4: doMinimize(); break;
+        case 5: doShade(); break;
+        case 6: showOperationMenu(); break;
+        case 7: popupOperationMenu((*reinterpret_cast< const QPoint(*)>(_a[1]))); break;
+        case 8: doubleClicked(); break;
+        case 9: setActive((*reinterpret_cast< bool(*)>(_a[1]))); break;
+        default: ;
+        }
+        _id -= 10;
+    }
+#ifndef QT_NO_PROPERTIES
+      else if (_c == QMetaObject::ReadProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: *reinterpret_cast< bool*>(_v) = autoRaise(); break;
+        case 1: *reinterpret_cast< bool*>(_v) = isMovable(); break;
+        }
+        _id -= 2;
+    } else if (_c == QMetaObject::WriteProperty) {
+        void *_v = _a[0];
+        switch (_id) {
+        case 0: setAutoRaise(*reinterpret_cast< bool*>(_v)); break;
+        case 1: setMovable(*reinterpret_cast< bool*>(_v)); break;
+        }
+        _id -= 2;
+    } else if (_c == QMetaObject::ResetProperty) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyDesignable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyScriptable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyStored) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyEditable) {
+        _id -= 2;
+    } else if (_c == QMetaObject::QueryPropertyUser) {
+        _id -= 2;
+    }
+#endif // QT_NO_PROPERTIES
+    return _id;
+}
+
+// SIGNAL 0
+void QWorkspaceTitleBar::doActivate()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void QWorkspaceTitleBar::doNormal()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+
+// SIGNAL 2
+void QWorkspaceTitleBar::doClose()
+{
+    QMetaObject::activate(this, &staticMetaObject, 2, 0);
+}
+
+// SIGNAL 3
+void QWorkspaceTitleBar::doMaximize()
+{
+    QMetaObject::activate(this, &staticMetaObject, 3, 0);
+}
+
+// SIGNAL 4
+void QWorkspaceTitleBar::doMinimize()
+{
+    QMetaObject::activate(this, &staticMetaObject, 4, 0);
+}
+
+// SIGNAL 5
+void QWorkspaceTitleBar::doShade()
+{
+    QMetaObject::activate(this, &staticMetaObject, 5, 0);
+}
+
+// SIGNAL 6
+void QWorkspaceTitleBar::showOperationMenu()
+{
+    QMetaObject::activate(this, &staticMetaObject, 6, 0);
+}
+
+// SIGNAL 7
+void QWorkspaceTitleBar::popupOperationMenu(const QPoint & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 7, _a);
+}
+
+// SIGNAL 8
+void QWorkspaceTitleBar::doubleClicked()
+{
+    QMetaObject::activate(this, &staticMetaObject, 8, 0);
+}
+static const uint qt_meta_data_QWorkspaceChild[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+       9,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+      17,   16,   16,   16, 0x05,
+      37,   16,   16,   16, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      64,   16,   16,   16, 0x0a,
+      75,   16,   16,   16, 0x0a,
+      91,   16,   16,   16, 0x0a,
+     107,   16,   16,   16, 0x0a,
+     120,   16,   16,   16, 0x0a,
+     133,   16,   16,   16, 0x0a,
+     149,   16,   16,   16, 0x0a,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QWorkspaceChild[] = {
+    "QWorkspaceChild\0\0showOperationMenu()\0"
+    "popupOperationMenu(QPoint)\0activate()\0"
+    "showMinimized()\0showMaximized()\0"
+    "showNormal()\0showShaded()\0internalRaise()\0"
+    "titleBarDoubleClicked()\0"
+};
+
+const QMetaObject QWorkspaceChild::staticMetaObject = {
+    { &QWidget::staticMetaObject, qt_meta_stringdata_QWorkspaceChild,
+      qt_meta_data_QWorkspaceChild, 0 }
+};
+
+const QMetaObject *QWorkspaceChild::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QWorkspaceChild::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QWorkspaceChild))
+        return static_cast<void*>(const_cast< QWorkspaceChild*>(this));
+    return QWidget::qt_metacast(_clname);
+}
+
+int QWorkspaceChild::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QWidget::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: showOperationMenu(); break;
+        case 1: popupOperationMenu((*reinterpret_cast< const QPoint(*)>(_a[1]))); break;
+        case 2: activate(); break;
+        case 3: showMinimized(); break;
+        case 4: showMaximized(); break;
+        case 5: showNormal(); break;
+        case 6: showShaded(); break;
+        case 7: internalRaise(); break;
+        case 8: titleBarDoubleClicked(); break;
+        default: ;
+        }
+        _id -= 9;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QWorkspaceChild::showOperationMenu()
+{
+    QMetaObject::activate(this, &staticMetaObject, 0, 0);
+}
+
+// SIGNAL 1
+void QWorkspaceChild::popupOperationMenu(const QPoint & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+QT_END_MOC_NAMESPACE

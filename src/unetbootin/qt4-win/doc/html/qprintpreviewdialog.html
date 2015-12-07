@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qprintpreviewdialog.cpp -->
+<head>
+  <title>Qt 4.4: QPrintPreviewDialog Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPrintPreviewDialog Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPrintPreviewDialog class provides a dialog for previewing and configuring page layouts for printer output. <a href="#details">More...</a></p>
+<pre> #include &lt;QPrintPreviewDialog&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qprintpreviewdialog-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprintpreviewdialog.html#QPrintPreviewDialog">QPrintPreviewDialog</a></b> ( QPrinter * <i>printer</i>, QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprintpreviewdialog.html#QPrintPreviewDialog-2">QPrintPreviewDialog</a></b> ( QWidget * <i>parent</i> = 0, Qt::WindowFlags <i>f</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qprintpreviewdialog.html#dtor.QPrintPreviewDialog">~QPrintPreviewDialog</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprintpreviewdialog.html#paintRequested">paintRequested</a></b> ( QPrinter * <i>printer</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPrintPreviewDialog class provides a dialog for previewing and configuring page layouts for printer output.</p>
+<p>Using QPrintPreviewDialog in your existing application is straightforward:</p>
+<ol type="1">
+<li>Create the QPrintPreviewDialog.<p>You can construct a QPrintPreviewDialog with an existing <a href="qprinter.html">QPrinter</a> object, or you can have QPrintPreviewDialog create one for you, which will be the system default printer.</p>
+</li>
+<li>Connect the <a href="qprintpreviewdialog.html#paintRequested">paintRequested</a>() signal to a slot.<p>When the dialog needs to generate a set of preview pages, the <a href="qprintpreviewdialog.html#paintRequested">paintRequested</a>() signal will be emitted. You can use the exact same code for the actual printing as for having the preview generated. Connect a slot to the <a href="qprintpreviewdialog.html#paintRequested">paintRequested</a>() signal, where you draw onto the <a href="qprinter.html">QPrinter</a> object that is passed into the slot.</p>
+</li>
+<li>Call <a href="qdialog.html#exec">exec</a>().<p>Call <a href="qdialog.html#exec">QPrintPreviewDialog::exec</a>() to show the preview dialog.</p>
+</li>
+</ol>
+<p>See also <a href="qprinter.html">QPrinter</a>, <a href="qprintdialog.html">QPrintDialog</a>, QPageSetupDialog, and <a href="qprintpreviewwidget.html">QPrintPreviewWidget</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPrintPreviewDialog"></a>QPrintPreviewDialog::QPrintPreviewDialog ( <a href="qprinter.html">QPrinter</a> * <i>printer</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )</h3>
+<p>Constructs a <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a> based on <i>printer</i> and with <i>parent</i> as the parent widget. The widget flags <i>flags</i> are passed on to the <a href="qwidget.html">QWidget</a> constructor.</p>
+<p>See also <a href="qwidget.html#windowFlags-prop">QWidget::setWindowFlags</a>().</p>
+<h3 class="fn"><a name="QPrintPreviewDialog-2"></a>QPrintPreviewDialog::QPrintPreviewDialog ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = 0 )</h3>
+<p>This will create an internal <a href="qprinter.html">QPrinter</a> object, which will use the system default printer.</p>
+<h3 class="fn"><a name="dtor.QPrintPreviewDialog"></a>QPrintPreviewDialog::~QPrintPreviewDialog ()</h3>
+<p>Destroys the <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a>.</p>
+<h3 class="fn"><a name="paintRequested"></a>void QPrintPreviewDialog::paintRequested ( <a href="qprinter.html">QPrinter</a> * <i>printer</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>When the the <a href="qprintpreviewdialog.html">QPrintPreviewDialog</a> needs to generate a set of preview pages, this signal is emitted with the <i>printer</i> you should draw onto.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

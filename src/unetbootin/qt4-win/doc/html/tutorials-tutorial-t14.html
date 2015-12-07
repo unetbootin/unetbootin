@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 14 - Facing the Wall</title>
+  <link rel="prev" href="tutorials-tutorial-t13.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t13.html">Chapter 13</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+</p>
+<h1 class="title">Qt Tutorial 14 - Facing the Wall<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t14-cannonfield-cpp.html">tutorials/tutorial/t14/cannonfield.cpp</a></li>
+<li><a href="tutorials-tutorial-t14-cannonfield-h.html">tutorials/tutorial/t14/cannonfield.h</a></li>
+<li><a href="tutorials-tutorial-t14-gameboard-cpp.html">tutorials/tutorial/t14/gameboard.cpp</a></li>
+<li><a href="tutorials-tutorial-t14-gameboard-h.html">tutorials/tutorial/t14/gameboard.h</a></li>
+<li><a href="tutorials-tutorial-t14-lcdrange-cpp.html">tutorials/tutorial/t14/lcdrange.cpp</a></li>
+<li><a href="tutorials-tutorial-t14-lcdrange-h.html">tutorials/tutorial/t14/lcdrange.h</a></li>
+<li><a href="tutorials-tutorial-t14-main-cpp.html">tutorials/tutorial/t14/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t14-t14-pro.html">tutorials/tutorial/t14/t14.pro</a></li>
+</ul>
+<p align="center"><img src="images/t14.png" alt="Screenshot of Chapter 14" /></p><p>This is the final example: a complete game.</p>
+<p>We add keyboard accelerators and introduce mouse events to <tt>CannonField</tt>. We put a frame around the <tt>CannonField</tt> and add a barrier (wall) to make the game more challenging.</p>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<a name="t14-cannonfield-h"></a>
+<h3><a href="tutorials-tutorial-t14-cannonfield-h.html">t14/cannonfield.h</a></h3>
+<p>The <tt>CannonField</tt> can now receive mouse events to make the user aim the barrel by clicking on it and dragging. <tt>CannonField</tt> also has a barrier wall.</p>
+<pre> protected:
+     void paintEvent(QPaintEvent *event);
+     void mousePressEvent(QMouseEvent *event);
+     void mouseMoveEvent(QMouseEvent *event);
+     void mouseReleaseEvent(QMouseEvent *event);</pre>
+<p>In addition to the familiar event handlers, <tt>CannonField</tt> implements three mouse event handlers. The names say it all.</p>
+<pre>     void paintBarrier(QPainter &amp;painter);</pre>
+<p>This private function paints the barrier wall.</p>
+<pre>     QRect barrierRect() const;</pre>
+<p>This private function returns the enclosing rectangle of the barrier.</p>
+<pre>     bool barrelHit(const QPoint &amp;pos) const;</pre>
+<p>This private function checks if a point is inside the barrel of the cannon.</p>
+<pre>     bool barrelPressed;</pre>
+<p>This private variable is <tt>true</tt> if the user has pressed the mouse on the barrel and not released it.</p>
+<a name="t14-cannonfield-cpp"></a>
+<h3><a href="tutorials-tutorial-t14-cannonfield-cpp.html">t14/cannonfield.cpp</a></h3>
+<pre>     barrelPressed = false;</pre>
+<p>This line has been added to the constructor. Initially, the mouse is not pressed on the barrel.</p>
+<pre>     } else if (shotR.x() &gt; width() || shotR.y() &gt; height()
+                || shotR.intersects(barrierRect())) {</pre>
+<p>Now that we have a barrier, there are three ways to miss. We test for the third, too.</p>
+<pre> void CannonField::mousePressEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() != Qt::LeftButton)
+         return;
+     if (barrelHit(event-&gt;pos()))
+         barrelPressed = true;
+ }</pre>
+<p>This is a Qt event handler. It is called when the user presses a mouse button when the mouse cursor is over the widget.</p>
+<p>If the event was not generated by the left mouse button, we return immediately. Otherwise, we check if the position of the mouse cursor is within the cannon's barrel. If it is, we set <tt>barrelPressed</tt> to <tt>true</tt>.</p>
+<p>Notice that the <a href="qmouseevent.html#pos">QMouseEvent::pos</a>() function returns a point in the widget's coordinate system.</p>
+<pre> void CannonField::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (!barrelPressed)
+         return;
+     QPoint pos = event-&gt;pos();
+     if (pos.x() &lt;= 0)
+         pos.setX(1);
+     if (pos.y() &gt;= height())
+         pos.setY(height() - 1);
+     double rad = atan(((double)rect().bottom() - pos.y()) / pos.x());
+     setAngle(qRound(rad * 180 / 3.14159265));
+ }</pre>
+<p>This is another Qt event handler. It is called when the user already has pressed the mouse button inside this widget and then moves/drags the mouse. (You can make Qt send mouse move events even when no buttons are pressed. See <a href="qwidget.html#mouseTracking-prop">QWidget::setMouseTracking</a>().)</p>
+<p>This handler repositions the cannon's barrel according to the position of the mouse cursor.</p>
+<p>First, if the barrel is not pressed, we return. Next, we fetch the mouse cursor's position. If the mouse cursor is to the left or below the widget, we adjust the point to be inside the widget.</p>
+<p>Then we calculate the angle between the bottom edge of the widget and the imaginary line between the bottom-left corner of the widget and the cursor position. Finally we set the cannon's angle to the new value converted to degrees.</p>
+<p>Remember that <tt>setAngle()</tt> redraws the cannon.</p>
+<pre> void CannonField::mouseReleaseEvent(QMouseEvent *event)
+ {
+     if (event-&gt;button() == Qt::LeftButton)
+         barrelPressed = false;
+ }</pre>
+<p>This Qt event handler is called whenever the user releases a mouse button and it was pressed inside this widget.</p>
+<p>If the left button is released, we can be sure that the barrel is no longer pressed.</p>
+<p>The paint event has one extra line:</p>
+<pre>     paintBarrier(painter);</pre>
+<p><tt>paintBarrier()</tt> does the same sort of thing as <tt>paintShot()</tt>, <tt>paintTarget()</tt>, and <tt>paintCannon()</tt>.</p>
+<pre> void CannonField::paintBarrier(QPainter &amp;painter)
+ {
+     painter.setPen(Qt::black);
+     painter.setBrush(Qt::yellow);
+     painter.drawRect(barrierRect());
+ }</pre>
+<p>This private function paints the barrier as a rectangle filled with yellow and with a black outline.</p>
+<pre> QRect CannonField::barrierRect() const
+ {
+     return QRect(145, height() - 100, 15, 99);
+ }</pre>
+<p>This private function returns the rectangle of the barrier. We fix the bottom edge of the barrier to the bottom edge of the widget.</p>
+<pre> bool CannonField::barrelHit(const QPoint &amp;pos) const
+ {
+     QMatrix matrix;
+     matrix.translate(0, height());
+     matrix.rotate(-currentAngle);
+     matrix = matrix.inverted();
+     return barrelRect.contains(matrix.map(pos));
+ }</pre>
+<p>This function returns <tt>true</tt> if the point is in the barrel; otherwise it returns <tt>false</tt>.</p>
+<p>Here we use the class <a href="qmatrix.html">QMatrix</a>. <a href="qmatrix.html">QMatrix</a> defines a coordinate system mapping. It can perform the same transformations as the <a href="qpainter.html">QPainter</a>.</p>
+<p>Here we perform the same transformation steps as we do when drawing the barrel in the <tt>paintCannon()</tt> function. First we translate the coordinate system and then we rotate it.</p>
+<p>Now we need to check whether the point <tt>pos</tt> (in widget coordinates) lies inside the barrel. To do this, we invert the transformation matrix. The inverted matrix performs the inverse transformation that we used when drawing the barrel. We map the point <tt>pos</tt> using the inverted matrix and return <tt>true</tt> if it is inside the original barrel rectangle.</p>
+<a name="t14-gameboard-cpp"></a>
+<h3><a href="tutorials-tutorial-t14-gameboard-cpp.html">t14/gameboard.cpp</a></h3>
+<pre>     QFrame *cannonBox = new QFrame;
+     cannonBox-&gt;setFrameStyle(QFrame::WinPanel | QFrame::Sunken);</pre>
+<p>We create and set up a <a href="qframe.html">QFrame</a>, and set its frame style. This results in a 3D frame around the <tt>CannonField</tt>.</p>
+<pre>     (void) new QShortcut(Qt::Key_Enter, this, SLOT(fire()));
+     (void) new QShortcut(Qt::Key_Return, this, SLOT(fire()));
+     (void) new QShortcut(Qt::CTRL + Qt::Key_Q, this, SLOT(close()));</pre>
+<p>Here we create and set up three <a href="qshortcut.html">QShortcut</a> objects. These objects intercept keyboard events to a widget and call slots if certain keys are pressed. Note that a <a href="qshortcut.html">QShortcut</a> object is a child of a widget and will be destroyed when that widget is destroyed. <a href="qshortcut.html">QShortcut</a> itself is not a widget and has no visible effect on its parent.</p>
+<p>We define three shortcut keys. We want the <tt>fire()</tt> slot to be called when the user presses <b>Enter</b> or <b>Return</b>. We also want the application to quit when key <b>Ctrl+Q</b> is pressed. Instead of connecting to <a href="qcoreapplication.html#quit">QCoreApplication::quit</a>(), we connect to <a href="qwidget.html#close">QWidget::close</a>() this time. Since the <tt>GameBoard</tt> is the application's main widget, this has the same effect as <a href="qcoreapplication.html#quit">quit()</a>.</p>
+<p><a href="qt.html#Modifier-enum">Qt::CTRL</a>, <a href="qt.html#Key-enum">Qt::Key_Enter</a>, <a href="qt.html#Key-enum">Qt::Key_Return</a>, and <a href="qt.html#Key-enum">Qt::Key_Q</a> are all constants declared in the <a href="qt.html">Qt</a> namespace.</p>
+<pre>     QVBoxLayout *cannonLayout = new QVBoxLayout;
+     cannonLayout-&gt;addWidget(cannonField);
+     cannonBox-&gt;setLayout(cannonLayout);
+
+     QGridLayout *gridLayout = new QGridLayout;
+     gridLayout-&gt;addWidget(quit, 0, 0);
+     gridLayout-&gt;addLayout(topLayout, 0, 1);
+     gridLayout-&gt;addLayout(leftLayout, 1, 0);
+     gridLayout-&gt;addWidget(cannonBox, 1, 1, 2, 1);
+     gridLayout-&gt;setColumnStretch(1, 10);
+     setLayout(gridLayout);</pre>
+<p>We give <tt>cannonBox</tt> its own <a href="qvboxlayout.html">QVBoxLayout</a>, and we add <tt>cannonField</tt> to that layout. This implicitly makes <tt>cannonField</tt> a child of <tt>cannonBox</tt>. Because nothing else is in the box, the effect is that the <a href="qvboxlayout.html">QVBoxLayout</a> will put a frame around the <tt>CannonField</tt>. We put <tt>cannonBox</tt>, not <tt>cannonField</tt>, in the grid layout.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>The cannon now shoots when you press Enter. You can also position the cannon's angle using the mouse. The barrier makes it a little more challenging to play the game. We also have a nice looking frame around the <tt>CannonField</tt>.</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Write a space invaders game.</p>
+<p>(This exercise was first done by <a href="mailto:igorr@ifi.uio.no">Igor Rafienko</a>. You can <a href="http://heim.ifi.uio.no/~igorr/download.html">download his game</a>.)</p>
+<p>The new exercise is: Write a Breakout game.</p>
+<p>Final exhortation: Go forth now and create masterpieces of the programming art!</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t13.html">Chapter 13</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

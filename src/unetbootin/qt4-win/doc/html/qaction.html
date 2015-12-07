@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qaction.cpp -->
+<head>
+  <title>Qt 4.4: QAction Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAction Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAction class provides an abstract user interface action that can be inserted into widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QAction&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qmenuitem.html" class="compat">QMenuItem</a> and <a href="qwidgetaction.html">QWidgetAction</a>.</p>
+<ul>
+<li><a href="qaction-members.html">List of all members, including inherited members</a></li>
+<li><a href="qaction-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qaction.html#ActionEvent-enum">ActionEvent</a></b> { Trigger, Hover }</li>
+<li><div class="fn"/>enum <b><a href="qaction.html#MenuRole-enum">MenuRole</a></b> { NoRole, TextHeuristicRole, ApplicationSpecificRole, AboutQtRole, ..., QuitRole }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qaction.html#autoRepeat-prop">autoRepeat</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qaction.html#checkable-prop">checkable</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qaction.html#checked-prop">checked</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qaction.html#enabled-prop">enabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qaction.html#font-prop">font</a></b> : QFont</li>
+<li><div class="fn"/><b><a href="qaction.html#icon-prop">icon</a></b> : QIcon</li>
+<li><div class="fn"/><b><a href="qaction.html#iconText-prop">iconText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qaction.html#iconVisibleInMenu-prop">iconVisibleInMenu</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qaction.html#menuRole-prop">menuRole</a></b> : MenuRole</li>
+<li><div class="fn"/><b><a href="qaction.html#shortcut-prop">shortcut</a></b> : QKeySequence</li>
+<li><div class="fn"/><b><a href="qaction.html#shortcutContext-prop">shortcutContext</a></b> : Qt::ShortcutContext</li>
+<li><div class="fn"/><b><a href="qaction.html#statusTip-prop">statusTip</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qaction.html#text-prop">text</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qaction.html#toolTip-prop">toolTip</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qaction.html#visible-prop">visible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qaction.html#whatsThis-prop">whatsThis</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qaction.html#QAction">QAction</a></b> ( QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qaction.html#QAction-2">QAction</a></b> ( const QString &amp; <i>text</i>, QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qaction.html#QAction-3">QAction</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qaction.html#dtor.QAction">~QAction</a></b> ()</li>
+<li><div class="fn"/>QActionGroup * <b><a href="qaction.html#actionGroup">actionGroup</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qaction.html#activate">activate</a></b> ( ActionEvent <i>event</i> )</li>
+<li><div class="fn"/>QList&lt;QWidget *&gt; <b><a href="qaction.html#associatedWidgets">associatedWidgets</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#autoRepeat-prop">autoRepeat</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="qaction.html#data">data</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qaction.html#font-prop">font</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qaction.html#icon-prop">icon</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qaction.html#iconText-prop">iconText</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#checkable-prop">isCheckable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#checked-prop">isChecked</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#enabled-prop">isEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#iconVisibleInMenu-prop">isIconVisibleInMenu</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#isSeparator">isSeparator</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#visible-prop">isVisible</a></b> () const</li>
+<li><div class="fn"/>QMenu * <b><a href="qaction.html#menu">menu</a></b> () const</li>
+<li><div class="fn"/>MenuRole <b><a href="qaction.html#menuRole-prop">menuRole</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qaction.html#parentWidget">parentWidget</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setActionGroup">setActionGroup</a></b> ( QActionGroup * <i>group</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#autoRepeat-prop">setAutoRepeat</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#checkable-prop">setCheckable</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setData">setData</a></b> ( const QVariant &amp; <i>userData</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#font-prop">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#icon-prop">setIcon</a></b> ( const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#iconText-prop">setIconText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#iconVisibleInMenu-prop">setIconVisibleInMenu</a></b> ( bool <i>visible</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setMenu">setMenu</a></b> ( QMenu * <i>menu</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#menuRole-prop">setMenuRole</a></b> ( MenuRole <i>menuRole</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setSeparator">setSeparator</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#shortcut-prop">setShortcut</a></b> ( const QKeySequence &amp; <i>shortcut</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#shortcutContext-prop">setShortcutContext</a></b> ( Qt::ShortcutContext <i>context</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setShortcuts">setShortcuts</a></b> ( const QList&lt;QKeySequence&gt; &amp; <i>shortcuts</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setShortcuts-2">setShortcuts</a></b> ( QKeySequence::StandardKey <i>key</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#statusTip-prop">setStatusTip</a></b> ( const QString &amp; <i>statusTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#text-prop">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#toolTip-prop">setToolTip</a></b> ( const QString &amp; <i>tip</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#whatsThis-prop">setWhatsThis</a></b> ( const QString &amp; <i>what</i> )</li>
+<li><div class="fn"/>QKeySequence <b><a href="qaction.html#shortcut-prop">shortcut</a></b> () const</li>
+<li><div class="fn"/>Qt::ShortcutContext <b><a href="qaction.html#shortcutContext-prop">shortcutContext</a></b> () const</li>
+<li><div class="fn"/>QList&lt;QKeySequence&gt; <b><a href="qaction.html#shortcuts">shortcuts</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qaction.html#showStatusText">showStatusText</a></b> ( QWidget * <i>widget</i> = 0 )</li>
+<li><div class="fn"/>QString <b><a href="qaction.html#statusTip-prop">statusTip</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qaction.html#text-prop">text</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qaction.html#toolTip-prop">toolTip</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qaction.html#whatsThis-prop">whatsThis</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qaction.html#hover">hover</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qaction.html#checked-prop">setChecked</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#setDisabled">setDisabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#enabled-prop">setEnabled</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#visible-prop">setVisible</a></b> ( bool )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#toggle">toggle</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qaction.html#trigger">trigger</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qaction.html#changed">changed</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qaction.html#hovered">hovered</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qaction.html#toggled">toggled</a></b> ( bool <i>checked</i> )</li>
+<li><div class="fn"/>void <b><a href="qaction.html#triggered">triggered</a></b> ( bool <i>checked</i> = false )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAction class provides an abstract user interface action that can be inserted into widgets.</p>
+<p>In applications many common commands can be invoked via menus, toolbar buttons, and keyboard shortcuts. Since the user expects each command to be performed in the same way, regardless of the user interface used, it is useful to represent each command as an <i>action</i>.</p>
+<p>Actions can be added to menus and toolbars, and will automatically keep them in sync. For example, in a word processor, if the user presses a Bold toolbar button, the Bold menu item will automatically be checked.</p>
+<p>Actions can be created as independent objects, but they may also be created during the construction of menus; the <a href="qmenu.html">QMenu</a> class contains convenience functions for creating actions suitable for use as menu items.</p>
+<p>A QAction may contain an icon, menu text, a shortcut, status text, &quot;What's This?&quot; text, and a tooltip. Most of these can be set in the constructor. They can also be set independently with <a href="qaction.html#icon-prop">setIcon</a>(), <a href="qaction.html#text-prop">setText</a>(), <a href="qaction.html#iconText-prop">setIconText</a>(), <a href="qaction.html#shortcut-prop">setShortcut</a>(), <a href="qaction.html#statusTip-prop">setStatusTip</a>(), <a href="qaction.html#whatsThis-prop">setWhatsThis</a>(), and <a href="qaction.html#toolTip-prop">setToolTip</a>(). For menu items, it is possible to set an individual font with <a href="qaction.html#font-prop">setFont</a>().</p>
+<p>Actions are added to widgets using <a href="qwidget.html#addAction">QWidget::addAction</a>(). Note that an action must be added to a widget before it can be used; this is also true when the shortcut should be global (i.e&#x2e;, <a href="qt.html#ShortcutContext-enum">Qt::ApplicationShortcut</a> as <a href="qt.html#ShortcutContext-enum">Qt::ShortcutContext</a>).</p>
+<p>Once a QAction has been created it should be added to the relevant menu and toolbar, then connected to the slot which will perform the action. For example:</p>
+<pre>     openAct = new QAction(QIcon(&quot;:/images/open.png&quot;), tr(&quot;&amp;Open...&quot;), this);
+     openAct-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     openAct-&gt;setStatusTip(tr(&quot;Open an existing file&quot;));
+     connect(openAct, SIGNAL(triggered()), this, SLOT(open()));
+
+     fileMenu-&gt;addAction(openAct);
+     fileToolBar-&gt;addAction(openAct);</pre>
+<p>We recommend that actions are created as children of the window they are used in. In most cases actions will be children of the application's main window.</p>
+<p>See also <a href="qmenu.html">QMenu</a>, <a href="qtoolbar.html">QToolBar</a>, and <a href="mainwindows-application.html">Application Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ActionEvent-enum"></a>enum QAction::ActionEvent</h3>
+<p>This enum type is used when calling <a href="qaction.html#activate">QAction::activate</a>()</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAction::Trigger</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">this will cause the <a href="qaction.html#triggered">QAction::triggered</a>() signal to be emitted.</td></tr>
+<tr><td valign="top"><tt>QAction::Hover</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">this will cause the <a href="qaction.html#hovered">QAction::hovered</a>() signal to be emitted.</td></tr>
+</table></p>
+<h3 class="fn"><a name="MenuRole-enum"></a>enum QAction::MenuRole</h3>
+<p>This enum describes how an action should be moved into the application menu on Mac OS X.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAction::NoRole</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">This action should not be put into the application menu</td></tr>
+<tr><td valign="top"><tt>QAction::TextHeuristicRole</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">This action should be put in the application menu based on the action's text as described in the <a href="qmenubar.html">QMenuBar</a> documentation.</td></tr>
+<tr><td valign="top"><tt>QAction::ApplicationSpecificRole</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">This action should be put in the application menu with an application specific role</td></tr>
+<tr><td valign="top"><tt>QAction::AboutQtRole</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">This action matches handles the &quot;About Qt&quot; menu item.</td></tr>
+<tr><td valign="top"><tt>QAction::AboutRole</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">This action should be placed where the &quot;About&quot; menu item is in the application menu.</td></tr>
+<tr><td valign="top"><tt>QAction::PreferencesRole</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">This action should be placed where the &quot;Preferences..&#x2e;&quot; menu item is in the application menu.</td></tr>
+<tr><td valign="top"><tt>QAction::QuitRole</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">This action should be placed where the Quit menu item is in the application menu.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoRepeat-prop"></a>autoRepeat : bool</h3>
+<p>This property holds whether the action can auto repeat.</p>
+<p>If true, the action will auto repeat when the keyboard shortcut combination is held down, provided that keyboard auto repeat is enabled on the system. The default value is true.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoRepeat () const</b></li>
+<li><div class="fn"/><b>void setAutoRepeat ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="checkable-prop"></a>checkable : bool</h3>
+<p>This property holds whether the action is a checkable action.</p>
+<p>A checkable action is one which has an on/off state. For example, in a word processor, a Bold toolbar button may be either on or off. An action which is not a toggle action is a command action; a command action is simply executed, e.g&#x2e; file save. By default, this property is false.</p>
+<p>In some situations, the state of one toggle action should depend on the state of others. For example, &quot;Left Align&quot;, &quot;Center&quot; and &quot;Right Align&quot; toggle actions are mutually exclusive. To achieve exclusive toggling, add the relevant toggle actions to a <a href="qactiongroup.html">QActionGroup</a> with the <a href="qactiongroup.html#exclusive-prop">QActionGroup::exclusive</a> property set to true.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isCheckable () const</b></li>
+<li><div class="fn"/><b>void setCheckable ( bool )</b></li>
+</ul>
+<p>See also <a href="qaction.html#checked-prop">QAction::setChecked</a>().</p>
+<h3 class="fn"><a name="checked-prop"></a>checked : bool</h3>
+<p>This property holds whether the action is checked.</p>
+<p>Only checkable actions can be checked. By default, this is false (the action is unchecked).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isChecked () const</b></li>
+<li><div class="fn"/><b>void setChecked ( bool )</b></li>
+</ul>
+<p>See also <a href="qaction.html#checkable-prop">checkable</a>.</p>
+<h3 class="fn"><a name="enabled-prop"></a>enabled : bool</h3>
+<p>This property holds whether the action is enabled.</p>
+<p>Disabled actions cannot be chosen by the user. They do not disappear from menus or toolbars, but they are displayed in a way which indicates that they are unavailable. For example, they might be displayed using only shades of gray.</p>
+<p>What's this? help on disabled actions is still available, provided that the <a href="qaction.html#whatsThis-prop">QAction::whatsThis</a> property is set.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isEnabled () const</b></li>
+<li><div class="fn"/><b>void setEnabled ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="font-prop"></a>font : <a href="qfont.html">QFont</a></h3>
+<p>This property holds the action's font.</p>
+<p>The font property is used to render the text set on the <a href="qaction.html">QAction</a>. The font will can be considered a hint as it will not be consulted in all cases based upon application and style.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QFont font () const</b></li>
+<li><div class="fn"/><b>void setFont ( const QFont &amp; <i>font</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#text-prop">QAction::setText</a>() and <a href="qstyle.html">QStyle</a>.</p>
+<h3 class="fn"><a name="icon-prop"></a>icon : <a href="qicon.html">QIcon</a></h3>
+<p>This property holds the action's icon.</p>
+<p>In toolbars, the icon is used as the tool button icon; in menus, it is displayed to the left of the menu text. There is no default icon.</p>
+<p>If a null icon (<a href="qicon.html#isNull">QIcon::isNull</a>() is passed into this function, the icon of the action is cleared.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QIcon icon () const</b></li>
+<li><div class="fn"/><b>void setIcon ( const QIcon &amp; <i>icon</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="iconText-prop"></a>iconText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the action's descriptive icon text.</p>
+<p>If <a href="qtoolbar.html#toolButtonStyle-prop">QToolBar::toolButtonStyle</a> is set to a value that permits text to be displayed, the text defined held in this property appears as a label in the relevant tool button.</p>
+<p>It also serves as the default text in menus and tooltips if the action has not been defined with <a href="qaction.html#text-prop">setText</a>() or <a href="qaction.html#toolTip-prop">setToolTip</a>(), and will also be used in toolbar buttons if no icon has been defined using <a href="qaction.html#icon-prop">setIcon</a>().</p>
+<p>If the icon text is not explicitly set, the action's normal text will be used for the icon text.</p>
+<p>There is no default icon text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString iconText () const</b></li>
+<li><div class="fn"/><b>void setIconText ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#toolTip-prop">setToolTip</a>() and <a href="qaction.html#statusTip-prop">setStatusTip</a>().</p>
+<h3 class="fn"><a name="iconVisibleInMenu-prop"></a>iconVisibleInMenu : bool</h3>
+<p>This property holds whether or not an action should show an icon in a menu.</p>
+<p>In some applications, it may make sense to have actions with icons in the toolbar, but not in menus. If true, the icon (if valid) is shown in the menu, when it is false, it is not shown.</p>
+<p>The default is to follow whether the <a href="qt.html#ApplicationAttribute-enum">Qt::AA_DontShowIconsInMenus</a> attribute is set for the application. Explicitly settings this property overrides the presence (or abscence) of the attribute.</p>
+<p>For example:</p>
+<pre>     QApplication app(argc, argv);
+     app.setAttribute(Qt::AA_DontShowIconsInMenus);  // Icons are *no longer shown* in menus
+     // ...
+     QAction *myAction = new QAction();
+     // ...
+     myAction-&gt;setIcon(SomeIcon);
+     myAction-&gt;setIconVisibleInMenu(true);   // Icon *will* be shown in menus for *this* action.</pre>
+<p>This property was introduced in Qt 4.4.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isIconVisibleInMenu () const</b></li>
+<li><div class="fn"/><b>void setIconVisibleInMenu ( bool <i>visible</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#icon-prop">QAction::icon</a> and <a href="qcoreapplication.html#setAttribute">QApplication::setAttribute</a>().</p>
+<h3 class="fn"><a name="menuRole-prop"></a>menuRole : <a href="qaction.html#MenuRole-enum">MenuRole</a></h3>
+<p>This property holds the action's menu role.</p>
+<p>This indicates what role the action serves in the application menu on Mac OS X. By default all action have the <a href="qaction.html#MenuRole-enum">TextHeuristicRole</a>, which means that the action is added based on its text (see <a href="qmenubar.html">QMenuBar</a> for more information).</p>
+<p>The menu role can only be changed before the actions are put into the menu bar in Mac OS X (usually just before the first application window is shown).</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>MenuRole menuRole () const</b></li>
+<li><div class="fn"/><b>void setMenuRole ( MenuRole <i>menuRole</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="shortcut-prop"></a>shortcut : <a href="qkeysequence.html">QKeySequence</a></h3>
+<p>This property holds the action's primary shortcut key.</p>
+<p>Valid keycodes for this property can be found in <a href="qt.html#Key-enum">Qt::Key</a> and <a href="qt.html#Modifier-enum">Qt::Modifier</a>. There is no default shortcut key.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QKeySequence shortcut () const</b></li>
+<li><div class="fn"/><b>void setShortcut ( const QKeySequence &amp; <i>shortcut</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="shortcutContext-prop"></a>shortcutContext : <a href="qt.html#ShortcutContext-enum">Qt::ShortcutContext</a></h3>
+<p>This property holds the context for the action's shortcut.</p>
+<p>Valid values for this property can be found in <a href="qt.html#ShortcutContext-enum">Qt::ShortcutContext</a>. The default value is <a href="qt.html#ShortcutContext-enum">Qt::WindowShortcut</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ShortcutContext shortcutContext () const</b></li>
+<li><div class="fn"/><b>void setShortcutContext ( Qt::ShortcutContext <i>context</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="statusTip-prop"></a>statusTip : <a href="qstring.html">QString</a></h3>
+<p>This property holds the action's status tip.</p>
+<p>The status tip is displayed on all status bars provided by the action's top-level parent widget.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString statusTip () const</b></li>
+<li><div class="fn"/><b>void setStatusTip ( const QString &amp; <i>statusTip</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#toolTip-prop">setToolTip</a>() and <a href="qaction.html#showStatusText">showStatusText</a>().</p>
+<h3 class="fn"><a name="text-prop"></a>text : <a href="qstring.html">QString</a></h3>
+<p>This property holds the action's descriptive text.</p>
+<p>If the action is added to a menu, the menu option will consist of the icon (if there is one), the text, and the shortcut (if there is one). If the text is not explicitly set in the constructor, or by using setText(), the action's description icon text will be used as text. There is no default text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString text () const</b></li>
+<li><div class="fn"/><b>void setText ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#iconText-prop">iconText</a>.</p>
+<h3 class="fn"><a name="toolTip-prop"></a>toolTip : <a href="qstring.html">QString</a></h3>
+<p>This property holds the action's tooltip.</p>
+<p>This text is used for the tooltip. If no tooltip is specified, the action's text is used.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString toolTip () const</b></li>
+<li><div class="fn"/><b>void setToolTip ( const QString &amp; <i>tip</i> )</b></li>
+</ul>
+<p>See also <a href="qaction.html#statusTip-prop">setStatusTip</a>() and <a href="qaction.html#shortcut-prop">setShortcut</a>().</p>
+<h3 class="fn"><a name="visible-prop"></a>visible : bool</h3>
+<p>This property holds whether the action can be seen (e.g. in menus and toolbars).</p>
+<p>If <i>visible</i> is true the action can be seen (e.g&#x2e; in menus and toolbars) and chosen by the user; if <i>visible</i> is false the action cannot be seen or chosen by the user.</p>
+<p>Actions which are not visible are <i>not</i> grayed out; they do not appear at all.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isVisible () const</b></li>
+<li><div class="fn"/><b>void setVisible ( bool )</b></li>
+</ul>
+<h3 class="fn"><a name="whatsThis-prop"></a>whatsThis : <a href="qstring.html">QString</a></h3>
+<p>This property holds the action's "What's This?" help text.</p>
+<p>The &quot;What's This?&quot; text is used to provide a brief description of the action. The text may contain rich text. There is no default &quot;What's This?&quot; text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString whatsThis () const</b></li>
+<li><div class="fn"/><b>void setWhatsThis ( const QString &amp; <i>what</i> )</b></li>
+</ul>
+<p>See also <a href="qwhatsthis.html">QWhatsThis</a> and <a href="q3stylesheet.html">Q3StyleSheet</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAction"></a>QAction::QAction ( <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs an action with <i>parent</i>. If <i>parent</i> is an action group the action will be automatically inserted into the group.</p>
+<h3 class="fn"><a name="QAction-2"></a>QAction::QAction ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs an action with some <i>text</i> and <i>parent</i>. If <i>parent</i> is an action group the action will be automatically inserted into the group.</p>
+<p>The action uses a stripped version of <i>text</i> (e.g&#x2e; &quot;&amp;Menu Option..&#x2e;&quot; becomes &quot;Menu Option&quot;) as descriptive text for tool buttons. You can override this by setting a specific description with <a href="qaction.html#text-prop">setText</a>(). The same text will be used for tooltips unless you specify a different text using <a href="qaction.html#toolTip-prop">setToolTip</a>().</p>
+<h3 class="fn"><a name="QAction-3"></a>QAction::QAction ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Constructs an action with an <i>icon</i> and some <i>text</i> and <i>parent</i>. If <i>parent</i> is an action group the action will be automatically inserted into the group.</p>
+<p>The action uses a stripped version of <i>text</i> (e.g&#x2e; &quot;&amp;Menu Option..&#x2e;&quot; becomes &quot;Menu Option&quot;) as descriptive text for tool buttons. You can override this by setting a specific description with <a href="qaction.html#text-prop">setText</a>(). The same text will be used for tooltips unless you specify a different text using <a href="qaction.html#toolTip-prop">setToolTip</a>().</p>
+<h3 class="fn"><a name="dtor.QAction"></a>QAction::~QAction ()</h3>
+<p>Destroys the object and frees allocated resources.</p>
+<h3 class="fn"><a name="actionGroup"></a><a href="qactiongroup.html">QActionGroup</a> * QAction::actionGroup () const</h3>
+<p>Returns the action group for this action. If no action group manages this action then 0 will be returned.</p>
+<p>See also <a href="qactiongroup.html">QActionGroup</a> and <a href="qaction.html#setActionGroup">QAction::setActionGroup</a>().</p>
+<h3 class="fn"><a name="activate"></a>void QAction::activate ( <a href="qaction.html#ActionEvent-enum">ActionEvent</a> <i>event</i> )</h3>
+<p>Sends the relevant signals for <a href="qaction.html#ActionEvent-enum">ActionEvent</a> <i>event</i>.</p>
+<p>Action based widgets use this API to cause the <a href="qaction.html">QAction</a> to emit signals as well as emitting their own.</p>
+<h3 class="fn"><a name="associatedWidgets"></a><a href="qlist.html">QList</a>&lt;<a href="qwidget.html">QWidget</a> *&gt; QAction::associatedWidgets () const</h3>
+<p>Returns a list of widgets this action has been added to.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qwidget.html#addAction">QWidget::addAction</a>().</p>
+<h3 class="fn"><a name="changed"></a>void QAction::changed ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an action has changed. If you are only interested in actions in a given widget, you can watch for <a href="qwidget.html#actionEvent">QWidget::actionEvent</a>() sent with an <a href="qevent.html#Type-enum">QEvent::ActionChanged</a>.</p>
+<p>See also <a href="qwidget.html#actionEvent">QWidget::actionEvent</a>().</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QAction::data () const</h3>
+<p>Returns the user data as set in QAction::setData.</p>
+<p>See also <a href="qaction.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="hover"></a>void QAction::hover ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience slot that calls activate(Hover).</p>
+<h3 class="fn"><a name="hovered"></a>void QAction::hovered ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an action is highlighted by the user; for example, when the user pauses with the cursor over a menu option, toolbar button, or presses an action's shortcut key combination.</p>
+<p>See also <a href="qaction.html#activate">QAction::activate</a>().</p>
+<h3 class="fn"><a name="isSeparator"></a>bool QAction::isSeparator () const</h3>
+<p>Returns true if this action is a separator action; otherwise it returns false.</p>
+<p>See also <a href="qaction.html#setSeparator">QAction::setSeparator</a>().</p>
+<h3 class="fn"><a name="menu"></a><a href="qmenu.html">QMenu</a> * QAction::menu () const</h3>
+<p>Returns the menu contained by this action. Actions that contain menus can be used to create menu items with submenus, or inserted into toolbars to create buttons with popup menus.</p>
+<p>See also <a href="qaction.html#setMenu">setMenu</a>() and <a href="qmenu.html#addAction">QMenu::addAction</a>().</p>
+<h3 class="fn"><a name="parentWidget"></a><a href="qwidget.html">QWidget</a> * QAction::parentWidget () const</h3>
+<p>Returns the parent widget.</p>
+<h3 class="fn"><a name="setActionGroup"></a>void QAction::setActionGroup ( <a href="qactiongroup.html">QActionGroup</a> * <i>group</i> )</h3>
+<p>Sets this action group to <i>group</i>. The action will be automatically added to the group's list of actions.</p>
+<p>Actions within the group will be mutually exclusive.</p>
+<p>See also <a href="qactiongroup.html">QActionGroup</a> and <a href="qaction.html#actionGroup">QAction::actionGroup</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QAction::setData ( const <a href="qvariant.html">QVariant</a> &amp; <i>userData</i> )</h3>
+<p>Sets the action's internal data to the given <i>userData</i>.</p>
+<p>See also <a href="qaction.html#data">data</a>().</p>
+<h3 class="fn"><a name="setDisabled"></a>void QAction::setDisabled ( bool <i>b</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function for the <a href="qaction.html#enabled-prop">enabled</a> property, that is useful for signals--slots connections. If <i>b</i> is true the action is disabled; otherwise it is enabled.</p>
+<h3 class="fn"><a name="setMenu"></a>void QAction::setMenu ( <a href="qmenu.html">QMenu</a> * <i>menu</i> )</h3>
+<p>Sets the menu contained by this action to the specified <i>menu</i>.</p>
+<p>See also <a href="qaction.html#menu">menu</a>().</p>
+<h3 class="fn"><a name="setSeparator"></a>void QAction::setSeparator ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true then this action will be considered a separator.</p>
+<p>How a separator is represented depends on the widget it is inserted into. Under most circumstances the text, submenu, and icon will be ignored for separator actions.</p>
+<p>See also <a href="qaction.html#isSeparator">QAction::isSeparator</a>().</p>
+<h3 class="fn"><a name="setShortcuts"></a>void QAction::setShortcuts ( const <a href="qlist.html">QList</a>&lt;<a href="qkeysequence.html">QKeySequence</a>&gt; &amp; <i>shortcuts</i> )</h3>
+<p>Sets <i>shortcuts</i> as the list of shortcuts that trigger the action. The first element of the list is the primary shortcut.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qaction.html#shortcuts">shortcuts</a>() and <a href="qaction.html#shortcut-prop">shortcut</a>.</p>
+<h3 class="fn"><a name="setShortcuts-2"></a>void QAction::setShortcuts ( <a href="qkeysequence.html#StandardKey-enum">QKeySequence::StandardKey</a> <i>key</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets a platform dependent list of shortcuts based on the <i>key</i>. The result of calling this function will depend on the currently running platform. Note that more than one shortcut can assigned by this action. If only the primary shortcut is required, use setShortcut instead.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qkeysequence.html#keyBindings">QKeySequence::keyBindings</a>().</p>
+<h3 class="fn"><a name="shortcuts"></a><a href="qlist.html">QList</a>&lt;<a href="qkeysequence.html">QKeySequence</a>&gt; QAction::shortcuts () const</h3>
+<p>Returns the list of shortcuts, with the primary shortcut as the first element of the list.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qaction.html#setShortcuts">setShortcuts</a>().</p>
+<h3 class="fn"><a name="showStatusText"></a>bool QAction::showStatusText ( <a href="qwidget.html">QWidget</a> * <i>widget</i> = 0 )</h3>
+<p>Updates the relevant status bar for the <i>widget</i> specified by sending a <a href="qstatustipevent.html">QStatusTipEvent</a> to its parent widget. Returns true if an event was sent; otherwise returns false.</p>
+<p>If a null widget is specified, the event is sent to the action's parent.</p>
+<p>See also <a href="qaction.html#statusTip-prop">statusTip</a>.</p>
+<h3 class="fn"><a name="toggle"></a>void QAction::toggle ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience function for the <a href="qaction.html#checked-prop">checked</a> property. Connect to it to change the checked state to its opposite state.</p>
+<h3 class="fn"><a name="toggled"></a>void QAction::toggled ( bool <i>checked</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a checkable action changes its <a href="qaction.html#checked-prop">isChecked</a>() status. This can be the result of a user interaction, or because <a href="qaction.html#checked-prop">setChecked</a>() was called.</p>
+<p><i>checked</i> is true if the action is checked, or false if the action is unchecked.</p>
+<p>See also <a href="qaction.html#activate">QAction::activate</a>(), <a href="qaction.html#triggered">QAction::triggered</a>(), and <a href="qaction.html#checked-prop">checked</a>.</p>
+<h3 class="fn"><a name="trigger"></a>void QAction::trigger ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>This is a convenience slot that calls activate(Trigger).</p>
+<h3 class="fn"><a name="triggered"></a>void QAction::triggered ( bool <i>checked</i> = false )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when an action is activated by the user; for example, when the user clicks a menu option, toolbar button, or presses an action's shortcut key combination, or when <a href="qaction.html#trigger">trigger</a>() was called. Notably, it is <i>not</i> emitted when <a href="qaction.html#checked-prop">setChecked</a>() or <a href="qaction.html#toggle">toggle</a>() is called.</p>
+<p>If the action is checkable, <i>checked</i> is true if the action is checked, or false if the action is unchecked.</p>
+<p>See also <a href="qaction.html#activate">QAction::activate</a>(), <a href="qaction.html#toggled">QAction::toggled</a>(), and <a href="qaction.html#checked-prop">checked</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,6 @@
+\row \o QButton::SingleShot
+\row \o QButton::Toggle
+\row \o QButton::Tristate
+\row \o QEvent::AccelAvailable
+\row \o QEvent::ParentFontChange
+\row \o QEvent::ParentPaletteChange

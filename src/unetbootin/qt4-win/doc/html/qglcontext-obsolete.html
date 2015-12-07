@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/opengl/qgl.cpp -->
+<head>
+  <title>Qt 4.4: Obsolete Members for QGLContext</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Obsolete Members for QGLContext</h1>
+<p><b>The following class members are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<p><ul><li><a href="qglcontext.html">QGLContext class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qglcontext-obsolete.html#QGLContext-2">QGLContext</a></b> ( const QGLFormat &amp; <i>format</i>, QPaintDevice * <i>device</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qglcontext-obsolete.html#generateFontDisplayLists">generateFontDisplayLists</a></b> ( const QFont &amp; <i>font</i>, int <i>listBase</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGLContext-2"></a>QGLContext::QGLContext ( const <a href="qglformat.html">QGLFormat</a> &amp; <i>format</i>, QPaintDevice * <i>device</i> )</h3>
+<p>Constructs an OpenGL context for the given paint <i>device</i>, which can be a widget or a pixmap. The <i>format</i> specifies several display options for the context.</p>
+<p>If the underlying OpenGL/Window system cannot satisfy all the features requested in <i>format</i>, the nearest subset of features will be used. After creation, the <a href="qglcontext.html#format">format</a>() method will return the actual format obtained.</p>
+<p>Note that after a <a href="qglcontext.html">QGLContext</a> object has been constructed, <a href="qglcontext.html#create">create</a>() must be called explicitly to create the actual OpenGL context. The context will be <a href="qglcontext.html#isValid">invalid</a> if it was not possible to obtain a GL context at all.</p>
+<h3 class="fn"><a name="generateFontDisplayLists"></a>void QGLContext::generateFontDisplayLists ( const <a href="qfont.html">QFont</a> &amp; <i>font</i>, int <i>listBase</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Generates a set of 256 display lists for the 256 first characters in the font <i>font</i>. The first list will start at index <i>listBase</i>.</p>
+<p>See also <a href="qglwidget.html#renderText">QGLWidget::renderText</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

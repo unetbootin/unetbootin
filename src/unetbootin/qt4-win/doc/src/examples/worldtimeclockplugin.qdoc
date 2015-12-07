@@ -1,0 +1,212 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example designer/worldtimeclockplugin
+    \title World Time Clock Plugin Example
+
+    The World Time Clock Plugin example shows how to create a custom
+    widget plugin for \QD that uses signals and slots.
+
+    \image worldtimeclockplugin-example.png
+
+    In this example, we simply extend the \l
+    {designer/customwidgetplugin}{Custom Widget Plugin} example and
+    its custom widget (based on the \l{widgets/analogclock}{Analog
+    Clock} example), by introducing the concept of signals and slots.
+
+    The World Time Clock Plugin example consists of two classes:
+
+    \list
+    \o \c WorldTimeClock is a custom clock widget with hour and
+       minute hands that is automatically updated every few seconds.
+    \o \c WorldTimeClockPlugin exposes the \c WorldTimeClock class to \QD.
+    \endlist
+
+    First we will take a look at the \c WorldTimeClock class which
+    extends the \l {designer/customwidgetplugin}{Custom Widget Plugin}
+    example's \c AnalogClock class by providing a signal and a
+    slot. Then we will take a quick look at the \c
+    WorldTimeClockPlugin class, but this class is in most parts
+    identical to the \l {designer/customwidgetplugin}{Custom Widget
+    Plugin} example's implementation.
+
+    Finally we take a look at the plugin's project file. The project
+    file for custom widget plugins needs some additional information
+    to ensure that they will work within \QD. This is also covered in
+    the \l {designer/customwidgetplugin}{Custom Widget Plugin} example,
+    but due to its importance (custom widget plugins rely on
+    components supplied with \QD which must be specified in the
+    project file that we use) we will repeat it here.
+
+    \section1 WorldTimeClock Class
+
+    The \c WorldTimeClock class inherits QWidget, and is a custom
+    clock widget with hour and minute hands that is automatically
+    updated every few seconds. What makes this example different from
+    the \l {designer/customwidgetplugin}{Custom Widget Plugin}
+    example, is the introduction of the signal and slot in the custom
+    widget class:
+
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclock.h 1
+
+    Note the use of the QDESIGNER_WIDGET_EXPORT macro. This is needed
+    to ensure that \QD can create instances of the widget on some
+    platforms, but it is a good idea to use it on all platforms.
+
+    We declare the \c setTimeZone() slot with an associated \c
+    timeZoneOffset variable, and we declare an \c updated() signal
+    which takes the current time as argument and is emitted whenever
+    the widget is repainted.
+
+    \image worldtimeclock-connection.png
+
+    In \QD's workspace we can then, for example, connect the \c
+    WorldTimeClock widget's \c updated() signal to a QTimeEdit's \l
+    {QDateTimeEdit::setTime()}{setTime()} slot using \QD's mode
+    for editing signal and slots.
+
+    \image worldtimeclock-signalandslot.png
+
+    We can also connect a QSpinBox's \l
+    {QSpinBox::valueChanged()}{valueChanged()} signal to the \c
+    WorldTimeClock's \c setTimeZone() slot.
+
+    \section1 WorldTimeClockPlugin Class
+
+    The \c WorldTimeClockPlugin class exposes the \c WorldTimeClock
+    class to \QD. Its definition is equivalent to the \l
+    {designer/customwidgetplugin}{Custom Widget Plugin} example's
+    plugin class which is explained in detail. The only part of the
+    class definition that is specific to this particular custom widget
+    is the class name:
+
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclockplugin.h 0
+
+    The plugin class provides \QD with basic information about our
+    plugin, such as its class name and its include file. Furthermore
+    it knows how to create instances of the \c WorldTimeClockPlugin
+    widget.  \c WorldTimeClockPlugin also defines the \l
+    {QDesignerCustomWidgetInterface::initialize()}{initialize()}
+    function which is called after the plugin is loaded into \QD. The
+    function's QDesignerFormEditorInterface parameter provides the
+    plugin with a gateway to all of \QD's API's.
+
+    The \c WorldTimeClockPlugin class inherits from both QObject and
+    QDesignerCustomWidgetInterface. It is important to remember, when
+    using multiple inheritance, to ensure that all the interfaces
+    (i.e. the classes that doesn't inherit Q_OBJECT) are made known to
+    the meta object system using the Q_INTERFACES() macro. This
+    enables \QD to use \l qobject_cast() to query for supported
+    interfaces using nothing but a QObject pointer.
+
+    The implementation of the \c WorldTimeClockPlugin is also
+    equivalent to the plugin interface implementation in the \l
+    {designer/customwidgetplugin}{Custom Widget Plugin} example (only
+    the class name and the implementation of
+    QDesignerCustomWidgetInterface::domXml() differ). The main thing
+    to remember is to use the Q_EXPORT_PLUGIN2() macro to export the \c
+    WorldTimeClockPlugin class for use with \QD:
+
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclockplugin.cpp 0
+
+    Without this macro, there is no way for Qt Designer to use the
+    widget.
+
+    \section1 The Project File: worldtimeclockplugin.pro
+
+    The project file for custom widget plugins needs some additional
+    information to ensure that they will work as expected within \QD:
+
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro 0
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro 1
+
+    The \c TEMPLATE variable's value make \c qmake create the custom
+    widget as a library. The \c CONFIG variable contains two values,
+    \c designer and \c plugin:
+
+    \list
+        \o \c designer: Since custom widgets plugins rely on components
+           supplied with \QD, this value ensures that our plugin links against
+           \QD's library (\c libQtDesigner.so).
+
+        \o \c plugin: We also need to ensure that \c qmake considers the
+           custom widget a \e plugin library.
+    \endlist
+
+    When Qt is configured to build in both debug and release modes,
+    \QD will be built in release mode.  When this occurs, it is
+    necessary to ensure that plugins are also built in release
+    mode. For that reason you might have to add a \c release value to
+    your \c CONFIG variable. Otherwise, if a plugin is built in a mode
+    that is incompatible with \QD, it won't be loaded and
+    installed.
+
+    The header and source files for the widget are declared in the
+    usual way, and in addition we provide an implementation of the
+    plugin interface so that \QD can use the custom widget.
+
+    \snippet examples/designer/worldtimeclockplugin/worldtimeclockplugin.pro 2
+
+    It is important to ensure that the plugin is installed in a location that
+    is searched by \QD. We do this by specifying a target path for the project
+    and adding it to the list of items to install:
+
+    \snippet doc/src/snippets/code/doc.src.examples.worldtimeclockplugin.qdoc 0
+
+    The custom widget is created as a library, and will be installed
+    alongside the other \QD plugins when the project is installed
+    (using \c{make install} or an equivalent installation procedure).
+    Later, we will ensure that it is recognized as a plugin by \QD by
+    using the Q_EXPORT_PLUGIN2() macro to export the relevant widget
+    information.
+
+    Note that if you want the plugins to appear in a Visual Studio
+    integration, the plugins must be built in release mode and their
+    libraries must be copied into the plugin directory in the install
+    path of the integration (for an example, see \c {C:/program
+    files/trolltech as/visual studio integration/plugins}).
+
+    For more information about plugins, see the \l {How to Create Qt
+    Plugins} document.
+*/

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qplugin.qdoc -->
+<head>
+  <title>Qt 4.4: &lt;QtPlugin&gt; - Macros for Defining Plugins</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">&lt;QtPlugin&gt; - Macros for Defining Plugins<br /><span class="subtitle"></span>
+</h1>
+<a name="Macrosx"></a>
+<h3>Macros</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtplugin.html#Q_DECLARE_INTERFACE">Q_DECLARE_INTERFACE</a></b> (  <i>ClassName</i>,  <i>Identifier</i> )</li>
+<li><div class="fn"/><b><a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a></b> (  <i>PluginName</i>,  <i>ClassName</i> )</li>
+<li><div class="fn"/><b><a href="qtplugin.html#Q_IMPORT_PLUGIN">Q_IMPORT_PLUGIN</a></b> (  <i>PluginName</i> )</li>
+</ul>
+<p>See also <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<hr />
+<h2>Macro Documentation</h2>
+<h3 class="fn"><a name="Q_DECLARE_INTERFACE"></a>Q_DECLARE_INTERFACE (  <i>ClassName</i>,  <i>Identifier</i> )</h3>
+<p>This macro associates the given <i>Identifier</i> (a string literal) to the interface class called <i>ClassName</i>. The <i>Identifier</i> must be unique. For example:</p>
+<pre> Q_DECLARE_INTERFACE(BrushInterface,
+                     &quot;com.trolltech.PlugAndPaint.BrushInterface/1.0&quot;)</pre>
+<p>This macro is normally used right after the class definition for <i>ClassName</i>, in a header file. See the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example for details.</p>
+<p>If you want to use Q_DECLARE_INTERFACE with interface classes declared in a namespace then you have to make sure the Q_DECLARE_INTERFACE is not inside a namespace though. For example:</p>
+<pre>         namespace Foo
+         {
+             struct MyInterface { ... };
+         }
+
+         Q_DECLARE_INTERFACE(Foo::MyInterface, &quot;org.examples.MyInterface&quot;)</pre>
+<p>See also <a href="qobject.html#Q_INTERFACES">Q_INTERFACES</a>(), <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>(), and <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<h3 class="fn"><a name="Q_EXPORT_PLUGIN2"></a>Q_EXPORT_PLUGIN2 (  <i>PluginName</i>,  <i>ClassName</i> )</h3>
+<a name="q-export-plugin2"></a><p>This macro exports the plugin class <i>ClassName</i> for the plugin specified by <i>PluginName</i>. The value of <i>PluginName</i> should correspond to the <a href="qmake-variable-reference.html#target">TARGET</a> specified in the plugin's project file.</p>
+<p>There should be exactly one occurrence of this macro in the source code for a Qt plugin, and it should be used where the implementation is written rather than in a header file.</p>
+<p>Example:</p>
+<pre>         Q_EXPORT_PLUGIN2(pnp_extrafilters, ExtraFiltersPlugin)</pre>
+<p>See the <a href="tools-plugandpaint.html">Plug &amp; Paint</a> example for details.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtplugin.html#Q_DECLARE_INTERFACE">Q_DECLARE_INTERFACE</a>() and <a href="plugins-howto.html">How to Create Qt Plugins</a>.</p>
+<h3 class="fn"><a name="Q_IMPORT_PLUGIN"></a>Q_IMPORT_PLUGIN (  <i>PluginName</i> )</h3>
+<p>This macro imports the plugin named <i>PluginName</i>, corresponding to the <a href="qmake-variable-reference.html#target">TARGET</a> specified in the plugin's project file.</p>
+<p>Inserting this macro into your application's source code will allow you to make use of a static plugin.</p>
+<p>Example:</p>
+<pre>         Q_IMPORT_PLUGIN(qjpeg)</pre>
+<p>Static plugins must also be included by the linker when your application is built. For Qt's predefined plugins, you can use the <tt>QTPLUGIN</tt> to add the required plugins to your build. For example:</p>
+<pre>         TEMPLATE      = app
+         QTPLUGIN     += qjpeg qgif qmng    # image formats</pre>
+<p>See also <a href="plugins-howto.html#static-plugins">Static Plugins</a>, <a href="plugins-howto.html">How to Create Qt Plugins</a>, and <a href="qmake-using.html">Using qmake</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

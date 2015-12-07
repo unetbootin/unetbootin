@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtwebkit.qdoc -->
+<head>
+  <title>Qt 4.4: QtWebKit Module</title>
+  <link rel="prev" href="qtsvg.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qtxml.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtsvg.html">QtSvg Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtxml.html">QtXml Module</a>]
+</p>
+<h1 class="title">QtWebKit Module<br /><span class="subtitle"></span>
+</h1>
+<p>An introduction to the QtWebKit module. <a href="#details">More...</a></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qwebframe.html">QWebFrame</a></th><td>Represents a frame in a web page</td></tr>
+<tr valign="top" class="even"><th><a href="qwebhistory.html">QWebHistory</a></th><td>Represents the history of a QWebPage</td></tr>
+<tr valign="top" class="odd"><th><a href="qwebhistoryinterface.html">QWebHistoryInterface</a></th><td>Interface to implement link history</td></tr>
+<tr valign="top" class="even"><th><a href="qwebhistoryitem.html">QWebHistoryItem</a></th><td>Represents one item in the history of a QWebPage</td></tr>
+<tr valign="top" class="odd"><th><a href="qwebhittestresult.html">QWebHitTestResult</a></th><td>Information about the web page content after a hit test</td></tr>
+<tr valign="top" class="even"><th><a href="qwebpage.html">QWebPage</a></th><td>Object to view and edit web documents</td></tr>
+<tr valign="top" class="odd"><th><a href="qwebpluginfactory.html">QWebPluginFactory</a></th><td>Creates plugins to be embedded into web pages</td></tr>
+<tr valign="top" class="even"><th><a href="qwebsettings.html">QWebSettings</a></th><td>Object to store the settings used by QWebPage and QWebFrame</td></tr>
+<tr valign="top" class="odd"><th><a href="qwebview.html">QWebView</a></th><td>Widget that is used to view and edit web documents</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<a name="browser"></a><a name="web-browser"></a><p>QtWebKit provides a Web browser engine that makes it easy to embed content from the World Wide Web into your Qt application. At the same time Web content can be enhanced with native controls.</p>
+<p>QtWebKit provides facilities for rendering of HyperText Markup Language (HTML), Extensible HyperText Markup Language (XHTML) and Scalable Vector Graphics (SVG) documents, styled using Cascading Style Sheets (CSS) and scripted with JavaScript.</p>
+<p>A bridge between the JavaScript execution environment and the Qt object model makes it possible for custom QObjects to be scripted. Integration with the Qt networking module enables Web pages to be transparently loaded from Web servers, the local file system or even the Qt resource system.</p>
+<p>In addition to providing pure rendering features, HTML documents can be made fully editable to the user through the use of the <tt>contenteditable</tt> attribute on HTML elements.</p>
+<p>QtWebKit is based on the Open Source <a href="examples.html#webkit">WebKit</a> engine. More information about <a href="examples.html#webkit">WebKit</a> itself can be found on the <a href="http://webkit.org/">WebKit Open Source Project</a> Web site.</p>
+<p>The QtWebKit module is part of the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>, and the <a href="opensourceedition.html">Qt Open Source Edition</a>.</p>
+<p><b>Note:</b> If you intend to use <a href="examples.html#webkit">WebKit</a> in an embedded Linux environment with <b>uClibc</b> then you need to use version <b>0.9&#x2e;29</b> or greater, as that is the version of <b>uClibc</b> with sufficient pthread support.</p>
+<p><b>Note:</b> Web site icons, also known as &quot;FavIcons&quot;, are currently not supported on Windows. We plan to address this in a future release.</p>
+<p>Topics:</p>
+<ul><li><a href="#configuring-the-build-process">Configuring the Build Process</a></li>
+<li><a href="#architecture">Architecture</a></li>
+<li><a href="#license-information">License Information</a></li>
+</ul>
+<a name="configuring-the-build-process"></a>
+<h3>Configuring the Build Process</h3>
+<p>Applications that use QtWebKit's classes need to be configured to be built against the QtWebKit module. The following declaration in a <tt>qmake</tt> project file ensures that an application is compiled and linked appropriately:</p>
+<pre>     QT += webkit</pre>
+<p>This line is necessary because only the <a href="qtcore.html">QtCore</a> and <a href="qtgui.html">QtGui</a> modules are used in the default build process.</p>
+<p>To include the definitions of the module's classes, use the following directive:</p>
+<pre>     #include &lt;QtWebKit&gt;</pre>
+<a name="architecture"></a>
+<h3>Architecture</h3>
+<p>The easiest way to render content is through the <a href="qwebview.html">QWebView</a> class. As a widget it can be embedded into your forms or a graphics view, and it provides convenience functions for downloading and rendering web sites.</p>
+<pre>     QWebView *view = new QWebView(parent);
+     view-&gt;load(QUrl(&quot;http:<span class="comment">//</span>www.trolltech.com/&quot;));
+     view-&gt;show();</pre>
+<p><a href="qwebview.html">QWebView</a> acts as a view onto Web pages, each of which is represented by an instance of the <a href="qwebpage.html">QWebPage</a> class. <a href="qwebpage.html">QWebPage</a> provides access to the document structure in a page, describing features such as frames, the navigation history, and the undo/redo stack for editable content.</p>
+<p>HTML documents can be nested using frames in a frameset. An individual frame in HTML is represented using the <a href="qwebframe.html">QWebFrame</a> class. It includes the bridge to the JavaScript window object and can be painted using <a href="qpainter.html">QPainter</a>. Each <a href="qwebpage.html">QWebPage</a> has one <a href="qwebframe.html">QWebFrame</a> object as its main frame.</p>
+<p>Individual browser features, defaults and other settings can be configured through the <a href="qwebsettings.html">QWebSettings</a> class. It is possible to provide defaults for all <a href="qwebpage.html">QWebPage</a> instances through the default settings. Individual attributes can be overidden by the page specific settings object.</p>
+<a name="license-information"></a>
+<h3>License Information</h3>
+<p>This is a snapshot of the Qt port of <a href="examples.html#webkit">WebKit</a>. The exact version information can be found in the <tt>src/3rdparty/webkit/VERSION</tt> file supplied with Qt.</p>
+<div style="padding: 0.5em; background: #e0e0e0; color: black"><p><a href="examples.html#webkit">WebKit</a> is licensed under the GNU Library General Public License. Individual contributor names and copyright dates can be found inline in the code.</p>
+<p>This library is free software; you can redistribute it and/or modify it under the terms of the GNU Library General Public License as published by the Free Software Foundation; either version 2 of the License, or (at your option) any later version.</p>
+<p>This library is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU Library General Public License for more details.</p>
+<p>You should have received a copy of the GNU Library General Public License along with this library; see the file COPYING.LIB. If not, write to the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.</p>
+</div><p>
+[Previous: <a href="qtsvg.html">QtSvg Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtxml.html">QtXml Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book 1 - Designing the User Interface</title>
+  <link rel="contents" href="tutorials-addressbook.html" />
+  <link rel="next" href="tutorials-addressbook-part2.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part2.html">Chapter 2</a>]
+</p>
+<h1 class="title">Address Book 1 - Designing the User Interface<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-addressbook-part1-addressbook-cpp.html">tutorials/addressbook/part1/addressbook.cpp</a></li>
+<li><a href="tutorials-addressbook-part1-addressbook-h.html">tutorials/addressbook/part1/addressbook.h</a></li>
+<li><a href="tutorials-addressbook-part1-main-cpp.html">tutorials/addressbook/part1/main.cpp</a></li>
+<li><a href="tutorials-addressbook-part1-part1-pro.html">tutorials/addressbook/part1/part1.pro</a></li>
+</ul>
+<p>The first part of this tutorial covers the design of the basic graphical user interface (GUI) we use for the Address Book application.</p>
+<p>The first step to creating a GUI program is to design the user interface. In this chapter, our goal is to set up the labels and input fields needed to implement a basic address book application. The figure below is a screenshot of our expected output.</p>
+<p align="center"><img src="images/addressbook-tutorial-part1-screenshot.png" /></p><p>We require two <a href="qlabel.html">QLabel</a> objects, <tt>nameLabel</tt> and <tt>addressLabel</tt>, as well as two input fields, a <a href="qlineedit.html">QLineEdit</a> object, <tt>nameLine</tt>, and a <a href="qtextedit.html">QTextEdit</a> object, <tt>addressText</tt>, to enable the user to enter a contact's name and address. The widgets used and their positions are shown in the figure below.</p>
+<p align="center"><img src="images/addressbook-tutorial-part1-labeled-screenshot.png" /></p><p>There are three files used to implement this address book:</p>
+<ul>
+<li><tt>addressbook.h</tt> - the definition file for the <tt>AddressBook</tt> class,</li>
+<li><tt>addressbook.cpp</tt> - the implementation file for the <tt>AddressBook</tt> class, and</li>
+<li><tt>main.cpp</tt> - the file containing a <tt>main()</tt> function, with an instance of <tt>AddressBook</tt>.</li>
+</ul>
+<a name="qt-programming-subclassing"></a>
+<h2>Qt Programming - Subclassing</h2>
+<p>When writing Qt programs, we usually subclass Qt objects to add functionality. This is one of the essential concepts behind creating custom widgets or collections of standard widgets. Subclassing to extend or change the behavior of a widget has the following advantages:</p>
+<ul>
+<li>We can write implementations of virtual or pure virtual functions to obtain exactly what we need, falling back on the base class's implementation when necessary.</li>
+<li>It allows us to encapsulate parts of the user interface within a class, so that the other parts of the application don't need to know about the individual widgets in the user interface.</li>
+<li>The subclass can be used to create multiple custom widgets in the same application or library, and the code for the subclass can be reused in other projects.</li>
+</ul>
+<p>Since Qt does not provide a specific address book widget, we subclass a standard Qt widget class and add features to it. The <tt>AddressBook</tt> class we create in this tutorial can be reused in situations where a basic address book widget is needed.</p>
+<a name="defining-the-addressbook-class"></a>
+<h2>Defining the AddressBook Class</h2>
+<p>The <a href="tutorials-addressbook-part1-addressbook-h.html"><tt>addressbook.h</tt></a> file is used to define the <tt>AddressBook</tt> class.</p>
+<p>We start by defining <tt>AddressBook</tt> as a <a href="qwidget.html">QWidget</a> subclass and declaring a constructor. We also use the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro to indicate that the class uses internationalization and Qt's signals and slots features, even if we do not use all of these features at this stage.</p>
+<pre> class AddressBook : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     AddressBook(QWidget *parent = 0);
+
+ private:
+     QLineEdit *nameLine;
+     QTextEdit *addressText;
+ };</pre>
+<p>The class holds declarations of <tt>nameLine</tt> and <tt>addressText</tt>, the private instances of <a href="qlineedit.html">QLineEdit</a> and <a href="qtextedit.html">QTextEdit</a> mentioned earlier. You will see, in the coming chapters, that data stored in <tt>nameLine</tt> and <tt>addressText</tt> is needed for many of the address book's functions.</p>
+<p>We do not need to include declarations of the <a href="qlabel.html">QLabel</a> objects we will use because we will not need to reference them once they have been created. The way Qt tracks the ownership of objects is explained in the next section.</p>
+<p>The <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro itself implements some of the more advanced features of Qt. For now, it is useful to think of the <a href="qobject.html#Q_OBJECT">Q_OBJECT</a> macro as a shortcut which allows us to use the <a href="qobject.html#tr">tr()</a> and <a href="qobject.html#connect">connect()</a> functions.</p>
+<p>We have now completed the <tt>addressbook.h</tt> file and we move on to implement the corresponding <tt>addressbook.cpp</tt> file.</p>
+<a name="implementing-the-addressbook-class"></a>
+<h2>Implementing the AddressBook Class</h2>
+<p>The constructor of <tt>AddressBook</tt> accepts a <a href="qwidget.html">QWidget</a> parameter, <i>parent</i>. By convention, we pass this parameter to the base class's constructor. This concept of ownership, where a parent can have one or more children, is useful for grouping widgets in Qt. For example, if you delete a parent, all of its children will be deleted as well.</p>
+<pre> AddressBook::AddressBook(QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *nameLabel = new QLabel(tr(&quot;Name:&quot;));
+     nameLine = new QLineEdit;
+
+     QLabel *addressLabel = new QLabel(tr(&quot;Address:&quot;));
+     addressText = new QTextEdit;</pre>
+<p>Within this constructor, we declare and instantiate two local <a href="qlabel.html">QLabel</a> objects, <tt>nameLabel</tt> and <tt>addressLabel</tt>, as well as instantiate <tt>nameLine</tt> and <tt>addressText</tt>. The <a href="qobject.html#tr">tr()</a> function returns a translated version of the string, if there is one available; otherwise, it returns the string itself. Think of this function as an <tt>&lt;insert translation here&gt;</tt> marker to mark <a href="qstring.html">QString</a> objects for translation. You will notice, in the coming chapters as well as in the <a href="examples.html">Qt Examples</a>, that we include it whenever we use a translatable string.</p>
+<p>When programming with Qt, it is useful to know how layouts work. Qt provides three main layout classes: <a href="qhboxlayout.html">QHBoxLayout</a>, <a href="qvboxlayout.html">QVBoxLayout</a> and <a href="qgridlayout.html">QGridLayout</a> to handle the positioning of widgets.</p>
+<p align="center"><img src="images/addressbook-tutorial-part1-labeled-layout.png" /></p><p>We use a <a href="qgridlayout.html">QGridLayout</a> to position our labels and input fields in a structured manner. <a href="qgridlayout.html">QGridLayout</a> divides the available space into a grid and places widgets in the cells we specify with row and column numbers. The diagram above shows the layout cells and the position of our widgets, and we specify this arrangement using the following code:</p>
+<pre>     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addWidget(nameLabel, 0, 0);
+     mainLayout-&gt;addWidget(nameLine, 0, 1);
+     mainLayout-&gt;addWidget(addressLabel, 1, 0, Qt::AlignTop);
+     mainLayout-&gt;addWidget(addressText, 1, 1);</pre>
+<p>Notice that <tt>addressLabel</tt> is positioned using <a href="qt.html#AlignmentFlag-enum">Qt::AlignTop</a> as an additional argument. This is to make sure it is not vertically centered in cell (1,0). For a basic overview on Qt Layouts, refer to the <a href="layout.html">Layout Classes</a> document.</p>
+<p>In order to install the layout object onto the widget, we have to invoke the widget's <a href="qwidget.html#setLayout">setLayout()</a> function:</p>
+<pre>     setLayout(mainLayout);
+     setWindowTitle(tr(&quot;Simple Address Book&quot;));
+ }</pre>
+<p>Lastly, we set the widget's title to &quot;Simple Address Book&quot;.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>A separate file, <tt>main.cpp</tt>, is used for the <tt>main()</tt> function. Within this function, we instantiate a <a href="qapplication.html">QApplication</a> object, <tt>app</tt>. <a href="qapplication.html">QApplication</a> is responsible for various application-wide resources, such as the default font and cursor, and for running an event loop. Hence, there is always one <a href="qapplication.html">QApplication</a> object in every GUI application using Qt.</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     AddressBook *addressBook = new AddressBook;
+     addressBook-&gt;show();
+
+     return app.exec();
+ }</pre>
+<p>We construct a new <tt>AddressBook</tt> widget on the heap using the <tt>new</tt> keyword and invoke its <a href="qwidget.html#show">show()</a> function to display it. However, the widget will not be shown until the application's event loop is started. We start the event loop by calling the application's <a href="qapplication.html#exec">exec()</a> function; the result returned by this function is used as the return value from the <tt>main()</tt> function.</p>
+<p>
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part2.html">Chapter 2</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

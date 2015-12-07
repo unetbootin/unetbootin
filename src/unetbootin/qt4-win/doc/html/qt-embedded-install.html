@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-install.qdoc -->
+<head>
+  <title>Qt 4.4: Installing Qt for Embedded Linux</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Installing Qt for Embedded Linux<br /><span class="subtitle"></span>
+</h1>
+<p>This document describes how to install <a href="qt-embedded.html">Qt for Embedded Linux</a> in your development environment:</p>
+<ul><li><a href="#step-1-installing-the-license-file-commercial-editions-only">Step 1: Installing the License File (commercial editions only)</a></li>
+<li><a href="#step-2-unpacking-the-archive">Step 2: Unpacking the Archive</a></li>
+<li><a href="#step-3-building-the-library">Step 3: Building the Library</a></li>
+<li><a href="#step-4-adjusting-the-environment-variables">Step 4: Adjusting the Environment Variables</a></li>
+<li><a href="#step-5-building-the-virtual-framebuffer">Step 5: Building the Virtual Framebuffer</a></li>
+</ul>
+<p>Please see the <a href="qt-embedded-crosscompiling.html">cross compiling</a> and <a href="qt-embedded-deployment.html">deployment</a> documentation for details on how to install <a href="qt-embedded.html">Qt for Embedded Linux</a> on your target device.</p>
+<p>Note also that this installation procedure is written for Linux, and that it may need to be modified for other platforms.</p>
+<a name="step-1-installing-the-license-file-commercial-editions-only"></a>
+<h3>Step 1: Installing the License File (commercial editions only)</h3>
+<p>If you have the commercial edition of <a href="qt-embedded.html">Qt for Embedded Linux</a>, the first step is to install your license file as <tt>$HOME/.qt-license</tt>.</p>
+<p>For the open source version you do not need a license file.</p>
+<a name="step-2-unpacking-the-archive"></a>
+<h3>Step 2: Unpacking the Archive</h3>
+<p>First uncompress the archive in the preferred location, then unpack it:</p>
+<pre>         cd &lt;anywhere&gt;
+         gunzip qt-embedded-linux-commercial-src-4.4.0.tar.gz
+         tar xf qt-embedded-linux-commercial-src-4.4.0.tar</pre>
+<p>This document assumes that the archive is unpacked in the following directory:</p>
+<pre>         ~/qt-embedded-linux-commercial-src-4.4.0</pre>
+<a name="step-3-building-the-library"></a>
+<h3>Step 3: Building the Library</h3>
+<p>Before building the <a href="qt-embedded.html">Qt for Embedded Linux</a> library, run the <tt>./configure</tt> script to configure the library for your development architecture. You can list all of the configuration system's options by typing <tt>./configure -help</tt>.</p>
+<p>Note that by default, <a href="qt-embedded.html">Qt for Embedded Linux</a> is configured for installation in the <tt>/usr/local/Trolltech/QtEmbedded-4.4.0</tt> directory, but this can be changed by using the <tt>-prefix</tt> option. Alternatively, the <tt>-prefix-install</tt> option can be used to specify a &quot;local&quot; installation within the source directory.</p>
+<p>The configuration system is also designed to allow you to specify your platform architecture:</p>
+<pre>         cd  ~/qt-embedded-linux-commercial-src-4.4.0
+         ./configure -embedded [architecture]</pre>
+<p>In general, all Linux systems which have framebuffer support can use the <tt>generic</tt> architecture. Other typical architectures are <tt>x86</tt>, <tt>arm</tt> and <tt>mips</tt>.</p>
+<p><b>Note:</b> If you want to build Qt for Embedded Linux for use with a virtual framebuffer, pass the <tt>-qvfb</tt> option to the <tt>configure</tt> script.</p>
+<p>To create the library and compile all the demos, examples, tools, and tutorials, type:</p>
+<pre>         make</pre>
+<p>On some systems the <tt>make</tt> utility is named differently, e.g&#x2e; <tt>gmake</tt>. The <tt>configure</tt> script tells you which <tt>make</tt> utility to use.</p>
+<p>If you did not configure <a href="qt-embedded.html">Qt for Embedded Linux</a> using the <tt>-prefix-install</tt> option, you need to install the library, demos, examples, tools, and tutorials in the appropriate place. To do this, type:</p>
+<pre>        su -c &quot;make install&quot;</pre>
+<p>and enter the root password.</p>
+<p><b>Note:</b> You can use the <tt>INSTALL_ROOT</tt> environment variable to specify the location of the installed files when invoking <tt>make install</tt>.</p>
+<a name="step-4-adjusting-the-environment-variables"></a>
+<h3>Step 4: Adjusting the Environment Variables</h3>
+<p>In order to use <a href="qt-embedded.html">Qt for Embedded Linux</a>, the <tt>PATH</tt> variable must be extended to locate <tt>qmake</tt>, <tt>moc</tt> and other <a href="qt-embedded.html">Qt for Embedded Linux</a> tools, and the <tt>LD_LIBRARY_PATH</tt> must be extended for compilers that do not support <tt>rpath</tt>.</p>
+<p>To set the <tt>PATH</tt> variable, add the following lines to your <tt>.profile</tt> file if your shell is bash, ksh, zsh or sh:</p>
+<pre>         PATH=/usr/local/Trolltech/QtEmbedded-4.4.0/bin:$PATH
+         export PATH</pre>
+<p>In case your shell is csh or tcsh, add the following line to the <tt>.login</tt> file instead:</p>
+<pre>         setenv PATH /usr/local/Trolltech/QtEmbedded-4.4.0/bin:$PATH</pre>
+<p>If you use a different shell, please modify your environment variables accordingly.</p>
+<p>For compilers that do not support <tt>rpath</tt> you must also extend the <tt>LD_LIBRARY_PATH</tt> environment variable to include <tt>/usr/local/Trolltech/QtEmbedded-4.4.0/lib</tt>. Note that on Linux with GCC, this step is not needed.</p>
+<a name="step-5-building-the-virtual-framebuffer"></a>
+<h3>Step 5: Building the Virtual Framebuffer</h3>
+<p>For development and debugging, <a href="qt-embedded.html">Qt for Embedded Linux</a> provides a virtual framebuffer as well as the option of running <a href="qt-embedded.html">Qt for Embedded Linux</a> as a VNC server. For a description of how to install the virtual framebuffer and how to use the VNC protocol, please consult the documentation at:</p>
+<ul>
+<li><a href="qvfb.html">The Virtual Framebuffer</a></li>
+<li><a href="qt-embedded-vnc.html">The VNC Protocol and Qt for Embedded Linux</a></li>
+</ul>
+<p>Note that the virtual framebuffer requires a Qt/X11 installation. See <a href="install-x11.html">Installing Qt/X11</a> for details.</p>
+<p>The Linux framebuffer, on the other hand, is enabled by default on all modern Linux distributions. For information on older versions, see <a href="http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html">http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html</a>. To test that the Linux framebuffer is set up correctly, use the program provided by the <a href="qt-embedded-testingframebuffer.html">Testing the Linux Framebuffer</a> document.</p>
+<p>That's all. <a href="qt-embedded.html">Qt for Embedded Linux</a> is now installed.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>Customizing the Qt for Embedded Linux Library</b><p>When building embedded applications on low-powered devices, reducing the memory and CPU requirements is important.</p>
+<p>A number of options tuning the library's performance are available. But the most direct way of saving resources is to fine-tune the set of Qt features that is compiled. It is also possible to make use of accelerated graphics hardware.</p>
+<ul>
+<li><a href="qt-embedded-features.html">Fine-Tuning Features in Qt for Embedded Linux</a></li>
+<li><a href="qt-embedded-performance.html">Qt for Embedded Linux Performance Tuning</a></li>
+<li><a href="qt-embedded-accel.html">Adding an Accelerated Graphics Driver to Qt for Embedded Linux</a></li>
+</ul>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

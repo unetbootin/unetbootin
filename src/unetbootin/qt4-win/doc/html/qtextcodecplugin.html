@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/codecs/qtextcodecplugin.cpp -->
+<head>
+  <title>Qt 4.4: QTextCodecPlugin Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextCodecPlugin Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTextCodecPlugin class provides an abstract base for custom <a href="qtextcodec.html">QTextCodec</a> plugins. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextCodecPlugin&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextcodecplugin-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextcodecplugin.html#QTextCodecPlugin">QTextCodecPlugin</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtextcodecplugin.html#dtor.QTextCodecPlugin">~QTextCodecPlugin</a></b> ()</li>
+<li><div class="fn"/>virtual QList&lt;QByteArray&gt; <b><a href="qtextcodecplugin.html#aliases">aliases</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QTextCodec * <b><a href="qtextcodecplugin.html#createForMib">createForMib</a></b> ( int <i>mib</i> ) = 0</li>
+<li><div class="fn"/>virtual QTextCodec * <b><a href="qtextcodecplugin.html#createForName">createForName</a></b> ( const QByteArray &amp; <i>name</i> ) = 0</li>
+<li><div class="fn"/>virtual QList&lt;int&gt; <b><a href="qtextcodecplugin.html#mibEnums">mibEnums</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QList&lt;QByteArray&gt; <b><a href="qtextcodecplugin.html#names">names</a></b> () const = 0</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextCodecPlugin class provides an abstract base for custom <a href="qtextcodec.html">QTextCodec</a> plugins.</p>
+<p>The text codec plugin is a simple plugin interface that makes it easy to create custom text codecs that can be loaded dynamically into applications.</p>
+<p>Writing a text codec plugin is achieved by subclassing this base class, reimplementing the pure virtual functions <a href="qtextcodecplugin.html#names">names</a>(), <a href="qtextcodecplugin.html#aliases">aliases</a>(), <a href="qtextcodecplugin.html#createForName">createForName</a>(), <a href="qtextcodecplugin.html#mibEnums">mibEnums</a>() and <a href="qtextcodecplugin.html#createForMib">createForMib</a>(), and exporting the class with the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro. See <a href="plugins-howto.html">How to Create Qt Plugins</a> for details.</p>
+<p>See the <a href="http://www.iana.org/assignments/character-sets">IANA character-sets encoding file</a> for more information on mime names and mib enums.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextCodecPlugin"></a>QTextCodecPlugin::QTextCodecPlugin ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a text codec plugin with the given <i>parent</i>. This is invoked automatically by the <a href="qtplugin.html#Q_EXPORT_PLUGIN2">Q_EXPORT_PLUGIN2</a>() macro.</p>
+<h3 class="fn"><a name="dtor.QTextCodecPlugin"></a>QTextCodecPlugin::~QTextCodecPlugin ()</h3>
+<p>Destroys the text codec plugin.</p>
+<p>You never have to call this explicitly. Qt destroys a plugin automatically when it is no longer used.</p>
+<h3 class="fn"><a name="aliases"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QTextCodecPlugin::aliases () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the list of aliases supported by this plugin.</p>
+<h3 class="fn"><a name="createForMib"></a><a href="qtextcodec.html">QTextCodec</a> * QTextCodecPlugin::createForMib ( int <i>mib</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Creates a <a href="qtextcodec.html">QTextCodec</a> object for the mib enum <i>mib</i>.</p>
+<p>See <a href="http://www.iana.org/assignments/character-sets">the IANA character-sets encoding file</a> for more information.</p>
+<p>See also <a href="qtextcodecplugin.html#mibEnums">mibEnums</a>().</p>
+<h3 class="fn"><a name="createForName"></a><a href="qtextcodec.html">QTextCodec</a> * QTextCodecPlugin::createForName ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Creates a <a href="qtextcodec.html">QTextCodec</a> object for the codec called <i>name</i>. The <i>name</i> must come from the list of encodings returned by <a href="qtextcodecplugin.html#names">names</a>(). Encoding names are case sensitive.</p>
+<p>Example:</p>
+<pre>         QList&lt;QByteArray&gt; MyCodecPlugin::names() const
+         {
+             return QList&lt;QByteArray&gt; &lt;&lt; &quot;IBM01140&quot; &lt;&lt; &quot;hp15-tw&quot;;
+         }
+
+         QTextCodec *MyCodecPlugin::createForName(const QByteArray &amp;name)
+         {
+             if (name == &quot;IBM01140&quot;) {
+                 return new Ibm01140Codec;
+             } else if (name == &quot;hp15-tw&quot;) {
+                 return new Hp15TwCodec;
+             }
+             return 0;
+         }</pre>
+<p>See also <a href="qtextcodecplugin.html#names">names</a>().</p>
+<h3 class="fn"><a name="mibEnums"></a><a href="qlist.html">QList</a>&lt;int&gt; QTextCodecPlugin::mibEnums () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the list of mib enums supported by this plugin.</p>
+<p>See also <a href="qtextcodecplugin.html#createForMib">createForMib</a>().</p>
+<h3 class="fn"><a name="names"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QTextCodecPlugin::names () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the list of MIME names supported by this plugin.</p>
+<p>If a codec has several names, the extra names are returned by <a href="qtextcodecplugin.html#aliases">aliases</a>().</p>
+<p>See also <a href="qtextcodecplugin.html#createForName">createForName</a>() and <a href="qtextcodecplugin.html#aliases">aliases</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

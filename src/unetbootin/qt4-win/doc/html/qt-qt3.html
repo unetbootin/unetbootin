@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qnamespace.qdoc -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for Qt</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for Qt</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qt.html">Qt class reference</a></li></ul></p>
+<h3>Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#BackgroundMode-enum">BackgroundMode</a></b> { FixedColor, FixedPixmap, NoBackground, PaletteForeground, ..., X11ParentRelative }</li>
+<li><div class="fn"/>typedef <b><a href="qt-qt3.html#ButtonState-typedef">ButtonState</a></b></li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#ButtonState_enum-enum">ButtonState_enum</a></b> { ShiftButton, ControlButton, AltButton, MetaButton, Keypad, KeyButtonMask }</li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#Dock-enum">Dock</a></b> { DockUnmanaged, DockTornOff, DockTop, DockBottom, ..., DockMinimized }</li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#GUIStyle-enum">GUIStyle</a></b> { WindowsStyle, MotifStyle, MacStyle, Win3Style, PMStyle }</li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#MacintoshVersion-enum">MacintoshVersion</a></b> { MV_Unknown, MV_9, MV_10_DOT_0, MV_10_DOT_1, ..., MV_TIGER }</li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#PaintUnit-enum">PaintUnit</a></b> { PixelUnit, LoMetricUnit, HiMetricUnit, LoEnglishUnit, HiEnglishUnit, TwipsUnit }</li>
+<li><div class="fn"/>typedef <b><a href="qt-qt3.html#ScaleMode-typedef">ScaleMode</a></b></li>
+<li><div class="fn"/>typedef <b><a href="qt-qt3.html#TextFlags-typedef">TextFlags</a></b></li>
+<li><div class="fn"/>typedef <b><a href="qt-qt3.html#ToolBarDock-typedef">ToolBarDock</a></b></li>
+<li><div class="fn"/>enum <b><a href="qt-qt3.html#WindowsVersion-enum">WindowsVersion</a></b> { WV_32s, WV_95, WV_98, WV_Me, ..., WV_CE_6 }</li>
+</ul>
+<hr />
+<h2>Type Documentation</h2>
+<h3 class="fn"><a name="BackgroundMode-enum"></a>enum Qt::BackgroundMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Qt::FixedColor</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Qt::FixedPixmap</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Qt::NoBackground</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteForeground</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteButton</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteLight</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteMidlight</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteDark</tt></td><td align="center" valign="top"><tt>7</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteMid</tt></td><td align="center" valign="top"><tt>8</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteText</tt></td><td align="center" valign="top"><tt>9</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteBrightText</tt></td><td align="center" valign="top"><tt>10</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteBase</tt></td><td align="center" valign="top"><tt>11</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteBackground</tt></td><td align="center" valign="top"><tt>12</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteShadow</tt></td><td align="center" valign="top"><tt>13</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteHighlight</tt></td><td align="center" valign="top"><tt>14</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteHighlightedText</tt></td><td align="center" valign="top"><tt>15</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteButtonText</tt></td><td align="center" valign="top"><tt>16</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteLink</tt></td><td align="center" valign="top"><tt>17</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PaletteLinkVisited</tt></td><td align="center" valign="top"><tt>18</tt></td></tr>
+<tr><td valign="top"><tt>Qt::X11ParentRelative</tt></td><td align="center" valign="top"><tt>19</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="ButtonState-typedef"></a>typedef Qt::ButtonState</h3>
+<p>Use <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifier</a> instead.</p>
+<h3 class="fn"><a name="ButtonState_enum-enum"></a>enum Qt::ButtonState_enum</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Qt::ShiftButton</tt></td><td align="center" valign="top"><tt>Qt::ShiftModifier</tt></td></tr>
+<tr><td valign="top"><tt>Qt::ControlButton</tt></td><td align="center" valign="top"><tt>Qt::ControlModifier</tt></td></tr>
+<tr><td valign="top"><tt>Qt::AltButton</tt></td><td align="center" valign="top"><tt>Qt::AltModifier</tt></td></tr>
+<tr><td valign="top"><tt>Qt::MetaButton</tt></td><td align="center" valign="top"><tt>Qt::MetaModifier</tt></td></tr>
+<tr><td valign="top"><tt>Qt::Keypad</tt></td><td align="center" valign="top"><tt>Qt::KeypadModifier</tt></td></tr>
+<tr><td valign="top"><tt>Qt::KeyButtonMask</tt></td><td align="center" valign="top"><tt>Qt::KeyboardModifierMask</tt></td></tr>
+</table></p>
+<p>Use <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifier</a> instead.</p>
+<h3 class="fn"><a name="Dock-enum"></a>enum Qt::Dock</h3>
+<p>Each dock window can be in one of the following positions:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Qt::DockUnmanaged</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">not managed by a <a href="q3mainwindow.html">Q3MainWindow</a>.</td></tr>
+<tr><td valign="top"><tt>Qt::DockTornOff</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">the dock window floats as its own top level window which always stays on top of the main window.</td></tr>
+<tr><td valign="top"><tt>Qt::DockTop</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">above the central widget, below the menu bar.</td></tr>
+<tr><td valign="top"><tt>Qt::DockBottom</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">below the central widget, above the status bar.</td></tr>
+<tr><td valign="top"><tt>Qt::DockRight</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">to the right of the central widget.</td></tr>
+<tr><td valign="top"><tt>Qt::DockLeft</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">to the left of the central widget.</td></tr>
+<tr><td valign="top"><tt>Qt::DockMinimized</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">the dock window is not shown (this is effectively a 'hidden' dock area); the handles of all minimized dock windows are drawn in one row below the menu bar.</td></tr>
+</table></p>
+<h3 class="fn"><a name="GUIStyle-enum"></a>enum Qt::GUIStyle</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Qt::WindowsStyle</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Qt::MotifStyle</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>Qt::MacStyle</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Qt::Win3Style</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>Qt::PMStyle</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="MacintoshVersion-enum"></a>enum Qt::MacintoshVersion</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Qt::MV_Unknown</tt></td><td align="center" valign="top"><tt>0x0000</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_Unknown</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_9</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_9</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_9</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_10_DOT_0</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_10_0</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_0</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_10_DOT_1</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_10_1</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_1</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_10_DOT_2</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_10_2</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_2</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_10_DOT_3</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_10_3</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_3</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_10_DOT_4</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_10_4</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_4</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_CHEETAH</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_CHEETAH</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_0</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_PUMA</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_PUMA</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_1</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_JAGUAR</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_JAGUAR</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_2</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_PANTHER</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_PANTHER</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_3</a> instead.</td></tr>
+<tr><td valign="top"><tt>Qt::MV_TIGER</tt></td><td align="center" valign="top"><tt>QSysInfo::MV_TIGER</tt></td><td valign="top">Use <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MV_10_4</a> instead.</td></tr>
+</table></p>
+<p>See also <a href="qsysinfo.html#MacVersion-enum">QSysInfo::MacVersion</a>.</p>
+<h3 class="fn"><a name="PaintUnit-enum"></a>enum Qt::PaintUnit</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Qt::PixelUnit</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>Qt::LoMetricUnit</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Obsolete</td></tr>
+<tr><td valign="top"><tt>Qt::HiMetricUnit</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Obsolete</td></tr>
+<tr><td valign="top"><tt>Qt::LoEnglishUnit</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Obsolete</td></tr>
+<tr><td valign="top"><tt>Qt::HiEnglishUnit</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Obsolete</td></tr>
+<tr><td valign="top"><tt>Qt::TwipsUnit</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Obsolete</td></tr>
+</table></p>
+<h3 class="fn"><a name="ScaleMode-typedef"></a>typedef Qt::ScaleMode</h3>
+<p>Use <a href="qt.html#AspectRatioMode-enum">Qt::AspectRatioMode</a> instead.</p>
+<p>The enum values have been renamed as follows:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td>Old enum value</td><td>New enum value</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#AspectRatioMode-enum">Qt::ScaleFree</a></td><td><a href="qt.html#AspectRatioMode-enum">Qt::IgnoreAspectRatio</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#AspectRatioMode-enum">Qt::ScaleMin</a></td><td><a href="qt.html#AspectRatioMode-enum">Qt::KeepAspectRatio</a></td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#AspectRatioMode-enum">Qt::ScaleMax</a></td><td><a href="qt.html#AspectRatioMode-enum">Qt::KeepAspectRatioByExpanding</a></td></tr>
+</table></p>
+<h3 class="fn"><a name="TextFlags-typedef"></a>typedef Qt::TextFlags</h3>
+<p>Use <a href="qt.html#TextFlag-enum">Qt::TextFlag</a> instead.</p>
+<h3 class="fn"><a name="ToolBarDock-typedef"></a>typedef Qt::ToolBarDock</h3>
+<p>Use <a href="qt-qt3.html#Dock-enum">Qt::Dock</a> instead.</p>
+<h3 class="fn"><a name="WindowsVersion-enum"></a>enum Qt::WindowsVersion</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Qt::WV_32s</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_32s</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_95</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_95</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_98</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_98</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_Me</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_Me</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_DOS_based</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_DOS_based</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_NT</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_NT</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_2000</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_2000</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_XP</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_XP</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_2003</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_2003</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_NT_based</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_NT_based</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_CE</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_CE</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_CENET</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_CENET</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_CE_based</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_CE_based</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_CE_5</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_CE_5</tt></td></tr>
+<tr><td valign="top"><tt>Qt::WV_CE_6</tt></td><td align="center" valign="top"><tt>QSysInfo::WV_CE_6</tt></td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

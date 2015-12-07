@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qitemeditorfactory.cpp -->
+<head>
+  <title>Qt 4.4: QItemEditorFactory Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QItemEditorFactory Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QItemEditorFactory class provides widgets for editing item data in views and delegates. <a href="#details">More...</a></p>
+<pre> #include &lt;QItemEditorFactory&gt;</pre><p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qitemeditorfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qitemeditorfactory.html#QItemEditorFactory">QItemEditorFactory</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qitemeditorfactory.html#dtor.QItemEditorFactory">~QItemEditorFactory</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="qitemeditorfactory.html#createEditor">createEditor</a></b> ( QVariant::Type <i>type</i>, QWidget * <i>parent</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qitemeditorfactory.html#registerEditor">registerEditor</a></b> ( QVariant::Type <i>type</i>, QItemEditorCreatorBase * <i>creator</i> )</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qitemeditorfactory.html#valuePropertyName">valuePropertyName</a></b> ( QVariant::Type <i>type</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>const QItemEditorFactory * <b><a href="qitemeditorfactory.html#defaultFactory">defaultFactory</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qitemeditorfactory.html#setDefaultFactory">setDefaultFactory</a></b> ( QItemEditorFactory * <i>factory</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QItemEditorFactory class provides widgets for editing item data in views and delegates.</p>
+<p>When editing data in an item view, editors are created and displayed by a delegate. <a href="qitemdelegate.html">QItemDelegate</a>, which is the delegate by default installed on Qt's item views, uses a QItemEditorFactory to create editors for it. A default unique instance provided by QItemEditorFactory is used by all item delegates. If you set a new default factory with <a href="qitemeditorfactory.html#setDefaultFactory">setDefaultFactory</a>(), the new factory will be used by existing and new delegates.</p>
+<p>A factory keeps a collection of <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a> instances, which are specialized editors that produce editors for one particular <a href="qvariant.html">QVariant</a> data type (All Qt models store their data in <a href="qvariant.html">QVariant</a>s).</p>
+<a name="standard-editing-widgets"></a>
+<h3>Standard Editing Widgets</h3>
+<p>The standard factory implementation provides editors for a variety of data types. These are created whenever a delegate needs to provide an editor for data supplied by a model. The following table shows the relationship between types and the standard editors provided.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Type</th><th>Editor Widget</th></tr></thead>
+<tr valign="top" class="odd"><td>bool</td><td><a href="qcombobox.html">QComboBox</a></td></tr>
+<tr valign="top" class="even"><td>double</td><td><a href="qdoublespinbox.html">QDoubleSpinBox</a></td></tr>
+<tr valign="top" class="odd"><td>int</td><td rowspan="2"><a href="qspinbox.html">QSpinBox</a></td></tr>
+<tr valign="top" class="even"><td>unsigned int</td></tr>
+<tr valign="top" class="odd"><td><a href="qdate.html">QDate</a></td><td><a href="qdateedit.html">QDateEdit</a></td></tr>
+<tr valign="top" class="even"><td><a href="qdatetime.html">QDateTime</a></td><td><a href="qdatetimeedit.html">QDateTimeEdit</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qpixmap.html">QPixmap</a></td><td><a href="qlabel.html">QLabel</a></td></tr>
+<tr valign="top" class="even"><td><a href="qstring.html">QString</a></td><td><a href="qlineedit.html">QLineEdit</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qtime.html">QTime</a></td><td><a href="qtimeedit.html">QTimeEdit</a></td></tr>
+</table></p>
+<p>Additional editors can be registered with the <a href="qitemeditorfactory.html#registerEditor">registerEditor</a>() function.</p>
+<p>See also <a href="qitemdelegate.html">QItemDelegate</a>, <a href="model-view-programming.html">Model/View Programming</a>, and <a href="itemviews-coloreditorfactory.html">Color Editor Factory Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QItemEditorFactory"></a>QItemEditorFactory::QItemEditorFactory ()</h3>
+<p>Constructs a new item editor factory.</p>
+<h3 class="fn"><a name="dtor.QItemEditorFactory"></a>QItemEditorFactory::~QItemEditorFactory ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the item editor factory.</p>
+<h3 class="fn"><a name="createEditor"></a><a href="qwidget.html">QWidget</a> * QItemEditorFactory::createEditor ( <a href="qvariant.html#Type-enum">QVariant::Type</a> <i>type</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Creates an editor widget with the given <i>parent</i> for the specified <i>type</i> of data, and returns it as a <a href="qwidget.html">QWidget</a>.</p>
+<p>See also <a href="qitemeditorfactory.html#registerEditor">registerEditor</a>().</p>
+<h3 class="fn"><a name="defaultFactory"></a>const QItemEditorFactory * QItemEditorFactory::defaultFactory ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the default item editor factory.</p>
+<p>See also <a href="qitemeditorfactory.html#setDefaultFactory">setDefaultFactory</a>().</p>
+<h3 class="fn"><a name="registerEditor"></a>void QItemEditorFactory::registerEditor ( <a href="qvariant.html#Type-enum">QVariant::Type</a> <i>type</i>, <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a> * <i>creator</i> )</h3>
+<p>Registers an item editor creator specified by <i>creator</i> for the given <i>type</i> of data.</p>
+<p><b>Note:</b> The factory takes ownership of the item editor creator and will destroy it if a new creator for the same type is registered later.</p>
+<p>See also <a href="qitemeditorfactory.html#createEditor">createEditor</a>().</p>
+<h3 class="fn"><a name="setDefaultFactory"></a>void QItemEditorFactory::setDefaultFactory ( QItemEditorFactory * <i>factory</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the default item editor factory to the given <i>factory</i>. Both new and existing delegates will use the new factory.</p>
+<p>See also <a href="qitemeditorfactory.html#defaultFactory">defaultFactory</a>().</p>
+<h3 class="fn"><a name="valuePropertyName"></a><a href="qbytearray.html">QByteArray</a> QItemEditorFactory::valuePropertyName ( <a href="qvariant.html#Type-enum">QVariant::Type</a> <i>type</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the property name used to access data for the given <i>type</i> of data.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,467 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3AsciiCache
+    \brief The Q3AsciiCache class is a template class that provides a cache based on char* keys.
+    \compat
+
+    Q3AsciiCache is implemented as a template class. Define a template
+    instance Q3AsciiCache\<X\> to create a cache that operates on
+    pointers to X (X*).
+
+    A cache is a least recently used (LRU) list of cache items. The
+    cache items are accessed via \c char* keys. For Unicode keys use
+    the Q3Cache template instead, which uses QString keys. A Q3Cache
+    has the same performace as a Q3AsciiCache.
+
+    Each cache item has a cost. The sum of item costs, totalCost(),
+    will not exceed the maximum cache cost, maxCost(). If inserting a
+    new item would cause the total cost to exceed the maximum cost,
+    the least recently used items in the cache are removed.
+
+    Apart from insert(), by far the most important function is find()
+    (which also exists as operator[]()). This function looks up an
+    item, returns it, and by default marks it as being the most
+    recently used item.
+
+    There are also methods to remove() or take() an object from the
+    cache. Calling \link Q3PtrCollection::setAutoDelete()
+    setAutoDelete(TRUE)\endlink tells the cache to delete items that
+    are removed. The default is to not delete items when then are
+    removed (i.e., remove() and take() are equivalent).
+
+    When inserting an item into the cache, only the pointer is copied,
+    not the item itself. This is called a shallow copy. It is possible
+    to make the cache copy all of the item's data (known as a deep
+    copy) when an item is inserted. insert() calls the virtual
+    function Q3PtrCollection::newItem() for the item to be inserted.
+    Inherit a cache and reimplement newItem() if you want deep copies.
+
+    When removing a cache item the virtual function
+    Q3PtrCollection::deleteItem() is called. Its default implementation
+    in Q3AsciiCache is to delete the item if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink is enabled.
+
+    There is a Q3AsciiCacheIterator which may be used to traverse the
+    items in the cache in arbitrary order.
+
+    \sa Q3AsciiCacheIterator, Q3Cache, Q3IntCache
+*/
+
+/*!
+  \fn Q3AsciiCache::Q3AsciiCache( const Q3AsciiCache<type> &c )
+
+  \internal
+
+  Do not use. A Q3AsciiCache cannot be copied. Calls qFatal() in debug version.
+*/
+
+
+/*!
+    \fn Q3AsciiCache::Q3AsciiCache( int maxCost, int size, bool caseSensitive, bool copyKeys )
+
+    Constructs a cache whose contents will never have a total cost
+    greater than \a maxCost and which is expected to contain less than
+    \a size items.
+
+    \a size is actually the size of an internal hash array; it's
+    usually best to make it prime and at least 50% bigger than the
+    largest expected number of items in the cache.
+
+    Each inserted item has an associated cost. When inserting a new
+    item, if the total cost of all items in the cache will exceed \a
+    maxCost, the cache will start throwing out the older (least
+    recently used) items until there is enough room for the new item
+    to be inserted.
+
+    If \a caseSensitive is TRUE (the default), the cache keys are case
+    sensitive; if it is FALSE, they are case-insensitive.
+    Case-insensitive comparison only affects the 26 letters in
+    US-ASCII. If \a copyKeys is TRUE (the default), Q3AsciiCache makes
+    a copy of the cache keys, otherwise it copies just the const char
+    * pointer - slightly faster if you can guarantee that the keys
+    will never change, but very risky.
+*/
+
+/*!
+    \fn Q3AsciiCache::~Q3AsciiCache()
+
+    Removes all items from the cache and destroys it.
+    All iterators that access this cache will be reset.
+*/
+
+/*!
+  \fn Q3AsciiCache<type>& Q3AsciiCache::operator=( const Q3AsciiCache<type> &c )
+
+  \internal
+
+  Do not use. A Q3AsciiCache cannot be copied. Calls qFatal() in debug version.
+*/
+
+/*!
+    \fn int Q3AsciiCache::maxCost() const
+
+    Returns the maximum allowed total cost of the cache.
+
+    \sa setMaxCost() totalCost()
+*/
+
+/*!
+    \fn int Q3AsciiCache::totalCost() const
+
+    Returns the total cost of the items in the cache. This is an
+    integer in the range 0 to maxCost().
+
+    \sa setMaxCost()
+*/
+
+/*!
+    \fn void Q3AsciiCache::setMaxCost( int m )
+
+    Sets the maximum allowed total cost of the cache to \a m. If the
+    current total cost is greater than \a m, some items are removed
+    immediately.
+
+    \sa maxCost() totalCost()
+*/
+
+/*!
+    \fn uint Q3AsciiCache::count() const
+
+    Returns the number of items in the cache.
+
+    \sa totalCost() size()
+*/
+
+/*!
+    \fn uint Q3AsciiCache::size() const
+
+    Returns the size of the hash array used to implement the cache.
+    This should be a bit bigger than count() is likely to be.
+*/
+
+/*!
+    \fn bool Q3AsciiCache::isEmpty() const
+
+    Returns TRUE if the cache is empty; otherwise returns FALSE.
+*/
+
+/*!
+    \fn bool Q3AsciiCache::insert( const char *k, const type *d, int c, int p )
+
+    Inserts the item \a d into the cache using key \a k, and with an
+    associated cost of \a c. Returns TRUE if the item is successfully
+    inserted. Returns FALSE if the item is not inserted, for example,
+    if the cost of the item exceeds maxCost().
+
+    The cache's size is limited, and if the total cost is too high,
+    Q3AsciiCache will remove old, least recently used items until there
+    is room for this new item.
+
+    Items with duplicate keys can be inserted.
+
+    The parameter \a p is internal and should be left at the default
+    value (0).
+
+    \warning If this function returns FALSE, you must delete \a d
+    yourself. Additionally, be very careful about using \a d after
+    calling this function, because any other insertions into the
+    cache, from anywhere in the application or within Qt itself, could
+    cause the object to be discarded from the cache and the pointer to
+    become invalid.
+*/
+
+/*!
+    \fn bool Q3AsciiCache::remove( const char *k )
+
+    Removes the item with key \a k and returns TRUE if the item was
+    present in the cache; otherwise returns FALSE.
+
+    The item is deleted if auto-deletion has been enabled, i.e., if
+    you have called \link Q3PtrCollection::setAutoDelete()
+    setAutoDelete(TRUE)\endlink.
+
+    If there are two or more items with equal keys, the one that was
+    inserted last is removed.
+
+    All iterators that refer to the removed item are set to point to
+    the next item in the cache's traversal order.
+
+    \sa take(), clear()
+*/
+
+/*!
+    \fn type *Q3AsciiCache::take( const char *k )
+
+    Takes the item associated with \a k out of the cache without
+    deleting it and returns a pointer to the item taken out, or 0
+    if the key does not exist in the cache.
+
+    If there are two or more items with equal keys, the one that was
+    inserted last is taken.
+
+    All iterators that refer to the taken item are set to point to the
+    next item in the cache's traversal order.
+
+    \sa remove(), clear()
+*/
+
+/*!
+    \fn void Q3AsciiCache::clear()
+
+    Removes all items from the cache, and deletes them if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink has been
+    enabled.
+
+    All cache iterators that operate on this cache are reset.
+
+    \sa remove() take()
+*/
+
+/*!
+    \fn type *Q3AsciiCache::find( const char *k, bool ref ) const
+
+    Returns the item with key \a k, or 0 if the key does not exist
+    in the cache. If \a ref is TRUE (the default), the item is moved
+    to the front of the least recently used list.
+
+    If there are two or more items with equal keys, the one that was
+    inserted last is returned.
+*/
+
+/*!
+    \fn type *Q3AsciiCache::operator[]( const char *k ) const
+
+    Returns the item with key \a k, or 0 if \a k does not exist in
+    the cache, and moves the item to the front of the least recently
+    used list.
+
+    If there are two or more items with equal keys, the one that was
+    inserted last is returned.
+
+    This is the same as find( k, TRUE ).
+
+    \sa find()
+*/
+
+/*!
+    \fn void Q3AsciiCache::statistics() const
+
+    A debug-only utility function. Prints out cache usage, hit/miss,
+    and distribution information using qDebug(). This function does
+    nothing in the release library.
+*/
+
+/*!
+    \class Q3AsciiCacheIterator
+    \brief The Q3AsciiCacheIterator class provides an iterator for Q3AsciiCache collections.
+    \compat
+
+    Note that the traversal order is arbitrary; you are not guaranteed
+    any particular order. If new objects are inserted into the cache
+    while the iterator is active, the iterator may or may not see
+    them.
+
+    Multiple iterators are completely independent, even when they
+    operate on the same Q3AsciiCache. Q3AsciiCache updates all iterators
+    that refer an item when that item is removed.
+
+    Q3AsciiCacheIterator provides an operator++() and an operator+=()
+    to traverse the cache; current() and currentKey() to access the
+    current cache item and its key. It also provides atFirst() and
+    atLast(), which return TRUE if the iterator points to the first or
+    last item in the cache respectively. The isEmpty() function
+    returns TRUE if the cache is empty; and count() returns the number
+    of items in the cache.
+
+    Note that atFirst() and atLast() refer to the iterator's arbitrary
+    ordering, not to the cache's internal least recently used list.
+
+    \sa Q3AsciiCache
+*/
+
+/*!
+    \fn Q3AsciiCacheIterator::Q3AsciiCacheIterator( const Q3AsciiCache<type> &cache )
+
+    Constructs an iterator for \a cache. The current iterator item is
+    set to point to the first item in the \a cache.
+*/
+
+/*!
+    \fn Q3AsciiCacheIterator::Q3AsciiCacheIterator (const Q3AsciiCacheIterator<type> & ci)
+
+    Constructs an iterator for the same cache as \a ci. The new
+    iterator starts at the same item as ci.current() but moves
+    independently from there on.
+*/
+
+/*!
+    \fn Q3AsciiCacheIterator<type>& Q3AsciiCacheIterator::operator=( const Q3AsciiCacheIterator<type> &ci )
+
+    Makes this an iterator for the same cache as \a ci. The new
+    iterator starts at the same item as ci.current(), but moves
+    independently thereafter.
+*/
+
+/*!
+    \fn uint Q3AsciiCacheIterator::count() const
+
+    Returns the number of items in the cache over which this iterator
+    operates.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3AsciiCacheIterator::isEmpty() const
+
+    Returns TRUE if the cache is empty, i.e. count() == 0; otherwise
+    returns FALSE.
+    
+    \sa count()
+*/
+
+/*!
+    \fn bool Q3AsciiCacheIterator::atFirst() const
+
+    Returns TRUE if the iterator points to the first item in the
+    cache; otherwise returns FALSE. Note that this refers to the
+    iterator's arbitrary ordering, not to the cache's internal least
+    recently used list.
+
+    \sa toFirst(), atLast()
+*/
+
+/*!
+    \fn bool Q3AsciiCacheIterator::atLast() const
+
+    Returns TRUE if the iterator points to the last item in the cache;
+    otherwise returns FALSE. Note that this refers to the iterator's
+    arbitrary ordering, not to the cache's internal least recently
+    used list.
+
+    \sa toLast(), atFirst()
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::toFirst()
+
+    Sets the iterator to point to the first item in the cache and
+    returns a pointer to the item.
+
+    Sets the iterator to 0 and returns 0 if the cache is empty.
+
+    \sa toLast() isEmpty()
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::toLast()
+
+    Sets the iterator to point to the last item in the cache and
+    returns a pointer to the item.
+
+    Sets the iterator to 0 and returns 0 if the cache is empty.
+
+    \sa toFirst() isEmpty()
+*/
+
+/*!
+    \fn Q3AsciiCacheIterator::operator type *() const
+
+    Cast operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::current() const
+
+    Returns a pointer to the current iterator item.
+*/
+
+/*!
+    \fn const char *Q3AsciiCacheIterator::currentKey() const
+
+    Returns the key for the current iterator item.
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::operator()()
+
+    Makes the succeeding item current and returns the original current
+    item.
+
+    If the current iterator item was the last item in the cache or if
+    it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::operator+=( uint jump )
+
+    Returns the item \a jump positions after the current item, or 0
+    if it is beyond the last item. Makes this the current item.
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::operator-=( uint jump )
+
+    Returns the item \a jump positions before the current item, or 0
+    if it is before the first item. Makes this the current item.
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::operator++()
+
+    Prefix ++ makes the iterator point to the item just after
+    current(), and makes that the new current item for the iterator. If
+    current() was the last item, operator++() returns 0.
+*/
+
+/*!
+    \fn type *Q3AsciiCacheIterator::operator--()
+
+    Prefix -- makes the iterator point to the item just before
+    current(), and makes that the new current item for the iterator. If
+    current() was the first item, operator--() returns 0.
+*/
+

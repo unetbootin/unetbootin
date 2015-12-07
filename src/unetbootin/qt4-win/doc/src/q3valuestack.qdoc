@@ -1,0 +1,151 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3ValueStack
+    \brief The Q3ValueStack class is a value-based template class that provides a stack.
+    \compat
+
+    Define a template instance Q3ValueStack\<X\> to create a stack of
+    values that all have the class X.
+
+    Note that Q3ValueStack does not store pointers to the members of
+    the stack; it holds a copy of every member. That is why these
+    kinds of classes are called "value based"; Q3PtrStack, Q3PtrList,
+    Q3Dict, etc., are "pointer based".
+
+    A stack is a last in, first out (LIFO) structure. Items are added
+    to the top of the stack with push() and retrieved from the top
+    with pop(). The top() function provides access to the topmost item
+    without removing it.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3valuestack.qdoc 0
+
+    Q3ValueStack is a specialized Q3ValueList provided for convenience.
+    All of Q3ValueList's functionality also applies to Q3PtrStack, for
+    example the facility to iterate over all elements using
+    Q3ValueStack<T>::Iterator. See Q3ValueListIterator for further
+    details.
+
+    Some classes cannot be used within a Q3ValueStack, for example
+    everything derived from QObject and thus all classes that
+    implement widgets. Only values can be used in a Q3ValueStack. To
+    qualify as a value, the class must provide
+    \list
+    \i a copy constructor;
+    \i an assignment operator;
+    \i a default constructor, i.e. a constructor that does not take any arguments.
+    \endlist
+
+    Note that C++ defaults to field-by-field assignment operators and
+    copy constructors if no explicit version is supplied. In many
+    cases this is sufficient.
+*/
+
+
+/*!
+    \fn Q3ValueStack::Q3ValueStack()
+
+    Constructs an empty stack.
+*/
+
+/*!
+    \fn Q3ValueStack::~Q3ValueStack()
+
+    Destroys the stack. References to the values in the stack and all
+    iterators of this stack become invalidated. Because Q3ValueStack is
+    highly tuned for performance, you won't see warnings if you use
+    invalid iterators because it is impossible for an iterator to
+    check whether or not it is valid.
+*/
+
+
+/*!
+    \fn void  Q3ValueStack::push( const T& d )
+
+    Adds element, \a d, to the top of the stack. Last in, first out.
+
+    This function is equivalent to append().
+
+    \sa pop(), top()
+*/
+
+/*!
+    \fn T& Q3ValueStack::top()
+
+    Returns a reference to the top item of the stack or the item
+    referenced by end() if no such item exists. Note that you must not
+    change the value the end() iterator points to.
+
+    This function is equivalent to last().
+
+    \sa pop(), push(), Q3ValueList::fromLast()
+*/
+
+
+/*!
+    \fn const T& Q3ValueStack::top() const
+
+    \overload
+
+    Returns a reference to the top item of the stack or the item
+    referenced by end() if no such item exists.
+
+    This function is equivalent to last().
+
+    \sa pop(), push(), Q3ValueList::fromLast()
+*/
+
+/*!
+    \fn T Q3ValueStack::pop()
+
+    Removes the top item from the stack and returns it.
+
+    \sa top() push()
+*/
+
+
+
+
+

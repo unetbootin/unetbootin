@@ -1,0 +1,189 @@
+//! [0]
+    point = new Object();
+    point.x = 12;
+    point.y = 35;
+//! [0]
+
+
+//! [1]
+    function manhattanLength(point) {  
+        return point.x + point.y;
+    }
+//! [1]
+
+
+//! [2]
+    manhattanLength = function(point) {
+       return point.x + point.y;
+    }
+//! [2]
+
+
+//! [3]
+    point.manhattanLength = function() {
+        return this.x + this.y;
+    }
+    print(point.manhattanLength()); // prints 47
+//! [3]
+
+
+//! [4]
+    class Point() {
+        var x;
+        var y;
+        function manhattanLength() { return x + y; }
+    }
+//! [4]
+
+
+//! [5]
+    point.manhattanLength = function() {
+        return this.x + this.y;
+    }
+    print(point.manhattanLength()); // prints 47
+//! [5]
+
+
+//! [6]
+    class Car {
+        var regNumber;
+        function Car(regnr) {
+            regNumber = regnr;
+        }
+    }
+    var car = new Car("ABC 123");
+//! [6]
+
+
+//! [7]
+    function Car(regnr) {
+        this.regNumber = regnr;
+    }
+    var car = new Car("ABC 123");
+//! [7]
+
+
+//! [8]
+    var car = new Object();
+    car.constructor = function(regnr) { ... }
+    car.constructor();
+//! [8]
+
+
+//! [9]
+    class Car {
+        var regNumber;
+        function Car(regnr) {
+            regNumber = regnr;
+        }
+        function toString() {
+            return regNumber;
+        }
+    }
+//! [9]
+
+
+//! [10]
+    function Car(regnr) {
+        this.regNumber = regnr;
+        this.toString = function() { return this.regNumber; }
+    }
+//! [10]
+
+
+//! [11]
+    function Car(regnr) {
+        this.regNumber = regnr;
+    }
+    Car.prototype.toString = function() { return this.regNumber; }
+//! [11]
+
+
+//! [12]
+    class GasolineCar extends Car {
+        function GasolineCar(regnr) {
+            Car(regnr);
+        }
+        function toString() {
+            return "GasolineCar(" + regNumber + ")";
+        }
+    }
+//! [12]
+
+
+//! [13]
+    function GasolineCar(regnr) {
+        Car(regnr); 
+    }
+    GasolineCar.prototype = new Car();
+    GasolineCar.prototype.toString = function() { 
+        return "GasolineCar(" + this.regNumber + ")"; 
+    }
+//! [13]
+
+
+//! [14]
+    class Car {
+        static var globalCount = 0;
+    }     
+    print(Car.globalCount);
+//! [14]
+
+
+//! [15]
+    Car.globalCount = 0;
+    print(Car.globalCount);
+//! [15]
+
+
+//! [16]
+    QPushButton *button = new QPushButton();
+    button->setObjectName("button");
+    interpreter->addTransientObject(button);
+//! [16]
+
+
+//! [17]
+    QPushButton *button = new QPushButton();
+    QScriptValue scriptButton = engine.newQObject(button);
+    engine.globalObject().setProperty("button", scriptButton);
+//! [17]
+
+
+//! [18]
+    ModuleFactory::ModuleFactory()
+    {
+        registerClass( "ImageSource", &ImgSource::staticMetaObject);
+        ...
+    }
+
+    QObject *ModuleFactory::create( const QString &type,
+        			    const QVariantList &,
+        			    QObject * )
+    {
+        if ( type == "ImageSource" )
+            return new ImgSource();
+        ...
+    }
+
+    ...
+
+    interpreter.addObjectFactory(new ModuleFactory());
+//! [18]
+
+
+//! [19]
+    QScriptValue construct_QPushButton(QScriptContext *, QScriptEngine *engine) {
+        return engine->newQObject(new QPushButton());
+    }
+
+    ...
+
+    QScriptValue constructor = engine.newFunction(construct_QPushButton);
+    QScriptValue value =
+        engine.newQMetaObject(&QPushButton::staticMetaObject,
+                              constructor);
+    engine.globalObject().setProperty("QPushButton", value);
+//! [19]
+
+

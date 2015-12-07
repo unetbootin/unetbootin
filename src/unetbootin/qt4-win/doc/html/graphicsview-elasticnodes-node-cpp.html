@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: node.cpp Example File (graphicsview/elasticnodes/node.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">node.cpp Example File<br /><span class="small-subtitle">graphicsview/elasticnodes/node.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QGraphicsScene&gt;
+ #include &lt;QGraphicsSceneMouseEvent&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QStyleOption&gt;
+
+ #include &quot;edge.h&quot;
+ #include &quot;node.h&quot;
+ #include &quot;graphwidget.h&quot;
+
+ Node::Node(GraphWidget *graphWidget)
+     : graph(graphWidget)
+ {
+     setFlag(ItemIsMovable);
+     setCacheMode(DeviceCoordinateCache);
+     setZValue(1);
+ }
+
+ void Node::addEdge(Edge *edge)
+ {
+     edgeList &lt;&lt; edge;
+     edge-&gt;adjust();
+ }
+
+ QList&lt;Edge *&gt; Node::edges() const
+ {
+     return edgeList;
+ }
+
+ void Node::calculateForces()
+ {
+     if (!scene() || scene()-&gt;mouseGrabberItem() == this) {
+         newPos = pos();
+         return;
+     }
+
+     <span class="comment">//</span> Sum up all forces pushing this item away
+     qreal xvel = 0;
+     qreal yvel = 0;
+     foreach (QGraphicsItem *item, scene()-&gt;items()) {
+         Node *node = qgraphicsitem_cast&lt;Node *&gt;(item);
+         if (!node)
+             continue;
+
+         QLineF line(mapFromItem(node, 0, 0), QPointF(0, 0));
+         qreal dx = line.dx();
+         qreal dy = line.dy();
+         double l = 2.0 * (dx * dx + dy * dy);
+         if (l &gt; 0) {
+             xvel += (dx * 150.0) / l;
+             yvel += (dy * 150.0) / l;
+         }
+     }
+
+     <span class="comment">//</span> Now subtract all forces pulling items together
+     double weight = (edgeList.size() + 1) * 10;
+     foreach (Edge *edge, edgeList) {
+         QPointF pos;
+         if (edge-&gt;sourceNode() == this)
+             pos = mapFromItem(edge-&gt;destNode(), 0, 0);
+         else
+             pos = mapFromItem(edge-&gt;sourceNode(), 0, 0);
+         xvel += pos.x() / weight;
+         yvel += pos.y() / weight;
+     }
+
+     if (qAbs(xvel) &lt; 0.1 &amp;&amp; qAbs(yvel) &lt; 0.1)
+         xvel = yvel = 0;
+
+     QRectF sceneRect = scene()-&gt;sceneRect();
+     newPos = pos() + QPointF(xvel, yvel);
+     newPos.setX(qMin(qMax(newPos.x(), sceneRect.left() + 10), sceneRect.right() - 10));
+     newPos.setY(qMin(qMax(newPos.y(), sceneRect.top() + 10), sceneRect.bottom() - 10));
+ }
+
+ bool Node::advance()
+ {
+     if (newPos == pos())
+         return false;
+
+     setPos(newPos);
+     return true;
+ }
+
+ QRectF Node::boundingRect() const
+ {
+     qreal adjust = 2;
+     return QRectF(-10 - adjust, -10 - adjust,
+                   23 + adjust, 23 + adjust);
+ }
+
+ QPainterPath Node::shape() const
+ {
+     QPainterPath path;
+     path.addEllipse(-10, -10, 20, 20);
+     return path;
+ }
+
+ void Node::paint(QPainter *painter, const QStyleOptionGraphicsItem *option, QWidget *)
+ {
+     painter-&gt;setPen(Qt::NoPen);
+     painter-&gt;setBrush(Qt::darkGray);
+     painter-&gt;drawEllipse(-7, -7, 20, 20);
+
+     QRadialGradient gradient(-3, -3, 10);
+     if (option-&gt;state &amp; QStyle::State_Sunken) {
+         gradient.setCenter(3, 3);
+         gradient.setFocalPoint(3, 3);
+         gradient.setColorAt(1, QColor(Qt::yellow).light(120));
+         gradient.setColorAt(0, QColor(Qt::darkYellow).light(120));
+     } else {
+         gradient.setColorAt(0, Qt::yellow);
+         gradient.setColorAt(1, Qt::darkYellow);
+     }
+     painter-&gt;setBrush(gradient);
+     painter-&gt;setPen(QPen(Qt::black, 0));
+     painter-&gt;drawEllipse(-10, -10, 20, 20);
+ }
+
+ QVariant Node::itemChange(GraphicsItemChange change, const QVariant &amp;value)
+ {
+     switch (change) {
+     case ItemPositionHasChanged:
+         foreach (Edge *edge, edgeList)
+             edge-&gt;adjust();
+         graph-&gt;itemMoved();
+         break;
+     default:
+         break;
+     };
+
+     return QGraphicsItem::itemChange(change, value);
+ }
+
+ void Node::mousePressEvent(QGraphicsSceneMouseEvent *event)
+ {
+     update();
+     QGraphicsItem::mousePressEvent(event);
+ }
+
+ void Node::mouseReleaseEvent(QGraphicsSceneMouseEvent *event)
+ {
+     update();
+     QGraphicsItem::mouseReleaseEvent(event);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

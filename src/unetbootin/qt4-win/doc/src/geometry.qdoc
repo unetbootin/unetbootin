@@ -1,0 +1,152 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page geometry.html
+    \title Window Geometry
+    \ingroup architecture
+    \brief An overview of window geometry handling and management.
+
+    QWidget provides several functions that deal with a widget's
+    geometry. Some of these functions operate on the pure client area
+    (i.e. the window excluding the window frame), others include the
+    window frame. The differentiation is done in a way that covers the
+    most common usage transparently.
+
+    \list
+    \o \bold{Including the window frame:}
+        \l{QWidget::x()}{x()},
+        \l{QWidget::y()}{y()},
+        \l{QWidget::frameGeometry()}{frameGeometry()},
+        \l{QWidget::pos()}{pos()}, and
+        \l{QWidget::move()}{move()}.
+    \o \bold{Excluding the window frame:}
+        \l{QWidget::geometry()}{geometry()},
+        \l{QWidget::width()}{width()},
+        \l{QWidget::height()}{height()},
+        \l{QWidget::rect()}{rect()}, and
+        \l{QWidget::size()}{size()}.
+    \endlist
+
+    Note that the distinction only matters for decorated top-level
+    widgets. For all child widgets, the frame geometry is equal to the
+    widget's client geometry.
+
+    This diagram shows most of the functions in use:
+    \img geometry.png Geometry diagram
+
+    Topics:
+
+    \tableofcontents
+
+    \section1 X11 Peculiarities
+
+    On X11, a window does not have a frame until the window manager
+    decorates it. This happens asynchronously at some point in time
+    after calling QWidget::show() and the first paint event the
+    window receives, or it does not happen at all. Bear in mind that
+    X11 is policy-free (others call it flexible). Thus you cannot
+    make any safe assumption about the decoration frame your window
+    will get. Basic rule: There's always one user who uses a window
+    manager that breaks your assumption, and who will complain to
+    you.
+
+    Furthermore, a toolkit cannot simply place windows on the screen. All
+    Qt can do is to send certain hints to the window manager. The window
+    manager, a separate process, may either obey, ignore or misunderstand
+    them. Due to the partially unclear Inter-Client Communication
+    Conventions Manual (ICCCM), window placement is handled quite
+    differently in existing window managers.
+
+    X11 provides no standard or easy way to get the frame geometry
+    once the window is decorated. Qt solves this problem with nifty
+    heuristics and clever code that works on a wide range of window
+    managers that exist today. Don't be surprised if you find one
+    where QWidget::frameGeometry() returns wrong results though.
+
+    Nor does X11 provide a way to maximize a window.
+    QWidget::showMaximized() has to emulate the feature. Its result
+    depends on the result of QWidget::frameGeometry() and the
+    capability of the window manager to do proper window placement,
+    neither of which can be guaranteed.
+
+    \section1 Restoring a Window's Geometry
+
+    Since version 4.2, Qt provides functions that saves and restores a
+    window's geometry and state for you. QWidget::saveGeometry()
+    saves the window geometry and maximized/fullscreen state, while
+    QWidget::restoreGeometry() restores it. The restore function also
+    checks if the restored geometry is outside the available screen
+    geometry, and modifies it as appropriate if it is.
+
+    The rest of this document describes how to save and restore the 
+    geometry using the geometry properties. On Windows, this is 
+    basically storing the result of QWidget::geometry() and calling
+    QWidget::setGeometry() in the next session before calling
+    \l{QWidget::show()}{show()}. On X11, this won't work because an
+    invisible window doesn't have a frame yet. The window manager
+    will decorate the window later. When this happens, the window
+    shifts towards the bottom/right corner of the screen depending on
+    the size of the decoration frame. Although X provides a way to
+    avoid this shift, most window managers fail to implement this
+    feature.
+
+    A workaround is to call \l{QWidget::setGeometry()}{setGeometry()}
+    after \l{QWidget::show()}{show()}. This has the two disadvantages
+    that the widget appears at a wrong place for a millisecond
+    (results in flashing) and that currently only every second window
+    manager gets it right. A safer solution is to store both
+    \l{QWidget::pos()}{pos()} and \l{QWidget::size()}{size()} and to
+    restore the geometry using \l{QWidget::resize()} and
+    \l{QWidget::move()}{move()} before calling
+    \l{QWidget::show()}{show()}, as demonstrated in the following
+    code snippets (from the \l{mainwindows/application}{Application}
+    example):
+
+    \snippet examples/mainwindows/application/mainwindow.cpp 35
+    \codeline
+    \snippet examples/mainwindows/application/mainwindow.cpp 38
+
+    This method works on Windows, Mac OS X, and most X11 window
+    managers.
+*/

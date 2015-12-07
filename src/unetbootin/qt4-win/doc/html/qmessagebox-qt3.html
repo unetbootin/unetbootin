@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qmessagebox.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QMessageBox</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QMessageBox</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qmessagebox.html">QMessageBox class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmessagebox-qt3.html#QMessageBox-4">QMessageBox</a></b> ( const QString &amp; <i>title</i>, const QString &amp; <i>text</i>, Icon <i>icon</i>, int <i>button0</i>, int <i>button1</i>, int <i>button2</i>, QWidget * <i>parent</i>, const char * <i>name</i>, bool <i>modal</i>, Qt::WindowFlags <i>f</i> = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint )</li>
+<li><div class="fn"/><b><a href="qmessagebox-qt3.html#QMessageBox-5">QMessageBox</a></b> ( QWidget * <i>parent</i>, const char * <i>name</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>60 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qmessagebox-qt3.html#message">message</a></b> ( const QString &amp; <i>title</i>, const QString &amp; <i>text</i>, const QString &amp; <i>buttonText</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qmessagebox-qt3.html#query">query</a></b> ( const QString &amp; <i>caption</i>, const QString &amp; <i>text</i>, const QString &amp; <i>yesButtonText</i> = QString(), const QString &amp; <i>noButtonText</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>QPixmap <b><a href="qmessagebox-qt3.html#standardIcon">standardIcon</a></b> ( Icon <i>icon</i>, Qt::GUIStyle <i>style</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QMessageBox-4"></a>QMessageBox::QMessageBox ( const <a href="qstring.html">QString</a> &amp; <i>title</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qmessagebox.html#Icon-enum">Icon</a> <i>icon</i>, int <i>button0</i>, int <i>button1</i>, int <i>button2</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i>, bool <i>modal</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>f</i> = Qt::Dialog | Qt::MSWindowsFixedSizeDialogHint )</h3>
+<p>Constructs a message box with the given <i>parent</i>, <i>name</i>, and window flags, <i>f</i>. The window title is specified by <i>title</i>, and the message box displays message text and an icon specified by <i>text</i> and <i>icon</i>.</p>
+<p>The buttons that the user can access to respond to the message are defined by <i>button0</i>, <i>button1</i>, and <i>button2</i>.</p>
+<h3 class="fn"><a name="QMessageBox-5"></a>QMessageBox::QMessageBox ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>name</i> )</h3>
+<p>Constructs a message box with the given <i>parent</i> and <i>name</i>.</p>
+<h3 class="fn"><a name="message"></a>int QMessageBox::message ( const <a href="qstring.html">QString</a> &amp; <i>title</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qstring.html">QString</a> &amp; <i>buttonText</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Opens a modal message box with the given <i>title</i> and showing the given <i>text</i>. The message box has a single button which has the given <i>buttonText</i> (or tr(&quot;OK&quot;)). The message box is centred over its <i>parent</i> and is called <i>name</i>.</p>
+<p>Use <a href="qmessagebox.html#information">information</a>(), <a href="qmessagebox.html#warning">warning</a>(), <a href="qmessagebox.html#question">question</a>(), or <a href="qmessagebox.html#critical">critical</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QMessageBox::message(tr(&quot;My App&quot;), tr(&quot;All occurrences replaced.&quot;),
+                      tr(&quot;Close&quot;), this);</font></pre>
+<p>you can rewrite it as</p>
+<pre> QMessageBox::information(this, tr(&quot;My App&quot;),
+                          tr(&quot;All occurrences replaced.&quot;),
+                          QMessageBox::Close);</pre>
+<h3 class="fn"><a name="query"></a>bool QMessageBox::query ( const <a href="qstring.html">QString</a> &amp; <i>caption</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, const <a href="qstring.html">QString</a> &amp; <i>yesButtonText</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>noButtonText</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Queries the user using a modal message box with up to two buttons. The message box has the given <i>caption</i> (although some window managers don't show it), and shows the given <i>text</i>. The left button has the <i>yesButtonText</i> (or tr(&quot;OK&quot;)), and the right button has the <i>noButtonText</i> (or isn't shown). The message box is centred over its <i>parent</i> and is called <i>name</i>.</p>
+<p>Use <a href="qmessagebox.html#information">information</a>(), <a href="qmessagebox.html#question">question</a>(), <a href="qmessagebox.html#warning">warning</a>(), or <a href="qmessagebox.html#critical">critical</a>() instead.</p>
+<h3 class="fn"><a name="standardIcon"></a><a href="qpixmap.html">QPixmap</a> QMessageBox::standardIcon ( <a href="qmessagebox.html#Icon-enum">Icon</a> <i>icon</i>, <a href="qt-qt3.html#GUIStyle-enum">Qt::GUIStyle</a> <i>style</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the pixmap used for a standard icon. This allows the pixmaps to be used in more complex message boxes. <i>icon</i> specifies the required icon, e.g&#x2e; <a href="qmessagebox.html#Icon-enum">QMessageBox::Information</a>, <a href="qmessagebox.html#Icon-enum">QMessageBox::Warning</a> or <a href="qmessagebox.html#Icon-enum">QMessageBox::Critical</a>.</p>
+<p><i>style</i> is unused.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

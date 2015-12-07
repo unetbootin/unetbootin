@@ -1,0 +1,420 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/xquery-introduction.qdoc -->
+<head>
+  <title>Qt 4.4: A Short Path to XQuery</title>
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+</p>
+<h1 class="title">A Short Path to XQuery<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#selecting-nodes-with-paths">Selecting Nodes with Paths</a></li>
+<ul><li><a href="#axes">Axes</a></li>
+<li><a href="#node-tests">Node tests</a></li>
+<ul><li><a href="#name-tests">Name Tests</a></li>
+<li><a href="#names-and-wildcards">Names and Wildcards</a></li>
+<li><a href="#kind-tests">Kind Tests</a></li>
+</ul>
+<li><a href="#abbreviated-syntax">Abbreviated syntax</a></li>
+</ul>
+<li><a href="#more-on-focus-and-filtering-predicates">More on Focus and Filtering: Predicates</a></li>
+<ul><li><a href="#select-based-on-positions-and-numeric-ranges">Select based on Positions and Numeric Ranges</a></li>
+<li><a href="#filterting-based-on-logic">Filterting based on Logic</a></li>
+</ul>
+<li><a href="#creating-nodes">Creating nodes</a></li>
+<ul><li><a href="#computing-values-inside-nodes">Computing values inside nodes</a></li>
+<li><a href="#node-constructors-are-expressions">Node Constructors are Expressions</a></li>
+<li><a href="#computing-node-names-at-runtime">Computing Node Names at Runtime</a></li>
+<li><a href="#copying-nodes-into-other-nodes">Copying nodes into other nodes</a></li>
+</ul>
+<li><a href="#escaping-characters">Escaping Characters</a></li>
+<li><a href="#dates-times-numbers-and-other-atomic-values">Dates, Times, Numbers and other Atomic Values</a></li>
+<ul><li><a href="#creating-atomic-values">Creating Atomic Values</a></li>
+<li><a href="#using-atomic-values">Using Atomic Values</a></li>
+</ul>
+<li><a href="#further-reading">Further Reading</a></li>
+<li><a href="#faq">FAQ</a></li>
+<ul><li><a href="#path-expressions-misses">Path expressions misses</a></li>
+<li><a href="#variable-in-for-loop-is-out-of-scope">Variable in for loop is out of scope</a></li>
+<li><a href="#expressions-aren-t-evaluated">Expressions aren't evaluated</a></li>
+<li><a href="#filters-selects-the-wrong-things">Filters selects the wrong things</a></li>
+<li><a href="#flwor-doesn-t-behave-as-expected">FLWOR doesn't behave as expected</a></li>
+<li><a href="#nodes-are-created-in-the-wrong-order">Nodes are created in the wrong order</a></li>
+<li><a href="#true-or-false-doesn-t-work">true or false doesn't work</a></li>
+</ul>
+</ul>
+<a name="introduction"></a>
+<h3>Introduction</h3>
+<p>Compared to programming languages such as Java and C++, which comprise of statements, XQuery has expressions at its core. There are various expressions available ranging from sorting to function calls, but one of the simplest is a direct node constructor. For example:</p>
+<pre> &lt;myElement/&gt;</pre>
+<p>This is an XQuery query and it also happens to be a well-formed XML document. Regular XML nodes can be used as expressions in XQuery. Other expressions can be embedded using curly braces:</p>
+<pre> (: Copy the value of xml:id attribute from other.html. This is a comment by the way! :)
+ &lt;html xmlns=&quot;http://www.w3.org/1999/xhtml/&quot;
+       xml:id=&quot;{doc(&quot;other.html&quot;)/html/@xml:id}&quot;/&gt;</pre>
+<a name="selecting-nodes-with-paths"></a>
+<h3>Selecting Nodes with Paths</h3>
+<p>In C++ and Java, <tt>for</tt> loops and function recursion is used to perform iterative tasks. In contrast, XQuery supplies the declarative path expressions, specifically designed to make iterative tasks concise and precise.</p>
+<p>A path expression consists of one or more steps separated by slash or double slash, where the result of each step becomes the <i>focus</i> for the next step. The resulting nodes are always delivered in document order and without duplicates. For instance:</p>
+<pre> doc('index.html')//p</pre>
+<p>selects all <tt>p</tt> elements in the document <tt>index.html</tt> regardless of where they appear.</p>
+<p>A path expression is always evaluated to a particular focus. Sometimes this focus is created by the path expression itself, as seen above by using the <tt>doc()</tt> function. In other cases the focus is set by a parent expression, or by calling <a href="qxmlquery.html#setFocus">QXmlQuery::setFocus</a>().</p>
+<p>The focus is a sequence of nodes, however it can consist of atomic values too. This focus acts as a context, which the subsequent step filters. A step is invoked for each item in the focus; for each item that the step accepts, the next step is applied. This way paths provide iteration, similar to a nested set of <tt>for</tt> loops. This query:</p>
+<pre> doc('index.html')//p/span</pre>
+<p>contains one top level path expression which has four steps: a call to the <tt>doc()</tt> function, and then three node tests. Reading through the query in a step-by-step manner gives:</p>
+<ol type="1">
+<li>For each node returned by the function <tt>doc()</tt> (which is one document node);</li>
+<li>for each node that appears as a descendant of the document node and is an element with name <tt>p</tt></li>
+<li>return the child elements whose name is <tt>span</tt></li>
+</ol>
+<p>This query evaluates to zero or more <tt>span</tt> elements.</p>
+<p>Although a step in a path can be any expression as long as only the last step evaluates to atomic values, the most common is when steps are <i>axis</i> <i>steps</i>. Axis steps consists of two parts: an axis, and a node test. For each node in the focus for the step, the axis navigates it and the node test is applied to each node along that axis. In fact, the element test above actually use a short form for a combination between the <tt>child</tt> axis, and the <tt>element()</tt> node test. This query evaluates to the exact same output:</p>
+<pre> doc('index.html')/descendant-or-self::element(p)/child::element(span)</pre>
+<p>There is a wide range of different axes and node tests, in order to be able to filter nodes in specific ways.</p>
+<a name="axes"></a>
+<h4>Axes</h4>
+<p>These are the axes available in XPath, and hence also XQuery:</p>
+<ul>
+<li><tt>child</tt> All child nodes, but no attribute nodes of the current context node</li>
+<li><tt>descendant</tt> All the descendants</li>
+<li><tt>attribute</tt> All the attribute node</li>
+<li><tt>self</tt> The current item in the focus itself.</li>
+<li><tt>descendant-or-self</tt> As the <tt>descendant</tt> axis, but includes the context node too</li>
+<li><tt>following-sibling</tt> All the other child nodes of the parent of the context node, that appears after the context node, in document order.</li>
+<li><tt>following</tt> The nodes that appear after the context node in document order</li>
+<li><tt>parent</tt> The parent node, if any</li>
+<li><tt>ancestor</tt> The ancestors of the context node. That is the parent, and the parent's parent, and so on.</li>
+<li><tt>preceding-sibling</tt> All the other child nodes of the parent of the context node, that appears before the context node, in document order.</li>
+<li><tt>preceding</tt> All the nodes that appear before the context node except ancestor</li>
+<li><tt>ancestor-or-self</tt> As the axis <tt>ancestor</tt> but includes the context node</li>
+</ul>
+<a name="node-tests"></a>
+<h4>Node tests</h4>
+<p>Node tests generally filter nodes based on their kind, whether the context node is a processing-instruction or not for instance, or their name, or a combination between the two.</p>
+<a name="name-tests"></a>
+<h5>Name Tests</h5>
+<p>Name tests are namespace aware, meaning that a name test such as <tt>svg</tt> wouldn't match the document element in a SVG document, since the document element is in the SVG namespace. The various namespace declarations can be used to provide namespaces. This query:</p>
+<pre> declare namespace s = &quot;http://www.w3.org/2000/svg&quot;;
+ declare default element namespace &quot;http://www.w3.org/2000/svg&quot;;
+ let $doc := doc('image.svg')
+ return ($doc/svg,
+         $doc/s:svg)</pre>
+<p>selects the document element twice, because the two name tests match the same element, although the namespaces are supplied differently each time. Once through a prefix binding, and the other by picking up the default element namespace.</p>
+<a name="names-and-wildcards"></a>
+<h5>Names and Wildcards</h5>
+<p>Names can be combined with wildcards in order to select for instance any element or attribute as long as it is in a particular namespace, or an attribute or element appearing in any namespace, as long as it has a particular local name. This is achieved by using a wildcard as the prefix or local name. For instance this query:</p>
+<pre> declare namespace xlink = &quot;http://www.w3.org/1999/xlink/&quot;;
+ doc('image.svg')//@xlink:*</pre>
+<p>selects all the attributes that are in the XLink namespace, and this query:</p>
+<pre> doc('data.xml')/*:body</pre>
+<p>selects an element whose local name is <tt>html</tt>, regardless of its namespace.</p>
+<p>The following are various kind tests.</p>
+<a name="kind-tests"></a>
+<h5>Kind Tests</h5>
+<ul>
+<li><tt>node()</tt> matches any node</li>
+<li><tt>text()</tt> matches any text node</li>
+<li><tt>comment()</tt> matches any comment node</li>
+<li><tt>element()</tt> matches any element. This is the same as the star: *</li>
+<li><tt>element(name)</tt> matches any element with the name name</li>
+<li><tt>attribute()</tt> matches any attribute.</li>
+<li><tt>processing-instruction()</tt> matches any processing-instruction</li>
+<li><tt>processing-instruction(target)</tt> matches any processing-instruction whose target (name) is <tt>target</tt></li>
+<li><tt>attribute(name)</tt> matches any attribute with the name name</li>
+<li><tt>document-node()</tt> matches any document node</li>
+<li><tt>document-node(element(doc))</tt> matches any document node that has a document element named <tt>doc</tt></li>
+</ul>
+<p>In addition there are node tests related to the schema types of nodes, although they are currently unsupported by <a href="qtxmlpatterns.html">QtXmlPatterns</a>.</p>
+<a name="abbreviated-syntax"></a>
+<h4>Abbreviated syntax</h4>
+<p>For many common tasks the full axis step syntax is a bit verbose and for that reason simplified alternatives exists, which typically combine axes and node tests. Some examples:</p>
+<ul>
+<li><tt>item</tt> selects any child element of the context node that is named <tt>item</tt>. Short for <tt>child::element(item)</tt></li>
+<li><tt>*</tt> selects any child that is an element. Note that children of other types, such as comments, are skipped. Short for <tt>child::element()</tt>. If all nodes are of interest, <tt>node()</tt> will select them.</li>
+<li><tt>.</tt>. is equal to <tt>parent::node()</tt>. That is, it selects the parent node</li>
+<li><tt>@*</tt> selects any attribute. Short for <tt>attribute::attribute()</tt></li>
+<li><tt>@href</tt> selects any attribute by name <tt>href</tt>. Short for <tt>attribute::attribute(href)</tt></li>
+<li><tt><span class="comment">//</span></tt> before another step is a short form for descendant-or-self::node()</li>
+</ul>
+<a name="more-on-focus-and-filtering-predicates"></a>
+<h3>More on Focus and Filtering: Predicates</h3>
+<p>In addition to steps as a way to filter content, XPath &amp; XQuery has the predicate expression: an expression with a second expression to its right enclosed in brackets. For instance this query:</p>
+<pre> doc(&quot;index.html&quot;)/html/body/p[@xml:id = &quot;thatSpecialOne&quot;]</pre>
+<p>selects the paragraph that has an attribute with the ID <tt>thatSpecialOne</tt>.</p>
+<p>Like steps in path expressions, predicates also make use of the focus. For each item in the source sequence, the predicate is applied, and if the item passes the filter, it is part of the result. Inside a predicate (and inside steps too) the current context item can be accessed by using the dot expression. Consider this query:</p>
+<pre> doc('index.html')//p[string-length(.) = 0]</pre>
+<p>For each <tt>p</tt> element that the node test returns, the predicate is invoked. If the predicate expression evaluates to true, it returns the node, and that it will do if the string value of the predicate's context item is zero.</p>
+<p>There are two kinds of predicates: numeric predicates and truth predicates.</p>
+<a name="select-based-on-positions-and-numeric-ranges"></a>
+<h4>Select based on Positions and Numeric Ranges</h4>
+<p>While a predicate is applied to its focus, the current <i>context</i> <i>position</i> can be obtained by using the function <tt>position()</tt>. For instance, this query:</p>
+<pre> doc('index.html')//p[position() &gt; 5]</pre>
+<p>selects all the paragraphs except the five first.</p>
+<p>In addition to <tt>position()</tt>, the function last() also returns a number related to the focus: the position of the last item. <tt>last()</tt> inside a predicate by itself will simply select the last item in the input sequence, but it can also be combined with for instances an offset:</p>
+<pre> doc('index.html')//p[last() - 1]</pre>
+<p>which would return the next last paragraph in the document.</p>
+<p>Positions inside a focus starts from one, not zero.</p>
+<a name="filterting-based-on-logic"></a>
+<h4>Filterting based on Logic</h4>
+<p>If a predicate doesn't evaluate to a number, it is considered a truth predicate. A truth predicate takes the value the predicate expression evaluates to and computes its <i>effective</i> <i>boolean</i> <i>value</i>. The rules for how that is done, is as follows:</p>
+<ul>
+<li>If it's a single node, the result is <tt>true</tt></li>
+<li>If the value is a string, the value is <tt>false</tt> if it's empty, otherwise <tt>true</tt></li>
+<li>If it's a value of type <tt>xs:boolean</tt>, the value is returned as is</li>
+<li>Otherwise, for instance if the return value is date, a type error occur</li>
+</ul>
+<p>For instance, this query:</p>
+<pre> doc('index.html')/html/body/p[table]</pre>
+<p>selects all paragraphs that has a table as a child, since the predicate evaluates to true if the contained step, <tt>table</tt>, matches any nodes. This is of course very different from:</p>
+<pre> doc('index.html')/html/body/p/table</pre>
+<p>which returns the tables found inside paragraphs (which should be none, since they cannot appear there).</p>
+<a name="creating-nodes"></a>
+<h3>Creating nodes</h3>
+<p>While the XQuery language has a lot of functions and expression for selecting and filtering exisitng content, it can also create new content using its node constructors. Consider:</p>
+<pre> &lt;doc xmlns=&quot;http://example.com/Namespace&quot; xml:base=&quot;http://example.com/&quot;&gt;
+
+     &lt;!-- a comment --&gt;
+     &lt;?target data?&gt;
+     &lt;anotherElement/&gt;
+     some text
+ &lt;/doc&gt;</pre>
+<p>While this looks like an XML document, and in fact is so, it also is a valid XQuery query. Node constructors are by large just like XML, so if one knows XML, one can simply continue to write XML inside queries whenever one needs to have nodes created. There is however two things that set direct node constructs apart from XML: one can embed XQuery expressions inside of them, and they are expressions themselves. Let's first look at the former.</p>
+<a name="computing-values-inside-nodes"></a>
+<h4>Computing values inside nodes</h4>
+<p>Creating a value inside a node at runtime is done by embedding expressions inside curly braces. For instance, this expression, simple as it is, constructs an element with the text node &quot;6&quot; inside of it:</p>
+<pre> &lt;e&gt;{sum((1, 2, 3))}&lt;/e&gt;</pre>
+<p>Similarly, one can embed expressions inside attributes. For instance:</p>
+<pre> declare variable $additionalClass := &quot;example&quot;;
+ &lt;p class=&quot;important {$additionalClass} obsolete&quot;/&gt;</pre>
+<p>creates an element whose attribute called <tt>class</tt> has the value &quot;important example obsolete&quot;, without quotes.</p>
+<a name="node-constructors-are-expressions"></a>
+<h4>Node Constructors are Expressions</h4>
+<p>Because node constructors are expressions just like for instance function calls, paths and literals, they can appear anywhere where expressions can appear. For instance:</p>
+<pre> let $docURI := 'maybeNotWellformed.xml'
+ return if(doc-available($docURI))
+        then doc($docURI)//p/&lt;para&gt;{./node()}&lt;/para&gt;
+        else &lt;para&gt;Failed to load {$docURI}&lt;/para&gt;</pre>
+<p>If <tt>maybeNotWellformed.xml</tt> can be read successfully it creates a <tt>para</tt> element for each <tt>p</tt> element that appears anywhere in the document and copies <tt>p</tt>'s child nodes into it. But if the document cannot be loaded, a single <tt>para</tt> element is created that contains a descriptive message.</p>
+<p>Hence, in the above query node constructors appear in two places:</p>
+<ul>
+<li>Once as a child in the <tt>else</tt> branch in the <tt>if</tt> expression</li>
+<li>As one of the axis steps in the path expression</li>
+</ul>
+<a name="computing-node-names-at-runtime"></a>
+<h4>Computing Node Names at Runtime</h4>
+<p>Direct node constructors are fine, but what if one doesn't know the names of the nodes to construct when writing the query? For each direct element constructor, there exist a <i>computed</i> node constructor, that takes names and the node values as arbitrary expressions. For instance, the query seen above that produced a small XML document, can also be written like this:</p>
+<pre> declare default element namespace &quot;http://example.com/Namespace&quot;;
+ declare variable $documentElementName := &quot;doc&quot;;
+
+ element {$documentElementName}
+ {
+     attribute xml:base {&quot;http://example.com/&quot;},
+     element anotherElement
+     {
+         comment {&quot; a comment &quot;},
+         processing-instruction target {&quot;data&quot;},
+         element anotherElement {()},
+         text {&quot;some text&quot;}
+     }
+ }</pre>
+<a name="copying-nodes-into-other-nodes"></a>
+<h4>Copying nodes into other nodes</h4>
+<p>When an expression embedded inside a node expression evaluates to strings (or any other type of atomic values) the values becomes text nodes by concatenating them with a space inbetween. However, when the expression evaluates to nodes, they are copied and becomes children of the surrounding node. This can occasionally be deceptive. Consider this query:</p>
+<pre> &lt;html&gt;
+     &lt;body&gt;
+         &lt;p&gt;
+         {
+             doc('feed.rss')/rss/@version
+         }
+         &lt;/p&gt;
+     &lt;/body&gt;
+ &lt;/html&gt;</pre>
+<p>This won't output a <tt>p</tt> element that has the value of the <tt>version</tt> attribute, it will instead copy the attribute onto the <tt>p</tt> element whose result in not even valid XHTML. The approach is instead, in the case of wanting the value of the attribute instead of itself, to extract that using for instance the <tt>string()</tt> function:</p>
+<pre> &lt;html&gt;
+     &lt;body&gt;
+         &lt;p&gt;
+         {
+             string(doc('feed.rss')/rss/@version)
+         }
+         &lt;/p&gt;
+     &lt;/body&gt;
+ &lt;/html&gt;</pre>
+<a name="escaping-characters"></a>
+<h3>Escaping Characters</h3>
+<p>In the XQuery syntax, a set of characters are given special meaning. For instance, apostrophes or quotes start and terminate string literals. These can be escaped by writing the character twice:</p>
+<p>For instance:</p>
+<pre> &lt;p&gt;
+ {
+     &quot;&quot;&quot;I hate quotations&quot;&quot; -- Ralph Waldo Emerson&quot;&quot;&quot;,
+     &quot;&amp;#xA;&quot;,
+     '''&quot;I hate quotations&quot;&quot; -- Ralph Waldo Emerson&quot;'', appeared above'
+ }
+ &lt;/p&gt;</pre>
+<p>Evaluates to:</p>
+<pre> &lt;p&gt;&quot;I hate quotations&quot; -- Ralph Waldo Emerson&quot;
+  '&quot;I hate quotations&quot;&quot; -- Ralph Waldo Emerson&quot;', appeared above&lt;/p&gt;</pre>
+<p>However, sometimes the easiest is to start the string literal with apostrophes instead of quotes, if the string contains quotes. One can also use XML character references, like <tt>&amp;amp</tt>; or <tt>&amp;#xA;</tt>, to express characters that cannot be directly represented in the encoding of the file containing the query.</p>
+<p>When curly braces should appear inside node constructors, one can again escape them with double braces or use character references. For instance:</p>
+<pre> &lt;doc&gt;
+     This is one left followed by one right curly brace: {{ }}
+     Here they are again, but with character references: &amp;#x7B; &amp;#x7D;
+ &lt;/doc&gt;</pre>
+<a name="dates-times-numbers-and-other-atomic-values"></a>
+<h3>Dates, Times, Numbers and other Atomic Values</h3>
+<p>Apart from nodes, XQuery has atomic values and they are just what one would think they are: small, primitive values, that have a similar role to C++'s plain old data structures like <tt>float</tt> or <tt>long</tt>. In total there are about twenty of them, some of the most common being:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Name</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><tt>xs:integer</tt></td><td>A 64 bit integer</td></tr>
+<tr valign="top" class="even"><td><tt>xs:boolean</tt></td><td>A boolean value, <tt>false</tt> or <tt>true</tt></td></tr>
+<tr valign="top" class="odd"><td><tt>xs:double</tt></td><td>A 64 bit floating point value</td></tr>
+<tr valign="top" class="even"><td><tt>xs:string</tt></td><td>A string where each codepoint is an XML 1.0 character(essentially Unicode)</td></tr>
+<tr valign="top" class="odd"><td><tt>xs:date</tt></td><td>A date, such as when you're born: <tt>1984-10-15</tt></td></tr>
+<tr valign="top" class="even"><td><tt>xs:time</tt></td><td>A time, such as when you show up at work: <tt>09:00:00</tt></td></tr>
+<tr valign="top" class="odd"><td><tt>xs:dateTime</tt></td><td>A date followed by a time: 1974-10-15T05:00:00</td></tr>
+<tr valign="top" class="even"><td><tt>xs:duration</tt></td><td>A time interval such as P5Y2M10DT15H, which represents five years, two months, 10 days, and 15 hours.</td></tr>
+<tr valign="top" class="odd"><td><tt>xs:base64Binary</tt></td><td>Represents data, possibly binary data, in Base 64 encoding.</td></tr>
+</table></p>
+<p>Atomic values can be seen as types which have:</p>
+<ul>
+<li>a name, such as <tt>xs:duration</tt></li>
+<li>builtin operators for performing arithmetics, comparisons, and conversions between other atomic values</li>
+</ul>
+<a name="creating-atomic-values"></a>
+<h4>Creating Atomic Values</h4>
+<p>Apart from the builtin functions that returns atomic values, such as <tt>current-date-time()</tt>, constructor functions can be used to</p>
+<p>Integers, decimals, doubles and strings can be created by using literal expressions. Booleans with the functions <tt>true()</tt> or <tt>false()</tt> (just <tt>true</tt> or <tt>false</tt> would be name tests), and for the rest constructor functions must be used.</p>
+<p>Essentially each atomic type can construct a value from a string. While doing so it validates the input string to ensure it has a proper format and if not, it issues a dynamic error. These formats tend to be as one would guess it to be. For instance, if one passes &quot;1.five&quot; to <tt>xs:decimal</tt>'s constructor, as opposed to &quot;1.5&quot; it will halt the query such that the bug can be corrected.</p>
+<p>In the example an <tt>xs:boolean</tt> was created from an <tt>xs:integer</tt> as opposed to from a string, and that's because values doesn't have to be constructed from strings, they can be created, or converted, from a range of different types. For instance, an <tt>xs:double</tt> can be created from a <tt>xs:decimal</tt>, or a <tt>xs:boolean</tt> can be converted to an <tt>xs:string</tt>. What conversions that are possible depends on the types but they tend to be intuitive. One of the specifications has a <a href="http://www.w3.org/TR/xpath-functions/#casting-from-primitive-to-primitive">nifty table</a> outlining those.</p>
+<a name="using-atomic-values"></a>
+<h4>Using Atomic Values</h4>
+<p>Once atomic values have been constructed, via one of the methods mentioned above, or as return values from functions or by evaluating variables, one can pass them along to functions, convert them to strings and attach them as part of text nodes to nodes, or use operators between them. Let's look at the latter.</p>
+<p>Apart from the usual arithmetic operators between numbers one would expect, they are also available between more exotic types. Have a look at this query:</p>
+<p>It substracts two dates which returns an <tt>xs:dayTimeDuration</tt>, which it subsequently compares against another <tt>:xs:dayTimeDuration</tt>. The query finally evaluates to a single atomic value of type <tt>xs:boolean</tt>.</p>
+<p>The available operators and between what types are summarized in <a href="http://www.w3.org/TR/xquery/#mapping">a table</a> in the main XQuery specification.</p>
+<a name="further-reading"></a>
+<h3>Further Reading</h3>
+<p>XQuery is a big language that is hard to cover in an overview. If one wants a good understanding of the subject, a good thing could be to get a book on topic.</p>
+<p>Another alternative is to ask a question or two on the mailing lists <a href="http://lists.trolltech.com/qt-interest/">qt-interest</a> or <a href="http://www.x-query.com/mailman/listinfo/talk">talk at x-query.com</a>.</p>
+<p><a href="http://www.functx.com/functx/">FunctX</a> is a collection of XQuery functions that can be both useful and educational.</p>
+<p>Of course, the specifications is one alternative, but one has to take a deep breath before diving into those. Here are the links to (some of) them:</p>
+<ul>
+<li><a href="http://www.w3.org/TR/xquery/">XQuery 1.0: An XML Query Language</a> is the main specification that describes the syntax and behavior.</li>
+<li><a href="http://www.w3.org/TR/xpath-functions/">XQuery 1.0 and XPath 2.0 Functions and Operators</a> describes all the builtin functions, and how conversions between atomic values are done.</li>
+</ul>
+<a name="faq"></a>
+<h3>FAQ</h3>
+<a name="path-expressions-misses"></a>
+<h4>Path expressions misses</h4>
+<p>Often this is caused by that the names that the axis step matches, is different from nodes being matched. For instance, let's say that <tt>index.html</tt> in this query:</p>
+<pre> (: Select all paragraphs that contains examples. :)
+ doc(&quot;index.html&quot;)/html/body/p[@class=&quot;example&quot;]</pre>
+<p>is an XHTML document and hence it resides in the namespace <tt>http:<span class="comment">//</span>www.w3.org/1999/xhtml/</tt>. The path won't match since they look for <tt>{}html</tt> and so forth, while the actual name is <tt>{http:<span class="comment">//</span>www.w3.org/1999/xhtml/}html</tt>. The fix is straight forward:</p>
+<pre> declare namespace x = &quot;http://www.w3.org/1999/xhtml/&quot;;
+ (: Select all paragraphs that contains examples. :)
+ doc(&quot;index.html&quot;)/x:html/x:body/x:p[@class=&quot;example&quot;]</pre>
+<p>Path expressions also pick up the default namespace if one is declared:</p>
+<pre> declare default element namespace &quot;http://www.w3.org/1999/xhtml/&quot;;
+ &lt;html&gt;
+     &lt;body&gt;
+         {
+             for $i in doc(&quot;testResult.xml&quot;)/tests/test[@status = &quot;failure&quot;]
+             order by $i/@name
+             return &lt;p&gt;{$i/@name}&lt;/p&gt;
+         }
+     &lt;/body&gt;
+ &lt;/html&gt;</pre>
+<p>In this case the nodes created by the direct element constructors will be in the XHTML namespace, but so will the path expressions. Hence they look for <tt>{http:<span class="comment">//</span>www.w3.org/1999/xhtml/}tests</tt> and so forth, while <tt>testResult.xml</tt> is perhaps in a different namespace, or no namespace at all.</p>
+<p>Another reason coulbe be that the context item is not what one expects it to be. For instance, this expression:</p>
+<pre> doc(&quot;myPlainHTML.html&quot;)/body</pre>
+<p>won't match because the node the <tt>doc()</tt> function returns is not the top element node(<tt>html</tt>), it is the document node.</p>
+<a name="variable-in-for-loop-is-out-of-scope"></a>
+<h4>Variable in for loop is out of scope</h4>
+<p>Due to expression precedence it might be necessary to wrap the <tt>return</tt> expression in a <tt>for</tt> clause with paranteses:</p>
+<pre> for $i in(reverse(1 to 10)),
+     $d in xs:integer(doc(&quot;numbers.xml&quot;)/numbers/number)
+ return ($i + $d)</pre>
+<p>Without the paranteses on the last line, the arithmetic expression would have had the whole <tt>for</tt> clause as it left operand, and since the scope of variable <tt>$d</tt> ends at the <tt>return</tt> clause, the variable reference would be out of scope.</p>
+<a name="expressions-aren-t-evaluated"></a>
+<h4>Expressions aren't evaluated</h4>
+<p>If an expression is inside a node constructor it must be surrounded by curly braces, otherwise it's interpreted as text. This:</p>
+<pre> &lt;e&gt;sum({(1, 2, 3)})&lt;/e&gt;</pre>
+<p>evaluates to:</p>
+<pre> &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+ &lt;e&gt;sum(1 2 3)&lt;/e&gt;</pre>
+<p>while:</p>
+<pre> &lt;e&gt;{sum((1, 2, 3))}&lt;/e&gt;</pre>
+<p>evaluates to:</p>
+<pre> &lt;e&gt;6&lt;/e&gt;</pre>
+<a name="filters-selects-the-wrong-things"></a>
+<h4>Filters selects the wrong things</h4>
+<p>When having predicates, consider what the predicate applies to. For instance, this query:</p>
+<pre> &lt;doc&gt;
+     &lt;p&gt;
+         &lt;span/&gt;
+         &lt;span/&gt;
+     &lt;/p&gt;
+     &lt;p&gt;
+         &lt;span/&gt;
+         &lt;span/&gt;
+     &lt;/p&gt;
+ &lt;/doc&gt;/p/span[1]</pre>
+<p>evaluates to the first <tt>span</tt> elements in each <tt>p</tt> element, while this query:</p>
+<pre> (&lt;doc&gt;
+     &lt;p&gt;
+         &lt;span/&gt;
+         &lt;span/&gt;
+     &lt;/p&gt;
+     &lt;p&gt;
+         &lt;span/&gt;
+         &lt;span/&gt;
+     &lt;/p&gt;
+ &lt;/doc&gt;/p/span)[1]</pre>
+<p>evaluates to only one <tt>span</tt> element, the one that occured first in the result of the path expression as a whole. In the first case the filter expression was applied for the <tt>span</tt> step.</p>
+<a name="flwor-doesn-t-behave-as-expected"></a>
+<h4>FLWOR doesn't behave as expected</h4>
+<p>Note that a <tt>for</tt> expression generates a so called tuple stream, while a <tt>let</tt> clause is an ordinary variable binding. For instance, if a <tt>let</tt> binding is placed inside a <tt>for</tt> binding it is created for each tuple. The <tt>order</tt> <tt>by</tt> clause in turn applies to the result of the tuple stream that the <tt>for</tt> clause evaluates to. Consider:</p>
+<pre> for $a in (8, -4, 2)
+ let $b := ($a * -1, 2)
+ order by $a
+ return $b</pre>
+<p>evaluates to 4 2 -2 2 -8 2.</p>
+<p>This expression:</p>
+<pre> let $i := (3, 2, 1)
+ order by $i[1]
+ return $i</pre>
+<p>wouldn't be sorted since the items the <tt>let</tt> clause binds aren't dealt with on an individual basis.</p>
+<a name="nodes-are-created-in-the-wrong-order"></a>
+<h4>Nodes are created in the wrong order</h4>
+<p>If nodes are created in the wrong order, it can possibly be related to that the document order between nodes created with node constructors is undefined. For that reason node sorting, which is invoked by path expressions for instance, returns nodes in an order which is undefined. Hence, one gets nodes in an arbitrary order if node constructors are placed somewhere in a path expression; or indirectly, if nodes are created inside a user-declared function which is called from a path step. Consider:</p>
+<pre> doc('feed.rss')//item/&lt;p&gt;{description/node()}&lt;/p&gt;</pre>
+<p>This query evaluates to a sequence of <tt>p</tt> elements. However, the order is not in the same order as the <tt>item</tt> elements appear in <tt>feed.rss</tt>. The order is, counter intuitive as it may seem, undefined.</p>
+<p>One approach to this is to instead use the <tt>for</tt> loop, which doesn't perform node sorting on its result:</p>
+<pre> for $item in doc('feed.rss')//item
+ return &lt;p&gt;
+         {
+             $item/description/node()
+         }
+        &lt;/p&gt;</pre>
+<a name="true-or-false-doesn-t-work"></a>
+<h4>true or false doesn't work</h4>
+<p>Boolean values, that is atomic values of type <tt>xs:boolean</tt>, cannot be created by writing <tt>true</tt> or <tt>false</tt> inside the query, since those are steps, name tests to be precise. The safest and easiest way to create boolean values is to use the builtin functions <tt>false()</tt> or <tt>true()</tt>.</p>
+<p>Another way is to invoke its constructor function:</p>
+<pre> xs:boolean(&quot;true&quot;)</pre>
+<p>
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

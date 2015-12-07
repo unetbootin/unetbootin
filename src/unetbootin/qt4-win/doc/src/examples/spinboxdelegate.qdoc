@@ -1,0 +1,153 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example itemviews/spinboxdelegate
+    \title Spin Box Delegate Example
+
+    The Spin Box Delegate example shows how to create an editor for a custom delegate in
+    the model/view framework by reusing a standard Qt editor widget.
+
+    The model/view framework provides a standard delegate that is used by default
+    with the standard view classes. For most purposes, the selection of editor
+    widgets available through this delegate is sufficient for editing text, boolean
+    values, and other simple data types. However, for specific data types, it is
+    sometimes necessary to use a custom delegate to either display the data in a
+    specific way, or allow the user to edit it with a custom control.
+
+    \image spinboxdelegate-example.png
+
+    This concepts behind this example are covered in the
+    \l{model-view-delegate.html}{Delegate Classes} chapter of the
+    \l{model-view-programming.html}{Model/View Programming} overview.
+
+    \section1 SpinBoxDelegate Class Definition
+
+    The definition of the delegate is as follows:
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.h 0
+
+    The delegate class declares only those functions that are needed to
+    create an editor widget, display it at the correct location in a view,
+    and communicate with a model. Custom delegates can also provide their
+    own painting code by reimplementing the \c paintEvent() function.
+
+    \section1 SpinBoxDelegate Class Implementation
+
+    Since the delegate is stateless, the constructor only needs to
+    call the base class's constructor with the parent QObject as its
+    argument:
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.cpp 0
+
+    Since the delegate is a subclass of QItemDelegate, the data it retrieves
+    from the model is displayed in a default style, and we do not need to
+    provide a custom \c paintEvent().
+
+    The \c createEditor() function returns an editor widget, in this case a
+    spin box that restricts values from the model to integers from 0 to 100
+    inclusive.
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.cpp 1
+
+    We install an event filter on the spin box to ensure that it behaves in
+    a way that is consistent with other delegates. The implementation for
+    the event filter is provided by the base class.
+
+    The \c setEditorData() function reads data from the model, converts it
+    to an integer value, and writes it to the editor widget.
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.cpp 2
+
+    Since the view treats delegates as ordinary QWidget instances, we have
+    to use a static cast before we can set the value in the spin box.
+
+    The \c setModelData() function reads the contents of the spin box, and
+    writes it to the model.
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.cpp 3
+
+    We call \l{QSpinBox::interpretText()}{interpretText()} to make sure that
+    we obtain the most up-to-date value in the spin box.
+
+    The \c updateEditorGeometry() function updates the editor widget's
+    geometry using the information supplied in the style option. This is the
+    minimum that the delegate must do in this case.
+
+    \snippet examples/itemviews/spinboxdelegate/delegate.cpp 4
+
+    More complex editor widgets may divide the rectangle available in
+    \c{option.rect} between different child widgets if required.
+
+    \section1 The Main Function
+
+    This example is written in a slightly different way to many of the
+    other examples supplied with Qt. To demonstrate the use of a custom
+    editor widget in a standard view, it is necessary to set up a model
+    containing some arbitrary data and a view to display it.
+
+    We set up the application in the normal way, construct a standard item
+    model to hold some data, set up a table view to use the data in the
+    model, and construct a custom delegate to use for editing:
+
+    \snippet examples/itemviews/spinboxdelegate/main.cpp 0
+
+    The table view is informed about the delegate, and will use it to
+    display each of the items. Since the delegate is a subclass of
+    QItemDelegate, each cell in the table will be rendered using standard
+    painting operations.
+
+    We insert some arbitrary data into the model for demonstration purposes:
+
+    \snippet examples/itemviews/spinboxdelegate/main.cpp 1
+    \snippet examples/itemviews/spinboxdelegate/main.cpp 2
+
+    Finally, the table view is displayed with a window title, and we start
+    the application's event loop:
+
+    \snippet examples/itemviews/spinboxdelegate/main.cpp 3
+
+    Each of the cells in the table can now be edited in the usual way, but
+    the spin box ensures that the data returned to the model is always
+    constrained by the values allowed by the spin box delegate.
+*/

@@ -1,0 +1,183 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example webkit/previewer
+    \title Previewer Example
+
+    The Previewer example shows how to use QtWebKit's QWebView to preview
+    HTML data written in a QPlainTextEdit.
+
+    \image previewer-example.png
+
+    \section1 The User Interface
+
+    Before we begin, we create a user interface using \QD. Two QGroupBox
+    objects - the editor group box and the previewer group box are separated
+    by a QSplitter. In the editor group box, we have a QPlainTextEdit object,
+    \c plainTextEdit, and two QPushButton objects. In the previewer group box,
+    we have a QWebView object, \c webView.
+
+    \image previewer-ui.png
+
+    \section1 Previewer Class Definition
+
+    The \c Previewer class is a subclass of both QWidget and Ui::Form.
+    We subclass Ui::Form in order to embed the \QD user interface form
+    created earlier. This method of embedding forms is known as the
+    \l{The Multiple Inheritance Approach}{multiple inheritance approach}.
+
+    In our \c previewer.h file, we have a constructor and a slot,
+    \c on_previewButton_clicked().
+
+    \snippet examples/webkit/previewer/previewer.h 0
+
+    \section1 Previewer Class Implementation
+
+    The \c{Previewer}'s constructor is only responsible for setting up the
+    user interface.
+
+    \snippet examples/webkit/previewer/previewer.cpp 0
+
+    The \c on_previewButton_clicked() is a slot corresponding to the
+    \c{previewButton}'s \l{QPushButton::}{clicked()} signal. When the
+    \c previewButton is clicked, we extract the contents of \c plainTextEdit,
+    and then invoke the \l{QWebView::}{setHtml()} function to display our
+    contents as HTML.
+
+    \snippet examples/webkit/previewer/previewer.cpp 1
+
+    \section1 MainWindow Class Definition
+
+    The \c MainWindow class for the Previewer example is a subclass of
+    QMainWindow with a constructor and five private slots: \c open(),
+    \c openUrl(), \c save(), \c about() and \c updateTextEdit().
+
+    \snippet examples/webkit/previewer/mainwindow.h 0
+
+    The private objects in \c MainWindow are \c centralWidget, which is
+    a \c Previewer object, \c fileMenu, \c helpMenu and the QAction objects
+    \c openAct, \c openUrlAct, \c saveAct, \c exitAct, \c aboutAct and
+    \c aboutQtAct.
+
+    \snippet examples/webkit/previewer/mainwindow.h 1
+
+    There are three private functions: \c createActions(), \c createMenus()
+    and \c setStartupText(). The \c createActions() and \c createMenus()
+    functions are necessary to set up the main window's actions and
+    assign them to the \gui File and \gui Help menus. The \c setStartupText()
+    function, on the other hand, displays a description about the example
+    in its HTML Previewer window.
+
+    \section1 MainWindow Class Implementation
+
+    The \c{MainWindow}'s constructor invokes \c createActions() and
+    \c createMenus() to set up the \gui File menu and \gui Help menu. Then,
+    the \c Previewer object, \c centralWidget, is set to the main window's
+    central widget. Also, we connect \c webView's
+    \l{QWebView::}{loadFinished()} signal to our \c updateTextEdit() slot.
+    Finally, we call the \c setStartupText() function to display the
+    description of the example.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 0
+
+    Within the \c createActions() function, we instantiate all our private
+    QAction objects which we declared in \c{mainwindow.h}. We set the
+    short cut and status tip for these actions and connect their
+    \l{QAction::}{triggered()} signal to appropriate slots.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 1
+    \dots
+
+    The \c createMenus() function instantiates the QMenu items, \c fileMenu
+    and \c helpMenu and adds them to the main window's
+    \l{QMainWindow::menuBar()}{menu bar}.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 2
+
+    The example also provides an \c about() slot to describe its purpose.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 3
+
+    The \c MainWindow class provides two types of \gui Open functions:
+    \c open() and \c openUrl(). The \c open() function opens an HTML file
+    with \c fileName, and reads it with QTextStream. The function then
+    displays the output on \c plainTextEdit. The file's name is obtained
+    using QFileDialog's \l{QFileDialog::}{getOpenFileName()} function.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 4
+
+    The \c openUrl() function, on the other hand, displays a QInputDialog
+    to obtain a URL, and displays it on \c webView.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 5
+
+    In order to save a HTML file, the \c save() function first extracts the
+    contents of \c plainTextEdit and displays a QFileDialog to obtain
+    \c fileName. Then, we use a QTextStream object, \c in, to write to
+    \c file.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 6
+
+    Earlier, in \c{MainWindow}'s constructor, we connected \c{webView}'s
+    \l{QWebView::}{loadFinished()} signal to our private \c updateTextEdit()
+    slot. This slot updates the contents of \c plainTextEdit with the HTML
+    source of the web page's main frame, obtained using \l{QWebFrame}'s
+    \l{QWebFrame::}{toHtml()} function.
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 7
+
+    To provide a description about the Previewer example, when it starts up,
+    we use the \c setStartupText() function, as shown below:
+
+    \snippet examples/webkit/previewer/mainwindow.cpp 8
+
+
+    \section1 The \c{main()} Function
+
+    The \c main() function instantiates a \c MainWindow object, \c mainWindow,
+    and displays it with the \l{QWidget::}{show()} function.
+
+    \snippet examples/webkit/previewer/main.cpp 0
+
+*/

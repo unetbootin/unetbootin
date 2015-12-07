@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: connection.cpp Example File (network/chat/connection.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">connection.cpp Example File<br /><span class="small-subtitle">network/chat/connection.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;connection.h&quot;
+
+ #include &lt;QtNetwork&gt;
+
+ static const int TransferTimeout = 30 * 1000;
+ static const int PongTimeout = 60 * 1000;
+ static const int PingInterval = 5 * 1000;
+ static const char SeparatorToken = ' ';
+
+ Connection::Connection(QObject *parent)
+     : QTcpSocket(parent)
+ {
+     greetingMessage = tr(&quot;undefined&quot;);
+     username = tr(&quot;unknown&quot;);
+     state = WaitingForGreeting;
+     currentDataType = Undefined;
+     numBytesForCurrentDataType = -1;
+     transferTimerId = 0;
+     isGreetingMessageSent = false;
+     pingTimer.setInterval(PingInterval);
+
+     QObject::connect(this, SIGNAL(readyRead()), this, SLOT(processReadyRead()));
+     QObject::connect(this, SIGNAL(disconnected()), &amp;pingTimer, SLOT(stop()));
+     QObject::connect(&amp;pingTimer, SIGNAL(timeout()), this, SLOT(sendPing()));
+     QObject::connect(this, SIGNAL(connected()),
+                      this, SLOT(sendGreetingMessage()));
+ }
+
+ QString Connection::name() const
+ {
+     return username;
+ }
+
+ void Connection::setGreetingMessage(const QString &amp;message)
+ {
+     greetingMessage = message;
+ }
+
+ bool Connection::sendMessage(const QString &amp;message)
+ {
+     if (message.isEmpty())
+         return false;
+
+     QByteArray msg = message.toUtf8();
+     QByteArray data = &quot;MESSAGE &quot; + QByteArray::number(msg.size()) + &quot; &quot; + msg;
+     return write(data) == data.size();
+ }
+
+ void Connection::timerEvent(QTimerEvent *timerEvent)
+ {
+     if (timerEvent-&gt;timerId() == transferTimerId) {
+         abort();
+         killTimer(transferTimerId);
+         transferTimerId = 0;
+     }
+ }
+
+ void Connection::processReadyRead()
+ {
+     if (state == WaitingForGreeting) {
+         if (!readProtocolHeader())
+             return;
+         if (currentDataType != Greeting) {
+             abort();
+             return;
+         }
+         state = ReadingGreeting;
+     }
+
+     if (state == ReadingGreeting) {
+         if (!hasEnoughData())
+             return;
+
+         buffer = read(numBytesForCurrentDataType);
+         if (buffer.size() != numBytesForCurrentDataType) {
+             abort();
+             return;
+         }
+
+         username = QString(buffer) + &quot;@&quot; + peerAddress().toString() + &quot;:&quot;
+                    + QString::number(peerPort());
+         currentDataType = Undefined;
+         numBytesForCurrentDataType = 0;
+         buffer.clear();
+
+         if (!isValid()) {
+             abort();
+             return;
+         }
+
+         if (!isGreetingMessageSent)
+             sendGreetingMessage();
+
+         pingTimer.start();
+         pongTime.start();
+         state = ReadyForUse;
+         emit readyForUse();
+     }
+
+     do {
+         if (currentDataType == Undefined) {
+             if (!readProtocolHeader())
+                 return;
+         }
+         if (!hasEnoughData())
+             return;
+         processData();
+     } while (bytesAvailable() &gt; 0);
+ }
+
+ void Connection::sendPing()
+ {
+     if (pongTime.elapsed() &gt; PongTimeout) {
+         abort();
+         return;
+     }
+
+     write(&quot;PING 1 p&quot;);
+ }
+
+ void Connection::sendGreetingMessage()
+ {
+     QByteArray greeting = greetingMessage.toUtf8();
+     QByteArray data = &quot;GREETING &quot; + QByteArray::number(greeting.size()) + &quot; &quot; + greeting;
+     if (write(data) == data.size())
+         isGreetingMessageSent = true;
+ }
+
+ int Connection::readDataIntoBuffer(int maxSize)
+ {
+     if (maxSize &gt; MaxBufferSize)
+         return 0;
+
+     int numBytesBeforeRead = buffer.size();
+     if (numBytesBeforeRead == MaxBufferSize) {
+         abort();
+         return 0;
+     }
+
+     while (bytesAvailable() &gt; 0 &amp;&amp; buffer.size() &lt; maxSize) {
+         buffer.append(read(1));
+         if (buffer.endsWith(SeparatorToken))
+             break;
+     }
+     return buffer.size() - numBytesBeforeRead;
+ }
+
+ int Connection::dataLengthForCurrentDataType()
+ {
+     if (bytesAvailable() &lt;= 0 || readDataIntoBuffer() &lt;= 0
+             || !buffer.endsWith(SeparatorToken))
+         return 0;
+
+     buffer.chop(1);
+     int number = buffer.toInt();
+     buffer.clear();
+     return number;
+ }
+
+ bool Connection::readProtocolHeader()
+ {
+     if (transferTimerId) {
+         killTimer(transferTimerId);
+         transferTimerId = 0;
+     }
+
+     if (readDataIntoBuffer() &lt;= 0) {
+         transferTimerId = startTimer(TransferTimeout);
+         return false;
+     }
+
+     if (buffer == &quot;PING &quot;) {
+         currentDataType = Ping;
+     } else if (buffer == &quot;PONG &quot;) {
+         currentDataType = Pong;
+     } else if (buffer == &quot;MESSAGE &quot;) {
+         currentDataType = PlainText;
+     } else if (buffer == &quot;GREETING &quot;) {
+         currentDataType = Greeting;
+     } else {
+         currentDataType = Undefined;
+         abort();
+         return false;
+     }
+
+     buffer.clear();
+     numBytesForCurrentDataType = dataLengthForCurrentDataType();
+     return true;
+ }
+
+ bool Connection::hasEnoughData()
+ {
+     if (transferTimerId) {
+         QObject::killTimer(transferTimerId);
+         transferTimerId = 0;
+     }
+
+     if (numBytesForCurrentDataType &lt;= 0)
+         numBytesForCurrentDataType = dataLengthForCurrentDataType();
+
+     if (bytesAvailable() &lt; numBytesForCurrentDataType
+             || numBytesForCurrentDataType &lt;= 0) {
+         transferTimerId = startTimer(TransferTimeout);
+         return false;
+     }
+
+     return true;
+ }
+
+ void Connection::processData()
+ {
+     buffer = read(numBytesForCurrentDataType);
+     if (buffer.size() != numBytesForCurrentDataType) {
+         abort();
+         return;
+     }
+
+     switch (currentDataType) {
+     case PlainText:
+         emit newMessage(username, QString::fromUtf8(buffer));
+         break;
+     case Ping:
+         write(&quot;PONG 1 p&quot;);
+         break;
+     case Pong:
+         pongTime.restart();
+         break;
+     default:
+         break;
+     }
+
+     currentDataType = Undefined;
+     numBytesForCurrentDataType = 0;
+     buffer.clear();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

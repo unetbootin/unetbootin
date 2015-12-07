@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleHintReturn Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleHintReturn Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleHintReturn class provides style hints that return more than basic data types. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleHintReturn&gt;</pre><p>Inherited by <a href="qstylehintreturnmask.html">QStyleHintReturnMask</a> and <a href="qstylehintreturnvariant.html">QStyleHintReturnVariant</a>.</p>
+<ul>
+<li><a href="qstylehintreturn-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstylehintreturn.html#HintReturnType-enum">HintReturnType</a></b> { SH_Default, SH_Mask, SH_Variant }</li>
+<li><div class="fn"/>enum <b><a href="qstylehintreturn.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstylehintreturn.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstylehintreturn.html#QStyleHintReturn">QStyleHintReturn</a></b> ( int <i>version</i> = QStyleOption::Version, int <i>type</i> = SH_Default )</li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qstylehintreturn.html#type-var">type</a></b></li>
+<li><div class="fn"/>int <b><a href="qstylehintreturn.html#version-var">version</a></b></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>T <b><a href="qstylehintreturn.html#qstyleoption_cast-2">qstyleoption_cast</a></b> ( const QStyleHintReturn * <i>hint</i> )</li>
+<li><div class="fn"/>T <b><a href="qstylehintreturn.html#qstyleoption_cast-4">qstyleoption_cast</a></b> ( QStyleHintReturn * <i>hint</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleHintReturn class provides style hints that return more than basic data types.</p>
+<p>QStyleHintReturn and its subclasses are used to pass information from a style back to the querying widget. This is most useful when the return value from <a href="qstyle.html#styleHint">QStyle::styleHint</a>() does not provide enough detail; for example, when a mask is to be returned.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="HintReturnType-enum"></a>enum QStyleHintReturn::HintReturnType</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleHintReturn::SH_Default</tt></td><td align="center" valign="top"><tt>0xf000</tt></td><td valign="top"><a href="qstylehintreturn.html">QStyleHintReturn</a></td></tr>
+<tr><td valign="top"><tt>QStyleHintReturn::SH_Mask</tt></td><td align="center" valign="top">?</td><td valign="top"><a href="qstyle.html#StyleHint-enum">QStyle::SH_RubberBand_Mask</a> <a href="qstyle.html#StyleHint-enum">QStyle::SH_FocusFrame_Mask</a></td></tr>
+<tr><td valign="top"><tt>QStyleHintReturn::SH_Variant</tt></td><td align="center" valign="top">?</td><td valign="top"><a href="qstyle.html#StyleHint-enum">QStyle::SH_TextControl_FocusIndicatorTextCharFormat</a></td></tr>
+</table></p>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleHintReturn::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstylehintreturn.html">QStyleHintReturn</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleHintReturn::Type</tt></td><td align="center" valign="top"><tt>SH_Default</tt></td><td valign="top">The type of style option provided (<a href="qstylehintreturn.html#HintReturnType-enum">SH_Default</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstylehintreturn.html">QStyleHintReturn</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstylehintreturn.html">QStyleHintReturn</a> subclass and your own styles.</p>
+<p>See also <a href="qstylehintreturn.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleHintReturn::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstylehintreturn.html">QStyleHintReturn</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleHintReturn::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstylehintreturn.html">QStyleHintReturn</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstylehintreturn.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleHintReturn"></a>QStyleHintReturn::QStyleHintReturn ( int <i>version</i> = QStyleOption::Version, int <i>type</i> = SH_Default )</h3>
+<p>Constructs a <a href="qstylehintreturn.html">QStyleHintReturn</a> with version <i>version</i> and type <i>type</i>.</p>
+<p>The version has no special meaning for <a href="qstylehintreturn.html">QStyleHintReturn</a>; it can be used by subclasses to distinguish between different version of the same hint type.</p>
+<p>See also <a href="qstyleoption.html#version-var">QStyleOption::version</a> and <a href="qstyleoption.html#type-var">QStyleOption::type</a>.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="type-var"></a>int QStyleHintReturn::type</h3>
+<p>This variable holds the type of the style hint container.</p>
+<p>See also <a href="qstylehintreturn.html#HintReturnType-enum">HintReturnType</a>.</p>
+<h3 class="fn"><a name="version-var"></a>int QStyleHintReturn::version</h3>
+<p>This variable holds the version of the style hint return container.</p>
+<p>This value can be used by subclasses to implement extensions without breaking compatibility. If you use qstyleoption_cast&lt;T&gt;(), you normally don't need to check it.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="qstyleoption_cast-2"></a>T qstyleoption_cast ( const QStyleHintReturn * <i>hint</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a T or 0 depending on the <a href="qstylehintreturn.html#type-var">type</a> and <a href="qstylehintreturn.html#version-var">version</a> of <i>hint</i>.</p>
+<p>Example:</p>
+<pre>         int MyStyle::styleHint(StyleHint stylehint, const QStyleOption *opt,
+                                const QWidget *widget, QStyleHintReturn* returnData) const;
+         {
+             if (stylehint == SH_RubberBand_Mask) {
+                 const QStyleHintReturnMask *maskReturn =
+                         qstyleoption_cast&lt;const QStyleHintReturnMask *&gt;(hint);
+                 if (maskReturn) {
+                     ...
+                 }
+             }
+             ...
+         }</pre>
+<p>See also <a href="qstylehintreturn.html#type-var">QStyleHintReturn::type</a> and <a href="qstylehintreturn.html#version-var">QStyleHintReturn::version</a>.</p>
+<h3 class="fn"><a name="qstyleoption_cast-4"></a>T qstyleoption_cast ( QStyleHintReturn * <i>hint</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a T or 0 depending on the type of <i>hint</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

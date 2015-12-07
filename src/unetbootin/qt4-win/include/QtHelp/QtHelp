@@ -1,0 +1,9 @@
+#include <QtSql/QtSql>
+#include <QtXml/QtXml>
+#include "qhelpcontentwidget.h"
+#include "qhelpengine.h"
+#include "qhelpenginecore.h"
+#include "qhelpindexwidget.h"
+#include "qhelpsearchengine.h"
+#include "qhelpsearchquerywidget.h"
+#include "qhelpsearchresultwidget.h"

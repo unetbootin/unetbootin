@@ -1,0 +1,199 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-install.html
+
+    \title Installing Qt for Embedded Linux
+    \ingroup qt-embedded
+    \ingroup installation
+    \brief How to install Qt for Embedded Linux.
+
+    This document describes how to install \l{Qt for Embedded Linux} in your
+    development environment:
+
+    \tableofcontents
+
+    Please see the \l{Cross-Compiling Qt for Embedded Linux Applications}{cross
+    compiling} and \l{Deploying Qt for Embedded Linux Applications}{deployment}
+    documentation for details on how to install \l{Qt for Embedded Linux} on
+    your target device.
+
+    Note also that this installation procedure is written for Linux,
+    and that it may need to be modified for other platforms.
+
+    \section1 Step 1: Installing the License File (commercial editions only)
+
+    If you have the commercial edition of \l{Qt for Embedded Linux}, the first step
+    is to install your license file as \c $HOME/.qt-license.
+
+    For the open source version you do not need a license file.
+
+    \section1 Step 2: Unpacking the Archive
+
+    First uncompress the archive in the preferred location, then
+    unpack it:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 0
+
+    This document assumes that the archive is unpacked in the
+    following directory:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 1
+
+    \section1 Step 3: Building the Library
+
+    Before building the \l{Qt for Embedded Linux} library, run the \c
+    ./configure script to configure the library for your development
+    architecture. You can list all of the configuration system's
+    options by typing \c {./configure -help}.
+
+    Note that by default, \l{Qt for Embedded Linux} is configured for
+    installation in the \c{/usr/local/Trolltech/QtEmbedded-4.4.0}
+    directory, but this can be changed by using the \c{-prefix}
+    option. Alternatively, the \c{-prefix-install} option can be used
+    to specify a "local" installation within the source directory.
+
+    The configuration system is also designed to allow you to specify
+    your platform architecture:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 2
+
+    In general, all Linux systems which have framebuffer support can
+    use the \c generic architecture. Other typical architectures are
+    \c x86, \c arm and \c mips.
+
+    \note If you want to build Qt for Embedded Linux for use with a virtual
+    framebuffer, pass the \c{-qvfb} option to the \c configure
+    script.
+
+    To create the library and compile all the demos, examples, tools,
+    and tutorials, type:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 3
+
+    On some systems the \c make utility is named differently, e.g. \c
+    gmake. The \c configure script tells you which \c make utility to
+    use.
+
+    If you did not configure \l{Qt for Embedded Linux} using the \c{-prefix-install}
+    option, you need to install the library, demos, examples, tools,
+    and tutorials in the appropriate place. To do this, type:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 4
+
+    and enter the root password.
+
+    \note You can use the \c INSTALL_ROOT environment variable to specify
+    the location of the installed files when invoking \c{make install}.
+
+    \section1 Step 4: Adjusting the Environment Variables
+
+    In order to use \l{Qt for Embedded Linux}, the \c PATH variable must be extended
+    to locate \c qmake, \c moc and other \l{Qt for Embedded Linux} tools, and the \c
+    LD_LIBRARY_PATH must be extended for compilers that do not support
+    \c rpath.
+
+    To set the \c PATH variable, add the following lines to your \c
+    .profile file if your shell is bash, ksh, zsh or sh:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 5
+
+    In case your shell is csh or tcsh, add the following line to the
+    \c .login file instead:
+
+    \snippet doc/src/snippets/code/doc.src.emb-install.qdoc 6
+
+    If you use a different shell, please modify your environment
+    variables accordingly.
+
+    For compilers that do not support \c rpath you must also extend
+    the \c LD_LIBRARY_PATH environment variable to include
+    \c /usr/local/Trolltech/QtEmbedded-4.4.0/lib. Note that on Linux
+    with GCC, this step is not needed.
+
+    \section1 Step 5: Building the Virtual Framebuffer
+
+    For development and debugging, \l{Qt for Embedded Linux} provides a virtual
+    framebuffer as well as the option of running \l{Qt for Embedded Linux} as a VNC
+    server. For a description of how to install the virtual
+    framebuffer and how to use the VNC protocol, please consult the
+    documentation at:
+
+    \list
+       \o \l {The Virtual Framebuffer}
+       \o \l {The VNC Protocol and Qt for Embedded Linux}
+    \endlist
+
+    Note that the virtual framebuffer requires a Qt/X11
+    installation. See \l {Installing Qt/X11} for details.
+
+    The Linux framebuffer, on the other hand, is enabled by default on
+    all modern Linux distributions. For information on older versions,
+    see \l http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html. To test
+    that the Linux framebuffer is set up correctly, use the program
+    provided by the \l {Testing the Linux Framebuffer} document.
+
+    That's all. \l{Qt for Embedded Linux} is now installed.
+
+    \table 100%
+    \row
+    \o
+    \bold {Customizing the Qt for Embedded Linux Library}
+
+    When building embedded applications on low-powered devices,
+    reducing the memory and CPU requirements is important.
+
+    A number of options tuning the library's performance are
+    available. But the most direct way of saving resources is to
+    fine-tune the set of Qt features that is compiled. It is also
+    possible to make use of accelerated graphics hardware.
+
+    \list
+        \o \l {Fine-Tuning Features in Qt for Embedded Linux}
+        \o \l {Qt for Embedded Linux Performance Tuning}
+        \o \l {Adding an Accelerated Graphics Driver to Qt for Embedded Linux}
+    \endlist
+
+    \endtable
+*/

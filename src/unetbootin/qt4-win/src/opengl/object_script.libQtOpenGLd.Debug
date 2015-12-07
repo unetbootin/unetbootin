@@ -1,0 +1,12 @@
+CREATE ..\..\lib\libQtOpenGLd.a
+ADDMOD tmp\obj\debug_static\qgl.o
+ADDMOD tmp\obj\debug_static\qglcolormap.o
+ADDMOD tmp\obj\debug_static\qpaintengine_opengl.o
+ADDMOD tmp\obj\debug_static\qglpixelbuffer.o
+ADDMOD tmp\obj\debug_static\qglframebufferobject.o
+ADDMOD tmp\obj\debug_static\qglextensions.o
+ADDMOD tmp\obj\debug_static\qgl_win.o
+ADDMOD tmp\obj\debug_static\qglpixelbuffer_win.o
+ADDMOD tmp\obj\debug_static\moc_qgl.o
+ADDMOD tmp\obj\debug_static\moc_qgl_p.o
+SAVE

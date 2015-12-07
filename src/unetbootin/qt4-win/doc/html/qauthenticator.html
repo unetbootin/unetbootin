@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/kernel/qauthenticator.cpp -->
+<head>
+  <title>Qt 4.4: QAuthenticator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAuthenticator Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QAuthenticator class provides an authentication object. <a href="#details">More...</a></p>
+<pre> #include &lt;QAuthenticator&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qauthenticator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qauthenticator.html#QAuthenticator">QAuthenticator</a></b> ()</li>
+<li><div class="fn"/><b><a href="qauthenticator.html#QAuthenticator-2">QAuthenticator</a></b> ( const QAuthenticator &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qauthenticator.html#dtor.QAuthenticator">~QAuthenticator</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qauthenticator.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qauthenticator.html#password">password</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qauthenticator.html#realm">realm</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qauthenticator.html#setPassword">setPassword</a></b> ( const QString &amp; <i>password</i> )</li>
+<li><div class="fn"/>void <b><a href="qauthenticator.html#setUser">setUser</a></b> ( const QString &amp; <i>user</i> )</li>
+<li><div class="fn"/>QString <b><a href="qauthenticator.html#user">user</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qauthenticator.html#operator-not-eq">operator!=</a></b> ( const QAuthenticator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QAuthenticator &amp; <b><a href="qauthenticator.html#operator-eq">operator=</a></b> ( const QAuthenticator &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qauthenticator.html#operator-eq-eq">operator==</a></b> ( const QAuthenticator &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAuthenticator class provides an authentication object.</p>
+<p>The QAuthenticator class is usually used in the <a href="qhttp.html#authenticationRequired">authenticationRequired()</a> and <a href="qhttp.html#proxyAuthenticationRequired">proxyAuthenticationRequired()</a> signals of <a href="qhttp.html">QHttp</a> and <a href="qabstractsocket.html">QAbstractSocket</a>. The class provides a way to pass back the required authentication information to the socket when accessing services that require authentication.</p>
+<p>See also <a href="qsslsocket.html">QSslSocket</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAuthenticator"></a>QAuthenticator::QAuthenticator ()</h3>
+<p>Constructs an empty authentication object</p>
+<h3 class="fn"><a name="QAuthenticator-2"></a>QAuthenticator::QAuthenticator ( const QAuthenticator &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QAuthenticator"></a>QAuthenticator::~QAuthenticator ()</h3>
+<p>Destructs the object</p>
+<h3 class="fn"><a name="isNull"></a>bool QAuthenticator::isNull () const</h3>
+<p>returns true if the authenticator is null.</p>
+<h3 class="fn"><a name="password"></a><a href="qstring.html">QString</a> QAuthenticator::password () const</h3>
+<p>returns the password used for authentication.</p>
+<p>See also <a href="qauthenticator.html#setPassword">setPassword</a>().</p>
+<h3 class="fn"><a name="realm"></a><a href="qstring.html">QString</a> QAuthenticator::realm () const</h3>
+<p>returns the realm requiring authentication.</p>
+<h3 class="fn"><a name="setPassword"></a>void QAuthenticator::setPassword ( const <a href="qstring.html">QString</a> &amp; <i>password</i> )</h3>
+<p>Sets the <i>password</i> used for authentication.</p>
+<p>See also <a href="qauthenticator.html#password">password</a>().</p>
+<h3 class="fn"><a name="setUser"></a>void QAuthenticator::setUser ( const <a href="qstring.html">QString</a> &amp; <i>user</i> )</h3>
+<p>Sets the <i>user</i> used for authentication.</p>
+<p>See also <a href="qauthenticator.html#user">user</a>().</p>
+<h3 class="fn"><a name="user"></a><a href="qstring.html">QString</a> QAuthenticator::user () const</h3>
+<p>returns the user used for authentication.</p>
+<p>See also <a href="qauthenticator.html#setUser">setUser</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QAuthenticator::operator!= ( const QAuthenticator &amp; <i>other</i> ) const</h3>
+<p>Returns true if this authenticator is different from <i>other</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QAuthenticator &amp; QAuthenticator::operator= ( const QAuthenticator &amp; <i>other</i> )</h3>
+<p>Assigns the contents of <i>other</i> to this authenticator.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QAuthenticator::operator== ( const QAuthenticator &amp; <i>other</i> ) const</h3>
+<p>Returns true if this authenticator is identical to <i>other</i>; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

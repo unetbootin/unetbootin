@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasPolygonalItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasPolygonalItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasPolygonalItem class provides a polygonal canvas item on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasPolygonalItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvasitem.html">Q3CanvasItem</a>.</p>
+<p>Inherited by <a href="q3canvasellipse.html">Q3CanvasEllipse</a>, <a href="q3canvasline.html">Q3CanvasLine</a>, <a href="q3canvaspolygon.html">Q3CanvasPolygon</a>, and <a href="q3canvasrectangle.html">Q3CanvasRectangle</a>.</p>
+<ul>
+<li><a href="q3canvaspolygonalitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvaspolygonalitem.html#Q3CanvasPolygonalItem">Q3CanvasPolygonalItem</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/>virtual <b><a href="q3canvaspolygonalitem.html#dtor.Q3CanvasPolygonalItem">~Q3CanvasPolygonalItem</a></b> ()</li>
+<li><div class="fn"/>virtual Q3PointArray <b><a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a></b> () const = 0</li>
+<li><div class="fn"/>virtual Q3PointArray <b><a href="q3canvaspolygonalitem.html#areaPointsAdvanced">areaPointsAdvanced</a></b> () const</li>
+<li><div class="fn"/>virtual QRect <b><a href="q3canvaspolygonalitem.html#boundingRect">boundingRect</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="q3canvaspolygonalitem.html#brush">brush</a></b> () const</li>
+<li><div class="fn"/>QPen <b><a href="q3canvaspolygonalitem.html#pen">pen</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvaspolygonalitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvaspolygonalitem.html#setBrush">setBrush</a></b> ( QBrush <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvaspolygonalitem.html#setPen">setPen</a></b> ( QPen <i>p</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3canvaspolygonalitem.html#draw">draw</a></b> ( QPainter &amp; <i>p</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvaspolygonalitem.html#drawShape">drawShape</a></b> ( QPainter &amp; <i>p</i> ) = 0</li>
+<li><div class="fn"/>void <b><a href="q3canvaspolygonalitem.html#invalidate">invalidate</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3canvaspolygonalitem.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvaspolygonalitem.html#setWinding">setWinding</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3canvaspolygonalitem.html#winding">winding</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasPolygonalItem class provides a polygonal canvas item on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>The mostly rectangular classes, such as <a href="q3canvassprite.html">Q3CanvasSprite</a> and <a href="q3canvastext.html">Q3CanvasText</a>, use the object's bounding rectangle for movement, repainting and collision calculations. For most other items, the bounding rectangle can be far too large -- a diagonal line being the worst case, and there are many other cases which are also bad. Q3CanvasPolygonalItem provides polygon-based bounding rectangle handling, etc., which is much faster for non-rectangular items.</p>
+<p>Derived classes should try to define as small an area as possible to maximize efficiency, but the polygon must <i>definitely</i> be contained completely within the polygonal area. Calculating the exact requirements is usually difficult, but if you allow a small overestimate it can be easy and quick, while still getting almost all of Q3CanvasPolygonalItem's speed.</p>
+<p>Note that all subclasses <i>must</i> call <a href="q3canvasitem.html#hide">hide</a>() in their destructor since <a href="q3canvasitem.html#hide">hide</a>() needs to be able to access <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>().</p>
+<p>Normally, Q3CanvasPolygonalItem uses the odd-even algorithm for determining whether an object intersects this object. You can change this to the winding algorithm using <a href="q3canvaspolygonalitem.html#setWinding">setWinding</a>().</p>
+<p>The bounding rectangle is available using <a href="q3canvaspolygonalitem.html#boundingRect">boundingRect</a>(). The points bounding the polygonal item are retrieved with <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>(). Use <a href="q3canvaspolygonalitem.html#areaPointsAdvanced">areaPointsAdvanced</a>() to retrieve the bounding points the polygonal item <i>will</i> have after Q3CanvasItem::advance(1) has been called.</p>
+<p>If the shape of the polygonal item is about to change while the item is visible, call <a href="q3canvaspolygonalitem.html#invalidate">invalidate</a>() before updating with a different result from <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>().</p>
+<p>By default, Q3CanvasPolygonalItem objects have a black pen and no brush (the default <a href="qpen.html">QPen</a> and <a href="qbrush.html">QBrush</a> constructors). You can change this with <a href="q3canvaspolygonalitem.html#setPen">setPen</a>() and <a href="q3canvaspolygonalitem.html#setBrush">setBrush</a>(), but note that some Q3CanvasPolygonalItem subclasses only use the brush, ignoring the pen setting.</p>
+<p>The polygonal item can be drawn on a painter with <a href="q3canvaspolygonalitem.html#draw">draw</a>(). Subclasses must reimplement <a href="q3canvaspolygonalitem.html#drawShape">drawShape</a>() to draw themselves.</p>
+<p>Like any other canvas item polygonal items can be moved with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasPolygonalItem"></a>Q3CanvasPolygonalItem::Q3CanvasPolygonalItem ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a> on the canvas <i>canvas</i>.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasPolygonalItem"></a>Q3CanvasPolygonalItem::~Q3CanvasPolygonalItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Note that all subclasses <i>must</i> call <a href="q3canvasitem.html#hide">hide</a>() in their destructor since <a href="q3canvasitem.html#hide">hide</a>() needs to be able to access <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>().</p>
+<h3 class="fn"><a name="areaPoints"></a><a href="q3pointarray.html">Q3PointArray</a> Q3CanvasPolygonalItem::areaPoints () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This function must be reimplemented by subclasses. It <i>must</i> return the points bounding (i.e&#x2e; outside and not touching) the shape or drawing errors will occur.</p>
+<h3 class="fn"><a name="areaPointsAdvanced"></a><a href="q3pointarray.html">Q3PointArray</a> Q3CanvasPolygonalItem::areaPointsAdvanced () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the points the polygonal item <i>will</i> have after Q3CanvasItem::advance(1) is called, i.e&#x2e; what the points are when advanced by the current <a href="q3canvasitem.html#xVelocity">xVelocity</a>() and <a href="q3canvasitem.html#yVelocity">yVelocity</a>().</p>
+<h3 class="fn"><a name="boundingRect"></a><a href="qrect.html">QRect</a> Q3CanvasPolygonalItem::boundingRect () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the bounding rectangle of the polygonal item, based on <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>().</p>
+<p>Reimplemented from <a href="q3canvasitem.html#boundingRect">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="brush"></a><a href="qbrush.html">QBrush</a> Q3CanvasPolygonalItem::brush () const</h3>
+<p>Returns the <a href="qbrush.html">QBrush</a> used to fill the item, if filled.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#setBrush">setBrush</a>().</p>
+<h3 class="fn"><a name="draw"></a>void Q3CanvasPolygonalItem::draw ( <a href="qpainter.html">QPainter</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reimplemented from <a href="q3canvasitem.html">Q3CanvasItem</a>, this draws the polygonal item by setting the pen and brush for the item on the painter <i>p</i> and calling <a href="q3canvaspolygonalitem.html#drawShape">drawShape</a>().</p>
+<p>Reimplemented from <a href="q3canvasitem.html#draw">Q3CanvasItem</a>.</p>
+<h3 class="fn"><a name="drawShape"></a>void Q3CanvasPolygonalItem::drawShape ( <a href="qpainter.html">QPainter</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [pure virtual protected]</tt></h3>
+<p>Subclasses must reimplement this function to draw their shape. The pen and brush of <i>p</i> are already set to <a href="q3canvaspolygonalitem.html#pen">pen</a>() and <a href="q3canvaspolygonalitem.html#brush">brush</a>() prior to calling this function.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#draw">draw</a>().</p>
+<h3 class="fn"><a name="invalidate"></a>void Q3CanvasPolygonalItem::invalidate ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Invalidates all information about the area covered by the canvas item. The item will be updated automatically on the next call that changes the item's status, for example, <a href="q3canvasitem.html#move">move</a>() or <a href="q3canvasitem.html#update">update</a>(). Call this function if you are going to change the shape of the item (as returned by <a href="q3canvaspolygonalitem.html#areaPoints">areaPoints</a>()) while the item is visible.</p>
+<h3 class="fn"><a name="isValid"></a>bool Q3CanvasPolygonalItem::isValid () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the polygonal item's area information has not been invalidated; otherwise returns false.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#invalidate">invalidate</a>().</p>
+<h3 class="fn"><a name="pen"></a><a href="qpen.html">QPen</a> Q3CanvasPolygonalItem::pen () const</h3>
+<p>Returns the <a href="qpen.html">QPen</a> used to draw the outline of the item, if any.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#setPen">setPen</a>().</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasPolygonalItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 2 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_PolygonalItem</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setBrush"></a>void Q3CanvasPolygonalItem::setBrush ( <a href="qbrush.html">QBrush</a> <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the <a href="qbrush.html">QBrush</a> used when drawing the polygonal item to the brush <i>b</i>.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#setPen">setPen</a>(), <a href="q3canvaspolygonalitem.html#brush">brush</a>(), and <a href="q3canvaspolygonalitem.html#drawShape">drawShape</a>().</p>
+<h3 class="fn"><a name="setPen"></a>void Q3CanvasPolygonalItem::setPen ( <a href="qpen.html">QPen</a> <i>p</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the <a href="qpen.html">QPen</a> used when drawing the item to the pen <i>p</i>. Note that many Q3CanvasPolygonalItems do not use the pen value.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#setBrush">setBrush</a>(), <a href="q3canvaspolygonalitem.html#pen">pen</a>(), and <a href="q3canvaspolygonalitem.html#drawShape">drawShape</a>().</p>
+<h3 class="fn"><a name="setWinding"></a>void Q3CanvasPolygonalItem::setWinding ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>If <i>enable</i> is true, the polygonal item will use the winding algorithm to determine the &quot;inside&quot; of the polygon; otherwise the odd-even algorithm will be used.</p>
+<p>The default is to use the odd-even algorithm.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#winding">winding</a>().</p>
+<h3 class="fn"><a name="winding"></a>bool Q3CanvasPolygonalItem::winding () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the polygonal item uses the winding algorithm to determine the &quot;inside&quot; of the polygon. Returns false if it uses the odd-even algorithm.</p>
+<p>The default is to use the odd-even algorithm.</p>
+<p>See also <a href="q3canvaspolygonalitem.html#setWinding">setWinding</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

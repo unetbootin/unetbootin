@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qboxlayout.cpp -->
+<head>
+  <title>Qt 4.4: QHBoxLayout Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHBoxLayout Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QHBoxLayout class lines up widgets horizontally. <a href="#details">More...</a></p>
+<pre> #include &lt;QHBoxLayout&gt;</pre><p>Inherits <a href="qboxlayout.html">QBoxLayout</a>.</p>
+<ul>
+<li><a href="qhboxlayout-members.html">List of all members, including inherited members</a></li>
+<li><a href="qhboxlayout-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qhboxlayout.html#QHBoxLayout">QHBoxLayout</a></b> ()</li>
+<li><div class="fn"/><b><a href="qhboxlayout.html#QHBoxLayout-2">QHBoxLayout</a></b> ( QWidget * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qhboxlayout.html#dtor.QHBoxLayout">~QHBoxLayout</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>18 public functions inherited from <a href="qboxlayout.html#public-functions">QBoxLayout</a></li>
+<li><div class="fn"/>28 public functions inherited from <a href="qlayout.html#public-functions">QLayout</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>17 public functions inherited from <a href="qlayoutitem.html#public-functions">QLayoutItem</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qlayout.html#properties">QLayout</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qlayout.html#static-public-members">QLayout</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qboxlayout.html#protected-functions">QBoxLayout</a></li>
+<li><div class="fn"/>3 protected functions inherited from <a href="qlayout.html#protected-functions">QLayout</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHBoxLayout class lines up widgets horizontally.</p>
+<p>This class is used to construct horizontal box layout objects. See <a href="qboxlayout.html">QBoxLayout</a> for details.</p>
+<p>The simplest use of the class is like this:</p>
+<pre>     QWidget *window = new QWidget;
+     QPushButton *button1 = new QPushButton(&quot;One&quot;);
+     QPushButton *button2 = new QPushButton(&quot;Two&quot;);
+     QPushButton *button3 = new QPushButton(&quot;Three&quot;);
+     QPushButton *button4 = new QPushButton(&quot;Four&quot;);
+     QPushButton *button5 = new QPushButton(&quot;Five&quot;);
+
+     QHBoxLayout *layout = new QHBoxLayout;
+     layout-&gt;addWidget(button1);
+     layout-&gt;addWidget(button2);
+     layout-&gt;addWidget(button3);
+     layout-&gt;addWidget(button4);
+     layout-&gt;addWidget(button5);
+
+     window-&gt;setLayout(layout);
+     window-&gt;show();</pre>
+<p>First, we create the widgets we want in the layout. Then, we create the QHBoxLayout object and add the widgets into the layout. Finally, we call <a href="qwidget.html#setLayout">QWidget::setLayout</a>() to install the QHBoxLayout object onto the widget. At that point, the widgets in the layout are reparented to have <tt>window</tt> as their parent.</p>
+<p align="center"><img src="images/qhboxlayout-with-5-children.png" alt="Horizontal box layout with five child widgets" /></p><p>See also <a href="qvboxlayout.html">QVBoxLayout</a>, <a href="qgridlayout.html">QGridLayout</a>, <a href="qstackedlayout.html">QStackedLayout</a>, <a href="layout.html">Layout Classes</a>, and <a href="layouts-basiclayouts.html">Basic Layouts Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QHBoxLayout"></a>QHBoxLayout::QHBoxLayout ()</h3>
+<p>Constructs a new horizontal box. You must add it to another layout.</p>
+<h3 class="fn"><a name="QHBoxLayout-2"></a>QHBoxLayout::QHBoxLayout ( <a href="qwidget.html">QWidget</a> * <i>parent</i> )</h3>
+<p>Constructs a new top-level horizontal box with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QHBoxLayout"></a>QHBoxLayout::~QHBoxLayout ()</h3>
+<p>Destroys this box layout.</p>
+<p>The layout's widgets aren't destroyed.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

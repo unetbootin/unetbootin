@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionToolButton Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionToolButton Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionToolButton class is used to describe the parameters for drawing a tool button. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionToolButton&gt;</pre><p>Inherits <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>.</p>
+<ul>
+<li><a href="qstyleoptiontoolbutton-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbutton.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbutton.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">ToolButtonFeature</a></b> { None, Arrow, Menu, PopupDelay, HasMenu, MenuButtonPopup }</li>
+<li><div class="fn"/>flags <b><a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">ToolButtonFeatures</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptiontoolbutton.html#QStyleOptionToolButton">QStyleOptionToolButton</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptiontoolbutton.html#QStyleOptionToolButton-2">QStyleOptionToolButton</a></b> ( const QStyleOptionToolButton &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>Qt::ArrowType <b><a href="qstyleoptiontoolbutton.html#arrowType-var">arrowType</a></b></li>
+<li><div class="fn"/>ToolButtonFeatures <b><a href="qstyleoptiontoolbutton.html#features-var">features</a></b></li>
+<li><div class="fn"/>QFont <b><a href="qstyleoptiontoolbutton.html#font-var">font</a></b></li>
+<li><div class="fn"/>QIcon <b><a href="qstyleoptiontoolbutton.html#icon-var">icon</a></b></li>
+<li><div class="fn"/>QSize <b><a href="qstyleoptiontoolbutton.html#iconSize-var">iconSize</a></b></li>
+<li><div class="fn"/>QPoint <b><a href="qstyleoptiontoolbutton.html#pos-var">pos</a></b></li>
+<li><div class="fn"/>QString <b><a href="qstyleoptiontoolbutton.html#text-var">text</a></b></li>
+<li><div class="fn"/>Qt::ToolButtonStyle <b><a href="qstyleoptiontoolbutton.html#toolButtonStyle-var">toolButtonStyle</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public variables inherited from <a href="qstyleoptioncomplex.html#public-variables">QStyleOptionComplex</a></li>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionToolButton class is used to describe the parameters for drawing a tool button.</p>
+<p>QStyleOptionToolButton contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw <a href="qtoolbutton.html">QToolButton</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a>, <a href="qstyleoptioncomplex.html">QStyleOptionComplex</a>, and <a href="qstyleoptionbutton.html">QStyleOptionButton</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionToolButton::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::Type</tt></td><td align="center" valign="top"><tt>SO_ToolButton</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_ToolButton</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptiontoolbutton.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionToolButton::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptiontoolbutton.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<h3 class="flags"><a name="ToolButtonFeature-enum"></a>enum QStyleOptionToolButton::ToolButtonFeature<br />flags QStyleOptionToolButton::ToolButtonFeatures</h3>
+<p>Describes the various features that a tool button can have.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::None</tt></td><td align="center" valign="top"><tt>0x00</tt></td><td valign="top">A normal tool button.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::Arrow</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">The tool button is an arrow.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::Menu</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">The tool button has a menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::PopupDelay</tt></td><td align="center" valign="top"><tt>0x08</tt></td><td valign="top">There is a delay to showing the menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::HasMenu</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">The button has a popup menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolButton::MenuButtonPopup</tt></td><td align="center" valign="top"><tt>Menu</tt></td><td valign="top">The button should display an arrow to indicate that a menu is present.</td></tr>
+</table></p>
+<p>The ToolButtonFeatures type is a typedef for <a href="qflags.html">QFlags</a>&lt;ToolButtonFeature&gt;. It stores an OR combination of ToolButtonFeature values.</p>
+<p>See also <a href="qstyleoptiontoolbutton.html#features-var">features</a>, <a href="qtoolbutton.html#toolButtonStyle-prop">QToolButton::toolButtonStyle</a>(), and <a href="qtoolbutton.html#popupMode-prop">QToolButton::popupMode</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionToolButton"></a>QStyleOptionToolButton::QStyleOptionToolButton ()</h3>
+<p>Constructs a <a href="qstyleoptiontoolbutton.html">QStyleOptionToolButton</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionToolButton-2"></a>QStyleOptionToolButton::QStyleOptionToolButton ( const QStyleOptionToolButton &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="arrowType-var"></a><a href="qt.html#ArrowType-enum">Qt::ArrowType</a> QStyleOptionToolButton::arrowType</h3>
+<p>This variable holds the direction of the arrow for the tool button.</p>
+<p>This value is only used if <a href="qstyleoptiontoolbutton.html#features-var">features</a> includes <a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">Arrow</a>. The default value is <a href="qt.html#ArrowType-enum">Qt::DownArrow</a>.</p>
+<h3 class="fn"><a name="features-var"></a><a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">ToolButtonFeatures</a> QStyleOptionToolButton::features</h3>
+<p>This variable holds an OR combination of the tool button's features.</p>
+<p>The default value is <a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">None</a>.</p>
+<p>See also <a href="qstyleoptiontoolbutton.html#ToolButtonFeature-enum">ToolButtonFeature</a>.</p>
+<h3 class="fn"><a name="font-var"></a><a href="qfont.html">QFont</a> QStyleOptionToolButton::font</h3>
+<p>This variable holds the font that is used for the text.</p>
+<p>This value is only used if <a href="qstyleoptiontoolbutton.html#toolButtonStyle-var">toolButtonStyle</a> is <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextUnderIcon</a>, <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextBesideIcon</a>, or <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextOnly</a>. By default, the application's default font is used.</p>
+<h3 class="fn"><a name="icon-var"></a><a href="qicon.html">QIcon</a> QStyleOptionToolButton::icon</h3>
+<p>This variable holds the icon for the tool button.</p>
+<p>The default value is an empty icon, i.e&#x2e; an icon with neither a pixmap nor a filename.</p>
+<p>See also <a href="qstyleoptiontoolbutton.html#iconSize-var">iconSize</a>.</p>
+<h3 class="fn"><a name="iconSize-var"></a><a href="qsize.html">QSize</a> QStyleOptionToolButton::iconSize</h3>
+<p>This variable holds the size of the icon for the tool button.</p>
+<p>The default value is <a href="qsize.html">QSize</a>(-1, -1), i.e&#x2e; an invalid size.</p>
+<h3 class="fn"><a name="pos-var"></a><a href="qpoint.html">QPoint</a> QStyleOptionToolButton::pos</h3>
+<p>This variable holds the position of the tool button.</p>
+<p>The default value is a null point, i.e&#x2e; (0, 0)</p>
+<h3 class="fn"><a name="text-var"></a><a href="qstring.html">QString</a> QStyleOptionToolButton::text</h3>
+<p>This variable holds the text of the tool button.</p>
+<p>This value is only used if <a href="qstyleoptiontoolbutton.html#toolButtonStyle-var">toolButtonStyle</a> is <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextUnderIcon</a>, <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextBesideIcon</a>, or <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonTextOnly</a>. The default value is an empty string.</p>
+<h3 class="fn"><a name="toolButtonStyle-var"></a><a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonStyle</a> QStyleOptionToolButton::toolButtonStyle</h3>
+<p>This variable holds a Qt::ToolButtonStyle value describing the appearance of the tool button.</p>
+<p>The default value is <a href="qt.html#ToolButtonStyle-enum">Qt::ToolButtonIconOnly</a>.</p>
+<p>See also <a href="qtoolbutton.html#toolButtonStyle-prop">QToolButton::toolButtonStyle</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

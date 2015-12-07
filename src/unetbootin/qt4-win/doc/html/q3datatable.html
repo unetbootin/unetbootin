@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/sql/q3datatable.cpp -->
+<head>
+  <title>Qt 4.4: Q3DataTable Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DataTable Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DataTable class provides a flexible SQL table widget that supports browsing and editing. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DataTable&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdatatable">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3table.html">Q3Table</a>.</p>
+<ul>
+<li><a href="q3datatable-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3datatable.html#Refresh-enum">Refresh</a></b> { RefreshData, RefreshColumns, RefreshAll }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3datatable.html#autoEdit-prop">autoEdit</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#confirmCancels-prop">confirmCancels</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#confirmDelete-prop">confirmDelete</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#confirmEdits-prop">confirmEdits</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#confirmInsert-prop">confirmInsert</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3datatable.html#dateFormat-prop">dateFormat</a></b> : Qt::DateFormat</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3datatable.html#falseText-prop">falseText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3datatable.html#filter-prop">filter</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3datatable.html#nullText-prop">nullText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="q3datatable.html#numCols-prop">numCols</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3datatable.html#numRows-prop">numRows</a></b> : int</li>
+<li><div class="fn"/><b><a href="q3datatable.html#sort-prop">sort</a></b> : QStringList</li>
+<li><div class="fn"/><b><a href="q3datatable.html#trueText-prop">trueText</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>10 properties inherited from <a href="q3table.html#properties">Q3Table</a></li>
+<li><div class="fn"/>10 properties inherited from <a href="q3scrollview.html#properties">Q3ScrollView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="q3frame.html#properties">Q3Frame</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3datatable.html#Q3DataTable">Q3DataTable</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3datatable.html#Q3DataTable-2">Q3DataTable</a></b> ( Q3SqlCursor * <i>cursor</i>, bool <i>autoPopulate</i> = false, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3datatable.html#dtor.Q3DataTable">~Q3DataTable</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#addColumn">addColumn</a></b> ( const QString &amp; <i>fieldName</i>, const QString &amp; <i>label</i> = QString(), int <i>width</i> = -1, const QIconSet &amp; <i>iconset</i> = QIconSet() )</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#autoDelete">autoDelete</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#autoEdit-prop">autoEdit</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#confirmCancels-prop">confirmCancels</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#confirmDelete-prop">confirmDelete</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#confirmEdits-prop">confirmEdits</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#confirmInsert-prop">confirmInsert</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a></b> () const</li>
+<li><div class="fn"/>QSqlRecord * <b><a href="q3datatable.html#currentRecord">currentRecord</a></b> () const</li>
+<li><div class="fn"/>Qt::DateFormat <b><a href="q3datatable.html#dateFormat-prop">dateFormat</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3datatable.html#falseText-prop">falseText</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3datatable.html#filter-prop">filter</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3datatable.html#indexOf">indexOf</a></b> ( uint <i>i</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#installEditorFactory">installEditorFactory</a></b> ( Q3SqlEditorFactory * <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#installPropertyMap">installPropertyMap</a></b> ( Q3SqlPropertyMap * <i>m</i> )</li>
+<li><div class="fn"/>QString <b><a href="q3datatable.html#nullText-prop">nullText</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3datatable.html#numCols-prop">numCols</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3datatable.html#numRows-prop">numRows</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#refresh">refresh</a></b> ( Refresh <i>mode</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#removeColumn">removeColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#setAutoDelete">setAutoDelete</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#autoEdit-prop">setAutoEdit</a></b> ( bool <i>autoEdit</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#setColumn">setColumn</a></b> ( uint <i>col</i>, const QString &amp; <i>fieldName</i>, const QString &amp; <i>label</i> = QString(), int <i>width</i> = -1, const QIconSet &amp; <i>iconset</i> = QIconSet() )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#confirmCancels-prop">setConfirmCancels</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#confirmDelete-prop">setConfirmDelete</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#confirmEdits-prop">setConfirmEdits</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#confirmInsert-prop">setConfirmInsert</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#confirmUpdate-prop">setConfirmUpdate</a></b> ( bool <i>confirm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#dateFormat-prop">setDateFormat</a></b> ( const Qt::DateFormat <i>f</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#falseText-prop">setFalseText</a></b> ( const QString &amp; <i>falseText</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#filter-prop">setFilter</a></b> ( const QString &amp; <i>filter</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#nullText-prop">setNullText</a></b> ( const QString &amp; <i>nullText</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#sort-prop">setSort</a></b> ( const QStringList &amp; <i>sort</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#sort-prop">setSort</a></b> ( const QSqlIndex &amp; <i>sort</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#setSqlCursor">setSqlCursor</a></b> ( Q3SqlCursor * <i>cursor</i> = 0, bool <i>autoPopulate</i> = false, bool <i>autoDelete</i> = false )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#trueText-prop">setTrueText</a></b> ( const QString &amp; <i>trueText</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="q3datatable.html#sort-prop">sort</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#sortColumn">sortColumn</a></b> ( int <i>col</i>, bool <i>ascending</i> = true, bool <i>wholeRows</i> = false )</li>
+<li><div class="fn"/>Q3SqlCursor * <b><a href="q3datatable.html#sqlCursor">sqlCursor</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="q3datatable.html#text">text</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="q3datatable.html#trueText-prop">trueText</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="q3datatable.html#value">value</a></b> ( int <i>row</i>, int <i>col</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>61 public functions inherited from <a href="q3table.html#public-functions">Q3Table</a></li>
+<li><div class="fn"/>46 public functions inherited from <a href="q3scrollview.html#public-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="q3frame.html#public-functions">Q3Frame</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#adjustColumn">adjustColumn</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#find">find</a></b> ( const QString &amp; <i>str</i>, bool <i>caseSensitive</i>, bool <i>backwards</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#refresh-2">refresh</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#setColumnWidth">setColumnWidth</a></b> ( int <i>col</i>, int <i>w</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#sortAscending">sortAscending</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#sortDescending">sortDescending</a></b> ( int <i>col</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>36 public slots inherited from <a href="q3table.html#public-slots">Q3Table</a></li>
+<li><div class="fn"/>8 public slots inherited from <a href="q3scrollview.html#public-slots">Q3ScrollView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3datatable.html#beforeDelete">beforeDelete</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#beforeInsert">beforeInsert</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#beforeUpdate">beforeUpdate</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#currentChanged">currentChanged</a></b> ( QSqlRecord * <i>record</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#cursorChanged">cursorChanged</a></b> ( QSql::Op <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#primeDelete">primeDelete</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#primeInsert">primeInsert</a></b> ( QSqlRecord * <i>buf</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#primeUpdate">primeUpdate</a></b> ( QSqlRecord * <i>buf</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 signals inherited from <a href="q3table.html#signals">Q3Table</a></li>
+<li><div class="fn"/>5 signals inherited from <a href="q3scrollview.html#signals">Q3ScrollView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="q3datatable.html#beginInsert">beginInsert</a></b> ()</li>
+<li><div class="fn"/>virtual QWidget * <b><a href="q3datatable.html#beginUpdate">beginUpdate</a></b> ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> )</li>
+<li><div class="fn"/>virtual QSql::Confirm <b><a href="q3datatable.html#confirmCancel">confirmCancel</a></b> ( QSql::Op <i>m</i> )</li>
+<li><div class="fn"/>virtual QSql::Confirm <b><a href="q3datatable.html#confirmEdit">confirmEdit</a></b> ( QSql::Op <i>m</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3datatable.html#deleteCurrent">deleteCurrent</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="q3datatable.html#fieldAlignment">fieldAlignment</a></b> ( const QSqlField * <i>field</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#handleError">handleError</a></b> ( const QSqlError &amp; <i>e</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3datatable.html#insertCurrent">insertCurrent</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3datatable.html#paintField">paintField</a></b> ( QPainter * <i>p</i>, const QSqlField * <i>field</i>, const QRect &amp; <i>cr</i>, bool <i>selected</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#repaintCell">repaintCell</a></b> ( int <i>row</i>, int <i>col</i> )</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#reset">reset</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3datatable.html#setSize">setSize</a></b> ( Q3SqlCursor * <i>sql</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3datatable.html#updateCurrent">updateCurrent</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>21 protected functions inherited from <a href="q3table.html#protected-functions">Q3Table</a></li>
+<li><div class="fn"/>17 protected functions inherited from <a href="q3scrollview.html#protected-functions">Q3ScrollView</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="q3frame.html#protected-functions">Q3Frame</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>5 protected slots inherited from <a href="q3table.html#protected-slots">Q3Table</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DataTable class provides a flexible SQL table widget that supports browsing and editing.</p>
+<p>Q3DataTable supports various functions for presenting and editing SQL data from a <a href="q3sqlcursor.html">Q3SqlCursor</a> in a table.</p>
+<p>If you want a to present your data in a form use <a href="porting4.html#qdatabrowser">QDataBrowser</a>, or for read-only forms, use <a href="porting4.html#qdataview">QDataView</a> instead.</p>
+<p>When displaying data, Q3DataTable only retrieves data for visible rows. If the driver supports the 'query size' property the Q3DataTable will have the correct number of rows and the vertical scroll bar will accurately reflect the number of rows displayed in proportion to the number of rows in the dataset. If the driver does not support the 'query size' property, rows are dynamically fetched from the database on an as-needed basis with the scroll bar becoming more accurate as the user scrolls down through the records. This allows extremely large queries to be displayed as quickly as possible, with minimum memory usage.</p>
+<p>Q3DataTable inherits <a href="q3table.html">Q3Table</a>'s API and extends it with functions to sort and filter the data and sort columns. See <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>(), <a href="q3datatable.html#filter-prop">setFilter</a>(), <a href="q3datatable.html#sort-prop">setSort</a>(), <a href="q3table.html#sorting-prop">setSorting</a>(), <a href="q3datatable.html#sortColumn">sortColumn</a>() and <a href="q3datatable.html#refresh">refresh</a>().</p>
+<p>When displaying editable cursors, cell editing will be enabled. (For more information on editable cursors, see <a href="q3sqlcursor.html">Q3SqlCursor</a>). Q3DataTable can be used to modify existing data and to add new records. When a user makes changes to a field in the table, the cursor's edit buffer is used. The table will not send changes in the edit buffer to the database until the user moves to a different record in the grid or presses Enter. Cell editing is initiated by pressing F2 (or right clicking and then clicking the appropriate popup menu item) and canceled by pressing Esc. If there is a problem updating or adding data, errors are handled automatically (see <a href="q3datatable.html#handleError">handleError</a>() to change this behavior). Note that if <a href="q3datatable.html#autoEdit-prop">autoEdit</a>() is false navigating to another record will cancel the insert or update.</p>
+<p>The user can be asked to confirm all edits with <a href="q3datatable.html#confirmEdits-prop">setConfirmEdits</a>(). For more precise control use <a href="q3datatable.html#confirmInsert-prop">setConfirmInsert</a>(), <a href="q3datatable.html#confirmUpdate-prop">setConfirmUpdate</a>(), <a href="q3datatable.html#confirmDelete-prop">setConfirmDelete</a>() and <a href="q3datatable.html#confirmCancels-prop">setConfirmCancels</a>(). Use <a href="q3datatable.html#autoEdit-prop">setAutoEdit</a>() to control the behavior of the table when the user edits a record and then navigates. (Note that <a href="q3datatable.html#setAutoDelete">setAutoDelete</a>() is unrelated; it is used to set whether the <a href="q3sqlcursor.html">Q3SqlCursor</a> is deleted when the table is deleted.)</p>
+<p>Since the data table can perform edits, it must be able to uniquely identify every record so that edits are correctly applied. Because of this the underlying cursor must have a valid primary index to ensure that a unique record is inserted, updated or deleted within the database otherwise the database may be changed to an inconsistent state.</p>
+<p>Q3DataTable creates editors using the default <a href="q3sqleditorfactory.html">Q3SqlEditorFactory</a>. Different editor factories can be used by calling <a href="q3datatable.html#installEditorFactory">installEditorFactory</a>(). A property map is used to map between the cell's value and the editor. You can use your own property map with <a href="q3datatable.html#installPropertyMap">installPropertyMap</a>().</p>
+<p>The contents of a cell is available as a <a href="qstring.html">QString</a> with <a href="q3datatable.html#text">text</a>() or as a <a href="qvariant.html">QVariant</a> with <a href="q3datatable.html#value">value</a>(). The current record is returned by <a href="q3datatable.html#currentRecord">currentRecord</a>(). Use the <a href="q3datatable.html#find">find</a>() function to search for a string in the table.</p>
+<p>Editing actions can be applied programmatically. For example, the <a href="q3datatable.html#insertCurrent">insertCurrent</a>() function reads the fields from the current record into the cursor and performs the insert. The <a href="q3datatable.html#updateCurrent">updateCurrent</a>() and <a href="q3datatable.html#deleteCurrent">deleteCurrent</a>() functions perform similarly to update and delete the current record respectively.</p>
+<p>Columns in the table can be created automatically based on the cursor (see <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>()). Columns can be manipulated manually using <a href="q3datatable.html#addColumn">addColumn</a>(), <a href="q3datatable.html#removeColumn">removeColumn</a>() and <a href="q3datatable.html#setColumn">setColumn</a>().</p>
+<p>The table automatically copies many of the properties of the cursor to format the display of data within cells (alignment, visibility, etc.)&#x2e; The cursor can be changed with <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>(). The filter (see <a href="q3datatable.html#filter-prop">setFilter</a>()) and sort defined within the table are used instead of the filter and sort set on the cursor. For sorting options see <a href="q3datatable.html#sort-prop">setSort</a>(), <a href="q3datatable.html#sortColumn">sortColumn</a>(), <a href="q3datatable.html#sortAscending">sortAscending</a>() and <a href="q3datatable.html#sortDescending">sortDescending</a>(). Note that sorting operations will not behave as expected if you are using a <a href="porting4.html#qsqlselectcursor">QSqlSelectCursor</a> because it uses user-defined SQL queries to obtain data.</p>
+<p>The text used to represent NULL, true and false values can be changed with <a href="q3datatable.html#nullText-prop">setNullText</a>(), <a href="q3datatable.html#trueText-prop">setTrueText</a>() and <a href="q3datatable.html#falseText-prop">setFalseText</a>() respectively. You can change the appearance of cells by reimplementing <a href="q3datatable.html#paintField">paintField</a>().</p>
+<p>Whenever a new row is selected in the table the <a href="q3datatable.html#currentChanged">currentChanged</a>() signal is emitted. The <a href="q3datatable.html#primeInsert">primeInsert</a>() signal is emitted when an insert is initiated. The <a href="q3datatable.html#primeUpdate">primeUpdate</a>() and <a href="q3datatable.html#primeDelete">primeDelete</a>() signals are emitted when update and deletion are initiated respectively. Just before the database is updated a signal is emitted; <a href="q3datatable.html#beforeInsert">beforeInsert</a>(), <a href="q3datatable.html#beforeUpdate">beforeUpdate</a>() or <a href="q3datatable.html#beforeDelete">beforeDelete</a>() as appropriate.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Refresh-enum"></a>enum Q3DataTable::Refresh</h3>
+<p>This enum describes the refresh options.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DataTable::RefreshData</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">refresh the data, i.e&#x2e; read it from the database</td></tr>
+<tr><td valign="top"><tt>Q3DataTable::RefreshColumns</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">refresh the list of fields, e.g&#x2e; the column headings</td></tr>
+<tr><td valign="top"><tt>Q3DataTable::RefreshAll</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">refresh both the data and the list of fields</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoEdit-prop"></a>autoEdit : bool</h3>
+<p>This property holds whether the data table automatically applies edits.</p>
+<p>The default value for this property is true. When the user begins an insert or update in the table there are two possible outcomes when they navigate to another record:</p>
+<ol type="1">
+<li>the insert or update is is performed -- this occurs if autoEdit is true</li>
+<li>the insert or update is abandoned -- this occurs if autoEdit is false</li>
+</ol>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoEdit () const</b></li>
+<li><div class="fn"/><b>virtual void setAutoEdit ( bool <i>autoEdit</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="confirmCancels-prop"></a>confirmCancels : bool</h3>
+<p>This property holds whether the data table confirms cancel operations.</p>
+<p>If the confirmCancel property is true, all cancels must be confirmed by the user through a message box (this behavior can be changed by overriding the <a href="q3datatable.html#confirmCancel">confirmCancel</a>() function), otherwise all cancels occur immediately. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmCancels () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmCancels ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>() and <a href="q3datatable.html#confirmCancel">confirmCancel</a>().</p>
+<h3 class="fn"><a name="confirmDelete-prop"></a>confirmDelete : bool</h3>
+<p>This property holds whether the data table confirms delete operations.</p>
+<p>If the confirmDelete property is true, all deletions must be confirmed by the user through a message box (this behavior can be changed by overriding the <a href="q3datatable.html#confirmEdit">confirmEdit</a>() function), otherwise all delete operations occur immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmDelete () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmDelete ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a>(), and <a href="q3datatable.html#confirmInsert-prop">confirmInsert</a>().</p>
+<h3 class="fn"><a name="confirmEdits-prop"></a>confirmEdits : bool</h3>
+<p>This property holds whether the data table confirms edit operations.</p>
+<p>If the confirmEdits property is true, the data table confirms all edit operations (inserts, updates and deletes). Finer control of edit confirmation can be achieved using <a href="q3datatable.html#confirmCancels-prop">confirmCancels</a>, <a href="q3datatable.html#confirmInsert-prop">confirmInsert</a>, <a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a> and <a href="q3datatable.html#confirmDelete-prop">confirmDelete</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmEdits () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmEdits ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3datatable.html#confirmInsert-prop">confirmInsert</a>(), <a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a>(), and <a href="q3datatable.html#confirmDelete-prop">confirmDelete</a>().</p>
+<h3 class="fn"><a name="confirmInsert-prop"></a>confirmInsert : bool</h3>
+<p>This property holds whether the data table confirms insert operations.</p>
+<p>If the confirmInsert property is true, all insertions must be confirmed by the user through a message box (this behavior can be changed by overriding the <a href="q3datatable.html#confirmEdit">confirmEdit</a>() function), otherwise all insert operations occur immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmInsert () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmInsert ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a>(), and <a href="q3datatable.html#confirmDelete-prop">confirmDelete</a>().</p>
+<h3 class="fn"><a name="confirmUpdate-prop"></a>confirmUpdate : bool</h3>
+<p>This property holds whether the data table confirms update operations.</p>
+<p>If the confirmUpdate property is true, all updates must be confirmed by the user through a message box (this behavior can be changed by overriding the <a href="q3datatable.html#confirmEdit">confirmEdit</a>() function), otherwise all update operations occur immediately.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool confirmUpdate () const</b></li>
+<li><div class="fn"/><b>virtual void setConfirmUpdate ( bool <i>confirm</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#confirmCancels-prop">confirmCancels</a>(), <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>(), <a href="q3datatable.html#confirmInsert-prop">confirmInsert</a>(), and <a href="q3datatable.html#confirmDelete-prop">confirmDelete</a>().</p>
+<h3 class="fn"><a name="dateFormat-prop"></a>dateFormat : <a href="qt.html#DateFormat-enum">Qt::DateFormat</a></h3>
+<p>This property holds the format used for displaying date/time values.</p>
+<p>The dateFormat property is used for displaying date/time values in the table. The default value is <a href="qt.html#DateFormat-enum">Qt::LocalDate</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::DateFormat dateFormat () const</b></li>
+<li><div class="fn"/><b>virtual void setDateFormat ( const Qt::DateFormat <i>f</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="falseText-prop"></a>falseText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text used to represent false values.</p>
+<p>The falseText property will be used to represent NULL values in the table. The default value is &quot;False&quot;.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString falseText () const</b></li>
+<li><div class="fn"/><b>virtual void setFalseText ( const QString &amp; <i>falseText</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="filter-prop"></a>filter : <a href="qstring.html">QString</a></h3>
+<p>This property holds the data filter for the data table.</p>
+<p>The filter applies to the data shown in the table. To view data with a new filter, use <a href="q3datatable.html#refresh">refresh</a>(). A filter string is an SQL WHERE clause without the WHERE keyword.</p>
+<p>There is no default filter.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString filter () const</b></li>
+<li><div class="fn"/><b>virtual void setFilter ( const QString &amp; <i>filter</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#sort-prop">sort</a>().</p>
+<h3 class="fn"><a name="nullText-prop"></a>nullText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text used to represent NULL values.</p>
+<p>The nullText property will be used to represent NULL values in the table. The default value is provided by the cursor's driver.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString nullText () const</b></li>
+<li><div class="fn"/><b>virtual void setNullText ( const QString &amp; <i>nullText</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="numCols-prop"></a>numCols : int</h3>
+<p>This property holds the number of columns in the table.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>virtual int numCols () const</b></li>
+<li><div class="fn"/><b>virtual void <a href="q3table.html#numCols-prop">setNumCols</a> ( int <i>r</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="numRows-prop"></a>numRows : int</h3>
+<p>This property holds the number of rows in the table.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>virtual int numRows () const</b></li>
+<li><div class="fn"/><b>virtual void <a href="q3table.html#numRows-prop">setNumRows</a> ( int <i>r</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="sort-prop"></a>sort : <a href="qstringlist.html">QStringList</a></h3>
+<p>This property holds the data table's sort.</p>
+<p>The table's sort affects the order in which data records are displayed in the table. To apply a sort, use <a href="q3datatable.html#refresh">refresh</a>().</p>
+<p>When examining the sort property, a string list is returned with each item having the form 'fieldname order' (e.g&#x2e;, 'id ASC', 'surname DESC').</p>
+<p>There is no default sort.</p>
+<p>Note that if you want to iterate over the sort list, you should iterate over a copy, e.g&#x2e;</p>
+<pre>     QStringList list = myDataTable.sort();
+     QStringList::Iterator it = list.begin();
+     while( it != list.end() ) {
+         myProcessing( *it );
+         ++it;
+     }</pre>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QStringList sort () const</b></li>
+<li><div class="fn"/><b>virtual void setSort ( const QStringList &amp; <i>sort</i> )</b></li>
+<li><div class="fn"/><b>virtual void setSort ( const QSqlIndex &amp; <i>sort</i> )</b></li>
+</ul>
+<p>See also <a href="q3datatable.html#filter-prop">filter</a>() and <a href="q3datatable.html#refresh">refresh</a>().</p>
+<h3 class="fn"><a name="trueText-prop"></a>trueText : <a href="qstring.html">QString</a></h3>
+<p>This property holds the text used to represent true values.</p>
+<p>The trueText property will be used to represent NULL values in the table. The default value is &quot;True&quot;.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString trueText () const</b></li>
+<li><div class="fn"/><b>virtual void setTrueText ( const QString &amp; <i>trueText</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DataTable"></a>Q3DataTable::Q3DataTable ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a data table which is a child of <i>parent</i>, called name <i>name</i>.</p>
+<h3 class="fn"><a name="Q3DataTable-2"></a>Q3DataTable::Q3DataTable ( <a href="q3sqlcursor.html">Q3SqlCursor</a> * <i>cursor</i>, bool <i>autoPopulate</i> = false, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a data table which is a child of <i>parent</i>, called name <i>name</i> using the cursor <i>cursor</i>.</p>
+<p>If <i>autoPopulate</i> is true (the default is false), columns are automatically created based upon the fields in the <i>cursor</i> record. Note that <i>autoPopulate</i> only governs the creation of columns; to load the cursor's data into the table use <a href="q3datatable.html#refresh">refresh</a>().</p>
+<p>If the <i>cursor</i> is read-only, the table also becomes read-only. In addition, the table adopts the cursor's driver's definition for representing NULL values as strings.</p>
+<h3 class="fn"><a name="dtor.Q3DataTable"></a>Q3DataTable::~Q3DataTable ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="addColumn"></a>void Q3DataTable::addColumn ( const <a href="qstring.html">QString</a> &amp; <i>fieldName</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> = QString(), int <i>width</i> = -1, const QIconSet &amp; <i>iconset</i> = QIconSet() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Adds the next column to be displayed using the field <i>fieldName</i>, column label <i>label</i>, width <i>width</i> and iconset <i>iconset</i>.</p>
+<p>If <i>label</i> is specified, it is used as the column's header label, otherwise the field's display label is used when <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>() is called. The <i>iconset</i> is used to set the icon used by the column header; by default there is no icon.</p>
+<p>See also <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>() and <a href="q3datatable.html#refresh">refresh</a>().</p>
+<h3 class="fn"><a name="adjustColumn"></a>void Q3DataTable::adjustColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Resizes column <i>col</i> so that the column width is wide enough to display the widest item the column contains (including the column label). If the table's <a href="q3sqlcursor.html">Q3SqlCursor</a> is not currently active, the cursor will be refreshed before the column width is calculated. Be aware that this function may be slow on tables that contain large result sets.</p>
+<p>Reimplemented from <a href="q3table.html#adjustColumn">Q3Table</a>.</p>
+<h3 class="fn"><a name="autoDelete"></a>bool Q3DataTable::autoDelete () const</h3>
+<p>Returns true if the table will automatically delete the cursor specified by <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>(); otherwise returns false.</p>
+<p>See also <a href="q3datatable.html#setAutoDelete">setAutoDelete</a>().</p>
+<h3 class="fn"><a name="beforeDelete"></a>void Q3DataTable::beforeDelete ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the currently selected record is deleted from the database. The <i>buf</i> parameter points to the edit buffer being deleted. Connect to this signal to, for example, copy some of the fields for later use.</p>
+<h3 class="fn"><a name="beforeInsert"></a>void Q3DataTable::beforeInsert ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the cursor's edit buffer is inserted into the database. The <i>buf</i> parameter points to the edit buffer being inserted. Connect to this signal to, for example, populate a key field with a unique sequence number.</p>
+<h3 class="fn"><a name="beforeUpdate"></a>void Q3DataTable::beforeUpdate ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted just before the cursor's edit buffer is updated in the database. The <i>buf</i> parameter points to the edit buffer being updated. Connect to this signal when you want to transform the user's data behind-the-scenes.</p>
+<h3 class="fn"><a name="beginInsert"></a>bool Q3DataTable::beginInsert ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function called when editing is about to begin on a new record. If the table is read-only, or if there's no cursor or the cursor does not allow inserts, nothing happens and false is returned. Otherwise returns true.</p>
+<p>Editing takes place using the cursor's edit buffer(see <a href="q3sqlcursor.html#editBuffer">Q3SqlCursor::editBuffer</a>()).</p>
+<p>When editing begins, a new row is created in the table marked with an asterisk '*' in the row's vertical header column, i.e&#x2e; at the left of the row.</p>
+<h3 class="fn"><a name="beginUpdate"></a><a href="qwidget.html">QWidget</a> * Q3DataTable::beginUpdate ( int <i>row</i>, int <i>col</i>, bool <i>replace</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function called when editing is about to begin on an existing row. If the table is read-only, or if there's no cursor, nothing happens.</p>
+<p>Editing takes place using the cursor's edit buffer (see <a href="q3sqlcursor.html#editBuffer">Q3SqlCursor::editBuffer</a>()).</p>
+<p><i>row</i> and <i>col</i> refer to the row and column in the <a href="q3datatable.html">Q3DataTable</a>.</p>
+<p>(<i>replace</i> is provided for reimplementors and reflects the API of <a href="q3table.html#beginEdit">Q3Table::beginEdit</a>().)</p>
+<h3 class="fn"><a name="confirmCancel"></a><a href="qsql-qt3.html#Confirm-enum">QSql::Confirm</a> Q3DataTable::confirmCancel ( <a href="qsql-qt3.html#Op-enum">QSql::Op</a> <i>m</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function which returns a confirmation for canceling an edit mode of <i>m</i>. Derived classes can reimplement this function to provide their own cancel dialog. The default implementation uses a message box which prompts the user to confirm the cancel.</p>
+<h3 class="fn"><a name="confirmEdit"></a><a href="qsql-qt3.html#Confirm-enum">QSql::Confirm</a> Q3DataTable::confirmEdit ( <a href="qsql-qt3.html#Op-enum">QSql::Op</a> <i>m</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function which returns a confirmation for an edit of mode <i>m</i>. Derived classes can reimplement this function to provide their own confirmation dialog. The default implementation uses a message box which prompts the user to confirm the edit action.</p>
+<h3 class="fn"><a name="currentChanged"></a>void Q3DataTable::currentChanged ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>record</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a new row is selected in the table. The <i>record</i> parameter points to the contents of the newly selected record.</p>
+<h3 class="fn"><a name="currentRecord"></a><a href="qsqlrecord.html">QSqlRecord</a> * Q3DataTable::currentRecord () const</h3>
+<p>Returns the currently selected record, or 0 if there is no current selection. The table owns the pointer, so do <i>not</i> delete it or otherwise modify it or the cursor it points to.</p>
+<h3 class="fn"><a name="cursorChanged"></a>void Q3DataTable::cursorChanged ( <a href="qsql-qt3.html#Op-enum">QSql::Op</a> <i>mode</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the cursor record was changed due to an edit. The <i>mode</i> parameter is the type of edit that just took place.</p>
+<h3 class="fn"><a name="deleteCurrent"></a>bool Q3DataTable::deleteCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>For an editable table, issues a delete on the current cursor's primary index using the values of the currently selected row. If there is no current cursor or there is no current selection, nothing happens. If <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>() or <a href="q3datatable.html#confirmDelete-prop">confirmDelete</a>() is true, <a href="q3datatable.html#confirmEdit">confirmEdit</a>() is called to confirm the delete. Returns true if the delete succeeded; otherwise false.</p>
+<p>The underlying cursor must have a valid primary index to ensure that a unique record is deleted within the database otherwise the database may be changed to an inconsistent state.</p>
+<h3 class="fn"><a name="fieldAlignment"></a>int Q3DataTable::fieldAlignment ( const <a href="qsqlfield.html">QSqlField</a> * <i>field</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the alignment for <i>field</i>.</p>
+<h3 class="fn"><a name="find"></a>void Q3DataTable::find ( const <a href="qstring.html">QString</a> &amp; <i>str</i>, bool <i>caseSensitive</i>, bool <i>backwards</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Searches the current cursor for a cell containing the string <i>str</i> starting at the current cell and working forwards (or backwards if <i>backwards</i> is true). If the string is found, the cell containing the string is set as the current cell. If <i>caseSensitive</i> is false the case of <i>str</i> will be ignored.</p>
+<p>The search will wrap, i.e&#x2e; if the first (or if backwards is true, last) cell is reached without finding <i>str</i> the search will continue until it reaches the starting cell. If <i>str</i> is not found the search will fail and the current cell will remain unchanged.</p>
+<h3 class="fn"><a name="handleError"></a>void Q3DataTable::handleError ( const <a href="qsqlerror.html">QSqlError</a> &amp; <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Protected virtual function which is called when an error <i>e</i> has occurred on the current <a href="qwidget.html#cursor-prop">cursor</a>(). The default implementation displays a warning message to the user with information about the error.</p>
+<h3 class="fn"><a name="indexOf"></a>int Q3DataTable::indexOf ( <a href="qtglobal.html#uint-typedef">uint</a> <i>i</i> ) const</h3>
+<p>Returns the index of the field within the current SQL query that is displayed in column <i>i</i>.</p>
+<h3 class="fn"><a name="insertCurrent"></a>bool Q3DataTable::insertCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>For an editable table, issues an insert on the current cursor using the values in the cursor's edit buffer. If there is no current cursor or there is no current &quot;insert&quot; row, nothing happens. If <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>() or <a href="q3datatable.html#confirmInsert-prop">confirmInsert</a>() is true, <a href="q3datatable.html#confirmEdit">confirmEdit</a>() is called to confirm the insert. Returns true if the insert succeeded; otherwise returns false.</p>
+<p>The underlying cursor must have a valid primary index to ensure that a unique record is inserted within the database otherwise the database may be changed to an inconsistent state.</p>
+<h3 class="fn"><a name="installEditorFactory"></a>void Q3DataTable::installEditorFactory ( <a href="q3sqleditorfactory.html">Q3SqlEditorFactory</a> * <i>f</i> )</h3>
+<p>Installs a new SQL editor factory <i>f</i>. This enables the user to create and instantiate their own editors for use in cell editing. Note that <a href="q3datatable.html">Q3DataTable</a> takes ownership of this pointer, and will delete it when it is no longer needed or when installEditorFactory() is called again.</p>
+<p>See also <a href="q3sqleditorfactory.html">Q3SqlEditorFactory</a>.</p>
+<h3 class="fn"><a name="installPropertyMap"></a>void Q3DataTable::installPropertyMap ( <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a> * <i>m</i> )</h3>
+<p>Installs a new property map <i>m</i>. This enables the user to create and instantiate their own property maps for use in cell editing. Note that <a href="q3datatable.html">Q3DataTable</a> takes ownership of this pointer, and will delete it when it is no longer needed or when installPropertMap() is called again.</p>
+<p>See also <a href="q3sqlpropertymap.html">Q3SqlPropertyMap</a>.</p>
+<h3 class="fn"><a name="paintField"></a>void Q3DataTable::paintField ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qsqlfield.html">QSqlField</a> * <i>field</i>, const <a href="qrect.html">QRect</a> &amp; <i>cr</i>, bool <i>selected</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the <i>field</i> on the painter <i>p</i>. The painter has already been translated to the appropriate cell's origin where the <i>field</i> is to be rendered. <i>cr</i> describes the cell coordinates in the content coordinate system. The <i>selected</i> parameter is ignored.</p>
+<p>If you want to draw custom field content you must reimplement paintField() to do the custom drawing. The default implementation renders the <i>field</i> value as text. If the field is NULL, <a href="q3datatable.html#nullText-prop">nullText</a>() is displayed in the cell. If the field is Boolean, <a href="q3datatable.html#trueText-prop">trueText</a>() or <a href="q3datatable.html#falseText-prop">falseText</a>() is displayed as appropriate.</p>
+<h3 class="fn"><a name="primeDelete"></a>void Q3DataTable::primeDelete ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after the cursor is primed for delete by the table, when a delete action is beginning on the table. The <i>buf</i> parameter points to the edit buffer being deleted. Connect to this signal in order to, for example, record auditing information on deletions.</p>
+<h3 class="fn"><a name="primeInsert"></a>void Q3DataTable::primeInsert ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after the cursor is primed for insert by the table, when an insert action is beginning on the table. The <i>buf</i> parameter points to the edit buffer being inserted. Connect to this signal in order to, for example, prime the record buffer with default data values.</p>
+<h3 class="fn"><a name="primeUpdate"></a>void Q3DataTable::primeUpdate ( <a href="qsqlrecord.html">QSqlRecord</a> * <i>buf</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after the cursor is primed for update by the table, when an update action is beginning on the table. The <i>buf</i> parameter points to the edit buffer being updated. Connect to this signal in order to, for example, provide some visual feedback that the user is in 'edit mode'.</p>
+<h3 class="fn"><a name="refresh"></a>void Q3DataTable::refresh ( <a href="q3datatable.html#Refresh-enum">Refresh</a> <i>mode</i> )</h3>
+<p>Refreshes the table. If there is no currently defined cursor (see <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>()), nothing happens. The <i>mode</i> parameter determines which type of refresh will take place.</p>
+<p>See also <a href="q3datatable.html#Refresh-enum">Refresh</a>, <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>(), and <a href="q3datatable.html#addColumn">addColumn</a>().</p>
+<h3 class="fn"><a name="refresh-2"></a>void Q3DataTable::refresh ()&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Refreshes the table. The cursor is refreshed using the current filter, the current sort, and the currently defined columns. Equivalent to calling refresh( <a href="q3datatable.html#Refresh-enum">Q3DataTable::RefreshData</a> ).</p>
+<h3 class="fn"><a name="removeColumn"></a>void Q3DataTable::removeColumn ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes column <i>col</i> from the list of columns to be displayed. If <i>col</i> does not exist, nothing happens.</p>
+<p>Reimplemented from <a href="q3table.html#removeColumn">Q3Table</a>.</p>
+<p>See also <a href="qsqlfield.html">QSqlField</a>.</p>
+<h3 class="fn"><a name="repaintCell"></a>void Q3DataTable::repaintCell ( int <i>row</i>, int <i>col</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Repaints the cell at <i>row</i>, <i>col</i>.</p>
+<h3 class="fn"><a name="reset"></a>void Q3DataTable::reset ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Resets the table so that it displays no data.</p>
+<p>See also <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>().</p>
+<h3 class="fn"><a name="setAutoDelete"></a>void Q3DataTable::setAutoDelete ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the cursor auto-delete flag to <i>enable</i>. If <i>enable</i> is true, the table will automatically delete the cursor specified by <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>(). If <i>enable</i> is false (the default), the cursor will not be deleted.</p>
+<p>See also <a href="q3datatable.html#autoDelete">autoDelete</a>().</p>
+<h3 class="fn"><a name="setColumn"></a>void Q3DataTable::setColumn ( <a href="qtglobal.html#uint-typedef">uint</a> <i>col</i>, const <a href="qstring.html">QString</a> &amp; <i>fieldName</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> = QString(), int <i>width</i> = -1, const QIconSet &amp; <i>iconset</i> = QIconSet() )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the <i>col</i> column to display using the field <i>fieldName</i>, column label <i>label</i>, width <i>width</i> and iconset <i>iconset</i>.</p>
+<p>If <i>label</i> is specified, it is used as the column's header label, otherwise the field's display label is used when <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>() is called. The <i>iconset</i> is used to set the icon used by the column header; by default there is no icon.</p>
+<p>See also <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>() and <a href="q3datatable.html#refresh">refresh</a>().</p>
+<h3 class="fn"><a name="setColumnWidth"></a>void Q3DataTable::setColumnWidth ( int <i>col</i>, int <i>w</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sets the column <i>col</i> to the width <i>w</i>. Note that unlike <a href="q3table.html">Q3Table</a> the <a href="q3datatable.html">Q3DataTable</a> is not immediately redrawn, you must call refresh(<a href="q3datatable.html#Refresh-enum">Q3DataTable::RefreshColumns</a>) yourself.</p>
+<p>Reimplemented from <a href="q3table.html#setColumnWidth">Q3Table</a>.</p>
+<p>See also <a href="q3datatable.html#refresh">refresh</a>().</p>
+<h3 class="fn"><a name="setSize"></a>void Q3DataTable::setSize ( <a href="q3sqlcursor.html">Q3SqlCursor</a> * <i>sql</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>If the cursor's <i>sql</i> driver supports query sizes, the number of rows in the table is set to the size of the query. Otherwise, the table dynamically resizes itself as it is scrolled. If <i>sql</i> is not active, it is made active by issuing a select() on the cursor using the <i>sql</i> cursor's current filter and current sort.</p>
+<h3 class="fn"><a name="setSqlCursor"></a>void Q3DataTable::setSqlCursor ( <a href="q3sqlcursor.html">Q3SqlCursor</a> * <i>cursor</i> = 0, bool <i>autoPopulate</i> = false, bool <i>autoDelete</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets <i>cursor</i> as the data source for the table. To force the display of the data from <i>cursor</i>, use <a href="q3datatable.html#refresh">refresh</a>(). If <i>autoPopulate</i> is true, columns are automatically created based upon the fields in the <i>cursor</i> record. If <i>autoDelete</i> is true (the default is false), the table will take ownership of the <i>cursor</i> and delete it when appropriate. If the <i>cursor</i> is read-only, the table becomes read-only. The table adopts the cursor's driver's definition for representing NULL values as strings.</p>
+<p>See also <a href="q3datatable.html#sqlCursor">sqlCursor</a>(), <a href="q3datatable.html#refresh">refresh</a>(), <a href="q3table.html#readOnly-prop">setReadOnly</a>(), <a href="q3datatable.html#setAutoDelete">setAutoDelete</a>(), and <a href="qsqldriver-qt3.html#nullText">QSqlDriver::nullText</a>().</p>
+<h3 class="fn"><a name="sortAscending"></a>void Q3DataTable::sortAscending ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sorts column <i>col</i> in ascending order.</p>
+<p>See also <a href="q3table.html#sorting-prop">setSorting</a>().</p>
+<h3 class="fn"><a name="sortColumn"></a>void Q3DataTable::sortColumn ( int <i>col</i>, bool <i>ascending</i> = true, bool <i>wholeRows</i> = false )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sorts column <i>col</i> in ascending order if <i>ascending</i> is true (the default); otherwise sorts in descending order.</p>
+<p>The <i>wholeRows</i> parameter is ignored; <a href="q3datatable.html">Q3DataTable</a> always sorts whole rows by the specified column.</p>
+<p>Reimplemented from <a href="q3table.html#sortColumn">Q3Table</a>.</p>
+<h3 class="fn"><a name="sortDescending"></a>void Q3DataTable::sortDescending ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual slot]</tt></h3>
+<p>Sorts column <i>col</i> in descending order.</p>
+<p>See also <a href="q3table.html#sorting-prop">setSorting</a>().</p>
+<h3 class="fn"><a name="sqlCursor"></a><a href="q3sqlcursor.html">Q3SqlCursor</a> * Q3DataTable::sqlCursor () const</h3>
+<p>Returns the cursor used by the data table.</p>
+<p>See also <a href="q3datatable.html#setSqlCursor">setSqlCursor</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3DataTable::text ( int <i>row</i>, int <i>col</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the text in cell <i>row</i>, <i>col</i>, or an empty string if the cell is empty. If the cell's value is NULL then <a href="q3datatable.html#nullText-prop">nullText</a>() will be returned. If the cell does not exist then an empty string is returned.</p>
+<p>Reimplemented from <a href="q3table.html#text">Q3Table</a>.</p>
+<h3 class="fn"><a name="updateCurrent"></a>bool Q3DataTable::updateCurrent ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>For an editable table, issues an update using the cursor's edit buffer. If there is no current cursor or there is no current selection, nothing happens. If <a href="q3datatable.html#confirmEdits-prop">confirmEdits</a>() or <a href="q3datatable.html#confirmUpdate-prop">confirmUpdate</a>() is true, <a href="q3datatable.html#confirmEdit">confirmEdit</a>() is called to confirm the update. Returns true if the update succeeded; otherwise returns false.</p>
+<p>The underlying cursor must have a valid primary index to ensure that a unique record is updated within the database otherwise the database may be changed to an inconsistent state.</p>
+<h3 class="fn"><a name="value"></a><a href="qvariant.html">QVariant</a> Q3DataTable::value ( int <i>row</i>, int <i>col</i> ) const</h3>
+<p>Returns the value in cell <i>row</i>, <i>col</i>, or an invalid value if the cell does not exist or has no value.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

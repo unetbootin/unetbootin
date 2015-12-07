@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/dbus/qdbusreply.cpp -->
+<head>
+  <title>Qt 4.4: QDBusReply Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDBusReply Class Reference<br /><span class="small-subtitle">[<a href="qtdbus.html">QtDBus</a> module]</span>
+</h1>
+<p>The QDBusReply class stores the reply for a method call to a remote object. <a href="#details">More...</a></p>
+<pre> #include &lt;QDBusReply&gt;</pre><p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdbusreply-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdbusreply.html#QDBusReply">QDBusReply</a></b> ( const QDBusMessage &amp; <i>reply</i> )</li>
+<li><div class="fn"/><b><a href="qdbusreply.html#QDBusReply-2">QDBusReply</a></b> ( const QDBusError &amp; <i>error</i> = QDBusError() )</li>
+<li><div class="fn"/>const QDBusError &amp; <b><a href="qdbusreply.html#error">error</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qdbusreply.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>Type <b><a href="qdbusreply.html#value">value</a></b> () const</li>
+<li><div class="fn"/><b><a href="qdbusreply.html#operator-Type">operator Type</a></b> () const</li>
+<li><div class="fn"/>QDBusReply &amp; <b><a href="qdbusreply.html#operator-eq">operator=</a></b> ( const QDBusMessage &amp; <i>message</i> )</li>
+<li><div class="fn"/>QDBusReply &amp; <b><a href="qdbusreply.html#operator-eq-2">operator=</a></b> ( const QDBusError &amp; <i>error</i> )</li>
+<li><div class="fn"/>QDBusReply &amp; <b><a href="qdbusreply.html#operator-eq-3">operator=</a></b> ( const QDBusReply &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDBusReply class stores the reply for a method call to a remote object.</p>
+<p>A QDBusReply object is a subset of the <a href="qdbusmessage.html">QDBusMessage</a> object that represents a method call's reply. It contains only the first output argument or the error code and is used by <a href="qdbusinterface.html">QDBusInterface</a>-derived classes to allow returning the error code as the function's return argument.</p>
+<p>It can be used in the following manner:</p>
+<pre>         QDBusReply&lt;QString&gt; reply = interface-&gt;call(&quot;RemoteMethod&quot;);
+         if (reply.isValid())
+             // use the returned value
+             useValue(reply.value());
+         else
+             // call failed. Show an error condition.
+             showError(reply.error());</pre>
+<p>If the remote method call cannot fail, you can skip the error checking:</p>
+<pre>         QString reply = interface-&gt;call(&quot;RemoteMethod&quot;);</pre>
+<p>However, if it does fail under those conditions, the value returned by <a href="qdbusreply.html#value">QDBusReply::value</a>() is a default-constructed value. It may be indistinguishable from a valid return value.</p>
+<p>QDBusReply objects are used for remote calls that have no output arguments or return values (i.e&#x2e;, they have a &quot;void&quot; return type). Use the <a href="qdbusreply.html#isValid">isValid</a>() function to test if the reply succeeded.</p>
+<p>See also <a href="qdbusmessage.html">QDBusMessage</a> and <a href="qdbusinterface.html">QDBusInterface</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDBusReply"></a>QDBusReply::QDBusReply ( const <a href="qdbusmessage.html">QDBusMessage</a> &amp; <i>reply</i> )</h3>
+<p>Automatically construct a <a href="qdbusreply.html">QDBusReply</a> object from the reply message <i>reply</i>, extracting the first return value from it if it is a success reply.</p>
+<h3 class="fn"><a name="QDBusReply-2"></a>QDBusReply::QDBusReply ( const <a href="qdbuserror.html">QDBusError</a> &amp; <i>error</i> = QDBusError() )</h3>
+<p>Constructs an error reply from the D-Bus error code given by <i>error</i>.</p>
+<h3 class="fn"><a name="error"></a>const <a href="qdbuserror.html">QDBusError</a> &amp; QDBusReply::error ()</h3>
+<p>Returns the error code that was returned from the remote function call. If the remote call did not return an error (i.e&#x2e;, if it succeeded), then the <a href="qdbuserror.html">QDBusError</a> object that is returned will not be a valid error code (<a href="qdbuserror.html#isValid">QDBusError::isValid</a>() will return false).</p>
+<p>See also <a href="qdbusreply.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QDBusReply::isValid () const</h3>
+<p>Returns true if no error occurred; otherwise, returns false.</p>
+<p>See also <a href="qdbusreply.html#error">error</a>().</p>
+<h3 class="fn"><a name="value"></a>Type QDBusReply::value () const</h3>
+<p>Returns the remote function's calls return value. If the remote call returned with an error, the return value of this function is undefined and may be undistinguishable from a valid return value.</p>
+<p>This function is not available if the remote call returns <tt>void</tt>.</p>
+<h3 class="fn"><a name="operator-Type"></a>QDBusReply::operator Type () const</h3>
+<p>Returns the same as <a href="qdbusreply.html#value">value</a>().</p>
+<p>This function is not available if the remote call returns <tt>void</tt>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QDBusReply &amp; QDBusReply::operator= ( const <a href="qdbusmessage.html">QDBusMessage</a> &amp; <i>message</i> )</h3>
+<p>Makes this object contain the reply specified by message <i>message</i>. If <i>message</i> is an error message, this function will copy the error code and message into this object</p>
+<p>If <i>message</i> is a standard reply message and contains at least one parameter, it will be copied into this object, as long as it is of the correct type. If it's not of the same type as this <a href="qdbuserror.html">QDBusError</a> object, this function will instead set an error code indicating a type mismatch.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>QDBusReply &amp; QDBusReply::operator= ( const <a href="qdbuserror.html">QDBusError</a> &amp; <i>error</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets this object to contain the error code given by <i>error</i>. You can later access it with <a href="qdbusreply.html#error">error</a>().</p>
+<h3 class="fn"><a name="operator-eq-3"></a>QDBusReply &amp; QDBusReply::operator= ( const QDBusReply &amp; <i>other</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Makes this object be a copy of the object <i>other</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

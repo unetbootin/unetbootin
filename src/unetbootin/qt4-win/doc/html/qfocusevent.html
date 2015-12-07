@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QFocusEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFocusEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFocusEvent class contains event parameters for widget focus events. <a href="#details">More...</a></p>
+<pre> #include &lt;QFocusEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qfocusevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qfocusevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfocusevent.html#QFocusEvent">QFocusEvent</a></b> ( Type <i>type</i>, Qt::FocusReason <i>reason</i> = Qt::OtherFocusReason )</li>
+<li><div class="fn"/>bool <b><a href="qfocusevent.html#gotFocus">gotFocus</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qfocusevent.html#lostFocus">lostFocus</a></b> () const</li>
+<li><div class="fn"/>Qt::FocusReason <b><a href="qfocusevent.html#reason">reason</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFocusEvent class contains event parameters for widget focus events.</p>
+<p>Focus events are sent to widgets when the keyboard input focus changes. Focus events occur due to mouse actions, key presses (such as <b>Tab</b> or <b>Backtab</b>), the window system, popup menus, keyboard shortcuts, or other application-specific reasons. The reason for a particular focus event is returned by <a href="qfocusevent.html#reason">reason</a>() in the appropriate event handler.</p>
+<p>The event handlers <a href="qwidget.html#focusInEvent">QWidget::focusInEvent</a>() and <a href="qwidget.html#focusOutEvent">QWidget::focusOutEvent</a>() receive focus events.</p>
+<p>See also <a href="qwidget.html#setFocus">QWidget::setFocus</a>(), <a href="qwidget.html#focusPolicy-prop">QWidget::setFocusPolicy</a>(), and <a href="focus.html">Keyboard Focus</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFocusEvent"></a>QFocusEvent::QFocusEvent ( <a href="qevent.html#Type-enum">Type</a> <i>type</i>, <a href="qt.html#FocusReason-enum">Qt::FocusReason</a> <i>reason</i> = Qt::OtherFocusReason )</h3>
+<p>Constructs a focus event object.</p>
+<p>The <i>type</i> parameter must be either <a href="qevent.html#Type-enum">QEvent::FocusIn</a> or <a href="qevent.html#Type-enum">QEvent::FocusOut</a>. The <i>reason</i> describes the cause of the change in focus.</p>
+<h3 class="fn"><a name="gotFocus"></a>bool QFocusEvent::gotFocus () const</h3>
+<p>Returns true if <a href="qevent.html#type">type</a>() is <a href="qevent.html#Type-enum">QEvent::FocusIn</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="lostFocus"></a>bool QFocusEvent::lostFocus () const</h3>
+<p>Returns true if <a href="qevent.html#type">type</a>() is <a href="qevent.html#Type-enum">QEvent::FocusOut</a>; otherwise returns false.</p>
+<h3 class="fn"><a name="reason"></a><a href="qt.html#FocusReason-enum">Qt::FocusReason</a> QFocusEvent::reason () const</h3>
+<p>Returns the reason for this focus event.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

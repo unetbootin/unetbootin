@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/kernel/qcoreevent.cpp -->
+<head>
+  <title>Qt 4.4: QEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QEvent Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QEvent class is the base class of all event classes. Event objects contain event parameters. <a href="#details">More...</a></p>
+<pre> #include &lt;QEvent&gt;</pre><p>Inherited by <a href="qaccessibleevent.html">QAccessibleEvent</a>, <a href="qactionevent.html">QActionEvent</a>, <a href="qchildevent.html">QChildEvent</a>, <a href="qcloseevent.html">QCloseEvent</a>, <a href="qcustomevent.html" class="compat">QCustomEvent</a>, <a href="qdragleaveevent.html">QDragLeaveEvent</a>, <a href="qdropevent.html">QDropEvent</a>, <a href="qdynamicpropertychangeevent.html">QDynamicPropertyChangeEvent</a>, <a href="qfileopenevent.html">QFileOpenEvent</a>, <a href="qfocusevent.html">QFocusEvent</a>, <a href="qgraphicssceneevent.html">QGraphicsSceneEvent</a>, <a href="qhelpevent.html">QHelpEvent</a>, <a href="qhideevent.html">QHideEvent</a>, <a href="qhoverevent.html">QHoverEvent</a>, <a href="qicondragevent.html">QIconDragEvent</a>, <a href="qinputevent.html">QInputEvent</a>, <a href="qinputmethodevent.html">QInputMethodEvent</a>, <a href="qmoveevent.html">QMoveEvent</a>, <a href="qpaintevent.html">QPaintEvent</a>, <a href="qresizeevent.html">QResizeEvent</a>, <a href="qshortcutevent.html">QShortcutEvent</a>, <a href="qshowevent.html">QShowEvent</a>, <a href="qstatustipevent.html">QStatusTipEvent</a>, <a href="qtimerevent.html">QTimerEvent</a>, <a href="qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a>, and <a href="qwindowstatechangeevent.html">QWindowStateChangeEvent</a>.</p>
+<ul>
+<li><a href="qevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qevent.html#Type-enum">Type</a></b> { None, AccessibilityDescription, AccessibilityHelp, AccessibilityPrepare, ..., MaxUser }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qevent.html#accepted-prop">accepted</a></b> : bool</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qevent.html#QEvent">QEvent</a></b> ( Type <i>type</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qevent.html#dtor.QEvent">~QEvent</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qevent.html#accept">accept</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qevent.html#ignore">ignore</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qevent.html#accepted-prop">isAccepted</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qevent.html#accepted-prop">setAccepted</a></b> ( bool <i>accepted</i> )</li>
+<li><div class="fn"/>bool <b><a href="qevent.html#spontaneous">spontaneous</a></b> () const</li>
+<li><div class="fn"/>Type <b><a href="qevent.html#type">type</a></b> () const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qevent.html#registerEventType">registerEventType</a></b> ( int <i>hint</i> = -1 )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QEvent class is the base class of all event classes. Event objects contain event parameters.</p>
+<p>Qt's main event loop (<a href="qcoreapplication.html#exec">QCoreApplication::exec</a>()) fetches native window system events from the event queue, translates them into QEvents, and sends the translated events to <a href="qobject.html">QObject</a>s.</p>
+<p>In general, events come from the underlying window system (<a href="qevent.html#spontaneous">spontaneous</a>() returns true), but it is also possible to manually send events using <a href="qcoreapplication.html#sendEvent">QCoreApplication::sendEvent</a>() and <a href="qcoreapplication.html#postEvent">QCoreApplication::postEvent</a>() (<a href="qevent.html#spontaneous">spontaneous</a>() returns false).</p>
+<p>QObjects receive events by having their <a href="qobject.html#event">QObject::event</a>() function called. The function can be reimplemented in subclasses to customize event handling and add additional event types; <a href="qwidget.html#event">QWidget::event</a>() is a notable example. By default, events are dispatched to event handlers like <a href="qobject.html#timerEvent">QObject::timerEvent</a>() and <a href="qwidget.html#mouseMoveEvent">QWidget::mouseMoveEvent</a>(). <a href="qobject.html#installEventFilter">QObject::installEventFilter</a>() allows an object to intercept events destined for another object.</p>
+<p>The basic QEvent contains only an event type parameter and an &quot;accept&quot; flag. The accept flag set with <a href="qevent.html#accept">accept</a>(), and cleared with <a href="qevent.html#ignore">ignore</a>(). It is set by default, but don't rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>Subclasses of QEvent contain additional parameters that describe the particular event.</p>
+<p>See also <a href="qobject.html#event">QObject::event</a>(), <a href="qobject.html#installEventFilter">QObject::installEventFilter</a>(), <a href="qwidget.html#event">QWidget::event</a>(), <a href="qcoreapplication.html#sendEvent">QCoreApplication::sendEvent</a>(), <a href="qcoreapplication.html#postEvent">QCoreApplication::postEvent</a>(), and <a href="qcoreapplication.html#processEvents">QCoreApplication::processEvents</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Type-enum"></a>enum QEvent::Type</h3>
+<p>This enum type defines the valid event types in Qt. The event types and the specialized classes for each type are as follows:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QEvent::None</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Not an event.</td></tr>
+<tr><td valign="top"><tt>QEvent::AccessibilityDescription</tt></td><td align="center" valign="top"><tt>130</tt></td><td valign="top">Used to query accessibility description texts (<a href="qaccessibleevent.html">QAccessibleEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::AccessibilityHelp</tt></td><td align="center" valign="top"><tt>119</tt></td><td valign="top">Used to query accessibility help texts (<a href="qaccessibleevent.html">QAccessibleEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::AccessibilityPrepare</tt></td><td align="center" valign="top"><tt>86</tt></td><td valign="top">Accessibility information is requested.</td></tr>
+<tr><td valign="top"><tt>QEvent::ActionAdded</tt></td><td align="center" valign="top"><tt>114</tt></td><td valign="top">A new action has been added (<a href="qactionevent.html">QActionEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ActionChanged</tt></td><td align="center" valign="top"><tt>113</tt></td><td valign="top">An action has been changed (<a href="qactionevent.html">QActionEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ActionRemoved</tt></td><td align="center" valign="top"><tt>115</tt></td><td valign="top">An action has been removed (<a href="qactionevent.html">QActionEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ActivationChange</tt></td><td align="center" valign="top"><tt>99</tt></td><td valign="top">A widget's top-level window activation state has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationActivate</tt></td><td align="center" valign="top"><tt>121</tt></td><td valign="top">The application has been made available to the user.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationActivated</tt></td><td align="center" valign="top"><tt>ApplicationActivate</tt></td><td valign="top">This enum has been deprecated. Use ApplicationActivate instead.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationDeactivate</tt></td><td align="center" valign="top"><tt>122</tt></td><td valign="top">The application has been suspended, and is unavailable to the user.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationFontChange</tt></td><td align="center" valign="top"><tt>36</tt></td><td valign="top">The default application font has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationLayoutDirectionChange</tt></td><td align="center" valign="top"><tt>37</tt></td><td valign="top">The default application layout direction has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationPaletteChange</tt></td><td align="center" valign="top"><tt>38</tt></td><td valign="top">The default application palette has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ApplicationWindowIconChange</tt></td><td align="center" valign="top"><tt>35</tt></td><td valign="top">The application's icon has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ChildAdded</tt></td><td align="center" valign="top"><tt>68</tt></td><td valign="top">An object gets a child (<a href="qchildevent.html">QChildEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ChildInserted</tt></td><td align="center" valign="top"><tt>70</tt></td><td valign="top">An object gets a child (<a href="qchildevent.html">QChildEvent</a>). <a href="qt3support.html">Qt3Support</a> only, use ChildAdded instead.</td></tr>
+<tr><td valign="top"><tt>QEvent::ChildPolished</tt></td><td align="center" valign="top"><tt>69</tt></td><td valign="top">A widget child gets polished (<a href="qchildevent.html">QChildEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ChildRemoved</tt></td><td align="center" valign="top"><tt>71</tt></td><td valign="top">An object loses a child (<a href="qchildevent.html">QChildEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Clipboard</tt></td><td align="center" valign="top"><tt>40</tt></td><td valign="top">The clipboard contents have changed (QClipboardEvent).</td></tr>
+<tr><td valign="top"><tt>QEvent::Close</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">Widget was closed (<a href="qcloseevent.html">QCloseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ContentsRectChange</tt></td><td align="center" valign="top"><tt>178</tt></td><td valign="top">The margins of the widget's content rect changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ContextMenu</tt></td><td align="center" valign="top"><tt>82</tt></td><td valign="top">Context popup menu (<a href="qcontextmenuevent.html">QContextMenuEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::CursorChange</tt></td><td align="center" valign="top"><tt>183</tt></td><td valign="top">The widget's cursor has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::DeferredDelete</tt></td><td align="center" valign="top"><tt>52</tt></td><td valign="top">The object will be deleted after it has cleaned up.</td></tr>
+<tr><td valign="top"><tt>QEvent::DragEnter</tt></td><td align="center" valign="top"><tt>60</tt></td><td valign="top">The cursor enters a widget during a drag and drop operation (<a href="qdragenterevent.html">QDragEnterEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::DragLeave</tt></td><td align="center" valign="top"><tt>62</tt></td><td valign="top">The cursor leaves a widget during a drag and drop operation (<a href="qdragleaveevent.html">QDragLeaveEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::DragMove</tt></td><td align="center" valign="top"><tt>61</tt></td><td valign="top">A drag and drop operation is in progress (<a href="qdragmoveevent.html">QDragMoveEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Drop</tt></td><td align="center" valign="top"><tt>63</tt></td><td valign="top">A drag and drop operation is completed (<a href="qdropevent.html">QDropEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::EnabledChange</tt></td><td align="center" valign="top"><tt>98</tt></td><td valign="top">Widget's enabled state has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::Enter</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">Mouse enters widget's boundaries.</td></tr>
+<tr><td valign="top"><tt>QEvent::EnterEditFocus</tt></td><td align="center" valign="top"><tt>150</tt></td><td valign="top">An editor widget gains focus for editing.</td></tr>
+<tr><td valign="top"><tt>QEvent::EnterWhatsThisMode</tt></td><td align="center" valign="top"><tt>124</tt></td><td valign="top">Send to toplevel widgets when the application enters &quot;What's This?&quot; mode.</td></tr>
+<tr><td valign="top"><tt>QEvent::FileOpen</tt></td><td align="center" valign="top"><tt>116</tt></td><td valign="top">File open request (<a href="qfileopenevent.html">QFileOpenEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::FocusIn</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Widget gains keyboard focus (<a href="qfocusevent.html">QFocusEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::FocusOut</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Widget loses keyboard focus (<a href="qfocusevent.html">QFocusEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::FontChange</tt></td><td align="center" valign="top"><tt>97</tt></td><td valign="top">Widget's font has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::GrabKeyboard</tt></td><td align="center" valign="top"><tt>188</tt></td><td valign="top">Item gains keyboard grab (<a href="qgraphicsitem.html">QGraphicsItem</a> only).</td></tr>
+<tr><td valign="top"><tt>QEvent::GrabMouse</tt></td><td align="center" valign="top"><tt>186</tt></td><td valign="top">Item gains mouse grab (<a href="qgraphicsitem.html">QGraphicsItem</a> only).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneContextMenu</tt></td><td align="center" valign="top"><tt>159</tt></td><td valign="top">Context popup menu over a graphics scene (<a href="qgraphicsscenecontextmenuevent.html">QGraphicsSceneContextMenuEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneDragEnter</tt></td><td align="center" valign="top"><tt>164</tt></td><td valign="top">The cursor enters a graphics scene during a drag and drop operation.</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneDragLeave</tt></td><td align="center" valign="top"><tt>166</tt></td><td valign="top">The cursor leaves a graphics scene during a drag and drop operation.</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneDragMove</tt></td><td align="center" valign="top"><tt>165</tt></td><td valign="top">A drag and drop operation is in progress over a scene.</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneDrop</tt></td><td align="center" valign="top"><tt>167</tt></td><td valign="top">A drag and drop operation is completed over a scene.</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneHelp</tt></td><td align="center" valign="top"><tt>163</tt></td><td valign="top">The user requests help for a graphics scene (<a href="qhelpevent.html">QHelpEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneHoverEnter</tt></td><td align="center" valign="top"><tt>160</tt></td><td valign="top">The mouse cursor enters a hover item in a graphics scene (<a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneHoverLeave</tt></td><td align="center" valign="top"><tt>162</tt></td><td valign="top">The mouse cursor leaves a hover item in a graphics scene (<a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneHoverMove</tt></td><td align="center" valign="top"><tt>161</tt></td><td valign="top">The mouse cursor moves inside a hover item in a graphics scene (<a href="qgraphicsscenehoverevent.html">QGraphicsSceneHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneMouseDoubleClick</tt></td><td align="center" valign="top"><tt>158</tt></td><td valign="top">Mouse press again (double click) in a graphics scene (<a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneMouseMove</tt></td><td align="center" valign="top"><tt>155</tt></td><td valign="top">Move mouse in a graphics scene (<a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneMousePress</tt></td><td align="center" valign="top"><tt>156</tt></td><td valign="top">Mouse press in a graphics scene (<a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneMouseRelease</tt></td><td align="center" valign="top"><tt>157</tt></td><td valign="top">Mouse release in a graphics scene (<a href="qgraphicsscenemouseevent.html">QGraphicsSceneMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneMove</tt></td><td align="center" valign="top"><tt>182</tt></td><td valign="top">Widget was moved (<a href="qgraphicsscenemoveevent.html">QGraphicsSceneMoveEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneResize</tt></td><td align="center" valign="top"><tt>181</tt></td><td valign="top">Widget was resized (<a href="qgraphicssceneresizeevent.html">QGraphicsSceneResizeEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::GraphicsSceneWheel</tt></td><td align="center" valign="top"><tt>168</tt></td><td valign="top">Mouse wheel rolled in a graphics scene (<a href="qgraphicsscenewheelevent.html">QGraphicsSceneWheelEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Hide</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">Widget was hidden (<a href="qhideevent.html">QHideEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::HideToParent</tt></td><td align="center" valign="top"><tt>27</tt></td><td valign="top">A child widget has been hidden.</td></tr>
+<tr><td valign="top"><tt>QEvent::HoverEnter</tt></td><td align="center" valign="top"><tt>127</tt></td><td valign="top">The mouse cursor enters a hover widget (<a href="qhoverevent.html">QHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::HoverLeave</tt></td><td align="center" valign="top"><tt>128</tt></td><td valign="top">The mouse cursor leaves a hover widget (<a href="qhoverevent.html">QHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::HoverMove</tt></td><td align="center" valign="top"><tt>129</tt></td><td valign="top">The mouse cursor moves inside a hover widget (<a href="qhoverevent.html">QHoverEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::IconDrag</tt></td><td align="center" valign="top"><tt>96</tt></td><td valign="top">The main icon of a window has been dragged away (<a href="qicondragevent.html">QIconDragEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::IconTextChange</tt></td><td align="center" valign="top"><tt>101</tt></td><td valign="top">Widget's icon text has been changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::InputMethod</tt></td><td align="center" valign="top"><tt>83</tt></td><td valign="top">An input method is being used (<a href="qinputmethodevent.html">QInputMethodEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::KeyPress</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Key press (<a href="qkeyevent.html">QKeyEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::KeyRelease</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Key release (<a href="qkeyevent.html">QKeyEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::LanguageChange</tt></td><td align="center" valign="top"><tt>89</tt></td><td valign="top">The application translation changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::LayoutDirectionChange</tt></td><td align="center" valign="top"><tt>90</tt></td><td valign="top">The direction of layouts changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::LayoutRequest</tt></td><td align="center" valign="top"><tt>76</tt></td><td valign="top">Widget layout needs to be redone.</td></tr>
+<tr><td valign="top"><tt>QEvent::Leave</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">Mouse leaves widget's boundaries.</td></tr>
+<tr><td valign="top"><tt>QEvent::LeaveEditFocus</tt></td><td align="center" valign="top"><tt>151</tt></td><td valign="top">An editor widget loses focus for editing.</td></tr>
+<tr><td valign="top"><tt>QEvent::LeaveWhatsThisMode</tt></td><td align="center" valign="top"><tt>125</tt></td><td valign="top">Send to toplevel widgets when the application leaves &quot;What's This?&quot; mode.</td></tr>
+<tr><td valign="top"><tt>QEvent::LocaleChange</tt></td><td align="center" valign="top"><tt>88</tt></td><td valign="top">The system locale has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::NonClientAreaMouseButtonDblClick</tt></td><td align="center" valign="top"><tt>176</tt></td><td valign="top">A mouse double click occurred outside the client area.</td></tr>
+<tr><td valign="top"><tt>QEvent::NonClientAreaMouseButtonPress</tt></td><td align="center" valign="top"><tt>174</tt></td><td valign="top">A mouse button press occurred outside the client area.</td></tr>
+<tr><td valign="top"><tt>QEvent::NonClientAreaMouseButtonRelease</tt></td><td align="center" valign="top"><tt>175</tt></td><td valign="top">A mouse button release occurred outside the client area.</td></tr>
+<tr><td valign="top"><tt>QEvent::NonClientAreaMouseMove</tt></td><td align="center" valign="top"><tt>173</tt></td><td valign="top">A mouse move occurred outside the client area.</td></tr>
+<tr><td valign="top"><tt>QEvent::MacSizeChange</tt></td><td align="center" valign="top"><tt>177</tt></td><td valign="top">The user changed his widget sizes (Mac OS X only).</td></tr>
+<tr><td valign="top"><tt>QEvent::MenubarUpdated</tt></td><td align="center" valign="top"><tt>153</tt></td><td valign="top">The window's menu bar has been updated.</td></tr>
+<tr><td valign="top"><tt>QEvent::MetaCall</tt></td><td align="center" valign="top"><tt>43</tt></td><td valign="top">An asynchronous method invocation via <a href="qmetaobject.html#invokeMethod">QMetaObject::invokeMethod</a>().</td></tr>
+<tr><td valign="top"><tt>QEvent::ModifiedChange</tt></td><td align="center" valign="top"><tt>102</tt></td><td valign="top">Widgets modification state has been changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::MouseButtonDblClick</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Mouse press again (<a href="qmouseevent.html">QMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::MouseButtonPress</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Mouse press (<a href="qmouseevent.html">QMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::MouseButtonRelease</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Mouse release (<a href="qmouseevent.html">QMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::MouseMove</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Mouse move (<a href="qmouseevent.html">QMouseEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::MouseTrackingChange</tt></td><td align="center" valign="top"><tt>109</tt></td><td valign="top">The mouse tracking state has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::Move</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">Widget's position changed (<a href="qmoveevent.html">QMoveEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Paint</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">Screen update necessary (<a href="qpaintevent.html">QPaintEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::PaletteChange</tt></td><td align="center" valign="top"><tt>39</tt></td><td valign="top">Palette of the widget changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::ParentAboutToChange</tt></td><td align="center" valign="top"><tt>131</tt></td><td valign="top">The widget parent is about to change.</td></tr>
+<tr><td valign="top"><tt>QEvent::ParentChange</tt></td><td align="center" valign="top"><tt>21</tt></td><td valign="top">The widget parent has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::Polish</tt></td><td align="center" valign="top"><tt>75</tt></td><td valign="top">The widget is polished.</td></tr>
+<tr><td valign="top"><tt>QEvent::PolishRequest</tt></td><td align="center" valign="top"><tt>74</tt></td><td valign="top">The widget should be polished.</td></tr>
+<tr><td valign="top"><tt>QEvent::QueryWhatsThis</tt></td><td align="center" valign="top"><tt>123</tt></td><td valign="top">The widget should accept the event if it has &quot;What's This?&quot; help.</td></tr>
+<tr><td valign="top"><tt>QEvent::Resize</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">Widget's size changed (<a href="qresizeevent.html">QResizeEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Shortcut</tt></td><td align="center" valign="top"><tt>117</tt></td><td valign="top">Key press in child for shortcut key handling (<a href="qshortcutevent.html">QShortcutEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ShortcutOverride</tt></td><td align="center" valign="top"><tt>51</tt></td><td valign="top">Key press in child, for overriding shortcut key handling (<a href="qkeyevent.html">QKeyEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::Show</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">Widget was shown on screen (<a href="qshowevent.html">QShowEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ShowToParent</tt></td><td align="center" valign="top"><tt>26</tt></td><td valign="top">A child widget has been shown.</td></tr>
+<tr><td valign="top"><tt>QEvent::SockAct</tt></td><td align="center" valign="top"><tt>50</tt></td><td valign="top">Socket activated, used to implement <a href="qsocketnotifier.html">QSocketNotifier</a>.</td></tr>
+<tr><td valign="top"><tt>QEvent::StatusTip</tt></td><td align="center" valign="top"><tt>112</tt></td><td valign="top">A status tip is requested (<a href="qstatustipevent.html">QStatusTipEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::StyleChange</tt></td><td align="center" valign="top"><tt>100</tt></td><td valign="top">Widget's style has been changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::TabletMove</tt></td><td align="center" valign="top"><tt>87</tt></td><td valign="top">Wacom tablet move (<a href="qtabletevent.html">QTabletEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::TabletPress</tt></td><td align="center" valign="top"><tt>92</tt></td><td valign="top">Wacom tablet press (<a href="qtabletevent.html">QTabletEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::TabletRelease</tt></td><td align="center" valign="top"><tt>93</tt></td><td valign="top">Wacom tablet release (<a href="qtabletevent.html">QTabletEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::OkRequest</tt></td><td align="center" valign="top"><tt>94</tt></td><td valign="top">Ok button in decoration pressed. Supported only for Windows CE.</td></tr>
+<tr><td valign="top"><tt>QEvent::TabletEnterProximity</tt></td><td align="center" valign="top"><tt>171</tt></td><td valign="top">Wacom tablet enter proximity event (<a href="qtabletevent.html">QTabletEvent</a>), sent to <a href="qapplication.html">QApplication</a>.</td></tr>
+<tr><td valign="top"><tt>QEvent::TabletLeaveProximity</tt></td><td align="center" valign="top"><tt>172</tt></td><td valign="top">Wacom tablet leave proximity event (<a href="qtabletevent.html">QTabletEvent</a>), sent to <a href="qapplication.html">QApplication</a>.</td></tr>
+<tr><td valign="top"><tt>QEvent::Timer</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Regular timer events (<a href="qtimerevent.html">QTimerEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ToolBarChange</tt></td><td align="center" valign="top"><tt>120</tt></td><td valign="top">The toolbar button is toggled on Mac OS X.</td></tr>
+<tr><td valign="top"><tt>QEvent::ToolTip</tt></td><td align="center" valign="top"><tt>110</tt></td><td valign="top">A tooltip was requested (<a href="qhelpevent.html">QHelpEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::ToolTipChange</tt></td><td align="center" valign="top"><tt>184</tt></td><td valign="top">The widget's tooltip has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::UngrabKeyboard</tt></td><td align="center" valign="top"><tt>189</tt></td><td valign="top">Item loses keyboard grab (<a href="qgraphicsitem.html">QGraphicsItem</a> only).</td></tr>
+<tr><td valign="top"><tt>QEvent::UngrabMouse</tt></td><td align="center" valign="top"><tt>187</tt></td><td valign="top">Item loses mouse grab (<a href="qgraphicsitem.html">QGraphicsItem</a> only).</td></tr>
+<tr><td valign="top"><tt>QEvent::UpdateLater</tt></td><td align="center" valign="top"><tt>78</tt></td><td valign="top">The widget should be queued to be repainted at a later time.</td></tr>
+<tr><td valign="top"><tt>QEvent::UpdateRequest</tt></td><td align="center" valign="top"><tt>77</tt></td><td valign="top">The widget should be repainted.</td></tr>
+<tr><td valign="top"><tt>QEvent::WhatsThis</tt></td><td align="center" valign="top"><tt>111</tt></td><td valign="top">The widget should reveal &quot;What's This?&quot; help (<a href="qhelpevent.html">QHelpEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::WhatsThisClicked</tt></td><td align="center" valign="top"><tt>118</tt></td><td valign="top">A link in a widget's &quot;What's This?&quot; help was clicked.</td></tr>
+<tr><td valign="top"><tt>QEvent::Wheel</tt></td><td align="center" valign="top"><tt>31</tt></td><td valign="top">Mouse wheel rolled (<a href="qwheelevent.html">QWheelEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::WinEventAct</tt></td><td align="center" valign="top"><tt>132</tt></td><td valign="top">A Windows-specific activation event has occurred.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowActivate</tt></td><td align="center" valign="top"><tt>24</tt></td><td valign="top">Window was activated.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowBlocked</tt></td><td align="center" valign="top"><tt>103</tt></td><td valign="top">The window is blocked by a modal dialog.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowDeactivate</tt></td><td align="center" valign="top"><tt>25</tt></td><td valign="top">Window was deactivated.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowIconChange</tt></td><td align="center" valign="top"><tt>34</tt></td><td valign="top">The window's icon has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowStateChange</tt></td><td align="center" valign="top"><tt>105</tt></td><td valign="top">The <a href="qwidget.html#windowState">window's state</a> (minimized, maximized or full-screen) has changed (<a href="qwindowstatechangeevent.html">QWindowStateChangeEvent</a>).</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowTitleChange</tt></td><td align="center" valign="top"><tt>33</tt></td><td valign="top">The window title has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::WindowUnblocked</tt></td><td align="center" valign="top"><tt>104</tt></td><td valign="top">The window is unblocked after a modal dialog exited.</td></tr>
+<tr><td valign="top"><tt>QEvent::ZOrderChange</tt></td><td align="center" valign="top"><tt>126</tt></td><td valign="top">The widget's z-order has changed. This event is never sent to top level windows.</td></tr>
+<tr><td valign="top"><tt>QEvent::KeyboardLayoutChange</tt></td><td align="center" valign="top"><tt>169</tt></td><td valign="top">The keyboard layout has changed.</td></tr>
+<tr><td valign="top"><tt>QEvent::DynamicPropertyChange</tt></td><td align="center" valign="top"><tt>170</tt></td><td valign="top">A dynamic property was added, changed or removed from the object.</td></tr>
+</table></p>
+<p>User events should have values between <tt>User</tt> and <tt>MaxUser</tt>:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QEvent::User</tt></td><td align="center" valign="top"><tt>1000</tt></td><td valign="top">User-defined event.</td></tr>
+<tr><td valign="top"><tt>QEvent::MaxUser</tt></td><td align="center" valign="top"><tt>65535</tt></td><td valign="top">Last user event ID.</td></tr>
+</table></p>
+<p>For convenience, you can use the <a href="qevent.html#registerEventType">registerEventType</a>() function to register and reserve a custom event type for your application. Doing so will allow you to avoid accidentally re-using a custom event type already in use elsewhere in your application.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="accepted-prop"></a>accepted : bool</h3>
+<p>the accept flag of the event object</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget. By default, isAccepted() is set to true, but don't rely on this as subclasses may choose to clear it in their constructor.</p>
+<p>For convenience, the accept flag can also be set with <a href="qevent.html#accept">accept</a>(), and cleared with <a href="qevent.html#ignore">ignore</a>().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isAccepted () const</b></li>
+<li><div class="fn"/><b>void setAccepted ( bool <i>accepted</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QEvent"></a>QEvent::QEvent ( <a href="qevent.html#Type-enum">Type</a> <i>type</i> )</h3>
+<p>Contructs an event object of type <i>type</i>.</p>
+<h3 class="fn"><a name="dtor.QEvent"></a>QEvent::~QEvent ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the event. If it was <a href="qcoreapplication.html#postEvent">posted</a>, it will be removed from the list of events to be posted.</p>
+<h3 class="fn"><a name="accept"></a>void QEvent::accept ()</h3>
+<p>Sets the accept flag of the event object, the equivalent of callign setAccepted(true).</p>
+<p>Setting the accept parameter indicates that the event receiver wants the event. Unwanted events might be propagated to the parent widget.</p>
+<p>See also <a href="qevent.html#ignore">ignore</a>().</p>
+<h3 class="fn"><a name="ignore"></a>void QEvent::ignore ()</h3>
+<p>Clears the accept flag parameter of the event object, the equivalent of calling setAccepted(false).</p>
+<p>Clearing the accept parameter indicates that the event receiver does not want the event. Unwanted events might be propgated to the parent widget.</p>
+<p>See also <a href="qevent.html#accept">accept</a>().</p>
+<h3 class="fn"><a name="registerEventType"></a>int QEvent::registerEventType ( int <i>hint</i> = -1 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Registers and returns a custom event type. The <i>hint</i> provided will be used if it is available, otherwise it will return a value between <a href="qevent.html#Type-enum">QEvent::User</a> and <a href="qevent.html#Type-enum">QEvent::MaxUser</a> that has not yet been registered. The <i>hint</i> is ignored if its value it not between <a href="qevent.html#Type-enum">QEvent::User</a> and <a href="qevent.html#Type-enum">QEvent::MaxUser</a>.</p>
+<p><b>Note:</b> This function is <a href="threads.html#thread-safe">thread-safe</a>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="spontaneous"></a>bool QEvent::spontaneous () const</h3>
+<p>Returns true if the event originated outside the application (a system event); otherwise returns false.</p>
+<p>The return value of this function is not defined for paint events.</p>
+<h3 class="fn"><a name="type"></a><a href="qevent.html#Type-enum">Type</a> QEvent::type () const</h3>
+<p>Returns the event type.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,84 @@
+//! [0]
+    class Employee
+    {
+    public:
+	Employee() : sn( 0 ) { }
+	Employee( const QString& forename, const QString& surname, int salary )
+	    : fn( forename ), sn( surname ), sal( salary )
+	{ }
+
+	void setSalary( int salary ) { sal = salary; }
+
+	QString forename() const { return fn; }
+	QString surname() const { return sn; }
+	int salary() const { return sal; }
+
+    private:
+	QString fn;
+	QString sn;
+	int sal;
+    };
+
+    Q3PtrList<Employee> list;
+    list.setAutoDelete( TRUE ); // the list owns the objects
+
+    list.append( new Employee("John", "Doe", 50000) );
+    list.append( new Employee("Jane", "Williams", 80000) );
+    list.append( new Employee("Tom", "Jones", 60000) );
+
+    Employee *employee;
+    for ( employee = list.first(); employee; employee = list.next() )
+	cout << employee->surname().latin1() << ", " <<
+		employee->forename().latin1() << " earns " <<
+		employee->salary() << endl;
+    cout << endl;
+
+    // very inefficient for big lists
+    for ( uint i = 0; i < list.count(); ++i )
+	if ( list.at(i) )
+	    cout << list.at( i )->surname().latin1() << endl;
+//! [0]
+
+
+//! [1]
+    Doe, John earns 50000
+    Williams, Jane earns 80000
+    Jones, Tom earns 60000
+
+    Doe
+    Williams
+    Jones
+//! [1]
+
+
+//! [2]
+	if ( list.findRef( item ) != -1 )
+	    list.remove();
+//! [2]
+
+
+//! [3]
+    Q3PtrList<Employee> list;
+
+    list.append( new Employee("John", "Doe", 50000) );
+    list.append( new Employee("Jane", "Williams", 80000) );
+    list.append( new Employee("Tom", "Jones", 60000) );
+
+    Q3PtrListIterator<Employee> it( list );
+    Employee *employee;
+    while ( (employee = it.current()) != 0 ) {
+	++it;
+	cout << employee->surname().latin1() << ", " <<
+		employee->forename().latin1() << " earns " <<
+		employee->salary() << endl;
+    }
+//! [3]
+
+
+//! [4]
+    Doe, John earns 50000
+    Williams, Jane earns 80000
+    Jones, Tom earns 60000
+//! [4]
+
+

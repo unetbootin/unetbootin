@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/activeqt-testcon.qdoc -->
+<head>
+  <title>Qt 4.4: testcon - An ActiveX Test Container (ActiveQt)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">testcon - An ActiveX Test Container (ActiveQt)<br /><span class="subtitle"></span>
+</h1>
+<a name="testcon"></a><p>This application implements a generic test container for ActiveX controls. You can insert ActiveX controls installed on your system, and execute methods and modify properties. The container will log information about events and property changes as well as debug output in the log window.</p>
+<p>Parts of the code use internals of the Qt meta object and <a href="activeqt.html#activeqt">ActiveQt</a> framework and are not recommended to be used in application code.</p>
+<p>Use the application to view the slots, signals and porperties available through the QAxWidget class when instantiated with a certain ActiveX, and to test ActiveX controls you implement or want to use in your Qt application.</p>
+<p>The application can load and execute script files in JavaScript, VBScript, Perl and Python (if installed) to automate the controls loaded. Example script files using the QAxWidget2 class are available in the <tt>scripts</tt> subdirectory.</p>
+<p>Note that the qmake project of this example includes a resource file <tt>testcon.rc</tt> with a version resource. This is required by some ActiveX controls (ie. Shockwave ActiveX Controls), which might crash or misbehave otherwise if such version information is missing.</p>
+<p>To build the tool you must first build the <a href="qaxcontainer.html">QAxContainer</a> and the <a href="qaxserver.html">QAxServer</a> libraries. Then run your make tool in <tt>tools/testcon</tt> and run the resulting <tt>testcon.exe</tt>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

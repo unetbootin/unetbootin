@@ -1,0 +1,29 @@
+include(qt-build-docs.qdocconf)
+
+# Ensures that the generated index contains a URL that can be used by the
+# tools documentation (assistant.qdocconf, designer.qdocconf, linguist.qdocconf,
+# qmake.qdocconf).
+
+url                     = ./
+
+# Ensures that the documentation for the tools is not included in the generated
+# .qhp file.
+
+qhp.Qt.excluded   = $QT_SOURCE_TREE/doc/src/assistant-manual.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/simpletextviewer.qdoc \
+                    $QT_SOURCE_TREE/doc/src/designer-manual.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/calculatorbuilder.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/calculatorform.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/customwidgetplugin.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/taskmenuextension.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/containerextension.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/worldtimeclockbuilder.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/worldtimeclockplugin.qdoc \
+                    $QT_SOURCE_TREE/doc/src/linguist-manual.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/hellotr.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/arrowpad.qdoc \
+                    $QT_SOURCE_TREE/doc/src/examples/trollprint.qdoc \
+                    $QT_SOURCE_TREE/doc/src/qmake-manual.qdoc
+
+outputdir         = $QT_BUILD_TREE/doc-build/html-qt
+base              = file:$QT_BUILD_TREE/doc-build/html-qt

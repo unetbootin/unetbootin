@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: browser.cpp Example File (demos/sqlbrowser/browser.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">browser.cpp Example File<br /><span class="small-subtitle">demos/sqlbrowser/browser.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;browser.h&quot;
+ #include &quot;qsqlconnectiondialog.h&quot;
+
+ #include &lt;QtGui&gt;
+ #include &lt;QtSql&gt;
+
+ Browser::Browser(QWidget *parent)
+     : QWidget(parent)
+ {
+     setupUi(this);
+
+     table-&gt;addAction(insertRowAction);
+     table-&gt;addAction(deleteRowAction);
+
+     if (QSqlDatabase::drivers().isEmpty())
+         QMessageBox::information(this, tr(&quot;No database drivers found&quot;),
+                                  tr(&quot;This demo requires at least one Qt database driver. &quot;
+                                     &quot;Please check the documentation how to build the &quot;
+                                     &quot;Qt SQL plugins.&quot;));
+
+     emit statusMessage(tr(&quot;Ready.&quot;));
+ }
+
+ Browser::~Browser()
+ {
+ }
+
+ void Browser::exec()
+ {
+     QSqlQueryModel *model = new QSqlQueryModel(table);
+     model-&gt;setQuery(QSqlQuery(sqlEdit-&gt;toPlainText(), connectionWidget-&gt;currentDatabase()));
+     table-&gt;setModel(model);
+
+     if (model-&gt;lastError().type() != QSqlError::NoError)
+         emit statusMessage(model-&gt;lastError().text());
+     else if (model-&gt;query().isSelect())
+         emit statusMessage(tr(&quot;Query OK.&quot;));
+     else
+         emit statusMessage(tr(&quot;Query OK, number of affected rows: %1&quot;).arg(
+                            model-&gt;query().numRowsAffected()));
+
+     updateActions();
+ }
+
+ QSqlError Browser::addConnection(const QString &amp;driver, const QString &amp;dbName, const QString &amp;host,
+                             const QString &amp;user, const QString &amp;passwd, int port)
+ {
+     static int cCount = 0;
+
+     QSqlError err;
+     QSqlDatabase db = QSqlDatabase::addDatabase(driver, QString(&quot;Browser%1&quot;).arg(++cCount));
+     db.setDatabaseName(dbName);
+     db.setHostName(host);
+     db.setPort(port);
+     if (!db.open(user, passwd)) {
+         err = db.lastError();
+         db = QSqlDatabase();
+         QSqlDatabase::removeDatabase(QString(&quot;Browser%1&quot;).arg(cCount));
+     }
+     connectionWidget-&gt;refresh();
+
+     return err;
+ }
+
+ void Browser::addConnection()
+ {
+     QSqlConnectionDialog dialog(this);
+     if (dialog.exec() != QDialog::Accepted)
+         return;
+
+     if (dialog.useInMemoryDatabase()) {
+         QSqlDatabase::database(&quot;in_mem_db&quot;, false).close();
+         QSqlDatabase::removeDatabase(&quot;in_mem_db&quot;);
+         QSqlDatabase db = QSqlDatabase::addDatabase(&quot;QSQLITE&quot;, &quot;in_mem_db&quot;);
+         db.setDatabaseName(&quot;:memory:&quot;);
+         if (!db.open())
+             QMessageBox::warning(this, tr(&quot;Unable to open database&quot;), tr(&quot;An error occured while &quot;
+                                                                          &quot;opening the connection: &quot;) + db.lastError().text());
+         QSqlQuery q(&quot;&quot;, db);
+         q.exec(&quot;drop table Movies&quot;);
+         q.exec(&quot;drop table Names&quot;);
+         q.exec(&quot;create table Movies (id integer primary key, Title varchar, Director varchar, Rating number)&quot;);
+         q.exec(&quot;insert into Movies values (0, 'Metropolis', 'Fritz Lang', '8.4')&quot;);
+         q.exec(&quot;insert into Movies values (1, 'Nosferatu, eine Symphonie des Grauens', 'F.W. Murnau', '8.1')&quot;);
+         q.exec(&quot;insert into Movies values (2, 'Bis ans Ende der Welt', 'Wim Wenders', '6.5')&quot;);
+         q.exec(&quot;insert into Movies values (3, 'Hardware', 'Richard Stanley', '5.2')&quot;);
+         q.exec(&quot;insert into Movies values (4, 'Mitchell', 'Andrew V. McLaglen', '2.1')&quot;);
+         q.exec(&quot;create table Names (id integer primary key, Firstname varchar, Lastname varchar, City varchar)&quot;);
+         q.exec(&quot;insert into Names values (0, 'Sala', 'Palmer', 'Morristown')&quot;);
+         q.exec(&quot;insert into Names values (1, 'Christopher', 'Walker', 'Morristown')&quot;);
+         q.exec(&quot;insert into Names values (2, 'Donald', 'Duck', 'Andeby')&quot;);
+         q.exec(&quot;insert into Names values (3, 'Buck', 'Rogers', 'Paris')&quot;);
+         q.exec(&quot;insert into Names values (4, 'Sherlock', 'Holmes', 'London')&quot;);
+         connectionWidget-&gt;refresh();
+     } else {
+         QSqlError err = addConnection(dialog.driverName(), dialog.databaseName(), dialog.hostName(),
+                            dialog.userName(), dialog.password(), dialog.port());
+         if (err.type() != QSqlError::NoError)
+             QMessageBox::warning(this, tr(&quot;Unable to open database&quot;), tr(&quot;An error occured while &quot;
+                                        &quot;opening the connection: &quot;) + err.text());
+     }
+ }
+
+ void Browser::showTable(const QString &amp;t)
+ {
+     QSqlTableModel *model = new QSqlTableModel(table, connectionWidget-&gt;currentDatabase());
+     model-&gt;setEditStrategy(QSqlTableModel::OnRowChange);
+     model-&gt;setTable(t);
+     model-&gt;select();
+     if (model-&gt;lastError().type() != QSqlError::NoError)
+         emit statusMessage(model-&gt;lastError().text());
+     table-&gt;setModel(model);
+     table-&gt;setEditTriggers(QAbstractItemView::DoubleClicked|QAbstractItemView::EditKeyPressed);
+
+     connect(table-&gt;selectionModel(), SIGNAL(currentRowChanged(QModelIndex,QModelIndex)),
+             this, SLOT(currentChanged()));
+     updateActions();
+ }
+
+ void Browser::showMetaData(const QString &amp;t)
+ {
+     QSqlRecord rec = connectionWidget-&gt;currentDatabase().record(t);
+     QStandardItemModel *model = new QStandardItemModel(table);
+
+     model-&gt;insertRows(0, rec.count());
+     model-&gt;insertColumns(0, 7);
+
+     model-&gt;setHeaderData(0, Qt::Horizontal, &quot;Fieldname&quot;);
+     model-&gt;setHeaderData(1, Qt::Horizontal, &quot;Type&quot;);
+     model-&gt;setHeaderData(2, Qt::Horizontal, &quot;Length&quot;);
+     model-&gt;setHeaderData(3, Qt::Horizontal, &quot;Precision&quot;);
+     model-&gt;setHeaderData(4, Qt::Horizontal, &quot;Required&quot;);
+     model-&gt;setHeaderData(5, Qt::Horizontal, &quot;AutoValue&quot;);
+     model-&gt;setHeaderData(6, Qt::Horizontal, &quot;DefaultValue&quot;);
+
+     for (int i = 0; i &lt; rec.count(); ++i) {
+         QSqlField fld = rec.field(i);
+         model-&gt;setData(model-&gt;index(i, 0), fld.name());
+         model-&gt;setData(model-&gt;index(i, 1), fld.typeID() == -1
+                 ? QString(QVariant::typeToName(fld.type()))
+                 : QString(&quot;%1 (%2)&quot;).arg(QVariant::typeToName(fld.type())).arg(fld.typeID()));
+         model-&gt;setData(model-&gt;index(i, 2), fld.length());
+         model-&gt;setData(model-&gt;index(i, 3), fld.precision());
+         model-&gt;setData(model-&gt;index(i, 4), fld.requiredStatus() == -1 ? QVariant(&quot;?&quot;)
+                 : QVariant(bool(fld.requiredStatus())));
+         model-&gt;setData(model-&gt;index(i, 5), fld.isAutoValue());
+         model-&gt;setData(model-&gt;index(i, 6), fld.defaultValue());
+     }
+
+     table-&gt;setModel(model);
+     table-&gt;setEditTriggers(QAbstractItemView::NoEditTriggers);
+
+     updateActions();
+ }
+
+ void Browser::insertRow()
+ {
+     QSqlTableModel *model = qobject_cast&lt;QSqlTableModel *&gt;(table-&gt;model());
+     if (!model)
+         return;
+
+     QModelIndex insertIndex = table-&gt;currentIndex();
+     int row = insertIndex.row() == -1 ? 0 : insertIndex.row();
+     model-&gt;insertRow(row);
+     insertIndex = model-&gt;index(row, 0);
+     table-&gt;setCurrentIndex(insertIndex);
+     table-&gt;edit(insertIndex);
+ }
+
+ void Browser::deleteRow()
+ {
+     QSqlTableModel *model = qobject_cast&lt;QSqlTableModel *&gt;(table-&gt;model());
+     if (!model)
+         return;
+
+     model-&gt;setEditStrategy(QSqlTableModel::OnManualSubmit);
+
+     QModelIndexList currentSelection = table-&gt;selectionModel()-&gt;selectedIndexes();
+     for (int i = 0; i &lt; currentSelection.count(); ++i) {
+         if (currentSelection.at(i).column() != 0)
+             continue;
+         model-&gt;removeRow(currentSelection.at(i).row());
+     }
+
+     model-&gt;submitAll();
+     model-&gt;setEditStrategy(QSqlTableModel::OnRowChange);
+
+     updateActions();
+ }
+
+ void Browser::updateActions()
+ {
+     bool enableIns = qobject_cast&lt;QSqlTableModel *&gt;(table-&gt;model());
+     bool enableDel = enableIns &amp;&amp; table-&gt;currentIndex().isValid();
+
+     insertRowAction-&gt;setEnabled(enableIns);
+     deleteRowAction-&gt;setEnabled(enableDel);
+ }
+
+ void Browser::about()
+ {
+     QMessageBox::about(this, tr(&quot;About&quot;), tr(&quot;The SQL Browser demonstration &quot;
+         &quot;show how a data browser can be used to visualize the results of SQL&quot;
+         &quot;statements on a live database&quot;));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

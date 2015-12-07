@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/kernel/qnetworkinterface.cpp -->
+<head>
+  <title>Qt 4.4: QNetworkAddressEntry Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QNetworkAddressEntry Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QNetworkAddressEntry class stores one IP address supported by a network interface, along with its associated netmask and broadcast address. <a href="#details">More...</a></p>
+<pre> #include &lt;QNetworkAddressEntry&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qnetworkaddressentry-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qnetworkaddressentry.html#QNetworkAddressEntry">QNetworkAddressEntry</a></b> ()</li>
+<li><div class="fn"/><b><a href="qnetworkaddressentry.html#QNetworkAddressEntry-2">QNetworkAddressEntry</a></b> ( const QNetworkAddressEntry &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qnetworkaddressentry.html#dtor.QNetworkAddressEntry">~QNetworkAddressEntry</a></b> ()</li>
+<li><div class="fn"/>QHostAddress <b><a href="qnetworkaddressentry.html#broadcast">broadcast</a></b> () const</li>
+<li><div class="fn"/>QHostAddress <b><a href="qnetworkaddressentry.html#ip">ip</a></b> () const</li>
+<li><div class="fn"/>QHostAddress <b><a href="qnetworkaddressentry.html#netmask">netmask</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qnetworkaddressentry.html#setBroadcast">setBroadcast</a></b> ( const QHostAddress &amp; <i>newBroadcast</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaddressentry.html#setIp">setIp</a></b> ( const QHostAddress &amp; <i>newIp</i> )</li>
+<li><div class="fn"/>void <b><a href="qnetworkaddressentry.html#setNetmask">setNetmask</a></b> ( const QHostAddress &amp; <i>newNetmask</i> )</li>
+<li><div class="fn"/>QNetworkAddressEntry &amp; <b><a href="qnetworkaddressentry.html#operator-eq">operator=</a></b> ( const QNetworkAddressEntry &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QNetworkAddressEntry class stores one IP address supported by a network interface, along with its associated netmask and broadcast address.</p>
+<p>Each network interface can contain zero or more IP addresses, which in turn can be associated with a netmask and/or a broadcast address (depending on support from the operating system).</p>
+<p>This class represents one such group.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QNetworkAddressEntry"></a>QNetworkAddressEntry::QNetworkAddressEntry ()</h3>
+<p>Constructs an empty <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object.</p>
+<h3 class="fn"><a name="QNetworkAddressEntry-2"></a>QNetworkAddressEntry::QNetworkAddressEntry ( const QNetworkAddressEntry &amp; <i>other</i> )</h3>
+<p>Constructs a <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object that is a copy of the object <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QNetworkAddressEntry"></a>QNetworkAddressEntry::~QNetworkAddressEntry ()</h3>
+<p>Destroys this <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object.</p>
+<h3 class="fn"><a name="broadcast"></a><a href="qhostaddress.html">QHostAddress</a> QNetworkAddressEntry::broadcast () const</h3>
+<p>Returns the broadcast address associated with the IPv4 address and netmask. It can usually be derived from those two by setting to 1 the bits of the IP address where the netmask contains a 0. (In other words, by bitwise-OR'ing the IP address with the inverse of the netmask)</p>
+<p>This member is always empty for IPv6 addresses, since the concept of broadcast has been abandoned in that system in favor of multicast. In particular, the group of hosts corresponding to all the nodes in the local network can be reached by the &quot;all-nodes&quot; special multicast group (address FF02::1).</p>
+<p>See also <a href="qnetworkaddressentry.html#setBroadcast">setBroadcast</a>().</p>
+<h3 class="fn"><a name="ip"></a><a href="qhostaddress.html">QHostAddress</a> QNetworkAddressEntry::ip () const</h3>
+<p>This function returns one IPv4 or IPv6 address found, that was found in a network interface.</p>
+<p>See also <a href="qnetworkaddressentry.html#setIp">setIp</a>().</p>
+<h3 class="fn"><a name="netmask"></a><a href="qhostaddress.html">QHostAddress</a> QNetworkAddressEntry::netmask () const</h3>
+<p>Returns the netmask associated with the IP address. The netmask is expressed in the form of an IP address, such as 255.255.0&#x2e;0&#x2e;</p>
+<p>For IPv6 addresses, the prefix length is converted to an address where the number of bits set to 1 is equal to the prefix length. For a prefix length of 64 bits (the most common value), the netmask will be expressed as a <a href="qhostaddress.html">QHostAddress</a> holding the address FFFF:FFFF:FFFF:FFFF::</p>
+<p>See also <a href="qnetworkaddressentry.html#setNetmask">setNetmask</a>().</p>
+<h3 class="fn"><a name="setBroadcast"></a>void QNetworkAddressEntry::setBroadcast ( const <a href="qhostaddress.html">QHostAddress</a> &amp; <i>newBroadcast</i> )</h3>
+<p>Sets the broadcast IP address of this <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object to <i>newBroadcast</i>.</p>
+<p>See also <a href="qnetworkaddressentry.html#broadcast">broadcast</a>().</p>
+<h3 class="fn"><a name="setIp"></a>void QNetworkAddressEntry::setIp ( const <a href="qhostaddress.html">QHostAddress</a> &amp; <i>newIp</i> )</h3>
+<p>Sets the IP address the <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object contains to <i>newIp</i>.</p>
+<p>See also <a href="qnetworkaddressentry.html#ip">ip</a>().</p>
+<h3 class="fn"><a name="setNetmask"></a>void QNetworkAddressEntry::setNetmask ( const <a href="qhostaddress.html">QHostAddress</a> &amp; <i>newNetmask</i> )</h3>
+<p>Sets the netmask that this <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object contains to <i>newNetmask</i>.</p>
+<p>See also <a href="qnetworkaddressentry.html#netmask">netmask</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QNetworkAddressEntry &amp; QNetworkAddressEntry::operator= ( const QNetworkAddressEntry &amp; <i>other</i> )</h3>
+<p>Makes a copy of the <a href="qnetworkaddressentry.html">QNetworkAddressEntry</a> object <i>other</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

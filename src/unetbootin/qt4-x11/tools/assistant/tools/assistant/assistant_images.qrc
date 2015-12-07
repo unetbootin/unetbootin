@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/trolltech/assistant" >
+        <file>images/trolltech-logo.png</file>
+        <file>images/assistant-128.png</file>
+        <file>images/assistant.png</file>
+        <file>images/wrap.png</file>
+#mac
+        <file>images/mac/addtab.png</file>
+        <file>images/mac/book.png</file>
+        <file>images/mac/closetab.png</file>
+        <file>images/mac/editcopy.png</file>
+        <file>images/mac/find.png</file>
+        <file>images/mac/home.png</file>
+        <file>images/mac/next.png</file>
+        <file>images/mac/previous.png</file>
+        <file>images/mac/print.png</file>
+        <file>images/mac/synctoc.png</file>
+        <file>images/mac/zoomin.png</file>
+        <file>images/mac/zoomout.png</file>
+        <file>images/mac/resetzoom.png</file>
+#win
+        <file>images/win/addtab.png</file>
+        <file>images/win/book.png</file>
+        <file>images/win/closetab.png</file>
+        <file>images/win/editcopy.png</file>
+        <file>images/win/find.png</file>
+        <file>images/win/home.png</file>
+        <file>images/win/next.png</file>
+        <file>images/win/previous.png</file>
+        <file>images/win/print.png</file>
+        <file>images/win/synctoc.png</file>
+        <file>images/win/zoomin.png</file>
+        <file>images/win/zoomout.png</file>
+        <file>images/win/resetzoom.png</file>
+    </qresource>
+</RCC>

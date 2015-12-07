@@ -1,0 +1,460 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qprocess.cpp -->
+<head>
+  <title>Qt 4.4: QProcess Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QProcess Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QProcess class is used to start external programs and to communicate with them. <a href="#details">More...</a></p>
+<pre> #include &lt;QProcess&gt;</pre><p>Inherits <a href="qiodevice.html">QIODevice</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qprocess-members.html">List of all members, including inherited members</a></li>
+<li><a href="qprocess-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qprocess.html#ExitStatus-enum">ExitStatus</a></b> { NormalExit, CrashExit }</li>
+<li><div class="fn"/>enum <b><a href="qprocess.html#ProcessChannel-enum">ProcessChannel</a></b> { StandardOutput, StandardError }</li>
+<li><div class="fn"/>enum <b><a href="qprocess.html#ProcessChannelMode-enum">ProcessChannelMode</a></b> { SeparateChannels, MergedChannels, ForwardedChannels }</li>
+<li><div class="fn"/>enum <b><a href="qprocess.html#ProcessError-enum">ProcessError</a></b> { FailedToStart, Crashed, Timedout, WriteError, ReadError, UnknownError }</li>
+<li><div class="fn"/>enum <b><a href="qprocess.html#ProcessState-enum">ProcessState</a></b> { NotRunning, Starting, Running }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprocess.html#QProcess">QProcess</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qprocess.html#dtor.QProcess">~QProcess</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qprocess.html#close">close</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#closeReadChannel">closeReadChannel</a></b> ( ProcessChannel <i>channel</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#closeWriteChannel">closeWriteChannel</a></b> ()</li>
+<li><div class="fn"/>QStringList <b><a href="qprocess.html#environment">environment</a></b> () const</li>
+<li><div class="fn"/>QProcess::ProcessError <b><a href="qprocess.html#error">error</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprocess.html#exitCode">exitCode</a></b> () const</li>
+<li><div class="fn"/>QProcess::ExitStatus <b><a href="qprocess.html#exitStatus">exitStatus</a></b> () const</li>
+<li><div class="fn"/>Q_PID <b><a href="qprocess.html#pid">pid</a></b> () const</li>
+<li><div class="fn"/>ProcessChannelMode <b><a href="qprocess.html#processChannelMode">processChannelMode</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qprocess.html#readAllStandardError">readAllStandardError</a></b> ()</li>
+<li><div class="fn"/>QByteArray <b><a href="qprocess.html#readAllStandardOutput">readAllStandardOutput</a></b> ()</li>
+<li><div class="fn"/>ProcessChannel <b><a href="qprocess.html#readChannel">readChannel</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setEnvironment">setEnvironment</a></b> ( const QStringList &amp; <i>environment</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setProcessChannelMode">setProcessChannelMode</a></b> ( ProcessChannelMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setReadChannel">setReadChannel</a></b> ( ProcessChannel <i>channel</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setStandardErrorFile">setStandardErrorFile</a></b> ( const QString &amp; <i>fileName</i>, OpenMode <i>mode</i> = Truncate )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setStandardInputFile">setStandardInputFile</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setStandardOutputFile">setStandardOutputFile</a></b> ( const QString &amp; <i>fileName</i>, OpenMode <i>mode</i> = Truncate )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setStandardOutputProcess">setStandardOutputProcess</a></b> ( QProcess * <i>destination</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#setWorkingDirectory">setWorkingDirectory</a></b> ( const QString &amp; <i>dir</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#start">start</a></b> ( const QString &amp; <i>program</i>, const QStringList &amp; <i>arguments</i>, OpenMode <i>mode</i> = ReadWrite )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#start-2">start</a></b> ( const QString &amp; <i>program</i>, OpenMode <i>mode</i> = ReadWrite )</li>
+<li><div class="fn"/>QProcess::ProcessState <b><a href="qprocess.html#state">state</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprocess.html#waitForFinished">waitForFinished</a></b> ( int <i>msecs</i> = 30000 )</li>
+<li><div class="fn"/>bool <b><a href="qprocess.html#waitForStarted">waitForStarted</a></b> ( int <i>msecs</i> = 30000 )</li>
+<li><div class="fn"/>QString <b><a href="qprocess.html#workingDirectory">workingDirectory</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprocess.html#kill">kill</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#terminate">terminate</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprocess.html#error-2">error</a></b> ( QProcess::ProcessError <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#finished">finished</a></b> ( int <i>exitCode</i>, QProcess::ExitStatus <i>exitStatus</i> )</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#readyReadStandardError">readyReadStandardError</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#readyReadStandardOutput">readyReadStandardOutput</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#started">started</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qprocess.html#stateChanged">stateChanged</a></b> ( QProcess::ProcessState <i>newState</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>int <b><a href="qprocess.html#execute">execute</a></b> ( const QString &amp; <i>program</i>, const QStringList &amp; <i>arguments</i> )</li>
+<li><div class="fn"/>int <b><a href="qprocess.html#execute-2">execute</a></b> ( const QString &amp; <i>program</i> )</li>
+<li><div class="fn"/>bool <b><a href="qprocess.html#startDetached">startDetached</a></b> ( const QString &amp; <i>program</i>, const QStringList &amp; <i>arguments</i>, const QString &amp; <i>workingDirectory</i>, qint64 * <i>pid</i> = 0 )</li>
+<li><div class="fn"/>bool <b><a href="qprocess.html#startDetached-2">startDetached</a></b> ( const QString &amp; <i>program</i>, const QStringList &amp; <i>arguments</i> )</li>
+<li><div class="fn"/>bool <b><a href="qprocess.html#startDetached-3">startDetached</a></b> ( const QString &amp; <i>program</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="qprocess.html#systemEnvironment">systemEnvironment</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprocess.html#setProcessState">setProcessState</a></b> ( ProcessState <i>state</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qprocess.html#setupChildProcess">setupChildProcess</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="qprocess.html#Q_PID-typedef">Q_PID</a></b></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QProcess class is used to start external programs and to communicate with them.</p>
+<p>To start a process, pass the name and command line arguments of the program you want to run as arguments to <a href="qprocess.html#start">start</a>(). For example:</p>
+<pre>     QObject *parent;
+     ...
+     QString program = &quot;./path/to/Qt/examples/widgets/analogclock&quot;;
+     QStringList arguments;
+     arguments &lt;&lt; &quot;-style&quot; &lt;&lt; &quot;motif&quot;;
+
+     QProcess *myProcess = new QProcess(parent);
+     myProcess-&gt;start(program, arguments);</pre>
+<p>QProcess then enters the <a href="qprocess.html#ProcessState-enum">Starting</a> state, and when the program has started, QProcess enters the <a href="qprocess.html#ProcessState-enum">Running</a> state and emits <a href="qprocess.html#started">started</a>().</p>
+<p>QProcess allows you to treat a process as a sequential I/O device. You can write to and read from the process just as you would access a network connection using <a href="qtcpsocket.html">QTcpSocket</a>. You can then write to the process's standard input by calling <a href="qiodevice.html#write">write</a>(), and read the standard output by calling <a href="qiodevice.html#read">read</a>(), <a href="qiodevice.html#readLine">readLine</a>(), and <a href="qiodevice.html#getChar">getChar</a>(). Because it inherits <a href="qiodevice.html">QIODevice</a>, QProcess can also be used as an input source for <a href="qxmlreader.html">QXmlReader</a>, or for generating data to be uploaded using <a href="qftp.html">QFtp</a>.</p>
+<p><b>Note:</b> On Windows CE, reading and writing to a process is not supported.</p>
+<p>When the process exits, QProcess reenters the <a href="qprocess.html#ProcessState-enum">NotRunning</a> state (the initial state), and emits <a href="qprocess.html#finished">finished</a>().</p>
+<p>The <a href="qprocess.html#finished">finished</a>() signal provides the exit code and exit status of the process as arguments, and you can also call <a href="qprocess.html#exitCode">exitCode</a>() to obtain the exit code of the last process that finished, and <a href="qprocess.html#exitStatus">exitStatus</a>() to obtain its exit status. If an error occurs at any point in time, QProcess will emit the <a href="qprocess.html#error">error</a>() signal. You can also call <a href="qprocess.html#error">error</a>() to find the type of error that occurred last, and <a href="qprocess.html#state">state</a>() to find the current process state.</p>
+<p>Processes have two predefined output channels: The standard output channel (<tt>stdout</tt>) supplies regular console output, and the standard error channel (<tt>stderr</tt>) usually supplies the errors that are printed by the process. These channels represent two separate streams of data. You can toggle between them by calling <a href="qprocess.html#setReadChannel">setReadChannel</a>(). QProcess emits <a href="qiodevice.html#readyRead">readyRead</a>() when data is available on the current read channel. It also emits <a href="qprocess.html#readyReadStandardOutput">readyReadStandardOutput</a>() when new standard output data is available, and when new standard error data is available, <a href="qprocess.html#readyReadStandardError">readyReadStandardError</a>() is emitted. Instead of calling <a href="qiodevice.html#read">read</a>(), <a href="qiodevice.html#readLine">readLine</a>(), or <a href="qiodevice.html#getChar">getChar</a>(), you can explicitly read all data from either of the two channels by calling <a href="qprocess.html#readAllStandardOutput">readAllStandardOutput</a>() or <a href="qprocess.html#readAllStandardError">readAllStandardError</a>().</p>
+<p>The terminology for the channels can be misleading. Be aware that the process's output channels correspond to QProcess's <i>read</i> channels, whereas the process's input channels correspond to QProcess's <i>write</i> channels. This is because what we read using QProcess is the process's output, and what we write becomes the process's input.</p>
+<p>QProcess can merge the two output channels, so that standard output and standard error data from the running process both use the standard output channel. Call <a href="qprocess.html#setProcessChannelMode">setProcessChannelMode</a>() with <a href="qprocess.html#ProcessChannelMode-enum">MergedChannels</a> before starting the process to activative this feature. You also have the option of forwarding the output of the running process to the calling, main process, by passing <a href="qprocess.html#ProcessChannelMode-enum">ForwardedChannels</a> as the argument.</p>
+<p>Certain processes need special environment settings in order to operate. You can set environment variables for your process by calling <a href="qprocess.html#setEnvironment">setEnvironment</a>(). To set a working directory, call <a href="qprocess.html#setWorkingDirectory">setWorkingDirectory</a>(). By default, processes are run in the current working directory of the calling process.</p>
+<p>QProcess provides a set of functions which allow it to be used without an event loop, by suspending the calling thread until certain signals are emitted:</p>
+<ul>
+<li><a href="qprocess.html#waitForStarted">waitForStarted</a>() blocks until the process has started.</li>
+<li><a href="qiodevice.html#waitForReadyRead">waitForReadyRead</a>() blocks until new data is available for reading on the current read channel.</li>
+<li><a href="qiodevice.html#waitForBytesWritten">waitForBytesWritten</a>() blocks until one payload of data has been written to the process.</li>
+<li><a href="qprocess.html#waitForFinished">waitForFinished</a>() blocks until the process has finished.</li>
+</ul>
+<p>Calling these functions from the main thread (the thread that calls <a href="qapplication.html#exec">QApplication::exec</a>()) may cause your user interface to freeze.</p>
+<p>The following example runs <tt>gzip</tt> to compress the string &quot;Qt rocks!&quot;, without an event loop:</p>
+<pre>     QProcess gzip;
+     gzip.start(&quot;gzip&quot;, QStringList() &lt;&lt; &quot;-c&quot;);
+     if (!gzip.waitForStarted())
+         return false;
+
+     gzip.write(&quot;Qt rocks!&quot;);
+     gzip.closeWriteChannel();
+
+     if (!gzip.waitForFinished())
+         return false;
+
+     QByteArray result = gzip.readAll();</pre>
+<p>See also <a href="qbuffer.html">QBuffer</a>, <a href="qfile.html">QFile</a>, and <a href="qtcpsocket.html">QTcpSocket</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ExitStatus-enum"></a>enum QProcess::ExitStatus</h3>
+<p>This enum describes the different exit statuses of <a href="qprocess.html">QProcess</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QProcess::NormalExit</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The process exited normally.</td></tr>
+<tr><td valign="top"><tt>QProcess::CrashExit</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The process crashed.</td></tr>
+</table></p>
+<p>See also <a href="qprocess.html#exitStatus">exitStatus</a>().</p>
+<h3 class="fn"><a name="ProcessChannel-enum"></a>enum QProcess::ProcessChannel</h3>
+<p>This enum describes the process channels used by the running process. Pass one of these values to <a href="qprocess.html#setReadChannel">setReadChannel</a>() to set the current read channel of <a href="qprocess.html">QProcess</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QProcess::StandardOutput</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The standard output (stdout) of the running process.</td></tr>
+<tr><td valign="top"><tt>QProcess::StandardError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The standard error (stderr) of the running process.</td></tr>
+</table></p>
+<p>See also <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="ProcessChannelMode-enum"></a>enum QProcess::ProcessChannelMode</h3>
+<p>This enum describes the process channel modes of <a href="qprocess.html">QProcess</a>. Pass one of these values to <a href="qprocess.html#setProcessChannelMode">setProcessChannelMode</a>() to set the current read channel mode.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QProcess::SeparateChannels</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top"><a href="qprocess.html">QProcess</a> manages the output of the running process, keeping standard output and standard error data in separate internal buffers. You can select the <a href="qprocess.html">QProcess</a>'s current read channel by calling <a href="qprocess.html#setReadChannel">setReadChannel</a>(). This is the default channel mode of <a href="qprocess.html">QProcess</a>.</td></tr>
+<tr><td valign="top"><tt>QProcess::MergedChannels</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="qprocess.html">QProcess</a> merges the output of the running process into the standard output channel (<tt>stdout</tt>). The standard error channel (<tt>stderr</tt>) will not receive any data. The standard output and standard error data of the running process are interleaved.</td></tr>
+<tr><td valign="top"><tt>QProcess::ForwardedChannels</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top"><a href="qprocess.html">QProcess</a> forwards the output of the running process onto the main process. Anything the child process writes to its standard output and standard error will be written to the standard output and standard error of the main process.</td></tr>
+</table></p>
+<p>See also <a href="qprocess-obsolete.html#setReadChannelMode">setReadChannelMode</a>().</p>
+<h3 class="fn"><a name="ProcessError-enum"></a>enum QProcess::ProcessError</h3>
+<p>This enum describes the different types of errors that are reported by <a href="qprocess.html">QProcess</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QProcess::FailedToStart</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The process failed to start. Either the invoked program is missing, or you may have insufficient permissions to invoke the program.</td></tr>
+<tr><td valign="top"><tt>QProcess::Crashed</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The process crashed some time after starting successfully.</td></tr>
+<tr><td valign="top"><tt>QProcess::Timedout</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The last waitFor...() function timed out. The state of <a href="qprocess.html">QProcess</a> is unchanged, and you can try calling waitFor...() again.</td></tr>
+<tr><td valign="top"><tt>QProcess::WriteError</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">An error occurred when attempting to write to the process. For example, the process may not be running, or it may have closed its input channel.</td></tr>
+<tr><td valign="top"><tt>QProcess::ReadError</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">An error occurred when attempting to read from the process. For example, the process may not be running.</td></tr>
+<tr><td valign="top"><tt>QProcess::UnknownError</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">An unknown error occurred. This is the default return value of <a href="qprocess.html#error">error</a>().</td></tr>
+</table></p>
+<p>See also <a href="qprocess.html#error">error</a>().</p>
+<h3 class="fn"><a name="ProcessState-enum"></a>enum QProcess::ProcessState</h3>
+<p>This enum describes the different states of <a href="qprocess.html">QProcess</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QProcess::NotRunning</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The process is not running.</td></tr>
+<tr><td valign="top"><tt>QProcess::Starting</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The process is starting, but the program has not yet been invoked.</td></tr>
+<tr><td valign="top"><tt>QProcess::Running</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The process is running and is ready for reading and writing.</td></tr>
+</table></p>
+<p>See also <a href="qprocess.html#state">state</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QProcess"></a>QProcess::QProcess ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qprocess.html">QProcess</a> object with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QProcess"></a>QProcess::~QProcess ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructs the <a href="qprocess.html">QProcess</a> object, i.e&#x2e;, killing the process.</p>
+<p>Note that this function will not return until the process is terminated.</p>
+<h3 class="fn"><a name="close"></a>void QProcess::close ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Closes all communication with the process and kills it. After calling this function, <a href="qprocess.html">QProcess</a> will no longer emit <a href="qiodevice.html#readyRead">readyRead</a>(), and data can no longer be read or written.</p>
+<p>Reimplemented from <a href="qiodevice.html#close">QIODevice</a>.</p>
+<h3 class="fn"><a name="closeReadChannel"></a>void QProcess::closeReadChannel ( <a href="qprocess.html#ProcessChannel-enum">ProcessChannel</a> <i>channel</i> )</h3>
+<p>Closes the read channel <i>channel</i>. After calling this function, <a href="qprocess.html">QProcess</a> will no longer receive data on the channel. Any data that has already been received is still available for reading.</p>
+<p>Call this function to save memory, if you are not interested in the output of the process.</p>
+<p>See also <a href="qprocess.html#closeWriteChannel">closeWriteChannel</a>() and <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="closeWriteChannel"></a>void QProcess::closeWriteChannel ()</h3>
+<p>Schedules the write channel of <a href="qprocess.html">QProcess</a> to be closed. The channel will close once all data has been written to the process. After calling this function, any attempts to write to the process will fail.</p>
+<p>Closing the write channel is necessary for programs that read input data until the channel has been closed. For example, the program &quot;more&quot; is used to display text data in a console on both Unix and Windows. But it will not display the text data until <a href="qprocess.html">QProcess</a>'s write channel has been closed. Example:</p>
+<pre>         QProcess more;
+         more.start(&quot;more&quot;);
+         more.write(&quot;Text to display&quot;);
+         more.closeWriteChannel();
+         // QProcess will emit readyRead() once &quot;more&quot; starts printing</pre>
+<p>The write channel is implicitly opened when <a href="qprocess.html#start">start</a>() is called.</p>
+<p>See also <a href="qprocess.html#closeReadChannel">closeReadChannel</a>().</p>
+<h3 class="fn"><a name="environment"></a><a href="qstringlist.html">QStringList</a> QProcess::environment () const</h3>
+<p>Returns the environment that <a href="qprocess.html">QProcess</a> will use when starting a process, or an empty <a href="qstringlist.html">QStringList</a> if no environment has been set using <a href="qprocess.html#setEnvironment">setEnvironment</a>(). If no environment has been set, the environment of the calling process will be used.</p>
+<p><b>Note:</b> The environment settings are ignored on Windows CE, as there is no concept of an environment.</p>
+<p>See also <a href="qprocess.html#setEnvironment">setEnvironment</a>() and <a href="qprocess.html#systemEnvironment">systemEnvironment</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qprocess.html#ProcessError-enum">QProcess::ProcessError</a> QProcess::error () const</h3>
+<p>Returns the type of error that occurred last.</p>
+<p>See also <a href="qprocess.html#state">state</a>().</p>
+<h3 class="fn"><a name="error-2"></a>void QProcess::error ( <a href="qprocess.html#ProcessError-enum">QProcess::ProcessError</a> <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This signal is emitted when an error occurs with the process. The specified <i>error</i> describes the type of error that occurred.</p>
+<h3 class="fn"><a name="execute"></a>int QProcess::execute ( const <a href="qstring.html">QString</a> &amp; <i>program</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>arguments</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process, waits for it to finish, and then returns the exit code of the process. Any data the new process writes to the console is forwarded to the calling process.</p>
+<p>The environment and working directory are inherited by the calling process.</p>
+<p>On Windows, arguments that contain spaces are wrapped in quotes.</p>
+<h3 class="fn"><a name="execute-2"></a>int QProcess::execute ( const <a href="qstring.html">QString</a> &amp; <i>program</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts the program <i>program</i> in a new process. <i>program</i> is a single string of text containing both the program name and its arguments. The arguments are separated by one or more spaces.</p>
+<h3 class="fn"><a name="exitCode"></a>int QProcess::exitCode () const</h3>
+<p>Returns the exit code of the last process that finished.</p>
+<h3 class="fn"><a name="exitStatus"></a><a href="qprocess.html#ExitStatus-enum">QProcess::ExitStatus</a> QProcess::exitStatus () const</h3>
+<p>Returns the exit status of the last process that finished.</p>
+<p>On Windows, if the process was terminated with TerminateProcess() from another application this function will still return <a href="qprocess.html#ExitStatus-enum">NormalExit</a> unless the exit code is less than 0.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="finished"></a>void QProcess::finished ( int <i>exitCode</i>, <a href="qprocess.html#ExitStatus-enum">QProcess::ExitStatus</a> <i>exitStatus</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process finishes. <i>exitCode</i> is the exit code of the process, and <i>exitStatus</i> is the exit status. After the process has finished, the buffers in <a href="qprocess.html">QProcess</a> are still intact. You can still read any data that the process may have written before it finished.</p>
+<p>See also <a href="qprocess.html#exitStatus">exitStatus</a>().</p>
+<h3 class="fn"><a name="kill"></a>void QProcess::kill ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Kills the current process, causing it to exit immediately.</p>
+<p>On Windows, kill() uses TerminateProcess, and on Unix and Mac OS X, the SIGKILL signal is sent to the process.</p>
+<p>See also <a href="qprocess.html#terminate">terminate</a>().</p>
+<h3 class="fn"><a name="pid"></a><a href="qprocess.html#Q_PID-typedef">Q_PID</a> QProcess::pid () const</h3>
+<p>Returns the native process identifier for the running process, if available. If no process is currently running, 0 is returned.</p>
+<h3 class="fn"><a name="processChannelMode"></a><a href="qprocess.html#ProcessChannelMode-enum">ProcessChannelMode</a> QProcess::processChannelMode () const</h3>
+<p>Returns the channel mode of the <a href="qprocess.html">QProcess</a> standard output and standard error channels.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprocess.html#setProcessChannelMode">setProcessChannelMode</a>(), <a href="qprocess-obsolete.html#setReadChannelMode">setReadChannelMode</a>(), <a href="qprocess.html#ProcessChannelMode-enum">ProcessChannelMode</a>, and <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="readAllStandardError"></a><a href="qbytearray.html">QByteArray</a> QProcess::readAllStandardError ()</h3>
+<p>Regardless of the current read channel, this function returns all data available from the standard error of the process as a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>See also <a href="qprocess.html#readyReadStandardError">readyReadStandardError</a>(), <a href="qprocess.html#readAllStandardOutput">readAllStandardOutput</a>(), <a href="qprocess.html#readChannel">readChannel</a>(), and <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="readAllStandardOutput"></a><a href="qbytearray.html">QByteArray</a> QProcess::readAllStandardOutput ()</h3>
+<p>Regardless of the current read channel, this function returns all data available from the standard output of the process as a <a href="qbytearray.html">QByteArray</a>.</p>
+<p>See also <a href="qprocess.html#readyReadStandardOutput">readyReadStandardOutput</a>(), <a href="qprocess.html#readAllStandardError">readAllStandardError</a>(), <a href="qprocess.html#readChannel">readChannel</a>(), and <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="readChannel"></a><a href="qprocess.html#ProcessChannel-enum">ProcessChannel</a> QProcess::readChannel () const</h3>
+<p>Returns the current read channel of the <a href="qprocess.html">QProcess</a>.</p>
+<p>See also <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="readyReadStandardError"></a>void QProcess::readyReadStandardError ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process has made new data available through its standard error channel (<tt>stderr</tt>). It is emitted regardless of the current <a href="qprocess.html#readChannel">read channel</a>.</p>
+<p>See also <a href="qprocess.html#readAllStandardError">readAllStandardError</a>() and <a href="qprocess.html#readChannel">readChannel</a>().</p>
+<h3 class="fn"><a name="readyReadStandardOutput"></a>void QProcess::readyReadStandardOutput ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the process has made new data available through its standard output channel (<tt>stdout</tt>). It is emitted regardless of the current <a href="qprocess.html#readChannel">read channel</a>.</p>
+<p>See also <a href="qprocess.html#readAllStandardOutput">readAllStandardOutput</a>() and <a href="qprocess.html#readChannel">readChannel</a>().</p>
+<h3 class="fn"><a name="setEnvironment"></a>void QProcess::setEnvironment ( const <a href="qstringlist.html">QStringList</a> &amp; <i>environment</i> )</h3>
+<p>Sets the environment that <a href="qprocess.html">QProcess</a> will use when starting a process to the <i>environment</i> specified which consists of a list of key=value pairs.</p>
+<p>For example, the following code adds the <tt>C:\\BIN</tt> directory to the list of executable paths (<tt>PATHS</tt>) on Windows:</p>
+<pre> QProcess process;
+ QStringList env = QProcess::systemEnvironment();
+ env &lt;&lt; &quot;TMPDIR=C:\\MyApp\\temp&quot;; <span class="comment">//</span> Add an environment variable
+ env.replaceInStrings(QRegExp(&quot;^PATH=(.*)&quot;, Qt::CaseInsensitive), &quot;PATH=\\1;C:\\Bin&quot;);
+ process.setEnvironment(env);
+ process.start(&quot;myapp&quot;);</pre>
+<p>See also <a href="qprocess.html#environment">environment</a>() and <a href="qprocess.html#systemEnvironment">systemEnvironment</a>().</p>
+<h3 class="fn"><a name="setProcessChannelMode"></a>void QProcess::setProcessChannelMode ( <a href="qprocess.html#ProcessChannelMode-enum">ProcessChannelMode</a> <i>mode</i> )</h3>
+<p>Sets the channel mode of the <a href="qprocess.html">QProcess</a> standard output and standard error channels to the <i>mode</i> specified. This mode will be used the next time <a href="qprocess.html#start">start</a>() is called. For example:</p>
+<pre>         QProcess builder;
+         builder.setProcessChannelMode(QProcess::MergedChannels);
+         builder.start(&quot;make&quot;, QStringList() &lt;&lt; &quot;-j2&quot;);
+
+         if (!builder.waitForFinished())
+             qDebug() &lt;&lt; &quot;Make failed:&quot; &lt;&lt; builder.errorString();
+         else
+             qDebug() &lt;&lt; &quot;Make output:&quot; &lt;&lt; builder.readAll();</pre>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprocess.html#processChannelMode">processChannelMode</a>(), <a href="qprocess-obsolete.html#readChannelMode">readChannelMode</a>(), <a href="qprocess.html#ProcessChannelMode-enum">ProcessChannelMode</a>, and <a href="qprocess.html#setReadChannel">setReadChannel</a>().</p>
+<h3 class="fn"><a name="setProcessState"></a>void QProcess::setProcessState ( <a href="qprocess.html#ProcessState-enum">ProcessState</a> <i>state</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the current state of the <a href="qprocess.html">QProcess</a> to the <i>state</i> specified.</p>
+<p>See also <a href="qprocess.html#state">state</a>().</p>
+<h3 class="fn"><a name="setReadChannel"></a>void QProcess::setReadChannel ( <a href="qprocess.html#ProcessChannel-enum">ProcessChannel</a> <i>channel</i> )</h3>
+<p>Sets the current read channel of the <a href="qprocess.html">QProcess</a> to the given <i>channel</i>. The current input channel is used by the functions <a href="qiodevice.html#read">read</a>(), <a href="qiodevice.html#readAll">readAll</a>(), <a href="qiodevice.html#readLine">readLine</a>(), and <a href="qiodevice.html#getChar">getChar</a>(). It also determines which channel triggers <a href="qprocess.html">QProcess</a> to emit <a href="qiodevice.html#readyRead">readyRead</a>().</p>
+<p>See also <a href="qprocess.html#readChannel">readChannel</a>().</p>
+<h3 class="fn"><a name="setStandardErrorFile"></a>void QProcess::setStandardErrorFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>mode</i> = Truncate )</h3>
+<p>Redirects the process' standard error to the file <i>fileName</i>. When the redirection is in place, the standard error read channel is closed: reading from it using <a href="qiodevice.html#read">read</a>() will always fail, as will <a href="qprocess.html#readAllStandardError">readAllStandardError</a>(). The file will be appended to if <i>mode</i> is Append, otherwise, it will be truncated.</p>
+<p>See <a href="qprocess.html#setStandardOutputFile">setStandardOutputFile</a>() for more information on how the file is opened.</p>
+<p>Note: if <a href="qprocess.html#setProcessChannelMode">setProcessChannelMode</a>() was called with an argument of <a href="qprocess.html#ProcessChannelMode-enum">QProcess::MergedChannels</a>, this function has no effect.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprocess.html#setStandardInputFile">setStandardInputFile</a>(), <a href="qprocess.html#setStandardOutputFile">setStandardOutputFile</a>(), and <a href="qprocess.html#setStandardOutputProcess">setStandardOutputProcess</a>().</p>
+<h3 class="fn"><a name="setStandardInputFile"></a>void QProcess::setStandardInputFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Redirects the process' standard input to the file indicated by <i>fileName</i>. When an input redirection is in place, the <a href="qprocess.html">QProcess</a> object will be in read-only mode (calling <a href="qiodevice.html#write">write</a>() will result in error).</p>
+<p>If the file <i>fileName</i> does not exist at the moment <a href="qprocess.html#start">start</a>() is called or is not readable, starting the process will fail.</p>
+<p>Calling setStandardInputFile() after the process has started has no effect.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprocess.html#setStandardOutputFile">setStandardOutputFile</a>(), <a href="qprocess.html#setStandardErrorFile">setStandardErrorFile</a>(), and <a href="qprocess.html#setStandardOutputProcess">setStandardOutputProcess</a>().</p>
+<h3 class="fn"><a name="setStandardOutputFile"></a>void QProcess::setStandardOutputFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>mode</i> = Truncate )</h3>
+<p>Redirects the process' standard output to the file <i>fileName</i>. When the redirection is in place, the standard output read channel is closed: reading from it using <a href="qiodevice.html#read">read</a>() will always fail, as will <a href="qprocess.html#readAllStandardOutput">readAllStandardOutput</a>().</p>
+<p>If the file <i>fileName</i> doesn't exist at the moment <a href="qprocess.html#start">start</a>() is called, it will be created. If it cannot be created, the starting will fail.</p>
+<p>If the file exists and <i>mode</i> is <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::Truncate</a>, the file will be truncated. Otherwise (if <i>mode</i> is <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::Append</a>), the file will be appended to.</p>
+<p>Calling setStandardOutputFile() after the process has started has no effect.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprocess.html#setStandardInputFile">setStandardInputFile</a>(), <a href="qprocess.html#setStandardErrorFile">setStandardErrorFile</a>(), and <a href="qprocess.html#setStandardOutputProcess">setStandardOutputProcess</a>().</p>
+<h3 class="fn"><a name="setStandardOutputProcess"></a>void QProcess::setStandardOutputProcess ( QProcess * <i>destination</i> )</h3>
+<p>Pipes the standard output stream of this process to the <i>destination</i> process' standard input.</p>
+<p>The following shell command:</p>
+<pre>         command1 | command2</pre>
+<p>Can be accomplished with QProcesses with the following code:</p>
+<pre>         QProcess process1;
+         QProcess process2;
+
+         process1.setStandardOutputProcess(process2);
+
+         process1.start(&quot;command1&quot;);
+         process2.start(&quot;command2&quot;);</pre>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="setWorkingDirectory"></a>void QProcess::setWorkingDirectory ( const <a href="qstring.html">QString</a> &amp; <i>dir</i> )</h3>
+<p>Sets the working directory to <i>dir</i>. <a href="qprocess.html">QProcess</a> will start the process in this directory. The default behavior is to start the process in the working directory of the calling process.</p>
+<p>See also <a href="qprocess.html#workingDirectory">workingDirectory</a>() and <a href="qprocess.html#start">start</a>().</p>
+<h3 class="fn"><a name="setupChildProcess"></a>void QProcess::setupChildProcess ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called in the child process context just before the program is executed on Unix or Mac OS X (i.e&#x2e;, after <i>fork()</i>, but before <i>execve()</i>). Reimplement this function to do last minute initialization of the child process. Example:</p>
+<pre>         class SandboxProcess : public QProcess
+         {
+             ...
+          protected:
+              void setupChildProcess();
+             ...
+         };
+
+         void SandboxProcess::setupChildProcess()
+         {
+             // Drop all privileges in the child process, and enter
+             // a chroot jail.
+         #if defined Q_OS_UNIX
+             ::setgroups(0, 0);
+             ::chroot(&quot;/etc/safe&quot;);
+             ::chdir(&quot;/&quot;);
+             ::setgid(safeGid);
+             ::setuid(safeUid);
+             ::umask(0);
+         #endif
+         }</pre>
+<p><b>Warning:</b> This function is called by <a href="qprocess.html">QProcess</a> on Unix and Mac OS X only. On Windows, it is not called.</p>
+<h3 class="fn"><a name="start"></a>void QProcess::start ( const <a href="qstring.html">QString</a> &amp; <i>program</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>arguments</i>, <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>mode</i> = ReadWrite )</h3>
+<p>Starts the program <i>program</i> in a new process, passing the command line arguments in <i>arguments</i>. The <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> is set to <i>mode</i>. <a href="qprocess.html">QProcess</a> will immediately enter the Starting state. If the process starts successfully, <a href="qprocess.html">QProcess</a> will emit <a href="qprocess.html#started">started</a>(); otherwise, <a href="qprocess.html#error">error</a>() will be emitted.</p>
+<p>On Windows, arguments that contain spaces are wrapped in quotes.</p>
+<p>Note: processes are started asynchronously, which means the <a href="qprocess.html#started">started</a>() and <a href="qprocess.html#error">error</a>() signals may be delayed. Call <a href="qprocess.html#waitForStarted">waitForStarted</a>() to make sure the process has started (or has failed to start) and those signals have been emitted.</p>
+<p>See also <a href="qprocess.html#pid">pid</a>(), <a href="qprocess.html#started">started</a>(), and <a href="qprocess.html#waitForStarted">waitForStarted</a>().</p>
+<h3 class="fn"><a name="start-2"></a>void QProcess::start ( const <a href="qstring.html">QString</a> &amp; <i>program</i>, <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>mode</i> = ReadWrite )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts the program <i>program</i> in a new process. <i>program</i> is a single string of text containing both the program name and its arguments. The arguments are separated by one or more spaces. For example:</p>
+<pre>         QProcess process;
+         process.start(&quot;del /s *.txt&quot;);
+         // same as process.start(&quot;del&quot;, QStringList() &lt;&lt; &quot;/s&quot; &lt;&lt; &quot;*.txt&quot;);
+         ...</pre>
+<p>The <i>program</i> string can also contain quotes, to ensure that arguments containing spaces are correctly supplied to the new process. For example:</p>
+<pre>         QProcess process;
+         process.start(&quot;dir \&quot;My Documents\&quot;&quot;);</pre>
+<p>Note that, on Windows, quotes need to be both escaped and quoted. For example, the above code would be specified in the following way to ensure that <tt>&quot;My Documents&quot;</tt> is used as the argument to the <tt>dir</tt> executable:</p>
+<pre>         QProcess process;
+         process.start(&quot;dir \&quot;\&quot;\&quot;My Documents\&quot;\&quot;\&quot;&quot;);</pre>
+<p>The <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> is set to <i>mode</i>.</p>
+<h3 class="fn"><a name="startDetached"></a>bool QProcess::startDetached ( const <a href="qstring.html">QString</a> &amp; <i>program</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>arguments</i>, const <a href="qstring.html">QString</a> &amp; <i>workingDirectory</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> * <i>pid</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process, and detaches from it. Returns true on success; otherwise returns false. If the calling process exits, the detached process will continue to live.</p>
+<p>On Unix, the started process will run in its own session and act like a daemon. On Windows, it will run as a regular standalone process.</p>
+<p>On Windows, arguments that contain spaces are wrapped in quotes.</p>
+<p>The process will be started in the directory <i>workingDirectory</i>.</p>
+<p>If the function is successful then *<i>pid</i> is set to the process identifier of the started process.</p>
+<h3 class="fn"><a name="startDetached-2"></a>bool QProcess::startDetached ( const <a href="qstring.html">QString</a> &amp; <i>program</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>arguments</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts the program <i>program</i> with the arguments <i>arguments</i> in a new process, and detaches from it. Returns true on success; otherwise returns false. If the calling process exits, the detached process will continue to live.</p>
+<p>On Unix, the started process will run in its own session and act like a daemon. On Windows, it will run as a regular standalone process.</p>
+<p>On Windows, arguments that contain spaces are wrapped in quotes.</p>
+<h3 class="fn"><a name="startDetached-3"></a>bool QProcess::startDetached ( const <a href="qstring.html">QString</a> &amp; <i>program</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts the program <i>program</i> in a new process. <i>program</i> is a single string of text containing both the program name and its arguments. The arguments are separated by one or more spaces.</p>
+<p>The <i>program</i> string can also contain quotes, to ensure that arguments containing spaces are correctly supplied to the new process.</p>
+<h3 class="fn"><a name="started"></a>void QProcess::started ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted by <a href="qprocess.html">QProcess</a> when the process has started, and <a href="qprocess.html#state">state</a>() returns <a href="qprocess.html#ProcessState-enum">Running</a>.</p>
+<h3 class="fn"><a name="state"></a><a href="qprocess.html#ProcessState-enum">QProcess::ProcessState</a> QProcess::state () const</h3>
+<p>Returns the current state of the process.</p>
+<p>See also <a href="qprocess.html#stateChanged">stateChanged</a>() and <a href="qprocess.html#error">error</a>().</p>
+<h3 class="fn"><a name="stateChanged"></a>void QProcess::stateChanged ( <a href="qprocess.html#ProcessState-enum">QProcess::ProcessState</a> <i>newState</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the state of <a href="qprocess.html">QProcess</a> changes. The <i>newState</i> argument is the state <a href="qprocess.html">QProcess</a> changed to.</p>
+<h3 class="fn"><a name="systemEnvironment"></a><a href="qstringlist.html">QStringList</a> QProcess::systemEnvironment ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the environment of the calling process as a list of key=value pairs. Example:</p>
+<pre>         QStringList environment = QProcess::systemEnvironment();
+         // environment = {&quot;PATH=/usr/bin:/usr/local/bin&quot;,
+                           &quot;USER=greg&quot;, &quot;HOME=/home/greg&quot;}</pre>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprocess.html#environment">environment</a>() and <a href="qprocess.html#setEnvironment">setEnvironment</a>().</p>
+<h3 class="fn"><a name="terminate"></a>void QProcess::terminate ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Attempts to terminate the process.</p>
+<p>The process may not exit as a result of calling this function (it is given the chance to prompt the user for any unsaved files, etc).</p>
+<p>On Windows, terminate() posts a WM_CLOSE message to all toplevel windows of the process and then to the main thread of the process itself. On Unix and Mac OS X the SIGTERM signal is sent.</p>
+<p>Console applications on Windows that do not run an event loop, or whose event loop does not handle the WM_CLOSE message, can only be terminated by calling <a href="qprocess.html#kill">kill</a>().</p>
+<p>See also <a href="qprocess.html#kill">kill</a>().</p>
+<h3 class="fn"><a name="waitForFinished"></a>bool QProcess::waitForFinished ( int <i>msecs</i> = 30000 )</h3>
+<p>Blocks until the process has finished and the <a href="qprocess.html#finished">finished</a>() signal has been emitted, or until <i>msecs</i> milliseconds have passed.</p>
+<p>Returns true if the process finished; otherwise returns false (if the operation timed out or if an error occurred).</p>
+<p>This function can operate without an event loop. It is useful when writing non-GUI applications and when performing I/O operations in a non-GUI thread.</p>
+<p><b>Warning:</b> Calling this function from the main (GUI) thread might cause your user interface to freeze.</p>
+<p>If msecs is -1, this function will not time out.</p>
+<p>See also <a href="qprocess.html#finished">finished</a>(), <a href="qprocess.html#waitForStarted">waitForStarted</a>(), <a href="qiodevice.html#waitForReadyRead">waitForReadyRead</a>(), and <a href="qiodevice.html#waitForBytesWritten">waitForBytesWritten</a>().</p>
+<h3 class="fn"><a name="waitForStarted"></a>bool QProcess::waitForStarted ( int <i>msecs</i> = 30000 )</h3>
+<p>Blocks until the process has started and the <a href="qprocess.html#started">started</a>() signal has been emitted, or until <i>msecs</i> milliseconds have passed.</p>
+<p>Returns true if the process was started successfully; otherwise returns false (if the operation timed out or if an error occurred).</p>
+<p>This function can operate without an event loop. It is useful when writing non-GUI applications and when performing I/O operations in a non-GUI thread.</p>
+<p><b>Warning:</b> Calling this function from the main (GUI) thread might cause your user interface to freeze.</p>
+<p>If msecs is -1, this function will not time out.</p>
+<p>See also <a href="qprocess.html#started">started</a>(), <a href="qiodevice.html#waitForReadyRead">waitForReadyRead</a>(), <a href="qiodevice.html#waitForBytesWritten">waitForBytesWritten</a>(), and <a href="qprocess.html#waitForFinished">waitForFinished</a>().</p>
+<h3 class="fn"><a name="workingDirectory"></a><a href="qstring.html">QString</a> QProcess::workingDirectory () const</h3>
+<p>If <a href="qprocess.html">QProcess</a> has been assigned a working directory, this function returns the working directory that the <a href="qprocess.html">QProcess</a> will enter before the program has started. Otherwise, (i.e&#x2e;, no directory has been assigned,) an empty string is returned, and <a href="qprocess.html">QProcess</a> will use the application's current working directory instead.</p>
+<p>See also <a href="qprocess.html#setWorkingDirectory">setWorkingDirectory</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="Q_PID-typedef"></a>typedef Q_PID</h3>
+<p>Typedef for the identifiers used to represent processes on the underlying platform. On Unix, this corresponds to <a href="qtglobal.html#qint64-typedef">qint64</a>; on Windows, it corresponds to <tt>_PROCESS_INFORMATION*</tt>.</p>
+<p>See also <a href="qprocess.html#pid">QProcess::pid</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

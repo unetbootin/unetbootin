@@ -1,0 +1,328 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+  \page examples-overview.html
+  \title An Overview of Qt's Examples
+  \brief A short guide to the different categories of examples included with Qt.
+  \ingroup howto
+
+  Qt is supplied with a variety of examples that cover almost every aspect
+  of development. These examples are ordered by functional area, but many
+  examples often use features from many parts of Qt to highlight one area
+  in particular.
+
+  This document provides a brief overview of each example category and
+  provides links to the more formal \l{Qt Examples}{list of examples}.
+
+  \section1 \l{Qt Examples#Widgets}{Widgets}
+
+  \l{Qt Examples#Widgets}{\inlineimage widget-examples.png
+  }
+
+  Qt comes with a large range of standard widgets that users of modern
+  applications have come to expect.
+
+  You can also develop your own custom widgets and controls, and use them
+  alongside standard widgets.
+
+  It is even possible to provide custom styles and themes for widgets that can
+  be used to change the appearance of standard widgets and appropriately
+  written custom widgets.
+
+  \section1 \l{Qt Examples#Dialogs}{Dialogs}
+
+  \l{Qt Examples#Dialogs}{\inlineimage dialog-examples.png
+  }
+
+  Qt includes standard dialogs for many common operations, such as file
+  selection, printing, and color selection.
+
+  Custom dialogs can also be created for specialized modal or modeless
+  interactions with users.
+
+  \section1 \l{Qt Examples#Main Windows}{Main Windows}
+
+  \l{Qt Examples#Main Windows}{\inlineimage mainwindow-examples.png
+  }
+
+  All the standard features of application main windows are provided by Qt.
+
+  Main windows can have pull down menus, tool bars, and dock windows. These
+  separate forms of user input are unified in an integrated action system that
+  also supports keyboard shortcuts and accelerator keys in menu items.
+
+  \section1 \l{Qt Examples#Layouts}{Layouts}
+
+  \l{Qt Examples#Layouts}{\inlineimage layout-examples.png
+  }
+
+  Qt uses a layout-based approach to widget management. Widgets are arranged in
+  the optimal positions in windows based on simple layout rules, leading to a
+  consistent look and feel.
+
+  Custom layouts can be used to provide more control over the positions and
+  sizes of child widgets.
+
+  \section1 \l{Qt Examples#Painting}{Painting}
+
+  \l{Qt Examples#Painting}{\inlineimage painting-examples.png
+  }
+
+  Qt's painting system is able to render vector graphics, images, and outline
+  font-based text with sub-pixel accuracy accuracy using anti-aliasing to
+  improve rendering quality.
+
+  These examples show the most common techniques that are used when painting
+  with Qt, from basic concepts such as drawing simple primitives to the use of
+  transformations.
+
+  \section1 \l{Qt Examples#Item Views}{Item Views}
+
+  \l{Qt Examples#Item Views}{\inlineimage itemview-examples.png
+  }
+
+  Item views are widgets that typically display data sets. Qt 4's model/view
+  framework lets you handle large data sets by separating the underlying data
+  from the way it is represented to the user, and provides support for
+  customized rendering through the use of delegates.
+
+  \section1 \l{Qt Examples#Graphics View}{Graphics View}
+
+  \l{Qt Examples#Graphics View}{\inlineimage graphicsview-examples.png
+  }
+
+  Qt is provided with a comprehensive canvas through the GraphicsView
+  classes.
+
+  These examples demonstrate the fundamental aspects of canvas programming
+  with Qt.
+
+  \section1 \l{Qt Examples#Rich Text}{Rich Text}
+
+  \l{Qt Examples#Rich Text}{\inlineimage richtext-examples.png
+  }
+
+  Qt provides powerful document-oriented rich text engine that supports Unicode
+  and right-to-left scripts. Documents can be manipulated using a cursor-based
+  API, and their contents can be imported and exported as both HTML and in a
+  custom XML format.
+
+  \section1 \l{Qt Examples#Tools}{Tools}
+
+  \l{Qt Examples#Tools}{\inlineimage tool-examples.png
+  }
+
+  Qt is equipped with a range of capable tool classes, from containers and
+  iterators to classes for string handling and manipulation.
+
+  Other classes provide application infrastructure support, handling plugin
+  loading and managing configuration files.
+
+  \section1 \l{Qt Examples#Desktop}{Desktop}
+
+  \l{Qt Examples#Desktop}{\inlineimage desktop-examples.png
+  }
+
+  Qt provides features to enable applications to integrate with the user's
+  preferred desktop environment.
+
+  Features such as system tray icons, access to the desktop widget, and
+  support for desktop services can be used to improve the appearance of
+  applications and take advantage of underlying desktop facilities.
+
+  \section1 \l{Qt Examples#Drag and Drop}{Drag and Drop}
+
+  \l{Qt Examples#Drag and Drop}{\inlineimage draganddrop-examples.png
+  }
+
+  Qt supports native drag and drop on all platforms via an extensible
+  MIME-based system that enables applications to send data to each other in the
+  most appropriate formats.
+
+  Drag and drop can also be implemented for internal use by applications.
+
+  \section1 \l{Qt Examples#Threads}{Threads}
+
+  \l{Qt Examples#Threads}{\inlineimage thread-examples.png
+  }
+
+  Qt 4 makes it easier than ever to write multithreaded applications. More
+  classes have been made usable from non-GUI threads, and the signals and slots
+  mechanism can now be used to communicate between threads.
+
+  Additionally, it is now possible to move objects between threads.
+
+  \section1 \l{Qt Examples#Concurrent Programming}{Concurrent Programming}
+
+  The QtConcurrent namespace includes a collection of classes and functions
+  for straightforward concurrent programming.
+
+  These examples show how to apply the basic techniques of concurrent
+  programming to simple problems.
+
+  \section1 \l{Qt Examples#Network}{Network}
+
+  \l{Qt Examples#Network}{\inlineimage network-examples.png
+  }
+
+  Qt is provided with an extensive set of network classes to support both
+  client-based and server side network programming.
+
+  These examples demonstrate the fundamental aspects of network programming
+  with Qt.
+
+  \section1 \l{Qt Examples#XML}{XML}
+
+  \l{Qt Examples#XML}{\inlineimage xml-examples.png
+  }
+
+  XML parsing and handling is supported through SAX and DOM compliant APIs.
+
+  Qt's SAX compliant classes allow you to parse XML incrementally; the DOM
+  classes enable more complex document-level operations to be performed on
+  XML files.
+
+  \section1 \l{Qt Examples#XML Patterns: XQuery & XPath}{XML Patterns: XQuery & XPath}
+
+  Qt provides an XQuery & XPath engine, QtXmlPatterns, that can be used on XML files
+  and custom data models, similar to the model/view framework.
+
+  \section1 \l{Qt Examples#OpenGL}{OpenGL}
+
+  \l{Qt Examples#OpenGL}{\inlineimage opengl-examples.png
+  }
+
+  Qt provides support for integration with OpenGL implementations on all
+  platforms, giving developers the opportunity to display hardware accelerated
+  3D graphics alongside a more conventional user interface.
+
+  These examples demonstrate the basic techniques used to take advantage of
+  OpenGL in Qt applications.
+
+  \section1 \l{Qt Examples#SQL}{SQL}
+
+  \l{Qt Examples#SQL}{\inlineimage sql-examples.png
+  }
+
+  Qt provides extensive database interoperability, with support for products
+  from both open source and proprietary vendors.
+
+  SQL support is integrated with Qt's model/view architecture, making it easier
+  to provide GUI integration for your database applications.
+
+  \section1 \l{Qt Examples#Qt Assistant}{Qt Assistant}
+
+  \l{Qt Examples#Qt Assistant}{\inlineimage assistant-examples.png
+  }
+
+  Support for interactive help is provided by the Qt Assistant application.
+  Developers can take advantages of the facilities it offers to display
+  specially-prepared documentation to users of their applications.
+
+  \section1 \l{Qt Examples#Qt Designer}{Qt Designer}
+
+  \l{Qt Examples#Qt Designer}{\inlineimage designer-examples.png
+  }
+
+  Qt Designer is a capable graphical user interface designer that lets you
+  create and configure forms without writing code. GUIs created with
+  Qt Designer can be compiled into an application or created at run-time.
+
+  \section1 \l{Qt Examples#UiTools}{UiTools}
+
+  \l{Qt Examples#UiTools}{\inlineimage uitools-examples.png
+  }
+
+  Qt is equipped with a range of capable tool classes, from containers and
+  iterators to classes for string handling and manipulation.
+
+  Other classes provide application infrastructure support, handling plugin
+  loading and managing configuration files.
+
+  \section1 \l{Qt Examples#Qt Linguist}{Qt Linguist}
+
+  \l{Qt Examples#Qt Linguist}{\inlineimage linguist-examples.png
+  }
+
+  Internationalization is a core feature of Qt. These examples show how to
+  access translation and localization facilities at run-time.
+
+  \section1 \l{Qt Examples#Qt Script}{Qt Script}
+
+  \l{Qt Examples#Qt Script}{\inlineimage qtscript-examples.png
+  }
+
+  Qt is provided with a powerful embedded scripting environment through the QtScript
+  classes.
+
+  These examples demonstrate the fundamental aspects of scripting applications
+  with Qt.
+
+  \section1 \l{Qt Examples#Qt for Embedded Linux}{Qt for Embedded Linux}
+
+  \l{Qt Examples#Qt for Embedded Linux}{\inlineimage qt-embedded-examples.png
+  }
+
+  These examples show how to take advantage of features specifically designed
+  for use on systems with limited resources, specialized hardware, and small
+  screens.
+
+  \section1 \l{Qt Examples#ActiveQt}{ActiveQt}
+
+  Qt is supplied with a number of example applications and demonstrations that
+  have been written to provide developers with examples of the Qt API in use,
+  highlight good programming practice, and showcase features found in each of
+  Qt's core technologies.
+
+  The example and demo launcher can be used to explore the different categories
+  available. It provides an overview of each example, lets you view the
+  documentation in Qt Assistant, and is able to launch examples and demos.
+
+  \section1 \l{http://doc.trolltech.com/qq}{Another Source of Examples}
+
+  One more valuable source for examples and explanations of Qt
+  features is the archive of the \l {http://doc.trolltech.com/qq} 
+  {Qt Quarterly}.
+
+*/

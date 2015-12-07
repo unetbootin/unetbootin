@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextformat.cpp -->
+<head>
+  <title>Qt 4.4: QTextFrameFormat Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextFrameFormat Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextFrameFormat class provides formatting information for frames in a <a href="qtextdocument.html">QTextDocument</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextFrameFormat&gt;</pre><p>Inherits <a href="qtextformat.html">QTextFormat</a>.</p>
+<p>Inherited by <a href="qtexttableformat.html">QTextTableFormat</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextframeformat-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtextframeformat.html#BorderStyle-enum">BorderStyle</a></b> { BorderStyle_None, BorderStyle_Dotted, BorderStyle_Dashed, BorderStyle_Solid, ..., BorderStyle_Outset }</li>
+<li><div class="fn"/>enum <b><a href="qtextframeformat.html#Position-enum">Position</a></b> { InFlow, FloatLeft, FloatRight }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextframeformat.html#QTextFrameFormat">QTextFrameFormat</a></b> ()</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#border">border</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="qtextframeformat.html#borderBrush">borderBrush</a></b> () const</li>
+<li><div class="fn"/>BorderStyle <b><a href="qtextframeformat.html#borderStyle">borderStyle</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#bottomMargin">bottomMargin</a></b> () const</li>
+<li><div class="fn"/>QTextLength <b><a href="qtextframeformat.html#height">height</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextframeformat.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#leftMargin">leftMargin</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#margin">margin</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#padding">padding</a></b> () const</li>
+<li><div class="fn"/>PageBreakFlags <b><a href="qtextframeformat.html#pageBreakPolicy">pageBreakPolicy</a></b> () const</li>
+<li><div class="fn"/>Position <b><a href="qtextframeformat.html#position">position</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#rightMargin">rightMargin</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setBorder">setBorder</a></b> ( qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setBorderBrush">setBorderBrush</a></b> ( const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setBorderStyle">setBorderStyle</a></b> ( BorderStyle <i>style</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setBottomMargin">setBottomMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setHeight">setHeight</a></b> ( const QTextLength &amp; <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setHeight-2">setHeight</a></b> ( qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setLeftMargin">setLeftMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setMargin">setMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setPadding">setPadding</a></b> ( qreal <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setPageBreakPolicy">setPageBreakPolicy</a></b> ( PageBreakFlags <i>policy</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setPosition">setPosition</a></b> ( Position <i>policy</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setRightMargin">setRightMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setTopMargin">setTopMargin</a></b> ( qreal <i>margin</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setWidth">setWidth</a></b> ( const QTextLength &amp; <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextframeformat.html#setWidth-2">setWidth</a></b> ( qreal <i>width</i> )</li>
+<li><div class="fn"/>qreal <b><a href="qtextframeformat.html#topMargin">topMargin</a></b> () const</li>
+<li><div class="fn"/>QTextLength <b><a href="qtextframeformat.html#width">width</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>49 public functions inherited from <a href="qtextformat.html#public-functions">QTextFormat</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextFrameFormat class provides formatting information for frames in a <a href="qtextdocument.html">QTextDocument</a>.</p>
+<p>A text frame groups together one or more blocks of text, providing a layer of structure larger than the paragraph. The format of a frame specifies how it is rendered and positioned on the screen. It does not directly specify the behavior of the text formatting within, but provides constraints on the layout of its children.</p>
+<p>The frame format defines the <a href="qtextframeformat.html#width">width</a>() and <a href="qtextframeformat.html#height">height</a>() of the frame on the screen. Each frame can have a <a href="qtextframeformat.html#border">border</a>() that surrounds its contents with a rectangular box. The border is surrounded by a <a href="qtextframeformat.html#margin">margin</a>() around the frame, and the contents of the frame are kept separate from the border by the frame's <a href="qtextframeformat.html#padding">padding</a>(). This scheme is similar to the box model used by Cascading Style Sheets for HTML pages.</p>
+<p align="center"><img src="images/qtextframe-style.png" /></p><p>The <a href="qtextframeformat.html#position">position</a>() of a frame is set using <a href="qtextframeformat.html#setPosition">setPosition</a>() and determines how it is located relative to the surrounding text.</p>
+<p>The validity of a QTextFrameFormat object can be determined with the <a href="qtextframeformat.html#isValid">isValid</a>() function.</p>
+<p>See also <a href="qtextframe.html">QTextFrame</a> and <a href="qtextblockformat.html">QTextBlockFormat</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="BorderStyle-enum"></a>enum QTextFrameFormat::BorderStyle</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_None</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Dotted</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Dashed</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Solid</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Double</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_DotDash</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_DotDotDash</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Groove</tt></td><td align="center" valign="top"><tt>7</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Ridge</tt></td><td align="center" valign="top"><tt>8</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Inset</tt></td><td align="center" valign="top"><tt>9</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::BorderStyle_Outset</tt></td><td align="center" valign="top"><tt>10</tt></td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.3.</p>
+<h3 class="fn"><a name="Position-enum"></a>enum QTextFrameFormat::Position</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::InFlow</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::FloatLeft</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QTextFrameFormat::FloatRight</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextFrameFormat"></a>QTextFrameFormat::QTextFrameFormat ()</h3>
+<p>Constructs a text frame format object with the default properties.</p>
+<h3 class="fn"><a name="border"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::border () const</h3>
+<p>Returns the width of the border in pixels.</p>
+<p>See also <a href="qtextframeformat.html#setBorder">setBorder</a>().</p>
+<h3 class="fn"><a name="borderBrush"></a><a href="qbrush.html">QBrush</a> QTextFrameFormat::borderBrush () const</h3>
+<p>Returns the brush used for the frame's border.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setBorderBrush">setBorderBrush</a>().</p>
+<h3 class="fn"><a name="borderStyle"></a><a href="qtextframeformat.html#BorderStyle-enum">BorderStyle</a> QTextFrameFormat::borderStyle () const</h3>
+<p>Returns the style of the frame's border.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setBorderStyle">setBorderStyle</a>().</p>
+<h3 class="fn"><a name="bottomMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::bottomMargin () const</h3>
+<p>Returns the width of the frame's bottom margin in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setBottomMargin">setBottomMargin</a>().</p>
+<h3 class="fn"><a name="height"></a><a href="qtextlength.html">QTextLength</a> QTextFrameFormat::height () const</h3>
+<p>Returns the height of the frame's border rectangle.</p>
+<p>See also <a href="qtextframeformat.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextFrameFormat::isValid () const</h3>
+<p>Returns true if the format description is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="leftMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::leftMargin () const</h3>
+<p>Returns the width of the frame's left margin in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setLeftMargin">setLeftMargin</a>().</p>
+<h3 class="fn"><a name="margin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::margin () const</h3>
+<p>Returns the width of the frame's external margin in pixels.</p>
+<p>See also <a href="qtextframeformat.html#setMargin">setMargin</a>().</p>
+<h3 class="fn"><a name="padding"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::padding () const</h3>
+<p>Returns the width of the frame's internal padding in pixels.</p>
+<p>See also <a href="qtextframeformat.html#setPadding">setPadding</a>().</p>
+<h3 class="fn"><a name="pageBreakPolicy"></a><a href="qtextformat.html#PageBreakFlag-enum">PageBreakFlags</a> QTextFrameFormat::pageBreakPolicy () const</h3>
+<p>Returns the currently set page break policy for the frame/table. The default is <a href="qtextformat.html#PageBreakFlag-enum">QTextFormat::PageBreak_Auto</a>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextframeformat.html#setPageBreakPolicy">setPageBreakPolicy</a>().</p>
+<h3 class="fn"><a name="position"></a><a href="qtextframeformat.html#Position-enum">Position</a> QTextFrameFormat::position () const</h3>
+<p>Returns the positioning policy for frames with this frame format.</p>
+<p>See also <a href="qtextframeformat.html#setPosition">setPosition</a>().</p>
+<h3 class="fn"><a name="rightMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::rightMargin () const</h3>
+<p>Returns the width of the frame's right margin in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setRightMargin">setRightMargin</a>().</p>
+<h3 class="fn"><a name="setBorder"></a>void QTextFrameFormat::setBorder ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the <i>width</i> (in pixels) of the frame's border.</p>
+<p>See also <a href="qtextframeformat.html#border">border</a>().</p>
+<h3 class="fn"><a name="setBorderBrush"></a>void QTextFrameFormat::setBorderBrush ( const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the <i>brush</i> used for the frame's border.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#borderBrush">borderBrush</a>().</p>
+<h3 class="fn"><a name="setBorderStyle"></a>void QTextFrameFormat::setBorderStyle ( <a href="qtextframeformat.html#BorderStyle-enum">BorderStyle</a> <i>style</i> )</h3>
+<p>Sets the <i>style</i> of the frame's border.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#borderStyle">borderStyle</a>().</p>
+<h3 class="fn"><a name="setBottomMargin"></a>void QTextFrameFormat::setBottomMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the frame's bottom <i>margin</i> in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#bottomMargin">bottomMargin</a>().</p>
+<h3 class="fn"><a name="setHeight"></a>void QTextFrameFormat::setHeight ( const <a href="qtextlength.html">QTextLength</a> &amp; <i>height</i> )</h3>
+<p>Sets the frame's <i>height</i>.</p>
+<p>See also <a href="qtextframeformat.html#height">height</a>().</p>
+<h3 class="fn"><a name="setHeight-2"></a>void QTextFrameFormat::setHeight ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the frame's <i>height</i>.</p>
+<h3 class="fn"><a name="setLeftMargin"></a>void QTextFrameFormat::setLeftMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the frame's left <i>margin</i> in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#leftMargin">leftMargin</a>().</p>
+<h3 class="fn"><a name="setMargin"></a>void QTextFrameFormat::setMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the frame's <i>margin</i> in pixels. This method also sets the left, right, top and bottom margins of the frame to the same value. The individual margins override the general margin.</p>
+<p>See also <a href="qtextframeformat.html#margin">margin</a>().</p>
+<h3 class="fn"><a name="setPadding"></a>void QTextFrameFormat::setPadding ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the <i>width</i> of the frame's internal padding in pixels.</p>
+<p>See also <a href="qtextframeformat.html#padding">padding</a>().</p>
+<h3 class="fn"><a name="setPageBreakPolicy"></a>void QTextFrameFormat::setPageBreakPolicy ( <a href="qtextformat.html#PageBreakFlag-enum">PageBreakFlags</a> <i>policy</i> )</h3>
+<p>Sets the page break policy for the frame/table to <i>policy</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextframeformat.html#pageBreakPolicy">pageBreakPolicy</a>().</p>
+<h3 class="fn"><a name="setPosition"></a>void QTextFrameFormat::setPosition ( <a href="qtextframeformat.html#Position-enum">Position</a> <i>policy</i> )</h3>
+<p>Sets the <i>policy</i> for positioning frames with this frame format.</p>
+<p>See also <a href="qtextframeformat.html#position">position</a>().</p>
+<h3 class="fn"><a name="setRightMargin"></a>void QTextFrameFormat::setRightMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the frame's right <i>margin</i> in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#rightMargin">rightMargin</a>().</p>
+<h3 class="fn"><a name="setTopMargin"></a>void QTextFrameFormat::setTopMargin ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>margin</i> )</h3>
+<p>Sets the frame's top <i>margin</i> in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#topMargin">topMargin</a>().</p>
+<h3 class="fn"><a name="setWidth"></a>void QTextFrameFormat::setWidth ( const <a href="qtextlength.html">QTextLength</a> &amp; <i>width</i> )</h3>
+<p>Sets the frame's border rectangle's <i>width</i>.</p>
+<p>See also <a href="qtextframeformat.html#width">width</a>() and <a href="qtextlength.html">QTextLength</a>.</p>
+<h3 class="fn"><a name="setWidth-2"></a>void QTextFrameFormat::setWidth ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Convenience method that sets the width of the frame's border rectangle's width to the specified fixed <i>width</i>.</p>
+<h3 class="fn"><a name="topMargin"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextFrameFormat::topMargin () const</h3>
+<p>Returns the width of the frame's top margin in pixels.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextframeformat.html#setTopMargin">setTopMargin</a>().</p>
+<h3 class="fn"><a name="width"></a><a href="qtextlength.html">QTextLength</a> QTextFrameFormat::width () const</h3>
+<p>Returns the width of the frame's border rectangle.</p>
+<p>See also <a href="qtextframeformat.html#setWidth">setWidth</a>() and <a href="qtextlength.html">QTextLength</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

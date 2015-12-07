@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qmake-manual.qdoc -->
+<head>
+  <title>Qt 4.4: qmake Tutorial</title>
+  <link rel="prev" href="qmake-manual.html" />
+  <link rel="contents" href="qmake-manual.html" />
+  <link rel="next" href="qmake-common-projects.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qmake-manual.html">qmake Manual</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-common-projects.html">qmake Common Projects</a>]
+</p>
+<h1 class="title">qmake Tutorial<br /><span class="subtitle"></span>
+</h1>
+<p>This tutorial teaches you how to use <tt>qmake</tt>. We recommend that you read the <tt>qmake</tt> user guide after completing this tutorial.</p>
+<a name="starting-off-simple"></a>
+<h2>Starting off Simple</h2>
+<p>Let's assume that you have just finished a basic implementation of your application, and you have created the following files:</p>
+<ul>
+<li>hello.cpp</li>
+<li>hello.h</li>
+<li>main.cpp</li>
+</ul>
+<p>You will find these files in the <tt>examples/qmake/tutorial</tt> directory of the Qt distribution. The only other thing you know about the setup of the application is that it's written in Qt. First, using your favorite plain text editor, create a file called <tt>hello.pro</tt> in <tt>examples/qmake/tutorial</tt>. The first thing you need to do is add the lines that tell <tt>qmake</tt> about the source and header files that are part of your development project.</p>
+<p>We'll add the source files to the project file first. To do this you need to use the <a href="qmake-variable-reference.html#sources">SOURCES</a> variable. Just start a new line with <tt>SOURCES +=</tt> and put hello.cpp after it. You should have something like this:</p>
+<pre>         SOURCES += hello.cpp</pre>
+<p>We repeat this for each source file in the project, until we end up with the following:</p>
+<pre>         SOURCES += hello.cpp
+         SOURCES += main.cpp</pre>
+<p>If you prefer to use a Make-like syntax, with all the files listed in one go you can use the newline escaping like this:</p>
+<pre>         SOURCES = hello.cpp \
+                   main.cpp</pre>
+<p>Now that the source files are listed in the project file, the header files must be added. These are added in exactly the same way as source files, except that the variable name we use is <a href="qmake-variable-reference.html#headers">HEADERS</a>.</p>
+<p>Once you have done this, your project file should look something like this:</p>
+<pre>         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp</pre>
+<p>The target name is set automatically; it is the same as the project file, but with the suffix appropriate to the platform. For example, if the project file is called <tt>hello.pro</tt>, the target will be <tt>hello.exe</tt> on Windows and <tt>hello</tt> on Unix. If you want to use a different name you can set it in the project file:</p>
+<pre>         TARGET = helloworld</pre>
+<p>The final step is to set the <a href="qmake-variable-reference.html#config">CONFIG</a> variable. Since this is a Qt application, we need to put <tt>qt</tt> on the <tt>CONFIG</tt> line so that <tt>qmake</tt> will add the relevant libraries to be linked against and ensure that build lines for <tt>moc</tt> and <tt>uic</tt> are included in the generated Makefile.</p>
+<p>The finished project file should look like this:</p>
+<pre>         CONFIG += qt
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp</pre>
+<p>You can now use <tt>qmake</tt> to generate a Makefile for your application. On the command line, in your project's directory, type the following:</p>
+<pre>         qmake -o Makefile hello.pro</pre>
+<p>Then type <tt>make</tt> or <tt>nmake</tt> depending on the compiler you use.</p>
+<p>For Visual Studio users, <tt>qmake</tt> can also generate <tt>.dsp</tt> or <tt>.vcproj</tt> files, for example:</p>
+<pre>         qmake -tp vc -o hello.dsp hello.pro</pre>
+<a name="making-an-application-debuggable"></a>
+<h2>Making an Application Debuggable</h2>
+<p>The release version of an application doesn't contain any debugging symbols or other debugging information. During development it is useful to produce a debugging version of the application that has the relevant information. This is easily achieved by adding <tt>debug</tt> to the <tt>CONFIG</tt> variable in the project file.</p>
+<p>For example:</p>
+<pre>         CONFIG += qt debug
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp</pre>
+<p>Use <tt>qmake</tt> as before to generate a Makefile and you will be able to obtain useful information about your application when running it in a debugging environment.</p>
+<a name="adding-platform-specific-source-files"></a>
+<h2>Adding Platform-Specific Source Files</h2>
+<p>After a few hours of coding, you might have made a start on the platform-specific part of your application, and decided to keep the platform-dependent code separate. So you now have two new files to include into your project file: <tt>hellowin.cpp</tt> and <tt>hellounix.cpp</tt>. We can't just add these to the <tt>SOURCES</tt> variable since this will put both files in the Makefile. So, what we need to do here is to use a scope which will be processed depending on which platform <tt>qmake</tt> is run on.</p>
+<p>A simple scope that will add in the platform-dependent file for Windows looks like this:</p>
+<pre>         win32 {
+             SOURCES += hellowin.cpp
+         }</pre>
+<p>So if <tt>qmake</tt> is run on Windows, it will add <tt>hellowin.cpp</tt> to the list of source files. If <tt>qmake</tt> is run on any other platform, it will simply ignore it. Now all that is left to be done is to create a scope for the Unix-specific file.</p>
+<p>When you have done that, your project file should now look something like this:</p>
+<pre>         CONFIG += qt debug
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp
+         win32 {
+             SOURCES += hellowin.cpp
+         }
+         unix {
+             SOURCES += hellounix.cpp
+         }</pre>
+<p>Use <tt>qmake</tt> as before to generate a Makefile.</p>
+<a name="stopping-qmake-if-a-file-doesn-t-exist"></a>
+<h2>Stopping qmake If a File Doesn't Exist</h2>
+<p>You may not want to create a Makefile if a certain file doesn't exist. We can check if a file exists by using the exists() function. We can stop <tt>qmake</tt> from processing by using the error() function. This works in the same way as scopes do. Simply replace the scope condition with the function. A check for a <tt>main.cpp</tt> file looks like this:</p>
+<pre>         !exists( main.cpp ) {
+             error( &quot;No main.cpp file found&quot; )
+         }</pre>
+<p>The <tt>!</tt> symbol is used to negate the test; i.e&#x2e; <tt>exists( main.cpp )</tt> is true if the file exists, and <tt>!exists( main.cpp )</tt> is true if the file doesn't exist.</p>
+<pre>         CONFIG += qt debug
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp
+         win32 {
+             SOURCES += hellowin.cpp
+         }
+         unix {
+             SOURCES += hellounix.cpp
+         }
+         !exists( main.cpp ) {
+             error( &quot;No main.cpp file found&quot; )
+         }</pre>
+<p>Use <tt>qmake</tt> as before to generate a makefile. If you rename <tt>main.cpp</tt> temporarily, you will see the message and <tt>qmake</tt> will stop processing.</p>
+<a name="checking-for-more-than-one-condition"></a>
+<h2>Checking for More than One Condition</h2>
+<p>Suppose you use Windows and you want to be able to see statement output with <a href="qtglobal.html#qDebug">qDebug</a>() when you run your application on the command line. Unless you build your application with the appropriate console setting, you won't see the output. We can easily put <tt>console</tt> on the <tt>CONFIG</tt> line so that on Windows the makefile will have this setting. However, let's say that we only want to add the <tt>CONFIG</tt> line if we are running on Windows <i>and</i> when <tt>debug</tt> is already on the <tt>CONFIG</tt> line. This requires using two nested scopes; just create one scope, then create the other inside it. Put the settings to be processed inside the last scope, like this:</p>
+<pre>         win32 {
+             debug {
+                 CONFIG += console
+             }
+         }</pre>
+<p>Nested scopes can be joined together using colons, so the final project file looks like this:</p>
+<pre>         CONFIG += qt debug
+         HEADERS += hello.h
+         SOURCES += hello.cpp
+         SOURCES += main.cpp
+         win32 {
+             SOURCES += hellowin.cpp
+         }
+         unix {
+             SOURCES += hellounix.cpp
+         }
+         !exists( main.cpp ) {
+             error( &quot;No main.cpp file found&quot; )
+         }
+         win32:debug {
+             CONFIG += console
+         }</pre>
+<p>That's it! You have now completed the tutorial for <tt>qmake</tt>, and are ready to write project files for your development projects.</p>
+<p>
+[Previous: <a href="qmake-manual.html">qmake Manual</a>]
+[<a href="qmake-manual.html">Contents</a>]
+[Next: <a href="qmake-common-projects.html">qmake Common Projects</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

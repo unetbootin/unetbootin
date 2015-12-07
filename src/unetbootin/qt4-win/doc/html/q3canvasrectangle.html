@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/canvas/q3canvas.cpp -->
+<head>
+  <title>Qt 4.4: Q3CanvasRectangle Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CanvasRectangle Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CanvasRectangle class provides a rectangle on a <a href="q3canvas.html">Q3Canvas</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CanvasRectangle&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3canvaspolygonalitem.html">Q3CanvasPolygonalItem</a>.</p>
+<ul>
+<li><a href="q3canvasrectangle-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3canvasrectangle.html#Q3CanvasRectangle">Q3CanvasRectangle</a></b> ( Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasrectangle.html#Q3CanvasRectangle-2">Q3CanvasRectangle</a></b> ( const QRect &amp; <i>r</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasrectangle.html#Q3CanvasRectangle-3">Q3CanvasRectangle</a></b> ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, Q3Canvas * <i>canvas</i> )</li>
+<li><div class="fn"/><b><a href="q3canvasrectangle.html#dtor.Q3CanvasRectangle">~Q3CanvasRectangle</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3canvasrectangle.html#height">height</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="q3canvasrectangle.html#rect">rect</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3canvasrectangle.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3canvasrectangle.html#setSize">setSize</a></b> ( int <i>width</i>, int <i>height</i> )</li>
+<li><div class="fn"/>QSize <b><a href="q3canvasrectangle.html#size">size</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3canvasrectangle.html#width">width</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>8 public functions inherited from <a href="q3canvaspolygonalitem.html#public-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>34 public functions inherited from <a href="q3canvasitem.html#public-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual Q3PointArray <b><a href="q3canvasrectangle.html#chunks">chunks</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3canvasrectangle.html#drawShape">drawShape</a></b> ( QPainter &amp; <i>p</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 protected functions inherited from <a href="q3canvaspolygonalitem.html#protected-functions">Q3CanvasPolygonalItem</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="q3canvasitem.html#protected-functions">Q3CanvasItem</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CanvasRectangle class provides a rectangle on a <a href="q3canvas.html">Q3Canvas</a>.</p>
+<p>This item paints a single rectangle which may have any <a href="q3canvaspolygonalitem.html#pen">pen</a>() and <a href="q3canvaspolygonalitem.html#brush">brush</a>(), but may not be tilted/rotated. For rotated rectangles, use <a href="q3canvaspolygon.html">Q3CanvasPolygon</a>.</p>
+<p>The rectangle's size and initial position can be set in the constructor. The size can be set or changed later using <a href="q3canvasrectangle.html#setSize">setSize</a>(). Use <a href="q3canvasrectangle.html#height">height</a>() and <a href="q3canvasrectangle.html#width">width</a>() to retrieve the rectangle's dimensions.</p>
+<p>The rectangle can be drawn on a painter with <a href="q3canvasrectangle.html#drawShape">drawShape</a>().</p>
+<p>Like any other canvas item rectangles can be moved with <a href="q3canvasitem.html#move">Q3CanvasItem::move</a>() and <a href="q3canvasitem.html#moveBy">Q3CanvasItem::moveBy</a>(), or by setting coordinates with <a href="q3canvasitem.html#setX">Q3CanvasItem::setX</a>(), <a href="q3canvasitem.html#setY">Q3CanvasItem::setY</a>() and <a href="q3canvasitem.html#setZ">Q3CanvasItem::setZ</a>().</p>
+<p>See also <a href="http://doc.trolltech.com/qtcanvas">QtCanvas</a> and <a href="graphicsview-porting.html">Porting to Graphics View</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CanvasRectangle"></a>Q3CanvasRectangle::Q3CanvasRectangle ( <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a rectangle at position (0,0) with both width and height set to 32 pixels on <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasRectangle-2"></a>Q3CanvasRectangle::Q3CanvasRectangle ( const <a href="qrect.html">QRect</a> &amp; <i>r</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a rectangle positioned and sized by <i>r</i> on <i>canvas</i>.</p>
+<h3 class="fn"><a name="Q3CanvasRectangle-3"></a>Q3CanvasRectangle::Q3CanvasRectangle ( int <i>x</i>, int <i>y</i>, int <i>width</i>, int <i>height</i>, <a href="q3canvas.html">Q3Canvas</a> * <i>canvas</i> )</h3>
+<p>Constructs a rectangle at position (<i>x</i>, <i>y</i>) and size <i>width</i> by <i>height</i>, on <i>canvas</i>.</p>
+<h3 class="fn"><a name="dtor.Q3CanvasRectangle"></a>Q3CanvasRectangle::~Q3CanvasRectangle ()</h3>
+<p>Destroys the rectangle.</p>
+<h3 class="fn"><a name="chunks"></a><a href="q3pointarray.html">Q3PointArray</a> Q3CanvasRectangle::chunks () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Simply calls Q3CanvasItem::chunks().</p>
+<h3 class="fn"><a name="drawShape"></a>void Q3CanvasRectangle::drawShape ( <a href="qpainter.html">QPainter</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Draws the rectangle on painter <i>p</i>.</p>
+<p>Reimplemented from <a href="q3canvaspolygonalitem.html#drawShape">Q3CanvasPolygonalItem</a>.</p>
+<h3 class="fn"><a name="height"></a>int Q3CanvasRectangle::height () const</h3>
+<p>Returns the height of the rectangle.</p>
+<h3 class="fn"><a name="rect"></a><a href="qrect.html">QRect</a> Q3CanvasRectangle::rect () const</h3>
+<p>Returns the integer-converted <a href="q3canvasitem.html#x">x</a>(), <a href="q3canvasitem.html#y">y</a>() position and <a href="q3canvasrectangle.html#size">size</a>() of the rectangle as a <a href="qrect.html">QRect</a>.</p>
+<h3 class="fn"><a name="rtti"></a>int Q3CanvasRectangle::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 5 (<a href="q3canvasitem.html#RttiValues-enum">Q3CanvasItem::Rtti_Rectangle</a>).</p>
+<p>Reimplemented from <a href="q3canvasitem.html#rtti">Q3CanvasItem</a>.</p>
+<p>See also <a href="q3canvasitem.html#rtti">Q3CanvasItem::rtti</a>().</p>
+<h3 class="fn"><a name="setSize"></a>void Q3CanvasRectangle::setSize ( int <i>width</i>, int <i>height</i> )</h3>
+<p>Sets the <i>width</i> and <i>height</i> of the rectangle.</p>
+<p>See also <a href="q3canvasrectangle.html#size">size</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qsize.html">QSize</a> Q3CanvasRectangle::size () const</h3>
+<p>Returns the <a href="q3canvasrectangle.html#width">width</a>() and <a href="q3canvasrectangle.html#height">height</a>() of the rectangle.</p>
+<p>See also <a href="q3canvasrectangle.html#rect">rect</a>() and <a href="q3canvasrectangle.html#setSize">setSize</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3CanvasRectangle::width () const</h3>
+<p>Returns the width of the rectangle.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

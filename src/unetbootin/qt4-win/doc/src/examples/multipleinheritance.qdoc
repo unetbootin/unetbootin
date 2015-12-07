@@ -1,0 +1,110 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example uitools/multipleinheritance
+    \title Multiple Inheritance Example
+
+    The Multiple Inheritance Example shows how to use a form created with \QD
+    in an application by subclassing both QWidget and the user interface
+    class, which is \c{Ui::CalculatorForm}.
+
+    \image multipleinheritance-example.png
+
+    To subclass the \c calculatorform.ui file and ensure that \c qmake
+    processes it with the \c uic, we have to include \c calculatorform.ui
+    in the \c .pro file, as shown below:
+
+    \snippet examples/uitools/multipleinheritance/multipleinheritance.pro 0
+
+    When the project is compiled, the \c uic will generate a corresponding
+    \c ui_calculatorform.h.
+
+    \section1 CalculatorForm Definition
+
+    In the \c CalculatorForm definition, we include the \c ui_calculatorform.h
+    that was generated earlier.
+
+    \snippet examples/uitools/multipleinheritance/calculatorform.h 0
+
+    As mentioned earlier, the class is a subclass of both QWidget and
+    \c{Ui::CalculatorForm}.
+
+    \snippet examples/uitools/multipleinheritance/calculatorform.h 1
+
+    Two slots are defined according to the \l{Automatic Connections}
+    {automatic connection} naming convention required by \c uic. This is
+    to ensure that \l{QMetaObject}'s auto-connection facilities connect
+    all the signals and slots involved automatically.
+
+    \section1 CalculatorForm Implementation
+
+    In the constructor, we call \c setupUi() to load the user interface file.
+    Note that we do not need the \c{ui} prefix as \c CalculatorForm is a
+    subclass of the user interface class.
+
+    \snippet examples/uitools/multipleinheritance/calculatorform.cpp 0
+
+    We include two slots, \c{on_inputSpinBox1_valueChanged()} and
+    \c{on_inputSpinBox2_valueChanged()}. These slots respond to the
+    \l{QSpinBox::valueChanged()}{valueChanged()} signal that both spin boxes
+    emit. Whenever there is a change in one spin box's value, we take that
+    value and add it to whatever value the other spin box has.
+
+    \snippet examples/uitools/multipleinheritance/calculatorform.cpp 1
+    \codeline
+    \snippet examples/uitools/multipleinheritance/calculatorform.cpp 2
+
+    \section1 \c main() Function
+
+    The \c main() function instantiates QApplication and \c CalculatorForm.
+    The \c calculator object is displayed by invoking the \l{QWidget::show()}
+    {show()} function.
+
+    \snippet examples/uitools/multipleinheritance/main.cpp 0
+
+    There are various approaches to include forms into applications. The
+    Multiple Inheritance approach is just one of them. See
+    \l{Using a Component in Your Application} for more information on the
+    other approaches available.
+*/

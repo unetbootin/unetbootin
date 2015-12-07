@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/accessible/qaccessiblewidget.cpp -->
+<head>
+  <title>Qt 4.4: QAccessibleWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAccessibleWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAccessibleWidget class implements the <a href="qaccessibleinterface.html">QAccessibleInterface</a> for QWidgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QAccessibleWidget&gt;</pre><p>Inherits <a href="qaccessibleobject.html">QAccessibleObject</a>.</p>
+<ul>
+<li><a href="qaccessiblewidget-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qaccessiblewidget.html#QAccessibleWidget">QAccessibleWidget</a></b> ( QWidget * <i>w</i>, Role <i>role</i> = Client, const QString &amp; <i>name</i> = QString() )</li>
+</ul>
+<ul>
+<li><div class="fn"/>17 public functions inherited from <a href="qaccessibleinterface.html#public-functions">QAccessibleInterface</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qaccessiblewidget.html#dtor.QAccessibleWidget">~QAccessibleWidget</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qaccessiblewidget.html#addControllingSignal">addControllingSignal</a></b> ( const QString &amp; <i>signal</i> )</li>
+<li><div class="fn"/>QObject * <b><a href="qaccessiblewidget.html#parentObject">parentObject</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qaccessiblewidget.html#setAccelerator">setAccelerator</a></b> ( const QString &amp; <i>accel</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessiblewidget.html#setDescription">setDescription</a></b> ( const QString &amp; <i>desc</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessiblewidget.html#setHelp">setHelp</a></b> ( const QString &amp; <i>help</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessiblewidget.html#setValue">setValue</a></b> ( const QString &amp; <i>value</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="qaccessiblewidget.html#widget">widget</a></b> () const</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>7 static public members inherited from <a href="qaccessible.html#static-public-members">QAccessible</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAccessibleWidget class implements the <a href="qaccessibleinterface.html">QAccessibleInterface</a> for QWidgets.</p>
+<p>This class is convenient to use as a base class for custom implementations of QAccessibleInterfaces that provide information about widget objects.</p>
+<p>The class provides functions to retrieve the <a href="qaccessiblewidget.html#parentObject">parentObject</a>() (the widget's parent widget), and the associated <a href="qaccessiblewidget.html#widget">widget</a>(). Controlling signals can be added with <a href="qaccessiblewidget.html#addControllingSignal">addControllingSignal</a>(), and setters are provided for various aspects of the interface implementation, for example <a href="qaccessiblewidget.html#setValue">setValue</a>(), <a href="qaccessiblewidget.html#setDescription">setDescription</a>(), <a href="qaccessiblewidget.html#setAccelerator">setAccelerator</a>(), and <a href="qaccessiblewidget.html#setHelp">setHelp</a>().</p>
+<p>See also <a href="qaccessible.html">QAccessible</a> and <a href="qaccessibleobject.html">QAccessibleObject</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAccessibleWidget"></a>QAccessibleWidget::QAccessibleWidget ( <a href="qwidget.html">QWidget</a> * <i>w</i>, <a href="qaccessible.html#Role-enum">Role</a> <i>role</i> = Client, const <a href="qstring.html">QString</a> &amp; <i>name</i> = QString() )</h3>
+<p>Creates a <a href="qaccessiblewidget.html">QAccessibleWidget</a> object for widget <i>w</i>. <i>role</i> and <i>name</i> are optional parameters that set the object's role and name properties.</p>
+<h3 class="fn"><a name="dtor.QAccessibleWidget"></a>QAccessibleWidget::~QAccessibleWidget ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Destroys this object.</p>
+<h3 class="fn"><a name="addControllingSignal"></a>void QAccessibleWidget::addControllingSignal ( const <a href="qstring.html">QString</a> &amp; <i>signal</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Registers <i>signal</i> as a controlling signal.</p>
+<p>An object is a Controller to any other object connected to a controlling signal.</p>
+<h3 class="fn"><a name="parentObject"></a><a href="qobject.html">QObject</a> * QAccessibleWidget::parentObject () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the associated widget's parent object, which is either the parent widget, or <a href="qapplication.html#qApp">qApp</a> for top-level widgets.</p>
+<h3 class="fn"><a name="setAccelerator"></a>void QAccessibleWidget::setAccelerator ( const <a href="qstring.html">QString</a> &amp; <i>accel</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the accelerator of this interface implementation to <i>accel</i>.</p>
+<p>The default implementation of <a href="qaccessibleinterface.html#text">text</a>() returns the set value for the Accelerator text.</p>
+<p>Note that the object wrapped by this interface is not modified.</p>
+<h3 class="fn"><a name="setDescription"></a>void QAccessibleWidget::setDescription ( const <a href="qstring.html">QString</a> &amp; <i>desc</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the description of this interface implementation to <i>desc</i>.</p>
+<p>The default implementation of <a href="qaccessibleinterface.html#text">text</a>() returns the set value for the Description text.</p>
+<p>Note that the object wrapped by this interface is not modified.</p>
+<h3 class="fn"><a name="setHelp"></a>void QAccessibleWidget::setHelp ( const <a href="qstring.html">QString</a> &amp; <i>help</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the help of this interface implementation to <i>help</i>.</p>
+<p>The default implementation of <a href="qaccessibleinterface.html#text">text</a>() returns the set value for the Help text.</p>
+<p>Note that the object wrapped by this interface is not modified.</p>
+<h3 class="fn"><a name="setValue"></a>void QAccessibleWidget::setValue ( const <a href="qstring.html">QString</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the value of this interface implementation to <i>value</i>.</p>
+<p>The default implementation of <a href="qaccessibleinterface.html#text">text</a>() returns the set value for the Value text.</p>
+<p>Note that the object wrapped by this interface is not modified.</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QAccessibleWidget::widget () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the associated widget.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

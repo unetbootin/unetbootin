@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3socket.cpp -->
+<head>
+  <title>Qt 4.4: Q3Socket Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Socket Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Socket class provides a buffered TCP connection. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Socket&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qsocket">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="qiodevice.html">QIODevice</a>.</p>
+<ul>
+<li><a href="q3socket-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3socket.html#Error-enum">Error</a></b> { ErrConnectionRefused, ErrHostNotFound, ErrSocketRead }</li>
+<li><div class="fn"/>enum <b><a href="q3socket.html#State-enum">State</a></b> { Idle, HostLookup, Connecting, Connected, Closing }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3socket.html#Q3Socket">Q3Socket</a></b> ( QObject * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3socket.html#dtor.Q3Socket">~Q3Socket</a></b> ()</li>
+<li><div class="fn"/>QHostAddress <b><a href="q3socket.html#address">address</a></b> () const</li>
+<li><div class="fn"/>Offset <b><a href="q3socket.html#at">at</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3socket.html#at-2">at</a></b> ( Offset <i>index</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socket.html#atEnd">atEnd</a></b> () const</li>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socket.html#bytesAvailable">bytesAvailable</a></b> () const</li>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socket.html#bytesToWrite">bytesToWrite</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socket.html#canReadLine">canReadLine</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#clearPendingData">clearPendingData</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3socket.html#close">close</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3socket.html#connectToHost">connectToHost</a></b> ( const QString &amp; <i>host</i>, Q_UINT16 <i>port</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3socket.html#flush">flush</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3socket.html#getch">getch</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3socket.html#open">open</a></b> ( OpenMode <i>m</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3socket.html#open-2">open</a></b> ( int <i>m</i> )</li>
+<li><div class="fn"/>QHostAddress <b><a href="q3socket.html#peerAddress">peerAddress</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3socket.html#peerName">peerName</a></b> () const</li>
+<li><div class="fn"/>Q_UINT16 <b><a href="q3socket.html#peerPort">peerPort</a></b> () const</li>
+<li><div class="fn"/>Q_UINT16 <b><a href="q3socket.html#port">port</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3socket.html#putch">putch</a></b> ( int <i>ch</i> )</li>
+<li><div class="fn"/>Q_ULONG <b><a href="q3socket.html#readBufferSize">readBufferSize</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#setReadBufferSize">setReadBufferSize</a></b> ( Q_ULONG <i>bufSize</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socket.html#setSocket">setSocket</a></b> ( int <i>socket</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3socket.html#setSocketDevice">setSocketDevice</a></b> ( Q3SocketDevice * <i>device</i> )</li>
+<li><div class="fn"/>virtual Offset <b><a href="q3socket.html#size">size</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3socket.html#socket">socket</a></b> () const</li>
+<li><div class="fn"/>Q3SocketDevice * <b><a href="q3socket.html#socketDevice">socketDevice</a></b> ()</li>
+<li><div class="fn"/>State <b><a href="q3socket.html#state">state</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3socket.html#ungetch">ungetch</a></b> ( int <i>ch</i> )</li>
+<li><div class="fn"/>Q_ULONG <b><a href="q3socket.html#waitForMore">waitForMore</a></b> ( int <i>msecs</i>, bool * <i>timeout</i> ) const</li>
+<li><div class="fn"/>Q_ULONG <b><a href="q3socket.html#waitForMore-2">waitForMore</a></b> ( int <i>msecs</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3socket.html#bytesWritten">bytesWritten</a></b> ( int <i>nbytes</i> )</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#connected">connected</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#connectionClosed">connectionClosed</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#delayedCloseFinished">delayedCloseFinished</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#error">error</a></b> ( int <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#hostFound">hostFound</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3socket.html#readyRead">readyRead</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socket.html#readData">readData</a></b> ( char * <i>data</i>, qint64 <i>maxlen</i> )</li>
+<li><div class="fn"/>virtual qint64 <b><a href="q3socket.html#writeData">writeData</a></b> ( const char * <i>data</i>, qint64 <i>len</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Socket class provides a buffered TCP connection.</p>
+<p>It provides a totally non-blocking <a href="qiodevice.html">QIODevice</a>, and modifies and extends the API of <a href="qiodevice.html">QIODevice</a> with socket-specific code.</p>
+<p>The functions you're likely to call most are <a href="q3socket.html#connectToHost">connectToHost</a>(), <a href="q3socket.html#bytesAvailable">bytesAvailable</a>(), <a href="q3socket.html#canReadLine">canReadLine</a>() and the ones it inherits from <a href="qiodevice.html">QIODevice</a>.</p>
+<p><a href="q3socket.html#connectToHost">connectToHost</a>() is the most-used function. As its name implies, it opens a connection to a named host.</p>
+<p>Most network protocols are either packet-oriented or line-oriented. <a href="q3socket.html#canReadLine">canReadLine</a>() indicates whether a connection contains an entire unread line or not, and <a href="q3socket.html#bytesAvailable">bytesAvailable</a>() returns the number of bytes available for reading.</p>
+<p>The signals <a href="q3socket.html#error">error</a>(), <a href="q3socket.html#connected">connected</a>(), <a href="q3socket.html#readyRead">readyRead</a>() and <a href="q3socket.html#connectionClosed">connectionClosed</a>() inform you of the progress of the connection. There are also some less commonly used signals. <a href="q3socket.html#hostFound">hostFound</a>() is emitted when <a href="q3socket.html#connectToHost">connectToHost</a>() has finished its DNS lookup and is starting its TCP connection. <a href="q3socket.html#delayedCloseFinished">delayedCloseFinished</a>() is emitted when <a href="q3socket.html#close">close</a>() succeeds. <a href="q3socket.html#bytesWritten">bytesWritten</a>() is emitted when Q3Socket moves data from its &quot;to be written&quot; queue into the TCP implementation.</p>
+<p>There are several access functions for the socket: <a href="q3socket.html#state">state</a>() returns whether the object is idle, is doing a DNS lookup, is connecting, has an operational connection, etc. <a href="q3socket.html#address">address</a>() and <a href="q3socket.html#port">port</a>() return the IP address and port used for the connection. The <a href="q3socket.html#peerAddress">peerAddress</a>() and <a href="q3socket.html#peerPort">peerPort</a>() functions return the IP address and port used by the peer, and <a href="q3socket.html#peerName">peerName</a>() returns the name of the peer (normally the name that was passed to <a href="q3socket.html#connectToHost">connectToHost</a>()). <a href="q3socket.html#socketDevice">socketDevice</a>() returns a pointer to the <a href="q3socketdevice.html">Q3SocketDevice</a> used for this socket.</p>
+<p>Q3Socket inherits <a href="qiodevice.html">QIODevice</a>, and reimplements some functions. In general, you can treat it as a <a href="qiodevice.html">QIODevice</a> for writing, and mostly also for reading. The match isn't perfect, since the <a href="qiodevice.html">QIODevice</a> API is designed for devices that are controlled by the same machine, and an asynchronous peer-to-peer network connection isn't quite like that. For example, there is nothing that matches <a href="qiodevice.html#size">QIODevice::size</a>() exactly. The documentation for <a href="q3socket.html#open">open</a>(), <a href="q3socket.html#close">close</a>(), <a href="q3socket.html#flush">flush</a>(), <a href="q3socket.html#size">size</a>(), <a href="q3socket.html#at">at</a>(), <a href="q3socket.html#atEnd">atEnd</a>(), <a href="qiodevice-qt3.html#readBlock">readBlock</a>(), <a href="qiodevice-qt3.html#writeBlock">writeBlock</a>(), <a href="q3socket.html#getch">getch</a>(), <a href="q3socket.html#putch">putch</a>(), <a href="q3socket.html#ungetch">ungetch</a>() and <a href="qiodevice.html#readLine">readLine</a>() describes the differences in detail.</p>
+<p><b>Warning:</b> Q3Socket is not suitable for use in threads. If you need to uses sockets in threads use the lower-level <a href="q3socketdevice.html">Q3SocketDevice</a> class.</p>
+<p>See also <a href="q3socketdevice.html">Q3SocketDevice</a>, <a href="qhostaddress.html">QHostAddress</a>, and <a href="qsocketnotifier.html">QSocketNotifier</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Error-enum"></a>enum Q3Socket::Error</h3>
+<p>This enum specifies the possible errors:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Socket::ErrConnectionRefused</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">if the connection was refused</td></tr>
+<tr><td valign="top"><tt>Q3Socket::ErrHostNotFound</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">if the host was not found</td></tr>
+<tr><td valign="top"><tt>Q3Socket::ErrSocketRead</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">if a read from the socket failed</td></tr>
+</table></p>
+<h3 class="fn"><a name="State-enum"></a>enum Q3Socket::State</h3>
+<p>This enum defines the connection states:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3Socket::Idle</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">if there is no connection</td></tr>
+<tr><td valign="top"><tt>Q3Socket::HostLookup</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">during a DNS lookup</td></tr>
+<tr><td valign="top"><tt>Q3Socket::Connecting</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">during TCP connection establishment</td></tr>
+<tr><td valign="top"><tt>Q3Socket::Connected</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">when there is an operational connection</td></tr>
+<tr><td valign="top"><tt>Q3Socket::Closing</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">if the socket is closing down, but is not yet closed.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Socket"></a>Q3Socket::Q3Socket ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Creates a <a href="q3socket.html">Q3Socket</a> object in <a href="q3socket.html#State-enum">Q3Socket::Idle</a> state.</p>
+<p>The <i>parent</i> and <i>name</i> arguments are passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<h3 class="fn"><a name="dtor.Q3Socket"></a>Q3Socket::~Q3Socket ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the socket. Closes the connection if necessary.</p>
+<p>See also <a href="q3socket.html#close">close</a>().</p>
+<h3 class="fn"><a name="address"></a><a href="qhostaddress.html">QHostAddress</a> Q3Socket::address () const</h3>
+<p>Returns the host address of this socket. (This is normally the main IP address of the host, but can be e.g&#x2e; 127.0&#x2e;0&#x2e;1 for connections to localhost.)</p>
+<h3 class="fn"><a name="at"></a><a href="qiodevice-qt3.html#Offset-typedef">Offset</a> Q3Socket::at () const</h3>
+<p>Returns the current read index. Since <a href="q3socket.html">Q3Socket</a> is a sequential device, the current read index is always zero.</p>
+<h3 class="fn"><a name="at-2"></a>bool Q3Socket::at ( <a href="qiodevice-qt3.html#Offset-typedef">Offset</a> <i>index</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Moves the read index forward to <i>index</i> and returns true if the operation was successful; otherwise returns false. Moving the index forward means skipping incoming data.</p>
+<h3 class="fn"><a name="atEnd"></a>bool Q3Socket::atEnd () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if there is no more data to read; otherwise returns false.</p>
+<p>Reimplemented from <a href="qiodevice.html#atEnd">QIODevice</a>.</p>
+<h3 class="fn"><a name="bytesAvailable"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3Socket::bytesAvailable () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of incoming bytes that can be read, i.e&#x2e; the size of the input buffer. Equivalent to <a href="q3socket.html#size">size</a>().</p>
+<p>Reimplemented from <a href="qiodevice.html#bytesAvailable">QIODevice</a>.</p>
+<p>See also <a href="q3socket.html#bytesToWrite">bytesToWrite</a>().</p>
+<h3 class="fn"><a name="bytesToWrite"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3Socket::bytesToWrite () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of bytes that are waiting to be written, i.e&#x2e; the size of the output buffer.</p>
+<p>Reimplemented from <a href="qiodevice.html#bytesToWrite">QIODevice</a>.</p>
+<p>See also <a href="q3socket.html#bytesAvailable">bytesAvailable</a>() and <a href="q3socket.html#clearPendingData">clearPendingData</a>().</p>
+<h3 class="fn"><a name="bytesWritten"></a>void Q3Socket::bytesWritten ( int <i>nbytes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when data has been written to the network. The <i>nbytes</i> parameter specifies how many bytes were written.</p>
+<p>The <a href="q3socket.html#bytesToWrite">bytesToWrite</a>() function is often used in the same context; it indicates how many buffered bytes there are left to write.</p>
+<p>See also <a href="qiodevice-qt3.html#writeBlock">writeBlock</a>() and <a href="q3socket.html#bytesToWrite">bytesToWrite</a>().</p>
+<h3 class="fn"><a name="canReadLine"></a>bool Q3Socket::canReadLine () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if it's possible to read an entire line of text from this socket at this time; otherwise returns false.</p>
+<p>Note that if the peer closes the connection unexpectedly, this function returns false. This means that loops such as this won't work:</p>
+<pre>         while( !socket-&gt;canReadLine() ) // WRONG
+             ;</pre>
+<p>Reimplemented from <a href="qiodevice.html#canReadLine">QIODevice</a>.</p>
+<p>See also <a href="qiodevice.html#readLine">readLine</a>().</p>
+<h3 class="fn"><a name="clearPendingData"></a>void Q3Socket::clearPendingData ()</h3>
+<p>Deletes the data that is waiting to be written. This is useful if you want to close the socket without waiting for all the data to be written.</p>
+<p>See also <a href="q3socket.html#bytesToWrite">bytesToWrite</a>(), <a href="q3socket.html#close">close</a>(), and <a href="q3socket.html#delayedCloseFinished">delayedCloseFinished</a>().</p>
+<h3 class="fn"><a name="close"></a>void Q3Socket::close ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Closes the socket.</p>
+<p>The read buffer is cleared.</p>
+<p>If the output buffer is empty, the state is set to <tt>Q3Socket::Idle</tt> and the connection is terminated immediately. If the output buffer still contains data to be written, <a href="q3socket.html">Q3Socket</a> goes into the <a href="q3socket.html#State-enum">Q3Socket::Closing</a> state and the rest of the data will be written. When all of the outgoing data have been written, the state is set to <a href="q3socket.html#State-enum">Q3Socket::Idle</a> and the connection is terminated. At this point, the <a href="q3socket.html#delayedCloseFinished">delayedCloseFinished</a>() signal is emitted.</p>
+<p>If you don't want that the data of the output buffer is written, call <a href="q3socket.html#clearPendingData">clearPendingData</a>() before you call close().</p>
+<p>Reimplemented from <a href="qiodevice.html#close">QIODevice</a>.</p>
+<p>See also <a href="q3socket.html#state">state</a>(), <a href="q3socket.html#bytesToWrite">bytesToWrite</a>(), and <a href="q3socket.html#clearPendingData">clearPendingData</a>().</p>
+<h3 class="fn"><a name="connectToHost"></a>void Q3Socket::connectToHost ( const <a href="qstring.html">QString</a> &amp; <i>host</i>, <a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> <i>port</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Attempts to make a connection to <i>host</i> on the specified <i>port</i> and return immediately.</p>
+<p>Any connection or pending connection is closed immediately, and <a href="q3socket.html">Q3Socket</a> goes into the <tt>HostLookup</tt> state. When the lookup succeeds, it emits <a href="q3socket.html#hostFound">hostFound</a>(), starts a TCP connection and goes into the <tt>Connecting</tt> state. Finally, when the connection succeeds, it emits <a href="q3socket.html#connected">connected</a>() and goes into the <tt>Connected</tt> state. If there is an error at any point, it emits <a href="q3socket.html#error">error</a>().</p>
+<p><i>host</i> may be an IP address in string form, or it may be a DNS name. <a href="q3socket.html">Q3Socket</a> will do a normal DNS lookup if required. Note that <i>port</i> is in native byte order, unlike some other libraries.</p>
+<p>See also <a href="q3socket.html#state">state</a>().</p>
+<h3 class="fn"><a name="connected"></a>void Q3Socket::connected ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after <a href="q3socket.html#connectToHost">connectToHost</a>() has been called and a connection has been successfully established.</p>
+<p>See also <a href="q3socket.html#connectToHost">connectToHost</a>() and <a href="q3socket.html#connectionClosed">connectionClosed</a>().</p>
+<h3 class="fn"><a name="connectionClosed"></a>void Q3Socket::connectionClosed ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the other end has closed the connection. The read buffers may contain buffered input data which you can read after the connection was closed.</p>
+<p>See also <a href="q3socket.html#connectToHost">connectToHost</a>() and <a href="q3socket.html#close">close</a>().</p>
+<h3 class="fn"><a name="delayedCloseFinished"></a>void Q3Socket::delayedCloseFinished ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a delayed close is finished.</p>
+<p>If you call <a href="q3socket.html#close">close</a>() and there is buffered output data to be written, <a href="q3socket.html">Q3Socket</a> goes into the <a href="q3socket.html#State-enum">Q3Socket::Closing</a> state and returns immediately. It will then keep writing to the socket until all the data has been written. Then, the delayedCloseFinished() signal is emitted.</p>
+<p>See also <a href="q3socket.html#close">close</a>().</p>
+<h3 class="fn"><a name="error"></a>void Q3Socket::error ( int <i>error</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after an error occurred. The <i>error</i> parameter is the <a href="q3socket.html#Error-enum">Error</a> value.</p>
+<h3 class="fn"><a name="flush"></a>bool Q3Socket::flush ()</h3>
+<p>Implementation of the abstract virtual QIODevice::flush() function. This function always returns true.</p>
+<h3 class="fn"><a name="getch"></a>int Q3Socket::getch ()</h3>
+<p>Reads a single byte/character from the internal read buffer. Returns the byte/character read, or -1 if there is nothing to be read.</p>
+<p>See also <a href="q3socket.html#bytesAvailable">bytesAvailable</a>() and <a href="q3socket.html#putch">putch</a>().</p>
+<h3 class="fn"><a name="hostFound"></a>void Q3Socket::hostFound ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted after <a href="q3socket.html#connectToHost">connectToHost</a>() has been called and the host lookup has succeeded.</p>
+<p>See also <a href="q3socket.html#connected">connected</a>().</p>
+<h3 class="fn"><a name="open"></a>bool Q3Socket::open ( <a href="qiodevice.html#OpenModeFlag-enum">OpenMode</a> <i>m</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Opens the socket using the specified <a href="qiodevice.html">QIODevice</a> file mode <i>m</i>. This function is called automatically when needed and you should not call it yourself.</p>
+<p>Reimplemented from <a href="qiodevice.html#open">QIODevice</a>.</p>
+<p>See also <a href="q3socket.html#close">close</a>().</p>
+<h3 class="fn"><a name="open-2"></a>bool Q3Socket::open ( int <i>m</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="peerAddress"></a><a href="qhostaddress.html">QHostAddress</a> Q3Socket::peerAddress () const</h3>
+<p>Returns the address of the connected peer if the socket is in Connected state; otherwise an empty <a href="qhostaddress.html">QHostAddress</a> is returned.</p>
+<h3 class="fn"><a name="peerName"></a><a href="qstring.html">QString</a> Q3Socket::peerName () const</h3>
+<p>Returns the host name as specified to the <a href="q3socket.html#connectToHost">connectToHost</a>() function. An empty string is returned if none has been set.</p>
+<h3 class="fn"><a name="peerPort"></a><a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> Q3Socket::peerPort () const</h3>
+<p>Returns the peer's host port number, normally as specified to the <a href="q3socket.html#connectToHost">connectToHost</a>() function. If none has been set, this function returns 0.</p>
+<p>Note that Qt always uses native byte order, i.e&#x2e; 67 is 67 in Qt; there is no need to call htons().</p>
+<h3 class="fn"><a name="port"></a><a href="qtglobal-qt3.html#Q_UINT16-typedef">Q_UINT16</a> Q3Socket::port () const</h3>
+<p>Returns the host port number of this socket, in native byte order.</p>
+<h3 class="fn"><a name="putch"></a>int Q3Socket::putch ( int <i>ch</i> )</h3>
+<p>Writes the character <i>ch</i> to the output buffer.</p>
+<p>Returns <i>ch</i>, or -1 if an error occurred.</p>
+<p>See also <a href="q3socket.html#getch">getch</a>().</p>
+<h3 class="fn"><a name="readBufferSize"></a><a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> Q3Socket::readBufferSize () const</h3>
+<p>Returns the size of the read buffer.</p>
+<p>See also <a href="q3socket.html#setReadBufferSize">setReadBufferSize</a>().</p>
+<h3 class="fn"><a name="readData"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3Socket::readData ( char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>maxlen</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Reads <i>maxlen</i> bytes from the socket into <i>data</i> and returns the number of bytes read. Returns -1 if an error occurred.</p>
+<p>Reimplemented from <a href="qiodevice.html#readData">QIODevice</a>.</p>
+<h3 class="fn"><a name="readyRead"></a>void Q3Socket::readyRead ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted every time there is new incoming data.</p>
+<p>Bear in mind that new incoming data is only reported once; if you do not read all the data, this class buffers the data and you can read it later, but no signal is emitted unless new data arrives. A good practice is to read all data in the slot connected to this signal unless you are sure that you need to receive more data to be able to process it.</p>
+<p>See also <a href="qiodevice-qt3.html#readBlock">readBlock</a>(), <a href="qiodevice.html#readLine">readLine</a>(), and <a href="q3socket.html#bytesAvailable">bytesAvailable</a>().</p>
+<h3 class="fn"><a name="setReadBufferSize"></a>void Q3Socket::setReadBufferSize ( <a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> <i>bufSize</i> )</h3>
+<p>Sets the size of the <a href="q3socket.html">Q3Socket</a>'s internal read buffer to <i>bufSize</i>.</p>
+<p>Usually <a href="q3socket.html">Q3Socket</a> reads all data that is available from the operating system's socket. If the buffer size is limited to a certain size, this means that the <a href="q3socket.html">Q3Socket</a> class doesn't buffer more than this size of data.</p>
+<p>If the size of the read buffer is 0, the read buffer is unlimited and all incoming data is buffered. This is the default.</p>
+<p>If you read the data in the <a href="q3socket.html#readyRead">readyRead</a>() signal, you shouldn't use this option since it might slow down your program unnecessary. This option is useful if you only need to read the data at certain points in time, like in a realtime streaming application.</p>
+<p>See also <a href="q3socket.html#readBufferSize">readBufferSize</a>().</p>
+<h3 class="fn"><a name="setSocket"></a>void Q3Socket::setSocket ( int <i>socket</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the socket to use <i>socket</i> and the <a href="q3socket.html#state">state</a>() to <tt>Connected</tt>. The socket must already be connected.</p>
+<p>This allows us to use the <a href="q3socket.html">Q3Socket</a> class as a wrapper for other socket types (e.g&#x2e; Unix Domain Sockets).</p>
+<p>See also <a href="q3socket.html#socket">socket</a>().</p>
+<h3 class="fn"><a name="setSocketDevice"></a>void Q3Socket::setSocketDevice ( <a href="q3socketdevice.html">Q3SocketDevice</a> * <i>device</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the internal socket device to <i>device</i>. Passing a <i>device</i> of 0 will cause the internal socket device to be used. Any existing connection will be disconnected before using the new <i>device</i>.</p>
+<p>The new device should not be connected before being associated with a <a href="q3socket.html">Q3Socket</a>; after setting the socket call <a href="q3socket.html#connectToHost">connectToHost</a>() to make the connection.</p>
+<p>This function is useful if you need to subclass <a href="q3socketdevice.html">Q3SocketDevice</a> and want to use the <a href="q3socket.html">Q3Socket</a> API, for example, to implement Unix domain sockets.</p>
+<p>See also <a href="q3socket.html#socketDevice">socketDevice</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qiodevice-qt3.html#Offset-typedef">Offset</a> Q3Socket::size () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of incoming bytes that can be read right now (like <a href="q3socket.html#bytesAvailable">bytesAvailable</a>()).</p>
+<p>Reimplemented from <a href="qiodevice.html#size">QIODevice</a>.</p>
+<h3 class="fn"><a name="socket"></a>int Q3Socket::socket () const</h3>
+<p>Returns the socket number, or -1 if there is no socket at the moment.</p>
+<p>See also <a href="q3socket.html#setSocket">setSocket</a>().</p>
+<h3 class="fn"><a name="socketDevice"></a><a href="q3socketdevice.html">Q3SocketDevice</a> * Q3Socket::socketDevice ()</h3>
+<p>Returns a pointer to the internal socket device.</p>
+<p>There is normally no need to manipulate the socket device directly since this class does the necessary setup for most applications.</p>
+<p>See also <a href="q3socket.html#setSocketDevice">setSocketDevice</a>().</p>
+<h3 class="fn"><a name="state"></a><a href="q3socket.html#State-enum">State</a> Q3Socket::state () const</h3>
+<p>Returns the current state of the socket connection.</p>
+<p>See also <a href="q3socket.html#State-enum">Q3Socket::State</a>.</p>
+<h3 class="fn"><a name="ungetch"></a>int Q3Socket::ungetch ( int <i>ch</i> )</h3>
+<p>This implementation of the virtual function <a href="qiodevice-qt3.html#ungetch">QIODevice::ungetch</a>() prepends the character <i>ch</i> to the read buffer so that the next read returns this character as the first character of the output.</p>
+<h3 class="fn"><a name="waitForMore"></a><a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> Q3Socket::waitForMore ( int <i>msecs</i>, bool * <i>timeout</i> ) const</h3>
+<p>Wait up to <i>msecs</i> milliseconds for more data to be available.</p>
+<p>If <i>msecs</i> is -1 the call will block indefinitely.</p>
+<p>Returns the number of bytes available.</p>
+<p>If <i>timeout</i> is non-null and no error occurred (i.e&#x2e; it does not return -1): this function sets *<i>timeout</i> to true, if the reason for returning was that the timeout was reached; otherwise it sets *<i>timeout</i> to false. This is useful to find out if the peer closed the connection.</p>
+<p><b>Warning:</b> This is a blocking call and should be avoided in event driven applications.</p>
+<p>See also <a href="q3socket.html#bytesAvailable">bytesAvailable</a>().</p>
+<h3 class="fn"><a name="waitForMore-2"></a><a href="qtglobal-qt3.html#Q_ULONG-typedef">Q_ULONG</a> Q3Socket::waitForMore ( int <i>msecs</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="writeData"></a><a href="qtglobal.html#qint64-typedef">qint64</a> Q3Socket::writeData ( const char * <i>data</i>, <a href="qtglobal.html#qint64-typedef">qint64</a> <i>len</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Writes <i>len</i> bytes to the socket from <i>data</i> and returns the number of bytes written. Returns -1 if an error occurred.</p>
+<p>Reimplemented from <a href="qiodevice.html#writeData">QIODevice</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

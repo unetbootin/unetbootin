@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qshortcut.cpp -->
+<head>
+  <title>Qt 4.4: QShortcut Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QShortcut Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QShortcut class is used to create keyboard shortcuts. <a href="#details">More...</a></p>
+<pre> #include &lt;QShortcut&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<ul>
+<li><a href="qshortcut-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qshortcut.html#autoRepeat-prop">autoRepeat</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qshortcut.html#context-prop">context</a></b> : Qt::ShortcutContext</li>
+<li><div class="fn"/><b><a href="qshortcut.html#enabled-prop">enabled</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qshortcut.html#key-prop">key</a></b> : QKeySequence</li>
+<li><div class="fn"/><b><a href="qshortcut.html#whatsThis-prop">whatsThis</a></b> : QString</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qshortcut.html#QShortcut">QShortcut</a></b> ( QWidget * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qshortcut.html#QShortcut-2">QShortcut</a></b> ( const QKeySequence &amp; <i>key</i>, QWidget * <i>parent</i>, const char * <i>member</i> = 0, const char * <i>ambiguousMember</i> = 0, Qt::ShortcutContext <i>context</i> = Qt::WindowShortcut )</li>
+<li><div class="fn"/><b><a href="qshortcut.html#dtor.QShortcut">~QShortcut</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qshortcut.html#autoRepeat-prop">autoRepeat</a></b> () const</li>
+<li><div class="fn"/>Qt::ShortcutContext <b><a href="qshortcut.html#context-prop">context</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qshortcut.html#id">id</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qshortcut.html#enabled-prop">isEnabled</a></b> () const</li>
+<li><div class="fn"/>QKeySequence <b><a href="qshortcut.html#key-prop">key</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qshortcut.html#parentWidget">parentWidget</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#autoRepeat-prop">setAutoRepeat</a></b> ( bool <i>on</i> )</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#context-prop">setContext</a></b> ( Qt::ShortcutContext <i>context</i> )</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#enabled-prop">setEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#key-prop">setKey</a></b> ( const QKeySequence &amp; <i>key</i> )</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#whatsThis-prop">setWhatsThis</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>QString <b><a href="qshortcut.html#whatsThis-prop">whatsThis</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qshortcut.html#activated">activated</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qshortcut.html#activatedAmbiguously">activatedAmbiguously</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QShortcut class is used to create keyboard shortcuts.</p>
+<p>The QShortcut class provides a way of connecting keyboard shortcuts to Qt's <a href="signalsandslots.html">signals and slots</a> mechanism, so that objects can be informed when a shortcut is executed. The shortcut can be set up to contain all the key presses necessary to describe a keyboard shortcut, including the states of modifier keys such as <b>Shift</b>, <b>Ctrl</b>, and <b>Alt</b>.</p>
+<a name="mnemonic"></a><p>On certain widgets, using '&amp;' in front of a character will automatically create a mnemonic (a shortcut) for that character, e.g&#x2e; &quot;E&amp;xit&quot; will create the shortcut <b>Alt+X</b> (use '&amp;&amp;' to display an actual ampersand). The widget might consume and perform an action on a given shortcut. On X11 the ampersand will not be shown and the character will be underlined. On Windows, shortcuts are normally not displayed until the user presses the <b>Alt</b> key, but this is a setting the user can change. On Mac such shortcuts do not exists, unless you explicitly call the global <a href="qtglobal.html#qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>() function; then they will appear as they do on X11.</p>
+<p>For applications that use menus, it may be more convenient to use the convenience functions provided in the <a href="qmenu.html">QMenu</a> class to assign keyboard shortcuts to menu items as they are created. Alternatively, shortcuts may be associated with other types of actions in the <a href="qaction.html">QAction</a> class.</p>
+<p>The simplest way to create a shortcut for a particular widget is to construct the shortcut with a key sequence. For example:</p>
+<pre>         shortcut = new QShortcut(QKeySequence(tr(&quot;Ctrl+O&quot;, &quot;File|Open&quot;)),
+                                  parent);</pre>
+<p>When the user types the <a href="qkeysequence.html">key sequence</a> for a given shortcut, the shortcut's <a href="qshortcut.html#activated">activated</a>() signal is emitted. (In the case of ambiguity, the <a href="qshortcut.html#activatedAmbiguously">activatedAmbiguously</a>() signal is emitted.) A shortcut is &quot;listened for&quot; by Qt's event loop when the shortcut's parent widget is receiving events.</p>
+<p>A shortcut's key sequence can be set with <a href="qshortcut.html#key-prop">setKey</a>() and retrieved with <a href="qshortcut.html#key-prop">key</a>(). A shortcut can be enabled or disabled with <a href="qshortcut.html#enabled-prop">setEnabled</a>(), and can have &quot;What's This?&quot; help text set with <a href="qshortcut.html#whatsThis-prop">setWhatsThis</a>().</p>
+<p>See also <a href="qshortcutevent.html">QShortcutEvent</a>, <a href="qkeysequence.html">QKeySequence</a>, and <a href="qaction.html">QAction</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="autoRepeat-prop"></a>autoRepeat : bool</h3>
+<p>This property holds whether the shortcut can auto repeat.</p>
+<p>If true, the shortcut will auto repeat when the keyboard shortcut combination is held down, provided that keyboard auto repeat is enabled on the system. The default value is true.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool autoRepeat () const</b></li>
+<li><div class="fn"/><b>void setAutoRepeat ( bool <i>on</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="context-prop"></a>context : <a href="qt.html#ShortcutContext-enum">Qt::ShortcutContext</a></h3>
+<p>This property holds the context in which the shortcut is valid.</p>
+<p>A shortcut's context decides in which circumstances a shortcut is allowed to be triggered. The normal context is <a href="qt.html#ShortcutContext-enum">Qt::WindowShortcut</a>, which allows the shortcut to trigger if the parent (the widget containing the shortcut) is a subwidget of the active top-level window.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::ShortcutContext context ()</b></li>
+<li><div class="fn"/><b>void setContext ( Qt::ShortcutContext <i>context</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="enabled-prop"></a>enabled : bool</h3>
+<p>This property holds whether the shortcut is enabled.</p>
+<p>An enabled shortcut emits the <a href="qshortcut.html#activated">activated</a>() or <a href="qshortcut.html#activatedAmbiguously">activatedAmbiguously</a>() signal when a <a href="qshortcutevent.html">QShortcutEvent</a> occurs that matches the shortcut's <a href="qshortcut.html#key-prop">key</a>() sequence.</p>
+<p>If the application is in <tt>WhatsThis</tt> mode the shortcut will not emit the signals, but will show the &quot;What's This?&quot; text instead.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isEnabled () const</b></li>
+<li><div class="fn"/><b>void setEnabled ( bool <i>enable</i> )</b></li>
+</ul>
+<p>See also <a href="qshortcut.html#whatsThis-prop">whatsThis</a>.</p>
+<h3 class="fn"><a name="key-prop"></a>key : <a href="qkeysequence.html">QKeySequence</a></h3>
+<p>This property holds the shortcut's key sequence.</p>
+<p>This is a key sequence with an optional combination of Shift, Ctrl, and Alt. The key sequence may be supplied in a number of ways:</p>
+<pre>         setKey(0);                  // no signal emitted
+         setKey(QKeySequence());     // no signal emitted
+         setKey(0x3b1);              // Greek letter alpha
+         setKey(Qt::Key_D);              // 'd', e.g. to delete
+         setKey('q');                // 'q', e.g. to quit
+         setKey(Qt::CTRL + Qt::Key_P);       // Ctrl+P, e.g. to print document
+         setKey(&quot;Ctrl+P&quot;);           // Ctrl+P, e.g. to print document</pre>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QKeySequence key () const</b></li>
+<li><div class="fn"/><b>void setKey ( const QKeySequence &amp; <i>key</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="whatsThis-prop"></a>whatsThis : <a href="qstring.html">QString</a></h3>
+<p>This property holds the shortcut's "What's This?" help text.</p>
+<p>The text will be shown when the application is in &quot;What's This?&quot; mode and the user types the shortcut <a href="qshortcut.html#key-prop">key</a>() sequence.</p>
+<p>To set &quot;What's This?&quot; help on a menu item (with or without a shortcut key), set the help on the item's action.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString whatsThis () const</b></li>
+<li><div class="fn"/><b>void setWhatsThis ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<p>See also <a href="qwhatsthis.html#inWhatsThisMode">QWhatsThis::inWhatsThisMode</a>() and <a href="qaction.html#whatsThis-prop">QAction::setWhatsThis</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QShortcut"></a>QShortcut::QShortcut ( <a href="qwidget.html">QWidget</a> * <i>parent</i> )</h3>
+<p>Constructs a <a href="qshortcut.html">QShortcut</a> object for the <i>parent</i> widget. Since no shortcut key sequence is specified, the shortcut will not emit any signals.</p>
+<p>See also <a href="qshortcut.html#key-prop">setKey</a>().</p>
+<h3 class="fn"><a name="QShortcut-2"></a>QShortcut::QShortcut ( const <a href="qkeysequence.html">QKeySequence</a> &amp; <i>key</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i>, const char * <i>member</i> = 0, const char * <i>ambiguousMember</i> = 0, <a href="qt.html#ShortcutContext-enum">Qt::ShortcutContext</a> <i>context</i> = Qt::WindowShortcut )</h3>
+<p>Constructs a <a href="qshortcut.html">QShortcut</a> object for the <i>parent</i> widget. The shortcut operates on its parent, listening for <a href="qshortcutevent.html">QShortcutEvent</a>s that match the <i>key</i> sequence. Depending on the ambiguity of the event, the shortcut will call the <i>member</i> function, or the <i>ambiguousMember</i> function, if the key press was in the shortcut's <i>context</i>.</p>
+<h3 class="fn"><a name="dtor.QShortcut"></a>QShortcut::~QShortcut ()</h3>
+<p>Destroys the shortcut.</p>
+<h3 class="fn"><a name="activated"></a>void QShortcut::activated ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user types the shortcut's key sequence.</p>
+<p>See also <a href="qshortcut.html#activatedAmbiguously">activatedAmbiguously</a>().</p>
+<h3 class="fn"><a name="activatedAmbiguously"></a>void QShortcut::activatedAmbiguously ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user types a shortcut key sequence that is ambiguous. For example, if one key sequence is a &quot;prefix&quot; for another and the user types these keys it isn't clear if they want the shorter key sequence, or if they're about to type more to complete the longer key sequence.</p>
+<p>See also <a href="qshortcut.html#activated">activated</a>().</p>
+<h3 class="fn"><a name="id"></a>int QShortcut::id () const</h3>
+<p>Returns the shortcut's ID.</p>
+<p>See also <a href="qshortcutevent.html#shortcutId">QShortcutEvent::shortcutId</a>().</p>
+<h3 class="fn"><a name="parentWidget"></a><a href="qwidget.html">QWidget</a> * QShortcut::parentWidget () const</h3>
+<p>Returns the shortcut's parent widget.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

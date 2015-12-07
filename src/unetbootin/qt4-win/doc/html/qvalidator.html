@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qvalidator.cpp -->
+<head>
+  <title>Qt 4.4: QValidator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QValidator Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QValidator class provides validation of input text. <a href="#details">More...</a></p>
+<pre> #include &lt;QValidator&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qdoublevalidator.html">QDoubleValidator</a>, <a href="qintvalidator.html">QIntValidator</a>, and <a href="qregexpvalidator.html">QRegExpValidator</a>.</p>
+<ul>
+<li><a href="qvalidator-members.html">List of all members, including inherited members</a></li>
+<li><a href="qvalidator-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qvalidator.html#State-enum">State</a></b> { Invalid, Intermediate, Acceptable }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qvalidator.html#QValidator">QValidator</a></b> ( QObject * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="qvalidator.html#dtor.QValidator">~QValidator</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="qvalidator.html#fixup">fixup</a></b> ( QString &amp; <i>input</i> ) const</li>
+<li><div class="fn"/>QLocale <b><a href="qvalidator.html#locale">locale</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qvalidator.html#setLocale">setLocale</a></b> ( const QLocale &amp; <i>locale</i> )</li>
+<li><div class="fn"/>virtual State <b><a href="qvalidator.html#validate">validate</a></b> ( QString &amp; <i>input</i>, int &amp; <i>pos</i> ) const = 0</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QValidator class provides validation of input text.</p>
+<p>The class itself is abstract. Two subclasses, <a href="qintvalidator.html">QIntValidator</a> and <a href="qdoublevalidator.html">QDoubleValidator</a>, provide basic numeric-range checking, and <a href="qregexpvalidator.html">QRegExpValidator</a> provides general checking using a custom regular expression.</p>
+<p>If the built-in validators aren't sufficient, you can subclass QValidator. The class has two virtual functions: <a href="qvalidator.html#validate">validate</a>() and <a href="qvalidator.html#fixup">fixup</a>().</p>
+<p><a href="qvalidator.html#validate">validate</a>() must be implemented by every subclass. It returns <a href="qvalidator.html#State-enum">Invalid</a>, <a href="qvalidator.html#State-enum">Intermediate</a> or <a href="qvalidator.html#State-enum">Acceptable</a> depending on whether its argument is valid (for the subclass's definition of valid).</p>
+<p>These three states require some explanation. An <a href="qvalidator.html#State-enum">Invalid</a> string is <i>clearly</i> invalid. <a href="qvalidator.html#State-enum">Intermediate</a> is less obvious: the concept of validity is difficult to apply when the string is incomplete (still being edited). QValidator defines <a href="qvalidator.html#State-enum">Intermediate</a> as the property of a string that is neither clearly invalid nor acceptable as a final result. <a href="qvalidator.html#State-enum">Acceptable</a> means that the string is acceptable as a final result. One might say that any string that is a plausible intermediate state during entry of an <a href="qvalidator.html#State-enum">Acceptable</a> string is <a href="qvalidator.html#State-enum">Intermediate</a>.</p>
+<p>Here are some examples:</p>
+<ul>
+<li>For a line edit that accepts integers from 10 to 1000 inclusive, 42 and 123 are <a href="qvalidator.html#State-enum">Acceptable</a>, the empty string and 5 are <a href="qvalidator.html#State-enum">Intermediate</a>, and &quot;asdf&quot; and 1114 is <a href="qvalidator.html#State-enum">Invalid</a>.</li>
+<li>For an editable combobox that accepts URLs, any well-formed URL is <a href="qvalidator.html#State-enum">Acceptable</a>, &quot;http://www.trolltech.com/,&quot; is <a href="qvalidator.html#State-enum">Intermediate</a> (it might be a cut and paste action that accidentally took in a comma at the end), the empty string is <a href="qvalidator.html#State-enum">Intermediate</a> (the user might select and delete all of the text in preparation for entering a new URL) and &quot;http:///./&quot; is <a href="qvalidator.html#State-enum">Invalid</a>.</li>
+<li>For a spin box that accepts lengths, &quot;11cm&quot; and &quot;1in&quot; are <a href="qvalidator.html#State-enum">Acceptable</a>, &quot;11&quot; and the empty string are <a href="qvalidator.html#State-enum">Intermediate</a>, and &quot;http://www.trolltech.com&quot; and &quot;hour&quot; are <a href="qvalidator.html#State-enum">Invalid</a>.</li>
+</ul>
+<p><a href="qvalidator.html#fixup">fixup</a>() is provided for validators that can repair some user errors. The default implementation does nothing. <a href="qlineedit.html">QLineEdit</a>, for example, will call <a href="qvalidator.html#fixup">fixup</a>() if the user presses Enter (or Return) and the content is not currently valid. This allows the <a href="qvalidator.html#fixup">fixup</a>() function the opportunity of performing some magic to make an <a href="qvalidator.html#State-enum">Invalid</a> string <a href="qvalidator.html#State-enum">Acceptable</a>.</p>
+<p>A validator has a locale, set with <a href="qvalidator.html#setLocale">setLocale</a>(). It is typically used to parse localized data. For example, <a href="qintvalidator.html">QIntValidator</a> and <a href="qdoublevalidator.html">QDoubleValidator</a> use it to parse localized representations of integers and doubles.</p>
+<p>QValidator is typically used with <a href="qlineedit.html">QLineEdit</a>, <a href="qspinbox.html">QSpinBox</a> and <a href="qcombobox.html">QComboBox</a>.</p>
+<p>See also <a href="qintvalidator.html">QIntValidator</a>, <a href="qdoublevalidator.html">QDoubleValidator</a>, <a href="qregexpvalidator.html">QRegExpValidator</a>, and <a href="widgets-lineedits.html">Line Edits Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="State-enum"></a>enum QValidator::State</h3>
+<p>This enum type defines the states in which a validated string can exist.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QValidator::Invalid</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The string is <i>clearly</i> invalid.</td></tr>
+<tr><td valign="top"><tt>QValidator::Intermediate</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The string is a plausible intermediate value.</td></tr>
+<tr><td valign="top"><tt>QValidator::Acceptable</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The string is acceptable as a final result; i.e&#x2e; it is valid.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QValidator"></a>QValidator::QValidator ( <a href="qobject.html">QObject</a> * <i>parent</i> )</h3>
+<p>Sets up the validator. The <i>parent</i> parameter is passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<h3 class="fn"><a name="dtor.QValidator"></a>QValidator::~QValidator ()</h3>
+<p>Destroys the validator, freeing any storage and other resources used.</p>
+<h3 class="fn"><a name="fixup"></a>void QValidator::fixup ( <a href="qstring.html">QString</a> &amp; <i>input</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This function attempts to change <i>input</i> to be valid according to this validator's rules. It need not result in a valid string: callers of this function must re-test afterwards; the default does nothing.</p>
+<p>Reimplementations of this function can change <i>input</i> even if they do not produce a valid string. For example, an ISBN validator might want to delete every character except digits and &quot;-&quot;, even if the result is still not a valid ISBN; a surname validator might want to remove whitespace from the start and end of the string, even if the resulting string is not in the list of accepted surnames.</p>
+<h3 class="fn"><a name="locale"></a><a href="qlocale.html">QLocale</a> QValidator::locale () const</h3>
+<p>Returns the locale for the validator. The locale is by default initialized to the same as QLocale().</p>
+<p>See also <a href="qvalidator.html#setLocale">setLocale</a>() and <a href="qlocale.html#QLocale">QLocale::QLocale</a>().</p>
+<h3 class="fn"><a name="setLocale"></a>void QValidator::setLocale ( const <a href="qlocale.html">QLocale</a> &amp; <i>locale</i> )</h3>
+<p>Sets the <i>locale</i> that will be used for the validator. Unless setLocale has been called, the validator will use the default locale set with <a href="qlocale.html#setDefault">QLocale::setDefault</a>(). If a default locale has not been set, it is the operating system's locale.</p>
+<p>See also <a href="qvalidator.html#locale">locale</a>() and <a href="qlocale.html#setDefault">QLocale::setDefault</a>().</p>
+<h3 class="fn"><a name="validate"></a><a href="qvalidator.html#State-enum">State</a> QValidator::validate ( <a href="qstring.html">QString</a> &amp; <i>input</i>, int &amp; <i>pos</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This virtual function returns <a href="qvalidator.html#State-enum">Invalid</a> if <i>input</i> is invalid according to this validator's rules, <a href="qvalidator.html#State-enum">Intermediate</a> if it is likely that a little more editing will make the input acceptable (e.g&#x2e; the user types &quot;4&quot; into a widget which accepts integers between 10 and 99), and <a href="qvalidator.html#State-enum">Acceptable</a> if the input is valid.</p>
+<p>The function can change both <i>input</i> and <i>pos</i> (the cursor position) if required.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

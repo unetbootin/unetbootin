@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/installation.qdoc -->
+<head>
+  <title>Qt 4.4: Installing Qt/Windows CE</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Installing Qt/Windows CE<br /><span class="subtitle"></span>
+</h1>
+<p><b>Note:</b> Qt for Windows CE has some requirements that are given in more detail in the <a href="requirements-wince.html">Qt for Windows CE Requirements</a> document.</p>
+<ol type="1">
+<li>Uncompress the files into the directory you want to install Qt into; e.g&#x2e;, <tt>C:\Qt\4.4.0</tt>.<p><b>Note:</b> The install path must not contain any spaces.</p>
+</li>
+<li>Environment variables<p>In order to build and use Qt, the <tt>PATH</tt> environment variable needs to be extended:</p>
+<pre>         PATH               - to locate qmake, moc and other Qt tools</pre>
+<p>This is done by adding <tt>c:\Qt\4.4.0\bin</tt> to the <tt>PATH</tt> variable.</p>
+<p>For newer versions of Windows, <tt>PATH</tt> can be extended through &quot;Control Panel-&gt;System-&gt;Advanced-&gt;Environment variables&quot; and for older versions by editing <tt>c:\autoexec.bat</tt>.</p>
+<p>Make sure the enviroment variables for your compiler are set. Visual Studio includes <tt>vcvars32.bat</tt> for that purpose - or simply use the &quot;Visual Studio Command Prompt&quot; from the Start menu.</p>
+</li>
+<li>Configuring Qt<p>To configure Qt for Windows Mobile 5.0 for Pocket PC, type the following:</p>
+<pre>         C:
+         cd \Qt\4.4.0
+         configure -platform win32-msvc2005 -xplatform wincewm50pocket-msvc2005</pre>
+<p>If you want to configure Qt for another platform or with other options, type <tt>configure -help</tt> to get a list of all available options. See the <tt>README</tt> file for the list of supported platforms.</p>
+</li>
+<li>Building Qt<p>Now, to build Qt you first have to update your <tt>PATH</tt>, <tt>INCLUDE</tt> and <tt>LIB</tt> paths to point to the correct resources for your target platforms. For a default installation of the Windows Mobile 5.0 Pocket PC SDK, this is done with the following commands:</p>
+<pre>         set INCLUDE=C:\Program Files\Microsoft Visual Studio 8\VC\ce\include;C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Include\Armv4i
+         set LIB=C:\Program Files\Microsoft Visual Studio 8\VC\ce\lib\armv4i;C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Lib\ARMV4I
+         set PATH=C:\Program Files\Microsoft Visual Studio 8\VC\ce\bin\x86_arm;%PATH%</pre>
+<p>We provide a convenience script for this purpose, called <tt>setcepaths</tt>. Simply type:</p>
+<pre>         setcepaths wincewm50pocket-msvc2005</pre>
+<p>Then to build Qt type:</p>
+<pre>         nmake</pre>
+</li>
+<li>That's all. Qt is now installed.<p>To get started with Qt, you can check out the examples found in the <tt>examples</tt> directory of your Qt installation. The documentation can be found in <tt>doc\html</tt>.</p>
+<p><b>Remember:</b> If you reconfigure Qt for a different platform, make sure you start with a new clean console to get rid of the platform dependent include directories.</p>
+<p>The links below provide further information for using Qt:</p>
+<ul>
+<li><a href="how-to-learn-qt.html">How to Learn Qt</a></li>
+<li><a href="tutorials-tutorial.html">Qt Tutorial</a></li>
+<li><a href="http://www.trolltech.com/developer">Developer Zone</a></li>
+<li><a href="deployment.html">Deploying Qt Applications</a></li>
+</ul>
+<p>You might also want to try the following Windows CE specific links:</p>
+<ul>
+<li><a href="wince-with-qt-introduction.html">Windows CE - Introduction to using Qt</a></li>
+<li><a href="windowsce-customization.html">Windows CE - Working with Custom SDKs</a></li>
+<li><a href="shadow-builds-wince.html">Windows CE - Using shadow builds</a></li>
+</ul>
+</li>
+</ol>
+<p>We hope you will enjoy using Qt. Good luck!</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

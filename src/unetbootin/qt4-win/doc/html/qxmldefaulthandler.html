@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlDefaultHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlDefaultHandler Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlDefaultHandler class provides a default implementation of all the XML handler classes. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlDefaultHandler&gt;</pre><p>Inherits <a href="qxmlcontenthandler.html">QXmlContentHandler</a>, <a href="qxmlerrorhandler.html">QXmlErrorHandler</a>, <a href="qxmldtdhandler.html">QXmlDTDHandler</a>, <a href="qxmlentityresolver.html">QXmlEntityResolver</a>, <a href="qxmllexicalhandler.html">QXmlLexicalHandler</a>, and <a href="qxmldeclhandler.html">QXmlDeclHandler</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmldefaulthandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qxmldefaulthandler.html#QXmlDefaultHandler">QXmlDefaultHandler</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qxmldefaulthandler.html#dtor.QXmlDefaultHandler">~QXmlDefaultHandler</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>12 public functions inherited from <a href="qxmlcontenthandler.html#public-functions">QXmlContentHandler</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="qxmlerrorhandler.html#public-functions">QXmlErrorHandler</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qxmldtdhandler.html#public-functions">QXmlDTDHandler</a></li>
+<li><div class="fn"/>2 public functions inherited from <a href="qxmlentityresolver.html#public-functions">QXmlEntityResolver</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="qxmllexicalhandler.html#public-functions">QXmlLexicalHandler</a></li>
+<li><div class="fn"/>4 public functions inherited from <a href="qxmldeclhandler.html#public-functions">QXmlDeclHandler</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlDefaultHandler class provides a default implementation of all the XML handler classes.</p>
+<p>This class gathers together the features of the specialized handler classes, making it a convenient starting point when implementing custom handlers for subclasses of <a href="qxmlreader.html">QXmlReader</a>, particularly <a href="qxmlsimplereader.html">QXmlSimpleReader</a>. The virtual functions from each of the base classes are reimplemented in this class, providing sensible default behavior for many common cases. By subclassing this class, and overriding these functions, you can concentrate on implementing the parts of the handler relevant to your application.</p>
+<p>The XML reader must be told which handler to use for different kinds of events during parsing. This means that, although QXmlDefaultHandler provides default implementations of functions inherited from all its base classes, we can still use specialized handlers for particular kinds of events.</p>
+<p>For example, QXmlDefaultHandler subclasses both <a href="qxmlcontenthandler.html">QXmlContentHandler</a> and <a href="qxmlerrorhandler.html">QXmlErrorHandler</a>, so by subclassing it we can use the same handler for both of the following reader functions:</p>
+<pre>     xmlReader.setContentHandler(handler);
+     xmlReader.setErrorHandler(handler);</pre>
+<p>Since the reader will inform the handler of parsing errors, it is necessary to reimplement <a href="qxmlerrorhandler.html#fatalError">QXmlErrorHandler::fatalError</a>() if, for example, we want to stop parsing when such an error occurs:</p>
+<pre> bool Handler::fatalError (const QXmlParseException &amp; exception)
+ {
+     qWarning() &lt;&lt; &quot;Fatal error on line&quot; &lt;&lt; exception.lineNumber()
+                &lt;&lt; &quot;, column&quot; &lt;&lt; exception.columnNumber() &lt;&lt; &quot;:&quot;
+                &lt;&lt; exception.message();
+
+     return false;
+ }</pre>
+<p>The above function returns false, which tells the reader to stop parsing. To continue to use the same reader, it is necessary to create a new handler instance, and set up the reader to use it in the manner described above.</p>
+<p>It is useful to examine some of the functions inherited by QXmlDefaultHandler, and consider why they might be reimplemented in a custom handler. Custom handlers will typically reimplement <a href="qxmlcontenthandler.html#startDocument">QXmlContentHandler::startDocument</a>() to prepare the handler for new content. Document elements and the text within them can be processed by reimplementing <a href="qxmlcontenthandler.html#startElement">QXmlContentHandler::startElement</a>(), <a href="qxmlcontenthandler.html#endElement">QXmlContentHandler::endElement</a>(), and <a href="qxmlcontenthandler.html#characters">QXmlContentHandler::characters</a>(). You may want to reimplement <a href="qxmlcontenthandler.html#endDocument">QXmlContentHandler::endDocument</a>() to perform some finalization or validation on the content once the document has been read completely.</p>
+<p>See also <a href="qxmldtdhandler.html">QXmlDTDHandler</a>, <a href="qxmldeclhandler.html">QXmlDeclHandler</a>, <a href="qxmlcontenthandler.html">QXmlContentHandler</a>, <a href="qxmlentityresolver.html">QXmlEntityResolver</a>, <a href="qxmlerrorhandler.html">QXmlErrorHandler</a>, <a href="qxmllexicalhandler.html">QXmlLexicalHandler</a>, and <a href="qtxml.html#introduction-to-sax2">Introduction to SAX2</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QXmlDefaultHandler"></a>QXmlDefaultHandler::QXmlDefaultHandler ()</h3>
+<p>Constructs a handler for use with subclasses of <a href="qxmlreader.html">QXmlReader</a>.</p>
+<h3 class="fn"><a name="dtor.QXmlDefaultHandler"></a>QXmlDefaultHandler::~QXmlDefaultHandler ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the handler.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QResizeEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QResizeEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QResizeEvent class contains event parameters for resize events. <a href="#details">More...</a></p>
+<pre> #include &lt;QResizeEvent&gt;</pre><p>Inherits <a href="qevent.html">QEvent</a>.</p>
+<ul>
+<li><a href="qresizeevent-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qresizeevent.html#QResizeEvent">QResizeEvent</a></b> ( const QSize &amp; <i>size</i>, const QSize &amp; <i>oldSize</i> )</li>
+<li><div class="fn"/>const QSize &amp; <b><a href="qresizeevent.html#oldSize">oldSize</a></b> () const</li>
+<li><div class="fn"/>const QSize &amp; <b><a href="qresizeevent.html#size">size</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QResizeEvent class contains event parameters for resize events.</p>
+<p>Resize events are sent to widgets that have been resized.</p>
+<p>The event handler <a href="qwidget.html#resizeEvent">QWidget::resizeEvent</a>() receives resize events.</p>
+<p>See also <a href="qwidget.html#size-prop">QWidget::resize</a>() and <a href="qwidget.html#geometry-prop">QWidget::setGeometry</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QResizeEvent"></a>QResizeEvent::QResizeEvent ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, const <a href="qsize.html">QSize</a> &amp; <i>oldSize</i> )</h3>
+<p>Constructs a resize event with the new and old widget sizes, <i>size</i> and <i>oldSize</i> respectively.</p>
+<h3 class="fn"><a name="oldSize"></a>const <a href="qsize.html">QSize</a> &amp; QResizeEvent::oldSize () const</h3>
+<p>Returns the old size of the widget.</p>
+<h3 class="fn"><a name="size"></a>const <a href="qsize.html">QSize</a> &amp; QResizeEvent::size () const</h3>
+<p>Returns the new size of the widget. This is the same as <a href="qwidget.html#size-prop">QWidget::size</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: pieview.cpp Example File (itemviews/chart/pieview.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">pieview.cpp Example File<br /><span class="small-subtitle">itemviews/chart/pieview.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;math.h&gt;
+ #include &lt;QtGui&gt;
+
+ #ifndef M_PI
+ #define M_PI 3.1415927
+ #endif
+
+ #include &quot;pieview.h&quot;
+
+ PieView::PieView(QWidget *parent)
+     : QAbstractItemView(parent)
+ {
+     horizontalScrollBar()-&gt;setRange(0, 0);
+     verticalScrollBar()-&gt;setRange(0, 0);
+
+     margin = 8;
+     totalSize = 300;
+     pieSize = totalSize - 2*margin;
+     validItems = 0;
+     totalValue = 0.0;
+     rubberBand = 0;
+ }
+
+ void PieView::dataChanged(const QModelIndex &amp;topLeft,
+                           const QModelIndex &amp;bottomRight)
+ {
+     QAbstractItemView::dataChanged(topLeft, bottomRight);
+
+     validItems = 0;
+     totalValue = 0.0;
+
+     for (int row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+         QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+         double value = model()-&gt;data(index).toDouble();
+
+         if (value &gt; 0.0) {
+             totalValue += value;
+             validItems++;
+         }
+     }
+     viewport()-&gt;update();
+ }
+
+ bool PieView::edit(const QModelIndex &amp;index, EditTrigger trigger, QEvent *event)
+ {
+     if (index.column() == 0)
+         return QAbstractItemView::edit(index, trigger, event);
+     else
+         return false;
+ }
+
+<span class="comment"> /*
+     Returns the item that covers the coordinate given in the view.
+ */</span>
+
+ QModelIndex PieView::indexAt(const QPoint &amp;point) const
+ {
+     if (validItems == 0)
+         return QModelIndex();
+
+     <span class="comment">//</span> Transform the view coordinates into contents widget coordinates.
+     int wx = point.x() + horizontalScrollBar()-&gt;value();
+     int wy = point.y() + verticalScrollBar()-&gt;value();
+
+     if (wx &lt; totalSize) {
+         double cx = wx - totalSize/2;
+         double cy = totalSize/2 - wy; <span class="comment">//</span> positive cy for items above the center
+
+         <span class="comment">//</span> Determine the distance from the center point of the pie chart.
+         double d = pow(pow(cx, 2) + pow(cy, 2), 0.5);
+
+         if (d == 0 || d &gt; pieSize/2)
+             return QModelIndex();
+
+         <span class="comment">//</span> Determine the angle of the point.
+         double angle = (180 / M_PI) * acos(cx/d);
+         if (cy &lt; 0)
+             angle = 360 - angle;
+
+         <span class="comment">//</span> Find the relevant slice of the pie.
+         double startAngle = 0.0;
+
+         for (int row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+             QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+             double value = model()-&gt;data(index).toDouble();
+
+             if (value &gt; 0.0) {
+                 double sliceAngle = 360*value/totalValue;
+
+                 if (angle &gt;= startAngle &amp;&amp; angle &lt; (startAngle + sliceAngle))
+                     return model()-&gt;index(row, 1, rootIndex());
+
+                 startAngle += sliceAngle;
+             }
+         }
+     } else {
+         double itemHeight = QFontMetrics(viewOptions().font).height();
+         int listItem = int((wy - margin) / itemHeight);
+         int validRow = 0;
+
+         for (int row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+             QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+             if (model()-&gt;data(index).toDouble() &gt; 0.0) {
+
+                 if (listItem == validRow)
+                     return model()-&gt;index(row, 0, rootIndex());
+
+                 <span class="comment">//</span> Update the list index that corresponds to the next valid row.
+                 validRow++;
+             }
+         }
+     }
+
+     return QModelIndex();
+ }
+
+ bool PieView::isIndexHidden(const QModelIndex &amp; <span class="comment">/*index*/</span>) const
+ {
+     return false;
+ }
+
+<span class="comment"> /*
+     Returns the rectangle of the item at position \a index in the
+     model. The rectangle is in contents coordinates.
+ */</span>
+
+ QRect PieView::itemRect(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return QRect();
+
+     <span class="comment">//</span> Check whether the index's row is in the list of rows represented
+     <span class="comment">//</span> by slices.
+     QModelIndex valueIndex;
+
+     if (index.column() != 1)
+         valueIndex = model()-&gt;index(index.row(), 1, rootIndex());
+     else
+         valueIndex = index;
+
+     if (model()-&gt;data(valueIndex).toDouble() &gt; 0.0) {
+
+         int listItem = 0;
+         for (int row = index.row()-1; row &gt;= 0; --row) {
+             if (model()-&gt;data(model()-&gt;index(row, 1, rootIndex())).toDouble() &gt; 0.0)
+                 listItem++;
+         }
+
+         double itemHeight;
+
+         switch (index.column()) {
+         case 0:
+             itemHeight = QFontMetrics(viewOptions().font).height();
+
+             return QRect(totalSize,
+                          int(margin + listItem*itemHeight),
+                          totalSize - margin, int(itemHeight));
+         case 1:
+             return viewport()-&gt;rect();
+         }
+
+     }
+     return QRect();
+ }
+
+ QRegion PieView::itemRegion(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return QRegion();
+
+     if (index.column() != 1)
+         return itemRect(index);
+
+     if (model()-&gt;data(index).toDouble() &lt;= 0.0)
+         return QRegion();
+
+     double startAngle = 0.0;
+     for (int row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+         QModelIndex sliceIndex = model()-&gt;index(row, 1, rootIndex());
+         double value = model()-&gt;data(sliceIndex).toDouble();
+
+         if (value &gt; 0.0) {
+             double angle = 360*value/totalValue;
+
+             if (sliceIndex == index) {
+                 QPainterPath slicePath;
+                 slicePath.moveTo(totalSize/2, totalSize/2);
+                 slicePath.arcTo(margin, margin, margin+pieSize, margin+pieSize,
+                                 startAngle, angle);
+                 slicePath.closeSubpath();
+
+                 return QRegion(slicePath.toFillPolygon().toPolygon());
+             }
+
+             startAngle += angle;
+         }
+     }
+
+     return QRegion();
+ }
+
+ int PieView::horizontalOffset() const
+ {
+     return horizontalScrollBar()-&gt;value();
+ }
+
+ void PieView::mousePressEvent(QMouseEvent *event)
+ {
+     QAbstractItemView::mousePressEvent(event);
+     origin = event-&gt;pos();
+     if (!rubberBand)
+         rubberBand = new QRubberBand(QRubberBand::Rectangle, this);
+     rubberBand-&gt;setGeometry(QRect(origin, QSize()));
+     rubberBand-&gt;show();
+ }
+
+ void PieView::mouseMoveEvent(QMouseEvent *event)
+ {
+     if (rubberBand)
+         rubberBand-&gt;setGeometry(QRect(origin, event-&gt;pos()).normalized());
+     QAbstractItemView::mouseMoveEvent(event);
+ }
+
+ void PieView::mouseReleaseEvent(QMouseEvent *event)
+ {
+     QAbstractItemView::mouseReleaseEvent(event);
+     if (rubberBand)
+         rubberBand-&gt;hide();
+     viewport()-&gt;update();
+ }
+
+ QModelIndex PieView::moveCursor(QAbstractItemView::CursorAction cursorAction,
+                                 Qt::KeyboardModifiers <span class="comment">/*modifiers*/</span>)
+ {
+     QModelIndex current = currentIndex();
+
+     switch (cursorAction) {
+         case MoveLeft:
+         case MoveUp:
+             if (current.row() &gt; 0)
+                 current = model()-&gt;index(current.row() - 1, current.column(),
+                                          rootIndex());
+             else
+                 current = model()-&gt;index(0, current.column(), rootIndex());
+             break;
+         case MoveRight:
+         case MoveDown:
+             if (current.row() &lt; rows(current) - 1)
+                 current = model()-&gt;index(current.row() + 1, current.column(),
+                                          rootIndex());
+             else
+                 current = model()-&gt;index(rows(current) - 1, current.column(),
+                                          rootIndex());
+             break;
+         default:
+             break;
+     }
+
+     viewport()-&gt;update();
+     return current;
+ }
+
+ void PieView::paintEvent(QPaintEvent *event)
+ {
+     QItemSelectionModel *selections = selectionModel();
+     QStyleOptionViewItem option = viewOptions();
+     QStyle::State state = option.state;
+
+     QBrush background = option.palette.base();
+     QPen foreground(option.palette.color(QPalette::WindowText));
+     QPen textPen(option.palette.color(QPalette::Text));
+     QPen highlightedPen(option.palette.color(QPalette::HighlightedText));
+
+     QPainter painter(viewport());
+     painter.setRenderHint(QPainter::Antialiasing);
+
+     painter.fillRect(event-&gt;rect(), background);
+     painter.setPen(foreground);
+
+     <span class="comment">//</span> Viewport rectangles
+     QRect pieRect = QRect(margin, margin, pieSize, pieSize);
+     QPoint keyPoint = QPoint(totalSize - horizontalScrollBar()-&gt;value(),
+                              margin - verticalScrollBar()-&gt;value());
+
+     if (validItems &gt; 0) {
+
+         painter.save();
+         painter.translate(pieRect.x() - horizontalScrollBar()-&gt;value(),
+                           pieRect.y() - verticalScrollBar()-&gt;value());
+         painter.drawEllipse(0, 0, pieSize, pieSize);
+         double startAngle = 0.0;
+         int row;
+
+         for (row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+             QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+             double value = model()-&gt;data(index).toDouble();
+
+             if (value &gt; 0.0) {
+                 double angle = 360*value/totalValue;
+
+                 QModelIndex colorIndex = model()-&gt;index(row, 0, rootIndex());
+                 QColor color = QColor(model()-&gt;data(colorIndex,
+                                 Qt::DecorationRole).toString());
+
+                 if (currentIndex() == index)
+                     painter.setBrush(QBrush(color, Qt::Dense4Pattern));
+                 else if (selections-&gt;isSelected(index))
+                     painter.setBrush(QBrush(color, Qt::Dense3Pattern));
+                 else
+                     painter.setBrush(QBrush(color));
+
+                 painter.drawPie(0, 0, pieSize, pieSize, int(startAngle*16),
+                                 int(angle*16));
+
+                 startAngle += angle;
+             }
+         }
+         painter.restore();
+
+         int keyNumber = 0;
+
+         for (row = 0; row &lt; model()-&gt;rowCount(rootIndex()); ++row) {
+
+             QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+             double value = model()-&gt;data(index).toDouble();
+
+             if (value &gt; 0.0) {
+                 QModelIndex labelIndex = model()-&gt;index(row, 0, rootIndex());
+
+                 QStyleOptionViewItem option = viewOptions();
+                 option.rect = visualRect(labelIndex);
+                 if (selections-&gt;isSelected(labelIndex))
+                     option.state |= QStyle::State_Selected;
+                 if (currentIndex() == labelIndex)
+                     option.state |= QStyle::State_HasFocus;
+                 itemDelegate()-&gt;paint(&amp;painter, option, labelIndex);
+
+                 keyNumber++;
+             }
+         }
+     }
+ }
+
+ void PieView::resizeEvent(QResizeEvent * <span class="comment">/* event */</span>)
+ {
+     updateGeometries();
+ }
+
+ int PieView::rows(const QModelIndex &amp;index) const
+ {
+     return model()-&gt;rowCount(model()-&gt;parent(index));
+ }
+
+ void PieView::rowsInserted(const QModelIndex &amp;parent, int start, int end)
+ {
+     for (int row = start; row &lt;= end; ++row) {
+
+         QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+         double value = model()-&gt;data(index).toDouble();
+
+         if (value &gt; 0.0) {
+             totalValue += value;
+             validItems++;
+         }
+     }
+
+     QAbstractItemView::rowsInserted(parent, start, end);
+ }
+
+ void PieView::rowsAboutToBeRemoved(const QModelIndex &amp;parent, int start, int end)
+ {
+     for (int row = start; row &lt;= end; ++row) {
+
+         QModelIndex index = model()-&gt;index(row, 1, rootIndex());
+         double value = model()-&gt;data(index).toDouble();
+         if (value &gt; 0.0) {
+             totalValue -= value;
+             validItems--;
+         }
+     }
+
+     QAbstractItemView::rowsAboutToBeRemoved(parent, start, end);
+ }
+
+ void PieView::scrollContentsBy(int dx, int dy)
+ {
+     viewport()-&gt;scroll(dx, dy);
+ }
+
+ void PieView::scrollTo(const QModelIndex &amp;index, ScrollHint)
+ {
+     QRect area = viewport()-&gt;rect();
+     QRect rect = visualRect(index);
+
+     if (rect.left() &lt; area.left())
+         horizontalScrollBar()-&gt;setValue(
+             horizontalScrollBar()-&gt;value() + rect.left() - area.left());
+     else if (rect.right() &gt; area.right())
+         horizontalScrollBar()-&gt;setValue(
+             horizontalScrollBar()-&gt;value() + qMin(
+                 rect.right() - area.right(), rect.left() - area.left()));
+
+     if (rect.top() &lt; area.top())
+         verticalScrollBar()-&gt;setValue(
+             verticalScrollBar()-&gt;value() + rect.top() - area.top());
+     else if (rect.bottom() &gt; area.bottom())
+         verticalScrollBar()-&gt;setValue(
+             verticalScrollBar()-&gt;value() + qMin(
+                 rect.bottom() - area.bottom(), rect.top() - area.top()));
+
+     update();
+ }
+
+<span class="comment"> /*
+     Find the indices corresponding to the extent of the selection.
+ */</span>
+
+ void PieView::setSelection(const QRect &amp;rect, QItemSelectionModel::SelectionFlags command)
+ {
+     <span class="comment">//</span> Use content widget coordinates because we will use the itemRegion()
+     <span class="comment">//</span> function to check for intersections.
+
+     QRect contentsRect = rect.translated(
+                             horizontalScrollBar()-&gt;value(),
+                             verticalScrollBar()-&gt;value()).normalized();
+
+     int rows = model()-&gt;rowCount(rootIndex());
+     int columns = model()-&gt;columnCount(rootIndex());
+     QModelIndexList indexes;
+
+     for (int row = 0; row &lt; rows; ++row) {
+         for (int column = 0; column &lt; columns; ++column) {
+             QModelIndex index = model()-&gt;index(row, column, rootIndex());
+             QRegion region = itemRegion(index);
+             if (!region.intersect(contentsRect).isEmpty())
+                 indexes.append(index);
+         }
+     }
+
+     if (indexes.size() &gt; 0) {
+         int firstRow = indexes[0].row();
+         int lastRow = indexes[0].row();
+         int firstColumn = indexes[0].column();
+         int lastColumn = indexes[0].column();
+
+         for (int i = 1; i &lt; indexes.size(); ++i) {
+             firstRow = qMin(firstRow, indexes[i].row());
+             lastRow = qMax(lastRow, indexes[i].row());
+             firstColumn = qMin(firstColumn, indexes[i].column());
+             lastColumn = qMax(lastColumn, indexes[i].column());
+         }
+
+         QItemSelection selection(
+             model()-&gt;index(firstRow, firstColumn, rootIndex()),
+             model()-&gt;index(lastRow, lastColumn, rootIndex()));
+         selectionModel()-&gt;select(selection, command);
+     } else {
+         QModelIndex noIndex;
+         QItemSelection selection(noIndex, noIndex);
+         selectionModel()-&gt;select(selection, command);
+     }
+
+     update();
+ }
+
+ void PieView::updateGeometries()
+ {
+     horizontalScrollBar()-&gt;setPageStep(viewport()-&gt;width());
+     horizontalScrollBar()-&gt;setRange(0, qMax(0, 2*totalSize - viewport()-&gt;width()));
+     verticalScrollBar()-&gt;setPageStep(viewport()-&gt;height());
+     verticalScrollBar()-&gt;setRange(0, qMax(0, totalSize - viewport()-&gt;height()));
+ }
+
+ int PieView::verticalOffset() const
+ {
+     return verticalScrollBar()-&gt;value();
+ }
+
+<span class="comment"> /*
+     Returns the position of the item in viewport coordinates.
+ */</span>
+
+ QRect PieView::visualRect(const QModelIndex &amp;index) const
+ {
+     QRect rect = itemRect(index);
+     if (rect.isValid())
+         return QRect(rect.left() - horizontalScrollBar()-&gt;value(),
+                      rect.top() - verticalScrollBar()-&gt;value(),
+                      rect.width(), rect.height());
+     else
+         return rect;
+ }
+
+<span class="comment"> /*
+     Returns a region corresponding to the selection in viewport coordinates.
+ */</span>
+
+ QRegion PieView::visualRegionForSelection(const QItemSelection &amp;selection) const
+ {
+     int ranges = selection.count();
+
+     if (ranges == 0)
+         return QRect();
+
+     QRegion region;
+     for (int i = 0; i &lt; ranges; ++i) {
+         QItemSelectionRange range = selection.at(i);
+         for (int row = range.top(); row &lt;= range.bottom(); ++row) {
+             for (int col = range.left(); col &lt;= range.right(); ++col) {
+                 QModelIndex index = model()-&gt;index(row, col, rootIndex());
+                 region += visualRect(index);
+             }
+         }
+     }
+     return region;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

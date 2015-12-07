@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qimagewriter.cpp -->
+<head>
+  <title>Qt 4.4: QImageWriter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QImageWriter Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QImageWriter class provides a format independent interface for writing images to files or other devices. <a href="#details">More...</a></p>
+<pre> #include &lt;QImageWriter&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qimagewriter-members.html">List of all members, including inherited members</a></li>
+<li><a href="qimagewriter-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qimagewriter.html#ImageWriterError-enum">ImageWriterError</a></b> { DeviceError, UnsupportedFormatError, UnknownError }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qimagewriter.html#QImageWriter">QImageWriter</a></b> ()</li>
+<li><div class="fn"/><b><a href="qimagewriter.html#QImageWriter-2">QImageWriter</a></b> ( QIODevice * <i>device</i>, const QByteArray &amp; <i>format</i> )</li>
+<li><div class="fn"/><b><a href="qimagewriter.html#QImageWriter-3">QImageWriter</a></b> ( const QString &amp; <i>fileName</i>, const QByteArray &amp; <i>format</i> = QByteArray() )</li>
+<li><div class="fn"/><b><a href="qimagewriter.html#dtor.QImageWriter">~QImageWriter</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qimagewriter.html#canWrite">canWrite</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qimagewriter.html#compression">compression</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qimagewriter.html#device">device</a></b> () const</li>
+<li><div class="fn"/>ImageWriterError <b><a href="qimagewriter.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qimagewriter.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qimagewriter.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qimagewriter.html#format">format</a></b> () const</li>
+<li><div class="fn"/>float <b><a href="qimagewriter.html#gamma">gamma</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qimagewriter.html#quality">quality</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setCompression">setCompression</a></b> ( int <i>compression</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setDevice">setDevice</a></b> ( QIODevice * <i>device</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setFileName">setFileName</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setFormat">setFormat</a></b> ( const QByteArray &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setGamma">setGamma</a></b> ( float <i>gamma</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setQuality">setQuality</a></b> ( int <i>quality</i> )</li>
+<li><div class="fn"/>void <b><a href="qimagewriter.html#setText">setText</a></b> ( const QString &amp; <i>key</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>bool <b><a href="qimagewriter.html#supportsOption">supportsOption</a></b> ( QImageIOHandler::ImageOption <i>option</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qimagewriter.html#write">write</a></b> ( const QImage &amp; <i>image</i> )</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QList&lt;QByteArray&gt; <b><a href="qimagewriter.html#supportedImageFormats">supportedImageFormats</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QImageWriter class provides a format independent interface for writing images to files or other devices.</p>
+<p>QImageWriter supports setting format specific options, such as the gamma level, compression level and quality, prior to storing the image. If you do not need such options, you can use <a href="qimage.html#save">QImage::save</a>() or <a href="qpixmap.html#save">QPixmap::save</a>() instead.</p>
+<p>To store an image, you start by constructing a QImageWriter object. Pass either a file name or a device pointer, and the image format to QImageWriter's constructor. You can then set several options, such as the gamma level (by calling <a href="qimagewriter.html#setGamma">setGamma</a>()) and quality (by calling <a href="qimagewriter.html#setQuality">setQuality</a>()). <a href="qimagewriter.html#canWrite">canWrite</a>() returns true if QImageWriter can write the image (i.e&#x2e;, the image format is supported and the device is open for writing). Call <a href="qimagewriter.html#write">write</a>() to write the image to the device.</p>
+<p>If any error occurs when writing the image, <a href="qimagewriter.html#write">write</a>() will return false. You can then call <a href="qimagewriter.html#error">error</a>() to find the type of error that occurred, or <a href="qimagewriter.html#errorString">errorString</a>() to get a human readable description of what went wrong.</p>
+<p>Call <a href="qimagewriter.html#supportedImageFormats">supportedImageFormats</a>() for a list of formats that QImageWriter can write. QImageWriter supports all built-in image formats, in addition to any image format plugins that support writing.</p>
+<p>See also <a href="qimagereader.html">QImageReader</a>, <a href="qimageiohandler.html">QImageIOHandler</a>, and <a href="qimageioplugin.html">QImageIOPlugin</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ImageWriterError-enum"></a>enum QImageWriter::ImageWriterError</h3>
+<p>This enum describes errors that can occur when writing images with <a href="qimagewriter.html">QImageWriter</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QImageWriter::DeviceError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="qimagewriter.html">QImageWriter</a> encountered a device error when writing the image data. Consult your device for more details on what went wrong.</td></tr>
+<tr><td valign="top"><tt>QImageWriter::UnsupportedFormatError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Qt does not support the requested image format.</td></tr>
+<tr><td valign="top"><tt>QImageWriter::UnknownError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">An unknown error occurred. If you get this value after calling <a href="qimagewriter.html#write">write</a>(), it is most likely caused by a bug in <a href="qimagewriter.html">QImageWriter</a>.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QImageWriter"></a>QImageWriter::QImageWriter ()</h3>
+<p>Constructs an empty <a href="qimagewriter.html">QImageWriter</a> object. Before writing, you must call <a href="qimagewriter.html#setFormat">setFormat</a>() to set an image format, then <a href="qimagewriter.html#setDevice">setDevice</a>() or <a href="qimagewriter.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="QImageWriter-2"></a>QImageWriter::QImageWriter ( <a href="qiodevice.html">QIODevice</a> * <i>device</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>format</i> )</h3>
+<p>Constructs a <a href="qimagewriter.html">QImageWriter</a> object using the device <i>device</i> and image format <i>format</i>.</p>
+<h3 class="fn"><a name="QImageWriter-3"></a>QImageWriter::QImageWriter ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, const <a href="qbytearray.html">QByteArray</a> &amp; <i>format</i> = QByteArray() )</h3>
+<p>Constructs a <a href="qimagewriter.html">QImageWriter</a> objects that will write to a file with the name <i>fileName</i>, using the image format <i>format</i>. If <i>format</i> is not provided, <a href="qimagewriter.html">QImageWriter</a> will detect the image format by inspecting the extension of <i>fileName</i>.</p>
+<h3 class="fn"><a name="dtor.QImageWriter"></a>QImageWriter::~QImageWriter ()</h3>
+<p>Destructs the <a href="qimagewriter.html">QImageWriter</a> object.</p>
+<h3 class="fn"><a name="canWrite"></a>bool QImageWriter::canWrite () const</h3>
+<p>Returns true if <a href="qimagewriter.html">QImageWriter</a> can write the image (i.e&#x2e;, the image format is supported and the assigned device is open for reading.</p>
+<p>See also <a href="qimagewriter.html#write">write</a>(), <a href="qimagewriter.html#setDevice">setDevice</a>(), and <a href="qimagewriter.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="compression"></a>int QImageWriter::compression () const</h3>
+<p>Returns the compression of the image.</p>
+<p>See also <a href="qimagewriter.html#setCompression">setCompression</a>().</p>
+<h3 class="fn"><a name="device"></a><a href="qiodevice.html">QIODevice</a> * QImageWriter::device () const</h3>
+<p>Returns the device currently assigned to <a href="qimagewriter.html">QImageWriter</a>, or 0 if no device has been assigned.</p>
+<p>See also <a href="qimagewriter.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qimagewriter.html#ImageWriterError-enum">ImageWriterError</a> QImageWriter::error () const</h3>
+<p>Returns the type of error that last occurred.</p>
+<p>See also <a href="qimagewriter.html#ImageWriterError-enum">ImageWriterError</a> and <a href="qimagewriter.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QImageWriter::errorString () const</h3>
+<p>Returns a human readable description of the last error that occurred.</p>
+<p>See also <a href="qimagewriter.html#error">error</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QImageWriter::fileName () const</h3>
+<p>If the currently assigned device is a <a href="qfile.html">QFile</a>, or if <a href="qimagewriter.html#setFileName">setFileName</a>() has been called, this function returns the name of the file <a href="qimagewriter.html">QImageWriter</a> writes to. Otherwise (i.e&#x2e;, if no device has been assigned or the device is not a <a href="qfile.html">QFile</a>), an empty <a href="qstring.html">QString</a> is returned.</p>
+<p>See also <a href="qimagewriter.html#setFileName">setFileName</a>() and <a href="qimagewriter.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qbytearray.html">QByteArray</a> QImageWriter::format () const</h3>
+<p>Returns the format <a href="qimagewriter.html">QImageWriter</a> uses for writing images.</p>
+<p>See also <a href="qimagewriter.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="gamma"></a>float QImageWriter::gamma () const</h3>
+<p>Returns the gamma level of the image.</p>
+<p>See also <a href="qimagewriter.html#setGamma">setGamma</a>().</p>
+<h3 class="fn"><a name="quality"></a>int QImageWriter::quality () const</h3>
+<p>Returns the quality level of the image.</p>
+<p>See also <a href="qimagewriter.html#setQuality">setQuality</a>().</p>
+<h3 class="fn"><a name="setCompression"></a>void QImageWriter::setCompression ( int <i>compression</i> )</h3>
+<p>This is an image format specific function that set the compression of an image. For image formats that do not support setting the compression, this value is ignored.</p>
+<p>The value range of <i>compression</i> depends on the image format. For example, the &quot;tiff&quot; format supports two values, 0(no compression) and 1(LZW-compression).</p>
+<p>See also <a href="qimagewriter.html#compression">compression</a>().</p>
+<h3 class="fn"><a name="setDevice"></a>void QImageWriter::setDevice ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )</h3>
+<p>Sets <a href="qimagewriter.html">QImageWriter</a>'s device to <i>device</i>. If a device has already been set, the old device is removed from <a href="qimagewriter.html">QImageWriter</a> and is otherwise left unchanged.</p>
+<p>If the device is not already open, <a href="qimagewriter.html">QImageWriter</a> will attempt to open the device in <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::WriteOnly</a> mode by calling open(). Note that this does not work for certain devices, such as <a href="qprocess.html">QProcess</a>, <a href="qtcpsocket.html">QTcpSocket</a> and <a href="qudpsocket.html">QUdpSocket</a>, where more logic is required to open the device.</p>
+<p>See also <a href="qimagewriter.html#device">device</a>() and <a href="qimagewriter.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="setFileName"></a>void QImageWriter::setFileName ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Sets the file name of <a href="qimagewriter.html">QImageWriter</a> to <i>fileName</i>. Internally, <a href="qimagewriter.html">QImageWriter</a> will create a <a href="qfile.html">QFile</a> and open it in <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::WriteOnly</a> mode, and use this file when writing images.</p>
+<p>See also <a href="qimagewriter.html#fileName">fileName</a>() and <a href="qimagewriter.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QImageWriter::setFormat ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>format</i> )</h3>
+<p>Sets the format <a href="qimagewriter.html">QImageWriter</a> will use when writing images, to <i>format</i>. <i>format</i> is a case insensitive text string. Example:</p>
+<pre>         QImageWriter writer;
+         writer.setFormat(&quot;png&quot;); // same as writer.setFormat(&quot;PNG&quot;);</pre>
+<p>You can call <a href="qimagewriter.html#supportedImageFormats">supportedImageFormats</a>() for the full list of formats <a href="qimagewriter.html">QImageWriter</a> supports.</p>
+<p>See also <a href="qimagewriter.html#format">format</a>().</p>
+<h3 class="fn"><a name="setGamma"></a>void QImageWriter::setGamma ( float <i>gamma</i> )</h3>
+<p>This is an image format specific function that sets the gamma level of the image to <i>gamma</i>. For image formats that do not support setting the gamma level, this value is ignored.</p>
+<p>The value range of <i>gamma</i> depends on the image format. For example, the &quot;png&quot; format supports a gamma range from 0.0 to 1.0&#x2e;</p>
+<p>See also <a href="qimagewriter.html#gamma">gamma</a>() and <a href="qimagewriter.html#quality">quality</a>().</p>
+<h3 class="fn"><a name="setQuality"></a>void QImageWriter::setQuality ( int <i>quality</i> )</h3>
+<p>This is an image format specific function that sets the quality level of the image to <i>quality</i>. For image formats that do not support setting the quality, this value is ignored.</p>
+<p>The value range of <i>quality</i> depends on the image format. For example, the &quot;jpeg&quot; format supports a quality range from 0 (low quality, high compression) to 100 (high quality, low compression).</p>
+<p>See also <a href="qimagewriter.html#quality">quality</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QImageWriter::setText ( const <a href="qstring.html">QString</a> &amp; <i>key</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the image text associated with the key <i>key</i> to <i>text</i>. This is useful for storing copyright information or other information about the image. Example:</p>
+<pre>         QImage image(&quot;some/image.jpeg&quot;);
+         QImageWriter writer(&quot;images/outimage.png&quot;, &quot;png&quot;);
+         writer.setText(&quot;Author&quot;, &quot;John Smith&quot;);
+         writer.write(image);</pre>
+<p>If you want to store a single block of data (e.g&#x2e;, a comment), you can pass an empty key, or use a generic key like &quot;Description&quot;.</p>
+<p>The key and text will be embedded into the image data after calling <a href="qimagewriter.html#write">write</a>().</p>
+<p>Support for this option is implemented through <a href="qimageiohandler.html#ImageOption-enum">QImageIOHandler::Description</a>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qimage.html#setText">QImage::setText</a>() and <a href="qimagereader.html#text">QImageReader::text</a>().</p>
+<h3 class="fn"><a name="supportedImageFormats"></a><a href="qlist.html">QList</a>&lt;<a href="qbytearray.html">QByteArray</a>&gt; QImageWriter::supportedImageFormats ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the list of image formats supported by <a href="qimagewriter.html">QImageWriter</a>.</p>
+<p>By default, Qt can write the following formats:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Format</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td>BMP</td><td>Windows Bitmap</td></tr>
+<tr valign="top" class="even"><td>JPG</td><td>Joint Photographic Experts Group</td></tr>
+<tr valign="top" class="odd"><td>JPEG</td><td>Joint Photographic Experts Group</td></tr>
+<tr valign="top" class="even"><td>PNG</td><td>Portable Network Graphics</td></tr>
+<tr valign="top" class="odd"><td>PPM</td><td>Portable Pixmap</td></tr>
+<tr valign="top" class="even"><td>TIFF</td><td>Tagged Image File Format</td></tr>
+<tr valign="top" class="odd"><td>XBM</td><td>X11 Bitmap</td></tr>
+<tr valign="top" class="even"><td>XPM</td><td>X11 Pixmap</td></tr>
+</table></p>
+<p>Reading and writing SVG files is supported through Qt's <a href="qtsvg.html">SVG Module</a>.</p>
+<p>See also <a href="qimagewriter.html#setFormat">setFormat</a>(), <a href="qimagereader.html#supportedImageFormats">QImageReader::supportedImageFormats</a>(), and <a href="qimageioplugin.html">QImageIOPlugin</a>.</p>
+<h3 class="fn"><a name="supportsOption"></a>bool QImageWriter::supportsOption ( <a href="qimageiohandler.html#ImageOption-enum">QImageIOHandler::ImageOption</a> <i>option</i> ) const</h3>
+<p>Returns true if the writer supports <i>option</i>; otherwise returns false.</p>
+<p>Different image formats support different options. Call this function to determine whether a certain option is supported by the current format. For example, the PNG format allows you to embed text into the image's metadata (see text()).</p>
+<pre>         QImageWriter writer(fileName);
+         if (writer.supportsOption(QImageIOHandler::Description))
+             writer.setText(&quot;Author&quot;, &quot;John Smith&quot;);</pre>
+<p>Options can be tested after the writer has been associated with a format.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qimagereader.html#supportsOption">QImageReader::supportsOption</a>() and <a href="qimagewriter.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="write"></a>bool QImageWriter::write ( const <a href="qimage.html">QImage</a> &amp; <i>image</i> )</h3>
+<p>Writes the image <i>image</i> to the assigned device or file name. Returns true on success; otherwise returns false. If the operation fails, you can call <a href="qimagewriter.html#error">error</a>() to find the type of error that occurred, or <a href="qimagewriter.html#errorString">errorString</a>() to get a human readable description of the error.</p>
+<p>See also <a href="qimagewriter.html#canWrite">canWrite</a>(), <a href="qimagewriter.html#error">error</a>(), and <a href="qimagewriter.html#errorString">errorString</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qcalendarwidget.cpp -->
+<head>
+  <title>Qt 4.4: QCalendarWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCalendarWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QCalendarWidget class provides a monthly based calendar widget allowing the user to select a date. <a href="#details">More...</a></p>
+<pre> #include &lt;QCalendarWidget&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qcalendarwidget-members.html">List of all members, including inherited members</a></li>
+<li><a href="qcalendarwidget-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">HorizontalHeaderFormat</a></b> { SingleLetterDayNames, ShortDayNames, LongDayNames, NoHorizontalHeader }</li>
+<li><div class="fn"/>enum <b><a href="qcalendarwidget.html#SelectionMode-enum">SelectionMode</a></b> { NoSelection, SingleSelection }</li>
+<li><div class="fn"/>enum <b><a href="qcalendarwidget.html#VerticalHeaderFormat-enum">VerticalHeaderFormat</a></b> { ISOWeekNumbers, NoVerticalHeader }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#dateEditAcceptDelay-prop">dateEditAcceptDelay</a></b> : int</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#dateEditEnabled-prop">dateEditEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#firstDayOfWeek-prop">firstDayOfWeek</a></b> : Qt::DayOfWeek</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#gridVisible-prop">gridVisible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#horizontalHeaderFormat-prop">horizontalHeaderFormat</a></b> : HorizontalHeaderFormat</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a></b> : QDate</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a></b> : QDate</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#navigationBarVisible-prop">navigationBarVisible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a></b> : QDate</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#selectionMode-prop">selectionMode</a></b> : SelectionMode</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#verticalHeaderFormat-prop">verticalHeaderFormat</a></b> : VerticalHeaderFormat</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#QCalendarWidget">QCalendarWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qcalendarwidget.html#dtor.QCalendarWidget">~QCalendarWidget</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qcalendarwidget.html#dateEditAcceptDelay-prop">dateEditAcceptDelay</a></b> () const</li>
+<li><div class="fn"/>QMap&lt;QDate, QTextCharFormat&gt; <b><a href="qcalendarwidget.html#dateTextFormat">dateTextFormat</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qcalendarwidget.html#dateTextFormat-2">dateTextFormat</a></b> ( const QDate &amp; <i>date</i> ) const</li>
+<li><div class="fn"/>Qt::DayOfWeek <b><a href="qcalendarwidget.html#firstDayOfWeek-prop">firstDayOfWeek</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qcalendarwidget.html#headerTextFormat">headerTextFormat</a></b> () const</li>
+<li><div class="fn"/>HorizontalHeaderFormat <b><a href="qcalendarwidget.html#horizontalHeaderFormat-prop">horizontalHeaderFormat</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcalendarwidget.html#dateEditEnabled-prop">isDateEditEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcalendarwidget.html#gridVisible-prop">isGridVisible</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qcalendarwidget.html#navigationBarVisible-prop">isNavigationBarVisible</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qcalendarwidget.html#monthShown">monthShown</a></b> () const</li>
+<li><div class="fn"/>QDate <b><a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a></b> () const</li>
+<li><div class="fn"/>SelectionMode <b><a href="qcalendarwidget.html#selectionMode-prop">selectionMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#dateEditAcceptDelay-prop">setDateEditAcceptDelay</a></b> ( int <i>delay</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#dateEditEnabled-prop">setDateEditEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#firstDayOfWeek-prop">setFirstDayOfWeek</a></b> ( Qt::DayOfWeek <i>dayOfWeek</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#setHeaderTextFormat">setHeaderTextFormat</a></b> ( const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#horizontalHeaderFormat-prop">setHorizontalHeaderFormat</a></b> ( HorizontalHeaderFormat <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#maximumDate-prop">setMaximumDate</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#minimumDate-prop">setMinimumDate</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#selectionMode-prop">setSelectionMode</a></b> ( SelectionMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#verticalHeaderFormat-prop">setVerticalHeaderFormat</a></b> ( VerticalHeaderFormat <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#setWeekdayTextFormat">setWeekdayTextFormat</a></b> ( Qt::DayOfWeek <i>dayOfWeek</i>, const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>VerticalHeaderFormat <b><a href="qcalendarwidget.html#verticalHeaderFormat-prop">verticalHeaderFormat</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qcalendarwidget.html#weekdayTextFormat">weekdayTextFormat</a></b> ( Qt::DayOfWeek <i>dayOfWeek</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qcalendarwidget.html#yearShown">yearShown</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a></b> ( int <i>year</i>, int <i>month</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#setDateRange">setDateRange</a></b> ( const QDate &amp; <i>min</i>, const QDate &amp; <i>max</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#gridVisible-prop">setGridVisible</a></b> ( bool <i>show</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#navigationBarVisible-prop">setNavigationBarVisible</a></b> ( bool <i>visible</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showNextMonth">showNextMonth</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showNextYear">showNextYear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showPreviousMonth">showPreviousMonth</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showPreviousYear">showPreviousYear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showSelectedDate">showSelectedDate</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#showToday">showToday</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#activated">activated</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#clicked">clicked</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#currentPageChanged">currentPageChanged</a></b> ( int <i>year</i>, int <i>month</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#selectionChanged">selectionChanged</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qcalendarwidget.html#paintCell">paintCell</a></b> ( QPainter * <i>painter</i>, const QRect &amp; <i>rect</i>, const QDate &amp; <i>date</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#updateCell">updateCell</a></b> ( const QDate &amp; <i>date</i> )</li>
+<li><div class="fn"/>void <b><a href="qcalendarwidget.html#updateCells">updateCells</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCalendarWidget class provides a monthly based calendar widget allowing the user to select a date.</p>
+<p align="center"><img src="images/cleanlooks-calendarwidget.png" /></p><p>The widget is initialized with the current month and year, but QCalendarWidget provides several public slots to change the year and month that is shown. The currently displayed month and year can be retrieved using the currentPageMonth() and currentPageYear() functions, respectively.</p>
+<p>By default, today's date is selected, and the user can select a date using both mouse and keyboard. The currently selected date can be retrieved using the <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a>() function. It is possible to constrain the user selection to a given date range by setting the <a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a> and <a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a> properties. Alternatively, both properties can be set in one go using the <a href="qcalendarwidget.html#setDateRange">setDateRange</a>() convenience slot. Set the <a href="qcalendarwidget.html#selectionMode-prop">selectionMode</a> property to <a href="qcalendarwidget.html#SelectionMode-enum">NoSelection</a> to prohibit the user from selecting at all. Note that a date also can be selected programmatically using the <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>() slot.</p>
+<p>A newly created calendar widget uses abbreviated day names, and both Saturdays and Sundays are marked in red. The calendar grid is not visible. The week numbers are displayed, and the first column day is Sunday.</p>
+<p>The notation of the days can be altered to a single letter abbreviations (&quot;M&quot; for &quot;Monday&quot;) by setting the <a href="qcalendarwidget.html#horizontalHeaderFormat-prop">horizontalHeaderFormat</a> property to <a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">QCalendarWidget::SingleLetterDayNames</a>. Setting the same property to <a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">QCalendarWidget::LongDayNames</a> makes the header display the complete day names. The week numbers can be removed by setting the <a href="qcalendarwidget.html#verticalHeaderFormat-prop">verticalHeaderFormat</a> property to <a href="qcalendarwidget.html#VerticalHeaderFormat-enum">QCalendarWidget::NoVerticalHeader</a>. The calendar grid can be turned on by setting the <a href="qcalendarwidget.html#gridVisible-prop">gridVisible</a> property to true using the <a href="qcalendarwidget.html#gridVisible-prop">setGridVisible</a>() function:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><p align="center"><img src="images/qcalendarwidget-grid.png" /></p></td></tr>
+<tr valign="top" class="even"><td><pre>             QCalendarWidget *calendar;
+             calendar-&gt;setGridVisible(true);</pre>
+</td></tr>
+</table></p>
+<p>Finally, the day in the first column can be altered using the <a href="qcalendarwidget.html#firstDayOfWeek-prop">setFirstDayOfWeek</a>() function.</p>
+<p>The QCalendarWidget class also provides three signals, <a href="qcalendarwidget.html#selectionChanged">selectionChanged</a>(), <a href="qcalendarwidget.html#activated">activated</a>() and <a href="qcalendarwidget.html#currentPageChanged">currentPageChanged</a>() making it possible to respond to user interaction.</p>
+<p>The rendering of the headers, weekdays or single days can be largely customized by setting <a href="qtextcharformat.html">QTextCharFormat</a>'s for some special weekday, a special date or for the rendering of the headers.</p>
+<p>Only a subset of the properties in <a href="qtextcharformat.html">QTextCharFormat</a> are used by the calendar widget. Currently, the foreground, background and font properties are used to determine the rendering of individual cells in the widget.</p>
+<p>See also <a href="qdate.html">QDate</a>, <a href="qdateedit.html">QDateEdit</a>, and <a href="qtextcharformat.html">QTextCharFormat</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="HorizontalHeaderFormat-enum"></a>enum QCalendarWidget::HorizontalHeaderFormat</h3>
+<p>This enum type defines the various formats the horizontal header can display.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCalendarWidget::SingleLetterDayNames</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The header displays a single letter abbreviation for day names (e.g&#x2e; M for Monday).</td></tr>
+<tr><td valign="top"><tt>QCalendarWidget::ShortDayNames</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The header displays a short abbreviation for day names (e.g&#x2e; Mon for Monday).</td></tr>
+<tr><td valign="top"><tt>QCalendarWidget::LongDayNames</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The header displays complete day names (e.g&#x2e; Monday).</td></tr>
+<tr><td valign="top"><tt>QCalendarWidget::NoHorizontalHeader</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The header is hidden.</td></tr>
+</table></p>
+<p>See also <a href="qcalendarwidget.html#horizontalHeaderFormat-prop">horizontalHeaderFormat</a>() and <a href="qcalendarwidget.html#VerticalHeaderFormat-enum">VerticalHeaderFormat</a>.</p>
+<h3 class="fn"><a name="SelectionMode-enum"></a>enum QCalendarWidget::SelectionMode</h3>
+<p>This enum describes the types of selection offered to the user for selecting dates in the calendar.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCalendarWidget::NoSelection</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Dates cannot be selected.</td></tr>
+<tr><td valign="top"><tt>QCalendarWidget::SingleSelection</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Single dates can be selected.</td></tr>
+</table></p>
+<p>See also <a href="qcalendarwidget.html#selectionMode-prop">selectionMode</a>.</p>
+<h3 class="fn"><a name="VerticalHeaderFormat-enum"></a>enum QCalendarWidget::VerticalHeaderFormat</h3>
+<p>This enum type defines the various formats the vertical header can display.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QCalendarWidget::ISOWeekNumbers</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The header displays a ISO week numbers <a href="qdate.html#weekNumber">QDate::weekNumber</a>().</td></tr>
+<tr><td valign="top"><tt>QCalendarWidget::NoVerticalHeader</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The header is hidden.</td></tr>
+</table></p>
+<p>See also <a href="qcalendarwidget.html#verticalHeaderFormat-prop">verticalHeaderFormat</a>() and <a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">HorizontalHeaderFormat</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="dateEditAcceptDelay-prop"></a>dateEditAcceptDelay : int</h3>
+<p>This property holds the time an inactive date edit is shown before its contents are accepted.</p>
+<p>If the calendar widget's <a href="qcalendarwidget.html#dateEditEnabled-prop">date edit is enabled</a>, this property specifies the amount of time (in millseconds) that the date edit remains open after the most recent user input. Once this time has elapsed, the date specified in the date edit is accepted and the popup is closed.</p>
+<p>By default, the delay is defined to be 1500 milliseconds (1.5 seconds).</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int dateEditAcceptDelay () const</b></li>
+<li><div class="fn"/><b>void setDateEditAcceptDelay ( int <i>delay</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="dateEditEnabled-prop"></a>dateEditEnabled : bool</h3>
+<p>This property holds whether the date edit popup is enabled.</p>
+<p>If this property is enabled, pressing a non-modifier key will cause a date edit to popup if the calendar widget has focus, allowing the user to specify a date in the form specified by the current locale.</p>
+<p>By default, this property is enabled.</p>
+<p>The date edit is simpler in appearance than <a href="qdateedit.html">QDateEdit</a>, but allows the user to navigate between fields using the left and right cursor keys, increment and decrement individual fields using the up and down cursor keys, and enter values directly using the number keys.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isDateEditEnabled () const</b></li>
+<li><div class="fn"/><b>void setDateEditEnabled ( bool <i>enable</i> )</b></li>
+</ul>
+<p>See also <a href="qcalendarwidget.html#dateEditAcceptDelay-prop">QCalendarWidget::dateEditAcceptDelay</a>.</p>
+<h3 class="fn"><a name="firstDayOfWeek-prop"></a>firstDayOfWeek : <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a></h3>
+<p>This property holds a value identifying the day displayed in the first column.</p>
+<p>By default, the day displayed in the first column is Sunday</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::DayOfWeek firstDayOfWeek () const</b></li>
+<li><div class="fn"/><b>void setFirstDayOfWeek ( Qt::DayOfWeek <i>dayOfWeek</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="gridVisible-prop"></a>gridVisible : bool</h3>
+<p>This property holds whether the table grid is displayed.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qcalendarwidget-grid.png" /></td></tr>
+<tr valign="top" class="even"><td><pre>             QCalendarWidget *calendar;
+             calendar-&gt;setGridVisible(true);</pre>
+</td></tr>
+</table></p>
+<p>The default value is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isGridVisible () const</b></li>
+<li><div class="fn"/><b>void setGridVisible ( bool <i>show</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="horizontalHeaderFormat-prop"></a>horizontalHeaderFormat : <a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">HorizontalHeaderFormat</a></h3>
+<p>This property holds the format of the horizontal header.</p>
+<p>The default value is <a href="qcalendarwidget.html#HorizontalHeaderFormat-enum">QCalendarWidget::ShortDayNames</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>HorizontalHeaderFormat horizontalHeaderFormat () const</b></li>
+<li><div class="fn"/><b>void setHorizontalHeaderFormat ( HorizontalHeaderFormat <i>format</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="maximumDate-prop"></a>maximumDate : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the maximum date of the currently specified date range.</p>
+<p>The user will not be able to select a date which is after the currently set maximum date.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><p align="center"><img src="images/qcalendarwidget-maximum.png" /></p></td></tr>
+<tr valign="top" class="even"><td><pre>     QCalendarWidget *calendar;
+     calendar-&gt;setGridVisible(true);
+     calendar-&gt;setMaximumDate(QDate(2006, 7, 3));</pre>
+</td></tr>
+</table></p>
+<p>By default, the maximum date is the last day the <a href="qdate.html">QDate</a> class can handle.</p>
+<p>When setting a maximum date, the <a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a> and <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a> properties are adjusted if the selection range becomes invalid. If the provided date is not a valid <a href="qdate.html">QDate</a> object, the setMaximumDate() function does nothing.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate maximumDate () const</b></li>
+<li><div class="fn"/><b>void setMaximumDate ( const QDate &amp; <i>date</i> )</b></li>
+</ul>
+<p>See also <a href="qcalendarwidget.html#setDateRange">setDateRange</a>().</p>
+<h3 class="fn"><a name="minimumDate-prop"></a>minimumDate : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the minimum date of the currently specified date range.</p>
+<p>The user will not be able to select a date that is before the currently set minimum date.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><p align="center"><img src="images/qcalendarwidget-minimum.png" /></p></td></tr>
+<tr valign="top" class="even"><td><pre>     QCalendarWidget *calendar;
+     calendar-&gt;setGridVisible(true);
+     calendar-&gt;setMinimumDate(QDate(2006, 6, 19));</pre>
+</td></tr>
+</table></p>
+<p>By default, the minimum date is the earliest date that the <a href="qdate.html">QDate</a> class can handle.</p>
+<p>When setting a minimum date, the <a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a> and <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a> properties are adjusted if the selection range becomes invalid. If the provided date is not a valid <a href="qdate.html">QDate</a> object, the setMinimumDate() function does nothing.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate minimumDate () const</b></li>
+<li><div class="fn"/><b>void setMinimumDate ( const QDate &amp; <i>date</i> )</b></li>
+</ul>
+<p>See also <a href="qcalendarwidget.html#setDateRange">setDateRange</a>().</p>
+<h3 class="fn"><a name="navigationBarVisible-prop"></a>navigationBarVisible : bool</h3>
+<p>This property holds whether the navigation bar is shown or not.</p>
+<p>When this property is true (the default), the next month, previous month, month selection, year selection controls are shown on top.</p>
+<p>When the property is set to false, these controls are hidden.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isNavigationBarVisible () const</b></li>
+<li><div class="fn"/><b>void setNavigationBarVisible ( bool <i>visible</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="selectedDate-prop"></a>selectedDate : <a href="qdate.html">QDate</a></h3>
+<p>This property holds the currently selected date.</p>
+<p>The selected date must be within the date range specified by the <a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a> and <a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a> properties. By default, the selected date is the current date.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QDate selectedDate () const</b></li>
+<li><div class="fn"/><b>void setSelectedDate ( const QDate &amp; <i>date</i> )</b></li>
+</ul>
+<p>See also <a href="qcalendarwidget.html#setDateRange">setDateRange</a>().</p>
+<h3 class="fn"><a name="selectionMode-prop"></a>selectionMode : <a href="qcalendarwidget.html#SelectionMode-enum">SelectionMode</a></h3>
+<p>This property holds the type of selection the user can make in the calendar.</p>
+<p>When this property is set to <a href="qcalendarwidget.html#SelectionMode-enum">SingleSelection</a>, the user can select a date within the minimum and maximum allowed dates, using either the mouse or the keyboard.</p>
+<p>When the property is set to <a href="qcalendarwidget.html#SelectionMode-enum">NoSelection</a>, the user will be unable to select dates, but they can still be selected programmatically. Note that the date that is selected when the property is set to <a href="qcalendarwidget.html#SelectionMode-enum">NoSelection</a> will still be the selected date of the calendar.</p>
+<p>The default value is <a href="qcalendarwidget.html#SelectionMode-enum">SingleSelection</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>SelectionMode selectionMode () const</b></li>
+<li><div class="fn"/><b>void setSelectionMode ( SelectionMode <i>mode</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="verticalHeaderFormat-prop"></a>verticalHeaderFormat : <a href="qcalendarwidget.html#VerticalHeaderFormat-enum">VerticalHeaderFormat</a></h3>
+<p>This property holds the format of the vertical header.</p>
+<p>The default value is QCalendarWidget::ISOWeekNumber.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>VerticalHeaderFormat verticalHeaderFormat () const</b></li>
+<li><div class="fn"/><b>void setVerticalHeaderFormat ( VerticalHeaderFormat <i>format</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCalendarWidget"></a>QCalendarWidget::QCalendarWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a calendar widget with the given <i>parent</i>.</p>
+<p>The widget is initialized with the current month and year, and the currently selected date is today.</p>
+<p>See also <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="dtor.QCalendarWidget"></a>QCalendarWidget::~QCalendarWidget ()</h3>
+<p>Destroys the calendar widget.</p>
+<h3 class="fn"><a name="activated"></a>void QCalendarWidget::activated ( const <a href="qdate.html">QDate</a> &amp; <i>date</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the user presses the Return or Enter key or double-clicks a <i>date</i> in the calendar widget.</p>
+<h3 class="fn"><a name="clicked"></a>void QCalendarWidget::clicked ( const <a href="qdate.html">QDate</a> &amp; <i>date</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a mouse button is clicked. The date the mouse was clicked on is specified by <i>date</i>. The signal is only emitted when clicked on a valid date.</p>
+<h3 class="fn"><a name="currentPageChanged"></a>void QCalendarWidget::currentPageChanged ( int <i>year</i>, int <i>month</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the currently shown month is changed. The new <i>year</i> and <i>month</i> are passed as parameters.</p>
+<p>See also <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="dateTextFormat"></a><a href="qmap.html">QMap</a>&lt;<a href="qdate.html">QDate</a>, <a href="qtextcharformat.html">QTextCharFormat</a>&gt; QCalendarWidget::dateTextFormat () const</h3>
+<p>Returns a <a href="qmap.html">QMap</a> from <a href="qdate.html">QDate</a> to <a href="qtextcharformat.html">QTextCharFormat</a> showing all dates that use a special format that alters their rendering.</p>
+<h3 class="fn"><a name="dateTextFormat-2"></a><a href="qtextcharformat.html">QTextCharFormat</a> QCalendarWidget::dateTextFormat ( const <a href="qdate.html">QDate</a> &amp; <i>date</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a <a href="qtextcharformat.html">QTextCharFormat</a> for <i>date</i>. The char format can be be empty if the date is not renderd specially.</p>
+<h3 class="fn"><a name="headerTextFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QCalendarWidget::headerTextFormat () const</h3>
+<p>Returns the text char format for rendering the header.</p>
+<p>See also <a href="qcalendarwidget.html#setHeaderTextFormat">setHeaderTextFormat</a>().</p>
+<h3 class="fn"><a name="monthShown"></a>int QCalendarWidget::monthShown () const</h3>
+<p>Returns the currently displayed month. Months are numbered from 1 to 12.</p>
+<p>See also <a href="qcalendarwidget.html#yearShown">yearShown</a>() and <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="paintCell"></a>void QCalendarWidget::paintCell ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, const <a href="qdate.html">QDate</a> &amp; <i>date</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the cell specified by the given <i>date</i>, using the given <i>painter</i> and <i>rect</i>.</p>
+<h3 class="fn"><a name="selectionChanged"></a>void QCalendarWidget::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the currently selected date is changed.</p>
+<p>The currently selected date can be changed by the user using the mouse or keyboard, or by the programmer using <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>().</p>
+<p>See also <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a>().</p>
+<h3 class="fn"><a name="setCurrentPage"></a>void QCalendarWidget::setCurrentPage ( int <i>year</i>, int <i>month</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Displays the given <i>month</i> of the given <i>year</i> without changing the selected date. Use the <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>() function to alter the selected date.</p>
+<p>The currently displayed month and year can be retrieved using the currentPageMonth() and currentPageYear() functions respectively.</p>
+<p>See also <a href="qcalendarwidget.html#yearShown">yearShown</a>(), <a href="qcalendarwidget.html#monthShown">monthShown</a>(), <a href="qcalendarwidget.html#showPreviousMonth">showPreviousMonth</a>(), <a href="qcalendarwidget.html#showNextMonth">showNextMonth</a>(), <a href="qcalendarwidget.html#showPreviousYear">showPreviousYear</a>(), and <a href="qcalendarwidget.html#showNextYear">showNextYear</a>().</p>
+<h3 class="fn"><a name="setDateRange"></a>void QCalendarWidget::setDateRange ( const <a href="qdate.html">QDate</a> &amp; <i>min</i>, const <a href="qdate.html">QDate</a> &amp; <i>max</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Defines a date range by setting the <a href="qcalendarwidget.html#minimumDate-prop">minimumDate</a> and <a href="qcalendarwidget.html#maximumDate-prop">maximumDate</a> properties.</p>
+<p>The date range restricts the user selection, i.e&#x2e; the user can only select dates within the specified date range. Note that</p>
+<pre>         QCalendarWidget *calendar;
+
+         calendar-&gt;setDateRange(min, max);</pre>
+<p>is analogous to</p>
+<pre>         QCalendarWidget *calendar;
+
+         calendar-&gt;setMinimumDate(min);
+         calendar-&gt;setMaximumDate(max);</pre>
+<p>If either the <i>min</i> or <i>max</i> parameters are not valid <a href="qdate.html">QDate</a> objects, this function does nothing.</p>
+<p>See also <a href="qcalendarwidget.html#minimumDate-prop">setMinimumDate</a>() and <a href="qcalendarwidget.html#maximumDate-prop">setMaximumDate</a>().</p>
+<h3 class="fn"><a name="setHeaderTextFormat"></a>void QCalendarWidget::setHeaderTextFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the text char format for rendering the header to <i>format</i>. If you also set a weekday text format, this format's foreground and background color will take precedence over the header's format. The other formatting information will still be decided by the header's format.</p>
+<p>See also <a href="qcalendarwidget.html#headerTextFormat">headerTextFormat</a>().</p>
+<h3 class="fn"><a name="setWeekdayTextFormat"></a>void QCalendarWidget::setWeekdayTextFormat ( <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a> <i>dayOfWeek</i>, const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the text char format for rendering of day in the week <i>dayOfWeek</i> to <i>format</i>. The format will take precedence over the header format in case of foreground and background color. Other text formatting information is taken from the headers format.</p>
+<p>See also <a href="qcalendarwidget.html#weekdayTextFormat">weekdayTextFormat</a>() and <a href="qcalendarwidget.html#setHeaderTextFormat">setHeaderTextFormat</a>().</p>
+<h3 class="fn"><a name="showNextMonth"></a>void QCalendarWidget::showNextMonth ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the next month relative to the currently displayed month. Note that the selected date is not changed.</p>
+<p>See also <a href="qcalendarwidget.html#showPreviousMonth">showPreviousMonth</a>(), <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>(), and <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>().</p>
+<h3 class="fn"><a name="showNextYear"></a>void QCalendarWidget::showNextYear ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the currently displayed month in the <i>next</i> year relative to the currently displayed year. Note that the selected date is not changed.</p>
+<p>See also <a href="qcalendarwidget.html#showPreviousYear">showPreviousYear</a>(), <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>(), and <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>().</p>
+<h3 class="fn"><a name="showPreviousMonth"></a>void QCalendarWidget::showPreviousMonth ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the previous month relative to the currently displayed month. Note that the selected date is not changed.</p>
+<p>See also <a href="qcalendarwidget.html#showNextMonth">showNextMonth</a>(), <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>(), and <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>().</p>
+<h3 class="fn"><a name="showPreviousYear"></a>void QCalendarWidget::showPreviousYear ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the currently displayed month in the <i>previous</i> year relative to the currently displayed year. Note that the selected date is not changed.</p>
+<p>See also <a href="qcalendarwidget.html#showNextYear">showNextYear</a>(), <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>(), and <a href="qcalendarwidget.html#selectedDate-prop">setSelectedDate</a>().</p>
+<h3 class="fn"><a name="showSelectedDate"></a>void QCalendarWidget::showSelectedDate ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the month of the selected date.</p>
+<p>See also <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a>() and <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="showToday"></a>void QCalendarWidget::showToday ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the month of the today's date.</p>
+<p>See also <a href="qcalendarwidget.html#selectedDate-prop">selectedDate</a>() and <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<h3 class="fn"><a name="updateCell"></a>void QCalendarWidget::updateCell ( const <a href="qdate.html">QDate</a> &amp; <i>date</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Updates the cell specified by the given <i>date</i> unless updates are disabled or the cell is hidden.</p>
+<p>See also <a href="qcalendarwidget.html#updateCells">updateCells</a>(), <a href="qcalendarwidget.html#yearShown">yearShown</a>(), and <a href="qcalendarwidget.html#monthShown">monthShown</a>().</p>
+<h3 class="fn"><a name="updateCells"></a>void QCalendarWidget::updateCells ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Updates all visible cells unless updates are disabled.</p>
+<p>See also <a href="qcalendarwidget.html#updateCell">updateCell</a>().</p>
+<h3 class="fn"><a name="weekdayTextFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QCalendarWidget::weekdayTextFormat ( <a href="qt.html#DayOfWeek-enum">Qt::DayOfWeek</a> <i>dayOfWeek</i> ) const</h3>
+<p>Returns the text char format for rendering of day in the week <i>dayOfWeek</i>.</p>
+<p>See also <a href="qcalendarwidget.html#setWeekdayTextFormat">setWeekdayTextFormat</a>() and <a href="qcalendarwidget.html#headerTextFormat">headerTextFormat</a>().</p>
+<h3 class="fn"><a name="yearShown"></a>int QCalendarWidget::yearShown () const</h3>
+<p>Returns the year of the currently displayed month. Months are numbered from 1 to 12.</p>
+<p>See also <a href="qcalendarwidget.html#monthShown">monthShown</a>() and <a href="qcalendarwidget.html#setCurrentPage">setCurrentPage</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

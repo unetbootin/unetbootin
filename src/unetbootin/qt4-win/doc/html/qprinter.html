@@ -1,0 +1,559 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qprinter.cpp -->
+<head>
+  <title>Qt 4.4: QPrinter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QPrinter Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QPrinter class is a paint device that paints on a printer. <a href="#details">More...</a></p>
+<pre> #include &lt;QPrinter&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qprinter-members.html">List of all members, including inherited members</a></li>
+<li><a href="qprinter-obsolete.html">Obsolete members</a></li>
+<li><a href="qprinter-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qprinter.html#ColorMode-enum">ColorMode</a></b> { Color, GrayScale }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#DuplexMode-enum">DuplexMode</a></b> { DuplexNone, DuplexAuto, DuplexLongSide, DuplexShortSide }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#Orientation-enum">Orientation</a></b> { Portrait, Landscape }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#OutputFormat-enum">OutputFormat</a></b> { NativeFormat, PdfFormat, PostScriptFormat }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PageOrder-enum">PageOrder</a></b> { FirstPageFirst, LastPageFirst }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PaperSize-enum">PaperSize</a></b> { A0, A1, A2, A3, ..., Custom }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PaperSource-enum">PaperSource</a></b> { Auto, Cassette, Envelope, EnvelopeManual, ..., SmallFormat }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PrintRange-enum">PrintRange</a></b> { AllPages, Selection, PageRange }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PrinterMode-enum">PrinterMode</a></b> { ScreenResolution, PrinterResolution, HighResolution }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#PrinterState-enum">PrinterState</a></b> { Idle, Active, Aborted, Error }</li>
+<li><div class="fn"/>enum <b><a href="qprinter.html#Unit-enum">Unit</a></b> { Millimeter, Point, Inch, Pica, ..., DevicePixel }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qprinter.html#QPrinter">QPrinter</a></b> ( PrinterMode <i>mode</i> = ScreenResolution )</li>
+<li><div class="fn"/><b><a href="qprinter.html#QPrinter-2">QPrinter</a></b> ( const QPrinterInfo &amp; <i>printer</i>, PrinterMode <i>mode</i> = ScreenResolution )</li>
+<li><div class="fn"/><b><a href="qprinter.html#dtor.QPrinter">~QPrinter</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#abort">abort</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#collateCopies">collateCopies</a></b> () const</li>
+<li><div class="fn"/>ColorMode <b><a href="qprinter.html#colorMode">colorMode</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#creator">creator</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#docName">docName</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#doubleSidedPrinting">doubleSidedPrinting</a></b> () const</li>
+<li><div class="fn"/>DuplexMode <b><a href="qprinter.html#duplex">duplex</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#fontEmbeddingEnabled">fontEmbeddingEnabled</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter.html#fromPage">fromPage</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#fullPage">fullPage</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#getPageMargins">getPageMargins</a></b> ( qreal * <i>left</i>, qreal * <i>top</i>, qreal * <i>right</i>, qreal * <i>bottom</i>, Unit <i>unit</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qprinter.html#newPage">newPage</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qprinter.html#numCopies">numCopies</a></b> () const</li>
+<li><div class="fn"/>Orientation <b><a href="qprinter.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#outputFileName">outputFileName</a></b> () const</li>
+<li><div class="fn"/>OutputFormat <b><a href="qprinter.html#outputFormat">outputFormat</a></b> () const</li>
+<li><div class="fn"/>PageOrder <b><a href="qprinter.html#pageOrder">pageOrder</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="qprinter.html#pageRect">pageRect</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qprinter.html#pageRect-2">pageRect</a></b> ( Unit <i>unit</i> ) const</li>
+<li><div class="fn"/>virtual QPaintEngine * <b><a href="qprinter.html#paintEngine">paintEngine</a></b> () const</li>
+<li><div class="fn"/>QRect <b><a href="qprinter.html#paperRect">paperRect</a></b> () const</li>
+<li><div class="fn"/>QRectF <b><a href="qprinter.html#paperRect-2">paperRect</a></b> ( Unit <i>unit</i> ) const</li>
+<li><div class="fn"/>PaperSize <b><a href="qprinter.html#paperSize">paperSize</a></b> () const</li>
+<li><div class="fn"/>QSizeF <b><a href="qprinter.html#paperSize-2">paperSize</a></b> ( Unit <i>unit</i> ) const</li>
+<li><div class="fn"/>PaperSource <b><a href="qprinter.html#paperSource">paperSource</a></b> () const</li>
+<li><div class="fn"/>QPrintEngine * <b><a href="qprinter.html#printEngine">printEngine</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#printProgram">printProgram</a></b> () const</li>
+<li><div class="fn"/>PrintRange <b><a href="qprinter.html#printRange">printRange</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#printerName">printerName</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qprinter.html#printerSelectionOption">printerSelectionOption</a></b> () const</li>
+<li><div class="fn"/>PrinterState <b><a href="qprinter.html#printerState">printerState</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter.html#resolution">resolution</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setCollateCopies">setCollateCopies</a></b> ( bool <i>collate</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setColorMode">setColorMode</a></b> ( ColorMode <i>newColorMode</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setCreator">setCreator</a></b> ( const QString &amp; <i>creator</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setDocName">setDocName</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setDoubleSidedPrinting">setDoubleSidedPrinting</a></b> ( bool <i>doubleSided</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setDuplex">setDuplex</a></b> ( DuplexMode <i>duplex</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setFontEmbeddingEnabled">setFontEmbeddingEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setFromTo">setFromTo</a></b> ( int <i>from</i>, int <i>to</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setFullPage">setFullPage</a></b> ( bool <i>fp</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setNumCopies">setNumCopies</a></b> ( int <i>numCopies</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setOrientation">setOrientation</a></b> ( Orientation <i>orientation</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setOutputFileName">setOutputFileName</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setOutputFormat">setOutputFormat</a></b> ( OutputFormat <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPageMargins">setPageMargins</a></b> ( qreal <i>left</i>, qreal <i>top</i>, qreal <i>right</i>, qreal <i>bottom</i>, Unit <i>unit</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPageOrder">setPageOrder</a></b> ( PageOrder <i>pageOrder</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPaperSize">setPaperSize</a></b> ( PaperSize <i>newPaperSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPaperSize-2">setPaperSize</a></b> ( const QSizeF &amp; <i>paperSize</i>, Unit <i>unit</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPaperSource">setPaperSource</a></b> ( PaperSource <i>source</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPrintProgram">setPrintProgram</a></b> ( const QString &amp; <i>printProg</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPrintRange">setPrintRange</a></b> ( PrintRange <i>range</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPrinterName">setPrinterName</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setPrinterSelectionOption">setPrinterSelectionOption</a></b> ( const QString &amp; <i>option</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setResolution">setResolution</a></b> ( int <i>dpi</i> )</li>
+<li><div class="fn"/>void <b><a href="qprinter.html#setWinPageSize">setWinPageSize</a></b> ( int <i>pageSize</i> )</li>
+<li><div class="fn"/>QList&lt;PaperSource&gt; <b><a href="qprinter.html#supportedPaperSources">supportedPaperSources</a></b> () const</li>
+<li><div class="fn"/>QList&lt;int&gt; <b><a href="qprinter.html#supportedResolutions">supportedResolutions</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter.html#toPage">toPage</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qprinter.html#winPageSize">winPageSize</a></b> () const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qprinter.html#setEngines">setEngines</a></b> ( QPrintEngine * <i>printEngine</i>, QPaintEngine * <i>paintEngine</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QPrinter class is a paint device that paints on a printer.</p>
+<p>This device represents a series of pages of printed output, and is used in almost exactly the same way as other paint devices such as <a href="qwidget.html">QWidget</a> and <a href="qpixmap.html">QPixmap</a>. A set of additional functions are provided to manage device-specific features, such as orientation and resolution, and to step through the pages in a document as it is generated.</p>
+<p>When printing directly to a printer on Windows or Mac OS X, QPrinter uses the built-in printer drivers. On X11, QPrinter uses the <a href="http://www.cups.org/">Common Unix Printing System (CUPS)</a> or the standard Unix <a href="http://www.ietf.org/rfc/rfc1179.txt#lpr">lpr</a> utility to send PostScript or PDF output to the printer. As an alternative, the <a href="qprinter.html#printProgram">printProgram</a>() function can be used to specify the command or utility to use instead of the system default.</p>
+<p>QPrinter supports a number of parameters, most of which can be changed by the end user through a <a href="qprintdialog.html">print dialog</a>. In general, QPrinter passes these functions onto the underlying <a href="qprintengine.html">QPrintEngine</a>.</p>
+<p>The most important parameters are:</p>
+<ul>
+<li><a href="qprinter.html#setOrientation">setOrientation</a>() tells QPrinter which page orientation to use.</li>
+<li><a href="qprinter.html#setPaperSize">setPaperSize</a>() tells QPrinter what paper size to expect from the printer.</li>
+<li><a href="qprinter.html#setResolution">setResolution</a>() tells QPrinter what resolution you wish the printer to provide, in dots per inch (DPI).</li>
+<li><a href="qprinter.html#setFullPage">setFullPage</a>() tells QPrinter whether you want to deal with the full page or just with the part the printer can draw on.</li>
+<li><a href="qprinter.html#setNumCopies">setNumCopies</a>() tells QPrinter how many copies of the document it should print.</li>
+</ul>
+<p>Many of these functions can only be called before the actual printing begins (i.e&#x2e;, before <a href="qpainter.html#begin">QPainter::begin</a>() is called). This usually makes sense because, for example, it's not possible to change the number of copies when you are halfway through printing. There are also some settings that the user sets (through the printer dialog) and that applications are expected to obey. See <a href="qabstractprintdialog.html">QAbstractPrintDialog</a>'s documentation for more details.</p>
+<p>When <a href="qpainter.html#begin">QPainter::begin</a>() is called, the QPrinter it operates on is prepared for a new page, enabling the <a href="qpainter.html">QPainter</a> to be used immediately to paint the first page in a document. Once the first page has been painted, <a href="qprinter.html#newPage">newPage</a>() can be called to request a new blank page to paint on, or <a href="qpainter.html#end">QPainter::end</a>() can be called to finish printing. The second page and all following pages are prepared using a call to <a href="qprinter.html#newPage">newPage</a>() before they are painted.</p>
+<p>The first page in a document does not need to be preceded by a call to <a href="qprinter.html#newPage">newPage</a>(). You only need to calling <a href="qprinter.html#newPage">newPage</a>() after <a href="qpainter.html#begin">QPainter::begin</a>() if you need to insert a blank page at the beginning of a printed document. Similarly, calling <a href="qprinter.html#newPage">newPage</a>() after the last page in a document is painted will result in a trailing blank page appended to the end of the printed document.</p>
+<p>If you want to abort the print job, <a href="qprinter.html#abort">abort</a>() will try its best to stop printing. It may cancel the entire job or just part of it.</p>
+<p>Since QPrinter can print to any <a href="qprintengine.html">QPrintEngine</a> subclass, it is possible to extend printing support to cover new types of printing subsystem by subclassing <a href="qprintengine.html">QPrintEngine</a> and reimplementing its interface.</p>
+<p>See also <a href="qprintdialog.html">QPrintDialog</a> and <a href="printing.html">Printing with Qt</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ColorMode-enum"></a>enum QPrinter::ColorMode</h3>
+<p>This enum type is used to indicate whether <a href="qprinter.html">QPrinter</a> should print in color or not.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::Color</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">print in color if available, otherwise in grayscale.</td></tr>
+<tr><td valign="top"><tt>QPrinter::GrayScale</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">print in grayscale, even on color printers.</td></tr>
+</table></p>
+<h3 class="fn"><a name="DuplexMode-enum"></a>enum QPrinter::DuplexMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::DuplexNone</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">no duplex printing, single sided only.</td></tr>
+<tr><td valign="top"><tt>QPrinter::DuplexAuto</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPrinter::DuplexLongSide</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QPrinter::DuplexShortSide</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">&nbsp;</td></tr>
+</table></p>
+<h3 class="fn"><a name="Orientation-enum"></a>enum QPrinter::Orientation</h3>
+<p>This enum type (not to be confused with <tt>Orientation</tt>) is used to specify each page's orientation.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::Portrait</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">the page's height is greater than its width.</td></tr>
+<tr><td valign="top"><tt>QPrinter::Landscape</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">the page's width is greater than its height.</td></tr>
+</table></p>
+<p>This type interacts with <a href="qprinter.html#PaperSize-enum">QPrinter::PaperSize</a> and <a href="qprinter.html#setFullPage">QPrinter::setFullPage</a>() to determine the final size of the page available to the application.</p>
+<h3 class="fn"><a name="OutputFormat-enum"></a>enum QPrinter::OutputFormat</h3>
+<p>The OutputFormat enum is used to describe the format <a href="qprinter.html">QPrinter</a> should use for printing.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::NativeFormat</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top"><a href="qprinter.html">QPrinter</a> will print output using a method defined by the platform it is running on. This mode is the default when printing directly to a printer.</td></tr>
+<tr><td valign="top"><tt>QPrinter::PdfFormat</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="qprinter.html">QPrinter</a> will generate its output as a searchable PDF file. This mode is the default when printing to a file.</td></tr>
+<tr><td valign="top"><tt>QPrinter::PostScriptFormat</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top"><a href="qprinter.html">QPrinter</a> will generate its output as in the PostScript format. (This feature was introduced in Qt 4.2&#x2e;)</td></tr>
+</table></p>
+<p>See also <a href="qprinter.html#outputFormat">outputFormat</a>(), <a href="qprinter.html#setOutputFormat">setOutputFormat</a>(), and <a href="qprinter.html#setOutputFileName">setOutputFileName</a>().</p>
+<h3 class="fn"><a name="PageOrder-enum"></a>enum QPrinter::PageOrder</h3>
+<p>This enum type is used by <a href="qprinter.html">QPrinter</a> to tell the application program how to print.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::FirstPageFirst</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">the lowest-numbered page should be printed first.</td></tr>
+<tr><td valign="top"><tt>QPrinter::LastPageFirst</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">the highest-numbered page should be printed first.</td></tr>
+</table></p>
+<h3 class="fn"><a name="PaperSize-enum"></a>enum QPrinter::PaperSize</h3>
+<p>This enum type specifies what paper size <a href="qprinter.html">QPrinter</a> should use. <a href="qprinter.html">QPrinter</a> does not check that the paper size is available; it just uses this information, together with <a href="qprinter.html#Orientation-enum">QPrinter::Orientation</a> and <a href="qprinter.html#setFullPage">QPrinter::setFullPage</a>(), to determine the printable area.</p>
+<p>The defined sizes (with setFullPage(true)) are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::A0</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">841 x 1189 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A1</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">594 x 841 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A2</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">420 x 594 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A3</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">297 x 420 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A4</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">210 x 297 mm, 8.26 x 11.69 inches</td></tr>
+<tr><td valign="top"><tt>QPrinter::A5</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">148 x 210 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A6</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">105 x 148 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A7</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">74 x 105 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A8</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">52 x 74 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::A9</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">37 x 52 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B0</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">1030 x 1456 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B1</tt></td><td align="center" valign="top"><tt>15</tt></td><td valign="top">728 x 1030 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B10</tt></td><td align="center" valign="top"><tt>16</tt></td><td valign="top">32 x 45 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B2</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">515 x 728 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B3</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">364 x 515 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B4</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">257 x 364 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B5</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">182 x 257 mm, 7.17 x 10.13 inches</td></tr>
+<tr><td valign="top"><tt>QPrinter::B6</tt></td><td align="center" valign="top"><tt>20</tt></td><td valign="top">128 x 182 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B7</tt></td><td align="center" valign="top"><tt>21</tt></td><td valign="top">91 x 128 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B8</tt></td><td align="center" valign="top"><tt>22</tt></td><td valign="top">64 x 91 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::B9</tt></td><td align="center" valign="top"><tt>23</tt></td><td valign="top">45 x 64 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::C5E</tt></td><td align="center" valign="top"><tt>24</tt></td><td valign="top">163 x 229 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Comm10E</tt></td><td align="center" valign="top"><tt>25</tt></td><td valign="top">105 x 241 mm, U.S&#x2e; Common 10 Envelope</td></tr>
+<tr><td valign="top"><tt>QPrinter::DLE</tt></td><td align="center" valign="top"><tt>26</tt></td><td valign="top">110 x 220 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Executive</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">7.5 x 10 inches, 191 x 254 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Folio</tt></td><td align="center" valign="top"><tt>27</tt></td><td valign="top">210 x 330 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Ledger</tt></td><td align="center" valign="top"><tt>28</tt></td><td valign="top">432 x 279 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Legal</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">8.5 x 14 inches, 216 x 356 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Letter</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">8.5 x 11 inches, 216 x 279 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Tabloid</tt></td><td align="center" valign="top"><tt>29</tt></td><td valign="top">279 x 432 mm</td></tr>
+<tr><td valign="top"><tt>QPrinter::Custom</tt></td><td align="center" valign="top"><tt>30</tt></td><td valign="top">Unknown, or a user defined size.</td></tr>
+</table></p>
+<p>With setFullPage(false) (the default), the metrics will be a bit smaller; how much depends on the printer in use.</p>
+<h3 class="fn"><a name="PaperSource-enum"></a>enum QPrinter::PaperSource</h3>
+<p>This enum type specifies what paper source <a href="qprinter.html">QPrinter</a> is to use. <a href="qprinter.html">QPrinter</a> does not check that the paper source is available; it just uses this information to try and set the paper source. Whether it will set the paper source depends on whether the printer has that particular source.</p>
+<p><b>Warning:</b> This is currently only implemented for Windows.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QPrinter::Auto</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Cassette</tt></td><td align="center" valign="top"><tt>11</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Envelope</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::EnvelopeManual</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::FormSource</tt></td><td align="center" valign="top"><tt>12</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::LargeCapacity</tt></td><td align="center" valign="top"><tt>10</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::LargeFormat</tt></td><td align="center" valign="top"><tt>9</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Lower</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::MaxPageSource</tt></td><td align="center" valign="top"><tt>13</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Middle</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Manual</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::OnlyOne</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Tractor</tt></td><td align="center" valign="top"><tt>7</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::SmallFormat</tt></td><td align="center" valign="top"><tt>8</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="PrintRange-enum"></a>enum QPrinter::PrintRange</h3>
+<p>Used to specify the print range selection option.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::AllPages</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">All pages should be printed.</td></tr>
+<tr><td valign="top"><tt>QPrinter::Selection</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Only the selection should be printed.</td></tr>
+<tr><td valign="top"><tt>QPrinter::PageRange</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The specified page range should be printed.</td></tr>
+</table></p>
+<p>See also <a href="qabstractprintdialog.html#PrintRange-enum">QAbstractPrintDialog::PrintRange</a>.</p>
+<h3 class="fn"><a name="PrinterMode-enum"></a>enum QPrinter::PrinterMode</h3>
+<p>This enum describes the mode the printer should work in. It basically presets a certain resolution and working mode.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QPrinter::ScreenResolution</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Sets the resolution of the print device to the screen resolution. This has the big advantage that the results obtained when painting on the printer will match more or less exactly the visible output on the screen. It is the easiest to use, as font metrics on the screen and on the printer are the same. This is the default value. ScreenResolution will produce a lower quality output than HighResolution and should only be used for drafts.</td></tr>
+<tr><td valign="top"><tt>QPrinter::PrinterResolution</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">This value is deprecated. Is is equivalent to ScreenResolution on Unix and HighResolution on Windows and Mac. Due do the difference between ScreenResolution and HighResolution, use of this value may lead to non-portable printer code.</td></tr>
+<tr><td valign="top"><tt>QPrinter::HighResolution</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">On Windows, sets the printer resolution to that defined for the printer in use. For PostScript printing, sets the resolution of the PostScript driver to 1200 dpi.</td></tr>
+</table></p>
+<p><b>Note:</b> When rendering text on a <a href="qprinter.html">QPrinter</a> device, it is important to realize that the size of text, when specified in points, is independent of the resolution specified for the device itself. Therefore, it may be useful to specify the font size in pixels when combining text with graphics to ensure that their relative sizes are what you expect.</p>
+<h3 class="fn"><a name="PrinterState-enum"></a>enum QPrinter::PrinterState</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QPrinter::Idle</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Active</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Aborted</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Error</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="Unit-enum"></a>enum QPrinter::Unit</h3>
+<p>This enum type is used to specify the measurement unit for page and paper sizes.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QPrinter::Millimeter</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Point</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Inch</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Pica</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Didot</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::Cicero</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>QPrinter::DevicePixel</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+</table></p>
+<p>Note the difference between Point and DevicePixel. The Point unit is defined to be 1/72th of an inch, while the DevicePixel unit is resolution dependant and is based on the actual pixels, or dots, on the printer.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPrinter"></a>QPrinter::QPrinter ( <a href="qprinter.html#PrinterMode-enum">PrinterMode</a> <i>mode</i> = ScreenResolution )</h3>
+<p>Creates a new printer object with the given <i>mode</i>.</p>
+<h3 class="fn"><a name="QPrinter-2"></a>QPrinter::QPrinter ( const QPrinterInfo &amp; <i>printer</i>, <a href="qprinter.html#PrinterMode-enum">PrinterMode</a> <i>mode</i> = ScreenResolution )</h3>
+<p>Creates a new printer object with the given <i>printer</i> and <i>mode</i>.</p>
+<h3 class="fn"><a name="dtor.QPrinter"></a>QPrinter::~QPrinter ()</h3>
+<p>Destroys the printer object and frees any allocated resources. If the printer is destroyed while a print job is in progress this may or may not affect the print job.</p>
+<h3 class="fn"><a name="abort"></a>bool QPrinter::abort ()</h3>
+<p>Aborts the current print run. Returns true if the print run was successfully aborted and <a href="qprinter.html#printerState">printerState</a>() will return <a href="qprinter.html#PrinterState-enum">QPrinter::Aborted</a>; otherwise returns false.</p>
+<p>It is not always possible to abort a print job. For example, all the data has gone to the printer but the printer cannot or will not cancel the job when asked to.</p>
+<h3 class="fn"><a name="collateCopies"></a>bool QPrinter::collateCopies () const</h3>
+<p>Returns true if collation is turned on when multiple copies is selected. Returns false if it is turned off when multiple copies is selected.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setCollateCopies">setCollateCopies</a>().</p>
+<h3 class="fn"><a name="colorMode"></a><a href="qprinter.html#ColorMode-enum">ColorMode</a> QPrinter::colorMode () const</h3>
+<p>Returns the current color mode.</p>
+<p>See also <a href="qprinter.html#setColorMode">setColorMode</a>().</p>
+<h3 class="fn"><a name="creator"></a><a href="qstring.html">QString</a> QPrinter::creator () const</h3>
+<p>Returns the name of the application that created the document.</p>
+<p>See also <a href="qprinter.html#setCreator">setCreator</a>().</p>
+<h3 class="fn"><a name="docName"></a><a href="qstring.html">QString</a> QPrinter::docName () const</h3>
+<p>Returns the document name.</p>
+<p>See also <a href="qprinter.html#setDocName">setDocName</a>().</p>
+<h3 class="fn"><a name="doubleSidedPrinting"></a>bool QPrinter::doubleSidedPrinting () const</h3>
+<p>Returns true if double side printing is enabled.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprinter.html#setDoubleSidedPrinting">setDoubleSidedPrinting</a>().</p>
+<h3 class="fn"><a name="duplex"></a><a href="qprinter.html#DuplexMode-enum">DuplexMode</a> QPrinter::duplex () const</h3>
+<p>Returns the current duplex mode.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#setDuplex">setDuplex</a>().</p>
+<h3 class="fn"><a name="fontEmbeddingEnabled"></a>bool QPrinter::fontEmbeddingEnabled () const</h3>
+<p>Returns true if font embedding is enabled.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setFontEmbeddingEnabled">setFontEmbeddingEnabled</a>().</p>
+<h3 class="fn"><a name="fromPage"></a>int QPrinter::fromPage () const</h3>
+<p>Returns the number of the first page in a range of pages to be printed (the &quot;from page&quot; setting). Pages in a document are numbered according to the convention that the first page is page 1.</p>
+<p>By default, this function returns a special value of 0, meaning that the &quot;from page&quot; setting is unset.</p>
+<p><b>Note:</b> If fromPage() and <a href="qprinter.html#toPage">toPage</a>() both return 0, this indicates that <i>the whole document will be printed</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setFromTo">setFromTo</a>() and <a href="qprinter.html#toPage">toPage</a>().</p>
+<h3 class="fn"><a name="fullPage"></a>bool QPrinter::fullPage () const</h3>
+<p>Returns true if the origin of the printer's coordinate system is at the corner of the page and false if it is at the edge of the printable area.</p>
+<p>See <a href="qprinter.html#setFullPage">setFullPage</a>() for details and caveats.</p>
+<p>See also <a href="qprinter.html#setFullPage">setFullPage</a>() and <a href="qprinter.html#PaperSize-enum">PaperSize</a>.</p>
+<h3 class="fn"><a name="getPageMargins"></a>void QPrinter::getPageMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> * <i>bottom</i>, <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> ) const</h3>
+<p>Returns the page margins for this printer in <i>left</i>, <i>top</i>, <i>right</i>, <i>bottom</i>. The unit of the returned margins are specified with the <i>unit</i> parameter.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="isValid"></a>bool QPrinter::isValid () const</h3>
+<p>Returns true if the printer currently selected is a valid printer in the system, or a pdf/ps printer; otherwise returns false.</p>
+<p>To detect other failures check the output of <a href="qpainter.html#begin">QPainter::begin</a>() or QPainter::nextPage().</p>
+<pre>     QPrinter printer;
+     printer.setOutputFormat(QPrinter::PdfFormat);
+     printer.setOutputFileName(&quot;/foobar/nonwritable.pdf&quot;);
+     QPainter painter;
+     if (! painter.begin(&amp;printer)) { <span class="comment">//</span> failed to open file
+         qWarning(&quot;failed to open file, is it writable?&quot;);
+         return 1;
+     }
+     painter.drawText(10, 10, &quot;Test&quot;);
+     if (! printer.newPage()) {
+         qWarning(&quot;failed in flushing page to disk, disk full?&quot;);
+         return 1;
+     }
+     painter.drawText(10, 10, &quot;Test 2&quot;);
+     painter.end();</pre>
+<p>See also <a href="qprinter.html#setPrinterName">setPrinterName</a>().</p>
+<h3 class="fn"><a name="newPage"></a>bool QPrinter::newPage ()</h3>
+<p>Tells the printer to eject the current page and to continue printing on a new page. Returns true if this was successful; otherwise returns false.</p>
+<h3 class="fn"><a name="numCopies"></a>int QPrinter::numCopies () const</h3>
+<p>Returns the number of copies to be printed. The default value is 1.</p>
+<p>On Windows, Mac OS X and X11 systems that support CUPS, this will always return 1 as these operating systems can internally handle the number of copies.</p>
+<p>On X11, this value will return the number of times the application is required to print in order to match the number specified in the printer setup dialog. This has been done since some printer drivers are not capable of buffering up the copies and in those cases the application must make an explicit call to the print code for each copy.</p>
+<p>See also <a href="qprinter.html#setNumCopies">setNumCopies</a>().</p>
+<h3 class="fn"><a name="orientation"></a><a href="qprinter.html#Orientation-enum">Orientation</a> QPrinter::orientation () const</h3>
+<p>Returns the orientation setting. This is driver-dependent, but is usually <a href="qprinter.html#Orientation-enum">QPrinter::Portrait</a>.</p>
+<p>See also <a href="qprinter.html#setOrientation">setOrientation</a>().</p>
+<h3 class="fn"><a name="outputFileName"></a><a href="qstring.html">QString</a> QPrinter::outputFileName () const</h3>
+<p>Returns the name of the output file. By default, this is an empty string (indicating that the printer shouldn't print to file).</p>
+<p>See also <a href="qprinter.html#setOutputFileName">setOutputFileName</a>().</p>
+<h3 class="fn"><a name="outputFormat"></a><a href="qprinter.html#OutputFormat-enum">OutputFormat</a> QPrinter::outputFormat () const</h3>
+<p>Returns the output format for this printer.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setOutputFormat">setOutputFormat</a>().</p>
+<h3 class="fn"><a name="pageOrder"></a><a href="qprinter.html#PageOrder-enum">PageOrder</a> QPrinter::pageOrder () const</h3>
+<p>Returns the current page order.</p>
+<p>The default page order is <tt>FirstPageFirst</tt>.</p>
+<p>See also <a href="qprinter.html#setPageOrder">setPageOrder</a>().</p>
+<h3 class="fn"><a name="pageRect"></a><a href="qrect.html">QRect</a> QPrinter::pageRect () const</h3>
+<p>Returns the page's rectangle; this is usually smaller than the <a href="qprinter.html#paperRect">paperRect</a>() since the page normally has margins between its borders and the paper.</p>
+<p>The unit of the returned rectangle is <a href="qprinter.html#Unit-enum">DevicePixel</a>.</p>
+<p>See also <a href="qprinter.html#paperSize">paperSize</a>().</p>
+<h3 class="fn"><a name="pageRect-2"></a><a href="qrectf.html">QRectF</a> QPrinter::pageRect ( <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the page's rectangle in <i>unit</i>; this is usually smaller than the <a href="qprinter.html#paperRect">paperRect</a>() since the page normally has margins between its borders and the paper.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#paperSize">paperSize</a>().</p>
+<h3 class="fn"><a name="paintEngine"></a><a href="qpaintengine.html">QPaintEngine</a> * QPrinter::paintEngine () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the paint engine used by the printer.</p>
+<h3 class="fn"><a name="paperRect"></a><a href="qrect.html">QRect</a> QPrinter::paperRect () const</h3>
+<p>Returns the paper's rectangle; this is usually larger than the <a href="qprinter.html#pageRect">pageRect</a>().</p>
+<p>The unit of the returned rectangle is <a href="qprinter.html#Unit-enum">DevicePixel</a>.</p>
+<p>See also <a href="qprinter.html#pageRect">pageRect</a>().</p>
+<h3 class="fn"><a name="paperRect-2"></a><a href="qrectf.html">QRectF</a> QPrinter::paperRect ( <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the paper's rectangle in <i>unit</i>; this is usually larger than the <a href="qprinter.html#pageRect">pageRect</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#pageRect">pageRect</a>().</p>
+<h3 class="fn"><a name="paperSize"></a><a href="qprinter.html#PaperSize-enum">PaperSize</a> QPrinter::paperSize () const</h3>
+<p>Returns the printer paper size. The default value is driver-dependent.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#setPaperSize">setPaperSize</a>(), <a href="qprinter.html#pageRect">pageRect</a>(), and <a href="qprinter.html#paperRect">paperRect</a>().</p>
+<h3 class="fn"><a name="paperSize-2"></a><a href="qsizef.html">QSizeF</a> QPrinter::paperSize ( <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the paper size in <i>unit</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#setPaperSize">setPaperSize</a>().</p>
+<h3 class="fn"><a name="paperSource"></a><a href="qprinter.html#PaperSource-enum">PaperSource</a> QPrinter::paperSource () const</h3>
+<p>Returns the printer's paper source. This is <tt>Manual</tt> or a printer tray or paper cassette.</p>
+<p>See also <a href="qprinter.html#setPaperSource">setPaperSource</a>().</p>
+<h3 class="fn"><a name="printEngine"></a><a href="qprintengine.html">QPrintEngine</a> * QPrinter::printEngine () const</h3>
+<p>Returns the print engine used by the printer.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="printProgram"></a><a href="qstring.html">QString</a> QPrinter::printProgram () const</h3>
+<p>Returns the name of the program that sends the print output to the printer.</p>
+<p>The default is to return an empty string; meaning that <a href="qprinter.html">QPrinter</a> will try to be smart in a system-dependent way. On X11 only, you can set it to something different to use a specific print program. On the other platforms, this returns an empty string.</p>
+<p>See also <a href="qprinter.html#setPrintProgram">setPrintProgram</a>() and <a href="qprinter.html#setPrinterSelectionOption">setPrinterSelectionOption</a>().</p>
+<h3 class="fn"><a name="printRange"></a><a href="qprinter.html#PrintRange-enum">PrintRange</a> QPrinter::printRange () const</h3>
+<p>Returns the page range of the <a href="qprinter.html">QPrinter</a>. After the print setup dialog has been opened, this function returns the value selected by the user.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setPrintRange">setPrintRange</a>().</p>
+<h3 class="fn"><a name="printerName"></a><a href="qstring.html">QString</a> QPrinter::printerName () const</h3>
+<p>Returns the printer name. This value is initially set to the name of the default printer.</p>
+<p>See also <a href="qprinter.html#setPrinterName">setPrinterName</a>().</p>
+<h3 class="fn"><a name="printerSelectionOption"></a><a href="qstring.html">QString</a> QPrinter::printerSelectionOption () const</h3>
+<p>Returns the printer options selection string. This is useful only if the print command has been explicitly set.</p>
+<p>The default value (an empty string) implies that the printer should be selected in a system-dependent manner.</p>
+<p>Any other value implies that the given value should be used.</p>
+<p><b>Warning:</b> This function is not available on Windows.</p>
+<p>See also <a href="qprinter.html#setPrinterSelectionOption">setPrinterSelectionOption</a>().</p>
+<h3 class="fn"><a name="printerState"></a><a href="qprinter.html#PrinterState-enum">PrinterState</a> QPrinter::printerState () const</h3>
+<p>Returns the current state of the printer. This may not always be accurate (for example if the printer doesn't have the capability of reporting its state to the operating system).</p>
+<h3 class="fn"><a name="resolution"></a>int QPrinter::resolution () const</h3>
+<p>Returns the current assumed resolution of the printer, as set by <a href="qprinter.html#setResolution">setResolution</a>() or by the printer driver.</p>
+<p>See also <a href="qprinter.html#setResolution">setResolution</a>().</p>
+<h3 class="fn"><a name="setCollateCopies"></a>void QPrinter::setCollateCopies ( bool <i>collate</i> )</h3>
+<p>Sets the default value for collation checkbox when the print dialog appears. If <i>collate</i> is true, it will enable <a href="qprinter-qt3.html#setCollateCopiesEnabled">setCollateCopiesEnabled</a>(). The default value is false. This value will be changed by what the user presses in the print dialog.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#collateCopies">collateCopies</a>().</p>
+<h3 class="fn"><a name="setColorMode"></a>void QPrinter::setColorMode ( <a href="qprinter.html#ColorMode-enum">ColorMode</a> <i>newColorMode</i> )</h3>
+<p>Sets the printer's color mode to <i>newColorMode</i>, which can be either <tt>Color</tt> or <tt>GrayScale</tt>.</p>
+<p>See also <a href="qprinter.html#colorMode">colorMode</a>().</p>
+<h3 class="fn"><a name="setCreator"></a>void QPrinter::setCreator ( const <a href="qstring.html">QString</a> &amp; <i>creator</i> )</h3>
+<p>Sets the name of the application that created the document to <i>creator</i>.</p>
+<p>This function is only applicable to the X11 version of Qt. If no creator name is specified, the creator will be set to &quot;Qt&quot; followed by some version number.</p>
+<p>See also <a href="qprinter.html#creator">creator</a>().</p>
+<h3 class="fn"><a name="setDocName"></a>void QPrinter::setDocName ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets the document name to <i>name</i>.</p>
+<p>On X11, the document name is for example used as the default output filename in <a href="qprintdialog.html">QPrintDialog</a>.</p>
+<p>See also <a href="qprinter.html#docName">docName</a>().</p>
+<h3 class="fn"><a name="setDoubleSidedPrinting"></a>void QPrinter::setDoubleSidedPrinting ( bool <i>doubleSided</i> )</h3>
+<p>Enables double sided printing if <i>doubleSided</i> is true; otherwise disables it.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qprinter.html#doubleSidedPrinting">doubleSidedPrinting</a>().</p>
+<h3 class="fn"><a name="setDuplex"></a>void QPrinter::setDuplex ( <a href="qprinter.html#DuplexMode-enum">DuplexMode</a> <i>duplex</i> )</h3>
+<p>Enables double sided printing based on the <i>duplex</i> mode.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#duplex">duplex</a>().</p>
+<h3 class="fn"><a name="setEngines"></a>void QPrinter::setEngines ( <a href="qprintengine.html">QPrintEngine</a> * <i>printEngine</i>, <a href="qpaintengine.html">QPaintEngine</a> * <i>paintEngine</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>This function is used by subclasses of <a href="qprinter.html">QPrinter</a> to specify custom print and paint engines (<i>printEngine</i> and <i>paintEngine</i>, respectively).</p>
+<p><a href="qprinter.html">QPrinter</a> does not take ownership of the engines, so you need to manage these engine instances yourself.</p>
+<p>Note that changing the engines will reset the printer state and all its properties.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#printEngine">printEngine</a>(), <a href="qprinter.html#paintEngine">paintEngine</a>(), and <a href="qprinter.html#setOutputFormat">setOutputFormat</a>().</p>
+<h3 class="fn"><a name="setFontEmbeddingEnabled"></a>void QPrinter::setFontEmbeddingEnabled ( bool <i>enable</i> )</h3>
+<p>Enabled or disables font embedding depending on <i>enable</i>.</p>
+<p>Currently this option is only supported on X11.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#fontEmbeddingEnabled">fontEmbeddingEnabled</a>().</p>
+<h3 class="fn"><a name="setFromTo"></a>void QPrinter::setFromTo ( int <i>from</i>, int <i>to</i> )</h3>
+<p>Sets the range of pages to be printed to cover the pages with numbers specified by <i>from</i> and <i>to</i>, where <i>from</i> corresponds to the first page in the range and <i>to</i> corresponds to the last.</p>
+<p><b>Note:</b> Pages in a document are numbered according to the convention that the first page is page 1. However, if <i>from</i> and <i>to</i> are both set to 0, the <i>whole document will be printed</i>.</p>
+<p>This function is mostly used to set a default value that the user can override in the print dialog when you call <a href="qprinter-qt3.html#setup">setup</a>().</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#fromPage">fromPage</a>() and <a href="qprinter.html#toPage">toPage</a>().</p>
+<h3 class="fn"><a name="setFullPage"></a>void QPrinter::setFullPage ( bool <i>fp</i> )</h3>
+<p>If <i>fp</i> is true, enables support for painting over the entire page; otherwise restricts painting to the printable area reported by the device.</p>
+<p>By default, full page printing is disabled. In this case, the origin of the <a href="qprinter.html">QPrinter</a>'s coordinate system coincides with the top-left corner of the printable area.</p>
+<p>If full page printing is enabled, the origin of the <a href="qprinter.html">QPrinter</a>'s coordinate system coincides with the top-left corner of the paper itself. In this case, the <a href="qpaintdevice.html#PaintDeviceMetric-enum">device metrics</a> will report the exact same dimensions as indicated by <a href="qprinter.html#PaperSize-enum">PaperSize</a>. It may not be possible to print on the entire physical page because of the printer's margins, so the application must account for the margins itself.</p>
+<p>See also <a href="qprinter.html#fullPage">fullPage</a>(), <a href="qprinter.html#setPaperSize">setPaperSize</a>(), width(), height(), and <a href="printing.html">Printing with Qt</a>.</p>
+<h3 class="fn"><a name="setNumCopies"></a>void QPrinter::setNumCopies ( int <i>numCopies</i> )</h3>
+<p>Sets the number of copies to be printed to <i>numCopies</i>.</p>
+<p>The printer driver reads this setting and prints the specified number of copies.</p>
+<p>See also <a href="qprinter.html#numCopies">numCopies</a>().</p>
+<h3 class="fn"><a name="setOrientation"></a>void QPrinter::setOrientation ( <a href="qprinter.html#Orientation-enum">Orientation</a> <i>orientation</i> )</h3>
+<p>Sets the print orientation to <i>orientation</i>.</p>
+<p>The orientation can be either <a href="qprinter.html#Orientation-enum">QPrinter::Portrait</a> or <a href="qprinter.html#Orientation-enum">QPrinter::Landscape</a>.</p>
+<p>The printer driver reads this setting and prints using the specified orientation.</p>
+<p>On Windows, this option can be changed while printing and will take effect from the next call to <a href="qprinter.html#newPage">newPage</a>().</p>
+<p>On Mac OS X, changing the orientation during a print job has no effect.</p>
+<p>See also <a href="qprinter.html#orientation">orientation</a>().</p>
+<h3 class="fn"><a name="setOutputFileName"></a>void QPrinter::setOutputFileName ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>Sets the name of the output file to <i>fileName</i>.</p>
+<p>Setting a null or empty name (0 or &quot;&quot;) disables printing to a file. Setting a non-empty name enables printing to a file.</p>
+<p>This can change the value of <a href="qprinter.html#outputFormat">outputFormat</a>(). If the file name has the suffix &quot;.ps&quot; then PostScript is automatically selected as output format. If the file name has the &quot;.pdf&quot; suffix PDF is generated. <a href="qprinter.html">QPrinter</a> will use Qt's cross-platform PostScript or PDF print engines respectively. If you can produce this format natively, for example Mac OS X can generate PDF's from its print engine, set the output format back to <a href="qprinter.html#OutputFormat-enum">NativeFormat</a>.</p>
+<p>See also <a href="qprinter.html#outputFileName">outputFileName</a>(), <a href="qprinter-qt3.html#setOutputToFile">setOutputToFile</a>(), and <a href="qprinter.html#setOutputFormat">setOutputFormat</a>().</p>
+<h3 class="fn"><a name="setOutputFormat"></a>void QPrinter::setOutputFormat ( <a href="qprinter.html#OutputFormat-enum">OutputFormat</a> <i>format</i> )</h3>
+<p>Sets the output format for this printer to <i>format</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#outputFormat">outputFormat</a>().</p>
+<h3 class="fn"><a name="setPageMargins"></a>void QPrinter::setPageMargins ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>left</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>top</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>right</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>bottom</i>, <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> )</h3>
+<p>This function sets the <i>left</i>, <i>top</i>, <i>right</i> and <i>bottom</i> page margins for this printer. The unit of the margins are specified with the <i>unit</i> parameter.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="setPageOrder"></a>void QPrinter::setPageOrder ( <a href="qprinter.html#PageOrder-enum">PageOrder</a> <i>pageOrder</i> )</h3>
+<p>Sets the page order to <i>pageOrder</i>.</p>
+<p>The page order can be <a href="qprinter.html#PageOrder-enum">QPrinter::FirstPageFirst</a> or <a href="qprinter.html#PageOrder-enum">QPrinter::LastPageFirst</a>. The application is responsible for reading the page order and printing accordingly.</p>
+<p>This function is mostly useful for setting a default value that the user can override in the print dialog.</p>
+<p>See also <a href="qprinter.html#pageOrder">pageOrder</a>().</p>
+<h3 class="fn"><a name="setPaperSize"></a>void QPrinter::setPaperSize ( <a href="qprinter.html#PaperSize-enum">PaperSize</a> <i>newPaperSize</i> )</h3>
+<p>Sets the printer paper size to <i>newPaperSize</i> if that size is supported. The result is undefined if <i>newPaperSize</i> is not supported.</p>
+<p>The default paper size is driver-dependent.</p>
+<p>This function is useful mostly for setting a default value that the user can override in the print dialog.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#paperSize">paperSize</a>(), <a href="qprinter.html#PaperSize-enum">PaperSize</a>, <a href="qprinter.html#setFullPage">setFullPage</a>(), <a href="qprinter.html#setResolution">setResolution</a>(), <a href="qprinter.html#pageRect">pageRect</a>(), and <a href="qprinter.html#paperRect">paperRect</a>().</p>
+<h3 class="fn"><a name="setPaperSize-2"></a>void QPrinter::setPaperSize ( const <a href="qsizef.html">QSizeF</a> &amp; <i>paperSize</i>, <a href="qprinter.html#Unit-enum">Unit</a> <i>unit</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the paper size based on <i>paperSize</i> in <i>unit</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qprinter.html#paperSize">paperSize</a>().</p>
+<h3 class="fn"><a name="setPaperSource"></a>void QPrinter::setPaperSource ( <a href="qprinter.html#PaperSource-enum">PaperSource</a> <i>source</i> )</h3>
+<p>Sets the paper source setting to <i>source</i>.</p>
+<p>Windows only: This option can be changed while printing and will take effect from the next call to <a href="qprinter.html#newPage">newPage</a>()</p>
+<p>See also <a href="qprinter.html#paperSource">paperSource</a>().</p>
+<h3 class="fn"><a name="setPrintProgram"></a>void QPrinter::setPrintProgram ( const <a href="qstring.html">QString</a> &amp; <i>printProg</i> )</h3>
+<p>Sets the name of the program that should do the print job to <i>printProg</i>.</p>
+<p>On X11, this function sets the program to call with the PostScript output. On other platforms, it has no effect.</p>
+<p>See also <a href="qprinter.html#printProgram">printProgram</a>().</p>
+<h3 class="fn"><a name="setPrintRange"></a>void QPrinter::setPrintRange ( <a href="qprinter.html#PrintRange-enum">PrintRange</a> <i>range</i> )</h3>
+<p>Sets the print range option in to be <i>range</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#printRange">printRange</a>().</p>
+<h3 class="fn"><a name="setPrinterName"></a>void QPrinter::setPrinterName ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )</h3>
+<p>Sets the printer name to <i>name</i>.</p>
+<p>See also <a href="qprinter.html#printerName">printerName</a>() and <a href="qprinter.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="setPrinterSelectionOption"></a>void QPrinter::setPrinterSelectionOption ( const <a href="qstring.html">QString</a> &amp; <i>option</i> )</h3>
+<p>Sets the printer to use <i>option</i> to select the printer. <i>option</i> is null by default (which implies that Qt should be smart enough to guess correctly), but it can be set to other values to use a specific printer selection option.</p>
+<p>If the printer selection option is changed while the printer is active, the current print job may or may not be affected.</p>
+<p><b>Warning:</b> This function is not available on Windows.</p>
+<p>See also <a href="qprinter.html#printerSelectionOption">printerSelectionOption</a>().</p>
+<h3 class="fn"><a name="setResolution"></a>void QPrinter::setResolution ( int <i>dpi</i> )</h3>
+<p>Requests that the printer prints at <i>dpi</i> or as near to <i>dpi</i> as possible.</p>
+<p>This setting affects the coordinate system as returned by, for example <a href="qpainter.html#viewport">QPainter::viewport</a>().</p>
+<p>This function must be called before <a href="qpainter.html#begin">QPainter::begin</a>() to have an effect on all platforms.</p>
+<p>See also <a href="qprinter.html#resolution">resolution</a>() and <a href="qprinter.html#setPaperSize">setPaperSize</a>().</p>
+<h3 class="fn"><a name="setWinPageSize"></a>void QPrinter::setWinPageSize ( int <i>pageSize</i> )</h3>
+<p>Sets the page size to be used by the printer under Windows to <i>pageSize</i>.</p>
+<p><b>Warning:</b> This function is not portable so you may prefer to use <a href="qprinter.html#setPaperSize">setPaperSize</a>() instead.</p>
+<p>See also <a href="qprinter.html#winPageSize">winPageSize</a>().</p>
+<h3 class="fn"><a name="supportedPaperSources"></a><a href="qlist.html">QList</a>&lt;<a href="qprinter.html#PaperSource-enum">PaperSource</a>&gt; QPrinter::supportedPaperSources () const</h3>
+<p>Returns the supported paper sizes for this printer.</p>
+<p>The values will be either a value that matches an entry in the <a href="qprinter.html#PaperSource-enum">QPrinter::PaperSource</a> enum or a driver spesific value. The driver spesific values are greater than the constant DMBIN_USER declared in wingdi.h&#x2e;</p>
+<p><b>Warning:</b> This function is only available in windows.</p>
+<h3 class="fn"><a name="supportedResolutions"></a><a href="qlist.html">QList</a>&lt;int&gt; QPrinter::supportedResolutions () const</h3>
+<p>Returns a list of the resolutions (a list of dots-per-inch integers) that the printer says it supports.</p>
+<p>For X11 where all printing is directly to postscript, this function will always return a one item list containing only the postscript resolution, i.e&#x2e;, 72 (72 dpi -- but see <a href="qprinter.html#PrinterMode-enum">PrinterMode</a>).</p>
+<h3 class="fn"><a name="toPage"></a>int QPrinter::toPage () const</h3>
+<p>Returns the number of the last page in a range of pages to be printed (the &quot;to page&quot; setting). Pages in a document are numbered according to the convention that the first page is page 1.</p>
+<p>By default, this function returns a special value of 0, meaning that the &quot;to page&quot; setting is unset.</p>
+<p><b>Note:</b> If <a href="qprinter.html#fromPage">fromPage</a>() and toPage() both return 0, this indicates that <i>the whole document will be printed</i>.</p>
+<p>The programmer is responsible for reading this setting and printing accordingly.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qprinter.html#setFromTo">setFromTo</a>() and <a href="qprinter.html#fromPage">fromPage</a>().</p>
+<h3 class="fn"><a name="winPageSize"></a>int QPrinter::winPageSize () const</h3>
+<p>Returns the page size used by the printer under Windows.</p>
+<p><b>Warning:</b> This function is not portable so you may prefer to use <a href="qprinter.html#paperSize">paperSize</a>() instead.</p>
+<p>See also <a href="qprinter.html#setWinPageSize">setWinPageSize</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

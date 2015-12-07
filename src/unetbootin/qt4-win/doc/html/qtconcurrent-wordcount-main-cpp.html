@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: main.cpp Example File (qtconcurrent/wordcount/main.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">main.cpp Example File<br /><span class="small-subtitle">qtconcurrent/wordcount/main.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QList&gt;
+ #include &lt;QMap&gt;
+ #include &lt;QTextStream&gt;
+ #include &lt;QString&gt;
+ #include &lt;QStringList&gt;
+ #include &lt;QDir&gt;
+ #include &lt;QTime&gt;
+ #include &lt;QDebug&gt;
+
+ #include &lt;qtconcurrentmap.h&gt;
+
+ #ifndef QT_NO_CONCURRENT
+
+ using namespace QtConcurrent;
+
+<span class="comment"> /*
+     Utility function that recursivily searches for files.
+ */</span>
+ QStringList findFiles(const QString &amp;startDir, QStringList filters)
+ {
+     QStringList names;
+     QDir dir(startDir);
+
+     foreach (QString file, dir.entryList(filters, QDir::Files))
+         names += startDir + &quot;/&quot; + file;
+
+     foreach (QString subdir, dir.entryList(QDir::AllDirs | QDir::NoDotAndDotDot))
+         names += findFiles(startDir + &quot;/&quot; + subdir, filters);
+     return names;
+ }
+
+ typedef QMap&lt;QString, int&gt; WordCount;
+
+<span class="comment"> /*
+     Single threaded word counter function.
+ */</span>
+ WordCount singleThreadedWordCount(QStringList files)
+ {
+     WordCount wordCount;
+     foreach (QString file, files) {
+         QFile f(file);
+         f.open(QIODevice::ReadOnly);
+         QTextStream textStream(&amp;f);
+         while (textStream.atEnd() == false)
+             foreach(QString word, textStream.readLine().split(&quot; &quot;))
+                 wordCount[word] += 1;
+
+     }
+     return wordCount;
+ }
+
+<span class="comment"> //</span> countWords counts the words in a single file. This function is
+<span class="comment"> //</span> called in parallel by several threads and must be thread
+<span class="comment"> //</span> safe.
+ WordCount countWords(const QString &amp;file)
+ {
+     QFile f(file);
+     f.open(QIODevice::ReadOnly);
+     QTextStream textStream(&amp;f);
+     WordCount wordCount;
+
+     while (textStream.atEnd() == false)
+         foreach (QString word, textStream.readLine().split(&quot; &quot;))
+             wordCount[word] += 1;
+
+     return wordCount;
+ }
+
+<span class="comment"> //</span> reduce adds the results from map to the final
+<span class="comment"> //</span> result. This functor will only be called by one thread
+<span class="comment"> //</span> at a time.
+ void reduce(WordCount &amp;result, const WordCount &amp;w)
+ {
+     QMapIterator&lt;QString, int&gt; i(w);
+     while (i.hasNext()) {
+         i.next();
+         result[i.key()] += i.value();
+     }
+ }
+
+ int main()
+ {
+     qDebug() &lt;&lt; &quot;finding files...&quot;;
+     QStringList files = findFiles(&quot;../../&quot;, QStringList() &lt;&lt; &quot;*.cpp&quot; &lt;&lt; &quot;*.h&quot;);
+     qDebug() &lt;&lt; files.count() &lt;&lt; &quot;files&quot;;
+
+     qDebug() &lt;&lt; &quot;warmup&quot;;
+     {
+         QTime time;
+         time.start();
+         WordCount total = singleThreadedWordCount(files);
+     }
+
+     qDebug() &lt;&lt; &quot;warmup done&quot;;
+
+     int singleThreadTime = 0;
+     {
+         QTime time;
+         time.start();
+         WordCount total = singleThreadedWordCount(files);
+         singleThreadTime = time.elapsed();
+         qDebug() &lt;&lt; &quot;single thread&quot; &lt;&lt; singleThreadTime;
+     }
+
+     int mapReduceTime = 0;
+     {
+         QTime time;
+         time.start();
+         WordCount total = mappedReduced(files, countWords, reduce);
+         mapReduceTime = time.elapsed();
+         qDebug() &lt;&lt; &quot;MapReduce&quot; &lt;&lt; mapReduceTime;
+     }
+     qDebug() &lt;&lt; &quot;MapReduce speedup x&quot; &lt;&lt; ((double)singleThreadTime - (double)mapReduceTime) / (double)mapReduceTime + 1;
+ }
+
+ #else
+
+ int main()
+ {
+         qDebug() &lt;&lt; &quot;Qt Concurrent is not yet supported on this platform&quot;;
+ }
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

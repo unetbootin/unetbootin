@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qtablewidget.cpp -->
+<head>
+  <title>Qt 4.4: QTableWidgetItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTableWidgetItem Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTableWidgetItem class provides an item for use with the <a href="qtablewidget.html">QTableWidget</a> class. <a href="#details">More...</a></p>
+<pre> #include &lt;QTableWidgetItem&gt;</pre><ul>
+<li><a href="qtablewidgetitem-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtablewidgetitem-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtablewidgetitem.html#ItemType-enum">ItemType</a></b> { Type, UserType }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtablewidgetitem.html#QTableWidgetItem">QTableWidgetItem</a></b> ( int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtablewidgetitem.html#QTableWidgetItem-2">QTableWidgetItem</a></b> ( const QString &amp; <i>text</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtablewidgetitem.html#QTableWidgetItem-3">QTableWidgetItem</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>text</i>, int <i>type</i> = Type )</li>
+<li><div class="fn"/><b><a href="qtablewidgetitem.html#QTableWidgetItem-4">QTableWidgetItem</a></b> ( const QTableWidgetItem &amp; <i>other</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qtablewidgetitem.html#dtor.QTableWidgetItem">~QTableWidgetItem</a></b> ()</li>
+<li><div class="fn"/>QBrush <b><a href="qtablewidgetitem.html#background">background</a></b> () const</li>
+<li><div class="fn"/>Qt::CheckState <b><a href="qtablewidgetitem.html#checkState">checkState</a></b> () const</li>
+<li><div class="fn"/>virtual QTableWidgetItem * <b><a href="qtablewidgetitem.html#clone">clone</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetitem.html#column">column</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qtablewidgetitem.html#data">data</a></b> ( int <i>role</i> ) const</li>
+<li><div class="fn"/>Qt::ItemFlags <b><a href="qtablewidgetitem.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qtablewidgetitem.html#font">font</a></b> () const</li>
+<li><div class="fn"/>QBrush <b><a href="qtablewidgetitem.html#foreground">foreground</a></b> () const</li>
+<li><div class="fn"/>QIcon <b><a href="qtablewidgetitem.html#icon">icon</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtablewidgetitem.html#isSelected">isSelected</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qtablewidgetitem.html#read">read</a></b> ( QDataStream &amp; <i>in</i> )</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetitem.html#row">row</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setBackground">setBackground</a></b> ( const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setCheckState">setCheckState</a></b> ( Qt::CheckState <i>state</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qtablewidgetitem.html#setData">setData</a></b> ( int <i>role</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setFlags">setFlags</a></b> ( Qt::ItemFlags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setFont">setFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setForeground">setForeground</a></b> ( const QBrush &amp; <i>brush</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setIcon">setIcon</a></b> ( const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setSelected">setSelected</a></b> ( bool <i>select</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setSizeHint">setSizeHint</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setStatusTip">setStatusTip</a></b> ( const QString &amp; <i>statusTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setTextAlignment">setTextAlignment</a></b> ( int <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setToolTip">setToolTip</a></b> ( const QString &amp; <i>toolTip</i> )</li>
+<li><div class="fn"/>void <b><a href="qtablewidgetitem.html#setWhatsThis">setWhatsThis</a></b> ( const QString &amp; <i>whatsThis</i> )</li>
+<li><div class="fn"/>QSize <b><a href="qtablewidgetitem.html#sizeHint">sizeHint</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtablewidgetitem.html#statusTip">statusTip</a></b> () const</li>
+<li><div class="fn"/>QTableWidget * <b><a href="qtablewidgetitem.html#tableWidget">tableWidget</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtablewidgetitem.html#text">text</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetitem.html#textAlignment">textAlignment</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtablewidgetitem.html#toolTip">toolTip</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtablewidgetitem.html#type">type</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtablewidgetitem.html#whatsThis">whatsThis</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qtablewidgetitem.html#write">write</a></b> ( QDataStream &amp; <i>out</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qtablewidgetitem.html#operator-lt">operator&lt;</a></b> ( const QTableWidgetItem &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTableWidgetItem &amp; <b><a href="qtablewidgetitem.html#operator-eq">operator=</a></b> ( const QTableWidgetItem &amp; <i>other</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtablewidgetitem.html#operator-lt-lt-41">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>out</i>, const QTableWidgetItem &amp; <i>item</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qtablewidgetitem.html#operator-gt-gt-23">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>in</i>, QTableWidgetItem &amp; <i>item</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTableWidgetItem class provides an item for use with the <a href="qtablewidget.html">QTableWidget</a> class.</p>
+<p>Table items are used to hold pieces of information for table widgets. Items usually contain text, icons, or checkboxes</p>
+<p>The QTableWidgetItem class is a convenience class that replaces the <tt>QTableItem</tt> class in Qt 3. It provides an item for use with the <a href="qtablewidget.html">QTableWidget</a> class.</p>
+<p>Top-level items are constructed without a parent then inserted at the position specified by a pair of row and column numbers:</p>
+<pre>     QTableWidgetItem *newItem = new QTableWidgetItem(tr(&quot;%1&quot;).arg(
+         pow(row, column+1)));
+     tableWidget-&gt;setItem(row, column, newItem);</pre>
+<p>Each item can have its own background brush which is set with the <a href="qtablewidgetitem.html#setBackground">setBackground</a>() function. The current background brush can be found with <a href="qtablewidgetitem.html#background">background</a>(). The text label for each item can be rendered with its own font and brush. These are specified with the <a href="qtablewidgetitem.html#setFont">setFont</a>() and <a href="qtablewidgetitem.html#setForeground">setForeground</a>() functions, and read with <a href="qtablewidgetitem.html#font">font</a>() and <a href="qtablewidgetitem.html#foreground">foreground</a>().</p>
+<p>By default, items are enabled, editable, selectable, checkable, and can be used both as the source of a drag and drop operation and as a drop target. Each item's flags can be changed by calling <a href="qtablewidgetitem.html#setFlags">setFlags</a>() with the appropriate value (see <a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a>). Checkable items can be checked and unchecked with the <a href="qtablewidgetitem.html#setCheckState">setCheckState</a>() function. The corresponding <a href="qtablewidgetitem.html#checkState">checkState</a>() function indicates whether the item is currently checked.</p>
+<a name="subclassing"></a>
+<h3>Subclassing</h3>
+<p>When subclassing QTableWidgetItem to provide custom items, it is possible to define new types for them so that they can be distinguished from standard items. The constructors for subclasses that require this feature need to call the base class constructor with a new type value equal to or greater than <a href="qtablewidgetitem.html#ItemType-enum">UserType</a>.</p>
+<p>See also <a href="qtablewidget.html">QTableWidget</a>, <a href="model-view-programming.html">Model/View Programming</a>, <a href="qlistwidgetitem.html">QListWidgetItem</a>, and <a href="qtreewidgetitem.html">QTreeWidgetItem</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ItemType-enum"></a>enum QTableWidgetItem::ItemType</h3>
+<p>This enum describes the types that are used to describe table widget items.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTableWidgetItem::Type</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The default type for table widget items.</td></tr>
+<tr><td valign="top"><tt>QTableWidgetItem::UserType</tt></td><td align="center" valign="top"><tt>1000</tt></td><td valign="top">The minimum value for custom types. Values below UserType are reserved by Qt.</td></tr>
+</table></p>
+<p>You can define new user types in <a href="qtablewidgetitem.html">QTableWidgetItem</a> subclasses to ensure that custom items are treated specially.</p>
+<p>See also <a href="qtablewidgetitem.html#type">type</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTableWidgetItem"></a>QTableWidgetItem::QTableWidgetItem ( int <i>type</i> = Type )</h3>
+<p>Constructs a table item of the specified <i>type</i> that does not belong to any table.</p>
+<p>See also <a href="qtablewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTableWidgetItem-2"></a>QTableWidgetItem::QTableWidgetItem ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a table item with the given <i>text</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTableWidgetItem-3"></a>QTableWidgetItem::QTableWidgetItem ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, int <i>type</i> = Type )</h3>
+<p>Constructs a table item with the given <i>icon</i> and <i>text</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#type">type</a>().</p>
+<h3 class="fn"><a name="QTableWidgetItem-4"></a>QTableWidgetItem::QTableWidgetItem ( const QTableWidgetItem &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>. Note that <a href="qtablewidgetitem.html#type">type</a>() and <a href="qtablewidgetitem.html#tableWidget">tableWidget</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="qtablewidgetitem.html#clone">clone</a>().</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtablewidgetitem.html#data">data</a>() and <a href="qtablewidgetitem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="dtor.QTableWidgetItem"></a>QTableWidgetItem::~QTableWidgetItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the table item.</p>
+<h3 class="fn"><a name="background"></a><a href="qbrush.html">QBrush</a> QTableWidgetItem::background () const</h3>
+<p>Returns the brush used to render the item's background.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#setBackground">setBackground</a>() and <a href="qtablewidgetitem.html#foreground">foreground</a>().</p>
+<h3 class="fn"><a name="checkState"></a><a href="qt.html#CheckState-enum">Qt::CheckState</a> QTableWidgetItem::checkState () const</h3>
+<p>Returns the checked state of the table item.</p>
+<p>See also <a href="qtablewidgetitem.html#setCheckState">setCheckState</a>() and <a href="qtablewidgetitem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="clone"></a>QTableWidgetItem * QTableWidgetItem::clone () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Creates a copy of the item.</p>
+<h3 class="fn"><a name="column"></a>int QTableWidgetItem::column () const</h3>
+<p>Returns the column of the item in the table. If the item is not in a table, this function will return -1.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#row">row</a>().</p>
+<h3 class="fn"><a name="data"></a><a href="qvariant.html">QVariant</a> QTableWidgetItem::data ( int <i>role</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the item's data for the given <i>role</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#setData">setData</a>().</p>
+<h3 class="fn"><a name="flags"></a><a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> QTableWidgetItem::flags () const</h3>
+<p>Returns the flags used to describe the item. These determine whether the item can be checked, edited, and selected.</p>
+<p>See also <a href="qtablewidgetitem.html#setFlags">setFlags</a>().</p>
+<h3 class="fn"><a name="font"></a><a href="qfont.html">QFont</a> QTableWidgetItem::font () const</h3>
+<p>Returns the font used to render the item's text.</p>
+<p>See also <a href="qtablewidgetitem.html#setFont">setFont</a>().</p>
+<h3 class="fn"><a name="foreground"></a><a href="qbrush.html">QBrush</a> QTableWidgetItem::foreground () const</h3>
+<p>Returns the brush used to render the item's foreground (e.g&#x2e; text).</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#setForeground">setForeground</a>() and <a href="qtablewidgetitem.html#background">background</a>().</p>
+<h3 class="fn"><a name="icon"></a><a href="qicon.html">QIcon</a> QTableWidgetItem::icon () const</h3>
+<p>Returns the item's icon.</p>
+<p>See also <a href="qtablewidgetitem.html#setIcon">setIcon</a>() and <a href="qabstractitemview.html#iconSize-prop">iconSize</a>.</p>
+<h3 class="fn"><a name="isSelected"></a>bool QTableWidgetItem::isSelected () const</h3>
+<p>Returns true if the item is selected, otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#setSelected">setSelected</a>().</p>
+<h3 class="fn"><a name="read"></a>void QTableWidgetItem::read ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Reads the item from stream <i>in</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#write">write</a>().</p>
+<h3 class="fn"><a name="row"></a>int QTableWidgetItem::row () const</h3>
+<p>Returns the row of the item in the table. If the item is not in a table, this function will return -1.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#column">column</a>().</p>
+<h3 class="fn"><a name="setBackground"></a>void QTableWidgetItem::setBackground ( const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the item's background brush to the specified <i>brush</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#background">background</a>() and <a href="qtablewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setCheckState"></a>void QTableWidgetItem::setCheckState ( <a href="qt.html#CheckState-enum">Qt::CheckState</a> <i>state</i> )</h3>
+<p>Sets the check state of the table item to be <i>state</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#checkState">checkState</a>().</p>
+<h3 class="fn"><a name="setData"></a>void QTableWidgetItem::setData ( int <i>role</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the item's data for the given <i>role</i> to the specified <i>value</i>.</p>
+<p>See also <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a> and <a href="qtablewidgetitem.html#data">data</a>().</p>
+<h3 class="fn"><a name="setFlags"></a>void QTableWidgetItem::setFlags ( <a href="qt.html#ItemFlag-enum">Qt::ItemFlags</a> <i>flags</i> )</h3>
+<p>Sets the flags for the item to the given <i>flags</i>. These determine whether the item can be selected or modified.</p>
+<p>See also <a href="qtablewidgetitem.html#flags">flags</a>().</p>
+<h3 class="fn"><a name="setFont"></a>void QTableWidgetItem::setFont ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )</h3>
+<p>Sets the font used to display the item's text to the given <i>font</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#font">font</a>(), <a href="qtablewidgetitem.html#setText">setText</a>(), and <a href="qtablewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setForeground"></a>void QTableWidgetItem::setForeground ( const <a href="qbrush.html">QBrush</a> &amp; <i>brush</i> )</h3>
+<p>Sets the item's foreground brush to the specified <i>brush</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#foreground">foreground</a>() and <a href="qtablewidgetitem.html#setBackground">setBackground</a>().</p>
+<h3 class="fn"><a name="setIcon"></a>void QTableWidgetItem::setIcon ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i> )</h3>
+<p>Sets the item's icon to the <i>icon</i> specified.</p>
+<p>See also <a href="qtablewidgetitem.html#icon">icon</a>(), <a href="qtablewidgetitem.html#setText">setText</a>(), and <a href="qabstractitemview.html#iconSize-prop">iconSize</a>.</p>
+<h3 class="fn"><a name="setSelected"></a>void QTableWidgetItem::setSelected ( bool <i>select</i> )</h3>
+<p>Sets the selected state of the item to <i>select</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtablewidgetitem.html#isSelected">isSelected</a>().</p>
+<h3 class="fn"><a name="setSizeHint"></a>void QTableWidgetItem::setSizeHint ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Sets the size hint for the table item to be <i>size</i>. If no size hint is set, the item delegate will compute the size hint based on the item data.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtablewidgetitem.html#sizeHint">sizeHint</a>().</p>
+<h3 class="fn"><a name="setStatusTip"></a>void QTableWidgetItem::setStatusTip ( const <a href="qstring.html">QString</a> &amp; <i>statusTip</i> )</h3>
+<p>Sets the item's status tip to the string specified by <i>statusTip</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#statusTip">statusTip</a>(), <a href="qtablewidgetitem.html#setToolTip">setToolTip</a>(), and <a href="qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QTableWidgetItem::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the item's text to the <i>text</i> specified.</p>
+<p>See also <a href="qtablewidgetitem.html#text">text</a>(), <a href="qtablewidgetitem.html#setFont">setFont</a>(), and <a href="qtablewidgetitem.html#setForeground">setForeground</a>().</p>
+<h3 class="fn"><a name="setTextAlignment"></a>void QTableWidgetItem::setTextAlignment ( int <i>alignment</i> )</h3>
+<p>Sets the text alignment for the item's text to the <i>alignment</i> specified.</p>
+<p>See also <a href="qtablewidgetitem.html#textAlignment">textAlignment</a>() and <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="setToolTip"></a>void QTableWidgetItem::setToolTip ( const <a href="qstring.html">QString</a> &amp; <i>toolTip</i> )</h3>
+<p>Sets the item's tooltip to the string specified by <i>toolTip</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#toolTip">toolTip</a>(), <a href="qtablewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="setWhatsThis"></a>void QTableWidgetItem::setWhatsThis ( const <a href="qstring.html">QString</a> &amp; <i>whatsThis</i> )</h3>
+<p>Sets the item's &quot;What's This?&quot; help to the string specified by <i>whatsThis</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#whatsThis">whatsThis</a>(), <a href="qtablewidgetitem.html#setStatusTip">setStatusTip</a>(), and <a href="qtablewidgetitem.html#setToolTip">setToolTip</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QTableWidgetItem::sizeHint () const</h3>
+<p>Returns the size hint set for the table item.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtablewidgetitem.html#setSizeHint">setSizeHint</a>().</p>
+<h3 class="fn"><a name="statusTip"></a><a href="qstring.html">QString</a> QTableWidgetItem::statusTip () const</h3>
+<p>Returns the item's status tip.</p>
+<p>See also <a href="qtablewidgetitem.html#setStatusTip">setStatusTip</a>().</p>
+<h3 class="fn"><a name="tableWidget"></a><a href="qtablewidget.html">QTableWidget</a> * QTableWidgetItem::tableWidget () const</h3>
+<p>Returns the table widget that contains the item.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QTableWidgetItem::text () const</h3>
+<p>Returns the item's text.</p>
+<p>See also <a href="qtablewidgetitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="textAlignment"></a>int QTableWidgetItem::textAlignment () const</h3>
+<p>Returns the text alignment for the item's text.</p>
+<p>See also <a href="qtablewidgetitem.html#setTextAlignment">setTextAlignment</a>() and <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a>.</p>
+<h3 class="fn"><a name="toolTip"></a><a href="qstring.html">QString</a> QTableWidgetItem::toolTip () const</h3>
+<p>Returns the item's tooltip.</p>
+<p>See also <a href="qtablewidgetitem.html#setToolTip">setToolTip</a>().</p>
+<h3 class="fn"><a name="type"></a>int QTableWidgetItem::type () const</h3>
+<p>Returns the type passed to the <a href="qtablewidgetitem.html">QTableWidgetItem</a> constructor.</p>
+<h3 class="fn"><a name="whatsThis"></a><a href="qstring.html">QString</a> QTableWidgetItem::whatsThis () const</h3>
+<p>Returns the item's &quot;What's This?&quot; help.</p>
+<p>See also <a href="qtablewidgetitem.html#setWhatsThis">setWhatsThis</a>().</p>
+<h3 class="fn"><a name="write"></a>void QTableWidgetItem::write ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Writes the item to stream <i>out</i>.</p>
+<p>See also <a href="qtablewidgetitem.html#read">read</a>().</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QTableWidgetItem::operator&lt; ( const QTableWidgetItem &amp; <i>other</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the item is less than the <i>other</i> item; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTableWidgetItem &amp; QTableWidgetItem::operator= ( const QTableWidgetItem &amp; <i>other</i> )</h3>
+<p>Assigns <i>other</i>'s data and flags to this item. Note that <a href="qtablewidgetitem.html#type">type</a>() and <a href="qtablewidgetitem.html#tableWidget">tableWidget</a>() are not copied.</p>
+<p>This function is useful when reimplementing <a href="qtablewidgetitem.html#clone">clone</a>().</p>
+<p>See also <a href="qtablewidgetitem.html#data">data</a>() and <a href="qtablewidgetitem.html#flags">flags</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-41"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>out</i>, const QTableWidgetItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the table widget item <i>item</i> to stream <i>out</i>.</p>
+<p>This operator uses <a href="qtablewidgetitem.html#write">QTableWidgetItem::write</a>().</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-23"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>in</i>, QTableWidgetItem &amp; <i>item</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a table widget item from stream <i>in</i> into <i>item</i>.</p>
+<p>This operator uses <a href="qtablewidgetitem.html#read">QTableWidgetItem::read</a>().</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

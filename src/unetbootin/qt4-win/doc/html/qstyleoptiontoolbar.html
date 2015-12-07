@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionToolBar Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionToolBar Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionToolBar class is used to describe the parameters for drawing a toolbar. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionToolBar&gt;</pre><p>Inherits <a href="qstyleoption.html">QStyleOption</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qstyleoptiontoolbar-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbar.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbar.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbar.html#ToolBarFeature-enum">ToolBarFeature</a></b> { None, Movable }</li>
+<li><div class="fn"/>flags <b><a href="qstyleoptiontoolbar.html#ToolBarFeature-enum">ToolBarFeatures</a></b></li>
+<li><div class="fn"/>enum <b><a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">ToolBarPosition</a></b> { Beginning, Middle, End, OnlyOne }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptiontoolbar.html#QStyleOptionToolBar">QStyleOptionToolBar</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptiontoolbar.html#QStyleOptionToolBar-2">QStyleOptionToolBar</a></b> ( const QStyleOptionToolBar &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>ToolBarFeatures <b><a href="qstyleoptiontoolbar.html#features-var">features</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptiontoolbar.html#lineWidth-var">lineWidth</a></b></li>
+<li><div class="fn"/>int <b><a href="qstyleoptiontoolbar.html#midLineWidth-var">midLineWidth</a></b></li>
+<li><div class="fn"/>ToolBarPosition <b><a href="qstyleoptiontoolbar.html#positionOfLine-var">positionOfLine</a></b></li>
+<li><div class="fn"/>ToolBarPosition <b><a href="qstyleoptiontoolbar.html#positionWithinLine-var">positionWithinLine</a></b></li>
+<li><div class="fn"/>Qt::ToolBarArea <b><a href="qstyleoptiontoolbar.html#toolBarArea-var">toolBarArea</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionToolBar class is used to describe the parameters for drawing a toolbar.</p>
+<p>QStyleOptionToolBar contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw <a href="qtoolbar.html">QToolBar</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>The QStyleOptionToolBar class holds the <a href="qstyleoptiontoolbar.html#lineWidth-var">lineWidth</a> and the <a href="qstyleoptiontoolbar.html#midLineWidth-var">midLineWidth</a> for drawing the widget. It also stores information about which <a href="qstyleoptiontoolbar.html#toolBarArea-var">area</a> the toolbar should be located in, whether it is movable or not, which position the toolbar line should have (<a href="qstyleoptiontoolbar.html#positionOfLine-var">positionOfLine</a>), and the toolbar's position within the line (<a href="qstyleoptiontoolbar.html#positionWithinLine-var">positionWithinLine</a>).</p>
+<p>In addition, the class provides a couple of enums: The <a href="qstyleoptiontoolbar.html#ToolBarFeature-enum">ToolBarFeature</a> enum is used to describe whether a toolbar is movable or not, and the <a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">ToolBarPosition</a> enum is used to describe the position of a toolbar line, as well as the toolbar's position within the line.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionToolBar::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::Type</tt></td><td align="center" valign="top"><tt>SO_ToolBar</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_ToolBar</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptiontoolbar.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionToolBar::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptiontoolbar.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<h3 class="flags"><a name="ToolBarFeature-enum"></a>enum QStyleOptionToolBar::ToolBarFeature<br />flags QStyleOptionToolBar::ToolBarFeatures</h3>
+<p>This enum is used to describe whether a toolbar is movable or not.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::None</tt></td><td align="center" valign="top"><tt>0x0</tt></td><td valign="top">The toolbar cannot be moved. The default value.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::Movable</tt></td><td align="center" valign="top"><tt>0x1</tt></td><td valign="top">The toolbar is movable, and a handle will appear when holding the cursor over the toolbar's boundary.</td></tr>
+</table></p>
+<p>The ToolBarFeatures type is a typedef for <a href="qflags.html">QFlags</a>&lt;ToolBarFeature&gt;. It stores an OR combination of ToolBarFeature values.</p>
+<p>See also <a href="qstyleoptiontoolbar.html#features-var">features</a> and <a href="qtoolbar.html#movable-prop">QToolBar::isMovable</a>().</p>
+<h3 class="fn"><a name="ToolBarPosition-enum"></a>enum QStyleOptionToolBar::ToolBarPosition</h3>
+<p align="center"><img src="images/qstyleoptiontoolbar-position.png" /></p><p>This enum is used to describe the position of a toolbar line, as well as the toolbar's position within the line.</p>
+<p>The order of the positions within a line starts at the top of a vertical line, and from the left within a horizontal line. The order of the positions for the lines is always from the the parent widget's boundary edges.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::Beginning</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The toolbar is located at the beginning of the line, or the toolbar line is the first of several lines. There can only be one toolbar (and only one line) with this position.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::Middle</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The toolbar is located in the middle of the line, or the toolbar line is in the middle of several lines. There can several toolbars (and lines) with this position.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::End</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The toolbar is located at the end of the line, or the toolbar line is the last of several lines. There can only be one toolbar (and only one line) with this position.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionToolBar::OnlyOne</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">There is only one toolbar or line. This is the default value of the <a href="qstyleoptiontoolbar.html#positionOfLine-var">positionOfLine</a> and <a href="qstyleoptiontoolbar.html#positionWithinLine-var">positionWithinLine</a> variables.</td></tr>
+</table></p>
+<p>See also <a href="qstyleoptiontoolbar.html#positionWithinLine-var">positionWithinLine</a> and <a href="qstyleoptiontoolbar.html#positionOfLine-var">positionOfLine</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionToolBar"></a>QStyleOptionToolBar::QStyleOptionToolBar ()</h3>
+<p>Constructs a <a href="qstyleoptiontoolbar.html">QStyleOptionToolBar</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionToolBar-2"></a>QStyleOptionToolBar::QStyleOptionToolBar ( const QStyleOptionToolBar &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="features-var"></a><a href="qstyleoptiontoolbar.html#ToolBarFeature-enum">ToolBarFeatures</a> QStyleOptionToolBar::features</h3>
+<p>This variable holds whether the toolbar is movable or not.</p>
+<p>The default value is <a href="qstyleoptiontoolbar.html#ToolBarFeature-enum">None</a>.</p>
+<h3 class="fn"><a name="lineWidth-var"></a>int QStyleOptionToolBar::lineWidth</h3>
+<p>This variable holds the line width for drawing the toolbar.</p>
+<p>The default value is 0.</p>
+<h3 class="fn"><a name="midLineWidth-var"></a>int QStyleOptionToolBar::midLineWidth</h3>
+<p>This variable holds the mid-line width for drawing the toolbar.</p>
+<p>The default value is 0.</p>
+<h3 class="fn"><a name="positionOfLine-var"></a><a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">ToolBarPosition</a> QStyleOptionToolBar::positionOfLine</h3>
+<p>This variable holds the position of the toolbar line.</p>
+<p>The default value is <a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">QStyleOptionToolBar::OnlyOne</a>.</p>
+<h3 class="fn"><a name="positionWithinLine-var"></a><a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">ToolBarPosition</a> QStyleOptionToolBar::positionWithinLine</h3>
+<p>This variable holds the position of the toolbar within a line.</p>
+<p>The default value is <a href="qstyleoptiontoolbar.html#ToolBarPosition-enum">QStyleOptionToolBar::OnlyOne</a>.</p>
+<h3 class="fn"><a name="toolBarArea-var"></a><a href="qt.html#ToolBarArea-enum">Qt::ToolBarArea</a> QStyleOptionToolBar::toolBarArea</h3>
+<p>This variable holds the location for drawing the toolbar.</p>
+<p>The default value is <a href="qt.html#ToolBarArea-enum">Qt::TopToolBarArea</a>.</p>
+<p>See also <a href="qt.html#ToolBarArea-enum">Qt::ToolBarArea</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtextobject.cpp -->
+<head>
+  <title>Qt 4.4: QTextObject Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextObject Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextObject class is a base class for different kinds of objects that can group parts of a <a href="qtextdocument.html">QTextDocument</a> together. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextObject&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qtextblockgroup.html">QTextBlockGroup</a> and <a href="qtextframe.html">QTextFrame</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QTextDocument * <b><a href="qtextobject.html#document">document</a></b> () const</li>
+<li><div class="fn"/>QTextFormat <b><a href="qtextobject.html#format">format</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextobject.html#formatIndex">formatIndex</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextobject.html#objectIndex">objectIndex</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextobject.html#QTextObject">QTextObject</a></b> ( QTextDocument * <i>document</i> )</li>
+<li><div class="fn"/><b><a href="qtextobject.html#dtor.QTextObject">~QTextObject</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextobject.html#setFormat">setFormat</a></b> ( const QTextFormat &amp; <i>format</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextObject class is a base class for different kinds of objects that can group parts of a <a href="qtextdocument.html">QTextDocument</a> together.</p>
+<p>The common grouping text objects are lists (<a href="qtextlist.html">QTextList</a>), frames (<a href="qtextframe.html">QTextFrame</a>), and tables (<a href="qtexttable.html">QTextTable</a>). A text object has an associated <a href="qtextobject.html#format">format</a>() and <a href="qtextobject.html#document">document</a>().</p>
+<p>There are essentially two kinds of text objects: those that are used with blocks (block formats), and those that are used with characters (character formats). The first kind are derived from <a href="qtextblockgroup.html">QTextBlockGroup</a>, and the second kind from <a href="qtextframe.html">QTextFrame</a>.</p>
+<p>You rarely need to use this class directly. When creating custom text objects, you will also need to reimplement <a href="qtextdocument.html#createObject">QTextDocument::createObject</a>() which acts as a factory method for creating text objects.</p>
+<p>See also <a href="qtextdocument.html">QTextDocument</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextObject"></a>QTextObject::QTextObject ( <a href="qtextdocument.html">QTextDocument</a> * <i>document</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Creates a new <a href="qtextobject.html">QTextObject</a> for the given <i>document</i>.</p>
+<p><b>Warning:</b> This function should never be called directly, but only from <a href="qtextdocument.html#createObject">QTextDocument::createObject</a>().</p>
+<h3 class="fn"><a name="dtor.QTextObject"></a>QTextObject::~QTextObject ()&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Destroys the text object.</p>
+<p><b>Warning:</b> Text objects are owned by the document, so you should never destroy them yourself.</p>
+<h3 class="fn"><a name="document"></a><a href="qtextdocument.html">QTextDocument</a> * QTextObject::document () const</h3>
+<p>Returns the document this object belongs to.</p>
+<p>See also <a href="qtextobject.html#format">format</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qtextformat.html">QTextFormat</a> QTextObject::format () const</h3>
+<p>Returns the text object's format.</p>
+<p>See also <a href="qtextobject.html#setFormat">setFormat</a>() and <a href="qtextobject.html#document">document</a>().</p>
+<h3 class="fn"><a name="formatIndex"></a>int QTextObject::formatIndex () const</h3>
+<p>Returns the index of the object's format in the document's internal list of formats.</p>
+<p>See also <a href="qtextdocument.html#object">QTextDocument::object</a>().</p>
+<h3 class="fn"><a name="objectIndex"></a>int QTextObject::objectIndex () const</h3>
+<p>Returns the object index of this object. This can be used together with <a href="qtextformat.html#setObjectIndex">QTextFormat::setObjectIndex</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QTextObject::setFormat ( const <a href="qtextformat.html">QTextFormat</a> &amp; <i>format</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the text object's <i>format</i>.</p>
+<p>See also <a href="qtextobject.html#format">format</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

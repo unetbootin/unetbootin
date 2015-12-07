@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qitemselectionmodel.cpp -->
+<head>
+  <title>Qt 4.4: QItemSelectionRange Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QItemSelectionRange Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QItemSelectionRange class manages information about a range of selected items in a model. <a href="#details">More...</a></p>
+<pre> #include &lt;QItemSelectionRange&gt;</pre><ul>
+<li><a href="qitemselectionrange-members.html">List of all members, including inherited members</a></li>
+<li><a href="qitemselectionrange-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qitemselectionrange.html#QItemSelectionRange">QItemSelectionRange</a></b> ()</li>
+<li><div class="fn"/><b><a href="qitemselectionrange.html#QItemSelectionRange-2">QItemSelectionRange</a></b> ( const QItemSelectionRange &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qitemselectionrange.html#QItemSelectionRange-3">QItemSelectionRange</a></b> ( const QModelIndex &amp; <i>topLeft</i>, const QModelIndex &amp; <i>bottomRight</i> )</li>
+<li><div class="fn"/><b><a href="qitemselectionrange.html#QItemSelectionRange-4">QItemSelectionRange</a></b> ( const QModelIndex &amp; <i>index</i> )</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#bottom">bottom</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qitemselectionrange.html#bottomRight">bottomRight</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#contains">contains</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#contains-2">contains</a></b> ( int <i>row</i>, int <i>column</i>, const QModelIndex &amp; <i>parentIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#height">height</a></b> () const</li>
+<li><div class="fn"/>QModelIndexList <b><a href="qitemselectionrange.html#indexes">indexes</a></b> () const</li>
+<li><div class="fn"/>QItemSelectionRange <b><a href="qitemselectionrange.html#intersected">intersected</a></b> ( const QItemSelectionRange &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#intersects">intersects</a></b> ( const QItemSelectionRange &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#left">left</a></b> () const</li>
+<li><div class="fn"/>const QAbstractItemModel * <b><a href="qitemselectionrange.html#model">model</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qitemselectionrange.html#parent">parent</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#right">right</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#top">top</a></b> () const</li>
+<li><div class="fn"/>QModelIndex <b><a href="qitemselectionrange.html#topLeft">topLeft</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qitemselectionrange.html#width">width</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#operator-not-eq">operator!=</a></b> ( const QItemSelectionRange &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qitemselectionrange.html#operator-eq-eq">operator==</a></b> ( const QItemSelectionRange &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QItemSelectionRange class manages information about a range of selected items in a model.</p>
+<p>A QItemSelectionRange contains information about a range of selected items in a model. A range of items is a contiguous array of model items, extending to cover a number of adjacent rows and columns with a common parent item; this can be visualized as a two-dimensional block of cells in a table. A selection range has a <a href="qitemselectionrange.html#top">top</a>(), <a href="qitemselectionrange.html#left">left</a>() a <a href="qitemselectionrange.html#bottom">bottom</a>(), <a href="qitemselectionrange.html#right">right</a>() and a <a href="qitemselectionrange.html#parent">parent</a>().</p>
+<p>The QItemSelectionRange class is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view framework</a>.</p>
+<p>The model items contained in the selection range can be obtained by using the items() function. Use <a href="qitemselectionmodel.html#selectedIndexes">QItemSelectionModel::selectedIndexes</a>() to get a list of all selected items for a view.</p>
+<p>You can determine whether a given model item lies within a particular range by using the <a href="qitemselectionrange.html#contains">contains</a>() function. Ranges can also be compared using the overloaded operators for equality and inequality, and the <a href="qitemselectionrange.html#intersects">intersects</a>() function allows you to determine whether two ranges overlap.</p>
+<p>See also <a href="model-view-programming.html">Model/View Programming</a>, <a href="qabstractitemmodel.html">QAbstractItemModel</a>, <a href="qitemselection.html">QItemSelection</a>, and <a href="qitemselectionmodel.html">QItemSelectionModel</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QItemSelectionRange"></a>QItemSelectionRange::QItemSelectionRange ()</h3>
+<p>Constructs an empty selection range.</p>
+<h3 class="fn"><a name="QItemSelectionRange-2"></a>QItemSelectionRange::QItemSelectionRange ( const QItemSelectionRange &amp; <i>other</i> )</h3>
+<p>Copy constructor. Constructs a new selection range with the same contents as the <i>other</i> range given.</p>
+<h3 class="fn"><a name="QItemSelectionRange-3"></a>QItemSelectionRange::QItemSelectionRange ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>topLeft</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>bottomRight</i> )</h3>
+<p>Constructs a new selection range containing only the index specified by the <i>topLeft</i> and the index <i>bottomRight</i>.</p>
+<h3 class="fn"><a name="QItemSelectionRange-4"></a>QItemSelectionRange::QItemSelectionRange ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )</h3>
+<p>Constructs a new selection range containing only the model item specified by the model index <i>index</i>.</p>
+<h3 class="fn"><a name="bottom"></a>int QItemSelectionRange::bottom () const</h3>
+<p>Returns the row index corresponding to the lowermost selected row in the selection range.</p>
+<h3 class="fn"><a name="bottomRight"></a><a href="qmodelindex.html">QModelIndex</a> QItemSelectionRange::bottomRight () const</h3>
+<p>Returns the index for the item located at the bottom-right corner of the selection range.</p>
+<p>See also <a href="qitemselectionrange.html#bottom">bottom</a>(), <a href="qitemselectionrange.html#right">right</a>(), and <a href="qitemselectionrange.html#topLeft">topLeft</a>().</p>
+<h3 class="fn"><a name="contains"></a>bool QItemSelectionRange::contains ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const</h3>
+<p>Returns true if the model item specified by the <i>index</i> lies within the range of selected items; otherwise returns false.</p>
+<h3 class="fn"><a name="contains-2"></a>bool QItemSelectionRange::contains ( int <i>row</i>, int <i>column</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parentIndex</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if the model item specified by (<i>row</i>, <i>column</i>) and with <i>parentIndex</i> as the parent item lies within the range of selected items; otherwise returns false.</p>
+<h3 class="fn"><a name="height"></a>int QItemSelectionRange::height () const</h3>
+<p>Returns the number of selected rows in the selection range.</p>
+<h3 class="fn"><a name="indexes"></a><a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> QItemSelectionRange::indexes () const</h3>
+<p>Returns the list of model index items stored in the selection.</p>
+<h3 class="fn"><a name="intersected"></a>QItemSelectionRange QItemSelectionRange::intersected ( const QItemSelectionRange &amp; <i>other</i> ) const</h3>
+<p>Returns a new selection range containing only the items that are found in both the selection range and the <i>other</i> selection range.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="intersects"></a>bool QItemSelectionRange::intersects ( const QItemSelectionRange &amp; <i>other</i> ) const</h3>
+<p>Returns true if this selection range intersects (overlaps with) the <i>other</i> range given; otherwise returns false.</p>
+<h3 class="fn"><a name="isValid"></a>bool QItemSelectionRange::isValid () const</h3>
+<p>Returns true if the selection range is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="left"></a>int QItemSelectionRange::left () const</h3>
+<p>Returns the column index corresponding to the leftmost selected column in the selection range.</p>
+<h3 class="fn"><a name="model"></a>const <a href="qabstractitemmodel.html">QAbstractItemModel</a> * QItemSelectionRange::model () const</h3>
+<p>Returns the model that the items in the selection range belong to.</p>
+<h3 class="fn"><a name="parent"></a><a href="qmodelindex.html">QModelIndex</a> QItemSelectionRange::parent () const</h3>
+<p>Returns the parent model item index of the items in the selection range.</p>
+<h3 class="fn"><a name="right"></a>int QItemSelectionRange::right () const</h3>
+<p>Returns the column index corresponding to the rightmost selected column in the selection range.</p>
+<h3 class="fn"><a name="top"></a>int QItemSelectionRange::top () const</h3>
+<p>Returns the row index corresponding to the uppermost selected row in the selection range.</p>
+<h3 class="fn"><a name="topLeft"></a><a href="qmodelindex.html">QModelIndex</a> QItemSelectionRange::topLeft () const</h3>
+<p>Returns the index for the item located at the top-left corner of the selection range.</p>
+<p>See also <a href="qitemselectionrange.html#top">top</a>(), <a href="qitemselectionrange.html#left">left</a>(), and <a href="qitemselectionrange.html#bottomRight">bottomRight</a>().</p>
+<h3 class="fn"><a name="width"></a>int QItemSelectionRange::width () const</h3>
+<p>Returns the number of selected columns in the selection range.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QItemSelectionRange::operator!= ( const QItemSelectionRange &amp; <i>other</i> ) const</h3>
+<p>Returns true if the selection range differs from the <i>other</i> range given; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QItemSelectionRange::operator== ( const QItemSelectionRange &amp; <i>other</i> ) const</h3>
+<p>Returns true if the selection range is exactly the same as the <i>other</i> range given; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

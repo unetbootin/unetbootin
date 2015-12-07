@@ -1,0 +1,139 @@
+/****************************************************************************
+**
+** Documentation of Visual Studio Integration Plugin.
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/* NOT DOCUMENTED ! 
+  \page qmsdev.html
+
+  \title The QMsDev Plugin
+
+  The Visual Studio Integration Plugin is currently available only to users of
+  Visual Studio 6. It offers simple ways of doing common tasks when writing a
+  Qt application. 
+
+  \tableofcontents
+
+  \section1 How to install the Visual Studio Integration Plugin
+   
+  When you install Qt, the integration plugin should be installed for you,
+  however, sometimes this does  not happen, so to install the integration
+  plugin manually just carry out the following steps.
+
+  \list
+  \i Start up Visual Studio.
+  \i Select Tools|Customize|Add-ins and Macro Files.
+  \i Ensure that there is a tick next to QMsDev Developer Studio Add-In.
+  \i Click Close.
+  \endlist
+
+  Now the integration plugin should be installed. If this doesn't
+  work, then contact Trolltech technical support giving details of
+  what went wrong.
+  
+  \section1 How to uninstall the Visual Studio Integration Plugin
+
+  When you want to uninstall the integration plugin, just carry out the
+  following steps.
+
+  \list
+  \i Close down any instances of Visual Studio.
+  \i Delete the file '%MSDevDir%\\addins\\qmsdev.dll'
+  \endlist
+
+  \section1 What can the Visual Studio Integration Plugin do?
+  
+  The integration plugin adds the following options to Visual Studio:
+
+  \list
+  \i New Qt Project
+  \i New Qt Dialog
+  \i Qt Designer
+  \i Open Qt Project
+  \i Write Qt Project
+  \i Use Qt In Current Project
+  \i Add MOC
+  \endlist
+
+  \section2 Using the 'New Qt Project' button
+  
+  The 'New Qt Project' button allows you to create a simple Qt project
+  ready for development. Simply fill in the form and if you select
+  'Dialog' or 'Main Window' without MDI support then it will
+  automatically start up \e{Qt Designer}. When you have finished with
+  the form in \e{Qt Designer} just save it and it will appear in a
+  ready made Qt project.
+
+  If you select 'Main Window' with 'MDI Support' then it will simply
+  give you a code skeleton in a project ready for you to populate with
+  your own code.
+
+  \section2 Using the 'New Qt Dialog' button
+
+  The 'New Qt Dialog' button works in two ways: You can use it to create a new
+  dialog for your project; or you can  use it to insert an existing
+  dialog into your project.
+
+  If you want to create a new dialog then all you need to do is specify where
+  the dialog file should be saved and give it a name. This will start up
+  \e{Qt Designer} to allow you to design your new dialog, and will add it to
+  the existing  project.
+
+  If you want to add an existing dialog to your project, then just select the
+  relevant \c .ui file. This will then add it to your existing project and add
+  the relevant steps to create the generated code.
+
+  \section2 Using the 'Qt Designer' button
+
+  The 'Qt Designer' button simply starts up \e{Qt Designer}, it has no ties to
+  your existing project so whatever you do with it will not affect your
+  existing projects. It can also be started up by using the Ctrl+Shift+D key
+  combination in Visual Studio.
+
+  \section2 Using the 'Open Qt Project' button
+
+  The 'Open Qt Project' button allows you to convert an existing \c
+  qmake project file into a \c .dsp file which you can insert into
+  your existing workspace. When you click the 'Open Qt Project'
+  button, just select an existing \c qmake project file (a \c .pro
+  file) and then click OK. You will get a message box at the end
+  which asks you to insert the newly created \c .dsp file into your
+  existing workspace.
+
+  \section2 Using the 'Write Qt Project' button
+
+  The 'Write Qt Project' button creates a \c qmake project (\c .pro)
+  file for your current project so that you can easily copy the files
+  onto another platform and be able to use \c qmake to create a Makefile
+  on that other platform. All you need to do is make the project you
+  want to create a \c .pro file for, and click on the button. Just
+  name your \c qmake project file and click Save.
+
+  \section2 Using the 'Use Qt In Current Project' button
+
+  The 'Use Qt In Current Project' button simply adds in the necessary
+  information for the current project so that it links against Qt and
+  sets any other settings needed to use Qt in that project.
+
+  \section2 Using the 'Add MOC' button
+
+  The 'Add MOC' button will add in the custom build step for the selected file
+  so that it creates any needed MOC files and it will add these generated
+  files to the project. All you need to do to use it is click on a file that
+  has Q_OBJECT and click the button. 
+
+  You only need to use this button if you added a file that has
+  Q_OBJECT in it by hand, you don't need to use this if you used any
+  of the previously mentioned buttons. It can also be invoked by using
+  the \key{Ctrl+Shift+M} key combination in Visual Studio.
+
+*/

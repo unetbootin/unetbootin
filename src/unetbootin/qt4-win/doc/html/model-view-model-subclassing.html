@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/model-view-programming.qdoc -->
+<head>
+  <title>Qt 4.4: Model Subclassing Reference</title>
+  <link rel="prev" href="model-view-proxy-models.html" />
+  <link rel="contents" href="model-view-programming.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="model-view-proxy-models.html">Proxy Models</a>]
+[<a href="model-view-programming.html">Contents</a>]
+</p>
+<h1 class="title">Model Subclassing Reference<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#introduction">Introduction</a></li>
+<li><a href="#item-data-handling">Item Data Handling</a></li>
+<ul><li><a href="#read-only-access">Read-Only Access</a></li>
+<li><a href="#editable-items">Editable Items</a></li>
+<li><a href="#resizable-models">Resizable Models</a></li>
+<li><a href="#lazy-population-of-model-data">Lazy Population of Model Data</a></li>
+</ul>
+<li><a href="#navigation-and-model-index-creation">Navigation and Model Index Creation</a></li>
+<ul><li><a href="#parents-and-children">Parents and Children</a></li>
+</ul>
+<li><a href="#drag-and-drop-support-and-mime-type-handling">Drag and Drop Support and MIME Type Handling</a></li>
+<ul><li><a href="#mime-data">MIME Data</a></li>
+<li><a href="#accepting-dropped-data">Accepting Dropped Data</a></li>
+<li><a href="#convenience-views">Convenience Views</a></li>
+</ul>
+<li><a href="#performance-optimization-for-large-amounts-of-data">Performance Optimization for Large Amounts of Data</a></li>
+</ul>
+<a name="introduction"></a>
+<h2>Introduction</h2>
+<p>Model subclasses need to provide implementations of many of the virtual functions defined in the <a href="qabstractitemmodel.html">QAbstractItemModel</a> base class. The number of these functions that need to be implemented depends on the type of model - whether it supplies views with a simple list, a table, or a complex hierarchy of items. Models that inherit from <a href="qabstractlistmodel.html">QAbstractListModel</a> and <a href="qabstracttablemodel.html">QAbstractTableModel</a> can take advantage of the default implementations of functions provided by those classes. Models that expose items of data in tree-like structures must provide implementations for many of the virtual functions in <a href="qabstractitemmodel.html">QAbstractItemModel</a>.</p>
+<p>The functions that need to be implemented in a model subclass can be divided into three groups:</p>
+<ul>
+<li><b>Item data handling:</b> All models need to implement functions to enable views and delegates to query the dimensions of the model, examine items, and retrieve data.</li>
+<li><b>Navigation and index creation:</b> Hierarchical models need to provide functions that views can call to navigate the tree-like structures they expose, and obtain model indexes for items.</li>
+<li><b>Drag and drop support and MIME type handling:</b> Models inherit functions that control the way that internal and external drag and drop operations are performed. These functions allow items of data to be described in terms of MIME types that other components and applications can understand.</li>
+</ul>
+<p>For more information, see the <a href="http://www.phptr.com/content/images/0131872494/samplechapter/blanchette_ch10.pdf">&quot;Item View Classes&quot; Chapter of C++ GUI Programming with Qt 4</a>.</p>
+<a name="item-data-handling"></a>
+<h2>Item Data Handling</h2>
+<p>Models can provide varying levels of access to the data they provide: They can be simple read-only components, some models may support resizing operations, and others may allow items to be edited.</p>
+<a name="read-only-access"></a>
+<h3>Read-Only Access</h3>
+<p>To provide read-only access to data provided by a model, the following functions <i>must</i> be implemented in the model's subclass:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#flags">flags()</a></td><td>Used by other components to obtain information about each item provided by the model. In many models, the combination of flags should include <a href="qt.html#ItemFlag-enum">Qt::ItemIsEnabled</a> and <a href="qt.html#ItemFlag-enum">Qt::ItemIsSelectable</a>.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#data">data()</a></td><td>Used to supply item data to views and delegates. Generally, models only need to supply data for <a href="qt.html#ItemDataRole-enum">Qt::DisplayRole</a> and any application-specific user roles, but it is also good practice to provide data for <a href="qt.html#ItemDataRole-enum">Qt::ToolTipRole</a>, <a href="qt.html#ItemDataRole-enum">Qt::AccessibleTextRole</a>, and <a href="qt.html#ItemDataRole-enum">Qt::AccessibleDescriptionRole</a>.</td></tr>
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#headerData">headerData()</a></td><td>Provides views with information to show in their headers. The information is only retrieved by views that can display header information.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#rowCount">rowCount()</a></td><td>Provides the number of rows of data exposed by the model.</td></tr>
+</table></p>
+<p>These four functions must be implemented in all types of model, including list models (<a href="qabstractlistmodel.html">QAbstractListModel</a> subclasses) and table models (<a href="qabstracttablemodel.html">QAbstractTableModel</a> subclasses).</p>
+<p>Additionally, the following functions <i>must</i> be implemented in direct subclasses of <a href="qabstracttablemodel.html">QAbstractTableModel</a> and <a href="qabstractitemmodel.html">QAbstractItemModel</a>:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#columnCount">columnCount()</a></td><td>Provides the number of columns of data exposed by the model. List models do not provide this function because it is already implemented in <a href="qabstractlistmodel.html">QAbstractListModel</a>.</td></tr>
+</table></p>
+<a name="editable-items"></a>
+<h3>Editable Items</h3>
+<p>Editable models allow items of data to be modified, and may also provide functions to allow rows and columns to be inserted and removed. To enable editing, the following functions must be implemented correctly:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#flags">flags()</a></td><td>Must return an appropriate combination of flags for each item. In particular, the value returned by this function must include <a href="qt.html#ItemFlag-enum">Qt::ItemIsEditable</a> in addition to the values applied to items in a read-only model.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#setData">setData()</a></td><td>Used to modify the item of data associated with a specified model index. To be able to accept user input, provided by user interface elements, this function must handle data associated with <a href="qt.html#ItemDataRole-enum">Qt::EditRole</a>. The implementation may also accept data associated with many different kinds of roles specified by <a href="qt.html#ItemDataRole-enum">Qt::ItemDataRole</a>. After changing the item of data, models must emit the <a href="qabstractitemmodel.html#dataChanged">dataChanged()</a> signal to inform other components of the change.</td></tr>
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#setHeaderData">setHeaderData()</a></td><td>Used to modify horizontal and vertical header information. After changing the item of data, models must emit the <a href="qabstractitemmodel.html#headerDataChanged">headerDataChanged()</a> signal to inform other components of the change.</td></tr>
+</table></p>
+<a name="resizable-models"></a>
+<h3>Resizable Models</h3>
+<p>All types of model can support the insertion and removal of rows. Table models and hierarchical models can also support the insertion and removal of columns. It is important to notify other components about changes to the model's dimensions both <i>before</i> and <i>after</i> they occur. As a result, the following functions can be implemented to allow the model to be resized, but implementations must ensure that the appropriate functions are called to notify attached views and delegates:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#insertRows">insertRows()</a></td><td>Used to add new rows and items of data to all types of model. Implementations must call <a href="qabstractitemmodel.html#beginInsertRows">beginInsertRows()</a> <i>before</i> inserting new rows into any underlying data structures, and call <a href="qabstractitemmodel.html#endInsertRows">endInsertRows()</a> <i>immediately afterwards</i>.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#removeRows">removeRows()</a></td><td>Used to remove rows and the items of data they contain from all types of model. Implementations must call <a href="qabstractitemmodel.html#beginRemoveRows">beginRemoveRows()</a> <i>before</i> inserting new columns into any underlying data structures, and call <a href="qabstractitemmodel.html#endRemoveRows">endRemoveRows()</a> <i>immediately afterwards</i>.</td></tr>
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#insertColumns">insertColumns()</a></td><td>Used to add new columns and items of data to table models and hierarchical models. Implementations must call <a href="qabstractitemmodel.html#beginInsertColumns">beginInsertColumns()</a> <i>before</i> rows are removed from any underlying data structures, and call <a href="qabstractitemmodel.html#endInsertColumns">endInsertColumns()</a> <i>immediately afterwards</i>.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#removeColumns">removeColumns()</a></td><td>Used to remove columns and the items of data they contain from table models and hierarchical models. Implementations must call <a href="qabstractitemmodel.html#beginRemoveColumns">beginRemoveColumns()</a> <i>before</i> columns are removed from any underlying data structures, and call <a href="qabstractitemmodel.html#endRemoveColumns">endRemoveColumns()</a> <i>immediately afterwards</i>.</td></tr>
+</table></p>
+<p>Generally, these functions should return true if the operation was successful. However, there may be cases where the operation only partly succeeded; for example, if less than the specified number of rows could be inserted. In such cases, the model should return false to indicate failure to enable any attached components to handle the situation.</p>
+<p>The signals emitted by the functions called in implementations of the resizing API give attached components the chance to take action before any data becomes unavailable. The encapsulation of insert and remove operations with begin and end functions also enable the model to manage <a href="qpersistentmodelindex.html">persistent model indexes</a> correctly.</p>
+<p>Normally, the begin and end functions are capable of informing other components about changes to the model's underlying structure. For more complex changes to the model's structure, perhaps involving internal reorganization or sorting of data, it is necessary to emit the <a href="qabstractitemmodel.html#layoutChanged">layoutChanged()</a> signal to cause any attached views to be updated.</p>
+<a name="lazy-population-of-model-data"></a>
+<h3>Lazy Population of Model Data</h3>
+<p>Lazy population of model data effectively allows requests for information about the model to be deferred until it is actually needed by views.</p>
+<p>Some models need to obtain data from remote sources, or must perform time-consuming operations to obtain information about the way the data is organized. Since views generally request as much information as possible in order to accurately display model data, it can be useful to restrict the amount of information returned to them to reduce unnecessary follow-up requests for data.</p>
+<p>In hierarchical models where finding the number of children of a given item is an expensive operation, it is useful to ensure that the model's <a href="qabstractitemmodel.html#rowCount">rowCount()</a> implementation is only called when necessary. In such cases, the <a href="qabstractitemmodel.html#hasChildren">hasChildren()</a> function can be reimplemented to provide an inexpensive way for views to check for the presence of children and, in the case of <a href="qtreeview.html">QTreeView</a>, draw the appropriate decoration for their parent item.</p>
+<p>Whether the reimplementation of <a href="qabstractitemmodel.html#hasChildren">hasChildren()</a> returns <tt>true</tt> or <tt>false</tt>, it may not be necessary for the view to call <a href="qabstractitemmodel.html#rowCount">rowCount()</a> to find out how many children are present. For example, <a href="qtreeview.html">QTreeView</a> does not need to know how many children there are if the parent item has not been expanded to show them.</p>
+<p>If it is known that many items will have children, reimplementing <a href="qabstractitemmodel.html#hasChildren">hasChildren()</a> to unconditionally return <tt>true</tt> is sometimes a useful approach to take. This ensures that each item can be later examined for children while making initial population of model data as fast as possible. The only disadvantage is that items without children may be displayed incorrectly in some views until the user attempts to view the non-existent child items.</p>
+<a name="navigation-and-model-index-creation"></a>
+<h2>Navigation and Model Index Creation</h2>
+<p>Hierarchical models need to provide functions that views can call to navigate the tree-like structures they expose, and obtain model indexes for items.</p>
+<a name="parents-and-children"></a>
+<h3>Parents and Children</h3>
+<p>Since the structure exposed to views is determined by the underlying data structure, it is up to each model subclass to create its own model indexes by providing implementations of the following functions:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#index">index()</a></td><td>Given a model index for a parent item, this function allows views and delegates to access children of that item. If no valid child item - corresponding to the specified row, column, and parent model index, can be found, the function must return QModelIndex(), which is an invalid model index.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#parent">parent()</a></td><td>Provides a model index corresponding to the parent of any given child item. If the model index specified corresponds to a top-level item in the model, or if there is no valid parent item in the model, the function must return an invalid model index, created with the empty QModelIndex() constructor.</td></tr>
+</table></p>
+<p>Both functions above use the <a href="qabstractitemmodel.html#createIndex">createIndex()</a> factory function to generate indexes for other components to use. It is normal for models to supply some unique identifier to this function to ensure that the model index can be re-associated with its corresponding item later on.</p>
+<a name="drag-and-drop-support-and-mime-type-handling"></a>
+<h2>Drag and Drop Support and MIME Type Handling</h2>
+<p>The model/view classes support drag and drop operations, providing default behavior that is sufficient for many applications. However, it is also possible to customize the way items are encoded during drag and drop operations, whether they are copied or moved by default, and how they are inserted into existing models.</p>
+<p>Additionally, the convenience view classes implement specialized behavior that should closely follow that expected by existing developers. The <a href="#convenience-views">Convenience Views</a> section provides an overview of this behavior.</p>
+<a name="mime-data"></a>
+<h3>MIME Data</h3>
+<p>By default, the built-in models and views use an internal MIME type (<tt>application/x-qabstractitemmodeldatalist</tt>) to pass around information about model indexes. This specifies data for a list of items, containing the row and column numbers of each item, and information about the roles that each item supports.</p>
+<p>Data encoded using this MIME type can be obtained by calling <a href="qabstractitemmodel.html#mimeData">QAbstractItemModel::mimeData</a>() with a <a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> containing the items to be serialized.</p>
+<p>When implementing drag and drop support in a custom model, it is possible to export items of data in specialized formats by reimplementing the following function:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#mimeData">mimeData()</a></td><td>This function can be reimplemented to return data in formats other than the default <tt>application/x-qabstractitemmodeldatalist</tt> internal MIME type.<p>Subclasses can obtain the default <a href="qmimedata.html">QMimeData</a> object from the base class and add data to it in additional formats.</p>
+</td></tr>
+</table></p>
+<p>For many models, it is useful to provide the contents of items in common format represented by MIME types such as <tt>text/plain</tt> and <tt>image/png</tt>. Note that images, colors and HTML documents can easily be added to a <a href="qmimedata.html">QMimeData</a> object with the <a href="qmimedata.html#setImageData">QMimeData::setImageData</a>(), <a href="qmimedata.html#setColorData">QMimeData::setColorData</a>(), and <a href="qmimedata.html#setHtml">QMimeData::setHtml</a>() functions.</p>
+<a name="accepting-dropped-data"></a>
+<h3>Accepting Dropped Data</h3>
+<p>When a drag and drop operation is performed over a view, the underlying model is queried to determine which types of operation it supports and the MIME types it can accept. This information is provided by the <a href="qabstractitemmodel.html#supportedDropActions">QAbstractItemModel::supportedDropActions</a>() and <a href="qabstractitemmodel.html#mimeTypes">QAbstractItemModel::mimeTypes</a>() functions. Models that do not override the implementations provided by <a href="qabstractitemmodel.html">QAbstractItemModel</a> support copy operations and the default internal MIME type for items.</p>
+<p>When serialized item data is dropped onto a view, the data is inserted into the current model using its implementation of <a href="qabstractitemmodel.html#dropMimeData">QAbstractItemModel::dropMimeData</a>(). The default implementation of this function will never overwrite any data in the model; instead, it tries to insert the items of data either as siblings of an item, or as children of that item.</p>
+<p>To take advantage of <a href="qabstractitemmodel.html">QAbstractItemModel</a>'s default implementation for the built-in MIME type, new models must provide reimplementations of the following functions:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#insertRows">insertRows()</a></td><td rowspan=" 2">These functions enable the model to automatically insert new data using the existing implementation provided by <a href="qabstractitemmodel.html#dropMimeData">QAbstractItemModel::dropMimeData</a>().</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#insertColumns">insertColumns()</a></td></tr>
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#setData">setData()</a></td><td>Allows the new rows and columns to be populated with items.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#setItemData">setItemData()</a></td><td>This function provides more efficient support for populating new items.</td></tr>
+</table></p>
+<p>To accept other forms of data, these functions must be reimplemented:</p>
+<p><table width="90%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#supportedDropActions">supportedDropActions()</a></td><td>Used to return a combination of <a href="qt.html#DropAction-enum">drop actions</a>, indicating the types of drag and drop operations that the model accepts.</td></tr>
+<tr valign="top" class="even"><td><a href="qabstractitemmodel.html#mimeTypes">mimeTypes()</a></td><td>Used to return a list of MIME types that can be decoded and handled by the model. Generally, the MIME types that are supported for input into the model are the same as those that it can use when encoding data for use by external components.</td></tr>
+<tr valign="top" class="odd"><td><a href="qabstractitemmodel.html#dropMimeData">dropMimeData()</a></td><td>Performs the actual decoding of the data transferred by drag and drop operations, determines where in the model it will be set, and inserts new rows and columns where necessary. How this function is implemented in subclasses depends on the requirements of the data exposed by each model.</td></tr>
+</table></p>
+<p>If the implementation of the <a href="qabstractitemmodel.html#dropMimeData">dropMimeData()</a> function changes the dimensions of a model by inserting or removing rows or columns, or if items of data are modified, care must be taken to ensure that all relevant signals are emitted. It can be useful to simply call reimplementations of other functions in the subclass, such as <a href="qabstractitemmodel.html#setData">setData()</a>, <a href="qabstractitemmodel.html#insertRows">insertRows()</a>, and <a href="qabstractitemmodel.html#insertColumns">insertColumns()</a>, to ensure that the model behaves consistently.</p>
+<p>In order to ensure drag operations work properly, it is important to reimplement the following functions that remove data from the model:</p>
+<ul>
+<li><a href="qabstractitemmodel.html#removeRows">removeRows()</a></li>
+<li><a href="qabstractitemmodel.html#removeRow">removeRow()</a></li>
+<li><a href="qabstractitemmodel.html#removeColumns">removeColumns()</a></li>
+<li><a href="qabstractitemmodel.html#removeColumn">removeColumn()</a></li>
+</ul>
+<p>For more information about drag and drop with item views, refer to <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>.</p>
+<a name="convenience-views"></a>
+<h3>Convenience Views</h3>
+<p>The convenience views (<a href="qlistwidget.html">QListWidget</a>, <a href="qtablewidget.html">QTableWidget</a>, and <a href="qtreewidget.html">QTreeWidget</a>) override the default drag and drop functionality to provide less flexible, but more natural behavior that is appropriate for many applications. For example, since it is more common to drop data into cells in a <a href="qtablewidget.html">QTableWidget</a>, replacing the existing contents with the data being transferred, the underlying model will set the data of the target items rather than insert new rows and columns into the model. For more information on drag and drop in convenience views, you can see <a href="model-view-dnd.html">Using Drag and Drop with Item Views</a>.</p>
+<a name="performance-optimization-for-large-amounts-of-data"></a>
+<h2>Performance Optimization for Large Amounts of Data</h2>
+<p>The <a href="qabstractitemmodel.html#canFetchMore">canFetchMore()</a> function checks if the parent has more data available and returns true or false accordingly. The <a href="qabstractitemmodel.html#fetchMore">fetchMore()</a> function fetches data based on the parent specified. Both these functions can be combined, for example, in a database query involving incremental data to populate a <a href="qabstractitemmodel.html">QAbstractItemModel</a>. We reimplement <a href="qabstractitemmodel.html#canFetchMore">canFetchMore()</a> to indicate if there is more data to be fetched and <a href="qabstractitemmodel.html#fetchMore">fetchMore()</a> to populate the model as required.</p>
+<p>Another example would be dynamically populated tree models, where we reimplement <a href="qabstractitemmodel.html#fetchMore">fetchMore()</a> when a branch in the tree model is expanded.</p>
+<p><b>Note:</b> Both functions must be reimplemented as the default implementation of <a href="qabstractitemmodel.html#canFetchMore">canFetchMore()</a> returns false and <a href="qabstractitemmodel.html#fetchMore">fetchMore()</a> does nothing.</p>
+<p>
+[Previous: <a href="model-view-proxy-models.html">Proxy Models</a>]
+[<a href="model-view-programming.html">Contents</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

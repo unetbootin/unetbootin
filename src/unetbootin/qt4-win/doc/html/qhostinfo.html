@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/kernel/qhostinfo.cpp -->
+<head>
+  <title>Qt 4.4: QHostInfo Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHostInfo Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QHostInfo class provides static functions for host name lookups. <a href="#details">More...</a></p>
+<pre> #include &lt;QHostInfo&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qhostinfo-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qhostinfo.html#HostInfoError-enum">HostInfoError</a></b> { NoError, HostNotFound, UnknownError }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qhostinfo.html#QHostInfo">QHostInfo</a></b> ( int <i>id</i> = -1 )</li>
+<li><div class="fn"/><b><a href="qhostinfo.html#QHostInfo-2">QHostInfo</a></b> ( const QHostInfo &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qhostinfo.html#dtor.QHostInfo">~QHostInfo</a></b> ()</li>
+<li><div class="fn"/>QList&lt;QHostAddress&gt; <b><a href="qhostinfo.html#addresses">addresses</a></b> () const</li>
+<li><div class="fn"/>HostInfoError <b><a href="qhostinfo.html#error">error</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qhostinfo.html#errorString">errorString</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qhostinfo.html#hostName">hostName</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qhostinfo.html#lookupId">lookupId</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#setAddresses">setAddresses</a></b> ( const QList&lt;QHostAddress&gt; &amp; <i>addresses</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#setError">setError</a></b> ( HostInfoError <i>error</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#setErrorString">setErrorString</a></b> ( const QString &amp; <i>str</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#setHostName">setHostName</a></b> ( const QString &amp; <i>hostName</i> )</li>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#setLookupId">setLookupId</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>QHostInfo &amp; <b><a href="qhostinfo.html#operator-eq">operator=</a></b> ( const QHostInfo &amp; <i>other</i> )</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qhostinfo.html#abortHostLookup">abortHostLookup</a></b> ( int <i>id</i> )</li>
+<li><div class="fn"/>QHostInfo <b><a href="qhostinfo.html#fromName">fromName</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>QString <b><a href="qhostinfo.html#localHostName">localHostName</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qhostinfo.html#lookupHost">lookupHost</a></b> ( const QString &amp; <i>name</i>, QObject * <i>receiver</i>, const char * <i>member</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHostInfo class provides static functions for host name lookups.</p>
+<p>QHostInfo uses the lookup mechanisms provided by the operating system to find the IP address(es) associated with a host name, or the host name associated with an IP address. The class provides two static convenience functions: one that works asynchronously and emits a signal once the host is found, and one that blocks and returns a QHostInfo object.</p>
+<p>To look up a host's IP addresses asynchronously, call <a href="qhostinfo.html#lookupHost">lookupHost</a>(), which takes the host name or IP address, a receiver object, and a slot signature as arguments and returns an ID. You can abort the lookup by calling <a href="qhostinfo.html#abortHostLookup">abortHostLookup</a>() with the lookup ID.</p>
+<p>Example:</p>
+<pre>         // To find the IP address of www.trolltech.com
+         QHostInfo::lookupHost(&quot;www.trolltech.com&quot;,
+                               this, SLOT(printResults(QHostInfo)));
+
+         // To find the host name for 4.2.2.1
+         QHostInfo::lookupHost(&quot;4.2.2.1&quot;,
+                               this, SLOT(printResults(QHostInfo)));</pre>
+<p>The slot is invoked when the results are ready. (If you use Qt for Embedded Linux and disabled multithreading support by defining <tt>QT_NO_THREAD</tt>, <a href="qhostinfo.html#lookupHost">lookupHost</a>() will block until the lookup has finished.) The results are stored in a QHostInfo object. Call <a href="qhostinfo.html#addresses">addresses</a>() to get the list of IP addresses for the host, and <a href="qhostinfo.html#hostName">hostName</a>() to get the host name that was looked up.</p>
+<p>If the lookup failed, <a href="qhostinfo.html#error">error</a>() returns the type of error that occurred. <a href="qhostinfo.html#errorString">errorString</a>() gives a human-readable description of the lookup error.</p>
+<p>If you want a blocking lookup, use the <a href="qhostinfo.html#fromName">QHostInfo::fromName</a>() function:</p>
+<pre>         QHostInfo info = QHostInfo::fromName(&quot;www.trolltech.com&quot;);</pre>
+<p>QHostInfo supports Internationalized Domain Names (IDNs) through the IDNA and Punycode standards.</p>
+<p>To retrieve the name of the local host, use the static <a href="qhostinfo.html#localHostName">QHostInfo::localHostName</a>() function.</p>
+<p>See also <a href="qabstractsocket.html">QAbstractSocket</a> and <a href="http://www.rfc-editor.org/rfc/rfc3492.txt">RFC 3492</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="HostInfoError-enum"></a>enum QHostInfo::HostInfoError</h3>
+<p>This enum describes the various errors that can occur when trying to resolve a host name.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QHostInfo::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The lookup was successful.</td></tr>
+<tr><td valign="top"><tt>QHostInfo::HostNotFound</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">No IP addresses were found for the host.</td></tr>
+<tr><td valign="top"><tt>QHostInfo::UnknownError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">An unknown error occurred.</td></tr>
+</table></p>
+<p>See also <a href="qhostinfo.html#error">error</a>() and <a href="qhostinfo.html#setError">setError</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QHostInfo"></a>QHostInfo::QHostInfo ( int <i>id</i> = -1 )</h3>
+<p>Constructs an empty host info object with lookup ID <i>id</i>.</p>
+<p>See also <a href="qhostinfo.html#lookupId">lookupId</a>().</p>
+<h3 class="fn"><a name="QHostInfo-2"></a>QHostInfo::QHostInfo ( const QHostInfo &amp; <i>other</i> )</h3>
+<p>Constructs a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QHostInfo"></a>QHostInfo::~QHostInfo ()</h3>
+<p>Destroys the host info object.</p>
+<h3 class="fn"><a name="abortHostLookup"></a>void QHostInfo::abortHostLookup ( int <i>id</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Aborts the host lookup with the ID <i>id</i>, as returned by <a href="qhostinfo.html#lookupHost">lookupHost</a>().</p>
+<p>See also <a href="qhostinfo.html#lookupHost">lookupHost</a>() and <a href="qhostinfo.html#lookupId">lookupId</a>().</p>
+<h3 class="fn"><a name="addresses"></a><a href="qlist.html">QList</a>&lt;<a href="qhostaddress.html">QHostAddress</a>&gt; QHostInfo::addresses () const</h3>
+<p>Returns the list of IP addresses associated with <a href="qhostinfo.html#hostName">hostName</a>(). This list may be empty.</p>
+<p>Example:</p>
+<pre>         QHostInfo info;
+         ...
+         if (!info.addresses().isEmpty()) {
+             QHostAddress address = info.addresses().first();
+             // use the first IP address
+         }</pre>
+<p>See also <a href="qhostinfo.html#setAddresses">setAddresses</a>(), <a href="qhostinfo.html#hostName">hostName</a>(), and <a href="qhostinfo.html#error">error</a>().</p>
+<h3 class="fn"><a name="error"></a><a href="qhostinfo.html#HostInfoError-enum">HostInfoError</a> QHostInfo::error () const</h3>
+<p>Returns the type of error that occurred if the host name lookup failed; otherwise returns <a href="qhostinfo.html#HostInfoError-enum">NoError</a>.</p>
+<p>See also <a href="qhostinfo.html#setError">setError</a>() and <a href="qhostinfo.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QHostInfo::errorString () const</h3>
+<p>If the lookup failed, this function returns a human readable description of the error; otherwise &quot;Unknown error&quot; is returned.</p>
+<p>See also <a href="qhostinfo.html#setErrorString">setErrorString</a>() and <a href="qhostinfo.html#error">error</a>().</p>
+<h3 class="fn"><a name="fromName"></a>QHostInfo QHostInfo::fromName ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Looks up the IP address(es) for the given host <i>name</i>. The function blocks during the lookup which means that execution of the program is suspended until the results of the lookup are ready. Returns the result of the lookup in a <a href="qhostinfo.html">QHostInfo</a> object.</p>
+<p>If you pass a literal IP address to <i>name</i> instead of a host name, <a href="qhostinfo.html">QHostInfo</a> will search for the domain name for the IP (i.e&#x2e;, <a href="qhostinfo.html">QHostInfo</a> will perform a <i>reverse</i> lookup). On success, the returned <a href="qhostinfo.html">QHostInfo</a> will contain both the resolved domain name and IP addresses for the host name.</p>
+<p>See also <a href="qhostinfo.html#lookupHost">lookupHost</a>().</p>
+<h3 class="fn"><a name="hostName"></a><a href="qstring.html">QString</a> QHostInfo::hostName () const</h3>
+<p>Returns the name of the host whose IP addresses were looked up.</p>
+<p>See also <a href="qhostinfo.html#setHostName">setHostName</a>() and <a href="qhostinfo.html#localHostName">localHostName</a>().</p>
+<h3 class="fn"><a name="localHostName"></a><a href="qstring.html">QString</a> QHostInfo::localHostName ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the host name of this machine.</p>
+<p>See also <a href="qhostinfo.html#hostName">hostName</a>().</p>
+<h3 class="fn"><a name="lookupHost"></a>int QHostInfo::lookupHost ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>member</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Looks up the IP address(es) associated with host name <i>name</i>, and returns an ID for the lookup. When the result of the lookup is ready, the slot or signal <i>member</i> in <i>receiver</i> is called with a <a href="qhostinfo.html">QHostInfo</a> argument. The <a href="qhostinfo.html">QHostInfo</a> object can then be inspected to get the results of the lookup.</p>
+<p>The lookup is performed by a single function call, for example:</p>
+<pre>         QHostInfo::lookupHost(&quot;www.kde.org&quot;,
+                               this, SLOT(lookedUp(QHostInfo)));</pre>
+<p>The implementation of the slot prints basic information about the addresses returned by the lookup, or reports an error if it failed:</p>
+<pre>         void MyWidget::lookedUp(const QHostInfo &amp;host)
+         {
+             if (host.error() != QHostInfo::NoError) {
+                 qDebug() &lt;&lt; &quot;Lookup failed:&quot; &lt;&lt; host.errorString();
+                 return;
+             }
+
+             foreach (QHostAddress address, host.addresses())
+                 qDebug() &lt;&lt; &quot;Found address:&quot; &lt;&lt; address.toString();
+         }</pre>
+<p>If you pass a literal IP address to <i>name</i> instead of a host name, <a href="qhostinfo.html">QHostInfo</a> will search for the domain name for the IP (i.e&#x2e;, <a href="qhostinfo.html">QHostInfo</a> will perform a <i>reverse</i> lookup). On success, the resulting <a href="qhostinfo.html">QHostInfo</a> will contain both the resolved domain name and IP addresses for the host name. Example:</p>
+<pre>         QHostInfo::lookupHost(&quot;4.2.2.1&quot;,
+                               this, SLOT(lookedUp(QHostInfo)));</pre>
+<p>See also <a href="qhostinfo.html#abortHostLookup">abortHostLookup</a>(), <a href="qhostinfo.html#addresses">addresses</a>(), <a href="qhostinfo.html#error">error</a>(), and <a href="qhostinfo.html#fromName">fromName</a>().</p>
+<h3 class="fn"><a name="lookupId"></a>int QHostInfo::lookupId () const</h3>
+<p>Returns the ID of this lookup.</p>
+<p>See also <a href="qhostinfo.html#setLookupId">setLookupId</a>(), <a href="qhostinfo.html#abortHostLookup">abortHostLookup</a>(), and <a href="qhostinfo.html#hostName">hostName</a>().</p>
+<h3 class="fn"><a name="setAddresses"></a>void QHostInfo::setAddresses ( const <a href="qlist.html">QList</a>&lt;<a href="qhostaddress.html">QHostAddress</a>&gt; &amp; <i>addresses</i> )</h3>
+<p>Sets the list of addresses in this <a href="qhostinfo.html">QHostInfo</a> to <i>addresses</i>.</p>
+<p>See also <a href="qhostinfo.html#addresses">addresses</a>().</p>
+<h3 class="fn"><a name="setError"></a>void QHostInfo::setError ( <a href="qhostinfo.html#HostInfoError-enum">HostInfoError</a> <i>error</i> )</h3>
+<p>Sets the error type of this <a href="qhostinfo.html">QHostInfo</a> to <i>error</i>.</p>
+<p>See also <a href="qhostinfo.html#error">error</a>() and <a href="qhostinfo.html#errorString">errorString</a>().</p>
+<h3 class="fn"><a name="setErrorString"></a>void QHostInfo::setErrorString ( const <a href="qstring.html">QString</a> &amp; <i>str</i> )</h3>
+<p>Sets the human readable description of the error that occurred to <i>str</i> if the lookup failed.</p>
+<p>See also <a href="qhostinfo.html#errorString">errorString</a>() and <a href="qhostinfo.html#setError">setError</a>().</p>
+<h3 class="fn"><a name="setHostName"></a>void QHostInfo::setHostName ( const <a href="qstring.html">QString</a> &amp; <i>hostName</i> )</h3>
+<p>Sets the host name of this <a href="qhostinfo.html">QHostInfo</a> to <i>hostName</i>.</p>
+<p>See also <a href="qhostinfo.html#hostName">hostName</a>().</p>
+<h3 class="fn"><a name="setLookupId"></a>void QHostInfo::setLookupId ( int <i>id</i> )</h3>
+<p>Sets the ID of this lookup to <i>id</i>.</p>
+<p>See also <a href="qhostinfo.html#lookupId">lookupId</a>() and <a href="qhostinfo.html#lookupHost">lookupHost</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QHostInfo &amp; QHostInfo::operator= ( const QHostInfo &amp; <i>other</i> )</h3>
+<p>Assigns the data of the <i>other</i> object to this host info object, and returns a reference to it.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

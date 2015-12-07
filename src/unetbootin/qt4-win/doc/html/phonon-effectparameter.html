@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon-api.qdoc -->
+<head>
+  <title>Qt 4.4: EffectParameter Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">EffectParameter Class Reference<br /><span class="small-subtitle">(Phonon::EffectParameter)<br />[<a href="phonon.html">Phonon</a> module]</span>
+</h1>
+<p>The EffectParameter class describes one parameter of an effect. <a href="#details">More...</a></p>
+<ul>
+<li><a href="phonon-effectparameter-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="phonon-effectparameter.html#Hint-enum">Hint</a></b> { ToggledHint, LogarithmicHint, IntegerHint }</li>
+<li><div class="fn"/>flags <b><a href="phonon-effectparameter.html#Hint-enum">Hints</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="phonon-effectparameter.html#EffectParameter">EffectParameter</a></b> ( const EffectParameter &amp; <i>rhs</i> )</li>
+<li><div class="fn"/><b><a href="phonon-effectparameter.html#EffectParameter-3">EffectParameter</a></b> ( int <i>parameterId</i>, const QString &amp; <i>name</i>, Hints <i>hints</i>, const QVariant &amp; <i>defaultValue</i>, const QVariant &amp; <i>min</i> = QVariant(), const QVariant &amp; <i>max</i> = QVariant(), const QVariantList &amp; <i>values</i> = QVariantList(), const QString &amp; <i>description</i> = QString() )</li>
+<li><div class="fn"/><b><a href="phonon-effectparameter.html#dtor.EffectParameter">~EffectParameter</a></b> ()</li>
+<li><div class="fn"/>QVariant <b><a href="phonon-effectparameter.html#defaultValue">defaultValue</a></b> () const</li>
+<li><div class="fn"/>const QString &amp; <b><a href="phonon-effectparameter.html#description">description</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="phonon-effectparameter.html#isLogarithmicControl">isLogarithmicControl</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="phonon-effectparameter.html#maximumValue">maximumValue</a></b> () const</li>
+<li><div class="fn"/>QVariant <b><a href="phonon-effectparameter.html#minimumValue">minimumValue</a></b> () const</li>
+<li><div class="fn"/>const QString &amp; <b><a href="phonon-effectparameter.html#name">name</a></b> () const</li>
+<li><div class="fn"/>QVariantList <b><a href="phonon-effectparameter.html#possibleValues">possibleValues</a></b> () const</li>
+<li><div class="fn"/>QVariant::Type <b><a href="phonon-effectparameter.html#type">type</a></b> () const</li>
+<li><div class="fn"/>EffectParameter &amp; <b><a href="phonon-effectparameter.html#operator-eq">operator=</a></b> ( const EffectParameter &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>The EffectParameter class describes one parameter of an effect.</p>
+<p>You fetch the parameters of an <a href="phonon-effect.html">Effect</a> with <a href="phonon-effect.html#parameters">Effect::parameters()</a>.</p>
+<pre>     QList&lt;Phonon::EffectParameter&gt; parameters = effect-&gt;parameters();
+
+     foreach(Phonon::EffectParameter parameter, parameters) {
+         <span class="comment">//</span> Do something with parameter
+     }</pre>
+<p>To describe itself, an effect parameter gives a <a href="phonon-effectparameter.html#name">name</a>() and possibly <a href="phonon-effectparameter.html#description">description</a>() (depending on the backend used). These are suited to present the effect parameter to the user of a Phonon application.</p>
+<p>Note that effects are created by the backend, and that their name and descriptions may vary.</p>
+<p>The value of an effect parameter is stored in a <a href="qvariant.html">QVariant</a>, of which <a href="phonon-effectparameter.html#type">type</a>() is usually <tt>int</tt> or <tt>double</tt>.</p>
+<p>The value is retrieved with <a href="phonon-effect.html#parameterValue">Effect::parameterValue()</a> and set with <a href="phonon-effect.html#setParameterValue">setParameterValue()</a> - both of which takes the EffectParameter as argument. Note that not all effect parameters support setting of their value.</p>
+<p>You get the values a parameter can take with <a href="phonon-effectparameter.html#possibleValues">possibleValues</a>(); an empty list is returned if the values are continuous.</p>
+<p>A parameter may also specify <a href="qdialog.html#default">default</a>(), minimum(), and maximum() values. Values are returned as <a href="qvariant.html">QVariant</a>s. If the parameter does not have the requested value, an <a href="qvariant.html#Type-enum">QVariant::Invalid</a> invalid <a href="qvariant.html">QVariant</a> is returned from these functions.</p>
+<p>The <a href="phonon-effectwidget.html">EffectWidget</a> provides a widget with which one can control the parameters of an <a href="phonon-effect.html">Effect</a>.</p>
+<pre>     Phonon::EffectWidget *effectWidget = new Phonon::EffectWidget(effect);</pre>
+<p>See also <a href="phonon-effect.html">Effect</a>, <a href="phonon-effectwidget.html">EffectWidget</a>, and <a href="phonon-capabilities.html">Capabilities Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="Hint-enum"></a>enum EffectParameter::Hint<br />flags EffectParameter::Hints</h3>
+<p>Only for backend developers:</p>
+<p>Flags to set the return values of isToggleControl(), <a href="phonon-effectparameter.html#isLogarithmicControl">isLogarithmicControl</a>(), isIntegerControl(), isBoundedBelow() and isBoundedAbove(). The values of the flags correspond to the values used for LADSPA effects.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::EffectParameter::ToggledHint</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">If this hint is set it means that the the control has only two states: zero and non-zero (see isToggleControl()).</td></tr>
+<tr><td valign="top"><tt>Phonon::EffectParameter::LogarithmicHint</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">LADSPA's SAMPLE_RATE hint needs to be translated by the backend to normal bounds, as the backend knows the sample rate - and the frontend doesn't (see <a href="phonon-effectparameter.html#isLogarithmicControl">isLogarithmicControl</a>()).</td></tr>
+<tr><td valign="top"><tt>Phonon::EffectParameter::IntegerHint</tt></td><td align="center" valign="top"><tt>0x20</tt></td><td valign="top">See isIntegerControl().</td></tr>
+</table></p>
+<p>The Hints type is a typedef for <a href="qflags.html">QFlags</a>&lt;Hint&gt;. It stores an OR combination of Hint values.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="EffectParameter"></a>EffectParameter::EffectParameter ( const EffectParameter &amp; <i>rhs</i> )</h3>
+<h3 class="fn"><a name="EffectParameter-3"></a>EffectParameter::EffectParameter ( int <i>parameterId</i>, const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="phonon-effectparameter.html#Hint-enum">Hints</a> <i>hints</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>defaultValue</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>min</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>max</i> = QVariant(), const <a href="qvariant.html#QVariantList-typedef">QVariantList</a> &amp; <i>values</i> = QVariantList(), const <a href="qstring.html">QString</a> &amp; <i>description</i> = QString() )</h3>
+<p>Only to be used by backend implementations:</p>
+<p>Creates a new effect parameter.</p>
+<p><i>parameterId</i> This is a number to uniquely identify the parameter. The id is used for value() and setValue().</p>
+<p><i>name</i> is the name/label for this parameter.</p>
+<p><i>hints</i> sets the hints for the type of parameter.</p>
+<p><i>defaultValue</i> The value that should be used as a default.</p>
+<p><i>min</i> is the minimum value allowed for this parameter. You only need to set this if the BoundedBelowHint is set.</p>
+<p><i>max</i> is the maximum value allowed for this parameter. You only need to set this if the BoundedAboveHint is set.</p>
+<p>The <i>values</i> parameter is the values that the effect parameter can take (only applies if non-continuous)</p>
+<p><i>description</i> is a descriptive text for the parameter (explaining what it controls) to be used as a tooltip or WhatsThis help.</p>
+<h3 class="fn"><a name="dtor.EffectParameter"></a>EffectParameter::~EffectParameter ()</h3>
+<h3 class="fn"><a name="defaultValue"></a><a href="qvariant.html">QVariant</a> EffectParameter::defaultValue () const</h3>
+<p>The default value.</p>
+<h3 class="fn"><a name="description"></a>const <a href="qstring.html">QString</a> &amp; EffectParameter::description () const</h3>
+<p>The parameter may come with a description (LADSPA doesn't have a field for this, so don't expect many effects to provide a description).</p>
+<p>The description can be used for a tooltip or WhatsThis help.</p>
+<p>Returns A text describing the parameter.</p>
+<h3 class="fn"><a name="isLogarithmicControl"></a>bool EffectParameter::isLogarithmicControl () const</h3>
+<p>Returns whether the parameter should be displayed using a logarithmic scale. This is particularly useful for frequencies and gains.</p>
+<h3 class="fn"><a name="maximumValue"></a><a href="qvariant.html">QVariant</a> EffectParameter::maximumValue () const</h3>
+<p>The maximum value to be used for the control to edit the parameter.</p>
+<p>If the returned <a href="qvariant.html">QVariant</a> is invalid the value is not bounded from above.</p>
+<h3 class="fn"><a name="minimumValue"></a><a href="qvariant.html">QVariant</a> EffectParameter::minimumValue () const</h3>
+<p>The minimum value to be used for the control to edit the parameter.</p>
+<p>If the returned <a href="qvariant.html">QVariant</a> is invalid the value is not bounded from below.</p>
+<h3 class="fn"><a name="name"></a>const <a href="qstring.html">QString</a> &amp; EffectParameter::name () const</h3>
+<p>The name of the parameter. Can be used as the label.</p>
+<p>Returns A label for the parameter.</p>
+<h3 class="fn"><a name="possibleValues"></a><a href="qvariant.html#QVariantList-typedef">QVariantList</a> EffectParameter::possibleValues () const</h3>
+<p>The possible values to be used for the control to edit the parameter.</p>
+<p>if the value of this parameter is to be picked from predefined values this returns the list (otherwise it returns an empty <a href="qvariant.html#QVariantList-typedef">QVariantList</a>).</p>
+<h3 class="fn"><a name="type"></a><a href="qvariant.html#Type-enum">QVariant::Type</a> EffectParameter::type () const</h3>
+<p>Returns the parameter type.</p>
+<p>Common types are <a href="qvariant.html#Type-enum">QVariant::Int</a>, <a href="qvariant.html#Type-enum">QVariant::Double</a>, <a href="qvariant.html#Type-enum">QVariant::Bool</a> and <a href="qvariant.html#Type-enum">QVariant::String</a>. When <a href="qvariant.html#Type-enum">QVariant::String</a> is returned you get the possible values from possibleValues.</p>
+<h3 class="fn"><a name="operator-eq"></a>EffectParameter &amp; EffectParameter::operator= ( const EffectParameter &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> effect parameter to this parameter and returns a reference to this parameter.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

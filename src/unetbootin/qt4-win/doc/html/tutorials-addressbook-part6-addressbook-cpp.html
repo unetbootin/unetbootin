@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: addressbook.cpp Example File (tutorials/addressbook/part6/addressbook.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">addressbook.cpp Example File<br /><span class="small-subtitle">tutorials/addressbook/part6/addressbook.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &quot;addressbook.h&quot;
+
+ AddressBook::AddressBook(QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *nameLabel = new QLabel(tr(&quot;Name:&quot;));
+     nameLine = new QLineEdit;
+     nameLine-&gt;setReadOnly(true);
+
+     QLabel *addressLabel = new QLabel(tr(&quot;Address:&quot;));
+     addressText = new QTextEdit;
+     addressText-&gt;setReadOnly(true);
+
+     addButton = new QPushButton(tr(&quot;&amp;Add&quot;));
+
+     editButton = new QPushButton(tr(&quot;&amp;Edit&quot;));
+     editButton-&gt;setEnabled(false);
+     removeButton = new QPushButton(tr(&quot;&amp;Remove&quot;));
+     removeButton-&gt;setEnabled(false);
+     findButton = new QPushButton(tr(&quot;&amp;Find&quot;));
+     findButton-&gt;setEnabled(false);
+     submitButton = new QPushButton(tr(&quot;&amp;Submit&quot;));
+     submitButton-&gt;hide();
+     cancelButton = new QPushButton(tr(&quot;&amp;Cancel&quot;));
+     cancelButton-&gt;hide();
+
+     nextButton = new QPushButton(tr(&quot;&amp;Next&quot;));
+     nextButton-&gt;setEnabled(false);
+     previousButton = new QPushButton(tr(&quot;&amp;Previous&quot;));
+     previousButton-&gt;setEnabled(false);
+
+     loadButton = new QPushButton(tr(&quot;&amp;Load...&quot;));
+     loadButton-&gt;setToolTip(tr(&quot;Load contacts from a file&quot;));
+     saveButton = new QPushButton(tr(&quot;Sa&amp;ve...&quot;));
+     saveButton-&gt;setToolTip(tr(&quot;Save contacts to a file&quot;));
+     saveButton-&gt;setEnabled(false);
+
+     dialog = new FindDialog;
+
+     connect(addButton, SIGNAL(clicked()), this, SLOT(addContact()));
+     connect(submitButton, SIGNAL(clicked()), this, SLOT(submitContact()));
+     connect(editButton, SIGNAL(clicked()), this, SLOT(editContact()));
+     connect(cancelButton, SIGNAL(clicked()), this, SLOT(cancel()));
+     connect(removeButton, SIGNAL(clicked()), this, SLOT(removeContact()));
+     connect(findButton, SIGNAL(clicked()), this, SLOT(findContact()));
+     connect(nextButton, SIGNAL(clicked()), this, SLOT(next()));
+     connect(previousButton, SIGNAL(clicked()), this, SLOT(previous()));
+     connect(loadButton, SIGNAL(clicked()), this, SLOT(loadFromFile()));
+     connect(saveButton, SIGNAL(clicked()), this, SLOT(saveToFile()));
+
+     QVBoxLayout *buttonLayout1 = new QVBoxLayout;
+     buttonLayout1-&gt;addWidget(addButton);
+     buttonLayout1-&gt;addWidget(editButton);
+     buttonLayout1-&gt;addWidget(removeButton);
+     buttonLayout1-&gt;addWidget(findButton);
+     buttonLayout1-&gt;addWidget(submitButton);
+     buttonLayout1-&gt;addWidget(cancelButton);
+     buttonLayout1-&gt;addWidget(loadButton);
+     buttonLayout1-&gt;addWidget(saveButton);
+     buttonLayout1-&gt;addStretch();
+
+     QHBoxLayout *buttonLayout2 = new QHBoxLayout;
+     buttonLayout2-&gt;addWidget(previousButton);
+     buttonLayout2-&gt;addWidget(nextButton);
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;addWidget(nameLabel, 0, 0);
+     mainLayout-&gt;addWidget(nameLine, 0, 1);
+     mainLayout-&gt;addWidget(addressLabel, 1, 0, Qt::AlignTop);
+     mainLayout-&gt;addWidget(addressText, 1, 1);
+     mainLayout-&gt;addLayout(buttonLayout1, 1, 2);
+     mainLayout-&gt;addLayout(buttonLayout2, 2, 1);
+
+     setLayout(mainLayout);
+     setWindowTitle(tr(&quot;Simple Address Book&quot;));
+ }
+
+ void AddressBook::addContact()
+ {
+     oldName = nameLine-&gt;text();
+     oldAddress = addressText-&gt;toPlainText();
+
+     nameLine-&gt;clear();
+     addressText-&gt;clear();
+
+     updateInterface(AddingMode);
+ }
+
+ void AddressBook::editContact()
+ {
+     oldName = nameLine-&gt;text();
+     oldAddress = addressText-&gt;toPlainText();
+
+     updateInterface(EditingMode);
+ }
+
+ void AddressBook::submitContact()
+ {
+     QString name = nameLine-&gt;text();
+     QString address = addressText-&gt;toPlainText();
+
+     if (name == &quot;&quot; || address == &quot;&quot;) {
+         QMessageBox::information(this, tr(&quot;Empty Field&quot;),
+             tr(&quot;Please enter a name and address.&quot;));
+         return;
+     }
+
+     if (currentMode == AddingMode) {
+
+         if (!contacts.contains(name)) {
+             contacts.insert(name, address);
+             QMessageBox::information(this, tr(&quot;Add Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been added to your address book.&quot;).arg(name));
+         } else {
+             QMessageBox::information(this, tr(&quot;Add Unsuccessful&quot;),
+                 tr(&quot;Sorry, \&quot;%1\&quot; is already in your address book.&quot;).arg(name));
+             return;
+         }
+     } else if (currentMode == EditingMode) {
+
+         if (oldName != name) {
+             if (!contacts.contains(name)) {
+                 QMessageBox::information(this, tr(&quot;Edit Successful&quot;),
+                     tr(&quot;\&quot;%1\&quot; has been edited in your address book.&quot;).arg(oldName));
+                 contacts.remove(oldName);
+                 contacts.insert(name, address);
+             } else {
+                 QMessageBox::information(this, tr(&quot;Edit Unsuccessful&quot;),
+                     tr(&quot;Sorry, \&quot;%1\&quot; is already in your address book.&quot;).arg(name));
+                 return;
+             }
+         } else if (oldAddress != address) {
+             QMessageBox::information(this, tr(&quot;Edit Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been edited in your address book.&quot;).arg(name));
+             contacts[name] = address;
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }
+
+ void AddressBook::cancel()
+ {
+     nameLine-&gt;setText(oldName);
+     addressText-&gt;setText(oldAddress);
+     updateInterface(NavigationMode);
+ }
+
+ void AddressBook::removeContact()
+ {
+     QString name = nameLine-&gt;text();
+     QString address = addressText-&gt;toPlainText();
+
+     if (contacts.contains(name)) {
+
+         int button = QMessageBox::question(this,
+             tr(&quot;Confirm Remove&quot;),
+             tr(&quot;Are you sure you want to remove \&quot;%1\&quot;?&quot;).arg(name),
+             QMessageBox::Yes | QMessageBox::No);
+
+         if (button == QMessageBox::Yes) {
+
+             previous();
+             contacts.remove(name);
+
+             QMessageBox::information(this, tr(&quot;Remove Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been removed from your address book.&quot;).arg(name));
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }
+
+ void AddressBook::next()
+ {
+     QString name = nameLine-&gt;text();
+     QMap&lt;QString, QString&gt;::iterator i = contacts.find(name);
+
+     if (i != contacts.end())
+         i++;
+
+     if (i == contacts.end())
+         i = contacts.begin();
+
+     nameLine-&gt;setText(i.key());
+     addressText-&gt;setText(i.value());
+ }
+
+ void AddressBook::previous()
+ {
+     QString name = nameLine-&gt;text();
+     QMap&lt;QString, QString&gt;::iterator i = contacts.find(name);
+
+     if (i == contacts.end()) {
+         nameLine-&gt;clear();
+         addressText-&gt;clear();
+         return;
+     }
+
+     if (i == contacts.begin())
+         i = contacts.end();
+
+     i--;
+     nameLine-&gt;setText(i.key());
+     addressText-&gt;setText(i.value());
+ }
+
+ void AddressBook::findContact()
+ {
+     dialog-&gt;show();
+
+     if (dialog-&gt;exec() == 1) {
+         QString contactName = dialog-&gt;getFindText();
+
+         if (contacts.contains(contactName)) {
+             nameLine-&gt;setText(contactName);
+             addressText-&gt;setText(contacts.value(contactName));
+         } else {
+             QMessageBox::information(this, tr(&quot;Contact Not Found&quot;),
+                 tr(&quot;Sorry, \&quot;%1\&quot; is not in your address book.&quot;).arg(contactName));
+             return;
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }
+
+ void AddressBook::updateInterface(Mode mode)
+ {
+     currentMode = mode;
+
+     switch (currentMode) {
+
+     case AddingMode:
+     case EditingMode:
+
+         nameLine-&gt;setReadOnly(false);
+         nameLine-&gt;setFocus(Qt::OtherFocusReason);
+         addressText-&gt;setReadOnly(false);
+
+         addButton-&gt;setEnabled(false);
+         editButton-&gt;setEnabled(false);
+         removeButton-&gt;setEnabled(false);
+
+         nextButton-&gt;setEnabled(false);
+         previousButton-&gt;setEnabled(false);
+
+         submitButton-&gt;show();
+         cancelButton-&gt;show();
+
+         loadButton-&gt;setEnabled(false);
+         saveButton-&gt;setEnabled(false);
+         break;
+
+     case NavigationMode:
+
+         if (contacts.isEmpty()) {
+             nameLine-&gt;clear();
+             addressText-&gt;clear();
+         }
+
+         nameLine-&gt;setReadOnly(true);
+         addressText-&gt;setReadOnly(true);
+         addButton-&gt;setEnabled(true);
+
+         int number = contacts.size();
+         editButton-&gt;setEnabled(number &gt;= 1);
+         removeButton-&gt;setEnabled(number &gt;= 1);
+         findButton-&gt;setEnabled(number &gt; 2);
+         nextButton-&gt;setEnabled(number &gt; 1);
+         previousButton-&gt;setEnabled(number &gt; 1);
+
+         submitButton-&gt;hide();
+         cancelButton-&gt;hide();
+
+         loadButton-&gt;setEnabled(true);
+         saveButton-&gt;setEnabled(number &gt;= 1);
+         break;
+     }
+ }
+
+ void AddressBook::saveToFile()
+ {
+     QString fileName = QFileDialog::getSaveFileName(this,
+         tr(&quot;Save Address Book&quot;), &quot;&quot;,
+         tr(&quot;Address Book (*.abk);;All Files (*)&quot;));
+
+     if (fileName.isEmpty())
+         return;
+     else {
+         QFile file(fileName);
+         if (!file.open(QIODevice::WriteOnly)) {
+             QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+                 file.errorString());
+             return;
+         }
+
+         QDataStream out(&amp;file);
+         out.setVersion(QDataStream::Qt_4_3);
+         out &lt;&lt; contacts;
+     }
+ }
+
+ void AddressBook::loadFromFile()
+ {
+     QString fileName = QFileDialog::getOpenFileName(this,
+         tr(&quot;Open Address Book&quot;), &quot;&quot;,
+         tr(&quot;Address Book (*.abk);;All Files (*)&quot;));
+
+     if (fileName.isEmpty())
+         return;
+     else {
+
+         QFile file(fileName);
+
+         if (!file.open(QIODevice::ReadOnly)) {
+             QMessageBox::information(this, tr(&quot;Unable to open file&quot;),
+                 file.errorString());
+             return;
+         }
+
+         QDataStream in(&amp;file);
+         in.setVersion(QDataStream::Qt_4_3);
+         contacts.empty();   <span class="comment">//</span> empty existing contacts
+         in &gt;&gt; contacts;
+
+         if (contacts.isEmpty()) {
+             QMessageBox::information(this, tr(&quot;No contacts in file&quot;),
+                 tr(&quot;The file you are attempting to open contains no contacts.&quot;));
+         } else {
+             QMap&lt;QString, QString&gt;::iterator i = contacts.begin();
+             nameLine-&gt;setText(i.key());
+             addressText-&gt;setText(i.value());
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

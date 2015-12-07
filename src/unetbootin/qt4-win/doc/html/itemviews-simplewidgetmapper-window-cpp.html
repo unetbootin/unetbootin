@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (itemviews/simplewidgetmapper/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">itemviews/simplewidgetmapper/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;window.h&quot;
+
+ Window::Window(QWidget *parent)
+     : QWidget(parent)
+ {
+     setupModel();
+
+     nameLabel = new QLabel(tr(&quot;Na&amp;me:&quot;));
+     nameEdit = new QLineEdit();
+     addressLabel = new QLabel(tr(&quot;&amp;Address:&quot;));
+     addressEdit = new QTextEdit();
+     ageLabel = new QLabel(tr(&quot;A&amp;ge (in years):&quot;));
+     ageSpinBox = new QSpinBox();
+     nextButton = new QPushButton(tr(&quot;&amp;Next&quot;));
+     previousButton = new QPushButton(tr(&quot;&amp;Previous&quot;));
+
+     nameLabel-&gt;setBuddy(nameEdit);
+     addressLabel-&gt;setBuddy(addressEdit);
+     ageLabel-&gt;setBuddy(ageSpinBox);
+
+     mapper = new QDataWidgetMapper(this);
+     mapper-&gt;setModel(model);
+     mapper-&gt;addMapping(nameEdit, 0);
+     mapper-&gt;addMapping(addressEdit, 1);
+     mapper-&gt;addMapping(ageSpinBox, 2);
+
+     connect(previousButton, SIGNAL(clicked()),
+             mapper, SLOT(toPrevious()));
+     connect(nextButton, SIGNAL(clicked()),
+             mapper, SLOT(toNext()));
+     connect(mapper, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(updateButtons(int)));
+
+     QGridLayout *layout = new QGridLayout();
+     layout-&gt;addWidget(nameLabel, 0, 0, 1, 1);
+     layout-&gt;addWidget(nameEdit, 0, 1, 1, 1);
+     layout-&gt;addWidget(previousButton, 0, 2, 1, 1);
+     layout-&gt;addWidget(addressLabel, 1, 0, 1, 1);
+     layout-&gt;addWidget(addressEdit, 1, 1, 2, 1);
+     layout-&gt;addWidget(nextButton, 1, 2, 1, 1);
+     layout-&gt;addWidget(ageLabel, 3, 0, 1, 1);
+     layout-&gt;addWidget(ageSpinBox, 3, 1, 1, 1);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Simple Widget Mapper&quot;));
+     mapper-&gt;toFirst();
+ }
+
+ void Window::setupModel()
+ {
+     model = new QStandardItemModel(5, 3, this);
+
+     QStringList names;
+     names &lt;&lt; &quot;Alice&quot; &lt;&lt; &quot;Bob&quot; &lt;&lt; &quot;Carol&quot; &lt;&lt; &quot;Donald&quot; &lt;&lt; &quot;Emma&quot;;
+
+     QStringList addresses;
+     addresses &lt;&lt; &quot;&lt;qt&gt;123 Main Street&lt;br/&gt;Market Town&lt;/qt&gt;&quot;
+               &lt;&lt; &quot;&lt;qt&gt;PO Box 32&lt;br/&gt;Mail Handling Service&quot;
+                  &quot;&lt;br/&gt;Service City&lt;/qt&gt;&quot;
+               &lt;&lt; &quot;&lt;qt&gt;The Lighthouse&lt;br/&gt;Remote Island&lt;/qt&gt;&quot;
+               &lt;&lt; &quot;&lt;qt&gt;47338 Park Avenue&lt;br/&gt;Big City&lt;/qt&gt;&quot;
+               &lt;&lt; &quot;&lt;qt&gt;Research Station&lt;br/&gt;Base Camp&lt;br/&gt;Big Mountain&lt;/qt&gt;&quot;;
+
+     QStringList ages;
+     ages &lt;&lt; &quot;20&quot; &lt;&lt; &quot;31&quot; &lt;&lt; &quot;32&quot; &lt;&lt; &quot;19&quot; &lt;&lt; &quot;26&quot;;
+
+     for (int row = 0; row &lt; 5; ++row) {
+       QStandardItem *item = new QStandardItem(names[row]);
+       model-&gt;setItem(row, 0, item);
+       item = new QStandardItem(addresses[row]);
+       model-&gt;setItem(row, 1, item);
+       item = new QStandardItem(ages[row]);
+       model-&gt;setItem(row, 2, item);
+     }
+ }
+
+ void Window::updateButtons(int row)
+ {
+     previousButton-&gt;setEnabled(row &gt; 0);
+     nextButton-&gt;setEnabled(row &lt; model-&gt;rowCount() - 1);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

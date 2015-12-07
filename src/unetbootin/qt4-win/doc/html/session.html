@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/session.qdoc -->
+<head>
+  <title>Qt 4.4: Session Management</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Session Management<br /><span class="subtitle"></span>
+</h1>
+<p>A <i>session</i> is a group of running applications, each of which has a particular state. The session is controlled by a service called the <i>session</i> <i>manager</i>. The applications participating in the session are called <i>session clients</i>.</p>
+<p>The session manager issues commands to its clients on behalf of the user. These commands may cause clients to commit unsaved changes (for example by saving open files), to preserve their state for future sessions, or to terminate gracefully. The set of these operations is called <i>session</i> <i>management</i>.</p>
+<p>In the common case, a session consists of all applications that a user runs on their desktop at a time. Under Unix/X11, however, a session may include applications running on different computers and may span multiple displays.</p>
+<a name="shutting-a-session-down"></a>
+<h2>Shutting a Session Down</h2>
+<p>A session is shut down by the session manager, usually on behalf of the user when they want to log out. A system might also perform an automatic shutdown in an emergency situation, for example, if power is about to be lost. Clearly there is a significant difference between these types of shutdown. During the first, the user may want to interact with the application, specifying exactly which files should be saved and which should be discarded. In the latter case, there's no time for interaction. There may not even be a user sitting in front of the machine!</p>
+<a name="protocols-and-support-on-different-platforms"></a>
+<h2>Protocols and Support on Different Platforms</h2>
+<p>On Mac OS X, and Microsoft Windows versions prior to Windows 2000, there is nothing like complete session management for applications yet, i.e&#x2e; no restoring of previous sessions. (Windows 2000 and XP provide &quot;hibernation&quot; where the entire memory is saved to disk and restored when the machine is restarted.) They do support graceful logouts where applications have the opportunity to cancel the process after getting confirmation from the user. This is the functionality that corresponds to the <a href="qapplication.html#commitData">QApplication::commitData</a>() method.</p>
+<p>X11 has supported complete session management since X11R6.</p>
+<a name="getting-session-management-to-work-with-qt"></a>
+<h2>Getting Session Management to Work with Qt</h2>
+<p>Start by reimplementing <a href="qapplication.html#commitData">QApplication::commitData</a>() to enable your application to take part in the graceful logout process. If you are only targeting the Microsoft Windows platform, this is all you can and must provide. Ideally, your application should provide a shutdown dialog similar to the following:</p>
+<p align="center"><img src="images/session.png" alt="A typical dialog on shutdown" /></p><p>Example code for this dialog can be found in the documentation of <a href="qsessionmanager.html#allowsInteraction">QSessionManager::allowsInteraction</a>().</p>
+<p>For complete session management (only supported on X11R6 at present), you must also take care of saving the application's state, and potentially of restoring the state in the next life cycle of the session. This saving is done by reimplementing <a href="qapplication.html#saveState">QApplication::saveState</a>(). All state data you are saving in this function, should be marked with the session identifier <a href="qapplication.html#sessionId">QApplication::sessionId</a>(). This application specific identifier is globally unique, so no clashes will occur. (See <a href="qsessionmanager.html">QSessionManager</a> for information on saving/restoring the state of a particular Qt application.)</p>
+<p>Restoration is usually done in the application's main() function. Check if <a href="qapplication.html#isSessionRestored">QApplication::isSessionRestored</a>() is <tt>true</tt>. If that's the case, use the session identifier <a href="qapplication.html#sessionId">QApplication::sessionId</a>() again to access your state data and restore the state of the application.</p>
+<p><b>Important:</b> In order to allow the window manager to restore window attributes such as stacking order or geometry information, you must identify your top level widgets with unique application-wide object names (see <a href="qobject.html#objectName-prop">QObject::setObjectName</a>()). When restoring the application, you must ensure that all restored top level widgets are given the same unique names they had before.</p>
+<a name="testing-and-debugging-session-management"></a>
+<h2>Testing and Debugging Session Management</h2>
+<p>Session management support on Mac OS X and Windows is fairly limited due to the lack of this functionality in the operating system itself. Simply shut the session down and verify that your application behaves as expected. It may be useful to launch another application, usually the integrated development environment, before starting your application. This other application will get the shutdown message afterwards, thus permitting you to cancel the shutdown. Otherwise you would have to log in again after each test run, which is not a problem per se, but is time consuming.</p>
+<p>On Unix you can either use a desktop environment that supports standard X11R6 session management or, the recommended method, use the session manager reference implementation provided by the X Consortium. This sample manager is called <tt>xsm</tt> and is part of a standard X11R6 installation. As always with X11, a useful and informative manual page is provided. Using <tt>xsm</tt> is straightforward (apart from the clumsy Athena-based user interface). Here's a simple approach:</p>
+<ul>
+<li>Run X11R6.</li>
+<li>Create a dot file <tt>.xsmstartup</tt> in your home directory which contains the single line<pre>     xterm</pre>
+<p>This tells <tt>xsm</tt> that the default/failsafe session is just an xterm and nothing else. Otherwise <tt>xsm</tt> would try to invoke lots of clients including the windowmanager <tt>twm</tt>, which isn't very helpful.</p>
+</li>
+<li>Now launch <tt>xsm</tt> from another terminal window. Both a session manager window and the xterm will appear. The xterm has a nice property that sets it apart from all the other shells you are currently running: within its shell, the <tt>SESSION_MANAGER</tt> environment variable points to the session manager you just started.</li>
+<li>Launch your application from the new xterm window. It will connect itself automatically to the session manager. You can check with the <i>ClientList</i> push button whether the connect was successful.<p><b>Note:</b> Never keep the <i>ClientList</i> open when you start or end session managed clients! Otherwise <tt>xsm</tt> is likely to crash.</p>
+</li>
+<li>Use the session manager's <i>Checkpoint</i> and <i>Shutdown</i> buttons with different settings and see how your application behaves. The save type <i>local</i> means that the clients should save their state. It corresponds to the <a href="qapplication.html#saveState">QApplication::saveState</a>() function. The <i>global</i> save type asks applications to save their unsaved changes in permanent, globally accessible storage. It invokes <a href="qapplication.html#commitData">QApplication::commitData</a>().</li>
+<li>Whenever something crashes, blame <tt>xsm</tt> and not Qt. <tt>xsm</tt> is far from being a usable session manager on a user's desktop. It is, however, stable and useful enough to serve as testing environment.</li>
+</ul>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

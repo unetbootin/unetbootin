@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: context2d.h Example File (script/context2d/context2d.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">context2d.h Example File<br /><span class="small-subtitle">script/context2d/context2d.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #ifndef CONTEXT2D_H
+ #define CONTEXT2D_H
+
+ #include &quot;domimage.h&quot;
+
+ #include &lt;QPainter&gt;
+ #include &lt;QString&gt;
+ #include &lt;QStack&gt;
+ #include &lt;QMetaType&gt;
+ #include &lt;QExplicitlySharedDataPointer&gt;
+
+ #include &lt;qscriptengine.h&gt;
+
+ class CanvasGradientData;
+
+ typedef QExplicitlySharedDataPointer&lt;CanvasGradientData&gt; CanvasGradient;
+
+ class CanvasGradientData: public QSharedData
+ {
+ public:
+     CanvasGradientData(const QGradient &amp;g)
+         : gradient(g) {}
+
+     const QGradient &amp;qgradient() const
+     {
+         return gradient;
+     }
+
+     static void setup(QScriptEngine *e);
+
+ private: <span class="comment">//</span> API
+     static QScriptValue addColorStop(QScriptContext *, QScriptEngine *);
+
+ public: <span class="comment">//</span> attributes
+     QGradient gradient;
+ };
+
+ Q_DECLARE_METATYPE(CanvasGradient)
+
+ class ImageData {
+ };
+
+ class QContext2DCanvas;
+
+ class Context2D : public QObject
+ {
+     Q_OBJECT
+
+     <span class="comment">//</span> compositing
+     Q_PROPERTY(qreal globalAlpha READ globalAlpha WRITE setGlobalAlpha)
+     Q_PROPERTY(QString globalCompositeOperation READ globalCompositeOperation WRITE setGlobalCompositeOperation)
+     Q_PROPERTY(QVariant strokeStyle READ strokeStyle WRITE setStrokeStyle)
+     Q_PROPERTY(QVariant fillStyle READ fillStyle WRITE setFillStyle)
+     <span class="comment">//</span> line caps/joins
+     Q_PROPERTY(qreal lineWidth READ lineWidth WRITE setLineWidth)
+     Q_PROPERTY(QString lineCap READ lineCap WRITE setLineCap)
+     Q_PROPERTY(QString lineJoin READ lineJoin WRITE setLineJoin)
+     Q_PROPERTY(qreal miterLimit READ miterLimit WRITE setMiterLimit)
+     <span class="comment">//</span> shadows
+     Q_PROPERTY(qreal shadowOffsetX READ shadowOffsetX WRITE setShadowOffsetX)
+     Q_PROPERTY(qreal shadowOffsetY READ shadowOffsetY WRITE setShadowOffsetY)
+     Q_PROPERTY(qreal shadowBlur READ shadowBlur WRITE setShadowBlur)
+     Q_PROPERTY(QColor shadowColor READ shadowColor WRITE setShadowColor)
+
+ public:
+     Context2D(QContext2DCanvas *parent);
+     void setSize(int w, int h);
+
+     void begin();
+     const QImage &amp;end();
+
+     void clear();
+
+     <span class="comment">//</span> compositing
+     qreal globalAlpha() const; <span class="comment">//</span> (default 1.0)
+     QString globalCompositeOperation() const; <span class="comment">//</span> (default over)
+     QVariant strokeStyle() const; <span class="comment">//</span> (default black)
+     QVariant fillStyle() const; <span class="comment">//</span> (default black)
+
+     void setGlobalAlpha(qreal alpha);
+     void setGlobalCompositeOperation(const QString &amp;op);
+     void setStrokeStyle(const QVariant &amp;style);
+     void setFillStyle(const QVariant &amp;style);
+
+     <span class="comment">//</span> line caps/joins
+     qreal lineWidth() const; <span class="comment">//</span> (default 1)
+     QString lineCap() const; <span class="comment">//</span> &quot;butt&quot;, &quot;round&quot;, &quot;square&quot; (default &quot;butt&quot;)
+     QString lineJoin() const; <span class="comment">//</span> &quot;round&quot;, &quot;bevel&quot;, &quot;miter&quot; (default &quot;miter&quot;)
+     qreal miterLimit() const; <span class="comment">//</span> (default 10)
+
+     void setLineWidth(qreal w);
+     void setLineCap(const QString &amp;s);
+     void setLineJoin(const QString &amp;s);
+     void setMiterLimit(qreal m);
+
+     <span class="comment">//</span> shadows
+     qreal shadowOffsetX() const; <span class="comment">//</span> (default 0)
+     qreal shadowOffsetY() const; <span class="comment">//</span> (default 0)
+     qreal shadowBlur() const; <span class="comment">//</span> (default 0)
+     QColor shadowColor() const; <span class="comment">//</span> (default black)
+
+     void setShadowOffsetX(qreal x);
+     void setShadowOffsetY(qreal y);
+     void setShadowBlur(qreal b);
+     void setShadowColor(const QColor &amp;c);
+
+ public slots:
+     void save(); <span class="comment">//</span> push state on state stack
+     void restore(); <span class="comment">//</span> pop state stack and restore state
+
+     void scale(qreal x, qreal y);
+     void rotate(qreal angle);
+     void translate(qreal x, qreal y);
+     void transform(qreal m11, qreal m12, qreal m21, qreal m22,
+                    qreal dx, qreal dy);
+     void setTransform(qreal m11, qreal m12, qreal m21, qreal m22,
+                       qreal dx, qreal dy);
+
+     CanvasGradient createLinearGradient(qreal x0, qreal y0,
+                                         qreal x1, qreal y1);
+     CanvasGradient createRadialGradient(qreal x0, qreal y0,
+                                         qreal r0, qreal x1,
+                                         qreal y1, qreal r1);
+
+     <span class="comment">//</span> rects
+     void clearRect(qreal x, qreal y, qreal w, qreal h);
+     void fillRect(qreal x, qreal y, qreal w, qreal h);
+     void strokeRect(qreal x, qreal y, qreal w, qreal h);
+
+     <span class="comment">//</span> path API
+     void beginPath();
+     void closePath();
+     void moveTo(qreal x, qreal y);
+     void lineTo(qreal x, qreal y);
+     void quadraticCurveTo(qreal cpx, qreal cpy, qreal x, qreal y);
+     void bezierCurveTo(qreal cp1x, qreal cp1y,
+                        qreal cp2x, qreal cp2y, qreal x, qreal y);
+     void arcTo(qreal x1, qreal y1, qreal x2, qreal y2, qreal radius);
+     void rect(qreal x, qreal y, qreal w, qreal h);
+     void arc(qreal x, qreal y, qreal radius,
+              qreal startAngle, qreal endAngle,
+              bool anticlockwise);
+     void fill();
+     void stroke();
+     void clip();
+     bool isPointInPath(qreal x, qreal y) const;
+
+     <span class="comment">//</span> drawing images
+     void drawImage(DomImage *image, qreal dx, qreal dy);
+     void drawImage(DomImage *image, qreal dx, qreal dy,
+                    qreal dw, qreal dh);
+     void drawImage(DomImage *image, qreal sx, qreal sy,
+                    qreal sw, qreal sh, qreal dx, qreal dy,
+                    qreal dw, qreal dh);
+
+     <span class="comment">//</span> pixel manipulation
+     ImageData getImageData(qreal sx, qreal sy, qreal sw, qreal sh);
+     void putImageData(ImageData image, qreal dx, qreal dy);
+ private:
+     QImage  m_cache;
+     QPainter m_painter;
+     QPainterPath m_path;
+     struct State {
+         State()
+             : creatingShape(false)
+         {}
+
+         QMatrix      matrix;
+         bool         creatingShape;
+     };
+     State m_state;
+     QStack&lt;State&gt; m_stateStack;
+ };
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

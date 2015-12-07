@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtxml.qdoc -->
+<head>
+  <title>Qt 4.4: QtXml Module</title>
+  <link rel="prev" href="qtsvg.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qtxmlpatterns.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtsvg.html">QtSvg Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtxmlpatterns.html">QtXmlPatterns Module</a>]
+</p>
+<h1 class="title">QtXml Module<br /><span class="subtitle"></span>
+</h1>
+<p>The QtXml module provides a stream reader and writer for XML documents, and C++ implementations of SAX and DOM. <a href="#details">More...</a></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qdomattr.html">QDomAttr</a></th><td>Represents one attribute of a QDomElement</td></tr>
+<tr valign="top" class="even"><th><a href="qdomcdatasection.html">QDomCDATASection</a></th><td>Represents an XML CDATA section</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomcharacterdata.html">QDomCharacterData</a></th><td>Represents a generic string in the DOM</td></tr>
+<tr valign="top" class="even"><th><a href="qdomcomment.html">QDomComment</a></th><td>Represents an XML comment</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomdocument.html">QDomDocument</a></th><td>Represents an XML document</td></tr>
+<tr valign="top" class="even"><th><a href="qdomdocumentfragment.html">QDomDocumentFragment</a></th><td>Tree of QDomNodes which is not usually a complete QDomDocument</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomdocumenttype.html">QDomDocumentType</a></th><td>The representation of the DTD in the document tree</td></tr>
+<tr valign="top" class="even"><th><a href="qdomelement.html">QDomElement</a></th><td>Represents one element in the DOM tree</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomentity.html">QDomEntity</a></th><td>Represents an XML entity</td></tr>
+<tr valign="top" class="even"><th><a href="qdomentityreference.html">QDomEntityReference</a></th><td>Represents an XML entity reference</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomimplementation.html">QDomImplementation</a></th><td>Information about the features of the DOM implementation</td></tr>
+<tr valign="top" class="even"><th><a href="qdomnamednodemap.html">QDomNamedNodeMap</a></th><td>Contains a collection of nodes that can be accessed by name</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomnode.html">QDomNode</a></th><td>The base class for all the nodes in a DOM tree</td></tr>
+<tr valign="top" class="even"><th><a href="qdomnodelist.html">QDomNodeList</a></th><td>List of QDomNode objects</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomnotation.html">QDomNotation</a></th><td>Represents an XML notation</td></tr>
+<tr valign="top" class="even"><th><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></th><td>Represents an XML processing instruction</td></tr>
+<tr valign="top" class="odd"><th><a href="qdomtext.html">QDomText</a></th><td>Represents text data in the parsed XML document</td></tr>
+<tr valign="top" class="even"><th><a href="qxmlattributes.html">QXmlAttributes</a></th><td>XML attributes</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmlcontenthandler.html">QXmlContentHandler</a></th><td>Interface to report the logical content of XML data</td></tr>
+<tr valign="top" class="even"><th><a href="qxmldtdhandler.html">QXmlDTDHandler</a></th><td>Interface to report DTD content of XML data</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmldeclhandler.html">QXmlDeclHandler</a></th><td>Interface to report declaration content of XML data</td></tr>
+<tr valign="top" class="even"><th><a href="qxmldefaulthandler.html">QXmlDefaultHandler</a></th><td>Default implementation of all the XML handler classes</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmlentityresolver.html">QXmlEntityResolver</a></th><td>Interface to resolve external entities contained in XML data</td></tr>
+<tr valign="top" class="even"><th><a href="qxmlerrorhandler.html">QXmlErrorHandler</a></th><td>Interface to report errors in XML data</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmlinputsource.html">QXmlInputSource</a></th><td>The input data for the QXmlReader subclasses</td></tr>
+<tr valign="top" class="even"><th><a href="qxmllexicalhandler.html">QXmlLexicalHandler</a></th><td>Interface to report the lexical content of XML data</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmllocator.html">QXmlLocator</a></th><td>The XML handler classes with information about the parsing position within a file</td></tr>
+<tr valign="top" class="even"><th><a href="qxmlnamespacesupport.html">QXmlNamespaceSupport</a></th><td>Helper class for XML readers which want to include namespace support</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmlparseexception.html">QXmlParseException</a></th><td>Used to report errors with the QXmlErrorHandler interface</td></tr>
+<tr valign="top" class="even"><th><a href="qxmlreader.html">QXmlReader</a></th><td>Interface for XML readers (i.e&#x2e; parsers)</td></tr>
+<tr valign="top" class="odd"><th><a href="qxmlsimplereader.html">QXmlSimpleReader</a></th><td>Implementation of a simple XML parser</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>SAX is an event-based standard interface for XML parsers. The Qt interface follows the design of the SAX2 Java implementation. Its naming scheme was adapted to fit the Qt naming conventions. Details on SAX2 can be found at <a href="http://www.saxproject.org">http://www.saxproject.org</a>.</p>
+<p>Support for SAX2 filters and the reader factory are under development. The Qt implementation does not include the SAX1 compatibility classes present in the Java interface. For an introduction to Qt's SAX2 classes, see <a href="#the-qt-sax2-classes">The Qt SAX2 Classes</a>.</p>
+<p>DOM Level 2 is a W3C Recommendation for XML interfaces that maps the constituents of an XML document to a tree structure. The specification of DOM Level 2 can be found at <a href="http://www.w3.org/DOM/">http://www.w3.org/DOM/</a>. For more information about the DOM classes in Qt is provided, see <a href="#the-qt-dom-classes">The Qt DOM Classes</a>.</p>
+<p>Since version 4.3, Qt provides two new classes for reading and writing XML: <a href="qxmlstreamreader.html">QXmlStreamReader</a> and <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>.</p>
+<p>In addition to core XML support, classes for higher level querying and manipulation of XML data, are provided by the <a href="qtxmlpatterns.html">QtXmlPatterns</a> module. In the <a href="qtsvg.html">QtSvg</a> module, the <a href="qsvgrenderer.html">QSvgRenderer</a> and <a href="qsvggenerator.html">QSvgGenerator</a> classes can read and write a subset of SVG, an XML-based file format. Qt also provides helper functions that may be useful to those working with XML and XHTML: see <a href="qt.html#escape">Qt::escape</a>() and <a href="qt.html#convertFromPlainText">Qt::convertFromPlainText</a>().</p>
+<p>Further XML support is provided by the <a href="http://www.trolltech.com/products/qt/addon/solutions/">Qt Solutions</a> group who provide, for example, classes that support SOAP and MML with the Qt XML classes.</p>
+<p>This module is part of the <a href="commercialeditions.html#qt-console-edition">Qt Console Edition</a>, the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>, and the <a href="opensourceedition.html">Qt Open Source Edition</a>.</p>
+<p>Topics:</p>
+<ul><li><a href="#configuring-the-build-process">Configuring the Build Process</a></li>
+<li><a href="#the-qtxml-stream-classes">The QtXml Stream Classes</a></li>
+<li><a href="#the-qt-sax2-classes">The Qt SAX2 Classes</a></li>
+<ul><li><a href="#introduction-to-sax2">Introduction to SAX2</a></li>
+<li><a href="#sax2-features">SAX2 Features</a></li>
+<li><a href="#namespace-support-via-features">Namespace Support via Features</a></li>
+<ul><li><a href="#summary">Summary</a></li>
+</ul>
+<li><a href="#properties">Properties</a></li>
+</ul>
+<li><a href="#the-qt-dom-classes">The Qt DOM Classes</a></li>
+<ul><li><a href="#introduction-to-dom">Introduction to DOM</a></li>
+</ul>
+<li><a href="#an-introduction-to-namespaces">An Introduction to Namespaces</a></li>
+<ul><li><a href="#conventions-used-in-the-qt-xml-documentation">Conventions Used in the Qt XML Documentation</a></li>
+</ul>
+</ul>
+<a name="configuring-the-build-process"></a>
+<h3>Configuring the Build Process</h3>
+<p>Applications that use Qt's XML classes need to be configured to be built against the QtXml module. The following declaration in a <tt>qmake</tt> project file ensures that an application is compiled and linked appropriately:</p>
+<p>To include the definitions of the module's classes, use the following directive:</p>
+<pre>         #include &lt;QtXml&gt;</pre>
+<p>To link against the module, add this line to your <a href="qmake-manual.html#qmake">qmake</a> <tt>.pro</tt> file:</p>
+<pre>         QT += xml</pre>
+<p>This line is necessary because only the <a href="qtcore.html">QtCore</a> and <a href="qtgui.html">QtGui</a> modules are used in the default build process.</p>
+<a name="the-qtxml-stream-classes"></a>
+<h3>The QtXml Stream Classes</h3>
+<p>The <a href="qxmlstreamreader.html">QXmlStreamReader</a> and <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> are two new classes provided in Qt 4.3 and later. A stream reader reports an XML document as a stream of tokens. This differs from SAX as SAX applications provide handlers to receive XML events from the parser whereas the <a href="qxmlstreamreader.html">QXmlStreamReader</a> drives the loop, pulling tokens from the reader when they are needed. This pulling approach makes it possible to build recursive descent parsers, allowing XML parsing code to be split into different methods or classes.</p>
+<p><a href="qxmlstreamreader.html">QXmlStreamReader</a> is a well-formed XML 1.0 parser that excludes external parsed entities. Hence, data provided by the stream reader adheres to the W3C's criteria for well-formed XML, as long as no error occurs. Otherwise, functions such as <a href="qxmlstreamreader.html#atEnd">atEnd()</a>, <a href="qxmlstreamreader.html#error">error()</a> and <a href="qxmlstreamreader.html#hasError">hasError()</a> can be used to check and view the errors.</p>
+<p>An example of <a href="qxmlstreamreader.html">QXmlStreamReader</a> implementation would be the <tt>XbelReader</tt> in <a href="xml-streambookmarks.html">QXmlStream Bookmarks Example</a>, which is a subclass of <a href="qxmlstreamreader.html">QXmlStreamReader</a>. The constructor takes <i>treeWidget</i> as a parameter and the class has Xbel specific functions:</p>
+<pre>     XbelReader(QTreeWidget *treeWidget);
+     ...
+     void readUnknownElement();
+     void readXBEL();
+     void readTitle(QTreeWidgetItem *item);
+     void readSeparator(QTreeWidgetItem *item);
+     void readFolder(QTreeWidgetItem *item);
+     void readBookmark(QTreeWidgetItem *item);
+
+     QTreeWidgetItem *createChildItem(QTreeWidgetItem *item);
+
+     QTreeWidget *treeWidget;
+     ...</pre>
+<p>The <tt>read()</tt> function accepts a <a href="qiodevice.html">QIODevice</a> and sets it with <a href="qxmlstreamreader.html#setDevice">setDevice()</a>. The <a href="qxmlstreamreader.html#raiseError">raiseError()</a> function is used to display a custom error message, inidicating that the file's version is incorrect.</p>
+<pre> bool XbelReader::read(QIODevice *device)
+ {
+     setDevice(device);
+
+     while (!atEnd()) {
+         readNext();
+
+         if (isStartElement()) {
+             if (name() == &quot;xbel&quot; &amp;&amp; attributes().value(&quot;version&quot;) == &quot;1.0&quot;)
+                 readXBEL();
+             else
+                 raiseError(QObject::tr(&quot;The file is not an XBEL version 1.0 file.&quot;));
+         }
+     }
+
+     return !error();
+ }</pre>
+<p>The pendent to <a href="qxmlstreamreader.html">QXmlStreamReader</a> is <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>, which provides an XML writer with a simple streaming API. <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> operates on a <a href="qiodevice.html">QIODevice</a> and has specialised functions for all XML tokens or events you want to write, such as <a href="qxmlstreamwriter.html#writeDTD">writeDTD()</a>, <a href="qxmlstreamwriter.html#writeCharacters">writeCharacters()</a>, <a href="qxmlstreamwriter.html#writeComment">writeComment()</a> and so on.</p>
+<p>To write XML document with <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>, you start a document with the <a href="qxmlstreamwriter.html#writeStartDocument">writeStartDocument()</a> function and end it with <a href="qxmlstreamwriter.html#writeEndDocument">writeEndDocument()</a>, which implicitly closes all remaining open tags. Element tags are opened with <a href="qxmlstreamwriter.html#writeStartDocument">writeStartDocument()</a> and followed by <a href="qxmlstreamwriter.html#writeAttribute">writeAttribute()</a> or <a href="qxmlstreamwriter.html#writeAttributes">writeAttributes()</a>, element content, and then <a href="qxmlstreamwriter.html#writeEndDocument">writeEndDocument()</a>. Also, <a href="qxmlstreamwriter.html#writeEmptyElement">writeEmptyElement()</a> can be used to write empty elements.</p>
+<p>Element content comprises characters, entity references or nested elements. Content can be written with <a href="qxmlstreamwriter.html#writeCharacters">writeCharacters()</a>, a function that also takes care of escaping all forbidden characters and character sequences, <a href="qxmlstreamwriter.html#writeEntityReference">writeEntityReference()</a>, or subsequent calls to <a href="qxmlstreamwriter.html#writeStartElement">writeStartElement()</a>.</p>
+<p>The <tt>XbelWriter</tt> class from <a href="xml-streambookmarks.html">QXmlStream Bookmarks Example</a> is a subclass of <a href="qxmlstreamwriter.html">QXmlStreamWriter</a>. Its <tt>writeFile()</tt> function illustrates the core functions of <a href="qxmlstreamwriter.html">QXmlStreamWriter</a> mentioned above:</p>
+<pre> bool XbelWriter::writeFile(QIODevice *device)
+ {
+     setDevice(device);
+
+     writeStartDocument();
+     writeDTD(&quot;&lt;!DOCTYPE xbel&gt;&quot;);
+     writeStartElement(&quot;xbel&quot;);
+     writeAttribute(&quot;version&quot;, &quot;1.0&quot;);
+     for (int i = 0; i &lt; treeWidget-&gt;topLevelItemCount(); ++i)
+         writeItem(treeWidget-&gt;topLevelItem(i));
+
+     writeEndDocument();
+     return true;
+ }</pre>
+<a name="the-qt-sax2-classes"></a>
+<h3>The Qt SAX2 Classes</h3>
+<a name="introduction-to-sax2"></a>
+<h4>Introduction to SAX2</h4>
+<p>The SAX2 interface is an event-driven mechanism to provide the user with document information. An &quot;event&quot; in this context means something reported by the parser, for example, it has encountered a start tag, or an end tag, etc.</p>
+<p>To make it less abstract consider the following example:</p>
+<pre>     &lt;quote&gt;A quotation.&lt;/quote&gt;</pre>
+<p>Whilst reading (a SAX2 parser is usually referred to as &quot;reader&quot;) the above document three events would be triggered:</p>
+<ol type="1">
+<li>A start tag occurs (<tt>&lt;quote&gt;</tt>).</li>
+<li>Character data (i.e&#x2e; text) is found, &quot;A quotation.&quot;&#x2e;</li>
+<li>An end tag is parsed (<tt>&lt;/quote&gt;</tt>).</li>
+</ol>
+<p>Each time such an event occurs the parser reports it; you can set up event handlers to respond to these events.</p>
+<p>Whilst this is a fast and simple approach to read XML documents, manipulation is difficult because data is not stored, simply handled and discarded serially. The <a href="#dom">DOM interface</a> reads in and stores the whole document in a tree structure; this takes more memory, but makes it easier to manipulate the document's structure..</p>
+<p>The Qt XML module provides an abstract class, <a href="qxmlreader.html">QXmlReader</a>, that defines the interface for potential SAX2 readers. Qt includes a reader implementation, <a href="qxmlsimplereader.html">QXmlSimpleReader</a>, that is easy to adapt through subclassing.</p>
+<p>The reader reports parsing events through special handler classes:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Handler class</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qxmlcontenthandler.html">QXmlContentHandler</a></td><td>Reports events related to the content of a document (e.g&#x2e; the start tag or characters).</td></tr>
+<tr valign="top" class="even"><td><a href="qxmldtdhandler.html">QXmlDTDHandler</a></td><td>Reports events related to the DTD (e.g&#x2e; notation declarations).</td></tr>
+<tr valign="top" class="odd"><td><a href="qxmlerrorhandler.html">QXmlErrorHandler</a></td><td>Reports errors or warnings that occurred during parsing.</td></tr>
+<tr valign="top" class="even"><td><a href="qxmlentityresolver.html">QXmlEntityResolver</a></td><td>Reports external entities during parsing and allows users to resolve external entities themselves instead of leaving it to the reader.</td></tr>
+<tr valign="top" class="odd"><td><a href="qxmldeclhandler.html">QXmlDeclHandler</a></td><td>Reports further DTD related events (e.g&#x2e; attribute declarations).</td></tr>
+<tr valign="top" class="even"><td><a href="qxmllexicalhandler.html">QXmlLexicalHandler</a></td><td>Reports events related to the lexical structure of the document (the beginning of the DTD, comments etc.)&#x2e;</td></tr>
+</table></p>
+<p>These classes are abstract classes describing the interface. The <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a> class provides a &quot;do nothing&quot; default implementation for all of them. Therefore users only need to overload the <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a> functions they are interested in.</p>
+<p>To read input XML data a special class <a href="qxmlinputsource.html">QXmlInputSource</a> is used.</p>
+<p>Apart from those already mentioned, the following SAX2 support classes provide additional useful functionality:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Class</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qxmlattributes.html">QXmlAttributes</a></td><td>Used to pass attributes in a start element event.</td></tr>
+<tr valign="top" class="even"><td><a href="qxmllocator.html">QXmlLocator</a></td><td>Used to obtain the actual parsing position of an event.</td></tr>
+<tr valign="top" class="odd"><td><a href="qxmlnamespacesupport.html">QXmlNamespaceSupport</a></td><td>Used to implement namespace support for a reader. Note that namespaces do not change the parsing behavior. They are only reported through the handler.</td></tr>
+</table></p>
+<p>The <a href="xml-saxbookmarks.html">SAX Bookmarks example</a> illustrates how to subclass <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a> to read an XML bookmark file (XBEL) and how to generate XML by hand.</p>
+<a name="sax2-features"></a>
+<h4>SAX2 Features</h4>
+<p>The behavior of an XML reader depends on its support for certain optional features. For example, a reader may have the feature &quot;report attributes used for namespace declarations and prefixes along with the local name of a tag&quot;. Like every other feature this has a unique name represented by a URI: it is called <i>http://xml.org/sax/features/namespace-prefixes</i>.</p>
+<p>The Qt SAX2 implementation can report whether the reader has particular functionality using the <a href="qxmlreader.html#hasFeature">QXmlReader::hasFeature</a>() function. Available features can be tested with <a href="qxmlreader.html#feature">QXmlReader::feature</a>(), and switched on or off using <a href="qxmlreader.html#setFeature">QXmlReader::setFeature</a>().</p>
+<p>Consider the example</p>
+<pre>     &lt;document xmlns:book = 'http://trolltech.com/fnord/book/'
+               xmlns      = 'http://trolltech.com/fnord/' &gt;</pre>
+<p>A reader that does not support the <i>http://xml.org/sax/features/namespace-prefixes</i> feature would report the element name <i>document</i> but not its attributes <i>xmlns:book</i> and <i>xmlns</i> with their values. A reader with the feature <i>http://xml.org/sax/features/namespace-prefixes</i> reports the namespace attributes if the <a href="qxmlreader.html#feature">feature</a> is switched on.</p>
+<p>Other features include <i>http://xml.org/sax/features/namespace</i> (namespace processing, implies <i>http://xml.org/sax/features/namespace-prefixes</i>) and <i>http://xml.org/sax/features/validation</i> (the ability to report validation errors).</p>
+<p>Whilst SAX2 leaves it to the user to define and implement whatever features are required, support for <i>http://xml.org/sax/features/namespace</i> (and thus <i>http://xml.org/sax/features/namespace-prefixes</i>) is mandantory. The <a href="qxmlsimplereader.html">QXmlSimpleReader</a> implementation of <a href="qxmlreader.html">QXmlReader</a>, supports them, and can do namespace processing.</p>
+<p><a href="qxmlsimplereader.html">QXmlSimpleReader</a> is not validating, so it does not support <i>http://xml.org/sax/features/validation</i>.</p>
+<a name="namespace-support-via-features"></a>
+<h4>Namespace Support via Features</h4>
+<p>As we have seen in the previous section, we can configure the behavior of the reader when it comes to namespace processing. This is done by setting and unsetting the <i>http://xml.org/sax/features/namespaces</i> and <i>http://xml.org/sax/features/namespace-prefixes</i> features.</p>
+<p>They influence the reporting behavior in the following way:</p>
+<ol type="1">
+<li>Namespace prefixes and local parts of elements and attributes can be reported.</li>
+<li>The qualified names of elements and attributes are reported.</li>
+<li><a href="qxmlcontenthandler.html#startPrefixMapping">QXmlContentHandler::startPrefixMapping</a>() and <a href="qxmlcontenthandler.html#endPrefixMapping">QXmlContentHandler::endPrefixMapping</a>() are called by the reader.</li>
+<li>Attributes that declare namespaces (i.e&#x2e; the attribute <i>xmlns</i> and attributes starting with <i>xmlns:</i>) are reported.</li>
+</ol>
+<p>Consider the following element:</p>
+<pre>     &lt;author xmlns:fnord = 'http://trolltech.com/fnord/'
+                  title=&quot;Ms&quot;
+                  fnord:title=&quot;Goddess&quot;
+                  name=&quot;Eris Kallisti&quot;/&gt;</pre>
+<p>With <i>http://xml.org/sax/features/namespace-prefixes</i> set to true the reader will report four attributes; but with the <i>namespace-prefixes</i> feature set to false only three, with the <i>xmlns:fnord</i> attribute defining a namespace being &quot;invisible&quot; to the reader.</p>
+<p>The <i>http://xml.org/sax/features/namespaces</i> feature is responsible for reporting local names, namespace prefixes and URIs. With <i>http://xml.org/sax/features/namespaces</i> set to true the parser will report <i>title</i> as the local name of the <i>fnord:title</i> attribute, <i>fnord</i> being the namespace prefix and <i>http://trolltech.com/fnord/</i> as the namespace URI. When <i>http://xml.org/sax/features/namespaces</i> is false none of them are reported.</p>
+<p>In the current implementation the Qt XML classes follow the definition that the prefix <i>xmlns</i> itself isn't associated with any namespace at all (see <a href="http://www.w3.org/TR/1999/REC-xml-names-19990114/#ns-using">http://www.w3.org/TR/1999/REC-xml-names-19990114/#ns-using</a>). Therefore even with <i>http://xml.org/sax/features/namespaces</i> and <i>http://xml.org/sax/features/namespace-prefixes</i> both set to true the reader won't return either a local name, a namespace prefix or a namespace URI for <i>xmlns:fnord</i>.</p>
+<p>This might be changed in the future following the W3C suggestion <a href="http://www.w3.org/2000/xmlns/">http://www.w3.org/2000/xmlns/</a> to associate <i>xmlns</i> with the namespace <i>http://www.w3.org/2000/xmlns</i>.</p>
+<p>As the SAX2 standard suggests, <a href="qxmlsimplereader.html">QXmlSimpleReader</a> defaults to having <i>http://xml.org/sax/features/namespaces</i> set to true and <i>http://xml.org/sax/features/namespace-prefixes</i> set to false. When changing this behavior using <a href="qxmlsimplereader.html#setFeature">QXmlSimpleReader::setFeature</a>() note that the combination of both features set to false is illegal.</p>
+<a name="summary"></a>
+<h5>Summary</h5>
+<p><a href="qxmlsimplereader.html">QXmlSimpleReader</a> implements the following behavior:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>(namespaces, namespace-prefixes)</th><th>Namespace prefix and local part</th><th>Qualified names</th><th>Prefix mapping</th><th>xmlns attributes</th></tr></thead>
+<tr valign="top" class="odd"><td>(true, false)</td><td>Yes</td><td>Yes*</td><td>Yes</td><td>No</td></tr>
+<tr valign="top" class="even"><td>(true, true)</td><td>Yes</td><td>Yes</td><td>Yes</td><td>Yes</td></tr>
+<tr valign="top" class="odd"><td>(false, true)</td><td>No*</td><td>Yes</td><td>No*</td><td>Yes</td></tr>
+<tr valign="top" class="even"><td>(false, false)</td><td colspan="4">Illegal</td></tr>
+</table></p>
+<p>The behavior of the entries marked with an asterisk (*) is not specified by SAX.</p>
+<a name="properties"></a>
+<h4>Properties</h4>
+<p>Properties are a more general concept. They have a unique name, represented as an URI, but their value is <tt>void*</tt>. Thus nearly anything can be used as a property value. This concept involves some danger, though: there is no means of ensuring type-safety; the user must take care that they pass the right type. Properties are useful if a reader supports special handler classes.</p>
+<p>The URIs used for features and properties often look like URLs, e.g&#x2e; <tt>http:<span class="comment">//</span>xml.org/sax/features/namespace</tt>. This does not mean that the data required is at this address. It is simply a way of defining unique names.</p>
+<p>Anyone can define and use new SAX2 properties for their readers. Property support is not mandatory.</p>
+<p>To set or query properties the following functions are provided: <a href="qxmlreader.html#setProperty">QXmlReader::setProperty</a>(), <a href="qxmlreader.html#property">QXmlReader::property</a>() and <a href="qxmlreader.html#hasProperty">QXmlReader::hasProperty</a>().</p>
+<a name="dom"></a><a name="the-qt-dom-classes"></a>
+<h3>The Qt DOM Classes</h3>
+<a name="domintro"></a><a name="introduction-to-dom"></a>
+<h4>Introduction to DOM</h4>
+<p>DOM provides an interface to access and change the content and structure of an XML file. It makes a hierarchical view of the document (a tree view). Thus -- in contrast to the SAX2 interface -- an object model of the document is resident in memory after parsing which makes manipulation easy.</p>
+<p>All DOM nodes in the document tree are subclasses of <a href="qdomnode.html">QDomNode</a>. The document itself is represented as a <a href="qdomdocument.html">QDomDocument</a> object.</p>
+<p>Here are the available node classes and their potential child classes:</p>
+<ul>
+<li><a href="qdomdocument.html">QDomDocument</a>: Possible children are<ul>
+<li><a href="qdomelement.html">QDomElement</a> (at most one)</li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li><a href="qdomcomment.html">QDomComment</a></li>
+<li><a href="qdomdocumenttype.html">QDomDocumentType</a></li>
+</ul>
+</li>
+<li><a href="qdomdocumentfragment.html">QDomDocumentFragment</a>: Possible children are<ul>
+<li><a href="qdomelement.html">QDomElement</a></li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li><a href="qdomcomment.html">QDomComment</a></li>
+<li><a href="qdomtext.html">QDomText</a></li>
+<li><a href="qdomcdatasection.html">QDomCDATASection</a></li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a></li>
+</ul>
+</li>
+<li><a href="qdomdocumenttype.html">QDomDocumentType</a>: No children</li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a>: Possible children are<ul>
+<li><a href="qdomelement.html">QDomElement</a></li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li><a href="qdomcomment.html">QDomComment</a></li>
+<li><a href="qdomtext.html">QDomText</a></li>
+<li><a href="qdomcdatasection.html">QDomCDATASection</a></li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a></li>
+</ul>
+</li>
+<li><a href="qdomelement.html">QDomElement</a>: Possible children are<ul>
+<li><a href="qdomelement.html">QDomElement</a></li>
+<li><a href="qdomtext.html">QDomText</a></li>
+<li><a href="qdomcomment.html">QDomComment</a></li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li><a href="qdomcdatasection.html">QDomCDATASection</a></li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a></li>
+</ul>
+</li>
+<li><a href="qdomattr.html">QDomAttr</a>: Possible children are<ul>
+<li><a href="qdomtext.html">QDomText</a></li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a></li>
+</ul>
+</li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a>: No children</li>
+<li><a href="qdomcomment.html">QDomComment</a>: No children</li>
+<li><a href="qdomtext.html">QDomText</a>: No children</li>
+<li><a href="qdomcdatasection.html">QDomCDATASection</a>: No children</li>
+<li><a href="qdomentity.html">QDomEntity</a>: Possible children are<ul>
+<li><a href="qdomelement.html">QDomElement</a></li>
+<li><a href="qdomprocessinginstruction.html">QDomProcessingInstruction</a></li>
+<li><a href="qdomcomment.html">QDomComment</a></li>
+<li><a href="qdomtext.html">QDomText</a></li>
+<li><a href="qdomcdatasection.html">QDomCDATASection</a></li>
+<li><a href="qdomentityreference.html">QDomEntityReference</a></li>
+</ul>
+</li>
+<li><a href="qdomnotation.html">QDomNotation</a>: No children</li>
+</ul>
+<p>With <a href="qdomnodelist.html">QDomNodeList</a> and <a href="qdomnamednodemap.html">QDomNamedNodeMap</a> two collection classes are provided: <a href="qdomnodelist.html">QDomNodeList</a> is a list of nodes, and <a href="qdomnamednodemap.html">QDomNamedNodeMap</a> is used to handle unordered sets of nodes (often used for attributes).</p>
+<p>The <a href="qdomimplementation.html">QDomImplementation</a> class allows the user to query features of the DOM implementation.</p>
+<p>To get started please refer to the <a href="qdomdocument.html">QDomDocument</a> documentation. You might also want to take a look at the <a href="xml-dombookmarks.html">DOM Bookmarks example</a>, which illustrates how to read and write an XML bookmark file (XBEL) using DOM.</p>
+<a name="namespaces"></a><a name="an-introduction-to-namespaces"></a>
+<h3>An Introduction to Namespaces</h3>
+<p>Parts of the Qt XML module documentation assume that you are familiar with XML namespaces. Here we present a brief introduction; skip to <a href="#namespacesconventions">Qt XML documentation conventions</a> if you already know this material.</p>
+<p>Namespaces are a concept introduced into XML to allow a more modular design. With their help data processing software can easily resolve naming conflicts in XML documents.</p>
+<p>Consider the following example:</p>
+<pre>     &lt;document&gt;
+     &lt;book&gt;
+       &lt;title&gt;Practical XML&lt;/title&gt;
+       &lt;author title=&quot;Ms&quot; name=&quot;Eris Kallisti&quot;/&gt;
+       &lt;chapter&gt;
+         &lt;title&gt;A Namespace Called fnord&lt;/title&gt;
+       &lt;/chapter&gt;
+     &lt;/book&gt;
+     &lt;/document&gt;</pre>
+<p>Here we find three different uses of the name <i>title</i>. If you wish to process this document you will encounter problems because each of the <i>titles</i> should be displayed in a different manner -- even though they have the same name.</p>
+<p>The solution would be to have some means of identifying the first occurrence of <i>title</i> as the title of a book, i.e&#x2e; to use the <i>title</i> element of a book namespace to distinguish it from, for example, the chapter title, e.g&#x2e;:</p>
+<pre>     &lt;book:title&gt;Practical XML&lt;/book:title&gt;</pre>
+<p><i>book</i> in this case is a <i>prefix</i> denoting the namespace.</p>
+<p>Before we can apply a namespace to element or attribute names we must declare it.</p>
+<p>Namespaces are URIs like <i>http://trolltech.com/fnord/book/</i>. This does not mean that data must be available at this address; the URI is simply used to provide a unique name.</p>
+<p>We declare namespaces in the same way as attributes; strictly speaking they <i>are</i> attributes. To make for example <i>http://trolltech.com/fnord/</i> the document's default XML namespace <i>xmlns</i> we write</p>
+<pre>     xmlns=&quot;http://trolltech.com/fnord/&quot;</pre>
+<p>To distinguish the <i>http://trolltech.com/fnord/book/</i> namespace from the default, we must supply it with a prefix:</p>
+<pre>     xmlns:book=&quot;http://trolltech.com/fnord/book/&quot;</pre>
+<p>A namespace that is declared like this can be applied to element and attribute names by prepending the appropriate prefix and a &quot;:&quot; delimiter. We have already seen this with the <i>book:title</i> element.</p>
+<p>Element names without a prefix belong to the default namespace. This rule does not apply to attributes: an attribute without a prefix does not belong to any of the declared XML namespaces at all. Attributes always belong to the &quot;traditional&quot; namespace of the element in which they appear. A &quot;traditional&quot; namespace is not an XML namespace, it simply means that all attribute names belonging to one element must be different. Later we will see how to assign an XML namespace to an attribute.</p>
+<p>Due to the fact that attributes without prefixes are not in any XML namespace there is no collision between the attribute <i>title</i> (that belongs to the <i>author</i> element) and for example the <i>title</i> element within a <i>chapter</i>.</p>
+<p>Let's clarify this with an example:</p>
+<pre>     &lt;document xmlns:book = 'http://trolltech.com/fnord/book/'
+               xmlns      = 'http://trolltech.com/fnord/' &gt;
+     &lt;book&gt;
+       &lt;book:title&gt;Practical XML&lt;/book:title&gt;
+       &lt;book:author xmlns:fnord = 'http://trolltech.com/fnord/'
+                    title=&quot;Ms&quot;
+                    fnord:title=&quot;Goddess&quot;
+                    name=&quot;Eris Kallisti&quot;/&gt;
+       &lt;chapter&gt;
+         &lt;title&gt;A Namespace Called fnord&lt;/title&gt;
+       &lt;/chapter&gt;
+     &lt;/book&gt;
+     &lt;/document&gt;</pre>
+<p>Within the <i>document</i> element we have two namespaces declared. The default namespace <i>http://trolltech.com/fnord/</i> applies to the <i>book</i> element, the <i>chapter</i> element, the appropriate <i>title</i> element and of course to <i>document</i> itself.</p>
+<p>The <i>book:author</i> and <i>book:title</i> elements belong to the namespace with the URI <i>http://trolltech.com/fnord/book/</i>.</p>
+<p>The two <i>book:author</i> attributes <i>title</i> and <i>name</i> have no XML namespace assigned. They are only members of the &quot;traditional&quot; namespace of the element <i>book:author</i>, meaning that for example two <i>title</i> attributes in <i>book:author</i> are forbidden.</p>
+<p>In the above example we circumvent the last rule by adding a <i>title</i> attribute from the <i>http://trolltech.com/fnord/</i> namespace to <i>book:author</i>: the <i>fnord:title</i> comes from the namespace with the prefix <i>fnord</i> that is declared in the <i>book:author</i> element.</p>
+<p>Clearly the <i>fnord</i> namespace has the same namespace URI as the default namespace. So why didn't we simply use the default namespace we'd already declared? The answer is quite complex:</p>
+<ul>
+<li>attributes without a prefix don't belong to any XML namespace at all, not even to the default namespace;</li>
+<li>additionally omitting the prefix would lead to a <i>title-title</i> clash;</li>
+<li>writing it as <i>xmlns:title</i> would declare a new namespace with the prefix <i>title</i> instead of applying the default <i>xmlns</i> namespace.</li>
+</ul>
+<p>With the Qt XML classes elements and attributes can be accessed in two ways: either by refering to their qualified names consisting of the namespace prefix and the &quot;real&quot; name (or <i>local</i> name) or by the combination of local name and namespace URI.</p>
+<p>More information on XML namespaces can be found at <a href="http://www.w3.org/TR/REC-xml-names/">http://www.w3.org/TR/REC-xml-names/</a>.</p>
+<a name="namespacesconventions"></a><a name="conventions-used-in-the-qt-xml-documentation"></a>
+<h4>Conventions Used in the Qt XML Documentation</h4>
+<p>The following terms are used to distinguish the parts of names within the context of namespaces:</p>
+<ul>
+<li>The <i>qualified name</i> is the name as it appears in the document. (In the above example <i>book:title</i> is a qualified name.)</li>
+<li>A <i>namespace prefix</i> in a qualified name is the part to the left of the &quot;:&quot;. (<i>book</i> is the namespace prefix in <i>book:title</i>.)</li>
+<li>The <i>local part</i> of a name (also refered to as the <i>local name</i>) appears to the right of the &quot;:&quot;. (Thus <i>title</i> is the local part of <i>book:title</i>.)</li>
+<li>The <i>namespace URI</i> (&quot;Uniform Resource Identifier&quot;) is a unique identifier for a namespace. It looks like a URL (e.g&#x2e; <i>http://trolltech.com/fnord/</i> ) but does not require data to be accessible by the given protocol at the named address.</li>
+</ul>
+<p>Elements without a &quot;:&quot; (like <i>chapter</i> in the example) do not have a namespace prefix. In this case the local part and the qualified name are identical (i.e&#x2e; <i>chapter</i>).</p>
+<p>See also <a href="xml-dombookmarks.html">DOM Bookmarks Example</a> and <a href="xml-saxbookmarks.html">SAX Bookmarks Example</a>.</p>
+<p>
+[Previous: <a href="qtsvg.html">QtSvg Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qtxmlpatterns.html">QtXmlPatterns Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

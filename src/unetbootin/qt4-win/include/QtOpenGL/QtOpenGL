@@ -1,0 +1,6 @@
+#include <QtCore/QtCore>
+#include <QtGui/QtGui>
+#include "qgl.h"
+#include "qglcolormap.h"
+#include "qglframebufferobject.h"
+#include "qglpixelbuffer.h"

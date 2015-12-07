@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/addressbook.qdoc -->
+<head>
+  <title>Qt 4.4: Address Book 4 - Editing and Removing Addresses</title>
+  <link rel="prev" href="tutorials-addressbook-part3.html" />
+  <link rel="contents" href="tutorials-addressbook.html" />
+  <link rel="next" href="tutorials-addressbook-part5.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-addressbook-part3.html">Address Book 3 - Navigating between Entries</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part5.html">Chapter 5</a>]
+</p>
+<h1 class="title">Address Book 4 - Editing and Removing Addresses<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-addressbook-part4-addressbook-cpp.html">tutorials/addressbook/part4/addressbook.cpp</a></li>
+<li><a href="tutorials-addressbook-part4-addressbook-h.html">tutorials/addressbook/part4/addressbook.h</a></li>
+<li><a href="tutorials-addressbook-part4-main-cpp.html">tutorials/addressbook/part4/main.cpp</a></li>
+<li><a href="tutorials-addressbook-part4-part4-pro.html">tutorials/addressbook/part4/part4.pro</a></li>
+</ul>
+<p>In this chapter, we look at ways to modify the contents of contact stored in the address book application.</p>
+<p align="center"><img src="images/addressbook-tutorial-screenshot.png" /></p><p>We now have an address book that not only holds contacts in an organized manner, but also allows navigation. It would be convenient to include edit and remove functions so that a contact's details can be changed when needed. However, this requires a little improvement, in the form of enums. In our previous chapters, we had two modes: <tt>AddingMode</tt> and <tt>NavigationMode</tt> - but they weren't defined as enums. Instead, we enabled and disabled the corresponding buttons manually, resulting in multiple lines of repeated code.</p>
+<p>In this chapter, we define the <tt>Mode</tt> enum with three different values:</p>
+<ul>
+<li><tt>NavigationMode</tt>,</li>
+<li><tt>AddingMode</tt>, and</li>
+<li><tt>EditingMode</tt>.</li>
+</ul>
+<a name="defining-the-addressbook-class"></a>
+<h2>Defining the AddressBook Class</h2>
+<p>The <tt>addressbook.h</tt> file is updated to contain the <tt>Mode</tt> enum:</p>
+<pre>     enum Mode { NavigationMode, AddingMode, EditingMode };</pre>
+<p>We also add two new slots, <tt>editContact()</tt> and <tt>removeContact()</tt>, to our current list of public slots.</p>
+<pre>     void editContact();
+     void removeContact();</pre>
+<p>In order to switch between modes, we introduce the <tt>updateInterface()</tt> function to control the enabling and disabling of all <a href="qpushbutton.html">QPushButton</a> objects. We also add two new push buttons, <tt>editButton</tt> and <tt>removeButton</tt>, for the edit and remove functions mentioned earlier.</p>
+<pre>     void updateInterface(Mode mode);
+     ...
+     QPushButton *editButton;
+     QPushButton *removeButton;
+     ...
+     Mode currentMode;</pre>
+<p>Lastly, we declare <tt>currentMode</tt> to keep track of the current mode of the enum.</p>
+<a name="implementing-the-addressbook-class"></a>
+<h2>Implementing the AddressBook Class</h2>
+<p>We now have to implement the mode-changing features of the address book application. The <tt>editButton</tt> and <tt>removeButton</tt> are instantiated and disabled by default, as the address book starts up with zero contacts in memory.</p>
+<pre>     editButton = new QPushButton(tr(&quot;&amp;Edit&quot;));
+     editButton-&gt;setEnabled(false);
+     removeButton = new QPushButton(tr(&quot;&amp;Remove&quot;));
+     removeButton-&gt;setEnabled(false);</pre>
+<p>These buttons are then connected to their respective slots, <tt>editContact()</tt> and <tt>removeContact()</tt>, and we add them to <tt>buttonLayout1</tt>.</p>
+<pre>     connect(editButton, SIGNAL(clicked()), this, SLOT(editContact()));
+     connect(removeButton, SIGNAL(clicked()), this, SLOT(removeContact()));
+     ...
+     buttonLayout1-&gt;addWidget(editButton);
+     buttonLayout1-&gt;addWidget(removeButton);</pre>
+<p>The <tt>editContact()</tt> function stores the contact's old details in <tt>oldName</tt> and <tt>oldAddress</tt>, before switching the mode to <tt>EditingMode</tt>. In this mode, the <tt>submitButton</tt> and <tt>cancelButton</tt> are both enabled, hence, the user can change the contact's details and click either button.</p>
+<pre> void AddressBook::editContact()
+ {
+     oldName = nameLine-&gt;text();
+     oldAddress = addressText-&gt;toPlainText();
+
+     updateInterface(EditingMode);
+ }</pre>
+<p>The <tt>submitContact()</tt> function has been divided in two with an <tt>if-else</tt> statement. We check <tt>currentMode</tt> to see if its in <tt>AddingMode</tt>. If it is, we proceed with our adding process.</p>
+<pre> void AddressBook::submitContact()
+ {
+     ...
+     if (currentMode == AddingMode) {
+
+         if (!contacts.contains(name)) {
+             contacts.insert(name, address);
+             QMessageBox::information(this, tr(&quot;Add Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been added to your address book.&quot;).arg(name));
+         } else {
+             QMessageBox::information(this, tr(&quot;Add Unsuccessful&quot;),
+                 tr(&quot;Sorry, \&quot;%1\&quot; is already in your address book.&quot;).arg(name));
+             return;
+         }</pre>
+<p>Otherwise, we check to see if <tt>currentMode</tt> is in <tt>EditingMode</tt>. If it is, we compare <tt>oldName</tt> with <tt>name</tt>. If the name has changed, we remove the old contact from <tt>contacts</tt> and insert the newly updated contact.</p>
+<pre>     } else if (currentMode == EditingMode) {
+
+         if (oldName != name) {
+             if (!contacts.contains(name)) {
+                 QMessageBox::information(this, tr(&quot;Edit Successful&quot;),
+                     tr(&quot;\&quot;%1\&quot; has been edited in your address book.&quot;).arg(oldName));
+                 contacts.remove(oldName);
+                 contacts.insert(name, address);
+             } else {
+                 QMessageBox::information(this, tr(&quot;Edit Unsuccessful&quot;),
+                     tr(&quot;Sorry, \&quot;%1\&quot; is already in your address book.&quot;).arg(name));
+                 return;
+             }
+         } else if (oldAddress != address) {
+             QMessageBox::information(this, tr(&quot;Edit Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been edited in your address book.&quot;).arg(name));
+             contacts[name] = address;
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }</pre>
+<p>If only the address has changed (i.e&#x2e;, <tt>oldAddress</tt> is not the same as <tt>address</tt>), we update the contact's address. Lastly, we set <tt>currentMode</tt> to <tt>NavigationMode</tt>. This is an important step as it re-enables all the disabled push buttons.</p>
+<p>To remove a contact from the address book, we implement the <tt>removeContact()</tt> function. This function checks to see if the contact exists in <tt>contacts</tt>.</p>
+<pre> void AddressBook::removeContact()
+ {
+     QString name = nameLine-&gt;text();
+     QString address = addressText-&gt;toPlainText();
+
+     if (contacts.contains(name)) {
+
+         int button = QMessageBox::question(this,
+             tr(&quot;Confirm Remove&quot;),
+             tr(&quot;Are you sure you want to remove \&quot;%1\&quot;?&quot;).arg(name),
+             QMessageBox::Yes | QMessageBox::No);
+
+         if (button == QMessageBox::Yes) {
+
+             previous();
+             contacts.remove(name);
+
+             QMessageBox::information(this, tr(&quot;Remove Successful&quot;),
+                 tr(&quot;\&quot;%1\&quot; has been removed from your address book.&quot;).arg(name));
+         }
+     }
+
+     updateInterface(NavigationMode);
+ }</pre>
+<p>If it does, we display a <a href="qmessagebox.html">QMessageBox</a>, to confirm the removal with the user. Once the user has confirmed, we call <tt>previous()</tt> to ensure that the user interface shows another contact, and we remove the contact using <a href="qmap.html">QMap</a>'s <a href="qmap.html#remove">remove()</a> function. As a courtesy, we display a <a href="qmessagebox.html">QMessageBox</a> to inform the user. Both the message boxes used in this function are shown below:</p>
+<p align="center"><img src="images/addressbook-tutorial-part4-remove.png" /></p><a name="updating-the-user-interface"></a>
+<h3>Updating the User Interface</h3>
+<p>We mentioned the <tt>updateInterface()</tt> function earlier as a means to enable and disable the push buttons depending on the current mode. The function updates the current mode according to the <tt>mode</tt> argument passed to it, assigning it to <tt>currentMode</tt> before checking its value.</p>
+<p>Each of the push buttons is then enabled or disabled, depending on the current mode. The code for <tt>AddingMode</tt> and <tt>EditingMode</tt> is shown below:</p>
+<pre> void AddressBook::updateInterface(Mode mode)
+ {
+     currentMode = mode;
+
+     switch (currentMode) {
+
+     case AddingMode:
+     case EditingMode:
+
+         nameLine-&gt;setReadOnly(false);
+         nameLine-&gt;setFocus(Qt::OtherFocusReason);
+         addressText-&gt;setReadOnly(false);
+
+         addButton-&gt;setEnabled(false);
+         editButton-&gt;setEnabled(false);
+         removeButton-&gt;setEnabled(false);
+
+         nextButton-&gt;setEnabled(false);
+         previousButton-&gt;setEnabled(false);
+
+         submitButton-&gt;show();
+         cancelButton-&gt;show();
+         break;</pre>
+<p>For <tt>NavigationMode</tt>, however, we include conditions within the parameters of the <a href="qwidget.html#enabled-prop">QPushButton::setEnabled</a>(). This is to ensure that the <tt>editButton</tt> and <tt>removeButton</tt> push buttons are enabled when there is at least one contact in the address book; <tt>nextButton</tt> and <tt>previousButton</tt> are only enabled when there is more than one contact in the address book.</p>
+<pre>     case NavigationMode:
+
+         if (contacts.isEmpty()) {
+             nameLine-&gt;clear();
+             addressText-&gt;clear();
+         }
+
+         nameLine-&gt;setReadOnly(true);
+         addressText-&gt;setReadOnly(true);
+         addButton-&gt;setEnabled(true);
+
+         int number = contacts.size();
+         editButton-&gt;setEnabled(number &gt;= 1);
+         removeButton-&gt;setEnabled(number &gt;= 1);
+         nextButton-&gt;setEnabled(number &gt; 1);
+         previousButton-&gt;setEnabled(number &gt;1 );
+
+         submitButton-&gt;hide();
+         cancelButton-&gt;hide();
+         break;
+     }
+ }</pre>
+<p>By performing the task of setting the mode and updating the user interface in the same function, we avoid the possibility of the user interface getting &quot;out of sync&quot; with the internal state of the application.</p>
+<p>
+[Previous: <a href="tutorials-addressbook-part3.html">Address Book 3 - Navigating between Entries</a>]
+[<a href="tutorials-addressbook.html">Contents</a>]
+[Next: <a href="tutorials-addressbook-part5.html">Chapter 5</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

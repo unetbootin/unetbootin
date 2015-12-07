@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/2dpainting.qdoc -->
+<head>
+  <title>Qt 4.4: 2D Painting Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">2D Painting Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="opengl-2dpainting-glwidget-cpp.html">opengl/2dpainting/glwidget.cpp</a></li>
+<li><a href="opengl-2dpainting-glwidget-h.html">opengl/2dpainting/glwidget.h</a></li>
+<li><a href="opengl-2dpainting-helper-cpp.html">opengl/2dpainting/helper.cpp</a></li>
+<li><a href="opengl-2dpainting-helper-h.html">opengl/2dpainting/helper.h</a></li>
+<li><a href="opengl-2dpainting-widget-cpp.html">opengl/2dpainting/widget.cpp</a></li>
+<li><a href="opengl-2dpainting-widget-h.html">opengl/2dpainting/widget.h</a></li>
+<li><a href="opengl-2dpainting-window-cpp.html">opengl/2dpainting/window.cpp</a></li>
+<li><a href="opengl-2dpainting-window-h.html">opengl/2dpainting/window.h</a></li>
+<li><a href="opengl-2dpainting-main-cpp.html">opengl/2dpainting/main.cpp</a></li>
+<li><a href="opengl-2dpainting-2dpainting-pro.html">opengl/2dpainting/2dpainting.pro</a></li>
+</ul>
+<p>The 2D Painting example shows how <a href="qpainter.html">QPainter</a> and <a href="qglwidget.html">QGLWidget</a> can be used together to display accelerated 2D graphics on supported hardware.</p>
+<p align="center"><img src="images/2dpainting-example.png" /></p><p>The <a href="qpainter.html">QPainter</a> class is used to draw 2D graphics primitives onto paint devices provided by QPaintDevice subclasses, such as <a href="qwidget.html">QWidget</a> and <a href="qimage.html">QImage</a>.</p>
+<p>Since <a href="qglwidget.html">QGLWidget</a> is a subclass of <a href="qwidget.html">QWidget</a>, it is possible to reimplement its <a href="qwidget.html#paintEvent">paintEvent()</a> and use <a href="qpainter.html">QPainter</a> to draw on the device, just as you would with a <a href="qwidget.html">QWidget</a>. The only difference is that the painting operations will be accelerated in hardware if it is supported by your system's OpenGL drivers.</p>
+<p>In this example, we perform the same painting operations on a <a href="qwidget.html">QWidget</a> and a <a href="qglwidget.html">QGLWidget</a>. The <a href="qwidget.html">QWidget</a> is shown with anti-aliasing enabled, and the <a href="qglwidget.html">QGLWidget</a> will also use anti-aliasing if the required extensions are supported by your system's OpenGL driver.</p>
+<a name="overview"></a>
+<h2>Overview</h2>
+<p>To be able to compare the results of painting onto a <a href="qglwidget.html">QGLWidget</a> subclass with native drawing in a <a href="qwidget.html">QWidget</a> subclass, we want to show both kinds of widget side by side. To do this, we derive subclasses of <a href="qwidget.html">QWidget</a> and <a href="qglwidget.html">QGLWidget</a>, using a separate <tt>Helper</tt> class to perform the same painting operations for each, and lay them out in a top-level widget, itself provided a the <tt>Window</tt> class.</p>
+<a name="helper-class-definition"></a>
+<h2>Helper Class Definition</h2>
+<p>In this example, the painting operations are performed by a helper class. We do this because we want the same painting operations to be performed for both our <a href="qwidget.html">QWidget</a> subclass and the <a href="qglwidget.html">QGLWidget</a> subclass.</p>
+<p>The <tt>Helper</tt> class is minimal:</p>
+<pre> class Helper
+ {
+ public:
+     Helper();
+
+ public:
+     void paint(QPainter *painter, QPaintEvent *event, int elapsed);
+
+ private:
+     QBrush background;
+     QBrush circleBrush;
+     QFont textFont;
+     QPen circlePen;
+     QPen textPen;
+ };</pre>
+<p>Apart from the constructor, it only provides a <tt>paint()</tt> function to paint using a painter supplied by one of our widget subclasses.</p>
+<a name="helper-class-implementation"></a>
+<h2>Helper Class Implementation</h2>
+<p>The constructor of the class sets up the resources it needs to paint content onto a widget:</p>
+<pre> Helper::Helper()
+ {
+     QLinearGradient gradient(QPointF(50, -20), QPointF(80, 20));
+     gradient.setColorAt(0.0, Qt::white);
+     gradient.setColorAt(1.0, QColor(0xa6, 0xce, 0x39));
+
+     background = QBrush(QColor(64, 32, 64));
+     circleBrush = QBrush(gradient);
+     circlePen = QPen(Qt::black);
+     circlePen.setWidth(1);
+     textPen = QPen(Qt::white);
+     textFont.setPixelSize(50);
+ }</pre>
+<p>The actual painting is performed in the <tt>paint()</tt> function. This takes a <a href="qpainter.html">QPainter</a> that has already been set up to paint onto a paint device (either a <a href="qwidget.html">QWidget</a> or a <a href="qglwidget.html">QGLWidget</a>), a <a href="qpaintevent.html">QPaintEvent</a> that provides information about the region to be painted, and a measure of the elapsed time (in milliseconds) since the paint device was last updated.</p>
+<pre> void Helper::paint(QPainter *painter, QPaintEvent *event, int elapsed)
+ {
+     painter-&gt;fillRect(event-&gt;rect(), background);
+     painter-&gt;translate(100, 100);</pre>
+<p>We begin painting by filling in the region contained in the paint event before translating the origin of the coordinate system so that the rest of the painting operations will be displaced towards the center of the paint device.</p>
+<p>We draw a spiral pattern of circles, using the elapsed time specified to animate them so that they appear to move outward and around the coordinate system's origin:</p>
+<pre>     painter-&gt;save();
+     painter-&gt;setBrush(circleBrush);
+     painter-&gt;setPen(circlePen);
+     painter-&gt;rotate(elapsed * 0.030);
+
+     qreal r = elapsed/1000.0;
+     int n = 30;
+     for (int i = 0; i &lt; n; ++i) {
+         painter-&gt;rotate(30);
+         qreal radius = 0 + 120.0*((i+r)/n);
+         qreal circleRadius = 1 + ((i+r)/n)*20;
+         painter-&gt;drawEllipse(QRectF(radius, -circleRadius,
+                                     circleRadius*2, circleRadius*2));
+     }
+     painter-&gt;restore();</pre>
+<p>Since the coordinate system is rotated many times during this process, we <a href="qpainter.html#save">save()</a> the <a href="qpainter.html">QPainter</a>'s state beforehand and <a href="qpainter.html#restore">restore()</a> it afterwards.</p>
+<pre>     painter-&gt;setPen(textPen);
+     painter-&gt;setFont(textFont);
+     painter-&gt;drawText(QRect(-50, -50, 100, 100), Qt::AlignCenter, &quot;Qt&quot;);
+ }</pre>
+<p>We draw some text at the origin to complete the effect.</p>
+<a name="widget-class-definition"></a>
+<h2>Widget Class Definition</h2>
+<p>The <tt>Widget</tt> class provides a basic custom widget that we use to display the simple animation painted by the <tt>Helper</tt> class.</p>
+<pre> class Helper;
+ class QPaintEvent;
+
+ class Widget : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Widget(Helper *helper, QWidget *parent);
+
+ public slots:
+     void animate();
+
+ protected:
+     void paintEvent(QPaintEvent *event);
+
+ private:
+     Helper *helper;
+     int elapsed;
+ };</pre>
+<p>Apart from the constructor, it only contains a <a href="qwidget.html#paintEvent">paintEvent()</a> function, that lets us draw customized content, and a slot that is used to animate its contents. One member variable keeps track of the <tt>Helper</tt> that the widget uses to paint its contents, and the other records the elapsed time since it was last updated.</p>
+<a name="widget-class-implementation"></a>
+<h2>Widget Class Implementation</h2>
+<p>The constructor only initializes the member variables, storing the <tt>Helper</tt> object supplied and calling the base class's constructor, and enforces a fixed size for the widget:</p>
+<pre> Widget::Widget(Helper *helper, QWidget *parent)
+     : QWidget(parent), helper(helper)
+ {
+     elapsed = 0;
+     setFixedSize(200, 200);
+ }</pre>
+<p>The <tt>animate()</tt> slot is called whenever a timer, which we define later, times out:</p>
+<pre> void Widget::animate()
+ {
+     elapsed = (elapsed + qobject_cast&lt;QTimer*&gt;(sender())-&gt;interval()) % 1000;
+     repaint();
+ }</pre>
+<p>Here, we determine the interval that has elapsed since the timer last timed out, and we add it to any existing value before repainting the widget. Since the animation used in the <tt>Helper</tt> class loops every second, we can use the modulo operator to ensure that the <tt>elapsed</tt> variable is always less than 1000.</p>
+<p>Since the <tt>Helper</tt> class does all of the actual painting, we only have to implement a paint event that sets up a <a href="qpainter.html">QPainter</a> for the widget and calls the helper's <tt>paint()</tt> function:</p>
+<pre> void Widget::paintEvent(QPaintEvent *event)
+ {
+     QPainter painter;
+     painter.begin(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     helper-&gt;paint(&amp;painter, event, elapsed);
+     painter.end();
+ }</pre>
+<a name="glwidget-class-definition"></a>
+<h2>GLWidget Class Definition</h2>
+<p>The <tt>GLWidget</tt> class definition is basically the same as the <tt>Widget</tt> class except that it is derived from <a href="qglwidget.html">QGLWidget</a>.</p>
+<pre> class Helper;
+ class QPaintEvent;
+ class QWidget;
+
+ class GLWidget : public QGLWidget
+ {
+     Q_OBJECT
+
+ public:
+     GLWidget(Helper *helper, QWidget *parent);
+
+ public slots:
+     void animate();
+
+ protected:
+     void paintEvent(QPaintEvent *event);
+
+ private:
+     Helper *helper;
+     int elapsed;
+ };</pre>
+<p>Again, the member variables record the <tt>Helper</tt> used to paint the widget and the elapsed time since the previous update.</p>
+<a name="glwidget-class-implementation"></a>
+<h2>GLWidget Class Implementation</h2>
+<p>The constructor differs a little from the <tt>Widget</tt> class's constructor:</p>
+<pre> GLWidget::GLWidget(Helper *helper, QWidget *parent)
+     : QGLWidget(QGLFormat(QGL::SampleBuffers), parent), helper(helper)
+ {
+     elapsed = 0;
+     setFixedSize(200, 200);
+ }</pre>
+<p>As well as initializing the <tt>elapsed</tt> member variable and storing the <tt>Helper</tt> object used to paint the widget, the base class's constructor is called with the format that specifies the <a href="qgl.html#FormatOption-enum">QGL::SampleBuffers</a> flag. This enables anti-aliasing if it is supported by your system's OpenGL driver.</p>
+<p>The <tt>animate()</tt> slot is exactly the same as that provided by the <tt>Widget</tt> class:</p>
+<pre> void GLWidget::animate()
+ {
+     elapsed = (elapsed + qobject_cast&lt;QTimer*&gt;(sender())-&gt;interval()) % 1000;
+     repaint();
+ }</pre>
+<p>The <tt>paintEvent()</tt> is almost the same as that found in the <tt>Widget</tt> class:</p>
+<pre> void GLWidget::paintEvent(QPaintEvent *event)
+ {
+     QPainter painter;
+     painter.begin(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     helper-&gt;paint(&amp;painter, event, elapsed);
+     painter.end();
+ }</pre>
+<p>Since anti-aliasing will be enabled if available, we only need to set up a <a href="qpainter.html">QPainter</a> on the widget and call the helper's <tt>paint()</tt> function to display the widget's contents.</p>
+<a name="window-class-definition"></a>
+<h2>Window Class Definition</h2>
+<p>The <tt>Window</tt> class has a basic, minimal definition:</p>
+<pre> class Window : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     Window();
+
+ private:
+     Helper helper;
+ };</pre>
+<p>It contains a single <tt>Helper</tt> object that will be shared between all widgets.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>The constructor does all the work, creating a widget of each type and inserting them with labels into a layout:</p>
+<pre> Window::Window()
+     : QWidget()
+ {
+     Widget *native = new Widget(&amp;helper, this);
+     GLWidget *openGL = new GLWidget(&amp;helper, this);
+     QLabel *nativeLabel = new QLabel(tr(&quot;Native&quot;));
+     nativeLabel-&gt;setAlignment(Qt::AlignHCenter);
+     QLabel *openGLLabel = new QLabel(tr(&quot;OpenGL&quot;));
+     openGLLabel-&gt;setAlignment(Qt::AlignHCenter);
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(native, 0, 0);
+     layout-&gt;addWidget(openGL, 0, 1);
+     layout-&gt;addWidget(nativeLabel, 1, 0);
+     layout-&gt;addWidget(openGLLabel, 1, 1);
+     setLayout(layout);
+
+     QTimer *timer = new QTimer(this);
+     connect(timer, SIGNAL(timeout()), native, SLOT(animate()));
+     connect(timer, SIGNAL(timeout()), openGL, SLOT(animate()));
+     timer-&gt;start(50);
+
+     setWindowTitle(tr(&quot;2D Painting on Native and OpenGL Widgets&quot;));
+ }</pre>
+<p>A timer with a 50 millisecond time out is constructed for animation purposes, and connected to the <tt>animate()</tt> slots of the <tt>Widget</tt> and <tt>GLWidget</tt> objects. Once started, the widgets should be updated at around 20 frames per second.</p>
+<a name="running-the-example"></a>
+<h2>Running the Example</h2>
+<p>The example shows the same painting operations performed at the same time in a <tt>Widget</tt> and a <tt>GLWidget</tt>. The quality and speed of rendering in the <tt>GLWidget</tt> depends on the level of support for multisampling and hardware acceleration that your system's OpenGL driver provides. If support for either of these is lacking, the driver may fall back on a software renderer that may trade quality for speed.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

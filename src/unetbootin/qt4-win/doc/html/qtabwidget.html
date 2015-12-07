@@ -1,0 +1,353 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qtabwidget.cpp -->
+<head>
+  <title>Qt 4.4: QTabWidget Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTabWidget Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTabWidget class provides a stack of tabbed widgets. <a href="#details">More...</a></p>
+<pre> #include &lt;QTabWidget&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qtabwidget-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtabwidget-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qtabwidget.html#TabPosition-enum">TabPosition</a></b> { North, South, West, East }</li>
+<li><div class="fn"/>enum <b><a href="qtabwidget.html#TabShape-enum">TabShape</a></b> { Rounded, Triangular }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qtabwidget.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#currentIndex-prop">currentIndex</a></b> : int</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#elideMode-prop">elideMode</a></b> : Qt::TextElideMode</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#iconSize-prop">iconSize</a></b> : QSize</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qtabwidget.html#tabPosition-prop">tabPosition</a></b> : TabPosition</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#tabShape-prop">tabShape</a></b> : TabShape</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#usesScrollButtons-prop">usesScrollButtons</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtabwidget.html#QTabWidget">QTabWidget</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtabwidget.html#dtor.QTabWidget">~QTabWidget</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#addTab">addTab</a></b> ( QWidget * <i>page</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#addTab-2">addTab</a></b> ( QWidget * <i>page</i>, const QIcon &amp; <i>icon</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>QWidget * <b><a href="qtabwidget.html#cornerWidget">cornerWidget</a></b> ( Qt::Corner <i>corner</i> = Qt::TopRightCorner ) const</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#currentIndex-prop">currentIndex</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qtabwidget.html#currentWidget">currentWidget</a></b> () const</li>
+<li><div class="fn"/>Qt::TextElideMode <b><a href="qtabwidget.html#elideMode-prop">elideMode</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="qtabwidget.html#iconSize-prop">iconSize</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#indexOf">indexOf</a></b> ( QWidget * <i>w</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#insertTab">insertTab</a></b> ( int <i>index</i>, QWidget * <i>page</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>int <b><a href="qtabwidget.html#insertTab-4">insertTab</a></b> ( int <i>index</i>, QWidget * <i>page</i>, const QIcon &amp; <i>icon</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtabwidget.html#isTabEnabled">isTabEnabled</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#removeTab">removeTab</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setCornerWidget">setCornerWidget</a></b> ( QWidget * <i>widget</i>, Qt::Corner <i>corner</i> = Qt::TopRightCorner )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#elideMode-prop">setElideMode</a></b> ( Qt::TextElideMode )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#iconSize-prop">setIconSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabEnabled">setTabEnabled</a></b> ( int <i>index</i>, bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabIcon">setTabIcon</a></b> ( int <i>index</i>, const QIcon &amp; <i>icon</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#tabPosition-prop">setTabPosition</a></b> ( TabPosition )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#tabShape-prop">setTabShape</a></b> ( TabShape <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabText">setTabText</a></b> ( int <i>index</i>, const QString &amp; <i>label</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabToolTip">setTabToolTip</a></b> ( int <i>index</i>, const QString &amp; <i>tip</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabWhatsThis">setTabWhatsThis</a></b> ( int <i>index</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#usesScrollButtons-prop">setUsesScrollButtons</a></b> ( bool <i>useButtons</i> )</li>
+<li><div class="fn"/>QIcon <b><a href="qtabwidget.html#tabIcon">tabIcon</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>TabPosition <b><a href="qtabwidget.html#tabPosition-prop">tabPosition</a></b> () const</li>
+<li><div class="fn"/>TabShape <b><a href="qtabwidget.html#tabShape-prop">tabShape</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtabwidget.html#tabText">tabText</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtabwidget.html#tabToolTip">tabToolTip</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qtabwidget.html#tabWhatsThis">tabWhatsThis</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qtabwidget.html#usesScrollButtons-prop">usesScrollButtons</a></b> () const</li>
+<li><div class="fn"/>QWidget * <b><a href="qtabwidget.html#widget">widget</a></b> ( int <i>index</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#currentIndex-prop">setCurrentIndex</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setCurrentWidget">setCurrentWidget</a></b> ( QWidget * <i>widget</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#currentChanged">currentChanged</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#initStyleOption">initStyleOption</a></b> ( QStyleOptionTabWidgetFrame * <i>option</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qtabwidget.html#paintEvent">paintEvent</a></b> ( QPaintEvent * <i>event</i> )</li>
+<li><div class="fn"/>void <b><a href="qtabwidget.html#setTabBar">setTabBar</a></b> ( QTabBar * <i>tb</i> )</li>
+<li><div class="fn"/>QTabBar * <b><a href="qtabwidget.html#tabBar">tabBar</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qtabwidget.html#tabInserted">tabInserted</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qtabwidget.html#tabRemoved">tabRemoved</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTabWidget class provides a stack of tabbed widgets.</p>
+<p>A tab widget provides a tab bar (see <a href="qtabbar.html">QTabBar</a>) and a &quot;page area&quot; that is used to display pages related to each tab. By default, the tab bar is shown above the page area, but different configurations are available (see <a href="qtabwidget.html#TabPosition-enum">TabPosition</a>). Each tab is associated with a different widget (called a page). Only the current page is shown in the page area; all the other pages are hidden. The user can show a different page by clicking on its tab or by pressing its Alt+<i>letter</i> shortcut if it has one.</p>
+<p>The normal way to use QTabWidget is to do the following:</p>
+<ol type="1">
+<li>Create a QTabWidget.</li>
+<li>Create a <a href="qwidget.html">QWidget</a> for each of the pages in the tab dialog, but do not specify parent widgets for them.</li>
+<li>Insert child widgets into the page widget, using layouts to position them as normal.</li>
+<li>Call <a href="qtabwidget.html#addTab">addTab</a>() or <a href="qtabwidget.html#insertTab">insertTab</a>() to put the page widgets into the tab widget, giving each tab a suitable label with an optional keyboard shortcut.</li>
+</ol>
+<p>The position of the tabs is defined by <a href="qtabwidget.html#tabPosition-prop">tabPosition</a>, their shape by <a href="qtabwidget.html#tabShape-prop">tabShape</a>.</p>
+<p>The signal <a href="qtabwidget.html#currentChanged">currentChanged</a>() is emitted when the user selects a page.</p>
+<p>The current page index is available as <a href="qtabwidget.html#currentIndex-prop">currentIndex</a>(), the current page widget with <a href="qtabwidget.html#currentWidget">currentWidget</a>(). You can retrieve a pointer to a page widget with a given index using <a href="qtabwidget.html#widget">widget</a>(), and can find the index position of a widget with <a href="qtabwidget.html#indexOf">indexOf</a>(). Use <a href="qtabwidget.html#setCurrentWidget">setCurrentWidget</a>() or <a href="qtabwidget.html#currentIndex-prop">setCurrentIndex</a>() to show a particular page.</p>
+<p>You can change a tab's text and icon using <a href="qtabwidget.html#setTabText">setTabText</a>() or <a href="qtabwidget.html#setTabIcon">setTabIcon</a>(). A tab and its associated page can be removed with <a href="qtabwidget.html#removeTab">removeTab</a>().</p>
+<p>Each tab is either enabled or disabled at any given time (see <a href="qtabwidget.html#setTabEnabled">setTabEnabled</a>()). If a tab is enabled, the tab text is drawn normally and the user can select that tab. If it is disabled, the tab is drawn in a different way and the user cannot select that tab. Note that even if a tab is disabled, the page can still be visible, for example if all of the tabs happen to be disabled.</p>
+<p>Tab widgets can be a very good way to split up a complex dialog. An alternative is to use a <a href="qstackedwidget.html">QStackedWidget</a> for which you provide some means of navigating between pages, for example, a <a href="qtoolbar.html">QToolBar</a> or a <a href="qlistwidget.html">QListWidget</a>.</p>
+<p>Most of the functionality in QTabWidget is provided by a <a href="qtabbar.html">QTabBar</a> (at the top, providing the tabs) and a <a href="qstackedwidget.html">QStackedWidget</a> (most of the area, organizing the individual pages).</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/windowsxp-tabwidget.png" alt="Screenshot of a Windows XP style tab widget" /></td><td><img src="images/macintosh-tabwidget.png" alt="Screenshot of a Macintosh style tab widget" /></td><td><img src="images/plastique-tabwidget.png" alt="Screenshot of a Plastique style tab widget" /></td></tr>
+<tr valign="top" class="even"><td>A Windows XP style tab widget.</td><td>A Macintosh style tab widget.</td><td>A Plastique style tab widget.</td></tr>
+</table></p>
+<p>See also <a href="qtabbar.html">QTabBar</a>, <a href="qstackedwidget.html">QStackedWidget</a>, <a href="qtoolbox.html">QToolBox</a>, and <a href="dialogs-tabdialog.html">Tab Dialog Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="TabPosition-enum"></a>enum QTabWidget::TabPosition</h3>
+<p>This enum type defines where <a href="qtabwidget.html">QTabWidget</a> draws the tab row:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTabWidget::North</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The tabs are drawn above the pages.</td></tr>
+<tr><td valign="top"><tt>QTabWidget::South</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The tabs are drawn below the pages.</td></tr>
+<tr><td valign="top"><tt>QTabWidget::West</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The tabs are drawn to the left of the pages.</td></tr>
+<tr><td valign="top"><tt>QTabWidget::East</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The tabs are drawn to the right of the pages.</td></tr>
+</table></p>
+<h3 class="fn"><a name="TabShape-enum"></a>enum QTabWidget::TabShape</h3>
+<p>This enum type defines the shape of the tabs:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTabWidget::Rounded</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The tabs are drawn with a rounded look. This is the default shape.</td></tr>
+<tr><td valign="top"><tt>QTabWidget::Triangular</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The tabs are drawn with a triangular look.</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of tabs in the tab bar.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="currentIndex-prop"></a>currentIndex : int</h3>
+<p>This property holds the index position of the current tab page.</p>
+<p>The current index is -1 if there is no current widget.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int currentIndex () const</b></li>
+<li><div class="fn"/><b>void setCurrentIndex ( int <i>index</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="elideMode-prop"></a>elideMode : <a href="qt.html#TextElideMode-enum">Qt::TextElideMode</a></h3>
+<p>This property holds how to elide text in the tab bar.</p>
+<p>This property controls how items are elided when there is not enough space to show them for a given tab bar size.</p>
+<p>By default the value is style dependant.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::TextElideMode elideMode () const</b></li>
+<li><div class="fn"/><b>void setElideMode ( Qt::TextElideMode )</b></li>
+</ul>
+<p>See also <a href="qtabbar.html#elideMode-prop">QTabBar::elideMode</a>, <a href="qtabwidget.html#usesScrollButtons-prop">usesScrollButtons</a>, and <a href="qstyle.html#StyleHint-enum">QStyle::SH_TabBar_ElideMode</a>.</p>
+<h3 class="fn"><a name="iconSize-prop"></a>iconSize : <a href="qsize.html">QSize</a></h3>
+<p>This property holds the size for icons in the tab bar.</p>
+<p>The default value is style-dependent. This is the maximum size that the icons will have. Icons are not scaled up if they are of smaller size.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize iconSize () const</b></li>
+<li><div class="fn"/><b>void setIconSize ( const QSize &amp; <i>size</i> )</b></li>
+</ul>
+<p>See also <a href="qtabbar.html#iconSize-prop">QTabBar::iconSize</a>.</p>
+<h3 class="fn"><a name="tabPosition-prop"></a>tabPosition : <a href="qtabwidget.html#TabPosition-enum">TabPosition</a></h3>
+<p>This property holds the position of the tabs in this tab widget.</p>
+<p>Possible values for this property are described by the <a href="qtabwidget.html#TabPosition-enum">TabPosition</a> enum.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>TabPosition tabPosition () const</b></li>
+<li><div class="fn"/><b>void setTabPosition ( TabPosition )</b></li>
+</ul>
+<p>See also <a href="qtabwidget.html#TabPosition-enum">TabPosition</a>.</p>
+<h3 class="fn"><a name="tabShape-prop"></a>tabShape : <a href="qtabwidget.html#TabShape-enum">TabShape</a></h3>
+<p>This property holds the shape of the tabs in this tab widget.</p>
+<p>Possible values for this property are <a href="qtabwidget.html#TabShape-enum">QTabWidget::Rounded</a> (default) or <a href="qtabwidget.html#TabShape-enum">QTabWidget::Triangular</a>.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>TabShape tabShape () const</b></li>
+<li><div class="fn"/><b>void setTabShape ( TabShape <i>s</i> )</b></li>
+</ul>
+<p>See also <a href="qtabwidget.html#TabShape-enum">TabShape</a>.</p>
+<h3 class="fn"><a name="usesScrollButtons-prop"></a>usesScrollButtons : bool</h3>
+<p>This property holds whether or not a tab bar should use buttons to scroll tabs when it has many tabs.</p>
+<p>When there are too many tabs in a tab bar for its size, the tab bar can either choose to expand it's size or to add buttons that allow you to scroll through the tabs.</p>
+<p>By default the value is style dependant.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool usesScrollButtons () const</b></li>
+<li><div class="fn"/><b>void setUsesScrollButtons ( bool <i>useButtons</i> )</b></li>
+</ul>
+<p>See also <a href="qtabwidget.html#elideMode-prop">elideMode</a>, <a href="qtabbar.html#usesScrollButtons-prop">QTabBar::usesScrollButtons</a>, and <a href="qstyle.html#StyleHint-enum">QStyle::SH_TabBar_PreferNoArrows</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTabWidget"></a>QTabWidget::QTabWidget ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a tabbed widget with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QTabWidget"></a>QTabWidget::~QTabWidget ()</h3>
+<p>Destroys the tabbed widget.</p>
+<h3 class="fn"><a name="addTab"></a>int QTabWidget::addTab ( <a href="qwidget.html">QWidget</a> * <i>page</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>Adds a tab with the given <i>page</i> and <i>label</i> to the tab widget, and returns the index of the tab in the tab bar.</p>
+<p>If the tab's <i>label</i> contains an ampersand, the letter following the ampersand is used as a shortcut for the tab, e.g&#x2e; if the label is &quot;Bro&amp;wse&quot; then Alt+W becomes a shortcut which will move the focus to this tab.</p>
+<p><b>Note:</b> If you call addTab() after <a href="qwidget.html#show">show</a>(), the layout system will try to adjust to the changes in it's widgets hierarchy and may cause flicker. To prevent this, you can set the <a href="qwidget.html#updatesEnabled-prop">QWidget::updatesEnabled</a> property to false prior to changes; remember to set the property to true when the changes are done, making the widget receive paint events again.</p>
+<p>See also <a href="qtabwidget.html#insertTab">insertTab</a>().</p>
+<h3 class="fn"><a name="addTab-2"></a>int QTabWidget::addTab ( <a href="qwidget.html">QWidget</a> * <i>page</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds a tab with the given <i>page</i>, <i>icon</i>, and <i>label</i> to the tab widget, and returns the index of the tab in the tab bar.</p>
+<p>This function is the same as <a href="qtabwidget.html#addTab">addTab</a>(), but with an additional <i>icon</i>.</p>
+<h3 class="fn"><a name="clear"></a>void QTabWidget::clear ()</h3>
+<p>Removes all the pages, but does not delete them. Calling this function is equivalent to calling <a href="qtabwidget.html#removeTab">removeTab</a>() until the tab widget is empty.</p>
+<h3 class="fn"><a name="cornerWidget"></a><a href="qwidget.html">QWidget</a> * QTabWidget::cornerWidget ( <a href="qt.html#Corner-enum">Qt::Corner</a> <i>corner</i> = Qt::TopRightCorner ) const</h3>
+<p>Returns the widget shown in the <i>corner</i> of the tab widget or 0.</p>
+<p>See also <a href="qtabwidget.html#setCornerWidget">setCornerWidget</a>().</p>
+<h3 class="fn"><a name="currentChanged"></a>void QTabWidget::currentChanged ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current page index changes. The parameter is the new current page <i>index</i> position, or -1 if there isn't a new one (for example, if there are no widgets in the <a href="qtabwidget.html">QTabWidget</a>)</p>
+<p>See also <a href="qtabwidget.html#currentWidget">currentWidget</a>() and <a href="qtabwidget.html#currentIndex-prop">currentIndex</a>.</p>
+<h3 class="fn"><a name="currentWidget"></a><a href="qwidget.html">QWidget</a> * QTabWidget::currentWidget () const</h3>
+<p>Returns a pointer to the page currently being displayed by the tab dialog. The tab dialog does its best to make sure that this value is never 0 (but if you try hard enough, it can be).</p>
+<p>See also <a href="qtabwidget.html#currentIndex-prop">currentIndex</a>() and <a href="qtabwidget.html#setCurrentWidget">setCurrentWidget</a>().</p>
+<h3 class="fn"><a name="indexOf"></a>int QTabWidget::indexOf ( <a href="qwidget.html">QWidget</a> * <i>w</i> ) const</h3>
+<p>Returns the index position of the page occupied by the widget <i>w</i>, or -1 if the widget cannot be found.</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QTabWidget::initStyleOption ( <a href="qstyleoptiontabwidgetframe.html">QStyleOptionTabWidgetFrame</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from this <a href="qtabwidget.html">QTabWidget</a>. This method is useful for subclasses when they need a <a href="qstyleoptiontabwidgetframe.html">QStyleOptionTabWidgetFrame</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>() and <a href="qtabbar.html#initStyleOption">QTabBar::initStyleOption</a>().</p>
+<h3 class="fn"><a name="insertTab"></a>int QTabWidget::insertTab ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>page</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>Inserts a tab with the given <i>label</i> and <i>page</i> into the tab widget at the specified <i>index</i>, and returns the index of the inserted tab in the tab bar.</p>
+<p>The label is displayed in the tab and may vary in appearance depending on the configuration of the tab widget.</p>
+<p>If the tab's <i>label</i> contains an ampersand, the letter following the ampersand is used as a shortcut for the tab, e.g&#x2e; if the label is &quot;Bro&amp;wse&quot; then Alt+W becomes a shortcut which will move the focus to this tab.</p>
+<p>If <i>index</i> is out of range, the tab is simply appended. Otherwise it is inserted at the specified position.</p>
+<p>If the <a href="qtabwidget.html">QTabWidget</a> was empty before this function is called, the new page becomes the current page. Inserting a new tab at an index less than or equal to the current index will increment the current index, but keep the current page.</p>
+<p><b>Note:</b> If you call insertTab() after <a href="qwidget.html#show">show</a>(), the layout system will try to adjust to the changes in it's widgets hierarchy and may cause flicker. To prevent this, you can set the <a href="qwidget.html#updatesEnabled-prop">QWidget::updatesEnabled</a> property to false prior to changes; remember to set the property to true when the changes are done, making the widget receive paint events again.</p>
+<p>See also <a href="qtabwidget.html#addTab">addTab</a>().</p>
+<h3 class="fn"><a name="insertTab-4"></a>int QTabWidget::insertTab ( int <i>index</i>, <a href="qwidget.html">QWidget</a> * <i>page</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Inserts a tab with the given <i>label</i>, <i>page</i>, and <i>icon</i> into the tab widget at the specified <i>index</i>, and returns the index of the inserted tab in the tab bar.</p>
+<p>This function is the same as <a href="qtabwidget.html#insertTab">insertTab</a>(), but with an additional <i>icon</i>.</p>
+<h3 class="fn"><a name="isTabEnabled"></a>bool QTabWidget::isTabEnabled ( int <i>index</i> ) const</h3>
+<p>Returns true if the the page at position <i>index</i> is enabled; otherwise returns false.</p>
+<p>See also <a href="qtabwidget.html#setTabEnabled">setTabEnabled</a>() and <a href="qwidget.html#enabled-prop">QWidget::isEnabled</a>().</p>
+<h3 class="fn"><a name="paintEvent"></a>void QTabWidget::paintEvent ( <a href="qpaintevent.html">QPaintEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the tab widget's tab bar in response to the paint <i>event</i>.</p>
+<p>Reimplemented from <a href="qwidget.html#paintEvent">QWidget</a>.</p>
+<h3 class="fn"><a name="removeTab"></a>void QTabWidget::removeTab ( int <i>index</i> )</h3>
+<p>Removes the tab at position <i>index</i> from this stack of widgets. The page widget itself is not deleted.</p>
+<p>See also <a href="qtabwidget.html#addTab">addTab</a>() and <a href="qtabwidget.html#insertTab">insertTab</a>().</p>
+<h3 class="fn"><a name="setCornerWidget"></a>void QTabWidget::setCornerWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i>, <a href="qt.html#Corner-enum">Qt::Corner</a> <i>corner</i> = Qt::TopRightCorner )</h3>
+<p>Sets the given <i>widget</i> to be shown in the specified <i>corner</i> of the tab widget. The geometry of the widget is determined based on the widget's <a href="qwidget.html#sizeHint-prop">sizeHint</a>() and the <a href="qwidget.html#style">style</a>().</p>
+<p>Only the horizontal element of the <i>corner</i> will be used.</p>
+<p>Passing 0 shows no widget in the corner.</p>
+<p>Any previously set corner widget is hidden.</p>
+<p>All widgets set here will be deleted by the tab widget when it is destroyed unless you separately reparent the widget after setting some other corner widget (or 0).</p>
+<p>Note: Corner widgets are designed for <a href="qtabwidget.html#TabPosition-enum">North</a> and <a href="qtabwidget.html#TabPosition-enum">South</a> tab positions; other orientations are known to not work properly.</p>
+<p>See also <a href="qtabwidget.html#cornerWidget">cornerWidget</a>() and <a href="qtabwidget.html#tabPosition-prop">setTabPosition</a>().</p>
+<h3 class="fn"><a name="setCurrentWidget"></a>void QTabWidget::setCurrentWidget ( <a href="qwidget.html">QWidget</a> * <i>widget</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Makes <i>widget</i> the current widget. The <i>widget</i> used must be a page in this tab widget.</p>
+<p>See also <a href="qtabwidget.html#addTab">addTab</a>(), <a href="qtabwidget.html#currentIndex-prop">setCurrentIndex</a>(), and <a href="qtabwidget.html#currentWidget">currentWidget</a>().</p>
+<h3 class="fn"><a name="setTabBar"></a>void QTabWidget::setTabBar ( <a href="qtabbar.html">QTabBar</a> * <i>tb</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Replaces the dialog's <a href="qtabbar.html">QTabBar</a> heading with the tab bar <i>tb</i>. Note that this must be called <i>before</i> any tabs have been added, or the behavior is undefined.</p>
+<p>See also <a href="qtabwidget.html#tabBar">tabBar</a>().</p>
+<h3 class="fn"><a name="setTabEnabled"></a>void QTabWidget::setTabEnabled ( int <i>index</i>, bool <i>enable</i> )</h3>
+<p>If <i>enable</i> is true, the page at position <i>index</i> is enabled; otherwise the page at position <i>index</i> is disabled. The page's tab is redrawn appropriately.</p>
+<p><a href="qtabwidget.html">QTabWidget</a> uses <a href="qwidget.html#enabled-prop">QWidget::setEnabled</a>() internally, rather than keeping a separate flag.</p>
+<p>Note that even a disabled tab/page may be visible. If the page is visible already, <a href="qtabwidget.html">QTabWidget</a> will not hide it; if all the pages are disabled, <a href="qtabwidget.html">QTabWidget</a> will show one of them.</p>
+<p>See also <a href="qtabwidget.html#isTabEnabled">isTabEnabled</a>() and <a href="qwidget.html#enabled-prop">QWidget::setEnabled</a>().</p>
+<h3 class="fn"><a name="setTabIcon"></a>void QTabWidget::setTabIcon ( int <i>index</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i> )</h3>
+<p>Sets the <i>icon</i> for the tab at position <i>index</i>.</p>
+<p>See also <a href="qtabwidget.html#tabIcon">tabIcon</a>().</p>
+<h3 class="fn"><a name="setTabText"></a>void QTabWidget::setTabText ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>label</i> )</h3>
+<p>Defines a new <i>label</i> for the page at position <i>index</i>'s tab.</p>
+<p>If the provided text contains an ampersand character ('&amp;'), a shortcut is automatically created for it. The character that follows the '&amp;' will be used as the shortcut key. Any previous shortcut will be overwritten, or cleared if no shortcut is defined by the text. See the <a href="qshortcut.html#mnemonic">QShortcut</a> documentation for details (to display an actual ampersand, use '&amp;&amp;').</p>
+<p>See also <a href="qtabwidget.html#tabText">tabText</a>().</p>
+<h3 class="fn"><a name="setTabToolTip"></a>void QTabWidget::setTabToolTip ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>tip</i> )</h3>
+<p>Sets the tab tool tip for the page at position <i>index</i> to <i>tip</i>.</p>
+<p>See also <a href="qtabwidget.html#tabToolTip">tabToolTip</a>().</p>
+<h3 class="fn"><a name="setTabWhatsThis"></a>void QTabWidget::setTabWhatsThis ( int <i>index</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )</h3>
+<p>Sets the What's This help text for the page at position <i>index</i> to <i>text</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtabwidget.html#tabWhatsThis">tabWhatsThis</a>().</p>
+<h3 class="fn"><a name="tabBar"></a><a href="qtabbar.html">QTabBar</a> * QTabWidget::tabBar () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the current <a href="qtabbar.html">QTabBar</a>.</p>
+<p>See also <a href="qtabwidget.html#setTabBar">setTabBar</a>().</p>
+<h3 class="fn"><a name="tabIcon"></a><a href="qicon.html">QIcon</a> QTabWidget::tabIcon ( int <i>index</i> ) const</h3>
+<p>Returns the icon for the tab on the page at position <i>index</i>.</p>
+<p>See also <a href="qtabwidget.html#setTabIcon">setTabIcon</a>().</p>
+<h3 class="fn"><a name="tabInserted"></a>void QTabWidget::tabInserted ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called after a new tab was added or inserted at position <i>index</i>.</p>
+<p>See also <a href="qtabwidget.html#tabRemoved">tabRemoved</a>().</p>
+<h3 class="fn"><a name="tabRemoved"></a>void QTabWidget::tabRemoved ( int <i>index</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual handler is called after a tab was removed from position <i>index</i>.</p>
+<p>See also <a href="qtabwidget.html#tabInserted">tabInserted</a>().</p>
+<h3 class="fn"><a name="tabText"></a><a href="qstring.html">QString</a> QTabWidget::tabText ( int <i>index</i> ) const</h3>
+<p>Returns the label text for the tab on the page at position <i>index</i>.</p>
+<p>See also <a href="qtabwidget.html#setTabText">setTabText</a>().</p>
+<h3 class="fn"><a name="tabToolTip"></a><a href="qstring.html">QString</a> QTabWidget::tabToolTip ( int <i>index</i> ) const</h3>
+<p>Returns the tab tool tip for the page at position <i>index</i> or an empty string if no tool tip has been set.</p>
+<p>See also <a href="qtabwidget.html#setTabToolTip">setTabToolTip</a>().</p>
+<h3 class="fn"><a name="tabWhatsThis"></a><a href="qstring.html">QString</a> QTabWidget::tabWhatsThis ( int <i>index</i> ) const</h3>
+<p>Returns the What's This help text for the page at position <i>index</i>, or an empty string if no help text has been set.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qtabwidget.html#setTabWhatsThis">setTabWhatsThis</a>().</p>
+<h3 class="fn"><a name="widget"></a><a href="qwidget.html">QWidget</a> * QTabWidget::widget ( int <i>index</i> ) const</h3>
+<p>Returns the tab page at index position <i>index</i> or 0 if the <i>index</i> is out of range.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

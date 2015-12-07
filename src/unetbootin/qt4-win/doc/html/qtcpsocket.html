@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/socket/qtcpsocket.cpp -->
+<head>
+  <title>Qt 4.4: QTcpSocket Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTcpSocket Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QTcpSocket class provides a TCP socket. <a href="#details">More...</a></p>
+<pre> #include &lt;QTcpSocket&gt;</pre><p>Inherits <a href="qabstractsocket.html">QAbstractSocket</a>.</p>
+<p>Inherited by <a href="qsslsocket.html">QSslSocket</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtcpsocket-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtcpsocket.html#QTcpSocket">QTcpSocket</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qtcpsocket.html#dtor.QTcpSocket">~QTcpSocket</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>27 public functions inherited from <a href="qabstractsocket.html#public-functions">QAbstractSocket</a></li>
+<li><div class="fn"/>32 public functions inherited from <a href="qiodevice.html#public-functions">QIODevice</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>6 signals inherited from <a href="qabstractsocket.html#signals">QAbstractSocket</a></li>
+<li><div class="fn"/>4 signals inherited from <a href="qiodevice.html#signals">QIODevice</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qabstractsocket.html#protected-functions">QAbstractSocket</a></li>
+<li><div class="fn"/>5 protected functions inherited from <a href="qiodevice.html#protected-functions">QIODevice</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>2 protected slots inherited from <a href="qabstractsocket.html#protected-slots">QAbstractSocket</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTcpSocket class provides a TCP socket.</p>
+<p>TCP (Transmission Control Protocol) is a reliable, stream-oriented, connection-oriented transport protocol. It is especially well suited for continuous transmission of data.</p>
+<p>QTcpSocket is a convenience subclass of <a href="qabstractsocket.html">QAbstractSocket</a> that allows you to establish a TCP connection and transfer streams of data. See the <a href="qabstractsocket.html">QAbstractSocket</a> documentation for details.</p>
+<p><b>Note:</b> TCP sockets cannot be opened in <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::Unbuffered</a> mode.</p>
+<p>See also <a href="qtcpserver.html">QTcpServer</a>, <a href="qudpsocket.html">QUdpSocket</a>, <a href="qftp.html">QFtp</a>, <a href="qhttp.html">QHttp</a>, <a href="network-fortuneserver.html">Fortune Server Example</a>, <a href="network-fortuneclient.html">Fortune Client Example</a>, <a href="network-threadedfortuneserver.html">Threaded Fortune Server Example</a>, <a href="network-blockingfortuneclient.html">Blocking Fortune Client Example</a>, <a href="network-loopback.html">Loopback Example</a>, and <a href="network-torrent.html">Torrent Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTcpSocket"></a>QTcpSocket::QTcpSocket ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a <a href="qtcpsocket.html">QTcpSocket</a> object in state <tt>UnconnectedState</tt>.</p>
+<p><i>parent</i> is passed on to the <a href="qobject.html">QObject</a> constructor.</p>
+<p>See also <a href="qabstractsocket.html#socketType">socketType</a>().</p>
+<h3 class="fn"><a name="dtor.QTcpSocket"></a>QTcpSocket::~QTcpSocket ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the socket, closing the connection if necessary.</p>
+<p>See also <a href="qabstractsocket.html#close">close</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

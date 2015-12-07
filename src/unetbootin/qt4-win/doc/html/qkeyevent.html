@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qevent.cpp -->
+<head>
+  <title>Qt 4.4: QKeyEvent Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QKeyEvent Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QKeyEvent class describes a key event. <a href="#details">More...</a></p>
+<pre> #include &lt;QKeyEvent&gt;</pre><p>Inherits <a href="qinputevent.html">QInputEvent</a>.</p>
+<ul>
+<li><a href="qkeyevent-members.html">List of all members, including inherited members</a></li>
+<li><a href="qkeyevent-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qkeyevent.html#QKeyEvent">QKeyEvent</a></b> ( Type <i>type</i>, int <i>key</i>, Qt::KeyboardModifiers <i>modifiers</i>, const QString &amp; <i>text</i> = QString(), bool <i>autorep</i> = false, ushort <i>count</i> = 1 )</li>
+<li><div class="fn"/>int <b><a href="qkeyevent.html#count">count</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qkeyevent.html#isAutoRepeat">isAutoRepeat</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qkeyevent.html#key">key</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qkeyevent.html#matches">matches</a></b> ( QKeySequence::StandardKey <i>key</i> ) const</li>
+<li><div class="fn"/>Qt::KeyboardModifiers <b><a href="qkeyevent.html#modifiers">modifiers</a></b> () const</li>
+<li><div class="fn"/>quint32 <b><a href="qkeyevent.html#nativeModifiers">nativeModifiers</a></b> () const</li>
+<li><div class="fn"/>quint32 <b><a href="qkeyevent.html#nativeScanCode">nativeScanCode</a></b> () const</li>
+<li><div class="fn"/>quint32 <b><a href="qkeyevent.html#nativeVirtualKey">nativeVirtualKey</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qkeyevent.html#text">text</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public function inherited from <a href="qinputevent.html#public-functions">QInputEvent</a></li>
+<li><div class="fn"/>6 public functions inherited from <a href="qevent.html#public-functions">QEvent</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qkeyevent.html#operator-eq-eq-22">operator==</a></b> ( QKeyEvent * <i>e</i>, QKeySequence::StandardKey <i>key</i> )</li>
+<li><div class="fn"/>bool <b><a href="qkeyevent.html#operator-eq-eq-23">operator==</a></b> ( QKeySequence::StandardKey <i>key</i>, QKeyEvent * <i>e</i> )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qevent.html#properties">QEvent</a></li>
+<li><div class="fn"/>1 static public member inherited from <a href="qevent.html#static-public-members">QEvent</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QKeyEvent class describes a key event.</p>
+<p>Key events are sent to the widget with keyboard input focus when keys are pressed or released.</p>
+<p>A key event contains a special accept flag that indicates whether the receiver will handle the key event. You should call <a href="qevent.html#ignore">ignore</a>() if the key press or release event is not handled by your widget. A key event is propagated up the parent widget chain until a widget accepts it with <a href="qevent.html#accept">accept</a>() or an event filter consumes it. Key events for multimedia keys are ignored by default. You should call <a href="qevent.html#accept">accept</a>() if your widget handles those events.</p>
+<p>The QWidget::setEnable() function can be used to enable or disable mouse and keyboard events for a widget.</p>
+<p>The event handlers <a href="qwidget.html#keyPressEvent">QWidget::keyPressEvent</a>() and <a href="qwidget.html#keyReleaseEvent">QWidget::keyReleaseEvent</a>() receive key events.</p>
+<p>See also <a href="qfocusevent.html">QFocusEvent</a> and <a href="qwidget.html#grabKeyboard">QWidget::grabKeyboard</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QKeyEvent"></a>QKeyEvent::QKeyEvent ( <a href="qevent.html#Type-enum">Type</a> <i>type</i>, int <i>key</i>, <a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> <i>modifiers</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> = QString(), bool <i>autorep</i> = false, <a href="qtglobal.html#ushort-typedef">ushort</a> <i>count</i> = 1 )</h3>
+<p>Constructs a key event object.</p>
+<p>The <i>type</i> parameter must be <a href="qevent.html#Type-enum">QEvent::KeyPress</a>, <a href="qevent.html#Type-enum">QEvent::KeyRelease</a>, or <a href="qevent.html#Type-enum">QEvent::ShortcutOverride</a>.</p>
+<p>If <i>key</i> is 0, the event is not a result of a known key; for example, it may be the result of a compose sequence or keyboard macro. The <i>modifiers</i> holds the keyboard modifiers, and the given <i>text</i> is the Unicode text that the key generated. If <i>autorep</i> is true, <a href="qkeyevent.html#isAutoRepeat">isAutoRepeat</a>() will be true. <i>count</i> is the number of keys involved in the event.</p>
+<h3 class="fn"><a name="count"></a>int QKeyEvent::count () const</h3>
+<p>Returns the number of keys involved in this event. If <a href="qkeyevent.html#text">text</a>() is not empty, this is simply the length of the string.</p>
+<p>See also <a href="qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p>
+<h3 class="fn"><a name="isAutoRepeat"></a>bool QKeyEvent::isAutoRepeat () const</h3>
+<p>Returns true if this event comes from an auto-repeating key; returns false if it comes from an initial key press.</p>
+<p>Note that if the event is a multiple-key compressed event that is partly due to auto-repeat, this function could return either true or false indeterminately.</p>
+<h3 class="fn"><a name="key"></a>int QKeyEvent::key () const</h3>
+<p>Returns the code of the key that was pressed or released.</p>
+<p>See <a href="qt.html#Key-enum">Qt::Key</a> for the list of keyboard codes. These codes are independent of the underlying window system. Note that this function does not distinguish between capital and non-capital letters, use the <a href="qkeyevent.html#text">text</a>() function (returning the Unicode text the key generated) for this purpose.</p>
+<p>A value of either 0 or <a href="qt.html#Key-enum">Qt::Key_unknown</a> means that the event is not the result of a known key; for example, it may be the result of a compose sequence, a keyboard macro, or due to key event compression.</p>
+<p>See also <a href="qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p>
+<h3 class="fn"><a name="matches"></a>bool QKeyEvent::matches ( <a href="qkeysequence.html#StandardKey-enum">QKeySequence::StandardKey</a> <i>key</i> ) const</h3>
+<p>Returns true if the key event matches the given standard <i>key</i>; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="modifiers"></a><a href="qt.html#KeyboardModifier-enum">Qt::KeyboardModifiers</a> QKeyEvent::modifiers () const</h3>
+<p>Returns the keyboard modifier flags that existed immediately after the event occurred.</p>
+<p><b>Warning:</b> This function cannot always be trusted. The user can confuse it by pressing both <b>Shift</b> keys simultaneously and releasing one of them, for example.</p>
+<p>See also <a href="qapplication.html#keyboardModifiers">QApplication::keyboardModifiers</a>().</p>
+<h3 class="fn"><a name="nativeModifiers"></a><a href="qtglobal.html#quint32-typedef">quint32</a> QKeyEvent::nativeModifiers () const</h3>
+<p>Returns the native modifiers of a key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native modifiers may be 0, even if the key event contains extended information.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="nativeScanCode"></a><a href="qtglobal.html#quint32-typedef">quint32</a> QKeyEvent::nativeScanCode () const</h3>
+<p>Returns the native scan code of the key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native scan code may be 0, even if the key event contains extended information.</p>
+<p>Note: On Mac OS/X, this function is not useful, because there is no way to get the scan code from Carbon or Cocoa. The function always returns 1 (or 0 in the case explained above).</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="nativeVirtualKey"></a><a href="qtglobal.html#quint32-typedef">quint32</a> QKeyEvent::nativeVirtualKey () const</h3>
+<p>Returns the native virtual key, or key sym of the key event. If the key event does not contain this data 0 is returned.</p>
+<p>Note: The native virtual key may be 0, even if the key event contains extended information.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QKeyEvent::text () const</h3>
+<p>Returns the Unicode text that this key generated. The text returned can be an empty string in cases where modifier keys, such as Shift, Control, Alt, and Meta, are being pressed or released. In such cases <a href="qkeyevent.html#key">key</a>() will contain a valid value.</p>
+<p>See also <a href="qt.html#WidgetAttribute-enum">Qt::WA_KeyCompression</a>.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-eq-eq-22"></a>bool operator== ( QKeyEvent * <i>e</i>, <a href="qkeysequence.html#StandardKey-enum">QKeySequence::StandardKey</a> <i>key</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>key</i> is currently bound to the key combination specified by <i>e</i>.</p>
+<p>Equivalent to <tt>e-&gt;matches(key)</tt>.</p>
+<h3 class="fn"><a name="operator-eq-eq-23"></a>bool operator== ( <a href="qkeysequence.html#StandardKey-enum">QKeySequence::StandardKey</a> <i>key</i>, QKeyEvent * <i>e</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>key</i> is currently bound to the key combination specified by <i>e</i>.</p>
+<p>Equivalent to <tt>e-&gt;matches(key)</tt>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,6 @@
+QMAKE_PRL_BUILD_DIR = /afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/src/3rdparty/webkit/WebCore
+QMAKE_PRO_INPUT = WebCore.pro
+QMAKE_PRL_TARGET = libQtWebKit.a
+QMAKE_PRL_CONFIG = lex yacc uic resources qt release incremental link_prl exceptions no_mocdepend release stl qt_no_framework release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath QTDIR_build building-libs depend_includepath qt_install_headers qt depend_includepath qmake_cache target_qt hide_symbols create_libtool create_pc explicitlib x11 link_pkgconfig no_debug_info x11lib x11inc moc thread staticlib static
+QMAKE_PRL_VERSION = 4.5.0
+QMAKE_PRL_LIBS = -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -L/usr/X11R6/lib  -lQtGui -L/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11/lib -L/usr/X11R6/lib -pthread -lpng -lfreetype -lSM -lICE -pthread -pthread -lXrender -lfontconfig -lXext -lX11 -lQtNetwork -pthread -pthread -lQtCore -lz -lm -pthread -lgthread-2.0 -lglib-2.0 -lrt -lpthread -ldl 

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/trolltech/assistant" >
+        <file>images/1leftarrow.png</file>
+        <file>images/1rightarrow.png</file>
+        <file>images/3leftarrow.png</file>
+        <file>images/3rightarrow.png</file>
+    </qresource>
+</RCC>

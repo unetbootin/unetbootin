@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qsize.cpp -->
+<head>
+  <title>Qt 4.4: QSizeF Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSizeF Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QSizeF class defines the size of a two-dimensional object using floating point precision. <a href="#details">More...</a></p>
+<pre> #include &lt;QSizeF&gt;</pre><ul>
+<li><a href="qsizef-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsizef.html#QSizeF">QSizeF</a></b> ()</li>
+<li><div class="fn"/><b><a href="qsizef.html#QSizeF-2">QSizeF</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/><b><a href="qsizef.html#QSizeF-3">QSizeF</a></b> ( qreal <i>width</i>, qreal <i>height</i> )</li>
+<li><div class="fn"/>QSizeF <b><a href="qsizef.html#boundedTo">boundedTo</a></b> ( const QSizeF &amp; <i>otherSize</i> ) const</li>
+<li><div class="fn"/>QSizeF <b><a href="qsizef.html#expandedTo">expandedTo</a></b> ( const QSizeF &amp; <i>otherSize</i> ) const</li>
+<li><div class="fn"/>qreal <b><a href="qsizef.html#height">height</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsizef.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsizef.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsizef.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>qreal &amp; <b><a href="qsizef.html#rheight">rheight</a></b> ()</li>
+<li><div class="fn"/>qreal &amp; <b><a href="qsizef.html#rwidth">rwidth</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qsizef.html#scale">scale</a></b> ( qreal <i>width</i>, qreal <i>height</i>, Qt::AspectRatioMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qsizef.html#scale-2">scale</a></b> ( const QSizeF &amp; <i>size</i>, Qt::AspectRatioMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qsizef.html#setHeight">setHeight</a></b> ( qreal <i>height</i> )</li>
+<li><div class="fn"/>void <b><a href="qsizef.html#setWidth">setWidth</a></b> ( qreal <i>width</i> )</li>
+<li><div class="fn"/>QSize <b><a href="qsizef.html#toSize">toSize</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsizef.html#transpose">transpose</a></b> ()</li>
+<li><div class="fn"/>qreal <b><a href="qsizef.html#width">width</a></b> () const</li>
+<li><div class="fn"/>QSizeF &amp; <b><a href="qsizef.html#operator-2a-eq">operator*=</a></b> ( qreal <i>factor</i> )</li>
+<li><div class="fn"/>QSizeF &amp; <b><a href="qsizef.html#operator-2b-eq">operator+=</a></b> ( const QSizeF &amp; <i>size</i> )</li>
+<li><div class="fn"/>QSizeF &amp; <b><a href="qsizef.html#operator--eq">operator-=</a></b> ( const QSizeF &amp; <i>size</i> )</li>
+<li><div class="fn"/>QSizeF &amp; <b><a href="qsizef.html#operator-2f-eq">operator/=</a></b> ( qreal <i>divisor</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qsizef.html#operator-not-eq-37">operator!=</a></b> ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const QSizeF <b><a href="qsizef.html#operator-2a-28">operator*</a></b> ( const QSizeF &amp; <i>size</i>, qreal <i>factor</i> )</li>
+<li><div class="fn"/>const QSizeF <b><a href="qsizef.html#operator-2a-29">operator*</a></b> ( qreal <i>factor</i>, const QSizeF &amp; <i>size</i> )</li>
+<li><div class="fn"/>const QSizeF <b><a href="qsizef.html#operator-2b-27">operator+</a></b> ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const QSizeF <b><a href="qsizef.html#operator--9">operator-</a></b> ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const QSizeF <b><a href="qsizef.html#operator-2f-6">operator/</a></b> ( const QSizeF &amp; <i>size</i>, qreal <i>divisor</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qsizef.html#operator-lt-lt-134">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QSizeF &amp; <i>size</i> )</li>
+<li><div class="fn"/>bool <b><a href="qsizef.html#operator-eq-eq-54">operator==</a></b> ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qsizef.html#operator-gt-gt-80">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QSizeF &amp; <i>size</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSizeF class defines the size of a two-dimensional object using floating point precision.</p>
+<p>A size is specified by a <a href="qsizef.html#width">width</a>() and a <a href="qsizef.html#height">height</a>(). It can be set in the constructor and changed using the <a href="qsizef.html#setWidth">setWidth</a>(), <a href="qsizef.html#setHeight">setHeight</a>(), or <a href="qsizef.html#scale">scale</a>() functions, or using arithmetic operators. A size can also be manipulated directly by retrieving references to the width and height using the <a href="qsizef.html#rwidth">rwidth</a>() and <a href="qsizef.html#rheight">rheight</a>() functions. Finally, the width and height can be swapped using the <a href="qsizef.html#transpose">transpose</a>() function.</p>
+<p>The <a href="qsizef.html#isValid">isValid</a>() function determines if a size is valid. A valid size has both width and height greater than or equal to zero. The <a href="qsizef.html#isEmpty">isEmpty</a>() function returns true if either of the width and height is <i>less</i> than (or equal to) zero, while the <a href="qsizef.html#isNull">isNull</a>() function returns true only if both the width and the height is zero.</p>
+<p>Use the <a href="qsizef.html#expandedTo">expandedTo</a>() function to retrieve a size which holds the maximum height and width of this size and a given size. Similarly, the <a href="qsizef.html#boundedTo">boundedTo</a>() function returns a size which holds the minimum height and width of this size and a given size.</p>
+<p>The QSizeF class also provides the <a href="qsizef.html#toSize">toSize</a>() function returning a <a href="qsize.html">QSize</a> copy of this size, constructed by rounding the width and height to the nearest integers.</p>
+<p>QSizeF objects can be streamed as well as compared.</p>
+<p>See also <a href="qsize.html">QSize</a>, <a href="qpointf.html">QPointF</a>, and <a href="qrectf.html">QRectF</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSizeF"></a>QSizeF::QSizeF ()</h3>
+<p>Constructs an invalid size.</p>
+<p>See also <a href="qsizef.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QSizeF-2"></a>QSizeF::QSizeF ( const <a href="qsize.html">QSize</a> &amp; <i>size</i> )</h3>
+<p>Constructs a size with floating point accuracy from the given <i>size</i>.</p>
+<p>See also <a href="qsizef.html#toSize">toSize</a>().</p>
+<h3 class="fn"><a name="QSizeF-3"></a>QSizeF::QSizeF ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Constructs a size with the given <i>width</i> and <i>height</i>.</p>
+<h3 class="fn"><a name="boundedTo"></a>QSizeF QSizeF::boundedTo ( const QSizeF &amp; <i>otherSize</i> ) const</h3>
+<p>Returns a size holding the minimum width and height of this size and the given <i>otherSize</i>.</p>
+<p>See also <a href="qsizef.html#expandedTo">expandedTo</a>() and <a href="qsizef.html#scale">scale</a>().</p>
+<h3 class="fn"><a name="expandedTo"></a>QSizeF QSizeF::expandedTo ( const QSizeF &amp; <i>otherSize</i> ) const</h3>
+<p>Returns a size holding the maximum width and height of this size and the given <i>otherSize</i>.</p>
+<p>See also <a href="qsizef.html#boundedTo">boundedTo</a>() and <a href="qsizef.html#scale">scale</a>().</p>
+<h3 class="fn"><a name="height"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QSizeF::height () const</h3>
+<p>Returns the height.</p>
+<p>See also <a href="qsizef.html#width">width</a>() and <a href="qsizef.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QSizeF::isEmpty () const</h3>
+<p>Returns true if either of the width and height is less than or equal to 0; otherwise returns false.</p>
+<p>See also <a href="qsizef.html#isNull">isNull</a>() and <a href="qsizef.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="isNull"></a>bool QSizeF::isNull () const</h3>
+<p>Returns true if both the width and height is 0; otherwise returns false.</p>
+<p>See also <a href="qsizef.html#isValid">isValid</a>() and <a href="qsizef.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QSizeF::isValid () const</h3>
+<p>Returns true if both the width and height is equal to or greater than 0; otherwise returns false.</p>
+<p>See also <a href="qsizef.html#isNull">isNull</a>() and <a href="qsizef.html#isEmpty">isEmpty</a>().</p>
+<h3 class="fn"><a name="rheight"></a><a href="qtglobal.html#qreal-typedef">qreal</a> &amp; QSizeF::rheight ()</h3>
+<p>Returns a reference to the height.</p>
+<p>Using a reference makes it possible to manipulate the height directly. For example:</p>
+<pre>         QSizeF size(100, 10.2);
+         size.rheight() += 5.5;
+
+         // size becomes (100,15.7)</pre>
+<p>See also <a href="qsizef.html#rwidth">rwidth</a>() and <a href="qsizef.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="rwidth"></a><a href="qtglobal.html#qreal-typedef">qreal</a> &amp; QSizeF::rwidth ()</h3>
+<p>Returns a reference to the width.</p>
+<p>Using a reference makes it possible to manipulate the width directly. For example:</p>
+<pre>         QSizeF size(100.3, 10);
+         size.rwidth() += 20.5;
+
+          // size becomes (120.8,10)</pre>
+<p>See also <a href="qsizef.html#rheight">rheight</a>() and <a href="qsizef.html#setWidth">setWidth</a>().</p>
+<h3 class="fn"><a name="scale"></a>void QSizeF::scale ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i>, <a href="qt.html#AspectRatioMode-enum">Qt::AspectRatioMode</a> <i>mode</i> )</h3>
+<p>Scales the size to a rectangle with the given <i>width</i> and <i>height</i>, according to the specified <i>mode</i>.</p>
+<ul>
+<li>If <i>mode</i> is <a href="qt.html#AspectRatioMode-enum">Qt::IgnoreAspectRatio</a>, the size is set to (<i>width</i>, <i>height</i>).</li>
+<li>If <i>mode</i> is <a href="qt.html#AspectRatioMode-enum">Qt::KeepAspectRatio</a>, the current size is scaled to a rectangle as large as possible inside (<i>width</i>, <i>height</i>), preserving the aspect ratio.</li>
+<li>If <i>mode</i> is <a href="qt.html#AspectRatioMode-enum">Qt::KeepAspectRatioByExpanding</a>, the current size is scaled to a rectangle as small as possible outside (<i>width</i>, <i>height</i>), preserving the aspect ratio.</li>
+</ul>
+<p>Example:</p>
+<pre>         QSizeF t1(10, 12);
+         t1.scale(60, 60, Qt::IgnoreAspectRatio);
+         // t1 is (60, 60)
+
+         QSizeF t2(10, 12);
+         t2.scale(60, 60, Qt::KeepAspectRatio);
+         // t2 is (50, 60)
+
+         QSizeF t3(10, 12);
+         t3.scale(60, 60, Qt::KeepAspectRatioByExpanding);
+         // t3 is (60, 72)</pre>
+<p>See also <a href="qsizef.html#setWidth">setWidth</a>() and <a href="qsizef.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="scale-2"></a>void QSizeF::scale ( const QSizeF &amp; <i>size</i>, <a href="qt.html#AspectRatioMode-enum">Qt::AspectRatioMode</a> <i>mode</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Scales the size to a rectangle with the given <i>size</i>, according to the specified <i>mode</i>.</p>
+<h3 class="fn"><a name="setHeight"></a>void QSizeF::setHeight ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>height</i> )</h3>
+<p>Sets the height to the given <i>height</i>.</p>
+<p>See also <a href="qsizef.html#height">height</a>(), <a href="qsizef.html#rheight">rheight</a>(), and <a href="qsizef.html#setWidth">setWidth</a>().</p>
+<h3 class="fn"><a name="setWidth"></a>void QSizeF::setWidth ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>width</i> )</h3>
+<p>Sets the width to the given <i>width</i>.</p>
+<p>See also <a href="qsizef.html#width">width</a>(), <a href="qsizef.html#rwidth">rwidth</a>(), and <a href="qsizef.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="toSize"></a><a href="qsize.html">QSize</a> QSizeF::toSize () const</h3>
+<p>Returns an integer based copy of this size.</p>
+<p>Note that the coordinates in the returned size will be rounded to the nearest integer.</p>
+<p>See also <a href="qsizef.html#QSizeF">QSizeF</a>().</p>
+<h3 class="fn"><a name="transpose"></a>void QSizeF::transpose ()</h3>
+<p>Swaps the width and height values.</p>
+<p>See also <a href="qsizef.html#setWidth">setWidth</a>() and <a href="qsizef.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="width"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QSizeF::width () const</h3>
+<p>Returns the width.</p>
+<p>See also <a href="qsizef.html#height">height</a>() and <a href="qsizef.html#setWidth">setWidth</a>().</p>
+<h3 class="fn"><a name="operator-2a-eq"></a>QSizeF &amp; QSizeF::operator*= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i> )</h3>
+<p>Multiplies both the width and height by the given <i>factor</i> and returns a reference to the size.</p>
+<p>See also <a href="qsizef.html#scale">scale</a>().</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>QSizeF &amp; QSizeF::operator+= ( const QSizeF &amp; <i>size</i> )</h3>
+<p>Adds the given <i>size</i> to this size and returns a reference to this size. For example:</p>
+<pre>         QSizeF s( 3, 7);
+         QSizeF r(-1, 4);
+         s += r;
+
+         // s becomes (2,11)</pre>
+<h3 class="fn"><a name="operator--eq"></a>QSizeF &amp; QSizeF::operator-= ( const QSizeF &amp; <i>size</i> )</h3>
+<p>Subtracts the given <i>size</i> from this size and returns a reference to this size. For example:</p>
+<pre>         QSizeF s( 3, 7);
+         QSizeF r(-1, 4);
+         s -= r;
+
+         // s becomes (4,3)</pre>
+<h3 class="fn"><a name="operator-2f-eq"></a>QSizeF &amp; QSizeF::operator/= ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>divisor</i> )</h3>
+<p>Divides both the width and height by the given <i>divisor</i> and returns a reference to the size.</p>
+<p>See also <a href="qsizef.html#scale">scale</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-not-eq-37"></a>bool operator!= ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are different; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-2a-28"></a>const QSizeF operator* ( const QSizeF &amp; <i>size</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Multiplies the given <i>size</i> by the given <i>factor</i> and returns the result.</p>
+<p>See also <a href="qsizef.html#scale">QSizeF::scale</a>().</p>
+<h3 class="fn"><a name="operator-2a-29"></a>const QSizeF operator* ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>factor</i>, const QSizeF &amp; <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Multiplies the given <i>size</i> by the given <i>factor</i> and returns the result.</p>
+<h3 class="fn"><a name="operator-2b-27"></a>const QSizeF operator+ ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the sum of <i>s1</i> and <i>s2</i>; each component is added separately.</p>
+<h3 class="fn"><a name="operator--9"></a>const QSizeF operator- ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns <i>s2</i> subtracted from <i>s1</i>; each component is subtracted separately.</p>
+<h3 class="fn"><a name="operator-2f-6"></a>const QSizeF operator/ ( const QSizeF &amp; <i>size</i>, <a href="qtglobal.html#qreal-typedef">qreal</a> <i>divisor</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Divides the given <i>size</i> by the given <i>divisor</i> and returns the result.</p>
+<p>See also <a href="qsizef.html#scale">QSizeF::scale</a>().</p>
+<h3 class="fn"><a name="operator-lt-lt-134"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QSizeF &amp; <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the the given <i>size</i> to the given <i>stream</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<h3 class="fn"><a name="operator-eq-eq-54"></a>bool operator== ( const QSizeF &amp; <i>s1</i>, const QSizeF &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are equal; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt-gt-80"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QSizeF &amp; <i>size</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a size from the given <i>stream</i> into the given <i>size</i> and returns a reference to the stream.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream Operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

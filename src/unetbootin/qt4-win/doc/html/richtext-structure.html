@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/richtext.qdoc -->
+<head>
+  <title>Qt 4.4: Rich Text Document Structure</title>
+  <link rel="prev" href="richtext.html" />
+  <link rel="contents" href="richtext.html" />
+  <link rel="next" href="richtext-cursor.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="richtext.html">Rich Text Processing</a>]
+[<a href="richtext.html">Contents</a>]
+[Next: <a href="richtext-cursor.html">The QTextCursor Interface</a>]
+</p>
+<h1 class="title">Rich Text Document Structure<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#rich-text-documents">Rich Text Documents</a></li>
+<li><a href="#document-elements">Document Elements</a></li>
+<ul><li><a href="#text-blocks">Text Blocks</a></li>
+<li><a href="#frames">Frames</a></li>
+<li><a href="#tables">Tables</a></li>
+<li><a href="#lists">Lists</a></li>
+<li><a href="#images">Images</a></li>
+</ul>
+</ul>
+<p>The structured representation of a text document presents its contents as a hierarchy of text blocks, frames, tables, and other objects. These provide a logical structure to the document and describe how their contents will be displayed. Generally, frames and tables are used to group other structures while text blocks contain the actual textual information.</p>
+<p>New elements are created and inserted into the document programmatically <a href="richtext-cursor.html">with a QTextCursor</a> or by using an editor widget, such as <a href="qtextedit.html">QTextEdit</a>. Elements can be given a particular format when they are created; otherwise they take the cursor's current format for the element.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/richtext-document.png" /></td><td><b>Basic structure</b><p>The &quot;top level&quot; of a document might be populated in the way shown. Each document always contains a root frame, and this always contains at least one text block.</p>
+<p>For documents with some textual content, the root frame usually contains a sequence of blocks and other elements.</p>
+<p>Sequences of frames and tables are always separated by text blocks in a document, even if the text blocks contain no information. This ensures that new elements can always be inserted between existing structures.</p>
+</td></tr>
+</table></p>
+<p>In this chapter, we look at each of the structural elements used in a rich text document, outline their features and uses, and show how to examine their contents. Document editing is described in <a href="richtext-cursor.html">The QTextCursor Interface</a>.</p>
+<a name="rich-text-documents"></a>
+<h2>Rich Text Documents</h2>
+<p><a href="qtextdocument.html">QTextDocument</a> objects contain all the information required to construct rich text documents for use with a <a href="qtextedit.html">QTextEdit</a> widget or in a custom editor. Although <a href="qtextedit.html">QTextEdit</a> makes it easy to display and edit rich text, documents can also be used independently of any editor widget, for example:</p>
+<pre> QTextDocument *newDocument = new QTextDocument;</pre>
+<p>Alternatively, they can be extracted from an existing editor:</p>
+<pre> QTextEdit *editor = new QTextEdit;
+ QTextDocument *editorDocument = editor-&gt;document();</pre>
+<p>This flexibility enables applications to handle multiple rich text documents without the overhead of multiple editor widgets, or requiring documents to be stored in some intermediate format.</p>
+<p>An empty document contains a root frame which itself contains a single empty text block. The <a href="richtext-cursor.html">text cursor interface</a> automatically inserts new document elements into the root frame, and ensures that it is padded with empty blocks where necessary.</p>
+<p>We obtain the root frame in the following manner:</p>
+<pre>     QTextDocument *textDocument;
+     QTextFrame *root = textDocument-&gt;rootFrame();</pre>
+<p>When navigating the document structure, it is useful to begin at the root frame because it provides access to the entire document structure.</p>
+<a name="document-elements"></a>
+<h2>Document Elements</h2>
+<p>Rich text documents usually consist of common elements such as paragraphs, frames, tables, and lists. These are represented in a <a href="qtextdocument.html">QTextDocument</a> by the <a href="qtextblock.html">QTextBlock</a>, <a href="qtextframe.html">QTextFrame</a>, <a href="qtexttable.html">QTextTable</a>, and <a href="qtextlist.html">QTextList</a> classes. Unlike the other elements in a document, images are represented by specially formatted text fragments. This enables them to be placed formatted inline with the surrounding text.</p>
+<p>The basic structural building blocks in documents are <a href="qtextblock.html">QTextBlock</a> and <a href="qtextframe.html">QTextFrame</a>. Blocks themselves contain fragments of rich text (<a href="qtextfragment.html">QTextFragment</a>), but these do not directly influence the high level structure of a document.</p>
+<p>Elements which can group together other document elements are typically subclasses of <a href="qtextobject.html">QTextObject</a>, and fall into two categories: Elements that group together text blocks are subclasses of <a href="qtextblockgroup.html">QTextBlockGroup</a>, and those that group together frames and other elements are subclasses of <a href="qtextframe.html">QTextFrame</a>.</p>
+<a name="text-blocks"></a>
+<h3>Text Blocks</h3>
+<p>Text blocks are provided by the <a href="qtextblock.html">QTextBlock</a> class.</p>
+<p>Text blocks group together fragments of text with different character formats, and are used to represent paragraphs in the document. Each block typically contains a number of text fragments with different styles. Fragments are created when text is inserted into the document, and more of them are added when the document is edited. The document splits, merges, and removes fragments to efficiently represent the different styles of text in the block.</p>
+<p>The fragments within a given block can be examined by using a <a href="qtextblock-iterator.html">QTextBlock::iterator</a> to traverse the block's internal structure:</p>
+<pre>     QTextBlock::iterator it;
+     for (it = currentBlock.begin(); !(it.atEnd()); ++it) {
+         QTextFragment currentFragment = it.fragment();
+         if (currentFragment.isValid())
+             processFragment(currentFragment);
+         }
+     }</pre>
+<p>Blocks are also used to represent list items. As a result, blocks can define their own character formats which contain information about block-level decoration, such as the type of bullet points used for list items. The formatting for the block itself is described by the <a href="qtextblockformat.html">QTextBlockFormat</a> class, and describes properties such as text alignment, indentation, and background color.</p>
+<p>Although a given document may contain complex structures, once we have a reference to a valid block in the document, we can navigate between each of the text blocks in the order in which they were written:</p>
+<pre>     QTextBlock currentBlock = textDocument-&gt;begin();
+
+     while (currentBlock.isValid()) {
+         processBlock(currentBlock);
+         currentBlock = currentBlock.next();
+     }</pre>
+<p>This method is useful for when you want to extract just the rich text from a document because it ignores frames, tables, and other types of structure.</p>
+<p><a href="qtextblock.html">QTextBlock</a> provides comparison operators that make it easier to manipulate blocks: <a href="qtextblock.html#operator-eq-eq">operator==</a>() and <a href="qtextblock.html#operator-not-eq">operator!=</a>() are used to test whether two blocks are the same, and <a href="qtextblock.html#operator-lt">operator&lt;</a>() is used to determine which one occurs first in a document.</p>
+<a name="frames"></a>
+<h3>Frames</h3>
+<p>Frames are provided by the <a href="qtextframe.html">QTextFrame</a> class.</p>
+<p>Text frames group together blocks of text and child frames, creating document structures that are larger than paragraphs. The format of a frame specifies how it is rendered and positioned on the page. Frames are either inserted into the text flow, or they float on the left or right hand side of the page. Each document contains a root frame that contains all the other document elements. As a result, all frames except the root frame have a parent frame.</p>
+<p>Since text blocks are used to separate other document elements, each frame will always contain at least one text block, and zero or more child frames. We can inspect the contents of a frame by using a <a href="qtextframe-iterator.html">QTextFrame::iterator</a> to traverse the frame's child elements:</p>
+<pre>     QTextFrame::iterator it;
+     for (it = frame-&gt;begin(); !(it.atEnd()); ++it) {
+
+         QTextFrame *childFrame = it.currentFrame();
+         QTextBlock childBlock = it.currentBlock();
+
+         if (childFrame)
+             processFrame(frameElement, childFrame);
+         else if (childBlock.isValid())
+             processBlock(frameElement, childBlock);
+     }</pre>
+<p>Note that the iterator selects both frames and blocks, so it is necessary to check which it is referring to. This allows us to navigate the document structure on a frame-by-frame basis yet still access text blocks if required. Both the <a href="qtextblock-iterator.html">QTextBlock::iterator</a> and <a href="qtextframe-iterator.html">QTextFrame::iterator</a> classes can be used in complementary ways to extract the required structure from a document.</p>
+<a name="tables"></a>
+<h3>Tables</h3>
+<p>Tables are provided by the <a href="qtexttable.html">QTextTable</a> class.</p>
+<p>Tables are collections of cells that are arranged in rows and columns. Each table cell is a document element with its own character format, but it can also contain other elements, such as frames and text blocks. Table cells are automatically created when the table is constructed, or when extra rows or columns are added. They can also be moved between tables.</p>
+<p><a href="qtexttable.html">QTextTable</a> is a subclass of <a href="qtextframe.html">QTextFrame</a>, so tables are treated like frames in the document structure. For each frame that we encounter in the document, we can test whether it represents a table, and deal with it in a different way:</p>
+<pre>     QTextFrame::iterator it;
+     for (it = frame-&gt;begin(); !(it.atEnd()); ++it) {
+
+         QTextFrame *childFrame = it.currentFrame();
+         QTextBlock childBlock = it.currentBlock();
+
+         if (childFrame) {
+             QTextTable *childTable = qobject_cast&lt;QTextTable*&gt;(childFrame);
+
+             if (childTable)
+                 processTable(frameElement, childTable);
+             else
+                 processFrame(frameElement, childFrame);
+
+         } else if (childBlock.isValid())
+             processBlock(frameElement, childBlock);
+     }</pre>
+<p>The cells within an existing table can be examined by iterating through the rows and columns.</p>
+<pre>     for (int row = 0; row &lt; table-&gt;rows(); ++row) {
+         for (int column = 0; column &lt; table-&gt;columns(); ++column) {
+             QTextTableCell tableCell = table-&gt;cellAt(row, column);
+             processTableCell(tableCell);
+         }
+     }</pre>
+<a name="lists"></a>
+<h3>Lists</h3>
+<p>Lists are provided by the <a href="qtextlist.html">QTextList</a> class.</p>
+<p>Lists are sequences of text blocks that are formatted in the usual way, but which also provide the standard list decorations such as bullet points and enumerated items. Lists can be nested, and will be indented if the list's format specifies a non-zero indentation.</p>
+<p>We can refer to each list item by its index in the list:</p>
+<pre>     for (int index = 0; index &lt; list-&gt;count(); ++index) {
+         QTextBlock listItem = list-&gt;item(index);
+         processListItem(listItem);
+     }</pre>
+<p>Since <a href="qtextlist.html">QTextList</a> is a subclass of <a href="qtextblockgroup.html">QTextBlockGroup</a>, it does not group the list items as child elements, but instead provides various functions for managing them. This means that any text block we find when traversing a document may actually be a list item. We can ensure that list items are correctly identified by using the following code:</p>
+<pre>     QTextFrame::iterator it;
+     for (it = frame-&gt;begin(); !(it.atEnd()); ++it) {
+
+         QTextBlock block = it.currentBlock();
+
+         if (block.isValid()) {
+
+             QTextList *list = block.textList();
+
+             if (list) {
+                 int index = list-&gt;itemNumber(block);
+                 processListItem(list, index);
+             }
+         }
+     }</pre>
+<a name="images"></a>
+<h3>Images</h3>
+<p>Images in <a href="qtextdocument.html">QTextDocument</a> are represented by text fragments that reference external images via the resource mechanism. Images are created using the cursor interface, and can be modified later by changing the character format of the image's text fragment:</p>
+<pre>     if (fragment.isValid()) {
+         QTextImageFormat newImageFormat = fragment.charFormat().toImageFormat();
+
+         if (newImageFormat.isValid()) {
+             newImageFormat.setName(&quot;:/images/newimage.png&quot;);
+             QTextCursor helper = cursor;
+
+             helper.setPosition(fragment.position());
+             helper.setPosition(fragment.position() + fragment.length(),
+                                 QTextCursor::KeepAnchor);
+             helper.setCharFormat(newImageFormat);
+         }
+     }</pre>
+<p>The fragment that represents the image can be found by iterating over the fragments in the text block that contains the image.</p>
+<p>
+[Previous: <a href="richtext.html">Rich Text Processing</a>]
+[<a href="richtext.html">Contents</a>]
+[Next: <a href="richtext-cursor.html">The QTextCursor Interface</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

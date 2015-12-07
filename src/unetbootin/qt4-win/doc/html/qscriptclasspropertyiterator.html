@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/script/qscriptclasspropertyiterator.cpp -->
+<head>
+  <title>Qt 4.4: QScriptClassPropertyIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QScriptClassPropertyIterator Class Reference<br /><span class="small-subtitle">[<a href="qtscript.html">QtScript</a> module]</span>
+</h1>
+<p>The QScriptClassPropertyIterator class provides an iterator interface for custom Qt Script objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QScriptClassPropertyIterator&gt;</pre><p>This class was introduced in Qt 4.4.</p>
+<ul>
+<li><a href="qscriptclasspropertyiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qscriptclasspropertyiterator.html#dtor.QScriptClassPropertyIterator">~QScriptClassPropertyIterator</a></b> ()</li>
+<li><div class="fn"/>virtual QScriptValue::PropertyFlags <b><a href="qscriptclasspropertyiterator.html#flags">flags</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qscriptclasspropertyiterator.html#hasNext">hasNext</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qscriptclasspropertyiterator.html#hasPrevious">hasPrevious</a></b> () const = 0</li>
+<li><div class="fn"/>virtual uint <b><a href="qscriptclasspropertyiterator.html#id">id</a></b> () const</li>
+<li><div class="fn"/>virtual QScriptString <b><a href="qscriptclasspropertyiterator.html#name">name</a></b> () const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qscriptclasspropertyiterator.html#next">next</a></b> () = 0</li>
+<li><div class="fn"/>QScriptValue <b><a href="qscriptclasspropertyiterator.html#object">object</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qscriptclasspropertyiterator.html#previous">previous</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qscriptclasspropertyiterator.html#toBack">toBack</a></b> () = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qscriptclasspropertyiterator.html#toFront">toFront</a></b> () = 0</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qscriptclasspropertyiterator.html#QScriptClassPropertyIterator">QScriptClassPropertyIterator</a></b> ( const QScriptValue &amp; <i>object</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QScriptClassPropertyIterator class provides an iterator interface for custom Qt Script objects.</p>
+<p>This class is only relevant if you have subclassed <a href="qscriptclass.html">QScriptClass</a> and want to provide enumeration of your custom properties (e.g&#x2e; when objects of your class are used with <a href="qscriptvalueiterator.html">QScriptValueIterator</a>, or with the for-in statement in scripts).</p>
+<p>The <a href="qscriptclasspropertyiterator.html#object">object</a>() function returns the Qt Script object the iterator is traversing.</p>
+<p><a href="qscriptclasspropertyiterator.html#toFront">toFront</a>(), <a href="qscriptclasspropertyiterator.html#hasNext">hasNext</a>() and <a href="qscriptclasspropertyiterator.html#next">next</a>() provide forward iteration.</p>
+<p><a href="qscriptclasspropertyiterator.html#toBack">toBack</a>(), <a href="qscriptclasspropertyiterator.html#hasPrevious">hasPrevious</a>() and <a href="qscriptclasspropertyiterator.html#previous">previous</a>() provide backward iteration.</p>
+<p><a href="qscriptclasspropertyiterator.html#name">name</a>(), <a href="qscriptclasspropertyiterator.html#id">id</a>() and <a href="qscriptclasspropertyiterator.html#flags">flags</a>() return information about the last property that was jumped over using <a href="qscriptclasspropertyiterator.html#next">next</a>() or <a href="qscriptclasspropertyiterator.html#previous">previous</a>().</p>
+<p>See also <a href="qscriptclass.html#newIterator">QScriptClass::newIterator</a>() and <a href="qscriptvalueiterator.html">QScriptValueIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QScriptClassPropertyIterator"></a>QScriptClassPropertyIterator::QScriptClassPropertyIterator ( const <a href="qscriptvalue.html">QScriptValue</a> &amp; <i>object</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Constructs an iterator for traversing <i>object</i>.</p>
+<p>Subclasses should ensure that the iterator is set to the front of the sequence of properties (before the first property).</p>
+<h3 class="fn"><a name="dtor.QScriptClassPropertyIterator"></a>QScriptClassPropertyIterator::~QScriptClassPropertyIterator ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the iterator.</p>
+<h3 class="fn"><a name="flags"></a><a href="qscriptvalue.html#PropertyFlag-enum">QScriptValue::PropertyFlags</a> QScriptClassPropertyIterator::flags () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the flags of the last property that was jumped over using <a href="qscriptclasspropertyiterator.html#next">next</a>() or <a href="qscriptclasspropertyiterator.html#previous">previous</a>().</p>
+<p>The default implementation calls the propertyFlags() function of <a href="qscriptclasspropertyiterator.html#object">object</a>() with argument <a href="qscriptclasspropertyiterator.html#name">name</a>().</p>
+<h3 class="fn"><a name="hasNext"></a>bool QScriptClassPropertyIterator::hasNext () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if there is at least one item ahead of the iterator (i.e&#x2e; the iterator is <i>not</i> at the back of the property sequence); otherwise returns false.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#next">next</a>() and <a href="qscriptclasspropertyiterator.html#hasPrevious">hasPrevious</a>().</p>
+<h3 class="fn"><a name="hasPrevious"></a>bool QScriptClassPropertyIterator::hasPrevious () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if there is at least one item behind the iterator (i.e&#x2e; the iterator is <i>not</i> at the front of the property sequence); otherwise returns false.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#previous">previous</a>() and <a href="qscriptclasspropertyiterator.html#hasNext">hasNext</a>().</p>
+<h3 class="fn"><a name="id"></a><a href="qtglobal.html#uint-typedef">uint</a> QScriptClassPropertyIterator::id () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the id of the last property that was jumped over using <a href="qscriptclasspropertyiterator.html#next">next</a>() or <a href="qscriptclasspropertyiterator.html#previous">previous</a>().</p>
+<p>The default implementation returns 0.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#name">name</a>().</p>
+<h3 class="fn"><a name="name"></a><a href="qscriptstring.html">QScriptString</a> QScriptClassPropertyIterator::name () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the name of the last property that was jumped over using <a href="qscriptclasspropertyiterator.html#next">next</a>() or <a href="qscriptclasspropertyiterator.html#previous">previous</a>().</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#id">id</a>().</p>
+<h3 class="fn"><a name="next"></a>void QScriptClassPropertyIterator::next ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Advances the iterator by one position.</p>
+<p>Calling this function on an iterator located at the back of the container leads to undefined results.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#hasNext">hasNext</a>(), <a href="qscriptclasspropertyiterator.html#previous">previous</a>(), and <a href="qscriptclasspropertyiterator.html#name">name</a>().</p>
+<h3 class="fn"><a name="object"></a><a href="qscriptvalue.html">QScriptValue</a> QScriptClassPropertyIterator::object () const</h3>
+<p>Returns the Qt Script object this iterator is traversing.</p>
+<h3 class="fn"><a name="previous"></a>void QScriptClassPropertyIterator::previous ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Moves the iterator back by one position.</p>
+<p>Calling this function on an iterator located at the front of the container leads to undefined results.</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#hasPrevious">hasPrevious</a>(), <a href="qscriptclasspropertyiterator.html#next">next</a>(), and <a href="qscriptclasspropertyiterator.html#name">name</a>().</p>
+<h3 class="fn"><a name="toBack"></a>void QScriptClassPropertyIterator::toBack ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Moves the iterator to the back of the <a href="qscriptvalue.html">QScriptValue</a> (after the last property).</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#toFront">toFront</a>() and <a href="qscriptclasspropertyiterator.html#previous">previous</a>().</p>
+<h3 class="fn"><a name="toFront"></a>void QScriptClassPropertyIterator::toFront ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Moves the iterator to the front of the <a href="qscriptvalue.html">QScriptValue</a> (before the first property).</p>
+<p>See also <a href="qscriptclasspropertyiterator.html#toBack">toBack</a>() and <a href="qscriptclasspropertyiterator.html#next">next</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

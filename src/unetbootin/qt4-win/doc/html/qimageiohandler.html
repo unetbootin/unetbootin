@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qimageiohandler.cpp -->
+<head>
+  <title>Qt 4.4: QImageIOHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QImageIOHandler Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QImageIOHandler class defines the common image I/O interface for all image formats in Qt. <a href="#details">More...</a></p>
+<pre> #include &lt;QImageIOHandler&gt;</pre><p>Inherited by <a href="qticohandler.html">QtIcoHandler</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qimageiohandler-members.html">List of all members, including inherited members</a></li>
+<li><a href="qimageiohandler-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qimageiohandler.html#ImageOption-enum">ImageOption</a></b> { Size, ClipRect, ScaledSize, ScaledClipRect, ..., BackgroundColor }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qimageiohandler.html#QImageIOHandler">QImageIOHandler</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qimageiohandler.html#dtor.QImageIOHandler">~QImageIOHandler</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#canRead">canRead</a></b> () const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qimageiohandler.html#currentImageNumber">currentImageNumber</a></b> () const</li>
+<li><div class="fn"/>virtual QRect <b><a href="qimageiohandler.html#currentImageRect">currentImageRect</a></b> () const</li>
+<li><div class="fn"/>QIODevice * <b><a href="qimageiohandler.html#device">device</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qimageiohandler.html#format">format</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qimageiohandler.html#imageCount">imageCount</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#jumpToImage">jumpToImage</a></b> ( int <i>imageNumber</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#jumpToNextImage">jumpToNextImage</a></b> ()</li>
+<li><div class="fn"/>virtual int <b><a href="qimageiohandler.html#loopCount">loopCount</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="qimageiohandler.html#nextImageDelay">nextImageDelay</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qimageiohandler.html#option">option</a></b> ( ImageOption <i>option</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#read">read</a></b> ( QImage * <i>image</i> ) = 0</li>
+<li><div class="fn"/>void <b><a href="qimageiohandler.html#setDevice">setDevice</a></b> ( QIODevice * <i>device</i> )</li>
+<li><div class="fn"/>void <b><a href="qimageiohandler.html#setFormat">setFormat</a></b> ( const QByteArray &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qimageiohandler.html#setFormat-2">setFormat</a></b> ( const QByteArray &amp; <i>format</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qimageiohandler.html#setOption">setOption</a></b> ( ImageOption <i>option</i>, const QVariant &amp; <i>value</i> )</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#supportsOption">supportsOption</a></b> ( ImageOption <i>option</i> ) const</li>
+<li><div class="fn"/>virtual bool <b><a href="qimageiohandler.html#write">write</a></b> ( const QImage &amp; <i>image</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QImageIOHandler class defines the common image I/O interface for all image formats in Qt.</p>
+<p>Qt uses QImageIOHandler for reading and writing images through <a href="qimagereader.html">QImageReader</a> and <a href="qimagewriter.html">QImageWriter</a>. You can also derive from this class to write your own image format handler using Qt's plugin mechanism.</p>
+<p>Call <a href="qimageiohandler.html#setDevice">setDevice</a>() to assign a device to the handler, and <a href="qimageiohandler.html#setFormat">setFormat</a>() to assign a format to it. One QImageIOHandler may support more than one image format. <a href="qimageiohandler.html#canRead">canRead</a>() returns true if an image can be read from the device, and <a href="qimageiohandler.html#read">read</a>() and <a href="qimageiohandler.html#write">write</a>() return true if reading or writing an image was completed successfully.</p>
+<p>QImageIOHandler also has support for animations formats, through the functions <a href="qimageiohandler.html#loopCount">loopCount</a>(), <a href="qimageiohandler.html#imageCount">imageCount</a>(), <a href="qimageiohandler.html#nextImageDelay">nextImageDelay</a>() and <a href="qimageiohandler.html#currentImageNumber">currentImageNumber</a>().</p>
+<p>In order to determine what options an image handler supports, Qt will call <a href="qimageiohandler.html#supportsOption">supportsOption</a>() and <a href="qimageiohandler.html#setOption">setOption</a>(). Make sure to reimplement these functions if you can provide support for any of the options in the <a href="qimageiohandler.html#ImageOption-enum">ImageOption</a> enum.</p>
+<p>To write your own image handler, you must at least reimplement <a href="qimageiohandler.html#canRead">canRead</a>() and <a href="qimageiohandler.html#read">read</a>(). Then create a <a href="qimageioplugin.html">QImageIOPlugin</a> that can create the handler. Finally, install your plugin, and <a href="qimagereader.html">QImageReader</a> and <a href="qimagewriter.html">QImageWriter</a> will then automatically load the plugin, and start using it.</p>
+<p>See also <a href="qimageioplugin.html">QImageIOPlugin</a>, <a href="qimagereader.html">QImageReader</a>, and <a href="qimagewriter.html">QImageWriter</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ImageOption-enum"></a>enum QImageIOHandler::ImageOption</h3>
+<p>This enum describes the different options supported by <a href="qimageiohandler.html">QImageIOHandler</a>. Some options are used to query an image for properties, and others are used to toggle the way in which an image should be written.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Size</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The original size of an image. A handler that supports this option is expected to read the size of the image from the image metadata, and return this size from <a href="qimageiohandler.html#option">option</a>() as a <a href="qsize.html">QSize</a>.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::ClipRect</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The clip rect, or ROI (Region Of Interest). A handler that supports this option is expected to only read the provided <a href="qrect.html">QRect</a> area from the original image in <a href="qimageiohandler.html#read">read</a>(), before any other transformation is applied.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::ScaledSize</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The scaled size of the image. A handler that supports this option is expected to scale the image to the provided size (a <a href="qsize.html">QSize</a>), after applying any clip rect transformation (ClipRect). If the handler does not support this option, <a href="qimagereader.html">QImageReader</a> will perform the scaling after the image has been read.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::ScaledClipRect</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The scaled clip rect (or ROI, Region Of Interest) of the image. A handler that supports this option is expected to apply the provided clip rect (a <a href="qrect.html">QRect</a>), after applying any scaling (ScaleSize) or regular clipping (ClipRect). If the handler does not support this option, <a href="qimagereader.html">QImageReader</a> will apply the scaled clip rect after the image has been read.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Description</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The image description. Some image formats, such as GIF and PNG, allow embedding of text or comments into the image data (e.g&#x2e;, for storing copyright information). It's common that the text is stored in key-value pairs, but some formats store all text in one continuous block. <a href="qimageiohandler.html">QImageIOHandler</a> returns the text as one <a href="qstring.html">QString</a>, where keys and values are separated by a ':', and keys-value pairs are separated by two newlines (\n\n). For example, &quot;Title: Sunset\n\nAuthor: Jim Smith\nSarah Jones\n\n&quot;. Formats that store text in a single block can use &quot;Description&quot; as the key.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::CompressionRatio</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">The compression ratio of the image data. A handler that supports this option is expected to set its compression rate depending on the value of this option (an int) when writing.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Gamma</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">The gamma level of the image. A handler that supports this option is expected to set the image gamma level depending on the value of this option (a float) when writing.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Quality</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">The quality level of the image. A handler that supports this option is expected to set the image quality level depending on the value of this option (an int) when writing.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Name</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">The name of the image. A handler that supports this option is expected to read the name from the image metadata and return this as a <a href="qstring.html">QString</a>, or when writing an image it is expected to store the name in the image metadata.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::SubType</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">The subtype of the image. A handler that supports this option can use the subtype value to help when reading and writing images. For example, a PPM handler may have a subtype value of &quot;ppm&quot; or &quot;ppmraw&quot;.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::IncrementalReading</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">A handler that supports this option is expected to read the image in several passes, as if it was an animation. <a href="qimagereader.html">QImageReader</a> will treat the image as an animation.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Endianness</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">The endianness of the image. Certain image formats can be stored as BigEndian or LittleEndian. A handler that supports Endianness uses the value of this option to determine how the image should be stored.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::Animation</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">Image formats that support animation return true for this value in <a href="qimageiohandler.html#supportsOption">supportsOption</a>(); otherwise, false is returned.</td></tr>
+<tr><td valign="top"><tt>QImageIOHandler::BackgroundColor</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">Certain image formats allow the background color to be specified. A handler that supports BackgroundColor initializes the background color to this option (a <a href="qcolor.html">QColor</a>) when reading an image.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QImageIOHandler"></a>QImageIOHandler::QImageIOHandler ()</h3>
+<p>Constructs a <a href="qimageiohandler.html">QImageIOHandler</a> object.</p>
+<h3 class="fn"><a name="dtor.QImageIOHandler"></a>QImageIOHandler::~QImageIOHandler ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructs the <a href="qimageiohandler.html">QImageIOHandler</a> object.</p>
+<h3 class="fn"><a name="canRead"></a>bool QImageIOHandler::canRead () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if an image can be read from the device (i.e&#x2e;, the image format is supported, the device can be read from and the initial header information suggests that the image can be read); otherwise returns false.</p>
+<p>When reimplementing canRead(), make sure that the I/O device (<a href="qimageiohandler.html#device">device</a>()) is left in its original state (e.g&#x2e;, by using peek() rather than <a href="qimageiohandler.html#read">read</a>()).</p>
+<p>See also <a href="qimageiohandler.html#read">read</a>() and <a href="qiodevice.html#peek">QIODevice::peek</a>().</p>
+<h3 class="fn"><a name="currentImageNumber"></a>int QImageIOHandler::currentImageNumber () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function returns the sequence number of the current image in the animation. If the image format does not support animation, or if it is unable to determine the current sequence number, 0 is returned.</p>
+<h3 class="fn"><a name="currentImageRect"></a><a href="qrect.html">QRect</a> QImageIOHandler::currentImageRect () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the rect of the current image. If no rect is defined for the image, and empty QRect() is returned.</p>
+<p>This function is useful for animations, where only parts of the frame may be updated at a time.</p>
+<h3 class="fn"><a name="device"></a><a href="qiodevice.html">QIODevice</a> * QImageIOHandler::device () const</h3>
+<p>Returns the device currently assigned to the <a href="qimageiohandler.html">QImageIOHandler</a>. If not device has been assigned, 0 is returned.</p>
+<p>See also <a href="qimageiohandler.html#setDevice">setDevice</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qbytearray.html">QByteArray</a> QImageIOHandler::format () const</h3>
+<p>Returns the format that is currently assigned to <a href="qimageiohandler.html">QImageIOHandler</a>. If no format has been assigned, an empty string is returned.</p>
+<p>See also <a href="qimageiohandler.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="imageCount"></a>int QImageIOHandler::imageCount () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function returns the number of images in the animation. If the image format does not support animation, or if it is unable to determine the number of images, 0 is returned.</p>
+<p>The default implementation returns 1 if <a href="qimageiohandler.html#canRead">canRead</a>() returns true; otherwise 0 is returned.</p>
+<h3 class="fn"><a name="jumpToImage"></a>bool QImageIOHandler::jumpToImage ( int <i>imageNumber</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function jumps to the image whose sequence number is <i>imageNumber</i>. The next call to <a href="qimageiohandler.html#read">read</a>() will attempt to read this image.</p>
+<p>The default implementation does nothing, and returns false.</p>
+<h3 class="fn"><a name="jumpToNextImage"></a>bool QImageIOHandler::jumpToNextImage ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function jumps to the next image.</p>
+<p>The default implementation does nothing, and returns false.</p>
+<h3 class="fn"><a name="loopCount"></a>int QImageIOHandler::loopCount () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function returns the number of times the animation should loop. If the image format does not support animation, 0 is returned.</p>
+<h3 class="fn"><a name="nextImageDelay"></a>int QImageIOHandler::nextImageDelay () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>For image formats that support animation, this function returns the number of milliseconds to wait until reading the next image. If the image format does not support animation, 0 is returned.</p>
+<h3 class="fn"><a name="option"></a><a href="qvariant.html">QVariant</a> QImageIOHandler::option ( <a href="qimageiohandler.html#ImageOption-enum">ImageOption</a> <i>option</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the value assigned to <i>option</i> as a <a href="qvariant.html">QVariant</a>. The type of the value depends on the option. For example, option(Size) returns a <a href="qsize.html">QSize</a> variant.</p>
+<p>See also <a href="qimageiohandler.html#setOption">setOption</a>() and <a href="qimageiohandler.html#supportsOption">supportsOption</a>().</p>
+<h3 class="fn"><a name="read"></a>bool QImageIOHandler::read ( <a href="qimage.html">QImage</a> * <i>image</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Read an image from the device, and stores it in <i>image</i>. Returns true if the image is successfully read; otherwise returns false.</p>
+<p>For image formats that support incremental loading, and for animation formats, the image handler can assume that <i>image</i> points to the previous frame.</p>
+<p>See also <a href="qimageiohandler.html#canRead">canRead</a>().</p>
+<h3 class="fn"><a name="setDevice"></a>void QImageIOHandler::setDevice ( <a href="qiodevice.html">QIODevice</a> * <i>device</i> )</h3>
+<p>Sets the device of the <a href="qimageiohandler.html">QImageIOHandler</a> to <i>device</i>. The image handler will use this device when reading and writing images.</p>
+<p>The device can only be set once and must be set before calling <a href="qimageiohandler.html#canRead">canRead</a>(), <a href="qimageiohandler.html#read">read</a>(), <a href="qimageiohandler.html#write">write</a>(), etc. If you need to read multiple files, construct multiple instances of the appropriate <a href="qimageiohandler.html">QImageIOHandler</a> subclass.</p>
+<p>See also <a href="qimageiohandler.html#device">device</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QImageIOHandler::setFormat ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>format</i> )</h3>
+<p>Sets the format of the <a href="qimageiohandler.html">QImageIOHandler</a> to <i>format</i>. The format is most useful for handlers that support multiple image formats.</p>
+<p>See also <a href="qimageiohandler.html#format">format</a>().</p>
+<h3 class="fn"><a name="setFormat-2"></a>void QImageIOHandler::setFormat ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>format</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the format of the <a href="qimageiohandler.html">QImageIOHandler</a> to <i>format</i>. The format is most useful for handlers that support multiple image formats.</p>
+<p>This function is declared const so that it can be called from <a href="qimageiohandler.html#canRead">canRead</a>().</p>
+<p>See also <a href="qimageiohandler.html#format">format</a>().</p>
+<h3 class="fn"><a name="setOption"></a>void QImageIOHandler::setOption ( <a href="qimageiohandler.html#ImageOption-enum">ImageOption</a> <i>option</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the option <i>option</i> with the value <i>value</i>.</p>
+<p>See also <a href="qimageiohandler.html#option">option</a>() and <a href="qimageiohandler.html#ImageOption-enum">ImageOption</a>.</p>
+<h3 class="fn"><a name="supportsOption"></a>bool QImageIOHandler::supportsOption ( <a href="qimageiohandler.html#ImageOption-enum">ImageOption</a> <i>option</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the <a href="qimageiohandler.html">QImageIOHandler</a> supports the option <i>option</i>; otherwise returns false. For example, if the <a href="qimageiohandler.html">QImageIOHandler</a> supports the <a href="qimageiohandler.html#ImageOption-enum">Size</a> option, supportsOption(Size) must return true.</p>
+<p>See also <a href="qimageiohandler.html#setOption">setOption</a>() and <a href="qimageiohandler.html#option">option</a>().</p>
+<h3 class="fn"><a name="write"></a>bool QImageIOHandler::write ( const <a href="qimage.html">QImage</a> &amp; <i>image</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Writes the image <i>image</i> to the assigned device. Returns true on success; otherwise returns false.</p>
+<p>The default implementation does nothing, and simply returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

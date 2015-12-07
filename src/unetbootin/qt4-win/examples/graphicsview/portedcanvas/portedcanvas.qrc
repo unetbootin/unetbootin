@@ -1,0 +1,7 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/trolltech/examples/graphicsview/portedcanvas">
+<file>qt-trans.xpm</file>
+<file>butterfly.png</file>
+<file>qtlogo.png</file>
+</qresource>
+</RCC>

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://web.resource.org/cc/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="400px"
+   height="400px"
+   baseProfile="tiny"
+   id="svg8268"
+   sodipodi:version="0.32"
+   inkscape:version="0.45.1"
+   sodipodi:docname="simple2.svg"
+   sodipodi:docbase="/nfs/OpenMoko/SVGs"
+   inkscape:output_extension="org.inkscape.output.svg.inkscape">
+  <metadata
+     id="metadata8283">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs8281" />
+  <sodipodi:namedview
+     inkscape:window-height="917"
+     inkscape:window-width="1324"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     guidetolerance="10.0"
+     gridtolerance="10.0"
+     objecttolerance="10.0"
+     borderopacity="1.0"
+     bordercolor="#666666"
+     pagecolor="#ffffff"
+     id="base"
+     inkscape:zoom="2.1452345"
+     inkscape:cx="185.25"
+     inkscape:cy="214.75"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:current-layer="svg8268" />
+  <g
+     stroke="DarkBlue"
+     stroke-width="10"
+     id="g8270">
+    <rect
+       fill="blue"
+       fill-opacity="0.5"
+       x="25"
+       y="25"
+       width="175"
+       height="175"
+       id="rect8272" />
+  </g>
+  <circle
+     cx="200"
+     cy="200"
+     r="75"
+     id="circle8274"
+     sodipodi:cx="200"
+     sodipodi:cy="200"
+     sodipodi:rx="75"
+     sodipodi:ry="75"
+     transform="translate(-26.104372,21.909027)"
+     style="fill:#ffff00;fill-opacity:0.5;stroke:#000000" />
+  <polygon
+     fill="green"
+     stroke="black"
+     fill-opacity="0.5"
+     stroke-width="1"
+     points="200,225 350,225 275,350"
+     id="polygon8276" />
+  <path
+     style="fill:#000000;fill-rule:evenodd;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:0.50196081"
+     d="M 303.7037,50.705207 C 173.88522,56.588264 90.320951,92.710345 162.85059,120.82533 C 211.91719,139.84524 196.63811,214.12391 233.86243,192.59259 C 284.31755,163.4083 299.34345,193.75691 311.11111,187.30159 C 347.88407,167.12924 269.34382,134.85785 303.81608,114.5167 C 394.71183,60.881583 332.47907,46.043712 303.7037,50.705207 z "
+     id="path8289"
+     sodipodi:nodetypes="cssssc" />
+</svg>

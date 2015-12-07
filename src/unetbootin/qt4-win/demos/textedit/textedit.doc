@@ -1,0 +1,18 @@
+/*!   \page textedit-example.html
+
+  \ingroup examples
+  \title Text Edit Example
+
+  This example displays a text editor with the user interface written
+  in pure C++. 
+  
+  A similar example which uses \link designer-manual.book Qt
+  Designer\endlink to produce the user interface is in the \link
+  designer-manual.book Qt Designer manual\endlink.
+
+
+  See \c{$QTDIR/examples/textedit} for the source code.
+
+*/
+
+

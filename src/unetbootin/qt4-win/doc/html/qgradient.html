@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/painting/qbrush.cpp -->
+<head>
+  <title>Qt 4.4: QGradient Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGradient Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QGradient class is used in combination with <a href="qbrush.html">QBrush</a> to specify gradient fills. <a href="#details">More...</a></p>
+<pre> #include &lt;QGradient&gt;</pre><p>Inherited by <a href="qconicalgradient.html">QConicalGradient</a>, <a href="qlineargradient.html">QLinearGradient</a>, and <a href="qradialgradient.html">QRadialGradient</a>.</p>
+<ul>
+<li><a href="qgradient-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qgradient.html#CoordinateMode-enum">CoordinateMode</a></b> { LogicalMode, StretchToDeviceMode, ObjectBoundingMode }</li>
+<li><div class="fn"/>enum <b><a href="qgradient.html#Spread-enum">Spread</a></b> { PadSpread, RepeatSpread, ReflectSpread }</li>
+<li><div class="fn"/>enum <b><a href="qgradient.html#Type-enum">Type</a></b> { LinearGradient, RadialGradient, ConicalGradient, NoGradient }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>CoordinateMode <b><a href="qgradient.html#coordinateMode">coordinateMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qgradient.html#setColorAt">setColorAt</a></b> ( qreal <i>position</i>, const QColor &amp; <i>color</i> )</li>
+<li><div class="fn"/>void <b><a href="qgradient.html#setCoordinateMode">setCoordinateMode</a></b> ( CoordinateMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qgradient.html#setSpread">setSpread</a></b> ( Spread <i>method</i> )</li>
+<li><div class="fn"/>void <b><a href="qgradient.html#setStops">setStops</a></b> ( const QGradientStops &amp; <i>stopPoints</i> )</li>
+<li><div class="fn"/>Spread <b><a href="qgradient.html#spread">spread</a></b> () const</li>
+<li><div class="fn"/>QGradientStops <b><a href="qgradient.html#stops">stops</a></b> () const</li>
+<li><div class="fn"/>Type <b><a href="qgradient.html#type">type</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qgradient.html#operator-not-eq">operator!=</a></b> ( const QGradient &amp; <i>gradient</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qgradient.html#operator-eq-eq">operator==</a></b> ( const QGradient &amp; <i>gradient</i> ) const</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="qgradient.html#QGradientStop-typedef">QGradientStop</a></b></li>
+<li><div class="fn"/>typedef <b><a href="qgradient.html#QGradientStops-typedef">QGradientStops</a></b></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGradient class is used in combination with <a href="qbrush.html">QBrush</a> to specify gradient fills.</p>
+<p>Qt currently supports three types of gradient fills:</p>
+<ul>
+<li><i>Linear</i> gradients interpolate colors between start and end points.</li>
+<li><i>Radial</i> gradients interpolate colors between a focal point and end points on a circle surrounding it.</li>
+<li><i>Conical</i> gradients interpolate colors around a center point.</li>
+</ul>
+<p>A gradient's type can be retrieved using the <a href="qgradient.html#type">type</a>() function. Each of the types is represented by a subclass of QGradient:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qgradient-linear.png" /></td><td><img src="images/qgradient-radial.png" /></td><td><img src="images/qgradient-conical.png" /></td></tr>
+<thead><tr valign="top" class="qt-style"><th><a href="qlineargradient.html">QLinearGradient</a></th><th><a href="qradialgradient.html">QRadialGradient</a></th><th><a href="qconicalgradient.html">QConicalGradient</a></th></tr></thead>
+</table></p>
+<p>The colors in a gradient is defined using stop points of the <a href="qgradient.html#QGradientStop-typedef">QGradientStop</a> type, i.e&#x2e; a position and a color. Use the <a href="qgradient.html#setColorAt">setColorAt</a>() function to define a single stop point. Alternatively, use the <a href="qgradient.html#setStops">setStops</a>() function to define several stop points in one go. Note that the latter function <i>replaces</i> the current set of stop points.</p>
+<p>It is the gradient's complete set of stop points (accessible through the <a href="qgradient.html#stops">stops</a>() function) that describes how the gradient area should be filled. If no stop points have been specified, a gradient of black at 0 to white at 1 is used.</p>
+<p>A diagonal linear gradient from black at (100, 100) to white at (200, 200) could be specified like this:</p>
+<pre>     QLinearGradient linearGrad(QPointF(100, 100), QPointF(200, 200));
+     linearGrad.setColorAt(0, Qt::black);
+     linearGrad.setColorAt(1, Qt::white);</pre>
+<p>A gradient can have an arbitrary number of stop points. The following would create a radial gradient starting with red in the center, blue and then green on the edges:</p>
+<pre>     QRadialGradient radialGrad(QPointF(100, 100), 100);
+     radialGrad.setColorAt(0, Qt::red);
+     radialGrad.setColorAt(0.5, Qt::blue);
+     radialGrad.setColorAt(1, Qt::green);</pre>
+<p>It is possible to repeat or reflect the gradient outside its area by specifiying the <a href="qgradient.html#Spread-enum">spread method</a> using the <a href="qgradient.html#setSpread">setSpread</a>() function. The default is to pad the outside area with the color at the closest stop point. The currently set <a href="qgradient.html#Spread-enum">spread method</a> can be retrieved using the <a href="qgradient.html#spread">spread</a>() function. The <a href="qgradient.html#Spread-enum">QGradient::Spread</a> enum defines three different methods:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qradialgradient-pad.png" /></td><td><img src="images/qradialgradient-repeat.png" /></td><td><img src="images/qradialgradient-reflect.png" /></td></tr>
+<tr valign="top" class="even"><td><a href="qgradient.html#Spread-enum">PadSpread</a></td><td><a href="qgradient.html#Spread-enum">RepeatSpread</a></td><td><a href="qgradient.html#Spread-enum">ReflectSpread</a></td></tr>
+</table></p>
+<p>Note that the <a href="qgradient.html#setSpread">setSpread</a>() function only has effect for linear and radial gradients. The reason is that the conical gradient is closed by definition, i.e&#x2e; the <i>conical</i> gradient fills the entire circle from 0 - 360 degrees, while the boundary of a radial or a linear gradient can be specified through its radius or final stop points, respectively.</p>
+<p>The gradient coordinates can be specified in logical coordinates, relative to device coordinates, or relative to object bounding box coordinates. The <a href="qgradient.html#CoordinateMode-enum">coordinate mode</a> can be set using the <a href="qgradient.html#setCoordinateMode">setCoordinateMode</a>() function. The default is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>, where the gradient coordinates are specified in the same way as the object coordinates. To retrieve the currently set <a href="qgradient.html#CoordinateMode-enum">coordinate mode</a> use <a href="qgradient.html#coordinateMode">coordinateMode</a>().</p>
+<p>See also <a href="demos-gradients.html">The Gradients Demo</a> and <a href="qbrush.html">QBrush</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="CoordinateMode-enum"></a>enum QGradient::CoordinateMode</h3>
+<p>This enum specifies how gradient coordinates map to the paint device on which the gradient is used.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGradient::LogicalMode</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">This is the default mode. The gradient coordinates are specified logical space just like the object coordinates.</td></tr>
+<tr><td valign="top"><tt>QGradient::StretchToDeviceMode</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">In this mode the gradient coordinates are relative to the bounding rectangle of the paint device, with (0,0) in the top left corner, and (1,1) in the bottom right corner of the paint device.</td></tr>
+<tr><td valign="top"><tt>QGradient::ObjectBoundingMode</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">In this mode the gradient coordinates are relative to the bounding rectangle of the object being drawn, with (0,0) in the top left corner, and (1,1) in the bottom right corner of the object's bounding rectangle.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="Spread-enum"></a>enum QGradient::Spread</h3>
+<p>Specifies how the area outside the gradient area should be filled.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGradient::PadSpread</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The area is filled with the closest stop color. This is the default.</td></tr>
+<tr><td valign="top"><tt>QGradient::RepeatSpread</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The gradient is repeated outside the gradient area.</td></tr>
+<tr><td valign="top"><tt>QGradient::ReflectSpread</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The gradient is reflected outside the gradient area.</td></tr>
+</table></p>
+<p>See also <a href="qgradient.html#spread">spread</a>() and <a href="qgradient.html#setSpread">setSpread</a>().</p>
+<h3 class="fn"><a name="Type-enum"></a>enum QGradient::Type</h3>
+<p>Specifies the type of gradient.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QGradient::LinearGradient</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Interpolates colors between start and end points (<a href="qlineargradient.html">QLinearGradient</a>).</td></tr>
+<tr><td valign="top"><tt>QGradient::RadialGradient</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Interpolate colors between a focal point and end points on a circle surrounding it (<a href="qradialgradient.html">QRadialGradient</a>).</td></tr>
+<tr><td valign="top"><tt>QGradient::ConicalGradient</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Interpolate colors around a center point (<a href="qconicalgradient.html">QConicalGradient</a>).</td></tr>
+<tr><td valign="top"><tt>QGradient::NoGradient</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">No gradient is used.</td></tr>
+</table></p>
+<p>See also <a href="qgradient.html#type">type</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="coordinateMode"></a><a href="qgradient.html#CoordinateMode-enum">CoordinateMode</a> QGradient::coordinateMode () const</h3>
+<p>Returns the coordinate mode of this gradient. The default mode is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgradient.html#setCoordinateMode">setCoordinateMode</a>().</p>
+<h3 class="fn"><a name="setColorAt"></a>void QGradient::setColorAt ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>position</i>, const <a href="qcolor.html">QColor</a> &amp; <i>color</i> )</h3>
+<p>Creates a stop point at the given <i>position</i> with the given <i>color</i>. The given <i>position</i> must be in the range 0 to 1.</p>
+<p>See also <a href="qgradient.html#setStops">setStops</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<h3 class="fn"><a name="setCoordinateMode"></a>void QGradient::setCoordinateMode ( <a href="qgradient.html#CoordinateMode-enum">CoordinateMode</a> <i>mode</i> )</h3>
+<p>Sets the coordinate mode of this gradient to <i>mode</i>. The default mode is <a href="qgradient.html#CoordinateMode-enum">LogicalMode</a>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qgradient.html#coordinateMode">coordinateMode</a>().</p>
+<h3 class="fn"><a name="setSpread"></a>void QGradient::setSpread ( <a href="qgradient.html#Spread-enum">Spread</a> <i>method</i> )</h3>
+<p>Specifies the spread <i>method</i> that should be used for this gradient.</p>
+<p>Note that this function only has effect for linear and radial gradients.</p>
+<p>See also <a href="qgradient.html#spread">spread</a>().</p>
+<h3 class="fn"><a name="setStops"></a>void QGradient::setStops ( const <a href="qgradient.html#QGradientStops-typedef">QGradientStops</a> &amp; <i>stopPoints</i> )</h3>
+<p>Replaces the current set of stop points with the given <i>stopPoints</i>. The positions of the points must be in the range 0 to 1, and must be sorted with the lowest point first.</p>
+<p>See also <a href="qgradient.html#setColorAt">setColorAt</a>() and <a href="qgradient.html#stops">stops</a>().</p>
+<h3 class="fn"><a name="spread"></a><a href="qgradient.html#Spread-enum">Spread</a> QGradient::spread () const</h3>
+<p>Returns the spread method use by this gradient. The default is <a href="qgradient.html#Spread-enum">PadSpread</a>.</p>
+<p>See also <a href="qgradient.html#setSpread">setSpread</a>().</p>
+<h3 class="fn"><a name="stops"></a><a href="qgradient.html#QGradientStops-typedef">QGradientStops</a> QGradient::stops () const</h3>
+<p>Returns the stop points for this gradient.</p>
+<p>If no stop points have been specified, a gradient of black at 0 to white at 1 is used.</p>
+<p>See also <a href="qgradient.html#setStops">setStops</a>() and <a href="qgradient.html#setColorAt">setColorAt</a>().</p>
+<h3 class="fn"><a name="type"></a><a href="qgradient.html#Type-enum">Type</a> QGradient::type () const</h3>
+<p>Returns the type of gradient.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QGradient::operator!= ( const QGradient &amp; <i>gradient</i> ) const</h3>
+<p>Returns true if the gradient is the same as the other <i>gradient</i> specified; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qgradient.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QGradient::operator== ( const QGradient &amp; <i>gradient</i> ) const</h3>
+<p>Returns true if the gradient is the same as the other <i>gradient</i> specified; otherwise returns false.</p>
+<p>See also <a href="qgradient.html#operator-not-eq">operator!=</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="QGradientStop-typedef"></a>typedef QGradientStop</h3>
+<p>Typedef for <a href="qpair.html">QPair</a>&lt;<a href="qtglobal.html#qreal-typedef">qreal</a>, <a href="qcolor.html">QColor</a>&gt;.</p>
+<h3 class="fn"><a name="QGradientStops-typedef"></a>typedef QGradientStops</h3>
+<p>Typedef for <a href="qvector.html">QVector</a>&lt;<a href="qgradient.html#QGradientStop-typedef">QGradientStop</a>&gt;.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

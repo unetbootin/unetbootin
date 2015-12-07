@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/spinboxdelegate.qdoc -->
+<head>
+  <title>Qt 4.4: Spin Box Delegate Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Spin Box Delegate Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="itemviews-spinboxdelegate-delegate-cpp.html">itemviews/spinboxdelegate/delegate.cpp</a></li>
+<li><a href="itemviews-spinboxdelegate-delegate-h.html">itemviews/spinboxdelegate/delegate.h</a></li>
+<li><a href="itemviews-spinboxdelegate-main-cpp.html">itemviews/spinboxdelegate/main.cpp</a></li>
+<li><a href="itemviews-spinboxdelegate-spinboxdelegate-pro.html">itemviews/spinboxdelegate/spinboxdelegate.pro</a></li>
+</ul>
+<p>The Spin Box Delegate example shows how to create an editor for a custom delegate in the model/view framework by reusing a standard Qt editor widget.</p>
+<p>The model/view framework provides a standard delegate that is used by default with the standard view classes. For most purposes, the selection of editor widgets available through this delegate is sufficient for editing text, boolean values, and other simple data types. However, for specific data types, it is sometimes necessary to use a custom delegate to either display the data in a specific way, or allow the user to edit it with a custom control.</p>
+<p align="center"><img src="images/spinboxdelegate-example.png" /></p><p>This concepts behind this example are covered in the <a href="model-view-delegate.html">Delegate Classes</a> chapter of the <a href="model-view-programming.html">Model/View Programming</a> overview.</p>
+<a name="spinboxdelegate-class-definition"></a>
+<h2>SpinBoxDelegate Class Definition</h2>
+<p>The definition of the delegate is as follows:</p>
+<pre> class SpinBoxDelegate : public QItemDelegate
+ {
+     Q_OBJECT
+
+ public:
+     SpinBoxDelegate(QObject *parent = 0);
+
+     QWidget *createEditor(QWidget *parent, const QStyleOptionViewItem &amp;option,
+                           const QModelIndex &amp;index) const;
+
+     void setEditorData(QWidget *editor, const QModelIndex &amp;index) const;
+     void setModelData(QWidget *editor, QAbstractItemModel *model,
+                       const QModelIndex &amp;index) const;
+
+     void updateEditorGeometry(QWidget *editor,
+         const QStyleOptionViewItem &amp;option, const QModelIndex &amp;index) const;
+ };</pre>
+<p>The delegate class declares only those functions that are needed to create an editor widget, display it at the correct location in a view, and communicate with a model. Custom delegates can also provide their own painting code by reimplementing the <tt>paintEvent()</tt> function.</p>
+<a name="spinboxdelegate-class-implementation"></a>
+<h2>SpinBoxDelegate Class Implementation</h2>
+<p>Since the delegate is stateless, the constructor only needs to call the base class's constructor with the parent <a href="qobject.html">QObject</a> as its argument:</p>
+<pre> SpinBoxDelegate::SpinBoxDelegate(QObject *parent)
+     : QItemDelegate(parent)
+ {
+ }</pre>
+<p>Since the delegate is a subclass of <a href="qitemdelegate.html">QItemDelegate</a>, the data it retrieves from the model is displayed in a default style, and we do not need to provide a custom <tt>paintEvent()</tt>.</p>
+<p>The <tt>createEditor()</tt> function returns an editor widget, in this case a spin box that restricts values from the model to integers from 0 to 100 inclusive.</p>
+<pre> QWidget *SpinBoxDelegate::createEditor(QWidget *parent,
+     const QStyleOptionViewItem &amp;<span class="comment">/* option */</span>,
+     const QModelIndex &amp;<span class="comment">/* index */</span>) const
+ {
+     QSpinBox *editor = new QSpinBox(parent);
+     editor-&gt;setMinimum(0);
+     editor-&gt;setMaximum(100);
+
+     return editor;
+ }</pre>
+<p>We install an event filter on the spin box to ensure that it behaves in a way that is consistent with other delegates. The implementation for the event filter is provided by the base class.</p>
+<p>The <tt>setEditorData()</tt> function reads data from the model, converts it to an integer value, and writes it to the editor widget.</p>
+<pre> void SpinBoxDelegate::setEditorData(QWidget *editor,
+                                     const QModelIndex &amp;index) const
+ {
+     int value = index.model()-&gt;data(index, Qt::EditRole).toInt();
+
+     QSpinBox *spinBox = static_cast&lt;QSpinBox*&gt;(editor);
+     spinBox-&gt;setValue(value);
+ }</pre>
+<p>Since the view treats delegates as ordinary <a href="qwidget.html">QWidget</a> instances, we have to use a static cast before we can set the value in the spin box.</p>
+<p>The <tt>setModelData()</tt> function reads the contents of the spin box, and writes it to the model.</p>
+<pre> void SpinBoxDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
+                                    const QModelIndex &amp;index) const
+ {
+     QSpinBox *spinBox = static_cast&lt;QSpinBox*&gt;(editor);
+     spinBox-&gt;interpretText();
+     int value = spinBox-&gt;value();
+
+     model-&gt;setData(index, value, Qt::EditRole);
+ }</pre>
+<p>We call <a href="qabstractspinbox.html#interpretText">interpretText()</a> to make sure that we obtain the most up-to-date value in the spin box.</p>
+<p>The <tt>updateEditorGeometry()</tt> function updates the editor widget's geometry using the information supplied in the style option. This is the minimum that the delegate must do in this case.</p>
+<pre> void SpinBoxDelegate::updateEditorGeometry(QWidget *editor,
+     const QStyleOptionViewItem &amp;option, const QModelIndex &amp;<span class="comment">/* index */</span>) const
+ {
+     editor-&gt;setGeometry(option.rect);
+ }</pre>
+<p>More complex editor widgets may divide the rectangle available in <tt>option.rect</tt> between different child widgets if required.</p>
+<a name="the-main-function"></a>
+<h2>The Main Function</h2>
+<p>This example is written in a slightly different way to many of the other examples supplied with Qt. To demonstrate the use of a custom editor widget in a standard view, it is necessary to set up a model containing some arbitrary data and a view to display it.</p>
+<p>We set up the application in the normal way, construct a standard item model to hold some data, set up a table view to use the data in the model, and construct a custom delegate to use for editing:</p>
+<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+
+     QStandardItemModel model(4, 2);
+     QTableView tableView;
+     tableView.setModel(&amp;model);
+
+     SpinBoxDelegate delegate;
+     tableView.setItemDelegate(&amp;delegate);</pre>
+<p>The table view is informed about the delegate, and will use it to display each of the items. Since the delegate is a subclass of <a href="qitemdelegate.html">QItemDelegate</a>, each cell in the table will be rendered using standard painting operations.</p>
+<p>We insert some arbitrary data into the model for demonstration purposes:</p>
+<pre>     for (int row = 0; row &lt; 4; ++row) {
+         for (int column = 0; column &lt; 2; ++column) {
+             QModelIndex index = model.index(row, column, QModelIndex());
+             model.setData(index, QVariant((row+1) * (column+1)));
+         }
+     }</pre>
+<p>Finally, the table view is displayed with a window title, and we start the application's event loop:</p>
+<pre>     tableView.setWindowTitle(QObject::tr(&quot;Spin Box Delegate&quot;));
+     tableView.show();
+     return app.exec();
+ }</pre>
+<p>Each of the cells in the table can now be edited in the usual way, but the spin box ensures that the data returned to the model is always constrained by the values allowed by the spin box delegate.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

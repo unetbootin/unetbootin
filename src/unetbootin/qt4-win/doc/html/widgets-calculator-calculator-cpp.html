@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: calculator.cpp Example File (widgets/calculator/calculator.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">calculator.cpp Example File<br /><span class="small-subtitle">widgets/calculator/calculator.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &lt;math.h&gt;
+
+ #include &quot;button.h&quot;
+ #include &quot;calculator.h&quot;
+
+ Calculator::Calculator(QWidget *parent)
+     : QDialog(parent)
+ {
+     sumInMemory = 0.0;
+     sumSoFar = 0.0;
+     factorSoFar = 0.0;
+     waitingForOperand = true;
+
+     display = new QLineEdit(&quot;0&quot;);
+     display-&gt;setReadOnly(true);
+     display-&gt;setAlignment(Qt::AlignRight);
+     display-&gt;setMaxLength(15);
+
+     QFont font = display-&gt;font();
+     font.setPointSize(font.pointSize() + 8);
+     display-&gt;setFont(font);
+
+     QColor digitColor(150, 205, 205);
+     QColor backspaceColor(225, 185, 135);
+     QColor memoryColor(100, 155, 155);
+     QColor operatorColor(155, 175, 195);
+
+     for (int i = 0; i &lt; NumDigitButtons; ++i) {
+         digitButtons[i] = createButton(QString::number(i), digitColor,
+                                        SLOT(digitClicked()));
+     }
+
+     Button *pointButton = createButton(tr(&quot;.&quot;), digitColor, SLOT(pointClicked()));
+     Button *changeSignButton = createButton(tr(&quot;\261&quot;), digitColor, SLOT(changeSignClicked()));
+
+     Button *backspaceButton = createButton(tr(&quot;Backspace&quot;), backspaceColor,
+                                    SLOT(backspaceClicked()));
+     Button *clearButton = createButton(tr(&quot;Clear&quot;), backspaceColor, SLOT(clear()));
+     Button *clearAllButton = createButton(tr(&quot;Clear All&quot;), backspaceColor.light(120),
+                                   SLOT(clearAll()));
+
+     Button *clearMemoryButton = createButton(tr(&quot;MC&quot;), memoryColor,
+                                      SLOT(clearMemory()));
+     Button *readMemoryButton = createButton(tr(&quot;MR&quot;), memoryColor, SLOT(readMemory()));
+     Button *setMemoryButton = createButton(tr(&quot;MS&quot;), memoryColor, SLOT(setMemory()));
+     Button *addToMemoryButton = createButton(tr(&quot;M+&quot;), memoryColor,
+                                      SLOT(addToMemory()));
+
+     Button *divisionButton = createButton(tr(&quot;\367&quot;), operatorColor,
+                                   SLOT(multiplicativeOperatorClicked()));
+     Button *timesButton = createButton(tr(&quot;\327&quot;), operatorColor,
+                                SLOT(multiplicativeOperatorClicked()));
+     Button *minusButton = createButton(tr(&quot;-&quot;), operatorColor,
+                                SLOT(additiveOperatorClicked()));
+     Button *plusButton = createButton(tr(&quot;+&quot;), operatorColor,
+                               SLOT(additiveOperatorClicked()));
+
+     Button *squareRootButton = createButton(tr(&quot;Sqrt&quot;), operatorColor,
+                                     SLOT(unaryOperatorClicked()));
+     Button *powerButton = createButton(tr(&quot;x\262&quot;), operatorColor,
+                                SLOT(unaryOperatorClicked()));
+     Button *reciprocalButton = createButton(tr(&quot;1/x&quot;), operatorColor,
+                                     SLOT(unaryOperatorClicked()));
+     Button *equalButton = createButton(tr(&quot;=&quot;), operatorColor.light(120),
+                                SLOT(equalClicked()));
+
+     QGridLayout *mainLayout = new QGridLayout;
+     mainLayout-&gt;setSizeConstraint(QLayout::SetFixedSize);
+
+     mainLayout-&gt;addWidget(display, 0, 0, 1, 6);
+     mainLayout-&gt;addWidget(backspaceButton, 1, 0, 1, 2);
+     mainLayout-&gt;addWidget(clearButton, 1, 2, 1, 2);
+     mainLayout-&gt;addWidget(clearAllButton, 1, 4, 1, 2);
+
+     mainLayout-&gt;addWidget(clearMemoryButton, 2, 0);
+     mainLayout-&gt;addWidget(readMemoryButton, 3, 0);
+     mainLayout-&gt;addWidget(setMemoryButton, 4, 0);
+     mainLayout-&gt;addWidget(addToMemoryButton, 5, 0);
+
+     for (int i = 1; i &lt; NumDigitButtons; ++i) {
+         int row = ((9 - i) / 3) + 2;
+         int column = ((i - 1) % 3) + 1;
+         mainLayout-&gt;addWidget(digitButtons[i], row, column);
+     }
+
+     mainLayout-&gt;addWidget(digitButtons[0], 5, 1);
+     mainLayout-&gt;addWidget(pointButton, 5, 2);
+     mainLayout-&gt;addWidget(changeSignButton, 5, 3);
+
+     mainLayout-&gt;addWidget(divisionButton, 2, 4);
+     mainLayout-&gt;addWidget(timesButton, 3, 4);
+     mainLayout-&gt;addWidget(minusButton, 4, 4);
+     mainLayout-&gt;addWidget(plusButton, 5, 4);
+
+     mainLayout-&gt;addWidget(squareRootButton, 2, 5);
+     mainLayout-&gt;addWidget(powerButton, 3, 5);
+     mainLayout-&gt;addWidget(reciprocalButton, 4, 5);
+     mainLayout-&gt;addWidget(equalButton, 5, 5);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Calculator&quot;));
+ }
+
+ void Calculator::digitClicked()
+ {
+     Button *clickedButton = qobject_cast&lt;Button *&gt;(sender());
+     int digitValue = clickedButton-&gt;text().toInt();
+     if (display-&gt;text() == &quot;0&quot; &amp;&amp; digitValue == 0.0)
+         return;
+
+     if (waitingForOperand) {
+         display-&gt;clear();
+         waitingForOperand = false;
+     }
+     display-&gt;setText(display-&gt;text() + QString::number(digitValue));
+ }
+
+ void Calculator::unaryOperatorClicked()
+ {
+     Button *clickedButton = qobject_cast&lt;Button *&gt;(sender());
+     QString clickedOperator = clickedButton-&gt;text();
+     double operand = display-&gt;text().toDouble();
+     double result = 0.0;
+
+     if (clickedOperator == tr(&quot;Sqrt&quot;)) {
+         if (operand &lt; 0.0) {
+             abortOperation();
+             return;
+         }
+         result = sqrt(operand);
+     } else if (clickedOperator == tr(&quot;x\262&quot;)) {
+         result = pow(operand, 2.0);
+     } else if (clickedOperator == tr(&quot;1/x&quot;)) {
+         if (operand == 0.0) {
+             abortOperation();
+             return;
+         }
+         result = 1.0 / operand;
+     }
+     display-&gt;setText(QString::number(result));
+     waitingForOperand = true;
+ }
+
+ void Calculator::additiveOperatorClicked()
+ {
+     Button *clickedButton = qobject_cast&lt;Button *&gt;(sender());
+     QString clickedOperator = clickedButton-&gt;text();
+     double operand = display-&gt;text().toDouble();
+
+     if (!pendingMultiplicativeOperator.isEmpty()) {
+         if (!calculate(operand, pendingMultiplicativeOperator)) {
+             abortOperation();
+             return;
+         }
+         display-&gt;setText(QString::number(factorSoFar));
+         operand = factorSoFar;
+         factorSoFar = 0.0;
+         pendingMultiplicativeOperator.clear();
+     }
+
+     if (!pendingAdditiveOperator.isEmpty()) {
+         if (!calculate(operand, pendingAdditiveOperator)) {
+             abortOperation();
+             return;
+         }
+         display-&gt;setText(QString::number(sumSoFar));
+     } else {
+         sumSoFar = operand;
+     }
+
+     pendingAdditiveOperator = clickedOperator;
+     waitingForOperand = true;
+ }
+
+ void Calculator::multiplicativeOperatorClicked()
+ {
+     Button *clickedButton = qobject_cast&lt;Button *&gt;(sender());
+     QString clickedOperator = clickedButton-&gt;text();
+     double operand = display-&gt;text().toDouble();
+
+     if (!pendingMultiplicativeOperator.isEmpty()) {
+         if (!calculate(operand, pendingMultiplicativeOperator)) {
+             abortOperation();
+             return;
+         }
+         display-&gt;setText(QString::number(factorSoFar));
+     } else {
+         factorSoFar = operand;
+     }
+
+     pendingMultiplicativeOperator = clickedOperator;
+     waitingForOperand = true;
+ }
+
+ void Calculator::equalClicked()
+ {
+     double operand = display-&gt;text().toDouble();
+
+     if (!pendingMultiplicativeOperator.isEmpty()) {
+         if (!calculate(operand, pendingMultiplicativeOperator)) {
+             abortOperation();
+             return;
+         }
+         operand = factorSoFar;
+         factorSoFar = 0.0;
+         pendingMultiplicativeOperator.clear();
+     }
+     if (!pendingAdditiveOperator.isEmpty()) {
+         if (!calculate(operand, pendingAdditiveOperator)) {
+             abortOperation();
+             return;
+         }
+         pendingAdditiveOperator.clear();
+     } else {
+         sumSoFar = operand;
+     }
+
+     display-&gt;setText(QString::number(sumSoFar));
+     sumSoFar = 0.0;
+     waitingForOperand = true;
+ }
+
+ void Calculator::pointClicked()
+ {
+     if (waitingForOperand)
+         display-&gt;setText(&quot;0&quot;);
+     if (!display-&gt;text().contains(&quot;.&quot;))
+         display-&gt;setText(display-&gt;text() + tr(&quot;.&quot;));
+     waitingForOperand = false;
+ }
+
+ void Calculator::changeSignClicked()
+ {
+     QString text = display-&gt;text();
+     double value = text.toDouble();
+
+     if (value &gt; 0.0) {
+         text.prepend(tr(&quot;-&quot;));
+     } else if (value &lt; 0.0) {
+         text.remove(0, 1);
+     }
+     display-&gt;setText(text);
+ }
+
+ void Calculator::backspaceClicked()
+ {
+     if (waitingForOperand)
+         return;
+
+     QString text = display-&gt;text();
+     text.chop(1);
+     if (text.isEmpty()) {
+         text = &quot;0&quot;;
+         waitingForOperand = true;
+     }
+     display-&gt;setText(text);
+ }
+
+ void Calculator::clear()
+ {
+     if (waitingForOperand)
+         return;
+
+     display-&gt;setText(&quot;0&quot;);
+     waitingForOperand = true;
+ }
+
+ void Calculator::clearAll()
+ {
+     sumSoFar = 0.0;
+     factorSoFar = 0.0;
+     pendingAdditiveOperator.clear();
+     pendingMultiplicativeOperator.clear();
+     display-&gt;setText(&quot;0&quot;);
+     waitingForOperand = true;
+ }
+
+ void Calculator::clearMemory()
+ {
+     sumInMemory = 0.0;
+ }
+
+ void Calculator::readMemory()
+ {
+     display-&gt;setText(QString::number(sumInMemory));
+     waitingForOperand = true;
+ }
+
+ void Calculator::setMemory()
+ {
+     equalClicked();
+     sumInMemory = display-&gt;text().toDouble();
+ }
+
+ void Calculator::addToMemory()
+ {
+     equalClicked();
+     sumInMemory += display-&gt;text().toDouble();
+ }
+
+ Button *Calculator::createButton(const QString &amp;text, const QColor &amp;color,
+                                  const char *member)
+ {
+     Button *button = new Button(text, color);
+     connect(button, SIGNAL(clicked()), this, member);
+     return button;
+ }
+
+ void Calculator::abortOperation()
+ {
+     clearAll();
+     display-&gt;setText(tr(&quot;####&quot;));
+ }
+
+ bool Calculator::calculate(double rightOperand, const QString &amp;pendingOperator)
+ {
+     if (pendingOperator == tr(&quot;+&quot;)) {
+         sumSoFar += rightOperand;
+     } else if (pendingOperator == tr(&quot;-&quot;)) {
+         sumSoFar -= rightOperand;
+     } else if (pendingOperator == tr(&quot;\327&quot;)) {
+         factorSoFar *= rightOperand;
+     } else if (pendingOperator == tr(&quot;\367&quot;)) {
+         if (rightOperand == 0.0)
+             return false;
+         factorSoFar /= rightOperand;
+     }
+     return true;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

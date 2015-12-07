@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/text/qtexttable.cpp -->
+<head>
+  <title>Qt 4.4: QTextTableCell Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextTableCell Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextTableCell class represents the properties of a cell in a <a href="qtexttable.html">QTextTable</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextTableCell&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtexttablecell-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtexttablecell.html#QTextTableCell">QTextTableCell</a></b> ()</li>
+<li><div class="fn"/><b><a href="qtexttablecell.html#QTextTableCell-2">QTextTableCell</a></b> ( const QTextTableCell &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qtexttablecell.html#dtor.QTextTableCell">~QTextTableCell</a></b> ()</li>
+<li><div class="fn"/>QTextFrame::iterator <b><a href="qtexttablecell.html#begin">begin</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttablecell.html#column">column</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttablecell.html#columnSpan">columnSpan</a></b> () const</li>
+<li><div class="fn"/>QTextFrame::iterator <b><a href="qtexttablecell.html#end">end</a></b> () const</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtexttablecell.html#firstCursorPosition">firstCursorPosition</a></b> () const</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtexttablecell.html#format">format</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtexttablecell.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtexttablecell.html#lastCursorPosition">lastCursorPosition</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttablecell.html#row">row</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtexttablecell.html#rowSpan">rowSpan</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtexttablecell.html#setFormat">setFormat</a></b> ( const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtexttablecell.html#operator-not-eq">operator!=</a></b> ( const QTextTableCell &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QTextTableCell &amp; <b><a href="qtexttablecell.html#operator-eq">operator=</a></b> ( const QTextTableCell &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtexttablecell.html#operator-eq-eq">operator==</a></b> ( const QTextTableCell &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextTableCell class represents the properties of a cell in a <a href="qtexttable.html">QTextTable</a>.</p>
+<p>Table cells are pieces of document structure that belong to a table. The table orders cells into particular rows and columns; cells can also span multiple columns and rows.</p>
+<p>Cells are usually created when a table is inserted into a document with <a href="qtextcursor.html#insertTable">QTextCursor::insertTable</a>(), but they are also created and destroyed when a table is resized.</p>
+<p>Cells contain information about their location in a table; you can obtain the <a href="qtexttablecell.html#row">row</a>() and <a href="qtexttablecell.html#column">column</a>() numbers of a cell, and its <a href="qtexttablecell.html#rowSpan">rowSpan</a>() and <a href="qtexttablecell.html#columnSpan">columnSpan</a>().</p>
+<p>The <a href="qtexttablecell.html#format">format</a>() of a cell describes the default character format of its contents. The <a href="qtexttablecell.html#firstCursorPosition">firstCursorPosition</a>() and <a href="qtexttablecell.html#lastCursorPosition">lastCursorPosition</a>() functions are used to obtain the extent of the cell in the document.</p>
+<p>See also <a href="qtexttable.html">QTextTable</a> and <a href="qtexttableformat.html">QTextTableFormat</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextTableCell"></a>QTextTableCell::QTextTableCell ()</h3>
+<p>Constructs an invalid table cell.</p>
+<p>See also <a href="qtexttablecell.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="QTextTableCell-2"></a>QTextTableCell::QTextTableCell ( const QTextTableCell &amp; <i>other</i> )</h3>
+<p>Copy constructor. Creates a new <a href="qtexttablecell.html">QTextTableCell</a> object based on the <i>other</i> cell.</p>
+<h3 class="fn"><a name="dtor.QTextTableCell"></a>QTextTableCell::~QTextTableCell ()</h3>
+<p>Destroys the table cell.</p>
+<h3 class="fn"><a name="begin"></a><a href="qtextframe-iterator.html">QTextFrame::iterator</a> QTextTableCell::begin () const</h3>
+<p>Returns a frame iterator pointing to the beginning of the table's cell.</p>
+<p>See also <a href="qtexttablecell.html#end">end</a>().</p>
+<h3 class="fn"><a name="column"></a>int QTextTableCell::column () const</h3>
+<p>Returns the number of the column in the table that contains this cell.</p>
+<p>See also <a href="qtexttablecell.html#row">row</a>().</p>
+<h3 class="fn"><a name="columnSpan"></a>int QTextTableCell::columnSpan () const</h3>
+<p>Returns the number of columns this cell spans. The default is 1.</p>
+<p>See also <a href="qtexttablecell.html#rowSpan">rowSpan</a>().</p>
+<h3 class="fn"><a name="end"></a><a href="qtextframe-iterator.html">QTextFrame::iterator</a> QTextTableCell::end () const</h3>
+<p>Returns a frame iterator pointing to the end of the table's cell.</p>
+<p>See also <a href="qtexttablecell.html#begin">begin</a>().</p>
+<h3 class="fn"><a name="firstCursorPosition"></a><a href="qtextcursor.html">QTextCursor</a> QTextTableCell::firstCursorPosition () const</h3>
+<p>Returns the first valid cursor position in this cell.</p>
+<p>See also <a href="qtexttablecell.html#lastCursorPosition">lastCursorPosition</a>().</p>
+<h3 class="fn"><a name="format"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextTableCell::format () const</h3>
+<p>Returns the cell's character format.</p>
+<p>See also <a href="qtexttablecell.html#setFormat">setFormat</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QTextTableCell::isValid () const</h3>
+<p>Returns true if this is a valid table cell; otherwise returns false.</p>
+<h3 class="fn"><a name="lastCursorPosition"></a><a href="qtextcursor.html">QTextCursor</a> QTextTableCell::lastCursorPosition () const</h3>
+<p>Returns the last valid cursor position in this cell.</p>
+<p>See also <a href="qtexttablecell.html#firstCursorPosition">firstCursorPosition</a>().</p>
+<h3 class="fn"><a name="row"></a>int QTextTableCell::row () const</h3>
+<p>Returns the number of the row in the table that contains this cell.</p>
+<p>See also <a href="qtexttablecell.html#column">column</a>().</p>
+<h3 class="fn"><a name="rowSpan"></a>int QTextTableCell::rowSpan () const</h3>
+<p>Returns the number of rows this cell spans. The default is 1.</p>
+<p>See also <a href="qtexttablecell.html#columnSpan">columnSpan</a>().</p>
+<h3 class="fn"><a name="setFormat"></a>void QTextTableCell::setFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the cell's character format to <i>format</i>. This can for example be used to change the background color of the entire cell:</p>
+<p><a href="qtexttablecell.html">QTextTableCell</a> cell = table-&gt;cellAt(2, 3); <a href="qtextcharformat.html">QTextCharFormat</a> format = cell.<a href="qtexttablecell.html#format">format</a>(); format.setBackground(<a href="qt.html#GlobalColor-enum">Qt::blue</a>); cell.setFormat(format);</p>
+<p>Note that the cell's row or column span cannot be changed through this function. You have to use QTextTable::mergeCells and QTextTable::splitCell instead.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtexttablecell.html#format">format</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QTextTableCell::operator!= ( const QTextTableCell &amp; <i>other</i> ) const</h3>
+<p>Returns true if this cell object and the <i>other</i> cell object describe different cells; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QTextTableCell &amp; QTextTableCell::operator= ( const QTextTableCell &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> table cell to this table cell.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QTextTableCell::operator== ( const QTextTableCell &amp; <i>other</i> ) const</h3>
+<p>Returns true if this cell object and the <i>other</i> cell object describe the same cell; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

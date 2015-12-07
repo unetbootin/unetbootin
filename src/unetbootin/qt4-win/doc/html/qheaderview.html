@@ -1,0 +1,498 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qheaderview.cpp -->
+<head>
+  <title>Qt 4.4: QHeaderView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QHeaderView Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QHeaderView class provides a header row or header column for item views. <a href="#details">More...</a></p>
+<pre> #include &lt;QHeaderView&gt;</pre><p>Inherits <a href="qabstractitemview.html">QAbstractItemView</a>.</p>
+<ul>
+<li><a href="qheaderview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qheaderview.html#ResizeMode-enum">ResizeMode</a></b> { Interactive, Fixed, Stretch, ResizeToContents, Custom }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qheaderview.html#cascadingSectionResizes-prop">cascadingSectionResizes</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qheaderview.html#defaultAlignment-prop">defaultAlignment</a></b> : Qt::Alignment</li>
+<li><div class="fn"/><b><a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a></b> : int</li>
+<li><div class="fn"/><b><a href="qheaderview.html#highlightSections-prop">highlightSections</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qheaderview.html#minimumSectionSize-prop">minimumSectionSize</a></b> : int</li>
+<li><div class="fn"/><b><a href="qheaderview.html#showSortIndicator-prop">showSortIndicator</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qheaderview.html#stretchLastSection-prop">stretchLastSection</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>15 properties inherited from <a href="qabstractitemview.html#properties">QAbstractItemView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="qabstractscrollarea.html#properties">QAbstractScrollArea</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qheaderview.html#QHeaderView">QHeaderView</a></b> ( Qt::Orientation <i>orientation</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qheaderview.html#dtor.QHeaderView">~QHeaderView</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#cascadingSectionResizes-prop">cascadingSectionResizes</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#count">count</a></b> () const</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qheaderview.html#defaultAlignment-prop">defaultAlignment</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#hiddenSectionCount">hiddenSectionCount</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#hideSection">hideSection</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#highlightSections-prop">highlightSections</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#isClickable">isClickable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#isMovable">isMovable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#isSectionHidden">isSectionHidden</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#showSortIndicator-prop">isSortIndicatorShown</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#length">length</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#logicalIndex">logicalIndex</a></b> ( int <i>visualIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#logicalIndexAt">logicalIndexAt</a></b> ( int <i>position</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#logicalIndexAt-2">logicalIndexAt</a></b> ( int <i>x</i>, int <i>y</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#logicalIndexAt-3">logicalIndexAt</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#minimumSectionSize-prop">minimumSectionSize</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#moveSection">moveSection</a></b> ( int <i>from</i>, int <i>to</i> )</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#offset">offset</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qheaderview.html#orientation">orientation</a></b> () const</li>
+<li><div class="fn"/>ResizeMode <b><a href="qheaderview.html#resizeMode">resizeMode</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#resizeSection">resizeSection</a></b> ( int <i>logicalIndex</i>, int <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#resizeSections">resizeSections</a></b> ( QHeaderView::ResizeMode <i>mode</i> )</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#restoreState">restoreState</a></b> ( const QByteArray &amp; <i>state</i> )</li>
+<li><div class="fn"/>QByteArray <b><a href="qheaderview.html#saveState">saveState</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#sectionPosition">sectionPosition</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#sectionSize">sectionSize</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#sectionSizeHint">sectionSizeHint</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#sectionViewportPosition">sectionViewportPosition</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#sectionsHidden">sectionsHidden</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#sectionsMoved">sectionsMoved</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#cascadingSectionResizes-prop">setCascadingSectionResizes</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setClickable">setClickable</a></b> ( bool <i>clickable</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#defaultAlignment-prop">setDefaultAlignment</a></b> ( Qt::Alignment <i>alignment</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#defaultSectionSize-prop">setDefaultSectionSize</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#highlightSections-prop">setHighlightSections</a></b> ( bool <i>highlight</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#minimumSectionSize-prop">setMinimumSectionSize</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setMovable">setMovable</a></b> ( bool <i>movable</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setResizeMode">setResizeMode</a></b> ( ResizeMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setResizeMode-2">setResizeMode</a></b> ( int <i>logicalIndex</i>, ResizeMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setSectionHidden">setSectionHidden</a></b> ( int <i>logicalIndex</i>, bool <i>hide</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setSortIndicator">setSortIndicator</a></b> ( int <i>logicalIndex</i>, Qt::SortOrder <i>order</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#showSortIndicator-prop">setSortIndicatorShown</a></b> ( bool <i>show</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#stretchLastSection-prop">setStretchLastSection</a></b> ( bool <i>stretch</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#showSection">showSection</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>virtual QSize <b><a href="qheaderview.html#sizeHint">sizeHint</a></b> () const</li>
+<li><div class="fn"/>Qt::SortOrder <b><a href="qheaderview.html#sortIndicatorOrder">sortIndicatorOrder</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#sortIndicatorSection">sortIndicatorSection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qheaderview.html#stretchLastSection-prop">stretchLastSection</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#stretchSectionCount">stretchSectionCount</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#swapSections">swapSections</a></b> ( int <i>first</i>, int <i>second</i> )</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#visualIndex">visualIndex</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qheaderview.html#visualIndexAt">visualIndexAt</a></b> ( int <i>position</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>54 public functions inherited from <a href="qabstractitemview.html#public-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractscrollarea.html#public-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qheaderview.html#headerDataChanged">headerDataChanged</a></b> ( Qt::Orientation <i>orientation</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setOffset">setOffset</a></b> ( int <i>offset</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setOffsetToLastSection">setOffsetToLastSection</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#setOffsetToSectionPosition">setOffsetToSectionPosition</a></b> ( int <i>visualIndex</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 public slots inherited from <a href="qabstractitemview.html#public-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qheaderview.html#geometriesChanged">geometriesChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionAutoResize">sectionAutoResize</a></b> ( int <i>logicalIndex</i>, QHeaderView::ResizeMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionClicked">sectionClicked</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionCountChanged">sectionCountChanged</a></b> ( int <i>oldCount</i>, int <i>newCount</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionDoubleClicked">sectionDoubleClicked</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionEntered">sectionEntered</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionHandleDoubleClicked">sectionHandleDoubleClicked</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionMoved">sectionMoved</a></b> ( int <i>logicalIndex</i>, int <i>oldVisualIndex</i>, int <i>newVisualIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionPressed">sectionPressed</a></b> ( int <i>logicalIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionResized">sectionResized</a></b> ( int <i>logicalIndex</i>, int <i>oldSize</i>, int <i>newSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sortIndicatorChanged">sortIndicatorChanged</a></b> ( int <i>logicalIndex</i>, Qt::SortOrder <i>order</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 signals inherited from <a href="qabstractitemview.html#signals">QAbstractItemView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual int <b><a href="qheaderview.html#horizontalOffset">horizontalOffset</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#initStyleOption">initStyleOption</a></b> ( QStyleOptionHeader * <i>option</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qheaderview.html#paintSection">paintSection</a></b> ( QPainter * <i>painter</i>, const QRect &amp; <i>rect</i>, int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>virtual QSize <b><a href="qheaderview.html#sectionSizeFromContents">sectionSizeFromContents</a></b> ( int <i>logicalIndex</i> ) const</li>
+<li><div class="fn"/>virtual int <b><a href="qheaderview.html#verticalOffset">verticalOffset</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>33 protected functions inherited from <a href="qabstractitemview.html#protected-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>16 protected functions inherited from <a href="qabstractscrollarea.html#protected-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="protected-slots"></a>
+<h3>Protected Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qheaderview.html#resizeSections-2">resizeSections</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionsAboutToBeRemoved">sectionsAboutToBeRemoved</a></b> ( const QModelIndex &amp; <i>parent</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )</li>
+<li><div class="fn"/>void <b><a href="qheaderview.html#sectionsInserted">sectionsInserted</a></b> ( const QModelIndex &amp; <i>parent</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>9 protected slots inherited from <a href="qabstractitemview.html#protected-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qabstractscrollarea.html#protected-slots">QAbstractScrollArea</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QHeaderView class provides a header row or header column for item views.</p>
+<p>A QHeaderView displays the headers used in item views such as the <a href="qtableview.html">QTableView</a> and <a href="qtreeview.html">QTreeView</a> classes. It takes the place of the <tt>QHeader</tt> class previously used for the same purpose, but uses the Qt's model/view architecture for consistency with the item view classes.</p>
+<p>The QHeaderView class is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view framework</a>.</p>
+<p>The header gets the data for each section from the model using the <a href="qabstractitemmodel.html#headerData">QAbstractItemModel::headerData</a>() function. You can set the data by using <a href="qabstractitemmodel.html#setHeaderData">QAbstractItemModel::setHeaderData</a>().</p>
+<p>Each header has an <a href="qheaderview.html#orientation">orientation</a>() and a number of sections, given by the <a href="qheaderview.html#count">count</a>() function. A section refers to a part of the header - either a row or a column, depending on the orientation.</p>
+<p>Sections can be moved and resized using <a href="qheaderview.html#moveSection">moveSection</a>() and <a href="qheaderview.html#resizeSection">resizeSection</a>(); they can also be hidden and shown with <a href="qheaderview.html#hideSection">hideSection</a>() and <a href="qheaderview.html#showSection">showSection</a>().</p>
+<p>Each section of a header is described by a section ID, specified by its section(), and can be located at a particular <a href="qheaderview.html#visualIndex">visualIndex</a>() in the header. A section can have a sort indicator set with <a href="qheaderview.html#setSortIndicator">setSortIndicator</a>(); this indicates whether the items in the associated item view will be sorted in the order given by the section.</p>
+<p>For a horizontal header the section is equivalent to a column in the model, and for a vertical header the section is equivalent to a row in the model.</p>
+<a name="moving-header-sections"></a>
+<h3>Moving Header Sections</h3>
+<p>A header can be fixed in place, or made movable with <a href="qheaderview.html#setMovable">setMovable</a>(). It can be made clickable with <a href="qheaderview.html#setClickable">setClickable</a>(), and has resizing behavior in accordance with <a href="qheaderview.html#setResizeMode">setResizeMode</a>().</p>
+<p>A header emits <a href="qheaderview.html#sectionMoved">sectionMoved</a>() if the user moves a section, <a href="qheaderview.html#sectionResized">sectionResized</a>() if the user resizes a section, and <a href="qheaderview.html#sectionClicked">sectionClicked</a>() and <a href="qheaderview.html#sectionHandleDoubleClicked">sectionHandleDoubleClicked</a>() in response to mouse clicks. A header also emits <a href="qheaderview.html#sectionCountChanged">sectionCountChanged</a>() and <a href="qheaderview.html#sectionAutoResize">sectionAutoResize</a>().</p>
+<p>You can identify a section using the <a href="qheaderview.html#logicalIndex">logicalIndex</a>() and <a href="qheaderview.html#logicalIndexAt">logicalIndexAt</a>() functions, or by its index position, using the <a href="qheaderview.html#visualIndex">visualIndex</a>() and <a href="qheaderview.html#visualIndexAt">visualIndexAt</a>() functions. The visual index will change if a section is moved, but the logical index will not change.</p>
+<a name="appearance"></a>
+<h3>Appearance</h3>
+<p><a href="qtablewidget.html">QTableWidget</a> and <a href="qtableview.html">QTableView</a> create default headers. If you want the headers to be visible, you can use <a href="qwidget.html#visible-prop">setVisible()</a>.</p>
+<p><b>Note:</b> Each header renders the data for each section itself, and does not rely on a delegate. As a result, calling a header's <a href="qabstractitemview.html#setItemDelegate">setItemDelegate</a>() function will have no effect.</p>
+<p>See also <a href="model-view-programming.html">Model/View Programming</a>, <a href="qlistview.html">QListView</a>, <a href="qtableview.html">QTableView</a>, and <a href="qtreeview.html">QTreeView</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ResizeMode-enum"></a>enum QHeaderView::ResizeMode</h3>
+<p>The resize mode specifies the behavior of the header sections. It can be set on the entire header view or on individual sections using <a href="qheaderview.html#setResizeMode">setResizeMode</a>().</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QHeaderView::Interactive</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The user can resize the section. The section can also be resized programmatically using <a href="qheaderview.html#resizeSection">resizeSection</a>(). The section size defaults to <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>. (See also <a href="qheaderview.html#cascadingSectionResizes-prop">cascadingSectionResizes</a>.)</td></tr>
+<tr><td valign="top"><tt>QHeaderView::Fixed</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The user cannot resize the section. The section can only be resized programmatically using <a href="qheaderview.html#resizeSection">resizeSection</a>(). The section size defaults to <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>.</td></tr>
+<tr><td valign="top"><tt>QHeaderView::Stretch</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top"><a href="qheaderview.html">QHeaderView</a> will automatically resize the section to fill the available space. The size cannot be changed by the user or programmatically.</td></tr>
+<tr><td valign="top"><tt>QHeaderView::ResizeToContents</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top"><a href="qheaderview.html">QHeaderView</a> will automatically resize the section to its optimal size based on the contents of the entire column or row. The size cannot be changed by the user or programmatically. (This value was introduced in 4.2)</td></tr>
+</table></p>
+<p>The following values are obsolete:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QHeaderView::Custom</tt></td><td align="center" valign="top"><tt>Fixed</tt></td><td valign="top">Use Fixed instead.</td></tr>
+</table></p>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>(), <a href="qheaderview.html#stretchLastSection-prop">stretchLastSection</a>, and <a href="qheaderview.html#minimumSectionSize-prop">minimumSectionSize</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="cascadingSectionResizes-prop"></a>cascadingSectionResizes : bool</h3>
+<p>This property holds whether interactive resizing will be cascaded to the following sections once the section being resized by the user has reached its minimum size.</p>
+<p>This property only affects sections that have <a href="qheaderview.html#ResizeMode-enum">Interactive</a> as the resize mode.</p>
+<p>The default value is false.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool cascadingSectionResizes () const</b></li>
+<li><div class="fn"/><b>void setCascadingSectionResizes ( bool <i>enable</i> )</b></li>
+</ul>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>().</p>
+<h3 class="fn"><a name="defaultAlignment-prop"></a>defaultAlignment : <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a></h3>
+<p>This property holds the default alignment of the text in each header section.</p>
+<p>This property was introduced in Qt 4.1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Alignment defaultAlignment () const</b></li>
+<li><div class="fn"/><b>void setDefaultAlignment ( Qt::Alignment <i>alignment</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="defaultSectionSize-prop"></a>defaultSectionSize : int</h3>
+<p>This property holds the default size of the header sections before resizing.</p>
+<p>This property only affects sections that have <a href="qheaderview.html#ResizeMode-enum">Interactive</a> or <a href="qheaderview.html#ResizeMode-enum">Fixed</a> as the resize mode.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int defaultSectionSize () const</b></li>
+<li><div class="fn"/><b>void setDefaultSectionSize ( int <i>size</i> )</b></li>
+</ul>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>() and <a href="qheaderview.html#minimumSectionSize-prop">minimumSectionSize</a>.</p>
+<h3 class="fn"><a name="highlightSections-prop"></a>highlightSections : bool</h3>
+<p>This property holds whether the sections containing selected items are highlighted.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool highlightSections () const</b></li>
+<li><div class="fn"/><b>void setHighlightSections ( bool <i>highlight</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="minimumSectionSize-prop"></a>minimumSectionSize : int</h3>
+<p>This property holds the minimum size of the header sections.</p>
+<p>The minimum section size is the smallest section size allowed. If the minimum section size is set to -1, <a href="qheaderview.html">QHeaderView</a> will use the maximum of the <a href="qapplication.html#globalStrut-prop">global strut</a> or the <a href="qwidget.html#fontMetrics">font metrics</a> size.</p>
+<p>This property is honored by all <a href="qheaderview.html#ResizeMode-enum">resize modes</a>.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int minimumSectionSize () const</b></li>
+<li><div class="fn"/><b>void setMinimumSectionSize ( int <i>size</i> )</b></li>
+</ul>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>() and <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>.</p>
+<h3 class="fn"><a name="showSortIndicator-prop"></a>showSortIndicator : bool</h3>
+<p>This property holds whether the sort indicator is shown.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isSortIndicatorShown () const</b></li>
+<li><div class="fn"/><b>void setSortIndicatorShown ( bool <i>show</i> )</b></li>
+</ul>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>().</p>
+<h3 class="fn"><a name="stretchLastSection-prop"></a>stretchLastSection : bool</h3>
+<p>This property holds whether the last visible section in the header takes up all the available space.</p>
+<p>The default value is false.</p>
+<p><b>Note:</b> The horizontal headers provided by <a href="qtreeview.html">QTreeView</a> are configured with this property set to true, ensuring that the view does not waste any of the space assigned to it for its header.</p>
+<p><b>Also note:</b> If the value is set to true, this property will override the resize mode set on the last section in the header.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool stretchLastSection () const</b></li>
+<li><div class="fn"/><b>void setStretchLastSection ( bool <i>stretch</i> )</b></li>
+</ul>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>().</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QHeaderView"></a>QHeaderView::QHeaderView ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new generic header with the given <i>orientation</i> and <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QHeaderView"></a>QHeaderView::~QHeaderView ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the header.</p>
+<h3 class="fn"><a name="count"></a>int QHeaderView::count () const</h3>
+<p>Returns the number of sections in the header.</p>
+<p>See also <a href="qheaderview.html#sectionCountChanged">sectionCountChanged</a>() and <a href="qheaderview.html#length">length</a>().</p>
+<h3 class="fn"><a name="geometriesChanged"></a>void QHeaderView::geometriesChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the header geometries has changed.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="headerDataChanged"></a>void QHeaderView::headerDataChanged ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Updates the changed header sections with the given <i>orientation</i>, from <i>logicalFirst</i> to <i>logicalLast</i> inclusive.</p>
+<h3 class="fn"><a name="hiddenSectionCount"></a>int QHeaderView::hiddenSectionCount () const</h3>
+<p>Returns the number of sections in the header that has been hidden.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qheaderview.html#setSectionHidden">setSectionHidden</a>() and <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>().</p>
+<h3 class="fn"><a name="hideSection"></a>void QHeaderView::hideSection ( int <i>logicalIndex</i> )</h3>
+<p>Hides the section specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#showSection">showSection</a>(), <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>(), <a href="qheaderview.html#hiddenSectionCount">hiddenSectionCount</a>(), and <a href="qheaderview.html#setSectionHidden">setSectionHidden</a>().</p>
+<h3 class="fn"><a name="horizontalOffset"></a>int QHeaderView::horizontalOffset () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the horizontal offset of the header. This is 0 for vertical headers.</p>
+<p>Reimplemented from <a href="qabstractitemview.html#horizontalOffset">QAbstractItemView</a>.</p>
+<p>See also <a href="qheaderview.html#offset">offset</a>().</p>
+<h3 class="fn"><a name="initStyleOption"></a>void QHeaderView::initStyleOption ( <a href="qstyleoptionheader.html">QStyleOptionHeader</a> * <i>option</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Initialize <i>option</i> with the values from this <a href="qheaderview.html">QHeaderView</a>. This method is useful for subclasses when they need a <a href="qstyleoptionheader.html">QStyleOptionHeader</a>, but don't want to fill in all the information themselves.</p>
+<p>See also <a href="qstyleoption.html#initFrom">QStyleOption::initFrom</a>().</p>
+<h3 class="fn"><a name="isClickable"></a>bool QHeaderView::isClickable () const</h3>
+<p>Returns true if the header is clickable; otherwise returns false. A clickable header could be set up to allow the user to change the representation of the data in the view related to the header.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>().</p>
+<h3 class="fn"><a name="isMovable"></a>bool QHeaderView::isMovable () const</h3>
+<p>Returns true if the header can be moved by the user; otherwise returns false.</p>
+<p>See also <a href="qheaderview.html#setMovable">setMovable</a>().</p>
+<h3 class="fn"><a name="isSectionHidden"></a>bool QHeaderView::isSectionHidden ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns true if the section specified by <i>logicalIndex</i> is explicitly hidden from the user; otherwise returns false.</p>
+<p>See also <a href="qheaderview.html#hideSection">hideSection</a>(), <a href="qheaderview.html#showSection">showSection</a>(), <a href="qheaderview.html#setSectionHidden">setSectionHidden</a>(), and <a href="qheaderview.html#hiddenSectionCount">hiddenSectionCount</a>().</p>
+<h3 class="fn"><a name="length"></a>int QHeaderView::length () const</h3>
+<p>Returns the length along the orientation of the header.</p>
+<p>See also <a href="qheaderview.html#sizeHint">sizeHint</a>(), <a href="qheaderview.html#setResizeMode">setResizeMode</a>(), and <a href="qheaderview.html#offset">offset</a>().</p>
+<h3 class="fn"><a name="logicalIndex"></a>int QHeaderView::logicalIndex ( int <i>visualIndex</i> ) const</h3>
+<p>Returns the logicalIndex for the section at the given <i>visualIndex</i> position, or -1 otherwise.</p>
+<p>See also <a href="qheaderview.html#visualIndex">visualIndex</a>() and <a href="qheaderview.html#sectionPosition">sectionPosition</a>().</p>
+<h3 class="fn"><a name="logicalIndexAt"></a>int QHeaderView::logicalIndexAt ( int <i>position</i> ) const</h3>
+<p>Returns the section that covers the given <i>position</i> in the viewport.</p>
+<p>See also <a href="qheaderview.html#visualIndexAt">visualIndexAt</a>() and <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>().</p>
+<h3 class="fn"><a name="logicalIndexAt-2"></a>int QHeaderView::logicalIndexAt ( int <i>x</i>, int <i>y</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the logical index of the section at the given coordinate. If the header is horizontal <i>x</i> will be used, otherwise <i>y</i> will be used to find the logical index.</p>
+<h3 class="fn"><a name="logicalIndexAt-3"></a>int QHeaderView::logicalIndexAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the logical index of the section at the position given in <i>pos</i>. If the header is horizontal the x-coordinate will be used to find the logical index; otherwise the y-coordinate will be used.</p>
+<p>See also <a href="qheaderview.html#sectionPosition">sectionPosition</a>().</p>
+<h3 class="fn"><a name="moveSection"></a>void QHeaderView::moveSection ( int <i>from</i>, int <i>to</i> )</h3>
+<p>Moves the section at visual index <i>from</i> to occupy visual index <i>to</i>.</p>
+<p>See also <a href="qheaderview.html#sectionsMoved">sectionsMoved</a>().</p>
+<h3 class="fn"><a name="offset"></a>int QHeaderView::offset () const</h3>
+<p>Returns the offset of the header: this is the header's left-most (or top-most for vertical headers) visible pixel.</p>
+<p>See also <a href="qheaderview.html#setOffset">setOffset</a>().</p>
+<h3 class="fn"><a name="orientation"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> QHeaderView::orientation () const</h3>
+<p>Returns the orientation of the header.</p>
+<p>See also <a href="qt.html#Orientation-enum">Qt::Orientation</a>.</p>
+<h3 class="fn"><a name="paintSection"></a>void QHeaderView::paintSection ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, int <i>logicalIndex</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the section specified by the given <i>logicalIndex</i>, using the given <i>painter</i> and <i>rect</i>.</p>
+<p>You normally would not need to use this function.</p>
+<h3 class="fn"><a name="resizeMode"></a><a href="qheaderview.html#ResizeMode-enum">ResizeMode</a> QHeaderView::resizeMode ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns the resize mode that applies to the section specified by the given <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>().</p>
+<h3 class="fn"><a name="resizeSection"></a>void QHeaderView::resizeSection ( int <i>logicalIndex</i>, int <i>size</i> )</h3>
+<p>Resizes the section specified by <i>logicalIndex</i> to the <i>size</i> measured in pixels.</p>
+<p>See also <a href="qheaderview.html#sectionResized">sectionResized</a>(), <a href="qheaderview.html#resizeMode">resizeMode</a>(), and <a href="qheaderview.html#sectionSize">sectionSize</a>().</p>
+<h3 class="fn"><a name="resizeSections"></a>void QHeaderView::resizeSections ( <a href="qheaderview.html#ResizeMode-enum">QHeaderView::ResizeMode</a> <i>mode</i> )</h3>
+<p>Resizes the sections according to the given <i>mode</i>, ignoring the current resize mode.</p>
+<p>See also <a href="qheaderview.html#resizeMode">resizeMode</a>() and <a href="qheaderview.html#sectionResized">sectionResized</a>().</p>
+<h3 class="fn"><a name="resizeSections-2"></a>void QHeaderView::resizeSections ()&nbsp;&nbsp;<tt> [protected slot]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Resizes the sections according to their size hints. You should not normally need to call this function.</p>
+<h3 class="fn"><a name="restoreState"></a>bool QHeaderView::restoreState ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>state</i> )</h3>
+<p>Restores the <i>state</i> of this header view. This function returns <tt>true</tt> if the state was restored, otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qheaderview.html#saveState">saveState</a>().</p>
+<h3 class="fn"><a name="saveState"></a><a href="qbytearray.html">QByteArray</a> QHeaderView::saveState () const</h3>
+<p>Saves the current state of this header view.</p>
+<p>To restore the saved state, pass the return value to <a href="qheaderview.html#restoreState">restoreState</a>().</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qheaderview.html#restoreState">restoreState</a>().</p>
+<h3 class="fn"><a name="sectionAutoResize"></a>void QHeaderView::sectionAutoResize ( int <i>logicalIndex</i>, <a href="qheaderview.html#ResizeMode-enum">QHeaderView::ResizeMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is automatically resized. The section's logical index is specified by <i>logicalIndex</i>, and the resize mode by <i>mode</i>.</p>
+<p>See also <a href="qheaderview.html#setResizeMode">setResizeMode</a>() and <a href="qheaderview.html#stretchLastSection-prop">stretchLastSection</a>().</p>
+<h3 class="fn"><a name="sectionClicked"></a>void QHeaderView::sectionClicked ( int <i>logicalIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is clicked. The section's logical index is specified by <i>logicalIndex</i>.</p>
+<p>Note that the sectionPressed signal will also be emitted.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>() and <a href="qheaderview.html#sectionPressed">sectionPressed</a>().</p>
+<h3 class="fn"><a name="sectionCountChanged"></a>void QHeaderView::sectionCountChanged ( int <i>oldCount</i>, int <i>newCount</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the number of sections changes; i.e&#x2e; when sections are added or deleted. The original count is specified by <i>oldCount</i>, and the new count by <i>newCount</i>.</p>
+<p>See also <a href="qheaderview.html#count">count</a>(), <a href="qheaderview.html#length">length</a>(), and <a href="qheaderview.html#headerDataChanged">headerDataChanged</a>().</p>
+<h3 class="fn"><a name="sectionDoubleClicked"></a>void QHeaderView::sectionDoubleClicked ( int <i>logicalIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is double-clicked. The section's logical index is specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>().</p>
+<h3 class="fn"><a name="sectionEntered"></a>void QHeaderView::sectionEntered ( int <i>logicalIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the cursor moves over the section and the left mouse button is pressed. The section's logical index is specified by <i>logicalIndex</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>() and <a href="qheaderview.html#sectionPressed">sectionPressed</a>().</p>
+<h3 class="fn"><a name="sectionHandleDoubleClicked"></a>void QHeaderView::sectionHandleDoubleClicked ( int <i>logicalIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is double-clicked. The section's logical index is specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>().</p>
+<h3 class="fn"><a name="sectionMoved"></a>void QHeaderView::sectionMoved ( int <i>logicalIndex</i>, int <i>oldVisualIndex</i>, int <i>newVisualIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is moved. The section's logical index is specified by <i>logicalIndex</i>, the old index by <i>oldVisualIndex</i>, and the new index position by <i>newVisualIndex</i>.</p>
+<p>See also <a href="qheaderview.html#moveSection">moveSection</a>().</p>
+<h3 class="fn"><a name="sectionPosition"></a>int QHeaderView::sectionPosition ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns the section position of the given <i>logicalIndex</i>, or -1 if the section is hidden.</p>
+<p>See also <a href="qheaderview.html#sectionViewportPosition">sectionViewportPosition</a>().</p>
+<h3 class="fn"><a name="sectionPressed"></a>void QHeaderView::sectionPressed ( int <i>logicalIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is pressed. The section's logical index is specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#setClickable">setClickable</a>().</p>
+<h3 class="fn"><a name="sectionResized"></a>void QHeaderView::sectionResized ( int <i>logicalIndex</i>, int <i>oldSize</i>, int <i>newSize</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when a section is resized. The section's logical number is specified by <i>logicalIndex</i>, the old size by <i>oldSize</i>, and the new size by <i>newSize</i>.</p>
+<p>See also <a href="qheaderview.html#resizeSection">resizeSection</a>().</p>
+<h3 class="fn"><a name="sectionSize"></a>int QHeaderView::sectionSize ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns the width (or height for vertical headers) of the given <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#length">length</a>(), <a href="qheaderview.html#setResizeMode">setResizeMode</a>(), and <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>().</p>
+<h3 class="fn"><a name="sectionSizeFromContents"></a><a href="qsize.html">QSize</a> QHeaderView::sectionSizeFromContents ( int <i>logicalIndex</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the size of the contents of the section specified by the give <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>().</p>
+<h3 class="fn"><a name="sectionSizeHint"></a>int QHeaderView::sectionSizeHint ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns a suitable size hint for the section specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#sizeHint">sizeHint</a>(), <a href="qheaderview.html#defaultSectionSize-prop">defaultSectionSize</a>(), <a href="qheaderview.html#minimumSectionSize-prop">minimumSectionSize</a>(), and <a href="qt.html#ItemDataRole-enum">Qt::SizeHintRole</a>.</p>
+<h3 class="fn"><a name="sectionViewportPosition"></a>int QHeaderView::sectionViewportPosition ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns the section viewport position of the given <i>logicalIndex</i>.</p>
+<p>If the section is hidden, this function returns an undefined value.</p>
+<p>See also <a href="qheaderview.html#sectionPosition">sectionPosition</a>() and <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>().</p>
+<h3 class="fn"><a name="sectionsAboutToBeRemoved"></a>void QHeaderView::sectionsAboutToBeRemoved ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )&nbsp;&nbsp;<tt> [protected slot]</tt></h3>
+<p>This slot is called when sections are removed from the <i>parent</i>, <i>logicalFirst</i> and <i>logicalLast</i> signify where the sections are removed from. (<i>logicalFirst</i> and <i>logicalLast</i> will be the same if just one section is removed.)</p>
+<h3 class="fn"><a name="sectionsHidden"></a>bool QHeaderView::sectionsHidden () const</h3>
+<p>Returns true if sections in the header has been hidden; otherwise returns false;</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qheaderview.html#setSectionHidden">setSectionHidden</a>().</p>
+<h3 class="fn"><a name="sectionsInserted"></a>void QHeaderView::sectionsInserted ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>parent</i>, int <i>logicalFirst</i>, int <i>logicalLast</i> )&nbsp;&nbsp;<tt> [protected slot]</tt></h3>
+<p>This slot is called when sections are inserted into the <i>parent</i>, <i>logicalFirst</i> and <i>logicalLast</i> indexes signify where the new sections are inserted.</p>
+<p><i>logicalFirst</i> and <i>logicalLast</i> will be the same if just one section is inserted.</p>
+<h3 class="fn"><a name="sectionsMoved"></a>bool QHeaderView::sectionsMoved () const</h3>
+<p>Returns true if sections in the header has been moved; otherwise returns false;</p>
+<p>See also <a href="qheaderview.html#moveSection">moveSection</a>().</p>
+<h3 class="fn"><a name="setClickable"></a>void QHeaderView::setClickable ( bool <i>clickable</i> )</h3>
+<p>If <i>clickable</i> is true, the header will respond to single clicks.</p>
+<p>See also <a href="qheaderview.html#isClickable">isClickable</a>(), <a href="qheaderview.html#sectionClicked">sectionClicked</a>(), <a href="qheaderview.html#sectionPressed">sectionPressed</a>(), and <a href="qheaderview.html#showSortIndicator-prop">setSortIndicatorShown</a>().</p>
+<h3 class="fn"><a name="setMovable"></a>void QHeaderView::setMovable ( bool <i>movable</i> )</h3>
+<p>If <i>movable</i> is true, the header may be moved by the user; otherwise it is fixed in place.</p>
+<p>See also <a href="qheaderview.html#isMovable">isMovable</a>() and <a href="qheaderview.html#sectionMoved">sectionMoved</a>().</p>
+<h3 class="fn"><a name="setOffset"></a>void QHeaderView::setOffset ( int <i>offset</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the header's offset to <i>offset</i>.</p>
+<p>See also <a href="qheaderview.html#offset">offset</a>() and <a href="qheaderview.html#length">length</a>().</p>
+<h3 class="fn"><a name="setOffsetToLastSection"></a>void QHeaderView::setOffsetToLastSection ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the offset to make the last section visible.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qheaderview.html#setOffset">setOffset</a>(), <a href="qheaderview.html#sectionPosition">sectionPosition</a>(), and <a href="qheaderview.html#setOffsetToSectionPosition">setOffsetToSectionPosition</a>().</p>
+<h3 class="fn"><a name="setOffsetToSectionPosition"></a>void QHeaderView::setOffsetToSectionPosition ( int <i>visualIndex</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the offset to the start of the section at the given <i>visualIndex</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qheaderview.html#setOffset">setOffset</a>() and <a href="qheaderview.html#sectionPosition">sectionPosition</a>().</p>
+<h3 class="fn"><a name="setResizeMode"></a>void QHeaderView::setResizeMode ( <a href="qheaderview.html#ResizeMode-enum">ResizeMode</a> <i>mode</i> )</h3>
+<p>Sets the constraints on how the header can be resized to those described by the given <i>mode</i>.</p>
+<p>See also <a href="qheaderview.html#resizeMode">resizeMode</a>(), <a href="qheaderview.html#length">length</a>(), <a href="qheaderview.html#sectionResized">sectionResized</a>(), and <a href="qheaderview.html#sectionAutoResize">sectionAutoResize</a>().</p>
+<h3 class="fn"><a name="setResizeMode-2"></a>void QHeaderView::setResizeMode ( int <i>logicalIndex</i>, <a href="qheaderview.html#ResizeMode-enum">ResizeMode</a> <i>mode</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the constraints on how the section specified by <i>logicalIndex</i> in the header can be resized to those described by the given <i>mode</i>.</p>
+<h3 class="fn"><a name="setSectionHidden"></a>void QHeaderView::setSectionHidden ( int <i>logicalIndex</i>, bool <i>hide</i> )</h3>
+<p>If <i>hide</i> is true the section specified by <i>logicalIndex</i> is hidden, otherwise the section is shown.</p>
+<p>See also <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>() and <a href="qheaderview.html#hiddenSectionCount">hiddenSectionCount</a>().</p>
+<h3 class="fn"><a name="setSortIndicator"></a>void QHeaderView::setSortIndicator ( int <i>logicalIndex</i>, <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> )</h3>
+<p>Sets the sort indicator for the section specified by the given <i>logicalIndex</i> in the direction specified by <i>order</i>, and removes the sort indicator from any other section that was showing it.</p>
+<p>See also <a href="qheaderview.html#sortIndicatorSection">sortIndicatorSection</a>() and <a href="qheaderview.html#sortIndicatorOrder">sortIndicatorOrder</a>().</p>
+<h3 class="fn"><a name="showSection"></a>void QHeaderView::showSection ( int <i>logicalIndex</i> )</h3>
+<p>Shows the section specified by <i>logicalIndex</i>.</p>
+<p>See also <a href="qheaderview.html#hideSection">hideSection</a>(), <a href="qheaderview.html#isSectionHidden">isSectionHidden</a>(), <a href="qheaderview.html#hiddenSectionCount">hiddenSectionCount</a>(), and <a href="qheaderview.html#setSectionHidden">setSectionHidden</a>().</p>
+<h3 class="fn"><a name="sizeHint"></a><a href="qsize.html">QSize</a> QHeaderView::sizeHint () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a suitable size hint for this header.</p>
+<p>Reimplemented from <a href="qwidget.html#sizeHint-prop">QWidget</a>.</p>
+<p>See also <a href="qheaderview.html#sectionSizeHint">sectionSizeHint</a>().</p>
+<h3 class="fn"><a name="sortIndicatorChanged"></a>void QHeaderView::sortIndicatorChanged ( int <i>logicalIndex</i>, <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the section containing the sort indicator or the order indicated is changed. The section's logical index is specified by <i>logicalIndex</i> and the sort order is specified by <i>order</i>.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qheaderview.html#setSortIndicator">setSortIndicator</a>().</p>
+<h3 class="fn"><a name="sortIndicatorOrder"></a><a href="qt.html#SortOrder-enum">Qt::SortOrder</a> QHeaderView::sortIndicatorOrder () const</h3>
+<p>Returns the order for the sort indicator. If no section has a sort indicator the return value of this function is undefined.</p>
+<p>See also <a href="qheaderview.html#setSortIndicator">setSortIndicator</a>() and <a href="qheaderview.html#sortIndicatorSection">sortIndicatorSection</a>().</p>
+<h3 class="fn"><a name="sortIndicatorSection"></a>int QHeaderView::sortIndicatorSection () const</h3>
+<p>Returns the logical index of the section that has a sort indicator. By default this is section 0.</p>
+<p>See also <a href="qheaderview.html#setSortIndicator">setSortIndicator</a>(), <a href="qheaderview.html#sortIndicatorOrder">sortIndicatorOrder</a>(), and <a href="qheaderview.html#showSortIndicator-prop">setSortIndicatorShown</a>().</p>
+<h3 class="fn"><a name="stretchSectionCount"></a>int QHeaderView::stretchSectionCount () const</h3>
+<p>Returns the number of sections that are set to resize mode stretch. In views this can be used to see if the headerview needs to resize the sections when the view geometry changes.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qheaderview.html#stretchLastSection-prop">stretchLastSection</a> and <a href="qheaderview.html#resizeMode">resizeMode</a>().</p>
+<h3 class="fn"><a name="swapSections"></a>void QHeaderView::swapSections ( int <i>first</i>, int <i>second</i> )</h3>
+<p>Swaps the section at visual index <i>first</i> with the section at visual index <i>second</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qheaderview.html#moveSection">moveSection</a>().</p>
+<h3 class="fn"><a name="verticalOffset"></a>int QHeaderView::verticalOffset () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Returns the vertical offset of the header. This is 0 for horizontal headers.</p>
+<p>Reimplemented from <a href="qabstractitemview.html#verticalOffset">QAbstractItemView</a>.</p>
+<p>See also <a href="qheaderview.html#offset">offset</a>().</p>
+<h3 class="fn"><a name="visualIndex"></a>int QHeaderView::visualIndex ( int <i>logicalIndex</i> ) const</h3>
+<p>Returns the visual index position of the section specified by the given <i>logicalIndex</i>, or -1 otherwise. Hidden sections still have valid visual indexes.</p>
+<p>See also <a href="qheaderview.html#logicalIndex">logicalIndex</a>().</p>
+<h3 class="fn"><a name="visualIndexAt"></a>int QHeaderView::visualIndexAt ( int <i>position</i> ) const</h3>
+<p>Returns the visual index of the section that covers the given <i>position</i> in the viewport.</p>
+<p>See also <a href="qheaderview.html#logicalIndexAt">logicalIndexAt</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

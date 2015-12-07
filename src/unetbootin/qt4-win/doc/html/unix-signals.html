@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/unix-signal-handlers.qdoc -->
+<head>
+  <title>Qt 4.4: Calling Qt Functions From Unix Signal Handlers</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Calling Qt Functions From Unix Signal Handlers<br /><span class="subtitle"></span>
+</h1>
+<p>You <i>can't</i> call Qt functions from Unix signal handlers. The standard POSIX rule applies: You can only call async-signal-safe functions from signal handlers. See <a href="http://www.opengroup.org/onlinepubs/000095399/functions/xsh_chap02_04.html#tag_02_04_01">Signal Actions</a> for the complete list of functions you can call from Unix signal handlers.</p>
+<p>But don't despair, there is a way to use Unix signal handlers with Qt. The strategy is to have your Unix signal handler do something that will eventually cause a Qt signal to be emitted, and then you simply return from your Unix signal handler. Back in your Qt program, that Qt signal gets emitted and then received by your Qt slot function, where you can safely do whatever Qt stuff you weren't allowed to do in the Unix signal handler.</p>
+<p>One simple way to make this happen is to declare a socket pair in your class for each Unix signal you want to handle. The socket pairs are declared as static data members. You also create a <a href="qsocketnotifier.html">QSocketNotifier</a> to monitor the <i>read</i> end of each socket pair, declare your Unix signal handlers to be static class methods, and declare a slot function corresponding to each of your Unix signal handlers. In this example, we intend to handle both the SIGHUP and SIGTERM signals. Note: You should read the socketpair(2) and the sigaction(2) man pages before plowing through the following code snippets.</p>
+<pre>     class MyDaemon : public QObject
+     {
+         Q_OBJECT
+
+       public:
+         MyDaemon(QObject *parent = 0, const char *name = 0);
+         ~MyDaemon();
+
+         // Unix signal handlers.
+         static void hupSignalHandler(int unused);
+         static void termSignalHandler(int unused);
+
+       public slots:
+         // Qt signal handlers.
+         void handleSigHup();
+         void handleSigTerm();
+
+       private:
+         static int sighupFd[2];
+         static int sigtermFd[2];
+
+         QSocketNotifier *snHup;
+         QSocketNotifier *snTerm;
+     };</pre>
+<p>In the MyDaemon constructor, use the socketpair(2) function to initialize each file descriptor pair, and then create the <a href="qsocketnotifier.html">QSocketNotifier</a> to monitor the <i>read</i> end of each pair. The activated() signal of each <a href="qsocketnotifier.html">QSocketNotifier</a> is connected to the appropriate slot function, which effectively converts the Unix signal to the <a href="qsocketnotifier.html#activated">QSocketNotifier::activated</a>() signal.</p>
+<pre>     MyDaemon::MyDaemon(QObject *parent, const char *name)
+              : QObject(parent,name)
+     {
+         if (::socketpair(AF_UNIX, SOCK_STREAM, 0, sighupFd))
+            qFatal(&quot;Couldn't create HUP socketpair&quot;);
+
+         if (::socketpair(AF_UNIX, SOCK_STREAM, 0, sigtermFd))
+            qFatal(&quot;Couldn't create TERM socketpair&quot;);
+         snHup = new QSocketNotifier(sighupFd[1], QSocketNotifier::Read, this);
+         connect(snHup, SIGNAL(activated(int)), this, SLOT(handleSigHup()));
+         snTerm = new QSocketNotifier(sigtermFd[1], QSocketNotifier::Read, this);
+         connect(snTerm, SIGNAL(activated(int)), this, SLOT(handleSigTerm()));
+
+         ...
+     }</pre>
+<p>Somewhere else in your startup code, you install your Unix signal handlers with sigaction(2).</p>
+<pre>     static int setup_unix_signal_handlers()
+     {
+         struct sigaction hup, term;
+
+         hup.sa_handler = MyDaemon::hupSignalHandler;
+         sigemptyset(&amp;hup.sa_mask);
+         hup.sa_flags = 0;
+         hup.sa_flags |= SA_RESTART;
+
+         if (sigaction(SIGHUP, &amp;hup, 0) &gt; 0)
+            return 1;
+
+         term.sa_handler = MyDaemon::termSignalHandler;
+         sigemptyset(&amp;term.sa_mask);
+         term.sa_flags |= SA_RESTART;
+
+         if (sigaction(SIGTERM, &amp;term, 0) &gt; 0)
+            return 2;
+
+         return 0;
+     }</pre>
+<p>In your Unix signal handlers, you write a byte to the <i>write</i> end of a socket pair and return. This will cause the corresponding <a href="qsocketnotifier.html">QSocketNotifier</a> to emit its activated() signal, which will in turn cause the appropriate Qt slott function to run.</p>
+<pre>     void MyDaemon::hupSignalHandler(int)
+     {
+         char a = 1;
+         ::write(sighupFd[0], &amp;a, sizeof(a));
+     }
+
+     void MyDaemon::termSignalHandler(int)
+     {
+         char a = 1;
+         ::write(sigtermFd[0], &amp;a, sizeof(a));
+     }</pre>
+<p>In the slot functions connected to the <a href="qsocketnotifier.html#activated">QSocketNotifier::activated</a>() signals, you <i>read</i> the byte. Now you are safely back in Qt with your signal, and you can do all the Qt stuff you weren'tr allowed to do in the Unix signal handler.</p>
+<pre>     void MyDaemon::handleSigTerm()
+     {
+         snTerm-&gt;setEnabled(false);
+         char tmp;
+         ::read(sigtermFd[1], &amp;tmp, sizeof(tmp));
+
+         // do Qt stuff
+
+         snTerm-&gt;setEnabled(true);
+     }
+
+     void MyDaemon::handleSigHup()
+     {
+         snHup-&gt;setEnabled(false);
+         char tmp;
+         ::read(sighupFd[1], &amp;tmp, sizeof(tmp));
+
+         // do Qt stuff
+
+         snHup-&gt;setEnabled(true);
+     }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

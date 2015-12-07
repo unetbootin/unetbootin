@@ -1,0 +1,35 @@
+/*
+ * Copyright (C) 2006, 2007, 2008 Apple Inc. All rights reserved.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module core {
+
+    interface [
+        GenerateConstructor,
+        InterfaceUUID=F5C8DAF0-D728-4b2b-9D9C-630621B07D35,
+        ImplementationUUID=E57BF71F-3FAA-495c-A307-E288F8E5B2EC
+    ] DocumentFragment : EventTargetNode {
+        // NodeSelector - Selector API
+        // FIXME: add support for NSResolver in languages other than JS
+        Element querySelector(in [ConvertUndefinedOrNullToNullString] DOMString selectors)
+            raises(DOMException);
+        NodeList querySelectorAll(in [ConvertUndefinedOrNullToNullString] DOMString selectors)
+            raises(DOMException);
+    };
+
+}

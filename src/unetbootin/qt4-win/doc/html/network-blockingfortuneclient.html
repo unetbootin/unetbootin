@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/blockingfortuneclient.qdoc -->
+<head>
+  <title>Qt 4.4: Blocking Fortune Client Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Blocking Fortune Client Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="network-blockingfortuneclient-blockingclient-cpp.html">network/blockingfortuneclient/blockingclient.cpp</a></li>
+<li><a href="network-blockingfortuneclient-blockingclient-h.html">network/blockingfortuneclient/blockingclient.h</a></li>
+<li><a href="network-blockingfortuneclient-fortunethread-cpp.html">network/blockingfortuneclient/fortunethread.cpp</a></li>
+<li><a href="network-blockingfortuneclient-fortunethread-h.html">network/blockingfortuneclient/fortunethread.h</a></li>
+<li><a href="network-blockingfortuneclient-main-cpp.html">network/blockingfortuneclient/main.cpp</a></li>
+<li><a href="network-blockingfortuneclient-blockingfortuneclient-pro.html">network/blockingfortuneclient/blockingfortuneclient.pro</a></li>
+</ul>
+<p>The Blocking Fortune Client example shows how to create a client for a network service using <a href="qtcpsocket.html">QTcpSocket</a>'s synchronous API in a non-GUI thread.</p>
+<p align="center"><img src="images/blockingfortuneclient-example.png" /></p><p><a href="qtcpsocket.html">QTcpSocket</a> supports two general approaches to network programming:</p>
+<ul>
+<li><i>The asynchronous (non-blocking) approach.</i> Operations are scheduled and performed when control returns to Qt's event loop. When the operation is finished, <a href="qtcpsocket.html">QTcpSocket</a> emits a signal. For example, <a href="qabstractsocket.html#connectToHost">QTcpSocket::connectToHost</a>() returns immediately, and when the connection has been established, <a href="qtcpsocket.html">QTcpSocket</a> emits <a href="qabstractsocket.html#connected">connected()</a>.</li>
+<li><i>The synchronous (blocking) approach.</i> In non-GUI and multithreaded applications, you can call the <tt>waitFor...()</tt> functions (e.g&#x2e;, <a href="qabstractsocket.html#waitForConnected">QTcpSocket::waitForConnected</a>()) to suspend the calling thread until the operation has completed, instead of connecting to signals.</li>
+</ul>
+<p>The implementation is very similar to the <a href="network-fortuneclient.html">Fortune Client</a> example, but instead of having <a href="qtcpsocket.html">QTcpSocket</a> as a member of the main class, doing asynchronous networking in the main thread, we will do all network operations in a separate thread and use <a href="qtcpsocket.html">QTcpSocket</a>'s blocking API.</p>
+<p>The purpose of this example is to demonstrate a pattern that you can use to simplify your networking code, without losing responsiveness in your user interface. Use of Qt's blocking network API often leads to simpler code, but because of its blocking behavior, it should only be used in non-GUI threads to prevent the user interface from freezing. But contrary to what many think, using threads with <a href="qthread.html">QThread</a> does not necessarily add unmanagable complexity to your application.</p>
+<p>We will start with the FortuneThread class, which handles the network code.</p>
+<pre> class FortuneThread : public QThread
+ {
+     Q_OBJECT
+
+ public:
+     FortuneThread(QObject *parent = 0);
+     ~FortuneThread();
+
+     void requestNewFortune(const QString &amp;hostName, quint16 port);
+     void run();
+
+ signals:
+     void newFortune(const QString &amp;fortune);
+     void error(int socketError, const QString &amp;message);
+
+ private:
+     QString hostName;
+     quint16 port;
+     QMutex mutex;
+     QWaitCondition cond;
+     bool quit;
+ };</pre>
+<p>FortuneThread is a <a href="qthread.html">QThread</a> subclass that provides an API for scheduling requests for fortunes, and it has signals for delivering fortunes and reporting errors. You can call requestNewFortune() to request a new fortune, and the result is delivered by the newFortune() signal. If any error occurs, the error() signal is emitted.</p>
+<p>It's important to notice that requestNewFortune() is called from the main, GUI thread, but the host name and port values it stores will be accessed from FortuneThread's thread. Because we will be reading and writing FortuneThread's data members from different threads concurrently, we use <a href="qmutex.html">QMutex</a> to synchronize access.</p>
+<pre> void FortuneThread::requestNewFortune(const QString &amp;hostName, quint16 port)
+ {
+     QMutexLocker locker(&amp;mutex);
+     this-&gt;hostName = hostName;
+     this-&gt;port = port;
+     if (!isRunning())
+         start();
+     else
+         cond.wakeOne();
+ }</pre>
+<p>The requestNewFortune() function stores the host name and port of the fortune server as member data, and we lock the mutex with <a href="qmutexlocker.html">QMutexLocker</a> to protect this data. We then start the thread, unless it is already running. We will come back to the <a href="qwaitcondition.html#wakeOne">QWaitCondition::wakeOne</a>() call later.</p>
+<pre> void FortuneThread::run()
+ {
+     mutex.lock();
+     QString serverName = hostName;
+     quint16 serverPort = port;
+     mutex.unlock();</pre>
+<p>In the run() function, we start by acquiring the mutex lock, fetching the host name and port from the member data, and then releasing the lock again. The case that we are protecting ourselves against is that <tt>requestNewFortune()</tt> could be called at the same time as we are fetching this data. <a href="qstring.html">QString</a> is <a href="threads.html#reentrant">reentrant</a> but <i>not</i> <a href="threads.html#thread-safe">thread safe</a>, and we must also avoid the unlikely risk of reading the host name from one request, and port of another. And as you might have guessed, FortuneThread can only handle one request at a time.</p>
+<p>The run() function now enters a loop:</p>
+<pre>     while (!quit) {
+         const int Timeout = 5 * 1000;
+
+         QTcpSocket socket;
+         socket.connectToHost(serverName, serverPort);</pre>
+<p>The loop will continue requesting fortunes for as long as <i>quit</i> is false. We start our first request by creating a <a href="qtcpsocket.html">QTcpSocket</a> on the stack, and then we call <a href="qabstractsocket.html#connectToHost">connectToHost()</a>. This starts an asynchronous operation which, after control returns to Qt's event loop, will cause <a href="qtcpsocket.html">QTcpSocket</a> to emit <a href="qabstractsocket.html#connected">connected()</a> or <a href="qabstractsocket.html#error">error()</a>.</p>
+<pre>         if (!socket.waitForConnected(Timeout)) {
+             emit error(socket.error(), socket.errorString());
+             return;
+         }</pre>
+<p>But since we are running in a non-GUI thread, we do not have to worry about blocking the user interface. So instead of entering an event loop, we simply call <a href="qabstractsocket.html#waitForConnected">QTcpSocket::waitForConnected</a>(). This function will wait, blocking the calling thread, until <a href="qtcpsocket.html">QTcpSocket</a> emits connected() or an error occurs. If connected() is emitted, the function returns true; if the connection failed or timed out (which in this example happens after 5 seconds), false is returned. <a href="qabstractsocket.html#waitForConnected">QTcpSocket::waitForConnected</a>(), like the other <tt>waitFor...()</tt> functions, is part of <a href="qtcpsocket.html">QTcpSocket</a>'s <i>blocking API</i>.</p>
+<p>After this statement, we have a connected socket to work with. Now it's time to see what the fortune server has sent us.</p>
+<pre>         while (socket.bytesAvailable() &lt; (int)sizeof(quint16)) {
+             if (!socket.waitForReadyRead(Timeout)) {
+                 emit error(socket.error(), socket.errorString());
+                 return;
+             }
+         }</pre>
+<p>This step is to read the size of the packet. Although we are only reading two bytes here, and the <tt>while</tt> loop may seem to overdo it, we present this code to demonstrate a good pattern for waiting for data using <a href="qabstractsocket.html#waitForReadyRead">QTcpSocket::waitForReadyRead</a>(). It goes like this: For as long as we still need more data, we call waitForReadyRead(). If it returns false, we abort the operation. After this statement, we know that we have received enough data.</p>
+<pre>         quint16 blockSize;
+         QDataStream in(&amp;socket);
+         in.setVersion(QDataStream::Qt_4_0);
+         in &gt;&gt; blockSize;</pre>
+<p>Now we can create a <a href="qdatastream.html">QDataStream</a> object, passing the socket to <a href="qdatastream.html">QDataStream</a>'s constructor, and as in the other client examples we set the stream protocol version to <a href="qdatastream.html#Version-enum">QDataStream::Qt_4_0</a>, and read the size of the packet.</p>
+<pre>         while (socket.bytesAvailable() &lt; blockSize) {
+             if (!socket.waitForReadyRead(Timeout)) {
+                 emit error(socket.error(), socket.errorString());
+                 return;
+             }
+         }</pre>
+<p>Again, we'll use a loop that waits for more data by calling <a href="qabstractsocket.html#waitForReadyRead">QTcpSocket::waitForReadyRead</a>(). In this loop, we're waiting until <a href="qabstractsocket.html#bytesAvailable">QTcpSocket::bytesAvailable</a>() returns the full packet size.</p>
+<pre>         QMutexLocker locker(&amp;mutex);
+
+         QString fortune;
+         in &gt;&gt; fortune;
+         emit newFortune(fortune);</pre>
+<p>Now that we have all the data that we need, we can use <a href="qdatastream.html">QDataStream</a> to read the fortune string from the packet. The resulting fortune is delivered by emitting newFortune().</p>
+<pre>         cond.wait(&amp;mutex);
+         serverName = hostName;
+         serverPort = port;
+     }</pre>
+<p>The final part of our loop is that we acquire the mutex so that we can safely read from our member data. We then let the thread go to sleep by calling <a href="qwaitcondition.html#wait">QWaitCondition::wait</a>(). At this point, we can go back to requestNewFortune() and look closed at the call to wakeOne():</p>
+<pre> void FortuneThread::requestNewFortune(const QString &amp;hostName, quint16 port)
+ {
+     ...
+     if (!isRunning())
+         start();
+     else
+         cond.wakeOne();
+ }</pre>
+<p>What happened here was that because the thread falls asleep waiting for a new request, we needed to wake it up again when a new request arrives. QWaitCondition is often used in threads to signal a wakeup call like this.</p>
+<pre> FortuneThread::~FortuneThread()
+ {
+     quit = true;
+     cond.wakeOne();
+     wait();
+ }</pre>
+<p>Finishing off the FortuneThread walkthrough, this is the destructor that sets <i>quit</i> to true, wakes up the thread and waits for the thread to exit before returning. This lets the <tt>while</tt> loop in run() will finish its current iteration. When run() returns, the thread will terminate and be destroyed.</p>
+<p>Now for the BlockingClient class:</p>
+<pre> class BlockingClient : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     BlockingClient(QWidget *parent = 0);
+
+ private slots:
+     void requestNewFortune();
+     void showFortune(const QString &amp;fortune);
+     void displayError(int socketError, const QString &amp;message);
+     void enableGetFortuneButton();
+
+ private:
+     QLabel *hostLabel;
+     QLabel *portLabel;
+     QLineEdit *hostLineEdit;
+     QLineEdit *portLineEdit;
+     QLabel *statusLabel;
+     QPushButton *getFortuneButton;
+     QPushButton *quitButton;
+     QDialogButtonBox *buttonBox;
+
+     FortuneThread thread;
+     QString currentFortune;
+ };</pre>
+<p>BlockingClient is very similar to the Client class in the <a href="network-fortuneclient.html">Fortune Client</a> example, but in this class we store a FortuneThread member instead of a pointer to a <a href="qtcpsocket.html">QTcpSocket</a>. When the user clicks the &quot;Get Fortune&quot; button, the same slot is called, but its implementation is slightly different:</p>
+<pre>     connect(&amp;thread, SIGNAL(newFortune(const QString &amp;)),
+             this, SLOT(showFortune(const QString &amp;)));
+     connect(&amp;thread, SIGNAL(error(int, const QString &amp;)),
+             this, SLOT(displayError(int, const QString &amp;)));</pre>
+<p>We connect our FortuneThread's two signals newFortune() and error() (which are somewhat similar to <a href="qiodevice.html#readyRead">QTcpSocket::readyRead</a>() and <a href="qabstractsocket.html#error">QTcpSocket::error</a>() in the previous example) to requestNewFortune() and displayError().</p>
+<pre> void BlockingClient::requestNewFortune()
+ {
+     getFortuneButton-&gt;setEnabled(false);
+     thread.requestNewFortune(hostLineEdit-&gt;text(),
+                              portLineEdit-&gt;text().toInt());
+ }</pre>
+<p>The requestNewFortune() slot calls FortuneThread::requestNewFortune(), which <i>shedules</i> the request. When the thread has received a new fortune and emits newFortune(), our showFortune() slot is called:</p>
+<pre> void BlockingClient::showFortune(const QString &amp;nextFortune)
+ {
+     if (nextFortune == currentFortune) {
+         requestNewFortune();
+         return;
+     }
+
+     currentFortune = nextFortune;
+     statusLabel-&gt;setText(currentFortune);
+     getFortuneButton-&gt;setEnabled(true);
+ }</pre>
+<p>Here, we simply display the fortune we received as the argument.</p>
+<p>See also <a href="network-fortuneclient.html">Fortune Client Example</a> and <a href="network-fortuneserver.html">Fortune Server Example</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

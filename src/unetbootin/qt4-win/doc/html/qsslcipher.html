@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/ssl/qsslcipher.cpp -->
+<head>
+  <title>Qt 4.4: QSslCipher Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSslCipher Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QSslCipher class represents an SSL cryptographic cipher. <a href="#details">More...</a></p>
+<pre> #include &lt;QSslCipher&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qsslcipher-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsslcipher.html#QSslCipher">QSslCipher</a></b> ()</li>
+<li><div class="fn"/><b><a href="qsslcipher.html#QSslCipher-2">QSslCipher</a></b> ( const QString &amp; <i>name</i>, QSsl::SslProtocol <i>protocol</i> )</li>
+<li><div class="fn"/><b><a href="qsslcipher.html#QSslCipher-3">QSslCipher</a></b> ( const QSslCipher &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qsslcipher.html#dtor.QSslCipher">~QSslCipher</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qsslcipher.html#authenticationMethod">authenticationMethod</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcipher.html#encryptionMethod">encryptionMethod</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsslcipher.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcipher.html#keyExchangeMethod">keyExchangeMethod</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcipher.html#name">name</a></b> () const</li>
+<li><div class="fn"/>QSsl::SslProtocol <b><a href="qsslcipher.html#protocol">protocol</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcipher.html#protocolString">protocolString</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qsslcipher.html#supportedBits">supportedBits</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qsslcipher.html#usedBits">usedBits</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsslcipher.html#operator-not-eq">operator!=</a></b> ( const QSslCipher &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QSslCipher &amp; <b><a href="qsslcipher.html#operator-eq">operator=</a></b> ( const QSslCipher &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qsslcipher.html#operator-eq-eq">operator==</a></b> ( const QSslCipher &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSslCipher class represents an SSL cryptographic cipher.</p>
+<p>QSslCipher stores information about one cryptographic cipher. It is most commonly used with <a href="qsslsocket.html">QSslSocket</a>, either for configuring which ciphers the socket can use, or for displaying the socket's ciphers to the user.</p>
+<p>See also <a href="qsslsocket.html">QSslSocket</a> and <a href="qsslkey.html">QSslKey</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSslCipher"></a>QSslCipher::QSslCipher ()</h3>
+<p>Constructs an empty <a href="qsslcipher.html">QSslCipher</a> object.</p>
+<h3 class="fn"><a name="QSslCipher-2"></a>QSslCipher::QSslCipher ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, <a href="qssl.html#SslProtocol-enum">QSsl::SslProtocol</a> <i>protocol</i> )</h3>
+<p>Constructs a <a href="qsslcipher.html">QSslCipher</a> object for the cipher determined by <i>name</i> and <i>protocol</i>. The constructor accepts only supported ciphers (i.e&#x2e;, the <i>name</i> and <i>protocol</i> must identify a cipher in the list of ciphers returned by <a href="qsslsocket.html#supportedCiphers">QSslSocket::supportedCiphers</a>()).</p>
+<p>You can call <a href="qsslcipher.html#isNull">isNull</a>() after construction to check if <i>name</i> and <i>protocol</i> correctly identified a supported cipher.</p>
+<h3 class="fn"><a name="QSslCipher-3"></a>QSslCipher::QSslCipher ( const QSslCipher &amp; <i>other</i> )</h3>
+<p>Constructs an identical copy of the <i>other</i> cipher.</p>
+<h3 class="fn"><a name="dtor.QSslCipher"></a>QSslCipher::~QSslCipher ()</h3>
+<p>Destroys the <a href="qsslcipher.html">QSslCipher</a> object.</p>
+<h3 class="fn"><a name="authenticationMethod"></a><a href="qstring.html">QString</a> QSslCipher::authenticationMethod () const</h3>
+<p>Returns the cipher's authentication method as a <a href="qstring.html">QString</a>.</p>
+<h3 class="fn"><a name="encryptionMethod"></a><a href="qstring.html">QString</a> QSslCipher::encryptionMethod () const</h3>
+<p>Returns the cipher's encryption method as a <a href="qstring.html">QString</a>.</p>
+<h3 class="fn"><a name="isNull"></a>bool QSslCipher::isNull () const</h3>
+<p>Returns true if this is a null cipher; otherwise returns false.</p>
+<h3 class="fn"><a name="keyExchangeMethod"></a><a href="qstring.html">QString</a> QSslCipher::keyExchangeMethod () const</h3>
+<p>Returns the cipher's key exchange method as a <a href="qstring.html">QString</a>.</p>
+<h3 class="fn"><a name="name"></a><a href="qstring.html">QString</a> QSslCipher::name () const</h3>
+<p>Returns the name of the cipher, or an empty <a href="qstring.html">QString</a> if this is a null cipher.</p>
+<p>See also <a href="qsslcipher.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="protocol"></a><a href="qssl.html#SslProtocol-enum">QSsl::SslProtocol</a> QSslCipher::protocol () const</h3>
+<p>Returns the cipher's protocol type, or <a href="qssl.html#SslProtocol-enum">QSsl::UnknownProtocol</a> if <a href="qsslcipher.html">QSslCipher</a> is unable to determine the protocol (<a href="qsslcipher.html#protocolString">protocolString</a>() may contain more information).</p>
+<p>See also <a href="qsslcipher.html#protocolString">protocolString</a>().</p>
+<h3 class="fn"><a name="protocolString"></a><a href="qstring.html">QString</a> QSslCipher::protocolString () const</h3>
+<p>Returns the cipher's protocol as a <a href="qstring.html">QString</a>.</p>
+<p>See also <a href="qsslcipher.html#protocol">protocol</a>().</p>
+<h3 class="fn"><a name="supportedBits"></a>int QSslCipher::supportedBits () const</h3>
+<p>Returns the number of bits supported by the cipher.</p>
+<p>See also <a href="qsslcipher.html#usedBits">usedBits</a>().</p>
+<h3 class="fn"><a name="usedBits"></a>int QSslCipher::usedBits () const</h3>
+<p>Returns the number of bits used by the cipher.</p>
+<p>See also <a href="qsslcipher.html#supportedBits">supportedBits</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QSslCipher::operator!= ( const QSslCipher &amp; <i>other</i> ) const</h3>
+<p>Returns true if this cipher is not the same as <i>other</i>; otherwise, false is returned.</p>
+<h3 class="fn"><a name="operator-eq"></a>QSslCipher &amp; QSslCipher::operator= ( const QSslCipher &amp; <i>other</i> )</h3>
+<p>Copies the contents of <i>other</i> into this cipher, making the two ciphers identical.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QSslCipher::operator== ( const QSslCipher &amp; <i>other</i> ) const</h3>
+<p>Returns true if this cipher is the same as <i>other</i>; otherwise, false is returned.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

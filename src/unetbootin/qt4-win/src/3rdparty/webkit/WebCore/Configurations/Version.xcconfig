@@ -1,0 +1,26 @@
+MAJOR_VERSION = 523;
+MINOR_VERSION = 13;
+TINY_VERSION = 0;
+FULL_VERSION = $(MAJOR_VERSION).$(MINOR_VERSION);
+
+// The bundle version is set based on the current build configuration, see below.
+BUNDLE_VERSION = $(BUNDLE_VERSION_$(CONFIGURATION));
+
+// The local builds are always just the major version with a Plus suffix.
+BUNDLE_VERSION_Release = $(FULL_VERSION)+;
+BUNDLE_VERSION_Debug = $(BUNDLE_VERSION_Release);
+
+// The system version prefix is based on the current system version.
+SYSTEM_VERSION_PREFIX = $(SYSTEM_VERSION_PREFIX_$(MAC_OS_X_VERSION_MAJOR));
+SYSTEM_VERSION_PREFIX_ = ;
+SYSTEM_VERSION_PREFIX_1040 = 4;
+SYSTEM_VERSION_PREFIX_1050 = 5;
+
+// The production build always uses the full version with a system version prefix.
+BUNDLE_VERSION_Production = $(SYSTEM_VERSION_PREFIX)$(FULL_VERSION);
+
+// If $(CONFIGURATION) is undefined, use the Production version.
+BUNDLE_VERSION_ = $(BUNDLE_VERSION_Production);
+
+DYLIB_COMPATIBILITY_VERSION = 1;
+DYLIB_CURRENT_VERSION = $(FULL_VERSION);

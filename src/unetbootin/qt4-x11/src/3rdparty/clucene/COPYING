@@ -1,0 +1,30 @@
+License
+
+The CLucene Core Library uses a dual license strategy for the source code. 
+These licenses are the GNU Lesser General Public License (LGPL) and the Apache
+License (Version 2.0). Users can choose the license they wish to distribute
+their software under. This means that you do not need to abide by *both*
+licenses, but rather than you can choose the license which most suits your
+needs.
+
+To rephrase this and to make it perfectly clear:
+CLucene is distributed under the GNU Lesser General Public License (LGPL) 
+	*or*
+the Apache License, Version 2.0
+
+However, we are an open source project, and we encourage users to use the LGPL 
+license and participate fully in the free software community. Dual licensing
+of the CLucene source code provides open and free access to the technology both
+for the GPL community and for other developers or companies that cannot use the
+GPL.
+
+You can freely modify, extend, and improve the CLucene source code. The only
+question is whether or not you must provide the source code and contribute
+modifications to the community. The GNU and Apache licenses allow different
+ranges of flexibility in this regard, but in the end, regardless of the license
+used, we highly recommend that you submit any bugs, incompatibilities or
+added features.
+
+Note that this same license does *not* apply to the CLucene Contributions
+package. You should read the COPYING file in that directory or package for
+more information.

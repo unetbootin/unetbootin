@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: sprites.h Example File (graphicsview/portedasteroids/sprites.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">sprites.h Example File<br /><span class="small-subtitle">graphicsview/portedasteroids/sprites.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  * KAsteroids - Copyright (c) Martin R. Jones 1997
+  *
+  * Part of the KDE project
+  */</span>
+
+ #ifndef __SPRITES_H__
+ #define __SPRITES_H__
+
+ #include &quot;animateditem.h&quot;
+
+ #define ID_ROCK_LARGE           1024
+ #define ID_ROCK_MEDIUM          1025
+ #define ID_ROCK_SMALL           1026
+
+ #define ID_MISSILE              1030
+
+ #define ID_BIT                  1040
+ #define ID_EXHAUST              1041
+
+ #define ID_ENERGY_POWERUP       1310
+ #define ID_TELEPORT_POWERUP     1311
+ #define ID_BRAKE_POWERUP        1312
+ #define ID_SHIELD_POWERUP       1313
+ #define ID_SHOOT_POWERUP        1314
+
+ #define ID_SHIP                 1350
+ #define ID_SHIELD               1351
+
+ #define MAX_SHIELD_AGE          350
+ #define MAX_POWERUP_AGE         500
+ #define MAX_MISSILE_AGE         40
+
+ class KMissile : public AnimatedPixmapItem
+ {
+ public:
+     KMissile( const QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c ) : AnimatedPixmapItem( s, c )
+         { myAge = 0; }
+
+     virtual int type() const { return ID_MISSILE; }
+
+     void growOlder() { myAge++; }
+     bool expired() { return myAge &gt; MAX_MISSILE_AGE; }
+
+ private:
+     int myAge;
+ };
+
+ class KBit : public AnimatedPixmapItem
+ {
+ public:
+     KBit( const QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c ) : AnimatedPixmapItem( s, c )
+         {  death = 7; }
+
+     virtual int type() const {  return ID_BIT; }
+
+     void setDeath( int d ) { death = d; }
+     void growOlder() { death--; }
+     bool expired() { return death &lt;= 0; }
+
+ private:
+     int death;
+ };
+
+ class KExhaust : public AnimatedPixmapItem
+ {
+ public:
+     KExhaust( const QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c ) : AnimatedPixmapItem( s, c )
+         {  death = 1; }
+
+     virtual int type() const {  return ID_EXHAUST; }
+
+     void setDeath( int d ) { death = d; }
+     void growOlder() { death--; }
+     bool expired() { return death &lt;= 0; }
+
+ private:
+     int death;
+ };
+
+ class KPowerup : public AnimatedPixmapItem
+ {
+ public:
+   KPowerup( const QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c, int t ) : AnimatedPixmapItem( s, c ),
+         myAge( 0 ), _type(t) { }
+
+   virtual int type() const { return _type; }
+
+   void growOlder() { myAge++; }
+   bool expired() const { return myAge &gt; MAX_POWERUP_AGE; }
+
+ protected:
+   int myAge;
+   int _type;
+ };
+
+ class KRock : public AnimatedPixmapItem
+ {
+ public:
+     KRock (const QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c, int t, int sk, int st) : AnimatedPixmapItem( s, c )
+         { _type = t; skip = cskip = sk; step = st; }
+
+     void nextFrame()
+         {
+             if (cskip-- &lt;= 0) {
+                 setFrame( (frame()+step+frameCount())%frameCount() );
+                 cskip = QABS(skip);
+             }
+         }
+
+     virtual int type() const { return _type; }
+
+ private:
+     int _type;
+     int skip;
+     int cskip;
+     int step;
+ };
+
+ class KShield : public AnimatedPixmapItem
+ {
+ public:
+   KShield( QList&lt;QPixmap&gt; &amp;s, QGraphicsScene *c )
+       : AnimatedPixmapItem( s, c ) {}
+
+   virtual int type() const { return ID_SHIELD; }
+ };
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

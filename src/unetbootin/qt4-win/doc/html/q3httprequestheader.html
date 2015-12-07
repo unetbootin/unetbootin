@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/network/q3http.cpp -->
+<head>
+  <title>Qt 4.4: Q3HttpRequestHeader Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3HttpRequestHeader Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3HttpRequestHeader class contains request header information for HTTP. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3HttpRequestHeader&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p><b>Note to Qt Desktop Light Edition users:</b> This class is only available in the <a href="commercialeditions.html#qt-desktop-edition">Qt Desktop Edition</a>.</p>
+<p>Inherits <a href="q3httpheader.html">Q3HttpHeader</a>.</p>
+<ul>
+<li><a href="q3httprequestheader-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3httprequestheader.html#Q3HttpRequestHeader">Q3HttpRequestHeader</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3httprequestheader.html#Q3HttpRequestHeader-2">Q3HttpRequestHeader</a></b> ( const QString &amp; <i>method</i>, const QString &amp; <i>path</i>, int <i>majorVer</i> = 1, int <i>minorVer</i> = 1 )</li>
+<li><div class="fn"/><b><a href="q3httprequestheader.html#Q3HttpRequestHeader-3">Q3HttpRequestHeader</a></b> ( const Q3HttpRequestHeader &amp; <i>header</i> )</li>
+<li><div class="fn"/><b><a href="q3httprequestheader.html#Q3HttpRequestHeader-4">Q3HttpRequestHeader</a></b> ( const QString &amp; <i>str</i> )</li>
+<li><div class="fn"/>virtual int <b><a href="q3httprequestheader.html#majorVersion">majorVersion</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3httprequestheader.html#method">method</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3httprequestheader.html#minorVersion">minorVersion</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="q3httprequestheader.html#pathx">path</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3httprequestheader.html#setRequest">setRequest</a></b> ( const QString &amp; <i>method</i>, const QString &amp; <i>path</i>, int <i>majorVer</i> = 1, int <i>minorVer</i> = 1 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>16 public functions inherited from <a href="q3httpheader.html#public-functions">Q3HttpHeader</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3HttpRequestHeader class contains request header information for HTTP.</p>
+<p>This class is used in the <a href="q3http.html">Q3Http</a> class to report the header information if the client requests something from the server.</p>
+<p>HTTP requests have a method which describes the request's action. The most common requests are &quot;GET&quot; and &quot;POST&quot;. In addition to the request method the header also includes a request-URI to specify the location for the method to use.</p>
+<p>The method, request-URI and protocol-version can be set using a constructor or later using <a href="q3httprequestheader.html#setRequest">setRequest</a>(). The values can be obtained using <a href="q3httprequestheader.html#method">method</a>(), <a href="q3httprequestheader.html#pathx">path</a>(), <a href="q3httprequestheader.html#majorVersion">majorVersion</a>() and <a href="q3httprequestheader.html#minorVersion">minorVersion</a>().</p>
+<p>This class is a <a href="q3httpheader.html">Q3HttpHeader</a> subclass so that class's functions, e.g&#x2e; <a href="q3httpheader.html#setValue">setValue()</a>, <a href="q3httpheader.html#value">value()</a>, etc. are also available.</p>
+<p>See also <a href="q3httpresponseheader.html">Q3HttpResponseHeader</a> and <a href="q3http.html">Q3Http</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3HttpRequestHeader"></a>Q3HttpRequestHeader::Q3HttpRequestHeader ()</h3>
+<p>Constructs an empty HTTP request header.</p>
+<h3 class="fn"><a name="Q3HttpRequestHeader-2"></a>Q3HttpRequestHeader::Q3HttpRequestHeader ( const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qstring.html">QString</a> &amp; <i>path</i>, int <i>majorVer</i> = 1, int <i>minorVer</i> = 1 )</h3>
+<p>Constructs a HTTP request header for the method <i>method</i>, the request-URI <i>path</i> and the protocol-version <i>majorVer</i> and <i>minorVer</i>.</p>
+<h3 class="fn"><a name="Q3HttpRequestHeader-3"></a>Q3HttpRequestHeader::Q3HttpRequestHeader ( const Q3HttpRequestHeader &amp; <i>header</i> )</h3>
+<p>Constructs a copy of <i>header</i>.</p>
+<h3 class="fn"><a name="Q3HttpRequestHeader-4"></a>Q3HttpRequestHeader::Q3HttpRequestHeader ( const <a href="qstring.html">QString</a> &amp; <i>str</i> )</h3>
+<p>Constructs a HTTP request header from the string <i>str</i>. The <i>str</i> should consist of one or more &quot;\r\n&quot; delimited lines; the first line should be the request-line (format: method, space, request-URI, space HTTP-version); each of the remaining lines should have the format key, colon, space, value.</p>
+<h3 class="fn"><a name="majorVersion"></a>int Q3HttpRequestHeader::majorVersion () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the major protocol-version of the HTTP request header.</p>
+<p>Reimplemented from <a href="q3httpheader.html#majorVersion">Q3HttpHeader</a>.</p>
+<p>See also <a href="q3httprequestheader.html#minorVersion">minorVersion</a>(), <a href="q3httprequestheader.html#method">method</a>(), <a href="q3httprequestheader.html#pathx">path</a>(), and <a href="q3httprequestheader.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="method"></a><a href="qstring.html">QString</a> Q3HttpRequestHeader::method () const</h3>
+<p>Returns the method of the HTTP request header.</p>
+<p>See also <a href="q3httprequestheader.html#pathx">path</a>(), <a href="q3httprequestheader.html#majorVersion">majorVersion</a>(), <a href="q3httprequestheader.html#minorVersion">minorVersion</a>(), and <a href="q3httprequestheader.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="minorVersion"></a>int Q3HttpRequestHeader::minorVersion () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the minor protocol-version of the HTTP request header.</p>
+<p>Reimplemented from <a href="q3httpheader.html#minorVersion">Q3HttpHeader</a>.</p>
+<p>See also <a href="q3httprequestheader.html#majorVersion">majorVersion</a>(), <a href="q3httprequestheader.html#method">method</a>(), <a href="q3httprequestheader.html#pathx">path</a>(), and <a href="q3httprequestheader.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="pathx"></a><a href="qstring.html">QString</a> Q3HttpRequestHeader::path () const</h3>
+<p>Returns the request-URI of the HTTP request header.</p>
+<p>See also <a href="q3httprequestheader.html#method">method</a>(), <a href="q3httprequestheader.html#majorVersion">majorVersion</a>(), <a href="q3httprequestheader.html#minorVersion">minorVersion</a>(), and <a href="q3httprequestheader.html#setRequest">setRequest</a>().</p>
+<h3 class="fn"><a name="setRequest"></a>void Q3HttpRequestHeader::setRequest ( const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qstring.html">QString</a> &amp; <i>path</i>, int <i>majorVer</i> = 1, int <i>minorVer</i> = 1 )</h3>
+<p>This function sets the request method to <i>method</i>, the request-URI to <i>path</i> and the protocol-version to <i>majorVer</i> and <i>minorVer</i>.</p>
+<p>See also <a href="q3httprequestheader.html#method">method</a>(), <a href="q3httprequestheader.html#pathx">path</a>(), <a href="q3httprequestheader.html#majorVersion">majorVersion</a>(), and <a href="q3httprequestheader.html#minorVersion">minorVersion</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

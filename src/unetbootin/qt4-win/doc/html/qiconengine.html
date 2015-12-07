@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/image/qiconengine.cpp -->
+<head>
+  <title>Qt 4.4: QIconEngine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QIconEngine Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QIconEngine class provides an abstract base class for <a href="qicon.html">QIcon</a> renderers. <a href="#details">More...</a></p>
+<pre> #include &lt;QIconEngine&gt;</pre><p>Inherited by <a href="qiconenginev2.html">QIconEngineV2</a>.</p>
+<ul>
+<li><a href="qiconengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qiconengine.html#dtor.QIconEngine">~QIconEngine</a></b> ()</li>
+<li><div class="fn"/>virtual QSize <b><a href="qiconengine.html#actualSize">actualSize</a></b> ( const QSize &amp; <i>size</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qiconengine.html#addFile">addFile</a></b> ( const QString &amp; <i>fileName</i>, const QSize &amp; <i>size</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qiconengine.html#addPixmap">addPixmap</a></b> ( const QPixmap &amp; <i>pixmap</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="qiconengine.html#paint">paint</a></b> ( QPainter * <i>painter</i>, const QRect &amp; <i>rect</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i> ) = 0</li>
+<li><div class="fn"/>virtual QPixmap <b><a href="qiconengine.html#pixmap">pixmap</a></b> ( const QSize &amp; <i>size</i>, QIcon::Mode <i>mode</i>, QIcon::State <i>state</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QIconEngine class provides an abstract base class for <a href="qicon.html">QIcon</a> renderers.</p>
+<p><b>Use <a href="qiconenginev2.html">QIconEngineV2</a> instead.</b></p>
+<p>An icon engine provides the rendering functions for a <a href="qicon.html">QIcon</a>. Each icon has a corresponding icon engine that is responsible for drawing the icon with a requested size, mode and state.</p>
+<p>The icon is rendered by the <a href="qiconengine.html#paint">paint</a>() function, and the icon can additionally be obtained as a pixmap with the <a href="qiconengine.html#pixmap">pixmap</a>() function (the default implementation simply uses <a href="qiconengine.html#paint">paint</a>() to achieve this). The <a href="qiconengine.html#addPixmap">addPixmap</a>() function can be used to add new pixmaps to the icon engine, and is used by <a href="qicon.html">QIcon</a> to add specialized custom pixmaps.</p>
+<p>The <a href="qiconengine.html#paint">paint</a>(), <a href="qiconengine.html#pixmap">pixmap</a>(), and <a href="qiconengine.html#addPixmap">addPixmap</a>() functions are all virtual, and can therefore be reimplemented in subclasses of QIconEngine.</p>
+<p>See also <a href="qiconenginev2.html">QIconEngineV2</a> and <a href="qiconengineplugin.html">QIconEnginePlugin</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QIconEngine"></a>QIconEngine::~QIconEngine ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the icon engine.</p>
+<h3 class="fn"><a name="actualSize"></a><a href="qsize.html">QSize</a> QIconEngine::actualSize ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qicon.html#Mode-enum">QIcon::Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">QIcon::State</a> <i>state</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the actual size of the icon the engine provides for the requested <i>size</i>, <i>mode</i> and <i>state</i>. The default implementation returns the given <i>size</i>.</p>
+<h3 class="fn"><a name="addFile"></a>void QIconEngine::addFile ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i>, const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qicon.html#Mode-enum">QIcon::Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">QIcon::State</a> <i>state</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Called by <a href="qicon.html#addFile">QIcon::addFile</a>(). Adds a specialized pixmap from the file with the given <i>fileName</i>, <i>size</i>, <i>mode</i> and <i>state</i>. The default pixmap-based engine stores any supplied file names, and it loads the pixmaps on demand instead of using scaled pixmaps if the size of a pixmap matches the size of icon requested. Custom icon engines that implement scalable vector formats are free to ignores any extra files.</p>
+<h3 class="fn"><a name="addPixmap"></a>void QIconEngine::addPixmap ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, <a href="qicon.html#Mode-enum">QIcon::Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">QIcon::State</a> <i>state</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Called by <a href="qicon.html#addPixmap">QIcon::addPixmap</a>(). Adds a specialized <i>pixmap</i> for the given <i>mode</i> and <i>state</i>. The default pixmap-based engine stores any supplied pixmaps, and it uses them instead of scaled pixmaps if the size of a pixmap matches the size of icon requested. Custom icon engines that implement scalable vector formats are free to ignores any extra pixmaps.</p>
+<h3 class="fn"><a name="paint"></a>void QIconEngine::paint ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qrect.html">QRect</a> &amp; <i>rect</i>, <a href="qicon.html#Mode-enum">QIcon::Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">QIcon::State</a> <i>state</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Uses the given <i>painter</i> to paint the icon with the required <i>mode</i> and <i>state</i> into the rectangle <i>rect</i>.</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QIconEngine::pixmap ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, <a href="qicon.html#Mode-enum">QIcon::Mode</a> <i>mode</i>, <a href="qicon.html#State-enum">QIcon::State</a> <i>state</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the icon as a pixmap with the required <i>size</i>, <i>mode</i>, and <i>state</i>. The default implementation creates a new pixmap and calls <a href="qiconengine.html#paint">paint</a>() to fill it.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

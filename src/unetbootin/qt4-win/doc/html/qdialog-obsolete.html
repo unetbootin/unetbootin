@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qdialog.cpp -->
+<head>
+  <title>Qt 4.4: Obsolete Members for QDialog</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Obsolete Members for QDialog</h1>
+<p><b>The following class members are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<p><ul><li><a href="qdialog.html">QDialog class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QWidget * <b><a href="qdialog-obsolete.html#extension">extension</a></b> () const&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>Qt::Orientation <b><a href="qdialog-obsolete.html#orientation">orientation</a></b> () const&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>void <b><a href="qdialog-obsolete.html#setExtension">setExtension</a></b> ( QWidget * <i>extension</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>void <b><a href="qdialog-obsolete.html#setOrientation">setOrientation</a></b> ( Qt::Orientation <i>orientation</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<ul>
+<li><div class="fn"/>3 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+</ul>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdialog-obsolete.html#showExtension">showExtension</a></b> ( bool <i>showIt</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="extension"></a><a href="qwidget.html">QWidget</a> * QDialog::extension () const</h3>
+<p>Returns the dialog's extension or 0 if no extension has been defined.</p>
+<p>Instead of using this functionality, we recommend that you simply call <a href="qwidget.html#show">show</a>() or <a href="qwidget.html#hide">hide</a>() on the part of the dialog that you want to use as an extension. See the <a href="dialogs-extension.html">Extension Example</a> for details.</p>
+<p>See also <a href="qdialog-obsolete.html#setExtension">setExtension</a>(), <a href="qdialog-obsolete.html#showExtension">showExtension</a>(), and <a href="qdialog-obsolete.html#setOrientation">setOrientation</a>().</p>
+<h3 class="fn"><a name="orientation"></a><a href="qt.html#Orientation-enum">Qt::Orientation</a> QDialog::orientation () const</h3>
+<p>Returns the dialog's extension orientation.</p>
+<p>Instead of using this functionality, we recommend that you simply call <a href="qwidget.html#show">show</a>() or <a href="qwidget.html#hide">hide</a>() on the part of the dialog that you want to use as an extension. See the <a href="dialogs-extension.html">Extension Example</a> for details.</p>
+<p>See also <a href="qdialog-obsolete.html#setOrientation">setOrientation</a>() and <a href="qdialog-obsolete.html#extension">extension</a>().</p>
+<h3 class="fn"><a name="setExtension"></a>void QDialog::setExtension ( <a href="qwidget.html">QWidget</a> * <i>extension</i> )</h3>
+<p>Sets the widget, <i>extension</i>, to be the dialog's extension, deleting any previous extension. The dialog takes ownership of the extension. Note that if 0 is passed any existing extension will be deleted. This function must only be called while the dialog is hidden.</p>
+<p>Instead of using this functionality, we recommend that you simply call <a href="qwidget.html#show">show</a>() or <a href="qwidget.html#hide">hide</a>() on the part of the dialog that you want to use as an extension. See the <a href="dialogs-extension.html">Extension Example</a> for details.</p>
+<p>See also <a href="qdialog-obsolete.html#extension">extension</a>(), <a href="qdialog-obsolete.html#showExtension">showExtension</a>(), and <a href="qdialog-obsolete.html#setOrientation">setOrientation</a>().</p>
+<h3 class="fn"><a name="setOrientation"></a>void QDialog::setOrientation ( <a href="qt.html#Orientation-enum">Qt::Orientation</a> <i>orientation</i> )</h3>
+<p>If <i>orientation</i> is <a href="qt.html#Orientation-enum">Qt::Horizontal</a>, the extension will be displayed to the right of the dialog's main area. If <i>orientation</i> is <a href="qt.html#Orientation-enum">Qt::Vertical</a>, the extension will be displayed below the dialog's main area.</p>
+<p>Instead of using this functionality, we recommend that you simply call <a href="qwidget.html#show">show</a>() or <a href="qwidget.html#hide">hide</a>() on the part of the dialog that you want to use as an extension. See the <a href="dialogs-extension.html">Extension Example</a> for details.</p>
+<p>See also <a href="qdialog-obsolete.html#orientation">orientation</a>() and <a href="qdialog-obsolete.html#setExtension">setExtension</a>().</p>
+<h3 class="fn"><a name="showExtension"></a>void QDialog::showExtension ( bool <i>showIt</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>If <i>showIt</i> is true, the dialog's extension is shown; otherwise the extension is hidden.</p>
+<p>Instead of using this functionality, we recommend that you simply call <a href="qwidget.html#show">show</a>() or <a href="qwidget.html#hide">hide</a>() on the part of the dialog that you want to use as an extension. See the <a href="dialogs-extension.html">Extension Example</a> for details.</p>
+<p>See also <a href="qwidget.html#show">show</a>(), <a href="qdialog-obsolete.html#setExtension">setExtension</a>(), and <a href="qdialog-obsolete.html#setOrientation">setOrientation</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

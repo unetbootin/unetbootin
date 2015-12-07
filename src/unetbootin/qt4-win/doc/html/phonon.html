@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/phonon.qdoc -->
+<head>
+  <title>Qt 4.4: Phonon Namespace Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Phonon Namespace Reference</h1>
+<p>The Phonon namespace contains classes and functions for multimedia applications. <a href="#details">More...</a></p>
+<pre> #include &lt;Phonon&gt;</pre><p>This namespace was introduced in Qt 4.4.</p>
+<ul>
+</ul>
+<a name="namespaces"></a>
+<h3>Namespaces</h3>
+<ul>
+<li><div class="fn"/>namespace <b><a href="phonon-backendcapabilities.html">BackendCapabilities</a></b></li>
+</ul>
+<a name="classes"></a>
+<h3>Classes</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="phonon-audiooutput.html">AudioOutput</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-effect.html">Effect</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-effectparameter.html">EffectParameter</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-effectwidget.html">EffectWidget</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-globalconfig.html">GlobalConfig</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-medianode.html">MediaNode</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-mediaobject.html">MediaObject</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-mediasource.html">MediaSource</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-objectdescription.html">ObjectDescription</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-path.html">Path</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-seekslider.html">SeekSlider</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-videoplayer.html">VideoPlayer</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-videowidget.html">VideoWidget</a></b></li>
+<li><div class="fn"/>class <b><a href="phonon-volumeslider.html">VolumeSlider</a></b></li>
+</ul>
+<a name="types"></a>
+<h3>Types</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a></b></li>
+<li><div class="fn"/>typedef <b><a href="phonon.html#AudioOutputDeviceModel-typedef">AudioOutputDeviceModel</a></b></li>
+<li><div class="fn"/>enum <b><a href="phonon.html#Category-enum">Category</a></b> { NoCategory, NotificationCategory, MusicCategory, VideoCategory, CommunicationCategory, GameCategory }</li>
+<li><div class="fn"/>typedef <b><a href="phonon.html#CleanUpFunction-typedef">CleanUpFunction</a></b></li>
+<li><div class="fn"/>enum <b><a href="phonon.html#DiscType-enum">DiscType</a></b> { NoDisc, Cd, Dvd, Vcd }</li>
+<li><div class="fn"/>typedef <b><a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a></b></li>
+<li><div class="fn"/>typedef <b><a href="phonon.html#EffectDescriptionModel-typedef">EffectDescriptionModel</a></b></li>
+<li><div class="fn"/>enum <b><a href="phonon.html#ErrorType-enum">ErrorType</a></b> { NoError, NormalError, FatalError }</li>
+<li><div class="fn"/>enum <b><a href="phonon.html#MetaData-enum">MetaData</a></b> { ArtistMetaData, AlbumMetaData, TitleMetaData, DateMetaData, ..., MusicBrainzDiscIdMetaData }</li>
+<li><div class="fn"/>enum <b><a href="phonon-objectdescription.html#ObjectDescriptionType-enum">ObjectDescriptionType</a></b> { AudioOutputDeviceType, EffectType }</li>
+<li><div class="fn"/>enum <b><a href="phonon.html#State-enum">State</a></b> { LoadingState, StoppedState, PlayingState, BufferingState, PausedState, ErrorState }</li>
+</ul>
+<a name="functions"></a>
+<h3>Functions</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="phonon.html#categoryToString">categoryToString</a></b> ( Category <i>c</i> )</li>
+<li><div class="fn"/>Path <b><a href="phonon-path.html#createPath">createPath</a></b> ( MediaNode * <i>source</i>, MediaNode * <i>sink</i> )</li>
+<li><div class="fn"/>MediaObject * <b><a href="phonon.html#createPlayer">createPlayer</a></b> ( Phonon::Category <i>category</i>, const MediaSource &amp; <i>source</i> = MediaSource() )</li>
+<li><div class="fn"/>const char * <b><a href="phonon.html#phononVersion">phononVersion</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>The Phonon namespace contains classes and functions for multimedia applications.</p>
+<p>This namespace contains classes to access multimedia functions for audio and video playback. Those classes are not dependent on any specific framework, but rather use exchangeable backends to do the work.</p>
+<p>See the <a href="phonon-module.html">Phonon Module</a> page for general information about the framework.</p>
+<hr />
+<h2>Namespaces</h2>
+<h3 class="fn"><a name=""></a>namespace Phonon::BackendCapabilities</h3>
+<p>The BackendCapabilities namespace contains functions to describe the capabilities of the multimedia backend.</p>
+<p><b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt;</p>
+<p>This namespace was introduced in Qt 4.4.</p>
+<hr />
+<h2>Classes</h2>
+<h3> class <a href="phonon-audiooutput.html">AudioOutput</a></h3><p>The AudioOutput class is used to send data to audio output devices. <a href="phonon-audiooutput.html#details">More...</a></p>
+<h3> class <a href="phonon-effect.html">Effect</a></h3><p>The Effect class is used to transform audio streams. <a href="phonon-effect.html#details">More...</a></p>
+<h3> class <a href="phonon-effectparameter.html">EffectParameter</a></h3><p>The EffectParameter class describes one parameter of an effect. <a href="phonon-effectparameter.html#details">More...</a></p>
+<h3> class <a href="phonon-effectwidget.html">EffectWidget</a></h3><p>The EffectWidget class provides a widget to control the parameters of an Effect. <a href="phonon-effectwidget.html#details">More...</a></p>
+<h3> class <a href="phonon-globalconfig.html">GlobalConfig</a></h3><h3> class <a href="phonon-medianode.html">MediaNode</a></h3><p>The MediaNode class is the base class for all nodes in a media graph. <a href="phonon-medianode.html#details">More...</a></p>
+<h3> class <a href="phonon-mediaobject.html">MediaObject</a></h3><p>The MediaObject class provides an interface for media playback. <a href="phonon-mediaobject.html#details">More...</a></p>
+<h3> class <a href="phonon-mediasource.html">MediaSource</a></h3><p>The MediaSource class provides multimedia data for media objects. <a href="phonon-mediasource.html#details">More...</a></p>
+<h3> class <a href="phonon-objectdescription.html">ObjectDescription</a></h3><p>The Phonon::ObjectDescription class provides a generic interface to information about Phonon objects. <b>Author:</b> Matthias Kretz &lt;kretz@kde.org&gt; <a href="phonon-objectdescription.html#details">More...</a></p>
+<h3> class <a href="phonon-path.html">Path</a></h3><p>The Path class describes connections between media nodes. <a href="phonon-path.html#details">More...</a></p>
+<h3> class <a href="phonon-seekslider.html">SeekSlider</a></h3><p>The SeekSlider class provides a slider for seeking to positions in media streams. <a href="phonon-seekslider.html#details">More...</a></p>
+<h3> class <a href="phonon-videoplayer.html">VideoPlayer</a></h3><p>The VideoPlayer widget is used to perform playback of video. <a href="phonon-videoplayer.html#details">More...</a></p>
+<h3> class <a href="phonon-videowidget.html">VideoWidget</a></h3><p>The VideoWidget class provides a widget that is used to display video. <a href="phonon-videowidget.html#details">More...</a></p>
+<h3> class <a href="phonon-volumeslider.html">VolumeSlider</a></h3><p>The VolumeSlider widget provides a slider that is used to control the volume of an audio output device. <a href="phonon-volumeslider.html#details">More...</a></p>
+<hr />
+<h2>Type Documentation</h2>
+<h3 class="fn"><a name="AudioOutputDevice-typedef"></a>typedef Phonon::AudioOutputDevice</h3>
+<p>This typedef of <a href="phonon-objectdescription.html">ObjectDescription</a> describes an audio output device, such as soundcards (with different drivers), sound servers, or other virtual outputs like playback on a different computer on the network.</p>
+<p>A list of available devices is given by the backend with Backendcapabilities::availableAudioOutputDevices()</p>
+<pre></pre>
+<h3 class="fn"><a name="AudioOutputDeviceModel-typedef"></a>typedef Phonon::AudioOutputDeviceModel</h3>
+<p>provides an item view model containing available audio output devices.</p>
+<h3 class="fn"><a name="Category-enum"></a>enum Phonon::Category</h3>
+<p>Sets the category your program should be listed in in the mixer.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::NoCategory</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">Will make use of the default device.</td></tr>
+<tr><td valign="top"><tt>Phonon::NotificationCategory</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">If the sounds produced are notifications (ping, beep and such) you should use this category.</td></tr>
+<tr><td valign="top"><tt>Phonon::MusicCategory</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">If your application is a music player (like a jukebox or media player playing an audio file).</td></tr>
+<tr><td valign="top"><tt>Phonon::VideoCategory</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">If the sound is the audio channel of a video.</td></tr>
+<tr><td valign="top"><tt>Phonon::CommunicationCategory</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">If your applications produces sounds from communication with somebody else (VoIP, voice chat).</td></tr>
+<tr><td valign="top"><tt>Phonon::GameCategory</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Sound produced by a computer game should go into this category.</td></tr>
+<tr><td valign="top"><tt>Phonon::AccessibilityCategory</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Sounds produced for accessibility (e.g&#x2e;, Text-To-Speech) Holds the largest value of categories.</td></tr>
+</table></p>
+<p>A Jukebox will set this to Music, a VoIP program to Communication, a DVD player to video, and so on.</p>
+<p><b>Note:</b> These categories can also become useful for an application that controls the volumes automatically, like turning down the music when a call comes in, or turning down the notifications when the media player knows it's playing classical music.</p>
+<h3 class="fn"><a name="CleanUpFunction-typedef"></a>typedef Phonon::CleanUpFunction</h3>
+<h3 class="fn"><a name="DiscType-enum"></a>enum Phonon::DiscType</h3>
+<p>Enum to identify the media discs supported by <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::NoDisc</tt></td><td align="center" valign="top"><tt>-1</tt></td><td valign="top">No disc was selected. This is only useful as a return value from MediaSource::diskType().</td></tr>
+<tr><td valign="top"><tt>Phonon::Cd</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Identifies Audio CDs.</td></tr>
+<tr><td valign="top"><tt>Phonon::Dvd</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Identifies DVDs (not arbitrary data DVDs, only movie DVDs).</td></tr>
+<tr><td valign="top"><tt>Phonon::Vcd</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Identifies Video CDs.</td></tr>
+</table></p>
+<p>See also <a href="phonon-mediasource.html">MediaSource</a> and <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<h3 class="fn"><a name="EffectDescription-typedef"></a>typedef Phonon::EffectDescription</h3>
+<p>EffectDescription gives a description of an <a href="phonon-overview.html#processors">audio effect</a>. It is a typedef of the <a href="phonon-objectdescription.html">ObjectDescription</a> class. Please see its class description for details.</p>
+<p>EffectDescription is used to create audio <a href="phonon-effect.html">Effect</a>s, which can be inserted into a media graph, altering an audio stream.</p>
+<p>See also <a href="phonon-objectdescription.html">Phonon::ObjectDescription</a>, <a href="phonon-capabilities.html">Capabilities Example</a>, and <a href="demos-mediaplayer.html">Media Player</a>.</p>
+<h3 class="fn"><a name="EffectDescriptionModel-typedef"></a>typedef Phonon::EffectDescriptionModel</h3>
+<p>provides a item view model containing available audio effects.</p>
+<h3 class="fn"><a name="ErrorType-enum"></a>enum Phonon::ErrorType</h3>
+<p>This enum describes the severity when an error has occurred during playback.</p>
+<p>After a media object has entered the <a href="phonon.html#State-enum">ErrorState</a>, one can query the type of error from <a href="phonon-mediaobject.html#errorType">MediaObject::errorType()</a>. Note that you should query the error when receiving the <a href="phonon-mediaobject.html#stateChanged">MediaObject::stateChanged()</a> signal, because the error type will be lost if the media object leaves the error state.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error. <a href="phonon-mediaobject.html#errorType">MediaObject::errorType</a>() returns this if <a href="phonon-mediaobject.html#state">MediaObject::state</a>() != <a href="phonon.html#State-enum">Phonon::ErrorState</a>.</td></tr>
+<tr><td valign="top"><tt>Phonon::NormalError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">An error has occurred with the playback of the current source. It might be possible to continue playback, for instance, if only the audio stream in a video cannot be played back. The media object will then leave the error state again.</td></tr>
+<tr><td valign="top"><tt>Phonon::FatalError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">. Something important does not work. Your program cannot continue the playback of the current source, but it might be possible to try another.</td></tr>
+</table></p>
+<p>See also <a href="phonon-mediaobject.html#errorType">MediaObject::errorType</a>().</p>
+<h3 class="fn"><a name="MetaData-enum"></a>enum Phonon::MetaData</h3>
+<p>Provided as keys for <a href="phonon-mediaobject.html#metaData">Phonon::MediaObject::metaData</a>(). The enum values matches strings defined in the Ogg Vorbis specification</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>Phonon::ArtistMetaData</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::AlbumMetaData</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::TitleMetaData</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::DateMetaData</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::GenreMetaData</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::TracknumberMetaData</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::DescriptionMetaData</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+<tr><td valign="top"><tt>Phonon::MusicBrainzDiscIdMetaData</tt></td><td align="center" valign="top"><tt>7</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="ObjectDescriptionType-enum"></a>enum Phonon::ObjectDescriptionType</h3>
+<p>This enum defines the type of information that is contained in a <a href="phonon-objectdescription.html">ObjectDescription</a> object.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::AudioOutputDeviceType</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">An audio output device (<a href="phonon-objectdescription.html#AudioOutputDevice-typedef">AudioOutputDevice</a>). This can be soundcards (with different drivers), sound servers, or other virtual outputs like playback on a different computer on the network.</td></tr>
+<tr><td valign="top"><tt>Phonon::EffectType</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">An audio effect (<a href="phonon-objectdescription.html#EffectDescription-typedef">EffectDescription</a>).</td></tr>
+</table></p>
+<h3 class="fn"><a name="State-enum"></a>enum Phonon::State</h3>
+<p>The state enum describes the different states a media object can take. Several functions of <a href="phonon-mediaobject.html">MediaObject</a> are asynchronous, so even if a you have requested a state change through a function call, e.g&#x2e;, through <a href="phonon-mediaobject.html#play">play()</a>, you cannot be sure that the change has taken place before you receive the <a href="phonon-mediaobject.html#stateChanged">stateChanged()</a> signal.</p>
+<p>A media object can at any time change into any state, regardless of the state it previously had.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Phonon::LoadingState</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">After construction it might take a while before the media object is ready to <a href="phonon-mediaobject.html#play">play()</a>. This state is commonly used by backends to initialize the <a href="phonon-overview.html">media graph</a> and loading the source. When the object leaves the loading state, it will enter the StoppedState unless an error occurred or another state is requested through a function call, e.g&#x2e;, <a href="phonon-mediaobject.html#play">MediaObject::play()</a>.</td></tr>
+<tr><td valign="top"><tt>Phonon::StoppedState</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">In the stopped state, the media object is ready to play its current media source. The current <a href="phonon-mediaobject.html#seek">position</a> in the media stream is then 0.</td></tr>
+<tr><td valign="top"><tt>Phonon::PlayingState</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The media object is playing back its media source.</td></tr>
+<tr><td valign="top"><tt>Phonon::BufferingState</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The Player is waiting for data to be able to start or continue playing. This state is commonly used to wait for media data over a network connection.</td></tr>
+<tr><td valign="top"><tt>Phonon::PausedState</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The media player has currently paused its playback, i.e&#x2e;, it stops playing but keeps the current playback position in the stream.</td></tr>
+<tr><td valign="top"><tt>Phonon::ErrorState</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">When a media object enters the error state a problem with the playback has occurred. The possible errors are grouped into two categories by <a href="phonon.html#ErrorType-enum">Phonon::ErrorType</a>, and the type can be queried through <a href="phonon-mediaobject.html#errorType">errorType()</a>. A <a href="phonon.html#ErrorType-enum">FatalError</a> implies that the playback cannot continue, but one can still try with a new media source. With a <a href="phonon.html#ErrorType-enum">NormalError</a> it might be possible to continue playback, and a media object may therefore change state from the ErrorState.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.4.</p>
+<p>See also <a href="phonon-mediaobject.html">MediaObject</a>.</p>
+<hr />
+<h2>Function Documentation</h2>
+<h3 class="fn"><a name="categoryToString"></a><a href="qstring.html">QString</a> Phonon::categoryToString ( <a href="phonon.html#Category-enum">Category</a> <i>c</i> )</h3>
+<p>Returns a (translated) string to show to the user identifying the given Category (<i>c</i>).</p>
+<h3 class="fn"><a name="createPath"></a><a href="phonon-path.html">Path</a> Phonon::createPath ( <a href="phonon-medianode.html">MediaNode</a> * <i>source</i>, <a href="phonon-medianode.html">MediaNode</a> * <i>sink</i> )</h3>
+<p>Creates a new Path connecting the two MediaNodes <i>source</i> and <i>sink</i>.</p>
+<p>The implementation will automatically select the right format and media type. E.g&#x2e; connecting a <a href="phonon-mediaobject.html">MediaObject</a> and <a href="phonon-audiooutput.html">AudioOutput</a> will create a Path object connecting the audio. This might be represented as PCM or perhaps even AC3 depending on the <a href="phonon-audiooutput.html">AudioOutput</a> object.</p>
+<p><i>source</i> The <a href="phonon-medianode.html">MediaNode</a> to connect an output from <i>sink</i> The <a href="phonon-medianode.html">MediaNode</a> to connect to.</p>
+<h3 class="fn"><a name="createPlayer"></a><a href="phonon-mediaobject.html">MediaObject</a> * Phonon::createPlayer ( <a href="phonon.html#Category-enum">Phonon::Category</a> <i>category</i>, const <a href="phonon-mediasource.html">MediaSource</a> &amp; <i>source</i> = MediaSource() )</h3>
+<p>Convenience function to create a <a href="phonon-mediaobject.html">MediaObject</a> and <a href="phonon-audiooutput.html">AudioOutput</a> connected by a path. The <a href="phonon-mediaobject.html">MediaObject</a> return will have <i>source</i> set as its current source and the specified <i>category</i>.</p>
+<h3 class="fn"><a name="phononVersion"></a>const char * Phonon::phononVersion ()</h3>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: window.cpp Example File (desktop/systray/window.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">window.cpp Example File<br /><span class="small-subtitle">desktop/systray/window.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;window.h&quot;
+
+ Window::Window()
+ {
+     createIconGroupBox();
+     createMessageGroupBox();
+
+     iconLabel-&gt;setMinimumWidth(durationLabel-&gt;sizeHint().width());
+
+     createActions();
+     createTrayIcon();
+
+     connect(showMessageButton, SIGNAL(clicked()), this, SLOT(showMessage()));
+     connect(showIconCheckBox, SIGNAL(toggled(bool)),
+             trayIcon, SLOT(setVisible(bool)));
+     connect(iconComboBox, SIGNAL(currentIndexChanged(int)),
+             this, SLOT(setIcon(int)));
+     connect(trayIcon, SIGNAL(messageClicked()), this, SLOT(messageClicked()));
+     connect(trayIcon, SIGNAL(activated(QSystemTrayIcon::ActivationReason)),
+             this, SLOT(iconActivated(QSystemTrayIcon::ActivationReason)));
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(iconGroupBox);
+     mainLayout-&gt;addWidget(messageGroupBox);
+     setLayout(mainLayout);
+
+     iconComboBox-&gt;setCurrentIndex(1);
+     trayIcon-&gt;show();
+
+     setWindowTitle(tr(&quot;Systray&quot;));
+     resize(400, 300);
+ }
+
+ void Window::setVisible(bool visible)
+ {
+     minimizeAction-&gt;setEnabled(visible);
+     maximizeAction-&gt;setEnabled(!isMaximized());
+     restoreAction-&gt;setEnabled(isMaximized() || !visible);
+     QDialog::setVisible(visible);
+ }
+
+ void Window::closeEvent(QCloseEvent *event)
+ {
+     if (trayIcon-&gt;isVisible()) {
+         QMessageBox::information(this, tr(&quot;Systray&quot;),
+                                  tr(&quot;The program will keep running in the &quot;
+                                     &quot;system tray. To terminate the program, &quot;
+                                     &quot;choose &lt;b&gt;Quit&lt;/b&gt; in the context menu &quot;
+                                     &quot;of the system tray entry.&quot;));
+         hide();
+         event-&gt;ignore();
+     }
+ }
+
+ void Window::setIcon(int index)
+ {
+     QIcon icon = iconComboBox-&gt;itemIcon(index);
+     trayIcon-&gt;setIcon(icon);
+     setWindowIcon(icon);
+
+     trayIcon-&gt;setToolTip(iconComboBox-&gt;itemText(index));
+ }
+
+ void Window::iconActivated(QSystemTrayIcon::ActivationReason reason)
+ {
+     switch (reason) {
+     case QSystemTrayIcon::Trigger:
+     case QSystemTrayIcon::DoubleClick:
+         iconComboBox-&gt;setCurrentIndex((iconComboBox-&gt;currentIndex() + 1)
+                                       % iconComboBox-&gt;count());
+         break;
+     case QSystemTrayIcon::MiddleClick:
+         showMessage();
+         break;
+     default:
+         ;
+     }
+ }
+
+ void Window::showMessage()
+ {
+     QSystemTrayIcon::MessageIcon icon = QSystemTrayIcon::MessageIcon(
+             typeComboBox-&gt;itemData(typeComboBox-&gt;currentIndex()).toInt());
+     trayIcon-&gt;showMessage(titleEdit-&gt;text(), bodyEdit-&gt;toPlainText(), icon,
+                           durationSpinBox-&gt;value() * 1000);
+ }
+
+ void Window::messageClicked()
+ {
+     QMessageBox::information(0, tr(&quot;Systray&quot;),
+                              tr(&quot;Sorry, I already gave what help I could.\n&quot;
+                                 &quot;Maybe you should try asking a human?&quot;));
+ }
+
+ void Window::createIconGroupBox()
+ {
+     iconGroupBox = new QGroupBox(tr(&quot;Tray Icon&quot;));
+
+     iconLabel = new QLabel(&quot;Icon:&quot;);
+
+     iconComboBox = new QComboBox;
+     iconComboBox-&gt;addItem(QIcon(&quot;:/images/bad.svg&quot;), tr(&quot;Bad&quot;));
+     iconComboBox-&gt;addItem(QIcon(&quot;:/images/heart.svg&quot;), tr(&quot;Heart&quot;));
+     iconComboBox-&gt;addItem(QIcon(&quot;:/images/trash.svg&quot;), tr(&quot;Trash&quot;));
+
+     showIconCheckBox = new QCheckBox(tr(&quot;Show icon&quot;));
+     showIconCheckBox-&gt;setChecked(true);
+
+     QHBoxLayout *iconLayout = new QHBoxLayout;
+     iconLayout-&gt;addWidget(iconLabel);
+     iconLayout-&gt;addWidget(iconComboBox);
+     iconLayout-&gt;addStretch();
+     iconLayout-&gt;addWidget(showIconCheckBox);
+     iconGroupBox-&gt;setLayout(iconLayout);
+ }
+
+ void Window::createMessageGroupBox()
+ {
+     messageGroupBox = new QGroupBox(tr(&quot;Balloon Message&quot;));
+
+     typeLabel = new QLabel(tr(&quot;Type:&quot;));
+
+     typeComboBox = new QComboBox;
+     typeComboBox-&gt;addItem(tr(&quot;None&quot;), QSystemTrayIcon::NoIcon);
+     typeComboBox-&gt;addItem(style()-&gt;standardIcon(
+             QStyle::SP_MessageBoxInformation), tr(&quot;Information&quot;),
+             QSystemTrayIcon::Information);
+     typeComboBox-&gt;addItem(style()-&gt;standardIcon(
+             QStyle::SP_MessageBoxWarning), tr(&quot;Warning&quot;),
+             QSystemTrayIcon::Warning);
+     typeComboBox-&gt;addItem(style()-&gt;standardIcon(
+             QStyle::SP_MessageBoxCritical), tr(&quot;Critical&quot;),
+             QSystemTrayIcon::Critical);
+     typeComboBox-&gt;setCurrentIndex(1);
+
+     durationLabel = new QLabel(tr(&quot;Duration:&quot;));
+
+     durationSpinBox = new QSpinBox;
+     durationSpinBox-&gt;setRange(5, 60);
+     durationSpinBox-&gt;setSuffix(&quot; s&quot;);
+     durationSpinBox-&gt;setValue(15);
+
+     durationWarningLabel = new QLabel(tr(&quot;(some systems might ignore this &quot;
+                                          &quot;hint)&quot;));
+     durationWarningLabel-&gt;setIndent(10);
+
+     titleLabel = new QLabel(tr(&quot;Title:&quot;));
+
+     titleEdit = new QLineEdit(tr(&quot;Cannot connect to network&quot;));
+
+     bodyLabel = new QLabel(tr(&quot;Body:&quot;));
+
+     bodyEdit = new QTextEdit;
+     bodyEdit-&gt;setPlainText(tr(&quot;Don't believe me. Honestly, I don't have a &quot;
+                               &quot;clue.\nClick this balloon for details.&quot;));
+
+     showMessageButton = new QPushButton(tr(&quot;Show Message&quot;));
+     showMessageButton-&gt;setDefault(true);
+
+     QGridLayout *messageLayout = new QGridLayout;
+     messageLayout-&gt;addWidget(typeLabel, 0, 0);
+     messageLayout-&gt;addWidget(typeComboBox, 0, 1, 1, 2);
+     messageLayout-&gt;addWidget(durationLabel, 1, 0);
+     messageLayout-&gt;addWidget(durationSpinBox, 1, 1);
+     messageLayout-&gt;addWidget(durationWarningLabel, 1, 2, 1, 3);
+     messageLayout-&gt;addWidget(titleLabel, 2, 0);
+     messageLayout-&gt;addWidget(titleEdit, 2, 1, 1, 4);
+     messageLayout-&gt;addWidget(bodyLabel, 3, 0);
+     messageLayout-&gt;addWidget(bodyEdit, 3, 1, 2, 4);
+     messageLayout-&gt;addWidget(showMessageButton, 5, 4);
+     messageLayout-&gt;setColumnStretch(3, 1);
+     messageLayout-&gt;setRowStretch(4, 1);
+     messageGroupBox-&gt;setLayout(messageLayout);
+ }
+
+ void Window::createActions()
+ {
+     minimizeAction = new QAction(tr(&quot;Mi&amp;nimize&quot;), this);
+     connect(minimizeAction, SIGNAL(triggered()), this, SLOT(hide()));
+
+     maximizeAction = new QAction(tr(&quot;Ma&amp;ximize&quot;), this);
+     connect(maximizeAction, SIGNAL(triggered()), this, SLOT(showMaximized()));
+
+     restoreAction = new QAction(tr(&quot;&amp;Restore&quot;), this);
+     connect(restoreAction, SIGNAL(triggered()), this, SLOT(showNormal()));
+
+     quitAction = new QAction(tr(&quot;&amp;Quit&quot;), this);
+     connect(quitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+ }
+
+ void Window::createTrayIcon()
+ {
+     trayIconMenu = new QMenu(this);
+     trayIconMenu-&gt;addAction(minimizeAction);
+     trayIconMenu-&gt;addAction(maximizeAction);
+     trayIconMenu-&gt;addAction(restoreAction);
+     trayIconMenu-&gt;addSeparator();
+     trayIconMenu-&gt;addAction(quitAction);
+
+     trayIcon = new QSystemTrayIcon(this);
+     trayIcon-&gt;setContextMenu(trayIconMenu);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

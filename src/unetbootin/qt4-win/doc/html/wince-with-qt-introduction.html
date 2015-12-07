@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/wince-introduction.qdoc -->
+<head>
+  <title>Qt 4.4: Windows CE - Introduction to using Qt</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Windows CE - Introduction to using Qt<br /><span class="subtitle"></span>
+</h1>
+<ul><li><a href="#required-tools">Required tools</a></li>
+<li><a href="#installing-qt">Installing Qt</a></li>
+<li><a href="#building-your-own-applications">Building your own applications</a></li>
+<li><a href="#running-the-application">Running the application</a></li>
+</ul>
+<a name="required-tools"></a>
+<h3>Required tools</h3>
+<p>In order to use Qt for Windows CE you need to have Visual Studio 2005 and at least one of the supported Windows CE/Mobile SDKs installed.</p>
+<p>We recommend the <i>Windows Mobile 5.0 SDK for Pocket PC</i> SDK available <a href="http://www.microsoft.com/downloads/details.aspx?FamilyID=83a52af2-f524-4ec5-9155-717cbe5d25ed&DisplayLang=en">here</a>.</p>
+<a name="installing-qt"></a>
+<h3>Installing Qt</h3>
+<p>Follow the instructions found in <a href="install-wince.html">Installing Qt/Windows CE</a>.</p>
+<a name="building-your-own-applications"></a>
+<h3>Building your own applications</h3>
+<p>If you are new to Qt development, have a look at <a href="how-to-learn-qt.html">How to Learn Qt</a> and <a href="tutorials-tutorial.html">Qt Tutorial</a>. In general there is little or no difference in developing Qt applications for Windows CE compared to any of the other platforms supported by Qt.</p>
+<p>Once you have a <tt>.pro</tt> file, there are two ways of building your application. You can either do it on the command line or inside of VS2005. To do it on the command line, simply write:</p>
+<pre>     qmake
+     nmake</pre>
+<p>To build the project inside of VS2005, on the command line write:</p>
+<pre>     qmake -tp vc</pre>
+<p>then start VS2005 with the generated <tt>.vcproj</tt> or <tt>.sln</tt> file and select <i>Build project</i>.</p>
+<p>For more information on how to use qmake have a look at the <a href="qmake-tutorial.html">qmake Tutorial</a>.</p>
+<a name="running-the-application"></a>
+<h3>Running the application</h3>
+<p>In order to run the application, it needs to be deployed on the Windows CE/Mobile device you want to test it for. This can either be done manually or automated using VS2005.</p>
+<p>To do it manually, simply copy the executable, the Qt <tt>.dll</tt> files needed for the application to run, and the C-runtime library into a folder on the device, and then click on the executable to start the program. You can either use the <i>Explorer</i> found in ActiveSync or the <i>Remote File Viewer</i> found in VS2005 to do this.</p>
+<p>VS2005 can do this step automatically for you as well. If you have built the project inside VS2005, simply select <i>Deploy</i> and then <i>Debug</i> to deploy and then run the application. You can change the device type by changing the <i>Target Device</i> specified in the VS2005 toolbar.</p>
+<p>Further information on deploying Qt applications for Windows can be found in the <a href="deployment-windows.html">deployment document</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/accessible/qaccessible.cpp -->
+<head>
+  <title>Qt 4.4: QAccessibleInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAccessibleInterface Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAccessibleInterface class defines an interface that exposes information about accessible objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QAccessibleInterface&gt;</pre><p>Inherits <a href="qaccessible.html">QAccessible</a>.</p>
+<p>Inherited by <a href="qaccessibleobject.html">QAccessibleObject</a>.</p>
+<ul>
+<li><a href="qaccessibleinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qaccessibleinterface.html#dtor.QAccessibleInterface">~QAccessibleInterface</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="qaccessibleinterface.html#actionText">actionText</a></b> ( int <i>action</i>, Text <i>t</i>, int <i>child</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qaccessibleinterface.html#childAt">childAt</a></b> ( int <i>x</i>, int <i>y</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qaccessibleinterface.html#childCount">childCount</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qaccessibleinterface.html#doAction">doAction</a></b> ( int <i>action</i>, int <i>child</i>, const QVariantList &amp; <i>params</i> = QVariantList() ) = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qaccessibleinterface.html#indexOfChild">indexOfChild</a></b> ( const QAccessibleInterface * <i>child</i> ) const = 0</li>
+<li><div class="fn"/>QVariant <b><a href="qaccessibleinterface.html#invokeMethod">invokeMethod</a></b> ( Method <i>method</i>, int <i>child</i> = 0, const QVariantList &amp; <i>params</i> = QVariantList() )</li>
+<li><div class="fn"/>virtual bool <b><a href="qaccessibleinterface.html#isValid">isValid</a></b> () const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qaccessibleinterface.html#navigate">navigate</a></b> ( RelationFlag <i>relation</i>, int <i>entry</i>, QAccessibleInterface ** <i>target</i> ) const = 0</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qaccessibleinterface.html#object">object</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QRect <b><a href="qaccessibleinterface.html#rect">rect</a></b> ( int <i>child</i> ) const = 0</li>
+<li><div class="fn"/>virtual Relation <b><a href="qaccessibleinterface.html#relationTo">relationTo</a></b> ( int <i>child</i>, const QAccessibleInterface * <i>other</i>, int <i>otherChild</i> ) const = 0</li>
+<li><div class="fn"/>virtual Role <b><a href="qaccessibleinterface.html#role">role</a></b> ( int <i>child</i> ) const = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qaccessibleinterface.html#setText">setText</a></b> ( Text <i>t</i>, int <i>child</i>, const QString &amp; <i>text</i> ) = 0</li>
+<li><div class="fn"/>virtual State <b><a href="qaccessibleinterface.html#state">state</a></b> ( int <i>child</i> ) const = 0</li>
+<li><div class="fn"/>QSet&lt;Method&gt; <b><a href="qaccessibleinterface.html#supportedMethods">supportedMethods</a></b> ()</li>
+<li><div class="fn"/>virtual QString <b><a href="qaccessibleinterface.html#text">text</a></b> ( Text <i>t</i>, int <i>child</i> ) const = 0</li>
+<li><div class="fn"/>virtual int <b><a href="qaccessibleinterface.html#userActionCount">userActionCount</a></b> ( int <i>child</i> ) const = 0</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>7 static public members inherited from <a href="qaccessible.html#static-public-members">QAccessible</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAccessibleInterface class defines an interface that exposes information about accessible objects.</p>
+<p>Accessibility tools (also called AT Clients), such as screen readers or braille displays, require high-level information about accessible objects in an application. Accessible objects provide specialized input and output methods, making it possible for users to use accessibility tools with enabled applications (AT Servers).</p>
+<p>Every element that the user needs to interact with or react to is an accessible object, and should provide this information. These are mainly visual objects, such as widgets and widget elements, but can also be content, such as sounds.</p>
+<p>The AT client uses three basic concepts to acquire information about any accessible object in an application:</p>
+<ul>
+<li><i>Properties</i> The client can read information about accessible objects. In some cases the client can also modify these properties; such as text in a line edit.</li>
+<li><i>Actions</i> The client can invoke actions like pressing a button or .</li>
+<li><i>Relationships and Navigation</i> The client can traverse from one accessible object to another, using the relationships between objects.</li>
+</ul>
+<p>The QAccessibleInterface defines the API for these three concepts.</p>
+<a name="relationships-and-navigation"></a>
+<h3>Relationships and Navigation</h3>
+<p>The functions <a href="qaccessibleinterface.html#childCount">childCount</a>() and <a href="qaccessibleinterface.html#indexOfChild">indexOfChild</a>() return the number of children of an accessible object and the index a child object has in its parent. The <a href="qaccessibleinterface.html#childAt">childAt</a>() function returns the index of a child at a given position.</p>
+<p>The <a href="qaccessibleinterface.html#relationTo">relationTo</a>() function provides information about how two different objects relate to each other, and <a href="qaccessibleinterface.html#navigate">navigate</a>() allows traversing from one object to another object with a given relationship.</p>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p>The central property of an accessible objects is what <a href="qaccessibleinterface.html#role">role</a>() it has. Different objects can have the same role, e.g&#x2e; both the &quot;Add line&quot; element in a scroll bar and the <tt>OK</tt> button in a dialog have the same role, &quot;button&quot;. The role implies what kind of interaction the user can perform with the user interface element.</p>
+<p>An object's <a href="qaccessibleinterface.html#state">state</a>() property is a combination of different state flags and can describe both how the object's state differs from a &quot;normal&quot; state, e.g&#x2e; it might be unavailable, and also how it behaves, e.g&#x2e; it might be selectable.</p>
+<p>The <a href="qaccessibleinterface.html#text">text</a>() property provides textual information about the object. An object usually has a name, but can provide extended information such as a description, help text, or information about any keyboard accelerators it provides. Some objects allow changing the <a href="qaccessibleinterface.html#text">text</a>() property through the <a href="qaccessibleinterface.html#setText">setText</a>() function, but this information is in most cases read-only.</p>
+<p>The <a href="qaccessibleinterface.html#rect">rect</a>() property provides information about the geometry of an accessible object. This information is usually only available for visual objects.</p>
+<a name="actions-and-selection"></a>
+<h3>Actions and Selection</h3>
+<p>To enable the user to interact with an accessible object the object must expose information about the actions that it can perform. <a href="qaccessibleinterface.html#userActionCount">userActionCount</a>() returns the number of actions supported by an accessible object, and <a href="qaccessibleinterface.html#actionText">actionText</a>() returns textual information about those actions. <a href="qaccessibleinterface.html#doAction">doAction</a>() invokes an action.</p>
+<p>Objects that support selections can define actions to change the selection.</p>
+<a name="objects-and-children"></a>
+<h4>Objects and children</h4>
+<p>A QAccessibleInterface provides information about the accessible object, and can also provide information for the children of that object if those children don't provide a QAccessibleInterface implementation themselves. This is practical if the object has many similar children (e.g&#x2e; items in a list view), or if the children are an integral part of the object itself, for example, the different sections in a scroll bar.</p>
+<p>If an accessible object provides information about its children through one QAccessibleInterface, the children are referenced using indexes. The index is 1-based for the children, i.e&#x2e; 0 refers to the object itself, 1 to the first child, 2 to the second child, and so on.</p>
+<p>All functions in QAccessibleInterface that take a child index relate to the object itself if the index is 0, or to the child specified. If a child provides its own interface implementation (which can be retrieved through navigation) asking the parent for information about that child will usually not succeed.</p>
+<p>See also <a href="qaccessible.html">QAccessible</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QAccessibleInterface"></a>QAccessibleInterface::~QAccessibleInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the object.</p>
+<h3 class="fn"><a name="actionText"></a><a href="qstring.html">QString</a> QAccessibleInterface::actionText ( int <i>action</i>, <a href="qaccessible.html#Text-enum">Text</a> <i>t</i>, int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the text property <i>t</i> of the action <i>action</i> supported by the object, or of the object's child if <i>child</i> is not 0.</p>
+<p>See also <a href="qaccessibleinterface.html#text">text</a>() and <a href="qaccessibleinterface.html#userActionCount">userActionCount</a>().</p>
+<h3 class="fn"><a name="childAt"></a>int QAccessibleInterface::childAt ( int <i>x</i>, int <i>y</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the 1-based index of the child that contains the screen coordinates (<i>x</i>, <i>y</i>). This function returns 0 if the point is positioned on the object itself. If the tested point is outside the boundaries of the object this function returns -1.</p>
+<p>This function is only relyable for visible objects (invisible object might not be laid out correctly).</p>
+<p>All visual objects provide this information.</p>
+<p>See also <a href="qaccessibleinterface.html#rect">rect</a>().</p>
+<h3 class="fn"><a name="childCount"></a>int QAccessibleInterface::childCount () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the number of children that belong to this object. A child can provide accessibility information on its own (e.g&#x2e; a child widget), or be a sub-element of this accessible object.</p>
+<p>All objects provide this information.</p>
+<p>See also <a href="qaccessibleinterface.html#indexOfChild">indexOfChild</a>().</p>
+<h3 class="fn"><a name="doAction"></a>bool QAccessibleInterface::doAction ( int <i>action</i>, int <i>child</i>, const <a href="qvariant.html#QVariantList-typedef">QVariantList</a> &amp; <i>params</i> = QVariantList() )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Asks the object, or the object's <i>child</i> if <i>child</i> is not 0, to execute <i>action</i> using the parameters, <i>params</i>. Returns true if the action could be executed; otherwise returns false.</p>
+<p><i>action</i> can be a predefined or a custom action.</p>
+<p>See also <a href="qaccessibleinterface.html#userActionCount">userActionCount</a>() and <a href="qaccessibleinterface.html#actionText">actionText</a>().</p>
+<h3 class="fn"><a name="indexOfChild"></a>int QAccessibleInterface::indexOfChild ( const QAccessibleInterface * <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the 1-based index of the object <i>child</i> in this object's children list, or -1 if <i>child</i> is not a child of this object. 0 is not a possible return value.</p>
+<p>All objects provide this information about their children.</p>
+<p>See also <a href="qaccessibleinterface.html#childCount">childCount</a>().</p>
+<h3 class="fn"><a name="invokeMethod"></a><a href="qvariant.html">QVariant</a> QAccessibleInterface::invokeMethod ( <a href="qaccessible.html#Method-enum">Method</a> <i>method</i>, int <i>child</i> = 0, const <a href="qvariant.html#QVariantList-typedef">QVariantList</a> &amp; <i>params</i> = QVariantList() )</h3>
+<p>Invokes a <i>method</i> on <i>child</i> with the given parameters <i>params</i> and returns the result of the operation as <a href="qvariant.html">QVariant</a>.</p>
+<p>Note that the type of the returned <a href="qvariant.html">QVariant</a> depends on the action.</p>
+<p>Returns an invalid <a href="qvariant.html">QVariant</a> if the object doesn't support the action.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="isValid"></a>bool QAccessibleInterface::isValid () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if all the data necessary to use this interface implementation is valid (e.g&#x2e; all pointers are non-null); otherwise returns false.</p>
+<p>See also <a href="qaccessibleinterface.html#object">object</a>().</p>
+<h3 class="fn"><a name="navigate"></a>int QAccessibleInterface::navigate ( <a href="qaccessible.html#RelationFlag-enum">RelationFlag</a> <i>relation</i>, int <i>entry</i>, QAccessibleInterface ** <i>target</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Navigates from this object to an object that has a relationship <i>relation</i> to this object, and returns the respective object in <i>target</i>. It is the caller's responsibility to delete *<i>target</i> after use.</p>
+<p>If an object is found, <i>target</i> is set to point to the object, and the index of the child of <i>target</i> is returned. The return value is 0 if <i>target</i> itself is the requested object. <i>target</i> is set to null if this object is the target object (i.e&#x2e; the requested object is a handled by this object).</p>
+<p>If no object is found <i>target</i> is set to null, and the return value is -1.</p>
+<p>The <i>entry</i> parameter has two different meanings:</p>
+<ul>
+<li><i>Hierarchical and Logical relationships</i> -- if multiple objects with the requested relationship exist <i>entry</i> specifies which one to return. <i>entry</i> is 1-based, e.g&#x2e; use 1 to get the first (and possibly only) object with the requested relationship.<p>The following code demonstrates how to use this function to navigate to the first child of an object:</p>
+<pre>         QAccessibleInterface *child = 0;
+         int targetChild = object-&gt;navigate(Accessible::Child, 1, &amp;child);
+         if (child) {
+             // ...
+             delete child;
+         }</pre>
+</li>
+<li><i>Geometric relationships</i> -- the index of the child from which to start navigating in the specified direction. <i>entry</i> can be 0 to navigate to a sibling of this object, or non-null to navigate within contained children that don't provide their own accessible information.</li>
+</ul>
+<p>Note that the <tt>Descendent</tt> value for <i>relation</i> is not supported.</p>
+<p>All objects support navigation.</p>
+<p>See also <a href="qaccessibleinterface.html#relationTo">relationTo</a>() and <a href="qaccessibleinterface.html#childCount">childCount</a>().</p>
+<h3 class="fn"><a name="object"></a><a href="qobject.html">QObject</a> * QAccessibleInterface::object () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns a pointer to the <a href="qobject.html">QObject</a> this interface implementation provides information for.</p>
+<p>See also <a href="qaccessibleinterface.html#isValid">isValid</a>().</p>
+<h3 class="fn"><a name="rect"></a><a href="qrect.html">QRect</a> QAccessibleInterface::rect ( int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the geometry of the object, or of the object's child if <i>child</i> is not 0. The geometry is in screen coordinates.</p>
+<p>This function is only reliable for visible objects (invisible objects might not be laid out correctly).</p>
+<p>All visual objects provide this information.</p>
+<p>See also <a href="qaccessibleinterface.html#childAt">childAt</a>().</p>
+<h3 class="fn"><a name="relationTo"></a><a href="qaccessible.html#RelationFlag-enum">Relation</a> QAccessibleInterface::relationTo ( int <i>child</i>, const QAccessibleInterface * <i>other</i>, int <i>otherChild</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the relationship between this object's <i>child</i> and the <i>other</i> object's <i>otherChild</i>. If <i>child</i> is 0 the object's own relation is returned.</p>
+<p>The returned value indicates the relation of the called object to the <i>other</i> object, e.g&#x2e; if this object is a child of <i>other</i> the return value will be <tt>Child</tt>.</p>
+<p>The return value is a combination of the bit flags in the <a href="qaccessible.html#RelationFlag-enum">QAccessible::Relation</a> enumeration.</p>
+<p>All objects provide this information.</p>
+<p>See also <a href="qaccessibleinterface.html#indexOfChild">indexOfChild</a>() and <a href="qaccessibleinterface.html#navigate">navigate</a>().</p>
+<h3 class="fn"><a name="role"></a><a href="qaccessible.html#Role-enum">Role</a> QAccessibleInterface::role ( int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the role of the object, or of the object's child if <i>child</i> is not 0. The role of an object is usually static.</p>
+<p>All accessible objects have a role.</p>
+<p>See also <a href="qaccessibleinterface.html#text">text</a>() and <a href="qaccessibleinterface.html#state">state</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QAccessibleInterface::setText ( <a href="qaccessible.html#Text-enum">Text</a> <i>t</i>, int <i>child</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Sets the text property <i>t</i> of the object, or of the object's child if <i>child</i> is not 0, to <i>text</i>.</p>
+<p>Note that the text properties of most objects are read-only.</p>
+<p>See also <a href="qaccessibleinterface.html#text">text</a>().</p>
+<h3 class="fn"><a name="state"></a><a href="qaccessible.html#StateFlag-enum">State</a> QAccessibleInterface::state ( int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the current state of the object, or of the object's child if <i>child</i> is not 0. The returned value is a combination of the flags in the <a href="qaccessible.html#StateFlag-enum">QAccessible::StateFlag</a> enumeration.</p>
+<p>All accessible objects have a state.</p>
+<p>See also <a href="qaccessibleinterface.html#text">text</a>() and <a href="qaccessibleinterface.html#role">role</a>().</p>
+<h3 class="fn"><a name="supportedMethods"></a><a href="qset.html">QSet</a>&lt;<a href="qaccessible.html#Method-enum">Method</a>&gt; QAccessibleInterface::supportedMethods ()</h3>
+<p>Returns a <a href="qset.html">QSet</a> of <a href="qaccessible.html#Method-enum">Method</a>s that are supported by this accessible interface.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qaccessible.html#Method-enum">QAccessible::Method</a> and <a href="qaccessibleinterface.html#invokeMethod">invokeMethod</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QAccessibleInterface::text ( <a href="qaccessible.html#Text-enum">Text</a> <i>t</i>, int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the value of the text property <i>t</i> of the object, or of the object's child if <i>child</i> is not 0.</p>
+<p>The <a href="qaccessible.html#Text-enum">Name</a> is a string used by clients to identify, find, or announce an accessible object for the user. All objects must have a name that is unique within their container. The name can be used differently by clients, so the name should both give a short description of the object and be unique.</p>
+<p>An accessible object's <a href="qaccessible.html#Text-enum">Description</a> provides textual information about an object's visual appearance. The description is primarily used to provide greater context for vision-impaired users, but is also used for context searching or other applications. Not all objects have a description. An &quot;OK&quot; button would not need a description, but a tool button that shows a picture of a smiley would.</p>
+<p>The <a href="qaccessible.html#Text-enum">Value</a> of an accessible object represents visual information contained by the object, e.g&#x2e; the text in a line edit. Usually, the value can be modified by the user. Not all objects have a value, e.g&#x2e; static text labels don't, and some objects have a state that already is the value, e.g&#x2e; toggle buttons.</p>
+<p>The <a href="qaccessible.html#Text-enum">Help</a> text provides information about the function and usage of an accessible object. Not all objects provide this information.</p>
+<p>The <a href="qaccessible.html#Text-enum">Accelerator</a> is a keyboard shortcut that activates the object's default action. A keyboard shortcut is the underlined character in the text of a menu, menu item or widget, and is either the character itself, or a combination of this character and a modifier key like Alt, Ctrl or Shift. Command controls like tool buttons also have shortcut keys and usually display them in their tooltip.</p>
+<p>All objects provide a string for <a href="qaccessible.html#Text-enum">Name</a>.</p>
+<p>See also <a href="qaccessibleinterface.html#setText">setText</a>(), <a href="qaccessibleinterface.html#role">role</a>(), and <a href="qaccessibleinterface.html#state">state</a>().</p>
+<h3 class="fn"><a name="userActionCount"></a>int QAccessibleInterface::userActionCount ( int <i>child</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the number of custom actions of the object, or of the object's child if <i>child</i> is not 0.</p>
+<p>The <tt>Action</tt> type enumerates predefined actions: these are not included in the returned value.</p>
+<p>See also <a href="qaccessibleinterface.html#actionText">actionText</a>() and <a href="qaccessibleinterface.html#doAction">doAction</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

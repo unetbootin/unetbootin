@@ -1,0 +1,128 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example designer/calculatorform
+    \title Calculator Form Example
+
+    The Calculator Form Example shows how to use a form created with
+    \QD in an application by using the user interface information from
+    a QWidget subclass.  We use \l{Using a Component in Your Application} 
+    {uic's auto-connection} feature to automatically connect signals 
+    from widgets on the form to slots in our code.
+
+    \image calculatorform-example.png Screenshot of the Calculator Form example
+
+    The example presents two spin boxes that are used to input integer values
+    and a label that shows their sum. Whenever either of the spin boxes are
+    updated, the signal-slot connections between the widgets and the form
+    ensure that the label is also updated.
+
+    \section1 Preparation
+
+    The user interface for this example is designed completely using \QD. The
+    result is a .ui file describing the form, the widgets used, any signal-slot
+    connections between them, and other standard user interface properties.
+
+    To ensure that the example can use this file, we need to include a \c FORMS
+    declaration in the example's project file:
+
+    \snippet examples/designer/calculatorform/calculatorform.pro 1
+
+    When the project is built, \c uic will create a header file that lets us
+    construct the form.
+
+    \section1 CalculatorForm Class Definition
+
+    The \c CalculatorForm class uses the user interface described in the
+    \c calculatorform.ui file. To access the form and its contents, we need
+    to include the \c ui_calculatorform.h header file created by \c uic
+    during the build process:
+
+    \snippet examples/designer/calculatorform/calculatorform.h 0
+
+    We define the \c CalculatorForm class by subclassing QWidget because the
+    form itself is based on QWidget:
+
+    \snippet examples/designer/calculatorform/calculatorform.h 1
+
+    Apart from the constructor, the class contains two private slots that
+    are named according to the auto-connection naming convention required
+    by \c uic.
+    The private \c ui member variable refers to the form, and is used to
+    access the contents of the user interface.
+
+    \section1 CalculatorForm Class Implementation
+
+    The constructor simply calls the base class's constructor and
+    sets up the form's user interface.
+
+    \snippet examples/designer/calculatorform/calculatorform.cpp 0
+
+    The user interface is set up with the \c setupUI() function. We pass
+    \c this as the argument to this function to use the \c CalculatorForm
+    widget itself as the container for the user interface.
+
+    To automatically connect signals from the spin boxes defined in the
+    user interface, we use the naming convention that indicates which
+    widgets and their signals in the user interface should be connected
+    to each slot. The first slot is called whenever the spin box called
+    "inputSpinBox1" in the user interface emits the
+    \l{QSpinBox::valueChanged()}{valueChanged()} signal:
+
+    \snippet examples/designer/calculatorform/calculatorform.cpp 1
+
+    When this occurs, we use the value supplied by the signal to update the
+    output label by setting its new text directly. We access the output label
+    and the other spin box via the class's private \c ui variable.
+
+    The second slot is called whenever the second spin box, called
+    "inputSpinBox2", emits the \l{QSpinBox::valueChanged()}{valueChanged()}
+    signal:
+
+    \snippet examples/designer/calculatorform/calculatorform.cpp 2
+
+    In this case, the value from the first spin box is read and combined
+    with the value supplied by the signal. Again, the output label is
+    updated directly via the \c ui variable.
+*/

@@ -1,0 +1,639 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (demos/mainwindow/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">demos/mainwindow/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the demonstration applications of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;colorswatch.h&quot;
+ #include &quot;toolbar.h&quot;
+
+ #include &lt;QAction&gt;
+ #include &lt;QLayout&gt;
+ #include &lt;QMenu&gt;
+ #include &lt;QMenuBar&gt;
+ #include &lt;QStatusBar&gt;
+ #include &lt;QTextEdit&gt;
+ #include &lt;QFile&gt;
+ #include &lt;QDataStream&gt;
+ #include &lt;QFileDialog&gt;
+ #include &lt;QMessageBox&gt;
+ #include &lt;QSignalMapper&gt;
+ #include &lt;QApplication&gt;
+ #include &lt;QPainter&gt;
+ #include &lt;QMouseEvent&gt;
+ #include &lt;QLineEdit&gt;
+ #include &lt;QComboBox&gt;
+ #include &lt;QLabel&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;qdebug.h&gt;
+
+ static const char * const message =
+     &quot;&lt;p&gt;&lt;b&gt;Qt Main Window Demo&lt;/b&gt;&lt;/p&gt;&quot;
+
+     &quot;&lt;p&gt;This is a demonstration of the QMainWindow, QToolBar and &quot;
+     &quot;QDockWidget classes.&lt;/p&gt;&quot;
+
+     &quot;&lt;p&gt;The tool bar and dock widgets can be dragged around and rearranged &quot;
+     &quot;using the mouse or via the menu.&lt;/p&gt;&quot;
+
+     &quot;&lt;p&gt;Each dock widget contains a colored frame and a context &quot;
+     &quot;(right-click) menu.&lt;/p&gt;&quot;
+
+ #ifdef Q_WS_MAC
+     &quot;&lt;p&gt;On Mac OS X, the \&quot;Black\&quot; dock widget has been created as a &quot;
+     &quot;&lt;em&gt;Drawer&lt;/em&gt;, which is a special kind of QDockWidget.&lt;/p&gt;&quot;
+ #endif
+     ;
+
+ MainWindow::MainWindow(const QMap&lt;QString, QSize&gt; &amp;customSizeHints,
+                         QWidget *parent, Qt::WindowFlags flags)
+     : QMainWindow(parent, flags)
+ {
+     setObjectName(&quot;MainWindow&quot;);
+     setWindowTitle(&quot;Qt Main Window Demo&quot;);
+
+     center = new QTextEdit(this);
+     center-&gt;setReadOnly(true);
+     center-&gt;setMinimumSize(400, 205);
+     setCentralWidget(center);
+
+     setupToolBar();
+     setupMenuBar();
+     setupDockWidgets(customSizeHints);
+
+     statusBar()-&gt;showMessage(tr(&quot;Status Bar&quot;));
+ }
+
+ void MainWindow::actionTriggered(QAction *action)
+ {
+     qDebug(&quot;action '%s' triggered&quot;, action-&gt;text().toLocal8Bit().data());
+ }
+
+ void MainWindow::setupToolBar()
+ {
+     for (int i = 0; i &lt; 3; ++i) {
+         ToolBar *tb = new ToolBar(QString::fromLatin1(&quot;Tool Bar %1&quot;).arg(i + 1), this);
+         toolBars.append(tb);
+         addToolBar(tb);
+     }
+ }
+
+ void MainWindow::setupMenuBar()
+ {
+     QMenu *menu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+
+     QAction *action = menu-&gt;addAction(tr(&quot;Save layout...&quot;));
+     connect(action, SIGNAL(triggered()), this, SLOT(saveLayout()));
+
+     action = menu-&gt;addAction(tr(&quot;Load layout...&quot;));
+     connect(action, SIGNAL(triggered()), this, SLOT(loadLayout()));
+
+     action = menu-&gt;addAction(tr(&quot;Switch layout direction&quot;));
+     connect(action, SIGNAL(triggered()), this, SLOT(switchLayoutDirection()));
+
+     menu-&gt;addSeparator();
+
+     menu-&gt;addAction(tr(&quot;&amp;Quit&quot;), this, SLOT(close()));
+
+     mainWindowMenu = menuBar()-&gt;addMenu(tr(&quot;Main window&quot;));
+
+     action = mainWindowMenu-&gt;addAction(tr(&quot;Animated docks&quot;));
+     action-&gt;setCheckable(true);
+     action-&gt;setChecked(dockOptions() &amp; AnimatedDocks);
+     connect(action, SIGNAL(toggled(bool)), this, SLOT(setDockOptions()));
+
+     action = mainWindowMenu-&gt;addAction(tr(&quot;Allow nested docks&quot;));
+     action-&gt;setCheckable(true);
+     action-&gt;setChecked(dockOptions() &amp; AllowNestedDocks);
+     connect(action, SIGNAL(toggled(bool)), this, SLOT(setDockOptions()));
+
+     action = mainWindowMenu-&gt;addAction(tr(&quot;Allow tabbed docks&quot;));
+     action-&gt;setCheckable(true);
+     action-&gt;setChecked(dockOptions() &amp; AllowTabbedDocks);
+     connect(action, SIGNAL(toggled(bool)), this, SLOT(setDockOptions()));
+
+     action = mainWindowMenu-&gt;addAction(tr(&quot;Force tabbed docks&quot;));
+     action-&gt;setCheckable(true);
+     action-&gt;setChecked(dockOptions() &amp; ForceTabbedDocks);
+     connect(action, SIGNAL(toggled(bool)), this, SLOT(setDockOptions()));
+
+     action = mainWindowMenu-&gt;addAction(tr(&quot;Vertical tabs&quot;));
+     action-&gt;setCheckable(true);
+     action-&gt;setChecked(dockOptions() &amp; VerticalTabs);
+     connect(action, SIGNAL(toggled(bool)), this, SLOT(setDockOptions()));
+
+     QMenu *toolBarMenu = menuBar()-&gt;addMenu(tr(&quot;Tool bars&quot;));
+     for (int i = 0; i &lt; toolBars.count(); ++i)
+         toolBarMenu-&gt;addMenu(toolBars.at(i)-&gt;menu);
+
+     dockWidgetMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Dock Widgets&quot;));
+ }
+
+ void MainWindow::setDockOptions()
+ {
+     DockOptions opts;
+     QList&lt;QAction*&gt; actions = mainWindowMenu-&gt;actions();
+
+     if (actions.at(0)-&gt;isChecked())
+         opts |= AnimatedDocks;
+     if (actions.at(1)-&gt;isChecked())
+         opts |= AllowNestedDocks;
+     if (actions.at(2)-&gt;isChecked())
+         opts |= AllowTabbedDocks;
+     if (actions.at(3)-&gt;isChecked())
+         opts |= ForceTabbedDocks;
+     if (actions.at(4)-&gt;isChecked())
+         opts |= VerticalTabs;
+
+     QMainWindow::setDockOptions(opts);
+ }
+
+ void MainWindow::saveLayout()
+ {
+     QString fileName
+         = QFileDialog::getSaveFileName(this, tr(&quot;Save layout&quot;));
+     if (fileName.isEmpty())
+         return;
+     QFile file(fileName);
+     if (!file.open(QFile::WriteOnly)) {
+         QString msg = tr(&quot;Failed to open %1\n%2&quot;)
+                         .arg(fileName)
+                         .arg(file.errorString());
+         QMessageBox::warning(this, tr(&quot;Error&quot;), msg);
+         return;
+     }
+
+     QByteArray geo_data = saveGeometry();
+     QByteArray layout_data = saveState();
+
+     bool ok = file.putChar((uchar)geo_data.size());
+     if (ok)
+         ok = file.write(geo_data) == geo_data.size();
+     if (ok)
+         ok = file.write(layout_data) == layout_data.size();
+
+     if (!ok) {
+         QString msg = tr(&quot;Error writing to %1\n%2&quot;)
+                         .arg(fileName)
+                         .arg(file.errorString());
+         QMessageBox::warning(this, tr(&quot;Error&quot;), msg);
+         return;
+     }
+ }
+
+ void MainWindow::loadLayout()
+ {
+     QString fileName
+         = QFileDialog::getOpenFileName(this, tr(&quot;Load layout&quot;));
+     if (fileName.isEmpty())
+         return;
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly)) {
+         QString msg = tr(&quot;Failed to open %1\n%2&quot;)
+                         .arg(fileName)
+                         .arg(file.errorString());
+         QMessageBox::warning(this, tr(&quot;Error&quot;), msg);
+         return;
+     }
+
+     uchar geo_size;
+     QByteArray geo_data;
+     QByteArray layout_data;
+
+     bool ok = file.getChar((char*)&amp;geo_size);
+     if (ok) {
+         geo_data = file.read(geo_size);
+         ok = geo_data.size() == geo_size;
+     }
+     if (ok) {
+         layout_data = file.readAll();
+         ok = layout_data.size() &gt; 0;
+     }
+
+     if (ok)
+         ok = restoreGeometry(geo_data);
+     if (ok)
+         ok = restoreState(layout_data);
+
+     if (!ok) {
+         QString msg = tr(&quot;Error reading %1&quot;)
+                         .arg(fileName);
+         QMessageBox::warning(this, tr(&quot;Error&quot;), msg);
+         return;
+     }
+ }
+
+ QAction *addAction(QMenu *menu, const QString &amp;text, QActionGroup *group, QSignalMapper *mapper,
+                     int id)
+ {
+     bool first = group-&gt;actions().isEmpty();
+     QAction *result = menu-&gt;addAction(text);
+     result-&gt;setCheckable(true);
+     result-&gt;setChecked(first);
+     group-&gt;addAction(result);
+     QObject::connect(result, SIGNAL(triggered()), mapper, SLOT(map()));
+     mapper-&gt;setMapping(result, id);
+     return result;
+ }
+
+ class BlueTitleBar : public QWidget
+ {
+     Q_OBJECT
+ public:
+     BlueTitleBar(QWidget *parent = 0);
+
+     QSize sizeHint() const { return minimumSizeHint(); }
+     QSize minimumSizeHint() const;
+ protected:
+     void paintEvent(QPaintEvent *event);
+     void mousePressEvent(QMouseEvent *event);
+ private:
+     QPixmap leftPm, centerPm, rightPm;
+ };
+
+ QSize BlueTitleBar::minimumSizeHint() const
+ {
+     QDockWidget *dw = qobject_cast&lt;QDockWidget*&gt;(parentWidget());
+     Q_ASSERT(dw != 0);
+     QSize result(leftPm.width() + rightPm.width(), centerPm.height());
+     if (dw-&gt;features() &amp; QDockWidget::DockWidgetVerticalTitleBar)
+         result.transpose();
+     return result;
+ }
+
+ BlueTitleBar::BlueTitleBar(QWidget *parent)
+     : QWidget(parent)
+ {
+     leftPm = QPixmap(&quot;:/res/titlebarLeft.png&quot;);
+     centerPm = QPixmap(&quot;:/res/titlebarCenter.png&quot;);
+     rightPm = QPixmap(&quot;:/res/titlebarRight.png&quot;);
+ }
+
+ void BlueTitleBar::paintEvent(QPaintEvent*)
+ {
+     QPainter painter(this);
+     QRect rect = this-&gt;rect();
+
+     QDockWidget *dw = qobject_cast&lt;QDockWidget*&gt;(parentWidget());
+     Q_ASSERT(dw != 0);
+
+     if (dw-&gt;features() &amp; QDockWidget::DockWidgetVerticalTitleBar) {
+         QSize s = rect.size();
+         s.transpose();
+         rect.setSize(s);
+
+         painter.translate(rect.left(), rect.top() + rect.width());
+         painter.rotate(-90);
+         painter.translate(-rect.left(), -rect.top());
+     }
+
+     painter.drawPixmap(rect.topLeft(), leftPm);
+     painter.drawPixmap(rect.topRight() - QPoint(rightPm.width() - 1, 0), rightPm);
+     QBrush brush(centerPm);
+     painter.fillRect(rect.left() + leftPm.width(), rect.top(),
+                         rect.width() - leftPm.width() - rightPm.width(),
+                         centerPm.height(), centerPm);
+ }
+
+ void BlueTitleBar::mousePressEvent(QMouseEvent *event)
+ {
+     QPoint pos = event-&gt;pos();
+
+     QRect rect = this-&gt;rect();
+
+     QDockWidget *dw = qobject_cast&lt;QDockWidget*&gt;(parentWidget());
+     Q_ASSERT(dw != 0);
+
+     if (dw-&gt;features() &amp; QDockWidget::DockWidgetVerticalTitleBar) {
+         QPoint p = pos;
+         pos.setX(rect.left() + rect.bottom() - p.y());
+         pos.setY(rect.top() + p.x() - rect.left());
+
+         QSize s = rect.size();
+         s.transpose();
+         rect.setSize(s);
+     }
+
+     const int buttonRight = 7;
+     const int buttonWidth = 20;
+     int right = rect.right() - pos.x();
+     int button = (right - buttonRight)/buttonWidth;
+     switch (button) {
+         case 0:
+             event-&gt;accept();
+             dw-&gt;close();
+             break;
+         case 1:
+             event-&gt;accept();
+             dw-&gt;setFloating(!dw-&gt;isFloating());
+             break;
+         case 2: {
+             event-&gt;accept();
+             QDockWidget::DockWidgetFeatures features = dw-&gt;features();
+             if (features &amp; QDockWidget::DockWidgetVerticalTitleBar)
+                 features &amp;= ~QDockWidget::DockWidgetVerticalTitleBar;
+             else
+                 features |= QDockWidget::DockWidgetVerticalTitleBar;
+             dw-&gt;setFeatures(features);
+             break;
+         }
+         default:
+             event-&gt;ignore();
+             break;
+     }
+ }
+
+ void MainWindow::setupDockWidgets(const QMap&lt;QString, QSize&gt; &amp;customSizeHints)
+ {
+     mapper = new QSignalMapper(this);
+     connect(mapper, SIGNAL(mapped(int)), this, SLOT(setCorner(int)));
+
+     QMenu *corner_menu = dockWidgetMenu-&gt;addMenu(tr(&quot;Top left corner&quot;));
+     QActionGroup *group = new QActionGroup(this);
+     group-&gt;setExclusive(true);
+     ::addAction(corner_menu, tr(&quot;Top dock area&quot;), group, mapper, 0);
+     ::addAction(corner_menu, tr(&quot;Left dock area&quot;), group, mapper, 1);
+
+     corner_menu = dockWidgetMenu-&gt;addMenu(tr(&quot;Top right corner&quot;));
+     group = new QActionGroup(this);
+     group-&gt;setExclusive(true);
+     ::addAction(corner_menu, tr(&quot;Top dock area&quot;), group, mapper, 2);
+     ::addAction(corner_menu, tr(&quot;Right dock area&quot;), group, mapper, 3);
+
+     corner_menu = dockWidgetMenu-&gt;addMenu(tr(&quot;Bottom left corner&quot;));
+     group = new QActionGroup(this);
+     group-&gt;setExclusive(true);
+     ::addAction(corner_menu, tr(&quot;Bottom dock area&quot;), group, mapper, 4);
+     ::addAction(corner_menu, tr(&quot;Left dock area&quot;), group, mapper, 5);
+
+     corner_menu = dockWidgetMenu-&gt;addMenu(tr(&quot;Bottom right corner&quot;));
+     group = new QActionGroup(this);
+     group-&gt;setExclusive(true);
+     ::addAction(corner_menu, tr(&quot;Bottom dock area&quot;), group, mapper, 6);
+     ::addAction(corner_menu, tr(&quot;Right dock area&quot;), group, mapper, 7);
+
+     dockWidgetMenu-&gt;addSeparator();
+
+     static const struct Set {
+         const char * name;
+         uint flags;
+         Qt::DockWidgetArea area;
+     } sets [] = {
+ #ifndef Q_WS_MAC
+         { &quot;Black&quot;, 0, Qt::LeftDockWidgetArea },
+ #else
+         { &quot;Black&quot;, Qt::Drawer, Qt::LeftDockWidgetArea },
+ #endif
+         { &quot;White&quot;, 0, Qt::RightDockWidgetArea },
+         { &quot;Red&quot;, 0, Qt::TopDockWidgetArea },
+         { &quot;Green&quot;, 0, Qt::TopDockWidgetArea },
+         { &quot;Blue&quot;, 0, Qt::BottomDockWidgetArea },
+         { &quot;Yellow&quot;, 0, Qt::BottomDockWidgetArea }
+     };
+     const int setCount = sizeof(sets) / sizeof(Set);
+
+     for (int i = 0; i &lt; setCount; ++i) {
+         ColorSwatch *swatch = new ColorSwatch(tr(sets[i].name), this, Qt::WindowFlags(sets[i].flags));
+         if (i%2)
+             swatch-&gt;setWindowIcon(QIcon(QPixmap(&quot;:/res/qt.png&quot;)));
+         if (qstrcmp(sets[i].name, &quot;Blue&quot;) == 0) {
+             swatch-&gt;setTitleBarWidget(new BlueTitleBar(swatch));
+ #ifdef Q_WS_QWS
+             QPalette pal = palette();
+             pal.setBrush(backgroundRole(), QColor(0,0,0,0));
+             swatch-&gt;setPalette(pal);
+ #endif
+         }
+
+         QString name = QString::fromLatin1(sets[i].name);
+         if (customSizeHints.contains(name))
+             swatch-&gt;setCustomSizeHint(customSizeHints.value(name));
+
+         addDockWidget(sets[i].area, swatch);
+         dockWidgetMenu-&gt;addMenu(swatch-&gt;menu);
+     }
+
+     createDockWidgetAction = new QAction(tr(&quot;Add dock widget...&quot;), this);
+     connect(createDockWidgetAction, SIGNAL(triggered()), this, SLOT(createDockWidget()));
+     destroyDockWidgetMenu = new QMenu(tr(&quot;Destroy dock widget&quot;), this);
+     destroyDockWidgetMenu-&gt;setEnabled(false);
+     connect(destroyDockWidgetMenu, SIGNAL(triggered(QAction*)), this, SLOT(destroyDockWidget(QAction*)));
+
+     dockWidgetMenu-&gt;addSeparator();
+     dockWidgetMenu-&gt;addAction(createDockWidgetAction);
+     dockWidgetMenu-&gt;addMenu(destroyDockWidgetMenu);
+ }
+
+ void MainWindow::setCorner(int id)
+ {
+     switch (id) {
+         case 0:
+             QMainWindow::setCorner(Qt::TopLeftCorner, Qt::TopDockWidgetArea);
+             break;
+         case 1:
+             QMainWindow::setCorner(Qt::TopLeftCorner, Qt::LeftDockWidgetArea);
+             break;
+         case 2:
+             QMainWindow::setCorner(Qt::TopRightCorner, Qt::TopDockWidgetArea);
+             break;
+         case 3:
+             QMainWindow::setCorner(Qt::TopRightCorner, Qt::RightDockWidgetArea);
+             break;
+         case 4:
+             QMainWindow::setCorner(Qt::BottomLeftCorner, Qt::BottomDockWidgetArea);
+             break;
+         case 5:
+             QMainWindow::setCorner(Qt::BottomLeftCorner, Qt::LeftDockWidgetArea);
+             break;
+         case 6:
+             QMainWindow::setCorner(Qt::BottomRightCorner, Qt::BottomDockWidgetArea);
+             break;
+         case 7:
+             QMainWindow::setCorner(Qt::BottomRightCorner, Qt::RightDockWidgetArea);
+             break;
+     }
+ }
+
+ void MainWindow::showEvent(QShowEvent *event)
+ {
+     QMainWindow::showEvent(event);
+ }
+
+ void MainWindow::switchLayoutDirection()
+ {
+     if (layoutDirection() == Qt::LeftToRight)
+         qApp-&gt;setLayoutDirection(Qt::RightToLeft);
+     else
+         qApp-&gt;setLayoutDirection(Qt::LeftToRight);
+ }
+
+ class CreateDockWidgetDialog : public QDialog
+ {
+ public:
+     CreateDockWidgetDialog(QWidget *parent = 0);
+
+     QString objectName() const;
+     Qt::DockWidgetArea location() const;
+
+ private:
+     QLineEdit *m_objectName;
+     QComboBox *m_location;
+ };
+
+ CreateDockWidgetDialog::CreateDockWidgetDialog(QWidget *parent)
+     : QDialog(parent)
+ {
+     QGridLayout *layout = new QGridLayout(this);
+
+     layout-&gt;addWidget(new QLabel(tr(&quot;Object name:&quot;)), 0, 0);
+     m_objectName = new QLineEdit;
+     layout-&gt;addWidget(m_objectName, 0, 1);
+
+     layout-&gt;addWidget(new QLabel(tr(&quot;Location:&quot;)), 1, 0);
+     m_location = new QComboBox;
+     m_location-&gt;setEditable(false);
+     m_location-&gt;addItem(tr(&quot;Top&quot;));
+     m_location-&gt;addItem(tr(&quot;Left&quot;));
+     m_location-&gt;addItem(tr(&quot;Right&quot;));
+     m_location-&gt;addItem(tr(&quot;Bottom&quot;));
+     m_location-&gt;addItem(tr(&quot;Restore&quot;));
+     layout-&gt;addWidget(m_location, 1, 1);
+
+     QHBoxLayout *buttonLayout = new QHBoxLayout;
+     layout-&gt;addLayout(buttonLayout, 2, 0, 1, 2);
+     buttonLayout-&gt;addStretch();
+
+     QPushButton *cancelButton = new QPushButton(tr(&quot;Cancel&quot;));
+     connect(cancelButton, SIGNAL(clicked()), this, SLOT(reject()));
+     buttonLayout-&gt;addWidget(cancelButton);
+     QPushButton *okButton = new QPushButton(tr(&quot;Ok&quot;));
+     connect(okButton, SIGNAL(clicked()), this, SLOT(accept()));
+     buttonLayout-&gt;addWidget(okButton);
+
+     okButton-&gt;setDefault(true);
+ }
+
+ QString CreateDockWidgetDialog::objectName() const
+ {
+     return m_objectName-&gt;text();
+ }
+
+ Qt::DockWidgetArea CreateDockWidgetDialog::location() const
+ {
+     switch (m_location-&gt;currentIndex()) {
+         case 0: return Qt::TopDockWidgetArea;
+         case 1: return Qt::LeftDockWidgetArea;
+         case 2: return Qt::RightDockWidgetArea;
+         case 3: return Qt::BottomDockWidgetArea;
+         default:
+             break;
+     }
+     return Qt::NoDockWidgetArea;
+ }
+
+ void MainWindow::createDockWidget()
+ {
+     CreateDockWidgetDialog dialog(this);
+     int ret = dialog.exec();
+     if (ret == QDialog::Rejected)
+         return;
+
+     QDockWidget *dw = new QDockWidget;
+     dw-&gt;setObjectName(dialog.objectName());
+     dw-&gt;setWindowTitle(dialog.objectName());
+     dw-&gt;setWidget(new QTextEdit);
+
+     Qt::DockWidgetArea area = dialog.location();
+     switch (area) {
+         case Qt::LeftDockWidgetArea:
+         case Qt::RightDockWidgetArea:
+         case Qt::TopDockWidgetArea:
+         case Qt::BottomDockWidgetArea:
+             addDockWidget(area, dw);
+             break;
+         default:
+             if (!restoreDockWidget(dw)) {
+                 QMessageBox::warning(this, QString(), tr(&quot;Failed to restore dock widget&quot;));
+                 delete dw;
+                 return;
+             }
+             break;
+     }
+
+     extraDockWidgets.append(dw);
+     destroyDockWidgetMenu-&gt;setEnabled(true);
+     destroyDockWidgetMenu-&gt;addAction(new QAction(dialog.objectName(), this));
+ }
+
+ void MainWindow::destroyDockWidget(QAction *action)
+ {
+     int index = destroyDockWidgetMenu-&gt;actions().indexOf(action);
+     delete extraDockWidgets.takeAt(index);
+     destroyDockWidgetMenu-&gt;removeAction(action);
+     action-&gt;deleteLater();
+
+     if (destroyDockWidgetMenu-&gt;isEmpty())
+         destroyDockWidgetMenu-&gt;setEnabled(false);
+ }
+
+ #include &quot;mainwindow.moc&quot;</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

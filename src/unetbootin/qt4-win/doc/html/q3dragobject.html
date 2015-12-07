@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/other/q3dragobject.cpp -->
+<head>
+  <title>Qt 4.4: Q3DragObject Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3DragObject Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3DragObject class encapsulates MIME-based data transfer. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3DragObject&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qdragobject">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qobject.html">QObject</a> and <a href="qmimesource.html" class="obsolete">QMimeSource</a>.</p>
+<p>Inherited by <a href="q3icondrag.html">Q3IconDrag</a>, <a href="q3imagedrag.html">Q3ImageDrag</a>, <a href="q3storeddrag.html">Q3StoredDrag</a>, and <a href="q3textdrag.html">Q3TextDrag</a>.</p>
+<ul>
+<li><a href="q3dragobject-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="q3dragobject.html#DragMode-enum">DragMode</a></b> { DragDefault, DragCopy, DragMove, DragLink, DragCopyOrMove }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3dragobject.html#Q3DragObject">Q3DragObject</a></b> ( QWidget * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="q3dragobject.html#dtor.Q3DragObject">~Q3DragObject</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3dragobject.html#drag">drag</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3dragobject.html#dragCopy">dragCopy</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="q3dragobject.html#dragLink">dragLink</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3dragobject.html#dragMove">dragMove</a></b> ()</li>
+<li><div class="fn"/>QPixmap <b><a href="q3dragobject.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="q3dragobject.html#pixmapHotSpot">pixmapHotSpot</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3dragobject.html#setPixmap">setPixmap</a></b> ( QPixmap <i>pm</i>, const QPoint &amp; <i>hotspot</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3dragobject.html#setPixmap-2">setPixmap</a></b> ( QPixmap <i>pm</i> )</li>
+<li><div class="fn"/>QWidget * <b><a href="q3dragobject.html#source">source</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>3 public functions inherited from <a href="qmimesource.html#public-functions">QMimeSource</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QWidget * <b><a href="q3dragobject.html#target">target</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="q3dragobject.html#drag-2">drag</a></b> ( DragMode <i>mode</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3DragObject class encapsulates MIME-based data transfer.</p>
+<p>Q3DragObject is the base class for all data that needs to be transferred between and within applications, both for drag and drop and for the clipboard.</p>
+<p>See the <a href="dnd.html">Drag and drop documentation</a> for an overview of how to provide drag and drop in your application.</p>
+<p>See the <a href="qclipboard.html">QClipboard</a> documentation for an overview of how to provide cut and paste in your application.</p>
+<p>The <a href="q3dragobject.html#drag">drag</a>() function is used to start a drag operation. You can specify the <a href="q3dragobject.html#DragMode-enum">DragMode</a> in the call or use one of the convenience functions <a href="q3dragobject.html#dragCopy">dragCopy</a>(), <a href="q3dragobject.html#dragMove">dragMove</a>(), or <a href="q3dragobject.html#dragLink">dragLink</a>(). The drag source where the data originated is retrieved with <a href="q3dragobject.html#source">source</a>(). If the data was dropped on a widget within the application, <a href="q3dragobject.html#target">target</a>() will return a pointer to that widget. Specify the pixmap to display during the drag with <a href="q3dragobject.html#setPixmap">setPixmap</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="DragMode-enum"></a>enum Q3DragObject::DragMode</h3>
+<p>This enum describes the possible drag modes.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>Q3DragObject::DragDefault</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The mode is determined heuristically.</td></tr>
+<tr><td valign="top"><tt>Q3DragObject::DragCopy</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The data is copied.</td></tr>
+<tr><td valign="top"><tt>Q3DragObject::DragMove</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The data is moved.</td></tr>
+<tr><td valign="top"><tt>Q3DragObject::DragLink</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">The data is linked.</td></tr>
+<tr><td valign="top"><tt>Q3DragObject::DragCopyOrMove</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The user chooses the mode by using the <b>Shift</b> key to switch from the default copy mode to move mode.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3DragObject"></a>Q3DragObject::Q3DragObject ( <a href="qwidget.html">QWidget</a> * <i>dragSource</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a drag object called <i>name</i> with a parent <i>dragSource</i>.</p>
+<p>Note that the drag object will be deleted when the <i>dragSource</i> is deleted.</p>
+<h3 class="fn"><a name="dtor.Q3DragObject"></a>Q3DragObject::~Q3DragObject ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the drag object, canceling any drag and drop operation in which it is involved.</p>
+<h3 class="fn"><a name="drag"></a>bool Q3DragObject::drag ()</h3>
+<p>Starts a drag operation using the contents of this object, using <a href="q3dragobject.html#DragMode-enum">DragDefault</a> mode.</p>
+<p>The function returns true if the caller should delete the original copy of the dragged data (but see <a href="q3dragobject.html#target">target</a>()); otherwise returns false.</p>
+<p>If the drag contains <i>references</i> to information (e.g&#x2e; file names in a <a href="q3uridrag.html">Q3UriDrag</a> are references) then the return value should always be ignored, as the target is expected to directly manipulate the content referred to by the drag object. On X11 the return value should always be correct anyway, but on Windows this is not necessarily the case; e.g&#x2e; the file manager starts a background process to move files, so the source <i>must not</i> delete the files!</p>
+<p>Note that on Windows the drag operation will start a blocking modal event loop that will not dispatch any QTimers.</p>
+<h3 class="fn"><a name="drag-2"></a>bool Q3DragObject::drag ( <a href="q3dragobject.html#DragMode-enum">DragMode</a> <i>mode</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Starts a drag operation using the contents of this object.</p>
+<p>At this point, the object becomes owned by Qt, not the application. You should not delete the drag object or anything it references. The actual transfer of data to the target application will be done during future event processing - after that time the drag object will be deleted.</p>
+<p>Returns true if the dragged data was dragged as a <i>move</i>, indicating that the caller should remove the original source of the data (the drag object must continue to have a copy); otherwise returns false.</p>
+<p>The <i>mode</i> specifies the drag mode (see <a href="q3dragobject.html#DragMode-enum">Q3DragObject::DragMode</a>.) Normally one of the simpler <a href="q3dragobject.html#drag">drag</a>(), <a href="q3dragobject.html#dragMove">dragMove</a>(), or <a href="q3dragobject.html#dragCopy">dragCopy</a>() functions would be used instead.</p>
+<h3 class="fn"><a name="dragCopy"></a>void Q3DragObject::dragCopy ()</h3>
+<p>Starts a drag operation using the contents of this object, using <tt>DragCopy</tt> mode. Be sure to read the constraints described in <a href="q3dragobject.html#drag">drag</a>().</p>
+<p>See also <a href="q3dragobject.html#drag">drag</a>(), <a href="q3dragobject.html#dragMove">dragMove</a>(), and <a href="q3dragobject.html#dragLink">dragLink</a>().</p>
+<h3 class="fn"><a name="dragLink"></a>void Q3DragObject::dragLink ()</h3>
+<p>Starts a drag operation using the contents of this object, using <tt>DragLink</tt> mode. Be sure to read the constraints described in <a href="q3dragobject.html#drag">drag</a>().</p>
+<p>See also <a href="q3dragobject.html#drag">drag</a>(), <a href="q3dragobject.html#dragCopy">dragCopy</a>(), and <a href="q3dragobject.html#dragMove">dragMove</a>().</p>
+<h3 class="fn"><a name="dragMove"></a>bool Q3DragObject::dragMove ()</h3>
+<p>Starts a drag operation using the contents of this object, using <tt>DragMove</tt> mode. Be sure to read the constraints described in <a href="q3dragobject.html#drag">drag</a>().</p>
+<p>Returns true if the data was dragged as a <i>move</i>, indicating that the caller should remove the original source of the data (the drag object must continue to have a copy); otherwise returns false.</p>
+<p>See also <a href="q3dragobject.html#drag">drag</a>(), <a href="q3dragobject.html#dragCopy">dragCopy</a>(), and <a href="q3dragobject.html#dragLink">dragLink</a>().</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> Q3DragObject::pixmap () const</h3>
+<p>Returns the currently set pixmap, or a null pixmap if none is set.</p>
+<p>See also <a href="q3dragobject.html#setPixmap">setPixmap</a>() and <a href="qpixmap.html#isNull">QPixmap::isNull</a>().</p>
+<h3 class="fn"><a name="pixmapHotSpot"></a><a href="qpoint.html">QPoint</a> Q3DragObject::pixmapHotSpot () const</h3>
+<p>Returns the currently set pixmap hotspot.</p>
+<p>See also <a href="q3dragobject.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="setPixmap"></a>void Q3DragObject::setPixmap ( <a href="qpixmap.html">QPixmap</a> <i>pm</i>, const <a href="qpoint.html">QPoint</a> &amp; <i>hotspot</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Set the pixmap, <i>pm</i>, to display while dragging the object. The platform-specific implementation will use this where it can - so provide a small masked pixmap, and do not assume that the user will actually see it. For example, cursors on Windows 95 are of limited size.</p>
+<p>The <i>hotspot</i> is the point on (or off) the pixmap that should be under the cursor as it is dragged. It is relative to the top-left pixel of the pixmap.</p>
+<p><b>Warning:</b> We have seen problems with drag cursors on different graphics hardware and driver software on Windows. Setting the graphics acceleration in the display settings down one tick solved the problems in all cases.</p>
+<p>See also <a href="q3dragobject.html#pixmap">pixmap</a>().</p>
+<h3 class="fn"><a name="setPixmap-2"></a>void Q3DragObject::setPixmap ( <a href="qpixmap.html">QPixmap</a> <i>pm</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Uses a hotspot that positions the pixmap below and to the right of the mouse pointer. This allows the user to clearly see the point on the window where they are dragging the data.</p>
+<h3 class="fn"><a name="source"></a><a href="qwidget.html">QWidget</a> * Q3DragObject::source ()</h3>
+<p>Returns a pointer to the widget where this object originated (the drag source).</p>
+<h3 class="fn"><a name="target"></a><a href="qwidget.html">QWidget</a> * Q3DragObject::target ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>After the drag completes, this function will return the <a href="qwidget.html">QWidget</a> which received the drop, or 0 if the data was dropped on another application.</p>
+<p>This can be useful for detecting the case where drag and drop is to and from the same widget.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

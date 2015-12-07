@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/dbus/qdbusabstractinterface.cpp -->
+<head>
+  <title>Qt 4.4: QDBusAbstractInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDBusAbstractInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdbus.html">QtDBus</a> module]</span>
+</h1>
+<p>The QDBusAbstractInterface class is the base class for all D-Bus interfaces in the <a href="qtdbus.html">QtDBus</a> binding, allowing access to remote interfaces <a href="#details">More...</a></p>
+<pre> #include &lt;QDBusAbstractInterface&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>Inherited by <a href="qdbusconnectioninterface.html">QDBusConnectionInterface</a> and <a href="qdbusinterface.html">QDBusInterface</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qdbusabstractinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qdbusabstractinterface.html#dtor.QDBusAbstractInterface">~QDBusAbstractInterface</a></b> ()</li>
+<li><div class="fn"/>QDBusMessage <b><a href="qdbusabstractinterface.html#call">call</a></b> ( const QString &amp; <i>method</i>, const QVariant &amp; <i>arg1</i> = QVariant(), const QVariant &amp; <i>arg2</i> = QVariant(), const QVariant &amp; <i>arg3</i> = QVariant(), const QVariant &amp; <i>arg4</i> = QVariant(), const QVariant &amp; <i>arg5</i> = QVariant(), const QVariant &amp; <i>arg6</i> = QVariant(), const QVariant &amp; <i>arg7</i> = QVariant(), const QVariant &amp; <i>arg8</i> = QVariant() )</li>
+<li><div class="fn"/>QDBusMessage <b><a href="qdbusabstractinterface.html#call-2">call</a></b> ( QDBus::CallMode <i>mode</i>, const QString &amp; <i>method</i>, const QVariant &amp; <i>arg1</i> = QVariant(), const QVariant &amp; <i>arg2</i> = QVariant(), const QVariant &amp; <i>arg3</i> = QVariant(), const QVariant &amp; <i>arg4</i> = QVariant(), const QVariant &amp; <i>arg5</i> = QVariant(), const QVariant &amp; <i>arg6</i> = QVariant(), const QVariant &amp; <i>arg7</i> = QVariant(), const QVariant &amp; <i>arg8</i> = QVariant() )</li>
+<li><div class="fn"/>QDBusMessage <b><a href="qdbusabstractinterface.html#callWithArgumentList">callWithArgumentList</a></b> ( QDBus::CallMode <i>mode</i>, const QString &amp; <i>method</i>, const QList&lt;QVariant&gt; &amp; <i>args</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdbusabstractinterface.html#callWithCallback">callWithCallback</a></b> ( const QString &amp; <i>method</i>, const QList&lt;QVariant&gt; &amp; <i>args</i>, QObject * <i>receiver</i>, const char * <i>returnMethod</i>, const char * <i>errorMethod</i> )</li>
+<li><div class="fn"/>bool <b><a href="qdbusabstractinterface.html#callWithCallback-2">callWithCallback</a></b> ( const QString &amp; <i>method</i>, const QList&lt;QVariant&gt; &amp; <i>args</i>, QObject * <i>receiver</i>, const char * <i>slot</i> )</li>
+<li><div class="fn"/>QDBusConnection <b><a href="qdbusabstractinterface.html#connection">connection</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdbusabstractinterface.html#interface">interface</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qdbusabstractinterface.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QDBusError <b><a href="qdbusabstractinterface.html#lastError">lastError</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdbusabstractinterface.html#pathx">path</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qdbusabstractinterface.html#service">service</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDBusAbstractInterface class is the base class for all D-Bus interfaces in the <a href="qtdbus.html">QtDBus</a> binding, allowing access to remote interfaces</p>
+<p>Generated-code classes also derive from QDBusAbstractInterface, all methods described here are also valid for generated-code classes. In addition to those described here, generated-code classes provide member functions for the remote methods, which allow for compile-time checking of the correct parameters and return values, as well as property type-matching and signal parameter-matching.</p>
+<p>See also <a href="qdbusxml2cpp.html">The QDBus compiler</a> and <a href="qdbusinterface.html">QDBusInterface</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QDBusAbstractInterface"></a>QDBusAbstractInterface::~QDBusAbstractInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Releases this object's resources.</p>
+<h3 class="fn"><a name="call"></a><a href="qdbusmessage.html">QDBusMessage</a> QDBusAbstractInterface::call ( const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>arg1</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg2</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg3</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg4</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg5</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg6</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg7</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg8</i> = QVariant() )</h3>
+<p>Calls the method <i>method</i> on this interface and passes the parameters to this function to the method.</p>
+<p>The parameters to <tt>call</tt> are passed on to the remote function via D-Bus as input arguments. Output arguments are returned in the <a href="qdbusmessage.html">QDBusMessage</a> reply. If the reply is an error reply, <a href="qdbusabstractinterface.html#lastError">lastError</a>() will also be set to the contents of the error message.</p>
+<p>This function can be used with up to 8 parameters, passed in arguments <i>arg1</i>, <i>arg2</i>, <i>arg3</i>, <i>arg4</i>, <i>arg5</i>, <i>arg6</i>, <i>arg7</i> and <i>arg8</i>. If you need more than 8 parameters or if you have a variable number of parameters to be passed, use <a href="qdbusabstractinterface.html#callWithArgumentList">callWithArgumentList</a>().</p>
+<p>It can be used the following way:</p>
+<pre>       QString value = retrieveValue();
+       QDBusMessage reply;
+
+       QDBusReply&lt;int&gt; api = interface-&gt;call(QLatin1String(&quot;GetAPIVersion&quot;));
+       if (api &gt;= 14)
+         reply = interface-&gt;call(QLatin1String(&quot;ProcessWorkUnicode&quot;), value);
+       else
+         reply = interface-&gt;call(QLatin1String(&quot;ProcessWork&quot;), QLatin1String(&quot;UTF-8&quot;), value.toUtf8());</pre>
+<p>This example illustrates function calling with 0, 1 and 2 parameters and illustrates different parameter types passed in each (the first call to <tt>&quot;ProcessWorkUnicode&quot;</tt> will contain one Unicode string, the second call to <tt>&quot;ProcessWork&quot;</tt> will contain one string and one byte array).</p>
+<h3 class="fn"><a name="call-2"></a><a href="qdbusmessage.html">QDBusMessage</a> QDBusAbstractInterface::call ( <a href="qdbus.html#CallMode-enum">QDBus::CallMode</a> <i>mode</i>, const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>arg1</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg2</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg3</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg4</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg5</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg6</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg7</i> = QVariant(), const <a href="qvariant.html">QVariant</a> &amp; <i>arg8</i> = QVariant() )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Calls the method <i>method</i> on this interface and passes the parameters to this function to the method. If <i>mode</i> is <tt>NoWaitForReply</tt>, then this function will return immediately after placing the call, without waiting for a reply from the remote method. Otherwise, <i>mode</i> indicates whether this function should activate the Qt Event Loop while waiting for the reply to arrive.</p>
+<p>This function can be used with up to 8 parameters, passed in arguments <i>arg1</i>, <i>arg2</i>, <i>arg3</i>, <i>arg4</i>, <i>arg5</i>, <i>arg6</i>, <i>arg7</i> and <i>arg8</i>. If you need more than 8 parameters or if you have a variable number of parameters to be passed, use <a href="qdbusabstractinterface.html#callWithArgumentList">callWithArgumentList</a>().</p>
+<p>If this function reenters the Qt event loop in order to wait for the reply, it will exclude user input. During the wait, it may deliver signals and other method calls to your application. Therefore, it must be prepared to handle a reentrancy whenever a call is placed with <a href="qdbusabstractinterface.html#call">call</a>().</p>
+<h3 class="fn"><a name="callWithArgumentList"></a><a href="qdbusmessage.html">QDBusMessage</a> QDBusAbstractInterface::callWithArgumentList ( <a href="qdbus.html#CallMode-enum">QDBus::CallMode</a> <i>mode</i>, const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qlist.html">QList</a>&lt;<a href="qvariant.html">QVariant</a>&gt; &amp; <i>args</i> )</h3>
+<p>Places a call to the remote method specified by <i>method</i> on this interface, using <i>args</i> as arguments. This function returns the message that was received as a reply, which can be a normal <a href="qdbusmessage.html#MessageType-enum">QDBusMessage::ReplyMessage</a> (indicating success) or <a href="qdbusmessage.html#MessageType-enum">QDBusMessage::ErrorMessage</a> (if the call failed). The <i>mode</i> parameter specifies how this call should be placed.</p>
+<p>If the call succeeds, <a href="qdbusabstractinterface.html#lastError">lastError</a>() will be cleared; otherwise, it will contain the error this call produced.</p>
+<p>Normally, you should place calls using <a href="qdbusabstractinterface.html#call">call</a>().</p>
+<p><b>Warning:</b> If you use <tt>UseEventLoop</tt>, your code must be prepared to deal with any reentrancy: other method calls and signals may be delivered before this function returns, as well as other Qt queued signals and events.</p>
+<p><b>Note:</b> This function is <a href="threads.html#thread-safe">thread-safe</a>.</p>
+<h3 class="fn"><a name="callWithCallback"></a>bool QDBusAbstractInterface::callWithCallback ( const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qlist.html">QList</a>&lt;<a href="qvariant.html">QVariant</a>&gt; &amp; <i>args</i>, <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>returnMethod</i>, const char * <i>errorMethod</i> )</h3>
+<p>Places a call to the remote method specified by <i>method</i> on this interface, using <i>args</i> as arguments. This function returns immediately after queueing the call. The reply from the remote function is delivered to the <i>returnMethod</i> on object <i>receiver</i>. If an error occurs, the <i>errorMethod</i> on object <i>receiver</i> is called instead.</p>
+<p>This function returns true if the queueing succeeds. It does not indicate that the executed call succeeded. If it fails, the <i>errorMethod</i> is called.</p>
+<p>The <i>returnMethod</i> must have as its parameters the types returned by the function call. Optionally, it may have a <a href="qdbusmessage.html">QDBusMessage</a> parameter as its last or only parameter. The <i>errorMethod</i> must have a <a href="qdbuserror.html">QDBusError</a> as its only parameter.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qdbuserror.html">QDBusError</a> and <a href="qdbusmessage.html">QDBusMessage</a>.</p>
+<h3 class="fn"><a name="callWithCallback-2"></a>bool QDBusAbstractInterface::callWithCallback ( const <a href="qstring.html">QString</a> &amp; <i>method</i>, const <a href="qlist.html">QList</a>&lt;<a href="qvariant.html">QVariant</a>&gt; &amp; <i>args</i>, <a href="qobject.html">QObject</a> * <i>receiver</i>, const char * <i>slot</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function is deprecated. Please use the overloaded version.</p>
+<p>Places a call to the remote method specified by <i>method</i> on this interface, using <i>args</i> as arguments. This function returns immediately after queueing the call. The reply from the remote function or any errors emitted by it are delivered to the <i>slot</i> slot on object <i>receiver</i>.</p>
+<p>This function returns true if the queueing succeeded: it does not indicate that the call succeeded. If it failed, the slot will be called with an error message. <a href="qdbusabstractinterface.html#lastError">lastError</a>() will not be set under those circumstances.</p>
+<p>See also <a href="qdbuserror.html">QDBusError</a> and <a href="qdbusmessage.html">QDBusMessage</a>.</p>
+<h3 class="fn"><a name="connection"></a><a href="qdbusconnection.html">QDBusConnection</a> QDBusAbstractInterface::connection () const</h3>
+<p>Returns the connection this interface is assocated with.</p>
+<h3 class="fn"><a name="interface"></a><a href="qstring.html">QString</a> QDBusAbstractInterface::interface () const</h3>
+<p>Returns the name of this interface.</p>
+<h3 class="fn"><a name="isValid"></a>bool QDBusAbstractInterface::isValid () const</h3>
+<p>Returns true if this is a valid reference to a remote object. It returns false if there was an error during the creation of this interface (for instance, if the remote application does not exist).</p>
+<p>Note: when dealing with remote objects, it is not always possible to determine if it exists when creating a <a href="qdbusinterface.html">QDBusInterface</a>.</p>
+<h3 class="fn"><a name="lastError"></a><a href="qdbuserror.html">QDBusError</a> QDBusAbstractInterface::lastError () const</h3>
+<p>Returns the error the last operation produced, or an invalid error if the last operation did not produce an error.</p>
+<h3 class="fn"><a name="pathx"></a><a href="qstring.html">QString</a> QDBusAbstractInterface::path () const</h3>
+<p>Returns the object path that this interface is associated with.</p>
+<h3 class="fn"><a name="service"></a><a href="qstring.html">QString</a> QDBusAbstractInterface::service () const</h3>
+<p>Returns the name of the service this interface is associated with.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,236 @@
+/****************************************************************************
+** Meta object code from reading C++ file 'qftp.cpp'
+**
+** Created: Thu Mar 5 18:41:18 2009
+**      by: The Qt Meta Object Compiler version 61 (Qt 4.5.0)
+**
+** WARNING! All changes made in this file will be lost!
+*****************************************************************************/
+
+#if !defined(Q_MOC_OUTPUT_REVISION)
+#error "The header file 'qftp.cpp' doesn't include <QObject>."
+#elif Q_MOC_OUTPUT_REVISION != 61
+#error "This file was generated using the moc from 4.5.0. It"
+#error "cannot be used with the include files from this version of Qt."
+#error "(The moc has changed too much.)"
+#endif
+
+QT_BEGIN_MOC_NAMESPACE
+static const uint qt_meta_data_QFtpDTP[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      11,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+       9,    8,    8,    8, 0x05,
+      28,    8,    8,    8, 0x05,
+      42,   40,    8,    8, 0x05,
+      78,    8,    8,    8, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      96,    8,    8,    8, 0x08,
+     114,    8,    8,    8, 0x08,
+     132,    8,    8,    8, 0x08,
+     174,    8,    8,    8, 0x08,
+     199,    8,    8,    8, 0x08,
+     226,    8,    8,    8, 0x08,
+     240,    8,    8,    8, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QFtpDTP[] = {
+    "QFtpDTP\0\0listInfo(QUrlInfo)\0readyRead()\0"
+    ",\0dataTransferProgress(qint64,qint64)\0"
+    "connectState(int)\0socketConnected()\0"
+    "socketReadyRead()\0"
+    "socketError(QAbstractSocket::SocketError)\0"
+    "socketConnectionClosed()\0"
+    "socketBytesWritten(qint64)\0setupSocket()\0"
+    "dataReadyRead()\0"
+};
+
+const QMetaObject QFtpDTP::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_QFtpDTP,
+      qt_meta_data_QFtpDTP, 0 }
+};
+
+const QMetaObject *QFtpDTP::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QFtpDTP::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QFtpDTP))
+        return static_cast<void*>(const_cast< QFtpDTP*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int QFtpDTP::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: listInfo((*reinterpret_cast< const QUrlInfo(*)>(_a[1]))); break;
+        case 1: readyRead(); break;
+        case 2: dataTransferProgress((*reinterpret_cast< qint64(*)>(_a[1])),(*reinterpret_cast< qint64(*)>(_a[2]))); break;
+        case 3: connectState((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 4: socketConnected(); break;
+        case 5: socketReadyRead(); break;
+        case 6: socketError((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 7: socketConnectionClosed(); break;
+        case 8: socketBytesWritten((*reinterpret_cast< qint64(*)>(_a[1]))); break;
+        case 9: setupSocket(); break;
+        case 10: dataReadyRead(); break;
+        default: ;
+        }
+        _id -= 11;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QFtpDTP::listInfo(const QUrlInfo & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void QFtpDTP::readyRead()
+{
+    QMetaObject::activate(this, &staticMetaObject, 1, 0);
+}
+
+// SIGNAL 2
+void QFtpDTP::dataTransferProgress(qint64 _t1, qint64 _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void QFtpDTP::connectState(int _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+static const uint qt_meta_data_QFtpPI[] = {
+
+ // content:
+       2,       // revision
+       0,       // classname
+       0,    0, // classinfo
+      11,   12, // methods
+       0,    0, // properties
+       0,    0, // enums/sets
+       0,    0, // constructors
+
+ // signals: signature, parameters, type, tag, flags
+       8,    7,    7,    7, 0x05,
+      26,    7,    7,    7, 0x05,
+      46,   44,    7,    7, 0x05,
+      65,   44,    7,    7, 0x05,
+
+ // slots: signature, parameters, type, tag, flags
+      90,    7,    7,    7, 0x08,
+     102,    7,    7,    7, 0x08,
+     114,    7,    7,    7, 0x08,
+     133,    7,    7,    7, 0x08,
+     156,    7,    7,    7, 0x08,
+     168,    7,    7,    7, 0x08,
+     204,    7,    7,    7, 0x08,
+
+       0        // eod
+};
+
+static const char qt_meta_stringdata_QFtpPI[] = {
+    "QFtpPI\0\0connectState(int)\0finished(QString)\0"
+    ",\0error(int,QString)\0rawFtpReply(int,QString)\0"
+    "hostFound()\0connected()\0connectionClosed()\0"
+    "delayedCloseFinished()\0readyRead()\0"
+    "error(QAbstractSocket::SocketError)\0"
+    "dtpConnectState(int)\0"
+};
+
+const QMetaObject QFtpPI::staticMetaObject = {
+    { &QObject::staticMetaObject, qt_meta_stringdata_QFtpPI,
+      qt_meta_data_QFtpPI, 0 }
+};
+
+const QMetaObject *QFtpPI::metaObject() const
+{
+    return &staticMetaObject;
+}
+
+void *QFtpPI::qt_metacast(const char *_clname)
+{
+    if (!_clname) return 0;
+    if (!strcmp(_clname, qt_meta_stringdata_QFtpPI))
+        return static_cast<void*>(const_cast< QFtpPI*>(this));
+    return QObject::qt_metacast(_clname);
+}
+
+int QFtpPI::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
+{
+    _id = QObject::qt_metacall(_c, _id, _a);
+    if (_id < 0)
+        return _id;
+    if (_c == QMetaObject::InvokeMetaMethod) {
+        switch (_id) {
+        case 0: connectState((*reinterpret_cast< int(*)>(_a[1]))); break;
+        case 1: finished((*reinterpret_cast< const QString(*)>(_a[1]))); break;
+        case 2: error((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 3: rawFtpReply((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< const QString(*)>(_a[2]))); break;
+        case 4: hostFound(); break;
+        case 5: connected(); break;
+        case 6: connectionClosed(); break;
+        case 7: delayedCloseFinished(); break;
+        case 8: readyRead(); break;
+        case 9: error((*reinterpret_cast< QAbstractSocket::SocketError(*)>(_a[1]))); break;
+        case 10: dtpConnectState((*reinterpret_cast< int(*)>(_a[1]))); break;
+        default: ;
+        }
+        _id -= 11;
+    }
+    return _id;
+}
+
+// SIGNAL 0
+void QFtpPI::connectState(int _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 0, _a);
+}
+
+// SIGNAL 1
+void QFtpPI::finished(const QString & _t1)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
+    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+}
+
+// SIGNAL 2
+void QFtpPI::error(int _t1, const QString & _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 2, _a);
+}
+
+// SIGNAL 3
+void QFtpPI::rawFtpReply(int _t1, const QString & _t2)
+{
+    void *_a[] = { 0, const_cast<void*>(reinterpret_cast<const void*>(&_t1)), const_cast<void*>(reinterpret_cast<const void*>(&_t2)) };
+    QMetaObject::activate(this, &staticMetaObject, 3, _a);
+}
+QT_END_MOC_NAMESPACE

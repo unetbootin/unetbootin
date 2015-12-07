@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/styles/qstyleoption.cpp -->
+<head>
+  <title>Qt 4.4: QStyleOptionButton Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QStyleOptionButton Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QStyleOptionButton class is used to describe the parameters for drawing buttons. <a href="#details">More...</a></p>
+<pre> #include &lt;QStyleOptionButton&gt;</pre><p>Inherits <a href="qstyleoption.html">QStyleOption</a>.</p>
+<ul>
+<li><a href="qstyleoptionbutton-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qstyleoptionbutton.html#ButtonFeature-enum">ButtonFeature</a></b> { None, Flat, HasMenu, DefaultButton, AutoDefaultButton, CommandLinkButton }</li>
+<li><div class="fn"/>flags <b><a href="qstyleoptionbutton.html#ButtonFeature-enum">ButtonFeatures</a></b></li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionbutton.html#StyleOptionType-enum">StyleOptionType</a></b> { Type }</li>
+<li><div class="fn"/>enum <b><a href="qstyleoptionbutton.html#StyleOptionVersion-enum">StyleOptionVersion</a></b> { Version }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qstyleoptionbutton.html#QStyleOptionButton">QStyleOptionButton</a></b> ()</li>
+<li><div class="fn"/><b><a href="qstyleoptionbutton.html#QStyleOptionButton-2">QStyleOptionButton</a></b> ( const QStyleOptionButton &amp; <i>other</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>2 public functions inherited from <a href="qstyleoption.html#public-functions">QStyleOption</a></li>
+</ul>
+<a name="public-variables"></a>
+<h3>Public Variables</h3>
+<ul>
+<li><div class="fn"/>ButtonFeatures <b><a href="qstyleoptionbutton.html#features-var">features</a></b></li>
+<li><div class="fn"/>QIcon <b><a href="qstyleoptionbutton.html#icon-var">icon</a></b></li>
+<li><div class="fn"/>QSize <b><a href="qstyleoptionbutton.html#iconSize-var">iconSize</a></b></li>
+<li><div class="fn"/>QString <b><a href="qstyleoptionbutton.html#text-var">text</a></b></li>
+</ul>
+<ul>
+<li><div class="fn"/>7 public variables inherited from <a href="qstyleoption.html#public-variables">QStyleOption</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QStyleOptionButton class is used to describe the parameters for drawing buttons.</p>
+<p>QStyleOptionButton contains all the information that <a href="qstyle.html">QStyle</a> functions need to draw graphical elements like <a href="qpushbutton.html">QPushButton</a>, <a href="qcheckbox.html">QCheckBox</a>, and <a href="qradiobutton.html">QRadioButton</a>.</p>
+<p>For performance reasons, the access to the member variables is direct (i.e&#x2e;, using the <tt>.</tt> or <tt>-&gt;</tt> operator). This low-level feel makes the structures straightforward to use and emphasizes that these are simply parameters used by the style functions.</p>
+<p>For an example demonstrating how style options can be used, see the <a href="widgets-styles.html">Styles</a> example.</p>
+<p>See also <a href="qstyleoption.html">QStyleOption</a> and <a href="qstyleoptiontoolbutton.html">QStyleOptionToolButton</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="ButtonFeature-enum"></a>enum QStyleOptionButton::ButtonFeature<br />flags QStyleOptionButton::ButtonFeatures</h3>
+<p>This enum describes the different types of features a push button can have.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::None</tt></td><td align="center" valign="top"><tt>0x00</tt></td><td valign="top">Indicates a normal push button.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::Flat</tt></td><td align="center" valign="top"><tt>0x01</tt></td><td valign="top">Indicates a flat push button.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::HasMenu</tt></td><td align="center" valign="top"><tt>0x02</tt></td><td valign="top">Indicates that the button has a drop down menu.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::DefaultButton</tt></td><td align="center" valign="top"><tt>0x04</tt></td><td valign="top">Indicates that the button is a default button.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::AutoDefaultButton</tt></td><td align="center" valign="top"><tt>0x08</tt></td><td valign="top">Indicates that the button is an auto default button.</td></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::CommandLinkButton</tt></td><td align="center" valign="top"><tt>0x10</tt></td><td valign="top">Indicates that the button is a Windows Vista type command link.</td></tr>
+</table></p>
+<p>The ButtonFeatures type is a typedef for <a href="qflags.html">QFlags</a>&lt;ButtonFeature&gt;. It stores an OR combination of ButtonFeature values.</p>
+<p>See also <a href="qstyleoptionbutton.html#features-var">features</a>.</p>
+<h3 class="fn"><a name="StyleOptionType-enum"></a>enum QStyleOptionButton::StyleOptionType</h3>
+<p>This enum is used to hold information about the type of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::Type</tt></td><td align="center" valign="top"><tt>SO_Button</tt></td><td valign="top">The type of style option provided (<a href="qstyleoption.html#OptionType-enum">SO_Button</a> for this class).</td></tr>
+</table></p>
+<p>The type is used internally by <a href="qstyleoption.html">QStyleOption</a>, its subclasses, and <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>() to determine the type of style option. In general you do not need to worry about this unless you want to create your own <a href="qstyleoption.html">QStyleOption</a> subclass and your own styles.</p>
+<p>See also <a href="qstyleoptionbutton.html#StyleOptionVersion-enum">StyleOptionVersion</a>.</p>
+<h3 class="fn"><a name="StyleOptionVersion-enum"></a>enum QStyleOptionButton::StyleOptionVersion</h3>
+<p>This enum is used to hold information about the version of the style option, and is defined for each <a href="qstyleoption.html">QStyleOption</a> subclass.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QStyleOptionButton::Version</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">1</td></tr>
+</table></p>
+<p>The version is used by <a href="qstyleoption.html">QStyleOption</a> subclasses to implement extensions without breaking compatibility. If you use <a href="qstyleoption.html#qstyleoption_cast">qstyleoption_cast</a>(), you normally don't need to check it.</p>
+<p>See also <a href="qstyleoptionbutton.html#StyleOptionType-enum">StyleOptionType</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QStyleOptionButton"></a>QStyleOptionButton::QStyleOptionButton ()</h3>
+<p>Constructs a <a href="qstyleoptionbutton.html">QStyleOptionButton</a>, initializing the members variables to their default values.</p>
+<h3 class="fn"><a name="QStyleOptionButton-2"></a>QStyleOptionButton::QStyleOptionButton ( const QStyleOptionButton &amp; <i>other</i> )</h3>
+<p>Constructs a copy of the <i>other</i> style option.</p>
+<hr />
+<h2>Member Variable Documentation</h2>
+<h3 class="fn"><a name="features-var"></a><a href="qstyleoptionbutton.html#ButtonFeature-enum">ButtonFeatures</a> QStyleOptionButton::features</h3>
+<p>This variable holds a bitwise OR of the features that describe this button.</p>
+<p>See also <a href="qstyleoptionbutton.html#ButtonFeature-enum">ButtonFeature</a>.</p>
+<h3 class="fn"><a name="icon-var"></a><a href="qicon.html">QIcon</a> QStyleOptionButton::icon</h3>
+<p>This variable holds the icon of the button.</p>
+<p>The default value is an empty icon, i.e&#x2e; an icon with neither a pixmap nor a filename.</p>
+<p>See also <a href="qstyleoptionbutton.html#iconSize-var">iconSize</a>.</p>
+<h3 class="fn"><a name="iconSize-var"></a><a href="qsize.html">QSize</a> QStyleOptionButton::iconSize</h3>
+<p>This variable holds the size of the icon for the button.</p>
+<p>The default value is <a href="qsize.html">QSize</a>(-1, -1), i.e&#x2e; an invalid size.</p>
+<h3 class="fn"><a name="text-var"></a><a href="qstring.html">QString</a> QStyleOptionButton::text</h3>
+<p>This variable holds the text of the button.</p>
+<p>The default value is an empty string.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

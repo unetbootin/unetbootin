@@ -1,0 +1,231 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class QPair
+    \brief The QPair class is a template class that stores a pair of items.
+
+    \ingroup tools
+    
+    QPair\<T1, T2\> can be used in your application if the STL \c
+    pair type is not available. It stores one value of type T1 and
+    one value of type T2. It can be used as a return value for a
+    function that needs to return two values, or as the value type of
+    a \l{generic container}.
+
+    Here's an example of a QPair that stores one QString and one \c
+    double value:
+
+    \snippet doc/src/snippets/code/doc.src.qpair.qdoc 0
+
+    The components are accessible as public data members called \l
+    first and \l second. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qpair.qdoc 1
+
+    QPair's template data types (T1 and T2) must be \l{assignable
+    data types}. You cannot, for example, store a QWidget as a value;
+    instead, store a QWidget *. A few functions have additional
+    requirements; these requirements are documented on a per-function
+    basis.
+
+    \sa {Generic Containers}
+*/
+
+/*! \typedef QPair::first_type
+
+    The type of the first element in the pair (T1).
+
+    \sa first
+*/
+
+/*! \typedef QPair::second_type
+
+    The type of the second element in the pair (T2).
+
+    \sa second
+*/
+
+/*! \variable QPair::first
+
+    The first element in the pair.
+*/
+
+/*! \variable QPair::second
+
+    The second element in the pair.
+*/
+
+/*! \fn QPair::QPair()
+
+    Constructs an empty pair. The \c first and \c second elements are
+    initialized with \l{default-constructed values}.
+*/
+
+/*!
+    \fn QPair::QPair(const T1 &value1, const T2 &value2)
+
+    Constructs a pair and initializes the \c first element with \a
+    value1 and the \c second element with \a value2.
+
+    \sa qMakePair()
+*/
+
+/*!
+    \fn QPair<T1, T2> &QPair::operator=(const QPair<T1, T2> &other)
+
+    Assigns \a other to this pair.
+*/
+
+/*! \fn bool operator==(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is equal to \a p2; otherwise returns false.
+    Two pairs compare equal if their \c first data members compare
+    equal and if their \c second data members compare equal.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator==().
+*/
+
+/*! \fn bool operator!=(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is not equal to \a p2; otherwise returns
+    false. Two pairs compare as not equal if their \c first data
+    members are not equal or if their \c second data members are not
+    equal.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator==().
+*/
+
+/*! \fn bool operator<(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is less than \a p2; otherwise returns
+    false. The comparison is done on the \c first members of \a p1
+    and \a p2; if they compare equal, the \c second members are
+    compared to break the tie.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator<().
+*/
+
+/*! \fn bool operator>(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is greater than \a p2; otherwise returns
+    false. The comparison is done on the \c first members of \a p1
+    and \a p2; if they compare equal, the \c second members are
+    compared to break the tie.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator<().
+*/
+
+/*! \fn bool operator<=(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is less than or equal to \a p2; otherwise
+    returns false. The comparison is done on the \c first members of
+    \a p1 and \a p2; if they compare equal, the \c second members are
+    compared to break the tie.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator<().
+*/
+
+/*! \fn bool operator>=(const QPair<T1, T2> &p1, const QPair<T1, T2> &p2)
+
+    \relates QPair
+
+    Returns true if \a p1 is greater than or equal to \a p2;
+    otherwise returns false. The comparison is done on the \c first
+    members of \a p1 and \a p2; if they compare equal, the \c second
+    members are compared to break the tie.
+
+    This function requires the T1 and T2 types to have an
+    implementation of \c operator<().
+*/
+
+/*!
+    \fn QPair<T1, T2> qMakePair(const T1 &value1, const T2 &value2)
+
+    \relates QPair
+
+    Returns a QPair\<T1, T2\> that contains \a value1 and \a value2.
+    Example:
+
+    \snippet doc/src/snippets/code/doc.src.qpair.qdoc 2
+
+    This is equivalent to QPair<T1, T2>(\a value1, \a value2), but
+    usually requires less typing.
+*/
+
+/*! \fn QDataStream &operator>>(QDataStream &in, QPair<T1, T2> &pair)
+
+    \relates QPair
+
+    Reads a pair from stream \a in into \a pair.
+
+    This function requires the T1 and T2 types to implement \c operator>>().
+
+    \sa {Format of the QDataStream operators}
+*/
+
+/*! \fn QDataStream &operator<<(QDataStream &out, const QPair<T1, T2> &pair)
+
+    \relates QPair
+
+    Writes the pair \a pair to stream \a out.
+
+    This function requires the T1 and T2 types to implement \c operator<<().
+
+    \sa {Format of the QDataStream operators}
+*/

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qfilesystemwatcher.cpp -->
+<head>
+  <title>Qt 4.4: QFileSystemWatcher Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFileSystemWatcher Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QFileSystemWatcher class provides an interface for monitoring files and directories for modifications. <a href="#details">More...</a></p>
+<pre> #include &lt;QFileSystemWatcher&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qfilesystemwatcher-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfilesystemwatcher.html#QFileSystemWatcher">QFileSystemWatcher</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qfilesystemwatcher.html#QFileSystemWatcher-2">QFileSystemWatcher</a></b> ( const QStringList &amp; <i>paths</i>, QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qfilesystemwatcher.html#dtor.QFileSystemWatcher">~QFileSystemWatcher</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#addPath">addPath</a></b> ( const QString &amp; <i>path</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#addPaths">addPaths</a></b> ( const QStringList &amp; <i>paths</i> )</li>
+<li><div class="fn"/>QStringList <b><a href="qfilesystemwatcher.html#directories">directories</a></b> () const</li>
+<li><div class="fn"/>QStringList <b><a href="qfilesystemwatcher.html#files">files</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#removePath">removePath</a></b> ( const QString &amp; <i>path</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#removePaths">removePaths</a></b> ( const QStringList &amp; <i>paths</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#directoryChanged">directoryChanged</a></b> ( const QString &amp; <i>path</i> )</li>
+<li><div class="fn"/>void <b><a href="qfilesystemwatcher.html#fileChanged">fileChanged</a></b> ( const QString &amp; <i>path</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFileSystemWatcher class provides an interface for monitoring files and directories for modifications.</p>
+<p>QFileSystemWatcher monitors the file system for changes to files and directories by watching a list of specified paths.</p>
+<p>Call <a href="qfilesystemwatcher.html#addPath">addPath</a>() to watch a particular file or directory. Multiple paths can be added using the <a href="qfilesystemwatcher.html#addPaths">addPaths</a>() function. Existing paths can be removed by using the <a href="qfilesystemwatcher.html#removePath">removePath</a>() and <a href="qfilesystemwatcher.html#removePaths">removePaths</a>() functions.</p>
+<p>QFileSystemWatcher examines each path added to it. Files that have been added to the QFileSystemWatcher can be accessed using the <a href="qfilesystemwatcher.html#files">files</a>() function, and directories using the <a href="qfilesystemwatcher.html#directories">directories</a>() function.</p>
+<p>The <a href="qfilesystemwatcher.html#fileChanged">fileChanged</a>() signal is emitted when a file has been modified or removed from disk. Similarly, the <a href="qfilesystemwatcher.html#directoryChanged">directoryChanged</a>() signal is emitted when a directory or its contents is modified or removed. Note that QFileSystemWatcher stops monitoring files and directories once they have been removed from disk.</p>
+<p><b>Note:</b> On systems running a Linux kernel without inotify support, file systems that contain watched paths cannot be unmounted.</p>
+<p><b>Note:</b> Windows CE does not support directory monitoring by default as this depends on the file system driver installed.</p>
+<p>See also <a href="qfile.html">QFile</a> and <a href="qdir.html">QDir</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFileSystemWatcher"></a>QFileSystemWatcher::QFileSystemWatcher ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new file system watcher object with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="QFileSystemWatcher-2"></a>QFileSystemWatcher::QFileSystemWatcher ( const <a href="qstringlist.html">QStringList</a> &amp; <i>paths</i>, <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a new file system watcher object with the given <i>parent</i> which monitors the specified <i>paths</i> list.</p>
+<h3 class="fn"><a name="dtor.QFileSystemWatcher"></a>QFileSystemWatcher::~QFileSystemWatcher ()</h3>
+<p>Destroys the file system watcher.</p>
+<h3 class="fn"><a name="addPath"></a>void QFileSystemWatcher::addPath ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )</h3>
+<p>Adds <i>path</i> to the file system watcher if <i>path</i> exists. The path is not added if it does not exist, or if it is already being monitored by the file system watcher.</p>
+<p>If <i>path</i> specifies a directory, the <a href="qfilesystemwatcher.html#directoryChanged">directoryChanged</a>() signal will be emitted when <i>path</i> is modified or removed from disk; otherwise the <a href="qfilesystemwatcher.html#fileChanged">fileChanged</a>() signal is emitted when <i>path</i> is modified or removed.</p>
+<p>See also <a href="qfilesystemwatcher.html#addPaths">addPaths</a>() and <a href="qfilesystemwatcher.html#removePath">removePath</a>().</p>
+<h3 class="fn"><a name="addPaths"></a>void QFileSystemWatcher::addPaths ( const <a href="qstringlist.html">QStringList</a> &amp; <i>paths</i> )</h3>
+<p>Adds each path in <i>paths</i> to the file system watcher. Paths are not added if they not exist, or if they are already being monitored by the file system watcher.</p>
+<p>If a path specifies a directory, the <a href="qfilesystemwatcher.html#directoryChanged">directoryChanged</a>() signal will be emitted when the path is modified or removed from disk; otherwise the <a href="qfilesystemwatcher.html#fileChanged">fileChanged</a>() signal is emitted when the path is modified or removed.</p>
+<p>See also <a href="qfilesystemwatcher.html#addPath">addPath</a>() and <a href="qfilesystemwatcher.html#removePaths">removePaths</a>().</p>
+<h3 class="fn"><a name="directories"></a><a href="qstringlist.html">QStringList</a> QFileSystemWatcher::directories () const</h3>
+<p>Returns a list of paths to directories that are being watched.</p>
+<p>See also <a href="qfilesystemwatcher.html#files">files</a>().</p>
+<h3 class="fn"><a name="directoryChanged"></a>void QFileSystemWatcher::directoryChanged ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the directory at a specified <i>path</i>, is modified (e.g&#x2e;, when a file is added, modified or deleted) or removed from disk. Note that if there are several changes during a short period of time, some of the changes might not emit this signal. However, the last change in the sequence of changes will always generate this signal.</p>
+<p>See also <a href="qfilesystemwatcher.html#fileChanged">fileChanged</a>().</p>
+<h3 class="fn"><a name="fileChanged"></a>void QFileSystemWatcher::fileChanged ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the file at the specified <i>path</i> is modified or removed from disk.</p>
+<p>See also <a href="qfilesystemwatcher.html#directoryChanged">directoryChanged</a>().</p>
+<h3 class="fn"><a name="files"></a><a href="qstringlist.html">QStringList</a> QFileSystemWatcher::files () const</h3>
+<p>Returns a list of paths to files that are being watched.</p>
+<p>See also <a href="qfilesystemwatcher.html#directories">directories</a>().</p>
+<h3 class="fn"><a name="removePath"></a>void QFileSystemWatcher::removePath ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )</h3>
+<p>Removes the specified <i>path</i> from the file system watcher.</p>
+<p>See also <a href="qfilesystemwatcher.html#removePaths">removePaths</a>() and <a href="qfilesystemwatcher.html#addPath">addPath</a>().</p>
+<h3 class="fn"><a name="removePaths"></a>void QFileSystemWatcher::removePaths ( const <a href="qstringlist.html">QStringList</a> &amp; <i>paths</i> )</h3>
+<p>Removes the specified <i>paths</i> from the file system watcher.</p>
+<p>See also <a href="qfilesystemwatcher.html#removePath">removePath</a>() and <a href="qfilesystemwatcher.html#addPaths">addPaths</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qfsfileengine.cpp -->
+<head>
+  <title>Qt 4.4: QFSFileEngine Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFSFileEngine Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QFSFileEngine class implements Qt's default file engine. <a href="#details">More...</a></p>
+<pre> #include &lt;QFSFileEngine&gt;</pre><p>Inherits <a href="qabstractfileengine.html">QAbstractFileEngine</a>.</p>
+<p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qfsfileengine-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>typedef <b><a href="qabstractfileengine.html#Iterator-typedef">Iterator</a></b></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfsfileengine.html#QFSFileEngine">QFSFileEngine</a></b> ()</li>
+<li><div class="fn"/><b><a href="qfsfileengine.html#QFSFileEngine-2">QFSFileEngine</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/><b><a href="qfsfileengine.html#dtor.QFSFileEngine">~QFSFileEngine</a></b> ()</li>
+<li><div class="fn"/>virtual FileFlags <b><a href="qfsfileengine.html#fileFlags">fileFlags</a></b> ( FileFlags <i>type</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qfsfileengine.html#open">open</a></b> ( QIODevice::OpenMode <i>openMode</i>, FILE * <i>fh</i> )</li>
+<li><div class="fn"/>bool <b><a href="qfsfileengine.html#open-3">open</a></b> ( QIODevice::OpenMode <i>openMode</i>, int <i>fd</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>36 public functions inherited from <a href="qabstractfileengine.html#public-functions">QAbstractFileEngine</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qfsfileengine.html#currentPath">currentPath</a></b> ( const QString &amp; <i>fileName</i> = QString() )</li>
+<li><div class="fn"/>QFileInfoList <b><a href="qfsfileengine.html#drives">drives</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qfsfileengine.html#homePath">homePath</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qfsfileengine.html#rootPath">rootPath</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qfsfileengine.html#setCurrentPath">setCurrentPath</a></b> ( const QString &amp; <i>path</i> )</li>
+<li><div class="fn"/>QString <b><a href="qfsfileengine.html#tempPath">tempPath</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qabstractfileengine.html#static-public-members">QAbstractFileEngine</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 protected function inherited from <a href="qabstractfileengine.html#protected-functions">QAbstractFileEngine</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFSFileEngine class implements Qt's default file engine.</p>
+<p>This class is part of the file engine framework in Qt. If you only want to access files or directories, use <a href="qfile.html">QFile</a>, <a href="qfileinfo.html">QFileInfo</a> or <a href="qdir.html">QDir</a> instead.</p>
+<p>QFSFileEngine is the default file engine for accessing regular files. It is provided for convenience; by subclassing this class, you can alter its behavior slightly, without having to write a complete <a href="qabstractfileengine.html">QAbstractFileEngine</a> subclass. To install your custom file engine, you must also subclass <a href="qabstractfileenginehandler.html">QAbstractFileEngineHandler</a> and create an instance of your handler.</p>
+<p>It can also be useful to create a QFSFileEngine object directly if you need to use the local file system inside <a href="qabstractfileengine.html#create">QAbstractFileEngine::create</a>(), in order to avoid recursion (as higher-level classes tend to call <a href="qabstractfileengine.html#create">QAbstractFileEngine::create</a>()).</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFSFileEngine"></a>QFSFileEngine::QFSFileEngine ()</h3>
+<p>Constructs a <a href="qfsfileengine.html">QFSFileEngine</a>.</p>
+<h3 class="fn"><a name="QFSFileEngine-2"></a>QFSFileEngine::QFSFileEngine ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )</h3>
+<p>Constructs a <a href="qfsfileengine.html">QFSFileEngine</a> for the file name <i>file</i>.</p>
+<h3 class="fn"><a name="dtor.QFSFileEngine"></a>QFSFileEngine::~QFSFileEngine ()</h3>
+<p>Destructs the <a href="qfsfileengine.html">QFSFileEngine</a>.</p>
+<h3 class="fn"><a name="currentPath"></a><a href="qstring.html">QString</a> QFSFileEngine::currentPath ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the canonicalized form of the current path used by the file engine for the drive specified by <i>fileName</i>.</p>
+<p>On Windows, each drive has its own current directory, so a different path is returned for file names that include different drive names (e.g&#x2e; A: or C:).</p>
+<p>See also <a href="qfsfileengine.html#setCurrentPath">setCurrentPath</a>().</p>
+<h3 class="fn"><a name="drives"></a><a href="qfileinfo.html#QFileInfoList-typedef">QFileInfoList</a> QFSFileEngine::drives ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the list of drives in the file system as a list of <a href="qfileinfo.html">QFileInfo</a> objects. On unix, Mac OS X and Windows CE, only the root path is returned. On Windows, this function returns all drives (A:, C:, D:, etc.)&#x2e;</p>
+<h3 class="fn"><a name="fileFlags"></a><a href="qabstractfileengine.html#FileFlag-enum">FileFlags</a> QFSFileEngine::fileFlags ( <a href="qabstractfileengine.html#FileFlag-enum">FileFlags</a> <i>type</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<h3 class="fn"><a name="homePath"></a><a href="qstring.html">QString</a> QFSFileEngine::homePath ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the home path of the current user.</p>
+<p>See also <a href="qfsfileengine.html#rootPath">rootPath</a>().</p>
+<h3 class="fn"><a name="open"></a>bool QFSFileEngine::open ( <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::OpenMode</a> <i>openMode</i>, FILE * <i>fh</i> )</h3>
+<p>Opens the file handle <i>fh</i> in <i>openMode</i> mode. Returns true on success; otherwise returns false.</p>
+<h3 class="fn"><a name="open-3"></a>bool QFSFileEngine::open ( <a href="qiodevice.html#OpenModeFlag-enum">QIODevice::OpenMode</a> <i>openMode</i>, int <i>fd</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Opens the file descriptor <i>fd</i> in <i>openMode</i> mode. Returns true on success; otherwise returns false.</p>
+<h3 class="fn"><a name="rootPath"></a><a href="qstring.html">QString</a> QFSFileEngine::rootPath ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the root path.</p>
+<p>See also <a href="qfsfileengine.html#homePath">homePath</a>().</p>
+<h3 class="fn"><a name="setCurrentPath"></a>bool QFSFileEngine::setCurrentPath ( const <a href="qstring.html">QString</a> &amp; <i>path</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the current path (e.g&#x2e;, for <a href="qdir.html">QDir</a>), to <i>path</i>. Returns true if the new path exists; otherwise this function does nothing, and returns false.</p>
+<p>See also <a href="qfsfileengine.html#currentPath">currentPath</a>().</p>
+<h3 class="fn"><a name="tempPath"></a><a href="qstring.html">QString</a> QFSFileEngine::tempPath ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the temporary path (i.e&#x2e;, a path in which it is safe to store temporary files).</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

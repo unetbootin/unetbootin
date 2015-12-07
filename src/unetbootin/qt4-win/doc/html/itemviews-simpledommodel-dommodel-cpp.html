@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: dommodel.cpp Example File (itemviews/simpledommodel/dommodel.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">dommodel.cpp Example File<br /><span class="small-subtitle">itemviews/simpledommodel/dommodel.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &lt;QtXml&gt;
+
+ #include &quot;domitem.h&quot;
+ #include &quot;dommodel.h&quot;
+
+ DomModel::DomModel(QDomDocument document, QObject *parent)
+     : QAbstractItemModel(parent), domDocument(document)
+ {
+     rootItem = new DomItem(domDocument, 0);
+ }
+
+ DomModel::~DomModel()
+ {
+     delete rootItem;
+ }
+
+ int DomModel::columnCount(const QModelIndex &amp;<span class="comment">/*parent*/</span>) const
+ {
+     return 3;
+ }
+
+ QVariant DomModel::data(const QModelIndex &amp;index, int role) const
+ {
+     if (!index.isValid())
+         return QVariant();
+
+     if (role != Qt::DisplayRole)
+         return QVariant();
+
+     DomItem *item = static_cast&lt;DomItem*&gt;(index.internalPointer());
+
+     QDomNode node = item-&gt;node();
+     QStringList attributes;
+     QDomNamedNodeMap attributeMap = node.attributes();
+
+     switch (index.column()) {
+         case 0:
+             return node.nodeName();
+         case 1:
+             for (int i = 0; i &lt; attributeMap.count(); ++i) {
+                 QDomNode attribute = attributeMap.item(i);
+                 attributes &lt;&lt; attribute.nodeName() + &quot;=\&quot;&quot;
+                               +attribute.nodeValue() + &quot;\&quot;&quot;;
+             }
+             return attributes.join(&quot; &quot;);
+         case 2:
+             return node.nodeValue().split(&quot;\n&quot;).join(&quot; &quot;);
+         default:
+             return QVariant();
+     }
+ }
+
+ Qt::ItemFlags DomModel::flags(const QModelIndex &amp;index) const
+ {
+     if (!index.isValid())
+         return 0;
+
+     return Qt::ItemIsEnabled | Qt::ItemIsSelectable;
+ }
+
+ QVariant DomModel::headerData(int section, Qt::Orientation orientation,
+                               int role) const
+ {
+     if (orientation == Qt::Horizontal &amp;&amp; role == Qt::DisplayRole) {
+         switch (section) {
+             case 0:
+                 return tr(&quot;Name&quot;);
+             case 1:
+                 return tr(&quot;Attributes&quot;);
+             case 2:
+                 return tr(&quot;Value&quot;);
+             default:
+                 return QVariant();
+         }
+     }
+
+     return QVariant();
+ }
+
+ QModelIndex DomModel::index(int row, int column, const QModelIndex &amp;parent)
+             const
+ {
+     if (!hasIndex(row, column, parent))
+         return QModelIndex();
+
+     DomItem *parentItem;
+
+     if (!parent.isValid())
+         parentItem = rootItem;
+     else
+         parentItem = static_cast&lt;DomItem*&gt;(parent.internalPointer());
+
+     DomItem *childItem = parentItem-&gt;child(row);
+     if (childItem)
+         return createIndex(row, column, childItem);
+     else
+         return QModelIndex();
+ }
+
+ QModelIndex DomModel::parent(const QModelIndex &amp;child) const
+ {
+     if (!child.isValid())
+         return QModelIndex();
+
+     DomItem *childItem = static_cast&lt;DomItem*&gt;(child.internalPointer());
+     DomItem *parentItem = childItem-&gt;parent();
+
+     if (!parentItem || parentItem == rootItem)
+         return QModelIndex();
+
+     return createIndex(parentItem-&gt;row(), 0, parentItem);
+ }
+
+ int DomModel::rowCount(const QModelIndex &amp;parent) const
+ {
+     if (parent.column() &gt; 0)
+         return 0;
+
+     DomItem *parentItem;
+
+     if (!parent.isValid())
+         parentItem = rootItem;
+     else
+         parentItem = static_cast&lt;DomItem*&gt;(parent.internalPointer());
+
+     return parentItem-&gt;node().childNodes().count();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

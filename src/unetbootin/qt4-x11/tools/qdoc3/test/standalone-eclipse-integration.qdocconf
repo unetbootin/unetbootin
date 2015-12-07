@@ -1,0 +1,11 @@
+include(eclipse-integration.qdocconf)
+
+macro.theEclipseIntegration = the Qt Eclipse Integration
+macro.TheEclipseIntegration = The Qt Eclipse Integration
+
+HTML.footer = "<p /><address><hr /><div align=\"center\">\n" \
+              "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+              "<td width=\"40%\" align="left">Copyright &copy; 2009 <a href=\"http://doc.trolltech.com\">Nokia Corporation</a></td>\n" \
+              "<td width=\"30%\" align=\"center\"><a href=\"http://doc.trolltech.com/trademarks.html\">Trademarks</a></td>\n" \
+              "<td width=\"40%\" align=\"right\"><div align=\"right\">Qt Eclipse Integration 1.4.3</div></td>\n" \
+              "</tr></table></div></address>"

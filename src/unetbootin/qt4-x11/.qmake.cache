@@ -1,0 +1,37 @@
+CONFIG +=  release static largefile stl precompile_header mmx 3dnow sse sse2 dylib create_prl link_prl depend_includepath fix_output_dirs QTDIR_build
+QT_SOURCE_TREE = $$quote(/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11)
+QT_BUILD_TREE = $$quote(/afs/csail.mit.edu/u/g/gkovacs/public/qt4-x11)
+QT_BUILD_PARTS = libs tools examples demos docs translations
+QMAKE_ABSOLUTE_SOURCE_ROOT = $$QT_SOURCE_TREE
+QMAKE_MOC_SRC    = $$QT_BUILD_TREE/src/moc
+
+#local paths that cannot be queried from the QT_INSTALL_* properties while building QTDIR
+QMAKE_MOC        = $$QT_BUILD_TREE/bin/moc
+QMAKE_UIC        = $$QT_BUILD_TREE/bin/uic
+QMAKE_UIC3       = $$QT_BUILD_TREE/bin/uic3
+QMAKE_RCC        = $$QT_BUILD_TREE/bin/rcc
+QMAKE_QDBUSXML2CPP = $$QT_BUILD_TREE/bin/qdbusxml2cpp
+QMAKE_INCDIR_QT  = $$QT_BUILD_TREE/include
+QMAKE_LIBDIR_QT  = $$QT_BUILD_TREE/lib
+
+QMAKESPEC = $$QT_BUILD_TREE/mkspecs/linux-g++
+styles += cde mac motif plastique cleanlooks windows
+decorations += default windows styled
+gfx-drivers += linuxfb
+kbd-drivers += tty
+mouse-drivers += pc linuxtp
+QT_CFLAGS_DBUS = -I/usr/include/dbus-1.0 -I/usr/lib/dbus-1.0/include  
+QT_LIBS_DBUS = -ldbus-1  
+QT_CFLAGS_GLIB = -pthread -I/usr/include/glib-2.0 -I/usr/lib/glib-2.0/include  
+QT_LIBS_GLIB = -pthread -lgthread-2.0 -lglib-2.0  
+QMAKE_CFLAGS_X11 =   $$QMAKE_CFLAGS_X11
+QMAKE_LIBS_X11 = -lfontconfig   $$QMAKE_LIBS_X11
+PRECOMPILED_DIR = .pch/release-static
+OBJECTS_DIR = .obj/release-static
+MOC_DIR = .moc/release-static
+RCC_DIR = .rcc/release-static
+UI_DIR = .uic/release-static
+QMAKE_LIBS_X11 = -lXrender $$QMAKE_LIBS_X11
+QMAKE_RPATHDIR += "/usr/local/Trolltech/Qt-4.5.0/lib" 
+sql-drivers = 
+sql-plugins =  sqlite

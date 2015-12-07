@@ -1,0 +1,418 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3AsciiDict
+    \brief The Q3AsciiDict class is a template class that provides a dictionary based on char* keys.
+    \compat
+
+    Q3AsciiDict is implemented as a template class. Define a template
+    instance Q3AsciiDict\<X\> to create a dictionary that operates on
+    pointers to X (X*).
+
+    A dictionary is a collection of key-value pairs. The key is a
+    char* used for insertion, removal and lookup. The value is a
+    pointer. Dictionaries provide very fast insertion and lookup.
+
+    Q3AsciiDict cannot handle Unicode keys; use the Q3Dict template
+    instead, which uses QString keys. A Q3Dict has the same
+    performace as a Q3AsciiDict.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3asciidict.qdoc 0
+    In this example we use a dictionary to keep track of the line
+    edits we're using. We insert each line edit into the dictionary
+    with a unique name and then access the line edits via the
+    dictionary. See Q3PtrDict, Q3IntDict and Q3Dict.
+
+    See Q3Dict for full details, including the choice of dictionary
+    size, and how deletions are handled. 
+
+    \sa Q3AsciiDictIterator, Q3Dict, Q3IntDict, Q3PtrDict
+*/
+
+
+/*!
+    \fn Q3AsciiDict::Q3AsciiDict( int size, bool caseSensitive, bool copyKeys )
+
+    Constructs a dictionary optimized for less than \a size entries.
+
+    We recommend setting \a size to a suitably large prime number (a
+    bit larger than the expected number of entries). This makes the
+    hash distribution better and will improve lookup performance.
+
+    When \a caseSensitive is TRUE (the default) Q3AsciiDict treats
+    "abc" and "Abc" as different keys; when it is FALSE "abc" and
+    "Abc" are the same. Case-insensitive comparison only considers the
+    26 letters in US-ASCII.
+
+    If \a copyKeys is TRUE (the default), the dictionary copies keys
+    using strcpy(); if it is FALSE, the dictionary just copies the
+    pointers.
+*/
+
+/*!
+    \fn Q3AsciiDict::Q3AsciiDict( const Q3AsciiDict<type> &dict )
+
+    Constructs a copy of \a dict.
+
+    Each item in \a dict is inserted into this dictionary. Only the
+    pointers are copied (shallow copy).
+*/
+
+/*!
+    \fn Q3AsciiDict::~Q3AsciiDict()
+
+    Removes all items from the dictionary and destroys it.
+
+    The items are deleted if auto-delete is enabled.
+
+    All iterators that access this dictionary will be reset.
+
+    \sa setAutoDelete()
+*/
+
+/*!
+    \fn Q3AsciiDict<type> &Q3AsciiDict::operator=(const Q3AsciiDict<type> &dict)
+
+    Assigns \a dict to this dictionary and returns a reference to this
+    dictionary.
+
+    This dictionary is first cleared and then each item in \a dict is
+    inserted into this dictionary. Only the pointers are copied
+    (shallow copy) unless newItem() has been reimplemented().
+*/
+
+/*!
+    \fn uint Q3AsciiDict::count() const
+
+    Returns the number of items in the dictionary.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn uint Q3AsciiDict::size() const
+
+    Returns the size of the internal hash array (as specified in the
+    constructor).
+
+    \sa count()
+*/
+
+/*!
+    \fn void Q3AsciiDict::resize( uint newsize )
+
+    Changes the size of the hashtable to \a newsize. The contents of
+    the dictionary are preserved but all iterators on the dictionary
+    become invalid.
+*/
+
+/*!
+    \fn bool Q3AsciiDict::isEmpty() const
+
+    Returns TRUE if the dictionary is empty, i.e. count() == 0;
+    otherwise it returns FALSE.
+
+    \sa count()
+*/
+
+/*!
+    \fn void Q3AsciiDict::insert( const char *key, const type *item )
+
+    Inserts the \a key with the \a item into the dictionary.
+
+    Multiple items can have the same key, in which case only the last
+    item will be accessible using \l operator[]().
+
+    \a item may not be 0.
+
+    \sa replace()
+*/
+
+/*!
+    \fn void Q3AsciiDict::replace( const char *key, const type *item )
+
+    Replaces an item that has a key equal to \a key with \a item.
+
+    If the item does not already exist, it will be inserted.
+
+    \a item may not be 0.
+
+    Equivalent to:
+    \snippet doc/src/snippets/code/doc.src.q3asciidict.qdoc 1
+
+    If there are two or more items with equal keys, then the most
+    recently inserted item will be replaced.
+
+    \sa insert()
+*/
+
+/*!
+    \fn bool Q3AsciiDict::remove( const char *key )
+
+    Removes the item associated with \a key from the dictionary.
+    Returns TRUE if successful, i.e. if the key existed in the
+    dictionary; otherwise returns FALSE.
+
+    If there are two or more items with equal keys, then the most
+    recently inserted item will be removed.
+
+    The removed item is deleted if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink is enabled.
+
+    All dictionary iterators that refer to the removed item will be
+    set to point to the next item in the dictionary traversal order.
+
+    \sa take(), clear(), setAutoDelete()
+*/
+
+/*!
+    \fn type *Q3AsciiDict::take( const char *key )
+
+    Takes the item associated with \a key out of the dictionary
+    without deleting it (even if \link Q3PtrCollection::setAutoDelete()
+    auto-deletion\endlink is enabled).
+
+    If there are two or more items with equal keys, then the most
+    recently inserted item will be taken.
+
+    Returns a pointer to the item taken out, or 0 if the key does not
+    exist in the dictionary.
+
+    All dictionary iterators that refer to the taken item will be set
+    to point to the next item in the dictionary traversal order.
+
+    \sa remove(), clear(), setAutoDelete()
+*/
+
+/*!
+    \fn void Q3AsciiDict::clear()
+
+    Removes all items from the dictionary.
+
+    The removed items are deleted if \link
+    Q3PtrCollection::setAutoDelete() auto-deletion\endlink is enabled.
+
+    All dictionary iterators that operate on dictionary are reset.
+
+    \sa remove(), take(), setAutoDelete()
+*/
+
+/*!
+    \fn type *Q3AsciiDict::find( const char *key ) const
+
+    Returns the item associated with \a key, or 0 if the key does not
+    exist in the dictionary.
+
+    This function uses an internal hashing algorithm to optimize
+    lookup.
+
+    If there are two or more items with equal keys, then the item that
+    was most recently inserted will be found.
+
+    Equivalent to the [] operator.
+
+    \sa operator[]()
+*/
+
+/*!
+    \fn type *Q3AsciiDict::operator[]( const char *key ) const
+
+    Returns the item associated with \a key, or 0 if the key does
+    not exist in the dictionary.
+
+    This function uses an internal hashing algorithm to optimize
+    lookup.
+
+    If there are two or more items with equal keys, then the item that
+    was most recently inserted will be found.
+
+    Equivalent to the find() function.
+
+    \sa find()
+*/
+
+/*!
+    \fn void Q3AsciiDict::statistics() const
+
+    Debugging-only function that prints out the dictionary
+    distribution using qDebug().
+*/
+
+/*!
+    \fn QDataStream& Q3AsciiDict::read( QDataStream &s,
+					Q3PtrCollection::Item &item )
+
+    Reads a dictionary item from the stream \a s and returns a
+    reference to the stream.
+
+    The default implementation sets \a item to 0.
+
+    \sa write()
+*/
+
+/*!
+    \fn QDataStream& Q3AsciiDict::write(QDataStream &s, Q3PtrCollection::Item item) const
+
+    Writes a dictionary \a item to the stream \a s and returns a
+    reference to the stream.
+
+    \sa read()
+*/
+
+/*!
+    \class Q3AsciiDictIterator
+    \brief The Q3AsciiDictIterator class provides an iterator for Q3AsciiDict collections.
+    \compat
+
+    Q3AsciiDictIterator is implemented as a template class. Define a
+    template instance Q3AsciiDictIterator\<X\> to create a dictionary
+    iterator that operates on Q3AsciiDict\<X\> (dictionary of X*).
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3asciidict.qdoc 2
+    In the example we insert some line edits into a dictionary, then
+    iterate over the dictionary printing the strings associated with
+    those line edits.
+
+    Note that the traversal order is arbitrary; you are not guaranteed
+    any particular order.
+
+    Multiple iterators may independently traverse the same dictionary.
+    A Q3AsciiDict knows about all the iterators that are operating on
+    the dictionary. When an item is removed from the dictionary,
+    Q3AsciiDict updates all the iterators that are referring to the
+    removed item to point to the next item in the (arbitrary)
+    traversal order.
+
+    \sa Q3AsciiDict
+*/
+
+/*!
+    \fn Q3AsciiDictIterator::Q3AsciiDictIterator( const Q3AsciiDict<type> &dict )
+
+    Constructs an iterator for \a dict. The current iterator item is
+    set to point on the first item in the \a dict.
+*/
+
+/*!
+    \fn Q3AsciiDictIterator::~Q3AsciiDictIterator()
+
+    Destroys the iterator.
+*/
+
+/*!
+    \fn uint Q3AsciiDictIterator::count() const
+
+    Returns the number of items in the dictionary this iterator
+    operates over.
+
+    \sa isEmpty()
+*/
+
+/*!
+    \fn bool Q3AsciiDictIterator::isEmpty() const
+
+    Returns TRUE if the dictionary is empty, i.e. count() == 0,
+    otherwise returns FALSE.
+    
+    \sa count()
+*/
+
+/*!
+    \fn type *Q3AsciiDictIterator::toFirst()
+
+    Sets the current iterator item to point to the first item in the
+    dictionary and returns a pointer to the item. If the dictionary is
+    empty it sets the current item to 0 and returns 0.
+*/
+
+/*!
+    \fn Q3AsciiDictIterator::operator type *() const
+
+    Cast operator. Returns a pointer to the current iterator item.
+    Same as current().
+*/
+
+/*!
+    \fn type *Q3AsciiDictIterator::current() const
+
+    Returns a pointer to the current iterator item.
+*/
+
+/*!
+    \fn const char *Q3AsciiDictIterator::currentKey() const
+
+    Returns a pointer to the key for the current iterator item.
+*/
+
+/*!
+    \fn type *Q3AsciiDictIterator::operator()()
+
+    Makes the succeeding item current and returns the original current
+    item.
+
+    If the current iterator item was the last item in the dictionary
+    or if it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3AsciiDictIterator::operator++()
+
+    Prefix ++ makes the succeeding item current and returns the new
+    current item.
+
+    If the current iterator item was the last item in the dictionary
+    or if it was 0, 0 is returned.
+*/
+
+/*!
+    \fn type *Q3AsciiDictIterator::operator+=( uint jump )
+
+    Sets the current item to the item \a jump positions after the
+    current item, and returns a pointer to that item.
+
+    If that item is beyond the last item or if the dictionary is
+    empty, it sets the current item to 0 and returns 0.
+*/

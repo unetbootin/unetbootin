@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/designer-manual.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Designer's Buddy Editing Mode</title>
+  <link rel="prev" href="designer-connection-mode.html" />
+  <link rel="contents" href="designer-manual.html" />
+  <link rel="next" href="designer-tab-order.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="designer-connection-mode.html">Qt Designer's Signals and Slots Editing Mode</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-tab-order.html">Qt Designer's Tab Order Editing Mode</a>]
+</p>
+<h1 class="title">Qt Designer's Buddy Editing Mode<br /><span class="subtitle"></span>
+</h1>
+<p align="center"><img src="images/designer-buddy-mode.png" /></p><p>One of the most useful basic features of Qt is the support for buddy widgets. At the simplest level, a buddy widget accepts the input focus on behalf on a <a href="qlabel.html">QLabel</a> when the user types the label's shortcut key combination. The buddy concept is also used in Qt's <a href="model-view-programming.html">model/view</a> framework.</p>
+<ul><li><a href="#linking-labels-to-buddy-widgets">Linking Labels to Buddy Widgets</a></li>
+<li><a href="#removing-buddy-connections">Removing Buddy Connections</a></li>
+</ul>
+<a name="linking-labels-to-buddy-widgets"></a>
+<h2>Linking Labels to Buddy Widgets</h2>
+<p>To enter buddy editing mode, open the <b>Edit</b> menu and select <b>Edit Buddies</b>. This mode presents the widgets on the form in a similar way to the <a href="designer-connection-mode.html">signals and slots editing mode</a> except that, in this mode, connections must start at label widgets. Ideally, you should connect each label widget that provides a shortcut with a suitable input widget, such as a <a href="qlineedit.html">QLineEdit</a>.</p>
+<a name="makingbuddies"></a><p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/designer-buddy-making.png" /></td><td><b>Making Buddies</b><p>To define a buddy widget for a label, click on the label, drag the connection to another widget on the form, and release the mouse button. The connection shown indicates how the input focus is passed to the buddy widget.</p>
+<p>You can use the <a href="designer-designing-a-component.html#previewingaform">form preview</a> to test the connections between each label and its buddy.</p>
+</td></tr>
+</table></p>
+<a name="removing-buddy-connections"></a>
+<h2>Removing Buddy Connections</h2>
+<p>Only one buddy widget can be defined for each label. To change the buddy used, it is therefore necessary to delete any existing buddy connection and create a new one.</p>
+<p>Connections between labels and their buddy widgets can be deleted in the same way as signal-slot connections in signals and slots editing mode: Select the buddy connection by clicking on it, and press the <b>Delete</b> key. This operation does not modify either the label or its buddy in any way.</p>
+<p>
+[Previous: <a href="designer-connection-mode.html">Qt Designer's Signals and Slots Editing Mode</a>]
+[<a href="designer-manual.html">Contents</a>]
+[Next: <a href="designer-tab-order.html">Qt Designer's Tab Order Editing Mode</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

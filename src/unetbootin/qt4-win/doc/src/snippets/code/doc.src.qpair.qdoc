@@ -1,0 +1,17 @@
+//! [0]
+        QPair<QString, double> pair;
+//! [0]
+
+
+//! [1]
+        pair.first = "pi";
+        pair.second = 3.14159265358979323846;
+//! [1]
+
+
+//! [2]
+        QList<QPair<int, double> > list;
+        list.append(qMakePair(66, 3.14159));
+//! [2]
+
+

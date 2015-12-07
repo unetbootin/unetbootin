@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (tools/undoframework/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">tools/undoframework/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;mainwindow.h&quot;
+ #include &quot;diagramscene.h&quot;
+ #include &quot;diagramitem.h&quot;
+ #include &quot;commands.h&quot;
+
+ MainWindow::MainWindow()
+ {
+     undoStack = new QUndoStack();
+
+     createActions();
+     createMenus();
+
+     connect(undoStack, SIGNAL(canRedoChanged(bool)),
+             redoAction, SLOT(setEnabled(bool)));
+     connect(undoStack, SIGNAL(canUndoChanged(bool)),
+             undoAction, SLOT(setEnabled(bool)));
+     createUndoView();
+
+     diagramScene = new DiagramScene();
+     QBrush pixmapBrush(QPixmap(&quot;:/images/cross.png&quot;).scaled(30, 30));
+     diagramScene-&gt;setBackgroundBrush(pixmapBrush);
+     diagramScene-&gt;setSceneRect(QRect(0, 0, 500, 500));
+
+     connect(diagramScene, SIGNAL(itemMoved(DiagramItem *, const QPointF &amp;)),
+             this, SLOT(itemMoved(DiagramItem *, const QPointF &amp;)));
+
+     setWindowTitle(&quot;Undo Framework&quot;);
+     QGraphicsView *view = new QGraphicsView(diagramScene);
+     setCentralWidget(view);
+     resize(700, 500);
+ }
+
+ void MainWindow::createUndoView()
+ {
+     undoView = new QUndoView(undoStack);
+     undoView-&gt;setWindowTitle(tr(&quot;Command List&quot;));
+     undoView-&gt;show();
+     undoView-&gt;setAttribute(Qt::WA_QuitOnClose, false);
+ }
+
+ void MainWindow::createActions()
+ {
+     deleteAction = new QAction(tr(&quot;&amp;Delete Item&quot;), this);
+     deleteAction-&gt;setShortcut(tr(&quot;Del&quot;));
+     connect(deleteAction, SIGNAL(triggered()), this, SLOT(deleteItem()));
+
+     addBoxAction = new QAction(tr(&quot;Add &amp;Box&quot;), this);
+     addBoxAction-&gt;setShortcut(tr(&quot;Ctrl+O&quot;));
+     connect(addBoxAction, SIGNAL(triggered()), this, SLOT(addBox()));
+
+     addTriangleAction = new QAction(tr(&quot;Add &amp;Triangle&quot;), this);
+     addTriangleAction-&gt;setShortcut(tr(&quot;Ctrl+T&quot;));
+     connect(addTriangleAction, SIGNAL(triggered()), this, SLOT(addTriangle()));
+
+     undoAction = new QAction(tr(&quot;&amp;Undo&quot;), this);
+     undoAction-&gt;setShortcut(tr(&quot;Ctrl+Z&quot;));
+     undoAction-&gt;setEnabled(false);
+     connect(undoAction, SIGNAL(triggered()), undoStack, SLOT(undo()));
+
+     redoAction = new QAction(tr(&quot;&amp;Redo&quot;), this);
+     QList&lt;QKeySequence&gt; redoShortcuts;
+     redoShortcuts &lt;&lt; tr(&quot;Ctrl+Y&quot;) &lt;&lt; tr(&quot;Shift+Ctrl+Z&quot;);
+     redoAction-&gt;setShortcuts(redoShortcuts);
+     redoAction-&gt;setEnabled(false);
+     connect(redoAction, SIGNAL(triggered()), undoStack, SLOT(redo()));
+
+     exitAction = new QAction(tr(&quot;E&amp;xit&quot;), this);
+     exitAction-&gt;setShortcut(tr(&quot;Ctrl+Q&quot;));
+     connect(exitAction, SIGNAL(triggered()), this, SLOT(close()));
+
+     aboutAction = new QAction(tr(&quot;&amp;About&quot;), this);
+     QList&lt;QKeySequence&gt; aboutShortcuts;
+     aboutShortcuts &lt;&lt; tr(&quot;Ctrl+A&quot;) &lt;&lt; tr(&quot;Ctrl+B&quot;);
+     aboutAction-&gt;setShortcuts(aboutShortcuts);
+     connect(aboutAction, SIGNAL(triggered()), this, SLOT(about()));
+ }
+
+ void MainWindow::createMenus()
+ {
+     fileMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     editMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Edit&quot;));
+     editMenu-&gt;addAction(undoAction);
+     editMenu-&gt;addAction(redoAction);
+     editMenu-&gt;addSeparator();
+     editMenu-&gt;addAction(deleteAction);
+     connect(editMenu, SIGNAL(aboutToShow()),
+             this, SLOT(itemMenuAboutToShow()));
+     connect(editMenu, SIGNAL(aboutToHide()),
+             this, SLOT(itemMenuAboutToHide()));
+
+     itemMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;Item&quot;));
+     itemMenu-&gt;addAction(addBoxAction);
+     itemMenu-&gt;addAction(addTriangleAction);
+
+     helpMenu = menuBar()-&gt;addMenu(tr(&quot;&amp;About&quot;));
+     helpMenu-&gt;addAction(aboutAction);
+ }
+
+ void MainWindow::itemMoved(DiagramItem *movedItem,
+                            const QPointF &amp;oldPosition)
+ {
+     undoStack-&gt;push(new MoveCommand(movedItem, oldPosition));
+ }
+
+ void MainWindow::deleteItem()
+ {
+     if (diagramScene-&gt;selectedItems().isEmpty())
+         return;
+
+     QUndoCommand *deleteCommand = new DeleteCommand(diagramScene);
+     undoStack-&gt;push(deleteCommand);
+ }
+
+ void MainWindow::itemMenuAboutToHide()
+ {
+     deleteAction-&gt;setEnabled(true);
+ }
+
+ void MainWindow::itemMenuAboutToShow()
+ {
+     undoAction-&gt;setText(tr(&quot;Undo &quot;) + undoStack-&gt;undoText());
+     redoAction-&gt;setText(tr(&quot;Redo &quot;) + undoStack-&gt;redoText());
+     deleteAction-&gt;setEnabled(!diagramScene-&gt;selectedItems().isEmpty());
+ }
+
+ void MainWindow::addBox()
+ {
+     QUndoCommand *addCommand = new AddCommand(DiagramItem::Box, diagramScene);
+     undoStack-&gt;push(addCommand);
+ }
+
+ void MainWindow::addTriangle()
+ {
+     QUndoCommand *addCommand = new AddCommand(DiagramItem::Triangle,
+                                               diagramScene);
+     undoStack-&gt;push(addCommand);
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About Undo&quot;),
+                        tr(&quot;The &lt;b&gt;Undo&lt;/b&gt; example demonstrates how to &quot;
+                           &quot;use Qt's undo framework.&quot;));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

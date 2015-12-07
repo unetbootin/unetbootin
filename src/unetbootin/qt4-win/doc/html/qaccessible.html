@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/accessible/qaccessible.cpp -->
+<head>
+  <title>Qt 4.4: QAccessible Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAccessible Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QAccessible class provides enums and static functions relating to accessibility. <a href="#details">More...</a></p>
+<pre> #include &lt;QAccessible&gt;</pre><p>Inherited by <a href="qaccessibleinterface.html">QAccessibleInterface</a> and <a href="qaccessibleplugin.html">QAccessiblePlugin</a>.</p>
+<ul>
+<li><a href="qaccessible-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#Action-enum">Action</a></b> { DefaultAction, Press, SetFocus, Increase, ..., LastStandardAction }</li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#Event-enum">Event</a></b> { AcceleratorChanged, Alert, ContextHelpEnd, ContextHelpStart, ..., ValueChanged }</li>
+<li><div class="fn"/>typedef <b><a href="qaccessible.html#InterfaceFactory-typedef">InterfaceFactory</a></b></li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#Method-enum">Method</a></b> { ListSupportedMethods, SetCursorPosition, GetCursorPosition }</li>
+<li><div class="fn"/>flags <b><a href="qaccessible.html#RelationFlag-enum">Relation</a></b></li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#RelationFlag-enum">RelationFlag</a></b> { Unrelated, Self, Ancestor, Child, ..., Controlled }</li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#Role-enum">Role</a></b> { AlertMessage, Animation, Application, Assistant, ..., Window }</li>
+<li><div class="fn"/>flags <b><a href="qaccessible.html#StateFlag-enum">State</a></b></li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#StateFlag-enum">StateFlag</a></b> { Animated, Busy, Checked, Collapsed, ..., Unavailable }</li>
+<li><div class="fn"/>enum <b><a href="qaccessible.html#Text-enum">Text</a></b> { Name, Description, Value, Help, Accelerator, UserText }</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qaccessible.html#installFactory">installFactory</a></b> ( InterfaceFactory <i>factory</i> )</li>
+<li><div class="fn"/>RootObjectHandler <b><a href="qaccessible.html#installRootObjectHandler">installRootObjectHandler</a></b> ( RootObjectHandler <i>handler</i> )</li>
+<li><div class="fn"/>bool <b><a href="qaccessible.html#isActive">isActive</a></b> ()</li>
+<li><div class="fn"/>QAccessibleInterface * <b><a href="qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a></b> ( QObject * <i>object</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessible.html#removeFactory">removeFactory</a></b> ( InterfaceFactory <i>factory</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessible.html#setRootObject">setRootObject</a></b> ( QObject * <i>object</i> )</li>
+<li><div class="fn"/>void <b><a href="qaccessible.html#updateAccessibility">updateAccessibility</a></b> ( QObject * <i>object</i>, int <i>child</i>, Event <i>reason</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAccessible class provides enums and static functions relating to accessibility.</p>
+<p>Accessible applications can be used by people who are not able to use applications by conventional means.</p>
+<p>The functions in this class are used for communication between accessible applications (also called AT Servers) and accessibility tools (AT Clients), such as screen readers and braille displays. Clients and servers communicate in the following way:</p>
+<ul>
+<li><i>AT Servers</i> notify the clients about events through calls to the <a href="qaccessible.html#updateAccessibility">updateAccessibility</a>() function.</li>
+<li><i>AT Clients</i> request information about the objects in the server. The <a href="qaccessibleinterface.html">QAccessibleInterface</a> class is the core interface, and encapsulates this information in a pure virtual API. Implementations of the interface are provided by Qt through the <a href="qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>() API.</li>
+</ul>
+<p>The communication between servers and clients is initialized by the <a href="qaccessible.html#setRootObject">setRootObject</a>() function. Function pointers can be installed to replace or extend the default behavior of the static functions in QAccessible.</p>
+<p>Qt supports Microsoft Active Accessibility (MSAA), Mac OS X Accessibility, and the Unix/X11 AT-SPI standard. Other backends can be supported using <a href="qaccessiblebridge.html">QAccessibleBridge</a>.</p>
+<p>In addition to QAccessible's static functions, Qt offers one generic interface, <a href="qaccessibleinterface.html">QAccessibleInterface</a>, that can be used to wrap all widgets and objects (e.g&#x2e;, <a href="qpushbutton.html">QPushButton</a>). This single interface provides all the metadata necessary for the assistive technologies. Qt provides implementations of this interface for its built-in widgets as plugins.</p>
+<p>When you develop custom widgets, you can create custom subclasses of <a href="qaccessibleinterface.html">QAccessibleInterface</a> and distribute them as plugins (using <a href="qaccessibleplugin.html">QAccessiblePlugin</a>) or compile them into the application. Likewise, Qt's predefined accessibility support can be built as plugin (the default) or directly into the Qt library. The main advantage of using plugins is that the accessibility classes are only loaded into memory if they are actually used; they don't slow down the common case where no assistive technology is being used.</p>
+<p>Qt also includes two convenience classes, <a href="qaccessibleobject.html">QAccessibleObject</a> and <a href="qaccessiblewidget.html">QAccessibleWidget</a>, that inherit from <a href="qaccessibleinterface.html">QAccessibleInterface</a> and provide the lowest common denominator of metadata (e.g&#x2e;, widget geometry, window title, basic help text). You can use them as base classes when wrapping your custom <a href="qobject.html">QObject</a> or <a href="qwidget.html">QWidget</a> subclasses.</p>
+<p>See also <a href="qaccessibleinterface.html">QAccessibleInterface</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Action-enum"></a>enum QAccessible::Action</h3>
+<p>This enum describes the possible types of action that can occur.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QAccessible::DefaultAction</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Press</tt></td><td align="center" valign="top"><tt>-1</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::SetFocus</tt></td><td align="center" valign="top"><tt>-2</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Increase</tt></td><td align="center" valign="top"><tt>-3</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Decrease</tt></td><td align="center" valign="top"><tt>-4</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Accept</tt></td><td align="center" valign="top"><tt>-5</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Cancel</tt></td><td align="center" valign="top"><tt>-6</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::Select</tt></td><td align="center" valign="top"><tt>-7</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::ClearSelection</tt></td><td align="center" valign="top"><tt>-8</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::RemoveSelection</tt></td><td align="center" valign="top"><tt>-9</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::ExtendSelection</tt></td><td align="center" valign="top"><tt>-10</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::AddToSelection</tt></td><td align="center" valign="top"><tt>-11</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::FirstStandardAction</tt></td><td align="center" valign="top"><tt>Press</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::LastStandardAction</tt></td><td align="center" valign="top"><tt>AddToSelection</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="Event-enum"></a>enum QAccessible::Event</h3>
+<p>This enum type defines accessible event types.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAccessible::AcceleratorChanged</tt></td><td align="center" valign="top"><tt>0x80C0</tt></td><td valign="top">&nbsp;</td></tr>
+<tr><td valign="top"><tt>QAccessible::Alert</tt></td><td align="center" valign="top"><tt>0x0002</tt></td><td valign="top">A system alert (e.g&#x2e;, a message from a <a href="qmessagebox.html">QMessageBox</a>)</td></tr>
+<tr><td valign="top"><tt>QAccessible::ContextHelpEnd</tt></td><td align="center" valign="top"><tt>0x000D</tt></td><td valign="top">Context help (<a href="qwhatsthis.html">QWhatsThis</a>) for an object is finished.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ContextHelpStart</tt></td><td align="center" valign="top"><tt>0x000C</tt></td><td valign="top">Context help (<a href="qwhatsthis.html">QWhatsThis</a>) for an object is initiated.</td></tr>
+<tr><td valign="top"><tt>QAccessible::DefaultActionChanged</tt></td><td align="center" valign="top"><tt>0x80B0</tt></td><td valign="top">The default <a href="qaccessible.html#Action-enum">QAccessible::Action</a> for the accessible object changed</td></tr>
+<tr><td valign="top"><tt>QAccessible::DescriptionChanged</tt></td><td align="center" valign="top"><tt>0x800D</tt></td><td valign="top">The objects <a href="qaccessible.html#Text-enum">QAccessible::Description</a> changed.</td></tr>
+<tr><td valign="top"><tt>QAccessible::DialogEnd</tt></td><td align="center" valign="top"><tt>0x0011</tt></td><td valign="top">A dialog (<a href="qdialog.html">QDialog</a>) is been hidden</td></tr>
+<tr><td valign="top"><tt>QAccessible::DialogStart</tt></td><td align="center" valign="top"><tt>0x0010</tt></td><td valign="top">A dialog (<a href="qdialog.html">QDialog</a>) has been set visible.</td></tr>
+<tr><td valign="top"><tt>QAccessible::DragDropEnd</tt></td><td align="center" valign="top"><tt>0x000F</tt></td><td valign="top">A Drag &amp; Drop operation is about to finished.</td></tr>
+<tr><td valign="top"><tt>QAccessible::DragDropStart</tt></td><td align="center" valign="top"><tt>0x000E</tt></td><td valign="top">A Drag &amp; Drop operation is about to be initiated.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Focus</tt></td><td align="center" valign="top"><tt>0x8005</tt></td><td valign="top">An object has gained keyboard focus.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ForegroundChanged</tt></td><td align="center" valign="top"><tt>0x0003</tt></td><td valign="top">A window has been activated (i.e&#x2e;, a new window has gained focus on the desktop)</td></tr>
+<tr><td valign="top"><tt>QAccessible::HelpChanged</tt></td><td align="center" valign="top"><tt>0x80A0</tt></td><td valign="top">The <a href="qaccessible.html#Text-enum">QAccessible::Help</a> text property of an object has changed</td></tr>
+<tr><td valign="top"><tt>QAccessible::LocationChanged</tt></td><td align="center" valign="top"><tt>0x800B</tt></td><td valign="top">An objects location on the screen changed</td></tr>
+<tr><td valign="top"><tt>QAccessible::MenuCommand</tt></td><td align="center" valign="top"><tt>0x0018</tt></td><td valign="top">A menu item is triggered.</td></tr>
+<tr><td valign="top"><tt>QAccessible::MenuEnd</tt></td><td align="center" valign="top"><tt>0x0005</tt></td><td valign="top">A menu has been closed (Qt uses PopupMenuEnd for all menus)</td></tr>
+<tr><td valign="top"><tt>QAccessible::MenuStart</tt></td><td align="center" valign="top"><tt>0x0004</tt></td><td valign="top">A menu has been opened on the menubar (Qt uses PopupMenuStart for all menus)</td></tr>
+<tr><td valign="top"><tt>QAccessible::NameChanged</tt></td><td align="center" valign="top"><tt>0x800C</tt></td><td valign="top">The <a href="qaccessible.html#Text-enum">QAccessible::Name</a> property of an object has changed</td></tr>
+<tr><td valign="top"><tt>QAccessible::ObjectCreated</tt></td><td align="center" valign="top"><tt>0x8000</tt></td><td valign="top">A new object is created.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ObjectDestroyed</tt></td><td align="center" valign="top"><tt>0x8001</tt></td><td valign="top">An object is deleted.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ObjectHide</tt></td><td align="center" valign="top"><tt>0x8003</tt></td><td valign="top">An object is hidden (i.e&#x2e;, with <a href="qwidget.html#hide">QWidget::hide</a>()). Any children the object that is hidden has do not send this event. It is not send when an object is hidden as it is being obcured by others.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ObjectReorder</tt></td><td align="center" valign="top"><tt>0x8004</tt></td><td valign="top">A layout or item view has added, removed, or moved an object (Qt does not use this event).</td></tr>
+<tr><td valign="top"><tt>QAccessible::ObjectShow</tt></td><td align="center" valign="top"><tt>0x8002</tt></td><td valign="top">An object is displayed (i.e&#x2e;, with <a href="qwidget.html#show">QWidget::show</a>()).</td></tr>
+<tr><td valign="top"><tt>QAccessible::ParentChanged</tt></td><td align="center" valign="top"><tt>0x800F</tt></td><td valign="top">An objects parent object changed.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PopupMenuEnd</tt></td><td align="center" valign="top"><tt>0x0007</tt></td><td valign="top">A popup menu has closed.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PopupMenuStart</tt></td><td align="center" valign="top"><tt>0x0006</tt></td><td valign="top">A popupmenu has opened.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ScrollingEnd</tt></td><td align="center" valign="top"><tt>0x0013</tt></td><td valign="top">A scrollbar scroll operation has ended (the mouse has released the slider handle)</td></tr>
+<tr><td valign="top"><tt>QAccessible::ScrollingStart</tt></td><td align="center" valign="top"><tt>0x0012</tt></td><td valign="top">A scrollbar scroll operation is about to start (i.e&#x2e;, the mouse has pressed on the slider handle)</td></tr>
+<tr><td valign="top"><tt>QAccessible::Selection</tt></td><td align="center" valign="top"><tt>0x8006</tt></td><td valign="top">The selection has changed in a menu or item view.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SelectionAdd</tt></td><td align="center" valign="top"><tt>0x8007</tt></td><td valign="top">An item has been added to the selection in an item view.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SelectionRemove</tt></td><td align="center" valign="top"><tt>0x8008</tt></td><td valign="top">An item has been removed from an item view selection.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SelectionWithin</tt></td><td align="center" valign="top"><tt>0x8009</tt></td><td valign="top">Several changes to a selection has occurred in an item view.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SoundPlayed</tt></td><td align="center" valign="top"><tt>0x0001</tt></td><td valign="top">A sound has been played by an object</td></tr>
+<tr><td valign="top"><tt>QAccessible::StateChanged</tt></td><td align="center" valign="top"><tt>0x800A</tt></td><td valign="top">The <a href="qaccessible.html#StateFlag-enum">QAccessible::State</a> of an object has changed.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ValueChanged</tt></td><td align="center" valign="top"><tt>0x800E</tt></td><td valign="top">The <a href="qaccessible.html#Text-enum">QAccessible::Value</a> of an object has changed.</td></tr>
+</table></p>
+<h3 class="fn"><a name="InterfaceFactory-typedef"></a>typedef QAccessible::InterfaceFactory</h3>
+<p>A function pointer type. Use a function with this prototype to install interface factories with <a href="qaccessible.html#installFactory">installFactory</a>().</p>
+<p>The function receives a <a href="qobject.html">QObject</a> pointer. If the <a href="qobject.html">QObject</a> provides a <a href="qaccessibleinterface.html">QAccessibleInterface</a>, it sets the second parameter to point to the corresponding <a href="qaccessibleinterface.html">QAccessibleInterface</a>, and returns true; otherwise returns false.</p>
+<p>Installed factories are called by queryAccessibilityInterface() until one provides an interface.</p>
+<h3 class="fn"><a name="Method-enum"></a>enum QAccessible::Method</h3>
+<p>This enum describes the possible types of methods that can be invoked on an accessible object.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QAccessible::ListSupportedMethods</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::SetCursorPosition</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QAccessible::GetCursorPosition</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+</table></p>
+<p>See also <a href="qaccessibleinterface.html#invokeMethod">QAccessibleInterface::invokeMethod</a>().</p>
+<h3 class="flags"><a name="RelationFlag-enum"></a>enum QAccessible::RelationFlag<br />flags QAccessible::Relation</h3>
+<p>This enum type defines bit flags that can be combined to indicate the relationship between two accessible objects.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAccessible::Unrelated</tt></td><td align="center" valign="top"><tt>0x00000000</tt></td><td valign="top">The objects are unrelated.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Self</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The objects are the same.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Ancestor</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">The first object is a parent of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Child</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">The first object is a direct child of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Descendent</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td><td valign="top">The first object is an indirect child of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Sibling</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td><td valign="top">The objects are siblings.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Up</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td><td valign="top">The first object is above the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Down</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td><td valign="top">The first object is below the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Left</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td><td valign="top">The first object is left of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Right</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td><td valign="top">The first object is right of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Covers</tt></td><td align="center" valign="top"><tt>0x00001000</tt></td><td valign="top">The first object covers the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Covered</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td><td valign="top">The first object is covered by the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::FocusChild</tt></td><td align="center" valign="top"><tt>0x00010000</tt></td><td valign="top">The first object is the second object's focus child.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Label</tt></td><td align="center" valign="top"><tt>0x00020000</tt></td><td valign="top">The first object is the label of the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Labelled</tt></td><td align="center" valign="top"><tt>0x00040000</tt></td><td valign="top">The first object is labelled by the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Controller</tt></td><td align="center" valign="top"><tt>0x00080000</tt></td><td valign="top">The first object controls the second object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Controlled</tt></td><td align="center" valign="top"><tt>0x00100000</tt></td><td valign="top">The first object is controlled by the second object.</td></tr>
+</table></p>
+<p>Implementations of relationTo() return a combination of these flags. Some values are mutually exclusive.</p>
+<p>Implementations of navigate() can accept only one distinct value.</p>
+<p>The Relation type is a typedef for <a href="qflags.html">QFlags</a>&lt;RelationFlag&gt;. It stores an OR combination of RelationFlag values.</p>
+<h3 class="fn"><a name="Role-enum"></a>enum QAccessible::Role</h3>
+<p>This enum defines the role of an accessible object. The roles are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAccessible::AlertMessage</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td><td valign="top">An object that is used to alert the user.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Animation</tt></td><td align="center" valign="top"><tt>0x00000036</tt></td><td valign="top">An object that displays an animation.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Application</tt></td><td align="center" valign="top"><tt>0x0000000E</tt></td><td valign="top">The application's main window.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Assistant</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td><td valign="top">An object that provids interactive help.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Border</tt></td><td align="center" valign="top"><tt>0x00000013</tt></td><td valign="top">An object that represents a border.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ButtonDropDown</tt></td><td align="center" valign="top"><tt>0x00000038</tt></td><td valign="top">A button that drops down a list of items.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ButtonDropGrid</tt></td><td align="center" valign="top"><tt>0x0000003A</tt></td><td valign="top">A button that drops down a grid.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ButtonMenu</tt></td><td align="center" valign="top"><tt>0x00000039</tt></td><td valign="top">A button that drops down a menu.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Canvas</tt></td><td align="center" valign="top"><tt>0x00000035</tt></td><td valign="top">An object that displays graphics that the user can interact with.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Caret</tt></td><td align="center" valign="top"><tt>0x00000007</tt></td><td valign="top">An object that represents the system caret (text cursor).</td></tr>
+<tr><td valign="top"><tt>QAccessible::Cell</tt></td><td align="center" valign="top"><tt>0x0000001D</tt></td><td valign="top">A cell in a table.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Chart</tt></td><td align="center" valign="top"><tt>0x00000011</tt></td><td valign="top">An object that displays a graphical representation of data.</td></tr>
+<tr><td valign="top"><tt>QAccessible::CheckBox</tt></td><td align="center" valign="top"><tt>0x0000002C</tt></td><td valign="top">An object that represents an option that can be checked or unchecked. Some options provide a &quot;mixed&quot; state, e.g&#x2e; neither checked nor unchecked.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Client</tt></td><td align="center" valign="top"><tt>0x0000000A</tt></td><td valign="top">The client area in a window.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Clock</tt></td><td align="center" valign="top"><tt>0x0000003D</tt></td><td valign="top">A clock displaying time.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Column</tt></td><td align="center" valign="top"><tt>0x0000001B</tt></td><td valign="top">A column of cells, usually within a table.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ColumnHeader</tt></td><td align="center" valign="top"><tt>0x00000019</tt></td><td valign="top">A header for a column of data.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ComboBox</tt></td><td align="center" valign="top"><tt>0x0000002E</tt></td><td valign="top">A list of choices that the user can select from.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Cursor</tt></td><td align="center" valign="top"><tt>0x00000006</tt></td><td valign="top">An object that represents the mouse cursor.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Dial</tt></td><td align="center" valign="top"><tt>0x00000031</tt></td><td valign="top">An object that represents a dial or knob.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Dialog</tt></td><td align="center" valign="top"><tt>0x00000012</tt></td><td valign="top">A dialog box.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Document</tt></td><td align="center" valign="top"><tt>0x0000000F</tt></td><td valign="top">A document window, usually in an MDI environment.</td></tr>
+<tr><td valign="top"><tt>QAccessible::EditableText</tt></td><td align="center" valign="top"><tt>0x0000002A</tt></td><td valign="top">Editable text</td></tr>
+<tr><td valign="top"><tt>QAccessible::Equation</tt></td><td align="center" valign="top"><tt>0x00000037</tt></td><td valign="top">An object that represents a mathematical equation.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Graphic</tt></td><td align="center" valign="top"><tt>0x00000028</tt></td><td valign="top">A graphic or picture, e.g&#x2e; an icon.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Grip</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">A grip that the user can drag to change the size of widgets.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Grouping</tt></td><td align="center" valign="top"><tt>0x00000014</tt></td><td valign="top">An object that represents a logical grouping of other objects.</td></tr>
+<tr><td valign="top"><tt>QAccessible::HelpBalloon</tt></td><td align="center" valign="top"><tt>0x0000001F</tt></td><td valign="top">An object that displays help in a separate, short lived window.</td></tr>
+<tr><td valign="top"><tt>QAccessible::HotkeyField</tt></td><td align="center" valign="top"><tt>0x00000032</tt></td><td valign="top">A hotkey field that allows the user to enter a key sequence.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Indicator</tt></td><td align="center" valign="top"><tt>0x00000027</tt></td><td valign="top">An indicator that represents a current value or item.</td></tr>
+<tr><td valign="top"><tt>QAccessible::LayeredPane</tt></td><td align="center" valign="top"><tt>0x0000003F</tt></td><td valign="top">An object that can contain layered children, e.g&#x2e; in a stack.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Link</tt></td><td align="center" valign="top"><tt>0x0000001E</tt></td><td valign="top">A link to something else.</td></tr>
+<tr><td valign="top"><tt>QAccessible::List</tt></td><td align="center" valign="top"><tt>0x00000021</tt></td><td valign="top">A list of items, from which the user can select one or more items.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ListItem</tt></td><td align="center" valign="top"><tt>0x00000022</tt></td><td valign="top">An item in a list of items.</td></tr>
+<tr><td valign="top"><tt>QAccessible::MenuBar</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">A menu bar from which menus are opened by the user.</td></tr>
+<tr><td valign="top"><tt>QAccessible::MenuItem</tt></td><td align="center" valign="top"><tt>0x0000000C</tt></td><td valign="top">An item in a menu or menu bar.</td></tr>
+<tr><td valign="top"><tt>QAccessible::NoRole</tt></td><td align="center" valign="top"><tt>0x00000000</tt></td><td valign="top">The object has no role. This usually indicates an invalid object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PageTab</tt></td><td align="center" valign="top"><tt>0x00000025</tt></td><td valign="top">A page tab that the user can select to switch to a different page in a dialog.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PageTabList</tt></td><td align="center" valign="top"><tt>0x0000003C</tt></td><td valign="top">A list of page tabs.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Pane</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td><td valign="top">A generic container.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PopupMenu</tt></td><td align="center" valign="top"><tt>0x0000000B</tt></td><td valign="top">A menu which lists options that the user can select to perform an action.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ProgressBar</tt></td><td align="center" valign="top"><tt>0x00000030</tt></td><td valign="top">The object displays the progress of an operation in progress.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PropertyPage</tt></td><td align="center" valign="top"><tt>0x00000026</tt></td><td valign="top">A property page where the user can change options and settings.</td></tr>
+<tr><td valign="top"><tt>QAccessible::PushButton</tt></td><td align="center" valign="top"><tt>0x0000002B</tt></td><td valign="top">A button.</td></tr>
+<tr><td valign="top"><tt>QAccessible::RadioButton</tt></td><td align="center" valign="top"><tt>0x0000002D</tt></td><td valign="top">An object that represents an option that is mutually exclusive with other options.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Row</tt></td><td align="center" valign="top"><tt>0x0000001C</tt></td><td valign="top">A row of cells, usually within a table.</td></tr>
+<tr><td valign="top"><tt>QAccessible::RowHeader</tt></td><td align="center" valign="top"><tt>0x0000001A</tt></td><td valign="top">A header for a row of data.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ScrollBar</tt></td><td align="center" valign="top"><tt>0x00000003</tt></td><td valign="top">A scroll bar, which allows the user to scroll the visible area.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Separator</tt></td><td align="center" valign="top"><tt>0x00000015</tt></td><td valign="top">A separator that divides space into logical areas.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Slider</tt></td><td align="center" valign="top"><tt>0x00000033</tt></td><td valign="top">A slider that allows the user to select a value within a given range.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Sound</tt></td><td align="center" valign="top"><tt>0x00000005</tt></td><td valign="top">An object that represents a sound.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SpinBox</tt></td><td align="center" valign="top"><tt>0x00000034</tt></td><td valign="top">A spin box widget that allows the user to enter a value within a given range.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Splitter</tt></td><td align="center" valign="top"><tt>0x0000003E</tt></td><td valign="top">A splitter distributing available space between its child widgets.</td></tr>
+<tr><td valign="top"><tt>QAccessible::StaticText</tt></td><td align="center" valign="top"><tt>0x00000029</tt></td><td valign="top">Static text, such as labels for other widgets.</td></tr>
+<tr><td valign="top"><tt>QAccessible::StatusBar</tt></td><td align="center" valign="top"><tt>0x00000017</tt></td><td valign="top">A status bar.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Table</tt></td><td align="center" valign="top"><tt>0x00000018</tt></td><td valign="top">A table representing data in a grid of rows and columns.</td></tr>
+<tr><td valign="top"><tt>QAccessible::TitleBar</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The title bar caption of a window.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ToolBar</tt></td><td align="center" valign="top"><tt>0x00000016</tt></td><td valign="top">A tool bar, which groups widgets that the user accesses frequently.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ToolTip</tt></td><td align="center" valign="top"><tt>0x0000000D</tt></td><td valign="top">A tool tip which provides information about other objects.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Tree</tt></td><td align="center" valign="top"><tt>0x00000023</tt></td><td valign="top">A list of items in a tree structure.</td></tr>
+<tr><td valign="top"><tt>QAccessible::TreeItem</tt></td><td align="center" valign="top"><tt>0x00000024</tt></td><td valign="top">An item in a tree structure.</td></tr>
+<tr><td valign="top"><tt>QAccessible::UserRole</tt></td><td align="center" valign="top"><tt>0x0000ffff</tt></td><td valign="top">The first value to be used for user defined roles.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Whitespace</tt></td><td align="center" valign="top"><tt>0x0000003B</tt></td><td valign="top">Blank space between other objects.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Window</tt></td><td align="center" valign="top"><tt>0x00000009</tt></td><td valign="top">A top level window.</td></tr>
+</table></p>
+<h3 class="flags"><a name="StateFlag-enum"></a>enum QAccessible::StateFlag<br />flags QAccessible::State</h3>
+<p>This enum type defines bit flags that can be combined to indicate the state of an accessible object. The values are:</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAccessible::Animated</tt></td><td align="center" valign="top"><tt>0x00004000</tt></td><td valign="top">The object's appearance changes frequently.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Busy</tt></td><td align="center" valign="top"><tt>0x00000800</tt></td><td valign="top">The object cannot accept input at the moment.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Checked</tt></td><td align="center" valign="top"><tt>0x00000010</tt></td><td valign="top">The object's check box is checked.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Collapsed</tt></td><td align="center" valign="top"><tt>0x00000400</tt></td><td valign="top">The object is collapsed, e.g&#x2e; a closed listview item, or an iconified window.</td></tr>
+<tr><td valign="top"><tt>QAccessible::DefaultButton</tt></td><td align="center" valign="top"><tt>0x00000100</tt></td><td valign="top">The object represents the default button in a dialog.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Expanded</tt></td><td align="center" valign="top"><tt>0x00000200</tt></td><td valign="top">The object is expandable, and currently the children are visible.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ExtSelectable</tt></td><td align="center" valign="top"><tt>0x02000000</tt></td><td valign="top">The object supports extended selection.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Focusable</tt></td><td align="center" valign="top"><tt>0x00100000</tt></td><td valign="top">The object can receive focus. Only objects in the active window can receive focus.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Focused</tt></td><td align="center" valign="top"><tt>0x00000004</tt></td><td valign="top">The object has keyboard focus.</td></tr>
+<tr><td valign="top"><tt>QAccessible::HasPopup</tt></td><td align="center" valign="top"><tt>0x40000000</tt></td><td valign="top">The object opens a popup.</td></tr>
+<tr><td valign="top"><tt>QAccessible::HotTracked</tt></td><td align="center" valign="top"><tt>0x00000080</tt></td><td valign="top">The object's appearance is sensitive to the mouse cursor position.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Invisible</tt></td><td align="center" valign="top"><tt>0x00008000</tt></td><td valign="top">The object is not visible to the user.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Linked</tt></td><td align="center" valign="top"><tt>0x00400000</tt></td><td valign="top">The object is linked to another object, e.g&#x2e; a hyperlink.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Marqueed</tt></td><td align="center" valign="top"><tt>0x00002000</tt></td><td valign="top">The object displays scrolling contents, e.g&#x2e; a log view.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Mixed</tt></td><td align="center" valign="top"><tt>0x00000020</tt></td><td valign="top">The state of the object is not determined, e.g&#x2e; a tri-state check box that is neither checked nor unchecked.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Modal</tt></td><td align="center" valign="top"><tt>0x80000000</tt></td><td valign="top">The object blocks input from other objects.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Movable</tt></td><td align="center" valign="top"><tt>0x00040000</tt></td><td valign="top">The object can be moved.</td></tr>
+<tr><td valign="top"><tt>QAccessible::MultiSelectable</tt></td><td align="center" valign="top"><tt>0x01000000</tt></td><td valign="top">The object supports multiple selected items.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Normal</tt></td><td align="center" valign="top"><tt>0x00000000</tt></td><td valign="top">The normal state.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Offscreen</tt></td><td align="center" valign="top"><tt>0x00010000</tt></td><td valign="top">The object is clipped by the visible area. Objects that are off screen are also invisible.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Pressed</tt></td><td align="center" valign="top"><tt>0x00000008</tt></td><td valign="top">The object is pressed.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Protected</tt></td><td align="center" valign="top"><tt>0x20000000</tt></td><td valign="top">The object is password protected, e.g&#x2e; a line edit for entering a Password.</td></tr>
+<tr><td valign="top"><tt>QAccessible::ReadOnly</tt></td><td align="center" valign="top"><tt>0x00000040</tt></td><td valign="top">The object can usually be edited, but is explicitly set to read-only.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Selectable</tt></td><td align="center" valign="top"><tt>0x00200000</tt></td><td valign="top">The object is selectable.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Selected</tt></td><td align="center" valign="top"><tt>0x00000002</tt></td><td valign="top">The object is selected.</td></tr>
+<tr><td valign="top"><tt>QAccessible::SelfVoicing</tt></td><td align="center" valign="top"><tt>0x00080000</tt></td><td valign="top">The object describes itself through speech or sound.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Sizeable</tt></td><td align="center" valign="top"><tt>0x00020000</tt></td><td valign="top">The object can be resized, e.g&#x2e; top-level windows.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Traversed</tt></td><td align="center" valign="top"><tt>0x00800000</tt></td><td valign="top">The object is linked and has been visited.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Unavailable</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">The object is unavailable to the user, e.g&#x2e; a disabled widget.</td></tr>
+</table></p>
+<p>Implementations of <a href="qaccessibleinterface.html#state">QAccessibleInterface::state</a>() return a combination of these flags.</p>
+<p>The State type is a typedef for <a href="qflags.html">QFlags</a>&lt;StateFlag&gt;. It stores an OR combination of StateFlag values.</p>
+<h3 class="fn"><a name="Text-enum"></a>enum QAccessible::Text</h3>
+<p>This enum specifies string information that an accessible object returns.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QAccessible::Name</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The name of the object. This can be used both as an identifier or a short description by accessible clients.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Description</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">A short text describing the object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Value</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The value of the object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Help</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">A longer text giving information about how to use the object.</td></tr>
+<tr><td valign="top"><tt>QAccessible::Accelerator</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">The keyboard shortcut that executes the object's default action.</td></tr>
+<tr><td valign="top"><tt>QAccessible::UserText</tt></td><td align="center" valign="top"><tt>0x0000ffff</tt></td><td valign="top">The first value to be used for user defined text.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="installFactory"></a>void QAccessible::installFactory ( <a href="qaccessible.html#InterfaceFactory-typedef">InterfaceFactory</a> <i>factory</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Installs the <a href="qaccessible.html#InterfaceFactory-typedef">InterfaceFactory</a> <i>factory</i>. The last factory added is the first one used by <a href="qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>().</p>
+<h3 class="fn"><a name="installRootObjectHandler"></a>RootObjectHandler QAccessible::installRootObjectHandler ( RootObjectHandler <i>handler</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Installs the given <i>handler</i> as the function to be used by <a href="qaccessible.html#setRootObject">setRootObject</a>(), and returns the previously installed handler.</p>
+<h3 class="fn"><a name="isActive"></a>bool QAccessible::isActive ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if an accessibility implementation has been requested during the runtime of the application; otherwise returns false.</p>
+<p>Use this function to prevent potentially expensive notifications via <a href="qaccessible.html#updateAccessibility">updateAccessibility</a>().</p>
+<h3 class="fn"><a name="queryAccessibleInterface"></a><a href="qaccessibleinterface.html">QAccessibleInterface</a> * QAccessible::queryAccessibleInterface ( <a href="qobject.html">QObject</a> * <i>object</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>If a <a href="qaccessibleinterface.html">QAccessibleInterface</a> implementation exists for the given <i>object</i>, this function returns a pointer to the implementation; otherwise it returns 0.</p>
+<p>The function calls all installed factory functions (from most recently installed to least recently installed) until one is found that provides an interface for the class of <i>object</i>. If no factory can provide an accessibility implementation for the class the function loads installed accessibility plugins, and tests if any of the plugins can provide the implementation.</p>
+<p>If no implementation for the object's class is available, the function tries to find an implementation for the object's parent class, using the above strategy.</p>
+<p><b>Warning:</b> The caller is responsible for deleting the returned interface after use.</p>
+<h3 class="fn"><a name="removeFactory"></a>void QAccessible::removeFactory ( <a href="qaccessible.html#InterfaceFactory-typedef">InterfaceFactory</a> <i>factory</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Removes <i>factory</i> from the list of installed InterfaceFactories.</p>
+<h3 class="fn"><a name="setRootObject"></a>void QAccessible::setRootObject ( <a href="qobject.html">QObject</a> * <i>object</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Sets the root accessible object of this application to <i>object</i>. All other accessible objects in the application can be reached by the client using object navigation.</p>
+<p>You should never need to call this function. Qt sets the <a href="qapplication.html">QApplication</a> object as the root object immediately before the event loop is entered in <a href="qapplication.html#exec">QApplication::exec</a>().</p>
+<p>Use <a href="qaccessible.html#installRootObjectHandler">QAccessible::installRootObjectHandler</a>() to redirect the function call to a customized handler function.</p>
+<p>See also <a href="qaccessible.html#queryAccessibleInterface">queryAccessibleInterface</a>().</p>
+<h3 class="fn"><a name="updateAccessibility"></a>void QAccessible::updateAccessibility ( <a href="qobject.html">QObject</a> * <i>object</i>, int <i>child</i>, <a href="qaccessible.html#Event-enum">Event</a> <i>reason</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Notifies accessibility clients about a change in <i>object</i>'s accessibility information.</p>
+<p><i>reason</i> specifies the cause of the change, for example, <tt>ValueChange</tt> when the position of a slider has been changed. <i>child</i> is the (1-based) index of the child element that has changed. When <i>child</i> is 0, the object itself has changed.</p>
+<p>Call this function whenever the state of your accessible object or one of its sub-elements has been changed either programmatically (e.g&#x2e; by calling <a href="qlabel.html#text-prop">QLabel::setText</a>()) or by user interaction.</p>
+<p>If there are no accessibility tools listening to this event, the performance penalty for calling this function is small, but if determining the parameters of the call is expensive you can test <a href="qaccessible.html#isActive">isActive</a>() to avoid unnecessary computations.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

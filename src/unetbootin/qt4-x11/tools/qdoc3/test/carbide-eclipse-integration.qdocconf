@@ -1,0 +1,12 @@
+include(eclipse-integration.qdocconf)
+
+defines += NO_QT_ECLIPSE_INSTALLATION_PAGE
+macro.theEclipseIntegration = Carbide.c++
+macro.TheEclipseIntegration = Carbide.c++
+
+HTML.footer = "<p /><address><hr /><div align=\"center\">\n" \
+              "<table width=\"100%\" cellspacing=\"0\" border=\"0\"><tr class=\"address\">\n" \
+              "<td width=\"40%\" align="left">Copyright &copy; 2009 <a href=\"http://doc.trolltech.com/trolltech.html\">Nokia Corporation</a></td>\n" \
+              "<td width=\"30%\" align=\"center\"><a href=\"http://doc.trolltech.com\">Trademarks</a></td>\n" \
+              "<td width=\"40%\" align=\"right\"><div align=\"right\">Carbide.c++</div></td>\n" \
+              "</tr></table></div></address>"

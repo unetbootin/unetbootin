@@ -1,0 +1,115 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \group qt-embedded
+    \ingroup topics
+    \title Qt for Embedded Linux
+    \brief Documents specifically about Qt for Embedded Linux.
+
+    Qt for Embedded Linux is a C++ framework for GUI and application development
+    for embedded devices. It runs on a variety of processors, usually
+    with Embedded Linux.  Qt for Embedded Linux provides the standard Qt API for
+    embedded devices with a lightweight window system.
+
+    \image qt-embedded-architecture.png
+
+    Qt for Embedded Linux applications write directly to the framebuffer,
+    eliminating the need for the X Window System and saving memory.
+    The Linux framebuffer is enabled by default on all modern Linux
+    distributions. For information on older versions, see \l
+    http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html. For development
+    and debugging purposes, Qt for Embedded Linux provides a \l {The
+    Virtual Framebuffer}{virtual framebuffer}. It is also possible to
+    run an application using the
+    \l{The VNC Protocol and Qt for Embedded Linux}{VNC protocol}.
+
+    \table 100%
+    \header \o Getting Started \o Reference \o Features
+    \row
+    \o
+     \list
+        \o \l {Qt for Embedded Linux Architecture}{Architecture Overview}
+        \o \l {Installing Qt for Embedded Linux}{Installation}
+        \o \l {Running Qt for Embedded Linux Applications}{Running Applications}
+        \o \l {Qt Examples#Qt for Embedded Linux}{Examples}
+    \endlist
+    \o
+    \list
+        \o \l {Qt for Embedded Linux Classes}{Classes}
+        \o \l {Qt for Embedded Linux Environment Variables}{Environment Variables}
+        \o \l {Licenses for Fonts Used in Qt for Embedded Linux}{Font Licenses}
+    \endlist
+    \o
+    \list
+        \o \l {Qt for Embedded Linux Pointer Handling}{Pointer Handling}
+        \o \l {Qt for Embedded Linux Character Input}{Character Input}
+        \o \l {Qt for Embedded Linux Display Management}{Display Management}
+        \o \l {Qt for Embedded Linux and OpenGL}{OpenGL}
+        \o \l {Qt for Embedded Linux Fonts}{Fonts}
+    \endlist
+
+    \header \o Development \o Porting \o Optimization
+    \row
+    \o
+     \list
+        \o \l {The Virtual Framebuffer}{Virtual Framebuffer}
+        \o \l {The VNC Protocol and Qt for Embedded Linux}{VNC Protocol}
+        \o \l {Testing the Linux Framebuffer}
+        \o \l {Cross Compiling Qt for Embedded Linux Applications}{Cross Compiling Applications}
+        \o \l {Deploying Qt for Embedded Linux Applications}{Deploying Applications}
+    \endlist
+    \o
+    \list
+        \o \l {Porting Qt Applications to Qt for Embedded Linux}
+        \o \l {Porting Qt for Embedded Linux to a New Architecture}
+        \o \l {Porting Qt for Embedded Linux to Another Operating System}
+    \endlist
+    \o
+    \list
+        \o \l {Qt for Embedded Linux Performance Tuning}{Performance Tuning}
+        \o \l {Fine-Tuning Features in Qt for Embedded Linux}{Fine-Tuning Features}
+        \o \l {Adding an Accelerated Graphics Driver to Qt for Embedded Linux}{Adding an Accelerated Graphics Driver}
+    \endlist
+    \endtable
+*/

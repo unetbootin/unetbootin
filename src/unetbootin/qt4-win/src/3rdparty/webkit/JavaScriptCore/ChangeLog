@@ -1,0 +1,51 @@
+2007-10-18  Maciej Stachowiak  <mjs@apple.com>
+
+        Reviewed by Adam.
+        
+        - use __declspec(thread) for fast thread-local storage on Windows
+        
+        - 2.2% speedup on sunspider (on Windows)
+        - 7% speedup on the string section
+        - 6% speedup on JS iBench
+        
+        - fixed <rdar://problem/5473084> PLT on Windows got 2.5% slower between r25406 and r25422
+        - fixed at least some of <rdar://5527965? i-Bench JS was 14% slower in 310A11 than 310A10
+        
+        
+        * wtf/FastMalloc.cpp:
+        (WTF::getThreadHeap):
+        (WTF::setThreadHeap):
+        (WTF::TCMalloc_ThreadCache::GetCache):
+        (WTF::TCMalloc_ThreadCache::GetCacheIfPresent):
+        (WTF::TCMalloc_ThreadCache::CreateCacheIfNecessary):
+
+2007-10-16  Adam Roben  <aroben@apple.com>
+
+        Make testkjs not delay-load WebKit
+
+        Soon, delay-loading WebKit will be impossible (because we will be
+        using __declspec(thread) for thread-local storage). This change
+        prepares testkjs for the future.
+
+        Reviewed by Sam.
+
+        * JavaScriptCore.vcproj/JavaScriptCore.sln: Removed WebKitInitializer,
+        added FindSafari.
+        * JavaScriptCore.vcproj/testkjs/testkjs.vcproj: Don't link against
+        WebKitInitializer, don't delay-load WebKit.
+        * kjs/testkjs.cpp: Don't use WebKitInitializer.
+
+2007-10-16  Adam Roben  <aroben@apple.com>
+
+        Updated testkjs for the rename of WebKit_debug.dll to WebKit.dll for the Debug configuration
+
+        Reviewed by Kevin McCullough.
+
+        * JavaScriptCore.vcproj/debug.vsprops: Added WebKitDLLConfigSuffix.
+        * JavaScriptCore.vcproj/debug_internal.vsprops: Ditto.
+        * JavaScriptCore.vcproj/release.vsprops: Ditto.
+        * JavaScriptCore.vcproj/testkjs/testkjs.vcproj: Use
+        WebKitDLLConfigSuffix when referring to WebKit.dll, and fixed a typo
+        in the name of icuuc36[_debug].dll.
+
+== Rolled over to ChangeLog-2007-10-14 ==

@@ -1,0 +1,31 @@
+//! [0]
+	Q3Dict<char> dict;
+	    ...
+	if ( dict.find( key ) )
+	    dict.remove( key );
+	dict.insert( key, item );
+//! [0]
+
+
+//! [1]
+    Q3Dict<QLineEdit> fields;
+    fields.insert( "forename", new QLineEdit( this ) );
+    fields.insert( "surname", new QLineEdit( this ) );
+    fields.insert( "age", new QLineEdit( this ) );
+
+    fields["forename"]->setText( "Homer" );
+    fields["surname"]->setText( "Simpson" );
+    fields["age"]->setText( "45" );
+
+    Q3DictIterator<QLineEdit> it( fields );
+    for( ; it.current(); ++it )
+	cout << it.currentKey() << ": " << it.current()->text() << endl;
+    cout << endl;
+
+    // Output (random order):
+    //	age: 45
+    //	surname: Simpson
+    //	forename: Homer
+//! [1]
+
+

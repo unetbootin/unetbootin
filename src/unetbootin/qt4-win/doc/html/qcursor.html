@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qcursor.cpp -->
+<head>
+  <title>Qt 4.4: QCursor Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QCursor Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QCursor class provides a mouse cursor with an arbitrary shape. <a href="#details">More...</a></p>
+<pre> #include &lt;QCursor&gt;</pre><ul>
+<li><a href="qcursor-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor">QCursor</a></b> ()</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-2">QCursor</a></b> ( Qt::CursorShape <i>shape</i> )</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-3">QCursor</a></b> ( const QBitmap &amp; <i>bitmap</i>, const QBitmap &amp; <i>mask</i>, int <i>hotX</i> = -1, int <i>hotY</i> = -1 )</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-4">QCursor</a></b> ( const QPixmap &amp; <i>pixmap</i>, int <i>hotX</i> = -1, int <i>hotY</i> = -1 )</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-5">QCursor</a></b> ( const QCursor &amp; <i>c</i> )</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-6">QCursor</a></b> ( HCURSOR <i>cursor</i> )</li>
+<li><div class="fn"/><b><a href="qcursor.html#QCursor-7">QCursor</a></b> ( Qt::HANDLE <i>handle</i> )</li>
+<li><div class="fn"/><b><a href="qcursor.html#dtor.QCursor">~QCursor</a></b> ()</li>
+<li><div class="fn"/>const QBitmap * <b><a href="qcursor.html#bitmap">bitmap</a></b> () const</li>
+<li><div class="fn"/>HCURSOR_or_HANDLE <b><a href="qcursor.html#handle">handle</a></b> () const</li>
+<li><div class="fn"/>QPoint <b><a href="qcursor.html#hotSpot">hotSpot</a></b> () const</li>
+<li><div class="fn"/>const QBitmap * <b><a href="qcursor.html#mask">mask</a></b> () const</li>
+<li><div class="fn"/>QPixmap <b><a href="qcursor.html#pixmap">pixmap</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qcursor.html#setShape">setShape</a></b> ( Qt::CursorShape <i>shape</i> )</li>
+<li><div class="fn"/>Qt::CursorShape <b><a href="qcursor.html#shape">shape</a></b> () const</li>
+<li><div class="fn"/><b><a href="qcursor.html#operator-QVariant">operator QVariant</a></b> () const</li>
+<li><div class="fn"/>QCursor &amp; <b><a href="qcursor.html#operator-eq">operator=</a></b> ( const QCursor &amp; <i>c</i> )</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QPoint <b><a href="qcursor.html#pos">pos</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qcursor.html#setPos">setPos</a></b> ( int <i>x</i>, int <i>y</i> )</li>
+<li><div class="fn"/>void <b><a href="qcursor.html#setPos-2">setPos</a></b> ( const QPoint &amp; <i>p</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qcursor.html#operator-lt-lt-95">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qcursor.html#operator-gt-gt-58">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QCursor &amp; <i>cursor</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QCursor class provides a mouse cursor with an arbitrary shape.</p>
+<p>This class is mainly used to create mouse cursors that are associated with particular widgets and to get and set the position of the mouse cursor.</p>
+<p>Qt has a number of standard cursor shapes, but you can also make custom cursor shapes based on a <a href="qbitmap.html">QBitmap</a>, a mask and a hotspot.</p>
+<p>To associate a cursor with a widget, use <a href="qwidget.html#cursor-prop">QWidget::setCursor</a>(). To associate a cursor with all widgets (normally for a short period of time), use <a href="qapplication.html#setOverrideCursor">QApplication::setOverrideCursor</a>().</p>
+<p>To set a cursor shape use <a href="qcursor.html#setShape">QCursor::setShape</a>() or use the QCursor constructor which takes the shape as argument, or you can use one of the predefined cursors defined in the <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> enum.</p>
+<p>If you want to create a cursor with your own bitmap, either use the QCursor constructor which takes a bitmap and a mask or the constructor which takes a pixmap as arguments.</p>
+<p>To set or get the position of the mouse cursor use the static methods <a href="qcursor.html#pos">QCursor::pos</a>() and <a href="qcursor.html#setPos">QCursor::setPos</a>().</p>
+<p><b>Note:</b> It is possible to create a QCursor before <a href="qapplication.html">QApplication</a>, but it is not useful except as a place-holder for a real QCursor created after <a href="qapplication.html">QApplication</a>. Attempting to use a QCursor that was created before <a href="qapplication.html">QApplication</a> will result in a crash.</p>
+<a name="a-note-for-x11-users"></a>
+<h3>A Note for X11 Users</h3>
+<p>On X11, Qt supports the <a href="http://www.xfree86.org/4.3.0/Xcursor.3.html">Xcursor</a> library, which allows for full color icon themes. The table below shows the cursor name used for each <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> value. If a cursor cannot be found using the name shown below, a standard X11 cursor will be used instead. Note: X11 does not provide appropriate cursors for all possible <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> values. It is possible that some cursors will be taken from the Xcursor theme, while others will use an internal bitmap cursor.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Shape</th><th><a href="qt.html#CursorShape-enum">Qt::CursorShape</a> Value</th><th>Cursor Name</th><th>Shape</th><th><a href="qt.html#CursorShape-enum">Qt::CursorShape</a> Value</th><th>Cursor Name</th></tr></thead>
+<tr valign="top" class="odd"><td><img src="images/cursor-arrow.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::ArrowCursor</a></td><td><tt>left_ptr</tt></td><td><img src="images/cursor-sizev.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SizeVerCursor</a></td><td><tt>size_ver</tt></td></tr>
+<tr valign="top" class="even"><td><img src="images/cursor-uparrow.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::UpArrowCursor</a></td><td><tt>up_arrow</tt></td><td><img src="images/cursor-sizeh.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SizeHorCursor</a></td><td><tt>size_hor</tt></td></tr>
+<tr valign="top" class="odd"><td><img src="images/cursor-cross.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::CrossCursor</a></td><td><tt>cross</tt></td><td><img src="images/cursor-sizeb.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SizeBDiagCursor</a></td><td><tt>size_bdiag</tt></td></tr>
+<tr valign="top" class="even"><td><img src="images/cursor-ibeam.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::IBeamCursor</a></td><td><tt>ibeam</tt></td><td><img src="images/cursor-sizef.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SizeFDiagCursor</a></td><td><tt>size_fdiag</tt></td></tr>
+<tr valign="top" class="odd"><td><img src="images/cursor-wait.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::WaitCursor</a></td><td><tt>wait</tt></td><td><img src="images/cursor-sizeall.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SizeAllCursor</a></td><td><tt>size_all</tt></td></tr>
+<tr valign="top" class="even"><td><img src="images/cursor-busy.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::BusyCursor</a></td><td><tt>left_ptr_watch</tt></td><td><img src="images/cursor-hsplit.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SplitVCursor</a></td><td><tt>split_v</tt></td></tr>
+<tr valign="top" class="odd"><td><img src="images/cursor-forbidden.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::ForbiddenCursor</a></td><td><tt>forbidden</tt></td><td><img src="images/cursor-vsplit.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::SplitHCursor</a></td><td><tt>split_h</tt></td></tr>
+<tr valign="top" class="even"><td><img src="images/cursor-hand.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::PointingHandCursor</a></td><td><tt>pointing_hand</tt></td><td><img src="images/cursor-openhand.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::OpenHandCursor</a></td><td><tt>openhand</tt></td></tr>
+<tr valign="top" class="odd"><td><img src="images/cursor-whatsthis.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::WhatsThisCursor</a></td><td><tt>whats_this</tt></td><td><img src="images/cursor-closedhand.png" /></td><td><a href="qt.html#CursorShape-enum">Qt::ClosedHandCursor</a></td><td><tt>closedhand</tt></td></tr>
+</table></p>
+<p>See also <a href="qwidget.html">QWidget</a> and <a href="guibooks.html#fowler">GUI Design Handbook: Cursors</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QCursor"></a>QCursor::QCursor ()</h3>
+<p>Constructs a cursor with the default arrow shape.</p>
+<h3 class="fn"><a name="QCursor-2"></a>QCursor::QCursor ( <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> <i>shape</i> )</h3>
+<p>Constructs a cursor with the specified <i>shape</i>.</p>
+<p>See <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> for a list of shapes.</p>
+<p>See also <a href="qcursor.html#setShape">setShape</a>().</p>
+<h3 class="fn"><a name="QCursor-3"></a>QCursor::QCursor ( const <a href="qbitmap.html">QBitmap</a> &amp; <i>bitmap</i>, const <a href="qbitmap.html">QBitmap</a> &amp; <i>mask</i>, int <i>hotX</i> = -1, int <i>hotY</i> = -1 )</h3>
+<p>Constructs a custom bitmap cursor.</p>
+<p><i>bitmap</i> and <i>mask</i> make up the bitmap. <i>hotX</i> and <i>hotY</i> define the cursor's hot spot.</p>
+<p>If <i>hotX</i> is negative, it is set to the <tt>bitmap().width()/2</tt>. If <i>hotY</i> is negative, it is set to the <tt>bitmap().height()/2</tt>.</p>
+<p>The cursor <i>bitmap</i> (B) and <i>mask</i> (M) bits are combined like this:</p>
+<ul>
+<li>B=1 and M=1 gives black.</li>
+<li>B=0 and M=1 gives white.</li>
+<li>B=0 and M=0 gives transparent.</li>
+<li>B=1 and M=0 gives an XOR'd result.</li>
+</ul>
+<p>Use the global Qt color <a href="qt.html#GlobalColor-enum">Qt::color0</a> to draw 0-pixels and <a href="qt.html#GlobalColor-enum">Qt::color1</a> to draw 1-pixels in the bitmaps.</p>
+<p>Valid cursor sizes depend on the display hardware (or the underlying window system). We recommend using 32 x 32 cursors, because this size is supported on all platforms. Some platforms also support 16 x 16, 48 x 48, and 64 x 64 cursors.</p>
+<p><b>Note:</b> On Windows CE, the cursor size is fixed. If the pixmap is bigger than the system size, it will be scaled.</p>
+<p>See also <a href="qbitmap.html#QBitmap">QBitmap::QBitmap</a>() and <a href="qpixmap.html#setMask">QBitmap::setMask</a>().</p>
+<h3 class="fn"><a name="QCursor-4"></a>QCursor::QCursor ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, int <i>hotX</i> = -1, int <i>hotY</i> = -1 )</h3>
+<p>Constructs a custom pixmap cursor.</p>
+<p><i>pixmap</i> is the image. It is usual to give it a mask (set using <a href="qpixmap.html#setMask">QPixmap::setMask</a>()). <i>hotX</i> and <i>hotY</i> define the cursor's hot spot.</p>
+<p>If <i>hotX</i> is negative, it is set to the <tt>pixmap().width()/2</tt>. If <i>hotY</i> is negative, it is set to the <tt>pixmap().height()/2</tt>.</p>
+<p>Valid cursor sizes depend on the display hardware (or the underlying window system). We recommend using 32 x 32 cursors, because this size is supported on all platforms. Some platforms also support 16 x 16, 48 x 48, and 64 x 64 cursors.</p>
+<p><b>Note:</b> On Windows CE, the cursor size is fixed. If the pixmap is bigger than the system size, it will be scaled.</p>
+<p>See also <a href="qpixmap.html#QPixmap">QPixmap::QPixmap</a>() and <a href="qpixmap.html#setMask">QPixmap::setMask</a>().</p>
+<h3 class="fn"><a name="QCursor-5"></a>QCursor::QCursor ( const QCursor &amp; <i>c</i> )</h3>
+<p>Constructs a copy of the cursor <i>c</i>.</p>
+<h3 class="fn"><a name="QCursor-6"></a>QCursor::QCursor ( HCURSOR <i>cursor</i> )</h3>
+<p>Constructs a Qt cursor from the given Windows <i>cursor</i>.</p>
+<p><b>Warning:</b> This function is only available on Windows.</p>
+<p>See also <a href="qcursor.html#handle">handle</a>().</p>
+<h3 class="fn"><a name="QCursor-7"></a>QCursor::QCursor ( <a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> <i>handle</i> )</h3>
+<p>Constructs a Qt cursor from the given <i>handle</i>.</p>
+<p><b>Warning:</b> This function is only available on X11.</p>
+<p>See also <a href="qcursor.html#handle">handle</a>().</p>
+<h3 class="fn"><a name="dtor.QCursor"></a>QCursor::~QCursor ()</h3>
+<p>Destroys the cursor.</p>
+<h3 class="fn"><a name="bitmap"></a>const <a href="qbitmap.html">QBitmap</a> * QCursor::bitmap () const</h3>
+<p>Returns the cursor bitmap, or 0 if it is one of the standard cursors.</p>
+<h3 class="fn"><a name="handle"></a>HCURSOR_or_HANDLE QCursor::handle () const</h3>
+<p>Returns a platform-specific cursor handle. The <tt>HCURSOR_or_HANDLE</tt> type is <tt>HCURSOR</tt> on Windows and <a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> on X11 and Mac OS X. On <a href="qt-embedded.html">Qt for Embedded Linux</a> it is an integer.</p>
+<p><b>Warning:</b> Using the value returned by this function is not portable.</p>
+<h3 class="fn"><a name="hotSpot"></a><a href="qpoint.html">QPoint</a> QCursor::hotSpot () const</h3>
+<p>Returns the cursor hot spot, or (0, 0) if it is one of the standard cursors.</p>
+<h3 class="fn"><a name="mask"></a>const <a href="qbitmap.html">QBitmap</a> * QCursor::mask () const</h3>
+<p>Returns the cursor bitmap mask, or 0 if it is one of the standard cursors.</p>
+<h3 class="fn"><a name="pixmap"></a><a href="qpixmap.html">QPixmap</a> QCursor::pixmap () const</h3>
+<p>Returns the cursor pixmap. This is only valid if the cursor is a pixmap cursor.</p>
+<h3 class="fn"><a name="pos"></a><a href="qpoint.html">QPoint</a> QCursor::pos ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>See also <a href="qcursor.html#setPos">setPos</a>().</p>
+<h3 class="fn"><a name="setPos"></a>void QCursor::setPos ( int <i>x</i>, int <i>y</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>See also <a href="qcursor.html#pos">pos</a>().</p>
+<h3 class="fn"><a name="setPos-2"></a>void QCursor::setPos ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setShape"></a>void QCursor::setShape ( <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> <i>shape</i> )</h3>
+<p>Sets the cursor to the shape identified by <i>shape</i>.</p>
+<p>See <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> for the list of cursor shapes.</p>
+<p>See also <a href="qcursor.html#shape">shape</a>().</p>
+<h3 class="fn"><a name="shape"></a><a href="qt.html#CursorShape-enum">Qt::CursorShape</a> QCursor::shape () const</h3>
+<p>Returns the cursor shape identifier. The return value is one of the <a href="qt.html#CursorShape-enum">Qt::CursorShape</a> enum values (cast to an int).</p>
+<p>See also <a href="qcursor.html#setShape">setShape</a>().</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QCursor::operator QVariant () const</h3>
+<p>Returns the cursor as a <a href="qvariant.html">QVariant</a>.</p>
+<h3 class="fn"><a name="operator-eq"></a>QCursor &amp; QCursor::operator= ( const QCursor &amp; <i>c</i> )</h3>
+<p>Assigns <i>c</i> to this cursor and returns a reference to this cursor.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-95"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QCursor &amp; <i>cursor</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the <i>cursor</i> to the <i>stream</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-58"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QCursor &amp; <i>cursor</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the <i>cursor</i> from the <i>stream</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

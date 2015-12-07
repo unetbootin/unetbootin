@@ -1,0 +1,209 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-displaymanagement.html
+
+    \title Qt for Embedded Linux Display Management
+    \ingroup qt-embedded
+
+    When rendering, the default behavior for each Qt for Embedded Linux
+    client is to render its widgets into memory, while the server is
+    responsible for putting the contents of the memory onto the
+    screen. The server uses the screen driver to copy the content of
+    the memory to the display.
+
+    The screen driver is loaded by the server application when it
+    starts running, using Qt's \l {How to Create Qt Plugins}{plugin
+    system}.
+
+    Contents:
+
+    \tableofcontents
+
+    \section1 Available Drivers
+
+    \l{Qt for Embedded Linux} provides drivers for the Linux framebuffer, the
+    virtual framebuffer, transformed screens, VNC servers and multi
+    screens. Run the \c configure script to list the available
+    drivers:
+
+    \if defined(QTOPIA_DOCS)
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 0
+    \else
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 1
+    \endif
+
+    \if defined(QTOPIA_DOCS)
+    In the default Qtopia configuration, only an unaccelerated Linux
+    framebuffer driver (\c /dev/fb0) is enabled. The various drivers
+    can be enabled and disabled using the \c configure script. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 2
+    \else
+    In the default Qt configuration, only an unaccelerated Linux
+    framebuffer driver (\c /dev/fb0) is enabled. The various drivers
+    can be enabled and disabled using the \c configure script. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 3
+    \endif
+
+    Custom screen drivers can be implemented by subclassing the
+    QScreen class and creating a screen driver plugin (derived from
+    the QScreenDriverPlugin class). The default implementation
+    of the QScreenDriverFactory class will automatically detect the
+    plugin, loading the driver into the server application at run-time.
+
+    \section1 Specifying a Driver
+
+    To specify which driver to use, set the QWS_DISPLAY environment
+    variable. For example (if the current shell is bash, ksh, zsh or
+    sh):
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 4
+
+    The valid values for the \c <driver> argument are \c LinuxFb, \c
+    QVFb, \c VNC, \c Transformed, \c Multi and \l
+    {QScreenDriverPlugin::keys()}{keys} identifying custom drivers,
+    and the \c {<display num>} argument is used to separate screens
+    that are using the same screen driver and to enable multiple
+    displays (see the \l {Running Qt for Embedded Linux Applications}
+    documentation for more details). The driver specific options are
+    described in the table below.
+
+    \table
+    \header
+        \o Driver Specific Option \o Available For  \o Description
+    \row
+        \o \c tty=<device>
+        \o LinuxFb
+        \o Passes the device file to the console the application is
+        running on.
+    \row
+        \o \c nographicsmodeswitch
+        \o LinuxFb
+        \o Ensures that the application is not in graphics mode.
+    \row
+        \o \c littleendian
+        \o LinuxFb
+        \o Tells the driver it must handle a little-endian frame 
+	buffer in a big-endian system.
+    \row
+        \o \c mmWidth=<value> \target mmWidth
+        \o LinuxFb, QVFb
+        \o The screen's physical width (used to calculate DPI).
+    \row
+        \o \c mmHeight=<value> \target mmHeight
+        \o LinuxFb, QVFb
+        \o The screen's physical height (used to calculate DPI).
+    \row
+        \o \c <device>
+        \o LinuxFb
+        \o
+    \row
+        \o \c <subdriver>
+        \o VNC, Transformed, Multi
+        \o Specifies a subdriver.
+    \row
+        \o \c <RotX>
+        \o Transformed
+        \o Specifies the rotation of the screen. The valid values of
+        \c X are 90, 180 and 270.
+    \row
+        \o \c offset=<x,y>
+        \o Multi
+        \o Specifies the coordinates of a subscreens top-left corner
+        (by default 0,0).
+
+    \endtable
+
+    The QWS_DISPLAY environment variable can also be set using the \c
+    -display option when running an application. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 5
+
+    \table 100%
+    \header \o Subdrivers
+    \row \o
+
+
+    The VNC, Transformed and Multi screen drivers depend on
+    subdrivers. The general syntax for specifying a driver is as
+    follows:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 6
+
+    In the case of subdrivers, it is important to add a space between
+    each subdriver and before the display number to separate the
+    various drivers and displays. Note that \c Multi screen drivers
+    can have several subdrivers. For example:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 7
+
+    Note also that the VNC screen driver defaults to a virtual screen
+    driver if no subdriver is specified. In this case the VNC driver accepts a
+    few additional (optional) arguments specifying the size and depth
+    of the default virtual screen:
+
+    \list
+        \o \c {size=<width x height>}
+        \o \c {depth=<value>}
+        \o \c {mmHeight=<physical height in millimeters>}
+        \o \c {mmWidth=<physical width in millimeters>}
+    \endlist
+
+    Example running the VNC screen driver with a virtual screen of size 
+    720x480 with 32 bits per pixel:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 8
+
+    Example running the VNC screen driver on top of the Linux framebuffer
+    driver:
+
+    \snippet doc/src/snippets/code/doc.src.qt-embedded-displaymanagement.qdoc 9
+
+    \endtable
+
+*/

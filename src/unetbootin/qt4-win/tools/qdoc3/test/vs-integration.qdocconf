@@ -1,0 +1,7 @@
+include(qt.qdocconf)
+headerdirs = 
+sourcedirs =
+sourcedirs = $QTDIR/../qtvstools/main/Qt4VS2003/Doc
+imagedirs = $QTDIR/../qtvstools/main/Qt4VS2003/Doc
+outputdir = $QTDIR/../qtvstools/main/Qt4VS2003/Doc/html
+HTML.{postheader,address} = ""

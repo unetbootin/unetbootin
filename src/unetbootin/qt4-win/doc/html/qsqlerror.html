@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/sql/kernel/qsqlerror.cpp -->
+<head>
+  <title>Qt 4.4: QSqlError Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSqlError Class Reference<br /><span class="small-subtitle">[<a href="qtsql.html">QtSql</a> module]</span>
+</h1>
+<p>The QSqlError class provides SQL database error information. <a href="#details">More...</a></p>
+<pre> #include &lt;QSqlError&gt;</pre><ul>
+<li><a href="qsqlerror-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qsqlerror.html#ErrorType-enum">ErrorType</a></b> { NoError, ConnectionError, StatementError, TransactionError, UnknownError }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsqlerror.html#QSqlError">QSqlError</a></b> ( const QString &amp; <i>driverText</i> = QString(), const QString &amp; <i>databaseText</i> = QString(), ErrorType <i>type</i> = NoError, int <i>number</i> = -1 )</li>
+<li><div class="fn"/><b><a href="qsqlerror.html#QSqlError-2">QSqlError</a></b> ( const QSqlError &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qsqlerror.html#dtor.QSqlError">~QSqlError</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qsqlerror.html#databaseText">databaseText</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsqlerror.html#driverText">driverText</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsqlerror.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qsqlerror.html#number">number</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsqlerror.html#setDatabaseText">setDatabaseText</a></b> ( const QString &amp; <i>databaseText</i> )</li>
+<li><div class="fn"/>void <b><a href="qsqlerror.html#setDriverText">setDriverText</a></b> ( const QString &amp; <i>driverText</i> )</li>
+<li><div class="fn"/>void <b><a href="qsqlerror.html#setNumber">setNumber</a></b> ( int <i>number</i> )</li>
+<li><div class="fn"/>void <b><a href="qsqlerror.html#setType">setType</a></b> ( ErrorType <i>type</i> )</li>
+<li><div class="fn"/>QString <b><a href="qsqlerror.html#text">text</a></b> () const</li>
+<li><div class="fn"/>ErrorType <b><a href="qsqlerror.html#type">type</a></b> () const</li>
+<li><div class="fn"/>QSqlError &amp; <b><a href="qsqlerror.html#operator-eq">operator=</a></b> ( const QSqlError &amp; <i>other</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSqlError class provides SQL database error information.</p>
+<p>A QSqlError object can provide database-specific error data, including the <a href="qsqlerror.html#driverText">driverText</a>() and <a href="qsqlerror.html#databaseText">databaseText</a>() messages (or both concatenated together as <a href="qsqlerror.html#text">text</a>()), and the error <a href="qsqlerror.html#number">number</a>() and <a href="qsqlerror.html#type">type</a>(). The functions all have setters so that you can create and return QSqlError objects from your own classes, for example from your own SQL drivers.</p>
+<p>See also <a href="qsqldatabase.html#lastError">QSqlDatabase::lastError</a>() and <a href="qsqlquery.html#lastError">QSqlQuery::lastError</a>().</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="ErrorType-enum"></a>enum QSqlError::ErrorType</h3>
+<p>This enum type describes the context in which the error occurred, e.g&#x2e;, a connection error, a statement error, etc.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSqlError::NoError</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">No error occurred.</td></tr>
+<tr><td valign="top"><tt>QSqlError::ConnectionError</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Connection error.</td></tr>
+<tr><td valign="top"><tt>QSqlError::StatementError</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">SQL statement syntax error.</td></tr>
+<tr><td valign="top"><tt>QSqlError::TransactionError</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Transaction failed error.</td></tr>
+<tr><td valign="top"><tt>QSqlError::UnknownError</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Unknown error.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSqlError"></a>QSqlError::QSqlError ( const <a href="qstring.html">QString</a> &amp; <i>driverText</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>databaseText</i> = QString(), <a href="qsqlerror.html#ErrorType-enum">ErrorType</a> <i>type</i> = NoError, int <i>number</i> = -1 )</h3>
+<p>Constructs an error containing the driver error text <i>driverText</i>, the database-specific error text <i>databaseText</i>, the type <i>type</i> and the optional error number <i>number</i>.</p>
+<h3 class="fn"><a name="QSqlError-2"></a>QSqlError::QSqlError ( const QSqlError &amp; <i>other</i> )</h3>
+<p>Creates a copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QSqlError"></a>QSqlError::~QSqlError ()</h3>
+<p>Destroys the object and frees any allocated resources.</p>
+<h3 class="fn"><a name="databaseText"></a><a href="qstring.html">QString</a> QSqlError::databaseText () const</h3>
+<p>Returns the text of the error as reported by the database. This may contain database-specific descriptions; it may be empty.</p>
+<p>See also <a href="qsqlerror.html#setDatabaseText">setDatabaseText</a>(), <a href="qsqlerror.html#driverText">driverText</a>(), and <a href="qsqlerror.html#text">text</a>().</p>
+<h3 class="fn"><a name="driverText"></a><a href="qstring.html">QString</a> QSqlError::driverText () const</h3>
+<p>Returns the text of the error as reported by the driver. This may contain database-specific descriptions. It may also be empty.</p>
+<p>See also <a href="qsqlerror.html#setDriverText">setDriverText</a>(), <a href="qsqlerror.html#databaseText">databaseText</a>(), and <a href="qsqlerror.html#text">text</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QSqlError::isValid () const</h3>
+<p>Returns true if an error is set, otherwise false.</p>
+<p>Example:</p>
+<pre>     QSqlQueryModel model;
+     model.setQuery(&quot;select * from myTable&quot;);
+     if (model.lastError().isValid())
+         qDebug() &lt;&lt; model.lastError();</pre>
+<p>See also <a href="qsqlerror.html#type">type</a>().</p>
+<h3 class="fn"><a name="number"></a>int QSqlError::number () const</h3>
+<p>Returns the database-specific error number, or -1 if it cannot be determined.</p>
+<p>See also <a href="qsqlerror.html#setNumber">setNumber</a>().</p>
+<h3 class="fn"><a name="setDatabaseText"></a>void QSqlError::setDatabaseText ( const <a href="qstring.html">QString</a> &amp; <i>databaseText</i> )</h3>
+<p>Sets the database error text to the value of <i>databaseText</i>.</p>
+<p>See also <a href="qsqlerror.html#databaseText">databaseText</a>(), <a href="qsqlerror.html#setDriverText">setDriverText</a>(), and <a href="qsqlerror.html#text">text</a>().</p>
+<h3 class="fn"><a name="setDriverText"></a>void QSqlError::setDriverText ( const <a href="qstring.html">QString</a> &amp; <i>driverText</i> )</h3>
+<p>Sets the driver error text to the value of <i>driverText</i>.</p>
+<p>See also <a href="qsqlerror.html#driverText">driverText</a>(), <a href="qsqlerror.html#setDatabaseText">setDatabaseText</a>(), and <a href="qsqlerror.html#text">text</a>().</p>
+<h3 class="fn"><a name="setNumber"></a>void QSqlError::setNumber ( int <i>number</i> )</h3>
+<p>Sets the database-specific error number to <i>number</i>.</p>
+<p>See also <a href="qsqlerror.html#number">number</a>().</p>
+<h3 class="fn"><a name="setType"></a>void QSqlError::setType ( <a href="qsqlerror.html#ErrorType-enum">ErrorType</a> <i>type</i> )</h3>
+<p>Sets the error type to the value of <i>type</i>.</p>
+<p>See also <a href="qsqlerror.html#type">type</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> QSqlError::text () const</h3>
+<p>This is a convenience function that returns <a href="qsqlerror.html#databaseText">databaseText</a>() and <a href="qsqlerror.html#driverText">driverText</a>() concatenated into a single string.</p>
+<p>See also <a href="qsqlerror.html#driverText">driverText</a>() and <a href="qsqlerror.html#databaseText">databaseText</a>().</p>
+<h3 class="fn"><a name="type"></a><a href="qsqlerror.html#ErrorType-enum">ErrorType</a> QSqlError::type () const</h3>
+<p>Returns the error type, or -1 if the type cannot be determined.</p>
+<p>See also <a href="qsqlerror.html#setType">setType</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QSqlError &amp; QSqlError::operator= ( const QSqlError &amp; <i>other</i> )</h3>
+<p>Assigns the <i>other</i> error's values to this error.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

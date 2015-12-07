@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-intro.qdoc -->
+<head>
+  <title>Qt 4.4: What's New in Qt 4</title>
+  <link rel="next" href="qt4-tulip.html" />
+  <link rel="start" href="index.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Next: <a href="qt4-tulip.html">The Tulip Container Classes</a>]
+</p>
+<h1 class="title">What's New in Qt 4<br /><span class="subtitle"></span>
+</h1>
+<p>This document covers the most important differences between Qt 3 and Qt 4. Although it is not intended to be a comprehensive porting guide, it tells you about the most important portability issues that you may encounter. It also explains how to turn on Qt 3 compatibility support.</p>
+<ul><li><a href="#new-technologies-in-qt-4">New Technologies in Qt 4</a></li>
+<li><a href="#recent-additions-to-qt-4">Recent Additions to Qt 4</a></li>
+<li><a href="#significant-improvements">Significant Improvements</a></li>
+<li><a href="#build-system">Build System</a></li>
+<li><a href="#include-syntax">Include Syntax</a></li>
+<li><a href="#namespaces">Namespaces</a></li>
+<li><a href="#qobject-qwidget-constructors">QObject/QWidget Constructors</a></li>
+<li><a href="#dynamic-casts">Dynamic Casts</a></li>
+<li><a href="#qpointer-t">QPointer&lt;T&gt;</a></li>
+<li><a href="#paint-events">Paint Events</a></li>
+<li><a href="#qt-3-support-layer">Qt 3 Support Layer</a></li>
+</ul>
+<a name="new-technologies-in-qt-4"></a>
+<h2>New Technologies in Qt 4</h2>
+<p>Qt 4 introduces the following core technologies:</p>
+<ul>
+<li><a href="qt4-tulip.html">Tulip</a>, a new set of template container classes.</li>
+<li><a href="qt4-interview.html">Interview</a>, a model/view architecture for item views.</li>
+<li><a href="qt4-arthur.html">Arthur</a>, the Qt 4 painting framework.</li>
+<li><a href="qt4-scribe.html">Scribe</a>, the Unicode text renderer with a public API for performing low-level text layout.</li>
+<li><a href="qt4-mainwindow.html">Mainwindow</a>, a modern action-based mainwindow, toolbar, menu, and docking architecture.</li>
+<li>The new <a href="qt4-designer.html"><i>Qt Designer</i></a> user interface design tool.</li>
+</ul>
+<a name="recent-additions-to-qt-4"></a>
+<h2>Recent Additions to Qt 4</h2>
+<p>The following features have been added to Qt since the first release of Qt 4:</p>
+<p>In Qt 4.3:</p>
+<ul>
+<li>Support for different <a href="qt4-mainwindow.html">main window paradigms and styles</a>, such as those found in Visual Studio or KDevelop.</li>
+<li>The <a href="qtscript.html">QtScript</a> module, providing support for application scripting with ECMAScript.</li>
+<li>Improved graphics features, including an experimental Direct3D paint engine and improved provision for hardware accelerated rendering with OpenGL, and support for OpenGL ES in Qt for Embedded Linux.</li>
+<li><a href="qsvggenerator.html">Scalable Vector Graphics (SVG) export</a>, allowing SVG drawings to be created using the standard <a href="qpainter.html">QPainter</a> API.</li>
+<li>Support for arbitrary matrix transformations and set operations on painter paths.</li>
+<li>Native look and feel on Windows Vista; improved look and feel on Mac OS X.</li>
+<li>An improved <a href="qmdiarea.html">Multiple Document Interface (MDI)</a> implementation.</li>
+<li>Continuous improvements to <i>Qt Designer</i>, including support for <a href="designer-editing-mode.html#the-property-editor">dynamic properties</a>.</li>
+<li>Support for Secure Socket Layer (SSL) communications via the <a href="qsslsocket.html">QSslSocket</a> class.</li>
+<li>Support for XML Localization Interchange File Format (XLIFF) files in <i>Qt Linguist</i>.</li>
+<li>A new font subsystem for Qtopia Core (Qt for Embedded Linux).</li>
+</ul>
+<p>In Qt 4.2:</p>
+<ul>
+<li>The <a href="graphicsview.html#graphics-view">Graphics View</a> framework for producing interactive graphics.</li>
+<li><a href="desktop-integration.html">Desktop integration</a> facilities for applications.</li>
+<li><a href="stylesheet.html">Qt Style Sheets</a> enable easy, yet powerful customization of user interfaces.</li>
+<li>Support for the <a href="intro-to-dbus.html">D-Bus</a> Inter-Process Communication (IPC) and Remote Procedure Calling (RPC) mechanism.</li>
+<li>An <a href="demos-undo.html">Undo framework</a> based on the <a href="guibooks.html#design-patterns">Command pattern</a>.</li>
+<li>Support for model-based <a href="qcompleter.html">text completion</a> in standard and custom widgets.</li>
+<li>New widgets and GUI features, such as <a href="qcalendarwidget.html">QCalendarWidget</a> and <a href="qglframebufferobject.html">QGLFramebufferObject</a>.</li>
+<li>Classes to provide higher level application infrastructure, such as <a href="qfilesystemwatcher.html">QFileSystemWatcher</a> and <a href="qdatawidgetmapper.html">QDataWidgetMapper</a>.</li>
+</ul>
+<p>In Qt 4.1:</p>
+<ul>
+<li>Integrated support for rendering <a href="qt4-arthur.html#svg-rendering-support">Scalable Vector Graphics</a> (SVG) drawings and animations.</li>
+<li>Support for <a href="qwidget.html#transparency-and-double-buffering">child widget transparency</a> on all platforms.</li>
+<li>A Portable Document Format (PDF) backend for Qt's printing system.</li>
+<li>A <a href="qtestlib-manual.html">unit testing framework</a> for Qt applications and libraries.</li>
+<li>Modules for <a href="qtdesigner.html">extending <i>Qt Designer</i></a> and <a href="qtuitools.html">dynamic user interface building</a>.</li>
+<li>New <a href="model-view-proxy-models.html">proxy models</a> to enable view-specific sorting and filtering of data displayed using item views.</li>
+<li>Support for <a href="install-mac.html">universal binaries</a> on Mac OS X.</li>
+<li>Additional features for developers using <a href="qtopengl.html">OpenGL</a>, such as support for pixel and sample buffers.</li>
+<li>A flexible <a href="qsyntaxhighlighter.html">syntax highlighting class</a> based on the <a href="qt4-scribe.html#scribe">Scribe</a> rich text framework.</li>
+<li>Support for <a href="qnetworkproxy.html">network proxy</a> servers using the SOCKS5 protocol.</li>
+<li>Support for OLE verbs and MIME data handling in <a href="activeqt.html#activeqt">ActiveQt</a>.</li>
+</ul>
+<p>For more information about improvements in the current release, see the <a href="http://www.trolltech.com/developer/notes/changes/changes-4.1.4/">detailed list of changes</a>.</p>
+<a name="significant-improvements"></a>
+<h2>Significant Improvements</h2>
+<p>The following modules have been significantly improved for Qt 4:</p>
+<ul>
+<li>A fully cross-platform <a href="accessibility.html">accessibility</a> module, with support for the emerging SP-API Unix standard in addition to Microsoft and Mac Accessibility.</li>
+<li>The <a href="qt4-sql.html">SQL module</a>, which is now based on the Interview model/view framework.</li>
+<li>The <a href="qt4-network.html">network module</a>, with better support for UDP and synchronous sockets.</li>
+<li>The <a href="qt4-styles.html">style API</a>, which is now decoupled from the widgets, meaning that you can draw any user interface element on any device (widget, pixmap, etc.)&#x2e;</li>
+<li>Enhanced <a href="qt4-threads.html">thread support</a>, with signal-slot connections across threads and per-thread event loops.</li>
+<li>A new <a href="resources.html#resource-system">resource system</a> for embedding images and other resource files into the application executable.</li>
+</ul>
+<a name="build-system"></a>
+<h2>Build System</h2>
+<p>Unlike previous Qt releases, Qt 4 is a collection of smaller libraries:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Library</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qtcore.html">QtCore</a></td><td>Core non-GUI functionality</td></tr>
+<tr valign="top" class="even"><td><a href="qtgui.html">QtGui</a></td><td>Core GUI functionality</td></tr>
+<tr valign="top" class="odd"><td><a href="qtnetwork.html">QtNetwork</a></td><td>Network module</td></tr>
+<tr valign="top" class="even"><td><a href="qtopengl.html">QtOpenGL</a></td><td>OpenGL module</td></tr>
+<tr valign="top" class="odd"><td><a href="qtsql.html">QtSql</a></td><td>SQL module</td></tr>
+<tr valign="top" class="even"><td><a href="qtsvg.html">QtSvg</a></td><td>SVG rendering classes</td></tr>
+<tr valign="top" class="odd"><td><a href="qtxml.html">QtXml</a></td><td>XML module</td></tr>
+<tr valign="top" class="even"><td><a href="qt3support.html">Qt3Support</a></td><td>Qt 3 support classes</td></tr>
+<tr valign="top" class="odd"><td><a href="qaxcontainer.html">QAxContainer</a></td><td><a href="activeqt.html#activeqt">ActiveQt</a> client extension</td></tr>
+<tr valign="top" class="even"><td><a href="qaxserver.html">QAxServer</a></td><td><a href="activeqt.html#activeqt">ActiveQt</a> server extension</td></tr>
+<tr valign="top" class="odd"><td><a href="qtassistant.html">QtAssistant</a></td><td>Classes for launching Qt Assistant</td></tr>
+<tr valign="top" class="even"><td><a href="qtdesigner.html">QtDesigner</a></td><td>Classes for extending and embedding Qt Designer</td></tr>
+<tr valign="top" class="odd"><td><a href="qtuitools.html">QtUiTools</a></td><td>Classes for dynamic GUI generation</td></tr>
+<tr valign="top" class="even"><td><a href="qttest.html">QtTest</a></td><td>Tool classes for unit testing</td></tr>
+</table></p>
+<p><a href="qtcore.html">QtCore</a> contains tool classes like <a href="qstring.html">QString</a>, <a href="qlist.html">QList</a>, and <a href="qfile.html">QFile</a>, as well as kernel classes like <a href="qobject.html">QObject</a> and <a href="qtimer.html">QTimer</a>. The <a href="qapplication.html">QApplication</a> class has been refactored so that it can be used in non-GUI applications. It is split into <a href="qcoreapplication.html">QCoreApplication</a> (in <a href="qtcore.html">QtCore</a>) and <a href="qapplication.html">QApplication</a> (in <a href="qtgui.html">QtGui</a>).</p>
+<p>This split makes it possible to develop server applications using Qt without linking in any unnecessary GUI-related code and without requiring GUI-related system libraries to be present on the target machine (e.g&#x2e; Xlib on X11, Carbon on Mac OS X).</p>
+<p>If you use qmake to generate your makefiles, qmake will by default link your application against <a href="qtcore.html">QtCore</a> and <a href="qtgui.html">QtGui</a>. To remove the dependency upon <a href="qtgui.html">QtGui</a>, add the line</p>
+<pre>         QT -= gui</pre>
+<p>to your .pro file. To enable the other libraries, add the line</p>
+<pre>         QT += network opengl sql qt3support</pre>
+<p>Another change to the build system is that moc now understands preprocessor directives. qmake automatically passes the defines set for your project (using &quot;DEFINES +=&quot;) on to moc, which has its own built-in C++ preprocessor.</p>
+<p>To compile code that uses .ui files, you will also need this line in the .pro file:</p>
+<pre>         CONFIG += uic3</pre>
+<a name="include-syntax"></a>
+<h2>Include Syntax</h2>
+<p>The syntax for including Qt class definitions has become</p>
+<pre>         #include &lt;QClassName&gt;</pre>
+<p>For example:</p>
+<pre>         #include &lt;QString&gt;
+         #include &lt;QApplication&gt;
+         #include &lt;QSqlTableModel&gt;</pre>
+<p>This is guaranteed to work for any public Qt class. The old syntax,</p>
+<pre>         #include &lt;qclassname.h&gt;</pre>
+<p>still works, but we encourage you to switch to the new syntax.</p>
+<p>If you attempt to include a header file from a library that isn't linked against the application, this will result in a compile-time warning (e.g&#x2e;, &quot;<a href="qsqlquery.html">QSqlQuery</a>: No such file or directory&quot;). You can remedy to this problem either by removing the offending include or by specifying the missing library in the QT entry of your <tt>.pro</tt> file (see <a href="buildsystem.html">Build System</a> above).</p>
+<p>To include the definitions for all the classes in a library, simply specify the name of that library. For example:</p>
+<pre>         #include &lt;QtCore&gt;</pre>
+<a name="namespaces"></a>
+<h2>Namespaces</h2>
+<p>Qt 2 introduced a class called Qt for global-like constants (e.g&#x2e;, <tt>Qt::yellow</tt>). The C++ namespace construct was not used because not all compilers understood it when it was released.</p>
+<p>With Qt 4, the Qt class has become the Qt namespace. If you want to access a constant that is part of the Qt namespace, prefix it with <tt>Qt:</tt>: (e.g&#x2e;, <tt>Qt::yellow</tt>), or add the directive</p>
+<pre>         using namespace Qt;</pre>
+<p>at the top of your source files, after your <tt>#include</tt> directives. If you use the <tt>using namespace</tt> syntax you don't need the prefix (e.g&#x2e;, <tt>yellow</tt> is sufficient).</p>
+<p>When porting Qt 3 applications, you may run into some source compatibility problems with some of these symbols. For example, in Qt 3, it was legal to write <tt>QWidget::yellow</tt> instead of <tt>Qt::yellow</tt>, because <a href="qwidget.html">QWidget</a> inherited from Qt. This won't work in Qt 4; you must write <tt>Qt::yellow</tt> or add the &quot;using namespace&quot; directive and drop the <tt>Qt:</tt>: prefix.</p>
+<p>The <a href="qt3to4.html">qt3to4</a> porting tool automates this conversion.</p>
+<a name="qobject-qwidget-constructors"></a>
+<h2>QObject/QWidget Constructors</h2>
+<p>In Qt 4 we have tried to simplify the constructors of <a href="qobject.html">QObject</a>/<a href="qwidget.html">QWidget</a> subclasses. This makes subclassing easier, at the same time as it helps make the Qt library more efficient.</p>
+<p>Constructors no longer take a &quot;const char *name&quot; parameter. If you want to specify a name for a <a href="qobject.html">QObject</a>, you must call <a href="qobject.html#objectName-prop">QObject::setObjectName</a>() after construction. The object name is now a <a href="qstring.html">QString</a>. The reasons for this change are:</p>
+<ul>
+<li>Code that used it looked confusing, for example:<pre>         QLabel *label1 = new QLabel(&quot;Hello&quot;, this);
+         QLabel *label2 = new QLabel(this, &quot;Hello&quot;);</pre>
+<p><tt>label1</tt> is a <a href="qlabel.html">QLabel</a> that displays the text &quot;Hello&quot;; <tt>label2</tt> is a <a href="qlabel.html">QLabel</a> with no text, with the object name &quot;Hello&quot;.</p>
+</li>
+<li>From surveys we did, most users didn't use the name, although they blindly followed Qt's convention and provided a &quot;const char *name&quot; in their subclasses's constructors. For example:<pre>         MyWidget::MyWidget(QWidget *parent, const char *name)
+             : QWidget(parent, name)
+         {
+             ...
+         }</pre>
+</li>
+<li>The name parameter was in Qt since version 1, and it always was documented as: &quot;It is not very useful in the current version of Qt, but it will become increasingly important in the future.&quot; Ten years later, it still hasn't fulfilled its promise.</li>
+</ul>
+<p><a href="qwidget.html">QWidget</a>'s <tt>WFlags</tt> data type has been split in two: <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> specifies low-level window flags (the type of window and the frame style), whereas <a href="qt.html#WidgetAttribute-enum">Qt::WidgetAttribute</a> specifies various higher-level attributes about the widget (e.g&#x2e;, WA_StaticContents). Widget attributes can be set at any time using <a href="qwidget.html#setAttribute">QWidget::setAttribute</a>(); low-level window flags can be passed to the <a href="qwidget.html">QWidget</a> constructor or set later using <a href="qwidget.html#setParent">QWidget::setParent</a>(). As a consequence, the constructors of most <a href="qwidget.html">QWidget</a> subclasses don't need to provide a <tt>WFlags</tt> parameter.</p>
+<p>The <i>parent</i> parameter of all <a href="qobject.html">QObject</a> classes in Qt defaults to a 0 pointer, as it used to do in Qt 1. This enables a style of programming where widgets are created without parents and then inserted in a layout, at which point the layout automatically reparents them.</p>
+<a name="dynamic-casts"></a>
+<h2>Dynamic Casts</h2>
+<p>Qt 4 provides a qobject_cast&lt;&gt;() function that performs a dynamic cast based on the meta-information generated by moc for <a href="qobject.html">QObject</a> subclasses. Unlike the standard C++ <a href="#dynamic-casts">dynamic_cast</a>&lt;&gt;() construct, qobject_cast&lt;&gt;() works even when RTTI is disabled, and it works correctly across DLL boundaries.</p>
+<p>Here's the Qt 3 idiom to cast a type to a subtype:</p>
+<pre>         // DEPRECATED
+         if (obj-&gt;inherits(&quot;QPushButton&quot;)) {
+             QPushButton *pushButton = (QPushButton *)obj;
+             ...
+         }</pre>
+<p>The Qt 4 idiom is both cleaner and safer, because typos will always result in compiler errors:</p>
+<pre>         QPushButton *pushButton = qobject_cast&lt;QPushButton *&gt;(obj);
+         if (pushButton) {
+             ...
+         }</pre>
+<a name="qpointer-t"></a>
+<h2>QPointer&lt;T&gt;</h2>
+<p>The <a href="qpointer.html">QPointer</a>&lt;T&gt; class provides a pointer to type T (where T inherits from <a href="qobject.html">QObject</a>) that is automatically set to 0 when the referenced object is destroyed. Guarded pointers are useful whenever you want to store a pointer to an object you do not own.</p>
+<p>Example:</p>
+<pre>         QLabel *label = new QLabel;
+         QPointer&lt;QLabel&gt; safeLabel = label;
+         safeLabel-&gt;setText(&quot;Hello world!&quot;);
+         delete label;
+         // safeLabel is now 0, whereas label is a dangling pointer</pre>
+<p><a href="qpointer.html">QPointer</a>&lt;T&gt; is more or less the same as the old QGuardedPtr&lt;T&gt; class, except that it is now implemented in a much more lightweight manner than before. The cost of one <a href="qpointer.html">QPointer</a>&lt;T&gt; object is now approximately the same as that of a signal--slot connection.</p>
+<a name="paint-events"></a>
+<h2>Paint Events</h2>
+<p>Qt 4 supports double buffering transparently on all platforms. This feature can be turned off on a per-widget basis by calling QWidget::setAttribute(<a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a>).</p>
+<p>A consequence of this is that all painting must now be done from the paintEvent() function. This is also required by the HIView API on Mac OS X. In practice, this is seldom a problem, since you can call update() from anywhere in your code to create a paint event, with the region to update as the argument.</p>
+<p>To help porting, <a href="qwidget.html">QWidget</a> supports a <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOutsidePaintEvent</a> attribute that can be set to make it possible to paint outside <a href="qwidget.html#paintEvent">paintEvent()</a> on Windows and X11.</p>
+<a name="qt-3-support-layer"></a>
+<h2>Qt 3 Support Layer</h2>
+<p>Qt 4 provides an extension library that applications based on Qt 3, called <a href="qt3support.html">Qt3Support</a>, that Qt applications can link against. This allows for more compatibility than ever before, without bloating Qt.</p>
+<ul>
+<li>Classes that have been replaced by a different class with the same name, such as <a href="qlistview.html">QListView</a>, and classes that no longer exist in Qt 4 are available with a <tt>3</tt> in their name (e.g&#x2e;, <a href="q3listview.html">Q3ListView</a>, <a href="q3accel.html">Q3Accel</a>).</li>
+<li>Other classes provide compatibility functions. Most of these are implemented inline, so that they don't bloat the Qt libraries.</li>
+</ul>
+<p>To enable the Qt 3 support classes and functions, add the line</p>
+<pre>         QT += qt3support</pre>
+<p>to your <tt>.pro</tt> file.</p>
+<p>On Visual C++ 7 and GCC 3.2+, using compatibility functions often results in a compiler warning (e.g&#x2e;, &quot;'find' is deprecated&quot;). If you want to turn off that warning, add the line</p>
+<pre>         DEFINES += QT3_SUPPORT</pre>
+<p>to your <tt>.pro</tt> file.</p>
+<p>If you want to use compatibility functions but don't want to link against the <a href="qt3support.html">Qt3Support</a> library, add the line</p>
+<pre>         DEFINES += QT3_SUPPORT_WARNINGS</pre>
+<p>or</p>
+<pre>         DEFINES += QT3_SUPPORT</pre>
+<p>to your <tt>.pro</tt> file, depending on whether you want compatibility function calls to generate compiler warnings or not.</p>
+<p>
+[Next: <a href="qt4-tulip.html">The Tulip Container Classes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

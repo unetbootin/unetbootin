@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qerrormessage.cpp -->
+<head>
+  <title>Qt 4.4: QErrorMessage Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QErrorMessage Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QErrorMessage class provides an error message display dialog. <a href="#details">More...</a></p>
+<pre> #include &lt;QErrorMessage&gt;</pre><p>Inherits <a href="qdialog.html">QDialog</a>.</p>
+<ul>
+<li><a href="qerrormessage-members.html">List of all members, including inherited members</a></li>
+<li><a href="qerrormessage-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qerrormessage.html#QErrorMessage">QErrorMessage</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qerrormessage.html#dtor.QErrorMessage">~QErrorMessage</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>5 public functions inherited from <a href="qdialog.html#public-functions">QDialog</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qerrormessage.html#showMessage">showMessage</a></b> ( const QString &amp; <i>message</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public slots inherited from <a href="qdialog.html#public-slots">QDialog</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QErrorMessage * <b><a href="qerrormessage.html#qtHandler">qtHandler</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qdialog.html#properties">QDialog</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>3 signals inherited from <a href="qdialog.html#signals">QDialog</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QErrorMessage class provides an error message display dialog.</p>
+<p>An error message widget consists of a text label and a checkbox. The checkbox lets the user control whether the same error message will be displayed again in the future, typically displaying the text, &quot;Show this message again&quot; translated into the appropriate local language.</p>
+<p>For production applications, the class can be used to display messages which the user only needs to see once. To use QErrorMessage like this, you create the dialog in the usual way, and show it by calling the <a href="qerrormessage.html#showMessage">showMessage</a>() slot or connecting signals to it.</p>
+<p>The static <a href="qerrormessage.html#qtHandler">qtHandler</a>() function installs a message handler using <a href="qtglobal.html#qInstallMsgHandler">qInstallMsgHandler</a>() and creates a QErrorMessage that displays <a href="qtglobal.html#qDebug">qDebug</a>(), <a href="qtglobal.html#qWarning">qWarning</a>() and <a href="qtglobal.html#qFatal">qFatal</a>() messages. This is most useful in environments where no console is available to display warnings and error messages.</p>
+<p>In both cases QErrorMessage will queue pending messages and display them in order, with each new message being shown as soon as the user has accepted the previous message. Once the user has specified that a message is not to be shown again it is automatically skipped, and the dialog will show the next appropriate message in the queue.</p>
+<p>The <a href="dialogs-standarddialogs.html">Standard Dialogs</a> example shows how to use QErrorMessage as well as other built-in Qt dialogs.</p>
+<p align="center"><img src="images/qerrormessage.png" /></p><p>See also <a href="qmessagebox.html">QMessageBox</a>, <a href="qstatusbar.html#showMessage">QStatusBar::showMessage</a>(), and <a href="dialogs-standarddialogs.html">Standard Dialogs Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QErrorMessage"></a>QErrorMessage::QErrorMessage ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs and installs an error handler window with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QErrorMessage"></a>QErrorMessage::~QErrorMessage ()</h3>
+<p>Destroys the error message dialog.</p>
+<h3 class="fn"><a name="qtHandler"></a>QErrorMessage * QErrorMessage::qtHandler ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a pointer to a <a href="qerrormessage.html">QErrorMessage</a> object that outputs the default Qt messages. This function creates such an object, if there isn't one already.</p>
+<h3 class="fn"><a name="showMessage"></a>void QErrorMessage::showMessage ( const <a href="qstring.html">QString</a> &amp; <i>message</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Shows the given <i>message</i>, and returns immediately. This function does nothing if the user has requested that <i>message</i> should not be shown again.</p>
+<p>Normally, <i>message</i> is shown at once, but if there are pending messages, <i>message</i> is queued for later display.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

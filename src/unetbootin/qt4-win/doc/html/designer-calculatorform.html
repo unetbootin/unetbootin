@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/calculatorform.qdoc -->
+<head>
+  <title>Qt 4.4: Calculator Form Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Calculator Form Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="designer-calculatorform-calculatorform-cpp.html">designer/calculatorform/calculatorform.cpp</a></li>
+<li><a href="designer-calculatorform-calculatorform-h.html">designer/calculatorform/calculatorform.h</a></li>
+<li><a href="designer-calculatorform-calculatorform-ui.html">designer/calculatorform/calculatorform.ui</a></li>
+<li><a href="designer-calculatorform-main-cpp.html">designer/calculatorform/main.cpp</a></li>
+<li><a href="designer-calculatorform-calculatorform-pro.html">designer/calculatorform/calculatorform.pro</a></li>
+</ul>
+<p>The Calculator Form Example shows how to use a form created with <i>Qt Designer</i> in an application by using the user interface information from a <a href="qwidget.html">QWidget</a> subclass. We use <a href="designer-using-a-component.html">uic's auto-connection</a> feature to automatically connect signals from widgets on the form to slots in our code.</p>
+<p align="center"><img src="images/calculatorform-example.png" alt="Screenshot of the Calculator Form example" /></p><p>The example presents two spin boxes that are used to input integer values and a label that shows their sum. Whenever either of the spin boxes are updated, the signal-slot connections between the widgets and the form ensure that the label is also updated.</p>
+<a name="preparation"></a>
+<h2>Preparation</h2>
+<p>The user interface for this example is designed completely using <i>Qt Designer</i>. The result is a .ui file describing the form, the widgets used, any signal-slot connections between them, and other standard user interface properties.</p>
+<p>To ensure that the example can use this file, we need to include a <tt>FORMS</tt> declaration in the example's project file:</p>
+<pre> FORMS       = calculatorform.ui</pre>
+<p>When the project is built, <tt>uic</tt> will create a header file that lets us construct the form.</p>
+<a name="calculatorform-class-definition"></a>
+<h2>CalculatorForm Class Definition</h2>
+<p>The <tt>CalculatorForm</tt> class uses the user interface described in the <tt>calculatorform.ui</tt> file. To access the form and its contents, we need to include the <tt>ui_calculatorform.h</tt> header file created by <tt>uic</tt> during the build process:</p>
+<pre> #include &quot;ui_calculatorform.h&quot;</pre>
+<p>We define the <tt>CalculatorForm</tt> class by subclassing <a href="qwidget.html">QWidget</a> because the form itself is based on <a href="qwidget.html">QWidget</a>:</p>
+<pre> class CalculatorForm : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     CalculatorForm(QWidget *parent = 0);
+
+ private slots:
+     void on_inputSpinBox1_valueChanged(int value);
+     void on_inputSpinBox2_valueChanged(int value);
+
+ private:
+     Ui::CalculatorForm ui;
+ };</pre>
+<p>Apart from the constructor, the class contains two private slots that are named according to the auto-connection naming convention required by <tt>uic</tt>. The private <tt>ui</tt> member variable refers to the form, and is used to access the contents of the user interface.</p>
+<a name="calculatorform-class-implementation"></a>
+<h2>CalculatorForm Class Implementation</h2>
+<p>The constructor simply calls the base class's constructor and sets up the form's user interface.</p>
+<pre> CalculatorForm::CalculatorForm(QWidget *parent)
+     : QWidget(parent)
+ {
+     ui.setupUi(this);
+ }</pre>
+<p>The user interface is set up with the <tt>setupUI()</tt> function. We pass <tt>this</tt> as the argument to this function to use the <tt>CalculatorForm</tt> widget itself as the container for the user interface.</p>
+<p>To automatically connect signals from the spin boxes defined in the user interface, we use the naming convention that indicates which widgets and their signals in the user interface should be connected to each slot. The first slot is called whenever the spin box called &quot;inputSpinBox1&quot; in the user interface emits the <a href="qspinbox.html#valueChanged">valueChanged()</a> signal:</p>
+<pre> void CalculatorForm::on_inputSpinBox1_valueChanged(int value)
+ {
+     ui.outputWidget-&gt;setText(QString::number(value + ui.inputSpinBox2-&gt;value()));
+ }</pre>
+<p>When this occurs, we use the value supplied by the signal to update the output label by setting its new text directly. We access the output label and the other spin box via the class's private <tt>ui</tt> variable.</p>
+<p>The second slot is called whenever the second spin box, called &quot;inputSpinBox2&quot;, emits the <a href="qspinbox.html#valueChanged">valueChanged()</a> signal:</p>
+<pre> void CalculatorForm::on_inputSpinBox2_valueChanged(int value)
+ {
+     ui.outputWidget-&gt;setText(QString::number(value + ui.inputSpinBox1-&gt;value()));
+ }</pre>
+<p>In this case, the value from the first spin box is read and combined with the value supplied by the signal. Again, the output label is updated directly via the <tt>ui</tt> variable.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

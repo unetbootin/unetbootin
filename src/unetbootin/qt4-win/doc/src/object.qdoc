@@ -1,0 +1,89 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page object.html
+    \title Qt Object Model
+    \ingroup architecture
+    \brief A description of the powerful features made possible by Qt's dynamic object model.
+
+    The standard C++ object model provides very efficient runtime
+    support for the object paradigm. But its static nature is
+    inflexibile in certain problem domains. Graphical user interface
+    programming is a domain that requires both runtime efficiency and
+    a high level of flexibility. Qt provides this, by combining the
+    speed of C++ with the flexibility of the Qt Object Model.
+
+    Qt adds these features to C++:
+
+    \list
+    \o a very powerful mechanism for seamless object
+       communication called \l{signals and slots}
+    \o queryable and designable \l{Qt's Property System}{object
+       properties}
+    \o powerful \l{events and event filters}
+    \o contextual \l{i18n}{string translation for internationalization}
+    \o sophisticated interval driven \l timers that make it possible
+       to elegantly integrate many tasks in an event-driven GUI
+    \o hierarchical and queryable \l{Object Trees and Object Ownership}{object
+       trees} that organize object ownership in a natural way
+    \o guarded pointers (QPointer) that are automatically
+       set to 0 when the referenced object is destroyed, unlike normal C++
+       pointers which become dangling pointers when their objects are destroyed
+    \o a \l{metaobjects.html#qobjectcast}{dynamic cast} that works across
+       library boundaries.
+    \endlist
+
+    Many of these Qt features are implemented with standard C++
+    techniques, based on inheritance from QObject. Others, like the
+    object communication mechanism and the dynamic property system,
+    require the \l{Meta-Object System} provided
+    by Qt's own \l{moc}{Meta-Object Compiler (moc)}.
+
+    The meta-object system is a C++ extension that makes the language
+    better suited to true component GUI programming. Although
+    templates can be used to extend C++, the meta-object system
+    provides benefits using standard C++ that cannot be achieved with
+    templates; see \l{Why Doesn't Qt Use Templates for Signals and
+    Slots?}
+*/

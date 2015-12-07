@@ -1,0 +1,626 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/tetrix.qdoc -->
+<head>
+  <title>Qt 4.4: Tetrix Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Tetrix Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="widgets-tetrix-tetrixboard-cpp.html">widgets/tetrix/tetrixboard.cpp</a></li>
+<li><a href="widgets-tetrix-tetrixboard-h.html">widgets/tetrix/tetrixboard.h</a></li>
+<li><a href="widgets-tetrix-tetrixpiece-cpp.html">widgets/tetrix/tetrixpiece.cpp</a></li>
+<li><a href="widgets-tetrix-tetrixpiece-h.html">widgets/tetrix/tetrixpiece.h</a></li>
+<li><a href="widgets-tetrix-tetrixwindow-cpp.html">widgets/tetrix/tetrixwindow.cpp</a></li>
+<li><a href="widgets-tetrix-tetrixwindow-h.html">widgets/tetrix/tetrixwindow.h</a></li>
+<li><a href="widgets-tetrix-main-cpp.html">widgets/tetrix/main.cpp</a></li>
+<li><a href="widgets-tetrix-tetrix-pro.html">widgets/tetrix/tetrix.pro</a></li>
+</ul>
+<p>The Tetrix example is a Qt version of the classic Tetrix game.</p>
+<p align="center"><img src="images/tetrix-example.png" /></p><p>The object of the game is to stack pieces dropped from the top of the playing area so that they fill entire rows at the bottom of the playing area.</p>
+<p>When a row is filled, all the blocks on that row are removed, the player earns a number of points, and the pieces above are moved down to occupy that row. If more than one row is filled, the blocks on each row are removed, and the player earns extra points.</p>
+<p>The <b>Left</b> cursor key moves the current piece one space to the left, the <b>Right</b> cursor key moves it one space to the right, the <b>Up</b> cursor key rotates the piece counter-clockwise by 90 degrees, and the <b>Down</b> cursor key rotates the piece clockwise by 90 degrees.</p>
+<p>To avoid waiting for a piece to fall to the bottom of the board, press <b>D</b> to immediately move the piece down by one row, or press the <b>Space</b> key to drop it as close to the bottom of the board as possible.</p>
+<p>This example shows how a simple game can be created using only three classes:</p>
+<ul>
+<li>The <tt>TetrixWindow</tt> class is used to display the player's score, number of lives, and information about the next piece to appear.</li>
+<li>The <tt>TetrixBoard</tt> class contains the game logic, handles keyboard input, and displays the pieces on the playing area.</li>
+<li>The <tt>TetrixPiece</tt> class contains information about each piece.</li>
+</ul>
+<p>In this approach, the <tt>TetrixBoard</tt> class is the most complex class, since it handles the game logic and rendering. One benefit of this is that the <tt>TetrixWindow</tt> and <tt>TetrixPiece</tt> classes are very simple and contain only a minimum of code.</p>
+<a name="tetrixwindow-class-definition"></a>
+<h2>TetrixWindow Class Definition</h2>
+<p>The <tt>TetrixWindow</tt> class is used to display the game information and contains the playing area:</p>
+<pre> class TetrixWindow : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     TetrixWindow();
+
+ private:
+     QLabel *createLabel(const QString &amp;text);
+
+     TetrixBoard *board;
+     QLabel *nextPieceLabel;
+     QLCDNumber *scoreLcd;
+     QLCDNumber *levelLcd;
+     QLCDNumber *linesLcd;
+     QPushButton *startButton;
+     QPushButton *quitButton;
+     QPushButton *pauseButton;
+ };</pre>
+<p>We use private member variables for the board, various display widgets, and buttons to allow the user to start a new game, pause the current game, and quit.</p>
+<p>Although the window inherits <a href="qwidget.html">QWidget</a>, the constructor does not provide an argument to allow a parent widget to be specified. This is because the window will always be used as a top-level widget.</p>
+<a name="tetrixwindow-class-implementation"></a>
+<h2>TetrixWindow Class Implementation</h2>
+<p>The constructor sets up the user interface elements for the game:</p>
+<pre> TetrixWindow::TetrixWindow()
+ {
+     board = new TetrixBoard;</pre>
+<p>We begin by constructing a <tt>TetrixBoard</tt> instance for the playing area and a label that shows the next piece to be dropped into the playing area; the label is initially empty.</p>
+<p>Three <a href="qlcdnumber.html">QLCDNumber</a> objects are used to display the score, number of lives, and lines removed. These initially show default values, and will be filled in when a game begins:</p>
+<pre>     scoreLcd = new QLCDNumber(5);
+     scoreLcd-&gt;setSegmentStyle(QLCDNumber::Filled);</pre>
+<p>Three buttons with shortcuts are constructed so that the user can start a new game, pause the current game, and quit the application:</p>
+<pre>     startButton = new QPushButton(tr(&quot;&amp;Start&quot;));
+     startButton-&gt;setFocusPolicy(Qt::NoFocus);
+     quitButton = new QPushButton(tr(&quot;&amp;Quit&quot;));
+     quitButton-&gt;setFocusPolicy(Qt::NoFocus);
+     pauseButton = new QPushButton(tr(&quot;&amp;Pause&quot;));
+     pauseButton-&gt;setFocusPolicy(Qt::NoFocus);</pre>
+<p>These buttons are configured so that they never receive the keyboard focus; we want the keyboard focus to remain with the <tt>TetrixBoard</tt> instance so that it receives all the keyboard events. Nonetheless, the buttons will still respond to <b>Alt</b> key shortcuts.</p>
+<p>We connect <a href="qabstractbutton.html#clicked">clicked()</a> signals from the <b>Start</b> and <b>Pause</b> buttons to the board, and from the <b>Quit</b> button to the application's <a href="qcoreapplication.html#quit">quit()</a> slot.</p>
+<pre>     connect(startButton, SIGNAL(clicked()), board, SLOT(start()));
+     connect(quitButton , SIGNAL(clicked()), qApp, SLOT(quit()));
+     connect(pauseButton, SIGNAL(clicked()), board, SLOT(pause()));
+     connect(board, SIGNAL(scoreChanged(int)), scoreLcd, SLOT(display(int)));
+     connect(board, SIGNAL(levelChanged(int)), levelLcd, SLOT(display(int)));
+     connect(board, SIGNAL(linesRemovedChanged(int)),
+             linesLcd, SLOT(display(int)));</pre>
+<p>Signals from the board are also connected to the LCD widgets for the purpose of updating the score, number of lives, and lines removed from the playing area.</p>
+<p>We place the label, LCD widgets, and the board into a <a href="qgridlayout.html">QGridLayout</a> along with some labels that we create with the <tt>createLabel()</tt> convenience function:</p>
+<pre>     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(createLabel(tr(&quot;NEXT&quot;)), 0, 0);
+     layout-&gt;addWidget(nextPieceLabel, 1, 0);
+     layout-&gt;addWidget(createLabel(tr(&quot;LEVEL&quot;)), 2, 0);
+     layout-&gt;addWidget(levelLcd, 3, 0);
+     layout-&gt;addWidget(startButton, 4, 0);
+     layout-&gt;addWidget(board, 0, 1, 6, 1);
+     layout-&gt;addWidget(createLabel(tr(&quot;SCORE&quot;)), 0, 2);
+     layout-&gt;addWidget(scoreLcd, 1, 2);
+     layout-&gt;addWidget(createLabel(tr(&quot;LINES REMOVED&quot;)), 2, 2);
+     layout-&gt;addWidget(linesLcd, 3, 2);
+     layout-&gt;addWidget(quitButton, 4, 2);
+     layout-&gt;addWidget(pauseButton, 5, 2);
+     setLayout(layout);
+
+     setWindowTitle(tr(&quot;Tetrix&quot;));
+     resize(550, 370);
+ }</pre>
+<p>Finally, we set the grid layout on the widget, give the window a title, and resize it to an appropriate size.</p>
+<p>The <tt>createLabel()</tt> convenience function simply creates a new label on the heap, gives it an appropriate alignment, and returns it to the caller:</p>
+<pre> QLabel *TetrixWindow::createLabel(const QString &amp;text)
+ {
+     QLabel *lbl = new QLabel(text);
+     lbl-&gt;setAlignment(Qt::AlignHCenter | Qt::AlignBottom);
+     return lbl;
+ }</pre>
+<p>Since each label will be used in the widget's layout, it will become a child of the <tt>TetrixWindow</tt> widget and, as a result, it will be deleted when the window is deleted.</p>
+<a name="tetrixpiece-class-definition"></a>
+<h2>TetrixPiece Class Definition</h2>
+<p>The <tt>TetrixPiece</tt> class holds information about a piece in the game's playing area, including its shape, position, and the range of positions it can occupy on the board:</p>
+<pre> class TetrixPiece
+ {
+ public:
+     TetrixPiece() { setShape(NoShape); }
+
+     void setRandomShape();
+     void setShape(TetrixShape shape);
+
+     TetrixShape shape() const { return pieceShape; }
+     int x(int index) const { return coords[index][0]; }
+     int y(int index) const { return coords[index][1]; }
+     int minX() const;
+     int maxX() const;
+     int minY() const;
+     int maxY() const;
+     TetrixPiece rotatedLeft() const;
+     TetrixPiece rotatedRight() const;
+
+ private:
+     void setX(int index, int x) { coords[index][0] = x; }
+     void setY(int index, int y) { coords[index][1] = y; }
+
+     TetrixShape pieceShape;
+     int coords[4][2];
+ };</pre>
+<p>Each shape contains four blocks, and these are defined by the <tt>coords</tt> private member variable. Additionally, each piece has a high-level description that is stored internally in the <tt>pieceShape</tt> variable.</p>
+<p>The constructor is written inline in the definition, and simply ensures that each piece is initially created with no shape. The <tt>shape()</tt> function simply returns the contents of the <tt>pieceShape</tt> variable, and the <tt>x()</tt> and <tt>y()</tt> functions return the x and y-coordinates of any given block in the shape.</p>
+<a name="tetrixpiece-class-implementation"></a>
+<h2>TetrixPiece Class Implementation</h2>
+<p>The <tt>setRandomShape()</tt> function is used to select a random shape for a piece:</p>
+<pre> void TetrixPiece::setRandomShape()
+ {
+     setShape(TetrixShape(qrand() % 7 + 1));
+ }</pre>
+<p>For convenience, it simply chooses a random shape from the <tt>TetrixShape</tt> enum and calls the <tt>setShape()</tt> function to perform the task of positioning the blocks.</p>
+<p>The <tt>setShape()</tt> function uses a look-up table of pieces to associate each shape with an array of block positions:</p>
+<pre> void TetrixPiece::setShape(TetrixShape shape)
+ {
+     static const int coordsTable[8][4][2] = {
+         { { 0, 0 },   { 0, 0 },   { 0, 0 },   { 0, 0 } },
+         { { 0, -1 },  { 0, 0 },   { -1, 0 },  { -1, 1 } },
+         { { 0, -1 },  { 0, 0 },   { 1, 0 },   { 1, 1 } },
+         { { 0, -1 },  { 0, 0 },   { 0, 1 },   { 0, 2 } },
+         { { -1, 0 },  { 0, 0 },   { 1, 0 },   { 0, 1 } },
+         { { 0, 0 },   { 1, 0 },   { 0, 1 },   { 1, 1 } },
+         { { -1, -1 }, { 0, -1 },  { 0, 0 },   { 0, 1 } },
+         { { 1, -1 },  { 0, -1 },  { 0, 0 },   { 0, 1 } }
+     };
+
+     for (int i = 0; i &lt; 4 ; i++) {
+         for (int j = 0; j &lt; 2; ++j)
+             coords[i][j] = coordsTable[shape][i][j];
+     }
+     pieceShape = shape;
+ }</pre>
+<p>These positions are read from the table into the piece's own array of positions, and the piece's internal shape information is updated to use the new shape.</p>
+<p>The <tt>x()</tt> and <tt>y()</tt> functions are implemented inline in the class definition, returning positions defined on a grid that extends horizontally and vertically with coordinates from -2 to 2. Although the predefined coordinates for each piece only vary horizontally from -1 to 1 and vertically from -1 to 2, each piece can be rotated by 90, 180, and 270 degrees.</p>
+<p>The <tt>minX()</tt> and <tt>maxX()</tt> functions return the minimum and maximum horizontal coordinates occupied by the blocks that make up the piece:</p>
+<pre> int TetrixPiece::minX() const
+ {
+     int min = coords[0][0];
+     for (int i = 1; i &lt; 4; ++i)
+         min = qMin(min, coords[i][0]);
+     return min;
+ }
+
+ int TetrixPiece::maxX() const
+ {
+     int max = coords[0][0];
+     for (int i = 1; i &lt; 4; ++i)
+         max = qMax(max, coords[i][0]);
+     return max;
+ }</pre>
+<p>Similarly, the <tt>minY()</tt> and <tt>maxY()</tt> functions return the minimum and maximum vertical coordinates occupied by the blocks:</p>
+<pre> int TetrixPiece::minY() const
+ {
+     int min = coords[0][1];
+     for (int i = 1; i &lt; 4; ++i)
+         min = qMin(min, coords[i][1]);
+     return min;
+ }
+
+ int TetrixPiece::maxY() const
+ {
+     int max = coords[0][1];
+     for (int i = 1; i &lt; 4; ++i)
+         max = qMax(max, coords[i][1]);
+     return max;
+ }</pre>
+<p>The <tt>rotatedLeft()</tt> function returns a new piece with the same shape as an existing piece, but rotated counter-clockwise by 90 degrees:</p>
+<pre> TetrixPiece TetrixPiece::rotatedLeft() const
+ {
+     if (pieceShape == SquareShape)
+         return *this;
+
+     TetrixPiece result;
+     result.pieceShape = pieceShape;
+     for (int i = 0; i &lt; 4; ++i) {
+         result.setX(i, y(i));
+         result.setY(i, -x(i));
+     }</pre>
+<p>Similarly, the <tt>rotatedRight()</tt> function returns a new piece with the same shape as an existing piece, but rotated clockwise by 90 degrees:</p>
+<pre> TetrixPiece TetrixPiece::rotatedRight() const
+ {
+     if (pieceShape == SquareShape)
+         return *this;
+
+     TetrixPiece result;
+     result.pieceShape = pieceShape;
+     for (int i = 0; i &lt; 4; ++i) {
+         result.setX(i, -y(i));
+         result.setY(i, x(i));
+     }</pre>
+<p>These last two functions enable each piece to create rotated copies of itself.</p>
+<a name="tetrixboard-class-definition"></a>
+<h2>TetrixBoard Class Definition</h2>
+<p>The <tt>TetrixBoard</tt> class inherits from <a href="qframe.html">QFrame</a> and contains the game logic and display features:</p>
+<pre> class TetrixBoard : public QFrame
+ {
+     Q_OBJECT
+
+ public:
+     TetrixBoard(QWidget *parent = 0);
+
+     void setNextPieceLabel(QLabel *label);
+     QSize sizeHint() const;
+     QSize minimumSizeHint() const;
+
+ public slots:
+     void start();
+     void pause();
+
+ signals:
+     void scoreChanged(int score);
+     void levelChanged(int level);
+     void linesRemovedChanged(int numLines);
+
+ protected:
+     void paintEvent(QPaintEvent *event);
+     void keyPressEvent(QKeyEvent *event);
+     void timerEvent(QTimerEvent *event);</pre>
+<p>Apart from the <tt>setNextPieceLabel()</tt> function and the <tt>start()</tt> and <tt>pause()</tt> public slots, we only provide public functions to reimplement <a href="qwidget.html#sizeHint-prop">QWidget::sizeHint</a>() and <a href="qwidget.html#minimumSizeHint-prop">QWidget::minimumSizeHint</a>(). The signals are used to communicate changes to the player's information to the <tt>TetrixWindow</tt> instance.</p>
+<p>The rest of the functionality is provided by reimplementations of protected event handlers and private functions:</p>
+<pre> private:
+     enum { BoardWidth = 10, BoardHeight = 22 };
+
+     TetrixShape &amp;shapeAt(int x, int y) { return board[(y * BoardWidth) + x]; }
+     int timeoutTime() { return 1000 / (1 + level); }
+     int squareWidth() { return contentsRect().width() / BoardWidth; }
+     int squareHeight() { return contentsRect().height() / BoardHeight; }
+     void clearBoard();
+     void dropDown();
+     void oneLineDown();
+     void pieceDropped(int dropHeight);
+     void removeFullLines();
+     void newPiece();
+     void showNextPiece();
+     bool tryMove(const TetrixPiece &amp;newPiece, int newX, int newY);
+     void drawSquare(QPainter &amp;painter, int x, int y, TetrixShape shape);
+
+     QBasicTimer timer;
+     QPointer&lt;QLabel&gt; nextPieceLabel;
+     bool isStarted;
+     bool isPaused;
+     bool isWaitingAfterLine;
+     TetrixPiece curPiece;
+     TetrixPiece nextPiece;
+     int curX;
+     int curY;
+     int numLinesRemoved;
+     int numPiecesDropped;
+     int score;
+     int level;
+     TetrixShape board[BoardWidth * BoardHeight];
+ };</pre>
+<p>The board is composed of a fixed-size array whose elements correspond to spaces for individual blocks. Each element in the array contains a <tt>TetrixShape</tt> value corresponding to the type of shape that occupies that element.</p>
+<p>Each shape on the board will occupy four elements in the array, and these will all contain the enum value that corresponds to the type of the shape.</p>
+<p>We use a <a href="qbasictimer.html">QBasicTimer</a> to control the rate at which pieces fall toward the bottom of the playing area. This allows us to provide an implementation of <a href="qobject.html#timerEvent">timerEvent()</a> that we can use to update the widget.</p>
+<a name="tetrixboard-class-implementation"></a>
+<h2>TetrixBoard Class Implementation</h2>
+<p>In the constructor, we customize the frame style of the widget, ensure that keyboard input will be received by the widget by using <a href="qt.html#FocusPolicy-enum">Qt::StrongFocus</a> for the focus policy, and initialize the game state:</p>
+<pre> TetrixBoard::TetrixBoard(QWidget *parent)
+     : QFrame(parent)
+ {
+     setFrameStyle(QFrame::Panel | QFrame::Sunken);
+     setFocusPolicy(Qt::StrongFocus);
+     isStarted = false;
+     isPaused = false;
+     clearBoard();
+
+     nextPiece.setRandomShape();
+ }</pre>
+<p>The first (next) piece is also set up with a random shape.</p>
+<p>The <tt>setNextPieceLabel()</tt> function is used to pass in an externally-constructed label to the board, so that it can be shown alongside the playing area:</p>
+<pre> void TetrixBoard::setNextPieceLabel(QLabel *label)
+ {
+     nextPieceLabel = label;
+ }</pre>
+<p>We provide a reasonable size hint and minimum size hint for the board, based on the size of the space for each block in the playing area:</p>
+<pre> QSize TetrixBoard::sizeHint() const
+ {
+     return QSize(BoardWidth * 15 + frameWidth() * 2,
+                  BoardHeight * 15 + frameWidth() * 2);
+ }
+
+ QSize TetrixBoard::minimumSizeHint() const
+ {
+     return QSize(BoardWidth * 5 + frameWidth() * 2,
+                  BoardHeight * 5 + frameWidth() * 2);
+ }</pre>
+<p>By using a minimum size hint, we indicate to the layout in the parent widget that the board should not shrink below a minimum size.</p>
+<p>A new game is started when the <tt>start()</tt> slot is called. This resets the game's state, the player's score and level, and the contents of the board:</p>
+<pre> void TetrixBoard::start()
+ {
+     if (isPaused)
+         return;
+
+     isStarted = true;
+     isWaitingAfterLine = false;
+     numLinesRemoved = 0;
+     numPiecesDropped = 0;
+     score = 0;
+     level = 1;
+     clearBoard();
+
+     emit linesRemovedChanged(numLinesRemoved);
+     emit scoreChanged(score);
+     emit levelChanged(level);
+
+     newPiece();
+     timer.start(timeoutTime(), this);
+ }</pre>
+<p>We also emit signals to inform other components of these changes before creating a new piece that is ready to be dropped into the playing area. We start the timer that determines how often the piece drops down one row on the board.</p>
+<p>The <tt>pause()</tt> slot is used to temporarily stop the current game by stopping the internal timer:</p>
+<pre> void TetrixBoard::pause()
+ {
+     if (!isStarted)
+         return;
+
+     isPaused = !isPaused;
+     if (isPaused) {
+         timer.stop();
+     } else {
+         timer.start(timeoutTime(), this);
+     }
+     update();
+ }</pre>
+<p>We perform checks to ensure that the game can only be paused if it is already running and not already paused.</p>
+<p>The <tt>paintEvent()</tt> function is straightforward to implement. We begin by calling the base class's implementation of <a href="qwidget.html#paintEvent">paintEvent()</a> before constructing a <a href="qpainter.html">QPainter</a> for use on the board:</p>
+<pre> void TetrixBoard::paintEvent(QPaintEvent *event)
+ {
+     QFrame::paintEvent(event);
+
+     QPainter painter(this);
+     QRect rect = contentsRect();</pre>
+<p>Since the board is a subclass of <a href="qframe.html">QFrame</a>, we obtain a <a href="qrect.html">QRect</a> that covers the area <i>inside</i> the frame decoration before drawing our own content.</p>
+<p>If the game is paused, we want to hide the existing state of the board and show some text. We achieve this by painting text onto the widget and returning early from the function. The rest of the painting is performed after this point.</p>
+<p>The position of the top of the board is found by subtracting the total height of each space on the board from the bottom of the frame's internal rectangle. For each space on the board that is occupied by a piece, we call the <tt>drawSquare()</tt> function to draw a block at that position.</p>
+<pre>     int boardTop = rect.bottom() - BoardHeight*squareHeight();
+
+     for (int i = 0; i &lt; BoardHeight; ++i) {
+         for (int j = 0; j &lt; BoardWidth; ++j) {
+             TetrixShape shape = shapeAt(j, BoardHeight - i - 1);
+             if (shape != NoShape)
+                 drawSquare(painter, rect.left() + j * squareWidth(),
+                            boardTop + i * squareHeight(), shape);
+         }
+     }</pre>
+<p>Spaces that are not occupied by blocks are left blank.</p>
+<p>Unlike the existing pieces on the board, the current piece is drawn block-by-block at its current position:</p>
+<pre>     if (curPiece.shape() != NoShape) {
+         for (int i = 0; i &lt; 4; ++i) {
+             int x = curX + curPiece.x(i);
+             int y = curY - curPiece.y(i);
+             drawSquare(painter, rect.left() + x * squareWidth(),
+                        boardTop + (BoardHeight - y - 1) * squareHeight(),
+                        curPiece.shape());
+         }
+     }
+ }</pre>
+<p>The <tt>keyPressEvent()</tt> handler is called whenever the player presses a key while the <tt>TetrixBoard</tt> widget has the keyboard focus.</p>
+<pre> void TetrixBoard::keyPressEvent(QKeyEvent *event)
+ {
+     if (!isStarted || isPaused || curPiece.shape() == NoShape) {
+         QFrame::keyPressEvent(event);
+         return;
+     }</pre>
+<p>If there is no current game, the game is running but paused, or if there is no current shape to control, we simply pass on the event to the base class.</p>
+<p>We check whether the event is about any of the keys that the player uses to control the current piece and, if so, we call the relevant function to handle the input:</p>
+<pre>     switch (event-&gt;key()) {
+     case Qt::Key_Left:
+         tryMove(curPiece, curX - 1, curY);
+         break;
+     case Qt::Key_Right:
+         tryMove(curPiece, curX + 1, curY);
+         break;
+     case Qt::Key_Down:
+         tryMove(curPiece.rotatedRight(), curX, curY);
+         break;
+     case Qt::Key_Up:
+         tryMove(curPiece.rotatedLeft(), curX, curY);
+         break;
+     case Qt::Key_Space:
+         dropDown();
+         break;
+     case Qt::Key_D:
+         oneLineDown();
+         break;
+     default:
+         QFrame::keyPressEvent(event);
+     }</pre>
+<p>In the case where the player presses a key that we are not interested in, we again pass on the event to the base class's implementation of <a href="qwidget.html#keyPressEvent">keyPressEvent()</a>.</p>
+<p>The <tt>timerEvent()</tt> handler is called every time the class's <a href="qbasictimer.html">QBasicTimer</a> instance times out. We need to check that the event we receive corresponds to our timer. If it does, we can update the board:</p>
+<pre> void TetrixBoard::timerEvent(QTimerEvent *event)
+ {
+     if (event-&gt;timerId() == timer.timerId()) {
+         if (isWaitingAfterLine) {
+             isWaitingAfterLine = false;
+             newPiece();
+             timer.start(timeoutTime(), this);
+         } else {
+             oneLineDown();
+         }
+     } else {
+         QFrame::timerEvent(event);
+     }
+ }</pre>
+<p>If a row (or line) has just been filled, we create a new piece and reset the timer; otherwise we move the current piece down by one row. We let the base class handle other timer events that we receive.</p>
+<p>The <tt>clearBoard()</tt> function simply fills the board with the <tt>TetrixShape::NoShape</tt> value:</p>
+<pre> void TetrixBoard::clearBoard()
+ {
+     for (int i = 0; i &lt; BoardHeight * BoardWidth; ++i)
+         board[i] = NoShape;
+ }</pre>
+<p>The <tt>dropDown()</tt> function moves the current piece down as far as possible on the board, either until it is touching the bottom of the playing area or it is stacked on top of another piece:</p>
+<pre> void TetrixBoard::dropDown()
+ {
+     int dropHeight = 0;
+     int newY = curY;
+     while (newY &gt; 0) {
+         if (!tryMove(curPiece, curX, newY - 1))
+             break;
+         --newY;
+         ++dropHeight;
+     }
+     pieceDropped(dropHeight);
+ }</pre>
+<p>The number of rows the piece has dropped is recorded and passed to the <tt>pieceDropped()</tt> function so that the player's score can be updated.</p>
+<p>The <tt>oneLineDown()</tt> function is used to move the current piece down by one row (line), either when the user presses the <b>D</b> key or when the piece is scheduled to move:</p>
+<pre> void TetrixBoard::oneLineDown()
+ {
+     if (!tryMove(curPiece, curX, curY - 1))
+         pieceDropped(0);
+ }</pre>
+<p>If the piece cannot drop down by one line, we call the <tt>pieceDropped()</tt> function with zero as the argument to indicate that it cannot fall any further, and that the player should receive no extra points for the fall.</p>
+<p>The <tt>pieceDropped()</tt> function itself is responsible for awarding points to the player for positioning the current piece, checking for full rows on the board and, if no lines have been removed, creating a new piece to replace the current one:</p>
+<pre> void TetrixBoard::pieceDropped(int dropHeight)
+ {
+     for (int i = 0; i &lt; 4; ++i) {
+         int x = curX + curPiece.x(i);
+         int y = curY - curPiece.y(i);
+         shapeAt(x, y) = curPiece.shape();
+     }
+
+     ++numPiecesDropped;
+     if (numPiecesDropped % 25 == 0) {
+         ++level;
+         timer.start(timeoutTime(), this);
+         emit levelChanged(level);
+     }
+
+     score += dropHeight + 7;
+     emit scoreChanged(score);
+     removeFullLines();
+
+     if (!isWaitingAfterLine)
+         newPiece();
+ }</pre>
+<p>We call <tt>removeFullLines()</tt> each time a piece has been dropped. This scans the board from bottom to top, looking for blank spaces on each row.</p>
+<pre> void TetrixBoard::removeFullLines()
+ {
+     int numFullLines = 0;
+
+     for (int i = BoardHeight - 1; i &gt;= 0; --i) {
+         bool lineIsFull = true;
+
+         for (int j = 0; j &lt; BoardWidth; ++j) {
+             if (shapeAt(j, i) == NoShape) {
+                 lineIsFull = false;
+                 break;
+             }
+         }
+
+         if (lineIsFull) {
+             ++numFullLines;
+             for (int k = i; k &lt; BoardHeight - 1; ++k) {
+                 for (int j = 0; j &lt; BoardWidth; ++j)
+                     shapeAt(j, k) = shapeAt(j, k + 1);
+             }
+             for (int j = 0; j &lt; BoardWidth; ++j)
+                 shapeAt(j, BoardHeight - 1) = NoShape;
+         }
+     }</pre>
+<p>If a row contains no blank spaces, the rows above it are copied down by one row to compress the stack of pieces, the top row on the board is cleared, and the number of full lines found is incremented.</p>
+<pre>     if (numFullLines &gt; 0) {
+         numLinesRemoved += numFullLines;
+         score += 10 * numFullLines;
+         emit linesRemovedChanged(numLinesRemoved);
+         emit scoreChanged(score);
+
+         timer.start(500, this);
+         isWaitingAfterLine = true;
+         curPiece.setShape(NoShape);
+         update();
+     }
+ }</pre>
+<p>If some lines have been removed, the player's score and the total number of lines removed are updated. The <tt>linesRemoved()</tt> and <tt>scoreChanged()</tt> signals are emitted to send these new values to other widgets in the window.</p>
+<p>Additionally, we set the timer to elapse after half a second, set the <tt>isWaitingAfterLine</tt> flag to indicate that lines have been removed, unset the piece's shape to ensure that it is not drawn, and update the widget. The next time that the <tt>timerEvent()</tt> handler is called, a new piece will be created and the game will continue.</p>
+<p>The <tt>newPiece()</tt> function places the next available piece at the top of the board, and creates a new piece with a random shape:</p>
+<pre> void TetrixBoard::newPiece()
+ {
+     curPiece = nextPiece;
+     nextPiece.setRandomShape();
+     showNextPiece();
+     curX = BoardWidth / 2 + 1;
+     curY = BoardHeight - 1 + curPiece.minY();
+
+     if (!tryMove(curPiece, curX, curY)) {
+         curPiece.setShape(NoShape);
+         timer.stop();
+         isStarted = false;
+     }
+ }</pre>
+<p>We place a new piece in the middle of the board at the top. The game is over if the piece can't move, so we unset its shape to prevent it from being drawn, stop the timer, and unset the <tt>isStarted</tt> flag.</p>
+<p>The <tt>showNextPiece()</tt> function updates the label that shows the next piece to be dropped:</p>
+<pre> void TetrixBoard::showNextPiece()
+ {
+     if (!nextPieceLabel)
+         return;
+
+     int dx = nextPiece.maxX() - nextPiece.minX() + 1;
+     int dy = nextPiece.maxY() - nextPiece.minY() + 1;
+
+     QPixmap pixmap(dx * squareWidth(), dy * squareHeight());
+     QPainter painter(&amp;pixmap);
+     painter.fillRect(pixmap.rect(), nextPieceLabel-&gt;palette().background());
+
+     for (int i = 0; i &lt; 4; ++i) {
+         int x = nextPiece.x(i) - nextPiece.minX();
+         int y = nextPiece.y(i) - nextPiece.minY();
+         drawSquare(painter, x * squareWidth(), y * squareHeight(),
+                    nextPiece.shape());
+     }
+     nextPieceLabel-&gt;setPixmap(pixmap);
+ }</pre>
+<p>We draw the piece's component blocks onto a pixmap that is then set on the label.</p>
+<p>The <tt>tryMove()</tt> function is used to determine whether a piece can be positioned at the specified coordinates:</p>
+<pre> bool TetrixBoard::tryMove(const TetrixPiece &amp;newPiece, int newX, int newY)
+ {
+     for (int i = 0; i &lt; 4; ++i) {
+         int x = newX + newPiece.x(i);
+         int y = newY - newPiece.y(i);
+         if (x &lt; 0 || x &gt;= BoardWidth || y &lt; 0 || y &gt;= BoardHeight)
+             return false;
+         if (shapeAt(x, y) != NoShape)
+             return false;
+     }</pre>
+<p>We examine the spaces on the board that the piece needs to occupy and, if they are already occupied by other pieces, we return <tt>false</tt> to indicate that the move has failed.</p>
+<pre>     curPiece = newPiece;
+     curX = newX;
+     curY = newY;
+     update();
+     return true;
+ }</pre>
+<p>If the piece could be placed on the board at the desired location, we update the current piece and its position, update the widget, and return <tt>true</tt> to indicate success.</p>
+<p>The <tt>drawSquare()</tt> function draws the blocks (normally squares) that make up each piece using different colors for pieces with different shapes:</p>
+<pre> void TetrixBoard::drawSquare(QPainter &amp;painter, int x, int y, TetrixShape shape)
+ {
+     static const QRgb colorTable[8] = {
+         0x000000, 0xCC6666, 0x66CC66, 0x6666CC,
+         0xCCCC66, 0xCC66CC, 0x66CCCC, 0xDAAA00
+     };
+
+     QColor color = colorTable[int(shape)];
+     painter.fillRect(x + 1, y + 1, squareWidth() - 2, squareHeight() - 2,
+                      color);
+
+     painter.setPen(color.light());
+     painter.drawLine(x, y + squareHeight() - 1, x, y);
+     painter.drawLine(x, y, x + squareWidth() - 1, y);
+
+     painter.setPen(color.dark());
+     painter.drawLine(x + 1, y + squareHeight() - 1,
+                      x + squareWidth() - 1, y + squareHeight() - 1);
+     painter.drawLine(x + squareWidth() - 1, y + squareHeight() - 1,
+                      x + squareWidth() - 1, y + 1);
+ }</pre>
+<p>We obtain the color to use from a look-up table that relates each shape to an RGB value, and use the painter provided to draw the block at the specified coordinates.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

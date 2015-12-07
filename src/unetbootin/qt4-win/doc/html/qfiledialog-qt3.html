@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/dialogs/qfiledialog.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QFileDialog</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QFileDialog</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qfiledialog.html">QFileDialog class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>QStringList <b><a href="qfiledialog-qt3.html#filters">filters</a></b> () const</li>
+<li><div class="fn"/>FileMode <b><a href="qfiledialog-qt3.html#mode">mode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#selectFilter">selectFilter</a></b> ( const QString &amp; <i>filter</i> )</li>
+<li><div class="fn"/>QString <b><a href="qfiledialog-qt3.html#selectedFile">selectedFile</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qfiledialog-qt3.html#selectedFilter">selectedFilter</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#setDir">setDir</a></b> ( const QString &amp; <i>directory</i> )</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#setDir-2">setDir</a></b> ( const QDir &amp; <i>directory</i> )</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#setFilter-2">setFilter</a></b> ( const QString &amp; <i>filter</i> )</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#setFilters">setFilters</a></b> ( const QStringList &amp; <i>filters</i> )</li>
+<li><div class="fn"/>void <b><a href="qfiledialog-qt3.html#setMode">setMode</a></b> ( FileMode <i>m</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>60 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>8 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QString <b><a href="qfiledialog-qt3.html#getExistingDirectory-2">getExistingDirectory</a></b> ( const QString &amp; <i>dir</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), bool <i>dirOnly</i> = true, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QString <b><a href="qfiledialog-qt3.html#getOpenFileName-2">getOpenFileName</a></b> ( const QString &amp; <i>dir</i>, const QString &amp; <i>filter</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QStringList <b><a href="qfiledialog-qt3.html#getOpenFileNames-2">getOpenFileNames</a></b> ( const QString &amp; <i>filter</i>, const QString &amp; <i>dir</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+<li><div class="fn"/>QString <b><a href="qfiledialog-qt3.html#getSaveFileName-2">getSaveFileName</a></b> ( const QString &amp; <i>dir</i>, const QString &amp; <i>filter</i> = QString(), QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0, const QString &amp; <i>caption</i> = QString(), QString * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 static public member inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="filters"></a><a href="qstringlist.html">QStringList</a> QFileDialog::filters () const</h3>
+<p>Use <a href="qfiledialog.html#nameFilters">nameFilters</a>() instead.</p>
+<p>See also <a href="qfiledialog-qt3.html#setFilters">setFilters</a>().</p>
+<h3 class="fn"><a name="getExistingDirectory-2"></a><a href="qstring.html">QString</a> QFileDialog::getExistingDirectory ( const <a href="qstring.html">QString</a> &amp; <i>dir</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), bool <i>dirOnly</i> = true, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qfiledialog.html#getExistingDirectory">getExistingDirectory</a>() overload that takes <i>parent</i> as the first argument instead.</p>
+<h3 class="fn"><a name="getOpenFileName-2"></a><a href="qstring.html">QString</a> QFileDialog::getOpenFileName ( const <a href="qstring.html">QString</a> &amp; <i>dir</i>, const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qfiledialog.html#getOpenFileName">getOpenFileName</a>() overload that takes <i>parent</i> as the first argument instead.</p>
+<h3 class="fn"><a name="getOpenFileNames-2"></a><a href="qstringlist.html">QStringList</a> QFileDialog::getOpenFileNames ( const <a href="qstring.html">QString</a> &amp; <i>filter</i>, const <a href="qstring.html">QString</a> &amp; <i>dir</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qfiledialog.html#getOpenFileNames">getOpenFileNames</a>() overload that takes <i>parent</i> as the first argument instead.</p>
+<h3 class="fn"><a name="getSaveFileName-2"></a><a href="qstring.html">QString</a> QFileDialog::getSaveFileName ( const <a href="qstring.html">QString</a> &amp; <i>dir</i>, const <a href="qstring.html">QString</a> &amp; <i>filter</i> = QString(), <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0, const <a href="qstring.html">QString</a> &amp; <i>caption</i> = QString(), <a href="qstring.html">QString</a> * <i>selectedFilter</i> = 0, bool <i>resolveSymlinks</i> = true )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qfiledialog.html#getSaveFileName">getSaveFileName</a>() overload that takes <i>parent</i> as the first argument instead.</p>
+<h3 class="fn"><a name="mode"></a><a href="qfiledialog.html#FileMode-enum">FileMode</a> QFileDialog::mode () const</h3>
+<p>Use <a href="qfiledialog.html#fileMode-prop">fileMode</a>() instead.</p>
+<p>See also <a href="qfiledialog-qt3.html#setMode">setMode</a>().</p>
+<h3 class="fn"><a name="selectFilter"></a>void QFileDialog::selectFilter ( const <a href="qstring.html">QString</a> &amp; <i>filter</i> )</h3>
+<p>Use <a href="qfiledialog.html#selectNameFilter">selectNameFilter</a>() instead.</p>
+<h3 class="fn"><a name="selectedFile"></a><a href="qstring.html">QString</a> QFileDialog::selectedFile () const</h3>
+<p>Use <a href="qfiledialog.html#selectedFiles">selectedFiles</a>() instead.</p>
+<p>For example, if you have code like</p>
+<pre><font color="#404040"> QString selected = dialog-&gt;selectedFile();</font></pre>
+<p>you can rewrite it as</p>
+<pre>  QStringList files = dialog-&gt;selectedFiles();
+  QString selected;
+  if (!files.isEmpty())
+      selected = files[0];</pre>
+<h3 class="fn"><a name="selectedFilter"></a><a href="qstring.html">QString</a> QFileDialog::selectedFilter () const</h3>
+<p>Use <a href="qfiledialog.html#selectedNameFilter">selectedNameFilter</a>() instead.</p>
+<h3 class="fn"><a name="setDir"></a>void QFileDialog::setDir ( const <a href="qstring.html">QString</a> &amp; <i>directory</i> )</h3>
+<p>Use <a href="qfiledialog.html#setDirectory">setDirectory</a>() instead.</p>
+<h3 class="fn"><a name="setDir-2"></a>void QFileDialog::setDir ( const <a href="qdir.html">QDir</a> &amp; <i>directory</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qfiledialog.html#setDirectory">setDirectory</a>() instead.</p>
+<h3 class="fn"><a name="setFilter-2"></a>void QFileDialog::setFilter ( const <a href="qstring.html">QString</a> &amp; <i>filter</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use <a href="qfiledialog.html#setNameFilter">setNameFilter</a>() instead.</p>
+<h3 class="fn"><a name="setFilters"></a>void QFileDialog::setFilters ( const <a href="qstringlist.html">QStringList</a> &amp; <i>filters</i> )</h3>
+<p>Use <a href="qfiledialog.html#setNameFilters">setNameFilters</a>() instead.</p>
+<p>See also <a href="qfiledialog-qt3.html#filters">filters</a>().</p>
+<h3 class="fn"><a name="setMode"></a>void QFileDialog::setMode ( <a href="qfiledialog.html#FileMode-enum">FileMode</a> <i>m</i> )</h3>
+<p>Use <a href="qfiledialog.html#fileMode-prop">setFileMode</a>() instead.</p>
+<p>See also <a href="qfiledialog-qt3.html#mode">mode</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

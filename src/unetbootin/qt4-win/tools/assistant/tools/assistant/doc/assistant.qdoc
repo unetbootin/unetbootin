@@ -1,0 +1,344 @@
+/*!
+    \page assistant.html
+    \title Qt Assistant
+
+    \chapter Introduction
+
+    This document introduces \e{Qt Assistant}, a tool for presenting on-line
+    documentation. It also introduces the Qt Reference Documentation which
+    is accessible using \e{Qt Assistant}, or with a web browser. The document is
+    divided into the following sections:
+
+    Table of contents:
+
+    \list
+    \o \l{Introduction}
+    \o \l{The One-Minute Guide to Using Qt Assistant}
+    \o \l{Introduction to the Qt Reference Documentation}
+    \o \l{Qt Assistant in More Detail}
+    \o \l{Full Text Searching}
+    \endlist
+
+    \chapter The One-Minute Guide to Using Qt Assistant
+
+    Under Windows, \e{Qt Assistant} is available as a menu option on the Qt menu. On
+    Unix, run \c{helpviewer} from an xterm.
+
+    When you start up \e{Qt Assistant}, you will be presented with a standard
+    main-window style application, with a menu bar and toolbar. Below 
+    these, on the left hand side are navigation windows called \e{Index}, 
+    \e{Contents} and \e{Bookmarks}, as well on the right, taking up most of 
+    the space, is the \e{Documentation} window. By default, the \e{Qt Assistant} 
+    documentation is shown in the \e{Documentation} window.
+
+    To be able to start using the \e{Qt Assistant} you have to setup one or more 
+    documentation sets. This could be done by navigating to the 
+    \menu{Edit|Preferences} dialog and install a documentation set by 
+    either download or install from your local hard drive. See 
+    \l{The Preferences Dialog} for how to do this.
+
+    \e{Qt Assistant} works in a similar way to a web browser. If you click underlined
+    text (which signifies a cross-reference), the \e{Documentation} window will
+    present the relevant page. You can bookmark pages of particular
+    interest and you can click the \gui{Previous} and \gui{Next} toolbar
+    buttons to navigate within the pages you've visited.
+
+    Although \e{Qt Assistant} can be used just like a web browser to navigate through
+    the Qt documentation set, \e{Qt Assistant} offers a powerful means of navigation
+    that web browsers don't provide. \e{Qt Assistant} uses an advanced full text search 
+    engine to index all the pages in the documentation sets that it presents 
+    so that you can search for particular words and phrases.
+
+    To perform an index search, click the \gui{Index} tab on the Sidebar
+    (or click \key{Ctrl+I}). In the 'Look For' line edit enter a word, e.g.
+    'homedirpath'. As you type, words are found and highlighted in a list
+    beneath the line edit. If the highlighted text matches what you're
+    looking for, double click it, (or press \key{Enter}) and the
+    \e{Documentation} window will display the relevant page. You rarely have
+    to type in the whole word before \e{Qt Assistant} finds a match. Note that for some
+    words there may be more than one possible page that is relevant.
+
+    \e{Qt Assistant} also provides full text searching for finding specific words in
+    the documentation. Documents with the highest occurrences of the word
+    that you are looking for appear first, and every occurrence of the
+    word within the documentation is highlighted.
+
+    \omit
+    For example, enter 'setenabled' in the 'Look For' line edit.
+    As you type, words are found and highlighted in the list beneath the
+    line edit, as before. Once the highlighted text matches what you're
+    looking for, double click it, (or press \key{Enter}). In the case of
+    setEnabled, it is a function name which occurs in several classes, so
+    a dialog pops up listing the possible choices. Click the choice you're
+    interested in (or move to it using the \key{Up} and \key{Down} arrow
+    keys and press \key{Enter}). The relevant page will display in the
+    \e{Documentation} window.
+    \endomit
+
+    \chapter Introduction to the Qt Reference Documentation
+
+    The documentation for the Qt library is written in-line in the \c
+    .cpp files by the developers themselves. The documentation team
+    revises the documentation to ensure that it is accurate and usable,
+    and to provide quality control. The documentation team also writes the
+    larger texts, such as the class descriptions that introduce a class
+    along with the concepts the class uses, as well as introducing the
+    functions and properties that the class provides.
+
+    The documentation focuses on the API rather than the internals, since
+    we make great efforts to keep our API consistent and compatible with
+    each new version, but we may change the internals considerably to improve
+    performance and enhance functionality.
+
+    The Qt Reference Documentation consists of almost 1,500 HTML pages
+    (over 2,500 printed pages). The overwhelming majority of pages
+    document Qt classes. Since developers differ in the way they
+    think and work we provide a variety of approaches to navigating the
+    documentation set:
+
+    \list
+    \i The \menu{Qt's Classes} page lists every class
+    in Qt's public API, and consists of several hundred classes.
+    \i The \menu{Qt's Main Classes} page lists the
+    classes you're most likely to use most often, and provides a much
+    shorter and more managable list than the All Classes list.
+    \i The \menu{Grouped Classes} page presents a list
+    of groups, each of which leads to a list of related classes, for
+    example, the \menu{Advanced Widgets} list.
+    \i The \menu{Class Inheritance Hierarchy} page
+    presents a list of classes in terms of the hierarchy of Qt classes.
+    \i The \menu{Member Function Index} page lists all the
+    functions provided by Qt classes, each one with links to the class(es)
+    in which it appears.
+    \endlist
+
+    No matter where you find yourself in the Qt documentation, you will
+    find extensive cross-referencing. Even snippets of example code
+    contain clickable links, so that for example, if you come across a
+    class declaration in a code example, the class name will be a
+    clickable link to the class's documentation.
+
+    In addition to the class documentation some of Qt's modules have
+    extensive descriptions, and there are many overview documents which
+    describe various aspects of the Qt library; all these are linked from
+    the reference documentation home page. There are also two tutorials
+    and numerous example programs in the examples subdirectory of the Qt
+    distribution.
+
+    \chapter Qt Assistant in More Detail
+
+    \img helpviewer-helpviewer.png
+
+    \section1 The Toolwindows
+
+    \table
+    \row \i \inlineimage helpviewer-index.png
+    \inlineimage helpviewer-contents.png 
+    \inlineimage helpviewer-bookmarks.png
+    \endtable
+
+    The toolwindows provide four ways of navigating documentation:
+
+    \list
+    \i The \gui{Index} window is used to look up key words or phrases.
+    See \l{The One-Minute Guide to Using Qt Assistant} for how to use this
+    window.
+    \i The \gui{Contents} window presents a tree view of the
+    documentation sets that are available. If you click an item, its
+    documentation will appear in the \e{Documentation} window. If you double
+    click an item or click a '+' sign to the left of an item, the item's
+    sub-items will appear. Click a sub-item to make its page appear in the
+    \e{Documentation} window. Click a '-' sign to the left of an item to hide
+    its sub-items.
+    \i Both the \gui{Index} and \gui{Contents} window is providing a dropdown 
+    with filtersets to specify the documentation set where the search is 
+    preformed on.
+    \i The \gui{Bookmarks} window lists any bookmarks you've made. Double 
+    click a bookmark to make its page appear in the \e{Documentation} window. 
+    The \gui{Bookmarks} window provides a context menu with \gui{Show Item}, 
+    \gui{Delete Item} as well as \gui{Rename Item}. Click in the main menu 
+    \menu{Bookmark|Add Bookmark...} (or press \key{Ctrl+B}) to bookmark the 
+    page that is currently showing in the \e{Documentation} window. Right click 
+    a bookmark in the list, to rename or delete the highlighted bookmark.
+    \endlist
+
+    If you want the \e{Documentation} window to use as much space as possible, 
+    you can easily group, move or hide the toolwindows. To group the windows 
+    drag one on the other and release the mouse. If one or all toolwindows 
+    are not shown, press \key{Ctrl+T}, \key{Ctrl+I} or \key{Ctrl+O} to show 
+    the individual window.
+
+    The toolwindows are dock windows, so you can drag them to the top, left, 
+    right or bottom of \e{Qt Assistant's} window, or you can drag it outside \e{Qt Assistant} to float it.
+
+    \section1 The Documentation Window
+
+    \img helpviewer-docwindow.png
+
+    The \gui{Documentation} window offers a feature for viewing documentation by
+    enabling you to create tabs for each documentation page that you view.
+    Click the \gui{Add Tab} button and a new tab will appear with the
+    page name as the tab's caption. This makes it convenient to switch
+    between pages when you are working with different documentation. You
+    can delete a tab by clicking the \gui{Close Tab} button located
+    on the right side of the \gui{Documentation} window.
+
+    \section1 The Toolbar
+
+    \img helpviewer-toolbar.png
+
+    The toolbar provides fast access to the most common actions.
+
+    \list
+    \i \gui{Previous} takes you to the previous page. The menu
+    option is \menu{Go|Previous} and the keyboard shortcut is \key{Alt+Left
+    Arrow}.
+    \i \gui{Next} takes you to the next page. The menu
+    option is \menu{Go|Next} and the keyboard shortcut is \key{Alt+Right
+    Arrow}.
+    \i \gui{Home} takes you to the home page (normally the home page
+    of the Qt Reference Documentation). The menu
+    option is \menu{Go|Home} and the keyboard shortcut is \key{Ctrl+Home}.
+    \i \gui{Sync with Table of Contents} will sync the Contents toolwindow 
+    to the currently shown page in the \e{Documentation} window. The menu 
+    option is \menu{Go|Sync with Table of Contents}.
+    \i \gui{Copy} copies any selected text to the clipboard. The menu
+    option is \menu{Edit|Copy} and the keyboard shortcut is \key{Ctrl+C}.
+    \i \gui{Print} invokes the \gui{Print} dialog. The menu
+    option is \menu{File|Print} and the keyboard shortcut is \key{Ctrl+P}.
+    \i \gui{Find in Text} invokes the \gui{Find Text} dialog. The menu
+    option is \menu{Edit|Find in Text} and the keyboard shortcut is \key{Ctrl+F}.
+    \i \gui{Zoom in} increases the font size. The menu
+    option is \menu{View|Zoom in} and the keyboard shortcut is \key{Ctrl++}.
+    \i \gui{Zoom out} decreases the font size. The menu
+    option is \menu{View|Zoom out} and the keyboard shortcut is \key{Ctrl+-}.
+    \endlist
+
+    The address toolbar will be the fast way to enter a specific url for a 
+    documentation file.
+
+    \section1 The Menus
+
+    \section2 The File Menu
+
+    \list
+    \i \menu{File|Print} invokes the \gui{Print} dialog.    
+    \i \menu{File|Exit} terminates \e{Qt Assistant}.
+    \endlist
+
+    \section2 The Edit Menu
+
+    \list
+    \i \menu{Edit|Copy} copies any selected text to the clipboard.
+    \i \menu{Edit|Find in Text} invokes the \gui{Find Text} dialog.
+    \i \menu{Edit|Preferences} invokes the Settings dialog.
+    \endlist
+
+    \section2 The View Menu
+
+    \list
+    \i \menu{View|Zoom in} increases the font size.
+    \i \menu{View|Zoom out} decreases the font size.
+    \i \menu{View|Index} toggles the display of the \e{Index} toolwindow.
+    \i \menu{View|Contents} toggles the display of the \e{Contents} toolwindow.
+    \i \menu{View|Bookmarks} toggles the display of the \e{Bookmarks} toolwindow.
+    \i \menu{View|Search} toggles the display of the Search in the \e{Documentation} window.
+    \endlist
+
+    \section2 The Go Menu
+
+    \list
+    \i \menu{Go|Home} goes to the home page.
+    \i \menu{Go|Back} displays the previous page.
+    \i \menu{Go|Forward} displays the next page.
+    \i \menu{Go|Sync with Table of Contents} syncs the \e{Contents} toolwindow to the currently shown page.
+    \i \menu{Go|Next Page} selects the next page in the \e{Documentation} window.
+    \i \menu{Go|Previous Page} selects the previous page in the \e{Documentation} window.
+    \endlist
+
+    \section2 The Bookmarks Menu
+
+    \list
+    \i \menu{Bookmarks|Add} adds the current page to the list of bookmarks.
+    \endlist
+
+    \section1 The Dialogs
+
+    \section2 The Print Dialog
+
+    This dialog is platform-specific. It gives access to various printer
+    options and can be used to print the current page.
+
+    \section2 The Preferences Dialog
+
+    \table
+    \row \i \inlineimage helpviewer-preferencesdialog.png 
+    \inlineimage helpviewer-preferencesdialog1.png
+    \endtable
+
+    The \menu{Filters} page offers a feature for setting documentation 
+    filters for each documentation set that is installed. Click the \gui{Add} 
+    button to add new filter and specify the attributes on what documentation 
+    set the filter should work. You can delete a filter by clicking the \gui{Remove} 
+    button.
+
+    The \menu{Documentation} page will provide you a way to install and 
+    remove documentation sets. Click the \gui{Install} button and choose if you 
+    would like to install your set from the local hard drive by specifing a path 
+    or if you would like to download the set from the Help Server. To delete a 
+    documentation set select a documentation in the list and click \gui{Remove}.
+
+    \section2 The Find Text Dialog
+
+    This dialog is used to find text in the current page. Enter the
+    text you want to find in the Find line edit. If you check the
+    'Whole words only' checkbox, the search will only consider whole
+    words, i.e. if you search for 'spin' with this checkbox checked
+    it will not match 'spinbox', but will match 'spin'. If you check
+    the 'Case sensitive' check box then, for example, 'spin' will
+    match 'spin' but not 'Spin'. You can search Forward or Backward
+    from your current position in the page by clicking one of the
+    Direction radio buttons. Click the \gui{Find} button to search
+    (or search again), and click the \gui{Close} button to finish.
+
+    \chapter Full Text Searching
+
+    \img helpviewer-search.png
+
+    \e{Qt Assistant} provides a powerful full text search engine. To search
+    for certain words or text, click the 'Search' tab in the Documentation 
+    window. Then enter the text you want to look for and press \key{Enter} 
+    or click \gui{Search}. The search is not case sensitive, so Foo, fOo and
+    FOO are all treated as the same. The following are examples of common search
+    patterns:
+
+    \list
+    \i \c deep -- lists all the documents that contain the word 'deep'
+    \i \c{deep*} -- lists all the documents that contain a word beginning
+    with 'deep'
+    \i \c{deep copy} -- lists all documents that contain both 'deep' \e
+    and 'copy'
+    \i \c{"deep copy"} -- list all documents that contain the phrase 'deep copy'
+    \endlist
+
+    It is also possible to use the \gui{Advanced search} to get more flexibility. 
+    You can specify some words so that hits containing these are excluded from the 
+    result or search for an exact phrase of words. Search for similar words will 
+    look like this:
+
+    \list
+    \i \c{QStin} -- lists all the documents that that are similar like 'QString'
+    \i \c{QSting} -- lists all the documents that that are similar like 'QString'
+    \i \c{QStrin} -- lists all the documents that that are similar like 'QString'
+    \endlist
+
+    All options can be combined to enhance your search options.
+
+    The list of documents found is ordered according to the number of
+    occurrences of the search text they contain, therefore those with the
+    highest number of occurrences appearing first. Simply click any
+    document in the list to display it in the document window.
+
+    If the documentation has changed, i.e. if documents have been added or
+    removed, \e{Qt Assistant} will reindex.
+*/

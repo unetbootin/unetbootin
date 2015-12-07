@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qkeysequence.cpp -->
+<head>
+  <title>Qt 4.4: QKeySequence Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QKeySequence Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QKeySequence class encapsulates a key sequence as used by shortcuts. <a href="#details">More...</a></p>
+<pre> #include &lt;QKeySequence&gt;</pre><ul>
+<li><a href="qkeysequence-members.html">List of all members, including inherited members</a></li>
+<li><a href="qkeysequence-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qkeysequence.html#SequenceFormat-enum">SequenceFormat</a></b> { NativeText, PortableText }</li>
+<li><div class="fn"/>enum <b><a href="qkeysequence.html#SequenceMatch-enum">SequenceMatch</a></b> { NoMatch, PartialMatch, ExactMatch }</li>
+<li><div class="fn"/>enum <b><a href="qkeysequence.html#StandardKey-enum">StandardKey</a></b> { UnknownKey, HelpContents, WhatsThis, Open, ..., DeleteEndOfLine }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qkeysequence.html#QKeySequence">QKeySequence</a></b> ()</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#QKeySequence-2">QKeySequence</a></b> ( const QString &amp; <i>key</i> )</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#QKeySequence-3">QKeySequence</a></b> ( int <i>k1</i>, int <i>k2</i> = 0, int <i>k3</i> = 0, int <i>k4</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#QKeySequence-4">QKeySequence</a></b> ( const QKeySequence &amp; <i>keysequence</i> )</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#QKeySequence-5">QKeySequence</a></b> ( StandardKey <i>key</i> )</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#dtor.QKeySequence">~QKeySequence</a></b> ()</li>
+<li><div class="fn"/>uint <b><a href="qkeysequence.html#count">count</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#isEmpty">isEmpty</a></b> () const</li>
+<li><div class="fn"/>SequenceMatch <b><a href="qkeysequence.html#matches">matches</a></b> ( const QKeySequence &amp; <i>seq</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qkeysequence.html#toString">toString</a></b> ( SequenceFormat <i>format</i> = PortableText ) const</li>
+<li><div class="fn"/><b><a href="qkeysequence.html#operator-QVariant">operator QVariant</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-not-eq">operator!=</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-lt">operator&lt;</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-lt-eq">operator&lt;=</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QKeySequence &amp; <b><a href="qkeysequence.html#operator-eq">operator=</a></b> ( const QKeySequence &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-eq-eq">operator==</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-gt">operator&gt;</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qkeysequence.html#operator-gt-eq">operator&gt;=</a></b> ( const QKeySequence &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>int <b><a href="qkeysequence.html#operator-5b-5d">operator[]</a></b> ( uint <i>index</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QKeySequence <b><a href="qkeysequence.html#fromString">fromString</a></b> ( const QString &amp; <i>str</i>, SequenceFormat <i>format</i> = PortableText )</li>
+<li><div class="fn"/>QList&lt;QKeySequence&gt; <b><a href="qkeysequence.html#keyBindings">keyBindings</a></b> ( StandardKey <i>key</i> )</li>
+<li><div class="fn"/>QKeySequence <b><a href="qkeysequence.html#mnemonic">mnemonic</a></b> ( const QString &amp; <i>text</i> )</li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qkeysequence.html#operator-lt-lt-47">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>stream</i>, const QKeySequence &amp; <i>sequence</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="qkeysequence.html#operator-gt-gt-25">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>stream</i>, QKeySequence &amp; <i>sequence</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QKeySequence class encapsulates a key sequence as used by shortcuts.</p>
+<p>In its most common form, a key sequence describes a combination of keys that must be used together to perform some action. Key sequences are used with <a href="qaction.html">QAction</a> objects to specify which keyboard shortcuts can be used to trigger actions.</p>
+<p>Key sequences can be constructed for use as keyboard shortcuts in three different ways:</p>
+<ul>
+<li>For standard shortcuts, a <a href="qkeysequence.html#StandardKey-enum">standard key</a> can be used to request the platform-specific key sequence associated with each shortcut.</li>
+<li>For custom shortcuts, human-readable strings such as &quot;Ctrl+X&quot; can be used, and these can be translated into the appropriate shortcuts for users of different languages. Translations are made in the &quot;<a href="qshortcut.html">QShortcut</a>&quot; context.</li>
+<li>For hard-coded shortcuts, integer key codes can be specified with a combination of values defined by the <a href="qt.html#Key-enum">Qt::Key</a> and <a href="qt.html#Modifier-enum">Qt::Modifier</a> enum values. Each key code consists of a single <a href="qt.html#Key-enum">Qt::Key</a> value and zero or more modifiers, such as <a href="qt.html#Modifier-enum">Qt::SHIFT</a>, <a href="qt.html#Modifier-enum">Qt::CTRL</a>, <a href="qt.html#Modifier-enum">Qt::ALT</a> and <a href="qt.html#Modifier-enum">Qt::META</a>.</li>
+</ul>
+<p>For example, <b>Ctrl P</b> might be a sequence used as a shortcut for printing a document, and can be specified in any of the following ways:</p>
+<pre>     QKeySequence(QKeySequence::Print}
+     QKeySequence(tr(&quot;Ctrl+P&quot;))
+     QKeySequence(tr(&quot;Ctrl+p&quot;))
+     QKeySequence(Qt::CTRL + Qt::Key_P)</pre>
+<p>Note that, for letters, the case used in the specification string does not matter. In the above examples, the user does not need to hold down the <b>Shift</b> key to activate a shortcut specified with &quot;Ctrl+P&quot;. However, for other keys, the use of <b>Shift</b> as an unspecified extra modifier key can lead to confusion for users of an application whose keyboards have different layouts to those used by the developers. See the <a href="#keyboard-layout-issues">Keyboard Layout Issues</a> section below for more details.</p>
+<p>It is preferable to use standard shortcuts where possible. When creating key sequences for non-standard shortcuts, you should use human-readable strings in preference to hard-coded integer values.</p>
+<p>QKeySequence objects can be cast to a <a href="qstring.html">QString</a> to obtain a human-readable translated version of the sequence. Similarly, the <a href="qkeysequence.html#toString">toString</a>() function produces human-readable strings for use in menus. On Mac OS X, the appropriate symbols are used to describe keyboard shortcuts using special keys on the Macintosh keyboard.</p>
+<p>An alternative way to specify hard-coded key codes is to use the Unicode code point of the character; for example, 'A' gives the same key sequence as <a href="qt.html#Key-enum">Qt::Key_A</a>.</p>
+<p><b>Note:</b> On Mac OS X, references to &quot;Ctrl&quot;, <a href="qt.html#Modifier-enum">Qt::CTRL</a>, Qt::Control and <a href="qt.html#KeyboardModifier-enum">Qt::ControlModifier</a> correspond to the <b>Command</b> keys on the Macintosh keyboard, and references to &quot;Meta&quot;, <a href="qt.html#Modifier-enum">Qt::META</a>, Qt::Meta and <a href="qt.html#KeyboardModifier-enum">Qt::MetaModifier</a> correspond to the <b>Control</b> keys. Developers on Mac OS X can use the same shortcut descriptions across all platforms, and their applications will automatically work as expected on Mac OS X.</p>
+<a name="standard-shortcuts"></a>
+<h3>Standard Shortcuts</h3>
+<p>QKeySequence defines many <a href="qkeysequence.html#StandardKey-enum">StandardKey</a> standard keyboard shortcuts to reduce the amount of effort required when setting up actions in a typical application. The table below shows some common key sequences that are often used for these standard shortcuts by applications on four widely-used platforms. Note that on Mac OS X, the <b>Ctrl</b> value corresponds to the <b>Command</b> keys on the Macintosh keyboard, and the <b>Meta</b> value corresponds to the <b>Control</b> keys.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><a href="qkeysequence.html#StandardKey-enum">StandardKey</a></th><th>Windows</th><th>Mac OS X</th><th>KDE</th><th>GNOME</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">HelpContents</a></td><td>F1</td><td>Ctrl+?</td><td>F1</td><td>F1</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">WhatsThis</a></td><td>Shift+F1</td><td>Shift+F1</td><td>Shift+F1</td><td>Shift+F1</td></tr>
+<tr valign="top" class="odd"><td>Open</td><td>Ctrl+O</td><td>Ctrl+O</td><td>Ctrl+O</td><td>Ctrl+O</td></tr>
+<tr valign="top" class="even"><td>Close</td><td>Ctrl+F4, Ctrl+W</td><td>Ctrl+W, Ctrl+F4</td><td>Ctrl+W</td><td>Ctrl+W</td></tr>
+<tr valign="top" class="odd"><td>Save</td><td>Ctrl+S</td><td>Ctrl+S</td><td>Ctrl+S</td><td>Ctrl+S</td></tr>
+<tr valign="top" class="even"><td>New</td><td>Ctrl+N</td><td>Ctrl+N</td><td>Ctrl+N</td><td>Ctrl+N</td></tr>
+<tr valign="top" class="odd"><td>Delete</td><td>Del</td><td>Del, Meta+D</td><td>Del, Ctrl+D</td><td>Del, Ctrl+D</td></tr>
+<tr valign="top" class="even"><td>Cut</td><td>Ctrl+X, Shift+Del</td><td>Ctrl+X</td><td>Ctrl+X, F20, Shift+Del</td><td>Ctrl+X, F20, Shift+Del</td></tr>
+<tr valign="top" class="odd"><td>Copy</td><td>Ctrl+C, Ctrl+Ins</td><td>Ctrl+C</td><td>Ctrl+C, F16, Ctrl+Ins</td><td>Ctrl+C, F16, Ctrl+Ins</td></tr>
+<tr valign="top" class="even"><td>Paste</td><td>Ctrl+V, Shift+Ins</td><td>Ctrl+V</td><td>Ctrl+V, F18, Shift+Ins</td><td>Ctrl+V, F18, Shift+Ins</td></tr>
+<tr valign="top" class="odd"><td>Undo</td><td>Ctrl+Z, Alt+Backspace</td><td>Ctrl+Z</td><td>Ctrl+Z, F14</td><td>Ctrl+Z, F14</td></tr>
+<tr valign="top" class="even"><td>Redo</td><td>Ctrl+Y, Shift+Ctrl+Z, Alt+Shift+Backspace</td><td>Ctrl+Shift+Z, Ctrl+Y</td><td>Ctrl+Shift+Z</td><td>Ctrl+Shift+Z</td></tr>
+<tr valign="top" class="odd"><td>Back</td><td>Alt+Left, Backspace</td><td>Ctrl+[</td><td>Alt+Left</td><td>Alt+Left</td></tr>
+<tr valign="top" class="even"><td>Forward</td><td>Alt+Right, Shift+Backspace</td><td>Ctrl+]</td><td>Alt+Right</td><td>Alt+Right</td></tr>
+<tr valign="top" class="odd"><td>Refresh</td><td>F5</td><td>F5</td><td>F5</td><td>Ctrl+R, F5</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">ZoomIn</a></td><td>Ctrl+Plus</td><td>Ctrl+Plus</td><td>Ctrl+Plus</td><td>Ctrl+Plus</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">ZoomOut</a></td><td>Ctrl+Minus</td><td>Ctrl+Minus</td><td>Ctrl+Minus</td><td>Ctrl+Minus</td></tr>
+<tr valign="top" class="even"><td>Print</td><td>Ctrl+P</td><td>Ctrl+P</td><td>Ctrl+P</td><td>Ctrl+P</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">AddTab</a></td><td>Ctrl+T</td><td>Ctrl+T</td><td>Ctrl+Shift+N, Ctrl+T</td><td>Ctrl+T</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">NextChild</a></td><td>Ctrl+Tab, Forward, Ctrl+F6</td><td>Ctrl+}, Forward, Ctrl+Tab</td><td>Ctrl+Tab, Forward, Ctrl+Comma</td><td>Ctrl+Tab, Forward</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">PreviousChild</a></td><td>Ctrl+Shift+Tab, Back, Ctrl+Shift+F6</td><td>Ctrl+{, Back, Ctrl+Shift+Tab</td><td>Ctrl+Shift+Tab, Back, Ctrl+Period</td><td>Ctrl+Shift+Tab, Back</td></tr>
+<tr valign="top" class="even"><td>Find</td><td>Ctrl+F</td><td>Ctrl+F</td><td>Ctrl+F</td><td>Ctrl+F</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">FindNext</a></td><td>F3, Ctrl+G</td><td>Ctrl+G</td><td>F3</td><td>Ctrl+G, F3</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">FindPrevious</a></td><td>Shift+F3, Ctrl+Shift+G</td><td>Ctrl+Shift+G</td><td>Shift+F3</td><td>Ctrl+Shift+G, Shift+F3</td></tr>
+<tr valign="top" class="odd"><td>Replace</td><td>Ctrl+H</td><td>(none)</td><td>Ctrl+R</td><td>Ctrl+H</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectAll</a></td><td>Ctrl+A</td><td>Ctrl+A</td><td>Ctrl+A</td><td>Ctrl+A</td></tr>
+<tr valign="top" class="odd"><td>Bold</td><td>Ctrl+B</td><td>Ctrl+B</td><td>Ctrl+B</td><td>Ctrl+B</td></tr>
+<tr valign="top" class="even"><td>Italic</td><td>Ctrl+I</td><td>Ctrl+I</td><td>Ctrl+I</td><td>Ctrl+I</td></tr>
+<tr valign="top" class="odd"><td>Underline</td><td>Ctrl+U</td><td>Ctrl+U</td><td>Ctrl+U</td><td>Ctrl+U</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToNextChar</a></td><td>Right</td><td>Right</td><td>Right</td><td>Right</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToPreviousChar</a></td><td>Left</td><td>Left</td><td>Left</td><td>Left</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToNextWord</a></td><td>Ctrl+Right</td><td>Alt+Right</td><td>Ctrl+Right</td><td>Ctrl+Right</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToPreviousWord</a></td><td>Ctrl+Left</td><td>Alt+Left</td><td>Ctrl+Left</td><td>Ctrl+Left</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToNextLine</a></td><td>Down</td><td>Down</td><td>Down</td><td>Down</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToPreviousLine</a></td><td>Up</td><td>Up</td><td>Up</td><td>Up</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToNextPage</a></td><td>PgDown</td><td>PgDown, Alt+PgDown, Meta+Down, Meta+PgDown</td><td>PgDown</td><td>PgDown</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToPreviousPage</a></td><td>PgUp</td><td>PgUp, Alt+PgUp, Meta+Up, Meta+PgUp</td><td>PgUp</td><td>PgUp</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToStartOfLine</a></td><td>Home</td><td>Ctrl+Left, Meta+Left</td><td>Home</td><td>Home</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToEndOfLine</a></td><td>End</td><td>Ctrl+Right, Meta+Right</td><td>End</td><td>End</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToStartOfBlock</a></td><td>(none)</td><td>Alt+Up, Meta+A</td><td>(none)</td><td>(none)</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToEndOfBlock</a></td><td>(none)</td><td>Alt+Down, Meta+E</td><td>(none)</td><td>(none)</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">MoveToStartOfDocument</a></td><td>Ctrl+Home</td><td>Ctrl+Up, Home</td><td>Ctrl+Home</td><td>Ctrl+Home</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">MoveToEndOfDocument</a></td><td>Ctrl+End</td><td>Ctrl+Down, End</td><td>Ctrl+End</td><td>Ctrl+End</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectNextChar</a></td><td>Shift+Right</td><td>Shift+Right</td><td>Shift+Right</td><td>Shift+Right</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectPreviousChar</a></td><td>Shift+Left</td><td>Shift+Left</td><td>Shift+Left</td><td>Shift?left</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectNextWord</a></td><td>Ctrl+Shift+Right</td><td>Alt+Shift+Right</td><td>Ctrl+Shift+Right</td><td>Ctrl+Shift+Right</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectPreviousWord</a></td><td>Ctrl+Shift+Left</td><td>Alt+Shift+Left</td><td>Ctrl+Shift+Left</td><td>Ctrl+Shift+Left</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectNextLine</a></td><td>Shift+Down</td><td>Shift+Down</td><td>Shift+Down</td><td>Shift+Down</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectPreviousLine</a></td><td>Shift+Up</td><td>Shift+Up</td><td>Shift+Up</td><td>Shift+Up</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectNextPage</a></td><td>Shift+PgDown</td><td>Shift+PgDown</td><td>Shift+PgDown</td><td>Shift+PgDown</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectPreviousPage</a></td><td>Shift+PgUp</td><td>Shift+PgUp</td><td>Shift+PgUp</td><td>Shift+PgUp</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectStartOfLine</a></td><td>Shift+Home</td><td>Ctrl+Shift+Left</td><td>Shift+Home</td><td>Shift+Home</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectEndOfLine</a></td><td>Shift+End</td><td>Ctrl+Shift+Right</td><td>Shift+End</td><td>Shift+End</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectStartOfBlock</a></td><td>(none)</td><td>Alt+Shift+Up</td><td>(none)</td><td>(none)</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectEndOfBlock</a></td><td>(none)</td><td>Alt+Shift+Down</td><td>(none)</td><td>(none)</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">SelectStartOfDocument</a></td><td>Ctrl+Shift+Home</td><td>Ctrl+Shift+Up, Shift+Home</td><td>Ctrl+Shift+Home</td><td>Ctrl+Shift+Home</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">SelectEndOfDocument</a></td><td>Ctrl+Shift+End</td><td>Ctrl+Shift+Down, Shift+End</td><td>Ctrl+Shift+End</td><td>Ctrl+Shift+End</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">DeleteStartOfWord</a></td><td>Ctrl+Backspace</td><td>Alt+Backspace</td><td>Ctrl+Backspace</td><td>Ctrl+Backspace</td></tr>
+<tr valign="top" class="odd"><td><a href="qkeysequence.html#StandardKey-enum">DeleteEndOfWord</a></td><td>Ctrl+Del</td><td>(none)</td><td>Ctrl+Del</td><td>Ctrl+Del</td></tr>
+<tr valign="top" class="even"><td><a href="qkeysequence.html#StandardKey-enum">DeleteEndOfLine</a></td><td>(none)</td><td>(none)</td><td>Ctrl+K</td><td>Ctrl+K</td></tr>
+</table></p>
+<p>Note that, since the key sequences used for the standard shortcuts differ between platforms, you still need to test your shortcuts on each platform to ensure that you do not unintentionally assign the same key sequence to many actions.</p>
+<a name="keyboard-layout-issues"></a>
+<h3>Keyboard Layout Issues</h3>
+<p>Many key sequence specifications are chosen by developers based on the layout of certain types of keyboard, rather than choosing keys that represent the first letter of an action's name, such as <b>Ctrl S</b> (&quot;Ctrl+S&quot;) or <b>Ctrl C</b> (&quot;Ctrl+C&quot;). Additionally, because certain symbols can only be entered with the help of modifier keys on certain keyboard layouts, key sequences intended for use with one keyboard layout may map to a different key, map to no keys at all, or require an additional modifier key to be used on different keyboard layouts.</p>
+<p>For example, the shortcuts, <b>Ctrl plus</b> and <b>Ctrl minus</b>, are often used as shortcuts for zoom operations in graphics applications, and these may be specified as &quot;Ctrl++&quot; and &quot;Ctrl+-&quot; respectively. However, the way these shortcuts are specified and interpreted depends on the keyboard layout. Users of Norwegian keyboards will note that the <b>+</b> and <b>-</b> keys are not adjacent on the keyboard, but will still be able to activate both shortcuts without needing to press the <b>Shift</b> key. However, users with British keyboards will need to hold down the <b>Shift</b> key to enter the <b>+</b> symbol, making the shortcut effectively the same as &quot;Ctrl+Shift+=&quot;.</p>
+<p>Although some developers might resort to fully specifying all the modifiers they use on their keyboards to activate a shortcut, this will also result in unexpected behavior for users of different keyboard layouts.</p>
+<p>For example, a developer using a British keyboard may decide to specify &quot;Ctrl+Shift+=&quot; as the key sequence in order to create a shortcut that coincidentally behaves in the same way as <b>Ctrl plus</b>. However, the <b>=</b> key needs to be accessed using the <b>Shift</b> key on Norwegian keyboard, making the required shortcut effectively <b>Ctrl Shift Shift =</b> (an impossible key combination).</p>
+<p>As a result, both human-readable strings and hard-coded key codes can both be problematic to use when specifying a key sequence that can be used on a variety of different keyboard layouts. Only the use of <a href="qkeysequence.html#StandardKey-enum">standard shortcuts</a> guarantees that the user will be able to use the shortcuts that the developer intended.</p>
+<p>Despite this, we can address this issue by ensuring that human-readable strings are used, making it possible for translations of key sequences to be made for users of different languages. This approach will be successful for users whose keyboards have the most typical layout for the language they are using.</p>
+<a name="gnu-emacs-style-key-sequences"></a>
+<h3>GNU Emacs Style Key Sequences</h3>
+<p>Key sequences similar to those used in <a href="http://www.gnu.org/software/emacs/">GNU Emacs</a>, allowing up to four key codes, can be created by using the multiple argument constructor, or by passing a human-readable string of comma-separated key sequences.</p>
+<p>For example, the key sequence, <b>Ctrl X</b> followed by <b>Ctrl C</b>, can be specified using either of the following ways:</p>
+<pre>     QKeySequence(tr(&quot;Ctrl+X, Ctrl+C&quot;))
+     QKeySequence(Qt::CTRL + Qt::Key_X, Qt::CTRL + Qt::Key_C)</pre>
+<p>See also <a href="qshortcut.html">QShortcut</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="SequenceFormat-enum"></a>enum QKeySequence::SequenceFormat</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QKeySequence::NativeText</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The key sequence as a platform specific string. This means that it will be shown translated and on the Mac it will resemble a key sequence from the menu bar. This enum is best used when you want to display the string to the user.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::PortableText</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The key sequence is given in a &quot;portable&quot; format, suitable for reading and writing to a file. In many cases, it will look similar to the native text on Windows and X11.</td></tr>
+</table></p>
+<h3 class="fn"><a name="SequenceMatch-enum"></a>enum QKeySequence::SequenceMatch</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QKeySequence::NoMatch</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The key sequences are different; not even partially matching.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::PartialMatch</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The key sequences match partially, but are not the same.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::ExactMatch</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The key sequences are the same.</td></tr>
+</table></p>
+<h3 class="fn"><a name="StandardKey-enum"></a>enum QKeySequence::StandardKey</h3>
+<p>This enum represent standard key bindings. They can be used to assign platform dependent keyboard shortcuts to a <a href="qaction.html">QAction</a>. <a href="qkeyevent.html">QKeyEvent</a> also provides the function QKeyEvent::standardKey() to query if it matches an existing key binding.</p>
+<p>Note that the key bindings are platform dependent. The currently bound shortcuts can be queried using <a href="qkeysequence.html#keyBindings">keyBindings</a>().</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QKeySequence::UnknownKey</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Unbound key.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::HelpContents</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">Open help contents.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::WhatsThis</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">Activate whats this.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Open</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">Open Document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Close</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">Close Document/Tab.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Save</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">Save Document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::New</tt></td><td align="center" valign="top"><tt>6</tt></td><td valign="top">Create new Document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Delete</tt></td><td align="center" valign="top"><tt>7</tt></td><td valign="top">Delete.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Cut</tt></td><td align="center" valign="top"><tt>8</tt></td><td valign="top">Cut.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Copy</tt></td><td align="center" valign="top"><tt>9</tt></td><td valign="top">Copy.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Paste</tt></td><td align="center" valign="top"><tt>10</tt></td><td valign="top">Paste.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Undo</tt></td><td align="center" valign="top"><tt>11</tt></td><td valign="top">Undo.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Redo</tt></td><td align="center" valign="top"><tt>12</tt></td><td valign="top">Redo.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Back</tt></td><td align="center" valign="top"><tt>13</tt></td><td valign="top">Navigate back.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Forward</tt></td><td align="center" valign="top"><tt>14</tt></td><td valign="top">Navigate forward.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Refresh</tt></td><td align="center" valign="top"><tt>15</tt></td><td valign="top">Refresh or reload current document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::ZoomIn</tt></td><td align="center" valign="top"><tt>16</tt></td><td valign="top">Zoom in.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::ZoomOut</tt></td><td align="center" valign="top"><tt>17</tt></td><td valign="top">Zoom out.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Print</tt></td><td align="center" valign="top"><tt>18</tt></td><td valign="top">Print document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::AddTab</tt></td><td align="center" valign="top"><tt>19</tt></td><td valign="top">Add new tab.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::NextChild</tt></td><td align="center" valign="top"><tt>20</tt></td><td valign="top">Navigate to next tab or child window.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::PreviousChild</tt></td><td align="center" valign="top"><tt>21</tt></td><td valign="top">Navigate to previous tab or child window.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Find</tt></td><td align="center" valign="top"><tt>22</tt></td><td valign="top">Find in document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::FindNext</tt></td><td align="center" valign="top"><tt>23</tt></td><td valign="top">Find next result.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::FindPrevious</tt></td><td align="center" valign="top"><tt>24</tt></td><td valign="top">Find previous result.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Replace</tt></td><td align="center" valign="top"><tt>25</tt></td><td valign="top">Find and replace.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectAll</tt></td><td align="center" valign="top"><tt>26</tt></td><td valign="top">Select all text.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Bold</tt></td><td align="center" valign="top"><tt>27</tt></td><td valign="top">Bold text.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Italic</tt></td><td align="center" valign="top"><tt>28</tt></td><td valign="top">Italic text.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::Underline</tt></td><td align="center" valign="top"><tt>29</tt></td><td valign="top">Underline text.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToNextChar</tt></td><td align="center" valign="top"><tt>30</tt></td><td valign="top">Move cursor to next character.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToPreviousChar</tt></td><td align="center" valign="top"><tt>31</tt></td><td valign="top">Move cursor to previous character.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToNextWord</tt></td><td align="center" valign="top"><tt>32</tt></td><td valign="top">Move cursor to next word.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToPreviousWord</tt></td><td align="center" valign="top"><tt>33</tt></td><td valign="top">Move cursor to previous word.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToNextLine</tt></td><td align="center" valign="top"><tt>34</tt></td><td valign="top">Move cursor to next line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToPreviousLine</tt></td><td align="center" valign="top"><tt>35</tt></td><td valign="top">Move cursor to previous line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToNextPage</tt></td><td align="center" valign="top"><tt>36</tt></td><td valign="top">Move cursor to next page.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToPreviousPage</tt></td><td align="center" valign="top"><tt>37</tt></td><td valign="top">Move cursor to previous page.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToStartOfLine</tt></td><td align="center" valign="top"><tt>38</tt></td><td valign="top">Move cursor to start of line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToEndOfLine</tt></td><td align="center" valign="top"><tt>39</tt></td><td valign="top">Move cursor to end of line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToStartOfBlock</tt></td><td align="center" valign="top"><tt>40</tt></td><td valign="top">Move cursor to start of a block. This shortcut is only used on OS X.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToEndOfBlock</tt></td><td align="center" valign="top"><tt>41</tt></td><td valign="top">Move cursor to end of block. This shortcut is only used on the OS X.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToStartOfDocument</tt></td><td align="center" valign="top"><tt>42</tt></td><td valign="top">Move cursor to start of document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::MoveToEndOfDocument</tt></td><td align="center" valign="top"><tt>43</tt></td><td valign="top">Move cursor to end of document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectNextChar</tt></td><td align="center" valign="top"><tt>44</tt></td><td valign="top">Extend selection to next character.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectPreviousChar</tt></td><td align="center" valign="top"><tt>45</tt></td><td valign="top">Extend selection to previous character.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectNextWord</tt></td><td align="center" valign="top"><tt>46</tt></td><td valign="top">Extend selection to next word.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectPreviousWord</tt></td><td align="center" valign="top"><tt>47</tt></td><td valign="top">Extend selection to previous word.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectNextLine</tt></td><td align="center" valign="top"><tt>48</tt></td><td valign="top">Extend selection to next line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectPreviousLine</tt></td><td align="center" valign="top"><tt>49</tt></td><td valign="top">Extend selection to previous line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectNextPage</tt></td><td align="center" valign="top"><tt>50</tt></td><td valign="top">Extend selection to next page.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectPreviousPage</tt></td><td align="center" valign="top"><tt>51</tt></td><td valign="top">Extend selection to previous page.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectStartOfLine</tt></td><td align="center" valign="top"><tt>52</tt></td><td valign="top">Extend selection to start of line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectEndOfLine</tt></td><td align="center" valign="top"><tt>53</tt></td><td valign="top">Extend selection to end of line.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectStartOfBlock</tt></td><td align="center" valign="top"><tt>54</tt></td><td valign="top">Extend selection to the start of a text block. This shortcut is only used on OS X.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectEndOfBlock</tt></td><td align="center" valign="top"><tt>55</tt></td><td valign="top">Extend selection to the end of a text block. This shortcut is only used on OS X.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectStartOfDocument</tt></td><td align="center" valign="top"><tt>56</tt></td><td valign="top">Extend selection to start of document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::SelectEndOfDocument</tt></td><td align="center" valign="top"><tt>57</tt></td><td valign="top">Extend selection to end of document.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::DeleteStartOfWord</tt></td><td align="center" valign="top"><tt>58</tt></td><td valign="top">Delete the beginning of a word up to the cursor.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::DeleteEndOfWord</tt></td><td align="center" valign="top"><tt>59</tt></td><td valign="top">Delete word from the end of the cursor.</td></tr>
+<tr><td valign="top"><tt>QKeySequence::DeleteEndOfLine</tt></td><td align="center" valign="top"><tt>60</tt></td><td valign="top">Delete end of line.</td></tr>
+</table></p>
+<p>This enum was introduced in Qt 4.2.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QKeySequence"></a>QKeySequence::QKeySequence ()</h3>
+<p>Constructs an empty key sequence.</p>
+<h3 class="fn"><a name="QKeySequence-2"></a>QKeySequence::QKeySequence ( const <a href="qstring.html">QString</a> &amp; <i>key</i> )</h3>
+<p>Creates a key sequence from the <i>key</i> string. For example &quot;Ctrl+O&quot; gives CTRL+'O'. The strings &quot;Ctrl&quot;, &quot;Shift&quot;, &quot;Alt&quot; and &quot;Meta&quot; are recognized, as well as their translated equivalents in the &quot;<a href="qshortcut.html">QShortcut</a>&quot; context (using <a href="qobject.html#tr">QObject::tr</a>()).</p>
+<p>Up to four key codes may be entered by separating them with commas, e.g&#x2e; &quot;Alt+X,Ctrl+S,Q&quot;.</p>
+<p>This constructor is typically used with <a href="qobject.html#tr">tr</a>(), so that shortcut keys can be replaced in translations:</p>
+<pre>         QMenu *file = new QMenu(this);
+         file-&gt;addAction(tr(&quot;&amp;Open...&quot;), this, SLOT(open()),
+                           QKeySequence(tr(&quot;Ctrl+O&quot;, &quot;File|Open&quot;)));</pre>
+<p>Note the &quot;File|Open&quot; translator comment. It is by no means necessary, but it provides some context for the human translator.</p>
+<h3 class="fn"><a name="QKeySequence-3"></a>QKeySequence::QKeySequence ( int <i>k1</i>, int <i>k2</i> = 0, int <i>k3</i> = 0, int <i>k4</i> = 0 )</h3>
+<p>Constructs a key sequence with up to 4 keys <i>k1</i>, <i>k2</i>, <i>k3</i> and <i>k4</i>.</p>
+<p>The key codes are listed in <a href="qt.html#Key-enum">Qt::Key</a> and can be combined with modifiers (see <a href="qt.html#Modifier-enum">Qt::Modifier</a>) such as <a href="qt.html#Modifier-enum">Qt::SHIFT</a>, <a href="qt.html#Modifier-enum">Qt::CTRL</a>, <a href="qt.html#Modifier-enum">Qt::ALT</a>, or <a href="qt.html#Modifier-enum">Qt::META</a>.</p>
+<h3 class="fn"><a name="QKeySequence-4"></a>QKeySequence::QKeySequence ( const QKeySequence &amp; <i>keysequence</i> )</h3>
+<p>Copy constructor. Makes a copy of <i>keysequence</i>.</p>
+<h3 class="fn"><a name="QKeySequence-5"></a>QKeySequence::QKeySequence ( <a href="qkeysequence.html#StandardKey-enum">StandardKey</a> <i>key</i> )</h3>
+<p>Constructs a <a href="qkeysequence.html">QKeySequence</a> object for the given <i>key</i>. The result will depend on the currently running platform.</p>
+<p>The resulting object will be based on the first element in the list of key bindings for the <i>key</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="dtor.QKeySequence"></a>QKeySequence::~QKeySequence ()</h3>
+<p>Destroys the key sequence.</p>
+<h3 class="fn"><a name="count"></a><a href="qtglobal.html#uint-typedef">uint</a> QKeySequence::count () const</h3>
+<p>Returns the number of keys in the key sequence. The maximum is 4.</p>
+<h3 class="fn"><a name="fromString"></a>QKeySequence QKeySequence::fromString ( const <a href="qstring.html">QString</a> &amp; <i>str</i>, <a href="qkeysequence.html#SequenceFormat-enum">SequenceFormat</a> <i>format</i> = PortableText )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Return a <a href="qkeysequence.html">QKeySequence</a> from the string <i>str</i> based on <i>format</i>.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qkeysequence.html#toString">toString</a>().</p>
+<h3 class="fn"><a name="isEmpty"></a>bool QKeySequence::isEmpty () const</h3>
+<p>Returns true if the key sequence is empty; otherwise returns false.</p>
+<h3 class="fn"><a name="keyBindings"></a><a href="qlist.html">QList</a>&lt;QKeySequence&gt; QKeySequence::keyBindings ( <a href="qkeysequence.html#StandardKey-enum">StandardKey</a> <i>key</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a list of key bindings for the given <i>key</i>. The result of calling this function will vary based on the target platform. The first element of the list indicates the primary shortcut for the given platform. If the result contains more than one result, these can be considered alternative shortcuts on the same platform for the given <i>key</i>.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="matches"></a><a href="qkeysequence.html#SequenceMatch-enum">SequenceMatch</a> QKeySequence::matches ( const QKeySequence &amp; <i>seq</i> ) const</h3>
+<p>Matches the sequence with <i>seq</i>. Returns <a href="qkeysequence.html#SequenceMatch-enum">ExactMatch</a> if successful, <a href="qkeysequence.html#SequenceMatch-enum">PartialMatch</a> if <i>seq</i> matches incompletely, and <a href="qkeysequence.html#SequenceMatch-enum">NoMatch</a> if the sequences have nothing in common. Returns <a href="qkeysequence.html#SequenceMatch-enum">NoMatch</a> if <i>seq</i> is shorter.</p>
+<h3 class="fn"><a name="mnemonic"></a>QKeySequence QKeySequence::mnemonic ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the shortcut key sequence for the mnemonic in <i>text</i>, or an empty key sequence if no mnemonics are found.</p>
+<p>For example, mnemonic(&quot;E&amp;xit&quot;) returns <tt>Qt::ALT+Qt::Key_X</tt>, mnemonic(&quot;&amp;Quit&quot;) returns <tt>ALT+Key_Q</tt>, and mnemonic(&quot;Quit&quot;) returns an empty <a href="qkeysequence.html">QKeySequence</a>.</p>
+<p>We provide a <a href="accelerators.html">list of common mnemonics</a> in English. At the time of writing, Microsoft and Open Group do not appear to have issued equivalent recommendations for other languages.</p>
+<p>See also <a href="qtglobal.html#qt_set_sequence_auto_mnemonic">qt_set_sequence_auto_mnemonic</a>().</p>
+<h3 class="fn"><a name="toString"></a><a href="qstring.html">QString</a> QKeySequence::toString ( <a href="qkeysequence.html#SequenceFormat-enum">SequenceFormat</a> <i>format</i> = PortableText ) const</h3>
+<p>Return a string representation of the key sequence, based on <i>format</i>.</p>
+<p>For example, the value <a href="qt.html#Modifier-enum">Qt::CTRL</a>+<a href="qt.html#Key-enum">Qt::Key_O</a> results in &quot;Ctrl+O&quot;. If the key sequence has multiple key codes, each is separated by commas in the string returned, such as &quot;Alt+X, Ctrl+Y, Z&quot;. The strings, &quot;Ctrl&quot;, &quot;Shift&quot;, etc. are translated using <a href="qobject.html#tr">QObject::tr</a>() in the &quot;<a href="qshortcut.html">QShortcut</a>&quot; context.</p>
+<p>If the key sequence has no keys, an empty string is returned.</p>
+<p>On Mac OS X, the string returned resembles the sequence that is shown in the menu bar.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<p>See also <a href="qkeysequence.html#fromString">fromString</a>().</p>
+<h3 class="fn"><a name="operator-QVariant"></a>QKeySequence::operator QVariant () const</h3>
+<p>Returns the key sequence as a <a href="qvariant.html">QVariant</a></p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QKeySequence::operator!= ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Returns true if this key sequence is not equal to the <i>other</i> key sequence; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-lt"></a>bool QKeySequence::operator&lt; ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Provides an arbitrary comparison of this key sequence and <i>other</i> key sequence. All that is guaranteed is that the operator returns false if both key sequences are equal and that (ks1 &lt; ks2) == !( ks2 &lt; ks1) if the key sequences are not equal.</p>
+<p>This function is useful in some circumstances, for example if you want to use <a href="qkeysequence.html">QKeySequence</a> objects as keys in a <a href="qmap.html">QMap</a>.</p>
+<p>See also <a href="qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="qkeysequence.html#operator-gt">operator&gt;</a>(), <a href="qkeysequence.html#operator-lt-eq">operator&lt;=</a>(), and <a href="qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p>
+<h3 class="fn"><a name="operator-lt-eq"></a>bool QKeySequence::operator&lt;= ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Returns true if this key sequence is smaller or equal to the <i>other</i> key sequence; otherwise returns false.</p>
+<p>See also <a href="qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="qkeysequence.html#operator-gt">operator&gt;</a>(), and <a href="qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p>
+<h3 class="fn"><a name="operator-eq"></a>QKeySequence &amp; QKeySequence::operator= ( const QKeySequence &amp; <i>other</i> )</h3>
+<p>Assignment operator. Assigns the <i>other</i> key sequence to this object.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QKeySequence::operator== ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Returns true if this key sequence is equal to the <i>other</i> key sequence; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-gt"></a>bool QKeySequence::operator&gt; ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Returns true if this key sequence is larger than the <i>other</i> key sequence; otherwise returns false.</p>
+<p>See also <a href="qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="qkeysequence.html#operator-lt-eq">operator&lt;=</a>(), and <a href="qkeysequence.html#operator-gt-eq">operator&gt;=</a>().</p>
+<h3 class="fn"><a name="operator-gt-eq"></a>bool QKeySequence::operator&gt;= ( const QKeySequence &amp; <i>other</i> ) const</h3>
+<p>Returns true if this key sequence is larger or equal to the <i>other</i> key sequence; otherwise returns false.</p>
+<p>See also <a href="qkeysequence.html#operator-eq-eq">operator==</a>(), <a href="qkeysequence.html#operator-not-eq">operator!=</a>(), <a href="qkeysequence.html#operator-lt">operator&lt;</a>(), <a href="qkeysequence.html#operator-gt">operator&gt;</a>(), and <a href="qkeysequence.html#operator-lt-eq">operator&lt;=</a>().</p>
+<h3 class="fn"><a name="operator-5b-5d"></a>int QKeySequence::operator[] ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i> ) const</h3>
+<p>Returns a reference to the element at position <i>index</i> in the key sequence. This can only be used to read an element.</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-lt-lt-47"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, const QKeySequence &amp; <i>sequence</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes the key <i>sequence</i> to the <i>stream</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<h3 class="fn"><a name="operator-gt-gt-25"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>stream</i>, QKeySequence &amp; <i>sequence</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a key sequence from the <i>stream</i> into the key <i>sequence</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

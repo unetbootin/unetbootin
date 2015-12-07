@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qtextedit.cpp -->
+<head>
+  <title>Qt 4.4: QTextEdit Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextEdit Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QTextEdit class provides a widget that is used to edit and display both plain and rich text. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextEdit&gt;</pre><p>Inherits <a href="qabstractscrollarea.html">QAbstractScrollArea</a>.</p>
+<p>Inherited by <a href="qtextbrowser.html">QTextBrowser</a>.</p>
+<ul>
+<li><a href="qtextedit-members.html">List of all members, including inherited members</a></li>
+<li><a href="qtextedit-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>class <b><a href="qtextedit-extraselection.html">ExtraSelection</a></b></li>
+<li><div class="fn"/>flags <b><a href="qtextedit.html#AutoFormattingFlag-enum">AutoFormatting</a></b></li>
+<li><div class="fn"/>enum <b><a href="qtextedit.html#AutoFormattingFlag-enum">AutoFormattingFlag</a></b> { AutoNone, AutoBulletList, AutoAll }</li>
+<li><div class="fn"/>enum <b><a href="qtextedit.html#CursorAction-enum">CursorAction</a></b> { MoveBackward, MoveForward, MoveWordBackward, MoveWordForward, ..., MovePageDown }</li>
+<li><div class="fn"/>enum <b><a href="qtextedit.html#LineWrapMode-enum">LineWrapMode</a></b> { NoWrap, WidgetWidth, FixedPixelWidth, FixedColumnWidth }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qtextedit.html#acceptRichText-prop">acceptRichText</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtextedit.html#autoFormatting-prop">autoFormatting</a></b> : AutoFormatting</li>
+<li><div class="fn"/><b><a href="qtextedit.html#cursorWidth-prop">cursorWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="qtextedit.html#documentTitle-prop">documentTitle</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qtextedit.html#html-prop">html</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qtextedit.html#lineWrapColumnOrWidth-prop">lineWrapColumnOrWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="qtextedit.html#lineWrapMode-prop">lineWrapMode</a></b> : LineWrapMode</li>
+<li><div class="fn"/><b><a href="qtextedit.html#overwriteMode-prop">overwriteMode</a></b> : bool</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qtextedit.html#plainText-prop">plainText</a></b> : QString</li>
+<li><div class="fn"/><b><a href="qtextedit.html#readOnly-prop">readOnly</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtextedit.html#tabChangesFocus-prop">tabChangesFocus</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtextedit.html#tabStopWidth-prop">tabStopWidth</a></b> : int</li>
+<li><div class="fn"/><b><a href="qtextedit.html#textInteractionFlags-prop">textInteractionFlags</a></b> : Qt::TextInteractionFlags</li>
+<li><div class="fn"/><b><a href="qtextedit.html#undoRedoEnabled-prop">undoRedoEnabled</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qtextedit.html#wordWrapMode-prop">wordWrapMode</a></b> : QTextOption::WrapMode</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>2 properties inherited from <a href="qabstractscrollarea.html#properties">QAbstractScrollArea</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextedit.html#QTextEdit">QTextEdit</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qtextedit.html#QTextEdit-2">QTextEdit</a></b> ( const QString &amp; <i>text</i>, QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qtextedit.html#dtor.QTextEdit">~QTextEdit</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#acceptRichText-prop">acceptRichText</a></b> () const</li>
+<li><div class="fn"/>Qt::Alignment <b><a href="qtextedit.html#alignment">alignment</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextedit.html#anchorAt">anchorAt</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>AutoFormatting <b><a href="qtextedit.html#autoFormatting-prop">autoFormatting</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#canPaste">canPaste</a></b> () const</li>
+<li><div class="fn"/>QMenu * <b><a href="qtextedit.html#createStandardContextMenu">createStandardContextMenu</a></b> ()</li>
+<li><div class="fn"/>QMenu * <b><a href="qtextedit.html#createStandardContextMenu-2">createStandardContextMenu</a></b> ( const QPoint &amp; <i>position</i> )</li>
+<li><div class="fn"/>QTextCharFormat <b><a href="qtextedit.html#currentCharFormat">currentCharFormat</a></b> () const</li>
+<li><div class="fn"/>QFont <b><a href="qtextedit.html#currentFont">currentFont</a></b> () const</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtextedit.html#cursorForPosition">cursorForPosition</a></b> ( const QPoint &amp; <i>pos</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qtextedit.html#cursorRect">cursorRect</a></b> ( const QTextCursor &amp; <i>cursor</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="qtextedit.html#cursorRect-2">cursorRect</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextedit.html#cursorWidth-prop">cursorWidth</a></b> () const</li>
+<li><div class="fn"/>QTextDocument * <b><a href="qtextedit.html#document">document</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextedit.html#documentTitle-prop">documentTitle</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#ensureCursorVisible">ensureCursorVisible</a></b> ()</li>
+<li><div class="fn"/>QList&lt;ExtraSelection&gt; <b><a href="qtextedit.html#extraSelections">extraSelections</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#find">find</a></b> ( const QString &amp; <i>exp</i>, QTextDocument::FindFlags <i>options</i> = 0 )</li>
+<li><div class="fn"/>QString <b><a href="qtextedit.html#fontFamily">fontFamily</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#fontItalic">fontItalic</a></b> () const</li>
+<li><div class="fn"/>qreal <b><a href="qtextedit.html#fontPointSize">fontPointSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#fontUnderline">fontUnderline</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextedit.html#fontWeight">fontWeight</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#readOnly-prop">isReadOnly</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#undoRedoEnabled-prop">isUndoRedoEnabled</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextedit.html#lineWrapColumnOrWidth-prop">lineWrapColumnOrWidth</a></b> () const</li>
+<li><div class="fn"/>LineWrapMode <b><a href="qtextedit.html#lineWrapMode-prop">lineWrapMode</a></b> () const</li>
+<li><div class="fn"/>virtual QVariant <b><a href="qtextedit.html#loadResource">loadResource</a></b> ( int <i>type</i>, const QUrl &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#mergeCurrentCharFormat">mergeCurrentCharFormat</a></b> ( const QTextCharFormat &amp; <i>modifier</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#moveCursor">moveCursor</a></b> ( QTextCursor::MoveOperation <i>operation</i>, QTextCursor::MoveMode <i>mode</i> = QTextCursor::MoveAnchor )</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#overwriteMode-prop">overwriteMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#print">print</a></b> ( QPrinter * <i>printer</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#acceptRichText-prop">setAcceptRichText</a></b> ( bool <i>accept</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#autoFormatting-prop">setAutoFormatting</a></b> ( AutoFormatting <i>features</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setCurrentCharFormat">setCurrentCharFormat</a></b> ( const QTextCharFormat &amp; <i>format</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#cursorWidth-prop">setCursorWidth</a></b> ( int <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setDocument">setDocument</a></b> ( QTextDocument * <i>document</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#documentTitle-prop">setDocumentTitle</a></b> ( const QString &amp; <i>title</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setExtraSelections">setExtraSelections</a></b> ( const QList&lt;ExtraSelection&gt; &amp; <i>selections</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#lineWrapColumnOrWidth-prop">setLineWrapColumnOrWidth</a></b> ( int <i>w</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#lineWrapMode-prop">setLineWrapMode</a></b> ( LineWrapMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#overwriteMode-prop">setOverwriteMode</a></b> ( bool <i>overwrite</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#readOnly-prop">setReadOnly</a></b> ( bool <i>ro</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#tabChangesFocus-prop">setTabChangesFocus</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#tabStopWidth-prop">setTabStopWidth</a></b> ( int <i>width</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setTextCursor">setTextCursor</a></b> ( const QTextCursor &amp; <i>cursor</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#textInteractionFlags-prop">setTextInteractionFlags</a></b> ( Qt::TextInteractionFlags <i>flags</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#undoRedoEnabled-prop">setUndoRedoEnabled</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#wordWrapMode-prop">setWordWrapMode</a></b> ( QTextOption::WrapMode <i>policy</i> )</li>
+<li><div class="fn"/>bool <b><a href="qtextedit.html#tabChangesFocus-prop">tabChangesFocus</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qtextedit.html#tabStopWidth-prop">tabStopWidth</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qtextedit.html#textBackgroundColor">textBackgroundColor</a></b> () const</li>
+<li><div class="fn"/>QColor <b><a href="qtextedit.html#textColor">textColor</a></b> () const</li>
+<li><div class="fn"/>QTextCursor <b><a href="qtextedit.html#textCursor">textCursor</a></b> () const</li>
+<li><div class="fn"/>Qt::TextInteractionFlags <b><a href="qtextedit.html#textInteractionFlags-prop">textInteractionFlags</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextedit.html#html-prop">toHtml</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qtextedit.html#plainText-prop">toPlainText</a></b> () const</li>
+<li><div class="fn"/>QTextOption::WrapMode <b><a href="qtextedit.html#wordWrapMode-prop">wordWrapMode</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractscrollarea.html#public-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtextedit.html#append">append</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#copy">copy</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#cut">cut</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#insertHtml">insertHtml</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#insertPlainText">insertPlainText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#paste">paste</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#redo">redo</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#scrollToAnchor">scrollToAnchor</a></b> ( const QString &amp; <i>name</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#selectAll">selectAll</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setAlignment">setAlignment</a></b> ( Qt::Alignment <i>a</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setCurrentFont">setCurrentFont</a></b> ( const QFont &amp; <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setFontFamily">setFontFamily</a></b> ( const QString &amp; <i>fontFamily</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setFontItalic">setFontItalic</a></b> ( bool <i>italic</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setFontPointSize">setFontPointSize</a></b> ( qreal <i>s</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setFontUnderline">setFontUnderline</a></b> ( bool <i>underline</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setFontWeight">setFontWeight</a></b> ( int <i>weight</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#html-prop">setHtml</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#plainText-prop">setPlainText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setText">setText</a></b> ( const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setTextBackgroundColor">setTextBackgroundColor</a></b> ( const QColor &amp; <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#setTextColor">setTextColor</a></b> ( const QColor &amp; <i>c</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#undo">undo</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#zoomIn">zoomIn</a></b> ( int <i>range</i> = 1 )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#zoomOut">zoomOut</a></b> ( int <i>range</i> = 1 )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qtextedit.html#copyAvailable">copyAvailable</a></b> ( bool <i>yes</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#currentCharFormatChanged">currentCharFormatChanged</a></b> ( const QTextCharFormat &amp; <i>f</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#cursorPositionChanged">cursorPositionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#redoAvailable">redoAvailable</a></b> ( bool <i>available</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#selectionChanged">selectionChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#textChanged">textChanged</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qtextedit.html#undoAvailable">undoAvailable</a></b> ( bool <i>available</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual bool <b><a href="qtextedit.html#canInsertFromMimeData">canInsertFromMimeData</a></b> ( const QMimeData * <i>source</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="qtextedit.html#contextMenuEvent">contextMenuEvent</a></b> ( QContextMenuEvent * <i>event</i> )</li>
+<li><div class="fn"/>virtual QMimeData * <b><a href="qtextedit.html#createMimeDataFromSelection">createMimeDataFromSelection</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="qtextedit.html#insertFromMimeData">insertFromMimeData</a></b> ( const QMimeData * <i>source</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>16 protected functions inherited from <a href="qabstractscrollarea.html#protected-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qabstractscrollarea.html#protected-slots">QAbstractScrollArea</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextEdit class provides a widget that is used to edit and display both plain and rich text.</p>
+<ul><li><a href="#introduction-and-concepts">Introduction and Concepts</a></li>
+<li><a href="#using-qtextedit-as-a-display-widget">Using QTextEdit as a Display Widget</a></li>
+<ul><li><a href="#read-only-key-bindings">Read-only Key Bindings</a></li>
+</ul>
+<li><a href="#using-qtextedit-as-an-editor">Using QTextEdit as an Editor</a></li>
+<ul><li><a href="#drag-and-drop">Drag and Drop</a></li>
+<li><a href="#editing-key-bindings">Editing Key Bindings</a></li>
+</ul>
+</ul>
+<a name="introduction-and-concepts"></a>
+<h3>Introduction and Concepts</h3>
+<p>QTextEdit is an advanced WYSIWYG viewer/editor supporting rich text formatting using HTML-style tags. It is optimized to handle large documents and to respond quickly to user input.</p>
+<p>QTextEdit works on paragraphs and characters. A paragraph is a formatted string which is word-wrapped to fit into the width of the widget. By default when reading plain text, one newline signifies a paragraph. A document consists of zero or more paragraphs. The words in the paragraph are aligned in accordance with the paragraph's alignment. Paragraphs are separated by hard line breaks. Each character within a paragraph has its own attributes, for example, font and color.</p>
+<p>QTextEdit can display images, lists and tables. If the text is too large to view within the text edit's viewport, scroll bars will appear. The text edit can load both plain text and HTML files (a subset of HTML 3.2 and 4).</p>
+<p>If you just need to display a small piece of rich text use <a href="qlabel.html">QLabel</a>.</p>
+<p>The rich text support in Qt is designed to provide a fast, portable and efficient way to add reasonable online help facilities to applications, and to provide a basis for rich text editors. If you find the HTML support insufficient for your needs you may consider the use of <a href="qtwebkit.html">QtWebKit</a>, which provides a full-featured web browser widget.</p>
+<p>The shape of the mouse cursor on a QTextEdit is <a href="qt.html#CursorShape-enum">Qt::IBeamCursor</a> by default. It can be changed through the <a href="qabstractscrollarea.html#viewport">viewport</a>()'s cursor property.</p>
+<a name="using-qtextedit-as-a-display-widget"></a>
+<h3>Using QTextEdit as a Display Widget</h3>
+<p>QTextEdit can display a large HTML subset, including tables and images.</p>
+<p>The text is set or replaced using <a href="qtextedit.html#html-prop">setHtml</a>() which deletes any existing text and replaces it with the text passed in the <a href="qtextedit.html#html-prop">setHtml</a>() call. If you call <a href="qtextedit.html#html-prop">setHtml</a>() with legacy HTML, and then call <a href="qtextedit.html#html-prop">toHtml</a>(), the text that is returned may have different markup, but will render the same. The entire text can be deleted with <a href="qtextedit.html#clear">clear</a>().</p>
+<p>Text itself can be inserted using the <a href="qtextcursor.html">QTextCursor</a> class or using the convenience functions <a href="qtextedit.html#insertHtml">insertHtml</a>(), <a href="qtextedit.html#insertPlainText">insertPlainText</a>(), <a href="qtextedit.html#append">append</a>() or <a href="qtextedit.html#paste">paste</a>(). <a href="qtextcursor.html">QTextCursor</a> is also able to insert complex objects like tables or lists into the document, and it deals with creating selections and applying changes to selected text.</p>
+<p>By default the text edit wraps words at whitespace to fit within the text edit widget. The <a href="qtextedit.html#lineWrapMode-prop">setLineWrapMode</a>() function is used to specify the kind of line wrap you want, or <a href="qtextedit.html#LineWrapMode-enum">NoWrap</a> if you don't want any wrapping. Call <a href="qtextedit.html#lineWrapMode-prop">setLineWrapMode</a>() to set a fixed pixel width <a href="qtextedit.html#LineWrapMode-enum">FixedPixelWidth</a>, or character column (e.g&#x2e; 80 column) <a href="qtextedit.html#LineWrapMode-enum">FixedColumnWidth</a> with the pixels or columns specified with <a href="qtextedit.html#lineWrapColumnOrWidth-prop">setLineWrapColumnOrWidth</a>(). If you use word wrap to the widget's width <a href="qtextedit.html#LineWrapMode-enum">WidgetWidth</a>, you can specify whether to break on whitespace or anywhere with <a href="qtextedit.html#wordWrapMode-prop">setWordWrapMode</a>().</p>
+<p>The <a href="qtextedit.html#find">find</a>() function can be used to find and select a given string within the text.</p>
+<p>If you want to limit the total number of paragraphs in a QTextEdit, as it is for example open useful in a log viewer, then you can use <a href="qtextdocument.html">QTextDocument</a>'s maximumBlockCount property for that.</p>
+<a name="read-only-key-bindings"></a>
+<h4>Read-only Key Bindings</h4>
+<p>When QTextEdit is used read-only the key bindings are limited to navigation, and text may only be selected with the mouse:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Keypresses</th><th>Action</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::UpArrow</a></td><td>Moves one line up.</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#ArrowType-enum">Qt::DownArrow</a></td><td>Moves one line down.</td></tr>
+<tr valign="top" class="odd"><td><a href="qt.html#ArrowType-enum">Qt::LeftArrow</a></td><td>Moves one character to the left.</td></tr>
+<tr valign="top" class="even"><td><a href="qt.html#ArrowType-enum">Qt::RightArrow</a></td><td>Moves one character to the right.</td></tr>
+<tr valign="top" class="odd"><td>PageUp</td><td>Moves one (viewport) page up.</td></tr>
+<tr valign="top" class="even"><td>PageDown</td><td>Moves one (viewport) page down.</td></tr>
+<tr valign="top" class="odd"><td>Home</td><td>Moves to the beginning of the text.</td></tr>
+<tr valign="top" class="even"><td>End</td><td>Moves to the end of the text.</td></tr>
+<tr valign="top" class="odd"><td>Alt+Wheel</td><td>Scrolls the page horizontally (the Wheel is the mouse wheel).</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Wheel</td><td>Zooms the text.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+A</td><td>Selects all text.</td></tr>
+</table></p>
+<p>The text edit may be able to provide some meta-information. For example, the <a href="qtextedit.html#documentTitle-prop">documentTitle</a>() function will return the text from within HTML <tt>&lt;title&gt;</tt> tags.</p>
+<a name="using-qtextedit-as-an-editor"></a>
+<h3>Using QTextEdit as an Editor</h3>
+<p>All the information about using QTextEdit as a display widget also applies here.</p>
+<p>The current char format's attributes are set with <a href="qtextedit.html#setFontItalic">setFontItalic</a>(), <a href="qtextedit.html#setFontWeight">setFontWeight</a>(), <a href="qtextedit.html#setFontUnderline">setFontUnderline</a>(), <a href="qtextedit.html#setFontFamily">setFontFamily</a>(), <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>(), <a href="qtextedit.html#setTextColor">setTextColor</a>() and <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(). The current paragraph's alignment is set with <a href="qtextedit.html#setAlignment">setAlignment</a>().</p>
+<p>Selection of text is handled by the <a href="qtextcursor.html">QTextCursor</a> class, which provides functionality for creating selections, retrieving the text contents or deleting selections. You can retrieve the object that corresponds with the user-visible cursor using the <a href="qtextedit.html#textCursor">textCursor</a>() method. If you want to set a selection in QTextEdit just create one on a <a href="qtextcursor.html">QTextCursor</a> object and then make that cursor the visible cursor using <a href="qwidget.html#cursor-prop">setCursor</a>(). The selection can be copied to the clipboard with <a href="qtextedit.html#copy">copy</a>(), or cut to the clipboard with <a href="qtextedit.html#cut">cut</a>(). The entire text can be selected using <a href="qtextedit.html#selectAll">selectAll</a>().</p>
+<p>When the cursor is moved and the underlying formatting attributes change, the <a href="qtextedit.html#currentCharFormatChanged">currentCharFormatChanged</a>() signal is emitted to reflect the new attributes at the new cursor position.</p>
+<p>QTextEdit holds a <a href="qtextdocument.html">QTextDocument</a> object which can be retrieved using the <a href="qtextedit.html#document">document</a>() method. You can also set your own document object using <a href="qtextedit.html#setDocument">setDocument</a>(). <a href="qtextdocument.html">QTextDocument</a> emits a <a href="qtextedit.html#textChanged">textChanged</a>() signal if the text changes and it also provides a <a href="qtextedit-qt3.html#isModified">isModified</a>() function which will return true if the text has been modified since it was either loaded or since the last call to setModified with false as argument. In addition it provides methods for undo and redo.</p>
+<a name="drag-and-drop"></a>
+<h4>Drag and Drop</h4>
+<p>QTextEdit also supports custom drag and drop behavior. By default, QTextEdit will insert plain text, HTML and rich text when the user drops data of these MIME types onto a document. Reimplement <a href="qtextedit.html#canInsertFromMimeData">canInsertFromMimeData</a>() and <a href="qtextedit.html#insertFromMimeData">insertFromMimeData</a>() to add support for additional MIME types.</p>
+<p>For example, to allow the user to drag and drop an image onto a QTextEdit, you could the implement these functions in the following way:</p>
+<pre> bool TextEdit::canInsertFromMimeData( const QMimeData *source ) const
+ {
+     if (source-&gt;hasImage())
+         return true;
+     else
+         return QTextEdit::canInsertFromMimeData(source);
+ }</pre>
+<p>We add support for image MIME types by returning true. For all other MIME types, we use the default implementation.</p>
+<pre> void TextEdit::insertFromMimeData( const QMimeData *source )
+ {
+     if (source-&gt;hasImage())
+     {
+         QImage image = qvariant_cast&lt;QImage&gt;(source-&gt;imageData());
+         QTextCursor cursor = this-&gt;textCursor();
+         QTextDocument *document = this-&gt;document();
+         document-&gt;addResource(QTextDocument::ImageResource, QUrl(&quot;image&quot;), image);
+         cursor.insertImage(&quot;image&quot;);
+     }
+ }</pre>
+<p>We unpack the image from the <a href="qvariant.html">QVariant</a> held by the MIME source and insert it into the document as a resource.</p>
+<a name="editing-key-bindings"></a>
+<h4>Editing Key Bindings</h4>
+<p>The list of key bindings which are implemented for editing:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Keypresses</th><th>Action</th></tr></thead>
+<tr valign="top" class="odd"><td>Backspace</td><td>Deletes the character to the left of the cursor.</td></tr>
+<tr valign="top" class="even"><td>Delete</td><td>Deletes the character to the right of the cursor.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+C</td><td>Copy the selected text to the clipboard.</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Insert</td><td>Copy the selected text to the clipboard.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+K</td><td>Deletes to the end of the line.</td></tr>
+<tr valign="top" class="even"><td>Ctrl+V</td><td>Pastes the clipboard text into text edit.</td></tr>
+<tr valign="top" class="odd"><td>Shift+Insert</td><td>Pastes the clipboard text into text edit.</td></tr>
+<tr valign="top" class="even"><td>Ctrl+X</td><td>Deletes the selected text and copies it to the clipboard.</td></tr>
+<tr valign="top" class="odd"><td>Shift+Delete</td><td>Deletes the selected text and copies it to the clipboard.</td></tr>
+<tr valign="top" class="even"><td>Ctrl+Z</td><td>Undoes the last operation.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+Y</td><td>Redoes the last operation.</td></tr>
+<tr valign="top" class="even"><td>LeftArrow</td><td>Moves the cursor one character to the left.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+LeftArrow</td><td>Moves the cursor one word to the left.</td></tr>
+<tr valign="top" class="even"><td>RightArrow</td><td>Moves the cursor one character to the right.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+RightArrow</td><td>Moves the cursor one word to the right.</td></tr>
+<tr valign="top" class="even"><td>UpArrow</td><td>Moves the cursor one line up.</td></tr>
+<tr valign="top" class="odd"><td>DownArrow</td><td>Moves the cursor one line down.</td></tr>
+<tr valign="top" class="even"><td>PageUp</td><td>Moves the cursor one page up.</td></tr>
+<tr valign="top" class="odd"><td>PageDown</td><td>Moves the cursor one page down.</td></tr>
+<tr valign="top" class="even"><td>Home</td><td>Moves the cursor to the beginning of the line.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+Home</td><td>Moves the cursor to the beginning of the text.</td></tr>
+<tr valign="top" class="even"><td>End</td><td>Moves the cursor to the end of the line.</td></tr>
+<tr valign="top" class="odd"><td>Ctrl+End</td><td>Moves the cursor to the end of the text.</td></tr>
+<tr valign="top" class="even"><td>Alt+Wheel</td><td>Scrolls the page horizontally (the Wheel is the mouse wheel).</td></tr>
+</table></p>
+<p>To select (mark) text hold down the Shift key whilst pressing one of the movement keystrokes, for example, <i>Shift+Right Arrow</i> will select the character to the right, and <i>Shift+Ctrl+Right Arrow</i> will select the word to the right, etc.</p>
+<p>See also <a href="qtextdocument.html">QTextDocument</a>, <a href="qtextcursor.html">QTextCursor</a>, <a href="mainwindows-application.html">Application Example</a>, <a href="richtext-syntaxhighlighter.html">Syntax Highlighter Example</a>, and <a href="richtext.html">Rich Text Processing</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="AutoFormattingFlag-enum"></a>enum QTextEdit::AutoFormattingFlag<br />flags QTextEdit::AutoFormatting</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QTextEdit::AutoNone</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Don't do any automatic formatting.</td></tr>
+<tr><td valign="top"><tt>QTextEdit::AutoBulletList</tt></td><td align="center" valign="top"><tt>0x00000001</tt></td><td valign="top">Automatically create bullet lists (e.g&#x2e; when the user enters an asterisk ('*') in the left most column, or presses Enter in an existing list item.</td></tr>
+<tr><td valign="top"><tt>QTextEdit::AutoAll</tt></td><td align="center" valign="top"><tt>0xffffffff</tt></td><td valign="top">Apply all automatic formatting. Currently only automatic bullet lists are supported.</td></tr>
+</table></p>
+<p>The AutoFormatting type is a typedef for <a href="qflags.html">QFlags</a>&lt;AutoFormattingFlag&gt;. It stores an OR combination of AutoFormattingFlag values.</p>
+<h3 class="fn"><a name="CursorAction-enum"></a>enum QTextEdit::CursorAction</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveBackward</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveForward</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveWordBackward</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveWordForward</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveUp</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveDown</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveLineStart</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveLineEnd</tt></td><td align="center" valign="top"><tt>7</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveHome</tt></td><td align="center" valign="top"><tt>8</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MoveEnd</tt></td><td align="center" valign="top"><tt>9</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MovePageUp</tt></td><td align="center" valign="top"><tt>10</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::MovePageDown</tt></td><td align="center" valign="top"><tt>11</tt></td></tr>
+</table></p>
+<h3 class="fn"><a name="LineWrapMode-enum"></a>enum QTextEdit::LineWrapMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QTextEdit::NoWrap</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::WidgetWidth</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::FixedPixelWidth</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QTextEdit::FixedColumnWidth</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="acceptRichText-prop"></a>acceptRichText : bool</h3>
+<p>This property holds whether the text edit accepts rich text insertions by the user.</p>
+<p>When this propery is set to false text edit will accept only plain text input from the user. For example through clipboard or drag and drop.</p>
+<p>This property's default is true.</p>
+<p>This property was introduced in Qt 4.1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool acceptRichText () const</b></li>
+<li><div class="fn"/><b>void setAcceptRichText ( bool <i>accept</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="autoFormatting-prop"></a>autoFormatting : <a href="qtextedit.html#AutoFormattingFlag-enum">AutoFormatting</a></h3>
+<p>This property holds the enabled set of auto formatting features.</p>
+<p>The value can be any combination of the values in the <a href="qtextedit.html#AutoFormattingFlag-enum">AutoFormattingFlag</a> enum. The default is <a href="qtextedit.html#AutoFormattingFlag-enum">AutoNone</a>. Choose <a href="qtextedit.html#AutoFormattingFlag-enum">AutoAll</a> to enable all automatic formatting.</p>
+<p>Currently, the only automatic formatting feature provided is <a href="qtextedit.html#AutoFormattingFlag-enum">AutoBulletList</a>; future versions of Qt may offer more.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>AutoFormatting autoFormatting () const</b></li>
+<li><div class="fn"/><b>void setAutoFormatting ( AutoFormatting <i>features</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="cursorWidth-prop"></a>cursorWidth : int</h3>
+<p>This property specifies the width of the cursor in pixels. The default value is 1.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int cursorWidth () const</b></li>
+<li><div class="fn"/><b>void setCursorWidth ( int <i>width</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="documentTitle-prop"></a>documentTitle : <a href="qstring.html">QString</a></h3>
+<p>This property holds the title of the document parsed from the text.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString documentTitle () const</b></li>
+<li><div class="fn"/><b>void setDocumentTitle ( const QString &amp; <i>title</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="html-prop"></a>html : <a href="qstring.html">QString</a></h3>
+<p>This property provides an HTML interface to the text of the text edit.</p>
+<p>toHtml() returns the text of the text edit as html.</p>
+<p>setHtml() changes the text of the text edit. Any previous text is removed and the undo/redo history is cleared. The input text is interpreted as rich text in html format.</p>
+<p><b>Note:</b> It is the responsibility of the caller to make sure that the text is correctly decoded when a <a href="qstring.html">QString</a> containing HTML is created and passed to setHtml().</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString toHtml () const</b></li>
+<li><div class="fn"/><b>void setHtml ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<p>See also <a href="richtext-html-subset.html">Supported HTML Subset</a> and <a href="qtextedit.html#plainText-prop">plainText</a>.</p>
+<h3 class="fn"><a name="lineWrapColumnOrWidth-prop"></a>lineWrapColumnOrWidth : int</h3>
+<p>This property holds the position (in pixels or columns depending on the wrap mode) where text will be wrapped.</p>
+<p>If the wrap mode is <a href="qtextedit.html#LineWrapMode-enum">FixedPixelWidth</a>, the value is the number of pixels from the left edge of the text edit at which text should be wrapped. If the wrap mode is <a href="qtextedit.html#LineWrapMode-enum">FixedColumnWidth</a>, the value is the column number (in character columns) from the left edge of the text edit at which text should be wrapped.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int lineWrapColumnOrWidth () const</b></li>
+<li><div class="fn"/><b>void setLineWrapColumnOrWidth ( int <i>w</i> )</b></li>
+</ul>
+<p>See also <a href="qtextedit.html#lineWrapMode-prop">lineWrapMode</a>.</p>
+<h3 class="fn"><a name="lineWrapMode-prop"></a>lineWrapMode : <a href="qtextedit.html#LineWrapMode-enum">LineWrapMode</a></h3>
+<p>This property holds the line wrap mode.</p>
+<p>The default mode is <a href="qtextedit.html#LineWrapMode-enum">WidgetWidth</a> which causes words to be wrapped at the right edge of the text edit. Wrapping occurs at whitespace, keeping whole words intact. If you want wrapping to occur within words use <a href="qtextedit.html#wordWrapMode-prop">setWordWrapMode</a>(). If you set a wrap mode of <a href="qtextedit.html#LineWrapMode-enum">FixedPixelWidth</a> or <a href="qtextedit.html#LineWrapMode-enum">FixedColumnWidth</a> you should also call <a href="qtextedit.html#lineWrapColumnOrWidth-prop">setLineWrapColumnOrWidth</a>() with the width you want.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>LineWrapMode lineWrapMode () const</b></li>
+<li><div class="fn"/><b>void setLineWrapMode ( LineWrapMode <i>mode</i> )</b></li>
+</ul>
+<p>See also <a href="qtextedit.html#lineWrapColumnOrWidth-prop">lineWrapColumnOrWidth</a>.</p>
+<h3 class="fn"><a name="overwriteMode-prop"></a>overwriteMode : bool</h3>
+<p>This property was introduced in Qt 4.1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool overwriteMode () const</b></li>
+<li><div class="fn"/><b>void setOverwriteMode ( bool <i>overwrite</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="plainText-prop"></a>plainText : <a href="qstring.html">QString</a></h3>
+<p>This property gets and sets the text edit's contents as plain text. Previous contents are removed and undo/redo history is reset when the property is set. If the text edit has another content type, it will not be replaced by plain text when you call toPlainText().</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QString toPlainText () const</b></li>
+<li><div class="fn"/><b>void setPlainText ( const QString &amp; <i>text</i> )</b></li>
+</ul>
+<p>See also <a href="qtextedit.html#html-prop">html</a>.</p>
+<h3 class="fn"><a name="readOnly-prop"></a>readOnly : bool</h3>
+<p>This property holds whether the text edit is read-only.</p>
+<p>In a read-only text edit the user can only navigate through the text and select text; modifying the text is not possible.</p>
+<p>This property's default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isReadOnly () const</b></li>
+<li><div class="fn"/><b>void setReadOnly ( bool <i>ro</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="tabChangesFocus-prop"></a>tabChangesFocus : bool</h3>
+<p>This property holds whether Tab changes focus or is accepted as input.</p>
+<p>In some occasions text edits should not allow the user to input tabulators or change indentation using the <b>Tab</b> key, as this breaks the focus chain. The default is false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool tabChangesFocus () const</b></li>
+<li><div class="fn"/><b>void setTabChangesFocus ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="tabStopWidth-prop"></a>tabStopWidth : int</h3>
+<p>This property holds the tab stop width in pixels.</p>
+<p>This property was introduced in Qt 4.1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int tabStopWidth () const</b></li>
+<li><div class="fn"/><b>void setTabStopWidth ( int <i>width</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="textInteractionFlags-prop"></a>textInteractionFlags : <a href="qt.html#TextInteractionFlag-enum">Qt::TextInteractionFlags</a></h3>
+<p>Specifies how the widget should interact with user input.</p>
+<p>The default value depends on whether the <a href="qtextedit.html">QTextEdit</a> is read-only or editable, and whether it is a <a href="qtextbrowser.html">QTextBrowser</a> or not.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::TextInteractionFlags textInteractionFlags () const</b></li>
+<li><div class="fn"/><b>void setTextInteractionFlags ( Qt::TextInteractionFlags <i>flags</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="undoRedoEnabled-prop"></a>undoRedoEnabled : bool</h3>
+<p>This property holds whether undo and redo are enabled.</p>
+<p>Users are only able to undo or redo actions if this property is true, and if there is an action that can be undone (or redone).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isUndoRedoEnabled () const</b></li>
+<li><div class="fn"/><b>void setUndoRedoEnabled ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="wordWrapMode-prop"></a>wordWrapMode : <a href="qtextoption.html#WrapMode-enum">QTextOption::WrapMode</a></h3>
+<p>This property holds the mode QTextEdit will use when wrapping text by words.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QTextOption::WrapMode wordWrapMode () const</b></li>
+<li><div class="fn"/><b>void setWordWrapMode ( QTextOption::WrapMode <i>policy</i> )</b></li>
+</ul>
+<p>See also <a href="qtextoption.html#WrapMode-enum">QTextOption::WrapMode</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextEdit"></a>QTextEdit::QTextEdit ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an empty <a href="qtextedit.html">QTextEdit</a> with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="QTextEdit-2"></a>QTextEdit::QTextEdit ( const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a <a href="qtextedit.html">QTextEdit</a> with parent <i>parent</i>. The text edit will display the text <i>text</i>. The text is interpreted as html.</p>
+<h3 class="fn"><a name="dtor.QTextEdit"></a>QTextEdit::~QTextEdit ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destructor.</p>
+<h3 class="fn"><a name="alignment"></a><a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> QTextEdit::alignment () const</h3>
+<p>Returns the alignment of the current paragraph.</p>
+<p>See also <a href="qtextedit.html#setAlignment">setAlignment</a>().</p>
+<h3 class="fn"><a name="anchorAt"></a><a href="qstring.html">QString</a> QTextEdit::anchorAt ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>Returns the reference of the anchor at position <i>pos</i>, or an empty string if no anchor exists at that point.</p>
+<h3 class="fn"><a name="append"></a>void QTextEdit::append ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Appends a new paragraph with <i>text</i> to the end of the text edit.</p>
+<p><b>Note:</b> The new paragraph appended will have the same character format and block format as the current paragraph, determined by the position of the cursor.</p>
+<p>See also <a href="qtextedit.html#currentCharFormat">currentCharFormat</a>() and <a href="qtextcursor.html#blockFormat">QTextCursor::blockFormat</a>().</p>
+<h3 class="fn"><a name="canInsertFromMimeData"></a>bool QTextEdit::canInsertFromMimeData ( const <a href="qmimedata.html">QMimeData</a> * <i>source</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function returns true if the contents of the MIME data object, specified by <i>source</i>, can be decoded and inserted into the document. It is called for example when during a drag operation the mouse enters this widget and it is necessary to determine whether it is possible to accept the drag and drop operation.</p>
+<p>Reimplement this function to enable drag and drop support for additional MIME types.</p>
+<h3 class="fn"><a name="canPaste"></a>bool QTextEdit::canPaste () const</h3>
+<p>Returns whether text can be pasted from the clipboard into the textedit.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="clear"></a>void QTextEdit::clear ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Deletes all the text in the text edit.</p>
+<p>Note that the undo/redo history is cleared by this function.</p>
+<p>See also <a href="qtextedit.html#cut">cut</a>(), <a href="qtextedit.html#plainText-prop">setPlainText</a>(), and <a href="qtextedit.html#html-prop">setHtml</a>().</p>
+<h3 class="fn"><a name="contextMenuEvent"></a>void QTextEdit::contextMenuEvent ( <a href="qcontextmenuevent.html">QContextMenuEvent</a> * <i>event</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Shows the standard context menu created with <a href="qtextedit.html#createStandardContextMenu">createStandardContextMenu</a>().</p>
+<p>If you do not want the text edit to have a context menu, you can set its <a href="qwidget.html#contextMenuPolicy-prop">contextMenuPolicy</a> to <a href="qt.html#ContextMenuPolicy-enum">Qt::NoContextMenu</a>. If you want to customize the context menu, reimplement this function. If you want to extend the standard context menu, reimplement this function, call <a href="qtextedit.html#createStandardContextMenu">createStandardContextMenu</a>() and extend the menu returned.</p>
+<p>Information about the event is passed in the <i>event</i> object.</p>
+<pre>   void MyTextEdit::contextMenuEvent(QContextMenuEvent *event)
+   {
+       QMenu *menu = createStandardContextMenu();
+       menu-&gt;addAction(tr(&quot;My Menu Item&quot;));
+       //...
+       menu-&gt;exec(event-&gt;globalPos());
+       delete menu;
+   }</pre>
+<p>Reimplemented from <a href="qwidget.html#contextMenuEvent">QWidget</a>.</p>
+<h3 class="fn"><a name="copy"></a>void QTextEdit::copy ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Copies any selected text to the clipboard.</p>
+<p>See also <a href="qtextedit.html#copyAvailable">copyAvailable</a>().</p>
+<h3 class="fn"><a name="copyAvailable"></a>void QTextEdit::copyAvailable ( bool <i>yes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when text is selected or de-selected in the text edit.</p>
+<p>When text is selected this signal will be emitted with <i>yes</i> set to true. If no text has been selected or if the selected text is de-selected this signal is emitted with <i>yes</i> set to false.</p>
+<p>If <i>yes</i> is true then <a href="qtextedit.html#copy">copy</a>() can be used to copy the selection to the clipboard. If <i>yes</i> is false then <a href="qtextedit.html#copy">copy</a>() does nothing.</p>
+<p>See also <a href="qtextedit.html#selectionChanged">selectionChanged</a>().</p>
+<h3 class="fn"><a name="createMimeDataFromSelection"></a><a href="qmimedata.html">QMimeData</a> * QTextEdit::createMimeDataFromSelection () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function returns a new MIME data object to represent the contents of the text edit's current selection. It is called when the selection needs to be encapsulated into a new <a href="qmimedata.html">QMimeData</a> object; for example, when a drag and drop operation is started, or when data is copyied to the clipboard.</p>
+<p>If you reimplement this function, note that the ownership of the returned <a href="qmimedata.html">QMimeData</a> object is passed to the caller. The selection can be retrieved by using the <a href="qtextedit.html#textCursor">textCursor</a>() function.</p>
+<h3 class="fn"><a name="createStandardContextMenu"></a><a href="qmenu.html">QMenu</a> * QTextEdit::createStandardContextMenu ()</h3>
+<p>This function creates the standard context menu which is shown when the user clicks on the text edit with the right mouse button. It is called from the default <a href="qtextedit.html#contextMenuEvent">contextMenuEvent</a>() handler. The popup menu's ownership is transferred to the caller.</p>
+<p>We recommend that you use the createStandardContextMenu(<a href="qpoint.html">QPoint</a>) version instead which will enable the actions that are sensitive to where the user clicked.</p>
+<h3 class="fn"><a name="createStandardContextMenu-2"></a><a href="qmenu.html">QMenu</a> * QTextEdit::createStandardContextMenu ( const <a href="qpoint.html">QPoint</a> &amp; <i>position</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>This function creates the standard context menu which is shown when the user clicks on the text edit with the right mouse button. It is called from the default <a href="qtextedit.html#contextMenuEvent">contextMenuEvent</a>() handler and it takes the <i>position</i> of where the mouse click was. This can enable actions that are sensitive to the position where the user clicked. The popup menu's ownership is transferred to the caller.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="currentCharFormat"></a><a href="qtextcharformat.html">QTextCharFormat</a> QTextEdit::currentCharFormat () const</h3>
+<p>Returns the char format that is used when inserting new text.</p>
+<p>See also <a href="qtextedit.html#setCurrentCharFormat">setCurrentCharFormat</a>().</p>
+<h3 class="fn"><a name="currentCharFormatChanged"></a>void QTextEdit::currentCharFormatChanged ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>f</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted if the current character format has changed, for example caused by a change of the cursor position.</p>
+<p>The new format is <i>f</i>.</p>
+<p>See also <a href="qtextedit.html#setCurrentCharFormat">setCurrentCharFormat</a>().</p>
+<h3 class="fn"><a name="currentFont"></a><a href="qfont.html">QFont</a> QTextEdit::currentFont () const</h3>
+<p>Returns the font of the current format.</p>
+<p>See also <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), <a href="qtextedit.html#setFontFamily">setFontFamily</a>(), and <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>().</p>
+<h3 class="fn"><a name="cursorForPosition"></a><a href="qtextcursor.html">QTextCursor</a> QTextEdit::cursorForPosition ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> ) const</h3>
+<p>returns a <a href="qtextcursor.html">QTextCursor</a> at position <i>pos</i> (in viewport coordinates).</p>
+<h3 class="fn"><a name="cursorPositionChanged"></a>void QTextEdit::cursorPositionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the position of the cursor changed.</p>
+<h3 class="fn"><a name="cursorRect"></a><a href="qrect.html">QRect</a> QTextEdit::cursorRect ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> ) const</h3>
+<p>returns a rectangle (in viewport coordinates) that includes the <i>cursor</i>.</p>
+<h3 class="fn"><a name="cursorRect-2"></a><a href="qrect.html">QRect</a> QTextEdit::cursorRect () const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>returns a rectangle (in viewport coordinates) that includes the cursor of the text edit.</p>
+<h3 class="fn"><a name="cut"></a>void QTextEdit::cut ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Copies the selected text to the clipboard and deletes it from the text edit.</p>
+<p>If there is no selected text nothing happens.</p>
+<p>See also <a href="qtextedit.html#copy">copy</a>() and <a href="qtextedit.html#paste">paste</a>().</p>
+<h3 class="fn"><a name="document"></a><a href="qtextdocument.html">QTextDocument</a> * QTextEdit::document () const</h3>
+<p>Returns a pointer to the underlying document.</p>
+<p>See also <a href="qtextedit.html#setDocument">setDocument</a>().</p>
+<h3 class="fn"><a name="ensureCursorVisible"></a>void QTextEdit::ensureCursorVisible ()</h3>
+<p>Ensures that the cursor is visible by scrolling the text edit if necessary.</p>
+<h3 class="fn"><a name="extraSelections"></a><a href="qlist.html">QList</a>&lt;<a href="qtextedit-extraselection.html">ExtraSelection</a>&gt; QTextEdit::extraSelections () const</h3>
+<p>Returns previously set extra selections.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextedit.html#setExtraSelections">setExtraSelections</a>().</p>
+<h3 class="fn"><a name="find"></a>bool QTextEdit::find ( const <a href="qstring.html">QString</a> &amp; <i>exp</i>, <a href="qtextdocument.html#FindFlag-enum">QTextDocument::FindFlags</a> <i>options</i> = 0 )</h3>
+<p>Finds the next occurrence of the string, <i>exp</i>, using the given <i>options</i>. Returns true if <i>exp</i> was found and changes the cursor to select the match; otherwise returns false.</p>
+<h3 class="fn"><a name="fontFamily"></a><a href="qstring.html">QString</a> QTextEdit::fontFamily () const</h3>
+<p>Returns the font family of the current format.</p>
+<p>See also <a href="qtextedit.html#setFontFamily">setFontFamily</a>(), <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>().</p>
+<h3 class="fn"><a name="fontItalic"></a>bool QTextEdit::fontItalic () const</h3>
+<p>Returns true if the font of the current format is italic; otherwise returns false.</p>
+<p>See also <a href="qtextedit.html#setFontItalic">setFontItalic</a>().</p>
+<h3 class="fn"><a name="fontPointSize"></a><a href="qtglobal.html#qreal-typedef">qreal</a> QTextEdit::fontPointSize () const</h3>
+<p>Returns the point size of the font of the current format.</p>
+<p>See also <a href="qtextedit.html#setFontFamily">setFontFamily</a>(), <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>().</p>
+<h3 class="fn"><a name="fontUnderline"></a>bool QTextEdit::fontUnderline () const</h3>
+<p>Returns true if the font of the current format is underlined; otherwise returns false.</p>
+<p>See also <a href="qtextedit.html#setFontUnderline">setFontUnderline</a>().</p>
+<h3 class="fn"><a name="fontWeight"></a>int QTextEdit::fontWeight () const</h3>
+<p>Returns the font weight of the current format.</p>
+<p>See also <a href="qtextedit.html#setFontWeight">setFontWeight</a>(), <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>(), and <a href="qfont.html#Weight-enum">QFont::Weight</a>.</p>
+<h3 class="fn"><a name="insertFromMimeData"></a>void QTextEdit::insertFromMimeData ( const <a href="qmimedata.html">QMimeData</a> * <i>source</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function inserts the contents of the MIME data object, specified by <i>source</i>, into the text edit at the current cursor position. It is called whenever text is inserted as the result of a clipboard paste operation, or when the text edit accepts data from a drag and drop operation.</p>
+<p>Reimplement this function to enable drag and drop support for additional MIME types.</p>
+<h3 class="fn"><a name="insertHtml"></a>void QTextEdit::insertHtml ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot that inserts <i>text</i> which is assumed to be of html formatting at the current cursor position.</p>
+<p>It is equivalent to:</p>
+<pre>     edit-&gt;textCursor().insertHtml(fragment);</pre>
+<p><b>Note:</b> When using this function with a style sheet, the style sheet will only apply to the current block in the document. In order to apply a style sheet throughout a document, use <a href="qtextdocument.html#defaultStyleSheet-prop">QTextDocument::setDefaultStyleSheet</a>() instead.</p>
+<h3 class="fn"><a name="insertPlainText"></a>void QTextEdit::insertPlainText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Convenience slot that inserts <i>text</i> at the current cursor position.</p>
+<p>It is equivalent to</p>
+<pre>     edit-&gt;textCursor().insertText(text);</pre>
+<h3 class="fn"><a name="loadResource"></a><a href="qvariant.html">QVariant</a> QTextEdit::loadResource ( int <i>type</i>, const <a href="qurl.html">QUrl</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Loads the resource specified by the given <i>type</i> and <i>name</i>.</p>
+<p>This function is an extension of <a href="qtextdocument.html#loadResource">QTextDocument::loadResource</a>().</p>
+<p>See also <a href="qtextdocument.html#loadResource">QTextDocument::loadResource</a>().</p>
+<h3 class="fn"><a name="mergeCurrentCharFormat"></a>void QTextEdit::mergeCurrentCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>modifier</i> )</h3>
+<p>Merges the properties specified in <i>modifier</i> into the current character format by calling QTextCursor::mergeCharFormat on the editor's cursor. If the editor has a selection then the properties of <i>modifier</i> are directly applied to the selection.</p>
+<p>See also <a href="qtextcursor.html#mergeCharFormat">QTextCursor::mergeCharFormat</a>().</p>
+<h3 class="fn"><a name="moveCursor"></a>void QTextEdit::moveCursor ( <a href="qtextcursor.html#MoveOperation-enum">QTextCursor::MoveOperation</a> <i>operation</i>, <a href="qtextcursor.html#MoveMode-enum">QTextCursor::MoveMode</a> <i>mode</i> = QTextCursor::MoveAnchor )</h3>
+<p>Moves the cursor by performing the given <i>operation</i>.</p>
+<p>If <i>mode</i> is <a href="qtextcursor.html#MoveMode-enum">QTextCursor::KeepAnchor</a>, the cursor selects the text it moves over. This is the same effect that the user achieves when they hold down the Shift key and move the cursor with the cursor keys.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextcursor.html#movePosition">QTextCursor::movePosition</a>().</p>
+<h3 class="fn"><a name="paste"></a>void QTextEdit::paste ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Pastes the text from the clipboard into the text edit at the current cursor position.</p>
+<p>If there is no text in the clipboard nothing happens.</p>
+<p>To change the behavior of this function, i.e&#x2e; to modify what <a href="qtextedit.html">QTextEdit</a> can paste and how it is being pasted, reimplement the virtual <a href="qtextedit.html#canInsertFromMimeData">canInsertFromMimeData</a>() and <a href="qtextedit.html#insertFromMimeData">insertFromMimeData</a>() functions.</p>
+<p>See also <a href="qtextedit.html#cut">cut</a>() and <a href="qtextedit.html#copy">copy</a>().</p>
+<h3 class="fn"><a name="print"></a>void QTextEdit::print ( <a href="qprinter.html">QPrinter</a> * <i>printer</i> ) const</h3>
+<p>Convenience function to print the text edit's document to the given <i>printer</i>. This is equivalent to calling the print method on the document directly except that this function also supports <a href="qprinter.html#PrintRange-enum">QPrinter::Selection</a> as print range.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qtextdocument.html#print">QTextDocument::print</a>().</p>
+<h3 class="fn"><a name="redo"></a>void QTextEdit::redo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Redoes the last operation.</p>
+<p>If there is no operation to redo, i.e&#x2e; there is no redo step in the undo/redo history, nothing happens.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextedit.html#undo">undo</a>().</p>
+<h3 class="fn"><a name="redoAvailable"></a>void QTextEdit::redoAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever redo operations become available (<i>available</i> is true) or unavailable (<i>available</i> is false).</p>
+<h3 class="fn"><a name="scrollToAnchor"></a>void QTextEdit::scrollToAnchor ( const <a href="qstring.html">QString</a> &amp; <i>name</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Scrolls the text edit so that the anchor with the given <i>name</i> is visible; does nothing if the <i>name</i> is empty, or is already visible, or isn't found.</p>
+<h3 class="fn"><a name="selectAll"></a>void QTextEdit::selectAll ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Selects all text.</p>
+<p>See also <a href="qtextedit.html#copy">copy</a>(), <a href="qtextedit.html#cut">cut</a>(), and <a href="qtextedit.html#textCursor">textCursor</a>().</p>
+<h3 class="fn"><a name="selectionChanged"></a>void QTextEdit::selectionChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the selection changes.</p>
+<p>See also <a href="qtextedit.html#copyAvailable">copyAvailable</a>().</p>
+<h3 class="fn"><a name="setAlignment"></a>void QTextEdit::setAlignment ( <a href="qt.html#AlignmentFlag-enum">Qt::Alignment</a> <i>a</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the alignment of the current paragraph to <i>a</i>. Valid alignments are <a href="qt.html#AlignmentFlag-enum">Qt::AlignLeft</a>, <a href="qt.html#AlignmentFlag-enum">Qt::AlignRight</a>, <a href="qt.html#AlignmentFlag-enum">Qt::AlignJustify</a> and <a href="qt.html#AlignmentFlag-enum">Qt::AlignCenter</a> (which centers horizontally).</p>
+<p>See also <a href="qtextedit.html#alignment">alignment</a>().</p>
+<h3 class="fn"><a name="setCurrentCharFormat"></a>void QTextEdit::setCurrentCharFormat ( const <a href="qtextcharformat.html">QTextCharFormat</a> &amp; <i>format</i> )</h3>
+<p>Sets the char format that is be used when inserting new text to <i>format</i> by calling <a href="qtextcursor.html#setCharFormat">QTextCursor::setCharFormat</a>() on the editor's cursor. If the editor has a selection then the char format is directly applied to the selection.</p>
+<p>See also <a href="qtextedit.html#currentCharFormat">currentCharFormat</a>().</p>
+<h3 class="fn"><a name="setCurrentFont"></a>void QTextEdit::setCurrentFont ( const <a href="qfont.html">QFont</a> &amp; <i>f</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the font of the current format to <i>f</i>.</p>
+<p>See also <a href="qtextedit.html#currentFont">currentFont</a>(), <a href="qtextedit.html#setFontPointSize">setFontPointSize</a>(), and <a href="qtextedit.html#setFontFamily">setFontFamily</a>().</p>
+<h3 class="fn"><a name="setDocument"></a>void QTextEdit::setDocument ( <a href="qtextdocument.html">QTextDocument</a> * <i>document</i> )</h3>
+<p>Makes <i>document</i> the new document of the text editor.</p>
+<p><b>Note:</b> The editor <i>does not take ownership of the document</i> unless it is the document's parent object. The parent object of the provided document remains the owner of the object.</p>
+<p>If the current document is a child of the text editor, then it is deleted.</p>
+<p>See also <a href="qtextedit.html#document">document</a>().</p>
+<h3 class="fn"><a name="setExtraSelections"></a>void QTextEdit::setExtraSelections ( const <a href="qlist.html">QList</a>&lt;<a href="qtextedit-extraselection.html">ExtraSelection</a>&gt; &amp; <i>selections</i> )</h3>
+<p>This function allows temporarily marking certain regions in the document with a given color, specified as <i>selections</i>. This can be useful for example in a programming editor to mark a whole line of text with a given background color to indicate the existence of a breakpoint.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextedit-extraselection.html">QTextEdit::ExtraSelection</a> and <a href="qtextedit.html#extraSelections">extraSelections</a>().</p>
+<h3 class="fn"><a name="setFontFamily"></a>void QTextEdit::setFontFamily ( const <a href="qstring.html">QString</a> &amp; <i>fontFamily</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the font family of the current format to <i>fontFamily</i>.</p>
+<p>See also <a href="qtextedit.html#fontFamily">fontFamily</a>() and <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>().</p>
+<h3 class="fn"><a name="setFontItalic"></a>void QTextEdit::setFontItalic ( bool <i>italic</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>If <i>italic</i> is true, sets the current format to italic; otherwise sets the current format to non-italic.</p>
+<p>See also <a href="qtextedit.html#fontItalic">fontItalic</a>().</p>
+<h3 class="fn"><a name="setFontPointSize"></a>void QTextEdit::setFontPointSize ( <a href="qtglobal.html#qreal-typedef">qreal</a> <i>s</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the point size of the current format to <i>s</i>.</p>
+<p>Note that if <i>s</i> is zero or negative, the behavior of this function is not defined.</p>
+<p>See also <a href="qtextedit.html#fontPointSize">fontPointSize</a>(), <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="qtextedit.html#setFontFamily">setFontFamily</a>().</p>
+<h3 class="fn"><a name="setFontUnderline"></a>void QTextEdit::setFontUnderline ( bool <i>underline</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>If <i>underline</i> is true, sets the current format to underline; otherwise sets the current format to non-underline.</p>
+<p>See also <a href="qtextedit.html#fontUnderline">fontUnderline</a>().</p>
+<h3 class="fn"><a name="setFontWeight"></a>void QTextEdit::setFontWeight ( int <i>weight</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the font weight of the current format to the given <i>weight</i>, where the value used is in the range defined by the <a href="qfont.html#Weight-enum">QFont::Weight</a> enum.</p>
+<p>See also <a href="qtextedit.html#fontWeight">fontWeight</a>(), <a href="qtextedit.html#setCurrentFont">setCurrentFont</a>(), and <a href="qtextedit.html#setFontFamily">setFontFamily</a>().</p>
+<h3 class="fn"><a name="setText"></a>void QTextEdit::setText ( const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the text edit's <i>text</i>. The text can be plain text or HTML and the text edit will try to guess the right format.</p>
+<p>Use <a href="qtextedit.html#html-prop">setHtml</a>() or <a href="qtextedit.html#plainText-prop">setPlainText</a>() directly to avoid text edit's guessing.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextedit-qt3.html#text">text</a>().</p>
+<h3 class="fn"><a name="setTextBackgroundColor"></a>void QTextEdit::setTextBackgroundColor ( const <a href="qcolor.html">QColor</a> &amp; <i>c</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the text background color of the current format to <i>c</i>.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextedit.html#textBackgroundColor">textBackgroundColor</a>().</p>
+<h3 class="fn"><a name="setTextColor"></a>void QTextEdit::setTextColor ( const <a href="qcolor.html">QColor</a> &amp; <i>c</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the text color of the current format to <i>c</i>.</p>
+<p>See also <a href="qtextedit.html#textColor">textColor</a>().</p>
+<h3 class="fn"><a name="setTextCursor"></a>void QTextEdit::setTextCursor ( const <a href="qtextcursor.html">QTextCursor</a> &amp; <i>cursor</i> )</h3>
+<p>Sets the visible <i>cursor</i>.</p>
+<p>See also <a href="qtextedit.html#textCursor">textCursor</a>().</p>
+<h3 class="fn"><a name="textBackgroundColor"></a><a href="qcolor.html">QColor</a> QTextEdit::textBackgroundColor () const</h3>
+<p>Returns the text background color of the current format.</p>
+<p>This function was introduced in Qt 4.4.</p>
+<p>See also <a href="qtextedit.html#setTextBackgroundColor">setTextBackgroundColor</a>().</p>
+<h3 class="fn"><a name="textChanged"></a>void QTextEdit::textChanged ()&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the document's content changes; for example, when text is inserted or deleted, or when formatting is applied.</p>
+<h3 class="fn"><a name="textColor"></a><a href="qcolor.html">QColor</a> QTextEdit::textColor () const</h3>
+<p>Returns the text color of the current format.</p>
+<p>See also <a href="qtextedit.html#setTextColor">setTextColor</a>().</p>
+<h3 class="fn"><a name="textCursor"></a><a href="qtextcursor.html">QTextCursor</a> QTextEdit::textCursor () const</h3>
+<p>Returns a copy of the <a href="qtextcursor.html">QTextCursor</a> that represents the currently visible cursor. Note that changes on the returned cursor do not affect <a href="qtextedit.html">QTextEdit</a>'s cursor; use <a href="qtextedit.html#setTextCursor">setTextCursor</a>() to update the visible cursor.</p>
+<p>See also <a href="qtextedit.html#setTextCursor">setTextCursor</a>().</p>
+<h3 class="fn"><a name="undo"></a>void QTextEdit::undo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Undoes the last operation.</p>
+<p>If there is no operation to undo, i.e&#x2e; there is no undo step in the undo/redo history, nothing happens.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<p>See also <a href="qtextedit.html#redo">redo</a>().</p>
+<h3 class="fn"><a name="undoAvailable"></a>void QTextEdit::undoAvailable ( bool <i>available</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever undo operations become available (<i>available</i> is true) or unavailable (<i>available</i> is false).</p>
+<h3 class="fn"><a name="zoomIn"></a>void QTextEdit::zoomIn ( int <i>range</i> = 1 )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Zooms in on the text by making the base font size <i>range</i> points larger and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="qtextedit.html#zoomOut">zoomOut</a>().</p>
+<h3 class="fn"><a name="zoomOut"></a>void QTextEdit::zoomOut ( int <i>range</i> = 1 )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Zooms out on the text by making the base font size <i>range</i> points smaller and recalculating all font sizes to be the new size. This does not change the size of any images.</p>
+<p>See also <a href="qtextedit.html#zoomIn">zoomIn</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

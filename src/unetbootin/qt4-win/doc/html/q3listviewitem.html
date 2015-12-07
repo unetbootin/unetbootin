@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/itemviews/q3listview.cpp -->
+<head>
+  <title>Qt 4.4: Q3ListViewItem Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3ListViewItem Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3ListViewItem class implements a list view item. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3ListViewItem&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html">Porting to Qt 4</a> for more information.</p>
+<p>Inherited by <a href="q3checklistitem.html">Q3CheckListItem</a>.</p>
+<ul>
+<li><a href="q3listviewitem-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem">Q3ListViewItem</a></b> ( Q3ListView * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-2">Q3ListViewItem</a></b> ( Q3ListViewItem * <i>parent</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-3">Q3ListViewItem</a></b> ( Q3ListView * <i>parent</i>, Q3ListViewItem * <i>after</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-4">Q3ListViewItem</a></b> ( Q3ListViewItem * <i>parent</i>, Q3ListViewItem * <i>after</i> )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-5">Q3ListViewItem</a></b> ( Q3ListView * <i>parent</i>, const QString &amp; <i>label1</i>, const QString &amp; <i>label2</i> = QString(), const QString &amp; <i>label3</i> = QString(), const QString &amp; <i>label4</i> = QString(), const QString &amp; <i>label5</i> = QString(), const QString &amp; <i>label6</i> = QString(), const QString &amp; <i>label7</i> = QString(), const QString &amp; <i>label8</i> = QString() )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-6">Q3ListViewItem</a></b> ( Q3ListViewItem * <i>parent</i>, const QString &amp; <i>label1</i>, const QString &amp; <i>label2</i> = QString(), const QString &amp; <i>label3</i> = QString(), const QString &amp; <i>label4</i> = QString(), const QString &amp; <i>label5</i> = QString(), const QString &amp; <i>label6</i> = QString(), const QString &amp; <i>label7</i> = QString(), const QString &amp; <i>label8</i> = QString() )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-7">Q3ListViewItem</a></b> ( Q3ListView * <i>parent</i>, Q3ListViewItem * <i>after</i>, const QString &amp; <i>label1</i>, const QString &amp; <i>label2</i> = QString(), const QString &amp; <i>label3</i> = QString(), const QString &amp; <i>label4</i> = QString(), const QString &amp; <i>label5</i> = QString(), const QString &amp; <i>label6</i> = QString(), const QString &amp; <i>label7</i> = QString(), const QString &amp; <i>label8</i> = QString() )</li>
+<li><div class="fn"/><b><a href="q3listviewitem.html#Q3ListViewItem-8">Q3ListViewItem</a></b> ( Q3ListViewItem * <i>parent</i>, Q3ListViewItem * <i>after</i>, const QString &amp; <i>label1</i>, const QString &amp; <i>label2</i> = QString(), const QString &amp; <i>label3</i> = QString(), const QString &amp; <i>label4</i> = QString(), const QString &amp; <i>label5</i> = QString(), const QString &amp; <i>label6</i> = QString(), const QString &amp; <i>label7</i> = QString(), const QString &amp; <i>label8</i> = QString() )</li>
+<li><div class="fn"/>virtual <b><a href="q3listviewitem.html#dtor.Q3ListViewItem">~Q3ListViewItem</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="q3listviewitem.html#acceptDrop">acceptDrop</a></b> ( const QMimeSource * <i>mime</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3listviewitem.html#childCount">childCount</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listviewitem.html#compare">compare</a></b> ( Q3ListViewItem * <i>i</i>, int <i>col</i>, bool <i>ascending</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3listviewitem.html#depth">depth</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#dragEnabled">dragEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#dropEnabled">dropEnabled</a></b> () const</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitem.html#firstChild">firstChild</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3listviewitem.html#height">height</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#insertItem">insertItem</a></b> ( Q3ListViewItem * <i>newChild</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#invalidateHeight">invalidateHeight</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isEnabled">isEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isExpandable">isExpandable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isOpen">isOpen</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isSelectable">isSelectable</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isSelected">isSelected</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#isVisible">isVisible</a></b> () const</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitem.html#itemAbove">itemAbove</a></b> () const</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitem.html#itemBelow">itemBelow</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3listviewitem.html#itemPos">itemPos</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="q3listviewitem.html#key">key</a></b> ( int <i>column</i>, bool <i>ascending</i> ) const</li>
+<li><div class="fn"/>Q3ListView * <b><a href="q3listviewitem.html#listView">listView</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3listviewitem.html#moveItem">moveItem</a></b> ( Q3ListViewItem * <i>after</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#multiLinesEnabled">multiLinesEnabled</a></b> () const</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitem.html#nextSibling">nextSibling</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#paintBranches">paintBranches</a></b> ( QPainter * <i>p</i>, const QColorGroup &amp; <i>cg</i>, int <i>w</i>, int <i>y</i>, int <i>h</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#paintCell">paintCell</a></b> ( QPainter * <i>painter</i>, const QColorGroup &amp; <i>cg</i>, int <i>column</i>, int <i>width</i>, int <i>align</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#paintFocus">paintFocus</a></b> ( QPainter * <i>p</i>, const QColorGroup &amp; <i>cg</i>, const QRect &amp; <i>r</i> )</li>
+<li><div class="fn"/>Q3ListViewItem * <b><a href="q3listviewitem.html#parent">parent</a></b> () const</li>
+<li><div class="fn"/>virtual const QPixmap * <b><a href="q3listviewitem.html#pixmap">pixmap</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#removeItem">removeItem</a></b> ( Q3ListViewItem * <i>item</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#renameEnabled">renameEnabled</a></b> ( int <i>col</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3listviewitem.html#repaint">repaint</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listviewitem.html#rtti">rtti</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setDragEnabled">setDragEnabled</a></b> ( bool <i>allow</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setDropEnabled">setDropEnabled</a></b> ( bool <i>allow</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setEnabled">setEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setExpandable">setExpandable</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setMultiLinesEnabled">setMultiLinesEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setOpen">setOpen</a></b> ( bool <i>o</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setPixmap">setPixmap</a></b> ( int <i>column</i>, const QPixmap &amp; <i>pm</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setRenameEnabled">setRenameEnabled</a></b> ( int <i>col</i>, bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setSelectable">setSelectable</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setSelected">setSelected</a></b> ( bool <i>s</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setText">setText</a></b> ( int <i>column</i>, const QString &amp; <i>text</i> )</li>
+<li><div class="fn"/>void <b><a href="q3listviewitem.html#setVisible">setVisible</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setup">setup</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#sort">sort</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#sortChildItems">sortChildItems</a></b> ( int <i>column</i>, bool <i>ascending</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#startRename">startRename</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#takeItem">takeItem</a></b> ( Q3ListViewItem * <i>item</i> )</li>
+<li><div class="fn"/>virtual QString <b><a href="q3listviewitem.html#text">text</a></b> ( int <i>column</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3listviewitem.html#totalHeight">totalHeight</a></b> () const</li>
+<li><div class="fn"/>virtual int <b><a href="q3listviewitem.html#width">width</a></b> ( const QFontMetrics &amp; <i>fm</i>, const Q3ListView * <i>lv</i>, int <i>c</i> ) const</li>
+<li><div class="fn"/>void <b><a href="q3listviewitem.html#widthChanged">widthChanged</a></b> ( int <i>c</i> = -1 ) const</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#activate">activate</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="q3listviewitem.html#activatedPos">activatedPos</a></b> ( QPoint &amp; <i>pos</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#cancelRename">cancelRename</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#dragEntered">dragEntered</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#dragLeft">dragLeft</a></b> ()</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#dropped">dropped</a></b> ( QDropEvent * <i>e</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#enforceSortOrder">enforceSortOrder</a></b> () const</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#okRename">okRename</a></b> ( int <i>col</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3listviewitem.html#setHeight">setHeight</a></b> ( int <i>height</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3ListViewItem class implements a list view item.</p>
+<p>A list view item is a multi-column object capable of displaying itself in a <a href="q3listview.html">Q3ListView</a>.</p>
+<p>The easiest way to use Q3ListViewItem is to construct one with a few constant strings, and either a <a href="q3listview.html">Q3ListView</a> or another Q3ListViewItem as parent.</p>
+<pre>         (void) new Q3ListViewItem(listView, &quot;Column 1&quot;, &quot;Column 2&quot;);
+         (void) new Q3ListViewItem(listView-&gt;firstChild(), &quot;A&quot;, &quot;B&quot;, &quot;C&quot;);</pre>
+<p>We've discarded the pointers to the items since we can still access them via their parent <i>listView</i>. By default, <a href="q3listview.html">Q3ListView</a> sorts its items; this can be switched off with Q3ListView::setSorting(-1).</p>
+<p>The parent must be another Q3ListViewItem or a <a href="q3listview.html">Q3ListView</a>. If the parent is a <a href="q3listview.html">Q3ListView</a>, the item becomes a top-level item within that <a href="q3listview.html">Q3ListView</a>. If the parent is another Q3ListViewItem, the item becomes a child of that list view item.</p>
+<p>If you keep the pointer, you can set or change the texts using <a href="q3listviewitem.html#setText">setText</a>(), add pixmaps using <a href="q3listviewitem.html#setPixmap">setPixmap</a>(), change its mode using <a href="q3listviewitem.html#setSelectable">setSelectable</a>(), <a href="q3listviewitem.html#setSelected">setSelected</a>(), <a href="q3listviewitem.html#setOpen">setOpen</a>() and <a href="q3listviewitem.html#setExpandable">setExpandable</a>(). You'll also be able to change its height using <a href="q3listviewitem.html#setHeight">setHeight</a>(), and traverse its sub-items. You don't have to keep the pointer since you can get a pointer to any Q3ListViewItem in a <a href="q3listview.html">Q3ListView</a> using <a href="q3listview.html#selectedItem">Q3ListView::selectedItem</a>(), <a href="q3listview.html#currentItem">Q3ListView::currentItem</a>(), <a href="q3listview.html#firstChild">Q3ListView::firstChild</a>(), <a href="q3listview.html#lastItem">Q3ListView::lastItem</a>() and <a href="q3listview.html#findItem">Q3ListView::findItem</a>().</p>
+<p>If you call <tt>delete</tt> on a list view item, it will be deleted as expected, and as usual for <a href="qobject.html">QObject</a>s, if it has any child items (to any depth), all these will be deleted too.</p>
+<p><a href="q3checklistitem.html">Q3CheckListItem</a>s are list view items that have a checkbox or radio button and can be used in place of plain Q3ListViewItems.</p>
+<p>You can traverse the tree as if it were a doubly-linked list using <a href="q3listviewitem.html#itemAbove">itemAbove</a>() and <a href="q3listviewitem.html#itemBelow">itemBelow</a>(); they return pointers to the items directly above and below this item on the screen (even if none of them are actually visible at the moment).</p>
+<p>Here's how to traverse all of an item's children (but not its children's children, etc.): Example:</p>
+<pre>         Q3ListViewItem * myChild = myItem-&gt;firstChild();
+         while(myChild) {
+             doSomething(myChild);
+             myChild = myChild-&gt;nextSibling();
+         }</pre>
+<p>If you want to iterate over every item, to any level of depth use an iterator. To iterate over the entire tree, initialize the iterator with the list view itself; to iterate over an item's children (and children's children to any depth), initialize the iterator with the item:</p>
+<pre>         Q3ListViewItemIterator it(listview);
+         while (it.current()) {
+             Q3ListViewItem *item = it.current();
+             doSomething(item);
+             ++it;
+         }</pre>
+<p>Note that the order of the children will change when the sorting order changes and is undefined if the items are not visible. You can, however, call <a href="q3listviewitem.html#enforceSortOrder">enforceSortOrder</a>() at any time; <a href="q3listview.html">Q3ListView</a> will always call it before it needs to show an item.</p>
+<p>Many programs will need to reimplement Q3ListViewItem. The most commonly reimplemented functions are:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Function</th><th>Description</th></tr></thead>
+<tr valign="top" class="odd"><td><a href="q3listviewitem.html#text">text</a>()</td><td>Returns the text in a column. Many subclasses will compute this on the fly.</td></tr>
+<tr valign="top" class="even"><td><a href="q3listviewitem.html#key">key</a>()</td><td>Used for sorting. The default <a href="q3listviewitem.html#key">key</a>() simply calls <a href="q3listviewitem.html#text">text</a>(), but judicious use of <a href="q3listviewitem.html#key">key</a>() can give you fine control over sorting; for example, <a href="qfiledialog.html">QFileDialog</a> reimplements <a href="q3listviewitem.html#key">key</a>() to sort by date.</td></tr>
+<tr valign="top" class="odd"><td><a href="q3listviewitem.html#setup">setup</a>()</td><td>Called before showing the item and whenever the list view's font changes, for example.</td></tr>
+<tr valign="top" class="even"><td><a href="q3listviewitem.html#activate">activate</a>()</td><td>Called whenever the user clicks on the item or presses Space when the item is the current item.</td></tr>
+</table></p>
+<p>Some subclasses call setExpandable(true) even when they have no children, and populate themselves when <a href="q3listviewitem.html#setup">setup</a>() or setOpen(true) is called. The <tt>dirview/dirview.cpp</tt> example program uses this technique to start up quickly: The files and subdirectories in a directory aren't inserted into the tree until they're actually needed.</p>
+<p align="center"><img src="images/qlistviewitems.png" alt="List View Items" /></p><p>See also <a href="q3checklistitem.html">Q3CheckListItem</a> and <a href="q3listview.html">Q3ListView</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3ListViewItem"></a>Q3ListViewItem::Q3ListViewItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i> )</h3>
+<p>Constructs a new top-level list view item in the <a href="q3listview.html">Q3ListView</a> <i>parent</i>.</p>
+<h3 class="fn"><a name="Q3ListViewItem-2"></a>Q3ListViewItem::Q3ListViewItem ( Q3ListViewItem * <i>parent</i> )</h3>
+<p>Constructs a new list view item that is a child of <i>parent</i> and first in the parent's list of children.</p>
+<h3 class="fn"><a name="Q3ListViewItem-3"></a>Q3ListViewItem::Q3ListViewItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, Q3ListViewItem * <i>after</i> )</h3>
+<p>Constructs an empty list view item that is a child of <i>parent</i> and is after item <i>after</i> in the parent's list of children. Since <i>parent</i> is a <a href="q3listview.html">Q3ListView</a> the item will be a top-level item.</p>
+<h3 class="fn"><a name="Q3ListViewItem-4"></a>Q3ListViewItem::Q3ListViewItem ( Q3ListViewItem * <i>parent</i>, Q3ListViewItem * <i>after</i> )</h3>
+<p>Constructs an empty list view item that is a child of <i>parent</i> and is after item <i>after</i> in the parent's list of children.</p>
+<h3 class="fn"><a name="Q3ListViewItem-5"></a>Q3ListViewItem::Q3ListViewItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>label1</i>, const <a href="qstring.html">QString</a> &amp; <i>label2</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label3</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label4</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label5</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label6</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label7</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label8</i> = QString() )</h3>
+<p>Constructs a new top-level list view item in the <a href="q3listview.html">Q3ListView</a> <i>parent</i>, with up to eight constant strings, <i>label1</i>, <i>label2</i>, <i>label3</i>, <i>label4</i>, <i>label5</i>, <i>label6</i>, <i>label7</i> and <i>label8</i> defining its columns' contents.</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="Q3ListViewItem-6"></a>Q3ListViewItem::Q3ListViewItem ( Q3ListViewItem * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>label1</i>, const <a href="qstring.html">QString</a> &amp; <i>label2</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label3</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label4</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label5</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label6</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label7</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label8</i> = QString() )</h3>
+<p>Constructs a new list view item as a child of the <a href="q3listviewitem.html">Q3ListViewItem</a> <i>parent</i> with up to eight constant strings, <i>label1</i>, <i>label2</i>, <i>label3</i>, <i>label4</i>, <i>label5</i>, <i>label6</i>, <i>label7</i> and <i>label8</i> as columns' contents.</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="Q3ListViewItem-7"></a>Q3ListViewItem::Q3ListViewItem ( <a href="q3listview.html">Q3ListView</a> * <i>parent</i>, Q3ListViewItem * <i>after</i>, const <a href="qstring.html">QString</a> &amp; <i>label1</i>, const <a href="qstring.html">QString</a> &amp; <i>label2</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label3</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label4</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label5</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label6</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label7</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label8</i> = QString() )</h3>
+<p>Constructs a new list view item in the <a href="q3listview.html">Q3ListView</a> <i>parent</i> that is included after item <i>after</i> and that has up to eight column texts, <i>label1</i>, <i>label2</i>, <i>label3</i>, <i>label4</i>, <i>label5</i>, <i>label6</i>, <i>label7</i> and<i>label8</i>.</p>
+<p>Note that the order is changed according to <a href="q3listviewitem.html#key">Q3ListViewItem::key</a>() unless the list view's sorting is disabled using Q3ListView::setSorting(-1).</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="Q3ListViewItem-8"></a>Q3ListViewItem::Q3ListViewItem ( Q3ListViewItem * <i>parent</i>, Q3ListViewItem * <i>after</i>, const <a href="qstring.html">QString</a> &amp; <i>label1</i>, const <a href="qstring.html">QString</a> &amp; <i>label2</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label3</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label4</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label5</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label6</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label7</i> = QString(), const <a href="qstring.html">QString</a> &amp; <i>label8</i> = QString() )</h3>
+<p>Constructs a new list view item as a child of the <a href="q3listviewitem.html">Q3ListViewItem</a> <i>parent</i>. It is inserted after item <i>after</i> and may contain up to eight strings, <i>label1</i>, <i>label2</i>, <i>label3</i>, <i>label4</i>, <i>label5</i>, <i>label6</i>, <i>label7</i> and <i>label8</i> as column entries.</p>
+<p>Note that the order is changed according to <a href="q3listviewitem.html#key">Q3ListViewItem::key</a>() unless the list view's sorting is disabled using Q3ListView::setSorting(-1).</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="dtor.Q3ListViewItem"></a>Q3ListViewItem::~Q3ListViewItem ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the item, deleting all its children and freeing up all allocated resources.</p>
+<h3 class="fn"><a name="acceptDrop"></a>bool Q3ListViewItem::acceptDrop ( const <a href="qmimesource.html">QMimeSource</a> * <i>mime</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the item can accept drops of type <a href="qmimesource.html">QMimeSource</a> <i>mime</i>; otherwise returns false.</p>
+<p>The default implementation does nothing and returns false. A subclass must reimplement this to accept drops.</p>
+<h3 class="fn"><a name="activate"></a>void Q3ListViewItem::activate ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This virtual function is called whenever the user presses the mouse on this item or presses Space on it.</p>
+<p>See also <a href="q3listviewitem.html#activatedPos">activatedPos</a>().</p>
+<h3 class="fn"><a name="activatedPos"></a>bool Q3ListViewItem::activatedPos ( <a href="qpoint.html">QPoint</a> &amp; <i>pos</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>When called from a reimplementation of <a href="q3listviewitem.html#activate">activate</a>(), this function gives information on how the item was activated. Otherwise the behavior is undefined.</p>
+<p>If <a href="q3listviewitem.html#activate">activate</a>() was caused by a mouse press, the function sets <i>pos</i> to where the user clicked and returns true; otherwise it returns false and does not change <i>pos</i>.</p>
+<p><i>pos</i> is relative to the top-left corner of this item.</p>
+<p>See also <a href="q3listviewitem.html#activate">activate</a>().</p>
+<h3 class="fn"><a name="cancelRename"></a>void Q3ListViewItem::cancelRename ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called if the user cancels in-place renaming of this item in column <i>col</i> (e.g&#x2e; by pressing Esc).</p>
+<p>See also <a href="q3listviewitem.html#okRename">okRename</a>().</p>
+<h3 class="fn"><a name="childCount"></a>int Q3ListViewItem::childCount () const</h3>
+<p>Returns how many children this item has. The count only includes the item's immediate children.</p>
+<h3 class="fn"><a name="compare"></a>int Q3ListViewItem::compare ( Q3ListViewItem * <i>i</i>, int <i>col</i>, bool <i>ascending</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Compares this list view item to <i>i</i> using the column <i>col</i> in <i>ascending</i> order. Returns &lt; 0 if this item is less than <i>i</i>, 0 if they are equal and &gt; 0 if this item is greater than <i>i</i>.</p>
+<p>This function is used for sorting.</p>
+<p>The default implementation compares the item keys (<a href="q3listviewitem.html#key">key</a>()) using <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>(). A reimplementation can use different values and a different comparison function. Here is a reimplementation that uses plain Unicode comparison:</p>
+<pre>     int MyListViewItem::compare(Q3ListViewItem *i, int col,
+                                  bool ascending) const
+     {
+         return key(col, ascending).compare(i-&gt;key(col, ascending));
+     }</pre>
+<p>We don't recommend using <i>ascending</i> so your code can safely ignore it.</p>
+<p>See also <a href="q3listviewitem.html#key">key</a>(), <a href="qstring.html#localeAwareCompare">QString::localeAwareCompare</a>(), and <a href="qstring.html#compare">QString::compare</a>().</p>
+<h3 class="fn"><a name="depth"></a>int Q3ListViewItem::depth () const</h3>
+<p>Returns the depth of this item.</p>
+<h3 class="fn"><a name="dragEnabled"></a>bool Q3ListViewItem::dragEnabled () const</h3>
+<p>Returns true if this item can be dragged; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setDragEnabled">setDragEnabled</a>().</p>
+<h3 class="fn"><a name="dragEntered"></a>void Q3ListViewItem::dragEntered ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called when a drag enters the item's bounding rectangle.</p>
+<p>The default implementation does nothing, subclasses may need to reimplement this function.</p>
+<h3 class="fn"><a name="dragLeft"></a>void Q3ListViewItem::dragLeft ()&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called when a drag leaves the item's bounding rectangle.</p>
+<p>The default implementation does nothing, subclasses may need to reimplement this function.</p>
+<h3 class="fn"><a name="dropEnabled"></a>bool Q3ListViewItem::dropEnabled () const</h3>
+<p>Returns true if this item accepts drops; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setDropEnabled">setDropEnabled</a>() and <a href="q3listviewitem.html#acceptDrop">acceptDrop</a>().</p>
+<h3 class="fn"><a name="dropped"></a>void Q3ListViewItem::dropped ( <a href="qdropevent.html">QDropEvent</a> * <i>e</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called when something was dropped on the item. <i>e</i> contains all the information about the drop.</p>
+<p>The default implementation does nothing, subclasses may need to reimplement this function.</p>
+<h3 class="fn"><a name="enforceSortOrder"></a>void Q3ListViewItem::enforceSortOrder () const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Makes sure that this object's children are sorted appropriately.</p>
+<p>This only works if every item from the root item down to this item is already sorted.</p>
+<p>See also <a href="q3listviewitem.html#sortChildItems">sortChildItems</a>().</p>
+<h3 class="fn"><a name="firstChild"></a>Q3ListViewItem * Q3ListViewItem::firstChild () const</h3>
+<p>Returns the first (top) child of this item, or 0 if this item has no children.</p>
+<p>Note that the children are not guaranteed to be sorted properly. <a href="q3listview.html">Q3ListView</a> and <a href="q3listviewitem.html">Q3ListViewItem</a> try to postpone or avoid sorting to the greatest degree possible, in order to keep the user interface snappy.</p>
+<p>See also <a href="q3listviewitem.html#nextSibling">nextSibling</a>() and <a href="q3listviewitem.html#sortChildItems">sortChildItems</a>().</p>
+<h3 class="fn"><a name="height"></a>int Q3ListViewItem::height () const</h3>
+<p>Returns the height of this item in pixels. This does not include the height of any children; <a href="q3listviewitem.html#totalHeight">totalHeight</a>() returns that.</p>
+<p>See also <a href="q3listviewitem.html#setHeight">setHeight</a>().</p>
+<h3 class="fn"><a name="insertItem"></a>void Q3ListViewItem::insertItem ( Q3ListViewItem * <i>newChild</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Inserts <i>newChild</i> into this list view item's list of children. You should not need to call this function; it is called automatically by the constructor of <i>newChild</i>.</p>
+<p><b>Warning:</b> If you are using <tt>Single</tt> selection mode, then you should only insert unselected items.</p>
+<h3 class="fn"><a name="invalidateHeight"></a>void Q3ListViewItem::invalidateHeight ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Invalidates the cached total height of this item, including all open children.</p>
+<p>See also <a href="q3listviewitem.html#setHeight">setHeight</a>(), <a href="q3listviewitem.html#height">height</a>(), and <a href="q3listviewitem.html#totalHeight">totalHeight</a>().</p>
+<h3 class="fn"><a name="isEnabled"></a>bool Q3ListViewItem::isEnabled () const</h3>
+<p>Returns true if this item is enabled; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setEnabled">setEnabled</a>().</p>
+<h3 class="fn"><a name="isExpandable"></a>bool Q3ListViewItem::isExpandable () const</h3>
+<p>Returns true if this item is expandable even when it has no children; otherwise returns false.</p>
+<h3 class="fn"><a name="isOpen"></a>bool Q3ListViewItem::isOpen () const</h3>
+<p>Returns true if this list view item has children <i>and</i> they are not explicitly hidden; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setOpen">setOpen</a>().</p>
+<h3 class="fn"><a name="isSelectable"></a>bool Q3ListViewItem::isSelectable () const</h3>
+<p>Returns true if the item is selectable (as it is by default); otherwise returns false</p>
+<p>See also <a href="q3listviewitem.html#setSelectable">setSelectable</a>().</p>
+<h3 class="fn"><a name="isSelected"></a>bool Q3ListViewItem::isSelected () const</h3>
+<p>Returns true if this item is selected; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setSelected">setSelected</a>(), <a href="q3listview.html#setSelected">Q3ListView::setSelected</a>(), and <a href="q3listview.html#selectionChanged">Q3ListView::selectionChanged</a>().</p>
+<h3 class="fn"><a name="isVisible"></a>bool Q3ListViewItem::isVisible () const</h3>
+<p>Returns true if the item is visible; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setVisible">setVisible</a>().</p>
+<h3 class="fn"><a name="itemAbove"></a>Q3ListViewItem * Q3ListViewItem::itemAbove () const</h3>
+<p>Returns a pointer to the item immediately above this item on the screen. This is usually the item's closest older sibling, but it may also be its parent or its next older sibling's youngest child, or something else if anyoftheabove-&gt;<a href="q3listviewitem.html#height">height</a>() returns 0. Returns 0 if there is no item immediately above this item.</p>
+<p>This function assumes that all parents of this item are open (i.e&#x2e; that this item is visible, or can be made visible by scrolling).</p>
+<p>This function might be relatively slow because of the tree traversions needed to find the correct item.</p>
+<p>See also <a href="q3listviewitem.html#itemBelow">itemBelow</a>() and <a href="q3listview.html#itemRect">Q3ListView::itemRect</a>().</p>
+<h3 class="fn"><a name="itemBelow"></a>Q3ListViewItem * Q3ListViewItem::itemBelow () const</h3>
+<p>Returns a pointer to the item immediately below this item on the screen. This is usually the item's eldest child, but it may also be its next younger sibling, its parent's next younger sibling, grandparent's, etc., or something else if anyoftheabove-&gt;<a href="q3listviewitem.html#height">height</a>() returns 0. Returns 0 if there is no item immediately below this item.</p>
+<p>This function assumes that all parents of this item are open (i.e&#x2e; that this item is visible or can be made visible by scrolling).</p>
+<p>See also <a href="q3listviewitem.html#itemAbove">itemAbove</a>() and <a href="q3listview.html#itemRect">Q3ListView::itemRect</a>().</p>
+<h3 class="fn"><a name="itemPos"></a>int Q3ListViewItem::itemPos () const</h3>
+<p>Returns the y coordinate of this item in the list view's coordinate system. This function is normally much slower than <a href="q3listview.html#itemAt">Q3ListView::itemAt</a>(), but it works for all items whereas <a href="q3listview.html#itemAt">Q3ListView::itemAt</a>() normally only works for items on the screen.</p>
+<p>See also <a href="q3listview.html#itemAt">Q3ListView::itemAt</a>(), <a href="q3listview.html#itemRect">Q3ListView::itemRect</a>(), and <a href="q3listview.html#itemPos">Q3ListView::itemPos</a>().</p>
+<h3 class="fn"><a name="key"></a><a href="qstring.html">QString</a> Q3ListViewItem::key ( int <i>column</i>, bool <i>ascending</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a key that can be used for sorting by column <i>column</i>. The default implementation returns <a href="q3listviewitem.html#text">text</a>(). Derived classes may also incorporate the order indicated by <i>ascending</i> into this key, although this is not recommended.</p>
+<p>If you want to sort on non-alphabetical data, e.g&#x2e; dates, numbers, etc., it is more efficient to reimplement <a href="q3listviewitem.html#compare">compare</a>().</p>
+<p>See also <a href="q3listviewitem.html#compare">compare</a>() and <a href="q3listviewitem.html#sortChildItems">sortChildItems</a>().</p>
+<h3 class="fn"><a name="listView"></a><a href="q3listview.html">Q3ListView</a> * Q3ListViewItem::listView () const</h3>
+<p>Returns a pointer to the list view containing this item.</p>
+<p>Note that this function traverses the items to the root to find the listview. This function will return 0 for taken items - see <a href="q3listviewitem.html#takeItem">Q3ListViewItem::takeItem</a>()</p>
+<h3 class="fn"><a name="moveItem"></a>void Q3ListViewItem::moveItem ( Q3ListViewItem * <i>after</i> )</h3>
+<p>Move the item to be after item <i>after</i>, which must be one of the item's siblings. To move an item in the hierarchy, use <a href="q3listviewitem.html#takeItem">takeItem</a>() and <a href="q3listviewitem.html#insertItem">insertItem</a>().</p>
+<p>Note that this function will have no effect if sorting is enabled in the list view.</p>
+<h3 class="fn"><a name="multiLinesEnabled"></a>bool Q3ListViewItem::multiLinesEnabled () const</h3>
+<p>Returns true if the item can display multiple lines of text in its columns; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setMultiLinesEnabled">setMultiLinesEnabled</a>().</p>
+<h3 class="fn"><a name="nextSibling"></a>Q3ListViewItem * Q3ListViewItem::nextSibling () const</h3>
+<p>Returns the sibling item below this item, or 0 if there is no sibling item after this item.</p>
+<p>Note that the siblings are not guaranteed to be sorted properly. <a href="q3listview.html">Q3ListView</a> and <a href="q3listviewitem.html">Q3ListViewItem</a> try to postpone or avoid sorting to the greatest degree possible, in order to keep the user interface snappy.</p>
+<p>See also <a href="q3listviewitem.html#firstChild">firstChild</a>() and <a href="q3listviewitem.html#sortChildItems">sortChildItems</a>().</p>
+<h3 class="fn"><a name="okRename"></a>void Q3ListViewItem::okRename ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>This function is called if the user presses Enter during in-place renaming of the item in column <i>col</i>.</p>
+<p>See also <a href="q3listviewitem.html#cancelRename">cancelRename</a>().</p>
+<h3 class="fn"><a name="paintBranches"></a>void Q3ListViewItem::paintBranches ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, int <i>w</i>, int <i>y</i>, int <i>h</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Paints a set of branches from this item to (some of) its children.</p>
+<p>Painter <i>p</i> is set up with clipping and translation so that you can only draw in the rectangle that needs redrawing; <i>cg</i> is the color group to use; the update rectangle is at (0, 0) and has size width <i>w</i> by height <i>h</i>. The top of the rectangle you own is at <i>y</i> (which is never greater than 0 but can be outside the window system's allowed coordinate range).</p>
+<p>The update rectangle is in an undefined state when this function is called; this function must draw on <i>all</i> of the pixels.</p>
+<p>See also <a href="q3listviewitem.html#paintCell">paintCell</a>() and <a href="q3listview.html#drawContentsOffset">Q3ListView::drawContentsOffset</a>().</p>
+<h3 class="fn"><a name="paintCell"></a>void Q3ListViewItem::paintCell ( <a href="qpainter.html">QPainter</a> * <i>painter</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, int <i>column</i>, int <i>width</i>, int <i>align</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function paints the contents of one column of an item and aligns it as described by <i>align</i>.</p>
+<p>The <i>painter</i> is a <a href="q3painter.html">Q3Painter</a> open on the relevant paint device. It is translated so (0, 0) is the top-left pixel in the cell and <i>width</i> - 1, <a href="q3listviewitem.html#height">height</a>() - 1 is the bottom-right pixel <i>in</i> the cell. The other properties of the <i>painter</i> (pen, brush, etc) are undefined. <i>cg</i> is the color group to use. <i>column</i> is the logical column number within the item that is to be painted; 0 is the column which may contain a tree.</p>
+<p>This function may use <a href="q3listview.html#itemMargin-prop">Q3ListView::itemMargin</a>() for readability spacing on the left and right sides of data such as text, and should honor <a href="q3listviewitem.html#isSelected">isSelected</a>() and <a href="q3listview.html#allColumnsShowFocus-prop">Q3ListView::allColumnsShowFocus</a>().</p>
+<p>If you reimplement this function, you should also reimplement <a href="q3listviewitem.html#width">width</a>().</p>
+<p>The rectangle to be painted is in an undefined state when this function is called, so you <i>must</i> draw on all the pixels. The <i>painter</i> has the right font on entry.</p>
+<p>See also <a href="q3listviewitem.html#paintBranches">paintBranches</a>() and <a href="q3listview.html#drawContentsOffset">Q3ListView::drawContentsOffset</a>().</p>
+<h3 class="fn"><a name="paintFocus"></a>void Q3ListViewItem::paintFocus ( <a href="qpainter.html">QPainter</a> * <i>p</i>, const <a href="qcolorgroup.html">QColorGroup</a> &amp; <i>cg</i>, const <a href="qrect.html">QRect</a> &amp; <i>r</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Paints a focus indicator on the rectangle <i>r</i> using painter <i>p</i> and colors <i>cg</i>.</p>
+<p><i>p</i> is already clipped.</p>
+<p>See also <a href="q3listviewitem.html#paintCell">paintCell</a>(), <a href="q3listviewitem.html#paintBranches">paintBranches</a>(), and <a href="q3listview.html#allColumnsShowFocus-prop">Q3ListView::setAllColumnsShowFocus</a>().</p>
+<h3 class="fn"><a name="parent"></a>Q3ListViewItem * Q3ListViewItem::parent () const</h3>
+<p>Returns the parent of this item, or 0 if this item has no parent.</p>
+<p>See also <a href="q3listviewitem.html#firstChild">firstChild</a>() and <a href="q3listviewitem.html#nextSibling">nextSibling</a>().</p>
+<h3 class="fn"><a name="pixmap"></a>const <a href="qpixmap.html">QPixmap</a> * Q3ListViewItem::pixmap ( int <i>column</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the pixmap for <i>column</i>, or 0 if there is no pixmap for <i>column</i>.</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>() and <a href="q3listviewitem.html#setPixmap">setPixmap</a>().</p>
+<h3 class="fn"><a name="removeItem"></a>void Q3ListViewItem::removeItem ( Q3ListViewItem * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes the given <i>item</i>. Use <a href="q3listviewitem.html#takeItem">takeItem</a>() instead.</p>
+<h3 class="fn"><a name="renameEnabled"></a>bool Q3ListViewItem::renameEnabled ( int <i>col</i> ) const</h3>
+<p>Returns true if this item can be in-place renamed in column <i>col</i>; otherwise returns false.</p>
+<p>See also <a href="q3listviewitem.html#setRenameEnabled">setRenameEnabled</a>().</p>
+<h3 class="fn"><a name="repaint"></a>void Q3ListViewItem::repaint () const</h3>
+<p>Repaints this item on the screen if it is currently visible.</p>
+<h3 class="fn"><a name="rtti"></a>int Q3ListViewItem::rtti () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns 0.</p>
+<p>Make your derived classes return their own values for rtti(), so that you can distinguish between different kinds of list view items. You should use values greater than 1000 to allow for extensions to this class.</p>
+<h3 class="fn"><a name="setDragEnabled"></a>void Q3ListViewItem::setDragEnabled ( bool <i>allow</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>allow</i> is true, the list view starts a drag (see <a href="q3listview.html#dragObject">Q3ListView::dragObject</a>()) when the user presses and moves the mouse on this item.</p>
+<p>See also <a href="q3listviewitem.html#dragEnabled">dragEnabled</a>().</p>
+<h3 class="fn"><a name="setDropEnabled"></a>void Q3ListViewItem::setDropEnabled ( bool <i>allow</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>allow</i> is true, the list view accepts drops onto the item; otherwise drops are not allowed.</p>
+<p>See also <a href="q3listviewitem.html#dropEnabled">dropEnabled</a>().</p>
+<h3 class="fn"><a name="setEnabled"></a>void Q3ListViewItem::setEnabled ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true the item is enabled; otherwise it is disabled. Disabled items are drawn differently (e.g&#x2e; grayed-out) and are not accessible by the user.</p>
+<p>See also <a href="q3listviewitem.html#isEnabled">isEnabled</a>().</p>
+<h3 class="fn"><a name="setExpandable"></a>void Q3ListViewItem::setExpandable ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets this item to be expandable even if it has no children if <i>enable</i> is true, and to be expandable only if it has children if <i>enable</i> is false (the default).</p>
+<p>The dirview example uses this in the canonical fashion. It checks whether the directory is empty in <a href="q3listviewitem.html#setup">setup</a>() and calls setExpandable(true) if not; in <a href="q3listviewitem.html#setOpen">setOpen</a>() it reads the contents of the directory and inserts items accordingly. This strategy means that dirview can display the entire file system without reading very much at startup.</p>
+<p>Note that root items are not expandable by the user unless <a href="q3listview.html#rootIsDecorated-prop">Q3ListView::setRootIsDecorated</a>() is set to true.</p>
+<p>See also <a href="q3listviewitem.html#isExpandable">isExpandable</a>() and <a href="q3listviewitem.html#setSelectable">setSelectable</a>().</p>
+<h3 class="fn"><a name="setHeight"></a>void Q3ListViewItem::setHeight ( int <i>height</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Sets this item's height to <i>height</i> pixels. This implicitly changes <a href="q3listviewitem.html#totalHeight">totalHeight</a>(), too.</p>
+<p>Note that a font change causes this height to be overwritten unless you reimplement <a href="q3listviewitem.html#setup">setup</a>().</p>
+<p>For best results in Windows style we suggest using an even number of pixels.</p>
+<p>See also <a href="q3listviewitem.html#height">height</a>(), <a href="q3listviewitem.html#totalHeight">totalHeight</a>(), and <a href="q3listviewitem.html#isOpen">isOpen</a>().</p>
+<h3 class="fn"><a name="setMultiLinesEnabled"></a>void Q3ListViewItem::setMultiLinesEnabled ( bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true each of the item's columns may contain multiple lines of text; otherwise each of them may only contain a single line.</p>
+<p>See also <a href="q3listviewitem.html#multiLinesEnabled">multiLinesEnabled</a>().</p>
+<h3 class="fn"><a name="setOpen"></a>void Q3ListViewItem::setOpen ( bool <i>o</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Opens or closes an item, i.e&#x2e; shows or hides an item's children.</p>
+<p>If <i>o</i> is true all child items are shown initially. The user can hide them by clicking the <b>-</b> icon to the left of the item. If <i>o</i> is false, the children of this item are initially hidden. The user can show them by clicking the <b>+</b> icon to the left of the item.</p>
+<p>See also <a href="q3listviewitem.html#height">height</a>(), <a href="q3listviewitem.html#totalHeight">totalHeight</a>(), and <a href="q3listviewitem.html#isOpen">isOpen</a>().</p>
+<h3 class="fn"><a name="setPixmap"></a>void Q3ListViewItem::setPixmap ( int <i>column</i>, const <a href="qpixmap.html">QPixmap</a> &amp; <i>pm</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the pixmap in column <i>column</i> to <i>pm</i>, if <i>pm</i> is non-null and different from the current pixmap, and if <i>column</i> is non-negative.</p>
+<p>See also <a href="q3listviewitem.html#pixmap">pixmap</a>() and <a href="q3listviewitem.html#setText">setText</a>().</p>
+<h3 class="fn"><a name="setRenameEnabled"></a>void Q3ListViewItem::setRenameEnabled ( int <i>col</i>, bool <i>b</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>b</i> is true, this item can be in-place renamed in the column <i>col</i> by the user; otherwise it cannot be renamed in-place.</p>
+<p>See also <a href="q3listviewitem.html#renameEnabled">renameEnabled</a>().</p>
+<h3 class="fn"><a name="setSelectable"></a>void Q3ListViewItem::setSelectable ( bool <i>enable</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets this items to be selectable if <i>enable</i> is true (the default) or not to be selectable if <i>enable</i> is false.</p>
+<p>The user is not able to select a non-selectable item using either the keyboard or the mouse. The application programmer still can though, e.g&#x2e; using <a href="q3listviewitem.html#setSelected">setSelected</a>().</p>
+<p>See also <a href="q3listviewitem.html#isSelectable">isSelectable</a>().</p>
+<h3 class="fn"><a name="setSelected"></a>void Q3ListViewItem::setSelected ( bool <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>s</i> is true this item is selected; otherwise it is deselected.</p>
+<p>This function does not maintain any invariants or repaint anything -- <a href="q3listview.html#setSelected">Q3ListView::setSelected</a>() does that.</p>
+<p>See also <a href="q3listviewitem.html#isSelected">isSelected</a>(), <a href="q3listviewitem.html#height">height</a>(), and <a href="q3listviewitem.html#totalHeight">totalHeight</a>().</p>
+<h3 class="fn"><a name="setText"></a>void Q3ListViewItem::setText ( int <i>column</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the text in column <i>column</i> to <i>text</i>, if <i>column</i> is a valid column number and <i>text</i> is different from the existing text.</p>
+<p>If the <a href="q3listviewitem.html#text">text</a>() function has been reimplemented, this function may be a no-op.</p>
+<p>See also <a href="q3listviewitem.html#text">text</a>() and <a href="q3listviewitem.html#key">key</a>().</p>
+<h3 class="fn"><a name="setVisible"></a>void Q3ListViewItem::setVisible ( bool <i>b</i> )</h3>
+<p>If <i>b</i> is true, the item is made visible; otherwise it is hidden.</p>
+<p>If the item is not visible, <a href="q3listviewitem.html#itemAbove">itemAbove</a>() and <a href="q3listviewitem.html#itemBelow">itemBelow</a>() will never return this item, although you still can reach it by using e.g&#x2e; <a href="q3listviewitemiterator.html">Q3ListViewItemIterator</a>.</p>
+<p>See also <a href="q3listviewitem.html#isVisible">isVisible</a>().</p>
+<h3 class="fn"><a name="setup"></a>void Q3ListViewItem::setup ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This virtual function is called before the first time <a href="q3listview.html">Q3ListView</a> needs to know the height or any other graphical attribute of this object, and whenever the font, GUI style, or colors of the list view change.</p>
+<p>The default calls <a href="q3listviewitem.html#widthChanged">widthChanged</a>() and sets the item's height to the height of a single line of text in the list view's font. (If you use icons, multi-line text, etc., you will probably need to call <a href="q3listviewitem.html#setHeight">setHeight</a>() yourself or reimplement it.)</p>
+<h3 class="fn"><a name="sort"></a>void Q3ListViewItem::sort ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sorts all this item's child items using the current sorting configuration (sort column and direction).</p>
+<p>See also <a href="q3listviewitem.html#enforceSortOrder">enforceSortOrder</a>().</p>
+<h3 class="fn"><a name="sortChildItems"></a>void Q3ListViewItem::sortChildItems ( int <i>column</i>, bool <i>ascending</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sorts this item's children using column <i>column</i>. This is done in ascending order if <i>ascending</i> is true and in descending order if <i>ascending</i> is false.</p>
+<p>Asks some of the children to sort their children. (<a href="q3listview.html">Q3ListView</a> and <a href="q3listviewitem.html">Q3ListViewItem</a> ensure that all on-screen objects are properly sorted but may avoid or defer sorting other objects in order to be more responsive.)</p>
+<p>See also <a href="q3listviewitem.html#key">key</a>() and <a href="q3listviewitem.html#compare">compare</a>().</p>
+<h3 class="fn"><a name="startRename"></a>void Q3ListViewItem::startRename ( int <i>col</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If in-place renaming of this item is enabled (see <a href="q3listviewitem.html#renameEnabled">renameEnabled</a>()), this function starts renaming the item in column <i>col</i>, by creating and initializing an edit box.</p>
+<h3 class="fn"><a name="takeItem"></a>void Q3ListViewItem::takeItem ( Q3ListViewItem * <i>item</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Removes <i>item</i> from this object's list of children and causes an update of the screen display. The item is not deleted. You should not normally need to call this function because Q3ListViewItem::~<a href="q3listviewitem.html#Q3ListViewItem">Q3ListViewItem</a>() calls it.</p>
+<p>The normal way to delete an item is to use <tt>delete</tt>.</p>
+<p>If you need to move an item from one place in the hierarchy to another you can use takeItem() to remove the item from the list view and then <a href="q3listviewitem.html#insertItem">insertItem</a>() to put the item back in its new position.</p>
+<p>If a taken item is part of a selection in <tt>Single</tt> selection mode, it is unselected and selectionChanged() is emitted. If a taken item is part of a selection in <tt>Multi</tt> or <tt>Extended</tt> selection mode, it remains selected.</p>
+<p><b>Warning:</b> This function leaves <i>item</i> and its children in a state where most member functions are unsafe. Only a few functions work correctly on an item in this state, most notably <a href="q3listviewitem.html#insertItem">insertItem</a>(). The functions that work on taken items are explicitly documented as such.</p>
+<p>See also <a href="q3listviewitem.html#insertItem">Q3ListViewItem::insertItem</a>().</p>
+<h3 class="fn"><a name="text"></a><a href="qstring.html">QString</a> Q3ListViewItem::text ( int <i>column</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the text in column <i>column</i>, or an empty string if there is no text in that column.</p>
+<p>See also <a href="q3listviewitem.html#setText">setText</a>(), <a href="q3listviewitem.html#key">key</a>(), and <a href="q3listviewitem.html#paintCell">paintCell</a>().</p>
+<h3 class="fn"><a name="totalHeight"></a>int Q3ListViewItem::totalHeight () const</h3>
+<p>Returns the total height of this object, including any visible children. This height is recomputed lazily and cached for as long as possible.</p>
+<p>Functions which can affect the total height are, <a href="q3listviewitem.html#setHeight">setHeight</a>() which is used to set an item's height, <a href="q3listviewitem.html#setOpen">setOpen</a>() to show or hide an item's children, and <a href="q3listviewitem.html#invalidateHeight">invalidateHeight</a>() to invalidate the cached height.</p>
+<p>See also <a href="q3listviewitem.html#height">height</a>().</p>
+<h3 class="fn"><a name="width"></a>int Q3ListViewItem::width ( const <a href="qfontmetrics.html">QFontMetrics</a> &amp; <i>fm</i>, const <a href="q3listview.html">Q3ListView</a> * <i>lv</i>, int <i>c</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the number of pixels of width required to draw column <i>c</i> of list view <i>lv</i>, using the metrics <i>fm</i> without cropping. The list view containing this item may use this information depending on the <a href="q3listview.html#WidthMode-enum">Q3ListView::WidthMode</a> settings for the column.</p>
+<p>The default implementation returns the width of the bounding rectangle of the text of column <i>c</i>.</p>
+<p><a href="q3listview.html#itemMargin-prop">Q3ListView::itemMargin</a>()</p>
+<p>See also <a href="q3listviewitem.html#listView">listView</a>(), <a href="q3listviewitem.html#widthChanged">widthChanged</a>(), and <a href="q3listview.html#setColumnWidthMode">Q3ListView::setColumnWidthMode</a>().</p>
+<h3 class="fn"><a name="widthChanged"></a>void Q3ListViewItem::widthChanged ( int <i>c</i> = -1 ) const</h3>
+<p>Call this function when the value of <a href="q3listviewitem.html#width">width</a>() may have changed for column <i>c</i>. Normally, you should call this if text(c) changes. Passing -1 for <i>c</i> indicates that all columns may have changed. It is more efficient to pass -1 if two or more columns have changed than to call widthChanged() separately for each one.</p>
+<p>See also <a href="q3listviewitem.html#width">width</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: puzzlewidget.cpp Example File (draganddrop/puzzle/puzzlewidget.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">puzzlewidget.cpp Example File<br /><span class="small-subtitle">draganddrop/puzzle/puzzlewidget.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;puzzlewidget.h&quot;
+
+ PuzzleWidget::PuzzleWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     setAcceptDrops(true);
+     setMinimumSize(400, 400);
+     setMaximumSize(400, 400);
+ }
+
+ void PuzzleWidget::clear()
+ {
+     pieceLocations.clear();
+     piecePixmaps.clear();
+     pieceRects.clear();
+     highlightedRect = QRect();
+     inPlace = 0;
+     update();
+ }
+
+ void PuzzleWidget::dragEnterEvent(QDragEnterEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;image/x-puzzle-piece&quot;))
+         event-&gt;accept();
+     else
+         event-&gt;ignore();
+ }
+
+ void PuzzleWidget::dragLeaveEvent(QDragLeaveEvent *event)
+ {
+     QRect updateRect = highlightedRect;
+     highlightedRect = QRect();
+     update(updateRect);
+     event-&gt;accept();
+ }
+
+ void PuzzleWidget::dragMoveEvent(QDragMoveEvent *event)
+ {
+     QRect updateRect = highlightedRect.unite(targetSquare(event-&gt;pos()));
+
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;image/x-puzzle-piece&quot;)
+         &amp;&amp; findPiece(targetSquare(event-&gt;pos())) == -1) {
+
+         highlightedRect = targetSquare(event-&gt;pos());
+         event-&gt;setDropAction(Qt::MoveAction);
+         event-&gt;accept();
+     } else {
+         highlightedRect = QRect();
+         event-&gt;ignore();
+     }
+
+     update(updateRect);
+ }
+
+ void PuzzleWidget::dropEvent(QDropEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;image/x-puzzle-piece&quot;)
+         &amp;&amp; findPiece(targetSquare(event-&gt;pos())) == -1) {
+
+         QByteArray pieceData = event-&gt;mimeData()-&gt;data(&quot;image/x-puzzle-piece&quot;);
+         QDataStream dataStream(&amp;pieceData, QIODevice::ReadOnly);
+         QRect square = targetSquare(event-&gt;pos());
+         QPixmap pixmap;
+         QPoint location;
+         dataStream &gt;&gt; pixmap &gt;&gt; location;
+
+         pieceLocations.append(location);
+         piecePixmaps.append(pixmap);
+         pieceRects.append(square);
+
+         highlightedRect = QRect();
+         update(square);
+
+         event-&gt;setDropAction(Qt::MoveAction);
+         event-&gt;accept();
+
+         if (location == QPoint(square.x()/80, square.y()/80)) {
+             inPlace++;
+             if (inPlace == 25)
+                 emit puzzleCompleted();
+         }
+     } else {
+         highlightedRect = QRect();
+         event-&gt;ignore();
+     }
+ }
+
+ int PuzzleWidget::findPiece(const QRect &amp;pieceRect) const
+ {
+     for (int i = 0; i &lt; pieceRects.size(); ++i) {
+         if (pieceRect == pieceRects[i]) {
+             return i;
+         }
+     }
+     return -1;
+ }
+
+ void PuzzleWidget::mousePressEvent(QMouseEvent *event)
+ {
+     QRect square = targetSquare(event-&gt;pos());
+     int found = findPiece(square);
+
+     if (found == -1)
+         return;
+
+     QPoint location = pieceLocations[found];
+     QPixmap pixmap = piecePixmaps[found];
+     pieceLocations.removeAt(found);
+     piecePixmaps.removeAt(found);
+     pieceRects.removeAt(found);
+
+     if (location == QPoint(square.x()/80, square.y()/80))
+         inPlace--;
+
+     update(square);
+
+     QByteArray itemData;
+     QDataStream dataStream(&amp;itemData, QIODevice::WriteOnly);
+
+     dataStream &lt;&lt; pixmap &lt;&lt; location;
+
+     QMimeData *mimeData = new QMimeData;
+     mimeData-&gt;setData(&quot;image/x-puzzle-piece&quot;, itemData);
+
+     QDrag *drag = new QDrag(this);
+     drag-&gt;setMimeData(mimeData);
+     drag-&gt;setHotSpot(event-&gt;pos() - square.topLeft());
+     drag-&gt;setPixmap(pixmap);
+
+     if (!(drag-&gt;exec(Qt::MoveAction) == Qt::MoveAction)) {
+         pieceLocations.insert(found, location);
+         piecePixmaps.insert(found, pixmap);
+         pieceRects.insert(found, square);
+         update(targetSquare(event-&gt;pos()));
+
+         if (location == QPoint(square.x()/80, square.y()/80))
+             inPlace++;
+     }
+ }
+
+ void PuzzleWidget::paintEvent(QPaintEvent *event)
+ {
+     QPainter painter;
+     painter.begin(this);
+     painter.fillRect(event-&gt;rect(), Qt::white);
+
+     if (highlightedRect.isValid()) {
+         painter.setBrush(QColor(&quot;#ffcccc&quot;));
+         painter.setPen(Qt::NoPen);
+         painter.drawRect(highlightedRect.adjusted(0, 0, -1, -1));
+     }
+
+     for (int i = 0; i &lt; pieceRects.size(); ++i) {
+         painter.drawPixmap(pieceRects[i], piecePixmaps[i]);
+     }
+     painter.end();
+ }
+
+ const QRect PuzzleWidget::targetSquare(const QPoint &amp;position) const
+ {
+     return QRect(position.x()/80 * 80, position.y()/80 * 80, 80, 80);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,203 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-fonts.html
+
+    \title Qt for Embedded Linux Fonts
+    \ingroup qt-embedded
+
+    \l {Qt for Embedded Linux} uses the
+    \l{http://freetype.sourceforge.net/freetype2/index.html}{FreeType 2}
+    font engine to produce font output. The formats supported depends on
+    the locally installed version of the FreeType library. In addition,
+    \l{Qt for Embedded Linux} supports the Qt Prerendered Font formats (\l QPF and \l QPF2):
+    light-weight non-scalable font formats specific to \l {Qt for Embedded Linux}.
+    QPF2 is the native format of \l{Qt for Embedded Linux}. QPF is the legacy
+    format used by Qt/Embedded 2.x and 3.x. Several of the formats may be rendered
+    using anti-aliasing for improved readability.
+
+    When \l{Qt for Embedded Linux} applications run, they look for fonts in
+    Qt's \c lib/fonts/ directory. \l {Qt for Embedded Linux} will automatically detect
+    prerendered fonts and TrueType fonts. For compatibility, it will also read the
+    legacy \c lib/fonts/fontdir file.
+
+    Support for other font formats can be added, contact
+    \l{mailto:info@trolltech.com}{info@trolltech.com} for more
+    information.
+
+    \tableofcontents
+
+    \table 100%
+    \row
+    \o
+    \bold {Optimization}
+
+    The \l FreeType, \l QPF2 and \l QPF formats are features that can be
+    disabled using the
+    \l{Fine-Tuning Features in Qt for Embedded Linux}{feature definition system},
+    reducing the size of Qt and saving resources.
+
+    Note that at least one font format must be defined.
+
+    See the \l {Fine-Tuning Features in Qt for Embedded Linux} documentation for
+    details.
+
+    \o
+    \inlineimage qt-embedded-fontfeatures.png
+    \endtable
+
+    All supported fonts use the Unicode character encoding. Most fonts
+    available today do, but they usually don't contain \e all the
+    Unicode characters. A complete 16-point Unicode font uses over 1
+    MB of memory.
+
+    \target FreeType
+    \section1 FreeType Formats
+
+    The \l {http://freetype.sourceforge.net/freetype2/index.html}{FreeType 2}
+    library (and therefore \l{Qt for Embedded Linux}) can support the following font formats:
+
+    \list
+        \o TrueType (TTF)
+        \o PostScript Type1 (PFA/PFB)
+        \o Bitmap Distribution Format (BDF)
+        \o CID-keyed Type1
+        \o Compact Font Format (CFF)
+        \o OpenType fonts
+        \o SFNT-based bitmap fonts
+        \o Portable Compiled Format (PCF)
+        \o Microsoft Windows Font File Format (Windows FNT)
+        \o Portable Font Resource (PFR)
+        \o Type 42 (limited support)
+    \endlist
+
+    It is possible to add modules to the \l
+    {http://freetype.sourceforge.net/freetype2/index.html}{FreeType 2}
+    font engine to support other types of font files. For more
+    information, see the font engine's own website: \l
+    http://freetype.sourceforge.net/freetype2/index.html.
+
+    Glyphs rendered using FreeType are shared efficiently between applications,
+    reducing memory requirements and speeding up text rendering.
+
+    \omit
+    \l {Qt for Embedded Linux} will by default use the system FreeType library if it exists.
+    Otherwise it will use a copy of the FreeType library in Qt, which by default only
+    supports TrueType fonts to reduce footprint.
+    \endomit
+
+    \target QPF2
+    \section1 Qt Prerendered Font (QPF2)
+
+    The Qt Prerendered Font (QPF2) is an architecture-independent,
+    light-weight and non-scalable font format specific to \l{Qt for Embedded Linux}.
+
+    Trolltech provides the cross-platform \c makeqpf tool, included in the
+    \c tools directory of both \l {Qt} and \l{Qt for Embedded Linux}, which allows
+    generation of QPF2 files from system fonts.
+
+    QPF2 supports anti-aliasing and complex writing systems, using information
+    from the corresponding TrueType font, if present on the system. The format
+    is designed to be mapped directly to memory. The same format is used to
+    share glyphs from non-prerendered fonts between applications.
+
+    \target QPF
+    \section1 Legacy Qt Prerendered Font (QPF)
+
+    Trolltech provides support for the legacy QPF format for compatibility
+    reasons. QPF is based on the internal font engine data structure of Qt/Embedded
+    versions 2 and 3.
+
+    Note that the file name describes the font, for example \c helvetica_120_50.qpf
+    is 12 point Helvetica while \c helvetica_120_50i.qpf is 12 point Helvetica \e italic.
+
+    \omit
+    \section1 Memory Requirements
+
+    Taking advantage of the way the QPF format is structured, Qt for
+    Embedded Linux memory-maps the data rather than reading and parsing it.
+    This reduces RAM consumption even further.
+
+    Scalable fonts use a larger amount of memory per font, but
+    these fonts provide a memory saving if many different sizes of each
+    font are needed.
+    \endomit
+
+    \section1 The Legacy \c fontdir File
+
+    For compatibility reasons \l{Qt for Embedded Linux} supports the \c fontdir
+    file, if present. The file defines additional fonts available to the
+    application, and has the following format:
+
+    \snippet doc/src/snippets/code/doc.src.emb-fonts.qdoc 0
+
+    \table 100%
+    \header \o Field \o Description
+    \row \o \bold name
+    \o The name of the font format, e.g.,\c Helvetica, \c Times, etc.
+    \row \o \bold file
+    \o The name of the file containing the font, e.g., \c
+    helvR0810.bdf, \c verdana.ttf, etc.
+    \row \o \bold renderer
+    \o Specifies the font engine that should be used to render the
+    font, currently only the FreeType font engine (\c FT) is
+    supported.
+    \row \o \bold italic
+    \o Specifies whether the font is italic or not; the accepted
+    values are \c y or \c n.
+    \row \o \bold weight
+    \o Specifies the font's weight: \c 50 is normal, \c 75 is bold,
+    etc.
+    \row \o \bold size
+    \o Specifies the font size, i.e., point size * 10. For example, a
+    value of 120 means 12pt. A value of 0 means that the font is
+    scalable.
+    \row \o \bold flags
+    \o The following flag is supported:
+    \list
+        \o \c s: smooth (anti-aliased)
+    \endlist
+    All other flags are ignored.
+    \endtable
+*/

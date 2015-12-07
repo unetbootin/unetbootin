@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qfileiconprovider.cpp -->
+<head>
+  <title>Qt 4.4: QFileIconProvider Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFileIconProvider Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFileIconProvider class provides file icon for the <a href="qdirmodel.html">QDirModel</a> class. <a href="#details">More...</a></p>
+<pre> #include &lt;QFileIconProvider&gt;</pre><ul>
+<li><a href="qfileiconprovider-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qfileiconprovider.html#IconType-enum">IconType</a></b> { Computer, Desktop, Trashcan, Network, ..., File }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfileiconprovider.html#QFileIconProvider">QFileIconProvider</a></b> ()</li>
+<li><div class="fn"/>virtual <b><a href="qfileiconprovider.html#dtor.QFileIconProvider">~QFileIconProvider</a></b> ()</li>
+<li><div class="fn"/>virtual QIcon <b><a href="qfileiconprovider.html#icon">icon</a></b> ( IconType <i>type</i> ) const</li>
+<li><div class="fn"/>virtual QIcon <b><a href="qfileiconprovider.html#icon-2">icon</a></b> ( const QFileInfo &amp; <i>info</i> ) const</li>
+<li><div class="fn"/>virtual QString <b><a href="qfileiconprovider.html#type">type</a></b> ( const QFileInfo &amp; <i>info</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFileIconProvider class provides file icon for the <a href="qdirmodel.html">QDirModel</a> class.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="IconType-enum"></a>enum QFileIconProvider::IconType</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="40%">
+<tr><th width="60%">Constant</th><th width="40%">Value</th></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Computer</tt></td><td align="center" valign="top"><tt>0</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Desktop</tt></td><td align="center" valign="top"><tt>1</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Trashcan</tt></td><td align="center" valign="top"><tt>2</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Network</tt></td><td align="center" valign="top"><tt>3</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Drive</tt></td><td align="center" valign="top"><tt>4</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::Folder</tt></td><td align="center" valign="top"><tt>5</tt></td></tr>
+<tr><td valign="top"><tt>QFileIconProvider::File</tt></td><td align="center" valign="top"><tt>6</tt></td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFileIconProvider"></a>QFileIconProvider::QFileIconProvider ()</h3>
+<p>Constructs a file icon provider.</p>
+<h3 class="fn"><a name="dtor.QFileIconProvider"></a>QFileIconProvider::~QFileIconProvider ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the file icon provider.</p>
+<h3 class="fn"><a name="icon"></a><a href="qicon.html">QIcon</a> QFileIconProvider::icon ( <a href="qfileiconprovider.html#IconType-enum">IconType</a> <i>type</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns an icon set for the given <i>type</i>.</p>
+<h3 class="fn"><a name="icon-2"></a><a href="qicon.html">QIcon</a> QFileIconProvider::icon ( const <a href="qfileinfo.html">QFileInfo</a> &amp; <i>info</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns an icon for the file described by <i>info</i>.</p>
+<h3 class="fn"><a name="type"></a><a href="qstring.html">QString</a> QFileIconProvider::type ( const <a href="qfileinfo.html">QFileInfo</a> &amp; <i>info</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the type of the file described by <i>info</i>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

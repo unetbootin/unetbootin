@@ -1,0 +1,123 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example network/threadedfortuneserver
+    \title Threaded Fortune Server Example
+
+    The Threaded Fortune Server example shows how to create a server for a
+    simple network service that uses threads to handle requests from different
+    clients. It is intended to be run alongside the Fortune Client example.
+
+    \image threadedfortuneserver-example.png
+
+    The implementation of this example is similar to that of the
+    \l{network/fortuneserver}{Fortune Server} example, but here we will
+    implement a subclass of QTcpServer that starts each connection in a
+    different thread.
+
+    For this we need two classes: FortuneServer, a QTcpServer subclass, and
+    FortuneThread, which inherits QThread.
+
+    \snippet examples/network/threadedfortuneserver/fortuneserver.h 0
+
+    FortuneServer inherits QTcpServer and reimplements
+    QTcpServer::incomingConnection(). We also use it for storing the list of
+    random fortunes. 
+    
+    \snippet examples/network/threadedfortuneserver/fortuneserver.cpp 0
+
+    We use FortuneServer's constructor to simply generate the list of
+    fortunes.
+
+    \snippet examples/network/threadedfortuneserver/fortuneserver.cpp 1
+
+    Our implementation of QTcpServer::incomingConnection() creates a
+    FortuneThread object, passing the incoming socket descriptor and a random
+    fortune to FortuneThread's constructor. By connecting FortuneThread's
+    finished() signal to QObject::deleteLater(), we ensure that the thread
+    gets deleted once it has finished. We can then call QThread::start(),
+    which starts the thread.
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.h 0
+
+    Moving on to the FortuneThread class, this is a QThread subclass whose job
+    is to write the fortune to the connected socket. The class reimplements
+    QThread::run(), and it has a signal for reporting errors.
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.cpp 0
+    
+    FortuneThread's constructor simply stores the socket descriptor and
+    fortune text, so that they are available for run() later on.
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.cpp 1
+
+    The first thing our run() function does is to create a QTcpSocket object
+    on the stack. What's worth noticing is that we are creating this object
+    inside the thread, which automatically associates the socket to the
+    thread's event loop. This ensures that Qt will not try to deliver events
+    to our socket from the main thread while we are accessing it from
+    FortuneThread::run().
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.cpp 2
+
+    The socket is initialized by calling QTcpSocket::setSocketDescriptor(),
+    passing our socket descriptor as an argument. We expect this to succeed,
+    but just to be sure, (although unlikely, the system may run out of
+    resources,) we catch the return value and report any error.
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.cpp 3
+
+    As with the \l{network/fortuneserver}{Fortune Server} example, we encode
+    the fortune into a QByteArray using QDataStream.
+
+    \snippet examples/network/threadedfortuneserver/fortunethread.cpp 4
+
+    But unlike the previous example, we finish off by calling
+    QTcpSocket::waitForDisconnected(), which blocks the calling thread until
+    the socket has disconnected. Because we are running in a separate thread,
+    the GUI will remain responsive.  
+
+    \sa {Fortune Server Example}, {Fortune Client Example}, {Blocking Fortune
+    Client Example}
+*/

@@ -1,0 +1,230 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/****************************************************************************
+**
+** Qt Application Icon Usage Documentation.
+**
+** Copyright (C) 1992-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the Qt GUI Toolkit.
+** EDITIONS: FREE, PROFESSIONAL, ENTERPRISE
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page appicon.html
+    \title Setting the Application Icon
+    \ingroup gui-programming
+
+    The application icon, typically displayed in the top-left corner of an
+    application's top-level windows, is set by calling the
+    QWidget::setWindowIcon() method on top-level widgets.
+
+    In order to change the icon of the executable application file
+    itself, as it is presented on the desktop (i.e., prior to
+    application execution), it is necessary to employ another,
+    platform-dependent technique.
+
+    \tableofcontents
+
+    \section1 Setting the Application Icon on Windows
+
+    First, create an ICO format bitmap file that contains the icon
+    image. This can be done with e.g. Microsoft Visual C++: Select
+    \menu{File|New}, then select the \menu{File} tab in the dialog
+    that appears, and choose \menu{Icon}. (Note that you do not need
+    to load your application into Visual C++; here we are only using
+    the icon editor.)
+
+    Store the ICO file in your application's source code directory,
+    for example, with the name \c myappico.ico. Then, create a text
+    file called, say, \c myapp.rc in which you put a single line of
+    text:
+
+    \snippet doc/src/snippets/code/doc.src.appicon.qdoc 0
+
+    Finally, assuming you are using \c qmake to generate your
+    makefiles, add this line to your \c myapp.pro file:
+
+    \snippet doc/src/snippets/code/doc.src.appicon.qdoc 1
+
+    Regenerate your makefile and your application. The \c .exe file
+    will now be represented with your icon in Explorer.
+
+    If you do not use \c qmake, the necessary steps are: first, run
+    the \c rc program on the \c .rc file, then link your application
+    with the resulting \c .res file.
+
+    \section1 Setting the Application Icon on Mac OS X
+
+    The application icon, typically displayed in the application dock
+    area, is set by calling QWidget::setWindowIcon() on a top-level
+    widget. It is possible that the program could appear in the
+    application dock area before the function call, in which case a
+    default icon will appear during the bouncing animation.
+
+    To ensure that the correct icon appears, both when the application is
+    being launched, and in the Finder, it is necessary to employ a
+    platform-dependent technique.
+
+    Although many programs can create icon files (\c .icns), the
+    recommended approach is to use the \e{Icon Composer} program
+    supplied by Apple (in the \c Developer/Application folder).
+    \e{Icon Composer} allows you to import several different sized
+    icons (for use in different contexts) as well as the masks that
+    go with them. Save the set of icons to a file in your project
+    directory.
+
+    If you are using qmake to generate your makefiles, you only need
+    to add a single line to your \c .pro project file. For example,
+    if the name of your icon file is \c{myapp.icns}, and your project
+    file is \c{myapp.pro}, add this line to \c{myapp.pro}:
+
+    \snippet doc/src/snippets/code/doc.src.appicon.qdoc 2
+
+    This will ensure that \c qmake puts your icons in the proper
+    place and creates an \c{Info.plist} entry for the icon.
+
+    If you do not use \c qmake, you must do the following manually:
+    \list 1
+    \i Create an \c Info.plist file for your application (using the
+       \c PropertyListEditor, found in \c Developer/Applications).
+    \i Associate your \c .icns record with the \c CFBundleIconFile record in the
+       \c Info.plist file (again, using the \c PropertyListEditor).
+    \i Copy the \c Info.plist file into your application bundle's \c Contents
+       directory.
+    \i Copy the \c .icns file into your application bundle's \c Contents/Resources
+       directory.
+    \endlist
+
+    \section1 Setting the Application Icon on Common Linux Desktops
+
+    In this section we briefly describe the issues involved in providing
+    icons for applications for two common Linux desktop environments:
+    \l{http://www.kde.org/}{KDE} and \l{http://www.gnome.org/}{GNOME}.
+    The core technology used to describe application icons
+    is the same for both desktops, and may also apply to others, but there
+    are details which are specific to each. The main source of information
+    on the standards used by these Linux desktops is
+    \l{http://www.freedesktop.org/}{freedesktop.org}. For information
+    on other Linux desktops please refer to the documentation for the
+    desktops you are interested in.
+
+    Often, users do not use executable files directly, but instead launch
+    applications by clicking icons on the desktop. These icons are
+    representations of "desktop entry files" that contain a description of
+    the application that includes information about its icon. Both desktop
+    environments are able to retrieve the information in these files, and
+    they use it to generate shortcuts to applications on the desktop, in
+    the start menu, and on the panel.
+
+    More information about desktop entry files can be found in the
+    \l{http://www.freedesktop.org/Standards/desktop-entry-spec}{Desktop Entry
+    Specification}.
+
+    Although desktop entry files can usefully encapsulate the application's details,
+    we still need to store the icons in the conventional location for each desktop
+    environment. A number of locations for icons are given in the
+    \l{http://www.freedesktop.org/Standards/icon-theme-spec}{Icon Theme
+    Specification}.
+
+    Although the path used to locate icons depends on the desktop in use,
+    and on its configuration, the directory structure beneath each of
+    these should follow the same pattern: subdirectories are arranged by
+    theme, icon size, and application type. Generally, application icons
+    are added to the hicolor theme, so a square application icon 32 pixels
+    in size would be stored in the \c hicolor/32x32/apps directory beneath
+    the icon path.
+
+    \section2 K Desktop Environment (KDE)
+
+    Application icons can be installed for use by all users, or on a per-user basis.
+    A user currently logged into their KDE desktop can discover these locations
+    by using \l{http://developer.kde.org/documentation/other/kde-config.html}{kde-config},
+    for example, by typing the following in a terminal window:
+
+    \snippet doc/src/snippets/code/doc.src.appicon.qdoc 3
+
+    Typically, the list of colon-separated paths printed to stdout includes the
+    user-specific icon path and the system-wide path. Beneath these
+    directories, it should be possible to locate and install icons according
+    to the conventions described in the
+    \l{http://www.freedesktop.org/Standards/icon-theme-spec}{Icon Theme Specification}.
+
+    If you are developing exclusively for KDE, you may wish to take
+    advantage of the \link
+    http://developer.kde.org/documentation/other/makefile_am_howto.html
+    KDE build system\endlink to configure your application. This ensures
+    that your icons are installed in the appropriate locations for KDE.
+
+    The KDE developer website is at \l{http://developer.kde.org/}.
+
+    \section2 GNOME
+
+    Application icons are stored within a standard system-wide
+    directory containing architecture-independent files. This
+    location can be determined by using \c gnome-config, for example
+    by typing the following in a terminal window:
+
+    \snippet doc/src/snippets/code/doc.src.appicon.qdoc 4
+
+    The path printed on stdout refers to a location that should contain a directory
+    called \c{pixmaps}; the directory structure within the \c pixmaps
+    directory is described in the \link
+    http://www.freedesktop.org/Standards/icon-theme-spec Icon Theme
+    Specification \endlink.
+
+    If you are developing exclusively for GNOME, you may wish to use
+    the standard set of \link
+    http://developer.gnome.org/tools/build.html GNU Build Tools\endlink,
+    also described in the relevant section of
+    the \link http://developer.gnome.org/doc/GGAD/ggad.html GTK+/Gnome
+    Application Development book\endlink. This ensures that your icons are
+    installed in the appropriate locations for GNOME.
+
+    The GNOME developer website is at \l{http://developer.gnome.org/}.
+*/

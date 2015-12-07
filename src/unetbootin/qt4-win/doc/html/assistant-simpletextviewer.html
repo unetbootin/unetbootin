@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/simpletextviewer.qdoc -->
+<head>
+  <title>Qt 4.4: Simple Text Viewer Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Simple Text Viewer Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="assistant-simpletextviewer-findfiledialog-cpp.html">assistant/simpletextviewer/findfiledialog.cpp</a></li>
+<li><a href="assistant-simpletextviewer-findfiledialog-h.html">assistant/simpletextviewer/findfiledialog.h</a></li>
+<li><a href="assistant-simpletextviewer-mainwindow-cpp.html">assistant/simpletextviewer/mainwindow.cpp</a></li>
+<li><a href="assistant-simpletextviewer-mainwindow-h.html">assistant/simpletextviewer/mainwindow.h</a></li>
+<li><a href="assistant-simpletextviewer-main-cpp.html">assistant/simpletextviewer/main.cpp</a></li>
+<li><a href="assistant-simpletextviewer-simpletextviewer-pro.html">assistant/simpletextviewer/simpletextviewer.pro</a></li>
+</ul>
+<p>The Simple Text Viewer example shows how you can make Qt Assistant act as a customized help tool for your application using the <a href="qassistantclient.html">QAssistantClient</a> class combined with a Qt Assistant Document Profile.</p>
+<p align="center"><img src="images/simpletextviewer-example.png" /></p><p>The Simple Text Viewer application allows the user to select and view existing files.</p>
+<p>The application provides its own custom documentation that is available through the <b>Help</b> menu in the main window's menubar and through the <b>Help</b> button in the application's find file dialog. The documentation files are located in a separate <tt>documentation</tt> subdirectory.</p>
+<p>The example consists of two classes:</p>
+<ul>
+<li><tt>MainWindow</tt> is the main application window.</li>
+<li><tt>FindFileDialog</tt> allows the user to search for files using wildcard matching.</li>
+</ul>
+<p>First we will take a look at how the <a href="qassistantclient.html">QAssistantClient</a> is implemented in the <tt>MainWindow</tt> class. At the same time we will see how we can make the Qt Assistant display custom documentation using the Qt Assistant Document Profile (<tt>.adp</tt>) format. Then we will review the <tt>FindFileDialog</tt> class.</p>
+<p>Note that we will only comment on the parts of the implementation that are relevant to the main issue, that is making Qt Assistant act as a customized help-tool for our Simple Text Viewer application.</p>
+<a name="mainwindow-class-definition"></a>
+<h2>MainWindow Class Definition</h2>
+<p align="center"><img src="images/simpletextviewer-mainwindow.png" /></p><p>The <tt>MainWindow</tt> class provides the main application window with two menus: The <b>File</b> menu lets the user open and view an existing file while the <b>Help</b> menu provides information about the application and about Qt, and lets the user open Qt Assistant displaying the application's documentation. Here is the relevant parts of the <tt>MainWindow</tt> class definition:</p>
+<pre>     QAssistantClient *assistantClient;</pre>
+<p>To use Qt Assistant as an application's help tool, we must provide the application with a <a href="qassistantclient.html">QAssistantClient</a> object. An instance of the <a href="qassistantclient.html">QAssistantClient</a> class enables the application to open or close Qt Assistant whenever it is required. The object only interacts with the particular Qt Assistant instance associated with it (i.e&#x2e; it is a one to one relationship between a <a href="qassistantclient.html">QAssistantClient</a> object and an instance of the Qt Assistant application).</p>
+<p>Note that the <a href="qassistantclient.html">QAssistantClient</a> class is not included in the Qt library. To use it you must add <tt>CONFIG += assistant</tt> to your pro file.</p>
+<pre>     void initializeAssistant();</pre>
+<p>We declare the private <tt>initializeAssistant()</tt> function to create and initialize the application's <a href="qassistantclient.html">QAssistantClient</a> object. It is a convenience function used when constructing the main window widget.</p>
+<pre>     void assistant();</pre>
+<p>To facilitate the <b>Open Assistant</b> menu entry in the <b>Help</b> menu we declare a private <tt>assistant()</tt> slot which will open the application's instance of Qt Assistant on user requests.</p>
+<pre>     void closeEvent(QCloseEvent *event);</pre>
+<p>Finally, we must reimplement the protected <a href="qwidget.html#closeEvent">QWidget::closeEvent</a>() event handler to ensure that the application's Qt Assistant instance is properly closed before we terminate the application.</p>
+<a name="mainwindow-class-implementation"></a>
+<h2>MainWindow Class Implementation</h2>
+<p>The <tt>MainWindow</tt> constructor is straight forward. We create the required actions and menus, and initialize the application's <a href="qassistantclient.html">QAssistantClient</a> object:</p>
+<pre> MainWindow::MainWindow()
+ {
+     textViewer = new QTextEdit;
+     textViewer-&gt;setReadOnly(true);
+     QFile file(&quot;documentation/intro.html&quot;);
+     if (file.open(QIODevice::ReadOnly))
+         textViewer-&gt;setHtml(file.readAll());
+
+     setCentralWidget(textViewer);
+
+     createActions();
+     createMenus();
+
+     initializeAssistant();
+
+     setWindowTitle(tr(&quot;Simple Text Viewer&quot;));
+     resize(750, 400);
+ }</pre>
+<p>When the user select the <b>Open Assistant</b> entry in the main window's <b>Help</b> menu, it triggers the <tt>assistant()</tt> slot.</p>
+<pre> void MainWindow::assistant()
+ {
+     assistantClient-&gt;showPage(QLibraryInfo::location(QLibraryInfo::ExamplesPath) +
+                                               QDir::separator() +
+                                               &quot;assistant/simpletextviewer/documentation/index.html&quot;);
+ }</pre>
+<p>In this slot we use the <a href="qassistantclient.html#showPage">QAssistantClient::showPage</a>() function to make Qt Assistant show the documentation's index page. This function also brings the Qt Assistant application to the foreground if it is hidden.</p>
+<p>In our example, the application's documentation is located in a subdirectory in the Simple Text Viewer example's directory. We use <a href="qlibraryinfo.html#location">QLibraryInfo::location</a>() to determine the location of Qt's example path (<a href="qlibraryinfo.html#LibraryLocation-enum">QLibraryInfo::ExamplesPath</a>), and add the proper suffix specifying the index file of the documentation.</p>
+<p>The documentation set can be altered using the command line arguments that are passed to Qt Assistant when it is launched. When started without any options, Qt Assistant displays a default set of documentation. When Qt is installed, the default documentation set in Qt Assistant contains the Qt reference documentation as well as the tools that come with Qt, such as Qt Designer and <tt>qmake</tt>.</p>
+<p>In our example, we replace the default documentation set with our custom documentation in the <tt>initializeAssistant()</tt> function called from the constructor:</p>
+<pre> void MainWindow::initializeAssistant()
+ {
+     assistantClient = new QAssistantClient(QLibraryInfo::location(QLibraryInfo::BinariesPath), this);
+
+     QStringList arguments;
+     arguments &lt;&lt; &quot;-profile&quot; &lt;&lt; QString(&quot;documentation&quot;) + QDir::separator() + QString(&quot;simpletextviewer.adp&quot;);
+     assistantClient-&gt;setArguments(arguments);
+ }</pre>
+<p>First we create the <a href="qassistantclient.html">QAssistantClient</a> object, then we set the command line arguments that are applied when Qt Assistant is started, using the <a href="qassistantclient.html#setArguments">QAssistantClient::setArguments</a>() function: The <tt>-profile documentation/simpletextviewer.adp</tt> arguments tell Qt Assistant to use the documentation set specified by the given <tt>.adp</tt> file. The <tt>.adp</tt> file extension is an abbreviation for Qt Assistant Document Profile.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Qt Assistant Document Profile</th></tr></thead>
+<tr valign="top" class="odd"><td>The Qt Assistant Document Profile is an extension of the Documentation Content File.<p>Documentation can be added or removed from Qt Assistant by adding and removing the content files. A documentation content file must contain the documentation's table of contents and all important keywords for the index. See the <a href="assistant-manual.html">Qt Assistant Manual</a> for a more detailed description of how to write and use documentation contents file for Qt Assistant.</p>
+<p>The Qt Assistant Document Profile adds a profile tag, containing property tags, to the format. Using a profile, the documentation writer can change several of Qt Assistant's properties, for example its window title and start page.</p>
+    <H4><center>/documentation/simpletextviewer.adp</center></H4>
+    <pre> &lt;!DOCTYPE DCF&gt;
+
+ &lt;assistantconfig version=&quot;3.2.0&quot;&gt;
+
+ &lt;profile&gt;
+     &lt;property name=&quot;name&quot;&gt;simpletextviewer&lt;/property&gt;
+     &lt;property name=&quot;title&quot;&gt;Simple Text Viewer&lt;/property&gt;
+     &lt;property name=&quot;applicationicon&quot;&gt;images/handbook.png&lt;/property&gt;
+     &lt;property name=&quot;startpage&quot;&gt;index.html&lt;/property&gt;
+     &lt;property name=&quot;aboutmenutext&quot;&gt;About Simple Text Viewer&lt;/property&gt;
+     &lt;property name=&quot;abouturl&quot;&gt;about.txt&lt;/property&gt;
+     &lt;property name=&quot;assistantdocs&quot;&gt;.&lt;/property&gt;
+ &lt;/profile&gt;
+
+ &lt;DCF ref=&quot;index.html&quot; icon=&quot;images/handbook.png&quot; title=&quot;Simple Text Viewer&quot;&gt;
+         &lt;section ref=&quot;./findfile.html&quot; title=&quot;Find File&quot;&gt;
+             &lt;keyword ref=&quot;./index.html&quot;&gt;Display&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./index.html&quot;&gt;Rich text&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./index.html&quot;&gt;Plain text&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./findfile.html&quot;&gt;Find&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./findfile.html&quot;&gt;File menu&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./filedialog.html&quot;&gt;File name&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./filedialog.html&quot;&gt;File dialog&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./wildcardmatching.html&quot;&gt;File globbing&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./wildcardmatching.html&quot;&gt;Wildcard matching&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./wildcardmatching.html&quot;&gt;Wildcard syntax&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./browse.html&quot;&gt;Browse&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./browse.html&quot;&gt;Directory&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./openfile.html&quot;&gt;Open&lt;/keyword&gt;
+             &lt;keyword ref=&quot;./openfile.html&quot;&gt;Select&lt;/keyword&gt;
+
+             &lt;section ref=&quot;./filedialog.html&quot; title=&quot;File Dialog&quot; /&gt;
+             &lt;section ref=&quot;./wildcardmatching.html&quot; title=&quot;Wildcard Matching&quot; /&gt;
+             &lt;section ref=&quot;./browse.html&quot; title=&quot;Browse&quot; /&gt;
+         &lt;/section&gt;
+         &lt;section ref=&quot;./openfile.html&quot; title=&quot;Open File&quot; /&gt;
+ &lt;/DCF&gt;
+
+ &lt;/assistantconfig&gt;</pre>
+<p>The <tt>simpletextviewer.adp</tt> file quoted above, describes the Simple Text Viewer application's documentation and consists of two sections: One enclosed by the <tt>profile</tt> tag, and another delimited by the <tt>DCF</tt> (Documentation Content File) tag. The latter section describes the documentation content, and defines the keywords that appear in the <b>Index</b> tab in Qt Assistant's sidebar. The <tt>profile</tt> section describes the properties of our application's instance of Qt Assistant. Within the profile tag you might, for example, want to set the <tt>startpage</tt> which is the page that Qt Assistant displays by default, the <tt>assistantdocs</tt> which describes the location of the documentation (relative to the location of the <tt>.adp</tt> file) used when the user requests help from the <b>Search</b> tab, and the <tt>title</tt> property used to specify a window title for Qt Assistant.</p>
+</td></tr>
+</table></p>
+<pre> void MainWindow::open()
+ {
+     FindFileDialog dialog(textViewer, assistantClient);
+     dialog.exec();
+ }</pre>
+<p>When the user choose the <b>Open</b> entry in the <b>File</b> menu, it triggers the <tt>open()</tt> slot which will pop up a find file dialog. We have two options of providing help during the dialog's execution: We can either create a new <a href="qassistantclient.html">QAssistantClient</a> object within the dialog, or pass the current object to its constructor. By choosing the latter solution, we delimit the number of running Qt Assistant instances to one.</p>
+<p>Along with the <a href="qassistantclient.html">QAssistantClient</a> object, we also pass the current <a href="qtextedit.html">QTextEdit</a> object to the <tt>FindFileDialog</tt> contructor to be able to display the selected file. Then we call the newly created dialog's <a href="qdialog.html#exec">exec()</a> function, showing the dialog as a <a href="qdialog.html#modal-dialogs">modal dialog</a> (i.e&#x2e; blocking until the user closes the dialog).</p>
+<pre> void MainWindow::closeEvent(QCloseEvent *)
+ {
+     if (assistantClient)
+         assistantClient-&gt;closeAssistant();
+ }</pre>
+<p>When launching Qt Assistant using the <a href="qassistantclient.html">QAssistantClient</a>, the application is run in its own process. For that reason we must reimplement the <a href="qwidget.html#closeEvent">QWidget::closeEvent</a>() event handler to ensure that the Qt Assistant process is terminated properly before we close the application.</p>
+<a name="findfiledialog-class-definition"></a>
+<h2>FindFileDialog Class Definition</h2>
+<p align="center"><img src="images/simpletextviewer-findfiledialog.png" /></p><p>The Simple Text Viewer application provides a find file dialog allowing the user to search for files using wildcard matching. The search is performed within the specified directory, and the user is given an option to browse the existing file system to find the relevant directory.</p>
+<pre> class FindFileDialog : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     FindFileDialog(QTextEdit *editor, QAssistantClient *assistant,
+                    QWidget *parent = 0);
+
+ private slots:
+     void browse();
+     void help();
+     void openFile(QTreeWidgetItem *item = 0);
+     void update();
+
+ private:
+     void findFiles();
+     void showFiles(const QStringList &amp;files);
+
+     void createButtons();
+     void createComboBoxes();
+     void createFilesTree();
+     void createLabels();
+     void createLayout();
+
+     QAssistantClient *currentAssistantClient;
+     QTextEdit *currentEditor;
+     QTreeWidget *foundFilesTree;
+
+     QComboBox *directoryComboBox;
+     QComboBox *fileNameComboBox;
+
+     QLabel *directoryLabel;
+     QLabel *fileNameLabel;
+
+     QDialogButtonBox *buttonBox;
+
+     QToolButton *browseButton;
+ };</pre>
+<p>The only relevant members to observe in the <tt>FindFileDialog</tt> class definition is the private <tt>help()</tt> slot. The slot is connected to the dialog's <b>Help</b> button, and brings the current Qt Assistant instance to the foreground showing the documentation for the dialog.</p>
+<a name="findfiledialog-class-implementation"></a>
+<h2>FindFileDialog Class Implementation</h2>
+<pre> FindFileDialog::FindFileDialog(QTextEdit *editor, QAssistantClient *assistant,
+                                QWidget *parent)
+     : QDialog(parent)
+ {
+     currentAssistantClient = assistant;
+     currentEditor = editor;
+     ...
+ }</pre>
+<p>In the constructor we save the references to the <a href="qassistantclient.html">QAssistantClient</a> and <a href="qtextedit.html">QTextEdit</a> objects passed as arguments. The <a href="qassistantclient.html">QAssistantClient</a> object will be used in the <tt>FindFileDialog</tt>'s <tt>help()</tt> slot as we will see shortly, while the <a href="qtextedit.html">QTextEdit</a> will be used in the dialog's <tt>openFile()</tt> slot to display the chosen file.</p>
+<pre> void FindFileDialog::help()
+ {
+     currentAssistantClient-&gt;showPage(QLibraryInfo::location(QLibraryInfo::ExamplesPath) +
+             QDir::separator() +  &quot;assistant/simpletextviewer/documentation/filedialog.html&quot;);
+ }</pre>
+<p>The <tt>help()</tt> slot is called when the user clicks the dialog's <b>Help</b> button. It brings the current Qt Assistant instance to the foreground and shows the application's manual page, using the <a href="qassistantclient.html#showPage">QAssistantClient::showPage</a>() function.</p>
+<a name="summary"></a>
+<h2>Summary</h2>
+<p>In order to make Qt Assistant act as a customized help tool for your application, you must provide your application with a <a href="qassistantclient.html">QAssistantClient</a> object in addition to a Qt Assistant Document Profile (<tt>.adp</tt> file) and documentation for the application.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

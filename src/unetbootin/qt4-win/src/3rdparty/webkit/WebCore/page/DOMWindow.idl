@@ -1,0 +1,249 @@
+/*
+ * Copyright (C) 2006, 2007 Apple Inc.  All rights reserved.
+ *
+ * Redistribution and use in source and binary forms, with or without
+ * modification, are permitted provided that the following conditions
+ * are met:
+ * 1. Redistributions of source code must retain the above copyright
+ *    notice, this list of conditions and the following disclaimer.
+ * 2. Redistributions in binary form must reproduce the above copyright
+ *    notice, this list of conditions and the following disclaimer in the
+ *    documentation and/or other materials provided with the distribution.
+ *
+ * THIS SOFTWARE IS PROVIDED BY APPLE COMPUTER, INC. ``AS IS'' AND ANY
+ * EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+ * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR
+ * PURPOSE ARE DISCLAIMED.  IN NO EVENT SHALL APPLE COMPUTER, INC. OR
+ * CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ * EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ * PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ * PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY
+ * OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT
+ * (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
+ * OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE. 
+ */
+
+module window {
+
+    interface [LegacyParent=KJS::Window, DoNotCache, CheckDomainSecurity, GenerateNativeConverter, CustomGetOwnPropertySlot, CustomPutFunction] DOMWindow {
+        // DOM Level 0
+        readonly attribute Screen screen;
+        readonly attribute [DoNotCheckDomainSecurity] History history;
+        readonly attribute BarInfo locationbar;
+        readonly attribute BarInfo menubar;
+        readonly attribute BarInfo personalbar;
+        readonly attribute BarInfo scrollbars;
+        readonly attribute BarInfo statusbar;
+        readonly attribute BarInfo toolbar;
+        readonly attribute Navigator navigator;
+        readonly attribute Navigator clientInformation;
+
+        DOMSelection getSelection();
+
+        readonly attribute [CheckNodeSecurity] Element frameElement;
+
+        [DoNotCheckDomainSecurity] void focus();
+        [DoNotCheckDomainSecurity] void blur();
+        [DoNotCheckDomainSecurity] void close();
+
+        void print();
+        void stop();
+
+        void alert(in [ConvertUndefinedOrNullToNullString] DOMString message);
+        boolean confirm(in [ConvertUndefinedOrNullToNullString] DOMString message);
+        [ConvertNullStringTo=Null] DOMString prompt(in [ConvertUndefinedOrNullToNullString] DOMString message,
+                                                    in [ConvertUndefinedOrNullToNullString] DOMString defaultValue);
+
+        boolean find(in DOMString string,
+                     in boolean caseSensitive,
+                     in boolean backwards,
+                     in boolean wrap,
+                     in boolean wholeWord,
+                     in boolean searchInFrames,
+                     in boolean showDialog);
+
+        readonly attribute boolean offscreenBuffering;
+
+        readonly attribute long outerHeight;
+        readonly attribute long outerWidth;
+        readonly attribute long innerHeight;
+        readonly attribute long innerWidth;
+        readonly attribute long screenX;
+        readonly attribute long screenY;
+        readonly attribute long screenLeft;
+        readonly attribute long screenTop;
+        readonly attribute long scrollX;
+        readonly attribute long scrollY;
+        readonly attribute long pageXOffset;
+        readonly attribute long pageYOffset;
+
+        readonly attribute [DoNotCheckDomainSecurity] boolean closed;
+
+        readonly attribute [DoNotCheckDomainSecurity] unsigned long length;
+
+                 attribute DOMString name;
+
+                 attribute DOMString status;
+                 attribute DOMString defaultStatus;
+#if defined(LANGUAGE_JAVASCRIPT)
+                 // This attribute is an alias of defaultStatus and is necessary for legacy uses.
+                 attribute DOMString defaultstatus;
+#endif
+
+        // Self referential attributes
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow self;
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow window;
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow frames;
+
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow opener;
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow parent;
+        readonly attribute [DoNotCheckDomainSecurity] DOMWindow top;
+
+        // DOM Level 2 AbstractView Interface
+        readonly attribute Document document;
+
+        // DOM Level 2 Style Interface
+        CSSStyleDeclaration getComputedStyle(in Element element,
+                                             in DOMString pseudoElement);
+
+        // WebKit extensions
+        CSSRuleList getMatchedCSSRules(in Element element,
+                                       in DOMString pseudoElement,
+                                       in [Optional] boolean authorOnly);
+        readonly attribute double devicePixelRatio;
+
+#if defined(LANGUAGE_JAVASCRIPT)
+        // Global constructors
+        attribute StyleSheetConstructor StyleSheet;
+        attribute CSSStyleSheetConstructor CSSStyleSheet;
+
+        attribute CSSValueConstructor CSSValue;
+        attribute CSSPrimitiveValueConstructor CSSPrimitiveValue;
+        attribute CSSValueListConstructor CSSValueList;
+
+        attribute CSSRuleConstructor CSSRule;
+        attribute CSSCharsetRuleConstructor CSSCharsetRule;
+        attribute CSSFontFaceRuleConstructor CSSFontFaceRule;
+        attribute CSSImportRuleConstructor CSSImportRule;
+        attribute CSSMediaRuleConstructor CSSMediaRule;
+        attribute CSSPageRuleConstructor CSSPageRule;
+        attribute CSSStyleRuleConstructor CSSStyleRule;
+
+        attribute CSSStyleDeclarationConstructor CSSStyleDeclaration;
+        attribute MediaListConstructor MediaList;
+        attribute CounterConstructor Counter;
+        attribute CSSRuleListConstructor CSSRuleList;
+        attribute RectConstructor Rect;
+
+        // FIXME: Implement the commented-out global constructors for interfaces listed in DOM Level 3 Core specification.
+//        attribute DOMExceptionConstructor DOMException;
+//        attribute DOMStringListConstructor DOMStringList;
+//        attribute NameListConstructor NameList;
+//        attribute DOMImplementationListConstructor DOMImplementationList;
+//        attribute DOMImplementationSourceConstructor DOMImplementationSource;
+        attribute DOMImplementationConstructor DOMImplementation;
+        attribute DocumentFragmentConstructor DocumentFragment;
+        attribute DocumentConstructor Document;
+        attribute NodeConstructor Node;
+        attribute NodeListConstructor NodeList;
+        attribute NamedNodeMapConstructor NamedNodeMap;
+        attribute CharacterDataConstructor CharacterData;
+        attribute AttrConstructor Attr;
+        attribute ElementConstructor Element;
+        attribute TextConstructor Text;
+        attribute CommentConstructor Comment;
+//        attribute TypeInfoConstructor TypeInfo;
+//        attribute UserDataHandlerConstructor UserDataHandler;
+//        attribute DOMErrorConstructor DOMError;
+//        attribute DOMErrorHandlerConstructor DOMErrorHandler
+//        attribute DOMLocatorConstructor DOMLocator;
+//        attribute DOMConfigurationConstructor DOMConfiguration;
+        attribute CDATASectionConstructor CDATASection;
+        attribute DocumentTypeConstructor DocumentType;
+        attribute NotationConstructor Notation;
+        attribute EntityConstructor Entity;
+        attribute EntityReferenceConstructor EntityReference;
+        attribute ProcessingInstructionConstructor ProcessingInstruction;
+
+        attribute HTMLDocumentConstructor HTMLDocument;
+
+        attribute HTMLElementConstructor HTMLElement;
+        attribute HTMLAnchorElementConstructor HTMLAnchorElement;
+        attribute HTMLAppletElementConstructor HTMLAppletElement;
+        attribute HTMLAreaElementConstructor HTMLAreaElement;
+        attribute HTMLBRElementConstructor HTMLBRElement;
+        attribute HTMLBaseElementConstructor HTMLBaseElement;
+        attribute HTMLBaseFontElementConstructor HTMLBaseFontElement;
+        attribute HTMLBlockquoteElementConstructor HTMLBlockquoteElement;
+        attribute HTMLBodyElementConstructor HTMLBodyElement;
+        attribute HTMLButtonElementConstructor HTMLButtonElement;
+        attribute HTMLCanvasElementConstructor HTMLCanvasElement;
+        attribute HTMLDListElementConstructor HTMLDListElement;
+        attribute HTMLDirectoryElementConstructor HTMLDirectoryElement;
+        attribute HTMLDivElementConstructor HTMLDivElement;
+        attribute HTMLEmbedElementConstructor HTMLEmbedElement;
+        attribute HTMLFieldSetElementConstructor HTMLFieldSetElement;
+        attribute HTMLFontElementConstructor HTMLFontElement;
+        attribute HTMLFormElementConstructor HTMLFormElement;
+        attribute HTMLFrameElementConstructor HTMLFrameElement;
+        attribute HTMLFrameSetElementConstructor HTMLFrameSetElement;
+        attribute HTMLHRElementConstructor HTMLHRElement;
+        attribute HTMLHeadElementConstructor HTMLHeadElement;
+        attribute HTMLHeadingElementConstructor HTMLHeadingElement;
+        attribute HTMLHtmlElementConstructor HTMLHtmlElement;
+        attribute HTMLIFrameElementConstructor HTMLIFrameElement;
+        attribute HTMLImageElementConstructor HTMLImageElement;
+        attribute HTMLInputElementConstructor HTMLInputElement;
+        attribute HTMLIsIndexElementConstructor HTMLIsIndexElement;
+        attribute HTMLLIElementConstructor HTMLLIElement;
+        attribute HTMLLabelElementConstructor HTMLLabelElement;
+        attribute HTMLLegendElementConstructor HTMLLegendElement;
+        attribute HTMLLinkElementConstructor HTMLLinkElement;
+        attribute HTMLMapElementConstructor HTMLMapElement;
+        attribute HTMLMarqueeElementConstructor HTMLMarqueeElement;
+        attribute HTMLMenuElementConstructor HTMLMenuElement;
+        attribute HTMLMetaElementConstructor HTMLMetaElement;
+        attribute HTMLModElementConstructor HTMLModElement;
+        attribute HTMLOListElementConstructor HTMLOListElement;
+        attribute HTMLObjectElementConstructor HTMLObjectElement;
+        attribute HTMLOptGroupElementConstructor HTMLOptGroupElement;
+        attribute HTMLOptionElementConstructor HTMLOptionElement;
+        attribute HTMLParagraphElementConstructor HTMLParagraphElement;
+        attribute HTMLParamElementConstructor HTMLParamElement;
+        attribute HTMLPreElementConstructor HTMLPreElement;
+        attribute HTMLQuoteElementConstructor HTMLQuoteElement;
+        attribute HTMLScriptElementConstructor HTMLScriptElement;
+        attribute HTMLSelectElementConstructor HTMLSelectElement;
+        attribute HTMLStyleElementConstructor HTMLStyleElement;
+        attribute HTMLTableCaptionElementConstructor HTMLTableCaptionElement;
+        attribute HTMLTableCellElementConstructor HTMLTableCellElement;
+        attribute HTMLTableColElementConstructor HTMLTableColElement;
+        attribute HTMLTableElementConstructor HTMLTableElement;
+        attribute HTMLTableRowElementConstructor HTMLTableRowElement;
+        attribute HTMLTableSectionElementConstructor HTMLTableSectionElement;
+        attribute HTMLTextAreaElementConstructor HTMLTextAreaElement;
+        attribute HTMLTitleElementConstructor HTMLTitleElement;
+        attribute HTMLUListElementConstructor HTMLUListElement;
+
+        attribute EventConstructor Event;
+        attribute MutationEventConstructor MutationEvent;
+
+        attribute NodeFilterConstructor NodeFilter;
+        attribute RangeConstructor Range;
+        attribute RangeExceptionConstructor RangeException;
+
+        // Mozilla has a separate XMLDocument object for XML documents. 
+        // We just use Document for this.
+        attribute DocumentConstructor XMLDocument;
+
+        attribute DOMParserConstructor DOMParser;
+        attribute XMLSerializerConstructor XMLSerializer;
+
+#if ENABLE_XPATH
+        attribute XPathEvaluatorConstructor XPathEvaluator;
+        attribute XPathResultConstructor XPathResult;
+#endif
+#endif // defined(LANGUAGE_JAVASCRIPT)
+    };
+
+}

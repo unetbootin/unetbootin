@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: view.h Example File (graphicsview/portedasteroids/view.h)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">view.h Example File<br /><span class="small-subtitle">graphicsview/portedasteroids/view.h</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+<span class="comment"> /*
+  * KAsteroids - Copyright (c) Martin R. Jones 1997
+  *
+  * Part of the KDE project
+  */</span>
+
+ #ifndef __AST_VIEW_H__
+ #define __AST_VIEW_H__
+
+ #include &lt;qwidget.h&gt;
+ #include &lt;q3ptrlist.h&gt;
+ #include &lt;q3intdict.h&gt;
+ #include &lt;qtimer.h&gt;
+ #include &lt;QGraphicsScene&gt;
+ #include &lt;QGraphicsView&gt;
+<span class="comment"> //</span>Added by qt3to4:
+ #include &lt;QTimerEvent&gt;
+ #include &lt;QShowEvent&gt;
+ #include &lt;QResizeEvent&gt;
+ #include &quot;sprites.h&quot;
+
+ #define MAX_POWER_LEVEL          1000
+
+ class KAsteroidsView : public QWidget
+ {
+     Q_OBJECT
+ public:
+     KAsteroidsView( QWidget *parent = 0, const char *name = 0 );
+     virtual ~KAsteroidsView();
+
+     int refreshRate;
+
+     void reset();
+     void setRockSpeed( double rs ) { rockSpeed = rs; }
+     void addRocks( int num );
+     void newGame();
+     void endGame();
+     void newShip();
+
+     void rotateLeft( bool r ) { rotateL = r; rotateSlow = 5; }
+     void rotateRight( bool r ) { rotateR = r; rotateSlow = 5; }
+     void thrust( bool t ) { thrustShip = t &amp;&amp; shipPower &gt; 0; }
+     void shoot( bool s ) { shootShip = s; shootDelay = 0; }
+     void setShield( bool s );
+     void teleport( bool te) { teleportShip = te &amp;&amp; mTeleportCount; }
+     void brake( bool b );
+     void pause( bool p);
+
+     void showText( const QString &amp;text, const QColor &amp;color, bool scroll=TRUE );
+     void hideText();
+
+     int shots() const { return shotsFired; }
+     int hits() const { return shotsHit; }
+     int power() const { return shipPower; }
+
+     int teleportCount() const { return mTeleportCount; }
+     int brakeCount() const { return mBrakeCount; }
+     int shieldCount() const { return mShieldCount; }
+     int shootCount() const { return mShootCount; }
+
+ signals:
+     void shipKilled();
+     void rockHit( int size );
+     void rocksRemoved();
+     void updateVitals();
+
+ private slots:
+     void hideShield();
+
+ protected:
+     bool readSprites();
+     void wrapSprite( QGraphicsItem * );
+     void rockHit( AnimatedPixmapItem * );
+     void reducePower( int val );
+     void addExhaust( double x, double y, double dx, double dy, int count );
+     void processMissiles();
+     void processShip();
+     void processPowerups();
+     void processShield();
+     double randDouble();
+     int randInt( int range );
+
+     virtual void resizeEvent( QResizeEvent *event );
+     virtual void timerEvent( QTimerEvent * );
+
+     void showEvent( QShowEvent * );
+
+ private:
+     QGraphicsScene field;
+     QGraphicsView view;
+     QMap&lt;int, QList&lt;QPixmap&gt; &gt; animation;
+     Q3PtrList&lt;AnimatedPixmapItem&gt; rocks;
+     Q3PtrList&lt;KMissile&gt; missiles;
+     Q3PtrList&lt;KBit&gt; bits;
+     Q3PtrList&lt;KExhaust&gt; exhaust;
+     Q3PtrList&lt;KPowerup&gt; powerups;
+     KShield *shield;
+     AnimatedPixmapItem *ship;
+     QGraphicsTextItem *textSprite;
+
+     bool rotateL;
+     bool rotateR;
+     bool thrustShip;
+     bool shootShip;
+     bool teleportShip;
+     bool brakeShip;
+     bool pauseShip;
+     bool shieldOn;
+
+     bool vitalsChanged;
+
+     int  shipAngle;
+     int  rotateSlow;
+     int  rotateRate;
+     int  shipPower;
+
+     int shotsFired;
+     int shotsHit;
+     int shootDelay;
+
+     int mBrakeCount;
+     int mShieldCount;
+     int mTeleportCount;
+     int mShootCount;
+
+     double shipDx;
+     double shipDy;
+
+     int  textDy;
+     int  mFrameNum;
+     bool mPaused;
+     int  mTimerId;
+
+     double rockSpeed;
+     double powerupSpeed;
+
+     bool can_destroy_powerups;
+
+     QTimer *shieldTimer;
+     bool initialized;
+ };
+
+ #endif</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

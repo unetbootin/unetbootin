@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/sdk/abstractpropertyeditor.cpp -->
+<head>
+  <title>Qt 4.4: QDesignerPropertyEditorInterface Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QDesignerPropertyEditorInterface Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QDesignerPropertyEditorInterface class allows you to query and manipulate the current state of Qt Designer's property editor. <a href="#details">More...</a></p>
+<pre> #include &lt;QDesignerPropertyEditorInterface&gt;</pre><p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="qdesignerpropertyeditorinterface-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qdesignerpropertyeditorinterface.html#QDesignerPropertyEditorInterface">QDesignerPropertyEditorInterface</a></b> ( QWidget * <i>parent</i>, Qt::WindowFlags <i>flags</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qdesignerpropertyeditorinterface.html#dtor.QDesignerPropertyEditorInterface">~QDesignerPropertyEditorInterface</a></b> ()</li>
+<li><div class="fn"/>virtual QDesignerFormEditorInterface * <b><a href="qdesignerpropertyeditorinterface.html#core">core</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="qdesignerpropertyeditorinterface.html#currentPropertyName">currentPropertyName</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qdesignerpropertyeditorinterface.html#isReadOnly">isReadOnly</a></b> () const = 0</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qdesignerpropertyeditorinterface.html#object">object</a></b> () const = 0</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertyeditorinterface.html#setObject">setObject</a></b> ( QObject * <i>object</i> ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertyeditorinterface.html#setPropertyValue">setPropertyValue</a></b> ( const QString &amp; <i>name</i>, const QVariant &amp; <i>value</i>, bool <i>changed</i> = true ) = 0</li>
+<li><div class="fn"/>virtual void <b><a href="qdesignerpropertyeditorinterface.html#setReadOnly">setReadOnly</a></b> ( bool <i>readOnly</i> ) = 0</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qdesignerpropertyeditorinterface.html#propertyChanged">propertyChanged</a></b> ( const QString &amp; <i>name</i>, const QVariant &amp; <i>value</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QDesignerPropertyEditorInterface class allows you to query and manipulate the current state of Qt Designer's property editor.</p>
+<p>QDesignerPropertyEditorInterface contains a collection of functions that is typically used to query the property editor for its current state, and several slots manipulating it's state. The interface also provide a signal, <a href="qdesignerpropertyeditorinterface.html#propertyChanged">propertyChanged</a>(), which is emitted whenever a property changes in the property editor. The signal's arguments are the property that changed and its new value.</p>
+<p>For example, when implementing a custom widget plugin, you can connect the signal to a custom slot:</p>
+<pre>         QDesignerPropertyEditorInterface *propertyEditor = 0;
+         propertyEditor = formEditor-&gt;propertyEditor();
+
+         connect(propertyEditor, SIGNAL(propertyChanged(QString, QVariant)),
+                 this, SLOT(checkProperty(QString, QVariant)));</pre>
+<p>Then the custom slot can check if the new value is within the range we want when a specified property, belonging to a particular widget, changes:</p>
+<pre>         void checkProperty(QString property, QVariant value) {
+             QDesignerPropertyEditorInterface *propertyEditor = 0;
+             propertyEditor = formEditor-&gt;propertyEditor();
+
+             QObject *object = propertyeditor-&gt;object();
+             MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget&gt;(object);
+
+             if (widget &amp;&amp; property == aProperty &amp;&amp; value != expectedValue)
+                 {...}
+         }</pre>
+<p>The QDesignerPropertyEditorInterface class is not intended to be instantiated directly. You can retrieve an interface to <i>Qt Designer</i>'s property editor using the <a href="qdesignerformeditorinterface.html#propertyEditor">QDesignerFormEditorInterface::propertyEditor</a>() function. A pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object (<tt>formEditor</tt> in the examples above) is provided by the <a href="qdesignercustomwidgetinterface.html#initialize">QDesignerCustomWidgetInterface::initialize</a>() function's parameter. When implementing a custom widget plugin, you must subclass the <a href="qdesignercustomwidgetinterface.html">QDesignerCustomWidgetInterface</a> to expose your plugin to <i>Qt Designer</i>.</p>
+<p>The functions accessing the property editor are the <a href="qdesignerpropertyeditorinterface.html#core">core</a>() function that you can use to retrieve an interface to the form editor, the <a href="qdesignerpropertyeditorinterface.html#currentPropertyName">currentPropertyName</a>() function that returns the name of the currently selected property in the property editor, the <a href="qdesignerpropertyeditorinterface.html#object">object</a>() function that returns the currently selected object in <i>Qt Designer</i>'s workspace, and the <a href="qdesignerpropertyeditorinterface.html#isReadOnly">isReadOnly</a>() function that returns true if the property editor is write proteced (otherwise false).</p>
+<p>The slots manipulating the property editor's state are the <a href="qdesignerpropertyeditorinterface.html#setObject">setObject</a>() slot that you can use to change the currently selected object in <i>Qt Designer</i>'s workspace, the <a href="qdesignerpropertyeditorinterface.html#setPropertyValue">setPropertyValue</a>() slot that changes the value of a given property and the <a href="qdesignerpropertyeditorinterface.html#setReadOnly">setReadOnly</a>() slot that control the write protection of the property editor.</p>
+<p>See also <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QDesignerPropertyEditorInterface"></a>QDesignerPropertyEditorInterface::QDesignerPropertyEditorInterface ( <a href="qwidget.html">QWidget</a> * <i>parent</i>, <a href="qt.html#WindowType-enum">Qt::WindowFlags</a> <i>flags</i> = 0 )</h3>
+<p>Constructs a property editor interface with the given <i>parent</i> and the specified window <i>flags</i>.</p>
+<h3 class="fn"><a name="dtor.QDesignerPropertyEditorInterface"></a>QDesignerPropertyEditorInterface::~QDesignerPropertyEditorInterface ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the property editor interface.</p>
+<h3 class="fn"><a name="core"></a><a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> * QDesignerPropertyEditorInterface::core () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns a pointer to <i>Qt Designer</i>'s current <a href="qdesignerformeditorinterface.html">QDesignerFormEditorInterface</a> object.</p>
+<h3 class="fn"><a name="currentPropertyName"></a><a href="qstring.html">QString</a> QDesignerPropertyEditorInterface::currentPropertyName () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the name of the currently selected property in the property editor.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#setPropertyValue">setPropertyValue</a>().</p>
+<h3 class="fn"><a name="isReadOnly"></a>bool QDesignerPropertyEditorInterface::isReadOnly () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns true if the property editor is write protected; otherwise false.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#setReadOnly">setReadOnly</a>().</p>
+<h3 class="fn"><a name="object"></a><a href="qobject.html">QObject</a> * QDesignerPropertyEditorInterface::object () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the currently selected object in <i>Qt Designer</i>'s workspace.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#setObject">setObject</a>().</p>
+<h3 class="fn"><a name="propertyChanged"></a>void QDesignerPropertyEditorInterface::propertyChanged ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever a property changes in the property editor. The property that changed and its new value are specified by <i>name</i> and <i>value</i> respectively.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#setPropertyValue">setPropertyValue</a>().</p>
+<h3 class="fn"><a name="setObject"></a>void QDesignerPropertyEditorInterface::setObject ( <a href="qobject.html">QObject</a> * <i>object</i> )&nbsp;&nbsp;<tt> [pure virtual slot]</tt></h3>
+<p>Changes the currently selected object in <i>Qt Designer</i>'s workspace, to <i>object</i>.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#object">object</a>().</p>
+<h3 class="fn"><a name="setPropertyValue"></a>void QDesignerPropertyEditorInterface::setPropertyValue ( const <a href="qstring.html">QString</a> &amp; <i>name</i>, const <a href="qvariant.html">QVariant</a> &amp; <i>value</i>, bool <i>changed</i> = true )&nbsp;&nbsp;<tt> [pure virtual slot]</tt></h3>
+<p>Sets the value of the property specified by <i>name</i> to <i>value</i>.</p>
+<p>In addition, the property is marked as <i>changed</i> in the property editor, i.e&#x2e; its value is different from the default value.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#currentPropertyName">currentPropertyName</a>() and <a href="qdesignerpropertyeditorinterface.html#propertyChanged">propertyChanged</a>().</p>
+<h3 class="fn"><a name="setReadOnly"></a>void QDesignerPropertyEditorInterface::setReadOnly ( bool <i>readOnly</i> )&nbsp;&nbsp;<tt> [pure virtual slot]</tt></h3>
+<p>If <i>readOnly</i> is true, the property editor is made write protected; otherwise the write protection is removed.</p>
+<p>See also <a href="qdesignerpropertyeditorinterface.html#isReadOnly">isReadOnly</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

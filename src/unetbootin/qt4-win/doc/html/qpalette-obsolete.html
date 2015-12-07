@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qpalette.cpp -->
+<head>
+  <title>Qt 4.4: Obsolete Members for QPalette</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Obsolete Members for QPalette</h1>
+<p><b>The following class members are obsolete.</b> They are provided to keep old source code working. We strongly advise against using them in new code.</p>
+<p><ul><li><a href="qpalette.html">QPalette class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qpalette-obsolete.html#QPalette-6">QPalette</a></b> ( const QColor &amp; <i>windowText</i>, const QColor &amp; <i>window</i>, const QColor &amp; <i>light</i>, const QColor &amp; <i>dark</i>, const QColor &amp; <i>mid</i>, const QColor &amp; <i>text</i>, const QColor &amp; <i>base</i> )&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>const QBrush &amp; <b><a href="qpalette-obsolete.html#background">background</a></b> () const&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>const QBrush &amp; <b><a href="qpalette-obsolete.html#foreground">foreground</a></b> () const&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+<li><div class="fn"/>int <b><a href="qpalette-obsolete.html#serialNumber">serialNumber</a></b> () const&nbsp;&nbsp;<tt> (obsolete)</tt></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QPalette-6"></a>QPalette::QPalette ( const <a href="qcolor.html">QColor</a> &amp; <i>windowText</i>, const <a href="qcolor.html">QColor</a> &amp; <i>window</i>, const <a href="qcolor.html">QColor</a> &amp; <i>light</i>, const <a href="qcolor.html">QColor</a> &amp; <i>dark</i>, const <a href="qcolor.html">QColor</a> &amp; <i>mid</i>, const <a href="qcolor.html">QColor</a> &amp; <i>text</i>, const <a href="qcolor.html">QColor</a> &amp; <i>base</i> )</h3>
+<p>Constructs a palette with the specified <i>windowText</i>, <i>window</i>, <i>light</i>, <i>dark</i>, <i>mid</i>, <i>text</i>, and <i>base</i> colors. The button color will be set to the window color.</p>
+<h3 class="fn"><a name="background"></a>const <a href="qbrush.html">QBrush</a> &amp; QPalette::background () const</h3>
+<p>Use <a href="qpalette.html#window">window</a>() instead.</p>
+<h3 class="fn"><a name="foreground"></a>const <a href="qbrush.html">QBrush</a> &amp; QPalette::foreground () const</h3>
+<p>Use <a href="qpalette.html#windowText">windowText</a>() instead.</p>
+<h3 class="fn"><a name="serialNumber"></a>int QPalette::serialNumber () const</h3>
+<p>Returns a number that identifies the contents of this <a href="qpalette.html">QPalette</a> object. Distinct <a href="qpalette.html">QPalette</a> objects can only have the same serial number if they refer to the same contents (but they don't have to). Also, the serial number of a <a href="qpalette.html">QPalette</a> may change during the lifetime of the object.</p>
+<p>Use <a href="qpalette.html#cacheKey">cacheKey</a>() instead.</p>
+<p><b>Warning:</b> The serial number doesn't necessarily change when the palette is altered. This means that it may be dangerous to use it as a cache key.</p>
+<p>See also <a href="qpalette.html#operator-eq-eq">operator==</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

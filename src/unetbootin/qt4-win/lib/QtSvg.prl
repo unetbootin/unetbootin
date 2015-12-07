@@ -1,0 +1,7 @@
+QMAKE_PRL_BUILD_DIR = c:\tools\qt4-win\src\svg
+QMAKE_PRO_INPUT = svg.pro
+QMAKE_PRL_TARGET = libQtSvg
+QMAKE_PRL_DEFINES = QT_THREAD_SUPPORT
+QMAKE_PRL_CONFIG = lex yacc warn_on uic resources incremental_off windows release ReleaseBuild Release build_pass qt warn_on release link_prl copy_dir_files debug_and_release debug_and_release_target precompile_header release static stl exceptions rtti dist-config large-config medium-config minimal-config small-config full-config release incremental create_prl link_prl depend_includepath QTDIR_build release ReleaseBuild Release build_pass qt_install_headers qt warn_on depend_includepath qmake_cache target_qt debug_and_release static zlib release ReleaseBuild Release build_pass no_autoqmake staticlib static moc thread
+QMAKE_PRL_VERSION = 4
+QMAKE_PRL_LIBS = -lQtGui -lgdi32 -lcomdlg32 -loleaut32 -limm32 -lwinmm -lwinspool -lmsimg32 -lQtCore -lkernel32 -luser32 -lshell32 -luuid -lole32 -ladvapi32 -lws2_32 

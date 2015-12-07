@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/util/qundogroup.cpp -->
+<head>
+  <title>Qt 4.4: QUndoGroup Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QUndoGroup Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QUndoGroup class is a group of <a href="qundostack.html">QUndoStack</a> objects. <a href="#details">More...</a></p>
+<pre> #include &lt;QUndoGroup&gt;</pre><p>Inherits <a href="qobject.html">QObject</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qundogroup-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qundogroup.html#QUndoGroup">QUndoGroup</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>QUndoStack * <b><a href="qundogroup.html#activeStack">activeStack</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#addStack">addStack</a></b> ( QUndoStack * <i>stack</i> )</li>
+<li><div class="fn"/>bool <b><a href="qundogroup.html#canRedo">canRedo</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qundogroup.html#canUndo">canUndo</a></b> () const</li>
+<li><div class="fn"/>QAction * <b><a href="qundogroup.html#createRedoAction">createRedoAction</a></b> ( QObject * <i>parent</i>, const QString &amp; <i>prefix</i> = QString() ) const</li>
+<li><div class="fn"/>QAction * <b><a href="qundogroup.html#createUndoAction">createUndoAction</a></b> ( QObject * <i>parent</i>, const QString &amp; <i>prefix</i> = QString() ) const</li>
+<li><div class="fn"/>bool <b><a href="qundogroup.html#isClean">isClean</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qundogroup.html#redoText">redoText</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#removeStack">removeStack</a></b> ( QUndoStack * <i>stack</i> )</li>
+<li><div class="fn"/>QList&lt;QUndoStack *&gt; <b><a href="qundogroup.html#stacks">stacks</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qundogroup.html#undoText">undoText</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qundogroup.html#redo">redo</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#setActiveStack">setActiveStack</a></b> ( QUndoStack * <i>stack</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#undo">undo</a></b> ()</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qundogroup.html#activeStackChanged">activeStackChanged</a></b> ( QUndoStack * <i>stack</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#canRedoChanged">canRedoChanged</a></b> ( bool <i>canRedo</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#canUndoChanged">canUndoChanged</a></b> ( bool <i>canUndo</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#cleanChanged">cleanChanged</a></b> ( bool <i>clean</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#indexChanged">indexChanged</a></b> ( int <i>idx</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#redoTextChanged">redoTextChanged</a></b> ( const QString &amp; <i>redoText</i> )</li>
+<li><div class="fn"/>void <b><a href="qundogroup.html#undoTextChanged">undoTextChanged</a></b> ( const QString &amp; <i>undoText</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QUndoGroup class is a group of <a href="qundostack.html">QUndoStack</a> objects.</p>
+<p>For an overview of the Qt's undo framework, see the <a href="qundo.html">overview</a>.</p>
+<p>An application often has multiple undo stacks, one for each opened document. At the same time, an application usually has one undo action and one redo action, which triggers undo or redo in the active document.</p>
+<p>QUndoGroup is a group of <a href="qundostack.html">QUndoStack</a> objects, one of which may be active. It has an <a href="qundogroup.html#undo">undo</a>() and <a href="qundogroup.html#redo">redo</a>() slot, which calls <a href="qundostack.html#undo">QUndoStack::undo</a>() and <a href="qundostack.html#redo">QUndoStack::redo</a>() for the active stack. It also has the functions <a href="qundogroup.html#createUndoAction">createUndoAction</a>() and <a href="qundogroup.html#createRedoAction">createRedoAction</a>(). The actions returned by these functions behave in the same way as those returned by <a href="qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>() and <a href="qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>() of the active stack.</p>
+<p>Stacks are added to a group with <a href="qundogroup.html#addStack">addStack</a>() and removed with <a href="qundogroup.html#removeStack">removeStack</a>(). A stack is implicitly added to a group when it is created with the group as its parent <a href="qobject.html">QObject</a>.</p>
+<p>It is the programmer's responsibility to specify which stack is active by calling <a href="qundostack.html#active-prop">QUndoStack::setActive</a>(), usually when the associated document window receives focus. The active stack may also be set with <a href="qundogroup.html#setActiveStack">setActiveStack</a>(), and is returned by <a href="qundogroup.html#activeStack">activeStack</a>().</p>
+<p>When a stack is added to a group using <a href="qundogroup.html#addStack">addStack</a>(), the group does not take ownership of the stack. This means the stack has to be deleted separately from the group. When a stack is deleted, it is automatically removed from a group. A stack may belong to only one group. Adding it to another group will cause it to be removed from the previous group.</p>
+<p>A QUndoGroup is also useful in conjunction with <a href="qundoview.html">QUndoView</a>. If a <a href="qundoview.html">QUndoView</a> is set to watch a group using <a href="qundoview.html#setGroup">QUndoView::setGroup</a>(), it will update itself to display the active stack.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QUndoGroup"></a>QUndoGroup::QUndoGroup ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )</h3>
+<p>Creates an empty <a href="qundogroup.html">QUndoGroup</a> object with parent <i>parent</i>.</p>
+<p>See also <a href="qundogroup.html#addStack">addStack</a>().</p>
+<h3 class="fn"><a name="activeStack"></a><a href="qundostack.html">QUndoStack</a> * QUndoGroup::activeStack () const</h3>
+<p>Returns the active stack of this group.</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns 0.</p>
+<p>See also <a href="qundogroup.html#setActiveStack">setActiveStack</a>() and <a href="qundostack.html#active-prop">QUndoStack::setActive</a>().</p>
+<h3 class="fn"><a name="activeStackChanged"></a>void QUndoGroup::activeStackChanged ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack of the group changes. This can happen when <a href="qundogroup.html#setActiveStack">setActiveStack</a>() or <a href="qundostack.html#active-prop">QUndoStack::setActive</a>() is called, or when the active stack is removed form the group. <i>stack</i> is the new active stack. If no stack is active, <i>stack</i> is 0.</p>
+<p>See also <a href="qundogroup.html#setActiveStack">setActiveStack</a>() and <a href="qundostack.html#active-prop">QUndoStack::setActive</a>().</p>
+<h3 class="fn"><a name="addStack"></a>void QUndoGroup::addStack ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i> )</h3>
+<p>Adds <i>stack</i> to this group. The group does not take ownership of the stack. Another way of adding a stack to a group is by specifying the group as the stack's parent <a href="qobject.html">QObject</a> in <a href="qundostack.html#QUndoStack">QUndoStack::QUndoStack</a>(). In this case, the stack is deleted when the group is deleted, in the usual manner of QObjects.</p>
+<p>See also <a href="qundogroup.html#removeStack">removeStack</a>(), <a href="qundogroup.html#stacks">stacks</a>(), and <a href="qundostack.html#QUndoStack">QUndoStack::QUndoStack</a>().</p>
+<h3 class="fn"><a name="canRedo"></a>bool QUndoGroup::canRedo () const</h3>
+<p>Returns the value of the active stack's <a href="qundostack.html#canRedo">QUndoStack::canRedo</a>().</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns false.</p>
+<p>See also <a href="qundogroup.html#canUndo">canUndo</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="canRedoChanged"></a>void QUndoGroup::canRedoChanged ( bool <i>canRedo</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#canRedoChanged">QUndoStack::canRedoChanged</a>() or the active stack changes.</p>
+<p><i>canRedo</i> is the new state, or false if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#canRedoChanged">QUndoStack::canRedoChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="canUndo"></a>bool QUndoGroup::canUndo () const</h3>
+<p>Returns the value of the active stack's <a href="qundostack.html#canUndo">QUndoStack::canUndo</a>().</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns false.</p>
+<p>See also <a href="qundogroup.html#canRedo">canRedo</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="canUndoChanged"></a>void QUndoGroup::canUndoChanged ( bool <i>canUndo</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#canUndoChanged">QUndoStack::canUndoChanged</a>() or the active stack changes.</p>
+<p><i>canUndo</i> is the new state, or false if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#canUndoChanged">QUndoStack::canUndoChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="cleanChanged"></a>void QUndoGroup::cleanChanged ( bool <i>clean</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#cleanChanged">QUndoStack::cleanChanged</a>() or the active stack changes.</p>
+<p><i>clean</i> is the new state, or true if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#cleanChanged">QUndoStack::cleanChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="createRedoAction"></a><a href="qaction.html">QAction</a> * QUndoGroup::createRedoAction ( <a href="qobject.html">QObject</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString() ) const</h3>
+<p>Creates an redo <a href="qaction.html">QAction</a> object with parent <i>parent</i>.</p>
+<p>Triggering this action will cause a call to <a href="qundostack.html#redo">QUndoStack::redo</a>() on the active stack. The text of this action will always be the text of the command which will be redone in the next call to <a href="qundogroup.html#redo">redo</a>(), prefixed by <i>prefix</i>. If there is no command available for redo, if the group is empty or if none of the stacks are active, this action will be disabled.</p>
+<p>If <i>prefix</i> is empty, the default prefix &quot;Undo&quot; is used.</p>
+<p>See also <a href="qundogroup.html#createUndoAction">createUndoAction</a>(), <a href="qundogroup.html#canRedo">canRedo</a>(), and <a href="qundocommand.html#text">QUndoCommand::text</a>().</p>
+<h3 class="fn"><a name="createUndoAction"></a><a href="qaction.html">QAction</a> * QUndoGroup::createUndoAction ( <a href="qobject.html">QObject</a> * <i>parent</i>, const <a href="qstring.html">QString</a> &amp; <i>prefix</i> = QString() ) const</h3>
+<p>Creates an undo <a href="qaction.html">QAction</a> object with parent <i>parent</i>.</p>
+<p>Triggering this action will cause a call to <a href="qundostack.html#undo">QUndoStack::undo</a>() on the active stack. The text of this action will always be the text of the command which will be undone in the next call to <a href="qundogroup.html#undo">undo</a>(), prefixed by <i>prefix</i>. If there is no command available for undo, if the group is empty or if none of the stacks are active, this action will be disabled.</p>
+<p>If <i>prefix</i> is empty, the default prefix &quot;Undo&quot; is used.</p>
+<p>See also <a href="qundogroup.html#createRedoAction">createRedoAction</a>(), <a href="qundogroup.html#canUndo">canUndo</a>(), and <a href="qundocommand.html#text">QUndoCommand::text</a>().</p>
+<h3 class="fn"><a name="indexChanged"></a>void QUndoGroup::indexChanged ( int <i>idx</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#indexChanged">QUndoStack::indexChanged</a>() or the active stack changes.</p>
+<p><i>idx</i> is the new current index, or 0 if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#indexChanged">QUndoStack::indexChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="isClean"></a>bool QUndoGroup::isClean () const</h3>
+<p>Returns the value of the active stack's <a href="qundostack.html#isClean">QUndoStack::isClean</a>().</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns true.</p>
+<p>See also <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="redo"></a>void QUndoGroup::redo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls <a href="qundostack.html#redo">QUndoStack::redo</a>() on the active stack.</p>
+<p>If none of the stacks are active, or if the group is empty, this function does nothing.</p>
+<p>See also <a href="qundogroup.html#undo">undo</a>(), <a href="qundogroup.html#canRedo">canRedo</a>(), and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="redoText"></a><a href="qstring.html">QString</a> QUndoGroup::redoText () const</h3>
+<p>Returns the value of the active stack's <a href="qundostack.html#redoText">QUndoStack::redoText</a>().</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns an empty string.</p>
+<p>See also <a href="qundogroup.html#undoText">undoText</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="redoTextChanged"></a>void QUndoGroup::redoTextChanged ( const <a href="qstring.html">QString</a> &amp; <i>redoText</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#redoTextChanged">QUndoStack::redoTextChanged</a>() or the active stack changes.</p>
+<p><i>redoText</i> is the new state, or an empty string if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#redoTextChanged">QUndoStack::redoTextChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="removeStack"></a>void QUndoGroup::removeStack ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i> )</h3>
+<p>Removes <i>stack</i> from this group. If the stack was the active stack in the group, the active stack becomes 0.</p>
+<p>See also <a href="qundogroup.html#addStack">addStack</a>(), <a href="qundogroup.html#stacks">stacks</a>(), and <a href="qundostack.html#dtor.QUndoStack">QUndoStack::~QUndoStack</a>().</p>
+<h3 class="fn"><a name="setActiveStack"></a>void QUndoGroup::setActiveStack ( <a href="qundostack.html">QUndoStack</a> * <i>stack</i> )&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Sets the active stack of this group to <i>stack</i>.</p>
+<p>If the stack is not a member of this group, this function does nothing.</p>
+<p>Synonymous with calling <a href="qundostack.html#active-prop">QUndoStack::setActive</a>() on <i>stack</i>.</p>
+<p>The actions returned by <a href="qundogroup.html#createUndoAction">createUndoAction</a>() and <a href="qundogroup.html#createRedoAction">createRedoAction</a>() will now behave in the same way as those returned by <i>stack</i>'s <a href="qundostack.html#createUndoAction">QUndoStack::createUndoAction</a>() and <a href="qundostack.html#createRedoAction">QUndoStack::createRedoAction</a>().</p>
+<p>See also <a href="qundostack.html#active-prop">QUndoStack::setActive</a>() and <a href="qundogroup.html#activeStack">activeStack</a>().</p>
+<h3 class="fn"><a name="stacks"></a><a href="qlist.html">QList</a>&lt;<a href="qundostack.html">QUndoStack</a> *&gt; QUndoGroup::stacks () const</h3>
+<p>Returns a list of stacks in this group.</p>
+<p>See also <a href="qundogroup.html#addStack">addStack</a>() and <a href="qundogroup.html#removeStack">removeStack</a>().</p>
+<h3 class="fn"><a name="undo"></a>void QUndoGroup::undo ()&nbsp;&nbsp;<tt> [slot]</tt></h3>
+<p>Calls <a href="qundostack.html#undo">QUndoStack::undo</a>() on the active stack.</p>
+<p>If none of the stacks are active, or if the group is empty, this function does nothing.</p>
+<p>See also <a href="qundogroup.html#redo">redo</a>(), <a href="qundogroup.html#canUndo">canUndo</a>(), and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="undoText"></a><a href="qstring.html">QString</a> QUndoGroup::undoText () const</h3>
+<p>Returns the value of the active stack's <a href="qundostack.html#undoText">QUndoStack::undoText</a>().</p>
+<p>If none of the stacks are active, or if the group is empty, this function returns an empty string.</p>
+<p>See also <a href="qundogroup.html#redoText">redoText</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<h3 class="fn"><a name="undoTextChanged"></a>void QUndoGroup::undoTextChanged ( const <a href="qstring.html">QString</a> &amp; <i>undoText</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the active stack emits <a href="qundostack.html#undoTextChanged">QUndoStack::undoTextChanged</a>() or the active stack changes.</p>
+<p><i>undoText</i> is the new state, or an empty string if the active stack is 0.</p>
+<p>See also <a href="qundostack.html#undoTextChanged">QUndoStack::undoTextChanged</a>() and <a href="qundogroup.html#setActiveStack">setActiveStack</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

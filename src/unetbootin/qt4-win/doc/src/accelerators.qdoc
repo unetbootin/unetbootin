@@ -1,0 +1,139 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page accelerators.html
+    \title Standard Accelerator Keys
+    \ingroup gui-programming
+
+    Applications invariably need to define accelerator keys for actions.
+    Qt fully supports accelerators, for example with \l Q3Accel::shortcutKey().
+
+    Here are Microsoft's recommendations for accelerator keys, with
+    comments about the Open Group's recommendations where they exist
+    and differ. For most commands, the Open Group either has no advice or
+    agrees with Microsoft.
+
+    The emboldened letter plus Alt is Microsoft's recommended choice, and
+    we recommend supporting it. For an Apply button, for example, we
+    recommend QAbstractButton::setText(\link QWidget::tr() tr \endlink("&Apply"));
+
+    If you have conflicting commands (e.g. About and Apply buttons in the
+    same dialog), you must decide for yourself.
+
+    \list
+    \i \bold{\underline{A}}bout
+    \i Always on \bold{\underline{T}}op
+    \i \bold{\underline{A}}pply
+    \i \bold{\underline{B}}ack
+    \i \bold{\underline{B}}rowse
+    \i \bold{\underline{C}}lose (CDE: Alt+F4; Alt+F4 is "close window" in Windows)
+    \i \bold{\underline{C}}opy (CDE: Ctrl+C, Ctrl+Insert)
+    \i \bold{\underline{C}}opy Here
+    \i Create \bold{\underline{S}}hortcut
+    \i Create \bold{\underline{S}}hortcut Here
+    \i Cu\bold{\underline{t}}
+    \i \bold{\underline{D}}elete
+    \i \bold{\underline{E}}dit
+    \i \bold{\underline{E}}xit (CDE: E\bold{\underline{x}}it)
+    \i \bold{\underline{E}}xplore
+    \i \bold{\underline{F}}ile
+    \i \bold{\underline{F}}ind
+    \i \bold{\underline{H}}elp
+    \i Help \bold{\underline{T}}opics
+    \i \bold{\underline{H}}ide
+    \i \bold{\underline{I}}nsert
+    \i Insert \bold{\underline{O}}bject
+    \i \bold{\underline{L}}ink Here
+    \i Ma\bold{\underline{x}}imize
+    \i Mi\bold{\underline{n}}imize
+    \i \bold{\underline{M}}ove
+    \i \bold{\underline{M}}ove Here
+    \i \bold{\underline{N}}ew
+    \i \bold{\underline{N}}ext
+    \i \bold{\underline{N}}o
+    \i \bold{\underline{O}}pen
+    \i Open \bold{\underline{W}}ith
+    \i Page Set\bold{\underline{u}}p
+    \i \bold{\underline{P}}aste
+    \i Paste \bold{\underline{L}}ink
+    \i Paste \bold{\underline{S}}hortcut
+    \i Paste \bold{\underline{S}}pecial
+    \i \bold{\underline{P}}ause
+    \i \bold{\underline{P}}lay
+    \i \bold{\underline{P}}rint
+    \i \bold{\underline{P}}rint Here
+    \i P\bold{\underline{r}}operties
+    \i \bold{\underline{Q}}uick View
+    \i \bold{\underline{R}}edo (CDE: Ctrl+Y, Shift+Alt+Backspace)
+    \i \bold{\underline{R}}epeat
+    \i \bold{\underline{R}}estore
+    \i \bold{\underline{R}}esume
+    \i \bold{\underline{R}}etry
+    \i \bold{\underline{R}}un
+    \i \bold{\underline{S}}ave
+    \i Save \bold{\underline{A}}s
+    \i Select \bold{\underline{A}}ll
+    \i Se\bold{\underline{n}}d To
+    \i \bold{\underline{S}}how
+    \i \bold{\underline{S}}ize
+    \i S\bold{\underline{p}}lit
+    \i \bold{\underline{S}}top
+    \i \bold{\underline{U}}ndo (CDE: Ctrl+Z or Alt+Backspace)
+    \i \bold{\underline{V}}iew
+    \i \bold{\underline{W}}hat's This?
+    \i \bold{\underline{W}}indow
+    \i \bold{\underline{Y}}es
+    \endlist
+
+    There are also a lot of other keys and actions (that use other
+    modifier keys than Alt). See the Microsoft and The Open Group
+    documentation for details.
+
+    The
+    \l{http://www.amazon.com/exec/obidos/ASIN/0735605661/trolltech/t}{Microsoft book}
+    has ISBN 0735605661. The corresponding Open Group
+    book is very hard to find, rather expensive and we cannot recommend
+    it. However, if you really want it, ogpubs@opengroup.org might be able
+    to help. Ask them for ISBN 1859121047.
+*/

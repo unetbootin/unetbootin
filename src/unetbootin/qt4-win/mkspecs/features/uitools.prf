@@ -1,0 +1,12 @@
+QT += xml
+qt:load(qt)
+
+# Include the correct version of the UiLoader library
+QTUITOOLS_LINKAGE = -lQtUiTools
+CONFIG(debug, debug|release) {
+    mac: QTUITOOLS_LINKAGE = -lQtUiTools_debug
+    win32: QTUITOOLS_LINKAGE = -lQtUiToolsd
+}
+LIBS += $$QTUITOOLS_LINKAGE
+
+INCLUDEPATH = $$QMAKE_INCDIR_QT/QtUiTools $$INCLUDEPATH

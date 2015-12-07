@@ -1,0 +1,18 @@
+This is a list of Frequently Asked Questions regarding Qt Release 4.5.0.
+
+Q: I'm using a Unix system and I downloaded the Zip package. However when I try
+to run the configure script I get the following error message:
+"bash: ./configure: /bin/sh^M: bad interpreter: No such file or directory"
+A: The problem here is converting files from Windows style line endings (CRLF)
+to Unix style line endings (LF). To avoid this problem, uncompress the file
+again but this time specify the option "-a" to unzip, so it adds the right line
+endings.
+
+Q: I'm running Windows XP and I downloaded the qt-win-eval-4.5.0-vs2008.exe
+version of Qt. However when I try to run the examples I get an error saying:
+"The application failed to start because the application configuration is
+incorrect. Reinstalling the application may fix this problem.". I reinstalled
+the package and the error persists, what am I doing wrong?
+A: The problem is an incorrect version of the CRT. Visual studio requires CRT90
+while Windows XP comes with CRT80. To solve this problem please install the
+2008 CRT redistributable package from Microsoft.

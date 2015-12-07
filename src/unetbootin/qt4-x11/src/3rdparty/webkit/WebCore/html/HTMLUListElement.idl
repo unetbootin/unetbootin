@@ -1,0 +1,31 @@
+/*
+ * Copyright (C) 2006 Apple Computer, Inc.
+ *
+ * This library is free software; you can redistribute it and/or
+ * modify it under the terms of the GNU Library General Public
+ * License as published by the Free Software Foundation; either
+ * version 2 of the License, or (at your option) any later version.
+ *
+ * This library is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ * Library General Public License for more details.
+ *
+ * You should have received a copy of the GNU Library General Public License
+ * along with this library; see the file COPYING.LIB.  If not, write to
+ * the Free Software Foundation, Inc., 51 Franklin Street, Fifth Floor,
+ * Boston, MA 02110-1301, USA.
+ */
+
+module html {
+
+    interface [
+        GenerateConstructor,
+        InterfaceUUID=6877dee4-be67-4fb0-af8c-5023b108a1b0,
+        ImplementationUUID=23e9c21a-618e-42ac-a053-df85918118df
+    ] HTMLUListElement : HTMLElement {
+        attribute boolean compact;
+        attribute [ConvertNullToNullString] DOMString type;
+    };
+
+}

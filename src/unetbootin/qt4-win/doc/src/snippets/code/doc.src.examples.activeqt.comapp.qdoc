@@ -1,0 +1,41 @@
+//! [0]
+        Private Application As comappLib.Application
+        Private MyApp As Boolean
+
+        Private Sub UpdateList()
+            DocumentList.Clear
+            DocumentsCount.Caption = Application.documents.Count
+            For Index = 0 To Application.documents.Count - 1
+               DocumentList.AddItem (Application.documents.Item(Index).Title)
+            Next
+        End Sub
+
+        Private Sub Form_Load()
+            On Error GoTo CreateNew
+            Set Application = GetObject(, "comapp.Application")
+            MyApp = False
+            GoTo Initialized
+        CreateNew:
+            On Error GoTo InitializeFailed
+            Set Application = New Application
+            Application.Visible = True
+            MyApp = True
+        Initialized:
+            Caption = Application.id
+            UpdateList
+        InitializeFailed:
+        End Sub
+
+        Private Sub Form_Unload(Cancel As Integer)
+            If MyApp Then
+                Application.quit
+            End If
+        End Sub
+
+        Private Sub NewDocument_Click()
+            Application.documents.addDocument
+            UpdateList
+        End Sub
+//! [0]
+
+

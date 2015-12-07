@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: borderlayout.cpp Example File (layouts/borderlayout/borderlayout.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">borderlayout.cpp Example File<br /><span class="small-subtitle">layouts/borderlayout/borderlayout.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;borderlayout.h&quot;
+
+ BorderLayout::BorderLayout(QWidget *parent, int margin, int spacing)
+     : QLayout(parent)
+ {
+     setMargin(margin);
+     setSpacing(spacing);
+ }
+
+ BorderLayout::BorderLayout(int spacing)
+ {
+     setSpacing(spacing);
+ }
+
+ BorderLayout::~BorderLayout()
+ {
+     QLayoutItem *l;
+     while ((l = takeAt(0)))
+         delete l;
+ }
+
+ void BorderLayout::addItem(QLayoutItem *item)
+ {
+     add(item, West);
+ }
+
+ void BorderLayout::addWidget(QWidget *widget, Position position)
+ {
+     add(new QWidgetItem(widget), position);
+ }
+
+ Qt::Orientations BorderLayout::expandingDirections() const
+ {
+     return Qt::Horizontal | Qt::Vertical;
+ }
+
+ bool BorderLayout::hasHeightForWidth() const
+ {
+     return false;
+ }
+
+ int BorderLayout::count() const
+ {
+     return list.size();
+ }
+
+ QLayoutItem *BorderLayout::itemAt(int index) const
+ {
+     ItemWrapper *wrapper = list.value(index);
+     if (wrapper)
+         return wrapper-&gt;item;
+     else
+         return 0;
+ }
+
+ QSize BorderLayout::minimumSize() const
+ {
+     return calculateSize(MinimumSize);
+ }
+
+ void BorderLayout::setGeometry(const QRect &amp;rect)
+ {
+     ItemWrapper *center = 0;
+     int eastWidth = 0;
+     int westWidth = 0;
+     int northHeight = 0;
+     int southHeight = 0;
+     int centerHeight = 0;
+     int i;
+
+     QLayout::setGeometry(rect);
+
+     for (i = 0; i &lt; list.size(); ++i) {
+         ItemWrapper *wrapper = list.at(i);
+         QLayoutItem *item = wrapper-&gt;item;
+         Position position = wrapper-&gt;position;
+
+         if (position == North) {
+             item-&gt;setGeometry(QRect(rect.x(), northHeight, rect.width(),
+                                     item-&gt;sizeHint().height()));
+
+             northHeight += item-&gt;geometry().height() + spacing();
+         } else if (position == South) {
+             item-&gt;setGeometry(QRect(item-&gt;geometry().x(),
+                                     item-&gt;geometry().y(), rect.width(),
+                                     item-&gt;sizeHint().height()));
+
+             southHeight += item-&gt;geometry().height() + spacing();
+
+             item-&gt;setGeometry(QRect(rect.x(),
+                               rect.y() + rect.height() - southHeight + spacing(),
+                               item-&gt;geometry().width(),
+                               item-&gt;geometry().height()));
+         } else if (position == Center) {
+             center = wrapper;
+         }
+     }
+
+     centerHeight = rect.height() - northHeight - southHeight;
+
+     for (i = 0; i &lt; list.size(); ++i) {
+         ItemWrapper *wrapper = list.at(i);
+         QLayoutItem *item = wrapper-&gt;item;
+         Position position = wrapper-&gt;position;
+
+         if (position == West) {
+             item-&gt;setGeometry(QRect(rect.x() + westWidth, northHeight,
+                                     item-&gt;sizeHint().width(), centerHeight));
+
+             westWidth += item-&gt;geometry().width() + spacing();
+         } else if (position == East) {
+             item-&gt;setGeometry(QRect(item-&gt;geometry().x(), item-&gt;geometry().y(),
+                                     item-&gt;sizeHint().width(), centerHeight));
+
+             eastWidth += item-&gt;geometry().width() + spacing();
+
+             item-&gt;setGeometry(QRect(
+                               rect.x() + rect.width() - eastWidth + spacing(),
+                               northHeight, item-&gt;geometry().width(),
+                               item-&gt;geometry().height()));
+         }
+     }
+
+     if (center)
+         center-&gt;item-&gt;setGeometry(QRect(westWidth, northHeight,
+                                         rect.width() - eastWidth - westWidth,
+                                         centerHeight));
+ }
+
+ QSize BorderLayout::sizeHint() const
+ {
+     return calculateSize(SizeHint);
+ }
+
+ QLayoutItem *BorderLayout::takeAt(int index)
+ {
+     if (index &gt;= 0 &amp;&amp; index &lt; list.size()) {
+         ItemWrapper *layoutStruct = list.takeAt(index);
+         return layoutStruct-&gt;item;
+     }
+     return 0;
+ }
+
+ void BorderLayout::add(QLayoutItem *item, Position position)
+ {
+     list.append(new ItemWrapper(item, position));
+ }
+
+ QSize BorderLayout::calculateSize(SizeType sizeType) const
+ {
+     QSize totalSize;
+
+     for (int i = 0; i &lt; list.size(); ++i) {
+         ItemWrapper *wrapper = list.at(i);
+         Position position = wrapper-&gt;position;
+         QSize itemSize;
+
+         if (sizeType == MinimumSize)
+             itemSize = wrapper-&gt;item-&gt;minimumSize();
+         else <span class="comment">//</span> (sizeType == SizeHint)
+             itemSize = wrapper-&gt;item-&gt;sizeHint();
+
+         if (position == North || position == South || position == Center)
+             totalSize.rheight() += itemSize.height();
+
+         if (position == West || position == East || position == Center)
+             totalSize.rwidth() += itemSize.width();
+     }
+     return totalSize;
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

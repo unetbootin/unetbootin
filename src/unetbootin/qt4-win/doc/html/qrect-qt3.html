@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qrect.cpp -->
+<head>
+  <title>Qt 4.4: Qt 3 Support Members for QRect</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt 3 Support Members for QRect</h1>
+<p><b>The following class members are part of the <a href="qt3support.html">Qt 3 support layer</a>.</b> They are provided to help you port old code to Qt 4. We advise against using them in new code.</p>
+<p><ul><li><a href="qrect.html">QRect class reference</a></li></ul></p>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qrect-qt3.html#addCoords">addCoords</a></b> ( int <i>dx1</i>, int <i>dy1</i>, int <i>dx2</i>, int <i>dy2</i> )</li>
+<li><div class="fn"/>void <b><a href="qrect-qt3.html#coords">coords</a></b> ( int * <i>x1</i>, int * <i>y1</i>, int * <i>x2</i>, int * <i>y2</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qrect-qt3.html#moveBy">moveBy</a></b> ( int <i>dx</i>, int <i>dy</i> )</li>
+<li><div class="fn"/>void <b><a href="qrect-qt3.html#moveBy-2">moveBy</a></b> ( const QPoint &amp; <i>p</i> )</li>
+<li><div class="fn"/>QRect <b><a href="qrect-qt3.html#normalize">normalize</a></b> () const</li>
+<li><div class="fn"/>int &amp; <b><a href="qrect-qt3.html#rBottom">rBottom</a></b> ()</li>
+<li><div class="fn"/>int &amp; <b><a href="qrect-qt3.html#rLeft">rLeft</a></b> ()</li>
+<li><div class="fn"/>int &amp; <b><a href="qrect-qt3.html#rRight">rRight</a></b> ()</li>
+<li><div class="fn"/>int &amp; <b><a href="qrect-qt3.html#rTop">rTop</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qrect-qt3.html#rect">rect</a></b> ( int * <i>x</i>, int * <i>y</i>, int * <i>width</i>, int * <i>height</i> ) const</li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="addCoords"></a>void QRect::addCoords ( int <i>dx1</i>, int <i>dy1</i>, int <i>dx2</i>, int <i>dy2</i> )</h3>
+<p>Adds <i>dx1</i>, <i>dy1</i>, <i>dx2</i> and <i>dy2</i> to the existing coordinates of the rectangle respectively.</p>
+<p>Use the <a href="qrect.html#adjust">adjust</a>() function instead.</p>
+<h3 class="fn"><a name="coords"></a>void QRect::coords ( int * <i>x1</i>, int * <i>y1</i>, int * <i>x2</i>, int * <i>y2</i> ) const</h3>
+<p>Extracts the position of the rectangle's top-left corner to *<i>x1</i> and *<i>y1</i>, and the position of the bottom-right corner to *<i>x2</i> and *<i>y2</i>.</p>
+<p>Use the <a href="qrect.html#getCoords">getCoords</a>() function instead.</p>
+<p>See also <a href="qrect.html#setCoords">setCoords</a>().</p>
+<h3 class="fn"><a name="moveBy"></a>void QRect::moveBy ( int <i>dx</i>, int <i>dy</i> )</h3>
+<p>Moves the rectangle <i>dx</i> along the x axis and <i>dy</i> along the y axis, relative to the current position.</p>
+<p>Use the <a href="qrect.html#translate">translate</a>() function instead.</p>
+<h3 class="fn"><a name="moveBy-2"></a>void QRect::moveBy ( const <a href="qpoint.html">QPoint</a> &amp; <i>p</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Use the <a href="qrect.html#translate">translate</a>() function instead.</p>
+<h3 class="fn"><a name="normalize"></a>QRect QRect::normalize () const</h3>
+<p>Returns a normalized rectangle; i.e&#x2e;, a rectangle that has a non-negative width and height.</p>
+<p>Use the <a href="qrect.html#normalized">normalized</a>() function instead</p>
+<h3 class="fn"><a name="rBottom"></a>int &amp; QRect::rBottom ()</h3>
+<p>Returns a reference to the bottom coordinate of the rectangle.</p>
+<p>Use the <a href="qrect.html#bottom">bottom</a>() function instead.</p>
+<h3 class="fn"><a name="rLeft"></a>int &amp; QRect::rLeft ()</h3>
+<p>Returns a reference to the left coordinate of the rectangle.</p>
+<p>Use the <a href="qrect.html#left">left</a>() function instead.</p>
+<h3 class="fn"><a name="rRight"></a>int &amp; QRect::rRight ()</h3>
+<p>Returns a reference to the right coordinate of the rectangle.</p>
+<p>Use the <a href="qrect.html#right">right</a>() function instead.</p>
+<h3 class="fn"><a name="rTop"></a>int &amp; QRect::rTop ()</h3>
+<p>Returns a reference to the top coordinate of the rectangle.</p>
+<p>Use the <a href="qrect.html#top">top</a>() function instead.</p>
+<h3 class="fn"><a name="rect"></a>void QRect::rect ( int * <i>x</i>, int * <i>y</i>, int * <i>width</i>, int * <i>height</i> ) const</h3>
+<p>Extracts the position of the rectangle's top-left corner to *<i>x</i> and *<i>y</i>, and its dimensions to *<i>width</i> and * <i>height</i>.</p>
+<p>Use the <a href="qrect.html#getRect">getRect</a>() function instead.</p>
+<p>See also <a href="qrect.html#setRect">setRect</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/xml/sax/qxml.cpp -->
+<head>
+  <title>Qt 4.4: QXmlErrorHandler Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QXmlErrorHandler Class Reference<br /><span class="small-subtitle">[<a href="qtxml.html">QtXml</a> module]</span>
+</h1>
+<p>The QXmlErrorHandler class provides an interface to report errors in XML data. <a href="#details">More...</a></p>
+<pre> #include &lt;QXmlErrorHandler&gt;</pre><p>Inherited by <a href="qxmldefaulthandler.html">QXmlDefaultHandler</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qxmlerrorhandler-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qxmlerrorhandler.html#dtor.QXmlErrorHandler">~QXmlErrorHandler</a></b> ()</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlerrorhandler.html#error">error</a></b> ( const QXmlParseException &amp; <i>exception</i> ) = 0</li>
+<li><div class="fn"/>virtual QString <b><a href="qxmlerrorhandler.html#errorString">errorString</a></b> () const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlerrorhandler.html#fatalError">fatalError</a></b> ( const QXmlParseException &amp; <i>exception</i> ) = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qxmlerrorhandler.html#warning">warning</a></b> ( const QXmlParseException &amp; <i>exception</i> ) = 0</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QXmlErrorHandler class provides an interface to report errors in XML data.</p>
+<p>If you want your application to report errors to the user or to perform customized error handling, you should subclass this class.</p>
+<p>You can set the error handler with <a href="qxmlreader.html#setErrorHandler">QXmlReader::setErrorHandler</a>().</p>
+<p>Errors can be reported using <a href="qxmlerrorhandler.html#warning">warning</a>(), <a href="qxmlerrorhandler.html#error">error</a>() and <a href="qxmlerrorhandler.html#fatalError">fatalError</a>(), with the error text being reported with <a href="qxmlerrorhandler.html#errorString">errorString</a>().</p>
+<p>See also <a href="qxmldtdhandler.html">QXmlDTDHandler</a>, <a href="qxmldeclhandler.html">QXmlDeclHandler</a>, <a href="qxmlcontenthandler.html">QXmlContentHandler</a>, <a href="qxmlentityresolver.html">QXmlEntityResolver</a>, <a href="qxmllexicalhandler.html">QXmlLexicalHandler</a>, and <a href="qtxml.html#introduction-to-sax2">Introduction to SAX2</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QXmlErrorHandler"></a>QXmlErrorHandler::~QXmlErrorHandler ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the error handler.</p>
+<h3 class="fn"><a name="error"></a>bool QXmlErrorHandler::error ( const <a href="qxmlparseexception.html">QXmlParseException</a> &amp; <i>exception</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>A reader might use this function to report a recoverable error. A recoverable error corresponds to the definiton of &quot;error&quot; in section 1.2 of the XML 1.0 specification. Details of the error are stored in <i>exception</i>.</p>
+<p>The reader must continue to provide normal parsing events after invoking this function.</p>
+<p>If this function returns false the reader stops parsing and reports an error. The reader uses the function <a href="qxmlerrorhandler.html#errorString">errorString</a>() to get the error message.</p>
+<h3 class="fn"><a name="errorString"></a><a href="qstring.html">QString</a> QXmlErrorHandler::errorString () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>The reader calls this function to get an error string if any of the handler functions returns false.</p>
+<h3 class="fn"><a name="fatalError"></a>bool QXmlErrorHandler::fatalError ( const <a href="qxmlparseexception.html">QXmlParseException</a> &amp; <i>exception</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>A reader must use this function to report a non-recoverable error. Details of the error are stored in <i>exception</i>.</p>
+<p>If this function returns true the reader might try to go on parsing and reporting further errors, but no regular parsing events are reported.</p>
+<h3 class="fn"><a name="warning"></a>bool QXmlErrorHandler::warning ( const <a href="qxmlparseexception.html">QXmlParseException</a> &amp; <i>exception</i> )&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>A reader might use this function to report a warning. Warnings are conditions that are not errors or fatal errors as defined by the XML 1.0 specification. Details of the warning are stored in <i>exception</i>.</p>
+<p>If this function returns false the reader stops parsing and reports an error. The reader uses the function <a href="qxmlerrorhandler.html#errorString">errorString</a>() to get the error message.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

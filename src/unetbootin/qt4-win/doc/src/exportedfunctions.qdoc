@@ -1,0 +1,138 @@
+/****************************************************************************
+**
+** Copyright (C) 2005-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page exportedfunctions.html
+    \title Special-Purpose Global Functions Exported by Qt
+    \ingroup classlists
+
+    Qt provides a few low-level global functions for fine-tuning
+    applications. Most of these perform very specific tasks and are
+    platform-specific. In general, we recommend that you try using
+    Qt's public API before resorting to using any functions mentioned
+    here.
+
+    These functions are exported by \l QtCore and \l QtGui, but most
+    of them aren't declared in Qt's header files. To use them in your
+    application, you must declare them before calling them. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.exportedfunctions.qdoc 0
+
+    These functions will remain as part of Qt for the lifetime of Qt
+    4.
+
+    Functions:
+
+    \tableofcontents
+
+    \section1 void qt_set_library_config_file(const QString &\e{fileName})
+
+    Specifies the location of the Qt configuration file. You must
+    call this function before constructing a QApplication or
+    QCoreApplication object. If no location is specified, Qt
+    automatically finds an appropriate location.
+
+    \section1 void qt_set_sequence_auto_mnemonic(bool \e{enable})
+
+    Specifies whether mnemonics for menu items, labels, etc., should
+    be honored or not. On Windows and X11, this feature is
+    on by default; on Mac OS X, it is off. When this feature is off,
+    the QKeySequence::mnemonic() function always returns an empty
+    string. This feature is also enabled on embedded Linux.
+
+    \section1 void qt_x11_wait_for_window_manager(QWidget *\e{widget})
+
+    Blocks until the X11 window manager has shown the widget after a
+    call to QWidget::show().
+
+    \section1 void qt_mac_secure_keyboard(bool \e{enable})
+
+    Turns the Mac OS X secure keyboard feature on or off. QLineEdit
+    uses this when the echo mode is QLineEdit::Password or
+    QLineEdit::NoEcho to guard the editor against keyboard sniffing.
+    If you implement your own password editor, you might want to turn
+    on this feature in your editor's
+    \l{QWidget::focusInEvent()}{focusInEvent()} and turn it off in
+    \l{QWidget::focusOutEvent()}{focusOutEvent()}.
+
+    \section1 void qt_mac_set_dock_menu(QMenu *\e{menu})
+
+    Sets the menu to display in the Mac OS X Dock for the
+    application. This menu is shown when the user \key{Ctrl}-clicks
+    on the application's icon while it is running.
+
+    \section1 void qt_mac_set_menubar_icons(bool \e{enable})
+
+    Specifies whether icons associated to menu items for the
+    application's menu bar should be shown on Mac OS X. By default,
+    icons are shown on Mac OS X just like on the other platforms.
+    
+    In Qt 4.4, this is equivalent to
+    \c { QApplication::instance()->setAttribute(Qt::AA_DontShowIconsInMenus); }.
+
+    \section1 void qt_mac_set_menubar_merge(bool \e{enable})
+
+    Specifies whether Qt should attempt to relocate standard menu
+    items (such as \gui Quit, \gui Preferences, and \gui About) to
+    the application menu on Mac OS X. This feature is on by default.
+    See \l{Qt/Mac-Specific Issues} for the list of menu items for
+    which this applies.
+
+    \section1 void qt_mac_set_native_menubar(bool \e{enable})
+
+    Specifies whether the application should use the native menu bar
+    on Mac OS X or be part of the main window. This feature is on by
+    default.
+
+    \section1 void qt_mac_set_dock_menu(QMenu *\e{menu})
+
+    Sets this menu as the menu to be shown when a press and hold is 
+    attempted on your application's dock icon. The menu will be turned 
+    into a Mac menu which will be merged with Mac OS X builtin commands.
+
+    \section1 void qt_mac_set_press_and_hold_context(bool \e{enable})
+
+    Turns emulation of the right mouse button by clicking and holding
+    the left mouse button on or off. This feature is off by default.
+*/

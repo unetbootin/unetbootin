@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/itemviews/qlistview.cpp -->
+<head>
+  <title>Qt 4.4: QListView Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QListView Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QListView class provides a list or icon view onto a model. <a href="#details">More...</a></p>
+<pre> #include &lt;QListView&gt;</pre><p>Inherits <a href="qabstractitemview.html">QAbstractItemView</a>.</p>
+<p>Inherited by <a href="qhelpindexwidget.html">QHelpIndexWidget</a>, <a href="qlistwidget.html">QListWidget</a>, and <a href="qundoview.html">QUndoView</a>.</p>
+<ul>
+<li><a href="qlistview-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qlistview.html#Flow-enum">Flow</a></b> { LeftToRight, TopToBottom }</li>
+<li><div class="fn"/>enum <b><a href="qlistview.html#LayoutMode-enum">LayoutMode</a></b> { SinglePass, Batched }</li>
+<li><div class="fn"/>enum <b><a href="qlistview.html#Movement-enum">Movement</a></b> { Static, Free, Snap }</li>
+<li><div class="fn"/>enum <b><a href="qlistview.html#ResizeMode-enum">ResizeMode</a></b> { Fixed, Adjust }</li>
+<li><div class="fn"/>enum <b><a href="qlistview.html#ViewMode-enum">ViewMode</a></b> { ListMode, IconMode }</li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="qlistview.html#batchSize-prop">batchSize</a></b> : int</li>
+<li><div class="fn"/><b><a href="qlistview.html#flow-prop">flow</a></b> : Flow</li>
+<li><div class="fn"/><b><a href="qlistview.html#gridSize-prop">gridSize</a></b> : QSize</li>
+<li><div class="fn"/><b><a href="qlistview.html#isWrapping-prop">isWrapping</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qlistview.html#layoutMode-prop">layoutMode</a></b> : LayoutMode</li>
+<li><div class="fn"/><b><a href="qlistview.html#modelColumn-prop">modelColumn</a></b> : int</li>
+<li><div class="fn"/><b><a href="qlistview.html#movement-prop">movement</a></b> : Movement</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="qlistview.html#resizeMode-prop">resizeMode</a></b> : ResizeMode</li>
+<li><div class="fn"/><b><a href="qlistview.html#selectionRectVisible-prop">selectionRectVisible</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qlistview.html#spacing-prop">spacing</a></b> : int</li>
+<li><div class="fn"/><b><a href="qlistview.html#uniformItemSizes-prop">uniformItemSizes</a></b> : bool</li>
+<li><div class="fn"/><b><a href="qlistview.html#viewMode-prop">viewMode</a></b> : ViewMode</li>
+<li><div class="fn"/><b><a href="qlistview.html#wordWrap-prop">wordWrap</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>15 properties inherited from <a href="qabstractitemview.html#properties">QAbstractItemView</a></li>
+<li><div class="fn"/>2 properties inherited from <a href="qabstractscrollarea.html#properties">QAbstractScrollArea</a></li>
+<li><div class="fn"/>6 properties inherited from <a href="qframe.html#properties">QFrame</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qlistview.html#QListView">QListView</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qlistview.html#dtor.QListView">~QListView</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="qlistview.html#batchSize-prop">batchSize</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#clearPropertyFlags">clearPropertyFlags</a></b> ()</li>
+<li><div class="fn"/>Flow <b><a href="qlistview.html#flow-prop">flow</a></b> () const</li>
+<li><div class="fn"/>QSize <b><a href="qlistview.html#gridSize-prop">gridSize</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlistview.html#isRowHidden">isRowHidden</a></b> ( int <i>row</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qlistview.html#selectionRectVisible-prop">isSelectionRectVisible</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlistview.html#isWrapping-prop">isWrapping</a></b> () const</li>
+<li><div class="fn"/>LayoutMode <b><a href="qlistview.html#layoutMode-prop">layoutMode</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="qlistview.html#modelColumn-prop">modelColumn</a></b> () const</li>
+<li><div class="fn"/>Movement <b><a href="qlistview.html#movement-prop">movement</a></b> () const</li>
+<li><div class="fn"/>ResizeMode <b><a href="qlistview.html#resizeMode-prop">resizeMode</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#batchSize-prop">setBatchSize</a></b> ( int <i>batchSize</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#flow-prop">setFlow</a></b> ( Flow <i>flow</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#gridSize-prop">setGridSize</a></b> ( const QSize &amp; <i>size</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#layoutMode-prop">setLayoutMode</a></b> ( LayoutMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#modelColumn-prop">setModelColumn</a></b> ( int <i>column</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#movement-prop">setMovement</a></b> ( Movement <i>movement</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#resizeMode-prop">setResizeMode</a></b> ( ResizeMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#setRowHidden">setRowHidden</a></b> ( int <i>row</i>, bool <i>hide</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#selectionRectVisible-prop">setSelectionRectVisible</a></b> ( bool <i>show</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#spacing-prop">setSpacing</a></b> ( int <i>space</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#uniformItemSizes-prop">setUniformItemSizes</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#viewMode-prop">setViewMode</a></b> ( ViewMode <i>mode</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#wordWrap-prop">setWordWrap</a></b> ( bool <i>on</i> )</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#isWrapping-prop">setWrapping</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>int <b><a href="qlistview.html#spacing-prop">spacing</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlistview.html#uniformItemSizes-prop">uniformItemSizes</a></b> () const</li>
+<li><div class="fn"/>ViewMode <b><a href="qlistview.html#viewMode-prop">viewMode</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qlistview.html#wordWrap-prop">wordWrap</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>54 public functions inherited from <a href="qabstractitemview.html#public-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>15 public functions inherited from <a href="qabstractscrollarea.html#public-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>13 public functions inherited from <a href="qframe.html#public-functions">QFrame</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qlistview.html#indexesMoved">indexesMoved</a></b> ( const QModelIndexList &amp; <i>indexes</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>6 signals inherited from <a href="qabstractitemview.html#signals">QAbstractItemView</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>QRect <b><a href="qlistview.html#rectForIndex">rectForIndex</a></b> ( const QModelIndex &amp; <i>index</i> ) const</li>
+<li><div class="fn"/>void <b><a href="qlistview.html#setPositionForIndex">setPositionForIndex</a></b> ( const QPoint &amp; <i>position</i>, const QModelIndex &amp; <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>33 protected functions inherited from <a href="qabstractitemview.html#protected-functions">QAbstractItemView</a></li>
+<li><div class="fn"/>16 protected functions inherited from <a href="qabstractscrollarea.html#protected-functions">QAbstractScrollArea</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>9 public slots inherited from <a href="qabstractitemview.html#public-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>9 protected slots inherited from <a href="qabstractitemview.html#protected-slots">QAbstractItemView</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qabstractscrollarea.html#protected-slots">QAbstractScrollArea</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QListView class provides a list or icon view onto a model.</p>
+<p>A QListView presents items stored in a model, either as a simple non-hierarchical list, or as a collection of icons. This class is used to provide lists and icon views that were previously provided by the <tt>QListBox</tt> and <tt>QIconView</tt> classes, but using the more flexible approach provided by Qt's model/view architecture.</p>
+<p>The QListView class is one of the <a href="model-view.html">Model/View Classes</a> and is part of Qt's <a href="model-view-programming.html">model/view framework</a>.</p>
+<p>This view does not display horizontal or vertical headers; to display a list of items with a horizontal header, use <a href="qtreeview.html">QTreeView</a> instead.</p>
+<p>QListView implements the interfaces defined by the <a href="qabstractitemview.html">QAbstractItemView</a> class to allow it to display data provided by models derived from the <a href="qabstractitemmodel.html">QAbstractItemModel</a> class.</p>
+<p>Items in a list view can be displayed using one of two view modes: In <a href="qlistview.html#ViewMode-enum">ListMode</a>, the items are displayed in the form of a simple list; in <a href="qlistview.html#ViewMode-enum">IconMode</a>, the list view takes the form of an <i>icon view</i> in which the items are displayed with icons like files in a file manager. By default, the list view is in <a href="qlistview.html#ViewMode-enum">ListMode</a>. To change the view mode, use the <a href="qlistview.html#viewMode-prop">setViewMode</a>() function, and to determine the current view mode, use <a href="qlistview.html#viewMode-prop">viewMode</a>().</p>
+<p>Items in these views are laid out in the direction specified by the <a href="qlistview.html#flow-prop">flow</a>() of the list view. The items may be fixed in place, or allowed to move, depending on the view's <a href="qlistview.html#movement-prop">movement</a>() state.</p>
+<p>If the items in the model cannot be completely laid out in the direction of flow, they can be wrapped at the boundary of the view widget; this depends on <a href="qlistview.html#isWrapping-prop">isWrapping</a>(). This property is useful when the items are being represented by an icon view.</p>
+<p>The <a href="qlistview.html#resizeMode-prop">resizeMode</a>() and <a href="qlistview.html#layoutMode-prop">layoutMode</a>() govern how and when the items are laid out. Items are spaced according to their <a href="qlistview.html#spacing-prop">spacing</a>(), and can exist within a notional grid of size specified by <a href="qlistview.html#gridSize-prop">gridSize</a>(). The items can be rendered as large or small icons depending on their <a href="qabstractitemview.html#iconSize-prop">iconSize</a>().</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/windowsxp-listview.png" alt="Screenshot of a Windows XP style list view" /></td><td><img src="images/macintosh-listview.png" alt="Screenshot of a Macintosh style table view" /></td><td><img src="images/plastique-listview.png" alt="Screenshot of a Plastique style table view" /></td></tr>
+<tr valign="top" class="even"><td>A <a href="gallery-windowsxp.html">Windows XP style</a> list view.</td><td>A <a href="gallery-macintosh.html">Macintosh style</a> list view.</td><td>A <a href="gallery-plastique.html">Plastique style</a> list view.</td></tr>
+</table></p>
+<a name="improving-performance"></a>
+<h3>Improving Performance</h3>
+<p>It is possible to give the view hints about the data it is handling in order to improve its performance when displaying large numbers of items. One approach that can be taken for views that are intended to display items with equal sizes is to set the <a href="qlistview.html#uniformItemSizes-prop">uniformItemSizes</a> property to true.</p>
+<p>See also <a href="model-view-view.html">View Classes</a>, <a href="qtreeview.html">QTreeView</a>, <a href="qtableview.html">QTableView</a>, and <a href="qlistwidget.html">QListWidget</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="Flow-enum"></a>enum QListView::Flow</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QListView::LeftToRight</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The items are laid out in the view from the left to the right.</td></tr>
+<tr><td valign="top"><tt>QListView::TopToBottom</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The items are laid out in the view from the top to the bottom.</td></tr>
+</table></p>
+<h3 class="fn"><a name="LayoutMode-enum"></a>enum QListView::LayoutMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QListView::SinglePass</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The items are laid out all at once.</td></tr>
+<tr><td valign="top"><tt>QListView::Batched</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The items are laid out in batches of <a href="qlistview.html#batchSize-prop">batchSize</a> items.</td></tr>
+</table></p>
+<p>See also <a href="qlistview.html#batchSize-prop">batchSize</a>.</p>
+<h3 class="fn"><a name="Movement-enum"></a>enum QListView::Movement</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QListView::Static</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The items cannot be moved by the user.</td></tr>
+<tr><td valign="top"><tt>QListView::Free</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The items can be moved freely by the user.</td></tr>
+<tr><td valign="top"><tt>QListView::Snap</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">The items snap to the specified grid when moved; see <a href="qlistview.html#gridSize-prop">setGridSize</a>().</td></tr>
+</table></p>
+<h3 class="fn"><a name="ResizeMode-enum"></a>enum QListView::ResizeMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QListView::Fixed</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The items will only be laid out the first time the view is shown.</td></tr>
+<tr><td valign="top"><tt>QListView::Adjust</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The items will be laid out every time the view is resized.</td></tr>
+</table></p>
+<h3 class="fn"><a name="ViewMode-enum"></a>enum QListView::ViewMode</h3>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QListView::ListMode</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">The items are laid out using <a href="qlistview.html#Flow-enum">TopToBottom</a> flow, with Small size and Static movement</td></tr>
+<tr><td valign="top"><tt>QListView::IconMode</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">The items are laid out using <a href="qlistview.html#Flow-enum">LeftToRight</a> flow, with Large size and Free movement</td></tr>
+</table></p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="batchSize-prop"></a>batchSize : int</h3>
+<p>This property holds the number of items laid out in each batch if layoutMode is set to Batched.</p>
+<p>The default value is 100.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int batchSize () const</b></li>
+<li><div class="fn"/><b>void setBatchSize ( int <i>batchSize</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="flow-prop"></a>flow : <a href="qlistview.html#Flow-enum">Flow</a></h3>
+<p>This property holds which direction the items layout should flow.</p>
+<p>If this property is <a href="qlistview.html#Flow-enum">LeftToRight</a>, the items will be laid out left to right. If the <a href="qlistview.html#isWrapping-prop">isWrapping</a> property is true, the layout will wrap when it reaches the right side of the visible area. If this property is <a href="qlistview.html#Flow-enum">TopToBottom</a>, the items will be laid out from the top of the visible area, wrapping when it reaches the bottom.</p>
+<p>Setting this property when the view is visible will cause the items to be laid out again.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Flow flow () const</b></li>
+<li><div class="fn"/><b>void setFlow ( Flow <i>flow</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="gridSize-prop"></a>gridSize : <a href="qsize.html">QSize</a></h3>
+<p>This property holds the size of the layout grid.</p>
+<p>This property is the size of the grid in which the items are laid out. The default is an empty size which means that there is no grid and the layout is not done in a grid. Setting this property to a non-empty size switches on the grid layout. (When a grid layout is in force the <a href="qlistview.html#spacing-prop">spacing</a> property is ignored.)</p>
+<p>Setting this property when the view is visible will cause the items to be laid out again.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QSize gridSize () const</b></li>
+<li><div class="fn"/><b>void setGridSize ( const QSize &amp; <i>size</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="isWrapping-prop"></a>isWrapping : bool</h3>
+<p>This property holds whether the items layout should wrap.</p>
+<p>This property holds whether the layout should wrap when there is no more space in the visible area. The point at which the layout wraps depends on the <a href="qlistview.html#flow-prop">flow</a> property.</p>
+<p>Setting this property when the view is visible will cause the items to be laid out again.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isWrapping () const</b></li>
+<li><div class="fn"/><b>void setWrapping ( bool <i>enable</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="layoutMode-prop"></a>layoutMode : <a href="qlistview.html#LayoutMode-enum">LayoutMode</a></h3>
+<p>This property holds whether the layout of items should happen immediately or be delayed.</p>
+<p>This property holds the layout mode for the items. When the mode is <a href="qlistview.html#LayoutMode-enum">SinglePass</a> (the default), the items are laid out all in one go. When the mode is <a href="qlistview.html#LayoutMode-enum">Batched</a>, the items are laid out in batches of <a href="qlistview.html#batchSize-prop">batchSize</a> items, while processing events. This makes it possible to instantly view and interact with the visible items while the rest are being laid out.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>LayoutMode layoutMode () const</b></li>
+<li><div class="fn"/><b>void setLayoutMode ( LayoutMode <i>mode</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="modelColumn-prop"></a>modelColumn : int</h3>
+<p>This property holds the column in the model that is visible.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int modelColumn () const</b></li>
+<li><div class="fn"/><b>void setModelColumn ( int <i>column</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="movement-prop"></a>movement : <a href="qlistview.html#Movement-enum">Movement</a></h3>
+<p>This property holds whether the items can be moved freely, are snapped to a grid, or cannot be moved at all.</p>
+<p>This property determines how the user can move the items in the view. <a href="qlistview.html#Movement-enum">Static</a> means that the items can't be moved the user. <a href="qlistview.html#Movement-enum">Free</a> means that the user can drag and drop the items to any position in the view. <a href="qlistview.html#Movement-enum">Snap</a> means that the user can drag and drop the items, but only to the positions in a notional grid signified by the <a href="qlistview.html#gridSize-prop">gridSize</a> property.</p>
+<p>Setting this property when the view is visible will cause the items to be laid out again.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Movement movement () const</b></li>
+<li><div class="fn"/><b>void setMovement ( Movement <i>movement</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#gridSize-prop">gridSize</a> and <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="resizeMode-prop"></a>resizeMode : <a href="qlistview.html#ResizeMode-enum">ResizeMode</a></h3>
+<p>This property holds whether the items are laid out again when the view is resized.</p>
+<p>If this property is <a href="qlistview.html#ResizeMode-enum">Adjust</a>, the items will be laid out again when the view is resized. If the value is <a href="qlistview.html#ResizeMode-enum">Fixed</a>, the items will not be laid out when the view is resized.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ResizeMode resizeMode () const</b></li>
+<li><div class="fn"/><b>void setResizeMode ( ResizeMode <i>mode</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="selectionRectVisible-prop"></a>selectionRectVisible : bool</h3>
+<p>This property holds if the selection rectangle should be visible.</p>
+<p>If this property is true then the selection rectangle is visible; otherwise it will be hidden. Note that the selection rectangle will only be visible if the selection mode is in a mode where more than one item can be selected, i.e&#x2e; it will not draw a selection rectangle if the selection mode is <a href="qabstractitemview.html#SelectionMode-enum">QAbstractItemView::SingleSelection</a>.</p>
+<p>This property was introduced in Qt 4.3.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isSelectionRectVisible () const</b></li>
+<li><div class="fn"/><b>void setSelectionRectVisible ( bool <i>show</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="spacing-prop"></a>spacing : int</h3>
+<p>This property holds the space between items in the layout.</p>
+<p>This property is the size of the empty space that is padded around an item in the layout.</p>
+<p>Setting this property when the view is visible will cause the items to be laid out again.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int spacing () const</b></li>
+<li><div class="fn"/><b>void setSpacing ( int <i>space</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<h3 class="fn"><a name="uniformItemSizes-prop"></a>uniformItemSizes : bool</h3>
+<p>This property holds whether all items in the listview have the same size.</p>
+<p>This property should only be set to true if it is guaranteed that all items in the view have the same size. This enables the view to do some optimizations.</p>
+<p>This property was introduced in Qt 4.1.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool uniformItemSizes () const</b></li>
+<li><div class="fn"/><b>void setUniformItemSizes ( bool <i>enable</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="viewMode-prop"></a>viewMode : <a href="qlistview.html#ViewMode-enum">ViewMode</a></h3>
+<p>This property holds the view mode of the QListView.</p>
+<p>This property will change the other unset properties to conform with the set view mode. <a href="qlistview.html">QListView</a>-specific properties that have already been set will not be changed, unless <a href="qlistview.html#clearPropertyFlags">clearPropertyFlags</a>() has been called.</p>
+<p>Setting the view mode will enable or disable drag and drop based on the selected movement. For <a href="qlistview.html#ViewMode-enum">ListMode</a>, the default movement is <a href="qlistview.html#Movement-enum">Static</a> (drag and drop disabled); for <a href="qlistview.html#ViewMode-enum">IconMode</a>, the default movement is <a href="qlistview.html#Movement-enum">Free</a> (drag and drop enabled).</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>ViewMode viewMode () const</b></li>
+<li><div class="fn"/><b>void setViewMode ( ViewMode <i>mode</i> )</b></li>
+</ul>
+<p>See also <a href="qlistview.html#isWrapping-prop">isWrapping</a>, <a href="qlistview.html#spacing-prop">spacing</a>, <a href="qlistview.html#gridSize-prop">gridSize</a>, <a href="qlistview.html#flow-prop">flow</a>, <a href="qlistview.html#movement-prop">movement</a>, and <a href="qlistview.html#resizeMode-prop">resizeMode</a>.</p>
+<h3 class="fn"><a name="wordWrap-prop"></a>wordWrap : bool</h3>
+<p>This property holds the item text word-wrapping policy.</p>
+<p>If this property is true then the item text is wrapped where necessary at word-breaks; otherwise it is not wrapped at all. This property is false by default.</p>
+<p>This property was introduced in Qt 4.2.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool wordWrap () const</b></li>
+<li><div class="fn"/><b>void setWordWrap ( bool <i>on</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QListView"></a>QListView::QListView ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Creates a new <a href="qlistview.html">QListView</a> with the given <i>parent</i> to view a model. Use <a href="qabstractitemview.html#setModel">setModel</a>() to set the model.</p>
+<h3 class="fn"><a name="dtor.QListView"></a>QListView::~QListView ()</h3>
+<p>Destroys the view.</p>
+<h3 class="fn"><a name="clearPropertyFlags"></a>void QListView::clearPropertyFlags ()</h3>
+<p>Clears the <a href="qlistview.html">QListView</a>-specific property flags. See <a href="qlistview.html#viewMode-prop">viewMode</a>.</p>
+<p>Properties inherited from <a href="qabstractitemview.html">QAbstractItemView</a> are not covered by the property flags. Specifically, <a href="qabstractitemview.html#dragEnabled-prop">dragEnabled</a> and <a href="qwidget.html#acceptDrops-prop">acceptDrops</a> are computed by <a href="qlistview.html">QListView</a> when calling <a href="qlistview.html#movement-prop">setMovement</a>() or <a href="qlistview.html#viewMode-prop">setViewMode</a>().</p>
+<h3 class="fn"><a name="indexesMoved"></a>void QListView::indexesMoved ( const <a href="qmodelindex.html#QModelIndexList-typedef">QModelIndexList</a> &amp; <i>indexes</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the specified <i>indexes</i> are moved in the view.</p>
+<p>This function was introduced in Qt 4.2.</p>
+<h3 class="fn"><a name="isRowHidden"></a>bool QListView::isRowHidden ( int <i>row</i> ) const</h3>
+<p>Returns true if the <i>row</i> is hidden; otherwise returns false.</p>
+<h3 class="fn"><a name="rectForIndex"></a><a href="qrect.html">QRect</a> QListView::rectForIndex ( const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> ) const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the rectangle of the item at position <i>index</i> in the model. The rectangle is in contents coordinates.</p>
+<p>See also <a href="qabstractitemview.html#visualRect">visualRect</a>().</p>
+<h3 class="fn"><a name="setPositionForIndex"></a>void QListView::setPositionForIndex ( const <a href="qpoint.html">QPoint</a> &amp; <i>position</i>, const <a href="qmodelindex.html">QModelIndex</a> &amp; <i>index</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Sets the contents position of the item at <i>index</i> in the model to the given <i>position</i>. If the list view's movement mode is Static, this function will have no effect.</p>
+<p>This function was introduced in Qt 4.1.</p>
+<h3 class="fn"><a name="setRowHidden"></a>void QListView::setRowHidden ( int <i>row</i>, bool <i>hide</i> )</h3>
+<p>If <i>hide</i> is true, the given <i>row</i> will be hidden; otherwise the <i>row</i> will be shown.</p>
+<p>See also <a href="qlistview.html#isRowHidden">isRowHidden</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

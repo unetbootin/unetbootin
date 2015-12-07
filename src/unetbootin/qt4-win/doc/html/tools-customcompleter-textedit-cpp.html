@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: textedit.cpp Example File (tools/customcompleter/textedit.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">textedit.cpp Example File<br /><span class="small-subtitle">tools/customcompleter/textedit.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &quot;textedit.h&quot;
+ #include &lt;QCompleter&gt;
+ #include &lt;QKeyEvent&gt;
+ #include &lt;QAbstractItemView&gt;
+ #include &lt;QtDebug&gt;
+ #include &lt;QApplication&gt;
+ #include &lt;QModelIndex&gt;
+ #include &lt;QAbstractItemModel&gt;
+ #include &lt;QScrollBar&gt;
+
+ TextEdit::TextEdit(QWidget *parent)
+ : QTextEdit(parent), c(0)
+ {
+     setPlainText(tr(&quot;This TextEdit provides autocompletions for words that have more than&quot;
+                     &quot; 3 characters. You can trigger autocompletion using &quot;) +
+                     QKeySequence(&quot;Ctrl+E&quot;).toString(QKeySequence::NativeText));
+ }
+
+ TextEdit::~TextEdit()
+ {
+ }
+
+ void TextEdit::setCompleter(QCompleter *completer)
+ {
+     if (c)
+         QObject::disconnect(c, 0, this, 0);
+
+     c = completer;
+
+     if (!c)
+         return;
+
+     c-&gt;setWidget(this);
+     c-&gt;setCompletionMode(QCompleter::PopupCompletion);
+     c-&gt;setCaseSensitivity(Qt::CaseInsensitive);
+     QObject::connect(c, SIGNAL(activated(const QString&amp;)),
+                      this, SLOT(insertCompletion(const QString&amp;)));
+ }
+
+ QCompleter *TextEdit::completer() const
+ {
+     return c;
+ }
+
+ void TextEdit::insertCompletion(const QString&amp; completion)
+ {
+     if (c-&gt;widget() != this)
+         return;
+     QTextCursor tc = textCursor();
+     int extra = completion.length() - c-&gt;completionPrefix().length();
+     tc.movePosition(QTextCursor::Left);
+     tc.movePosition(QTextCursor::EndOfWord);
+     tc.insertText(completion.right(extra));
+     setTextCursor(tc);
+ }
+
+ QString TextEdit::textUnderCursor() const
+ {
+     QTextCursor tc = textCursor();
+     tc.select(QTextCursor::WordUnderCursor);
+     return tc.selectedText();
+ }
+
+ void TextEdit::focusInEvent(QFocusEvent *e)
+ {
+     if (c)
+         c-&gt;setWidget(this);
+     QTextEdit::focusInEvent(e);
+ }
+
+ void TextEdit::keyPressEvent(QKeyEvent *e)
+ {
+     if (c &amp;&amp; c-&gt;popup()-&gt;isVisible()) {
+         <span class="comment">//</span> The following keys are forwarded by the completer to the widget
+        switch (e-&gt;key()) {
+        case Qt::Key_Enter:
+        case Qt::Key_Return:
+        case Qt::Key_Escape:
+        case Qt::Key_Tab:
+        case Qt::Key_Backtab:
+             e-&gt;ignore();
+             return; <span class="comment">//</span> let the completer do default behavior
+        default:
+            break;
+        }
+     }
+
+     bool isShortcut = ((e-&gt;modifiers() &amp; Qt::ControlModifier) &amp;&amp; e-&gt;key() == Qt::Key_E); <span class="comment">//</span> CTRL+E
+     if (!c || !isShortcut) <span class="comment">//</span> dont process the shortcut when we have a completer
+         QTextEdit::keyPressEvent(e);
+
+     const bool ctrlOrShift = e-&gt;modifiers() &amp; (Qt::ControlModifier | Qt::ShiftModifier);
+     if (!c || (ctrlOrShift &amp;&amp; e-&gt;text().isEmpty()))
+         return;
+
+     static QString eow(&quot;~!@#$%^&amp;*()_+{}|:\&quot;&lt;&gt;?,./;'[]\\-=&quot;); <span class="comment">//</span> end of word
+     bool hasModifier = (e-&gt;modifiers() != Qt::NoModifier) &amp;&amp; !ctrlOrShift;
+     QString completionPrefix = textUnderCursor();
+
+     if (!isShortcut &amp;&amp; (hasModifier || e-&gt;text().isEmpty()|| completionPrefix.length() &lt; 3
+                       || eow.contains(e-&gt;text().right(1)))) {
+         c-&gt;popup()-&gt;hide();
+         return;
+     }
+
+     if (completionPrefix != c-&gt;completionPrefix()) {
+         c-&gt;setCompletionPrefix(completionPrefix);
+         c-&gt;popup()-&gt;setCurrentIndex(c-&gt;completionModel()-&gt;index(0, 0));
+     }
+     QRect cr = cursorRect();
+     cr.setWidth(c-&gt;popup()-&gt;sizeHintForColumn(0)
+                 + c-&gt;popup()-&gt;verticalScrollBar()-&gt;sizeHint().width());
+     c-&gt;complete(cr); <span class="comment">//</span> popup it up!
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

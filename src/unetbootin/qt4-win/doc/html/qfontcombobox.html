@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/widgets/qfontcombobox.cpp -->
+<head>
+  <title>Qt 4.4: QFontComboBox Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QFontComboBox Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QFontComboBox widget is a combobox that lets the user select a font family. <a href="#details">More...</a></p>
+<pre> #include &lt;QFontComboBox&gt;</pre><p>Inherits <a href="qcombobox.html">QComboBox</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qfontcombobox-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qfontcombobox.html#FontFilter-enum">FontFilter</a></b> { AllFonts, ScalableFonts, NonScalableFonts, MonospacedFonts, ProportionalFonts }</li>
+<li><div class="fn"/>flags <b><a href="qfontcombobox.html#FontFilter-enum">FontFilters</a></b></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfontcombobox.html#currentFont-prop">currentFont</a></b> : QFont</li>
+<li><div class="fn"/><b><a href="qfontcombobox.html#fontFilters-prop">fontFilters</a></b> : FontFilters</li>
+<li><div class="fn"/><b><a href="qfontcombobox.html#writingSystem-prop">writingSystem</a></b> : QFontDatabase::WritingSystem</li>
+</ul>
+<ul>
+<li><div class="fn"/>13 properties inherited from <a href="qcombobox.html#properties">QComboBox</a></li>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qfontcombobox.html#QFontComboBox">QFontComboBox</a></b> ( QWidget * <i>parent</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qfontcombobox.html#dtor.QFontComboBox">~QFontComboBox</a></b> ()</li>
+<li><div class="fn"/>QFont <b><a href="qfontcombobox.html#currentFont-prop">currentFont</a></b> () const</li>
+<li><div class="fn"/>FontFilters <b><a href="qfontcombobox.html#fontFilters-prop">fontFilters</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qfontcombobox.html#fontFilters-prop">setFontFilters</a></b> ( FontFilters <i>filters</i> )</li>
+<li><div class="fn"/>void <b><a href="qfontcombobox.html#writingSystem-prop">setWritingSystem</a></b> ( QFontDatabase::WritingSystem <i>script</i> )</li>
+<li><div class="fn"/>QFontDatabase::WritingSystem <b><a href="qfontcombobox.html#writingSystem-prop">writingSystem</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>55 public functions inherited from <a href="qcombobox.html#public-functions">QComboBox</a></li>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qfontcombobox.html#currentFont-prop">setCurrentFont</a></b> ( const QFont &amp; <i>font</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>4 public slots inherited from <a href="qcombobox.html#public-slots">QComboBox</a></li>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="qfontcombobox.html#currentFontChanged">currentFontChanged</a></b> ( const QFont &amp; <i>font</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 signals inherited from <a href="qcombobox.html#signals">QComboBox</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected function inherited from <a href="qcombobox.html#protected-functions">QComboBox</a></li>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QFontComboBox widget is a combobox that lets the user select a font family.</p>
+<p>The combobox is populated with an alphabetized list of font family names, such as Arial, Helvetica, and Times New Roman. Family names are displayed using the actual font when possible. For fonts such as Symbol, where the name is not representable in the font itself, a sample of the font is displayed next to the family name.</p>
+<p>QFontComboBox is often used in toolbars, in conjunction with a <a href="qcombobox.html">QComboBox</a> for controlling the font size and two <a href="qtoolbutton.html">QToolButton</a>s for bold and italic.</p>
+<p>When the user selects a new font, the <a href="qfontcombobox.html#currentFontChanged">currentFontChanged</a>() signal is emitted in addition to <a href="qcombobox.html#currentIndexChanged">currentIndexChanged</a>().</p>
+<p>Call <a href="qfontcombobox.html#writingSystem-prop">setWritingSystem</a>() to tell QFontComboBox to show only fonts that support a given writing system, and <a href="qfontcombobox.html#fontFilters-prop">setFontFilters</a>() to filter out certain types of fonts as e.g&#x2e; non scalable fonts or monospaced fonts.</p>
+<p align="center"><img src="images/windowsxp-fontcombobox.png" alt="Screenshot of QFontComboBox on Windows XP" /></p><p>See also <a href="qcombobox.html">QComboBox</a>, <a href="qfont.html">QFont</a>, <a href="qfontinfo.html">QFontInfo</a>, <a href="qfontmetrics.html">QFontMetrics</a>, <a href="qfontdatabase.html">QFontDatabase</a>, and <a href="widgets-charactermap.html">Character Map Example</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="flags"><a name="FontFilter-enum"></a>enum QFontComboBox::FontFilter<br />flags QFontComboBox::FontFilters</h3>
+<p>This enum can be used to only show certain types of fonts in the font combo box.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QFontComboBox::AllFonts</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">Show all fonts</td></tr>
+<tr><td valign="top"><tt>QFontComboBox::ScalableFonts</tt></td><td align="center" valign="top"><tt>0x1</tt></td><td valign="top">Show scalable fonts</td></tr>
+<tr><td valign="top"><tt>QFontComboBox::NonScalableFonts</tt></td><td align="center" valign="top"><tt>0x2</tt></td><td valign="top">Show non scalable fonts</td></tr>
+<tr><td valign="top"><tt>QFontComboBox::MonospacedFonts</tt></td><td align="center" valign="top"><tt>0x4</tt></td><td valign="top">Show monospaced fonts</td></tr>
+<tr><td valign="top"><tt>QFontComboBox::ProportionalFonts</tt></td><td align="center" valign="top"><tt>0x8</tt></td><td valign="top">Show proportional fonts</td></tr>
+</table></p>
+<p>The FontFilters type is a typedef for <a href="qflags.html">QFlags</a>&lt;FontFilter&gt;. It stores an OR combination of FontFilter values.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="currentFont-prop"></a>currentFont : <a href="qfont.html">QFont</a></h3>
+<p>This property holds the currently selected font.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QFont currentFont () const</b></li>
+<li><div class="fn"/><b>void setCurrentFont ( const QFont &amp; <i>font</i> )</b></li>
+</ul>
+<p>See also <a href="qfontcombobox.html#currentFontChanged">currentFontChanged</a>(), <a href="qcombobox.html#currentIndex-prop">currentIndex</a>, and <a href="qcombobox.html#currentText-prop">currentText</a>.</p>
+<h3 class="fn"><a name="fontFilters-prop"></a>fontFilters : <a href="qfontcombobox.html#FontFilter-enum">FontFilters</a></h3>
+<p>This property holds the filter for the combobox.</p>
+<p>By default, all fonts are listed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>FontFilters fontFilters () const</b></li>
+<li><div class="fn"/><b>void setFontFilters ( FontFilters <i>filters</i> )</b></li>
+</ul>
+<p>See also <a href="qfontcombobox.html#writingSystem-prop">writingSystem</a>.</p>
+<h3 class="fn"><a name="writingSystem-prop"></a>writingSystem : <a href="qfontdatabase.html#WritingSystem-enum">QFontDatabase::WritingSystem</a></h3>
+<p>This property holds the writing system that serves as a filter for the combobox.</p>
+<p>If <i>script</i> is <a href="qfontdatabase.html#WritingSystem-enum">QFontDatabase::Any</a> (the default), all fonts are listed.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>QFontDatabase::WritingSystem writingSystem () const</b></li>
+<li><div class="fn"/><b>void setWritingSystem ( QFontDatabase::WritingSystem <i>script</i> )</b></li>
+</ul>
+<p>See also <a href="qfontcombobox.html#fontFilters-prop">fontFilters</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QFontComboBox"></a>QFontComboBox::QFontComboBox ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs a font combobox with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.QFontComboBox"></a>QFontComboBox::~QFontComboBox ()</h3>
+<p>Destroys the combobox.</p>
+<h3 class="fn"><a name="currentFontChanged"></a>void QFontComboBox::currentFontChanged ( const <a href="qfont.html">QFont</a> &amp; <i>font</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted whenever the current font changes, with the new <i>font</i>.</p>
+<p>See also <a href="qfontcombobox.html#currentFont-prop">currentFont</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

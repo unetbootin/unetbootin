@@ -1,0 +1,260 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: mainwindow.cpp Example File (tools/completer/mainwindow.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">mainwindow.cpp Example File<br /><span class="small-subtitle">tools/completer/mainwindow.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &quot;dirmodel.h&quot;
+ #include &quot;mainwindow.h&quot;
+
+ MainWindow::MainWindow(QWidget *parent)
+     : QMainWindow(parent), completer(0), lineEdit(0)
+ {
+     createMenu();
+
+     QWidget *centralWidget = new QWidget;
+
+     QLabel *modelLabel = new QLabel;
+     modelLabel-&gt;setText(tr(&quot;Model&quot;));
+
+     modelCombo = new QComboBox;
+     modelCombo-&gt;addItem(tr(&quot;QDirModel&quot;));
+     modelCombo-&gt;addItem(tr(&quot;QDirModel that shows full path&quot;));
+     modelCombo-&gt;addItem(tr(&quot;Country list&quot;));
+     modelCombo-&gt;addItem(tr(&quot;Word list&quot;));
+     modelCombo-&gt;setCurrentIndex(0);
+
+     QLabel *modeLabel = new QLabel;
+     modeLabel-&gt;setText(tr(&quot;Completion Mode&quot;));
+     modeCombo = new QComboBox;
+     modeCombo-&gt;addItem(tr(&quot;Inline&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Filtered Popup&quot;));
+     modeCombo-&gt;addItem(tr(&quot;Unfiltered Popup&quot;));
+     modeCombo-&gt;setCurrentIndex(1);
+
+     QLabel *caseLabel = new QLabel;
+     caseLabel-&gt;setText(tr(&quot;Case Sensitivity&quot;));
+     caseCombo = new QComboBox;
+     caseCombo-&gt;addItem(tr(&quot;Case Insensitive&quot;));
+     caseCombo-&gt;addItem(tr(&quot;Case Sensitive&quot;));
+     caseCombo-&gt;setCurrentIndex(0);
+
+     wrapCheckBox = new QCheckBox;
+     wrapCheckBox-&gt;setText(tr(&quot;Wrap around completions&quot;));
+     wrapCheckBox-&gt;setChecked(true);
+
+     contentsLabel = new QLabel;
+     contentsLabel-&gt;setSizePolicy(QSizePolicy::Fixed, QSizePolicy::Fixed);
+
+     connect(modelCombo, SIGNAL(activated(int)), this, SLOT(changeModel()));
+     connect(modeCombo, SIGNAL(activated(int)), this, SLOT(changeMode(int)));
+     connect(caseCombo, SIGNAL(activated(int)), this, SLOT(changeCase(int)));
+
+     lineEdit = new QLineEdit;
+
+     QGridLayout *layout = new QGridLayout;
+     layout-&gt;addWidget(modelLabel, 0, 0); layout-&gt;addWidget(modelCombo, 0, 1);
+     layout-&gt;addWidget(modeLabel, 1, 0);  layout-&gt;addWidget(modeCombo, 1, 1);
+     layout-&gt;addWidget(caseLabel, 2, 0);  layout-&gt;addWidget(caseCombo, 2, 1);
+     layout-&gt;addWidget(wrapCheckBox, 3, 0);
+     layout-&gt;addWidget(contentsLabel, 4, 0, 1, 2);
+     layout-&gt;addWidget(lineEdit, 5, 0, 1, 2);
+     centralWidget-&gt;setLayout(layout);
+     setCentralWidget(centralWidget);
+
+     changeModel();
+
+     setWindowTitle(tr(&quot;Completer&quot;));
+     lineEdit-&gt;setFocus();
+ }
+
+ void MainWindow::createMenu()
+ {
+     QAction *exitAction = new QAction(tr(&quot;Exit&quot;), this);
+     QAction *aboutAct = new QAction(tr(&quot;About&quot;), this);
+     QAction *aboutQtAct = new QAction(tr(&quot;About Qt&quot;), this);
+
+     connect(exitAction, SIGNAL(triggered()), qApp, SLOT(quit()));
+     connect(aboutAct, SIGNAL(triggered()), this, SLOT(about()));
+     connect(aboutQtAct, SIGNAL(triggered()), qApp, SLOT(aboutQt()));
+
+     QMenu* fileMenu = menuBar()-&gt;addMenu(tr(&quot;File&quot;));
+     fileMenu-&gt;addAction(exitAction);
+
+     QMenu* helpMenu = menuBar()-&gt;addMenu(tr(&quot;About&quot;));
+     helpMenu-&gt;addAction(aboutAct);
+     helpMenu-&gt;addAction(aboutQtAct);
+ }
+
+ QAbstractItemModel *MainWindow::modelFromFile(const QString&amp; fileName)
+ {
+     QFile file(fileName);
+     if (!file.open(QFile::ReadOnly))
+         return new QStringListModel(completer);
+
+ #ifndef QT_NO_CURSOR
+     QApplication::setOverrideCursor(QCursor(Qt::WaitCursor));
+ #endif
+     QStringList words;
+
+     while (!file.atEnd()) {
+         QByteArray line = file.readLine();
+         if (!line.isEmpty())
+             words &lt;&lt; line.trimmed();
+     }
+
+ #ifndef QT_NO_CURSOR
+     QApplication::restoreOverrideCursor();
+ #endif
+
+     if (!fileName.contains(QLatin1String(&quot;countries.txt&quot;)))
+         return new QStringListModel(words, completer);
+
+     <span class="comment">//</span> The last two chars of the countries.txt file indicate the country
+     <span class="comment">//</span> symbol. We put that in column 2 of a standard item model
+     QStandardItemModel *m = new QStandardItemModel(words.count(), 2, completer);
+     for (int i = 0; i &lt; words.count(); ++i) {
+         QModelIndex countryIdx = m-&gt;index(i, 0);
+         QModelIndex symbolIdx = m-&gt;index(i, 1);
+         QString country = words[i].mid(0, words[i].length() - 2).trimmed();
+         QString symbol = words[i].right(2);
+         m-&gt;setData(countryIdx, country);
+         m-&gt;setData(symbolIdx, symbol);
+     }
+
+     return m;
+ }
+
+ void MainWindow::changeMode(int index)
+ {
+     QCompleter::CompletionMode mode;
+     if (index == 0)
+         mode = QCompleter::InlineCompletion;
+     else if (index == 1)
+         mode = QCompleter::PopupCompletion;
+     else
+         mode = QCompleter::UnfilteredPopupCompletion;
+
+     completer-&gt;setCompletionMode(mode);
+ }
+
+ void MainWindow::changeCase(int cs)
+ {
+     completer-&gt;setCaseSensitivity(cs ? Qt::CaseSensitive : Qt::CaseInsensitive);
+ }
+
+ void MainWindow::changeModel()
+ {
+     delete completer;
+     completer = new QCompleter(this);
+
+     switch (modelCombo-&gt;currentIndex()) {
+     default:
+     case 0:
+         { <span class="comment">//</span> Unsorted QDirModel
+             QDirModel *dirModel = new QDirModel(completer);
+             completer-&gt;setModel(dirModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter file path&quot;));
+         }
+         break;
+     case 1:
+         { <span class="comment">//</span> DirModel that shows full paths
+             DirModel *dirModel = new DirModel(completer);
+             completer-&gt;setModel(dirModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter file path&quot;));
+         }
+         break;
+     case 2:
+         { <span class="comment">//</span> Country List
+             completer-&gt;setModel(modelFromFile(&quot;:/resources/countries.txt&quot;));
+             QTreeView *treeView = new QTreeView;
+             completer-&gt;setPopup(treeView);
+             treeView-&gt;setRootIsDecorated(false);
+             treeView-&gt;header()-&gt;hide();
+             treeView-&gt;header()-&gt;setStretchLastSection(false);
+             treeView-&gt;header()-&gt;setResizeMode(0, QHeaderView::Stretch);
+             treeView-&gt;header()-&gt;setResizeMode(1, QHeaderView::ResizeToContents);
+             contentsLabel-&gt;setText(tr(&quot;Enter name of your country&quot;));
+         }
+         break;
+     case 3:
+         { <span class="comment">//</span> Word list
+             completer-&gt;setModel(modelFromFile(&quot;:/resources/wordlist.txt&quot;));
+             completer-&gt;setModelSorting(QCompleter::CaseInsensitivelySortedModel);
+             contentsLabel-&gt;setText(tr(&quot;Enter a word&quot;));
+         }
+         break;
+     }
+
+     changeMode(modeCombo-&gt;currentIndex());
+     changeCase(caseCombo-&gt;currentIndex());
+     completer-&gt;setWrapAround(wrapCheckBox-&gt;isChecked());
+     lineEdit-&gt;setCompleter(completer);
+     connect(wrapCheckBox, SIGNAL(clicked(bool)), completer, SLOT(setWrapAround(bool)));
+ }
+
+ void MainWindow::about()
+ {
+     QMessageBox::about(this, tr(&quot;About&quot;), tr(&quot;This example demonstrates the &quot;
+         &quot;different features of the QCompleter class.&quot;));
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

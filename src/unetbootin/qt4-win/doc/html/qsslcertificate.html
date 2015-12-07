@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/network/ssl/qsslcertificate.cpp -->
+<head>
+  <title>Qt 4.4: QSslCertificate Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QSslCertificate Class Reference<br /><span class="small-subtitle">[<a href="qtnetwork.html">QtNetwork</a> module]</span>
+</h1>
+<p>The QSslCertificate class provides a convenient API for an X509 certificate. <a href="#details">More...</a></p>
+<pre> #include &lt;QSslCertificate&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qsslcertificate-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-types"></a>
+<h3>Public Types</h3>
+<ul>
+<li><div class="fn"/>enum <b><a href="qsslcertificate.html#SubjectInfo-enum">SubjectInfo</a></b> { Organization, CommonName, LocalityName, OrganizationalUnitName, CountryName, StateOrProvinceName }</li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qsslcertificate.html#QSslCertificate">QSslCertificate</a></b> ( QIODevice * <i>device</i>, QSsl::EncodingFormat <i>format</i> = QSsl::Pem )</li>
+<li><div class="fn"/><b><a href="qsslcertificate.html#QSslCertificate-2">QSslCertificate</a></b> ( const QByteArray &amp; <i>data</i> = QByteArray(), QSsl::EncodingFormat <i>format</i> = QSsl::Pem )</li>
+<li><div class="fn"/><b><a href="qsslcertificate.html#QSslCertificate-3">QSslCertificate</a></b> ( const QSslCertificate &amp; <i>other</i> )</li>
+<li><div class="fn"/><b><a href="qsslcertificate.html#dtor.QSslCertificate">~QSslCertificate</a></b> ()</li>
+<li><div class="fn"/>QMultiMap&lt;QSsl::AlternateNameEntryType, QString&gt; <b><a href="qsslcertificate.html#alternateSubjectNames">alternateSubjectNames</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qsslcertificate.html#clear">clear</a></b> ()</li>
+<li><div class="fn"/>QByteArray <b><a href="qsslcertificate.html#digest">digest</a></b> ( QCryptographicHash::Algorithm <i>algorithm</i> = QCryptographicHash::Md5 ) const</li>
+<li><div class="fn"/>QDateTime <b><a href="qsslcertificate.html#effectiveDate">effectiveDate</a></b> () const</li>
+<li><div class="fn"/>QDateTime <b><a href="qsslcertificate.html#expiryDate">expiryDate</a></b> () const</li>
+<li><div class="fn"/>Qt::HANDLE <b><a href="qsslcertificate.html#handle">handle</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsslcertificate.html#isNull">isNull</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsslcertificate.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcertificate.html#issuerInfo">issuerInfo</a></b> ( SubjectInfo <i>subject</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qsslcertificate.html#issuerInfo-2">issuerInfo</a></b> ( const QByteArray &amp; <i>tag</i> ) const</li>
+<li><div class="fn"/>QSslKey <b><a href="qsslcertificate.html#publicKey">publicKey</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qsslcertificate.html#serialNumber">serialNumber</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qsslcertificate.html#subjectInfo">subjectInfo</a></b> ( SubjectInfo <i>subject</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="qsslcertificate.html#subjectInfo-2">subjectInfo</a></b> ( const QByteArray &amp; <i>tag</i> ) const</li>
+<li><div class="fn"/>QByteArray <b><a href="qsslcertificate.html#toDer">toDer</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qsslcertificate.html#toPem">toPem</a></b> () const</li>
+<li><div class="fn"/>QByteArray <b><a href="qsslcertificate.html#version">version</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qsslcertificate.html#operator-not-eq">operator!=</a></b> ( const QSslCertificate &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>QSslCertificate &amp; <b><a href="qsslcertificate.html#operator-eq">operator=</a></b> ( const QSslCertificate &amp; <i>other</i> )</li>
+<li><div class="fn"/>bool <b><a href="qsslcertificate.html#operator-eq-eq">operator==</a></b> ( const QSslCertificate &amp; <i>other</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QList&lt;QSslCertificate&gt; <b><a href="qsslcertificate.html#fromData">fromData</a></b> ( const QByteArray &amp; <i>data</i>, QSsl::EncodingFormat <i>format</i> = QSsl::Pem )</li>
+<li><div class="fn"/>QList&lt;QSslCertificate&gt; <b><a href="qsslcertificate.html#fromDevice">fromDevice</a></b> ( QIODevice * <i>device</i>, QSsl::EncodingFormat <i>format</i> = QSsl::Pem )</li>
+<li><div class="fn"/>QList&lt;QSslCertificate&gt; <b><a href="qsslcertificate.html#fromPath">fromPath</a></b> ( const QString &amp; <i>path</i>, QSsl::EncodingFormat <i>format</i> = QSsl::Pem, QRegExp::PatternSyntax <i>syntax</i> = QRegExp::FixedString )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QSslCertificate class provides a convenient API for an X509 certificate.</p>
+<p>QSslCertificate stores an X509 certificate, and is commonly used to verify the identity and store information about the local host, a remotely connected peer, or a trusted third party Certificate Authority.</p>
+<p>There are many ways to construct a QSslCertificate. The most common way is to call <a href="qsslsocket.html#peerCertificate">QSslSocket::peerCertificate</a>(), which returns a QSslCertificate object, or <a href="qsslsocket.html#peerCertificateChain">QSslSocket::peerCertificateChain</a>(), which returns a list of them. You can also load certificates from a DER (binary) or PEM (Base64) encoded bundle, typically stored as one or more local files, or in a Qt Resource.</p>
+<p>You can call <a href="qsslcertificate.html#isNull">isNull</a>() to check if your certificate is null. By default, QSslCertificate constructs a null certificate. To check if the certificate is valid, call <a href="qsslcertificate.html#isValid">isValid</a>(). A null certificate is invalid, but an invalid certificate is not necessarily null. If you want to reset all contents in a certificate, call <a href="qsslcertificate.html#clear">clear</a>().</p>
+<p>After loading a certificate, you can find information about the certificate, its subject, and its issuer, by calling one of the many accessor functions, including <a href="qsslcertificate.html#version">version</a>(), <a href="qsslcertificate.html#serialNumber">serialNumber</a>(), <a href="qsslcertificate.html#issuerInfo">issuerInfo</a>() and <a href="qsslcertificate.html#subjectInfo">subjectInfo</a>(). You can call notValidBefore() and notValidAfter() to check when the certificate was issued, and when it expires. The <a href="qsslcertificate.html#publicKey">publicKey</a>() function returns the certificate subject's public key as a <a href="qsslkey.html">QSslKey</a>. You can call <a href="qsslcertificate.html#issuerInfo">issuerInfo</a>() or <a href="qsslcertificate.html#subjectInfo">subjectInfo</a>() to get detailed information about the certificate issuer and its subject.</p>
+<p>Internally, QSslCertificate is stored as an X509 structure. You can access this handle by calling <a href="qsslcertificate.html#handle">handle</a>(), but the results are likely to not be portable.</p>
+<p>See also <a href="qsslsocket.html">QSslSocket</a>, <a href="qsslkey.html">QSslKey</a>, <a href="qsslcipher.html">QSslCipher</a>, and <a href="qsslerror.html">QSslError</a>.</p>
+<hr />
+<h2>Member Type Documentation</h2>
+<h3 class="fn"><a name="SubjectInfo-enum"></a>enum QSslCertificate::SubjectInfo</h3>
+<p>Describes keys that you can pass to <a href="qsslcertificate.html#issuerInfo">QSslCertificate::issuerInfo</a>() or <a href="qsslcertificate.html#subjectInfo">QSslCertificate::subjectInfo</a>() to get information about the certificate issuer or subject.</p>
+<p><table border="1" cellpadding="2" cellspacing="1" width="100%">
+<tr><th width="25%">Constant</th><th width="15%">Value</th><th width="60%">Description</th></tr>
+<tr><td valign="top"><tt>QSslCertificate::Organization</tt></td><td align="center" valign="top"><tt>0</tt></td><td valign="top">&quot;O&quot; The name of the organization.</td></tr>
+<tr><td valign="top"><tt>QSslCertificate::CommonName</tt></td><td align="center" valign="top"><tt>1</tt></td><td valign="top">&quot;CN&quot; The common name; most often this is used to store the host name.</td></tr>
+<tr><td valign="top"><tt>QSslCertificate::LocalityName</tt></td><td align="center" valign="top"><tt>2</tt></td><td valign="top">&quot;L&quot; The locality.</td></tr>
+<tr><td valign="top"><tt>QSslCertificate::OrganizationalUnitName</tt></td><td align="center" valign="top"><tt>3</tt></td><td valign="top">&quot;OU&quot; The organizational unit name.</td></tr>
+<tr><td valign="top"><tt>QSslCertificate::CountryName</tt></td><td align="center" valign="top"><tt>4</tt></td><td valign="top">&quot;C&quot; The country.</td></tr>
+<tr><td valign="top"><tt>QSslCertificate::StateOrProvinceName</tt></td><td align="center" valign="top"><tt>5</tt></td><td valign="top">&quot;ST&quot; The state or province.</td></tr>
+</table></p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QSslCertificate"></a>QSslCertificate::QSslCertificate ( <a href="qiodevice.html">QIODevice</a> * <i>device</i>, <a href="qssl.html#EncodingFormat-enum">QSsl::EncodingFormat</a> <i>format</i> = QSsl::Pem )</h3>
+<p>Constructs a <a href="qsslcertificate.html">QSslCertificate</a> by reading <i>format</i> encoded data from <i>device</i> and using the first certificate found. You can later call <a href="qsslcertificate.html#isNull">isNull</a>() to see if <i>device</i> contained a certificate, and if this certificate was loaded successfully.</p>
+<h3 class="fn"><a name="QSslCertificate-2"></a>QSslCertificate::QSslCertificate ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i> = QByteArray(), <a href="qssl.html#EncodingFormat-enum">QSsl::EncodingFormat</a> <i>format</i> = QSsl::Pem )</h3>
+<p>Constructs a <a href="qsslcertificate.html">QSslCertificate</a> by parsing the <i>format</i> encoded <i>data</i> and using the first available certificate found. You can later call <a href="qsslcertificate.html#isNull">isNull</a>() to see if <i>data</i> contained a certificate, and if this certificate was loaded successfully.</p>
+<h3 class="fn"><a name="QSslCertificate-3"></a>QSslCertificate::QSslCertificate ( const QSslCertificate &amp; <i>other</i> )</h3>
+<p>Constructs an identical copy of <i>other</i>.</p>
+<h3 class="fn"><a name="dtor.QSslCertificate"></a>QSslCertificate::~QSslCertificate ()</h3>
+<p>Destroys the <a href="qsslcertificate.html">QSslCertificate</a>.</p>
+<h3 class="fn"><a name="alternateSubjectNames"></a><a href="qmultimap.html">QMultiMap</a>&lt;<a href="qssl.html#AlternateNameEntryType-enum">QSsl::AlternateNameEntryType</a>, <a href="qstring.html">QString</a>&gt; QSslCertificate::alternateSubjectNames () const</h3>
+<p>Returns the list of alternative subject names for this certificate. The alternate subject names typically contain host names, optionally with wildcards, that are valid for this certificate.</p>
+<p>These names are tested against the connected peer's host name, if either the subject information for <a href="qsslcertificate.html#SubjectInfo-enum">CommonName</a> doesn't define a valid host name, or the subject info name doesn't match the peer's host name.</p>
+<p>See also <a href="qsslcertificate.html#subjectInfo">subjectInfo</a>().</p>
+<h3 class="fn"><a name="clear"></a>void QSslCertificate::clear ()</h3>
+<p>Clears the contents of this certificate, making it a null certificate.</p>
+<p>See also <a href="qsslcertificate.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="digest"></a><a href="qbytearray.html">QByteArray</a> QSslCertificate::digest ( <a href="qcryptographichash.html#Algorithm-enum">QCryptographicHash::Algorithm</a> <i>algorithm</i> = QCryptographicHash::Md5 ) const</h3>
+<p>Returns a cryptographic digest of this certificate. By default, and MD5 digest will be generated, but you can also specify a custom <i>algorithm</i>.</p>
+<h3 class="fn"><a name="effectiveDate"></a><a href="qdatetime.html">QDateTime</a> QSslCertificate::effectiveDate () const</h3>
+<p>Returns the date-time that the certificate becomes valid, or an empty <a href="qdatetime.html">QDateTime</a> if this is a null certificate.</p>
+<p>See also <a href="qsslcertificate.html#expiryDate">expiryDate</a>().</p>
+<h3 class="fn"><a name="expiryDate"></a><a href="qdatetime.html">QDateTime</a> QSslCertificate::expiryDate () const</h3>
+<p>Returns the date-time that the certificate expires, or an empty <a href="qdatetime.html">QDateTime</a> if this is a null certificate.</p>
+<p>See also <a href="qsslcertificate.html#effectiveDate">effectiveDate</a>().</p>
+<h3 class="fn"><a name="fromData"></a><a href="qlist.html">QList</a>&lt;QSslCertificate&gt; QSslCertificate::fromData ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>data</i>, <a href="qssl.html#EncodingFormat-enum">QSsl::EncodingFormat</a> <i>format</i> = QSsl::Pem )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Searches for and parses all certificates in <i>data</i> that are encoded in the specified <i>format</i> and returns them in a list of certificates.</p>
+<p>See also <a href="qsslcertificate.html#fromDevice">fromDevice</a>().</p>
+<h3 class="fn"><a name="fromDevice"></a><a href="qlist.html">QList</a>&lt;QSslCertificate&gt; QSslCertificate::fromDevice ( <a href="qiodevice.html">QIODevice</a> * <i>device</i>, <a href="qssl.html#EncodingFormat-enum">QSsl::EncodingFormat</a> <i>format</i> = QSsl::Pem )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Searches for and parses all certificates in <i>device</i> that are encoded in the specified <i>format</i> and returns them in a list of certificates.</p>
+<p>See also <a href="qsslcertificate.html#fromData">fromData</a>().</p>
+<h3 class="fn"><a name="fromPath"></a><a href="qlist.html">QList</a>&lt;QSslCertificate&gt; QSslCertificate::fromPath ( const <a href="qstring.html">QString</a> &amp; <i>path</i>, <a href="qssl.html#EncodingFormat-enum">QSsl::EncodingFormat</a> <i>format</i> = QSsl::Pem, <a href="qregexp.html#PatternSyntax-enum">QRegExp::PatternSyntax</a> <i>syntax</i> = QRegExp::FixedString )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Searches all files in the <i>path</i> for certificates encoded in the specified <i>format</i> and returns them in a list. <i>must</i> be a file or a pattern matching one or more files, as specified by <i>syntax</i>.</p>
+<p>Example:</p>
+<pre>     foreach (QSslCertificate cert, QSslCertificate::fromPath(&quot;C:/ssl/certificate.*.pem&quot;,
+                                                              QRegExp::Wildcard)) {
+         qDebug() &lt;&lt; cert.issuerInfo(QSslCertificate::Organization);
+     }</pre>
+<p>See also <a href="qsslcertificate.html#fromData">fromData</a>().</p>
+<h3 class="fn"><a name="handle"></a><a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> QSslCertificate::handle () const</h3>
+<p>Returns a pointer to the native certificate handle, if there is one, or a null pointer otherwise.</p>
+<p>You can use this handle, together with the native API, to access extended information about the certificate.</p>
+<p><b>Warning:</b> Use of this function has a high probability of being non-portable, and its return value may vary from platform to platform or change from minor release to minor release.</p>
+<h3 class="fn"><a name="isNull"></a>bool QSslCertificate::isNull () const</h3>
+<p>Returns true if this is a null certificate (i.e&#x2e;, a certificate with no contents); otherwise returns false.</p>
+<p>By default, <a href="qsslcertificate.html">QSslCertificate</a> constructs a null certificate.</p>
+<p>See also <a href="qsslcertificate.html#isValid">isValid</a>() and <a href="qsslcertificate.html#clear">clear</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QSslCertificate::isValid () const</h3>
+<p>Returns true if this certificate is valid; otherwise returns false.</p>
+<p>Note: Currently, this function only checks that the current data-time is within the date-time range during which the certificate is considered valid. No other checks are currently performed.</p>
+<p>See also <a href="qsslcertificate.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="issuerInfo"></a><a href="qstring.html">QString</a> QSslCertificate::issuerInfo ( <a href="qsslcertificate.html#SubjectInfo-enum">SubjectInfo</a> <i>subject</i> ) const</h3>
+<p>Returns the issuer information for the <i>subject</i> from the certificate, or an empty string if there is no information for <i>subject</i> in the certificate.</p>
+<p>See also <a href="qsslcertificate.html#subjectInfo">subjectInfo</a>().</p>
+<h3 class="fn"><a name="issuerInfo-2"></a><a href="qstring.html">QString</a> QSslCertificate::issuerInfo ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>tag</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the issuer information for <i>tag</i> from the certificate, or an empty string if there is no information for <i>tag</i> in the certificate.</p>
+<p>See also <a href="qsslcertificate.html#subjectInfo">subjectInfo</a>().</p>
+<h3 class="fn"><a name="publicKey"></a><a href="qsslkey.html">QSslKey</a> QSslCertificate::publicKey () const</h3>
+<p>Returns the certificate subject's public key.</p>
+<h3 class="fn"><a name="serialNumber"></a><a href="qbytearray.html">QByteArray</a> QSslCertificate::serialNumber () const</h3>
+<p>Returns the certificate's serial number string.</p>
+<h3 class="fn"><a name="subjectInfo"></a><a href="qstring.html">QString</a> QSslCertificate::subjectInfo ( <a href="qsslcertificate.html#SubjectInfo-enum">SubjectInfo</a> <i>subject</i> ) const</h3>
+<p>Returns the information for the <i>subject</i>, or an empty string if there is no information for <i>subject</i> in the certificate.</p>
+<p>See also <a href="qsslcertificate.html#issuerInfo">issuerInfo</a>().</p>
+<h3 class="fn"><a name="subjectInfo-2"></a><a href="qstring.html">QString</a> QSslCertificate::subjectInfo ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>tag</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns the subject information for <i>tag</i>, or an empty string if there is no information for <i>tag</i> in the certificate.</p>
+<p>See also <a href="qsslcertificate.html#issuerInfo">issuerInfo</a>().</p>
+<h3 class="fn"><a name="toDer"></a><a href="qbytearray.html">QByteArray</a> QSslCertificate::toDer () const</h3>
+<p>Returns this certificate converted to a DER (binary) encoded representation.</p>
+<h3 class="fn"><a name="toPem"></a><a href="qbytearray.html">QByteArray</a> QSslCertificate::toPem () const</h3>
+<p>Returns this certificate converted to a PEM (Base64) encoded representation.</p>
+<h3 class="fn"><a name="version"></a><a href="qbytearray.html">QByteArray</a> QSslCertificate::version () const</h3>
+<p>Returns the certificate's version string.</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool QSslCertificate::operator!= ( const QSslCertificate &amp; <i>other</i> ) const</h3>
+<p>Returns true if this certificate is not the same as <i>other</i>; otherwise returns false.</p>
+<h3 class="fn"><a name="operator-eq"></a>QSslCertificate &amp; QSslCertificate::operator= ( const QSslCertificate &amp; <i>other</i> )</h3>
+<p>Copies the contents of <i>other</i> into this certificate, making the two certificates identical.</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool QSslCertificate::operator== ( const QSslCertificate &amp; <i>other</i> ) const</h3>
+<p>Returns true if this certificate is the same as <i>other</i>; otherwise returns false.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

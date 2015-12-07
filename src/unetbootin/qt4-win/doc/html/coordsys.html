@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/coordsys.qdoc -->
+<head>
+  <title>Qt 4.4: The Coordinate System</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">The Coordinate System<br /><span class="subtitle"></span>
+</h1>
+<p>The coordinate system is controlled by the <a href="qpainter.html">QPainter</a> class. Together with the QPaintDevice and <a href="qpaintengine.html">QPaintEngine</a> classes, <a href="qpainter.html">QPainter</a> form the basis of Qt's painting system, Arthur. <a href="qpainter.html">QPainter</a> is used to perform drawing operations, QPaintDevice is an abstraction of a two-dimensional space that can be painted on using a <a href="qpainter.html">QPainter</a>, and <a href="qpaintengine.html">QPaintEngine</a> provides the interface that the painter uses to draw onto different types of devices.</p>
+<p>The QPaintDevice class is the base class of objects that can be painted: Its drawing capabilities are inherited by the <a href="qwidget.html">QWidget</a>, <a href="qpixmap.html">QPixmap</a>, <a href="qpicture.html">QPicture</a>, <a href="qimage.html">QImage</a>, and <a href="qprinter.html">QPrinter</a> classes. The default coordinate system of a paint device has its origin at the top-left corner. The <i>x</i> values increase to the right and the <i>y</i> values increase downwards. The default unit is one pixel on pixel-based devices and one point (1/72 of an inch) on printers.</p>
+<p>The mapping of the logical <a href="qpainter.html">QPainter</a> coordinates to the physical QPaintDevice coordinates are handled by <a href="qpainter.html">QPainter</a>'s transformation matrix, viewport and &quot;window&quot;. The logical and physical coordinate systems coincide by default. <a href="qpainter.html">QPainter</a> also supports coordinate transformations (e.g&#x2e; rotation and scaling).</p>
+<ul><li><a href="#rendering">Rendering</a></li>
+<ul><li><a href="#logical-representation">Logical Representation</a></li>
+<li><a href="#aliased-painting">Aliased Painting</a></li>
+<li><a href="#anti-aliased-painting">Anti-aliased Painting</a></li>
+</ul>
+<li><a href="#transformations">Transformations</a></li>
+<li><a href="#window-viewport-conversion">Window-Viewport Conversion</a></li>
+</ul>
+<a name="rendering"></a>
+<h3>Rendering</h3>
+<a name="logical-representation"></a>
+<h4>Logical Representation</h4>
+<p>The size (width and height) of a graphics primitive always correspond to its mathematical model, ignoring the width of the pen it is rendered with:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/coordinatesystem-rect.png" /></td><td><img src="images/coordinatesystem-line.png" /></td></tr>
+<tr valign="top" class="even"><td><a href="qrect.html">QRect</a>(1, 2, 6, 4)</td><td><a href="qline.html">QLine</a>(2, 7, 6, 1)</td></tr>
+</table></p>
+<a name="aliased-painting"></a>
+<h4>Aliased Painting</h4>
+<p>When drawing, the pixel rendering is controlled by the <a href="qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> render hint.</p>
+<p>The <a href="qpainter.html#RenderHint-enum">RenderHint</a> enum is used to specify flags to <a href="qpainter.html">QPainter</a> that may or may not be respected by any given engine. The <a href="qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> value indicates that the engine should antialias edges of primitives if possible, i.e&#x2e; smoothing the edges by using different color intensities.</p>
+<p>But by default the painter is <i>aliased</i> and other rules apply: When rendering with a one pixel wide pen the pixels will be rendered to the <i>right and below the mathematically defined points</i>. For example:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/coordinatesystem-rect-raster.png" /></td><td><img src="images/coordinatesystem-line-raster.png" /></td></tr>
+<tr valign="top" class="even"><td><pre>     QPainter painter(this);
+
+     painter.setPen(Qt::darkGreen);
+     painter.drawRect(1, 2, 6, 4);</pre>
+</td><td><pre>     QPainter painter(this);
+
+     painter.setPen(Qt::darkGreen);
+     painter.drawLine(2, 7, 6, 1);</pre>
+</td></tr>
+</table></p>
+<p>When rendering with a pen with an even number of pixels, the pixels will be rendered symetrically around the mathematical defined points, while rendering with a pen with an odd number of pixels, the spare pixel will be rendered to the right and below the mathematical point as in the one pixel case. See the <a href="qrectf.html">QRectF</a> diagrams below for concrete examples.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th colspan="3"><a href="qrectf.html">QRectF</a></th></tr></thead>
+<tr valign="top" class="odd"><td><img src="images/qrect-diagram-zero.png" /></td><td><img src="images/qrectf-diagram-one.png" /></td></tr>
+<tr valign="top" class="even"><td>Logical representation</td><td>One pixel wide pen</td></tr>
+<tr valign="top" class="odd"><td><img src="images/qrectf-diagram-two.png" /></td><td><img src="images/qrectf-diagram-three.png" /></td></tr>
+<tr valign="top" class="even"><td>Two pixel wide pen</td><td>Three pixel wide pen</td></tr>
+</table></p>
+<p>Note that for historical reasons the return value of the <a href="qrect.html#right">QRect::right</a>() and <a href="qrect.html#bottom">QRect::bottom</a>() functions deviate from the true bottom-right corner of the rectangle.</p>
+<p><a href="qrect.html">QRect</a>'s <a href="qrect.html#right">right()</a> function returns <a href="qrect.html#left">left()</a> + <a href="qrect.html#width">width()</a> - 1 and the <a href="qrect.html#bottom">bottom()</a> function returns <a href="qrect.html#top">top()</a> + <a href="qrect.html#height">height()</a> - 1. The bottom-right green point in the diagrams shows the return coordinates of these functions.</p>
+<p>We recommend that you simply use <a href="qrectf.html">QRectF</a> instead: The <a href="qrectf.html">QRectF</a> class defines a rectangle in the plane using floating point coordinates for accuracy (<a href="qrect.html">QRect</a> uses integer coordinates), and the <a href="qrectf.html#right">QRectF::right</a>() and <a href="qrectf.html#bottom">QRectF::bottom</a>() functions <i>do</i> return the true bottom-right corner.</p>
+<p>Alternatively, using <a href="qrect.html">QRect</a>, apply <a href="qrect.html#x">x()</a> + <a href="qrect.html#width">width()</a> and <a href="qrect.html#y">y()</a> + <a href="qrect.html#height">height()</a> to find the bottom-right corner, and avoid the <a href="qrect.html#right">right()</a> and <a href="qrect.html#bottom">bottom()</a> functions.</p>
+<a name="anti-aliased-painting"></a>
+<h4>Anti-aliased Painting</h4>
+<p>If you set <a href="qpainter.html">QPainter</a>'s <a href="qpainter.html#RenderHint-enum">anti-aliasing</a> render hint, the pixels will be rendered symetrically on both sides of the mathematically defined points:</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/coordinatesystem-rect-antialias.png" /></td><td><img src="images/coordinatesystem-line-antialias.png" /></td></tr>
+<tr valign="top" class="even"><td><pre>     QPainter painter(this);
+     painter.setRenderHint(
+         QPainter::Antialiasing);
+     painter.setPen(Qt::darkGreen);
+     painter.drawRect(1, 2, 6, 4);</pre>
+</td><td><pre>     QPainter painter(this);
+     painter.setRenderHint(
+         QPainter::Antialiasing);
+     painter.setPen(Qt::darkGreen);
+     painter.drawLine(2, 7, 6, 1);</pre>
+</td></tr>
+</table></p>
+<a name="transformations"></a>
+<h3>Transformations</h3>
+<p>By default, the <a href="qpainter.html">QPainter</a> operates on the associated device's own coordinate system, but it also has complete support for affine coordinate transformations.</p>
+<p>You can scale the coordinate system by a given offset using the <a href="qpainter.html#scale">QPainter::scale</a>() function, you can rotate it clockwise using the <a href="qpainter.html#rotate">QPainter::rotate</a>() function and you can translate it (i.e&#x2e; adding a given offset to the points) using the <a href="qpainter.html#translate">QPainter::translate</a>() function.</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><img src="images/qpainter-clock.png" /></td><td><img src="images/qpainter-rotation.png" /></td><td><img src="images/qpainter-scale.png" /></td><td><img src="images/qpainter-translation.png" /></td></tr>
+<tr valign="top" class="even"><td>nop</td><td><a href="qpainter.html#rotate">rotate()</a></td><td><a href="qpainter.html#scale">scale()</a></td><td><a href="qpainter.html#translate">translate()</a></td></tr>
+</table></p>
+<p>You can also twist the coordinate system around the origin using the <a href="qpainter.html#shear">QPainter::shear</a>() function. See the <a href="demos-affine.html">Affine Transformations</a> demo for a visualization of a sheared coordinate system. All the transformation operations operate on <a href="qpainter.html">QPainter</a>'s transformation matrix that you can retrieve using the <a href="qpainter.html#worldMatrix">QPainter::worldMatrix</a>() function. A matrix transforms a point in the plane to another point.</p>
+<p>If you need the same transformations over and over, you can also use <a href="qmatrix.html">QMatrix</a> objects and the <a href="qpainter.html#worldMatrix">QPainter::worldMatrix</a>() and <a href="qpainter.html#setWorldMatrix">QPainter::setWorldMatrix</a>() functions. You can at any time save the <a href="qpainter.html">QPainter</a>'s transformation matrix by calling the <a href="qpainter.html#save">QPainter::save</a>() function which saves the matrix on an internal stack. The <a href="qpainter.html#restore">QPainter::restore</a>() function pops it back.</p>
+<p>One frequent need for the transformation matrix is when reusing the same drawing code on a variety of paint devices. Without transformations, the results are tightly bound to the resolution of the paint device. Printers have high resolution, e.g&#x2e; 600 dots per inch, whereas screens often have between 72 and 100 dots per inch.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th colspan="2">Analog Clock Example</th></tr></thead>
+<tr valign="top" class="odd"><td><img src="images/coordinatesystem-analogclock.png" /></td><td>The Analog Clock example shows how to draw the contents of a custom widget using <a href="qpainter.html">QPainter</a>'s transformation matrix.<p>Qt's example directory provides a complete walk-through of the example. Here, we will only review the example's <a href="qwidget.html#paintEvent">paintEvent()</a> function to see how we can use the transformation matrix (i.e&#x2e; <a href="qpainter.html">QPainter</a>'s matrix functions) to draw the clock's face.</p>
+<p>We recommend compiling and running this example before you read any further. In particular, try resizing the window to different sizes.</p>
+</td></tr>
+<tr valign="top" class="even"><td colspan="2"><pre> void AnalogClock::paintEvent(QPaintEvent *)
+ {
+     static const QPoint hourHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -40)
+     };
+     static const QPoint minuteHand[3] = {
+         QPoint(7, 8),
+         QPoint(-7, 8),
+         QPoint(0, -70)
+     };
+
+     QColor hourColor(127, 0, 127);
+     QColor minuteColor(0, 127, 127, 191);
+
+     int side = qMin(width(), height());
+     QTime time = QTime::currentTime();
+
+     QPainter painter(this);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.translate(width() / 2, height() / 2);
+     painter.scale(side / 200.0, side / 200.0);</pre>
+<p>First, we set up the painter. We translate the coordinate system so that point (0, 0) is in the widget's center, instead of being at the top-left corner. We also scale the system by <tt>side</tt> / 100, where <tt>side</tt> is either the widget's width or the height, whichever is shortest. We want the clock to be square, even if the device isn't.</p>
+<p>This will give us a 200 x 200 square area, with the origin (0, 0) in the center, that we can draw on. What we draw will show up in the largest possible square that will fit in the widget.</p>
+<p>See also the <a href="#window-viewport-conversion">Window-Viewport Conversion</a> section.</p>
+<pre>     painter.save();
+     painter.rotate(30.0 * ((time.hour() + time.minute() / 60.0)));
+     painter.drawConvexPolygon(hourHand, 3);
+     painter.restore();</pre>
+<p>We draw the clock's hour hand by rotating the coordinate system and calling <a href="qpainter.html#drawConvexPolygon">QPainter::drawConvexPolygon</a>(). Thank's to the rotation, it's drawn pointed in the right direction.</p>
+<p>The polygon is specified as an array of alternating <i>x</i>, <i>y</i> values, stored in the <tt>hourHand</tt> static variable (defined at the beginning of the function), which corresponds to the four points (2, 0), (0, 2), (-2, 0), and (0, -25).</p>
+<p>The calls to <a href="qpainter.html#save">QPainter::save</a>() and <a href="qpainter.html#restore">QPainter::restore</a>() surrounding the code guarantees that the code that follows won't be disturbed by the transformations we've used.</p>
+<pre>     painter.save();
+     painter.rotate(6.0 * (time.minute() + time.second() / 60.0));
+     painter.drawConvexPolygon(minuteHand, 3);
+     painter.restore();</pre>
+<p>We do the same for the clock's minute hand, which is defined by the four points (1, 0), (0, 1), (-1, 0), and (0, -40). These coordinates specify a hand that is thinner and longer than the minute hand.</p>
+<pre>     for (int j = 0; j &lt; 60; ++j) {
+         if ((j % 5) != 0)
+             painter.drawLine(92, 0, 96, 0);
+         painter.rotate(6.0);
+     }</pre>
+<p>Finally, we draw the clock face, which consists of twelve short lines at 30-degree intervals. At the end of that, the painter is rotated in a way which isn't very useful, but we're done with painting so that doesn't matter.</p>
+</td></tr>
+</table></p>
+<p>For a demonstation of Qt's ability to perform affine transformations on painting operations, see the <a href="demos-affine.html">Affine Transformations</a> demo which allows the user to experiment with the transformation operations. See also the <a href="painting-transformations.html">Transformations</a> example which shows how transformations influence the way that <a href="qpainter.html">QPainter</a> renders graphics primitives. In particular, it shows how the order of transformations affects the result.</p>
+<p>For more information about the transformation matrix, see the <a href="qmatrix.html">QMatrix</a> documentation.</p>
+<a name="window-viewport-conversion"></a>
+<h3>Window-Viewport Conversion</h3>
+<p>When drawing with <a href="qpainter.html">QPainter</a>, we specify points using logical coordinates which then are converted into the physical coordinates of the paint device.</p>
+<p>The mapping of the logical coordinates to the physical coordinates are handled by <a href="qpainter.html">QPainter</a>'s world transformation <a href="qpainter.html#worldMatrix">worldMatrix()</a> (described in the <a href="#transformations">Transformations</a> section), and <a href="qpainter.html">QPainter</a>'s <a href="qpainter.html#viewport">viewport()</a> and <a href="qpainter.html#window">window()</a>. The viewport represents the physical coordinates specifying an arbitrary rectangle. The &quot;window&quot; describes the same rectangle in logical coordinates. By default the logical and physical coordinate systems coincide, and are equivalent to the paint device's rectangle.</p>
+<p>Using window-viewport conversion you can make the logical coordinate system fit your preferences. The mechanism can also be used to make the drawing code independent of the paint device. You can, for example, make the logical coordinates extend from (-50, -50) to (50, 50) with (0, 0) in the center by calling the <a href="qpainter.html#setWindow">QPainter::setWindow</a>() function:</p>
+<pre>         QPainter painter(this);
+         painter.setWindow(QRect(-50, -50, 100, 100));</pre>
+<p>Now, the logical coordinates (-50,-50) correspond to the paint device's physical coordinates (0, 0). Independent of the paint device, your painting code will always operate on the specified logical coordinates.</p>
+<p>By setting the &quot;window&quot; or viewport rectangle, you perform a linear transformation of the coordinates. Note that each corner of the &quot;window&quot; maps to the corresponding corner of the viewport, and vice versa. For that reason it normally is a good idea to let the viewport and &quot;window&quot; maintain the same aspect ratio to prevent deformation:</p>
+<pre>         int side = qMin(width(), height())
+         int x = (width() - side / 2);
+         int y = (height() - side / 2);
+
+         painter.setViewport(x, y, side, side);</pre>
+<p>If we make the logical coordinate system a square, we should also make the viewport a square using the <a href="qpainter.html#setViewport">QPainter::setViewport</a>() function. In the example above we make it equivalent to the largest square that fit into the paint device's rectangle. By taking the paint device's size into consideration when setting the window or viewport, it is possible to keep the drawing code independent of the paint device.</p>
+<p>Note that the window-viewport conversion is only a linear transformation, i.e&#x2e; it does not perform clipping. This means that if you paint outside the currently set &quot;window&quot;, your painting is still transformed to the viewport using the same linear algebraic approach.</p>
+<p align="center"><img src="images/coordinatesystem-transformations.png" /></p><p>The viewport, &quot;window&quot; and transformation matrix determine how logical <a href="qpainter.html">QPainter</a> coordinates map to the paint device's physical coordinates. By default the world transformation matrix is the identity matrix, and the &quot;window&quot; and viewport settings are equivalent to the paint device's settings, i.e&#x2e; the world, &quot;window&quot; and device coordinate systems are equivalent, but as we have seen, the systems can be manipulated using transformation operations and window-viewport conversion. The illustration above describes the process.</p>
+<p>See also <a href="widgets-analogclock.html">Analog Clock Example</a> and <a href="painting-transformations.html">Transformations Example</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

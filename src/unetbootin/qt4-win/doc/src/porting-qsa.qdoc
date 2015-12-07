@@ -1,0 +1,477 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \title Moving from QSA to Qt Script
+    \page porting-qsa.html
+    \ingroup porting
+
+    The purpose of this document is to map the differences between Qt
+    Script for Applications (QSA) and Qt Script, the ECMAScript compatible
+    engine supplied with Qt 4.3. This document is not supposed to be a
+    complete function by function porting guide, but will cover the most
+    obvious aspects.
+
+    First of all it is important to realize that Qt Script is only an
+    interpreter, it does not provide an editor, completion or script project
+    management, like QSA does. Qt Script however does provides almost full
+    compliance with the ECMAScript standard and performs significantly
+    better than the script engine provided by QSA. 
+
+    \tableofcontents
+
+    \section1 The Scripting Language
+
+    The scripting language used in QSA, from here on referred to as QSA,
+    was derived from ECMAScript 3.0 and 4.0 and is a hybrid of these
+    standards. Most of the run-time logic, such as classes and scoping
+    rules, is based on the ECMAScript 4.0 proposal, while the library
+    implementation is based on the ECMAScript 3.0 standard.
+    Qt Script on the other hand is solely based on the ECMAScript 3.0
+    standard. Though the languages look identical at first glance,
+    there are a few differences that we'll cover in the sections below.
+
+
+    \section2 Classes vs. Objects and Properties
+
+    QSA implements classes and inheritance much in a familiar way to users
+    of other object oriented languages, like C++ and Java. However, the
+    ECMAScript 3.0 standard defines that everything is an object, and objects
+    can have named properties. For instance to create an point object with
+    the properties x and y one would write the following Qt Script code:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 0
+
+    The object \c point in this case is constructed as a plain object and
+    we assign two properties, \c x and \c y, to it with the values 12 and
+    35. The \c point object is assigned to the "Global Object" as the
+    named property \c{point}. The global object can be considered the
+    global namespace of the script engine. Similarly, global functions are
+    named properties of the global object; for example:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 1
+
+    An equivalent construction that illustrates that the function is a
+    property of the global object is the following assignment:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 2
+
+    Since functions are objects, they can be assigned to objects as
+    properties, becoming member functions:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 3
+
+    In the code above, we see the first subtle difference between
+    QSA and Qt Script. In QSA one would write the point class like this:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 4
+
+    where in the \c manhattanLength() function we access \c x and \c y
+    directly because, when the function is called, the \c this object is
+    implicitly part of the current scope, as in C++. In Qt Script,
+    however, this is not the case, and we need to explicitly access
+    the \c x and \c y values via \c{this}.
+
+    All the code above runs with QSA except the assignment of a function
+    to \c{point.manhattanLength}, which we repeat here for clarity:
+    
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 5
+
+    This is because, in QSA, the value of \c this is decided based on
+    the location of the declaration of the function it is used in. In the
+    code above, the function is assigned to an object, but it is declared
+    in the global scope, hence there will be no valid \c this value.
+    In Qt Script, the value of \c this is decided at run-time,
+    hence you could have assigned the \c manhattanLength() function to any
+    object that had \c x and \c y values.
+
+
+    \section2 Constructors
+
+    In the code above, we use a rather awkward method for constructing
+    the objects, by first instantiating them, then manually
+    assigning properties to them. In QSA, the proper way to solve this
+    is to implement a constructor in the class:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 6
+
+    The equivalent in Qt Script is to create a constructor function:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 7
+
+    As we can see, the constructor is just a normal function. What is
+    special with is how we call it, namely prefixed with the \c new
+    keyword. This will create a new object and call the \c Car()
+    function with the newly created object as the \c this pointer.
+    So, in a sense, it is equivalent to:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 8
+
+    This is similar to the manhattenLength() example above. Again, the
+    main difference between QSA and Qt Script is that one has to
+    explicitly use the keyword \c this to access the members and that
+    instead of declaring the variable, \c regNumber, we just extend the
+    \c this object with the property.
+
+
+    \section2 Member Functions and Prototypes
+
+    As we saw above, one way of creating member functions of a Qt Script
+    object is to assign the member function to the object as a property
+    and use the \c this object inside the functions. So, if we add a
+    \c toString function to the \c Car class
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 9
+
+    one could write this in Qt Script as:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 10
+
+    In QSA, the member functions were part of the class declaration,
+    and were therefore shared between all instances of a given class.
+    In Qt Script, each instance has a instance member for each function.
+    This means that more memory is used when multiple instances are used.
+    Qt Script uses prototypes to remedy this. 
+
+    The basic prototype-based inheritance mechanism works as follows.
+    Each Qt Script object has an internal link to another object, its
+    prototype. When a property is looked up in an object, and the object
+    itself does not have the property, the interpreter searches for the
+    property in the prototype object instead; if the prototype has the
+    property then that property is returned. If the prototype object does
+    not have the property, the interpreter searches for the property in
+    the prototype of the prototype object, and so on.
+
+    This chain of objects constitutes a prototype chain. The chain of
+    prototype objects is followed until the property is found or the end
+    of the chain is reached.
+
+    To make the \c toString() function part of the prototype, we write
+    code like this:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 11
+
+    Here, we made the \c toString() function part of the prototype so
+    that, when we call \c{car.toString()} it will be resolved via the
+    internal prototype object of the car object. Note, however, that the
+    \c this object is still the original object that the function was
+    called on, namely \c{car}.
+
+
+    \section2 Inheritance
+
+    Now that we've seen how to use prototypes to create a "class" members
+    in Qt Script, let's see how we can use prototypes to create
+    polymorphism. In QSA you would write
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 12
+
+    With Qt Script, we acheive the same effect by creating a prototype
+    chain. The default prototype of an object is a plain \c Object
+    without any special members, but it is possible to replace this
+    object with another prototype object.
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 13
+
+    In the code above, we have a constructor, \c{GasolineCar}, which
+    calls the "base class" implementation of the constructor to
+    initialize the \c this object with the property \c{regNumber},
+    based on the values passed in the constructor. The interesting line
+    in this case is the line after the constructor where we change the
+    default prototype for \c GasolineCar to be an instance of type
+    \c{Car}. This means that all members available in a \c Car object
+    are now available in all \c GasolineCar objects. In the last line,
+    we replace the \c toString() function in the prototype with our own,
+    thus overriding the \c toString() for all instances of
+    \c{GasolineCar}.
+
+
+    \section2 Static Members
+
+    QSA allowed users to declare static members in classes, and these
+    could be accessed both through instances of the class and through
+    the class itself. For example, the following variable is accessed
+    through the \c Car class:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 14
+
+    The equivalent in Qt Script is to assign variables that should appear
+    as static members as properties of the constructor function. For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 15
+
+    Note that in QSA, static member variables were also accessible in
+    instances of the given class. In Qt Script, with the approach
+    illustrated above, the variable is a member of the constructor
+    object only, and thus only accessible through \c{Car.globalCount}.
+
+
+    \section1 The Built-in Functions and Library
+
+    The built-in functions in QSA are based on those defined in the
+    ECMAScript 3.0 standard, the same standard used for Qt Script, but
+    QSA adds some extensions to this, specifically for the \c String
+    and \c RegExp types. QSA also lacked some functions from the
+    standard, most notably the \c Date type. Below we list all the
+    differences. All changes made to Qt Script are to increase
+    compliance with ECMAScript 3.0.
+
+    \table
+    \header \o QSA Function \o Notes about Equivalent Qt Script Functions
+    \row \o eval()
+    \o The eval function in QSA opened a new scope for code being
+    executed in the eval function, so locally declared variables were not
+    accessible outside. In Qt Script, the eval() function shares the
+    current scope, making locally declared variables accessible outside
+    the eval() call.
+
+    \row \o debug()
+    \o This function is not available in Qt Script. Use print() instead.
+
+    \row \o connect()
+    \o QSA had closures, meaning that a member function
+    reference implicitly contained its \c this object. Qt Script does not
+    support this. See the Qt Script documentation for details on using the
+    connect function.
+
+    \row \o String.arg()
+    \o This function is not available in Qt Script. Use replace() or concat() instead.
+
+    \row \o String.argDec()
+    \o This function is not available in Qt Script. Use replace() or concat() instead.
+
+    \row \o String.argInt()
+    \o This function is not available in Qt Script. Use replace() or concat() instead.
+
+    \row \o String.argStr()
+    \o This function is not available in Qt Script. Use replace() or concat() instead.
+
+    \row \o String.endsWith()
+    \o This function is not available in Qt Script. Use lastIndexOf() instead.
+
+    \row \o String.find()
+    \o This function is not available in Qt Script. Use indexOf() instead.
+
+    \row \o String.findRev()
+    \o This function is not available in Qt Script. Use lastIndexOf() and length instead.
+
+    \row \o String.isEmpty()
+    \o This function is not available in Qt Script. Use length == 0 instead.
+
+    \row \o String.left()
+    \o This function is not available in Qt Script. Use substring() instead.
+
+    \row \o String.lower()
+    \o This function is not available in Qt Script. Use toLowerCase() instead.
+
+    \row \o String.mid()
+    \o This function is not available in Qt Script. Use substring() instead.
+
+    \row \o String.right()
+    \o This function is not available in Qt Script. Use substring() instead.
+
+    \row \o String.searchRev()
+    \o This function is not available in Qt Script. Use search() / match() instead.
+
+    \row \o String.startsWith()
+    \o This function is not available in Qt Script. Use indexOf() instead.
+
+    \row \o String.upper()
+    \o This function is not available in Qt Script. Use toUpperCase() instead.
+
+    \row \o RegExp.valid
+    \o This property is not available in Qt Script because it is not
+       required; a \c SyntaxError exception is thrown for bad \c RegExp objects.
+
+    \row \o RegExp.empty
+    \o This property is not available in Qt Script. Use \c{toString().length == 0} instead.
+
+    \row \o RegExp.matchedLength
+    \o This property is not available in Qt Script. RegExp.exec() returns an
+       array whose size is the matched length.
+
+    \row \o RegExp.capturedTexts
+    \o This property is not available in Qt Script. RegExp.exec() returns an
+       array of captured texts.
+
+    \row \o RegExp.search()
+    \o This function is not available in Qt Script. Use RegExp.exec() instead.
+
+    \row \o RegExp.searchRev()
+    \o This function is not available in Qt Script. Use RegExp.exec() or
+       String.search()/match() instead.
+
+    \row \o RegExp.exactMatch()
+    \o This function is not available in Qt Script. Use RegExp.exec() instead.
+
+    \row \o RegExp.pos()
+    \o This function is not available in Qt Script. Use String.match() instead.
+
+    \row \o RegExp.cap()
+    \o This function is not available in Qt Script. RegExp.exec() returns an
+       array of captured texts.
+    \endtable
+
+    QSA also defined some internal Qt API which is not present in Qt
+    Script. The types provided by QSA which are not provided by Qt Script are:
+
+    \list
+    \o Rect
+    \o Point
+    \o Size
+    \o Color
+    \o Palette
+    \o ColorGroup
+    \o Font
+    \o Pixmap
+    \o ByteArray
+    \endlist
+
+
+    \section1 The C++ API of QSA vs Qt Script
+
+    QSA is more than just a scripting engine. It provides project
+    management, an editor with completion and a minimalistic IDE to edit
+    scriptable projects. Qt Script on the other hand is just a scripting
+    engine. This means that equivalents to the classes \c QSEditor,
+    \c QSScript, \c QSProject and \c QSWorkbench do not exist in Qt Script.
+    QSA also provides some extension APIs through the \c QSUtilFactory and
+    \c QSInputDialogFactory. There is also no equivalent to these classes
+    in the Qt Script API.
+
+
+    \section2 Making QObjects Accessible from Scripts
+
+    There are two different ways of making \l{QObject}s accessible from
+    scripts in QSA. The first method is via the
+    \c QSInterpreter::addTransientObject() and \c QSProject::addObject()
+    functions. In this case objects are added to the global namespace of
+    the interpreter using their object names as the names of the
+    variables.
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 16
+
+    The code above adds the button to the global namespace under the name
+    "button". One obvious limitation here is that there is potential for
+    either unnamed \l{QObject}s or objects whose names conflict. Qt Script
+    provides a more flexible way of adding QObjects to the scripting
+    environment.
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 17
+
+    In the code above we create a QPushButton and wrap it in a script
+    value using the function, QScriptEngine::newQObject(). This gives us
+    a script value that we put into the global object using the name
+    "button". The concept of objects and properties discussed above is
+    quite visible here in the public C++ API as well. We have no
+    dependency on the object's name and we can also resolve name conflicts
+    more gracefully. Here, we operate directly on QScriptValue objects.
+    This is the actual object that is being passed around inside
+    the script engine, so we actually have low-level access to the
+    internal script data structures, far beyond that which is possible
+    in QSA. Properties, signals and slots of the QObject are accessible
+    to the scripter in Qt Script, just like in QSA.
+
+    The other way to expose \l{QObject}s in QSA was to create a
+    \c QSObjectFactory that made it possible to instantiate QObjects from
+    scripts.
+
+    Below is listed some code from the filter example in the QSA
+    package.
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 18
+
+    The equivalent in Qt Script is written in much the same way as
+    constructors are written in scripts. We register a callback C++
+    function under the name "ImageSource" in the global namespace and
+    return the QObject from this function:
+
+    \snippet doc/src/snippets/code/doc.src.porting-qsa.qdoc 19
+
+    In the Qt Script case we use the same approach that we use to expose
+    a QObject, namely via QScriptEngine::newQObject(). This function also
+    has the benefit that it is possible to specify if the QObject should
+    expose properties and slots of its base class. It is also possible to
+    specify custom ownership rules.
+
+    The reader might question why we don't add the constructor function
+    directly into the namespace, but create a meta-object script value for
+    it in addition. The plain function would certainly be good enough,
+    but by creating a QMetaObject based constructor we get the enums on
+    QPushButton for free in the QPushButton function object. Exposing
+    enums in QSA is rather painful in comparison.
+
+    If we want to add more "static" data to the QPushButton type in Qt
+    Script, we're free to add properties, similar to how we did for
+    the script. It is also possible to add custom functions to a Qt Script
+    QPushButton instance by setting more properties on it, such as making
+    the \l{QPushButton::}{setText()} C++ function available. It is also
+    possible to acheive this by installing a custom prototype, and be
+    memory efficient, as discussed in the script example above.
+
+
+    \section2 Accessing Non-QObjects
+
+    In QSA, it was possible to expose non-QObjects to QSA by wrapping them
+    in a QObject and using either \c QSWrapperFactory or \c QSObjectFactory
+    to expose them. Deciding when to use each of these classes could be
+    confusing, as one was used for script based construction and the other
+    for wrapping function parameters and return values, but in essence they
+    did exactly the same thing.
+
+    In Qt Script, providing access to QObjects and non-QObjects is done in
+    the same way as shown above, by creating a constructor function, and
+    by adding properties or a custom prototype to the constructed object.
+
+
+    \section2 Data Mapping
+
+    QSA supported a hardcoded set of type mappings which covered most
+    of the QVariant types, QObjects and primitives. For more complex type
+    signatures, such as the template-based tool classes, it had rather
+    limited support. Qt Script is significantly better at type mapping
+    and will convert lists of template types into arrays of the
+    appropriate types, given that all the types are declared to the
+    meta-type system.
+*/

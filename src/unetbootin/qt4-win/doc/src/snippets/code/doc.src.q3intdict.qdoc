@@ -1,0 +1,53 @@
+//! [0]
+    Q3IntDict<QLineEdit> fields; // long int keys, QLineEdit* values
+    for ( int i = 0; i < 3; i++ )
+	fields.insert( i, new QLineEdit( this ) );
+
+    fields[0]->setText( "Homer" );
+    fields[1]->setText( "Simpson" );
+    fields[2]->setText( "45" );
+
+    Q3IntDictIterator<QLineEdit> it( fields );
+    for ( ; it.current(); ++it )
+	cout << it.currentKey() << ": " << it.current()->text() << endl;
+
+    for ( int i = 0; i < 3; i++ )
+	cout << fields[i]->text() << " "; // Prints "Homer Simpson 45"
+    cout << endl;
+
+    fields.remove( 1 ); // Does not delete the line edit
+    for ( int i = 0; i < 3; i++ )
+	if ( fields[i] )
+	    cout << fields[i]->text() << " "; // Prints "Homer 45"
+//! [0]
+
+
+//! [1]
+	Q3IntDict<char> dict;
+	//	...
+	if ( dict.find(key) )
+	    dict.remove( key );
+	dict.insert( key, item );
+//! [1]
+
+
+//! [2]
+    Q3IntDict<QLineEdit> fields;
+    for ( int i = 0; i < 3; i++ )
+	fields.insert( i, new QLineEdit( this ) );
+
+    fields[0]->setText( "Homer" );
+    fields[1]->setText( "Simpson" );
+    fields[2]->setText( "45" );
+
+    Q3IntDictIterator<QLineEdit> it( fields ); 
+    for ( ; it.current(); ++it )
+	cout << it.currentKey() << ": " << it.current()->text() << endl;
+
+    // Output (random order):
+    //	0: Homer
+    //	1: Simpson
+    //	2: 45
+//! [2]
+
+

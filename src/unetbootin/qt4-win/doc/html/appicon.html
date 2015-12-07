@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/appicon.qdoc -->
+<head>
+  <title>Qt 4.4: Setting the Application Icon</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Setting the Application Icon<br /><span class="subtitle"></span>
+</h1>
+<p>The application icon, typically displayed in the top-left corner of an application's top-level windows, is set by calling the <a href="qwidget.html#windowIcon-prop">QWidget::setWindowIcon</a>() method on top-level widgets.</p>
+<p>In order to change the icon of the executable application file itself, as it is presented on the desktop (i.e&#x2e;, prior to application execution), it is necessary to employ another, platform-dependent technique.</p>
+<ul><li><a href="#setting-the-application-icon-on-windows">Setting the Application Icon on Windows</a></li>
+<li><a href="#setting-the-application-icon-on-mac-os-x">Setting the Application Icon on Mac OS X</a></li>
+<li><a href="#setting-the-application-icon-on-common-linux-desktops">Setting the Application Icon on Common Linux Desktops</a></li>
+<ul><li><a href="#k-desktop-environment-kde">K Desktop Environment (KDE)</a></li>
+<li><a href="#gnome">GNOME</a></li>
+</ul>
+</ul>
+<a name="setting-the-application-icon-on-windows"></a>
+<h2>Setting the Application Icon on Windows</h2>
+<p>First, create an ICO format bitmap file that contains the icon image. This can be done with e.g&#x2e; Microsoft Visual C++: Select <b>File|New</b>, then select the <b>File</b> tab in the dialog that appears, and choose <b>Icon</b>. (Note that you do not need to load your application into Visual C++; here we are only using the icon editor.)</p>
+<p>Store the ICO file in your application's source code directory, for example, with the name <tt>myappico.ico</tt>. Then, create a text file called, say, <tt>myapp.rc</tt> in which you put a single line of text:</p>
+<pre>         IDI_ICON1               ICON    DISCARDABLE     &quot;myappico.ico&quot;</pre>
+<p>Finally, assuming you are using <tt>qmake</tt> to generate your makefiles, add this line to your <tt>myapp.pro</tt> file:</p>
+<pre>         RC_FILE = myapp.rc</pre>
+<p>Regenerate your makefile and your application. The <tt>.exe</tt> file will now be represented with your icon in Explorer.</p>
+<p>If you do not use <tt>qmake</tt>, the necessary steps are: first, run the <tt>rc</tt> program on the <tt>.rc</tt> file, then link your application with the resulting <tt>.res</tt> file.</p>
+<a name="setting-the-application-icon-on-mac-os-x"></a>
+<h2>Setting the Application Icon on Mac OS X</h2>
+<p>The application icon, typically displayed in the application dock area, is set by calling <a href="qwidget.html#windowIcon-prop">QWidget::setWindowIcon</a>() on a top-level widget. It is possible that the program could appear in the application dock area before the function call, in which case a default icon will appear during the bouncing animation.</p>
+<p>To ensure that the correct icon appears, both when the application is being launched, and in the Finder, it is necessary to employ a platform-dependent technique.</p>
+<p>Although many programs can create icon files (<tt>.icns</tt>), the recommended approach is to use the <i>Icon Composer</i> program supplied by Apple (in the <tt>Developer/Application</tt> folder). <i>Icon Composer</i> allows you to import several different sized icons (for use in different contexts) as well as the masks that go with them. Save the set of icons to a file in your project directory.</p>
+<p>If you are using qmake to generate your makefiles, you only need to add a single line to your <tt>.pro</tt> project file. For example, if the name of your icon file is <tt>myapp.icns</tt>, and your project file is <tt>myapp.pro</tt>, add this line to <tt>myapp.pro</tt>:</p>
+<pre>         ICON = myapp.icns</pre>
+<p>This will ensure that <tt>qmake</tt> puts your icons in the proper place and creates an <tt>Info.plist</tt> entry for the icon.</p>
+<p>If you do not use <tt>qmake</tt>, you must do the following manually:</p>
+<ol type="1">
+<li>Create an <tt>Info.plist</tt> file for your application (using the <tt>PropertyListEditor</tt>, found in <tt>Developer/Applications</tt>).</li>
+<li>Associate your <tt>.icns</tt> record with the <tt>CFBundleIconFile</tt> record in the <tt>Info.plist</tt> file (again, using the <tt>PropertyListEditor</tt>).</li>
+<li>Copy the <tt>Info.plist</tt> file into your application bundle's <tt>Contents</tt> directory.</li>
+<li>Copy the <tt>.icns</tt> file into your application bundle's <tt>Contents/Resources</tt> directory.</li>
+</ol>
+<a name="setting-the-application-icon-on-common-linux-desktops"></a>
+<h2>Setting the Application Icon on Common Linux Desktops</h2>
+<p>In this section we briefly describe the issues involved in providing icons for applications for two common Linux desktop environments: <a href="http://www.kde.org/">KDE</a> and <a href="http://www.gnome.org/">GNOME</a>. The core technology used to describe application icons is the same for both desktops, and may also apply to others, but there are details which are specific to each. The main source of information on the standards used by these Linux desktops is <a href="http://www.freedesktop.org/">freedesktop.org</a>. For information on other Linux desktops please refer to the documentation for the desktops you are interested in.</p>
+<p>Often, users do not use executable files directly, but instead launch applications by clicking icons on the desktop. These icons are representations of &quot;desktop entry files&quot; that contain a description of the application that includes information about its icon. Both desktop environments are able to retrieve the information in these files, and they use it to generate shortcuts to applications on the desktop, in the start menu, and on the panel.</p>
+<p>More information about desktop entry files can be found in the <a href="http://www.freedesktop.org/Standards/desktop-entry-spec">Desktop Entry Specification</a>.</p>
+<p>Although desktop entry files can usefully encapsulate the application's details, we still need to store the icons in the conventional location for each desktop environment. A number of locations for icons are given in the <a href="http://www.freedesktop.org/Standards/icon-theme-spec">Icon Theme Specification</a>.</p>
+<p>Although the path used to locate icons depends on the desktop in use, and on its configuration, the directory structure beneath each of these should follow the same pattern: subdirectories are arranged by theme, icon size, and application type. Generally, application icons are added to the hicolor theme, so a square application icon 32 pixels in size would be stored in the <tt>hicolor/32x32/apps</tt> directory beneath the icon path.</p>
+<a name="k-desktop-environment-kde"></a>
+<h3>K Desktop Environment (KDE)</h3>
+<p>Application icons can be installed for use by all users, or on a per-user basis. A user currently logged into their KDE desktop can discover these locations by using <a href="http://developer.kde.org/documentation/other/kde-config.html">kde-config</a>, for example, by typing the following in a terminal window:</p>
+<pre>         kde-config --path icon</pre>
+<p>Typically, the list of colon-separated paths printed to stdout includes the user-specific icon path and the system-wide path. Beneath these directories, it should be possible to locate and install icons according to the conventions described in the <a href="http://www.freedesktop.org/Standards/icon-theme-spec">Icon Theme Specification</a>.</p>
+<p>If you are developing exclusively for KDE, you may wish to take advantage of the <a href="http://developer.kde.org/documentation/other/makefile_am_howto.html">KDE build system</a> to configure your application. This ensures that your icons are installed in the appropriate locations for KDE.</p>
+<p>The KDE developer website is at <a href="http://developer.kde.org/">http://developer.kde.org/</a>.</p>
+<a name="gnome"></a>
+<h3>GNOME</h3>
+<p>Application icons are stored within a standard system-wide directory containing architecture-independent files. This location can be determined by using <tt>gnome-config</tt>, for example by typing the following in a terminal window:</p>
+<pre>         gnome-config --datadir</pre>
+<p>The path printed on stdout refers to a location that should contain a directory called <tt>pixmaps</tt>; the directory structure within the <tt>pixmaps</tt> directory is described in the <a href="http://www.freedesktop.org/Standards/icon-theme-spec">Icon Theme Specification</a>.</p>
+<p>If you are developing exclusively for GNOME, you may wish to use the standard set of <a href="http://developer.gnome.org/tools/build.html">GNU Build Tools</a>, also described in the relevant section of the <a href="http://developer.gnome.org/doc/GGAD/ggad.html">GTK+/Gnome Application Development book</a>. This ensures that your icons are installed in the appropriate locations for GNOME.</p>
+<p>The GNOME developer website is at <a href="http://developer.gnome.org/">http://developer.gnome.org/</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

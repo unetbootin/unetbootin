@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: robot.cpp Example File (graphicsview/dragdroprobot/robot.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">robot.cpp Example File<br /><span class="small-subtitle">graphicsview/dragdroprobot/robot.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+
+ #include &quot;robot.h&quot;
+
+ RobotPart::RobotPart(QGraphicsItem *parent)
+     : QGraphicsItem(parent), color(Qt::lightGray), dragOver(false)
+ {
+     setAcceptDrops(true);
+ }
+
+ void RobotPart::dragEnterEvent(QGraphicsSceneDragDropEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasColor()
+         || (qgraphicsitem_cast&lt;RobotHead *&gt;(this) &amp;&amp; event-&gt;mimeData()-&gt;hasImage())) {
+         event-&gt;setAccepted(true);
+         dragOver = true;
+         update();
+     } else {
+         event-&gt;setAccepted(false);
+     }
+ }
+
+ void RobotPart::dragLeaveEvent(QGraphicsSceneDragDropEvent *event)
+ {
+     Q_UNUSED(event);
+     dragOver = false;
+     update();
+ }
+
+ void RobotPart::dropEvent(QGraphicsSceneDragDropEvent *event)
+ {
+     dragOver = false;
+     if (event-&gt;mimeData()-&gt;hasColor())
+         color = qVariantValue&lt;QColor&gt;(event-&gt;mimeData()-&gt;colorData());
+     else if (event-&gt;mimeData()-&gt;hasImage())
+         pixmap = qVariantValue&lt;QPixmap&gt;(event-&gt;mimeData()-&gt;imageData());
+     update();
+ }
+
+ RobotHead::RobotHead(QGraphicsItem *parent)
+     : RobotPart(parent)
+ {
+ }
+
+ QRectF RobotHead::boundingRect() const
+ {
+     return QRectF(-15, -50, 30, 50);
+ }
+
+ void RobotHead::paint(QPainter *painter,
+            const QStyleOptionGraphicsItem *option, QWidget *widget)
+ {
+     Q_UNUSED(option);
+     Q_UNUSED(widget);
+     if (pixmap.isNull()) {
+         painter-&gt;setBrush(dragOver ? color.light(130) : color);
+         painter-&gt;drawRoundedRect(-10, -30, 20, 30, 25, 25, Qt::RelativeSize);
+         painter-&gt;setBrush(Qt::white);
+         painter-&gt;drawEllipse(-7, -3 - 20, 7, 7);
+         painter-&gt;drawEllipse(0, -3 - 20, 7, 7);
+         painter-&gt;setBrush(Qt::black);
+         painter-&gt;drawEllipse(-5, -1 - 20, 2, 2);
+         painter-&gt;drawEllipse(2, -1 - 20, 2, 2);
+         painter-&gt;setPen(QPen(Qt::black, 2));
+         painter-&gt;setBrush(Qt::NoBrush);
+         painter-&gt;drawArc(-6, -2 - 20, 12, 15, 190 * 16, 160 * 16);
+     } else {
+         painter-&gt;scale(.2272, .2824);
+         painter-&gt;drawPixmap(QPointF(-15 * 4.4, -50 * 3.54), pixmap);
+     }
+ }
+
+ int RobotHead::type() const
+ {
+     return Type;
+ }
+
+ RobotTorso::RobotTorso(QGraphicsItem *parent)
+     : RobotPart(parent)
+ {
+ }
+
+ QRectF RobotTorso::boundingRect() const
+ {
+     return QRectF(-30, -20, 60, 60);
+ }
+
+ void RobotTorso::paint(QPainter *painter,
+            const QStyleOptionGraphicsItem *option, QWidget *widget)
+ {
+     Q_UNUSED(option);
+     Q_UNUSED(widget);
+
+     painter-&gt;setBrush(dragOver ? color.light(130) : color);
+     painter-&gt;drawRoundedRect(-20, -20, 40, 60, 25, 25, Qt::RelativeSize);
+     painter-&gt;drawEllipse(-25, -20, 20, 20);
+     painter-&gt;drawEllipse(5, -20, 20, 20);
+     painter-&gt;drawEllipse(-20, 22, 20, 20);
+     painter-&gt;drawEllipse(0, 22, 20, 20);
+ }
+
+ RobotLimb::RobotLimb(QGraphicsItem *parent)
+     : RobotPart(parent)
+ {
+ }
+
+ QRectF RobotLimb::boundingRect() const
+ {
+     return QRectF(-5, -5, 40, 10);
+ }
+
+ void RobotLimb::paint(QPainter *painter,
+            const QStyleOptionGraphicsItem *option, QWidget *widget)
+ {
+     Q_UNUSED(option);
+     Q_UNUSED(widget);
+
+     painter-&gt;setBrush(dragOver ? color.light(130) : color);
+     painter-&gt;drawRoundedRect(boundingRect(), 50, 50, Qt::RelativeSize);
+     painter-&gt;drawEllipse(-5, -5, 10, 10);
+ }
+
+ Robot::Robot()
+ {
+     QGraphicsItem *torsoItem = new RobotTorso(this);
+     QGraphicsItem *headItem = new RobotHead(torsoItem);
+     QGraphicsItem *upperLeftArmItem = new RobotLimb(torsoItem);
+     QGraphicsItem *lowerLeftArmItem = new RobotLimb(upperLeftArmItem);
+     QGraphicsItem *upperRightArmItem = new RobotLimb(torsoItem);
+     QGraphicsItem *lowerRightArmItem = new RobotLimb(upperRightArmItem);
+     QGraphicsItem *upperRightLegItem = new RobotLimb(torsoItem);
+     QGraphicsItem *lowerRightLegItem = new RobotLimb(upperRightLegItem);
+     QGraphicsItem *upperLeftLegItem = new RobotLimb(torsoItem);
+     QGraphicsItem *lowerLeftLegItem = new RobotLimb(upperLeftLegItem);
+
+     headItem-&gt;setPos(0, -18);
+     upperLeftArmItem-&gt;setPos(-15, -10);
+     lowerLeftArmItem-&gt;setPos(30, 0);
+     upperRightArmItem-&gt;setPos(15, -10);
+     lowerRightArmItem-&gt;setPos(30, 0);
+     upperRightLegItem-&gt;setPos(10, 32);
+     lowerRightLegItem-&gt;setPos(30, 0);
+     upperLeftLegItem-&gt;setPos(-10, 32);
+     lowerLeftLegItem-&gt;setPos(30, 0);
+
+     timeLine = new QTimeLine;
+
+     QGraphicsItemAnimation *headAnimation = new QGraphicsItemAnimation;
+     headAnimation-&gt;setItem(headItem);
+     headAnimation-&gt;setTimeLine(timeLine);
+     headAnimation-&gt;setRotationAt(0, 20);
+     headAnimation-&gt;setRotationAt(1, -20);
+     headAnimation-&gt;setScaleAt(1, 1.1, 1.1);
+
+     QGraphicsItemAnimation *upperLeftArmAnimation = new QGraphicsItemAnimation;
+     upperLeftArmAnimation-&gt;setItem(upperLeftArmItem);
+     upperLeftArmAnimation-&gt;setTimeLine(timeLine);
+     upperLeftArmAnimation-&gt;setRotationAt(0, 190);
+     upperLeftArmAnimation-&gt;setRotationAt(1, 180);
+
+     QGraphicsItemAnimation *lowerLeftArmAnimation = new QGraphicsItemAnimation;
+     lowerLeftArmAnimation-&gt;setItem(lowerLeftArmItem);
+     lowerLeftArmAnimation-&gt;setTimeLine(timeLine);
+     lowerLeftArmAnimation-&gt;setRotationAt(0, 50);
+     lowerLeftArmAnimation-&gt;setRotationAt(1, 10);
+
+     QGraphicsItemAnimation *upperRightArmAnimation = new QGraphicsItemAnimation;
+     upperRightArmAnimation-&gt;setItem(upperRightArmItem);
+     upperRightArmAnimation-&gt;setTimeLine(timeLine);
+     upperRightArmAnimation-&gt;setRotationAt(0, 300);
+     upperRightArmAnimation-&gt;setRotationAt(1, 310);
+
+     QGraphicsItemAnimation *lowerRightArmAnimation = new QGraphicsItemAnimation;
+     lowerRightArmAnimation-&gt;setItem(lowerRightArmItem);
+     lowerRightArmAnimation-&gt;setTimeLine(timeLine);
+     lowerRightArmAnimation-&gt;setRotationAt(0, 0);
+     lowerRightArmAnimation-&gt;setRotationAt(1, -70);
+
+     QGraphicsItemAnimation *upperLeftLegAnimation = new QGraphicsItemAnimation;
+     upperLeftLegAnimation-&gt;setItem(upperLeftLegItem);
+     upperLeftLegAnimation-&gt;setTimeLine(timeLine);
+     upperLeftLegAnimation-&gt;setRotationAt(0, 150);
+     upperLeftLegAnimation-&gt;setRotationAt(1, 80);
+
+     QGraphicsItemAnimation *lowerLeftLegAnimation = new QGraphicsItemAnimation;
+     lowerLeftLegAnimation-&gt;setItem(lowerLeftLegItem);
+     lowerLeftLegAnimation-&gt;setTimeLine(timeLine);
+     lowerLeftLegAnimation-&gt;setRotationAt(0, 70);
+     lowerLeftLegAnimation-&gt;setRotationAt(1, 10);
+
+     QGraphicsItemAnimation *upperRightLegAnimation = new QGraphicsItemAnimation;
+     upperRightLegAnimation-&gt;setItem(upperRightLegItem);
+     upperRightLegAnimation-&gt;setTimeLine(timeLine);
+     upperRightLegAnimation-&gt;setRotationAt(0, 40);
+     upperRightLegAnimation-&gt;setRotationAt(1, 120);
+
+     QGraphicsItemAnimation *lowerRightLegAnimation = new QGraphicsItemAnimation;
+     lowerRightLegAnimation-&gt;setItem(lowerRightLegItem);
+     lowerRightLegAnimation-&gt;setTimeLine(timeLine);
+     lowerRightLegAnimation-&gt;setRotationAt(0, 10);
+     lowerRightLegAnimation-&gt;setRotationAt(1, 50);
+
+     QGraphicsItemAnimation *torsoAnimation = new QGraphicsItemAnimation;
+     torsoAnimation-&gt;setItem(torsoItem);
+     torsoAnimation-&gt;setTimeLine(timeLine);
+     torsoAnimation-&gt;setRotationAt(0, 5);
+     torsoAnimation-&gt;setRotationAt(1, -20);
+
+     timeLine-&gt;setUpdateInterval(1000 / 25);
+     timeLine-&gt;setCurveShape(QTimeLine::SineCurve);
+     timeLine-&gt;setLoopCount(0);
+     timeLine-&gt;setDuration(2000);
+     timeLine-&gt;start();
+ }
+
+ Robot::~Robot()
+ {
+     delete timeLine;
+ }
+
+ QRectF Robot::boundingRect() const
+ {
+     return QRectF();
+ }
+
+ void Robot::paint(QPainter *painter,
+                   const QStyleOptionGraphicsItem *option, QWidget *widget)
+ {
+     Q_UNUSED(painter);
+     Q_UNUSED(option);
+     Q_UNUSED(widget);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

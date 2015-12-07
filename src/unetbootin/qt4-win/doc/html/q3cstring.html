@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/tools/q3cstring.cpp -->
+<head>
+  <title>Qt 4.4: Q3CString Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3CString Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3CString class provides an abstraction of the classic C zero-terminated char array (char *). <a href="#details">More...</a></p>
+<pre> #include &lt;Q3CString&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qcstring">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qbytearray.html">QByteArray</a>.</p>
+<p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="q3cstring-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString">Q3CString</a></b> ()</li>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString-2">Q3CString</a></b> ( int <i>size</i> )</li>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString-3">Q3CString</a></b> ( const Q3CString &amp; <i>s</i> )</li>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString-4">Q3CString</a></b> ( const QByteArray &amp; <i>ba</i> )</li>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString-5">Q3CString</a></b> ( const char * <i>str</i> )</li>
+<li><div class="fn"/><b><a href="q3cstring.html#Q3CString-6">Q3CString</a></b> ( const char * <i>str</i>, uint <i>maxsize</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#append">append</a></b> ( const char * <i>str</i> )</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#copy">copy</a></b> () const</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#leftJustify">leftJustify</a></b> ( uint <i>width</i>, char <i>fill</i> = ' ', bool <i>truncate</i> = false ) const</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#lower">lower</a></b> () const</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#rightJustify">rightJustify</a></b> ( uint <i>width</i>, char <i>fill</i> = ' ', bool <i>truncate</i> = false ) const</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#setExpand">setExpand</a></b> ( uint <i>index</i>, char <i>c</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum">setNum</a></b> ( double <i>n</i>, char <i>f</i> = 'g', int <i>prec</i> = 6 )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-2">setNum</a></b> ( long <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-3">setNum</a></b> ( ulong <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-4">setNum</a></b> ( int <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-5">setNum</a></b> ( uint <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-6">setNum</a></b> ( short <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-7">setNum</a></b> ( ushort <i>n</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setNum-8">setNum</a></b> ( float <i>n</i>, char <i>f</i> = 'g', int <i>prec</i> = 6 )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#setStr">setStr</a></b> ( const char * <i>str</i> )</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#simplifyWhiteSpace">simplifyWhiteSpace</a></b> () const</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#sprintf">sprintf</a></b> ( const char * <i>format</i>, ... )</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#stripWhiteSpace">stripWhiteSpace</a></b> () const</li>
+<li><div class="fn"/>double <b><a href="q3cstring.html#toDouble">toDouble</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>float <b><a href="q3cstring.html#toFloat">toFloat</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>int <b><a href="q3cstring.html#toInt">toInt</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>long <b><a href="q3cstring.html#toLong">toLong</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>short <b><a href="q3cstring.html#toShort">toShort</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>uint <b><a href="q3cstring.html#toUInt">toUInt</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>ulong <b><a href="q3cstring.html#toULong">toULong</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>ushort <b><a href="q3cstring.html#toUShort">toUShort</a></b> ( bool * <i>ok</i> = 0 ) const</li>
+<li><div class="fn"/>Q3CString <b><a href="q3cstring.html#upper">upper</a></b> () const</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#operator-eq">operator=</a></b> ( const Q3CString &amp; <i>s</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#operator-eq-2">operator=</a></b> ( const QByteArray &amp; <i>ba</i> )</li>
+<li><div class="fn"/>Q3CString &amp; <b><a href="q3cstring.html#operator-eq-3">operator=</a></b> ( const char * <i>str</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>116 public functions inherited from <a href="qbytearray.html#public-functions">QByteArray</a></li>
+</ul>
+<a name="related-non-members"></a>
+<h3>Related Non-Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-not-eq-43">operator!=</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-not-eq-44">operator!=</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-not-eq-35">operator!=</a></b> ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const Q3CString <b><a href="q3cstring.html#operator-2b-36">operator+</a></b> ( char <i>c</i>, const Q3CString &amp; <i>s</i> )</li>
+<li><div class="fn"/>const Q3CString <b><a href="q3cstring.html#operator-2b-23">operator+</a></b> ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const Q3CString <b><a href="q3cstring.html#operator-2b-33">operator+</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>const Q3CString <b><a href="q3cstring.html#operator-2b-34">operator+</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>const Q3CString <b><a href="q3cstring.html#operator-2b-35">operator+</a></b> ( const Q3CString &amp; <i>s</i>, char <i>c</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-lt-12">operator&lt;</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-lt-15">operator&lt;</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="q3cstring.html#operator-lt-lt-130">operator&lt;&lt;</a></b> ( QDataStream &amp; <i>s</i>, const Q3CString &amp; <i>str</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-lt-eq-10">operator&lt;=</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-lt-eq-13">operator&lt;=</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-eq-eq-52">operator==</a></b> ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-eq-eq-64">operator==</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-eq-eq-65">operator==</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-gt-10">operator&gt;</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-gt-13">operator&gt;</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-gt-eq-10">operator&gt;=</a></b> ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</li>
+<li><div class="fn"/>bool <b><a href="q3cstring.html#operator-gt-eq-13">operator&gt;=</a></b> ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</li>
+<li><div class="fn"/>QDataStream &amp; <b><a href="q3cstring.html#operator-gt-gt-78">operator&gt;&gt;</a></b> ( QDataStream &amp; <i>s</i>, Q3CString &amp; <i>str</i> )</li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>9 static public members inherited from <a href="qbytearray.html#static-public-members">QByteArray</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3CString class provides an abstraction of the classic C zero-terminated char array (char *).</p>
+<p>Q3CString tries to behave like a more convenient <tt>const char *</tt>. The price of doing this is that some algorithms will perform badly. For example, <a href="q3cstring.html#append">append</a>() is O(<a href="qbytearray.html#length">length</a>()) since it scans for a null terminator. Although you might use Q3CString for text that is never exposed to the user, for most purposes, and especially for user-visible text, you should use <a href="qstring.html">QString</a>. <a href="qstring.html">QString</a> provides implicit sharing, Unicode and other internationalization support, and is well optimized.</p>
+<p>Note that for the Q3CString methods that take a <tt>const char *</tt> parameter the <tt>const char *</tt> must either be 0 (null) or not-null and '\0' (NUL byte) terminated; otherwise the results are undefined.</p>
+<p>A Q3CString that has not been assigned to anything is <i>null</i>, i.e&#x2e; both the length and the data pointer is 0. A Q3CString that references the empty string (&quot;&quot;, a single '\0' char) is <i>empty</i>. Both null and empty Q3CStrings are legal parameters to the methods. Assigning <tt>const char *</tt> 0 to Q3CString produces a null Q3CString.</p>
+<p>The <a href="qbytearray.html#length">length</a>() function returns the length of the string; <a href="qbytearray.html#resize">resize</a>() resizes the string and <a href="qbytearray.html#truncate">truncate</a>() truncates the string. A string can be filled with a character using <a href="qbytearray.html#fill">fill</a>(). Strings can be left or right padded with characters using <a href="q3cstring.html#leftJustify">leftJustify</a>() and <a href="q3cstring.html#rightJustify">rightJustify</a>(). Characters, strings and regular expressions can be searched for using <a href="qbytearray-qt3.html#find">find</a>() and <a href="qbytearray-qt3.html#findRev">findRev</a>(), and counted using <a href="qbytearray.html#contains">contains</a>().</p>
+<p>Strings and characters can be inserted with insert() and appended with <a href="q3cstring.html#append">append</a>(). A string can be prepended with prepend(). Characters can be removed from the string with remove() and replaced with replace().</p>
+<p>Portions of a string can be extracted using left(), right() and mid(). Whitespace can be removed using <a href="q3cstring.html#stripWhiteSpace">stripWhiteSpace</a>() and <a href="q3cstring.html#simplifyWhiteSpace">simplifyWhiteSpace</a>(). Strings can be converted to uppercase or lowercase with <a href="q3cstring.html#upper">upper</a>() and <a href="q3cstring.html#lower">lower</a>() respectively.</p>
+<p>Strings that contain numbers can be converted to numbers with <a href="q3cstring.html#toShort">toShort</a>(), <a href="q3cstring.html#toInt">toInt</a>(), <a href="q3cstring.html#toLong">toLong</a>(), <a href="q3cstring.html#toULong">toULong</a>(), <a href="q3cstring.html#toFloat">toFloat</a>() and <a href="q3cstring.html#toDouble">toDouble</a>(). Numbers can be converted to strings with <a href="q3cstring.html#setNum">setNum</a>().</p>
+<p>Many operators are overloaded to work with Q3CStrings. Q3CString also supports some more obscure functions, e.g&#x2e; <a href="q3cstring.html#sprintf">sprintf</a>(), <a href="q3cstring.html#setStr">setStr</a>() and <a href="q3cstring.html#setExpand">setExpand</a>().</p>
+<p>Note on Character Comparisons</p>
+<p>In Q3CString the notion of uppercase and lowercase and of which character is greater than or less than another character is locale dependent. This affects functions which support a case insensitive option or which compare or lowercase or uppercase their arguments. Case insensitive operations and comparisons will be accurate if both strings contain only ASCII characters. (If <tt>$LC_CTYPE</tt> is set, most Unix systems do &quot;the right thing&quot;.) Functions that this affects include <a href="qbytearray.html#contains">contains</a>(), <a href="qbytearray-qt3.html#find">find</a>(), <a href="qbytearray-qt3.html#findRev">findRev</a>(), <a href="qbytearray.html#operator-lt">operator&lt;</a>(), <a href="qbytearray.html#operator-lt-eq">operator&lt;=</a>(), <a href="qbytearray.html#operator-gt">operator&gt;</a>(), <a href="qbytearray.html#operator-gt-eq">operator&gt;=</a>(), <a href="q3cstring.html#lower">lower</a>() and <a href="q3cstring.html#upper">upper</a>().</p>
+<p>This issue does not apply to <a href="qstring.html">QString</a>s since they represent characters using Unicode.</p>
+<p>Performance note: The Q3CString methods for <a href="qregexp.html">QRegExp</a> searching are implemented by converting the Q3CString to a <a href="qstring.html">QString</a> and performing the search on that. This implies a deep copy of the Q3CString data. If you are going to perform many <a href="qregexp.html">QRegExp</a> searches on a large Q3CString, you will get better performance by converting the Q3CString to a <a href="qstring.html">QString</a> yourself, and then searching in the <a href="qstring.html">QString</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3CString"></a>Q3CString::Q3CString ()</h3>
+<p>Constructs a null string.</p>
+<p>See also <a href="qbytearray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="Q3CString-2"></a>Q3CString::Q3CString ( int <i>size</i> )</h3>
+<p>Constructs a string with room for <i>size</i> characters, including the '\0'-terminator. Makes a null string if <i>size</i> == 0.</p>
+<p>If <i>size</i> &gt; 0, then the first and last characters in the string are initialized to '\0'. All other characters are uninitialized.</p>
+<p>See also <a href="qbytearray.html#resize">resize</a>() and <a href="qbytearray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="Q3CString-3"></a>Q3CString::Q3CString ( const Q3CString &amp; <i>s</i> )</h3>
+<p>Constructs a shallow copy <i>s</i>.</p>
+<h3 class="fn"><a name="Q3CString-4"></a>Q3CString::Q3CString ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>ba</i> )</h3>
+<p>Constructs a copy of <i>ba</i>.</p>
+<h3 class="fn"><a name="Q3CString-5"></a>Q3CString::Q3CString ( const char * <i>str</i> )</h3>
+<p>Constructs a string that is a deep copy of <i>str</i>.</p>
+<p>If <i>str</i> is 0 a null string is created.</p>
+<p>See also <a href="qbytearray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="Q3CString-6"></a>Q3CString::Q3CString ( const char * <i>str</i>, <a href="qtglobal.html#uint-typedef">uint</a> <i>maxsize</i> )</h3>
+<p>Constructs a string that is a deep copy of <i>str</i>. The copy will be at most <i>maxsize</i> bytes long including the '\0'-terminator.</p>
+<p>Example:</p>
+<pre>     Q3CString str(&quot;helloworld&quot;, 6); // assigns &quot;hello&quot; to str</pre>
+<p>If <i>str</i> contains a 0 byte within the first <i>maxsize</i> bytes, the resulting <a href="q3cstring.html">Q3CString</a> will be terminated by this 0. If <i>str</i> is 0 a null string is created.</p>
+<p>See also <a href="qbytearray.html#isNull">isNull</a>().</p>
+<h3 class="fn"><a name="append"></a>Q3CString &amp; Q3CString::append ( const char * <i>str</i> )</h3>
+<p>Appends string <i>str</i> to the string and returns a reference to the string. Equivalent to operator+=().</p>
+<h3 class="fn"><a name="copy"></a>Q3CString Q3CString::copy () const</h3>
+<p>Returns a deep copy of this string.</p>
+<h3 class="fn"><a name="leftJustify"></a>Q3CString Q3CString::leftJustify ( <a href="qtglobal.html#uint-typedef">uint</a> <i>width</i>, char <i>fill</i> = ' ', bool <i>truncate</i> = false ) const</h3>
+<p>Returns a string of length <i>width</i> (plus one for the terminating '\0') that contains this string padded with the <i>fill</i> character.</p>
+<p>If the length of the string exceeds <i>width</i> and <i>truncate</i> is false (the default), then the returned string is a copy of the string. If the length of the string exceeds <i>width</i> and <i>truncate</i> is true, then the returned string is a left(<i>width</i>).</p>
+<p>Example:</p>
+<pre>     Q3CString s(&quot;apple&quot;);
+     Q3CString t = s.leftJustify(8, '.');  // t == &quot;apple...&quot;</pre>
+<p>See also <a href="q3cstring.html#rightJustify">rightJustify</a>().</p>
+<h3 class="fn"><a name="lower"></a>Q3CString Q3CString::lower () const</h3>
+<p>Use <a href="qbytearray.html#toLower">QByteArray::toLower</a>() instead.</p>
+<h3 class="fn"><a name="rightJustify"></a>Q3CString Q3CString::rightJustify ( <a href="qtglobal.html#uint-typedef">uint</a> <i>width</i>, char <i>fill</i> = ' ', bool <i>truncate</i> = false ) const</h3>
+<p>Returns a string of length <i>width</i> (plus one for the terminating '\0') that contains zero or more of the <i>fill</i> character followed by this string.</p>
+<p>If the length of the string exceeds <i>width</i> and <i>truncate</i> is false (the default), then the returned string is a copy of the string. If the length of the string exceeds <i>width</i> and <i>truncate</i> is true, then the returned string is a left(<i>width</i>).</p>
+<p>Example:</p>
+<pre>     Q3CString s(&quot;pie&quot;);
+     Q3CString t = s.rightJustify(8, '.');  // t == &quot;.....pie&quot;</pre>
+<p>See also <a href="q3cstring.html#leftJustify">leftJustify</a>().</p>
+<h3 class="fn"><a name="setExpand"></a>bool Q3CString::setExpand ( <a href="qtglobal.html#uint-typedef">uint</a> <i>index</i>, char <i>c</i> )</h3>
+<p>Sets the character at position <i>index</i> to <i>c</i> and expands the string if necessary, padding with spaces.</p>
+<p>Returns false if <i>index</i> was out of range and the string could not be expanded; otherwise returns true.</p>
+<h3 class="fn"><a name="setNum"></a>Q3CString &amp; Q3CString::setNum ( double <i>n</i>, char <i>f</i> = 'g', int <i>prec</i> = 6 )</h3>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<p>The format of the string representation is specified by the format character <i>f</i>, and the precision (number of digits after the decimal point) is specified with <i>prec</i>.</p>
+<p>The valid formats for <i>f</i> are 'e', 'E', 'f', 'g' and 'G'. The formats are the same as for <a href="q3cstring.html#sprintf">sprintf</a>(); they are explained in <a href="qstring.html#arg">QString::arg</a>().</p>
+<h3 class="fn"><a name="setNum-2"></a>Q3CString &amp; Q3CString::setNum ( long <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-3"></a>Q3CString &amp; Q3CString::setNum ( <a href="qtglobal.html#ulong-typedef">ulong</a> <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-4"></a>Q3CString &amp; Q3CString::setNum ( int <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-5"></a>Q3CString &amp; Q3CString::setNum ( <a href="qtglobal.html#uint-typedef">uint</a> <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-6"></a>Q3CString &amp; Q3CString::setNum ( short <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-7"></a>Q3CString &amp; Q3CString::setNum ( <a href="qtglobal.html#ushort-typedef">ushort</a> <i>n</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the string to the string representation of the number <i>n</i> and returns a reference to the string.</p>
+<h3 class="fn"><a name="setNum-8"></a>Q3CString &amp; Q3CString::setNum ( float <i>n</i>, char <i>f</i> = 'g', int <i>prec</i> = 6 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<h3 class="fn"><a name="setStr"></a>Q3CString &amp; Q3CString::setStr ( const char * <i>str</i> )</h3>
+<p>Makes a deep copy of <i>str</i>. Returns a reference to the string.</p>
+<h3 class="fn"><a name="simplifyWhiteSpace"></a>Q3CString Q3CString::simplifyWhiteSpace () const</h3>
+<p>Use <a href="qbytearray.html#simplified">QByteArray::simplified</a>() instead.</p>
+<h3 class="fn"><a name="sprintf"></a>Q3CString &amp; Q3CString::sprintf ( const char * <i>format</i>, ... )</h3>
+<p>Implemented as a call to the native vsprintf() (see the manual for your C library).</p>
+<p>If the string is shorter than 256 characters, this sprintf() calls resize(256) to decrease the chance of memory corruption. The string is resized back to its actual length before sprintf() returns.</p>
+<p>Example:</p>
+<pre>     Q3CString s;
+     s.sprintf(&quot;%d - %s&quot;, 1, &quot;first&quot;);                // result &lt; 256 chars
+
+     Q3CString big(25000);                        // very long string
+     big.sprintf(&quot;%d - %s&quot;, 2, longString);        // result &lt; 25000 chars</pre>
+<p><b>Warning:</b> All vsprintf() implementations will write past the end of the target string (*this) if the <i>format</i> specification and arguments happen to be longer than the target string, and some will also fail if the target string is longer than some arbitrary implementation limit.</p>
+<p>Giving user-supplied arguments to sprintf() is risky: Sooner or later someone will paste a huge line into your application.</p>
+<h3 class="fn"><a name="stripWhiteSpace"></a>Q3CString Q3CString::stripWhiteSpace () const</h3>
+<p>Use <a href="qbytearray.html#trimmed">QByteArray::trimmed</a>() instead.</p>
+<h3 class="fn"><a name="toDouble"></a>double Q3CString::toDouble ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to a <tt>double</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toFloat"></a>float Q3CString::toFloat ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to a <tt>float</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toInt"></a>int Q3CString::toInt ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to a <tt>int</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toLong"></a>long Q3CString::toLong ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to a <tt>long</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toShort"></a>short Q3CString::toShort ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to a <tt>short</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, is out of range, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toUInt"></a><a href="qtglobal.html#uint-typedef">uint</a> Q3CString::toUInt ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to an <tt>unsigned int</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toULong"></a><a href="qtglobal.html#ulong-typedef">ulong</a> Q3CString::toULong ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to an <tt>unsigned long</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="toUShort"></a><a href="qtglobal.html#ushort-typedef">ushort</a> Q3CString::toUShort ( bool * <i>ok</i> = 0 ) const</h3>
+<p>Returns the string converted to an <tt>unsigned short</tt> value.</p>
+<p>If <i>ok</i> is not 0: *<i>ok</i> is set to false if the string is not a number, is out of range, or if it has trailing garbage; otherwise *<i>ok</i> is set to true.</p>
+<h3 class="fn"><a name="upper"></a>Q3CString Q3CString::upper () const</h3>
+<p>Use <a href="qbytearray.html#toUpper">QByteArray::toUpper</a>() instead.</p>
+<h3 class="fn"><a name="operator-eq"></a>Q3CString &amp; Q3CString::operator= ( const Q3CString &amp; <i>s</i> )</h3>
+<p>Assigns a shallow copy of <i>s</i> to this string and returns a reference to this string.</p>
+<h3 class="fn"><a name="operator-eq-2"></a>Q3CString &amp; Q3CString::operator= ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>ba</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns byte array <i>ba</i> to this <a href="q3cstring.html">Q3CString</a>.</p>
+<h3 class="fn"><a name="operator-eq-3"></a>Q3CString &amp; Q3CString::operator= ( const char * <i>str</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Assigns a deep copy of <i>str</i> to this string and returns a reference to this string.</p>
+<p>If <i>str</i> is 0 a null string is created.</p>
+<p>See also <a href="qbytearray.html#isNull">isNull</a>().</p>
+<hr />
+<h2>Related Non-Members</h2>
+<h3 class="fn"><a name="operator-not-eq-43"></a>bool operator!= ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are different; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) != 0.</p>
+<h3 class="fn"><a name="operator-not-eq-44"></a>bool operator!= ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are different; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) != 0.</p>
+<h3 class="fn"><a name="operator-not-eq-35"></a>bool operator!= ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are different; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) != 0.</p>
+<h3 class="fn"><a name="operator-2b-36"></a>const Q3CString operator+ ( char <i>c</i>, const Q3CString &amp; <i>s</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string which consists of the concatenation of <i>c</i> and <i>s</i>.</p>
+<h3 class="fn"><a name="operator-2b-23"></a>const Q3CString operator+ ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string which consists of the concatenation of <i>s1</i> and <i>s2</i>.</p>
+<h3 class="fn"><a name="operator-2b-33"></a>const Q3CString operator+ ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string which consists of the concatenation of <i>s1</i> and <i>s2</i>.</p>
+<h3 class="fn"><a name="operator-2b-34"></a>const Q3CString operator+ ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string which consists of the concatenation of <i>s1</i> and <i>s2</i>.</p>
+<h3 class="fn"><a name="operator-2b-35"></a>const Q3CString operator+ ( const Q3CString &amp; <i>s</i>, char <i>c</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns a string which consists of the concatenation of <i>s</i> and <i>c</i>.</p>
+<h3 class="fn"><a name="operator-lt-12"></a>bool operator&lt; ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is less than <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &lt; 0.</p>
+<h3 class="fn"><a name="operator-lt-15"></a>bool operator&lt; ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is less than <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &lt; 0.</p>
+<h3 class="fn"><a name="operator-lt-lt-130"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&lt;&lt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, const Q3CString &amp; <i>str</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Writes string <i>str</i> to the stream <i>s</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<h3 class="fn"><a name="operator-lt-eq-10"></a>bool operator&lt;= ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is less than or equal to <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &lt;= 0.</p>
+<h3 class="fn"><a name="operator-lt-eq-13"></a>bool operator&lt;= ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is less than or equal to <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &lt;= 0.</p>
+<h3 class="fn"><a name="operator-eq-eq-52"></a>bool operator== ( const Q3CString &amp; <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are equal; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) == 0.</p>
+<h3 class="fn"><a name="operator-eq-eq-64"></a>bool operator== ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are equal; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) == 0.</p>
+<h3 class="fn"><a name="operator-eq-eq-65"></a>bool operator== ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> and <i>s2</i> are equal; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) == 0.</p>
+<h3 class="fn"><a name="operator-gt-10"></a>bool operator&gt; ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is greater than <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &gt; 0.</p>
+<h3 class="fn"><a name="operator-gt-13"></a>bool operator&gt; ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is greater than <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &gt; 0.</p>
+<h3 class="fn"><a name="operator-gt-eq-10"></a>bool operator&gt;= ( const Q3CString &amp; <i>s1</i>, const char * <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is greater than or equal to <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &gt;= 0.</p>
+<h3 class="fn"><a name="operator-gt-eq-13"></a>bool operator&gt;= ( const char * <i>s1</i>, const Q3CString &amp; <i>s2</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>s1</i> is greater than or equal to <i>s2</i>; otherwise returns false.</p>
+<p>Equivalent to qstrcmp(<i>s1</i>, <i>s2</i>) &gt;= 0.</p>
+<h3 class="fn"><a name="operator-gt-gt-78"></a><a href="qdatastream.html">QDataStream</a> &amp; operator&gt;&gt; ( <a href="qdatastream.html">QDataStream</a> &amp; <i>s</i>, Q3CString &amp; <i>str</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads a string into <i>str</i> from the stream <i>s</i>.</p>
+<p>See also <a href="datastreamformat.html">Format of the QDataStream operators</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

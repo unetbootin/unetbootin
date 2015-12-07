@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtestlib.qdoc -->
+<head>
+  <title>Qt 4.4: Chapter 4: Replaying GUI Events</title>
+  <link rel="prev" href="qtestlib-tutorial3.html" />
+  <link rel="contents" href="qtestlib-tutorial.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtestlib-tutorial3.html">Chapter 3</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+</p>
+<h1 class="title">Chapter 4: Replaying GUI Events<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="qtestlib-tutorial4-testgui-cpp.html">qtestlib/tutorial4/testgui.cpp</a></li>
+<li><a href="qtestlib-tutorial4-tutorial4-pro.html">qtestlib/tutorial4/tutorial4.pro</a></li>
+</ul>
+<p>In this final chapter, we will show how to simulate a GUI event, and how to store a series of GUI events as well as replay them on a widget.</p>
+<p>The approach to storing a series of events and replay them, is quite similar to the approach explained in <a href="qtestlib-tutorial2.html">chapter 2</a>; all you need is to add a data function to your test class:</p>
+<pre> class TestGui: public QObject
+ {
+     Q_OBJECT
+
+ private slots:
+     void testGui_data();
+     void testGui();
+ };</pre>
+<a name="writing-the-data-function"></a>
+<h2>Writing the Data Function</h2>
+<p>As before, a test function's associated data function carries the same name, appended by <tt>_data</tt>.</p>
+<pre> void TestGui::testGui_data()
+ {
+     QTest::addColumn&lt;QTestEventList&gt;(&quot;events&quot;);
+     QTest::addColumn&lt;QString&gt;(&quot;expected&quot;);
+
+     QTestEventList list1;
+     list1.addKeyClick('a');
+     QTest::newRow(&quot;char&quot;) &lt;&lt; list1 &lt;&lt; &quot;a&quot;;
+
+     QTestEventList list2;
+     list2.addKeyClick('a');
+     list2.addKeyClick(Qt::Key_Backspace);
+     QTest::newRow(&quot;there and back again&quot;) &lt;&lt; list2 &lt;&lt; &quot;&quot;;
+ }</pre>
+<p>First, we define the elements of the table using the <a href="qtest.html#addColumn">QTest::addColumn</a>() function: A list of GUI events, and the expected result of applying the list of events on a <a href="qwidget.html">QWidget</a>. Note that the type of the first element is <a href="qtesteventlist.html">QTestEventList</a>.</p>
+<p>A <a href="qtesteventlist.html">QTestEventList</a> can be populated with GUI events that can be stored as test data for later usage, or be replayed on any <a href="qwidget.html">QWidget</a>.</p>
+<p>In our current data function, we create two <a href="qtesteventlist.html">QTestEventList</a>s. The first list consists of a single click to the 'a' key. We add the event to the list using the <a href="qtesteventlist.html#addKeyClick">QTestEventList::addKeyClick</a>() function. Then we use the <a href="qtest.html#newRow">QTest::newRow</a>() function to give the data set a name, and stream the event list and the expected result into the table.</p>
+<p>The second list consists of two key clicks: an 'a' with a following 'backspace'. Again we use the <a href="qtesteventlist.html#addKeyClick">QTestEventList::addKeyClick</a>() to add the events to the list, and <a href="qtest.html#newRow">QTest::newRow</a>() to put the event list and the expected result into the table with an associated name.</p>
+<a name="rewriting-the-test-function"></a>
+<h2>Rewriting the Test Function</h2>
+<p>Our test can now be rewritten:</p>
+<pre> void TestGui::testGui()
+ {
+     QFETCH(QTestEventList, events);
+     QFETCH(QString, expected);
+
+     QLineEdit lineEdit;
+
+     events.simulate(&amp;lineEdit);
+
+     QCOMPARE(lineEdit.text(), expected);
+ }</pre>
+<p>The TestGui::testGui() function will be executed two times, once for each entry in the test data that we created in the associated TestGui::testGui_data() function.</p>
+<p>First, we fetch the two elements of the data set using the <a href="qtest.html#QFETCH">QFETCH</a>() macro. <a href="qtest.html#QFETCH">QFETCH</a>() takes two arguments: The data type of the element and the element name. Then we create a <a href="qlineedit.html">QLineEdit</a>, and apply the list of events on that widget using the <a href="qtesteventlist.html#simulate">QTestEventList::simulate</a>() function.</p>
+<p>Finally, we use the <a href="qtest.html#QCOMPARE">QCOMPARE</a>() macro to check if the line edit's text is as expected.</p>
+<p>As before, to make our test case a stand-alone executable, the following two lines are needed:</p>
+<pre> QTEST_MAIN(TestGui)
+ #include &quot;testgui.moc&quot;</pre>
+<p>The <a href="qtest.html#QTEST_MAIN">QTEST_MAIN</a>() macro expands to a simple main() method that runs all the test functions, and since both the declaration and the implementation of our test class are in a .cpp file, we also need to include the generated moc file to make Qt's introspection work.</p>
+<p>
+[Previous: <a href="qtestlib-tutorial3.html">Chapter 3</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

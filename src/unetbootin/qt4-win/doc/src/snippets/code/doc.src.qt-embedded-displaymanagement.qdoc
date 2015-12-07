@@ -1,0 +1,53 @@
+//! [0]
+        $QPEDIR/qtopiacore/qt/configure -help
+//! [0]
+
+
+//! [1]
+        ./configure -help
+//! [1]
+
+
+//! [2]
+        ./configure -extra-qt-embedded-config "-qt-gfx-transformed"
+//! [2]
+
+
+//! [3]
+        ./configure -qt-gfx-transformed
+//! [3]
+
+
+//! [4]
+        export QWS_DISPLAY="<driver>[:<driver specific options>]...
+                 [:<display num>]"
+//! [4]
+
+
+//! [5]
+        myApplication -display "<driver>[:<driver specific options>]...
+                 [:<display num>]"
+//! [5]
+
+
+//! [6]
+        export QWS_DISPLAY="<driver>[:<subdriver>][:<subdriver options>]...
+                [ :<display num>]"
+//! [6]
+
+
+//! [7]
+        export QWS_DISPLAY="Multi: QVFb:0 QVFb:offset=640,0:1 :2"
+//! [7]
+
+
+//! [8]
+	export QWS_DISPLAY="VNC:size=720x480:depth=32"
+//! [8]
+
+
+//! [9]
+	export QWS_DISPLAY="VNC:LinuxFb"
+//! [9]
+
+

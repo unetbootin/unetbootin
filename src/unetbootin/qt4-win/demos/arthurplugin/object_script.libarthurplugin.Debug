@@ -1,0 +1,14 @@
+CREATE ..\..\plugins\designer\libarthurplugin.a
+ADDMOD tmp\obj\debug_static\plugin.o
+ADDMOD tmp\obj\debug_static\composition.o
+ADDMOD tmp\obj\debug_static\xform.o
+ADDMOD tmp\obj\debug_static\pathdeform.o
+ADDMOD tmp\obj\debug_static\gradients.o
+ADDMOD tmp\obj\debug_static\pathstroke.o
+ADDMOD tmp\obj\debug_static\moc_composition.o
+ADDMOD tmp\obj\debug_static\moc_xform.o
+ADDMOD tmp\obj\debug_static\moc_pathdeform.o
+ADDMOD tmp\obj\debug_static\moc_gradients.o
+ADDMOD tmp\obj\debug_static\moc_pathstroke.o
+ADDMOD tmp\obj\debug_static\qrc_arthur_plugin.o
+SAVE

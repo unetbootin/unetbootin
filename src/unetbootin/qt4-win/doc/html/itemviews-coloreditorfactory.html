@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/coloreditorfactory.qdoc -->
+<head>
+  <title>Qt 4.4: Color Editor Factory Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Color Editor Factory Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="itemviews-coloreditorfactory-colorlisteditor-cpp.html">itemviews/coloreditorfactory/colorlisteditor.cpp</a></li>
+<li><a href="itemviews-coloreditorfactory-colorlisteditor-h.html">itemviews/coloreditorfactory/colorlisteditor.h</a></li>
+<li><a href="itemviews-coloreditorfactory-window-cpp.html">itemviews/coloreditorfactory/window.cpp</a></li>
+<li><a href="itemviews-coloreditorfactory-window-h.html">itemviews/coloreditorfactory/window.h</a></li>
+<li><a href="itemviews-coloreditorfactory-main-cpp.html">itemviews/coloreditorfactory/main.cpp</a></li>
+<li><a href="itemviews-coloreditorfactory-coloreditorfactory-pro.html">itemviews/coloreditorfactory/coloreditorfactory.pro</a></li>
+</ul>
+<p>This example shows how to create an editor that can be used by a <a href="qitemdelegate.html">QItemDelegate</a>.</p>
+<p align="center"><img src="images/coloreditorfactoryimage.png" /></p><p>When editing data in a <a href="qlistview.html">QListView</a>, <a href="qtableview.html">QTableView</a>, or <a href="qtreeview.html">QTreeView</a>, editors are created and displayed by a <a href="model-view-delegate.html">delegate</a>. <a href="qitemdelegate.html">QItemDelegate</a>, which is the default delegate used by Qt's <a href="model-view-view.html">item views</a>, uses a <a href="qitemeditorfactory.html">QItemEditorFactory</a> to create editors for it. A unique instance provided by <a href="qitemeditorfactory.html">QItemEditorFactory</a> is by default installed on all item delegates.</p>
+<p>An item editor factory contains a collection of <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a> instances, which are specialized factories that produce editors for one particular <a href="qvariant.html">QVariant</a> data type (all models in Qt store their data in <a href="qvariant.html">QVariant</a>s). An editor can be any Qt or custom widget.</p>
+<p>In this example, we will create an editor (implemented in the <tt>ColorListEditor</tt> class) that can edit the <a href="qcolor.html">QColor</a> data type and be used by <a href="qitemdelegate.html">QItemDelegate</a>s. We do this by creating a new <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a> that produces <tt>ColorListEditors</tt> and register it with a new factory, which we set as the default editor item factory (the unique factory instance). To test our editor, we have implemented the <tt>Window</tt> class, which displays a <a href="qtablewidget.html">QTableWidget</a> in which <a href="qcolor.html">QColor</a>s can be edited.</p>
+<a name="window-class-implementation"></a>
+<h2>Window Class Implementation</h2>
+<p>In the Window class, we create the item editor creator base for our color editor and add it to the default factory. We also create a <a href="qtablewidget.html">QTableWidget</a> in which our editor can be tested. It is filled with some data and displayed in a window.</p>
+<p>We take a closer look at the constructor:</p>
+<pre> Window::Window()
+ {
+     QItemEditorFactory *factory = new QItemEditorFactory;
+
+     QItemEditorCreatorBase *colorListCreator =
+         new QStandardItemEditorCreator&lt;ColorListEditor&gt;();
+
+     factory-&gt;registerEditor(QVariant::Color, colorListCreator);
+
+     QItemEditorFactory::setDefaultFactory(factory);
+
+     createGUI();
+ }</pre>
+<p>The <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a> is a convenience class that inherits <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>. Its constructor takes a template class, of which instances are returned from <a href="qitemeditorcreatorbase.html#createWidget">createWidget()</a>. The creator uses a constructor that takes a <a href="qwidget.html">QWidget</a> as its only parameter; the template class must provide this. This way, there is no need to subclass <a href="qstandarditemeditorcreator.html">QStandardItemEditorCreator</a>.</p>
+<p>After the new factory has been set, all standard item delegates will use it (i.e, also delegates that were created before the new default factory was set).</p>
+<p>The <tt>createGUI()</tt> function sets up the table and fills it with data.</p>
+<a name="colorlisteditor-definition"></a>
+<h2>ColorListEditor Definition</h2>
+<p>The ColorListEditor inherits <a href="qcombobox.html">QComboBox</a> and lets the user select a <a href="qcolor.html">QColor</a> from its popup list.</p>
+<pre> class ColorListEditor : public QComboBox
+ {
+     Q_OBJECT
+     Q_PROPERTY(QColor color READ color WRITE setColor USER true)
+
+ public:
+     ColorListEditor(QWidget *widget = 0);
+
+ public:
+     QColor color() const;
+     void setColor(QColor c);
+
+ private:
+     void populateList();
+ };</pre>
+<p><a href="qitemdelegate.html">QItemDelegate</a> manages the interaction between the editor and the model, i.e&#x2e;, it retrieves data to edit from the model and store data from the editor in the model. The data that is edited by an editor is stored in the editor's user data property, and the delegate uses Qt's <a href="properties.html">property system</a> to access it by name. We declare our user data property with the Q_PROPERTY macro. The property is set to be the user type with the USER keyword.</p>
+<a name="colorlisteditor-implementation"></a>
+<h2>ColorListEditor Implementation</h2>
+<p>The constructor of <tt>ColorListEditor</tt> simply calls <tt>populateList()</tt>, which we will look at later. We move on to the <tt>color()</tt> function:</p>
+<pre> QColor ColorListEditor::color() const
+ {
+     return qVariantValue&lt;QColor&gt;(itemData(currentIndex(), Qt::DecorationRole));
+ }</pre>
+<p>We return the data that is selected in the combobox. The data is stored in the <a href="qt.html#ItemDataRole-enum">Qt::DecorationRole</a> as the color is then also displayed in the popup list (as shown in the image above).</p>
+<pre> void ColorListEditor::setColor(QColor color)
+ {
+     setCurrentIndex(findData(color, int(Qt::DecorationRole)));
+ }</pre>
+<p>The <tt>findData()</tt> function searches the items in the combobox and returns the index of the item that has <tt>color</tt> in the Qt::Decoration role.</p>
+<pre> void ColorListEditor::populateList()
+ {
+     QStringList colorNames = QColor::colorNames();
+
+     for (int i = 0; i &lt; colorNames.size(); ++i) {
+         QColor color(colorNames[i]);
+
+         insertItem(i, colorNames[i]);
+         setItemData(i, color, Qt::DecorationRole);
+     }
+ }</pre>
+<p>Qt knows some predefined colors by name. We simply loop through these to fill our editor with items.</p>
+<a name="further-customization-of-item-view-editors"></a>
+<h2>Further Customization of Item View Editors</h2>
+<p>You can customize Qt's <a href="model-view-programming.html">model view framework</a> in many ways. The procedure shown in this example is usually sufficient to provide custom editors. Further customization is achieved by subclassing <a href="qitemeditorfactory.html">QItemEditorFactory</a> and <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>. It is also possible to subclass <a href="qitemdelegate.html">QItemDelegate</a> if you don't wish to use a factory at all.</p>
+<p>Possible suggestions are:</p>
+<ul>
+<li>If the editor widget has no user property defined, the delegate asks the factory for the property name, which it in turn asks the item editor creator for. In this case, you can use the <a href="qitemeditorcreator.html">QItemEditorCreator</a> class, which takes the property name to use for editing as a constructor argument.</li>
+<li>If the editor requires other constructors or other initialization than provided by <a href="qitemeditorcreatorbase.html">QItemEditorCreatorBase</a>, you must reimplement <a href="qitemeditorcreatorbase.html#createWidget">QItemEditorCreatorBase::createWidget</a>().</li>
+<li>You could also subclass <a href="qitemeditorfactory.html">QItemEditorFactory</a> if you only want to provide editors for certain kinds of data or use another method of creating the editors than using creator bases.</li>
+</ul>
+<p>In this example, we use a standard <a href="qvariant.html">QVariant</a> data type. You can also use custom types. In the <a href="itemviews-stardelegate.html">Star Delegate Example</a>, we show how to store a custom data type in a <a href="qvariant.html">QVariant</a> and paint and edit it in a class that inherits <a href="qitemdelegate.html">QItemDelegate</a>.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtestlib.qdoc -->
+<head>
+  <title>Qt 4.4: Chapter 3: Simulating GUI Events</title>
+  <link rel="prev" href="qtestlib-tutorial2.html" />
+  <link rel="contents" href="qtestlib-tutorial.html" />
+  <link rel="next" href="qtestlib-tutorial4.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtestlib-tutorial2.html">Chapter 2</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+[Next: <a href="qtestlib-tutorial4.html">Chapter 4</a>]
+</p>
+<h1 class="title">Chapter 3: Simulating GUI Events<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="qtestlib-tutorial3-testgui-cpp.html">qtestlib/tutorial3/testgui.cpp</a></li>
+<li><a href="qtestlib-tutorial3-tutorial3-pro.html">qtestlib/tutorial3/tutorial3.pro</a></li>
+</ul>
+<p><a href="qtestlib-manual.html#qtestlib">QTestLib</a> features some mechanisms to test graphical user interfaces. Instead of simulating native window system events, <a href="qtestlib-manual.html#qtestlib">QTestLib</a> sends internal Qt events. That means there are no side-effects on the machine the tests are running on.</p>
+<p>In this chapter we will se how to write a simple GUI test.</p>
+<a name="writing-a-gui-test"></a>
+<h2>Writing a GUI test</h2>
+<p>This time, let's assume you want to test the behavior of our <a href="qlineedit.html">QLineEdit</a> class. As before, you will need a class that contains your test function:</p>
+<pre> #include &lt;QtGui&gt;
+ #include &lt;QtTest/QtTest&gt;
+
+ class TestGui: public QObject
+ {
+     Q_OBJECT
+
+ private slots:
+     void testGui();
+
+ };</pre>
+<p>The only difference is that you need to include the <a href="qtgui.html">QtGui</a> class definitions in addition to the <a href="qtest.html">QTest</a> namespace.</p>
+<pre> void TestGui::testGui()
+ {
+     QLineEdit lineEdit;
+
+     QTest::keyClicks(&amp;lineEdit, &quot;hello world&quot;);
+
+     QCOMPARE(lineEdit.text(), QString(&quot;hello world&quot;));
+ }</pre>
+<p>In the implementation of the test function we first create a <a href="qlineedit.html">QLineEdit</a>. Then we simulate writing &quot;hello world&quot; in the line edit using the <a href="qtest.html#keyClicks">QTest::keyClicks</a>() function.</p>
+<p><a href="qtest.html#keyClicks">QTest::keyClicks</a>() simulates clicking a sequence of keys on a widget. Optionally, a keyboard modifier can be specified as well as a delay (in milliseconds) of the test after each key click. In a similar way, you can use the <a href="qtest.html#keyClick">QTest::keyClick</a>(), <a href="qtest.html#keyPress">QTest::keyPress</a>(), <a href="qtest.html#keyRelease">QTest::keyRelease</a>(), <a href="qtest.html#mouseClick">QTest::mouseClick</a>(), <a href="qtest.html#mouseDClick">QTest::mouseDClick</a>(), <a href="qtest.html#mouseMove">QTest::mouseMove</a>(), <a href="qtest.html#mousePress">QTest::mousePress</a>() and <a href="qtest.html#mouseRelease">QTest::mouseRelease</a>() functions to simulate the associated GUI events.</p>
+<p>Finally, we use the <a href="qtest.html#QCOMPARE">QCOMPARE</a>() macro to check if the line edit's text is as expected.</p>
+<p>As before, to make our test case a stand-alone executable, the following two lines are needed:</p>
+<pre> QTEST_MAIN(TestGui)
+ #include &quot;testgui.moc&quot;</pre>
+<p>The <a href="qtest.html#QTEST_MAIN">QTEST_MAIN</a>() macro expands to a simple main() method that runs all the test functions, and since both the declaration and the implementation of our test class are in a .cpp file, we also need to include the generated moc file to make Qt's introspection work.</p>
+<p>
+[Previous: <a href="qtestlib-tutorial2.html">Chapter 2</a>]
+[<a href="qtestlib-tutorial.html">Contents</a>]
+[Next: <a href="qtestlib-tutorial4.html">Chapter 4</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

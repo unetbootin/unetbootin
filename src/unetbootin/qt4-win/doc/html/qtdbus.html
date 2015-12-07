@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtdbus.qdoc -->
+<head>
+  <title>Qt 4.4: QtDBus module</title>
+  <link rel="prev" href="qaxserver.html" />
+  <link rel="contents" href="modules.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qaxserver.html">QAxServer Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+</p>
+<h1 class="title">QtDBus module<br /><span class="subtitle"></span>
+</h1>
+<p>The QtDBus module is a Unix-only library that you can use to make Inter-Process Communication using the D-Bus protocol. <a href="#details">More...</a></p>
+<h2>Namespaces</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qdbus.html">QDBus</a></th><td>Contains miscellaneous identifiers used throughout the QtDBus library</td></tr>
+</table></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="qdbusabstractadaptor.html">QDBusAbstractAdaptor</a></th><td>The base class of D-Bus adaptor classes</td></tr>
+<tr valign="top" class="even"><th><a href="qdbusabstractinterface.html">QDBusAbstractInterface</a></th><td>The base class for all D-Bus interfaces in the QtDBus binding, allowing access to remote interfaces</td></tr>
+<tr valign="top" class="odd"><th><a href="qdbusargument.html">QDBusArgument</a></th><td>Used to marshall and demarshall D-BUS arguments</td></tr>
+<tr valign="top" class="even"><th><a href="qdbusconnection.html">QDBusConnection</a></th><td>Represents a connection to the D-Bus bus daemon</td></tr>
+<tr valign="top" class="odd"><th><a href="qdbusconnectioninterface.html">QDBusConnectionInterface</a></th><td>Access to the D-Bus bus daemon service</td></tr>
+<tr valign="top" class="even"><th><a href="qdbuscontext.html">QDBusContext</a></th><td>Allows slots to determine the D-Bus context of the calls</td></tr>
+<tr valign="top" class="odd"><th><a href="qdbuserror.html">QDBusError</a></th><td>Represents an error received from the D-Bus bus or from remote applications found in the bus</td></tr>
+<tr valign="top" class="even"><th><a href="qdbusinterface.html">QDBusInterface</a></th><td>Proxy for interfaces on remote objects</td></tr>
+<tr valign="top" class="odd"><th><a href="qdbusmessage.html">QDBusMessage</a></th><td>Represents one message sent or received over the D-Bus bus</td></tr>
+<tr valign="top" class="even"><th><a href="qdbusobjectpath.html">QDBusObjectPath</a></th><td>Enables the programmer to identify the </td></tr>
+<tr valign="top" class="odd"><th><a href="qdbusreply.html">QDBusReply</a></th><td>Stores the reply for a method call to a remote object</td></tr>
+<tr valign="top" class="even"><th><a href="qdbusserver.html">QDBusServer</a></th><td>Peer-to-peer communication between processes on the same computer</td></tr>
+<tr valign="top" class="odd"><th><a href="qdbussignature.html">QDBusSignature</a></th><td>Enables the programmer to identify the </td></tr>
+<tr valign="top" class="even"><th><a href="qdbusvariant.html">QDBusVariant</a></th><td>Enables the programmer to identify the variant type provided by the D-BUS typesystem</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<a name="qtdbus"></a><a name="the-qdbus-compiler"></a><p>Applications using the QtDBus module can provide services to other, remote applications by exporting objects, as well as use services exported by those applications by placing calls and accessing properties.</p>
+<p>The QtDBus module provides an interface that extends the Qt <a href="signalsandslots.html">Signals and Slots</a> mechanism, allowing one to connect to a signal emitted remotely as well as to connect a local signal to remote slot.</p>
+<p>To use this module, use the following code in your application:</p>
+<pre>         #include &lt;QtDBus&gt;</pre>
+<p>If you're using qmake to build your application, you can add this line to your .pro file to make it link against the QtDBus libraries:</p>
+<pre>         QT += dbus</pre>
+<p><b>Note:</b> The source code for this module is located in the <tt>src/qdbus</tt> directory. When installing Qt from source, this module is built when Qt's tools are built.</p>
+<p>See the <a href="intro-to-dbus.html">Introduction to D-Bus</a> page for detailed information on how to use this module.</p>
+<p>This module is part of all <a href="editions.html">Qt editions</a>.</p>
+<p>
+[Previous: <a href="qaxserver.html">QAxServer Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

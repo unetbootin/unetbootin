@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/fridgemagnets.qdoc -->
+<head>
+  <title>Qt 4.4: Fridge Magnets Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Fridge Magnets Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="draganddrop-fridgemagnets-draglabel-cpp.html">draganddrop/fridgemagnets/draglabel.cpp</a></li>
+<li><a href="draganddrop-fridgemagnets-draglabel-h.html">draganddrop/fridgemagnets/draglabel.h</a></li>
+<li><a href="draganddrop-fridgemagnets-dragwidget-cpp.html">draganddrop/fridgemagnets/dragwidget.cpp</a></li>
+<li><a href="draganddrop-fridgemagnets-dragwidget-h.html">draganddrop/fridgemagnets/dragwidget.h</a></li>
+<li><a href="draganddrop-fridgemagnets-main-cpp.html">draganddrop/fridgemagnets/main.cpp</a></li>
+<li><a href="draganddrop-fridgemagnets-fridgemagnets-pro.html">draganddrop/fridgemagnets/fridgemagnets.pro</a></li>
+<li><a href="draganddrop-fridgemagnets-fridgemagnets-qrc.html">draganddrop/fridgemagnets/fridgemagnets.qrc</a></li>
+</ul>
+<p>The Fridge Magnets example shows how to supply more than one type of MIME-encoded data with a drag and drop operation.</p>
+<p align="center"><img src="images/fridgemagnets-example.png" /></p><p>With this application the user can play around with a collection of fridge magnets, using drag and drop to form new sentences from the words on the magnets. The example consists of two classes:</p>
+<ul>
+<li><tt>DragLabel</tt> is a custom widget representing one single fridge magnet.</li>
+<li><tt>DragWidget</tt> provides the main application window.</li>
+</ul>
+<p>We will first take a look at the <tt>DragWidget</tt> class, then we will take a quick look at the <tt>DragLabel</tt> class.</p>
+<a name="dragwidget-class-definition"></a>
+<h2>DragWidget Class Definition</h2>
+<p>The <tt>DragWidget</tt> class inherits <a href="qwidget.html">QWidget</a>, providing support for drag and drop operations:</p>
+<pre> class DragWidget : public QWidget
+ {
+ public:
+     DragWidget(QWidget *parent = 0);
+
+ protected:
+     void dragEnterEvent(QDragEnterEvent *event);
+     void dragMoveEvent(QDragMoveEvent *event);
+     void dropEvent(QDropEvent *event);
+ };</pre>
+<p>To enable drag and drop, we simply reimplement the <a href="qwidget.html#dragEnterEvent">dragEnterEvent()</a>, <a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a> and <a href="qwidget.html#dropEvent">dropEvent()</a> event handlers inherited from <a href="qwidget.html">QWidget</a>.</p>
+<a name="dragwidget-class-implementation"></a>
+<h2>DragWidget Class Implementation</h2>
+<p>In the constructor, we first open the file containing the words on our fridge magnets:</p>
+<pre> DragWidget::DragWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     QFile dictionaryFile(&quot;:/dictionary/words.txt&quot;);
+     dictionaryFile.open(QFile::ReadOnly);
+     QTextStream inputStream(&amp;dictionaryFile);</pre>
+<p><a href="qfile.html">QFile</a> is an I/O device for reading and writing text and binary files and resources, and may be used by itself or in combination with <a href="qtextstream.html">QTextStream</a> or <a href="qdatastream.html">QDataStream</a>. We have chosen to read the contents of the file using the <a href="qtextstream.html">QTextStream</a> class that provides a convenient interface for reading and writing text.</p>
+<pre>     int x = 5;
+     int y = 5;
+
+     while (!inputStream.atEnd()) {
+         QString word;
+         inputStream &gt;&gt; word;
+         if (!word.isEmpty()) {
+             DragLabel *wordLabel = new DragLabel(word, this);
+             wordLabel-&gt;move(x, y);
+             wordLabel-&gt;show();
+             x += wordLabel-&gt;width() + 2;
+             if (x &gt;= 245) {
+                 x = 5;
+                 y += wordLabel-&gt;height() + 2;
+             }
+         }
+     }</pre>
+<p>Then we create the fridge magnets: As long as there is data (the <a href="qtextstream.html#atEnd">QTextStream::atEnd</a>() method returns true if there is no more data to be read from the stream), we read one line at a time using <a href="qtextstream.html">QTextStream</a>'s <a href="qtextstream.html#readLine">readLine()</a> method. For each line, we create a <tt>DragLabel</tt> object using the read line as text, we calculate its position and ensure that it is visible by calling the <a href="qwidget.html#show">QWidget::show</a>() method.</p>
+<pre>     QPalette newPalette = palette();
+     newPalette.setColor(QPalette::Window, Qt::white);
+     setPalette(newPalette);
+
+     setMinimumSize(400, qMax(200, y));
+     setWindowTitle(tr(&quot;Fridge Magnets&quot;));</pre>
+<p>We also set the <tt>FridgeMagnets</tt> widget's palette, minimum size and window title.</p>
+<pre>     setAcceptDrops(true);
+ }</pre>
+<p>Finally, to enable our user to move the fridge magnets around, we must also set the <tt>FridgeMagnets</tt> widget's <a href="qwidget.html#acceptDrops-prop">acceptDrops</a> property. Setting this property to true announces to the system that this widget <i>may</i> be able to accept drop events (events that are sent when drag and drop actions are completed).</p>
+<p>When a a drag and drop action enters our widget, we will receive a drag enter <i>event</i>. <a href="qdragenterevent.html">QDragEnterEvent</a> inherits most of its functionality from <a href="qdragmoveevent.html">QDragMoveEvent</a>, which in turn inherits most of its functionality from <a href="qdropevent.html">QDropEvent</a>. Note that we must accept this event in order to receive the drag move events that are sent while the drag and drop action is in progress. The drag enter event is always immediately followed by a drag move event.</p>
+<p>In our <tt>dragEnterEvent()</tt> implementation, we first determine whether we support the event's MIME type or not:</p>
+<pre> void DragWidget::dragEnterEvent(QDragEnterEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;application/x-fridgemagnet&quot;)) {
+         if (children().contains(event-&gt;source())) {
+             event-&gt;setDropAction(Qt::MoveAction);
+             event-&gt;accept();
+         } else {
+             event-&gt;acceptProposedAction();
+         }</pre>
+<p>If the type is <tt>&quot;application/x-fridgemagnet&quot;</tt> and the event origins from any of this application's fridge magnet widgets, we first set the event's drop action using the <a href="qdropevent.html#setDropAction">QDropEvent::setDropAction</a>() method. An event's drop action is the action to be performed on the data by the target. <a href="qt.html#DropAction-enum">Qt::MoveAction</a> indicates that the data is moved from the source to the target.</p>
+<p>Then we call the event's <a href="qdragmoveevent.html#accept">accept()</a> method to indicate that we have handled the event. In general, unaccepted events might be propagated to the parent widget. If the event origins from any other widget, we simply accept the proposed action.</p>
+<pre>     } else if (event-&gt;mimeData()-&gt;hasText()) {
+         event-&gt;acceptProposedAction();
+     } else {
+         event-&gt;ignore();
+     }
+ }</pre>
+<p>We also accept the proposed action if the event's MIME type is <tt>text/plain</tt>, i.e&#x2e;, if <a href="qmimedata.html#hasText">QMimeData::hasText</a>() returns true. If the event has any other type, on the other hand, we call the event's <a href="qdragmoveevent.html#ignore">ignore()</a> method allowing the event to be propagated further.</p>
+<pre> void DragWidget::dragMoveEvent(QDragMoveEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;application/x-fridgemagnet&quot;)) {
+         if (children().contains(event-&gt;source())) {
+             event-&gt;setDropAction(Qt::MoveAction);
+             event-&gt;accept();
+         } else {
+             event-&gt;acceptProposedAction();
+         }
+     } else if (event-&gt;mimeData()-&gt;hasText()) {
+         event-&gt;acceptProposedAction();
+     } else {
+         event-&gt;ignore();
+     }
+ }</pre>
+<p>Drag move events occur when the cursor enters a widget, when it moves within the widget, and when a modifier key is pressed on the keyboard while the widget has focus. Our widget will receive drag move events repeatedly while a drag is within its boundaries. We reimplement the <a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a> method, and examine the event in the exact same way as we did with drag enter events.</p>
+<a name="drop"></a><pre> void DragWidget::dropEvent(QDropEvent *event)
+ {
+     if (event-&gt;mimeData()-&gt;hasFormat(&quot;application/x-fridgemagnet&quot;)) {
+         const QMimeData *mime = event-&gt;mimeData();</pre>
+<p>Note that the <a href="qwidget.html#dropEvent">dropEvent()</a> event handler behaves slightly different: We first get hold of the event's MIME data. The <a href="qmimedata.html">QMimeData</a> class provides a container for data that records information about its MIME type. <a href="qmimedata.html">QMimeData</a> objects associate the data that they hold with the corresponding MIME types to ensure that information can be safely transferred between applications, and copied around within the same application.</p>
+<pre>         QByteArray itemData = mime-&gt;data(&quot;application/x-fridgemagnet&quot;);
+         QDataStream dataStream(&amp;itemData, QIODevice::ReadOnly);
+
+         QString text;
+         QPoint offset;
+         dataStream &gt;&gt; text &gt;&gt; offset;
+
+         DragLabel *newLabel = new DragLabel(text, this);
+         newLabel-&gt;move(event-&gt;pos() - offset);
+         newLabel-&gt;show();
+
+         if (children().contains(event-&gt;source())) {
+             event-&gt;setDropAction(Qt::MoveAction);
+             event-&gt;accept();
+         } else {
+             event-&gt;acceptProposedAction();
+         }</pre>
+<p>Then we retrieve the data associated with the <tt>&quot;application/x-fridgemagnet&quot;</tt> MIME type using a data stream, and create a new <tt>DragLabel</tt> object. The <a href="qdatastream.html">QDataStream</a> class provides serialization of binary data to a <a href="qiodevice.html">QIODevice</a> (a data stream is a binary stream of encoded information which is 100% independent of the host computer's operating system, CPU or byte order).</p>
+<p>Finally, we move the magnet to the event's position before we check if the event origins from any of this application's fridge magnet widgets. If it does, we set the event's drop action to <a href="qt.html#DropAction-enum">Qt::MoveAction</a> and call the event's <a href="qdragmoveevent.html#accept">accept()</a> method. Otherwise, we simply accept the proposed action.</p>
+<pre>     } else if (event-&gt;mimeData()-&gt;hasText()) {
+         QStringList pieces = event-&gt;mimeData()-&gt;text().split(QRegExp(&quot;\\s+&quot;),
+                              QString::SkipEmptyParts);
+         QPoint position = event-&gt;pos();
+
+         foreach (QString piece, pieces) {
+             DragLabel *newLabel = new DragLabel(piece, this);
+             newLabel-&gt;move(position);
+             newLabel-&gt;show();
+
+             position += QPoint(newLabel-&gt;width(), 0);
+         }
+
+         event-&gt;acceptProposedAction();
+     } else {
+         event-&gt;ignore();
+     }
+ }</pre>
+<p>If the event's MIME type is <tt>text/plain</tt>, i.e&#x2e;, if <a href="qmimedata.html#hasText">QMimeData::hasText</a>() returns true, we retrieve its text and split it into words. For each word we create a new <tt>DragLabel</tt> action, and show it at the event's position plus an offset depending on the number of words in the text. In the end we accept the proposed action.</p>
+<p>If the event has any other type, we call the event's <a href="qdragmoveevent.html#ignore">ignore()</a> method allowing the event to be propagated further.</p>
+<p>This completes the <tt>DragWidget</tt> implementation. Now, let's take a quick look at the <tt>DragLabel</tt> class.</p>
+<a name="draglabel-class-definition"></a>
+<h2>DragLabel Class Definition</h2>
+<p>Each fridge magnet is represented by an instance of the <tt>DragLabel</tt> class:</p>
+<pre> class DragLabel : public QLabel
+ {
+ public:
+     DragLabel(const QString &amp;text, QWidget *parent);
+
+ protected:
+     void mousePressEvent(QMouseEvent *event);
+
+ private:
+     QString labelText;
+ };</pre>
+<p>Earlier we set our main application widget's <a href="qwidget.html#acceptDrops-prop">acceptDrops</a> property and reimplemented <a href="qwidget.html">QWidget</a>'s <a href="porting4.html#qwidget">dragEnterEvent()</a>, <a href="qwidget.html#dragMoveEvent">dragMoveEvent()</a> and <a href="qwidget.html#dropEvent">dropEvent()</a> event handlers to support drag and drop. In addition, we must reimplement the <a href="qwidget.html#mousePressEvent">mousePressEvent()</a> method in our fridge magnet widget to make the user able to pick it up in the first place.</p>
+<a name="draglabel-class-implementation"></a>
+<h2>DragLabel Class Implementation</h2>
+<p>In the <tt>DragLabel</tt> constructor, we first create a <a href="qimage.html">QImage</a> object on which we will draw the fridge magnet's text and frame:</p>
+<pre> DragLabel::DragLabel(const QString &amp;text, QWidget *parent)
+     : QLabel(parent)
+ {
+     QFontMetrics metric(font());
+     QSize size = metric.size(Qt::TextSingleLine, text);
+
+     QImage image(size.width() + 12, size.height() + 12,
+                  QImage::Format_ARGB32_Premultiplied);
+     image.fill(qRgba(0, 0, 0, 0));
+
+     QFont font;
+     font.setStyleStrategy(QFont::ForceOutline);</pre>
+<p>Its size depends on the current font size, and its format is <a href="qimage.html#Format-enum">QImage::Format_ARGB32_Premultiplied</a> (i.e&#x2e;, the image is stored using a premultiplied 32-bit ARGB format (0xAARRGGBB)).</p>
+<p>Then we constructs a font object that uses the application's default font, and set its style strategy. The style strategy tells the font matching algorithm what type of fonts should be used to find an appropriate default family. The <a href="qfont.html#StyleStrategy-enum">QFont::ForceOutline</a> forces the use of outline fonts.</p>
+<pre>     QPainter painter;
+     painter.begin(&amp;image);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.setBrush(Qt::white);
+     painter.drawRoundedRect(QRectF(0.5, 0.5, image.width()-1, image.height()-1),
+                             25, 25, Qt::RelativeSize);
+
+     painter.setFont(font);
+     painter.setBrush(Qt::black);
+     painter.drawText(QRect(QPoint(6, 6), size), Qt::AlignCenter, text);
+     painter.end();</pre>
+<p>To draw the text and frame onto the image, we use the <a href="qpainter.html">QPainter</a> class. <a href="qpainter.html">QPainter</a> provides highly optimized methods to do most of the drawing GUI programs require. It can draw everything from simple lines to complex shapes like pies and chords. It can also draw aligned text and pixmaps.</p>
+<p>A painter can be activated by passing a paint device to the constructor, or by using the <a href="qpainter.html#begin">begin()</a> method as we do in this example. The <a href="qpainter.html#end">end()</a> method deactivates it. Note that the latter function is called automatically upon destruction when the painter is actived by its constructor. The <a href="qpainter.html#RenderHint-enum">QPainter::Antialiasing</a> render hint ensures that the paint engine will antialias the edges of primitives if possible.</p>
+<pre>     setPixmap(QPixmap::fromImage(image));
+     labelText = text;
+ }</pre>
+<p>When the painting is done, we convert our image to a pixmap using <a href="qpixmap.html">QPixmap</a>'s <a href="qpixmap.html#fromImage">fromImage()</a> method. This method also takes an optional flags argument, and converts the given image to a pixmap using the specified flags to control the conversion (the flags argument is a bitwise-OR of the <a href="qt.html#ImageConversionFlag-enum">Qt::ImageConversionFlags</a>; passing 0 for flags sets all the default options).</p>
+<p>Finally, we set the label's <a href="qlabel.html#pixmap-prop">pixmap property</a> and store the label's text for later use. Note that setting the pixmap clears any previous content, and disables the label widget's buddy shortcut, if any.</p>
+<p>Now, let's take a look at the <a href="qwidget.html#mousePressEvent">mousePressEvent()</a> event handler:</p>
+<pre> void DragLabel::mousePressEvent(QMouseEvent *event)
+     QByteArray itemData;
+     QDataStream dataStream(&amp;itemData, QIODevice::WriteOnly);
+     dataStream &lt;&lt; labelText &lt;&lt; QPoint(event-&gt;pos() - rect().topLeft());</pre>
+<p>Mouse events occur when a mouse button is pressed or released inside a widget, or when the mouse cursor is moved. By reimplementing the <a href="qwidget.html#mousePressEvent">mousePressEvent()</a> method we ensure that we will receive mouse press events for the fridge magnet widget.</p>
+<p>Whenever we receive such an event, we will first create a byte array to store our item data, and a <a href="qdatastream.html">QDataStream</a> object to stream the data to the byte array.</p>
+<pre>     QMimeData *mimeData = new QMimeData;
+     mimeData-&gt;setData(&quot;application/x-fridgemagnet&quot;, itemData);
+     mimeData-&gt;setText(labelText);</pre>
+<p>Then we create a new <a href="qmimedata.html">QMimeData</a> object. As mentioned above, <a href="qmimedata.html">QMimeData</a> objects associate the data that they hold with the corresponding MIME types to ensure that information can be safely transferred between applications. The <a href="qmimedata.html#setData">setData()</a> method sets the data associated with a given MIME type. In our case, we associate our item data with the custom <tt>&quot;application/x-fridgemagnet&quot;</tt> type.</p>
+<p>Note that we also associate the magnet's text with the <tt>text/plain</tt> MIME type using <a href="qmimedata.html">QMimeData</a>'s <a href="qmimedata.html#setText">setText()</a> method. We have already seen how our main widget detects both these MIME types with its event handlers.</p>
+<pre>     QDrag *drag = new QDrag(this);
+     drag-&gt;setMimeData(mimeData);
+     drag-&gt;setHotSpot(event-&gt;pos() - rect().topLeft());
+     drag-&gt;setPixmap(*pixmap());
+
+     hide();</pre>
+<p>Finally, we create a <a href="qdrag.html">QDrag</a> object. It is the <a href="qdrag.html">QDrag</a> class that handles most of the details of a drag and drop operation, providing support for MIME-based drag and drop data transfer. The data to be transferred by the drag and drop operation is contained in a <a href="qmimedata.html">QMimeData</a> object. When we call <a href="qdrag.html">QDrag</a>'s <a href="qdrag.html#setMimeData">setMimeData()</a> method the ownership of our item data is transferred to the <a href="qdrag.html">QDrag</a> object.</p>
+<p>We also specify the cursor's hot spot, i.e&#x2e;, its position while the drag is in progress, to be the top-left corner of our fridge magnet. We call the <a href="qdrag.html#setPixmap">setPixmap()</a> method to set the pixmap used to represent the data during the drag and drop operation. Typically, this pixmap shows an icon that represents the MIME type of the data being transferred, but any pixmap can be used. In this example, we have chosen to use the fridge magnet image itself to make the magnet appear as moving, immediately hiding the activated widget.</p>
+<pre>     if (drag-&gt;exec(Qt::MoveAction | Qt::CopyAction, Qt::CopyAction) == Qt::MoveAction)
+         close();
+     else
+         show();
+ }</pre>
+<p>Then we start the drag using <a href="qdrag.html">QDrag</a>'s <a href="qdrag.html#exec">exec()</a> method requesting that the magnet is moved when the drag is completed. The method returns the performed drop action; if this action is equal to <a href="qt.html#DropAction-enum">Qt::MoveAction</a> we will close the activated fridge magnet widget because we then create a new one (with the same data) at the drop position (see the implementation of our main widgets <a href="#drop">dropEvent()</a> method). Otherwise, if the drop is outside our main widget, we simply show the widget in its original position.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

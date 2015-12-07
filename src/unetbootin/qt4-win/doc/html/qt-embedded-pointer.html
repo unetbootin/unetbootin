@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/emb-pointer.qdoc -->
+<head>
+  <title>Qt 4.4: Qt for Embedded Linux Pointer Handling</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Qt for Embedded Linux Pointer Handling<br /><span class="subtitle"></span>
+</h1>
+<p>When running a <a href="qt-embedded.html">Qt for Embedded Linux</a> application, it either runs as a server or connects to an existing server. The mouse driver is loaded by the server application when it starts running, using Qt's <a href="plugins-howto.html">plugin system</a>.</p>
+<p>Internally in the client/server protocol, all system generated events, including pointer events, are passed to the server application which then propagates the event to the appropiate client. Note that pointer handling in <a href="qt-embedded.html">Qt for Embedded Linux</a> works for both mouse and mouse-like devices such as touch panels and trackballs.</p>
+<p>Contents:</p>
+<ul><li><a href="#available-drivers">Available Drivers</a></li>
+<li><a href="#specifying-a-driver">Specifying a Driver</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<ul><li><a href="#device-files">Device Files</a></li>
+<li><a href="#file-permissions">File Permissions</a></li>
+</ul>
+</ul>
+<a name="available-drivers"></a>
+<h2>Available Drivers</h2>
+<p><a href="qt-embedded.html">Qt for Embedded Linux</a> provides ready-made drivers for the MouseMan, IntelliMouse, Microsoft, NEC Vr41XX, Linux Touch Panel and Yopy protocols as well as the universal touch screen library, tslib. Run the <tt>configure</tt> script to list the available drivers:</p>
+<pre>             ./configure -help</pre>
+<p>In the default Qt configuration, only the &quot;pc&quot; mouse driver is enabled. The various drivers can be enabled and disabled using the <tt>configure</tt> script. For example:</p>
+<pre>             configure -qt-mouse-tslib</pre>
+<p>Custom mouse drivers can be implemented by subclassing the QWSMouseHandler class and creating a mouse driver plugin (derived from the QMouseDriverPlugin class). The default implementation of the QMouseDriverFactory class will automatically detect the plugin, loading the driver into the server application at run-time.</p>
+<p>If you are creating a driver for a device that needs calibration or noise reduction, such as a touchscreen, derive from the QWSCalibratedMouseHandler subclass instead to take advantage of its calibration functionality.</p>
+<a name="specifying-a-driver"></a>
+<h2>Specifying a Driver</h2>
+<p>Provided that the &quot;pc&quot; mouse driver is enabled, <a href="qt-embedded.html">Qt for Embedded Linux</a> will try to auto-detect the mouse device if it is one of the supported types on <tt>/dev/psaux</tt> or one of the <tt>/dev/ttyS</tt>? serial lines. If multiple mice are detected, all may be used simultaneously.</p>
+<p>Note that <a href="qt-embedded.html">Qt for Embedded Linux</a> does not support auto-detection of <i>touch panels</i> in which case the driver must be specified explicitly to determine which device to use.</p>
+<p>To manually specify which driver to use, set the <a href="qt-embedded-envvars.html#qws-mouse-proto">QWS_MOUSE_PROTO</a> environment variable. For example (if the current shell is bash, ksh, zsh or sh):</p>
+<pre>         export QWS_MOUSE_PROTO=&lt;driver&gt;[:&lt;driver specific options&gt;]</pre>
+<p>The valid values for the <tt>&lt;driver&gt;</tt> argument are <tt>MouseMan</tt>, <tt>IntelliMouse</tt>, <tt>Microsoft</tt>, <tt>VR41xx</tt>, <tt>LinuxTP</tt>, <tt>Yopy</tt>, <tt>Tslib</tt> and keys identifying custom drivers, and the driver specific options are typically a device, e.g&#x2e;, <tt>/dev/mouse</tt> for mouse devices and <tt>/dev/ts</tt> for touch panels.</p>
+<p>Multiple mouse drivers can be specified in one go:</p>
+<pre>          export QWS_MOUSE_PROTO=&quot;&lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]
+                  &lt;driver&gt;[:&lt;driver specific options&gt;]&quot;</pre>
+<p>Input will be read from all specified drivers.</p>
+<p>Note that the <tt>Vr41xx</tt> driver also accepts two optional arguments: <tt>press=&lt;value&gt;</tt> defining a mouse click (the default value is 750) and <tt>filter=&lt;value&gt;</tt> specifying the length of the filter used to eliminate noise (the default length is 3). For example:</p>
+<pre>         export QWS_MOUSE_PROTO=&quot;Vr41xx:press=500:/dev/misc/ts&quot;</pre>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>The Tslib Mouse Driver</th></tr></thead>
+<tr valign="top" class="odd"><td>The tslib mouse driver inherits the QWSCalibratedMouseHandler class, providing calibration and noise reduction functionality in addition to generating mouse events for devices using the Universal Touch Screen Library.<p>To be able to compile this mouse handler, <a href="qt-embedded.html">Qt for Embedded Linux</a> must be configured with the <tt>-qt-mouse-tslib</tt> option as described above. In addition, the tslib headers and library must be present in the build environment.</p>
+<p>The tslib sources can be downloaded from <a href="http://tslib.berlios.de">http://tslib.berlios.de</a>. Use the <tt>configure</tt> script's -L and -I options to explicitly specify the location of the library and its headers:</p>
+<pre>         ./configure  -L &lt;path to tslib library&gt; -I &lt;path to tslib headers&gt;</pre>
+<p>In order to use this mouse driver, tslib must also be correctly installed on the target machine. This includes providing a <tt>ts.conf</tt> configuration file and setting the neccessary environment variables (see the README file provided with tslib for details).</p>
+<p>The <tt>ts.conf</tt> file will usually contain the following two lines:</p>
+<pre>          module_raw input
+          module linear</pre>
+<p>To make <a href="qt-embedded.html">Qt for Embedded Linux</a> explicitly choose the tslib mouse handler, set the <a href="qt-embedded-envvars.html#qws-mouse-proto">QWS_MOUSE_PROTO</a> environment variable as explained above.</p>
+</td></tr>
+</table></p>
+<a name="troubleshooting"></a>
+<h2>Troubleshooting</h2>
+<a name="device-files"></a>
+<h3>Device Files</h3>
+<p>Make sure you are using the correct device file.</p>
+<p>As a first step, you can test whether the device file actually gives any output. For instance, if you have specified the mouse driver with</p>
+<pre>     QWS_MOUSE_PROTO=IntelliMouse:/dev/input/mouse0}</pre>
+<p>then try examining the output from the device by entering the following command in a console:</p>
+<pre>     cat /dev/input/mouse0 | hexdump</pre>
+<p>If you see output from the device printed on the console when you move the mouse, you are probably using the correct device file; otherwise, you will need to experiment to find the correct device file.</p>
+<a name="file-permissions"></a>
+<h3>File Permissions</h3>
+<p>Make sure you have sufficient permissions to access the device file.</p>
+<p>The Qt for Embedded Linux server process needs at least read permission for the device file. Some drivers also require write access to the device file. For instance, if you have specified the mouse driver with</p>
+<pre>     QWS_MOUSE_PROTO=IntelliMouse:/dev/input/mouse0</pre>
+<p>then examine the permissions of the device file by entering the following command in a console:</p>
+<pre>         chmod a+rw /dev/input/mouse0</pre>
+<p>If the device file is actually a symbolic link to another file, you must change the permissions of the actual file instead.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

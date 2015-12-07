@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qmime.cpp -->
+<head>
+  <title>Qt 4.4: QMimeSource Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QMimeSource Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QMimeSource class is an abstraction of objects that provided formatted data of a certain MIME type. <a href="#details">More...</a></p>
+<pre> #include &lt;QMimeSource&gt;</pre><p><b>This class is obsolete.</b> It is provided to keep old source code working. We strongly advise against using it in new code.</p>
+<p>Inherited by <a href="q3dragobject.html" class="compat">Q3DragObject</a> and <a href="qdropevent.html">QDropEvent</a>.</p>
+<ul>
+<li><a href="qmimesource-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/>virtual <b><a href="qmimesource.html#dtor.QMimeSource">~QMimeSource</a></b> ()</li>
+<li><div class="fn"/>virtual QByteArray <b><a href="qmimesource.html#encodedData">encodedData</a></b> ( const char * <i>format</i> ) const = 0</li>
+<li><div class="fn"/>virtual const char * <b><a href="qmimesource.html#format">format</a></b> ( int <i>i</i> = 0 ) const = 0</li>
+<li><div class="fn"/>virtual bool <b><a href="qmimesource.html#provides">provides</a></b> ( const char * <i>mimeType</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMimeSource class is an abstraction of objects that provided formatted data of a certain MIME type.</p>
+<p>The preferred approach to drag and drop is to use <a href="qdrag.html">QDrag</a> in conjunction with <a href="qmimedata.html">QMimeData</a>. See <a href="dnd.html">Drag and Drop</a> for details.</p>
+<p>See also <a href="qmimedata.html">QMimeData</a> and <a href="qdrag.html">QDrag</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="dtor.QMimeSource"></a>QMimeSource::~QMimeSource ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the MIME source.</p>
+<h3 class="fn"><a name="encodedData"></a><a href="qbytearray.html">QByteArray</a> QMimeSource::encodedData ( const char * <i>format</i> ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the encoded data of this object in the specified MIME <i>format</i>.</p>
+<h3 class="fn"><a name="format"></a>const char * QMimeSource::format ( int <i>i</i> = 0 ) const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>Returns the (<i>i</i> - 1)-th supported MIME format, or 0.</p>
+<h3 class="fn"><a name="provides"></a>bool QMimeSource::provides ( const char * <i>mimeType</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns true if the object can provide the data in format <i>mimeType</i>; otherwise returns false.</p>
+<p>If you inherit from <a href="qmimesource.html">QMimeSource</a>, for consistency reasons it is better to implement the more abstract canDecode() functions such as QTextDrag::canDecode() and QImageDrag::canDecode().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

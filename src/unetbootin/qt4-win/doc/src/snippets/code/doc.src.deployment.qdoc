@@ -1,0 +1,399 @@
+//! [0]
+        cd /path/to/Qt
+        ./configure -static -prefix /path/to/Qt <other parameters>
+        make sub-src
+//! [0]
+
+
+//! [1]
+        cd /path/to/Qt/examples/tools/plugandpaint
+//! [1]
+
+
+//! [2]
+        make clean
+        PATH=/path/to/Qt/bin:$PATH
+        export PATH
+        qmake -config release
+        make
+//! [2]
+
+
+//! [3]
+        ldd ./application
+//! [3]
+
+
+//! [4]
+        cd /path/to/Qt/examples/tools/plugandpaint
+//! [4]
+
+
+//! [5]
+        make clean
+        qmake -config release
+        make
+//! [5]
+
+
+//! [6]
+        cd ../plugandpaintplugins
+        make clean
+        qmake -config release
+        make
+//! [6]
+
+
+//! [7]
+        #!/bin/sh
+        appname=`basename $0 | sed s,\.sh$,,`
+        dirname=`dirname $0`
+        if [ "${dirname:0:1}" != "/" ]; then
+        dirname=$PWD/$dirname
+        fi
+        LD_LIBRARY_PATH=$dirname
+        export LD_LIBRARY_PATH
+        $dirname/$appname $*
+//! [7]
+
+
+//! [8]
+        DESTDIR = /path/to/Qt/plugandpaint/plugins
+//! [8]
+
+
+//! [9]
+        qApp->addLibraryPath("/some/other/path");
+//! [9]
+
+
+//! [10]
+        ldd ./application
+//! [10]
+
+
+//! [11]
+        cd C:\path\to\Qt
+        configure -static <any other options you need>
+//! [11]
+
+
+//! [12]
+        nmake sub-src
+//! [12]
+
+
+//! [13]
+        cd examples\tools\plugandpaint
+//! [13]
+
+
+//! [14]
+        nmake clean
+        qmake -config release
+        nmake
+//! [14]
+
+
+//! [15]
+        cd examples\tools\plugandpaint
+//! [15]
+
+
+//! [16]
+        nmake clean
+        qmake -config release
+        nmake
+//! [16]
+
+
+//! [17]
+        cd ..\plugandpaintplugins
+        nmake clean
+        qmake -config release
+        nmake
+//! [17]
+
+
+//! [18]
+        plugins\pnp_basictools.dll
+        plugins\pnp_extrafilters.dll
+//! [18]
+
+
+//! [19]
+        qApp->addLibraryPath("C:\some\other\path");
+//! [19]
+
+
+//! [20]
+        embed_manifest_dll
+        embed_manifest_exe
+//! [20]
+
+
+//! [21]
+        CONFIG += embed_manifest_exe
+//! [21]
+
+
+//! [22]
+        <Visual Studio Install Path>\VC\redist\<Architecture>\Microsoft.VC80.CRT
+//! [22]
+
+
+//! [23]
+    CONFIG-=embed_manifest_dll
+//! [23]
+
+
+//! [24]
+        depends <application executable>
+//! [24]
+
+
+//! [25]
+    C:<path to Qt>\plugins
+//! [25]
+
+
+//! [26]
+        CONFIG-=app_bundle
+//! [26]
+
+
+//! [27]
+        cd /path/to/Qt
+        ./configure -static <other parameters>
+        make sub-src
+//! [27]
+
+
+//! [28]
+        cd /path/to/Qt/examples/tools/plugandpaint
+//! [28]
+
+
+//! [29]
+        make clean
+        qmake -config release
+        make
+//! [29]
+
+
+//! [30]
+        otool -L plugandpaint.app/Contents/MacOs/plugandpaint
+//! [30]
+
+
+//! [31]
+        plugandpaint.app/Contents/MacOS/plugandpaint:
+        /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+                (compatibility version 2.0.0, current version 128.0.0)
+        /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+                (compatibility version 1.0.0, current version 10.0.0)
+        /usr/lib/libz.1.dylib
+                (compatibility version 1.0.0, current version 1.2.3)
+        /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+                (compatibility version 1.0.0, current version 22.0.0)
+        /usr/lib/libstdc++.6.dylib
+                (compatibility version 7.0.0, current version 7.3.0)
+        /usr/lib/libgcc_s.1.dylib
+                (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libmx.A.dylib
+                (compatibility version 1.0.0, current version 92.0.0)
+        /usr/lib/libSystem.B.dylib
+                (compatibility version 1.0.0, current version 88.0.0)
+//! [31]
+
+
+//! [32]
+        -lQtGui
+//! [32]
+
+
+//! [33]
+        /where/static/qt/lib/is/libQtGui.a
+//! [33]
+
+
+//! [34]
+        cd /path/to/Qt/examples/tools/plugandpaint
+//! [34]
+
+
+//! [35]
+        make clean
+        qmake -config release
+        make
+//! [35]
+
+
+//! [36]
+        cd ../plugandpaintplugins
+        make clean
+        qmake -config release
+        make
+//! [36]
+
+
+//! [37]
+        otool -L QtGui.framework/QtGui
+//! [37]
+
+
+//! [38]
+        QtGui.framework/QtGui:
+        /path/to/Qt/lib/QtGui.framework/Versions/4.0/QtGui
+                (compatibility version 4.0.0, current version 4.0.1)
+        /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+                (compatibility version 2.0.0, current version 128.0.0)
+        /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+                (compatibility version 1.0.0, current version 10.0.0)
+        /path/to/Qt/QtCore.framework/Versions/4.0/QtCore
+                (compatibility version 4.0.0, current version 4.0.1)
+        /usr/lib/libz.1.dylib
+                (compatibility version 1.0.0, current version 1.2.3)
+        /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+                (compatibility version 1.0.0, current version 22.0.0)
+        /usr/lib/libstdc++.6.dylib
+                (compatibility version 7.0.0, current version 7.3.0)
+        /usr/lib/libgcc_s.1.dylib
+                (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libmx.A.dylib
+                (compatibility version 1.0.0, current version 92.0.0)
+        /usr/lib/libSystem.B.dylib
+                (compatibility version 1.0.0, current version 88.0.0)
+//! [38]
+
+
+//! [39]
+        mkdir plugandpaint.app/Contents/Frameworks
+        cp -R /path/to/Qt/lib/QtCore.framework
+                plugandpaint.app/Contents/Frameworks
+        cp -R /path/to/Qt/lib/QtGui.framework
+               plugandpaint.app/Contents/Frameworks
+//! [39]
+
+
+//! [40]
+        install_name_tool -id @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
+               plugandpaint.app/Contents/Frameworks/QtCore.framework/Versions/4.0/QtCore
+        install_name_tool -id @executable_path/../Frameworks/QtGui.framework/Versions/4.0/QtGui
+               plugandpaint.app/Contents/Frameworks/QtGui.framework/Versions/4.0/QtGui
+//! [40]
+
+
+//! [41]
+        install_name_tool -change path/to/Qt/lib/QtCore.framework/Versions/4.0/QtCore
+                @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
+                plugandpaint.app/Contents/MacOs/plugandpaint
+        install_name_tool -change path/to/qt/lib/QtGui.framework/Versions/4.0/QtGui
+                @executable_path/../Frameworks/QtGui.framework/Versions/4.0/QtGui
+                plugandpaint.app/Contents/MacOs/plugandpaint
+//! [41]
+
+
+//! [42]
+        install_name_tool -change path/to/Qt/lib/QtCore.framework/Versions/4.0/QtCore
+                @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
+                plugandpaint.app/Contents/Frameworks/QtGui.framework/Versions/4.0/QtGui
+//! [42]
+
+
+//! [43]
+        mv plugins plugandpaint.app/Contents
+//! [43]
+
+
+//! [44]
+        libpnp_basictools.dylib:
+        libpnp_basictools.dylib
+               (compatibility version 0.0.0, current version 0.0.0)
+        /path/to/Qt/lib/QtGui.framework/Versions/4.0/QtGui
+               (compatibility version 4.0.0, current version 4.0.1)
+        /System/Library/Frameworks/Carbon.framework/Versions/A/Carbon
+               (compatibility version 2.0.0, current version 128.0.0)
+        /System/Library/Frameworks/QuickTime.framework/Versions/A/QuickTime
+               (compatibility version 1.0.0, current version 10.0.0)
+        /path/to/Qt/lib/QtCore.framework/Versions/4.0/QtCore
+               (compatibility version 4.0.0, current version 4.0.1)
+        /usr/lib/libz.1.dylib
+               (compatibility version 1.0.0, current version 1.2.3)
+        /System/Library/Frameworks/ApplicationServices.framework/Versions/A/ApplicationServices
+               (compatibility version 1.0.0, current version 22.0.0)
+        /usr/lib/libstdc++.6.dylib
+               (compatibility version 7.0.0, current version 7.3.0)
+        /usr/lib/libgcc_s.1.dylib
+               (compatibility version 1.0.0, current version 1.0.0)
+        /usr/lib/libmx.A.dylib
+               (compatibility version 1.0.0, current version 92.0.0)
+        /usr/lib/libSystem.B.dylib
+               (compatibility version 1.0.0, current version 88.0.0)
+//! [44]
+
+
+//! [45]
+        install_name_tool -change /path/to/Qt/lib/QtCore.framework/Versions/4.0/QtCore
+                @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
+                plugandpaint.app/Contents/plugins/libpnp_basictools.dylib
+        install_name_tool -change /path/to/Qt/lib/QtGui.framework/Versions/4.0/QtGui
+                @executable_path/../Frameworks/QtGui.framework/Versions/4.0/QtGui
+                plugandpaint.app/Contents/plugins/libpnp_basictools.dylib
+//! [45]
+
+
+//! [46]
+        #elif defined(Q_OS_MAC)
+        if (pluginsDir.dirName() == "MacOS") {
+            pluginsDir.cdUp();
+        }
+        #endif
+//! [46]
+
+
+//! [47]
+        cp -R /path/to/Qt/plugins/imageformats
+                pluginandpaint.app/Contents/plugins
+//! [47]
+
+
+//! [48]
+        install_name_tool -change /path/to/Qt/lib/QtGui.framework/Versions/4.0/QtGui
+                @executable_path/../Frameworks/QtGui.framework/Versions/4.0/QtGui
+                plugandpaint.app/Contents/plugins/imageformats/libqjpeg.dylib
+        install_name_tool -change /path/to/Qt/lib/QtCore.framework/Versions/4.0/QtCore
+                @executable_path/../Frameworks/QtCore.framework/Versions/4.0/QtCore
+                plugandpaint.app/Contents/plugins/imageformats/libqjpeg.dylib
+//! [48]
+
+
+//! [49]
+        QDir dir(QApplication::applicationDirPath());
+        dir.cdUp();
+        dir.cd("plugins");
+        QApplication::setLibraryPaths(QStringList(dir.absolutePath()));
+//! [49]
+
+
+//! [50]
+        otool -L MyApp.app/Contents/MacOS/MyApp
+//! [50]
+
+
+//! [51]
+    QMAKE_MACOSX_DEPLOYMENT_TARGET = 10.3
+//! [51]
+
+
+//! [52]
+         ./configure (other arguments) -universal -sdk /Developer/SDKs/MacOSX10.4u.sdk
+//! [52]
+
+
+//! [53]
+        QMAKE_MAC_SDK=/Developer/SDKs/MacOSX10.4u.sdk
+        CONFIG+=x86 ppc
+//! [53]
+
+

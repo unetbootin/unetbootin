@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/tabdialog.qdoc -->
+<head>
+  <title>Qt 4.4: Tab Dialog Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Tab Dialog Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="dialogs-tabdialog-tabdialog-cpp.html">dialogs/tabdialog/tabdialog.cpp</a></li>
+<li><a href="dialogs-tabdialog-tabdialog-h.html">dialogs/tabdialog/tabdialog.h</a></li>
+<li><a href="dialogs-tabdialog-main-cpp.html">dialogs/tabdialog/main.cpp</a></li>
+<li><a href="dialogs-tabdialog-tabdialog-pro.html">dialogs/tabdialog/tabdialog.pro</a></li>
+</ul>
+<p>The Tab Dialog example shows how to construct a tab dialog using the <a href="qtabwidget.html">QTabWidget</a> class.</p>
+<p>Dialogs provide an efficient way for the application to communicate with the user, but complex dialogs suffer from the problem that they often take up too much screen area. By using a number of tabs in a dialog, information can be split into different categories, while remaining accessible.</p>
+<p align="center"><img src="images/tabdialog-example.png" /></p><p>The Tab Dialog example consists of a single <tt>TabDialog</tt> class that provides three tabs, each containing information about a particular file, and two standard push buttons that are used to accept or reject the contents of the dialog.</p>
+<a name="tabdialog-class-definition"></a>
+<h2>TabDialog Class Definition</h2>
+<p>The <tt>TabDialog</tt> class is a subclass of <a href="qdialog.html">QDialog</a> that displays a <a href="qtabwidget.html">QTabWidget</a> and two standard dialog buttons. The class definition only contain the class constructor and a private data member for the <a href="qtabwidget.html">QTabWidget</a>:</p>
+<pre> class TabDialog : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     TabDialog(const QString &amp;fileName, QWidget *parent = 0);
+
+ private:
+     QTabWidget *tabWidget;
+     QDialogButtonBox *buttonBox;
+ };</pre>
+<p>In the example, the widget will be used as a top-level window, but we define the constructor so that it can take a parent widget. This allows the dialog to be centered on top of an application's main window.</p>
+<a name="tabdialog-class-implementation"></a>
+<h2>TabDialog Class Implementation</h2>
+<p>The constructor calls the <a href="qdialog.html">QDialog</a> constructor and creates a <a href="qfileinfo.html">QFileInfo</a> object for the specified filename.</p>
+<pre> TabDialog::TabDialog(const QString &amp;fileName, QWidget *parent)
+     : QDialog(parent)
+ {
+     QFileInfo fileInfo(fileName);
+
+     tabWidget = new QTabWidget;
+     tabWidget-&gt;addTab(new GeneralTab(fileInfo), tr(&quot;General&quot;));
+     tabWidget-&gt;addTab(new PermissionsTab(fileInfo), tr(&quot;Permissions&quot;));
+     tabWidget-&gt;addTab(new ApplicationsTab(fileInfo), tr(&quot;Applications&quot;));</pre>
+<p>The tab widget is populated with three custom widgets that each contain information about the file. We construct each of these without a parent widget because the tab widget will reparent them as they are added to it.</p>
+<p>We create two standard push buttons, and connect each of them to the appropriate slots in the dialog:</p>
+<pre>     buttonBox = new QDialogButtonBox(QDialogButtonBox::Ok
+                                      | QDialogButtonBox::Cancel);
+
+     connect(buttonBox, SIGNAL(accepted()), this, SLOT(accept()));
+     connect(buttonBox, SIGNAL(rejected()), this, SLOT(reject()));</pre>
+<p>We arrange the the tab widget above the buttons in the dialog:</p>
+<pre>     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(tabWidget);
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);</pre>
+<p>Finally, we set the dialog's title:</p>
+<pre>     setWindowTitle(tr(&quot;Tab Dialog&quot;));
+ }</pre>
+<p>Each of the tabs are subclassed from <a href="qwidget.html">QWidget</a>, and only provide constructors.</p>
+<a name="generaltab-class-definition"></a>
+<h2>GeneralTab Class Definition</h2>
+<p>The GeneralTab widget definition is simple because we are only interested in displaying the contents of a widget within a tab:</p>
+<pre> class GeneralTab : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     GeneralTab(const QFileInfo &amp;fileInfo, QWidget *parent = 0);
+ };</pre>
+<a name="generaltab-class-implementation"></a>
+<h2>GeneralTab Class Implementation</h2>
+<p>The GeneralTab widget simply displays some information about the file passed by the TabDialog. Various widgets for this purpose, and these are arranged within a vertical layout:</p>
+<pre> GeneralTab::GeneralTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *fileNameLabel = new QLabel(tr(&quot;File Name:&quot;));
+     QLineEdit *fileNameEdit = new QLineEdit(fileInfo.fileName());
+
+     QLabel *pathLabel = new QLabel(tr(&quot;Path:&quot;));
+     QLabel *pathValueLabel = new QLabel(fileInfo.absoluteFilePath());
+     pathValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *sizeLabel = new QLabel(tr(&quot;Size:&quot;));
+     qlonglong size = fileInfo.size()/1024;
+     QLabel *sizeValueLabel = new QLabel(tr(&quot;%1 K&quot;).arg(size));
+     sizeValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *lastReadLabel = new QLabel(tr(&quot;Last Read:&quot;));
+     QLabel *lastReadValueLabel = new QLabel(fileInfo.lastRead().toString());
+     lastReadValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *lastModLabel = new QLabel(tr(&quot;Last Modified:&quot;));
+     QLabel *lastModValueLabel = new QLabel(fileInfo.lastModified().toString());
+     lastModValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(fileNameLabel);
+     mainLayout-&gt;addWidget(fileNameEdit);
+     mainLayout-&gt;addWidget(pathLabel);
+     mainLayout-&gt;addWidget(pathValueLabel);
+     mainLayout-&gt;addWidget(sizeLabel);
+     mainLayout-&gt;addWidget(sizeValueLabel);
+     mainLayout-&gt;addWidget(lastReadLabel);
+     mainLayout-&gt;addWidget(lastReadValueLabel);
+     mainLayout-&gt;addWidget(lastModLabel);
+     mainLayout-&gt;addWidget(lastModValueLabel);
+     mainLayout-&gt;addStretch(1);
+     setLayout(mainLayout);
+ }</pre>
+<a name="permissionstab-class-definition"></a>
+<h2>PermissionsTab Class Definition</h2>
+<p>Like the GeneralTab, the PermissionsTab is just used as a placeholder widget for its children:</p>
+<pre> class PermissionsTab : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     PermissionsTab(const QFileInfo &amp;fileInfo, QWidget *parent = 0);
+ };</pre>
+<a name="permissionstab-class-implementation"></a>
+<h2>PermissionsTab Class Implementation</h2>
+<p>The PermissionsTab shows information about the file's access information, displaying details of the file permissions and owner in widgets that are arranged in nested layouts:</p>
+<pre> PermissionsTab::PermissionsTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QGroupBox *permissionsGroup = new QGroupBox(tr(&quot;Permissions&quot;));
+
+     QCheckBox *readable = new QCheckBox(tr(&quot;Readable&quot;));
+     if (fileInfo.isReadable())
+         readable-&gt;setChecked(true);
+
+     QCheckBox *writable = new QCheckBox(tr(&quot;Writable&quot;));
+     if ( fileInfo.isWritable() )
+         writable-&gt;setChecked(true);
+
+     QCheckBox *executable = new QCheckBox(tr(&quot;Executable&quot;));
+     if ( fileInfo.isExecutable() )
+         executable-&gt;setChecked(true);
+
+     QGroupBox *ownerGroup = new QGroupBox(tr(&quot;Ownership&quot;));
+
+     QLabel *ownerLabel = new QLabel(tr(&quot;Owner&quot;));
+     QLabel *ownerValueLabel = new QLabel(fileInfo.owner());
+     ownerValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QLabel *groupLabel = new QLabel(tr(&quot;Group&quot;));
+     QLabel *groupValueLabel = new QLabel(fileInfo.group());
+     groupValueLabel-&gt;setFrameStyle(QFrame::Panel | QFrame::Sunken);
+
+     QVBoxLayout *permissionsLayout = new QVBoxLayout;
+     permissionsLayout-&gt;addWidget(readable);
+     permissionsLayout-&gt;addWidget(writable);
+     permissionsLayout-&gt;addWidget(executable);
+     permissionsGroup-&gt;setLayout(permissionsLayout);
+
+     QVBoxLayout *ownerLayout = new QVBoxLayout;
+     ownerLayout-&gt;addWidget(ownerLabel);
+     ownerLayout-&gt;addWidget(ownerValueLabel);
+     ownerLayout-&gt;addWidget(groupLabel);
+     ownerLayout-&gt;addWidget(groupValueLabel);
+     ownerGroup-&gt;setLayout(ownerLayout);
+
+     QVBoxLayout *mainLayout = new QVBoxLayout;
+     mainLayout-&gt;addWidget(permissionsGroup);
+     mainLayout-&gt;addWidget(ownerGroup);
+     mainLayout-&gt;addStretch(1);
+     setLayout(mainLayout);
+ }</pre>
+<a name="applicationstab-class-definition"></a>
+<h2>ApplicationsTab Class Definition</h2>
+<p>The ApplicationsTab is another placeholder widget that is mostly cosmetic:</p>
+<pre> class ApplicationsTab : public QWidget
+ {
+     Q_OBJECT
+
+ public:
+     ApplicationsTab(const QFileInfo &amp;fileInfo, QWidget *parent = 0);
+ };</pre>
+<a name="applicationstab-class-implementation"></a>
+<h2>ApplicationsTab Class Implementation</h2>
+<p>The ApplicationsTab does not show any useful information, but could be used as a template for a more complicated example:</p>
+<pre> ApplicationsTab::ApplicationsTab(const QFileInfo &amp;fileInfo, QWidget *parent)
+     : QWidget(parent)
+ {
+     QLabel *topLabel = new QLabel(tr(&quot;Open with:&quot;));
+
+     QListWidget *applicationsListBox = new QListWidget;
+     QStringList applications;
+
+     for (int i = 1; i &lt;= 30; ++i)
+         applications.append(tr(&quot;Application %1&quot;).arg(i));
+     applicationsListBox-&gt;insertItems(0, applications);
+
+     QCheckBox *alwaysCheckBox;
+
+     if (fileInfo.suffix().isEmpty())
+         alwaysCheckBox = new QCheckBox(tr(&quot;Always use this application to &quot;
+             &quot;open this type of file&quot;));
+     else
+         alwaysCheckBox = new QCheckBox(tr(&quot;Always use this application to &quot;
+             &quot;open files with the extension '%1'&quot;).arg(fileInfo.suffix()));
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(topLabel);
+     layout-&gt;addWidget(applicationsListBox);
+     layout-&gt;addWidget(alwaysCheckBox);
+     setLayout(layout);
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

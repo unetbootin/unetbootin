@@ -1,0 +1,36 @@
+//! [0]
+    void MyQt3Widget::customStartDragFunction()
+    {
+        QDragObject *d = new QTextDrag( myHighlightedText(), this );
+        d->dragCopy();
+        // do NOT delete d.
+    }
+//! [0]
+
+
+//! [1]
+    void MyQt3Widget::dragEnterEvent(QDragEnterEvent* event)
+    {
+        event->accept(
+            QTextDrag::canDecode(event) ||
+            QImageDrag::canDecode(event)
+        );
+    }
+//! [1]
+
+
+//! [2]
+    void MyQt3Widget::dropEvent(QDropEvent* event)
+    {
+        QImage image;
+        QString text;
+
+        if ( QImageDrag::decode(event, image) ) {
+            insertImageAt(image, event->pos());
+        } else if ( QTextDrag::decode(event, text) ) {
+            insertTextAt(text, event->pos());
+        }
+    }
+//! [2]
+
+

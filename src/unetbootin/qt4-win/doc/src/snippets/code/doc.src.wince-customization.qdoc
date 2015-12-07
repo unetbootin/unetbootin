@@ -1,0 +1,44 @@
+//! [0]
+    wince<version><SDK-shortcut>-[architecture]-msvc2005
+//! [0]
+
+
+//! [1]
+    CE_SDK        = Windows Mobile 5.0 Pocket PC SDK
+    CE_ARCH       = ARMV4I
+//! [1]
+
+
+//! [2]
+    DEFINES	     += UNDER_CE WINCE _WINDOWS _UNICODE UNICODE _WIN32_WCE=0x501 $$CE_ARCH _ARMV4I_ armv4i _ARM_ ARM _M_ARM ARM _WIN32 __arm__ Q_OS_WINCE_WM QT_NO_PRINTER QT_NO_PRINTDIALOG
+//! [2]
+
+
+//! [3]
+    set PATH=C:\Qt\mobile5-release-shared\bin;%PATH%
+//! [3]
+
+
+//! [4]
+    cd c:\Qt\mobile5-release-shared
+    C:\Qt\4.4.0\configure.exe -platform win32-msvc2005 -xplatform wincewm50pocket-msvc2005 -release
+//! [4]
+
+
+//! [5]
+        set INCLUDE=C:\Program Files\Microsoft Visual Studio 8\VC\ce\include;C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Include\Armv4i
+        set LIB=C:\Program Files\Microsoft Visual Studio 8\VC\ce\lib\armv4i;C:\Program Files\Windows CE Tools\wce500\Windows Mobile 5.0 Pocket PC SDK\Lib\ARMV4I
+        set PATH=C:\Program Files\Microsoft Visual Studio 8\VC\ce\bin\x86_arm;%PATH%
+//! [5]
+
+
+//! [6]
+        setcepaths wincewm50pocket-msvc2005
+//! [6]
+
+
+//! [7]
+    nmake
+//! [7]
+
+

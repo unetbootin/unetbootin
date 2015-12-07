@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/gui/kernel/qwhatsthis.cpp -->
+<head>
+  <title>Qt 4.4: QWhatsThis Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QWhatsThis Class Reference<br /><span class="small-subtitle">[<a href="qtgui.html">QtGui</a> module]</span>
+</h1>
+<p>The QWhatsThis class provides a simple description of any widget, i.e&#x2e; answering the question &quot;What's This?&quot;. <a href="#details">More...</a></p>
+<pre> #include &lt;QWhatsThis&gt;</pre><ul>
+<li><a href="qwhatsthis-members.html">List of all members, including inherited members</a></li>
+<li><a href="qwhatsthis-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>QAction * <b><a href="qwhatsthis.html#createAction">createAction</a></b> ( QObject * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>void <b><a href="qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwhatsthis.html#hideText">hideText</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qwhatsthis.html#showText">showText</a></b> ( const QPoint &amp; <i>pos</i>, const QString &amp; <i>text</i>, QWidget * <i>w</i> = 0 )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QWhatsThis class provides a simple description of any widget, i.e&#x2e; answering the question &quot;What's This?&quot;.</p>
+<p>&quot;What's This?&quot; help is part of an application's online help system, and provides users with information about the functionality and usage of a particular widget. &quot;What's This?&quot; help texts are typically longer and more detailed than <a href="qtooltip.html">tooltips</a>, but generally provide less information than that supplied by separate help windows.</p>
+<p>QWhatsThis provides a single window with an explanatory text that pops up when the user asks &quot;What's This?&quot;. The default way for users to ask the question is to move the focus to the relevant widget and press Shift+F1. The help text appears immediately; it goes away as soon as the user does something else. (Note that if there is a shortcut for Shift+F1, this mechanism will not work.) Some dialogs provide a &quot;?&quot; button that users can click to enter &quot;What's This?&quot; mode; they then click the relevant widget to pop up the &quot;What's This?&quot; window. It is also possible to provide a a menu option or toolbar button to switch into &quot;What's This?&quot; mode.</p>
+<p>To add &quot;What's This?&quot; text to a widget or an action, you simply call <a href="qwidget.html#whatsThis-prop">QWidget::setWhatsThis</a>() or <a href="qaction.html#whatsThis-prop">QAction::setWhatsThis</a>().</p>
+<p>The text can be either rich text or plain text. If you specify a rich text formatted string, it will be rendered using the default stylesheet, making it possible to embed images in the displayed text. To be as fast as possible, the default stylesheet uses a simple method to determine whether the text can be rendered as plain text. See <a href="qt.html#mightBeRichText">Qt::mightBeRichText</a>() for details.</p>
+<pre>     newAct = new QAction(tr(&quot;&amp;New&quot;), this);
+     newAct-&gt;setShortcut(tr(&quot;Ctrl+N&quot;));
+     newAct-&gt;setStatusTip(tr(&quot;Create a new file&quot;));
+     newAct-&gt;setWhatsThis(tr(&quot;Click this option to create a new file.&quot;));</pre>
+<p>An alternative way to enter &quot;What's This?&quot; mode is to call <a href="qwhatsthis.html#createAction">createAction</a>(), and add the returned <a href="qaction.html">QAction</a> to either a menu or a tool bar. By invoking this context help action (in the picture below, the button with the arrow and question mark icon) the user switches into &quot;What's This?&quot; mode. If they now click on a widget the appropriate help text is shown. The mode is left when help is given or when the user presses Esc.</p>
+<p align="center"><img src="images/whatsthis.png" /></p><p>You can enter &quot;What's This?&quot; mode programmatically with <a href="qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>(), check the mode with <a href="qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>(), and return to normal mode with <a href="qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p>
+<p>If you want to control the &quot;What's This?&quot; behavior of a widget manually see <a href="qt.html#WidgetAttribute-enum">Qt::WA_CustomWhatsThis</a>.</p>
+<p>It is also possible to show different help texts for different regions of a widget, by using a <a href="qhelpevent.html">QHelpEvent</a> of type <a href="qevent.html#Type-enum">QEvent::WhatsThis</a>. Intercept the help event in your widget's <a href="qwidget.html#event">QWidget::event</a>() function and call <a href="qwhatsthis.html#showText">QWhatsThis::showText</a>() with the text you want to display for the position specified in <a href="qhelpevent.html#pos">QHelpEvent::pos</a>(). If the text is rich text and the user clicks on a link, the widget also receives a <a href="qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a> with the link's reference as <a href="qwhatsthisclickedevent.html#href">QWhatsThisClickedEvent::href</a>(). If a <a href="qwhatsthisclickedevent.html">QWhatsThisClickedEvent</a> is handled (i.e&#x2e; <a href="qwidget.html#event">QWidget::event</a>() returns true), the help window remains visible. Call <a href="qwhatsthis.html#hideText">QWhatsThis::hideText</a>() to hide it explicitly.</p>
+<p>See also <a href="qtooltip.html">QToolTip</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="createAction"></a><a href="qaction.html">QAction</a> * QWhatsThis::createAction ( <a href="qobject.html">QObject</a> * <i>parent</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns a ready-made <a href="qaction.html">QAction</a>, used to invoke &quot;What's This?&quot; context help, with the given <i>parent</i>.</p>
+<p>The returned <a href="qaction.html">QAction</a> provides a convenient way to let users enter &quot;What's This?&quot; mode.</p>
+<h3 class="fn"><a name="enterWhatsThisMode"></a>void QWhatsThis::enterWhatsThisMode ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This function switches the user interface into &quot;What's This?&quot; mode. The user interface can be switched back into normal mode by the user (e.g&#x2e; by them clicking or pressing Esc), or programmatically by calling <a href="qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p>
+<p>When entering &quot;What's This?&quot; mode, a <a href="qevent.html">QEvent</a> of type Qt::EnterWhatsThisMode is sent to all toplevel widgets.</p>
+<p>See also <a href="qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>() and <a href="qwhatsthis.html#leaveWhatsThisMode">leaveWhatsThisMode</a>().</p>
+<h3 class="fn"><a name="hideText"></a>void QWhatsThis::hideText ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>If a &quot;What's This?&quot; window is showing, this destroys it.</p>
+<p>See also <a href="qwhatsthis.html#showText">showText</a>().</p>
+<h3 class="fn"><a name="inWhatsThisMode"></a>bool QWhatsThis::inWhatsThisMode ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the user interface is in &quot;What's This?&quot; mode; otherwise returns false.</p>
+<p>See also <a href="qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>().</p>
+<h3 class="fn"><a name="leaveWhatsThisMode"></a>void QWhatsThis::leaveWhatsThisMode ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>If the user interface is in &quot;What's This?&quot; mode, this function switches back to normal mode; otherwise it does nothing.</p>
+<p>When leaving &quot;What's This?&quot; mode, a <a href="qevent.html">QEvent</a> of type Qt::LeaveWhatsThisMode is sent to all toplevel widgets.</p>
+<p>See also <a href="qwhatsthis.html#enterWhatsThisMode">enterWhatsThisMode</a>() and <a href="qwhatsthis.html#inWhatsThisMode">inWhatsThisMode</a>().</p>
+<h3 class="fn"><a name="showText"></a>void QWhatsThis::showText ( const <a href="qpoint.html">QPoint</a> &amp; <i>pos</i>, const <a href="qstring.html">QString</a> &amp; <i>text</i>, <a href="qwidget.html">QWidget</a> * <i>w</i> = 0 )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Shows <i>text</i> as a &quot;What's This?&quot; window, at global position <i>pos</i>. The optional widget argument, <i>w</i>, is used to determine the appropriate screen on multi-head systems.</p>
+<p>See also <a href="qwhatsthis.html#hideText">hideText</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

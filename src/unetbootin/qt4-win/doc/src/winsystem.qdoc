@@ -1,0 +1,153 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page winsystem.html
+    \title Window System Specific Notes
+    \ingroup buildsystem
+    \ingroup deployment
+
+    Qt is a cross-platform GUI toolkit, so almost the entire API is the
+    same on all platforms and window systems. If you wish to use
+    platform-specific features, and still maintain a platform-independent
+    source tree, you should protect the platform-specific code using the
+    appropriate \c{#ifdef} directives (see below).
+
+    Qt provides a few low-level global functions for fine-tuning
+    applications on specific platforms. See \l{Special-Purpose Global
+    Functions Exported by Qt} for details.
+
+    \tableofcontents
+
+    For information about which platforms are supported by Qt, see the
+    \l{Platform Notes}. For information on distributing Qt applications, see
+    \l{Deploying Qt Applications}.
+
+    \target x11
+    \section1 Qt/X11
+
+    When compiling for this platform, the macro \c{Q_WS_X11} is defined.
+
+    \e{Not documented here. Please contact Trolltech Technical Support
+    if you have queries.}
+
+    \image dependencies.png Qt/X11 Dependencies
+
+    \raw HTML
+    <style type="text/css" id="colorstyles">
+     #QtGuiColor { background-color: #98fd00; color: black }
+     #QtCoreColor { background-color: #9c9cff; color: black }
+     #DefaultColor { background-color: #f6f6dc; color: black }
+     #FreetypeColor { background-color: #e6e6fa; color: black }
+     #GLColor { background-color: #ffc0cb; color: black }
+     #PthreadColor { background-color: #bdb76b; color: black }
+     #OptionalColor { background-color: #cae1ff; color: black }
+     #SMColor { background-color: #c2fafa; color: black }
+     #MiscColor { background-color: #f0f9ff; color: black }
+     #GlibColor { background-color: #b3b3b3; color: black }
+    </style>
+    \endraw
+
+    \table 90%
+    \header \o Name \o Library \o Notes \o Configuration options
+    \raw HTML
+    <tr id="QtGuiColor">
+    <td>QtGui</td><td>libQtGui</td><td>QtGui</td>
+    </tr><tr id="QtCoreColor">
+    <td> QtCore </td><td> libQtCore </td><td> QtCore (non-user interface features)</td>
+    </tr><tr id="OptionalColor">
+    <td> XRender </td><td> libXrender </td><td> X Rendering Extension; used for anti-aliasing</td><td><tt>-xrender</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xrandr </td><td> libXrandr </td><td> X Resize and Rotate Extension</td><td><tt>-xrandr</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xcursor </td><td> libXcursor </td><td> X Cursor Extension</td><td><tt>-xcursor</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xfixes </td><td> libXfixes </td><td> X Fixes Extension</td><td><tt>-xfixes</tt> or auto-detected</td>
+    </tr><tr id="OptionalColor">
+    <td> Xinerama </td><td> libXinerama </td><td> Multi-head support</td><td><tt>-xinerama</tt> or auto-detected</td>
+    </tr><tr id="DefaultColor">
+    <td> Xt </td><td> libXext </td><td> Xt Intrinsics</td>
+    </tr><tr id="DefaultColor">
+    <td> Xext </td><td> libXext </td><td> X Extensions</td>
+    </tr><tr id="DefaultColor">
+    <td> X11 </td><td> libX11 </td><td> X Window System</td>
+    </tr><tr id="SMColor">
+    <td> SM </td><td> libSM </td><td> X Session Management</td><td><tt>-sm</tt> or auto-detected</td>
+    </tr><tr id="SMColor">
+    <td> ICE </td><td> libICE </td><td> Inter-Client Exchange</td><td><tt>-sm</tt> or auto-detected</td>
+    </tr><tr id="GlibColor">
+    <td> glib </td><td> libglib-2.0 </td><td> Common event loop handling</td><td><tt>-glib</tt> or auto-detected</td>
+    </tr><tr id="PthreadColor">
+    <td> pthread </td><td> libpthread </td><td> Multithreading</td>
+    </tr>
+    \endraw
+    \endtable
+
+    \note You must compile with XRender support to get alpha transparency
+    support for pixmaps and images.
+
+    \target win
+    \section1 Qt/Windows
+
+    When compiling for this platform, the macro \c{Q_WS_WIN} is defined.
+
+    \e{Not documented here. Please contact Trolltech Technical Support
+    if you have queries.}
+
+    \target macosx
+    \section1 Qt/Mac OS X
+
+    When compiling for this platform, the macro \c{Q_WS_MAC} is defined.
+
+    \list
+    \i \l{Qt/Mac-Specific Issues}
+    \i \l{Qt/Mac is Mac OS X Native}
+    \endlist
+
+    \target qws
+    \section1 Qt for Embedded Linux
+
+    When compiling for this platform, the macro \c{Q_WS_QWS} is
+    defined (the window system is literally the Qt Window System). See
+    the \l{Qt for Embedded Linux} documentation for more information.
+*/

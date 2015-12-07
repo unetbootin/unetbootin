@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <title>Qt 4.4: previewdialog.cpp Example File (painting/fontsampler/previewdialog.cpp)</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">previewdialog.cpp Example File<br /><span class="small-subtitle">painting/fontsampler/previewdialog.cpp</span>
+</h1>
+<pre><span class="comment"> /****************************************************************************
+ **
+ ** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+ **
+ ** This file is part of the example classes of the Qt Toolkit.
+ **
+ ** This file may be used under the terms of the GNU General Public
+ ** License versions 2.0 or 3.0 as published by the Free Software
+ ** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+ ** included in the packaging of this file.  Alternatively you may (at
+ ** your option) use any later version of the GNU General Public
+ ** License if such license has been publicly approved by Trolltech ASA
+ ** (or its successors, if any) and the KDE Free Qt Foundation. In
+ ** addition, as a special exception, Trolltech gives you certain
+ ** additional rights. These rights are described in the Trolltech GPL
+ ** Exception version 1.2, which can be found at
+ ** http://www.trolltech.com/products/qt/gplexception/ and in the file
+ ** GPL_EXCEPTION.txt in this package.
+ **
+ ** Please review the following information to ensure GNU General
+ ** Public Licensing requirements will be met:
+ ** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+ ** you are unsure which license is appropriate for your use, please
+ ** review the following information:
+ ** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+ ** or contact the sales department at sales@trolltech.com.
+ **
+ ** In addition, as a special exception, Trolltech, as the sole
+ ** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+ ** Integration plug-in the right for the Qt/Eclipse Integration to
+ ** link to functionality provided by Qt Designer and its related
+ ** libraries.
+ **
+ ** This file is provided &quot;AS IS&quot; with NO WARRANTY OF ANY KIND,
+ ** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+ ** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+ ** granted herein.
+ **
+ ** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+ ** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+ **
+ ****************************************************************************/</span>
+
+ #include &lt;QtGui&gt;
+ #include &quot;previewdialog.h&quot;
+
+ PreviewDialog::PreviewDialog(QPrinter &amp;printer, QWidget *parent)
+     : QDialog(parent), printer(printer)
+ {
+     setupUi(this);
+
+     currentPage = 0;
+     pageCount = 0;
+     pageList-&gt;setIconSize(QSize(SmallPreviewLength, SmallPreviewLength));
+     pageList-&gt;header()-&gt;hide();
+     previewLabel = new PreviewLabel;
+     previewArea-&gt;setWidget(previewLabel);
+     setupComboBoxes();
+
+     buttonBox-&gt;button(QDialogButtonBox::Ok)-&gt;setText(tr(&quot;&amp;Print&quot;));
+ }
+
+ void PreviewDialog::setupComboBoxes()
+ {
+     paperSizeCombo-&gt;addItem(tr(&quot;A0 (841 x 1189 mm)&quot;), QPrinter::A0);
+     paperSizeCombo-&gt;addItem(tr(&quot;A1 (594 x 841 mm)&quot;), QPrinter::A1);
+     paperSizeCombo-&gt;addItem(tr(&quot;A2 (420 x 594 mm)&quot;), QPrinter::A2);
+     paperSizeCombo-&gt;addItem(tr(&quot;A3 (297 x 420 mm)&quot;), QPrinter::A3);
+     paperSizeCombo-&gt;addItem(tr(&quot;A4 (210 x 297 mm, 8.26 x 11.7 inches)&quot;), QPrinter::A4);
+     paperSizeCombo-&gt;addItem(tr(&quot;A5 (148 x 210 mm)&quot;), QPrinter::A5);
+     paperSizeCombo-&gt;addItem(tr(&quot;A6 (105 x 148 mm)&quot;), QPrinter::A6);
+     paperSizeCombo-&gt;addItem(tr(&quot;A7 (74 x 105 mm)&quot;), QPrinter::A7);
+     paperSizeCombo-&gt;addItem(tr(&quot;A8 (52 x 74 mm)&quot;), QPrinter::A8);
+     paperSizeCombo-&gt;addItem(tr(&quot;A9 (37 x 52 mm)&quot;), QPrinter::A9);
+     paperSizeCombo-&gt;addItem(tr(&quot;B0 (1000 x 1414 mm)&quot;), QPrinter::B0);
+     paperSizeCombo-&gt;addItem(tr(&quot;B1 (707 x 1000 mm)&quot;), QPrinter::B1);
+     paperSizeCombo-&gt;addItem(tr(&quot;B2 (500 x 707 mm)&quot;), QPrinter::B2);
+     paperSizeCombo-&gt;addItem(tr(&quot;B3 (353 x 500 mm)&quot;), QPrinter::B3);
+     paperSizeCombo-&gt;addItem(tr(&quot;B4 (250 x 353 mm)&quot;), QPrinter::B4);
+     paperSizeCombo-&gt;addItem(tr(&quot;B5 (176 x 250 mm, 6.93 x 9.84 inches)&quot;), QPrinter::B5);
+     paperSizeCombo-&gt;addItem(tr(&quot;B6 (125 x 176 mm)&quot;), QPrinter::B6);
+     paperSizeCombo-&gt;addItem(tr(&quot;B7 (88 x 125 mm)&quot;), QPrinter::B7);
+     paperSizeCombo-&gt;addItem(tr(&quot;B8 (62 x 88 mm)&quot;), QPrinter::B8);
+     paperSizeCombo-&gt;addItem(tr(&quot;B9 (44 x 62 mm)&quot;), QPrinter::B9);
+     paperSizeCombo-&gt;addItem(tr(&quot;B10 (31 x 44 mm)&quot;), QPrinter::B10);
+     paperSizeCombo-&gt;addItem(tr(&quot;C5E (163 x 229 mm)&quot;), QPrinter::C5E);
+     paperSizeCombo-&gt;addItem(tr(&quot;DLE (110 x 220 mm)&quot;), QPrinter::DLE);
+     paperSizeCombo-&gt;addItem(tr(&quot;Executive (7.5 x 10 inches, 191 x 254 mm)&quot;), QPrinter::Executive);
+     paperSizeCombo-&gt;addItem(tr(&quot;Folio (210 x 330 mm)&quot;), QPrinter::Folio);
+     paperSizeCombo-&gt;addItem(tr(&quot;Ledger (432 x 279 mm)&quot;), QPrinter::Ledger);
+     paperSizeCombo-&gt;addItem(tr(&quot;Legal (8.5 x 14 inches, 216 x 356 mm)&quot;), QPrinter::Legal);
+     paperSizeCombo-&gt;addItem(tr(&quot;Letter (8.5 x 11 inches, 216 x 279 mm)&quot;), QPrinter::Letter);
+     paperSizeCombo-&gt;addItem(tr(&quot;Tabloid (279 x 432 mm)&quot;), QPrinter::Tabloid);
+     paperSizeCombo-&gt;addItem(tr(&quot;US Common #10 Envelope (105 x 241 mm)&quot;), QPrinter::Comm10E);
+     paperSizeCombo-&gt;setCurrentIndex(paperSizeCombo-&gt;findData(QPrinter::A4));
+
+     paperOrientationCombo-&gt;addItem(tr(&quot;Portrait&quot;), QPrinter::Portrait);
+     paperOrientationCombo-&gt;addItem(tr(&quot;Landscape&quot;), QPrinter::Landscape);
+ }
+
+ void PreviewDialog::addPage()
+ {
+     if (currentPage &gt;= pageCount)
+         return;
+
+     QTreeWidgetItem *item = new QTreeWidgetItem(pageList);
+     item-&gt;setCheckState(0, Qt::Checked);
+
+     paintItem(item, currentPage);
+     if (pageList-&gt;indexOfTopLevelItem(pageList-&gt;currentItem()) &lt; 0)
+         pageList-&gt;setCurrentItem(pageList-&gt;topLevelItem(0));
+
+     qApp-&gt;processEvents();
+     ++currentPage;
+
+     QTimer::singleShot(0, this, SLOT(addPage()));
+ }
+
+ void PreviewDialog::setNumberOfPages(int count)
+ {
+     pageCount = count;
+     QTimer::singleShot(0, this, SLOT(addPage()));
+ }
+
+ void PreviewDialog::paintItem(QTreeWidgetItem *item, int index)
+ {
+     QPixmap pixmap(SmallPreviewLength, SmallPreviewLength);
+     paintPreview(pixmap, index);
+     item-&gt;setIcon(0, QIcon(pixmap));
+ }
+
+ void PreviewDialog::paintPreview(QPixmap &amp;pixmap, int index)
+ {
+     qreal longestSide = qreal(qMax(printer.paperRect().width(),
+                               printer.paperRect().height()));
+     qreal width = pixmap.width() * printer.paperRect().width()/longestSide;
+     qreal height = pixmap.height() * printer.paperRect().height()/longestSide;
+
+     pixmap.fill(qRgb(224,224,224));
+     QPainter painter;
+     painter.begin(&amp;pixmap);
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.translate((pixmap.width() - width)/2,
+                       (pixmap.height() - height)/2);
+     painter.fillRect(QRectF(0, 0, width, height), QBrush(Qt::white));
+     painter.scale(pixmap.width() / longestSide, pixmap.height() / longestSide);
+     painter.translate(printer.pageRect().topLeft());
+     emit pageRequested(index, painter, printer);
+     painter.end();
+ }
+
+ void PreviewDialog::accept()
+ {
+     int markedPages = 0;
+     int pageIndex;
+     for (pageIndex = 0; pageIndex &lt; pageList-&gt;topLevelItemCount(); ++pageIndex) {
+         if (pageList-&gt;topLevelItem(pageIndex)-&gt;checkState(0) == Qt::Checked)
+             ++markedPages;
+     }
+
+     <span class="comment">//</span> Print all pages that have yet to be previewed.
+     markedPages += pageCount - pageIndex;
+
+     printer.setPageSize(QPrinter::PageSize(
+         paperSizeCombo-&gt;itemData(paperSizeCombo-&gt;currentIndex()).toInt()));
+     printer.setOrientation(QPrinter::Orientation(
+         paperOrientationCombo-&gt;itemData(
+         paperOrientationCombo-&gt;currentIndex()).toInt()));
+
+     QPrintDialog dialog(&amp;printer, this);
+     if (dialog.exec() != QDialog::Accepted)
+         return;
+
+     progressBar-&gt;setMaximum(markedPages);
+     progressBar-&gt;setEnabled(true);
+     progressBar-&gt;setTextVisible(true);
+
+     QPainter painter;
+     painter.begin(&amp;printer);
+
+     canceled = false;
+     int printed = 0;
+     bool firstPage = true;
+     for (pageIndex = 0; pageIndex &lt; pageCount; ++pageIndex) {
+
+         qApp-&gt;processEvents();
+
+         if (canceled)
+             break;
+
+         if (pageIndex &gt;= currentPage || isSelected(pageIndex)) {
+             <span class="comment">//</span> Print all pages that are either marked or have yet to be
+             <span class="comment">//</span> previewed.
+             if (!firstPage)
+                 printer.newPage();
+
+             emit pageRequested(pageIndex, painter, printer);
+             progressBar-&gt;setValue(++printed);
+             firstPage = false;
+         }
+     }
+     painter.end();
+
+     progressBar-&gt;setTextVisible(false);
+     progressBar-&gt;setEnabled(false);
+
+     QDialog::accept();
+ }
+
+ bool PreviewDialog::isSelected(int index)
+ {
+     if (index &gt;= 0 &amp;&amp; index &lt; pageList-&gt;topLevelItemCount())
+         return (pageList-&gt;topLevelItem(index)-&gt;checkState(0) == Qt::Checked);
+     else
+         return false;
+ }
+
+ void PreviewDialog::reject()
+ {
+     canceled = true;
+     QDialog::reject();
+ }
+
+ void PreviewDialog::resizeEvent(QResizeEvent *)
+ {
+     int size = qMax(qMin(previewArea-&gt;width() - previewArea-&gt;verticalScrollBar()-&gt;width(),
+                          previewArea-&gt;height() - previewArea-&gt;horizontalScrollBar()-&gt;height()),
+                     int(LargePreviewLength));
+     previewLabel-&gt;resize(size, size);
+     on_pageList_currentItemChanged();
+ }
+
+ void PreviewDialog::on_pageList_currentItemChanged()
+ {
+     if (pageList-&gt;indexOfTopLevelItem(pageList-&gt;currentItem()) &lt; 0)
+         return;
+
+     QPixmap pixmap(previewLabel-&gt;size());
+     paintPreview(pixmap, pageList-&gt;indexOfTopLevelItem(pageList-&gt;currentItem()));
+     previewLabel-&gt;setPixmap(pixmap);
+     previewLabel-&gt;update();
+ }
+
+ void PreviewDialog::on_paperSizeCombo_activated(int index)
+ {
+     printer.setPageSize(QPrinter::PageSize(paperSizeCombo-&gt;itemData(index).toInt()));
+
+     for (index = 0; index &lt; pageList-&gt;topLevelItemCount(); ++index)
+         paintItem(pageList-&gt;topLevelItem(index), index);
+
+     on_pageList_currentItemChanged();
+ }
+
+ void PreviewDialog::on_paperOrientationCombo_activated(int index)
+ {
+     printer.setOrientation(QPrinter::Orientation(paperOrientationCombo-&gt;itemData(index).toInt()));
+
+     for (index = 0; index &lt; pageList-&gt;topLevelItemCount(); ++index)
+         paintItem(pageList-&gt;topLevelItem(index), index);
+
+     on_pageList_currentItemChanged();
+ }</pre>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

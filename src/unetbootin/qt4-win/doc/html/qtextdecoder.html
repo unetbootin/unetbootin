@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/codecs/qtextcodec.cpp -->
+<head>
+  <title>Qt 4.4: QTextDecoder Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QTextDecoder Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QTextDecoder class provides a state-based decoder. <a href="#details">More...</a></p>
+<pre> #include &lt;QTextDecoder&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<ul>
+<li><a href="qtextdecoder-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qtextdecoder.html#QTextDecoder">QTextDecoder</a></b> ( const QTextCodec * <i>codec</i> )</li>
+<li><div class="fn"/><b><a href="qtextdecoder.html#dtor.QTextDecoder">~QTextDecoder</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qtextdecoder.html#toUnicode">toUnicode</a></b> ( const char * <i>chars</i>, int <i>len</i> )</li>
+<li><div class="fn"/>void <b><a href="qtextdecoder.html#toUnicode-2">toUnicode</a></b> ( QString * <i>target</i>, const char * <i>chars</i>, int <i>len</i> )</li>
+<li><div class="fn"/>QString <b><a href="qtextdecoder.html#toUnicode-3">toUnicode</a></b> ( const QByteArray &amp; <i>ba</i> )</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QTextDecoder class provides a state-based decoder.</p>
+<p>A text decoder converts text from an encoded text format into Unicode using a specific codec.</p>
+<p>The decoder converts text in this format into Unicode, remembering any state that is required between calls.</p>
+<p>See also <a href="qtextcodec.html#makeDecoder">QTextCodec::makeDecoder</a>() and <a href="qtextencoder.html">QTextEncoder</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QTextDecoder"></a>QTextDecoder::QTextDecoder ( const <a href="qtextcodec.html">QTextCodec</a> * <i>codec</i> )</h3>
+<p>Constructs a text decoder for the given <i>codec</i>.</p>
+<h3 class="fn"><a name="dtor.QTextDecoder"></a>QTextDecoder::~QTextDecoder ()</h3>
+<p>Destroys the decoder.</p>
+<h3 class="fn"><a name="toUnicode"></a><a href="qstring.html">QString</a> QTextDecoder::toUnicode ( const char * <i>chars</i>, int <i>len</i> )</h3>
+<p>Converts the first <i>len</i> bytes in <i>chars</i> to Unicode, returning the result.</p>
+<p>If not all characters are used (e.g&#x2e; if only part of a multi-byte encoding is at the end of the characters), the decoder remembers enough state to continue with the next call to this function.</p>
+<h3 class="fn"><a name="toUnicode-2"></a>void QTextDecoder::toUnicode ( <a href="qstring.html">QString</a> * <i>target</i>, const char * <i>chars</i>, int <i>len</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The converted string is returned in <i>target</i>.</p>
+<h3 class="fn"><a name="toUnicode-3"></a><a href="qstring.html">QString</a> QTextDecoder::toUnicode ( const <a href="qbytearray.html">QByteArray</a> &amp; <i>ba</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Converts the bytes in the byte array specified by <i>ba</i> to Unicode and returns the result.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

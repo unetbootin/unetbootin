@@ -1,0 +1,85 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example script/tetrix
+    \title QtScript Tetrix Example
+
+    The Tetrix example is a QtScript version of the classic Tetrix game.
+
+    \image tetrix-example.png
+
+    The program logic in this example is a fairly straight port of the
+    logic in the C++ \l{Tetrix Example}.
+    The graphical user interface is defined in a UI file.
+
+    \snippet examples/script/tetrix/main.cpp 0
+
+    We define a custom UI loader that handles our TetrixBoard widget; the
+    TetrixBoard is the main component of the UI (where the pieces are
+    drawn).
+
+    \snippet examples/script/tetrix/main.cpp 1
+
+    We initialize the script engine to have the Qt namespace, so that e.g.
+    Qt.Key_Left will be available to script code. We also make the
+    application object available (for the quit() slot).
+
+    \snippet examples/script/tetrix/main.cpp 2
+
+    Several scripts are evaluated as part of the engine setup process.
+    tetrixpiece.js contains the definition of the TetrixPiece class, which
+    is used to populate the play field. tetrixboard.js contains the
+    definition of the TetrixBoard class, which contains the main game logic.
+    Finally, tetrixwindow.js contains the definition of the TetrixWindow
+    class, which wires up the top-level widget.
+
+    \snippet examples/script/tetrix/main.cpp 3
+
+    A form is created from the UI file. A new TetrixWindow script object
+    is then constructed, passing the form as argument.
+
+    \snippet examples/script/tetrix/main.cpp 4
+
+    The form is shown, and the event loop is entered.
+*/

@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/examples/cachedtable.qdoc -->
+<head>
+  <title>Qt 4.4: Cached Table Example</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Cached Table Example<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="sql-cachedtable-tableeditor-cpp.html">sql/cachedtable/tableeditor.cpp</a></li>
+<li><a href="sql-cachedtable-tableeditor-h.html">sql/cachedtable/tableeditor.h</a></li>
+<li><a href="sql-cachedtable-main-cpp.html">sql/cachedtable/main.cpp</a></li>
+<li><a href="sql-cachedtable-cachedtable-pro.html">sql/cachedtable/cachedtable.pro</a></li>
+</ul>
+<p>The Cached Table example shows how a table view can be used to access a database, caching any changes to the data until the user explicitly submits them using a push button.</p>
+<p align="center"><img src="images/cachedtable-example.png" /></p><p>The example consists of a single class, <tt>TableEditor</tt>, which is a custom dialog widget that allows the user to modify data stored in a database. We will first review the class definiton and how to use the class, then we will take a look at the implementation.</p>
+<a name="tableeditor-class-definition"></a>
+<h2>TableEditor Class Definition</h2>
+<p>The <tt>TableEditor</tt> class inherits <a href="qdialog.html">QDialog</a> making the table editor widget a top-level dialog window.</p>
+<pre> class TableEditor : public QDialog
+ {
+     Q_OBJECT
+
+ public:
+     TableEditor(const QString &amp;tableName, QWidget *parent = 0);
+
+ private slots:
+     void submit();
+
+ private:
+     QPushButton *submitButton;
+     QPushButton *revertButton;
+     QPushButton *quitButton;
+     QDialogButtonBox *buttonBox;
+     QSqlTableModel *model;
+ };</pre>
+<p>The <tt>TableEditor</tt> constructor takes two arguments: The first is a pointer to the parent widget and is passed on to the base class constructor. The other is a reference to the database table the <tt>TableEditor</tt> object will operate on.</p>
+<p>Note the <a href="qsqltablemodel.html">QSqlTableModel</a> variable declaration: As we will see in this example, the <a href="qsqltablemodel.html">QSqlTableModel</a> class can be used to provide data to view classes such as <a href="qtableview.html">QTableView</a>. The <a href="qsqltablemodel.html">QSqlTableModel</a> class provides an editable data model making it possible to read and write database records from a single table. It is build on top of the lower-level <a href="qsqlquery.html">QSqlQuery</a> class which provides means of executing and manipulating SQL statements.</p>
+<p>We are also going to show how a table view can be used to cache any changes to the data until the user explicitly requests to submit them. For that reason we need to declare a <tt>submit()</tt> slot in additon to the model and the editor's buttons.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th>Connecting to a Database</th></tr></thead>
+<tr valign="top" class="odd"><td>Before we can use the <tt>TableEditor</tt> class, we must create a connection to the database containing the table we want to edit:<pre> int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     if (!createConnection())
+         return 1;
+
+     TableEditor editor(&quot;person&quot;);
+     editor.show();
+     return editor.exec();
+ }</pre>
+<p>The <tt>createConnection()</tt> function is a helper function provided for convenience. It is defined in the <tt>connection.h</tt> file which is located in the <tt>sql</tt> example directory (all the examples in the <tt>sql</tt> directory use this function to connect to a database).</p>
+<pre> static bool createConnection()
+ {
+     QSqlDatabase db = QSqlDatabase::addDatabase(&quot;QSQLITE&quot;);
+     db.setDatabaseName(&quot;:memory:&quot;);
+     if (!db.open()) {
+         QMessageBox::critical(0, qApp-&gt;tr(&quot;Cannot open database&quot;),
+             qApp-&gt;tr(&quot;Unable to establish a database connection.\n&quot;
+                      &quot;This example needs SQLite support. Please read &quot;
+                      &quot;the Qt SQL driver documentation for information how &quot;
+                      &quot;to build it.\n\n&quot;
+                      &quot;Click Cancel to exit.&quot;), QMessageBox::Cancel);
+         return false;
+     }
+
+     QSqlQuery query;
+     query.exec(&quot;create table person (id int primary key, &quot;
+                &quot;firstname varchar(20), lastname varchar(20))&quot;);
+     query.exec(&quot;insert into person values(101, 'Danny', 'Young')&quot;);
+     query.exec(&quot;insert into person values(102, 'Christine', 'Holand')&quot;);
+     query.exec(&quot;insert into person values(103, 'Lars', 'Gordon')&quot;);
+     query.exec(&quot;insert into person values(104, 'Roberto', 'Robitaille')&quot;);
+     query.exec(&quot;insert into person values(105, 'Maria', 'Papadopoulos')&quot;);
+
+     query.exec(&quot;create table trolltechoffice (id int primary key,&quot;
+                                              &quot;imagefile int,&quot;
+                                              &quot;location varchar(20),&quot;
+                                              &quot;country varchar(20),&quot;
+                                              &quot;description varchar(100))&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(0, 0, 'Oslo', 'Norway',&quot;
+                &quot;'Oslo is home to more than 500 000 citizens and has a &quot;
+                &quot;lot to offer.It has been called \&quot;The city with the big &quot;
+                &quot;heart\&quot; and this is a nickname we are happy to live up to.')&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(1, 1, 'Brisbane', 'Australia',&quot;
+                &quot;'Brisbane is the capital of Queensland, the Sunshine State, &quot;
+                &quot;where it is beautiful one day, perfect the next.  &quot;
+                &quot;Brisbane is Australia''s 3rd largest city, being home &quot;
+                &quot;to almost 2 million people.')&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(2, 2, 'Redwood City', 'US',&quot;
+                &quot;'You find Redwood City in the heart of the Bay Area &quot;
+                &quot;just north of Silicon Valley. The largest nearby city is &quot;
+                &quot;San Jose which is the third largest city in California &quot;
+                &quot;and the 10th largest in the US.')&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(3, 3, 'Berlin', 'Germany',&quot;
+                &quot;'Berlin, the capital of Germany is dynamic, cosmopolitan &quot;
+                &quot;and creative, allowing for every kind of lifestyle. &quot;
+                &quot;East meets West in the metropolis at the heart of a &quot;
+                &quot;changing Europe.')&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(4, 4, 'Munich', 'Germany',&quot;
+                &quot;'Several technology companies are represented in Munich, &quot;
+                &quot;and the city is often called the \&quot;Bavarian Silicon Valley\&quot;. &quot;
+                &quot;The exciting city is also filled with culture, &quot;
+                &quot;art and music. ')&quot;);
+     query.exec(&quot;insert into trolltechoffice &quot;
+                &quot;values(5, 5, 'Beijing', 'China',&quot;
+                &quot;'Beijing as a capital city has more than 3000 years of &quot;
+                &quot;history. Today the city counts 12 million citizens, and &quot;
+                &quot;is the political, economic and cultural centre of China.')&quot;);
+
+     query.exec(&quot;create table images (locationid int, file varchar(20))&quot;);
+     query.exec(&quot;insert into images values(0, 'images/oslo.png')&quot;);
+     query.exec(&quot;insert into images values(1, 'images/brisbane.png')&quot;);
+     query.exec(&quot;insert into images values(2, 'images/redwood.png')&quot;);
+     query.exec(&quot;insert into images values(3, 'images/berlin.png')&quot;);
+     query.exec(&quot;insert into images values(4, 'images/munich.png')&quot;);
+     query.exec(&quot;insert into images values(5, 'images/beijing.png')&quot;);
+
+     return true;
+ }</pre>
+<p>The <tt>createConnection</tt> function opens a connection to an in-memory SQLITE database and creates a test table. If you want to use another database, simply modify this function's code.</p>
+</td></tr>
+</table></p>
+<a name="tableeditor-class-implementation"></a>
+<h2>TableEditor Class Implementation</h2>
+<p>The class implementation consists of only two functions, the constructor and the <tt>submit()</tt> slot. In the constructor we create and customize the data model and the various window elements:</p>
+<pre> TableEditor::TableEditor(const QString &amp;tableName, QWidget *parent)
+     : QDialog(parent)
+ {
+     model = new QSqlTableModel(this);
+     model-&gt;setTable(tableName);
+     model-&gt;setEditStrategy(QSqlTableModel::OnManualSubmit);
+     model-&gt;select();
+
+     model-&gt;setHeaderData(0, Qt::Horizontal, tr(&quot;ID&quot;));
+     model-&gt;setHeaderData(1, Qt::Horizontal, tr(&quot;First name&quot;));
+     model-&gt;setHeaderData(2, Qt::Horizontal, tr(&quot;Last name&quot;));</pre>
+<p>First we create the data model and set the SQL database table we want the model to operate on. Note that the <a href="qsqltablemodel.html#setTable">QSqlTableModel::setTable</a>() function does not select data from the table; it only fetches its field information. For that reason we call the <a href="qsqltablemodel.html#select">QSqlTableModel::select</a>() function later on, populating the model with data from the table. The selection can be customized by specifying filters and sort conditions (see the <a href="qsqltablemodel.html">QSqlTableModel</a> class documentation for more details).</p>
+<p>We also set the model's edit strategy. The edit strategy dictates when the changes done by the user in the view, are actually applied to the database. Since we want to cache the changes in the table view (i.e&#x2e; in the model) until the user explicitly submits them, we choose the <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnManualSubmit</a> strategy. The alternatives are <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnFieldChange</a> and <a href="qsqltablemodel.html#EditStrategy-enum">QSqlTableModel::OnRowChange</a>.</p>
+<p>Finally, we set up the labels displayed in the view header using the <a href="qsqlquerymodel.html#setHeaderData">setHeaderData()</a> function that the model inherits from the <a href="qsqlquerymodel.html">QSqlQueryModel</a> class.</p>
+<pre>     QTableView *view = new QTableView;
+     view-&gt;setModel(model);</pre>
+<p>Then we create a table view. The <a href="qtableview.html">QTableView</a> class provides a default model/view implementation of a table view, i.e&#x2e; it implements a table view that displays items from a model. It also allows the user to edit the items, storing the changes in the model. To create a read only view, set the proper flag using the <a href="qabstractitemview.html#editTriggers-prop">editTriggers</a> property the view inherits from the <a href="qabstractitemview.html">QAbstractItemView</a> class.</p>
+<p>To make the view present our data, we pass our model to the view using the <a href="qabstractitemview.html#setModel">setModel()</a> function.</p>
+<pre>     submitButton = new QPushButton(tr(&quot;Submit&quot;));
+     submitButton-&gt;setDefault(true);
+     revertButton = new QPushButton(tr(&quot;&amp;Revert&quot;));
+     quitButton = new QPushButton(tr(&quot;Quit&quot;));
+
+     buttonBox = new QDialogButtonBox(Qt::Vertical);
+     buttonBox-&gt;addButton(submitButton, QDialogButtonBox::ActionRole);
+     buttonBox-&gt;addButton(revertButton, QDialogButtonBox::ActionRole);
+     buttonBox-&gt;addButton(quitButton, QDialogButtonBox::RejectRole);</pre>
+<p>The <tt>TableEditor</tt>'s buttons are regular <a href="qpushbutton.html">QPushButton</a> objects. We add them to a button box to ensure that the buttons are presented in a layout that is appropriate to the current widget style. The rationale for this is that dialogs and message boxes typically present buttons in a layout that conforms to the interface guidelines for that platform. Invariably, different platforms have different layouts for their dialogs. <a href="qdialogbuttonbox.html">QDialogButtonBox</a> allows a developer to add buttons to it and will automatically use the appropriate layout for the user's desktop environment.</p>
+<p>Most buttons for a dialog follow certain roles. When adding a button to a button box using the <a href="qdialogbuttonbox.html">addButton()</a> function, the button's role must be specified using the <a href="qdialogbuttonbox.html#ButtonRole-enum">QDialogButtonBox::ButtonRole</a> enum. Alternatively, <a href="qdialogbuttonbox.html">QDialogButtonBox</a> provides several standard buttons (e.g&#x2e; <b>OK</b>, <b>Cancel</b>, <b>Save</b>) that you can use. They exist as flags so you can OR them together in the constructor.</p>
+<pre>     connect(submitButton, SIGNAL(clicked()), this, SLOT(submit()));
+     connect(revertButton, SIGNAL(clicked()), model, SLOT(revertAll()));
+     connect(quitButton, SIGNAL(clicked()), this, SLOT(close()));</pre>
+<p>We connect the <b>Quit</b> button to the table editor's <a href="qwidget.html#close">close()</a> slot, and the <b>Submit</b> button to our private <tt>submit()</tt> slot. The latter slot will take care of the data transactions. Finally, we connect the <b>Revert</b> button to our model's <a href="qsqltablemodel.html#revertAll">revertAll()</a> slot, reverting all pending changes (i.e&#x2e;, restoring the original data).</p>
+<pre>     QHBoxLayout *mainLayout = new QHBoxLayout;
+     mainLayout-&gt;addWidget(view);
+     mainLayout-&gt;addWidget(buttonBox);
+     setLayout(mainLayout);
+
+     setWindowTitle(tr(&quot;Cached Table&quot;));
+ }</pre>
+<p>In the end we add the button box and the table view to a layout, install the layout on the table editor widget, and set the editor's window title.</p>
+<pre> void TableEditor::submit()
+ {
+     model-&gt;database().transaction();
+     if (model-&gt;submitAll()) {
+         model-&gt;database().commit();
+     } else {
+         model-&gt;database().rollback();
+         QMessageBox::warning(this, tr(&quot;Cached Table&quot;),
+                              tr(&quot;The database reported an error: %1&quot;)
+                              .arg(model-&gt;lastError().text()));
+     }
+ }</pre>
+<p>The <tt>submit()</tt> slot is called whenever the users hit the <b>Submit</b> button to save their changes.</p>
+<p>First, we begin a transaction on the database using the <a href="qsqldatabase.html#transaction">QSqlDatabase::transaction</a>() function. A database transaction is a unit of interaction with a database management system or similar system that is treated in a coherent and reliable way independent of other transactions. A pointer to the used database can be obtained using the <a href="qsqltablemodel.html#database">QSqlTableModel::database</a>() function.</p>
+<p>Then, we try to submit all the pending changes, i.e&#x2e; the model's modified items. If no error occurs, we commit the transaction to the database using the <a href="qsqldatabase.html#commit">QSqlDatabase::commit</a>() function (note that on some databases, this function will not work if there is an active <a href="qsqlquery.html">QSqlQuery</a> on the database). Otherwise we perform a rollback of the transaction using the <a href="qsqldatabase.html#rollback">QSqlDatabase::rollback</a>() function and post a warning to the user.</p>
+<p><table width="100%" align="center" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><td><b>See also:</b><p>A complete list of Qt's SQL <a href="database.html">Database Classes</a>, and the <a href="model-view-programming.html">Model/View Programming</a> documentation.</p>
+</td></tr>
+</table></p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

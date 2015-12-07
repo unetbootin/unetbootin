@@ -1,0 +1,6 @@
+<RCC>
+    <qresource prefix="/trolltech/designer">
+        <file>defaultgradients.xml</file>
+    </qresource>
+</RCC>
+

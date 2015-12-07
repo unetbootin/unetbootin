@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qresource.cpp -->
+<head>
+  <title>Qt 4.4: QResource Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QResource Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QResource class provides an interface for reading directly from resources. <a href="#details">More...</a></p>
+<pre> #include &lt;QResource&gt;</pre><p><b>Note:</b> All the functions in this class are <a href="threads.html#reentrant">reentrant</a>.</p>
+<p>This class was introduced in Qt 4.2.</p>
+<ul>
+<li><a href="qresource-members.html">List of all members, including inherited members</a></li>
+<li><a href="qresource-obsolete.html">Obsolete members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qresource.html#QResource">QResource</a></b> ( const QString &amp; <i>file</i> = QString(), const QLocale &amp; <i>locale</i> = QLocale() )</li>
+<li><div class="fn"/><b><a href="qresource.html#dtor.QResource">~QResource</a></b> ()</li>
+<li><div class="fn"/>QString <b><a href="qresource.html#absoluteFilePath">absoluteFilePath</a></b> () const</li>
+<li><div class="fn"/>const uchar * <b><a href="qresource.html#data">data</a></b> () const</li>
+<li><div class="fn"/>QString <b><a href="qresource.html#fileName">fileName</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#isCompressed">isCompressed</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>QLocale <b><a href="qresource.html#locale">locale</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qresource.html#setFileName">setFileName</a></b> ( const QString &amp; <i>file</i> )</li>
+<li><div class="fn"/>void <b><a href="qresource.html#setLocale">setLocale</a></b> ( const QLocale &amp; <i>locale</i> )</li>
+<li><div class="fn"/>qint64 <b><a href="qresource.html#size">size</a></b> () const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qresource.html#registerResource">registerResource</a></b> ( const QString &amp; <i>rccFileName</i>, const QString &amp; <i>mapRoot</i> = QString() )</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#registerResource-2">registerResource</a></b> ( const uchar * <i>rccData</i>, const QString &amp; <i>mapRoot</i> = QString() )</li>
+<li><div class="fn"/>QStringList <b><a href="qresource.html#searchPaths">searchPaths</a></b> ()</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#unregisterResource">unregisterResource</a></b> ( const QString &amp; <i>rccFileName</i>, const QString &amp; <i>mapRoot</i> = QString() )</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#unregisterResource-2">unregisterResource</a></b> ( const uchar * <i>rccData</i>, const QString &amp; <i>mapRoot</i> = QString() )</li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>QStringList <b><a href="qresource.html#children">children</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#isDir">isDir</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qresource.html#isFile">isFile</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QResource class provides an interface for reading directly from resources.</p>
+<p>QResource is an object that represents a set of data (and possibly children) relating to a single resource entity. QResource gives direct access to the bytes in their raw format. In this way direct access allows reading data without buffer copying or indirection. Indirection is often useful when interacting with the resource entity as if it is a file, this can be achieved with <a href="qfile.html">QFile</a>. The data and children behind a QResource are normally compiled into an application/library, but it is also possible to load a resource at runtime. When loaded at run time the resource file will be loaded as one big set of data and then given out in pieces via references into the resource tree.</p>
+<p>A QResource can either be loaded with an absolute path, either treated as a file system rooted with a <tt>/</tt> character, or in resource notation rooted with a <tt>:</tt> character. A relative resource can also be opened which will be found through the <a href="qresource.html#searchPaths">searchPaths</a>().</p>
+<p>A QResource that is representing a file will have data backing it, this data can possibly be compressed, in which case <a href="qbytearray.html#qUncompress">qUncompress</a>() must be used to access the real data; this happens implicitly when accessed through a <a href="qfile.html">QFile</a>. A QResource that is representing a directory will have only children and no data.</p>
+<a name="dynamic-resource-loading"></a>
+<h3>Dynamic Resource Loading</h3>
+<p>A resource can be left out of an application's binary and loaded when it is needed at run-time by using the <a href="qresource.html#registerResource">registerResource</a>() function. The resource file passed into <a href="qresource.html#registerResource">registerResource</a>() must be a binary resource as created by rcc. Further information about binary resources can be found in <a href="resources.html">The Qt Resource System</a> documentation.</p>
+<p>This can often be useful when loading a large set of application icons that may change based on a setting, or that can be edited by a user and later recreated. The resource is immediately loaded into memory, either as a result of a single file read operation, or as a memory mapped file.</p>
+<p>This approach can prove to be a significant performance gain as only a single file will be loaded, and pieces of data will be given out via the path requested in <a href="qresource.html#setFileName">setFileName</a>().</p>
+<p>The <a href="qresource.html#unregisterResource">unregisterResource</a>() function removes a reference to a particular file. If there are QResources that currently reference resources related to the unregistered file, they will continue to be valid but the resource file itself will be removed from the resource roots, and thus no further QResource can be created pointing into this resource data. The resource itself will be unmapped from memory when the last QResource that points to it is destroyed.</p>
+<p>See also <a href="resources.html">The Qt Resource System</a>, <a href="qfile.html">QFile</a>, <a href="qdir.html">QDir</a>, and <a href="qfileinfo.html">QFileInfo</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QResource"></a>QResource::QResource ( const <a href="qstring.html">QString</a> &amp; <i>file</i> = QString(), const <a href="qlocale.html">QLocale</a> &amp; <i>locale</i> = QLocale() )</h3>
+<p>Constructs a <a href="qresource.html">QResource</a> pointing to <i>file</i>. <i>locale</i> is used to load a specific localization of a resource data.</p>
+<p>See also <a href="qfileinfo.html">QFileInfo</a>, <a href="qresource.html#searchPaths">searchPaths</a>(), <a href="qresource.html#setFileName">setFileName</a>(), and <a href="qresource.html#setLocale">setLocale</a>().</p>
+<h3 class="fn"><a name="dtor.QResource"></a>QResource::~QResource ()</h3>
+<p>Releases the resources of the <a href="qresource.html">QResource</a> object.</p>
+<h3 class="fn"><a name="absoluteFilePath"></a><a href="qstring.html">QString</a> QResource::absoluteFilePath () const</h3>
+<p>Returns the real path that this <a href="qresource.html">QResource</a> represents, if the resource was found via the <a href="qresource.html#searchPaths">searchPaths</a>() it will be indicated in the path.</p>
+<p>See also <a href="qresource.html#fileName">fileName</a>().</p>
+<h3 class="fn"><a name="children"></a><a href="qstringlist.html">QStringList</a> QResource::children () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns a list of all resources in this directory, if the resource represents a file the list will be empty.</p>
+<p>See also <a href="qresource.html#isDir">isDir</a>().</p>
+<h3 class="fn"><a name="data"></a>const <a href="qtglobal.html#uchar-typedef">uchar</a> * QResource::data () const</h3>
+<p>Returns direct access to a read only segment of data that this resource represents. If the resource is compressed the data returns is compressed and <a href="qbytearray.html#qUncompress">qUncompress</a>() must be used to access the data. If the resource is a directory 0 is returned.</p>
+<p>See also <a href="qresource.html#size">size</a>(), <a href="qresource.html#isCompressed">isCompressed</a>(), and <a href="qresource.html#isFile">isFile</a>().</p>
+<h3 class="fn"><a name="fileName"></a><a href="qstring.html">QString</a> QResource::fileName () const</h3>
+<p>Returns the full path to the file that this <a href="qresource.html">QResource</a> represents as it was passed.</p>
+<p>See also <a href="qresource.html#setFileName">setFileName</a>() and <a href="qresource.html#absoluteFilePath">absoluteFilePath</a>().</p>
+<h3 class="fn"><a name="isCompressed"></a>bool QResource::isCompressed () const</h3>
+<p>Returns true if the resource represents a file and the data backing it is in a compressed format, false otherwise.</p>
+<p>See also <a href="qresource.html#data">data</a>() and <a href="qresource.html#isFile">isFile</a>().</p>
+<h3 class="fn"><a name="isDir"></a>bool QResource::isDir () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the resource represents a directory and thus may have <a href="qresource.html#children">children</a>() in it, false if it represents a file.</p>
+<p>See also <a href="qresource.html#isFile">isFile</a>().</p>
+<h3 class="fn"><a name="isFile"></a>bool QResource::isFile () const&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns true if the resource represents a file and thus has data backing it, false if it represents a directory.</p>
+<p>See also <a href="qresource.html#isDir">isDir</a>().</p>
+<h3 class="fn"><a name="isValid"></a>bool QResource::isValid () const</h3>
+<p>Returns true if the resource really exists in the resource heirarchy, false otherwise.</p>
+<h3 class="fn"><a name="locale"></a><a href="qlocale.html">QLocale</a> QResource::locale () const</h3>
+<p>Returns the locale used to locate the data for the <a href="qresource.html">QResource</a>.</p>
+<p>See also <a href="qresource.html#setLocale">setLocale</a>().</p>
+<h3 class="fn"><a name="registerResource"></a>bool QResource::registerResource ( const <a href="qstring.html">QString</a> &amp; <i>rccFileName</i>, const <a href="qstring.html">QString</a> &amp; <i>mapRoot</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Registers the resource with the given <i>rccFileName</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns true if the file is successfully opened; otherwise returns false.</p>
+<p>See also <a href="qresource.html#unregisterResource">unregisterResource</a>().</p>
+<h3 class="fn"><a name="registerResource-2"></a>bool QResource::registerResource ( const <a href="qtglobal.html#uchar-typedef">uchar</a> * <i>rccData</i>, const <a href="qstring.html">QString</a> &amp; <i>mapRoot</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Registers the resource with the given <i>rccData</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns true if the file is successfully opened; otherwise returns false.</p>
+<p><b>Warning:</b> The data must remain valid throughout the life of any <a href="qfile.html">QFile</a> that may reference the resource data.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qresource.html#unregisterResource">unregisterResource</a>().</p>
+<h3 class="fn"><a name="searchPaths"></a><a href="qstringlist.html">QStringList</a> QResource::searchPaths ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns the current search path list. This list is consulted when creating a relative resource.</p>
+<p>See also <a href="qresource-obsolete.html#addSearchPath">addSearchPath</a>().</p>
+<h3 class="fn"><a name="setFileName"></a>void QResource::setFileName ( const <a href="qstring.html">QString</a> &amp; <i>file</i> )</h3>
+<p>Sets a <a href="qresource.html">QResource</a> to point to <i>file</i>. <i>file</i> can either be absolute, in which case it is opened directly, if relative then the file will be tried to be found in <a href="qresource.html#searchPaths">searchPaths</a>().</p>
+<p>See also <a href="qresource.html#fileName">fileName</a>() and <a href="qresource.html#absoluteFilePath">absoluteFilePath</a>().</p>
+<h3 class="fn"><a name="setLocale"></a>void QResource::setLocale ( const <a href="qlocale.html">QLocale</a> &amp; <i>locale</i> )</h3>
+<p>Sets a <a href="qresource.html">QResource</a> to only load the localization of resource to for <i>locale</i>. If a resource for the specific locale is not found then the C locale is used.</p>
+<p>See also <a href="qresource.html#locale">locale</a>() and <a href="qresource.html#setFileName">setFileName</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qtglobal.html#qint64-typedef">qint64</a> QResource::size () const</h3>
+<p>Returns the size of the data backing the resource.</p>
+<p>See also <a href="qresource.html#data">data</a>() and <a href="qresource.html#isFile">isFile</a>().</p>
+<h3 class="fn"><a name="unregisterResource"></a>bool QResource::unregisterResource ( const <a href="qstring.html">QString</a> &amp; <i>rccFileName</i>, const <a href="qstring.html">QString</a> &amp; <i>mapRoot</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Unregisters the resource with the given <i>rccFileName</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns true if the resource is successfully unloaded and no references exist for the resource; otherwise returns false.</p>
+<p>See also <a href="qresource.html#registerResource">registerResource</a>().</p>
+<h3 class="fn"><a name="unregisterResource-2"></a>bool QResource::unregisterResource ( const <a href="qtglobal.html#uchar-typedef">uchar</a> * <i>rccData</i>, const <a href="qstring.html">QString</a> &amp; <i>mapRoot</i> = QString() )&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Unregisters the resource with the given <i>rccData</i> at the location in the resource tree specified by <i>mapRoot</i>, and returns true if the resource is successfully unloaded and no references exist into the resource; otherwise returns false.</p>
+<p>This function was introduced in Qt 4.3.</p>
+<p>See also <a href="qresource.html#registerResource">registerResource</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

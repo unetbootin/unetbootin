@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qtuiloader.qdoc -->
+<head>
+  <title>Qt 4.4: QtUiTools Module</title>
+  <link rel="prev" href="qtdesigner.html" />
+  <link rel="contents" href="modules.html" />
+  <link rel="next" href="qthelp.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qtdesigner.html">QtDesigner Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qthelp.html">QtHelp Module</a>]
+</p>
+<h1 class="title">QtUiTools Module<br /><span class="subtitle"></span>
+</h1>
+<p>The QtUiTools module provides classes to handle forms created with Qt Designer. <a href="#details">More...</a></p>
+<h2>Classes</h2>
+<p><table width="100%" class="annotated" cellpadding="2" cellspacing="1" border="0">
+<tr valign="top" class="odd"><th><a href="quiloader.html">QUiLoader</a></th><td>Allows standalone applications dynamically create user interfaces at run-time using the information stored in .ui files or specified plugin paths</td></tr>
+</table></p>
+<a name="details"></a>
+<h2>Detailed Description</h2>
+<p>These forms are processed at run-time to produce dynamically-generated user interfaces. In order to generate a form at run-time, a resource file containing a <tt>.ui</tt> file is needed. Applications that use the form handling classes need to be configured to be built against the QtUiTools module. This is done by including the following declaration in a <tt>qmake</tt> project file to ensure that the application is compiled and linked appropriately.</p>
+<pre>         CONFIG += uitools</pre>
+<p>A form loader object, provided by the <a href="quiloader.html">QUiLoader</a> class, is used to construct the user interface. This user interface can be retrieved from any <a href="qiodevice.html">QIODevice</a>; for example, a <a href="qfile.html">QFile</a> object can be used to obtain a form stored in a project's resources. The <a href="quiloader.html#load">QUiLoader::load</a>() function takes the user interface description contained in the file and constructs the form widget.</p>
+<p>To include the definitions of the module's classes, use the following directive:</p>
+<pre>         #include &lt;QtUiTools&gt;</pre>
+<p>See also <a href="designer-calculatorbuilder.html">Calculator Builder Example</a> and <a href="designer-worldtimeclockbuilder.html">World Time Clock Builder Example</a>.</p>
+<p>
+[Previous: <a href="qtdesigner.html">QtDesigner Module</a>]
+[<a href="modules.html">Qt's Modules</a>]
+[Next: <a href="qthelp.html">QtHelp Module</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

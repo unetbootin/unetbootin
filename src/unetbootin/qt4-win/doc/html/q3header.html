@@ -1,0 +1,365 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/qt3support/widgets/q3header.cpp -->
+<head>
+  <title>Qt 4.4: Q3Header Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">Q3Header Class Reference<br /><span class="small-subtitle">[<a href="qt3support.html">Qt3Support</a> module]</span>
+</h1>
+<p>The Q3Header class provides a header row or column, e.g&#x2e; for tables and listviews. <a href="#details">More...</a></p>
+<pre> #include &lt;Q3Header&gt;</pre><p><b>This class is part of the Qt 3 support library.</b> It is provided to keep old source code working. We strongly advise against using it in new code. See <a href="porting4.html#qheader">Porting to Qt 4</a> for more information.</p>
+<p>Inherits <a href="qwidget.html">QWidget</a>.</p>
+<ul>
+<li><a href="q3header-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="properties"></a>
+<h3>Properties</h3>
+<p><table width="100%" border="0" cellpadding="0" cellspacing="0">
+<tr><td width="45%" valign="top"><ul>
+<li><div class="fn"/><b><a href="q3header.html#count-prop">count</a></b> : const int</li>
+<li><div class="fn"/><b><a href="q3header.html#moving-prop">moving</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3header.html#offset-prop">offset</a></b> : int</li>
+</ul></td><td valign="top"><ul>
+<li><div class="fn"/><b><a href="q3header.html#orientation-prop">orientation</a></b> : Qt::Orientation</li>
+<li><div class="fn"/><b><a href="q3header.html#stretching-prop">stretching</a></b> : bool</li>
+<li><div class="fn"/><b><a href="q3header.html#tracking-prop">tracking</a></b> : bool</li>
+</ul>
+</td></tr>
+</table></p>
+<ul>
+<li><div class="fn"/>57 properties inherited from <a href="qwidget.html#properties">QWidget</a></li>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="q3header.html#Q3Header">Q3Header</a></b> ( QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3header.html#Q3Header-2">Q3Header</a></b> ( int <i>n</i>, QWidget * <i>parent</i> = 0, const char * <i>name</i> = 0 )</li>
+<li><div class="fn"/><b><a href="q3header.html#dtor.Q3Header">~Q3Header</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3header.html#addLabel">addLabel</a></b> ( const QString &amp; <i>s</i>, int <i>size</i> = -1 )</li>
+<li><div class="fn"/>int <b><a href="q3header.html#addLabel-2">addLabel</a></b> ( const QIcon &amp; <i>icon</i>, const QString &amp; <i>s</i>, int <i>size</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#adjustHeaderSize">adjustHeaderSize</a></b> ()</li>
+<li><div class="fn"/>int <b><a href="q3header.html#cellAt">cellAt</a></b> ( int <i>pos</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#cellPos">cellPos</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#cellSize">cellSize</a></b> ( int <i>i</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#count-prop">count</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#headerWidth">headerWidth</a></b> () const</li>
+<li><div class="fn"/>QIcon * <b><a href="q3header.html#iconSet">iconSet</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#isClickEnabled">isClickEnabled</a></b> ( int <i>section</i> = -1 ) const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#moving-prop">isMovingEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#isResizeEnabled">isResizeEnabled</a></b> ( int <i>section</i> = -1 ) const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#stretching-prop">isStretchEnabled</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#stretching-prop">isStretchEnabled</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>QString <b><a href="q3header.html#label">label</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#mapToActual">mapToActual</a></b> ( int <i>l</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#mapToIndex">mapToIndex</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#mapToLogical">mapToLogical</a></b> ( int <i>a</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#mapToSection">mapToSection</a></b> ( int <i>index</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#moveCell">moveCell</a></b> ( int <i>fromIdx</i>, int <i>toIdx</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#moveSection">moveSection</a></b> ( int <i>section</i>, int <i>toIndex</i> )</li>
+<li><div class="fn"/>int <b><a href="q3header.html#offset-prop">offset</a></b> () const</li>
+<li><div class="fn"/>Qt::Orientation <b><a href="q3header.html#orientation-prop">orientation</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="q3header.html#removeLabel">removeLabel</a></b> ( int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#resizeSection">resizeSection</a></b> ( int <i>section</i>, int <i>s</i> )</li>
+<li><div class="fn"/>int <b><a href="q3header.html#sectionAt">sectionAt</a></b> ( int <i>pos</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#sectionPos">sectionPos</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>QRect <b><a href="q3header.html#sectionRect">sectionRect</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#sectionSize">sectionSize</a></b> ( int <i>section</i> ) const</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#setCellSize">setCellSize</a></b> ( int <i>section</i>, int <i>s</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#setClickEnabled">setClickEnabled</a></b> ( bool <i>enable</i>, int <i>section</i> = -1 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#setLabel">setLabel</a></b> ( int <i>section</i>, const QString &amp; <i>s</i>, int <i>size</i> = -1 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#setLabel-2">setLabel</a></b> ( int <i>section</i>, const QIcon &amp; <i>icon</i>, const QString &amp; <i>s</i>, int <i>size</i> = -1 )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#moving-prop">setMovingEnabled</a></b> ( bool )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#orientation-prop">setOrientation</a></b> ( Qt::Orientation )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#setResizeEnabled">setResizeEnabled</a></b> ( bool <i>enable</i>, int <i>section</i> = -1 )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#setSortIndicator">setSortIndicator</a></b> ( int <i>section</i>, Qt::SortOrder <i>order</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#setSortIndicator-2">setSortIndicator</a></b> ( int <i>section</i>, bool <i>ascending</i> = true )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#stretching-prop">setStretchEnabled</a></b> ( bool <i>b</i>, int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#stretching-prop">setStretchEnabled</a></b> ( bool <i>b</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#tracking-prop">setTracking</a></b> ( bool <i>enable</i> )</li>
+<li><div class="fn"/>Qt::SortOrder <b><a href="q3header.html#sortIndicatorOrder">sortIndicatorOrder</a></b> () const</li>
+<li><div class="fn"/>int <b><a href="q3header.html#sortIndicatorSection">sortIndicatorSection</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="q3header.html#tracking-prop">tracking</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>206 public functions inherited from <a href="qwidget.html#public-functions">QWidget</a></li>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+</ul>
+<a name="public-slots"></a>
+<h3>Public Slots</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#offset-prop">setOffset</a></b> ( int <i>pos</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>19 public slots inherited from <a href="qwidget.html#public-slots">QWidget</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+</ul>
+<a name="signals"></a>
+<h3>Signals</h3>
+<ul>
+<li><div class="fn"/>void <b><a href="q3header.html#clicked">clicked</a></b> ( int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#indexChange">indexChange</a></b> ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#moved">moved</a></b> ( int <i>fromIndex</i>, int <i>toIndex</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#pressed">pressed</a></b> ( int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#released">released</a></b> ( int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#sectionClicked">sectionClicked</a></b> ( int <i>index</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#sectionHandleDoubleClicked">sectionHandleDoubleClicked</a></b> ( int <i>section</i> )</li>
+<li><div class="fn"/>void <b><a href="q3header.html#sizeChange">sizeChange</a></b> ( int <i>section</i>, int <i>oldSize</i>, int <i>newSize</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>1 signal inherited from <a href="qwidget.html#signals">QWidget</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#paintSection">paintSection</a></b> ( QPainter * <i>p</i>, int <i>index</i>, const QRect &amp; <i>fr</i> )</li>
+<li><div class="fn"/>virtual void <b><a href="q3header.html#paintSectionLabel">paintSectionLabel</a></b> ( QPainter * <i>p</i>, int <i>index</i>, const QRect &amp; <i>fr</i> )</li>
+<li><div class="fn"/>QRect <b><a href="q3header.html#sRect">sRect</a></b> ( int <i>index</i> )</li>
+</ul>
+<ul>
+<li><div class="fn"/>38 protected functions inherited from <a href="qwidget.html#protected-functions">QWidget</a></li>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>4 static public members inherited from <a href="qwidget.html#static-public-members">QWidget</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+<li><div class="fn"/>1 protected slot inherited from <a href="qwidget.html#protected-slots">QWidget</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The Q3Header class provides a header row or column, e.g&#x2e; for tables and listviews.</p>
+<p>This class provides a header, e.g&#x2e; a vertical header to display row labels, or a horizontal header to display column labels. It is used by <a href="q3table.html">Q3Table</a> and <a href="q3listview.html">Q3ListView</a> for example.</p>
+<p>A header is composed of one or more <i>sections</i>, each of which can display a text label and an <a href="qicon.html">icon</a>. A sort indicator (an arrow) can also be displayed using <a href="q3header.html#setSortIndicator">setSortIndicator</a>().</p>
+<p>Sections are added with <a href="q3header.html#addLabel">addLabel</a>() and removed with <a href="q3header.html#removeLabel">removeLabel</a>(). The label and icon are set in <a href="q3header.html#addLabel">addLabel</a>() and can be changed later with <a href="q3header.html#setLabel">setLabel</a>(). Use <a href="q3header.html#count-prop">count</a>() to retrieve the number of sections in the header.</p>
+<p>The orientation of the header is set with <a href="q3header.html#orientation-prop">setOrientation</a>(). If <a href="q3header.html#stretching-prop">setStretchEnabled</a>() is true, the sections will expand to take up the full width (height for vertical headers) of the header. The user can resize the sections manually if <a href="q3header.html#setResizeEnabled">setResizeEnabled</a>() is true. Call <a href="q3header.html#adjustHeaderSize">adjustHeaderSize</a>() to have the sections resize to occupy the full width (or height).</p>
+<p>A section can be moved with <a href="q3header.html#moveSection">moveSection</a>(). If <a href="q3header.html#moving-prop">setMovingEnabled</a>() is true (the default)the user may drag a section from one position to another. If a section is moved, the index positions at which sections were added (with <a href="q3header.html#addLabel">addLabel</a>()), may not be the same after the move. You don't have to worry about this in practice because the Q3Header API works in terms of section numbers, so it doesn't matter where a particular section has been moved to.</p>
+<p>If you want the current index position of a section call <a href="q3header.html#mapToIndex">mapToIndex</a>() giving it the section number. (This is the number returned by the <a href="q3header.html#addLabel">addLabel</a>() call which created the section.) If you want to get the section number of a section at a particular index position call <a href="q3header.html#mapToSection">mapToSection</a>() giving it the index number.</p>
+<p>Here's an example to clarify <a href="q3header.html#mapToSection">mapToSection</a>() and <a href="q3header.html#mapToIndex">mapToIndex</a>():</p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th colspan="4">Index positions</th></tr></thead>
+<tr valign="top" class="odd"><td>0</td><td>1</td><td>2</td><td>3</td></tr>
+<thead><tr valign="top" class="qt-style"><th colspan="4">Original section ordering</th></tr></thead>
+<tr valign="top" class="even"><td>Sect 0</td><td>Sect 1</td><td>Sect 2</td><td>Sect 3</td></tr>
+<thead><tr valign="top" class="qt-style"><th colspan="4">Ordering after the user moves a section</th></tr></thead>
+<tr valign="top" class="odd"><td>Sect 0</td><td>Sect 2</td><td>Sect 3</td><td>Sect 1</td></tr>
+</table></p>
+<p><table align="center" cellpadding="2" cellspacing="1" border="0">
+<thead><tr valign="top" class="qt-style"><th><i>k</i></th><th>mapToSection(<i>k</i>)</th><th>mapToIndex(<i>k</i>)</th></tr></thead>
+<tr valign="top" class="odd"><td>0</td><td>0</td><td>0</td></tr>
+<tr valign="top" class="even"><td>1</td><td>2</td><td>3</td></tr>
+<tr valign="top" class="odd"><td>2</td><td>3</td><td>1</td></tr>
+<tr valign="top" class="even"><td>3</td><td>1</td><td>2</td></tr>
+</table></p>
+<p>In the example above, if we wanted to find out which section is at index position 3 we'd call mapToSection(3) and get a section number of 1 since section 1 was moved. Similarly, if we wanted to know which index position section 2 occupied we'd call mapToIndex(2) and get an index of 1.</p>
+<p>Q3Header provides the <a href="q3header.html#clicked">clicked</a>(), <a href="q3header.html#pressed">pressed</a>() and <a href="q3header.html#released">released</a>() signals. If the user changes the size of a section, the <a href="q3header.html#sizeChange">sizeChange</a>() signal is emitted. If you want to have a <a href="q3header.html#sizeChange">sizeChange</a>() signal emitted continuously whilst the user is resizing (rather than just after the resizing is finished), use <a href="q3header.html#tracking-prop">setTracking</a>(). If the user moves a section the <a href="q3header.html#indexChange">indexChange</a>() signal is emitted.</p>
+<p>See also <a href="q3listview.html">Q3ListView</a> and <a href="q3table.html">Q3Table</a>.</p>
+<hr />
+<h2>Property Documentation</h2>
+<h3 class="fn"><a name="count-prop"></a>count : const int</h3>
+<p>This property holds the number of sections in the header.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int count () const</b></li>
+</ul>
+<h3 class="fn"><a name="moving-prop"></a>moving : bool</h3>
+<p>This property holds whether the header sections can be moved.</p>
+<p>If this property is true (the default) the user can move sections. If the user moves a section the <a href="q3header.html#indexChange">indexChange</a>() signal is emitted.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isMovingEnabled () const</b></li>
+<li><div class="fn"/><b>virtual void setMovingEnabled ( bool )</b></li>
+</ul>
+<p>See also <a href="q3header.html#setClickEnabled">setClickEnabled</a>() and <a href="q3header.html#setResizeEnabled">setResizeEnabled</a>().</p>
+<h3 class="fn"><a name="offset-prop"></a>offset : int</h3>
+<p>This property holds the header's left-most (or top-most) visible pixel.</p>
+<p>Setting this property will scroll the header so that <i>offset</i> becomes the left-most (or top-most for vertical headers) visible pixel.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>int offset () const</b></li>
+<li><div class="fn"/><b>virtual void setOffset ( int <i>pos</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="orientation-prop"></a>orientation : <a href="qt.html#Orientation-enum">Qt::Orientation</a></h3>
+<p>This property holds the header's orientation.</p>
+<p>The orientation is either <a href="qt.html#Orientation-enum">Qt::Vertical</a> or <a href="qt.html#Orientation-enum">Qt::Horizontal</a> (the default).</p>
+<p>Call setOrientation() before adding labels if you don't provide a size parameter otherwise the sizes will be incorrect.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>Qt::Orientation orientation () const</b></li>
+<li><div class="fn"/><b>virtual void setOrientation ( Qt::Orientation )</b></li>
+</ul>
+<h3 class="fn"><a name="stretching-prop"></a>stretching : bool</h3>
+<p>This property holds whether the header sections always take up the full width (or height) of the header.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool isStretchEnabled () const</b></li>
+<li><div class="fn"/><b>bool isStretchEnabled ( int <i>section</i> ) const</b></li>
+<li><div class="fn"/><b>virtual void setStretchEnabled ( bool <i>b</i>, int <i>section</i> )</b></li>
+<li><div class="fn"/><b>void setStretchEnabled ( bool <i>b</i> )</b></li>
+</ul>
+<h3 class="fn"><a name="tracking-prop"></a>tracking : bool</h3>
+<p>This property holds whether the sizeChange() signal is emitted continuously.</p>
+<p>If tracking is on, the <a href="q3header.html#sizeChange">sizeChange</a>() signal is emitted continuously while the mouse is moved (i.e&#x2e; when the header is resized), otherwise it is only emitted when the mouse button is released at the end of resizing.</p>
+<p>Tracking defaults to false.</p>
+<p>Access functions:</p>
+<ul>
+<li><div class="fn"/><b>bool tracking () const</b></li>
+<li><div class="fn"/><b>virtual void setTracking ( bool <i>enable</i> )</b></li>
+</ul>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="Q3Header"></a>Q3Header::Q3Header ( <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a horizontal header called <i>name</i>, with parent <i>parent</i>.</p>
+<h3 class="fn"><a name="Q3Header-2"></a>Q3Header::Q3Header ( int <i>n</i>, <a href="qwidget.html">QWidget</a> * <i>parent</i> = 0, const char * <i>name</i> = 0 )</h3>
+<p>Constructs a horizontal header called <i>name</i>, with <i>n</i> sections and parent <i>parent</i>.</p>
+<h3 class="fn"><a name="dtor.Q3Header"></a>Q3Header::~Q3Header ()</h3>
+<p>Destroys the header and all its sections.</p>
+<h3 class="fn"><a name="addLabel"></a>int Q3Header::addLabel ( const <a href="qstring.html">QString</a> &amp; <i>s</i>, int <i>size</i> = -1 )</h3>
+<p>Adds a new section with label text <i>s</i>. Returns the index position where the section was added (at the right for horizontal headers, at the bottom for vertical headers). The section's width is set to <i>size</i>. If <i>size</i> &lt; 0, an appropriate size for the text <i>s</i> is chosen.</p>
+<h3 class="fn"><a name="addLabel-2"></a>int Q3Header::addLabel ( const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i>, int <i>size</i> = -1 )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Adds a new section with icon <i>icon</i> and label text <i>s</i>. Returns the index position where the section was added (at the right for horizontal headers, at the bottom for vertical headers). The section's width is set to <i>size</i>, unless size is negative in which case the size is calculated taking account of the size of the text.</p>
+<h3 class="fn"><a name="adjustHeaderSize"></a>void Q3Header::adjustHeaderSize ()</h3>
+<p>Adjusts the size of the sections to fit the size of the header as completely as possible. Only sections for which <a href="q3header.html#stretching-prop">isStretchEnabled</a>() is true will be resized.</p>
+<h3 class="fn"><a name="cellAt"></a>int Q3Header::cellAt ( int <i>pos</i> ) const</h3>
+<p>Use <a href="q3header.html#sectionAt">sectionAt</a>() instead.</p>
+<p>Returns the index at which the section is displayed, which contains <i>pos</i> in widget coordinates, or -1 if <i>pos</i> is outside the header sections.</p>
+<h3 class="fn"><a name="cellPos"></a>int Q3Header::cellPos ( int <i>i</i> ) const</h3>
+<p>Use <a href="q3header.html#sectionPos">sectionPos</a>() instead.</p>
+<p>Returns the position in pixels of the section that is displayed at the index <i>i</i>. The position is measured from the start of the header.</p>
+<h3 class="fn"><a name="cellSize"></a>int Q3Header::cellSize ( int <i>i</i> ) const</h3>
+<p>Use <a href="q3header.html#sectionSize">sectionSize</a>() instead.</p>
+<p>Returns the size in pixels of the section that is displayed at the index <i>i</i>.</p>
+<p>See also <a href="q3header.html#setCellSize">setCellSize</a>().</p>
+<h3 class="fn"><a name="clicked"></a>void Q3Header::clicked ( int <i>section</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>If <a href="q3header.html#isClickEnabled">isClickEnabled</a>() is true, this signal is emitted when the user clicks section <i>section</i>.</p>
+<p>See also <a href="q3header.html#pressed">pressed</a>() and <a href="q3header.html#released">released</a>().</p>
+<h3 class="fn"><a name="headerWidth"></a>int Q3Header::headerWidth () const</h3>
+<p>Returns the total width of all the header columns.</p>
+<h3 class="fn"><a name="iconSet"></a><a href="qicon.html">QIcon</a> * Q3Header::iconSet ( int <i>section</i> ) const</h3>
+<p>Returns the icon set for section <i>section</i>. If the section does not exist, 0 is returned.</p>
+<h3 class="fn"><a name="indexChange"></a>void Q3Header::indexChange ( int <i>section</i>, int <i>fromIndex</i>, int <i>toIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user moves section <i>section</i> from index position <i>fromIndex</i>, to index position <i>toIndex</i>.</p>
+<h3 class="fn"><a name="isClickEnabled"></a>bool Q3Header::isClickEnabled ( int <i>section</i> = -1 ) const</h3>
+<p>Returns true if section <i>section</i> is clickable; otherwise returns false.</p>
+<p>If <i>section</i> is out of range (negative or larger than <a href="q3header.html#count-prop">count</a>() - 1): returns true if all sections are clickable; otherwise returns false.</p>
+<p>See also <a href="q3header.html#setClickEnabled">setClickEnabled</a>().</p>
+<h3 class="fn"><a name="isResizeEnabled"></a>bool Q3Header::isResizeEnabled ( int <i>section</i> = -1 ) const</h3>
+<p>Returns true if section <i>section</i> is resizeable; otherwise returns false.</p>
+<p>If <i>section</i> is -1 then this function applies to all sections, i.e&#x2e; returns true if all sections are resizeable; otherwise returns false.</p>
+<p>See also <a href="q3header.html#setResizeEnabled">setResizeEnabled</a>().</p>
+<h3 class="fn"><a name="label"></a><a href="qstring.html">QString</a> Q3Header::label ( int <i>section</i> ) const</h3>
+<p>Returns the text for section <i>section</i>. If the section does not exist, returns an empty string.</p>
+<p>See also <a href="q3header.html#setLabel">setLabel</a>().</p>
+<h3 class="fn"><a name="mapToActual"></a>int Q3Header::mapToActual ( int <i>l</i> ) const</h3>
+<p>Use <a href="q3header.html#mapToIndex">mapToIndex</a>() instead.</p>
+<p>Translates from logical index <i>l</i> to actual index (index at which the section <i>l</i> is displayed) . Returns -1 if <i>l</i> is outside the legal range.</p>
+<p>See also <a href="q3header.html#mapToLogical">mapToLogical</a>().</p>
+<h3 class="fn"><a name="mapToIndex"></a>int Q3Header::mapToIndex ( int <i>section</i> ) const</h3>
+<p>Returns the index position at which section <i>section</i> is displayed.</p>
+<h3 class="fn"><a name="mapToLogical"></a>int Q3Header::mapToLogical ( int <i>a</i> ) const</h3>
+<p>Use <a href="q3header.html#mapToSection">mapToSection</a>() instead.</p>
+<p>Translates from actual index <i>a</i> (index at which the section is displayed) to logical index of the section. Returns -1 if <i>a</i> is outside the legal range.</p>
+<p>See also <a href="q3header.html#mapToActual">mapToActual</a>().</p>
+<h3 class="fn"><a name="mapToSection"></a>int Q3Header::mapToSection ( int <i>index</i> ) const</h3>
+<p>Returns the number of the section that is displayed at index position <i>index</i>.</p>
+<h3 class="fn"><a name="moveCell"></a>void Q3Header::moveCell ( int <i>fromIdx</i>, int <i>toIdx</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Use <a href="q3header.html#moveSection">moveSection</a>() instead.</p>
+<p>Moves the section that is currently displayed at index <i>fromIdx</i> to index <i>toIdx</i>.</p>
+<h3 class="fn"><a name="moveSection"></a>void Q3Header::moveSection ( int <i>section</i>, int <i>toIndex</i> )</h3>
+<p>Moves section <i>section</i> to index position <i>toIndex</i>.</p>
+<h3 class="fn"><a name="moved"></a>void Q3Header::moved ( int <i>fromIndex</i>, int <i>toIndex</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>Use <a href="q3header.html#indexChange">indexChange</a>() instead.</p>
+<p>This signal is emitted when the user has moved the section which is displayed at the index <i>fromIndex</i> to the index <i>toIndex</i>.</p>
+<h3 class="fn"><a name="paintSection"></a>void Q3Header::paintSection ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>index</i>, const <a href="qrect.html">QRect</a> &amp; <i>fr</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the section at position <i>index</i>, inside rectangle <i>fr</i> (which uses widget coordinates) using painter <i>p</i>.</p>
+<p>Calls <a href="q3header.html#paintSectionLabel">paintSectionLabel</a>().</p>
+<h3 class="fn"><a name="paintSectionLabel"></a>void Q3Header::paintSectionLabel ( <a href="qpainter.html">QPainter</a> * <i>p</i>, int <i>index</i>, const <a href="qrect.html">QRect</a> &amp; <i>fr</i> )&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Paints the label of the section at position <i>index</i>, inside rectangle <i>fr</i> (which uses widget coordinates) using painter <i>p</i>.</p>
+<p>Called by <a href="q3header.html#paintSection">paintSection</a>()</p>
+<h3 class="fn"><a name="pressed"></a>void Q3Header::pressed ( int <i>section</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user presses section <i>section</i> down.</p>
+<p>See also <a href="q3header.html#released">released</a>().</p>
+<h3 class="fn"><a name="released"></a>void Q3Header::released ( int <i>section</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when section <i>section</i> is released.</p>
+<p>See also <a href="q3header.html#pressed">pressed</a>().</p>
+<h3 class="fn"><a name="removeLabel"></a>void Q3Header::removeLabel ( int <i>section</i> )</h3>
+<p>Removes section <i>section</i>. If the section does not exist, nothing happens.</p>
+<h3 class="fn"><a name="resizeSection"></a>void Q3Header::resizeSection ( int <i>section</i>, int <i>s</i> )</h3>
+<p>Resizes section <i>section</i> to <i>s</i> pixels wide (or high).</p>
+<h3 class="fn"><a name="sRect"></a><a href="qrect.html">QRect</a> Q3Header::sRect ( int <i>index</i> )&nbsp;&nbsp;<tt> [protected]</tt></h3>
+<p>Returns the rectangle covered by the section at index <i>index</i>.</p>
+<h3 class="fn"><a name="sectionAt"></a>int Q3Header::sectionAt ( int <i>pos</i> ) const</h3>
+<p>Returns the index of the section which contains the position <i>pos</i> given in pixels from the left (or top).</p>
+<p>See also <a href="q3header.html#offset-prop">offset</a>().</p>
+<h3 class="fn"><a name="sectionClicked"></a>void Q3Header::sectionClicked ( int <i>index</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>Use <a href="q3header.html#clicked">clicked</a>() instead.</p>
+<p>This signal is emitted when a part of the header is clicked. <i>index</i> is the index at which the section is displayed.</p>
+<p>In a list view this signal would typically be connected to a slot that sorts the specified column (or row).</p>
+<h3 class="fn"><a name="sectionHandleDoubleClicked"></a>void Q3Header::sectionHandleDoubleClicked ( int <i>section</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user doubleclicks on the edge (handle) of section <i>section</i>.</p>
+<h3 class="fn"><a name="sectionPos"></a>int Q3Header::sectionPos ( int <i>section</i> ) const</h3>
+<p>Returns the position (in pixels) at which the <i>section</i> starts.</p>
+<p>See also <a href="q3header.html#offset-prop">offset</a>().</p>
+<h3 class="fn"><a name="sectionRect"></a><a href="qrect.html">QRect</a> Q3Header::sectionRect ( int <i>section</i> ) const</h3>
+<p>Returns the rectangle covered by section <i>section</i>.</p>
+<h3 class="fn"><a name="sectionSize"></a>int Q3Header::sectionSize ( int <i>section</i> ) const</h3>
+<p>Returns the width (or height) of the <i>section</i> in pixels.</p>
+<h3 class="fn"><a name="setCellSize"></a>void Q3Header::setCellSize ( int <i>section</i>, int <i>s</i> )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Use <a href="q3header.html#resizeSection">resizeSection</a>() instead.</p>
+<p>Sets the size of the section <i>section</i> to <i>s</i> pixels.</p>
+<p><b>Warning:</b> does not repaint or send out signals</p>
+<p>See also <a href="q3header.html#cellSize">cellSize</a>().</p>
+<h3 class="fn"><a name="setClickEnabled"></a>void Q3Header::setClickEnabled ( bool <i>enable</i>, int <i>section</i> = -1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>enable</i> is true, any clicks on section <i>section</i> will result in <a href="q3header.html#clicked">clicked</a>() signals being emitted; otherwise the section will ignore clicks.</p>
+<p>If <i>section</i> is -1 (the default) then the <i>enable</i> value is set for all existing sections and will be applied to any new sections that are added.</p>
+<p>See also <a href="q3header.html#isClickEnabled">isClickEnabled</a>(), <a href="q3header.html#moving-prop">setMovingEnabled</a>(), and <a href="q3header.html#setResizeEnabled">setResizeEnabled</a>().</p>
+<h3 class="fn"><a name="setLabel"></a>void Q3Header::setLabel ( int <i>section</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i>, int <i>size</i> = -1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Sets the text of section <i>section</i> to <i>s</i>. The section's width is set to <i>size</i> if <i>size</i> &gt;= 0; otherwise it is left unchanged. Any icon set that has been set for this section remains unchanged.</p>
+<p>If the section does not exist, nothing happens.</p>
+<p>See also <a href="q3header.html#label">label</a>().</p>
+<h3 class="fn"><a name="setLabel-2"></a>void Q3Header::setLabel ( int <i>section</i>, const <a href="qicon.html">QIcon</a> &amp; <i>icon</i>, const <a href="qstring.html">QString</a> &amp; <i>s</i>, int <i>size</i> = -1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the icon for section <i>section</i> to <i>icon</i> and the text to <i>s</i>. The section's width is set to <i>size</i> if <i>size</i> &gt;= 0; otherwise it is left unchanged.</p>
+<p>If the section does not exist, nothing happens.</p>
+<h3 class="fn"><a name="setResizeEnabled"></a>void Q3Header::setResizeEnabled ( bool <i>enable</i>, int <i>section</i> = -1 )&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>If <i>enable</i> is true the user may resize section <i>section</i>; otherwise the section may not be manually resized.</p>
+<p>If <i>section</i> is negative (the default) then the <i>enable</i> value is set for all existing sections and will be applied to any new sections that are added. Example:</p>
+<pre>     // Allow resizing of all current and future sections
+     header-&gt;setResizeEnabled(true);
+     // Disable resizing of section 3, (the fourth section added)
+     header-&gt;setResizeEnabled(false, 3);</pre>
+<p>If the user resizes a section, a <a href="q3header.html#sizeChange">sizeChange</a>() signal is emitted.</p>
+<p>See also <a href="q3header.html#isResizeEnabled">isResizeEnabled</a>(), <a href="q3header.html#moving-prop">setMovingEnabled</a>(), <a href="q3header.html#setClickEnabled">setClickEnabled</a>(), and <a href="q3header.html#tracking-prop">setTracking</a>().</p>
+<h3 class="fn"><a name="setSortIndicator"></a>void Q3Header::setSortIndicator ( int <i>section</i>, <a href="qt.html#SortOrder-enum">Qt::SortOrder</a> <i>order</i> )</h3>
+<p>Sets a sort indicator onto the specified <i>section</i>. The indicator's <i>order</i> is either Ascending or Descending.</p>
+<p>Only one section can show a sort indicator at any one time. If you don't want any section to show a sort indicator pass a <i>section</i> number of -1.</p>
+<p>See also <a href="q3header.html#sortIndicatorSection">sortIndicatorSection</a>() and <a href="q3header.html#sortIndicatorOrder">sortIndicatorOrder</a>().</p>
+<h3 class="fn"><a name="setSortIndicator-2"></a>void Q3Header::setSortIndicator ( int <i>section</i>, bool <i>ascending</i> = true )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Sets the sort indicator to <i>ascending</i>. Use the other overload instead.</p>
+<h3 class="fn"><a name="sizeChange"></a>void Q3Header::sizeChange ( int <i>section</i>, int <i>oldSize</i>, int <i>newSize</i> )&nbsp;&nbsp;<tt> [signal]</tt></h3>
+<p>This signal is emitted when the user has changed the size of a <i>section</i> from <i>oldSize</i> to <i>newSize</i>. This signal is typically connected to a slot that repaints the table or list that contains the header.</p>
+<h3 class="fn"><a name="sortIndicatorOrder"></a><a href="qt.html#SortOrder-enum">Qt::SortOrder</a> Q3Header::sortIndicatorOrder () const</h3>
+<p>Returns the implied sort order of the Q3Headers sort indicator.</p>
+<p>See also <a href="q3header.html#setSortIndicator">setSortIndicator</a>() and <a href="q3header.html#sortIndicatorSection">sortIndicatorSection</a>().</p>
+<h3 class="fn"><a name="sortIndicatorSection"></a>int Q3Header::sortIndicatorSection () const</h3>
+<p>Returns the section showing the sort indicator or -1 if there is no sort indicator.</p>
+<p>See also <a href="q3header.html#setSortIndicator">setSortIndicator</a>() and <a href="q3header.html#sortIndicatorOrder">sortIndicatorOrder</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

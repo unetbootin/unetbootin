@@ -1,0 +1,571 @@
+/****************************************************************************
+**
+** Copyright (C) 2004-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \class Q3ValueList
+    \brief The Q3ValueList class is a value-based template class that
+    provides lists.
+    \compat
+
+    Q3ValueList is a Qt implementation of an STL-like list container.
+    It can be used in your application if the standard \c list is not
+    available for your target platforms.
+
+    Q3ValueList\<T\> defines a template instance to create a list of
+    values that all have the class T. Note that Q3ValueList does not
+    store pointers to the members of the list; it holds a copy of
+    every member. This is why these kinds of classes are called "value
+    based"; Q3PtrList and Q3Dict are "pointer based".
+
+    Q3ValueList contains and manages a collection of objects of type T
+    and provides iterators that allow the contained objects to be
+    addressed. Q3ValueList owns the contained items. For more relaxed
+    ownership semantics, see Q3PtrCollection and friends which are
+    pointer-based containers.
+
+    Some classes cannot be used within a Q3ValueList, for example, all
+    classes derived from QObject and thus all classes that implement
+    widgets. Only values can be used in a Q3ValueList. To qualify as a
+    value the class must provide:
+    \list
+    \i a copy constructor;
+    \i an assignment operator;
+    \i a default constructor, i.e. a constructor that does not take any arguments.
+    \endlist
+
+    Note that C++ defaults to field-by-field assignment operators and
+    copy constructors if no explicit version is supplied. In many
+    cases this is sufficient.
+
+    In addition, some compilers (e.g. Sun CC) might require that the
+    class provides an equality operator (operator==()).
+
+    Q3ValueList's function naming is consistent with the other Qt
+    classes (e.g. count(), isEmpty()). Q3ValueList also provides extra
+    functions for compatibility with STL algorithms, such as size()
+    and empty(). Programmers already familiar with the STL \c list may
+    prefer to use the STL-compatible functions.
+
+    Example:
+    \snippet doc/src/snippets/code/doc.src.q3valuelist.qdoc 0
+
+
+    Notice that the latest changes to Mary's salary did not affect the
+    value in the list because the list created a copy of Mary's entry.
+
+    There are several ways to find items in the list. The begin() and
+    end() functions return iterators to the beginning and end of the
+    list. The advantage of getting an iterator is that you can move
+    forward or backward from this position by
+    incrementing/decrementing the iterator. The iterator returned by
+    end() points to the item which is one \e past the last item in the
+    container. The past-the-end iterator is still associated with the
+    list it belongs to, however it is \e not dereferenceable;
+    operator*() will not return a well-defined value. If the list is
+    empty(), the iterator returned by begin() will equal the iterator
+    returned by end().
+
+    It is safe to have multiple iterators a the list at the same
+    time. If some member of the list is removed, only iterators
+    pointing to the removed member become invalid. Inserting into the
+    list does not invalidate any iterator. For convenience, the
+    function last() returns a reference to the last item in the list,
+    and first() returns a reference to the the first item. If the
+    list is empty(), both last() and first() have undefined behavior
+    (your application will crash or do unpredictable things). Use
+    last() and first() with caution, for example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuelist.qdoc 1
+
+    Because Q3ValueList is value-based there is no need to be careful
+    about deleting items in the list. The list holds its own copies
+    and will free them if the corresponding member or the list itself
+    is deleted. You can force the list to free all of its items with
+    clear().
+
+    Q3ValueList is shared implicitly, which means it can be copied in
+    constant time, i.e. O(1). If multiple Q3ValueList instances share
+    the same data and one needs to modify its contents, this modifying
+    instance makes a copy and modifies its private copy; therefore it
+    does not affect the other instances; this takes O(n) time. This is
+    often called "copy on write". If a Q3ValueList is being used in a
+    multi-threaded program, you must protect all access to the list.
+    See \l QMutex.
+
+    There are several ways to insert items into the list. The
+    prepend() and append() functions insert items at the beginning and
+    the end of the list respectively. The insert() function comes in
+    several flavors and can be used to add one or more items at
+    specific positions within the list.
+
+    Items can also be removed from the list in several ways. There
+    are several variants of the remove() function, which removes a
+    specific item from the list. The remove() function will find and
+    remove items according to a specific item value.
+
+    \sa Q3ValueListIterator
+*/
+
+/*! \typedef Q3ValueList::iterator
+	The list's iterator type, Q3ValueListIterator. */
+/*! \typedef Q3ValueList::const_iterator
+	The list's const iterator type, Q3ValueListConstIterator. */
+/*! \typedef Q3ValueList::value_type
+	The type of the object stored in the list, T. */
+/*! \typedef Q3ValueList::pointer
+	The pointer to T type. */
+/*! \typedef Q3ValueList::const_pointer
+	The const pointer to T type. */
+/*! \typedef Q3ValueList::reference
+	The reference to T type. */
+/*! \typedef Q3ValueList::const_reference
+	The const reference to T type. */
+/*! \typedef Q3ValueList::size_type
+	An unsigned integral type, used to represent various sizes. */
+/*! \typedef Q3ValueList::difference_type
+    \internal
+*/
+/*!
+    \fn Q3ValueList::Q3ValueList()
+
+    Constructs an empty list.
+*/
+
+/*!
+    \fn Q3ValueList::Q3ValueList( const Q3ValueList<T>& l )
+    \fn Q3ValueList::Q3ValueList( const QList<T>& l )
+    \fn Q3ValueList::Q3ValueList( const QLinkedList<T>& l )
+
+    Constructs a copy of \a l.
+*/
+
+/*!
+    \fn Q3ValueList::Q3ValueList( const std::list<T>& l )
+
+    Contructs a copy of \a l.
+
+    This constructor is provided for compatibility with STL
+    containers.
+*/
+
+/*!
+    \fn Q3ValueList::~Q3ValueList()
+
+    Destroys the list. References to the values in the list and all
+    iterators of this list become invalidated. Note that it is
+    impossible for an iterator to check whether or not it is valid:
+    Q3ValueList is highly tuned for performance, not for error
+    checking.
+*/
+
+/*!
+    \fn bool Q3ValueList::operator== ( const Q3ValueList<T>& l ) const
+
+    Compares both lists.
+
+    Returns TRUE if this list and \a l are equal; otherwise returns
+    FALSE.
+*/
+
+/*!
+    \fn bool Q3ValueList::operator== ( const std::list<T>& l ) const
+
+    \overload
+
+    Returns TRUE if this list and \a l are equal; otherwise returns
+    FALSE.
+
+    This operator is provided for compatibility with STL containers.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator= ( const Q3ValueList<T>& l )
+
+    Assigns \a l to this list and returns a reference to this list.
+
+    All iterators of the current list become invalidated by this
+    operation. The cost of such an assignment is O(1) since Q3ValueList
+    is implicitly shared.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator= ( const QList<T>& l )
+
+    Assigns \a l to this list and returns a reference to this list.
+
+    All iterators of the current list become invalidated by this
+    operation.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator= ( const std::list<T>& l )
+
+    \overload
+
+    Assigns the contents of \a l to the list.
+
+    All iterators of the current list become invalidated by this
+    operation.
+*/
+
+/*!
+    \fn bool Q3ValueList::operator!= ( const Q3ValueList<T>& l ) const
+
+    Compares both lists.
+
+    Returns TRUE if this list and \a l are unequal; otherwise returns
+    FALSE.
+*/
+
+/*!
+    \fn iterator Q3ValueList::insert( typename Q3ValueList<T>::Iterator it, const T& x )
+
+    Inserts the value \a x in front of the item pointed to by the
+    iterator, \a it.
+
+    Returns an iterator pointing at the inserted item.
+
+    \sa append(), prepend()
+*/
+
+/*!
+    \fn uint Q3ValueList::remove( const T& x )
+
+    \overload
+
+    Removes all items that have value \a x and returns the number of
+    removed items.
+*/
+
+/*!
+    \fn QDataStream& operator>>( QDataStream& s, Q3ValueList<T>& l )
+
+    \relates Q3ValueList
+
+    Reads a list, \a l, from the stream \a s. The type T stored in the
+    list must implement the streaming operator.
+*/
+
+/*!
+    \fn QDataStream& operator<<( QDataStream& s, const Q3ValueList<T>& l )
+
+    \overload
+    \relates Q3ValueList
+
+    Writes a list, \a l, to the stream \a s. The type T stored in the
+    list must implement the streaming operator.
+*/
+
+/*!
+    \fn void Q3ValueList::insert( typename Q3ValueList<T>::Iterator pos,
+                                  typename Q3ValueList<T>::size_type n, const T& x )
+
+    \overload
+
+    Inserts \a n copies of \a x before position \a pos.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator<< ( const T& x )
+
+    Adds the value \a x to the end of the list.
+
+    Returns a reference to the list.
+*/
+
+/*!
+    \fn const T& Q3ValueList::operator[] ( typename Q3ValueList<T>::size_type i ) const
+
+    Returns a const reference to the item with index \a i in the list.
+    It is up to you to check whether this item really exists. You can
+    do that easily with the count() function. However this operator
+    does not check whether \a i is in range and will deliver undefined
+    results if it does not exist.
+
+    \warning This function uses a linear search and can be extremely
+    slow for large lists. Q3ValueList is not optimized for random item
+    access. If you need random access use a different container, such
+    as Q3ValueVector.
+*/
+
+/*!
+    \fn T& Q3ValueList::operator[] ( typename Q3ValueList<T>::size_type i )
+
+    \overload
+
+    Returns a non-const reference to the item with index \a i.
+*/
+
+/*!
+    \fn const_iterator Q3ValueList::at( typename Q3ValueList<T>::size_type i ) const
+
+    Returns an iterator pointing to the item at position \a i in the
+    list, or an undefined value if the index is out of range.
+
+    \warning This function uses a linear search and can be extremely
+    slow for large lists. Q3ValueList is not optimized for random item
+    access. If you need random access use a different container, such
+    as Q3ValueVector.
+*/
+
+/*!
+    \fn iterator Q3ValueList::at( typename Q3ValueList<T>::size_type i )
+
+    \overload
+
+    Returns an iterator pointing to the item at position \a i in the
+    list, or an undefined value if the index is out of range.
+
+*/
+
+/*!
+    \fn iterator Q3ValueList::fromLast()
+
+    \overload
+
+    Returns an iterator to the last item in the list, or end() if
+    there is no last item.
+
+    Use the end() function instead. For example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuelist.qdoc 2
+
+*/
+
+/*!
+    \fn const_iterator Q3ValueList::fromLast() const
+
+    Returns an iterator to the last item in the list, or end() if
+    there is no last item.
+
+    Use the end() function instead. For example:
+
+    \snippet doc/src/snippets/code/doc.src.q3valuelist.qdoc 3
+
+*/
+
+/*!
+    \fn Q3ValueList<T> Q3ValueList::operator+( const Q3ValueList<T>& l ) const
+
+    Creates a new list and fills it with the items of this list. Then
+    the items of \a l are appended. Returns the new list.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator+= ( const Q3ValueList<T>& l )
+
+    Appends the items of \a l to this list. Returns a reference to
+    this list.
+*/
+
+/*!
+    \fn Q3ValueList<T>& Q3ValueList::operator+= ( const T& x )
+
+    \overload
+
+    Appends the value \a x to the list. Returns a reference to the
+    list.
+*/
+
+/*!
+    \fn iterator Q3ValueList::append( const T& x )
+
+    Inserts \a x at the end of the list.
+
+    \sa insert(), prepend()
+*/
+
+/*!
+    \fn iterator Q3ValueList::prepend( const T& x )
+
+    Inserts \a x at the beginning of the list.
+
+    \sa insert(), append()
+*/
+
+/*!
+    \fn iterator Q3ValueList::remove( typename Q3ValueList<T>::Iterator it )
+
+    Removes the item pointed to by \a it from the list. No iterators
+    other than \a it or other iterators pointing at the same item as
+    \a it are invalidated. Returns an iterator to the next item after
+    \a it, or end() if there is no such item.
+
+    \sa clear()
+*/
+
+/*!
+    \fn uint Q3ValueList::contains( const T& x ) const
+
+    Returns the number of occurrences of the value \a x in the list.
+*/
+
+/*!
+    \class Q3ValueListIterator
+    \brief The Q3ValueListIterator class provides an iterator for Q3ValueList.
+    \compat
+
+    An iterator is a class for accessing the items of a container
+    class: a generalization of the index in an array. A pointer
+    into a "const char *" and an index into an "int[]" are both
+    iterators, and the general idea is to provide that functionality
+    for any data structure.
+
+    The Q3ValueListIterator class is an iterator for Q3ValueList
+    instantiations. You can create the appropriate iterator type by
+    using the \c iterator typedef provided by Q3ValueList.
+
+    The only way to access the items in a Q3ValueList is to use an
+    iterator.
+
+    Example (see Q3ValueList for the complete code):
+    \snippet doc/src/snippets/code/doc.src.q3valuelist.qdoc 4
+
+    Q3ValueList is highly optimized for performance and memory usage.
+    This means that you must be careful: Q3ValueList does not know
+    about all its iterators and the iterators don't know to which list
+    they belong. This makes things very fast, but if you're not
+    careful, you can get spectacular bugs. Always make sure iterators
+    are valid before dereferencing them or using them as parameters to
+    generic algorithms in the STL.
+
+    Using an invalid iterator is undefined (your application will
+    probably crash). Many Qt functions return const value lists; to
+    iterate over these you should make a copy and iterate over the
+    copy.
+
+    For every Iterator there is a ConstIterator. When accessing a
+    Q3ValueList in a const environment or if the reference or pointer
+    to the list is itself const, then you must use the ConstIterator.
+    Its semantics are the same as the Iterator, but it only returns
+    const references.
+
+    \sa Q3ValueList, Q3ValueListConstIterator
+*/
+
+/*!
+    \fn Q3ValueListIterator::Q3ValueListIterator()
+
+    Constructs an unitialized iterator.
+*/
+
+/*!
+    \fn Q3ValueListIterator::Q3ValueListIterator(const Q3ValueListIterator &o)
+    \fn Q3ValueListIterator::Q3ValueListIterator(const typename QLinkedList<T>::iterator &o)
+
+    Constucts a copy of iterator \a o.
+*/
+
+/*!
+    \class Q3ValueListConstIterator
+    \brief The Q3ValueListConstIterator class provides a const iterator
+    for Q3ValueList.
+    \compat
+
+    In contrast to Q3ValueListIterator, this class is used to iterate
+    over a const list. It does not allow modification of the values of
+    the list since that would break const semantics.
+
+    You can create the appropriate const iterator type by using the \c
+    const_iterator typedef provided by Q3ValueList.
+
+    For more information on Q3ValueList iterators, see
+    Q3ValueListIterator.
+
+    \sa Q3ValueListIterator, Q3ValueList
+*/
+
+/*!
+    \fn Q3ValueListConstIterator::Q3ValueListConstIterator()
+
+    Constructs an unitialized iterator.
+*/
+
+/*!
+    \fn Q3ValueListConstIterator::Q3ValueListConstIterator(const Q3ValueListConstIterator &o)
+    \fn Q3ValueListConstIterator::Q3ValueListConstIterator(const typename QLinkedList<T>::const_iterator &o)
+    \fn Q3ValueListConstIterator::Q3ValueListConstIterator(const typename QLinkedList<T>::iterator &o)
+
+    Constructs a copy of iterator \a o.
+*/
+
+/*!
+    \typedef Q3ValueList::Iterator
+
+    This iterator is an instantiation of Q3ValueListIterator for the
+    same type as this Q3ValueList. In other words, if you instantiate
+    Q3ValueList<int>, Iterator is a Q3ValueListIterator<int>. Several
+    member function use it, such as Q3ValueList::begin(), which returns
+    an iterator pointing to the first item in the list.
+
+    Functionally, this is almost the same as ConstIterator. The only
+    difference is that you cannot use ConstIterator for non-const
+    operations, and that the compiler can often generate better code
+    if you use ConstIterator.
+
+    \sa Q3ValueListIterator ConstIterator
+*/
+
+/*!
+    \typedef Q3ValueList::ConstIterator
+
+    This iterator is an instantiation of Q3ValueListConstIterator for
+    the same type as this Q3ValueList. In other words, if you
+    instantiate Q3ValueList<int>, ConstIterator is a
+    Q3ValueListConstIterator<int>. Several member function use it, such
+    as Q3ValueList::begin(), which returns an iterator pointing to the
+    first item in the list.
+
+    Functionally, this is almost the same as Iterator. The only
+    difference is you cannot use ConstIterator for non-const
+    operations, and that the compiler can often generate better code
+    if you use ConstIterator.
+
+    \sa Q3ValueListIterator Iterator
+*/
+
+/*!
+    \fn Q3ValueList::operator QList<T>() const
+
+    Automatically converts a Q3ValueList<T> into a QList<T>.
+*/

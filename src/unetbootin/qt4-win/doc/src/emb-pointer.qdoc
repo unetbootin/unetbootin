@@ -1,0 +1,218 @@
+/****************************************************************************
+**
+** Copyright (C) 2006-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \page qt-embedded-pointer.html
+
+    \title Qt for Embedded Linux Pointer Handling
+    \ingroup qt-embedded
+
+    When running a \l{Qt for Embedded Linux} application, it either runs as a
+    server or connects to an existing server. The mouse driver is
+    loaded by the server application when it starts running, using
+    Qt's \l {How to Create Qt Plugins}{plugin system}.
+
+    Internally in the client/server protocol, all system generated
+    events, including pointer events, are passed to the server
+    application which then propagates the event to the appropiate
+    client. Note that pointer handling in \l{Qt for Embedded Linux} works for
+    both mouse and mouse-like devices such as touch panels and
+    trackballs.
+
+    Contents:
+
+    \tableofcontents
+
+    \section1 Available Drivers
+
+    \l{Qt for Embedded Linux} provides ready-made drivers for the MouseMan,
+    IntelliMouse, Microsoft, NEC Vr41XX, Linux Touch Panel and Yopy
+    protocols as well as the universal touch screen library,
+    tslib. Run the \c configure script to list the available drivers:
+
+    \if defined(QTOPIA_PHONE)
+
+        \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 0
+
+        \bold{Note:} By default only the PC mouse driver is enabled.
+
+        The various drivers can be enabled and disabled using the \c
+        configure script. For example:
+
+        \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 1
+
+    \else
+
+        \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 2
+
+        In the default Qt configuration, only the "pc" mouse driver is
+        enabled. The various drivers can be enabled and disabled using
+        the \c configure script. For example:
+
+        \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 3
+    \endif
+
+    Custom mouse drivers can be implemented by subclassing the
+    QWSMouseHandler class and creating a mouse driver plugin (derived
+    from the QMouseDriverPlugin class). The default implementation of the
+    QMouseDriverFactory class will automatically detect the plugin,
+    loading the driver into the server application at run-time.
+
+    If you are creating a driver for a device that needs calibration
+    or noise reduction, such as a touchscreen, derive from the
+    QWSCalibratedMouseHandler subclass instead to take advantage of
+    its calibration functionality.
+
+    \if defined(QTOPIA_PHONE)
+        For a tutorial on how to add a new keyboard driver plug-in
+        see: \l {Tutorial: Implementing a Device Plug-in}.
+    \endif
+
+    \section1 Specifying a Driver
+
+    Provided that the "pc" mouse driver is enabled, \l{Qt for Embedded Linux} will
+    try to auto-detect the mouse device if it is one of the supported
+    types on \c /dev/psaux or one of the \c /dev/ttyS?  serial
+    lines. If multiple mice are detected, all may be used
+    simultaneously.
+
+    Note that \l{Qt for Embedded Linux} does not support auto-detection of \e
+    {touch panels} in which case the driver must be specified
+    explicitly to determine which device to use.
+
+    To manually specify which driver to use, set the QWS_MOUSE_PROTO
+    environment variable. For example (if the current shell is bash,
+    ksh, zsh or sh):
+
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 4
+
+    The valid values for the \c <driver> argument are \c MouseMan, \c
+    IntelliMouse, \c Microsoft, \c VR41xx, \c LinuxTP, \c Yopy, \c
+    Tslib and \l {QMouseDriverPlugin::keys()}{keys} identifying custom
+    drivers, and the driver specific options are typically a device,
+    e.g., \c /dev/mouse for mouse devices and \c /dev/ts for touch
+    panels.
+
+    Multiple mouse drivers can be specified in one go:
+
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 5
+
+    Input will be read from all specified drivers.
+
+    Note that the \c Vr41xx driver also accepts two optional
+    arguments: \c press=<value> defining a mouse click (the default
+    value is 750) and \c filter=<value> specifying the length of the
+    filter used to eliminate noise (the default length is 3). For
+    example:
+
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 6
+
+    \table
+    \header \o The Tslib Mouse Driver
+    \row
+    \o
+
+    The tslib mouse driver inherits the QWSCalibratedMouseHandler
+    class, providing calibration and noise reduction functionality in
+    addition to generating mouse events for devices using the
+    Universal Touch Screen Library.
+
+    To be able to compile this mouse handler, \l{Qt for Embedded Linux} must be
+    configured with the \c -qt-mouse-tslib option as described
+    above. In addition, the tslib headers and library must be present
+    in the build environment.
+
+    The tslib sources can be downloaded from \l
+    http://tslib.berlios.de. Use the \c configure script's -L and
+    -I options to explicitly specify the location of the library and
+    its headers:
+
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 7
+
+    In order to use this mouse driver, tslib must also be correctly
+    installed on the target machine. This includes providing a \c
+    ts.conf configuration file and setting the neccessary environment
+    variables (see the README file provided with tslib for details).
+
+    The \c ts.conf file will usually contain the following two lines:
+
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 8
+
+    To make \l{Qt for Embedded Linux} explicitly choose the tslib mouse
+    handler, set the QWS_MOUSE_PROTO environment variable as explained
+    above.
+
+    \endtable
+
+    \section1 Troubleshooting
+
+    \section2 Device Files
+
+    Make sure you are using the correct device file.
+
+    As a first step, you can test whether the device file actually gives any
+    output. For instance, if you have specified the mouse driver with
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 9
+    then try examining
+    the output from the device by entering the following command in a console:
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 10
+
+    If you see output from the device printed on the console when you move
+    the mouse, you are probably using the correct device file; otherwise, you
+    will need to experiment to find the correct device file.
+
+    \section2 File Permissions
+
+    Make sure you have sufficient permissions to access the device file.
+
+    The Qt for Embedded Linux server process needs at least read permission for the 
+    device file. Some drivers also require write access to the device file. 
+    For instance, if you have specified the mouse driver with
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 11
+    then examine the permissions of the device file by entering the following
+    command in a console:
+    \snippet doc/src/snippets/code/doc.src.emb-pointer.qdoc 12
+
+    If the device file is actually a symbolic link to another file, you must
+    change the permissions of the actual file instead.
+*/

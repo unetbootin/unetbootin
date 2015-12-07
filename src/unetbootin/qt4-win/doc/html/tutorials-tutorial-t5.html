@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/tutorials/tutorial.qdoc -->
+<head>
+  <title>Qt 4.4: Qt Tutorial 5 - Building Blocks</title>
+  <link rel="prev" href="tutorials-tutorial-t4.html" />
+  <link rel="contents" href="tutorials-tutorial.html" />
+  <link rel="next" href="tutorials-tutorial-t6.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="tutorials-tutorial-t4.html">Chapter 4</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t6.html">Chapter 6</a>]
+</p>
+<h1 class="title">Qt Tutorial 5 - Building Blocks<br /><span class="subtitle"></span>
+</h1>
+<p>Files:</p>
+<ul>
+<li><a href="tutorials-tutorial-t5-main-cpp.html">tutorials/tutorial/t5/main.cpp</a></li>
+<li><a href="tutorials-tutorial-t5-t5-pro.html">tutorials/tutorial/t5/t5.pro</a></li>
+</ul>
+<p align="center"><img src="images/t5.png" alt="Screenshot of Chapter 5" /></p><p>This example shows how to create and connect together several widgets by using signals and slots, and how to handle resizes.</p>
+<pre> #include &lt;QApplication&gt;
+ #include &lt;QFont&gt;
+ #include &lt;QLCDNumber&gt;
+ #include &lt;QPushButton&gt;
+ #include &lt;QSlider&gt;
+ #include &lt;QVBoxLayout&gt;
+ #include &lt;QWidget&gt;
+
+ class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };
+
+ MyWidget::MyWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     QPushButton *quit = new QPushButton(tr(&quot;Quit&quot;));
+     quit-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     QLCDNumber *lcd = new QLCDNumber(2);
+     lcd-&gt;setSegmentStyle(QLCDNumber::Filled);
+
+     QSlider *slider = new QSlider(Qt::Horizontal);
+     slider-&gt;setRange(0, 99);
+     slider-&gt;setValue(0);
+
+     connect(quit, SIGNAL(clicked()), qApp, SLOT(quit()));
+     connect(slider, SIGNAL(valueChanged(int)),
+             lcd, SLOT(display(int)));
+
+     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(quit);
+     layout-&gt;addWidget(lcd);
+     layout-&gt;addWidget(slider);
+     setLayout(layout);
+ }
+
+ int main(int argc, char *argv[])
+ {
+     QApplication app(argc, argv);
+     MyWidget widget;
+     widget.show();
+     return app.exec();
+ }</pre>
+<a name="line-by-line-walkthrough"></a>
+<h2>Line by Line Walkthrough</h2>
+<pre> class MyWidget : public QWidget
+ {
+ public:
+     MyWidget(QWidget *parent = 0);
+ };
+
+ MyWidget::MyWidget(QWidget *parent)
+     : QWidget(parent)
+ {
+     QPushButton *quit = new QPushButton(tr(&quot;Quit&quot;));
+     quit-&gt;setFont(QFont(&quot;Times&quot;, 18, QFont::Bold));
+
+     QLCDNumber *lcd = new QLCDNumber(2);
+     lcd-&gt;setSegmentStyle(QLCDNumber::Filled);</pre>
+<p><tt>lcd</tt> is a <a href="qlcdnumber.html">QLCDNumber</a>, a widget that displays numbers in an LCD-like fashion. This instance is set up to display two digits. We set the <a href="qlcdnumber.html#segmentStyle-prop">QLCDNumber::segmentStyle</a> property to <a href="qlcdnumber.html#SegmentStyle-enum">QLCDNumber::Filled</a> to make the LCDs more readable.</p>
+<p>Historical note: <a href="qlcdnumber.html">QLCDNumber</a> was the first widget ever written for Qt, back in the days when <a href="qpainter.html">QPainter</a> supported only one drawing primitive: <a href="qpainter.html#drawLine">drawLine()</a>. The original version of the <a href="widgets-tetrix.html">Tetrix</a> example, which uses <a href="qlcdnumber.html">QLCDNumber</a> to display the score, was also written around that time.</p>
+<pre>     QSlider *slider = new QSlider(Qt::Horizontal);
+     slider-&gt;setRange(0, 99);
+     slider-&gt;setValue(0);</pre>
+<p>The user can use the <a href="qslider.html">QSlider</a> widget to adjust an integer value in a range. Here we create a horizontal one, set its minimum value to 0, its maximum value to 99, and its initial value to 0.</p>
+<pre>     connect(slider, SIGNAL(valueChanged(int)),
+             lcd, SLOT(display(int)));</pre>
+<p>Here we use the <a href="signalsandslots.html">signals and slots</a> mechanism to connect the slider's <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal to the LCD number's <a href="qlcdnumber.html#intValue-prop">display()</a> slot.</p>
+<p>Whenever the slider's value changes it broadcasts the new value by emitting the <a href="qabstractslider.html#valueChanged">valueChanged()</a> signal. Because that signal is connected to the LCD number's <a href="qlcdnumber.html#intValue-prop">display()</a> slot, the slot is called when the signal is broadcast. Neither of the objects knows about the other. This is essential in component programming.</p>
+<p>Slots are otherwise normal C++ member functions and follow the normal C++ access rules.</p>
+<pre>     QVBoxLayout *layout = new QVBoxLayout;
+     layout-&gt;addWidget(quit);
+     layout-&gt;addWidget(lcd);
+     layout-&gt;addWidget(slider);
+     setLayout(layout);</pre>
+<p><tt>MyWidget</tt> now uses a <a href="qvboxlayout.html">QVBoxLayout</a> to manage the geometry of its child widgets. For that reason, we don't need to specify the screen coordinates for each widget like we did in Chapter 4. In addition, using a layout ensures that the child widgets are resized when the window is resized. Then we add the <tt>quit</tt>, <tt>lcd</tt> and <tt>slider</tt> widgets to the layout using <a href="qboxlayout.html#addWidget">QBoxLayout::addWidget</a>().</p>
+<p>The <a href="qwidget.html#setLayout">QWidget::setLayout</a>() function installs the layout on <tt>MyWidget</tt>. This makes the layout a child of <tt>MyWidget</tt> so we don't have to worry about deleting it; the parent-child relationship ensures that it will be deleted together with <tt>MyWidget</tt>. Also, the call to <a href="qwidget.html#setLayout">QWidget::setLayout</a>() automatically reparents the widgets in the layout so that they are children of <tt>MyWidget</tt>. Because of this, we didn't need to specify <tt>this</tt> as the parent for the <tt>quit</tt>, <tt>lcd</tt> and <tt>slider</tt> widgets.</p>
+<p>In Qt, widgets are either children of other widgets (e.g&#x2e; <tt>this</tt>), or they have no parent. A widget can be <i>added</i> to a layout, in which case the layout becomes responsible for managing the geometry of that widget, but the layout can never act as a parent itself. Indeed, <a href="qwidget.html">QWidget</a>'s constructor takes a <a href="qwidget.html">QWidget</a> pointer for the parent, and <a href="qlayout.html">QLayout</a> doesn't inherit from <a href="qwidget.html">QWidget</a>.</p>
+<a name="running-the-application"></a>
+<h2>Running the Application</h2>
+<p>The LCD number reflects everything you do to the slider, and the widget handles resizing well. Notice that the LCD number widget changes in size when the window is resized (because it can), but the others stay about the same (because otherwise they would look strange).</p>
+<a name="exercises"></a>
+<h2>Exercises</h2>
+<p>Try changing the LCD number to add more digits or to change mode (<a href="qlcdnumber.html#mode-prop">QLCDNumber::setMode</a>()). You can even add four push buttons to set the number base.</p>
+<p>You can also change the slider's range.</p>
+<p>Perhaps it would have been better to use <a href="qspinbox.html">QSpinBox</a> than a slider?</p>
+<p>Try to make the application quit when the LCD number overflows.</p>
+<p>
+[Previous: <a href="tutorials-tutorial-t4.html">Chapter 4</a>]
+[<a href="tutorials-tutorial.html">Qt Tutorial</a>]
+[Next: <a href="tutorials-tutorial-t6.html">Chapter 6</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

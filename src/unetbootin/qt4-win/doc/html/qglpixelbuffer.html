@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/opengl/qglpixelbuffer.cpp -->
+<head>
+  <title>Qt 4.4: QGLPixelBuffer Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QGLPixelBuffer Class Reference<br /><span class="small-subtitle">[<a href="qtopengl.html">QtOpenGL</a> module]</span>
+</h1>
+<p>The QGLPixelBuffer class encapsulates an OpenGL pbuffer. <a href="#details">More...</a></p>
+<pre> #include &lt;QGLPixelBuffer&gt;</pre><p>This class was introduced in Qt 4.1.</p>
+<ul>
+<li><a href="qglpixelbuffer-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qglpixelbuffer.html#QGLPixelBuffer">QGLPixelBuffer</a></b> ( const QSize &amp; <i>size</i>, const QGLFormat &amp; <i>format</i> = QGLFormat::defaultFormat(), QGLWidget * <i>shareWidget</i> = 0 )</li>
+<li><div class="fn"/><b><a href="qglpixelbuffer.html#QGLPixelBuffer-2">QGLPixelBuffer</a></b> ( int <i>width</i>, int <i>height</i>, const QGLFormat &amp; <i>format</i> = QGLFormat::defaultFormat(), QGLWidget * <i>shareWidget</i> = 0 )</li>
+<li><div class="fn"/>virtual <b><a href="qglpixelbuffer.html#dtor.QGLPixelBuffer">~QGLPixelBuffer</a></b> ()</li>
+<li><div class="fn"/>GLuint <b><a href="qglpixelbuffer.html#bindTexture">bindTexture</a></b> ( const QImage &amp; <i>image</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>GLuint <b><a href="qglpixelbuffer.html#bindTexture-2">bindTexture</a></b> ( const QPixmap &amp; <i>pixmap</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>GLuint <b><a href="qglpixelbuffer.html#bindTexture-3">bindTexture</a></b> ( const QString &amp; <i>fileName</i> )</li>
+<li><div class="fn"/>bool <b><a href="qglpixelbuffer.html#bindToDynamicTexture">bindToDynamicTexture</a></b> ( GLuint <i>texture_id</i> )</li>
+<li><div class="fn"/>void <b><a href="qglpixelbuffer.html#deleteTexture">deleteTexture</a></b> ( GLuint <i>texture_id</i> )</li>
+<li><div class="fn"/>bool <b><a href="qglpixelbuffer.html#doneCurrent">doneCurrent</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qglpixelbuffer.html#drawTexture">drawTexture</a></b> ( const QRectF &amp; <i>target</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>void <b><a href="qglpixelbuffer.html#drawTexture-2">drawTexture</a></b> ( const QPointF &amp; <i>point</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</li>
+<li><div class="fn"/>QGLFormat <b><a href="qglpixelbuffer.html#format">format</a></b> () const</li>
+<li><div class="fn"/>GLuint <b><a href="qglpixelbuffer.html#generateDynamicTexture">generateDynamicTexture</a></b> () const</li>
+<li><div class="fn"/>Qt::HANDLE <b><a href="qglpixelbuffer.html#handle">handle</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qglpixelbuffer.html#isValid">isValid</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qglpixelbuffer.html#makeCurrent">makeCurrent</a></b> ()</li>
+<li><div class="fn"/>void <b><a href="qglpixelbuffer.html#releaseFromDynamicTexture">releaseFromDynamicTexture</a></b> ()</li>
+<li><div class="fn"/>QSize <b><a href="qglpixelbuffer.html#size">size</a></b> () const</li>
+<li><div class="fn"/>QImage <b><a href="qglpixelbuffer.html#toImage">toImage</a></b> () const</li>
+<li><div class="fn"/>void <b><a href="qglpixelbuffer.html#updateDynamicTexture">updateDynamicTexture</a></b> ( GLuint <i>texture_id</i> ) const</li>
+</ul>
+<a name="static-public-members"></a>
+<h3>Static Public Members</h3>
+<ul>
+<li><div class="fn"/>bool <b><a href="qglpixelbuffer.html#hasOpenGLPbuffers">hasOpenGLPbuffers</a></b> ()</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QGLPixelBuffer class encapsulates an OpenGL pbuffer.</p>
+<p>Rendering into a pbuffer is normally done using full hardware acceleration. This can be significantly faster than rendering into a <a href="qpixmap.html">QPixmap</a>.</p>
+<p>There are three approaches to using this class:</p>
+<ol type="1">
+<li><b>We can draw into the pbuffer and convert it to a <a href="qimage.html">QImage</a> using <a href="qglpixelbuffer.html#toImage">toImage</a>().</b> This is normally much faster than calling <a href="qglwidget.html#renderPixmap">QGLWidget::renderPixmap</a>().</li>
+<li><b>We can draw into the pbuffer and copy the contents into an OpenGL texture using <a href="qglpixelbuffer.html#updateDynamicTexture">updateDynamicTexture</a>().</b> This allows us to create dynamic textures and works on all systems with pbuffer support.</li>
+<li><b>On systems that support it, we can bind the pbuffer to an OpenGL texture.</b> The texture is then updated automatically when the pbuffer contents change, eliminating the need for additional copy operations. This is supported only on Windows and Mac OS X systems that provide the <tt>render_texture</tt> extension.</li>
+</ol>
+<p>Pbuffers are provided by the OpenGL <tt>pbuffer</tt> extension; call hasOpenGLPbuffer() to find out if the system provides pbuffers.</p>
+<p>See also <a href="opengl-pbuffers.html">Pbuffers Example</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QGLPixelBuffer"></a>QGLPixelBuffer::QGLPixelBuffer ( const <a href="qsize.html">QSize</a> &amp; <i>size</i>, const <a href="qglformat.html">QGLFormat</a> &amp; <i>format</i> = QGLFormat::defaultFormat(), <a href="qglwidget.html">QGLWidget</a> * <i>shareWidget</i> = 0 )</h3>
+<p>Constructs an OpenGL pbuffer of the given <i>size</i>. If no <i>format</i> is specified, the <a href="qglformat.html#defaultFormat">default format</a> is used. If the <i>shareWidget</i> parameter points to a valid <a href="qglwidget.html">QGLWidget</a>, the pbuffer will share its context with <i>shareWidget</i>.</p>
+<p>If you intend to bind this pbuffer as a dynamic texture, the width and height components of <tt>size</tt> must be powers of two (e.g&#x2e;, 512 x 128).</p>
+<p>See also <a href="qglpixelbuffer.html#size">size</a>() and <a href="qglpixelbuffer.html#format">format</a>().</p>
+<h3 class="fn"><a name="QGLPixelBuffer-2"></a>QGLPixelBuffer::QGLPixelBuffer ( int <i>width</i>, int <i>height</i>, const <a href="qglformat.html">QGLFormat</a> &amp; <i>format</i> = QGLFormat::defaultFormat(), <a href="qglwidget.html">QGLWidget</a> * <i>shareWidget</i> = 0 )</h3>
+<p>Constructs an OpenGL pbuffer with the <i>width</i> and <i>height</i>. If no <i>format</i> is specified, the <a href="qglformat.html#defaultFormat">default format</a> is used. If the <i>shareWidget</i> parameter points to a valid <a href="qglwidget.html">QGLWidget</a>, the pbuffer will share its context with <i>shareWidget</i>.</p>
+<p>If you intend to bind this pbuffer as a dynamic texture, the width and height components of <tt>size</tt> must be powers of two (e.g&#x2e;, 512 x 128).</p>
+<p>See also <a href="qglpixelbuffer.html#size">size</a>() and <a href="qglpixelbuffer.html#format">format</a>().</p>
+<h3 class="fn"><a name="dtor.QGLPixelBuffer"></a>QGLPixelBuffer::~QGLPixelBuffer ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the pbuffer and frees any allocated resources.</p>
+<h3 class="fn"><a name="bindTexture"></a>GLuint QGLPixelBuffer::bindTexture ( const <a href="qimage.html">QImage</a> &amp; <i>image</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</h3>
+<p>Generates and binds a 2D GL texture to the current context, based on <i>image</i>. The generated texture id is returned and can be used in later glBindTexture() calls.</p>
+<p>The <i>target</i> parameter specifies the texture target.</p>
+<p>Equivalent to calling <a href="qglcontext.html#bindTexture">QGLContext::bindTexture</a>().</p>
+<p>See also <a href="qglpixelbuffer.html#deleteTexture">deleteTexture</a>().</p>
+<h3 class="fn"><a name="bindTexture-2"></a>GLuint QGLPixelBuffer::bindTexture ( const <a href="qpixmap.html">QPixmap</a> &amp; <i>pixmap</i>, GLenum <i>target</i> = GL_TEXTURE_2D )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Generates and binds a 2D GL texture based on <i>pixmap</i>.</p>
+<p>Equivalent to calling <a href="qglcontext.html#bindTexture">QGLContext::bindTexture</a>().</p>
+<p>See also <a href="qglpixelbuffer.html#deleteTexture">deleteTexture</a>().</p>
+<h3 class="fn"><a name="bindTexture-3"></a>GLuint QGLPixelBuffer::bindTexture ( const <a href="qstring.html">QString</a> &amp; <i>fileName</i> )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Reads the DirectDrawSurface (DDS) compressed file <i>fileName</i> and generates a 2D GL texture from it.</p>
+<p>Equivalent to calling <a href="qglcontext.html#bindTexture">QGLContext::bindTexture</a>().</p>
+<p>See also <a href="qglpixelbuffer.html#deleteTexture">deleteTexture</a>().</p>
+<h3 class="fn"><a name="bindToDynamicTexture"></a>bool QGLPixelBuffer::bindToDynamicTexture ( GLuint <i>texture_id</i> )</h3>
+<p>Binds the texture specified by <i>texture_id</i> to this pbuffer. Returns true on success; otherwise returns false.</p>
+<p>The texture must be of the same size and format as the pbuffer.</p>
+<p>To unbind the texture, call <a href="qglpixelbuffer.html#releaseFromDynamicTexture">releaseFromDynamicTexture</a>(). While the texture is bound, it is updated automatically when the pbuffer contents change, eliminating the need for additional copy operations.</p>
+<p>Example:</p>
+<pre>         QGLPixelBuffer pbuffer(...);
+         ...
+         pbuffer.makeCurrent();
+         GLuint dynamicTexture = pbuffer.generateDynamicTexture();
+         pbuffer.bindToDynamicTexture(dynamicTexture);
+         ...
+         pbuffer.releaseFromDynamicTexture();</pre>
+<p><b>Warning:</b> This function uses the <tt>render_texture</tt> extension, which is currently not supported under X11. An alternative that works on all systems (including X11) is to manually copy the pbuffer contents to a texture using <a href="qglpixelbuffer.html#updateDynamicTexture">updateDynamicTexture</a>().</p>
+<p><b>Warning:</b> For the bindToDynamicTexture() call to succeed on the Mac OS X, the pbuffer needs a shared context, i.e&#x2e; the <a href="qglpixelbuffer.html">QGLPixelBuffer</a> must be created with a share widget.</p>
+<p>See also <a href="qglpixelbuffer.html#generateDynamicTexture">generateDynamicTexture</a>() and <a href="qglpixelbuffer.html#releaseFromDynamicTexture">releaseFromDynamicTexture</a>().</p>
+<h3 class="fn"><a name="deleteTexture"></a>void QGLPixelBuffer::deleteTexture ( GLuint <i>texture_id</i> )</h3>
+<p>Removes the texture identified by <i>texture_id</i> from the texture cache.</p>
+<p>Equivalent to calling <a href="qglcontext.html#deleteTexture">QGLContext::deleteTexture</a>().</p>
+<h3 class="fn"><a name="doneCurrent"></a>bool QGLPixelBuffer::doneCurrent ()</h3>
+<p>Makes no context the current OpenGL context. Returns true on success; otherwise returns false.</p>
+<h3 class="fn"><a name="drawTexture"></a>void QGLPixelBuffer::drawTexture ( const <a href="qrectf.html">QRectF</a> &amp; <i>target</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</h3>
+<p>Draws the given texture, <i>textureId</i>, to the given target rectangle, <i>target</i>, in OpenGL model space. The <i>textureTarget</i> should be a 2D texture target.</p>
+<p>Equivalent to the corresponding <a href="qglcontext.html#drawTexture">QGLContext::drawTexture</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="drawTexture-2"></a>void QGLPixelBuffer::drawTexture ( const <a href="qpointf.html">QPointF</a> &amp; <i>point</i>, GLuint <i>textureId</i>, GLenum <i>textureTarget</i> = GL_TEXTURE_2D )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Draws the given texture, <i>textureId</i>, at the given <i>point</i> in OpenGL model space. The textureTarget parameter should be a 2D texture target.</p>
+<p>Equivalent to the corresponding <a href="qglcontext.html#drawTexture">QGLContext::drawTexture</a>().</p>
+<p>This function was introduced in Qt 4.4.</p>
+<h3 class="fn"><a name="format"></a><a href="qglformat.html">QGLFormat</a> QGLPixelBuffer::format () const</h3>
+<p>Returns the format of the pbuffer. The format may be different from the one that was requested.</p>
+<h3 class="fn"><a name="generateDynamicTexture"></a>GLuint QGLPixelBuffer::generateDynamicTexture () const</h3>
+<p>Generates and binds a 2D GL texture that is the same size as the pbuffer, and returns the texture's ID. This can be used in conjunction with <a href="qglpixelbuffer.html#bindToDynamicTexture">bindToDynamicTexture</a>() and <a href="qglpixelbuffer.html#updateDynamicTexture">updateDynamicTexture</a>().</p>
+<p>See also <a href="qglpixelbuffer.html#size">size</a>().</p>
+<h3 class="fn"><a name="handle"></a><a href="qt.html#HANDLE-typedef">Qt::HANDLE</a> QGLPixelBuffer::handle () const</h3>
+<p>Returns the native pbuffer handle.</p>
+<h3 class="fn"><a name="hasOpenGLPbuffers"></a>bool QGLPixelBuffer::hasOpenGLPbuffers ()&nbsp;&nbsp;<tt> [static]</tt></h3>
+<p>Returns true if the OpenGL <tt>pbuffer</tt> extension is present on this system; otherwise returns false.</p>
+<h3 class="fn"><a name="isValid"></a>bool QGLPixelBuffer::isValid () const</h3>
+<p>Returns true if this pbuffer is valid; otherwise returns false.</p>
+<h3 class="fn"><a name="makeCurrent"></a>bool QGLPixelBuffer::makeCurrent ()</h3>
+<p>Makes this pbuffer the current OpenGL rendering context. Returns true on success; otherwise returns false.</p>
+<p>See also <a href="qglcontext.html#makeCurrent">QGLContext::makeCurrent</a>() and <a href="qglpixelbuffer.html#doneCurrent">doneCurrent</a>().</p>
+<h3 class="fn"><a name="releaseFromDynamicTexture"></a>void QGLPixelBuffer::releaseFromDynamicTexture ()</h3>
+<p>Releases the pbuffer from any previously bound texture. Returns true on success; otherwise returns false.</p>
+<p>See also <a href="qglpixelbuffer.html#bindToDynamicTexture">bindToDynamicTexture</a>().</p>
+<h3 class="fn"><a name="size"></a><a href="qsize.html">QSize</a> QGLPixelBuffer::size () const</h3>
+<p>Returns the size of the pbuffer.</p>
+<h3 class="fn"><a name="toImage"></a><a href="qimage.html">QImage</a> QGLPixelBuffer::toImage () const</h3>
+<p>Returns the contents of the pbuffer as a <a href="qimage.html">QImage</a>.</p>
+<h3 class="fn"><a name="updateDynamicTexture"></a>void QGLPixelBuffer::updateDynamicTexture ( GLuint <i>texture_id</i> ) const</h3>
+<p>Copies the pbuffer contents into the texture specified with <i>texture_id</i>.</p>
+<p>The texture must be of the same size and format as the pbuffer.</p>
+<p>Example:</p>
+<pre>         QGLPixelBuffer pbuffer(...);
+         ...
+         pbuffer.makeCurrent();
+         GLuint dynamicTexture = pbuffer.generateDynamicTexture();
+         ...
+         pbuffer.updateDynamicTexture(dynamicTexture);</pre>
+<p>An alternative on Windows and Mac OS X systems that support the <tt>render_texture</tt> extension is to use <a href="qglpixelbuffer.html#bindToDynamicTexture">bindToDynamicTexture</a>() to get dynamic updates of the texture.</p>
+<p>See also <a href="qglpixelbuffer.html#generateDynamicTexture">generateDynamicTexture</a>() and <a href="qglpixelbuffer.html#bindToDynamicTexture">bindToDynamicTexture</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

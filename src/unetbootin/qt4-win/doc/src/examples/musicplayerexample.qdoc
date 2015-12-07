@@ -1,0 +1,250 @@
+/****************************************************************************
+**
+** Copyright (C) 2007-2008 Trolltech ASA. All rights reserved.
+**
+** This file is part of the documentation of the Qt Toolkit.
+**
+** This file may be used under the terms of the GNU General Public
+** License versions 2.0 or 3.0 as published by the Free Software
+** Foundation and appearing in the files LICENSE.GPL2 and LICENSE.GPL3
+** included in the packaging of this file.  Alternatively you may (at
+** your option) use any later version of the GNU General Public
+** License if such license has been publicly approved by Trolltech ASA
+** (or its successors, if any) and the KDE Free Qt Foundation. In
+** addition, as a special exception, Trolltech gives you certain
+** additional rights. These rights are described in the Trolltech GPL
+** Exception version 1.2, which can be found at
+** http://www.trolltech.com/products/qt/gplexception/ and in the file
+** GPL_EXCEPTION.txt in this package.
+**
+** Please review the following information to ensure GNU General
+** Public Licensing requirements will be met:
+** http://trolltech.com/products/qt/licenses/licensing/opensource/. If
+** you are unsure which license is appropriate for your use, please
+** review the following information:
+** http://trolltech.com/products/qt/licenses/licensing/licensingoverview
+** or contact the sales department at sales@trolltech.com.
+**
+** In addition, as a special exception, Trolltech, as the sole
+** copyright holder for Qt Designer, grants users of the Qt/Eclipse
+** Integration plug-in the right for the Qt/Eclipse Integration to
+** link to functionality provided by Qt Designer and its related
+** libraries.
+**
+** This file is provided "AS IS" with NO WARRANTY OF ANY KIND,
+** INCLUDING THE WARRANTIES OF DESIGN, MERCHANTABILITY AND FITNESS FOR
+** A PARTICULAR PURPOSE. Trolltech reserves all rights not expressly
+** granted herein.
+**
+** This file is provided AS IS with NO WARRANTY OF ANY KIND, INCLUDING THE
+** WARRANTY OF DESIGN, MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+**
+****************************************************************************/
+
+/*!
+    \example phonon/musicplayer
+    \title Music Player Example
+
+    The Music Player Example shows how to use Phonon - the multimedia
+    framework that comes with Qt - to create a simple music player.
+    The player can play music files, and provides simple playback
+    control, such as pausing, stopping, and resuming the music.
+
+    \image musicplayer.png
+
+    The player has a button group with the play, pause, and stop
+    buttons familiar from most music players. The top-most slider
+    controls the position in the media stream, and the bottom slider
+    allows adjusting the sound volume. 
+
+    The user can use a file dialog to add music files to a table,
+    which displays meta information about the music - such as the
+    title, album, and artist. Each row contains information about a
+    single music file; to play it, the user selects that row and
+    presses the play button. Also, when a row is selected, the files
+    in the table are queued for playback.
+
+    Phonon offers playback of sound using an available audio device,
+    e.g., a sound card or an USB headset. For the implementation, we
+    use two objects: a \l{Phonon::}{MediaObject}, which controls the
+    playback, and an \l{Phonon::}{AudioOutput}, which can output the
+    audio to a sound device. We will explain how they cooperate when
+    we encounter them in the code. For a high-level introduction to
+    Phonon, see its \l{Phonon Overview}{overview}.
+
+    The API of Phonon is implemented through an intermediate
+    technology on each supported platform: DirectShow, QuickTime, and
+    GStreamer. The sound formats supported may therefore vary from
+    system to system. We do not in this example try to determine which
+    formats are supported, but let Phonon report an error if the user
+    tries to play an unsupported sound file.
+
+    Our player consists of one class, \c MainWindow, which both
+    constructs the GUI and handles the playback. We will now go
+    through the parts of its definition and implementation that
+    concerns Phonon.
+
+    \section1 MainWindow Class Definition
+
+    Most of the API in \c MainWindow is private, as is often the case
+    for classes that represent self-contained windows. We list Phonon
+    objects and slots we connect to their signals; we take a closer
+    look at them when we walk through the \c MainWindow
+    implementation.
+
+    \snippet phonon/musicplayer/mainwindow.h 2
+
+    We use the \l{Phonon::}{SeekSlider} to move the current playback
+    position in the media stream, and the \l{Phonon::}{VolumeSlider}
+    controls the sound volume. Both of these widgets come ready made
+    with Phonon.  We use another \l{Phonon::}{MediaObject},
+    metaInformationProvider, to get the meta information from the
+    music files. More on this later.
+
+    \snippet phonon/musicplayer/mainwindow.h 1
+
+    The \l{Phonon::}{MediaObject} informs us of the state of the playback and
+    properties of the media it is playing back through a series of
+    signals. We connect the signals we need to slots in \c MainWindow.
+    The \c tableClicked() slot is connected to the table, so that we
+    know when the user requests playback of a new music file, by
+    clicking on the table.
+
+    \section1 MainWindow Class Implementation
+
+    The \c MainWindow class handles both the user interface and
+    Phonon. We will now take a look at the code relevant for Phonon.
+    The code required for setting up the GUI is explained elsewhere.
+
+    We start with the constructor:
+
+    \snippet phonon/musicplayer/mainwindow.cpp 0
+
+    We start by instantiating our media and audio output objects.
+    As mentioned, the media object knows how to playback
+    multimedia (in our case sound files) while the audio output
+    can send it to a sound device.
+
+    For the playback to work, the media and audio output objects need
+    to get in contact with each other, so that the media object can
+    send the sound to the audio output. Phonon is a graph based
+    framework, i.e., its objects are nodes that can be connected by
+    paths. Objects are connected using the \c createPath() function,
+    which is part of the Phonon namespace.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 1
+
+    We also connect signals of the media object to slots in our \c
+    MainWindow. We will examine them shortly.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 2
+
+    Finally, we call private helper functions to set up the GUI.
+    The \c setupUi() function contains code for setting up the seek
+    , and volume slider. We move on to \c setupUi():
+
+    \snippet phonon/musicplayer/mainwindow.cpp 3
+    \dots
+    \snippet phonon/musicplayer/mainwindow.cpp 4
+
+    After creating the widgets, they must be supplied with the
+    \l{Phonon::}{MediaObject} and \l{Phonon::}{AudioOutput} objects
+    they should control.  
+    
+    In the \c setupActions(), we connect the actions for the play,
+    pause, and stop tool buttons, to slots of the media object.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 5
+
+    We move on to the the slots of \c MainWindow, starting with \c
+    addFiles(): 
+
+    \snippet phonon/musicplayer/mainwindow.cpp 6
+
+    In the \c addFiles() slot, we add files selected by the user to
+    the \c sources list. We then set the first source selected on the
+    \c metaInformationProvider \l{Phonon::}{MediaObject}, which will
+    send a state changed signal when the meta information is resolved;
+    we have this signal connected to the \c metaStateChanged() slot.
+
+    The media object informs us of state changes by sending the \c
+    stateChanged() signal. The \c stateChanged() slot is connected
+    to this signal.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 9
+
+    The \l{Phonon::MediaObject::}{errorString()} function gives a
+    description of the error that is suitable for users of a Phonon
+    application. The two values of the \l{Phonon::}{ErrorState} enum
+    helps us determine whether it is possible to try to play the same
+    file again.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 10
+
+    We update the GUI when the playback state changes, i.e., when it
+    starts, pauses, stops, or resumes.
+
+    The media object will report other state changes, as defined by the
+    \l{Phonon::}{State} enum.
+
+    The \c tick() slot is connected to a \l{Phonon::}{MediaObject} signal which is
+    emitted when the playback position changes:
+
+    \snippet phonon/musicplayer/mainwindow.cpp 11
+
+    The \c time is given in milliseconds.
+
+    When the table is clicked on with the mouse, \c tableClick()
+    is invoked:
+
+    \snippet phonon/musicplayer/mainwindow.cpp 12
+
+    Since we stop the media object, we first check whether it is
+    currently playing. \c row contains the row in the table that was
+    clicked upon; the indices of \c sources follows the table, so we
+    can simply use \c row to find the new source.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 13
+
+    When the media source changes, we simply need to select the
+    corresponding row in the table.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 14
+
+    When \c metaStateChanged() is invoked, \c
+    metaInformationProvider has resolved the meta data for its current
+    source. A \l{Phonon::}{MediaObject} will do this before
+    entering \l{Phonon::}{StoppedState}. Note that we could also
+    have used the \l{MediaObject::}{metaDataChanged()} signal for
+    this purpose.
+
+    Some of the meta data is then chosen to be displayed in the
+    music table. A file might not contain the meta data requested,
+    in which case an empty string is returned.
+
+    \snippet phonon/musicplayer/mainwindow.cpp 15
+
+    If we have media sources in \c sources of which meta information
+    is not resolved, we set a new source on the \c
+    metaInformationProvider, which will invoke \c metaStateChanged()
+    again.
+
+    We move on to the \c aboutToFinish() slot:
+
+    \snippet phonon/musicplayer/mainwindow.cpp 16
+
+    When a file is finished playing, the Music Player will move on and
+    play the next file in the table. This slot is connected to the
+    \l{Phonon::}{MediaObject}'s
+    \l{Phonon::MediaObject::}{aboutToFinish()} signal, which is
+    guaranteed to be emitted while there is still time to enqueue
+    another file for playback.
+
+    \section1 The main() function.
+
+    Phonon requires that the application has a name; it is set with
+    \l{QCoreApplication::}{setApplicationName()}. This is because
+    D-Bus, which is used by Phonon on Linux systems, demands this.
+
+    \snippet phonon/musicplayer/main.cpp 1
+*/

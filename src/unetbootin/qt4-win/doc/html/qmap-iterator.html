@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/tools/qmap.cpp -->
+<head>
+  <title>Qt 4.4: iterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">iterator Class Reference<br /><span class="small-subtitle">(QMap::iterator)<br />[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QMap::iterator class provides an STL-style non-const iterator for <a href="qmap.html">QMap</a> and <a href="qmultimap.html">QMultiMap</a>. <a href="#details">More...</a></p>
+<pre> #include &lt;<a href="qmap.html">QMap</a>&gt;</pre><ul>
+<li><a href="qmap-iterator-members.html">List of all members, including inherited members</a></li>
+<li><a href="qmap-iterator-qt3.html">Qt 3 support members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qmap-iterator.html#iterator">iterator</a></b> ()</li>
+<li><div class="fn"/>const Key &amp; <b><a href="qmap-iterator.html#key">key</a></b> () const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmap-iterator.html#value">value</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmap-iterator.html#operator-not-eq">operator!=</a></b> ( const iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmap-iterator.html#operator-not-eq-2">operator!=</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>T &amp; <b><a href="qmap-iterator.html#operator-2a">operator*</a></b> () const</li>
+<li><div class="fn"/>iterator <b><a href="qmap-iterator.html#operator-2b">operator+</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qmap-iterator.html#operator-2b-2b">operator++</a></b> ()</li>
+<li><div class="fn"/>iterator <b><a href="qmap-iterator.html#operator-2b-2b-2">operator++</a></b> ( int )</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qmap-iterator.html#operator-2b-eq">operator+=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>iterator <b><a href="qmap-iterator.html#operator-">operator-</a></b> ( int <i>j</i> ) const</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qmap-iterator.html#operator--">operator--</a></b> ()</li>
+<li><div class="fn"/>iterator <b><a href="qmap-iterator.html#operator---2">operator--</a></b> ( int )</li>
+<li><div class="fn"/>iterator &amp; <b><a href="qmap-iterator.html#operator--eq">operator-=</a></b> ( int <i>j</i> )</li>
+<li><div class="fn"/>T * <b><a href="qmap-iterator.html#operator--gt">operator-&gt;</a></b> () const</li>
+<li><div class="fn"/>bool <b><a href="qmap-iterator.html#operator-eq-eq">operator==</a></b> ( const iterator &amp; <i>other</i> ) const</li>
+<li><div class="fn"/>bool <b><a href="qmap-iterator.html#operator-eq-eq-2">operator==</a></b> ( const const_iterator &amp; <i>other</i> ) const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QMap::iterator class provides an STL-style non-const iterator for <a href="qmap.html">QMap</a> and <a href="qmultimap.html">QMultiMap</a>.</p>
+<p><a href="qmap.html">QMap</a> features both <a href="containers.html#stl-style-iterators">STL-style iterators</a> and <a href="containers.html#java-style-iterators">Java-style iterators</a>. The STL-style iterators are more low-level and more cumbersome to use; on the other hand, they are slightly faster and, for developers who already know STL, have the advantage of familiarity.</p>
+<p><a href="qmap.html">QMap</a>&lt;Key, T&gt;::iterator allows you to iterate over a <a href="qmap.html">QMap</a> (or <a href="qmultimap.html">QMultiMap</a>) and to modify the value (but not the key) stored under a particular key. If you want to iterate over a const <a href="qmap.html">QMap</a>, you should use <a href="qmap-const-iterator.html">QMap::const_iterator</a>. It is generally good practice to use <a href="qmap-const-iterator.html">QMap::const_iterator</a> on a non-const <a href="qmap.html">QMap</a> as well, unless you need to change the <a href="qmap.html">QMap</a> through the iterator. Const iterators are slightly faster, and can improve code readability.</p>
+<p>The default QMap::iterator constructor creates an uninitialized iterator. You must initialize it using a <a href="qmap.html">QMap</a> function like <a href="qmap.html#begin">QMap::begin</a>(), <a href="qmap.html#end">QMap::end</a>(), or <a href="qmap.html#find">QMap::find</a>() before you can start iterating. Here's a typical loop that prints all the (key, value) pairs stored in a map:</p>
+<pre>         QMap&lt;QString, int&gt; map;
+         map.insert(&quot;January&quot;, 1);
+         map.insert(&quot;February&quot;, 2);
+         ...
+         map.insert(&quot;December&quot;, 12);
+
+         QMap&lt;QString, int&gt;::iterator i;
+         for (i = map.begin(); i != map.end(); ++i)
+             cout &lt;&lt; i.key() &lt;&lt; &quot;: &quot; &lt;&lt; i.value() &lt;&lt; endl;</pre>
+<p>Unlike <a href="qhash.html">QHash</a>, which stores its items in an arbitrary order, <a href="qmap.html">QMap</a> stores its items ordered by key. Items that share the same key (because they were inserted using <a href="qmap.html#insertMulti">QMap::insertMulti</a>(), or due to a <a href="qmap.html#unite">unite</a>()) will appear consecutively, from the most recently to the least recently inserted value.</p>
+<p>Let's see a few examples of things we can do with a QMap::iterator that we cannot do with a <a href="qmap-const-iterator.html">QMap::const_iterator</a>. Here's an example that increments every value stored in the <a href="qmap.html">QMap</a> by 2:</p>
+<pre>         QMap&lt;QString, int&gt;::iterator i;
+         for (i = map.begin(); i != map.end(); ++i)
+             i.value() += 2;</pre>
+<p>Here's an example that removes all the items whose key is a string that starts with an underscore character:</p>
+<pre>         QMap&lt;QString, int&gt;::iterator i = map.begin();
+         while (i != map.end()) {
+             if (i.key().startsWith(&quot;_&quot;))
+                 i = map.erase(i);
+             else
+                 ++i;
+         }</pre>
+<p>The call to <a href="qmap.html#erase">QMap::erase</a>() removes the item pointed to by the iterator from the map, and returns an iterator to the next item. Here's another way of removing an item while iterating:</p>
+<pre>         QMap&lt;QString, int&gt;::iterator i = map.begin();
+         while (i != map.end()) {
+             QMap&lt;QString, int&gt;::iterator prev = i;
+             ++i;
+             if (prev.key().startsWith(&quot;_&quot;))
+                 map.erase(prev);
+         }</pre>
+<p>It might be tempting to write code like this:</p>
+<pre>         // WRONG
+         while (i != map.end()) {
+             if (i.key().startsWith(&quot;_&quot;))
+                 map.erase(i);
+             ++i;
+         }</pre>
+<p>However, this will potentially crash in <tt>++i</tt>, because <tt>i</tt> is a dangling iterator after the call to <a href="qmap.html#erase">erase</a>().</p>
+<p>Multiple iterators can be used on the same map. If you add items to the map, existing iterators will remain valid. If you remove items from the map, iterators that point to the removed items will become dangling iterators.</p>
+<p>See also <a href="qmap-const-iterator.html">QMap::const_iterator</a> and <a href="qmutablemapiterator.html">QMutableMapIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="iterator"></a>iterator::iterator ()</h3>
+<p>Constructs an uninitialized iterator.</p>
+<p>Functions like <a href="qmap-iterator.html#key">key</a>(), <a href="qmap-iterator.html#value">value</a>(), and operator++() must not be called on an uninitialized iterator. Use operator=() to assign a value to it before using it.</p>
+<p>See also <a href="qmap.html#begin">QMap::begin</a>() and <a href="qmap.html#end">QMap::end</a>().</p>
+<h3 class="fn"><a name="key"></a>const Key &amp; iterator::key () const</h3>
+<p>Returns the current item's key as a const reference.</p>
+<p>There is no direct way of changing an item's key through an iterator, although it can be done by calling <a href="qmap.html#erase">QMap::erase</a>() followed by <a href="qmap.html#insert">QMap::insert</a>() or <a href="qmap.html#insertMulti">QMap::insertMulti</a>().</p>
+<p>See also <a href="qmap-iterator.html#value">value</a>().</p>
+<h3 class="fn"><a name="value"></a>T &amp; iterator::value () const</h3>
+<p>Returns a modifiable reference to the current item's value.</p>
+<p>You can change the value of an item by using value() on the left side of an assignment, for example:</p>
+<pre>         if (i.key() == &quot;Hello&quot;)
+             i.value() = &quot;Bonjour&quot;;</pre>
+<p>See also <a href="qmap-iterator.html#key">key</a>() and <a href="qmap-iterator.html#operator-2a">operator*</a>().</p>
+<h3 class="fn"><a name="operator-not-eq"></a>bool iterator::operator!= ( const iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to a different item than this iterator; otherwise returns false.</p>
+<p>See also <a href="qmap-iterator.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-not-eq-2"></a>bool iterator::operator!= ( const <a href="qmap-const-iterator.html">const_iterator</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> points to a different item than this iterator; otherwise returns false.</p>
+<p>See also <a href="qmap-iterator.html#operator-eq-eq">operator==</a>().</p>
+<h3 class="fn"><a name="operator-2a"></a>T &amp; iterator::operator* () const</h3>
+<p>Returns a modifiable reference to the current item's value.</p>
+<p>Same as <a href="qmap-iterator.html#value">value</a>().</p>
+<p>See also <a href="qmap-iterator.html#key">key</a>().</p>
+<h3 class="fn"><a name="operator-2b"></a>iterator iterator::operator+ ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions forward from this iterator. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qmap-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b"></a>iterator &amp; iterator::operator++ ()</h3>
+<p>The prefix ++ operator (<tt>++i</tt>) advances the iterator to the next item in the map and returns an iterator to the new current item.</p>
+<p>Calling this function on <a href="qmap.html#end">QMap::end</a>() leads to undefined results.</p>
+<p>See also <a href="qmap-iterator.html#operator--">operator--</a>().</p>
+<h3 class="fn"><a name="operator-2b-2b-2"></a>iterator iterator::operator++ ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The postfix ++ operator (<tt>i++</tt>) advances the iterator to the next item in the map and returns an iterator to the previously current item.</p>
+<h3 class="fn"><a name="operator-2b-eq"></a>iterator &amp; iterator::operator+= ( int <i>j</i> )</h3>
+<p>Advances the iterator by <i>j</i> items. (If <i>j</i> is negative, the iterator goes backward.)</p>
+<p>See also <a href="qmap-iterator.html#operator--eq">operator-=</a>() and <a href="qmap-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator-"></a>iterator iterator::operator- ( int <i>j</i> ) const</h3>
+<p>Returns an iterator to the item at <i>j</i> positions backward from this iterator. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>This operation can be slow for large <i>j</i> values.</p>
+<p>See also <a href="qmap-iterator.html#operator-2b">operator+</a>().</p>
+<h3 class="fn"><a name="operator--"></a>iterator &amp; iterator::operator-- ()</h3>
+<p>The prefix -- operator (<tt>--i</tt>) makes the preceding item current and returns an iterator pointing to the new current item.</p>
+<p>Calling this function on <a href="qmap.html#begin">QMap::begin</a>() leads to undefined results.</p>
+<p>See also <a href="qmap-iterator.html#operator-2b-2b">operator++</a>().</p>
+<h3 class="fn"><a name="operator---2"></a>iterator iterator::operator-- ( int )</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>The prefix -- operator (<tt>--i</tt>) makes the preceding item current and returns an iterator pointing to the previously current item.</p>
+<h3 class="fn"><a name="operator--eq"></a>iterator &amp; iterator::operator-= ( int <i>j</i> )</h3>
+<p>Makes the iterator go back by <i>j</i> items. (If <i>j</i> is negative, the iterator goes forward.)</p>
+<p>See also <a href="qmap-iterator.html#operator-2b-eq">operator+=</a>() and <a href="qmap-iterator.html#operator-">operator-</a>().</p>
+<h3 class="fn"><a name="operator--gt"></a>T * iterator::operator-&gt; () const</h3>
+<p>Returns a pointer to the current item's value.</p>
+<p>See also <a href="qmap-iterator.html#value">value</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq"></a>bool iterator::operator== ( const iterator &amp; <i>other</i> ) const</h3>
+<p>Returns true if <i>other</i> points to the same item as this iterator; otherwise returns false.</p>
+<p>See also <a href="qmap-iterator.html#operator-not-eq">operator!=</a>().</p>
+<h3 class="fn"><a name="operator-eq-eq-2"></a>bool iterator::operator== ( const <a href="qmap-const-iterator.html">const_iterator</a> &amp; <i>other</i> ) const</h3>
+<p>This is an overloaded member function, provided for convenience.</p>
+<p>Returns true if <i>other</i> points to the same item as this iterator; otherwise returns false.</p>
+<p>See also <a href="qmap-iterator.html#operator-not-eq">operator!=</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

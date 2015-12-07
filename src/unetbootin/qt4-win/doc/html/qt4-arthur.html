@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/doc/src/qt4-arthur.qdoc -->
+<head>
+  <title>Qt 4.4: The Arthur Paint System</title>
+  <link rel="prev" href="qt4-interview.html" />
+  <link rel="contents" href="qt4-intro.html" />
+  <link rel="next" href="qt4-scribe.html" />
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><p>
+[Previous: <a href="qt4-interview.html">The Interview Framework</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-scribe.html">The Scribe Classes</a>]
+</p>
+<h1 class="title">The Arthur Paint System<br /><span class="subtitle"></span>
+</h1>
+<p>This document describes Qt 4's painting system, providing a comparison between the approaches used by Qt when rendering graphics in Qt 3 and Qt 4.</p>
+<ul><li><a href="#architecture">Architecture</a></li>
+<ul><li><a href="#a-look-back-at-qt-3">A Look Back at Qt 3</a></li>
+<li><a href="#how-painting-is-done-in-qt-4">How Painting is Done in Qt 4</a></li>
+</ul>
+<li><a href="#new-features-in-the-qt-4-paint-system">New Features in the Qt 4 Paint System</a></li>
+<ul><li><a href="#gradient-brushes">Gradient Brushes</a></li>
+<li><a href="#alpha-blended-drawing">Alpha-Blended Drawing</a></li>
+<li><a href="#qpainter-and-qglwidget">QPainter and QGLWidget</a></li>
+<li><a href="#anti-aliased-edges">Anti-Aliased Edges</a></li>
+<li><a href="#extensive-use-of-native-graphics-operations">Extensive Use of Native Graphics Operations</a></li>
+<li><a href="#painter-paths">Painter Paths</a></li>
+<li><a href="#widget-double-buffering">Widget Double-Buffering</a></li>
+<li><a href="#pen-and-brush-transformation">Pen and Brush Transformation</a></li>
+<li><a href="#custom-filled-pens">Custom Filled Pens</a></li>
+<li><a href="#qimage-as-a-paint-device">QImage as a Paint Device</a></li>
+<li><a href="#svg-rendering-support">SVG Rendering Support</a></li>
+</ul>
+</ul>
+<a name="architecture"></a>
+<h2>Architecture</h2>
+<p>The Qt 4 Paint System is primarily based on the classes <a href="qpainter.html">QPainter</a>, QPaintDevice, and <a href="qpaintengine.html">QPaintEngine</a>. <a href="qpainter.html">QPainter</a> is the class used to perform drawing operations, such as drawLine() and drawRect(). QPaintDevice represents a device that can be painted on using a <a href="qpainter.html">QPainter</a>; both <a href="qwidget.html">QWidget</a> and <a href="qpixmap.html">QPixmap</a> are QPaintDevices. <a href="qpaintengine.html">QPaintEngine</a> provides the interface that the painter uses to draw onto different types of devices.</p>
+<a name="a-look-back-at-qt-3"></a>
+<h3>A Look Back at Qt 3</h3>
+<p>In Qt 3, <a href="qpainter.html">QPainter</a> could be used to draw on widgets and pixmaps. (It could also be used to draw to printers on Windows and Mac OS X.) When other paint devices needed to be supported, such as <a href="qprinter.html">QPrinter</a> on X11, this was done by deriving from QPaintDevice and reimplementing the virtual function QPaintDevice::cmd(). A reimplemented paint device was treated as an external device.</p>
+<p><a href="qpainter.html">QPainter</a> was capable of recognizing external devices and could serialize each paint operation to the reimplemented cmd() function. This allowed reimplementation of arbitrary devices, but the approach has some disadvantages which we have addressed in Qt 4. One of these is that an external device could not reuse any functionality implemented in <a href="qpainter.html">QPainter</a> since <a href="qpainter.html">QPainter</a> was tied to widget/pixmap painting on that platform. Supporting multiple device backends, such as OpenGL, was therefore inconvenient and not very efficient.</p>
+<p>This has led us to devise a more convenient and intuitive API for Qt 4.</p>
+<a name="how-painting-is-done-in-qt-4"></a>
+<h3>How Painting is Done in Qt 4</h3>
+<p>In Qt 4 we have introduced the <a href="qpaintengine.html">QPaintEngine</a> abstract class. Implementations of this class provide the concrete functionality needed to draw to specific device types. The <a href="qpaintengine.html">QPaintEngine</a> class is only used internally by <a href="qpainter.html">QPainter</a> and QPaintDevice, and it is hidden from application programmers unless they reimplement their own device types for their own <a href="qpaintengine.html">QPaintEngine</a> subclasses. Qt currently provides paint engines for the following platforms and APIs:</p>
+<ul>
+<li>A pixel-based engine for the Windows platform that is also used to draw onto QImages on all platforms</li>
+<li>OpenGL on all platforms</li>
+<li>PostScript on Linux, Unix, and Mac OS X</li>
+<li>QuickDraw and CoreGraphics on Mac OS X</li>
+<li>X11 and the X Render Extension on Linux and Unix systems</li>
+</ul>
+<p>To implement support for a new backend, you must derive from <a href="qpaintengine.html">QPaintEngine</a> and reimplement its virtual functions. You also need to derive from QPaintDevice and reimplement the virtual function <a href="qpaintdevice.html#paintEngine">QPaintDevice::paintEngine</a>() to tell <a href="qpainter.html">QPainter</a> which paint engine should be used to draw on this particular device.</p>
+<p>The main benefit of this approach is that all painting follows the same painting pipeline. This means that adding support for new features and providing default implementations for unsupported ones has become much simpler.</p>
+<a name="new-features-in-the-qt-4-paint-system"></a>
+<h2>New Features in the Qt 4 Paint System</h2>
+<a name="gradient-brushes"></a>
+<h3>Gradient Brushes</h3>
+<p>With Qt 4 it is possible to fill shapes using gradient brushes. A gradient in this case is used to describe the transition from one color at a given point to different color at another point. A gradient can span from one color to another or over a number of colors by specifying multiple colors at positions in the gradient area. Qt 4 supports linear, radial, and conical gradients.</p>
+<p>Linear gradients are specified using two control points. Setting a linear gradient brush is done by creating a <a href="qlineargradient.html">QLinearGradient</a> object and setting it as a brush.</p>
+<pre>     QLinearGradient gradient(0, 0, 100, 100);
+     gradient.setColorAt(0, Qt::red);
+     gradient.setColorAt(0.5, Qt::green);
+     gradient.setColorAt(1, Qt::blue);
+     painter.setBrush(gradient);
+     painter.drawRect(0, 0, 100, 100);</pre>
+<p>The code shown above produces a pattern as show in the following pixmap:</p>
+<p align="center"><img src="images/diagonalGradient.png" /></p><p>Radial gradients are specified using a center, a radius, and a focal point. Setting a radial brush is done by creating a <a href="qradialgradient.html">QRadialGradient</a> object and setting it as a brush.</p>
+<pre>     QRadialGradient gradient(50, 50, 50, 30, 30);
+     gradient.setColorAt(0.2, Qt::white);
+     gradient.setColorAt(0.8, Qt::green);
+     gradient.setColorAt(1, Qt::black);
+     painter.setBrush(gradient);
+     painter.drawEllipse(0, 0, 100, 100);</pre>
+<p>The code shown above produces a pattern as shown in the following pixmap:</p>
+<p align="center"><img src="images/radialGradient.png" /></p><p>Conical gradients are specified using a center and a start angle. Setting a conical brush is done by creating a <a href="qconicalgradient.html">QConicalGradient</a> object and setting it as a brush.</p>
+<pre>     QConicalGradient gradient(60, 40, 0);
+     gradient.setColorAt(0, Qt::black);
+     gradient.setColorAt(0.4, Qt::green);
+     gradient.setColorAt(0.6, Qt::white);
+     gradient.setColorAt(1, Qt::black);
+     painter.setBrush(gradient);
+     painter.drawEllipse(0, 0, 100, 100);</pre>
+<p>The code shown above produces a pattern as shown in the following pixmap:</p>
+<p align="center"><img src="images/conicalGradient.png" /></p><a name="alpha-blended-drawing"></a>
+<h3>Alpha-Blended Drawing</h3>
+<p>With Qt 4 we support alpha-blended outlining and filling. The alpha channel of a color is defined through <a href="qcolor.html">QColor</a>. The alpha channel specifies the transparency effect, 0 represents a fully transparent color, while 255 represents a fully opaque color. For example:</p>
+<pre>     // Specfiy semi-transparent red
+     painter.setBrush(QColor(255, 0, 0, 127));
+     painter.drawRect(0, 0, width()/2, height());
+
+     // Specify semi-transparend blue
+     painter.setBrush(QColor(0, 0, 255, 127));
+     painter.drawRect(0, 0, width(), height()/2);</pre>
+<p>The code shown above produces the following output:</p>
+<p align="center"><img src="images/alphafill.png" /></p><p>Alpha-blended drawing is supported on Windows, Mac OS X, and on X11 systems that have the X Render extension installed.</p>
+<a name="qpainter-and-qglwidget"></a>
+<h3>QPainter and QGLWidget</h3>
+<p>It is now possible to open a <a href="qpainter.html">QPainter</a> on a <a href="qglwidget.html">QGLWidget</a> as if it were a normal <a href="qwidget.html">QWidget</a>. One huge benefit from this is that we utilize the high performance of OpenGL for most drawing operations, such as transformations and pixmap drawing.</p>
+<a name="anti-aliased-edges"></a>
+<h3>Anti-Aliased Edges</h3>
+<p>On platforms where this is supported by the native drawing API, we provide the option of turning on anti-aliased edges when drawing graphics primitives.</p>
+<pre>     // One line without anti-aliasing
+     painter.drawLine(0, 0, width()/2, height());
+
+     // One line with anti-aliasing
+     painter.setRenderHint(QPainter::Antialiasing);
+     painter.drawLine(width()/2, 0, width()/2, height());</pre>
+<p>This produces the following output:</p>
+<p align="center"><img src="images/antialiased.png" /></p><p>Anti-aliasing is supported when drawing to a <a href="qimage.html">QImage</a> and on all systems, except on X11 when XRender is not present.</p>
+<a name="extensive-use-of-native-graphics-operations"></a>
+<h3>Extensive Use of Native Graphics Operations</h3>
+<p>Where this makes sense, Qt uses native graphics operations. The benefit we gain from this is that these operations can potentially be performed in hardware, giving significant speed improvements over many pure-software implementations.</p>
+<p>Among these are native transformations (Mac OS X and OpenGL), making painting with a world matrix much faster. Some pixmap operations have also been moved closer to the underlying hardware implementations.</p>
+<a name="painter-paths"></a>
+<h3>Painter Paths</h3>
+<p>A painter path is an object composed of a number of graphical building blocks, such as rectangles, ellipses, lines, and curves. A painter path can be used for filling, outlining, and for clipping. The main advantage of painter paths over normal drawing operations is that it is possible to build up non-linear shapes which can be drawn later in one go.</p>
+<p>Building blocks can be joined in closed subpaths, such as a rectangle or an ellipse, or they can exist independently as unclosed subpaths, although an unclosed path will not be filled.</p>
+<p>Below is a code example on how a path can be used. The painter in this case has a pen width of 3 and a light blue brush. We first add a rectangle, which becomes a closed subpath. We then add two bezier curves, and finally draw the entire path.</p>
+<pre>     QPainterPath path;
+     path.addRect(20, 20, 60, 60);
+     path.addBezier(0, 0,  99, 0,  50, 50,  99, 99);
+     path.addBezier(99, 99,  0, 99,  50, 50,  0, 0);
+     painter.drawPath(path);</pre>
+<p>The code above produces the following output:</p>
+<p align="center"><img src="images/pathexample.png" /></p><a name="widget-double-buffering"></a>
+<h3>Widget Double-Buffering</h3>
+<p>In Qt 4, all widgets are double-buffered by default.</p>
+<p>In previous versions of Qt double-buffering was achieved by painting to an off-screen pixmap then copying the pixmap to the screen. For example:</p>
+<pre>     QPixmap buffer(size());
+     QPainter painter(&amp;buffer);
+
+     // Paint code here
+
+     painter.end();
+     bitBlt(this, 0, 0, &amp;buffer);</pre>
+<p>Since the double-buffering is handled by <a href="qwidget.html">QWidget</a> internally this now becomes:</p>
+<pre>     QPainter painter(this);
+
+     // Paint code here
+
+     painter.end();</pre>
+<p>Double-buffering is turned on by default, but can be turned off for individual widgets by setting the widget attribute <a href="qt.html#WidgetAttribute-enum">Qt::WA_PaintOnScreen</a>.</p>
+<pre>     unbufferedWidget-&gt;setAttribute(Qt::WA_PaintOnScreen);</pre>
+<a name="pen-and-brush-transformation"></a>
+<h3>Pen and Brush Transformation</h3>
+<p>In Qt 3, pens and brushes weren't affected by the painter's transformation matrix. For example, if you drew a rectangle with a pen width of 1 using a scaled painter, the resulting line width would still be 1. This made it difficult to implement features such as zooming and high-resolution printing.</p>
+<p>In Qt 4, pens and brushes honor the painter's transformation matrix.</p>
+<p>Note that this feature is still in development and not yet supported on all platforms.</p>
+<a name="custom-filled-pens"></a>
+<h3>Custom Filled Pens</h3>
+<p>In Qt 4, it is possible to specify how an outline should be filled. It can be a solid color or a <a href="qbrush.html">QBrush</a>, which makes it possible to specify both texture and gradient fills for both text and outlines.</p>
+<pre>     QLinearGradient gradient(0, 0, 100, 100);
+     gradient.setColorAt(0, Qt::blue);
+     gradient.setColorAt(1, Qt::red);
+     painter.setPen(QPen(gradient, 0));
+     for (int y=fontSize; y&lt;100; y+=fontSize)
+         drawText(0, y, text);</pre>
+<p>The code above produces the following output:</p>
+<p align="center"><img src="images/gradientText.png" /></p><a name="qimage-as-a-paint-device"></a>
+<h3>QImage as a Paint Device</h3>
+<p>A great improvement of Qt 4 over previous versions it that it now provides a pixel-based raster paint engine which allows users to open a painter on a <a href="qimage.html">QImage</a>. The <a href="qimage.html">QImage</a> paint engine supports the full feature set of <a href="qpainter.html">QPainter</a> (paths, antialiasing, alphablending, etc.) and can be used on all platforms.</p>
+<p>One advantage of this is that it is possible to guarantee the pixel exactness of any drawing operation in a platform-independent way.</p>
+<p>Painting on an image is as simple as drawing on any other paint device.</p>
+<pre>     QImage image(100, 100, 32);
+     QPainter painter(&amp;image);
+
+     // painter commands.
+
+     painter.end();</pre>
+<a name="svg-rendering-support"></a>
+<h3>SVG Rendering Support</h3>
+<p><a href="http://www.w3.org/Graphics/SVG/About.html#scalable-vector-graphics">Scalable Vector Graphics</a> (SVG) is an language for describing both static and animated two-dimensional vector graphics. Qt includes support for the <a href="http://www.w3.org/Graphics/SVG/feature/1.2/#SVG-static">static features</a> of <a href="http://www.w3.org/TR/SVGMobile12/">SVG 1.2 Tiny</a>, taking advantage of the improved paint system in Qt 4. SVG drawings can be rendered onto any QPaintDevice subclass, such as <a href="qwidget.html">QWidget</a>, <a href="qimage.html">QImage</a>, and <a href="qglwidget.html">QGLWidget</a>, to take advantage of specific advantages of each device. This approach gives developers the flexibility to experiment, in order to find the best solution for each application.</p>
+<p align="center"><img src="images/svg-image.png" /></p><p>Since SVG is an XML-based format, the <a href="qtxml.html">QtXml</a> module is required to read SVG files. For this reason, classes for SVG handling are provided separately in the <a href="qtsvg.html">QtSvg</a> module.</p>
+<p>Displaying an SVG drawing in an application is as simple as displaying a bitmap image. <a href="qsvgwidget.html">QSvgWidget</a> is a display widget that can be placed in an appropriate place in a user interface, and new content can be loaded as required. For example, a predetermined file can be loaded and displayed in a widget with little effort:</p>
+<pre>     QSvgWidget window(&quot;:/files/spheres.svg&quot;);
+     window.show();</pre>
+<p>For applications with more specialized requirements, the <a href="qsvgrenderer.html">QSvgRenderer</a> class provides more control over the way SVG drawings are rendered and animated.</p>
+<p>
+[Previous: <a href="qt4-interview.html">The Interview Framework</a>]
+[<a href="qt4-intro.html">Home</a>]
+[Next: <a href="qt4-scribe.html">The Scribe Classes</a>]
+</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

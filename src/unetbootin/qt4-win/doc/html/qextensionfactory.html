@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/tools/designer/src/lib/extension/default_extensionfactory.cpp -->
+<head>
+  <title>Qt 4.4: QExtensionFactory Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QExtensionFactory Class Reference<br /><span class="small-subtitle">[<a href="qtdesigner.html">QtDesigner</a> module]</span>
+</h1>
+<p>The QExtensionFactory class allows you to create a factory that is able to make instances of custom extensions in Qt Designer. <a href="#details">More...</a></p>
+<pre> #include &lt;QExtensionFactory&gt;</pre><p>Inherits <a href="qobject.html">QObject</a> and <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a>.</p>
+<ul>
+<li><a href="qextensionfactory-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qextensionfactory.html#QExtensionFactory">QExtensionFactory</a></b> ( QExtensionManager * <i>parent</i> = 0 )</li>
+<li><div class="fn"/>virtual QObject * <b><a href="qextensionfactory.html#extension">extension</a></b> ( QObject * <i>object</i>, const QString &amp; <i>iid</i> ) const</li>
+<li><div class="fn"/>QExtensionManager * <b><a href="qextensionfactory.html#extensionManager">extensionManager</a></b> () const</li>
+</ul>
+<ul>
+<li><div class="fn"/>29 public functions inherited from <a href="qobject.html#public-functions">QObject</a></li>
+<li><div class="fn"/>1 public function inherited from <a href="qabstractextensionfactory.html#public-functions">QAbstractExtensionFactory</a></li>
+</ul>
+<a name="protected-functions"></a>
+<h3>Protected Functions</h3>
+<ul>
+<li><div class="fn"/>virtual QObject * <b><a href="qextensionfactory.html#createExtension">createExtension</a></b> ( QObject * <i>object</i>, const QString &amp; <i>iid</i>, QObject * <i>parent</i> ) const</li>
+</ul>
+<ul>
+<li><div class="fn"/>7 protected functions inherited from <a href="qobject.html#protected-functions">QObject</a></li>
+</ul>
+<h3>Additional Inherited Members</h3>
+<ul>
+<li><div class="fn"/>1 property inherited from <a href="qobject.html#properties">QObject</a></li>
+<li><div class="fn"/>1 public slot inherited from <a href="qobject.html#public-slots">QObject</a></li>
+<li><div class="fn"/>1 signal inherited from <a href="qobject.html#signals">QObject</a></li>
+<li><div class="fn"/>5 static public members inherited from <a href="qobject.html#static-public-members">QObject</a></li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QExtensionFactory class allows you to create a factory that is able to make instances of custom extensions in Qt Designer.</p>
+<p>In <i>Qt Designer</i> the extensions are not created until they are required. For that reason, when implementing a custom extension, you must also create a QExtensionFactory, i.e&#x2e; a class that is able to make an instance of your extension, and register it using <i>Qt Designer</i>'s <a href="qextensionmanager.html">extension manager</a>.</p>
+<p>The <a href="qextensionmanager.html">QExtensionManager</a> class provides extension management facilities for Qt Designer. When an extension is required, Qt Designer's <a href="qextensionmanager.html">extension manager</a> will run through all its registered factories calling <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() for each until the first one that is able to create a requested extension for the selected object, is found. This factory will then make an instance of the extension.</p>
+<p>There are four available types of extensions in Qt Designer: <a href="qdesignercontainerextension.html">QDesignerContainerExtension</a> , <a href="qdesignermembersheetextension.html">QDesignerMemberSheetExtension</a>, <a href="qdesignerpropertysheetextension.html">QDesignerPropertySheetExtension</a> and <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a>. Qt Designer's behavior is the same whether the requested extension is associated with a multi page container, a member sheet, a property sheet or a task menu.</p>
+<p>You can either create a new QExtensionFactory and reimplement the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function. For example:</p>
+<pre>         QObject *ANewExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             if (iid != Q_TYPEID(QDesignerContainerExtension))
+                 return 0;
+
+             if (MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;
+                    (object))
+                 return new MyContainerExtension(widget, parent);
+
+             return 0;
+         }</pre>
+<p>Or you can use an existing factory, expanding the <a href="qextensionfactory.html#createExtension">QExtensionFactory::createExtension</a>() function to make the factory able to create your extension as well. For example:</p>
+<pre>         QObject *AGeneralExtensionFactory::createExtension(QObject *object,
+                 const QString &amp;iid, QObject *parent) const
+         {
+             MyCustomWidget *widget = qobject_cast&lt;MyCustomWidget*&gt;(object);
+
+             if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerTaskMenuExtension))) {
+                 return new MyTaskMenuExtension(widget, parent);
+
+             } else if (widget &amp;&amp; (iid == Q_TYPEID(QDesignerContainerExtension))) {
+                 return new MyContainerExtension(widget, parent);
+
+             } else {
+                 return 0;
+             }
+         }</pre>
+<p>For a complete example using the QExtensionFactory class, see the <a href="designer-taskmenuextension.html">Task Menu Extension example</a>. The example shows how to create a custom widget plugin for Qt Designer, and how to to use the <a href="qdesignertaskmenuextension.html">QDesignerTaskMenuExtension</a> class to add custom items to Qt Designer's task menu.</p>
+<p>See also <a href="qextensionmanager.html">QExtensionManager</a> and <a href="qabstractextensionfactory.html">QAbstractExtensionFactory</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QExtensionFactory"></a>QExtensionFactory::QExtensionFactory ( <a href="qextensionmanager.html">QExtensionManager</a> * <i>parent</i> = 0 )</h3>
+<p>Constructs an extension factory with the given <i>parent</i>.</p>
+<h3 class="fn"><a name="createExtension"></a><a href="qobject.html">QObject</a> * QExtensionFactory::createExtension ( <a href="qobject.html">QObject</a> * <i>object</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i>, <a href="qobject.html">QObject</a> * <i>parent</i> ) const&nbsp;&nbsp;<tt> [virtual protected]</tt></h3>
+<p>Creates an extension specified by <i>iid</i> for the given <i>object</i>. The extension object is created as a child of the specified <i>parent</i>.</p>
+<p>See also <a href="qextensionfactory.html#extension">extension</a>().</p>
+<h3 class="fn"><a name="extension"></a><a href="qobject.html">QObject</a> * QExtensionFactory::extension ( <a href="qobject.html">QObject</a> * <i>object</i>, const <a href="qstring.html">QString</a> &amp; <i>iid</i> ) const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Returns the extension specified by <i>iid</i> for the given <i>object</i>.</p>
+<p>Reimplemented from <a href="qabstractextensionfactory.html#extension">QAbstractExtensionFactory</a>.</p>
+<p>See also <a href="qextensionfactory.html#createExtension">createExtension</a>().</p>
+<h3 class="fn"><a name="extensionManager"></a><a href="qextensionmanager.html">QExtensionManager</a> * QExtensionFactory::extensionManager () const</h3>
+<p>Returns the extension manager for the extension factory.</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

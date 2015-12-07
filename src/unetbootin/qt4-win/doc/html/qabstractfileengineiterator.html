@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<!-- /fasttmp/mkdist-qt-4.4.0-1209388211/qt-win-opensource-src-4.4.0/src/corelib/io/qabstractfileengine.cpp -->
+<head>
+  <title>Qt 4.4: QAbstractFileEngineIterator Class Reference</title>
+  <link href="classic.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<table border="0" cellpadding="0" cellspacing="0" width="100%">
+<tr>
+<td align="left" valign="top" width="32"><a href="http://www.trolltech.com/products/qt"><img src="images/qt-logo.png" align="left" width="32" height="32" border="0" /></a></td>
+<td width="1">&nbsp;&nbsp;</td><td class="postheader" valign="center"><a href="index.html"><font color="#004faf">Home</font></a>&nbsp;&middot; <a href="classes.html"><font color="#004faf">All&nbsp;Classes</font></a>&nbsp;&middot; <a href="mainclasses.html"><font color="#004faf">Main&nbsp;Classes</font></a>&nbsp;&middot; <a href="groups.html"><font color="#004faf">Grouped&nbsp;Classes</font></a>&nbsp;&middot; <a href="modules.html"><font color="#004faf">Modules</font></a>&nbsp;&middot; <a href="functions.html"><font color="#004faf">Functions</font></a></td>
+<td align="right" valign="top" width="230"><a href="http://www.trolltech.com"><img src="images/trolltech-logo.png" align="right" width="203" height="32" border="0" /></a></td></tr></table><h1 class="title">QAbstractFileEngineIterator Class Reference<br /><span class="small-subtitle">[<a href="qtcore.html">QtCore</a> module]</span>
+</h1>
+<p>The QAbstractFileEngineIterator class provides an iterator interface for custom file engines. <a href="#details">More...</a></p>
+<pre> #include &lt;QAbstractFileEngineIterator&gt;</pre><p>This class was introduced in Qt 4.3.</p>
+<ul>
+<li><a href="qabstractfileengineiterator-members.html">List of all members, including inherited members</a></li>
+</ul>
+<a name="public-functions"></a>
+<h3>Public Functions</h3>
+<ul>
+<li><div class="fn"/><b><a href="qabstractfileengineiterator.html#QAbstractFileEngineIterator">QAbstractFileEngineIterator</a></b> ( QDir::Filters <i>filters</i>, const QStringList &amp; <i>nameFilters</i> )</li>
+<li><div class="fn"/>virtual <b><a href="qabstractfileengineiterator.html#dtor.QAbstractFileEngineIterator">~QAbstractFileEngineIterator</a></b> ()</li>
+<li><div class="fn"/>virtual QFileInfo <b><a href="qabstractfileengineiterator.html#currentFileInfo">currentFileInfo</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="qabstractfileengineiterator.html#currentFileName">currentFileName</a></b> () const = 0</li>
+<li><div class="fn"/>QString <b><a href="qabstractfileengineiterator.html#currentFilePath">currentFilePath</a></b> () const</li>
+<li><div class="fn"/>QDir::Filters <b><a href="qabstractfileengineiterator.html#filters">filters</a></b> () const</li>
+<li><div class="fn"/>virtual bool <b><a href="qabstractfileengineiterator.html#hasNext">hasNext</a></b> () const = 0</li>
+<li><div class="fn"/>QStringList <b><a href="qabstractfileengineiterator.html#nameFilters">nameFilters</a></b> () const</li>
+<li><div class="fn"/>virtual QString <b><a href="qabstractfileengineiterator.html#next">next</a></b> () = 0</li>
+<li><div class="fn"/>QString <b><a href="qabstractfileengineiterator.html#pathx">path</a></b> () const</li>
+</ul>
+<a name="details"></a>
+<hr />
+<h2>Detailed Description</h2>
+<p>The QAbstractFileEngineIterator class provides an iterator interface for custom file engines.</p>
+<p>If all you want is to iterate over entries in a directory, see <a href="qdiriterator.html">QDirIterator</a> instead. This class is only for custom file engine authors.</p>
+<p>QAbstractFileEngineIterator is a unidirectional single-use virtual iterator that plugs into <a href="qdiriterator.html">QDirIterator</a>, providing transparent proxy iteration for custom file engines.</p>
+<p>You can subclass QAbstractFileEngineIterator to provide an iterator when writing your own file engine. To plug the iterator into your file system, you simply return an instance of this subclass from a reimplementation of <a href="qabstractfileengine.html#beginEntryList">QAbstractFileEngine::beginEntryList</a>().</p>
+<p>Example:</p>
+<pre>     QAbstractFileEngineIterator *
+     CustomFileEngine::beginEntryList(QDir::Filters filters, const QStringList &amp;filterNames)
+     {
+         return new CustomFileEngineIterator(filters, filterNames);
+     }</pre>
+<p>QAbstractFileEngineIterator is associated with a path, name filters, and entry filters. The path is the directory that the iterator lists entries in. The name filters and entry filters are provided for file engines that can optimize directory listing at the iterator level (e.g&#x2e;, network file systems that need to minimize network traffic), but they can also be ignored by the iterator subclass; QAbstractFileEngineIterator already provides the required filtering logics in the matchesFilters() function. You can call dirName() to get the directory name, <a href="qabstractfileengineiterator.html#nameFilters">nameFilters</a>() to get a stringlist of name filters, and <a href="qabstractfileengineiterator.html#filters">filters</a>() to get the entry filters.</p>
+<p>The pure virual function <a href="qabstractfileengineiterator.html#hasNext">hasNext</a>() returns true if the current directory has at least one more entry (i.e&#x2e;, the directory name is valid and accessible, and we have not reached the end of the entry list), and false otherwise. Reimplement <a href="qabstractfileengineiterator.html#next">next</a>() to seek to the next entry.</p>
+<p>The pure virtual function <a href="qabstractfileengineiterator.html#currentFileName">currentFileName</a>() returns the name of the current entry without advancing the iterator. The <a href="qabstractfileengineiterator.html#currentFilePath">currentFilePath</a>() function is provided for convenience; it returns the full path of the current entry.</p>
+<p>Here is an example of how to implement an interator that returns each of three fixed entries in sequence.</p>
+<pre>     class CustomIterator : public QAbstractFileEngineIterator
+     {
+     public:
+         CustomIterator(const QStringList &amp;nameFilters, QDir::Filters filters)
+             : QAbstractFileEngineIterator(nameFilters, filters), index(0)
+         {
+             // In a real iterator, these entries are fetched from the
+             // file system based on the value of path().
+             entries &lt;&lt; &quot;entry1&quot; &lt;&lt; &quot;entry2&quot; &lt;&lt; &quot;entry3&quot;;
+         }
+
+         bool hasNext() const
+         {
+             return index &lt; entries.size() - 1;
+         }
+
+         QString next()
+         {
+            if (!hasNext())
+                return QString();
+            ++index;
+            return currentFilePath();
+         }
+
+         QString currentFileName()
+         {
+             return entries.at(index);
+         }
+
+     private:
+         QStringList entries;
+         int index;
+     };</pre>
+<p>Note: QAbstractFileEngineIterator does not deal with QDir::IteratorFlags; it simply returns entries for a single directory.</p>
+<p>See also <a href="qdiriterator.html">QDirIterator</a>.</p>
+<hr />
+<h2>Member Function Documentation</h2>
+<h3 class="fn"><a name="QAbstractFileEngineIterator"></a>QAbstractFileEngineIterator::QAbstractFileEngineIterator ( <a href="qdir.html#Filter-enum">QDir::Filters</a> <i>filters</i>, const <a href="qstringlist.html">QStringList</a> &amp; <i>nameFilters</i> )</h3>
+<p>Constructs a <a href="qabstractfileengineiterator.html">QAbstractFileEngineIterator</a>, using the entry filters <i>filters</i>, and wildcard name filters <i>nameFilters</i>.</p>
+<h3 class="fn"><a name="dtor.QAbstractFileEngineIterator"></a>QAbstractFileEngineIterator::~QAbstractFileEngineIterator ()&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>Destroys the <a href="qabstractfileengineiterator.html">QAbstractFileEngineIterator</a>.</p>
+<p>See also <a href="qdiriterator.html">QDirIterator</a>.</p>
+<h3 class="fn"><a name="currentFileInfo"></a><a href="qfileinfo.html">QFileInfo</a> QAbstractFileEngineIterator::currentFileInfo () const&nbsp;&nbsp;<tt> [virtual]</tt></h3>
+<p>The virtual function returns a <a href="qfileinfo.html">QFileInfo</a> for the current directory entry. This function is provided for convenience. It can also be slightly faster that creating a <a href="qfileinfo.html">QFileInfo</a> object yourself, as the object returned by this function might contain cached information that <a href="qfileinfo.html">QFileInfo</a> otherwise would have to access through the file engine.</p>
+<p>See also <a href="qabstractfileengineiterator.html#currentFileName">currentFileName</a>().</p>
+<h3 class="fn"><a name="currentFileName"></a><a href="qstring.html">QString</a> QAbstractFileEngineIterator::currentFileName () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure virtual function returns the name of the current directory entry, excluding the path.</p>
+<p>See also <a href="qabstractfileengineiterator.html#currentFilePath">currentFilePath</a>().</p>
+<h3 class="fn"><a name="currentFilePath"></a><a href="qstring.html">QString</a> QAbstractFileEngineIterator::currentFilePath () const</h3>
+<p>Returns the path to the current directory entry. It's the same as prepending <a href="qabstractfileengineiterator.html#pathx">path</a>() to the return value of <a href="qabstractfileengineiterator.html#currentFileName">currentFileName</a>().</p>
+<p>See also <a href="qabstractfileengineiterator.html#currentFileName">currentFileName</a>().</p>
+<h3 class="fn"><a name="filters"></a><a href="qdir.html#Filter-enum">QDir::Filters</a> QAbstractFileEngineIterator::filters () const</h3>
+<p>Returns the entry filters for this iterator.</p>
+<p>See also <a href="qdir.html#filter">QDir::filter</a>(), <a href="qabstractfileengineiterator.html#nameFilters">nameFilters</a>(), and <a href="qabstractfileengineiterator.html#pathx">path</a>().</p>
+<h3 class="fn"><a name="hasNext"></a>bool QAbstractFileEngineIterator::hasNext () const&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure virtual function returns true if there is at least one more entry in the current directory (i.e&#x2e;, the iterator path is valid and accessible, and the iterator has not reached the end of the entry list).</p>
+<p>See also <a href="qdiriterator.html#hasNext">QDirIterator::hasNext</a>().</p>
+<h3 class="fn"><a name="nameFilters"></a><a href="qstringlist.html">QStringList</a> QAbstractFileEngineIterator::nameFilters () const</h3>
+<p>Returns the name filters for this iterator.</p>
+<p>See also <a href="qdir.html#nameFilters">QDir::nameFilters</a>(), <a href="qabstractfileengineiterator.html#filters">filters</a>(), and <a href="qabstractfileengineiterator.html#pathx">path</a>().</p>
+<h3 class="fn"><a name="next"></a><a href="qstring.html">QString</a> QAbstractFileEngineIterator::next ()&nbsp;&nbsp;<tt> [pure virtual]</tt></h3>
+<p>This pure virtual function advances the iterator to the next directory entry, and returns the file path to the current entry.</p>
+<p>This function can optionally make use of <a href="qabstractfileengineiterator.html#nameFilters">nameFilters</a>() and <a href="qabstractfileengineiterator.html#filters">filters</a>() to optimize its performance.</p>
+<p>Reimplement this function in a subclass to advance the iterator.</p>
+<p>See also <a href="qdiriterator.html#next">QDirIterator::next</a>().</p>
+<h3 class="fn"><a name="pathx"></a><a href="qstring.html">QString</a> QAbstractFileEngineIterator::path () const</h3>
+<p>Returns the path for this iterator. <a href="qdiriterator.html">QDirIterator</a> is responsible for assigning this path; it cannot change during the iterator's lifetime.</p>
+<p>See also <a href="qabstractfileengineiterator.html#nameFilters">nameFilters</a>() and <a href="qabstractfileengineiterator.html#filters">filters</a>().</p>
+<p /><address><hr /><div align="center">
+<table width="100%" cellspacing="0" border="0"><tr class="address">
+<td width="30%">Copyright &copy; 2008 <a href="trolltech.html">Trolltech</a></td>
+<td width="40%" align="center"><a href="trademarks.html">Trademarks</a></td>
+<td width="30%" align="right"><div align="right">Qt 4.4.0</div></td>
+</tr></table></div></address></body>
+</html>

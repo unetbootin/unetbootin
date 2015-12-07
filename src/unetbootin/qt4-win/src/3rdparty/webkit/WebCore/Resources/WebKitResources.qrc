@@ -1,0 +1,10 @@
+<!DOCTYPE RCC><RCC version="1.0">
+<qresource prefix="/webkit/resources">
+    <file>missingImage.png</file>
+    <file>nullPlugin.png</file>
+    <file>textAreaResizeCorner.png</file>
+    <file>urlIcon.png</file>
+    <file>zoomInCursor.png</file>
+    <file>zoomOutCursor.png</file>
+</qresource>
+</RCC>
